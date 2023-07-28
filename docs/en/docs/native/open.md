@@ -170,6 +170,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
     [ChaosMeta](https://github.com/traas-stack/chaosmeta) is designed to be a one-stop walkthrough comprehensive solution that includes the complete chaos engineering lifecycle, covering multiple phases such as admission checking, traffic injection, fault injection, fault metrics, recovery metrics and fault recovery. At this stage, ChaosMeta has opened up rich fault injection features to the public, supporting not only standalone deployments and Kubernetes cloud-native deployments, but also experiments with cloud-native fault cases such as Kubernetes itself and Operator.
 
+- [Cilium CNI Plugin v1.14.0 Released (CNCF Project)](https://github.com/cilium/cilium/releases/tag/v1.14.0)
+
+    Release features: support for two-way authentication, support for deploying Envoys as DaemonSets, support for WireGuard encryption of inter-node traffic and the ability to use Layer 7 policies on WireGuard, Cilium Mesh provides consistent network connectivity between the cloud and heterogeneous workloads, support for broadcasting external IP addresses to the local network via the Layer 2 transport protocol, and support for the Cilium CNI Plugin v1.14.0 (CNCF project). protocol to broadcast external IP addresses to the local network, support for multiple IPAM pools, and BIG TCP support for IPv4.
+
 - [Cilium CNI Plugin v1.13.0 Released (CNCF Project)](https://github.com/cilium/cilium/releases/tag/v1.13.0)
 
     Release features: support Gateway API v0.5.1, add IPv6 BIG TCP support, support LoadBalancer IP address management, initial support for SCTP, support for fine-grained configuration of nodes based on tag selector, support for k8s 1.26, support for declaring LoadBalancer services via BGP control plane The following features are included: support for L7 load balancing of existing Kubernetes services through the built-in Envoy agent, Ingress resources can share Kubernetes LoadBalancer resources, datapath support for mTLS, support for internal service traffic policies, cosign signing of all images, and creation of SBOMs for each image. Create SBOMs for each image.
@@ -202,6 +206,10 @@ This page lists activity in cloud native open source projects in alphabetical or
      [Cloud Native Application Scaffolding](https://github.com/alibaba/cloud-native-app-initializer) is built based on the Spring open source Initializr project.
      Not only can it help users manage dependencies, but it can also help users generate tests or code snippets that can be used directly. Users can test after creating a project, and develop projects based on sample code after testing.
      Therefore, building a project based on cloud-native application scaffolding only needs to be completed: create a new project and run the test.
+
+- [Cluster API declarative cluster lifecycle management tool v1.5.0 released (CNCF project)](https://github.com/kubernetes-sigs/cluster-api/releases/tag/v1.5.0)
+
+     Release features: support for microservice pre-checks to improve cluster stability, support for concurrent MachineDeployment upgrades in classy clusters, support for additional providers in clusterctl, improved performance when deploying at scale, and improved observability of MachinePools through MachinePool Machine, The clusterctl plugin allows custom code to be called from clusterctl, and more metrics can be collected through custom Kube State Metrics configurations.
 
 - [Cluster API Declarative Cluster Lifecycle Management Tool v1.3.0 released (CNCF project)](https://github.com/kubernetes-sigs/cluster-api/releases/tag/v1.3.0)
 
@@ -328,6 +336,10 @@ This page lists activity in cloud native open source projects in alphabetical or
      The main new features of this version: the introduction of pipeline to manage tasks in devspace.yaml, the new import feature to merge different devspace.yaml files together, and the new proxy command to run commands executed in the container on the local computer.
 
 ### E
+
+- [Envoy v1.27.0 released (CNCF project)](https://github.com/envoyproxy/envoy/releases/tag/v1.27.0)
+
+    Release features: Introduced new golang network filter, added Load shed point for rejecting requests when resources are insufficient, support for CONNECT-UDP, introduced Open Telemetry-compatible stats collector, added access log formatter for printing CEL expressions.
 
 - [Envoy v1.26.0 released (CNCF project)](https://www.envoyproxy.io/docs/envoy/v1.26.0/version_history/v1.26/v1.26.0)
 
@@ -657,6 +669,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      Main new features in this release: add tracing span data in cpu events, add debugging tool for Trace Profiling, support RocketMQ protocol.
 
+- [Knative serverless architecture solution based on Kubernetes v1.11.0 released (CNCF project)](https://github.com/knative/serving/releases/tag/knative-v1.11.0)
+
+    Release features: Domain Mapping Controller logic has been merged with Serving Controller, new fields for resource requests and limits when Queue Proxy is enabled (CPU and Memory only), Activator now has a separate service account, and support for configuring Queue Proxy resources via service level annotations.
+
 - [Knative fuzz testing audit results announced](https://mp.weixin.qq.com/s/CeGpRJCwYkhrrfwgMR7AFw)
 
     As disclosed in [Knative fuzzing test report](https://github.com/knative/docs/blob/main/reports/ADA-knative-fuzzing-audit-22-23.pdf), this fuzzing test security audit for 3 Knative sub-projects 29 fuzz testers were written. These fuzz testers identified an issue in a third-party dependency that has now been fixed.
@@ -718,6 +734,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [KubeKey Cluster Deployment Tool v3.0 released](https://github.com/kubesphere/kubekey/releases/tag/v3.0.0)
 
      Main new features of this version: Add GitHub workflow for docker build and push, support for executing custom setup scripts, add k3s control plane controller and startup controller, add k3s container runtime configuration, add k3s e2e test support, customize OpenEBS Base path, refactor KubeKey project, support more Kubernetes and k3s versions.
+
+- [Kubeflow: Kubeflow, the Machine Learning Platform for Kubernetes, upgraded to become a CNCF Incubation Project](https://mp.weixin.qq.com/s/8bZr2Edmyh-unE5ghIBhJg)
+
+    Kubeflow is an open source, community-driven project for deploying and managing Machine Learning (ML) stacks on Kubernetes.The Kubeflow community actively develops and supports MLOps for Kubernetes, developing and deploying popular frameworks for its users, including TensorFlow, PyTorch, XGBoost, Apache MXNet, and other distributed machine learning (ML).
 
 - [KubeKey cluster deployment tool v2.3.0 released](https://github.com/kubesphere/kubekey/releases/tag/v2.3.0)
 

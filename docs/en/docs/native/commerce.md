@@ -235,6 +235,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 ### D, E
 
+- [D2iQ launches DKP AI Navigator, a natural language AI assistant to simplify Kubernetes management](https://d2iq.com/press-release/dkp-ai-navigator)
+
+    DKP AI Navigator is trained on D2iQ's internal knowledge base, which contains solutions to the toughest problems users encounter in production.D2iQ users can use the tool to instantly access this expertise and manage Kubernetes clusters from a single window.DKP AI Navigator will be available in DKP 2.6. DKP AI Navigator will be officially available in DKP 2.6.
+
 - [D2iQ Enterprise K8s Platform D2iQ Kubernetes Platform v2.5 Released](https://docs.d2iq.com/dkp/2.5/dkp-2-5-0-features-and-enhancements)
 
     Updates: Support for extending standalone DKP Essential clusters to DKP Enterprise Management clusters for centralized management, support for checking cluster compliance with CIS Kubernetes benchmarks via Kube-bench, alerts now include root cause information and solution recommendations, full support for Istio, support for ARM64 machines, support for external Load Balancer support.
@@ -516,6 +520,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
     Using artificial intelligence algorithms to evaluate usage patterns and performance and cost metrics, the platform provides multicluster, multicloud observability, support for elasticity and performance risk detection, resource waste detection, the
     supports problem prioritization, provides GitOps-friendly remediation recommendations, supports predicting the impact of system changes on the environment, and more.
 
+- [Portworx Backup v2.5, the Portworx K8s data backup product, released](https://backup.docs.portworx.com/release-notes/#2-5-0)
+
+    Updates: Support for storing Kubernetes backup data in NFS v4 objects; support for CSI-native backup and recovery on IBM Cloud Kubernetes Cluster clusters using IBM Cloud Block Storage VPC CSI Driver 5.0.0 or later.
+
 - [Portworx Enterprise v3.0, Portworx's cloud-native data management platform, released](https://portworx.com/blog/portworx-enterprise-3-0-overview/)
 
     Updates: 50% reduction in disaster recovery migration time in asynchronous mode, new license extensions for blue-green upgrades, low and consistent I/O latency for AWS users with NVMe-based storage, ability to encrypt Oracle Cloud and cloud drives for AWS, GCP, and Azure with customer-managed keys, new CSI topology for FlashArray cloud drives. CSI topology added to FlashArray Cloud Drive.
@@ -794,6 +802,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      TLS Protect for Kubernetes is part of Control Plane for Machine Identities, Venafi's platform for machine identity management.
      Helps security and platform teams manage cloud-native machine identities such as TLS, mTLS, and SPIFFE in multicloud and multicluster Kubernetes environments, enhancing the observability, control, and automation of machine identity management.
+
+- [Volcano Engine cloud-native PaaS platform veStack Agile Edition Q2 product update](https://mp.weixin.qq.com/s/t_38mWzGurd0QrgdQg6O_A)
+
+    Updates: New geographic management features; support for Ingress-nginx multi-instance management; support for customization of parameters for kube-APIServer, kube-controller-manager and other core components; support for control plane node failure rotation; new Upstream abstraction, IP black/white lists, and traffic-weighted routing for API gateway; new swim lane management for microservice engine; support for synchronization of tasks in the Nacos registry. The API gateway adds Upstream abstraction, IP black and white lists, and routing by traffic weight; the microservices engine adds swim lane management, and supports importing services from the Nacos registry into the microservices engine through synchronization tasks.
 
 - [Volcano Engine Container Service VKE Q2 Product Update](https://mp.weixin.qq.com/s/iGlKHiR8dSU35CFvitUcCg)
 

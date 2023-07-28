@@ -170,6 +170,10 @@
 
     [ChaosMeta](https://github.com/traas-stack/chaosmeta) 设计上是包含了完整混沌工程生命周期的一站式演练综合解决方案，涵盖了准入检查、流量注入、故障注入、故障度量、恢复度量和故障恢复等多个阶段。现阶段，ChaosMeta 已经对外开放了丰富的故障注入功能，不仅支持单机部署和 Kubernetes 云原生部署，还支持 Kubernetes 本身和 Operator 等云原生故障场景的实验。
 
+- [Cilium CNI 插件 v1.14.0 发布（CNCF 项目）](https://github.com/cilium/cilium/releases/tag/v1.14.0)
+
+    版本特性：支持双向认证、支持以 DaemonSet 的形式部署 Envoy、支持对节点间的流量进行 WireGuard 加密并且可以在 WireGuard 上使用 Layer 7 策略、Cilium Mesh可以在云端和异构工作负载之间提供一致的网络连接、支持通过 Layer 2 传输协议向本地网络广播外部 IP 地址、支持多个 IPAM 池、BIG TCP 支持 IPv4。
+
 - [Cilium CNI 插件 v1.13.0 发布（CNCF 项目）](https://github.com/cilium/cilium/releases/tag/v1.13.0)
 
     版本特性：支持 Gateway API v0.5.1、增加 IPv6 BIG TCP 支持、支持 LoadBalancer IP 地址管理、初步支持 SCTP、支持根据标签选择器对节点进行细粒度的配置、支持 k8s 1.26、支持通过 BGP 控制平面宣告 LoadBalancer 服务的功能、支持通过内置 Envoy代理实现现有 Kubernetes service 的 L7 负载均衡、Ingress 资源可以共享 Kubernetes LoadBalancer 资源、datapath 支持 mTLS、支持 Service 内部流量策略、对所有镜像进行 cosign 签名并为每个镜像创建 SBOM。
@@ -202,6 +206,10 @@
     [云原生应用脚手架](https://github.com/alibaba/cloud-native-app-initializer)基于 Spring 开源的 Initializr 项目构建。
     不仅能够帮助用户管理依赖，还能帮助用户生成测试或者可以直接使用的代码片段，用户创建完工程就可以进行测试，测试完就可以基于示例代码进行项目开发。
     因此，基于云原生应用脚手架构建项目仅需完成：新建工程和运行测试即可。
+
+- [Cluster API 声明式集群生命周期管理工具 v1.5.0 发布（CNCF 项目）](https://github.com/kubernetes-sigs/cluster-api/releases/tag/v1.5.0)
+
+    版本特性：支持微服务预检查以提高集群稳定性、在 classy 集群中支持并发的 MachineDeployment 升级、在 clusterctl 中支持附加提供程序、改进规模化部署时的性能、通过 MachinePool Machine 提高 MachinePool 的可观测性、clusterctl 插件允许从 clusterctl 调用自定义代码、通过自定义 Kube State Metrics 配置可以收集更多指标。
 
 - [Cluster API 声明式集群生命周期管理工具 v1.3.0 发布（CNCF 项目）](https://github.com/kubernetes-sigs/cluster-api/releases/tag/v1.3.0)
 
@@ -330,6 +338,10 @@
     该版本主要新特性：引入 pipeline 用于 管理 devspace.yaml 中的任务、新增导入功能将不同 devspace.yaml 文件合并在一起、新增 proxy command 在本地计算机上运行在容器中执行的命令。
 
 ### E
+
+- [Envoy v1.27.0 发布（CNCF 项目）](https://github.com/envoyproxy/envoy/releases/tag/v1.27.0)
+
+    版本特性：引入新的 golang 网络过滤器、新增用于在资源不足时拒绝请求的负载削减点（Load shed point）、支持 CONNECT-UDP、引入 Open Telemetry 兼容的统计数据收集器、新增用于打印 CEL 表达式的访问日志格式化器。
 
 - [Envoy v1.26.0 发布（CNCF 项目）](https://www.envoyproxy.io/docs/envoy/v1.26.0/version_history/v1.26/v1.26.0)
 
@@ -661,6 +673,10 @@
 
     该版本主要新特性：在 cpu 事件中增加 tracing span 数据、增加 Trace Profiling 的调试工具、支持 RocketMQ 协议。
 
+- [Knative 基于 Kubernetes 的 serverless 架构方案 v1.11.0 发布（CNCF 项目）](https://github.com/knative/serving/releases/tag/knative-v1.11.0)
+
+    版本特性：域映射控制器逻辑已与Serving控制器合并、新增字段用于启用 Queue Proxy 时的资源请求和限制（仅适用于 CPU 和内存）、Activator 现在有一个单独的服务账号、支持通过服务级别的注释来配置 Queue Proxy 资源。
+
 - [Knative 模糊测试审计结果公布](https://mp.weixin.qq.com/s/CeGpRJCwYkhrrfwgMR7AFw)
 
     [Knative 模糊测试报告](https://github.com/knative/docs/blob/main/reports/ADA-knative-fuzzing-audit-22-23.pdf)中披露，此次模糊测试安全审计为 3 个 Knative 子项目编写了 29 个模糊测试器。这些模糊测试器发现了一个第三方依赖项中的问题，该问题目前已得到修复。
@@ -718,6 +734,10 @@
 - [KubeEdge 云原生边缘计算平台 v1.11.0 发布（CNCF 项目）](https://github.com/kubeedge/kubeedge/blob/master/CHANGELOG/CHANGELOG-1.11.md)  
 
     该版本主要新特性：新增节点组管理功能；提供边缘设备 Mapper 的 SDK，减少开发 Mapper 的工作量；正式支持容器化部署、离线安全等 Keadm 子命令；边缘节点代理 Edged 适用更多场景。
+
+- [Kubeflow：Kubernetes 机器学习平台 Kubeflow 升级成为 CNCF 孵化项目](https://mp.weixin.qq.com/s/8bZr2Edmyh-unE5ghIBhJg)
+
+    Kubeflow 是一个开源、社区驱动的项目，用于在 Kubernetes 上部署和管理机器学习（ML）堆栈。Kubeflow 社区积极开发和支持面向 Kubernetes 的 MLOps，为其用户开发和部署流行的框架，包括 TensorFlow、PyTorch、XGBoost、Apache MXNet 等分布式机器学习（ML）。
 
 - [KubeKey 集群部署工具 v3.0 发布](https://github.com/kubesphere/kubekey/releases/tag/v3.0.0)
 

@@ -117,7 +117,7 @@ nav:
           - Cluster Inspection:
               - Create Inspection Settings: kpanda/user-guide/inspect/config.md
               - Start Inspection: kpanda/user-guide/inspect/inspect.md
-              - Check Inspection Reports: kpanda/user-guide/inspect/report.md          
+              - Check Inspection Reports: kpanda/user-guide/inspect/report.md
           - Backup Recovery:
               - ETCD Backup: kpanda/user-guide/backup/etcd-backup.md
               - Install Velero: kpanda/user-guide/backup/install-velero.md
@@ -132,7 +132,7 @@ nav:
               - Kube-hunter: kpanda/user-guide/security/hunter.md
           - Permissions:
               - Permission Brief: kpanda/user-guide/permissions/permission-brief.md
-              - Cluster and Namespace Authorization: kpanda/user-guide/permissions/cluster-ns-auth.md          
+              - Cluster and Namespace Authorization: kpanda/user-guide/permissions/cluster-ns-auth.md
           - Best Practices:
               - ETCD Backup and Restore: kpanda/best-practice/etcd-backup.md
               - Offline Upgrade Worker Cluster: kpanda/best-practice/update-offline-cluster.md
@@ -201,7 +201,7 @@ nav:
                   - ghippo/gproduct/intro.md
                   - Join Nav Bar: ghippo/gproduct/nav.md
                   - Join Ingress and Login Authentication: ghippo/gproduct/route-auth.md
-              - OEM IN and OUT: 
+              - OEM IN and OUT:
                   - OEM IN: ghippo/oem/oem-in.md
                   - OEM OUT: ghippo/oem/oem-out.md
                   - Customize DCE 5.0 to Sync IdP: ghippo/oem/custom-idp.md
@@ -919,7 +919,9 @@ nav:
       - Mirror Acceleration: community/mirror.md
       - Spiderpool: community/spiderpool.md
   - Cloud Native Institute:
-      - Cloud Native News: native/news.md
+      - Cloud Native News:
+          - Cloud Native News 2023: native/news/news-2023.md
+          - Cloud Native News 2022: native/news/news-2022.md
       - Business Products: native/commerce.md
       - Open Source Projects: native/open.md
       - Knowledge Sharing: native/knowledge.md
