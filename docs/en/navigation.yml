@@ -519,6 +519,7 @@ nav:
               - Namespace Sidecars: mspider/user-guide/sidecar-management/ns-sidecar.md
               - Workload Sidecars: mspider/user-guide/sidecar-management/workload-sidecar.md
               - Traffic Passthrough: mspider/user-guide/sidecar-management/passthrough.md
+              - Change Sidecar Log Level: mspider/user-guide/sidecar-management/sidecar-log-level.md
           - Traffic Monitor:
               - mspider/user-guide/traffic-monitor/README.md
               - Traffic Topology: mspider/user-guide/traffic-monitor/conn-topo.md
