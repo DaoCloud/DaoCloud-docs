@@ -1,35 +1,42 @@
 # Redis 容灾部署方案
+
 Redis 作为开源的内存数据存储系统，具备出色的性能、高可用性和实时性能，可满足应用和服务的大量访问请求以及数据存储需求。然而，由于缺乏内置的数据安全保护功能，因此在实际应用中，需要采取容灾技术来保障 Redis 数据的可靠性。
 
 容灾技术主要通过数据复制和数据备份等手段实现，以提供冷备和热备两种备份方式。在网络、服务器或数据库发生故障导致数据丢失时，通过主备切换和数据恢复等方式，确保企业数据的安全性，确保业务的连续性。
 
 ## 方案一：Redis-Shake 同步模式
+
 ### 简介
 
 Redis-Shake 是一个用于合并、过滤和迁移Redis数据的工具。它支持三种数据迁移模式：sync、restore和scan。
 
 本方案将采用 Redis-Shake 实现跨集群的 Redis 实例数据同步。
 
-   ![架构](../images/tole00.png)
+    ![架构](../images/tole00.png)
 
 github 仓库地址: https://github.com/tair-opensource/RedisShake
+
 ### 同步模式简要说明
+
 - 哨兵模式：
   1. 在源端的 `master` 节点创建一个 `NodePort` 服务. 
 
   2. 编辑 Redis-Shake 的同步配置文件，使用目标实例对源实例的配置方式
 
-    ![哨兵模式](../images/tole01.jpg)
+      ![哨兵模式](../images/tole01.jpg)
 
 - 集群模式：
+- 
   1. 在源端的每一个节点都要创建一个 `NodePort` 服务。
 
   2. 配置多个 Redis-Shake，使用目标实例的各主节点分别对源集群实例的配置方式。
 
-    ![集群模式](../images/tole02.jpg)
+      ![集群模式](../images/tole02.jpg)
 
 ### 操作步骤
+
 #### 源集群
+
 1. 在dce5 中创建 redis 中间件实例。
 
     ![创建实例](../images/tole03.png)
@@ -41,6 +48,7 @@ github 仓库地址: https://github.com/tair-opensource/RedisShake
     ![创建服务](../images/tole05.png)
 
    并配置相关标签选择器：
+   
     ```shell
     app.kubernetes.io/component: redis
     app.kubernetes.io/managed-by: redis-operator
@@ -49,8 +57,11 @@ github 仓库地址: https://github.com/tair-opensource/RedisShake
     redisfailovers-role: master
     redisfailovers.databases.spotahome.com/name: test-li-redis
     ```
+    
 #### 目标集群
+
 将 Redis-Shake 与目标集群部署在同一宿主机上，并按照以下配置进行操作：
+
 ```shell
 wget https://github.com/tair-opensource/RedisShake/releases/download/v3.1.11/redis-shake-linux-amd64.tar.gz
 mkdir redisShake
@@ -60,7 +71,9 @@ tar -xzvf redis-shake-linux-amd64.tar.gz
 vi sync.toml
 ./redis-shake sync.toml
 ```
+
 编辑 sync.toml 配置文件:
+
 ```yaml
 type = "sync"
  
@@ -121,8 +134,11 @@ target_redis_proto_max_bulk_len = 512_000_000
 ```
 
 ## 方案二：虚拟机模式
+
 下面以某客户实际落地方案为例演示如何在虚拟机模式下部署 Redis 集群并实现跨机房灾备。
+
 ### 部署架构
+
 Redis 集群采用三主三从交叉复制架构。为了实现生产和灾备环境对 Redis 集群的访问，每个环境中都部署了三个副本。各环境分别准备了三台机器，每台机器上部署一个 Redis 节点，一主一从，进行交叉备份。生产区有两个主节点和一个从节点，灾备区有一个主节点和两个从节点。
 
 | IP            | 端口   | 节点角色   | 物理位置 | 版本    |
@@ -135,6 +151,7 @@ Redis 集群采用三主三从交叉复制架构。为了实现生产和灾备�
 | 10.201.170.32 | 6379 | slave  | 灾备机房 |
 
 ### 安装部署
+
 1. 下载二进制安装包、
 
     ```shell
@@ -142,6 +159,7 @@ Redis 集群采用三主三从交叉复制架构。为了实现生产和灾备�
     ```
 
 2. 安装部署包
+   
     ```shell
     # 切入到ipay用户
     tar -zxvf redis-6.2.5 -C /home/ipay
@@ -155,7 +173,8 @@ Redis 集群采用三主三从交叉复制架构。为了实现生产和灾备�
     # 安装
     cd src && make install
     ```
-3. 节点磁盘容量调整
+    
+4. 节点磁盘容量调整
 
     您可以根据需要通过以下命令调整各节点存储容量（非必需）。
 
@@ -168,16 +187,19 @@ Redis 集群采用三主三从交叉复制架构。为了实现生产和灾备�
     ```shell
     sudo lvextend -L +50G /dev/rootvg/root
     ```
+    
     将名为 `/dev/rootvg/root` 的逻辑卷的大小增加 50GB，以便容纳更多的 Redis 数据。
 
     ```shell
     sudo xfs_growfs /dev/rootvg/root
     ```
+    
     扩展 `/dev/rootvg/root` 上的 XFS 文件系统，以利用逻辑卷的新增空间。如果您执行了前两个命令来扩展逻辑卷的大小，那么执行这个命令是必需的，以确保文件系统能够利用新增的空间。
 
-4. 配置 `redis-server` 服务
+5. 配置 `redis-server` 服务
 
     分别在各节点执行以下操作：
+   
     - 创建数据和日志目录
 
         ```shell
@@ -209,7 +231,7 @@ Redis 集群采用三主三从交叉复制架构。为了实现生产和灾备�
         activerehashing yes
         replica-read-only yes
         ```
-
+        
     - 启动 Redis 服务
     
         ```shell
@@ -217,6 +239,7 @@ Redis 集群采用三主三从交叉复制架构。为了实现生产和灾备�
         ```
 
 ### 创建集群模式
+
 完成 6 个节点的 Redis 搭建后，使用如下命令快速创建三主三集群。
 
 ```shell
