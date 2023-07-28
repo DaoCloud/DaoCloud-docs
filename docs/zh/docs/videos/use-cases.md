@@ -1,5 +1,22 @@
 # 最佳实践
 
+最佳实践视频是指，基于具体的业务场景演示如何使用 DCE 5.0 的各项特色，从而满足一些常见的、实际的业务需求。
+
+<div class="grid cards" markdown>
+
+- :one: [如何将单云应用一键转换为多云应用](#_2)
+- :two: [如何在 DCE 5.0 中部署混合云应用](#dce-50)
+- :three: [如何将微服务接入 DCE 5.0 并治理南北向流量](#dce-50_1)
+- :four: [如何借助服务网格治理传统微服务东西向流量](#_3)
+- :five: [如何将 DCE 5.0 嵌入客户平台](#dce-50_2)
+- :six: [如何让传统应用上云后仍通过固定 IP 对外通信](#ip)
+- :seven: [如何实现应用加速与跨集群通信](#_4)
+- :eight: [如何利用可观测性快速定位异常并排障](#_5)
+- :nine: [如何利用 CICD 快速交付应用](#cicd)
+- :keycap_ten: [如何利用 GitOps 持续部署云原生应用](#gitops)
+
+</div>
+
 ## 如何将单云应用一键转换为多云应用？
 
 <div class="responsive-video-container">
@@ -36,6 +53,12 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/underlay-ip.mp4" preload="metadata" poster="../images/underlay-ip.png"></video>
 </div>
 
+## 如何实现应用加速与跨集群通信
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/network-cross-cluster.mp4" preload="metadata" poster="../images/network-cross-cluster.png"></video>
+</div>
+
 ## 如何利用可观测性快速定位异常并排障？
 
 <div class="responsive-video-container">
@@ -48,8 +71,8 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/app-release.mp4" preload="metadata" poster="../images/amamba-app-release.png"></video>
 </div>
 
-## 如何实现应用加速与跨集群通信
+## 如何利用 GitOps 持续部署云原生应用
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/network-cross-cluster.mp4" preload="metadata" poster="../images/network-cross-cluster.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/gitops.mp4" preload="metadata" poster="../images/gitops.png"></video>
 </div>
