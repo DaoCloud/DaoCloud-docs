@@ -47,26 +47,27 @@ Refer to [7 Nodes Mode](./deploy-arch.md#7-1-6).
 ### Bootstraping Node Dependency Check
 
 | **Check Item**   | **Versions** | **Description** |
-| ---------------- | ------------------------ | --------------- |
-| podman           | v4.4.1                   | -               |
-| helm             | ≥ 3.11.1                  | -               |
-| skopeo           | ≥ 1.11.1                  | -               |
-| kind             | v0.17.0                | -               |
-| kubectl          | ≥ 1.25.6                 | -               |
-| yq               | ≥ 4.31.1                 | -               |
-| MinIO client     | -                        | `mc.RELEASE.2023-02-16T
+| ---------------- |-------------| --------------- |
+| podman           | v4.4.1      | -               |
+| helm             | ≥ 3.11.1    | -               |
+| skopeo           | ≥ 1.11.1    | -               |
+| kind             | v0.19.0     | -               |
+| kubectl          | ≥ 1.25.6    | -               |
+| yq               | ≥ 4.31.1    | -               |
+| MinIO client     | `mc.RELEASE.2023-02-16T19-20-11Z`            | -|
 
 If these dependencies have not been installed, refer to [Install Dependencies](../install-tools.md)。
 
 ```bash
+export VERSION=v0.9.0
 # download install script
-curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
+curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
 
 # add execution permission
-chmod +x install_prerequisite.sh
+chmod +x install_prerequisite_${VERSION}.sh
 
 # start install
-bash install_prerequisite.sh online full
+bash install_prerequisite_${VERSION}.sh online full
 ```
 
 ## External Component Preparation
