@@ -821,6 +821,7 @@ nav:
               - Create Registry Space: kangaroo/integrate/registry-space.md
               - Bind/Unbind Workspace: kangaroo/integrate/bind-to-ws.md
               - Sync Images: kangaroo/integrate/sync.md
+              - Migrate Your Harbor Registry: kangaroo/managed/harbor-migration.md
           - Scan Images: kangaroo/scan.md
       - Cloud Edge Collaboration:
           - What is Cloud Edge Collaboration: kant/intro/what.md
