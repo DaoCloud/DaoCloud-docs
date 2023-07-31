@@ -708,6 +708,7 @@ nav:
               - Update Redis instance: middleware/redis/user-guide/update.md
               - Delete Redis instance: middleware/redis/user-guide/delete.md
               - View Redis logs: middleware/redis/user-guide/logs.md
+              - Redis DR Deployment Solution: middleware/redis/best-practice/disaster-tolerance.md
               - Release Notes: middleware/redis/release-notes.md
           - PostgreSQL database:
               - What is PostgreSQL: middleware/postgresql/intro/what.md
