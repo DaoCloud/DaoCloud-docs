@@ -1,6 +1,6 @@
-# 升级 DCE 5.0
+# 升级 DCE 5.0 组件
 
-DCE 5.0 的升级包含升级 DCE 5.0 产品功能模块、升级 DCE 5.0 基础设施模块
+DCE 5.0 组件的升级包含升级 DCE 5.0 产品功能模块、升级 DCE 5.0 基础设施模块
 
 其中 DCE 5.0 由容器管理、全局管理、可观测性等十几个子模块构成，主要指 [mainfest.yaml](commercial/manifest.md) 文件中的 `components` 部分。
 
