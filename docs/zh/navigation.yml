@@ -29,7 +29,8 @@ nav:
               - 集群配置文件 clusterConfig.yaml: install/commercial/cluster-config.md
               - 产品清单文件 manifest.yaml: install/commercial/manifest.md
           - 升级/卸载/导入/FAQ:
-              - 升级 DCE 5.0 产品功能模块: install/upgrade.md
+              - 升级 DCE 5.0 组件: install/upgrade.md
+              - 标准版升级白金版: install/evolve.md
               - 卸载: install/uninstall.md
               - 导入离线资源: install/import.md
               - 安装排障: install/faq.md
