@@ -30,6 +30,7 @@ nav:
               - Edit manifest.yaml: install/commercial/manifest.md
           - Upgrade/Uninstall/FAQ:
               - Upgrade DCE 5.0 Modules: install/upgrade.md
+              - Upgrade Standard Package to Platinum Package: install/evolve.md
               - Uninstall: install/uninstall.md
               - Import Offline Resources: install/import.md
               - Troubleshoot: install/faq.md

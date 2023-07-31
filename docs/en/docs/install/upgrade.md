@@ -1,6 +1,6 @@
-# Upgrading DCE 5.0
+# Upgrading DCE 5.0 Modules
 
-The upgrade of DCE 5.0 involves upgrading the product functionality modules and the infrastructure modules of DCE 5.0.
+The upgrade of DCE 5.0 modules involves upgrading the product functionality modules and the infrastructure modules of DCE 5.0.
 
 DCE 5.0 consists of several sub-modules, including container management, global management, insight, and more.
 These are primarily defined in the `components` section of the [manifest.yaml](commercial/manifest.md) file.
