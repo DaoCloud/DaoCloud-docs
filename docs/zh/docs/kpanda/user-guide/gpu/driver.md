@@ -2,15 +2,14 @@
 
 ## GPU 驱动安装
 
-> 提供了手动安装和使用 gpu-operator 两种安装方式，使用 gpu-operator 安装会简化很多，推荐使用 gpu-operator 模式.
+> 提供了手动安装和使用 gpu-operator 两种安装方式，使用 gpu-operator 安装会简化很多，推荐使用 gpu-operator 模式。
 
+在 K8s 上使用 GPU 需要安装相关的驱动和程序，其中需要涉及到如下几个步骤：
 
-在K8s上使用GPU需要安装相关的驱动和程序，其中需要涉及到如下几个步骤：
 - [ ] 安装 GPU 物理设备驱动
 - [ ] 安装 cuda toolkit 工具
 - [ ] 修改 container-runtime
 - [ ] 安装device-plugin
-
 
 ### 手动安装
 1. 物理设备驱动安装
@@ -27,7 +26,6 @@ $ ubuntu-drivers devices
 ```
 ![Alt text](image.png)
          
-
 - 选择合适的版本进行安装    
     - 安装建议版本：
         ```shell
@@ -51,7 +49,6 @@ $ ubuntu-drivers devices
     $ nvcc -V
     ```
 
-
 - 查看驱动版本
     ```shell
     $ cat /proc/driver/nvidia/version
@@ -59,7 +56,6 @@ $ ubuntu-drivers devices
     ```
     
 2. 安装 `cuda toolkit`
-
 
 - https://github.com/NVIDIA/nvidia-container-toolkit
 - https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html
@@ -100,28 +96,23 @@ $ ubuntu-drivers devices
         $ sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
         ```
         
- 
 3. 安装 device-plugin
 
 ```shell
 $ kubectl create -f https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/v0.14.0/nvidia-device-plugin.yml
 ```
    
-
 ### gpu-operator安装
     
 ![Alt text](image-1.png)
 
  GPU Operator 能够在 K8s 基础上进行 GPU 相关底层依赖的的操作，这其中就包括 GPU 驱动、Container ToolKit, Device Plugin 资源自动上报等等能力，再也不用额外关注驱动这些糟心的事情了，理论上只要 GPU 卡插好，装上 K8s，然后通过 GPU Operator 就能使用 所有的能力了。
 
-
-
 - check GPU 卡正常挂载
 ```shell
 $ lspci | grep -i nvidia
 1b:00.0 VGA compatible controller: NVIDIA Corporation GP102 [TITAN Xp] (rev a1)
 ```
-       
 
 - 确定 kernel版本(这一步很重要，nvidia driver 镜像版本需要和节点内核版本强一致，包括小版本号)
 > 内核对应的驱动版本是否存在请去如下网站确认：https://catalog.ngc.nvidia.com/orgs/nvidia/containers/driver/tags
@@ -139,16 +130,9 @@ $ helm install --wait --generate-name \
      --set driver.version=525-5.15.0-69-generic
 
 ```
-        
-
-  
 
 ## 安装 vGPU 驱动
+
 上述两个方案安装之后 pod 使用 GPU 时只能使用整卡资源，不能使用vGPU 功能，如果需要使用 vGPU 需要在 DCE 5.0 容器管理的 Helm 仓库中查找 nvidia-vgpu 模块，并进行安装。
 
 ![Alt text](image-2.png)
-
-     
-
-
-
