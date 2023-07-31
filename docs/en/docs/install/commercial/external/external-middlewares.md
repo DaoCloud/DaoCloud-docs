@@ -192,6 +192,7 @@ The steps to configure external Elasticsearch are as follows:
     !!! note
 
         Currently, only the observability product module uses the Elasticsearch component.
+        If an external middleware is used, it is not recommended to use worker nodes in 7-node mode, as it may consume too many resources.
 
 2. After completing the above configuration, you can proceed with [deploying DCE 5.0 Enterprise Package](../start-install.md).
 
