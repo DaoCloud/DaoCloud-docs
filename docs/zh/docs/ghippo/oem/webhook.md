@@ -27,11 +27,11 @@ Webhook 的工作原理如下：
 
 DCE 5.0 图形化配置 Webhook 的操作步骤如下：
 
-1. 先接入一个客户系统，即完成 [OEM IN](./oem-in.md) 的操作。
+1. 在`全局管理` -> `用户与访问控制` -> `接入管理`，创建一个客户端 ID。
 
     ![oem in](./images/webh01.png)
 
-1. 点击某个客户系统的名称，进入详情页，点击`创建 Webhook` 按钮。
+1. 点击某个客户端 ID，进入详情页，点击`创建 Webhook` 按钮。
 
     ![button](./images/webh02.png)
 

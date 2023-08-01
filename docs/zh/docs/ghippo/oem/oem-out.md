@@ -45,8 +45,6 @@ OEM OUT 是指 DCE 5.0 作为子模块接入其他产品，出现在其他产品
 1. 把 DCE 5.0 的访问地址 (http://10.6.165.50/dce5/) 编码到客户系统的 iframe src 里，可在 iframe 中通过编写
    css 修改被嵌入的页面样式。参阅 [App.vue 代码示例](./examples/App.vue)。
 
-执行上述步骤时可参考[使用 2 套 DCE 5.0 模拟 OEM OUT](./dce5-dce5.md)。
-
 ## 权限打通(可选)
 
 定制化团队可实现一定制模块，DCE 5.0 可提供 Webhook 注册功能，将每一次的用户登录事件通过 Webhook 的方式通知到定制模块，

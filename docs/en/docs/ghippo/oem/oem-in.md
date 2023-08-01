@@ -37,8 +37,7 @@ The specific steps are as follows:
 
 1. Assuming the Nginx entry address is 10.6.165.50, follow the steps in
    [Setting Up DCE 5.0 Reverse Proxy](../install/reverse-proxy.md) to set the DCE_PROXY as
-   http://10.6.165.50/. Also, follow the steps in [DX ARCH Automation Reverse Proxy Setup](./reverse.md)
-   to set the DX-ARCH reverse proxy as http://10.6.165.50/dx-arch.
+   http://10.6.165.50/
 
 2. Refer to the [Global Management GProduct Integration Reference Documentation](../gproduct/intro.md)
    to create an empty shell GProduct frontend sub-application and embed DX-ARCH within this

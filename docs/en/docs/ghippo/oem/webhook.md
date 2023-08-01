@@ -26,11 +26,11 @@ Common use cases include:
 
 The steps to configure Webhooks in DCE 5.0 are as follows:
 
-1. First, integrate a client system by completing the [OEM IN](./oem-in.md) process.
+1. On the left nav, click `Global Management` -> `Access Control` -> `Docking Portal`, create a client ID.
 
     ![oem in](./images/webh01.png)
 
-2. Click on the name of a client system to enter the details page, then click the `Create Webhook` button.
+2. Click a client ID to enter the details page, then click the `Create Webhook` button.
 
     ![button](./images/webh02.png)
 
