@@ -53,8 +53,6 @@ Prerequisite: The customer system (e.g., WYCloud) supports embedding sub-module 
    in the customer's system. You can modify the style of the embedded page by writing CSS in the iframe.
    See [App.vue code example](./examples/App.vue).
 
-You can refer to [Using Two Sets of DCE 5.0 to Simulate OEM OUT](./dce5-dce5.md) for guidance when executing the above steps.
-
 ## Permission Integration (Optional)
 
 Customized teams can implement a custom module. DCE 5.0 can provide webhook registration functionality
