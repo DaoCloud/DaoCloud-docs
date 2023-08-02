@@ -196,7 +196,7 @@ This page lists the Release Notes for global management of each version, so that
 
 - Support deploying a national secret gateway in front of DCE 5.0, and use a national secret browser to access DCE 5.0
 - Set the switch in helm values, you can switch the istio sidecar feature with one click
-- Add Workspace and Folder Owner role to workspace and hierarchy
+- Add Workspace and Folder Owner role to Workspace and Folder
 - Only users with `Workspace Admin`, `Folder Admin`, and `Kpanda Owner` permissions can perform resource binding
 - Scan the open source license for the library used
 - Added `Status` column to user list
@@ -300,7 +300,7 @@ Release date: 2022-10-21
 - **Optimized** authorization authentication -> provide a job to ensure the synchronization of db and cr
 - **Optimized** LDAP -> configuration error checking
 - **Optimized** The operation feedback and prompts for each feature support Chinese and English
-- **Optimized** Workspace and Hierarchy -> Check whether there are sub-resources before deleting
+- **Optimized** Workspace and Folder -> Check whether there are sub-resources before deleting
 - **Optimized** Optimize keycloak jvm parameters
 
 ## v0.9
