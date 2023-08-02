@@ -5,7 +5,7 @@ hide:
 
 # Workspace
 
-Workspace is a hierarchical mapping designed for global resource management in DCE 5.0. A workspace can be used to provide resources for each project under a department. Administrators map the relationships between departments and projects in the enterprise to folders and workspace. For more information about workspace, see [Workspace and Hierarchy](../../ghippo/user-guide/workspace/workspace.md).
+Workspace is a hierarchical mapping designed for global resource management in DCE 5.0. A workspace can be used to provide resources for each project under a department. Administrators map the relationships between departments and projects in the enterprise to folders and workspace. For more information about workspace, see [Workspace and Folder](../../ghippo/user-guide/workspace/workspace.md).
 
 ## Bind/Unbind Workspace
 
