@@ -53,7 +53,7 @@ spec:
   go:
     # Must set the default value manually for now.
     # See https://github.com/open-telemetry/opentelemetry-operator/issues/1756 for details.
-    repository: ghcr.m.daocloud.io/open-telemetry/opentelemetry-go-instrumentation/autoinstrumentation-go:v0.2.1-alpha
+    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-go-instrumentation/autoinstrumentation-go:v0.2.1-alpha
 EOF
 ```
 
@@ -189,11 +189,11 @@ spec:
   python:
     image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python:0.38b0
   dotnet:
-    repository: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-dotnet:0.6.0
+    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-dotnet:0.6.0
   go:
     # Must set the default value manually for now.
     # See https://github.com/open-telemetry/opentelemetry-operator/issues/1756 for details.
-    repository: ghcr.m.daocloud.io/open-telemetry/opentelemetry-go-instrumentation/autoinstrumentation-go:v0.2.1-alpha
+    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-go-instrumentation/autoinstrumentation-go:v0.2.1-alpha
 EOF
 ```
 
