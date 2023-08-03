@@ -2,6 +2,18 @@
 
 This page lists the release notes of Multicloud Management module, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-07-31
+
+### v0.11
+
+#### New Features
+
+- **Added** support for viewing event information in resource details.
+
+#### Optimizations
+
+- **Optimized** the Karmada Operator project for the community edition of the cluster.
+
 ## 2023-06-30
 
 ### v0.10.3

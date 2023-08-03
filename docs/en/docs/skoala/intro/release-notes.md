@@ -2,6 +2,73 @@
 
 This page lists the release notes of DME to help you learn its feature development and bug fixing progress.
 
+## 2023-07-26
+
+### v0.26.1
+
+#### Fixes
+
+- **Fixed** the issue of incorrect version of the Agent component.
+
+## 2023-07-25
+
+### v0.26.0
+
+#### New Features
+
+- **Added** interface for viewing Sentinel flow control rules.
+- **Added** APIs for cloud-native microservice governance.
+- **Added** APIs for cloud-native microservice traffic lanes.
+- **Added** support for version 0.19 of the observability module.
+- **Added** API for displaying audit log in the overall overview.
+- **Added** API for displaying resources in the gateway overview page.
+- **Added** APIs for global validation plugin capabilities at the gateway level.
+
+#### Fixes
+
+- **Fixed** the issue of Nacos port not being updated.
+- **Fixed** the issue of cluster flow control rules in Sentinel not being saved.
+- **Fixed** the issue of API exception when deleting non-empty services in Nacos.
+- **Fixed** the issue of duplicate data in gateway monitoring data.
+- **Fixed** the issue with the use of plugins in cloud-native microservices related APIs.
+- **Fixed** the issues with gateway domain naming rules.
+- **Fixed** the issue of incorrect version in cloud-native microservice traffic lanes.
+
+#### Optimizations
+
+- **Optimized** the driver name of the People's Congress Golden Warehouse database from "kb_v8r6" to "kingbase".
+
+## 2023-07-19
+
+### v0.25.0
+
+#### New Features
+
+- **Added** tagging of gateway runtime mesh injection.
+- **Added** cascading selection capability for permissions associated with middleware.
+- **Added** API for viewing cloud-native microservice flow control rules.
+- **Added** APIs for cloud-native microservice governance.
+- **Added** component version information for cluster readiness check during managed resource installation.
+- **Added** fuzzy search capability for various search APIs.
+
+#### Fixes
+
+- **Fixed** the issue of incorrect external image scanning address in the pipeline.
+- **Fixed** the issue of missing directory-level dependency for permissions associated with middleware.
+
+#### Optimizations
+
+- **Optimized** the chain validation of gateway and related resource changes.
+- **Optimized** the gateway listening port from cluster IP to container port.
+
+## 2023-07-06
+
+### v0.24.2
+
+#### Fixes
+
+- **Fixed** page experience optimization and bug fixes.
+
 ## 2023-07-05
 
 ### V0.24.1
