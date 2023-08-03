@@ -1,14 +1,24 @@
 # What is Global Management (Ghippo)?
 
-Global Management (Ghippo) is a comprehensive user-centered service that includes access control, enterprise space, audit logs, platform settings, and other fundamental modules.
+Global Management is a comprehensive, user-centred service that includes access control,
+enterprise workspace, audit logs, platform settings, and other fundamental modules.
 
-- [Access Control](../user-guide/access-control/global.md): Helps users manage access to resources. Users can create, manage, and delete users/groups, and configure user/group permissions to divide users' functional rights flexibly.
+- [Access Control](../user-guide/access-control/global.md): Enables users to manage resource access by creating, managing, deleting users/groups and configuring their permissions.
 
-- [Enterprise Space](../user-guide/workspace/ws-folder.md): A resource isolation unit with a hierarchical structure and capability of access control. Users can set up a hierarchical structure depending on the development environment, department structure, etc., and control who has access to which resources.
+- [Enterprise Workspace](../user-guide/workspace/ws-folder.md): provides a hierarchical structure for resource isolation and control over resource access. Users can set up a hierarchical structure depending on the development environment, department structure, etc., and control who has access to which resources.
 
-- [Audit Logs](../user-guide/audit/audit-log.md): Provides operation logs of resources that allow security analysis, resource changes, problem location, and other essential insights.
+- [Audit Logs](../user-guide/audit/audit-log.md): offer detailed operation records for security analysis and tracking resource changes.
 
-- [Platform Settings](../user-guide/platform-setting/mail-server.md): Platform security policy, mail server, appearance customization, and more ensure secure user information and a personalized experience.
+- [Platform Settings](../user-guide/platform-setting/mail-server.md): Comprises security policies, mail server configuration, appearance customization, and more, ensuring secure user information and a personalized experience.
+
+Global Management puts the basic service modules of the platform together to reduce the troubles
+caused by menu switching and feature scattering. Platform administrators can complete basic settings
+and user management under one menu. Flat management of users and groups as well as hierarchical tenant
+(workspace) collaboration enable multi-dimensional and multi-scenario access control based on the
+platform and resource-based feature division. Personalization options are available, allowing users
+to customize the platform's appearance to their preferences. Global Management is designed to be
+user-friendly, with most configurations pre-set for users, including password rules, session timeout
+policies, and other settings that simplify user operations and ensure a smooth experience for beginners.
 
 ## Benefits
 
