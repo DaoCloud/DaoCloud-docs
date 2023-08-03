@@ -4,7 +4,7 @@ This page lists the Release Notes of MinIO object storage, so that you can under
 
 ## 2023-07-31
 
-### v0.9.3
+### v0.7.3
 
 #### New Features
 

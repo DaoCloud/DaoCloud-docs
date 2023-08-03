@@ -2,6 +2,23 @@
 
 This page lists the release notes for the Redis Cache service, providing you with information about the evolution and feature changes in each version.
 
+## 2023-07-31
+
+### v0.10.0
+
+#### New Features
+
+- **Added** access whitelist configuration for `mcamel-redis`.
+
+#### Optimizations
+
+- **Optimized** default anti-affinity tag values in the `mcamel-redis` instance creation dialog to simplify configuration process.
+- **Optimized** frontend UI to display permission information for `mcamel-redis`.
+
+#### Bug Fixes
+
+- **Fixed** failure to close node affinity for `mcamel-redis`.
+
 ## 2023-06-30
 
 ### v0.9.0
