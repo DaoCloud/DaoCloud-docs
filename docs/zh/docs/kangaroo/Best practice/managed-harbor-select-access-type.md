@@ -19,7 +19,7 @@
 > - 集群必须安装`LoadBalancer`组件，`LoadBalancer`组件可以是`MetalLB`、`F5`、`Nginx`等，具体安装方法请参考[LoadBalancer](https://docs.daocloud.io/network/modules/metallb/what/)。
 
 `Ingress`可以从集群外部暴露`HTTP`和`HTTPS`路由到集群内部的服务，流量路由由`Ingress`资源上定义的规则控制。在托管`Harbor`中`Ingress`使用流程如下图所示。
-![ingress.png](./source/ingress.png)
+![](https://huatu.98youxi.com/markdown/work/uploads/upload_bf0ed72aea6fb746e2ef4e29d7a3f7a9.png)
 
 在**私有云网络**下用户使用`Ingress`部署完托管`Harbor`之后，需要在`DNS`服务中添加域名解析，将域名解析到`LoadBalancer`的`IP`地址上，这样用户就可以通过域名访问`Harbor`了；添加`DNS`域名解析需要在`Kubernetes`集群内
 和`Kubernetes`集群外分别进行操作，具体操作步骤如下：
@@ -56,4 +56,5 @@ kubectl get pod -n kube-system coredns-5c98db65d4-2t2l2
 
 `NodePort`是一种访问`Kubernetes`集群中`Service`的方法，它会在每个`Node`上打开一个端口，该端口会将流量转发到`Service`的端口上。`NodePort`使用流程如下图所示。
 
-![nodeport.png](./source/nodeport.png)
+![](https://huatu.98youxi.com/markdown/work/uploads/upload_a983e597f8ac5d9a191f53bd1fa1c3d1.png)
+
