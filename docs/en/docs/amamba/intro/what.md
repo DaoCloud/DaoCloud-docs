@@ -1,8 +1,30 @@
 # What is Workbench?
 
-Workbench (or Workbench for short) is a container-based DevOps platform for cloud-native applications. Workbench serves as a unified entry point for creating applications in DCE 5.0, providing flexible and easy-to-use pipelines, GitOps, progressive delivery, project management, integration of tools about product lifecycle and agile development.
+Workbench is a container-based DevOps platform for cloud native applications.
+It serves as a unified entry point for creating applications in DCE, providing flexible
+and easy-to-use pipelines, GitOps, progressive delivery, project management, and
+integration of tools about product lifecycle and agile development.
 
-Workbench focuses on the process of automation application delivery and infrastructure change, providing full lifecycle management for applications from "development -> testing -> deployment -> operation". This can promote digital transformation and improve IT delivery competence and competitiveness.
+Workbench features application management, pipeline orchestration, credential management,
+GitOps, and more. Application management covers various aspects of managing cloud native applications.
+It supports a range of "multi-form" applications, including Kubernetes native applications,
+Helm applications, and OAM applications. With comprehensive lifecycle management, it facilitates scaling,
+logging, monitoring, and application updates. Additionally, it enables seamless integration and management
+of Spring Cloud, Dubbo microservices, and cloud native microservices based on Kubernetes and Service Mesh.
+
+Pipeline orchestration provides a flexible and customizable CI/CD mode. It offers four pipeline creation modes:
+custom creation, Jenkinsfile-based creation, template-based creation, and the ability to create multiple-branch
+pipelines. The graphical user interface (GUI) allows for easy editing of pipelines. It enables building
+applications from various sources, such as source code in GitHub repositories, JAR packages, Helm charts, or container images.
+
+Credential management manages different types of credentials required for the pipeline's
+code repositories and image registries.
+
+GitOps introduces the concept of continuous deployment using Git repositories, providing control
+over the application release and deployment process post-code building. It leverages Argo CD to
+automate the deployment of applications frequently and continuously to production environments.
+Workbench supports the creation, synchronization, and deletion of Argo CD applications,
+enabling efficient management of the deployment process.
 
 ## Features
 

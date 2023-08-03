@@ -23,7 +23,29 @@ According to statistics, cloud solutions may be divided into five kinds, and the
 
 As the table shows, multicloud has become the mainstream in the market. This also explains why DaoCloud crafted the Multicloud Management module in DCE 5.0.
 
-Multicloud Management is an application-centric, out-of-the-box platform for efficiently managing applications in multiple clouds. It enables centralized management of multicloud and hybrid-cloud environments, providing cross-cloud deployment, release, and operation capabilities. It supports elastic scaling of applications based on cluster resources, achieving global load balancing, and provides disaster recovery that fully address the problem of disaster recovery for multicloud applications.
+MultiCloud Management is an application-centric platform for efficiently managing applications across
+multiple clouds. It allows centralized management of multi-cloud and hybrid-cloud environments,
+providing cross-cloud deployment, release, and operational components. Elastic scaling of
+applications based on cluster resources supports global load balancing, and it provides
+disaster recovery that fully addresses the disaster recovery problem for multi-cloud applications.
+
+The control plane of MultiCloud Management is responsible for several vital functions. Firstly,
+it handles multi-cloud instance lifecycle management utilizing the Karmada framework. Additionally,
+it serves as a unified traffic entry point for multi-cloud products, supporting OpenAPI, Kairship UI,
+and internal module GRPC calls [14]. It acts as a proxy for API requests to multi-cloud instances in
+the native style of Karmada and aggregates cluster information, including monitoring, management, and
+control within multi-cloud models. Furthermore, it facilitates the management and monitoring of
+resources such as multi-cloud workloads and enables potential permission operations in the future.
+
+MultiCloud Management distinguishes itself from its counterparts with exceptional competitiveness,
+offering developers the ease of using multiple clouds effortlessly, just like a single Kubernetes
+cluster. Rich scheduling actions enable efficient workload allocation to specific clusters based on
+various criteria. The platform provides an out-of-the-box experience, combining a user-friendly UI
+and high-performance features making it ideal for seamless production usage. Additionally, it
+facilitates centralized application management across diverse clusters, Supporting numerous cloud
+providers such as Huawei CCE, Microsoft Azure, Amazon EKS, SUSE Rancher, VMware Tanzu, Aliyun ACK,
+and others. The solution ensures seamless integration with Kubernetes-native APIs, streamlining
+application development and deployment workflows in single-cluster environments.
 
 [Download DCE 5.0](../../download/dce5.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../../install/intro.md){ .md-button .md-button--primary }

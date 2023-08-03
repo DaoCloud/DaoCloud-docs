@@ -1,8 +1,25 @@
 # What is Insight？
 
-The application Insight is a new generation cloud native Insight platform that focuses on applications analyzing. It provides the out-of-the-box real-time resources monitoring, metrics, logs, events and other data to help you analyzing  application status. In additionally, it is compatible with popular open source components, and provides alerting, multi-dimensions data visualization, fault locating, and one-click monitoring and diagnosing capabilities.
+Insight is a next-generation, cloud native observability platform that focuses on application analysis.
+Its out-of-the-box real-time resource monitoring, metrics, logs, events, and other data assist enterprises
+in analyzing application status. Furthermore, it is compatible with popular open-source components,
+providing alerting, multi-dimensional data visualization, fault locating, and one-click monitoring and diagnosis.
 
-The insight implements the unified collection of metrics, logs and traces, which supports multi-dimensions alerting on metrics, logs, and provides you a web UI.
+Insight implements unified collection of metrics, logs, and traces, which supports multi-dimension alerting
+on metrics and logs. The platform offers a web UI for enterprises to easily navigate. It provides several
+monitoring components, including multi-dimensional monitoring of containers, services, nodes, and clusters,
+and monitors CPU, memory, storage, and network resources. The integration with Grafana enables the creation of
+comprehensive dashboards.
+
+The platform allows for collection and search of workload logs, system logs, Kubernetes events,
+and context log queries. It supports service topology visualization and transparent tracing,
+including real-time service metrics, request per second, error rates, and latency. The platform
+supports distributed tracing based on open-source technologies and comes with pre-defined alerting rules,
+while also enabling users to define their metrics, logs, and alerts.
+
+Insight provides flexible configuration options for alerting rules, and notifications can be sent
+via multiple channels such as email, WeChat, and Webhook. It ensures the persistence of metrics,
+logs and tracing data, catering to the data storage needs of enterprises.
 
 The main features as following:
 

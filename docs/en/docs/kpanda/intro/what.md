@@ -5,35 +5,34 @@ hide:
 
 # What is Container Management
 
-Container management is a cloud-native container management platform for deploying and managing Kubernetes clusters. It is designed to simplify the process of enterprise application deployment to the cloud, reduce operational costs and improve management efficiency, and supports multicloud and hybrid cloud environments.
-
-Some of the key features of container management include:
+Container Management is a cloud native platform for deploying and managing Kubernetes clusters.
+It simplifies enterprise application deployment to the cloud, reduces operational costs, and
+improves management efficiency. Moreover, it can operate in multi-cloud and hybrid cloud environments.
+Its key features include:
 
 **Cluster Management**
 
-- Unified management of clusters, supporting any Kubernetes cluster within a specific version range.
-- Rapid deployment of clusters through the Web UI interface, adaptable to physical and virtual machines.
-- One-click cluster upgrade with built-in disaster recovery and backup capabilities, ensuring business continuity.
-- Full lifecycle management of clusters with OpenAPI capability.
+Cluster Management involves the unified management of clusters, supporting for any Kubernetes cluster
+within a specific version range. It facilitates rapid clusters deployment through the web UI
+interface, adaptable to physical and virtual machines. One-click cluster upgrades ensure seamless
+transitions, and it includes built-in disaster recovery and backup to safeguard business continuity.
+It also enables full lifecycle management of clusters with OpenAPI capability.
 
 **Application Management**
 
-- One-stop deployment and operation of business applications with full lifecycle management capabilities.
-- Elastic scaling of application load with support for horizontal, vertical, and scheduled scaling.
-- Unified management across cluster loads.
+Application Management provides a one-stop solution for the deployment and operation of business
+applications with full lifecycle management. It also enables elastic scaling of application workload
+with support for horizontal, vertical, and scheduled scaling. Additionally, Application Management
+offers unified management across cluster workloads.
 
-**Strategy Management**
+**Policy Management**
 
-- Supports network policies, quota policies, resource limit policies, disaster recovery policies, and security policies.
-- Network policy formulates communication rules between pods and network "entities" on the network plane.
-- Quota policy limits resource usage of namespaces in the cluster.
-- Resource limit policy constrains use of resources by applications in the corresponding namespace.
-- Disaster recovery strategy realizes disaster recovery backup with namespace as the dimension, ensuring the security of the cluster.
-- Security policy defines different isolation levels for Pods.
-
-**Product Logical Architecture**
-
-Download DCE 5.0, install DCE 5.0, or start a free trial now.
+Policy Management supports various policies such as network policies, quota policies, resource limit
+policies, disaster recovery policies, and security policies. It includes network policies to establish
+communication rules, quota policies to limit resource usage, resource limit policies to constrain
+resource utilization, disaster recovery policies for backup and recovery, and security policies to
+define isolation levels for pods. These policies and strategies help enforce control, optimize
+resource allocation, ensure security and enable effective cluster management.
 
 [Download DCE 5.0](../../download/dce5.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../../install/intro.md){ .md-button .md-button--primary }

@@ -1,13 +1,30 @@
 # Cloud Native Storage
 
-## Types of Cloud Native Storage
+Cloud-native transformation encompasses three types of storage:
+traditional storage, software-defined storage, and cloud-native local storage.
 
-1. **Traditional storage cloud-native**: This type docks with the Kubernetes platform through the CSI standard and is relatively common. Users can use existing storage and, based on traditional storage, provide stable cloud-native storage with a strong SLA guarantee.
+Traditional storage can be integrated with the Kubernetes platform through the CSI standard.
+This type of storage is widely used as it allows users to leverage their existing storage infrastructure.
+It provides stable cloud-native storage capabilities and offers strong SLA guarantees.
 
-2. **Software-defined storage cloud-native**: Compatible with traditional applications and cloud-native applications, this type interfaces with Kubernetes based on the CSI standard. Software-defined storage uses the disk space on each machine in the enterprise through the network, forming scattered storage resources into a virtual storage device, with data scattered across different storage devices.
+Software-defined storage is compatible with both traditional and cloud-native applications.
+It also integrates with Kubernetes using the CSI standard, making it versatile and adaptable to different environments.
 
-3. **Pure cloud-native storage**: This type of storage is naturally born for cloud-native and built on the cloud-native platform to better fit its characteristics. It can be migrated with the application Pod, has high scalability and high availability, but lower reliability than traditional storage accessed through the CSI standard.
+Local storage, known as HwameiStor, is specifically designed for cloud-native environments.
+It is built on a cloud-native platform and has been selected as an open-source local storage solution
+for cloud-native stateful workloads with High-Availability (HA) capabilities by CNCF sandbox.
+HwameiStor addresses the limitations of local volumes by enabling data drifting with applications,
+ensuring data availability and reliability.
 
-## DCE Cloud Native Storage
+HwameiStor is based on the Kubernetes CSI standard and can be connected to CSI-compliant storage
+according to different SLA requirements and use cases. The cloud-native local storage launched by
+DaoCloud naturally has cloud-native features and meets the characteristics of high scalability and
+high availability in container use cases.
 
-DCE 5.0 cloud-native storage is based on the Kubernetes CSI standard and can be connected to CSI-compliant storage according to different SLA requirements and use cases. The cloud-native local storage launched by DaoCloud naturally has cloud-native features and meets the characteristics of high scalability and high availability in container use cases.
+HwameiStor, a cloud native local storage solution, provides high-performance and high availability
+with its IO localization feature. It ensures 100% local throughput and redundant data backup,
+ensuring in uninterrupted data access even in node failures. The solution supports seamless switching
+and offers continuous data availability. HwameiStor's linear expansion capability allows for easy
+scalability, while its efficiency minimizes CPU and memory overhead. With features such as node and
+disk migration, the solution provides operational manageability, empowering businesses to optimize
+their cloud native environments with reliable data management.
