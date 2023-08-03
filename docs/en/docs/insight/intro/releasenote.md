@@ -3,6 +3,34 @@
 This page lists the Release Notes of Insight Observability, so that you can understand
 the evolution path and feature changes of each version.
 
+## 2023.07.30
+
+### v0.19.0
+
+#### New Features
+
+- **Added** Kubernetes event analysis and query functionality.
+- **Added** Built-in alert policy provides suggestions for alert fixes.
+- **Added** Support for customizing log export fields and formats.
+
+#### Enhancements
+
+- **Improved** Logic for retrieving Elasticsearch component status in system components.
+- **Improved** Support for configuring whether to import default message templates in installation parameters.
+
+#### Fixes
+
+- **Fixed** Permissions issue for some roles when viewing alert rule details.
+- **Fixed** Permissions issue for some roles when creating, editing, or previewing silent alerts.
+- **Fixed** Permissions issue for some roles when viewing alert message details.
+- **Fixed** Time display issue in bubble chart for trace queries.
+- **Fixed** Issue with missing namespace parameter when querying container logs.
+- **Fixed** Incorrect custom tag parameter for default variables in message templates.
+- **Fixed** No new request sent when switching filter conditions.
+- **Fixed** Permissions issue for creating, editing, or previewing silent alerts.
+- **Fixed** Issue with log statistics value being displayed as 0 in overview.
+- **Fixed** Issue with some built-in alert policies not taking effect.
+
 ## 2023.07.01
 
 ### v0.18.0
