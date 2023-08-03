@@ -1,6 +1,6 @@
 # ETCD 备份还原
 
-使用 ETCD 备份功能创建备份策略，可以将指定集群的 etcd 数据定时备份到 S3 存储中。本文主要介绍如何将已经备份的数据还原的当前集群中。
+使用 ETCD 备份功能创建备份策略，可以将指定集群的 etcd 数据定时备份到 S3 存储中。本文主要介绍如何将已经备份的数据还原到当前集群中。
 
 !!! note
 
@@ -25,7 +25,7 @@
 
 ### 安装 etcdbrctl 工具
 
-为了实现 ETCD 数据备份还原，需要在上述任意一个 k8s 节点上安装 etcdbrctl 开源工具。此工具暂时没有二进制文件，需要自行编译。编译方式请参考：<https://github.com/gardener/etcd-backup-restore/blob/master/doc/development/local_setup.md#build>。
+为了实现 ETCD 数据备份还原，需要在上述任意一个 Kubernetes 节点上安装 etcdbrctl 开源工具。此工具暂时没有二进制文件，需要自行编译。编译方式请参考：<https://github.com/gardener/etcd-backup-restore/blob/master/doc/development/local_setup.md#build>。
 
 安装完成后用如下命令检查工具是否可用：
 
