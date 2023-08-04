@@ -11,7 +11,7 @@ This page allows you to download the offline installation packages for different
 
 ## Verification
 
-Navigate to the directory where the offline installation package and checksum file are downloaded, and run the following command to verify the integrity:
+Navigate to the directory where the offline installation package and checksum file are downloaded, take `v0.2.2_amd64` as an example, and run the following command to verify the integrity:
 
 ```sh
 echo "$(cat gmagpie_v0.2.2_amd64_checksum.sha512sum)" | sha512sum -c

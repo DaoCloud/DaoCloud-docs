@@ -9,7 +9,7 @@ This page can download the offline installation package and verification file of
 | offline-centos7-v0.3.29-amd64.tar | v0.3.29 | AMD64 | 22.9 GB | [:arrow_down: Download](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-v0.3.29-amd64.tar) | 2022-12-16 |
 | offline-kylin-v10sp2-v0.3.29-arm64.tar | v0.3.29 | ARM64 | 19.9 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-kylin-v10sp2-v0.3.29-arm64.tar) | 2022-12-16 |
 
-## Validation
+## Verification
 
 Go to the download directory of the offline installation package.
 

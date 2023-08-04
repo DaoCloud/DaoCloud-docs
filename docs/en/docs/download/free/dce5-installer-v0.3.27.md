@@ -8,7 +8,7 @@ This page can download the offline installation package and verification file of
 | ----------------------------- | ------------------- -------------------------------------------------- -------------------------------------------- |
 | offline-community-v0.3.27.tar | [:arrow_down: Download](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.3.27.tar) |
 
-## Validation
+## Verification
 
 Go to the download directory of the offline installation package. run the following command to verify the installation package:
 

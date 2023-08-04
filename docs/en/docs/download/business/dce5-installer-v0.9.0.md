@@ -19,31 +19,31 @@ Navigate to the directory where the offline installation package is downloaded.
 
 === "AMD64"
 
-Run the following command to verify the package:
+    Run the following command to verify the package:
 
-```sh
-echo "520ef719605042cd2b9289de795d609cde7f0aff9f7189d43e31bbe016b33debc715f8e0de24c8f3c3685d54f7d6b2595651bcfa9695c9b98210d161cfddc241  offline-v0.9.0-amd64.tar" | sha512sum -c
-```
+    ```sh
+    echo "520ef719605042cd2b9289de795d609cde7f0aff9f7189d43e31bbe016b33debc715f8e0de24c8f3c3685d54f7d6b2595651bcfa9695c9b98210d161cfddc241  offline-v0.9.0-amd64.tar" | sha512sum -c
+    ```
 
-If the verification is successful, the result will be similar to:
+    If the verification is successful, the result will be similar to:
 
-```none
-offline-v0.9.0-amd64.tar: OK
-```
+    ```none
+    offline-v0.9.0-amd64.tar: OK
+    ```
 
 === "ARM64"
 
-Run the following command to verify the package:
+    Run the following command to verify the package:
 
-```sh
-echo "ae541aa5c2150af45b6dc3c3e432205683211d1b5d8ec816b37344c2234f3c05fbe2be7526b4b5832c5db0439c7d501ce2f1c1492aa5cfe045bbdd321d662e22  offline-v0.9.0-arm64.tar" | sha512sum -c
-```
+    ```sh
+    echo "ae541aa5c2150af45b6dc3c3e432205683211d1b5d8ec816b37344c2234f3c05fbe2be7526b4b5832c5db0439c7d501ce2f1c1492aa5cfe045bbdd321d662e22  offline-v0.9.0-arm64.tar" | sha512sum -c
+    ```
 
-If the verification is successful, the result will be similar to:
+    If the verification is successful, the result will be similar to:
 
-```none
-offline-v0.9.0-arm64.tar: OK
-```
+    ```none
+    offline-v0.9.0-arm64.tar: OK
+    ```
 
 ## Installation
 
@@ -51,19 +51,19 @@ After successfully verifying the offline package,
 
 === "AMD64"
 
-Run the following command to extract the tar file:
+    Run the following command to extract the tar file:
 
-```sh
-tar -zxvf offline-v0.9.0-amd64.tar
-```
+    ```sh
+    tar -zxvf offline-v0.9.0-amd64.tar
+    ```
 
 === "ARM64"
 
-Run the following command to extract the tar file:
+    Run the following command to extract the tar file:
 
-```sh
-tar -zxvf offline-v0.9.0-arm64.tar
-```
+    ```sh
+    tar -zxvf offline-v0.9.0-arm64.tar
+    ```
 
 - For installation instructions, please refer to [Enterprise Package Installation Process](../../install/commercial/start-install.md).
 - After successful installation, please contact us for authorization: email info@daocloud.io or call 400 002 6898.
