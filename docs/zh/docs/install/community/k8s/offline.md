@@ -1,6 +1,6 @@
-# 使用 Kubernetes 集群离线安装社区版
+# 已有 Kubernetes 集群离线安装社区版
 
-本页简要说明 DCE 5.0 社区版的离线安装步骤。
+本页简要说明如何在已有 Kubernetes 集群上离线安装 DCE 5.0 社区版。
 
 点击[社区版部署 Demo](../../../videos/install.md)可观看视频演示。
 
