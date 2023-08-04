@@ -57,7 +57,7 @@ nav:
               - 接入集群: kpanda/user-guide/clusters/integrate-cluster.md
               - 访问集群: kpanda/user-guide/clusters/access-cluster.md
               - 升级集群: kpanda/user-guide/clusters/upgrade-cluster.md
-              - 删除集群: kpanda/user-guide/clusters/delete-cluster.md
+              - 卸载/解除接入集群: kpanda/user-guide/clusters/delete-cluster.md
               - 集群角色: kpanda/user-guide/clusters/cluster-role.md
               - 集群状态: kpanda/user-guide/clusters/cluster-status.md
               - 如何选择运行时: kpanda/user-guide/clusters/runtime.md
