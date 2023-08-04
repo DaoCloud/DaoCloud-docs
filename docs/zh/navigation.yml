@@ -879,6 +879,9 @@ nav:
           - 应用场景: kant/intro/use-cases.md
           - 边缘节点接入要求: kant/intro/join-rqmt.md
           - 基本概念: kant/intro/concepts.md
+      - 虚拟机容器:
+          - 介绍:
+              - Release Notes: virtnest/intro/release-notes.md
       - 云原生安全:
           - 介绍: security/what.md
           - Falco:
