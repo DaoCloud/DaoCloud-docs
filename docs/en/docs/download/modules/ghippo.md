@@ -18,21 +18,21 @@ On this page, you can download the offline installation packages of various vers
 | [v0.13.0](../../ghippo/intro/release-notes.md) | AMD64 | 439.89MB | [:arrow_down: ghippo_v0.13.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.13.0_amd64.tar) | [:arrow_down: ghippo_v0.13.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.13.0_amd64_checksum.sha512sum) | 2022-12-29 |
 | [v0.12.1](../../ghippo/intro/release-notes.md) | AMD64 | 442 MB | [:arrow_down: ghippo-0.12.1-amd64.bundle.tar](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo-0.12.1-amd64.bundle.tar) | [:arrow_down: ghippo_v0.12.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.12.1_amd64_checksum.sha512sum) | 2022-11-29 |
 
-## Validation
+## Verification
 
-In the directory where the offline installation package and verification file are downloaded, run the following command to verify the integrity:
+In the directory where the offline installation package and verification file are downloaded, take `v0.13.2_amd64` as an example, run the following command to verify the integrity:
 
 ```sh
 echo "$(cat ghippo_v0.13.2_amd64_checksum.sha512sum)" | sha512sum -c
 ```
 
-After the validation is successful, the printed result is similar to:
+After the verification is successful, the printed result is similar to:
 
 ```none
 ghippo_v0.13.2_amd64.tar: ok
 ```
 
-## Install
+## Installation
 
 Refer to [Global Management](../../ghippo/install/offline-install.md) installation process for installation.
 

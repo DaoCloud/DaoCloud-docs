@@ -13,7 +13,7 @@ This page can download the offline installation package and verification file of
 | offline-community-v0.4.0-rc2-amd64.tar | v0.4.0-rc2 | AMD64 | 5.73GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.4.0-rc2-amd64.tar) | 2023-01-05 |
 | offline-community-v0.4.0-rc2-arm64.tar | v0.4.0-rc2 | ARM64 | 5.16GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.4.0-rc2-arm64.tar) | 2023-01-05 |
 
-## Validation
+## Verification
 
 Go to the download directory of the offline installation package.
 

@@ -1,6 +1,6 @@
-# 使用 kind 集群在线安装 DCE 5.0 社区版
+# All-in-one 在线安装 DCE 5.0 社区版
 
-本页说明如何使用 kind 集群在线安装 DCE 5.0 社区版。
+本页说明如何使用 kind 集群实现 all-in-one 在线安装 DCE 5.0 社区版。
 
 !!! note
 

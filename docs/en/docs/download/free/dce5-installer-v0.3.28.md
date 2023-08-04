@@ -8,7 +8,7 @@ This page can download the offline installation package of DCE 5.0 Community Pac
 | ----------------------------- | -------- | ---------- -------------------------------------------------- -------------------------------------------------- | ---------- |
 | offline-community-v0.3.28.tar | 5.8 GB | [:arrow_down: Download](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.3.28.tar ) | 2022-11-18 |
 
-## Validation
+## Verification
 
 Go to the download directory of the offline installation package. run the following command to verify the installation package:
 

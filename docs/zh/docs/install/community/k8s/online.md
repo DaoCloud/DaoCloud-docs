@@ -1,6 +1,6 @@
-# 使用 Kubernetes 集群在线安装社区版
+# 已有 Kubernetes 集群在线安装社区版
 
-本页简要说明 DCE 5.0 社区版的在线安装步骤。
+本页简要说明如何在已有 Kubernetes 集群上在线安装 DCE 5.0 社区版。
 
 !!! note
 

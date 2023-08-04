@@ -13,7 +13,7 @@ This page can download the offline installation package and verification file of
 | offline-v0.5.0-amd64.tar | v0.5.0 | AMD64 | 15.86GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.5.0-amd64.tar) | 2023-03-06 |
 | offline-v0.5.0-arm64.tar | v0.5.0 | ARM64 | 14.56GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.5.0-arm64.tar) | 2023-03-06 |
 
-## Validation
+## Verification
 
 Go to the download directory of the offline installation package.
 
