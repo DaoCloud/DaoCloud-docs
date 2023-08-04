@@ -5,7 +5,7 @@ hide:
 
 # 首次进入中间件
 
-首次使用 DCE 5.0 的 [Elasticsearch 搜索服务](../elasticsearch/intro/what.md)、[Kafka 消息队列](../kafka/intro/what.md)、[MinIO 对象存储](../minio/intro/what.md)、[MySQL 数据库](../mysql/intro/what.md)、[RabbitMQ 消息队列](../rabbitmq/intro/what.md)、[PostgreSQL 数据库](../postgresql/intro/what.md)，或 [Redis 缓存服务](../redis/intro/what.md)、[MongoDB 数据库](../mongodb/intro/what.md)等中间件时，需要选择工作空间。
+首次使用 DCE 5.0 的 [Elasticsearch 搜索服务](../elasticsearch/intro/index.md)、[Kafka 消息队列](../kafka/intro/index.md)、[MinIO 对象存储](../minio/intro/index.md)、[MySQL 数据](../mysql/intro/index.md)、[RabbitMQ 消息](../rabbitmq/intro/index.md)、[PostgreSQL 数据库](../postgresql/intro/index.md)、[Redis 数据库](../redis/intro/index.md)、[MongoDB 数据库](../mongodb/intro/index.md)等中间件时，需要选择工作空间。
 
 有关工作空间的详细介绍，可参考[工作空间与层级](../../ghippo/user-guide/workspace/ws-folder.md)。
 

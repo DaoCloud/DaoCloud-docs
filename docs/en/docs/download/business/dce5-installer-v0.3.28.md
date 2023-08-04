@@ -30,7 +30,7 @@ After successfully verifying the offline package, unpack the tarball:
 tar -zxvf offline-v0.3.28.tar
 ```
 
-Then refer to [Install DCE 5.0 Enterprise Package](../../install/intro.md#_3) to install.
+Then refer to [Install DCE 5.0 Enterprise Package](../../install/index.md#_3) to install.
 For first-time installation, please contact us for authorization: email info@daocloud.io or call 400 002 6898.
 If you have any license key related questions, please contact DaoCloud delivery team.
 
@@ -59,5 +59,5 @@ The DCE 5.0 Enterprise Package includes the following modules, which are plug-an
 
 ## More
 
-- [Online Documentation](../../dce/what.md)
+- [Online Documentation](../../dce/index.md)
 - [Report a bug](https://github.com/DaoCloud/DaoCloud-docs/issues)

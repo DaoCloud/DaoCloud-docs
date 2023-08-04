@@ -1,6 +1,6 @@
 # Workload Anti-Affinity
 
-When creating instances of [Elasticsearch search service](../elasticsearch/intro/what.md), [Kafka message queue](../kafka/intro/what.md), [MinIO object storage](../minio/intro/what.md), [MySQL database](../mysql/intro/what.md), [RabbitMQ message queue](../rabbitmq/intro/what.md), [PostgreSQL database](../postgresql/intro/what.md), [Redis cache service](../redis/intro/what.md), or [MongoDB database](../mongodb/intro/what.md), you can configure workload anti-affinity in the service settings page.
+When creating instances of [Elasticsearch search service](../elasticsearch/intro/index.md), [Kafka message queue](../kafka/intro/index.md), [MinIO object storage](../minio/intro/index.md), [MySQL database](../mysql/intro/index.md), [RabbitMQ message queue](../rabbitmq/intro/index.md), [PostgreSQL database](../postgresql/intro/index.md), [Redis cache service](../redis/intro/index.md), or [MongoDB database](../mongodb/intro/index.md), you can configure workload anti-affinity in the service settings page.
 
 The principle of workload anti-affinity is that within a certain topology domain (scope), if it detects that there is already a workload with a label added in the anti-affinity configuration, the newly created workload will not be deployed to that topology domain. The benefits of this approach are:
 

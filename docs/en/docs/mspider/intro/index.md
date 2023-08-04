@@ -124,6 +124,6 @@ flowchart TD
     click watch2 "https://docs.daocloud.io/en/mspider/user-guide/traffic-monitor/conn-topo/"
 ```
 
-[Download DCE 5.0](../../download/dce5.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../../install/intro.md){ .md-button .md-button--primary }
+[Download DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
 [Free Trial](../../dce/license0.md){ .md-button .md-button--primary }

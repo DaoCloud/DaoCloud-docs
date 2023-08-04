@@ -40,11 +40,11 @@ This solution is suitable for low kernel versions of Linux OS, and applicable fo
 Regrading the two solutions mentioned above, DCE 5.0 allows to install the following network components:
 
 - Cert Manager：certificate manager
-- [Calico](../modules/calico/what.md)：a network solution based on iptables
-- [Cilium](../modules/cilium/what.md)：a network solution based on eBPF kernel
+- [Calico](../modules/calico/index.md)：a network solution based on iptables
+- [Cilium](../modules/cilium/index.md)：a network solution based on eBPF kernel
 - MacVLAN：virtual network based on Docker
 - Multus：core component for multi-NIC and multi-CNI support
 - MetalLB: A load-balancer implementation for bare metal Kubernetes clusters, using standard routing protocols.
-- [Spiderpool](../modules/spiderpool/what.md)：an automation tool to manage IP resources
+- [Spiderpool](../modules/spiderpool/index.md)：an automation tool to manage IP resources
 
 Other components such as CNI and Ingress can be installed on demand.

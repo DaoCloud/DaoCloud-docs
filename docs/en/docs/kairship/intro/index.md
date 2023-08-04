@@ -47,5 +47,5 @@ providers such as Huawei CCE, Microsoft Azure, Amazon EKS, SUSE Rancher, VMware 
 and others. The solution ensures seamless integration with Kubernetes-native APIs, streamlining
 application development and deployment workflows in single-cluster environments.
 
-[Download DCE 5.0](../../download/dce5.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../../install/intro.md){ .md-button .md-button--primary }
+[Download DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../../install/index.md){ .md-button .md-button--primary }

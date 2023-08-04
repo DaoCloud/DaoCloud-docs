@@ -26,7 +26,7 @@
 
 ## 下载和安装
 
-1. 在 K8s 集群控制平面节点（Controller Node）下载 dce5-installer 二进制文件（也可以[通过浏览器下载](../../../download/dce5.md)）。
+1. 在 K8s 集群控制平面节点（Controller Node）下载 dce5-installer 二进制文件（也可以[通过浏览器下载](../../../download/index.md)）。
 
     假定 VERSION 为 v0.7.0
 

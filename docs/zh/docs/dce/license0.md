@@ -1,7 +1,7 @@
 # 免费申请「DCE 5.0 社区版」
 
-DCE 5.0 社区版包含的模块为[全局管理](../ghippo/intro/what.md)、[容器管理](../kpanda/intro/what.md)、[可观测性](../insight/intro/what.md)等模块。
-建议[下载](../download/dce5.md)并[安装 DCE 5.0](../install/community/k8s/online.md) 之后，参照以下步骤进行激活。
+DCE 5.0 社区版包含的模块为[全局管理](../ghippo/intro/index.md)、[容器管理](../kpanda/intro/index.md)、[可观测性](../insight/intro/index.md)等模块。
+建议[下载](../download/index.md)并[安装 DCE 5.0](../install/community/k8s/online.md) 之后，参照以下步骤进行激活。
 
 ![license](https://docs.daocloud.io/daocloud-docs-images/docs/images/license01.png)
 
@@ -60,4 +60,4 @@ DCE 5.0 社区版包含的模块为[全局管理](../ghippo/intro/what.md)、[�
 [申请许可证密钥](https://qingflow.com/f/58604bf8){ .md-button .md-button--primary }
 [查看许可证密钥](https://license.daocloud.io/dce5-licenses){ .md-button .md-button--primary }
 [换取离线授权码](https://license.daocloud.io/dce5-license){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }

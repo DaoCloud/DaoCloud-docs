@@ -27,7 +27,7 @@
 
 ## 下载和安装
 
-1. 在 k8s 集群控制平面节点（Controller Node）下载社区版的对应离线包并解压，或者从[下载中心](../../../download/dce5.md)下载离线包并解压。
+1. 在 k8s 集群控制平面节点（Controller Node）下载社区版的对应离线包并解压，或者从[下载中心](../../../download/index.md)下载离线包并解压。
 
     假定版本 VERSION=0.9.0
 

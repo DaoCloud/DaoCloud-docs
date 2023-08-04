@@ -1,6 +1,6 @@
 # Offline upgrade global management module
 
-This page explains how to install or upgrade the global management module after downloading it from [Download Center](../../download/dce5.md).
+This page explains how to install or upgrade the global management module after downloading it from [Download Center](../../download/index.md).
 
 !!! info
 

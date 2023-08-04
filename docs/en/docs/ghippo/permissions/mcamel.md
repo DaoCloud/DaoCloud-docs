@@ -1,6 +1,6 @@
 # Middleware data service permission description
 
-[Middleware Data Service](../../middleware/what.md) includes six middleware: MySQL, RabbitMQ, Elasticsearch, Kafka, Redis, MinIO. Middleware Data Services supports three user roles:
+[Middleware Data Service](../../middleware/index.md) includes six middleware: MySQL, RabbitMQ, Elasticsearch, Kafka, Redis, MinIO. Middleware Data Services supports three user roles:
 
 - Workspace Admin
 - Workspace Editor

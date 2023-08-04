@@ -50,6 +50,6 @@ See [Microservice Traffic Governance](../mspider/user-guide/traffic-governance/R
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/traffic-governance.mp4" preload="metadata" poster="../images/skoala-mesh.png"></video>
 </div>
 
-[Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [Free Trial](../dce/license0.md){ .md-button .md-button--primary }

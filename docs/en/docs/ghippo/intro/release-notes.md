@@ -380,4 +380,4 @@ Release date: 2022-5-23
 - Added overall bilingual document station structure and main content
 - Completion of ROADMAP content
 - merge document ROADMAP content into overall ROADMAP file
-- Documentation site updated [What is Ghippo](what.md)
+- Documentation site updated [What is Ghippo](index.md)

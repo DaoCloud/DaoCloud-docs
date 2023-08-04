@@ -14,7 +14,7 @@ This page describes how to configure Pod vertical scaling for a workload.
 
 Before configuring a vertical scaling policy for a workload, the following prerequisites must be met:
 
-- In the [Container Management](../../intro/what.md) module [Access Kubernetes Cluster](../clusters/integrate-cluster.md) or [Create Kubernetes Cluster](../clusters/create-cluster.md), and can access the cluster UI interface.
+- In the [Container Management](../../intro/index.md) module [Access Kubernetes Cluster](../clusters/integrate-cluster.md) or [Create Kubernetes Cluster](../clusters/create-cluster.md), and can access the cluster UI interface.
 
 - Create a [namespace](../namespaces/createns.md), [user](../../../ghippo/user-guide/access-control/user.md), [stateless work Workloads](../workloads/create-deployment.md) or [Stateful Workloads](../workloads/create-statefulset.md).
 

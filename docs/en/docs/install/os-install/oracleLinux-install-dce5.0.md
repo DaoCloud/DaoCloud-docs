@@ -35,7 +35,7 @@ This page will introduce how to deploy DCE 5.0 on Oracle Linux R9 U1 operating s
     curl -LO https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.5.4/os-pkgs-oracle9-v0.5.4.tar.gz
     ```
 
-4. Download the addon offline package, which can be downloaded from the [download center](../../download/dce5.md) for the latest version (optional).
+4. Download the addon offline package, which can be downloaded from the [download center](../../download/index.md) for the latest version (optional).
 
 5. Set up the [clusterConfig.yaml](../commercial/cluster-config.md), which can be obtained under the offline package `offline/sample` and modified as needed.
     

@@ -1,8 +1,8 @@
 # 基于 Hwameistor 的 Elasticsearch 迁移实践
 
-由于 Kubernetes 自身的特性，有状态应用部署完成后是否可以迁移取决于底层 `CSI` 的能力。<!--使用 [Hwameistor](../../../storage/what.md) 作为`CSI` 时，不支持跨节点迁移应用。-->然而当集群出现资源不均等意外情况时，需要跨节点迁移相关的有状态应用。
+由于 Kubernetes 自身的特性，有状态应用部署完成后是否可以迁移取决于底层 `CSI` 的能力。<!--使用 [Hwameistor](../../../storage/index.md) 作为`CSI` 时，不支持跨节点迁移应用。-->然而当集群出现资源不均等意外情况时，需要跨节点迁移相关的有状态应用。
 
-本文以 `Elasticsearch` 为例，参考 [Hwameistor](../../../storage/what.md) 官方提供的迁移指南，演示使用 `Hwameistor` 时如何跨节点迁移数据服务中间件。
+本文以 `Elasticsearch` 为例，参考 [Hwameistor](../../../storage/index.md) 官方提供的迁移指南，演示使用 `Hwameistor` 时如何跨节点迁移数据服务中间件。
 
 ## 演示环境
 

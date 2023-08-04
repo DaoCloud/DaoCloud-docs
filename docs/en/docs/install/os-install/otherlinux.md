@@ -123,7 +123,7 @@ Remarks: If there is no verified operating system, you can try to deploy it thro
 
 3. Refer to the previous step `Making the offline package of the operating system`.
 
-4. Download the addon offline package, you can download the latest version in [Download Center](../../download/dce5.md) (optional)
+4. Download the addon offline package, you can download the latest version in [Download Center](../../download/index.md) (optional)
 
 5. Set [clusterConfig.yaml](../commercial/cluster-config.md), which can be obtained under the offline package `offline/sample` and modified as needed.
 

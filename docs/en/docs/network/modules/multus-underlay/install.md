@@ -169,7 +169,7 @@ Make sure your cluster is successfully connected to the `container management` p
         ```
 
         `ipam.spidernet.io/ippool`: specifies from which IP pool the IP address is assigned to the MacVLAN NIC.
-        If not specified, it will be assigned from the default pool. For more Spiderpool instructions, please refer to [Spiderpool](../spiderpool/what.md).
+        If not specified, it will be assigned from the default pool. For more Spiderpool instructions, please refer to [Spiderpool](../spiderpool/index.md).
 
         `k8s.v1.cni.cncf.io/networks`: assigns another MacVLAN network card (net1) to the Pod by specifying the MacVLAN Multus CRD.
 

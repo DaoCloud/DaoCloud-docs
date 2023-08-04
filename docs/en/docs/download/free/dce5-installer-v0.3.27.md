@@ -46,5 +46,5 @@ DCE 5.0 Community Package includes the following modules by default:
 
 ## More
 
-- [Online Documentation](../../dce/what.md)
+- [Online Documentation](../../dce/index.md)
 - [Report a bug](https://github.com/DaoCloud/DaoCloud-docs/issues)

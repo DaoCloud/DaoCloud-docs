@@ -36,7 +36,7 @@ offline-v0.3.28.tar: OK
 tar -zxvf offline-v0.3.28.tar
 ```
 
-然后参阅[安装 DCE 5.0 商业版](../../install/intro.md#_3)进行安装。
+然后参阅[安装 DCE 5.0 商业版](../../install/index.md#_3)进行安装。
 如果是初次安装，请联系我们授权：电邮 info@daocloud.io 或致电 400 002 6898。
 如果有任何许可密钥相关的问题，请联系 DaoCloud 交付团队。
 
@@ -65,5 +65,5 @@ DCE 5.0 商业版包含以下模块，按需即插即用满足各类应用场景
 
 ## 更多
 
-- [在线文档](../../dce/what.md)
+- [在线文档](../../dce/index.md)
 - [报告 bug](https://github.com/DaoCloud/DaoCloud-docs/issues)

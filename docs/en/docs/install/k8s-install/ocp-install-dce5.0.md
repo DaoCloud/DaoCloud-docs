@@ -13,7 +13,7 @@ This page describes how to install DCE 5.0 on OCP.
 
 1. Log in to the Control plane node through the bastion host.
 
-2. Download the full mode offline package, you can download the latest version in [Download Center](../../download/dce5.md).
+2. Download the full mode offline package, you can download the latest version in [Download Center](../../download/index.md).
 
      | CPU Architecture | Version | Download URL |
      | -------- | ------ | ------------------------------ -------------------------------------------------- -------------- |

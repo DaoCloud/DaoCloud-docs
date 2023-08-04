@@ -131,8 +131,8 @@ The Multicloud Management module supports Kubernetes-native workload type deploy
 
      A: Users with Global Admin and Kairship Owner roles can create multicloud clusters.
 
-[Learn about Multicloud Management](../kairship/intro/what.md){ .md-button }
+[Learn about Multicloud Management](../kairship/intro/index.md){ .md-button }
 
-[Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [Free Trial](../dce/license0.md){ .md-button .md-button--primary }

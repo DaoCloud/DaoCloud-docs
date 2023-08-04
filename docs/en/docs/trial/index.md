@@ -104,6 +104,6 @@ If you have limited network access, you can choose to perform an offline install
 
 <p style="font-size: 20px; color: green;">Learn more about DaoCloud Enterprise Community Edition</p>
 
-[What is Container Management](../kpanda/intro/what.md){ .md-button .md-button--primary }
-[What is Global Management](../ghippo/intro/what.md){ .md-button .md-button--primary }
-[What is Observability](../insight/intro/what.md){ .md-button .md-button--primary }
+[What is Container Management](../kpanda/intro/index.md){ .md-button .md-button--primary }
+[What is Global Management](../ghippo/intro/index.md){ .md-button .md-button--primary }
+[What is Observability](../insight/intro/index.md){ .md-button .md-button--primary }

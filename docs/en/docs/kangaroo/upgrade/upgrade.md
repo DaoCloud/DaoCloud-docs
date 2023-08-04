@@ -1,6 +1,6 @@
 # Offline Upgrade Image Repository Module
 
-This page explains how to install or upgrade the image repository module after downloading it from the [Download Center](../../download/dce5.md).
+This page explains how to install or upgrade the image repository module after downloading it from the [Download Center](../../download/index.md).
 
 !!! info
 

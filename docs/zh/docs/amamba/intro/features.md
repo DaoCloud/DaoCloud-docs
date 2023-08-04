@@ -11,7 +11,7 @@ hide:
 
     - 支持云原生场景下的“多形态”的云原生应用，包括 Kubernetes 原生应用、Helm 应用、OAM 应用等。
     - 提供云原生应用的全生命周期管理，例如应用的扩缩容、日志、监控查看、更新应用等。
-    - 支持接入 SpingCloud、Dubbo、ServiceMesh 框架的微服务应用，实现微服务的治理，与 DCE 5.0 的[微服务引擎](../../skoala/intro/what.md)、[服务网格](../../mspider/intro/what.md)无缝集成。
+    - 支持接入 SpingCloud、Dubbo、ServiceMesh 框架的微服务应用，实现微服务的治理，与 DCE 5.0 的[微服务引擎](../../skoala/intro/index.md)、[服务网格](../../mspider/intro/index.md)无缝集成。
 
 - 流水线编排
 

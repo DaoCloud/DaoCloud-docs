@@ -5,7 +5,7 @@ hide:
 
 # Workbench permission description
 
-[Workbench](../../amamba/intro/what.md) supports three user roles:
+[Workbench](../../amamba/intro/index.md) supports three user roles:
 
 - Workspace Admin
 - Workspace Editor

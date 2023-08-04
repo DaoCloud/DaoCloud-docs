@@ -1,6 +1,6 @@
 # Offline upgrade observability module
 
-This page explains how to install or upgrade the observability module after downloading it from [Download Center](../../../download/dce5.md).
+This page explains how to install or upgrade the observability module after downloading it from [Download Center](../../../download/index.md).
 
 !!! info
 

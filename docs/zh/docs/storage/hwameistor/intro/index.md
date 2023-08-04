@@ -29,6 +29,6 @@ HwameiStor 是一款 Kubernetes 原生的容器附加存储 (CAS) 解决方案�
     可以根据集群规模大小进行动态的扩容，灵活满足应用的数据持久化需求。
 
 [HwameiStor 发行版本](https://github.com/hwameistor/hwameistor/releases){ .md-button .md-button--primary }
-[下载 DCE 5.0](../../../download/dce5.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../../../install/intro.md){ .md-button .md-button--primary }
+[下载 DCE 5.0](../../../download/index.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../../../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](../../../dce/license0.md){ .md-button .md-button--primary }

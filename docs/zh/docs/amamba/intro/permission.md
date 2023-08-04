@@ -5,7 +5,7 @@ hide:
 
 # 应用工作台权限说明
 
-[应用工作台](./what.md)支持三种用户角色：
+[应用工作台](index.md)支持三种用户角色：
 
 - Workspace Admin
 - Workspace Editor

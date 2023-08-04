@@ -2,7 +2,7 @@
 
 DaoCloud Enterprise 5.0 has two versions: Community Package and Enterprise Package.
 
-Currently, only offline installation packages are provided in the download center. For online installation methods, please refer to [Online Installation](../install/intro.md).
+Currently, only offline installation packages are provided in the download center. For online installation methods, please refer to [Online Installation](../install/index.md).
 
 ## Download Community Package
 
@@ -57,5 +57,5 @@ The numerous modules included in DCE 5.0 can be downloaded separately to upgrade
 
     ![WeCom Group for Community Package](https://docs.daocloud.io/daocloud-docs-images/docs/images/assist.png)
 
-[Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [Free Trial](../dce/license0.md){ .md-button .md-button--primary }

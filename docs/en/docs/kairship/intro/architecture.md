@@ -6,7 +6,7 @@ Multicloud Management (internal code "kairship") has two core components: `kairs
 
 This is the entrance of data and all APIs. `protobuf` takes priority. All APIs are defined through `proto`, and the corresponding front-end and back-end codes are generated from this. `grpw-gateway` is used to support both HTTP Restful and GRPC.
 
-When `kairship apiserver` starts, it will get the current user's role and permissions from [Global Management](../../ghippo/intro/what.md) module for authentication.
+When `kairship apiserver` starts, it will get the current user's role and permissions from [Global Management](../../ghippo/intro/index.md) module for authentication.
 
 !!! note
 
@@ -38,13 +38,13 @@ Specifically, there are five controllers:
 
 - instance registry controller
 
-    Register the `Karmada` instances into [Global Management](../../ghippo/intro/what.md) module through custom resources, so as to bind the permission system of Karmada and DCE 5.0.
+    Register the `Karmada` instances into [Global Management](../../ghippo/intro/index.md) module through custom resources, so as to bind the permission system of Karmada and DCE 5.0.
 
     After the binding, these permission mapping relationships will be synced to the Multicloud Management module.
 
 - Ghippo webhook controller
 
-    Bind the roles and permissions with Karmada instances in the [Global Management](../../ghippo/intro/what.md) module, notify the Multicloud Management module through SDKs for authentication.
+    Bind the roles and permissions with Karmada instances in the [Global Management](../../ghippo/intro/index.md) module, notify the Multicloud Management module through SDKs for authentication.
 
 ## Data Flow Diagram
 

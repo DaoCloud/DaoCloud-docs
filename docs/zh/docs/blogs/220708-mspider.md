@@ -118,8 +118,8 @@ DaoCloud 服务网格是一种具备高性能、高易用性的全托管服务�
 6. 针对命名空间、服务的安全治理功能，并提供表单和YAML两种创建、编辑形式，用户可以配合流量治理实现网格内零信任环境和访问授权功能；
 7. 对网格内服务通信的流量拓扑查看功能和状态图表查看功能；流量拓扑会为用户提供各类网格内节点间通信状态、使用协议、性能参数等各项信息展示，用户可以通过搜索筛选功能迅速定位问题；状态图表可以从全局、服务、工作负载等多个纬度为用户提供系统内各状态信息；
 
-[了解服务网格](../mspider/intro/what.md){ .md-button }
+[了解服务网格](../mspider/intro/index.md){ .md-button }
 
-[下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

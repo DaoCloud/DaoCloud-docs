@@ -6,10 +6,51 @@ The Community package includes Container Management, Global Management, and Insi
 
 The Enterprise package can be purchased on demand with advanced modules such as Service Mesh, Microservice Engine, MultiCloud Management, Data Middleware, Image Repository, etc. in addtion to those modules contained in the Community package. It has more comprehensive features and can better meet the needs of production environments.
 
-| Package         | Included Modules                                                                                                                                                                | Description                                                                                                                                                                                                         |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Community package | [Global Management](../ghippo/intro/what.md)<br />[Container Management](../kpanda/intro/what.md)<br />[Observability](../insight/intro/what.md)                                      | [Free License](../dce/license0.md), these three modules will continue to be updated and the offline package for each module can be [downloaded here](../download/dce5.md).                                   |
-| Enterprise package | [Global Management](../ghippo/intro/what.md)<br />[Container Management](../kpanda/intro/what.md)<br />[Observability](../insight/intro/what.md)<br />[Application Workplace](../amamba/intro/what.md)<br />[MultiCloud Management](../kairship/intro/what.md)<br />[Microservice Engine](../skoala/intro/what.md)<br />[Service Mesh](../mspider/intro/what.md)<br />[Selected Middleware](../middleware/what.md)<br />[Image Repository](../kangaroo/what.md) | For licensing, please contact us by email at info@daocloud.io or call 400 002 6898. Each module can be freely combined as needed and the offline package for each module can be [downloaded here](../download/dce5.md). |
+<table>
+  <thead>
+    <tr>
+      <th>Version</th>
+      <th>Included Modules</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Community Package</td>
+      <td>
+        <ul>
+          <li><a href="../ghippo/intro/index.md">Global Management</a></li>
+          <li><a href="../kpanda/intro/index.md">Container Management</a></li>
+          <li><a href="../insight/intro/index.md">Observability</a></li>
+        </ul>
+      </td>
+      <td>
+        <a href="../dce/license0.md">Perpetual Free License</a>, 3 modules will be continuously updated and can be downloaded as offline packages
+        <a href="../download/index.md">here</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Enterprise Package</td>
+      <td>
+        <ul>
+          <li><a href="../ghippo/intro/index.md">Global Management</a></li>
+          <li><a href="../kpanda/intro/index.md">Container Management</a></li>
+          <li><a href="../insight/intro/index.md">Observability</a></li>
+          <li><a href="../amamba/intro/index.md">Application Workbench</a></li>
+          <li><a href="../kairship/intro/index.md">Multi-Cloud Orchestration</a></li>
+          <li><a href="../skoala/intro/index.md">Microservice Engine</a></li>
+          <li><a href="../mspider/intro/index.md">Service Mesh</a></li>
+          <li><a href="../middleware/index.md">Selected Middleware</a></li>
+          <li><a href="../kangaroo/index.md">Image Repository</a></li>
+        </ul>
+      </td>
+      <td>
+        Contact us for licensing: email info@daocloud.io or call 400 002 6898. Modular flexibility available for each module, and offline packages can be downloaded
+        <a href="../download/index.md">here</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## Install Community Package
 
@@ -58,9 +99,9 @@ click kind "https://docs.daocloud.io/en/install/community/kind/online/"
 click s1 "https://docs.daocloud.io/en/install/community/k8s/online/"
 click s2 "https://docs.daocloud.io/en/install/community/k8s/offline/"
 
-click kpanda "https://docs.daocloud.io/en/kpanda/intro/what/"
-click ghippo "https://docs.daocloud.io/en/ghippo/intro/what/"
-click insight "https://docs.daocloud.io/en/insight/intro/what/"
+click kpanda "https://docs.daocloud.io/en/kpanda/intro/"
+click ghippo "https://docs.daocloud.io/en/ghippo/intro/"
+click insight "https://docs.daocloud.io/en/insight/intro/"
 click free "https://docs.daocloud.io/en/dce/license0/"
 click ask "https://docs.daocloud.io/en/install/intro/#contact-us"
 ```
@@ -111,5 +152,5 @@ DaoCloud Enterprise 5.0 is still in the early stage of release, and the installa
 
      ![Community Package Exchange Group](https://docs.daocloud.io/daocloud-docs-images/docs/images/assist.png)
 
-[Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
+[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
 [Free Try](../dce/license0.md){ .md-button .md-button--primary }

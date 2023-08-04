@@ -90,7 +90,7 @@ It is recommended to set the database configuration as the following:
 
 #### If `insight-agent` is installed
 
-DME relies on the capabilities of the [DCE 5.0 Observability](../../insight/intro/what.md) module to provide microservice monitoring. If you want to monitor metrics and trace links, you should install `insight-agent` in the cluster. For details, see [](../../insight/quickstart/install-agent.md).
+DME relies on the capabilities of the [DCE 5.0 Observability](../../insight/intro/index.md) module to provide microservice monitoring. If you want to monitor metrics and trace links, you should install `insight-agent` in the cluster. For details, see [](../../insight/quickstart/install-agent.md).
 
 ![images](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/install02.png)
 

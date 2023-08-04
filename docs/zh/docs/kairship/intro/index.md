@@ -30,5 +30,5 @@ hide:
 
 [演示视频：如何将单云应用一键转换为多云应用](../../videos/use-cases.md#_2)
 
-[下载 DCE 5.0](../../download/dce5.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../../install/intro.md){ .md-button .md-button--primary }
+[下载 DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../../install/index.md){ .md-button .md-button--primary }

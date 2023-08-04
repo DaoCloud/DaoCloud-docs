@@ -6,7 +6,7 @@ We have crafted the following video tutorials for container management, any kind
 
 ## HwameiStor Storage
 
-See [HwameiStor introduction](../storage/hwameistor/intro/what.md) documentation page or you can check [this video on YouTube](https://youtu.be/6D1vgj86hHY).
+See [HwameiStor introduction](../storage/hwameistor/intro/index.md) documentation page or you can check [this video on YouTube](https://youtu.be/6D1vgj86hHY).
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/hwa.mp4" preload="metadata" poster="../images/hwacover.png"></video>

@@ -35,7 +35,7 @@
     curl -LO https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.6.6/os-pkgs-tencent31-v0.6.6.tar.gz
     ```
 
-4. 下载 addon 离线包，可以在[下载中心](../../download/dce5.md)下载最新版本（可选）
+4. 下载 addon 离线包，可以在[下载中心](../../download/index.md)下载最新版本（可选）
 
 5. 设置[集群配置文件 clusterConfig.yaml](../commercial/cluster-config.md)，可以在离线包 `offline/sample` 下获取该文件并按需修改。
     参考配置为：

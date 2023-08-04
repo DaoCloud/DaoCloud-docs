@@ -1,6 +1,6 @@
 # 工作负载反亲和性
 
-创建[Elasticsearch 搜索服务](../elasticsearch/intro/what.md)、[Kafka 消息队列](../kafka/intro/what.md)、[MinIO 对象存储](../minio/intro/what.md)、[MySQL 数据库](../mysql/intro/what.md)、[RabbitMQ 消息队列](../rabbitmq/intro/what.md)、[PostgreSQL 数据库](../postgresql/intro/what.md)、[Redis 缓存服务](../redis/intro/what.md)或 [MongoDB 数据库](../mongodb/intro/what.md)实例时，可以在服务设置页面配置工作负载反亲和性。
+创建[Elasticsearch 搜索服务](../elasticsearch/intro/index.md)、[Kafka 消息队列](../kafka/intro/index.md)、[MinIO 对象存储](../minio/intro/index.md)、[MySQL 数据](../mysql/intro/index.md)、[RabbitMQ 消息](../rabbitmq/intro/index.md)、[PostgreSQL 数据库](../postgresql/intro/index.md)、[Redis 数据库](../redis/intro/index.md)、[MongoDB 数据库](../mongodb/intro/index.md)实例时，可以在服务设置页面配置工作负载反亲和性。
 
 工作负载反亲和性的作用原理是，在一定的拓扑域（作用域）范围内，如果检测到已经有工作负载带有反亲和性配置中添加的某个标签，则不会将新建的工作负载部署到该拓扑域。这样做的好处是：
 
@@ -44,7 +44,7 @@
 
 ## 效果验证
 
-配置好工作负载反亲和性并且实例创建成功后，进入[容器管理](../../kpanda/intro/what.md)模块查看 `Pod` 调度信息。
+配置好工作负载反亲和性并且实例创建成功后，进入[容器管理](../../kpanda/intro/index.md)模块查看 `Pod` 调度信息。
 
 ![查看 Pod](images/anti-affinity04.jpg)
 

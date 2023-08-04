@@ -30,7 +30,7 @@ After successfully verifying the offline package, unpack the tarball:
 tar -zxvf offline-community-v0.3.28.tar
 ```
 
-Then refer to [Community Package Installation Process](../../install/intro.md#_2) to install.
+Then refer to [Community Package Installation Process](../../install/index.md#_2) to install.
 If you are installing for the first time or have forgotten your license key, please [apply for a free community experience](../../dce/license0.md).
 
 ## Modules
@@ -45,5 +45,5 @@ DCE 5.0 Community Package includes the following modules by default:
 
 ## More
 
-- [Online Documentation](../../dce/what.md)
+- [Online Documentation](../../dce/index.md)
 - [Report a bug](https://github.com/DaoCloud/DaoCloud-docs/issues)

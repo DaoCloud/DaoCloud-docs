@@ -113,6 +113,6 @@ DCE 社区版以云原生底座为核心，自研开源组件加持，提供云�
 
 <p style="font-size: 20px; color: green;">进一步了解 DaoCloud Enterprise 社区版</p>
 
-[什么是容器管理](../kpanda/intro/what.md){ .md-button .md-button--primary }
-[什么是全局管理](../ghippo/intro/what.md){ .md-button .md-button--primary }
-[什么是可观测性](../insight/intro/what.md){ .md-button .md-button--primary }
+[什么是容器管理](../kpanda/intro/index.md){ .md-button .md-button--primary }
+[什么是全局管理](../ghippo/intro/index.md){ .md-button .md-button--primary }
+[什么是可观测性](../insight/intro/index.md){ .md-button .md-button--primary }

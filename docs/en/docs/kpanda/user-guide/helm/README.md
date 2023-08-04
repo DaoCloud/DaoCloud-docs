@@ -5,7 +5,7 @@ hide:
 
 # Helm charts
 
-Helm is a package management tool for Kubernetes, which makes it easy for users to quickly discover, share and use applications built with Kubernetes. The fifth generation [Container Management Module](../../intro/what.md) provides hundreds of Helm charts, covering storage, network, monitoring, database and other main cases. With these templates, you can quickly deploy and easily manage Helm applications through the UI interface. In addition, it supports adding more personalized templates through [Add Helm repository](helm-repo.md) to meet various needs.
+Helm is a package management tool for Kubernetes, which makes it easy for users to quickly discover, share and use applications built with Kubernetes. The fifth generation [Container Management Module](../../intro/index.md) provides hundreds of Helm charts, covering storage, network, monitoring, database and other main cases. With these templates, you can quickly deploy and easily manage Helm applications through the UI interface. In addition, it supports adding more personalized templates through [Add Helm repository](helm-repo.md) to meet various needs.
 
 
 

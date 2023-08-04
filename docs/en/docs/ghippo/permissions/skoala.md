@@ -1,6 +1,6 @@
 # Description of Microservice Engine Permissions
 
-[Microservice engine](../../skoala/intro/what.md) includes two parts: microservice management center and microservice gateway. The microservice engine supports three user roles:
+[Microservice engine](../../skoala/intro/index.md) includes two parts: microservice management center and microservice gateway. The microservice engine supports three user roles:
 
 - Workspace Admin
 - Workspace Editor

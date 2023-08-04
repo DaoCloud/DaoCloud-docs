@@ -173,6 +173,6 @@
 [Clusterpedia](./clusterpedia.md), [HwameiStor](./hwameistor.md) and [Merbridge](./merbridge.md) have been listed in <a href="https://www.cncf.io/projects/clusterpedia/">CNCF Sandbox</a>.
 </p>
 
-[Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [Free Trial](../dce/license0.md){ .md-button .md-button--primary }

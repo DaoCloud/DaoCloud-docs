@@ -53,6 +53,6 @@
 
 | output plugin            | 插件介绍                               |
 | ------------------------ | ---------------------------------- |
-| es.kube.kubeevent.syslog | 把 Kubernetes 审计日志、事件日志，syslog 日志写入 [ElasticSearch 集群](../../middleware/elasticsearch/intro/what.md) |
+| es.kube.kubeevent.syslog | 把 Kubernetes 审计日志、事件日志，syslog 日志写入 [ElasticSearch 集群](../../middleware/elasticsearch/intro/index.md) |
 | forward.audit_log | 把 Kubernetes 审计日志和[全局管理的审计日志](../../ghippo/user-guide/audit/audit-log.md)发送到`全局管理`   |
 | es.skoala | 把微服务网关的[请求日志](../../skoala/gateway/logs/reqlog.md)和[实例日志](../../skoala/gateway/logs/inslog.md)写入到 ElasticSearch 集群            |

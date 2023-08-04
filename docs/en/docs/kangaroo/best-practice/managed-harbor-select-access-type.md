@@ -57,13 +57,13 @@ The table below explains the advantages and disadvantages of these two access ty
 
 - The cluster must have an Ingress component installed, such as Nginx, Traefik, HAProxy, etc.
   For specific installation methods, please refer to the
-  [Ingress](../../network/modules/ingress-nginx/what.md) documentation.
+  [Ingress](../../network/modules/ingress-nginx/index.md) documentation.
 - The cluster must have a DNS service installed, such as CoreDNS, KubeDNS, Bind, etc.
   For specific installation methods, please refer to the
   [DNS](https://kubernetes.io/zh-cn/docs/concepts/services-networking/dns-pod-service/) documentation.
 - The cluster must have a LoadBalancer component installed, such as MetalLB, F5, Nginx, etc.
   For specific installation methods, please refer to the
-  [LoadBalancer](../../network/modules/metallb/what.md) documentation.
+  [LoadBalancer](../../network/modules/metallb/index.md) documentation.
 
 **Ingress Flow**
 

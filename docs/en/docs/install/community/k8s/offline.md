@@ -23,7 +23,7 @@ Click [Online Install Community Package](../../../videos/install.md) to watch a 
 
 ## Download and install
 
-1. Download and decompress the offline package of DCE 5.0 Community on the controller node of your kubernetes cluster, or download and decompress the offline package from [Download Center](../../../download/dce5.md).
+1. Download and decompress the offline package of DCE 5.0 Community on the controller node of your kubernetes cluster, or download and decompress the offline package from [Download Center](../../../download/index.md).
 
     Take VERSION=0.9.0 as an example
 

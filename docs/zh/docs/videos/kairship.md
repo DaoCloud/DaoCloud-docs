@@ -17,7 +17,7 @@
 
 ## 多云模块介绍
 
-参阅[多云介绍](../kairship/intro/what.md)文档页面。
+参阅[多云介绍](../kairship/intro/index.md)文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/multicloud-intro.mp4" preload="metadata" poster="../images/kairship-intro.png"></video>
