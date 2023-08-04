@@ -44,6 +44,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Local clustering reduces the risk of application downtime due to network outages in the cloud. During this time, the application remains available and cluster operations can be performed. EKS manages the availability of the K8s control plane on Outposts when connected to the cloud. The Kubernetes running on the local cluster has the same features as the EKS on the cloud, and supports automatic deployment of the latest security patches.
 
+- [Azure Launches Container Application Gateway Preview](https://azure.microsoft.com/en-us/updates/public-preview-application-gateway-for-containers/)
+
+    Azure Container Application Gateway is an application load balancing and dynamic traffic management product for workloads running in Kubernetes clusters. It is an enhanced version of the Azure Application Gateway Ingress Controller (AGIC), with enhancements that include: near real-time convergence times when reflecting Kubernetes YAML configuration changes; support for more than 1,400 backend Pods and 100 listens; and support for blue-green deployment policies and active/active or active/passive routing.
+
 - [Azure Releases Network Observability Add-On for AKS](https://azure.microsoft.com/en-us/blog/enhance-kubernetes-troubleshooting-with-network-observability- add-on-in-aks/)
 
      The Network Observability Add-on for AKS is a distributed monitoring solution for Linux and Windows host environments. This component provides insight into the network infrastructure by collecting real-time data, leveraging Linux's eBPF, the Virtual Filtering Platform, and host network services in Windows, and making this data available to Prometheus and Grafana.
@@ -99,6 +103,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Azure Releases AKS Fleet Manager (Public Preview)](https://mp.weixin.qq.com/s/YVUuFQLKe8DGADenZCKsyw)
 
     Azure Kubernetes Fleet Manager treats multiple cluster sites as a single cluster to be managed. Users can manage multiple clusters by creating a Fleet resource. Users can treat existing AKS clusters as member clusters, join them to the fleet, and then orchestrate multiple cluster Cases such as Kubernetes resource propagation and multicluster load balancing using metadata from those clusters.
+
+- [AliCloud Container Service Serverless Edition (ACK Serverless) 2.0 released](https://mp.weixin.qq.com/s/d7hl_X95JNg5I36GTyu7Lg)
+
+    Updates: Fully managed for 10+ K8s core system components; supports dynamic capacity planning; supports automated upgrade of K8s version, including customized operation and maintenance window and upgrade frequency policy as well as intelligent risk detection, etc.; supports intelligent elastic prediction of AHPA upgrades; adds new solution for big data computing, based on multi-availability polling of Spot ECI, and failure of seizure is downgraded to per-volume instances, which reduces total resource cost by more than 20%. This reduces total resource costs by more than 20%.
 
 - [AliCloud Microservice Engine MSE June Product Update](https://mp.weixin.qq.com/s/WEFBZcKlzSM5r_gJ0If_Ag)
 
@@ -572,6 +580,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 ### R
 
+- [Rafay Kubernetes Ops Platform supports automated management of Fleet, simplifying the management of multiple Kubernetes clusters](https://rafay.co/press-release/rafay-introduces-automated-fleet-operations-to-efficiently-manage-multi-cluster-environments-across-datacenters-public-cloud-and-the-edge/)
+
+    The Automated Management Fleet feature simplifies the management of large-scale Kubernetes clusters across datacenter, public cloud, and edge environments. This includes: automating common Fleet management operations such as upgrading clusters, updating applications, scaling nodes, etc.; building end-to-end automation and custom workflows; automating standardized policies and governance for clusters in the background to reduce management overhead; initiating Fleet-wide operations with existing tools such as Terraform and reflecting updates to Fleet configurations in GitOps repositories through system synchronization. Fleet configuration updates.
+
 - [Rafay Systems Launches Environment Manager to Optimize Kubernetes Developer Experience](https://rafay.co/press-release/rafay-introduces-environment-manager-to- automate-environment-provisioning-and-accelerate-modern-application-deployment-from-code-to-cloud/)
 
     Environment Manager improves the developer experience by providing self-service capabilities for full-stack environments. Developers are able to configure modern application stacks from an environment blueprint that is planned, tested, and continuously managed by the platform team. By integrating with Rafay's Kubernetes Operations Platform, Environment Manager abstracts the complexity of the underlying infrastructure and reduces the time required to configure and access Kubernetes' environments.
@@ -818,6 +830,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Volcano Engine Releases Distributed Cloud Native Platform DCP](https://mp.weixin.qq.com/s/Fz7R8R0keKFEryq8zQKFoA)
 
     [DCP](https://www.volcengine.com/product/dcp) is an enterprise-level cloud native unified management platform for multicloud and multi-Kubernetes cluster use cases, providing unified management and operation and maintenance of multicloud clusters, cross-cluster distribution of applications, unified traffic control and other capabilities, DCP provides unified management and operation and maintenance of Volcano Engine container clusters, third-party clusters and self-built clusters; provides cross-cluster and cross-cloud elastic scheduling capability based on cluster federation and other technologies; provides multicluster service discovery, multicluster unified portal access and other capabilities; enables application data recovery and cross-cluster/cloud application migration based on backup data.
+
+- [VMware Carbon Black XDR, VMware's threat detection and response product, adds support for cloud-native applications](https://news.vmware.com/releases/carbon-black-cndr)
+
+    VMware Carbon Black's Cloud Native Detection and Response capabilities enable users to utilize enhanced threat detection capabilities for containers and Kubernetes within a unified platform. This includes: monitoring processes running in containers and Kubernetes environments; obtaining historical data on any anomalies detected in pre-existing containers; and forensic classification of alerts to analyze which container or Kubernetes node the event originated from.
 
 - [VMware Launches Tanzu Mission Control Self-Managed Version of Kubernetes Resource Unified Management Product for Multi-Hybrid Cloud Environments](https://mp.weixin.qq.com/s/_Nsc94wsxOBR7rRE9LoAmQ)
 

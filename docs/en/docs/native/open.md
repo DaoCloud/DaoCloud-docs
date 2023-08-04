@@ -349,6 +349,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: send SDS resources of multiple clusters or listeners in one SDS request, obtain filter configuration through the configuration name of HTTP filter, update listener filter statistics, dns_resolver adds support for multiple addresses, Add dynamic listener filter configuration for listener filters, etc.
 
+- [Envoy Gateway API Gateway v0.5 released](https://gateway.envoyproxy.io/v0.5.0/releases/v0.5.html)
+
+    Release features: add data plane proxy telemetry, support direct configuration of xDS, support different rate limiting based on IP address, support configuration of EnvoyProxy Pod labels, support configuration of EnvoyProxy deployment policy settings, volume and volume mounts, support configuration of EnvoyProxy as a NodePort type service, add Pprof debugging support.
+
 - [Envoy Gateway Envoy-based Gateway v0.4 Released](https://gateway.envoyproxy.io/v0.4.0/releases/v0.4.html)
 
     Release features: support for installing Envoy Gateway via Helm; new initial framework for extending Envoy Gateway; support for IP-based subnet rate limiting; support for custom Envoy proxy boot configuration, Envoy proxy image and service configuration annotations, resource and security context settings, etc.; support for EDS (Endpoint Discovery Service).
@@ -564,6 +568,10 @@ This page lists activity in cloud native open source projects in alphabetical or
      These include: a new configuration file specification that defines a multi-vendor platform for lightweight Java applications and microservices; a subset of the specification for smaller runtimes suitable for microservice development, including the New CDI-Lite specification; supports polymorphic types; standardizes UUID as a primitive type and extends the query language and query API.
 
 ### K
+
+- [k0smotron: Mirantis open source Kubernetes control plane project k0smotron](https://www.mirantis.com/blog/introducing-k0smotron)
+
+    [k0smotron](https://github.com/k0sproject/k0smotron) Essentially a set of Kubernetes controllers that enable you to run and manage multiple Kubernetes cluster control planes as pods in a single Kubernetes cluster. Enables true control plane and work plane separation, where the control plane running on an existing cluster has no direct network connection to the work plane. In addition, there is support for connecting worker nodes from any infrastructure to the cluster control plane.
 
 - [k8gb Kubernetes Global Load Balancer v0.10.0 release (CNCF project)](https://github.com/k8gb-io/k8gb/releases/tag/v0.10.0)
 
@@ -1194,6 +1202,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: support for GitLab Runner, new commands for creating copies of existing pods, new commands for synchronizing state changes between the database and any volume plugins, new exit policies for pods, and automatic cleanup of unused pods Caches Podman virtual machine images, allowing multiple overlay volumes of different containers to reuse the same workdir or upperdir.
 
+- [Prometheus v2.46.0 released (CNCF project)](https://github.com/prometheus/prometheus/releases/tag/v2.46.0)
+
+    Release features: added PromQL format and label matcher set/delete commands, push metrics command, added more labels to Endpointslice and Endpoints Role for K8s service discovery, won't add Pods to a target group if PodIP's status isn't set, support for validating metrics names and labels in the Remote Write Handler, support for storing the native histograms stored in snapshots.
+
 - [Prometheus v2.45.0 Released (CNCF Project)](https://github.com/prometheus/prometheus/releases/tag/v2.45.0)
 
     Update: Support limit the number of returns per TSDB statistic, add limit in global configuration, support ingesting both classic histogram and native histogram, native histogram support limit the size of storage bucket.
@@ -1318,6 +1330,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: support data collected by 1 billion devices, 100 nodes; support separation of storage and computing, introduce computing nodes, and restructure the entire computing engine; optimize support for message queues, streaming computing, and caching, introduce event-driven stream computing; support container and Kubernetes deployment.
 
+- [Tekton Cloud Native CI/CD Framework v0.50.0 released](https://github.com/tektoncd/pipeline/releases/tag/v0.50.0)
+
+    Release Features: Upgraded CSI and scheduled volume workspace functionality to stable, upgraded standalone workspace functionality to beta, support for restoring PVC creation, added event configuration mapping, introduced coschedule switch, support for automatically deleting PVCs created by their volume declaration templates after a PipelineRun completes.
+
 - [Tekton Cloud-native CI/CD framework v0.43.0 released](https://github.com/tektoncd/pipeline/releases/tag/v0.43.0)
 
      The main new features in this release: support for parsing sidecar logs to extract results into task-running CRD, enable custom tasks in pipeline by default, add support for PipelineRun regulator, allow users to configure public keys for trusted resources, PodTemplate can be used to update global environment variables.
@@ -1356,6 +1372,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [ThreatMapper Cloud Native Security Observation Platform v1.4.0 release](https://github.com/deepfence/ThreatMapper/releases/tag/v1.4.0)
 
      The main new features of this version: the new feature ThreatGraph can combine the network and other runtime environments to determine the priority of threat scanning results, support agentless cloud security situation management for cloud assets, and integrate cloud-native environment malicious program scanning tools [YaraHunter]( https://github.com/deepfence/YaraHunter).
+
+- [Trivy Container Vulnerability Scanning Tool v0.44.0 Released (CNCF Project)](https://github.com/aquasecurity/trivy/releases/tag/v0.44.0)
+
+    Release features: support scanning local repositories, increase integration test timeout to 15 minutes, support displaying vulnerability status, support custom URLs for policy bundles, support customizing data for Rego policies.
 
 - [Trivy Container Vulnerability Scanning Tool v0.41.0 Released (CNCF Project)](https://github.com/aquasecurity/trivy/discussions/4135)
 

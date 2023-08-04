@@ -351,6 +351,10 @@
 
     该版本主要新特性：在一个 SDS 请求中发送多个集群或监听器的 SDS 资源、通过 HTTP 过滤器的配置名称来获取过滤器配置、监听器过滤器统计更新、dns_resolver 增加对多个地址的支持、为监听器过滤器添加动态监听器过滤器配置等。
 
+- [Envoy Gateway API 网关 v0.5 发布](https://gateway.envoyproxy.io/v0.5.0/releases/v0.5.html)
+
+    版本特性：添加数据平面代理遥测、支持直接配置 xDS、支持基于 IP 地址的不同速率限制、支持配置 EnvoyProxy Pod 标签、支持配置 EnvoyProxy 部署策略设置、卷和卷挂载、支持将 EnvoyProxy 配置为 NodePort 类型服务、添加 Pprof 调试支持。
+
 - [Envoy Gateway 基于 Envoy 的网关 v0.4 发布](https://gateway.envoyproxy.io/v0.4.0/releases/v0.4.html)
 
     版本特性：支持通过 Helm 安装 Envoy Gateway；新增初始框架用于扩展 Envoy Gateway；支持基于 IP 子网的速率限制；支持自定义 Envoy 代理引导配置、Envoy 代理镜像和服务配置注释、资源和安全上下文设置等；支持 EDS（Endpoint Discovery Service)。
@@ -568,6 +572,10 @@
     具体包括：新增配置文件规范，定义一个用于轻量级 Java 应用和微服务的多供应商平台；针对适合微服务开发的较小运行时，提供了规范子集，包括用于构建应用的新 CDI-Lite 规范；支持多态类型；将 UUID 标准化为基本类型并扩展查询语言和查询 API。
 
 ### K
+
+- [k0smotron：Mirantis 开源 Kubernetes 控制平面项目 k0smotron](https://www.mirantis.com/blog/introducing-k0smotron)
+
+    [k0smotron](https://github.com/k0sproject/k0smotron) 本质上是一套 Kubernetes 控制器，能让你在单个 Kubernetes 集群中以 Pod 的形式运行和管理多个 Kubernetes 集群控制平面。实现真正的控制平面和工作平面分离，即在现有集群上运行的控制平面与工作平面没有直接的网络连接。此外，还支持将任何基础设施的工作者节点连接到集群控制平面。
 
 - [k8gb Kubernetes 全局负载均衡器  v0.10.0 发布（CNCF 项目）](https://github.com/k8gb-io/k8gb/releases/tag/v0.10.0)
 
@@ -1192,6 +1200,10 @@
 
     该版本主要新特性：支持 GitLab Runner、新增命令用于创建现有 pod 的副本、新增命令用于同步数据库和任何卷插件之间的状态变化、pod 新增退出策略、自动清理未使用的缓存 Podman 虚拟机镜像、允许不同容器的多个 overlay 卷重复使用同一个 workdir 或 upperdir。
 
+- [Prometheus v2.46.0 发布（CNCF 项目）](https://github.com/prometheus/prometheus/releases/tag/v2.46.0)
+
+    版本特性：添加 PromQL 格式和标签匹配器设置/删除命令、推送指标命令、为 K8s 服务发现的 Endpointslice 和 Endpoints Role 添加了更多标签、PodIP 的状态未设置时不会将 Pod 添加到目标组、支持验证远程写入处理程序中的指标名称和标签、支持将原生直方图存储在快照中。
+
 - [Prometheus v2.45.0 发布（CNCF 项目）](https://github.com/prometheus/prometheus/releases/tag/v2.45.0)
 
     更新内容：支持限制每个 TSDB 统计项的返回数量、在全局配置中增加限制、支持同时摄入 classic 直方图和 native 直方图、native 直方图支持限制存储桶的大小。
@@ -1316,6 +1328,10 @@
 
     该版本主要新特性：支持 10 亿个设备采集的数据、100 个节点；支持存储与计算分离，引入计算节点，并重构了整个计算引擎；优化了对消息队列、流式计算和缓存的支持，引入事件驱动的流式计算；支持容器和 Kubernetes 部署。
 
+- [Tekton 云原生 CI/CD 框架 v0.50.0 发布](https://github.com/tektoncd/pipeline/releases/tag/v0.50.0)
+
+    版本特性：CSI 和计划卷 workspace 功能升级为稳定状态、单独 workspace 功能升级为 beta、支持还原 PVC 创建、添加事件配置映射、引入联合调度（coschedule）功能开关、支持在 PipelineRun 完成后自动删除由其卷声明模版创建的 PVC。
+
 - [Tekton：云原生 CI/CD 框架 v0.43.0 发布](https://github.com/tektoncd/pipeline/releases/tag/v0.43.0)
 
     该版本主要新特性：支持解析 sidecar 日志以提取结果到任务运行的 CRD 中、默认启用 pipeline 中的自定义任务、增加对 PipelineRun 调节器的支持、允许用户为可信资源配置公钥、PodTemplate 可以用来更新全局的环境变量。
@@ -1354,6 +1370,10 @@
 - [ThreatMapper 云原生安全观测平台 v1.4.0 发布](https://github.com/deepfence/ThreatMapper/releases/tag/v1.4.0)  
 
     该版本主要新特性：新功能 ThreatGraph 能够结合网络等运行时环境来确定威胁扫描结果的优先级、支持对云资产进行无代理的云安全态势管理、集成云原生环境恶意程序扫描工具 [YaraHunter](https://github.com/deepfence/YaraHunter)。
+
+- [Trivy 容器漏洞扫描工具 v0.44.0 发布（CNCF 项目）](https://github.com/aquasecurity/trivy/releases/tag/v0.44.0)
+
+    版本特性：支持扫描本地仓库、将集成测试超时增加至 15 分钟、支持展示漏洞状态、支持策略捆绑的自定义 URL、支持为 Rego 策略自定义数据。
 
 - [Trivy 容器漏洞扫描工具 v0.41.0 发布（CNCF 项目）](https://github.com/aquasecurity/trivy/discussions/4135)
 
