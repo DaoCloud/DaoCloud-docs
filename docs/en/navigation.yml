@@ -797,17 +797,19 @@ nav:
               - What is Container Registry: kangaroo/what.md
               - Release Notes: kangaroo/release-notes.md
               - FAQs: kangaroo/faq.md
+          - Upgrade:
+              - Offline Upgrade Container Registry: kangaroo/upgrade/upgrade.md
           - Quick Start:
               - Manage External Registry: kangaroo/quickstart/registry-in-one.md
               - Push Image: kangaroo/quickstart/push.md
               - Admin Guide: kangaroo/quickstart/admin-registry.md
               - Workspace Admin Guide: kangaroo/quickstart/ws-admin-registry.md
-              - Log in to an Insecure Container Registry: kangaroo/quickstart/insecure_registry.md
           - Registry Space:
               - Registry Space: kangaroo/space/index.md
               - Image List: kangaroo/space/imagelist.md
               - Artifacts and Description: kangaroo/space/desc.md
               - Retention: kangaroo/space/reclaim.md
+              - Scan Images: kangaroo/space/scan.md
           - Integrated Registry:
               - Integrated Registry (Workspace): kangaroo/integrate/integrate-ws.md
               - Integrated Registry (Admin): kangaroo/integrate/integrate-admin.md
@@ -822,7 +824,9 @@ nav:
               - Bind/Unbind Workspace: kangaroo/integrate/bind-to-ws.md
               - Sync Images: kangaroo/integrate/sync.md
               - Migrate Your Harbor Registry: kangaroo/managed/harbor-migration.md
-          - Scan Images: kangaroo/scan.md
+          - Best Practice:
+              - Ingress or NodePort for Managed Harbor: kangaroo/best-practice/managed-harbor-select-access-type.md
+              - Log in to an Insecure Container Registry: kangaroo/best-practice/insecure_registry.md
       - Cloud Edge Collaboration:
           - What is Cloud Edge Collaboration: kant/intro/what.md
           - Features: kant/intro/features.md
