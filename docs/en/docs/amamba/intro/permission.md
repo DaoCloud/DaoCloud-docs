@@ -5,7 +5,7 @@ hide:
 
 # Workbench Permissions
 
-[Workbench](./what.md) defines three user roles:
+[Workbench](index.md) defines three user roles:
 
 - Workspace Admin
 - Workspace Editor

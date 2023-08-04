@@ -9,13 +9,13 @@ DCE 5.0 selected and integrated some classic data services for actual use cases,
 
 You can install/enable the following data services on demand:
 
-- [Elasticsearch](elasticsearch/intro/what.md): a quite popular full-text search engine
-- [Kafka](./kafka/intro/what.md): data pipeline commonly used for message transmission
-- [MinIO](./minio/intro/what.md): a very popular lightweight object storage solution
-- [MySQL](mysql/intro/what.md): one of the most popular open-source relational databases
-- [RabbitMQ](rabbitmq/intro/what.md): a transmission pipeline commonly used for data transaction
-- [Redis](./redis/intro/what.md): an in-memory database
-- [PostgreSQL](./postgresql/intro/what.md): one of the most popular open-source relational databases
+- [Elasticsearch](elasticsearch/intro/index.md): a quite popular full-text search engine
+- [Kafka](./kafka/intro/index.md): data pipeline commonly used for message transmission
+- [MinIO](./minio/intro/index.md): a very popular lightweight object storage solution
+- [MySQL](mysql/intro/index.md): one of the most popular open-source relational databases
+- [RabbitMQ](rabbitmq/intro/index.md): a transmission pipeline commonly used for data transaction
+- [Redis](./redis/intro/index.md): an in-memory database
+- [PostgreSQL](./postgresql/intro/index.md): one of the most popular open-source relational databases
 
 ## Learning Journey
 
@@ -44,10 +44,10 @@ graph TD
     click H "https://docs.daocloud.io/en/middleware/rabbitmq/quickstart/install/#_1"
 ```
 
-[Elasticsearch](elasticsearch/intro/what.md){ .md-button .md-button--primary }
-[Kafka](./kafka/intro/what.md){ .md-button .md-button--primary }
-[MinIO](./minio/intro/what.md){ .md-button .md-button--primary }
-[MySQL](mysql/intro/what.md){ .md-button .md-button--primary }
-[RabbitMQ](rabbitmq/intro/what.md){ .md-button .md-button--primary }
-[Redis](./redis/intro/what.md){ .md-button .md-button--primary }
-[PostgreSQL](./postgresql/intro/what.md){ .md-button .md-button--primary }
+[Elasticsearch](elasticsearch/intro/index.md){ .md-button .md-button--primary }
+[Kafka](./kafka/intro/index.md){ .md-button .md-button--primary }
+[MinIO](./minio/intro/index.md){ .md-button .md-button--primary }
+[MySQL](mysql/intro/index.md){ .md-button .md-button--primary }
+[RabbitMQ](rabbitmq/intro/index.md){ .md-button .md-button--primary }
+[Redis](./redis/intro/index.md){ .md-button .md-button--primary }
+[PostgreSQL](./postgresql/intro/index.md){ .md-button .md-button--primary }

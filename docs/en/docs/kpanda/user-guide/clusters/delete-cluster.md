@@ -5,7 +5,7 @@ hide:
 
 # Uninstall/disconnect cluster access
 
-The cluster** created through the DCE 5.0 [container management](../../intro/what.md) platform ** supports the operation of `unloading the cluster` or `disconnecting`, and directly** accessing from other environments The cluster** only supports the `unjoin` operation.
+The cluster** created through the DCE 5.0 [container management](../../intro/index.md) platform ** supports the operation of `unloading the cluster` or `disconnecting`, and directly** accessing from other environments The cluster** only supports the `unjoin` operation.
 
 The difference between the two is:
 

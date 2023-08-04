@@ -12,8 +12,8 @@ hide:
 
 DCE 5.0 的服务网格兼容社区原生 Istio 开源服务网格，提供原生 Istio 接入管理能力。在较高的层次上，服务网格有助于降低服务治理的复杂性，减轻开发运维团队的压力。
 
-服务网格作为 DCE 5.0 产品的体系一员，无缝对接[容器管理](../../kpanda/intro/what.md)平台，可以为用户提供开箱即用的上手体验，
-并作为基础设施为[微服务引擎](../../skoala/intro/what.md)提供容器微服务治理支持，方便用户通过单一平台对各类微服务系统做统一管理。
+服务网格作为 DCE 5.0 产品的体系一员，无缝对接[容器管理](../../kpanda/intro/index.md)平台，可以为用户提供开箱即用的上手体验，
+并作为基础设施为[微服务引擎](../../skoala/intro/index.md)提供容器微服务治理支持，方便用户通过单一平台对各类微服务系统做统一管理。
 
 ## 产品优势
 
@@ -128,6 +128,6 @@ flowchart TD
     click watch2 "https://docs.daocloud.io/mspider/user-guide/traffic-monitor/conn-topo/"
 ```
 
-[下载 DCE 5.0](../../download/dce5.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../../install/intro.md){ .md-button .md-button--primary }
+[下载 DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }

@@ -5,7 +5,7 @@ hide:
 
 # Service Mesh Permissions Explanation
 
-[Service Mesh](../../mspider/intro/what.md) supports several user roles:
+[Service Mesh](../../mspider/intro/index.md) supports several user roles:
 
 - Admin
 - Workspace Admin
@@ -14,7 +14,7 @@ hide:
 
 !!! info
 
-    Starting from installer [v0.6.0](../../download/dce5.md) of DCE 5.0, the [global management](../../ghippo/intro/what.md) module supports custom roles configuration for Service Mesh, meaning that in addition to using default system roles, custom roles can be defined and granted different permissions within Service Mesh.
+    Starting from installer [v0.6.0](../../download/index.md) of DCE 5.0, the global management module supports custom roles configuration for Service Mesh, meaning that in addition to using default system roles, custom roles can be defined and granted different permissions within Service Mesh.
 
 <!--
 Permissions are indicated with `✅` for granted access and `❌` for denied access.
@@ -24,10 +24,10 @@ The specific permissions for each role are shown in the following table.
 
 | Menu Object                               | Action                                                       | Admin | Workspace Admin | Workspace Editor | Workspace Viewer |
 | ----------------------------------------- | ------------------------------------------------------------ | ----- | --------------- | ---------------- | ---------------- |
-| Service Mesh List                         | [Create Mesh](https://dwiki.daocloud.io/mspider/user-guide/service-mesh/README.md) | ✅     | ❌               | ❌                | ❌                |
+| Service Mesh List                         | [Create Mesh](../../mspider/user-guide/service-mesh/README.md) | ✅     | ❌               | ❌                | ❌                |
 |                                           | Edit Mesh                                                    | ✅     | ✅               | ❌                | ❌                |
-|                                           | [Delete Mesh](https://dwiki.daocloud.io/mspider/user-guide/service-mesh/delete.md) | ✅     | ❌               | ❌                | ❌                |
-|                                           | [View Mesh](https://dwiki.daocloud.io/mspider/user-guide/service-mesh/README.md) | ✅     | ✅               | ✅                | ✅                |
+|                                           | [Delete Mesh](../../mspider/user-guide/service-mesh/delete.md) | ✅     | ❌               | ❌                | ❌                |
+|                                           | [View Mesh](../../mspider/user-guide/service-mesh/README.md) | ✅     | ✅               | ✅                | ✅                |
 | Mesh Overview                             | View                                                         | ✅     | ✅               | ✅                | ✅                |
 | Service List                              | View                                                         | ✅     | ✅               | ✅                | ✅                |
 | Service Entry                             | Create                                                       | ✅     | ✅               | ✅                | ❌                |

@@ -93,5 +93,5 @@ DCE 5.0 Enterprise Package includes the following modules, which can be used on 
 
 ## More
 
-- [Online documentation](../../dce/what.md)
+- [Online documentation](../../dce/index.md)
 - [Report a bug](https://github.com/DaoCloud/DaoCloud-docs/issues)

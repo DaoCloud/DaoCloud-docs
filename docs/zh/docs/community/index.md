@@ -178,6 +178,6 @@ hide:
 Clusterpedia、HwameiStor 和 Merbridge 已入选 <a href="https://www.cncf.io/projects/clusterpedia/">CNCF 沙箱</a>。
 </p>
 
-[下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

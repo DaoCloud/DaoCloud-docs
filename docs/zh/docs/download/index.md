@@ -2,7 +2,7 @@
 
 DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
-目前下载中心仅提供离线安装包。有关在线安装方式，请参阅[在线安装](../install/intro.md)。
+目前下载中心仅提供离线安装包。有关在线安装方式，请参阅[在线安装](../install/index.md)。
 
 ## 下载社区版
 
@@ -57,5 +57,5 @@ DCE 5.0 包含的众多子模块可以单独下载，按需对每个模块进行
 
     ![社区版交流群](https://docs.daocloud.io/daocloud-docs-images/docs/images/assist.png)
 
-[安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

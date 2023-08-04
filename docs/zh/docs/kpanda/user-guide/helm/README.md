@@ -5,7 +5,7 @@ hide:
 
 # Helm 模板
 
-Helm 是 Kubernetes 的包管理工具，方便用户快速发现、共享和使用 Kubernetes 构建的应用。第五代[容器管理模块](../../intro/what.md)提供了上百个 Helm 模板，涵盖存储、网络、监控、数据库等主要场景。借助这些模板，您可以通过 UI 界面快速部署、便捷管理 Helm 应用。此外，支持通过[添加 Helm 仓库](helm-repo.md) 添加更多的个性化模板，满足多样需求。
+Helm 是 Kubernetes 的包管理工具，方便用户快速发现、共享和使用 Kubernetes 构建的应用。第五代[容器管理模块](../../intro/index.md)提供了上百个 Helm 模板，涵盖存储、网络、监控、数据库等主要场景。借助这些模板，您可以通过 UI 界面快速部署、便捷管理 Helm 应用。此外，支持通过[添加 Helm 仓库](helm-repo.md) 添加更多的个性化模板，满足多样需求。
 
 ![模板](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/helm14.png)
 

@@ -7,7 +7,7 @@ hide:
 
 DaoCloud Microservice Engine (DME) is a one-stop management platform for common microservice frameworks. It mainly consists of two parts: service governance and cloud-native gateway, providing service registration and discovery, configuration management, east-west traffic governance, service monitoring, south-north traffic management, API management, domain name management, etc, covering most user cases throughout the lifecycle of microservice management.
 
-Based on the features listed in [Feature Overview](what.md), DME can be used for registration and discovery of microservice, configuration management, traffic governance, and gateway management. Here are some typical use cases:
+Based on the features listed in [Feature Overview](index.md), DME can be used for registration and discovery of microservice, configuration management, traffic governance, and gateway management. Here are some typical use cases:
 
 ## One-stop management of heterogeneous microservices
 

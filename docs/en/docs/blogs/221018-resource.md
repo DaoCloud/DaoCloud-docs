@@ -137,8 +137,8 @@ Enterprise users who need to manage K8S, microservice engine, service mesh and o
      Answer: The resources under microservice governance, Workbench, and service mesh are all automatically bound to Workspace, and permissions are strongly dependent on Workspace. You need to obtain Workspace permissions and then obtain related resource permissions.
      Admin, Workspace Owner, Folder Admin, and Workspace Admin can be authorized for Workspace.
 
-[Learn about service mesh](../ghippo/intro/what.md){ .md-button }
+[Learn about service mesh](../ghippo/intro/index.md){ .md-button }
 
-[Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [Free Trial](../dce/license0.md){ .md-button .md-button--primary }

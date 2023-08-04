@@ -16,7 +16,7 @@
 
 ## 创建 Pod 多网卡场景
 
-参阅 [multus-underlay](../network/modules/multus-underlay/what.md) 文档页面。
+参阅 [multus-underlay](../network/modules/multus-underlay/index.md) 文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/pod-cnis.mp4" preload="metadata" poster="../images/net-cnis.png"></video>
@@ -40,7 +40,7 @@
 
 ## Ingress Nginx 的安装与使用
 
-参阅 [Ingress Nginx](../network/modules/ingress-nginx/what.md) 文档页面。
+参阅 [Ingress Nginx](../network/modules/ingress-nginx/index.md) 文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/ingress-nginx.mp4" preload="metadata" poster="../images/net-nginx.png"></video>
@@ -48,7 +48,7 @@
 
 ## MetalLB 的安装与使用
 
-参阅 [MetalLB](../network/modules/metallb/what.md) 文档页面。
+参阅 [MetalLB](../network/modules/metallb/index.md) 文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/MetalLB.mp4" preload="metadata" poster="../images/net-metallb.png"></video>

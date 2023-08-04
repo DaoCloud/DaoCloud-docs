@@ -98,7 +98,7 @@ If you want a storage component to be installed in Layer 7 load balancing mode, 
 
     - `Node Label Selector`: set node label selector. The selected node will be used as the entry node in nodePort forwarding mode. If this value is not set, F5 will forward the traffic to the nodePort of all nodes in the cluster.
 
-    - `Forward Method`:set the mode for F5 to forward traffic, `nodePort` and `cluster` mode. For explanation of the mode, refer to [introduction](what.md).
+    - `Forward Method`:set the mode for F5 to forward traffic, `nodePort` and `cluster` mode. For explanation of the mode, refer to [introduction](index.md).
    
     ![f5network install2](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/f5network4.png)
 

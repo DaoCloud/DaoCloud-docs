@@ -46,7 +46,7 @@
 
 ## Redis 缓存实例管理
 
-参阅[Redis 缓存服务](../middleware/redis/intro/what.md)文档页面。
+参阅[Redis 缓存服务](../middleware/redis/intro/index.md)文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/redis.mp4" preload="metadata" poster="../images/mcamel-redis.png"></video>

@@ -35,7 +35,7 @@ This document will guide you on how to deploy DCE 5.0 on TencentOS Server 3.1, s
     curl -LO https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.6.6/os-pkgs-tencent31-v0.6.6.tar.gz
     ```
 
-4. Download the addon offline package. You can download the latest version from the [Download Center](../../download/dce5.md) (optional).
+4. Download the addon offline package. You can download the latest version from the [Download Center](../../download/index.md) (optional).
 
 5. Set up the [clusterConfig.yaml](../commercial/cluster-config.md). You can find this file in the `offline/sample` directory of the offline package and modify it as needed.
    The reference configuration is as follows:

@@ -1,6 +1,6 @@
 # 微服务引擎权限说明
 
-[微服务引擎](../../skoala/intro/what.md)包括微服务治理中心和微服务网关两部分。微服务引擎支持三种用户角色：
+[微服务引擎](../../skoala/intro/index.md)包括微服务治理中心和微服务网关两部分。微服务引擎支持三种用户角色：
 
 - Workspace Admin
 - Workspace Editor

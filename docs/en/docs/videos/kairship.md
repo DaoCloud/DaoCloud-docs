@@ -4,7 +4,7 @@
 
 ## Multicloud Module Introduction
 
-See [What's Multicloud Management](../kairship/intro/what.md) for reference.
+See [What's Multicloud Management](../kairship/intro/index.md) for reference.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/multicloud-intro.mp4" preload="metadata" poster="../images/kairship-intro.png"></video>
@@ -48,6 +48,6 @@ See [Multicloud Services](../kairship/resource/service.md), [Multicloud Namespac
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kairship-migrate.mp4" preload="metadata" poster="../images/kairship-migrate.png"></video>
 </div>
 
-[Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [Free Trial](../dce/license0.md){ .md-button .md-button--primary }

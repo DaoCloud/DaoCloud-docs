@@ -10,7 +10,7 @@
 
 ## 使用商业版安装包安装
 
-通过商业版安装微服务引擎时，需要注意商业版的版本号（[点击查看最新版本](../../download/dce5.md)）。需要针对不同版本执行不同操作。
+通过商业版安装微服务引擎时，需要注意商业版的版本号（[点击查看最新版本](../../download/index.md)）。需要针对不同版本执行不同操作。
 
 商业版的 **版本号 ≥ v0.3.29** 时，默认会安装微服务引擎，但仍旧建议检查 `mainfest.yaml` 文件进行确认 `components/skoala/enable` 的值是否为 `true`，以及是否指定了 Helm 的版本。
 
@@ -88,7 +88,7 @@ mcamel-common-mysql-cluster-mysql             2/2     7d23h
 
 ### 检测依赖的监控组件
 
-微服务引擎依赖 [DCE 5.0 可观测性](../../insight/intro/what.md)模块的能力。如您需要监控微服务的各项指标、追踪链路，则需要在集群中安装对应的 `insight-agent`，具体说明可参考[](../../insight/quickstart/install/install-agent.md)。
+微服务引擎依赖 [DCE 5.0 可观测性](../../insight/intro/index.md)模块的能力。如您需要监控微服务的各项指标、追踪链路，则需要在集群中安装对应的 `insight-agent`，具体说明可参考[](../../insight/quickstart/install/install-agent.md)。
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/cluster-list.png)
 

@@ -52,6 +52,6 @@ DCE 5.0 云原生网络基于多个开源技术构建，不仅提供单个 CNI �
 
 ![solution02](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/solution02.png)
 
-[下载 DCE 5.0](../../download/dce5.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../../install/intro.md){ .md-button .md-button--primary }
+[下载 DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }

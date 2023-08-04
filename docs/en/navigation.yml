@@ -3,7 +3,7 @@ nav:
   - DaoCloud Website: https://www.daocloud.io/en/
   - Documentation:
       - DCE Profile:
-          - What is DCE 5.0: dce/what.md
+          - What is DCE 5.0: dce/index.md
           - K8s Certified Service Provider: dce/kcsp.md
           - Free Trial: dce/license0.md
           - Features and Benefits: dce/features.md
@@ -13,7 +13,7 @@ nav:
               - 20230630 Release: dce/dce-rn/230630.md
               - 20230531 Release: dce/dce-rn/230531.md
       - Installation:
-          - Overview: install/intro.md
+          - Overview: install/index.md
           - Install Dependencies: install/install-tools.md
           - Install Community Package:
               - Resource Planning: install/community/resources.md
@@ -44,7 +44,7 @@ nav:
           - Release Notes: install/release-notes.md
       - Container Management:
           - Intro:
-              - What is Container Management: kpanda/intro/what.md
+              - What is Container Management: kpanda/intro/index.md
               - Features: kpanda/intro/features.md
               - Benefits: kpanda/intro/benefits.md
               - Use Cases: kpanda/intro/scenarios.md
@@ -139,7 +139,7 @@ nav:
               - Offline Upgrade Worker Cluster: kpanda/best-practice/update-offline-cluster.md
       - Global Management:
           - Intro:
-              - What is Global Management: ghippo/intro/what.md
+              - What is Global Management: ghippo/intro/index.md
               - Features: ghippo/intro/features.md
               - Glossary: ghippo/intro/glossary.md
               - Release Notes: ghippo/intro/release-notes.md
@@ -210,7 +210,7 @@ nav:
                   - Webhook Message Notification: ghippo/oem/webhook.md
       - Insight:
           - Intro:
-              - What is Insight: insight/intro/what.md
+              - What is Insight: insight/intro/index.md
               - Benefits: insight/intro/benefits.md
               - Scenario: insight/intro/scenarios.md
               - Features: insight/intro/features.md
@@ -291,7 +291,7 @@ nav:
               - OCP Compatibility Test: insight/compati-test/ocp-compatibility.md
       - Workbench:
           - Intro:
-              - What is Workbench?: amamba/intro/what.md
+              - What is Workbench?: amamba/intro/index.md
               - Features: amamba/intro/features.md
               - Competitiveness: amamba/intro/benefits.md
               - Use Cases: amamba/intro/scenario.md
@@ -349,7 +349,7 @@ nav:
               - Using a custom toolchain in Jenkins: amamba/user-guide/tools/jenkins-custom.md
       - Multicloud Management:
           - Intro:
-              - What is Multicloud Management: kairship/intro/what.md
+              - What is Multicloud Management: kairship/intro/index.md
               - Features: kairship/intro/features.md
               - Architecture: kairship/intro/architecture.md
               - Competitiveness: kairship/intro/benefits.md
@@ -392,7 +392,7 @@ nav:
               - DCE4 to DCE5: kairship/best-pratice/one-click-conversion.md
       - Microservices:
           - Intro:
-              - Features: skoala/intro/what.md
+              - Features: skoala/intro/index.md
               - Use Cases: skoala/intro/scenarios.md
               - Competitiveness: skoala/intro/advantages.md
               - Release Notes: skoala/intro/release-notes.md
@@ -477,7 +477,7 @@ nav:
               - Cloud Native Gateway: reference/basic-knowledge/gateway.md
       - Service Mesh:
           - Intro:
-              - What is Service Mesh: mspider/intro/what.md
+              - What is Service Mesh: mspider/intro/index.md
               - Features: mspider/intro/features.md
               - Use Cases: mspider/intro/scenarios.md
               - Features Supported on UI: mspider/intro/meshes.md
@@ -555,7 +555,7 @@ nav:
               - Restricting Service Access with Mesh: mspider/best-practice/use-egress-and-authorized-policy.md
       - Network:
           - Intro:
-              - What is Network: network/intro/what-is-net.md
+              - What is Network: network/intro/index.md
               - Background: network/intro/background.md
               - Challenges: network/intro/challenges.md
               - Components: network/modules/modules.md
@@ -567,27 +567,27 @@ nav:
               - Network CNI performance test report: network/performance/cni-performance.md
               - Spiderpool performance test report: network/performance/spiderpool-performance.md
           - Calico:
-              - Intro: network/modules/calico/what.md
+              - Intro: network/modules/calico/index.md
               - Install: network/modules/calico/install.md
               - ippool: network/modules/calico/ippool.md
               - Metrics: network/modules/calico/metrics.md
               - Calico Policies: network/modules/calico/policy.md
               - Troubleshooting: network/modules/calico/debug.md
           - Cilium:
-              - Intro: network/modules/cilium/what.md
+              - Intro: network/modules/cilium/index.md
               - Args Config: network/modules/cilium/install.md
               - Unsupported Features: network/modules/cilium/notSupport.md
               - Cilium Network Communication Acceleration: network/modules/cilium/cross-cluster.md
           - Contour:
-              - Intro: network/modules/contour/what.md
+              - Intro: network/modules/contour/index.md
               - Install: network/modules/contour/install.md
           - F5networks:
-              - Intro: network/modules/f5networks/what.md
+              - Intro: network/modules/f5networks/index.md
               - Install: network/modules/f5networks/install.md
               - Use: network/modules/f5networks/usage.md
               - Debug: network/modules/f5networks/debug.md
           - Ingress-nginx:
-              - Intro: network/modules/ingress-nginx/what.md
+              - Intro: network/modules/ingress-nginx/index.md
               - Install: network/modules/ingress-nginx/install.md
               - Ingress Class: network/modules/ingress-nginx/ingressclass.md
               - Ingress Scope: network/modules/ingress-nginx/scope.md
@@ -598,20 +598,20 @@ nav:
               - Traffic mirror: network/modules/ingress-nginx/mirror.md
               - Cross-Origin Resource Sharing: network/modules/ingress-nginx/cors.md
           - Metallb:
-              - Intro: network/modules/metallb/what.md
+              - Intro: network/modules/metallb/index.md
               - Install: network/modules/metallb/install.md
               - Instructions for IP pool use: network/modules/metallb/usage.md
               - L2 and BGP mode: network/modules/metallb/l2-bgp.md
               - Get client source IPs: network/modules/metallb/source_ip.md
           - Multus-underlay:
-              - Intro: network/modules/multus-underlay/what.md
+              - Intro: network/modules/multus-underlay/index.md
               - Install: network/modules/multus-underlay/install.md
               - MacVLAN: network/modules/multus-underlay/macvlan.md
               - SR-IOV: network/modules/multus-underlay/sriov.md
               - DPDK: network/modules/multus-underlay/dpdk.md
               - NmState: network/modules/multus-underlay/nmstat.md
           - Spiderpool:
-              - Intro: network/modules/spiderpool/what.md
+              - Intro: network/modules/spiderpool/index.md
               - Install: network/modules/spiderpool/install.md
               - Create an IP pool: network/modules/spiderpool/createpool.md
               - IP pool use cases: network/modules/spiderpool/ippoolusage.md
@@ -620,12 +620,12 @@ nav:
               - Config: network/modules/spiderpool/config.md
               - Commands: network/modules/spiderpool/command.md
           - Submariner:
-              - Intro: network/modules/submariner/what.md
+              - Intro: network/modules/submariner/index.md
               - Install: network/modules/submariner/install.md
               - Use: network/modules/submariner/usage.md
       - Data Services:
           - Intro:
-              - What is Data Service: middleware/what.md
+              - What is Data Service: middleware/index.md
               - Supported Kubernetes Versions: middleware/compatibility.md
               - Permissions: middleware/permission.md
           - Common Features:
@@ -633,7 +633,7 @@ nav:
               - Customize Permissions: middleware/common/customize-permission.md
               - Workload Antiaffinity: middleware/common/workload-antiaffinity.md
           - Elasticsearch:
-              - What is Elasticsearch: middleware/elasticsearch/intro/what.md
+              - What is Elasticsearch: middleware/elasticsearch/intro/index.md
               - Features: middleware/elasticsearch/intro/features.md
               - Competitiveness: middleware/elasticsearch/intro/benefits.md
               - Use Cases: middleware/elasticsearch/intro/scenarios.md
@@ -650,7 +650,7 @@ nav:
               - Elasticsearch Migration Practice Based on Hwameistor: middleware/elasticsearch/user-guide/migrate-es.md
               - Release Notes: middleware/elasticsearch/release-notes.md
           - Kafka:
-              - What is Kafka: middleware/kafka/intro/what.md
+              - What is Kafka: middleware/kafka/intro/index.md
               - Use Cases: middleware/kafka/intro/scenarios.md
               - Basic Concepts: middleware/kafka/intro/concepts.md
               - Create Instance: middleware/kafka/user-guide/create.md
@@ -662,7 +662,7 @@ nav:
               - View Logs: middleware/kafka/user-guide/logs.md
               - Release Notes: middleware/kafka/release-notes.md
           - MinIO object storage:
-              - What is MinIO: middleware/minio/intro/what.md
+              - What is MinIO: middleware/minio/intro/index.md
               - Use cases: middleware/minio/intro/scenarios.md
               - Common terms: middleware/minio/intro/concepts.md
               - Create a MinIO instance: middleware/minio/user-guide/create.md
@@ -675,7 +675,7 @@ nav:
               - MinIO Identity Management: middleware/minio/user-guide/user-management.md
               - Release Notes: middleware/minio/release-notes.md
           - MySQL database:
-              - What is MySQL: middleware/mysql/intro/what.md
+              - What is MySQL: middleware/mysql/intro/index.md
               - Feature description: middleware/mysql/intro/features.md
               - Competitive Advantages: middleware/mysql/intro/benefits.md
               - Basic concepts: middleware/mysql/intro/concepts.md
@@ -686,7 +686,7 @@ nav:
               - MySQL Troubleshooting Manual: middleware/mysql/faq/common-question.md
               - Release Notes: middleware/mysql/release-notes.md
           - RabbitMQ message queue:
-              - What is RabbitMQ: middleware/rabbitmq/intro/what.md
+              - What is RabbitMQ: middleware/rabbitmq/intro/index.md
               - Function description: middleware/rabbitmq/intro/features.md
               - Competitive advantage: middleware/rabbitmq/intro/benefits.md
               - Use cases: middleware/rabbitmq/intro/scenarios.md
@@ -701,7 +701,7 @@ nav:
               - Add custom plugins for RabbitMQ: middleware/rabbitmq/faq/add-plugin.md
               - Release Notes: middleware/rabbitmq/release-notes.md
           - Redis cache service:
-              - What is Redis: middleware/redis/intro/what.md
+              - What is Redis: middleware/redis/intro/index.md
               - Use cases: middleware/redis/intro/scenarios.md
               - Create a Redis instance: middleware/redis/user-guide/create.md
               - Update Redis instance: middleware/redis/user-guide/update.md
@@ -710,7 +710,7 @@ nav:
               - Redis DR Deployment Solution: middleware/redis/best-practice/disaster-tolerance.md
               - Release Notes: middleware/redis/release-notes.md
           - PostgreSQL database:
-              - What is PostgreSQL: middleware/postgresql/intro/what.md
+              - What is PostgreSQL: middleware/postgresql/intro/index.md
               - Create PostgreSQL: middleware/postgresql/user-guide/create.md
               - Update PostgreSQL: middleware/postgresql/user-guide/update.md
               - Delete PostgreSQL: middleware/postgresql/user-guide/delete.md
@@ -718,7 +718,7 @@ nav:
               - Release Notes: middleware/postgresql/release-notes.md
           - MongoDB Database:
               - Intro:
-                  - What is MongoDB: middleware/mongodb/intro/what.md
+                  - What is MongoDB: middleware/mongodb/intro/index.md
                   - Features: middleware/mongodb/intro/features.md
                   - Release Notes: middleware/mongodb/release-notes.md
               - Quick Start:
@@ -727,13 +727,13 @@ nav:
                   - Delete MongoDB: middleware/mongodb/user-guide/delete.md
       - Cloud-native Storage:
           - Intro:
-              - What is storage: storage/what.md
+              - What is storage: storage/index.md
               - Background: storage/background.md
               - Benefits: storage/benefits.md
               - Features: storage/features.md
               - Release Notes: storage/hwameistor/releasenotes.md
           - HwameiStor storage:
-              - Intro: storage/hwameistor/intro/what.md
+              - Intro: storage/hwameistor/intro/index.md
               - Modules:
                   - Local disk manager: storage/hwameistor/intro/ldm.md
                   - Local storage: storage/hwameistor/intro/ls.md
@@ -794,7 +794,7 @@ nav:
               - PV and PVC: storage/terms/pv_pvc.md
       - Container Registry:
           - Intro:
-              - What is Container Registry: kangaroo/what.md
+              - What is Container Registry: kangaroo/index.md
               - Release Notes: kangaroo/release-notes.md
               - FAQs: kangaroo/faq.md
           - Upgrade:
@@ -828,18 +828,18 @@ nav:
               - Ingress or NodePort for Managed Harbor: kangaroo/best-practice/managed-harbor-select-access-type.md
               - Log in to an Insecure Container Registry: kangaroo/best-practice/insecure_registry.md
       - Cloud Edge Collaboration:
-          - What is Cloud Edge Collaboration: kant/intro/what.md
+          - What is Cloud Edge Collaboration: kant/intro/index.md
           - Features: kant/intro/features.md
           - Benefits: kant/intro/benefits.md
           - Use Cases: kant/intro/use-cases.md
           - Requirements to Join Edge Node: kant/intro/join-rqmt.md
           - Concepts: kant/intro/concepts.md
       - Cloud Native Security:
-          - Intro: security/intro.md
+          - Intro: security/index.md
           - Falco:
-              - Intro: security/falco/what.md
-              - Install: security/falco/install.md
-              - Falco-exporter: security/falco/falco-exporter.md
+              - Intro: security/falco.md
+              - Install: security/falco-install.md
+              - Falco-exporter: security/falco-exporter.md
       - Troubleshooting:
           - ingressgateway cannot start: reference/troubleshooting/ghippo01.md
           - Login Error 401 or 403: reference/troubleshooting/ghippo02.md
@@ -860,7 +860,7 @@ nav:
       - Container Registry: videos/kangaroo.md
   - Download:
       - DaoCloud Enterprise 5.0:
-          - Index: download/dce5.md
+          - Index: download/index.md
           - Download DCE 5.0 Community Package: download/free/dce5-installer-v0.9.0.md
           - Download DCE 5.0 Enterprise Package: download/business/dce5-installer-v0.9.0.md
           - Modules and Addons:

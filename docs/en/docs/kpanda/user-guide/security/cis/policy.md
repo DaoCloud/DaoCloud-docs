@@ -10,7 +10,7 @@ After creating a scan configuration, you can create a scan policy based on the c
 
 2. Fill in the configuration according to the following instructions and click `OK`.
 
-    - Cluster: Select the cluster to be scanned. The optional cluster list comes from the clusters accessed or created in the [Container Management](../../kpanda/intro/what.md) module. If the desired cluster is not available, you can access or create a cluster in the Container Management module.
+    - Cluster: Select the cluster to be scanned. The optional cluster list comes from the clusters accessed or created in the [Container Management](../../kpanda/intro/index.md) module. If the desired cluster is not available, you can access or create a cluster in the Container Management module.
     - Scan Configuration: Select a pre-created scan configuration. The scan configuration determines which specific scan items need to be performed.
     - Scan Type:
 

@@ -161,7 +161,7 @@ precheck pass..
     bash install_prerequisite.sh online community 
     ```
 
-1. 在主机下载 dce5-installer 二进制文件（也可以[通过浏览器下载](../download/dce5.md)）
+1. 在主机下载 dce5-installer 二进制文件（也可以[通过浏览器下载](../download/index.md)）
 
     ```shell
     export VERSION=v0.5.0

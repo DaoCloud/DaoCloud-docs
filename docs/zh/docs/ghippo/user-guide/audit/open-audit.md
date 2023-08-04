@@ -24,7 +24,7 @@
 ls /var/log/kubernetes/audit
 ```
 
-若未开启，请参考[文档的开启关闭 K8s 审计日志](../open-k8s-audit.md)。
+若未开启，请参考[文档的开启关闭 K8s 审计日志](open-k8s-audit.md)。
 
 #### 开启采集 K8s 审计日志流程
 
@@ -87,7 +87,7 @@ helm upgrade --install --create-namespace --version ${insight_version_code} --cl
 ls /var/log/kubernetes/audit
 ```
 
-若未开启，请参考[文档的开启关闭 K8s 审计日志](../open-k8s-audit.md)。
+若未开启，请参考[文档的开启关闭 K8s 审计日志](open-k8s-audit.md)。
 
 #### 开启采集 K8s 审计日志流程
 
@@ -162,7 +162,7 @@ helm upgrade --install --create-namespace --version ${insight_version_code} --cl
 ls /var/log/kubernetes/audit
 ```
 
-若未开启，请参考[文档的开启关闭 K8s 审计日志](../open-k8s-audit.md)
+若未开启，请参考[文档的开启关闭 K8s 审计日志](open-k8s-audit.md)
 
 #### 开启采集 K8s 审计日志
 

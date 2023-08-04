@@ -51,5 +51,5 @@ helm repo update amamba
 helm upgrade --install --create-namespace --cleanup-on-fail amamba amamba-release/amamba -n amamba-system --version=${VERSION}
 ```
 
-[Download DCE 5.0](../../download/dce5.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../../install/intro.md){ .md-button .md-button--primary }
+[Download DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../../install/index.md){ .md-button .md-button--primary }

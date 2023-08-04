@@ -3,7 +3,7 @@ nav:
   - DaoCloud 官网: https://www.daocloud.io/
   - 产品文档:
       - DCE 产品介绍:
-          - 什么是 DCE 5.0: dce/what.md
+          - 什么是 DCE 5.0: dce/index.md
           - K8s 认证服务商: dce/kcsp.md
           - 申请社区免费体验: dce/license0.md
           - 功能和优势: dce/features.md
@@ -13,7 +13,7 @@ nav:
               - 20230630 版本发布: dce/dce-rn/230630.md
               - 20230531 版本发布: dce/dce-rn/230531.md
       - 安装:
-          - 安装简介: install/intro.md
+          - 安装简介: install/index.md
           - 安装依赖项: install/install-tools.md
           - 安装社区版:
               - 资源规划: install/community/resources.md
@@ -44,7 +44,7 @@ nav:
           - Release Notes: install/release-notes.md
       - 容器管理:
           - 介绍:
-              - 什么是容器管理: kpanda/intro/what.md
+              - 什么是容器管理: kpanda/intro/index.md
               - 功能总览: kpanda/intro/features.md
               - 竞争优势: kpanda/intro/benefits.md
               - 适用场景: kpanda/intro/scenarios.md
@@ -148,7 +148,7 @@ nav:
               - 在非主流操作系统上创建集群: kpanda/best-practice/use-otherlinux-create-custer.md
       - 全局管理:
           - 介绍:
-              - 什么是全局管理: ghippo/intro/what.md
+              - 什么是全局管理: ghippo/intro/index.md
               - 功能总览: ghippo/intro/features.md
               - 常见术语: ghippo/intro/glossary.md
               - Release Notes: ghippo/intro/release-notes.md
@@ -219,7 +219,7 @@ nav:
                   - Webhook 消息通知: ghippo/oem/webhook.md
       - 可观测性:
           - 介绍:
-              - 可观测性: insight/intro/what.md
+              - 可观测性: insight/intro/index.md
               - 产品优势: insight/intro/benefits.md
               - 应用场景: insight/intro/scenarios.md
               - 功能列表: insight/intro/feature.md
@@ -300,7 +300,7 @@ nav:
               - OCP 集群兼容性测试: insight/compati-test/ocp-compatibility.md
       - 应用工作台:
           - 介绍:
-              - 什么是应用工作台？: amamba/intro/what.md
+              - 什么是应用工作台？: amamba/intro/index.md
               - 功能总览: amamba/intro/features.md
               - 产品优势: amamba/intro/benefits.md
               - 适用场景: amamba/intro/scenarios.md
@@ -366,7 +366,7 @@ nav:
               - 在 Jenkins 中使用自定义工具链: amamba/user-guide/tools/jenkins-custom.md
       - 多云编排:
           - 介绍:
-              - 什么是多云编排: kairship/intro/what.md
+              - 什么是多云编排: kairship/intro/index.md
               - 功能总览: kairship/intro/features.md
               - 产品架构: kairship/intro/architecture.md
               - 产品优势: kairship/intro/benefits.md
@@ -407,7 +407,7 @@ nav:
               - 一键转换 DCE 4.0 到 5.0 应用: kairship/best-practice/one-click-conversion.md
       - 微服务引擎:
           - 介绍:
-              - 功能总览: skoala/intro/what.md
+              - 功能总览: skoala/intro/index.md
               - 使用场景: skoala/intro/scenarios.md
               - 产品优势: skoala/intro/advantages.md
               - Release Notes: skoala/intro/release-notes.md
@@ -495,7 +495,7 @@ nav:
               - 云原生网关: reference/basic-knowledge/gateway.md
       - 服务网格:
           - 介绍:
-              - 什么是服务网格: mspider/intro/what.md
+              - 什么是服务网格: mspider/intro/index.md
               - 功能总览: mspider/intro/features.md
               - 适用场景: mspider/intro/scenarios.md
               - UI 支持的特性: mspider/intro/meshes.md
@@ -573,10 +573,11 @@ nav:
               - 使用网格完成定向服务访问限制: mspider/best-practice/use-egress-and-authorized-policy.md
       - 云原生网络:
           - 介绍:
-              - 什么是云原生网络: network/intro/what.md
+              - 什么是云原生网络: network/intro/index.md
               - 背景: network/intro/background.md
               - 挑战: network/intro/challenges.md
               - 网络组件: network/modules/modules.md
+              - Release Notes: network/intro/releasenotes.md
           - 规划:
               - 网卡规划: network/plans/ethplan.md
               - 网络规划: network/plans/netplan.md
@@ -590,28 +591,28 @@ nav:
                   - Cilium 基于 eBPF 技术实施 Pod 带宽管控场景下的性能测试: network/performance/cilium-performance/cilium-bandwidth.md
               - 基于 eBPF 技术实施网络策略场景下的性能测试: network/performance/ebpf-performance.md
           - Calico:
-              - 介绍: network/modules/calico/what.md
+              - 介绍: network/modules/calico/index.md
               - 安装参数配置: network/modules/calico/install.md
               - ippool: network/modules/calico/ippool.md
               - 监控指标: network/modules/calico/metrics.md
               - Calico 网络策略: network/modules/calico/policy.md
               - 故障排查: network/modules/calico/debug.md
           - Cilium:
-              - 介绍: network/modules/cilium/what.md
+              - 介绍: network/modules/cilium/index.md
               - 安装参数配置: network/modules/cilium/install.md
               - 未支持功能说明: network/modules/cilium/not-support.md
               - Cilium 网络通信加速: network/modules/cilium/cross-cluster.md
               - 应用跨集群通信: network/modules/cilium/cilium-speedup.md
           - Contour:
-              - 介绍: network/modules/contour/what.md
+              - 介绍: network/modules/contour/index.md
               - 安装: network/modules/contour/install.md
           - F5networks:
-              - 介绍: network/modules/f5networks/what.md
+              - 介绍: network/modules/f5networks/index.md
               - 安装: network/modules/f5networks/install.md
               - 使用: network/modules/f5networks/usage.md
               - 调试: network/modules/f5networks/debug.md
           - Ingress-nginx:
-              - 介绍: network/modules/ingress-nginx/what.md
+              - 介绍: network/modules/ingress-nginx/index.md
               - 安装: network/modules/ingress-nginx/install.md
               - Ingress Class: network/modules/ingress-nginx/ingressclass.md
               - Ingress Scope: network/modules/ingress-nginx/scope.md
@@ -622,20 +623,20 @@ nav:
               - 上传限制: network/modules/ingress-nginx/upload.md
               - 镜像流量: network/modules/ingress-nginx/mirror.md
           - Metallb:
-              - 介绍: network/modules/metallb/what.md
+              - 介绍: network/modules/metallb/index.md
               - 安装: network/modules/metallb/install.md
               - IPPool 使用说明: network/modules/metallb/usage.md
               - L2和BGP 模式说明: network/modules/metallb/l2-bgp.md
               - 获取客户端源 IP: network/modules/metallb/source_ip.md
           - Multus-underlay:
-              - 介绍: network/modules/multus-underlay/what.md
+              - 介绍: network/modules/multus-underlay/index.md
               - 安装: network/modules/multus-underlay/install.md
               - MacVLAN: network/modules/multus-underlay/macvlan.md
               - SR-IOV: network/modules/multus-underlay/sriov.md
               - DPDK: network/modules/multus-underlay/dpdk.md
               - NmState: network/modules/multus-underlay/nmstat.md
           - Spiderpool:
-              - 介绍: network/modules/spiderpool/what.md
+              - 介绍: network/modules/spiderpool/index.md
               - 安装: network/modules/spiderpool/install.md
               - 创建 IP 池: network/modules/spiderpool/createpool.md
               - IP 池场景说明: network/modules/spiderpool/ippoolusage.md
@@ -644,14 +645,13 @@ nav:
               - 公有云环境运行: network/modules/spiderpool/publiccloud.md
               - 配置参考: network/modules/spiderpool/config.md
               - 常用命令: network/modules/spiderpool/command.md
-              - Release Notes: network/modules/spiderpool/releasenotes.md
           - Submariner:
-              - 介绍: network/modules/submariner/what.md
+              - 介绍: network/modules/submariner/index.md
               - 安装: network/modules/submariner/install.md
               - 使用说明: network/modules/submariner/usage.md
       - 数据服务:
           - 介绍:
-              - 什么是数据服务: middleware/what.md
+              - 什么是数据服务: middleware/index.md
               - 版本适配: middleware/compatibility.md
               - 权限设计说明: middleware/permission.md
           - 通用配置:
@@ -660,7 +660,7 @@ nav:
               - 工作负载反亲和性: middleware/common/workload-antiaffinity.md
           - Elasticsearch 搜索服务:
               - 介绍:
-                  - 什么是 Elasticsearch: middleware/elasticsearch/intro/what.md
+                  - 什么是 Elasticsearch: middleware/elasticsearch/intro/index.md
                   - 功能说明: middleware/elasticsearch/intro/features.md
                   - 竞争优势: middleware/elasticsearch/intro/benefits.md
                   - 适用场景: middleware/elasticsearch/intro/scenarios.md
@@ -678,7 +678,7 @@ nav:
               - ES 故障排查: middleware/elasticsearch/faq/common-question-es.md
           - Kafka 消息队列:
               - 介绍:
-                  - 什么是 Kafka: middleware/kafka/intro/what.md
+                  - 什么是 Kafka: middleware/kafka/intro/index.md
                   - 适用场景: middleware/kafka/intro/scenarios.md
                   - 常见术语: middleware/kafka/intro/concepts.md
                   - Release Notes: middleware/kafka/release-notes.md
@@ -692,7 +692,7 @@ nav:
                   - 查看 Kafka 日志: middleware/kafka/user-guide/logs.md
           - MinIO 对象存储:
               - 介绍:
-                  - 什么是 MinIO: middleware/minio/intro/what.md
+                  - 什么是 MinIO: middleware/minio/intro/index.md
                   - 适用场景: middleware/minio/intro/scenarios.md
                   - 常见术语: middleware/minio/intro/concepts.md
                   - Release Notes: middleware/minio/release-notes.md
@@ -705,10 +705,9 @@ nav:
                   - 实例监控: middleware/minio/user-guide/insight.md
                   - 配置参数: middleware/minio/user-guide/config.md
                   - MinIO 的身份管理: middleware/minio/user-guide/user-management.md
-
           - MySQL 数据库:
               - 介绍:
-                  - 什么是 MySQL: middleware/mysql/intro/what.md
+                  - 什么是 MySQL: middleware/mysql/intro/index.md
                   - 功能说明: middleware/mysql/intro/features.md
                   - 竞争优势: middleware/mysql/intro/benefits.md
                   - 基本概念: middleware/mysql/intro/concepts.md
@@ -726,7 +725,7 @@ nav:
                   - MySQL 其他故障: middleware/mysql/faq/faq-others.md
           - RabbitMQ 消息队列:
               - 介绍:
-                  - 什么是 RabbitMQ: middleware/rabbitmq/intro/what.md
+                  - 什么是 RabbitMQ: middleware/rabbitmq/intro/index.md
                   - 功能说明: middleware/rabbitmq/intro/features.md
                   - 竞争优势: middleware/rabbitmq/intro/benefits.md
                   - 适用场景: middleware/rabbitmq/intro/scenarios.md
@@ -743,7 +742,7 @@ nav:
               - 为 RabbitMQ 添加自定义插件: middleware/rabbitmq/faq/add-plugin.md
           - Redis 缓存服务:
               - 介绍:
-                  - 什么是 Redis: middleware/redis/intro/what.md
+                  - 什么是 Redis: middleware/redis/intro/index.md
                   - 适用场景: middleware/redis/intro/scenarios.md
                   - Release Notes: middleware/redis/release-notes.md
               - 快速入门:
@@ -755,7 +754,7 @@ nav:
                   - Redis 容灾部署方案: middleware/redis/best-practice/disaster-tolerance.md
           - PostgreSQL 数据库:
               - 介绍:
-                  - 什么是 PostgreSQL: middleware/postgresql/intro/what.md
+                  - 什么是 PostgreSQL: middleware/postgresql/intro/index.md
                   - 技术特性及基本概念: middleware/postgresql/intro/concepts.md
                   - Release Notes: middleware/postgresql/release-notes.md
               - 快速入门:
@@ -765,7 +764,7 @@ nav:
                   - 查看 PostgreSQL 日志: middleware/postgresql/user-guide/logs.md
           - MongoDB 数据库:
               - 介绍:
-                  - 什么是 MongoDB: middleware/mongodb/intro/what.md
+                  - 什么是 MongoDB: middleware/mongodb/intro/index.md
                   - 技术特性: middleware/mongodb/intro/features.md
                   - Release Notes: middleware/mongodb/release-notes.md
               - 快速入门:
@@ -774,13 +773,13 @@ nav:
                   - 删除 MongoDB: middleware/mongodb/user-guide/delete.md
       - 云原生存储:
           - 介绍:
-              - 什么是云原生存储: storage/what.md
+              - 什么是云原生存储: storage/index.md
               - 背景和挑战: storage/background.md
               - 功能优势: storage/benefits.md
               - 功能列表: storage/features.md
               - Release Notes: storage/hwameistor/releasenotes.md
           - HwameiStor 本地存储:
-              - 介绍: storage/hwameistor/intro/what.md
+              - 介绍: storage/hwameistor/intro/index.md
               - 组件介绍:
                   - 本地磁盘管理器: storage/hwameistor/intro/ldm.md
                   - 本地存储: storage/hwameistor/intro/ls.md
@@ -839,7 +838,7 @@ nav:
               - PV 和 PVC: storage/terms/pv_pvc.md
       - 镜像仓库:
           - 介绍:
-              - 什么是镜像仓库: kangaroo/what.md
+              - 什么是镜像仓库: kangaroo/index.md
               - Release Notes: kangaroo/release-notes.md
               - 镜像仓库 FAQ: kangaroo/faq.md
           - 升级:
@@ -873,14 +872,14 @@ nav:
               - 托管 Harbor 的访问类型: kangaroo/best-practice/managed-harbor-select-access-type.md
               - 登录非安全镜像仓库: kangaroo/best-practice/insecure_registry.md
       - 云边协同:
-          - 什么是云边协同: kant/intro/what.md
+          - 什么是云边协同: kant/intro/index.md
           - 功能特性: kant/intro/features.md
           - 产品优势: kant/intro/benefits.md
           - 应用场景: kant/intro/use-cases.md
           - 边缘节点接入要求: kant/intro/join-rqmt.md
           - 基本概念: kant/intro/concepts.md
       - 云原生安全:
-          - 介绍: security/what.md
+          - 介绍: security/index.md
           - Falco:
               - 介绍: security/falco.md
               - 安装: security/falco-install.md
@@ -905,7 +904,7 @@ nav:
       - 云原生网络: videos/network.md
   - 下载中心:
       - DaoCloud Enterprise 5.0:
-          - 索引列表: download/dce5.md
+          - 索引列表: download/index.md
           - 下载 DCE 5.0 社区版: download/free/dce5-installer-v0.9.0.md
           - 下载 DCE 5.0 商业版: download/business/dce5-installer-v0.9.0.md
           - 子模块和插件:

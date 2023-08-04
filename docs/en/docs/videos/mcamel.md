@@ -40,12 +40,12 @@ See [MinIO Instance Management](../middleware/minio/user-guide/create.md) for re
 
 ## Redis cache management
 
-See [Redis Cache Service](../middleware/redis/intro/what.md) for reference.
+See [Redis Cache Service](../middleware/redis/intro/index.md) for reference.
 
 <div class="responsive-video-container">
 <iframe src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/redis.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen ="true"> </iframe>
 </div>
 
-[Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [Free Trial](../dce/license0.md){ .md-button .md-button--primary }

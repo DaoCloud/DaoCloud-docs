@@ -34,6 +34,6 @@ resource utilization, disaster recovery policies for backup and recovery, and se
 define isolation levels for pods. These policies and strategies help enforce control, optimize
 resource allocation, ensure security and enable effective cluster management.
 
-[Download DCE 5.0](../../download/dce5.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../../install/intro.md){ .md-button .md-button--primary }
+[Download DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
 [Free Trial Now](../../dce/license0.md){ .md-button .md-button--primary }

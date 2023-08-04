@@ -107,21 +107,21 @@ plugins:
 
   - redirects:
       redirect_maps:
-        "api.md": "dce/what.md"
-        "dce/what-is-dce.md": "dce/what.md"
-        "zh/dce/what.md": "dce/what.md"
+        "api.md": "dce/index.md"
+        "dce/what-is-dce.md": "dce/index.md"
+        "zh/dce/index.md": "dce/index.md"
         "zh/install/install-dce.md": "install/community/k8s/online.md"
 
         # module quick links
-        "kairship.md": "kairship/intro/what.md"
-        "skoala.md": "skoala/intro/what.md"
-        "mspider.md": "mspider/intro/what.md"
-        "insight.md": "insight/intro/what.md"
-        "mcamel.md": "middleware/what.md"
-        "kpanda.md": "kpanda/intro/what.md"
-        "amamba.md": "amamba/intro/what.md"
+        "kairship.md": "kairship/intro/index.md"
+        "skoala.md": "skoala/intro/index.md"
+        "mspider.md": "mspider/intro/index.md"
+        "insight.md": "insight/intro/index.md"
+        "mcamel.md": "middleware/index.md"
+        "kpanda.md": "kpanda/intro/index.md"
+        "amamba.md": "amamba/intro/index.md"
         "blog.md": "blog/index.md"
-        "ghippo.md": "ghippo/intro/what.md"
+        "ghippo.md": "ghippo/intro/index.md"
         "video.md": "video/index.md"
 
 

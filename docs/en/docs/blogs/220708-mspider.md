@@ -103,8 +103,8 @@ In the service mesh, the following graphical interactive features are implemente
 6. Provide security governance features for namespaces and services, and provide form and YAML two ways of creating and editing forms. Users can match traffic governance to achieve zero trust environment and access authorization within the mesh.
 7. Provide flow topology and status chart viewing features for service communication in the mesh. The flow topology provides users with various information such as communication status, protocol usage, and performance parameters between nodes in the mesh. Users can quickly locate problems through search and filtering features. The status chart can provide users with system status information from multiple dimensions such as global, service, and workload.
 
-[Learn about Service Mesh](../mspider/intro/what.md){ .md-button }
+[Learn about Service Mesh](../mspider/intro/index.md){ .md-button }
 
-[Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [Free Trial Now](../dce/license0.md){ .md-button .md-button--primary }

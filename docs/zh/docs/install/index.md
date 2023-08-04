@@ -6,10 +6,51 @@ DCE 5.0 大体分为两个版本：社区版和商业版。
 
 商业版在社区版的基础上可按需购买服务网格、微服务引擎、多云编排、数据服务中间件、镜像仓库等高级模块，功能更全面，更能适应生产环境需求。
 
-| 版本   | 包含的模块                                                   | 描述                                               |
-| ------ | ------------------------------------------------------------ | -------------------------------------------------- |
-| 社区版 | [全局管理](../ghippo/intro/what.md)<br />[容器管理](../kpanda/intro/what.md)<br />[可观测性](../insight/intro/what.md)                         | [永久免费授权](../dce/license0.md)，3 个模块会保持持续更新，可随时[下载子模块的离线包](../download/dce5.md) |
-| 商业版 | [全局管理](../ghippo/intro/what.md)<br />[容器管理](../kpanda/intro/what.md)<br />[可观测性](../insight/intro/what.md)<br />[应用工作台](../amamba/intro/what.md)<br />[多云编排](../kairship/intro/what.md)<br />[微服务引擎](../skoala/intro/what.md)<br />[服务网格](../mspider/intro/what.md)<br />[精选中间件](../middleware/what.md)<br />[镜像仓库](../kangaroo/what.md) | 联系我们授权：电邮 info@daocloud.io 或致电 400 002 6898，各个模块可按需自由组合，可随时[下载子模块的离线包](../download/dce5.md)   |
+<table>
+  <thead>
+    <tr>
+      <th>版本</th>
+      <th>包含的模块</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>社区版</td>
+      <td>
+        <ul>
+          <li><a href="../ghippo/intro/index.md">全局管理</a></li>
+          <li><a href="../kpanda/intro/index.md">容器管理</a></li>
+          <li><a href="../insight/intro/index.md">可观测性</a></li>
+        </ul>
+      </td>
+      <td>
+        <a href="../dce/license0.md">永久免费授权</a>，3 个模块会保持持续更新，可随时
+        <a href="../download/index.md">下载子模块的离线包</a>
+      </td>
+    </tr>
+    <tr>
+      <td>商业版</td>
+      <td>
+        <ul>
+          <li><a href="../ghippo/intro/index.md">全局管理</a></li>
+          <li><a href="../kpanda/intro/index.md">容器管理</a></li>
+          <li><a href="../insight/intro/index.md">可观测性</a></li>
+          <li><a href="../amamba/intro/index.md">应用工作台</a></li>
+          <li><a href="../kairship/intro/index.md">多云编排</a></li>
+          <li><a href="../skoala/intro/index.md">微服务引擎</a></li>
+          <li><a href="../mspider/intro/index.md">服务网格</a></li>
+          <li><a href="../middleware/index.md">精选中间件</a></li>
+          <li><a href="../kangaroo/index.md">镜像仓库</a></li>
+        </ul>
+      </td>
+      <td>
+        联系我们授权：电邮 info@daocloud.io 或致电 400 002 6898，各个模块可按需自由组合，可随时
+        <a href="../download/index.md">下载子模块的离线包</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## 社区版安装流程
 
@@ -30,7 +71,7 @@ end
 subgraph first[安装社区版]
     direction TB
     S[ ] -.-
-    plan[资源规划] --> k8s[准备 K8s 集群] 
+    plan[资源规划] --> k8s[准备 K8s 集群]
     k8s --> tools[安装依赖项]
     tools -.-> kind[通过 kind 集群<br>在线安装]
     tools -.-> s1[通过标准 k8s 集群<br>在线安装]
@@ -58,9 +99,9 @@ click kind "https://docs.daocloud.io/install/community/kind/online/"
 click s1 "https://docs.daocloud.io/install/community/k8s/online/"
 click s2 "https://docs.daocloud.io/install/community/k8s/offline/"
 
-click kpanda "https://docs.daocloud.io/kpanda/intro/what/"
-click ghippo "https://docs.daocloud.io/ghippo/intro/what/"
-click insight "https://docs.daocloud.io/insight/intro/what/"
+click kpanda "https://docs.daocloud.io/kpanda/intro/"
+click ghippo "https://docs.daocloud.io/ghippo/intro/"
+click insight "https://docs.daocloud.io/insight/intro/"
 click free "https://docs.daocloud.io/dce/license0/"
 click ask "https://docs.daocloud.io/install/intro/#_4"
 ```
@@ -111,5 +152,5 @@ DaoCloud Enterprise 5.0 还处于发布初期，安装流程可能会有变更�
 
     ![社区版交流群](https://docs.daocloud.io/daocloud-docs-images/docs/images/assist.png)
 
-[下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
+[下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

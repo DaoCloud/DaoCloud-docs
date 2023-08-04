@@ -87,11 +87,11 @@ DCE 5.0 Enterprise Package includes the following modules that can be used on-de
 | Middleware MySQL        | The most widely used open-source relational database.                                  | [0.10.0](../../middleware/mysql/release-notes.md#0100)           |
 | Middleware RabbitMQ     | Open-source message broker software that implements the Advanced Message Queuing Protocol (AMQP). | [0.12.0](../../middleware/rabbitmq/release-notes.md#0120)        |
 | Middleware Redis        | An in-memory database caching service.                                                | [0.9.0](../../middleware/redis/release-notes.md#090)           |
-| Container Registry       | Used to store images for K8s, DevOps, and container application development.            | [0.9.1](../../release/rn5.0.md)                            |
-| Network                | Supports various CNI combinations for different Linux kernels.                        | [0.8.0](../../release/rn5.0.md)                            |
-| Storage                | Provides unified data storage services, supporting file, object, block, and local storage, easily integrates with storage vendors' solutions. | [v0.10.4](../../release/rn5.0.md)                            |
+| Container Registry       | Used to store images for K8s, DevOps, and container application development.            | [0.9.1](../../dce/dce-rn/230630.md)                            |
+| Network                | Supports various CNI combinations for different Linux kernels.                        | [0.8.0](../../dce/dce-rn/230630.md)                            |
+| Storage                | Provides unified data storage services, supporting file, object, block, and local storage, easily integrates with storage vendors' solutions. | [v0.10.4](../../dce/dce-rn/230630.md)                            |
 
 ## More
 
-- [Online Documentation](../../dce/what.md)
+- [Online Documentation](../../dce/index.md)
 - [Report Bugs](https://github.com/DaoCloud/DaoCloud-docs/issues)

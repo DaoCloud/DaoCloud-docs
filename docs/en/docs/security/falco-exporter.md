@@ -17,7 +17,7 @@ This section describes how to install Falco-exporter.
 
 !!! note
 
-    Before installing and using Falco-exporter, you need to [install](./install.md) and run Falco with gRPC output enabled (enabled by via Unix sockets by default). For more information on enabling gRPC output in Falco Helm Chart, see [Enabling gRPC](https://github.com/falcosecurity/charts/tree/master/falco#enabling-grpc).
+    Before installing and using Falco-exporter, you need to [install](falco-install.md) and run Falco with gRPC output enabled (enabled by via Unix sockets by default). For more information on enabling gRPC output in Falco Helm Chart, see [Enabling gRPC](https://github.com/falcosecurity/charts/tree/master/falco#enabling-grpc).
 
 Please confirm that your cluster has successfully connected to the `Container Management` platform, and then perform the following steps to install Falco-exporter.
 

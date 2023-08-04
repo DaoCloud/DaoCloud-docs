@@ -126,7 +126,7 @@ Other Linux 本质上是由于 DCE 对某些 Linux 操作系统没有提供安�
 
 3. 参考上一步`制作操作系统离线包`。
 
-4. 下载 addon 离线包，可以在[下载中心](../../download/dce5.md)下载最新版本（可选）
+4. 下载 addon 离线包，可以在[下载中心](../../download/index.md)下载最新版本（可选）
 
 5. 设置[集群配置文件 clusterConfig.yaml](../commercial/cluster-config.md)，
    可以在离线包 `offline/sample` 下获取该文件并按需修改。

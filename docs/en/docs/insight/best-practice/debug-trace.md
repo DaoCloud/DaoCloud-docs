@@ -59,8 +59,8 @@ As shown in the above figure, any transmission failure at any step will result i
 
     !!! note
 
-        The `opentelemetry collector` in the `Global Management Cluster` is also responsible for sending audit logs of all working clusters' [global management module](../../ghippo/intro/what.md) and Kubernetes audit logs (not collected by default) to the `audit server` component of the global management module.
+        The `opentelemetry collector` in the `Global Management Cluster` is also responsible for sending audit logs of all working clusters' [global management module](../../ghippo/intro/index.md) and Kubernetes audit logs (not collected by default) to the `audit server` component of the global management module.
 
 3. **global jaeger collector**
 
-    Display the `jaeger collector` in the `Global Management Cluster` receiving data from the `otel collector` in the `Global Management Cluster` and sending trace data to the [ElasticSearch cluster](../../middleware/elasticsearch/intro/what.md).
+    Display the `jaeger collector` in the `Global Management Cluster` receiving data from the `otel collector` in the `Global Management Cluster` and sending trace data to the [ElasticSearch cluster](../../middleware/elasticsearch/intro/index.md).

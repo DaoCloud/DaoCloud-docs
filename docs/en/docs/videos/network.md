@@ -4,7 +4,7 @@
 
 ## Create a Pod multi-NIC scenario
 
-See [multus-underlay](../network/modules/multus-underlay/what.md) for reference.
+See [multus-underlay](../network/modules/multus-underlay/index.md) for reference.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/pod-cnis.mp4" preload="metadata" poster="../images/net-cnis.png"></video>
@@ -28,7 +28,7 @@ See [SR-IOV](../network/modules/multus-underlay/sriov.md) for reference.
 
 ## Installation and use of Ingress Nginx
 
-See [Ingress Nginx](../network/modules/ingress-nginx/what.md) for reference.
+See [Ingress Nginx](../network/modules/ingress-nginx/index.md) for reference.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/ingress-nginx.mp4" preload="metadata" poster="../images/net-nginx.png"></video>
@@ -36,12 +36,12 @@ See [Ingress Nginx](../network/modules/ingress-nginx/what.md) for reference.
 
 ## Installation and use of MetalLB
 
-See [MetalLB](../network/modules/metallb/what.md) for reference.
+See [MetalLB](../network/modules/metallb/index.md) for reference.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/MetalLB.mp4" preload="metadata" poster="../images/net-metallb.png"></video>
 </div>
 
-[Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [Free Trial](../dce/license0.md){ .md-button .md-button--primary }
