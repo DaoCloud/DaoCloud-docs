@@ -40,6 +40,10 @@
 
     本地集群减少了因云端网络中断而导致的应用停机风险。在此期间，应用程序仍然可用，并且可以执行集群操作。当连接到云时，EKS 管理 Outposts 上 K8s 控制平面的可用性。本地集群运行的 Kubernetes 与云上 EKS 功能相同，支持自动部署最新的安全补丁。
 
+- [Azure 推出容器应用程序网关预览版](https://azure.microsoft.com/en-us/updates/public-preview-application-gateway-for-containers/)
+
+    Azure 容器应用程序网关是一个应用程序负载均衡和动态流量管理产品，适用于在 Kubernetes 集群中运行的工作负载。它是 Azure 应用网关入口控制器（AGIC）的增强版，增强的功能包括：在反映 Kubernetes YAML 配置变化时，实现近乎实时的收敛时间；支持超过 1400 个后端 Pod 和 100 个监听；支持蓝绿部署策略和主动/主动或主动/被动路由。
+
 - [Azure 发布 AKS 的网络可观测性附加组件](https://azure.microsoft.com/en-us/blog/enhance-kubernetes-troubleshooting-with-network-observability-add-on-in-aks/)
 
     AKS 的网络可观测性附加组件是一个分布式监控解决方案，适用于 Linux 和 Windows 主机环境。这个组件通过收集实时数据，利用 Linux 的 eBPF、虚拟过滤平台和 Windows 中的主机网络服务来深入了解网络基础设施，并将这些数据提供给 Prometheus 和 Grafana 使用。
@@ -95,6 +99,10 @@
 - [Azure 发布 AKS 舰队管理器（公开预览版）](https://mp.weixin.qq.com/s/YVUuFQLKe8DGADenZCKsyw)
 
     Azure Kubernetes 舰队管理器将多个群集地视为单个集群来管理。用户可通过创建一个 Fleet 资源来管理多个集群。用户可将现有 AKS 集群当作成员集群，加入到舰队中，然后用这些集群的元数据，编排多个集群场景，如 Kubernetes 资源传播和多集群负载均衡。
+
+- [阿里云容器服务 Serverless 版（ACK Serverless）2.0 发布](https://mp.weixin.qq.com/s/d7hl_X95JNg5I36GTyu7Lg)
+
+    更新内容：对 10+ K8s 核心系统组件实现全托管；支持动态容量规划；支持自动化升级 K8s 版本，包括自定义运维窗口和升级频率策略以及智能化的风险检测等）；支持智能弹性预测 AHPA 升级；新增大数据计算解决方案，基于多可用区轮询 Spot ECI，抢占失败降级到按量实例，使总资源成本下降 20% 以上。
 
 - [阿里云微服务引擎 MSE 6 月产品更新](https://mp.weixin.qq.com/s/WEFBZcKlzSM5r_gJ0If_Ag)
 
@@ -589,6 +597,10 @@
 
 ### R
 
+- [Rafay Kubernetes 运维平台支持自动化管理 Fleet，简化 Kubernetes 多集群的管理](https://rafay.co/press-release/rafay-introduces-automated-fleet-operations-to-efficiently-manage-multi-cluster-environments-across-datacenters-public-cloud-and-the-edge/)
+
+    自动化管理 Fleet 功能可简化跨数据中心、公有云和边缘环境的大规模 Kubernetes 集群的管理。具体包括：自动执行常用的 Fleet 管理操作，如升级集群、更新应用、扩展节点等；构建端到端自动化和自定义工作流；在后台自动执行集群的标准化策略和治理，减少管理开销；利用 Terraform 等现有工具启动整个 Fleet 的操作，并通过系统同步在 GitOps 资源库中反映 Fleet配置的更新情况。
+
 - [Rafay Systems 推出 Environment Manager，优化 Kubernetes 开发者体验](https://rafay.co/press-release/rafay-introduces-environment-manager-to-automate-environment-provisioning-and-accelerate-modern-application-deployment-from-code-to-cloud/)
 
     Environment Manager 通过为全栈环境提供自助服务功能，改善开发者体验。开发人员能够从平台团队策划、测试和持续管理的环境蓝图中配置现代应用堆栈。通过和 Rafay 的 Kubernetes 运维平台集成，Environment Manager 抽象了底层基础设施的复杂性，减少了配置和访问 Kubernetes 的环境所需的时间。
@@ -822,6 +834,10 @@
 
     TLS Protect for Kubernetes 是 Venafi 机器身份管理平台 Control Plane for Machine Identities 的一部分，
     帮助安全和平台团队在多云和多集群 Kubernetes 环境中管理云原生机器身份，如 TLS、mTLS 和 SPIFFE，增强机器身份管理的可观测性、控制和自动化。
+
+- [VMware 威胁检测和响应产品 VMware Carbon Black XDR 增加对云原生应用的支持](https://news.vmware.com/releases/carbon-black-cndr)
+
+    VMware Carbon Black 的云原生检测和响应（Cloud Native Detection and Response）功能使得用户能够在一个统一的平台内为容器和 Kubernetes 使用增强的威胁检测能力。具体包括：监控容器和 Kubernetes 环境中运行的进程；获得先前存在的容器中检测到的任何异常的历史数据；警报鉴别分类，分析事件来自哪个容器或 Kubernetes 节点。
 
 - [VMware 推出面向多云/混合云环境的 Kubernetes 资源统一管理产品 Tanzu Mission Control 自管理版本](https://mp.weixin.qq.com/s/_Nsc94wsxOBR7rRE9LoAmQ)
 
