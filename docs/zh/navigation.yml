@@ -117,13 +117,15 @@ nav:
               - 集群升级: kpanda/user-guide/clusters/upgrade-cluster.md
               - 集群设置: kpanda/user-guide/clusterops/cluster-settings.md
           - 集群巡检:
+              - 介绍: kpanda/user-guide/inspect/intro.md
               - 创建巡检配置: kpanda/user-guide/inspect/config.md
               - 执行巡检: kpanda/user-guide/inspect/inspect.md
               - 查看巡检报告: kpanda/user-guide/inspect/report.md
           - 备份恢复:
-              - ETCD 备份: kpanda/user-guide/backup/etcd-backup.md
+              - 介绍: kpanda/user-guide/backup/intro.md
               - 安装 velero 插件: kpanda/user-guide/backup/install-velero.md
-              - 备份无状态工作负载: kpanda/user-guide/backup/deployment.md
+              - 应用备份: kpanda/user-guide/backup/deployment.md
+              - ETCD 备份: kpanda/user-guide/backup/etcd-backup.md
           - 安全管理:
               - 安全扫描类型: kpanda/user-guide/security/intro.md
               - 合规性扫描:
