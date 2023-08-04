@@ -17,9 +17,9 @@ nav:
           - 安装依赖项: install/install-tools.md
           - 安装社区版:
               - 资源规划: install/community/resources.md
-              - kind 集群在线安装: install/community/kind/online.md
-              - 标准 K8s 集群在线安装: install/community/k8s/online.md
-              - 标准 K8s 集群离线安装: install/community/k8s/offline.md
+              - All-in-one 在线安装: install/community/kind/online.md
+              - 已有 K8s 集群在线安装: install/community/k8s/online.md
+              - 已有 K8s 集群离线安装: install/community/k8s/offline.md
           - 安装商业版:
               - 部署架构: install/commercial/deploy-arch.md
               - 部署要求: install/commercial/deploy-requirements.md
