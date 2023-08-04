@@ -854,7 +854,7 @@ nav:
               - 镜像列表: kangaroo/space/imagelist.md
               - Artifacts和描述信息: kangaroo/space/desc.md
               - 镜像回收: kangaroo/space/reclaim.md
-              - 镜像扫描: kangaroo/scan.md
+              - 镜像扫描: kangaroo/space/scan.md
           - 仓库集成:
               - 仓库集成(工作空间): kangaroo/integrate/integrate-ws.md
               - 仓库集成(管理员): kangaroo/integrate/integrate-admin.md
@@ -870,7 +870,7 @@ nav:
               - 镜像同步: kangaroo/integrate/sync.md
               - 仓库迁移: kangaroo/managed/harbor-migration.md
           - 最佳实践:
-              - 托管harbor应该选择什么访问类型: kangaroo/best-practice/managed-harbor-select-access-type.md
+              - 托管 Harbor 的访问类型: kangaroo/best-practice/managed-harbor-select-access-type.md
               - 登录非安全镜像仓库: kangaroo/best-practice/insecure_registry.md
       - 云边协同:
           - 什么是云边协同: kant/intro/what.md

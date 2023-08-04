@@ -102,8 +102,8 @@ class ingress,harbor,pod1,pod2 k8s
 
     ```text
     hosts {
-        10.1.1.1 harbor.example.com
-        fallthrough
+      10.1.1.1 harbor.example.com
+      fallthrough
     }
     ```
 

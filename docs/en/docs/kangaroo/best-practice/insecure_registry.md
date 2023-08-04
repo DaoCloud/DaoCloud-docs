@@ -1,6 +1,8 @@
 # Login to an insecure container registry
 
-When you need to Pull or Push images from an insecure container registry, you may encounter the `x509: certificate signed by unknown authority` error. This occurs when the container registry is either using the `http` protocol or the `https` certificate is self-signed.
+When you need to Pull or Push images from an insecure container registry, you may encounter the
+`x509: certificate signed by unknown authority` error. This occurs when the container registry is
+either using the `http` protocol or the `https` certificate is self-signed.
 
 I will explain how to resolve this issue using three different runtimes, using `test.registry.com` as an example.
 
@@ -21,18 +23,21 @@ After making the changes, restart Docker: `systemctl restart docker`
 
 ## containerd
 
-There are two methods to configure an insecure registry in containerd: a new method introduced in version `1.4`, and an old method that existed until version `2.0`.
+There are two methods to configure an insecure registry in containerd: a new method introduced
+in version `1.4`, and an old method that existed until version `2.0`.
 
 ### New Method
 
-Edit the `/etc/containerd/config.toml` file and locate the `config_path` configuration option, which has a default value of `/etc/containerd/certs.d`.
+Edit the `/etc/containerd/config.toml` file and locate the `config_path` configuration option,
+which has a default value of `/etc/containerd/certs.d`.
 
 ```yaml
 [plugins."io.containerd.grpc.v1.cri".registry]
   config_path = "/etc/containerd/certs.d"
 ```
 
-Create a folder inside the `/etc/containerd/certs.d` directory named after your registry, such as `test.registry.com`, and create a `hosts.toml` file inside it.
+Create a folder inside the `/etc/containerd/certs.d` directory named after your registry,
+such as `test.registry.com`, and create a `hosts.toml` file inside it.
 
 ```sh
 mkdir /etc/containerd/certs.d/test.registry.com
