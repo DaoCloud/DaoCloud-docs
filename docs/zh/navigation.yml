@@ -871,7 +871,7 @@ nav:
               - 仓库迁移: kangaroo/managed/harbor-migration.md
           - 最佳实践:
               - 托管harbor应该选择什么访问类型: kangaroo/best-practice/managed-harbor-select-access-type.md
-              - 登录非安全镜像仓库: kangaroo/quickstart/insecure_registry.md
+              - 登录非安全镜像仓库: kangaroo/best-practice/insecure_registry.md
       - 云边协同:
           - 什么是云边协同: kant/intro/what.md
           - 功能特性: kant/intro/features.md
