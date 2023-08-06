@@ -18,6 +18,8 @@ repo_name: DaoCloud/DaoCloud-docs
 repo_url: https://github.com/DaoCloud/DaoCloud-docs
 edit_uri: edit/main/docs/zh/docs/
 
+use_directory_urls: false # disbale https://www.mkdocs.org/user-guide/configuration/#use_directory_urls
+
 # Configuration
 theme:
   name: material
@@ -28,6 +30,7 @@ theme:
   include_search_page: false
   search_index_only: true
   include_homepage_in_sidebar: false
+  
 
   # Static files
   static_templates:
