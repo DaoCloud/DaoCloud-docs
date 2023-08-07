@@ -19,34 +19,34 @@ DCE 5.0 大体分为两个版本：社区版和商业版。
       <td>社区版</td>
       <td>
         <ul>
-          <li><a href="../ghippo/intro/index.md">全局管理</a></li>
-          <li><a href="../kpanda/intro/index.md">容器管理</a></li>
-          <li><a href="../insight/intro/index.md">可观测性</a></li>
+          <li><a href="https://docs.daocloud.io/ghippo/intro/index.html">全局管理</a></li>
+          <li><a href="https://docs.daocloud.io/kpanda/intro/index.html">容器管理</a></li>
+          <li><a href="https://docs.daocloud.io/insight/intro/index.html">可观测性</a></li>
         </ul>
       </td>
       <td>
-        <a href="../dce/license0.md">永久免费授权</a>，3 个模块会保持持续更新，可随时
-        <a href="../download/index.md">下载子模块的离线包</a>
+        <a href="https://docs.daocloud.io/dce/license0.html">永久免费授权</a>，3 个模块会保持持续更新，可随时
+        <a href="https://docs.daocloud.io/download/index.html#_3">下载子模块的离线包</a>
       </td>
     </tr>
     <tr>
       <td>商业版</td>
       <td>
         <ul>
-          <li><a href="../ghippo/intro/index.md">全局管理</a></li>
-          <li><a href="../kpanda/intro/index.md">容器管理</a></li>
-          <li><a href="../insight/intro/index.md">可观测性</a></li>
-          <li><a href="../amamba/intro/index.md">应用工作台</a></li>
-          <li><a href="../kairship/intro/index.md">多云编排</a></li>
-          <li><a href="../skoala/intro/index.md">微服务引擎</a></li>
-          <li><a href="../mspider/intro/index.md">服务网格</a></li>
-          <li><a href="../middleware/index.md">精选中间件</a></li>
-          <li><a href="../kangaroo/index.md">镜像仓库</a></li>
+          <li><a href="https://docs.daocloud.io/ghippo/intro/index.html">全局管理</a></li>
+          <li><a href="https://docs.daocloud.io/kpanda/intro/index.html">容器管理</a></li>
+          <li><a href="https://docs.daocloud.io/insight/intro/index.html">可观测性</a></li>
+          <li><a href="https://docs.daocloud.io/amamba/intro/index.html"><span style="white-space: nowrap;">应用工作台</span></a></li>
+          <li><a href="https://docs.daocloud.io/kairship/intro/index.html">多云编排</a></li>
+          <li><a href="https://docs.daocloud.io/skoala/intro/index.html"><span style="white-space: nowrap;">微服务引擎</span></a></li>
+          <li><a href="https://docs.daocloud.io/mspider/intro/index.html">服务网格</a></li>
+          <li><a href="https://docs.daocloud.io/middleware/index.html"><span style="white-space: nowrap;">精选中间件</span></a></li>
+          <li><a href="https://docs.daocloud.io/kangaroo/index.html">镜像仓库</a></li>
         </ul>
       </td>
       <td>
         联系我们授权：电邮 info@daocloud.io 或致电 400 002 6898，各个模块可按需自由组合，可随时
-        <a href="../download/index.md">下载子模块的离线包</a>
+        <a href="https://docs.daocloud.io/download/index.html#_3">下载子模块的离线包</a>
       </td>
     </tr>
   </tbody>
