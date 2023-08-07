@@ -50,7 +50,7 @@ nav:
               - Use Cases: kpanda/intro/scenarios.md
               - Concepts: kpanda/intro/concepts.md
               - Release Notes: kpanda/intro/release-notes.md
-              - Lastest News: kpanda/intro/news.md
+              - Latest News: kpanda/intro/news.md
               - FAQs: kpanda/intro/faq.md
           - Clusters:
               - Create Cluster: kpanda/user-guide/clusters/create-cluster.md
@@ -61,6 +61,7 @@ nav:
               - Cluster Roles: kpanda/user-guide/clusters/cluster-role.md
               - Cluster Status: kpanda/user-guide/clusters/cluster-status.md
               - Choose Runtime: kpanda/user-guide/clusters/runtime.md
+              - Cluster Versions: kpanda/user-guide/clusters/cluster-version.md
           - Namespaces:
               - Create Namespace: kpanda/user-guide/namespaces/createns.md
               - Exclusive Node to Namespace: kpanda/user-guide/namespaces/exclusive.md

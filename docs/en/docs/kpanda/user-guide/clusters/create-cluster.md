@@ -4,16 +4,18 @@ hide:
   - toc
 ---
 
-# Creating a Worker Cluster
+# Create Worker Clusters
 
-In the DCE 5.0 container management module, [cluster roles](./cluster-role.md) are divided into four categories: global service cluster, management cluster, working cluster, and access cluster. An integrated cluster can only be accessed from third-party vendors (see [Integrate-cluster](./integrate-cluster.md)). This page describes how to create a worker cluster.
+This page demonstrates how to create a worker cluster.
+
+In DCE 5.0 Container Management module, clusters can have four [roles](./cluster-role.md): global service cluster, management cluster, worker cluster, and integrated cluster. An integrated cluster can only be integrated from third-party vendors (see [Integrate Cluster](./integrate-cluster.md)).
 
 ## Prerequisites
 
 Certain prerequisites must be met before creating a cluster:
 
-- Prepare an adequate number of nodes according to business needs.
-- Kubernetes version 1.22+.
+- Prepare enough nodes to be joined into the cluster for business purpose.
+- Kubernetes version 1.22+. See [DCE 5.0 集群版本支持体系](./cluster-version.md)
 - The destination host must allow IPv4 forwarding. If the Pod and Service are using IPv6, the destination server needs to allow IPv6 forwarding.
 - For now, DCE does not provide firewall management functionality. You need to pre-define the firewall rules of the target host by yourself. To avoid problems during cluster creation, it is recommended to disable the firewall of the target host.
 - See Node Availability Check.
