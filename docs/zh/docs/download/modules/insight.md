@@ -6,11 +6,12 @@
 
 | 版本                                                   | 架构 | 文件大小 | 安装包                                                                                                     |  校验文件 | 更新日期   |
 | ------------------------------------------------------ | ----- |-------- | ---------------------------------------------------------------------------------------------------------- | ---------- | ---------- |
+| [v0.19.1](../../insight/intro/release-notes.md) | AMD 64 | 2.64GB | [:arrow_down: insight_v0.19.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/insight_v0.19.1_amd64.tar) | [:arrow_down: insight_v0.19.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/insight_v0.19.1_amd64_checksum.sha512sum) | 2023-08-04 |
 | [v0.13.1](../../insight/intro/releasenote.md) | AMD64 | 2.41GB | [:arrow_down: insight_v0.13.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/insight_v0.13.1_amd64.tar) | [:arrow_down: insight_v0.13.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/insight_v0.13.1_amd64_checksum.sha512sum) | 2022-12-30 |
 
 ## 校验
 
-在下载离线安装包和校验文件的目录，执行以下命令校验完整性：
+在下载离线安装包和校验文件的目录，以 v0.13.1_amd64 为例，执行以下命令校验完整性：
 
 ```sh
 echo "$(cat insight_v0.13.1_amd64_checksum.sha512sum)" | sha512sum -c
