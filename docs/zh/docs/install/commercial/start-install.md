@@ -18,19 +18,19 @@
 
 | CPU 架构 | 版本   | 下载地址                                                     |
 | :------- | :----- | :----------------------------------------------------------- |
-| AMD64    | vv0.10.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-vv0.10.0-amd64.tar> |
-| ARM64    | vv0.10.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-vv0.10.0-arm64.tar> |
+| AMD64    | v0.10.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.10.0-amd64.tar> |
+| ARM64    | v0.10.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.10.0-arm64.tar> |
 
 下载完毕后解压离线包：
 
 ```bash
 # 以 amd64 架构离线包为例
-tar -xvf offline-vv0.10.0-amd64.tar
+tar -xvf offline-v0.10.0-amd64.tar
 ```
 
 #### addon 离线包 （可选）
 
-addon 离线包包含一些常用的组件的 Helm Chart 离线包，具体清单请参考[addon](https://docs.daocloud.io/download/addon/vv0.10.0/#_2)。
+addon 离线包包含一些常用的组件的 Helm Chart 离线包，具体清单请参考[addon](https://docs.daocloud.io/download/addon/v0.10.0/#_2)。
 
 安装器从 v0.5.0 版本，支持了 addon 的离线包导入能力，如果需要支持 addon 中所有的 helm chart 离线化。可以在[下载中心](https://docs.daocloud.io/download/dce5/)下载最新版本。
 
@@ -38,8 +38,8 @@ addon 离线包包含一些常用的组件的 Helm Chart 离线包，具体清�
 
 | CPU 架构 | 版本   | 下载地址                                                     |
 | :------- | :----- | :----------------------------------------------------------- |
-| AMD64    | vv0.10.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-vv0.10.0-amd64.tar.gz> |
-| ARM64    | vv0.10.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-vv0.10.0-arm64.tar.gz> |
+| AMD64    | v0.10.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.10.0-amd64.tar.gz> |
+| ARM64    | v0.10.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.10.0-arm64.tar.gz> |
 
 #### ISO 操作系统镜像文件 （必需）
 
