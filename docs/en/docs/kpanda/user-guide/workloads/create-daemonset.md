@@ -2,7 +2,7 @@
 
 This page introduces how to create a daemon process (DaemonSet) through mirroring and YAML files.
 
-DaemonSet is connected to [taint](https://kubernetes.io/docs/tasks/configure-pod-container/assign-pods-nodes-using-node-affinity/) through [node affinity]( ://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/) feature ensures that a replica of a Pod is running on all or some of the nodes. For new nodes that join the cluster, DaemonSet automatically deploys the corresponding Pod on the new node and tracks the running status of the Pod. When a node is removed, the DaemonSet deletes all Pods it created.
+DaemonSet is connected to [taint](https://kubernetes.io/docs/tasks/configure-pod-container/assign-pods-nodes-using-node-affinity/) through [node affinity]( ://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/) feature ensures that a replica of a Pod is running on all or some of the nodes. For nodes that newly joined the cluster, DaemonSet automatically deploys the corresponding Pod on the new node and tracks the running status of the Pod. When a node is removed, the DaemonSet deletes all Pods it created.
 
 Common cases for daemons include:
 
