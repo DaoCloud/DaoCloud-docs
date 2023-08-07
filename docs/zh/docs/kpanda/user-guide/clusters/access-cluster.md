@@ -29,6 +29,8 @@
 - 已经将集群证书下载到了本地节点。
 - 本地节点已经安装了 kubectl 工具。关于详细的安装方式，请参阅安装 [kubectl](https://kubernetes.io/zh-cn/docs/tasks/tools/)。
 
+满足上述条件后，按照下方步骤从本地访问云端集群：
+
 1. 在`集群列表`页选择需要下载证书的集群，点击右侧的 `...`，并在弹出菜单中点击`证书获取`。
 
     ![进入下载证书页面](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/access-get-cert.png)
