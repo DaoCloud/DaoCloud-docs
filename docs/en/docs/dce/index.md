@@ -198,6 +198,13 @@ day by day, making things better over time.
      [Cluster Lifecycle Management](../community/kubean.md), [cloud-native network](../network/intro/index.md),
      [cloud-native storage](../storage/index.md)
 
+Once you have obtained the [license authorization](./license0.md) and successfully logged into DCE 5.0
+for the first time, you will be greeted by a user-friendly dashboard. This dashboard provides an intuitive display
+of various information, including the status of running containers and pods, CPU and memory usage, health status
+of clusters/nodes/pods, alerts, resource utilization, and an overview of available functionalities.
+
+![dashboard](./images/ipavo.png)
+
 [Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [Free Trial](./license0.md){ .md-button .md-button--primary }
