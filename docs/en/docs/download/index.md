@@ -44,7 +44,7 @@ The numerous modules included in DCE 5.0 can be downloaded separately to upgrade
 | Module       | File Size | Download                                  | Update Date |
 | ------------ | --------- | ----------------------------------------- | ----------- |
 | Global Manage| 440 MB    | [:arrow_right: Download Page](./modules/ghippo.md)  | 2023-07-07 |
-| Observability| 2.41 GB   | [:arrow_right: Download Page](./modules/insight.md) | 2022-12-30 |
+| Observability| 2.41 GB   | [:arrow_right: Download Page](./modules/insight.md) | 2023-08-04 |
 | Spidernet| 55.47 MB | [:arrow_right: Download Page](./modules/spidernet.md) | 2023-04-26 |
 | Operation Management | 56.90 MB | [:arrow_right: Download Page](./modules/gmagpie.md) | 2023-07-01 |
 
