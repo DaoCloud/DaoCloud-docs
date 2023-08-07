@@ -2,6 +2,21 @@
 
 This page lists the release notes of DME to help you learn its feature development and bug fixing progress.
 
+## 2023-08-03
+
+### v0.26.2
+
+#### Fixed
+
+- **Fixed** Issue with detection of `Consul` registry connectivity
+- **Fixed** Issue with gateway restarting due to abnormal application of plugins
+- **Fixed** Issue with abnormal configuration of gateway verification plugins
+- **Fixed** Issue with abnormal editing of cluster flow control rules in `Sentinel`
+
+!!! note
+
+    Important: Starting from Microservice Engine version `v0.24.2`, there is an incompatible update for versions `v0.24.2` and earlier. This is because the gateway involves a change in the address of the open-source component repository. Therefore, before updating, you need to manually delete the existing `gateway-api-admission-xxxxx` Job and then proceed with the normal upgrade process.
+
 ## 2023-07-26
 
 ### v0.26.1

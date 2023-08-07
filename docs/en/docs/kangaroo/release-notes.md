@@ -2,6 +2,18 @@
 
 This page lists the release notes of the container registry, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-08-02
+
+### v0.10
+
+- Added a solution for migrating/backing up/restoring image repositories, which has been verified through the migration of the release-ci repository
+- Added best practices for logging into non-secure image repositories
+- Added support for using the internal middleware MINIO when creating hosted Harbor
+- Added support for the PG mode of Renmin Jincang
+- Improved the format validation for PG and Redis addresses when creating hosted Harbor
+- Improved grayed-out and prompt optimization for unauthorized access
+- Improved handling of special cases after unbinding clusters
+
 ## 2023-07-02
 
 ### v0.9

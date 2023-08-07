@@ -2,6 +2,26 @@
 
 This page lists the release notes for Application Workspace to help you understand the development and feature changes in each version.
 
+## 2022-07-31
+
+### v0.19.2
+
+#### New Features
+
+- **Added** Support for navigating to Jira to view details in the Issues interface
+- **Added** Status indicators for clusters
+- **Added** Editing YAML, adding components, editing components, editing operational features, and other functionalities for OAM applications
+- **Added** Support for sorting pipelines based on recent run time
+- **Added** Support for Sonarqube configuration and code quality result steps in pipelines
+- **Added** Integration of Sonarqube instances in the toolchain
+- **Added** Default binding of native applications when creating applications based on git, jar, and container images in the wizard
+
+#### Enhancements
+
+- **Optimized** Steps to integrate gitlab with jenkins credentials
+- **Optimized** Display of binding time and added a division for sonarqube instances with bound workspaces in the administrator view
+- **Optimized** Fixed the issue of the cache not expiring in apiserver
+
 ## 2022-06-30
 
 ### v0.18.1
