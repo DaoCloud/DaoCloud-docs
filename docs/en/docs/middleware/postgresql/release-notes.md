@@ -6,13 +6,17 @@ This page lists the Release Notes of the PostgreSQL database, so that you can un
 
 ### v0.4.0
 
-#### Bug Fixes
+#### Added
 
-- **Fixed** an issue where some panels in the monitoring chart were not displaying.
+- **Added** backup management capability.
 
-#### Enhancements
+#### Improved
 
-- **Enhanced** the monitoring chart, removing distracting elements and adding a time range selection.
+- **Improved** monitoring charts by removing distractions and adding time range selection.
+
+#### Fixed
+
+- **Fixed** the issue where some panels in the monitoring charts were not displaying.
 
 ## 2023-06-30
 
