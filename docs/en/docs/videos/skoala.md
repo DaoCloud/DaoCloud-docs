@@ -12,7 +12,7 @@ See to the [Accessing the Registry Center](../skoala/trad-ms/integrated/integrat
 
 ## Microservice configuration list
 
-See [Microservice configuration list](../skoala/trad-ms/hosted/configcenter.md) for reference.
+See [Microservice configuration list](../skoala/trad-ms/hosted/configs.md) for reference.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-config.mp4" preload="metadata" poster="../images/skoala-config.png"></video>
