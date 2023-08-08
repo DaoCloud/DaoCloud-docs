@@ -90,7 +90,7 @@ hide:
     - 创建集群耗时较长，需要耐心等待。其间，可以点击`返回集群列表`按钮让安装过程后台运行。
     - 如需查看当前状态，可点击`实时日志`。
 
-![查看实时日志](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/create009.png)
+    ![查看实时日志](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/create009.png)
 
 !!! note
 

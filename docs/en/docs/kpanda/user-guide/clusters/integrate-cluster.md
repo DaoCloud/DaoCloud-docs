@@ -36,4 +36,4 @@ In DCE 5.0 Container Management module, you can integrate a cluster of the follo
 
 !!! note
 
-    - The status of the newly integrated cluster is `Integrating`, which will become `Running` after the integration succeeds.
+    The status of the newly integrated cluster is `Integrating`, which will become `Running` after the integration succeeds.
