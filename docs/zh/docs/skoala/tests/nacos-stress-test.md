@@ -8,7 +8,7 @@ TPS：通常指服务器每秒处理的事务数 (Transactions Per Second)。在
 
 ## 测试命令
 
-```
+```console
 java -jar -Xms2g -Xmx2g -Dnacos.server=10.6.222.21:30168 -Dthead.count=100 -Dservice.count=500 nacos-client-1.0-SNAPSHOT-jar-with-dependencies.jar
 ```
 

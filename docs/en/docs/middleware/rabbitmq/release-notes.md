@@ -8,7 +8,8 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 
 #### New Features
 
-- **Added** access restrictions for UI interface.
+- **Added** workload anti-affinity capability.
+- **Added** access restrictions for UI interface permissions.
 
 ## 2023-06-30
 

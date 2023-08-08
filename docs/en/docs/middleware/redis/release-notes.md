@@ -12,8 +12,9 @@ This page lists the release notes for the Redis Cache service, providing you wit
 
 #### Optimizations
 
-- **Optimized** default anti-affinity tag values in the `mcamel-redis` instance creation dialog to simplify configuration process.
-- **Optimized** frontend UI to display permission information for `mcamel-redis`.
+- **Optimized** the creation dialog of `mcamel-redis` instance by adding default anti-affinity label values, simplifying the configuration process.
+- **Optimized** the data recovery interface of `mcamel-redis`.
+- **Optimized** the display of frontend interface permissions for `mcamel-redis`.
 
 #### Bug Fixes
 

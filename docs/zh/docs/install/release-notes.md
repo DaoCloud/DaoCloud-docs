@@ -2,6 +2,46 @@
 
 本页列出安装器的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2023-7-31
+
+### v0.10.0
+
+#### 新增
+
+- **新增** 支持 Oracle Linux R8-U7 操作系统
+- **新增** 支持灵活暴露 kind 容器映射至宿主机的端口
+- **新增** import-artifact 子命令支持根据 clusterConfig.yaml 配置文件中定义的外接服务来导入离线资源
+
+#### 优化
+
+- **优化** 对于使用安装器通过外接 os repo 部署环境后，优化了在容器管理创建集群时可以选择到外接 os repo
+- **优化** 重构、抽象 clusterConfig 检测层
+- **优化** 优化前置依赖安装脚本的错误提示
+- **优化** 在最小化安装过程中 ES 健康状态为 `yellow` 时允许继续安装
+- **优化** 消除 import-artifact 子命令多余的镜像集成步骤
+- **优化** 离线资源外接或内建场景下默认展开 clusterConfig 模板中 fullPackagePath 属性
+
+#### 修复
+
+- **修复** 修复外接镜像服务地址检测有误
+- **修复** 修复火种 kind 集群输出的错误格式 kubeconfig
+- **修复** 修复解压不同版本离线包至统一目录导致 helm 参数出现多个版本 chart 的问题
+- **修复** 修复 prerequisite.tgz 中错误的指令集架构信息
+- **修复** 修复 import-artifact 不指定-C 导入异常
+- **修复** 修复错误的退出指令导致安装器退出提示信息未展示的问题
+- **修复** 修复 podman 底座 + kind 重启导致 kube-controller-manager 和 kube-scheduler 证书认证失败问题
+- **修复** 修复打印内嵌 manifest 子命令的命令指示符只要指定非 `install-app` 都会返回全模式 manifest 的问题
+- **修复** 修复打印内嵌 manifest 子命令的命令名 typo
+- **修复** 修复已存在 amd64 资源，import-artifact 子命令再次导入 arm64 包失败
+
+#### 已知问题
+
+- 升级不支持通过 install-app 子命令，仅支持 create-cluster 子命令
+
+- Redhat 8.6 操作系统火种 kind 重启后 kubelet 服务无法启动，报错：`failed to initialize top level QOS containers: root container [kubelet kubepods] doesn't exist`
+
+- 安装基于 TencentOS 3.1 的集群时，无法正确识别包管理器，如果需要 TencentOS 3.1 请使用安装器 0.9.0 版本
+
 ## 2023-6-30
 
 ### v0.9.0
