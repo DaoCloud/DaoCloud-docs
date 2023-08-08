@@ -7,6 +7,11 @@ hide:
 
 This page summarizes blogs and public account articles related to DCE 5.0 and cloud-native technology, sorted by date by default.
 
+- [202300808 | Unlocking the Power of Kubernetes with K8SGPT](./230808-k8sgpt.md)
+
+    [K8sGPT](https://k8sgpt.ai/) is an incredible tool that gives Kubernetes SREs superpowers.
+    It provides a simple and efficient way to scan your Kubernetes clusters and diagnose issues in plain English.
+
 - [20230612 | AIGC Sharp Tools: Exploring Ray's Cloud-Native Journey - Ray Core Part II](./230615-ray.md)
 
     This article provides a detailed explanation of Ray's capabilities and parameters, as well as practical application operations.
