@@ -6,13 +6,13 @@ DCE 5.0 服务网格针对纳管的服务，内置了一键诊断和修复功能
 
     ![诊断](../images/diagnose01.png)
 
-1. 从右侧滑入一个诊断的弹窗，按照内置的 checklist 进行检查。绿色`已通过`表示正常，红色`未通过`表示需要修复。
+1. 从右侧滑入一个诊断的弹窗，按照内置的 checklist 进行检查。<span style="color:green">已通过</span>表示正常，<span style="color:red">未通过</span>表示需要修复。
 
-    勾选`未通过`的条目，点击`一键修复`按钮。可以点击`重新诊断`刷新 checklist，通常会在几分钟内完成修复。
+    勾选<span style="color:red">未通过</span>的条目，点击`一键修复`按钮。可以点击`重新诊断`刷新 checklist，通常会在几分钟内完成修复。
 
     ![修复](../images/diagnose02.png)
 
-1. 成功修复之后，checklist 各项将变灰且全部显示为`已通过`，点击`下一步`。
+1. 成功修复之后，checklist 各项将变灰且全部显示为<span style="color:green">已通过</span>，点击`下一步`。
 
     ![下一步](../images/diagnose03.png)
 
