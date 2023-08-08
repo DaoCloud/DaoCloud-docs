@@ -1,18 +1,19 @@
-# 集群版本支持范围
+# Supported Kubernetes Versions
 
-在 DCE 5 中，对于[接入集群](./cluster-role.md#_5)和使用界面自建的[工作集群](./cluster-role.md#_4)采取不同的版本支持机制，本文主要介绍使用 DCE 5 界面创建的工作集群的版本支持机制。
+In the DCE 5.0 platform, the [integrated clusters and self-built clusters](cluster-status.md) have different version support mechanisms.
 
-kubernetes 社区支持 3 个版本范围，如 1.24、1.25、1.26。当社区新版本发布之后，社区支持的版本范围将会进行递增。
-如社区最新的 1.27 版本已经发布，此时社区支持的版本范围是 1.25、1.26、1.27。
+This page introduces the version support mechanism for self-built clusters.
 
-为了保障集群的安全和稳定性，在 DCE5 中使用界面创建集群时支持的版本范围将始终比社区版本低一个版本。如社区支持的版本范围是 1.25、1.26、1.27，则在 DCE 5 中使用界面创建工作集群的版本范围是 1.24、1.25、1.26，并且会为用户推荐一个稳定的版本，如 1.24.7。
+The Kubernetes community supports three version ranges: 1.24, 1.25, and 1.26. When a new version is released by the community, the supported version range will increment. For example, if the latest version released by the community is 1.27, then the supported version range by the community will be 1.25, 1.26, and 1.27.
 
-除此之外， DCE 5 中使用界面创建工作集群的版本范围与社区保持高度同步，当社区版本进行递增后，DCE 5 中使用界面创建工作集群的版本范围也会同步递增一个版本。
+To ensure the security and stability of the clusters, when creating clusters using the interface in DCE 5.0, the supported version range will always be one version lower than the community's version.
 
-kubernetes 版本发布说明
+For instance, if the community supports version range 1.25, 1.26, and 1.27, then the version range for creating working clusters using the interface in DCE 5.0 will be 1.24, 1.25, and 1.26. Additionally, a stable version, such as 1.24.7, will be recommended to users.
 
-| kubernetes 社区版本范围 | DCE 5 自建工作集群版本范围 | DCE 5 自建工作集群推荐版本 | DCE 5 版本 | 发布时间   |
-| ----------------------- | -------------------------- | -------------------------- | ---------- | ---------- |
-| 1.25、1.26、1.27        | 1.24、1.25、1.26           | **1.24.7**                 | V0.7.0     | 2023.05.09 |
+Furthermore, the version range for creating working clusters using the interface in DCE 5.0 will remain highly synchronized with the community. When the community version increases incrementally, the version range for creating working clusters using the interface in DCE 5.0 will also increase by one version.
 
-![版本支持机制](../../images/cluster-version.png)
+Kubernetes Version Release Notes
+
+| Kubernetes Community Version Range | Self-built Working Cluster Version Range | Recommended Version for Self-built Working Cluster | DCE 5.0 Version | Release Date |
+| ---------------------------------- | ---------------------------------------- | ------------------------------------------------- | -------------- | ------------ |
+| 1.25<br>1.26<br>1.27               | 1.24<br>1.25<br>1.26                    | **1.26.5**                                        | V0.7.0         | 2023.05.09   |

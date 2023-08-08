@@ -20,8 +20,6 @@ hide:
 - DCE 暂不提供对防火墙的管理功能，您需要预先自行定义目标主机防火墙规则。为了避免创建集群的过程中出现问题，建议禁用目标主机的防火墙。
 - 参阅[节点可用性检查](../nodes/node-check.md)
 
-  ![创建集群按钮](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/create003.png)
-
 ## 操作步骤
 
 1. 在`集群列表`页面中，点击`创建集群`按钮。
@@ -49,14 +47,14 @@ hide:
 
     - 使用统一的密码：开启后集群中所有节点的访问密码都相同，需要在下方输入访问所有节点的统一密码。如果关闭，则可以为每个节点设置单独的用户名和密码。
 
-    - 节点检查：预先检查节点的连通性。这是非强制性的，可以跳过检查。
-    - NTP 时间同步：开启后会自动同步各个节点上的时间。
+    - 节点信息：填写节点名称和 IP 地址。
+    - NTP 时间同步：开启后会自动同步各个节点上的时间，需要提供 NTP 服务器地址。
 
-        ![节点配置1](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew01.png)
-        
-        ![节点配置2](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew02.png)
+        ![节点配置](../../images/createnew01.png)
 
-4. 填写网络配置信息，并点击`下一步`。
+4. 在页面底部点击节点检查。如果检查通过则继续下一步操作。如果检查未通过，则更新`节点信息`并再次执行检查。
+
+5. 填写网络配置信息，并点击`下一步`。
 
     - 网络插件：负责为集群内的 Pod 提供网络服务，**创建集群后不可更改网络插件**。支持 [cilium](../../../network/modules/cilium/index.md) 和 [calico](../../../network/modules/calico/index.md)。选择 `none` 表示暂不安装网络插件。
 
@@ -69,11 +67,11 @@ hide:
         
         ![网络配置2](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew04.png)
 
-5. 填写插件配置信息，并点击`下一步`。
+6. 填写插件配置信息，并点击`下一步`。
 
     ![插件配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew05.png)
 
-6. 填写高级配置信息，并点击`确定`。
+7. 填写高级配置信息，并点击`确定`。
 
     - `kubelet_max_pods`：设置每个节点的最大 Pod 数量，默认为 110 个。
     - `hostname_overide`：重置主机名，建议使用默认值，采用系统默认生成的名称作为主机名称。
@@ -85,21 +83,19 @@ hide:
 
         ![高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew06.png)
 
-## 完成创建
 
-填写正确信息并完成上述步骤后，页面会提示集群正在创建中。
+!!! success
 
-!!! note
-
-    创建集群耗时较长，需要耐心等待。其间，可以点击`返回集群列表`按钮回到集群列表页面，等待集群创建完成。
-    如需查看当前状态，可点击`实时日志`。
-
-![创建成功](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/create008.png)
+    - 填写正确信息并完成上述步骤后，页面会提示集群正在创建中。
+    - 创建集群耗时较长，需要耐心等待。其间，可以点击`返回集群列表`按钮让安装过程后台运行。
+    - 如需查看当前状态，可点击`实时日志`。
 
 ![查看实时日志](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/create009.png)
 
-当集群出现未知状态时，表示当前集群已失联，系统展示数据为失联前缓存数据，不代表真实数据，同时失联状态下执行的任何操作都将不生效，请检查集群网络连通性或主机状态。
+!!! note
 
-![未知状态](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createnew07.png)
+    - 当集群出现未知状态时，表示当前集群已失联。
+    - 系统展示数据为失联前缓存数据，不代表真实数据。
+    - 同时失联状态下执行的任何操作都将不生效，请检查集群网络连通性或主机状态。
 
-![未知状态详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createnew08.png)
+    ![未知状态](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createnew07.png)
