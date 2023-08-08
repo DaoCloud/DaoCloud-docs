@@ -4,6 +4,24 @@ This page lists the Release Notes of Spidernet, so that you can understand the e
 
 The included Spiderpool is an IPAM module developed by DaoCloud. Please refer to the [Spiderpool Release Notes](https://github.com/spidernet-io/spiderpool/releases) for more information.
 
+## 2023-07-28
+
+### v0.8.1
+
+Compatible with **Spiderpool version** : `v0.6.0`
+
+#### New Features
+
+- **Added** `nodeName` and `multusName` fields in Spiderpool CR to support node topology and configure networks as needed
+- **Added** Spiderpool provides SpiderMultusConfig CR, which simplifies the configuration of Multus CNI in JSON format and automatically manages Multus NetworkAttachmentDefinition CR
+- **Added** Spiderpool provides Coordinator plugin to solve issues such as Underlay Pods unable to access ClusterIP, routing of tuned Pods, detection of IP conflicts in Pods, and reachability of Pod gateways. Refer to [Coordinator documentation](https://github.com/spidernet-io/spiderpool/blob/main/docs/usage/coordinator-zh_CN.md)
+- **Added** Deep support for IPVlan, suitable for any public cloud environment
+- **Added** Support for multiple default IP pools to simplify usage
+- **Added** CNI plugin `Ifacer` for automatic creation of sub-interfaces. Refer to [`Ifacer` documentation](https://github.com/spidernet-io/spiderpool/blob/main/docs/usage/ifacer-zh_CN.md)
+- **Added** Ability to specify default route network interfaces through Pod annotations
+- **Added** Support for automatic pool recycling switch to customize whether automatic pools should be deleted
+- **Improved** Support for elastic IPs in cluster subnets, resolving the issue where new Pods do not have available IPs while old Pods are not yet deleted during rolling updates of applications.
+
 ## 2023-06-28
 
 ### v0.8.0
