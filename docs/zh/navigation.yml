@@ -522,6 +522,7 @@ nav:
               - mspider/user-guide/service-list/README.md
               - 从网格外部访问服务: mspider/user-guide/service-list/out-to-in.md
               - 服务条目: mspider/user-guide/service-list/service-entry.md
+              - 一键修复: mspider/user-guide/service-list/diagnose.md
           - 流量治理:
               - mspider/user-guide/traffic-governance/README.md
               - 虚拟服务: mspider/user-guide/traffic-governance/virtual-service.md
