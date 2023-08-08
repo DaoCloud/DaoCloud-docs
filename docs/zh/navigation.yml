@@ -923,6 +923,7 @@ nav:
       - 体验社区版: trial/index.md
   - 博客:
       - 博文索引: blogs/index.md
+      - 202308 | 尝鲜：K8sGPT 赋能 Kubernetes: blogs/230808-k8sgpt.md
       - 202306 | AIGC 利器 Ray 云原生探索下篇: blogs/230615-ray.md
       - 202306 | AIGC 利器 Ray 云原生探索上篇: blogs/230612-ray.md
       - 202306 | Istio 1.18 正式发布: blogs/230609-istio118.md
