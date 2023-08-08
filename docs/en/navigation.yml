@@ -501,6 +501,7 @@ nav:
               - mspider/user-guide/service-list/README.md
               - Access Service out of Mesh: mspider/user-guide/service-list/out-to-in.md
               - Service Entry: mspider/user-guide/service-list/service-entry.md
+              - One-Click Repair: mspider/user-guide/service-list/diagnose.md
           - Traffic Management:
               - mspider/user-guide/traffic-governance/README.md
               - Virtual Service: mspider/user-guide/traffic-governance/virtual-service.md
