@@ -435,12 +435,13 @@ nav:
                   - Delete Nacos: skoala/trad-ms/hosted/delete-registry.md
                   - Microservice Namespace: skoala/trad-ms/hosted/namespace.md
                   - Microservice List:
-                      - Intro: skoala/trad-ms/hosted/servicelist/intro.md
-                      - Check Microservice: skoala/trad-ms/hosted/servicelist/check-details.md
-                      - Traffic Rules: skoala/trad-ms/hosted/servicelist/governance-policy.md
-                      - Flow Control: skoala/trad-ms/hosted/servicelist/flow-control.md
+                      - Intro: skoala/trad-ms/hosted/services/intro.md
+                      - Check Microservice: skoala/trad-ms/hosted/services/check-details.md
+                      - Traffic Rules: 
+                          - Rules Intro: skoala/trad-ms/hosted/services/governance-policy.md
+                          - Flow Control: skoala/trad-ms/hosted/services/flow-control.md
                   - Configurations:
-                      - skoala/trad-ms/hosted/configcenter.md
+                      - skoala/trad-ms/hosted/configs.md
                   - Monitoring:
                       - Monitor Microservices: skoala/trad-ms/hosted/monitor/microservices.md
                       - Monitor Components: skoala/trad-ms/hosted/monitor/components.md

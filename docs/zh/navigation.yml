@@ -452,12 +452,13 @@ nav:
                   - 删除注册配置中心: skoala/trad-ms/hosted/delete-registry.md
                   - 微服务命名空间: skoala/trad-ms/hosted/namespace.md
                   - 微服务列表:
-                      - 介绍: skoala/trad-ms/hosted/servicelist/intro.md
-                      - 查看微服务详情: skoala/trad-ms/hosted/servicelist/check-details.md
-                      - 规则介绍: skoala/trad-ms/hosted/servicelist/governance-policy.md
-                      - 流控规则: skoala/trad-ms/hosted/servicelist/flow-control.md
+                      - 介绍: skoala/trad-ms/hosted/services/intro.md
+                      - 查看微服务详情: skoala/trad-ms/hosted/services/check-details.md
+                      - 流量治理: 
+                          - 规则介绍: skoala/trad-ms/hosted/services/governance-policy.md
+                          - 流控规则: skoala/trad-ms/hosted/services/flow-control.md
                   - 配置管理:
-                      - skoala/trad-ms/hosted/configcenter.md
+                      - skoala/trad-ms/hosted/configs.md
                   - 监控:
                       - 微服务监控: skoala/trad-ms/hosted/monitor/microservices.md
                       - 组件监控: skoala/trad-ms/hosted/monitor/components.md
