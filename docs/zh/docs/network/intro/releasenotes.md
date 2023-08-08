@@ -14,10 +14,13 @@
 
 - **新增** Spiderpool CR 中新增 nodeName、multusName 字段，用于支持节点拓扑，能按需配置网络
 - **新增** Spiderpool 提供了 SpiderMultusConfig CR ，简化书写 JSON 格式的 Multus CNI 配置，自动管理 Multus NetworkAttachmentDefinition CR
-- **新增** Spiderpool 提供了 Coordinator 插件，解决 Underlay Pod 无法访问 ClusterIP 、调谐 Pod 的路由、检测 Pod 的 IP 是否冲突、Pod 的网关是否可达等。参考 [Coordinator 文档](https://github.com/spidernet-io/spiderpool/blob/main/docs/usage/coordinator-zh_CN.md)
+- **新增** Spiderpool 提供了 Coordinator 插件，解决 Underlay Pod 无法访问 ClusterIP、调谐 Pod
+  的路由、检测 Pod 的 IP 是否冲突、Pod 的网关是否可达等。参考
+  [Coordinator 文档](https://github.com/spidernet-io/spiderpool/blob/main/docs/usage/coordinator-zh_CN.md)
 - **新增** IPVlan 的深度支持，适用于任何公有云环境
 - **新增** 支持多个默认 IP 池，简化使用成本
-- **新增** CNI 插件 `Ifacer`，用于自动创建子接口，参考[ `Ifacer` 文档](https://github.com/spidernet-io/spiderpool/blob/main/docs/usage/ifacer-zh_CN.md)
+- **新增** CNI 插件 `Ifacer`，用于自动创建子接口，参考
+  [Ifacer 文档](https://github.com/spidernet-io/spiderpool/blob/main/docs/usage/ifacer-zh_CN.md)
 - **新增**通过 Pod 注解指定默认路由网卡
 - **新增**自动池的回收开关支持，可以自定义自动池是否删除
 - **优化** 集群子网弹性 IP 的支持，可以很好地解决应用在滚动更新时，旧 Pod 未删除，新 Pod 没有可用 IP 的问题
