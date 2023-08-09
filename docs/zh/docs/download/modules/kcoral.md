@@ -6,7 +6,7 @@
 
 | 版本                                            | 架构 | 文件大小 | 安装包                                                                                                                             |  校验文件 | 更新日期       |
 |-----------------------------------------------| ----- |-------- |---------------------------------------------------------------------------------------------------------------------------------| ---------- |------------|
-| [v0.4.0](../../kcoral/intro/release-notes.md) | AMD64 | 2.41GB | [:arrow_down: kcoral_v0.4.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.4.0_amd64.tar) | [:arrow_down: kcoral_v0.4.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.4.0_amd64_checksum.sha512sum) | 2023-08-08 |
+| [v0.4.0](../../kcoral/intro/release-notes.md) | AMD64 | 59.29 MB | [:arrow_down: kcoral_v0.4.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.4.0_amd64.tar) | [:arrow_down: kcoral_v0.4.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.4.0_amd64_checksum.sha512sum) | 2023-08-08 |
 
 ## 校验
 
