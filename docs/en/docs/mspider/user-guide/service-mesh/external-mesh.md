@@ -3,7 +3,7 @@ hide:
    - toc
 ---
 
-# Create the external mesh
+# Create External Mesh
 
 External mesh means that the existing mesh can be connected to the DCE 5.0 service mesh for management.
 

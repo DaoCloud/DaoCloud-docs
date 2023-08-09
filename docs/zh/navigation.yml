@@ -509,7 +509,7 @@ nav:
                   - 网格架构: mspider/intro/comp-archi-ui/architect.md
                   - 网格控制面组件: mspider/intro/comp-archi-ui/cp-component.md
                   - 系统命名空间: mspider/intro/comp-archi-ui/namespaces.md
-                  - UI 支持的特性: mspider/intro/comp-archi-ui/meshes.md
+                  - UI 支持的特性: mspider/intro/comp-archi-ui/features-on-ui.md
               - 常见问题: mspider/intro/faq.md
               - Release Notes: mspider/intro/release-notes.md
           - 安装、配置和升级:

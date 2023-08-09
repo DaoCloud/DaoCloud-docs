@@ -483,11 +483,13 @@ nav:
               - What is Service Mesh: mspider/intro/index.md
               - Features: mspider/intro/features.md
               - Use Cases: mspider/intro/scenarios.md
-              - Features Supported on UI: mspider/intro/meshes.md
               - Permissions: ghippo/permissions/mspider.md
               - Spec for App Integration: mspider/intro/app-spec.md
-              - Architecture: mspider/intro/architect.md
-              - Control Plane Components: mspider/intro/cp-component.md
+              - System Components and Architecture:
+                  - Architecture: mspider/intro/comp-archi-ui/architect.md
+                  - Control Plane Components: mspider/intro/comp-archi-ui/cp-component.md
+                  - System Namespaces: mspider/intro/comp-archi-ui/namespaces.md
+                  - Features Supported on UI: mspider/intro/comp-archi-ui/features-on-ui.md
               - FAQs: mspider/intro/faq.md
               - Release Notes: mspider/intro/release-notes.md
           - Install, Config, and Upgrade:

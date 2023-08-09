@@ -25,7 +25,7 @@ Extension modules that run through the overall architecture include observabilit
 
 - **Observability**
 
-    Observability is handled by [Insight](../../insight/intro/index.md). The service mesh obtains traffic metric information to draw a topology map through interface calls and directly calls Istio's native Grafana to provide users with various metric charts.
+    Observability is handled by [Insight](../../../insight/intro/index.md). The service mesh obtains traffic metric information to draw a topology map through interface calls and directly calls Istio's native Grafana to provide users with various metric charts.
 
 - **Microservice Platform**
 
