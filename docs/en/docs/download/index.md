@@ -41,12 +41,15 @@ DCE 5.0 provides comprehensive Addons for different use cases, which can be down
 
 The numerous modules included in DCE 5.0 can be downloaded separately to upgrade each module on demand.
 
-| Module       | File Size | Download                                  | Update Date |
-| ------------ | --------- | ----------------------------------------- | ----------- |
-| Global Manage| 440 MB    | [:arrow_right: Download Page](./modules/ghippo.md)  | 2023-07-07 |
-| Observability| 2.41 GB   | [:arrow_right: Download Page](./modules/insight.md) | 2023-08-04 |
-| Spidernet| 55.47 MB | [:arrow_right: Download Page](./modules/spidernet.md) | 2023-04-26 |
-| Operation Management | 56.90 MB | [:arrow_right: Download Page](./modules/gmagpie.md) | 2023-07-01 |
+| Module        | File Size | Download                                        | Update Date |
+| ------------- | --------- | ----------------------------------------------- | ----------- |
+| Global Management | 440 MB    | [:arrow_right: Download](./modules/ghippo.md)   | 2023-07-28  |
+| Container Management | 2.41 GB   | [:arrow_right: Download](./modules/ghippo.md)   | 2023-07-06  |
+| Cluster Inspection | 205.11 MB | [:arrow_right: Download](./modules/kcollie.md)  | 2023-08-08  |
+| Backup and Restore | 59.29 MB  | [:arrow_right: Download](./modules/kcoral.md)   | 2023-08-08  |
+| Observability | 2.64 GB   | [:arrow_right: Download](./modules/insight.md)  | 2023-08-04  |
+| Network Module | 55.47 MB  | [:arrow_right: Download](./modules/spidernet.md)| 2023-04-26  |
+| Operations Management | 56.90 MB | [:arrow_right: Download](./modules/gmagpie.md)  | 2023-08-02  |
 
 !!! note
 
