@@ -12,7 +12,7 @@
 
 - 方案二：Cilium 的 eBPF TC 加速 nodePort
 
-    在 eBPF 的 TC 模式下，nodePort 的转发规则在 linux 内核网络协议栈的最底层完成，加速效果欠缺于eBPF XDP 加速，但是效果比传统的基于 iptables 转发方案还是要好很多。
+    在 eBPF 的 TC 模式下，nodePort 的转发规则在 linux 内核网络协议栈的最底层完成，加速效果欠缺于 eBPF XDP 加速，但是效果比传统的基于 iptables 转发方案还是要好很多。
     该方案能运行在任意的机器上，包括裸金属机器和虚拟机，对硬件没有要求。
 
 - 方案三：Kubernetes 传统的 kube-proxy 转发  nodePort
@@ -65,11 +65,11 @@ Cilium 的 eBPF TC 和 eBPF XDP 加速 nodePort，其性能都远远超过了 Ku
 
 - kube-proxy 基于 iptables 转发 nodePort
 
-    主机的 CPU 空闲率比较第，意味着其转发 nodePort 请求所产生的 CPU 开销比较高，在 2Mpps 和 4Mpps 的请求向压力下，主机的 CPU 已经完全被耗尽。
+    主机的 CPU 空闲率比较低，意味着其转发 nodePort 请求所产生的 CPU 开销比较高，在 2Mpps 和 4Mpps 的请求向压力下，主机的 CPU 已经完全被耗尽。
 
 - kube-proxy 基于 ipvs 转发 nodePort
 
-    主机的 CPU 空闲率比较第，意味着其转发 nodePort 请求所产生的 CPU 开销比较高，在 2Mpps 和 4Mpps 的请求向压力下，主机的 CPU 已经完全被耗尽。
+    主机的 CPU 空闲率比较低，意味着其转发 nodePort 请求所产生的 CPU 开销比较高，在 2Mpps 和 4Mpps 的请求向压力下，主机的 CPU 已经完全被耗尽。
 
 ### 结论
 
