@@ -1,6 +1,6 @@
 # 组件资源弹性伸缩
 
-用户可以在[容器管理](../../../kpanda/user-guide/workloads/create-deployment.md)对服务网格的[控制面组件](../../intro/cp-component.md)实现弹性伸缩策略，目前提供了三种弹性伸缩方式：指标收缩（HPA）、定时收缩（CronHPA）、垂直伸缩（VPA），用户可以根据需求选择合适的弹性伸缩策略。下面以指标收缩（HPA）为例，介绍创建弹性伸缩策略的方法。
+用户可以在[容器管理](../../../kpanda/user-guide/workloads/create-deployment.md)对服务网格的[控制面组件](../../intro/comp-and-archi/cp-component.md)实现弹性伸缩策略，目前提供了三种弹性伸缩方式：指标收缩（HPA）、定时收缩（CronHPA）、垂直伸缩（VPA），用户可以根据需求选择合适的弹性伸缩策略。下面以指标收缩（HPA）为例，介绍创建弹性伸缩策略的方法。
 
 ## 前提条件
 
