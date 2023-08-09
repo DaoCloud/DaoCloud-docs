@@ -74,33 +74,33 @@ flowchart TD
     cluster --> inject[Sidecar Injection]
 
         subgraph inject[Sidecar Injection]
-            global[Global Injection]
             namespace[Namespace Injection]
             workload[Workload Injection]
         end
 
     
     inject -.-> service[Service Management]
-    inject -.-> traffic[Traffic Governance]
-    inject -.-> security[Security Governance]
-    inject -.-> sidecar[Sidecar Management]
-    inject -.-> watch[Traffic Monitoring]
+    inject -.-> traffic[Traffic Management]
+    inject -.-> security[Security]
+    inject -.-> sidecar[Mesh Sidecar]
+    inject -.-> watch[Traffic Monitor]
     inject -.-> gateway[Mesh Gateway]
-    inject -.-> upgrade[Version Upgrade]
+    inject -.-> upgrade[Upgrade]
     
 
-    service -.-> entry[Service Entry]
+    service -.-> entry[Service Entry<br>One-Click Repair]
     traffic -.-> virtual[Virtual Service<br>Destination Rule<br>Gateway Rule]
     security -.-> peer[Peer Authentication<br>Request Authentication<br>Authorization Policy]
-    sidecar -.-> sidecarm[Namespace Sidecar Management<br>Workload Sidecar Management<br>Global Sidecar Management<br>Sidecar Traffic Passthrough]
-    watch -.-> watch2[Traffic Monitoring<br>Traffic Topology]
+    sidecar -.-> sidecarm[Namespace Sidecar<br>Workload Sidecar<br>Traffic Passthrough]
+    watch -.-> watch2[Traffic Monitor<br>Traffic Topology]
+    upgrade -.-> upgrade1[Upgrade Istio<br>Upgrade Sidecar]
 
     classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
     classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
     classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
-    class managed,private,external,global,namespace,workload plain
-    class install,service,gateway,traffic,watch,upgrade,security,entry,virtual,peer,cluster,sidecar,sidecarm,watch2 cluster
+    class mesh plain
+    class install,service,gateway,traffic,watch,upgrade,security,entry,virtual,peer,cluster,sidecar,sidecarm,watch2,managed,private,external,namespace,workload,upgrade1 cluster
 
     click install "https://docs.daocloud.io/en/mspider/install/install/"
     click managed "https://docs.daocloud.io/en/mspider/user-guide/service-mesh/"
