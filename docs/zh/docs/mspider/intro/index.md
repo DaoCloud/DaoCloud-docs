@@ -78,7 +78,6 @@ flowchart TD
     cluster --> inject[注入边车]
 
         subgraph inject[注入边车]
-            global[全局注入]
             namespace[命名空间注入]
             workload[工作负载注入]
         end
@@ -93,18 +92,19 @@ flowchart TD
     inject -.-> upgrade[版本升级]
     
 
-    service -.-> entry[服务条目]
+    service -.-> entry[服务条目<br>一键修复]
     traffic -.-> virtual[虚拟服务<br>目标规则<br>网关规则]
     security -.-> peer[对等身份认证<br>请求身份认证<br>授权策略]
-    sidecar -.-> sidecarm[命名空间边车管理<br>工作负载边车管理<br>全局边车管理<br>边车流量透传]
+    sidecar -.-> sidecarm[命名空间边车管理<br>工作负载边车管理<br>边车流量透传]
     watch -.-> watch2[流量监控<br>流量拓扑]
+    upgrade -.-> upgrade1[Istio 升级<br>边车升级]
 
     classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
     classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
     classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
-    class managed,private,external,global,namespace,workload plain
-    class install,service,gateway,traffic,watch,upgrade,security,entry,virtual,peer,cluster,sidecar,sidecarm,watch2 cluster
+    class mesh plain
+    class install,service,gateway,traffic,watch,upgrade,security,entry,virtual,peer,cluster,sidecar,sidecarm,watch2,managed,private,external,namespace,workload,upgrade1 cluster
 
     click install "https://docs.daocloud.io/mspider/install/install/"
     click managed "https://docs.daocloud.io/mspider/user-guide/service-mesh/"
