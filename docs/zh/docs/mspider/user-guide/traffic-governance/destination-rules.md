@@ -74,3 +74,23 @@
 YAML 创建方式与虚拟服务相似，您可以直接借助内置模板创建 YAML 文件，如下图所示。
 
 ![YAML 创建](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/destirule07.png)
+
+## 策略介绍
+
+### 位置感知负载均衡
+
+地域感知负载均衡是 `Istio` 具备的一个基于工作负载部署所在的 `Kubernetes` 集群的工作节点上的地域标签，来进行流量转发优化的策略，
+配置方式主要有：流量分发规则（权重分布） 和 流量转移规则（故障转移）:
+
+- 流量分发规则：主要配置源负载位置访问到目标负载位置在不同的区域之间的流量权重分配
+- 流量转移规则：流量的故障转移一般需要配合离群检测功能使用，可以达到更及时检测工作负载故障进行流量转移
+
+注意，地域标签是在网格成员集群的工作节点上的 label，注意检查节点的标签配置：
+
+- 地区：`topology.kubernetes.io/region` 
+- 可用区域：`topology.kubernetes.io/zone` 
+- 分区： `topology.istio.io/subzone`  分区是 istio 特有的配置，以实现更细粒度划分
+
+另外地域是根据分层顺序进行匹配排列的，不同 `region` 的 `zone` 是两个不同的可用区域
+
+详情信息可以参考 Istio 官方文档： <https://istio.io/latest/docs/tasks/traffic-management/locality-load-balancing/>
