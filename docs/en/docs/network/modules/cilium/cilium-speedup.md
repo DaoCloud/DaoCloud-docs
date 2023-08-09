@@ -10,20 +10,20 @@ Please make sure the Linux Kernel version >= 4.9.17 with 5.10+ recommended. To v
 
 1. To view the current kernel version:
 
-    ```yaml
+    ```bash
     uname -r
     ```
 
 2. Install the ELRepo repository, which provides the latest Linux kernel version:
 
-    ```yaml
+    ```bash
     rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
     rpm -Uvh https://www.elrepo.org/elrepo-release-7.el7.elrepo.noarch.rpm
     ```
 
 3. Install the latest Linux kernel version:
 
-    ```yaml
+    ```bash
     yum --enablerepo=elrepo-kernel install kernel-ml
     ```
 
@@ -31,7 +31,7 @@ Please make sure the Linux Kernel version >= 4.9.17 with 5.10+ recommended. To v
 
 4. Update the GRUB configuration to use the new kernel version at boot time:
 
-    ```yaml
+    ```bash
     grub2-mkconfig -o /boot/grub2/grub.cfg
     ```
 
@@ -77,7 +77,7 @@ Please make sure the Linux Kernel version >= 4.9.17 with 5.10+ recommended. To v
 
 Edit the `kubeconfig` files for cluster01 and cluster02 through the `vi` command.
 
-```yaml
+```bash
 vi $HOME/.kube/config
 ```
 
@@ -138,19 +138,19 @@ Execute the following commands to verify cluster connectivity:
 
 1. Execute the following commands on cluster01:
 
-    ```yaml
+    ```bash
     cilium clustermesh enable --create-ca --context cluster01 --service-type NodePort
     ```
 
 2. Execute the following command to enable `clustermesh` on cluster02:
 
-    ```yaml
+    ```bash
     cilium clustermesh enable --create-ca --context cluster02 --service-type NodePort
     ```
 
 3. Establish connectivity on cluster01:
 
-    ```yaml
+    ```bash
     cilium clustermesh connect --context cluster01 --destination-context cluster02
     ```
 

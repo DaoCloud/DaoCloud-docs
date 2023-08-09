@@ -95,7 +95,7 @@
 
     如下为操作过程中的 yaml 示例：
 
-    ```bash
+    ```yaml
     clusters:
     - cluster: #添加本集群 cluster01 `cluster`信息
         certificate-authority-data: {{cluster01}}
@@ -107,7 +107,7 @@
       name: {{cluster02}}
     ```
 
-    ```bash
+    ```yaml
     contexts:
     - context: #添加本集群 cluster01 `context` 信息
         cluster: {{cluster01 name}}
@@ -120,7 +120,7 @@
     current-context: kubernetes-admin@cluster.local
     ```
 
-    ```bash
+    ```yaml
     users:
     - name: {{cluster01}} #添加本集群 cluster01 `user`信息
       user:
@@ -164,7 +164,7 @@
 
 1. 使用 cilium 官方文档中提供的 [rebel-base](https://github.com/cilium/cilium/blob/main/examples/kubernetes/clustermesh/global-service-example/cluster1.yaml) 应用，复制如下 yaml 文件：
 
-    ```bash
+    ```yaml
     apiVersion: apps/v1
     kind: Deployment
     metadata:
