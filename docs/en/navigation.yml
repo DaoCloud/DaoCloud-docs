@@ -439,7 +439,7 @@ nav:
                   - Microservice List:
                       - Intro: skoala/trad-ms/hosted/services/intro.md
                       - Check Microservice: skoala/trad-ms/hosted/services/check-details.md
-                      - Traffic Rules: 
+                      - Traffic Rules:
                           - Rules Intro: skoala/trad-ms/hosted/services/governance-policy.md
                           - Flow Control: skoala/trad-ms/hosted/services/flow-control.md
                   - Configurations:
@@ -570,6 +570,10 @@ nav:
           - Performance report:
               - Network CNI performance test report: network/performance/cni-performance.md
               - Spiderpool performance test report: network/performance/spiderpool-performance.md
+              - Cilium performance test reports:
+                  - Cilium performance test for cross-node communication between Pods: network/performance/cilium-performance/cilium-crossnode.md
+                  - Cilium's access acceleration Test in the nodePort mode: network/performance/cilium-performance/cilium-nodeport.md
+                  - Cilium performance test for eBPF-based Pod bandwidth management: network/performance/cilium-performance/cilium-bandwidth.md
           - Calico:
               - Intro: network/modules/calico/index.md
               - Install: network/modules/calico/install.md
