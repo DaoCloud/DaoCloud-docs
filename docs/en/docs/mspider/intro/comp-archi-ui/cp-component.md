@@ -23,4 +23,4 @@ This page lists the various components in the control plane of the service mesh 
 | mspider-mcpc-ckube-remote | Working Cluster | Calls remote mesh working cluster | Requests: CPU - 100m; Memory - 50m<br>Limits: CPU - 500m; Memory - 500m |
 | mspider-mcpc-mcpc-controller | Working Cluster | Collects cluster data surface information | Requests: CPU - 100m; Memory - 0<br>Limits: CPU - 300m; Memory - 1.56G |
 
-These are the default resource settings for each control plane component of the service mesh. Users can customize CPU and memory resources for each workload in the [Container Management](../../kpanda/user-guide/workloads/create-deployment.md) module.
+These are the default resource settings for each control plane component of the service mesh. Users can customize CPU and memory resources for each workload in the [Container Management](../../../kpanda/user-guide/workloads/create-deployment.md) module.

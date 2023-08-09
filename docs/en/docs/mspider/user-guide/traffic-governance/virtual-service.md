@@ -1,24 +1,127 @@
-# virtual service
+# Virtual Service
 
-In the virtual service (VirtualService), various matching methods (port, host, header, etc.) can be used to implement routing and forwarding of different regions and user requests, distribute them to specific service versions, and divide the load according to the weight ratio.
+In the Virtual Service, you can use various matching methods such as port, host, header, etc., to route and distribute requests from different regions and users to specific service versions, divided by weight.
 
-The virtual service provides routing support for HTTP, TCP, and TLS protocols.
+Virtual Service provides routing support for three protocols: HTTP, TCP, and TLS.
 
-## Concept introduction
+## Virtual Service List
+
+The Virtual Service list displays the Virtual Service CRD information under the mesh. Users can view it by namespace or filter the CRDs based on scope and rule labels. The rule labels include:
+
+- HTTP routing
+- TCP routing
+- TLS routing
+- Rewrite
+- Redirect
+- Retry
+- Timeout
+- Fault injection
+- Proxy service
+- Traffic mirroring
+
+For the configuration of these label fields, refer to the [Istio Virtual Service Configuration Parameters](https://istio.io/latest/docs/reference/config/networking/virtual-service/).
+
+Virtual Service provides two creation methods: graphical wizard creation and YAML creation.
+
+## Graphical Wizard Creation Steps
+
+The specific steps for creating using the graphical wizard are as follows (refer to [Virtual Service Parameters Configuration](./vsparams.md)):
+
+1. Click `Traffic Management` in the left navigation bar, then click `Virtual Service`, and click the `Create` button in the upper right corner.
+
+    ![Create](../images/virtualserv01.png)
+
+2. In the `Create Virtual Service` page, confirm and select the namespace, service,
+   and application scope where the virtual service will be created, then click `Next`.
+
+    ![Create Virtual Service](../images/virtualserv02.png)
+
+3. Configure the HTTP routes, TLS routes, and TCP routes as prompted on the screen, then click `OK`.
+
+    ![Routing Configuration](../images/virtualserv03.png)
+
+4. Return to the Virtual Service list, and there will be a prompt indicating successful creation. On the right side of the Virtual Service list, click the `⋮` in the "Actions" column to perform more operations from the pop-up menu.
+
+    ![More Actions](../images/virtualserv04.png)
+
+## YAML Creation
+
+The operation for creating using YAML is relatively simple. You can click the `Create by YAML` button
+to enter the creation page and directly write YAML. Alternatively, users can use the provided templates
+on the page to simplify the editing process. The editing window provides basic syntax checking functionality
+to assist users in writing. Here is an example YAML:
+
+```yaml
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  annotations:
+    ckube.daocloud.io/cluster: dywtest3
+    ckube.daocloud.io/indexes: '{"activePolices":"HTTP_ROUTE,RETRIES,","cluster":"dywtest3","createdAt":"2023-08-07T09:27:48Z","gateway":"nginx-gw/nginx-gwrule","gateways":"[\"nginx-gw/nginx-gwrule\"]","hosts":"[\"www.nginx.app.com\"]","is_deleted":"false","labels":"","name":"nginx-vs","namespace":"nginx-gw"}'
+  creationTimestamp: "2023-08-07T09:27:48Z"
+  generation: 10
+  managedFields:
+    - apiVersion: networking.istio.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:ckube.daocloud.io/cluster: {}
+            f:ckube.daocloud.io/indexes: {}
+        f:spec:
+          .: {}
+          f:gateways: {}
+          f:hosts: {}
+          f:http: {}
+      manager: cacheproxy
+      operation: Update
+      time: "2023-08-09T03:06:31Z"
+  name: nginx-vs
+  namespace: nginx-gw
+  resourceVersion: "477662"
+  uid: 446e8dcf-3c26-47ec-8754-997c21e4df17
+spec:
+  gateways:
+    - nginx-gw/nginx-gwrule
+  hosts:
+    - www.nginx.app.com
+  http:
+    - match:
+        - uri:
+            prefix: /
+      name: nginx-http
+      retries:
+        attempts: 2
+        perTryTimeout: 5s
+        retryOn: 5xx
+      route:
+        - destination:
+            host: nginx.nginx-test.svc.cluster.local
+            port:
+              number: 80
+status: {}
+```
+
+## Concepts
 
 - Hosts
 
-    The destination host for the traffic. It can come from service registration information, service entry, or user-defined service domain name. Can be a DNS name with a wildcard prefix, or an IP address.
-    Depending on the platform, a short name may also be used instead of the FQDN. In this scenario, the specific conversion process from the short name to the FQDN must be completed by the underlying platform.
+    The target hosts for traffic. They can come from service registration information, service entries, or user-defined service domain names. They can be DNS names with wildcard prefixes or IP addresses.
+    Depending on the platform, short names may be used instead of FQDN. In this case, the conversion from a short name to an FQDN is handled by the underlying platform.
 
-    A hostname can only be defined in one VirtualService. Traffic properties that can be used to control multiple HTTP and TCP ports in the same VirtualService.
+    A hostname can only be defined in one VirtualService. The same VirtualService can control the traffic properties for multiple HTTP and TCP ports.
 
-    Note that when using the short name of the service (e.g. using reviews instead of `reviews.default.svc.cluster.local`), the service mesh will process this name according to the namespace the rule is in, not The namespace in which the service resides.
-    Assuming a rule in the `default` namespace contains a host reference for reviews, it will be treated as `reviews.default.svc.cluster.local`, regardless of the namespace where the reviews service resides.
+    It is important to note that when using the short name of a service
+    (e.g., using "reviews" instead of `reviews.default.svc.cluster.local`),
+    the service mesh will handle this name based on the namespace of the rule,
+    not the namespace where the service resides. Suppose a rule in the `default` namespace
+    includes a host reference to `reviews`. It will be treated as `reviews.default.svc.cluster.local`,
+    regardless of the namespace where the reviews service resides.
 
-    To avoid possible misconfigurations, it is recommended to use FQDNs for service references.
+    To avoid potential misconfigurations, it is recommended to use FQDN for service references.
     The hosts field is valid for both HTTP and TCP services.
-    Services in the mesh, that is, services registered in the service registry, must be referenced using their registered names; only Gateway-defined services can use IP addresses.
+    Services in the mesh, which are registered in the service registry, must be referenced using their registered names; only services defined by Gateways can be referenced using IP addresses.
 
     Example:
 
@@ -30,93 +133,71 @@ The virtual service provides routing support for HTTP, TCP, and TLS protocols.
 
 - Gateways
 
-    These Hosts can be exposed outside the mesh by binding the VirtualService to the same Host's Gateway Rules.
+    By binding VirtualServices to gateway rules with the same host, these hosts can be exposed outside the mesh.
 
-    Mesh uses the default reserved word mesh to refer to all sidecars in the mesh.
-    When this field is omitted, the default value (mesh) will be used, that is, it will take effect for all Sidecars in the mesh.
-    If gateway rules are set for the gateways field (there can be more than one), it will only be applied to the declared gateway rules.
-    If you want to take effect on gateway rules and all services at the same time, you need to explicitly add mesh to the gateways list.
+    The mesh uses the reserved keyword "mesh" to refer to all Sidecars in the mesh.
+    When this field is omitted, the default value ("mesh") will be used, which applies to all Sidecars in the mesh.
+    If the gateways field is set with gateway rules (can have multiple), it will only apply to the declared gateway rules.
+    If you want to apply the rules to both gateway rules and all services, you need to explicitly include "mesh" in the gateways list.
 
     Example:
 
     ```yaml
     gateways:
-    -bookinfo-gateway
+    - bookinfo-gateway
     - mesh
     ```
 
-- Http
+- HTTP
 
-    An ordered list of rules. This field contains all routing configuration features for the http protocol. For service ports whose names are prefixed with `http-`, `http2-`, `grpc-`, or whose protocols are HTTP, HTTP2, GRPC and terminated TLS,
-    In addition, ServiceEntry using HTTP, HTTP2, and GRPC protocols are all valid.
-    Traffic will use the first rule that matches.
+    An ordered list of rules that contain all the routing configurations for HTTP protocol.
+    It applies to service ports with names prefixed with `http-`, `http2-`, `grpc-`, or protocols
+    as HTTP, HTTP2, GRPC, and terminating TLS,
+    as well as ServiceEntry using HTTP, HTTP2, and GRPC protocols. Traffic will be handled by the first rule that matches.
 
-    Description of the main fields under http:
+    Explanation of main fields in HTTP:
 
     - Match
 
-        Matches the conditions to be met for the rule to activate. All conditions within a single match block have AND semantics, while lists of match blocks have OR semantics.
-        If any one of the matching blocks succeeds, the rule is matched.
+        The conditions that must be satisfied for a rule to be activated. All conditions within a single match block have AND semantics, while the match blocks have OR semantics.
+        If any match block succeeds, the rule is considered a match.
 
     - Route
 
-        http rules can redirect or forward (default) traffic.
+        HTTP rules can either redirect or forward (default) traffic.
 
     - Redirect
 
-        http rules can redirect or forward (default) traffic.
-        Routing/redirection will be ignored if the traffic pass option is specified in the rule.
-        The redirect primitive can be used to send HTTP 301 redirects to other URIs or authorities.
+        HTTP rules can either redirect or forward (default) traffic.
+        If traffic is specified to go through an option in the rule, routing/redirecting will be ignored.
+        Redirect primitives can be used to send HTTP 301 redirects to other URIs or authorities.
 
     - Rewrite
 
-        Rewrite HTTP URI and Authority header, rewrite cannot be used with redirection primitive.
+        Rewrite the HTTP URI and Authority header. Rewriting cannot be used together with redirect primitives.
 
     - Fault
 
-        Fault injection strategy, applicable to client-side HTTP communication.
-        If the fault injection policy is enabled on the client side, no timeouts or retries will be enabled.
+        Fault injection policies for client-side HTTP communication.
+        Enabling fault injection policies on the client side will disable timeouts or retries.
 
     - Mirror/MirrorPercent
 
-        Mirror the HTTP traffic to another target, and can set the ratio.
+        Mirror HTTP traffic to another destination, with the ability to set the mirroring percentage.
 
-    - Tcp
+    - TCP
 
-        An ordered list of routes for transparent TCP traffic.
-        TCP routing works on all ports except HTTP and TLS.
-        Incoming traffic will use the first rule that matches.
+        An ordered list of routes for passthrough TCP traffic.
+        TCP routing applies to all ports except for HTTP and TLS. Incoming traffic will be handled by the first rule that matches.
 
-    - Tls
+    - TLS
 
-        An ordered list, corresponding to pass through TLS and HTTPS traffic. The routing process is usually done using the SNI in the ClientHello message.
-        TLS routing is usually applied to platform service ports with https- and tls- prefixes, or HTTPS and TLS protocol ports transparently transmitted by Gateway, and ServiceEntry ports using HTTPS or TLS protocols.
-        Note: https- or tls- port traffic that is not associated with VirtualService will be regarded as transparent TCP traffic.
+        An ordered list corresponding to passthrough TLS and HTTPS traffic. The routing process usually relies on the SNI in the ClientHello message.
+        TLS routing typically applies to platform service ports with prefixes like https- or tls-, or HTTPS, TLS protocol ports passed through a Gateway, and ServiceEntry ports using HTTPS or TLS protocols.
+        Note: HTTPS or TLS traffic on ports without an associated VirtualService will be treated as passthrough TCP traffic.
 
-        The subfields of the Tcp protocol and tls are relatively simple, only including match and route, and are similar to http, so I won’t repeat them here.
-
-## Steps
-
-Service mesh provides two creation methods: wizard and YAML. The specific steps to create through the wizard are as follows:
-
-1. Click `Traffic Management` -> `Virtual Service` in the left navigation bar, and click the `Create` button in the upper right corner.
-
-    
-
-2. In the `Create Virtual Service` interface, first perform the basic configuration and then click `Next`.
-
-    
-
-3. Follow the screen prompts to select the route configuration, and click `OK`.
-
-    
-
-4. Return to the virtual service list, and the screen prompts that the creation is successful.
-
-    
-
-5. On the right side of the list, click `⋮` in the operation column to perform more operations through the pop-up menu.
+    The TCP protocol and its subfields are relatively simple, only containing "match" and "route" parts, which are similar to HTTP and will not be repeated here.
 
 ## Reference
 
-- [What is virtual service](../../../reference/basic-knowledge/virtual-service.md)
+- [What is a Virtual Service?](../../../reference/basic-knowledge/virtual-service.md)

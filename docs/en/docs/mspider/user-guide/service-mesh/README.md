@@ -3,7 +3,7 @@ hide:
    - toc
 ---
 
-# Create hosted/dedicated mesh
+# Create Hosted or Dedicated Mesh
 
 DCE 5.0 service mesh supports three kinds of meshes:
 
