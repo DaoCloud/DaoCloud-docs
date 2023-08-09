@@ -37,6 +37,8 @@
 
 ## 创建集群
 
+> 关于创建集群的更多信息，可参考[创建集群](../../../kpanda/user-guide/clusters/create-cluster.md)
+
 1. 创建两个名称不同的集群分别为 cluster01 和 cluster02。
 
     ![创建集群1](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/network-cross-cluster1.png)
@@ -55,7 +57,7 @@
 
 1. 集群创建成功后，在两个集群上分别创建一个 Service，用于将该集群的 API server 对外暴露。
 
-	![创建service](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/network-cross-cluster3.png)
+    ![创建service](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/network-cross-cluster3.png)
 
     ![创建service](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/network-cross-cluster4.png)
 
@@ -93,7 +95,7 @@
 
     如下为操作过程中的 yaml 示例：
 
-    ```bash
+    ```yaml
     clusters:
     - cluster: #添加本集群 cluster01 `cluster`信息
         certificate-authority-data: {{cluster01}}
@@ -105,20 +107,20 @@
       name: {{cluster02}}
     ```
 
-    ```bash
+    ```yaml
     contexts:
-    - context: #添加本集群 cluster01 `context信息
+    - context: #添加本集群 cluster01 `context` 信息
         cluster: {{cluster01 name}}
         user: {{cluster01 name}}
       name: {{cluster01 name}}
-    - context: #添加对端集群 cluster02`context`信息
+    - context: #添加对端集群 cluster02 `context`信息
         cluster: {{cluster02 name}}
         user: {{cluster02 name}}
       name: {{cluster02 name}}
     current-context: kubernetes-admin@cluster.local
     ```
 
-    ```bash
+    ```yaml
     users:
     - name: {{cluster01}} #添加本集群 cluster01 `user`信息
       user:
@@ -140,17 +142,17 @@
     cilium clustermesh enable --create-ca --context cluster01 --service-type NodePort
     ```
 
-2.集群 cluster02 开启 `clustermesh` 执行如下命令：
+2. 集群 cluster02 开启 `clustermesh` 执行如下命令：
 
     ```bash
     cilium clustermesh enable --create-ca --context cluster02 --service-type NodePort
     ```
 
-3.在集群 cluster01 上建立连接：
+3. 在集群 cluster01 上建立连接：
 
-```bash
-cilium clustermesh connect --context cluster01 --destination-context cluster02
-```
+    ```bash
+    cilium clustermesh connect --context cluster01 --destination-context cluster02
+    ```
 
 4. 集群 cluster01 出现 `connected cluster1 and cluster2!` ，集群 cluster02 出现 `ClusterMesh enabled!` 说明两个集群通了。
 
@@ -162,7 +164,7 @@ cilium clustermesh connect --context cluster01 --destination-context cluster02
 
 1. 使用 cilium 官方文档中提供的 [rebel-base](https://github.com/cilium/cilium/blob/main/examples/kubernetes/clustermesh/global-service-example/cluster1.yaml) 应用，复制如下 yaml 文件：
 
-    ```bash
+    ```yaml
     apiVersion: apps/v1
     kind: Deployment
     metadata:
@@ -246,7 +248,7 @@ cilium clustermesh connect --context cluster01 --destination-context cluster02
 
     ![创建应用](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/network-cross-cluster9.png)
 
-    分别修改 `ConfigMap` 的内容，使得访问集群 cluster01 和集群 cluster02 中的 Service 时，返回的数据带有分别带有 cluster01 和 cluster02 名称的标签。可在 `rebel-base` 应用中查看容器组标签。
+    分别修改 `ConfigMap` 的内容，使得访问集群 cluster01 和集群 cluster02 中的 Service 时，返回的数据分别带有 cluster01 和 cluster02 名称的标签。可在 `rebel-base` 应用中查看容器组标签。
 
 3. 在两个集群 cluster01 和 cluster02 中分别创建一个 global service video 的 Service，指向的是已创建的 `rebel-base` 应用。
 

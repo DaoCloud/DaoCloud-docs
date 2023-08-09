@@ -582,6 +582,7 @@ nav:
               - Args Config: network/modules/cilium/install.md
               - Unsupported Features: network/modules/cilium/notSupport.md
               - Cilium Network Communication Acceleration: network/modules/cilium/cross-cluster.md
+              - Cross-Cluster Application Communication: network/modules/cilium/cilium-speedup.md
           - Contour:
               - Intro: network/modules/contour/index.md
               - Install: network/modules/contour/install.md
