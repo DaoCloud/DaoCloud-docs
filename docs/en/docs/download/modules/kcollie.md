@@ -6,12 +6,12 @@ This page provides offline installation packages for different versions of the C
 
 | Version                                       | Architecture | File Size | Installation Package                                                                                                             | Checksum File                                                                                                                            | Updated Date |
 |-----------------------------------------------|--------------|-----------|----------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|--------------|
-| [v0.4.0](../../kcollie/intro/release-note.md) | AMD64        | 2.41GB    | [:arrow_down: kcollie_v0.4.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcollie_v0.4.0_amd64.tar) | [:arrow_down: kcollie_v0.4.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcollie_v0.4.0_amd64_checksum.sha512sum) | 2023-08-08   |
+| [v0.4.0](../../kcollie/intro/release-note.md) | AMD64        | 205.11 MB    | [:arrow_down: kcollie_v0.4.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcollie_v0.4.0_amd64.tar) | [:arrow_down: kcollie_v0.4.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcollie_v0.4.0_amd64_checksum.sha512sum) | 2023-08-08   |
 
 ## Checksum
 
 To verify the integrity of the downloaded offline installation package and checksum file,
-run the following command in the directory:
+take `v0.4.0_amd64` as an example, run the following command in the directory:
 
 ```sh
 echo "$(cat kcollie_v0.4.0_amd64_checksum.sha512sum)" | sha512sum -c
