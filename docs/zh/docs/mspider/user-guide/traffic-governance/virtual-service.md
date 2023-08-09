@@ -53,19 +53,10 @@ apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
   annotations:
-    anno.dsm.daocloud.io/cluster: default
-    anno.dsm.daocloud.io/govern-info: '{"port_settings_info":{},"update_time":1679031967}'
-    ckube.daocloud.io/indexes: '{"activePolices":"HTTP_ROUTE,REDIRECT,FAULT,","cluster":"nicole-dsm-mesh-hosted","createdAt":"2023-03-22T10:27:28Z","gateway":"","gateways":"","hosts":"[\"reviews.default.svc.cluster.local\"]","is_deleted":"false","labels":"\"app=reviews\",\"dce.daocloud.io/app=sample\",\"dsm.daocloud.io/managed=true\",\"dsm.daocloud.io/type=normal\",","name":"reviews","namespace":"default"}'
-    ckube.doacloud.io/cluster: nicole-dsm-mesh-hosted
-    kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"networking.istio.io/v1beta1","kind":"VirtualService","metadata":{"annotations":{"anno.dsm.daocloud.io/cluster":"default","anno.dsm.daocloud.io/govern-info":"{\"port_settings_info\":{},\"update_time\":1679031967}"},"creationTimestamp":"2023-03-17T05:42:07Z","generation":3,"labels":{"app":"reviews","dce.daocloud.io/app":"sample","dsm.daocloud.io/managed":"true","dsm.daocloud.io/type":"normal"},"name":"reviews","namespace":"default","resourceVersion":"1339413","uid":"afdb2d79-1ab0-42b5-a496-9ad75a36269d"},"spec":{"hosts":["reviews.default.svc.cluster.local"],"http":[{"match":[{"name":"default_9080","port":9080,"sourceNamespace":"default"}],"name":"white_list","route":[{"destination":{"host":"reviews.default.svc.cluster.local","port":{"number":9080}}}]},{"fault":{"abort":{"httpStatus":493,"percentage":{"value":100}}},"match":[{"port":9080}],"route":[{"destination":{"host":"reviews.default.svc.cluster.local","port":{"number":9080}}}]}]}}
-  creationTimestamp: "2023-03-22T10:27:28Z"
-  generation: 6
-  labels:
-    app: reviews
-    dce.daocloud.io/app: sample
-    dsm.daocloud.io/managed: "true"
-    dsm.daocloud.io/type: normal
+    ckube.daocloud.io/cluster: dywtest3
+    ckube.daocloud.io/indexes: '{"activePolices":"HTTP_ROUTE,RETRIES,","cluster":"dywtest3","createdAt":"2023-08-07T09:27:48Z","gateway":"nginx-gw/nginx-gwrule","gateways":"[\"nginx-gw/nginx-gwrule\"]","hosts":"[\"www.nginx.app.com\"]","is_deleted":"false","labels":"","name":"nginx-vs","namespace":"nginx-gw"}'
+  creationTimestamp: "2023-08-07T09:27:48Z"
+  generation: 10
   managedFields:
     - apiVersion: networking.istio.io/v1beta1
       fieldsType: FieldsV1
@@ -73,59 +64,39 @@ metadata:
         f:metadata:
           f:annotations:
             .: {}
-            f:anno.dsm.daocloud.io/cluster: {}
-            f:anno.dsm.daocloud.io/govern-info: {}
-            f:kubectl.kubernetes.io/last-applied-configuration: {}
-          f:labels:
-            .: {}
-            f:app: {}
-            f:dce.daocloud.io/app: {}
-            f:dsm.daocloud.io/managed: {}
-            f:dsm.daocloud.io/type: {}
+            f:ckube.daocloud.io/cluster: {}
+            f:ckube.daocloud.io/indexes: {}
         f:spec:
           .: {}
+          f:gateways: {}
           f:hosts: {}
-      manager: kubectl-client-side-apply
-      operation: Update
-      time: "2023-03-22T10:27:28Z"
-    - apiVersion: networking.istio.io/v1beta1
-      fieldsType: FieldsV1
-      fieldsV1:
-        f:metadata:
-          f:annotations:
-            f:ckube.daocloud.io/indexes: {}
-            f:ckube.doacloud.io/cluster: {}
-        f:spec:
           f:http: {}
       manager: cacheproxy
       operation: Update
-      time: "2023-04-12T08:32:39Z"
-  name: reviews
-  namespace: default
-  resourceVersion: "1246318"
-  uid: 73b83a2e-9bd6-480e-a0e0-abead6681fd0
+      time: "2023-08-09T03:06:31Z"
+  name: nginx-vs
+  namespace: nginx-gw
+  resourceVersion: "477662"
+  uid: 446e8dcf-3c26-47ec-8754-997c21e4df17
 spec:
+  gateways:
+    - nginx-gw/nginx-gwrule
   hosts:
-    - reviews.default.svc.cluster.local
+    - www.nginx.app.com
   http:
     - match:
-        - port: 9080
-      name: whitelist
-      redirect:
-        uri: abc
-    - fault:
-        abort:
-          httpStatus: 493
-          percentage:
-            value: 100
-      match:
-        - port: 9080
-      name: hsh
+        - uri:
+            prefix: /
+      name: nginx-http
+      retries:
+        attempts: 2
+        perTryTimeout: 5s
+        retryOn: 5xx
       route:
         - destination:
-            host: reviews.default.svc.cluster.local
+            host: nginx.nginx-test.svc.cluster.local
             port:
-              number: 9080
+              number: 80
 status: {}
 ```
 

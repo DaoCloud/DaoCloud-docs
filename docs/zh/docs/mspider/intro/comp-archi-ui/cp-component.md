@@ -22,4 +22,4 @@
 | mspider-mcpc-ckube-remote    | 工作集群     | 调用远程的网格工作集群                                                                               | requests: CPU: 100m；内存: 50m<br/> limits: CPU: 500m；内存: 500m     |
 | mspider-mcpc-mcpc-controller | 工作集群     | 收集集群数据面信息                                                                                   | requests: CPU: 100m；内存: 0<br/> limits: CPU: 300m；内存: 1.56G      |
 
-服务网格的各控制面组件预设资源设置如上表所示，用户可以在[容器管理](../../kpanda/user-guide/workloads/create-deployment.md)模块查找相应的工作负载，为工作负载自定义 CPU、内存资源。
+服务网格的各控制面组件预设资源设置如上表所示，用户可以在[容器管理](../../../kpanda/user-guide/workloads/create-deployment.md)模块查找相应的工作负载，为工作负载自定义 CPU、内存资源。

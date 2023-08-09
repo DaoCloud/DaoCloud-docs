@@ -503,11 +503,13 @@ nav:
               - 什么是服务网格: mspider/intro/index.md
               - 功能总览: mspider/intro/features.md
               - 适用场景: mspider/intro/scenarios.md
-              - UI 支持的特性: mspider/intro/meshes.md
               - 服务网格权限说明: ghippo/permissions/mspider.md
               - 服务网格应用接入规范: mspider/intro/app-spec.md
-              - 网格架构: mspider/intro/architect.md
-              - 网格控制面组件: mspider/intro/cp-component.md
+              - 系统组件及架构:
+                  - 网格架构: mspider/intro/comp-archi-ui/architect.md
+                  - 网格控制面组件: mspider/intro/comp-archi-ui/cp-component.md
+                  - 系统命名空间: mspider/intro/comp-archi-ui/namespaces.md
+                  - UI 支持的特性: mspider/intro/comp-archi-ui/features-on-ui.md
               - 常见问题: mspider/intro/faq.md
               - Release Notes: mspider/intro/release-notes.md
           - 安装、配置和升级:
