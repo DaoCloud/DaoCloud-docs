@@ -12,7 +12,7 @@ In the testing process, several implementations of security policies were compar
 
 ## Test approach
 
-    The test was conducted on two bare-metal nodes, simulating cross-node communication. Filtering policies were implemented in the egress on the client side. The objective was to evaluate the impact of different filtering approaches on packet access latency and throughput during the filtering policy matching process.
+The test was conducted on two bare-metal nodes, simulating cross-node communication. Filtering policies were implemented in the egress on the client side. The objective was to evaluate the impact of different filtering approaches on packet access latency and throughput during the filtering policy matching process.
 
 ## Results
 
