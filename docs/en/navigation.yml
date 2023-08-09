@@ -573,11 +573,11 @@ nav:
               - Network CNI performance test report: network/performance/cni-performance.md
               - Spiderpool performance test report: network/performance/spiderpool-performance.md
               - Cilium performance test reports:
-                  - Cilium accelerates Pod access to Services: network/performance/cilium-performance/cilium-service.md
-                  - Cilium performance test for cross-node communication between Pods: network/performance/cilium-performance/cilium-crossnode.md
-                  - Cilium's access acceleration Test in the nodePort mode: network/performance/cilium-performance/cilium-nodeport.md
-                  - Cilium performance test for eBPF-based Pod bandwidth management: network/performance/cilium-performance/cilium-bandwidth.md
-              - Performance Test in Implementing Network Policies with eBPF Technology: network/performance/ebpf-performance.md
+                  - Accelerate Pod access to Services: network/performance/cilium-performance/cilium-service.md
+                  - Cross-node communication between Pods: network/performance/cilium-performance/cilium-crossnode.md
+                  - Access acceleration test in the nodePort mode: network/performance/cilium-performance/cilium-nodeport.md
+                  - eBPF-based Pod bandwidth management: network/performance/cilium-performance/cilium-bandwidth.md
+              - Performance test in eBPF-based network policies: network/performance/ebpf-performance.md
           - Calico:
               - Intro: network/modules/calico/index.md
               - Install: network/modules/calico/install.md
