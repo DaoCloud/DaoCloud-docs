@@ -49,7 +49,7 @@
 
 参考 [Dashboard 模板](https://grafana.com/grafana/dashboards/2842-ceph-cluster/)部署 GrafanaDashboard。
 
-导入模板时请参阅 [Insight 导入仪表盘](../../insight/best-practice/import-dashboard.md)。
+导入模板时请参阅 [Insight 导入仪表盘](../../insight/user-guide/dashboard/import-dashboard.md)。
 
 ```yaml
 apiVersion: integreatly.org/v1alpha1
