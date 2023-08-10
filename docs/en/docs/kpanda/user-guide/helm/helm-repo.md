@@ -27,7 +27,7 @@ The following takes the public container registry of Kubevela as an example to i
 
      
 
-2. In the left navigation bar, click `Helm Application` -> `helm repo` to enter the helm repo page.
+2. In the left navigation bar, click `Helm Apps` -> `helm repo` to enter the helm repo page.
 
      
 
@@ -54,7 +54,7 @@ When the address information of the helm repo changes, the address, authenticati
 
      
 
-2. In the left navigation bar, click `Helm Application` -> `helm repo` to enter the helm repo list page.
+2. In the left navigation bar, click `Helm Apps` -> `helm repo` to enter the helm repo list page.
 
      
 
@@ -76,7 +76,7 @@ In addition to importing and updating registrys, you can also delete unnecessary
 
      
 
-2. In the left navigation bar, click `Helm Application` -> `helm repo` to enter the helm repo list page.
+2. In the left navigation bar, click `Helm Apps` -> `helm repo` to enter the helm repo list page.
 
      
 

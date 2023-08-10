@@ -1,18 +1,22 @@
-# Implement non-intrusive enhancement of applications via Operator
+# Enhance Applications Non-Intrusively with Operators
 
-At present, only Java, NodeJs, Python, and .Net support the non-intrusive access of Operator, and Golang will be improved in the future.
+> Currently, only Java, Node.js, Python, and .NET are supported for non-intrusive integration
+> through Operators. Golang support will be improved in the future.
 
 ## Prerequisites
 
-Make sure insight-agent is ready. If not, please refer to [Install insight-agent to collect data](../install/install-agent.md) and make sure the following three items are in place:
+Please ensure that the Insight Agent is ready. If not, please refer to
+[Install insight-agent for data collection](../install/install-agent.md)
+and make sure the following three items are ready:
 
-- Enable trace feature for insight-agent
-- Whether the address and port of the trace data are filled in correctly
-- Pods corresponding to deployment/insight-agent-opentelemetry-operator and deployment/insight-agent-opentelemetry-collector are ready
+- Enable trace functionality for Insight Agent
+- Check if the address and port for trace data are correctly filled
+- Ensure that the Pods corresponding to deployment/insight-agent-opentelemetry-operator and
+  deployment/insight-agent-opentelemetry-collector are ready
 
 ## Install Instrumentation CR
 
-Install under the Insight-System namespace, there are some differences between versions.
+Install it in the insight-system namespace. There are some minor differences between different versions.
 
 ### Insight v0.18.x
 
@@ -415,4 +419,4 @@ spec:
 
 ## Trace query
 
-How to query the connected services, refer to [Trace Query](../../data-query/trace.md).
+How to query the connected services, refer to [Trace Query](../../user-guide/data-query/trace.md).

@@ -114,7 +114,7 @@ the evolution path and feature changes of each version.
 !!! warning
 
      Insight v0.16.0 uses the new feature parameter `disableRouteContinueEnforce` of vmalertmanagers CRD,
-     before upgrading insight server, please refer to [Upgrade from v0.15.x (or earlier) to v0.16.x](../quickstart/upgrade-note.md)
+     before upgrading insight server, please refer to [Upgrade from v0.15.x (or earlier) to v0.16.x](../quickstart/install/upgrade-note.md)
 
 #### New
 
