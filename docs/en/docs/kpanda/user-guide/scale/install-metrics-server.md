@@ -133,7 +133,7 @@ Please perform the following steps to install the `metrics-server` plugin for th
         affinity: {}
         ```
 
-5. Click the `OK` button to complete the installation of the `metrics-server` plug-in, and then the system will automatically jump to the `Helm application` list page. After a few minutes, refresh the page and you will see the newly installed Applications.
+5. Click the `OK` button to complete the installation of the `metrics-server` plug-in, and then the system will automatically jump to the `Helm Apps` list page. After a few minutes, refresh the page and you will see the newly installed Applications.
 
 !!! note
 

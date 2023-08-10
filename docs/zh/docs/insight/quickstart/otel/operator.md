@@ -8,11 +8,12 @@
 
 - 为 Insight-agent 开启 trace 功能
 - trace 数据的地址以及端口是否填写正确
-- deployment/insight-agent-opentelemetry-operator 和 deployment/insight-agent-opentelemetry-collector 对应的 Pod 已经准备就绪
+- deployment/insight-agent-opentelemetry-operator 和
+  deployment/insight-agent-opentelemetry-collector 对应的 Pod 已经准备就绪
 
 ## 安装 Instrumentation CR
 
-在 Insight-System 命名空间下安装, 不同版本之间有一些细小的差别。
+在 insight-system 命名空间下安装, 不同版本之间有一些细小的差别。
 
 ### Insight v0.18.x
 

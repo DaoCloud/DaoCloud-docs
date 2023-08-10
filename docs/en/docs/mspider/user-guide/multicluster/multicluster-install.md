@@ -603,7 +603,7 @@ kind create cluster --config kind-cluster2.yaml --name mdemo-kcluster2
 
 #### Helm Installation in Container Management Platform
 
-It is recommended to use the `Helm Application` -> `Helm Template` -> find metallb -> `Install` option in the container management platform.
+It is recommended to use the `Helm Apps` -> `Helm Template` -> find metallb -> `Install` option in the container management platform.
 
 ![Install metallb](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/install-metallb-from-helm.png)
 

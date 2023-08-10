@@ -1,14 +1,14 @@
-# 数据卷 IO 限速
+# Data Volume IO Throttling
 
-在 HwameiStor 中，它允许用户指定 Kuberentes 集群上卷的最大 IOPS 和吞吐量。
+In HwameiStor, it allows users to specify the maximum IOPS and throughput for volumes on a Kubernetes cluster.
 
-请按照以下步骤创建具有最大 IOPS 和吞吐量的卷并创建工作负载来使用它。
+Please follow the steps below to create a volume with maximum IOPS and throughput and create a workload to use it.
 
-## 使用最大 IOPS 和吞吐量参数创建新的 StorageClass
+## Create a New StorageClass with Maximum IOPS and Throughput Parameters
 
-默认情况下，HwameiStor 在安装过程中不会自动创建这样的 StorageClass，因此您需要手动创建 StorageClass。
+By default, HwameiStor does not automatically create such a StorageClass during installation, so you need to create the StorageClass manually.
 
-示例 StorageClass 如下：
+An example StorageClass is as follows:
 
 ```yaml
 allowVolumeExpansion: true
@@ -31,16 +31,16 @@ reclaimPolicy: Delete
 volumeBindingMode: WaitForFirstConsumer
 ```
 
-与 HwameiStor 安装程序创建的常规 StorageClass 相比，添加了以下参数：
+Compared to the regular StorageClass created by the HwameiStor installer, the following parameters have been added:
 
-- Provision-iops-on-creation：指定创建时卷的最大 IOPS。
-- Provision-throughput-on-creation：它指定创建时卷的最大吞吐量。
+- provision-iops-on-creation: Specifies the maximum IOPS for the volume at creation time.
+- provision-throughput-on-creation: Specifies the maximum throughput for the volume at creation time.
 
-创建 StorageClass 后，您可以使用它来创建 PVC。
+After creating the StorageClass, you can use it to create PVC (PersistentVolumeClaim).
 
-## 使用 StorageClass 创建 PVC
+## Create PVC using StorageClass
 
-示例 PVC 如下：
+An example PVC is as follows:
 
 ```yaml
 apiVersion: v1
@@ -56,11 +56,11 @@ spec:
   storageClassName: hwameistor-storage-lvm-hdd-sample
 ```
 
-创建 PVC 后，您可以创建 Deployment 来使用 PVC。
+After creating the PVC, you can create a Deployment to use the PVC.
 
-## 创建带有 PVC 的 Deployment
+## Create a Deployment with PVC
 
-示例 Deployment 如下：
+An example Deployment is as follows:
 
 ```yaml
 apiVersion: apps/v1
@@ -99,25 +99,24 @@ spec:
 status: {}
 ```
 
-创建 Deployment 后，您可以使用以下命令测试卷的 IOPS 和吞吐量：
+After creating the Deployment, you can use the following command to test the IOPS and throughput of the volume:
 
 ```bash
 kubectl exec -it pod-sample-5f5f8f6f6f-5q4q5 -- /bin/sh
 dd if=/dev/zero of=/data/test bs=4k count=1000000 oflag=direct
 ```
 
-**注意**：由于 cgroupv1 限制，最大 IOPS 和吞吐量的设置可能对非直接 IO 不生效。
+**Note**: Due to cgroupv1 limitations, the settings for maximum IOPS and throughput may not take effect on non-direct IO.
 
-## 如何更改数据卷的最大 IOPS 和吞吐量
+## How to Change the Maximum IOPS and Throughput of a Data Volume
 
-最大 IOPS 和吞吐量在 StorageClass 的参数上指定，您不能直接更改它，因为它现在是不可变的。
+The maximum IOPS and throughput are specified in the parameters of the StorageClass, and you cannot directly change them as they are now immutable.
 
-与其他存储厂商不同的是，HwameiStor 是一个基于 Kubernetes 的存储解决方案，它定义了一组操作原语
-基于 Kubernetes CRD。 这意味着您可以修改相关的 CRD 来更改卷的实际最大 IOPS 和吞吐量。
+Unlike other storage vendors, HwameiStor is a Kubernetes-based storage solution that defines a set of operational primitives based on Kubernetes CRDs. This means you can modify the relevant CRD to change the actual maximum IOPS and throughput of a volume.
 
-以下步骤显示如何更改数据卷的最大 IOPS 和吞吐量。
+The following steps show how to change the maximum IOPS and throughput of a data volume.
 
-### 查找给定 PVC 对应的 LocalVolume CR
+### Find the LocalVolume CR for the Specified PVC
 
 ```console
 $ kubectl get pvc pvc-sample
@@ -133,24 +132,23 @@ pvc-c354a56a-5cf4-4ff6-9472-4e24c7371e10   LocalStorage_PoolHDD   1          107
 pvc-cac82087-6f6c-493a-afcd-09480de712ed   LocalStorage_PoolHDD   1          10737418240   33783808   Ready   -1         master      xfs      5d23h
 ```
 
-根据打印输出，PVC 的 LocalVolume CR 为 `pvc-cac82087-6f6c-493a-afcd-09480de712ed`。
+According to the printed output, the LocalVolume CR for the PVC is `pvc-cac82087-6f6c-493a-afcd-09480de712ed`.
 
-### 修改 LocalVolume CR
+### Modify LocalVolume CR
 
 ```bash
 kubectl edit localvolume pvc-cac82087-6f6c-493a-afcd-09480de712ed
 ```
 
-在编辑器中，找到 `spec.volumeQoS` 部分并修改 `iops` 和 `throughput` 字段。 顺便说一下，空值意味着没有限制。
+In the editor, locate the `spec.volumeQoS` section and modify the `iops` and `throughput` fields. Note that a blank value indicates no limit.
 
-最后，保存更改并退出编辑器。设置将在几秒钟后生效。
+Finally, save the changes and exit the editor. The settings will take effect within a few seconds.
 
-**注意**：将来，一旦 Kubernetes 支持[它](https://github.com/kubernetes/enhancements/tree/master/keps/sig-storage/3751-volume-attributes-class#motivation)，我们将允许用户直接修改卷的最大 IOPS 和吞吐量。
+**Note**: In the future, once Kubernetes supports it ([link](https://github.com/kubernetes/enhancements/tree/master/keps/sig-storage/3751-volume-attributes-class#motivation)), we will allow users to directly modify the maximum IOPS and throughput of volumes.
 
-## 如何检查数据卷的实际 IOPS 和吞吐量
+## How to Check the Actual IOPS and Throughput of a Data Volume
 
-HwameiStor 使用 [cgroupv1](https://www.kernel.org/doc/Documentation/cgroup-v1/blkio-controller.txt)
-来限制数据卷的 IOPS 和吞吐量，因此您可以使用以下命令来检查数据卷的实际 IOPS 和吞吐量。
+HwameiStor uses [cgroupv1](https://www.kernel.org/doc/Documentation/cgroup-v1/blkio-controller.txt) to limit the IOPS and throughput of data volumes. Therefore, you can use the following command to check the actual IOPS and throughput of a data volume.
 
 ```
 $ lsblk

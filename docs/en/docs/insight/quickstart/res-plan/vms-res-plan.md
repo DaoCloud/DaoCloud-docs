@@ -80,4 +80,4 @@ Then the current vmstorage disk usage should be set to (784000+80000)x2x0.9x60x2
 !!! note
 
     For the relationship between the number of metrics and the number of Pods in the cluster,
-    please refer to [Prometheus Resource Planning](../quickstart/res-plan/prometheus-res.md).
+    please refer to [Prometheus Resource Planning](./prometheus-res.md).

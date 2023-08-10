@@ -231,7 +231,7 @@ nav:
               - Release Notes: insight/intro/releasenote.md
           - 快速入门:
               - 开始观测:
-                  - insight/quickstart/install/quickstart-catelogy.md
+                  - insight/quickstart/install/index.md
                   - 在线安装 insight-agent: insight/quickstart/install/install-agent.md
                   - 离线升级 insight-agent: insight/quickstart/install/offline-install.md
                   - 获取数据上传地址: insight/quickstart/install/gethosturl.md

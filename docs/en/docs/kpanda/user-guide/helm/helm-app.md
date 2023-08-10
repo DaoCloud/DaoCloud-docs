@@ -18,7 +18,7 @@ Follow the steps below to install the Helm application.
 
      
 
-2. In the left navigation bar, click `Helm Application` -> `Helm chart` to enter the Helm chart page.
+2. In the left navigation bar, click `Helm Apps` -> `Helm chart` to enter the Helm chart page.
 
      On the Helm chart page, select the [Helm repository](helm-repo.md) named `addon`, and all the Helm chart templates under the `addon` repository will be displayed on the interface.
      Click on the Chart named `cert-manager`.
@@ -47,7 +47,7 @@ Follow the steps below to update the Helm application.
 
      
 
-2. In the left navigation bar, click `Helm Application` to enter the Helm application list page.
+2. In the left navigation bar, click `Helm Apps` to enter the Helm application list page.
 
      On the Helm application list page, select the Helm application that needs to be updated, click the `...` operation button on the right side of the list, and select the `Update` operation in the drop-down selection.
 
@@ -89,7 +89,7 @@ Follow the steps below to delete the Helm application.
 
      
 
-2. In the left navigation bar, click `Helm Application` to enter the Helm application list page.
+2. In the left navigation bar, click `Helm Apps` to enter the Helm application list page.
 
      On the Helm application list page, select the Helm application you want to delete, click the `...` operation button on the right side of the list, and select `Delete` from the drop-down selection.
 
