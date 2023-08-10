@@ -53,8 +53,6 @@ You need to check the following before restoring:
 
     The backup of DCE 5.0 is a full data backup, and the full data of the last backup will be restored when restoring.
 
-
-
 ### Shut down the cluster
 
 Before backing up, the cluster must be shut down. The default clusters `etcd` and `kube-apiserver` are started as static pods. To close the cluster here means to move the static Pod manifest file out of the `/etc/kubernetes/manifest` directory, and the cluster will remove the corresponding Pod to close the service.
@@ -125,7 +123,7 @@ You only need to restore the data of one node, and the etcd data of other nodes 
 
 2. Perform the restore operation
 
-    Execute the etcdbrctl command line tool to perform the restore, which is the most critical step.
+    Run the etcdbrctl command line tool to perform the restore, which is the most critical step.
 
     ```shell
     etcdbrctl restore --data-dir /var/lib/etcd/ --store-container="etcd-backup" \ 

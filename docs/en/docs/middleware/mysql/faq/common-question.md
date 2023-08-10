@@ -232,7 +232,7 @@ If there is no error `ERROR` message in the log, it means `False` is only becaus
      kubectl exec -it mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf
      ```
 
-4. Execute the view command in the MySQL container to obtain the status of the slave library.
+4. Run the view command in the MySQL container to obtain the status of the slave library.
 
      The `Seconds_Behind_Master` field is the master-slave delay. If the value is 0~30, it can be considered that there is no delay; it means that the master-slave can maintain synchronization.
 

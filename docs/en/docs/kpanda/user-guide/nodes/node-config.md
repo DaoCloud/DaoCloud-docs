@@ -11,7 +11,7 @@ If you choose to use SSH keys to connect to all the nodes of the cluster to be c
     ssh-keygen -t rsa
     ```
 
-2. Execute the `ls` command to check whether the key on the management cluster is successfully created, and the correct feedback is as follows:
+2. Run the `ls` command to check whether the key on the management cluster is successfully created, and the correct feedback is as follows:
 
     ```shell
     ls

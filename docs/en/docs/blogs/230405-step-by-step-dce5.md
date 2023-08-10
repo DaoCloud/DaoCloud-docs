@@ -335,7 +335,7 @@ chmod +x ./dce5-installer
 
      ![image](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/firewall.png)
 
-### Execute the installation
+### Run the installation
 
 1. If your browser is directly connected to the IP of the master node, run directly
 

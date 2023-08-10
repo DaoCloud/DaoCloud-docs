@@ -17,7 +17,7 @@
 
 #### Confirm Enabling Kubernetes Audit Logs
 
-Execute the following command to check if audit logs are generated under the `/var/log/kubernetes/audit` directory. If they exist, it means that Kubernetes audit logs are successfully enabled.
+Run the following command to check if audit logs are generated under the `/var/log/kubernetes/audit` directory. If they exist, it means that Kubernetes audit logs are successfully enabled.
 
 ```shell
 ls /var/log/kubernetes/audit
@@ -80,7 +80,7 @@ helm upgrade --install --create-namespace --version ${insight_version_code} --cl
 
 #### Confirm Enabling Kubernetes Audit Logs
 
-Execute the following command to check if audit logs are generated under the `/var/log/kubernetes/audit` directory. If they exist, it means that Kubernetes audit logs are successfully enabled.
+Run the following command to check if audit logs are generated under the `/var/log/kubernetes/audit` directory. If they exist, it means that Kubernetes audit logs are successfully enabled.
 
 ```shell
 ls /var/log/kubernetes/audit
@@ -154,7 +154,7 @@ After the cluster creation is successful, the K8s audit logs for that work clust
 
 #### Confirm Enabling K8s Audit Logs
 
-Execute the following command to check if audit logs are generated under the `/var/log/kubernetes/audit` directory. If they exist, it means that K8s audit logs are successfully enabled.
+Run the following command to check if audit logs are generated under the `/var/log/kubernetes/audit` directory. If they exist, it means that K8s audit logs are successfully enabled.
 
 ```shell
 ls /var/log/kubernetes/audit

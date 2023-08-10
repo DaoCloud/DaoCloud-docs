@@ -4,7 +4,7 @@ Metric query supports querying the index data of each container resource, and yo
 
 ## Prerequisites
 
-- The cluster has [insight-agent installed](../../quickstart/install-agent.md) and the application is in `running` state.
+- The cluster has [insight-agent installed](../../quickstart/install/install-agent.md) and the application is in `running` state.
 
 ## Common query
 

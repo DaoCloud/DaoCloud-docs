@@ -59,7 +59,7 @@ First, synchronize the image to the specified container registry through chart-s
           password: "Harbor12345" # Your container registry password
         ```
 
-1. Execute the synchronous image command.
+1. Run the synchronous image command.
 
     ```shell
     charts-syncer sync --config load-image.yaml

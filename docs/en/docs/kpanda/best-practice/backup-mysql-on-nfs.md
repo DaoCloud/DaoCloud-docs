@@ -1,42 +1,43 @@
-# MySQL 应用及数据的跨集群备份恢复
+# Cross-Cluster Backup and Recovery of MySQL Application and Data
 
-本次演示将基于 DCE 5.0 的应用备份功能，实现一个有状态应用的跨集群备份迁移。
-
-!!! note
-
-    当前操作者应具有 DCE 5.0 平台管理员的权限。
-
-## 准备演示环境
-
-### 准备两个集群
-
-`main-cluster` 作为备份数据的源集群，`recovery-cluster` 集群作为需要恢复数据的目标集群。
-
-| 集群             | IP           | 节点   |
-| ---------------- | ------------ | ------ |
-| main-cluster     | 10.6.175.100 | 1 节点 |
-| recovery-cluster | 10.6.175.110 | 1 节点 |
-
-### 搭建 MinIO 配置
-
-| MinIO 服务器访问地址 | 存储桶 | 用户名 | 密码 |
-| ------------------------ | ---------- | ---------- | -------- |
-| http://10.7.209.110:9000 | mysql-demo | root       | dangerous |
-
-### 在两个集群部署 NFS 存储服务
+This demonstration will show how to use the application backup feature in DCE 5.0 to
+perform cross-cluster backup migration for a stateful application.
 
 !!! note
 
-    需要在 **源集群和目标集群** 上的所有节点上部署 NFS 存储服务。
+    The current operator should have admin privileges on the DCE 5.0 platform.
 
-1. 在两个集群中的所有节点安装 NFS 所需的依赖。
+## Prepare the Demonstration Environment
+
+### Prepare Two Clusters
+
+`main-cluster` will be the source cluster for backup data, and `recovery-cluster` will be the target cluster for data recovery.
+
+| Cluster           | IP            | Nodes  |
+| ----------------- | ------------- | ------ |
+| main-cluster      | 10.6.175.100  | 1 node |
+| recovery-cluster  | 10.6.175.110  | 1 node |
+
+### Set Up MinIO Configuration
+
+| MinIO Server Address     | Bucket      | Username | Password  |
+| ------------------------| ----------- | ---------| ----------|
+| http://10.7.209.110:9000 | mysql-demo  | root     | dangerous |
+
+### Deploy NFS Storage Service in Both Clusters
+
+!!! note
+
+    NFS storage service needs to be deployed on **all nodes** in both the source and target clusters.
+
+1. Install the dependencies required for NFS on all nodes in both clusters.
 
     ```yaml
     yum install nfs-utils iscsi-initiator-utils nfs-utils iscsi-initiator-utils nfs-utils iscsi-initiator-utils -y
     ```
 
     <details>
-    <summary>预期输出</summary>
+    <summary>Expected output</summary>
     ```bash
     [root@g-master1 ~]# kubectl apply -f nfs.yaml
     clusterrole.rbac.authorization.k8s.io/nfs-provisioner-runner created
@@ -50,9 +51,11 @@
     ```
     </details>
 
-2. 为 MySQL 应用准备 NFS 存储服务。
+2. Prepare NFS storage service for the MySQL application.
 
-    登录 `main-cluster` 集群和 `recovery-cluster` 集群的任一控制节点，使用 `vi nfs.yaml` 命令在节点上创建一个 名为 `nfs.yaml` 的文件，将下面的 YAML 内容复制到 `nfs.yaml` 文件。
+   Log in to any control node of both `main-cluster` and `recovery-cluster`.
+   Use the command `vi nfs.yaml` to create a file named `nfs.yaml` on the node,
+   and copy the following YAML content into the `nfs.yaml` file.
 
     <details>
     <summary>nfs.yaml</summary>
@@ -258,20 +261,20 @@
     ```
     </details>
 
-3. 在两个集群的控制节点上执行 `nfs.yaml` 文件。
+3. Run the `nfs.yaml` file on the control nodes of both clusters.
 
     ```bash
     kubectl apply -f nfs.yaml
     ```
 
-4. 查看 NFS Pod 状态，等待其状态变为 `running`（大约需要 2 分钟）。
+4. Check the status of the NFS Pod and wait for its status to become `running` (approximately 2 minutes).
 
     ```bash
     kubectl get pod -n nfs-system -owide
     ```
 
     <details>
-    <summary>预期输出</summary>
+    <summary>Expected output</summary>
     ```bash
     [root@g-master1 ~]# kubectl get pod -owide
     NAME                               READY   STATUS    RESTARTS   AGE     IP              NODE        NOMINATED NODE   READINESS GATES
@@ -279,11 +282,12 @@
     ```
     </details>
 
-### 部署 MySQL 应用
+### Deploy MySQL Application
 
-1. 为 MySQL 应用准备基于 NFS 存储的 PVC，用来存储 MySQL 服务内的数据。
+1. Prepare a PVC (Persistent Volume Claim) based on NFS storage for the MySQL application to store its data.
 
-    使用 `vi pvc.yaml` 命令在节点上创建名为 `pvc.yaml` 的文件，将下面的 YAML 内容复制到 `pvc.yaml` 文件内。
+    Use the command `vi pvc.yaml` to create a file named `pvc.yaml` on the node,
+    and copy the following YAML content into the `pvc.yaml` file.
 
     <details>
     <summary>pvc.yaml</summary>
@@ -304,23 +308,24 @@
     ```
     </details>
 
-2. 在节点上使用 kubectl 工具执行 `pvc.yaml` 文件。
+2. Run the `pvc.yaml` file using the kubectl tool on the node.
 
     ```bash
     kubectl apply -f pvc.yaml
     ```
 
     <details>
-    <summary>预期输出</summary>
+    <summary>Expected output</summary>
     ```bash
     [root@g-master1 ~]# kubectl apply -f pvc.yaml
     persistentvolumeclaim/mydata created
     ```
     </details>
 
-3. 部署 MySQL 应用。
+3. Deploy the MySQL application.
 
-    使用 `vi mysql.yaml` 命令在节点上创建名为 `mysql.yaml` 的文件，将下面的 YAML 内容复制到 `mysql.yaml` 文件。
+    Use the command `vi mysql.yaml` to create a file named `mysql.yaml` on the node,
+    and copy the following YAML content into the `mysql.yaml` file.
 
     <details>
     <summary>mysql.yaml</summary>
@@ -385,26 +390,26 @@
     ```
     </details>
 
-4. 在节点上使用 kubectl 工具执行 `mysql.yaml` 文件。
+4. Run the `mysql.yaml` file using the kubectl tool on the node.
 
     ```bash
     kubectl apply -f mysql.yaml
     ```
 
     <details>
-    <summary>预期输出</summary>
+    <summary>Expected output</summary>
     ```bash
     [root@g-master1 ~]# kubectl apply -f mysql.yaml
     deployment.apps/mysql-deploy created
     ```
     </details>
 
-5. 查看 MySQL Pod 状态。
+5. Check the status of the MySQL Pod.
 
-    执行 `kubectl get pod | grep mysql` 查看 MySQL Pod 状态，等待其状态变为 `running`（大约需要 2 分钟）。
+    Execute `kubectl get pod | grep mysql` to view the status of the MySQL Pod and wait for its status to become `running` (approximately 2 minutes).
 
     <details>
-    <summary>预期输出</summary>
+    <summary>Expected output</summary>
     ```bash
     [root@g-master1 ~]# kubectl get pod |grep mysql
     mysql-deploy-5d6f94cb5c-gkrks      1/1     Running   0          2m53s
@@ -412,16 +417,17 @@
     </details>
 
     !!! note
-        
-        - 如果  MySQL Pod 状态长期处于非 running 状态，通常是因为没有在集群的所有节点上安装 NFS 依赖。
-        - 执行 `kubectl describe pod ${mysql pod 名称}` 查看 Pod 的详细信息。
-        - 如果报错中有 `MountVolume.SetUp failed for volume "pvc-4ad70cc6-df37-4253-b0c9-8cb86518ccf8" : mount failed: exit status 32` 之类的信息，请分别执行 `kubectl delete -f nfs.yaml/pvc.yaml/mysql.yaml` 删除之前的资源后，重新从部署 NFS 服务开始。
 
-6. 向 MySQL 应用写入数据。
+        - If the MySQL Pod remains in a non-running state for a long time, it is usually because NFS dependencies are not installed on all nodes in the cluster.
+        - Execute `kubectl describe pod ${mysql pod name}` to view detailed information about the Pod.
+        - If there is an error message like `MountVolume.SetUp failed for volume "pvc-4ad70cc6-df37-4253-b0c9-8cb86518ccf8" : mount failed: exit status 32`, please delete the previous resources by executing `kubectl delete -f nfs.yaml/pvc.yaml/mysql.yaml` and start from deploying the NFS service again.
 
-    为了便于后期验证迁移数据是否成功，可以使用脚本向 MySQL 应用中写入测试数据。
+6. Write data to the MySQL application.
 
-    1. 使用 `vi insert.sh` 命令在节点上创建名为 `insert.sh` 的脚本，将下面的 YAML 内容复制到该脚本。
+    To verify the success of the data migration later, you can use a script to write test data to the MySQL application.
+
+    1. Use the command `vi insert.sh` to create a script named `insert.sh` on the node,
+       and copy the following content into the script.
 
         <details>
         <summary>insert.sh</summary>
@@ -456,7 +462,7 @@
         ```
         </details>
 
-    2. 为 `insert.sh` 脚本添加权限并运行该脚本。
+    2. Add permission to `insert.sh` and run this script.
 
         ```bash
         [root@g-master1 ~]# chmod +x insert.sh
@@ -464,7 +470,7 @@
         ```
 
         <details>
-        <summary>预期输出</summary>
+        <summary>Expected output</summary>
         ```
         mysql: [Warning] Using a password on the command line interface can be insecure.
         mysql: [Warning] Using a password on the command line interface can be insecure.
@@ -483,16 +489,16 @@
         ```
         </details>
 
-    3. 在键盘上同时按下 `control` 和 `c` 暂停脚本的执行。
+    3. Press `control` and `c` on the keyboard simultaneously to pause the script execution.
 
-    4. 前往 MySQL Pod 查看 MySQL 中写入的数据。
+    4. Go to the MySQL Pod and check the data written in MySQL.
 
         ```bash
         kubectl exec deploy/mysql-deploy -- mysql -uroot -pdangerous -e "SELECT * FROM test.users;"
         ```
 
         <details>
-        <summary>预期输出</summary>
+        <summary>Expected output</summary>
         ```bash
         [root@g-master1 ~]# kubectl exec deploy/mysql-deploy -- mysql -uroot -pdangerous -e "SELECT * FROM test.users;"
         mysql: [Warning] Using a password on the command line interface can be insecure.
@@ -516,25 +522,25 @@
         ```
         </details>
 
-### 在两个集群安装 velero 插件
+### Install Velero Plugin on Both Clusters
 
 !!! note
 
-    需要在 **源集群和目标集群** 上均安装 velero 插件。
+    The velero plugin needs to be installed on **both the source and target clusters**.
 
-参考[安装 velero 插件](../user-guide/backup/install-velero.md)文档和下方的 MinIO 配置，在 `main-cluster` 集群和 `recovery-cluster` 集群上安装 velero 插件。
+Refer to the [Install Velero Plugin](../user-guide/backup/install-velero.md) documentation and the MinIO configuration below to install the velero plugin on the `main-cluster` and `recovery-cluster`.
 
-| minio 服务器访问地址     | 存储桶     | 用户名 | 密码      |
-| ------------------------ | ---------- | ------ | --------- |
-| http://10.7.209.110:9000 | mysql-demo | root   | dangerous |
+| MinIO Server Address     | Bucket      | Username | Password  |
+| ------------------------| ----------- | ---------| ----------|
+| http://10.7.209.110:9000 | mysql-demo  | root     | dangerous |
 
 !!! note
 
-    安装插件时需要将 S3url 替换为此次演示准备的 MinIO 服务器访问地址，存储桶替换为 MinIO 中真实存在的存储桶。
+    When installing the plugin, replace S3url with the MinIO server address prepared for this demonstration, and replace the bucket with an existing bucket in MinIO.
 
-## 备份 MySQL 应用及数据
+## Backup MySQL Application and Data
 
-1. 为 MySQL 应用及 PVC 数据添加独有的标签：`backup=mysql`，便于备份时选择资源。
+1. Add a unique label, `backup=mysql`, to the MySQL application and PVC data. This will facilitate resource selection during backup.
 
     ```
     kubectl label deploy mysql-deploy backup=mysql #为 `mysql-deploy` 负载添加标签
@@ -542,42 +548,42 @@
     kubectl label pvc mydata backup=mysql #为 mysql 的 pvc 添加标签
     ```
 
-2. 参考[应用备份](../user-guide/backup/deployment.md#_3)中介绍的步骤，以及下方的参数创建应用备份。
+2. Refer to the steps described in [Application Backup](../user-guide/backup/deployment.md#_3) and the parameters below to create an application backup.
 
-    - 名称：`backup-mysql`（可以自定义）
-    - 源集群： `main-cluster`
-    - 命名空间：default
-    - 资源过滤-指定资源标签：backup:mysql
+   - Name: `backup-mysql` (can be customized)
+   - Source Cluster: `main-cluster`
+   - Namespace: default
+   - Resource Filter - Specify resource label: backup:mysql
 
-    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/mysql03.png)
+   ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/mysql03.png)
 
-3. 创建好备份计划之后页面会自动返回备份计划列表，找到新建的备份计划 `backup-mysq`，在计划点击更多操作按钮 `...` 选择 `立即执行` 执行新建的备份计划。
+3. After creating the backup plan, the page will automatically return to the backup plan list. Find the newly created backup plan `backup-mysq` and click on the more options button `...` in the plan. Select "Run Now" to execute the newly created backup plan.
 
-    ![img](../images/mysql05.png)
+   ![img](../images/mysql05.png)
 
-4. 等待备份计划执行完成后，即可执行后续操作。
+4. Wait for the backup plan execution to complete before proceeding with the next steps.
 
-## 跨集群恢复 MySQL 应用及数据
+## Cross-Cluster Recovery of MySQL Application and Data
 
-1. 登录 DCE 5.0 平台，在左侧导航选择`容器管理` -> `备份恢复` -> `应用备份`。
+1. Log in to the DCE 5.0 platform and select `Container Management` -> `Backup & Restore` -> `Application Backup` from the left navigation menu.
 
-    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/mysql06.png)
+   ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/mysql06.png)
 
-2. 在左侧功能栏选择 `恢复`，然后在右侧点击 `恢复备份`。
+2. Select `Recovery` in the left-side toolbar, then click on `Restore Backup` on the right side.
 
-    ![img](../images/mysql07.png)
+   ![img](../images/mysql07.png)
 
-3. 查看以下说明填写参数：
-  
-    - 名称：`restore-mysql`（可以自定义）
-    - 备份源集群：`main-cluster`
-    - 备份计划：`backup-mysql`
-    - 备份点：default
-    - 恢复目标集群：`recovery-cluster`
+3. Fill in the parameters based on the following instructions:
 
-    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/mysql08.png)
-  
-4. 刷新备份计划列表，等待备份计划执行完成。
+   - Name: `restore-mysql` (can be customized)
+   - Backup Source Cluster: `main-cluster`
+   - Backup Plan: `backup-mysql`
+   - Backup Point: default
+   - Recovery Target Cluster: `recovery-cluster`
+
+   ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/mysql08.png)
+
+4. Refresh the backup plan list and wait for the backup plan execution to complete.
 
 ## 验证数据是否成功恢复
 
@@ -587,20 +593,20 @@
     kubectl get pod
     ```
 
-    预期输出如下：
+    Expected output如下：
     
     ```
     NAME                               READY   STATUS    RESTARTS   AGE
     mysql-deploy-5798f5d4b8-62k6c      1/1     Running   0          24h
     ```
 
-2. 检查 MySQL 数据表中的数据是否恢复成功。
+2. Check if the data in MySQL datasheet is restored or not.
 
     ```bash
     kubectl exec deploy/mysql-deploy -- mysql -uroot -pdangerous -e "SELECT * FROM test.users;"
     ```
 
-    预期输出如下：
+    Expected output如下：
     ```
     [root@g-master1 ~]# kubectl exec deploy/mysql-deploy -- mysql -uroot -pdangerous -e "SELECT * FROM test.users;"
     mysql: [Warning] Using a password on the command line interface can be insecure.
@@ -625,4 +631,6 @@
 
     !!! success
     
-        可以看到，Pod 中的数据和 `main-cluster` 集群中 Pod 里面的数据一致。这说明已经成功地将 `main-cluster` 中的 MySQL 应用及其数据跨集群恢复到了 `recovery-cluster` 集群。
+        As you can see, the data in the Pod is consistent with the data inside the Pods in the `main-cluster`.
+        This indicates that the MySQL application and its data from the `main-cluster` have been successfully
+        recovered to the `recovery-cluster` cluster.

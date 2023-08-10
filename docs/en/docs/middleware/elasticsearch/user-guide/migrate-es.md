@@ -125,7 +125,7 @@ spec:
   migrateAllVols: false
 ```
 
-### Execute the migration command
+### Run the migration command
 
 At this point, a `pod` will be created for `hwameistor` in the namespace to perform the migration action:
 

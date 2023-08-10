@@ -4,7 +4,7 @@ Insight provides monitoring of service metrics, and can view key metrics such as
 
 ## Prerequisites
 
-The insight-agent is installed in the cluster and the application is in `running` state. If not installed, please refer to: [Installing insight-agent to collect data](../../quickstart/install-agent.md)
+The insight-agent is installed in the cluster and the application is in `running` state. If not installed, please refer to: [Installing insight-agent to collect data](../../quickstart/install/install-agent.md)
 
 ## View node details
 

@@ -134,15 +134,15 @@ vi $HOME/.kube/config
 
 ## Configure cluster connectivity
 
-Execute the following commands to verify cluster connectivity:
+Run the following commands to verify cluster connectivity:
 
-1. Execute the following commands on cluster01:
+1. Run the following commands on cluster01:
 
     ```bash
     cilium clustermesh enable --create-ca --context cluster01 --service-type NodePort
     ```
 
-2. Execute the following command to enable `clustermesh` on cluster02:
+2. Run the following command to enable `clustermesh` on cluster02:
 
     ```bash
     cilium clustermesh enable --create-ca --context cluster02 --service-type NodePort

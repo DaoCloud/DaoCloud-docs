@@ -136,9 +136,17 @@ nav:
           - Permissions:
               - Permission Brief: kpanda/user-guide/permissions/permission-brief.md
               - Cluster and Namespace Authorization: kpanda/user-guide/permissions/cluster-ns-auth.md
+          - GPU:
+              - Install Nvidia GPU Driver: kpanda/user-guide/gpu/driver.md
           - Best Practices:
-              - ETCD Backup and Restore: kpanda/best-practice/etcd-backup.md
-              - Offline Upgrade Worker Cluster: kpanda/best-practice/update-offline-cluster.md
+              - Backup and restore ETCD: kpanda/best-practice/etcd-backup.md
+              - Cross-cluster backup and restore of MySQL applications and data: kpanda/best-practice/backup-mysql-on-nfs.md
+              - Strengthening a self-built working cluster: kpanda/best-practice/hardening-cluster.md
+              - Offline upgrade guide for working clusters: kpanda/best-practice/update-offline-cluster.md
+              - Adding heterogeneous nodes to a working cluster: kpanda/best-practice/multi-arch.md
+              - Creating an Ubuntu working cluster on a CentOS management platform: kpanda/best-practice/create-ubuntu-on-centos-platform.md
+              - Scaling the control nodes of a working cluster: kpanda/best-practice/add-master-node.md
+              - Creating a cluster on non-supported operating systems: kpanda/best-practice/use-otherlinux-create-custer.md
       - Global Management:
           - Intro:
               - What is Global Management: ghippo/intro/index.md

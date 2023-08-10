@@ -16,7 +16,7 @@ This page demonstrates how to import and successfully use the Ceph Monitoring Pl
 
 ## Deploy Insight Agent in a worker cluster
 
-To collect the monitoring metrics of rook-ceph-cluster, you need to [Install Insight Agent](../../insight/quickstart/install-agent.md),
+To collect the monitoring metrics of rook-ceph-cluster, you need to [Install Insight Agent](../../insight/quickstart/install/install-agent.md),
 Then create CR ServiceMonitor to collect monitoring information of rook-ceph-cluster.
 
 1. The monitoring metrics of rook-ceph-cluster are exposed through port 9283.

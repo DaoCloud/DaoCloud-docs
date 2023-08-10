@@ -71,7 +71,7 @@ In a real mesh cluster, check the effect before and after traffic passthrough.
      test-cv NodePort 10.211.72.8 <none> 2222:30186/TCP 62d
      ```
 
-1. Execute the curl command to view the traffic routing of helloworld:
+1. Run the curl command to view the traffic routing of helloworld:
 
      === "Before enabling traffic passthrough"
 
