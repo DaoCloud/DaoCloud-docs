@@ -63,7 +63,7 @@ RabbitMQ 数据迁移，可以采用如下两种方案：
 
 1. 进入`中间件`-`RabbitMQ` 的实例列表，进入 `rabbitmq-cluster-a` 的概览页面点击`控制台`按钮;
 
-![控制台](../images/migrate10.png)
+    ![控制台](../images/migrate10.png)
 
 1. 执行一下命令，该过程可能会持续一两分钟：
 
@@ -75,7 +75,7 @@ RabbitMQ 数据迁移，可以采用如下两种方案：
 
 1. 进入 RabbitMQ 管理平台，在 `admin`tab 页面下可见 shovel 的相关插件信息。
 
-![开启插件](../images/migrate09.png)
+    ![开启插件](../images/migrate09.png)
 
 进入实例 `rabbitmq-cluster-b` 的概览页面，再次执行以上操作。
 
@@ -109,6 +109,7 @@ RabbitMQ 数据迁移，可以采用如下两种方案：
 #### 启动迁移
 
 迁移任务将自动启动，当 shovel 状态为“running”时，表示迁移开始，如下图所示。
+
 ![运行状态](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/migrate06.png)
 
 迁移前后观察两个集群的队列状态，可明显看到数据迁移变化：
