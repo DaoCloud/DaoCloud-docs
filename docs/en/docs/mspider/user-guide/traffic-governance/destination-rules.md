@@ -47,7 +47,7 @@ filter CRDs based on rule names or rule tags. The rule tags include:
 
 - Service version
 - Load balancing
-- Locality-based load balancing
+- Locality load balancing
 - HTTP connection pool
 - TCP connection pool
 - Client TLS
@@ -63,28 +63,65 @@ Here are the specific steps for creating a Destination Rule through the graphica
 1. Click `Traffic Management` -> `Destination Rule` in the left navigation bar,
    then click the `Create` button in the upper right corner.
 
-    ![Create](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/destirule01.png)
+    ![Create](../images/destirule01.png)
 
 2. In the `Create Destination` page, configure the basic settings and click `Next`.
 
-    ![Create Destination](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/destirule02.png)
+    ![Create Destination](../images/destirule02.png)
 
 3. Follow the on-screen prompts to select the policy type and configure the corresponding governance policy, then click `OK`.
 
-    ![Governance Policy](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/destirule03.png)
+    ![Governance Policy](../images/destirule03.png)
 
 4. Return to the Destination Rule list, and you will see a prompt indicating successful creation.
 
-    ![Creation Successful](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/destirule04.png)
+    ![Creation Successful](../images/destirule04.png)
 
 5. On the right side of the list, click the `⋮` in the operation column to access more options from the popup menu.
 
-    ![More Operations](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/destirule05.png)
+    ![More Operations](../images/destirule05.png)
 
 The YAML creation method is similar to [Virtual Service](./virtual-service.md).
 You can directly create a YAML file using the built-in templates, as shown in the following figure:
 
 ![YAML Creation](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/destirule07.png)
+
+Here is a YAML sample for destination rule:
+
+```yaml
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  annotations:
+    ckube.daocloud.io/cluster: dywtest3
+    ckube.daocloud.io/indexes: '{"activePolices":"","cluster":"dywtest3","createdAt":"2023-08-10T02:18:04Z","host":"kubernetes","is_deleted":"false","labels":"","name":"dr01","namespace":"default"}'
+  creationTimestamp: "2023-08-10T02:18:04Z"
+  generation: 1
+  managedFields:
+    - apiVersion: networking.istio.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:host: {}
+          f:trafficPolicy:
+            .: {}
+            f:portLevelSettings: {}
+      manager: cacheproxy
+      operation: Update
+      time: "2023-08-10T02:18:04Z"
+  name: dr01
+  namespace: default
+  resourceVersion: "708763"
+  uid: ff95ba70-7b92-4998-b6ba-9348d355d44c
+spec:
+  host: kubernetes
+  trafficPolicy:
+    portLevelSettings:
+      - port:
+          number: 9980
+status: {}
+```
 
 ## Policies
 
