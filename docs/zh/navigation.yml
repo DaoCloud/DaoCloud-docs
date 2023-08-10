@@ -265,6 +265,7 @@ nav:
               - 容器监控: insight/user-guide/scenario-insight/container.md
           - 场景监控:
               - 服务监控: insight/user-guide/scenario-insight/service.md
+              - 服务拓扑元素说明: insight/user-guide/scenario-insight/topology-helper.md
               - 服务拓扑: insight/user-guide/scenario-insight/topology.md
           - 数据查询:
               - 日志查询: insight/user-guide/data-query/log.md
@@ -779,6 +780,7 @@ nav:
                   - 创建 MongoDB: middleware/mongodb/user-guide/create.md
                   - 更新 MongoDB: middleware/mongodb/user-guide/update.md
                   - 删除 MongoDB: middleware/mongodb/user-guide/delete.md
+                  - 查看 MongDB 日志: middleware/mongodb/user-guide/logs.md
       - 云原生存储:
           - 介绍:
               - 什么是云原生存储: storage/index.md
