@@ -24,7 +24,7 @@
 1. 下载脚本。
 
     ```bash
-    export VERSION=v0.9.0   # 安装器版本
+    export VERSION=v0.10.0   # 安装器版本
     curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
     ```
 
@@ -55,14 +55,14 @@
 1. 下载脚本。
 
     ```bash
-    export VERSION=v0.9.0
+    export VERSION=v0.10.0
     curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
     ```
 
 2. 下载前置依赖组件离线包。
 
     ```bash
-    export VERSION=v0.9.0
+    export VERSION=v0.10.0
     curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_${VERSION}_amd64.tar.gz
     ```
 
@@ -86,7 +86,7 @@
         ```bash
         export BINARY_TAR=prerequisite_${VERSION}_amd64.tar.gz
         chmod +x install_prerequisite_${VERSION}.sh
-        ./install_prerequisite_${VERSION}.sh offline community
+        ./install_prerequisite_${VERSION}.sh offline
         ```
 
 接下来就可以安装 DCE 5.0 [社区版](community/resources.md)或[商业版](commercial/deploy-requirements.md)了。

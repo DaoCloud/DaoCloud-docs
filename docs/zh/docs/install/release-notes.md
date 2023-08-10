@@ -38,7 +38,7 @@
 
 - 升级不支持通过 install-app 子命令，仅支持 create-cluster 子命令
 
-- Redhat 8.6 操作系统火种 kind 重启后 kubelet 服务无法启动，报错：`failed to initialize top level QOS containers: root container [kubelet kubepods] doesn't exist`
+- Redhat 8.6 操作系统火种 kind 重启后 kubelet 服务无法启动，报错：`failed to initialize top level QOS containers: root container [kubelet kubepods] doesn't exist`，临时解决方案：执行命令`podman restart [containerid] --time`
 
 - 安装基于 TencentOS 3.1 的集群时，无法正确识别包管理器，如果需要 TencentOS 3.1 请使用安装器 0.9.0 版本
 
