@@ -65,15 +65,15 @@ RabbitMQ 数据迁移，可以采用如下两种方案：
 
     ![控制台](../images/migrate10.png)
 
-1. 执行一下命令，该过程可能会持续一两分钟：
+2. 执行一下命令，该过程可能会持续一两分钟：
 
     ```shell
     rabbitmq-plugins enable rabbitmq_shovel rabbitmq_shovel_management
     ```
 
-![执行命令](../images/migrate11.png)
+    ![执行命令](../images/migrate11.png)
 
-1. 进入 RabbitMQ 管理平台，在 `admin`tab 页面下可见 shovel 的相关插件信息。
+3. 进入 RabbitMQ 管理平台，在 `admin`tab 页面下可见 shovel 的相关插件信息。
 
     ![开启插件](../images/migrate09.png)
 
@@ -98,13 +98,13 @@ RabbitMQ 数据迁移，可以采用如下两种方案：
     - `on publish` 表示 Shovel 会把每一条消息发送到目的端之后再向源端发送消息确认；
     - `on confirm` 表示 Shovel 会使用 publisher confirm 机制，在收到目的端的消息确认之后再向源端发送消息确认。
 
-    !!! note
+!!! note
 
-        服务地址（图中的3和4）设置格式：amqp://用户名:密码@{rabbitmq服务地址}
+    服务地址（图中的3和4）设置格式：amqp://用户名:密码@{rabbitmq服务地址}
 
 下图是一个简单的配置示例
 
-![配置示例](../images/migrate09.png)
+![配置示例](../images/migrate12.png)
 
 #### 启动迁移
 
@@ -116,7 +116,7 @@ RabbitMQ 数据迁移，可以采用如下两种方案：
 
 - 迁移启动前 rabbitmq-cluster-a 集群消息情况
 
-![迁移前消息](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/migrate04.png)
+    ![迁移前消息](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/migrate04.png)
 
 - 迁移启动后 rabbitmq-cluster-a 集群消息情况，可见队列消息已迁出
 
