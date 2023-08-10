@@ -16,7 +16,7 @@ The specific operation steps are as follows:
 
     ![Data Collection](../../images/collectmanage01.png)
 
-2. You can View the status of all cluster collection plug-ins.
+2. You can view the status of all cluster collection plug-ins.
 
     ![Data Collection](../../images/collectmanage02.png)
 

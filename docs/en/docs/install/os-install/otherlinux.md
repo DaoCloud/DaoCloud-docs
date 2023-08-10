@@ -36,7 +36,7 @@ Remarks: If there is no verified operating system, you can try to deploy it thro
      ```bash
      # Specify the path of the pkgs.yml package configuration file (if pkgs.yml is located in the same path as other_os_pkgs.sh, you can not set this environment variable)
      export PKGS_YML_PATH=/home/pkgs.yml
-     # Execute the system offline package build command
+     # Run the system offline package build command
      ./other_os_pkgs.sh build
      ```
 
@@ -52,7 +52,7 @@ Remarks: If there is no verified operating system, you can try to deploy it thro
      # Specify the target node access information for installation (multi-node usernames and passwords must be consistent)
      export SSH_USER=root
      export SSH_PASS=dangerous
-     # Execute the installation command and output the log
+     # Run the installation command and output the log
      ./other_os_pkgs.sh install >>log.txt
      ```
 

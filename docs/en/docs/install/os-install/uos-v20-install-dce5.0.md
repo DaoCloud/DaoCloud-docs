@@ -48,7 +48,7 @@ This page will introduce how to deploy DCE 5.0 on UOS V20(1020a) operating syste
     chmod +x build.sh
     ```
 
-    Execute the script to generate **os-pkgs-uos-20.tar.gz** file:
+    Run the script to generate **os-pkgs-uos-20.tar.gz** file:
 
     ```bash
     ./build.sh

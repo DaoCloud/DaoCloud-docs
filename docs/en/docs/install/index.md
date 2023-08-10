@@ -2,9 +2,13 @@
 
 DCE 5.0 has two versions: Community package and Enterprise package.
 
-The Community package includes Container Management, Global Management, and Insight modules, which can be used for free permanently. 
+The Community package includes Container Management, Global Management, and Insight modules,
+which can be used for free permanently.
 
-The Enterprise package can be purchased on demand with advanced modules such as Service Mesh, Microservice Engine, MultiCloud Management, Data Middleware, Image Repository, etc. in addtion to those modules contained in the Community package. It has more comprehensive features and can better meet the needs of production environments.
+The Enterprise package can be purchased on demand with advanced modules such as Service Mesh,
+Microservice Engine, MultiCloud Management, Data Middleware, Image Repository, etc. in addtion to
+those modules contained in the Community package. It has more comprehensive features and can better
+meet the needs of production environments.
 
 <table>
   <thead>
@@ -19,34 +23,32 @@ The Enterprise package can be purchased on demand with advanced modules such as 
       <td>Community Package</td>
       <td>
         <ul>
-          <li><a href="../ghippo/intro/index.md">Global Management</a></li>
-          <li><a href="../kpanda/intro/index.md">Container Management</a></li>
-          <li><a href="../insight/intro/index.md">Observability</a></li>
+          <li><a href="https://docs.daocloud.io/en/ghippo/intro/index.html">Global Management</a></li>
+          <li><a href="https://docs.daocloud.io/en/kpanda/intro/index.html">Container Management</a></li>
+          <li><a href="https://docs.daocloud.io/en/insight/intro/index.html">Observability</a></li>
         </ul>
       </td>
       <td>
-        <a href="../dce/license0.md">Perpetual Free License</a>, 3 modules will be continuously updated and can be downloaded as offline packages
-        <a href="../download/index.md">here</a>
+        <a href="https://docs.daocloud.io/en/dce/license0.html">Permanently free license</a>, the 3 modules will receive continuous updates, and you can <a href="https://docs.daocloud.io/en/download/index.html#_3">download offline packages for sub-modules</a> anytime.
       </td>
     </tr>
     <tr>
       <td>Enterprise Package</td>
       <td>
         <ul>
-          <li><a href="../ghippo/intro/index.md">Global Management</a></li>
-          <li><a href="../kpanda/intro/index.md">Container Management</a></li>
-          <li><a href="../insight/intro/index.md">Observability</a></li>
-          <li><a href="../amamba/intro/index.md">Application Workbench</a></li>
-          <li><a href="../kairship/intro/index.md">Multi-Cloud Orchestration</a></li>
-          <li><a href="../skoala/intro/index.md">Microservice Engine</a></li>
-          <li><a href="../mspider/intro/index.md">Service Mesh</a></li>
-          <li><a href="../middleware/index.md">Selected Middleware</a></li>
-          <li><a href="../kangaroo/index.md">Image Repository</a></li>
+          <li><a href="https://docs.daocloud.io/en/ghippo/intro/index.html">Global Management</a></li>
+          <li><a href="https://docs.daocloud.io/en/kpanda/intro/index.html">Container Management</a></li>
+          <li><a href="https://docs.daocloud.io/en/insight/intro/index.html">Observability</a></li>
+          <li><a href="https://docs.daocloud.io/en/amamba/intro/index.html"><span style="white-space: nowrap;">Workbench</span></a></li>
+          <li><a href="https://docs.daocloud.io/en/kairship/intro/index.html">MultiCloud Management</a></li>
+          <li><a href="https://docs.daocloud.io/en/skoala/intro/index.html"><span style="white-space: nowrap;">Microservice Engine</span></a></li>
+          <li><a href="https://docs.daocloud.io/en/mspider/intro/index.html">Service Mesh</a></li>
+          <li><a href="https://docs.daocloud.io/en/middleware/index.html"><span style="white-space: nowrap;">Selected Middleware</span></a></li>
+          <li><a href="https://docs.daocloud.io/en/kangaroo/index.html">Image Repository</a></li>
         </ul>
       </td>
       <td>
-        Contact us for licensing: email info@daocloud.io or call 400 002 6898. Modular flexibility available for each module, and offline packages can be downloaded
-        <a href="../download/index.md">here</a>
+        Contact us for licensing: email info@daocloud.io or call 400 002 6898. You can freely combine the modules as needed, and <a href="https://docs.daocloud.io/en/download/index.html#download-modules">download offline packages for sub-modules</a> anytime.
       </td>
     </tr>
   </tbody>
@@ -108,7 +110,7 @@ click ask "https://docs.daocloud.io/en/install/intro/#contact-us"
 
 !!! tip
 
-     Click the blue text in the diagram, you can go to the corresponding page for details.
+    Click the blue text in the diagram, you can go to the corresponding page for details.
 
 ## Install Enterprise Package
 
@@ -144,13 +146,15 @@ click install "https://docs.daocloud.io/en/install/commercial/start-install/#ste
 
 ## Contact us
 
-DaoCloud Enterprise 5.0 is still in the early stage of release, and the installation guide may change. Please bookmark this page and pay attention to the update dynamics.
+DaoCloud Enterprise 5.0 is still in the early stage of release, and the installation guide may change.
+Please bookmark this page and pay attention to the update dynamics.
 
-- If you have any installation or usage problems, please [give us a feedback](https://github.com/DaoCloud/DaoCloud-docs/issues).
+- If you have any installation or usage problems, please
+  [give us a feedback](https://github.com/DaoCloud/DaoCloud-docs/issues).
 
 - Scan the QR code and communicate with developers freely:
 
-     ![Community Package Exchange Group](https://docs.daocloud.io/daocloud-docs-images/docs/images/assist.png)
+    ![Community Package Exchange Group](https://docs.daocloud.io/en/daocloud-docs-images/docs/images/assist.png)
 
 [Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
 [Free Try](../dce/license0.md){ .md-button .md-button--primary }

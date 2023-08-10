@@ -138,7 +138,7 @@ hide:
 
 10. 为什么低版本集群的控制台打开异常？
 
-    在 kubernetes 低版本（v1.18以下）的集群中，打开控制台出现 csr 资源请求失败。打开控制台的时候，会根据当前登陆用户在目标集群中通过 csr 资源申请证书，如果集群版本太低或者没有开启此功能 controller，会导致证书申请失败，从而无法连接到目标集群。
+    在 kubernetes 低版本（v1.18以下）的集群中，打开控制台出现 csr 资源请求失败。打开控制台的时候，会根据当前登录用户在目标集群中通过 csr 资源申请证书，如果集群版本太低或者没有开启此功能 controller，会导致证书申请失败，从而无法连接到目标集群。
 
     申请证书流程请参考：https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/
     

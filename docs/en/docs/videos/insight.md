@@ -4,7 +4,7 @@
 
 ## Install insight-agent
 
-See [Install insight-agent](../insight/quickstart/install-agent.md) for reference.
+See [Install insight-agent](../insight/quickstart/install/install-agent.md) for reference.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/insight-agent.mp4" preload="metadata" poster="../images/insight-agent.png"></video>
@@ -28,7 +28,7 @@ See [Container Insight](../ghippo/user-guide/workspace/folders.md) for reference
 
 ## Scenario Insight and Traces
 
-Refer to the document pages: [Installing insight-agent](../insight/quickstart/install-agent.md), [Intrusive Enhancements with Operator](../insight/quickstart/otel/operator.md), [Traces](../insight/user-guide/data-query/trace.md)
+Refer to the document pages: [Installing insight-agent](../insight/quickstart/install/install-agent.md), [Intrusive Enhancements with Operator](../insight/quickstart/otel/operator.md), [Traces](../insight/user-guide/data-query/trace.md)
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/trace.mp4" preload="metadata" poster="../images/insight-trace.png"></video>

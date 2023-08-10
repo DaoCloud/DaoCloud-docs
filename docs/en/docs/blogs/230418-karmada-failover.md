@@ -452,7 +452,7 @@ if !online && readyCondition.Status != metav1.ConditionTrue {
 
 The cluster controller will judge whether it is necessary to mark the cluster as unschedulable and unexecutable according to the conditions in the current state of the cluster.
 The following code implements the logic for the core. When the status of the condition whose type is Ready in the conditions is 'False',
-Execute the UpdateClusterControllerTaint function to add effects as NoSchedule and NoExecute taints.
+Run the UpdateClusterControllerTaint function to add effects as NoSchedule and NoExecute taints.
 
 ```go
 func (c *Controller) taintClusterByCondition(ctx context.Context, cluster *clusterv1alpha1.Cluster) error {

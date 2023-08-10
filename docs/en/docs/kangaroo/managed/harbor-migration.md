@@ -55,7 +55,7 @@ In this step, we will migrate the image data stored in the original Harbor to th
 
 3. Determine the specific directory where the registry service of the original Harbor is mounted. This directory contains the image files.
 
-4. Use `rclone` to migrate the data. Execute the following command in the terminal or command prompt:
+4. Use `rclone` to migrate the data. Run the following command in the terminal or command prompt:
 
     ```sh
     rclone copy <original_Harbor_image_storage_directory> <rclone_config_name>:<Minio_bucket_name>/harbor/images/

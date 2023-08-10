@@ -4,7 +4,7 @@ Cluster monitoring can view the basic information of the cluster, the resource c
 
 ## Prerequisites
 
-The cluster has [insight-agent installed](../../quickstart/install-agent.md) and the application is in `running` state.
+The cluster has [insight-agent installed](../../quickstart/install/install-agent.md) and the application is in `running` state.
 
 ## View cluster details
 

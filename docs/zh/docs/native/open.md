@@ -1330,7 +1330,7 @@
 
 - [Tekton 云原生 CI/CD 框架 v0.50.0 发布](https://github.com/tektoncd/pipeline/releases/tag/v0.50.0)
 
-    版本特性：CSI 和计划卷 workspace 功能升级为稳定状态、单独 workspace 功能升级为 beta、支持还原 PVC 创建、添加事件配置映射、引入联合调度（coschedule）功能开关、支持在 PipelineRun 完成后自动删除由其卷声明模版创建的 PVC。
+    版本特性：CSI 和计划卷 workspace 功能升级为稳定状态、单独 workspace 功能升级为 beta、支持还原 PVC 创建、添加事件配置映射、引入联合调度（coschedule）功能开关、支持在 PipelineRun 完成后自动删除由其卷声明模板创建的 PVC。
 
 - [Tekton：云原生 CI/CD 框架 v0.43.0 发布](https://github.com/tektoncd/pipeline/releases/tag/v0.43.0)
 

@@ -117,7 +117,7 @@ Currently, only the upgrade of product components that are already installed in 
 
 #### Upgrade of DCE 5.0 Product Functionality Modules
 
-Execute the upgrade command:
+Run the upgrade command:
 
 ```bash
 ./offline/dce5-installer cluster-create -c ./offline/sample/clusterconfig.yaml -m ./offline/sample/manifest.yaml --upgrade gproduct
@@ -125,7 +125,7 @@ Execute the upgrade command:
 
 #### Upgrade of DCE 5.0 Infrastructure Modules
 
-Execute the upgrade command:
+Run the upgrade command:
 
 ```bash
 ./offline/dce5-installer cluster-create -c ./offline/sample/clusterconfig.yaml -m ./offline/sample/manifest.yaml --upgrade infrastructures

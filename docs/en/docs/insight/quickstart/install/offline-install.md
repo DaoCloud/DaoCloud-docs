@@ -59,7 +59,7 @@ You can load the image in one of the following two ways. When there is a contain
                password: "Harbor12345" # Your container registry password
          ```
 
-1. Execute the synchronous imageing command.
+1. Run the synchronous imageing command.
 
      ```shell
      charts-syncer sync --config load-image.yaml
