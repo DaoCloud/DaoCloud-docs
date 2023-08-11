@@ -9,7 +9,7 @@ If you want to monitor or trace your existing microservices without creating a n
 
 Supported registries: [Nacos Registry](../../../reference/basic-knowledge/registry.md#nacos-registry), [Eureka Registry](../../../reference/basic-knowledge/registry.md#eureka-registry), [Zookeeper Registry](../../../reference/basic-knowledge/registry.md#zookeeper-registry), [Kubernetes Registry](../../../reference/basic-knowledge/registry.md#kubernetes-registry), and [Mesh Registry](../../../reference/basic-knowledge/registry.md#service-mesh-registry).
 
-However, compared with hosted registries, integrated registries can only use some basic features, such as checking basic information, monitoring information, and tracing. To experience more fantastic and surprising boasted features, it is suggested to create a [Hosted Registry](../hosted/registry-lcm/create-registry.md).
+However, compared with hosted registries, integrated registries can only use some basic features, such as checking basic information, monitoring information, and tracing. To experience more fantastic and surprising boasted features, it is suggested to create a [Hosted Registry](../hosted/create-registry.md).
 
 To integrate a registry, follow these steps:
 

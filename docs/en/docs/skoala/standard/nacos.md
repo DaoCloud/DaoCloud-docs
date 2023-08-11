@@ -170,8 +170,6 @@ This article explains how traditional microservices in different frameworks can 
 
     1. Add a configuration file in the Nacos console.
 
-        ![screenshot](../images/standard01.png)
-
     2. Add the `@RefreshScope` and `@Value` annotations to your controller.
 
         Using the `@RefreshScope` annotation from Spring Cloud enables auto-configuration.

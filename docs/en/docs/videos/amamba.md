@@ -4,7 +4,7 @@
 
 ## Pipeline management
 
-See [Pipeline Management](../amamba/user-guide/pipeline/create/custom.md) for reference.
+See [Pipeline Management](../amamba/user-guide/pipelines/create/custom.md) for reference.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-pipeline.mp4" preload="metadata" poster="../images/amamba-pipeline.png"></video>

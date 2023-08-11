@@ -559,7 +559,7 @@ Refer to the [Install Velero Plugin](../user-guide/backup/install-velero.md) doc
 
 3. After creating the backup plan, the page will automatically return to the backup plan list. Find the newly created backup plan `backup-mysq` and click on the more options button `...` in the plan. Select "Run Now" to execute the newly created backup plan.
 
-   ![img](../images/mysql05.png)
+   ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/mysql05.png)
 
 4. Wait for the backup plan execution to complete before proceeding with the next steps.
 
@@ -571,7 +571,7 @@ Refer to the [Install Velero Plugin](../user-guide/backup/install-velero.md) doc
 
 2. Select `Recovery` in the left-side toolbar, then click on `Restore Backup` on the right side.
 
-   ![img](../images/mysql07.png)
+   ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/mysql07.png)
 
 3. Fill in the parameters based on the following instructions:
 

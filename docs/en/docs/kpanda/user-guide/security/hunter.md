@@ -14,7 +14,7 @@ To use the [Vulnerability Scan](intro.md) function, you need to create a scan po
 
 3. Fill in the configuration according to the following instructions, and then click `OK`.
 
-    - Cluster: Select the cluster to be scanned. The optional cluster list comes from the clusters accessed or created in the [Container Management](../kpanda/intro/index.md) module. If the desired cluster is not available, you can access or create a cluster in the Container Management module.
+    - Cluster: Select the cluster to be scanned. The optional cluster list comes from the clusters accessed or created in the [Container Management](../../intro/index.md) module. If the desired cluster is not available, you can access or create a cluster in the Container Management module.
     - Scan Type:
 
         - Immediate scan: Perform a scan immediately after the scan policy is created. It cannot be automatically/manually executed again later.

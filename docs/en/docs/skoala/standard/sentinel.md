@@ -5,7 +5,7 @@ hide:
 
 # Application access Sentinel specification
 
-In order to normally use [Sentinel traffic management](../plugins/sentinel.md) and view [Sentinel data monitoring](../monitor/components.md) provided by the DCE 5.0 micro-service engine, the application needs to be connected to the Sentinel console and certain specifications need to be met when the application parameters are passed.
+In order to normally use [Sentinel traffic management](../plugins/intro.md) and view [Sentinel data monitoring](../trad-ms/hosted/monitor/components.md) provided by the DCE 5.0 micro-service engine, the application needs to be connected to the Sentinel console and certain specifications need to be met when the application parameters are passed.
 
 ## project.name parameter
 
