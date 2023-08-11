@@ -515,4 +515,3 @@ select query_time, query from information_schema.slow_query where is_internal = 
 
 Test result: slow query information can be obtained
 
-> For testing details, please refer to [TiDB on hwameiStor Deployment and Test Records](file/TiDBonHwameiStor.docx).

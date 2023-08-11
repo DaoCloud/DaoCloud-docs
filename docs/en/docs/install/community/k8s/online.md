@@ -26,7 +26,7 @@ This page will guide you to install DCE 5.0 Community package online in a standa
 
 ## Download and Install
 
-1. Download the `dce5-installer` binary file on the controller node of the Kubernetes cluster (you can also [download it via browser](../../../download/index.md)).
+1. Download the `dce5-installer` binary file on the controller node of the Kubernetes cluster (you can also [download it via browser](../../../download/index.md).
 
     Take VERSION=v0.10.0 as an example.
 

@@ -22,15 +22,11 @@ Github repo: <https://github.com/tair-opensource/RedisShake>
 
     2. Edit the synchronization configuration file for Redis-Shake, using the configuration method of the destination instance for the source instance.
 
-        ![Sentinel](../images/tole01.jpg)
-
 === "Cluster Mode"
  
     1. Create a `NodePort` service for each node in the source instance.
 
     2. Configure multiple Redis-Shake instances, and use the configuration method of each main node in the destination instance for the corresponding source cluster instance.
-
-        ![Cluster](../images/tole02.jpg)
 
 ### Steps
 
