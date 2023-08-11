@@ -459,6 +459,11 @@ nav:
                       - 流量治理: 
                           - 规则介绍: skoala/trad-ms/hosted/services/governance-policy.md
                           - 流控规则: skoala/trad-ms/hosted/services/flow-control.md
+                          - 熔断规则: skoala/trad-ms/hosted/services/circuit-breaker.md
+                          - 授权规则: skoala/trad-ms/hosted/services/auth.md
+                          - 热点规则: skoala/trad-ms/hosted/services/hotspot.md
+                          - 系统规则: skoala/trad-ms/hosted/services/system.md
+                          - 集群流控: skoala/trad-ms/hosted/services/cluster-flow.md
                   - 配置管理:
                       - skoala/trad-ms/hosted/configs.md
                   - 监控:

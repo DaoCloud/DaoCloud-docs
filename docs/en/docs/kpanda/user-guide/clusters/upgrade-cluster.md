@@ -4,9 +4,9 @@ hide:
   - toc
 ---
 
-# cluster upgrade
+# Cluster Upgrade
 
-The Kubernetes Community Packages a small version every quarter, and the maintenance cycle of each version is only about 9 months. Some major bugs or security holes will not be updated after the version stops maintenance. Manually upgrading cluster operations is cumbersome and places a huge workload on administrators.
+The Kubernetes Community packages a small version every quarter, and the maintenance cycle of each version is only about 9 months. Some major bugs or security holes will not be updated after the version stops maintenance. Manually upgrading cluster operations is cumbersome and places a huge workload on administrators.
 
 In DCE, you can upgrade the Kubernetes cluster with one click through the web UI interface.
 

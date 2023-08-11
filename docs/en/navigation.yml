@@ -55,7 +55,7 @@ nav:
               - FAQs: kpanda/intro/faq.md
           - Clusters:
               - Create Cluster: kpanda/user-guide/clusters/create-cluster.md
-              - Join Cluster: kpanda/user-guide/clusters/integrate-cluster.md
+              - Integrate Cluster: kpanda/user-guide/clusters/integrate-cluster.md
               - Access Cluster: kpanda/user-guide/clusters/access-cluster.md
               - Upgrade Cluster: kpanda/user-guide/clusters/upgrade-cluster.md
               - Delete Cluster: kpanda/user-guide/clusters/delete-cluster.md
