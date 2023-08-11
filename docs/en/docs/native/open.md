@@ -71,6 +71,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      [Arbiter](https://github.com/kube-arbiter/arbiter) aggregates various types of data based on which users can manage, schedule, or scale applications in a cluster. It can help Kubernetes users understand and manage the resources deployed in the cluster, thereby improving the resource utilization and operational efficiency of enterprise applications.
 
+- [Argo CD continuous deployment tool v2.8.0 released (CNCF project)](https://github.com/argoproj/argo-cd/releases/tag/v2.8.0)
+
+    Features: add kubelogin function, allow users to use ApplicationSet resources in any namespace, add health check for snapshot volume, add plugin generator function, support specifying listening address from environment variable or command line parameter, create job action, support refreshing ExternalSecret.
+
 - [Argo CD GitOps Tool v2.6.0 Released (CNCF Project)](https://github.com/argoproj/argo-cd/releases/tag/v2.6.0)
 
     Release features: ApplicationSet resources add progressive release policies, allow users to provide multiple resources to an application, allow multiple CRDs to share health checks, support reverse proxy extensions, argocd CLI adds cross-platform support for the file encryption tool bcrypt.
@@ -335,6 +339,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: the introduction of pipeline to manage tasks in devspace.yaml, the new import feature to merge different devspace.yaml files together, and the new proxy command to run commands executed in the container on the local computer.
 
+- [Dragonfly Mirror and File Distribution System v2.1.0 Released (CNCF Project)](https://github.com/dragonflyoss/Dragonfly2/releases/tag/v2.1.0)
+
+    Release features: Visualization Console v1.0 released, new Virtual Network Topology Exploration feature, support for Dragonfly as a JuiceFS backend storage, support for Scheduler control in Manager, new Personal Access Token feature, new Cluster Resource Unit (Cluster represents a P2P cluster).
+
 ### E
 
 - [Envoy v1.27.0 released (CNCF project)](https://github.com/envoyproxy/envoy/releases/tag/v1.27.0)
@@ -428,6 +436,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Flux continuous delivery tool v0.34.0 released (CNCF project)](https://github.com/fluxcd/flux2/releases/tag/v0.34.0)
 
      Major new features in this version: Flux controller logs are consistent with Kubernetes structured logs, allow OCI sources to be defined for non-TLS container registries, and static credentials are preferred over OIDC providers when pulling OCI artifacts from container registries in multi-tenant clusters By.
+
+- [Gatekeeper Policy Engine v3.13.0 Released (CNCF Project)](https://github.com/open-policy-agent/gatekeeper/releases/tag/v3.13.0)
+
+    Release features: support for publishing audit information to PubSub systems, upgraded ExpansionTemplates for validating workload resources to beta, added experimental VAP driver for validating and reviewing resource object compliance, added support for external data provider audit caching, support for obtaining observability statistics on access, auditing, and gator CLI. Observability statistics for access, auditing, and the gator CLI.
 
 - [Gatekeeper Policy Engine v3.10.0 release (CNCF project)](https://github.com/open-policy-agent/gatekeeper/releases/tag/v3.10.0)
 
@@ -755,6 +767,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: According to the OCI standard, the image pulling, uploading, archiving and saving features are realized, so that it does not rely on additional container runtimes when making and using KubeKey products; it supports the initialization of the operating system command (kk init os) Use products to install operating system dependencies from offline local sources; support both ARM64 nodes and AMD64 nodes in the same K8s cluster.
 
+- [Kube-OVN CNI plugin v1.12.0 released (CNCF project)](https://github.com/kubeovn/kube-ovn/releases/tag/v1.12.0)
+
+    Features: optimize the way of calling OVN interfaces from the bottom layer; support remote mirroring of traffic; support IPSec encryption of traffic across nodes in the cluster; support one-click collection of all Kube-OVN-related component logs, dmesg information, iptables rules, and other network-related details through the kubectl-ko plug-in; realize the interoperability between Overlay and Underlay networks. Overlay and Underlay network interoperability; add CRD resources for IPPool; add policy NAT function; add OVN native gateway types.
+
 - [Kube-OVN CNI Plugin v1.11.0 Released (CNCF Project)](https://github.com/kubeovn/kube-ovn/releases/tag/v1.11.0)
 
     The main new features of this version: Underlay and Overlay subnet interoperability, new SR-IOV Network Operator for automated NIC configuration, support for custom VPC internal load balancing, new vpc-dns CRD, support for Load Balancer type service under default VPC.
@@ -1036,6 +1052,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [NeuVector Container Security Platform v5.0Release](https://mp.weixin.qq.com/s/nZ_a7JiryZJskJEPPIEmcw)
 
      The main new features of this version: integration with SUSE Rancher, and can also be docked with other enterprise-level container management platforms such as Amazon EKS, Google GKE, and Microsoft AKS; support for web application firewall detection; support for automated container protection; support for zero-drift process and file protection And the network, process/file segmentation strategy mode protection, etc.
+
+- [Nightingale Observability Platform Release V6](https://mp.weixin.qq.com/s/ckeaA1JovW43w0jgsj9Y7A)
+
+    Version features: built-in common middleware monitoring dashboard and alarm rules; support for LDAP, CAS, OIDC and other authentication integration; built-in support for alarm self-healing capabilities; support for flexible alarm rules, blocking rules, subscription rules, suppression rules; by default, only a binary can be docked to the market's common collector; integration of ElasticSearch data source.
 
 - [Nightgale v5.10 released](https://github.com/ccfos/nightingale/releases/tag/v5.10.0)
 

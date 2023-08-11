@@ -71,6 +71,10 @@
 
     [Arbiter](https://github.com/kube-arbiter/arbiter) 聚合各种类型的数据，用户可以基于这些数据管理、调度或扩展集群中的应用程序。它可以帮助 Kubernetes 用户了解和管理集群中部署的资源，进而提高企业应用程序的资源利用率和运行效率。
 
+- [Argo CD 持续部署工具 v2.8.0 发布（CNCF 项目）](https://github.com/argoproj/argo-cd/releases/tag/v2.8.0)
+
+    版本特性：添加 kubelogin 功能、允许用户在任意命名空间中使用 ApplicationSet 资源、为快照卷添加健康检查、新增插件生成器功能、支持从环境变量或命令行参数中指定监听地址、创建 job action、支持刷新 ExternalSecret。
+
 - [Argo CD GitOps 工具 v2.6.0 发布（CNCF 项目）](https://github.com/argoproj/argo-cd/releases/tag/v2.6.0)
 
     版本特性：ApplicationSet 资源增加渐进式发布策略、允许用户为应用程序提供多个资源、允许多个 CRD 共享健康检查、支持反向代理扩展、argocd CLI 添加跨平台的文件加密工具 bcrypt 的支持。
@@ -337,6 +341,10 @@
 
     该版本主要新特性：引入 pipeline 用于 管理 devspace.yaml 中的任务、新增导入功能将不同 devspace.yaml 文件合并在一起、新增 proxy command 在本地计算机上运行在容器中执行的命令。
 
+- [Dragonfly 镜像和文件分发系统 v2.1.0 发布 （CNCF 项目）](https://github.com/dragonflyoss/Dragonfly2/releases/tag/v2.1.0)
+
+    版本特性：可视化控制台 v1.0 发布、新增虚拟网络拓扑探索功能、支持 Dragonfly 作为 JuiceFS 的后端存储、支持在 Manager 中控制 Scheduler 的功能、新增个人访问令牌功能、新增 Cluster 资源单位（Cluster 代表一个 P2P 集群）。
+
 ### E
 
 - [Envoy v1.27.0 发布（CNCF 项目）](https://github.com/envoyproxy/envoy/releases/tag/v1.27.0)
@@ -432,6 +440,10 @@
 - [Flux 持续交付工具 v0.34.0 发布（CNCF 项目）](https://github.com/fluxcd/flux2/releases/tag/v0.34.0)
 
     该版本主要新特性：Flux 控制器的日志与 Kubernetes 的结构化日志保持一致、允许为非 TLS 容器仓库定义 OCI 源、从多租户集群的容器仓库处提取 OCI 工件时优先考虑静态凭证而非 OIDC 提供者。
+
+- [Gatekeeper 策略引擎 v3.13.0 发布 （CNCF 项目）](https://github.com/open-policy-agent/gatekeeper/releases/tag/v3.13.0)
+
+    版本特性：支持将审计信息发布到 PubSub 系统中、验证工作负载资源的 ExpansionTemplates 升级为 beta、添加了实验性的 VAP 驱动器用于验证和审查资源对象的合规性、添加了对外部数据提供者审计缓存的支持、支持获得有关准入、审计和 gator CLI 的可观测性统计数据。
 
 - [Gatekeeper 策略引擎 v3.10.0 发布 （CNCF 项目）](https://github.com/open-policy-agent/gatekeeper/releases/tag/v3.10.0)
 
@@ -759,6 +771,10 @@
 
     该版本主要新特性：根据 OCI 标准实现了镜像的拉取、上传和归档保存等功能，使其在制作和使用 KubeKey 制品时不依赖额外的容器运行时；支持初始化操作系统命令（kk init os）使用制品进行离线本地源安装操作系统依赖；支持同一个 K8s 集群中同时包含 ARM64 节点和 AMD64 节点等。
 
+- [Kube-OVN CNI 插件 v1.12.0 发布（CNCF 项目）](https://github.com/kubeovn/kube-ovn/releases/tag/v1.12.0)
+
+    版本特性：优化底层调用 OVN 接口的方式；支持流量远程镜像；支持使用 IPSec 对集群内跨节点通信的流量进行加密；支持通过 kubectl-ko 插件一键收集所有 Kube-OVN 相关的组件日志、dmesg 信息、iptables 规则等和网络相关的详细信息；实现 Overlay 和 Underlay 网络的互通；新增 IPPool 的 CRD 资源；增加策略 NAT 功能；新增 OVN 原生的网关类型。
+
 - [Kube-OVN CNI 插件 v1.11.0 发布（CNCF 项目）](https://github.com/kubeovn/kube-ovn/releases/tag/v1.11.0)
 
     该版本主要新特性：Underlay 和 Overlay 子网互通、新增 SR-IOV Network Operator 进行自动化网卡配置、支持自定义 VPC 内部负载均衡、新增 vpc-dns CRD、支持默认 VPC 下的 Load Balancer 类型 Service。
@@ -1034,6 +1050,10 @@
 - [NeuVector 容器安全平台 v5.0 发布](https://mp.weixin.qq.com/s/nZ_a7JiryZJskJEPPIEmcw)
 
     该版本主要新特性：与 SUSE Rancher 集成，也能够与 Amazon EKS、Google GKE 和 Microsoft AKS 等其他企业级容器管理平台对接；支持 Web 应用程序防火墙检测；支持自动化容器保护；支持零漂移进程和文件保护以及对网络、进程/文件进行分割策略模式保护等。
+
+- [Nightingale 夜莺可观测性平台发布 V6 正式版](https://mp.weixin.qq.com/s/ckeaA1JovW43w0jgsj9Y7A)
+
+    版本特性：内置常见的中间件的监控仪表盘和告警规则；支持 LDAP、CAS、OIDC 等多种认证集成；内置支持告警自愈能力；支持灵活的告警规则、屏蔽规则、订阅规则、抑制规则；默认情况下，只需要一个二进制即可对接市面上常见的采集器；集成 ElasticSearch 数据源。
 
 - [Nightgale 夜莺监控 v5.10 发布](https://github.com/ccfos/nightingale/releases/tag/v5.10.0)  
 

@@ -104,6 +104,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
     Azure Kubernetes Fleet Manager treats multiple cluster sites as a single cluster to be managed. Users can manage multiple clusters by creating a Fleet resource. Users can treat existing AKS clusters as member clusters, join them to the fleet, and then orchestrate multiple cluster Cases such as Kubernetes resource propagation and multicluster load balancing using metadata from those clusters.
 
+- [AliCloud Application Real-time Monitoring Service ARMS July Product Update](https://mp.weixin.qq.com/s/NyRu3zNJwSfnV8Pc4tJBrQ)
+
+    Updates: New desensitization functions for JVM system parameters, K8s Yaml and other parameter information; support for displaying ZGC garbage collector-related indicators; application alerts support the configuration of rule indicators such as p99 equidistant quartiles and the number of slow invocations; and the application alert rules support the interval detection mode.
+
 - [AliCloud Container Service Serverless Edition (ACK Serverless) 2.0 released](https://mp.weixin.qq.com/s/d7hl_X95JNg5I36GTyu7Lg)
 
     Updates: Fully managed for 10+ K8s core system components; supports dynamic capacity planning; supports automated upgrade of K8s version, including customized operation and maintenance window and upgrade frequency policy as well as intelligent risk detection, etc.; supports intelligent elastic prediction of AHPA upgrades; adds new solution for big data computing, based on multi-availability polling of Spot ECI, and failure of seizure is downgraded to per-volume instances, which reduces total resource cost by more than 20%. This reduces total resource costs by more than 20%.
@@ -399,6 +403,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Harness Launches Fully Managed Gitops-as-a-Service](https://harness.io/blog/generally-available-harness-gitops-as-a-service)
 
      Harness GitOps-as-a-Service builds on Argo CD, integrates OPA, supports audit trails, provides fine-grained RBAC, supports unified single sign-on for different deployments, supports declarative settings, and provides a centralized GitOps control center for management and View deployments in multiple environments and support integration with existing Argo CD instances.
+
+- [Huawei Cloud Container Engine CCE Turbo 2023 First-Half Product Update](https://mp.weixin.qq.com/s/7cEh_383i3sxz7aCgRqPNA)
+
+    Updates: Supports Kubernetes version 1.25; adds network priority control, CPU multi-core load balancing isolation, and CPU burst capability; provides one-click in-situ non-destructive automatic upgrades; supports multi-container shared GPUs; supports mixed management of multiple series and specification instances in the same node pool; and supports batch automatic node OS updates and upgrades.
 
 - [Huawei Cloud Releases Distributed Cloud Native Products - Container CCE Turbo and Distributed Cloud Native UCS (Ubiquitous Cloud Native Service)](https://mp.weixin.qq.com/s/Bm_kFuyK3uLaSb4AvcYdmA)
 
@@ -734,13 +742,17 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Updates include: support for viewing YAML files corresponding to infrastructure containers, new log viewer DQL search mode, optimized application performance monitoring, DataKit supports synchronizing k8s label as a tag to pod metrics and logs, and supports various The yaml information is collected on the corresponding object data, and the Trace collection supports automatic extraction of some key meta information.
 
-- [Time Speed Cloud Microservice Governance Platform TMF v5.6.0 released](https://mp.weixin.qq.com/s/8J0uJIKBwR9RIRwn299Acw)
+- [TenxCloud Microservice Governance Platform TMF v5.6.0 released](https://mp.weixin.qq.com/s/8J0uJIKBwR9RIRwn299Acw)
 
      The main new features of this version: support independent deployment, decoupling from the underlying platform; decoupling the two modules of the microservice framework and performance monitoring capabilities; adding a link component topology; adding support for lossless traffic on and off the line; new Added master-standby topology capabilities, and the topology map visualizes the master-standby relationship.
 
 - [Shuche Software released SEAL 0.3: the first full-link software supply chain security management platform in China](https://mp.weixin.qq.com/s/H_bjMbH_7DJEVOpvzGEMoQ)
 
      New features of this version: support for integrating any OCI container registry, and scan the container image in it; support for integrating any Kubernetes cluster, and scan the workload configuration and image in it; support for scanning third-party software bill of material files; support for any CI/CD pipeline Integrates the security scanning feature of SEAL; can aggregate and manage resources at all stages of the whole link to provide full link security insights; supports automatic generation of multi-policy repair suggestions, priority ranking of vulnerabilities, and timely handling of security issues.
+
+- [Sweet Security Launches Cloud-Native Runtime Protection Platform](https://cloudnativenow.com/features/sweet-security-unfurls-cloud-native-runtime-protection-platform/)
+
+    Sweet Security introduces the Cloud Runtime Security Suite platform for securing cloud-native application runtime. The platform streams application data to its servers using a sensor that analyzes workloads for anomalous behavior by running a framework. The sensor can be deployed in less than five minutes and provides the ability to provide observability of attacks before they are launched and when they occur.
 
 ### T
 
