@@ -100,6 +100,10 @@
 
     Azure Kubernetes 舰队管理器将多个群集地视为单个集群来管理。用户可通过创建一个 Fleet 资源来管理多个集群。用户可将现有 AKS 集群当作成员集群，加入到舰队中，然后用这些集群的元数据，编排多个集群场景，如 Kubernetes 资源传播和多集群负载均衡。
 
+- [阿里云应用实时监控服务 ARMS 7 月产品更新](https://mp.weixin.qq.com/s/NyRu3zNJwSfnV8Pc4tJBrQ)
+
+    更新内容：新增对 JVM 系统参数、K8s Yaml 等参数信息的脱敏功能；支持 ZGC 垃圾回收器相关指标展示；应用告警支持 p99 等分位数、慢调用次数等规则指标配置；应用告警规则支持区间检测模式。
+
 - [阿里云容器服务 Serverless 版（ACK Serverless）2.0 发布](https://mp.weixin.qq.com/s/d7hl_X95JNg5I36GTyu7Lg)
 
     更新内容：对 10+ K8s 核心系统组件实现全托管；支持动态容量规划；支持自动化升级 K8s 版本，包括自定义运维窗口和升级频率策略以及智能化的风险检测等）；支持智能弹性预测 AHPA 升级；新增大数据计算解决方案，基于多可用区轮询 Spot ECI，抢占失败降级到按量实例，使总资源成本下降 20% 以上。
@@ -394,6 +398,10 @@
 - [Harness 推出全托管 GitOps-as-a-Service](https://harness.io/blog/generally-available-harness-gitops-as-a-service)
 
     Harness GitOps-as-a-Service 基于 Argo CD 构建，集成 OPA，支持审计跟踪，提供细粒度的 RBAC，支持不同部署的统一单点登录，支持声明式设置，提供集中的 GitOps 控制中心用于管理和查看多个环境中的部署情况，支持与已有的 Argo CD 实例集成。
+
+- [华为云云容器引擎 CCE Turbo 2023 上半年产品更新](https://mp.weixin.qq.com/s/7cEh_383i3sxz7aCgRqPNA)
+
+    更新内容：支持 Kubernetes 1.25 版本；新增网络优先级控制、CPU 多核负载均衡隔离、CPU burst 能力；提供一键式原地无损自动升级；支持多容器共享 GPU；支持同节点池多系列、规格实例混合管理；支持节点 OS 批量自动更新升级。
 
 - [华为云发布分布式云原生产品——容器 CCE Turbo 和分布式云原生 UCS (Ubiquitous Cloud Native Service)](https://mp.weixin.qq.com/s/Bm_kFuyK3uLaSb4AvcYdmA)
 
@@ -746,6 +754,10 @@
 - [SUSE 发布云原生边缘管理平台 SUSE Edge 2.0](https://mp.weixin.qq.com/s/LszXlp9iKT6FudzWY3EmaQ)
 
     该版本主要新特性：简化边缘设备的添加和更新操作、支持通过统一的操作面板管理 Kubernetes 和底层操作系统、集成专为容器化和虚拟化工作负载打造的轻量级操作系统 SUSE Linux Enterprise Micro 5.3、为所有分布式环境提供安全防护。
+
+- [Sweet Security 推出云原生运行时保护平台](https://cloudnativenow.com/features/sweet-security-unfurls-cloud-native-runtime-protection-platform/)
+
+    Sweet Security 推出云运行时安全套件平台，用于保护云原生应用运行时的安全。该平台使用传感器将应用数据流传输到其服务器，该传感器通过运行一个框架来分析工作负载的异常行为。该传感器可在五分钟内完成部署，能在攻击发起前和攻击发生时提供对攻击的可观测性能力。
 
 - [实时监测平台观测云更新](https://mp.weixin.qq.com/s/RZCpDuNbq0C0SJfWI2E63w)
 
