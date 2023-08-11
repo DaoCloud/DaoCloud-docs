@@ -33,7 +33,7 @@
 
 ## 创建多云工作负载
 
-参阅[创建多云工作负载](../kairship/workload/README.md)文档页面。
+参阅[创建多云工作负载](../kairship/workload/deployment.md)文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/workloads.mp4" preload="metadata" poster="../images/kairship-workload.png"></video>

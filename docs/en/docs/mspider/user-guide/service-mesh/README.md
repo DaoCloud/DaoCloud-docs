@@ -25,7 +25,7 @@ The following explains the steps to create a Hosted Mesh/Dedicated Mesh:
     - Entry of control plane: Supports load balancer and custom.
     - Mesh component repo: Enter the address of the image repository that contains the data plane components, such as `release-ci.daocloud.io/mspider`.
 
-    ![Basic Information](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/create-mesh02.png)
+        ![Basic Information](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/create-mesh02.png)
 
 3. System settings. Configure whether to enable observability, set the scale of the mesh, select StorageClass, and click `Next`.
 

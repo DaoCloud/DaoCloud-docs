@@ -25,7 +25,7 @@ DCE 5.0 服务网格支持 3 种网格：
     - 控制面入口方式：支持负载均衡和自定义。
     - 网格组件仓库：输入包含数据面组件镜像的镜像仓库地址，例如 `release-ci.daocloud.io/mspider`。
   
-    ![基本信息](../../images/create-mesh02.png)
+        ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/create-mesh02.png)
 
 3. 系统设置。配置是否上报链路追踪，设置网格规模，选择存储配置后点击`下一步`。
 

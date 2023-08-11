@@ -123,9 +123,9 @@ plugins:
         "mcamel.md": "middleware/index.md"
         "kpanda.md": "kpanda/intro/index.md"
         "amamba.md": "amamba/intro/index.md"
-        "blog.md": "blog/index.md"
+        "blog.md": "blogs/index.md"
         "ghippo.md": "ghippo/intro/index.md"
-        "video.md": "video/index.md"
+        "video.md": "videos/index.md"
 
 
   - git-revision-date: #每页底部显示文档最后更新日期，安装 pip install mkdocs-git-revision-date-plugin
