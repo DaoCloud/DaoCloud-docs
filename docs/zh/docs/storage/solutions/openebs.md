@@ -159,9 +159,9 @@ OpenEBS 控制平面由一组微服务组成，这些微服务本身由 Kubernet
 
 ![openebs-4](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/openebs-4.svg)
 
-#### YAML 或 Helm 图表
+#### YAML 或 Helm Chart
 
-管理员可以使用高度可配置的 Helm chart 或 kubectl/YAML 安装 OpenEBS 组件。
+管理员可以使用高度可配置的 Helm Chart 或 kubectl/YAML 安装 OpenEBS 组件。
 OpenEBS 安装也通过管理 Kubernetes 产品支持，例如 OpenShift、EKS、DO、Rancher 作为市场应用程序或作为附加组件或插件紧密集成到 Kubernetes 发行版中，例如 MicroK8s、Kinvolk、Kubesphere。
 
 作为 OpenEBS 安装的一部分，所选数据引擎的控制平面组件将使用标准 Kubernetes 原语（如 Deployments、DaemonSets、Statefulsets 等）安装为集群和/或节点组件。
