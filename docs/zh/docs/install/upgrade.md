@@ -121,7 +121,7 @@ DCE 5.0 基础设施模块的组件特指 [mainfest.yaml](commercial/manifest.md
 执行升级命令
 
 ```bash
-./offline/dce5-installer cluster-create -c ./offline/sample/clusterconfig.yaml -m ./offline/sample/manifest.yaml --upgrade gproduct
+./offline/dce5-installer cluster-create -c ./offline/sample/clusterConfig.yaml -m ./offline/sample/manifest.yaml --upgrade gproduct
 ```
 
 #### DCE 5.0 基础设施模块升级
@@ -129,7 +129,7 @@ DCE 5.0 基础设施模块的组件特指 [mainfest.yaml](commercial/manifest.md
 执行升级命令
 
 ```bash
-./offline/dce5-installer cluster-create -c ./offline/sample/clusterconfig.yaml -m ./offline/sample/manifest.yaml --upgrade infrastructures
+./offline/dce5-installer cluster-create -c ./offline/sample/clusterConfig.yaml -m ./offline/sample/manifest.yaml --upgrade infrastructures
 ```
 
 升级参数说明：
