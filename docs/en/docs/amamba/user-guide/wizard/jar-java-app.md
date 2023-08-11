@@ -1,6 +1,6 @@
 # Deploy Java applications based on Jar packages
 
-Workbench supports building applications in four ways: [Git warehouse](create-app-git.md), Jar package, container image, and Helm template. This article describes how to deploy a Java application via a Jar file.
+Workbench supports building applications in four ways: [Git warehouse](create-app-git.md), Jar package, container image, and Helm chart. This article describes how to deploy a Java application via a Jar file.
 
 ## prerequisites
 

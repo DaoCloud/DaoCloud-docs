@@ -3,9 +3,14 @@ hide:
    - toc
 ---
 
-# Create managed Harbor
+# Create Managed Harbor
 
-Prerequisite: You need to [install Harbor Operator](./operator.md) first.
+Prerequisite: [Cert Manager](https://cert-manager.io/docs/installation/) and [Harbor Operator](./operator.md) have been installed.
+
+!!! note
+
+     For Harbor instances, in addition to using administrator accounts,
+     it is also possible to achieve the same level of access by using robot accounts.
 
 1. Log in to DCE 5.0 as a user with the Admin role, and click `container registry` -> `Managed Harbor` from the left navigation bar.
 

@@ -1,6 +1,6 @@
-# Deploy the Helm application based on the Helm template
+# Deploy the Helm application based on the Helm chart
 
-Workbench supports building applications in four ways: [Git repository](create-app-git.md), [Jar package](jar-java-app.md), container image, and Helm template. This article describes how to deploy Helm applications through Helm templates.
+Workbench supports building applications in four ways: [Git repository](create-app-git.md), [Jar package](jar-java-app.md), container image, and Helm chart. This article describes how to deploy Helm applications through Helm Charts.
 
 ## prerequisites
 
@@ -9,7 +9,7 @@ Workbench supports building applications in four ways: [Git repository](create-a
 
 ## Steps
 
-1. After entering Workbench module, click `Wizard` on the left navigation bar, and then select `Based on Helm template`.
+1. After entering Workbench module, click `Wizard` on the left navigation bar, and then select `Based on Helm chart`.
 
     <!--![]()screenshots-->
 

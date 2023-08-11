@@ -5,8 +5,8 @@ hide:
 
 # 安装 Harbor Operator
 
-托管 `Harbor` 使用的是 `Harbor Operator` 技术来进行 `Harbor` 创建、升级、删除等全生命周期管理。
-在创建托管 `Harbor` 之前，需要先在容器管理中安装 `Harbor Operator`，版本要求最低 1.4.0。
+托管 Harbor 使用的是 Harbor Operator 技术来进行 Harbor 创建、升级、删除等全生命周期管理。
+在创建托管 Harbor 之前，需要先在容器管理中安装 Harbor Operator，版本要求最低 1.4.0。
 
 > 提示：Harbor Operator 依赖 Cert Manager，所以需要先安装好 Cert Manager。
 
@@ -14,7 +14,7 @@ hide:
 
     ![operator 异常](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/errors.png)
 
-1. 进入`容器管理`的 `Helm 应用` -> `Helm 模板`，找到并点击 Harbor Operator 卡片。
+1. 进入`容器管理`的 `Helm 应用` -> `Helm 模板`，找到并点击 harbor-operator 卡片。
 
     ![找到 operator](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/operator01.png)
 
@@ -22,7 +22,7 @@ hide:
 
     ![安装](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/operator02.png)
 
-1. 输入名称和命名空间后，点击`确定`，如果想要添加其他参数请参考下面的`Values`表格。。
+1. 输入名称和命名空间后，点击`确定`，如果想要添加其他参数，请参考下一节的参数说明。
 
     ![填表](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/operator03.png)
 
