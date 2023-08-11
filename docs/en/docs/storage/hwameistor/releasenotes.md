@@ -30,7 +30,7 @@ This page lists the Release Notes related to Hwameistor, providing an overview o
 
 #### Improvements
 
-**Improved** permissions-related content in Helm templates
+**Improved** permissions-related content in Helm Charts
 
 ## 2023-5-25
 

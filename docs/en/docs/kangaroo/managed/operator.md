@@ -9,27 +9,29 @@ A managed Harbor uses the Harbor Operator to perform full lifecycle management o
 and deleting Harbor instances. Before creating a managed Harbor instance, you need to install the Harbor Operator
 in your container management system, with a minimum version requirement of 1.4.0.
 
-> Note: Harbor Operator relies on Cert Manager, so make sure to install Cert Manager first.
+> Note: Harbor Operator relies on Cert Manager, so make sure to
+> [install Cert Manager](https://cert-manager.io/docs/installation/) first.
 
-1. If you encounter the following error message when creating a Harbor instance, click on `Go to Install`.
+1. If you encounter the following error message when creating a Harbor instance, click `Go to install`.
 
+   ![error](../images/errors.png)
 
+2. Go to `Container Management` -> `Helm Apps` -> `Helm Charts`, and find and click the harbor-operator card.
 
-2. Go to `Container Management` -> "Helm Apps" -> "Helm Templates", and find and click on the Harbor Operator card.
+   ![card](../images/operator01.png)
 
+3. Choose the version and click `Install`.
 
+   ![install](../images/operator02.png)
 
-3. Choose the version and click on "Install".
+4. After entering the name and namespace, click `OK`.
+   If you want to add other parameters, please refer to the [Parameter Values](#parameter-values) below.
 
+   ![OK](../images/operator03.png)
 
+5. Wait for the installation to complete (Status from `Pending Install` to `Deployed`).
 
-4. After entering the name and namespace, click on "Confirm". If you want to add other parameters, please refer to the "Values" table below.
-
-
-
-5. Wait for the installation to complete.
-
-
+   ![status](../images/operator04.png)
 
 ## Parameter Values
 

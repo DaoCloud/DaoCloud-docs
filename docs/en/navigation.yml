@@ -313,7 +313,7 @@ nav:
           - Wizard:
               - Build Microservice based on Git Repo: amamba/user-guide/wizard/create-app-git.md
               - Build Java Apps based on Jar Packages: amamba/user-guide/wizard/jar-java-app.md
-              - Deploy Helm Apps based on Helm Template: amamba/user-guide/wizard/helm.md
+              - Deploy Helm Apps based on Helm Charts: amamba/user-guide/wizard/helm.md
           - OAM Application:
               - OAM Concepts: amamba/user-guide/oam/concept.md
           - Pipelines:

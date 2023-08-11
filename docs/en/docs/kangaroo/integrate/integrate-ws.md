@@ -6,9 +6,27 @@ Once integrated, members can use all public and private images under the workspa
 clicking the `Choose Image` button when deploying applications in namespaces under the
 workspace, achieving quick application deployment.
 
-- Support for associating Harbor and Docker registry instances
-- For Harbor instances, in addition to accessing the administrator account,
-  you can also access the robot account to achieve the same access effect
+Support for integrating three registries:
+
+- Harbor Registry: This is an open-source enterprise-grade Docker registry
+  that provides functionalities such as image storage, version control, access control,
+  and security scanning. It focuses on offering highly customizable and secure container image
+  management solutions for enterprise environments. Harbor Registry supports integration across
+  multiple container orchestration platforms and includes rich permission management and
+  auditing capabilities.
+
+- Docker Registry: This is the official Docker registry service provided by Docker
+  as part of its ecosystem. It is used for storing, distributing, and managing Docker images.
+  Docker Registry provides basic functionalities for image storage and version control and
+  can be operated through a simple API.
+
+- JFrog Artifactory: This is a versatile software package management and distribution platform
+  that supports various types of packages, including Docker images. In addition to serving as
+  a Docker registry, Artifactory also supports storage, distribution, and management
+  of other package formats like Maven, npm, etc. Artifactory offers robust features like powerful
+  access control, caching, and fast replication while being highly scalable and customizable.
+  Compared to the above two image repositories, Artifactory is a more comprehensive software package
+  management platform suitable for workloads spanning multiple package types.
 
 ## Benefits
 
