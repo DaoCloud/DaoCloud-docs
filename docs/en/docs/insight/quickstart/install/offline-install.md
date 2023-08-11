@@ -158,7 +158,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
          Before upgrading, it is recommended that you override the `global.imageRegistry` field in insight.yaml and insight-agent.yaml to the address of the currently used container registry.
 
          ```shell
-         export imageRegistry={your container registry}
+         export imageRegistry={your image registry}
          ```
 
          ```shell
@@ -194,7 +194,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
          Before upgrading, it is recommended that you overwrite `global.imageRegistry` in bak.yaml to the address of the current container registry.
 
          ```shell
-         export imageRegistry={your container registry}
+         export imageRegistry={your image registry}
          ```
 
          ```shell

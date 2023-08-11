@@ -1,6 +1,6 @@
 ---
 hide:
-    - toc
+  - toc
 ---
 
 # 服务接入 Sentinel 规范
@@ -33,7 +33,7 @@ hide:
 
 project.name 参数的格式应为：`{{nacos_namespace_id}}@@{{nacos_group}}@@{{appName}}`。
 
-```
+```yaml
 ---
 project:
   # 服务注册在sentinel中的名称, 建议与nacos注册服务名相同
@@ -54,7 +54,7 @@ project:
 
 ## Sentinel 接入配置
 
-```
+```yaml
 ---
 spring:
   cloud:

@@ -75,4 +75,4 @@ Perform the upgrade command by running:
 
 ### Step 3: Success
 
-![upgrade](./commercial/images/succeed01.png)
+![upgrade](commercial/images/succeed01.png)

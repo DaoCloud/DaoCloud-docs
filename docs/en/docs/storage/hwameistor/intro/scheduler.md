@@ -8,7 +8,7 @@ The scheduler should be deployed in HA mode in the cluster, which is a best prac
 
 ## Deploy via Helm Chart
 
-The scheduler must be used with local disks and a local disk manager. It is recommended to install via [Helm Chart](../hwameistor/install/deploy.md).
+The scheduler must be used with local disks and a local disk manager. It is recommended to install via [Helm Chart](../install/deploy-helm.md).
 
 ## Deploy via YAML (for development)
 
