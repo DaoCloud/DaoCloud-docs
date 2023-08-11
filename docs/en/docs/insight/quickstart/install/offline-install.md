@@ -27,7 +27,7 @@ You can load the image in one of the following two ways. When there is a contain
            intermediateBundlesPath: insight-offline # The relative path to run the charts-syncer command, not the relative path between this YAML file and the offline bundle
          target:
            containerRegistry: 10.16.10.111 # need to be changed to your container registry url
-           containerRepository: release.daocloud.io/insight # need to be changed to your image repository
+           containerRepository: release.daocloud.io/insight # need to be changed to your container registry
            repo:
              kind: HARBOR # Can also be any other supported Helm Chart repository class
              url: http://10.16.10.111/chartrepo/release.daocloud.io # need to change to chart repo url
@@ -49,7 +49,7 @@ You can load the image in one of the following two ways. When there is a contain
            intermediateBundlesPath: insight-offline # The relative path to run the charts-syncer command, not the relative path between this YAML file and the offline bundle
          target:
            containerRegistry: 10.16.10.111 # need to be changed to your container registry url
-           containerRepository: release.daocloud.io/insight # need to be changed to your image repository
+           containerRepository: release.daocloud.io/insight # need to be changed to your container registry
            repo:
              kind: LOCAL
              path: ./local-repo # chart local path
@@ -155,10 +155,10 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
 
      1. Execute `helm upgrade`.
 
-         Before upgrading, it is recommended that you override the `global.imageRegistry` field in insight.yaml and insight-agent.yaml to the address of the currently used image repository.
+         Before upgrading, it is recommended that you override the `global.imageRegistry` field in insight.yaml and insight-agent.yaml to the address of the currently used container registry.
 
          ```shell
-         export imageRegistry={your image repository}
+         export imageRegistry={your container registry}
          ```
 
          ```shell
@@ -194,7 +194,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
          Before upgrading, it is recommended that you overwrite `global.imageRegistry` in bak.yaml to the address of the current container registry.
 
          ```shell
-         export imageRegistry={your image repository}
+         export imageRegistry={your container registry}
          ```
 
          ```shell

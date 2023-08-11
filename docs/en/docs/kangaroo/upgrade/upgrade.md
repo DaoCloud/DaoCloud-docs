@@ -1,22 +1,22 @@
-# Offline Upgrade Image Repository Module
+# Offline Upgrade Container Registry Module
 
-This page explains how to install or upgrade the image repository module after downloading it from the [Download Center](../../download/index.md).
+This page explains how to install or upgrade the container registry module after downloading it from the [Download Center](../../download/index.md).
 
 !!! info
 
-    The word `kangaroo` appearing in the following commands or scripts is the internal development code name of the image repository module.
+    The word `kangaroo` appearing in the following commands or scripts is the internal development code name of the container registry module.
 
 ## Load Images from the Installation Package
 
-You can load the images in one of the following two ways. When an image repository exists in the environment, it is recommended to choose the chart-syncer to synchronize the images to the image repository, as this method is more efficient and convenient.
+You can load the images in one of the following two ways. When an container registry exists in the environment, it is recommended to choose the chart-syncer to synchronize the images to the container registry, as this method is more efficient and convenient.
 
-### Synchronize Images to the Image Repository using chart-syncer
+### Synchronize Images to the Container Registry using chart-syncer
 
 1. Create load-image.yaml
 
     !!! note  
 
-        All parameters in this YAML file are mandatory. You need a private image repository and modify the relevant configurations.
+        All parameters in this YAML file are mandatory. You need a private container registry and modify the relevant configurations.
 
     === "Installed chart repo"
 
@@ -41,14 +41,14 @@ You can load the images in one of the following two ways. When an image reposito
         ```
 
         1. Go to the relative path where the charts-syncer command is executed, instead of the relative path between this YAML file and the offline package.
-        2. Modify it to your image repository URL.
-        3. Modify it to your image repository.
+        2. Modify it to your container registry URL.
+        3. Modify it to your container registry.
         4. It can also be any other supported Helm Chart repository category.
         5. Modify it to the chart repo URL.
-        6. Your image repository username.
-        7. Your image repository password.
-        8. Your image repository username.
-        9. Your image repository password.
+        6. Your container registry username.
+        7. Your container registry password.
+        8. Your container registry username.
+        9. Your container registry password.
 
     === "If chart repo is not installed"
 
@@ -70,11 +70,11 @@ You can load the images in one of the following two ways. When an image reposito
         ```
 
         1. Provide the relative path to execute the charts-syncer command, instead of the relative path between this YAML file and the offline package.
-        2. Change it to your image repository URL.
-        3. Change it to your image repository.
+        2. Change it to your container registry URL.
+        3. Change it to your container registry.
         4. Local path of the chart.
-        5. Your image repository username.
-        6. Your image repository password.
+        5. Your container registry username.
+        6. Your container registry password.
 
 1. Run the command to synchronize images.
 
@@ -179,7 +179,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
 
     1. Execute `helm upgrade`.
 
-        Before upgrading, it is recommended to replace the `global.imageRegistry` field in bak.yaml with the current image repository address.
+        Before upgrading, it is recommended to replace the `global.imageRegistry` field in bak.yaml with the current container registry address.
 
         ```shell
         export imageRegistry={你的镜像仓库}
@@ -211,7 +211,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
 
     1. Execute `helm upgrade`.
 
-        Before upgrading, it is recommended to replace the `global.imageRegistry` field in bak.yaml with the current image repository address.
+        Before upgrading, it is recommended to replace the `global.imageRegistry` field in bak.yaml with the current container registry address.
 
         ```shell
         export imageRegistry={your_image_repository}

@@ -23,15 +23,16 @@ workspace, achieving quick application deployment.
 
     ![Integrated Registry (Workspace)](../images/integrated01.png)
 
-1. Click the `Integrate Registry` button in the upper right corner.
+1. Click the `Integrated Registry` button in the upper right corner.
 
-    ![click button](../images/integrated02.png)
+    ![click button](../images/inte-ws01.png)
 
 1. After filling in the form information, click `OK`.
 
-    ![filling](../images/integrated03.png)
+    ![filling](../images/inte-ws02.png)
 
     !!! note
 
-        1. If the Docker Registry has not set a password, you can leave it blank, and the Harbor registry must fill in the username/password.
+        1. If the Docker Registry has not set a password, you can leave it blank,
+           and the Harbor registry must fill in the username/password.
         1. For a hands-on demo, see [Integrated Registry Video Demo](../../videos/kangaroo.md)

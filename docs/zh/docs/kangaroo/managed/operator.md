@@ -65,7 +65,7 @@ hide:
 | harborClass | string | `""` | Class name of the Harbor operator |
 | image.pullPolicy | string | `"IfNotPresent"` | The image pull policy for the controller. |
 | image.registry | string | `"docker.io"` | The image registry whose default is docker.io. |
-| image.repository | string | `"goharbor/harbor-operator"` | The image repository whose default is the chart appVersion. |
+| image.repository | string | `"goharbor/harbor-operator"` | The container registry whose default is the chart appVersion. |
 | image.tag | string | `"dev_master"` | The image tag whose default is the chart appVersion. |
 | imagePullSecrets | list | `[]` | Reference to one or more secrets to be used when pulling images <https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/> For example: `[   {"name":"image-pull-secret"} ]` |
 | installCRDs | bool | `false` | If true, CRD resources will be installed as part of the Helm chart. If enabled, when uninstalling CRD resources will be deleted causing all installed custom resources to be DELETED |

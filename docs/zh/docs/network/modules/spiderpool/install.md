@@ -37,7 +37,7 @@ hide:
 
     - `Global Setting` —> `global image Registry`：设置所有镜像的仓库地址，默认已经填写了可用的在线仓库，如果是私有化环境，可修改为私有仓库地址。
 
-    - `Spiderpool Agent Setting` —> `Spiderpool Agent Image repository`：设置镜像名，保持默认即可。
+    - `Spiderpool Agent Setting` —> `Spiderpool Agent Container registry`：设置镜像名，保持默认即可。
 
     - `Spiderpool Agent Setting` —> `Spiderpool Agent Prometheus` -> `Enable Metrics`：若启用，Spiderpool Agent 组件会收集指标信息，以供外部采集。
 

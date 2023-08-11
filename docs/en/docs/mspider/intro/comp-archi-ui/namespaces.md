@@ -22,7 +22,7 @@ The namespaces and their purposes are described below.
 |                      | ipavo-system       | Homepage dashboard            |
 |                      | kairship-system    | Multicloud orchestration       |
 |                      | kant-system        | Cloud-edge collaboration       |
-|                      | kangaroo-system    | Image repository              |
+|                      | kangaroo-system    | Container registry              |
 |                      | kcoral-system      | Application backup             |
 |                      | kubean-system      | Cluster lifecycle management  |
 |                      | kpanda-system      | Container management          |

@@ -26,7 +26,7 @@ Please confirm that your cluster has successfully connected to the `Container Ma
 
     In the screen as above, fill in the following parameters:
 
-    - `contour` -> `Global Settings` -> `Global Container Registry`: the image repository address.
+    - `contour` -> `Global Settings` -> `Global Container Registry`: the container registry address.
     - `contour` -> `Contour Settings` -> `Contour Controller` -> `Manage CRDs`: CRDs for Contour.
     - `contour` -> `Contour Settings` -> `Contour Controller` -> `Controller Replica Count`: the number of replicas for the Contour control plane.
     - `contour` -> `Contour Settings` -> `IngressClass` -> `IngressClass Name`: the Ingress Class name. If the cluster deploys multiple Ingresses, this class can be used to differentiate them, and this field will be set when creating the Ingres CR.

@@ -10,7 +10,7 @@ Refer to [All-in-One Mode](./deploy-arch.md#all-in-one).
 
 | **Number** | **Server Role** | **Server Purpose**                               | **CPU Cores** | **Memory** | **System Disk** | **Unpartitioned Disk** |
 | ---------- | --------------- | ------------------------------------------------ | ------------- | ---------- | -------------- | ---------------------- |
-| 1          | all in one      | image repository, chart museum, global cluster | 16            | 32G        | 200G           | 400G                   |
+| 1          | all in one      | container registry, chart museum, global cluster | 16            | 32G        | 200G           | 400G                   |
 
 ### 4-Nodes Mode
 

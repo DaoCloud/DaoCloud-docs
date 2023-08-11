@@ -17,7 +17,7 @@ External mesh means that the existing mesh can be connected to the DCE 5.0 servi
     - Istio version: This version will be used by all member clusters in the mesh.
     - Cluster: This is the cluster where the mesh control plane runs. The drop-down list displays the version and health status of each cluster.
     - Entry of control plane: Supports load balancer and custom.
-    - Mesh component repo: Enter the address of the image repository that contains the data plane components, such as `release-ci.daocloud.io/mspider`.
+    - Mesh component repo: Enter the address of the container registry that contains the data plane components, such as `release-ci.daocloud.io/mspider`.
 
     ![Basic Information](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/external02.png)
 

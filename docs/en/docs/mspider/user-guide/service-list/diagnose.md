@@ -49,7 +49,7 @@ DCE 5.0 Service Mesh provides built-in one-click diagnosis and repair functional
 |                      | ipavo-system       | Homepage dashboard            |
 |                      | kairship-system    | Multicloud orchestration       |
 |                      | kant-system        | Cloud-edge collaboration       |
-|                      | kangaroo-system    | Image repository              |
+|                      | kangaroo-system    | Container registry              |
 |                      | kcoral-system      | Application backup             |
 |                      | kubean-system      | Cluster lifecycle management  |
 |                      | kpanda-system      | Container management          |

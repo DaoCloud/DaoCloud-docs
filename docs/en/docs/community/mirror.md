@@ -12,7 +12,7 @@ DaoCloud provides a domestic mirror acceleration service that makes it easy to p
     k8s.gcr.io/coredns/coredns => m.daocloud.io/k8s.gcr.io/coredns/coredns
     ```
 
-- Modify the prefix of the image repository:
+- Modify the prefix of the container registry:
 
     ```bash
     k8s.gcr.io/coredns/coredns => k8s-gcr.m.daocloud.io/coredns/coredns

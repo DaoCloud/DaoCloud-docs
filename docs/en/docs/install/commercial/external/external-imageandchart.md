@@ -1,8 +1,8 @@
-# Using External Image Repository and Chart Repository to Store Images and Chart Packages
+# Using External Container Registry and Chart Repository to Store Images and Chart Packages
 
 This document describes how to use third-party image repositories and chart repositories.
 
-## Steps for External Image Repository and Chart Repository
+## Steps for External Container Registry and Chart Repository
 
 1. In the [clusterConfig.yaml](../cluster-config.md), configure the `imagesAndCharts` parameter as follows:
 
@@ -28,7 +28,7 @@ This document describes how to use third-party image repositories and chart repo
 
     !!! note
 
-        - The image repository supports all types of open-source repositories available in the community.
+        - The container registry supports all types of open-source repositories available in the community.
 
         - The chart repository only supports three types: chartmuseum, harbor, and jfrog.
 
