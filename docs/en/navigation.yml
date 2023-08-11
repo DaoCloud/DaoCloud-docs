@@ -893,8 +893,8 @@ nav:
               - Download Insight: download/modules/insight.md
               - Download Spidernet: download/modules/spidernet.md
               - Download Operation Management: download/modules/gmagpie.md
-  - Try Community Package:
-      - Try Community Package: trial/index.md
+  - Free Trial:
+      - Free Trial: trial/index.md
   - Blogs:
       - Index: blogs/index.md
       - 202308 | Unlocking the Power of Kubernetes with K8SGPT: blogs/230808-k8sgpt.md
