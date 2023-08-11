@@ -120,7 +120,7 @@ Currently, only the upgrade of product components that are already installed in 
 Run the upgrade command:
 
 ```bash
-./offline/dce5-installer cluster-create -c ./offline/sample/clusterconfig.yaml -m ./offline/sample/manifest.yaml --upgrade gproduct
+./offline/dce5-installer cluster-create -c ./offline/sample/clusterConfig.yaml -m ./offline/sample/manifest.yaml --upgrade gproduct
 ```
 
 #### Upgrade of DCE 5.0 Infrastructure Modules
@@ -128,7 +128,7 @@ Run the upgrade command:
 Run the upgrade command:
 
 ```bash
-./offline/dce5-installer cluster-create -c ./offline/sample/clusterconfig.yaml -m ./offline/sample/manifest.yaml --upgrade infrastructures
+./offline/dce5-installer cluster-create -c ./offline/sample/clusterConfig.yaml -m ./offline/sample/manifest.yaml --upgrade infrastructures
 ```
 
 Explanation of upgrade parameters:
