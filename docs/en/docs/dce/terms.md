@@ -1262,7 +1262,7 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
 
 - Image
 
-    [Image](https://kubernetes.io/docs/concepts/containers/images/), on the other hand, refers to a saved container instance that packages a set of software required for application runtime. It is a way of packaging software, which can be stored in a container image repository, pulled to a local system, and run as an application. The metadata contained in the image specifies what executable program to run, who built it, and other information.
+    [Image](https://kubernetes.io/docs/concepts/containers/images/), on the other hand, refers to a saved container instance that packages a set of software required for application runtime. It is a way of packaging software, which can be stored in a container container registry, pulled to a local system, and run as an application. The metadata contained in the image specifies what executable program to run, who built it, and other information.
 
 - Immutable Infrastructure
 

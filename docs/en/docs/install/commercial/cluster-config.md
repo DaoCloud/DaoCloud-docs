@@ -240,7 +240,7 @@ For key field descriptions in this YAML file, see the table below.
 | tinderKind        | Configuration for the TinderKind cluster                              | -                                                     |
 | tinderKind.instanceName | Container name for the TinderKind cluster                         | -                                                     |
 | tinderKind.resourcesMountPath | Host path where the Kind cluster will be mounted                | /home/kind                                            |
-| tinderKind.registryPort | Port of the image repository in the Kind cluster                     | 443                                                   |
+| tinderKind.registryPort | Port of the container registry in the Kind cluster                     | 443                                                   |
 | tinderKind.minioServerPort | Port of the MinIO Server in the Kind cluster                          | 9000                                                  |
 | tinderKind.minioConsolePort | Port of the MinIO Console in the Kind cluster                         | 9001                                                  |
 | tinderKind.chartmuseumPort | Port of the ChartMuseum in the Kind cluster                           | 8081                                                  |
@@ -258,14 +258,14 @@ For key field descriptions in this YAML file, see the table below.
 | loadBalancer.type | Load balancer mode used, metallb for physical environments, NodePort for POC, cloudLB for public cloud and SDN CNI environments | NodePort (default), metallb, cloudLB (Cloud Controller) |
 | fullPackagePath   | Path to the extracted offline package, required in offline mode      | -                                                     |
 | addonPackage.path | Local file system path for the application store addon package       | -                                                     |
-| imagesAndCharts   | Image repository and Chart repository sources                        | -                                                     |
+| imagesAndCharts   | Container registry and Chart repository sources                        | -                                                     |
 | imagesAndCharts.externalChartRepo | IP or domain name of the external Chart repository              | -                                                     |
 | imagesAndCharts.externalChartRepoPassword | Password for the external Chart repository, used for image push  | -                                                     |
 | imagesAndCharts.externalChartRepoType | Type of the external Chart repository, either chartmuseum or harbor    | -                                                     |
 | imagesAndCharts.externalChartRepoUsername | Username for the external Chart repository, used for image push | -                                                     |
-| imagesAndCharts.externalImageRepo | IP or domain name of the external image repository with protocol header specified   | -                                                     |
-| imagesAndCharts.externalImageRepoPassword | Password for the external image repository, used for image push  | -                                                     |
-| imagesAndCharts.externalImageRepoUsername | Username for the external image repository, used for image push  | -                                                     |
+| imagesAndCharts.externalImageRepo | IP or domain name of the external container registry with protocol header specified   | -                                                     |
+| imagesAndCharts.externalImageRepoPassword | Password for the external container registry, used for image push  | -                                                     |
+| imagesAndCharts.externalImageRepoUsername | Username for the external container registry, used for image push  | -                                                     |
 | imagesAndCharts.type | Access mode for images and charts, official-service (online), buitin (TinderKind built-in registry and chartmuseum), external | official-service                                      |
 | auditConfig       | Audit log configuration for the k8s api-server                        | Disabled by default                                   |
 | binaries          | Executable binary files                                               | -                                                     |

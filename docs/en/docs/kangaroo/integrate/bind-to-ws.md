@@ -15,11 +15,11 @@ Generally, for private registry spaces, binding to a workspace is helpful to all
 
 1. Log in to DCE 5.0 as a user with the Admin role, click `Container Registry` -> `Integrated Registry (Admin)` from the left navigation bar.
 
-    ![Integration](../images/bind01.png)
+    ![Integration](../images/integrated01.png)
 
 1. Click a registry name.
 
-    ![Click Name](../images/bind02.png)
+    ![Click Name](../images/integrated02.png)
 
 1. Click `Registry space` in the left navigation bar, then click the `⋮` on the far right of a specific registry space, and select `Bind/unbind workspace`.
 

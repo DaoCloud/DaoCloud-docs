@@ -6,7 +6,7 @@ The Community package includes Container Management, Global Management, and Insi
 which can be used for free permanently.
 
 The Enterprise package can be purchased on demand with advanced modules such as Service Mesh,
-Microservice Engine, MultiCloud Management, Data Middleware, Image Repository, etc. in addtion to
+Microservice Engine, MultiCloud Management, Data Middleware, Container Registry, etc. in addtion to
 those modules contained in the Community package. It has more comprehensive features and can better
 meet the needs of production environments.
 
@@ -44,7 +44,7 @@ meet the needs of production environments.
           <li><a href="https://docs.daocloud.io/en/skoala/intro/index.html"><span style="white-space: nowrap;">Microservice Engine</span></a></li>
           <li><a href="https://docs.daocloud.io/en/mspider/intro/index.html">Service Mesh</a></li>
           <li><a href="https://docs.daocloud.io/en/middleware/index.html"><span style="white-space: nowrap;">Selected Middleware</span></a></li>
-          <li><a href="https://docs.daocloud.io/en/kangaroo/index.html">Image Repository</a></li>
+          <li><a href="https://docs.daocloud.io/en/kangaroo/index.html">Container Registry</a></li>
         </ul>
       </td>
       <td>

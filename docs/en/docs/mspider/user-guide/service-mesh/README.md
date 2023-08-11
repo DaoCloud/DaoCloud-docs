@@ -23,7 +23,7 @@ The following explains the steps to create a Hosted Mesh/Dedicated Mesh:
     - Istio version: For Hosted Mesh, this version will be used by all member clusters in the mesh.
     - Cluster: This is the cluster where the mesh control plane runs. The drop-down list displays the version and health status of each cluster.
     - Entry of control plane: Supports load balancer and custom.
-    - Mesh component repo: Enter the address of the image repository that contains the data plane components, such as `release-ci.daocloud.io/mspider`.
+    - Mesh component repo: Enter the address of the container registry that contains the data plane components, such as `release-ci.daocloud.io/mspider`.
 
     ![Basic Information](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/create-mesh02.png)
 

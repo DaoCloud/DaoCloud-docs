@@ -448,11 +448,11 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: reduce the permissions of all processes in the container, and no longer run the privileged container by default; expose an endpoint for viewing pprof diagnostic data; support the collection of Prometheus metrics inside the controller, such as the amount of memory allocated and spent CPU time; if the ingress rules do not match, it supports custom setting of the backend port.
 
-- [Harbor Container Image Repository v2.8.0 Released (CNCF Project)](https://github.com/goharbor/harbor/releases/tag/v2.8.0)
+- [Harbor Container Container Registry v2.8.0 Released (CNCF Project)](https://github.com/goharbor/harbor/releases/tag/v2.8.0)
 
     Version features: support for OCI distribution spec v1.1.0-rc1, support for sending Webhook loads via CloudEvents format, support for skipping automatic update pull times for task scanners, removal of helm chart repository server ChartMuseum.
 
-- [Harbor Container Image Repository v2.7.0 Released (CNCF Project)](https://github.com/goharbor/harbor/releases/tag/v2.7.0)
+- [Harbor Container Container Registry v2.7.0 Released (CNCF Project)](https://github.com/goharbor/harbor/releases/tag/v2.7.0)
 
      Major new features in this release: adds Jobservice dashboard to monitor and control job queues, schedulers, and workers; supports per-block replication of mirror blob; adds WASM filter to artifact list.
 
@@ -769,7 +769,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Kubernetes v1.27.0 released](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.27.md#changelog-since-v1260)
 
-    Release features: freeze k8s.gcr.io image repository, upgrade SeccompDefault to GA, upgrade Job variable scheduling directive to GA, upgrade Pod scheduling Readiness to beta, allow access to node logs via Kubernetes API, introduce new access mode ReadWriteOncePod to limit volume Access is restricted to a single Pod in the cluster, and VolumeManager rebuild is upgraded to beta.
+    Release features: freeze k8s.gcr.io container registry, upgrade SeccompDefault to GA, upgrade Job variable scheduling directive to GA, upgrade Pod scheduling Readiness to beta, allow access to node logs via Kubernetes API, introduce new access mode ReadWriteOncePod to limit volume Access is restricted to a single Pod in the cluster, and VolumeManager rebuild is upgraded to beta.
 
 - [Kubernetes third-party audit based on the 1.24 release](https://www.cncf.io/blog/2023/04/19/new-kubernetes-security-audit-complete-and-open-sourced/)
 

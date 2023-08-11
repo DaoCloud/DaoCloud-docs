@@ -174,6 +174,6 @@ It includes components related to the infrastructure and products involved in th
 | components.skoala                | Microservice engine module                        |
 | components.mspider               | Service mesh module                               |
 | components.mcamel-*              | Middleware modules including ES, Kafka, MinIO, etc. |
-| components.kangaroo              | Image repository module                           |
+| components.kangaroo              | Container registry module                           |
 | components.gmagpie               | Reporting module                                  |
 | components.dowl                  | Cluster security module                           |

@@ -20,7 +20,7 @@ This page lists the release notes of the container registry, so that you can und
 
 - **Added**: Added support for selecting the middleware `minio` instance when creating managed `harbor`.
 - **Added**: Added support for key auditing functionality in `Ghippo`.
-- **Improved**: Validated image repository resources under a workspace (WS) when deleting the WS.
+- **Improved**: Validated container registry resources under a workspace (WS) when deleting the WS.
 - **Improved**: Handled abnormal states of managed `harbor` after unbinding clusters.
 - **Fixed**: Fixed the issue where `Ghippo workspace` resources could not be unbound.
 - **Fixed**: Fixed the issue with `Sidecar` injection.

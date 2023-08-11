@@ -6,7 +6,7 @@ This document will guide you on how to install DCE 5.0 on OCP.
 
 - DCE 5.0 supports Kubernetes versions v1.22.x, v1.23.x, v1.24.x, and v1.25.x by default.
 - You already have an OCP environment with a version that is not lower than v1.22.x.
-- Prepare a private image repository and ensure that the cluster can access it.
+- Prepare a private container registry and ensure that the cluster can access it.
 - Make sure you have enough resources. It is recommended to have at least 12 cores and 24 GB of available resources in the cluster.
 
 ## Offline Installation

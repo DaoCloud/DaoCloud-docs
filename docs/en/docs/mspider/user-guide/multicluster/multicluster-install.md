@@ -137,7 +137,7 @@ The specific parameters for creating a mesh are shown in the image:
 3. Select a pre-selected mesh version that meets the prerequisites.
 4. Choose the cluster where the hosted control plane is located.
 5. Load Balancer IP: This parameter is required for exposing the control plane's Istiod. It needs to be prepared in advance.
-6. Image Repository: In a private cloud environment, you need to upload the required mesh images to a repository. For public clouds, it is recommended to use `release.daocloud.io/mspider`.
+6. Container Registry: In a private cloud environment, you need to upload the required mesh images to a repository. For public clouds, it is recommended to use `release.daocloud.io/mspider`.
 
 ![Upload Images](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-mesh2.png)
 

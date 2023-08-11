@@ -24,7 +24,7 @@ This page provides the Release Notes for container management to help you unders
 
 - **Fixed**: Fixed the issue where custom parameters entered when creating a cluster would incorrectly convert values of 0 or 1 to true or false.
 - **Fixed**: Fixed the issue where containerd account password configuration could not be written when creating a cluster in an offline environment.
-- **Fixed**: Fixed the issue where upgrading a cluster with version 1.26 or above failed due to changes in the Kubernetes image repository.
+- **Fixed**: Fixed the issue where upgrading a cluster with version 1.26 or above failed due to changes in the Kubernetes container registry.
 - **Fixed**: Fixed issues related to namespace-level users not being able to use StorageClasses to create PVs.
 - **Fixed**: Fixed the issue where specifying a namespace when creating a route did not take effect.
 - **Fixed**: Fixed the issue where the date returned incorrectly after upgrading the cluster.

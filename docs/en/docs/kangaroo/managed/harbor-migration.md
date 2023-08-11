@@ -76,7 +76,7 @@ In this step, we will migrate the image data stored in the original Harbor to th
 In this step, we will create a new Harbor instance based on the new PostgreSQL and Minio environment. Ensure that Harbor is running smoothly in the new cluster environment.
 
 1. In the new cluster environment, create a new Harbor instance using the connection information of the new PostgreSQL
-   and Minio. You can use the image repository component to create a new instance. Please note that when creating a
+   and Minio. You can use the container registry component to create a new instance. Please note that when creating a
    new instance, the account password should be consistent with the original environment, and you also need to select
    the database instance and minio storage in the new environment.
 1. Ensure that the new Harbor instance has been successfully installed and configured.

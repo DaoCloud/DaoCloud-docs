@@ -16,7 +16,7 @@ Supports accessing a massive number of edge nodes, automatically generating conf
 ### Edge Application/Model Management
 
 - The edge computing platform supports deploying edge applications or models quickly to edge nodes in the form of containers.
-  Users can package their own edge application programs or models into container images, upload them to the image repository, and then deploy container images to edge nodes for operation through the cloud-edge collaboration platform.
+  Users can package their own edge application programs or models into container images, upload them to the container registry, and then deploy container images to edge nodes for operation through the cloud-edge collaboration platform.
 - The cloud-edge collaboration platform supports viewing running data, events, and log information of deployed instances.
 - Containers have a more robust ecosystem, helping users' container applications seamlessly transition to other running environments, having better portability,
   and containers have better resource isolation and support CPU scheduling.

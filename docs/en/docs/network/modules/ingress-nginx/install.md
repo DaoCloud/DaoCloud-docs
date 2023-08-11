@@ -46,8 +46,8 @@ Please confirm that your cluster has successfully connected to the `Container Ma
 
     - `Ingress Controller` -> `Service` -> `IP Family Policy`: set IP [single and dual stack](https://kubernetes.io/docs/concepts/services-networking/dual-stack/#services) of the Service, which can be enabled according to the business requirements.
     - `Ingress Controller` -> `Service` -> `Type`: configure the Service type. If it is set to be [LoadBalancer](https://kubernetes.io/docs/concepts/services-networking/service/#loadbalancer), the corresponding LB component needs to be installed in the cluster, e.g. [MetalLB](https://metallb.universe.tf/).
-    - `Ingress Controller` -> `Ingress Controller Image`: configure the image repository and name.
-    - `Ingress Controller` -> `Admission Webhook Image`: customize the image repository and name for the Webhook Pod.
+    - `Ingress Controller` -> `Ingress Controller Image`: configure the container registry and name.
+    - `Ingress Controller` -> `Admission Webhook Image`: customize the container registry and name for the Webhook Pod.
 
     
 

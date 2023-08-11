@@ -2,7 +2,7 @@
 
 Local Storage (LS) is a module of HwameiStor, which aims to provide high-performance local persistent LVM storage volumes for applications.
 
-
+![architecture](../img/architecture.png)
 
 Currently supported local persistent data volume type: `LVM`.
 
@@ -27,8 +27,8 @@ Highly available LVM local data volume, suitable for the following cases and app
 
 ## Install and deploy using Helm Chart
 
-Local storage is part of HwameiStor and must work with local disk manager. Users are advised to [deploy via helm-charts](../hwameistor/install/deploy.md).
+Local storage is part of HwameiStor and must work with local disk manager. Users are advised to [deploy via helm-charts](../install/deploy-helm.md).
 
 ## Independent installation and deployment method
 
-Developers can install [independent installation](../hwameistor/install/deploy.md) local-storage from source code, mainly for development and testing use cases. For this installation method, you need to install [Local Disk Manager](./ldm.md) in advance.
+Developers can install [independent installation](../install/deploy-helm.md) local-storage from source code, mainly for development and testing use cases. For this installation method, you need to install [Local Disk Manager](./ldm.md) in advance.
