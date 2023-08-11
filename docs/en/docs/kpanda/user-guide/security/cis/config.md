@@ -8,23 +8,23 @@ The steps for creating a scan configuration are as follows:
 
 1. Click `Security Management` in the left navigation bar of the homepage of the container management module.
 
-    <!--![Security Management](../../images/security01.png)-->
+    
 
 2. By default, enter the `Compliance Scanning` page, click the `Scan Configuration` tab, and then click `Create Scan Configuration` in the upper-right corner.
 
-    <!--![Security Management](../../images/security01.png)-->
+    
 
 3. Fill in the configuration name, select the configuration template, and optionally check the scan items, then click `OK`.
 
     Scan Template: Currently, two templates are provided. The `kubeadm` template is suitable for general Kubernetes clusters. The `daocloud` template ignores scan items that are not applicable to DCE 5.0 based on the `kubeadm` template and the platform design of DCE 5.0.
 
-    <!--![Security Management](../../images/security01.png)-->
+    
 
 ## View Scan Configuration
 
 Under the scan configuration tab, clicking the name of a scan configuration displays the type of the configuration, the number of scan items, the creation time, the configuration template, and the specific scan items enabled for the configuration.
 
-    <!--![Security Management](../../images/security01.png)-->
+    
 
 ## Updat/Delete Scan Configuration
 
@@ -35,4 +35,4 @@ Under the scan configuration tab, click the `ⵗ` action button to the right of 
 - Select `Edit` to update the configuration. You can update the description, template, and scan items. The configuration name cannot be changed.
 - Select `Delete` to delete the configuration.
 
-    <!--![Security Management](../../images/security01.png)-->
+    

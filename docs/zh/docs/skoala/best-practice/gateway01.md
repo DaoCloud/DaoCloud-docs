@@ -75,7 +75,7 @@ DCE 5.0 云原生网关支持通过手动接入和自动发现两种方式导入
 
 在本次演示情形下，可以使用 `curl adservice.virtualhost:30040/`。
 
-![internal visit](../images/br-gw09.png)
+![internal visit](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw09.png)
 
 ### 内部访问
 

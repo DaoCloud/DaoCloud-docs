@@ -6,7 +6,7 @@
 
 1. 在容器管理模块的首页左侧导航栏点击`安全管理`。
 
-    ![安全管理](../images/security01.png)
+    ![安全管理](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/images/security01.png)
 
 2. 在左侧导航栏点击`漏洞扫描`，点击`扫描策略`页签，在右侧点击`创建扫描策略`。
 

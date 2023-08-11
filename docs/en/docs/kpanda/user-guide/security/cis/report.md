@@ -11,7 +11,7 @@ After executing a scan policy, a scan report will be generated automatically. Yo
 
     Under the `Security Management` -> `Compliance Scanning` page, click the `Scan Report` tab, then click the `ⵗ` action button to the right of a report and select `Download`.
 
-    <!--![Security Management](../../images/security01.png)-->
+    
 
 - View Online
 
@@ -24,4 +24,4 @@ After executing a scan policy, a scan report will be generated automatically. Yo
         - For failed scan items, repair suggestions are provided.
         - For passed scan items, more secure operational suggestions are provided.
 
-    <!--![Security Management](../../images/security01.png)-->
+    
