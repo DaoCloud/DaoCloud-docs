@@ -33,9 +33,9 @@ db/metadata.json
 db/trivy.db
 ```
 
-# 开启托管 `Harbor` 离线扫描
+## 开启托管 `Harbor` 离线扫描
 
-## 在托管 `harbor` 所在集群进行编辑：
+### 在托管 `harbor` 所在集群进行编辑
 
 ```shell
 $ kubectl -n {namespace} edit harborclusters.goharbor.io {harbor-name}
@@ -45,7 +45,7 @@ trivy:
     skipUpdate: true
 ```
 
-## 也可以从 `DCE5.0` 集群管理页面中进行修改：
+## 也可以从 `DCE5.0` 集群管理页面中进行修改
 
 ![edit-harborcluster.png](../images/edit-harborcluster.png)
 
@@ -62,9 +62,9 @@ trivy:
     skipUpdate: true
 ```
 
-# 上传 trivy.db 和 metadata.json 文件
+## 上传 trivy.db 和 metadata.json 文件
 
-##  先在 `trivy pod` 中创建对应的目录 `/home/scanner/.cache/trivy/db`
+###  先在 `trivy pod` 中创建对应的目录 `/home/scanner/.cache/trivy/db`
 
 ![upload-trivy-db.png](../images/upload-trivy-db.png)
 
@@ -75,7 +75,7 @@ trivy:
 5. 第五步进入容器后，执行 `cd /home/scanner/.cache/trivy`
 6. 第六步执行 `mkdir db`.
 
-## 创建好目录之后上传离线包
+### 创建好目录之后上传离线包
 
 ![upload-trivy-offline-db.png](../images/upload-trivy-offline-db.png)
 
