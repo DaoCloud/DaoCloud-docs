@@ -165,14 +165,13 @@ nav:
               - 什么是用户与访问控制: ghippo/user-guide/access-control/iam.md
               - 用户: ghippo/user-guide/access-control/user.md
               - 用户组: ghippo/user-guide/access-control/group.md
-          - 角色和权限管理:
-              - ghippo/user-guide/access-control/role.md
-              - 系统角色: ghippo/user-guide/access-control/global.md
-              - 自定义角色: ghippo/user-guide/access-control/custom-role.md
-          - 身份提供商:
-              - ghippo/user-guide/access-control/idprovider.md
-              - LDAP: ghippo/user-guide/access-control/ldap.md
-              - OIDC: ghippo/user-guide/access-control/oidc.md
+              - 角色: 
+                  - ghippo/user-guide/access-control/role.md
+                  - 系统角色: ghippo/user-guide/access-control/global.md
+                  - 自定义角色: ghippo/user-guide/access-control/custom-role.md
+              - 身份提供商: ghippo/user-guide/access-control/idprovider.md
+                - LDAP: ghippo/user-guide/access-control/ldap.md
+                - OIDC: ghippo/user-guide/access-control/oidc.md
           - 工作空间与层级:
               - ghippo/user-guide/workspace/ws-folder.md
               - 创建和删除工作空间: ghippo/user-guide/workspace/workspace.md
@@ -199,7 +198,7 @@ nav:
               - 安全设置: ghippo/user-guide/personal-center/security-setting.md
               - 访问密钥: ghippo/user-guide/personal-center/accesstoken.md
               - 语言设置: ghippo/user-guide/personal-center/language.md
-          - 权限说明:
+          - 各模块权限说明:
               - 容器管理权限说明: kpanda/user-guide/permissions/permission-brief.md
               - 微服务引擎权限说明: ghippo/permissions/skoala.md
               - 应用工作台权限说明: ghippo/permissions/amamba.md
