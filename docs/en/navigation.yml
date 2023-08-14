@@ -567,6 +567,7 @@ nav:
               - Issues on joining DCE 4.0: mspider/troubleshoot/dce4.0-issues.md
           - Best Practice:
               - Restricting Service Access with Mesh: mspider/best-practice/use-egress-and-authorized-policy.md
+              - Support for Custom Workload Types: mspider/best-practice/use-custom-workloads.md
       - Network:
           - Intro:
               - What is Network: network/intro/index.md

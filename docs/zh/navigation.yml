@@ -585,6 +585,7 @@ nav:
               - DCE 4.0 接入问题追踪: mspider/troubleshoot/dce4.0-issues.md
           - 最佳实践:
               - 使用网格完成定向服务访问限制: mspider/best-practice/use-egress-and-authorized-policy.md
+              - 支持接入自定义工作负载类型: mspider/best-practice/use-custom-workloads.md
       - 云原生网络:
           - 介绍:
               - 什么是云原生网络: network/intro/index.md
