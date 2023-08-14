@@ -825,6 +825,7 @@ nav:
               - Push Image: kangaroo/quickstart/push.md
               - Admin Guide: kangaroo/quickstart/admin-registry.md
               - Workspace Admin Guide: kangaroo/quickstart/ws-admin-registry.md
+              - Enable Image Security Scanning Offline: kangaroo/quickstart/trivy-offline.md
           - Registry Space:
               - Registry Space: kangaroo/space/index.md
               - Image List: kangaroo/space/imagelist.md
