@@ -34,27 +34,6 @@ In a pure offline environment, vulnerability scanning cannot be performed, and t
 
 ![trivy](./images/trivy-nodb.png)
 
-## Updating or importing vulnerability database in an offline environment
-
-1. Database Location:
-
-    ```console
-    /root/.cache/trivy/db
-    ```
-
-2. Help Information:
-    
-    ```sh
-    trivy -h | grep 'TRIVY_CACHE_DIR'
-      --cache-dir value  cache directory (default: "/root/.cache/trivy") [$TRIVY_CACHE_DIR]
-    ```
-
-3. Database Download:
-
-    - `trivy-light-offline.db.tgz`: Lightweight offline database, approximately 104 MB after decompression.
-    - `trivy-offline.db.tgz`: Full offline database, approximately 221 MB after decompression.
-    - Download link: [https://github.com/aquasecurity/trivy-db/releases](https://github.com/aquasecurity/trivy-db/releases)
-
 ## Error occurs when creating Harbor after cluster verification passes in the first step
 
 Currently, only the existence of `CRD` is being verified in the cluster, and the `harbor-operator` service
