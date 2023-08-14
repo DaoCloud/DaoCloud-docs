@@ -12,7 +12,7 @@ DaoCloud Enterprise 5.0 平台存在三种角色范围，能够灵活、有效�
   
 平台角色是粗粒度权限，对平台上所有相关资源具有相应权限。通过平台角色可以赋予用户对所有集群、所有工作空间等的增删改查权限，而不能具体到某一个集群或某一个工作空间。DaoCloud Enterprise 5.0 提供了 5 个预置的平台角色，分别是 Admin / Kpanda Owner / Workspace and Folder Owner / IAM Owner / Audit Owner，用户可直接使用。
 
-![](https://huatu.98youxi.com/markdown/work/uploads/upload_b112ad9ac722b753f7fb5e62266a4614.png)
+![三种权限模式](https://huatu.98youxi.com/markdown/work/uploads/upload_b112ad9ac722b753f7fb5e62266a4614.png)
 
 同时，DaoCloud Enterprise 5.0 还支持用户创建自定义平台角色，可根据需要自定义角色内容。如创建一个平台角色，包含应用工作台的所有功能权限，由于应用工作台依赖于工作空间，因此平台会帮助用户默认勾选工作空间的查看权限，请不要手动取消勾选。若用户 A 被授予该 workbench 角色，将自动拥有所有工作空间下的应用工作台相关功能的增删改查等权限。
 
