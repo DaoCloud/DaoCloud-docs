@@ -162,14 +162,14 @@ nav:
               - Intro: ghippo/user-guide/access-control/iam.md
               - User: ghippo/user-guide/access-control/user.md
               - Group: ghippo/user-guide/access-control/group.md
-          - Roles and Permissions:
-              - ghippo/user-guide/access-control/role.md
-              - System Roles: ghippo/user-guide/access-control/global.md
-              - Custom Roles: ghippo/user-guide/access-control/custom-role.md
-          - ID Provider:
-              - ghippo/user-guide/access-control/idprovider.md
-              - LDAP: ghippo/user-guide/access-control/ldap.md
-              - OIDC: ghippo/user-guide/access-control/oidc.md
+              - Roles:
+                  - ghippo/user-guide/access-control/role.md
+                  - System Roles: ghippo/user-guide/access-control/global.md
+                  - Custom Roles: ghippo/user-guide/access-control/custom-role.md
+              - Identity Provider:
+                  - ghippo/user-guide/access-control/idprovider.md
+                  - LDAP: ghippo/user-guide/access-control/ldap.md
+                  - OIDC: ghippo/user-guide/access-control/oidc.md
           - Workspaces and Folders:
               - ghippo/user-guide/workspace/ws-folder.md
               - Create and Delete Workspace: ghippo/user-guide/workspace/workspace.md
