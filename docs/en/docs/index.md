@@ -6,7 +6,7 @@ hide:
 
 # DaoCloud Enterprise 5.0
 
-DaoCloud Enterprise 5.0 is a high-performance and scalable cloud-native operating system
+DaoCloud Enterprise 5.0 (DCE 5.0) is a high-performance and scalable cloud-native operating system
 that provides a consistent and stable experience in any infrastructure or environment.
 It supports heterogeneous clouds, edge clouds, and multicloud management. DCE 5.0
 integrates the latest service mesh and microservice technologies, enabling tracking
