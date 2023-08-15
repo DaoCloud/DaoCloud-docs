@@ -7,7 +7,11 @@ hide:
 
 This page summarizes blogs and public account articles related to DCE 5.0 and cloud-native technology, sorted by date by default.
 
-- [202300808 | Unlocking the Power of Kubernetes with K8SGPT](./230808-k8sgpt.md)
+- [20230815 | Kubernetes 1.28 is Released](./230815-k8s1.28.md)
+
+    Announcing the release of Kubernetes v1.28 Planternetes, the second release of 2023!
+
+- [20230808 | Unlocking the Power of Kubernetes with K8SGPT](./230808-k8sgpt.md)
 
     [K8sGPT](https://k8sgpt.ai/) is an incredible tool that gives Kubernetes SREs superpowers.
     It provides a simple and efficient way to scan your Kubernetes clusters and diagnose issues in plain English.
