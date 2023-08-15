@@ -15,10 +15,10 @@
 
 ```shell
 set -e
-if [ $(free -g|grep Mem | awk '{print $2}')              -lt 12 ]; then (echo "insufficient memory! (should >=12G)"; exit 1); fi
-if [ $(grep 'processor' /proc/cpuinfo |sort |uniq |wc -l) -lt 8 ]; then (echo "insufficient CPU! (should >=8C)"; exit 1); fi
-if [ $(df -m / |tail -n 1 | awk '{print $4}') -lt 30720 ]; then (echo "insufficient free disk space of root partition!(should >=30G)"; exit 1); fi
-ping daocloud.io -c 1 &> /dev/null || ( echo "no connection to internet! abort." &&  exit 1; )
+if [ $(free -g|grep Mem | awk '{print $2}')              -lt 12 ]; then (echo "insufficient memory! (should >=12G)";); fi
+if [ $(grep 'processor' /proc/cpuinfo |sort |uniq |wc -l) -lt 8 ]; then (echo "insufficient CPU! (should >=8C)";); fi
+if [ $(df -m / |tail -n 1 | awk '{print $4}') -lt 30720 ]; then (echo "insufficient free disk space of root partition!(should >=30G)";); fi
+ping daocloud.io -c 1 &> /dev/null || ( echo "no connection to internet! abort.")
 echo "precheck pass.."
 ```
 
@@ -39,8 +39,9 @@ precheck pass..
     ```shell
     set -e
     if  [ -x "$(command -v docker )" ] ;then
-    echo "docker already installed : version = "$(docker -v);
-    exit 0
+        echo "docker already installed : version = "$(docker -v);
+    else
+        echo "docker not found, please install it first."
     fi
     
     sudo yum install -y yum-utils device-mapper-persistent-data lvm2
@@ -58,8 +59,9 @@ precheck pass..
     ```shell
     set -e
     if  [ -x "$(command -v docker )" ] ;then
-    echo "docker already installed : version = "$(docker -v);
-    exit 0
+        echo "docker already installed : version = "$(docker -v);
+    else
+        echo "docker not found, please install it first."
     fi
     sudo apt-get update
     sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common
