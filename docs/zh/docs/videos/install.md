@@ -10,7 +10,7 @@ DCE 5.0 分为社区版和商业版。社区版可免费使用，包括全局管
 参阅[使用 kind 集群在线安装 DCE 5.0 社区版](../install/community/kind/online.md)。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kind-cluster.mp4" preload="metadata" poster="../images/install-kind.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kind-cluster.mp4" preload="metadata" poster="images/install-kind.png"></video>
 </div>
 
 ## 在线安装社区版
@@ -18,7 +18,7 @@ DCE 5.0 分为社区版和商业版。社区版可免费使用，包括全局管
 参阅[在线安装 DCE 5.0 社区版](../install/index.md#_2)。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/online-install-community.mp4" preload="metadata" poster="../images/install-online.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/online-install-community.mp4" preload="metadata" poster="images/install-online.png"></video>
 </div>
 
 

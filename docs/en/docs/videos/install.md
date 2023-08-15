@@ -9,7 +9,7 @@ DCE 5.0 is divided into Community Package and Enterprise Package. The Community 
 See [Online Install DCE 5.0 Community Package with kind](../install/community/kind/online.md).
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kind-cluster.mp4" preload="metadata" poster="../images/install-kind.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kind-cluster.mp4" preload="metadata" poster="images/install-kind.png"></video>
 </div>
 
 ## Install the Community Package online
@@ -17,7 +17,7 @@ See [Online Install DCE 5.0 Community Package with kind](../install/community/ki
 See [Online Install DCE 5.0 Community Package](../install/index.md#_2).
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/online-install-community.mp4" preload="metadata" poster="../images/install-online.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/online-install-community.mp4" preload="metadata" poster="images/install-online.png"></video>
 </div>
 
 [Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
