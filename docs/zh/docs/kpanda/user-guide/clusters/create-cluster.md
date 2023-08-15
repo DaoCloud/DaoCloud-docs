@@ -8,13 +8,15 @@ hide:
 
 在 DCE 5.0 容器管理模块中，[集群角色](cluster-role.md)分四类：全局服务集群、管理集群、工作集群、接入集群。其中，接入集群只能从第三方厂商接入，参见[接入集群](integrate-cluster)。
 
-本页介绍如何创建工作集群。
+本页介绍如何创建工作集群，默认情况下，新建工作集群的工作节点 OS 类型和 CPU 架构需要与全局服务集群保持一致，如需使用区别于全局管理集群 OS 或架构的节点创建集群，参阅[在 centos 管理平台上创建 ubuntu 工作集群](../../best-practice/create-ubuntu-on-centos-platform.md)进行创建。
+
+推荐使用 [DCE 5.0 支持的操作系统](../../../install/commercial/deploy-requirements.md)来创建集群，如您本地节点不在上述支持范围，可参考[在非主流操作系统上创建集群](../../best-practice/use-otherlinux-create-custer.md)进行创建。
 
 ## 前提条件
 
 创建集群之前需要满足一定的前提条件：
 
-- 根据业务需求准备一定数量的节点。
+- 根据业务需求准备一定数量的节点，且节点 OS 类型和 CPU 架构一致。
 - 推荐 Kubernetes 版本 1.24.7，具体版本范围，参阅 [DCE 5.0 集群版本支持体系](./cluster-version.md)。
 - 目标主机需要允许 IPv4 转发。如果 Pod 和 Service 使用的是 IPv6，则目标服务器需要允许 IPv6 转发。
 - DCE 暂不提供对防火墙的管理功能，您需要预先自行定义目标主机防火墙规则。为了避免创建集群的过程中出现问题，建议禁用目标主机的防火墙。

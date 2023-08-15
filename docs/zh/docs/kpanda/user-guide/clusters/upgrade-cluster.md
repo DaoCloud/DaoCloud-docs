@@ -8,7 +8,7 @@ hide:
 
 Kubernetes 社区每个季度都会发布一次小版本，每个版本的维护周期大概只有 9 个月。版本停止维护后就不会再更新一些重大漏洞或安全漏洞。手动升级集群操作较为繁琐，给管理人员带来了极大的工作负担。
 
-在 DCE 中，您可以通过 Web UI 界面一键式升级 Kubernetes 集群。
+本节将介绍如何在通过 Web UI 界面一键式在线升级工作集群 Kubernetes 版本，如需离线升级工作集群的 kubernetes 版本，请参阅[工作集群离线升级指南](../../best-practice/update-offline-cluster.md)进行升级。
 
 !!! danger
 
