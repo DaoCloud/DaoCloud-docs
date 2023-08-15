@@ -359,7 +359,8 @@ nav:
               - 集成工具链: amamba/user-guide/tools/integrated-toolchain.md
               - 管理工具链实例: amamba/user-guide/tools/toolchain-instances.md
           - 常见问题:
-              - amamba/intro/faq.md
+              - 流水线相关问题: amamba/intro/faq-jenkins.md
+              - GitOps 相关问题: amamba/intro/faq-gitops.md
           - 最佳实践:
               - 快速创建流水线: amamba/quickstart/deploy-pipeline.md
               - 基于流水线 + GitOps 实现CI/CD: amamba/quickstart/argocd-jenkins.md
