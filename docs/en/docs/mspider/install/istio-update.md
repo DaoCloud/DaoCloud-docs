@@ -7,9 +7,15 @@ hide:
 
 !!! warning "Update Reminder"
 
-    Try to avoid making configuration or related changes during the mesh update. Please plan your upgrade carefully.
+    Try to avoid making configuration or related changes during the update. Please plan your upgrade schedule accordingly.
 
-The Istio version of the mesh can be upgraded continuously. DaoCloud provides two types of upgrade versions: native and customized.
+There are three types of service meshes supported, including Managed Mesh and Dedicated Mesh created
+and managed by DaoCloud, and integrate Mesh which refers to the existing service mesh of the customer.
+
+## One-click Upgrade: Managed Mesh and Dedicated Mesh
+
+For the managed mesh types provided by DaoCloud, Istio versions can be upgraded continuously.
+DaoCloud offers two types of upgrade versions: native version and customized version.
 
 - Native version: The community-native Istio without any customization.
 - Customized version: Based on Istio, it has been customized with certain functionalities (suffix: -mspider).
@@ -34,26 +40,30 @@ After the upgrade is completed, the mesh can be immediately deployed and run onl
 
     ![Target Version](../images/IstioUpdate02.png)
 
+    > It is not recommended by the official to perform cross-version upgrades for Istio.
+    > It is suggested to upgrade in a step-by-step manner, for example, upgrading from `1.15.x` to `1.16.x`.
+    > It is not recommended to directly upgrade to versions greater than `1.16.x`.
+
 2. **Environment detection**: The system will detect whether the versions of each cluster (k8s) under the mesh meet
    the upgrade requirements based on the selected target version. If they meet the requirements, the `Next` button
    will be activated; otherwise, the user needs to address any environment issues.
 
     ![Environment detection](../images/IstioUpdate04.png)
 
-	- If the cluster (k8s) version is too low, you can upgrade the cluster (k8s) version first in the
+	  - If the cluster (k8s) version is too low, you can upgrade the cluster (k8s) version first in the
       container management and then click the `Redetect` button.
 
-	- If the cluster (k8s) version is too high, it is recommended to go back and select a higher version of Istio
+	  - If the cluster (k8s) version is too high, it is recommended to go back and select a higher version of Istio
       in the "Select target version" step.
 
 3. **Perform upgrade**: After passing the environment detection, you will enter the upgrade phase,
    which includes two stages: `Upgrade` and `Health Check`.
 
-	- Istio Upgrade: Pulling Istio images and upgrading control plane components.
+	  - Istio Upgrade: Pulling Istio images and upgrading control plane components.
 
-	- Istio Health Check: Checking the running status of Istio control plane components.
+	  - Istio Health Check: Checking the running status of Istio control plane components.
 
-	![Perform upgrade](../images/IstioUpdate05.png)
+	  ![Perform upgrade](../images/IstioUpdate05.png)
 
 After the upgrade is completed, go back to the mesh list page, and you will see that the Istio version of the mesh has been changed.
 
@@ -64,3 +74,21 @@ After the upgrade is completed, go back to the mesh list page, and you will see 
     - Once the upgrade process starts, it cannot be terminated.
       It is recommended not to perform any configuration operations on the mesh during the upgrade.
     - For a more intuitive demonstration of the process, please refer to the [video tutorial](../../videos/mspider.md).
+
+## Manual Upgrade: Integrate Mesh
+
+Since the integrated mesh is self-managed by users, the deployment form of the mesh cannot be determined.
+Therefore, users need to perform the upgrade themselves. This article provides several upgrade suggestions
+recommended by Istio official. Please follow the actual deployment scenario to proceed.
+
+- **Canary Upgrade**: Upgrade Istio by running a new control plane with canary deployment.
+- **In-place Upgrade**: Upgrade and rollback in-place.
+- **Upgrade using Helm**: Instructions for upgrading Istio using Helm.
+
+!!! warning "Important"
+
+    One-step upgrades for multiple versions (e.g., from 1.6.x to 1.8.x) have not been officially tested
+    and promoted. It is strongly recommended to upgrade in a step-by-step manner.
+
+For more considerations on manual upgrade, please refer to the official Istio documentation:
+<https://istio.io/latest/docs/setup/upgrade/>
