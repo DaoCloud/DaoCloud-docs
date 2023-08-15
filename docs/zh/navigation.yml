@@ -895,6 +895,9 @@ nav:
           - 应用场景: kant/intro/use-cases.md
           - 边缘节点接入要求: kant/intro/join-rqmt.md
           - 基本概念: kant/intro/concepts.md
+          # - 边云消息:
+              # - 边云消息概述: kant/user-guide/route/overview.md
+              # - 创建消息路由: kant/user-guide/route/create-route.md
       - 虚拟机容器:
           - 介绍:
               - 简介: virtnest/intro/index.md
