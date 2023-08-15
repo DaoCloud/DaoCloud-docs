@@ -11,7 +11,7 @@
 参阅[管理网关和 API](../skoala/gateway/api/add-api.md)文档页面。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/gateway%26api.mp4" preload="metadata" poster="../images/skoala-gateway.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/gateway%26api.mp4" preload="metadata" poster="images/skoala-gateway.png"></video>
 </div>
 
 ### API 策略的高级配置（1）
@@ -19,7 +19,7 @@
 参阅 [API 策略配置](../skoala/gateway/api/api-policy.md)文档页面。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/apipolicy1.mp4" preload="metadata" poster="../images/skoala-api1.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/apipolicy1.mp4" preload="metadata" poster="images/skoala-api1.png"></video>
 </div>
 
 ### API 策略的高级配置（2）
@@ -27,7 +27,7 @@
 参阅 [API 策略配置](../skoala/gateway/api/api-policy.md)文档页面。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/api-policy2.mp4" preload="metadata" poster="../images/skoala-api2.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/api-policy2.mp4" preload="metadata" poster="images/skoala-api2.png"></video>
 </div>
 
 ## 云原生微服务
@@ -35,7 +35,7 @@
 参阅[通过网格治理微服务流量](../mspider/user-guide/traffic-governance/README.md)文档页面。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/traffic-governance.mp4" preload="metadata" poster="../images/skoala-mesh.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/traffic-governance.mp4" preload="metadata" poster="images/skoala-mesh.png"></video>
 </div>
 
 ## 传统微服务
@@ -45,7 +45,7 @@
 参阅[微服务配置列表](../skoala/trad-ms/hosted/configs.md)文档页面。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-config.mp4" preload="metadata" poster="../images/skoala-config.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-config.mp4" preload="metadata" poster="images/skoala-config.png"></video>
 </div>
 
 ### 接入注册中心
@@ -53,7 +53,7 @@
 参阅[接入注册中心](../skoala/trad-ms/integrated/integrate-registry.md)文档页面。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/integrate-registry.mp4" preload="metadata" poster="../images/skoala-integrate.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/integrate-registry.mp4" preload="metadata" poster="images/skoala-integrate.png"></video>
 </div>
 
 ### Sentinel 流控规则
@@ -61,7 +61,7 @@
 参阅[Sentinel 流控规则](../skoala/trad-ms/hosted/services/flow-control.md)文档页面。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/sentinel-flow-control.mp4" preload="metadata" poster="../images/skoala-flow-control.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/sentinel-flow-control.mp4" preload="metadata" poster="images/skoala-flow-control.png"></video>
 </div>
 
 <!--[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }-->

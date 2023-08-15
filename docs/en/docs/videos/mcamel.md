@@ -35,7 +35,7 @@ See [Kafka Message Instance Management](../middleware/kafka/user-guide/create.md
 See [MinIO Instance Management](../middleware/minio/user-guide/create.md) for reference.
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/minio.mp4" preload="metadata" poster="../images/mcamel-minio.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/minio.mp4" preload="metadata" poster="images/mcamel-minio.png"></video>
 </div>
 
 ## Redis cache management
