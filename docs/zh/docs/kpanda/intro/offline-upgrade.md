@@ -52,7 +52,7 @@
           intermediateBundlesPath: kpanda # 节点上执行 load-image.yaml 文件的路径。
         target:
           containerRegistry: 10.16.10.111 # 镜像仓库 url
-          containerRepository: release.daocloud.io/kpadna # 镜像仓库路径
+          containerRepository: release.daocloud.io/kpanda # 镜像仓库路径
           repo:
             kind: LOCAL
             path: ./local-repo # chart 本地路径
@@ -75,7 +75,7 @@
 1. 解压 tar 压缩包。
 
     ```shell
-    tar xvf kpadna.bundle.tar
+    tar xvf kpanda.bundle.tar
     ```
 
     解压成功后会得到 3 个文件：
@@ -107,75 +107,6 @@
 
 有两种升级方式。您可以根据前置操作，选择对应的升级方案：
 
-!!! note  
-
-    当从 v0.11.x (或更低版本) 升级到 v0.12.0 (或更高版本) 时，需要将 `bak.yaml` 中所有 keycloak key 修改为 `keycloakx`。  
-
-    这个 key 的修改示例：  
-
-    ```yaml title="bak.yaml"
-    USER-SUPPLIED VALUES:
-    keycloak:
-        ...
-    ```
-
-    修改为：
-
-    ```yaml title="bak.yaml"
-    USER-SUPPLIED VALUES:
-    keycloakx:
-        ...
-    ```
-
-!!! note  
-
-    当从 v0.15.x (或更低版本) 升级到 v0.16.0 (或更高版本) 时，需要修改数据库连接参数。  
-
-    数据库连接参数的修改示例：
-
-    ```yaml title="bak.yaml"
-    USER-SUPPLIED VALUES:
-    global:
-      database:
-        host: 127.0.0.1
-        port: 3306
-        apiserver:
-          dbname: kpanda
-          password: passowrd
-          user: kpanda
-        keycloakx:
-          dbname: keycloak
-          password: passowrd
-          user: keycloak
-      auditDatabase:
-        auditserver:
-          dbname: audit
-          password: passowrd
-          user: audit
-        host: 127.0.0.1
-        port: 3306
-    ```
-
-    修改为：
-
-    ```yaml title="bak.yaml"
-    USER-SUPPLIED VALUES:
-    global:
-      storage:
-        kpanda:
-        - driver: mysql
-          accessType: readwrite
-          dsn: {global.database.apiserver.user}:{global.database.apiserver.password}@tcp({global.database.host}:{global.database.port})/{global.database.apiserver.dbname}?charset=utf8mb4&multiStatements=true&parseTime=true
-        audit:
-        - driver: mysql
-          accessType: readwrite
-          dsn: {global.auditDatabase.auditserver.user}:{global.auditDatabase.auditserver.password}@tcp({global.auditDatabase.host}:{global.auditDatabase.port})/{global.auditDatabase.auditserver.dbname}?charset=utf8mb4&multiStatements=true&parseTime=true
-        keycloak:
-        - driver: mysql
-          accessType: readwrite
-          dsn: {global.database.keycloakx.user}:{global.database.keycloakx.password}@tcp({global.database.host}:{global.database.port})/{global.database.keycloakx.dbname}?charset=utf8mb4
-    ```
-
 === "通过 helm repo 升级"
 
     1. 检查容器管理 helm 仓库是否存在。
@@ -199,7 +130,7 @@
     1. 更新容器管理的 helm 仓库。
 
         ```shell
-        helm repo update kpadna # (1)
+        helm repo update kpanda # (1)
         ```
 
         1. helm 版本过低会导致失败，若失败，请尝试执行 helm update repo
@@ -207,13 +138,13 @@
     1. 选择您想安装的容器管理版本（建议安装最新版本）。
 
         ```shell
-        helm search repo kpadna/kpadna --versions
+        helm search repo kpanda/kpanda --versions
         ```
 
         ```none
-        [root@master ~]# helm search repo kpadna/kpadna --versions
+        [root@master ~]# helm search repo kpanda/kpanda --versions
         NAME                   CHART VERSION  APP VERSION  DESCRIPTION
-        kpadna/kpadna  0.9.0          v0.9.0       A Helm chart for kpadna
+        kpanda/kpanda  0.20.0          v0.20.0       A Helm chart for kpanda
         ...
         ```
 
@@ -222,14 +153,14 @@
         在升级容器管理版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
 
         ```shell
-        helm get values kpadna -n kpadna-system -o yaml > bak.yaml
+        helm get values kpanda -n kpanda-system -o yaml > bak.yaml
         ```
 
-    1. 更新 kpadna crds
+    1. 更新 kpanda crds
 
         ```shell
-        helm pull kpadna/kpadna --version 0.10.0 && tar -zxf kpadna-0.10.0.tgz
-        kubectl apply -f kpadna/crds
+        helm pull kpanda/kpanda --version 0.21.0 && tar -zxf kpanda-0.21.0.tgz
+        kubectl apply -f kpanda/crds
         ```
 
     1. 执行 `helm upgrade`。
@@ -241,11 +172,11 @@
         ```
 
         ```shell
-        helm upgrade kpadna kpadna/kpadna \
-          -n kpadna-system \
+        helm upgrade kpanda kpanda/kpanda \
+          -n kpanda-system \
           -f ./bak.yaml \
           --set global.imageRegistry=$imageRegistry \
-          --version 0.9.0
+          --version 0.21.0
         ```
 
 === "通过 chart 包升级"
@@ -255,10 +186,10 @@
         在升级容器管理版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
 
         ```shell
-        helm get values kpadna -n kpadna-system -o yaml > bak.yaml
+        helm get values kpanda -n k pan da-system -o yaml > bak.yaml
         ```
 
-    1. 更新 kpadna crds
+    1. 更新 kpanda crds
 
         ```shell
         kubectl apply -f ./crds
@@ -273,8 +204,8 @@
         ```
 
         ```shell
-        helm upgrade kpadna . \
-          -n kpadna-system \
+        helm upgrade kpanda . \
+          -n kpanda-system \
           -f ./bak.yaml \
           --set global.imageRegistry=$imageRegistry
         ```
