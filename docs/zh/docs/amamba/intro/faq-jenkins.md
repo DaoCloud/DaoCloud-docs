@@ -13,21 +13,19 @@ error: unexpected error when reading response body. Please retry. Original error
 
 **解决方案**：
 
-在该流水线的 Jenkinsfile 中将部署命令由 `kubectl apply -f` 修改为 `kubectl apply -f . --request-timeout=30m`
+在该流水线的 Jenkinsfile 中将部署命令由 `kubectl apply -f` 修改为 `kubectl apply -f . --request-timeout=30m`。
 
 ## 如何更新内置 Label 的 podTemplate 镜像？
-
-本示例中的 Jenkins 组件部署在 `kpanda-global-cluster` 集群，实际操作中请选择 Jenkins 组件所在的集群。
 
 应用工作台通过 podTemplate 能力声明了 7 个 label：`base`、`maven`、`mavenjdk11`、`go`、`go16`、`node.js` 和 `python`。您可以指定具体的 Agent 标签来使用对应的 podTemplate。
 
 如果内置 podTemplate 中的镜像不满足您的需求，可以通过以下方式替换容器镜像或者添加容器镜像。
 
-1. 首先需要您前往`容器管理` ，在`集群列表` 界面选择`kpanda-global-cluster` 集群，进入详情界面。
+1. 前往容器管理模块，找到 Jenkins 组件所在的集群，点击集群名称。
 
       ![faq-ci2](../images/faq-ci2.png)
 
-2. 在左侧导航栏依次点击`配置与密钥`→`配置项`，进入配置项目列表界面。
+2. 在左侧导航栏依次点击`配置与密钥`->`配置项`。
 
 3. 搜索 `jenkins-casc-config` ，在操作列点击`编辑YAML` 。
 
