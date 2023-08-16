@@ -173,7 +173,8 @@ nav:
               - 身份提供商:
                   - ghippo/user-guide/access-control/idprovider.md
                   - LDAP: ghippo/user-guide/access-control/ldap.md
-                  - OIDC: ghippo/user-guide/access-control/oidc.md                  
+                  - OIDC: ghippo/user-guide/access-control/oidc.md
+              - 接入管理: ghippo/user-guide/access-control/docking.md                       
           - 工作空间与层级:
               - ghippo/user-guide/workspace/ws-folder.md
               - 创建和删除工作空间: ghippo/user-guide/workspace/workspace.md
