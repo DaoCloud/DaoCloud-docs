@@ -10,7 +10,7 @@ Agent 描述了整个`流水线`执行过程或者某个`阶段`的执行环境�
 
 ## 使用内置 Label
 
-应用工作台通过 podTemplate 能力声明了 6 个 label：`base`、`maven`、`mavenjdk11`、`go`、`go16`、`node.js` 和 `python`。您可以指定具体的 Agent 标签来使用对应的 podTemplate。
+应用工作台通过 podTemplate 能力声明了 7 个 label：`base`、`maven`、`mavenjdk11`、`go`、`go16`、`node.js` 和 `python`。您可以指定具体的 Agent 标签来使用对应的 podTemplate。
 
 - 可以在 Jenkinsfile 中通过 `node('go')` 使用 go 的 podTemplate。
 
