@@ -170,6 +170,7 @@ nav:
                   - ghippo/user-guide/access-control/idprovider.md
                   - LDAP: ghippo/user-guide/access-control/ldap.md
                   - OIDC: ghippo/user-guide/access-control/oidc.md
+              - Docking Portal: ghippo/user-guide/access-control/docking.md
           - Workspaces and Folders:
               - ghippo/user-guide/workspace/ws-folder.md
               - Create and Delete Workspace: ghippo/user-guide/workspace/workspace.md
