@@ -537,6 +537,7 @@ nav:
           - Traffic Monitor:
               - mspider/user-guide/traffic-monitor/README.md
               - Traffic Topology: mspider/user-guide/traffic-monitor/conn-topo.md
+              - Monitor Dashboard Metrics: mspider/user-guide/traffic-monitor/monitoring-indicators.md
           - Mesh Cluster:
               - Intro: mspider/user-guide/cluster-management/README.md
               - Add Cluster: mspider/user-guide/cluster-management/join-clus.md
