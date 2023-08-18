@@ -558,6 +558,7 @@ nav:
               - mspider/user-guide/traffic-monitor/README.md
               - 流量拓扑: mspider/user-guide/traffic-monitor/conn-topo.md
               - 监控看板指标说明: mspider/user-guide/traffic-monitor/monitoring-indicators.md
+              - 图表阅读指南: mspider/user-guide/traffic-monitor/indicator-readtips.md
           - 集群纳管:
               - 集群纳管介绍: mspider/user-guide/cluster-management/README.md
               - 添加集群: mspider/user-guide/cluster-management/join-clus.md
