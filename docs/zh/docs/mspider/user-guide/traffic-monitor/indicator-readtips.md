@@ -5,8 +5,6 @@ status: new
 
 # 监控图表阅读指南
 
-## 介绍
-
 服务网格基于 Istio 开源的 Grafana Dashboard，为了每一个服务网格实例自动生成了流量监控看板。
 
 主要根据以下几个维度进行呈现：
@@ -20,7 +18,7 @@ status: new
 
 以性能监控为例，图表中提供了各个指标的监控数据，展示形式主要以数值、图表、表单等来呈现。
 
-![image](../images/indicator-readtips1.png)
+![性能监控](../images/indicator-readtips1.png)
 
 图表上方的搜索条提供了监控看板的一些辅助检索字段，基于看板的不同，可用的检索字段也略有不同。
 
@@ -35,22 +33,22 @@ status: new
 
 点击对应指标图表的标题，可以展开更多的指标操作，其中第一个就是方法查看，可通过键盘 **ESC** 返回。
 
-![image](../images/indicator-readtips2.png)
+![view menu](../images/indicator-readtips2.png)
 
-![image](../images/indicator-readtips3.png)
+![view big](../images/indicator-readtips3.png)
 
 ### 导出指标数据
 
 如果希望查看图表对应的原始数据，可以点击指标图表的标题，然后选择 Inspect > Data，就可以用数据表的形式查看对应的数据。
 
-![image](../images/indicator-readtips4.png)
+![inspect data](../images/indicator-readtips4.png)
 
 此时，我们可以进行数据的导出，支持 CSV 和 Excel 两种格式
 
-![image](../images/indicator-readtips5.png)
+![data](../images/indicator-readtips5.png)
 
 ### 查看指标的计算表达式
 
 如果想要详细的了解改指标的计算公式，可以查看指标图表的 Json 结构体，在其中会给出指标的具体计算方式，操作路径如下：
 
-![image](../images/indicator-readtips6.png)
+![json](../images/indicator-readtips6.png)
