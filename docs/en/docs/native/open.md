@@ -269,6 +269,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: Contour's RBAC access to leader election resources has been transferred to the namespace role; container images are now only published on the GitHub Container Registry (GHCR); new `contour gateway-provisioner` command and deployment list for dynamic Configure Gateways.
 
+- [CoreDNS DNS Server v1.11.0 Released (CNCF Project)](https://github.com/coredns/coredns/releases/tag/v1.11.0)
+
+    Release features: support for accepting DNS connections via QUIC protocol (doq), support for rewriting the target of CNAME records, removal of support for Endpoint and Endpointslice v1beta in kubernetes plugin.
+
 - [Cortex Prometheus long-term storage solution v1.14 released](https://github.com/cortexproject/cortex/releases/tag/v1.14.0)
 
      Major new features in this version: Removed support for block storage, experimental support for vertical query sharding, enabled PromQL @modifier, can use OTel collector to send trace information to multiple destinations, multiple performance improvements and issues repair.
@@ -301,6 +305,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Crossplane cloud-native control plane build framework completes fuzz testing security audit](https://mp.weixin.qq.com/s/BJXg8CCjaHFK29hxWe9W-g)
 
     The fuzzing test found 4 issues. One of the issues was that allowing a partially untrusted user to control the amount of memory allocated by crossplane-runtime in a certain state could lead to a DoS attack due to resource exhaustion. The fixes for this vulnerability are [crossplane-runtime 0.19.2](https://github.com/crossplane/crossplane-runtime/releases/tag/v0.19.2) and [Crossplane 1.11.2](https://github.com/crossplane/crossplane/releases/tag/v1.11.2) have been released.
+
+- [CubeFS Distributed Storage System v3.3.0 Released (CNCF Project)](https://github.com/cubefs/cubefs/releases/tag/v3.3.0)
+
+    Features: add support for ObjectNode storage bucket policies, add support for cross-domain resource sharing (CORS) for ObjectNode, support for atomicity in rename, delete, create, etc., support for configuring and dynamically adjusting MP (Multiplexing) step size, add support for UID space limit, support for autofs mounting. autofs mount feature.
 
 - [CubeFS distributed storage system v3.1.0 release (CNCF project)](https://github.com/cubefs/cubefs/releases/tag/v3.1.0)
 
@@ -629,6 +637,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: support containerd shimv2 log plugin, support virtio-block multi-queue, support QEMU sandbox function, support containerd core scheduling, kata-runtime iptables subcommand can operate iptables in guest, and support directly allocated volumes.
 
+- [Katalyst Cloud Native Resource Management System v0.3.0 released](https://github.com/kubewharf/katalyst-core/releases/tag/v0.3.0)
+
+    Version features: KCNR API increases the ability to request, schedule, and allocate network bandwidth resources, and provides network bandwidth isolation capability in combination with EDT/TC and other speed-limiting schemes; new task execution framework; new asynchronous execution framework; algorithm realizes multi-CPU Region mode; mixed-sections capability enhancement.
+
 - [Katalyst: byte-hopping open source cloud-native resource control system](https://mp.weixin.qq.com/s/A5_1h3RLmDNazmAddbhYaA)
 
     The main features of [Katalyst](https://github.com/kubewharf/katalyst-core) include: fully incubated in the mega-mixed-part practice and synchronously take over the resource control link in the byte service cloud-native process; equipped with ByteBeat's internal Kubernetes distribution Enhanced Kubernetes is synchronized with open source; the system is built based on plug-in model, and users can customize various scheduling, control, policy, data and other module plug-ins on Katalyst Framework.
@@ -782,6 +794,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Kubernetes Cluster API v1.4.0 Released](https://github.com/kubernetes-sigs/cluster-api/releases/tag/v1.4.0)
 
     Release features: support for automatic failback in case of KCP control plane deployment failure, support for synchronizing certain tags from Machine to Node, propagation of tags, annotations, etc. from ClusterClass to KubeadmControlPlane/MachineDeployment and Machine, support for Variable discovery in ClusterClass and Managed Topologies.
+
+- [Kubernetes v1.28 release](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.28.md)
+
+    Release features: support for deviation changes between control plane and node versions, non-graceful shutdown of nodes GA, CRD Common Expression Language (CEL)-based validation rules Beta, Kube APIServer Hybrid Version Interoperability Proxy Alpha, new Common Control Plane Repository Alpha, Device Plugin APIs add support for CDI-standard devices Alpha, native support for Sidecar containers Alpha, node Swap memory support Beta, new support for Windows nodes Beta. Alpha, Native Support for Sidecar Containers Alpha, Node Swap Memory Support Beta, Added Support for Windows Nodes Beta.
 
 - [Kubernetes v1.27.0 released](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.27.md#changelog-since-v1260)
 
@@ -1463,6 +1479,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Vitess Cloud Native Database System v14.0.0 release (CNCF project)](https://github.com/vitessio/vitess/releases/tag/v14.0.0)
 
      The main new features of this version: officially support online DDL, Gen4 becomes the default planner, add cluster management API and UI - VTAdmin (Beta), add a branch of Orchestrator running as a Vitess component - VTOrc (Beta), support cross Aggregation query of multiple shards and keyspaces.
+
+- [Volcano Cloud Native Bulk Compute Project v1.8.0 released (CNCF project)](https://github.com/volcano-sh/volcano/releases/tag/v1.8.0)
+
+    Release features: add JobFlow support for lightweight workflow orchestration, support for vGPU scheduling and isolation, support for GPU and user-defined resource preemption, support for using ElasticSearch monitoring system for node load-aware scheduling and re-scheduling, add switches to enable and disable Kubernetes default scheduler plug-ins, provide device plug-in exception fault tolerance mechanism for device plug-in exceptions, and adding Helm Chart to Volcano.
 
 - [Volcano Cloud Native Batch Computing Project v1.7.0 Released (CNCF Project)](https://github.com/volcano-sh/volcano/releases/tag/v1.7.0)
 

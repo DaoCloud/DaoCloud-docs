@@ -269,6 +269,10 @@
 
     该版本主要新特性：Contour 访问 leader election 资源的 RBAC 转移至命名空间角色；容器镜像现在只在 GitHub 容器注册中心（GHCR）上发布；新增 `contour gateway-provisioner` 命令和部署清单，用于动态配置 Gateways。
 
+- [CoreDNS DNS 服务器 v1.11.0 发布 （CNCF 项目）](https://github.com/coredns/coredns/releases/tag/v1.11.0)
+
+    版本特性：支持通过 QUIC 协议（doq）接受 DNS 连接、支持对 CNAME 记录的目标进行重写、kubernetes 插件中移除对 Endpoint 和 Endpointslice v1beta 的支持。
+
 - [Cortex Prometheus 长期存储方案 v1.14 发布](https://github.com/cortexproject/cortex/releases/tag/v1.14.0)
 
     该版本主要新特性：移除对块存储的支持、实验性地支持垂直查询分片、启用 PromQL @修改器、可以使用 OTel 收集器将追踪信息发送到多个目的地、多项性能改进和问题修复。
@@ -301,6 +305,10 @@
 - [Crossplane 云原生控制平面构建框架完成模糊测试安全审计](https://mp.weixin.qq.com/s/BJXg8CCjaHFK29hxWe9W-g)
 
     此次模糊测试共发现 4 个问题。其中一个问题是：允许部分不受信任的用户控制 crossplane-runtime 在某个状态下分配的内存量，这可能会造成由于资源耗尽而导致 DoS 攻击。该漏洞的修复版本 [crossplane-runtime 0.19.2](https://github.com/crossplane/crossplane-runtime/releases/tag/v0.19.2) 和 [Crossplane 1.11.2](https://github.com/crossplane/crossplane/releases/tag/v1.11.2) 已经发布。
+
+- [CubeFS 分布式存储系统 v3.3.0 发布（CNCF 项目）](https://github.com/cubefs/cubefs/releases/tag/v3.3.0)
+
+    版本特性：添加对 ObjectNode 存储桶策略的支持、为 ObjectNode 添加跨域资源共享（CORS）支持、支持在执行重命名、删除、创建等操作时保证原子性、支持配置和动态调整 MP（多路复，Multiplexing）步长、添加对 UID 空间限制的支持、支持 autofs 挂载功能。
 
 - [CubeFS 分布式存储系统 v3.1.0 发布（CNCF 项目）](https://github.com/cubefs/cubefs/releases/tag/v3.1.0)  
 
@@ -633,6 +641,10 @@
 
     该版本主要新特性：支持 containerd shimv2 日志插件、支持 virtio-block 多队列、支持 QEMU 沙箱功能、支持 containerd 的核心调度、kata-runtime iptables 子命令可在 guest 中操作 iptables、支持直接分配的卷。
 
+- [Katalyst 云原生资源管控系统 v0.3.0 发布](https://github.com/kubewharf/katalyst-core/releases/tag/v0.3.0)
+
+    版本特性：KCNR API 增加网络带宽资源的申请、调度、分配能力，并结合 EDT/TC 等限速方案提供网络带宽隔离能力；新增任务执行框架；新增异步执行框架；算法实现多 CPU Region 模式；混部能力增强。
+
 - [Katalyst：字节跳动开源的云原生资源管控系统](https://mp.weixin.qq.com/s/A5_1h3RLmDNazmAddbhYaA)
 
     [Katalyst](https://github.com/kubewharf/katalyst-core) 的主要特点包括：完全孵化于超大规模混部实践，并在字节服务云原生化的进程中同步接管资源管控链路；搭载字节跳动内部的 Kubernetes 发行版 Enhanced Kubernetes 同步开源；系统基于插件化模式构建，用户可以在 Katalyst Framework 之上自定制各类调度、管控、策略、数据等模块插件等。
@@ -786,6 +798,10 @@
 - [Kubernetes Cluster API v1.4.0 发布](https://github.com/kubernetes-sigs/cluster-api/releases/tag/v1.4.0)
 
     版本特性：支持在 KCP 控制平面部署失败时自动进行故障恢复、支持将某些标签从 Machine 同步到 Node、以将标签、注释等信息从 ClusterClass 传播到 KubeadmControlPlane/MachineDeployment 和 Machine 中、支持 ClusterClass 和 Managed Topologies 中的变量发现。
+
+- [Kubernetes v1.28 发布](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.28.md)
+
+    版本特性：支持控制平面和节点版本之间的偏差变化、节点非优雅关闭功能 GA、CRD 基于通用表达式语言 (CEL) 的验证规则 Beta、Kube APIServer 混合版本互操作代理 Alpha、 新增通用控制平面存储库 Alpha、设备插件 API 添加对 CDI 标准设备的支持 Alpha、原生支持 Sidecar 容器 Alpha、节点 Swap 内存支持 Beta、新增对 Windows 节点的支持 Beta。
 
 - [Kubernetes v1.27.0 发布](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.27.md#changelog-since-v1260)
 
@@ -1461,6 +1477,10 @@
 - [Vitess 云原生数据库系统 v14.0.0 发布（CNCF 项目）](https://github.com/vitessio/vitess/releases/tag/v14.0.0)  
 
     该版本主要新特性：正式支持 online DDL、Gen4 成为默认的 planner、新增集群管理 API 和 UI——VTAdmin（Beta）、新增一个作为 Vitess 组件运行的 Orchestrator 分支——VTOrc（Beta）、支持跨多个 shard 和 keyspace 的聚合查询。
+
+- [Volcano 云原生批量计算项目 v1.8.0 发布（CNCF 项目）](https://github.com/volcano-sh/volcano/releases/tag/v1.8.0)
+
+    版本特性：添加 JobFlow 支持轻量级工作流编排、支持 vGPU 调度和隔离、支持 GPU 和用户定义资源的抢占能力、支持将 ElasticSearch 监控系统用于节点负载感知的调度和重新调度、添加 Kubernetes 默认调度器插件的启用和禁用开关、提供设备插件异常容错机制、为 Volcano 添加 Helm Chart。
 
 - [Volcano 云原生批量计算项目 v1.7.0 发布（CNCF 项目）](https://github.com/volcano-sh/volcano/releases/tag/v1.7.0)
 

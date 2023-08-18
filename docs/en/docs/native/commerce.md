@@ -393,8 +393,11 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
      Bridging the gap between black-box data for performance testing and white-box data inside the system.
      The integration allows correlating k6's test run data with server-side trace data for root cause analysis; aggregates the collected trace data to generate real-time metrics, helping users narrow the search space and quickly spot anomalous behavior.
 
-### H, I
+- [Guance Observable Solutions Guance Product Updates](https://docs.guance.com/release-notes/#2023-8-10)
 
+    Updates: New waterfall chart mode on Span list page, new timed report function, new service management for viewing performance and business data of different services in the current workspace and all correlation analysis, support for directly viewing context logs on log detail page, new table of upstream and downstream call relationships of the current service, new conversion of detection metrics to PromQL queries, new Kubernetes Event Component.
+
+### H, I
 
 - [Harness Software Delivery Platform Harness Platform July Product Update](https://www.harness.io/blog/july-2023-product-updates)
 
@@ -554,6 +557,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 ### Q
 
+- [QingCloud Releases KubeSphere Enterprise Edition 4.0, a Distributed Multi-Tenant Cloud Native Operating System](https://mp.weixin.qq.com/s/v-n4ztqQG8p2Tt9aPfQiuA)
+
+    KubeSphere Enterprise Edition 4.0 is based on the new cloud-native scalable open architecture, KubeSphere LuBan, a distributed cloud-native scalable open architecture that provides hot-swappable microkernels for extension components. 4.0 features Simple and lightweight system architecture, easy to play with 2 cores and 4G; it also supports the integration of KubeSphere functional components or any third-party business components to realize plug-and-play.
+
 - [QingCloud Kubernetes Cluster Patrol SaaS Service Officially Released](https://mp.weixin.qq.com/s/Xx82SiyMGtBNgjjk34glqw)
 
     Kubernetes Cluster Inspection SaaS service helps users discover container vulnerabilities and exposures (CVE) in cluster components, services, and ports, analyze operational risks in Kubernetes, and push reports by instantly or periodically checking whether the configuration of cluster nodes and components in Kubernetes multicloud environments comply with best practices, thus ensuring business The ACK helps users identify container vulnerabilities and exposures (CVE) in cluster components, services, and ports, analyze operational risks in Kubernetes, and push reports to ensure continuous and stable business operation and reduce enterprise risks as early as possible.
@@ -608,6 +615,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Rainbond Cloud Native multicloud Application Management Platform Rainbond Enterprise Package Released](https://mp.weixin.qq.com/s/pmCwyFbcCwXxcO0-rVM5dw)
 
     Rainbond Enterprise Package has a global observable center for monitoring, debugging, and analyzing infrastructure and application services running in Kubernetes clusters and the rainbond platform. In addition, it also provides solutions for IT business system migration to the localized Cintron environment, supports full-link grayscale release and cluster patrol, built-in WAF firewall and operation audit features, supports private deployment of application stores, etc.
+
+- [Red Hat container image repository Red Hat Quay v3.9.0 released](https://cloud.redhat.com/blog/red-hat-quay-3.9-is-generally-available)
+
+    Updates: Increased coverage of container image vulnerability reports, audit log integration with external log management system Splunk, provides a scalable way to track storage consumption for large numbers of tenants in the registry, automated offsite backup capabilities.
 
 - [Red Hat Service Mesh OpenShift Service Mesh 2.4 Released](https://cloud.redhat.com/blog/introducing-openshift-service-mesh-2.4)
 
