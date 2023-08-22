@@ -16,6 +16,12 @@
 
     ![fixedippool](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/fixedippool.jpg)
 
+## 工作负载使用默认 IP 池
+
+默认 IP 池是预先定义的、具有特定IP地址范围的IP资源集合。管理员需要手动设置和配置默认 IP 池，由于IP地址是预先分配的，所以这种方式更具确定性。这些 IP 地址可以为特定的工作负载或应用进行分配。
+
+**适用场景**：此方式适用于 IP 强管控场景，如安全性要求高或需要与外部系统（如防火墙）进行配合的场景。操作方式可参考：[创建子网及 IP 池](createpool.md) 及[工作负载使用 IP 池](usage.md)。
+
 ## IP 池的节点亲和性
 
 **适用场景**：
