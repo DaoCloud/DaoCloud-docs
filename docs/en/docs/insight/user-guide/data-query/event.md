@@ -31,5 +31,11 @@ Additionally, you can click the refresh icon to update the current event list wh
 
 ![list](../../images/event02.png)
 
+In the operation column on the right, clicking the icon allows you to view the history of a specific event.
+
+![history](../../images/event03.png)
+
+## Reference
+
 For detailed meanings of the built-in Events in the system, refer to the
 [Kubernetes API Event List](https://kubernetes.io/docs/reference/kubernetes-api/cluster-resources/event-v1/).
