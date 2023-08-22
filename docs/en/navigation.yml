@@ -897,6 +897,7 @@ nav:
               - Download Application Backup: download/modules/kcoral.md
               - Download Insight: download/modules/insight.md
               - Download Spidernet: download/modules/spidernet.md
+              - Download Container Registry: download/modules/kangaroo.md
               - Download Operation Management: download/modules/gmagpie.md
   - Free Trial:
       - Free Trial: trial/index.md
