@@ -945,6 +945,7 @@ nav:
               - 下载应用备份: download/modules/kcoral.md
               - 下载 Insight: download/modules/insight.md
               - 下载网络 Spidernet: download/modules/spidernet.md
+              - 下载镜像仓库: download/modules/kangaroo.md
               - 下载运营管理: download/modules/gmagpie.md
   - 免费体验:
       - 体验社区版: trial/index.md
