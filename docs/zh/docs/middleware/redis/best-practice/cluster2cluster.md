@@ -96,11 +96,12 @@ Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 
 #### 2. 创建 Redis-shake
 
-a. 打开`应用工作台`，选择`向导`-`基于容器镜像`，创建一个应用 `Redis-shake-sync-0`：
+1. 打开`应用工作台`，选择`向导`-`基于容器镜像`，创建一个应用 `Redis-shake-sync-0`：
 
     ![sync](../images/sync07.png)
 
-    应用各项配置如下：
+2. 参考如下说明填写应用配置。
+    
     - 应用所属集群、命名空间需与 Redis 实例一致；
     - 镜像地址：
 
@@ -134,7 +135,7 @@ a. 打开`应用工作台`，选择`向导`-`基于容器镜像`，创建一个�
 
        ![sync](../images/sync10.png)
 
-b. 点击`确定`，完成 Redis-shake 创建。
+3. 点击`确定`，完成 Redis-shake 创建。
 
 重复执行以上操作，分别为其他两个 Leader Pod 创建 `Redis-shake-sync-1`，`Redis-shake-sync-2`。
 
