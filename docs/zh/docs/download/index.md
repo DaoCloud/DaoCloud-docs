@@ -43,7 +43,7 @@ DCE 5.0 包含的众多子模块可以单独下载，按需对每个模块进行
 
 | 模块     | 文件大小 | 下载                                         | 更新日期   |
 | -------- | -------- | -------------------------------------------- | ---------- |
-| 全局管理 | 440 MB   | [:arrow_right: 下载页](./modules/ghippo.md)  | 2023-07-28 |
+| 全局管理 | 440 MB   | [:arrow_right: 下载页](./modules/ghippo.md)  | 2023-08-22 |
 | 可观测性 | 2.41 GB  | [:arrow_right: 下载页](./modules/insight.md) | 2022-12-30 |
 | 网络 spidernet | 55.47 MB | [:arrow_right: 下载页](./modules/spidernet.md) | 2023-04-26 |
 | 运营管理 | 56.90 MB | [:arrow_right: 下载页](./modules/gmagpie.md) | 2023-07-01 |
