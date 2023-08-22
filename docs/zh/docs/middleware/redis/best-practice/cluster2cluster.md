@@ -31,9 +31,10 @@ Redis-shake 支持集群模式实例间的数据同步与迁移能力，现以�
 
 1. 进入`容器管理` - `源端集群` - `有状态工作负载`：选择工作负载 `redis-a-leader`，为其创建一个服务，命名为 `redis-a-leader-svc-0`，访问类型为 `Nodeport`，容器端口和服务端口均为 6379。
 
-![svc](../images/sync03.png)
+    ![svc](../images/sync03.png)
 
 2. 更新该服务。并确定工作负载选择器包含以下标签
+   
     ```shell
     app.kubernetes.io/component: redis
     app.kubernetes.io/managed-by: redis-operator
@@ -49,6 +50,7 @@ Redis-shake 支持集群模式实例间的数据同步与迁移能力，现以�
 重试执行以上操作，为 `redis-a-leader-1` `redis-a-leader-2` 分别创建服务。
 
 ### Redis-shake 部署
+
 Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上，因此，本例中为了实现数据同步，需要在目标端部署redis-shake，配置方式如下。
 
 在集群模式下，需要为源端 Redis 实例 cluster-a 的每一个 Leader Pod 部署独立的 Redis-shake。以 redis-a-leader-0  为例，创建 Redis-shake-sync-0：
@@ -56,7 +58,6 @@ Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 #### 1. 创建配置项
 
 在`容器管理` - `{目标端集群}` - `配置与存储` - `配置项`为 Redis-shake 实例创建配置项 `redis-sync-0`。导入文件 `sync.toml`（文件内容见附录），并注意需要修改以下内容：
- 
 
 ![conf](../images/sync05.png)
 
@@ -65,9 +66,8 @@ Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上�
     ```shell
     address = "10.233.109.145:6379"
     ```
-
+    
 - 源端实例的访问密码：可在【中间件】实例的概览页获取该信息：
-
 
     ```shell
     password = "3wPxzWffdn" # keep empty if no authentication is required
@@ -140,8 +140,6 @@ b. 点击`确定`，完成 Redis-shake 创建。
 
 完成 Redis-shake 的创建后，实际就已经开始 Redis 实例间的同步，此时可通过 `redis-cli` 工具验证同步，这里就不做赘述。
 
-
-
 ## 数据恢复
 
 当源端实例恢复上线后，首先需要从目标端实例恢复增量数据，因此需要在 **源端集群** 再次部署 3 个 redis-shake 实例，实现 **实例 B >> 实例 A** 的数据回传，此处配置方法与数据同步过程类似，执行 **反方向** 配置部署即可，完成 redis-shake 创建后，即自动开始数据恢复。
@@ -155,5 +153,3 @@ b. 点击`确定`，完成 Redis-shake 创建。
 如需复原初始的主从同步关系 **实例 A >> 实例 B**，需在`容器管理`中停止源端集群中的 3 个 Redis-shake-recovery 实例，重新启动目标端集群中的 3 个 Redis-shake-sync 实例，即可重建初始主从关系。
 
 ![sync](../images/sync11.png)
-
-
