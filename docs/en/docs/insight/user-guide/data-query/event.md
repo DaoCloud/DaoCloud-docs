@@ -30,3 +30,6 @@ By clicking on the ⚙️ icon on the right side, you can customize the displaye
 Additionally, you can click the refresh icon to update the current event list when needed.
 
 ![list](../../images/event02.png)
+
+For detailed meanings of the built-in Events in the system, refer to the
+[Kubernetes API Event List](https://kubernetes.io/docs/reference/kubernetes-api/cluster-resources/event-v1/).
