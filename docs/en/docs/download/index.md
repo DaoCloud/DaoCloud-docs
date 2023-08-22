@@ -49,6 +49,7 @@ The numerous modules included in DCE 5.0 can be downloaded separately to upgrade
 | Backup and Restore    | 59.29 MB  | [:arrow_right: Download](./modules/kcoral.md)    | 2023-08-08  |
 | Observability         | 2.64 GB   | [:arrow_right: Download](./modules/insight.md)   | 2023-08-04  |
 | Network Module        | 55.47 MB  | [:arrow_right: Download](./modules/spidernet.md) | 2023-04-26  |
+| Container Registry    | 293.24 MB | [:arrow_right: Download](./modules/kangaroo.md)  | 2023-08-22  |
 | Operations Management | 56.90 MB  | [:arrow_right: Download](./modules/gmagpie.md)   | 2023-08-02  |
 
 !!! note
