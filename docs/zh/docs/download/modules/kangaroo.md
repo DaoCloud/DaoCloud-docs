@@ -13,13 +13,13 @@
 在下载离线安装包和校验文件的目录，执行以下命令校验完整性：
 
 ```sh
-echo "$(cat kangaroo_v0.10.0_amd64_checksum.sha512sum)" | sha512sum -c
+echo "$(cat kangaroo_0.10.0_amd64_checksum.sha512sum)" | sha512sum -c
 ```
 
 校验成功后打印结果类似于：
 
 ```none
-kangaroo_v0.10.0_amd64.tar: ok
+kangaroo_0.10.0_amd64.tar: ok
 ```
 
 ## 安装
