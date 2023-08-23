@@ -26,7 +26,12 @@ spec:
   ...
 ```
 
-创建 `LoadBalancer Service`	,详情请参考：[创建服务(Service)](../../../kpanda/user-guide/services-routes/create-services.md)![metallb ip pool](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/metallb ip pool.jpg)
+创建 `LoadBalancer Service`	,详情请参考：[创建服务(Service)](../../../kpanda/user-guide/services-routes/create-services.md)
+
+`MetalLB IP 池`：部署 MetalLB 时设置的 IP 池，其中的 IP 为真实可用的物理 IP 地址。
+`负载均衡 IP`: 负载均衡 IP 为 IP 池中随机分配或手动指定 地址，用于对外暴露服务。
+
+![metallb ip pool](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/metallb ip pool.jpg)
 
 ## 指定 IP 地址
 
