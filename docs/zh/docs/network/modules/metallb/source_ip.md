@@ -4,6 +4,8 @@
 
 通过 Metallb ARP 模式，用户可以在`全局管理`—>`审计日志`中查看操作者的真实 IP，而不是被 SNAT 后的 IP 地址。主要的关键步骤是设置 Service 的 `spec.externalTrafficPolicy` 为 `Local` 模式。
 
+此方式同样适配 Istio 高可用模式下，获取客户端源 IP 。
+
 ## 操作步骤
 
 1. 配置 Metallb 宣告上述节点作为 LB IPs 的下一跳。
