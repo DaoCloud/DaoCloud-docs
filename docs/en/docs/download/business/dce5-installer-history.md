@@ -1,6 +1,6 @@
-# DaoCloud Enterprise 5.0 commercial historical versions
+# DCE 5.0 Enterprise History
 
-## Enterprise Package
+## DCE 5.0 Enterprise
 
 | File Name | Version | Architecture | File Size | Downloads | Date Updated |
 | ------- | --- | ---- | ------ | --- | ------- |

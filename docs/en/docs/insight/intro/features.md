@@ -9,7 +9,7 @@ This page lists the features supported by Insight.
 
 ## Community Package - Observability
 
-DCE 5.0 Community Package provides the following observable features.
+DCE Community provides the following observable features.
 
 | Category | Subcategory | Description |
 | -------- | ----------------------------------------- --------- | ---------------------------------------- --------- |

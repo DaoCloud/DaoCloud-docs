@@ -1,6 +1,6 @@
-# DCE 5.0 Community Package v0.3.27
+# DCE Community v0.3.27
 
-This page can download the offline installation package and verification file of DCE 5.0 Community Package.
+This page can download the offline installation package and verification file of DCE Community.
 
 ## Download
 
@@ -36,7 +36,7 @@ After successful installation, please [apply for free community experience](../.
 
 ## Modules
 
-DCE 5.0 Community Package includes the following modules by default:
+DCE Community includes the following modules by default:
 
 | Modules | Introduction | What's New |
 | -------- | ----------------------------------------- ------------------------- | ------------------------ ----------------------------------------- |

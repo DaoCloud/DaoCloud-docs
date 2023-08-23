@@ -1,4 +1,4 @@
-# DCE 5.0 Community Package Versions
+# DCE Community Versions
 
 ## Community Package
 

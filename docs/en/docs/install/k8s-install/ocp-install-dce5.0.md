@@ -1,4 +1,4 @@
-# Install DCE 5.0 Commercial on OpenShift OCP
+# Install DCE 5.0 Enterprise on OpenShift OCP
 
 This page describes how to install DCE 5.0 on OCP.
 

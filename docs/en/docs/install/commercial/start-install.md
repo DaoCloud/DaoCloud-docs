@@ -1,4 +1,4 @@
-# Install DCE 5.0 commercial offline
+# Install DCE 5.0 Enterprise offline
 
 Please make sure you read and understand [Deployment Requirements](deploy-requirements.md), [Deployment Architecture](deploy-arch.md), [Preparation](prepare.md) before installation
 
@@ -95,7 +95,7 @@ The cluster configuration file is located in the `offline/sample` directory of t
         - -dEnable debug mode
         - For more commands, please use --help query
 
-1. After the installation is complete, the command line will prompt that the installation is successful. congratulations! Now you can use the default account and password (admin/changeme) to explore the new DCE 5.0 through the URL prompted on the screen!
+1. After the installation is complete, the command line will prompt that the installation is successful. Congratulations! Now you can use the default account and password (admin/changeme) to explore the new DCE 5.0 through the URL prompted on the screen!
 
     ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
 
@@ -103,4 +103,4 @@ The cluster configuration file is located in the `offline/sample` directory of t
 
         Please record the prompted URL for your next visit.
 
-1. After successfully installing DCE 5.0 commercial version, please contact us for authorization: email info@daocloud.io or call 400 002 6898.
+1. After successfully installing DCE 5.0 Enterprise, please contact us for authorization: email info@daocloud.io or call 400 002 6898.

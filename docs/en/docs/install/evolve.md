@@ -1,12 +1,12 @@
-# Upgrade Standard Package to Platinum Package
+# Upgrade DCE 5.0 Standard to Platinum
 
-DCE 5.0 supports multiple versions, and all versions except the Community Edition are commercial editions. This article demonstrates how to upgrade from the Standard Edition to the Platinum Edition.
+DCE 5.0 supports multiple versions, and all versions except DCE Community are DCE 5.0 Enterprise. This article demonstrates how to upgrade from DCE 5.0 Standard to DCE 5.0 Platinum.
 
 ![Modules](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/dce-modules04.jpg)
 
 ## Prerequisites
 
-- You need to have a cluster environment of DCE 5.0, refer to [Offline Deployment of Commercial Edition](commercial/start-install.md)
+- You need to have a cluster environment of DCE 5.0, refer to [Offline Deployment of DCE 5.0 Enterprise](commercial/start-install.md)
 - Ensure that your bootstrap machine is still alive, and the corresponding offline package of the current environment is still available. Otherwise, you need to redownload it.
 
 ## Steps

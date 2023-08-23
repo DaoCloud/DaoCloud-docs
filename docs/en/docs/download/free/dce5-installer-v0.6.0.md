@@ -2,9 +2,9 @@
 date: 2023-04-07
 ---
 
-# DCE 5.0 Community Package v0.6.0
+# DCE Community v0.6.0
 
-This page can download the offline installation package and verification file of DCE 5.0 Community Package.
+This page can download the offline installation package and verification file of DCE Community.
 
 ## Download
 
@@ -70,7 +70,7 @@ After successfully verifying the offline package,
 
 ## Modules
 
-DCE 5.0 Community Package includes the following modules by default:
+DCE Community includes the following modules by default:
 
 | Modules | Introduction | What's New |
 | -------- | ----------------------------------------- ------------------------- | ------------------------ ------------------------------------- |

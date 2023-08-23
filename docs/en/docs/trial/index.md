@@ -70,7 +70,7 @@ If you have limited network access, you can choose to perform an offline install
 
 ## <font color="green"><strong>2nd</strong> Apply for a License Key</font>
 
-1. Click [here to apply for a free "DCE 5.0 Community Edition" license key](https://qingflow.com/f/58604bf8). The license key will be sent to your email.
+1. Click [here to apply for a free "DCE Community" license key](https://qingflow.com/f/58604bf8). The license key will be sent to your email.
    (Some email providers may intercept the email containing the license key. If you do not receive it after a long time, please check your spam folder).
 
     ![check mail](./images/license01.png)

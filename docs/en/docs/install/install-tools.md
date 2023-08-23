@@ -2,8 +2,8 @@
 
 Before installing DCE 5.0, you need to install some dependencies.
 
-- For the Community Package, install the dependencies on the K8s Master node.
-- For the Commercial Package, install the dependencies on the [Ignition Node](./commercial/deploy-arch.md).
+- For DCE Community, install the dependencies on the K8s Master node.
+- For DCE 5.0 Enterprise, install the dependencies on the [Ignition Node](./commercial/deploy-arch.md).
 
 !!! note
 
@@ -36,13 +36,13 @@ Before installing DCE 5.0, you need to install some dependencies.
 
 2. Start the online installation of prerequisites.
 
-    - For the Community Package:
+    - For DCE Community:
 
         ```bash
         bash install_prerequisite_${VERSION}.sh online community
         ```
 
-    - For the Commercial Package:
+    - For DCE 5.0 Enterprise:
 
         ```bash
         bash install_prerequisite_${VERSION}.sh online full
@@ -73,7 +73,7 @@ Offline installation means that the target host is in an offline state and canno
 
 3. Perform the offline installation.
 
-    - For the Community Package:
+    - For DCE Community:
 
         ```bash
         export BINARY_TAR=prerequisite_${VERSION}_amd64.tar.gz
@@ -81,7 +81,7 @@ Offline installation means that the target host is in an offline state and canno
         ./install_prerequisite_${VERSION}.sh offline community
         ```
 
-    - For the Commercial Package:
+    - For DCE 5.0 Enterprise:
 
         ```bash
         export BINARY_TAR=prerequisite_${VERSION}_amd64.tar.gz
@@ -89,4 +89,4 @@ Offline installation means that the target host is in an offline state and canno
         ./install_prerequisite_${VERSION}.sh offline community
         ```
 
-You can now proceed to install DCE 5.0 [Community Package](community/resources.md) or [Commercial Package](commercial/deploy-requirements.md).
+You can now proceed to install DCE 5.0 [Community](community/resources.md) or [Enterprise](commercial/deploy-requirements.md).

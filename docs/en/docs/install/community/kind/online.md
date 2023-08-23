@@ -1,6 +1,6 @@
 # Install Community on kind Cluster Online
 
-This page explains how to install DCE 5.0 Community package on a kind cluster online.
+This page explains how to install DCE Community package on a kind cluster online.
 
 !!! note
 
@@ -144,7 +144,7 @@ precheck pass...
      fire-kind-cluster
      ```
 
-## Install DCE 5.0 Community package
+## Install DCE Community package
 
 1. [Install dependencies](../../install-tools.md).
 
@@ -195,7 +195,7 @@ precheck pass...
 !!! success
 
      - Keep the DCE 5.0 URL for the next visit.
-     - As DCE 5.0 Community package is installed, please [apply for a free license](../../../dce/license0.md).
+     - As DCE Community package is installed, please [apply for a free license](../../../dce/license0.md).
      - If you have any problems about DCE 5.0, please scan the QR code and communicate with the developer freely:
     
         ![Community Package Exchange Group](https://docs.daocloud.io/daocloud-docs-images/docs/images/assist.png)
