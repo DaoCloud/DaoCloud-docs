@@ -26,7 +26,7 @@ spec:
   ...
 ```
 
-创建 `LoadBalancer Service`	,详情请参考：[创建服务(Service)](../../../kpanda/user-guide/services-routes/create-services.md)![metallb ip pool](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/metallb ip pool.jpg)
+创建 `LoadBalancer Service`	,详情请参考：[创建服务(Service)](../../../kpanda/user-guide/services-routes/create-services.md)![metallb ip pool](../../images/metallb-use1.png)
 
 ## 指定 IP 地址
 
@@ -46,7 +46,7 @@ spec:
   ...
 ```
 
-![specify ip](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/metalLB ip pool02.jpg)
+![specify ip](../../images/metallb-use2.png)
 
 ## 共享 IP 地址
 
