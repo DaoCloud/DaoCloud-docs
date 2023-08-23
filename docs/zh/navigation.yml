@@ -338,6 +338,9 @@ nav:
               - 运行流水线:
                   - 触发器触发: amamba/user-guide/pipeline/run/trigger.md
                   - 手动执行: amamba/user-guide/pipeline/run/manual.md
+              - 查看流水线:
+                  - 查看流水线详情: amamba/user-guide/pipeline/view/view-pipeline.md
+                  - 查看流水线运行记录详情: amamba/user-guide/pipeline/view/view-run.md
               - 流水线配置参数:
                   - 流水线中的概念: amamba/user-guide/pipeline/config/concept.md
                   - 图形化任务模板参数: amamba/user-guide/pipeline/config/step.md
@@ -770,8 +773,9 @@ nav:
                   - 更新 Redis 实例: middleware/redis/user-guide/update.md
                   - 删除 Redis 实例: middleware/redis/user-guide/delete.md
                   - 查看 Redis 日志: middleware/redis/user-guide/logs.md
-              - 最佳实践:
-                  - Redis 容灾部署方案: middleware/redis/best-practice/disaster-tolerance.md
+              - 跨集群数据同步: 
+                  - middleware/redis/best-practice/disaster-tolerance.md
+                  - 集群模式 VS 集群模式: middleware/redis/best-practice/cluster2cluster.md
           - PostgreSQL 数据库:
               - 介绍:
                   - 什么是 PostgreSQL: middleware/postgresql/intro/index.md
@@ -944,6 +948,7 @@ nav:
               - 下载应用备份: download/modules/kcoral.md
               - 下载 Insight: download/modules/insight.md
               - 下载网络 Spidernet: download/modules/spidernet.md
+              - 下载镜像仓库: download/modules/kangaroo.md
               - 下载运营管理: download/modules/gmagpie.md
   - 免费体验:
       - 体验社区版: trial/index.md

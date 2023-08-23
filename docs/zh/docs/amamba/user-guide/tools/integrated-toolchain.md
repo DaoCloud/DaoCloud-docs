@@ -11,6 +11,7 @@ DevOps 工具链是一组工具，使 DevOps 团队能够在整个产品生命�
 | GitLab     | 集成 GitLab 仓库后，可在流水线中使用                       | -                                              |
 | Jira       | 通过在应用工作台中集成 Jira，从而支持对Jira->Issue的追踪。 | -                                              |
 | Jenkins    | 集成Jenkins 后，所有的工作空间均将获得流水线能力进行构建。 | 仅支持管理员集成，且全平台仅能集成一次 Jenkins |
+| SonarQube  | 集成 SonarQube 后，可以在流水线中定义代码质量扫描          | -                                              |
 
 ## 操作步骤
 

@@ -8,7 +8,7 @@ This article explains how to add ARM architecture nodes with Kylin v10 sp2 opera
 
 ## Prerequisites
 
-- A DCE 5.0 Full Mode deployment has been successfully completed, and the Spark node is still alive. Refer to the documentation [Offline Installation of DCE 5.0 Commercial Edition](../../install/commercial/start-install.md) for the deployment process.
+- A DCE 5.0 Full Mode deployment has been successfully completed, and the Spark node is still alive. Refer to the documentation [Offline Installation of DCE 5.0 Enterprise](../../install/commercial/start-install.md) for the deployment process.
 - A working cluster with AMD architecture and CentOS 7.9 operating system has been created through the DCE 5.0 platform. Refer to the documentation [Creating a Working Cluster](../user-guide/clusters/create-cluster.md) for the creation process.
 
 ## Procedure
