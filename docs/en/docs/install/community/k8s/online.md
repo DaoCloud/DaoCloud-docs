@@ -1,6 +1,6 @@
 # Online Install in a Standard Kubernetes Cluster
 
-This page will guide you to install DCE 5.0 Community package online in a standard Kubernetes cluster, which is recommended in the production environment.
+This page will guide you to install DCE Community package online in a standard Kubernetes cluster, which is recommended in the production environment.
 
 !!! note
 

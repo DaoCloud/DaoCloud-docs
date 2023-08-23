@@ -10,7 +10,7 @@ Next, we will use the openAnolis operating system as an example to demonstrate h
 
 ## Prerequisites
 
-- DCE 5.0 Full Mode has been deployed following the documentation: [Offline Installation of DCE 5.0 Commercial Edition](../../install/commercial/start-install.md).
+- DCE 5.0 Full Mode has been deployed following the documentation: [Offline Installation of DCE 5.0 Enterprise](../../install/commercial/start-install.md).
 - At least one node with the same architecture and version that can connect to the internet.
 
 ## Procedure

@@ -1,13 +1,13 @@
 # Overview
 
-DCE 5.0 has two versions: Community package and Enterprise package.
+DCE 5.0 has two versions: DCE Community and DCE 5.0 Enterprise.
 
-The Community package includes Container Management, Global Management, and Insight modules,
+The DCE Community includes Container Management, Global Management, and Insight modules,
 which can be used for free permanently.
 
-The Enterprise package can be purchased on demand with advanced modules such as Service Mesh,
+DCE 5.0 Enterprise can be purchased on demand with advanced modules such as Service Mesh,
 Microservice Engine, MultiCloud Management, Data Middleware, Container Registry, etc. in addtion to
-those modules contained in the Community package. It has more comprehensive features and can better
+those modules contained in the DCE Community. It has more comprehensive features and can better
 meet the needs of production environments.
 
 <table>
@@ -20,7 +20,7 @@ meet the needs of production environments.
   </thead>
   <tbody>
     <tr>
-      <td>Community Package</td>
+      <td>DCE Community</td>
       <td>
         <ul>
           <li><a href="https://docs.daocloud.io/en/ghippo/intro/index.html">Global Management</a></li>
@@ -33,7 +33,7 @@ meet the needs of production environments.
       </td>
     </tr>
     <tr>
-      <td>Enterprise Package</td>
+      <td>DCE 5.0 Enterprise</td>
       <td>
         <ul>
           <li><a href="https://docs.daocloud.io/en/ghippo/intro/index.html">Global Management</a></li>
@@ -54,9 +54,9 @@ meet the needs of production environments.
   </tbody>
 </table>
 
-## Install Community Package
+## Install DCE Community
 
-The installation process of DCE 5.0 Community package is as follows:
+The installation process of DCE 5.0 DCE Community is as follows:
 
 ```mermaid
 flowchart TB
@@ -70,7 +70,7 @@ subgraph second[Instructions]
     insight -.- ask[ASK!!!]
 end
 
-subgraph first[Install Community Package]
+subgraph first[Install DCE Community]
     direction TB
     S[ ] -.-
     plan[Resource Planning] --> k8s[Prepare K8s Cluster] 
@@ -80,7 +80,7 @@ subgraph first[Install Community Package]
     tools -.-> s2[Offline Install with K8s]
 end
 
-start([fa:fa-user DCE 5.0 Community Package Installation]) --> first
+start([fa:fa-user DCE 5.0 DCE Community Installation]) --> first
 start --> second
 
 classDef grey fill:#dddddd,stroke:#ffffff,stroke-width:px,color:#000000, font-size:15px;
@@ -112,14 +112,14 @@ click ask "https://docs.daocloud.io/en/install/intro/#contact-us"
 
     Click the blue text in the diagram, you can go to the corresponding page for details.
 
-## Install Enterprise Package
+## Install DCE 5.0 Enterprise
 
-The installation process of DCE 5.0 Commercial package is as follows:
+The installation process of DCE 5.0 Enterprise is as follows:
 
 ```mermaid
 flowchart TB
 
-    start([fa:fa-user DCE 5.0 Enterprise Package<br>Installation Procedure]) -.- arch[Deployment Architecture]
+    start([fa:fa-user DCE 5.0 Enterprise<br>Installation Procedure]) -.- arch[Deployment Architecture]
     arch --> deploy[Deployment Requirements]
     deploy --> prepare[Preparation]
     prepare --> download[Download Offline Package]
@@ -154,7 +154,7 @@ Please bookmark this page and pay attention to the update dynamics.
 
 - Scan the QR code and communicate with developers freely:
 
-    ![Community Package Exchange Group](https://docs.daocloud.io/en/daocloud-docs-images/docs/images/assist.png)
+    ![DCE Community Exchange Group](https://docs.daocloud.io/en/daocloud-docs-images/docs/images/assist.png)
 
 [Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
 [Free Try](../dce/license0.md){ .md-button .md-button--primary }

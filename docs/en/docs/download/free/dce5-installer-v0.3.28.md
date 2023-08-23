@@ -1,6 +1,6 @@
-# DCE 5.0 Community Package v0.3.28
+# DCE Community v0.3.28
 
-This page can download the offline installation package of DCE 5.0 Community Package.
+This page can download the offline installation package of DCE Community.
 
 ## Download
 
@@ -35,7 +35,7 @@ If you are installing for the first time or have forgotten your license key, ple
 
 ## Modules
 
-DCE 5.0 Community Package includes the following modules by default:
+DCE Community includes the following modules by default:
 
 | Modules | Introduction | Module Versions |
 | -------- | ----------------------------------------- ------------------------- | ------------------------ ------------------------------------- |

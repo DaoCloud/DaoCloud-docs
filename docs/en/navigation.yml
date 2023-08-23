@@ -9,19 +9,19 @@ nav:
           - Features and Benefits: dce/features.md
           - Use Cases: dce/scenario.md
           - Glossary: dce/terms.md
-          - DCE 5.0 Release Notes:
+          - DCE 5.0 Enterprise Release Notes:
               - 20230731 Release: dce/dce-rn/20230731.md
               - 20230630 Release: dce/dce-rn/20230630.md
               - 20230531 Release: dce/dce-rn/20230531.md
       - Installation:
           - Overview: install/index.md
           - Install Dependencies: install/install-tools.md
-          - Install Community Package:
+          - Install DCE Community:
               - Resource Planning: install/community/resources.md
               - Online Install in kind: install/community/kind/online.md
               - Online in K8s Cluster: install/community/k8s/online.md
               - Offline Install in K8s Cluster: install/community/k8s/offline.md
-          - Install Enterprise Package:
+          - Install DCE 5.0 Enterprise:
               - Deployment Architecture: install/commercial/deploy-arch.md
               - Deployment Requirements: install/commercial/deploy-requirements.md
               - Preparation: install/commercial/prepare.md
@@ -31,17 +31,17 @@ nav:
               - Edit manifest.yaml: install/commercial/manifest.md
           - Upgrade/Uninstall/FAQ:
               - Upgrade DCE 5.0 Modules: install/upgrade.md
-              - Upgrade Standard Package to Platinum Package: install/evolve.md
+              - Upgrade DCE 5.0 Standard to Platinum: install/evolve.md
               - Uninstall: install/uninstall.md
               - Import Offline Resources: install/import.md
               - Troubleshoot: install/faq.md
           - Install on Different K8s Distributions:
-              - Install Enterprise Package on OpenShift OCP: install/k8s-install/ocp-install-dce5.0.md
+              - Install DCE 5.0 Enterprise on OpenShift OCP: install/k8s-install/ocp-install-dce5.0.md
           - Install on Different OS:
-              - Install Enterprise Package on UOS V20 (1020a): install/os-install/uos-v20-install-dce5.0.md
-              - Install Enterprise Package on Oracle Linux R9/R8 U1: install/os-install/oracleLinux-install-dce5.0.md
-              - Install Enterprise Package on TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
-              - Offline Install Enterprise Package on Other Linux: install/os-install/otherlinux.md
+              - Install DCE 5.0 Enterprise on UOS V20 (1020a): install/os-install/uos-v20-install-dce5.0.md
+              - Install DCE 5.0 Enterprise on Oracle Linux R9/R8 U1: install/os-install/oracleLinux-install-dce5.0.md
+              - Install DCE 5.0 Enterprise on TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
+              - Offline Install DCE 5.0 Enterprise on Other Linux: install/os-install/otherlinux.md
           - Release Notes: install/release-notes.md
       - Container Management:
           - Intro:
@@ -887,8 +887,8 @@ nav:
   - Download:
       - DaoCloud Enterprise 5.0:
           - Index: download/index.md
-          - Download DCE 5.0 Community Package: download/free/dce5-installer-v0.9.0.md
-          - Download DCE 5.0 Enterprise Package: download/business/dce5-installer-v0.9.0.md
+          - Download DCE Community: download/free/dce5-installer-v0.9.0.md
+          - Download DCE 5.0 Enterprise: download/business/dce5-installer-v0.9.0.md
           - Modules and Addons:
               - Download Addon Offline Package: download/addon/v0.9.0.md
               - Download Global Management: download/modules/ghippo.md
@@ -919,12 +919,12 @@ nav:
       - 202304 | CNCF Platform Engineering Whitepaper: blogs/230417-cncf-platform-wp.md
       - 202304 | K8s 1.27 Officially Released: blogs/230412-k8s-1.27.md
       - 202304 | New Choice of Fixed IP: blogs/230411-spiderpool.md
-      - 202304 | Step-By-Step Install Community Package: blogs/230405-step-by-step-dce5.md
+      - 202304 | Step-By-Step Install DCE Community: blogs/230405-step-by-step-dce5.md
       - 202303 | Edge-Native App Principle: blogs/230317-edge-app-wp.md
-      - 202303 | Install Community Package on Linux: blogs/230315-install-on-linux.md
-      - 202303 | Install Community Package on macOS: blogs/230315-install-on-macos.md
+      - 202303 | Install DCE Community on Linux: blogs/230315-install-on-linux.md
+      - 202303 | Install DCE Community on macOS: blogs/230315-install-on-macos.md
       - 202303 | Introduction to KWOK: blogs/230301-kwok.md
-      - 202302 | Open Source Projects Involved in Community Package: blogs/230214-open-projects.md
+      - 202302 | Open Source Projects Involved in DCE Community: blogs/230214-open-projects.md
       - 202302 | DaoCloud and K8s: blogs/230214-daocloud_k8s.md
       - 202302 | DCE 5.0 Develpment Quotations: blogs/230201-peter.md
       - 202301 | 2023 Cloud Native Forecast: blogs/230201-forecast.md

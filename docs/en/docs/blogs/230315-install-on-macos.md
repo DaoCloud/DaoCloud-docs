@@ -1,6 +1,6 @@
 # Install Community Package on macOS computers via Docker and kind
 
-This page explains how to create a single-node kind cluster using a macOS laptop, and then install DCE 5.0 Community Package online.
+This page explains how to create a single-node kind cluster using a macOS laptop, and then install DCE Community online.
 
 !!! tip
 
@@ -103,7 +103,7 @@ NAME STATUS ROLES AGE VERSION
 fire-kind-cluster-control-plane Ready control-plane 18h v1.25.3
 ```
 
-## Install DCE 5.0 Community Package
+## Install DCE Community
 
 1. Install dependencies
 
@@ -155,7 +155,7 @@ fire-kind-cluster-control-plane Ready control-plane 18h v1.25.3
      docker exec -it fire-kind-cluster-control-plane kubectl get po -A -w
      ```
 
-     When you see the following prompt, it means the installation of DCE 5.0 Community Package is successful.
+     When you see the following prompt, it means the installation of DCE Community is successful.
 
      ![success](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/success.jpg)
 
@@ -178,7 +178,7 @@ You can try:
 
 ## uninstall
 
-1. Uninstall [DCE 5.0 Community Package](../install/uninstall.md).
+1. Uninstall [DCE Community](../install/uninstall.md).
 1. Delete the kind cluster.
 
      ```

@@ -2,7 +2,7 @@
 
 I often hear customers, community members, contributors, pre-sales, delivery, and project teams within the company asking "what open source projects does DCE involve?"
 
-To this end, we made a simple summary. Below is a list of open source projects involved in DCE 5.0 Community Package as of 2023-02-14.
+To this end, we made a simple summary. Below is a list of open source projects involved in DCE Community as of 2023-02-14.
 
 !!! info
 

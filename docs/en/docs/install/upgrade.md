@@ -9,7 +9,7 @@ The components specific to the infrastructure modules of DCE 5.0 are defined in 
 
 ## Prerequisites
 
-- You need to have a DCE 5.0 cluster environment. Refer to [Offline Deployment of Commercial Edition](commercial/start-install.md).
+- You need to have a DCE 5.0 cluster environment. Refer to [Offline Deployment of DCE 5.0 Enterprise](commercial/start-install.md).
 - Ensure that your ignition machine is still alive.
 - Confirm the version you want to upgrade to. See [Release Notes](release-notes.md).
 
