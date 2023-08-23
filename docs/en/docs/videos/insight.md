@@ -42,6 +42,14 @@ See [Logs](../insight/user-guide/data-query/log.md) for reference.
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/logs.mp4" preload="metadata" poster="images/insight-log.png"></video>
 </div>
 
+## Event Query
+
+See [Event Query](../insight/user-guide/data-query/event.md) documentation page.
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/event-query.mp4" preload="metadata" poster="images/event-query.jpg"></video>
+</div>
+
 ## Alerts
 
 See [Alerts](../insight/user-guide/alert-center/alert-policy.md) for reference.

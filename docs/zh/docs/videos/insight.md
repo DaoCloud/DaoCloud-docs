@@ -48,12 +48,20 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/trace.mp4" preload="metadata" poster="images/insight-trace.png"></video>
 </div>
 
-## 数据查询
+## 日志查询
 
-参阅数据查询之[日志查询](../insight/user-guide/data-query/log.md)文档页面。
+参阅[日志查询](../insight/user-guide/data-query/log.md)文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/logs.mp4" preload="metadata" poster="images/insight-log.png"></video>
+</div>
+
+## 事件查询
+
+参阅[事件查询](../insight/user-guide/data-query/event.md)文档页面。
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/event-query.mp4" preload="metadata" poster="images/event-query.jpg"></video>
 </div>
 
 ## 告警中心
