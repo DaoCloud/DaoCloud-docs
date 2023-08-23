@@ -1,25 +1,25 @@
-# Container Registry
+# Service Mesh
 
-On this page, you can download offline installation packages for different versions of the container registry module.
+On this page, you can download offline installation packages for different versions of the service mesh module.
 
 ## Download
 
 | Version                                          | Architecture | File Size | Installation Package                                                                                                              | Checksum File                                                                                                                | Update Date |
 |--------------------------------------------------|--------------|-----------|----------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|-------------|
-| [v0.10.0](../../kangaroo/release-notes.md) | AMD64        | 293.24 MB | [:arrow_down: kangaroo_v0.10.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kangaroo_0.10.0_amd64.tar) | [:arrow_down: kangaroo_0.10.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kangaroo_0.10.0_amd64_checksum.sha512sum) | 2023-8-22   |
+| [v0.18.0](../../mspider/intro/release-notes.md) | AMD64        | 2.41 GB   | [:arrow_down: mspider_v0.18.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mspider_v0.18.0_x86_64.tar) | [:arrow_down: mspider_v0.18.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mspider_v0.18.0_x86_64_checksum.sha512sum) | 2023-08-23   |
 
 ## Verification
 
 In the directory where you downloaded the offline installation package and checksum file, run the following command to verify the integrity:
 
 ```sh
-echo "$(cat kangaroo_0.10.0_amd64_checksum.sha512sum)" | sha512sum -c
+echo "$(cat mspider_v0.18.0_amd64_checksum.sha512sum)" | sha512sum -c
 ```
 
 If the verification is successful, the result will be similar to:
 
 ```none
-kangaroo_0.10.0_amd64.tar: ok
+mspider_v0.18.0_amd64.tar: ok
 ```
 
 ## Installation

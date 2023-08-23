@@ -890,12 +890,13 @@ nav:
           - Download DCE Community: download/free/dce5-installer-v0.9.0.md
           - Download DCE 5.0 Enterprise: download/business/dce5-installer-v0.9.0.md
           - Modules and Addons:
-              - Download Addon Offline Package: download/addon/v0.9.0.md
+              - Download Addons: download/addon/v0.9.0.md
               - Download Global Management: download/modules/ghippo.md
               - Download Container Management: download/modules/kpanda.md
               - Download Cluster Inspection: download/modules/kcollie.md
               - Download Application Backup: download/modules/kcoral.md
               - Download Insight: download/modules/insight.md
+              - Download Service Mesh: download/modules/mspider.md
               - Download Spidernet: download/modules/spidernet.md
               - Download Container Registry: download/modules/kangaroo.md
               - Download Operation Management: download/modules/gmagpie.md

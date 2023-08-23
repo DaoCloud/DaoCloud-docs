@@ -10,7 +10,7 @@ hide:
 ### Upgrading from v0.17.x (or lower) to v0.18.x
 
 Since there are updated deployment files for Jaeger in version 0.18.x, you need to
-manually execute the following commands before upgrading the insight server:
+manually run the following commands before upgrading the insight server:
 
 ```bash
 kubectl -n insight-system delete deployment insight-jaeger-collector

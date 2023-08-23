@@ -2,7 +2,7 @@
 date: 2023-07-17
 ---
 
-# DCE Community v0.9.0
+# DCE Community with Installer v0.9.0
 
 This page allows you to download the offline installation package and verification files for DCE Community.
 
