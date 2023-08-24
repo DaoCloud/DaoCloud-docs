@@ -26,6 +26,27 @@ Follow the steps below to get a license for your DCE Community:
 
 !!! info "📢 Tips"
 
+    The offline authorization code is bound to the device ESN. Please keep the license key email safe and secure.
+    You can contact the DaoCloud delivery team at any time to reapply, as we have saved all your license keys for you.
+
+## License Renewal
+
+If your license expires for any reason, you can follow the steps below to renew it.
+
+### Recommended Approach
+
+1. First, [clear the device code](https://qingflow.com/f/58604bf8). In the form, select Clear `Device Code (ESN/Cluster ID) `and enter the [previous license key](https://license.daocloud.io/dce5-licenses). Once completed, click `Submit`.
+
+2. Refer to the previous section to reapply for the license.
+
+### Renewing License by Module
+
+This method requires renewing the license for each installed module.
+For example, DCE Community includes three modules: Container Management, Global Management, and Observability, each with its own license.
+To do this, go to the [license page](https://qingflow.com/f/58604bf8) and select `License Renewal` for each module.
+
+## Reference Links
+
     The pages you may frequently access in the process of above procedure are listed as follows:
 
     [Apply for a license](https://qingflow.com/f/58604bf8){ .md-button .md-button--primary }

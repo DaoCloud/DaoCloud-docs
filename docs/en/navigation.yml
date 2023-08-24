@@ -4,11 +4,11 @@ nav:
   - Documentation:
       - DCE Profile:
           - What is DCE 5.0: dce/index.md
-          - K8s Certified Service Provider: dce/kcsp.md
           - Free Trial: dce/license0.md
           - Features and Benefits: dce/features.md
           - Use Cases: dce/scenario.md
           - Glossary: dce/terms.md
+          - DaoCloud is a KCSP: dce/kcsp.md
           - DCE 5.0 Enterprise Release Notes:
               - 20230731 Release: dce/dce-rn/20230731.md
               - 20230630 Release: dce/dce-rn/20230630.md
@@ -35,13 +35,13 @@ nav:
               - Uninstall: install/uninstall.md
               - Import Offline Resources: install/import.md
               - Troubleshoot: install/faq.md
-          - Install on Different K8s Distributions:
-              - Install DCE 5.0 Enterprise on OpenShift OCP: install/k8s-install/ocp-install-dce5.0.md
+          - Install with Different K8s Distributions:
+              - With OpenShift OCP: install/k8s-install/ocp-install-dce5.0.md
           - Install on Different OS:
-              - Install DCE 5.0 Enterprise on UOS V20 (1020a): install/os-install/uos-v20-install-dce5.0.md
-              - Install DCE 5.0 Enterprise on Oracle Linux R9/R8 U1: install/os-install/oracleLinux-install-dce5.0.md
-              - Install DCE 5.0 Enterprise on TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
-              - Offline Install DCE 5.0 Enterprise on Other Linux: install/os-install/otherlinux.md
+              - With UOS V20 (1020a): install/os-install/uos-v20-install-dce5.0.md
+              - With Oracle Linux R9/R8 U1: install/os-install/oracleLinux-install-dce5.0.md
+              - With TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
+              - With Other Linux: install/os-install/otherlinux.md
           - Release Notes: install/release-notes.md
       - Container Management:
           - Intro:
@@ -139,14 +139,14 @@ nav:
           - GPU:
               - Install Nvidia GPU Driver: kpanda/user-guide/gpu/driver.md
           - Best Practices:
-              - Backup and restore ETCD: kpanda/best-practice/etcd-backup.md
-              - Cross-cluster backup and restore of MySQL applications and data: kpanda/best-practice/backup-mysql-on-nfs.md
-              - Strengthening a self-built working cluster: kpanda/best-practice/hardening-cluster.md
-              - Offline upgrade guide for working clusters: kpanda/best-practice/update-offline-cluster.md
-              - Adding heterogeneous nodes to a working cluster: kpanda/best-practice/multi-arch.md
-              - Creating an Ubuntu working cluster on a CentOS management platform: kpanda/best-practice/create-ubuntu-on-centos-platform.md
-              - Scaling the control nodes of a working cluster: kpanda/best-practice/add-master-node.md
-              - Creating a cluster on non-supported operating systems: kpanda/best-practice/use-otherlinux-create-custer.md
+              - Backup and Restore ETCD: kpanda/best-practice/etcd-backup.md
+              - Cross-cluster Backup and Restore of MySQL Apps and Data: kpanda/best-practice/backup-mysql-on-nfs.md
+              - Strengthen a Self-built Worker Cluster: kpanda/best-practice/hardening-cluster.md
+              - Offline Upgrade Worker Clusters: kpanda/best-practice/update-offline-cluster.md
+              - Add Heterogeneous Nodes to Worker Cluster: kpanda/best-practice/multi-arch.md
+              - Create Ubuntu Worker Cluster with CentOS: kpanda/best-practice/create-ubuntu-on-centos-platform.md
+              - Scale Controller Nodes of Worker Cluster: kpanda/best-practice/add-master-node.md
+              - Create Cluster with Non-supported OS: kpanda/best-practice/use-otherlinux-create-custer.md
       - Global Management:
           - Intro:
               - What is Global Management: ghippo/intro/index.md
@@ -158,10 +158,10 @@ nav:
               - Customize Reverse Proxy Address: ghippo/install/reverse-proxy.md
               - National Secret Gateway: ghippo/install/gm-gateway.md
               - Login: ghippo/install/login.md
-          - User and Access Control:
+          - Access Control:
               - Intro: ghippo/user-guide/access-control/iam.md
-              - User: ghippo/user-guide/access-control/user.md
-              - Group: ghippo/user-guide/access-control/group.md
+              - Users: ghippo/user-guide/access-control/user.md
+              - Groups: ghippo/user-guide/access-control/group.md
               - Roles:
                   - ghippo/user-guide/access-control/role.md
                   - System Roles: ghippo/user-guide/access-control/global.md
@@ -183,7 +183,7 @@ nav:
               - Enable/Disable Collection of K8s Audit Logs: ghippo/user-guide/audit/open-audit.md
               - Enable/Disable Output of K8s Audit Logs: ghippo/user-guide/audit/open-k8s-audit.md
               - Download and Export: ghippo/user-guide/audit/audit-log.md
-          - Operation Management:
+          - Operations Management:
               - ghippo/user-guide/report-billing/index.md
               - Reports: ghippo/user-guide/report-billing/report.md
               - Billing and Accounting: ghippo/user-guide/report-billing/billing.md
@@ -234,9 +234,9 @@ nav:
                   - Offline Install insight-agent: insight/quickstart/install/offline-install.md
                   - Get URL to Upload Data: insight/quickstart/install/gethosturl.md
                   - Upgrade Notes: insight/quickstart/install/upgrade-note.md
-              - Install insight-agent on other distributions:
-                  - Install insight-agent on DCE 4.0.x: insight/quickstart/other/install-agentindce.md
-                  - Install insight-agent on OpenShift 4.x: insight/quickstart/other/install-agent-on-ocp.md
+              - Install insight-agent on Other Distributions:
+                  - On DCE 4.0.x: insight/quickstart/other/install-agentindce.md
+                  - On OpenShift 4.x: insight/quickstart/other/install-agent-on-ocp.md
               - Enable Observability with OTel:
                   - insight/quickstart/otel/otel.md
                   - Non-intrusive Enhancement with Operator: insight/quickstart/otel/operator.md
@@ -904,56 +904,56 @@ nav:
       - Free Trial: trial/index.md
   - Blogs:
       - Index: blogs/index.md
-      - 202308 | K8s 1.28 is released: blogs/230815-k8s1.28.md
-      - 202308 | Unlocking the Power of Kubernetes with K8SGPT: blogs/230808-k8sgpt.md
-      - 202306 | Exploring the Cloud-Native Path of Ray Core (II): blogs/230615-ray.md
-      - 202306 | Exploring the Cloud-Native Path of Ray Core (I): blogs/230612-ray.md
-      - 202306 | Istio 1.18 Officially Released: blogs/230609-istio118.md
-      - 202306 | Cloud-native Federation Middleware FedState: blogs/230605-fedstate.md
-      - 202306 | API Server Tracing upgraded to beta: blogs/230601-api-server-tracing.md
-      - 202305 | Having fun with seccomp profiles on the edge: blogs/230518-seccom.md
+      - 202308 | K8s 1.28 Released: blogs/230815-k8s1.28.md
+      - 202308 | Unlease K8sGPT: blogs/230808-k8sgpt.md
+      - 202306 | Explore Ray Core (II): blogs/230615-ray.md
+      - 202306 | Explore Ray Core (I): blogs/230612-ray.md
+      - 202306 | Istio 1.18 Released: blogs/230609-istio118.md
+      - 202306 | Federation Middleware FedState: blogs/230605-fedstate.md
+      - 202306 | API Server Tracing to Beta: blogs/230601-api-server-tracing.md
+      - 202305 | Seccomp on Edge: blogs/230518-seccom.md
       - 202305 | Install K8s (KLTS): blogs/230509-k8s-install.md
-      - 202305 | Accelerate Socket based on eBPF by Cilium: blogs/230508-cilium.md
-      - 202305 | K8s 1.27 Updated Pod Startup: blogs/230428-pod-startup.md
+      - 202305 | Accelerate Socket by Cilium: blogs/230508-cilium.md
+      - 202305 | K8s 1.27 Pod Startup: blogs/230428-pod-startup.md
       - 202304 | Basics of VictoriaMetrics: blogs/230427-victoriametrics.md
       - 202304 | Karmada Failover: blogs/230418-karmada-failover.md
       - 202304 | CNCF Platform Engineering Whitepaper: blogs/230417-cncf-platform-wp.md
-      - 202304 | K8s 1.27 Officially Released: blogs/230412-k8s-1.27.md
+      - 202304 | K8s 1.27 Released: blogs/230412-k8s-1.27.md
       - 202304 | New Choice of Fixed IP: blogs/230411-spiderpool.md
       - 202304 | Step-By-Step Install DCE Community: blogs/230405-step-by-step-dce5.md
       - 202303 | Edge-Native App Principle: blogs/230317-edge-app-wp.md
       - 202303 | Install DCE Community on Linux: blogs/230315-install-on-linux.md
       - 202303 | Install DCE Community on macOS: blogs/230315-install-on-macos.md
       - 202303 | Introduction to KWOK: blogs/230301-kwok.md
-      - 202302 | Open Source Projects Involved in DCE Community: blogs/230214-open-projects.md
+      - 202302 | Open Source Projects in DCE Community: blogs/230214-open-projects.md
       - 202302 | DaoCloud and K8s: blogs/230214-daocloud_k8s.md
-      - 202302 | DCE 5.0 Develpment Quotations: blogs/230201-peter.md
+      - 202302 | DCE 5.0 Dev Quotations: blogs/230201-peter.md
       - 202301 | 2023 Cloud Native Forecast: blogs/230201-forecast.md
       - 202301 | Leverage Your Idle Computing Power: blogs/230110-res-usage.md
-      - 202212 | K8s 1.26 Officially Released: blogs/221209-k8s-1.26.md
-      - 202211 | DaoCloud is Kubernetes Certified Service Provider: blogs/221116-kcsp.md
+      - 202212 | K8s 1.26 Released: blogs/221209-k8s-1.26.md
+      - 202211 | DaoCloud is a KCSP: blogs/221116-kcsp.md
       - 202210 | What is Container Management: blogs/221026-kpanda.md
       - 202210 | What is Resource Management: blogs/221018-resource.md
       - 202209 | What is Workbench: blogs/220925-amamba.md
       - 202208 | What is Multicloud Management: blogs/220808-kairship.md
       - 202207 | What is Service Mesh: blogs/220708-mspider.md
-      - 202206 | DCE Dev Background: blogs/221008-dce-bg.md
+      - 202206 | DCE 5.0 Dev Background: blogs/221008-dce-bg.md
   - DaoCloud Ecosystem:
       - Index: community/index.md
       - CloudTTY: community/cloudtty.md
       - Clusterpedia: community/clusterpedia.md
-      - egressgateway: community/egress-gw.md
+      - EgressGateway: community/egress-gw.md
       - Fast: community/fast.md
       - FedState: community/fedstate.md
       - Ferry: community/ferry.md
       - HwameiStor: community/hwameistor.md
-      - kdoctor: community/kdoctor.md
+      - Kdoctor: community/kdoctor.md
       - KLTS: community/klts.md
       - Kubean: community/kubean.md
       - KWOK: community/kwok.md
       - MirageDebug: community/miragedebug.md
       - Merbridge: community/merbridge.md
-      - Mirror Acceleration: community/mirror.md
+      - Mirror Acceleration in China: community/mirror.md
       - Spiderpool: community/spiderpool.md
   - Cloud Native Institute:
       - Cloud Native News:
