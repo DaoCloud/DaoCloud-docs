@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# Cluster Resources for Installing Community Package
+# Cluster Resources for Installing DCE Community
 
 You can install DCE 5.0 on a standard Kubernetes cluster (production env) or on a kind cluster (test and development env).
 

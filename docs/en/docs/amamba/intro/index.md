@@ -40,7 +40,7 @@ Based on the Cloud Native Foundation of DCE 5.0 for container, permission, and r
 
 ## Separate Install
 
-It is recommended to install Workbench through the installation package of [DCE 5.0 Enterprise Package](../../install/commercial/start-install.md), because you can install all modules of DCE 5.0 once a time with that package, no need to worry about incompatibility.
+It is recommended to install Workbench through the installation package of [DCE 5.0 Enterprise](../../install/commercial/start-install.md), because you can install all modules of DCE 5.0 once a time with that package, no need to worry about incompatibility.
 
 However, if you want to install or upgrade Workbench separately, run the following commands:
 

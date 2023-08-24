@@ -4,12 +4,12 @@ This page will guide you to install DCE Community package online in a standard K
 
 !!! note
 
-    - Click [Online Install Community Package](../../../videos/install.md) to watch a video demo.
+    - Click [Online Install DCE Community](../../../videos/install.md) to watch a video demo.
     - If you want install it offline, refer to [Offline Install](offline.md).
 
 ## Preparation
 
-- Prepare a Kubernetes cluster. For resources required, see [Cluster Resources for Installing Community Package](../resources.md).
+- Prepare a Kubernetes cluster. For resources required, see [Cluster Resources for Installing DCE Community](../resources.md).
 
     - Create a StorageClass and set it the default SC
     - Install CoreDNS in the cluster
