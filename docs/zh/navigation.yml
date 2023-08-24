@@ -4,11 +4,11 @@ nav:
   - 产品文档:
       - DCE 产品介绍:
           - 什么是 DCE 5.0: dce/index.md
-          - K8s 认证服务商: dce/kcsp.md
           - 申请社区免费体验: dce/license0.md
           - 功能和优势: dce/features.md
           - 适用场景: dce/scenario.md
           - 云原生词汇: dce/terms.md
+          - K8s 认证服务商: dce/kcsp.md
           - DCE 5.0 Release Notes:
               - 20230731 版本发布: dce/dce-rn/20230731.md
               - 20230630 版本发布: dce/dce-rn/20230630.md
@@ -36,12 +36,12 @@ nav:
               - 导入离线资源: install/import.md
               - 安装排障: install/faq.md
           - 在不同 K8s 发行版上安装:
-              - 在 OpenShift OCP 上安装 DCE 5.0 商业版: install/k8s-install/ocp-install-dce5.0.md
+              - 在 OpenShift OCP 上安装: install/k8s-install/ocp-install-dce5.0.md
           - 在不同操作系统上安装:
-              - 在 UOS V20 (1020a) 上安装 DCE 5.0 商业版: install/os-install/uos-v20-install-dce5.0.md
-              - Oracle Linux R9/R8 U1 操作系统上部署 DCE 5.0 商业版: install/os-install/oracleLinux-install-dce5.0.md
-              - TencentOS Server 3.1 操作系统上部署 DCE 5.0 商业版: install/os-install/TencentOS-install-dce5.0.md
-              - 其他 Linux 离线部署 DCE 5.0 商业版: install/os-install/otherlinux.md
+              - 在 UOS V20 (1020a): install/os-install/uos-v20-install-dce5.0.md
+              - Oracle Linux R9/R8 U1 操作系统: install/os-install/oracleLinux-install-dce5.0.md
+              - TencentOS Server 3.1 操作系统: install/os-install/TencentOS-install-dce5.0.md
+              - 其他 Linux 操作系统: install/os-install/otherlinux.md
           - Release Notes: install/release-notes.md
       - 容器管理:
           - 介绍:
@@ -126,7 +126,7 @@ nav:
               - 查看巡检报告: kpanda/user-guide/inspect/report.md
           - 备份恢复:
               - 介绍: kpanda/user-guide/backup/intro.md
-              - 安装 velero 插件: kpanda/user-guide/backup/install-velero.md
+              - 安装 Velero 插件: kpanda/user-guide/backup/install-velero.md
               - 应用备份: kpanda/user-guide/backup/deployment.md
               - ETCD 备份: kpanda/user-guide/backup/etcd-backup.md
           - 安全管理:
@@ -148,7 +148,7 @@ nav:
               - 加固自建工作集群: kpanda/best-practice/hardening-cluster.md
               - 工作集群离线升级指南: kpanda/best-practice/update-offline-cluster.md
               - 为工作集群添加异构节点: kpanda/best-practice/multi-arch.md
-              - 在 CentOS 管理平台上创建 Ubuntu 工作集群: kpanda/best-practice/create-ubuntu-on-centos-platform.md
+              - 在 CentOS 上创建 Ubuntu 工作集群: kpanda/best-practice/create-ubuntu-on-centos-platform.md
               - 对工作集群的控制节点扩容: kpanda/best-practice/add-master-node.md
               - 在非主流操作系统上创建集群: kpanda/best-practice/use-otherlinux-create-custer.md
       - 全局管理:
@@ -239,8 +239,8 @@ nav:
                   - 获取数据上传地址: insight/quickstart/install/gethosturl.md
                   - 升级注意事项: insight/quickstart/install/upgrade-note.md
               - 在其他发行版安装 insight-agent:
-                  - 在 DCE 4.0.x 安装 insight-aent: insight/quickstart/other/install-agentindce.md
-                  - 在 OpenShift 4.x 安装 insight-agent: insight/quickstart/other/install-agent-on-ocp.md
+                  - 在 DCE 4.0.x 上: insight/quickstart/other/install-agentindce.md
+                  - 在 OpenShift 4.x 上: insight/quickstart/other/install-agent-on-ocp.md
               - 开始采集链路数据:
                   - insight/quickstart/otel/otel.md
                   - Operator 无侵入增强应用: insight/quickstart/otel/operator.md
@@ -298,7 +298,7 @@ nav:
               - 日志采集排障指南: insight/best-practice/debug-log.md
               - 链路采集排障指南: insight/best-practice/debug-trace.md
               - 配置通知模板: insight/best-practice/notify-helper.md
-              - 使用 OpenTelemetry 零代码接收 SkyWalking 链路数据: insight/best-practice/sw-to-otel.md
+              - 使用 OTel 零代码接收 SkyWalking 链路数据: insight/best-practice/sw-to-otel.md
               - 使用 Insight 定位应用异常根因: insight/best-practice/find_root_cause.md
               - Kafka + ES 流式架构应对超大规模日志方案: insight/best-practice/insight-kafka.md
           - 兼容性测试:
@@ -956,17 +956,17 @@ nav:
   - 博客:
       - 博文索引: blogs/index.md
       - 202308 | K8s 本地开发工具比较: blogs/230824-tools.md
-      - 202308 | Kubernetes 1.28 震撼发布: blogs/230815-k8s1.28.md
-      - 202308 | K8sGPT 赋能 Kubernetes: blogs/230808-k8sgpt.md
-      - 202306 | AIGC 利器 Ray 云原生探索下篇: blogs/230615-ray.md
-      - 202306 | AIGC 利器 Ray 云原生探索上篇: blogs/230612-ray.md
+      - 202308 | K8s 1.28 震撼发布: blogs/230815-k8s1.28.md
+      - 202308 | K8sGPT 赋能 K8s: blogs/230808-k8sgpt.md
+      - 202306 | AIGC 利器 Ray 探索下篇: blogs/230615-ray.md
+      - 202306 | AIGC 利器 Ray 探索上篇: blogs/230612-ray.md
       - 202306 | Istio 1.18 正式发布: blogs/230609-istio118.md
-      - 202306 | 云原生联邦中间件FedState: blogs/230605-fedstate.md
+      - 202306 | 联邦中间件FedState: blogs/230605-fedstate.md
       - 202306 | API Server Tracing进阶: blogs/230601-api-server-tracing.md
-      - 202305 | 边缘场景玩转seccomp配置文件: blogs/230518-seccom.md
-      - 202305 | 云原生混沌工程Chaos Mesh: blogs/230515-chaos-mesh.md
+      - 202305 | 边缘场景玩转seccomp: blogs/230518-seccom.md
+      - 202305 | 混沌工程Chaos Mesh: blogs/230515-chaos-mesh.md
       - 202305 | K8s 安装教程(KLTS版): blogs/230509-k8s-install.md
-      - 202305 | Cilium 基于 eBPF 实现 socket 加速: blogs/230508-cilium.md
+      - 202305 | Cilium实现socket加速: blogs/230508-cilium.md
       - 202305 | K8s 1.27加快Pod启动: blogs/230428-pod-startup.md
       - 202304 | 云原生监控之基础篇: blogs/230427-victoriametrics.md
       - 202304 | Karmada Failover详解: blogs/230418-karmada-failover.md
