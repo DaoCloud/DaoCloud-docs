@@ -740,7 +740,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [SUSE Launches Rancher Prime, an Enterprise Container Management Platform](https://mp.weixin.qq.com/s/iVFsSGlRd4TdJGcRKLQBuQ)
 
-    Rancher Prime is a distribution of Rancher with core code from Rancher Community Package, but with more emphasis on security and enhanced features and services for enterprise users.
+    Rancher Prime is a distribution of Rancher with core code from Rancher DCE Community, but with more emphasis on security and enhanced features and services for enterprise users.
     The features of Rancher Prime are: improved comprehensive security governance and a trusted Container registry.
     introduce UI extensions; full lifecycle support for hosting clusters on Ali Cloud, Tencent Cloud and Huawei Cloud;
     support openEuler Linux and support for ARM systems.

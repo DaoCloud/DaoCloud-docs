@@ -471,7 +471,7 @@ spec:
 ./dce5-installer generate-config --master=3 --worker=3 --access-type=external
 ```
 
-### Community Package
+### DCE Community
 
 ``` bash
 # Official online

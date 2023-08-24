@@ -1,4 +1,4 @@
-# Deploying DCE 5.0 Enterprise Package on Oracle Linux R9/R8 U1 Operating System
+# Deploying DCE 5.0 Enterprise on Oracle Linux R9/R8 U1 Operating System
 
 This article will guide you on how to deploy DCE 5.0 on Oracle Linux R9/R8 U1 operating system,
 starting from version v0.8.0 and above.
@@ -117,5 +117,5 @@ starting from version v0.8.0 and above.
 
         Please make sure to record the URL provided for future access.
 
-9. After successfully installing DCE 5.0 Enterprise Package, please contact us for
+9. After successfully installing DCE 5.0 Enterprise, please contact us for
    authorization: email [info@daocloud.io](mailto:info@daocloud.io) or call 400 002 6898.

@@ -2,9 +2,9 @@
 date: 2023-04-12
 ---
 
-# DCE 5.0 Enterprise Package v0.6.1
+# DCE 5.0 Enterprise v0.6.1
 
-This page can download the offline installation package and verification file of DCE 5.0 Enterprise Package.
+This page can download the offline installation package and verification file of DCE 5.0 Enterprise.
 
 ## Download
 
@@ -70,7 +70,7 @@ After successfully verifying the offline package,
 
 ## Modules
 
-The DCE 5.0 Enterprise Package includes the following modules, which are plug-and-play on-demand to meet various use cases:
+The DCE 5.0 Enterprise includes the following modules, which are plug-and-play on-demand to meet various use cases:
 
 | Modules | Introduction | What's New |
 | -------------------- | ---------------------------- ----------------------------------------------- | ----- -------------------------------------------------- ------ |

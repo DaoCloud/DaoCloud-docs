@@ -137,7 +137,7 @@ This document describes how to use third-party middleware services, including My
               dataSourceName: "dowl:password@tcp(172.30.41.0:3308)/dowl"
     ```
 
-4. After completing the above configuration, you can proceed with [deploying DCE 5.0 Enterprise Package](../start-install.md).
+4. After completing the above configuration, you can proceed with [deploying DCE 5.0 Enterprise](../start-install.md).
 
 ## Using External Redis
 
@@ -165,7 +165,7 @@ The steps to configure external Redis are as follows:
         - Cluster URL format: `redis://[[user]:password@]host1[:port1]?addr=host2[:port2][&addr=host3:[port3][&option=value]]` or `rediss://[[user]:password@]host1[:port1]?addr=host2[:port2][&addr=host3:[port3][&option=value]]`
         - Currently, only the container management product module uses the Redis component.
 
-2. After completing the above configuration, you can proceed with [deploying DCE 5.0 Enterprise Package](../start-install.md).
+2. After completing the above configuration, you can proceed with [deploying DCE 5.0 Enterprise](../start-install.md).
 
 ## Using External Elasticsearch
 
@@ -194,7 +194,7 @@ The steps to configure external Elasticsearch are as follows:
         Currently, only the observability product module uses the Elasticsearch component.
         If an external middleware is used, it is not recommended to use worker nodes in 7-node mode, as it may consume too many resources.
 
-2. After completing the above configuration, you can proceed with [deploying DCE 5.0 Enterprise Package](../start-install.md).
+2. After completing the above configuration, you can proceed with [deploying DCE 5.0 Enterprise](../start-install.md).
 
 ## Using External S3Storage
 
@@ -220,4 +220,4 @@ The steps to configure external S3Storage are as follows:
       ..........
     ```
 
-2. After completing the above configuration, you can proceed with [deploying DCE 5.0 Enterprise Package](../start-install.md).
+2. After completing the above configuration, you can proceed with [deploying DCE 5.0 Enterprise](../start-install.md).

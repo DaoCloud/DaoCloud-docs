@@ -112,7 +112,7 @@ This page summarizes blogs and public account articles related to DCE 5.0 and cl
 
 - [20230214 | How many open source projects are included in DCE Community?](230214-open-projects.md)
 
-    Often, customers, community members, contributors, and sales, delivery, and project teams within the company ask, "Which open-source projects does DCE really involve?" This article details the open-source projects included in the Community Package.
+    Often, customers, community members, contributors, and sales, delivery, and project teams within the company ask, "Which open-source projects does DCE really involve?" This article details the open-source projects included in the DCE Community.
 
 - [20230214 | "DaoCloud Dao Ke" and Kubernetes](230214-daocloud_k8s.md)
 

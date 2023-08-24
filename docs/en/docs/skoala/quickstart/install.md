@@ -1,6 +1,6 @@
 # Install Guides
 
-It is recommended to install DaoCloud Microservice Engine (DME) through the installation package of [DCE 5.0 Enterprise Package](../../install/commercial/start-install.md), because you can install all modules of DCE 5.0 once a time with that package, no need to worry about incompatibility.
+It is recommended to install DaoCloud Microservice Engine (DME) through the installation package of [DCE 5.0 Enterprise](../../install/commercial/start-install.md), because you can install all modules of DCE 5.0 once a time with that package, no need to worry about incompatibility.
 
 This guides is designed for **manual online install of DME alone**. To be clear, `skoala` mentioned below is the internal development code of DME.
 

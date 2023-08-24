@@ -70,7 +70,7 @@ After successfully verifying the offline package,
 
 ## Modules
 
-DCE 5.0 Enterprise Package includes the following modules that can be used on-demand to meet various application scenarios:
+DCE 5.0 Enterprise includes the following modules that can be used on-demand to meet various application scenarios:
 
 | Module                | Description                                                                 | Latest Release                                                |
 | --------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------- |

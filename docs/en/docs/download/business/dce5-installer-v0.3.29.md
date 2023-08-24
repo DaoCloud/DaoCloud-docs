@@ -1,6 +1,6 @@
-# DCE 5.0 Enterprise Package v0.3.29
+# DCE 5.0 Enterprise v0.3.29
 
-This page can download the offline installation package and verification file of DCE 5.0 Enterprise Package.
+This page can download the offline installation package and verification file of DCE 5.0 Enterprise.
 
 ## Download
 
@@ -66,7 +66,7 @@ After successfully verifying the offline package,
 
 ## Modules
 
-The DCE 5.0 Enterprise Package includes the following modules, which are plug-and-play on-demand to meet various use cases:
+The DCE 5.0 Enterprise includes the following modules, which are plug-and-play on-demand to meet various use cases:
 
 | Modules | Introduction | What's New |
 | -------------------- | ---------------------------- ----------------------------------------------- | ----- -------------------------------------------------- ------ |

@@ -65,7 +65,7 @@ After successfully verifying the offline package,
     tar -zxvf offline-community-v0.9.0-arm64.tar
     ```
 
-- For installation instructions, please refer to [Community Package Installation Process](../../install/community/k8s/online.md#_2).
+- For installation instructions, please refer to [DCE Community Installation Process](../../install/community/k8s/online.md#_2).
 - After successful installation, please apply for a free community license: [License Application](../../dce/license0.md).
 
 ## Modules

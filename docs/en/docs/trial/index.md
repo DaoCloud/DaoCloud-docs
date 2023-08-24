@@ -3,17 +3,17 @@ hide:
   - navigation
 ---
 
-# Experience the Community Package
+# Experience the DCE Community
 
 <div style="text-align: center;">
   <p style="font-size: 18px;"><img src="./images/hu01.gif" alt="Image" width="80"> Welcome to Install and Experience!</p>
-  <p style="font-size: 28px; color: green;">DaoCloud Enterprise Community Package <img src="./images/hu02.gif" alt="Image" width="80"></p>
+  <p style="font-size: 28px; color: green;">DaoCloud Enterprise DCE Community <img src="./images/hu02.gif" alt="Image" width="80"></p>
 </div>
 
 DCE 5.0, with cloud-native infrastructure at its core, is supported by self-developed open-source components. It provides cloud-native computing, networking, storage, and other capabilities, supporting unified management of multi-cloud and multi-cluster lifecycles. It abstracts the complexity of underlying infrastructure, reduces the threshold for enterprises to use cloud-native applications, and improves application development efficiency.
 
 <div style="text-align: center;">
-  <p style="font-size: 24px; color: green;">Unlock the Community Package in Three Steps</p>
+  <p style="font-size: 24px; color: green;">Unlock the DCE Community in Three Steps</p>
 </div>
 
 ## <font color="green"><strong>1st</strong> Installation Tutorial Link</font>

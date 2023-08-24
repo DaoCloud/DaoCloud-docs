@@ -162,7 +162,7 @@ After installing the global cluster, immediately update the configmap kubean-loc
 
 #### Bug Fixes
 
-- **Fixed** Binary output of Community Package manifest was incorrect
+- **Fixed** Binary output of DCE Community manifest was incorrect
 
 ## 2023-4-30
 
@@ -239,7 +239,7 @@ After installing the global cluster, immediately update the configmap kubean-loc
 - **Optimized** Optimize bootstrapping node inotify parameters
 - **Optimized** Optimize the full-mode online installation experience
 - **Optimized** optimize clusterConfig structure and configuration
-- **Optimized** Community Package allows not to check clusterConfig format and parameters
+- **Optimized** DCE Community allows not to check clusterConfig format and parameters
 - **Optimized** Optimize installer execution scheduler log output
 
 #### Fixes

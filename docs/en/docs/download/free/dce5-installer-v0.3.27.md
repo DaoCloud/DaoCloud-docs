@@ -30,7 +30,7 @@ After successfully verifying the offline package, unpack the tarball:
 tar -zxvf offline-community-v0.3.28.tar
 ```
 
-Then refer to [Community Package Installation Process](../../install/community/k8s/online.md#_2) to install.
+Then refer to [DCE Community Installation Process](../../install/community/k8s/online.md#_2) to install.
 
 After successful installation, please [apply for free community experience](../../dce/license0.md).
 

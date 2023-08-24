@@ -72,7 +72,7 @@ The remaining steps are the same as enabling the collection of Kubernetes audit 
 helm upgrade --install --create-namespace --version ${insight_version_code} --cleanup-on-fail insight-agent chartmuseum/insight-agent -n insight-system -f insight-agent-values-bak.yaml --set global.exporters.auditLog.kubeAudit.enabled=false
 ```
 
-### Community Package Online Installation Environment
+### DCE Community Online Installation Environment
 
 !!! note
 
