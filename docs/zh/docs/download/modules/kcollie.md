@@ -6,6 +6,7 @@
 
 | 版本                                           | 架构  | 文件大小 | 安装包                                                                                                                          | 校验文件                                                                                                                                                      | 更新日期   |
 | ---------------------------------------------- | ----- | -------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| [v0.4.0](../../kcollie/intro/release-notes.md) | AMD 64 | 205.11MB | [:arrow_down: kcollie_v0.4.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcollie_v0.4.0_amd64.tar) | [:arrow_down: kcollie_v0.4.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcollie_v0.4.0_amd64_checksum.sha512sum) | 2023-08-24 |
 | [v0.4.0](../../dce/dce-rn/20230731.md) | AMD64 | 205.11 MB | [:arrow_down: kcollie_v0.4.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcollie_v0.4.0_amd64.tar) | [:arrow_down: kcollie_v0.4.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcollie_v0.4.0_amd64_checksum.sha512sum) | 2023-08-08 |
 
 ## 校验
