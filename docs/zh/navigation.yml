@@ -137,7 +137,7 @@ nav:
                   - 扫描报告: kpanda/user-guide/security/cis/report.md
               - 权限扫描: kpanda/user-guide/security/audit.md
               - 漏洞扫描: kpanda/user-guide/security/hunter.md
-              - 离线升级容器管理模块: kpanda/user-guide/security/offline-upgrade-dowl.md
+              - 离线升级安全管理模块: kpanda/user-guide/security/offline-upgrade-dowl.md
           - 权限管理:
               - 权限说明: kpanda/user-guide/permissions/permission-brief.md
               - 集群和命名空间授权: kpanda/user-guide/permissions/cluster-ns-auth.md
