@@ -1,12 +1,12 @@
-# 公有云环境运行
+# 阿里云环境运行
 
-本页主要介绍如何使用 Spiderpool 作为公有云环境下统一的 Underlay 网络解决方案。
+本页主要介绍如何使用 Spiderpool 在阿里云环境运行，并如何实现一套完整的 Underlay 解决方案
 
 ## 背景
 
 当前公有云厂商众多，如：阿里云、华为云、腾讯云、AWS 等，但当前开源社区的主流 CNI 插件难以以 Underlay 网络方式运行其上，只能使用每个公有云厂商的专有 CNI 插件，没有统一的公有云 Underlay 解决方案。尤其是在混合云场景下，统一的 CNI 方案能够便于多云管理。Spiderpool 是一种适用于任意的公有云环境中的 Underlay 网络解决方案。
 
-## Spiderpool 针对公有云存在的局限性提供的解决方案
+## Spiderpool 针对阿里云存在的局限性提供的解决方案
 
 Spiderpool 有节点拓扑、解决 MAC 地址合法性、对接基于 `spec.externalTrafficPolicy` 为 Local 模式的 service 等功能。Spiderpool 能基于 IPVlan Underlay CNI 运行在公有云环境上，它的实现原理如下：
 
@@ -24,9 +24,9 @@ Spiderpool 有节点拓扑、解决 MAC 地址合法性、对接基于 `spec.ext
 
 ## 实施步骤
 
-### 准备公有云环境
+### 准备阿里云环境
 
-- 准备一个公有云环境，例如：以阿里云为例，给虚拟机分配 2 个网卡，每张网卡均分配一些辅助私网 IP，如图：
+- 准备一个阿里云环境，给虚拟机分配 2 个网卡，每张网卡均分配一些辅助私网 IP，如图：
 
     ![alicloud-web-network](../../images/alicloud-network-web.png)
 
