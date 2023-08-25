@@ -286,6 +286,10 @@
     碳排放计算优化器基于运行在 Kubernetes 平台上的应用的实际资源消耗，计算对应服务器功耗，进而计算出应用运行所产生的碳排放量。
     此外，还支持提供 Pod 资源配置、workload 副本数、HPA 参数配置等的优化建议，以及优化后的功耗和碳排放推算结果。
 
+- [CRI-O 容器运行时 v1.28.0 发布（CNCF 项目）](https://github.com/cri-o/cri-o/releases/tag/v1.28.0)
+
+    版本特性：允许用户禁用 Pod 的主机端口映射、新增指标以显示 Pod 和容器何时卡在创建的不同阶段、支持指定 kubelet 不要对某些镜像执行垃圾回收、添加版本升级自动化脚本、支持可配置指标输出器的命名空间、支持通过 CRI 的镜像策略验证错误。
+
 - [CRI-O：CNCF 宣布容器运行时项目 CRI-O 毕业](https://mp.weixin.qq.com/s/p7ogT3pAtbj17qrDh7acHQ)
 
     CRI-O 为 Kubelet 提供了一个安全、高效和稳定的容器运行时接口实现，用于在生产 Kubernetes 环境中编排 Open Container Initiative（OCI）容器。未来，CRI-O 计划改进上游文档、自动化发布过程、增加节点上的 Pod 密度等等。该项目还正在努力将某些部分移动到 Rust 语言。
@@ -649,6 +653,10 @@
 
     [Katalyst](https://github.com/kubewharf/katalyst-core) 的主要特点包括：完全孵化于超大规模混部实践，并在字节服务云原生化的进程中同步接管资源管控链路；搭载字节跳动内部的 Kubernetes 发行版 Enhanced Kubernetes 同步开源；系统基于插件化模式构建，用户可以在 Katalyst Framework 之上自定制各类调度、管控、策略、数据等模块插件等。
 
+- [KEDA：CNCF 宣布 K8s 自动缩放器 KEDA 毕业](https://mp.weixin.qq.com/s/Jkl8bGreQPk77VADOB-MOw)
+
+    KEDA 是一个专门为 Kubernetes 设计的事件驱动自动缩放器。作为一个毕业项目，KEDA 团队计划提高项目的性能、多租户安装、监控和可观测性功能。并计划增加配置缩放行为和指标评估的能力，将碳和能源消耗考虑到缩放评估中，以及预测性自动缩放。
+
 - [KEDA 事件驱动自动伸缩器 v2.11.0 发布（CNCF 项目）](https://github.com/kedacore/keda/releases/tag/v2.11.0)
 
     更新内容：新增 Solr Scaler；支持暂停自动缩放；改进和扩展普罗米修斯指标；如果有多个带有 CPU 和内存扩展器的扩展器，能够将其扩展为零。
@@ -749,6 +757,10 @@
 
     [KubeClipper](https://github.com/KubeClipper-labs) 基于 kubeadm 工具进行二次封装，提供在企业自有基础设施中快速部署 K8S 集群和持续化全生命周期管理（安装、卸载、升级、扩缩容、远程访问等）能力，
     支持在线、代理、离线等多种部署方式，还提供了丰富可扩展的 CRI、CNI、CSI、以及各类 CRD 组件的管理服务。
+
+- [KubeEdge Sedna v0.6 & Ianvs 边云协同终身学习方案 v0.2 发布](https://mp.weixin.qq.com/s/OQdNmmzRl4GC_ZssU4vatQ)
+
+    版本特性：支持非结构化数据场景下的开放世界边云协同终身学习；提供开源数据集、基线算法和评价指标的完整测试套件；针对机器人巡检、自动驾驶等场景，开发了新的未知任务识别和处理能力，包括新样本识别、训练数据生成、多模型联合推理等。
 
 - [KubeEdge 达到软件供应链 SLSA L3 等级](https://mp.weixin.qq.com/s/5kpbnE-F__HqlF0JAwCOSg)
 
@@ -971,6 +983,10 @@
 - [Lima Linux 虚拟机 v0.14.0 发布（CNCF 项目）](https://github.com/lima-vm/lima/releases/tag/v0.14.0)
 
     该版本主要新特性：支持虚拟机共享文件系统 virtiofs、支持 Apple 的虚拟化框架 Virtualization.framework、支持 Containerd 命令行工具 nerdctl 1.1.0。
+
+- [Linkerd 服务网格 v2.14.0 发布（CNCF 项目）](https://github.com/linkerd/linkerd2/releases/tag/stable-2.14.0)
+
+    版本特性：新增直接的 Pod 到 Pod 的多集群服务镜像功能、支持 Gateway API HTTPRoute 资源。
 
 - [Linkerd 服务网格项目 v2.13.0 发布（CNCF 项目）](https://github.com/linkerd/linkerd2/releases/tag/stable-2.13.0)
 
