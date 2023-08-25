@@ -26,11 +26,11 @@ Spiderpool offers features such as node topology, MAC address validation, and in
 
 - Prepare an Alibaba Cloud environment with virtual machines that have 2 network interfaces. Assign a set of auxiliary private IP addresses to each network interface, as shown in the picture:
 
-    ![alicloud-web-network](../../../images/alicloud-network-web.png)
+    ![alicloud-web-network](../../images/alicloud-network-web.png)
 
 - Utilize the configured VMs to build a Kubernetes cluster. The available IP addresses for the nodes and the network topology of the cluster are depicted below:
 
-    ![网络拓扑](../../../images/alicloud-k8s-network.png)
+    ![网络拓扑](../../images/alicloud-k8s-network.png)
 
 ### Install Spiderpool
 
@@ -354,7 +354,7 @@ worker-192   4         192.168.0.0/24    1                    5                t
 
 - Alibaba Cloud's NAT Gateway provides an ingress and egress gateway for public or private network traffic within a VPC environment. By utilizing NAT Gateway, the cluster can have egress connectivity. Please refer to [the NAT Gateway documentation](https://www.alibabacloud.com/help/en/nat-gateway?spm=a2c63.p38356.0.0.1b111b76Rn9rPa) for creating a NAT Gateway as depicted in the picture:
 
-![alicloud-natgateway](../../../images/alicloud-natgateway.png)
+![alicloud-natgateway](../../images/alicloud-natgateway.png)
 
 - Test egress traffic from Pods
 
@@ -511,7 +511,7 @@ tcp-service    LoadBalancer   10.233.4.245    47.98.137.75     999:32635/TCP   1
 
 CCM will automatically create layer 4 and layer 7 load balancers at its IaaS services. You can easily access and manage them through the Alibaba Cloud console, as shown below:
 
-![alicloud-loadbalancer](../../../images/alicloud-loadbalancer.png)
+![alicloud-loadbalancer](../../images/alicloud-loadbalancer.png)
 
 ##### Verify Load Balancer Traffic Ingress Access
 
