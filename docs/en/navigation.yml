@@ -895,7 +895,8 @@ nav:
               - Download Global Management: download/modules/ghippo.md
               - Download Container Management: download/modules/kpanda.md
               - Download Cluster Inspection: download/modules/kcollie.md
-              - Download Application Backup: download/modules/kcoral.md
+              - Download Backup and Restore: download/modules/kcoral.md
+              - Download Security Management: download/modules/dowl.md
               - Download Insight: download/modules/insight.md
               - Download Service Mesh: download/modules/mspider.md
               - Download Spidernet: download/modules/spidernet.md
