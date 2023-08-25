@@ -947,6 +947,7 @@ nav:
               - 下载容器管理: download/modules/kpanda.md
               - 下载集群巡检: download/modules/kcollie.md
               - 下载应用备份: download/modules/kcoral.md
+              - 下载安全管理: download/modules/dowl.md
               - 下载 Insight: download/modules/insight.md
               - 下载服务网格: download/modules/mspider.md
               - 下载网络 Spidernet: download/modules/spidernet.md
