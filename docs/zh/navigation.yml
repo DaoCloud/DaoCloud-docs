@@ -148,6 +148,7 @@ nav:
               - 加固自建工作集群: kpanda/best-practice/hardening-cluster.md
               - 工作集群离线升级指南: kpanda/best-practice/update-offline-cluster.md
               - 为工作集群添加异构节点: kpanda/best-practice/multi-arch.md
+              - 为全局服务集群的工作节点扩容: kpanda/best-practice/add-worker-node-on-global.md
               - 在 CentOS 上创建 Ubuntu 工作集群: kpanda/best-practice/create-ubuntu-on-centos-platform.md
               - 对工作集群的控制节点扩容: kpanda/best-practice/add-master-node.md
               - 在非主流操作系统上创建集群: kpanda/best-practice/use-otherlinux-create-custer.md
