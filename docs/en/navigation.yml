@@ -642,6 +642,7 @@ nav:
               - IP pool use cases: network/modules/spiderpool/ippoolusage.md
               - Workloads uses IP pools: network/modules/spiderpool/usage.md
               - Third-pary workloads use IP pools: network/modules/spiderpool/cutomizedusage.md
+              - Running on Alibaba Cloud: network/modules/spiderpool/alibabacloud.md
               - Config: network/modules/spiderpool/config.md
               - Commands: network/modules/spiderpool/command.md
           - Submariner:
