@@ -1,38 +1,53 @@
-# Create Multicloud Workloads from YAML
+# Create Multicloud Deployment from YAML
 
-In addition to creating workloads through images, they can also be created by entering YAML statements.
+You can create multi-cloud deployments either from an image or a YAML file.
 
-The steps for this creation method are relatively simple, as described below.
+- Image creation involves filling out a form with various configuration options. It is user-friendly and easy-to-perform, but it requires more steps.
+- YAML creation involves configuring the necessary information in a YAML file. It requires fewer steps and is more efficient, but it assumes some backend technical knowledge.
 
-1. In the left navigation bar, click `multicloud Workloads`, and click the `YAML Create` button in the upper right corner.
+This guide explains how to create a multi-cloud deployment using a YAML file. If you want to learn about the image creation method, refer to [Create Multicloud Deployment from Image](deployment.md).
 
-    <!--screenshot-->
+## Prerequisites
 
-2. For example, after entering the YAML statement for creating a Deployment, click `Next`.
+- [Create a Multicloud instance](../instance/add.md)
+- Add at least one worker cluster in the multi-cloud instance. (See [Cluster](../cluster.md#_2) for details)
 
-    <!--screenshot-->
+## Steps
 
-3. After entering the YAML statement of the deployment strategy, click `Next`.
+1. Click `Multicloud Workloads` -> `Deployments`, and `Create from YAML` in the top-right corner.
 
-    <!--screenshot-->
+    ![yaml creation](../images/deploy-create01.png)
 
-4. After entering the YAML statement of the differentiation strategy, click `OK`.
+2. Enter or import the YAML file for the Deployment, then click `Next`.
 
-    <!--screenshot-->
+    > The `Download` button allows you to download the current YAML file and save it locally for future use.
 
-5. Automatically return to the list of multicloud workloads, click `⋮` on the right side of the list, you can edit and modify the YAML, and you can also pause, restart, and delete the workload.
+    ![yaml creation](../images/deploy-create02.png)
 
-    <!--screenshot-->
+3. Enter or import the YAML file for the deployment policy, then click `Next`.
 
-## YAML example
+    ![yaml creation](../images/deploy-create03.png)
 
-The YAML editor that comes with the Multicloud Management module will automatically detect the YAML syntax, and if there is an error, a relevant prompt will appear.
-Here are some common examples that you can use with a little modification.
+4. Enter or import the YAML file for the override policy, then click `OK`.
 
-### Deployment example
+    !!! note
+
+        The override policy is an optional configuration. If you don't need any override configurations, just leave this field empty and click `OK`.
+
+Then you will be automatically directed to the multi-cloud deployment list. You can click the `⋮` icon on the right of the list to edit the YAML, pause, restart, or delete the workload.
+
+![more actions](../images/deploy-update01.png)
+
+## YAML File Examples
+
+The built-in YAML editor can detect your YAML syntax. If there are any errors, they will be marked with a red squiggly line.
+
+Here are some common YAML file examples that you can modify for your own use.
+
+### Deployment Example
 
 ```yaml
-#Kubernetes Deployment
+# Kubernetes Deployment
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -54,15 +69,15 @@ spec:
         name: nginx
 ```
 
-### Deployment strategy example
+### Propagation Policy Example
 
 ```yaml
-#Karmada PropagationPolicy
+# Karmada PropagationPolicy
 apiVersion: policy.karmada.io/v1alpha1
 kind: PropagationPolicy
 metadata:
   name: demo-nginx-pp
-  namespace: default # (1)
+  namespace: default    # (1)
 spec:
   resourceSelectors:
     - apiVersion: apps/v1
@@ -78,10 +93,10 @@ spec:
 1. The default namespace is `default`.
 2. If no namespace is specified, the namespace is inherited from the parent object scope.
 
-### Differentiation strategy example
+### Override Policy Example
 
 ```yaml
-#KarmadaOverridePolicy
+# Karmada OverridePolicy
 apiVersion: policy.karmada.io/v1alpha1
 kind: OverridePolicy
 metadata:

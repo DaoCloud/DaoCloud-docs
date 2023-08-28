@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# Create Multicloud Workloads from Images
+# Create Multicloud Workload from Image
 
 Follow the steps below to create a stateless load (Deployment).
 

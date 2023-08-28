@@ -2,7 +2,7 @@
 
 After creating multicloud instances, you need to connect them to work clusters.
 
-## Connecting a Cluster
+## Add a Cluster
 
 1. Click on `Work Cluster Management` in the left navigation bar, then click on `Connect Cluster` in the top-right corner.
 
@@ -16,7 +16,7 @@ After creating multicloud instances, you need to connect them to work clusters.
 
     ![Confirm](images/cluster02.png)
 
-## Removing a Cluster
+## Remove a Cluster
 
 1. Click the `...` button on the right side of the cluster, and select `Remove` from the pop-up menu.
 
