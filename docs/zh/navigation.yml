@@ -124,7 +124,7 @@ nav:
               - 创建巡检配置: kpanda/user-guide/inspect/config.md
               - 执行巡检: kpanda/user-guide/inspect/inspect.md
               - 查看巡检报告: kpanda/user-guide/inspect/report.md
-              - 离线升级集群巡检模块: kpanda/user-guide/offline-upgrade.md
+              - 离线升级集群巡检模块: kpanda/user-guide/inspect/offline-upgrade.md
           - 备份恢复:
               - 介绍: kpanda/user-guide/backup/intro.md
               - 安装 Velero 插件: kpanda/user-guide/backup/install-velero.md
