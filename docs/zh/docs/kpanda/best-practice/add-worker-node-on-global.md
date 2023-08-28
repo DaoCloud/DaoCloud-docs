@@ -112,9 +112,10 @@
 
 2. 在接入配置处，填入并编辑刚刚复制的 kind 集群的 kubeconfig 配置。需要配置参数如下：
 
->* `集群名称`：接入集群的名称，默认为 `my-cluster`。
->* `insecure-skip-tls-verify: true`：用以跳过 tls 验证，需要手动添加。
->* `server`：将默认的 `https://my-cluster-installer-control-plane:6443` 参数中的 IP 替换为 火种节点 的 IP；`6443` 替换为 6443 端口在节点映射的端口。可执行 `podman ps ｜ grep 6443` 命令查看。
+    * `集群名称`：接入集群的名称，默认为 `my-cluster`。
+    * `insecure-skip-tls-verify: true`：用以跳过 tls 验证，需要手动添加。
+    * `server`：将默认的 `https://my-cluster-installer-control-plane:6443` 参数中的 IP 替换为火种节点的 IP；
+       `6443` 替换为 6443 端口在节点映射的端口。可执行 `podman ps ｜ grep 6443` 命令查看。
 
     ![img](../images/add-global-node01.png)
 
