@@ -133,8 +133,6 @@
         helm repo update kocllie
         ```
 
-        1. helm 版本过低会导致失败，若失败，请尝试执行 helm update repo
-
     1. 选择您想安装的集群巡检版本（建议安装最新版本）。
 
         ```shell
