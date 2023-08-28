@@ -937,6 +937,7 @@ nav:
       - 中间件: videos/mcamel.md
       - 镜像仓库: videos/kangaroo.md
       - 云原生网络: videos/network.md
+      - 云边协同: videos/kant.md
   - 下载中心:
       - DaoCloud Enterprise 5.0:
           - 索引列表: download/index.md
