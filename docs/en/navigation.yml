@@ -375,12 +375,12 @@ nav:
           - Worker Clusters: kairship/cluster.md
           - Multicloud Workloads:
               - Overview: kairship/workload/README.md
-              - Create from Image: kairship/workload/deployment.md
-              - Create from YAML: kairship/workload/yaml.md
-              - Update Workload: kairship/workload/update-deployment.md
+              - Create Deployment from Image: kairship/workload/deployment.md
+              - Create Deployment from YAML: kairship/workload/yaml.md
+              - Update Deployment: kairship/workload/update-deployment.md
               - Convert to Multicloud Workload: kairship/workload/promote.md
-              - Image Creation Job: kairship/workload/job.md
-              - Mirror Creation CronJob: kairship/workload/cronjob.md
+              - Create Job from Image: kairship/workload/job.md
+              - Create CronJob from Image: kairship/workload/cronjob.md
           - Custom Resources: kairship/crds/crd.md
           - Multicloud Resources:
               - Multicloud Services: kairship/resource/service.md

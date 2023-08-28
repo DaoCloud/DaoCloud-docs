@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# mirror to create a scheduled task
+# Create CronJob from Image
 
 Follow the steps below to create a scheduled task (Cronob).
 
