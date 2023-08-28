@@ -69,6 +69,6 @@ error: unexpected error when reading response body. Please retry. Original error
 
 4. 在 `data` 模块下的 `registries.conf` 下配置。
 
-      修改时注意格式缩进，并且每个 registry 需要一个单独的 [[registry]]  部分，如下图所示：
+      修改时注意格式缩进，并且每个 registry 需要一个单独的 `[[registry]]` 部分，如下图所示：
 
       ![faq-ci1](../images/faq-ci1.png)
