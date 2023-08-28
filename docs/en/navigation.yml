@@ -348,7 +348,8 @@ nav:
               - Integrated Toolchain: amamba/user-guide/tools/integrated-toolchain.md
               - Manage Toolchain Instances: amamba/user-guide/tools/toolchain-instances.md
           - FAQ:
-              - amamba/intro/faq.md
+              - Pipeline Issues: amamba/intro/faq-jenkins.md
+              - GitOps Issues: amamba/intro/faq-gitops.md
           - Best Practices:
               - Quick Start Pipeline: amamba/quickstart/deploy-pipeline.md
               - CI/CD based on pipeline + GitOps: amamba/quickstart/argocd-jenkins.md
