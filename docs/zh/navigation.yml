@@ -393,9 +393,9 @@ nav:
               - 删除实例: kairship/instance/delete.md
           - 多云工作集群: kairship/cluster.md
           - 多云工作负载:
-              - 通过镜像创建 Deployment: kairship/workload/deployment.md
-              - 通过 YAML 创建 Deployment: kairship/workload/yaml.md
-              - 更新多云 Deployment: kairship/workload/update-deployment.md
+              - 镜像创建多云 Deployment: kairship/workload/deployment.md
+              - YAML 创建多云 Deployment: kairship/workload/yaml.md
+              - 更新/删除多云 Deployment: kairship/workload/update-deployment.md
               - 一键升级为多云 Deployment: kairship/workload/promote.md
               - 镜像创建 Job: kairship/workload/job.md
               - 镜像创建 CronJob: kairship/workload/cronjob.md
