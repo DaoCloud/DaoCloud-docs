@@ -2,6 +2,54 @@
 
 This page lists the release notes of DME to help you learn its feature development and bug fixing progress.
 
+## 2023-08-25
+
+### V0.27.0
+
+#### New Features
+
+- **Added** Permission dependencies for various module functionalities
+- **Added** Exception details API field for managed resources
+- **Added** API interface to retrieve user permission points
+- **Added** Duplicate check API for gateway domain creation
+- **Added** Failure reason API information for service addition in traffic swimlane
+- **Added** API interfaces for managed Nacos gray release
+- **Added** Support for multiple Envoy instances in a single machine for the gateway, resolving injection failure issues for edge cars in the mesh as gateways
+- **Added** API interface to retrieve port rate limiting rules list
+- **Added** Regular expression and exact path matching modes for API matching in the gateway
+- **Added** Authentication-related API interfaces for Sentinel console
+- **Added** Export and import interfaces for API configuration in the gateway
+- **Added** API interfaces for relevant statistics data in the gateway overview
+
+#### Fixes
+
+- **Fixed** Inconsistent permissions between gateway service access and predefined permissions
+- **Fixed** Incorrect representation of service governance status
+- **Fixed** Exceptional return issue in managed Nacos configuration gray release
+- **Fixed** Error in service instance list in managed Nacos
+- **Fixed** Duplicated service versions in traffic swimlane
+- **Fixed** Abnormal service list issue in traffic swimlane
+- **Fixed** Service deletion issue in traffic swimlane
+- **Fixed** Null pointer exception in swimlane list when error reason is empty
+- **Fixed** Non-functional Skoala-init Chart form mode configuration
+
+#### Enhancements
+
+- **Improved** Changed the deletion of swimlane services from delete method to put method as required.
+- **Improved** Removed redundant permission dependencies and improved internal permission dependencies
+- **Improved** Adapted interface display requirements for traffic swimlane
+- **Improved** Cloud-native microservice plugin interface
+- **Improved** Changed the method of adding swimlane services from batch to single entry
+- **Improved** Front-end component Deployment port from 80 to 8080
+- **Improved** Upgraded Ghippo SDK to v0.20.0-dev2
+
+!!! note
+
+    Important: When the Microservice Engine version is greater than `v0.24.2`, there are incompatible updates
+    for versions `v0.24.2` and earlier. Since the gateway involves changes in the open-source component
+    repository addresses, it is necessary to manually delete the old `gateway-api-admission-xxxxx` Job
+    before performing the upgrade. Then proceed with the normal upgrade process.
+
 ## 2023-08-03
 
 ### v0.26.2
