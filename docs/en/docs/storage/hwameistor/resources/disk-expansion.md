@@ -34,6 +34,7 @@ After inserting the new disk into the HwameiStor storage node `k8s-worker-4`, ch
     ```shell
     kubectl get localdisk | grep k8s-worker-4 | grep sdc
     ```
+
     ```none
     k8s-worker-4-sdc   k8s-worker-4       Unclaimed 
     ```
