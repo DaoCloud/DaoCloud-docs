@@ -1,10 +1,10 @@
-# 离线升级容器管理模块
+# 离线升级集群巡检模块
 
-本页说明从[下载中心](../../download/index.md)下载容器管理模块后，应该如何安装或升级。
+本页说明从[下载中心](../../download/index.md)下载集群巡检模块后，应该如何安装或升级。
 
 !!! info
 
-    下述命令或脚本内出现的 `kpanda` 字样是容器管理模块的内部开发代号。
+    下述命令或脚本内出现的 `kocllie` 字样是集群巡检模块的内部开发代号。
 
 ## 从下载的安装包中加载镜像
 
@@ -27,10 +27,10 @@
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: kpanda # 节点上执行 load-image.yaml 文件的路径。
+          intermediateBundlesPath: kocllie # 节点上执行 load-image.yaml 文件的路径。
         target:
           containerRegistry: 10.16.10.111 # 镜像仓库地址
-          containerRepository: release.daocloud.io/kpanda # 镜像仓库路径
+          containerRepository: release.daocloud.io/kocllie # 镜像仓库路径
           repo:
             kind: HARBOR # Helm Chart 仓库类别
             url: http://10.16.10.111/chartrepo/release.daocloud.io # Helm 仓库地址
@@ -49,10 +49,10 @@
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: kpanda # 节点上执行 load-image.yaml 文件的路径。
+          intermediateBundlesPath: kocllie # 节点上执行 load-image.yaml 文件的路径。
         target:
           containerRegistry: 10.16.10.111 # 镜像仓库 url
-          containerRepository: release.daocloud.io/kpanda # 镜像仓库路径
+          containerRepository: release.daocloud.io/kocllie # 镜像仓库路径
           repo:
             kind: LOCAL
             path: ./local-repo # chart 本地路径
@@ -75,7 +75,7 @@
 1. 解压 tar 压缩包。
 
     ```shell
-    tar xvf kpanda.bundle.tar
+    tar xvf kocllie.bundle.tar
     ```
 
     解压成功后会得到 3 个文件：
@@ -109,10 +109,10 @@
 
 === "通过 helm repo 升级"
 
-    1. 检查容器管理 helm 仓库是否存在。
+    1. 检查集群巡检 helm 仓库是否存在。
 
         ```shell
-        helm repo list | grep kpanda
+        helm repo list | grep kocllie
         ```
 
         若返回结果为空或如下提示，则进行下一步；反之则跳过下一步。
@@ -121,44 +121,44 @@
         Error: no repositories to show
         ```
 
-    1. 添加容器管理的 helm 仓库。
+    1. 添加集群巡检的 helm 仓库。
 
         ```shell
-        heml repo add kpanda http://{harbor url}/chartrepo/{project}
+        heml repo add kocllie http://{harbor url}/chartrepo/{project}
         ```
 
-    1. 更新容器管理的 helm 仓库。
+    1. 更新集群巡检的 helm 仓库。
 
         ```shell
-        helm repo update kpanda
+        helm repo update kocllie
         ```
 
-    1. 选择您想安装的容器管理版本（建议安装最新版本）。
+    1. 选择您想安装的集群巡检版本（建议安装最新版本）。
 
         ```shell
-        helm search repo kpanda/kpanda --versions
+        helm search repo kocllie/kocllie --versions
         ```
 
         ```none
-        [root@master ~]# helm search repo kpanda/kpanda --versions
+        [root@master ~]# helm search repo kocllie/kocllie --versions
         NAME                   CHART VERSION  APP VERSION  DESCRIPTION
-        kpanda/kpanda  0.20.0          v0.20.0       A Helm chart for kpanda
+        kocllie/kocllie  0.20.0          v0.20.0       A Helm chart for kocllie
         ...
         ```
 
     1. 备份 `--set` 参数。
 
-        在升级容器管理版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
+        在升级集群巡检版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
 
         ```shell
-        helm get values kpanda -n kpanda-system -o yaml > bak.yaml
+        helm get values kocllie -n kocllie-system -o yaml > bak.yaml
         ```
 
-    1. 更新 kpanda crds
+    1. 更新 kocllie crds
 
         ```shell
-        helm pull kpanda/kpanda --version 0.21.0 && tar -zxf kpanda-0.21.0.tgz
-        kubectl apply -f kpanda/crds
+        helm pull kocllie/kocllie --version 0.6.0 && tar -zxf kocllie-0.6.0.tgz
+        kubectl apply -f kocllie/crds
         ```
 
     1. 执行 `helm upgrade`。
@@ -170,24 +170,24 @@
         ```
 
         ```shell
-        helm upgrade kpanda kpanda/kpanda \
-          -n kpanda-system \
+        helm upgrade kocllie kocllie/kocllie \
+          -n kocllie-system \
           -f ./bak.yaml \
           --set global.imageRegistry=$imageRegistry \
-          --version 0.21.0
+          --version 0.6.0
         ```
 
 === "通过 chart 包升级"
 
     1. 备份 `--set` 参数。
 
-        在升级容器管理版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
+        在升级集群巡检版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
 
         ```shell
-        helm get values kpanda -n k pan da-system -o yaml > bak.yaml
+        helm get values kocllie -n k pan da-system -o yaml > bak.yaml
         ```
 
-    1. 更新 kpanda crds
+    1. 更新 kocllie crds
 
         ```shell
         kubectl apply -f ./crds
@@ -202,8 +202,8 @@
         ```
 
         ```shell
-        helm upgrade kpanda . \
-          -n kpanda-system \
+        helm upgrade kocllie . \
+          -n kocllie-system \
           -f ./bak.yaml \
           --set global.imageRegistry=$imageRegistry
         ```
