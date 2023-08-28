@@ -63,7 +63,7 @@ When use Maven as the pipeline build environment, most users need to modify `set
 
     !!! note
 
-      - Do not forget to apply indention.
-      - Each registry should have a separate `[[registry]]` section, as shown in the example image.
+        - Do not forget to apply indention.
+        - Each registry should have a separate `[[registry]]` section, as shown in the example image.
 
     ![example](../images/faq04.png)
