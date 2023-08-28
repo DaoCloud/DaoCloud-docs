@@ -6,4 +6,6 @@ Redis 作为开源的内存数据存储系统，具备出色的性能、高可�
 
 Redis-Shake 是一个用于合并、同步和迁移 Redis 数据的工具，可以基于不同的 Redis 模式，提供相应的数据持续同步方案，本文将介绍不同模式间的数据同步与数据恢复配置方法。
 
-[集群模式 VS 集群模式](/cluster2cluster.md)
+[集群模式 VS 集群模式](./cluster2cluster.md)
+
+[哨兵模式 VS 哨兵模式](./sentinel2sentinel.md)
