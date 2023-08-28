@@ -43,7 +43,7 @@ DCE 5.0 包含的众多子模块可以单独下载，按需对每个模块进行
 
 | 模块     | 文件大小 | 下载                                         | 更新日期   |
 | -------- | -------- | -------------------------------------------- | ---------- |
-| 全局管理 | 440 MB   | [:arrow_right: 下载页](./modules/ghippo.md)  | 2023-07-28 |
+| 全局管理 | 440 MB   | [:arrow_right: 下载页](./modules/ghippo.md)  | 2023-08-28 |
 | 容器管理 | 2.41 GB   | [:arrow_right: 下载页](./modules/ghippo.md)  | 2023-07-06 |
 | 集群巡检 | 205.11 MB | [:arrow_right: 下载页](./modules/kcollie.md) | 2023-08-08 |
 | 应用备份 | 59.29 MB | [:arrow_right: 下载页](./modules/kcoral.md) | 2023-08-08 |
