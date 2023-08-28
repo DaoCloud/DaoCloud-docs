@@ -1,5 +1,6 @@
 ---
 status: new
+toc: hide
 ---
 # One-Click Conversion to Multi-Cloud Workload
 
