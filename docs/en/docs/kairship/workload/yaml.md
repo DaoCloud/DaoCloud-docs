@@ -1,4 +1,4 @@
-# Create multicloud workloads via YAML
+# Create Multicloud Workloads from YAML
 
 In addition to creating workloads through images, they can also be created by entering YAML statements.
 
