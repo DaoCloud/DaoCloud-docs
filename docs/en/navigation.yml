@@ -885,6 +885,7 @@ nav:
       - Middleware: videos/mcamel.md
       - Network: videos/network.md
       - Container Registry: videos/kangaroo.md
+      - Cloud to Edge Continuum: videos/kant.md
   - Download:
       - DaoCloud Enterprise 5.0:
           - Index: download/index.md

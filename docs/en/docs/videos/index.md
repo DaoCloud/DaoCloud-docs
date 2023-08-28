@@ -16,6 +16,7 @@ We have created video tutorials to help you quickly get started.
 - :material-middleware: **Middleware** [ES, Kafka, MinIO, MySQL, etc.](mcamel.md)
 - :material-warehouse: **Container Repository** [Image integration and hosting services](kangaroo.md)
 - :material-dot-net: **Network** [Multiple CNI fusion solutions](network.md)
+- :fontawesome-brands-edge-legacy: **Cloud to Edge Continuum** [Extend containers to edge](kant.md)
 
 </div>
 
