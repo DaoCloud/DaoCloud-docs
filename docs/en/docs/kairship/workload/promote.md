@@ -1,43 +1,40 @@
 ---
 status: new
 ---
+# One-Click Conversion to Multi-Cloud Workload
 
-# One-click conversion to multicloud workloads [Beta]
+With the Multi-Cloud Orchestration module, you can easily convert a single-cloud workload into a multi-cloud workload with just one click. This operation greatly improves operational efficiency in multi-cloud environments.
 
-Multicloud Management supports one-click conversion of sub-cluster workloads to multicloud workloads through simple selection operations.
+Here are the specific steps:
 
-<!--screenshot-->
+1. Click on the name of the multi-cloud instance, then click on `Multicloud Workloads` on the left side and select `Convert Now` for the new feature.
 
-## Operation Guide
+    ![Workloads](../images/promote01.png)
 
-Click the `Try Now` button above to quickly convert the sub-cluster application to a multicloud application; this feature is currently in the trial version, if you encounter any problems, you can give feedback in the button below. When a subcluster is converted, you can choose whether to convert its services synchronously. By default, it will be converted synchronously.
+2. Choose which application you want to convert.
 
-<!--screenshot-->
+    - You can filter applications by cluster and namespace or search directly by name.
+    - When converting, choose whether to convert its associated configmaps and secrets. By default, they will be converted.
+    - Only workloads in the clusters that have been added to the current multi-cloud instance will be displayed here. If there is no your target application, add the cluster where the target is deployed to the current multi-cloud instance and then try again.
+    - Resources that have already been converted to multi-cloud applications cannot be converted again and will not appear in the list.
+    - During the conversion, the system will automatically create corresponding deployment policies and manage the original sub-clusters.
 
-- Select the corresponding sub-cluster. Note that only the working cluster that the current workload has been connected to is displayed here. The current workload that is not connected cannot be viewed. The specific access list can be viewed on the working cluster management page
-- Select an application, which supports fuzzy retrieval based on the namespace and workload name, helping you quickly locate the application
-- Click `Confirm` to complete the multicloud workload
+        ![Convert Application](../images/promote02.png)
 
-After multicloudization is completed, actions such as editing and updating can be performed according to normal multicloud workloads, which are no different from standard multicloud workloads.
+3. Click `OK` in the lower-right corner of the dialog box to complete the conversion.
 
-!!! note
+    After the application is converted into a multi-cloud application, it supports editing, updating, and other operations, just like native multi-cloud workloads.
 
-    - During conversion, the selectable workload only supports the selection of workloads in sub-clusters; multicloud workloads that have already been orchestrated and distributed by multicloud do not support re-selection.
-    - When multicloud, the ConfigMap and Secret associated with the workload will be automatically converted into multicloud resources.
-    - When converting to multicloud, a corresponding deployment strategy will be automatically created to manage atomic clusters.
+## FAQs
 
-## common problem
+- Will the workload be restarted after a successful conversion?
 
-- Will atomic cluster workloads restart after converting multicloud workloads?
+    No, there won't be a restart. The conversion is workload-unaware.
 
-    There will be no restart, and when the multicloud workload is converted, the atomic cluster is automatically managed, and the atomic cluster workload is guaranteed to be switched without any sense.
+- After a successful conversion, if the original cluster is removed from the deployment policy, will the workload replica in that cluster be deleted as well?
 
-- After converting a multicloud workload, after the atomic cluster is kicked out of the deployment policy, will the sub-cluster workload be deleted?
+    Yes, it will be deleted. Once the conversion is successful, the workload becomes a standard multi-cloud workload. If the deployment policy changes and the workload is no longer propagated to the original cluster, according to Karmada's design principle, the workload replica in that cluster will also be deleted to maintain consistency.
 
-    Yes, once managed to Multicloud Management, the atomic cluster becomes a standard multicloud workload. When the deployment strategy changes and the sub-cluster is no longer propagated, it will be deleted according to Karmada's design principle to ensure consistency.
+- Which Kubernetes resources can be converted?
 
-- What Kubernetes Resource types currently support user transitions?
-
-    At present, the open operation portal only supports multicloud for Deployment;
-    However, if the Deployment in the sub-cluster is associated with the corresponding ConfigMap and Secret, then the resource will be multicloud automatically;
-    The purpose of this is that when the multicloud workload is distributed to other clusters, the resources that the workload depends on also exist synchronously, otherwise the workload may start abnormally.
+    Currently, only Deployments can be explicitly converted into multi-cloud resources. If the Deployment is associated with configmaps and secrets, users can choose whether to convert them together. By default, they will be converted. This is to ensure that when the new multi-cloud workload is distributed to other clusters, its dependent resources are also in place; otherwise, it may cause startup issues for the workload.
