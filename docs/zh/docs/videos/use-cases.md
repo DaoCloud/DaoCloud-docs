@@ -21,7 +21,7 @@
 ## 如何将微服务接入 DCE 5.0 并治理南北向流量？
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/microservice01.mp4" preload="metadata" poster="images/south-north.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/microservice01.mov" preload="metadata" poster="images/south-north.png"></video>
 </div>
 
 ## 如何借助服务网格治理传统微服务东西向流量？
@@ -70,4 +70,16 @@
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/gitops.mp4" preload="metadata" poster="images/gitops.png"></video>
+</div>
+
+## 如何在 DCE 5.0 中部署 ChatGPT 应用？
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/pgvector.mp4" preload="metadata" poster="images/pgvector.png"></video>
+</div>
+
+## 如何实现跨集群数据同步？
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/redis-sync.mp4" preload="metadata" poster="images/redis-sync.png"></video>
 </div>
