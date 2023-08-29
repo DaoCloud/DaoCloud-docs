@@ -26,19 +26,19 @@
 
 - 在 Locust Web 机器执行如下命令，收集压测结果
 
-    ```
+    ```bash
     docker run -p 8089:8089 --network=host -v $PWD:/mnt/locust locustio/locust -f /mnt/locust/gateway-external-nginx.py --master
     ```
 
 - 在 Locust 压测机执行如下命令，模拟用户访问，执行压力测试
 
-    ```
+    ```bash
     docker run -p 8089:8089 --network=host -v $PWD:/mnt/locust locustio/locust -f /mnt/locust/gateway-external-nginx.py --worker --master-host=172.30.120.210
     ```
 
 - 压测脚本 `gateway-external-nginx.py`
 
-    ```
+    ```python
     from locust import task
     from locust.contrib.fasthttp import FastHttpUser
 
@@ -91,18 +91,21 @@
 
 - 并发用户数为 4
 
-    ![](../images/test-gateway01.png)
-    ![](../images/test-gateway02.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway01.png)
+
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway02.png)
 
 - 并发用户数为 8
 
-    ![](../images/test-gateway03.png)
-    ![](../images/test-gateway04.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway03.png)
+
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway04.png)
 
 - 并发用户数为 12
     
-    ![](../images/test-gateway05.png)
-    ![](../images/test-gateway06.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway05.png)
+
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway06.png)
 
 ## 探究 contour 资源配置对 envoy 的性能影响
 
@@ -149,18 +152,21 @@ DCE 5.0 云原生网关是在开源项目 contour 和 envoy 的基础上进一�
 
 - contour 资源 1 核 1 G
 
-    ![](../images/test-gateway07.png)
-    ![](../images/test-gateway08.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway07.png)
+
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway08.png)
 
 - contour 资源 2 核 1 G
 
-    ![](../images/test-gateway09.png)
-    ![](../images/test-gateway10.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway09.png)
+
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway10.png)
 
 - contour 资源 3 核 2 G
     
-    ![](../images/test-gateway11.png)
-    ![](../images/test-gateway12.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway11.png)
+
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway12.png)
 
 ## 探究 envoy 资源配置对吞吐量的影响
 
@@ -268,75 +274,88 @@ envoy 固定为 1 副本，contour 配置为 1 核 1 G，被测试服务 nginx �
 
 - 并发用户数为 4
 
-    ![](../images/test-gateway13.png)
-    ![](../images/test-gateway14.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway13.png)
+
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway14.png)
 
 - 并发用户数为 8
 
-    ![](../images/test-gateway15.png)
-    ![](../images/test-gateway16.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway15.png)
+
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway16.png)
 
 - 并发用户数为 16
 
-    ![](../images/test-gateway17.png)
-    ![](../images/test-gateway18.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway17.png)
+
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway18.png)
 
 #### 当 envoy 配置为 2 核 1 G
 
 - 并发用户数为 4
 
-    ![](../images/test-gateway19.png)
-    ![](../images/test-gateway20.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway19.png)
+
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway20.png)
 
 - 并发用户数为 8
 
-    ![](../images/test-gateway21.png)
-    ![](../images/test-gateway22.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway21.png)
+
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway22.png)
 
 #### 当 envoy 配置为 3 核 1 G
 
 - 并发用户数为 8
 
-    ![](../images/test-gateway23.png)
-    ![](../images/test-gateway24.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway23.png)
+
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway24.png)
 
 - 并发用户数为 12
 
-    ![](../images/test-gateway25.png)
-    ![](../images/test-gateway26.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway25.png)
+
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway26.png)
 
 #### 当 envoy 配置为 4 核 2 G
 
 - 并发用户数为 8
 
-    ![](../images/test-gateway27.png)
-    ![](../images/test-gateway28.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway27.png)
+
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway28.png)
 
 - 并发用户数为 12
 
-    ![](../images/test-gateway29.png)
-    ![](../images/test-gateway30.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway29.png)
+
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway30.png)
 
 #### 当 envoy 配置为 5 核 2 G
 
 - 并发用户数为 8
 
-    ![](../images/test-gateway31.png)
-    ![](../images/test-gateway32.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway31.png)
+
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway32.png)
 
 - 并发用户数为 12
 
-    ![](../images/test-gateway33.png)
-    ![](../images/test-gateway34.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway33.png)
+
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway34.png)
 
 #### 当 envoy 配置为 6 核 2 G
 
 - 并发用户数为 12
 
-    ![](../images/test-gateway35.png)
-    ![](../images/test-gateway36.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway35.png)
+
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway36.png)
 
 - 并发用户数为 16
 
-    ![](../images/test-gateway37.png)
-    ![](../images/test-gateway38.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway37.png)
+
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/test-gateway38.png)

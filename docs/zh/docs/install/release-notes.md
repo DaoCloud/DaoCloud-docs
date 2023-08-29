@@ -2,9 +2,97 @@
 
 本页列出安装器的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2023-7-31
+
+### v0.10.0
+
+#### 新增
+
+- **新增** 支持 Oracle Linux R8-U7 操作系统
+- **新增** 支持灵活暴露 kind 容器映射至宿主机的端口
+- **新增** import-artifact 子命令支持根据 clusterConfig.yaml 配置文件中定义的外接服务来导入离线资源
+
+#### 优化
+
+- **优化** 对于使用安装器通过外接 os repo 部署环境后，优化了在容器管理创建集群时可以选择到外接 os repo
+- **优化** 重构、抽象 clusterConfig 检测层
+- **优化** 优化前置依赖安装脚本的错误提示
+- **优化** 在最小化安装过程中 ES 健康状态为 `yellow` 时允许继续安装
+- **优化** 消除 import-artifact 子命令多余的镜像集成步骤
+- **优化** 离线资源外接或内建场景下默认展开 clusterConfig 模板中 fullPackagePath 属性
+
+#### 修复
+
+- **修复** 修复外接镜像服务地址检测有误
+- **修复** 修复火种 kind 集群输出的错误格式 kubeconfig
+- **修复** 修复解压不同版本离线包至统一目录导致 helm 参数出现多个版本 chart 的问题
+- **修复** 修复 prerequisite.tgz 中错误的指令集架构信息
+- **修复** 修复 import-artifact 不指定-C 导入异常
+- **修复** 修复错误的退出指令导致安装器退出提示信息未展示的问题
+- **修复** 修复 podman 底座 + kind 重启导致 kube-controller-manager 和 kube-scheduler 证书认证失败问题
+- **修复** 修复打印内嵌 manifest 子命令的命令指示符只要指定非 `install-app` 都会返回全模式 manifest 的问题
+- **修复** 修复打印内嵌 manifest 子命令的命令名 typo
+- **修复** 修复已存在 amd64 资源，import-artifact 子命令再次导入 arm64 包失败
+
+#### 已知问题
+
+- 升级不支持通过 install-app 子命令，仅支持 create-cluster 子命令
+
+- Redhat 8.6 操作系统火种 kind 重启后 kubelet 服务无法启动，报错：`failed to initialize top level QOS containers: root container [kubelet kubepods] doesn't exist`，临时解决方案：执行命令`podman restart [containerid] --time`
+
+- 安装基于 TencentOS 3.1 的集群时，无法正确识别包管理器，如果需要 TencentOS 3.1 请使用安装器 0.9.0 版本
+
+## 2023-6-30
+
+### v0.9.0
+
+#### 新增
+
+- **新增** `istio-ingressgateway` 支持了高可用模式，从 v0.8.x 及以前升级到 v0.9.0 时必须执行如下命令：`./offline/dce5-installer cluster-create -c clusterConfig.yaml -m manifest.yaml --upgrade infrastructure,gproduct`
+- **新增** 支持在 clusterConfig.yaml 中配置暴露 火种 kind 地址及端口
+- **新增** 安装器在启用画眉存储时，新增前置检查各个节点是否安装 lvm2
+- **新增** 安装器内置默认 k8s 版本升级到 v1.26.5
+- **新增** 支持在 clusterConfig.yaml 中指定火种 kind 的本地文件挂载路径
+- **新增** 整合 ISO 镜像文件导入脚本到安装器二进制中
+
+#### 优化
+
+- **优化** 优化下载脚本
+- **优化** 优化 `import-artifact` 命令逻辑和功能
+- **优化** 优化升级过程中 clusterConfig.yaml 中 `isoPath` 和 `osPackagePath` 为非必填项
+- **优化** 优化安装器临时文件清理机制
+- **优化** 优化火种节点复用功能
+
+#### 修复
+
+- **修复** 修复 ES 组件无法在 OCP 启动的问题
+- **修复** 修复在 TencentOS 中安装 DCE 后无法访问 UI 界面的问题
+- **修复** 修复中间件数据库在 arm64 环境高概率新建数据库失败的问题
+- **修复** 修复镜像上传成功检查过程中错误的 shell 扩展
+
+#### 已知问题
+
+- 从 v0.8.x 升级到 v0.9.0 时需要执行如下命令进行检查：
+
+    - 检查 `istio-ingressgateway` 端口是 `80` 还是 `8080`
+
+        ```bash
+        kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].targetPort}'
+        ```
+
+    - 检查 `istio-ingressgateway` 端口是 `443` 还是 `8443`
+
+        ```bash
+        kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="https")].targetPort}'
+        ```
+  
+    输出结果为 `80` 或 `443` 时，升级命令需要增加 `infrastructure` 参数，示例：`./offline/dce5-installer cluster-create -c clusterConfig.yaml -m manifest.yaml --upgrade infrastructure,gproduct`
+
+    输出结果非上述情况时，升级操作直接参考文档[升级 DCE 5.0 产品功能模块](upgrade.md)
+
 ## 2023-6-15
 
-### v0.8.0
+### v0.8.1
 
 #### 优化
 
@@ -47,8 +135,10 @@
 - 离线包解压后的 `offline/sample/clusterConfig.yaml` 文件存在缩进问题，导致离线部署时会变成在线安装，离线安装前如果要使用 `offline/sample/clusterConfig.yaml` 文件的话需要手动修改缩进问题，请查看[集群配置文件](commercial/cluster-config.md)
 - Addon 离线包暂不支持上传到 JFrog 外接服务
 - 容器管理平台离线模式暂无法支持工作集群添加节点
-- 离线场景下使用外置 OS Repo 仓库时，即 clusterConfig.yaml 中定义 `osRepos.type=external`，部署 DCE5.0 成功后无法在容器管理中创建工作集群，临时解决方案如下：
-  global集群安装完成后立即更新global集群 kubean-system 命名空间的configmap kubean-localservice，将 `yumRepos.external` 值中所有双引号改为单引号。如下示例，将文件内的双引号都替换为单引号：
+- 离线场景下使用外置 OS Repo 仓库时，即 clusterConfig.yaml 中定义 `osRepos.type=external`，
+  部署 DCE 5.0 成功后无法在容器管理中创建工作集群，临时解决方案如下：
+  global 集群安装完成后立即更新 global 集群 kubean-system 命名空间的 configmap kubean-localservice，
+  将 `yumRepos.external` 值中所有双引号改为单引号。如下示例，将文件内的双引号都替换为单引号：
 
     ```yaml
     yumRepos:
@@ -92,7 +182,7 @@
 
 - **优化** 优化了对 tar 等命令的前置校验
 - **优化** 优化了升级操作命令行参数
-- **优化** 关闭了 Kibana 通过 NodePort 访问，Insight 使用 ES 的 NodePort or VIP 访问
+- **优化** 关闭了 Kibana 通过 NodePort 访问，Insight 使用 ES 的 NodePort 或 VIP 访问
 - **优化** 优化了并发日志展示，终止任务使用 SIGTERM 信号而不是 SIGKILL
 
 #### 修复
@@ -102,7 +192,7 @@
 
 #### 已知问题
 
-- 在线安装 global 集群会失败，需在 clusterConfig.yaml 的 `kubeanConfig` 块里进行如下配置:
+- 在线安装 global 集群会失败，需在 clusterConfig.yaml 的 `kubeanConfig` 块里进行如下配置：
 
     ```yaml
     kubeanConfig: |- 
@@ -112,15 +202,16 @@
     同时通过容器管理在线创建工作集群也有相同问题，需在集群创建页面高级配置的自定义参数中添加上述配置，键为 `calico_crds_download_url`，值为上述 calico_crds_download_url 的值
 
 - Kubean 存在低概率无法创建 spray-job 任务，通过手动删除对应的 clusteroperations CR 资源再重新执行安装命令
-- 使用外部 OS Repo 部署 DCE 5.0后，无法通过容器管理离线创建工作集群，通过手动修改 global 集群 kubean-system 命名空间的 configmap kubean-localservice 来解决。
-  在 `yumRepos` 下新增如下配置,需要在 external 内填写 clusterConfig.yaml 中配置的外部OS Repo 地址:
+- 使用外部 OS Repo 部署 DCE 5.0后，无法通过容器管理离线创建工作集群，通过手动修改 global 集群 kubean-system
+  命名空间的 configmap kubean-localservice 来解决。在 `yumRepos` 下新增如下配置，需要在 external 内填写
+  clusterConfig.yaml 中配置的外部 OS Repo 地址：
 
     ```yaml
     yumRepos:
       external: []
     ```
 
-    完成修改后对容器管理创建集群页面的节点配置的yum源选择新配置
+    完成修改后对容器管理创建集群页面的节点配置的 yum 源选择新配置
 
 ## 2023-4-11
 

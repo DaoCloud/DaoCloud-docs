@@ -7,7 +7,7 @@ After upgrading the Istio version of the mesh, the sidecar upgrade feature will 
 
 After the Istio version upgrade is completed, go to the `Workload` interface. Workloads that meet the upgrade conditions will display an exclamation mark prompt message. Select the workload you want to upgrade, and the `Sidecar Upgrade` button will appear.
 
-![workload sidecars](../images/sidecar-update01.png)
+![workload sidecars](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/sidecar-update01.png)
 
 Click the `Sidecar Upgrade` button to enter the `Sidecar Upgrade Version` wizard, which has three steps: `Environment Check`, `Select Target Version`, and `Upgrade`. Differences in operation between "Hot Upgrade" and "Restart Upgrade" exist.
 
@@ -29,17 +29,17 @@ After meeting the above requirements, proceed to the next step for hot upgrade.
 
 1. **Environmental testing**: If the detected items do not meet the hot upgrade requirements during the testing phase, proceed to the next two steps for restart upgrade.
 
-    ![env check](../images/SidecarUpdate05.png)
+    ![env check](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/SidecarUpdate05.png)
 
 2. **Sidecar upgrade version**: In the restart upgrade process, only the latest version is supported and cannot be selected.
 
-	![select target version](../images/SidecarUpdate06.png)
+	![select target version](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/SidecarUpdate06.png)
 
 3. **Upgrade**: The upgrade page displays the basic information of the selected workload and sidecar version information. Clicking `Upgrade with one-click` will immediately restart the Pod. Please be careful.
 
-	![upgrade](../images/SidecarUpdate07.png)
+	![upgrade](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/SidecarUpdate07.png)
 
-	![upgrade](../images/SidecarUpdate08.png)
+	![upgrade](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/SidecarUpdate08.png)
 
 !!! note
 

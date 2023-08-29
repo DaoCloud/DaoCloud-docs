@@ -10,11 +10,11 @@ Please confirm that your cluster has successfully connected to the container man
 
 1. Click `Container Management` from the left navigation bar, enter the `Cluster List`, and click the name of the cluster where the service mesh is to be installed.
 
-    ![cluster list](../images/login01.png)
+    ![cluster list](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/login01.png)
 
 2. On the `Cluster Overview` page, click `Console`.
 
-    ![console](../images/login02.png)
+    ![console](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/login02.png)
 
 3. Enter the following commands line by line from the console (change the VERSION based on your actual demands):
 

@@ -14,7 +14,7 @@ The specific operation steps are as follows.
 2. On the left nav bar select `Identity Providers`, click the `OIDC` tab.
    After completing the form fields and establishing a trust relationship with the identity provider, click `Save`.
 
-    ![oidc](../../images/oidc02.png)
+    ![oidc](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/oidc02.png)
 
     | Field | Description |
     | ---------- | -------------------------------------- ---------------------- |

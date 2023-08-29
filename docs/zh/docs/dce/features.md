@@ -107,8 +107,8 @@ DaoCloud Enterprise 5.0 融海量特性于一体，提供一站式 PaaS 服务�
 === "开放兼容"
 
 - 基于原生的 Kubernetes 和 Docker 技术，全面兼容 Kubernetes API 和 Kubectl 命令。
-- 提供了丰富的插件体系扩充云容器集群功能，例如 Multus、Cillum、Contour 等[网络插件](../network/intro/what.md)。
+- 提供了丰富的插件体系扩充云容器集群功能，例如 Multus、Cillum、Contour 等[网络插件](../network/intro/index.md)。
 
-[下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](./license0.md){ .md-button .md-button--primary }

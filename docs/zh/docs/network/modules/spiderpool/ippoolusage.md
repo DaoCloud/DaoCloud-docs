@@ -37,7 +37,7 @@
 
     ![nodeaffinity01](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/nodeaffinity01.jpg)
 
-- 不同工作负载需要调度至 **不同节点** 上，并使用 **不同子网** ，如：[SRI-OV 同 Macvlan CNI 混用场景](../../plans/ethplan.md)，具体使用流程如下：
+- 不同工作负载需要调度至 **不同节点** 上，并使用 **不同子网** ，如：[SR-IOV 同 Macvlan CNI 混用场景](../../plans/ethplan.md)，具体使用流程如下：
 
     ![nodeaffinity02](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/nodeaffinity02.jpg)
 

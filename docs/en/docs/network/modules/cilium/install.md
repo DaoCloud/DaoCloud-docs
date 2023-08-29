@@ -8,13 +8,13 @@ This page describes the configuration of various parameters when installing Cili
 
 2. To install Cilium in DCE 5.0, you need to select `cilium` for `Network Plugins` on the `Create Cluster`->`Network Configuration` page. For creating a cluster, see [create worker cluster](../../../kpanda/user-guide/clusters/create-cluster.md).
 
-   ![network setting](../../images/cilium-install-1.png)
+   ![network setting](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-install-1.png)
 
 ## Parameter configuration
 
 If you need to configure more features for Cilium, you can install Cilium via Kubean. Add and fill in parameters as needed under `Advanced Configuration`->`Custom argentums` when installing Cilium using Kubean.
 
-![cilium-arg](../../images/cilium-install-2.png)
+![cilium-arg](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-install-2.png)
 
 The following describes the configuration of each argument when installing Cilium with Kubean：
 

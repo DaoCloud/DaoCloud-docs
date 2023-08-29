@@ -17,11 +17,11 @@ To use the fantastic features provided by Multicloud Management module, you must
 
 1. Click `Create Multicloud Instance` in the upper right corner.
 
-    ![add](../images/create-instance01.png)
+    ![add](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/create-instance01.png)
 
 2. Fill in information and click "OK".
 
-    - Management Cluster: available clusters come from those integrated or crated in DCE 5.0 [Container Management]((../../kpanda/intro/what.md)) module. If no target cluster is found, go to Container Management module [integrate](../../kpanda/user-guide/clusters/integrate-cluster.md) or [create](../../kpanda/user-guide/clusters/create-cluster.md) a cluster.
+    - Management Cluster: available clusters come from those integrated or crated in DCE 5.0 [Container Management](../../kpanda/intro/index.md) module. If no target cluster is found, go to Container Management module [integrate](../../kpanda/user-guide/clusters/integrate-cluster.md) or [create](../../kpanda/user-guide/clusters/create-cluster.md) a cluster.
     - Delete Instance: If checked，the Karmada instance will also be deleted when you delete the multicloud management instance. If not checked, the Karmada instance will remain and you can use it in terminal, but not in DCE 5.0 Multicloud Management anymore.
 
-    ![add](../images/create-instance02.png)
+    ![add](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/create-instance02.png)

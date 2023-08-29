@@ -32,7 +32,7 @@ For specific operating steps, please refer to [Building Microservice Application
 
 ### Configuration of Istio-related Resources
 
-Create the following resources in the [Service Mesh](../../mspider/intro/what.md) module or console.
+Create the following resources in the [Service Mesh](../../mspider/intro/index.md) module or console.
 
 1. Create Gateway
 

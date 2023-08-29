@@ -24,7 +24,7 @@ RabbitMQ 数据迁移，可以采用如下两种方案：
 #### 操作流程
 
 1. 将消息生产端切换到集群 `rabbitmq-cluster-b`，不再生产消息到 `rabbitmq-cluster-a` 集群中。
-2. 消费端同时消费 `rabbitmq-cluster-a` 和 `rabbitmq-cluster-b` 集群中的消息，当 `rabbitmq-cluster-a` 集群中消息全部消费完后，将消息消费端切换到 `rabbitmq-cluster-b` 集群中，完成数据迁移。
+2. 消费端同时消费 `rabbitmq-cluster-a` 和 `rabbitmq-cluster-b` 集群中的消息。当 `rabbitmq-cluster-a` 集群中消息全部消费完后，将消息消费端切换到 `rabbitmq-cluster-b` 集群中，完成数据迁移。
 
 #### 验证方法
 
@@ -40,10 +40,10 @@ RabbitMQ 数据迁移，可以采用如下两种方案：
 
     参数说明：
 
-    - username：使用`rabbitmq-cluster-a`集群的 RabbitMQ Management WebUI 的帐号
-    - password：使用`rabbitmq-cluster-a`集群的 RabbitMQ Management WebUI 的密码
-    - ip：使用`rabbitmq-cluster-a`集群的 RabbitMQ Management WebUI 的 IP 地址
-    - port：使用`rabbitmq-cluster-a`集群的 RabbitMQ Management WebUI 的端口号
+    - username：使用 `rabbitmq-cluster-a` 集群的 RabbitMQ Management WebUI 的帐号
+    - password：使用 `rabbitmq-cluster-a` 集群的 RabbitMQ Management WebUI 的密码
+    - ip：使用 `rabbitmq-cluster-a` 集群的 RabbitMQ Management WebUI 的 IP 地址
+    - port：使用 `rabbitmq-cluster-a` 集群的 RabbitMQ Management WebUI 的端口号
 
 - 在 Overview 视图中，消费消息数（Ready）以及未确定的消息数（Unacked）都为 0，说明消费完成。
 
@@ -53,17 +53,41 @@ RabbitMQ 数据迁移，可以采用如下两种方案：
 
 先迁移数据，然后同时切换生产端和消费端。借助 shove 插件完成数据迁移。
 
-> shovel 迁移数据的原理是消费`rabbitmq-cluster-a`集群中的消息，将消息生产到`rabbitmq-cluster-b`集群中，迁移后`rabbitmq-cluster-a`集群中的消息被清空，建议离线迁移，业务会出现中断。
+> shovel 迁移数据的原理是消费`rabbitmq-cluster-a`集群中的消息，将消息生产到 `rabbitmq-cluster-b` 集群中，迁移后 `rabbitmq-cluster-a` 集群中的消息被清空，建议离线迁移，业务会出现中断。
 
-`rabbitmq-cluster-a` 和 `rabbitmq-cluster-b` 均需要开启 shovel 插件。
+`rabbitmq-cluster-a` 和 `rabbitmq-cluster-b` 均需要开启并配置 shovel 插件。
 
-![开启插件](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/migrate03.png)
+#### 启用 `shovel`
+
+##### 开启插件
+
+1. 进入`中间件` -> `RabbitMQ` 的实例列表，进入 `rabbitmq-cluster-a` 的概览页面点击`控制台`按钮;
+
+    ![控制台](../images/migrate10.png)
+
+2. 执行以下命令，该过程可能会持续一两分钟：
+
+    ```shell
+    rabbitmq-plugins enable rabbitmq_shovel rabbitmq_shovel_management
+    ```
+
+    ![执行命令](../images/migrate11.png)
+
+3. 进入 RabbitMQ 管理平台，在 `admin` 页签下可以看到 shovel 相关的插件信息。
+
+    ![开启插件](../images/migrate09.png)
+
+进入实例 `rabbitmq-cluster-b` 的概览页面，再次执行以上操作。
+
+##### 基本配置
+
+![插件配置](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/migrate03.png)
 
 参数说明：
 
 - Name: 配置 shovel 的名称。
 - Source: 指定协议类型、连接的源集群地址，源端的类型。
-- Prefech count: 表示 shovel 内部缓存（从源端集群到目的集群之间的缓存部分）的消息条数。
+- Prefech count: 表示 shovel 内部缓存（从源端集群到目的实例之间的缓存部分）的消息条数。
 - Auto-delete: 默认为 Never，表示不删除本集群消息，如果设置为 `After initial length transferred`，则在消息转移完成后删除。
 - Destination: 指定协议类型，连接目标集群地址，目标端的类型。
 - Add forwarding headers: 设置为 `true`，则会在转发的消息内添加 x-shovelled 的 header 属性。
@@ -74,26 +98,34 @@ RabbitMQ 数据迁移，可以采用如下两种方案：
     - `on publish` 表示 Shovel 会把每一条消息发送到目的端之后再向源端发送消息确认；
     - `on confirm` 表示 Shovel 会使用 publisher confirm 机制，在收到目的端的消息确认之后再向源端发送消息确认。
 
-#### 迁移前消息数量
+!!! note
 
-![迁移前消息](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/migrate04.png)
+    服务地址（图中的 3 和 4）设置格式：amqp://用户名:密码@{rabbitmq服务地址}
 
-#### 配置 shovel 信息
+下图是一个简单的配置示例
 
-![配置 shovel](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/migrate05.png)
+![配置示例](../images/migrate12.png)
 
-#### shovel 运行状态
+#### 启动迁移
+
+迁移任务将自动启动，当 shovel 状态为 `running` 时，表示迁移开始，如下图所示。
 
 ![运行状态](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/migrate06.png)
 
-当 shovel 状态为“running”时，表示迁移开始。等数据迁移完成后，将生产端、消费端切换至 `rabbitmq-cluster-b` 集群中，完成迁移过程。
+迁移前后观察两个集群的队列状态，可明显看到数据迁移变化：
 
-#### 迁移后消息数量
+- 迁移启动前 `rabbitmq-cluster-a` 集群消息情况。
 
-- rabbitmq-cluster-a 集群消息情况
+    ![迁移前消息](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/migrate04.png)
+
+- 迁移启动后 `rabbitmq-cluster-a` 集群消息情况，可见队列消息已迁出。
 
     ![集群消息](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/migrate07.png)
 
-- rabbitmq-cluster-b 集群消息情况
+- 迁移启动后 `rabbitmq-cluster-b` 集群消息情况，可见队列消息已迁入该集群。
 
     ![集群消息](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/migrate08.png)
+
+
+数据迁移完成后，即可将生产端、消费端切换至 `rabbitmq-cluster-b` 集群中，完成迁移过程。
+

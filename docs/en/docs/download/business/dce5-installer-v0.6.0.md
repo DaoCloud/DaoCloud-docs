@@ -13,7 +13,7 @@ This page can download the offline installation package and verification file of
 | offline-v0.6.0-amd64.tar | v0.6.0 | AMD64 | 16.36GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.0-amd64.tar) | 2023-04-07 |
 | offline-v0.6.0-arm64.tar | v0.6.0 | ARM64 | 15.12GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.0-arm64.tar) | 2023-04-07 |
 
-## Validation
+## Verification
 
 Go to the download directory of the offline installation package.
 
@@ -90,10 +90,10 @@ The DCE 5.0 Enterprise Package includes the following modules, which are plug-an
 | Middleware RabbitMQ | Open source message broker software implementing the Advanced Message Queuing Protocol (AMQP) | [0.9.1](../../middleware/rabbitmq/release-notes.md#v091) |
 | Middleware Redis | An in-memory database caching service | [0.6.2](../../middleware/redis/release-notes.md#v062) |
 | Container registry | Used to store images for K8s, DevOps and container application development | [0.6.2](../../kangaroo/release-notes.md#v062) |
-| Network | Support multiple CNI combinations for different Linux kernels | [0.5.0](../../network/modules/spiderpool/releasenotes.md#v050) |
+| Network | Support multiple CNI combinations for different Linux kernels | [0.5.0](../../network/intro/releasenotes.md#v050) |
 | Storage | Provide unified data storage services, support files, objects, blocks, and local storage, and easily access storage vendor solutions | [v0.9.2](../../storage/hwameistor/releasenotes.md#v092) |
 
 ## More
 
-- [Online Documentation](../../dce/what.md)
+- [Online Documentation](../../dce/index.md)
 - [Report a bug](https://github.com/DaoCloud/DaoCloud-docs/issues)

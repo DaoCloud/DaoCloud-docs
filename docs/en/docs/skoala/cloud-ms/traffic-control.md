@@ -1,6 +1,6 @@
 # Service Governance
 
-Service governance allows you to manage the east-west traffic of microservices imported from the [DCE 5.0 Service Mesh](../../mspider/intro/what.md) based on features of Service Mesh.
+Service governance allows you to manage the east-west traffic of microservices imported from the [DCE 5.0 Service Mesh](../../mspider/intro/index.md) based on features of Service Mesh.
 
 After [microservices](service.md) are imported, different east-west traffic policies can be set individually for each exposed port of the service.
 

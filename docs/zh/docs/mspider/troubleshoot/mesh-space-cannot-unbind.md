@@ -8,7 +8,7 @@
 全局管理的工作空间改变名称后，网格空间无法正常解绑；
 同样在全局管理中解除空间绑定后，服务网格依然显示绑定而且无法解绑，网格空间中被全局管理删除的空间无法解除绑定。
 
-![unbind error](../images/unbind-error.png)
+![unbind error](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/unbind-error.png)
 
 ## 分析
 

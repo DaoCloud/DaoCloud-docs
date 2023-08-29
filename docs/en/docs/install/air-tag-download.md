@@ -10,7 +10,7 @@ curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/down
 chmod +x download_packages_${VERSION}.sh
 ```
 
-## Execute the Script
+## Run the Script
 
 ```bash
 ./download_packages_${VERSION}.sh ${DISTRO} ${INSTALLER_VERSION} ${ARCH}

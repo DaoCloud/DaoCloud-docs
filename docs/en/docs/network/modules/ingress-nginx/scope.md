@@ -93,11 +93,11 @@ If [ingress-nginx instances are installed via Helm](install.md), you need to ena
 
 The following example creates Ingress-nginx as a Default exclusive:
 
-![scope01](../../images/scope01.png)
+![scope01](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/scope01.png)
 
 Configuration information in the corresponding `value.yaml`:
 
-![scope02](../../images/scope02.png)
+![scope02](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/scope02.png)
 
 ## How to deploy tenant-level Ingress instances?
 

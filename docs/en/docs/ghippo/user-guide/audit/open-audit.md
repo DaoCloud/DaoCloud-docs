@@ -1,266 +1,183 @@
-# Turn on/off audit logging
+# Enable/Disable collection of audit logs
 
-By default, the Kubernetes cluster does not output audit log information. Through the following configuration, you can enable the audit log feature of Kubernetes.
+- Kubernetes Audit Logs: Kubernetes itself generates audit logs. When this feature is enabled, audit log files for Kubernetes will be created in the specified directory.
+- Collecting Kubernetes Audit Logs: The log files mentioned above are collected using the Insight Agent. The prerequisite for collecting Kubernetes audit logs is that the cluster has enabled Kubernetes audit logs.
 
-1. Prepare the Policy file for the audit log
-2. Configure the API server and enable audit logs
-3. Reboot and verify
+## DCE 5.0 Installation Status
 
-## Prepare audit log policy file
+- For Community Package installations, the Kubernetes audit log switch was not operated during the management cluster installation process.
+- For Commercial Edition installations, the Kubernetes audit log switch is enabled by default.
+    - To set it to default off, you can modify the installer's `clusterConfigt.yaml` file (set `logPath` to empty "").
+- The collection of Kubernetes audit logs switch is disabled by default for the management cluster.
+    - Default settings do not support configuration.
 
-The Policy configuration YAML file required for audit logging is as follows:
+## Management Cluster Collection of Kubernetes Audit Logs Switch
 
-??? note "Click to view the policy YAML file of audit log"
+### Commercial Edition Installation Environment
 
-    ```yaml
-    apiVersion: audit.k8s.io/v1
-    kind: Policy
-    # Don't generate audit events for all requests in RequestReceived stage.
-    omitStages:
-      - "ResponseStarted"
-      - "RequestReceived"
-      - "Panic"
-    rules:
-      # The following requests were manually identified as high-volume and low-risk,
-      # so drop them.
-      - level: None
-        users: ["system:kube-proxy"]
-        verbs: ["watch"]
-        resources:
-          -group: "" # core
-            resources: ["endpoints", "services", "services/status"]
-      - level: None
-        # Ingress controller reads `configmaps/ingress-uid` through the unsecured port.
-        # TODO(#46983): Change this to the ingress controller service account.
-        users: ["system:unsecured"]
-        namespaces: ["kube-system"]
-        verbs: ["get"]
-        resources:
-          -group: "" # core
-            resources: ["configmaps"]
-      - level: None
-        users: ["kubelet"] # legacy kubelet identity
-        verbs: ["get"]
-        resources:
-          -group: "" # core
-            resources: ["nodes", "nodes/status"]
-      - level: None
-        userGroups: ["system:nodes"]
-        verbs: ["get"]
-        resources:
-          -group: "" # core
-            resources: ["nodes", "nodes/status"]
-      - level: None
-        users:
-          - system:kube-controller-manager
-          - system:kube-scheduler
-          - system:serviceaccount:kube-system:endpoint-controller
-        verbs: ["get", "update"]
-        namespaces: ["kube-system"]
-        resources:
-          -group: "" # core
-            resources: ["endpoints"]
-      - level: None
-        users: ["system:apiserver"]
-        verbs: ["get"]
-        resources:
-          -group: "" # core
-            resources: ["namespaces", "namespaces/status", "namespaces/finalize"]
-      # Don't log HPA fetching metrics.
-      - level: None
-        users:
-          - system:kube-controller-manager
-        verbs: ["get", "list"]
-        resources:
-          - group: "metrics.k8s.io"
-      # Don't log these read-only URLs.
-      - level: None
-        nonResourceURLs:
-          - /healthz*
-          - /version
-          - /swagger*
-      # Don't log events requests.
-      - level: None
-        resources:
-          -group: "" # core
-            resources: ["events"]
-            
-      # new start
-      # Ignore all APIs that access non-authenticated ports, usually system components such as Kube-Controller, etc.
-      - level: None
-        users: ["system:unsecured"]
+#### Confirm Enabling Kubernetes Audit Logs
 
-      # Ignore kube-admin audit logs
-      - level: None
-        users: ["kube-admin"]
-      # API need add that ignores all resource status updates
-      - level: None
-        resources:
-        -group: "" # core
-          resources: ["events", "nodes/status", "pods/status", "services/status"]
-        - group: "authorization.k8s.io"
-          resources: ["selfsubjectrulesreviews"]
-      # ignore leases need add
-      - level: None
-        resources:
-        - group: "coordination.k8s.io"
-          resources: ["leases"]
-      -level: Request
-        verbs: ["create", "update", "patch", "delete"]
-        users: ["kube-admin"]
-      #new end
+Run the following command to check if audit logs are generated under the `/var/log/kubernetes/audit` directory. If they exist, it means that Kubernetes audit logs are successfully enabled.
 
-      # Secrets, ConfigMaps, and TokenReviews can contain sensitive & binary data,
-      # so only log at the Metadata level.
-      - level: Metadata
-        resources:
-          -group: "" # core
-            resources: ["secrets", "configmaps"]
-          -group: authentication.k8s.io
-            resources: ["token reviews"]
-        omitStages:
-          - "RequestReceived"
-      # Get responses can be large; skip them.
-      -level: Request
-        verbs: ["get", "list", "watch"]
-        resources:
-          -group: "" # core
-          - group: "admissionregistration.k8s.io"
-          - group: "apiextensions.k8s.io"
-          - group: "apiregistration.k8s.io"
-          -group: "apps"
-          -group: "authentication.k8s.io"
-          - group: "authorization.k8s.io"
-          -group: "autoscaling"
-          -group: "batch"
-          - group: "certificates.k8s.io"
-          -group: "extensions"
-          - group: "metrics.k8s.io"
-          - group: "networking.k8s.io"
-          -group: "policy"
-          - group: "rbac.authorization.k8s.io"
-          - group: "settings.k8s.io"
-          -group: "storage.k8s.io"
-        omitStages:
-          - "RequestReceived"
-      # Default level for known APIs
-      - level: RequestResponse
-        resources:
-          -group: "" # core
-          - group: "admissionregistration.k8s.io"
-          - group: "apiextensions.k8s.io"
-          - group: "apiregistration.k8s.io"
-          -group: "apps"
-          -group: "authentication.k8s.io"
-          - group: "authorization.k8s.io"
-          -group: "autoscaling"
-          -group: "batch"
-          - group: "certificates.k8s.io"
-          -group: "extensions"
-          - group: "metrics.k8s.io"
-          - group: "networking.k8s.io"
-          -group: "policy"
-          - group: "rbac.authorization.k8s.io"
-          - group: "settings.k8s.io"
-          -group: "storage.k8s.io"
-        omitStages:
-          - "RequestReceived"
-      # Default level for all other requests.
-      - level: Metadata
-        omitStages:
-          - "RequestReceived"
-    ```
+```shell
+ls /var/log/kubernetes/audit
+```
 
-Put the above audit log file in `/etc/kubernetes/audit-policy/` folder, and name it `apiserver-audit-policy.yaml`.
+If they are not enabled, please refer to the [documentation on enabling/disabling Kubernetes audit logs](open-k8s-audit.md).
 
-## Configure the API server
+#### Enable Collection of Kubernetes Audit Logs Process
 
-Open the configuration file kube-apiserver.yaml of the API server, usually in the `/etc/kubernetes/manifests/` folder, and add the following configuration information:
-
-Please back up kube-apiserver.yaml before this step, and the backup file cannot be placed under `/etc/kubernetes/manifests/`, it is recommended to put it in `/etc/kubernetes/tmp`.
-
-1. Add the command under `spec.containers.command`:
-
-    ```yaml
-    --audit-log-maxage=30
-    --audit-log-maxbackup=1
-    --audit-log-maxsize=100
-    --audit-log-path=/var/log/audit/kube-apiserver-audit.log
-    --audit-policy-file=/etc/kubernetes/audit-policy/apiserver-audit-policy.yaml
-    ```
-
-2. Add under `spec.containers.volumeMounts`:
-
-    ```yaml
-    - mountPath: /var/log/audit
-      name: audit-logs
-    - mountPath: /etc/kubernetes/audit-policy
-      name: audit-policy
-    ```
-
-3. Add under `spec.volumes`:
-
-    ```yaml
-    - hostPath:
-        path: /var/log/kubernetes/audit
-        type: ""
-      name: audit-logs
-    - hostPath:
-        path: /etc/kubernetes/audit-policy
-        type: ""
-      name: audit-policy
-    ```
-
-## Test and verify
-
-After a while, the API server will automatically restart, and check whether there is an audit log generated in the `/var/log/kubernetes/audit` directory.
-
-If you want to close it, just remove the relevant commands in `spec.containers.command`.
-
-## Collect audit logs
-
-Collect audit logs through FluentBit. By default, FluentBit will not collect log files (Kubernetes audit logs) under `/var/log/kubernetes/audit`.
-
-To enable audit logging, follow these steps:
-
-1. Save the current value
+1. Add ChartMuseum to the helm repo.
 
     ```shell
-    helm get values ​​insight-agent -n insight-system -o yaml > insight-agent-values-bak.yaml
+    helm repo add chartmuseum http://10.5.14.30:8081
     ```
 
-2. Get the current version number ${insight_version_code}, and then update the configuration
+    Modify the IP address in this command to the IP address of the Spark node.
+
+    !!! note
+
+        If using a self-built Harbor repository, please modify the chart repo URL in the first step to the insight-agent chart URL of the self-built repository.
+
+2. Save the current Insight Agent helm values.
+
+    ```shell
+    helm get values insight-agent -n insight-system -o yaml > insight-agent-values-bak.yaml
+    ```
+
+3. Get the current version number ${insight_version_code}.
 
     ```shell
     insight_version_code=`helm list -n insight-system |grep insight-agent | awk {'print $10'}`
     ```
 
+4. Update the helm value configuration.
+
+    ```shell
+    helm upgrade --install --create-namespace --version ${insight_version_code} --cleanup-on-fail insight-agent chartmuseum/insight-agent -n insight-system -f insight-agent-values-bak.yaml --set global.exporters.auditLog.kubeAudit.enabled=true
+    ```
+
+5. Restart all fluentBit pods under the insight-system namespace.
+
+    ```shell
+    fluent_pod=`kubectl get pod -n insight-system | grep insight-agent-fluent-bit | awk {'print $1'} | xargs`
+    kubectl delete pod ${fluent_pod} -n insight-system
+    ```
+
+#### Disable Collection of Kubernetes Audit Logs
+
+The remaining steps are the same as enabling the collection of Kubernetes audit logs, with only a modification in the previous section's step 4: updating the helm value configuration.
+
+```shell
+helm upgrade --install --create-namespace --version ${insight_version_code} --cleanup-on-fail insight-agent chartmuseum/insight-agent -n insight-system -f insight-agent-values-bak.yaml --set global.exporters.auditLog.kubeAudit.enabled=false
+```
+
+### Community Package Online Installation Environment
+
+!!! note
+
+   If installing DCE 5.0 Community Package in a Kind cluster, perform the following steps inside the Kind container.
+
+#### Confirm Enabling Kubernetes Audit Logs
+
+Run the following command to check if audit logs are generated under the `/var/log/kubernetes/audit` directory. If they exist, it means that Kubernetes audit logs are successfully enabled.
+
+```shell
+ls /var/log/kubernetes/audit
+```
+
+If they are not enabled, please refer to the [documentation on enabling/disabling Kubernetes audit logs](open-k8s-audit.md).
+
+#### Enable Collection of Kubernetes Audit Logs Process
+
+1. Save the current values.
+
+    ```shell
+    helm get values insight-agent -n insight-system -o yaml > insight-agent-values-bak.yaml
+    ```
+
+2. Get the current version number ${insight_version_code} and update the configuration.
+
+    ```shell
+    insight_version_code=`helm list -n insight-system |grep insight-agent | awk {'print $10'}`
+    ```
+
+3. Update the helm value configuration.
+
     ```shell
     helm upgrade --install --create-namespace --version ${insight_version_code} --cleanup-on-fail insight-agent insight-release/insight-agent -n insight-system -f insight-agent-values-bak.yaml --set global.exporters.auditLog.kubeAudit.enabled=true
     ```
 
-    If the upgrade fails because the version is not found, please check whether the helm repo used in the command has this version, if not, please try to update the helm repo and try again
+    If the upgrade fails due to an unsupported version, check if the helm repo used in the command has that version.
+    If not, retry after you updated the helm repo.
 
     ```shell
     helm repo update insight-release
     ```
 
-3. Restart all Pods
+4. Restart all fluentBit pods under the insight-system namespace.
 
-    Restart the FluentBit Pods of all master nodes, and the restarted FluentBit will collect logs under `/var/log/kubernetes/audit`.
-
-    In addition, if you want to stop the collection of audit logs for global management, you can run `kubectl edit cm insight-agent-fluent-bit-config -n insight-system` and delete the following INPUT:
-
-    ```console
-    [INPUT]
-    Name tail
-    Tag audit_log.ghippo.*
-    Parser docker
-    Path /var/log/containers/*_ghippo-system_audit-log*.log
-    DB /run/flb_audit.db
-    Mem_Buf_Limit 15MB
-    Buffer_Chunk_Size 1MB
-    Buffer_Max_Size 5MB
-    #DB.Sync Normal
-    Refresh_Interval 10
+    ```shell
+    fluent_pod=`kubectl get pod -n insight-system | grep insight-agent-fluent-bit | awk {'print $1'} | xargs`
+    kubectl delete pod ${fluent_pod} -n insight-system
     ```
+
+#### Disable Collection of Kubernetes Audit Logs
+
+The remaining steps are the same as enabling the collection of Kubernetes audit logs, with only a modification in the previous section's step 3: updating the helm value configuration.
+
+```shell
+helm upgrade --install --create-namespace --version ${insight_version_code} --cleanup-on-fail insight-agent insight-release/insight-agent -n insight-system -f insight-agent-values-bak.yaml --set global.exporters.auditLog.kubeAudit.enabled=false
+```
+
+## Work Cluster Switch
+
+Each work cluster switch is independent and can be turned on as needed.
+
+### Steps to Enable Audit Log Collection When Creating a Cluster
+
+By default, the collection of K8s audit logs is turned off. If you need to enable it, you can follow these steps:
+
+![Default Off](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/worker01.png)
+
+![Enable Audit Logs](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/worker02.png)
+
+Set the switch to the enabled state to enable the collection of K8s audit logs.
+
+When creating a work cluster via DCE 5.0, ensure that the K8s audit log option for the cluster is set to 'true' so that the created work cluster will have audit logs enabled.
+
+![Audit Logs Enabled](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/worker03.png)
+
+After the cluster creation is successful, the K8s audit logs for that work cluster will be collected.
+
+### Steps to Enable/Disable After Accessing or Creating the Cluster
+
+#### Confirm Enabling K8s Audit Logs
+
+Run the following command to check if audit logs are generated under the `/var/log/kubernetes/audit` directory. If they exist, it means that K8s audit logs are successfully enabled.
+
+```shell
+ls /var/log/kubernetes/audit
+```
+
+If they are not enabled, please refer to the [documentation on enabling/disabling K8s audit logs](open-k8s-audit.md).
+
+#### Enable Collection of K8s Audit Logs
+
+The collection of K8s audit logs is disabled by default. To enable it, follow these steps:
+
+1. Select the cluster that has been accessed and needs to enable the collection of K8s audit logs.
+
+    ![Select Cluster](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/worker04.png)
+
+2. Go to the Helm application management page and update the insight-agent configuration (if insight-agent is not installed, you can [install it](../../../insight/quickstart/install/install-agent.md)).
+
+    ![Go to Helm Applications](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/worker05.png)
+
+3. Enable/Disable the collection of K8s audit logs switch.
+
+    ![Enable/Disable Switch](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/worker06.png)
+
+4. After enabling/disabling the switch, the fluent-bit pod needs to be restarted for the changes to take effect.
+
+    ![Restart Pods](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/worker07.png)

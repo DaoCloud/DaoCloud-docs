@@ -18,7 +18,7 @@ export otel_col_host="insight-opentelemetry-collector.insight-system.svc.cluster
 
 #### 1. 管理集群使用默认的 LoadBalancer 方式暴露
 
-登陆全局管理集群的控制台，执行以下命令：
+登录全局管理集群的控制台，执行以下命令：
 
 !!! note
 

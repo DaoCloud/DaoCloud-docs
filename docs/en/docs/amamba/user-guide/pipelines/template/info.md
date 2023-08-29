@@ -74,7 +74,7 @@ parameterDefinitions:
     type: string
     default: latest
   - name: registryCredential
-    displayName: image repository credentials
+    displayName: container registry credentials
     description: The credential to access the container registry
     type: credential
     default: ""

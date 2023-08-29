@@ -7,6 +7,19 @@ hide:
 
 This page summarizes blogs and public account articles related to DCE 5.0 and cloud-native technology, sorted by date by default.
 
+- [20230815 | Kubernetes 1.28 is Released](./230815-k8s1.28.md)
+
+    Announcing the release of Kubernetes v1.28 Planternetes, the second release of 2023!
+
+- [20230808 | Unlocking the Power of Kubernetes with K8SGPT](./230808-k8sgpt.md)
+
+    [K8sGPT](https://k8sgpt.ai/) is an incredible tool that gives Kubernetes SREs superpowers.
+    It provides a simple and efficient way to scan your Kubernetes clusters and diagnose issues in plain English.
+
+- [20230612 | AIGC Sharp Tools: Exploring Ray's Cloud-Native Journey - Ray Core Part II](./230615-ray.md)
+
+    This article provides a detailed explanation of Ray's capabilities and parameters, as well as practical application operations.
+
 - [20230612 | The Exploration of Ray Core in Cloud-Native Computing for AIGC - Ray Core](./230612-ray.md)
 
     This article introduces how Ray Core, a distributed computing framework, works as the foundation of Ray.

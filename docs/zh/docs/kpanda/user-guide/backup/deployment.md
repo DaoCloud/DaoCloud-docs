@@ -1,12 +1,12 @@
-# 备份无状态的工作负载
+# 应用备份
 
-本文介绍如何通过`应用备份`模块为无状态工作负载备份数据。本教程中使用的工作负载名为 `dao-2048`。
+本文介绍如何在 DCE 5.0 中为应用做备份，本教程中使用的演示应用名为 `dao-2048`，属于无状态工作负载。
 
 ## 前提条件
 
 在对无状态工作负载进行备份前，需要满足以下前提条件：
 
-- 在[容器管理](../../intro/what.md)模块中[接入 Kubernetes 集群](../clusters/integrate-cluster.md)或者[创建 Kubernetes 集群](../clusters/create-cluster.md)，且能够访问集群的 UI 界面。
+- 在[容器管理](../../intro/index.md)模块中[接入 Kubernetes 集群](../clusters/integrate-cluster.md)或者[创建 Kubernetes 集群](../clusters/create-cluster.md)，且能够访问集群的 UI 界面。
 
 - 创建一个[命名空间](../namespaces/createns.md)和[用户](../../../ghippo/user-guide/access-control/user.md)。
 

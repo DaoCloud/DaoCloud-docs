@@ -1,6 +1,6 @@
-# 使用 Kubernetes 集群在线安装社区版
+# 已有 Kubernetes 集群在线安装社区版
 
-本页简要说明 DCE 5.0 社区版的在线安装步骤。
+本页简要说明如何在已有 Kubernetes 集群上在线安装 DCE 5.0 社区版。
 
 !!! note
 
@@ -26,12 +26,12 @@
 
 ## 下载和安装
 
-1. 在 K8s 集群控制平面节点（Controller Node）下载 dce5-installer 二进制文件（也可以[通过浏览器下载](../../../download/dce5.md)）。
+1. 在 K8s 集群控制平面节点（Controller Node）下载 dce5-installer 二进制文件（也可以[通过浏览器下载](../../../download/index.md)）。
 
-    假定 VERSION 为 v0.7.0
+    假定 VERSION 为 v0.10.0
 
     ```shell
-    export VERSION=v0.7.0
+    export VERSION=v0.10.0
 
     ## 如果是 arm 架构请更新 `dce5-installer-$VERSION` 为 `dce5-installer-$VERSION-linux-arm64`
     

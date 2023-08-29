@@ -2,6 +2,36 @@
 
 This page lists the Release Notes of the MySQL database, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-07-31
+
+### v0.10.3
+
+#### New Features
+
+- **Added** Access restrictions for UI interface.
+
+## 2023-06-30
+
+### v0.10.0
+
+#### New Features
+
+- **Optimized** the structure and style display of the backup management page for `mcamel-mysql`.
+- **Optimized** the monitoring charts for `mcamel-mysql` by removing distracting elements and adding a time range selection.
+- **Optimized** the source of storage capacity metrics for `mcamel-mysql` by using neutral metrics.
+- **Optimized** the installation process of `mcamel-mysql` ServiceMonitor.
+
+## 2023-05-30
+
+### v0.9.0
+
+#### New Features
+
+- **Added** integration with the global management audit log module for `mcamel-mysql`.
+- **Added** the ability to configure the interval for collecting monitoring data for `mcamel-mysql` instances.
+- **Fixed** an issue where Raft cluster couldn't be established properly when installing MySQL Operator with multiple replicas for `mcamel-mysql`.
+- **Fixed** the PodDisruptionBudget version to v1 when upgrading MySQL Operator with multiple replicas for `mcamel-mysql`.
+
 ## 2023-04-27
 
 ### v0.8.1
@@ -16,7 +46,6 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 #### upgrade
 
 - **Upgrade** Optimize the scheduling strategy to add a sliding button
-
 
 ## 2023-03-28
 

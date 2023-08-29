@@ -1,6 +1,6 @@
-# 使用 kind 集群在线安装 DCE 5.0 社区版
+# All-in-one 在线安装 DCE 5.0 社区版
 
-本页说明如何使用 kind 集群在线安装 DCE 5.0 社区版。
+本页说明如何使用 kind 集群实现 all-in-one 在线安装 DCE 5.0 社区版。
 
 !!! note
 
@@ -15,10 +15,10 @@
 
 ```shell
 set -e
-if [ $(free -g|grep Mem | awk '{print $2}')              -lt 12 ]; then (echo "insufficient memory! (should >=12G)"; exit 1); fi
-if [ $(grep 'processor' /proc/cpuinfo |sort |uniq |wc -l) -lt 8 ]; then (echo "insufficient CPU! (should >=8C)"; exit 1); fi
-if [ $(df -m / |tail -n 1 | awk '{print $4}') -lt 30720 ]; then (echo "insufficient free disk space of root partition!(should >=30G)"; exit 1); fi
-ping daocloud.io -c 1 &> /dev/null || ( echo "no connection to internet! abort." &&  exit 1; )
+if [ $(free -g|grep Mem | awk '{print $2}')              -lt 12 ]; then (echo "insufficient memory! (should >=12G)";); fi
+if [ $(grep 'processor' /proc/cpuinfo |sort |uniq |wc -l) -lt 8 ]; then (echo "insufficient CPU! (should >=8C)";); fi
+if [ $(df -m / |tail -n 1 | awk '{print $4}') -lt 30720 ]; then (echo "insufficient free disk space of root partition!(should >=30G)";); fi
+ping daocloud.io -c 1 &> /dev/null || ( echo "no connection to internet! abort.")
 echo "precheck pass.."
 ```
 
@@ -39,8 +39,9 @@ precheck pass..
     ```shell
     set -e
     if  [ -x "$(command -v docker )" ] ;then
-    echo "docker already installed : version = "$(docker -v);
-    exit 0
+        echo "docker already installed : version = "$(docker -v);
+    else
+        echo "docker not found, please install it first."
     fi
     
     sudo yum install -y yum-utils device-mapper-persistent-data lvm2
@@ -58,8 +59,9 @@ precheck pass..
     ```shell
     set -e
     if  [ -x "$(command -v docker )" ] ;then
-    echo "docker already installed : version = "$(docker -v);
-    exit 0
+        echo "docker already installed : version = "$(docker -v);
+    else
+        echo "docker not found, please install it first."
     fi
     sudo apt-get update
     sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common
@@ -158,10 +160,10 @@ precheck pass..
 
 1. 在 kind 主机下载 dce5-installer 二进制文件。
 
-    假定 VERSION 为 v0.8.0
+    假定 VERSION 为 v0.10.0
 
     ```shell
-    export VERSION=v0.8.0
+    export VERSION=v0.10.0
     curl -Lo ./dce5-installer  https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer
     ```

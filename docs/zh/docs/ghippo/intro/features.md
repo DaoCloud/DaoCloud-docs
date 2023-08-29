@@ -60,7 +60,7 @@ hide:
     一个[角色](../user-guide/access-control/role.md)对应一组权限。
     权限决定了可以对资源执行的操作。向用户授予某个角色，即授予该角色所包含的所有权限。
     您可以将不同模块的管理权限划分给不同的用户，
-    比如用户 A 管理[容器管理模块](../../kpanda/intro/what.md)，用户 B 管理[应用工作台模块](../../amamba/intro/what.md)，共同管理[可观测性模块](../../insight/intro/what.md)。
+    比如用户 A 管理[容器管理模块](../../kpanda/intro/index.md)，用户 B 管理[应用工作台模块](../../amamba/intro/index.md)，共同管理[可观测性模块](../../insight/intro/index.md)。
 
     ![角色](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/role.png)
 
@@ -89,7 +89,7 @@ hide:
     [外观定制](../user-guide/platform-setting/appearance.md)、
     [邮件服务器](../user-guide/platform-setting/mail-server.md)等。
     当需要对账号的安全信息、平台 logo、许可证授权、邮件服务器等平台级设置进行管理时，
-    可以通过 `平台设置` 进行操作，平台设置仅平台管理员具有管理权限。
+    可以通过`平台设置`进行操作，平台设置仅平台管理员具有管理权限。
 
     ```mermaid
     graph LR

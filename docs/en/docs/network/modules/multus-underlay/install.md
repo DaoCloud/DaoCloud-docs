@@ -7,10 +7,10 @@ This page describes how to install Multus-underlay.
 - Default CNI: before installing Multus-underlay, you need to check if there is a default CNI for the current cluster, such as Calico or Cilium, otherwise Multus may not work.
 - Spiderpool: Multus-underlay relies on [Spiderpool](https://github.com/spidernet-io/spiderpool) as `ipam`.
   To install `Spiderpool`, please refer to [Install Spiderpool](../spiderpool/install.md).
-- To install SRIOV-CNI, verify that the node is a physical host and that the node has a physical NIC that supports SRIOV.
-  If the node is a VM or does not have an SRIOV-capable NIC, then SRIOV will not work.
+- To install SR-IOV CNI, verify that the node is a physical host and that the node has a physical NIC that supports SR-IOV.
+  If the node is a VM or does not have an SR-IOV-capable NIC, then SR-IOV will not work.
   Refer to [sriov-device-plugin](https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin) for details.
-- It is not recommended to install both MacVLAN and SRIOV.
+- It is not recommended to install both MacVLAN and SR-IOV.
 
 ## How to install Multus-underlay
 
@@ -18,11 +18,11 @@ Make sure your cluster is successfully connected to the `container management` p
 
 1. Click `Container Management` -> `Cluster List` in the left navigation bar, then find the cluster name where you want to install Multus-underlay. Then, in the left navigation bar, select `Helm Apps` -> `Helm Charts`, find and click `multus-underlay`.
 
-    ![helm repo](../../images/multus-install-1.png)
+    ![helm repo](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/multus-install-1.png)
 
 2. Go to the installation screen and fill in the basic configuration information. Select `kube-system` for the namespace, and enable `Wait`.
 
-    ![helm install-1](../../images/multus-install-2.png)
+    ![helm install-1](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/multus-install-2.png)
 
 3. Set Multus as the default CNI:
 
@@ -43,18 +43,18 @@ Make sure your cluster is successfully connected to the `container management` p
         ...
         ```
         > If the value of `name` is `k8s-pod-network`, then `k8s-pod-network` should be selected here.
-        > ![Default CNI](../../images/multus-install-3.png)        
+        > ![Default CNI](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/multus-install-3.png)        
         > If the current cluster is a third-party cluster with Calico as CNI, then `k8s-pod-network` should be selected here. Again, this can be confirmed by looking at the `/etc/cni/net.d` file on the host.
 
 4. Configure the CIDR of the current cluster Service and Pod.
 
     The purpose of this step is to tell [Meta-Plugins](https://github.com/spidernet-io/cni-plugins) the CIDR of the cluster and Meta-Plugins will create the corresponding routing rules to solve the cluster east-west communication problem for Underlay CNI.
 
-    ![Cluster CIDR](../../images/multus-install-4.png)
+    ![Cluster CIDR](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/multus-install-4.png)
 
     The CIDRs of the Services and Pods in the current cluster can be obtained by looking at `configMap`: `kube-system/kubeadm-config`:
 
-    ![kubeadm-config](../../images/multus-install-5.png)
+    ![kubeadm-config](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/multus-install-5.png)
 
     !!! Note
 
@@ -65,7 +65,7 @@ Make sure your cluster is successfully connected to the `container management` p
 
     This step creates the Multus CRD instance corresponding to the MacVLAN according to the configuration.
 
-    ![macvlan](../../images/multus-install-6.png)
+    ![macvlan](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/multus-install-6.png)
 
     - `Install Macvlan CNI`: true/false, whether to create a Multus CRD instance of the MacVLAN.
     - `Macvlan Type`: macvlan-overlay/macvlan-standalone, the type of MacVLAN CRD instance to install.
@@ -78,34 +78,34 @@ Make sure your cluster is successfully connected to the `container management` p
     - `Master Interface`: name of the MacVLAN master interface. Note: The configured master interface must exist on the host, otherwise MacVLAN will not work.
     - `Vlan ID`: optional item, and the Vlan tag of the MacVLAN master interface.
 
-6. Install SRIOV (optional, not installed by default):
+6. Install SR-IOV (optional, not installed by default):
 
-    Configure SRIOV Multus CRD:
+    Configure SR-IOV Multus CRD:
 
-    ![sriov_install](../../images/multus-install-7.png)
+    ![sriov_install](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/multus-install-7.png)
 
-    - `Install SRIOV CNI`: install SRIOV, which is not installed by default.
-    - `SRIOV Type`: the type of Multus CRD instance for which SRIOV is installed, including:
-      - `sriov-overlay`: SRIOV is used with the default CNI (e.g. Calico), which will insert two NICs in the Pod:  the default NIC and the SRIOV NIC.
+    - `Install SRIOV CNI`: install SR-IOV, which is not installed by default.
+    - `SRIOV Type`: the type of Multus CRD instance for which SR-IOV is installed, including:
+      - `sriov-overlay`: SR-IOV is used with the default CNI (e.g. Calico), which will insert two NICs in the Pod:  the default NIC and the SR-IOV NIC.
           The former is used to solve the problem of east-west communication between the Pod and the cluster; the latter is used for north-south communication between the Pod and the cluster.
-      - `sriov-standalone`: only one SRIOV NIC will be inserted in the Pod, and serves for the east-west and north-south communication.
+      - `sriov-standalone`: only one SR-IOV NIC will be inserted in the Pod, and serves for the east-west and north-south communication.
     - `SRIOV CR Name`: the name of the Multus CRD instance.
     - `Vlan ID`: optional, the Vlan tag of the SRIOV PF.
-    - `SRIOV Device Plugin Configuration`: used to discover SRIOV PF and VF devices on the host by means of filtering: `vendors`, `devices`, `drivers`, `pfNames`.
+    - `SRIOV Device Plugin Configuration`: used to discover SR-IOV PF and VF devices on the host by means of filtering: `vendors`, `devices`, `drivers`, `pfNames`.
         Refer to [sriov-device-plugin-readme.md](https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin/blob/master/README.md) for details.
 
-    Configure the SRIOV Net-Device Plugin with:
+    Configure the SR-IOV Net-Device Plugin with:
 
     - `vendors`: PCI device vendor number, e.g. '8086' for Intel
     - `devices`: PCI device model, e.g. '154c'
     - `drivers`: PCI device drivers, e.g. 'mlx5_core'
     - `pfNames`: list of PF device names
 
-    ![sriov-net-device](../../images/multus-install-8.png)
+    ![sriov-net-device](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/multus-install-8.png)
 
     !!! note
     
-        It is not recommended to enable MacVLAN and SRIOV at the same time. In addition, SRIOV requires hardware support, so make sure that the physical host's NIC supports SRIOV before installation.
+        It is not recommended to enable MacVLAN and SR-IOV at the same time. In addition, SR-IOV requires hardware support, so make sure that the physical host's NIC supports SR-IOV before installation.
 
 7. When the configuration is complete, click `Install`.
 
@@ -113,9 +113,9 @@ Make sure your cluster is successfully connected to the `container management` p
 
 1. Check that the components are running properly:
 
-    This includes Multus, Meta-plugins, SRIOV-CNI (if enabled), SRIOV-Device-Plugins (if enabled).
+    This includes Multus, Meta-plugins, SR-IOV CNI (if enabled), SRIOV-Device-Plugins (if enabled).
 
-    ![install_finished](../../images/multus-install-9.png)
+    ![install_finished](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/multus-install-9.png)
 
 2. Create a workload, using MacVLAN as an example:
 
@@ -169,7 +169,7 @@ Make sure your cluster is successfully connected to the `container management` p
         ```
 
         `ipam.spidernet.io/ippool`: specifies from which IP pool the IP address is assigned to the MacVLAN NIC.
-        If not specified, it will be assigned from the default pool. For more Spiderpool instructions, please refer to [Spiderpool](../spiderpool/what.md).
+        If not specified, it will be assigned from the default pool. For more Spiderpool instructions, please refer to [Spiderpool](../spiderpool/index.md).
 
         `k8s.v1.cni.cncf.io/networks`: assigns another MacVLAN network card (net1) to the Pod by specifying the MacVLAN Multus CRD.
 

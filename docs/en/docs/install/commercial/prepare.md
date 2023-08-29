@@ -10,7 +10,7 @@ Refer to [All-in-One Mode](./deploy-arch.md#all-in-one).
 
 | **Number** | **Server Role** | **Server Purpose**                               | **CPU Cores** | **Memory** | **System Disk** | **Unpartitioned Disk** |
 | ---------- | --------------- | ------------------------------------------------ | ------------- | ---------- | -------------- | ---------------------- |
-| 1          | all in one      | image repository, chart museum, global cluster | 16            | 32G        | 200G           | 400G                   |
+| 1          | all in one      | container registry, chart museum, global cluster | 16            | 32G        | 200G           | 400G                   |
 
 ### 4-Nodes Mode
 
@@ -47,24 +47,37 @@ Refer to [7 Nodes Mode](./deploy-arch.md#7-1-6).
 ### Bootstraping Node Dependency Check
 
 | **Check Item**   | **Versions** | **Description** |
-| ---------------- | ------------------------ | --------------- |
-| podman           | v4.4.1                   | -               |
-| helm             | ≥ 3.11.1                  | -               |
-| skopeo           | ≥ 1.11.1                  | -               |
-| kind             | v0.17.0                | -               |
-| kubectl          | ≥ 1.25.6                 | -               |
-| yq               | ≥ 4.31.1                 | -               |
-| MinIO client     | -                        | `mc.RELEASE.2023-02-16T
+| ---------------- |-------------| --------------- |
+| podman           | v4.4.1      | -               |
+| helm             | ≥ 3.11.1    | -               |
+| skopeo           | ≥ 1.11.1    | -               |
+| kind             | v0.19.0     | -               |
+| kubectl          | ≥ 1.25.6    | -               |
+| yq               | ≥ 4.31.1    | -               |
+| MinIO client     | `mc.RELEASE.2023-02-16T19-20-11Z`            | -|
 
 If these dependencies have not been installed, refer to [Install Dependencies](../install-tools.md)。
 
 ```bash
+export VERSION=v0.9.0
 # download install script
-curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
+curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
 
 # add execution permission
-chmod +x install_prerequisite.sh
+chmod +x install_prerequisite_${VERSION}.sh
 
 # start install
-bash install_prerequisite.sh online full
+bash install_prerequisite_${VERSION}.sh online full
 ```
+
+## External Component Preparation
+
+If you need to use existing components from the customer, you can refer to the following documents for preparation:
+
+- [Using External Service to Store Binary Resources](external/external-binary.md)
+
+- [Using External Image and Chart Repositories to Store Images and Chart Packages](external/external-imageandchart.md)
+
+- [Using External Middleware Services](external/external-middlewares.md)
+
+- [Using External Service to Store OS Repo Resources](external/external-os.md)

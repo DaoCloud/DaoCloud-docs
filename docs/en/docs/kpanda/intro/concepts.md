@@ -30,7 +30,7 @@ There are several workload resources built into Kubernetes:
 
 - **Daemon service** (DaemonSet): Complete independence between pods, guaranteeing that background tasks continue to be performed in the assigned nodes without user intervention. The daemon (DaemonSet) service creates a Pod on each node, and you can select a specific node to deploy. Examples of daemons include [Fluentd](https://www.fluentd.org/) log collectors and monitoring services. Please refer to [create daemonset](../user-guide/workloads/create-daemonset.md).
 
-- **Common tasks** (Job): a normal task is a short task that runs once and can be executed after deployment. The usage scenario is to perform a common task to upload the image to the image repository before creating the workload. Please refer to [create job](../user-guide/workloads/create-job.md).
+- **Common tasks** (Job): a normal task is a short task that runs once and can be executed after deployment. The usage scenario is to perform a common task to upload the image to the container registry before creating the workload. Please refer to [create job](../user-guide/workloads/create-job.md).
 
 - **Timed task** (CronJob): a timed task is a short task that runs for a specified period of time. The usage scenario is to synchronize the time of all running nodes at a fixed time point. Please refer to [create CronJob](../user-guide/workloads/create-cronjob.md).
 

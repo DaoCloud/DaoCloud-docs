@@ -62,7 +62,7 @@
     执行如下命令，使用 `ghcr.m.daocloud.io/kubean-io/airgap-patch:v0.4.8` 镜像生成离线包。
 
     更多关于 `ghcr.m.daocloud.io/kubean-io/airgap-patch:v0.4.8` 镜像的信息，
-    请前往 [kubean](https://github.com/kubean-io/kubean/pkgs/container/kubean-operator)。
+    请前往 [kubean](https://github.com/orgs/kubean-io/packages)。
 
     ```bash
     docker run --rm -v $(pwd)/manifest.yml:/manifest.yml -v $(pwd)/data:/data ghcr.m.daocloud.io/kubean-io/airgap-patch:v0.4.8
@@ -95,7 +95,7 @@
 
         “x.x.x.x“ 为火种节点 IP 地址
 
-2. 在**火种节点**上将 `/data` 文件内的镜像文件拷贝至火种节点内置的 docker resgitry 仓库。登陆火种节点后执行如下命令：
+2. 在**火种节点**上将 `/data` 文件内的镜像文件拷贝至火种节点内置的 docker resgitry 仓库。登录火种节点后执行如下命令：
 
     1. 进入镜像文件所在的目录
     
@@ -153,7 +153,7 @@
         “x.x.x.x“ 为 Global 集群内任一 Master 节点 IP 地址
 
 
-2. 完成上一步后登陆 Global 集群内任一 **Master 节点**执行清单配置文件，命令如下：
+2. 完成上一步后登录 Global 集群内任一 **Master 节点**执行清单配置文件，命令如下：
 
     ```bash
     kubectl apply -f kubeanofflineversion.cr.patch.yaml

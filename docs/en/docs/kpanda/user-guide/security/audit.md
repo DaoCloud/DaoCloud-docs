@@ -6,15 +6,15 @@ To use the [Permission Scan](intro.md) function, you need to create a scan polic
 
 1. On the left navigation bar of the homepage in the Container Management module, click `Security Management`.
 
-    <!--![Security Management](../../images/security01.png)-->
+    
 
 2. Click `Permission Scan` on the left navigation bar, then click the `Scan Policy` tab and click `Create Scan Policy` on the right.
 
-    <!--![Security Management](../../images/security01.png)-->
+    
 
 3. Fill in the configuration according to the following instructions, and then click `OK`.
 
-    - Cluster: Select the cluster to be scanned. The optional cluster list comes from the clusters accessed or created in the [Container Management](../kpanda/intro/what.md) module. If the desired cluster is not available, you can access or create a cluster in the Container Management module.
+    - Cluster: Select the cluster to be scanned. The optional cluster list comes from the clusters accessed or created in the [Container Management](../../intro/index.md) module. If the desired cluster is not available, you can access or create a cluster in the Container Management module.
     - Scan Type:
 
         - Immediate scan: Perform a scan immediately after the scan policy is created. It cannot be automatically/manually executed again later.
@@ -22,7 +22,7 @@ To use the [Permission Scan](intro.md) function, you need to create a scan polic
 
     - Number of Scan Reports to Keep: Set the maximum number of scan reports to be kept. When the specified retention quantity is exceeded, delete from the earliest report.
 
-    <!--![Security Management](../../images/security01.png)-->
+    
 
 ## Update/Delete Scan Policies
 
@@ -39,7 +39,7 @@ Under the `Scan Policy` tab, click the `ⵗ` action button to the right of a con
 
 - For one-time scan policies: Only support the `Delete` operation.
 
-    <!--![Security Management](../../images/security01.png)-->
+    
 
 ## View Scan Reports
 
@@ -47,7 +47,7 @@ Under the `Scan Policy` tab, click the `ⵗ` action button to the right of a con
 
     > Clicking `Delete` on the right of a report allows you to manually delete the report.
 
-    <!--![Security Management](../../images/security01.png)-->
+    
 
 2. View the scan report content, including:
 
@@ -58,4 +58,4 @@ Under the `Scan Policy` tab, click the `ⵗ` action button to the right of a con
     - The start time of the scan.
     - Check details, such as the checked resources, resource types, scan results, error types, and error details.
 
-    <!--![Security Management](../../images/security01.png)-->
+    

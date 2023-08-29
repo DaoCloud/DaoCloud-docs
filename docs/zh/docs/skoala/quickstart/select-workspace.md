@@ -17,6 +17,6 @@ hide:
 
     如果当前没有可选的工作空间，需要先联系超级管理员创建一个工作空间。
 
-[下载 DCE 5.0](../../download/dce5.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../../install/intro.md){ .md-button .md-button--primary }
+[下载 DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](../../dce/license0.md){ .md-button .md-button--primary }

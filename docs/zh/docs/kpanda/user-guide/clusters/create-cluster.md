@@ -8,19 +8,19 @@ hide:
 
 在 DCE 5.0 容器管理模块中，[集群角色](cluster-role.md)分四类：全局服务集群、管理集群、工作集群、接入集群。其中，接入集群只能从第三方厂商接入，参见[接入集群](integrate-cluster)。
 
-本页介绍如何创建工作集群。
+本页介绍如何创建工作集群，默认情况下，新建工作集群的工作节点 OS 类型和 CPU 架构需要与全局服务集群保持一致，如需使用区别于全局管理集群 OS 或架构的节点创建集群，参阅[在 centos 管理平台上创建 ubuntu 工作集群](../../best-practice/create-ubuntu-on-centos-platform.md)进行创建。
+
+推荐使用 [DCE 5.0 支持的操作系统](../../../install/commercial/deploy-requirements.md)来创建集群，如您本地节点不在上述支持范围，可参考[在非主流操作系统上创建集群](../../best-practice/use-otherlinux-create-custer.md)进行创建。
 
 ## 前提条件
 
 创建集群之前需要满足一定的前提条件：
 
-- 根据业务需求准备一定数量的节点。
+- 根据业务需求准备一定数量的节点，且节点 OS 类型和 CPU 架构一致。
 - 推荐 Kubernetes 版本 1.24.7，具体版本范围，参阅 [DCE 5.0 集群版本支持体系](./cluster-version.md)。
 - 目标主机需要允许 IPv4 转发。如果 Pod 和 Service 使用的是 IPv6，则目标服务器需要允许 IPv6 转发。
 - DCE 暂不提供对防火墙的管理功能，您需要预先自行定义目标主机防火墙规则。为了避免创建集群的过程中出现问题，建议禁用目标主机的防火墙。
 - 参阅[节点可用性检查](../nodes/node-check.md)
-
-  ![创建集群按钮](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/create003.png)
 
 ## 操作步骤
 
@@ -49,16 +49,16 @@ hide:
 
     - 使用统一的密码：开启后集群中所有节点的访问密码都相同，需要在下方输入访问所有节点的统一密码。如果关闭，则可以为每个节点设置单独的用户名和密码。
 
-    - 节点检查：预先检查节点的连通性。这是非强制性的，可以跳过检查。
-    - NTP 时间同步：开启后会自动同步各个节点上的时间。
+    - 节点信息：填写节点名称和 IP 地址。
+    - NTP 时间同步：开启后会自动同步各个节点上的时间，需要提供 NTP 服务器地址。
 
-        ![节点配置1](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew01.png)
-        
-        ![节点配置2](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew02.png)
+        ![节点配置](../../images/createnew01.png)
 
-4. 填写网络配置信息，并点击`下一步`。
+4. 在页面底部点击节点检查。如果检查通过则继续下一步操作。如果检查未通过，则更新`节点信息`并再次执行检查。
 
-    - 网络插件：负责为集群内的 Pod 提供网络服务，**创建集群后不可更改网络插件**。支持 [cilium](../../../network/modules/cilium/what.md) 和 [calico](../../../network/modules/calico/what.md)。选择 `none` 表示暂不安装网络插件。
+5. 填写网络配置信息，并点击`下一步`。
+
+    - 网络插件：负责为集群内的 Pod 提供网络服务，**创建集群后不可更改网络插件**。支持 [cilium](../../../network/modules/cilium/index.md) 和 [calico](../../../network/modules/calico/index.md)。选择 `none` 表示暂不安装网络插件。
 
         > 有关网络插件的参数配置，可参考 [cilium 安装参数配置](../../../network/modules/cilium/install.md)或 [calico 安装参数配置](../../../network/modules/calico/install.md)。
 
@@ -69,11 +69,11 @@ hide:
         
         ![网络配置2](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew04.png)
 
-5. 填写插件配置信息，并点击`下一步`。
+6. 填写插件配置信息，并点击`下一步`。
 
     ![插件配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew05.png)
 
-6. 填写高级配置信息，并点击`确定`。
+7. 填写高级配置信息，并点击`确定`。
 
     - `kubelet_max_pods`：设置每个节点的最大 Pod 数量，默认为 110 个。
     - `hostname_overide`：重置主机名，建议使用默认值，采用系统默认生成的名称作为主机名称。
@@ -85,21 +85,19 @@ hide:
 
         ![高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew06.png)
 
-## 完成创建
 
-填写正确信息并完成上述步骤后，页面会提示集群正在创建中。
+!!! success
+
+    - 填写正确信息并完成上述步骤后，页面会提示集群正在创建中。
+    - 创建集群耗时较长，需要耐心等待。其间，可以点击`返回集群列表`按钮让安装过程后台运行。
+    - 如需查看当前状态，可点击`实时日志`。
+
+    ![查看实时日志](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/create009.png)
 
 !!! note
 
-    创建集群耗时较长，需要耐心等待。其间，可以点击`返回集群列表`按钮回到集群列表页面，等待集群创建完成。
-    如需查看当前状态，可点击`实时日志`。
+    - 当集群出现未知状态时，表示当前集群已失联。
+    - 系统展示数据为失联前缓存数据，不代表真实数据。
+    - 同时失联状态下执行的任何操作都将不生效，请检查集群网络连通性或主机状态。
 
-![创建成功](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/create008.png)
-
-![查看实时日志](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/create009.png)
-
-当集群出现未知状态时，表示当前集群已失联，系统展示数据为失联前缓存数据，不代表真实数据，同时失联状态下执行的任何操作都将不生效，请检查集群网络连通性或主机状态。
-
-![未知状态](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createnew07.png)
-
-![未知状态详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createnew08.png)
+    ![未知状态](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createnew07.png)

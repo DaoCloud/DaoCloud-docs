@@ -3,18 +3,19 @@ nav:
   - DaoCloud Website: https://www.daocloud.io/en/
   - Documentation:
       - DCE Profile:
-          - What is DCE 5.0: dce/what.md
+          - What is DCE 5.0: dce/index.md
           - K8s Certified Service Provider: dce/kcsp.md
           - Free Trial: dce/license0.md
           - Features and Benefits: dce/features.md
           - Use Cases: dce/scenario.md
           - Glossary: dce/terms.md
-          - DCE 5.0 Release Notes: dce/dce-rn.md
+          - DCE 5.0 Release Notes:
+              - 20230731 Release: dce/dce-rn/20230731.md
+              - 20230630 Release: dce/dce-rn/20230630.md
+              - 20230531 Release: dce/dce-rn/20230531.md
       - Installation:
-          - Overview: install/intro.md
-          - Install Dependencies: 
-              - Online/Offline Installation: install/install-tools.md
-              - One-click Download of All Offline Packages: install/air-tag-download.md
+          - Overview: install/index.md
+          - Install Dependencies: install/install-tools.md
           - Install Community Package:
               - Resource Planning: install/community/resources.md
               - Online Install in kind: install/community/kind/online.md
@@ -27,36 +28,41 @@ nav:
               - Offline Install: install/commercial/start-install.md
               - Use Cases: install/commercial/scenarios.md
               - Edit clusterConfig.yaml: install/commercial/cluster-config.md
+              - Edit manifest.yaml: install/commercial/manifest.md
           - Upgrade/Uninstall/FAQ:
-              - Upgrade DCE 5.0 Submodule: install/upgrade.md
+              - Upgrade DCE 5.0 Modules: install/upgrade.md
+              - Upgrade Standard Package to Platinum Package: install/evolve.md
               - Uninstall: install/uninstall.md
+              - Import Offline Resources: install/import.md
               - Troubleshoot: install/faq.md
           - Install on Different K8s Distributions:
               - Install Enterprise Package on OpenShift OCP: install/k8s-install/ocp-install-dce5.0.md
           - Install on Different OS:
               - Install Enterprise Package on UOS V20 (1020a): install/os-install/uos-v20-install-dce5.0.md
-              - Install Enterprise Package on Oracle Linux R9 U1: install/os-install/oracleLinux-install-dce5.0.md
+              - Install Enterprise Package on Oracle Linux R9/R8 U1: install/os-install/oracleLinux-install-dce5.0.md
+              - Install Enterprise Package on TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
               - Offline Install Enterprise Package on Other Linux: install/os-install/otherlinux.md
           - Release Notes: install/release-notes.md
       - Container Management:
           - Intro:
-              - What is Container Management: kpanda/intro/what.md
+              - What is Container Management: kpanda/intro/index.md
               - Features: kpanda/intro/features.md
               - Benefits: kpanda/intro/benefits.md
               - Use Cases: kpanda/intro/scenarios.md
               - Concepts: kpanda/intro/concepts.md
               - Release Notes: kpanda/intro/release-notes.md
-              - Lastest News: kpanda/intro/news.md
+              - Latest News: kpanda/intro/news.md
               - FAQs: kpanda/intro/faq.md
           - Clusters:
               - Create Cluster: kpanda/user-guide/clusters/create-cluster.md
-              - Join Cluster: kpanda/user-guide/clusters/integrate-cluster.md
+              - Integrate Cluster: kpanda/user-guide/clusters/integrate-cluster.md
               - Access Cluster: kpanda/user-guide/clusters/access-cluster.md
               - Upgrade Cluster: kpanda/user-guide/clusters/upgrade-cluster.md
               - Delete Cluster: kpanda/user-guide/clusters/delete-cluster.md
               - Cluster Roles: kpanda/user-guide/clusters/cluster-role.md
               - Cluster Status: kpanda/user-guide/clusters/cluster-status.md
               - Choose Runtime: kpanda/user-guide/clusters/runtime.md
+              - Cluster Versions: kpanda/user-guide/clusters/cluster-version.md
           - Namespaces:
               - Create Namespace: kpanda/user-guide/namespaces/createns.md
               - Exclusive Node to Namespace: kpanda/user-guide/namespaces/exclusive.md
@@ -92,12 +98,12 @@ nav:
               - Helm Charts: kpanda/user-guide/helm/README.md
               - Helm Apps: kpanda/user-guide/helm/helm-app.md
               - Helm Registries: kpanda/user-guide/helm/helm-repo.md
-          - Network:
+          - Container Network:
               - Create Service: kpanda/user-guide/services-routes/create-services.md
               - Create Ingress: kpanda/user-guide/services-routes/create-ingress.md
               - Network Policies: kpanda/user-guide/services-routes/network-policy.md
           - CRDs: kpanda/user-guide/custom-resources/create.md
-          - Storage:
+          - Container Storage:
               - Volume Claim: kpanda/user-guide/storage/pvc.md
               - Volume: kpanda/user-guide/storage/pv.md
               - Storage Pool: kpanda/user-guide/storage/sc.md
@@ -107,31 +113,43 @@ nav:
               - Use ConfigMap: kpanda/user-guide/configmaps-secrets/use-configmap.md
               - Create Secret: kpanda/user-guide/configmaps-secrets/create-secret.md
               - Use Secret: kpanda/user-guide/configmaps-secrets/use-secret.md
-          - Cluster Operation & Maintenance:
+          - Operation and Maintenance:
               - Recent Operations: kpanda/user-guide/clusterops/latest-operations.md
               - Upgrade Cluster: kpanda/user-guide/clusters/upgrade-cluster.md
               - Cluster Settings: kpanda/user-guide/clusterops/cluster-settings.md
-          - Backup and Restore:
+          - Cluster Inspection:
+              - Create Inspection Settings: kpanda/user-guide/inspect/config.md
+              - Start Inspection: kpanda/user-guide/inspect/inspect.md
+              - Check Inspection Reports: kpanda/user-guide/inspect/report.md
+          - Backup Recovery:
               - ETCD Backup: kpanda/user-guide/backup/etcd-backup.md
               - Install Velero: kpanda/user-guide/backup/install-velero.md
               - Back up Deployment: kpanda/user-guide/backup/deployment.md
-          - Permissions:
-              - Permission Brief: kpanda/user-guide/permissions/permission-brief.md
-              - Cluster and Namespace Authorization: kpanda/user-guide/permissions/cluster-ns-auth.md
           - Security Management:
               - Scan Types: kpanda/user-guide/security/intro.md
-              - CIS: 
+              - CIS:
                   - Scan Configuration: kpanda/user-guide/security/cis/config.md
                   - Scan Policies: kpanda/user-guide/security/cis/policy.md
                   - Scan Report: kpanda/user-guide/security/cis/report.md
               - Kube-audit: kpanda/user-guide/security/audit.md
-              - Kube-hunter: kpanda/user-guide/security/hunter.md          
+              - Kube-hunter: kpanda/user-guide/security/hunter.md
+          - Permissions:
+              - Permission Brief: kpanda/user-guide/permissions/permission-brief.md
+              - Cluster and Namespace Authorization: kpanda/user-guide/permissions/cluster-ns-auth.md
+          - GPU:
+              - Install Nvidia GPU Driver: kpanda/user-guide/gpu/driver.md
           - Best Practices:
-              - ETCD Backup and Restore: kpanda/best-practice/etcd-backup.md
-              - Offline Upgrade Worker Cluster: kpanda/best-practice/update-offline-cluster.md
+              - Backup and restore ETCD: kpanda/best-practice/etcd-backup.md
+              - Cross-cluster backup and restore of MySQL applications and data: kpanda/best-practice/backup-mysql-on-nfs.md
+              - Strengthening a self-built working cluster: kpanda/best-practice/hardening-cluster.md
+              - Offline upgrade guide for working clusters: kpanda/best-practice/update-offline-cluster.md
+              - Adding heterogeneous nodes to a working cluster: kpanda/best-practice/multi-arch.md
+              - Creating an Ubuntu working cluster on a CentOS management platform: kpanda/best-practice/create-ubuntu-on-centos-platform.md
+              - Scaling the control nodes of a working cluster: kpanda/best-practice/add-master-node.md
+              - Creating a cluster on non-supported operating systems: kpanda/best-practice/use-otherlinux-create-custer.md
       - Global Management:
           - Intro:
-              - What is Global Management: ghippo/intro/what.md
+              - What is Global Management: ghippo/intro/index.md
               - Features: ghippo/intro/features.md
               - Glossary: ghippo/intro/glossary.md
               - Release Notes: ghippo/intro/release-notes.md
@@ -144,14 +162,15 @@ nav:
               - Intro: ghippo/user-guide/access-control/iam.md
               - User: ghippo/user-guide/access-control/user.md
               - Group: ghippo/user-guide/access-control/group.md
-          - Roles and Permissions:
-              - ghippo/user-guide/access-control/role.md
-              - System Roles: ghippo/user-guide/access-control/global.md
-              - Custom Roles: ghippo/user-guide/access-control/custom-role.md
-          - ID Provider:
-              - ghippo/user-guide/access-control/idprovider.md
-              - LDAP: ghippo/user-guide/access-control/ldap.md
-              - OIDC: ghippo/user-guide/access-control/oidc.md
+              - Roles:
+                  - ghippo/user-guide/access-control/role.md
+                  - System Roles: ghippo/user-guide/access-control/global.md
+                  - Custom Roles: ghippo/user-guide/access-control/custom-role.md
+              - Identity Provider:
+                  - ghippo/user-guide/access-control/idprovider.md
+                  - LDAP: ghippo/user-guide/access-control/ldap.md
+                  - OIDC: ghippo/user-guide/access-control/oidc.md
+              - Docking Portal: ghippo/user-guide/access-control/docking.md
           - Workspaces and Folders:
               - ghippo/user-guide/workspace/ws-folder.md
               - Create and Delete Workspace: ghippo/user-guide/workspace/workspace.md
@@ -161,8 +180,8 @@ nav:
               - Resource Quota: ghippo/user-guide/workspace/quota.md
               - Difference between Resource Groups and Shared Resources: ghippo/user-guide/workspace/res-gp-and-shared-res.md
           - Audit Log:
-              - Enable/disable Capture: ghippo/user-guide/audit/open-audit.md
-              - Enable/disable K8s Audit Log: ghippo/user-guide/audit/open-k8s-audit.md
+              - Enable/Disable Collection of K8s Audit Logs: ghippo/user-guide/audit/open-audit.md
+              - Enable/Disable Output of K8s Audit Logs: ghippo/user-guide/audit/open-k8s-audit.md
               - Download and Export: ghippo/user-guide/audit/audit-log.md
           - Operation Management:
               - ghippo/user-guide/report-billing/index.md
@@ -194,9 +213,15 @@ nav:
                   - ghippo/gproduct/intro.md
                   - Join Nav Bar: ghippo/gproduct/nav.md
                   - Join Ingress and Login Authentication: ghippo/gproduct/route-auth.md
+              - OEM IN and OUT:
+                  - OEM IN: ghippo/oem/oem-in.md
+                  - OEM OUT: ghippo/oem/oem-out.md
+                  - Customize DCE 5.0 to Sync IdP: ghippo/oem/custom-idp.md
+                  - Customize IdP with Keycloak: ghippo/oem/keycloak-idp.md
+                  - Webhook Message Notification: ghippo/oem/webhook.md
       - Insight:
           - Intro:
-              - What is Insight: insight/intro/what.md
+              - What is Insight: insight/intro/index.md
               - Benefits: insight/intro/benefits.md
               - Scenario: insight/intro/scenarios.md
               - Features: insight/intro/features.md
@@ -204,7 +229,7 @@ nav:
               - Release Notes: insight/intro/releasenote.md
           - Quick Start:
               - Enable Observability:
-                  - insight/quickstart/install/quickstart-catelogy.md
+                  - insight/quickstart/install/index.md
                   - Online Install insight-agent: insight/quickstart/install/install-agent.md
                   - Offline Install insight-agent: insight/quickstart/install/offline-install.md
                   - Get URL to Upload Data: insight/quickstart/install/gethosturl.md
@@ -231,7 +256,7 @@ nav:
               - Overview: insight/user-guide/dashboard/overview.md
               - Dashboard: insight/user-guide/dashboard/dashboard.md
               - Log in to Grafana with Admin: insight/user-guide/dashboard/login-grafana.md
-              - Import Custom Dashboard: insight/dashboard/import-dashboard.md
+              - Import Custom Dashboard: insight/user-guide/dashboard/import-dashboard.md
           - Cloud Insight:
               - Cluster Insight: insight/user-guide/scenario-insight/cluster.md
               - Node Insight: insight/user-guide/scenario-insight/node.md
@@ -243,6 +268,7 @@ nav:
               - Log Query: insight/user-guide/data-query/log.md
               - Metric Query: insight/user-guide/data-query/metric.md
               - Trace Query: insight/user-guide/data-query/trace.md
+              - Event Query: insight/user-guide/data-query/event.md
           - Alert Center:
               - insight/user-guide/alert-center/index.md
               - Alert Rules: insight/user-guide/alert-center/alert-policy.md
@@ -269,13 +295,14 @@ nav:
               - Configure Notification Template: insight/best-practice/notify-helper.md
               - Receive SkyWalking Trace Data with Zero Code using OTel: insight/best-practice/sw-to-otel.md
               - Use Insight to find service's problems: insight/best-practice/find_root_cause.md
+              - Kafka + ES Stream Architecture for Handling Large-Scale Logs: insight/best-practice/insight-kafka.md
           - Compatibility Test:
               - K8s Compatibility Test: insight/compati-test/k8s-compatibility.md
               - Rancher Compatibility Test: insight/compati-test/rancher-compatibility.md
               - OCP Compatibility Test: insight/compati-test/ocp-compatibility.md
       - Workbench:
           - Intro:
-              - What is Workbench?: amamba/intro/what.md
+              - What is Workbench?: amamba/intro/index.md
               - Features: amamba/intro/features.md
               - Competitiveness: amamba/intro/benefits.md
               - Use Cases: amamba/intro/scenario.md
@@ -284,10 +311,12 @@ nav:
               - Release Notes: amamba/intro/release-notes.md
           - Offline Upgrade: amamba/offline-upgrade.md
           - Namespaces: amamba/user-guide/namespace/namespace.md
-          - Applications:
+          - Wizard:
               - Build Microservice based on Git Repo: amamba/user-guide/wizard/create-app-git.md
               - Build Java Apps based on Jar Packages: amamba/user-guide/wizard/jar-java-app.md
-              - Deploy Helm Apps based on Helm Template: amamba/user-guide/wizard/helm.md
+              - Deploy Helm Apps based on Helm Charts: amamba/user-guide/wizard/helm.md
+          - OAM Application:
+              - OAM Concepts: amamba/user-guide/oam/concept.md
           - Pipelines:
               - Install Jenkins: amamba/user-guide/pipelines/install-jenkins.md
               - Create Pipeline:
@@ -331,7 +360,7 @@ nav:
               - Using a custom toolchain in Jenkins: amamba/user-guide/tools/jenkins-custom.md
       - Multicloud Management:
           - Intro:
-              - What is Multicloud Management: kairship/intro/what.md
+              - What is Multicloud Management: kairship/intro/index.md
               - Features: kairship/intro/features.md
               - Architecture: kairship/intro/architecture.md
               - Competitiveness: kairship/intro/benefits.md
@@ -343,9 +372,7 @@ nav:
               - Add Instance: kairship/instance/add.md
               - Delete Instance: kairship/instance/delete.md
               - Workspace: kairship/instance/workspace.md
-          - Worker Clusters:
-              - Join the cluster: kairship/cluster/join.md
-              - Remove cluster: kairship/cluster/remove.md
+          - Worker Clusters: kairship/cluster.md
           - Multicloud Workloads:
               - Overview: kairship/workload/README.md
               - Create from Image: kairship/workload/deployment.md
@@ -376,7 +403,7 @@ nav:
               - DCE4 to DCE5: kairship/best-pratice/one-click-conversion.md
       - Microservices:
           - Intro:
-              - Features: skoala/intro/what.md
+              - Features: skoala/intro/index.md
               - Use Cases: skoala/intro/scenarios.md
               - Competitiveness: skoala/intro/advantages.md
               - Release Notes: skoala/intro/release-notes.md
@@ -399,7 +426,7 @@ nav:
               - Service Management:
                   - Manual Add: skoala/gateway/service/manual-integrate.md
                   - Auto Add: skoala/gateway/service/auto-manage.md
-              - Monitoring & Alarming: skoala/gateway/alert.md
+              - Monitoring and Alarming: skoala/gateway/alert.md
               - Logs:
                   - Request Logs: skoala/gateway/logs/reqlog.md
                   - Instance Logs: skoala/gateway/logs/inslog.md
@@ -419,13 +446,13 @@ nav:
                   - Delete Nacos: skoala/trad-ms/hosted/delete-registry.md
                   - Microservice Namespace: skoala/trad-ms/hosted/namespace.md
                   - Microservice List:
-                      - Intro: skoala/trad-ms/hosted/servicelist/intro.md
-                      - Add Microservice: skoala/trad-ms/hosted/servicelist/connect-sentinel.md
-                      - Check Microservice: skoala/trad-ms/hosted/servicelist/check-details.md
-                      - Traffic Rules: skoala/trad-ms/hosted/servicelist/governance-policy.md
-                      - Flow Control: skoala/trad-ms/hosted/servicelist/flow-control.md
-                  - Configurations: 
-                      - skoala/trad-ms/hosted/configcenter.md
+                      - Intro: skoala/trad-ms/hosted/services/intro.md
+                      - Check Microservice: skoala/trad-ms/hosted/services/check-details.md
+                      - Traffic Rules:
+                          - Rules Intro: skoala/trad-ms/hosted/services/governance-policy.md
+                          - Flow Control: skoala/trad-ms/hosted/services/flow-control.md
+                  - Configurations:
+                      - skoala/trad-ms/hosted/configs.md
                   - Monitoring:
                       - Monitor Microservices: skoala/trad-ms/hosted/monitor/microservices.md
                       - Monitor Components: skoala/trad-ms/hosted/monitor/components.md
@@ -442,72 +469,84 @@ nav:
                   - Remove Registry: skoala/trad-ms/integrated/remove-registry.md
                   - Microservice Management: skoala/trad-ms/integrated/manage-service.md
                   - Traces: skoala/trad-ms/integrated/trace.md
+          - Service Standards:
+              - Enable Sentinel: skoala/standard/sentinel.md
+              - Enable Nacos: skoala/standard/nacos.md
+              - Enable Sentinel Monitoring: skoala/standard/monitor.md
+              - Enable Sentinel Flow Control: skoala/standard/flow-control.md
           - Best Practices:
               - Complete Process of Microservice Governance: skoala/best-practice/use-skoala-01.md
               - Microservice Gateway JWT: skoala/best-practice/jwt.md
               - Microservice Gateway Authentication Server: skoala/best-practice/auth-server.md
           - Plugins:
-              - Intro: skoala/plugins/intro.md          
+              - Intro: skoala/plugins/intro.md
           - Performance Tests:
               - Gateway RPS: skoala/tests/gateway-stress-test.md
+              - Nacos TPS: skoala/tests/nacos-stress-test.md
           - General Reference:
               - Microservice: reference/basic-knowledge/microservice.md
               - Registry: reference/basic-knowledge/registry.md
               - Cloud Native Gateway: reference/basic-knowledge/gateway.md
       - Service Mesh:
           - Intro:
-              - What is service mesh: mspider/intro/what.md
+              - What is Service Mesh: mspider/intro/index.md
               - Features: mspider/intro/features.md
               - Use Cases: mspider/intro/scenarios.md
-              - Features supported on UI: mspider/intro/meshes.md
               - Permissions: ghippo/permissions/mspider.md
               - Spec for App Integration: mspider/intro/app-spec.md
-              - Architecture: mspider/intro/architect.md
-              - Control Plane Components: mspider/intro/cp-component.md
+              - System Components and Architecture:
+                  - Architecture: mspider/intro/comp-archi-ui/architect.md
+                  - Control Plane Components: mspider/intro/comp-archi-ui/cp-component.md
+                  - System Namespaces: mspider/intro/comp-archi-ui/namespaces.md
+                  - Features Supported on UI: mspider/intro/comp-archi-ui/features-on-ui.md
               - FAQs: mspider/intro/faq.md
               - Release Notes: mspider/intro/release-notes.md
-          - Install, config, and upgrade:
+          - Install, Config, and Upgrade:
               - Install: mspider/install/install.md
               - Upgrade Istio: mspider/install/istio-update.md
-              - Upgrade sidecar: mspider/install/sidecar-update.md
-          - Create/delete mesh:
+              - Upgrade Sidecar: mspider/install/sidecar-update.md
+          - Create/Delete Mesh:
               - Create managed/private mesh: mspider/user-guide/service-mesh/README.md
               - Create external mesh: mspider/user-guide/service-mesh/external-mesh.md
               - Delete mesh: mspider/user-guide/service-mesh/delete.md
               - Resource capacity: mspider/user-guide/service-mesh/capacity-resources.md
               - Parameters to create mesh: mspider/user-guide/service-mesh/params.md
-          - Service management:
+          - Service Management:
               - mspider/user-guide/service-list/README.md
-              - Access service out of mesh: mspider/user-guide/service-list/out-to-in.md
-              - Service entry: mspider/user-guide/service-list/service-entry.md
-          - Traffic governance:
+              - Access Service out of Mesh: mspider/user-guide/service-list/out-to-in.md
+              - Service Entry: mspider/user-guide/service-list/service-entry.md
+              - One-Click Repair: mspider/user-guide/service-list/diagnose.md
+          - Traffic Management:
               - mspider/user-guide/traffic-governance/README.md
-              - Virtual service: mspider/user-guide/traffic-governance/virtual-service.md
-              - Destination rules: mspider/user-guide/traffic-governance/destination-rules.md
-              - Gateway rules: mspider/user-guide/traffic-governance/gateway-rules.md
-              - Parameters for virtual service: mspider/user-guide/traffic-governance/vsparams.md
+              - Virtual Service: mspider/user-guide/traffic-governance/virtual-service.md
+              - Destination Rule: mspider/user-guide/traffic-governance/destination-rules.md
+              - Gateway: mspider/user-guide/traffic-governance/gateway-rules.md
+              - Parameters for Virtual Service: mspider/user-guide/traffic-governance/vsparams.md
           - Security:
               - Intro: mspider/user-guide/security/README.md
-              - Peer authentication: mspider/user-guide/security/peer.md
-              - Request authentication: mspider/user-guide/security/request.md
-              - Authorization policies: mspider/user-guide/security/authorize.md
-              - Security parameters: mspider/user-guide/security/params.md
+              - Peer Authentication: mspider/user-guide/security/peer.md
+              - Request Authentication: mspider/user-guide/security/request.md
+              - Authorization Policy: mspider/user-guide/security/authorize.md
+              - Security Parameters: mspider/user-guide/security/params.md
               - Identity and mTLS: mspider/user-guide/security/mtls.md
-          - Sidecar management:
-              - Namespace sidecars: mspider/user-guide/sidecar-management/ns-sidecar.md
-              - Workload sidecars: mspider/user-guide/sidecar-management/workload-sidecar.md
-              - Traffic passthrough: mspider/user-guide/sidecar-management/passthrough.md
-          - Traffic monitor:
+          - Mesh Sidecar:
+              - Namespace Sidecars: mspider/user-guide/sidecar-management/ns-sidecar.md
+              - Workload Sidecars: mspider/user-guide/sidecar-management/workload-sidecar.md
+              - Traffic Passthrough: mspider/user-guide/sidecar-management/passthrough.md
+              - Change Sidecar Log Level: mspider/user-guide/sidecar-management/sidecar-log-level.md
+          - Traffic Monitor:
               - mspider/user-guide/traffic-monitor/README.md
-              - Traffic topology: mspider/user-guide/traffic-monitor/conn-topo.md
-          - Clusters:
+              - Traffic Topology: mspider/user-guide/traffic-monitor/conn-topo.md
+              - Monitor Dashboard Metrics: mspider/user-guide/traffic-monitor/monitoring-indicators.md
+              - Dashboard Guide: mspider/user-guide/traffic-monitor/indicator-readtips.md
+          - Mesh Cluster:
               - Intro: mspider/user-guide/cluster-management/README.md
-              - Add cluster: mspider/user-guide/cluster-management/join-clus.md
-              - Remove cluster: mspider/user-guide/cluster-management/remove-clus.md
-          - Mesh gateway:
-              - Create mesh gateway: mspider/user-guide/gateway-instance/create.md
-              - Delete mesh gateway: mspider/user-guide/gateway-instance/delete.md
-          - Mesh config:
+              - Add Cluster: mspider/user-guide/cluster-management/join-clus.md
+              - Remove Cluster: mspider/user-guide/cluster-management/remove-clus.md
+          - Mesh Gateway:
+              - Create Mesh Gateway: mspider/user-guide/gateway-instance/create.md
+              - Delete Mesh Gateway: mspider/user-guide/gateway-instance/delete.md
+          - Mesh Config:
               - Multicloud interconnection: mspider/user-guide/multicluster/cluster-interconnect.md
               - Multicloud config: mspider/user-guide/multicluster/traffic-branch.md
               - Istio resource management: mspider/user-guide/mesh-config/istio-resources.md
@@ -528,39 +567,52 @@ nav:
               - Failed to add cluster for managed mesh: mspider/troubleshoot/failed-to-add-cluster.md
               - istio-ingressgateway abnormal: mspider/troubleshoot/hosted-mesh-errors.md
               - Unable to unbind mesh space: mspider/troubleshoot/mesh-space-cannot-unbind.md
+              - Issues on joining DCE 4.0: mspider/troubleshoot/dce4.0-issues.md
+          - Best Practice:
+              - Restricting Service Access with Mesh: mspider/best-practice/use-egress-and-authorized-policy.md
+              - Support for Custom Workload Types: mspider/best-practice/use-custom-workloads.md
       - Network:
           - Intro:
-              - What is Network: network/intro/what-is-net.md
+              - What is Network: network/intro/index.md
               - Background: network/intro/background.md
               - Challenges: network/intro/challenges.md
               - Components: network/modules/modules.md
+              - Release notes: network/intro/releasenotes.md
           - Plan:
               - Eth card plan: network/plans/ethplan.md
               - Network plan: network/plans/netplan.md
           - Performance report:
               - Network CNI performance test report: network/performance/cni-performance.md
               - Spiderpool performance test report: network/performance/spiderpool-performance.md
+              - Cilium performance test reports:
+                  - Accelerate Pod access to Services: network/performance/cilium-performance/cilium-service.md
+                  - Cross-node communication between Pods: network/performance/cilium-performance/cilium-crossnode.md
+                  - Access acceleration test in the nodePort mode: network/performance/cilium-performance/cilium-nodeport.md
+                  - eBPF-based Pod bandwidth management: network/performance/cilium-performance/cilium-bandwidth.md
+              - Performance test in eBPF-based network policies: network/performance/ebpf-performance.md
           - Calico:
-              - Intro: network/modules/calico/what.md
+              - Intro: network/modules/calico/index.md
               - Install: network/modules/calico/install.md
               - ippool: network/modules/calico/ippool.md
               - Metrics: network/modules/calico/metrics.md
               - Calico Policies: network/modules/calico/policy.md
               - Troubleshooting: network/modules/calico/debug.md
           - Cilium:
-              - Intro: network/modules/cilium/what.md
+              - Intro: network/modules/cilium/index.md
               - Args Config: network/modules/cilium/install.md
               - Unsupported Features: network/modules/cilium/notSupport.md
+              - Cilium Network Communication Acceleration: network/modules/cilium/cross-cluster.md
+              - Cross-Cluster Application Communication: network/modules/cilium/cilium-speedup.md
           - Contour:
-              - Intro: network/modules/contour/what.md
+              - Intro: network/modules/contour/index.md
               - Install: network/modules/contour/install.md
           - F5networks:
-              - Intro: network/modules/f5networks/what.md
+              - Intro: network/modules/f5networks/index.md
               - Install: network/modules/f5networks/install.md
               - Use: network/modules/f5networks/usage.md
               - Debug: network/modules/f5networks/debug.md
           - Ingress-nginx:
-              - Intro: network/modules/ingress-nginx/what.md
+              - Intro: network/modules/ingress-nginx/index.md
               - Install: network/modules/ingress-nginx/install.md
               - Ingress Class: network/modules/ingress-nginx/ingressclass.md
               - Ingress Scope: network/modules/ingress-nginx/scope.md
@@ -571,20 +623,20 @@ nav:
               - Traffic mirror: network/modules/ingress-nginx/mirror.md
               - Cross-Origin Resource Sharing: network/modules/ingress-nginx/cors.md
           - Metallb:
-              - Intro: network/modules/metallb/what.md
+              - Intro: network/modules/metallb/index.md
               - Install: network/modules/metallb/install.md
               - Instructions for IP pool use: network/modules/metallb/usage.md
-              - L2 & BGP mode: network/modules/metallb/l2&bgp.md
+              - L2 and BGP mode: network/modules/metallb/l2-bgp.md
               - Get client source IPs: network/modules/metallb/source_ip.md
           - Multus-underlay:
-              - Intro: network/modules/multus-underlay/what.md
+              - Intro: network/modules/multus-underlay/index.md
               - Install: network/modules/multus-underlay/install.md
               - MacVLAN: network/modules/multus-underlay/macvlan.md
               - SR-IOV: network/modules/multus-underlay/sriov.md
               - DPDK: network/modules/multus-underlay/dpdk.md
               - NmState: network/modules/multus-underlay/nmstat.md
           - Spiderpool:
-              - Intro: network/modules/spiderpool/what.md
+              - Intro: network/modules/spiderpool/index.md
               - Install: network/modules/spiderpool/install.md
               - Create an IP pool: network/modules/spiderpool/createpool.md
               - IP pool use cases: network/modules/spiderpool/ippoolusage.md
@@ -592,19 +644,21 @@ nav:
               - Third-pary workloads use IP pools: network/modules/spiderpool/cutomizedusage.md
               - Config: network/modules/spiderpool/config.md
               - Commands: network/modules/spiderpool/command.md
-              - Release notes: network/modules/spiderpool/releasenotes.md
           - Submariner:
-              - Intro: network/modules/submariner/what.md
+              - Intro: network/modules/submariner/index.md
               - Install: network/modules/submariner/install.md
               - Use: network/modules/submariner/usage.md
       - Data Services:
           - Intro:
-              - What is Data Service: middleware/what.md
+              - What is Data Service: middleware/index.md
               - Supported Kubernetes Versions: middleware/compatibility.md
               - Permissions: middleware/permission.md
-              - Fisrt Use: middleware/first-visit.md
+          - Common Features:
+              - Fisrt-time Use: middleware/common/first-visit.md
+              - Customize Permissions: middleware/common/customize-permission.md
+              - Workload Antiaffinity: middleware/common/workload-antiaffinity.md
           - Elasticsearch:
-              - What is Elasticsearch: middleware/elasticsearch/intro/what.md
+              - What is Elasticsearch: middleware/elasticsearch/intro/index.md
               - Features: middleware/elasticsearch/intro/features.md
               - Competitiveness: middleware/elasticsearch/intro/benefits.md
               - Use Cases: middleware/elasticsearch/intro/scenarios.md
@@ -621,7 +675,7 @@ nav:
               - Elasticsearch Migration Practice Based on Hwameistor: middleware/elasticsearch/user-guide/migrate-es.md
               - Release Notes: middleware/elasticsearch/release-notes.md
           - Kafka:
-              - What is Kafka: middleware/kafka/intro/what.md
+              - What is Kafka: middleware/kafka/intro/index.md
               - Use Cases: middleware/kafka/intro/scenarios.md
               - Basic Concepts: middleware/kafka/intro/concepts.md
               - Create Instance: middleware/kafka/user-guide/create.md
@@ -633,7 +687,7 @@ nav:
               - View Logs: middleware/kafka/user-guide/logs.md
               - Release Notes: middleware/kafka/release-notes.md
           - MinIO object storage:
-              - What is MinIO: middleware/minio/intro/what.md
+              - What is MinIO: middleware/minio/intro/index.md
               - Use cases: middleware/minio/intro/scenarios.md
               - Common terms: middleware/minio/intro/concepts.md
               - Create a MinIO instance: middleware/minio/user-guide/create.md
@@ -646,7 +700,7 @@ nav:
               - MinIO Identity Management: middleware/minio/user-guide/user-management.md
               - Release Notes: middleware/minio/release-notes.md
           - MySQL database:
-              - What is MySQL: middleware/mysql/intro/what.md
+              - What is MySQL: middleware/mysql/intro/index.md
               - Feature description: middleware/mysql/intro/features.md
               - Competitive Advantages: middleware/mysql/intro/benefits.md
               - Basic concepts: middleware/mysql/intro/concepts.md
@@ -657,7 +711,7 @@ nav:
               - MySQL Troubleshooting Manual: middleware/mysql/faq/common-question.md
               - Release Notes: middleware/mysql/release-notes.md
           - RabbitMQ message queue:
-              - What is RabbitMQ: middleware/rabbitmq/intro/what.md
+              - What is RabbitMQ: middleware/rabbitmq/intro/index.md
               - Function description: middleware/rabbitmq/intro/features.md
               - Competitive advantage: middleware/rabbitmq/intro/benefits.md
               - Use cases: middleware/rabbitmq/intro/scenarios.md
@@ -672,29 +726,39 @@ nav:
               - Add custom plugins for RabbitMQ: middleware/rabbitmq/faq/add-plugin.md
               - Release Notes: middleware/rabbitmq/release-notes.md
           - Redis cache service:
-              - What is Redis: middleware/redis/intro/what.md
+              - What is Redis: middleware/redis/intro/index.md
               - Use cases: middleware/redis/intro/scenarios.md
               - Create a Redis instance: middleware/redis/user-guide/create.md
               - Update Redis instance: middleware/redis/user-guide/update.md
               - Delete Redis instance: middleware/redis/user-guide/delete.md
               - View Redis logs: middleware/redis/user-guide/logs.md
+              - Redis DR Deployment Solution: middleware/redis/best-practice/disaster-tolerance.md
               - Release Notes: middleware/redis/release-notes.md
           - PostgreSQL database:
-              - What is PostgreSQL: middleware/postgresql/intro/what.md
+              - What is PostgreSQL: middleware/postgresql/intro/index.md
               - Create PostgreSQL: middleware/postgresql/user-guide/create.md
               - Update PostgreSQL: middleware/postgresql/user-guide/update.md
               - Delete PostgreSQL: middleware/postgresql/user-guide/delete.md
               - View PostgreSQL logs: middleware/postgresql/user-guide/logs.md
               - Release Notes: middleware/postgresql/release-notes.md
+          - MongoDB Database:
+              - Intro:
+                  - What is MongoDB: middleware/mongodb/intro/index.md
+                  - Features: middleware/mongodb/intro/features.md
+                  - Release Notes: middleware/mongodb/release-notes.md
+              - Quick Start:
+                  - Create MongoDB: middleware/mongodb/user-guide/create.md
+                  - Update MongoDB: middleware/mongodb/user-guide/update.md
+                  - Delete MongoDB: middleware/mongodb/user-guide/delete.md
       - Cloud-native Storage:
           - Intro:
-              - What is storage: storage/what.md
+              - What is storage: storage/index.md
               - Background: storage/background.md
               - Benefits: storage/benefits.md
               - Features: storage/features.md
               - Release Notes: storage/hwameistor/releasenotes.md
           - HwameiStor storage:
-              - Intro: storage/hwameistor/intro/what.md
+              - Intro: storage/hwameistor/intro/index.md
               - Modules:
                   - Local disk manager: storage/hwameistor/intro/ldm.md
                   - Local storage: storage/hwameistor/intro/ls.md
@@ -714,30 +778,37 @@ nav:
                   - Custom Kubelet root directory: storage/hwameistor/install/customized-kubelet.md
                   - Upgrade: storage/hwameistor/install/upgrade.md
                   - Uninstall: storage/hwameistor/install/uninstall.md
-              - O&M:
-                  - Storage pools: storage/hwameistor/resources/storagepool.md
-                  - Node expansion: storage/hwameistor/resources/node-expansion.md
-                  - Volume migration: storage/hwameistor/resources/migrate.md
-                  - Volume expansion: storage/hwameistor/resources/expand.md
+              - Nodes and Disks:
+                  - LVM node expansion: storage/hwameistor/resources/lvm-nodes.md
+                  - Disk node expansion: storage/hwameistor/resources/disk-nodes.md
                   - Disk expansion: storage/hwameistor/resources/disk-expansion.md
                   - Disk reservation: storage/hwameistor/resources/reserveddisk.md
+              - Storage Pool:
+                  - Storage pool management: storage/hwameistor/resources/storagepool.md
+              - Volume:
+                  - Volume migration: storage/hwameistor/resources/migrate.md
+                  - Volume expansion: storage/hwameistor/resources/expand.md
+                  - Volume IO rate limit: storage/hwameistor/resources/volume-ProvisionedIO.md
               - Use Cases:
                   - Overview: storage/hwameistor/application/overview.md
                   - Deploy StatefulSets:
                       - Deploy via local volume: storage/hwameistor/application/local.md
                       - Deploy via ha volume: storage/hwameistor/application/ha.md
-                  - TiDB: storage/hwameistor/application/tidb.md
-                  - MinIO: storage/hwameistor/application/minio/minio.md
               - FAQs: storage/hwameistor/faqs.md
-          - Solutions to integrate:
-              - Rook-Ceph intro: storage/solutions/rook-ceph.md
-              - Deploy Rook-Ceph via app store: storage/solutions/dce-rook-ceph.md
-              - Deploy Rook-Ceph via Helm: storage/solutions/helm-rook-ceph.md
-              - Join Ceph Dashboard: storage/solutions/ceph-dashboard.md
-              - Longhorn intro: storage/solutions/longhorn.md
-              - Deploy Longhorn via app store: storage/solutions/dce-longhorn.md
-              - OpenEBS intro: storage/solutions/openebs.md
-              - Deploy OpenEBS via helm: storage/solutions/openebs-helm.md
+          - Solutions to Integrate Open Source:
+              - Rook-Ceph:
+                  - Rook-Ceph intro: storage/solutions/rook-ceph.md
+                  - Deploy Rook-Ceph with app store: storage/solutions/dce-rook-ceph.md
+                  - Deploy Rook-Ceph with Helm: storage/solutions/helm-rook-ceph.md
+                  - How to connect Ceph Dashboard: storage/solutions/ceph-dashboard.md
+              - Longhorn:
+                  - Longhorn intro: storage/solutions/longhorn.md
+                  - Deploy Longhorn with app store: storage/solutions/dce-longhorn.md
+              - OpenEBS:
+                  - OpenEBS intro: storage/solutions/openebs.md
+                  - Deploy OpenEBS with Helm: storage/solutions/openebs-helm.md
+              - TiDB: storage/hwameistor/application/tidb.md
+              - MinIO: storage/hwameistor/application/minio/minio.md
           - Concepts:
               - Kubernetes storage: storage/terms/k8s_storage.md
               - CAS: storage/terms/cas.md
@@ -748,19 +819,23 @@ nav:
               - PV and PVC: storage/terms/pv_pvc.md
       - Container Registry:
           - Intro:
-              - What is Container Registry: kangaroo/what.md
+              - What is Container Registry: kangaroo/index.md
               - Release Notes: kangaroo/release-notes.md
               - FAQs: kangaroo/faq.md
+          - Upgrade:
+              - Offline Upgrade Container Registry: kangaroo/upgrade/upgrade.md
           - Quick Start:
               - Manage External Registry: kangaroo/quickstart/registry-in-one.md
               - Push Image: kangaroo/quickstart/push.md
               - Admin Guide: kangaroo/quickstart/admin-registry.md
               - Workspace Admin Guide: kangaroo/quickstart/ws-admin-registry.md
+              - Enable Image Security Scanning Offline: kangaroo/quickstart/trivy-offline.md
           - Registry Space:
               - Registry Space: kangaroo/space/index.md
               - Image List: kangaroo/space/imagelist.md
               - Artifacts and Description: kangaroo/space/desc.md
               - Retention: kangaroo/space/reclaim.md
+              - Scan Images: kangaroo/space/scan.md
           - Integrated Registry:
               - Integrated Registry (Workspace): kangaroo/integrate/integrate-ws.md
               - Integrated Registry (Admin): kangaroo/integrate/integrate-admin.md
@@ -768,26 +843,29 @@ nav:
               - Bind/Unbind Workspace: kangaroo/integrate/bind-to-ws.md
               - Sync Images: kangaroo/integrate/sync.md
           - Managed Harbor:
-              - kangaroo/hosted/intro.md
+              - kangaroo/managed/intro.md
               - Install Harbor Operator: kangaroo/managed/operator.md
               - Create Harbor Instance: kangaroo/managed/harbor.md
               - Create Registry Space: kangaroo/integrate/registry-space.md
               - Bind/Unbind Workspace: kangaroo/integrate/bind-to-ws.md
               - Sync Images: kangaroo/integrate/sync.md
-          - Scan Images: kangaroo/scan.md
+              - Migrate Your Harbor Registry: kangaroo/managed/harbor-migration.md
+          - Best Practice:
+              - Ingress or NodePort for Managed Harbor: kangaroo/best-practice/managed-harbor-select-access-type.md
+              - Log in to an Insecure Container Registry: kangaroo/best-practice/insecure_registry.md
       - Cloud Edge Collaboration:
-          - What is Cloud Edge Collaboration: kant/intro/what.md
+          - What is Cloud Edge Collaboration: kant/intro/index.md
           - Features: kant/intro/features.md
           - Benefits: kant/intro/benefits.md
           - Use Cases: kant/intro/use-cases.md
           - Requirements to Join Edge Node: kant/intro/join-rqmt.md
           - Concepts: kant/intro/concepts.md
       - Cloud Native Security:
-          - Intro: security/intro.md
+          - Intro: security/index.md
           - Falco:
-              - Intro: security/falco/what.md
-              - Install: security/falco/install.md
-              - Falco-exporter: security/falco/falco-exporter.md
+              - Intro: security/falco.md
+              - Install: security/falco-install.md
+              - Falco-exporter: security/falco-exporter.md
       - Troubleshooting:
           - ingressgateway cannot start: reference/troubleshooting/ghippo01.md
           - Login Error 401 or 403: reference/troubleshooting/ghippo02.md
@@ -806,9 +884,28 @@ nav:
       - Middleware: videos/mcamel.md
       - Network: videos/network.md
       - Container Registry: videos/kangaroo.md
+  - Download:
+      - DaoCloud Enterprise 5.0:
+          - Index: download/index.md
+          - Download DCE 5.0 Community Package: download/free/dce5-installer-v0.9.0.md
+          - Download DCE 5.0 Enterprise Package: download/business/dce5-installer-v0.9.0.md
+          - Modules and Addons:
+              - Download Addon Offline Package: download/addon/v0.9.0.md
+              - Download Global Management: download/modules/ghippo.md
+              - Download Container Management: download/modules/kpanda.md
+              - Download Cluster Inspection: download/modules/kcollie.md
+              - Download Application Backup: download/modules/kcoral.md
+              - Download Insight: download/modules/insight.md
+              - Download Spidernet: download/modules/spidernet.md
+              - Download Operation Management: download/modules/gmagpie.md
+  - Free Trial:
+      - Free Trial: trial/index.md
   - Blogs:
       - Index: blogs/index.md
-      - 202306 | Exploring the Cloud-Native Path of Ray Core: blogs/230612-ray.md
+      - 202308 | K8s 1.28 is released: blogs/230815-k8s1.28.md
+      - 202308 | Unlocking the Power of Kubernetes with K8SGPT: blogs/230808-k8sgpt.md
+      - 202306 | Exploring the Cloud-Native Path of Ray Core (II): blogs/230615-ray.md
+      - 202306 | Exploring the Cloud-Native Path of Ray Core (I): blogs/230612-ray.md
       - 202306 | Istio 1.18 Officially Released: blogs/230609-istio118.md
       - 202306 | Cloud-native Federation Middleware FedState: blogs/230605-fedstate.md
       - 202306 | API Server Tracing upgraded to beta: blogs/230601-api-server-tracing.md
@@ -839,21 +936,12 @@ nav:
       - 202208 | What is Multicloud Management: blogs/220808-kairship.md
       - 202207 | What is Service Mesh: blogs/220708-mspider.md
       - 202206 | DCE Dev Background: blogs/221008-dce-bg.md
-  - Download:
-      - DaoCloud Enterprise 5.0:
-          - Index: download/dce5.md
-          - Download DCE 5.0 Community Package: download/free/dce5-installer-v0.8.0.md
-          - Download DCE 5.0 Enterprise Package: download/business/dce5-installer-v0.8.0.md
-          - Modules and Addons:
-              - Download Addon Offline Package: download/addon/v0.8.0.md
-              - Download Global Management: download/modules/ghippo.md
-              - Download Insight: download/modules/insight.md
-              - Download Spidernet: download/modules/spidernet.md
   - DaoCloud Ecosystem:
       - Index: community/index.md
-      - cloudtty: community/cloudtty.md
+      - CloudTTY: community/cloudtty.md
       - Clusterpedia: community/clusterpedia.md
       - egressgateway: community/egress-gw.md
+      - Fast: community/fast.md
       - FedState: community/fedstate.md
       - Ferry: community/ferry.md
       - HwameiStor: community/hwameistor.md
@@ -861,11 +949,14 @@ nav:
       - KLTS: community/klts.md
       - Kubean: community/kubean.md
       - KWOK: community/kwok.md
+      - MirageDebug: community/miragedebug.md
       - Merbridge: community/merbridge.md
       - Mirror Acceleration: community/mirror.md
       - Spiderpool: community/spiderpool.md
   - Cloud Native Institute:
-      - Cloud Native News: native/news.md
+      - Cloud Native News:
+          - Cloud Native News 2023: native/news/news-2023.md
+          - Cloud Native News 2022: native/news/news-2022.md
       - Business Products: native/commerce.md
       - Open Source Projects: native/open.md
       - Knowledge Sharing: native/knowledge.md

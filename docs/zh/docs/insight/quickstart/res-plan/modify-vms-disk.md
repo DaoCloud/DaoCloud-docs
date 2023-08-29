@@ -8,7 +8,7 @@ vmstorge 磁盘规范请参考 [vmstorage 磁盘容量规划](../res-plan/vms-re
 ### 开启存储池扩容
 
 1. 以全局服务集群管理员权限登录 DCE 5.0 平台，进入 `kpanda-global-cluster` 集群详情。
-1. 选择左侧导航 `容器存储 -> 数据卷声明(PVC)`，找到 vmstorage 绑定的数据卷声明。
+1. 选择左侧导航 `容器存储` -> `数据卷声明(PVC)`，找到 vmstorage 绑定的数据卷声明。
 
     ![找到vmstorage](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/vmdisk01.png)
 
@@ -16,7 +16,7 @@ vmstorge 磁盘规范请参考 [vmstorage 磁盘容量规划](../res-plan/vms-re
 
     ![修改磁盘](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/vmdisk02.png)
 
-1. 选择左侧导航 `容器存储 -> 存储池(SC)`，找到 `local-path`，点击目标右侧的 `⋮`，在弹出菜单中选择`编辑`。
+1. 选择左侧导航 `容器存储` -> `存储池(SC)`，找到 `local-path`，点击目标右侧的 `⋮`，在弹出菜单中选择`编辑`。
 
     ![编辑存储池](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/vmdisk03.png)
 
@@ -39,7 +39,7 @@ vmstorge 磁盘规范请参考 [vmstorage 磁盘容量规划](../res-plan/vms-re
 
     ![修改 YAML](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/vmdisk07.png)
 
-1. 再次选择左侧导航 `容器存储 -> 数据卷声明(PVC)`，找到 vmstorage 绑定的数据卷声明确认修改已生效。在某个 PVC 详情页，点击关联存储源 (PV)。
+1. 再次选择左侧导航 `容器存储` -> `数据卷声明(PVC)`，找到 vmstorage 绑定的数据卷声明确认修改已生效。在某个 PVC 详情页，点击关联存储源 (PV)。
 
     ![关联存储源](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/vmdisk08.png)
 
@@ -56,7 +56,7 @@ vmstorge 磁盘规范请参考 [vmstorage 磁盘容量规划](../res-plan/vms-re
 若存储卷扩容失败，可参考以下方法克隆存储卷。
 
 1. 以全局服务集群管理员权限登录 DCE 5.0 平台，进入 `kpanda-global-cluster` 集群详情。
-1. 选择左侧导航 `工作负载 -> 有状态负载`，找到 `vmstorage` 的有状态负载，点击目标右侧的 `⋮`，在弹出菜单中选择`状态` -> `停止`-> `确定`。
+1. 选择左侧导航 `工作负载` -> `有状态负载`，找到 `vmstorage` 的有状态负载，点击目标右侧的 `⋮`，在弹出菜单中选择`状态` -> `停止`-> `确定`。
 
     ![状态停止](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/vmdisk11.png)
 
@@ -66,7 +66,7 @@ vmstorge 磁盘规范请参考 [vmstorage 磁盘容量规划](../res-plan/vms-re
     kubectl cp -n insight-system vmstorage-insight-victoria-metrics-k8s-stack-1:vm-data ./vm-data
     ```
 
-1. 登录 DCE 5.0 平台进入 `kpanda-global-cluster` 集群详情，选择左侧导航 `容器存储 -> 数据卷(PV)`，点击右上角的`克隆`，并修改数据卷的容量。
+1. 登录 DCE 5.0 平台进入 `kpanda-global-cluster` 集群详情，选择左侧导航 `容器存储` -> `数据卷(PV)`，点击右上角的`克隆`，并修改数据卷的容量。
 
     ![克隆](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/vmdisk12.png)
 

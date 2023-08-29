@@ -11,11 +11,11 @@ The cluster has the Helm application `insight-agent` installed and in the `runni
 
 1. Select `Data Collection` on the left navigation bar to view the status of all cluster collection plug-ins.
 
-    ![Data Collection](../../images/collectmanage01.png)
+    ![Data Collection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/collectmanage01.png)
 
 2. Click a cluster name to enter the collection configuration details.
 
-    ![Data Collection](../../images/collectmanage02.png)
+    ![Data Collection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/collectmanage02.png)
 
 3. Click the link to jump to `Container Management` to create a Service Monitor.
 

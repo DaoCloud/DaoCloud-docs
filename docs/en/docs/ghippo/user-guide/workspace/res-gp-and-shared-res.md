@@ -8,6 +8,11 @@ Both resource groups and shared resources support cluster binding, but they have
   the workspace administrator will be mapped as a cluster administrator and able to manage and use cluster resources.
 - Cluster Binding for Shared Resources: Shared resources are usually used for resource quotas. A typical scenario is that the platform administrator assigns a cluster to a first-level supplier, who then assigns the cluster to a second-level supplier and sets resource quotas for the second-level supplier.
 
+![diff](../../images/res-gp01.png)
+
+Note: In this scenario, the platform administrator needs to impose resource restrictions on secondary suppliers.
+Currently, it is not supported to limit the cluster quota of secondary suppliers by the primary supplier.
+
 ## Differences in Cluster Quota Usage
 
 - Cluster Binding for Resource Groups: The workspace administrator is mapped as the administrator of the cluster and is equivalent to being granted the Cluster Admin role in Container Management-Permission Management. They can have unrestricted access to cluster resources, manage important content such as management nodes, and cannot be subject to resource quotas.

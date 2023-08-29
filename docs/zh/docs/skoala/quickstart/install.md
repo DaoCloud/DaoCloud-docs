@@ -10,7 +10,7 @@
 
 ## 使用商业版安装包安装
 
-通过商业版安装微服务引擎时，需要注意商业版的版本号（[点击查看最新版本](../../download/dce5.md)）。需要针对不同版本执行不同操作。
+通过商业版安装微服务引擎时，需要注意商业版的版本号（[点击查看最新版本](../../download/index.md)）。需要针对不同版本执行不同操作。
 
 商业版的 **版本号 ≥ v0.3.29** 时，默认会安装微服务引擎，但仍旧建议检查 `mainfest.yaml` 文件进行确认 `components/skoala/enable` 的值是否为 `true`，以及是否指定了 Helm 的版本。
 
@@ -46,7 +46,7 @@
 
 ### 微服务引擎部署结构
 
-![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/install-step.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/install-arch.png)
 
 左侧蓝色框内的 chart 即 `skoala` 组件，需要安装在控制面集群，即 DCE 5.0 的全局集群 `kpanda-global-clsuter`，详情可参考 DCE 5.0 的[部署架构](../../install/commercial/deploy-arch.md)。安装 `skoala` 组件之后即可以在 DCE 5.0 的一级导航栏中看到微服务引擎模块。另外需要注意：安装 `skoala` 之前需要安装好其依赖的 `common-mysql` 组件用于存储资源。
 
@@ -88,7 +88,7 @@ mcamel-common-mysql-cluster-mysql             2/2     7d23h
 
 ### 检测依赖的监控组件
 
-微服务引擎依赖 [DCE 5.0 可观测性](../../insight/intro/what.md)模块的能力。如您需要监控微服务的各项指标、追踪链路，则需要在集群中安装对应的 `insight-agent`，具体说明可参考[](../../insight/quickstart/install/install-agent.md)。
+微服务引擎依赖 [DCE 5.0 可观测性](../../insight/intro/index.md)模块的能力。如您需要监控微服务的各项指标、追踪链路，则需要在集群中安装对应的 `insight-agent`，具体说明可参考[](../../insight/quickstart/install/install-agent.md)。
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/cluster-list.png)
 
@@ -101,13 +101,11 @@ mcamel-common-mysql-cluster-mysql             2/2     7d23h
 
 一切就绪之后，就可以开始正式安装微服务引擎了。具体的流程如下：
 
-~~### 初始化数据库表~~
-
 !!! note
 
-    如果安装 skoala-release/skoala 版本 v0.17.1 及更高版本，直接跳过此步骤执行下一步。系统会自动完成表格初始化，无需手动进行。
+    - 如果安装的是 skoala-release/skoala v0.17.1 以下的版本，则需要手动初始化数据库表。
 
-~~如果在 common-mysql 内的 skoala 数据库为空，请登录到 skoala 数据库后，执行以下 SQL：~~
+    - 如果安装的是 skoala-release/skoala v0.17.1 或更高版本，系统会自动初始化数据库表，无需手动进行。
 
 ??? note "如果初始化失败，请检查 skoala 数据库内是否有下方 3 张数据表以及对应的 SQL 是否全部生效。"
 
@@ -179,18 +177,18 @@ mcamel-common-mysql-cluster-mysql             2/2     7d23h
 
 注意：添加 Skoala-release 仓库之后，通常需要关注的有 2 个 Chart：
 
-- `Skoala` 是 DME 的控制端的服务，
+- `Skoala` 是 微服务引擎 的控制端的服务，
     - 安装完成后，可以在 DCE 5.0 平台看到微服务引擎的入口
-    - 包含 3 个组件 ui、hive、sesame
+    - 包含 3 个组件 skoala-ui、hive、sesame
     - 需要安装在全局管理集群
-- Skoala-init 是 DME 所有的组件 Operator
+- Skoala-init 是 微服务引擎 所有的组件 Operator
     - 仅安装到工作集群即可
     - 包含组件有：skoala-agent, nacos, contour, sentinel
     - 未安装时，创建注册中心和网关时会提示缺少组件
 
 默认情况下，安装完成 skoala 到 kpanda-global-cluster(全局管理集群)，就可以在侧边栏看到对应的微服务引擎的入口了。
 
-### 查看 DME 最新版本
+### 查看微服务引擎最新版本
 
 在全局管理集群，查看 Skoala 的最新版本，直接通过 helm 命令获取版本信息；
 
@@ -224,24 +222,12 @@ skoala-release/skoala-init  0.12.0          0.12.0      A Helm Chart for Skoala 
 
 ```bash
 ~ helm upgrade --install skoala --create-namespace -n skoala-system --cleanup-on-fail \
-    --set ui.image.tag=v0.9.0 \
-    --set sweet.enable=true \
-    --set hive.configMap.data.database.host=mcamel-common-mysql-cluster-mysql-master.mcamel-system.svc.cluster.local \
-    --set hive.configMap.data.database.port=3306 \
-    --set hive.configMap.data.database.user=root \
-    --set hive.configMap.data.database.password=xxxxxxxx \
-    --set hive.configMap.data.database.database=skoala \
-    skoala-release/skoala \
-    --version 0.13.0
+    --set ui.image.tag=v0.17.0 \
+    --set hive.configMap.database[0].driver="mysql" \
+    --set hive.configMap.database[0].dsn="skoala:xxx@tcp(mcamel-common-mysql-cluster-mysql-master.mcamel-system.svc.cluster.local:3306)/skoala?charset=utf8&parseTime=true&loc=Local&timeout=10s" \
+    skoala-release/skoala \ 
+    --version 0.24.2
 ```
-
-> 自定义并初始化数据库参数；需要将数据库信息做配置添加进去
-> --set sweet.enable=true \
-> --set hive.configMap.data.database.host= \
-> --set hive.configMap.data.database.port= \
-> --set hive.configMap.data.database.user= \
-> --set hive.configMap.data.database.password= \
-> --set hive.configMap.data.database.database= \
 
 查看 Pod 是否启动成功
 
@@ -250,7 +236,7 @@ skoala-release/skoala-init  0.12.0          0.12.0      A Helm Chart for Skoala 
 NAME                                   READY   STATUS    RESTARTS        AGE
 hive-8548cd9b59-948j2                  2/2     Running   2 (3h48m ago)   3h48m
 sesame-5955c878c6-jz8cd                2/2     Running   0               3h48m
-ui-7c9f5b7b67-9rpzc                    2/2     Running   0               3h48m
+skoala-ui-7c9f5b7b67-9rpzc             2/2     Running   0               3h48m
 ```
 
 ### 安装 skoala-init 到工作集群
@@ -259,11 +245,11 @@ ui-7c9f5b7b67-9rpzc                    2/2     Running   0               3h48m
 
 ```bash
 ~  helm search repo skoala-release/skoala-init --versions
-NAME                        CHART VERSION   APP VERSION DESCRIPTION
-skoala-release/skoala-init  0.13.0          0.13.0      A Helm Chart for Skoala init, it includes Skoal...
-skoala-release/skoala-init  0.12.2          0.12.2      A Helm Chart for Skoala init, it includes Skoal...
-skoala-release/skoala-init  0.12.1          0.12.1      A Helm Chart for Skoala init, it includes Skoal...
-skoala-release/skoala-init  0.12.0          0.12.0      A Helm Chart for Skoala init, it includes Skoal...
+NAME                      	CHART VERSION	APP VERSION	DESCRIPTION
+skoala-release/skoala-init	0.24.2       	0.24.2     	A Helm Chart for Skoala init, it includes Skoal...
+skoala-release/skoala-init	0.24.1       	0.24.1     	A Helm Chart for Skoala init, it includes Skoal...
+skoala-release/skoala-init	0.24.0       	0.24.0     	A Helm Chart for Skoala init, it includes Skoal...
+skoala-release/skoala-init	0.23.0       	0.23.0     	A Helm Chart for Skoala init, it includes Skoal...
 ......
 ```
 
@@ -272,18 +258,18 @@ skoala-release/skoala-init  0.12.0          0.12.0      A Helm Chart for Skoala 
 ```bash
 ~ helm upgrade --install skoala-init --create-namespace -n skoala-system --cleanup-on-fail \
     skoala-release/skoala-init \
-    --version 0.13.0
+    --version 0.24.2
 ```
 
 除了通过终端安装，也可以在 `容器管理`->`Helm 应用` 内找到 `skoala-init` 进行安装。
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/skoala-init.png)
 
-## 更新 DME
+## 更新微服务引擎
 
 支持离线升级和在线升级两种方式，具体可参考[离线升级](../quickstart/offline-upgrade.md)或[在线升级](online-upgrade.md)
 
-## 卸载 DME
+## 卸载微服务引擎
 
 ```bash
 ~ helm uninstall skoala-init -n skoala-system

@@ -6,12 +6,13 @@
 
 | 版本                                                   | 架构 | 文件大小 | 安装包                                                                                                     |  校验文件 | 更新日期   |
 | ------------------------------------------------------ | ----- |-------- | ---------------------------------------------------------------------------------------------------------- | ---------- | ---------- |
-| [v0.3.0](../../gmagpie/intro/release-notes.md) | AMD 64 | 56.90MB | [:arrow_down: gmagpie_v0.3.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/gmagpie_v0.3.0_amd64.tar) | [:arrow_down: gmagpie_v0.3.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/gmagpie_v0.3.0_amd64_checksum.sha512sum) | 2023-06-28 |
-| [v0.2.2](../../ghippo/user-guide/report-billing/index.md) | AMD64 | 37.1MB | [:arrow_down: gmagpie_v0.2.2_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/gmagpie_v0.2.2_amd64.tar) | [:arrow_down: gmagpie_v0.2.2_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/gmagpie_v0.2.2_amd64_checksum.sha512sum) | 2023-5-30 |
+| [v0.3.2](../../dce/dce-rn/20230630.md) | AMD 64 | 91.85 MB | [:arrow_down: gmagpie_v0.3.2_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/gmagpie_v0.3.2_amd64.tar) | [:arrow_down: gmagpie_v0.3.2_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/gmagpie_v0.3.2_amd64_checksum.sha512sum) | 2023-08-02 |
+| [v0.3.0](../../dce/dce-rn/20230630.md) | AMD 64 | 56.90 MB | [:arrow_down: gmagpie_v0.3.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/gmagpie_v0.3.0_amd64.tar) | [:arrow_down: gmagpie_v0.3.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/gmagpie_v0.3.0_amd64_checksum.sha512sum) | 2023-06-28 |
+| [v0.2.2](../../ghippo/user-guide/report-billing/index.md) | AMD64 | 37.1 MB | [:arrow_down: gmagpie_v0.2.2_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/gmagpie_v0.2.2_amd64.tar) | [:arrow_down: gmagpie_v0.2.2_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/gmagpie_v0.2.2_amd64_checksum.sha512sum) | 2023-5-30 |
 
 ## 校验
 
-在下载离线安装包和校验文件的目录，执行以下命令校验完整性：
+在下载离线安装包和校验文件的目录，以 `v0.2.2_amd64` 为例，执行以下命令校验完整性：
 
 ```sh
 echo "$(cat gmagpie_v0.2.2_amd64_checksum.sha512sum)" | sha512sum -c

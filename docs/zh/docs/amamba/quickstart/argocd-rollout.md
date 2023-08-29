@@ -32,7 +32,7 @@
 
 ### Istio 相关资源配置
 
-在[服务网格](../../mspider/intro/what.md)模块或者控制台创建以下资源。
+在[服务网格](../../mspider/intro/index.md)模块或者控制台创建以下资源。
 
 1. 创建 Gateway
 

@@ -14,7 +14,7 @@ private images under the tenant. There are two main sources of images:
 2. The second part includes all public or private images obtained by the workspace actively
    associating with a specific container registry.
 
-![space](../images/space02.png)
+![space](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/space02.png)
 
 **The main features**
 
@@ -53,11 +53,11 @@ You can push an image to current registry space and set the command to push.
 
 1. In the image list, click the `Push command` button on the right.
 
-    ![click button](../images/push00.png)
+    ![click button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/push00.png)
 
 1. You can `+ Generate login command` and view the command to push images.
 
-    ![push command](../images/push01.png)
+    ![push command](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/push01.png)
 
 Here is a sample command to push image:
 

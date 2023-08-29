@@ -25,7 +25,7 @@ DCE 5.0 服务网格身份模型使用经典的 `service identity`（服务身�
 `istio-agent` 与每个 Envoy 代理一起运行，与 `istiod`
 一起协作来自动化的进行大规模密钥和证书轮换。下图显示了这个机制的运行流程。
 
-![workflow](../../images/id-prov.svg)
+![workflow](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/id-prov.svg)
 
 服务网格通过以下流程提供密钥和证书：
 
@@ -148,7 +148,7 @@ Istiod 提供了 服务网格系统管理的密钥和证书的路径，并将它
 则服务网格将继续在 PEP 之间使用纯文本。要覆盖此行为，
 请使用[目标规则](../traffic-governance/destination-rules.md)显式禁用双向 TLS 模式。
 
-![](../../images/authz.svg)
+![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/authz.svg)
 
 服务网格将这两种认证类型以及凭证中的其他声明（如果适用）输出到下一层：[授权](./authorize.md)。
 

@@ -15,28 +15,28 @@ Generally, for private registry spaces, binding to a workspace is helpful to all
 
 1. Log in to DCE 5.0 as a user with the Admin role, click `Container Registry` -> `Integrated Registry (Admin)` from the left navigation bar.
 
-    ![Integration](../images/bind01.png)
+    ![Integration](../images/integrated01.png)
 
 1. Click a registry name.
 
-    ![Click Name](../images/bind02.png)
+    ![Click Name](../images/integrated02.png)
 
 1. Click `Registry space` in the left navigation bar, then click the `⋮` on the far right of a specific registry space, and select `Bind/unbind workspace`.
 
-    ![Bind/Unbind](../images/bind03.png)
+    ![Bind/Unbind](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/bind03.png)
 
     If no workspace is bound, the `Workspace` column will display `No binding`.
 
 1. In the pop-up window, select one or more workspaces, and then click `OK`.
 
-    ![Binding](../images/bind04.png)
+    ![Binding](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/bind04.png)
 
     To unbind a workspace, simply click on the `x` in the selected workspaces list.
 
 1. The prompt message "Bound/Unbound workspace successfully" will be displayed,
    and the `Workspace` column will display the bound workspace when you move the cursor over it.
 
-    ![Binding](../images/bind05.png)
+    ![Binding](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/bind05.png)
 
     Users under this workspace (tenant) can pull images from this registry space.
 
@@ -48,7 +48,7 @@ Generally, for private registry spaces, binding to a workspace is helpful to all
     - Check whether the registry space is bound to the workspace where the Kubernetes namespace is located (it needs to be bound).
     - Check whether the registry space status is private or public, and switch tabs as necessary.
 
-    ![Image registry](../images/bind06.png)
+    ![Image registry](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/bind06.png)
 
 2. What is the difference between assigning a registry space to a workspace for use and integrating a registry under the workspace?
 

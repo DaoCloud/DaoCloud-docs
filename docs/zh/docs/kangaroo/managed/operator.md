@@ -5,16 +5,16 @@ hide:
 
 # 安装 Harbor Operator
 
-托管 `Harbor` 使用的是 `Harbor Operator` 技术来进行 `Harbor` 创建、升级、删除等全生命周期管理。
-在创建托管 `Harbor` 之前，需要先在容器管理中安装 `Harbor Operator`，版本要求最低 1.4.0。
+托管 Harbor 使用的是 Harbor Operator 技术来进行 Harbor 创建、升级、删除等全生命周期管理。
+在创建托管 Harbor 之前，需要先在容器管理中安装 Harbor Operator，版本要求最低 1.4.0。
 
-> Tips: Harbor Operator 依赖Cert Manager，所以需要先安装Cert Manager成功。
+> 提示：Harbor Operator 依赖 Cert Manager，所以需要先安装好 Cert Manager。
 
 1. 如果在创建 Harbor 实例时，出现以下异常提示，请点击`前往安装`。
 
     ![operator 异常](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/errors.png)
 
-1. 进入`容器管理`的 `Helm 应用` -> `Helm 模板`，找到并点击 Harbor Operator 卡片。
+1. 进入`容器管理`的 `Helm 应用` -> `Helm 模板`，找到并点击 harbor-operator 卡片。
 
     ![找到 operator](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/operator01.png)
 
@@ -22,7 +22,7 @@ hide:
 
     ![安装](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/operator02.png)
 
-1. 输入名称和命名空间后，点击`确定`，如果想要添加其他参数请参考下面的`Values`表格。。
+1. 输入名称和命名空间后，点击`确定`，如果想要添加其他参数，请参考下一节的参数说明。
 
     ![填表](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/operator03.png)
 
@@ -30,10 +30,11 @@ hide:
 
     ![安装](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/operator04.png)
 
+## 参数值
 
-## Values
-`Harbor Operator` 在安装过程中有较多参数可以填写和控制，具体参数请参考如下表格内容,:
-> 其中`minio-operator.enabled`和`postgres-operator.enabled`和`redis-operator.enabled`只能为`false`。
+`Harbor Operator` 在安装过程中有较多参数可以填写和控制，具体参数请参考如下表格内容：
+
+> 其中 `minio-operator.enabled`、`postgres-operator.enabled` 和 `redis-operator.enabled` 只能为 `false`。
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
@@ -64,7 +65,7 @@ hide:
 | harborClass | string | `""` | Class name of the Harbor operator |
 | image.pullPolicy | string | `"IfNotPresent"` | The image pull policy for the controller. |
 | image.registry | string | `"docker.io"` | The image registry whose default is docker.io. |
-| image.repository | string | `"goharbor/harbor-operator"` | The image repository whose default is the chart appVersion. |
+| image.repository | string | `"goharbor/harbor-operator"` | The container registry whose default is the chart appVersion. |
 | image.tag | string | `"dev_master"` | The image tag whose default is the chart appVersion. |
 | imagePullSecrets | list | `[]` | Reference to one or more secrets to be used when pulling images <https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/> For example: `[   {"name":"image-pull-secret"} ]` |
 | installCRDs | bool | `false` | If true, CRD resources will be installed as part of the Helm chart. If enabled, when uninstalling CRD resources will be deleted causing all installed custom resources to be DELETED |

@@ -7,7 +7,7 @@ hide:
 
 Helm 让 HwameiStor 的升级变得非常简单。只需运行以下命令：
 
-```console
+```sh
 helm upgrade -n hwameistor hwameistor -f new.values.yaml
 ```
 

@@ -1,13 +1,134 @@
 ---
 MTPE: windsonsea
-Revised: todo
+Revised: done
 Pics: NA
-Date: 2022-12-20
+Date: 2023-07-28
 ---
 
 # Service Mesh Release Notes
 
 This page lists all the Release Notes for each version of Service Mesh, providing convenience for users to learn about the evolution path and feature changes.
+
+## 2023-07-28
+
+### v0.18.0
+
+#### Upgrades
+
+- **Added** Recommended versions will be included in the `Istio` version list.
+- **Added** Detection condition for joining the interconnection network pool: `CLUSTER_EXIST_NET_POOLS`.
+- **Added** Interface to get the namespace list in a cluster.
+- **Added** Support for filtering system namespaces in `filter_system_namespaces`.
+- **Added** Interface to get the list of sidecar-injected workloads in a cluster.
+- **Added** New field `graph_type` in the workload view of the monitoring topology,
+  currently supporting `SERVICE_SCOPE` and `WORKLOAD_SCOPE`, defaulting to `SERVICE_SCOPE`.
+- **Added** Detection condition for removing network groups: whether they exist in the network interconnection pool (`NET_EXISTS_NET_POOLS`).
+- **Added** Support for searching by `PodLabels` in the sidecar workload list using `page.search`.
+- **Added** Interface to query the list of multi-cluster workloads:
+  `/apis/mspider.io/v3alpha1/meshes/{mesh_id}/clusters/-/sidecar-management/workloads`, also supports searching by `PodLabels`.
+- **Added** Design of service diagnosis interface.
+- **Added** Implementation of detection condition for removing clusters from the mesh: whether they have joined the interconnection network pool (`CLUSTER_EXIST_NET_POOLS`).
+- **Added** Implementation of interface for checking the validity of gateway names in the mesh.
+- **Added** Field `filter_system_namespaces` to the namespace list in a cluster.
+- **Added** Field `filter_system_namespaces` to the list of sidecar-injected workloads in a cluster.
+- **Added** Support for workload dimension in monitoring topology.
+- **Added** Implementation of service diagnosis interface (with automatic repair for some issues).
+- **Added** Detection of diagnostic items requiring manual repair.
+- **Added** Implementation of service repair interface.
+- **Added** New tag `k8s.pod.name` in `Trace Tags` to indicate the name of the `Pod`.
+- **Added** Platform administrators and workspace administrators can manage multi-cloud network interconnections for meshes under their workspace.
+- **Upgraded** `Istio api` to fix the issue where `WasmPlugin` cannot set priority.
+- **Upgraded** `ckube` to `v1.3.5` to resolve the issue where the service mesh list might be empty.
+
+#### Fixes
+
+- **Fixed** Inconsistency between `sidecar` and `sidecarResources`.
+- **Fixed** Disorder of sorting indexes in the workload list.
+- **Fixed** `ListClusterNamespace` interface to support querying namespace information by cluster.
+- **Fixed** Issue where globally bound mesh resources may not be displayed internally in the mesh.
+- **Fixed** Inability to modify `portName` for empty port protocols.
+- **Fixed** Issue where diagnostic items for `Workload` were missing `Service`.
+- **Fixed** Permanent failure in synchronization of service configuration sync diagnostics.
+- **Fixed** Inaccuracy in audit logs for some batch operation interfaces.
+- **Fixed** Unreachable clusters are still attempted to be probed with `livez`.
+- **Fixed** Incorrect status of workloads when namespace injection status changes in dedicated mesh mode.
+- **Fixed** Failure in successful synchronization of `leaderelection`.
+- **Fixed** Incorrect total count of `Pods` in the mesh in some cases.
+- **Fixed** Typo in error messages, changing `mot` to `not`.
+- **Fixed** Inability to repair sidecar injection status for certain services.
+- **Fixed** Failure of interface `/apis/mspider.io/v3alpha1/clusters/{name}/components` and `/apis/mspider.io/v3alpha1/clusters/{name}` when `mesh_id` is not passed for non-admin users.
+- **Fixed** Name validation of `Istio CRD`, allowing the first letter of all operation names to be a number.
+- **Fixed** Incorrect comment about `label_selectors` in the `Graph` interface.
+- **Fixed** Lack of message body description for service diagnosis repair interface.
+- **Optimized** Description of the `namespaces` field in the `Istio` resource interface.
+- **Optimized** Detection process of mesh control plane, ignoring control plane clusters.
+- **Optimized** Consistency of different permissions for different roles with the latest permission design.
+- **Optimized** Permission design, separating multi-cloud network interconnection permission from mesh management.
+- **Optimized** Meaning of the `global.high_available` parameter.
+- **Optimized** Usage of `CHART.replicas`, changing default value to empty.
+
+## 2023-06-29
+
+### v0.17.0
+
+#### Features
+
+- **Added** `mspider.io/mesh-gateway-name` label specification for defining the mesh gateway name.
+- **Added** `injectionStatus` field to namespace for listing and searching purposes.
+- **Added** `label_selectors` field in topology queries for conditional querying of topology results.
+- **Added** `Labels` and `PodLabels` fields to sidecar workload information.
+- **Added** `Labels` and `PodLabels` fields to service workload information.
+- **Added** component information (components) and Istio version (meshVersion) fields to cluster information.
+- **Added** `include_components` field to cluster list and mesh management cluster list for selecting whether to display cluster component information, such as Insight and other external components.
+- **Added** audit information for all necessary interfaces.
+- **Added** ability to clear deployment injection policies.
+- **Added** Implemented index search for namespace lists.
+- **Added** audit log capability.
+- **Added** ability to clear deployment injection policies.
+- **Added** Implemented component status in cluster list.
+- **Added** `mspider.io/mesh-gateway-name` label specification for defining the gateway name.
+- **Added** Implemented automatic service injection capability for `MCPC Controller`.
+- **Added** Ghippo resource reporting functionality, automatically creating and updating `GProductResource` resources according to specifications.
+- **Added** `global.config.enableAutoInitPolicies` configuration for enabling automatic initialization of governance policies for managed services in `MCPC Controller`.
+- **Added** `global.config.enableAutoInjectedSidecar` configuration for enabling automatic injection policies for managed services in `MCPC Controller`.
+- **Added** compatibility testing for various versions of K8s.
+- **Optimized** cache to improve the latency issue of querying `Insight Agent` status in clusters.
+- **Optimized** Strengthened detection of conflicting meshes when creating a mesh for managed clusters.
+- **Optimized** Ignored updates to name (Name), namespace (Namespace), and labels (Labels) when updating mesh gateways to avoid triggering exceptions.
+- **Optimized** Updated synchronization method for Kpanda cluster kubeconfig.
+- **Optimized** Created logic for `WorkloadShadow controller watcher`.
+- **Upgraded** Supported querying cluster and cluster component information independently without passing MeshID.
+- **Upgraded** go package istio.io/istio to `v0.0.0-20230131034922-50fb2905d9f5` version.
+- **Upgraded** CloudTTY to `v0.5.3` version.
+- **Upgraded** front-end version to `v0.15.0`.
+
+#### Fixes
+
+- **Fixed** inaccurate audit log description when creating East-West gateway for clusters.
+- **Fixed** ineffectiveness of replica count for East-West gateways.
+- **Fixed** invalid detection of sidecar removal during mesh deletion.
+- **Fixed** inability to filter namespaces in monitoring topology.
+- **Fixed** inaccurate error rate data for monitoring topology services.
+- **Fixed** returning 404 error when mesh does not exist.
+- **Fixed** panic caused by `nil pointer` in Audit.
+- **Fixed** displaying Enum type resource types as numbers in audit logs.
+- **Fixed** inconsistency in behavior between GRPC requests with user authentication information and HTTP requests.
+- **Fixed** failure to create `Telemetry` resources during dedicated mesh creation.
+- **Fixed** failure to rebuild `RegProxy watcher`.
+- **Fixed** incorrect labeling by `traffic-lane` plugin, causing traffic lane to not work.
+- **Fixed** failure to properly clean up cluster configuration when deleting the mesh.
+- **Fixed** abnormal behavior of `MCPC Controller` when accessing unhealthy clusters.
+- **Fixed** inability to remove components during mesh deletion or cluster removal process.
+- **Fixed** GlobalMesh and MeshCluster remaining in deletion state and unable to be forcefully deleted.
+- **Fixed** incorrect injection status for system namespaces that are not injected by default.
+- **Fixed** selection of non-ready Pods when proxying `HostedAPIServer`, causing the mesh to not become ready.
+- **Fixed** failure to delete Telemetry during mesh deletion, which caused the mesh deletion process to fail. This resource is cleaned up during Istio uninstallation or removal of `HostedAPIServer`, so it does not need to be deleted during the mesh deletion process.
+- **Fixed** issue with installing `HostedAPIServer` on OCP due to permission problems.
+- **Fixed** description in Helm chart.
+
+#### Removals
+
+- **Removed** 443 port from service `istiod-[meshID]-hosted-lb` in managed mesh mode.
 
 ## 2023-05-31
 
@@ -43,23 +164,23 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 
 #### Fixes
 
-- **Fixed:** CloudShell permissions issue.
-- **Fixed:** MeshCluster Status RemotePilotAddress invalid data not cleared promptly.
-- **Fixed:** Problem where MeshCluster cannot be deleted.
-- **Fixed:** Insufficient content in FailedReason of TrafficLane.
-- **Fixed:** Missing action field in TrafficLaneActionsRequest.
-- **Fixed:** The mesh list cannot be displayed when there are unhealthy clusters.
-- **Fixed:** Incorrect number of effectively injected instances when an instance is abnormal.
-- **Fixed:** WasmPlugin cannot create multiple instances when a service is selected by multiple lanes.
-- **Fixed:** The service label may have residual old workloads.
-- **Fixed:** The service list cannot obtain the effective number of workloads, and the type parsing error of Dynamic ReadyReplicas.
-- **Fixed:** When the workload changes, the changed status cannot be synchronized to the corresponding Service.
-- **Fixed:** Checking the status of a cluster that is not connected to the mesh.
-- **Fixed:** Cluster status is not searchable.
-- **Fixed:** Mesh cannot remove the cluster when there is no sidecar.
-- **Fixed:** Regular expression for mesh name does not allow numbers to start.
-- **Fixed:** Mesh status display is incorrect, and status is sometimes displayed as normal when there is no sidecar.
-- **Fixed:** Fixed the problem that the automatic injection template of the mesh is not effective.
+- **Fixed** CloudShell permissions issue.
+- **Fixed** MeshCluster Status RemotePilotAddress invalid data not cleared promptly.
+- **Fixed** Problem where MeshCluster cannot be deleted.
+- **Fixed** Insufficient content in FailedReason of TrafficLane.
+- **Fixed** Missing action field in TrafficLaneActionsRequest.
+- **Fixed** The mesh list cannot be displayed when there are unhealthy clusters.
+- **Fixed** Incorrect number of effectively injected instances when an instance is abnormal.
+- **Fixed** WasmPlugin cannot create multiple instances when a service is selected by multiple lanes.
+- **Fixed** The service label may have residual old workloads.
+- **Fixed** The service list cannot obtain the effective number of workloads, and the type parsing error of Dynamic ReadyReplicas.
+- **Fixed** When the workload changes, the changed status cannot be synchronized to the corresponding Service.
+- **Fixed** Checking the status of a cluster that is not connected to the mesh.
+- **Fixed** Cluster status is not searchable.
+- **Fixed** Mesh cannot remove the cluster when there is no sidecar.
+- **Fixed** Regular expression for mesh name does not allow numbers to start.
+- **Fixed** Mesh status display is incorrect, and status is sometimes displayed as normal when there is no sidecar.
+- **Fixed** Fixed the problem that the automatic injection template of the mesh is not effective.
 - **Fixed** the issue where non-admin users cannot obtain traffic topology due to the lack of default values in the cluster.
 - **Fixed** the null pointer exception in the automatic injection service policy.
 

@@ -11,7 +11,9 @@ Other Linux 本质上是由于 DCE 对某些 Linux 操作系统没有提供安�
 | AMD64 | 统信 UOS V20 (1050d) | Debian | 4.19.0-server-amd64 |
 | AMD64 | AnolisOS 8.8 GA  | Redhat | 5.10.134-13.an8.x86_64 |
 
-备注：没有验证的操作系统，可以尝试通过本文档的教程尝试部署。
+!!! note
+
+    没有验证的操作系统，可以尝试通过本文档的教程尝试部署。
 
 ## 前提条件
 
@@ -34,7 +36,7 @@ Other Linux 本质上是由于 DCE 对某些 Linux 操作系统没有提供安�
 2. 构建操作系统离线包
 
     ```bash
-    # 指定 pkgs.yml 包配置文件路径(若 pkgs.yml 位于 other_os_pkgs.sh 同级路径，则可以不设置此环境变量)
+    # 指定 pkgs.yml 包配置文件路径（若 pkgs.yml 位于 other_os_pkgs.sh 同级路径，则可以不设置此环境变量）
     export PKGS_YML_PATH=/home/pkgs.yml
     # 执行系统离线包构建命令
     ./other_os_pkgs.sh build
@@ -43,13 +45,13 @@ Other Linux 本质上是由于 DCE 对某些 Linux 操作系统没有提供安�
 3. 安装操作系统离线包
 
     ```bash
-    # 指定 pkgs.yml 包配置文件路径(若 pkgs.yml 位于 other_os_pkgs.sh 同级路径，则可以不设置此环境变量)
+    # 指定 pkgs.yml 包配置文件路径（若 pkgs.yml 位于 other_os_pkgs.sh 同级路径，则可以不设置此环境变量）
     export PKGS_YML_PATH=/home/pkgs.yml
     # 指定 os pkgs 离线包的路径
     export PKGS_TAR_PATH=/home/os-pkgs-${DISTRO}-${VERSION}.tar.gz
-    # 指定集群 master/worker 节点 IP (多节点 IP 地址以空格分割)
+    # 指定集群 master/worker 节点 IP（多节点 IP 地址以空格分割）
     export HOST_IPS='192.168.10.11 192.168.10.12'
-    # 指定安装的目标节点接入信息(多节点用户名密码需保持一致)
+    # 指定安装的目标节点接入信息（多节点用户名密码需保持一致）
     export SSH_USER=root
     export SSH_PASS=dangerous
     # 执行安装命令，并输出日志
@@ -89,7 +91,8 @@ Other Linux 本质上是由于 DCE 对某些 Linux 操作系统没有提供安�
 
 1. 通过 `cat log.txt |egrep 'INFO|WARN'`检查安装情况：
 
-    如果出现`failed to install package` 关键字，则说明未安装成功，并且最终失败时，会输出`the packages that failed to install are: ipset ipvsadm xfsprogs`。
+    如果出现`failed to install package` 关键字，则说明未安装成功，并且最终失败时，
+    会输出`the packages that failed to install are: ipset ipvsadm xfsprogs`。
 
 2. 相同系统族（os family）的不同版本（major version）所对应的包名存在差异:
 
@@ -123,69 +126,70 @@ Other Linux 本质上是由于 DCE 对某些 Linux 操作系统没有提供安�
 
 3. 参考上一步`制作操作系统离线包`。
 
-4. 下载 addon 离线包，可以在[下载中心](../../download/dce5.md)下载最新版本（可选）
+4. 下载 addon 离线包，可以在[下载中心](../../download/index.md)下载最新版本（可选）
 
-5. 设置[集群配置文件 clusterConfig.yaml](../commercial/cluster-config.md)，可以在离线包 `offline/sample` 下获取该文件并按需修改。
+5. 设置[集群配置文件 clusterConfig.yaml](../commercial/cluster-config.md)，
+   可以在离线包 `offline/sample` 下获取该文件并按需修改。
 
     === "UnionTech OS Server 20 1050d"
 
-    ```yaml
-    apiVersion: provision.daocloud.io/v1alpha3
-    kind: ClusterConfig
-    metadata:
-    spec:
-      clusterName: test-cluster
-      loadBalancer:
-        type: metallb
-        istioGatewayVip: 172.30.41.XXX/32
-        insightVip: 172.30.41.XXX/32
-      masterNodes:
-        - nodeName: "g-master1"
-          ip: 172.30.41.xxx
-          ansibleUser: "root"
-          ansiblePass: "******"
-      fullPackagePath: "/root/offline"
-      osRepos:
-        type: none
-      imagesAndCharts:
-        type: builtin
-      binaries:
-        type: builtin
-      kubeanConfig: |-
-      allow_unsupported_distribution_setup: true
-        debian_os_family_extensions:
-          - "UnionTech OS Server 20\" "
-    ```
+        ```yaml
+        apiVersion: provision.daocloud.io/v1alpha3
+        kind: ClusterConfig
+        metadata:
+        spec:
+          clusterName: test-cluster
+          loadBalancer:
+            type: metallb
+            istioGatewayVip: 172.30.41.XXX/32
+            insightVip: 172.30.41.XXX/32
+          masterNodes:
+            - nodeName: "g-master1"
+              ip: 172.30.41.xxx
+              ansibleUser: "root"
+              ansiblePass: "******"
+          fullPackagePath: "/root/offline"
+          osRepos:
+            type: none
+          imagesAndCharts:
+            type: builtin
+          binaries:
+            type: builtin
+          kubeanConfig: |-
+          allow_unsupported_distribution_setup: true
+            debian_os_family_extensions:
+              - "UnionTech OS Server 20\" "
+        ```
 
     === "AnolisOS 8.8 GA"
 
-    ```yaml
-    apiVersion: provision.daocloud.io/v1alpha3
-    kind: ClusterConfig
-    metadata:
-    spec:
-      clusterName: test-cluster
-      loadBalancer:
-        type: metallb
-        istioGatewayVip: 172.30.41.XXX/32
-        insightVip: 172.30.41.XXX/32
-      masterNodes:
-        - nodeName: "g-master1"
-          ip: 172.30.41.xxx
-          ansibleUser: "root"
-          ansiblePass: "******"
-      fullPackagePath: "/root/offline"
-      osRepos:
-        type: none
-      imagesAndCharts:
-        type: builtin
-      binaries:
-        type: builtin
-      kubeanConfig: |-
-      allow_unsupported_distribution_setup: true
-        redhat_os_family_extensions:
-          - "Anolis OS"
-    ```
+        ```yaml
+        apiVersion: provision.daocloud.io/v1alpha3
+        kind: ClusterConfig
+        metadata:
+        spec:
+          clusterName: test-cluster
+          loadBalancer:
+            type: metallb
+            istioGatewayVip: 172.30.41.XXX/32
+            insightVip: 172.30.41.XXX/32
+          masterNodes:
+            - nodeName: "g-master1"
+              ip: 172.30.41.xxx
+              ansibleUser: "root"
+              ansiblePass: "******"
+          fullPackagePath: "/root/offline"
+          osRepos:
+            type: none
+          imagesAndCharts:
+            type: builtin
+          binaries:
+            type: builtin
+          kubeanConfig: |-
+          allow_unsupported_distribution_setup: true
+            redhat_os_family_extensions:
+              - "Anolis OS"
+        ```
 
     配置参数说明：
 

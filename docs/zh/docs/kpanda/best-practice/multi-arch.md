@@ -15,7 +15,7 @@
 
 ### 下载并导入离线包（以 ARM 架构、操作系统Kylin v10 sp2 为例）
 
-请确保已经登陆到火种节点！并且之前部署 DCE 5.0 时使用的 clusterConfig.yaml 文件还在。
+请确保已经登录到火种节点！并且之前部署 DCE 5.0 时使用的 clusterConfig.yaml 文件还在。
 
 #### 离线镜像包
 
@@ -67,7 +67,8 @@ tar -xvf offline-v0.8.0-arm64.tar
 
 !!! note
 
-    参数说明:
+    参数说明：
+
     - `-c clusterConfig.yaml` 指定之前部署 DCE5.0 时使用的 clusterConfig.yaml 文件
     - `--target-arch`  指定架构，支持 arm64、amd64
     - `--offline-path` 指定下载的离线镜像包文件地址
@@ -78,7 +79,7 @@ tar -xvf offline-v0.8.0-arm64.tar
 
 ### 添加异构工作节点
 
-请确保已经登陆到 DCE5.0 的 Global 集群的管理节点上。
+请确保已经登录到 DCE5.0 的 Global 集群的管理节点上。
 
 #### 修改主机清单文件
 
@@ -166,11 +167,8 @@ tar -xvf offline-v0.8.0-arm64.tar
 按照上述的配置注释，添加新增的工作节点信息
 
 ```shell
-
-## cluster-name 为工作集群的名称，通过容器管理创建集群时会默认生成
-
+# cluster-name 为工作集群的名称，通过容器管理创建集群时会默认生成
 kubectl edit cm ${cluster-name}-hosts-conf -n kubean-system
-
 ```
 
 #### 通过 ClusterOperation.yml 新增扩容任务
@@ -213,31 +211,25 @@ spec:
 按照上述的配置，创建并部署 join-node-ops.yaml
 
 ```shell
-
 # 复制上述清单文件
-
 vi join-node-ops.yaml
-
 kubectl kubectl apply -f join-node-ops.yaml -n kubean-system
-
 ```
 
 #### 检查任务执行状态
 
 ```shell
-
 kubectl -n kubean-system get pod | grep add-worker-node
-
 ```
 
-了解缩容任务执行进度，可查看该 pod 日志。
+了解缩容任务执行进度，可查看该 Pod 日志。
 
 ### 前往界面验证
 
-1. 前往 `容器管理`->`选择集群`->`节点管理`
+1. 前往`容器管理`->`集群`->`节点管理`
 
-![节点管理](../images/arm02.png)
+    ![节点管理](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/arm02.png)
 
 2. 点击新增的节点，查看详情
 
-![节点详情](../images/arm01.png)
+    ![节点详情](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/arm01.png)

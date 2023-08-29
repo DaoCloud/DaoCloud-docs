@@ -5,7 +5,7 @@ This page focuses on configuring IP pools for custom workloads (taking the workl
 ## Prerequisites
 
 1. [SpiderPool has been successfully deployed](install.md). 
-2. [Multus with Macvlan /SRI-OV has been successfully deployed](../multus-underlay/install.md).
+2. [Multus with Macvlan/SR-IOV has been successfully deployed](../multus-underlay/install.md).
 3. If you choose manual selection of IP pool, please complete [Create IP subnet and IP pool](../spiderpool/createpool.md) in advance. To use a fixed IP pool in this example, please complete [Create a fixed IP pool](../spiderpool/createpool.md) in advance.
 
 ## Steps

@@ -2,9 +2,41 @@
 
 本页列出 Elasticsearch 索引服务的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2023-07-31
+
+### v0.9.3
+
+#### 新功能
+
+- **新增** UI 界面的权限访问限制。
+
+## 2023-06-30
+
+### v0.9.0
+
+#### 新功能
+
+- **新增** `mcamel-elasticsearch` 节点反亲和配置
+- **新增** `mcamel-elasticsearch` 监控图表，去除干扰元素并新增时间范围选择
+
+#### 优化
+
+- **优化** `mcamel-elasticsearch` ServiceMonitor 闭环安装
+- **修复** `mcamel-elasticsearch` 监控图表，去除干扰元素并新增时间范围选择
+
+## 2023-05-30
+
+### v0.8.0
+
+#### 新功能
+
+- **新增** `mcamel-elasticsearch` 新增 对接全局管理审计日志模块。
+- **新增** `mcamel-elasticsearch` 新增 可配置实例监控数据采集间隔时间。
+- **新增** `mcamel-elasticsearch` 修复 Pod 列表分页展示有误。
+
 ## 2023-04-27
 
-### v0.5.1
+### v0.7.2
 
 #### 新功能
 

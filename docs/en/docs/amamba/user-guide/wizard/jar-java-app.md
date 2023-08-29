@@ -1,6 +1,6 @@
 # Deploy Java applications based on Jar packages
 
-Workbench supports building applications in four ways: [Git warehouse](create-app-git.md), Jar package, container image, and Helm template. This article describes how to deploy a Java application via a Jar file.
+Workbench supports building applications in four ways: [Git warehouse](create-app-git.md), Jar package, container image, and Helm chart. This article describes how to deploy a Java application via a Jar file.
 
 ## prerequisites
 
@@ -57,8 +57,8 @@ Workbench supports building applications in four ways: [Git warehouse](create-ap
 
 5. Refer to the following instructions to choose whether to enable advanced features, and then click `Create and upload Jar package`.
 
-    - Service Mesh: Choose whether to enable the [Service Mesh for DCE 5.0](../../../mspider/intro/what.md) module to govern microservice traffic.
-    - Microservice Engine: Whether to connect the newly created application to the [DCE 5.0 Microservice Engine](../../../skoala/intro/what.md) module.
+    - Service Mesh: Choose whether to enable the [Service Mesh for DCE 5.0](../../../mspider/intro/index.md) module to govern microservice traffic.
+    - Microservice Engine: Whether to connect the newly created application to the [DCE 5.0 Microservice Engine](../../../skoala/intro/index.md) module.
         > For the configuration of the microservice engine, please refer to [Build Microservice Application Based on Git Repository](create-app-git.md).
     - Grayscale publishing: Select whether to enable grayscale publishing. For more information about canary release, please refer to [Canary Release](../release/canary.md).
 

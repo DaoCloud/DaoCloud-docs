@@ -10,7 +10,7 @@ This section describes how to install the `vpa` plugin.
 
 Before installing the `vpa` plugin, the following prerequisites need to be met:
 
-- In the [Container Management](../../intro/what.md) module [Access Kubernetes Cluster](../clusters/integrate-cluster.md) or [Create Kubernetes Cluster](../clusters/create-cluster.md), and can access the cluster UI interface.
+- In the [Container Management](../../intro/index.md) module [Access Kubernetes Cluster](../clusters/integrate-cluster.md) or [Create Kubernetes Cluster](../clusters/create-cluster.md), and can access the cluster UI interface.
 
 - Create a [namespace](../namespaces/createns.md).
 
@@ -45,7 +45,7 @@ Refer to the following steps to install the `vpa` plugin for the cluster.
 
         After enabling `ready wait` and/or `failed deletion`, it takes a long time for the application to be marked as "running".
 
-5. Click `OK` in the lower right corner of the page, and the system will automatically jump to the `Helm application` list page. Wait a few minutes and refresh the page to see the application you just installed.
+5. Click `OK` in the lower right corner of the page, and the system will automatically jump to the `Helm Apps` list page. Wait a few minutes and refresh the page to see the application you just installed.
 
     !!! warning
 

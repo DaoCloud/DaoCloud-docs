@@ -1,6 +1,6 @@
 # Build microservice applications based on Git repository
 
-Workbench supports building applications in four ways: Git repository, [Jar package](jar-java-app.md), container image, and Helm template. This article introduces how to build a traditional microservice application through the source code of the Git warehouse, so as to manage the traffic of the application, view logs, monitor, traces and other features.
+Workbench supports building applications in four ways: Git repository, [Jar package](jar-java-app.md), container image, and Helm chart. This article introduces how to build a traditional microservice application through the source code of the Git warehouse, so as to manage the traffic of the application, view logs, monitor, traces and other features.
 
 ## prerequisites
 

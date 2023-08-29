@@ -137,8 +137,8 @@
     答：微服务治理、应用工作台、服务网格下的资源均自动绑定 Workspace，且权限强依赖于 Workspace，需要通过获得 Workspace 权限继而获取相关的资源权限。
     能够进行 Workspace 授权的有 Admin、Workspace Owner、Folder Admin、Workspace Admin。
 
-[了解服务网格](../ghippo/intro/what.md){ .md-button }
+[了解服务网格](../ghippo/intro/index.md){ .md-button }
 
-[下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

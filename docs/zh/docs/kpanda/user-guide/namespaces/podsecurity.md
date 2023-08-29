@@ -18,7 +18,7 @@
 
 1. 选择需要配置容器组安全策略的命名空间，进入详情页。在`容器组安全策略`页面点击`配置策略`，进入配置页。
 
-    ![配置策略列表](../../images/ps01.png)
+    ![配置策略列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/ps01.png)
 
 2. 在配置页点击`添加策略`，则会出现一条策略，包括安全级别和安全模式，以下是对安全级别和安全策略的详细介绍。
 
@@ -34,18 +34,18 @@
     | Warn     | 违反指定策略会返回用户可见的告警信息，Pod 可以被创建。       |
     | Enforce  | 违反指定策略会导致 Pod 无法创建。                            |
 
-    ![添加策略](../../images/ps02.png)
+    ![添加策略](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/ps02.png)
 
 3. 不同的安全级别对应不同的检查项，若您不知道该如何为您的命名空间配置，可以点击页面右上角的`策略配置项说明`查看详细信息。
 
-    ![配置项说明01](../../images/ps03.png)
+    ![配置项说明01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/ps03.png)
 
-    ![配置项说明01](../../images/ps04.png)
+    ![配置项说明01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/ps04.png)
 
 4. 点击确定，若创建成功，则页面上将出现您配置的安全策略。
 
-    ![创建成功](../../images/ps05.png)
+    ![创建成功](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/ps05.png)
 
 5. 点击`操作`还可以编辑或者删除您配置的安全策略。
 
-    ![操作](../../images/ps06.png)
+    ![操作](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/ps06.png)

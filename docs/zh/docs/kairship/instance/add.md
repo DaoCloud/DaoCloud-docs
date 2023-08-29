@@ -23,7 +23,7 @@ hide:
 
 2. 参考下列信息填写各项配置，最后在右下角点击`确定`。
 
-    - 管理面集群：可选的集群列表来自于[容器管理](../../kpanda/intro/what.md)模块中接入或创建的集群。如果没有想选的集群，可以去容器管理模块中[接入](../../kpanda/user-guide/clusters/integrate-cluster.md)或[创建](../../kpanda/user-guide/clusters/create-cluster.md)集群。
+    - 管理面集群：可选的集群列表来自于[容器管理](../../kpanda/intro/index.md)模块中接入或创建的集群。如果没有想选的集群，可以去容器管理模块中[接入](../../kpanda/user-guide/clusters/integrate-cluster.md)或[创建](../../kpanda/user-guide/clusters/create-cluster.md)集群。
     - 实例释放：如果勾选，删除多云实例时会同步删除对应的 Karmada 实例。如果不删除，可以继续通过终端使用，但无法在 DCE 5.0 的多云编排模块内管理该 Karmada 实例。建议同步删除。
 
         ![Management](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/instance-guanli.png)
@@ -32,10 +32,10 @@ hide:
 
     - 在管理面集群详情页面中，选择`kairship-system`命名空间下的`kairship-apiserver`无状态负载，并进行更新操作。
 
-        ![更新无状态负载](../images/update-deployment.png)
+        ![更新无状态负载](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/update-deployment.png)
 
     - 进入更新页面后，修改容器配置-生命周期的启动命令，可根据管理面集群的真实情况更新。
 
-        ![更新启动命令](../images/update-setting.png)
+        ![更新启动命令](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/update-setting.png)
 
     - 如果管理面集群中不存在存储卷声明（PVC），而是使用 hostPath，尽管可以成功安装，但无法实现高可用功能。

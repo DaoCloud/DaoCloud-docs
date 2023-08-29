@@ -3,8 +3,6 @@
 此 YAML 文件包含了集群的各项配置字段，安装之前必须先配置此文件。
 该文件将定义部署模式、集群节点信息等关键参数。默认位于 `offline/sample/` 目录。
 
-v0.6.0 版本对配置文件的结构进行了优化，相对之前更加清晰易读。
-
 ## ClusterConfig 示例
 
 以下是一个 ClusterConfig 文件示例。
@@ -18,7 +16,18 @@ spec:
    
   # 火种节点的域名或IP，默认解析为火种节点默认网关所在网卡的IP；可手动填入IP或域名，若为域名，如果检测到无法解析，将自动建立此域名和火种节点默认IP的映射
   # bootstrapNode: auto
- 
+
+  # kind 火种集群的配置，以下为默认值
+  #tinderKind:
+  #  # kind 集群的容器名称
+  #  instanceName: my-cluster-installer
+  #  # kind 集群挂载的主机路径
+  #  resourcesMountPath: /home/kind
+  #  registryPort: 443
+  #  minioServerPort: 9000
+  #  minioConsolePort: 9001
+  #  chartmuseumPort: 8081
+
   loadBalancer:
  
     # NodePort(default), metallb, cloudLB (Cloud Controller)
@@ -51,8 +60,10 @@ spec:
       ansibleUser: "root"
       ansiblePass: "dangerous"
       #ansibleSSHPort: "22"
-      nodeTaints:                       # 对于 7 节点模式：至少 3 个 worker 节点应打污点（仅 ES 节点）
+      nodeTaints:                       # 对于 7 节点模式：至少 3 个 worker 节点应打污点（仅 ES 节点），如果使用外接 ES 则不需要添加该污点
        - "node.daocloud.io/es-only=true:NoSchedule"
+      # nodeLabels:
+      #   daocloud.io/hostname: g-worker1
     - nodeName: "g-worker2"
       ip: xx.xx.xx.xx
       ansibleUser: "root"
@@ -60,6 +71,8 @@ spec:
       #ansibleSSHPort: "22"
       nodeTaints:
        - "node.daocloud.io/es-only=true:NoSchedule"
+      # nodeLabels:
+      #   daocloud.io/hostname: g-worker2
     - nodeName: "g-worker3"
       ip: xx.xx.xx.xx
       ansibleUser: "root"
@@ -67,6 +80,8 @@ spec:
       #ansibleSSHPort: "22"
       nodeTaints:
        - "node.daocloud.io/es-only=true:NoSchedule"
+      # nodeLabels:
+      #   daocloud.io/hostname: g-worker3
  
   # ntpServer:
     # - 0.pool.ntp.org
@@ -220,6 +235,13 @@ spec:
 | 字段                                                         | 说明                                                         | 默认值                                                  |
 | :----------------------------------------------------------- | :----------------------------------------------------------- | :------------------------------------------------------ |
 | clusterName                                                  | 在 KuBean Cluster 里的 Global 集群命名                       | -                                                       |
+| tinderKind                                                   | 火种 kind 集群配置                                           | -                                                       |
+| tinderKind.instanceName                                      | 火种 kind 集群的容器名称                                     | -                                                       |
+| tinderKind.resourcesMountPath                                | kind 集群挂载的主机路径                                      | /home/kind                                              |
+| tinderKind.registryPort                                      | kind 集群中镜像仓库的端口                                    | 443                                                     |
+| tinderKind.minioServerPort                                   | kind 集群中 MinIO Server 的端口                              | 9000                                                    |
+| tinderKind.minioConsolePort                                  | kind 集群中 MinIO Console 的端口                             | 9001                                                    |
+| tinderKind.chartmuseumPort                                   | kind 集群中 ChartMuseum 的端口                               | 8081                                                    |
 | masterNodes                                                  | Global 集群：Master 节点列表，包括 nodeName/ip/ansibleUser/ansiblePass 几个关键字段 | -                                                       |
 | masterNodes.nodeName                                         | 节点名称，将覆盖 hostName                                    | -                                                       |
 | masterNodes.ip                                               | 节点 IP                                                      | -                                                       |
@@ -235,17 +257,17 @@ spec:
 | fullPackagePath                                              | 解压后的离线包的路径，离线模式下该字段必填                   | -                                                       |
 | addonPackage.path                                            | 应用商店 addon 包本地文件系统路径                            | -                                                       |
 | imagesAndCharts                                              | 镜像仓库和 Chart仓库源                                       | -                                                       |
-| imagesAndCharts.externalChartRepo                            | 外置 Chart 仓库的 IP 或域名                                      | -                                                       |
-| imagesAndCharts.externalChartRepoPassword                    | 外置 Chart 仓库的密码，用于推送镜像                            | -                                                       |
-| imagesAndCharts.externalChartRepoType                        | 外置 Chart 仓库的类型，取值为 chartmuseum，harbor              | -                                                       |
-| imagesAndCharts.externalChartRepoUsername                    | 外置 Chart 仓库的用户名，用于推送镜像                          | -                                                       |
-| imagesAndCharts.externalImageRepo                            | 指定 external 仓库的 IP 或者域名(需指定协议头)                   | -                                                       |
+| imagesAndCharts.externalChartRepo                            | 外置 Chart 仓库的 IP 或域名                                  | -                                                       |
+| imagesAndCharts.externalChartRepoPassword                    | 外置 Chart 仓库的密码，用于推送镜像                          | -                                                       |
+| imagesAndCharts.externalChartRepoType                        | 外置 Chart 仓库的类型，取值为 chartmuseum，harbor            | -                                                       |
+| imagesAndCharts.externalChartRepoUsername                    | 外置 Chart 仓库的用户名，用于推送镜像                        | -                                                       |
+| imagesAndCharts.externalImageRepo                            | 指定 external 仓库的 IP 或者域名(需指定协议头)               | -                                                       |
 | imagesAndCharts.externalImageRepoPassword                    | 外置镜像仓库的密码，用于推送镜像                             | -                                                       |
 | imagesAndCharts.externalImageRepoUsername                    | 外置镜像仓库的用户名，用于推送镜像                           | -                                                       |
 | imagesAndCharts.type                                         | 镜像与 Chart 的访问模式，取值为 official-service(在线), buitin(火种内置 registry 和 chartmuseum), external(外置) | official-service                                        |
 | auditConfig                                                  | k8s api-server 的审计日志配置                                | 默认关闭                                                |
 | binaries                                                     | 二进制可执行文件                                             | -                                                       |
-| binaries.externalRepository                                  | 外置二进制可执行文件仓库的访问地址，URL 形式                  | -                                                       |
+| binaries.externalRepository                                  | 外置二进制可执行文件仓库的访问地址，URL 形式                 | -                                                       |
 | binaries.type                                                | 二进制可执行文件的访问模式，取值为 official-service(在线), builtin(火种节点内置的minio) | official-service                                        |
 | network.clusterCIDR                                          | Cluster CIDR                                                 | -                                                       |
 | network.cni                                                  | CNI 选择，比如 Calico、Cilium                                | calico                                                  |

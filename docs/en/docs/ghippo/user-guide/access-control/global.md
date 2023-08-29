@@ -22,7 +22,7 @@ Five system roles are predefined in Access Control: Admin, IAM Owner, Audit Owne
 | IAM Owner | System role | Access Control | Administrator of Access Control, has all permissions under this service, such as managing users/groups and authorization. |
 | Audit Owner | System role | Audit Log | Administrator of Audit Log, has all permissions under this service, such as setting audit log policies and exporting audit logs. |
 | Kpanda Owner | System role | Container Management | Administrator of Container Management, has all permissions under this service, such as creating/accessing clusters, deploying applications, granting cluster/namespace-related permissions to users/groups. |
-| Workspace and Folder Owner | System role | Workspace and Hierarchy | Administrator of workspace and hierarchy, has all permissions under this service, such as creating folders/workspaces, authorizing folder/workspace-related permissions to users/groups, using features such as Workbench and microservice engine under the workspace. |
+| Workspace and Folder Owner | System role | Workspace and Folder | Administrator of Workspace and Folder, has all permissions under this service, such as creating folders/workspaces, authorizing folder/workspace-related permissions to users/groups, using features such as Workbench and microservice engine under the workspace. |
 
 ## Workspace Roles
 

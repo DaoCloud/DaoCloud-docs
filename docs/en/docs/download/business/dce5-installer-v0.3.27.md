@@ -8,7 +8,7 @@ This page can download the offline installation package and verification file of
 | ------------------- | ----------------------------- -------------------------------------------------- --------------------- |
 | offline-v0.3.27.tar | [:arrow_down: Download](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.3.27.tar) |
 
-## Validation
+## Verification
 
 Go to the download directory of the offline installation package. run the following command to verify the installation package:
 
@@ -41,12 +41,12 @@ The DCE 5.0 Enterprise Package includes the following modules, which are plug-an
 | Multicloud Management | Centralized management of application orchestration of multicloud, hybrid cloud, and cross-cloud resources, with multicloud disaster recovery and fault recovery capabilities | [v0.3.0](../../kairship/intro/release-notes.md) |
 | Microservice Engine | Provides governance capabilities such as registration discovery, service governance, configuration management, and microservice gateway | [Release Notes](../../skoala/intro/release-notes.md) |
 | Service Mesh | A next-generation service mesh for cloud-native applications based on Istio open source technology | [v0.10.0](../../mspider/intro/release-notes.md) |
-| Middleware | Contains selected middleware such as RabbitMQ, Kafka, Elasticsearch, MySQL, Redis, MinIO, etc. | [Release Notes](../../middleware/what.md) |
+| Middleware | Contains selected middleware such as RabbitMQ, Kafka, Elasticsearch, MySQL, Redis, MinIO, etc. | [Release Notes](../../middleware/index.md) |
 | Container Registry | Images for storing K8s, DevOps, and container application development | [Release Notes](../../kangaroo/release-notes.md) |
-| Network | Support multiple CNI combinations for different Linux kernels | [Release Notes](../../network/modules/spiderpool/releasenotes.md) |
+| Network | Support multiple CNI combinations for different Linux kernels | [Release Notes](../../network/intro/releasenotes.md) |
 | Storage | Provide unified data storage services, support files, objects, blocks, and local storage, and easily access storage vendor solutions | [Release Notes](../../storage/hwameistor/releasenotes.md) |
 
 ## More
 
-- [Online Documentation](../../dce/what.md)
+- [Online Documentation](../../dce/index.md)
 - [Report a bug](https://github.com/DaoCloud/DaoCloud-docs/issues)

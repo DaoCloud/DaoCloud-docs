@@ -8,11 +8,12 @@
 
 - 为 Insight-agent 开启 trace 功能
 - trace 数据的地址以及端口是否填写正确
-- deployment/insight-agent-opentelemetry-operator 和 deployment/insight-agent-opentelemetry-collector 对应的 Pod 已经准备就绪
+- deployment/insight-agent-opentelemetry-operator 和
+  deployment/insight-agent-opentelemetry-collector 对应的 Pod 已经准备就绪
 
 ## 安装 Instrumentation CR
 
-在 Insight-System 命名空间下安装, 不同版本之间有一些细小的差别。
+在 insight-system 命名空间下安装, 不同版本之间有一些细小的差别。
 
 ### Insight v0.18.x
 
@@ -50,12 +51,10 @@ spec:
     image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs:0.37.0
   python:
     image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python:0.38b0
-  dotnet:
-    repository: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-dotnet:0.6.0
   go:
     # Must set the default value manually for now.
     # See https://github.com/open-telemetry/opentelemetry-operator/issues/1756 for details.
-    repository: ghcr.m.daocloud.io/open-telemetry/opentelemetry-go-instrumentation/autoinstrumentation-go:v0.2.1-alpha
+    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-go-instrumentation/autoinstrumentation-go:v0.2.1-alpha
 EOF
 ```
 
@@ -95,8 +94,6 @@ spec:
     image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs:0.34.0
   python:
     image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python:0.33b0
-  dotnet:
-    repository: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-dotnet:0.6.0
 EOF
 ```
 
@@ -136,8 +133,6 @@ spec:
     image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs:0.34.0
   python:
     image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python:0.33b0
-  dotnet:
-    repository: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-dotnet:0.6.0
 EOF
 ```
 
@@ -195,11 +190,11 @@ spec:
   python:
     image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python:0.38b0
   dotnet:
-    repository: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-dotnet:0.6.0
+    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-dotnet:0.6.0
   go:
     # Must set the default value manually for now.
     # See https://github.com/open-telemetry/opentelemetry-operator/issues/1756 for details.
-    repository: ghcr.m.daocloud.io/open-telemetry/opentelemetry-go-instrumentation/autoinstrumentation-go:v0.2.1-alpha
+    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-go-instrumentation/autoinstrumentation-go:v0.2.1-alpha
 EOF
 ```
 

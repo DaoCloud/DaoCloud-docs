@@ -43,6 +43,6 @@ Source: https://github.com/cncf/artwork/tree/master/projects/kubernetes/certifie
 
 For more information about DaoCloud's open source contributions, please refer to the blog [DaoCloud is a K8s senior certification service provider](../blogs/221116-kcsp.md).
 
-[Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [Free Trial](license0.md){ .md-button .md-button--primary }

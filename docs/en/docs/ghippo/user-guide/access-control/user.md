@@ -15,14 +15,14 @@ Prerequisite: You have the platform administrator Admin permission or the access
 
 1. The administrator enters `Access Control`, selects `Users`, enters the user list, and clicks `Create User` on the upper right.
 
-    ![create user](../../images/createuser01.png)
+    ![create user](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/createuser01.png)
 
 2. Fill in the username and login password on the `Create User` page. If you need to create
    multiple users at one time, you can click `Create User` to create in batches, and you can
    create up to 5 users at a time. Determine whether to set the user to reset the password
    when logging in for the first time according to your actual situation.
 
-    ![create user](../../images/createuser02.png)
+    ![create user](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/createuser02.png)
 
 3. Click `OK`, the user is successfully created and returns to the user list page.
 

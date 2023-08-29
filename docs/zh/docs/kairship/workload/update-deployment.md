@@ -5,18 +5,17 @@ hide:
 
 # 更新多云工作负载
 
-参照以下步骤更新一个无状态负载（Deployment）。
+创建多云无状态工作负载（Deployment）时，可以通过[镜像](deployment.md)或 [YAML 文件](yaml.md)两种方式创建。因此，更新无状态工作负载时也可以通过这两种方式更新。
 
-1. 在左侧导航栏中，点击`多云工作负载`，进入多云无状态负载页面，点击`···`可以编辑 YAML 或者更新
+1. 在左侧导航栏点击`多云工作负载`->`无状态负载`，在对应的负载最右侧点击 `ⵈ` 显示更多操作。
 
-    ![更新无状态负载](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/up-deploy01.png)
+    - 选择`编辑 YAML` 可以通过 YAML 更新无状态工作负载
+    - 选择`更新`可以通过表单更新无状态工作负载
 
-2. 点击`编辑 YAML`可以通过修改 YAML 信息更新无状态负载。
+        ![更新无状态负载](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/deploy17.png)
 
-    ![编辑 YAML](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/up-deploy02.png)
+2. 修改配置后点击`确定`即可完成更新。
 
-3. 点击`更新`可以通过表单更新无状态负载，负载名称和多云命名空间无法更新。
+!!! note
 
-    ![表单更新](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/up-deploy03.png)
-
-4. 完成需要修改的内容后点击确定，更新成功。
+    在对应的负载最右侧点击 `ⵈ` 显示更多操作后，还可以选择`暂停`、`重启`、`删除`无状态工作负载。

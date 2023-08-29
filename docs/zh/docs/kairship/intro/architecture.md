@@ -17,7 +17,7 @@
 
 `kairship apiserver` 主要担负着多云编排所有流量的入口（OpenAPI、GRPC 等）,也是所有 API 的统一入口。`protobuf` API 优先级最高，通过 `proto` 定义所有的 API 接口，并以此生成对应的前后端代码，使用 `grpw-gateway` 同时支持 HTTP Restful 和 GRPC。
 
-启动的时候会从[全局管理模块](../../ghippo/intro/what.md)获取操作人的身份信息，用于后续 AuthZ 的安全性校验。
+启动的时候会从[全局管理模块](../../ghippo/intro/index.md)获取操作人的身份信息，用于后续 AuthZ 的安全性校验。
 
 <!--无状态服务，具体接口待补充（目前比较简单）-->
 
@@ -33,7 +33,7 @@
 
     多云编排实例 CRD 的 CRUD 事件监听，一旦创建多云编排实例，则同步创建对应的虚拟集群管理资源。
 
-    多云编排实例所有资源的检索（多云工作负载、pp、op）都将通过[容器管理模块](../../kpanda/intro/what.md)内部的加速机制完成（借助 [Clusterpedia](../../community/clusterpedia.md)），实现读写分离，进而提高性能。
+    多云编排实例所有资源的检索（多云工作负载、pp、op）都将通过[容器管理模块](../../kpanda/intro/index.md)内部的加速机制完成（借助 [Clusterpedia](../../community/clusterpedia.md)），实现读写分离，进而提高性能。
 
     实例删除，则同步删除注册在容器管理模块中的 virtual cluster。
 
@@ -47,12 +47,12 @@
 
 - instance registry controller
 
-    多云编排需要通过自定义资源将平台内所有 `Karmada` 实例注册到[全局管理模块](../../ghippo/intro/what.md)，这样才能在全局管理中完成角色与 Karmada 实例的绑定关系。
+    多云编排需要通过自定义资源将平台内所有 `Karmada` 实例注册到[全局管理模块](../../ghippo/intro/index.md)，这样才能在全局管理中完成角色与 Karmada 实例的绑定关系。
     最终这些绑定关系会同步到多云编排模块中。
 
 - Ghippo webhook controller
 
-    在[全局管理模块](../../ghippo/intro/what.md)完成角色与 Karmada 实例的绑定关系之后，通过 sdk 告知多云编排，多云编排据此完成鉴权动作。
+    在[全局管理模块](../../ghippo/intro/index.md)完成角色与 Karmada 实例的绑定关系之后，通过 sdk 告知多云编排，多云编排据此完成鉴权动作。
 
 ## 数据流图
 
@@ -68,6 +68,6 @@
 
 所有的请求数据流都直接传递到位于[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md)的多云编排实例中。
 
-接着，所有访问请求经过多云编排之后将会被分流到对应的实例中。所有 get/list 之类的读请求将会访问[容器管理模块](../../kpanda/intro/what.md)，写请求会访问 Karmada 实例，这样可以做到读写分离，加快响应时间。
+接着，所有访问请求经过多云编排之后将会被分流到对应的实例中。所有 get/list 之类的读请求将会访问[容器管理模块](../../kpanda/intro/index.md)，写请求会访问 Karmada 实例，这样可以做到读写分离，加快响应时间。
 
-您可能好奇[容器管理模块](../../kpanda/intro/what.md)如何获取多云编排实例的相关资源信息？方法就是，把实例本身作为一个虚拟集群加入到[容器管理模块](../../kpanda/intro/what.md)中（不在容器管理中显示）。这样就可以完全借助容器管理模块的能力（搜集加速检索各个 Kubernetes 集群的资源、CRD 等），当在界面中查询某个多云编排实例的资源（Deployment、部署策略、差异化策略等）就可以直接通过容器管理模块进行检索。
+您可能好奇[容器管理模块](../../kpanda/intro/index.md)如何获取多云编排实例的相关资源信息？方法就是，把实例本身作为一个虚拟集群加入到[容器管理模块](../../kpanda/intro/index.md)中（不在容器管理中显示）。这样就可以完全借助容器管理模块的能力（搜集加速检索各个 Kubernetes 集群的资源、CRD 等），当在界面中查询某个多云编排实例的资源（Deployment、部署策略、差异化策略等）就可以直接通过容器管理模块进行检索。

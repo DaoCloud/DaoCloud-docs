@@ -46,11 +46,11 @@ DME consists of two components: `skoala` and `skoala-init`. Both are necessary f
 
 ### Deployment Structure
 
-![images](../images/install01.jpg)
+![images](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/install01.jpg)
 
 Chart in the blue box on the left is the component `skoala`, which needs to be installed in the control plane cluster, namely the global cluster `kpanda-global-clsuter` of DCE 5.0. For details, refer to [Deploy Architecture](../../install/commercial/deploy-arch.md) of DCE 5.0. After installing the `skoala` component, you can see DME module in the navigation bar of DCE 5.0. Note: Before installing `skoala`, install the `common-mysql` component for storage.
 
-Chart in the blue box on the right is the `skoala-init` component that needs to be installed in a worker cluster. After `skoala-init` is installed, various features of DME are available, such as creating registries, gateway instances, and so on. Also note that `skoala-init` relies on the `insight-agent` component of the DCE 5.0 observability module to provide metrics monitoring and tracing. If you want to use observability, install the `insight-agent` component first. For details, see [Install the insight agent component](../../insight/quickstart/install-agent.md).
+Chart in the blue box on the right is the `skoala-init` component that needs to be installed in a worker cluster. After `skoala-init` is installed, various features of DME are available, such as creating registries, gateway instances, and so on. Also note that `skoala-init` relies on the `insight-agent` component of the DCE 5.0 observability module to provide metrics monitoring and tracing. If you want to use observability, install the `insight-agent` component first. For details, see [Install the insight agent component](../../insight/quickstart/install/install-agent.md).
 
 ### Pre-install Check
 
@@ -90,9 +90,9 @@ It is recommended to set the database configuration as the following:
 
 #### If `insight-agent` is installed
 
-DME relies on the capabilities of the [DCE 5.0 Observability](../../insight/intro/what.md) module to provide microservice monitoring. If you want to monitor metrics and trace links, you should install `insight-agent` in the cluster. For details, see [](../../insight/quickstart/install-agent.md).
+DME relies on the capabilities of the [DCE 5.0 Observability](../../insight/intro/index.md) module to provide microservice monitoring. If you want to monitor metrics and trace links, you should install `insight-agent` in the cluster. For details, see [](../../insight/quickstart/install/install-agent.md).
 
-![images](../images/install02.png)
+![images](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/install02.png)
 
 !!! note
 
@@ -280,7 +280,7 @@ Use the following command to check all Pods are running as expected：
 
 In addition to terminal installation, you can also install `skoala-init` by Helm chart in `Container Management` -> `Helm App`.
 
-![](../images/install03.png)
+![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/install03.png)
 
 ## Upgrade DME
 

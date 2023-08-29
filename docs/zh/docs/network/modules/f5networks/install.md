@@ -98,7 +98,7 @@
 
     - `Node Label Selector`：设置 node label selector，被选择的 node 会作为 nodePort 转发模式下的入口节点，如果不设置本值，F5 会把流量转发到集群所有节点的 nodePort 上。
 
-    - `Forward Method`：设置 F5 转发流量的模式、`nodePort` 和 `cluster` 模式。模式解释，可参考[介绍](./what.md)。
+    - `Forward Method`：设置 F5 转发流量的模式、`nodePort` 和 `cluster` 模式。模式解释，可参考[介绍](./index.md)。
     
     ![f5network install2](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/f5-install3.png)
     

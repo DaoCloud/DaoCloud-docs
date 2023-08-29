@@ -24,13 +24,13 @@ Before starting the test, it is necessary to deploy DCE 5.0, download and instal
 
 ## Test Script
 
-- Execute the following command on the Locust Web machine to collect the stress-testing results:
+- Run the following command on the Locust Web machine to collect the stress-testing results:
 
     ```
     docker run -p 8089:8089 --network=host -v $PWD:/mnt/locust locustio/locust -f /mnt/locust/gateway-external-nginx.py --master
     ```
 
-- Execute the following command on the Locust stress-testing machine to simulate user access and perform stress testing:
+- Run the following command on the Locust stress-testing machine to simulate user access and perform stress testing:
 
     ```
     docker run -p 8089:8089 --network=host -v $PWD:/mnt/locust locustio/locust -f /mnt/locust/gateway-external-nginx.py --worker --master-host=172.30.120.210
@@ -90,18 +90,18 @@ Before starting the test, it is necessary to deploy DCE 5.0, download and instal
 
 - Concurrent Users = 4
 
-    ![](../images/test-gateway01.png)
-    ![](../images/test-gateway02.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway01.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway02.png)
 
 - Concurrent Users = 8
 
-    ![](../images/test-gateway03.png)
-    ![](../images/test-gateway04.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway03.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway04.png)
 
 - Concurrent Users = 12
  
-    ![](../images/test-gateway05.png)
-    ![](../images/test-gateway06.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway05.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway06.png)
 
 ## Investigating the Impact of Contour Resource Configuration on Envoy Performance
 
@@ -148,18 +148,18 @@ To ensure normal resource load on the stress-testing machine, the Locust users a
 
 - contour: 1 core 1 G
 
-    ![](../images/test-gateway07.png)
-    ![](../images/test-gateway08.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway07.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway08.png)
 
 - contour: 2 core 1 G
 
-    ![](../images/test-gateway09.png)
-    ![](../images/test-gateway10.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway09.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway10.png)
 
 - contour: 3 core 2 G
     
-    ![](../images/test-gateway11.png)
-    ![](../images/test-gateway12.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway11.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway12.png)
 
 ## Investigating the Impact of Envoy Resource Configuration on Throughput
 
@@ -267,75 +267,75 @@ Envoy is fixed to 1 replica, Contour is configured with 1 core and 1 G, and the 
 
 - Concurrent Users = 4
 
-    ![](../images/test-gateway13.png)
-    ![](../images/test-gateway14.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway13.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway14.png)
 
 - Concurrent Users = 8
 
-    ![](../images/test-gateway15.png)
-    ![](../images/test-gateway16.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway15.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway16.png)
 
 - Concurrent Users = 16
 
-    ![](../images/test-gateway17.png)
-    ![](../images/test-gateway18.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway17.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway18.png)
 
 #### Envoy 2 core 1 G
 
 - Concurrent Users = 4
 
-    ![](../images/test-gateway19.png)
-    ![](../images/test-gateway20.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway19.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway20.png)
 
 - Concurrent Users = 8
 
-    ![](../images/test-gateway21.png)
-    ![](../images/test-gateway22.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway21.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway22.png)
 
 #### Envoy 3 core 1 G
 
 - Concurrent Users = 8
 
-    ![](../images/test-gateway23.png)
-    ![](../images/test-gateway24.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway23.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway24.png)
 
 - Concurrent Users = 12
     
-    ![](../images/test-gateway25.png)
-    ![](../images/test-gateway26.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway25.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway26.png)
 
 #### Envoy 4 core 2 G
 
 - Concurrent Users = 8
 
-    ![](../images/test-gateway27.png)
-    ![](../images/test-gateway28.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway27.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway28.png)
 
 - Concurrent Users = 12
 
-    ![](../images/test-gateway29.png)
-    ![](../images/test-gateway30.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway29.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway30.png)
 
 #### Envoy 5 core 2 G
 
 - Concurrent Users = 8
 
-    ![](../images/test-gateway31.png)
-    ![](../images/test-gateway32.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway31.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway32.png)
 
 - Concurrent Users = 12
 
-    ![](../images/test-gateway33.png)
-    ![](../images/test-gateway34.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway33.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway34.png)
 
 #### Envoy 6 core 2 G
 
 - Concurrent Users = 12
 
-    ![](../images/test-gateway35.png)
-    ![](../images/test-gateway36.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway35.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway36.png)
 
 - Concurrent Users = 16
 
-    ![](../images/test-gateway37.png)
-    ![](../images/test-gateway38.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway37.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/test-gateway38.png)

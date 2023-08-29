@@ -17,9 +17,9 @@
 
 ## 修改主机清单文件
 
-1. 登陆到容器管理平台，进入需要进行控制节点扩容的集群概览页面，在【基本信息】处，找到当前集群的 **被纳管集群**，点击被纳管集群的名称，进入被纳管集群的概览界面。
+1. 登录到容器管理平台，进入需要进行控制节点扩容的集群概览页面，在【基本信息】处，找到当前集群的 **被纳管集群**，点击被纳管集群的名称，进入被纳管集群的概览界面。
 
-    ![img](../../kpanda/images/add-master-node01.png)
+    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/add-master-node01.png)
 
 2. 在被纳管集群的概览界面，点击 **控制台**，打开云终端控制台，并执行如下命令，找到待扩容工作集群的主机清单文件。
 
@@ -28,13 +28,11 @@
     ```
     ”${ClusterName}“：为待扩容工作集群的名称。
 
-    ![img](../../kpanda/images/add-master-node02.png)
+    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/add-master-node02.png)
 
-3. 在主机清单文件中新增控制节点信息，执行如下操作后保存。
+3. 参考下方示例修改主机清单文件，新增控制节点信息。
 
-!!! "主机清单文件示例"
-
-    === "新增节点前"
+    === "修改前"
 
         ``` yaml
         apiVersion: v1
@@ -72,7 +70,7 @@
         ......
         ```
 
-    === "新增节点后"
+    === "修改后"
 
         ``` yaml
         apiVersion: v1
@@ -130,19 +128,18 @@
         ```
 
 **重要参数：**
->* `all.hosts.node1`: 原集群中已存在的主节点
->* `all.hosts.node2`、`all.hosts.node3`: 集群扩容待新增的控制节点
->* `all.children.kube_control_plane.hosts`: 集群中的控制节点组
->* `all.children.kube_node.hosts`: 集群中的工作节点组
->* `all.children.etcd.hosts`: 集群中的 ETCD 节点组
+
+>* `all.hosts.node1`：原集群中已存在的主节点
+>* `all.hosts.node2`、`all.hosts.node3`：集群扩容待新增的控制节点
+>* `all.children.kube_control_plane.hosts`：集群中的控制节点组
+>* `all.children.kube_node.hosts`：集群中的工作节点组
+>* `all.children.etcd.hosts`：集群中的 ETCD 节点组
 
 ## 新增 ClusterOperation.yml 扩容任务
 
-使用基于下面的 ClusterOperation.yml 模版，新增一个集群控制节点扩容任务 scale-master-node-ops.yaml。
+使用基于下面的 `ClusterOperation.yml` 模板，新增一个集群控制节点扩容任务 `scale-master-node-ops.yaml`。
 
-ClusterOperation.yml 模版：
-
-```yaml
+```yaml title="ClusterOperation.yml"
 apiVersion: kubean.io/v1alpha1
 kind: ClusterOperation
 metadata:

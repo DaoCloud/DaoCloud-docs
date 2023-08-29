@@ -3,7 +3,7 @@ hide:
    - toc
 ---
 
-# Create hosted/dedicated mesh
+# Create Hosted or Dedicated Mesh
 
 DCE 5.0 service mesh supports three kinds of meshes:
 
@@ -15,7 +15,7 @@ The following explains the steps to create a Hosted Mesh/Dedicated Mesh:
 
 1. On the right corner of the mesh list, click the `Create Mesh` button and select the type of mesh from the dropdown list.
 
-    ![Create Mesh](../../images/create-mesh01.png)
+    ![Create Mesh](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/create-mesh01.png)
 
 2. The system will automatically detect the installation environment. After successful detection, fill in the following basic information and click `Next`.
 
@@ -23,13 +23,13 @@ The following explains the steps to create a Hosted Mesh/Dedicated Mesh:
     - Istio version: For Hosted Mesh, this version will be used by all member clusters in the mesh.
     - Cluster: This is the cluster where the mesh control plane runs. The drop-down list displays the version and health status of each cluster.
     - Entry of control plane: Supports load balancer and custom.
-    - Mesh component repo: Enter the address of the image repository that contains the data plane components, such as `release-ci.daocloud.io/mspider`.
+    - Mesh component repo: Enter the address of the container registry that contains the data plane components, such as `release-ci.daocloud.io/mspider`.
 
-    ![Basic Information](../../images/create-mesh02.png)
+        ![Basic Information](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/create-mesh02.png)
 
 3. System settings. Configure whether to enable observability, set the scale of the mesh, select StorageClass, and click `Next`.
 
-    ![System Settings](../../images/create-mesh03.png)
+    ![System Settings](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/create-mesh03.png)
 
     !!! note
 
@@ -38,11 +38,11 @@ The following explains the steps to create a Hosted Mesh/Dedicated Mesh:
 
 4. Governance settings. Set outbound traffic policies, locality load balancing, and request retries. See [Request Retry Parameters Description](./params.md#max-retries).
 
-    ![Governance Settings](../../images/create-mesh04.png)
+    ![Governance Settings](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/create-mesh04.png)
 
 5. Sidecar settings. Set global sidecar, sidecar resource limits, default sidecar log level, and click `OK`. See [Log Level Description](./params.md#_2).
 
-    ![Sidecar Settings](../../images/create-mesh05.png)
+    ![Sidecar Settings](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/create-mesh05.png)
 
 6. You will automatically return to the Mesh List page, and the newly created mesh will be listed at the top. After some time, the status will change from `Creating` to `Running`. Click on the `...` on the right to perform operations such as editing mesh basic information, adding clusters, accessing the console, etc.
 

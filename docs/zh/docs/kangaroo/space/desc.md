@@ -8,19 +8,19 @@
 
 1. 选择一个 Harbor 实例，进入`镜像空间`页面，点击某个镜像空间的名称。
 
-    ![进入镜像空间](../images/desc01.png)
+    ![进入镜像空间](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/desc01.png)
 
 2. 进入`镜像列表`，点击某个镜像名称。
 
-    ![镜像列表](../images/desc02.png)
+    ![镜像列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/desc02.png)
 
 3. 默认显示 Artifacts 页签，点击某个版本，可以查看更多详情。
 
-    ![Artifacts](../images/desc03.png)
+    ![Artifacts](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/desc03.png)
 
     版本详情显示了当前 Artifact 的构建历史等信息。
 
-    ![Artifacts](../images/desc04.png)
+    ![Artifacts](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/desc04.png)
 
 ## 自定义描述信息
 
@@ -28,12 +28,12 @@
 
 1. 接着上一节的步骤，点击`描述信息`页签，点击`编辑`按钮。
 
-    ![edit](../images/desc05.png)
+    ![edit](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/desc05.png)
 
 2. 使用 Markdown 语法编写描述信息后，点击`保存`。
 
-    ![save](../images/desc06.png)
+    ![save](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/desc06.png)
 
 3. 最终效果如下图。
 
-    ![result](../images/desc07.png)
+    ![result](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/desc07.png)

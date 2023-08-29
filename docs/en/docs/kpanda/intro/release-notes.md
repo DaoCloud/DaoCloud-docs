@@ -2,6 +2,62 @@
 
 This page provides the Release Notes for container management to help you understand the evolution path and feature changes from release to release.
 
+## 2023-7-06
+
+### v0.19.0
+
+#### New Features
+
+- **Added**: Added compatibility for deploying working clusters on openAnolis / Oracle Linux operating systems.
+- **Added**: Added support for automatically adding JFrog authentication information when creating clusters in an offline environment.
+- **Added**: Added validation rules for environment variable rules when creating workloads.
+- **Added**: Added edge load balancing and services.
+- **Added**: Added dual-stack and system kernel as pre-check items for nodes.
+- **Added**: Added the ability to mount secretKey/configmapKey as configuration items inside containers when creating workloads.
+
+#### Improvements
+
+- **Improved**: Optimized Helm repository refresh mechanism.
+- **Improved**: Optimized some I8N English translation interfaces.
+
+#### Fixes
+
+- **Fixed**: Fixed the issue where custom parameters entered when creating a cluster would incorrectly convert values of 0 or 1 to true or false.
+- **Fixed**: Fixed the issue where containerd account password configuration could not be written when creating a cluster in an offline environment.
+- **Fixed**: Fixed the issue where upgrading a cluster with version 1.26 or above failed due to changes in the Kubernetes container registry.
+- **Fixed**: Fixed issues related to namespace-level users not being able to use StorageClasses to create PVs.
+- **Fixed**: Fixed the issue where specifying a namespace when creating a route did not take effect.
+- **Fixed**: Fixed the issue where the date returned incorrectly after upgrading the cluster.
+
+## 2023-6-03
+
+### v0.18.1
+
+#### Improvements
+
+- **Improved**: Removed the maximum length limit when setting custom parameters for cluster installation.
+
+## 2023-5-28
+
+### v0.18.0
+
+#### New Features
+
+- **Added**: Added inspection report download.
+- **Added**: Added global audit logs for high-priority operations.
+- **Added**: Added timeout handling for connecting to Minio.
+
+#### Improvements
+
+- **Improved**: Changed the mounting of KubeConfig in CloudShell from using ConfigMap to using Secret.
+- **Improved**: Added a switch to filter clusters that have backup strategies when selecting a cluster for creating a backup strategy.
+
+#### Fixes
+
+- **Fixed**: Fixed the offlineization of etcdbrctl images.
+- **Fixed**: Fixed the issue where the image selector could not select an image.
+- **Fixed**: Fixed the rendering of Repo address when creating a cluster.
+
 ## 2023-04-28
 
 ### v0.17.0

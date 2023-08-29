@@ -6,11 +6,11 @@
 
 1. 在左侧导航栏中，选择`告警中心` -> `消息模板`，点击`新建消息模板`按钮。
 
-    ![点击按钮](../../images/template01.png)
+    ![点击按钮](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/template01.png)
 
 2. 填写模板内容。
 
-    ![消息模板](../../images/template02.png)
+    ![消息模板](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/template02.png)
 
 !!! info
 

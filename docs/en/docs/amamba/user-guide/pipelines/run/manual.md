@@ -2,7 +2,7 @@
 
 This page describes manual pipeline execution on the GUI, including immediate execution, rerun, and cancel run.
 
-## Execute the pipeline immediately
+## Run the pipeline immediately
 
 1. Select a pipeline on the pipeline list page, click `︙`, and click `Run Now` in the pop-up menu.
 

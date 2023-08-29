@@ -3,24 +3,23 @@ hide:
   - toc
 ---
 
-# Workspace and Hierarchy
+# Workspace and Folder
 
-`Workspace and Hierarchy` is a hierarchical resource isolation and resource grouping feature, which mainly solves the problems of resource unified authorization, resource grouping and resource quota.
+Workspace and Folder is a feature that provides resource isolation and grouping, addressing issues
+related to unified authorization, resource grouping, and resource quotas.
 
+Workspace and Folder involves two concepts: workspaces and folders.
 
+## Workspaces
 
-`Workspace and Hierarchy` has two concepts: workspace and folder.
+Workspaces allow the management of resources through `Authorization`, `Resource Group`, and `Shared Resource`,
+enabling users (and user groups) to share resources within the workspace.
 
-## Workspace
+![Workspaces](../../images/wsfd01.png)
 
-The workspace can manage resources through `authorization`, `resource group` and `shared resources`, so that users (groups) can share the resources in the workspace.
+- Resources
 
-
-
-- resource
-
-    Resources are at the lowest level of the resource management module hierarchy, and resources include Cluster, Namespace, Pipeline, and Gateway.
-    The parent of all these resources can only be the workspace, and the workspace as a resource container is a resource grouping unit.
+    Resources are at the lowest level of the hierarchy in the resource management module. They include clusters, namespaces, pipelines, gateways, and more. All these resources can only have workspaces as their parent level. Workspaces act as containers for grouping resources.
 
 - Workspace
 
@@ -30,9 +29,9 @@ The workspace can manage resources through `authorization`, `resource group` and
     Workspaces are at the first level, counting from the bottom of the hierarchy, and contain resources.
     All resources except shared resources have one and only one parent. All workspaces also have one and only one parent folder.
 
-    Resources are grouped by workspace, and there are two grouping modes in workspace, namely `resource group` and `shared resource`.
+    Resources are grouped by workspace, and there are two grouping modes in workspace, namely `Resource Group` and `Shared Resource`.
 
-- resource group
+- Resource group
 
     A resource can only be added to one resource group, and resource groups correspond to workspaces one by one.
     After a resource is added to a resource group, Workspace Admin will obtain the management authority of the resource, which is equivalent to the owner of the resource.

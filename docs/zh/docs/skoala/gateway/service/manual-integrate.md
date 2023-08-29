@@ -1,76 +1,70 @@
-# 手动接入服务
+# 手动管理服务
 
 添加成功的服务会出现在服务列表页面，添加 API 时也可以选择列表中的服务作为目标后端服务。微服务网关支持通过手动接入和自动发现两种方式添加服务。本页介绍如何手动接入服务。
 
-**前提条件**
-
-需要事先在来源管理<!--待补充链接-->中添加对应的服务来源，才能在手动接入服务时选择对应的服务来源类型。
-
 ## 接入服务
 
-1. 在`微服务网关列表`页面点击目标网关的名称，进入网关概览页后，在左侧导航栏点击`服务接入`-->`服务列表`。
+1. 在`云原生网关列表`页面点击目标网关的名称，然后在左侧导航栏点击`服务列表`，接着在右上角点击`添加服务`。
 
-    ![服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/service/imgs/service-list.png)
+    ![服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-service03.png)
 
-2. 在`服务列表`页面点击`手工接入`-->`添加服务`。
+2. 选择服务来源，配置服务连接信息，点击`确定`。
 
-    ![服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/service/imgs/manual.png)
+    === "集群服务/网格服务"
 
-3. 选择服务来源，配置服务连接信息，点击`确定`。
+        选择目标服务所在的集群和命名空间，填写访问协议、地址以及端口。
 
-    - 集群服务：选择目标服务所在的集群和命名空间，填写访问协议、地址以及端口。
-
-        ![添加集群服务](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/service/imgs/config1.png)
+        ![添加集群服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-service01.png)
 
         对于集群服务的访问方式，可在`容器管理`->`容器网络`->`服务`中点击服务名称进行查看：
 
         ![获取服务访问地址](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/service/imgs/service-access.png)
 
-    - 网格服务：
+    === "接入注册中心服务/注册配置中心服务"
 
-        接入网格服务的功能正在开发中，敬请期待。
+        选择目标服务所在的注册中心，填写访问协议、地址和端口。
 
-    - 注册中心服务：选择目标服务所在的注册中心，填写访问协议、地址和端口。
+        ![添加注册中心服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-service04.png)
 
-        ![添加注册中心服务](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/service/imgs/config3.png)
+    === "外部服务"
 
-    - 外部服务：填写服务名称、访问协议、地址、端口。
+        填写服务名称、访问协议、地址、端口。
   
-        ![添加外部服务](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/service/imgs/config4.png)
+        ![添加外部服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-service02.png)
 
 ## 查看服务详情
 
 1. 在服务列表页面点击目标服务的名称，进入服务详情页面。
 
-    ![服务详情](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/service/imgs/service-details0.png)
+    ![服务详情](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-service05.png)
 
 2. 查看服务来源、连接信息、关联 API 等信息。
 
-    ![服务详情](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/service/imgs/service-details2.png)
+    ![服务详情](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-service06.png)
 
 ## 更新服务
 
-### 更新基本信息
+### 更新基础配置
 
-1. 在`服务列表`页面找到需要更新的服务，在服务右侧点击 **`ⵗ`**，选择`基本信息`。
+更新基础配置指修改服务的名称、协议、地址和端口等连接信息。
 
-    ![更新服务](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/service/imgs/update1.png)
+1. 在`服务列表`页面找到需要更新的服务，在服务右侧点击 **`ⵗ`**，选择`修改基础配置`。
+
+    ![更新服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-service07.png)
 
 2. 更新基本信息，点击`确定`。
 
-    ![更新服务](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/service/imgs/update1.png)
+    ![更新服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-service08.png)
 
 !!! danger
 
-    如果更新基本信息时选择了其他的服务，那么原来的服务会被删除，相当于添加了一个新的服务。但原服务关联的 API 会被自动关联到新的服务。
-
-![更新服务-危险](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/service/imgs/update-danger.png)
+    如果更新基础配置时选择了其他服务或修改了外部服务的连接信息，那么原来的服务会被删除，相当于添加了一个新的服务。但原服务关联的 API 会被自动关联到新的服务。
 
 ### 更新策略配置
 
-1. 在`服务列表`页面找到需要更新的服务，在服务右侧点击 **`ⵗ`**，选择`策略配置`。
+1. 在`服务列表`页面找到需要更新的服务，在服务右侧点击 **`ⵗ`**，选择`修改策略配置`。
 
-    ![更新服务](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/service/imgs/update3.png)
+    ![更新服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-service09.png)
 
 2. 更新策略配置，点击`确定`。
 
@@ -80,7 +74,7 @@
 
 在`服务列表`页面找到需要删除的服务，在服务右侧点击 **`ⵗ`**，选择`删除`。
 
-![删除服务](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/service/imgs/delete.png)
+![删除服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-service10.png)
 
 删除服务之前，需要确保没有 API 正在使用该服务。如果该服务正在被某个 API 使用，需要先根据页面提示，点击 `API 管理`删除关联的 API 之后才能删除该服务。
 

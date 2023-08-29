@@ -1,83 +1,81 @@
-# vmstorge disk expansion
+# vmstorage Disk Expansion
 
-This page describes the method of vmstorge disk expansion,
-Please refer to [vmstorage disk capacity planning](../../best-practice/vms-res-plan.md) for vmstorge disk specifications.
+This article describes the method for expanding the vmstorage disk. 
+Please refer to the [vmstorage disk capacity planning](../res-plan/vms-res-plan.md) for the specifications of the vmstorage disk.
 
-## Steps
+## Procedure
 
-### Enable storage pool expansion
+### Enable Storage Pool Expansion
 
-1. Log in to the DCE 5.0 platform with the administrator privilege of the global service cluster, and enter the `kpanda-global-cluster` cluster details.
-1. Select `Container Storage -> Data Volume Declaration (PVC)` in the left navigation, and find the data volume declaration bound to vmstorage.
+1. Log in to the DCE 5.0 platform as a global service cluster administrator and go to the details of the `kpanda-global-cluster` cluster.
+2. Select the left navigation menu `Container Storage` -> `PVC` and find the PVC bound to the vmstorage.
 
-     
 
-1. Click a vmstorage PVC to enter the vmstorage data volume declaration details, and confirm the storage pool bound to the PVC.
 
-     
+3. Click a vmstorage PVC to enter the details of the volume claim for vmstorage and confirm the storage pool that the PVC is bound to.
 
-1. Select the left navigation `Container Storage -> Storage Pool (SC)`, find `local-path`, click `⋮` on the right side of the target, and select `Edit` from the pop-up menu.
 
-     
 
-1. Enable `Expansion` and click `OK`.
+4. Select the left navigation menu `Container Storage` -> `Storage Class` and find `local-path`. Click the `⋮` on the right side of the target and select `Edit` in the popup menu.
 
-     
 
-### Change the disk capacity of vmstorage
 
-1. Log in to the DCE 5.0 platform with the administrator privilege of the global service cluster, and enter the `kpanda-global-cluster` cluster details.
-1. Select `Custom Resources` in the left navigation, and find `vmcluster` custom resources.
+5. Enable `Expansion` and click `OK`.
 
-     
 
-1. Click the vmcluster custom resource to enter the details page, switch to the `insight-system` namespace, and select `Edit YAML` from the right menu of `insight-victoria-metrics-k8s-stack`.
 
-     
+### Modify the Disk Capacity of vmstorage
 
-1. After modifying according to the legend, click `OK`.
+1. Log in to the DCE 5.0 platform as a global service cluster administrator and go to the details of the `kpanda-global-cluster` cluster.
+2. Select the left navigation menu `Custom Resources` and find the custom resource for `vmcluster`.
 
-     
 
-1. Select `Container Storage -> Data Volume Declaration (PVC)` in the left navigation again, find the data volume declaration bound to vmstorage and confirm that the modification has taken effect. On a PVC details page, click the associated storage source (PV).
 
-     
+3. Click the custom resource for vmcluster to enter the details page, switch to the `insight-system` namespace, and select `Edit YAML` from the right menu of `insight-victoria-metrics-k8s-stack`.
 
-1. Open the data volume details page, and click the `Update` button in the upper right corner.
 
-     
 
-1. After modifying `Capacity`, click `OK`, and wait for a while until the expansion is successful.
+4. Modify according to the legend and click `OK`.
 
-     
 
-### Clone storage volume
 
-If the expansion of the storage volume fails, you can refer to the following methods to clone the storage volume.
+5. Select the left navigation menu `Container Storage` -> `PVC` again and find the volume claim bound to vmstorage. Confirm that the modification has taken effect. In the details page of a PVC, click the associated storage source (PV).
 
-1. Log in to the DCE 5.0 platform with the administrator privilege of the global service cluster, and enter the `kpanda-global-cluster` cluster details.
-1. Select `Workload -> Stateful Load` in the left navigation, find `vmstorage` stateful load, click `⋮` on the right side of the target, and select `Status` -> `Stop` -> ` from the pop-up menu OK`.
 
-     
 
-1. After logging in to the `master` node of the `kpanda-global-cluster` cluster on the command line, run the following command to copy the vm-data directory in the vmstorage container to store the metric information locally:
+6. Open the volume details page and click the `Update` button in the upper right corner.
 
-     ```bash
-     kubectl cp -n insight-system vmstorage-insight-victoria-metrics-k8s-stack-1:vm-data ./vm-data
-     ```
 
-1. Log in to the DCE 5.0 platform and enter `kpanda-global-cluster` cluster details, select `Container Storage -> Data Volume (PV)` in the left navigation, click `Clone` in the upper right corner, and modify the capacity of the data volume.
 
-     
+7. After modifying the `Capacity`, click `OK` and wait for a moment until the expansion is successful.
 
-     
 
-1. Delete the previous data volume of vmstorage.
 
-     
+### Clone the Storage Volume
 
-1. Wait for a while, after the storage volume declaration is bound to the cloned data volume, run the following command to import the data exported in step 3 into the corresponding container, and then start the previously suspended `vmstorage`.
+If the storage volume expansion fails, you can refer to the following method to clone the storage volume.
 
-     ```bash
-     kubectl cp -n insight-system ./vm-data vmstorage-insight-victoria-metrics-k8s-stack-1:vm-data
-     ```
+1. Log in to the DCE 5.0 platform as a global service cluster administrator and go to the details of the `kpanda-global-cluster` cluster.
+2. Select the left navigation menu `Workloads` -> `StatefulSets` and find the stateful set for `vmstorage`. Click the `⋮` on the right side of the target and select `Status` -> `Stop` -> `OK` in the popup menu.
+
+
+
+3. After logging into the `master` node of the `kpanda-global-cluster` cluster in the command line, execute the following command to copy the vm-data directory in the vmstorage container to store the metric information locally:
+
+    ```bash
+    kubectl cp -n insight-system vmstorage-insight-victoria-metrics-k8s-stack-1:vm-data ./vm-data
+    ```
+
+4. Log in to the DCE 5.0 platform and go to the details of the `kpanda-global-cluster` cluster. Select the left navigation menu `Container Storage` -> `Persistent Volumes`, click `Clone` in the upper right corner, and modify the capacity of the volume.
+
+
+
+5. Delete the previous data volume of vmstorage.
+
+
+
+6. Wait for a moment until the volume claim is bound to the cloned data volume, then execute the following command to import the exported data from step 3 into the corresponding container, and then start the previously paused `vmstorage`.
+
+    ```bash
+    kubectl cp -n insight-system ./vm-data vmstorage-insight-victoria-metrics-k8s-stack-1:vm-data
+    ```

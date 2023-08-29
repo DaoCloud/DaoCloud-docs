@@ -11,7 +11,7 @@ hide:
 
 <div class="grid cards" markdown>
 
--   :fontawesome-solid-tty:{ .lg .middle } __cloudtty__
+-   :fontawesome-solid-tty:{ .lg .middle } __CloudTTY__ :simple-cncf: 已入选 CNCF Landscape
 
     ---
 
@@ -39,6 +39,21 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./egress-gw.md)
 
+-   :material-run-fast:{ .lg .middle } __Fast__
+
+    ---
+
+    基于 eBPF 实现的 Kubernetes CNI。目前已实现了以下两个功能：
+
+    - 基于 eBPF 的网络基本连通性
+    - 管理集群容器的 IP 地址
+
+    [:octicons-arrow-right-24: 了解更多](./fast.md)
+
+</div>
+
+<div class="grid cards" markdown>
+
 -   :fontawesome-brands-trade-federation:{ .lg .middle } __FedState__
 
     ---
@@ -46,10 +61,6 @@ hide:
     赋能多云、多集群、多数据中心场景下的自动运维
 
     [:octicons-arrow-right-24: 了解更多](./fedstate.md)
-
-</div>
-
-<div class="grid cards" markdown>
 
 -   :material-ferry:{ .lg .middle } __Ferry__
 
@@ -59,6 +70,10 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./ferry.md)
 
+</div>
+
+<div class="grid cards" markdown>
+
 -   :material-storage-tank:{ .lg .middle } __HwameiStor__ :simple-cncf: 已入选 CNCF Sandbox 和 Landscape
 
     ---
@@ -66,10 +81,6 @@ hide:
     高可用的本地存储方案，更快、更强、更可靠，已入选 CNCF 全景图和沙箱孵化
 
     [:octicons-arrow-right-24: 了解更多](./hwameistor.md)
-
-</div>
-
-<div class="grid cards" markdown>
 
 -   :material-doctor:{ .lg .middle } __kdoctor__
 
@@ -79,6 +90,10 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./kdoctor.md)
 
+</div>
+
+<div class="grid cards" markdown>
+
 -   :simple-kubernetes:{ .lg .middle } __KLTS__
 
     ---
@@ -87,17 +102,17 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./klts.md)
 
-</div>
-
-<div class="grid cards" markdown>
-
--   :peanuts:{ .lg .middle } __Kubean__
+-   :peanuts:{ .lg .middle } __Kubean__ :simple-cncf: 已入选 CNCF Landscape
 
     ---
 
-    容器化集群的全生命周期管理工具，正在申请 Landscape
+    容器化集群的全生命周期管理工具，正在申请 Sandbox
 
     [:octicons-arrow-right-24: 了解更多](./kubean.md)
+
+</div>
+
+<div class="grid cards" markdown>
 
 -   :material-forest:{ .lg .middle } __KWOK__ :simple-cncf: K8s-sigs 项目之一
 
@@ -107,10 +122,6 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./kwok.md)
 
-</div>
-
-<div class="grid cards" markdown>
-
 -   :fontawesome-solid-bridge:{ .lg .middle } __Merbridge__ :simple-cncf: 已入选 CNCF Sandbox 和 Landscape
 
     ---
@@ -118,6 +129,18 @@ hide:
     使用 eBPF 加速您的服务网格，就像利用虫洞在网络世界中穿梭，已入选 CNCF 全景图和 Sandbox
 
     [:octicons-arrow-right-24: 了解更多](./merbridge.md)
+
+</div>
+
+<div class="grid cards" markdown>
+
+-   :material-debug-step-over:{ .lg .middle } __miragedebug__
+
+    ---
+
+    在本地远程调试 K8s 应用，实现完全真实环境的调试
+
+    [:octicons-arrow-right-24: 了解更多](./miragedebug.md)
 
 -   :spider:{ .lg .middle } __Spiderpool__  :simple-cncf: 已入选 CNCF Landscape
 
@@ -152,9 +175,9 @@ hide:
 <p align="center">
 <img src="https://landscape.cncf.io/images/left-logo.svg" width="150"/>&nbsp;&nbsp;<img src="https://landscape.cncf.io/images/right-logo.svg" width="200"/>
 <br/><br/>
-Clusterpedia、Merbridge、HwameiStor 和 Spiderpool 已入选 <a href="https://landscape.cncf.io">CNCF 云原生全景图</a>，而 Clusterpedia 和 Merbridge 已进入 <a href="https://www.cncf.io/projects/clusterpedia/">CNCF 沙箱孵化</a>。
+Clusterpedia、HwameiStor 和 Merbridge 已入选 <a href="https://www.cncf.io/projects/clusterpedia/">CNCF 沙箱</a>。
 </p>
 
-[下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

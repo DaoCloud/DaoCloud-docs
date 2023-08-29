@@ -11,7 +11,7 @@ Instructions for installing, deploying, and uninstalling the graphical interface
 These storage controllers can run anywhere Kubernetes can run, including on any cloud, bare metal server, or traditional shared storage system.
 Crucially, the data itself is also accessible through the container rather than being stored in a shared scale-out storage system outside the platform.
 
-![openebs-1](../images/openebs-1.svg)
+![openebs-1](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/openebs-1.svg)
 
 CAS is a trend that fits well with the trend of non-aggregated data and small autonomous teams running small, loosely coupled workloads.
 Developers remain autonomous and can spin up their own CAS containers using whatever storage is available to the Kubernetes cluster.
@@ -59,7 +59,7 @@ OpenEBS is the leading open source implementation of the Container Attached Stor
 As part of this approach, OpenEBS uses containers to dynamically configure volumes and provide data services such as high availability.
 OpenEBS relies on and extends Kubernetes itself to orchestrate its volume services.
 
-![openebs-2](../images/openebs-2.svg)
+![openebs-2](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/openebs-2.svg)
 
 OpenEBS has many components, which can be divided into the following two categories:
 
@@ -81,7 +81,7 @@ OpenEBS follows a microservices model to implement the data engine, where functi
 
 The OpenEBS data engine consists of the following layers:
 
-![openebs-3](../images/openebs-3.svg)
+![openebs-3](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/openebs-3.svg)
 
 #### Volume Access Layer
 
@@ -157,7 +157,7 @@ A control plane in the context of OpenEBS refers to a set of tools or components
 The OpenEBS control plane consists of a set of microservices that are themselves managed by Kubernetes, making OpenEBS truly Kubernetes-native.
 Configurations managed by the OpenEBS control plane are saved as Kubernetes custom resources. The feature of the control plane can be broken down into the following stages:
 
-![openebs-4](../images/openebs-4.svg)
+![openebs-4](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/openebs-4.svg)
 
 #### YAML or Helm chart
 

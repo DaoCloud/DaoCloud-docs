@@ -21,15 +21,15 @@
 | 1        | 火种节点       | 1. 执行安装部署程序<br />2. 运行平台所需的镜像仓库和 chart museum | 2            | 4G           | 200G         | -                |
 | 3        | 控制面         | 1. 运行 DCE 5.0 组件<br /> 2. 运行 kubernetes 系统组件                 | 8            | 16G          | 100G         | 200G             |
 
-### 7 节点模式
+### 7 节点模式(生产环境推荐)
 
 参阅 [7 节点模式说明](./deploy-arch.md#7-1-6)。
 
 | **数量** | **服务器角色** | **服务器用途**                                               | **cpu 数量** | **内存容量** | **系统硬盘** | **未分区的硬盘** |
 | -------- | -------------- | ------------------------------------------------------------ | ------------ | ------------ | ------------ | ---------------- |
 | 1        | 火种节点       | 1. 执行安装部署程序<br />2. 运行平台所需的镜像仓库和 chart museum | 2            | 4G           | 200G         | -                |
-| 3        | master         | 1. 运行 DCE 5.0 组件<br /> 2. 运行 kubernetes 系统组件               | 8            | 16G          | 100G         | 200G             |
-| 3        | worker         | 单独运行日志相关组件                                      | 8            | 16G          | 100G         | -                |
+| 3        | master         | 1. 运行 DCE 5.0 组件<br /> 2. 运行 kubernetes 系统组件       | 8            | 16G          | 100G         | 200G             |
+| 3        | worker         | 单独运行日志相关组件                                         | 8            | 16G          | 100G         | 200G             |
 
 ## 前置检查
 
@@ -47,25 +47,38 @@
 
 ### 火种机器依赖组件检查
 
-| **检查项**   | **版本要求** | **说明**                          |
-| ------------ | ------------ | --------------------------------- |
-| podman       | v4.4.1       | -                                 |
-| helm         | ≥ 3.11.1      | -                                 |
-| skopeo       | ≥ 1.11.1      | -                                 |
-| kind         | v0.17.0    | -                                 |
-| kubectl      | ≥ 1.25.6     | -                                 |
-| yq           | ≥ 4.31.1     | -                                 |
-| minio client | `mc.RELEASE.2023-02-16T19-20-11Z``mc.RELEASE.2023-02-16T19-20-11Z` |                   |
+| **检查项**   | **版本要求**                                                           | **说明**                          |
+| ------------ |--------------------------------------------------------------------| --------------------------------- |
+| podman       | v4.4.4                                                             | -                                 |
+| helm         | ≥ 3.11.1                                                           | -                                 |
+| skopeo       | ≥ 1.11.1                                                           | -                                 |
+| kind         | v0.19.0                                                            | -                                 |
+| kubectl      | ≥ 1.25.6                                                           | -                                 |
+| yq           | ≥ 4.31.1                                                           | -                                 |
+| minio client | `mc.RELEASE.2023-02-16T19-20-11Z`                                 |                   |
 
 如果不存在依赖组件，通过脚本进行安装依赖组件，[安装前置依赖](../install-tools.md)。
 
 ```bash
+export VERSION=v0.9.0
 # 下载脚本
-curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
+curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
 
 # 添加可执行权限
-chmod +x install_prerequisite.sh
+chmod +x install_prerequisite_${VERSION}.sh
 
 # 开始安装
-bash install_prerequisite.sh online full
+bash install_prerequisite_${VERSION}.sh online full
 ```
+
+## 外接组件准备
+
+如果需要使用客户已有的一些组件，可以参考以下文档进行准备：
+
+- [使用外接服务存储 Binaries 资源](external/external-binary.md)
+
+- [使用外接镜像仓库与 Chart 仓库存储镜像与 Chart 包](external/external-imageandchart.md)
+
+- [使用外接中间件服务](external/external-middlewares.md)
+
+- [使用外接服务存储 OS Repo 资源](external/external-os.md)

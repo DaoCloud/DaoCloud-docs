@@ -50,7 +50,7 @@ A workspace consists of three features: authorization, resource groups, and shar
 
 ## The effect of the workspace on the DCE module
 
-1. Module name: [Workbench](../../../amamba/intro/what.md), [Microservice Engine](../../../skoala/intro/what.md), [Service Mesh](../../../mspider/intro/what.md)[mdeware](../../../middleware/what.md)
+1. Module name: [Workbench](../../../amamba/intro/index.md), [Microservice Engine](../../../skoala/intro/index.md), [Service Mesh](../../../mspider/intro/index.md), [Middleware](../../../middleware/index.md)
 
     The premise of entering the above modules is to have the permission of a certain workspace, so you must have the Admin role or have certain role permissions of a certain workspace before using the module features.
 
@@ -60,7 +60,7 @@ A workspace consists of three features: authorization, resource groups, and shar
 
     In addition, the resources you create in these modules will also be automatically bound to the corresponding workspace without any additional operations.
 
-2. Module name: [Container Management](../../../kpanda/intro/what.md), [Service Mesh](../../../mspider/intro/what.md )
+2. Module name: [Container Management](../../../kpanda/intro/index.md), [Service Mesh](../../../mspider/intro/index.md)
 
     Due to the particularity of functional modules, resources created in the container management module will not be automatically bound to a certain workspace.
 

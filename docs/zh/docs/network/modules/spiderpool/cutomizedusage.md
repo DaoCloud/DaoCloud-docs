@@ -10,7 +10,7 @@ hide:
 ## 前提条件
 
 1. [SpiderPool 已成功部署](../../modules/spiderpool/install.md)。
-2. [Multus 搭配 Macvlan /SRI-OV 已成功部署](../../modules/multus-underlay/install.md)。
+2. [Multus 搭配 Macvlan/SR-IOV 已成功部署](../../modules/multus-underlay/install.md)。
 3. 如使用手动选择 IP 池，请提前完成[创建 IP 子网和 IP 池](../../modules/spiderpool/createpool.md)。本示例中需要使用固定 IP 池，请提前完成[创建 固定 IP 池](../../modules/spiderpool/createpool.md)。
 
 ## 操作步骤

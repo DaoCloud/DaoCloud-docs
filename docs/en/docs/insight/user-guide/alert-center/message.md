@@ -8,7 +8,7 @@ On the `Notification Settings` page, you can configure how to send messages to u
 
 2. Multiple email addresses can be added.
 
-    ![WeCom](../../images/notify02.png)
+    ![WeCom](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/notify02.png)
 
 3. After the configuration is complete, the notification list will automatically return. Click `︙` on the right side of the list to edit or delete the email group.
 

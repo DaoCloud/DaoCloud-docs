@@ -19,13 +19,13 @@ hide:
 
 ## Overlay + Underlay 方案
 
-当集群部署应用需要使用多 CNI 组合，并需要使用 Underlay CNI（Macvlan/SRI-OV）IP 提供对外通信时，可采用的网络组件组合为 `Calico + SpiderPool + Multus + Macvlan/SRIOV`（同一集群可同时部署 Macvlan 和 SRIOV CNI）。具体的网卡规划如下：
+当集群部署应用需要使用多 CNI 组合，并需要使用 Underlay CNI（Macvlan/SR-IOV）IP 提供对外通信时，可采用的网络组件组合为 `Calico + SpiderPool + Multus + Macvlan/SR-IOV`（同一集群可同时部署 Macvlan 和 SR-IOV CNI）。具体的网卡规划如下：
 
 | 部署环境       | 基础设施             | 网卡数             | 网卡说明                 | 用途           |
 | -------------- | ----------------- | ----------------- | ----------------------- | ------------- |
 | PoC 环境       | 物理机<br />虚拟机<br /> | 1 张物理网卡/ Bond 网卡 | Access 模式接入，默认路由所在网卡 ==[^1]== | 承载 K8s 管理流量、Calico Pod 流量、Underlay CNI (Macvlan) Pod 流量 |
-| 生产环境<br /> | 物理机<br />虚拟机<br /> | 2 张物理网卡/ Bond 网卡 | **网卡 1**：Access 模式接入，默认路由所在网卡<br />**网卡 2** ==[^1]==：Trunk 模式接入  | **网卡 1**：承载 K8s 管理流量、Calico Pod 流量<br />**网卡 2**：承载 Underlay CNI (Macvlan/SRI-OV) Pod 流量  |
-| 生产环境<br /> | 物理机<br />虚拟机<br /> | 3 张物理网卡/ Bond 网卡 | **网卡 1**：Access 模式接入，默认路由所在网卡<br />**网卡 2** ==[^2]==：Trunk 模式接入<br />**网卡 3** (可选)：Access 模式接入 | **网卡 1**：承载 K8s 管理流量、Calico Pod 流量<br />**网卡 2**：承载 Underlay CNI (Macvlan/SRI-OV) Pod 流量<br />**网卡 3**：Hwameistor 数据副本跨节点同步流量 |
+| 生产环境<br /> | 物理机<br />虚拟机<br /> | 2 张物理网卡/ Bond 网卡 | **网卡 1**：Access 模式接入，默认路由所在网卡<br />**网卡 2** ==[^1]==：Trunk 模式接入  | **网卡 1**：承载 K8s 管理流量、Calico Pod 流量<br />**网卡 2**：承载 Underlay CNI (Macvlan/SR-IOV) Pod 流量  |
+| 生产环境<br /> | 物理机<br />虚拟机<br /> | 3 张物理网卡/ Bond 网卡 | **网卡 1**：Access 模式接入，默认路由所在网卡<br />**网卡 2** ==[^2]==：Trunk 模式接入<br />**网卡 3** (可选)：Access 模式接入 | **网卡 1**：承载 K8s 管理流量、Calico Pod 流量<br />**网卡 2**：承载 Underlay CNI (Macvlan/SR-IOV) Pod 流量<br />**网卡 3**：Hwameistor 数据副本跨节点同步流量 |
 
 [^1]: 建议所有节点网卡名称一致
 [^2]: 建议所有节点网卡名称一致；如需使用 Hwameistor 本地存储并开启高可用功能，可根据实际场景额外规划网卡

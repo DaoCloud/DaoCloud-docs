@@ -42,8 +42,7 @@ Ensure that your cluster has successfully connected to the container management 
 
 1. In the left navigation bar, click `Container Management` -> `Cluster List`, and find the name of the cluster where Hwameistor will be installed.
 
-2. In the left navigation bar, select `Helm Application` -> `Helm chart`, find and click on `Hwameistor Operator`.
-
+2. In the left navigation bar, select `Helm Apps` -> `Helm chart`, find and click on `Hwameistor Operator`.
 
 3. Within the `Version Selection` section, choose the version to install, and then click `Install`.
 
@@ -132,10 +131,9 @@ Ensure that your cluster has successfully connected to the container management 
          Set the address of the K8S container registry, and the available online registry has been filled in by default.
          If the environment is privatized, it can be modified to a private registry address.
 
-5. After confirming that the parameters are correct, click `OK` to complete the installation. After the installation is complete, you can click `Helm Application` to view the installation status of `Hwameistor Operator`.
+5. After confirming that the parameters are correct, click `OK` to complete the installation. After the installation is complete, you can click `Helm Apps` to view the installation status of `Hwameistor Operator`.
 
 6. After the Operator is installed, the Hwameistor components (Local Storage, Local Disk Manager, etc.) will be installed by default!
     You can click `Workload`-->`Stateless Workload`, select the corresponding namespace, and view the status of the Hwameistor component.
-
 
      To verify the installation effect through the command line, please refer to [Post-installation Check](./post-check.md).

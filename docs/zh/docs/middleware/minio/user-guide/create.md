@@ -11,7 +11,7 @@ hide:
 
 2. 可以点击列表右上角的`新建实例`按钮。
 
-    > 如果是首次使用，需要[先选择工作空间](../../first-visit.md)，然后点击`立即部署`创建 MinIO 实例。
+    > 如果是首次使用，需要[先选择工作空间](../../common/first-visit.md)，然后点击`立即部署`创建 MinIO 实例。
 
     ![点击新建实例](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/create02.png)
 
@@ -21,9 +21,9 @@ hide:
 
         - 实例名称、所在集群/命名空间在实例创建之后不可修改
         - 注意查看输入框下方的填写要求，输入符合要求的内容
-        - 如未通过安装环境检测，可根据提示安装相关插件后重新创建实例，或勾选`不需要监控`后直接进行后续操作
+        - 如未通过安装环境检测，需要根据提示安装组件之后方可进行下一步
 
-    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/create03.png)
+    ![基本信息](../images/create03.png)
 
 4. 参考下方信息填写配置规格，然后点击`下一步`。
 
@@ -72,10 +72,10 @@ hide:
 
 6. 确认实例配置信息无误，点击`确认`完成创建。
 
-    ![点击确认](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/create05.png)
+    ![点击确认](../images/create05.png)
 
 7. 返回实例列表页查看实例是否创建成功。
 
-    > 新创建的实例状态为`未就绪`，等所有相关容器成功启动之后状态变为`运行中`。
+    > 创建中的实例状态为`未就绪`，等所有相关容器成功启动之后状态变为`运行中`。
 
-    ![状态](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/create06.png)
+    ![状态](../images/create06.png)

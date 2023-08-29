@@ -1,35 +1,38 @@
 # 镜像仓库 FAQ
 
+本页列出使用镜像仓库时常见的一些问题和解决办法。
+
+## DCE5.0标准版本中不能使用中间件部署
+
+DCE 5.0标准版本中没有中间件，中间件属于白金版。
+
+## 如何校验配置的中间件网络是否可连接
+
+登录部署 Harbor 的目标集群，在任意节点中执行 `ping` 命令，测试是否能连接到中间件组件。
+
+## 镜像空间列表看不到私有镜像
+
+镜像仓库在 `v0.7.0-v0.7.3`、`v0.8.0` 版本系统存在一个 bug，会导致看不到私有镜像。
+
+## 在使用中间件部署的 Minio 时
+
+在使用中间件部署的 Minio 时，需要先手动通过 Minio 管理平台创建好 bucket。
+
+## 仓库集成支持的 Harbor 最低版本
+
+在仓库集成时因使用了 `Harbor` 的功能，对版本有一定要求，目前支持的已知最低版本为：`2.4.0`。更早的旧版本将不可用。
+
 ## 离线环境镜像扫描器失败
 
-镜像扫描因为依赖漏洞数据，默认是去 [CVE 官网](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=kubernetes)获取漏洞数据，如果是纯离线环境，则不能正常的进行漏洞扫描，会执行失败。
+镜像扫描因为依赖漏洞数据，默认是去
+[CVE 官网](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=kubernetes)获取漏洞数据。
+如果是一个纯离线环境，则不能正常进行漏洞扫描，会执行失败。
 
 ![trivy](./images/trivy-nodb.png)
 
-## 如何在离线环境更新或者导入漏洞库
-
-1. 数据库位置
-  
-    ```
-    /root/.cache/trivy/db
-    ```
-    
-2. 查看帮助中也可以获取
-
-    ```
-    $ trivy -h | grep 'TRIVY_CACHE_DIR'
-       --cache-dir value  cache directory (default: "/root/.cache/trivy") [$TRIVY_CACHE_DIR]
-    ```
-
-3. 数据库下载
-
-    - `trivy-light-offline.db.tgz`：离线版轻量数据库，解压后约 104 MB。
-    - `trivy-offline.db.tgz`：离线版全量数据库，解压后约 221 MB。
-    - 下载地址: [https://github.com/aquasecurity/trivy-db/releases](https://github.com/aquasecurity/trivy-db/releases)
-
 ## 创建托管 Harbor 时第一步集群校验通过后创建 Harbor 仍然出错
 
-目前只校验了集群中是否有 `CRD`，没有校验 `harbor-operator` 服务，可能会出现不存在`harbor-operator` 服务的情况，导致不能正确的创建 `Harbor`。
+目前只校验了集群中是否有 `CRD`，没有校验 `harbor-operator` 服务，可能会出现不存在 `harbor-operator` 服务的情况，导致不能正确的创建 `Harbor`。
 
 ## 本地执行 `docker login {ip}` 之后报错
 
@@ -37,7 +40,8 @@
 Error response from daemon: Get "https://{ip}/v2/": x509: cannot validate certificate for {ip} because it doesn't contain any IP SANs
 ```
 
-出现这个错误是因为 `registry` 是 `https` 服务，是使用了非签名证书或者不安全证书，就会提示这个错误，要解决办法就是在 `/etc/docker/daemon.json` 配置文件中 `"insecure-registries"` 加入对应的 IP。
+出现这个错误是因为 `registry` 是 `https` 服务，是使用了非签名证书或者不安全证书，就会提示这个错误，
+解决办法是在 `/etc/docker/daemon.json` 配置文件中 `"insecure-registries"` 加入对应的 IP。
 
 ```json
 "insecure-registries": [
@@ -48,7 +52,7 @@ Error response from daemon: Get "https://{ip}/v2/": x509: cannot validate certif
 
 之后重启 `systemctl restart docker`。
 
-## 创建托管 harbor 接入外部 pg、redis，密码含有特殊字符 (!@#$%^&*) 之类的，服务启动失败
+## 创建托管 harbor 接入外部 PG、Redis，密码含有特殊字符 (!@#$%^&*) 之类的，服务启动失败
 
 目前密码中不能有特殊字符，不然会出现服务启动失败的情况，可以使用大小写字母和数字组合的情况。
 
@@ -63,7 +67,8 @@ Error response from daemon: Get "https://{ip}/v2/": x509: cannot validate certif
 
 ## 私有镜像在非镜像仓库模块能看到吗？
 
-镜像仓库是严格按照 DEC 5.0 的权限来执行的，在镜像仓库中某个用户必须要属于某个租户，才能看到当前租户下的私有镜像空间，否则即使管理员也不能看到。
+镜像仓库是严格按照 DEC 5.0 的权限来执行的，在镜像仓库中某个用户必须要属于某个租户，
+才能看到当前租户下的私有镜像空间，否则即使管理员也不能看到。
 
 ## 私有镜像绑定工作空间后不能查询到
 
@@ -73,13 +78,15 @@ Error response from daemon: Get "https://{ip}/v2/": x509: cannot validate certif
 ## 托管Harbor创建后能访问了但是状态依然不健康
 
 目前托管 Harbor 页面上的状态和仓库集成的状态是二合一的，当两个状态都为健康的时候才是健康，
-因此可能出现托管 `Harbor` 已经可以访问了，但是状态依然不健康，这种情况需要等一个服务探测周期，一个探测周期是 10 分钟，在一个周期后就会恢复如初。
+因此可能出现托管 `Harbor` 已经可以访问了，但是状态依然不健康，这种情况需要等一个服务探测周期，
+一个探测周期是 10 分钟，在一个周期后就会恢复如初。
 
 ## 创建的托管仓库状态为不健康
 
 ![仓库不健康](images/img.png)
 
-- A1：用户输入的数据库、Redis、S3 存储等信息有误，导致无法连接，可通过查看日志文件进行排查。现象主要是几个核心服务有 Pod 启动失败，可以通过查看日志进一步确认原因。
+- A1：用户输入的数据库、Redis、S3 存储等信息有误，导致无法连接，可通过查看日志文件进行排查。
+  现象主要是几个核心服务有 Pod 启动失败，可以通过查看日志进一步确认原因。
 
     ```shell
     kubectl -n kangaroo-lrf04 get pods
@@ -107,7 +114,8 @@ Error response from daemon: Get "https://{ip}/v2/": x509: cannot validate certif
     trust-node-port   https://10.6.232.5:30010   healthy
     ```
 
-- A3：如果 A2 排查无误，在 `kpanda-global-cluster` 集群上排查 `registrysecrets.kangaroo.io` 资源是否创建，以及 `status` 情况。
+- A3：如果 A2 排查无误，在 `kpanda-global-cluster` 集群上排查 `registrysecrets.kangaroo.io`
+  资源是否创建，以及 `status` 情况。
 
     提示: namespace 默认为 kangaroo-system。
 
@@ -199,7 +207,7 @@ status:
     kubectl get secret registry-secret -o jsonpath='{.data.*}'| base64 -d | jq
     ```
 
-    ```none
+    ```json
     {
       "auths": {
         "127.0.0.1:5000": {

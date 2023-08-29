@@ -161,7 +161,7 @@ If you already have Docker on the host, and the version is higher than 1.18, you
      bash install_prerequisite.sh online community
      ```
 
-1. Download the dce5-installer binary file on the host (you can also [download via browser](../download/dce5.md))
+1. Download the dce5-installer binary file on the host (you can also [download via browser](../download/index.md)
 
      ```shell
      export VERSION=v0.5.0

@@ -14,7 +14,7 @@ This page describes how to configure Pod vertical scaling for a workload.
 
 Before configuring a vertical scaling policy for a workload, the following prerequisites must be met:
 
-- In the [Container Management](../../intro/what.md) module [Access Kubernetes Cluster](../clusters/integrate-cluster.md) or [Create Kubernetes Cluster](../clusters/create-cluster.md), and can access the cluster UI interface.
+- In the [Container Management](../../intro/index.md) module [Access Kubernetes Cluster](../clusters/integrate-cluster.md) or [Create Kubernetes Cluster](../clusters/create-cluster.md), and can access the cluster UI interface.
 
 - Create a [namespace](../namespaces/createns.md), [user](../../../ghippo/user-guide/access-control/user.md), [stateless work Workloads](../workloads/create-deployment.md) or [Stateful Workloads](../workloads/create-statefulset.md).
 
@@ -43,7 +43,7 @@ Refer to the following steps to configure the built-in index auto scaling policy
     
 
     - Policy name: Enter the name of the vertical scaling policy. Please note that the name can contain up to 63 characters, and can only contain lowercase letters, numbers, and separators ("-"), and must start and end with lowercase letters or numbers, such as vpa- my-dep.
-    - Scaling mode: Execute the method of modifying the CPU and memory request values. Currently, vertical scaling supports manual and automatic scaling modes.
+    - Scaling mode: Run the method of modifying the CPU and memory request values. Currently, vertical scaling supports manual and automatic scaling modes.
         - Manual scaling: After the vertical scaling strategy calculates the recommended resource configuration value, the user needs to manually modify the resource quota of the application.
         - Auto-scaling: The vertical scaling strategy automatically calculates and modifies the resource quota of the application.
     - Target container: Select the container to be scaled vertically.

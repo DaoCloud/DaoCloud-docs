@@ -2,6 +2,39 @@
 
 This page lists the release notes of Multicloud Management module, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-07-31
+
+### v0.11
+
+#### New Features
+
+- **Added** support for viewing event information in resource details.
+
+#### Optimizations
+
+- **Optimized** the Karmada Operator project for the community edition of the cluster.
+
+## 2023-06-30
+
+### v0.10.3
+
+#### New Features
+
+- **Added**: Added support for LoadBalancer type in Service.
+- **Added**: Added distribution status display for resources.
+- **Added**: Added multi-cloud audit logs.
+
+#### Fixes
+
+- **Fixed**: Fixed the issue of audit log out of range.
+- **Fixed**: Fixed the duplicate icon issue when adding a working cluster to the multi-cloud instance details page.
+- **Fixed**: Fixed the error that occurs when modifying the number of instances while creating a multi-cloud workload.
+- **Fixed**: Fixed the icon style issue with the distribution status of multi-cloud resources.
+
+#### Improvements
+
+- **Improved**: Optimized the data source for excluding clusters in deployment strategies.
+
 ## 2023-05-29
 
 ### v0.9.1

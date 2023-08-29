@@ -6,11 +6,11 @@
 
 1. 在`安全管理`->`合规性扫描`页面的`扫描策略`页签下，在右侧点击创建扫描策略。
 
-    ![创建扫描配置](../../images/security05.png)
+    ![创建扫描配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/images/security05.png)
 
 2. 参考下列说明填写配置后，点击`确定`。
 
-    - 集群：选择需要扫描哪个集群。可选的集群列表来自于[容器管理](../../../intro/what.md)模块中接入或创建的集群。如果没有想选的集群，可以去容器管理模块中[接入](../../clusters/integrate-cluster.md)或[创建](../../lusters/create-cluster.md)集群。
+    - 集群：选择需要扫描哪个集群。可选的集群列表来自于[容器管理](../../../intro/index.md)模块中接入或创建的集群。如果没有想选的集群，可以去容器管理模块中[接入](../../clusters/integrate-cluster.md)或[创建](../../clusters/create-cluster.md)集群。
     - 扫描配置：选择事先创建好的扫描配置。扫描配置规定了需要执行哪些具体的扫描项。
     - 扫描类型：
 
@@ -19,7 +19,7 @@
 
     - 扫描报告保留数量：设置最多保留多少扫描报告。超过指定的保留数量时，从最早的报告开始删除。
 
-        ![创建扫描配置](../../images/security06.png)
+        ![创建扫描配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/images/security06.png)
 
 ## 更新/删除扫描策略
 
@@ -36,4 +36,4 @@
 
 - 对于一次性的扫描策略：仅支持`删除`操作。
 
-    ![创建扫描配置](../../images/security07.png)
+    ![创建扫描配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/images/security07.png)

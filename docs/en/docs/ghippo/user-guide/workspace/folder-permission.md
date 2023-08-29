@@ -3,7 +3,7 @@
 Folders have permission mapping capabilities, which can map the permissions of users/groups in this folder to subfolders, workspaces and resources under it.
 
 If the user/group is Folder Admin role in this folder, it is still Folder Admin role when mapped to a subfolder, and Workspace Admin is mapped to the workspace under it;
-If a Namespace is bound in `Workspace and Hierarchy` -> `Resource Group`, the user/group is also a Namespace Admin after mapping.
+If a Namespace is bound in `Workspace and Folder` -> `Resource Group`, the user/group is also a Namespace Admin after mapping.
 
 !!! note
 

@@ -1,83 +1,125 @@
-# Role and permission management
+# Role and Permission Management
 
-A role corresponds to a set of permissions. Permissions determine the actions that can be performed on a resource. Granting a role to a user grants all the permissions included in the role.
+A role corresponds to a set of permissions that determine the actions that can be
+performed on resources. Granting a user a role means granting all the permissions included in that role.
 
-There are the following three modes of rights management, which can flexibly and effectively solve your use problems on rights:
+DCE 5.0 platform provides three levels of roles, which effectively solve your permission-related issues:
 
-- Global management mode
-- Submodule management mode
-- Resource-based management model
+- [Platform Roles](#platform-roles)
+- [Workspace Roles](#workspace-roles)
+- [Folder Roles](#folder-roles)
 
-## Global management mode
+## Platform Roles
 
-The global management mode refers to the way you configure permissions for users (groups) through system roles in the global management module.
-The platform predefines an administrator role for each sub-module, which is used to realize the block management of sub-modules.
-For example, the IAM Owner of access control, the Kpanda Owner of container management, etc., each sub-module administrator has the highest authority of the module.
-The submodule administrator role needs to be configured in the global management module, which can be obtained in the following ways:
+Platform roles are coarse-grained permissions that grant corresponding permissions to
+all relevant resources on the platform. By assigning platform roles, users can have
+permissions to create, delete, modify, and view all clusters and workspaces, but not
+specifically to a particular cluster or workspace. DCE 5.0 provides 5 pre-defined
+platform roles that users can directly use:
 
-- Find the user in the user list of `Global Management` -> `Access Control` -> `User`; click `...`, select `Authorization`, and assign the user a predefined submodule of the system Administrator permissions.
+- Admin
+- Kpanda Owner
+- Workspace and Folder Owner
+- IAM Owner
+- Audit Owner
 
-    ![user authorization](../../images/role01.png)
+![5 pre-defined platform roles](../../images/newrole01.png)
 
-- Create a group in the group list of `Global Management` -> `Access Control` -> `group`, add the user to the group, and authorize the group (the specific operation is: in the group list Find the group, click `...`, select `Authorization`, and give the group the pre-defined sub-module administrator rights of the system).
+Additionally, DCE 5.0 supports the creation of custom platform roles with customized content
+as needed. For example, creating a platform role that includes all functional permissions in
+the Workbench. Since the Workbench depends on workspaces, the platform will automatically
+select the "view" permission for workspaces by default. Please do not manually deselect it.
+If User A is granted this Workbench role, they will automatically have all functional permissions
+related to the Workbench in all workspaces.
 
-    ![group authorization](../../images/role02.png)
+![Permission list](../../images/newrole02.png)
 
-- In the role list of `Global Management` -> `Access Control` -> `Roles`, find the corresponding submodule administrator role, click the role name to enter the details, click the `Associate Member` button, select the user or The group to which the user belongs, click `OK`.
+### Platform Role Authorization Methods
 
-    ![role authorization](../../images/role03.png)
+There are three ways to authorize platform roles:
 
-Submodules that support this mode: Access Control (IAM), Audit Log (Audit), Container Management (Kpanda)
-At the same time, the administrator role (Admin) of the platform can also be authorized through the above methods
+- In the `Global Management` -> `Access Control` -> `Users` section, find the user
+  in the user list, click `...`, select `Authorization`, and grant platform role permissions to the user.
 
-!!! note
+    ![Click Authorization](../../images/newrole03.png)
 
-    - Admin platform administrator
-    - IAM Owner access control module administrator
-    - Kpanda Owner container management module administrator
-    - Audit Owner Audit log module administrator
+- In the `Global Management` -> `Access Control` -> `Groups` section, create a group in the group list,
+  add the user to the group, and grant authorization to the group
+   (the specific operation is: find the group in the group list, click `...`, select `Add Permissions`, and grant platform roles to the group).
 
-## Submodule management mode
+    ![Add permissions](../../images/newrole04.png)
 
-The sub-module management mode means that you can assign different resources to different users on demand through sub-modules, and at the same time, different users can have different usage permissions for the same resource.
-The platform predefines three roles for each resource in the submodule, namely Admin, Editor and Viewer.
+- In the `Global Management` -> `Access Control` -> `Roles` section, find the corresponding platform role
+  in the role list, click the role name to access details, click the `Related Members` button, select the user or group, and click `OK`.
 
-- The Admin role has administrative rights to the resource and can authorize the resource to be used by others;
-- The Editor role has permission to use resources and can edit and view resources;
-- The Viewer role has view-only access to resources.
+    ![Related Members Button](../../images/newrole05.png)
 
-For example, the NS Admin role in Namespace01 under cluster A in container management can manage, edit, and view Namespace01, and can authorize other users to NS Admin, NS Editor, and NS Viewer roles.
-The NS Editor role of Namespace01 can edit and view Namespace01, and can deploy applications.
-The Viewer role for Namespace01 can only view Namespace01.
+## Workspace Roles
 
-Submodules that support this mode: [Container Management](../../../kpanda/intro/what.md)
+Workspace roles are fine-grained roles that grant users management permissions, view permissions,
+or Workbench-related permissions for a specific workspace. Users with these roles can only manage
+the assigned workspace and cannot access other workspaces. DCE 5.0 provides 3 pre-defined workspace
+roles that users can directly use:
 
-You can go to `Container Management` -> `Privilege Management`, select `Add Authorization` to grant Cluster or Namespace permissions to users/groups.
+- Workspace Admin
+- Workspace Editor
+- Workspace Viewer
 
-!!! note
+![3 pre-defined workspace roles](../../images/newrole06.png)
 
-    In this manual, Cluster refers to cluster; NS is the abbreviation of Namespace, that is, namespace.
-
-## Resource-Based Management Mode
-
-1. The resource-based management mode depends on the workspace and applies the role permissions of users/user groups in the workspace to the resources under the workspace through a centralized and unified access control policy, achieving cross-submodule authorization for users (user groups) to access resources. For example, if user A is a Workspace Editor role in Workspace 01, they have Editor permissions for all resources under Workspace 01. A workspace usually refers to a project or environment, and the resources in each workspace are physically isolated from those in other workspaces. You can grant different access permissions to users (user groups) for the same group of resources through "Authorization" in the workspace. At the same time, the workspace contains various types of resources in different modules, and different types of resources are presented differently in the workspace.
-
-    - Module Name: [Application Workspace](../../../amamba/intro/what.md), [Microservice Engine](../../../skoala/intro/what.md)
-
-        Because these modules do not support the authorization modes of global management mode and submodule management mode, they rely solely on the workspace for authorization. Therefore, all resources are created under the workspace. After creation, the resources are automatically bound to the workspace to ensure that they can be authorized and used after creation. After these resources are created, they will not be automatically displayed in the resource group or shared resources of the workspace and can only be presented in the resource list of each module. (Any role with a Workspace role can enter the above modules)
-
-    - [Container Management](../../../kpanda/intro/what.md)
-
-        Container Management supports three authorization modes: global management mode, submodule management mode, and resource-based management mode. Therefore, in the Container Management module, you can choose to grant users/user groups the Kpanda Owner role through the User and Access Control module, or grant users/user groups the corresponding permissions for a resource through the permission management function of the Container Management module, or inherit the role permissions of users/user groups in the workspace by binding resources (clusters or Namespaces) to the workspace. Because there are two states of bound and unbound workspaces for resources in Container Management, to distinguish between the two different states, resources bound to the workspace will be presented in the workspace-resource group, and both the workspace-resource group and the resource list of Container Management provide binding/unbinding entry points for resources. (Admin role or Workspace Admin + Kpanda Owner role can perform resource binding)
-
-    - [Service Mesh](../../../mspider/intro/what.md)
-
-        Due to the special nature of its own resources, Service Mesh also has two states of bound and unbound. Therefore, you can manage the resources in Service Mesh through the Admin role, or bind resources (Mesh or Mesh-Namespace) to the workspace to enable users/user groups to obtain permissions for resources in Service Mesh through the workspace. The bound resources will be displayed in the resource group of the workspace. Currently, only the Service Mesh module provides a resource binding entry point. (Admin role can perform resource binding)
-
-2. Submodules that support this mode: Application Workspace, Microservice Engine, Middleware, Container Management, Service Mesh.
-
-3. You can create a workspace through `Global Management` -> `Workspace and Folders`, and grant users/user groups Workspace Admin, Workspace Editor, Workspace Viewer roles in `Workspace` -> `Authorization`.
+Moreover, DCE 5.0 supports the creation of custom workspace roles with customized content as needed.
+For example, creating a workspace role that includes all functional permissions in the Workbench.
+Since the Workbench depends on workspaces, the platform will automatically select the "view" permission
+for workspaces by default. Please do not manually deselect it. If User A is granted this role in
+Workspace 01, they will have all functional permissions related to the Workbench in Workspace 01.
 
 !!! note
 
-    Resource refers to the specific data created on the DCE platform through various submodules. Typically, a resource describes one or more objects to be operated on, and each submodule has its own resources and corresponding resource definition details, such as clusters, Namespaces, and gateways. The owner of the resource is the Super Admin account, which has the permission to create/manage/delete resources in each submodule. Ordinary users will not automatically have access permissions to resources without authorization by the resource owner. Usually, the resource owner will add a group of resources to a workspace and then authorize users (user groups) through the workspace to grant them operating permissions for certain resources.
+    Unlike platform roles, workspace roles need to be used within the workspace. Once authorized,
+    users will only have the functional permissions of that role within the assigned workspace.
+
+### Workspace Role Authorization Methods
+
+In the `Global Management` -> `Workspace and Folder` list, find the workspace,
+click `Authorization`, and grant workspace role permissions to the user.
+
+![Authorization Button](../../images/newrole07.png)
+
+![Fill and Select](../../images/newrole08.png)
+
+## Folder Roles
+
+Folder roles have permissions granularity between platform roles and workspace roles.
+They grant users management permissions and view permissions for a specific folder and its sub-folders,
+as well as all workspaces within that folder. Folder roles are commonly used in departmental scenarios
+in enterprises. For example, User B is a leader of a first-level department and usually has management
+permissions over the first-level department, all second-level departments under it, and projects within
+those departments. In this scenario, User B is granted admin permissions for the first-level folder,
+which also grants corresponding permissions for the second-level folders and workspaces below them.
+DCE 5.0 provides 3 pre-defined folder roles that users can directly use:
+
+- Folder Admin
+- Folder Editor
+- Folder Viewer
+
+![3 pre-defined folder roles](../../images/newrole09.png)
+
+Additionally, DCE 5.0 supports the creation of custom folder roles with customized content as needed.
+For example, creating a folder role that includes all functional permissions in the Workbench.
+If User A is granted this role in Folder 01, they will have all functional permissions related
+to the Workbench in all workspaces within Folder 01.
+
+!!! note
+
+    The functionality of modules depends on workspaces, and folders provide further grouping mechanisms
+    with permission inheritance capabilities. Therefore, folder permissions not only include the folder
+    itself but also its sub-folders and workspaces.
+
+### Folder Role Authorization Methods
+
+In the `Global Management` -> `Workspace and Folder` list, find the folder,
+click `Authorization`, and grant folder role permissions to the user.
+
+![Authorization Button](../../images/newrole10.png)
+
+![Fill and Select](../../images/newrole11.png)

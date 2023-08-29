@@ -11,7 +11,7 @@ hide:
 
 2. You can click the `New Instance` button in the upper right corner of the list.
 
-    > If you are using it for the first time, you need to [select the workspace first](../../first-visit.md), and then click `Deploy Now` to create a MinIO instance.
+    > If you are using it for the first time, you need to [select the workspace first](../../common/first-visit.mdick `Deploy Now` to create a MinIO instance.
 
     <!--screenshot-->
 

@@ -9,9 +9,9 @@ hide:
 
 ## 前提条件
 
-1. 在 DCE 5.0 集群内使用 SpiderPool，需要结合 [Macvlan](../multus-underlay/macvlan.md) + [Multus](../multus-underlay/what.md) + [Calico](../calico/what.md)/[Cillium](../cilium/what.md)。
+1. 在 DCE 5.0 集群内使用 SpiderPool，需要结合 [Macvlan](../multus-underlay/macvlan.md) + [Multus](../multus-underlay/index.md) + [Calico](../calico/index.md)/[Cillium](../cilium/index.md)。
 
-2. 使用前请先安装 [Multus](../multus-underlay/install.md) 以及 Underlay CNI（[Macvlan](../multus-underlay/macvlan.md) 或 [SRIOV](../multus-underlay/sriov.md)），并确认待使用的网卡接口和子网。
+2. 使用前请先安装 [Multus](../multus-underlay/install.md) 以及 Underlay CNI（[Macvlan](../multus-underlay/macvlan.md) 或 [SR-IOV](../multus-underlay/sriov.md)），并确认待使用的网卡接口和子网。
 
 ## 安装步骤
 
@@ -37,7 +37,7 @@ hide:
 
     - `Global Setting` —> `global image Registry`：设置所有镜像的仓库地址，默认已经填写了可用的在线仓库，如果是私有化环境，可修改为私有仓库地址。
 
-    - `Spiderpool Agent Setting` —> `Spiderpool Agent Image repository`：设置镜像名，保持默认即可。
+    - `Spiderpool Agent Setting` —> `Spiderpool Agent Container registry`：设置镜像名，保持默认即可。
 
     - `Spiderpool Agent Setting` —> `Spiderpool Agent Prometheus` -> `Enable Metrics`：若启用，Spiderpool Agent 组件会收集指标信息，以供外部采集。
 

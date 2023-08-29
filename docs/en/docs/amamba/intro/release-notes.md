@@ -2,6 +2,89 @@
 
 This page lists the release notes for Application Workspace to help you understand the development and feature changes in each version.
 
+## 2023-07-31
+
+### v0.19.2
+
+#### New Features
+
+- **Added** Support for navigating to Jira to view details in the Issues interface
+- **Added** Status indicators for clusters
+- **Added** Editing YAML, adding components, editing components, editing operational features, and other functionalities for OAM applications
+- **Added** Support for sorting pipelines based on recent run time
+- **Added** Support for Sonarqube configuration and code quality result steps in pipelines
+- **Added** Integration of Sonarqube instances in the toolchain
+- **Added** Default binding of native applications when creating applications based on git, jar, and container images in the wizard
+
+#### Enhancements
+
+- **Optimized** Steps to integrate gitlab with jenkins credentials
+- **Optimized** Display of binding time and added a division for sonarqube instances with bound workspaces in the administrator view
+- **Optimized** Fixed the issue of the cache not expiring in apiserver
+
+## 2022-06-30
+
+### v0.18.1
+
+#### New Features
+
+- **Added**: Added permission support for running pipelines in the pipeline module.
+- **Added**: Added support for updating and deleting native applications and their subresources.
+- **Added**: Added basic functionality for creating and managing OAM (Open Application Model) applications.
+- **Added**: Installed Kubevela open-source components.
+- **Added**: Added support for automatic and manual synchronization of toolchain resources, along with corresponding metric indicators.
+- **Added**: Added version information to pipeline templates.
+- **Added**: Added support for creating native applications and viewing their resource information.
+- **Added**: Added cluster-wide check for nginx ingress-class.
+
+#### Fixes
+
+- **Fixed**: Fixed an issue where an error occurred on the native application list page when the target cluster did not have the CRD (Custom Resource Definition) for native applications installed.
+- **Fixed**: Fixed an issue where no values were modified when updating pipeline credentials, resulting in a null return when password information was not returned.
+- **Fixed**: Fixed the problem where the orphan strategy for multi-branch pipelines showed as -1 when it was empty.
+
+#### Improvements
+
+- **Improved**: Optimized API handling for exceptional scenarios in pipelines.
+- **Improved**: Added a status field to display the runtime status of clusters in the API.
+- **Improved**: Optimized hardcoding to support deployment in different namespaces.
+- **Improved**: When integrating with GitLab, returning the GitLab address.
+- **Improved**: Returning toolchainID when integrating GitLab with Jenkinsfile-based pipelines and multi-branch pipelines.
+
+## 2023-6-15
+
+### v0.17.4
+
+#### Fixes
+
+- **Fixed**: Resolved an issue with abnormal operations in the canary release tasks.
+
+## 2022-05-31
+
+### v0.17.3
+
+#### New Features
+
+- **Added**: API now supports selecting integrated code repositories using code selectors.
+- **Added**: Added support for nginx-ingress based canary release strategy.
+- **Added**: API now supports resource topology for applications.
+- **Added**: API unified credentials.
+- **Added**: Added version information to pipeline templates.
+- **Added**: Added support for creating native applications and viewing their resource information.
+
+#### Fixes
+
+- **Fixed**: Resolved the issue where containers in container images didn't support underscores.
+- **Fixed**: Resolved the error with replica numbers in blue-green deployments.
+- **Fixed**: Fixed the problem where the orphan strategy for multi-branch pipelines showed as -1 when it was empty.
+
+#### Improvements
+
+- **Improved**: Added retry functionality to the http-client of the jira-provider, improving the handling speed of pipeline events.
+- **Improved**: Improved the handling speed of pipeline events.
+- **Improved**: Refactored pipeline templates for from-git and from-jar.
+- **Improved**: Unified the URL for requesting Jenkins, for both regular pipelines and multi-branch pipelines.
+
 ## 2022-04-30
 
 ### v0.16.1

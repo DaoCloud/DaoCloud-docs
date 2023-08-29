@@ -21,7 +21,7 @@
 
 2. 在左侧导航栏底部，点击`全局管理` -> `审计日志`。
 
-    ![审计日志](../../images/audit01.png)
+    ![审计日志](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/audit01.png)
 
 ## 用户操作
 
@@ -29,15 +29,15 @@
 
 点击某个事件最右侧的 `⋮`，可以查看事件详情。
 
-![用户审计日志](../../images/audit02.png)
+![用户审计日志](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/audit02.png)
 
 事件详情如下图所示。
 
-![用户事件详情](../../images/audit03.png)
+![用户事件详情](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/audit03.png)
 
 点击右上角的`导出`按钮，可以按 CSV 和 Excel 格式导出当前所选时间范围内的用户操作日志。
 
-![导出](../../images/audit04.png)
+![导出](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/audit04.png)
 
 ## 系统操作
 
@@ -45,17 +45,17 @@
 
 同样点击某个事件最右侧的 `⋮`，可以查看事件详情。
 
-![系统事件详情](../../images/audit05.png)
+![系统事件详情](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/audit05.png)
 
 点击右上角的`导出`按钮，可以按 CSV 和 Excel 格式导出当前所选时间范围内的系统操作日志。
 
-![导出](../../images/audit06.png)
+![导出](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/audit06.png)
 
 ## 设置
 
 在`设置`页签中，您可以清理用户操作和系统操作的审计日志。
 
-![清理](../../images/audit07.png)
+![清理](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/audit07.png)
 
 可以手动清理，建议清理前先导出并保存。也可以设置日志的最长保存时间实现自动清理。
 

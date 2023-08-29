@@ -17,7 +17,7 @@ This page describes how to configure multiple NICs for workload Pods in combinat
 ## Prerequisites
 
 1. [Install SpiderPool](../../modules/spiderpool/install.md).
-2. [Install Multus with Macvlan/SRI-OV](../../modules/multus-underlay/install.md).
+2. [Install Multus with Macvlan/SR-IOV](../../modules/multus-underlay/install.md).
 3. If you use manual selection of IP pool, [create IP subnet and IP pool](../../modules/spiderpool/createpool.md) in advance. If you use automatic creation of a fixed IP pool, [create  IP pool](../../modules/spiderpool/createpool.md) in advance.
 
 ## Steps
@@ -36,7 +36,7 @@ This page describes how to configure multiple NICs for workload Pods in combinat
 
         - eth0 (default NIC): Overlay CNI, Calico/Cilium is the default.
 
-        - net1: Underlay CNI configuration is optiional, such as Macvlan/SRI-OV. The example here is Macvlan.
+        - net1: Underlay CNI configuration is optiional, such as Macvlan/SR-IOV. The example here is Macvlan.
 
     - `IPPool config`: Rules for Underlay CNI IP allocation.
 

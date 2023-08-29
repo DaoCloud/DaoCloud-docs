@@ -57,17 +57,17 @@ If you want a storage component to be installed in Layer 7 load balancing mode, 
 
 2. In `Helm Apps` -> `Helm Charts`, find and click install `f5network`.
 
-    ![f5network helm](../../images/f5network1.png)
+    ![f5network helm](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/f5network1.png)
 
 3. In `Version selection`, select the version you want to install, and click `Install`.
 
 4. In the Installation Parameters screen, fill in the following information：
 
-    ![f5network install1](../../images/f5network2.png)
+    ![f5network install1](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/f5network2.png)
 
     In the screen as above, fill in `Name`, `Namespace`, and `Version`.
 
-    ![f5network install2](../../images/f5network3.png)
+    ![f5network install2](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/f5network3.png)
 
     Parameters description in the screen as above:
 
@@ -98,9 +98,9 @@ If you want a storage component to be installed in Layer 7 load balancing mode, 
 
     - `Node Label Selector`: set node label selector. The selected node will be used as the entry node in nodePort forwarding mode. If this value is not set, F5 will forward the traffic to the nodePort of all nodes in the cluster.
 
-    - `Forward Method`:set the mode for F5 to forward traffic, `nodePort` and `cluster` mode. For explanation of the mode, refer to [introduction](what.md).
+    - `Forward Method`:set the mode for F5 to forward traffic, `nodePort` and `cluster` mode. For explanation of the mode, refer to [introduction](index.md).
    
-    ![f5network install2](../../images/f5network4.png)
+    ![f5network install2](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/f5network4.png)
 
     Parameters description in the screen as above:
 

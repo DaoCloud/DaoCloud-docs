@@ -158,6 +158,6 @@ Of course, in practical applications, we can also perform more optimizations acc
 In general, to improve the resource utilization of Kubernetes, it is only necessary to conduct a comprehensive analysis of the running mode and resource usage of the application.
 And using appropriate tools and methods to improve resource utilization can make the Kubernetes cluster run more efficiently.
 
-[Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
-[Install DCE5.0](../install/intro.md){ .md-button .md-button--primary }
+[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
+[Install DCE5.0](../install/index.md){ .md-button .md-button--primary }
 [Free Trial](../dce/license0.md){ .md-button .md-button--primary }

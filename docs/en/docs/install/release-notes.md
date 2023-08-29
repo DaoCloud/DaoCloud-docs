@@ -7,6 +7,92 @@ Date: 2023-06-29
 
 This page lists the Release Notes of the installer, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-7-31
+
+### v0.10.0
+
+#### Added
+
+- **Added** Support for Oracle Linux R8-U7 operating system
+- **Added** Support for flexibly exposing kind container mappings to the host machine's ports
+- **Added** import-artifact subcommand supports importing offline resources based on external services defined in clusterConfig.yaml configuration file
+
+#### Improved
+
+- **Improved** For environments deployed using the installer through external OS repo, optimized the ability to select external OS repo when creating a cluster in container management
+- **Improved** Refactored and abstracted clusterConfig detection layer
+- **Improved** Improved error messages for pre-requisite dependency installation script
+- **Improved** Allow installation to continue when ES health status is 'yellow' during minimal installation process
+- **Improved** Eliminated redundant image integration steps in import-artifact subcommand
+- **Improved** Expanded default expansion of fullPackagePath property in clusterConfig template for offline resource external or built-in scenarios
+
+#### Fixed
+
+- **Fixed** incorrect detection of external image service address
+- **Fixed** formatting error in kubeconfig output by spark kind cluster
+- **Fixed** issue of multiple version charts appearing due to unpacking different version offline packages to the same directory
+- **Fixed** incorrect instruction set architecture information in prerequisite.tgz
+- **Fixed** import-artifact exception when -C is not specified
+- **Fixed** issue where incorrect exit command caused installer exit prompt message not to be displayed
+- **Fixed** certificate authentication failure for kube-controller-manager and kube-scheduler caused by podman base + kind restart
+- **Fixed** issue where printing embedded manifest subcommand command indicator would return full mode manifest as long as it is not specified as `install-app`
+- **Fixed** command name typo for printing embedded manifest subcommand
+- **Fixed** failure to import arm64 package again for existing amd64 resources in import-artifact subcommand
+
+#### Known Issues
+
+- Upgrading is not supported through the install-app subcommand, only create-cluster subcommand is supported.
+- After restarting, kubelet service fails to start on Redhat 8.6 operating system with error: `failed to initialize top level QOS containers: root container [kubelet kubepods] doesn't exist`
+- When installing a cluster based on TencentOS 3.1, the package manager cannot be correctly identified. If TencentOS 3.1 is needed, please use installer version 0.9.0.
+
+## 2023-6-30
+
+### v0.9.0
+
+#### New Features
+
+- **Added**: The `istio-ingressgateway` now supports high availability mode. When upgrading from v0.8.x or earlier to v0.9.0, the following command must be executed: `./offline/dce5-installer cluster-create -c clusterConfig.yaml -m manifest.yaml --upgrade infrastructure,gproduct`
+- **Added**: Support configuring the exposed bootstrapping kind address and port in the clusterConfig.yaml file.
+- **Added**: The installer now performs a pre-check on each node to verify if lvm2 is installed when using eyebrow storage.
+- **Added**: The installer includes an embedded default upgrade of the k8s version to v1.26.5.
+- **Added**: Support specifying the local file mount path for the bootstrapping kind in the clusterConfig.yaml file.
+- **Added**: Integrated ISO image file import script into the installer binary.
+
+#### Improvements
+
+- **Improved**: Optimized download scripts.
+- **Improved**: Optimized logic and functionality of the `import-artifact` command.
+- **Improved**: Made `isoPath` and `osPackagePath` optional fields in clusterConfig.yaml during the upgrade process.
+- **Improved**: Enhanced temporary file cleanup mechanism in the installer.
+- **Improved**: Enhanced reuse functionality of the bootstrapping node.
+
+#### Fixes
+
+- **Fixed**: Fixed the issue where the ES component could not start in OCP.
+- **Fixed**: Fixed the issue where the UI interface was inaccessible after installing DCE in TencentOS.
+- **Fixed**: Fixed the high probability of failed database creation for middleware databases in arm64 environments.
+- **Fixed**: Fixed shell expansion error in the image upload success check process.
+
+#### Known Issues
+
+- When upgrading from v0.8.x to v0.9.0, the following commands need to be executed for verification:
+
+    - Check if the `istio-ingressgateway` port is `80` or `8080`
+
+        ```bash
+        kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].targetPort}'
+        ```
+
+    - Check if the `istio-ingressgateway` port is `443` or `8443`
+
+        ```bash
+        kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="https")].targetPort}'
+        ```
+  
+    If the output is `80` or `443`, the upgrade command needs to include the `infrastructure` parameter. Example: `./offline/dce5-installer cluster-create -c clusterConfig.yaml -m manifest.yaml --upgrade infrastructure,gproduct`
+
+    If the output is different from the above cases, please follow the upgrade instructions in the document [Upgrade DCE 5.0 Product Modules](upgrade.md).
+
 ## 2023-6-15
 
 ### v0.8.0
@@ -21,10 +107,10 @@ This page lists the Release Notes of the installer, so that you can understand t
 
 #### Fixes
 
-- **Fixed** Fixed the issue of failed image synchronization for Harbor repositories using external HTTP.
-- **Fixed** Fixed indentation error in `clusterConfig.yaml` configuration file.
-- **Fixed** Fixed rendering error in localService configuration when using an external yum repo.
-- **Fixed** Fixed integration issue with external JFrog charts repository.
+- **Fixed** the issue of failed image synchronization for Harbor repositories using external HTTP.
+- **Fixed** indentation error in `clusterConfig.yaml` configuration file.
+- **Fixed** rendering error in localService configuration when using an external yum repo.
+- **Fixed** integration issue with external JFrog charts repository.
 
 ## 2023-5-31
 
@@ -253,8 +339,8 @@ After installing the global cluster, immediately update the configmap kubean-loc
 
 #### Fixes
 
-- **Fixed** Fixed issues with fair cloud service.
-- **Fixed** Fixed issues with image and helm for various submodules.
+- **Fixed** issues with fair cloud service.
+- **Fixed** issues with image and helm for various submodules.
 - **Fixed** Bug fixes for offline package loading.
 
 #### Known issues

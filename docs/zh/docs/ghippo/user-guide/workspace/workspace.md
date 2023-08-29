@@ -11,11 +11,11 @@ hide:
 
 参照以下步骤创建一个工作空间。
 
-1. 使用 admin/folder admin 角色的用户登录 DCE 5.0，点击左侧导航栏底部的`全局管理`。
+1. 使用 admin/folder admin 角色的用户登录 DCE 5.0，点击左侧导航栏底部的`全局管理` -> `工作空间与层级`。
 
-    ![全局管理](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ws01.png)
+    ![全局管理](../../images/ws01.png)
 
-3. 点击左侧导航栏的`工作空间与层级`，点击右上角的`创建工作空间`按钮。
+3. 点击右上角的`创建工作空间`按钮。
 
     ![创建工作空间](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ws02.png)
 

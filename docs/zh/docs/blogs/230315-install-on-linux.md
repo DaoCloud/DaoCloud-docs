@@ -161,7 +161,7 @@ precheck pass..
     bash install_prerequisite.sh online community 
     ```
 
-1. 在主机下载 dce5-installer 二进制文件（也可以[通过浏览器下载](../download/dce5.md)）
+1. 在主机下载 dce5-installer 二进制文件（也可以[通过浏览器下载](../download/index.md)）
 
     ```shell
     export VERSION=v0.5.0
@@ -178,7 +178,8 @@ precheck pass..
 
     !!! note
 
-        kind 集群仅支持 NodePort 模式。
+        - kind 集群仅支持 NodePort 模式。
+        - 如果是公有云机器，则只能手动指定公网 IP：`./dce5-installer install-app -z -k {公网IP}:8888`
 
 1. 安装完成后，命令行会提示安装成功。恭喜您！
 

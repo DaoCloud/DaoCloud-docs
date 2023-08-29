@@ -6,7 +6,7 @@ hide:
 
 # DaoCloud Enterprise 5.0
 
-DaoCloud Enterprise 5.0 is a high-performance and scalable cloud-native operating system
+DaoCloud Enterprise 5.0 (DCE 5.0) is a high-performance and scalable cloud-native operating system
 that provides a consistent and stable experience in any infrastructure or environment.
 It supports heterogeneous clouds, edge clouds, and multicloud management. DCE 5.0
 integrates the latest service mesh and microservice technologies, enabling tracking
@@ -26,18 +26,18 @@ and unleashes cloud-native productivity.
 
 <div class="grid cards" markdown>
 
-- :fontawesome-solid-jet-fighter-up: **Install** [Installation instructions](install/intro.md)
-- :octicons-container-16: **Container Management** [Cluster/node/workload infrastructure](kpanda/intro/what.md)
-- :fontawesome-solid-user-group: **Global Management** [Login/Permissions/Appearance](ghippo/intro/what.md)
-- :material-monitor-dashboard: **Observability** [One-stop graphical dashboard](insight/intro/what.md)
-- :material-microsoft-azure-devops: **Workbench** [CI/CD pipeline](amamba/intro/what.md)
-- :material-cloud-check: **Multicloud Management** [Multicloud instance/workload/policy](kairship/intro/what.md)
-- :material-engine: **Microservice Engine** [Microservice governance and gateway](skoala/intro/what.md)
-- :material-table-refresh: **Service Mesh** [Non-intrusive service governance](mspider/intro/what.md)
-- :material-middleware: **Middleware** [ES, Kafka, MinIO, MySQL, etc.](middleware/what.md)
-- :material-warehouse: **Container Registry** [Registry integration and hosting service](kangaroo/what.md)
-- :material-dot-net: **Network** [Multi-CNI fusion solution](network/intro/what-is-net.md)
-- :floppy_disk: **Storage** [Containerized storage](storage/what.md)
+- :fontawesome-solid-jet-fighter-up: **Install** [Installation instructions](install/index.md)
+- :octicons-container-16: **Container Management** [Cluster/node/workload infrastructure](kpanda/intro/index.md)
+- :fontawesome-solid-user-group: **Global Management** [Login/Permissions/Appearance](ghippo/intro/index.md)
+- :material-monitor-dashboard: **Observability** [One-stop graphical dashboard](insight/intro/index.md)
+- :material-microsoft-azure-devops: **Workbench** [CI/CD pipeline](amamba/intro/index.md)
+- :material-cloud-check: **Multicloud Management** [Multicloud instance/workload/policy](kairship/intro/index.md)
+- :material-engine: **Microservice Engine** [Microservice governance and gateway](skoala/intro/index.md)
+- :material-table-refresh: **Service Mesh** [Non-intrusive service governance](mspider/intro/index.md)
+- :material-middleware: **Middleware** [ES, Kafka, MinIO, MySQL, etc.](middleware/index.md)
+- :material-warehouse: **Container Registry** [Registry integration and hosting service](kangaroo/index.md)
+- :material-dot-net: **Network** [Multi-CNI fusion solution](network/intro/index.md)
+- :floppy_disk: **Storage** [Containerized storage](storage/index.md)
 
 </div>
 
@@ -63,7 +63,7 @@ day by day, making things better over time.
      can effectively solve the problem of multicloud application disaster recovery, helping
      enterprises build multicloud and hybrid cloud digital infrastructure.
 
-     **Modules involved**: [Global Management](ghippo/intro/what.md), [Container Management](kpanda/intro/what.md), [Multicloud Management](kairship/intro/what.md), [cloud native network](network/intro/what-is-net.md), [cloud native storage](storage/what.md), Heterogeneous architecture
+     **Modules involved**: [Global Management](ghippo/intro/index.md), [Container Management](kpanda/intro/index.md), [Multicloud Management](kairship/intro/index.md), [cloud native network](network/intro/index.md), [cloud native storage](storage/index.md), Heterogeneous architecture
 
     ![multicloud](./images/01multi-cloud.png)
 
@@ -78,7 +78,7 @@ day by day, making things better over time.
      etc., enabling self-service application, elastic expansion, high concurrent processing, and high
      stability and availability of data services.
 
-     **Related modules**: [Global Management](ghippo/intro/what.md), [Container Management](kpanda/intro/what.md), [Cloud Native Network](network/intro/what-is-net.md), [cloud native storage](storage/what.md), [selected middleware](middleware/what.md)
+     **Related modules**: [Global Management](ghippo/intro/index.md), [Container Management](kpanda/intro/index.md), [Cloud Native Network](network/intro/index.md), [cloud native storage](storage/index.md), [selected middleware](middleware/index.md)
 
     ![data](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/02data.jpg)
 
@@ -93,7 +93,7 @@ day by day, making things better over time.
      microservice gateways, ensuring continuous availability of microservice applications. Additionally,
      DCE 5.0 introduces independent open-source eBPF mesh acceleration technology to comprehensively improve traffic forwarding efficiency.
 
-     **Related modules**: [Global Management](ghippo/intro/what.md), [Container Management](kpanda/intro/what.md), [Microservice Engine](skoala/intro/what.md), [Service Mesh](mspider/intro/what.md), [Observability](insight/intro/what.md), [Workbench ](amamba/intro/what.md), [Cloud Native Network](network/intro/what-is-net.md), [Cloud Native Storage](storage/what.md)
+     **Related modules**: [Global Management](ghippo/intro/index.md), [Container Management](kpanda/intro/index.md), [Microservice Engine](skoala/intro/index.md), [Service Mesh](mspider/intro/index.md), [Observability](insight/intro/index.md), [Workbench](amamba/intro/index.md), [Cloud Native Network](network/intro/index.md), [Cloud Native Storage](storage/index.md)
 
     ![microservie engine](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/03msgov.jpg)
 
@@ -110,7 +110,8 @@ day by day, making things better over time.
 
      *[eBPF]: Extended Berkeley Packet Filter, which is a component of the Linux kernel that can run sandboxed programs in the kernel
 
-     **Modules involved**: [Global Management](ghippo/intro/what.md), [Container Management](kpanda/intro/what.md), [Observability](insight/intro/what.md), [cloud-native network](network/intro/what-is-net.md), [cloud-native storage](storage/what.md)
+     **Modules involved**: [Global Management](ghippo/intro/index.md), [Container Management](kpanda/intro/index.md),
+     [Observability](insight/intro/index.md), [cloud-native network](network/intro/index.md), [cloud-native storage](storage/index.md)
 
     ![Observability](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/04insight.jpg)
 
@@ -121,7 +122,8 @@ day by day, making things better over time.
      technology, products, operation services, and other capabilities. Additionally, it
      provides out-of-the-box ecological application software, creating a complete solution system.
 
-     **Related modules**: [Global Management](ghippo/intro/what.md), [Container Management](kpanda/intro/what.md), [Cloud Native Network](network/intro/what-is-net.md), [cloud native storage](storage/what.md), app store, product ecology
+     **Related modules**: [Global Management](ghippo/intro/index.md), [Container Management](kpanda/intro/index.md),
+     [Cloud Native Network](network/intro/index.md), [cloud native storage](storage/index.md), app store, product ecology
 
 === "App Delivery"
 
@@ -134,7 +136,9 @@ day by day, making things better over time.
      construction and deployment of applications, innovatively introducing GitOps and
      progressive delivery capability systems, achieving more refined management and operation of applications.
 
-     **Modules involved**: [Global Management](ghippo/intro/what.md), [Container Management](kpanda/intro/what.md), [Workbench](amamba/intro/what.md), [container registry](kangaroo/what.md), [cloud native network](network/intro/what-is-net.md), [cloud native storage](storage/what.md)
+     **Modules involved**: [Global Management](ghippo/intro/index.md), [Container Management](kpanda/intro/index.md),
+     [Workbench](amamba/intro/index.md), [container registry](kangaroo/index.md), [cloud native network](network/intro/index.md),
+     [cloud native storage](storage/index.md)
 
     ![app delivery](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/06appdeliv.jpg)
 
@@ -150,11 +154,13 @@ day by day, making things better over time.
      ensuring the stability and reliability of the heterogeneous application operating
      environment. Furthermore, it helps speed up the heterogeneous process.
 
-     **Related modules**: [Global Management](ghippo/intro/what.md), [Container Management](kpanda/intro/what.md), [Cluster Lifecycle Management](community/kubean.md), [heterogeneous Middleware](middleware/what.md), [Cloud Native Network](network/intro/what-is-net.md), [Cloud Native Storage](storage/what.md)
+     **Related modules**: [Global Management](ghippo/intro/index.md), [Container Management](kpanda/intro/index.md),
+     [Cluster Lifecycle Management](community/kubean.md), [Middleware](middleware/index.md),
+     [Cloud Native Network](network/intro/index.md), [Cloud Native Storage](storage/index.md)
 
     ![Heterogeneous](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/08xinchuan.jpg)
 
-=== "Cloud Edge Collaboration"
+=== "Cloud to Edge Continuum"
 
      DCE 5.0 extends cloud-native capabilities to the edge by adopting the edge cluster
      and edge node mode. It moves the computing power of the data center down, while
@@ -165,7 +171,7 @@ day by day, making things better over time.
      and maintenance, management, and control on the Internet. Additionally, it realizes
      true integration of cloud and edge by bringing cloud-native capabilities to the edge.
 
-    ![Cloud edge collaboration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/09cloud-edge.jpg)
+    ![Cloud to edge continuum](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/09cloud-edge.jpg)
 
 === "Cloud Native Base"
 
@@ -180,8 +186,10 @@ day by day, making things better over time.
      the current enterprise network infrastructure and lower the threshold for enterprises
      to use cloud-native applications.
 
-     **Related modules**: [Global Management](ghippo/intro/what.md), [Container Management](kpanda/intro/what.md), [Cluster Lifecycle Management](community/kubean.md), [cloud-native full-scenario network](network/intro/what-is-net.md), [cloud-native storage](storage/what.md)
+     **Related modules**: [Global Management](ghippo/intro/index.md), [Container Management](kpanda/intro/index.md),
+     [Cluster Lifecycle Management](community/kubean.md), [cloud-native network](network/intro/index.md),
+     [cloud-native storage](storage/index.md)
 
-[Download DCE 5.0](download/dce5.md){ .md-button .md-button--primary }
-[Install DCE 5.0](install/intro.md){ .md-button .md-button--primary }
+[Download DCE 5.0](download/index.md){ .md-button .md-button--primary }
+[Install DCE 5.0](install/index.md){ .md-button .md-button--primary }
 [Free Trial](dce/license0.md){ .md-button .md-button--primary }

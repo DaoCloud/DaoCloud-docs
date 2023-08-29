@@ -38,7 +38,7 @@ At the same time, when the workload is created:
 
     
 
-- Different workloads need to be scheduled on **different nodes** and use **different subnets**, such as: [Mixed use of SRI-OV and Macvlan CNI](../../plans/ethplan.md). The use process is as follows:
+- Different workloads need to be scheduled on **different nodes** and use **different subnets**, such as: [Mixed use of SR-IOV and Macvlan CNI](../../plans/ethplan.md). The use process is as follows:
 
     
 

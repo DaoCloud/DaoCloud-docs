@@ -37,7 +37,7 @@ The steps to create a pipeline based on a built-in template are as follows:
     - Dockerfile path: the absolute path of the Dockerfile in the code warehouse, required
     - Target mirror address: enter the name of the mirror warehouse, required
     - tag: Add a tag to the newly generated image after running this pipeline
-    - Image repository credentials: Credentials for accessing the mirror repository. If it is a private warehouse, you need to [create a credential](../credential.md) in advance and select the credential here
+    - Container registry credentials: Credentials for accessing the mirror repository. If it is a private warehouse, you need to [create a credential](../credential.md) in advance and select the credential here
 
         <!--![]()screenshots-->
 

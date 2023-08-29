@@ -47,7 +47,7 @@ Workspaces can be mapped to various concepts such as projects, tenants, enterpri
 
     
 
-1. Click `Workspace and Hierarchy` in the left navigation bar, and click the `Create Workspace` button in the upper right corner.
+1. Click `Workspace and Folder` in the left navigation bar, and click the `Create Workspace` button in the upper right corner.
 
     
 
@@ -71,7 +71,7 @@ Follow the steps below to prepare a cluster.
 
 Return to `Global Management` to add clusters for the workspace.
 
-1. Click `Global Management` -> `Workspace and Hierarchy` -> `Shared Resources`, click a workspace name, and click the `New Shared Resource` button.
+1. Click `Global Management` -> `Workspace and Folder` -> `Shared Resources`, click a workspace name, and click the `New Shared Resource` button.
 
     
 

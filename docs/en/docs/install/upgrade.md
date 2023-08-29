@@ -1,115 +1,142 @@
-# Upgrade DCE 5.0 Submodules
+# Upgrading DCE 5.0 Modules
 
-DCE 5.0 consists of more than ten sub-modules, such as container management, global management, observability, etc. Each sub-module can be independently upgraded.
+The upgrade of DCE 5.0 modules involves upgrading the product functionality modules and the infrastructure modules of DCE 5.0.
 
-This guide will introduce how to use `dce5-installer` package to upgrade any of these submodules offline.
+DCE 5.0 consists of several sub-modules, including container management, global management, insight, and more.
+These are primarily defined in the `components` section of the [manifest.yaml](commercial/manifest.md) file.
+
+The components specific to the infrastructure modules of DCE 5.0 are defined in the `infrastructures` section of the [manifest.yaml](commercial/manifest.md) file.
 
 ## Prerequisites
 
-- Deploy DCE 5.0, refer to [Offline Install Enterprise Package](commercial/start-install.md).
-- Make sure that your bootstrapping node is running well.
-- Decide which version you want to upgrade to, refer to [Release Notes](release-notes.md).
+- You need to have a DCE 5.0 cluster environment. Refer to [Offline Deployment of Commercial Edition](commercial/start-install.md).
+- Ensure that your ignition machine is still alive.
+- Confirm the version you want to upgrade to. See [Release Notes](release-notes.md).
 
-## Upgrade Steps
+## Offline Upgrade Steps
 
-This section demonstrates how to upgrade a submodule from v0.5.0 to v0.6.0.
+This demonstration shows how to upgrade from v0.8.0 to v0.9.0. Currently, when upgrading from a lower version to v0.9.0, it is necessary to upgrade both the product functionality modules and the infrastructure modules of DCE 5.0 in order to make use of the high availability feature of the `istio-gateway` component.
+
+### Step 1: Download the v0.9.0 Offline Package
+
+You can download the latest version from the [Download Center](https://docs.daocloud.io/download/dce5/).
+
+| CPU Architecture | Version | Download Link                                                 |
+| :--------------- | :------ | :----------------------------------------------------------- |
+| AMD64            | v0.9.0  | [Download Link](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.9.0-amd64.tar) |
+| ARM64            | v0.9.0  | [Download Link](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.9.0-arm64.tar) |
+
+After downloading, extract the offline package. For example, for the AMD64 architecture:
+
+```bash
+tar -xvf offline-v0.9.0-amd64.tar
+```
+
+### Step 2: Configure the Cluster Configuration File clusterConfig.yaml
 
 !!! note
 
-    Only the submodules that have already been installed in the current environment will be upgraded. Those not installed will be skipped.
+- Make sure that the [cluster configuration file](commercial/cluster-config.md) is consistent with the parameters used during installation.
+- Currently, only the `builtin` method of `imagesAndCharts` has been tested.
 
-1. Download v0.6.0 Offline Package
+The file is located under the `offline/sample` directory after extracting the offline package. Refer to the following sample configuration:
 
-    You can download the latest version from the [Download Center](https://docs.daocloud.io/download/dce5/).
+```yaml
+apiVersion: provision.daocloud.io/v1alpha3
+kind: ClusterConfig
+metadata:
+spec:
+  clusterName: my-cluster
+  loadBalancer:
+    type: metallb 
+    istioGatewayVip: 172.30.**.**/32 
+    insightVip: 172.30.**.**/32      
+  masterNodes:
+    - nodeName: "g-master1" 
+      ip: 172.30.**.**
+      ansibleUser: "root"
+      ansiblePass: "*****"
+  workerNodes:
+    - nodeName: "g-worker1"
+      ip: 172.30.**.**
+      ansibleUser: "root"
+      ansiblePass: "*****"
+    - nodeName: "g-worker2"
+      ip: 172.30.**.**
+      ansibleUser: "root"
+      ansiblePass: "*****"
+ 
+  fullPackagePath: "/home/installer/offline"
+  osRepos:
+    type: builtin
+    isoPath: "/home/installer/CentOS-7-x86_64-DVD-2207-02.iso"
+    osPackagePath: "/home/installer/os-pkgs-centos7-v0.4.4.tar.gz"
+  imagesAndCharts:
+    type: builtin
+ 
+  addonPackage:
+  binaries:
+    type: builtin  # (1)
+```
 
-    | CPU | Version | Download|
-    | :--------------- | :------ | :----------- |
-    | AMD64            | v0.6.0  | https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.0-amd64.tar |
-    | ARM64            | v0.6.0  | https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.0-arm64.tar |
+1. `official-service` (if omitted or empty), `builtin`, or `external`
 
-    After downloading, decompress the offline package. Take the offline package for AMD64 architecture as an example:
+### Step 3: Configure mainfest.yaml (Optional)
 
-    ```bash
-    tar -xvf offline-v0.6.0-amd64.tar
-    ```
+The file is located under the `offline/sample` directory after extracting the offline package.
 
-2. Modify `clusterConfig.yaml` to make it applicable in your environment.
+#### Configuration of DCE 5.0 Product Functionality Modules
 
-    !!! note
+The components specific to the product functionality modules of DCE 5.0 are defined in the `components` section of the [manifest.yaml](commercial/manifest.md) file. If you don't want to upgrade certain product components, you can disable them. For example, if you want to skip the upgrade for Kpanda (container management), use the following configuration:
 
-        As v0.6.0 updated the structure of `clusterConfig.yaml` file, refer to [Cluster Configuration File Description](commercial/cluster-config.md), you must ensure that the parameters used are consistent with those in v0.5.0 and that the file structure is consistent with that of v0.6.0 during upgrading.
-    
-        Currently, only the `built-in` method of `imagesAndCharts` has been tested.
+```yaml
+  components:
+    kpanda:
+      enable: false
+      helmVersion: 0.16.0
+      variables:
+```
 
-    The file is located in the `offline/sample` directory of the decompressed offline package. The sample configuration file is as follows:
+#### Configuration of DCE 5.0 Infrastructure Modules
 
-    ??? note "Example of `clusterConfig.yaml`"
-        
-        ```yaml
-        apiVersion: provision.daocloud.io/v1alpha3
-        kind: ClusterConfig
-        metadata:
-        spec:
-          clusterName: my-cluster
-          loadBalancer:
-            type: metallb
-            istioGatewayVip: 172.30.**.**/32
-            insightVip: 172.30.**.**/32
-          masterNodes:
-            - nodeName: "g-master1"
-              ip: 172.30.**.**
-              ansibleUser: "root"
-              ansiblePass: "*****"
-          workerNodes:
-            - nodeName: "g-worker1"
-              ip: 172.30.**.**
-              ansibleUser: "root"
-              ansiblePass: "*****"
-            - nodeName: "g-worker2"
-              ip: 172.30.**.**
-              ansibleUser: "root"
-              ansiblePass: "*****"
-        
-          fullPackagePath: "/home/installer/offline"
-          osRepos:
-            type: builtin
-            isoPath: "/home/installer/CentOS-7-x86_64-DVD-2207-02.iso"
-            osPackagePath: "/home/installer/os-pkgs-centos7-v0.4.4.tar.gz"
-          imagesAndCharts:
-            type: builtin
-        
-          addonPackage:
-          binaries:
-            type: builtin # (1)
-        ```
+The components specific to the infrastructure modules of DCE 5.0 are defined in the `infrastructures` section of the [manifest.yaml](commercial/manifest.md) file. For example, the following configuration is for the `hwameiStor` component in the infrastructure module:
 
-        1. official-service (default value), builtin or external
+```yaml
+  infrastructures:
+    hwameiStor:
+      enable: true
+      version: v0.10.4
+      policy: drbd-disabled
+```
 
-3. Configure `mainfest.yaml` (optional)
+!!! note
 
-    The `mainfest.yaml` file locates in the `offline/sample` directory of the decompressed offline package.
+Currently, only the upgrade of product components that are already installed in the current environment is supported. Non-existent components will be skipped during the upgrade process.
 
-    If some submodules do not need upgrade, you can set `enable` as `false`. For example, the following configuration means `Kpanda` (i.e., Container Management) will not be upgraded.
+### Step 4: Start the Upgrade
 
-    ```yaml
-      kpanda:
-        enable: false
-        helmVersion: 0.16.0
-        variables:
-    ```
+#### Upgrade of DCE 5.0 Product Functionality Modules
 
-4. Execute the upgrade command
+Run the upgrade command:
 
-    ```bash
-    ./offline/dce5-installer cluster-create -c sample/clusterconfig.yaml -m sample/manifest.yaml --upgrade 4,5,gproduct
-    ```
+```bash
+./offline/dce5-installer cluster-create -c ./offline/sample/clusterConfig.yaml -m ./offline/sample/manifest.yaml --upgrade gproduct
+```
 
-    Upgrade parameters:
+#### Upgrade of DCE 5.0 Infrastructure Modules
 
-    - `install-app` or `cluster-create`: means the mode used when you installed DCE 5.0. If the original submodules were installed with `cluster-create`, also use this command when upgrading
-    - `--upgrade` can be abbreviated as `-u`.
-    - After v0.7.0, you can only use `--upgrade gproduct`, instead of `--upgrade 4,5,gproduct`
+Run the upgrade command:
 
-    When you succeeded, you will see:
+```bash
+./offline/dce5-installer cluster-create -c ./offline/sample/clusterConfig.yaml -m ./offline/sample/manifest.yaml --upgrade infrastructures
+```
 
-    ![upgrade](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/upgrade.png)
+Explanation of upgrade parameters:
+
+- `install-app` or `cluster-create`: Represents the installation mode type of DCE 5.0. If the initial environment was installed using `cluster-create`, use this command for the upgrade as well.
+- `--upgrade`, can be abbreviated as `-u`: Currently supports upgrading DCE 5.0 product functionality modules (`gproduct`) and infrastructure modules (`infrastructures`).
+- To upgrade both the product functionality modules and the infrastructure modules together, specify the parameter `--upgrade infrastructures,gproduct`.
+
+### Step 5: Successful Installation Message
+
+![upgrade](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/upgrade.png)

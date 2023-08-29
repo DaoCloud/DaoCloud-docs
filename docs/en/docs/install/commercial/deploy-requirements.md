@@ -4,23 +4,21 @@ When deploying DCE 5.0, software planning, hardware planning, and network planni
 
 ## Operating System Requirements
 
+| **Architecture** | **Operating System** | **Kernel Version**                          | Remarks (Installation Guide)                                     |
+| ---------------- | -------------------- | -------------------------------------------- | ------------------------------------------------------- |
+| AMD 64           | CentOS 7.X           | Kernel 3.10.0-1127.el7.x86_64 on an x86_64   | Recommended OS: CentOS 7.9<br />[Offline Installation of DCE 5.0 Enterprise Package](start-install.md) |
+|                  | Redhat 8.X           | 4.18.0-305.el8.x86_64                        | Recommended OS: Redhat 8.4<br />[Offline Installation of DCE 5.0 Enterprise Package](start-install.md) |
+|                  | Redhat 7.X           | 3.10.0-1160.e17.x86                          | Recommended OS: Redhat 7.9<br />[Offline Installation of DCE 5.0 Enterprise Package](start-install.md) |
+|                  | Ubuntu 20.04         | 5.10.104                                     | [Offline Installation of DCE 5.0 Enterprise Package](start-install.md) |
+|                  | UOS V20 (1020a)      | 5.4.0-125-generic                            | [Deploying DCE 5.0 Enterprise Package on UOS V20 (1020a)](../os-install/uos-v20-install-dce5.0.md) |
+|                  | openEuler 22.03      | 5.10.0-60.18.0.50.oe2203.x86_64              | [Offline Installation of DCE 5.0 Enterprise Package](start-install.md) |
+|                  | Oracle Linux R9/R8 U1 | 5.15.0-3.60.5.1.el9uek.x86_64                | [Deploying DCE 5.0 Enterprise Package on Oracle Linux R9 U1](../os-install/oracleLinux-install-dce5.0.md) |
+|                  | TencentOS Server 3.1 | 5.4.119-19.0009.14                           | [Deploying DCE 5.0 Enterprise Package on TencentOS Server 3.1](../os-install/TencentOS-install-dce5.0.md) |
+| ARM 64           | Kylin OS V10 SP2     | 4.19.90-24.4.v2101.ky10.aarch64              | [Offline Installation of DCE 5.0 Enterprise Package](start-install.md) |
+
 !!! note
 
-     For Unicom UOS V20 (1020a) installation guidance document, please refer to [Deploy DCE 5.0 Enterprise Package on UOS V20 (1020a) Operating System](../os-install/uos-v20-install-dce5.0.md)
-
-     Other operating systems in the table below use a unified installation guide document, please refer to [Offline installation of DCE 5.0 commercial version](start-install.md)
-
-     Please refer to [Other Linux Offline Deployment of DCE 5.0 Enterprise Package](../os-install/otherlinux.md)
-
-| **Architecture** | **Operating System** | **Kernel Version** | Remarks |
-| -------- | ------------------- | -------------------- ---------------------- | --------------------------- ----- |
-| AMD 64 | centos 7.X | Kernel 3.10.0-1127.el7.x86_64 on an x86_64 | Operating system recommended CentOS 7.9 |
-| | Redhat 8.X | 4.18.0-305.el8.x86_64 | Recommended operating system Redhat 8.4 |
-| | Redhat 7.X | 3.10.0-1160.e17.x86 | Recommended Operating System Redhat 7.9 |
-| | Ubuntu 20.04 | 5.10.104 | Recommended operating system Ubuntu20.04 |
-| | Unicom UOS V20 | 5.4.0-125-generic | Recommended operating system Unicom UOS V20 (1020a) |
-| | openEuler 22.03 | 5.10.0-60.18.0.50.oe2203.x86_64 | Recommended operating system openEuler 22.03 |
-| ARM 64 | Galaxy Kirin OS V10 SP2 | 4.19.90-24.4.v2101.ky10.aarch64 | - |
+    For operating systems not mentioned in the table above, please refer to the documentation [Other Linux Offline Deployment of DCE 5.0 Enterprise Package](../os-install/otherlinux.md) for installation and deployment instructions.
 
 ## Hardware Requirements
 

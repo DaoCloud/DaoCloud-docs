@@ -40,4 +40,4 @@ hide:
 **开放兼容**
 
 - 基于原生的 Kubernetes 和 Docker 技术，完全兼容 Kubernetes API 和 Kubectl 命令。
-- 提供了丰富的插件体系，扩充云容器集群功能，例如网络插件 [Multus](https://github.com/k8snetworkplumbingwg/multus-cni)、[Cillum](../../network/modules/cilium/what.md)、[Contour](https://projectcontour.io/) 等组件。
+- 提供了丰富的插件体系，扩充云容器集群功能，例如网络插件 [Multus](https://github.com/k8snetworkplumbingwg/multus-cni)、[Cillum](../../network/modules/cilium/index.md)、[Contour](https://projectcontour.io/) 等组件。

@@ -9,7 +9,7 @@ This page lists some frequently asked questions that may arise in container mana
 
 1. Helm application installation failed with "OOMKilled" error message
 
-    ![failure case](../images/faq1.png)
+    ![failure case](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/faq1.png)
 
     As shown in the figure, the container management module will automatically create and launch a Job responsible for installing the specific application. In version v0.6.0, due to unreasonable job resource settings, OOM was caused, affecting application installation. This bug has been fixed in version 0.6.1. If you upgrade to the environment of v0.6.1, it will only take effect in new created or accessed clusters. Existing clusters need to be manually adjusted to take effect.
 
@@ -51,7 +51,7 @@ This page lists some frequently asked questions that may arise in container mana
 
     - Authorization of users in the global management module: Use the admin account to enter `Global Management` -> `User and Access Control` -> `Users` menu, find the corresponding user. In the `Authorized User Groups` tab, if there are roles such as Admin, Kpanda Owner, etc. that have container management permissions, even if the cluster permission or namespace permission is not bound in the container management module, the user can see all clusters. Please refer to [User Authorization Document](../../ghippo/user-guide/access-control/user.md).
 
-    - Workspace binding in the global management module: Use an account to enter `Global Management` -> `Workspace and Hierarchy`, and you can see your authorized workspace. Click on the workspace name.
+    - Workspace binding in the global management module: Use an account to enter `Global Management` -> `Workspace and Folder`, and you can see your authorized workspace. Click on the workspace name.
 
         1. If the workspace is separately authorized to oneself, the user can see their account on the authorization tab. Then check the resource group or shared resource tab. If the resource group is bound with the namespace or the shared resource is bound with the cluster, the user can see the corresponding cluster.
 
@@ -61,7 +61,7 @@ This page lists some frequently asked questions that may arise in container mana
 
     After offline installation, it is common to encounter the failure of pulling the kpanda-shell image when installing Helm applications on the connected cluster, as shown in the figure:
 
-    ![pulling image failed](../images/faq301.png)
+    ![pulling image failed](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/faq301.png)
 
     At this time, just go to the cluster management-cluster settings page, advanced configuration tab, and modify the Helm operation base image to a kpanda-shell image that can be pulled normally by the cluster.
 

@@ -46,7 +46,19 @@
 
     ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scan03.png)
 
-5. 将 SonarQube 地址添加至 Jenkins，请确保可以互通，操作路径：
+5. 在SonarQube里创建Webhook服务器：
+
+    1. 操作路径为：`Administration` -> `Configuration` -> `Webhooks`。
+
+    2. 点击 `Create`，在弹出的对话框中输入 Name 和 Jenkins Console URL（即 SonarQube Webhook 地址，这个地址是前面获取的SonarQube地址+/sonarqube-webhook/）。
+
+    ![scan](../images/sonarqube01.png)
+
+    ![scan](../images/sonarqube02.png)
+
+    ![scan](../images/sonarqube03.png)
+
+6. 将 SonarQube 地址添加至 Jenkins，请确保可以互通：
 
     1. 操作路径为 `Manage Jenkins` -> `Configure System` -> `SonarQube servers` -> ` Add SonarQube` 
 
@@ -67,7 +79,7 @@
         - 前往容器管理->全局服务集群->无状态负载，在 amamba-system 下找到负载 amamba-jenkins，通过 NodePort 的方式暴露该服务。
         - 默认用户名密码为 admin/Admin01
 
-6. 为新项目创建 SonarQube Token，操作路径为 `Create new project` -> `Set Up` -> `Generate` -> `Continue`。
+7. 为新项目创建 SonarQube Token，操作路径为 `Create new project` -> `Set Up` -> `Generate` -> `Continue`。
 
     ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scan04.png)
 

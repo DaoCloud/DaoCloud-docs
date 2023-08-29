@@ -18,6 +18,8 @@ repo_name: DaoCloud/DaoCloud-docs
 repo_url: https://github.com/DaoCloud/DaoCloud-docs
 edit_uri: edit/main/docs/zh/docs/
 
+use_directory_urls: false # disbale https://www.mkdocs.org/user-guide/configuration/#use_directory_urls
+
 # Configuration
 theme:
   name: material
@@ -28,6 +30,7 @@ theme:
   include_search_page: false
   search_index_only: true
   include_homepage_in_sidebar: false
+  
 
   # Static files
   static_templates:
@@ -107,22 +110,22 @@ plugins:
 
   - redirects:
       redirect_maps:
-        "api.md": "dce/what.md"
-        "dce/what-is-dce.md": "dce/what.md"
-        "zh/dce/what.md": "dce/what.md"
+        "api.md": "dce/index.md"
+        "dce/what-is-dce.md": "dce/index.md"
+        "zh/dce/index.md": "dce/index.md"
         "zh/install/install-dce.md": "install/community/k8s/online.md"
 
         # module quick links
-        "kairship.md": "kairship/intro/what.md"
-        "skoala.md": "skoala/intro/what.md"
-        "mspider.md": "mspider/intro/what.md"
-        "insight.md": "insight/intro/what.md"
-        "mcamel.md": "middleware/what.md"
-        "kpanda.md": "kpanda/intro/what.md"
-        "amamba.md": "amamba/intro/what.md"
-        "blog.md": "blog/index.md"
-        "ghippo.md": "ghippo/intro/what.md"
-        "video.md": "video/index.md"
+        "kairship.md": "kairship/intro/index.md"
+        "skoala.md": "skoala/intro/index.md"
+        "mspider.md": "mspider/intro/index.md"
+        "insight.md": "insight/intro/index.md"
+        "mcamel.md": "middleware/index.md"
+        "kpanda.md": "kpanda/intro/index.md"
+        "amamba.md": "amamba/intro/index.md"
+        "blog.md": "blogs/index.md"
+        "ghippo.md": "ghippo/intro/index.md"
+        "video.md": "videos/index.md"
 
 
   - git-revision-date: #每页底部显示文档最后更新日期，安装 pip install mkdocs-git-revision-date-plugin

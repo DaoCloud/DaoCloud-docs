@@ -7,7 +7,7 @@ hide:
 
 DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typical featuers currently supported are as follows.
 
-=== "[Multicluster management](../kpanda/intro/what.md)"
+=== "[Multicluster management](../kpanda/intro/index.md)"
 
 - Unified management of multicluster, supporting Kubernetes clusters in all version ranges to be included in the container management scope.
 
@@ -33,7 +33,7 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
 
 - Unified load management abbility of cross-cluster.
 
-=== "[Continuous business delivery](../amamba/intro/what.md)"
+=== "[Continuous business delivery](../amamba/intro/index.md)"
 
 - Enterprise-level cloud native CI/CD capabilities enable standardized continuous integration and delivery ability, and agile iteration of applications. It meets new business needs quickly, and improve the efficiency of application integration and release.
 
@@ -46,7 +46,7 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
 - DevOps tools popular in the community are integrated. Stepes in a single pipelines can run on multiple operating systems and multiple architecture nodes. Independent deployment on public cloud, private cloud or host is supported, and enterprise owned systems and platform can be well integrated.
   The integration of mainstream software in the industry, such as Kubernetes, Gitlab, SonarQube, Harbor, are supported.
 
-=== "[Multicloud application dispatch](../kairship/intro/what.md)"
+=== "[Multicloud application dispatch](../kairship/intro/index.md)"
 
 - Unified multicloud orchestration management, unified management of multiple cloud instances, and unified request entry.
 
@@ -56,7 +56,7 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
 
 - Multicloud application failover function.
 
-=== "[Unified user authority system](../ghippo/intro/what.md)"
+=== "[Unified user authority system](../ghippo/intro/index.md)"
 
 - Centralized management of user/group, unified user/group management by multi-functional modules, opening up the user system and reducing management, operation and maintenance costs.
 
@@ -68,7 +68,7 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
 
 - Flexible resource division. Resource division and binding based on resource granularity (namespace, cluster, registry, etc.), and unified allocation of container platform resources.
 
-=== "One-stop [Microservice governance](../skoala/intro/what.md)"
+=== "One-stop [Microservice governance](../skoala/intro/index.md)"
 
 - The Microservice registry centrally manages all dynamic Microservices in the cluster.
 
@@ -78,7 +78,7 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
 
 - The Microservice gateway plays an important role in managing the north-south traffic control of Microservices.
 
-=== "[Insight](../insight/intro/what.md)"
+=== "[Insight](../insight/intro/index.md)"
 
 - The application-centric, out-of-the-box, new generation cloud-native observability operation and maintenance platform realizes fast fault location and quick troubleshooting.
 
@@ -88,7 +88,7 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
 
 - It provides unified collection of metrics, logs, and traces, supports multi-dimensional alerts on metrics and logs, and provides a concise and clear visual management interface.
 
-=== "Featured [Middleware](../middleware/what.md)"
+=== "Featured [Middleware](../middleware/index.md)"
 
 - It supports a variety of mainstream middleware: Redis, MySQL, Elasticsearch, RabbitMQ, Kafka, MinIO, etc.
 
@@ -165,8 +165,8 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
 
 - Based on native Kubernetes and Docker technology, fully compatible with Kubernetes API and Kubectl commands.
 - Provides a rich plug-in system to extend the functionality of cloud container clusters, such as Multus,
-  Cillum, Contour, and other [network plug-ins](../network/intro/what.md).
+  Cillum, Contour, and other [network plug-ins](../network/intro/index.md).
 
-[Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [Free Trial](license0.md){ .md-button .md-button--primary }

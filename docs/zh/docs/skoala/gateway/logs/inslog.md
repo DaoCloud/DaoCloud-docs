@@ -20,4 +20,4 @@
 
 !!! info
 
-    如需查看更多日志或下载日志，可前往[可观测性模块](../../../insight/intro/what.md)通过[日志查询](../../../insight/user-guide/data-query/log.md)功能查询或下载特定集群、命名空间、工作负载、容器组的日志。
+    如需查看更多日志或下载日志，可前往[可观测性模块](../../../insight/intro/index.md)通过[日志查询](../../../insight/user-guide/data-query/log.md)功能查询或下载特定集群、命名空间、工作负载、容器组的日志。

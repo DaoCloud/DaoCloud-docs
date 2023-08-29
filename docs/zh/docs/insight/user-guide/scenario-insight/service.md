@@ -36,7 +36,7 @@
 
 在流量指标模块，您可查看到该服务默认一小时内全部请求（包含入口流量和出口流量）的监控指标。您可切换右上角的时间选择器快速选择时间范围，或自定义时间范围。同时，可选择单独查看该服务的入口请求的监控指标或出口请求的流量指标。
 
-![服务监控](../../images/servicedetail01.png)
+![服务监控](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/servicedetail01.png)
 
 ### 操作指标
 

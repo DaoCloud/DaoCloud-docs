@@ -7,11 +7,11 @@ hide:
 
 1. In the `Registry List` find registry you need to remove, on the right side click **`⋯`** and select `Remove`.
 
-    ![remove](../../images/integrate-remove01.png)
+    ![remove](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/integrate-remove01.png)
 
 2. Enter the registry name to confirm that it is the exact one you want to remove, then click `Delete`.
 
-    ![remove](../../images/integrate-remove02.png)
+    ![remove](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/integrate-remove02.png)
 
 !!! note
 

@@ -1,33 +1,43 @@
-# traffic topology
+# Traffic Topology
 
-Click `Traffic Topology` in the left navigation bar to open the page. This feature displays the topological relationship of all services under the mesh. Users can select `View Mode` and `Namespace` to filter and display service nodes.
+DCE 5.0 Service Mesh provides a dynamic flow visualization feature called Traffic Topology.
 
+In the left navigation menu, click on `Traffic Monitoring` -> `Traffic Topology`.
+Here, you can choose the `View`, `Namespace`, `Collection source`, and `Time` to view the service topology.
 
+![Traffic Topology](../images/topo01.png)
 
-## Display setting
+## Display Settings
 
-`Namespace Boundary` is used to set whether to display the namespace boundary wireframe. If selected, services under the same namespace will be framed and the namespace name will be marked.
+There are three options available:
 
+- Namespace Boundary: Displays services partitioned by namespaces.
+- Show Idle Nodes
+- Enable Animation: Shows the dynamic flow direction of traffic.
 
+![Display Settings](../images/topo02.png)
 
-## Service metric data information
+The service topology graph supports operations like panning and zooming.
 
-Click any service, and the sidebar will pop up to display service-related metrics based on the protocol type:
+## Legend
 
-- HTTP service: request rate (RPM), error rate (%), average delay (ms)
+Click on the `Legend` button in the bottom-left corner to see the meaning of the current lines, circles, and colors.
 
-- TCP service: number of connections (number), receiving throughput (B/S), sending throughput (B/S)
+![Legend](../images/topo03.png)
 
+Services are represented by circles, and the color of the circle indicates the health status of the service:
 
+- Healthy (Gray): Error rate = 0 and latency does not exceed 100 ms.
+- Warning (Orange): 0 < Error rate <= 5% or 100 ms < Latency <= 200 ms.
+- Critical (Red): Error rate > 5% or latency > 200 ms.
+- Unknown (Dotted Line): No metric data available.
 
-## health status
+## Service Metrics Information
 
-The health status is used to reflect the status information of services and connections, which are divided into normal, warning, abnormal and unknown, and judged by comparing the error rate and delay index data.
+Click on any service to open a sidebar that displays relevant metrics based on the protocol type:
 
-- OK (gray): error rate = 0 and latency does not exceed 100 ms
+- HTTP Protocol: Error Rate (%), Request Rate (RPM), Average Latency (ms)
+- TCP Protocol: Connection Count, Receive Throughput (B/s), Send Throughput (B/s)
+- Governance Information: View virtual services, destination services, gateways, etc.
 
-- Warning (orange): 0 < error rate <= 5% or 100 ms < delay <= 200 ms
-
-- Abnormal (red): Error rate > 5% or latency > 200 ms
-
-- Unknown (dotted line): no metric data is available
+![Sidebar](../images/topo04.png)

@@ -11,7 +11,7 @@ This page lists the download addresses of installers and image packages.
 
 ### AMD architecture offline image package
 
-1. Download the offline image package on the bootstrapping node. You can download other versions of the offline package from [Download Center](../../download/dce5.md).
+1. Download the offline image package on the bootstrapping node. You can download other versions of the offline package from [Download Center](../../download/index.md).
 
      ```shell
      # Assume VERSION is v0.4.0
@@ -27,7 +27,7 @@ This page lists the download addresses of installers and image packages.
 
 ### ARM architecture offline image package
 
-1. Download the offline image package on the bootstrapping node. You can download other versions of the offline package from [Download Center](../../download/dce5.md).
+1. Download the offline image package on the bootstrapping node. You can download other versions of the offline package from [Download Center](../../download/index.md).
 
      ```shell
      # Assume VERSION is v0.4.0

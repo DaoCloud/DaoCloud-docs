@@ -17,11 +17,11 @@ This page explains how external applications can access services inside the mesh
 
 1. Use URI matching to route external application access to specific pages of the `bookinfo.com` service.
 
-    ![Access Route](../../images/out-to-in01.png)
+    ![Access Route](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/out-to-in01.png)
 
 2. Click `Traffic Management` -> `Gateway Rules` -> `Create` to create a gateway rule for the Istio gateway and expose the service and ports externally.
 
-    ![Create Rule](../../images/out-to-in02.png)
+    ![Create Rule](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/out-to-in02.png)
 
     Here is an example YAML after completing the configuration:
 
@@ -46,7 +46,7 @@ This page explains how external applications can access services inside the mesh
 
 4. Click `Traffic Management` -> `Virtual Services` -> `Create` to create a routing rule that routes based on the URI in the request to the specified pages.
 
-    ![Create Routing Rule](../../images/out-to-in04.png)
+    ![Create Routing Rule](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/out-to-in04.png)
 
     Here is an example YAML after completing the configuration:
 

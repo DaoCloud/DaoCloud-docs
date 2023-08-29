@@ -16,10 +16,10 @@
 
 ## 创建 Pod 多网卡场景
 
-参阅 [multus-underlay](../network/modules/multus-underlay/what.md) 文档页面。
+参阅 [multus-underlay](../network/modules/multus-underlay/index.md) 文档页面。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/pod-cnis.mp4" preload="metadata" poster="../images/net-cnis.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/pod-cnis.mp4" preload="metadata" poster="images/net-cnis.png"></video>
 </div>
 
 ## F5network 的安装与使用
@@ -27,7 +27,7 @@
 参阅 [F5 安装](../network/modules/f5networks/install.md) 文档页面。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/f5network.mp4" preload="metadata" poster="../images/net-f5.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/f5network.mp4" preload="metadata" poster="images/net-f5.png"></video>
 </div>
 
 ## SR-IOV 的安装与使用
@@ -35,23 +35,23 @@
 参阅 [SR-IOV](../network/modules/multus-underlay/sriov.md) 文档页面。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/SR-IOV.mp4" preload="metadata" poster="../images/net-sriov.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/SR-IOV.mp4" preload="metadata" poster="images/net-sriov.png"></video>
 </div>
 
 ## Ingress Nginx 的安装与使用
 
-参阅 [Ingress Nginx](../network/modules/ingress-nginx/what.md) 文档页面。
+参阅 [Ingress Nginx](../network/modules/ingress-nginx/index.md) 文档页面。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/ingress-nginx.mp4" preload="metadata" poster="../images/net-nginx.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/ingress-nginx.mp4" preload="metadata" poster="images/net-nginx.png"></video>
 </div>
 
 ## MetalLB 的安装与使用
 
-参阅 [MetalLB](../network/modules/metallb/what.md) 文档页面。
+参阅 [MetalLB](../network/modules/metallb/index.md) 文档页面。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/MetalLB.mp4" preload="metadata" poster="../images/net-metallb.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/MetalLB.mp4" preload="metadata" poster="images/net-metallb.png"></video>
 </div>
 
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

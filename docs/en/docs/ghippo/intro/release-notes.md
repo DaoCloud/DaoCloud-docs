@@ -2,6 +2,39 @@
 
 This page lists the Release Notes for global management of each version, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-07-28
+
+### v0.19.0
+
+#### Features
+
+- Support automatic login for IDP integration with project groups.
+- Resource group binding for mesh/mesh-namespace.
+- Add tips to custom role permissions.
+- Platform settings - Security policies - Restrict multiple concurrent sessions for individual users.
+- Platform settings - Security policies - Limit maximum concurrent session connections for the system.
+
+#### Improvements
+
+- Custom parameters support for Webhook URL.
+
+#### Fixes
+
+- Fixed error when filling in email server details.
+- Fixed issue with LDAP users failing to join user groups.
+
+## 2023-07-06
+
+### v0.18.1
+
+#### Fixes
+
+- Fixed the issue where workspace cluster names could be empty.
+- Fixed the permission issue with Folder Admin role workspace authorization list.
+- Fixed the upgrade failure from GHippo 0.17 to 0.18.
+- Fixed the issue where the options for selecting cluster types were the same when adding shared resources.
+- Fixed the problem in the resource group list where grid-type resources could not be unbound.
+
 ## 2023-06-29
 
 ### v0.18.0
@@ -163,7 +196,7 @@ This page lists the Release Notes for global management of each version, so that
 
 - Support deploying a national secret gateway in front of DCE 5.0, and use a national secret browser to access DCE 5.0
 - Set the switch in helm values, you can switch the istio sidecar feature with one click
-- Add Workspace and Folder Owner role to workspace and hierarchy
+- Add Workspace and Folder Owner role to Workspace and Folder
 - Only users with `Workspace Admin`, `Folder Admin`, and `Kpanda Owner` permissions can perform resource binding
 - Scan the open source license for the library used
 - Added `Status` column to user list
@@ -267,7 +300,7 @@ Release date: 2022-10-21
 - **Optimized** authorization authentication -> provide a job to ensure the synchronization of db and cr
 - **Optimized** LDAP -> configuration error checking
 - **Optimized** The operation feedback and prompts for each feature support Chinese and English
-- **Optimized** Workspace and Hierarchy -> Check whether there are sub-resources before deleting
+- **Optimized** Workspace and Folder -> Check whether there are sub-resources before deleting
 - **Optimized** Optimize keycloak jvm parameters
 
 ## v0.9
@@ -347,4 +380,4 @@ Release date: 2022-5-23
 - Added overall bilingual document station structure and main content
 - Completion of ROADMAP content
 - merge document ROADMAP content into overall ROADMAP file
-- Documentation site updated [What is Ghippo](what.md)
+- Documentation site updated [What is Ghippo](index.md)

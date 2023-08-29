@@ -1,8 +1,10 @@
-# 升级 DCE 5.0 子模块
+# 升级 DCE 5.0 组件
 
-DCE 5.0 由容器管理、全局管理、可观测性等十几个子模块构成。每个子模块可以独立升级。
+DCE 5.0 组件的升级包含升级 DCE 5.0 产品功能模块、升级 DCE 5.0 基础设施模块
 
-本文将介绍如何使用 dce5-installer 离线升级 DCE 5.0 GProduct。
+其中 DCE 5.0 由容器管理、全局管理、可观测性等十几个子模块构成，主要指 [mainfest.yaml](commercial/manifest.md) 文件中的 `components` 部分。
+
+DCE 5.0 基础设施模块的组件特指 [mainfest.yaml](commercial/manifest.md) 文件中的 `infrastructures` 部分。
 
 ## 前提条件
 
@@ -12,30 +14,30 @@ DCE 5.0 由容器管理、全局管理、可观测性等十几个子模块构成
 
 ## 离线升级操作步骤
 
-本次操作步骤演示如何从 v0.5.0 升级到 v0.6.0。
+本次操作步骤演示如何从 v0.8.0 升级到 v0.9.0。目前升级到从低版本升级到 v0.9.0 时，需要同时升级 DCE 5.0 产品功能模块和 DCE 5.0 基础设施模块，从而使用到 `istio-gateway` 组件的高可用功能。
 
-### 第 1 步：下载 v0.6.0 离线包
+### 第 1 步：下载 v0.9.0 离线包
 
 可以在[下载中心](https://docs.daocloud.io/download/dce5/)下载最新版本。
 
 | CPU 架构 | 版本   | 下载地址                                                     |
 | :------- | :----- | :----------------------------------------------------------- |
-| AMD64    | v0.6.0 | https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.0-amd64.tar |
-| ARM64    | v0.6.0 | https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.0-arm64.tar |
+| AMD64    | v0.9.0 | https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.9.0-amd64.tar |
+| ARM64    | v0.9.0 | https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.9.0-arm64.tar |
 
 下载完毕后解压离线包，以 AMD64 架构离线包为例：
 
 ```bash
-tar -xvf offline-v0.6.0-amd64.tar
+tar -xvf offline-v0.9.0-amd64.tar
 ```
 
 ### 第 2 步：配置集群配置文件 clusterConfig.yaml
 
 !!! note
 
-    由于 v0.6.0 版本更新了集群配置文件的结构，见[集群配置文件说明](commercial/cluster-config.md)，所以更新时需要确保参数与 v0.5.0 使用的参数一致，文件结构要与 v0.6.0 的结构一致。
-    
-    目前仅对 imagesAndCharts 的 builtin 方式进行了测试。
+    - 需要确保[集群配置文件](commercial/cluster-config.md) 与安装时使用的参数一致
+
+    - 目前仅对 imagesAndCharts 的 builtin 方式进行了测试
 
 文件在解压后的离线包 `offline/sample` 目录下，参考配置文件如下：
 
@@ -83,13 +85,29 @@ spec:
 
 文件在解压后的离线包 `offline/sample` 目录下。
 
-如果有些产品组件不需要升级，可以在对应组件下选择关闭，如下配置，更新时将不会对 Kpanda 进行升级。
+#### DCE 5.0 产品功能模块配置
+
+DCE 5.0 产品功能模块的组件特指 [mainfest.yaml](commercial/manifest.md) 文件中的 `components` 部分。
+如果有些产品组件不需要升级，可以在对应组件下选择关闭。如果采用以下配置，更新时将不会对 Kpanda（容器管理）进行升级：
 
 ```yaml
-  kpanda:
-    enable: false
-    helmVersion: 0.16.0
-    variables:
+  components:
+    kpanda:
+      enable: false
+      helmVersion: 0.16.0
+      variables:
+```
+
+#### DCE 5.0 基础设施模块配置
+
+DCE 5.0 基础设施模块的组件特指 [mainfest.yaml](commercial/manifest.md) 文件中的 `infrastructures` 部分，如下配置就是基础设施中的 `hwameiStor` 组件：
+
+```yaml
+  infrastructures:
+    hwameiStor:
+      enable: true
+      version: v0.10.4
+      policy: drbd-disabled
 ```
 
 !!! note
@@ -98,18 +116,28 @@ spec:
 
 ### 第 4 步：开始升级
 
+#### DCE 5.0 产品功能模块升级
+
 执行升级命令
 
 ```bash
-./offline/dce5-installer cluster-create -c ./offline/sample/clusterconfig.yaml -m ./offline/sample/manifest.yaml --upgrade 4,5,gproduct
+./offline/dce5-installer cluster-create -c ./offline/sample/clusterConfig.yaml -m ./offline/sample/manifest.yaml --upgrade gproduct
+```
+
+#### DCE 5.0 基础设施模块升级
+
+执行升级命令
+
+```bash
+./offline/dce5-installer cluster-create -c ./offline/sample/clusterConfig.yaml -m ./offline/sample/manifest.yaml --upgrade infrastructures
 ```
 
 升级参数说明：
 
 - `install-app` 或 `cluster-create`，代表安装 DCE 5.0 的安装模式类型。如果最初的环境是通过 `cluster-create` 来安装的，则升级时也采用这个命令
-- `--upgrade` 可以简写为 `-u`，目前仅支持升级 DCE5.0 子模块（Gproduct）
-- v0.6.0 升级 GProduct 需要执行 `--upgrade 4,5,gproduct`，v0.7.0 版本后只需要执行 `--upgrade gproduct` 即可
+- `--upgrade` 可以简写为 `-u`，目前支持升级 DCE 5.0 产品功能模块（gproduct）与基础设施模块（infrastructures）
+- 如果需要一起升级产品功能模块和基础设施模块，则可以指定参数 `--upgrade infrastructures,gproduct`
 
-安装成功结果：
+### 第 5 步：安装成功提示
 
 ![upgrade](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/upgrade.png)

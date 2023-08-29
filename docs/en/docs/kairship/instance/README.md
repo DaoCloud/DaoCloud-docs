@@ -9,7 +9,7 @@ hide:
 
     You can search instances by name in the search box above. Fuzzy match supported.
     
-    ![instance](../images/check-instance02.png)
+    ![instance](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/check-instance02.png)
 
 2. Check instance statistics.
 
@@ -23,4 +23,4 @@ hide:
     - Overall memory usage
     - Number of healthy clusters/total number of clusters in the current instance
 
-        ![instance](../images/check-instance01.png)
+        ![instance](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/check-instance01.png)

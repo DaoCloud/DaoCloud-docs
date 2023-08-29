@@ -14,23 +14,23 @@ Prerequisite: An external Harbor registry has been created or integrated.
 
 1. Log in to DCE 5.0 as a user with the Admin role, and click `Container Registry` -> `Integrated Registry (Admin)` from the left navigation bar.
 
-    ![Integrated Registry (Admin)](../images/bind01.png)
+    ![Integrated Registry (Admin)](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/bind01.png)
 
 1. Click on a registry name.
 
-    ![click a name](../images/bind02.png)
+    ![click a name](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/bind02.png)
 
 1. Click `Registry Space` in the left navigation bar, and click `Create registry space` in the upper right corner.
 
-    ![click button](../images/reg-space01.png)
+    ![click button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/reg-space01.png)
 
 1. Fill in the registry space name, check the type and click `OK`.
 
-    ![filling](../images/reg-space02.png)
+    ![filling](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/reg-space02.png)
 
 1. Return to the list of registry spaces, find the newly created registry space, click `⋮` on the right, you can perform [bind/unbind workspace](./bind-to-ws.md), delete and other operations.
 
-    ![filling](../images/reg-space03.png)
+    ![filling](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/reg-space03.png)
 
 !!! info
 

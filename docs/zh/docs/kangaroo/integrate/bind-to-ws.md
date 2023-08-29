@@ -14,7 +14,7 @@
 
 1. 使用具有 Admin 角色的用户登录 DCE 5.0，从左侧导航栏点击`镜像仓库` -> `仓库集成(管理员)`。
 
-    ![仓库集成](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/integrated01.png)
+    ![仓库集成](../images/integrated01.png)
 
 1. 点击某个仓库名称。
 

@@ -4,10 +4,10 @@
 
 ## Multicloud Module Introduction
 
-See [What's Multicloud Management](../kairship/intro/what.md) for reference.
+See [What's Multicloud Management](../kairship/intro/index.md) for reference.
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/multicloud-intro.mp4" preload="metadata" poster="../images/kairship-intro.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/multicloud-intro.mp4" preload="metadata" poster="images/kairship-intro.png"></video>
 </div>
 
 ## Creating Multicloud Instances
@@ -15,7 +15,7 @@ See [What's Multicloud Management](../kairship/intro/what.md) for reference.
 See [Creating Multicloud Instances](../kairship/instance/add.md) for reference.
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kairship-instance.mp4" preload="metadata" poster="../images/kairship-instance.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kairship-instance.mp4" preload="metadata" poster="images/kairship-instance.png"></video>
 </div>
 
 ## Creating Multicloud Workloads
@@ -23,7 +23,7 @@ See [Creating Multicloud Instances](../kairship/instance/add.md) for reference.
 See [Creating Multicloud Workloads](../kairship/workload/README.md) for reference.
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/workloads.mp4" preload="metadata" poster="../images/kairship-workload.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/workloads.mp4" preload="metadata" poster="images/kairship-workload.png"></video>
 </div>
 
 ## Creating Multicloud Jobs and CronJobs
@@ -31,7 +31,7 @@ See [Creating Multicloud Workloads](../kairship/workload/README.md) for referenc
 See [Creating Multicloud Jobs](../kairship/workload/job.md) and [Creating Multicloud CronJobs](../kairship/workload/cronjob.md) for reference.
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/job-cronjob.mp4" preload="metadata" poster="../images/kairship-job.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/job-cronjob.mp4" preload="metadata" poster="images/kairship-job.png"></video>
 </div>
 
 ## Managing Multicloud Resources
@@ -39,15 +39,15 @@ See [Creating Multicloud Jobs](../kairship/workload/job.md) and [Creating Multic
 See [Multicloud Services](../kairship/resource/service.md), [Multicloud Namespaces](../kairship/resource/ns.md), [Multicloud Configuration Items](../kairship/resource/configmap.md), and [Multicloud Secrets](../kairship/resource/secret.md) for reference.
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/multicloud-resoruces.mp4" preload="metadata" poster="../images/kairship-resource.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/multicloud-resoruces.mp4" preload="metadata" poster="images/kairship-resource.png"></video>
 </div>
 
 ## Migrating Applications from DCE 4.0 to DCE 5.0
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kairship-migrate.mp4" preload="metadata" poster="../images/kairship-migrate.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kairship-migrate.mp4" preload="metadata" poster="images/kairship-migrate.png"></video>
 </div>
 
-[Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [Free Trial](../dce/license0.md){ .md-button .md-button--primary }

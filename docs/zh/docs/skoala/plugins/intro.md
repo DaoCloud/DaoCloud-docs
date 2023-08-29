@@ -7,4 +7,4 @@
 - 全局限流：接入该插件后，才能在创建云原生网关实例时启用全局限流插件。
 - Wasm：接入该插件后，才能在云原生微服务治理页面
 
-![](../images/plugin01.png)
+![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/plugin01.png)

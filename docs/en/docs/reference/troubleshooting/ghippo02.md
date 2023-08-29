@@ -19,7 +19,7 @@ helm get values ​​ghippo -n ghippo-system -o yaml > ghippo-values-bak.yaml
 # Get the currently deployed ghippo version number
 version=$(helm get notes ghippo -n ghippo-system | grep "Chart Version" | awk -F ': ' '{ print $2 }')
 
-# Execute the update operation to make the configuration file take effect
+# Run the update operation to make the configuration file take effect
 helm upgrade ghippo ghippo/ghippo \
 -n ghippo-system\
 -f ./ghippo-values-bak.yaml \

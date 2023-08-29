@@ -26,7 +26,7 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
 
     A resource object that extends the functionality of DCE.
     You can install more additional extensions via
-    [Container Management](../kpanda/intro/what.md) -> [Helm chart](../kpanda/user-guide/helm/README.md).
+    [Container Management](../kpanda/intro/index.md) -> [Helm chart](../kpanda/user-guide/helm/README.md).
 
 - Admission Controller
 
@@ -1262,7 +1262,7 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
 
 - Image
 
-    [Image](https://kubernetes.io/docs/concepts/containers/images/), on the other hand, refers to a saved container instance that packages a set of software required for application runtime. It is a way of packaging software, which can be stored in a container image repository, pulled to a local system, and run as an application. The metadata contained in the image specifies what executable program to run, who built it, and other information.
+    [Image](https://kubernetes.io/docs/concepts/containers/images/), on the other hand, refers to a saved container instance that packages a set of software required for application runtime. It is a way of packaging software, which can be stored in a container container registry, pulled to a local system, and run as an application. The metadata contained in the image specifies what executable program to run, who built it, and other information.
 
 - Immutable Infrastructure
 
@@ -1557,7 +1557,7 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
 
 - Observability
 
-    [Observability](../insight/intro/what.md) refers to the ability to collect signals from an observed system, continuously generate and discover actionable insights. In other words, observability allows users to gain insight into the state of a system from external outputs and take corrective action. The measuring mechanism of a computer system observes low-level signals such as CPU time, memory, and disk space, as well as high-level signals and business signals such as API response rate per second, error rate per second, and number of transactions processed per second.
+    [Observability](../insight/intro/index.md) refers to the ability to collect signals from an observed system, continuously generate and discover actionable insights. In other words, observability allows users to gain insight into the state of a system from external outputs and take corrective action. The measuring mechanism of a computer system observes low-level signals such as CPU time, memory, and disk space, as well as high-level signals and business signals such as API response rate per second, error rate per second, and number of transactions processed per second.
 
     The observability of a system has a significant impact on its operational and development costs. An observable system provides meaningful and actionable data to operators, enabling them to achieve favorable results (i.e., faster event response, higher development efficiency) and fewer difficult moments and shorter downtime.
 
@@ -1720,7 +1720,7 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
 
 - Resource Template
 
-    In [Multicloud Management](../kairship/intro/what.md), a template called a federated resource is used. This is a multicloud resource template based on the native K8s API, which facilitates the integration of all cloud-native tools within the K8s ecosystem. This resource template can be used to centrally manage [multicloud services](../kairship/resource/service.md), [multicloud namespaces](../kairship/resource/ns.md), [multicloud configmap](../kairship/resource/configmap.md), and [multicloud secret](../kairship/resource/secret.md).
+    In [Multicloud Management](../kairship/intro/index.md), a template called a federated resource is used. This is a multicloud resource template based on the native K8s API, which facilitates the integration of all cloud-native tools within the K8s ecosystem. This resource template can be used to centrally manage [multicloud services](../kairship/resource/service.md), [multicloud namespaces](../kairship/resource/ns.md), [multicloud configmap](../kairship/resource/configmap.md), and [multicloud secret](../kairship/resource/secret.md).
 
 - Role
 
@@ -2035,6 +2035,6 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
 
     The main benefit of adopting Zero Trust Architecture is increased security and reduced attack surface. Removing trust from your enterprise system now increases the number and strength of security gates that attackers must pass through to gain access to other areas of the system.
 
-[Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [Free Trial](license0.md){ .md-button .md-button--primary }

@@ -2,6 +2,164 @@
 
 This page lists the release notes of DME to help you learn its feature development and bug fixing progress.
 
+## 2023-08-03
+
+### v0.26.2
+
+#### Fixed
+
+- **Fixed** Issue with detection of `Consul` registry connectivity
+- **Fixed** Issue with gateway restarting due to abnormal application of plugins
+- **Fixed** Issue with abnormal configuration of gateway verification plugins
+- **Fixed** Issue with abnormal editing of cluster flow control rules in `Sentinel`
+
+!!! note
+
+    Important: Starting from Microservice Engine version `v0.24.2`, there is an incompatible update for versions `v0.24.2` and earlier. This is because the gateway involves a change in the address of the open-source component repository. Therefore, before updating, you need to manually delete the existing `gateway-api-admission-xxxxx` Job and then proceed with the normal upgrade process.
+
+## 2023-07-26
+
+### v0.26.1
+
+#### Fixes
+
+- **Fixed** the issue of incorrect version of the Agent component.
+
+## 2023-07-25
+
+### v0.26.0
+
+#### New Features
+
+- **Added** interface for viewing Sentinel flow control rules.
+- **Added** APIs for cloud-native microservice governance.
+- **Added** APIs for cloud-native microservice traffic lanes.
+- **Added** support for version 0.19 of the observability module.
+- **Added** API for displaying audit log in the overall overview.
+- **Added** API for displaying resources in the gateway overview page.
+- **Added** APIs for global validation plugin capabilities at the gateway level.
+
+#### Fixes
+
+- **Fixed** the issue of Nacos port not being updated.
+- **Fixed** the issue of cluster flow control rules in Sentinel not being saved.
+- **Fixed** the issue of API exception when deleting non-empty services in Nacos.
+- **Fixed** the issue of duplicate data in gateway monitoring data.
+- **Fixed** the issue with the use of plugins in cloud-native microservices related APIs.
+- **Fixed** the issues with gateway domain naming rules.
+- **Fixed** the issue of incorrect version in cloud-native microservice traffic lanes.
+
+#### Optimizations
+
+- **Optimized** the driver name of the People's Congress Golden Warehouse database from "kb_v8r6" to "kingbase".
+
+## 2023-07-19
+
+### v0.25.0
+
+#### New Features
+
+- **Added** tagging of gateway runtime mesh injection.
+- **Added** cascading selection capability for permissions associated with middleware.
+- **Added** API for viewing cloud-native microservice flow control rules.
+- **Added** APIs for cloud-native microservice governance.
+- **Added** component version information for cluster readiness check during managed resource installation.
+- **Added** fuzzy search capability for various search APIs.
+
+#### Fixes
+
+- **Fixed** the issue of incorrect external image scanning address in the pipeline.
+- **Fixed** the issue of missing directory-level dependency for permissions associated with middleware.
+
+#### Optimizations
+
+- **Optimized** the chain validation of gateway and related resource changes.
+- **Optimized** the gateway listening port from cluster IP to container port.
+
+## 2023-07-06
+
+### v0.24.2
+
+#### Fixes
+
+- **Fixed** page experience optimization and bug fixes.
+
+## 2023-07-05
+
+### V0.24.1
+
+#### Fixes
+
+- **Fixed** the issue of outdated versions in Skoala-init Chart form
+- **Fixed** page experience improvements and issues
+
+## 2023-06-30
+
+### V0.24.0
+
+#### New Features
+
+- **Added** API for cloud-native microservices plugins
+- **Added** cascading selection capability for permissions associated with middleware operations
+
+#### Fixes
+
+- **Fixed** data exception in Insight integration
+- **Fixed** abnormal filtering results for gateway status
+
+#### Improvements
+
+- **Improved** chain validation for gateway and related resource changes
+
+## 2023-06-26
+
+### V0.23.0
+
+#### New Features
+
+- **Added** batch online/offline interface for gateway API
+- **Added** enhanced health check configuration for engine components
+- **Added** support for tag caching in cache logic
+- **Added** mandatory injection option for mesh sidecar during gateway creation and update
+- **Added** support for filtering gateway list by status
+- **Added** integration of audit logs
+- **Added** license check in continuous integration
+- **Added** storage of sensitive information in Secret in Charts
+- **Upgraded** managed Nacos version to 2.2.3
+- **Upgraded** Sentinel version to 0.10.5
+
+#### Fixes
+
+- **Fixed** alignment of Insight integration data metrics with raw data
+- **Fixed** permission inheritance issue when integrating with mSpider module
+- **Fixed** missing governance status in Nacos instance list
+- **Fixed** cluster flow control name issue in Sentinel
+- **Fixed** query data not being aggregated by workspace in overall overview
+- **Fixed** issue where gateway can enable HTTPS even if it is disabled
+- **Fixed** default value issue in Skoala-init Chart form data
+
+#### Improvements
+
+- **Improved** user experience and issues with Sentinel Grafana
+- **Improved** display of relevant resource alerts in managed resource alarms
+- **Refactored** configuration structure of global management module
+- **Improved** reading of managed Nacos information through Clusterpedia
+- **Upgraded** Insight integration to version 0.17.3
+- **Improved** flexibility of database-related configuration
+
+## 2023-05-31
+
+### V0.22.2
+
+#### Fixes
+
+- **Fixed** issues with Sentinel cluster flow control API
+- **Fixed** issues with fuzzy query API for Sentinel rules
+
+#### Improvements
+
+- **Improved** default values for connecting to the database to increase fault tolerance
+
 ## 2023-05-29
 
 ### V0.22.1

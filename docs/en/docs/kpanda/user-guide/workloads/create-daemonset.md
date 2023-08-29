@@ -2,7 +2,7 @@
 
 This page introduces how to create a daemon process (DaemonSet) through mirroring and YAML files.
 
-DaemonSet is connected to [taint](https://kubernetes.io/docs/tasks/configure-pod-container/assign-pods-nodes-using-node-affinity/) through [node affinity]( ://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/) feature ensures that a replica of a Pod is running on all or some of the nodes. For new nodes that join the cluster, DaemonSet automatically deploys the corresponding Pod on the new node and tracks the running status of the Pod. When a node is removed, the DaemonSet deletes all Pods it created.
+DaemonSet is connected to [taint](https://kubernetes.io/docs/tasks/configure-pod-container/assign-pods-nodes-using-node-affinity/) through [node affinity]( ://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/) feature ensures that a replica of a Pod is running on all or some of the nodes. For nodes that newly joined the cluster, DaemonSet automatically deploys the corresponding Pod on the new node and tracks the running status of the Pod. When a node is removed, the DaemonSet deletes all Pods it created.
 
 Common cases for daemons include:
 
@@ -18,7 +18,7 @@ For simplicity, a DaemonSet can be started on each node for each type of daemon.
 
 Before creating a DaemonSet, the following prerequisites need to be met:
 
-- In the [Container Management](../../intro/what.md) module [Access Kubernetes Cluster](../clusters/integrate-cluster.md) or [Create Kubernetes Cluster](../clusters/create-cluster.md), and can access the cluster UI interface.
+- In the [Container Management](../../intro/index.md) module [Access Kubernetes Cluster](../clusters/integrate-cluster.md) or [Create Kubernetes Cluster](../clusters/create-cluster.md), and can access the cluster UI interface.
 
 - Create a [namespace](../namespaces/createns.md) and a [user](../../../ghippo/user-guide/access-control/user.md).
 
@@ -67,7 +67,7 @@ Container configuration is divided into six parts: basic information, life cycle
      When configuring container-related parameters, you must correctly fill in the container name and image parameters, otherwise you will not be able to proceed to the next step. After filling in the configuration with reference to the following requirements, click `Confirm`.
 
      - Container Name: Up to 63 characters, lowercase letters, numbers and separators ("-") are supported. Must start and end with a lowercase letter or number, eg nginx-01.
-     - Container Image: Enter the address or name of the image. When entering the image name, the image will be pulled from the official [DockerHub](https://hub.docker.com/) by default. After accessing the [container registry](../../../kangaroo/what.md) module of DCE 5.0, you can click `Select Image` on the right to select an image.
+     - Container Image: Enter the address or name of the image. When entering the image name, the image will be pulled from the official [DockerHub](https://hub.docker.com/) by default. After accessing the [container registry](../../../kangaroo/index.md) module of DCE 5.0, you can click `Select Image` on the right to select an image.
      - Update strategy: After checking `Always pull image`, the image will be pulled from the registry every time the load restarts/upgrades. If it is not checked, only the local mirror will be pulled, and only when the mirror does not exist locally, it will be re-pulled from the container registry. For more details, please refer to [Image Pull Policy](https://kubernetes.io/docs/concepts/containers/images/#image-pull-policy).
      - Privileged container: By default, the container cannot access any device on the host. After enabling the privileged container, the container can access all devices on the host and enjoy all the permissions of the running process on the host.
      - CPU/Memory Quota: Requested value (minimum resource to be used) and limit value (maximum resource allowed to be used) of CPU/Memory resource. Please configure resources for containers as needed to avoid resource waste and system failures caused by excessive container resources. The default value is shown in the figure.

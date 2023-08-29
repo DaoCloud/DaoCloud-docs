@@ -5,10 +5,10 @@ hide:
 
 # 通过 Sidecar 采集容器日志
 
-Tailing Sidecar 是一个[流式 Sidecar 容器](https://kubernetes.io/docs/concepts/cluster-administration/logging/#streaming-sidecar-container)，
+Tailing Sidecar 是一个[流式 Sidecar 容器](https://kubernetes.io/zh-cn/docs/concepts/cluster-administration/logging/#streaming-sidecar-container)，
 是 Kubernetes 集群级的日志代理。Tailing Sidercar 可以在容器无法写入标准输出或标准错误流时，无需更改，即可自动收取和汇总容器内日志文件。
 
-Insight 支持通过 Sidercar  模式采集日志，即在每个 Pod 中运行一个 Sidecar 容器将日志数据输出到标准输出流，以便 FluentBit 收集容器日志。
+Insight 支持通过 Sidercar 模式采集日志，即在每个 Pod 中运行一个 Sidecar 容器将日志数据输出到标准输出流，以便 FluentBit 收集容器日志。
 
 Insight Agent 中默认安装了 `tailing-sidecar operator`。
 若您想开启采集容器内文件日志，请通过给 Pod 添加注解进行标记，`tailing-sidecar operator` 将自动注入 Tailing Sidecar 容器，

@@ -24,7 +24,7 @@ After binding to the workspace, users with relevant permissions can manage these
     <!--screenshot-->
 
 4. At this point, the multicloud instance has been bound to `kairship-ws`.
-    Click `Global Management` to enter the workspace and hierarchy page, select `kairship-ws` resource group, you can see that `k-kairship-test01` has been bound.
+    Click `Global Management` to enter the Workspace and Folder page, select `kairship-ws` resource group, you can see that `k-kairship-test01` has been bound.
 
     <!--screenshot-->
 
@@ -43,6 +43,6 @@ After binding to the workspace, users with relevant permissions can manage these
     <!--screenshot-->
 
 4. At this point, the multicloud namespace has been bound to `kairship-ws`.
-    Click `Global Management` to enter the workspace and hierarchy page, select `kairship-ws` resource group, you can see that `k-kairship-test01-95fzz` has been bound.
+    Click `Global Management` to enter the Workspace and Folder page, select `kairship-ws` resource group, you can see that `k-kairship-test01-95fzz` has been bound.
 
     <!--screenshot-->

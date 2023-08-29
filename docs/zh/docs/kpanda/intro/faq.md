@@ -9,7 +9,7 @@ hide:
 
 1. Helm 应用安装失败，提示 “OOMKilled”
 
-    ![失败情况](../images/faq1.png)
+    ![失败情况](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq1.png)
 
     如图所示，容器管理会自动创建启动一个 Job 负责具体应用的安装工作，在 v0.6.0 版本中由于 job resources 设置不合理，导致 OOM,影响应用安装。该 bug 在 0.6.1 版本中已经被修复。如果是升级到 v0.6.1的环境，仅仅会在新创建、接入的集群中生效，已经存在的集群需要进行手动调整，方能生效。
 
@@ -48,11 +48,11 @@ hide:
 
     - 容器管理模块的权限分为集群权限、命名空间权限。如果绑定了用户，那该用户就可以查看到相对应的集群及资源。具体权限说明，可以参考[集群权限说明](../user-guide/permissions/permission-brief.md)。
 
-        ![容器管理权限](../images/faq201.png)
+        ![容器管理权限](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq201.png)
 
     - 全局管理模块中用户的授权：使用 admin 账号，进入`全局管理` -> `用户与访问控制` -> `用户`菜单，找到对应用户。在`授权所属用户组`标签页，如果有类似 Admin、Kpanda Owner 等拥有容器管理权限的角色，那即使在容器管理没有绑定集群权限或命名空间权限，也可以看到全部的集群，可以参考[用户授权文档说明](../../ghippo/user-guide/access-control/user.md)
 
-        ![全局管理 用户授权](../images/faq202.png)
+        ![全局管理 用户授权](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq202.png)
 
     - 全局管理模块中工作空间的绑定：使用账号进入`全局管理` -> `工作空间与层级`，可以看到自己的被授权的工作空间，点击工作空间名称
 
@@ -60,51 +60,51 @@ hide:
 
         b.如果是被授予了全局管理相关角色，那就无法授权标签页内看到自己的账号，也无法在容器管理模块中看到工作空间所绑定的集群资源
 
-        ![全局管理工作空间的绑定](../images/faq203.png)
+        ![全局管理工作空间的绑定](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq203.png)
 
 3. Helm 安装应用时，无法拉取 kpanda-shell 镜像
 
     使用离线安装后，接入的集群安装helm应用经常会遇到拉取 kpanda-shell 镜像失败，如图：
 
-    ![拉取镜像失败](../images/faq301.png)
+    ![拉取镜像失败](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq301.png)
 
     此时，只需要去集群运维-集群设置页面，高级配置标签页，修改 Helm 操作基础镜像为一个可以被该集群正常拉取到的 kpanda-shell 的镜像即可。
 
-    ![修改镜像](../images/faq302.png)
+    ![修改镜像](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq302.png)
 
 4. Helm Chart 界面未显示最新上传到对应 Helm Repo 的 Chart，如图：
 
-    ![模板](../images/faq401.png)
+    ![模板](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq401.png)
 
     此时，只需要去 Helm 仓库刷新对应的 Helm 仓库即可。
 
-    ![刷新仓库](../images/faq402.png)
+    ![刷新仓库](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq402.png)
 
 5. Helm 安装应用失败时卡在安装中无法删除应用重新安装，如图：
 
-    ![删除失败](../images/faq501.png)
+    ![删除失败](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq501.png)
 
     此时，只需要去自定义资源页面，找到 helmreleases.helm.kpanda.io CRD，然后找到对应的 helmreleases CR 删除即可。
 
-    ![找到 CR](../images/faq502.png)
+    ![找到 CR](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq502.png)
 
-    ![删除 CR](../images/faq503.png)
+    ![删除 CR](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq503.png)
 
 6. 工作负载-删除节点亲和性等调度策略后，调度异常，如图：
 
-    ![调度异常](../images/faq601.png)
+    ![调度异常](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq601.png)
 
     此时，可能是因为策略没有删除干净，点击编辑，删除所有策略。
 
-    ![编辑](../images/faq602.png)
+    ![编辑](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq602.png)
 
-    ![删除](../images/faq603.png)
+    ![删除](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq603.png)
 
-    ![正常调度](../images/faq604.png)
+    ![正常调度](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq604.png)
 
 7. Kcoral 检测工作集群 Velero 状态的逻辑是什么？
 
-    ![检测](../images/faq701.png)
+    ![检测](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq701.png)
 
     - 工作集群在velero命名空间下安装了标准的velero组件
   
@@ -118,7 +118,7 @@ hide:
 
     在通过Kcoral跨集群备份还原应用的时候，在恢复页面中，Kcoral 会帮助用户筛选可以执行跨集群还原的集群列表，逻辑如下：
 
-    ![筛选](../images/faq801.png)
+    ![筛选](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq801.png)
 
     - 过滤未安装 Velero 的集群列表
   
@@ -132,13 +132,13 @@ hide:
 
     虽然通过 Helm Addon 市场中把对应组件卸载，但是应用弹性伸缩界面相关记依然在，如下图所示:
 
-    ![编辑](../images/faq901.png)
+    ![编辑](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq901.png)
 
     这是 helm uninstall 的一个问题，它并不会卸载对应的 CRD，因此导致数据残留，此时我们需要手动卸载对应的 CRD , 完成最终清理工作。
 
 10. 为什么低版本集群的控制台打开异常？
 
-    在 kubernetes 低版本（v1.18以下）的集群中，打开控制台出现 csr 资源请求失败。打开控制台的时候，会根据当前登陆用户在目标集群中通过 csr 资源申请证书，如果集群版本太低或者没有开启此功能 controller，会导致证书申请失败，从而无法连接到目标集群。
+    在 kubernetes 低版本（v1.18以下）的集群中，打开控制台出现 csr 资源请求失败。打开控制台的时候，会根据当前登录用户在目标集群中通过 csr 资源申请证书，如果集群版本太低或者没有开启此功能 controller，会导致证书申请失败，从而无法连接到目标集群。
 
     申请证书流程请参考：https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/
     
@@ -160,6 +160,6 @@ hide:
 
     - 已经成功创建的集群：这种集群可以先卸载集群，然后重新创建集群。卸载集群需要关闭集群保护的功能才能卸载集群。
 
-        ![关闭集群保护](../images/faq1101.png)
+        ![关闭集群保护](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq1101.png)
 
-        ![卸载集群](../images/faq1102.png)
+        ![卸载集群](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq1102.png)

@@ -19,7 +19,7 @@ The architecture diagram for the sample application is as follows:
 
 ## Application deployment
 
-[Workbench](../../amamba/intro/what.md) is an application management module of DCE 5.0. It supports the creation and maintenance of various types of applications, GitOps, and grayscale publishing, and can quickly deploy applications to any cluster. Workbench supports deployment of applications based on Git repository, Jar package, container image and Helm chart. This practice deployable the sample application based on `Helm chart`.
+[Workbench](../../amamba/intro/index.md) is an application management module of DCE 5.0. It supports the creation and maintenance of various types of applications, GitOps, and grayscale publishing, and can quickly deploy applications to any cluster. Workbench supports deployment of applications based on Git repository, Jar package, container image and Helm chart. This practice deployable the sample application based on `Helm chart`.
 
 <!--![]()screenshots-->
 

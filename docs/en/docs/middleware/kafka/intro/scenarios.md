@@ -1,6 +1,6 @@
 # scenes to be used
 
-Compared with [RabbitMQ](../../rabbitmq/intro/what.md), Kafka message queue is suitable for Cases such as building real-time data pipelines, streaming data processing, third-party decoupling, and traffic peak shaving and valley removal. It has the characteristics of large-scale, high reliability, high concurrent access, scalability, and full hosting.
+Compared with [RabbitMQ](../../rabbitmq/intro/index.md), Kafka message queue is suitable for Cases such as building real-time data pipelines, streaming data processing, third-party decoupling, and traffic peak shaving and valley removal. It has the characteristics of large-scale, high reliability, high concurrent access, scalability, and full hosting.
 
 ## Comparison with RabbitMQ
 

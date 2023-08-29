@@ -11,7 +11,7 @@ hide：
 
     `安全管理`->`合规性扫描`页面的`扫描报告`页签点击报告右侧的 `ⵗ` 操作按钮选择`下载`。
 
-    ![报告列表截图](../../images/security09.png)
+    ![报告列表截图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/images/security09.png)
 
 - 在线查看
 
@@ -24,4 +24,4 @@ hide：
         - 对于未通过的扫描项给出对应的修复建议
         - 对于通过的扫描项给出更安全的操作建议
 
-        ![报告列表截图](../../images/security10.png)
+        ![报告列表截图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/images/security10.png)

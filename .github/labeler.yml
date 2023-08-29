@@ -70,6 +70,10 @@ storage:
   - "docs/en/docs/storage/**/*"
   - "docs/zh/docs/storage/**/*"
 
+trial:
+  - "docs/en/docs/trial/**/*"
+  - "docs/zh/docs/trial/**/*"
+
 videos:
   - "docs/en/docs/videos/**/*"
   - "docs/zh/docs/videos/**/*"

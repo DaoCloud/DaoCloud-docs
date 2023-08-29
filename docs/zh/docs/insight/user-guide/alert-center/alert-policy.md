@@ -6,29 +6,29 @@ DCE 5.0 除了内置的告警策略外，还可以自定义创建新的告警策
 
 以内置告警为例，点击第一条告警策略 `alertmanager.rules`。
 
-![告警策略](../../images/alert-policy01.png)
+![告警策略](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/alert-policy01.png)
 
 可以看到其下已设置了一些告警规则，可以在该策略下添加更多规则，也可以随时编辑或删除规则。还可以查看有关这条告警策略的历史告警和活动告警，编辑通知配置等。
 
-![alertmanager.rules](../../images/alert-policy02.png)
+![alertmanager.rules](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/alert-policy02.png)
 
 ## 创建告警策略
 
 1. 选择`告警中心` -> `告警策略`，点击`创建告警策略`按钮。
 
-    ![告警策略](../../images/alert-policy01.png)
+    ![告警策略](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/alert-policy01.png)
 
 1. 填写基本信息，选择一个或多个集群、节点或工作负载为告警对象后点击`下一步`。
 
-    ![基本信息](../../images/alert-policy03.png)
+    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/alert-policy03.png)
 
 1. 列表需至少有一条规则。如果列表为空，请`添加规则`。
 
-    ![添加规则](../../images/alert-policy04.png)
+    ![添加规则](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/alert-policy04.png)
 
     在弹窗中创建告警规则，填写各项参数后点击`确定`。
 
-    ![创建规则](../../images/alert-policy05.png)
+    ![创建规则](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/alert-policy05.png)
 
     - 模板规则：预定义了基础指标，可以按 CPU、内存、磁盘、网络设定要监控的指标。
     - PromQL 规则：输入一个 PromQL 表达式，具体请[查询 Prometheus 表达式](https://prometheus.io/docs/prometheus/latest/querying/basics/)。
@@ -38,7 +38,7 @@ DCE 5.0 除了内置的告警策略外，还可以自定义创建新的告警策
 
 1. 点击`下一步`后配置通知。
 
-    ![通知配置](../../images/alert-policy06.png)
+    ![通知配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/alert-policy06.png)
 
 1. 配置完成后，点击`确定`按钮，返回告警策略列表。
 
@@ -50,7 +50,7 @@ DCE 5.0 除了内置的告警策略外，还可以自定义创建新的告警策
 
 1. 完成基本信息的填写后，点击`添加规则`，规则类型选择`日志告警`。
 
-    ![通知配置](../../images/log-rule01.png)
+    ![通知配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/log-rule01.png)
 
      **字段说明：**
 
@@ -64,7 +64,7 @@ DCE 5.0 除了内置的告警策略外，还可以自定义创建新的告警策
 
 在列表右侧点击 `⋮`，在弹出菜单中选择`删除`，可以删除告警策略。点击策略名称，进入策略详情，可以添加、编辑、删除其下的告警规则。
 
-![告警规则](../../images/alert-policy07.png)
+![告警规则](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/alert-policy07.png)
 
 !!! warning
 

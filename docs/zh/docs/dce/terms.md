@@ -20,7 +20,7 @@
 - Addon, 扩展
 
     扩展 DCE 功能的资源对象。
-    您可以通过[容器管理](../kpanda/intro/what.md) -> [Helm 模板](../kpanda/user-guide/helm/README.md)安装更多附加扩展组件。
+    您可以通过[容器管理](../kpanda/intro/index.md) -> [Helm 模板](../kpanda/user-guide/helm/README.md)安装更多附加扩展组件。
 
 - Admission Controller, 准入控制器
 
@@ -362,15 +362,15 @@
 
     DCE 5.0 支持的 CNI 包括但不限于：
 
-    - [Calico](../network/modules/calico/what.md)
-    - [Cilium](../network/modules/cilium/what.md)
-    - [Contour](../network/modules/contour/what.md)
-    - [F5networks](../network/modules/f5networks/what.md)
-    - [Ingress-nginx](../network/modules/ingress-nginx/what.md)
-    - [Metallb](../network/modules/metallb/what.md)
-    - [Multus-underlay](../network/modules/multus-underlay/what.md)
-    - [Spiderpool](../network/modules/spiderpool/what.md)
-    - [Submariner](../network/modules/submariner/what.md)
+    - [Calico](../network/modules/calico/index.md)
+    - [Cilium](../network/modules/cilium/index.md)
+    - [Contour](../network/modules/contour/index.md)
+    - [F5networks](../network/modules/f5networks/index.md)
+    - [Ingress-nginx](../network/modules/ingress-nginx/index.md)
+    - [Metallb](../network/modules/metallb/index.md)
+    - [Multus-underlay](../network/modules/multus-underlay/index.md)
+    - [Spiderpool](../network/modules/spiderpool/index.md)
+    - [Submariner](../network/modules/submariner/index.md)
 
 - [ConfigMap](https://kubernetes.io/zh-cn/docs/concepts/configuration/configmap/), 配置项
 
@@ -1387,7 +1387,7 @@
 
 - Nacos 集群节点角色
 
-    这是[微服务引擎](../skoala/intro/what.md)中节点在 Raft 协议中的角色。Raft 是一种实现分布式共识的协议，即如何让多个节点达成一致。
+    这是[微服务引擎](../skoala/intro/index.md)中节点在 Raft 协议中的角色。Raft 是一种实现分布式共识的协议，即如何让多个节点达成一致。
 
     **Leader** 是所有请求的处理者，负责接收客户端发起的操作请求，将请求写入本地日志并向其他节点同步请求日志。
     任何时候最多只能有一个 Leader。
@@ -1465,7 +1465,7 @@
 
 - Observability, 可观测性
 
-    [可观测性](../insight/intro/what.md)指的是从所观测的系统采集信号，持续生成并发现可执行的洞察力。
+    [可观测性](../insight/intro/index.md)指的是从所观测的系统采集信号，持续生成并发现可执行的洞察力。
     换言之，可观测性允许用户从某个系统的外部输出中洞察该系统的状态并采取（修正）措施。
 
     计算机系统的衡量机制为观测 CPU 时间、内存、磁盘空间等底层信号以及每秒
@@ -1494,7 +1494,7 @@
 
 - OverridePolicy, 差异化策略
 
-    [差异化策略](../kairship/policy/override-policy.md)是定义多云资源对象分发到不同工作集群时的差异化配置策略，
+    [差异化策略](../kairship/policy/override.md)是定义多云资源对象分发到不同工作集群时的差异化配置策略，
     例如在不同的工作集群中，可以使用不同的镜像，增加不同的标签等。
 
     OverridePolicy 作为一个独立的策略 API 能够自动处理集群相关的配置，例如：
@@ -1638,7 +1638,7 @@
 
 - PropagationPolicy, 部署策略
 
-    在多云编排中，[PropagationPolicy](../kairship/policy/propagation-policy.md) 是定义多云资源对象的分发策略，支持使用指定集群、指定标签等方式来规划将资源部署到哪些工作集群。
+    在多云编排中，[PropagationPolicy](../kairship/policy/propagation.md) 是定义多云资源对象的分发策略，支持使用指定集群、指定标签等方式来规划将资源部署到哪些工作集群。
 
     PropagationPolicy 是一种独立的策略 API，可以根据分发要求来定义多集群调度方式。
 
@@ -1721,7 +1721,7 @@
 
 - Resource Template, 资源模板
 
-    在[多云编排](../kairship/intro/what.md)中采用了一种叫做联邦资源的模板，
+    在[多云编排](../kairship/intro/index.md)中采用了一种叫做联邦资源的模板，
     这是基于 K8s 原生 API 定义的一种多云资源模板，便于集成使用 K8s 生态范围内的所有云原生工具。
 
     通过这种资源模板可以统一管理[多云服务](../kairship/resource/service.md)、
@@ -2261,6 +2261,6 @@
     采用零信任架构带来的主要好处是增加安全，减少攻击面。
     从您的企业系统中移除信任，现在增加了攻击者必须通过的安全门的数量和强度，以获得对系统的其他区域的访问。
 
-[下载 DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

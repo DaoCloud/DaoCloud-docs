@@ -14,15 +14,15 @@ In global management, the operation steps are as follows:
 
 1. Log in to DCE 5.0 as a user with `admin` role. Click `Global Management` -> `Access Control` in the lower left corner of the left navigation bar.
 
-    ![access control](../../images/ws01.png)
+    ![access control](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/ws01.png)
 
 1. Click `Identity Provider` on the left nav bar, click `Create an Identity Provider` button.
 
-    ![id provider](../../images/ldap00.png)
+    ![id provider](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/ldap00.png)
 
 1. In the `LDAP` tab, fill in the following fields and click `Save` to establish a trust relationship with the identity provider and a user mapping relationship.
 
-    ![ldap](../../images/ldap01.png)
+    ![ldap](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/ldap01.png)
 
     | Field         | Description                                                  | Example                             |
     | ------------- | ------------------------------------------------------------ | ----------------------------------- |

@@ -10,7 +10,7 @@ Agent 描述了整个`流水线`执行过程或者某个`阶段`的执行环境�
 
 ## 使用内置 Label
 
-应用工作台通过 podTemplate 能力声明了 6 个 label：`base`、`maven`、`go`、`go16`、`node.js` 和 `python`。您可以指定具体的 Agent 标签来使用对应的 podTemplate。
+应用工作台通过 podTemplate 能力声明了 7 个 label：`base`、`maven`、`mavenjdk11`、`go`、`go16`、`node.js` 和 `python`。您可以指定具体的 Agent 标签来使用对应的 podTemplate。
 
 - 可以在 Jenkinsfile 中通过 `node('go')` 使用 go 的 podTemplate。
 
@@ -58,6 +58,18 @@ Agent 描述了整个`流水线`执行过程或者某个`阶段`的执行环境�
 | 操作系统 | centos-7 (7.9.2009)                                          |
 | Jdk      | openjdk-1.8.0_322                                            |
 | Maven    | 3.5.3                                                        |
+| podman   | podman version 3.0.1                                         |
+| Kubectl  | v1.22.0                                                      |
+| 内置工具 | unzip、which、make(GNU Make 3.82)、wget、zip、bzip2、git (2.9.5) |
+
+**Jenkins Agent Label: mavenjdk11**
+
+| 名称     | 类型/版本                                                    |
+| -------- | ------------------------------------------------------------ |
+| 容器名称 | maven                                                        |
+| 操作系统 | centos-7 (7.9.2009)                                          |
+| Jdk      | openjdk-11.0.19                                            |
+| Maven    | 3.5.3                                                     |
 | podman   | podman version 3.0.1                                         |
 | Kubectl  | v1.22.0                                                      |
 | 内置工具 | unzip、which、make(GNU Make 3.82)、wget、zip、bzip2、git (2.9.5) |

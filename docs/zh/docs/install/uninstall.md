@@ -17,7 +17,7 @@ kubectl -n mcamel-system delete redisfailover mcamel-common-redis-cluster
 kubectl -n mcamel-system delete tenant mcamel-common-minio-cluster
 kubectl -n ghippo-system delete gateway ghippo-gateway
 kubectl -n istio-system delete requestauthentications ghippo
-helm -n mcamel-system uninstall eck-operator mysql-operator redis-operator
+helm -n mcamel-system uninstall eck-operator mysql-operator redis-operator minio-operator
 helm -n ghippo-system uninstall ghippo
 helm -n insight-system uninstall insight-agent insight
 helm -n ipavo-system uninstall ipavo

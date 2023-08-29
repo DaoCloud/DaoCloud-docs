@@ -1,33 +1,50 @@
-# 通过 YAML 创建多云工作负载
+# 通过 YAML 创建多云 Deployment
 
-除了通过镜像创建工作负载外，还可以通过输入 YAML 语句来创建。
+支持通过镜像和 YAML 文件两种方式创建多云无状态负载（Deployment）。您可以根据实际情况选择适合自己的创建方式。
 
-这种创建方式的步骤比较简单，如下所述。
+- 镜像创建通过表单填写各项配置，通俗易懂、简单易用，但步骤较为繁琐。
+- YAML 创建通过 YAML 文件配置各项信息，操作步骤更少、效率更高，但要求操作者掌握一定的后端技术知识。
 
-1. 在左侧导航栏中，点击`多云工作负载`，点击右上角的 `YAML 创建`按钮。
+本文介绍如何通过 YAML 创建多云 Deployment。如需了解镜像创建方式，可参考[通过镜像创建多云 Deployment](deployment.md)。
 
-    ![yaml创建](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/depyaml01.png)
+## 前提条件
 
-2. 例如输入创建 Deployment 的 YAML 语句后，点击`下一步`。
+- [创建多云实例](../instance/add.md)
+- 在多云实例中[添加至少一个工作集群](../cluster.md#_2)
 
-    ![输入代码](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/depyaml02.png)
+## 操作步骤
 
-3. 输入部署策略的 YAML 语句后，点击`下一步`。
+1. 在左侧导航栏中，点击`多云工作负载`->`无状态负载`，然后在右上角点击 `YAML 创建`。
 
-    ![输入PropagationPolicy](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/depyaml03.png)
+    ![yaml创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/deploy13.png)
 
-4. 输入差异化策略的 YAML 语句后，点击`确定`。
+2. 输入或导入 Deployment 的 YAML 文件，然后点击`下一步`。
 
-    ![OverridePolicy](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/depyaml04.png)
+    > 点击`下载`可以将当前的 YAML 文件下载并保存到本地，便于后续在其他场景中使用。
 
-5. 自动返回多云工作负载列表，点击列表右侧的 `⋮`，可以编辑修改 YAML，还可以暂停、重启和删除该负载。
+    ![输入代码](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/deploy14.png)
 
-    ![其他操作](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/depyaml05.png)
+3. 输入或导入部署策略的 YAML 文件，然后点击`下一步`。
 
-## YAML 示例
+    ![输入pp](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/deploy15.png)
 
-多云编排模块自带的 YAML 编辑器中会自动检测 YAML 语法，如有错误，会出现相关提示。
-以下列出一些常用的示例，您稍加修改就可以使用。
+4. 输入或导入差异化策略的 YAML 文件，然后点击`确定`。
+
+    !!! note
+
+        差异化策略为可选配置。如无需差异化配置，则不用在此输入任何内容，直接点击`确定`即可。
+
+    ![op](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/deploy16.png)
+
+页面会自动返回多云工作负载列表，点击列表右侧的 `⋮`，可以编辑修改 YAML，还可以暂停、重启和删除该负载。
+
+![more actions](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/deploy12.png)
+
+## YAML 文件示例
+
+多云编排模块自带的 YAML 编辑器中会自动检测 YAML 语法。如有错误，会用红色波浪线标记错误点。
+
+下面提供一些常用的 YAML 文件示例，您稍加修改就可以使用。
 
 ### Deployment 示例
 

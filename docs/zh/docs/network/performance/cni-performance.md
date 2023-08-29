@@ -75,7 +75,7 @@
 
 - Pod 吞吐量
 
-    ![pod](../../images/network-pod-bandwidth.png)
+    ![pod](../images/network-pod-bandwidth.png)
 
     |测试用例|结论|
     |----|----|
@@ -86,7 +86,7 @@
 
 - Service 吞吐量
 
-    ![service](../../images/network-svc-bandwidth.png)
+    ![service](../images/network-svc-bandwidth.png)
     
     |测试用例|结论|
     |----|----|
@@ -97,7 +97,7 @@
 
 - Pod 长时延
 
-    ![long](../../images/network-long-connection.png)
+    ![long](../images/network-long-connection.png)
 
     |测试用例|结论|
     |----|----|
@@ -108,7 +108,7 @@
 
 - Pod 短链接
 
-    ![short](../../images/network-short-connection.png)
+    ![short](../images/network-short-connection.png)
 
     |测试用例|结论|
     |----|----|

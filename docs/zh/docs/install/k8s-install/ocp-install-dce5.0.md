@@ -4,7 +4,7 @@
 
 ## 前提条件
 
-- DCE 5.0 默认支持的 Kubernetes 版本为 v1.22.x、v1.23.x、v1.24.x、v1.25.x
+- DCE 5.0 默认支持的 Kubernetes 版本为 v1.22.x、v1.23.x、v1.24.x、v1.25.x、v1.26.x
 - 已经拥有一个 OCP 环境，并且版本不低于 v1.22.x
 - 准备一个私有镜像仓库，并且保证集群可以访问到
 - 确保资源充足，建议集群至少还有 12 核 24 GB 的可用资源
@@ -13,18 +13,18 @@
 
 1. 通过堡垒机登录到 Control plane 节点。
 
-2. 下载全模式离线包，可以在[下载中心](../../download/dce5.md)下载最新版本。
+2. 下载全模式离线包，可以在[下载中心](../../download/index.md)下载最新版本。
 
     | CPU 架构 | 版本   | 下载地址                                                                                          |
     | -------- | ------ | ------------------------------------------------------------------------------------------------- |
-    | AMD64    | v0.6.1 | <https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.1-amd64.tar> |
-    | ARM64     | v0.6.1 | <https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.1-arm64.tar> |
+    | AMD64    | v0.10.0 | <https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.10.0-amd64.tar> |
+    | ARM64     | v0.10.0 | <https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.10.0-arm64.tar> |
 
     下载完毕后解压离线包：
 
     ```bash
     ## 以 amd64 架构离线包为例
-    tar -xvf offline-v0.6.1-amd64.tar
+    tar -xvf offline-v0.10.0-amd64.tar
     ```
 
 3. 设置[集群配置文件 clusterConfig.yaml](../commercial/cluster-config.md)，可以在离线包 `offline/sample` 下获取该文件并按需修改。

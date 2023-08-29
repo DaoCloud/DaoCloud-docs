@@ -62,7 +62,7 @@ Workspaces can be mapped to various concepts such as projects, tenants, enterpri
 
     
 
-1. Click `Workspace and Hierarchy` in the left navigation bar, and click the `Create Workspace` button in the upper right corner.
+1. Click `Workspace and Folder` in the left navigation bar, and click the `Create Workspace` button in the upper right corner.
 
     
 
@@ -96,7 +96,7 @@ Follow the steps below to prepare a namespace that is not yet bound to any works
 
     !!! info
 
-        Workspaces are primarily used to divide groups of resources and grant users (groups of users) different access rights to that resource. For a detailed description of the workspace, please refer to [Workspace and Hierarchy](workspace.md).
+        Workspaces are primarily used to divide groups of resources and grant users (groups of users) different access rights to that resource. For a detailed description of the workspace, please refer to [Workspace and Folder](workspace.md).
 
     
 
@@ -108,7 +108,7 @@ Follow the steps below to prepare a namespace that is not yet bound to any works
 
 In addition to binding in the namespace list, you can also return to `global management`, follow the steps below to bind the workspace.
 
-1. Click `Global Management` -> `Workspace and Hierarchy` -> `Resource Group`, click a workspace name, and click the `Bind Resource` button.
+1. Click `Global Management` -> `Workspace and Folder` -> `Resource Group`, click a workspace name, and click the `Bind Resource` button.
 
     
 
@@ -118,7 +118,7 @@ In addition to binding in the namespace list, you can also return to `global man
 
 ## Add members to the workspace and authorize
 
-1. In `Workspace and Hierarchy` -> `Authorization`, click the name of a workspace, and click the `Add Authorization` button.
+1. In `Workspace and Folder` -> `Authorization`, click the name of a workspace, and click the `Add Authorization` button.
 
     
 

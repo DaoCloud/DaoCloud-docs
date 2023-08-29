@@ -8,9 +8,9 @@
 - Spiderpool：Multus-underlay 依赖 [Spiderpool](https://github.com/spidernet-io/spiderpool) 作为 `ipam`。
   安装 `Spiderpool` 请参考 [Install Spiderpool](../spiderpool/install.md)。
 - 如需安装 SRIOV-CNI, 需要确认节点是否为物理主机且节点拥有支持 SRIOV 的物理网卡。
-  如果节点为 VM 虚拟机或者没有支持 SRIOV 的网卡，那么 SRIOV 将无法工作。
+  如果节点为 VM 虚拟机或者没有支持 SR-IOV 的网卡，那么 SR-IOV 将无法工作。
   详情参考 [sriov-device-plugin](https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin)。
-- 不建议同时安装 MacVLAN 和 SRIOV。
+- 不建议同时安装 MacVLAN 和 SR-IOV。
 
 ## 安装步骤
 
@@ -78,23 +78,23 @@
     - `Master Interface`：MacVLAN 主接口的名称。注意：配置的主接口必须存在于主机上, 否则 MacVLAN 无法工作。
     - `Vlan ID`：可选，MacVLAN 主接口的 Vlan tag。
 
-6. 安装 SRIOV（可选，默认不安装）：
+6. 安装 SR-IOV（可选，默认不安装）：
 
-    配置 SRIOV Multus CRD：
+    配置 SR-IOV Multus CRD：
 
     ![sriov_install](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/sriov_install.png)
 
-    - `Install SRIOV CNI`：是否安装 SRIOV，默认不安装。
-    - `SRIOV Type`：安装 SRIOV 的 Multus CRD 实例的类型，有以下几种：
-      - `sriov-overlay`：此类型下，SRIOV 会与默认 CNI 搭配使用（比如 Calico），这样会在 Pod 中插入两张网卡。
-          分别是默认 CNI 和 SRIOV 的网卡，前者用于解决 Pod 与集群东西向通信问题；后者用于 Pod 集群南北向通信。
-      - `sriov-standalone`：此类型下，Pod 中只会插入一张 SRIOV 的网卡，只由其完成与集群东西向和南北向的通信问题。
+    - `Install SRIOV CNI`：是否安装 SR-IOV，默认不安装。
+    - `SRIOV Type`：安装 SR-IOV 的 Multus CRD 实例的类型，有以下几种：
+      - `sriov-overlay`：此类型下，SR-IOV 会与默认 CNI 搭配使用（比如 Calico），这样会在 Pod 中插入两张网卡。
+          分别是默认 CNI 和 SR-IOV 的网卡，前者用于解决 Pod 与集群东西向通信问题；后者用于 Pod 集群南北向通信。
+      - `sriov-standalone`：此类型下，Pod 中只会插入一张 SR-IOV 的网卡，只由其完成与集群东西向和南北向的通信问题。
     - `SRIOV CR Name`：Multus CRD 实例的名称。
-    - `Vlan ID`：可选，SRIOV PF 的 Vlan tag。
-    - `SRIOV Device Plugin Configuration`：用于发现主机上的 SRIOV PF 和 VF device，筛选方式可以为：`vendors`、`devices`、`drivers`、`pfNames`。
+    - `Vlan ID`：可选，SR-IOV PF 的 Vlan tag。
+    - `SRIOV Device Plugin Configuration`：用于发现主机上的 SR-IOV PF 和 VF device，筛选方式可以为：`vendors`、`devices`、`drivers`、`pfNames`。
         具体参考 [sriov-device-plugin-readme.md](https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin/blob/master/README.md)。
 
-    配置 SRIOV Net-Device Plugin：
+    配置 SR-IOV Net-Device Plugin：
 
     - `vendors`：PCI 设备厂商号，如 '8086' 代表 Intel
     - `devices`：PCI 设备型号，如 '154c'
@@ -105,7 +105,7 @@
 
     !!! note
     
-        不建议同时启用 MacVLAN 和 SRIOV。另外启用 SRIOV 需要硬件支持, 安装前确认物理主机的网卡是否支持 SRIOV。
+        不建议同时启用 MacVLAN 和 SR-IOV。另外启用 SR-IOV 需要硬件支持, 安装前确认物理主机的网卡是否支持 SR-IOV。
 
 7. 配置完成，点击`安装`。
 
@@ -113,7 +113,7 @@
 
 1. 检查各组件是否正常 Running：
 
-    包括 Multus、Meta-plugins、SRIOV-CNI（如果启用）、SRIOV-Device-Plugins（如果启用）。
+    包括 Multus、Meta-plugins、SR-IOV CNI（如果启用）、SRIOV-Device-Plugins（如果启用）。
 
     ![install_finished](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/install_finished.png)
 

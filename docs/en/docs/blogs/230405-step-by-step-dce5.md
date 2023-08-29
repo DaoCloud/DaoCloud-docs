@@ -13,7 +13,7 @@ Author: [Peter Pan](https://github.com/panpan0000), [SAMZONG](https://github.com
 
 This article completes the installation of DCE 5.0 Community Package from 0 to 1 in a cluster of 3 nodes, including K8s cluster, dependencies, network, storage and other details and more considerations.
 
-> At this stage, the iteration of the version is relatively fast. The installation method of this article may be different from the latest version. Please refer to the [Installation Instructions](../install/intro.md) of the product documentation.
+> At this stage, the iteration of the version is relatively fast. The installation method of this article may be different from the latest version. Please refer to the [Installation Instructions](../install/index.md) of the product documentation.
 
 ## Cluster Planning
 
@@ -335,7 +335,7 @@ chmod +x ./dce5-installer
 
      ![image](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/firewall.png)
 
-### Execute the installation
+### Run the installation
 
 1. If your browser is directly connected to the IP of the master node, run directly
 
@@ -359,6 +359,6 @@ chmod +x ./dce5-installer
 
      ![Successful login](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/firstscreen.png)
 
-[Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [Free Trial](../dce/license0.md){ .md-button .md-button--primary }

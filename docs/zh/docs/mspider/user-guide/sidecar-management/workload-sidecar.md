@@ -6,7 +6,7 @@
 
 在左侧导航栏中，点击`边车管理` -> `工作负载边车管理`，选择一个集群后，可以查看该集群下所有工作负载及其边车注入状态、所属命名空间、资源限制等信息。
 
-![工作负载边车列表](../../images/wl-sidecar01.png)
+![工作负载边车列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/wl-sidecar01.png)
 
 各列的含义如下：
 
@@ -27,11 +27,11 @@
 
 如果一个工作负载已注入边车，点击最后一列的 `⋮`，在弹出的菜单中选择`查看边车状态`。
 
-![边车运行状态](../../images/wl-sidecar02.png)
+![边车运行状态](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/wl-sidecar02.png)
 
 可以查看边车当前运行状态、资源申请值和限制值。
 
-![边车运行状态](../../images/wl-sidecar02-01.png)
+![边车运行状态](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/wl-sidecar02-01.png)
 
 ## 启用边车注入
 
@@ -39,11 +39,11 @@
 
 1. 选择一个或多个未启用边车注入的工作负载，点击右侧的`注入启用`。
    
-    ![选择边车注入](../../images/wl-sidecar03.png)
+    ![选择边车注入](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/wl-sidecar03.png)
 
 2. 在弹出对话框中，确认选择的工作负载后，勾选`立即重启`，点击`确定`。
    
-    ![选择边车注入](../../images/wl-sidecar04.png)
+    ![选择边车注入](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/wl-sidecar04.png)
 
 3. 返回工作负载列表，所选工作负载的`状态`将发生变化，例如从`未注入`到`已注入`。
    在工作负载完成重启后，将完成边车注入，相关注入进度可查看`已注入 Pod`这一列。
@@ -61,11 +61,11 @@
 
 1. 选择一个或多个已启用边车注入的工作负载，点击右侧的`注入禁用`。
    
-    ![选择边车禁用](../../images/sc-disable01.png)
+    ![选择边车禁用](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/sc-disable01.png)
 
 2. 在弹出对话框中，确认选择的工作负载数量是否正确，确认无误后，勾选`立即重启`，点击`确定`。
    
-    ![选择边车注入](../../images/sc-disable02.png)
+    ![选择边车注入](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/sc-disable02.png)
 
 3. 返回工作负载列表，可以看到所选工作负载的`状态`已变更为`未注入`。相关卸载进度可查看`已注入 Pod`这一列。
 
@@ -77,11 +77,11 @@
 
 1. 选择一个（或多个）已启用边车注入的工作负载，点击`边车资源限制`按钮。
 
-    ![边车资源限制](../../images/sc-disable01.png)
+    ![边车资源限制](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/sc-disable01.png)
 
 2. 弹出对话框中，分别设置 CPU/内存的请求值与限制值。选中`立即重启`，点击`确定`。
 
-    ![选择边车注入](../../images/sc-disable03.png)
+    ![选择边车注入](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/sc-disable03.png)
 
 3. 在工作负载边车管理列表中，可以看到指定工作负载的 `CPU 申请值/限制值`和`内存申请值/限制值`内数据已更新。
 

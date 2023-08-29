@@ -11,19 +11,19 @@ In DCE 5.0, you have the option to customize the appearance of the login page, t
 
 1. To get started, log in to DCE 5.0 as a user with the `admin` role and navigate to `Global Management` -> `Settings` found at the bottom of the left navigation bar.
 
-    ![settings](../../images/appear01.png)
+    ![settings](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/appear01.png)
 
 2. Select `Appearance`. On the `Custom your login page` tab, modify the icon and text of the login page as needed, then click `Save`.
 
-    ![login](../../images/appear02.png)
+    ![login](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/appear02.png)
 
 3. On the `Custom top navigation bar` tab, modify the icon and text of the navigation bar as needed, then click `Save`.
 
-    ![nav](../../images/appear03.png)
+    ![nav](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/appear03.png)
 
 4. On the `Advanced customization` tab, you can modify login page, navigation bar, copyright, and ICP registration with css.
 
-    ![advanced](../../images/appear05.png)
+    ![advanced](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/appear05.png)
 
 !!! note
 

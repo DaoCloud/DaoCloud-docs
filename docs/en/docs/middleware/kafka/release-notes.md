@@ -2,6 +2,28 @@
 
 This page lists the Release Notes of Kafka message queue, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-07-31
+
+### v0.7.3
+
+#### New Features
+
+- **Added** Access restrictions for UI interface.
+
+## 2023-06-30
+
+### v0.7.0
+
+#### New Features
+
+- **Added**: Integrated with the global management audit log module.
+- **Added**: Added support for `LoadBalancer` service type.
+
+#### Improvements
+
+- **Improved**: Removed interfering elements and added time range selection to monitoring charts.
+- **Improved**: Closed-loop installation of `ServiceMonitor`.
+
 ## 2023-04-27
 
 ### v0.5.1

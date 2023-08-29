@@ -1,47 +1,59 @@
-# Deploying DCE 5.0 Enterprise Package on Oracle Linux R9 U1 Operating System
+# Deploying DCE 5.0 Enterprise Package on Oracle Linux R9/R8 U1 Operating System
 
-This page will introduce how to deploy DCE 5.0 on Oracle Linux R9 U1 operating system, which supports v0.8.0 and above.
+This article will guide you on how to deploy DCE 5.0 on Oracle Linux R9/R8 U1 operating system,
+starting from version v0.8.0 and above.
 
 ## Prerequisites
 
-- Please read [Deployment Architecture](../commercial/deploy-arch.md) in advance to confirm the deployment mode.
-- Please read [Deployment Requirements](../commercial/deploy-requirements.md) in advance to confirm whether the network, hardware, ports, etc. meet the requirements.
-- Please read [Preparation Work](../commercial/prepare.md) in advance to confirm machine resources and pre-checks.
+- Please read the [Deployment Architecture](../commercial/deploy-arch.md) in advance to
+  confirm the deployment mode for this installation.
+- Please read the [Deployment Requirements](../commercial/deploy-requirements.md)
+  in advance to ensure that the network, hardware, ports, etc., meet the requirements.
+- Please read the [Preparation](../commercial/prepare.md) in advance to verify
+  machine resources and pre-checks.
 
 ## Offline Installation
 
-1. Download the full-mode offline package, which can be downloaded from the [download center](https://docs.daocloud.io/download/dce5/) for the latest version.
+1. Download the full mode offline package. You can download the latest version
+   from the [Download Center](https://docs.daocloud.io/download/dce5/).
 
-    | CPU Architecture | Version | Download Link |
-    | ---------------- | ------- | ------------- |
-    | AMD64            | v0.8.0  | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.8.0-amd64.tar> |
+    | CPU Architecture | Version | Download Link                                                                                   |
+    | ---------------- | ------- | ---------------------------------------------------------------------------------------------- |
+    | AMD64            | v0.10.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.10.0-amd64.tar> |
 
-    After downloading, unzip the offline package:
+    After downloading, extract the offline package:
 
     ```bash
-    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.8.0-amd64.tar
-    tar -xvf offline-v0.6.1-amd64.tar
+    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.10.0-amd64.tar
+    tar -xvf offline-v0.10.0-amd64.tar
     ```
 
-2. Download the Oracle Linux R9 U1 image file.
+2. Download the Oracle Linux R9/R8 U1 image file.
 
     ```bash
+    ## Oracle Linux R9 U1
     curl -LO https://yum.oracle.com/ISOS/OracleLinux/OL9/u1/x86_64/OracleLinux-R9-U1-x86_64-dvd.iso
+
+    ## Oracle Linux R8 U1
+    curl -LO https://yum.oracle.com/ISOS/OracleLinux/OL8/u7/x86_64/OracleLinux-R8-U7-x86_64-dvd.iso
     ```
 
-3. Download the Oracle Linux R9 U1 osPackage offline package.
+3. Download the Oracle Linux R9/R8 U1 osPackage offline package.
 
-    Download the production script:
+    ```bash
+    ## Oracle Linux R9 U1
+    curl -LO https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.7.4/os-pkgs-oracle9-v0.7.4.tar.gz
 
-     ```bash
-    curl -LO https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.5.4/os-pkgs-oracle9-v0.5.4.tar.gz
+    ## Oracle Linux R8 U1
+    curl -LO https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.7.4/os-pkgs-oracle8-v0.7.4.tar.gz
     ```
 
-4. Download the addon offline package, which can be downloaded from the [download center](../../download/dce5.md) for the latest version (optional).
+4. Download the addon offline package. You can download the latest version from
+   the [Download Center](../../download/index.md) (optional).
 
-5. Set up the [cluster configuration file clusterConfig.yaml](../commercial/cluster-config.md), which can be obtained under the offline package `offline/sample` and modified as needed.
-    
-    The reference configuration is:
+5. Set up the [cluster configuration file clusterConfig.yaml](../commercial/cluster-config.md).
+   You can find this file in the `offline/sample` directory of the offline package and modify
+   it as needed. The reference configuration is as follows:
 
     ```yaml
     apiVersion: provision.daocloud.io/v1alpha3
@@ -68,18 +80,19 @@ This page will introduce how to deploy DCE 5.0 on Oracle Linux R9 U1 operating s
       binaries:
         type: builtin
       kubeanConfig: |-
-        # Turn on the recommended sysctl configuration to avoid the `too many open files` problem
+        # Enable recommended sysctl settings to avoid 'too many open files' issues
         node_sysctl_tuning: true
-        # Disable kubespray from installing public repo for oracle linux
+        # Disable kubespray from installing public repo for Oracle Linux
         use_oracle_public_repo: false
     ```
 
     !!! note
 
-        Because the `kpanda-controller-manager` component reports an error `failed to create fsnotify watcher: too many open files.` 、
-        during the installation process, you need to set `node_sysctl_tuning: true` in the `clusterConfig.yaml` file.
+        Due to an error with the `kpanda-controller-manager` component during installation,
+        stating `failed to create fsnotify watcher: too many open files.`, it is necessary to
+        set `node_sysctl_tuning: true` in the `clusterConfig.yaml` file.
 
-7. Start installing DCE 5.0.
+7. Start the installation of DCE 5.0.
 
     ```bash
     ./dce5-installer cluster-create -m ./sample/mainfest.yaml -c ./sample/clusterConfig.yaml
@@ -87,19 +100,22 @@ This page will introduce how to deploy DCE 5.0 on Oracle Linux R9 U1 operating s
 
     !!! note
 
-        For detailed parameters, you can check with `./dce5-installer --help`:
+        Here are some parameter introductions. You can refer to `./dce5-installer --help` for more parameters:
 
-        - `-z` Minimal installation
-        - `-c` Specify the cluster configuration file. When using NodePort to expose the console, you do not need to specify `-c`
-        - `-d` Enable debug mode
-        - `--serial` Specifies that all installation tasks are executed serially after the specified task
+        - `-z`: Minimal installation
+        - `-c`: Specify the cluster configuration file (not required when exposing the console using NodePort)
+        - `-d`: Enable debug mode
+        - `--serial`: Execute all installation tasks in a serial manner
 
-8. After the installation is complete, the command line will prompt that the installation was successful. Congratulations! :smile: Now you can explore the new DCE 5.0 with the default account and password (admin/changeme) using the URL displayed on the screen!
+8. After the installation is complete, the command line will prompt for a successful installation.
+   Congratulations! 🎉 Now you can explore the brand new DCE 5.0 using the default account and
+   password (admin/changeme) provided in the URL shown on the screen.
 
     ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
 
     !!! success
 
-        Please keep a record of the URL provided for easy access next time.
+        Please make sure to record the URL provided for future access.
 
-9. After successfully installing DCE 5.0 Enterprise Package, please contact us for authorization: email [info@daocloud.io](mailto:info@daocloud.io) or call 400 002 6898.
+9. After successfully installing DCE 5.0 Enterprise Package, please contact us for
+   authorization: email [info@daocloud.io](mailto:info@daocloud.io) or call 400 002 6898.

@@ -17,7 +17,7 @@ hide:
 
 1. 通过 URI 匹配方式，实现外部应用对服务 `bookinfo.com` 的指定页面访问路由。
 
-    ![访问路由](../../images/out-to-in01.png)
+    ![访问路由](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/out-to-in01.png)
 
 2. 点击`流量治理` -> `网关规则` -> `创建`为 istio 网关创建网关规则，对外暴露服务及端口。
 

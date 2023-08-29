@@ -9,7 +9,7 @@ This page can download the offline installation package and verification file of
 | offline-centos7-community-v0.3.29-amd64.tar | v0.3.29 | AMD64 | 9.2 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-community-v0.3.29-amd64.tar) | 2022-12-16 |
 | offline-kylin-v10sp2-community-v0.3.29-arm64.tar | v0.3.29 | ARM64 | 6.9 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-kylin-v10sp2-community-v0.3.29-arm64.tar) | 2022-12-16 |
 
-## Validation
+## Verification
 
 Go to the download directory of the offline installation package.
 
@@ -76,5 +76,5 @@ DCE 5.0 Community Package includes the following modules by default:
 
 ## More
 
-- [Online Documentation](../../dce/what.md)
+- [Online Documentation](../../dce/index.md)
 - [Report a bug](https://github.com/DaoCloud/DaoCloud-docs/issues)

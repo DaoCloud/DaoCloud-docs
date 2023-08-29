@@ -35,11 +35,11 @@ Refer to [Video Tutorial](../../videos/kangaroo.md#_3) to familiarize yourself w
 
 1. Click the `Integrated Registry` button in the upper right corner.
 
-    ![Click Button](../images/integrated02.png)
+    ![Click Button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/integrated02.png)
 
 1. Select the registry type, fill in the integration name, registry address, username, and password, and click `OK`.
 
-    ![Fill Parameters](../images/integrated03.png)
+    ![Fill Parameters](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/integrated03.png)
 
     !!! note
 
@@ -48,6 +48,6 @@ Refer to [Video Tutorial](../../videos/kangaroo.md#_3) to familiarize yourself w
 1. Return to the integrated registry list. The integrated repositories will have labels such as
   `Integrated`, `Healthy`, or `Unhealthy`. Hovering over a tile allows you to perform operations such as `Unbind` and `Edit`.
 
-    ![More Operations](../images/integrated04.png)
+    ![More Operations](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/integrated04.png)
 
 Next step: [Create registry space](registry-space.md)

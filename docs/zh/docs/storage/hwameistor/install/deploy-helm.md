@@ -35,7 +35,6 @@ HwameiStor 的任何组件都可以通过 Helm Chart 进行安装。
         -n hwameistor --create-namespace
     ```
 
-
 !!! tip
 
     默认的镜像仓库是 `registry.k8s.io` 和 `ghcr.io`。

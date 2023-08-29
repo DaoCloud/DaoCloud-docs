@@ -10,11 +10,11 @@ This method is straightforward and intuitive.
 
 1. After entering the selected mesh, click `Traffic Management` -> `Service Entries` in the left navigation bar, and then click the `Create` button at the top right corner.
 
-    ![Create](../../images/entry01.png)
+    ![Create](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/entry01.png)
 
 2. On the `Create Service Entry` page, configure the parameters and click `OK`. For the meaning of each parameter, please refer to the [Parameter Description](#_3) section.
 
-    ![Configure Parameters](../../images/entry02.png)
+    ![Configure Parameters](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/entry02.png)
 
 3. Return to the service entry list, and you will see a message indicating successful creation.
 
@@ -24,11 +24,11 @@ This method is straightforward and intuitive.
 
 1. After entering the selected mesh, click `Traffic Management` -> `Service Entries` in the left navigation bar, and then click the `YAML Creation` button at the top right corner.
 
-    ![YAML Creation](../../images/entry01.png)
+    ![YAML Creation](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/entry01.png)
 
 2. Select a namespace, choose a template, modify the parameter values, or directly import an existing YAML file. After confirming the parameters are correct, click `OK`.
 
-    ![YAML Parameter Configuration](../../images/entry06.png)
+    ![YAML Parameter Configuration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/entry06.png)
 
 3. Return to the service entry list, and you will see a message indicating successful creation.
 

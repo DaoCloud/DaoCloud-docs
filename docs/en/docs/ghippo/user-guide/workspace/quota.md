@@ -1,92 +1,95 @@
-# resource limit
+# Resource Quota
 
-Sharing resources does not mean that the sharers can use the shared resources without restriction.
-Admin, Kpanda Owner and Workspace Admin can limit the maximum usage of a user through the `Resource Quota` feature in shared resources.
-Unrestricted means unlimited use.
+Shared resources do not necessarily mean that the shared users can use the shared resources without
+any restrictions. Admins, Kpanda Owners, and Workspace Admins can limit the maximum usage quota of
+a user through the "Resource Quota" feature in shared resources. If no restrictions are set,
+it means the usage is unlimited.
 
-- CPU request (Core)
-- CPU limit (Core)
-- memory request (MB)
-- Memory limit (MB)
-- Total storage requests (GB)
-- volume claim(s)
+- CPU Request (Core)
+- CPU Limit (Core)
+- Memory Request (MB)
+- Memory Limit (MB)
+- Total Storage Request (GB)
+- Persistent Volume Claims (PVC)
 
-A resource (cluster) can be shared by multiple workspaces, and a workspace can also use resources in multiple shared clusters at the same time.
+A resource (cluster) can be shared among multiple workspaces, and a workspace can use resources from multiple shared clusters simultaneously.
 
-## Resource groups and shared resources
+## Resource Groups and Shared Resources
 
-Both shared resources and cluster resources in resource groups come from [Container Management](../../../kpanda/intro/what.md), but cluster binding and sharing to the same workspace will produce two very different effect.
+Cluster resources in both shared resources and resource groups are derived from [Container Management](../../../kpanda/intro/index.md). However, different effects will occur when binding a cluster to a workspace or sharing it with a workspace.
 
-1. Binding resources
+1. Binding Resources
 
-    Make the users/groups in the workspace have full management and usage rights of the cluster, and Workspace Admin will be mapped to Cluster Admin.
-    Workspace Admin can enter [Container Management Module](../../../kpanda/user-guide/permissions/permission-brief.md) to manage the cluster.
+    Users/User groups in the workspace will have full management and usage permissions for the cluster. Workspace Admin will be mapped as Cluster Admin.
+    Workspace Admin can access the [Container Management module](../../../kpanda/user-guide/permissions/permission-brief.md) to manage the cluster.
 
-    
+    ![Resource Group](../../images/quota01.png)
 
     !!! note
 
-        Currently, the container management module does not have the roles of Cluster Editor and Cluster Viewer, so Workspace Editor and Workspace Viewer cannot be mapped yet.
+        As of now, there are no Cluster Editor and Cluster Viewer roles in the Container Management module. Therefore, Workspace Editor and Workspace Viewer cannot be mapped.
 
-2. Add shared resources
+2. Adding Shared Resources
 
-    Make the user/group in the workspace have the permission to use the cluster resources, and can use the resource quota to go to [Create a namespace (Namespace) in Workbench](#_2).
+    Users/User groups in the workspace will have usage permissions for the cluster resources, which can be used when creating namespaces.
 
-    
+    ![Shared Resources](../../images/quota02.png)
 
-    Unlike resource groups, when a cluster is shared to a workspace, the user's role in the workspace will not be mapped to the resources, so Workspace Admin will not be mapped to Cluster admin.
+    Unlike resource groups, when sharing a cluster with a workspace, the roles of the users in the workspace will not be mapped to the resources. Therefore, Workspace Admin will not be mapped as Cluster admin.
 
-This section presents 3 use cases related to resource quotas.
+This section demonstrates three scenarios related to resource quotas.
 
-## Create namespace
+## Creating Namespaces
 
-Resource quotas are involved when creating a namespace.
+Creating a namespace involves resource quotas.
 
-1. Add a shared cluster in workspace ws01.
+1. Add a shared cluster to workspace `ws01`.
 
-    
+    ![Add Shared Cluster](../../images/quota03.png)
 
-1. Select the workspace ws01 and the shared cluster in Workbench, and create a namespace ns01.
+2. Select workspace `ws01` and the shared cluster in the Workbench, and create a namespace `ns01`.
 
-    
+    ![Create Namespace](../../images/quota04.png)
 
-    - If no resource quota is set in the shared cluster, no resource quota can be set when creating a namespace.
-    - If the resource quota has been set in the shared cluster (for example, CPU request = 100 core), then `CPU request ≤ 100 core` when creating the namespace.
+    - If no resource quotas are set in the shared cluster, there is no need to set resource quotas when creating the namespace.
+    - If resource quotas are set in the shared cluster (e.g., CPU Request = 100 cores), the CPU request for the namespace ns01 must be ≤ 100 cores for successful creation.
 
-## Namespaces are bound to workspaces
+## Binding Namespace to Workspace
 
-Prerequisite: Workspace ws01 has added a shared cluster, and the operator is Workspace Admin + Kpanda Owner or Admin role.
+Prerequisite: Workspace ws01 has added a shared cluster, and the operator has the Workspace Admin + Kpanda Owner or Admin role.
 
-The following two binding methods have the same effect.
+The two methods of binding have the same effect.
 
-- Bind the created namespace ns01 to ws01 in container management
+- Bind the created namespace ns01 to ws01 in Container Management.
 
-    
+    ![Bind to Workspace](../../images/quota05.png)
 
-    - If the resource quota is not set in the shared cluster, the namespace ns01 can be successfully bound regardless of whether the resource quota is set.
-    - If the resource quota `CPU request = 100 core` has been set in the shared cluster, the namespace ns01 must satisfy `CPU request ≤ 100 core` to bind successfully.
+    - If no resource quotas are set in the shared cluster, the namespace ns01 can be successfully bound regardless of whether resource quotas are set.
+    - If resource quotas are set in the shared cluster (e.g., CPU Request = 100 cores), the namespace ns01 must satisfy the condition CPU Request ≤ 100 cores for successful binding.
 
-- In Global Admin, bind namespace ns01 to ws01
+- Bind the namespace ns01 to ws01 in Global Management.
 
-    
+    ![Bind to Workspace](../../images/quota06.png)
 
-    - If the resource quota is not set in the shared cluster, the namespace ns01 can be successfully bound regardless of whether the resource quota is set.
-    - If the resource quota `CPU request = 100 core` has been set in the shared cluster, the namespace ns01 must satisfy `CPU request ≤ 100 core` to bind successfully.
+    - If no resource quotas are set in the shared cluster, the namespace ns01 can be successfully bound regardless of whether resource quotas are set.
+    - If resource quotas are set in the shared cluster (e.g., CPU Request = 100 cores), the namespace ns01 must satisfy the condition CPU Request ≤ 100 cores for successful binding.
 
-## Unbind the namespace from the workspace
+## Unbinding Namespace from Workspace
 
-The following two unbinding methods have the same effect.
+The two methods of unbinding have the same effect.
 
-- unbind namespace ns01 from workspace ws01 in container management
+- Unbind the namespace ns01 from workspace ws01 in Container Management.
 
-    
+    ![Bind to Workspace](../../images/quota07.png)
 
-    - If no resource quota is set in the shared cluster, no matter whether the namespace ns01 has resource quota set or not, unbinding will not affect the resource quota.
-    - If the resource quota `CPU request = 100 core` has been set in the shared cluster, and the resource quota has also been set in the namespace ns01, the corresponding resource quota will be released after unbinding.
+    - If no resource quotas are set in the shared cluster, unbinding the namespace ns01 will not affect the resource quotas, regardless of whether resource quotas were set for the namespace.
+    - If resource quotas are set in the shared cluster (e.g., CPU Request = 100 cores) and the namespace ns01 has its own resource quotas, unbinding will release the corresponding resource quota.
 
-- unbind namespace ns01 from workspace ws01 in global admin
+- Unbind the namespace ns01 from workspace ws01 in Global Management.
 
-    
+    ![Bind to Workspace](../../images/quota08.png)
 
-    - If no resource quota is set in the shared cluster, no matter whether the namespace ns01 has resource quota set or not, it will not affect the resource quota after being unbound.
-    - If the resource quota `CPU request = 100 core` has been set in the shared cluster, and the resource quota has also been set in the namespace ns01, the corresponding resource quota will be released after unbinding.
+    - If no resource quotas are set in the shared cluster, unbinding the namespace ns01 will not affect the resource quotas, regardless of whether resource quotas were set for the namespace.
+    - If resource quotas are set in the shared cluster (e.g., CPU Request = 100 cores) and the namespace ns01 has its own resource quotas, unbinding will release the corresponding resource quota.
+
+In conclusion, resource quotas can be used to limit the maximum usage of shared resources by users. When creating namespaces or binding/unbinding namespaces to workspaces, the resource quotas set in the shared cluster need to be taken into consideration to ensure proper usage limits.

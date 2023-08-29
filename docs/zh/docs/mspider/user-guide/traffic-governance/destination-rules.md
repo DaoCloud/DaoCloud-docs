@@ -2,7 +2,7 @@
 
 目标规则（DestinationRule）同样是服务治理中重要的组成部分，目标规则通过端口、服务版本等方式对请求流量进行划分，并对各请求分流量订制 envoy 流量策略，应用到流量的策略不仅有负载均衡，还有最小连接数、离群检测等。
 
-## 概念介绍
+## 字段概念介绍
 
 几个重要字段如下：
 
@@ -39,7 +39,7 @@
 
 - 服务版本
 - 负载均衡
-- 位置感知负载均衡
+- 地域负载均衡
 - HTTP 连接池
 - TCP 连接池
 - 客户端 TLS
@@ -74,3 +74,60 @@
 YAML 创建方式与虚拟服务相似，您可以直接借助内置模板创建 YAML 文件，如下图所示。
 
 ![YAML 创建](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/destirule07.png)
+
+以下是一个 目标规则的 YAML 示例：
+
+```yaml
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  annotations:
+    ckube.daocloud.io/cluster: dywtest3
+    ckube.daocloud.io/indexes: '{"activePolices":"","cluster":"dywtest3","createdAt":"2023-08-10T02:18:04Z","host":"kubernetes","is_deleted":"false","labels":"","name":"dr01","namespace":"default"}'
+  creationTimestamp: "2023-08-10T02:18:04Z"
+  generation: 1
+  managedFields:
+    - apiVersion: networking.istio.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:host: {}
+          f:trafficPolicy:
+            .: {}
+            f:portLevelSettings: {}
+      manager: cacheproxy
+      operation: Update
+      time: "2023-08-10T02:18:04Z"
+  name: dr01
+  namespace: default
+  resourceVersion: "708763"
+  uid: ff95ba70-7b92-4998-b6ba-9348d355d44c
+spec:
+  host: kubernetes
+  trafficPolicy:
+    portLevelSettings:
+      - port:
+          number: 9980
+status: {}
+```
+
+## 策略介绍
+
+### 地域负载均衡
+
+地域负载均衡是 Istio 具备的一个基于工作负载部署所在的 Kubernetes 集群工作节点上的地域标签，用作流量转发优化的策略。
+配置方式主要有：流量分发规则（权重分布）和流量转移规则（故障转移）：
+
+- 流量分发规则：主要配置源负载位置访问到目标负载位置在不同的区域之间的流量权重分配
+- 流量转移规则：流量的故障转移一般需要配合离群检测功能使用，可以达到更及时检测工作负载故障进行流量转移
+
+注意，地域标签是在网格成员集群的工作节点上的 label，注意检查节点的标签配置：
+
+- 地区：`topology.kubernetes.io/region`
+- 可用区域：`topology.kubernetes.io/zone`
+- 分区：`topology.istio.io/subzone` 分区是 istio 特有的配置，以实现更细粒度划分
+
+另外地域是根据分层顺序进行匹配排列的，不同 `region` 的 `zone` 是两个不同的可用区域。
+
+详情请参阅 Istio 官方文档： <https://istio.io/latest/zh/docs/tasks/traffic-management/locality-load-balancing/>

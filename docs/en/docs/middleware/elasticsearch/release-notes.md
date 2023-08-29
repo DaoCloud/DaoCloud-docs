@@ -2,6 +2,38 @@
 
 This page lists the Release Notes of Elasticsearch indexing service, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-07-31
+
+### v0.9.3
+
+#### New Features
+
+- **Added** Access restrictions for UI interface.
+
+## 2023-06-30
+
+### v0.9.0
+
+#### New Features
+
+- **Added**: Added anti-affinity configuration for `mcamel-elasticsearch` nodes.
+- **Added**: Added monitoring charts for `mcamel-elasticsearch`, removing interfering elements and adding time range selection.
+
+#### Improvements
+
+- **Improved**: Closed-loop installation of `mcamel-elasticsearch` ServiceMonitor.
+- **Fixed**: Fixed the monitoring charts for `mcamel-elasticsearch`, removing interfering elements and adding time range selection.
+
+## 2023-05-30
+
+### v0.8.0
+
+#### New Features
+
+- **Added**: Integrated with the global management audit log module for `mcamel-elasticsearch`.
+- **Added**: Added configurable instance monitoring data collection interval for `mcamel-elasticsearch`.
+- **Added**: Fixed incorrect pagination display in the Pod list for `mcamel-elasticsearch`.
+
 ## 2023-04-27
 
 ### v0.5.1

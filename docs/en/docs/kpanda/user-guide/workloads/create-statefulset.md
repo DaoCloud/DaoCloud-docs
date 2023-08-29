@@ -4,13 +4,13 @@ This page describes how to create a stateful load (StatefulSet) through mirrorin
 
 [StatefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) is a common resource in Kubernetes, and [Deployment](create-deployment.md), mainly used to manage the deployment and scaling of Pod collections. The main difference between the two is that Deployment is stateless and does not save data, while StatefulSet is stateful and is mainly used to manage stateful applications. In addition, Pods in a StatefulSet have a persistent ID, which makes it easy to identify the corresponding Pod when matching storage volumes.
 
-Through the container management module of [DCE 5.0](../../../dce/what.md), workloads on multicloud and multiclusters can be easily managed based on corresponding role permissions, including the creation of stateful workloads, update, delete, elastic scaling, restart, version rollback and other full life cycle management.
+Through the container management module of [DCE 5.0](../../../dce/index.md), workloads on multicloud and multiclusters can be easily managed based on corresponding role permissions, including the creation of stateful workloads, update, delete, elastic scaling, restart, version rollback and other full life cycle management.
 
 ## Prerequisites
 
 Before using mirroring to create stateful workloads, the following prerequisites need to be met:
 
-- In the [Container Management](../../intro/what.md) module [Access Kubernetes Cluster](../clusters/integrate-cluster.md) or [Create Kubernetes Cluster](../clusters/create-cluster.md), and can access the cluster UI interface.
+- In the [Container Management](../../intro/index.md) module [Access Kubernetes Cluster](../clusters/integrate-cluster.md) or [Create Kubernetes Cluster](../clusters/create-cluster.md), and can access the cluster UI interface.
 
 - Create a [namespace](../namespaces/createns.md) and a [user](../../../ghippo/user-guide/access-control/user.md).
 
@@ -60,7 +60,7 @@ Container configuration is divided into six parts: basic information, life cycle
      When configuring container-related parameters, you must correctly fill in the container name and image parameters, otherwise you will not be able to proceed to the next step. After filling in the configuration with reference to the following requirements, click `Confirm`.
     
      - Container Name: Up to 63 characters, lowercase letters, numbers and separators ("-") are supported. Must start and end with a lowercase letter or number, eg nginx-01.
-     - Container Image: Enter the address or name of the image. When entering the image name, the image will be pulled from the official [DockerHub](https://hub.docker.com/) by default. After accessing the [container registry](../../../kangaroo/what.md) module of DCE 5.0, you can click `Select Image` on the right to select an image.
+     - Container Image: Enter the address or name of the image. When entering the image name, the image will be pulled from the official [DockerHub](https://hub.docker.com/) by default. After accessing the [container registry](../../../kangaroo/index.md) module of DCE 5.0, you can click `Select Image` on the right to select an image.
      - Update strategy: After checking `Always pull image`, the image will be pulled from the registry every time the load restarts/upgrades. If it is not checked, only the local mirror will be pulled, and only when the mirror does not exist locally, it will be re-pulled from the container registry. For more details, please refer to [Image Pull Policy](https://kubernetes.io/docs/concepts/containers/images/#image-pull-policy).
      - Privileged container: By default, the container cannot access any device on the host. After enabling the privileged container, the container can access all devices on the host and enjoy all the permissions of the running process on the host.
      - CPU/Memory Quota: Requested value (minimum resource to be used) and limit value (maximum resource allowed to be used) of CPU/Memory resource. Please configure resources for containers as needed to avoid resource waste and system failures caused by excessive container resources. The default value is shown in the figure.

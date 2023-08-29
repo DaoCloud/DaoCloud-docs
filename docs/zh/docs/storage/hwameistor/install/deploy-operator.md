@@ -24,18 +24,17 @@ hide:
 
 - 待使用节点上已准备空闲 HDD、SSD 磁盘。
 - 已完成[准备工作](prereq.md)中事项。
-- 如需要使用高可用数据卷，请提前完成[DRDB 安装](drbdinstall.md)。
 - 如部署环境为生产环境，请提前阅读[生产环境资源要求](proresource.md)。
 - 如果您的 Kubernetes 发行版使用不同的 `kubelet` 目录，请提前确认 `kubeletRootDir`。
   详细信息请参考[自定义 Kubelet 根目录](customized-kubelet.md)。
 
 !!! info
 
-  如果没有可用的干净磁盘，Operator 不会自动创建 StorageClass。
-  Operator 会在安装过程中自动纳管磁盘，可用的磁盘会被添加到 LocalStorage 的 pool 里。
-  如果可用磁盘是在安装后提供的，则需要手动下发 LocalDiskClaim 将磁盘纳管到 LocalStorageNode 里。
-  一旦 LocalStorageNode 的 pool 里有磁盘，Operator 就会自动创建 StorageClass。
-  也就是说，如果没有容量，就不会自动创建 StorageClass。
+    如果没有可用的干净磁盘，Operator 不会自动创建 StorageClass。
+    Operator 会在安装过程中自动纳管磁盘，可用的磁盘会被添加到 LocalStorage 的 pool 里。
+    如果可用磁盘是在安装后提供的，则需要手动下发 LocalDiskClaim 将磁盘纳管到 LocalStorageNode 里。
+    一旦 LocalStorageNode 的 pool 里有磁盘，Operator 就会自动创建 StorageClass。
+    也就是说，如果没有容量，就不会自动创建 StorageClass。
 
 ## 安装步骤
 
@@ -53,7 +52,7 @@ hide:
 
     ![Operator02](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/operator2.jpg)
 
-    **`Value.yaml`**参数如下，默认可不进行修改：
+    `Value.yaml` 参数如下，默认可不进行修改：
 
     ```yaml
     global:
@@ -135,6 +134,13 @@ hide:
 
         设置 K8S 镜像仓库地址，默认已经填写可用在线仓库。
         如果私有化环境，可修改为私有仓库地址。
+        
+    - `DRDB`：
+
+        如果需要使用 高可用数据卷，请开启 `DRDB`模块，如安装时未开启，请参考 [开启 DRDB](drbdinstall.md)
+
+    - `replicas`:
+        各组件副本数量，建议使用 `2 ` 副本。
 
 5. 确认参数无误后，点击`确定`完成安装，完成安装后可点击 `Helm 应用`查看 `Hwameistor Operator` 安装状态。
 

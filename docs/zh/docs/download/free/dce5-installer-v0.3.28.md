@@ -36,7 +36,7 @@ offline-community-v0.3.28.tar: OK
 tar -zxvf offline-community-v0.3.28.tar
 ```
 
-然后参阅[社区版安装流程](../../install/intro.md#_2)进行安装。
+然后参阅[社区版安装流程](../../install/index.md#_2)进行安装。
 如果是初次安装或遗忘了许可密钥，请[申请免费社区体验](../../dce/license0.md)。
 
 ## 模块
@@ -51,5 +51,5 @@ DCE 5.0 社区版默认包含以下模块：
 
 ## 更多
 
-- [在线文档](../../dce/what.md)
+- [在线文档](../../dce/index.md)
 - [报告 bug](https://github.com/DaoCloud/DaoCloud-docs/issues)

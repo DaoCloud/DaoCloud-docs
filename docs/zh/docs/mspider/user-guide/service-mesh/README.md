@@ -15,7 +15,7 @@ DCE 5.0 服务网格支持 3 种网格：
 
 1. 在网格列表页面的右上角，点击`创建网格`按钮，在下拉列表中选择一种网格。
 
-    ![创建网格](../../images/create-mesh01.png)
+    ![创建网格](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/create-mesh01.png)
 
 2. 系统会自动检测安装环境，检测成功后填写以下基本信息，点击`下一步`。
 
@@ -25,11 +25,11 @@ DCE 5.0 服务网格支持 3 种网格：
     - 控制面入口方式：支持负载均衡和自定义。
     - 网格组件仓库：输入包含数据面组件镜像的镜像仓库地址，例如 `release-ci.daocloud.io/mspider`。
   
-    ![基本信息](../../images/create-mesh02.png)
+        ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/create-mesh02.png)
 
 3. 系统设置。配置是否上报链路追踪，设置网格规模，选择存储配置后点击`下一步`。
 
-    ![系统设置](../../images/create-mesh03.png)
+    ![系统设置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/create-mesh03.png)
 
     !!! note
 
@@ -38,15 +38,15 @@ DCE 5.0 服务网格支持 3 种网格：
 
 4. 治理设置。设置出站流量策略、位置感知负载均衡、请求重试等。参阅[请求重试参数说明](./params.md#max-retries)。
 
-    ![治理设置](../../images/create-mesh04.png)
+    ![治理设置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/create-mesh04.png)
 
 5. 边车设置。设置全局边车、边车资源限制、默认边车日志级别点击`确定`。参阅[日志级别说明](./params.md#_2)。
 
-    ![边车设置](../../images/create-mesh05.png)
+    ![边车设置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/create-mesh05.png)
 
 6. 自动返回网格列表，新创建的网格默认位于第一个，一段时间后状态将从`创建中`变为`运行中`。点击右侧的 `...` 可以编辑网格基本信息、添加集群、进入控制台操作等。
 
-    ![网格列表](../../images/create-mesh06.png)
+    ![网格列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/create-mesh06.png)
 
 !!! info
 

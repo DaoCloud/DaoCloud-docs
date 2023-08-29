@@ -1,6 +1,6 @@
 # 离线升级全局管理模块
 
-本页说明从[下载中心](../../download/dce5.md)下载全局管理模块后，应该如何安装或升级。
+本页说明从[下载中心](../../download/index.md)下载全局管理模块后，应该如何安装或升级。
 
 !!! info
 
@@ -258,7 +258,7 @@
         helm upgrade ghippo ghippo/ghippo \
           -n ghippo-system \
           -f ./bak.yaml \
-          --set global.imageRegistry=$imageRegistry
+          --set global.imageRegistry=$imageRegistry \
           --version 0.9.0
         ```
 

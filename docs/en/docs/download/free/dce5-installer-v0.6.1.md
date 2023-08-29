@@ -13,7 +13,7 @@ This page can download the offline installation package and verification file of
 | offline-community-v0.6.1-amd64.tar | v0.6.1 | AMD64 | 5.89GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.6.1-amd64.tar) | 2023-04-12 |
 | offline-community-v0.6.1-arm64.tar | v0.6.1 | ARM64 | 5.52GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.6.1-arm64.tar) | 2023-04-12 |
 
-## Validation
+## Verification
 
 Go to the download directory of the offline installation package.
 
@@ -80,5 +80,5 @@ DCE 5.0 Community Package includes the following modules by default:
 
 ## More
 
-- [Online Documentation](../../dce/what.md)
+- [Online Documentation](../../dce/index.md)
 - [Report a bug](https://github.com/DaoCloud/DaoCloud-docs/issues)

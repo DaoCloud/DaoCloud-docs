@@ -1,101 +1,142 @@
 # Redis Cache Service Release Notes
 
-This page lists the Release Notes of the Redis cache service, so that you can understand the evolution path and feature changes of each version.
+This page lists the release notes for the Redis Cache service, providing you with information about the evolution and feature changes in each version.
 
-## v0.7.1
+## 2023-07-31
 
-Release date: 2023-04-27
+### v0.10.0
 
-### New features
+#### New Features
 
-- **Added** `mcamel-redis` details page displays related events
-- **Added** `mcamel-redis` list interface supports Cluster and Namespace field filtering
-- **Added** `mcamel-redis` custom role
+- **Added** access whitelist configuration for `mcamel-redis`.
 
-#### fix
+#### Optimizations
 
-- **Fixed** `mcamel-redis` optimizes the scheduling strategy and adds a sliding button
+- **Optimized** the creation dialog of `mcamel-redis` instance by adding default anti-affinity label values, simplifying the configuration process.
+- **Optimized** the data recovery interface of `mcamel-redis`.
+- **Optimized** the display of frontend interface permissions for `mcamel-redis`.
 
-## v0.6.2
+#### Bug Fixes
 
-Release date: 2023-03-29
+- **Fixed** failure to close node affinity for `mcamel-redis`.
 
-### New features
+## 2023-06-30
 
-- **Added** `mcamel-redis` supports automatic backup and restore.
+### v0.9.0
 
-#### fix
+#### New Features
 
-- **Fixed** Offline mirrors not exported for backup restore.
-- **Fixed** `mcamel-redis` does not export offline mirror for backup restore.
-- **Fixed** `mcamel-redis` fixes several known issues, improves system stability and security.
+- **Added** the ability to prevent creating Redis instances with the same name under different namespaces for `mcamel-redis`.
+- **Added** handling of non-MCamel managed Redis instances to avoid potential misoperations for `mcamel-redis`.
+- **Optimized** the structure and style display of the backup management page for `mcamel-redis`.
+- **Optimized** the password display in backup jobs for `mcamel-redis`.
+- **Optimized** the monitoring charts by removing distracting elements and adding a time range selection for `mcamel-redis`.
+- **Optimized** the installation process of `mcamel-redis` ServiceMonitor.
 
-### Documentation
+## 2023-05-30
 
-- **Added** Added backup feature documentation.
+### v0.8.0
 
-## v0.5.0
+#### New Features
 
-Release date: 2023-02-23
+- **Added** the ability to configure instance anti-affinity for `mcamel-redis`.
+- **Added** integration with the global management audit log module for `mcamel-redis`.
+- **Fixed** an issue where backup-related content remained after deleting Redis instances for `mcamel-redis`.
+- **Fixed** the incorrect display of Service addresses for sentinel clusters in `mcamel-redis`.
 
-### APIs
+## 2023-04-27
 
-- **Added** `mcamel-redis` helm-docs template file.
-- **Added** Operators in the `mcamel-redis` app store can only be installed on mcamel-system.
-- **Added** `mcamel-redis` supports cloud shell.
-- **Added** `mcamel-redis` supports separate registration of navigation bar.
-- **Added** `mcamel-redis` supports viewing logs.
-- **Added** `mcamel-redis` updated singleton/cluster mode Operator version.
-- **Added** `mcamel-redis` displays common Redis clusters.
-- **Added** `mcamel-redis` Operator docking with chart-syncer.
-- **Fixed** the problem that `mcamel-redis` instance name is too long and the custom resource cannot be created.
-- **Fixed** `mcamel-redis` workspace Editor user cannot see instance password.
-- **Fixed** `mcamel-redis` could not parse the correct Redis version number.
-- **Fixed** the problem that `mcamel-redis` cannot modify Port.
-- **Upgrade** `mcamel-redis` upgrade offline mirror detection script.
+### v0.7.1
 
-### Documentation
+#### New Features
 
-- **Added** log view operation instructions, support custom query, export and other features.
+- **Added** event display on the details page for `mcamel-redis`.
+- **Added** support for filtering by Cluster and Namespace fields in the list API for `mcamel-redis`.
+- **Added** custom roles for `mcamel-redis`.
 
-## v0.4.0
+#### Fixes
 
-Release date: 2022-12-25
+- **Fixed** sliding button in scheduling strategy optimization for `mcamel-redis`.
 
-### APIs
+## 2023-03-29
 
-- **Added** `mcamel-redis` NodePort port conflict early detection.
-- **Added** `mcamel-redis` node affinity configuration.
-- **Fixed** `mcamel-redis` singleton and cluster setting nodeport invalid issue.
-- **Fixed** the problem that the slave node cannot be set to 0 in `mcamel-redis` cluster mode.
+### v0.6.2
 
-## v0.2.6
+#### New Features
 
-Release date: 2022-11-28
+- **Added** support for automated backup and recovery for `mcamel-redis`.
 
-### APIs
+#### Fixes
 
-- **Fixed** Some field errors when updating Redis
-- **Optimized** Password validation adjusted to MCamel low password strength
-- **Optimized** Improve the version dependency of sentinel mode, v1.1.1=>v1.2.2, the important change is to support k8s 1.25+
-- **Added** Support to install Redis cluster in active/standby mode in ARM environment
-- **Added** sc expansion prompt
-- **Added** public field when returning list or details
-- **Added** Add return alert list
-- **Added** Validation Service annotation
-- **Fixed** service address display error
+- **Fixed** missing export of backup recovery offline images.
+- **Fixed** several known issues to improve system stability and security for `mcamel-redis`.
 
-## v0.2.2
+#### Documentation
 
-Release date: 2022-10-26
+- **Added** documentation on backup functionality.
 
-### APIs
+## 2023-02-23
 
-- **Added** Add interface to get user list
-- **Added** support arm architecture
-- **Added** Redis instance full life cycle management
-- **Added** monitoring deployment of redis instance
-- **Added** supports redis sentinel, singleton and cluster one-click deployment
-- **Added** Support ws permission isolation
-- **Added** supports online dynamic expansion
-- **upgrade** release notes script
+### v0.5.0
+
+#### API
+
+- **Added** helm-docs template files for `mcamel-redis`.
+- **Added** restriction to install Operator from the application store only in mcamel-system namespace for `mcamel-redis`.
+- **Added** support for cloud shell for `mcamel-redis`.
+- **Added** separate registration for navigation bar for `mcamel-redis`.
+- **Added** support for log viewing for `mcamel-redis`.
+- **Added** version updates for singleton/cluster mode Operator for `mcamel-redis`.
+- **Added** display of common Redis clusters for `mcamel-redis`.
+- **Added** Operator integration with chart-syncer for `mcamel-redis`.
+- **Fixed** issue where custom resources couldn't be created due to long instance names for `mcamel-redis`.
+- **Fixed** issue where workspace editor users couldn't view instance passwords for `mcamel-redis`.
+- **Fixed** issue where the correct Redis version number couldn't be parsed for `mcamel-redis`.
+- **Fixed** issue where Port couldn't be modified for `mcamel-redis`.
+- **Upgraded** offline image detection script for `mcamel-redis`.
+
+#### Documentation
+
+- **Added** instructions for log viewing, including custom querying and exporting capabilities.
+
+## 2022-12-25
+
+### v0.4.0
+
+#### API
+
+- **Added** early detection of NodePort port conflicts for `mcamel-redis`.
+- **Added** configuration for node affinity for `mcamel-redis`.
+- **Fixed** issue where setting nodeport for singleton and cluster mode was not effective for `mcamel-redis`.
+- **Fixed** issue where setting slave nodes to 0 in cluster mode was not allowed for `mcamel-redis`.
+
+## 2022-11-28
+
+### v0.2.6
+
+#### API
+
+- **Fixed** validation error for certain fields when updating Redis.
+- **Improved** password strength to meet MCamel's low-strength password requirement.
+- **Improved** the version dependency for sentinel mode, v1.1.1 => v1.2.2, with important change to support k8s 1.25+.
+- **Added** support for installing master-slave mode Redis clusters in ARM environments.
+- **Added** scaling prompt for sc command.
+- **Added** common fields for returning lists or details.
+- **Added** return of alarm lists.
+- **Added** validation for Service annotations.
+- **Fixed** issue with service address display for `mcamel-redis`.
+
+## 2022-10-26
+
+### v0.2.2
+
+#### API
+
+- **Added** the ability to retrieve a list of users.
+- **Added** support for ARM architecture.
+- **Added** full lifecycle management for Redis instances.
+- **Added** deployment of monitoring for Redis instances.
+- **Added** support for Redis sentinel, including one-click deployment of singleton and cluster modes.
+- **Added** support for WS permission isolation.
+- **Added** support for online dynamic scaling.
+- **Upgraded** release notes script.

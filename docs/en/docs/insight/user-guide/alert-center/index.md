@@ -4,7 +4,7 @@ The Alert Center is an important feature provided by DCE 5.0 that allows users
 to easily view all active and historical alerts by cluster and namespace through
 a graphical interface, and search alerts based on severity level (critical, warning, info).
 
-![alert list](../../images/alert01.png)
+![alert list](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/alert01.png)
 
 All alerts are triggered based on the threshold conditions set in the preset alert rules.
 In DCE 5.0, some global alert policies are built-in, but users can also create or delete

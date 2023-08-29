@@ -8,7 +8,7 @@
 
 ## 前提条件
 
--- 集群中已[安装 insight-agent](../../quickstart/install/install-agent.md) 且应用处于`运行中`状态。
+集群中已[安装 insight-agent](../../quickstart/install/install-agent.md) 且应用处于`运行中`状态。
 
 ## 查询日志
 

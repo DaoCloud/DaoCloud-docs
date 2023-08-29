@@ -24,13 +24,14 @@
 1. 下载脚本。
 
     ```bash
-    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
+    export VERSION=v0.10.0   # 安装器版本
+    curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
     ```
 
-    为 `install_prerequisite.sh` 添加可执行权限：
+    为 `install_prerequisite_${VERSION}.sh` 添加可执行权限：
 
     ```bash
-    chmod +x install_prerequisite.sh
+    chmod +x install_prerequisite_${VERSION}.sh
     ```
 
 2. 开始在线安装前置依赖。
@@ -38,13 +39,13 @@
     - 对于社区版
 
         ```bash
-        bash install_prerequisite.sh online community
+        bash install_prerequisite_${VERSION}.sh online community
         ```
 
     - 对于商业版
 
         ```bash
-        bash install_prerequisite.sh online full
+        bash install_prerequisite_${VERSION}.sh online full
         ```
 
 ## 离线安装依赖项
@@ -54,17 +55,15 @@
 1. 下载脚本。
 
     ```bash
-    
-    curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite.sh
+    export VERSION=v0.10.0
+    curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
     ```
 
 2. 下载前置依赖组件离线包。
 
     ```bash
-    export VERSION=v0.8.0
+    export VERSION=v0.10.0
     curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_${VERSION}_amd64.tar.gz
-
-    tar -xvf 
     ```
 
     !!! note
@@ -77,13 +76,17 @@
     - 对于社区版
 
         ```bash
-        bash install_prerequisite.sh offline community
+        export BINARY_TAR=prerequisite_${VERSION}_amd64.tar.gz
+        chmod +x install_prerequisite_${VERSION}.sh
+        ./install_prerequisite_${VERSION}.sh offline community
         ```
 
     - 对于商业版
 
         ```bash
-        bash install_prerequisite.sh offline full
+        export BINARY_TAR=prerequisite_${VERSION}_amd64.tar.gz
+        chmod +x install_prerequisite_${VERSION}.sh
+        ./install_prerequisite_${VERSION}.sh offline full
         ```
 
 接下来就可以安装 DCE 5.0 [社区版](community/resources.md)或[商业版](commercial/deploy-requirements.md)了。

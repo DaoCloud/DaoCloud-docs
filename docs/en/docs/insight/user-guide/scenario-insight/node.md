@@ -4,7 +4,7 @@ Through node monitoring, you can get an overview of the current health status of
 
 ## Prerequisites
 
-- The cluster has [insight-agent installed](../../quickstart/install-agent.md) and the application is in `running` state.
+- The cluster has [insight-agent installed](../../quickstart/install/install-agent.md) and the application is in `running` state.
 
 ## View node details
 

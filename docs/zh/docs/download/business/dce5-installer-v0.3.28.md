@@ -36,7 +36,7 @@ offline-v0.3.28.tar: OK
 tar -zxvf offline-v0.3.28.tar
 ```
 
-然后参阅[安装 DCE 5.0 商业版](../../install/intro.md#_3)进行安装。
+然后参阅[安装 DCE 5.0 商业版](../../install/index.md#_3)进行安装。
 如果是初次安装，请联系我们授权：电邮 info@daocloud.io 或致电 400 002 6898。
 如果有任何许可密钥相关的问题，请联系 DaoCloud 交付团队。
 
@@ -60,10 +60,10 @@ DCE 5.0 商业版包含以下模块，按需即插即用满足各类应用场景
 | 中间件 RabbitMQ      | 实现了高级消息队列协议 (AMQP) 的开源消息代理软件                         | [v0.6](../../middleware/rabbitmq/release-notes.md#v06)        |
 | 中间件 Redis         | 一款内存数据库缓存服务                                                   | [v0.2](../../middleware/redis/release-notes.md#v02)           |
 | 镜像仓库             | 用于存储 K8s、DevOps 和容器应用开发的镜像                                | [发布说明](../../kangaroo/release-notes.md)                            |
-| 网络                 | 针对不同的 Linux 内核，支持多种 CNI 组合方案                             | [发布说明](../../network/modules/spiderpool/releasenotes.md)                            |
+| 网络                 | 针对不同的 Linux 内核，支持多种 CNI 组合方案                             | [发布说明](../../network/intro/releasenotes.md)                            |
 | 存储                 | 提供统一数据存储服务，支持文件、对象、块、本地存储，轻松接入存储厂商方案 | [发布说明](../../storage/hwameistor/releasenotes.md)                            |
 
 ## 更多
 
-- [在线文档](../../dce/what.md)
+- [在线文档](../../dce/index.md)
 - [报告 bug](https://github.com/DaoCloud/DaoCloud-docs/issues)

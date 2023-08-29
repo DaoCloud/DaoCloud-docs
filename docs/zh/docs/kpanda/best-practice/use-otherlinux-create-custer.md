@@ -1,10 +1,10 @@
 # 在非主流操作系统上创建集群
 
-本文介绍离线模式下如何在**未声明支持的 OS** 上创建工作集群。DCE 5.0 声明支持的 OS 范围请参考 [DCE 5.0 支持的操作系统](../user-guide/clusters/cluster-role.md)
+本文介绍离线模式下如何在 **未声明支持的 OS** 上创建工作集群。DCE 5.0 声明支持的 OS 范围请参考 [DCE 5.0 支持的操作系统](../../install/commercial/deploy-requirements.md)
 
 离线模式下在未声明支持的 OS 上创建工作集群，主要的流程如下图：
 
-![流程](../images/otherlinux.png)
+![流程](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/otherlinux.png)
 
 接下来，本文将以 openAnolis 操作系统为例，介绍如何在非主流操作系统上创建集群。
 
@@ -15,7 +15,7 @@
 
 ## 操作步骤
 
-#### 1.在线节点——构建离线包
+### 在线节点——构建离线包
 
 找到一个和待建集群节点架构和 OS 均一致的在线环境，本文以 [AnolisOS 8.8 GA](https://openanolis.cn/download) 为例。执行如下命令，生成离线 os-pkgs 包。
 
@@ -28,18 +28,18 @@ $ ./other_os_pkgs.sh build #构建离线包
 
 执行完上述命令后，预期将在当前路径下生成一个名为 **`os-pkgs-anolis-8.8.tar.gz`** 的压缩包。当前路径下文件目录大概如下：
 
-!!! note
-
+```bash
     .
     ├── other_os_pkgs.sh
     ├── pkgs.yml
     └── os-pkgs-anolis-8.8.tar.gz
+```
 
-#### 2.离线节点——安装离线包
+### 离线节点——安装离线包
 
 将在线节点中生成的 `other_os_pkgs.sh`、`pkgs.yml`、`os-pkgs-anolis-8.8.tar.gz` 三个文件拷贝至离线环境中的待建集群的**所有**节点上。
 
-登陆离线环境中，任一待建集群的其中一个节点上，执行如下命令，为节点安装 os-pkg 包。
+登录离线环境中，任一待建集群的其中一个节点上，执行如下命令，为节点安装 os-pkg 包。
 
 ```bash
 # 配置环境变量
@@ -53,6 +53,6 @@ $ ./other_os_pkgs.sh install #安装离线包
 
 执行完成上述命令后，等待界面提示： `All packages for node (X.X.X.X) have been installed` 即表示安装完成。
 
-#### 3.前往界面创建集群
+### 前往界面创建集群
 
-参考文档[创建工作集群](../user-guide/clusters/create-cluster.md)，创建 ubuntu 集群。
+参考文档[创建工作集群](../user-guide/clusters/create-cluster.md)，创建 openAnolis 集群。

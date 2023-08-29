@@ -16,7 +16,7 @@
 
     <!--![]()screenshots-->
 
-2. In the left navigation bar, select `Helm Application` -> `Helm Template`, find and click `Jenkins`.
+2. In the left navigation bar, select `Helm Apps` -> `Helm Charts`, find and click `Jenkins`.
 
     <!--![]()screenshots-->
 

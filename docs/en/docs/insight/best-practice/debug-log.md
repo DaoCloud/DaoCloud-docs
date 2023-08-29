@@ -4,19 +4,19 @@ After installing the `insight-agent` in the cluster, `Fluent Bit` in `insight-ag
 
 1. Use DCE 5.0 platform, enter `Observability`, and select the `Dashboard` in the left navigation bar.
 
-    
+    ![nav](../images/insight01.png)
 
 2. Click on the dashboard title `Overview`.
 
-    
+    ![dashboard](../images/insight02.png)
 
 3. Switch to the `insight-system` -> `Fluent Bit` dashboard.
 
-    
+    ![fluent](../images/insight03.png)
 
-4. There are several check boxes above the `Fluent Bit` dashboard to select the log collection plugin, log filter plugin, log output plugin, and the name of the cluster in which it is located.
+4. There are several check boxes above the `Fluent Bit` dashboard to select the input plugin, filter plugin, output plugin, and cluster in which it is located.
 
-    
+    ![fluent](../images/insight04.png)
 
 ## Plugin Description
 
@@ -50,6 +50,6 @@ Here are some plugins for `Fluent Bit`.
 
 | Output Plugin          | Plugin Description              |
 | ------------------------ | ---------------------------------- |
-| es.kube.kubeevent.syslog | Write Kubernetes audit logs, event logs, and syslog logs to [ElasticSearch cluster](../../middleware/elasticsearch/intro/what.md) |
+| es.kube.kubeevent.syslog | Write Kubernetes audit logs, event logs, and syslog logs to [ElasticSearch cluster](../../middleware/elasticsearch/intro/index.md) |
 | forward.audit_log | Send Kubernetes audit logs and [global management audit logs](../../ghippo/user-guide/audit/audit-log.md) to `Global Management` |
 | es.skoala | Write [request logs](../../skoala/gateway/logs/reqlog.md) and [instance logs](../../skoala/gateway/logs/inslog.md) of microservice gateway to ElasticSearch cluster

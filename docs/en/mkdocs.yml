@@ -19,6 +19,8 @@ repo_name: DaoCloud/DaoCloud-docs
 repo_url: https://github.com/DaoCloud/DaoCloud-docs
 edit_uri: edit/main/docs/en/docs/
 
+use_directory_urls: false # disbale https://www.mkdocs.org/user-guide/configuration/#use_directory_urls
+
 # Configuration
 theme:
   name: material
@@ -29,6 +31,7 @@ theme:
   include_search_page: false
   search_index_only: true
   include_homepage_in_sidebar: false
+ 
 
   # Static files
   static_templates:
@@ -96,7 +99,7 @@ plugins:
   
   - redirects:
       redirect_maps:
-        "en/en/install/install-dce.md": "en/install/intro.md"
+        "en/install/install-dce.md": "install/index.md"
 
   - git-revision-date: # Display the last update date on the bottom of each page, install with 'pip install mkdocs-git-revision-date-plugin'
       enabled_if_env: "CI"

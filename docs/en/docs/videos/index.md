@@ -4,7 +4,7 @@ We have created video tutorials to help you quickly get started.
 
 <div class="grid cards" markdown>
 
-- :fontawesome-solid-jet-fighter-up: **Installation** [Community and Enterprise Edition Installation](install.md)
+- :fontawesome-solid-jet-fighter-up: **Installation** [Community and Enterprise Package Installation](install.md)
 - :octicons-heart-fill-24: **Best Practices** [Scenario-based video tutorials](use-cases.md)
 - :octicons-container-16: **Container Management** [Infrastructure such as clusters, nodes, and loads](kpanda.md)
 - :fontawesome-solid-user-group: **Global Management** [Login settings, access permissions, appearance](ghippo.md)
@@ -19,6 +19,6 @@ We have created video tutorials to help you quickly get started.
 
 </div>
 
-[Download DCE 5.0](../download/dce5.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/intro.md){ .md-button .md-button--primary }
+[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [Free Trial](../dce/license0.md){ .md-button .md-button--primary }

@@ -92,9 +92,10 @@ Because the offline environment cannot be connected to the Internet, users need 
 
     !!! note
 
-`x.x.x.x` is the IP address of bootstrapping node.
+        `x.x.x.x` is the IP address of bootstrapping node.
 
-2. Copy the image file in the `/data` folder to the docker registry built in the bootstrapping node. After logging in the fire node, run the following command:
+2. Copy the image file in the `/data` folder to the docker registry built in the bootstrapping node.
+   After logging in the fire node, run the following command:
 
     1. Enter the directory where the image file is located
     
@@ -102,7 +103,7 @@ Because the offline environment cannot be connected to the Internet, users need 
         cd data/v_offline_patch/amd64/images
         ```
 
-    2. Execute the import _ images. Sh script to import the image into the built-in docker registry of the fire node.
+    2. Run the import _ images. Sh script to import the image into the built-in docker registry of the fire node.
    
         ```bash
         DEST_TLS_VERIFY=false ./import_images.sh 127.0.0.1:443
@@ -127,7 +128,7 @@ Because the offline environment cannot be connected to the Internet, users need 
         cd data/v_offline_patch/amd64/files/
         ```
 
-    2. Execute the import _ files. Sh script to import the binary file into the Minio service built into the Kindle Node.
+    2. Run the import _ files. Sh script to import the binary file into the Minio service built into the Kindle Node.
     
         ```bash
         MINIO_USER=rootuser MINIO_PASS=rootpass123 ./import_files.sh http://127.0.0.1:9000
@@ -140,7 +141,8 @@ Because the offline environment cannot be connected to the Internet, users need 
 
 ## Update kubernetes version manifest for Global cluster
 
-1. Copy the inventory configuration file in `kubeanofflineversion.cr.patch` the file of the `/data` networking node to any ** Master node ** `/root` directory in the Global cluster, and ** Networking node ** run the following command:
+1. Copy the inventory configuration file in `kubeanofflineversion.cr.patch` the file of the `/data` networking node
+   to any ** Master node ** `/root` directory in the Global cluster, and ** Networking node ** run the following command:
 
     ```bash
     scp -r data/v_offline_patch/kubeanofflineversion.cr.patch.yaml root@x.x.x.x:/root
@@ -150,7 +152,8 @@ Because the offline environment cannot be connected to the Internet, users need 
 
         `x.x.x.x` is the IP address of any Master node in the Global cluster.
 
-2. Log in to any ** Master node ** execution list configuration file in the Global cluster after completing the previous step. The command is as follows:
+2. Log in to any ** Master node ** execution list configuration file in the Global cluster
+   after completing the previous step. The command is as follows:
 
     ```bash
     kubectl apply -f kubeanofflineversion.cr.patch.yaml
@@ -158,4 +161,5 @@ Because the offline environment cannot be connected to the Internet, users need 
 
 ## Upgrade the kubernetes version of the work cluster using the platform UI
 
-Log in to the UI management interface of DCE 5.0, and upgrade the self-built work cluster of the platform by following [cluster upgrade documentation](../../kpanda/user-guide/clusters/upgrade-cluster).
+Log in to the UI management interface of DCE 5.0, and upgrade the self-built work cluster of the platform
+by following [cluster upgrade documentation](../../kpanda/user-guide/clusters/upgrade-cluster).

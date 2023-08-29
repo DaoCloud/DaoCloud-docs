@@ -13,8 +13,8 @@ If an instance is no longer used, you can delete it with the following steps.
 
 1. In the page of Multicloud Management, click `...` button on the right, and select `Delete` from the pop-up menu.
 
-    ![delete](../images/delete-instance01.png)
+    ![delete](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/delete-instance01.png)
 
 2. Enter the instance name to avoid misoperation, and click the `Delete` button.
 
-    ![delete](../images/delete-instance02.png)
+    ![delete](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/delete-instance02.png)

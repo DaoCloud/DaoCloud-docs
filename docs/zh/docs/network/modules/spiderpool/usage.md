@@ -16,7 +16,7 @@ hide:
 ## 前提条件
 
 1. [SpiderPool 已成功部署](../../modules/spiderpool/install.md)。
-2. [Multus 搭配 Macvlan /SRI-OV 已成功部署](../../modules/multus-underlay/install.md)。
+2. [Multus 搭配 Macvlan/SR-IOV 已成功部署](../../modules/multus-underlay/install.md)。
 3. 如使用手动选择 IP 池，请提前完成[创建 IP 子网和 IP 池](../../modules/spiderpool/createpool.md)。如使用自动创建固定 IP 池，请提前完成[创建 IP 池](../../modules/spiderpool/createpool.md)。
 4. 如果使用默认 IP 池，请提前完成[创建 IP 子网和 IP 池](../../modules/spiderpool/createpool.md)。并在容器网络 Multus CNI 配置中，配置好带有默认 IP 池的网卡。
 
@@ -36,7 +36,7 @@ hide:
 
         - eth0（默认网卡）：默认为 Overlay CNI，Calico/Cilium。
 
-        - net1: 可选择 Underlay CNI 配置，如 Macvlan/SRI-OV ，本文示例为 Macvlan。
+        - net1: 可选择 Underlay CNI 配置，如 Macvlan/SR-IOV ，本文示例为 Macvlan。
 
     - `IP 池配置`：Underlay CNI IP 分配的规则。
 

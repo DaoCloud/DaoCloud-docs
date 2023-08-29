@@ -1,26 +1,30 @@
-# cluster status
+# Cluster Status
 
-The container management module supports the management of two types of clusters: access clusters and self-built clusters.
-For more information about cluster management types, see [Cluster Role](cluster-role.md).
+DCE 5.0 Container Management module can manage two types of clusters: integrated clusters and managed clusters.
 
-The status of these two clusters is described below.
+- Integrated clusters: clusters created in other platforms and now integrated into DCE 5.0.
+- Managed cluster: clusters created in DCE 5.0.
 
-## access cluster
+For more information about cluster types, see [Cluster Role](cluster-role.md).
+
+We designed several status for these two clusters.
+
+## Integrated Clusters
 
 | Status | Description |
 | ---------------------- | -------------------------- ------------------------------------- |
-| Joining | The cluster is joining |
-| Removing | The cluster is being removed |
-| Running | The cluster is running normally |
-| Unknown (Unknown) | The cluster has been disconnected. The data displayed by the system is the cached data before the disconnection, which does not represent real data. At the same time, any operations performed in the disconnected state will not take effect. Please check the cluster network connectivity or host status. |
+| Integrating | The cluster is being integrated into DCE 5.0. |
+| Removing | The cluster is being removed from DCE 5.0. |
+| Running | The cluster is running as expected. |
+| Unknown | The cluster is lost. Data displayed in the DCE 5.0 UI is the cached data before the disconnection, which does not represent real-tie data. Any actions during this status will not take effect. You should check cluster network connectivity or host status. |
 
-## Self-built cluster
+## Managed Clusters
 
 | Status | Description |
 | --------------------------------------------- | ------ -------------------------------------------------- ---- |
-| Creating | Cluster is being created |
-| Updating | Updating the Kubernetes version of the cluster |
-| Deleting | The cluster is being deleted |
-| Running | The cluster is running normally |
-| Unknown (Unknown) | The cluster has been disconnected. The data displayed by the system is the cached data before the disconnection, which does not represent real data. At the same time, any operations performed in the disconnected state will not take effect. Please check the cluster network connectivity or host status. |
-| Creation failed (Failed) | Cluster creation failed, please check the log for detailed failure reasons |
+| Creating | The cluster is being created. |
+| Updating | Updating the Kubernetes version of the cluster. |
+| Deleting | The cluster is being deleted. |
+| Running | The cluster is running as expected. |
+| Unknown | The cluster is lost. Data displayed in the DCE 5.0 UI is the cached data before the disconnection, which does not represent real-tie data. Any actions during this status will not take effect. You should check cluster network connectivity or host status. |
+| Creation failed | Failed to create the cluster. You should check the logs for detailed reasons. |

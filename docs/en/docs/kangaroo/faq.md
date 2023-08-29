@@ -1,32 +1,38 @@
 # Container Registry FAQ
 
+This page lists some common issues and solutions when using the container registry.
+
+## Middleware deployment is not available in the DCE 5.0 standard package
+
+The DCE 5.0 standard package does not include middleware. Middleware is only available in the Platinum package.
+
+## How to verify if the configured middleware network is connectable
+
+Log in to the target cluster where Harbor is deployed and execute the `ping` command
+on any node to test the connectivity to the middleware components.
+
+## Private images not visible in the image space list
+
+There is a bug in versions `v0.7.0-v0.7.3` and `v0.8.0` of the container registry system,
+which results in the inability to see private images.
+
+## When using Minio deployed with middleware
+
+When using Minio deployed with middleware, you need to manually create buckets
+through the Minio management platform beforehand.
+
+## Minimum supported version of Harbor for repository integration
+
+During repository integration, there are certain version requirements due to
+the use of Harbor's functionality. Currently, the known minimum supported version is `2.4.0`.
+Earlier versions will not be compatible.
+
 ## Offline environment image scanner failure
 
 The image scanner relies on vulnerability data, which is obtained by default from the [CVE official website](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=kubernetes).
 In a pure offline environment, vulnerability scanning cannot be performed, and the process will fail.
 
 ![trivy](./images/trivy-nodb.png)
-
-## Updating or importing vulnerability database in an offline environment
-
-1. Database Location:
-
-    ```console
-    /root/.cache/trivy/db
-    ```
-
-2. Help Information:
-    
-    ```
-    trivy -h | grep 'TRIVY_CACHE_DIR'
-      --cache-dir value  cache directory (default: "/root/.cache/trivy") [$TRIVY_CACHE_DIR]
-    ```
-
-3. Database Download:
-
-    - `trivy-light-offline.db.tgz`: Lightweight offline database, approximately 104 MB after decompression.
-    - `trivy-offline.db.tgz`: Full offline database, approximately 221 MB after decompression.
-    - Download link: [https://github.com/aquasecurity/trivy-db/releases](https://github.com/aquasecurity/trivy-db/releases)
 
 ## Error occurs when creating Harbor after cluster verification passes in the first step
 

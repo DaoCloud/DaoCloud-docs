@@ -9,7 +9,7 @@
 参阅[仓库集成](../kangaroo/integrate/integrate-ws.md)文档页面。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/join-registry.mp4" preload="metadata" poster="../images/kangaroo-repo.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/join-registry.mp4" preload="metadata" poster="images/kangaroo-repo.png"></video>
 </div>
 
 ## 仓库集成（管理员）
@@ -17,7 +17,7 @@
 参阅[仓库集成](../kangaroo/integrate/integrate-admin.md)文档页面。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/integrate-harbor.mp4" preload="metadata" poster="../images/kangaroo-integrate.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/integrate-harbor.mp4" preload="metadata" poster="images/kangaroo-integrate.png"></video>
 </div>
 
 ## 托管 Harbor
@@ -25,7 +25,7 @@
 参阅[托管 Harbor](../kangaroo/managed/harbor.md)文档页面。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/harbor.mp4" preload="metadata" poster="../images/kangaroo-harbor.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/harbor.mp4" preload="metadata" poster="images/kangaroo-harbor.png"></video>
 </div>
 
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

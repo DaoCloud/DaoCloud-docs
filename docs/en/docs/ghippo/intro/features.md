@@ -21,7 +21,7 @@ This page describes the features of Global Management.
         user --> user2[User B]
         user --> user3[User C]
         
-    click user "https://docs.daocloud.io/en/ghippo/user-guide/access-control/User/"
+    click user "https://docs.daocloud.io/en/ghippo/user-guide/access-control/user/"
 
     classDef plain fill:#ddd,stroke:#fff,stroke-width:0px,color:#000;
     classDef k8s fill:#326ce5,stroke:#fff,stroke-width:0px,color:#fff;
@@ -44,9 +44,9 @@ This page describes the features of Global Management.
         admin --> group[Create group]
         admin --> add[Add user to group]
         
-    click user "https://docs.daocloud.io/en/ghippo/user-guide/access-control/User/"
-    click group "https://docs.daocloud.io/en/ghippo/user-guide/access-control/Group/"
-    click add "https://docs.daocloud.io/en/ghippo/user-guide/access-control/Group/#_5"
+    click user "https://docs.daocloud.io/en/ghippo/user-guide/access-control/user/"
+    click group "https://docs.daocloud.io/en/ghippo/user-guide/access-control/group/"
+    click add "https://docs.daocloud.io/en/ghippo/user-guide/access-control/group/#_5"
 
     classDef plain fill:#ddd,stroke:#fff,stroke-width:0px,color:#000;
     classDef k8s fill:#326ce5,stroke:#fff,stroke-width:0px,color:#fff;
@@ -89,10 +89,10 @@ This page describes the features of Global Management.
         about --> mail[Mail server]
         about --> license[Genuine authorization]
         
-    click about "https://docs.daocloud.io/en/ghippo/user-guide/04PlatformSetting/about/"
+    click about "https://docs.daocloud.io/en/ghippo/user-guide/platform-setting/about/"
     click password "https://docs.daocloud.io/en/ghippo/user-guide/password/"
-    click appear "https://docs.daocloud.io/en/ghippo/user-guide/04PlatformSetting/Appearance/"
-    click mail "https://docs.daocloud.io/en/ghippo/user-guide/04PlatformSetting/MailServer/"
+    click appear "https://docs.daocloud.io/en/ghippo/user-guide/platform-setting/appearance/"
+    click mail "https://docs.daocloud.io/en/ghippo/user-guide/platform-setting/mail-server/"
     click license "https://docs.daocloud.io/en/dce/license0/"
 
     classDef plain fill:#ddd,stroke:#fff,stroke-width:0px,color:#000;

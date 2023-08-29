@@ -18,8 +18,8 @@ $ kubectl delete clusters.hwameistor.io hwameistor-cluster
 
 Ultimately, all HwameiStor system components (Pods) will be deleted. Use the following command to check, and the result should be empty.
 
-```
-$ kubectl -n hwameistor get pod
+```sh
+kubectl -n hwameistor get pod
 ```
 
 ## Option 2: Complete Uninstallation

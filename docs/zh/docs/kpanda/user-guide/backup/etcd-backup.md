@@ -1,108 +1,149 @@
 # ETCD 备份
 
-ETCD 备份是以集群数据为核心的备份，在硬件设备损坏，开发测试配置错误等场景中，可以恢复备份集群数据。
+ETCD 备份是以集群数据为核心的备份。在硬件设备损坏，开发测试配置错误等场景中，可以通过 ETCD 备份恢复集群数据。
 
-本节将介绍如何通过容器管理界面实现集群的 ETCD 备份。
+本文介绍如何为集群制作 ETCD 备份。
 
 ## 前提条件
 
-- 容器管理模块[已接入 Kubernetes 集群](../clusters/integrate-cluster.md)或者[已创建 Kubernetes 集群](../clusters/create-cluster.md)，且能够访问集群的 UI 界面。
+- [接入](../clusters/integrate-cluster.md)或者[创建 Kubernetes 集群](../clusters/create-cluster.md)，且能够访问集群的 UI 界面。
 
-- 已完成一个[命名空间的创建](../namespaces/createns.md)、[用户的创建](../../../ghippo/user-guide/access-control/user.md)，并为用户授予 [`NS Admin`](../permissions/permission-brief.md#ns-admin) 或更高权限，详情可参考[命名空间授权](../permissions/cluster-ns-auth.md)。
+- 创建[命名空间](../namespaces/createns.md)和[用户](../../../ghippo/user-guide/access-control/user.md)，并为用户授予 [`NS Admin`](../permissions/permission-brief.md#ns-admin) 或更高权限。详情可参考[命名空间授权](../permissions/cluster-ns-auth.md)。
 
-- 准备一个 MinIO 实例，建议通过 DCE 5.0 的 MinIO 中间件进行创建，具体步骤可参考 [MinIO 对象存储](../../../middleware/minio/user-guide/create.md)。
+- 准备一个 MinIO 实例。建议通过 DCE 5.0 的 MinIO 中间件进行创建，具体步骤可参考 [MinIO 对象存储](../../../middleware/minio/user-guide/create.md)。
 
 ## 创建 ETCD 备份
 
 参照以下步骤创建 ETCD 备份。
 
-1. 在`备份恢复`-`ETCD 备份`页面可以看到当前所有的备份策略，点击右侧的 `创建备份策略`可以为目标集群创建一个 ETCD 备份策略。
+1. 进入`容器管理` -> `备份恢复` -> `ETCD 备份`，点击`备份策略`页签，然后在右侧点击`创建备份策略`。
 
     ![备份策略列表](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/etcd01.png)
 
-2. 填写基础信息，填写完毕后点击下一步，将自动校验 ETCD 的联通性，校验通过则进行下一步。
-   
-    - 首先选择备份集群，并在终端登陆
-    - 填写 ETCD 地址，标准 K8s 集群大多为：`https://节点号:2379`
+2. 参考以下说明填写`基本信息`。填写完毕后点击`下一步`，系统将自动校验 ETCD 的联通性，校验通过之后可以进行下一步。
+
+    - 备份集群：选择需要备份哪个集群的 ETCD 数据，并在终端登录
+    - ETCD 地址: 格式为 `https://${节点IP}:${端口号}`。
+ 
+        - 在标准 Kubernetes 集群中，ETCD 的默认端口号为 `2379`。
+        - 在 DCE 4.0 集群中，ETCD 的默认端口号为 `12379`。
+        - 在公有云托管集群中，需要联系相关开发人员获取 ETCD 的端口号。这是因为公有云集群的控制面组件由云服务提供商维护和管理，用户无法直接访问或查看这些组件，也无法通过常规命令（如 kubectl）无法获取到控制面的端口等信息。
 
         ??? note "获取端口号的方式"
 
-            （1）先获取所有 pod
+            （1）在 `kube-system` 命名空间下查找 ETCD Pod
 
+                ```shell
+                kubectl get po -n kube-system | grep etcd
+                ```
+
+            （2）获取 ETCD Pod 的 `listen-client-urls` 中的端口号
+
+                ```shell
+                kubectl get po -n kube-system ${etcd_pod_name} -oyaml | grep listen-client-urls # 将 `etcd_pod_name` 替换为实际的 Pod 名称
+                ```
+            
+            预期输出结果如下，节点 IP 后的数字即为端口号:
+
+                ```shell
+                - --listen-client-urls=https://127.0.0.1:2379,https://10.6.229.191:2379
+                ```
+
+    - CA 证书：可通过如下命令查看证书，然后将证书内容复制粘贴到对应位置：
+
+        === "标准的 Kubernetes 集群"
+        
             ```shell
-            kubectl get po -n kube-system | grep etcd
+            cat /etc/kubernetes/ssl/etcd/ca.crt
             ```
 
-            （2）获取对应 pod 的 listen-client-urls 中的端口号
-
-            > `etcd_pod_name` 的值需要替换为实际 pod 名称
-
+        === "DCE 4.0 集群"
+        
             ```shell
-            kubectl get po -n kube-system <etcd_pod_name> -oyaml | grep listen-client-urls
+            cat /etc/daocloud/dce/certs/ca.crt
             ```
 
-            预期输出结果如下，端口号可从下列信息中获取
+    - Cert 证书：可通过如下命令查看证书，然后将证书内容复制粘贴到对应位置：
 
+        === "标准的 Kubernetes 集群"
+        
             ```shell
-            - --listen-client-urls=https://127.0.0.1:2379,https://10.6.229.191:2379
+            cat /etc/kubernetes/ssl/apiserver-etcd-client.crt
             ```
 
-    - 填写 CA 证书，可通过如下命令查看证书内容并将其复制粘贴到对应位置：
+        === "DCE 4.0 集群"
+        
+            ```shell
+            cat /etc/daocloud/dce/certs/etcd/server.crt
+            ```
 
-        ```shell
-        cat  /etc/kubernetes/ssl/etcd/ca.crt
-        ```
+    - Key：可通过如下命令查看证书，然后将证书内容复制粘贴到对应位置：
 
-    - 填写 Cert 证书，可通过如下命令查看证书内容并将其复制粘贴到对应位置：
+        === "标准的 Kubernetes 集群"
+        
+            ```shell
+            cat /etc/kubernetes/ssl/apiserver-etcd-client.key
+            ```
 
-        ```shell
-        cat /etc/kubernetes/ssl/apiserver-etcd-client.crt
-        ```
+        === "DCE 4.0 集群"
+        
+            ```shell
+            cat /etc/daocloud/dce/certs/etcd/server.key
+            ```
 
-    - 填写 Key，可通过如下命令查看证书内容并将其复制粘贴到对应位置：
+        ![创建基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/etcd-get01.png)
 
-        ```shell
-        cat /etc/kubernetes/ssl/apiserver-etcd-client.key
-        ```
+    !!! note
 
-        ![创建基本信息](../../images/etcd-get01.png)
+        点击输入框下方的`如何获取`可以在 UI 页面查看获取对应信息的方式。
 
-        ![如何获取](../../images/etcd-get02.png)
+3. 参考以下信息填写`备份策略`。
 
-3. 选择备份方式，分为手动备份和定时备份。
-   
-    - 手动备份：基于备份配置立即执行一次 ETCD 全量数据的备份。备份链长度：保留备份数据的最长长度，默认为 30 条。
-  
-        ![手动备份](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/etcd03.png)
-
-    - 定时备份：按照设置的备份频率对 ETCD 数据进行周期性全量备份。选择备份频率：支持小时、日、周、月级别和自定义方式。
+    - 备份方式：选择手动备份或定时备份
+    
+        - 手动备份：基于备份配置立即执行一次 ETCD 全量数据的备份。
+        - 定时备份：按照设置的备份频率对 ETCD 数据进行周期性全量备份。
+    
+    - 备份链长度：最多保留多少条备份数据。默认为 30 条。
+    - 备份频率：支持小时、日、周、月级别和自定义方式。
 
         ![定时备份](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/etcd04.png)
 
-4. 存储位置
+4. 参考以下信息填写`存储位置`。
    
     - 存储供应商：默认选择 S3 存储
     - 对象存储访问地址：MinIO 的访问地址
-    - 存储桶：在 MinIO 中创建一个 Bucket，填写名称
-    - 用户名：MinIO 的登陆用户名
-    - 密码：MinIO 的登陆密码
-   
+    - 存储桶：在 MinIO 中创建一个 Bucket，填写 Bucket 的名称
+    - 用户名：MinIO 的登录用户名
+    - 密码：MinIO 的登录密码
+
         ![存储位置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/etcd05.png)
 
-5. 创建成功后将会在备份策略列表中生成一条数据。`操作`包括日志、查看 YAML、更新策略、停止、立即执行。当备份方式为手动时，可以点击`立即执行`进行备份。当备份方式为定时备份时，则会根据配置的时间进行备份。
+5. 点击`确定`后页面自动跳转到备份策略列表，可以查看目前创建好的所有策略。
 
-    ![成功创建](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/etcd06.png)
+    - 在策略右侧点击 `ⵗ` 操作按钮可以查看日志、查看 YAML、更新策略、停止策略、立即执行策略等。
+    - 当备份方式为手动时，可以点击`立即执行`进行备份。
+    - 当备份方式为定时备份时，则会根据配置的时间进行备份。
 
-6. 点击`查看日志`，将展示日志内容，默认展示100行，若想查看更多日志信息或者下载日志请前往[可观测性](https://demo-dev.daocloud.io/insight/logs?filterType=workload&cluster=chenwen-test&namespace=kpanda-system&workloadKind=deployment&workload=chenwen-test-etcd-backup&pod=chenwen-test-etcd-backup-5cf6d6bdfc-xstkx&container=backup-restore)
+        ![成功创建](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/etcd07.png)
 
-    ![查看日志](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/etcd07.png)
+## 查看备份策略日志
 
-## 备份策略详情
+点击`日志`可以查看日志内容，默认展示 100 行。若想查看更多日志信息或者下载日志，可在日志上方根据提示前往可观测性模块。
 
-1. 点击进入备份策略详情，包括基本信息和备份记录。
+![查看日志](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/etcd06.png)
 
-    ![备份策略详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/etcd09.png)
+## 查看备份策略详情
 
-2. 查看备份点，选择集群后，可以查看该集群下所有备份信息。每执行一次备份，对应生成一个备份点，可通过成功状态的备份点快速恢复应用。
-   
+进入`容器管理` -> `备份恢复` -> `ETCD 备份`，点击`备份策略`页签，接着点击策略名称可以查看策略详情。
+
+![备份策略详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/etcd09.png)
+
+## 查看备份点
+
+1. 进入`容器管理` -> `备份恢复` -> `ETCD 备份`，点击`备份点`页签。
+2. 选择目标集群后，可以查看该集群下所有备份信息。
+
+    每执行一次备份，对应生成一个备份点，可通过成功状态的备份点快速恢复应用。
+
     ![备份点](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/etcd08.png)
