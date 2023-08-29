@@ -2,7 +2,7 @@
 
 Redis-shake 支持不同部署模式实例间的数据同步与迁移能力，现以 3 主 3 从集群模式实例与 3 副本哨兵模式实例的场景为例，演示不同模式之间的同步配置方法。
 
-假设 Redis 实例 A 为 3 主 3 从集群模式，实例 B 为 3 副本哨兵模，两实例处于不同集群，现将实例 A 作为主实例，实例 B 作为从实例搭建同步结构，提供以下灾备支持：
+假设 Redis 实例 A 为 3 主 3 从集群模式，实例 B 为 3 副本哨兵模式，两实例处于不同集群。现将实例 A 作为主实例，实例 B 作为从实例搭建同步结构，提供以下灾备支持：
 
 - 正常状态下，由实例 A 对外提供服务，并持续同步数据  实例 A >> 实例 B ；
 - 当主实例 A 故障离线后，由实例 B 对外提供服务；
@@ -21,7 +21,7 @@ Redis-shake 支持不同部署模式实例间的数据同步与迁移能力，�
 
 !!! note
 
-    由上图可见，数据传输的方式与传输目标实例有关，在`数据同步`中目标实例 B 为哨兵模式，仅需部署一个 Redis-shake（Redis-shake-sync），在`数据恢复`中目标实例 A 为集群模式,则需要为每个 leader 节点分别部署一个 Redis-shake（Redis-shake-recovery）。
+    由上图可见，数据传输的方式与传输目标实例有关，在`数据同步`中目标实例 B 为哨兵模式，仅需部署一个 Redis-shake（Redis-shake-sync），在`数据恢复`中目标实例 A 为集群模式，则需要为每个 leader 节点分别部署一个 Redis-shake（Redis-shake-recovery）。
 
 ## 数据同步部署
 
@@ -270,62 +270,64 @@ Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 
 sync.toml
 
-```toml
-type = "sync"
- 
-[source]
-version = 6.0 # redis version, such as 2.8, 4.0, 5.0, 6.0, 6.2, 7.0, ...
-address = "10.233.109.145:6379"
-username = "" # keep empty if not using ACL
-password = "3wPxzWffdn" # keep empty if no authentication is required
-tls = false
-elasticache_psync = "" # using when source is ElastiCache. ref: https://github.com/alibaba/RedisShake/issues/373
- 
-[target]
-type = "cluster" # "standalone" or "cluster"
-version = 6.0 # redis version, such as 2.8, 4.0, 5.0, 6.0, 6.2, 7.0, ...
-# When the target is a cluster, write the address of one of the nodes.
-# redis-shake will obtain other nodes through the `cluster nodes` command.
-address = "10.233.103.2:6379"
-username = "" # keep empty if not using ACL
-password = "Aa123456" # keep empty if no authentication is required
-tls = false
- 
-[advanced]
-dir = "data"
- 
-# runtime.GOMAXPROCS, 0 means use runtime.NumCPU() cpu cores
-ncpu = 4
- 
-# pprof port, 0 means disable
-pprof_port = 0
- 
-# metric port, 0 means disable
-metrics_port = 0
- 
-# log
-log_file = "redis-shake.log"
-log_level = "info" # debug, info or warn
-log_interval = 5 # in seconds
- 
-# redis-shake gets key and value from rdb file, and uses RESTORE command to
-# create the key in target redis. Redis RESTORE will return a "Target key name
-# is busy" error when key already exists. You can use this configuration item
-# to change the default behavior of restore:
-# panic:   redis-shake will stop when meet "Target key name is busy" error.
-# rewrite: redis-shake will replace the key with new value.
-# ignore:  redis-shake will skip restore the key when meet "Target key name is busy" error.
-rdb_restore_command_behavior = "rewrite" # panic, rewrite or skip
- 
-# pipeline
-pipeline_count_limit = 1024
- 
-# Client query buffers accumulate new commands. They are limited to a fixed
-# amount by default. This amount is normally 1gb.
-target_redis_client_max_querybuf_len = 1024_000_000
- 
-# In the Redis protocol, bulk requests, that are, elements representing single
-# strings, are normally limited to 512 mb.
-target_redis_proto_max_bulk_len = 512_000_000
-```
+??? Note “请点击查看配置文件”
+
+    ```toml
+    type = "sync"
+     
+    [source]
+    version = 6.0 # redis version, such as 2.8, 4.0, 5.0, 6.0, 6.2, 7.0, ...
+    address = "10.233.109.145:6379"
+    username = "" # keep empty if not using ACL
+    password = "3wPxzWffdn" # keep empty if no authentication is required
+    tls = false
+    elasticache_psync = "" # using when source is ElastiCache. ref: https://github.com/alibaba/RedisShake/issues/373
+     
+    [target]
+    type = "cluster" # "standalone" or "cluster"
+    version = 6.0 # redis version, such as 2.8, 4.0, 5.0, 6.0, 6.2, 7.0, ...
+    # When the target is a cluster, write the address of one of the nodes.
+    # redis-shake will obtain other nodes through the `cluster nodes` command.
+    address = "10.233.103.2:6379"
+    username = "" # keep empty if not using ACL
+    password = "Aa123456" # keep empty if no authentication is required
+    tls = false
+     
+    [advanced]
+    dir = "data"
+     
+    # runtime.GOMAXPROCS, 0 means use runtime.NumCPU() cpu cores
+    ncpu = 4
+     
+    # pprof port, 0 means disable
+    pprof_port = 0
+     
+    # metric port, 0 means disable
+    metrics_port = 0
+     
+    # log
+    log_file = "redis-shake.log"
+    log_level = "info" # debug, info or warn
+    log_interval = 5 # in seconds
+     
+    # redis-shake gets key and value from rdb file, and uses RESTORE command to
+    # create the key in target redis. Redis RESTORE will return a "Target key name
+    # is busy" error when key already exists. You can use this configuration item
+    # to change the default behavior of restore:
+    # panic:   redis-shake will stop when meet "Target key name is busy" error.
+    # rewrite: redis-shake will replace the key with new value.
+    # ignore:  redis-shake will skip restore the key when meet "Target key name is busy" error.
+    rdb_restore_command_behavior = "rewrite" # panic, rewrite or skip
+     
+    # pipeline
+    pipeline_count_limit = 1024
+     
+    # Client query buffers accumulate new commands. They are limited to a fixed
+    # amount by default. This amount is normally 1gb.
+    target_redis_client_max_querybuf_len = 1024_000_000
+     
+    # In the Redis protocol, bulk requests, that are, elements representing single
+    # strings, are normally limited to 512 mb.
+    target_redis_proto_max_bulk_len = 512_000_000
+    ```
 
