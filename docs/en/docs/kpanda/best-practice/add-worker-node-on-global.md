@@ -122,8 +122,6 @@ Please plan your resources before deploying the platform.
     * `insecure-skip-tls-verify: true`: Used to skip TLS verification, manually add this parameter.
     * `server`: Replace the IP in the default parameter `https://my-cluster-installer-control-plane:6443` with the IP of the Bootstrap Node. Replace `6443` with the port mapped on the node. You can use the command `podman ps | grep 6443` to check.
 
-    ![img](../images/add-global-node01.png)
-
 3. Click the "Confirm" button to complete the access of the kind cluster.
 
 ## Add labels to the global service cluster

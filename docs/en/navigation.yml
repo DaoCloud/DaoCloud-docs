@@ -376,7 +376,6 @@ nav:
               - Workspace: kairship/instance/workspace.md
           - Worker Clusters: kairship/cluster.md
           - Multicloud Workloads:
-              - Overview: kairship/workload/README.md
               - Create Deployment from Image: kairship/workload/deployment.md
               - Create Deployment from YAML: kairship/workload/yaml.md
               - Update Deployment: kairship/workload/update-deployment.md
