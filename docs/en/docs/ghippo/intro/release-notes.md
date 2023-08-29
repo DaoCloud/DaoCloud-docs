@@ -2,6 +2,21 @@
 
 This page lists the Release Notes for global management of each version, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-08-30
+
+### v0.20.0
+
+#### Features
+
+- Added support for integrating with WeChat Work.
+- Passwords now support 8-32 characters.
+- Added support for Cloud-Edge Collaboration Kant integration with a license.
+- [Operations Management] Added support for PostgreSQL/Kingbase databases.
+
+#### Improvements
+
+- Added primary keys to some database tables that were missing them.
+
 ## 2023-07-28
 
 ### v0.19.0
