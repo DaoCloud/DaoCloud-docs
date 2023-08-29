@@ -130,7 +130,7 @@ nav:
               - 安装 Velero 插件: kpanda/user-guide/backup/install-velero.md
               - 应用备份: kpanda/user-guide/backup/deployment.md
               - ETCD 备份: kpanda/user-guide/backup/etcd-backup.md
-              - 离线升级备份恢复模块: kpanda/user-guide/backup/offline-upgrade
+              - 离线升级备份恢复模块: kpanda/user-guide/backup/offline-upgrade.md
           - 安全管理:
               - 安全扫描类型: kpanda/user-guide/security/intro.md
               - 合规性扫描:
@@ -670,7 +670,7 @@ nav:
               - IP 池场景说明: network/modules/spiderpool/ippoolusage.md
               - 工作负载使用 IP 池: network/modules/spiderpool/usage.md
               - 第三方工作负载使用 IP 池: network/modules/spiderpool/cutomizedusage.md
-              - 公有云环境运行: network/modules/spiderpool/publiccloud.md
+              - 阿里云环境运行: network/modules/spiderpool/alibabacloud.md
               - 配置参考: network/modules/spiderpool/config.md
               - 常用命令: network/modules/spiderpool/command.md
           - Submariner:

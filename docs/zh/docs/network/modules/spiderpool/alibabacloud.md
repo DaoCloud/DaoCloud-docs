@@ -514,7 +514,7 @@ tcp-service    LoadBalancer   10.233.4.245    47.98.137.75     999:32635/TCP   1
 
 CCM 将自动在 IaaS 层创建四层与七层的负载均衡器，可以通过阿里云界面进行查看，如下：
 
-![alicloud-loadbalancer](../../../images/alicloud-loadbalancer.png)
+![alicloud-loadbalancer](../../images/alicloud-loadbalancer.png)
 
 ##### 验证负载均衡流量入口访问
 
