@@ -906,15 +906,16 @@ nav:
               - 托管 Harbor 的访问类型: kangaroo/best-practice/managed-harbor-select-access-type.md
               - 登录非安全镜像仓库: kangaroo/best-practice/insecure_registry.md
       - 云边协同:
-          - 什么是云边协同: kant/intro/index.md
-          - 功能特性: kant/intro/features.md
-          - 产品优势: kant/intro/benefits.md
-          - 应用场景: kant/intro/use-cases.md
-          - 边缘节点接入要求: kant/intro/join-rqmt.md
-          - 基本概念: kant/intro/concepts.md
-          # - 边云消息:
-              # - 边云消息概述: kant/user-guide/route/overview.md
-              # - 创建消息路由: kant/user-guide/route/create-route.md
+          - 介绍:
+              - 什么是云边协同: kant/intro/index.md
+              - 功能特性: kant/intro/features.md
+              - 产品优势: kant/intro/benefits.md
+              - 应用场景: kant/intro/use-cases.md
+              - 边缘节点接入要求: kant/intro/join-rqmt.md
+              - 基本概念: kant/intro/concepts.md
+          - 边云消息:
+              - 边云消息概述: kant/user-guide/route/overview.md
+              - 创建消息路由: kant/user-guide/route/create-route.md
       - 虚拟机容器:
           - 介绍:
               - 简介: virtnest/intro/index.md
