@@ -143,8 +143,9 @@ nav:
           - 权限管理:
               - 权限说明: kpanda/user-guide/permissions/permission-brief.md
               - 集群和命名空间授权: kpanda/user-guide/permissions/cluster-ns-auth.md
-          - GPU:
+          - GPU管理:
               - 安装 Nvidia GPU 驱动: kpanda/user-guide/gpu/driver.md
+              - GPU Operator 创建 MIG: kpanda/user-guide/gpu/create_mig.md
           - 最佳实践:
               - 对 ETCD 进行备份还原: kpanda/best-practice/etcd-backup.md
               - 对 MySQL 应用及数据进行跨集群备份恢复: kpanda/best-practice/backup-mysql-on-nfs.md
