@@ -1,6 +1,6 @@
 # 离线升级运营管理模块
 
-本页说明从[下载中心](../../download/index.md)下载运营管理模块后，应该如何安装或升级。
+本页说明从[下载中心](../../../download/index.md)下载运营管理模块后，应该如何安装或升级。
 
 !!! info
 
@@ -8,7 +8,7 @@
 
 ## 从安装包中加载镜像
 
-您可以根据下面两种方式之一加载镜像，当环境中存在镜像仓库时，建议选择chart-syncer同步镜像到镜像仓库，该方法更加高效便捷。
+您可以根据下面两种方式之一加载镜像，当环境中存在镜像仓库时，建议选择 chart-syncer 同步镜像到镜像仓库，该方法更加高效便捷。
 
 ### chart-syncer 同步镜像到镜像仓库
 
@@ -114,7 +114,7 @@
 
 !!! note
 
-    每个 node 都需要做 Docker 或 containerd 加载镜像操作，
+    每个节点都需要执行 Docker 或 containerd 加载镜像操作，
     加载完成后需要 tag 镜像，保持 Registry、Repository 与安装时一致。
 
 ## 升级
@@ -123,7 +123,7 @@
 
 !!! note
 
-    当从 v0.1.x (或更低版本) 升级到 v0.2.0 (或更高版本) 时，需要修改数据库连接参数。
+    当从 v0.1.x（或更低版本）升级到 v0.2.0（或更高版本）时，需要修改数据库连接参数。
 
     数据库连接参数的修改示例：
 
@@ -153,7 +153,7 @@
 
 === "通过 helm repo 升级"
 
-    1. 检查运营管理 helm 仓库是否存在。
+    1. 检查运营管理 Helm 仓库是否存在。
 
         ```shell
         helm repo list | grep gmagpie
@@ -165,19 +165,19 @@
         Error: no repositories to show
         ```
 
-    1. 添加运营管理的 helm 仓库。
+    1. 添加运营管理的 Helm 仓库。
 
         ```shell
         heml repo add gmagpie http://{harbor url}/chartrepo/{project}
         ```
 
-    1. 更新运营管理的 helm 仓库。
+    1. 更新运营管理的 Helm 仓库。
 
         ```shell
         helm repo update gmagpie # (1)
         ```
 
-        1. helm 版本过低会导致失败，若失败，请尝试执行 helm update repo
+        1. Helm 版本过低会导致失败，若失败，请尝试执行 helm update repo
 
     1. 选择您想安装的运营管理版本（建议安装最新版本）。
 
@@ -200,7 +200,7 @@
         helm get values gmagpie -n gmagpie-system -o yaml > bak.yaml
         ```
 
-    1. 更新 gmagpie crds
+    1. 更新 Gmagpie CRD。
 
         ```shell
         helm pull gmagpie/gmagpie --version 0.3.0 && tar -zxf gmagpie-0.3.0.tgz
@@ -223,7 +223,7 @@
           --version 0.3.0
         ```
 
-=== "通过 chart 包升级"
+=== "通过 Chart 包升级"
 
     1. 备份 `--set` 参数。
 
@@ -233,7 +233,7 @@
         helm get values gmagpie -n gmagpie-system -o yaml > bak.yaml
         ```
 
-    1. 更新 gmagpie crds
+    1. 更新 Gmagpie CRD。
 
         ```shell
         kubectl apply -f ./crds

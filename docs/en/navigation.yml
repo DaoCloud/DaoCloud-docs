@@ -187,6 +187,7 @@ nav:
           - Operations Management:
               - ghippo/user-guide/report-billing/index.md
               - Reports: ghippo/user-guide/report-billing/report.md
+              - Upgrade Operations Management: ghippo/install/gmagpie-offline-install.md
               - Billing and Accounting: ghippo/user-guide/report-billing/billing.md
           - Platform Settings:
               - Security Policies: ghippo/user-guide/platform-setting/security.md

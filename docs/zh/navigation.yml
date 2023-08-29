@@ -194,7 +194,7 @@ nav:
           - 运营管理:
               - ghippo/user-guide/report-billing/index.md
               - 报表管理: ghippo/user-guide/report-billing/report.md
-              - 离线升级运营管理: ghippo/install/gmagpie-offline-install.md
+              - 离线升级运营管理: ghippo/user-guide/report-billing/gmagpie-offline-install.md
               - 计费计量: ghippo/user-guide/report-billing/billing.md
           - 平台设置:
               - 安全策略: ghippo/user-guide/platform-setting/security.md
