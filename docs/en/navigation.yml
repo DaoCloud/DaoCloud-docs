@@ -858,12 +858,16 @@ nav:
               - Ingress or NodePort for Managed Harbor: kangaroo/best-practice/managed-harbor-select-access-type.md
               - Log in to an Insecure Container Registry: kangaroo/best-practice/insecure_registry.md
       - Cloud Edge Collaboration:
-          - What is Cloud Edge Collaboration: kant/intro/index.md
-          - Features: kant/intro/features.md
-          - Benefits: kant/intro/benefits.md
-          - Use Cases: kant/intro/use-cases.md
-          - Requirements to Join Edge Node: kant/intro/join-rqmt.md
-          - Concepts: kant/intro/concepts.md
+          - Intro:
+              - What is Cloud Edge Collaboration: kant/intro/index.md
+              - Features: kant/intro/features.md
+              - Benefits: kant/intro/benefits.md
+              - Use Cases: kant/intro/use-cases.md
+              - Requirements to Join Edge Node: kant/intro/join-rqmt.md
+              - Concepts: kant/intro/concepts.md
+          - Edge to Cloud Message:
+              - Overview: kant/user-guide/route/overview.md
+              - Create Message Route: kant/user-guide/route/create-route.md
       - Cloud Native Security:
           - Intro: security/index.md
           - Falco:
