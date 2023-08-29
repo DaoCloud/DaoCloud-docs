@@ -56,4 +56,3 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/canary.mp4" preload="metadata" poster="images/amamba-canary.png"></video>
 </div>
 
-[应用工作台常见问题](../amamba/intro/faq.md){ .md-button .md-button--primary }
