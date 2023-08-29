@@ -113,9 +113,9 @@ hide:
 3. 查看 IP Pool IP 状态：
 
     ```
+    
     kubectl get sp -oyaml | grep kruise
           ipam.spidernet.io/application: apps.kruise.io/v1alpha1:CloneSet:default:custom-kruise-cloneset03
         name: auto-custom-kruise-cloneset03-v4-net1-f3114156804d
-        allocatedIPs: '{"10.6.124.200":{"interface":"net1","pod":"default/custom-kruise-cloneset-r7xjd","podUid":"43942169-3c43-4a81-aaae-60ba1dc9d07e"},"10.6.124.201":{"interface":"net1","pod":"default/custom-kruise-cloneset-sp5t6","podUid":"4980a045-7ee9-467a-a6a3-b259411963cb"},"10.6.124.202":{"interface":"net1","pod":"default/custom-kruise-cloneset-j94tl","podUid":"72b13a85-5275-44b1-8491-323f9fff3571"}}'
-   
+        allocatedIPs: '{"10.6.124.200":{"interface":"net1","pod":"default/custom-kruise-cloneset-r7xjd","podUid":"43942169-3c43-4a81-aaae-60ba1dc9d07e"},"10.6.124.201":{"interface":"net1","pod":"default/custom-kruise-cloneset-sp5t6","podUid":"4980a045-7ee9-467a-a6a3-b259411963cb"},"10.6.124.202":{"interface":"net1","pod":"default/custom-kruise-cloneset-j94tl","podUid":"72b13a85-5275-44b1-8491-323f9fff3571"}}'   
     ```

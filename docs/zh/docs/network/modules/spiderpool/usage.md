@@ -11,22 +11,24 @@ hide:
 2. 工作负载使用 IP 池
 3. 工作负载使用固定 IP 池
 4. 工作负载使用自动创建固定 IP 池
+5. 工作负载使用默认 IP 池
 
 ## 前提条件
 
 1. [SpiderPool 已成功部署](../../modules/spiderpool/install.md)。
 2. [Multus 搭配 Macvlan /SRI-OV 已成功部署](../../modules/multus-underlay/install.md)。
 3. 如使用手动选择 IP 池，请提前完成[创建 IP 子网和 IP 池](../../modules/spiderpool/createpool.md)。如使用自动创建固定 IP 池，请提前完成[创建 IP 池](../../modules/spiderpool/createpool.md)。
+4. 如果使用默认 IP 池，请提前完成[创建 IP 子网和 IP 池](../../modules/spiderpool/createpool.md)。并在容器网络 Multus CNI 配置中，配置好带有默认 IP 池的网卡。
 
 ## 界面操作
 
 1. 登录平台 UI，在左侧导航栏点击`容器管理`->`集群列表`，找到对应集群。然后，在左侧导航栏选择`无状态负载`，点击`镜像创建`。
 
-    ![镜像创建](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/useippool.jpg)
+    ![镜像创建](%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_ddbdc457-967c-4992-982e-641a8865e967.png)
 
 2. 在`创建无状态负载`页面，完成`基本信息`、`容器配置`、`服务配置`页面的信息输入。然后，进入`高级配置`，点击配置`容器网卡`。
 
-    ![容器网卡](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/useippool02.jpg)
+    ![容器网卡](image.png)
 
 3. 进入`容器网卡配置`页面，完成以下参数的配置：
 
@@ -46,22 +48,27 @@ hide:
 
         - `网卡 IP 池`：选择对应网卡待使用的子网或对应 IP 池。
 
+        - `使用默认 IP 池`：开启后，会为新增的容器网卡（eth0、net1、net2）全部选择好默认的 IP 池。
+
     工作负载使用 IP 池有如下两种方式，两种方式的使用场景及流程差异可参考：[IP 池的使用说明](ippoolusage.md)
 
     **手动选择已有的 IP 池**
 
     手动选择 IP 池需要提前创建 IP 池，可选择 IP 池范围为：`共享 IP 池`，添加了当前`应用亲和性的 IP 池`，添加了当前`命名空间亲和性的 IP 池`。
 
-    ![手动选择](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/useippool05.jpg)
+    ![手动选择](image-1.png)
 
     **自动创建固定 IP 池**
 
     仅需要选择对应的子网，即可自动创建固定 IP 池。
 
-    ![自动创建](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/useippool03.jpg)
+    ![自动创建](image-2.png)
 
-    ![自动创建](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/useippool04.jpg)
+    **使用默认 IP 池**
 
+    提前创建好 IP 池，并在 Multus CNI 配置中，选择带有默认 IP 池的网卡，即可使用默认 IP 池功能。
+    ![默认IP池](image-3.png)
+    
 4. 创建完工作负载后，可点击对应工作负载 `workload01` 查看工作负载 Pod 使用的 IP。
 
     ![工作负载 IP](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/useippool06.jpg)
