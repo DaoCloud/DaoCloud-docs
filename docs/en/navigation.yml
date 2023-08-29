@@ -290,6 +290,7 @@ nav:
           - FAQ:
               - Clock Skew of Trace Data: insight/faq/traceclockskew.md
               - Alert Notification Flow: insight/faq/alertnotification.md
+              - Lucene Syntax: insight/faq/lucene.md
           - Best Practice:
               - Collect Container Log with Sidecar: insight/best-practice/tailing-sidecar.md
               - Log Collection Troubleshooting: insight/best-practice/debug-log.md
