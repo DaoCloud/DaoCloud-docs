@@ -26,7 +26,7 @@ NVIDIA 当前提供两种在 Kubernetes 节点上公开 MIG 设备的策略：
 
 1. 通过 Operator 开启 MIG  Single 模式
 
-    ```
+    ```sh
     helm repo add nvidia https://helm.ngc.nvidia.com/nvidia
     helm repo update
     helm upgrade -i  gpu-operator -n gpu-operator -n gpu-operator --create-namespace nvidia/gpu-operator --set migStrategy=single --set node-feature-discovery.image.repository=k8s.m.daocloud.io/nfd/node-feature-discovery --set driver.version=525-5.15.0-78-generic # 通过 set 指定 MIG 模式为 Single
@@ -34,13 +34,13 @@ NVIDIA 当前提供两种在 Kubernetes 节点上公开 MIG 设备的策略：
 
 2. 给对应节点(已插入对应 GPU 卡节点)打上 切分规格
 
-    ```
+    ```sh
     kubectl label nodes {node} nvidia.com/mig.config="all-1g.10gb" --overwrite
     ```
 
 3. 查看配置结果
 
-    ```
+    ```sh
     kubectl get node 10.206.0.17 -o yaml|grep nvidia.com/mig.config
     ```
 
@@ -48,7 +48,7 @@ NVIDIA 当前提供两种在 Kubernetes 节点上公开 MIG 设备的策略：
 
 1. 通过 Operator 开启 MIG  Mixed 模式
 
-    ```
+    ```sh
     helm repo add nvidia https://helm.ngc.nvidia.com/nvidia
     helm repo update
     helm install --generate-name --set migStrategy=mixed --set allowDefaultNamespace=true  nvidia/nvidia-device-plugin --set node-feature-discovery.image.repository=k8s.m.daocloud.io/nfd/node-feature-discovery # 通过 set 指定 MIG 模式为 Mixed
@@ -56,7 +56,7 @@ NVIDIA 当前提供两种在 Kubernetes 节点上公开 MIG 设备的策略：
 
 2. 设置`config.yaml`文件，此`config`文件中设置 MIG GI 实例切分规格。
 
-    ```
+    ```yaml
     version: v1
     mig-configs:
       all-disabled:
@@ -118,7 +118,7 @@ NVIDIA 当前提供两种在 Kubernetes 节点上公开 MIG 设备的策略：
 
 3. 在上述的`config.yaml` 中设置 `custom-config`，设置后会按照规格切分 CI 实例
 
-    ```
+    ```yaml
     custom-config:
       - devices: all
         mig-enabled: true
@@ -128,7 +128,7 @@ NVIDIA 当前提供两种在 Kubernetes 节点上公开 MIG 设备的策略：
 
 4. 按照修改后的 `config.yaml` 自定义设置：
 
-    ```
+    ```sh
     kubectl create configmap -n gpu-operator custome-mig-parted-config --from-file=config.yaml
     helm install gpu-operator -n gpu-operator --create-namespace nvidia/gpu-operator --set migManager.config.name=mig-config --set node-feature-
     discovery.image.repository=k8s.m.daocloud.io/nfd/node-feature-discovery
@@ -136,19 +136,19 @@ NVIDIA 当前提供两种在 Kubernetes 节点上公开 MIG 设备的策略：
     
     或者
     
-    ···
+    ···sh
     helm upgrade -i gpu-operator nvidia/gpu-operator -n gpu-operator --set mig.strategy=mixed --set migManager.config.name=custome-mig-parted-config --set node-feature-discovery.image.repository=k8s.m.daocloud.io/nfd/node-feature-discovery
     ```
 
 5. 设置完成后给对应的节点打上切分规格
 
-    ```
+    ```sh
     kubectl label nodes {node} nvidia.com/mig.config="custom-config" --overwrite
     ```
 
 6. 查看配置结果
 
-    ```
+    ```sh
     kubectl get node 10.206.0.17 -o yaml|grep nvidia.com/mig.config
     ```
 
