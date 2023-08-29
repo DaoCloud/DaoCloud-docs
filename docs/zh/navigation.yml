@@ -298,6 +298,7 @@ nav:
           - 常见问题:
               - 链路数据的时钟偏移: insight/faq/traceclockskew.md
               - 告警通知流程说明: insight/faq/alertnotification.md
+              - Lucene 语法使用方法: insight/faq/lucene.md
           - 最佳实践:
               - 通过 Sidecar 采集容器日志: insight/best-practice/tailing-sidecar.md
               - 日志采集排障指南: insight/best-practice/debug-log.md
