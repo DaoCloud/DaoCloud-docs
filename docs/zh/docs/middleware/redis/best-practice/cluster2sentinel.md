@@ -270,7 +270,7 @@ Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 
 sync.toml
 
-??? Note “请点击查看配置文件”
+??? note “请点击查看配置文件”
 
     ```toml
     type = "sync"
