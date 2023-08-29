@@ -4,7 +4,7 @@
 
 ## Multicloud Module Introduction
 
-See [What's Multicloud Management](../kairship/intro/index.md) for reference.
+See [What's Multicloud Management](../kairship/intro/features.md) for reference.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/multicloud-intro.mp4" preload="metadata" poster="images/kairship-intro.png"></video>
@@ -20,7 +20,7 @@ See [Creating Multicloud Instances](../kairship/instance/add.md) for reference.
 
 ## Creating Multicloud Workloads
 
-See [Creating Multicloud Workloads](../kairship/workload/README.md) for reference.
+See [Creating Multicloud Workloads](../kairship/workload/deployment.md) for reference.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/workloads.mp4" preload="metadata" poster="images/kairship-workload.png"></video>
