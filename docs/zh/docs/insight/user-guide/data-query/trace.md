@@ -17,7 +17,7 @@
 请按照以下步骤查询链路：
 
 1. 进入`可观测性` 产品模块，
-2. 在左边导航栏选择 `数据查询 -> 链路查询`。
+2. 在左边导航栏选择 `数据查询` -> `链路查询`。
 3. 通过多种条件查询链路或通过 TraceID 精确查询链路。
 
     ![jaeger](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/trace01.png)
@@ -29,3 +29,24 @@
 4. 点击需要查询的 TraceID 名称，查看该链路的详情调用情况
 
     ![jaeger](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/trace02.png)
+
+!!! note
+
+    使用 TraceID 搜索请输入完整的 TraceID。
+
+### 关联日志
+
+1. 点击链路数据右侧的图标，可查询该链路的关联日志。
+
+    - 默认查询该链路的持续时间及其结束之后一分钟内的日志数据。
+    - 查询的日志内容为日志文本中包含该链路的 TraceID 的日志和链路调用过程中相关的容器日志。
+  
+2. 点击 `查看更多` 后可带条件跳转到`日志查询` 的页面。
+3. 支持基于 `容器组` 过滤和关键字模糊搜索。
+
+    ![tracelog](../../images/tracelog.png)
+
+    !!! note
+
+        1. 由于链路会跨集群或跨命名空间，若用户权限不足，则无法查询该链路的关联日志。
+        2. 跳转到 `日志查询` 后会根据用户权限默认搜索一次。

@@ -32,4 +32,4 @@ This document describes how to use third-party image repositories and chart repo
 
         - The chart repository only supports three types: chartmuseum, harbor, and jfrog.
 
-2. After completing the above configuration, you can proceed with the [deployment of DCE 5.0 Enterprise Package](../start-install.md).
+2. After completing the above configuration, you can proceed with the [deployment of DCE 5.0 Enterprise](../start-install.md).

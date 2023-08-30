@@ -10,11 +10,11 @@ The TiDB distributed database splits the overall architecture into multiple modu
 
 - **TiDB Server**
   
-     The SQL layer exposes the connection endpoints of the MySQL protocol, is responsible for accepting client connections, performing SQL parsing and optimization, and finally generating a distributed execution plan. The TiDB layer itself is stateless. In practice, multiple TiDB instances can be started, and a unified access address is provided externally through load balancing components (such as LVS, HAProxy, or F5). Client connections can be evenly distributed among multiple TiDB instances. In order to achieve the effect of load balancing. TiDB Server itself does not store data, but only parses SQL and forwards actual data read requests to the underlying storage node TiKV (or TiFlash).
+    The SQL layer exposes the connection endpoints of the MySQL protocol, is responsible for accepting client connections, performing SQL parsing and optimization, and finally generating a distributed execution plan. The TiDB layer itself is stateless. In practice, multiple TiDB instances can be started, and a unified access address is provided externally through load balancing components (such as LVS, HAProxy, or F5). Client connections can be evenly distributed among multiple TiDB instances. In order to achieve the effect of load balancing. TiDB Server itself does not store data, but only parses SQL and forwards actual data read requests to the underlying storage node TiKV (or TiFlash).
 
 - **PD (Placement Driver) Server**
   
-     The meta information management module of the entire TiDB cluster is responsible for storing the real-time data distribution of each TiKV node and the overall topology of the cluster, providing the TiDB Dashboard management and control interface, and assigning transaction IDs to distributed transactions. PD not only stores meta information, but also sends data scheduling commands to specific TiKV nodes according to the real-time data distribution status reported by TiKV nodes, which can be said to be the "brain" of the entire cluster. In addition, the PD itself is also composed of at least 3 nodes and has high availability capabilities. It is recommended to deploy an odd number of PD nodes.
+    The meta information management module of the entire TiDB cluster is responsible for storing the real-time data distribution of each TiKV node and the overall topology of the cluster, providing the TiDB Dashboard management and control interface, and assigning transaction IDs to distributed transactions. PD not only stores meta information, but also sends data scheduling commands to specific TiKV nodes according to the real-time data distribution status reported by TiKV nodes, which can be said to be the "brain" of the entire cluster. In addition, the PD itself is also composed of at least 3 nodes and has high availability capabilities. It is recommended to deploy an odd number of PD nodes.
 
 - **Storage Node**
 
@@ -28,31 +28,31 @@ The TiDB distributed database splits the overall architecture into multiple modu
 
 - **Key-Value Pair**
 
-     The choice of TiKV is the Key-Value model, and it provides an ordered traversal method. Two key points of TiKV data storage:
+    The choice of TiKV is the Key-Value model, and it provides an ordered traversal method. Two key points of TiKV data storage:
 
-     - This is a huge Map (can be compared to C++'s std::map), which stores Key-Value Pairs.
+    - This is a huge Map (can be compared to C++'s std::map), which stores Key-Value Pairs.
 
-     - The Key-Value pairs in this Map are ordered according to the binary order of the Key, that is, you can Seek to a certain Key position, and then continuously call the Next method to obtain the Key-Value greater than this Key in increasing order.
+    - The Key-Value pairs in this Map are ordered according to the binary order of the Key, that is, you can Seek to a certain Key position, and then continuously call the Next method to obtain the Key-Value greater than this Key in increasing order.
 
 - **Local Storage (Rocks DB)**
   
-     For any persistent storage engine, data must be stored on disk after all, and TiKV is no exception. However, TiKV did not choose to write data directly to the disk, but saved the data in RocksDB, and RocksDB is responsible for the specific data landing. The reason for this is that developing a stand-alone storage engine requires a lot of work, especially for a high-performance stand-alone engine, which requires various meticulous optimizations. RocksDB is an excellent stand-alone KV storage engine open sourced by Facebook. It can meet various requirements of TiKV for a stand-alone engine. Here you can simply think of RocksDB as a stand-alone persistent Key-Value Map.
+    For any persistent storage engine, data must be stored on disk after all, and TiKV is no exception. However, TiKV did not choose to write data directly to the disk, but saved the data in RocksDB, and RocksDB is responsible for the specific data landing. The reason for this is that developing a stand-alone storage engine requires a lot of work, especially for a high-performance stand-alone engine, which requires various meticulous optimizations. RocksDB is an excellent stand-alone KV storage engine open sourced by Facebook. It can meet various requirements of TiKV for a stand-alone engine. Here you can simply think of RocksDB as a stand-alone persistent Key-Value Map.
 
 - **Raft protocol**
   
-     TiKV chooses the Raft algorithm to ensure that data will not be lost and errors will not occur in the case of a single machine failure. Simply put, it is to copy data to multiple machines, so that when a certain machine cannot provide services, the copies on other machines can still provide services. This data replication scheme is reliable and efficient, and can handle the failure of replicas.
+    TiKV chooses the Raft algorithm to ensure that data will not be lost and errors will not occur in the case of a single machine failure. Simply put, it is to copy data to multiple machines, so that when a certain machine cannot provide services, the copies on other machines can still provide services. This data replication scheme is reliable and efficient, and can handle the failure of replicas.
 
 - **Region**
   
-     TiKV chooses to divide Range by Key. A certain continuous Key is stored on one storage node. Divide the entire Key-Value space into many segments, and each segment is a series of consecutive Keys, called a Region. Try to keep the data stored in each Region within a certain size. Currently, the default size in TiKV is no more than 96MB. Each Region can be described by a left-closed right-open interval like [StartKey, EndKey].
+    TiKV chooses to divide Range by Key. A certain continuous Key is stored on one storage node. Divide the entire Key-Value space into many segments, and each segment is a series of consecutive Keys, called a Region. Try to keep the data stored in each Region within a certain size. Currently, the default size in TiKV is no more than 96MB. Each Region can be described by a left-closed right-open interval like [StartKey, EndKey].
 
 - **MVCC**
   
-     TiKV implements Multi-Version Concurrency Control (MVCC).
+    TiKV implements Multi-Version Concurrency Control (MVCC).
 
 - **Distributed ACID transactions**
   
-     The transaction of TiKV adopts the transaction model used by Google in BigTable: Percolator.
+    The transaction of TiKV adopts the transaction model used by Google in BigTable: Percolator.
 
 ## Set up a test environment
 
@@ -66,17 +66,17 @@ This test uses three virtual machine nodes to deploy a Kubernetes cluster, inclu
 
 1. Deploy HwameiStor local storage on the Kubernetes cluster
 
-     
+    
 
 2. Configure a 100G local disk sdb for HwameiStor on the two worker nodes respectively
 
-     
+    
 
-     
+    
 
 3. Create storageClass
 
-     
+    
 
 ### Deploy TiDB on Kubernetes
 
@@ -96,24 +96,24 @@ The correspondence between TiDB and TiDB Operator versions is as follows:
 
 1. Install TiDB CRDs
 
-     ```bash
-     kubectl apply -f https://raw.githubusercontent.com/pingcap/tidb-operator/master/manifests/crd.yaml
-     ```
+    ```bash
+    kubectl apply -f https://raw.githubusercontent.com/pingcap/tidb-operator/master/manifests/crd.yaml
+    ```
 
 2. Install TiDB Operator
 
-     ```bash
-     helm repo add pingcap https://charts.pingcap.org/
-     kubectl create namespace tidb-admin
-     helm install --namespace tidb-admin tidb-operator pingcap/tidb-operator --version v1.3.2 \
-     --set operatorImage=registry.cn-beijing.aliyuncs.com/tidb/tidb-operator:v1.3.2 \
-     --set tidbBackupManagerImage=registry.cn-beijing.aliyuncs.com/tidb/tidb-backup-manager:v1.3.2 \
-     --set scheduler.kubeSchedulerImageName=registry.cn-hangzhou.aliyuncs.com/google_containers/kube-scheduler
-     ```
+    ```bash
+    helm repo add pingcap https://charts.pingcap.org/
+    kubectl create namespace tidb-admin
+    helm install --namespace tidb-admin tidb-operator pingcap/tidb-operator --version v1.3.2 \
+    --set operatorImage=registry.cn-beijing.aliyuncs.com/tidb/tidb-operator:v1.3.2 \
+    --set tidbBackupManagerImage=registry.cn-beijing.aliyuncs.com/tidb/tidb-backup-manager:v1.3.2 \
+    --set scheduler.kubeSchedulerImageName=registry.cn-hangzhou.aliyuncs.com/google_containers/kube-scheduler
+    ```
 
 3. Check TiDB Operator components
 
-     
+    
 
 #### Deploy TiDB cluster
 
@@ -147,24 +147,24 @@ kubectl port-forward -n tidb-cluster svc/basic-tidb 4000 > pf4000.out &
 
 1. Create the Hello_world table
 
-     ```sql
-     create table hello_world (id int unsigned not null auto_increment primary key, v varchar(32));
-     ```
-     
+    ```sql
+    create table hello_world (id int unsigned not null auto_increment primary key, v varchar(32));
+    ```
+    
 
 2. Query the TiDB version number
 
-     ```sql
-     select tidb_version()\G;
-     ```
-     
+    ```sql
+    select tidb_version()\G;
+    ```
+    
 
 3. Query Tikv storage status
 
-     ```sql
-     select * from information_schema.tikv_store_status\G;
-     ```
-     
+    ```sql
+    select * from information_schema.tikv_store_status\G;
+    ```
+    
 
 #### HwameiStor storage configuration
 
@@ -265,11 +265,11 @@ insert into t_test(id,name,colwithdefault ) values(10,'test','non-default');
 alter table t_test drop column colwithdefault;
 # Partition table type (only some scripts are excerpted)
 CREATE TABLE employees (
-     id INT NOT NULL,
+    id INT NOT NULL,
 fname VARCHAR(30),
 lname VARCHAR(30),
-     hired DATE NOT NULL DEFAULT '1970-01-01',
-     separated DATE NOT NULL DEFAULT '9999-12-31',
+    hired DATE NOT NULL DEFAULT '1970-01-01',
+    separated DATE NOT NULL DEFAULT '9999-12-31',
 job_code INT NOT NULL,
 store_id INT NOT NULL
 )

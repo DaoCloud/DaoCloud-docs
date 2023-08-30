@@ -1,10 +1,10 @@
-# Install DCE 5.0 Commercial on OpenShift OCP
+# Install DCE 5.0 Enterprise on OpenShift OCP
 
 This page describes how to install DCE 5.0 on OCP.
 
 ## Prerequisites
 
-- The default Kubernetes versions supported by DCE 5.0 are v1.22.x, v1.23.x, v1.24.x, v1.25.x
+- The default Kubernetes versions supported by DCE 5.0 are v1.22.x, v1.23.x, v1.24.x, v1.25.x, v1.26.x
 - Already have an OCP environment, and the version is not lower than v1.22.x
 - Prepare a private container registry and ensure that the cluster can access it
 - Ensure sufficient resources, it is recommended that the cluster has at least 12 cores and 24 GB of available resources
@@ -80,4 +80,4 @@ This page describes how to install DCE 5.0 on OCP.
 
          Please record the prompted URL for your next visit.
 
-7. After successfully installing DCE 5.0 Enterprise Package, please contact us for authorization: email [info@daocloud.io](mailto:info@daocloud.io) or call 400 002 6898.
+7. After successfully installing DCE 5.0 Enterprise, please contact us for authorization: email [info@daocloud.io](mailto:info@daocloud.io) or call 400 002 6898.

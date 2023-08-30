@@ -1,10 +1,10 @@
 # Install Community on kind Cluster Online
 
-This page explains how to install DCE 5.0 Community package on a kind cluster online.
+This page explains how to install DCE Community package on a kind cluster online.
 
 !!! note
 
-    Click [Online Installation of Community Package](../../../videos/install.md#3) to watch the video tutorial.
+    Click [Online Installation of DCE Community](../../../videos/install.md#3) to watch the video tutorial.
 
 ## Preparation
 
@@ -15,10 +15,10 @@ Run the following script to check the system resources and network connectivity:
 
 ```shell
 set -e
-if [ $(free -g|grep Mem | awk '{print $2}') -lt 12 ]; then (echo "insufficient memory! (should >=12G)"; exit 1); fi
-if [ $(grep 'processor' /proc/cpuinfo |sort |uniq |wc -l) -lt 8 ]; then (echo "insufficient CPU! (should >=8C)"; exit 1); fi
-if [ $(df -m / |tail -n 1 | awk '{print $4}') -lt 30720 ]; then (echo "insufficient free disk space of root partition!(should >=30G)"; exit 1) ;
-ping daocloud.io -c 1 &> /dev/null || ( echo "no connection to internet! abort." && exit 1; )
+if [ $(free -g|grep Mem | awk '{print $2}')              -lt 12 ]; then (echo "insufficient memory! (should >=12G)";); fi
+if [ $(grep 'processor' /proc/cpuinfo |sort |uniq |wc -l) -lt 8 ]; then (echo "insufficient CPU! (should >=8C)";); fi
+if [ $(df -m / |tail -n 1 | awk '{print $4}') -lt 30720 ]; then (echo "insufficient free disk space of root partition!(should >=30G)";); fi
+ping daocloud.io -c 1 &> /dev/null || ( echo "no connection to internet! abort.")
 echo "precheck pass.."
 ```
 
@@ -40,10 +40,11 @@ precheck pass...
 
      ```shell
      set -e
-     if [ -x "$(command -v docker )" ] ;then
-     echo "docker already installed : version = "$(docker -v);
-     exit 0
-     the fi
+     if  [ -x "$(command -v docker )" ] ;then
+        echo "docker already installed : version = "$(docker -v);
+     else
+        echo "docker not found, please install it first."
+     fi
     
      sudo yum install -y yum-utils device-mapper-persistent-data lvm2
      sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
@@ -59,10 +60,11 @@ precheck pass...
 
      ```shell
      set -e
-     if [ -x "$(command -v docker )" ] ;then
-     echo "docker already installed : version = "$(docker -v);
-     exit 0
-     the fi
+     if  [ -x "$(command -v docker )" ] ;then
+        echo "docker already installed : version = "$(docker -v);
+     else
+        echo "docker not found, please install it first."
+     fi
      sudo apt-get update
      sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common
      curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -
@@ -105,7 +107,7 @@ precheck pass...
     apiVersion: kind.x-k8s.io/v1alpha4
     kind: Cluster
     nodes:
-    -role: control-plane
+    - role: control-plane
       extraPortMappings:
       - containerPort: 32088
         hostPort: 8888
@@ -142,7 +144,7 @@ precheck pass...
      fire-kind-cluster
      ```
 
-## Install DCE 5.0 Community package
+## Install DCE Community package
 
 1. [Install dependencies](../../install-tools.md).
 
@@ -193,7 +195,7 @@ precheck pass...
 !!! success
 
      - Keep the DCE 5.0 URL for the next visit.
-     - As DCE 5.0 Community package is installed, please [apply for a free license](../../../dce/license0.md).
+     - As DCE Community package is installed, please [apply for a free license](../../../dce/license0.md).
      - If you have any problems about DCE 5.0, please scan the QR code and communicate with the developer freely:
     
-        ![Community Package Exchange Group](https://docs.daocloud.io/daocloud-docs-images/docs/images/assist.png)
+        ![DCE Community Exchange Group](https://docs.daocloud.io/daocloud-docs-images/docs/images/assist.png)

@@ -1,4 +1,4 @@
-# Deploy DCE 5.0 commercial version on UOS V20 (1020a) operating system
+# Deploy DCE 5.0 Enterprise on UOS V20 (1020a) operating system
 
 This page will introduce how to deploy DCE 5.0 on UOS V20(1020a) operating system.
 
@@ -106,4 +106,4 @@ This page will introduce how to deploy DCE 5.0 on UOS V20(1020a) operating syste
 
         Please record the prompted URL for your next visit.
 
-9. After successfully installing DCE 5.0 Enterprise Package, please contact us for authorization: email [info@daocloud.io](mailto:info@daocloud.io) or call 400 002 6898.
+9. After successfully installing DCE 5.0 Enterprise, please contact us for authorization: email [info@daocloud.io](mailto:info@daocloud.io) or call 400 002 6898.

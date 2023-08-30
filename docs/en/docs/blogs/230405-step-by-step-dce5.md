@@ -7,11 +7,11 @@ tags: []
 last_updated:
 ---
 
-# Nanny install DCE 5.0 Community Package
+# Nanny install DCE Community
 
 Author: [Peter Pan](https://github.com/panpan0000), [SAMZONG](https://github.com/SAMZONG)
 
-This article completes the installation of DCE 5.0 Community Package from 0 to 1 in a cluster of 3 nodes, including K8s cluster, dependencies, network, storage and other details and more considerations.
+This article completes the installation of DCE Community from 0 to 1 in a cluster of 3 nodes, including K8s cluster, dependencies, network, storage and other details and more considerations.
 
 > At this stage, the iteration of the version is relatively fast. The installation method of this article may be different from the latest version. Please refer to the [Installation Instructions](../install/index.md) of the product documentation.
 
@@ -31,7 +31,7 @@ The components used in this example are:
 - CRI: containerd (because the new version of K8s no longer directly supports Docker)
 - CNI: Calico
 - StorageClass: local-path
-- DCE 5.0 Community Package: v0.5.0
+- DCE Community: v0.5.0
 
 ## prepare node
 
@@ -304,9 +304,9 @@ kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storagec
 kubectl get sc # You can see the shape as: local-path (default)
 ```
 
-## Install DCE 5.0 Community Package
+## Install DCE Community
 
-Now everything is ready to install DCE 5.0 Community Package.
+Now everything is ready to install DCE Community.
 
 ### Install basic dependencies
 

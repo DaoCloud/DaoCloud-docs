@@ -11,30 +11,30 @@ Jenkins 分为 master 和 agent。master 主要用于存储配置，插件和协
 ```yaml
 resources:
   requests:
-    cpu: "1"
+    cpu: "2"
     memory: "2Gi"
   limits:
     cpu: "2"
-    memory: "4Gi"
+    memory: "2Gi"
   JavaOpts: |-
-    -XX:MaxRAMPercentage=70.0 
-    -XX:MaxRAM=3g
-    -Dhudson.slaves.NodeProvisioner.initialDelay=20
-    -Dhudson.slaves.NodeProvisioner.MARGIN=50
-    -Dhudson.slaves.NodeProvisioner.MARGIN0=0.85
-    -Dhudson.model.LoadStatistics.clock=5000
-    -Dhudson.model.LoadStatistics.decay=0.2
-    -Dhudson.slaves.NodeProvisioner.recurrencePeriod=5000
-    -Dhudson.security.csrf.DefaultCrumbIssuer.EXCLUDE_SESSION_ID=true
-    -Dio.jenkins.plugins.casc.ConfigurationAsCode.initialDelay=10000
-    -Djenkins.install.runSetupWizard=false
-    -XX:+UseG1GC
-    -XX:+UseStringDeduplication
-    -XX:+ParallelRefProcEnabled
-    -XX:+DisableExplicitGC
-    -XX:+UnlockDiagnosticVMOptions
-    -XX:+UnlockExperimentalVMOptions
-    -javaagent:/otel-auto-instrumentation/javaagent.jar
+        -XX:+PrintFlagsFinal -XX:MaxRAMPercentage=70.0
+        -XX:MinHeapFreeRatio=8 -XX:MaxHeapFreeRatio=15
+        -XX:MinRAMPercentage=20.0 -XX:-UseAdaptiveSizePolicy
+        -XX:-ShrinkHeapInSteps
+        -Dhudson.slaves.NodeProvisioner.initialDelay=20
+        -Dhudson.slaves.NodeProvisioner.MARGIN=50
+        -Dhudson.slaves.NodeProvisioner.MARGIN0=0.85
+        -Dhudson.model.LoadStatistics.clock=5000
+        -Dhudson.model.LoadStatistics.decay=0.2
+        -Dhudson.slaves.NodeProvisioner.recurrencePeriod=5000
+        -Dhudson.security.csrf.DefaultCrumbIssuer.EXCLUDE_SESSION_ID=true
+        -Dio.jenkins.plugins.casc.ConfigurationAsCode.initialDelay=10000
+        -Djenkins.install.runSetupWizard=false  
+        -XX:+UseConcMarkSweepGC
+        -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled
+        -XX:+DisableExplicitGC -XX:+UnlockDiagnosticVMOptions
+        -XX:+UnlockExperimentalVMOptions
+        -javaagent:/otel-auto-instrumentation/javaagent.jar
 ```
 
 ### agent 配置
@@ -59,13 +59,15 @@ resources:
 resources:
   requests:
     cpu: "2"
-    memory: "4Gi"
+    memory: "3Gi"
   limits:
     cpu: "2"
-    memory: "8Gi"
+    memory: "3Gi"
   JavaOpts: |-
-    -XX:MaxRAMPercentage=70.0 
-    -XX:MaxRAM=6g
+    -XX:+PrintFlagsFinal -XX:MaxRAMPercentage=70.0
+    -XX:MinHeapFreeRatio=8 -XX:MaxHeapFreeRatio=15
+    -XX:MinRAMPercentage=20.0 -XX:-UseAdaptiveSizePolicy
+    -XX:-ShrinkHeapInSteps
     -Dhudson.slaves.NodeProvisioner.initialDelay=20
     -Dhudson.slaves.NodeProvisioner.MARGIN=50
     -Dhudson.slaves.NodeProvisioner.MARGIN0=0.85
@@ -74,12 +76,10 @@ resources:
     -Dhudson.slaves.NodeProvisioner.recurrencePeriod=5000
     -Dhudson.security.csrf.DefaultCrumbIssuer.EXCLUDE_SESSION_ID=true
     -Dio.jenkins.plugins.casc.ConfigurationAsCode.initialDelay=10000
-    -Djenkins.install.runSetupWizard=false
-    -XX:+UseG1GC
-    -XX:+UseStringDeduplication
-    -XX:+ParallelRefProcEnabled
-    -XX:+DisableExplicitGC
-    -XX:+UnlockDiagnosticVMOptions
+    -Djenkins.install.runSetupWizard=false  
+    -XX:+UseConcMarkSweepGC
+    -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled
+    -XX:+DisableExplicitGC -XX:+UnlockDiagnosticVMOptions
     -XX:+UnlockExperimentalVMOptions
     -javaagent:/otel-auto-instrumentation/javaagent.jar
 ```
@@ -95,14 +95,16 @@ resources:
 ```yaml
 resources:
   requests:
-    cpu: "4"
-    memory: "8Gi"
+    cpu: "2"
+    memory: "3Gi"
   limits:
-    cpu: "8"
-    memory: "12Gi"
+    cpu: "2"
+    memory: "3Gi"
   JavaOpts: |-
-    -XX:MaxRAMPercentage=70.0 
-    -XX:MaxRAM=10g
+    -XX:+PrintFlagsFinal -XX:MaxRAMPercentage=70.0
+    -XX:MinHeapFreeRatio=8 -XX:MaxHeapFreeRatio=15
+    -XX:MinRAMPercentage=20.0 -XX:-UseAdaptiveSizePolicy
+    -XX:-ShrinkHeapInSteps
     -Dhudson.slaves.NodeProvisioner.initialDelay=20
     -Dhudson.slaves.NodeProvisioner.MARGIN=50
     -Dhudson.slaves.NodeProvisioner.MARGIN0=0.85
@@ -111,12 +113,10 @@ resources:
     -Dhudson.slaves.NodeProvisioner.recurrencePeriod=5000
     -Dhudson.security.csrf.DefaultCrumbIssuer.EXCLUDE_SESSION_ID=true
     -Dio.jenkins.plugins.casc.ConfigurationAsCode.initialDelay=10000
-    -Djenkins.install.runSetupWizard=false
-    -XX:+UseG1GC
-    -XX:+UseStringDeduplication
-    -XX:+ParallelRefProcEnabled
-    -XX:+DisableExplicitGC
-    -XX:+UnlockDiagnosticVMOptions
+    -Djenkins.install.runSetupWizard=false  
+    -XX:+UseConcMarkSweepGC
+    -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled
+    -XX:+DisableExplicitGC -XX:+UnlockDiagnosticVMOptions
     -XX:+UnlockExperimentalVMOptions
     -javaagent:/otel-auto-instrumentation/javaagent.jar
 ```
@@ -124,3 +124,8 @@ resources:
 ### agent 配置
 
 > 参照场景 1 的 agent 配置
+
+### 注意事项
+- 当jenkins pod因为OOM重启时，建议加大master的内存。为了保证Qos，建议master的内存和cpu的request和limit保持一致。
+- 当流水线模块接口调用存在超时情况时，建议加大master的CPU。
+- 当master 内存配置超过`4G`时，建议修改`JavaOpts`中的`-XX:+UseConcMarkSweepGC`为`-XX:+UseG1GC`。

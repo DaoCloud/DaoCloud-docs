@@ -11,6 +11,7 @@
 - :three: [SR-IOV 的安装与使用](#sr-iov)
 - :four: [Ingress Nginx 的安装与使用](#ingress-nginx)
 - :five: [MetalLB 的安装与使用](#metallb)
+- :six: [kdoctor 的安装与使用](#kdoctor)
 
 </div>
 
@@ -52,6 +53,12 @@
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/MetalLB.mp4" preload="metadata" poster="images/net-metallb.png"></video>
+</div>
+
+## kdoctor 的安装与使用
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kdoctor.mp4" preload="metadata" poster="images/net-kdoctor.jpg"></video>
 </div>
 
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

@@ -23,4 +23,6 @@ L2 模式最大的优势是它不需要依赖譬如路由器等硬件的依赖�
 BGP Router 基于每个不同的连接选择一个下一跳（即集群某个节点，这不同于 L2 模式下所有流量先到达某个 Leader 节点）。
 
 - 优势：负载均衡性更好
-- 缺点：当某个节点故障，所有 BGP 会话将会中断
+- 缺点：
+  - 当某个节点故障，所有 BGP 会话将会中断
+  - Calico BGP 模式无法和 MetaLB L3 模式并存，会存在冲突，详情请参考：https://metallb.universe.tf/configuration/calico/

@@ -11,8 +11,9 @@
 - :three: [容器监控](#_3)
 - :four: [场景监控和链路追踪](#_4)
 - :five: [日志查询](#_5)
-- :six: [告警中心](#_6)
-- :seven: [修改系统配置](#_7)
+- :six: [事件查询](#_6)
+- :seven: [告警中心](#_7)
+- :eight: [系统管理](#_8)
 
 </div>
 
@@ -32,9 +33,9 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/dashboard.mp4" preload="metadata" poster="images/insight-dashboard.png"></video>
 </div>
 
-## 资源监控
+## 容器监控
 
-资源监控之[容器监控](../ghippo/user-guide/workspace/folders.md)文档页面。
+参阅[容器监控](../ghippo/user-guide/workspace/folders.md)文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/container-monitor.mp4" preload="metadata" poster="images/insight-container.png"></video>
@@ -42,18 +43,26 @@
 
 ## 场景监控
 
-参阅文档页面：[安装 Insight Agent](../insight/quickstart/install/install-agent.md)、[通过 Operator 实现应用无侵入增强](../insight/quickstart/otel/operator.md)、[链路追踪](../insight/user-guide/data-query/trace.md)
+参阅[安装 Insight Agent](../insight/quickstart/install/install-agent.md)、[通过 Operator 实现应用无侵入增强](../insight/quickstart/otel/operator.md)、[链路追踪](../insight/user-guide/data-query/trace.md)等文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/trace.mp4" preload="metadata" poster="images/insight-trace.png"></video>
 </div>
 
-## 数据查询
+## 日志查询
 
-参阅数据查询之[日志查询](../insight/user-guide/data-query/log.md)文档页面。
+参阅[日志查询](../insight/user-guide/data-query/log.md)文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/logs.mp4" preload="metadata" poster="images/insight-log.png"></video>
+</div>
+
+## 事件查询
+
+参阅[事件查询](../insight/user-guide/data-query/event.md)文档页面。
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/event-query.mp4" preload="metadata" poster="images/event-query.jpg"></video>
 </div>
 
 ## 告警中心

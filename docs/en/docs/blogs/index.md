@@ -90,29 +90,29 @@ This page summarizes blogs and public account articles related to DCE 5.0 and cl
 
     Spiderpool is a Kubernetes IPAM plugin project designed primarily for the IP address management needs of underlay networks. It can be used by any CNI project compatible with third-party IPAM plugins.
 
-- [20230405 | Step-by-Step Installation of DCE 5.0 Community Package](230405-step-by-step-dce5.md)
+- [20230405 | Step-by-Step Installation of DCE Community](230405-step-by-step-dce5.md)
 
-    This article completes the installation of DCE 5.0 Community Package from 0 to 1 in a cluster of three nodes, including details of K8s clusters, dependencies, networks, storage, and more.
+    This article completes the installation of DCE Community from 0 to 1 in a cluster of three nodes, including details of K8s clusters, dependencies, networks, storage, and more.
 
 - [20230317 | Edge Native Application Guidelines White Paper](230317-edge-app-wp.md)
 
     The IoT Edge Working Group has been exploring the definition of edge-native, as well as the similarities and differences between "cloud-native" and "edge-native", and has released the "Edge Native Application Guidelines White Paper".
 
-- [20230315 | Installing DCE 5.0 Community Package on Linux](230315-install-on-linux.md)
+- [20230315 | Installing DCE Community on Linux](230315-install-on-linux.md)
 
-    Describes how to use Docker and kind to install DCE 5.0 Community Package online on a single Linux machine. This is an extremely simple installation method that is easy to learn and experience, and has better performance than the macOS standalone version.
+    Describes how to use Docker and kind to install DCE Community online on a single Linux machine. This is an extremely simple installation method that is easy to learn and experience, and has better performance than the macOS standalone version.
 
-- [20230315 | Installing DCE 5.0 Community Package on macOS](230315-install-on-macos.md)
+- [20230315 | Installing DCE Community on macOS](230315-install-on-macos.md)
 
-    Create a single-node kind cluster using a macOS laptop and then install DCE 5.0 Community Package online. Suitable for beginners to experience and learn, but not suitable for production environments.
+    Create a single-node kind cluster using a macOS laptop and then install DCE Community online. Suitable for beginners to experience and learn, but not suitable for production environments.
 
 - [20230301 | Introduction to the open-source project KWOK](230301-kwok.md)
 
     What kind of open-source project would be used by Apple, IBM, Tencent, and Huawei within five months of its release? KWOK stands for Kubernetes WithOut Kubelet, which means Kubernetes without Kubelet. It helps you build a cluster consisting of thousands of nodes in seconds and simulates thousands of real nodes with minimal resources.
 
-- [20230214 | How many open source projects are included in DCE 5.0 Community Package?](230214-open-projects.md)
+- [20230214 | How many open source projects are included in DCE Community?](230214-open-projects.md)
 
-    Often, customers, community members, contributors, and sales, delivery, and project teams within the company ask, "Which open-source projects does DCE really involve?" This article details the open-source projects included in the Community Package.
+    Often, customers, community members, contributors, and sales, delivery, and project teams within the company ask, "Which open-source projects does DCE really involve?" This article details the open-source projects included in the DCE Community.
 
 - [20230214 | "DaoCloud Dao Ke" and Kubernetes](230214-daocloud_k8s.md)
 

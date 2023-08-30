@@ -1,24 +1,24 @@
 # Install Guides
 
-It is recommended to install DaoCloud Microservice Engine (DME) through the installation package of [DCE 5.0 Enterprise Package](../../install/commercial/start-install.md), because you can install all modules of DCE 5.0 once a time with that package, no need to worry about incompatibility.
+It is recommended to install DaoCloud Microservice Engine (DME) through the installation package of [DCE 5.0 Enterprise](../../install/commercial/start-install.md), because you can install all modules of DCE 5.0 once a time with that package, no need to worry about incompatibility.
 
 This guides is designed for **manual online install of DME alone**. To be clear, `skoala` mentioned below is the internal development code of DME.
 
 !!! note
 
-    If you have already deployed DCE 5.0 Enterprise Package, it is recommended to see [Offline Upgrade Microservice Engine](offline-upgrade.md) for DME's offline install and upgrade. 
+    If you have already deployed DCE 5.0 Enterprise, it is recommended to see [Offline Upgrade Microservice Engine](offline-upgrade.md) for DME's offline install and upgrade. 
 
-## Install with Enterprise Package Package
+## Install with Enterprise Package
 
-When the Enterprise Package version **≥ v0.3.29**, DME will be installed by default. However, it is still recommended to check the `mainfest.yaml` file to confirm whether the value of `components/skoala/enable` is `true`, and whether the helm version is specified.
+When the installer version of DCE 5.0 Enterprise **≥ v0.3.29**, DME will be installed by default. However, it is still recommended to check the `mainfest.yaml` file to confirm whether the value of `components/skoala/enable` is `true`, and whether the helm version is specified.
 
 !!! note
 
-    The commercial package will install by default the latest version of DME that has passed internal tests. Unless there are special requirements, it is not recommended to modify the default Helm version.
+    The enterprise package will install by default the latest version of DME that has passed internal tests. Unless there are special requirements, it is not recommended to modify the default Helm version.
 
-??? note "If Enterprise Package ≤ v0.3.28, click to see corresponding actions"
+??? note "If intaller version of DCE 5.0 Enterprise ≤ v0.3.28, click to see corresponding actions"
 
-    This note applies only when Enterprise Package ≤ v0.3.28; in most cases your version will be greater than this.
+    This note applies only when installer version of DCE 5.0 Enterprise ≤ v0.3.28; in most cases your version will be greater than this.
 
     When executing the installation command, DME will not be installed by default. You need to change the `mainfest.yaml` according to the configuration below.
 

@@ -1,12 +1,12 @@
 # Offline Install in a Standard Kubernetes Cluster
 
-This page will guide you to install DCE 5.0 Community package offline in a standard Kubernetes cluster, which is recommended in the production environment.
+This page will guide you to install DCE Community package offline in a standard Kubernetes cluster, which is recommended in the production environment.
 
-Click [Online Install Community Package](../../../videos/install.md) to watch a video demo for online install.
+Click [Online Install DCE Community](../../../videos/install.md) to watch a video demo for online install.
 
 ## Preparation
 
-- Prepare a Kubernetes cluster. For resources required, see [Cluster Resources for Installing Community Package](../resources.md).
+- Prepare a Kubernetes cluster. For resources required, see [Cluster Resources for Installing DCE Community](../resources.md).
 
     - Create a StorageClass and set it the default SC
     - Install CoreDNS in the cluster
@@ -23,7 +23,7 @@ Click [Online Install Community Package](../../../videos/install.md) to watch a 
 
 ## Download and install
 
-1. Download and decompress the offline package of DCE 5.0 Community on the controller node of your kubernetes cluster, or download and decompress the offline package from [Download Center](../../../download/index.md).
+1. Download and decompress the offline package of DCE Community on the controller node of your kubernetes cluster, or download and decompress the offline package from [Download Center](../../../download/index.md).
 
     Take VERSION=0.10.0 as an example
 

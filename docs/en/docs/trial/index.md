@@ -3,20 +3,20 @@ hide:
   - navigation
 ---
 
-# Experience the Community Package
+# Freely Try DCE Community
 
 <div style="text-align: center;">
   <p style="font-size: 18px;"><img src="./images/hu01.gif" alt="Image" width="80"> Welcome to Install and Experience!</p>
-  <p style="font-size: 28px; color: green;">DaoCloud Enterprise Community Package <img src="./images/hu02.gif" alt="Image" width="80"></p>
+  <p style="font-size: 28px; color: green;">DaoCloud Enterprise Community <img src="./images/hu02.gif" alt="Image" width="80"></p>
 </div>
 
 DCE 5.0, with cloud-native infrastructure at its core, is supported by self-developed open-source components. It provides cloud-native computing, networking, storage, and other capabilities, supporting unified management of multi-cloud and multi-cluster lifecycles. It abstracts the complexity of underlying infrastructure, reduces the threshold for enterprises to use cloud-native applications, and improves application development efficiency.
 
 <div style="text-align: center;">
-  <p style="font-size: 24px; color: green;">Unlock the Community Package in Three Steps</p>
+  <p style="font-size: 24px; color: green;">Unlease DaoCloud Enterprise Community in 3 Steps</p>
 </div>
 
-## <font color="green"><strong>1st</strong> Installation Tutorial Link</font>
+## <font color="green"><strong>1st</strong> Installation Tutorials</font>
 
 !!! tip
 
@@ -70,7 +70,7 @@ If you have limited network access, you can choose to perform an offline install
 
 ## <font color="green"><strong>2nd</strong> Apply for a License Key</font>
 
-1. Click [here to apply for a free "DCE 5.0 Community Edition" license key](https://qingflow.com/f/58604bf8). The license key will be sent to your email.
+1. Click [here to apply for a free "DCE Community" license key](https://qingflow.com/f/58604bf8). The license key will be sent to your email.
    (Some email providers may intercept the email containing the license key. If you do not receive it after a long time, please check your spam folder).
 
     ![check mail](./images/license01.png)
@@ -95,7 +95,7 @@ If you have limited network access, you can choose to perform an offline install
 
 !!! note
 
-    If you selected a short validity period when applying for the license and it has expired, you can click [here for more renewal options](../dce/license0.md#_1).
+    If you selected a short validity period when applying for the license and it has expired, you can click [here for more renewal options](../dce/license0.md#license-renewal).
 
 ## <font color="green"><strong>3rd</strong> Embark on the Cloud-Native Journey</font>
 

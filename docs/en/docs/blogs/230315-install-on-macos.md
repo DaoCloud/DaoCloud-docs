@@ -1,6 +1,6 @@
-# Install Community Package on macOS computers via Docker and kind
+# Install DCE Community on macOS computers via Docker and kind
 
-This page explains how to create a single-node kind cluster using a macOS laptop, and then install DCE 5.0 Community Package online.
+This page explains how to create a single-node kind cluster using a macOS laptop, and then install DCE Community online.
 
 !!! tip
 
@@ -75,7 +75,7 @@ cat > kind_cluster.yaml << EOF
 apiVersion: kind.x-k8s.io/v1alpha4
 kind: Cluster
 nodes:
--role: control-plane
+- role: control-plane
    extraPortMappings:
    - containerPort: 32088
      hostPort: 8888
@@ -103,7 +103,7 @@ NAME STATUS ROLES AGE VERSION
 fire-kind-cluster-control-plane Ready control-plane 18h v1.25.3
 ```
 
-## Install DCE 5.0 Community Package
+## Install DCE Community
 
 1. Install dependencies
 
@@ -130,7 +130,7 @@ fire-kind-cluster-control-plane Ready control-plane 18h v1.25.3
      exit
      ```
 
-1. Install DCE5 Community Package
+1. Install DCE Community
 
      1. Get the local IP first
 
@@ -140,7 +140,7 @@ fire-kind-cluster-control-plane Ready control-plane 18h v1.25.3
 
          If the error `zsh: command not found: ip` is reported, there are 2 solutions:
 
-         - run `myIP=$(ifconfig en0| grep "inet[ ]" | awk '{print $2}')`
+         - Run `myIP=$(ifconfig en0| grep "inet[ ]" | awk '{print $2}')`
          - Or install iproute2mac with a command like `brew install iproute2mac` and try again.
 
      1. Start the installation, it will take about 30 minutes, depending on the network speed of the image pull
@@ -155,7 +155,7 @@ fire-kind-cluster-control-plane Ready control-plane 18h v1.25.3
      docker exec -it fire-kind-cluster-control-plane kubectl get po -A -w
      ```
 
-     When you see the following prompt, it means the installation of DCE 5.0 Community Package is successful.
+     When you see the following prompt, it means the installation of DCE Community is successful.
 
      ![success](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/success.jpg)
 
@@ -178,7 +178,7 @@ You can try:
 
 ## uninstall
 
-1. Uninstall [DCE 5.0 Community Package](../install/uninstall.md).
+1. Uninstall [DCE Community](../install/uninstall.md).
 1. Delete the kind cluster.
 
      ```

@@ -5,15 +5,15 @@
 
 ## DCE 5.0 Installation Status
 
-- For Community Package installations, the Kubernetes audit log switch was not operated during the management cluster installation process.
-- For Commercial Edition installations, the Kubernetes audit log switch is enabled by default.
+- For DCE Community installations, the Kubernetes audit log switch was not operated during the management cluster installation process.
+- For DCE 5.0 Enterprise installations, the Kubernetes audit log switch is enabled by default.
     - To set it to default off, you can modify the installer's `clusterConfigt.yaml` file (set `logPath` to empty "").
 - The collection of Kubernetes audit logs switch is disabled by default for the management cluster.
     - Default settings do not support configuration.
 
 ## Management Cluster Collection of Kubernetes Audit Logs Switch
 
-### Commercial Edition Installation Environment
+### DCE 5.0 Enterprise Installation Environment
 
 #### Confirm Enabling Kubernetes Audit Logs
 
@@ -72,11 +72,11 @@ The remaining steps are the same as enabling the collection of Kubernetes audit 
 helm upgrade --install --create-namespace --version ${insight_version_code} --cleanup-on-fail insight-agent chartmuseum/insight-agent -n insight-system -f insight-agent-values-bak.yaml --set global.exporters.auditLog.kubeAudit.enabled=false
 ```
 
-### Community Package Online Installation Environment
+### DCE Community Online Installation Environment
 
 !!! note
 
-   If installing DCE 5.0 Community Package in a Kind cluster, perform the following steps inside the Kind container.
+   If installing DCE Community in a Kind cluster, perform the following steps inside the Kind container.
 
 #### Confirm Enabling Kubernetes Audit Logs
 

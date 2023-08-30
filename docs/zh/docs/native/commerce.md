@@ -389,6 +389,10 @@
     缩小性能测试的黑盒数据和系统内部白盒数据之间的差距。
     该集成允许关联 k6 的测试运行数据和服务器端的追踪数据，从而进行根本原因分析；汇总收集的追踪数据以生成实时指标，帮助用户缩小搜索空间并快速发现异常行为。
 
+- [Gremlin 混沌工程平台 Gremlin 7 月更新](https://www.gremlin.com/docs/release-notes/general/#july-2023)
+
+    更新内容：支持自动检测 Kubernetes 环境中的高优先级可靠性问题、推出 Failure Flags 的 Beta 版本（用于在 AWS Lambda 函数、无服务器工作负载和容器上运行混沌实验）、允许用户通过简单的注释将 Kubernetes Service 自动注册到 Gremlin 中、添加了同时管理多个服务的 Web 应用的支持。
+
 ### H, I
 
 - [Harness 软件交付平台 Harness Platform 7 月产品更新](https://www.harness.io/blog/july-2023-product-updates)
@@ -462,6 +466,10 @@
 
 ### L
 
+- [Lacework 云安全平台 Lacework Platform 2023 年 8 月更新](https://docs.lacework.net/releases/2023-08-platform-releases)
+
+    更新内容：Agentless Workload Scanning（无代理工作负载扫描）支持扫描由 Containerd 管理的容器镜像、无代理工作负载扫描与 Google Cloud Platform (GCP) 集成、支持扫描主机上多个或次要的存储卷、支持已停止实例的扫描、引入了基于 Pub/Sub 的 (GCP) 审计日志集成、推出近实时告警解决方案。
+
 - [Lacework Platform 云安全平台十一月更新](https://docs.lacework.com/releases/2022-11-platform-releases)
 
     更新内容：平台扫描器支持多架构的容器镜像、提供攻击路径分析功能、无代理工作负载扫描功能普遍可用、在不活动的主机内核上发现的漏洞会自动被标记为例外、CIS GCP 1.3.0 基准报告和策略普遍可用、新增主机策略用于检测反向 shell 连接和加密劫持工件。
@@ -501,6 +509,10 @@
 - [Nutanix 推出 Kubernetes 数据管理平台 Nutanix Data Services for Kubernetes (NDK)](https://www.nutanix.com/blog/nutanix-announces-early-access-of-ndk)
 
     NDK 提供了一个应用感知的 Kubernetes 数据服务方案。NDK 为 Kubernetes 应用提供数据保护、恢复、迁移、克隆和复制数据管理功能；支持轻松将恢复时间目标（RTO）和恢复点目标（RPO）从几天缩短到几分钟；提供策略驱动的有状态应用管理；Kubernetes 和 IT 管理员可以通过设置一些规则和限制来管理基础设施，启用自助服务工作流程。
+
+- [NetApp Kubernetes 应用数据管理方案 Astra Control 23.07 发布](https://www.netapp.com/blog/astra-control-trident-releases/)
+
+    更新内容：集成高可用性存储解决方案 ONTAP MetroCluster、支持将 Longhorn 作为存储提供者、Astra Trident 在面对大规模 Kubernetes 部署时进行了扩展性改进、Astra Trident 支持快照导入功能。
 
 - [Spot by NetApp 正式推出 Kubernetes 持续交付产品 Ocean CD](https://spot.io/blog/announcing-ocean-cd-availability/)
 
@@ -571,6 +583,10 @@
 
 ### Q
 
+- [青云发布分布式多租户云原生操作系统 KubeSphere 企业版 4.0](https://mp.weixin.qq.com/s/v-n4ztqQG8p2Tt9aPfQiuA)
+
+    KubeSphere 企业版 4.0 基于全新的云原生可扩展开放架构——KubeSphere LuBan 打造。KubeSphere LuBan 是一个分布式的云原生可扩展开放架构，为扩展组件提供可热插拔的微内核。4.0 具备简单轻量的系统架构，2 核 4G 即可轻松玩转；还支持集成 KubeSphere 功能组件或任何第三方业务组件，实现即插即用。
+
 - [青云 Kubernetes 集群巡检 SaaS 服务正式发布](https://mp.weixin.qq.com/s/Xx82SiyMGtBNgjjk34glqw)
 
     Kubernetes 集群巡检 SaaS 服务通过即时或周期性检查 Kubernetes 多云环境中的集群节点、组件等配置是否符合最佳实践，帮助用户及时发现集群组件、服务、端口中的容器漏洞和暴露（CVE），分析 Kubernetes 中的运行风险，并推送报告，从而保证业务持续稳定运行，尽早地降低企业风险。
@@ -625,6 +641,10 @@
 - [Rainbond 云原生多云应用管理平台 Rainbond 企业版发布](https://mp.weixin.qq.com/s/pmCwyFbcCwXxcO0-rVM5dw)
 
     Rainbond 企业版拥有全局可观测中心，用于监视、调试和分析运行在 Kubernetes 集群和 rainbond 平台中的基础设施及应用服务。此外，还为 IT 业务系统向国产化信创环境中迁移提供了方案，支持全链路灰度发布和集群巡检，内置 WAF 防火墙和操作审计功能，支持私有化部署应用商店等。
+
+- [Red Hat 容器镜像仓库 Red Hat Quay v3.9.0 发布](https://cloud.redhat.com/blog/red-hat-quay-3.9-is-generally-available)
+
+    更新内容：增加容器镜像漏洞报告的覆盖范围、审计日志与外部日志管理系统 Splunk 集成、提供了一种可扩展的方式来跟踪注册表中大量租户的存储消耗、自动化异地备份功能。
 
 - [Red Hat 服务网格 OpenShift Service Mesh 2.4 发布](https://cloud.redhat.com/blog/introducing-openshift-service-mesh-2.4)
 
@@ -759,6 +779,10 @@
 
     Sweet Security 推出云运行时安全套件平台，用于保护云原生应用运行时的安全。该平台使用传感器将应用数据流传输到其服务器，该传感器通过运行一个框架来分析工作负载的异常行为。该传感器可在五分钟内完成部署，能在攻击发起前和攻击发生时提供对攻击的可观测性能力。
 
+- [观测云可观测解决方案观测云产品更新](https://docs.guance.com/release-notes/#2023-8-10)
+
+    更新内容：Span 列表页面新增瀑布图模式、新增定时报告功能、新增服务管理用于查看当前工作空间内不同服务的性能和业务数据及所有的关联分析等信息、支持在日志详情页直接查看上下文日志、新增当前服务的上下游调用关系表格、检测指标新增转换为 PromQL 查询、新增 Kubernetes 事件组件。
+
 - [实时监测平台观测云更新](https://mp.weixin.qq.com/s/RZCpDuNbq0C0SJfWI2E63w)
 
     更新内容包括：支持查看基础设施容器对应的 YAML 文件、新增日志查看器 DQL 搜索模式、优化应用性能监测、DataKit 支持将 k8s label 作为 tag 同步到 pod 的指标和日志中、支持将 k8s 中各类 yaml 信息采集到对应的对象数据上、Trace 采集支持自动提取一些关键 meta 信息。
@@ -846,6 +870,10 @@
 
     TLS Protect for Kubernetes 是 Venafi 机器身份管理平台 Control Plane for Machine Identities 的一部分，
     帮助安全和平台团队在多云和多集群 Kubernetes 环境中管理云原生机器身份，如 TLS、mTLS 和 SPIFFE，增强机器身份管理的可观测性、控制和自动化。
+
+- [VMware Kubernetes DevOps 平台 VMware Tanzu Application Platform 1.6 发布](https://tanzu.vmware.com/content/blog/tanzu-application-platform-1-6-release-news)
+
+    更新内容：推出基于 Backstage 构建的内部开发人员门户 Tanzu Developer Portal、允许开发人员创建通过 Contour Ingress 对外暴露给公共互联网的服务器工作负载、集成容器镜像漏洞扫描器（beta）、支持通过 Tanzu Insight CLI 筛选 CVE（alpha）、支持提取工作负载构建的 SBOM、能够根据工作负载所使用的依赖关系中的上游变化进行自动构建、为供应链中的内部部署 Git 资源库提供自定义 CA 支持、支持基于 GitOps 的安装方式。
 
 - [VMware 威胁检测和响应产品 VMware Carbon Black XDR 增加对云原生应用的支持](https://news.vmware.com/releases/carbon-black-cndr)
 

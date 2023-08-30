@@ -2,9 +2,9 @@
 date: 2023-06-06
 ---
 
-# DCE 5.0 Enterprise Package v0.8.0
+# DCE 5.0 Enterprise v0.8.0
 
-This page provides offline installation packages and checksum files for DCE 5.0 Enterprise Package.
+This page provides offline installation packages and checksum files for DCE 5.0 Enterprise.
 
 ## Download
 
@@ -70,7 +70,7 @@ After verifying the offline package,
 
 ## Modules
 
-DCE 5.0 Enterprise Package includes the following modules, which can be used on demand to meet various use cases:
+DCE 5.0 Enterprise includes the following modules, which can be used on demand to meet various use cases:
 
 | Module               | Introduction                                                                 | Latest Release                                              |
 | -------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------ |

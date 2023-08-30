@@ -2,9 +2,9 @@
 date: 2023-04-12
 ---
 
-# DCE 5.0 Community Package v0.6.1
+# DCE Community v0.6.1
 
-This page can download the offline installation package and verification file of DCE 5.0 Community Package.
+This page can download the offline installation package and verification file of DCE Community.
 
 ## Download
 
@@ -65,12 +65,12 @@ After successfully verifying the offline package,
      tar -zxvf offline-community-v0.6.1-arm64.tar
      ```
 
-- For installation, please refer to [Community Package Installation Process](../../install/community/k8s/online.md#_2)
+- For installation, please refer to [DCE Community Installation Process](../../install/community/k8s/online.md#_2)
 - After successful installation, please [apply for free community experience](../../dce/license0.md)
 
 ## Modules
 
-DCE 5.0 Community Package includes the following modules by default:
+DCE Community includes the following modules by default:
 
 | Modules | Introduction | What's New |
 | -------- | ----------------------------------------- ------------------------- | ------------------------ ------------------------------------- |

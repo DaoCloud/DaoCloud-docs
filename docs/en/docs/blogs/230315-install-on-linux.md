@@ -1,6 +1,6 @@
-# Linux stand-alone online experience DCE 5.0 Community Package
+# Linux stand-alone online experience DCE Community
 
-This page explains how to install a stand-alone DCE 5.0 Community Package online on a Linux machine via Docker and kind.
+This page explains how to install a stand-alone DCE Community online on a Linux machine via Docker and kind.
 
 !!! tip
 
@@ -114,7 +114,7 @@ If you already have Docker on the host, and the version is higher than 1.18, you
      apiVersion: kind.x-k8s.io/v1alpha4
      kind: Cluster
      nodes:
-     -role: control-plane
+     - role: control-plane
        extraPortMappings:
        - containerPort: 32088
          hostPort: 8888
@@ -152,7 +152,7 @@ If you already have Docker on the host, and the version is higher than 1.18, you
      fire-kind-cluster
      ```
 
-## Install DCE 5.0 Community Package
+## Install DCE Community
 
 1. Install dependencies, see also [Dependency Installation Instructions](../install/install-tools.md)
 

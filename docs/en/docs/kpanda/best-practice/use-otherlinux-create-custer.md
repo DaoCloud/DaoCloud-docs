@@ -10,7 +10,7 @@ Next, we will use the openAnolis operating system as an example to demonstrate h
 
 ## Prerequisites
 
-- DCE 5.0 Full Mode has been deployed following the documentation: [Offline Installation of DCE 5.0 Commercial Edition](../../install/commercial/start-install.md).
+- DCE 5.0 Full Mode has been deployed following the documentation: [Offline Installation of DCE 5.0 Enterprise](../../install/commercial/start-install.md).
 - At least one node with the same architecture and version that can connect to the internet.
 
 ## Procedure
@@ -39,7 +39,7 @@ After executing the above command, you should have a compressed package named **
 
 Copy the three files generated on the online node (`other_os_pkgs.sh`, `pkgs.yml`, and `os-pkgs-anolis-8.8.tar.gz`) to **all** nodes in the target cluster in the offline environment.
 
-Login to any one of the nodes in the offline environment that is part of the target cluster, and execute the following command to install the `os-pkg` package on the node:
+Login to any one of the nodes in the offline environment that is part of the target cluster, and run the following command to install the `os-pkg` package on the node:
 
 ```bash
 # Configure environment variables

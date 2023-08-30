@@ -95,7 +95,7 @@ In theory, other generic HTTP servers can also be supported, but pay attention t
       ..........
     ```
 
-6. After completing the above configurations, you can continue with the [deployment of DCE 5.0 Enterprise Package](../start-install.md).
+6. After completing the above configurations, you can continue with the [deployment of DCE 5.0 Enterprise](../start-install.md).
 
 ### Appendix
 

@@ -1,6 +1,6 @@
-# DCE 5.0 Community Package Versions
+# DCE Community Versions
 
-## Community Package
+## DCE Community
 
 | File Name | Version | Architecture | File Size | Downloads | Date Updated |
 | ------- | --- | ---- | ------ | --- | ------- |

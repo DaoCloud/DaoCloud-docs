@@ -1,4 +1,4 @@
-# reserve disk
+# Reserve disk
 
 This chapter introduces how to reserve a disk on the interface. the use cases of this feature are as follows:
 

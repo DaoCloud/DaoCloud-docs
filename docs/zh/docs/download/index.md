@@ -43,12 +43,15 @@ DCE 5.0 包含的众多子模块可以单独下载，按需对每个模块进行
 
 | 模块     | 文件大小 | 下载                                         | 更新日期   |
 | -------- | -------- | -------------------------------------------- | ---------- |
-| 全局管理 | 440 MB   | [:arrow_right: 下载页](./modules/ghippo.md)  | 2023-07-28 |
+| 全局管理 | 440 MB   | [:arrow_right: 下载页](./modules/ghippo.md)  | 2023-08-28 |
 | 容器管理 | 2.41 GB   | [:arrow_right: 下载页](./modules/ghippo.md)  | 2023-07-06 |
 | 集群巡检 | 205.11 MB | [:arrow_right: 下载页](./modules/kcollie.md) | 2023-08-08 |
 | 应用备份 | 59.29 MB | [:arrow_right: 下载页](./modules/kcoral.md) | 2023-08-08 |
+| 安全管理 | 163 MB   | [:arrow_right: 下载页](./modules/dowl.md) | 2023-08-25 |
 | 可观测性 | 2.64 GB  | [:arrow_right: 下载页](./modules/insight.md) | 2023-08-04 |
+| 服务网格 | 2.41 GB | [:arrow_right: 下载页](./modules/mspider.md) | 2023-08-23 |
 | 网络模块 | 55.47 MB | [:arrow_right: 下载页](./modules/spidernet.md) | 2023-04-26 |
+| 镜像仓库 | 293.24 MB | [:arrow_right: 下载页](./modules/kangaroo.md) | 2023-08-22 |
 | 运营管理 | 56.90 MB | [:arrow_right: 下载页](./modules/gmagpie.md) | 2023-08-02 |
 
 !!! note

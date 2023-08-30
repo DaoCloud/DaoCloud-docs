@@ -2,6 +2,37 @@
 
 This page provides the Release Notes for container management to help you understand the evolution path and feature changes from release to release.
 
+## 2023-8-01
+
+### v0.20.0
+
+#### New Features
+
+- **Added** Helm application interface supports viewing Helm operation logs.
+- **Added** Workload clusters support heterogeneous node integration.
+- **Added** Batch import of nodes supported for cluster creation.
+- **Added** Container storage supports creating NFS-type data volumes.
+- **Added** Added support for vGPU, with automatic detection of node CPUs and support for adding negative CPU quota in workload configuration.
+
+#### Enhancements
+
+- **Improved** Optimized cluster integration logic. When integrating a cluster with a new management platform
+  after the initial integration, it is necessary to clean up the data redundancy from the old management platform
+  before it can be integrated. For more details about cluster integration, please refer to
+  [Uninstall/Deintegrate Cluster](../user-guide/clusters/delete-cluster.md).
+- **Improved** Upgraded clusterpedia to v0.7.0.
+- **Improved** Enhanced permission-based page interactions, where users without permissions will not
+  be able to access pages with no resource permissions.
+- **Improved** Enhanced advanced parameter configuration, such as kernel tuning, for integrated nodes.
+- **Improved** Installation detection mechanism for Insight component.
+
+#### Fixes
+
+- **Fixed** Fixed an issue where helm tasks remained in "Installing" or "Uninstalling" state.
+- **Fixed** Fixed kernel version detection error when checking node creation.
+- **Fixed** Fixed an issue where customizing namespaces was not possible for plugin cluster creation.
+- **Fixed** Fixed default addition of `ca.crt` data in key updates.
+
 ## 2023-7-06
 
 ### v0.19.0

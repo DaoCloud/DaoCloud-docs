@@ -1,4 +1,4 @@
-# Deploying DCE 5.0 Commercial Package on TencentOS Server 3.1
+# Deploying DCE 5.0 Enterprise on TencentOS Server 3.1
 
 This document will guide you on how to deploy DCE 5.0 on TencentOS Server 3.1, starting from version v0.9.0 and above.
 
@@ -106,4 +106,4 @@ This document will guide you on how to deploy DCE 5.0 on TencentOS Server 3.1, s
 
         Please make a note of the provided URL for future access.
 
-8. After successfully installing DCE 5.0 Commercial Package, please contact us for authorization: email [info@daocloud.io](mailto:info@daocloud.io) or call 400 002 6898.
+8. After successfully installing DCE 5.0 Enterprise, please contact us for authorization: email [info@daocloud.io](mailto:info@daocloud.io) or call 400 002 6898.

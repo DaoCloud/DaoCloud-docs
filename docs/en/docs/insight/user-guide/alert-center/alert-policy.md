@@ -44,12 +44,41 @@ You can see that some alert rules have been set under it. You can add more rules
 
     The newly created alert policy is in the `Not Triggered` state. Once the threshold conditions and duration specified in the rules are met, it will change to the `Triggered` state.
 
+### Creating Log Rules
+
+After filling in the basic information, click on `Add Rule` and select `Log Rule` as the rule type.
+
+Creating log rules is supported only when the resource object is selected as a node or workload.
+
+
+**Field Explanation:**
+
+- `Filter Condition`: Field used to query log content, supports four filtering conditions: AND, OR, regular expression matching, and fuzzy matching.
+- `Condition`: Based on the filter condition, enter keywords or matching conditions.
+- `Time Range`: Time range for log queries.
+- `Threshold Condition`: Enter the alert threshold value in the input box. When the set threshold is reached, an alert will be triggered. Supported comparison operators are: >, ≥, =, ≤, <.
+- `Alert Level`: Select the alert level to indicate the severity of the alert.
+
+### Creating Event Rules
+
+After filling in the basic information, click on `Add Rule` and select `Event Rule` as the rule type.
+
+Creating event rules is supported only when the resource object is selected as a workload.
+
+**Field Explanation:**
+
+- `Event Rule`: Only supports selecting the workload as the resource object.
+- `Event Reason`: Different event reasons for different types of workloads, where the event reasons are combined with "AND" relationship.
+- `Time Range`: Detect data generated within this time range. If the threshold condition is reached, an alert event will be triggered.
+- `Threshold Condition`: When the generated events reach the set threshold, an alert event will be triggered.
+- `Trend Chart`: By default, it queries the trend of event changes within the last 10 minutes. The value at each point represents the total number of occurrences within a certain period of time (time range) from the current time point to a previous time.
+
 ## Other Operations
 
-Click `⋮` on the right side of the list, select `Delete` in the pop-up menu to delete the alert policy. Click the policy name to enter the policy details, where you can add, edit, or delete the alert rules under it.
+Click on `⋮` at the right side of the list, then choose `Delete` from the pop-up menu to delete an alert strategy. By clicking on the strategy name, you can enter the strategy details where you can add, edit, or delete the alert rules under it.
 
 ![alert rule](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/alert-policy07.png)
 
 !!! warning
 
-    The deleted alert policy will disappear completely, so please use caution.
+    Deleted alert strategies will be permanently removed, so please proceed with caution.

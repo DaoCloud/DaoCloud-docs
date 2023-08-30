@@ -269,6 +269,10 @@
 
     该版本主要新特性：Contour 访问 leader election 资源的 RBAC 转移至命名空间角色；容器镜像现在只在 GitHub 容器注册中心（GHCR）上发布；新增 `contour gateway-provisioner` 命令和部署清单，用于动态配置 Gateways。
 
+- [CoreDNS DNS 服务器 v1.11.0 发布 （CNCF 项目）](https://github.com/coredns/coredns/releases/tag/v1.11.0)
+
+    版本特性：支持通过 QUIC 协议（doq）接受 DNS 连接、支持对 CNAME 记录的目标进行重写、kubernetes 插件中移除对 Endpoint 和 Endpointslice v1beta 的支持。
+
 - [Cortex Prometheus 长期存储方案 v1.14 发布](https://github.com/cortexproject/cortex/releases/tag/v1.14.0)
 
     该版本主要新特性：移除对块存储的支持、实验性地支持垂直查询分片、启用 PromQL @修改器、可以使用 OTel 收集器将追踪信息发送到多个目的地、多项性能改进和问题修复。
@@ -281,6 +285,10 @@
 
     碳排放计算优化器基于运行在 Kubernetes 平台上的应用的实际资源消耗，计算对应服务器功耗，进而计算出应用运行所产生的碳排放量。
     此外，还支持提供 Pod 资源配置、workload 副本数、HPA 参数配置等的优化建议，以及优化后的功耗和碳排放推算结果。
+
+- [CRI-O 容器运行时 v1.28.0 发布（CNCF 项目）](https://github.com/cri-o/cri-o/releases/tag/v1.28.0)
+
+    版本特性：允许用户禁用 Pod 的主机端口映射、新增指标以显示 Pod 和容器何时卡在创建的不同阶段、支持指定 kubelet 不要对某些镜像执行垃圾回收、添加版本升级自动化脚本、支持可配置指标输出器的命名空间、支持通过 CRI 的镜像策略验证错误。
 
 - [CRI-O：CNCF 宣布容器运行时项目 CRI-O 毕业](https://mp.weixin.qq.com/s/p7ogT3pAtbj17qrDh7acHQ)
 
@@ -301,6 +309,10 @@
 - [Crossplane 云原生控制平面构建框架完成模糊测试安全审计](https://mp.weixin.qq.com/s/BJXg8CCjaHFK29hxWe9W-g)
 
     此次模糊测试共发现 4 个问题。其中一个问题是：允许部分不受信任的用户控制 crossplane-runtime 在某个状态下分配的内存量，这可能会造成由于资源耗尽而导致 DoS 攻击。该漏洞的修复版本 [crossplane-runtime 0.19.2](https://github.com/crossplane/crossplane-runtime/releases/tag/v0.19.2) 和 [Crossplane 1.11.2](https://github.com/crossplane/crossplane/releases/tag/v1.11.2) 已经发布。
+
+- [CubeFS 分布式存储系统 v3.3.0 发布（CNCF 项目）](https://github.com/cubefs/cubefs/releases/tag/v3.3.0)
+
+    版本特性：添加对 ObjectNode 存储桶策略的支持、为 ObjectNode 添加跨域资源共享（CORS）支持、支持在执行重命名、删除、创建等操作时保证原子性、支持配置和动态调整 MP（多路复，Multiplexing）步长、添加对 UID 空间限制的支持、支持 autofs 挂载功能。
 
 - [CubeFS 分布式存储系统 v3.1.0 发布（CNCF 项目）](https://github.com/cubefs/cubefs/releases/tag/v3.1.0)  
 
@@ -633,9 +645,17 @@
 
     该版本主要新特性：支持 containerd shimv2 日志插件、支持 virtio-block 多队列、支持 QEMU 沙箱功能、支持 containerd 的核心调度、kata-runtime iptables 子命令可在 guest 中操作 iptables、支持直接分配的卷。
 
+- [Katalyst 云原生资源管控系统 v0.3.0 发布](https://github.com/kubewharf/katalyst-core/releases/tag/v0.3.0)
+
+    版本特性：KCNR API 增加网络带宽资源的申请、调度、分配能力，并结合 EDT/TC 等限速方案提供网络带宽隔离能力；新增任务执行框架；新增异步执行框架；算法实现多 CPU Region 模式；混部能力增强。
+
 - [Katalyst：字节跳动开源的云原生资源管控系统](https://mp.weixin.qq.com/s/A5_1h3RLmDNazmAddbhYaA)
 
     [Katalyst](https://github.com/kubewharf/katalyst-core) 的主要特点包括：完全孵化于超大规模混部实践，并在字节服务云原生化的进程中同步接管资源管控链路；搭载字节跳动内部的 Kubernetes 发行版 Enhanced Kubernetes 同步开源；系统基于插件化模式构建，用户可以在 Katalyst Framework 之上自定制各类调度、管控、策略、数据等模块插件等。
+
+- [KEDA：CNCF 宣布 K8s 自动缩放器 KEDA 毕业](https://mp.weixin.qq.com/s/Jkl8bGreQPk77VADOB-MOw)
+
+    KEDA 是一个专门为 Kubernetes 设计的事件驱动自动缩放器。作为一个毕业项目，KEDA 团队计划提高项目的性能、多租户安装、监控和可观测性功能。并计划增加配置缩放行为和指标评估的能力，将碳和能源消耗考虑到缩放评估中，以及预测性自动缩放。
 
 - [KEDA 事件驱动自动伸缩器 v2.11.0 发布（CNCF 项目）](https://github.com/kedacore/keda/releases/tag/v2.11.0)
 
@@ -738,6 +758,10 @@
     [KubeClipper](https://github.com/KubeClipper-labs) 基于 kubeadm 工具进行二次封装，提供在企业自有基础设施中快速部署 K8S 集群和持续化全生命周期管理（安装、卸载、升级、扩缩容、远程访问等）能力，
     支持在线、代理、离线等多种部署方式，还提供了丰富可扩展的 CRI、CNI、CSI、以及各类 CRD 组件的管理服务。
 
+- [KubeEdge Sedna v0.6 & Ianvs 边云协同终身学习方案 v0.2 发布](https://mp.weixin.qq.com/s/OQdNmmzRl4GC_ZssU4vatQ)
+
+    版本特性：支持非结构化数据场景下的开放世界边云协同终身学习；提供开源数据集、基线算法和评价指标的完整测试套件；针对机器人巡检、自动驾驶等场景，开发了新的未知任务识别和处理能力，包括新样本识别、训练数据生成、多模型联合推理等。
+
 - [KubeEdge 达到软件供应链 SLSA L3 等级](https://mp.weixin.qq.com/s/5kpbnE-F__HqlF0JAwCOSg)
 
     在近期发布的 v1.13.0 版本中，KubeEdge 项目已达到 [SLSA](https://slsa.dev/) L3 等级（包括二进制和容器镜像构件），成为 CNCF 社区首个达到 SLSA L3 等级的项目。
@@ -786,6 +810,10 @@
 - [Kubernetes Cluster API v1.4.0 发布](https://github.com/kubernetes-sigs/cluster-api/releases/tag/v1.4.0)
 
     版本特性：支持在 KCP 控制平面部署失败时自动进行故障恢复、支持将某些标签从 Machine 同步到 Node、以将标签、注释等信息从 ClusterClass 传播到 KubeadmControlPlane/MachineDeployment 和 Machine 中、支持 ClusterClass 和 Managed Topologies 中的变量发现。
+
+- [Kubernetes v1.28 发布](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.28.md)
+
+    版本特性：支持控制平面和节点版本之间的偏差变化、节点非优雅关闭功能 GA、CRD 基于通用表达式语言 (CEL) 的验证规则 Beta、Kube APIServer 混合版本互操作代理 Alpha、 新增通用控制平面存储库 Alpha、设备插件 API 添加对 CDI 标准设备的支持 Alpha、原生支持 Sidecar 容器 Alpha、节点 Swap 内存支持 Beta、新增对 Windows 节点的支持 Beta。
 
 - [Kubernetes v1.27.0 发布](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.27.md#changelog-since-v1260)
 
@@ -955,6 +983,10 @@
 - [Lima Linux 虚拟机 v0.14.0 发布（CNCF 项目）](https://github.com/lima-vm/lima/releases/tag/v0.14.0)
 
     该版本主要新特性：支持虚拟机共享文件系统 virtiofs、支持 Apple 的虚拟化框架 Virtualization.framework、支持 Containerd 命令行工具 nerdctl 1.1.0。
+
+- [Linkerd 服务网格 v2.14.0 发布（CNCF 项目）](https://github.com/linkerd/linkerd2/releases/tag/stable-2.14.0)
+
+    版本特性：新增直接的 Pod 到 Pod 的多集群服务镜像功能、支持 Gateway API HTTPRoute 资源。
 
 - [Linkerd 服务网格项目 v2.13.0 发布（CNCF 项目）](https://github.com/linkerd/linkerd2/releases/tag/stable-2.13.0)
 
@@ -1461,6 +1493,10 @@
 - [Vitess 云原生数据库系统 v14.0.0 发布（CNCF 项目）](https://github.com/vitessio/vitess/releases/tag/v14.0.0)  
 
     该版本主要新特性：正式支持 online DDL、Gen4 成为默认的 planner、新增集群管理 API 和 UI——VTAdmin（Beta）、新增一个作为 Vitess 组件运行的 Orchestrator 分支——VTOrc（Beta）、支持跨多个 shard 和 keyspace 的聚合查询。
+
+- [Volcano 云原生批量计算项目 v1.8.0 发布（CNCF 项目）](https://github.com/volcano-sh/volcano/releases/tag/v1.8.0)
+
+    版本特性：添加 JobFlow 支持轻量级工作流编排、支持 vGPU 调度和隔离、支持 GPU 和用户定义资源的抢占能力、支持将 ElasticSearch 监控系统用于节点负载感知的调度和重新调度、添加 Kubernetes 默认调度器插件的启用和禁用开关、提供设备插件异常容错机制、为 Volcano 添加 Helm Chart。
 
 - [Volcano 云原生批量计算项目 v1.7.0 发布（CNCF 项目）](https://github.com/volcano-sh/volcano/releases/tag/v1.7.0)
 

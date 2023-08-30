@@ -161,4 +161,4 @@
 
 ## 使用平台 UI 升级工作集群的 kubernetes 版本
 
-登录 DCE 5.0 的 UI 管理界面，参照[集群升级文档](../../kpanda/user-guide/clusters/upgrade-cluster)对平台自建的工作集群进行升级。
+登录 DCE 5.0 的 UI 管理界面，参照[集群升级文档](../../kpanda/user-guide/clusters/upgrade-cluster.md)对平台自建的工作集群进行升级。
