@@ -42,7 +42,8 @@ server {
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     } }
 ```
-第三步：假设nginx入口地址为10.6.165.50，按[自定义DCE5.0反向代理服务器地址](https://https://docs.daocloud.io/ghippo/install/reverse-proxy.html)把 DCE_PROXY 反代设为 http://10.6.165.50/dce5。 确保能够通过 http://10.6.165.50/dce5 访问DCE 5.0。客户平台也需要进行反代设置，需要根据不同平台的情况进行处理。
+第三步：假设 Nginx 入口地址为 10.6.165.50，按[自定义 DCE 5.0 反向代理服务器地址](../install/reverse-proxy.md)把 
+ DCE_PROXY 反代设为 `http://10.6.165.50/dce5`。确保能够通过 `http://10.6.165.50/dce5` 访问 DCE 5.0。客户平台也需要进行反代设置，需要根据不同平台的情况进行处理。
 ![反向代理](zh/docs/ghippo/oem/images/agent.png)
 
 
