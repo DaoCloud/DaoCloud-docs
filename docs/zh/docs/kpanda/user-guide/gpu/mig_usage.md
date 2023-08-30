@@ -38,4 +38,4 @@
 
 4. 进入容器后可以查看只使用了一个 MIG 设备。
 
-    ![{mig03}](../../images/gpu_mig03.png)
+    ![mig03](../../images/gpu_mig03.png)
