@@ -1,65 +1,83 @@
-# OEM OUT
+# Integrating DCE 5.0 into Customer Platform (OEM OUT)
 
-OEM OUT refers to the integration of DCE 5.0 as a submodule into other products,
-appearing in the menu of those products. Users can directly access DCE 5.0 without
-logging in again after logging into other products.
+OEM OUT refers to integrating DCE 5.0 as a sub-module into other products, appearing in their menus.
+You can directly access DCE 5.0 without logging in again after logging into other products.
+The OEM OUT integration involves 5 steps:
 
-Identity Provider (IdP): When DCE 5.0 needs to use the customer's system as the user source
-and perform login authentication through the customer's system login interface, the customer's
-system is referred to as the Identity Provider for DCE 5.0.
+1. Unified domain name
+2. User system integration
+3. Navigation bar integration
+4. Customizing appearance
+5. Permission system integration (optional)
 
-## How to Implement OEM OUT
+For detailed instructions, refer to the [OEM OUT Best Practices video tutorial](../../videos/use-cases.md#dce-50_2).
 
-### Integration of User Systems
+## Unified Domain Name
 
-Use the customer's system as the user source to achieve unified login authentication. This step is necessary.
+1. Deploy DCE 5.0 (Assuming the access address after deployment is `https://10.6.8.2:30343/`).
+2. To achieve cross-domain access between the customer system and DCE 5.0, you can use an Nginx reverse proxy.
+   Use the following example configuration in `vi /etc/nginx/conf.d/default.conf`:
 
-1. Create a client in the customer's system (refer to [Ghippo OIDC Configuration](../user-guide/access-control/oidc.md))
-   and obtain some integration parameters. If the customer's system requires a callback URL,
-   you can use the domain or IP of the entrance address of DCE 5.0.
+    ```nginx
+    server {
+       listen       80;
+       server_name  localhost;
 
-2. Configure the parameters from the previous step in the Identity Provider interface of DCE 5.0.
-   using protocols such as OIDC/OAUTH to integrate with the customer's user system.
+       location /dce5/ {
+          proxy_pass https://10.6.8.2:30343/;
+          proxy_http_version 1.1;
+          proxy_read_timeout 300s; # This line is required for using kpanda cloudtty, otherwise it can be removed
+          proxy_send_timeout 300s; # This line is required for using kpanda cloudtty, otherwise it can be removed
 
-    ![oidc](./images/oem-out01.png)
+          proxy_set_header Host $host;
+          proxy_set_header X-Real-IP $remote_addr;
+          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 
-!!! tip
+          proxy_set_header Upgrade $http_upgrade; # This line is required for using kpanda cloudtty, otherwise it can be removed
+          proxy_set_header Connection $connection_upgrade; # This line is required for using kpanda cloudtty, otherwise it can be removed
+       }
 
-    If customization is required for the integration protocol supported by the customer,
-    refer to [How to Customize DCE 5.0 to Integrate with External Identity Providers (IdP)](custom-idp.md).
+       location / {
+          proxy_pass https://10.6.165.50:30443/; # Assuming this is the customer system address (e.g., Yiyun)
+          proxy_http_version 1.1;
 
-## Embedding DCE 5.0 Pages in the Customer System Interface
+          proxy_set_header Host $host;
+          proxy_set_header X-Real-IP $remote_addr;
+          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+       }
+    }
+    ```
 
-Insert certain functional menu items of DCE 5.0 into the navigation bar of
-customer's system to use the customer's system as a portal (optional).
+3. Assuming the Nginx entry address is 10.6.165.50, follow the
+   [Customize DCE 5.0 Reverse Proxy Server Address](../install/reverse-proxy.md) to
+   set the DCE_PROXY reverse proxy as `http://10.6.165.50/dce5`. Ensure that DCE 5.0
+   can be accessed via `http://10.6.165.50/dce5`. The customer platform also needs
+   to configure the reverse proxy based on its specific requirements.
 
-### Method
+## User System Integration
 
-Prerequisite: The customer system (e.g., WYCloud) supports embedding sub-module pages using iframes.
+Integrate the customer platform with DCE 5.0 using protocols like OIDC/OAUTH,
+allowing users to access DCE 5.0 without logging in again after logging into
+the customer platform. Fill in the OIDC information of the customer platform in
+`Global Management` -> `Access Control` -> `Identity Providers`.
 
-1. Deploy DCE 5 (assuming the access address after deployment is https://10.6.8.2:30343/).
+After integration, the DCE 5.0 login page will display the OIDC (custom) option.
+When accessing DCE 5.0 from the customer platform for the first time,
+select OIDC login, and subsequent logins will directly enter DCE 5.0 without needing to choose again.
 
-2. Use an Nginx reverse proxy between the customer system and DCE 5 to achieve same-domain access.
-   Route `/` to the customer's system and route `/dce5` to the DCE 5.0 system.
-   Refer to the [/etc/nginx/conf.d/default.conf example](./examples/default2.conf).
+## Navigation Bar Integration
 
-3. Assuming the Nginx entry address is 10.6.165.50, follow the steps in
-   [Setting Up DCE 5.0 Reverse Proxy](../install/reverse-proxy.md) to set the DCE_PROXY as http://10.6.165.50/dce5/.
+Navigation bar integration means adding DCE 5.0 to the menu of the customer platform.
+You can directly access DCE 5.0 by clicking the corresponding menu item. The navigation bar
+integration depends on the customer platform and needs to be handled based on specific circumstances.
 
-4. Access http://10.6.165.50/dce5/. In DCE 5.0, go to `Platform Settings` -> `Appearance` -> `Advanced Customization`
-   to modify the page style of DCE 5.0 to make it consistent with the customer's system style.
+## Customizing Appearance
 
-5. Encode the DCE 5.0 access address (http://10.6.165.50/dce5/) into the src attribute of the iframe
-   in the customer's system. You can modify the style of the embedded page by writing CSS in the iframe.
-   See [App.vue code example](./examples/App.vue).
+Use `Global Management` -> `Platform Settings` -> `Appearance Customization` to customize
+the platform's background color, logo, name, etc. For detailed instructions,
+refer to [Appearance Customization](../user-guide/platform-setting/appearance.md).
 
-## Permission Integration (Optional)
+## Permission System Integration (optional)
 
-Customized teams can implement a custom module. DCE 5.0 can provide webhook registration functionality
-to notify the custom module of every user login event through webhooks. The custom module can then use the
-[OpenAPI](https://docs.daocloud.io/openapi/) of WYCloud and DCE 5.0 to synchronize the user's permission information.
-
-## Reference Documentation
-
-- Refer to [OEM IN Documentation](oem-in.md)
-- Refer to [GProduct-demo integration tar package](./examples/gproduct-demo-main.tar.gz)
+Permission system integration is complex.
+If you have such requirements, please contact the Global Management team.
