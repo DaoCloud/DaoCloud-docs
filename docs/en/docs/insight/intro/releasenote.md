@@ -3,6 +3,45 @@
 This page lists the Release Notes of Insight Observability, so that you can understand
 the evolution path and feature changes of each version.
 
+## 2023.08.31
+
+### Insight Server: v0.20.0
+
+#### New Features
+
+- **New** Container event alerts
+- **New** Linked query-related logs
+- **New** Metadata added to event details
+- **New** Support for Lucene syntax queries in logs
+
+#### Enhancements
+
+- **Enhancement** Added prompts for cluster status abnormalities
+- **Enhancement** Improved filtering conditions for logs
+- **Enhancement** Allow adding duplicate tags when creating silent alert conditions
+- **Enhancement** Node logs now support filtering by file path
+
+#### Bug Fixes
+
+- **Fix** Corrected creation time of Elasticsearch in system components
+- **Fix** Fixed discrepancy between the number of logs retrieved in contextual log queries and actual count
+- **Fix** Resolved redirection issue with repair suggestions in alerts
+- **Fix** Addressed compatibility issues with certain data in event queries
+- **Fix** Corrected color error in legend of topology graph
+
+### Insight Agent: v0.20.0
+
+#### Enhancements
+
+- **Enhancement** Support for consuming log and linked data via Kafka
+
+#### Bug Fixes
+
+- **Fix** Compatibility issues with Openshift clusters
+- **Fix** Compatibility issues with Kubernetes v0.18.20
+- **Fix** Compatibility issues with DCE 4.0
+- **Fix** Resolved issue with abnormal metric calculations
+
 ## 2023.07.30
 
 ### v0.19.0
