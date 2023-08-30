@@ -6,6 +6,7 @@
 
 | 版本                                             | 架构 | 文件大小 | 安装包                                                                                                                             |  校验文件 | 更新日期      |
 |------------------------------------------------| ----- |-------- |---------------------------------------------------------------------------------------------------------------------------------| ---------- |-----------|
+| [0.20.0-alpha.3](../../amamba/intro/release-notes.md) | AMD 64 | 809.88MB | [:arrow_down: amamba_0.20.0-alpha.3_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/amamba_0.20.0-alpha.3_amd64.tar) | [:arrow_down: amamba_0.20.0-alpha.3_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/amamba_0.20.0-alpha.3_amd64_checksum.sha512sum) | 2023-08-30 |
 | [v0.19.0](../../amamba/intro/release-notes.md) | AMD 64 | 459.27MB | [:arrow_down: amamba_v0.19.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/amamba_v0.19.0_amd64.tar) | [:arrow_down: amamba_v0.19.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/amamba_v0.19.0_amd64_checksum.sha512sum) | 2023-07-07 |
 
 ## 校验
