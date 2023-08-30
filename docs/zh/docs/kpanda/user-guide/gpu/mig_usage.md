@@ -10,21 +10,22 @@
 
 ## 通过界面使用 MIG GPU
 
-1. 确认集群是否已识别 GPU 卡类型，进入`集群详情` -> `集群设置` -> `Addon 设置`，查看是否已正确识别，识别频率为 `10 分钟`
+1. 确认集群是否已识别 GPU 卡类型，进入`集群详情` -> `集群设置` -> `Addon 设置`，查看是否已正确识别，自动识别频率为 `10 分钟` 。
 
     ![gpu](../../images/gpu_mig01.jpg)
 
 2. 通过镜像部署应用可选择并使用 Nvidia MIG 资源。
+   ![mig02](../../images/gpu_mig02.jpg)
 
-    1. 当开启的为 `MIG  Single` 模式时，对应 添加的资源信息对应为：
+   - 当开启的为 `MIG  Single` 模式时，对应 添加的资源信息对应为：
 
-        ```yaml
-        resources:
-          limits:
-          nvidia.com/gpu: 2
-        ```
+       ```yaml
+       resources:
+         limits:
+         nvidia.com/gpu: 2
+       ```
 
-   2. 当开启的为 `MIG  Mixed` 模式时，对应 添加的资源信息对应为：
+   - 当开启的为 `MIG  Mixed` 模式时，对应 添加的资源信息对应为：
 
         ```yaml
         resources:
@@ -32,8 +33,8 @@
           nvidia.com/mig-4g.20gb: 1 # 通过nvidia.com/mig-<slice_count>g.<memory_size>gb 的资源类型公开各个 MIG 设备
         ```
 
-        ![mig02](../../images/gpu_mig02.png)
+        
 
 3. 进入容器后可以查看只使用了一个MIG设备。
 
-    ![mig03](../../images/gpu_mig03.png)
+    ![{mig03}](../../images/gpu_mig03.png)【
