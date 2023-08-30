@@ -6,7 +6,8 @@ OEM OUT 是指将 DCE5.0 作为子模块接入其他产品，出现在其他产�
 * 对接导航栏
 * 定制外观
 * 打通权限体系(可选)
-最佳实践请参照：https://docs.daocloud.io/videos/use-cases.html#dce-50_2
+
+具体操作演示请参见 [OEM OUT 最佳实践视频教程](../../videos/use-cases.md#dce-50_2)。
 
 ## 统一域名
 
