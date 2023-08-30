@@ -146,8 +146,9 @@ nav:
           - GPU管理:
               - 安装 Nvidia GPU 驱动: kpanda/user-guide/gpu/driver.md
               - GPU Operator 开启 MIG: kpanda/user-guide/gpu/create_mig.md
+              - NVIDIA 多实例 GPU(MIG) 概述: kpanda/user-guide/gpu/create_mig.md
               - 应用使用 MIG GPU: kpanda/user-guide/gpu/mig_usage.md
-              - MIG 相关命令: kpanda/user-guide/gpu/mig_command.md
+              - MIG 相关命令: kpanda/user-guide/gpu/overview.md
           - 最佳实践:
               - 对 ETCD 进行备份还原: kpanda/best-practice/etcd-backup.md
               - 对 MySQL 应用及数据进行跨集群备份恢复: kpanda/best-practice/backup-mysql-on-nfs.md
