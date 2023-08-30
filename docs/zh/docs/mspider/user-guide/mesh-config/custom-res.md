@@ -1,8 +1,6 @@
 # 服务网格组件资源自定义
 
-本文介绍如何对通过[容器管理](../../../kpanda/user-guide/workloads/create-deployment.md)配置网格的[控制面组件](../../intro/cp-component)资源。
-
-
+本文介绍如何对通过[容器管理](../../../kpanda/user-guide/workloads/create-deployment.md)配置网格的[控制面组件](../../intro/comp-archi-ui/cp-component.md)资源。
 
 ## 前提条件
 

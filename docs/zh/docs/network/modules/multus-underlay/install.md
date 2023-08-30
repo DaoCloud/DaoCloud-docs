@@ -169,7 +169,7 @@
         ```
 
         `ipam.spidernet.io/ippool`：指定从哪一个 IP 池为 MacVLAN 网卡分配 IP 地址。
-        如果不指定，将会从默认池中分配。更多 Spiderpool 使用说明请参考 [Spiderpool](../spiderpool)。
+        如果不指定，将会从默认池中分配。更多 Spiderpool 使用说明请参考 [Spiderpool](../spiderpool/index.md)。
 
         `k8s.v1.cni.cncf.io/networks`：通过指定 MacVLAN Multus CRD, 为 Pod 再分配一张 MacVLAN 网卡 (net1)。
 
