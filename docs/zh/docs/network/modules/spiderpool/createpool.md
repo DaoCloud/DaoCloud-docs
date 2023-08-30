@@ -64,6 +64,8 @@ hide:
     - `网关`：`网关`默认继承`子网网关`，可修改。
 
     - `自定义路由`：当用户有特殊路由需求时，可基于 IP 池粒度的进行自定义。
+  
+    - `Multus 实例`：可以指定从哪个 IP 池为 Pods 分配 IP 地址，或者定义当 Pod 连接到特定网络时应使用哪个 IP 池。
 
     - `工作负载亲和性`：工作负载标签（如 `app: workload01`）。IP 池创建后，仅可被对应的工作负载选择，实现固定 IP 池效果。
 
@@ -81,7 +83,7 @@ hide:
 
     ![添加 IP](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/createippool02.jpg)
 
-1. 创建完成后[工作负载即可使用 IP 池](../../modules/spiderpool/usage.md)。
+2. 创建完成后[工作负载即可使用 IP 池](../../modules/spiderpool/usage.md)。
 
 ## YAML 创建
 
