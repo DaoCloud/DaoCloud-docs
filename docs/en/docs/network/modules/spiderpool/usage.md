@@ -49,13 +49,9 @@ This page describes how to configure multiple NICs for workload Pods in combinat
 
     To manually select an IP pool, you need to create an IP pool in advance. You can select the range of the IP pool as `shared IP pool`, add the current `application affinity IP pool`, and add the current `namespace affinity IP pool`.
 
-    
-
-    **Automatically create fixed IP pool**
+   **Automatically create fixed IP pool**
 
     You only need to select the corresponding subnet to automatically create a fixed IP pool
-
-    
 
 4. After creating the workload, you can click the corresponding workload `workload01` to view the IP used by the workload Pod.
 
