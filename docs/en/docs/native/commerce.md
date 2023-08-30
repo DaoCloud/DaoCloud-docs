@@ -393,6 +393,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
      Bridging the gap between black-box data for performance testing and white-box data inside the system.
      The integration allows correlating k6's test run data with server-side trace data for root cause analysis; aggregates the collected trace data to generate real-time metrics, helping users narrow the search space and quickly spot anomalous behavior.
 
+- [Gremlin Chaos Engineering Platform Gremlin July Update](https://www.gremlin.com/docs/release-notes/general/#july-2023)
+
+    Updates: Support for automated detection of high-priority reliability issues in Kubernetes environments, Beta release of Failure Flags for running chaos experiments on AWS Lambda functions, serverless workloads, and containers, allows users to auto-register a Kubernetes Service to Gremlin with a simple comment, added support for simultaneous installation of GitOps-based installations. Gremlin, and adds support for web apps that manage multiple services simultaneously.
+
 - [Guance Observable Solutions Guance Product Updates](https://docs.guance.com/release-notes/#2023-8-10)
 
     Updates: New waterfall chart mode on Span list page, new timed report function, new service management for viewing performance and business data of different services in the current workspace and all correlation analysis, support for directly viewing context logs on log detail page, new table of upstream and downstream call relationships of the current service, new conversion of detection metrics to PromQL queries, new Kubernetes Event Component.
@@ -455,6 +459,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 ### L
 
+- [Lacework Cloud Security Platform Lacework Platform Update in August 2023](https://docs.lacework.net/releases/2023-08-platform-releases)
+
+    Updates: Agentless Workload Scanning supports scanning of Container images managed by Containerd, Agentless Workload Scanning integrates with Google Cloud Platform (GCP), supports scanning of multiple or secondary storage volumes on a host, and support for scanning of stopped instances, Introduced Pub/Sub-based (GCP) audit logging integration, and a near real-time alerting solution.
+
 - [Lacework Platform Cloud Security Platform November Update](https://docs.lacework.com/releases/2022-11-platform-releases)
 
      What's new: platform scanner supports multi-architecture container images, provides attack path analysis capabilities, agentless workload scanning is generally available, vulnerabilities found on inactive host kernels are automatically marked as exceptions, CIS GCP 1.3.0 Benchmark reports and policies are generally available, and new host policies are added to detect reverse shell connections and cryptojacking artifacts.
@@ -486,6 +494,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
      The main new features of this version: support for Kubernetes 1.24, support for Google Cloud Platform GCP, support for cri-dockerd instead of Dockershim, security access control updates (OPA gatekeeper is provided as an optional alternative to PSP).
 
 ### N
+
+- [NetApp Kubernetes Application Data Management Solution Astra Control 23.07 released](https://www.netapp.com/blog/astra-control-trident-releases/)
+
+    Updates: Integration of ONTAP MetroCluster, a high-availability storage solution, support for Longhorn as a storage provider, Astra Trident scalability improvements for large-scale Kubernetes deployments, and Astra Trident support for snapshot import.
 
 - [Spot by NetApp Officially Launches Ocean CD, a Kubernetes Continuous Delivery Product](https://spot.io/blog/announcing-ocean-cd-availability/)
 
@@ -740,7 +752,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [SUSE Launches Rancher Prime, an Enterprise Container Management Platform](https://mp.weixin.qq.com/s/iVFsSGlRd4TdJGcRKLQBuQ)
 
-    Rancher Prime is a distribution of Rancher with core code from Rancher Community Package, but with more emphasis on security and enhanced features and services for enterprise users.
+    Rancher Prime is a distribution of Rancher with core code from Rancher DCE Community, but with more emphasis on security and enhanced features and services for enterprise users.
     The features of Rancher Prime are: improved comprehensive security governance and a trusted Container registry.
     introduce UI extensions; full lifecycle support for hosting clusters on Ali Cloud, Tencent Cloud and Huawei Cloud;
     support openEuler Linux and support for ARM systems.
@@ -853,6 +865,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Volcano Engine Releases Distributed Cloud Native Platform DCP](https://mp.weixin.qq.com/s/Fz7R8R0keKFEryq8zQKFoA)
 
     [DCP](https://www.volcengine.com/product/dcp) is an enterprise-level cloud native unified management platform for multicloud and multi-Kubernetes cluster use cases, providing unified management and operation and maintenance of multicloud clusters, cross-cluster distribution of applications, unified traffic control and other capabilities, DCP provides unified management and operation and maintenance of Volcano Engine container clusters, third-party clusters and self-built clusters; provides cross-cluster and cross-cloud elastic scheduling capability based on cluster federation and other technologies; provides multicluster service discovery, multicluster unified portal access and other capabilities; enables application data recovery and cross-cluster/cloud application migration based on backup data.
+
+- [VMware Kubernetes DevOps Platform VMware Tanzu Application Platform 1.6 released](https://tanzu.vmware.com/content/blog/tanzu-application-platform-1-6-release-news)
+
+    Updates: Introduced the Tanzu Developer Portal, an internal developer portal built on Backstage, allowed developers to create server workloads that are exposed to the public Internet via Contour Ingress, integrated a container image vulnerability scanner (beta), supported CVE filtering via the Tanzu Insight CLI (alpha), supported extraction of workload builds, and supported the extraction of workload builds from the VMware Kubernetes DevOps Platform (alpha). filtering for CVEs (alpha), support for extracting SBOMs for workload builds, the ability to automate builds based on upstream changes in the dependencies used by the workload, custom CA support for on-premise Git repositories in the supply chain, and support for GitOps-based installation.
 
 - [VMware Carbon Black XDR, VMware's threat detection and response product, adds support for cloud-native applications](https://news.vmware.com/releases/carbon-black-cndr)
 

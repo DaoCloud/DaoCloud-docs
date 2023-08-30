@@ -112,7 +112,6 @@ calico.yaml linux-amd64 longhorn-1.3.2.tgz rook rook-ceph-image.zip
 
 
 
-
 ## Install Longhorn via DCE 5.0 App Store
 
 
@@ -162,10 +161,10 @@ Modify the Longhorn front-end service port:
 
 
 
-Enter the Longhorn UI:
+Get access to the Longhorn UI:
 
+![longhorn ui](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/longhorn-1.png)
 
-
-
+![longhorn ui](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/longhorn-2.png)
 
 So far, the Longhorn storage system has been successfully deployed in the DCE 5.0 app store!

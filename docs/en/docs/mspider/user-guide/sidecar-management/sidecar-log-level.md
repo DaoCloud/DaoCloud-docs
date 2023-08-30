@@ -40,7 +40,7 @@ DCE service mesh supports temporary modification of the sidecar log level within
 ![image](../../images/sidecar-log-level-03.png)
 
 To update the configuration of the sidecar container, you need to use `kubectl`.
-Access the cluster console, open the terminal, and execute the following command:
+Access the cluster console, open the terminal, and run the following command:
 
 ```shell
 kubectl -n <namespace> exec -it <pod-name>  -c istio-proxy -- curl -X POST localhost:15000/logging?level=<log level>

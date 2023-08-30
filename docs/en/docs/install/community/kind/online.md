@@ -4,7 +4,7 @@ This page explains how to install DCE Community package on a kind cluster online
 
 !!! note
 
-    Click [Online Installation of Community Package](../../../videos/install.md#3) to watch the video tutorial.
+    Click [Online Installation of DCE Community](../../../videos/install.md#3) to watch the video tutorial.
 
 ## Preparation
 
@@ -107,7 +107,7 @@ precheck pass...
     apiVersion: kind.x-k8s.io/v1alpha4
     kind: Cluster
     nodes:
-    -role: control-plane
+    - role: control-plane
       extraPortMappings:
       - containerPort: 32088
         hostPort: 8888
@@ -198,4 +198,4 @@ precheck pass...
      - As DCE Community package is installed, please [apply for a free license](../../../dce/license0.md).
      - If you have any problems about DCE 5.0, please scan the QR code and communicate with the developer freely:
     
-        ![Community Package Exchange Group](https://docs.daocloud.io/daocloud-docs-images/docs/images/assist.png)
+        ![DCE Community Exchange Group](https://docs.daocloud.io/daocloud-docs-images/docs/images/assist.png)

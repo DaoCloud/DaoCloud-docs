@@ -4,11 +4,11 @@ nav:
   - 产品文档:
       - DCE 产品介绍:
           - 什么是 DCE 5.0: dce/index.md
-          - K8s 认证服务商: dce/kcsp.md
           - 申请社区免费体验: dce/license0.md
           - 功能和优势: dce/features.md
           - 适用场景: dce/scenario.md
           - 云原生词汇: dce/terms.md
+          - K8s 认证服务商: dce/kcsp.md
           - DCE 5.0 Release Notes:
               - 20230731 版本发布: dce/dce-rn/20230731.md
               - 20230630 版本发布: dce/dce-rn/20230630.md
@@ -36,12 +36,12 @@ nav:
               - 导入离线资源: install/import.md
               - 安装排障: install/faq.md
           - 在不同 K8s 发行版上安装:
-              - 在 OpenShift OCP 上安装 DCE 5.0 商业版: install/k8s-install/ocp-install-dce5.0.md
+              - 在 OpenShift OCP 上安装: install/k8s-install/ocp-install-dce5.0.md
           - 在不同操作系统上安装:
-              - 在 UOS V20 (1020a) 上安装 DCE 5.0 商业版: install/os-install/uos-v20-install-dce5.0.md
-              - Oracle Linux R9/R8 U1 操作系统上部署 DCE 5.0 商业版: install/os-install/oracleLinux-install-dce5.0.md
-              - TencentOS Server 3.1 操作系统上部署 DCE 5.0 商业版: install/os-install/TencentOS-install-dce5.0.md
-              - 其他 Linux 离线部署 DCE 5.0 商业版: install/os-install/otherlinux.md
+              - 在 UOS V20 (1020a): install/os-install/uos-v20-install-dce5.0.md
+              - Oracle Linux R9/R8 U1 操作系统: install/os-install/oracleLinux-install-dce5.0.md
+              - TencentOS Server 3.1 操作系统: install/os-install/TencentOS-install-dce5.0.md
+              - 其他 Linux 操作系统: install/os-install/otherlinux.md
           - Release Notes: install/release-notes.md
       - 容器管理:
           - 介绍:
@@ -124,11 +124,13 @@ nav:
               - 创建巡检配置: kpanda/user-guide/inspect/config.md
               - 执行巡检: kpanda/user-guide/inspect/inspect.md
               - 查看巡检报告: kpanda/user-guide/inspect/report.md
+              - 离线升级集群巡检模块: kpanda/user-guide/inspect/offline-upgrade.md
           - 备份恢复:
               - 介绍: kpanda/user-guide/backup/intro.md
-              - 安装 velero 插件: kpanda/user-guide/backup/install-velero.md
+              - 安装 Velero 插件: kpanda/user-guide/backup/install-velero.md
               - 应用备份: kpanda/user-guide/backup/deployment.md
               - ETCD 备份: kpanda/user-guide/backup/etcd-backup.md
+              - 离线升级备份恢复模块: kpanda/user-guide/backup/offline-upgrade.md
           - 安全管理:
               - 安全扫描类型: kpanda/user-guide/security/intro.md
               - 合规性扫描:
@@ -137,18 +139,24 @@ nav:
                   - 扫描报告: kpanda/user-guide/security/cis/report.md
               - 权限扫描: kpanda/user-guide/security/audit.md
               - 漏洞扫描: kpanda/user-guide/security/hunter.md
+              - 离线升级安全管理模块: kpanda/user-guide/security/offline-upgrade-dowl.md
           - 权限管理:
               - 权限说明: kpanda/user-guide/permissions/permission-brief.md
               - 集群和命名空间授权: kpanda/user-guide/permissions/cluster-ns-auth.md
-          - GPU:
+          - GPU管理:
               - 安装 Nvidia GPU 驱动: kpanda/user-guide/gpu/driver.md
+              - GPU Operator 开启 MIG: kpanda/user-guide/gpu/create_mig.md
+              - NVIDIA 多实例 GPU(MIG) 概述: kpanda/user-guide/gpu/create_mig.md
+              - 应用使用 MIG GPU: kpanda/user-guide/gpu/mig_usage.md
+              - MIG 相关命令: kpanda/user-guide/gpu/overview.md
           - 最佳实践:
               - 对 ETCD 进行备份还原: kpanda/best-practice/etcd-backup.md
               - 对 MySQL 应用及数据进行跨集群备份恢复: kpanda/best-practice/backup-mysql-on-nfs.md
               - 加固自建工作集群: kpanda/best-practice/hardening-cluster.md
               - 工作集群离线升级指南: kpanda/best-practice/update-offline-cluster.md
               - 为工作集群添加异构节点: kpanda/best-practice/multi-arch.md
-              - 在 CentOS 管理平台上创建 Ubuntu 工作集群: kpanda/best-practice/create-ubuntu-on-centos-platform.md
+              - 为全局服务集群的工作节点扩容: kpanda/best-practice/add-worker-node-on-global.md
+              - 在 CentOS 上创建 Ubuntu 工作集群: kpanda/best-practice/create-ubuntu-on-centos-platform.md
               - 对工作集群的控制节点扩容: kpanda/best-practice/add-master-node.md
               - 在非主流操作系统上创建集群: kpanda/best-practice/use-otherlinux-create-custer.md
       - 全局管理:
@@ -190,6 +198,7 @@ nav:
           - 运营管理:
               - ghippo/user-guide/report-billing/index.md
               - 报表管理: ghippo/user-guide/report-billing/report.md
+              - 离线升级运营管理: ghippo/user-guide/report-billing/gmagpie-offline-install.md
               - 计费计量: ghippo/user-guide/report-billing/billing.md
           - 平台设置:
               - 安全策略: ghippo/user-guide/platform-setting/security.md
@@ -239,8 +248,8 @@ nav:
                   - 获取数据上传地址: insight/quickstart/install/gethosturl.md
                   - 升级注意事项: insight/quickstart/install/upgrade-note.md
               - 在其他发行版安装 insight-agent:
-                  - 在 DCE 4.0.x 安装 insight-aent: insight/quickstart/other/install-agentindce.md
-                  - 在 OpenShift 4.x 安装 insight-agent: insight/quickstart/other/install-agent-on-ocp.md
+                  - 在 DCE 4.0.x 上: insight/quickstart/other/install-agentindce.md
+                  - 在 OpenShift 4.x 上: insight/quickstart/other/install-agent-on-ocp.md
               - 开始采集链路数据:
                   - insight/quickstart/otel/otel.md
                   - Operator 无侵入增强应用: insight/quickstart/otel/operator.md
@@ -293,12 +302,13 @@ nav:
           - 常见问题:
               - 链路数据的时钟偏移: insight/faq/traceclockskew.md
               - 告警通知流程说明: insight/faq/alertnotification.md
+              - Lucene 语法使用方法: insight/faq/lucene.md
           - 最佳实践:
               - 通过 Sidecar 采集容器日志: insight/best-practice/tailing-sidecar.md
               - 日志采集排障指南: insight/best-practice/debug-log.md
               - 链路采集排障指南: insight/best-practice/debug-trace.md
               - 配置通知模板: insight/best-practice/notify-helper.md
-              - 使用 OpenTelemetry 零代码接收 SkyWalking 链路数据: insight/best-practice/sw-to-otel.md
+              - 使用 OTel 零代码接收 SkyWalking 链路数据: insight/best-practice/sw-to-otel.md
               - 使用 Insight 定位应用异常根因: insight/best-practice/find_root_cause.md
               - Kafka + ES 流式架构应对超大规模日志方案: insight/best-practice/insight-kafka.md
           - 兼容性测试:
@@ -391,9 +401,9 @@ nav:
               - 删除实例: kairship/instance/delete.md
           - 多云工作集群: kairship/cluster.md
           - 多云工作负载:
-              - 通过镜像创建 Deployment: kairship/workload/deployment.md
-              - 通过 YAML 创建 Deployment: kairship/workload/yaml.md
-              - 更新多云 Deployment: kairship/workload/update-deployment.md
+              - 镜像创建多云 Deployment: kairship/workload/deployment.md
+              - YAML 创建多云 Deployment: kairship/workload/yaml.md
+              - 更新/删除多云 Deployment: kairship/workload/update-deployment.md
               - 一键升级为多云 Deployment: kairship/workload/promote.md
               - 镜像创建 Job: kairship/workload/job.md
               - 镜像创建 CronJob: kairship/workload/cronjob.md
@@ -665,7 +675,7 @@ nav:
               - IP 池场景说明: network/modules/spiderpool/ippoolusage.md
               - 工作负载使用 IP 池: network/modules/spiderpool/usage.md
               - 第三方工作负载使用 IP 池: network/modules/spiderpool/cutomizedusage.md
-              - 公有云环境运行: network/modules/spiderpool/publiccloud.md
+              - 阿里云环境运行: network/modules/spiderpool/alibabacloud.md
               - 配置参考: network/modules/spiderpool/config.md
               - 常用命令: network/modules/spiderpool/command.md
           - Submariner:
@@ -774,8 +784,10 @@ nav:
                   - 删除 Redis 实例: middleware/redis/user-guide/delete.md
                   - 查看 Redis 日志: middleware/redis/user-guide/logs.md
               - 跨集群数据同步: 
-                  - middleware/redis/best-practice/disaster-tolerance.md
-                  - 集群模式 VS 集群模式: middleware/redis/best-practice/cluster2cluster.md
+                  - 数据同步介绍: middleware/redis/best-practice/disaster-tolerance.md
+                  - 集群模式 to 集群模式: middleware/redis/best-practice/cluster2cluster.md
+                  - 哨兵模式 to 哨兵模式: middleware/redis/best-practice/sentinel2sentinel.md
+                  - 集群模式 to 哨兵模式: middleware/redis/best-practice/cluster2cluster.md
           - PostgreSQL 数据库:
               - 介绍:
                   - 什么是 PostgreSQL: middleware/postgresql/intro/index.md
@@ -898,15 +910,16 @@ nav:
               - 托管 Harbor 的访问类型: kangaroo/best-practice/managed-harbor-select-access-type.md
               - 登录非安全镜像仓库: kangaroo/best-practice/insecure_registry.md
       - 云边协同:
-          - 什么是云边协同: kant/intro/index.md
-          - 功能特性: kant/intro/features.md
-          - 产品优势: kant/intro/benefits.md
-          - 应用场景: kant/intro/use-cases.md
-          - 边缘节点接入要求: kant/intro/join-rqmt.md
-          - 基本概念: kant/intro/concepts.md
-          # - 边云消息:
-              # - 边云消息概述: kant/user-guide/route/overview.md
-              # - 创建消息路由: kant/user-guide/route/create-route.md
+          - 介绍:
+              - 什么是云边协同: kant/intro/index.md
+              - 功能特性: kant/intro/features.md
+              - 产品优势: kant/intro/benefits.md
+              - 应用场景: kant/intro/use-cases.md
+              - 边缘节点接入要求: kant/intro/join-rqmt.md
+              - 基本概念: kant/intro/concepts.md
+          - 边云消息:
+              - 边云消息概述: kant/user-guide/route/overview.md
+              - 创建消息路由: kant/user-guide/route/create-route.md
       - 虚拟机容器:
           - 介绍:
               - 简介: virtnest/intro/index.md
@@ -935,6 +948,7 @@ nav:
       - 中间件: videos/mcamel.md
       - 镜像仓库: videos/kangaroo.md
       - 云原生网络: videos/network.md
+      - 云边协同: videos/kant.md
   - 下载中心:
       - DaoCloud Enterprise 5.0:
           - 索引列表: download/index.md
@@ -946,6 +960,7 @@ nav:
               - 下载容器管理: download/modules/kpanda.md
               - 下载集群巡检: download/modules/kcollie.md
               - 下载应用备份: download/modules/kcoral.md
+              - 下载安全管理: download/modules/dowl.md
               - 下载 Insight: download/modules/insight.md
               - 下载服务网格: download/modules/mspider.md
               - 下载网络 Spidernet: download/modules/spidernet.md
@@ -955,17 +970,18 @@ nav:
       - 体验社区版: trial/index.md
   - 博客:
       - 博文索引: blogs/index.md
-      - 202308 | Kubernetes 1.28 震撼发布: blogs/230815-k8s1.28.md
-      - 202308 | K8sGPT 赋能 Kubernetes: blogs/230808-k8sgpt.md
-      - 202306 | AIGC 利器 Ray 云原生探索下篇: blogs/230615-ray.md
-      - 202306 | AIGC 利器 Ray 云原生探索上篇: blogs/230612-ray.md
+      - 202308 | K8s 本地开发工具比较: blogs/230824-tools.md
+      - 202308 | K8s 1.28 震撼发布: blogs/230815-k8s1.28.md
+      - 202308 | K8sGPT 赋能 K8s: blogs/230808-k8sgpt.md
+      - 202306 | AIGC 利器 Ray 探索下篇: blogs/230615-ray.md
+      - 202306 | AIGC 利器 Ray 探索上篇: blogs/230612-ray.md
       - 202306 | Istio 1.18 正式发布: blogs/230609-istio118.md
-      - 202306 | 云原生联邦中间件FedState: blogs/230605-fedstate.md
+      - 202306 | 联邦中间件FedState: blogs/230605-fedstate.md
       - 202306 | API Server Tracing进阶: blogs/230601-api-server-tracing.md
-      - 202305 | 边缘场景玩转seccomp配置文件: blogs/230518-seccom.md
-      - 202305 | 云原生混沌工程Chaos Mesh: blogs/230515-chaos-mesh.md
+      - 202305 | 边缘场景玩转seccomp: blogs/230518-seccom.md
+      - 202305 | 混沌工程Chaos Mesh: blogs/230515-chaos-mesh.md
       - 202305 | K8s 安装教程(KLTS版): blogs/230509-k8s-install.md
-      - 202305 | Cilium 基于 eBPF 实现 socket 加速: blogs/230508-cilium.md
+      - 202305 | Cilium实现socket加速: blogs/230508-cilium.md
       - 202305 | K8s 1.27加快Pod启动: blogs/230428-pod-startup.md
       - 202304 | 云原生监控之基础篇: blogs/230427-victoriametrics.md
       - 202304 | Karmada Failover详解: blogs/230418-karmada-failover.md

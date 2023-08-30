@@ -61,7 +61,7 @@ After successfully verifying the offline package,
      tar -zxvf offline-kylin-v10sp2-community-v0.3.29-arm64.tar
      ```
 
-- For installation, please refer to [Community Package Installation Process](../../install/community/k8s/online.md#_2)
+- For installation, please refer to [DCE Community Installation Process](../../install/community/k8s/online.md#_2)
 - After successful installation, please [apply for free community experience](../../dce/license0.md)
 
 ## Modules

@@ -3,20 +3,18 @@ hide:
   - toc
 ---
 
-# Update multicloud workloads
+# Update/Delete Multicloud Workloads
 
-Follow the steps below to update a stateless payload (Deployment).
+You can create a multi-cloud deployment either from an [image](deployment.md) or a [YAML file](yaml.md). Therefore, you can also update it with these two methods.
 
-1. In the left navigation bar, click `multicloud Workload` to enter the multicloud stateless workload page, click `···` to edit YAML or update
+1. Click on `Multicloud Workloads` -> `Deployments` in the left navigation menu. Then, click on the `ⵈ` icon on the far right of the corresponding workload to display more options.
 
-    <!--screenshot-->
+    - Select `Edit YAML` to update the deployment using YAML.
+    - Select `Update` to update the deployment using a form.
+    - Select `Delete` to directly delete the deployment.
+    - Select `Pause` to temporarily stop the deployment from running.
+    - Select `Restart` to restart the deployment.
 
-2. Click `Edit YAML` to update the stateless payload by modifying the YAML information.
+        ![Updating Stateless Workload](../images/deploy-update01.png)
 
-    <!--screenshot-->
-
-3. Click `Update` to update the stateless load through the form, and the load name and multicloud namespace cannot be updated.
-
-    <!--screenshot-->
-
-4. After completing the content that needs to be modified, click OK, and the update is successful.
+2. After making the necessary changes, click `OK` to complete the update.

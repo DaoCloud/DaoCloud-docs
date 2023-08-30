@@ -1,10 +1,10 @@
 # DaoCloud Enterprise 5.0
 
-DaoCloud Enterprise 5.0 has two versions: Community Package and Enterprise Package.
+DaoCloud Enterprise 5.0 has two versions for Community and Enterprise.
 
 Currently, only offline installation packages are provided in the download center. For online installation methods, please refer to [Online Installation](../install/index.md).
 
-## Download Community Package
+## Download DCE Community
 
 This package is dedicated to the community and is available for free trial.
 
@@ -43,11 +43,13 @@ The numerous modules included in DCE 5.0 can be downloaded separately to upgrade
 
 | Module                | File Size | Download                                         | Update Date |
 | --------------------- | --------- | ------------------------------------------------ | ----------- |
-| Global Management     | 440 MB    | [:arrow_right: Download](./modules/ghippo.md)    | 2023-07-28  |
+| Global Management     | 440 MB    | [:arrow_right: Download](./modules/ghippo.md)    | 2023-08-28  |
 | Container Management  | 2.41 GB   | [:arrow_right: Download](./modules/ghippo.md)    | 2023-07-06  |
 | Cluster Inspection    | 205.11 MB | [:arrow_right: Download](./modules/kcollie.md)   | 2023-08-08  |
 | Backup and Restore    | 59.29 MB  | [:arrow_right: Download](./modules/kcoral.md)    | 2023-08-08  |
-| Observability         | 2.64 GB   | [:arrow_right: Download](./modules/insight.md)   | 2023-08-04  |
+| Security Management   | 163 MB   | [:arrow_right: Download](./modules/dowl.md)      | 2023-08-25 |
+| Insight              | 2.64 GB   | [:arrow_right: Download](./modules/insight.md)   | 2023-08-04  |
+| Service Mesh         | 2.41 GB   | [:arrow_right: Download](./modules/mspider.md)   | 2023-08-23  |
 | Network Module        | 55.47 MB  | [:arrow_right: Download](./modules/spidernet.md) | 2023-04-26  |
 | Container Registry    | 293.24 MB | [:arrow_right: Download](./modules/kangaroo.md)  | 2023-08-22  |
 | Operations Management | 56.90 MB  | [:arrow_right: Download](./modules/gmagpie.md)   | 2023-08-02  |
@@ -59,7 +61,7 @@ The numerous modules included in DCE 5.0 can be downloaded separately to upgrade
     - If you have any questions, please [provide feedback](https://github.com/DaoCloud/DaoCloud-docs/issues).
     - Welcome to scan the QR code to communicate with developers:
 
-    ![WeCom Group for Community Package](https://docs.daocloud.io/daocloud-docs-images/docs/images/assist.png)
+    ![WeCom Group for DCE Community](https://docs.daocloud.io/daocloud-docs-images/docs/images/assist.png)
 
 [Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [Free Trial](../dce/license0.md){ .md-button .md-button--primary }

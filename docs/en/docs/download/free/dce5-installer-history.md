@@ -1,6 +1,6 @@
 # DCE Community Versions
 
-## Community Package
+## DCE Community
 
 | File Name | Version | Architecture | File Size | Downloads | Date Updated |
 | ------- | --- | ---- | ------ | --- | ------- |

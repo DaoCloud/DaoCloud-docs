@@ -19,6 +19,7 @@ repo_url: https://github.com/DaoCloud/DaoCloud-docs
 edit_uri: edit/main/docs/zh/docs/
 
 use_directory_urls: false # disbale https://www.mkdocs.org/user-guide/configuration/#use_directory_urls
+strict: true # enable strict mode, https://www.mkdocs.org/user-guide/configuration/#strict
 
 # Configuration
 theme:
@@ -128,16 +129,16 @@ plugins:
         "video.md": "videos/index.md"
 
 
-  - git-revision-date: #每页底部显示文档最后更新日期，安装 pip install mkdocs-git-revision-date-plugin
-      enabled_if_env: "CI"
-  - git-revision-date-localized: #每个页面底部添加本地化更新和创建日期，安装 pip install mkdocs-git-revision-date-localized-plugin
-      timezone: Asia/Shanghai
-      type: timeago #日期格式，有效值为 date、datetime、iso_date、iso_datetimetimeago
-      fallback_to_build_date: true #默认 false，启用则回退到 mkdocs build 执行的时间
-      enable_creation_date: true #最后更新日期旁边显示与页面关联的文件的创建日期
-      exclude:
-        - index.md
-      enabled: !ENV [ENABLED_GIT_REVISION_DATE, true]
+  # - git-revision-date: #每页底部显示文档最后更新日期，安装 pip install mkdocs-git-revision-date-plugin
+  #     enabled_if_env: "CI"
+  # - git-revision-date-localized: #每个页面底部添加本地化更新和创建日期，安装 pip install mkdocs-git-revision-date-localized-plugin
+  #     timezone: Asia/Shanghai
+  #     type: timeago #日期格式，有效值为 date、datetime、iso_date、iso_datetimetimeago
+  #     fallback_to_build_date: true #默认 false，启用则回退到 mkdocs build 执行的时间
+  #     enable_creation_date: true #最后更新日期旁边显示与页面关联的文件的创建日期
+  #     exclude:
+  #       - index.md
+  #     enabled: !ENV [ENABLED_GIT_REVISION_DATE, true]
 
   # auto desgin nav in dirs
   # - awesome-pages:

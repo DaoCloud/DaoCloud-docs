@@ -43,4 +43,3 @@ Balanced placement of data in the cluster is achieved through data volume migrat
 ## Data volume type change
 
 In order to support some special cases, single-copy data volumes are allowed to be changed to multiple copies, and cross-node hot backup is supported.
-

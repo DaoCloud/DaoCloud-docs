@@ -10,7 +10,7 @@ On this page, you can download offline installation packages for different versi
 
 ## Verification
 
-In the directory where you downloaded the offline installation package and checksum file, execute the following command to verify the integrity:
+In the directory where you downloaded the offline installation package and checksum file, run the following command to verify the integrity:
 
 ```sh
 echo "$(cat kangaroo_0.10.0_amd64_checksum.sha512sum)" | sha512sum -c

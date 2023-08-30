@@ -2,62 +2,77 @@
 hide:
   - toc
 ---
+# Create Multicloud Deployment from Image
 
-# Mirror to create multicloud workloads
+After [added a worker cluster](../cluster.md#_2) into a multi-cloud instance, you can create multi-cloud workloads or [convert existing workloads into multi-cloud workloads](promote.md).
 
-Follow the steps below to create a stateless load (Deployment).
+This page will introduce how to create a multi-cloud deployment from an image. For the YAML method, see [Create Multicloud Deployment from YAML](yaml.md)
 
-1. In the left navigation bar, click `multicloud Workload` to enter the multicloud stateless workload page, and click the `Image Creation` button in the upper right corner.
+## Prerequisites
 
-    <!--screenshot-->
+- [Create a multi-cloud instance](../instance/add.md)
+- [Add at least one worker cluster to the multi-cloud instance](../cluster.md#_2)
+- If you want to deploy workloads to specific clusters based on region, availability zone, or labels, you need to add region, availability zone, and label information to the clusters beforehand.
 
-2. On the `Create Stateless Payload` page, after configuring the basic information of the payload, click `Next`.
+## Steps
 
-    Among the basic information, we need to specify the corresponding deployment work cluster. Multicloud Management provides very detailed cluster deployment capabilities, which can fully match all the capabilities of Karmada.
+Follow the steps below to create a multi-cloud deployment from an image.
 
-    There are three ways to select a deployment cluster:
+1. Click on the name of the multi-cloud instance, then navigate to `Multi-Cloud Workloads` in the left navigation pane, and click on `Create from Image` in the top right corner.
 
-    - Specify cluster: Specify the working cluster you want to deploy from the current multicloud instance
+    ![Create from Image](../images/deploy-create04.png)
 
-        <!--screenshot-->
+2. Fill in the basic information as per the instructions provided.
 
-    - Designated area: You can choose three types: manufacturer, region, and availability zone, and multiple selections are supported. If the current selection cannot meet the requirements, you can expand the advanced deployment strategy and choose whether to exclude clusters, configure cluster taint tolerance, and dynamic region selection. Since the above conditions are not intuitive, we will also show the expected scheduled cluster for you to review.
+    - Specify Clusters: Select the specific cluster to deploy the multi-cloud workload.
+    - Specify Regions: Filter clusters based on the provider/region/availability zone. You can enable all three filters simultaneously.
 
-        <!--screenshot-->
+        - `Exclude Clusters`: Exclude a specific cluster from the filtering result. The workload will not be deployed to the excluded cluster.
+        - `Cluster Taint Tolerance`: After adding a taint to the cluster in the [Cluster](../cluster.md#_6) page, resources with that taint cannot be scheduled to that cluster. Enabling taint tolerance here allows resources with the corresponding taint to be scheduled to the selected cluster.
+        - `Dynamic Regions`: Dynamically deploy workloads to clusters in different regions to ensure cross-region high availability.
 
-    - Specify tags: Support adding one or more tag information, the tag information is related to the tags of the working cluster, you can select the target cluster by filling in the tags and selecting different operators `exists` or `equal`. If the current selection cannot meet the requirements, you can expand the advanced deployment strategy and choose whether to exclude clusters, configure cluster taint tolerance, and dynamic region selection. Since the above conditions are not intuitive, we will also show the expected scheduled cluster for you to review.
+            ![Specify Region](../images/deploy-create05.png)
 
-        <!--screenshot-->
+    - Specify Labels: Deploy the workload to specific clusters based on labels.
 
-        Note that when selecting the scheduling strategy for the number of deployment replicas, you need to pay attention to the following instructions:
-    
-    - When the deployment type is `repeated`, it means that in each working cluster covered by all, an instance corresponding to the number of replicas is started
-    - When the deployment type is `Aggregation` or `Dynamic Weight`, it refers to the total number of replicas that are set to be started in all covered working clusters
-    
-3. On the `Container Configuration` page, configure the basic information of the container where the load resides, support the selection of images (including public and private images), and choose to configure information such as life cycle and health check, and then click `Next`.
+        - You can add one or multiple cluster labels.
+        - Operator - `In`: The node must contain the selected labels, and the label value must belong to the value group you defined. Multiple values are separated by `;`.
+        - Operator - `Exists`: The node only needs to have the label and its value doesn't matter.
 
-    <!--screenshot-->
+            ![Specify Labels](../images/deploy-create06.png)
 
-4. On the `Advanced Configuration` page, assign the configuration upgrade policy, scheduling policy, label and comment, and DNS, and click `Next`.
+    - Auto Propagation: When enabled, it automatically detects ConfigMaps, Secrets, and other resources that the multi-cloud workload depends on, and propagates these resources to each selected deployment cluster.
+    - Pods: Set the number of replicas for the multi-cloud workload.
+    - Deployment Policies
 
-    <!--screenshot-->
+        - `Duplicated`: Deploy the number of replicas set in the `Pods` field to each selected cluster. `Total Replicas = Pod number ✖️ Cluster number`
+        - `Aggregated`: Distribute the number of replicas set in the `Pods` field to as few clusters as possible. `Total Replicas = Pod number`
+        - `Dynamic Weight`: Dynamically distribute workloads subject to the available resources in each cluster. `Total Replicas = Pod number`
 
-    If you do not need to configure differentiation after the creation is complete, you can directly use `Confirm` to complete the creation of the multicloud workload
+    !!! note
 
-5. On the `Differential Configuration` page, after selecting the personalized container configuration, labels and annotations, click `OK`.
+        - If cannot find your target cluster, you can either reduce filtering conditions or [add new worker clusters](../cluster.md#_2).
+        - After setting the `Pods` and `Deployment Policies`, the total number of replicas to be deployed will be displayed below the selected policy.
 
-    <!--screenshot-->
+3. Refer to the [container configuration](../../kpanda/user-guide/workloads/create-deployment.md#_4) to fill in the container settings.
 
-    You can add the corresponding differentiated configuration item in the list area on the left. After you add a differentiated configuration item, you need to specify the corresponding cluster.
-    The selectable range of the cluster is only the cluster selected at the beginning, and the selected cluster will use the specified differential configuration; the unspecified cluster will still use the default configuration
+4. Refer to the [advanced configuration](../../kpanda/user-guide/workloads/create-deployment.md#_6) to fill in the advanced settings.
 
-6. A successful creation prompt will appear on the screen, you can now [create multicloud service](../resource/service.md)!
+    !!! note
 
-    <!--screenshot-->
+        - If you don't need differentiated configurations, simply click `OK` in the lower right corner to complete the creation.
+        - If you need differentiated configurations, click `Next` and refer to instructions below to add more settings.
 
-!!! note
+5. Refer to the instructions below to fill in the differentiated configurations, and click `OK`.
 
-    - When creating a multicloud workload through mirroring, if you need to use the advanced capabilities of specifying a location and specifying a label to create, you need to ensure that the corresponding location or label has been set for the working cluster;
-    Adding tags needs to be added within a single cluster, and can be jumped to the corresponding cluster maintenance from the working cluster management list.
-    - When configuring the number of replicas, you need to pay attention to the corresponding scheduling strategy. Only when it is repeated, will all the configured replicas be started in multiple clusters.
-    - Automatic Propagation: By default, resources such as ConfigMap and Secret depended on in the multicloud workload configuration are automatically detected. When the button is turned on, it means that these resources will be automatically propagated together with the multicloud workload.
+    - `Default`: This refers to the general configuration filled in the previous steps and cannot be modified here.
+    - If you need to modify the default configuration, you need to click `Previous` at the bottom of the page to return to the corresponding configuration environment and re-enter the information.
+    - Below the default configuration, click on the `+` button and select a cluster to set differentiated configurations for that specific cluster, different from other clusters.
+    - Clusters that do not have differentiated configurations will use the default configuration.
+    - Currently, you can configure different container images, environment variables, labels, and annotations for different clusters.
+
+        ![Differentiated Configurations](../images/deploy-create07.png)
+
+You will be automatically redirected to the list of multi-cloud deployments. By clicking the "More Actions" button on the right side, you can edit the YAML of the workload, update/pause/restart/delete the workload.
+
+![More Actions](../images/deploy-update01.png)
