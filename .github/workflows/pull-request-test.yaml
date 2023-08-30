@@ -42,8 +42,7 @@ jobs:
 #       - run: pip install -e mkdocs-material
 
       # Runs a single command using the runners shell
-      - run: pip install mkdocs-material \
-              mkdocs-git-revision-date-plugin \
+      - run: pip install mkdocs-git-revision-date-plugin \
               mkdocs-mermaid2-plugin \
               mkdocs-rss-plugin \
               mkdocs-minify-plugin \
@@ -51,8 +50,10 @@ jobs:
               mkdocs-git-revision-date-localized-plugin \
               mkdocs-awesome-pages-plugin \
               mkdocs-redirects \
-              mkdocs-print-site-plugin
-      
+              mkdocs-print-site-plugin \
+              mkdocs-swagger-ui-tag \
+              pyyaml
+              
       # add custom plugin with pdf support
       - run: pip install git+https://github.com/SAMZONG/mkdocs-with-pdf-support-material-v8
 
