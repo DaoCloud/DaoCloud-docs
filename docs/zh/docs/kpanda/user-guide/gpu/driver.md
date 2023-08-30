@@ -28,7 +28,7 @@
         ubuntu-drivers devices
         ```
 
-        ![Alt text](image.png)
+        ![Alt text](images/image.png)
 
     - 选择合适的版本进行安装
 
@@ -115,7 +115,7 @@
 
 ### gpu-operator 安装
 
-![Alt text](image-1.png)
+![Alt text](images/image-1.png)
 
 GPU Operator 能够在 K8s 基础上进行 GPU 相关底层依赖的的操作，这其中就包括 GPU 驱动、Container ToolKit、
 Device Plugin 资源自动上报等等能力，再也不用额外关注驱动这些糟心的事情了，理论上只要 GPU 卡插好，装上 K8s，
@@ -153,4 +153,4 @@ Device Plugin 资源自动上报等等能力，再也不用额外关注驱动这
 上述两个方案安装之后 pod 使用 GPU 时只能使用整卡资源，不能使用 vGPU 功能，如果需要使用 vGPU 需要在
 DCE 5.0 容器管理的 Helm 仓库中查找 nvidia-vgpu 模块，并进行安装。
 
-![Alt text](image-2.png)
+![Alt text](images/image-2.png)

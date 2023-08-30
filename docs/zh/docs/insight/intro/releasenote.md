@@ -113,7 +113,7 @@
 !!! warning
 
     可观测性 Insight v0.16.0 使用了 vmalertmanagers CRD 的新特性参数 `disableRouteContinueEnforce`, 
-    升级 insight server 前，请参考[从 v0.15.x（或更低版本）升级到 v0.16.x](../quickstart/upgrade-note.md/#v015x-v016x)
+    升级 insight server 前，请参考[从 v0.15.x（或更低版本）升级到 v0.16.x](../quickstart/install/upgrade-note.md)
 
 #### 新增
 
