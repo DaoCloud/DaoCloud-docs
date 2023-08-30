@@ -130,10 +130,8 @@
     1. 更新容器管理的 helm 仓库。
 
         ```shell
-        helm repo update kpanda # (1)
+        helm repo update kpanda
         ```
-
-        1. helm 版本过低会导致失败，若失败，请尝试执行 helm update repo
 
     1. 选择您想安装的容器管理版本（建议安装最新版本）。
 

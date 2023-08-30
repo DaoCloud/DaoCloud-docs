@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# Mirror creation task
+# Create Job from Image
 
 Follow the steps below to create a task (Job).
 

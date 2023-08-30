@@ -20,6 +20,7 @@ repo_url: https://github.com/DaoCloud/DaoCloud-docs
 edit_uri: edit/main/docs/en/docs/
 
 use_directory_urls: false # disbale https://www.mkdocs.org/user-guide/configuration/#use_directory_urls
+strict: true # enable strict mode, https://www.mkdocs.org/user-guide/configuration/#strict
 
 # Configuration
 theme:
@@ -101,17 +102,17 @@ plugins:
       redirect_maps:
         "en/install/install-dce.md": "install/index.md"
 
-  - git-revision-date: # Display the last update date on the bottom of each page, install with 'pip install mkdocs-git-revision-date-plugin'
-      enabled_if_env: "CI"
-  - git-revision-date-localized: # Add localized creation and update dates on the bottom of each page, install with 'pip install mkdocs-git-revision-date-localized-plugin'
-      timezone: Asia/Shanghai
-      type: timeago # Date format, valid values are 'date', 'datetime', 'iso_date', 'iso_datetime' and 'timeago'
-      fallback_to_build_date: true # Default is false, enables fallback to time when mkdocs build was executed
-      enable_creation_date: true # Show the file creation date next to the last update date
+  # - git-revision-date: # Display the last update date on the bottom of each page, install with 'pip install mkdocs-git-revision-date-plugin'
+  #     enabled_if_env: "CI"
+  # - git-revision-date-localized: # Add localized creation and update dates on the bottom of each page, install with 'pip install mkdocs-git-revision-date-localized-plugin'
+  #     timezone: Asia/Shanghai
+  #     type: timeago # Date format, valid values are 'date', 'datetime', 'iso_date', 'iso_datetime' and 'timeago'
+  #     fallback_to_build_date: true # Default is false, enables fallback to time when mkdocs build was executed
+  #     enable_creation_date: true # Show the file creation date next to the last update date
 
-      exclude:
-        - index.md
-      enabled: !ENV [ENABLED_GIT_REVISION_DATE, true]
+  #     exclude:
+  #       - index.md
+  #     enabled: !ENV [ENABLED_GIT_REVISION_DATE, true]
 
   # auto desgin nav in dirs
   # - awesome-pages:

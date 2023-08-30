@@ -16,6 +16,7 @@
 - :material-middleware: **中间件** [ES, Kafka, MinIO, MySQL 等](mcamel.md)
 - :material-warehouse: **镜像仓库** [镜像集成和托管服务](kangaroo.md)
 - :material-dot-net: **网络** [多 CNI 融合方案](network.md)
+- :fontawesome-brands-edge-legacy: **云边协同** [容器能力延伸至边缘](kant.md)
 
 </div>
 

@@ -150,12 +150,12 @@ If you deploy Hwameistor in a production environment, please specify the resourc
 
 1. If it is created through Helm, it can be created in the following way:
 
-     ```console
-     helm install hwameistor ./hwameistor \
-         -n hwameistor --create-namespace \
-         -f ./hwameistor/values.yaml \
-         -f ./hwameistor/values.extra.prod.yaml
-     ```
+    ```console
+    helm install hwameistor ./hwameistor \
+        -n hwameistor --create-namespace \
+        -f ./hwameistor/values.yaml \
+        -f ./hwameistor/values.extra.prod.yaml
+    ```
 
 2. If installing through the UI interface, please manually configure the above resources
    through the Resource value in YAML, otherwise it will not be configured by default:

@@ -133,12 +133,10 @@ kubectl -n NS_NAME apply -f dc-nginx.yaml dc-nginx-svc.yaml
 After the workload is successfully started, you can view it in the `Mesh Sidecar` section.
 By default, it is not injected and can be manually injected.
 
-![image](../images/custom-workloads-01.png)
 
 In the service list, you can see the corresponding service. At this point, the service's workload
 is also running normally, and you can add corresponding policies to enable access to the service.
 
-![image](../images/custom-workloads-02.png)
 
 ## Conclusion
 

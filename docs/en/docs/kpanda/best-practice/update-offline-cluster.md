@@ -161,5 +161,4 @@ Because the offline environment cannot be connected to the Internet, users need 
 
 ## Upgrade the kubernetes version of the work cluster using the platform UI
 
-Log in to the UI management interface of DCE 5.0, and upgrade the self-built work cluster of the platform
-by following [cluster upgrade documentation](../../kpanda/user-guide/clusters/upgrade-cluster).
+Log in to DCE 5.0, and upgrade the self-built worker cluster in reference to [Upgrade Cluster](../user-guide/clusters/upgrade-cluster.md).

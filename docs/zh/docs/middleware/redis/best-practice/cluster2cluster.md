@@ -1,4 +1,4 @@
-# 集群模式 VS 集群模式
+# 集群模式 to 集群模式
 
 Redis-shake 支持集群模式实例间的数据同步与迁移能力，现以以下 3 主 3 从集群模式 Redis 场景为例，演示跨集群同步配置方法。
 
@@ -35,7 +35,7 @@ Redis-shake 支持集群模式实例间的数据同步与迁移能力，现以�
 
 2. 更新该服务。并确定工作负载选择器包含以下标签
    
-    ```shell
+    ```yaml
     app.kubernetes.io/component: redis
     app.kubernetes.io/managed-by: redis-operator
     app.kubernetes.io/name: redis-a
@@ -63,25 +63,25 @@ Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 
 - source.address：源端 `redis-a-leader-0` 的 `redis-a-leader-svc-0` 服务地址：
 
-    ```shell
+    ```toml
     address = "10.233.109.145:6379"
     ```
     
 - 源端实例的访问密码：可在【中间件】实例的概览页获取该信息：
 
-    ```shell
+    ```toml
     password = "3wPxzWffdn" # keep empty if no authentication is required
     ```
 
 - 目标端实例访问地址，此处为目标端 redis-b 的默认 clusterIP 服务 redis-b-leader  的地址：
 
-    ```shell
+    ```toml
     address = "172.30.120.202:32283"
     ```
 
 - 目标端实例的访问密码，可在`数据服务`模块下的 Redis 实例概览页获取该信息:
 
-    ```shell
+    ```toml
     password = "3wPxzWffdn" # keep empty if no authentication is required
     ```
 
@@ -89,7 +89,7 @@ Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 
 - 目标端类型需设置为 `cluster`：
 
-    ```shell
+    ```toml
     [target]
     type = "cluster" # "standalone" or "cluster"
     ```
@@ -105,7 +105,7 @@ Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上�
     - 应用所属集群、命名空间需与 Redis 实例一致；
     - 镜像地址：
 
-        ```shell
+        ```yaml
         release.daocloud.io/ndx-product/redis-shake@sha256:46652d7d8893fa4508c3c6725afc1e211fb9cb894c4dc85e94287395a32fc3dc
         ```
 
@@ -115,7 +115,7 @@ Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 
     - `高级设置` - `生命周期`  - `启动命`令 - `运行参数` 填入：
 
-        ```shell
+        ```yaml
         /etc/sync/sync.toml
         ```
 
@@ -123,13 +123,13 @@ Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 
     - `高级设置` - `数据存储 `：添加配置项 `redis-sync-0`，路径必须设置为：
 
-        ```shell
+        ```yaml
         /etc/sync
         ```
 
     - `高级设置` -` 数据存储`：添加一个临时路径，容器路径必须为：
 
-        ```shell
+        ```yaml
         /data
         ```
 
@@ -154,3 +154,68 @@ Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 如需复原初始的主从同步关系 **实例 A >> 实例 B**，需在`容器管理`中停止源端集群中的 3 个 Redis-shake-recovery 实例，重新启动目标端集群中的 3 个 Redis-shake-sync 实例，即可重建初始主从关系。
 
 ![sync](../images/sync11.png)
+
+
+## 附录
+
+sync.toml
+
+```toml
+type = "sync"
+ 
+[source]
+version = 6.0 # redis version, such as 2.8, 4.0, 5.0, 6.0, 6.2, 7.0, ...
+address = "10.233.109.145:6379"
+username = "" # keep empty if not using ACL
+password = "3wPxzWffdn" # keep empty if no authentication is required
+tls = false
+elasticache_psync = "" # using when source is ElastiCache. ref: https://github.com/alibaba/RedisShake/issues/373
+ 
+[target]
+type = "cluster" # "standalone" or "cluster"
+version = 6.0 # redis version, such as 2.8, 4.0, 5.0, 6.0, 6.2, 7.0, ...
+# When the target is a cluster, write the address of one of the nodes.
+# redis-shake will obtain other nodes through the `cluster nodes` command.
+address = "10.233.103.2:6379"
+username = "" # keep empty if not using ACL
+password = "Aa123456" # keep empty if no authentication is required
+tls = false
+ 
+[advanced]
+dir = "data"
+ 
+# runtime.GOMAXPROCS, 0 means use runtime.NumCPU() cpu cores
+ncpu = 4
+ 
+# pprof port, 0 means disable
+pprof_port = 0
+ 
+# metric port, 0 means disable
+metrics_port = 0
+ 
+# log
+log_file = "redis-shake.log"
+log_level = "info" # debug, info or warn
+log_interval = 5 # in seconds
+ 
+# redis-shake gets key and value from rdb file, and uses RESTORE command to
+# create the key in target redis. Redis RESTORE will return a "Target key name
+# is busy" error when key already exists. You can use this configuration item
+# to change the default behavior of restore:
+# panic:   redis-shake will stop when meet "Target key name is busy" error.
+# rewrite: redis-shake will replace the key with new value.
+# ignore:  redis-shake will skip restore the key when meet "Target key name is busy" error.
+rdb_restore_command_behavior = "rewrite" # panic, rewrite or skip
+ 
+# pipeline
+pipeline_count_limit = 1024
+ 
+# Client query buffers accumulate new commands. They are limited to a fixed
+# amount by default. This amount is normally 1gb.
+target_redis_client_max_querybuf_len = 1024_000_000
+ 
+# In the Redis protocol, bulk requests, that are, elements representing single
+# strings, are normally limited to 512 mb.
+target_redis_proto_max_bulk_len = 512_000_000
+```
+

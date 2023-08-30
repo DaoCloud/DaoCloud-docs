@@ -9,7 +9,7 @@
 
 ### 准备新的存储磁盘
 
-在 Kubernetes 集群中新增一个节点，或者，选择一个已有的集群节点（非 HwameiStor 节点）。 该节点必须满足 [Prerequisites](/../install/prereq.md) 要求的所有条件。 本例中，所用的新增存储节点和磁盘信息如下所示：
+在 Kubernetes 集群中新增一个节点，或者，选择一个已有的集群节点（非 HwameiStor 节点）。 该节点必须满足 [Prerequisites](../install/prereq.md) 要求的所有条件。 本例中，所用的新增存储节点和磁盘信息如下所示：
 
 - name: k8s-worker-4
 - devPath: /dev/sdb
