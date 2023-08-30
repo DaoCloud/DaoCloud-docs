@@ -58,7 +58,7 @@ server {
 
 ## 定制外观
 
-通过`全局管理`-`平台设置`-`外观定制`可以自定义平台背景颜色、logo、名称等，具体操作请参照[外观定制](https://docs.daocloud.io/ghippo/user-guide/platform-setting/appearance.html#_1 "Permanent link")
+通过`全局管理` -> `平台设置` -> `外观定制`可以自定义平台背景颜色、logo、名称等，具体操作请参照[外观定制](../user-guide/platform-setting/appearance.md)
 
 ## 打通权限体系（可选）
 打通权限较为复杂，如有需求请联系全局管理团队。
