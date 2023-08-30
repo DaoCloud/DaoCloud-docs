@@ -51,7 +51,8 @@ server {
 ![身份提供商](zh/docs/ghippo/oem/images/idp.png)
 
 对接完成后，DCE5.0 登录页面将出现 OIDC（自定义） 选项，首次从客户平台进入DCE5.0时选择通过 OIDC 登录，后续将直接进入 DCE5.0 无需再次选择。
-![登录页](zh/docs/ghippo/oem/images/login.png)
+
+![登录页](images/login.png)
 
 ## 第三步对接导航栏
 对接导航栏是指DCE5.0出现在客户平台的菜单中，用户单击相应的菜单名称能够直接进入 DCE5.0。因此对接导航栏依赖于客户平台，不同平台需要按照具体情况进行处理。
