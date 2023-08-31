@@ -2,6 +2,42 @@
 
 本页列出服务网格各版本的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2023-08-31
+
+### v0.19.0
+
+#### 升级
+
+**新增** `userinfo` 接口，可以获取当前用户的权限信息。**注意：如果进入网格后，需要同时传入 `mesh_id` 参数才可以获取到精确的权限信息**。
+**新增** `Mcpc Controller` 支持虚拟机（自动创建 `WorkloadShadow`）。
+**新增** 网格创建虚拟机（VM）服务接口。
+**新增** 虚拟机（VM）离线安装包构建和上传脚本。
+**新增** 虚拟机（VM）绑定服务并生成配置接口。
+**新增** `Grafana` 路由面板添加 `Reporter` 参数。
+**新增** `Mspider` 虚拟机代理控制器（mspider-vm-agent）。
+**新增** `generator` 包，实现 `ComponentAnalyzer` ,传入 `MeshCluster` 或 `GlobalMesh`，即可获取对应组件状态。
+**优化** 网格是否可用升级接口，增加对权限的判断。
+**优化** 重写 `gsc-controller` 下的 mesh-cluster 中 `reconcileComponentsStatus` 。
+**升级** 前端版本至 `v0.17.0`。
+**升级** 支持的网格版本至 `1.16.6`, `1.17.5`, `1.18.2`。
+
+#### 修复
+
+**修复** 网格外的 `ServiceEntry` 筛选异常问题。
+**修复** 查询虚拟机工作负载实例时 `workloadId` 正则不兼容虚拟机工作负载 ID（`{CLUSTER}-vm-{VM_APP}-{VM_IP}-{VM_NETWORK}`）问题。
+**修复** 集群创建东西网关会强制覆盖网关系统默认的南北网关配置。
+**修复** 虚拟机服务自动创建了治理策略，并且修改 `label` 以后无法自动同步到 `WorkloadShadow` 问题。
+**修复** 多云互联创建网络分组，名称不可为数字开头的问题。
+**修复** 更新网格时导致自定义配置丢失的问题。
+**修复** 移除 `Secret` 的 `label`， 导致 `work-api` 组件空指针问题。
+**修复** 删除网格检测时包含系统命名空间导致网格删除失败。（会在删除时被我们卸载）。
+**修复** `customMeshConfig` 无法对 `Operator` 生效的问题。
+**修复** `Operator` 版本与实际安装 `Istio` 的版本不匹配的问题。
+**修复** `Mspider` 控制面 `API Server` 和 `Work API Server` 因为权限被禁用导致无法采集指标问题。
+**修复** `Mspider` 控制面和 `MCPC Ckube` 组件没有采集指标问题。
+**修复** `OTEL` 上报的 `trace` 数据中，`k8s.pod.name` 字段为 `unknown` 的问题。
+**修复** 首次执行虚拟机安装脚本时，存在 `warning` 告警。
+
 ## 2023-07-28
 
 ### v0.18.0
