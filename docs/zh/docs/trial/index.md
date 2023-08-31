@@ -27,13 +27,13 @@ DCE 社区版以云原生底座为核心，自研开源组件加持，提供云�
 
 ### 在线安装
 
-=== "All-in-one"
+=== "新手尝鲜"
 
     **适用范围:** 云原生小白和爱好者，在机器资源不充裕，并且对 Kubernetes 集群的了解还不够深入的情况下使用
 
     **预计时间:** 10-30 分钟
 
-    **前情描述:** All-in-one 安装模式能够帮助您零配置快速部署 DaoCloud Enterprise 社区版和 Kubernetes，
+    **前情描述:** 新手尝鲜安装模式能够帮助您零配置快速部署 DaoCloud Enterprise 社区版和 Kubernetes，
     对于刚接触 DaoCloud Enterprise 社区版并想快速上手的用户，是绝佳的选择。需要注意的是，
     该方式安装的特点仅支持通过节点端口的方式暴露 DaoCloud Enterprise 社区版来访问服务。
 

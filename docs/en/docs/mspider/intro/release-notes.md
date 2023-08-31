@@ -9,6 +9,45 @@ Date: 2023-07-28
 
 This page lists all the Release Notes for each version of Service Mesh, providing convenience for users to learn about the evolution path and feature changes.
 
+## 2023-08-31
+
+### v0.19.0
+
+#### Upgrades
+
+- **Added** `userinfo` interface to retrieve permissions information for the current user.
+
+    **Note: To obtain accurate permission information, the `mesh_id` parameter must be provided when accessing the mesh**.
+
+- **Added** support for virtual machines (automatically creates `WorkloadShadow`) in `Mcpc Controller`.
+- **Added** service interface for creating virtual machines (VM) within the mesh.
+- **Added** script for building and uploading offline installation packages for virtual machines (VM).
+- **Added** interface to bind services and generate configurations for virtual machines (VM).
+- **Added** `Reporter` parameter to the routing panel of `Grafana`.
+- **Added** `Mspider` virtual machine agent controller (`mspider-vm-agent`).
+- **Added** `generator` package, implementing `ComponentAnalyzer`. Pass in `MeshCluster` or `GlobalMesh` to retrieve corresponding component statuses.
+- **Improved** upgrade interface for checking mesh availability by adding permission checks.
+- **Improved** `reconcileComponentsStatus` in `gsc-controller` under mesh-cluster.
+- **Upgraded** frontend version to `v0.17.0`.
+- **Upgraded** supported mesh versions to `1.16.6`, `1.17.5`, `1.18.2`.
+
+#### Fixes
+
+- **Fixed** issue with filtering `ServiceEntry` outside the mesh.
+- **Fixed** compatibility problem with regular expression of `workloadId` when querying virtual machine workload instances (e.g., `{CLUSTER}-vm-{VM_APP}-{VM_IP}-{VM_NETWORK}`).
+- **Fixed** issue where creating east-west gateways during cluster creation would overwrite the default north-south gateway configuration.
+- **Fixed** automatic creation of governance policies for virtual machine services and inability to synchronize changes in labels to `WorkloadShadow`.
+- **Fixed** issue where network groups in multi-cloud interconnection couldn't have names starting with a digit.
+- **Fixed** loss of custom configuration when updating the mesh.
+- **Fixed** null pointer issue in `work-api` component due to removal of `label` from `Secret`.
+- **Fixed** failure to delete mesh when system namespaces were included (they are uninstalled during deletion).
+- **Fixed** issue where `customMeshConfig` didn't take effect on `Operator`.
+- **Fixed** mismatch between `Operator` version and actual installed version of `Istio`.
+- **Fixed** inability to collect metrics in `Mspider` control plane API Server and Work API Server due to permission issues.
+- **Fixed** issue where metrics weren't collected in `Mspider` control plane and `MCPC Ckube` components.
+- **Fixed** issue where `k8s.pod.name` field was reported as `unknown` in `OTEL` trace data.
+- **Fixed** warning alert during the initial execution of virtual machine installation script.
+
 ## 2023-07-28
 
 ### v0.18.0

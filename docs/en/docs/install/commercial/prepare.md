@@ -4,9 +4,9 @@ This page explains the preparation required for deploying DCE 5.0 Enterprise pac
 
 ## Host Requirements
 
-### All-in-One Mode
+### Beginner Mode
 
-Refer to [All-in-One Mode](./deploy-arch.md#all-in-one).
+Refer to [Beginner Mode](./deploy-arch.md#all-in-one).
 
 | **Number** | **Server Role** | **Server Purpose**                               | **CPU Cores** | **Memory** | **System Disk** | **Unpartitioned Disk** |
 | ---------- | --------------- | ------------------------------------------------ | ------------- | ---------- | -------------- | ---------------------- |
