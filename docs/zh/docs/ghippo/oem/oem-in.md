@@ -63,7 +63,7 @@ spec:
             inlineCode: |-
               function envoy_on_request(request_handle)
                 local path = request_handle:headers():get(":path")
-                <font class="bg-color-9" style="background-color:#009688">-- 请改为你需要的 subpath 路径</font>
+                # 请改为你需要的 subpath 路径
                 local mysubpath = "/external-anyproduct"
                 if string.sub(path,1,string.len(mysubpath)) ~= mysubpath then
                     return
@@ -85,8 +85,8 @@ spec:
     - to:
         - operation:
             paths:
-              <font class="bg-color-81" style="background-color:#009688"># 请改为你需要的 subpath 路径
-              # 注意，此配置仅适用开发环境，请勿用于生产环境，因为可能会造成 AuthN 失效！！！</font>
+              # 请改为你需要的 subpath 路径
+              # 注意，此配置仅适用开发环境，请勿用于生产环境，因为可能会造成 AuthN 失效！！！
               - /external-anyproduct*
     - from:
         - source:
@@ -133,7 +133,7 @@ auditserver:
 controllermanager:
   replicaCount: 1
 global:
- <font class="bg-color-81" style="background-color:#009688"> # 改为主 DCE5 的域名（IP）+ subpath</font>
+  # 改为主 DCE5 的域名（IP）+ subpath</font>
   reverseProxy: http://192.168.1.6:30444/external-anyproduct
   storage:
     audit:
@@ -187,17 +187,17 @@ spec:
   hosts:
   - external.svc.anyproduct
   ports:
-<font class="bg-color-81" style="background-color:#009688">  # 改为客户平台的端口号</font>
+  # 改为客户平台的端口号
   - number: 30080
     name: http
     protocol: HTTP
   location: MESH_EXTERNAL
   resolution: STATIC
   endpoints:
-<font class="bg-color-81" style="background-color:#009688">  # 改为客户平台的域名（或IP）</font>
+  # 改为客户平台的域名（或IP）
   - address: 192.168.1.6
     ports:
- <font class="bg-color-81" style="background-color:#009688">     # 改为客户平台的端口号</font>
+      # 改为客户平台的端口号
       http: 30080
 ```
 3. 使用 kubectl 命令应用 external-svc-anyproduct.yaml：
@@ -221,13 +221,13 @@ metadata:
   namespace: istio-system
 spec:
   jwtRules:
- <font class="bg-color-81" style="background-color:#009688"> # 新增规则1</font>
+  # 新增规则1
   - forwardOriginalToken: true
-   <font class="bg-color-81" style="background-color:#009688"> # 主 DCE5 的域名（或IP）+ subpath + /auth/realms/ghippo</font>
+    # 主 DCE5 的域名（或IP）+ subpath + /auth/realms/ghippo
     issuer: http://192.168.1.6:30444/external-anyproduct/auth/realms/ghippo
-   <font class="bg-color-81" style="background-color:#009688"> # 主 DCE5 的域名（或IP）+ subpath + /auth/realms/ghippo/protocol/openid-connect/certs</font>
+    # 主 DCE5 的域名（或IP）+ subpath + /auth/realms/ghippo/protocol/openid-connect/certs
     jwksUri: http://192.168.1.6:30444/external-anyproduct/auth/realms/ghippo/protocol/openid-connect/certs?1692515854
- <font class="bg-color-81" style="background-color:#009688"> # 新增规则2</font>
+  # 新增规则2
   - forwardOriginalToken: true
     issuer: ghippo.io
     # 主 DCE5 的域名（或IP）+ subpath + /apis/ghippo.io/v1alpha1/certs
@@ -316,13 +316,13 @@ spec:
   gproduct: gproduct-demo #
   proxies:
     ...
-  <font class="bg-color-81" style="background-color:#009688">  # 添加一条规则，'/external-anyproduct' 替换成你的 subpath</font>
+    # 添加一条规则，'/external-anyproduct' 替换成你的 subpath
     - match:
         uri:
           prefix: /external-anyproduct
       destination:
         host: external.svc.anyproduct
-       <font class="bg-color-81" style="background-color:#009688"> # 端口号替换成客户平台的端口号（ServiceEntry 定义的端口号）</font>
+        # 端口号替换成客户平台的端口号（ServiceEntry 定义的端口号）
         port: 30080
       authnCheck: false
 ```
