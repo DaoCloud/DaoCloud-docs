@@ -18,7 +18,7 @@ nav:
           - 安装依赖项: install/install-tools.md
           - 安装社区版:
               - 资源规划: install/community/resources.md
-              - All-in-one 在线安装: install/community/kind/online.md
+              - 新手尝鲜在线安装: install/community/kind/online.md
               - 已有 K8s 集群在线安装: install/community/k8s/online.md
               - 已有 K8s 集群离线安装: install/community/k8s/offline.md
           - 安装商业版:

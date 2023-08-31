@@ -1,6 +1,6 @@
 # Deployment Architecture
 
-DCE 5.0 offers three deployment architectures: all-in-one, 4-nodes, and 7-nodes.
+DCE 5.0 offers three deployment architectures: beginner mode, 4-nodes, and 7-nodes.
 
 The following table provides an overview of the terms used in the architecture:
 
@@ -11,11 +11,11 @@ The following table provides an overview of the terms used in the architecture:
 | Workload Cluster      | The workload cluster supports business applications and services. It should be deployed after successfully installing DCE.     |
 | DCE Component         | All components of DCE 5.0, including product modules such as global management, container management, observability, Workbench, Multicloud Management, container registry, microservice engine, service mesh, and middleware.          |
 
-## All-in-One Mode
+## Beginner Mode
 
-The all-in-one mode is suitable for individual customers and requires only one host. However, it is recommended to use this mode minimally by adding the `-z` parameter after the installation command when installing DCE 5.0.
+The beginner mode is suitable for individual customers and requires only one host. However, it is recommended to use this mode minimally by adding the `-z` parameter after the installation command when installing DCE 5.0.
 
-![All-in-One Mode Diagram](../images/allinone.png)
+![Beginner Mode Diagram](../images/allinone.png)
 
 ## 4-Node Mode
 
