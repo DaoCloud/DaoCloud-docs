@@ -9,10 +9,10 @@ the evolution path and feature changes of each version.
 
 #### New Features
 
-- **New** Container event alerts
-- **New** Linked query-related logs
-- **New** Metadata added to event details
-- **New** Support for Lucene syntax queries in logs
+- **Added** Container event alerts
+- **Added** Linked query-related logs
+- **Added** Metadata added to event details
+- **Added** Support for Lucene syntax queries in logs
 
 #### Enhancements
 
@@ -28,6 +28,7 @@ the evolution path and feature changes of each version.
 - **Fix** Resolved redirection issue with repair suggestions in alerts
 - **Fix** Addressed compatibility issues with certain data in event queries
 - **Fix** Corrected color error in legend of topology graph
+- **Fix** the issue where all nodes became external nodes in the topology diagram when canceling cluster and namespace boundaries.
 
 ### Insight Agent: v0.20.0
 
