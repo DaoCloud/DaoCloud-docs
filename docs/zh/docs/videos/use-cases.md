@@ -9,13 +9,13 @@
 ## 如何将单云应用一键转换为多云应用？
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/crosscloud-migrate-zh.mp4" preload="metadata" poster="images/multicloud-convert.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/single-to-multi.mov" preload="metadata" poster="images/single-to-multi.png"></video>
 </div>
 
 ## 如何在 DCE 5.0 中部署混合云应用？
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/failover-zh.mp4" preload="metadata" poster="images/hybrid-expansion.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/hybridcloud.mov" preload="metadata" poster="images/hybridcloud.png"></video>
 </div>
 
 ## 如何将微服务接入 DCE 5.0 并治理南北向流量？
@@ -27,7 +27,7 @@
 ## 如何借助服务网格治理传统微服务东西向流量？
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/microservice02.mp4" preload="metadata" poster="images/west-east.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/microservice02.mov" preload="metadata" poster="images/west-east.jpg"></video>
 </div>
 
 ## 如何将 DCE 5.0 集成到客户平台？
