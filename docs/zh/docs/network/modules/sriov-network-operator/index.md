@@ -7,7 +7,7 @@ Date: 2023-01-04
 
 # 什么是 Sriov-network-operator
 
-目前使用 sriov 比较复杂繁琐，需要管理员完全手动配置,  如手动确认网卡是否支持SRIOV、配置PF 和 VF等，参考 [sriov](../multus-underlay/sriov.md)。 社区开源 [Sriov-network-operator](https://github.com/k8snetworkplumbingwg/sriov-network-operator) ，旨在降低使用 sriov-cni 的难度。sriov-operator 整合 sriov-cni 和 sriov-device-plugin 两个项目，完全使用 CRD 的方式统一使用和配置 sriov，包括组件本身和节点上的必要配置，极大的降低了使用难度。
+目前使用 sriov 的方式比较复杂繁琐，需要管理员完全手动配置,  如手动确认网卡是否支持SRIOV、配置PF 和 VF等，参考 [sriov](../multus-underlay/sriov.md)。 社区开源 [Sriov-network-operator](https://github.com/k8snetworkplumbingwg/sriov-network-operator) ，旨在降低使用 sriov-cni 的难度。sriov-operator 整合 sriov-cni 和 sriov-device-plugin 两个项目，完全使用 CRD 的方式统一使用和配置 sriov，包括组件本身和节点上的必要配置，极大的降低了使用难度。
 
 ## 组件组成
 
