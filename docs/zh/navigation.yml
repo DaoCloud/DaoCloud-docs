@@ -909,6 +909,8 @@ nav:
           - 最佳实践:
               - 托管 Harbor 的访问类型: kangaroo/best-practice/managed-harbor-select-access-type.md
               - 登录非安全镜像仓库: kangaroo/best-practice/insecure_registry.md
+              - Harbor Nginx 配置最佳实践:  kangaroo/best-practice/harbor-nginx.md
+              - 镜像仓库容量资源规划:  kangaroo/best-practice/capactity-planning.md
       - 云边协同:
           - 介绍:
               - 什么是云边协同: kant/intro/index.md
