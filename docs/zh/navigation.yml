@@ -799,6 +799,7 @@ nav:
                   - 更新 PostgreSQL: middleware/postgresql/user-guide/update.md
                   - 删除 PostgreSQL: middleware/postgresql/user-guide/delete.md
                   - 查看 PostgreSQL 日志: middleware/postgresql/user-guide/logs.md
+                  - 手工设置工作负载反亲和: middleware/postgresql/user-guide/antiaffinity.md
           - MongoDB 数据库:
               - 介绍:
                   - 什么是 MongoDB: middleware/mongodb/intro/index.md

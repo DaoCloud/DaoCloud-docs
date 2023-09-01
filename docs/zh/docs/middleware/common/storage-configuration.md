@@ -22,19 +22,19 @@
 
         1. 在 MinIO 实例中点击`访问地址`进入管理界面；
 
-    ![list](images/cfg04.png)
+            ![list](images/cfg04.png)
 
         2. 点击 `Identity`-`Service Account`，创建一个新的 `Service Account`；
 
-    ![list](images/cfg05.png)
+            ![list](images/cfg05.png)
 
         3. 把此处创建的 Access_Key`、`Secret_Key` 复制到创建配置页面。
 
-    ![list](images/cfg06.png)
+            ![list](images/cfg06.png)
 
     - **Bucket 名称**：该名称用于定义备份所需的对象存储桶，可在MinIO管理平台中获取，如下图所示：
 
-    ![list](images/cfg07.png)
+        ![list](images/cfg07.png)
 
 4. 点击`确定`完成创建，该配置将可用于中间件的`备份/恢复`。
 
