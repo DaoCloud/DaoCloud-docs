@@ -344,6 +344,10 @@
 
     GraphQL for Gloo Gateway 无缝地将 GraphQL API 添加到 Gloo Gateway 中。用户可以借此对 API 进行联合 GraphQL 查询，而不需要为 GraphQL 建立额外的服务器以及解析器和解析器模式库；所有策略和请求都可以在 Envoy Proxy 过滤器中进行管理；同时支持声明式配置，与 CI/CD 和 GitOps 工作流完全兼容。
 
+- [Google Cloud 推出 GKE 企业版 GKE Enterprise](https://cloud.google.com/blog/products/containers-kubernetes/whats-new-with-gke-at-google-cloud-next)
+
+    GKE Enterprise 将 GKE 和 Anthos 的精华整合到一个集成、直观的容器平台中。其支持多集群工作负载 (fleet)；具有可管理的安全功能，包括高级工作负载漏洞监测、治理和策略控制以及可管理的服务网格；支持混合云和多云。此外，GKE Enterprise 还将软件部署时间缩短了 70% 多。
+
 - [Google Cloud GKE 引入 Network Function Optimizer，助力电信运营商采用云原生网络功能](https://cloud.google.com/blog/topics/telecommunications/network-function-optimizer-for-gke-and-gdc-edge)
 
     Network Function Optimizer on GKE 主要提供三个方面的能力：
@@ -752,6 +756,10 @@
 
     更新内容包括：新增边缘 K8s 集群的防篡改功能、支持边缘优化的 K8s 发行版 Palette eXtended Kubernetes Edge、简化边缘设备部署。
 
+- [StarRocks Labs 发布云原生湖仓 StarRocks 3.1](https://mp.weixin.qq.com/s/sryxFDRAP1M_ffxyUMhSEA)
+
+    更新内容：支持主键表模型及相关功能，查询和导入性能也基本与存算一体架构持平；极速数据湖分析性能提升， 并实现常用 Trino 语法的完全兼容；增加 Apache Iceberg 的读写支持、对流式数据湖 Apache Paimon 的分析支持；提升物化视图构建、刷新的稳定性，并提供更多灵活易用的创建和刷新参数、增加更多场景的 SQL 智能改写；提供了随机分桶、表达式分区、FILES 表函数等。
+
 - [StormForge 发布 Kubernetes 生产环境优化方案 Optimize Live v2.0](https://www.stormforge.io/press-releases/stormforge-launches-v2-optimize-live-kubernetes-resource-optimization/)
 
     更新内容：通过一个 helm deployment 即可调整应用的大小；使用机器学习分析工作负载使用模式，提供 CPU 和内存建议；能够自动检测 HPA 的存在；提供一系列资源使用报告；简化资源建议的部署。
@@ -870,6 +878,10 @@
 
     TLS Protect for Kubernetes 是 Venafi 机器身份管理平台 Control Plane for Machine Identities 的一部分，
     帮助安全和平台团队在多云和多集群 Kubernetes 环境中管理云原生机器身份，如 TLS、mTLS 和 SPIFFE，增强机器身份管理的可观测性、控制和自动化。
+
+- [VMware 云原生应用程序平台 VMware Tanzu Application Service 5.0 发布](https://tanzu.vmware.com/content/blog/tanzu-application-service-5-0-release-news)
+
+    更新内容：开发人员门户通过集成的平台数据库支持数据持久化（beta）、为所有平台组件增加分布式追踪功能、新增 BOSH 命令用于改进容灾工作流、增加 OpenTelemetry 支持（beta）、完善证书轮换流程的自动化。
 
 - [VMware Kubernetes DevOps 平台 VMware Tanzu Application Platform 1.6 发布](https://tanzu.vmware.com/content/blog/tanzu-application-platform-1-6-release-news)
 

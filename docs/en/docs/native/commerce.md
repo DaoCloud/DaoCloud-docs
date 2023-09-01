@@ -348,6 +348,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      GraphQL for Gloo Gateway seamlessly adds GraphQL APIs to Gloo Gateway. Users can use this to perform joint GraphQL queries on the API without the need to create additional servers, resolvers and resolver mode libraries for GraphQL; all policies and requests can be managed in the Envoy Proxy filter; while supporting declarative configuration, Fully compatible with CI/CD and GitOps workflows.
 
+- [Google Cloud Launches GKE Enterprise](https://cloud.google.com/blog/products/containers-kubernetes/whats-new-with-gke-at-google-cloud-next)
+
+    GKE Enterprise combines the best of GKE and Anthos into an integrated, intuitive container platform. It supports multi-clustered workloads (fleet); has manageable security features including advanced workload vulnerability monitoring, governance and policy control, and a manageable service grid; and supports hybrid and multi-cloud. In addition, GKE Enterprise reduces software deployment time by more than 70 percent.
+
 - [Google Cloud GKE introduces Network Function Optimizer to help telcos adopt cloud-native network features](https://cloud.google.com/blog/topics/telecommunications/network-function-optimizer-for-gke-and-gdc-edge)
 
     Network Function Optimizer on GKE provides three main capabilities.
@@ -738,6 +742,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Updates include: new tamper-resistant features for edge K8s clusters, support for the edge-optimized K8s distribution Palette eXtended Kubernetes Edge, and simplified edge device deployment.
 
+- [StarRocks Labs Releases Cloud-Native Lake Warehouse StarRocks 3.1](https://mp.weixin.qq.com/s/sryxFDRAP1M_ffxyUMhSEA)
+
+    Updates: Support for primary key table model and related functions, query and import performance is basically the same as that of the integrated storage and accounting architecture; high-speed data lake analytics performance is improved and fully compatible with commonly used Trino syntax; add read/write support for Apache Iceberg and analytics support for Apache Paimon, a streaming data lake; improve the stability of materialized view building and refreshing and provide more flexible and easy-to-create views. Provide more flexible and easy-to-use creation and refresh parameters, add more scenarios of SQL intelligent rewriting; provide random bucket, expression partitioning, FILES table function, etc..
+
 - [StormForge Releases Optimize Live v2.0, an Optimization Solution for Kubernetes Production Environments](https://www.stormforge.io/press-releases/stormforge-launches-v2-optimize-live-kubernetes-resource-optimization/)
 
     Updates: resizes applications with a single helm deployment; uses machine learning to analyze workload usage patterns and provide CPU and memory recommendations; can automatically detect the presence of HPAs; provides a range of resource usage reports; simplifies deployment of resource recommendations.
@@ -865,6 +873,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Volcano Engine Releases Distributed Cloud Native Platform DCP](https://mp.weixin.qq.com/s/Fz7R8R0keKFEryq8zQKFoA)
 
     [DCP](https://www.volcengine.com/product/dcp) is an enterprise-level cloud native unified management platform for multicloud and multi-Kubernetes cluster use cases, providing unified management and operation and maintenance of multicloud clusters, cross-cluster distribution of applications, unified traffic control and other capabilities, DCP provides unified management and operation and maintenance of Volcano Engine container clusters, third-party clusters and self-built clusters; provides cross-cluster and cross-cloud elastic scheduling capability based on cluster federation and other technologies; provides multicluster service discovery, multicluster unified portal access and other capabilities; enables application data recovery and cross-cluster/cloud application migration based on backup data.
+
+- [VMware Tanzu Application Service 5.0, VMware's cloud-native application platform, released](https://tanzu.vmware.com/content/blog/tanzu-application-service-5-0-release-news)
+
+    Updates: Developer portal supports data persistence through an integrated platform database (beta), adds distributed tracing for all platform components, adds BOSH commands for improved disaster recovery workflows, adds OpenTelemetry support (beta), and improves automation of the certificate rotation process.
 
 - [VMware Kubernetes DevOps Platform VMware Tanzu Application Platform 1.6 released](https://tanzu.vmware.com/content/blog/tanzu-application-platform-1-6-release-news)
 

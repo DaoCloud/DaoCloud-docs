@@ -257,6 +257,10 @@ This page lists activity in cloud native open source projects in alphabetical or
     During this audit, a [vulnerability](https://github.com/containerd/containerd/security/advisories/GHSA-259w-8hf6-59c2) was found in the OCI image import process: importing a malicious image could lead to a DoS attack on the node .
     This issue has been fixed in containerd 1.5.18 and 1.6.18.
 
+- [Contour Kubernetes ingress controller v1.26.0 released (CNCF project)](https://github.com/projectcontour/contour/releases/tag/v1.26.0)
+
+    Release features: support for gateway listeners on more than two ports, support for outputting stateful update load metrics, support for limiting the namespace of resources monitored by Contour instances, introduction of a new critical access logging level, and support for defining a default global rate-limiting policy.
+
 - [Contour Kubernetes ingress controller v1.25.0 released (CNCF project)](https://github.com/projectcontour/contour/releases/tag/v1.25.0)
 
     Version features: HTTPProxy support for configuring IP filters, support for exporting trace data to OpenTelemetry, support for external authorization for all hosts, support for internal redirection.
@@ -530,6 +534,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
     Version features: support for golang 1.20, removal of support for Kubernetes 1.23, integration with OpenTelemetry module.
 
+- [Istio Community Releases Istio 1.18 Performance Test Results](https://istio.io/latest/docs/ops/deployment/performance-and-scalability/)
+
+    The Istio load test grid consists of 1000 services and 2000 sidecars with 70,000 grid-wide requests per second. The control plane supports thousands of services distributed across thousands of Pods. Data plane performance is affected by a variety of factors such as the number of client connections, request size and response size, the number of agent worker threads, protocols, CPU cores, and so on. each of the features injected by Istio may increase the internal path length of the agent, as well as affecting latency.
+
 - [Istio Project Officially Graduates from CNCF](https://mp.weixin.qq.com/s/QaHU3OtLVFKPCz69z8176Q)
 
     Less than a year after entering the CNCF as an incubator project, Istio has become a CNCF graduate, the fastest project to graduate in CNCF history. Graduation from the CNCF means that Istio has become a key component of the modern application network, demonstrating that it is a proven, mature project that can be used to scale critical applications in production.
@@ -604,6 +612,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [KapacityStack: Cloud-native intelligent capacity technology open sourced by Ant Group](https://mp.weixin.qq.com/s/Wm4wj1OTANLYZaziRH2sDw)
 
     [KapacityStack](https://github.com/traas-stack/kapacity) provides IHPA (Intelligent Horizontal Pod Autoscaler) capabilities: supports scaling up and down using different algorithms for different scenarios; supports fine-grained control of each Pod's state throughout the The entire IHPA capability is split into three modules: control, decision, and execution, any of which can be replaced or extended.
+
+- [Karmada Multi-Cloud Multi-Cluster Container Orchestration Platform v1.7.0 Released (CNCF Project)](https://github.com/karmada-io/karmada/blob/master/docs/CHANGELOG/CHANGELOG-1.7.md)
+
+    Features: Introduces the CronFederatedHPA API for automatically adjusting the number of replicas of a workload at regular intervals; introduces the MultiClusterService API for controlling the exposure of a service to multiple external clusters and realizing service discovery between clusters; supports the preemption of resources according to the priority declaration reservation policy; supports the batch migration of resources without the need to terminate or restart a container; supports the batch migration of resources without the need to terminate or restart a container; supports the batch migration of resources without the need to terminate or restart a container; supports the batch migration of resources without the need to terminate or restart a container. support for batch migration of resources without container termination or restart; FederatedHPA support for adjusting the number of replicas based on customized metrics other than CPU and memory.
 
 - [Karmada Multi-Cloud Multi-Cluster Container Orchestration Platform v1.6.0 Released (CNCF Project)](https://github.com/karmada-io/karmada/releases/tag/v1.6.0)
 
@@ -802,6 +814,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Kube-OVN v1.10.0 release (CNCF project)](https://mp.weixin.qq.com/s/e1TW_s3r9__qSgZz6aWmAA)
 
      The main new features of this version: ACL field is added in the subnet, and users can write ACL rules that conform to the OVN flow table specification according to their own needs; in the KubeVirt scenario, the address allocation strategy of VM instance adopts a strategy similar to that of StatefulSet, and supports DPDK, DHCP; Integrated SubMariner is used for the interconnection of multiple clusters; for large-scale environments, the performance of the control plane is optimized.
+
+- [Kubernetes Gateway API v0.8.0 released](https://github.com/kubernetes-sigs/gateway-api/releases/tag/v0.8.0)
+
+    Release features: Introduction of Service Grid support, support for CEL authentication (fully supported in Kubernetes 1.25+ only).
 
 - [Kubernetes Cluster API v1.4.0 Released](https://github.com/kubernetes-sigs/cluster-api/releases/tag/v1.4.0)
 
@@ -1293,6 +1309,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Prometheus v2.36.0 release (CNCF project)](https://github.com/prometheus/prometheus/releases/tag/v2.36.0)
 
      The main new features of this version: Vultr integration, Linode SD failure count metric and `prometheus_ready` metric added, `stripDomain` added to the template function, promtool supports using matchers when querying label values, and proxy pattern identifiers added.
+
+- [Pyroscope Performance Continuous Analysis Platform v1.0 Released](https://github.com/grafana/pyroscope/releases/tag/v1.0.0)
+
+    Pyroscope is a horizontally scalable, highly available, multi-tenant continuous analytics aggregation system with an architecture similar to Grafana Mimir, Loki, and Tempo; installation guides for Helm, Tanka, and docker-compose; and Grafana Explore and dashboards to correlate continuous analytics data with other observable data. Grafana Explore and dashboards can be used to correlate continuous analysis data with other observable data.
 
 ### R
 

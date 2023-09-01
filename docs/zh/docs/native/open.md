@@ -257,6 +257,11 @@
     在此审计过程中，在 OCI 镜像导入程序中发现了一个[漏洞](https://github.com/containerd/containerd/security/advisories/GHSA-259w-8hf6-59c2)：导入恶意镜像可能会导致节点的 DoS 攻击。
     该问题已在 containerd 1.5.18 和 1.6.18 中修复。
 
+
+- [Contour Kubernetes ingress 控制器 v1.26.0 发布（CNCF 项目）](https://github.com/projectcontour/contour/releases/tag/v1.26.0)
+
+    版本特性：支持两个以上端口的网关监听器、支持输出状态更新负载指标、支持限制 Contour 实例所监测资源的命名空间、引入新的临界访问日志级别、支持定义默认的全局速率限制策略。
+
 - [Contour Kubernetes ingress 控制器 v1.25.0 发布（CNCF 项目）](https://github.com/projectcontour/contour/releases/tag/v1.25.0)
 
     版本特性：HTTPProxy 支持配置 IP 过滤器、支持将追踪数据导出到 OpenTelemetry、支持所有主机的外部授权、支持内部重定向。
@@ -534,6 +539,10 @@
 
     版本特性：支持 golang 1.20、移除对 Kubernetes 1.23 的支持、集成 OpenTelemetry 模块。
 
+- [Istio 社区发布 Istio 1.18 性能测试结果](https://istio.io/latest/docs/ops/deployment/performance-and-scalability/)
+
+    Istio 负载测试网格由 1000 个服务和 2000 个 sidecar 组成，每秒有 70,000 个网格范围的请求。控制平面支持数千个服务，分布在数千个 Pod 中。数据平面性能受到客户端连接数、请求大小和响应大小、代理工作线程数、协议、CPU 核数等多种因素的影响。Istio 注入的每个功能可能会增加代理内部路径长度，以及影响延迟。
+
 - [Istio 项目正式从 CNCF 毕业](https://mp.weixin.qq.com/s/QaHU3OtLVFKPCz69z8176Q)
 
     作为一个孵化项目进入 CNCF 不到一年的时间，Istio 就成为了 CNCF 的毕业项目，创下 CNCF 历史上最快毕业的项目记录。从 CNCF 毕业意味着，Istio 已经成为现代应用程序网络的关键组件，表明它是一个经过验证的成熟项目，可用于在生产中扩展关键应用程序。
@@ -608,6 +617,10 @@
 - [KapacityStack：由蚂蚁集团开源的云原生智能容量技术](https://mp.weixin.qq.com/s/Wm4wj1OTANLYZaziRH2sDw)
 
     [KapacityStack](https://github.com/traas-stack/kapacity) 提供了 IHPA（Intelligent Horizontal Pod Autoscaler）能力：支持在不同场景因地制宜地使用不同的算法进行扩缩容；支持在整个弹性过程中精细化地控制工作负载下每一个 Pod 的状态；在执行扩缩容时支持采用自定义灰度分批的变更策略；支持用户自定义的变更期稳定性检查；整个 IHPA 能力就拆分为了管控、决策、执行三大模块，任一模块都可以做替换或扩展。
+
+- [Karmada 多云多集群容器编排平台 v1.7.0 发布（CNCF 项目）](https://github.com/karmada-io/karmada/blob/master/docs/CHANGELOG/CHANGELOG-1.7.md)
+
+    版本特性：引入 CronFederatedHPA API，用于定时自动调整工作负载的副本数量；引入MultiClusterService API，用于控制服务对多个外部集群的暴露，并实现集群之间的服务发现；支持根据优先级声明预留策略抢占资源；支持在无需容器终止或重启的前提下批量迁移资源；FederatedHPA 支持根据除 CPU 和内存以外的自定义指标来调整副本的数量。
 
 - [Karmada 多云多集群容器编排平台 v1.6.0 发布（CNCF 项目）](https://github.com/karmada-io/karmada/releases/tag/v1.6.0)
 
@@ -806,6 +819,10 @@
 - [Kube-OVN v1.10.0 发布（CNCF 项目）](https://mp.weixin.qq.com/s/e1TW_s3r9__qSgZz6aWmAA)
 
     该版本主要新特性：在子网新增 ACL 字段，用户可以按照自己的需求编写符合 OVN 流表规范的 ACL 规则； KubeVirt 场景下， VM instance 的地址分配策略采用和 StatefulSet 类似的策略，支持 DPDK、DHCP；集成 Submariner 用于多集群的互联；针对大规模环境，对控制平面性能进行了优化等。
+
+- [Kubernetes Gateway API v0.8.0 发布](https://github.com/kubernetes-sigs/gateway-api/releases/tag/v0.8.0)
+
+    版本特性：引入服务网格支持、支持 CEL 验证(仅 Kubernetes 1.25+ 版本完全支持)。
 
 - [Kubernetes Cluster API v1.4.0 发布](https://github.com/kubernetes-sigs/cluster-api/releases/tag/v1.4.0)
 
@@ -1291,6 +1308,10 @@
 - [Prometheus v2.36.0 发布（CNCF 项目）](https://github.com/prometheus/prometheus/releases/tag/v2.36.0)  
 
     该版本主要新特性：集成 Vultr、添加 Linode SD 故障计数指标和 `prometheus_ready` 指标、在模板 function 中添加 `stripDomain`、promtool 支持在查询标签值时使用匹配器、增加代理模式标识符。
+
+- [Pyroscope 性能持续分析平台 v1.0 发布](https://github.com/grafana/pyroscope/releases/tag/v1.0.0)
+
+    Pyroscope 是一个可水平扩展、高可用、多租户的持续分析聚合系统，其架构与 Grafana Mimir、Loki 和 Tempo 相似；提供 Helm、Tanka 和 docker-compose 安装指南；可使用 Grafana Explore 和仪表盘将持续分析数据与其他可观测数据关联起来。
 
 ### R
 
