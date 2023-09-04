@@ -970,6 +970,7 @@ nav:
               - 下载网络 Spidernet: download/modules/spidernet.md
               - 下载镜像仓库: download/modules/kangaroo.md
               - 下载运营管理: download/modules/gmagpie.md
+              - 下载多云编排: download/modules/kairship.md
   - 免费体验:
       - 体验社区版: trial/index.md
   - 博客:
