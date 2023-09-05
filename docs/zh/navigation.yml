@@ -788,7 +788,7 @@ nav:
                   - 数据同步介绍: middleware/redis/best-practice/disaster-tolerance.md
                   - 集群模式 to 集群模式: middleware/redis/best-practice/cluster2cluster.md
                   - 哨兵模式 to 哨兵模式: middleware/redis/best-practice/sentinel2sentinel.md
-                  - 集群模式 to 哨兵模式: middleware/redis/best-practice/cluster2cluster.md
+                  - 集群模式 to 哨兵模式: middleware/redis/best-practice/cluster2sentinel.md
           - PostgreSQL 数据库:
               - 介绍:
                   - 什么是 PostgreSQL: middleware/postgresql/intro/index.md

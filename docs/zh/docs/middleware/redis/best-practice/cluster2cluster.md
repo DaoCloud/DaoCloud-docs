@@ -27,9 +27,17 @@ Redis-shake 支持集群模式实例间的数据同步与迁移能力，现以�
 
 ### 为源端实例配置服务
 
-为 Redis 实例的每一个 Leader Pod 创建一个 `Nodeport` 服务，用于 Redis-Shake 的数据同步访问。本例中需要为实例 A 的 3 个 Leader Pod 分别创建服务，下面以 Pod `redis-a-leader-0` 为例，为其创建服务：
+如果源端实例处于 DCE 5.0 的集群中，可在`数据服务` - `Redis` - `解决方案` - `跨集群中从同步`中开启方案，将自动完成服务配置工作。
 
-1. 进入`容器管理` - `源端集群` - `有状态工作负载`：选择工作负载 `redis-a-leader`，为其创建一个服务，命名为 `redis-a-leader-svc-0`，访问类型为 `Nodeport`，容器端口和服务端口均为 6379。
+![svc](../images/sync17.png)
+
+如果源端实例处于第三方集群上，则需要手工完成服务配置，配置方法如下文：
+
+为 Redis 实例的每一个 Leader Pod 创建一个 `Nodeport` 服务，用于 Redis-Shake 的数据同步访问。本例中需要为实例 A 的 3 个 Leader Pod 分别创建服务。
+
+下面以 Pod `redis-a-leader-0` 为例，为其创建服务：
+
+1. 进入`容器管理` - `源端 Redis 实例所在集群` - `有状态工作负载`：选择工作负载 `redis-a-leader`，为其创建一个服务，命名为 `redis-a-leader-svc-0`，访问类型为 `Nodeport`，容器端口和服务端口均为 6379。
 
     ![svc](../images/sync03.png)
 
@@ -53,11 +61,12 @@ Redis-shake 支持集群模式实例间的数据同步与迁移能力，现以�
 
 Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上，因此，本例中为了实现数据同步，需要在目标端部署redis-shake，配置方式如下。
 
-在集群模式下，需要为源端 Redis 实例 cluster-a 的每一个 Leader Pod 部署独立的 Redis-shake。以 redis-a-leader-0  为例，创建 Redis-shake-sync-0：
+注意，在集群模式下，Redis-shake 要求与源端 Redis 实例的 Leader Pod 形成一对一关系（请参考图例：数据同步 实例 A >> 实例 B），因此这里需要部署 3 个独立的 Redis-shake。
+以 redis-a-leader-0  为例，创建 Redis-shake-sync-0：
 
 #### 1. 创建配置项
 
-在`容器管理` - `{目标端集群}` - `配置与存储` - `配置项`为 Redis-shake 实例创建配置项 `redis-sync-0`。导入文件 `sync.toml`（文件内容见附录），并注意需要修改以下内容：
+在`容器管理` - `{目标端 Redis 实例所在集群}` - `配置与存储` - `配置项`为 Redis-shake 实例创建配置项 `redis-sync-0`。导入文件 `sync.toml`（文件内容见附录），并注意需要修改以下内容：
 
 ![conf](../images/sync05.png)
 
@@ -79,6 +88,11 @@ Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上�
     address = "172.30.120.202:32283"
     ```
 
+    改配置可在`集群管理` - `目标端所在集群` - `工作负载` - `访问方式` 中查看。如下图所示
+
+    ![conf](../images/sync18.png)
+
+
 - 目标端实例的访问密码，可在`数据服务`模块下的 Redis 实例概览页获取该信息:
 
     ```toml
@@ -96,7 +110,7 @@ Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 
 #### 2. 创建 Redis-shake
 
-1. 打开`应用工作台`，选择`向导`-`基于容器镜像`，创建一个应用 `Redis-shake-sync-0`：
+1. 打开`应用工作台`，选择`向导`-`基于容器镜像`，创建一个应用 `redis-shake-sync-0`：
 
     ![sync](../images/sync07.png)
 
@@ -113,7 +127,7 @@ Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 
         ![sync](../images/sync08.png)
 
-    - `高级设置` - `生命周期`  - `启动命`令 - `运行参数` 填入：
+    - `高级设置` - `生命周期`  - `启动命令` - `运行参数` 填入：
 
         ```yaml
         /etc/sync/sync.toml
@@ -137,7 +151,7 @@ Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 
 3. 点击`确定`，完成 Redis-shake 创建。
 
-重复执行以上操作，分别为其他两个 Leader Pod 创建 `Redis-shake-sync-1`，`Redis-shake-sync-2`。
+重复执行以上操作，分别为其他两个 Leader Pod 创建 `redis-shake-sync-1`，`redis-shake-sync-2`。
 
 完成 Redis-shake 的创建后，实际就已经开始 Redis 实例间的同步，此时可通过 `redis-cli` 工具验证同步，这里就不做赘述。
 
