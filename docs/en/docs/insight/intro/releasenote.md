@@ -3,6 +3,48 @@
 This page lists the Release Notes of Insight Observability, so that you can understand
 the evolution path and feature changes of each version.
 
+## 2023.08.31
+
+### Insight Server: v0.20.0
+
+#### New Features
+
+- **Added** Container event alerts
+- **Added** Linked query-related logs
+- **Added** Metadata added to event details
+- **Added** Support for Lucene syntax queries in logs
+
+#### Optimization
+
+- **Optimization** Added prompts for cluster status abnormalities
+- **Optimization** Improved filtering conditions for logs
+- **Optimization** Allow adding duplicate tags when creating silent alert conditions
+- **Optimization** Node logs now support filtering by file path
+- **Optimization** by adding built-in alerting policies for CoreDNS.
+
+#### Bug Fixes
+
+- **Fixed** Corrected creation time for Elasticsearch in system components.
+- **Fixed** Resolved discrepancy between the number of logs retrieved in contextual log queries and the actual count.
+- **Fixed** Fixed redirection issue with repair suggestions in alerts.
+- **Fixed** Addressed compatibility issues with certain data in event queries.
+- **Fixed** Corrected color error in the legend of the topology graph.
+- **Fixed** Resolved the issue where all nodes became external nodes in the topology diagram when canceling cluster and namespace boundaries.
+- **Fixed** Failure to send alerts if there is an error in the content of any notification type in the message template.
+
+### Insight Agent: v0.20.0
+
+#### Optimization
+
+- **Optimization** Support for consuming log and linked data via Kafka
+
+#### Bug Fixes
+
+- **Fixed** Compatibility issues with Openshift clusters
+- **Fixed** Compatibility issues with Kubernetes v0.18.20
+- **Fixed** Compatibility issues with DCE 4.0
+- **Fixed** Resolved issue with abnormal metric calculations
+
 ## 2023.07.30
 
 ### v0.19.0
@@ -13,7 +55,7 @@ the evolution path and feature changes of each version.
 - **Added** Built-in alert policy provides suggestions for alert fixes.
 - **Added** Support for customizing log export fields and formats.
 
-#### Enhancements
+#### Optimization
 
 - **Improved** Logic for retrieving Elasticsearch component status in system components.
 - **Improved** Support for configuring whether to import default message templates in installation parameters.
