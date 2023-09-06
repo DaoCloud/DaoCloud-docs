@@ -639,6 +639,7 @@ nav:
               - DPDK: network/modules/multus-underlay/dpdk.md
               - NmState: network/modules/multus-underlay/nmstat.md
           - Spiderpool:
+              - Release notes: network/modules/spiderpool/releasenotes.md
               - Intro: network/modules/spiderpool/index.md
               - Install: network/modules/spiderpool/install.md
               - Create an IP pool: network/modules/spiderpool/createpool.md
