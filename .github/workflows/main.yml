@@ -38,6 +38,7 @@ jobs:
         with:
           repository: daocloud/daocloud-api-docs
           path: dao-openapi
+          fetch-depth: 0 # Required for mkdocs to be able to display pages last update info
       
       - uses: actions/setup-python@v2
 #       - uses: actions/setup-python@v4

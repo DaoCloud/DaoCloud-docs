@@ -72,6 +72,12 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kpanda-velero.mp4" preload="metadata" poster="images/kpanda-velero.png"></video>
 </div>
 
+## GPU
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/vgpu.mp4" preload="metadata" poster="images/kpanda-vgpu.png"></video>
+</div>
+
 ## HwameiStor 存储
 
 参阅 [HwameiStor 简介](../storage/hwameistor/intro/index.md)文档页面，本视频也上传到了[YouTube](https://youtu.be/6D1vgj86hHY)。

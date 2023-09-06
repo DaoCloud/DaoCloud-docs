@@ -18,5 +18,5 @@ pip install mkdocs-material \
 
 
 # build the site
-mkdocs build -f docs/zh/mkdocs.yml -d ../../public/
-mkdocs build -f docs/en/mkdocs.yml -d ../../public/en/
+mkdocs build -s -f docs/zh/mkdocs.yml -d ../../public/
+mkdocs build -s -f docs/en/mkdocs.yml -d ../../public/en/

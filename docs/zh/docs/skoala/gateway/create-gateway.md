@@ -18,7 +18,7 @@ hide:
     - 网关名称：长度不超过 63 个字符，支持字母、数字、下划线。名称在网关创建完成后不可更改。
     - 部署集群：选择将网关部署在哪个集群。
 
-        > 如果可选列表中没有出现目标集群，可以去容器管理模块中[接入](../../kpanda/user-guide/clusters/integrate-cluster.md)或[创建](../../kpanda/user-guide/clusters/create-cluster.md)集群并通过全局管理模块将该[集群或其中的某个命名空间绑定到当前工作空间](../../../ghippo/user-guide/workspace/quota/#_4)。
+        > 如果可选列表中没有出现目标集群，可以去容器管理模块中[接入](../../kpanda/user-guide/clusters/integrate-cluster.md)或[创建](../../kpanda/user-guide/clusters/create-cluster.md)集群并通过全局管理模块将该[集群或其中的某个命名空间绑定到当前工作空间](../../ghippo/user-guide/workspace/quota.md#_4)。
 
     - 命名空间：选择将网关部署在哪个命名空间。一个命名空间中只能部署一个网关。
     - 安装环境检测：选择集群和命名空间后，系统会自动检测安装环境。未通过检测时，页面会给出原因和操作建议，根据页面提示操作即可。

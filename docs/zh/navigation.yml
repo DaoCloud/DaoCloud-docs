@@ -18,7 +18,7 @@ nav:
           - 安装依赖项: install/install-tools.md
           - 安装社区版:
               - 资源规划: install/community/resources.md
-              - All-in-one 在线安装: install/community/kind/online.md
+              - 新手尝鲜在线安装: install/community/kind/online.md
               - 已有 K8s 集群在线安装: install/community/k8s/online.md
               - 已有 K8s 集群离线安装: install/community/k8s/offline.md
           - 安装商业版:
@@ -144,8 +144,9 @@ nav:
               - 权限说明: kpanda/user-guide/permissions/permission-brief.md
               - 集群和命名空间授权: kpanda/user-guide/permissions/cluster-ns-auth.md
           - GPU管理:
+              - NVIDIA多实例GPU(MIG) 概述: kpanda/user-guide/gpu/index.md
               - 安装 Nvidia GPU 驱动: kpanda/user-guide/gpu/driver.md
-              - GPU Operator 开启 MIG: kpanda/user-guide/gpu/create_mig.md
+              - GPU Operator 创建 MIG: kpanda/user-guide/gpu/create_mig.md
               - 应用使用 MIG GPU: kpanda/user-guide/gpu/mig_usage.md
               - MIG 相关命令: kpanda/user-guide/gpu/mig_command.md
           - 最佳实践:
@@ -689,6 +690,7 @@ nav:
           - 通用配置:
               - 首次进入: middleware/common/first-visit.md
               - 自定义角色权限说明: middleware/common/customize-permission.md
+              - 配置管理: middleware/common/storage-configuration.md
               - 工作负载反亲和性: middleware/common/workload-antiaffinity.md
           - Elasticsearch 搜索服务:
               - 介绍:
@@ -786,7 +788,7 @@ nav:
                   - 数据同步介绍: middleware/redis/best-practice/disaster-tolerance.md
                   - 集群模式 to 集群模式: middleware/redis/best-practice/cluster2cluster.md
                   - 哨兵模式 to 哨兵模式: middleware/redis/best-practice/sentinel2sentinel.md
-                  - 集群模式 to 哨兵模式: middleware/redis/best-practice/cluster2cluster.md
+                  - 集群模式 to 哨兵模式: middleware/redis/best-practice/cluster2sentinel.md
           - PostgreSQL 数据库:
               - 介绍:
                   - 什么是 PostgreSQL: middleware/postgresql/intro/index.md
@@ -797,6 +799,7 @@ nav:
                   - 更新 PostgreSQL: middleware/postgresql/user-guide/update.md
                   - 删除 PostgreSQL: middleware/postgresql/user-guide/delete.md
                   - 查看 PostgreSQL 日志: middleware/postgresql/user-guide/logs.md
+                  - 手工设置工作负载反亲和: middleware/postgresql/user-guide/antiaffinity.md
           - MongoDB 数据库:
               - 介绍:
                   - 什么是 MongoDB: middleware/mongodb/intro/index.md
@@ -908,6 +911,8 @@ nav:
           - 最佳实践:
               - 托管 Harbor 的访问类型: kangaroo/best-practice/managed-harbor-select-access-type.md
               - 登录非安全镜像仓库: kangaroo/best-practice/insecure_registry.md
+              - Harbor Nginx 配置最佳实践:  kangaroo/best-practice/harbor-nginx.md
+              - 镜像仓库容量资源规划:  kangaroo/best-practice/capacity-planning.md
       - 云边协同:
           - 介绍:
               - 什么是云边协同: kant/intro/index.md
@@ -965,6 +970,7 @@ nav:
               - 下载网络 Spidernet: download/modules/spidernet.md
               - 下载镜像仓库: download/modules/kangaroo.md
               - 下载运营管理: download/modules/gmagpie.md
+              - 下载多云编排: download/modules/kairship.md
   - 免费体验:
       - 体验社区版: trial/index.md
   - 博客:

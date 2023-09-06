@@ -53,6 +53,7 @@ The numerous modules included in DCE 5.0 can be downloaded separately to upgrade
 | Network Module        | 55.47 MB  | [:arrow_right: Download](./modules/spidernet.md) | 2023-04-26  |
 | Container Registry    | 293.24 MB | [:arrow_right: Download](./modules/kangaroo.md)  | 2023-08-22  |
 | Operations Management | 56.90 MB  | [:arrow_right: Download](./modules/gmagpie.md)   | 2023-08-02  |
+| Multicloud Management | 525.11MB  | [:arrow_right: Download](./modules/kairship.md) | 2023-09-01 |
 
 !!! note
 

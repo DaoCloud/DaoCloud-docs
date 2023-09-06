@@ -66,7 +66,7 @@ kubelet 需要同步 Pod 状态并准备 ConfigMap、Secret 或卷。这就需�
 出于这些原因，我们建议你将节点切换为使用基于事件的 Pod 生命周期变更检测。
 
 更多细节请参阅 KEP <https://kep.k8s.io/3386>
-和[容器状态从轮询切换为基于 CRI 事件更新](/docs/tasks/administer-cluster/switch-to-evented-pleg/)。
+和[容器状态从轮询切换为基于 CRI 事件更新](https://kubernetes.io/docs/tasks/administer-cluster/switch-to-evented-pleg/)。
 
 ## 必要时提高 Pod 资源限值
 

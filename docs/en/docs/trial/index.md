@@ -26,7 +26,7 @@ DCE 5.0, with cloud-native infrastructure at its core, is supported by self-deve
 
 ### Online Installation
 
-=== "Kind Cluster"
+=== "Kind Cluster for Beginner"
 
     **Applicable Scenarios:** Suitable for cloud-native beginners and enthusiasts who have limited machine resources and a shallow understanding of Kubernetes clusters.
 

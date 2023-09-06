@@ -1,56 +1,81 @@
-# OEM OUT
+# 如何将DCE 5.0集成到客户平台（OEM OUT）
 
-OEM OUT 是指 DCE 5.0 作为子模块接入其他产品，出现在其他产品的菜单中。
-用户登录其他产品后可直接跳转至 DCE 5.0 无需二次登录。
+OEM OUT 是指将 DCE 5.0 作为子模块接入其他产品，出现在其他产品的菜单中。
+用户登录其他产品后可直接跳转至 DCE 5.0 无需二次登录。实现 OEM OUT 共分为 5 步，分别是：
 
-身份提供商（IdP，Identity Provider）：当 DCE 5.0 需要使用客户系统作为用户源，
-使用客户系统登录界面来进行登录认证时，该客户系统被称为 DCE 5.0 的身份提供商。
+* 统一域名
+* 打通用户体系
+* 对接导航栏
+* 定制外观
+* 打通权限体系(可选)
 
-## 如何实现 OEM OUT
+具体操作演示请参见 [OEM OUT 最佳实践视频教程](../../videos/use-cases.md#dce-50_2)。
 
-### 打通用户体系
+## 统一域名
 
-将客户系统作为用户源，实现统一登录认证，这一步是必需的。
+1. 部署 DCE 5.0（假设部署完的访问地址为 `https://10.6.8.2:30343/`）
 
-1. 在客户系统里建 client（可参考 [Ghippo 配置 oidc](../user-guide/access-control/oidc.md)），得到一些对接参数。
-   如果客户系统里需要填 callback url，可填 DCE 5.0 的入口访问地址域名或 IP
+1. 客户系统和 DCE 5.0 前可以放一个 Nginx 反代来实现同域访问，
+   `/` 路由到客户系统，`/dce5 (subpath)` 路由到 DCE 5.0 系统，`vi /etc/nginx/conf.d/default.conf` 示例如下：
 
-1. DCE 5.0 通过 OIDC/OAUTH 等协议在身份提供商界面配置参数（从上一步得到），对接客户的用户系统
+    ```nginx
+    server {
+        listen       80;
+        server_name  localhost;
+    
+        location /dce5/ {
+          proxy_pass https://10.6.8.2:30343/;
+          proxy_http_version 1.1;
+          proxy_read_timeout 300s; # 如需要使用 kpanda cloudtty功能需要这行，否则可以去掉
+          proxy_send_timeout 300s; # 如需要使用 kpanda cloudtty功能需要这行，否则可以去掉
+    
+          proxy_set_header Host $host;
+          proxy_set_header X-Real-IP $remote_addr;
+          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    
+          proxy_set_header Upgrade $http_upgrade; # 如需要使用 kpanda cloudtty功能需要这行，否则可以去掉
+          proxy_set_header Connection $connection_upgrade; # 如需要使用 kpanda cloudtty功能需要这行，否则可以去掉
+        }
+        
+        location / {
+            proxy_pass https://10.6.165.50:30443/; # 假设这是客户系统地址(如意云)
+            proxy_http_version 1.1;
+    
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+    }
+    ```
 
-   ![oidc](./images/oem-out01.png)
+1. 假设 Nginx 入口地址为 10.6.165.50，按[自定义 DCE 5.0 反向代理服务器地址](../install/reverse-proxy.md)把
+   DCE_PROXY 反代设为 `http://10.6.165.50/dce5`。确保能够通过 `http://10.6.165.50/dce5` 访问 DCE 5.0。
+   客户平台也需要进行反代设置，需要根据不同平台的情况进行处理。
+  
+   ![反向代理](images/agent.png)
 
-!!! tip
+## 打通用户体系
 
-    如客户支持的对接协议需要 DCE 5.0 作些定制化，可参考[如何定制 DCE 5.0 来对接外部身份提供商 (IdP)](custom-idp.md)
+将客户平台与 DCE 5.0 平台通过 OIDC/OAUTH 等协议对接，使用户登录客户平台后进入 DCE 5.0 时无需再次登录。
+在拿到客户平台的 OIDC 信息后填入`全局管理` -> `用户与访问控制` -> `身份提供商`中。
 
-## 把 DCE 5.0 页面嵌入客户系统界面
+![身份提供商](images/idp.png)
 
-把 DCE 5.0 的某些功能菜单项插入客户系统的导航栏里，统一将客户系统作为门户（可选）。
+对接完成后，DCE 5.0 登录页面将出现 OIDC（自定义）选项，首次从客户平台进入 DCE 5.0 时选择通过 OIDC 登录，
+后续将直接进入 DCE 5.0 无需再次选择。
 
-### 方法
+![登录页](images/login.png)
 
-前提条件：客户系统（例如如意云）支持 iframe 嵌入子模块页面
+## 对接导航栏
 
-1. 部署 DCE5（假设部署完的访问地址为 https://10.6.8.2:30343/）
+对接导航栏是指 DCE 5.0 出现在客户平台的菜单中，用户点击相应的菜单名称能够直接进入 DCE 5.0。
+因此对接导航栏依赖于客户平台，不同平台需要按照具体情况进行处理。
 
-1. 客户系统 和 DCE 5 前可以放一个 Nginx 反代来实现同域访问，`/` 路由到客户系统，`/dce5` 路由到 DCE 5.0 系统。
-   参见 [/etc/nginx/conf.d/default.conf 示例](./examples/default2.conf)。
+## 定制外观
 
-1. 假设 nginx 入口地址为 10.6.165.50，参照[设置 DCE 5.0 反向代理步骤](../install/reverse-proxy.md)把
-   DCE_PROXY 设置为 http://10.6.165.50/dce5/。
+通过`全局管理` -> `平台设置` -> `外观定制`可以自定义平台背景颜色、logo、名称等，
+具体操作请参照[外观定制](../user-guide/platform-setting/appearance.md)。
 
-1. 访问 http://10.6.165.50/dce5/。在 DCE 5.0 中，通过`平台设置` –> `外观定制` -> `高级定制`来更改 DCE 5.0
-   的页面样式，尽量使其和客户系统样式一致。
+## 打通权限体系（可选）
 
-1. 把 DCE 5.0 的访问地址 (http://10.6.165.50/dce5/) 编码到客户系统的 iframe src 里，可在 iframe 中通过编写
-   css 修改被嵌入的页面样式。参阅 [App.vue 代码示例](./examples/App.vue)。
-
-## 权限打通(可选)
-
-定制化团队可实现一定制模块，DCE 5.0 可提供 Webhook 注册功能，将每一次的用户登录事件通过 Webhook 的方式通知到定制模块，
-定制模块可自行调用如意云和 DCE 5.0 的 [OpenAPI](https://docs.daocloud.io/openapi/)与该用户的权限信息同步。
-
-## 参考文档
-
-- [参考 OEM IN 文档](oem-in.md)
-- 参阅 [GProduct-demo 对接 tar 包](./examples/gproduct-demo-main.tar.gz)
+打通权限较为复杂，如有需求请联系全局管理团队。
