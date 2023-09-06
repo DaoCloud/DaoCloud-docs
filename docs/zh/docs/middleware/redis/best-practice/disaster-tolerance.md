@@ -11,3 +11,9 @@ Redis-Shake 是一个用于合并、同步和迁移 Redis 数据的工具，可�
 [哨兵模式 to 哨兵模式](./sentinel2sentinel.md)
 
 [集群模式 to 哨兵模式](./cluster2sentinel.md)
+
+**最佳实践演示视频：**
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/redis-sync.mp4" preload="metadata" poster="../../../videos/images/redis-sync.png"></video>
+</div>
