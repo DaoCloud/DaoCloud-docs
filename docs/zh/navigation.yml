@@ -174,7 +174,7 @@ nav:
               - 什么是用户与访问控制: ghippo/user-guide/access-control/iam.md
               - 用户: ghippo/user-guide/access-control/user.md
               - 用户组: ghippo/user-guide/access-control/group.md
-              - 角色: 
+              - 角色:
                   - ghippo/user-guide/access-control/role.md
                   - 系统角色: ghippo/user-guide/access-control/global.md
                   - 自定义角色: ghippo/user-guide/access-control/custom-role.md
@@ -182,7 +182,7 @@ nav:
                   - ghippo/user-guide/access-control/idprovider.md
                   - LDAP: ghippo/user-guide/access-control/ldap.md
                   - OIDC: ghippo/user-guide/access-control/oidc.md
-              - 接入管理: ghippo/user-guide/access-control/docking.md                       
+              - 接入管理: ghippo/user-guide/access-control/docking.md
           - 工作空间与层级:
               - ghippo/user-guide/workspace/ws-folder.md
               - 创建和删除工作空间: ghippo/user-guide/workspace/workspace.md
@@ -473,7 +473,7 @@ nav:
                   - 微服务列表:
                       - 介绍: skoala/trad-ms/hosted/services/intro.md
                       - 查看微服务详情: skoala/trad-ms/hosted/services/check-details.md
-                      - 流量治理: 
+                      - 流量治理:
                           - 规则介绍: skoala/trad-ms/hosted/services/governance-policy.md
                           - 流控规则: skoala/trad-ms/hosted/services/flow-control.md
                           - 熔断规则: skoala/trad-ms/hosted/services/circuit-breaker.md
@@ -668,7 +668,7 @@ nav:
               - DPDK: network/modules/multus-underlay/dpdk.md
               - NmState: network/modules/multus-underlay/nmstat.md
           - Spiderpool:
-              - ReleaseNotes: network/modules/spiderpool/releasenotes.md
+              - Release Notes: network/modules/spiderpool/releasenotes.md
               - 介绍: network/modules/spiderpool/index.md
               - 安装: network/modules/spiderpool/install.md
               - 创建 IP 池: network/modules/spiderpool/createpool.md
@@ -784,7 +784,7 @@ nav:
                   - 更新 Redis 实例: middleware/redis/user-guide/update.md
                   - 删除 Redis 实例: middleware/redis/user-guide/delete.md
                   - 查看 Redis 日志: middleware/redis/user-guide/logs.md
-              - 跨集群数据同步: 
+              - 跨集群数据同步:
                   - 数据同步介绍: middleware/redis/best-practice/disaster-tolerance.md
                   - 集群模式 to 集群模式: middleware/redis/best-practice/cluster2cluster.md
                   - 哨兵模式 to 哨兵模式: middleware/redis/best-practice/sentinel2sentinel.md
@@ -911,8 +911,8 @@ nav:
           - 最佳实践:
               - 托管 Harbor 的访问类型: kangaroo/best-practice/managed-harbor-select-access-type.md
               - 登录非安全镜像仓库: kangaroo/best-practice/insecure_registry.md
-              - Harbor Nginx 配置最佳实践:  kangaroo/best-practice/harbor-nginx.md
-              - 镜像仓库容量资源规划:  kangaroo/best-practice/capacity-planning.md
+              - Harbor Nginx 配置最佳实践: kangaroo/best-practice/harbor-nginx.md
+              - 镜像仓库容量资源规划: kangaroo/best-practice/capacity-planning.md
       - 云边协同:
           - 介绍:
               - 什么是云边协同: kant/intro/index.md
