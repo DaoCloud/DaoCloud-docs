@@ -610,7 +610,6 @@ nav:
               - 背景: network/intro/background.md
               - 挑战: network/intro/challenges.md
               - 网络组件: network/modules/modules.md
-              - Release Notes: network/intro/releasenotes.md
           - 规划:
               - 网卡规划: network/plans/ethplan.md
               - 网络规划: network/plans/netplan.md
@@ -669,6 +668,7 @@ nav:
               - DPDK: network/modules/multus-underlay/dpdk.md
               - NmState: network/modules/multus-underlay/nmstat.md
           - Spiderpool:
+              - ReleaseNotes: network/modules/spiderpool/releasenotes.md
               - 介绍: network/modules/spiderpool/index.md
               - 安装: network/modules/spiderpool/install.md
               - 创建 IP 池: network/modules/spiderpool/createpool.md
