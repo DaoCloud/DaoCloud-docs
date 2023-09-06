@@ -580,7 +580,6 @@ nav:
               - Background: network/intro/background.md
               - Challenges: network/intro/challenges.md
               - Components: network/modules/modules.md
-              - Release notes: network/intro/releasenotes.md
           - Plan:
               - Eth card plan: network/plans/ethplan.md
               - Network plan: network/plans/netplan.md
