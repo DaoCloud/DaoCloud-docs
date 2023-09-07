@@ -604,6 +604,7 @@ nav:
           - 最佳实践:
               - 使用网格完成定向服务访问限制: mspider/best-practice/use-egress-and-authorized-policy.md
               - 支持接入自定义工作负载类型: mspider/best-practice/use-custom-workloads.md
+              - 优化 Sidecar 资源占用问题: mspider/best-practice/optimize-sidecar-resource.md
       - 云原生网络:
           - 介绍:
               - 什么是云原生网络: network/intro/index.md
