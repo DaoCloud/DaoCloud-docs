@@ -26,12 +26,19 @@ Redis-shake 支持哨兵模式实例间的数据同步与迁移能力，现以 3
 
 ### 为源端实例配置服务
 
+如果源端实例处于 DCE 5.0 的集群中，可在`数据服务` - `Redis` - `解决方案` - `跨集群主从同步`中开启方案，将自动完成服务配置工作。
+
+![svc](../images/sync17.png)
+
+如果源端实例处于第三方集群上，则需要手工完成服务配置，配置方法如下文：
+
 为 Redis 实例创建一个 `Nodeport` 服务，用于 Redis-Shake 的数据同步访问。本例中需要为实例 A 创建 1 个服务，以下为创建过程 ：
 
-1. 进入`容器管理` - `{源端集群}` - `有状态工作负载`：选择工作负载 `redis-a`，创建一个 `Nodeport` 服务，容器端口和服务端口均为 6379
+1. 进入`容器管理` - `源端实例所在集群` - `有状态工作负载`：选择工作负载 `redis-a`，创建一个 `Nodeport` 服务，容器端口和服务端口均为 6379
+
     ![svc](../images/sync03.png)
 
-2. 更新该服务。并确定工作负载选择器包含以下标签
+2. 查看该服务。并确定工作负载选择器包含以下标签
    
     ```yaml
     app.kubernetes.io/component: redis
@@ -50,14 +57,14 @@ Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 
 #### 1. 创建配置项
 
-在`容器管理` - `{目标端集群}` - `配置与存储` - `配置项`为 Redis-shake 实例创建配置项 `redis-sync`。导入文件 `sync.toml` （文件内容见`附录`），并注意需要修改以下内容：
+在`容器管理` - `目标端实例所在集群` - `配置与存储` - `配置项`为 Redis-shake 实例创建配置项 `redis-sync`。导入文件 `sync.toml` （文件内容见`附录`），并注意需要修改以下内容：
 
 ![conf](../images/sync15.jpg)
 
-- source.address：源端 `redis-a` 的服务地址：
+- source.address：上一步骤创建的源端 `redis-a` 的服务地址：
 
     ```toml
-    address = "10.233.109.145:6379"
+    address = "10.233.109.145:31278"
     ```
     
 - 源端实例的访问密码：可在 Redis 实例的概览页获取该信息：
@@ -67,17 +74,25 @@ Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上�
     ```
     ![conf](../images/sync16.png)
 
-- 目标端实例访问地址，此处为目标端 redis-b 的默认 clusterIP 服务的地址：
+- 目标端实例访问地址，此处采用实例 `redis-b` 的默认 Headless 服务 `rfr-redis-b` 的地址：
 
     ```toml
-    address = "172.30.120.202:32283"
+    address = "rfr-redis-b:6379"
     ```
+ 
+    该服务信息可在`集群管理` - `目标端所在集群` - `工作负载` - `访问方式`中查看。类似下图所示页面
+
+    ![conf](../images/sync22.png)
 
 - 目标端实例的访问密码，可在`数据服务`模块下的 Redis 实例概览页获取该信息:
 
     ```toml
     password = "3wPxzWffdn" # keep empty if no authentication is required
     ```
+
+    类似下图位置：
+
+    ![svc](../images/sync06.png)
 
 - 目标端类型需设置为 `standalone`：
 
@@ -125,7 +140,7 @@ Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上�
         /data
         ```
 
-       ![sync](../images/sync10.png)
+       ![sync](../images/sync20.png)
 
 3. 点击`确定`，完成 Redis-shake 创建。
 
