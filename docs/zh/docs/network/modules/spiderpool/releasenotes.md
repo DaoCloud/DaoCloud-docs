@@ -4,6 +4,35 @@
 
 其中包含的 Spiderpool 是 DaoCloud 自研开源的 IPAM 模块，请参考 [Spiderpool Release Notes](https://github.com/spidernet-io/spiderpool/releases)。
 
+## 2023-08-30
+
+### v0.9.0
+
+适配 **Spiderpool 版本** : `v0.7.0`
+
+#### 新功能
+
+- **新增** SpiderMultusConfig 的 Annotation Webhook 校验
+- **新增** 在双栈 SpiderSubnet自动池功能下分配单栈 IP
+- **新增** IPAM 核心算法优化，优先在亲和的池中分配IP
+- **新增** SpiderSubnet 自动池功能下，孤儿 IPPool 的创建
+- **新增** Multus  卸载钩子移除 CNI 配置文件
+- **新增** Coordinator 支持自动模式(默认)，这将自动检测 Coordinator 的工作模式，不再需要手动指定 Underlay 或 Overlay 。 相同的 multus CNI 配置，可以同时被用作 Underlay 或 Overlay 模式
+- **新增** 通过 `spidermultusconfig` 配置 `ovs-cni` 
+
+#### 修复
+
+- **修复** 无控制器 Pod 打上自动池 Annotation 无法启动的 Bug
+- **修复**  Coordinator Webhook 校验 Bug
+- **修复**  Coordinator 监听 Calico 资源 Bug
+- **修复**  CRD 错误的 VLAN 范围
+- **修复**  自动池资源名字长度限制
+- **修复**  Coordinator 添加路由失败
+- **修复** 如果 `spidercoordinator.status.phase` 未 Ready, 清理已收集的集群子网信息，并且阻止 Pod 创建。
+- **修复** 清理 `spidermultusconfig` 中 `sriov-cni` 的 `resourceName` 字段
+- **修复** 验证 `spidermultusconfig` 中自定义 CNI 配置文件是否是合法的 Json 格式
+- **修复** 所有节点与 Pod 的路由都统一的被创建在主机的 `table500` 中，而不是每一个 Pod 独占一个 `table`.
+
 ## 2023-07-28
 
 ### v0.8.1
