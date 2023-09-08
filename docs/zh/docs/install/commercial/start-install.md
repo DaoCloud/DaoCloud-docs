@@ -18,14 +18,14 @@
 
 | CPU 架构 | 版本   | 下载地址                                                     |
 | :------- | :----- | :----------------------------------------------------------- |
-| AMD64    | v0.10.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.10.0-amd64.tar> |
-| ARM64    | v0.10.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.10.0-arm64.tar> |
+| AMD64    | v0.11.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.11.0-amd64.tar> |
+| ARM64    | v0.11.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.11.0-arm64.tar> |
 
 下载完毕后解压离线包：
 
 ```bash
 # 以 amd64 架构离线包为例
-tar -xvf offline-v0.10.0-amd64.tar
+tar -xvf offline-v0.11.0-amd64.tar
 ```
 
 #### addon 离线包 （可选）
@@ -38,8 +38,8 @@ addon 离线包包含一些常用的组件的 Helm Chart 离线包，具体清�
 
 | CPU 架构 | 版本   | 下载地址                                                     |
 | :------- | :----- | :----------------------------------------------------------- |
-| AMD64    | v0.10.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.10.0-amd64.tar.gz> |
-| ARM64    | v0.10.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.10.0-arm64.tar.gz> |
+| AMD64    | v0.11.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.11.0-amd64.tar.gz> |
+| ARM64    | v0.11.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.11.0-arm64.tar.gz> |
 
 #### ISO 操作系统镜像文件 （必需）
 
