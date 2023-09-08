@@ -1,4 +1,4 @@
-# 应用使用 MIG GPU
+# 应用使用 MIG GPU 资源
 
 本节介绍应用如何使用 MIG GPU 资源。
 
