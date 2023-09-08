@@ -4,6 +4,35 @@ This page lists the Release Notes of Spidernet, so that you can understand the e
 
 The included Spiderpool is an IPAM module developed by DaoCloud. Please refer to the [Spiderpool Release Notes](https://github.com/spidernet-io/spiderpool/releases) for more information.
 
+## 2023-08-30
+
+### v0.9.0
+
+Compatible with **Spiderpool version**: `v0.7.0`
+
+#### New Features
+
+- **Added** Annotation Webhook validation for SpiderMultusConfig
+- **Added** Allocation of single-stack IP under dual-stack SpiderSubnet auto pool functionality
+- **Added** Optimization of IPAM core algorithm, prioritizing IP allocation in affinity pools
+- **Added** Creation of orphan IPPool under SpiderSubnet auto pool functionality
+- **Added** Removal of CNI configuration files in Multus uninstallation hooks
+- **Added** Support for automatic mode (default) in Coordinator, which automatically detects the working mode without the need for manual specification of Underlay or Overlay. The same multus CNI configuration can be used as both Underlay and Overlay modes.
+- **Added** Configuration of `ovs-cni` through `spidermultusconfig`
+
+#### Bug Fixes
+
+- **Fixed** Bug where pods without controllers fail to start when annotated with auto pool
+- **Fixed** Coordinator Webhook validation bug
+- **Fixed** Coordinator listening to Calico resources bug
+- **Fixed** Incorrect VLAN range in CRD
+- **Fixed** Resource name length limitation in auto pool
+- **Fixed** Failed route addition in Coordinator
+- **Fixed** Clearing of collected cluster subnet information if `spidercoordinator.status.phase` is not Ready and preventing pod creation
+- **Fixed** Clearing of `resourceName` field for `sriov-cni` in `spidermultusconfig`
+- **Fixed** Validation of custom CNI configuration file in `spidermultusconfig` to ensure it is a valid JSON format
+- **Fixed** Uniform creation of routes for all nodes and pods in host's `table500` instead of each pod having its own table
+
 ## 2023-07-28
 
 ### v0.8.1

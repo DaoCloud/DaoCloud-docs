@@ -2,6 +2,55 @@
 
 This page lists the Release Notes related to Hwameistor, providing an overview of the evolution path and feature changes for each version.
 
+## 2023-8-30
+
+### v0.12.1
+
+#### New Features
+
+- **Added** Support for `ext` filesystem.
+- **Added** New features parameters for Local Disk.
+- **Added** Field to record device history information.
+- **Added** SN/ID Path recognition for disks.
+- **Added** Automatic disk expansion functionality.
+- **Added** System resource auditing for cluster, storage nodes, disks, and data volumes
+
+#### Improvements
+
+- **Fixed** Display issue of NVME disks in LocalStoragePool nodes.
+- **Fixed** Issue with lost replica status during migration operation.
+- **Fixed** Disallow disk allocation when Disk Owner is empty.
+- **Fixed** Issues with Failover functionality in `deploy` and `Makefile`
+
+## 2023-7-05
+
+### v0.11.1
+
+#### New Features
+
+- **Added** Support for automatic detection of `cgroup` version.
+
+## 2023-6-25
+
+### v0.11.0
+
+#### New Features
+
+- **Added** Implementation of IO limitation or QoS.
+- **Added** Use of `/virtual/` detection to identify virtual block devices.
+
+#### Improvements
+
+- **Fixed** Inconsistency in creation time field for storage pools.
+
+## 2023-5-26
+
+### v0.10.3
+
+#### Improvements
+
+- **Improved** Permissions-related content in Helm templates.
+
 ## 2023-7-05
 
 ### v0.11.1

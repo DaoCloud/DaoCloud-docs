@@ -2,6 +2,15 @@
 
 This page lists the Release Notes of the PostgreSQL database, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-08-31
+
+### v0.5.0
+
+#### Improvements
+
+- **Improved** Syntax compatibility for KindBase.
+- **Improved** Page display during operator creation process.
+
 ## 2023-07-31
 
 ### v0.4.0

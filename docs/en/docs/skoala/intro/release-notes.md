@@ -2,6 +2,37 @@
 
 This page lists the release notes of DME to help you learn its feature development and bug fixing progress.
 
+## 2023-09-01
+
+### v0.27.2
+
+#### Bug Fixes
+
+- **Fixed** Frontend updated to version 0.18.1, resolving UI issues
+
+### v0.27.1
+
+#### Bug Fixes
+
+- **Fixed** Issue of duplicate details in batch deletion response
+- **Fixed** Problem with sorting plugin information in cloud-native microservices port list
+- **Fixed** Issue with abnormal display of traffic swimlane list
+- **Fixed** Inconsistent container names for frontend components
+- **Fixed** Some errors in Sentinel business application monitoring reports
+
+#### Improvements
+
+- **Improved** Upgraded Insight version to 0.19.2
+- **Improved** Upgraded Ghippo version to 0.20.0
+
+!!! note
+
+    **Important Note:** If your Microservice Engine version is greater than `v0.24.2`,
+    it is important to note that there are incompatible updates for versions `v0.24.2`
+    and earlier. This is due to changes in the open-source component repository address
+    related to the gateway. To ensure a smooth upgrade process, make sure to manually
+    delete the old `gateway-api-admission-xxxxx` Job before proceeding with the update.
+
 ## 2023-08-25
 
 ### V0.27.0
