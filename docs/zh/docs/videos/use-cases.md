@@ -78,7 +78,7 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/pgvector.mp4" preload="metadata" poster="images/pgvector.png"></video>
 </div>
 
-## 如何用 Redis 实现跨集群数据同步？
+## 如何实现 Redis 的跨集群数据同步？
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/redis-sync.mp4" preload="metadata" poster="images/redis-sync.png"></video>
