@@ -2,6 +2,33 @@
 
 This page lists the release notes for Application Workspace to help you understand the development and feature changes in each version.
 
+## 2023-08-31
+
+### v0.20.0
+
+#### New Features
+
+- **Added** Integration with GitLab using access token
+- **Added** Status field for native applications
+- **Added** API integration with kolm
+- **Added** CRUD APIs for multi-cloud applications
+- **Added** Ability to add triggers in pipelines, automatically adding webhooks in GitLab, and triggering pipelines based on related events
+
+#### Improvements
+
+- **Improved** Retrieval of SonaQube scan results is no longer bound to specific run records, rather it retrieves from the latest run record
+- **Improved** Alignment between recent pipeline records and last run records
+- **Improved** Handling logic for resources bound to the workspace in event listeners
+- **Improved** Error message prompt when unable to connect to KubeVela
+
+#### Bug Fixes
+
+- **Fixed** Creation failure of control plane namespace when resource quotas were set for Global clusters
+- **Fixed** Ability to bind control plane namespace to multiple workspaces
+- **Fixed** Successful creation of control plane namespace even if the namespace is already deleted
+- **Fixed** Issue with incorrect comparison of multi-branch pipeline configurations
+- **Fixed** Issue with missing dbName in link queries
+
 ## 2023-07-31
 
 ### v0.19.2

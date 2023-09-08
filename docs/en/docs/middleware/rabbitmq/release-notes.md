@@ -2,6 +2,16 @@
 
 This page lists the Release Notes of the RabbitMQ message queue, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-08-31
+
+### v0.13.0
+
+#### Improvements
+
+- **Improved** Syntax compatibility for KindBase.
+- **Improved** Page display during operator creation process.
+- **Improved** Added default anti-affinity configuration on the creation page.
+
 ## 2023-07-31
 
 ### v0.12.3

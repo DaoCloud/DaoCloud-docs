@@ -2,6 +2,17 @@
 
 This page lists the release notes of the container registry, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-09-06
+
+### v0.11.0
+
+- Added harbor hosting status verification
+- Added deployment to download station
+- Added best practices for Nginx proxy, resource capacity planning
+- Optimized fix for the issue preventing updates to hosted Harbor description
+- Optimized display of truncated image space in ignition image repository
+- Optimized frontend error for WS admin when creating recycle rules
+
 ## 2023-08-02
 
 ### v0.10

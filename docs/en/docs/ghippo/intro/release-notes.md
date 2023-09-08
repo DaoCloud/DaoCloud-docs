@@ -2,6 +2,14 @@
 
 This page lists the Release Notes for global management of each version, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-09-04
+
+### v0.20.1
+
+#### Bug Fix
+
+- Fixed issue causing unnecessary 400 error in the interface
+
 ## 2023-08-30
 
 ### v0.20.0

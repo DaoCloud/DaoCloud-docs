@@ -2,6 +2,15 @@
 
 This page lists the release notes for the Redis Cache service, providing you with information about the evolution and feature changes in each version.
 
+## 2023-08-31
+
+### v0.11.0
+
+#### Improvements
+
+- **Improved** Syntax compatibility for KindBase.
+- **Improved** Page display during operator creation process.
+
 ## 2023-07-31
 
 ### v0.10.0
