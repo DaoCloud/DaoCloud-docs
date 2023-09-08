@@ -60,7 +60,7 @@
 如果不存在依赖组件，通过脚本进行安装依赖组件，[安装前置依赖](../install-tools.md)。
 
 ```bash
-export VERSION=v0.9.0
+export VERSION=v0.11.0
 # 下载脚本
 curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
 

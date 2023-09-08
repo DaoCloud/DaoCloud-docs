@@ -1,10 +1,10 @@
-# 应用使用 MIG GPU
+# 应用使用 MIG GPU 资源
 
 本节介绍应用如何使用 MIG GPU 资源。
 
 ## 前提条件
 
-- 已安装 Nvidia Driver，可参考 [Nvidia GPU 驱动安装](driver.md)
+- 已安装 Nvidia Driver，可参考 [Nvidia GPU 驱动安装](vgpu_driver.md)
 - 已开启 MIG 能力 [GPU Operator 创建 MIG](create_mig.md)
 - 集群节点已插入 GPU MIG 卡
 
