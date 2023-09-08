@@ -4,8 +4,8 @@
 
 ## 前提条件
 
-- 当前集群已通过 Operator 或手动方式部署，具体参考 [Nvidia 驱动部署](driver.md)
-- 当前集群已安装 [vGPU Addon 安装](vgpu addon.md)
+- 当前集群已通过 Operator 或手动方式部署，具体参考 [Nvidia 驱动部署](vgpu_driver.md)
+- 当前集群已安装 [vGPU Addon 安装](vgpu_addon.md)
 
 ## 操作步骤
 1. **确认集群是否已检测 GPU 卡**。点击对应`集群`-->`集群设置`-->`Addon 插件`，查看是否已自动启用并自动检测对应 GPU 类型。目前集群会自动启用 `GPU`， 并且设置 `GPU` 类型为 `Nvidia vGPU`。![Alt text](./images/vgpu-cluster.png)

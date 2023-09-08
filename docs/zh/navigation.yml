@@ -145,7 +145,7 @@ nav:
               - 集群和命名空间授权: kpanda/user-guide/permissions/cluster-ns-auth.md
           - GPU管理:
               - NVIDIA vGPU :
-                - 安装 Nvidia GPU 驱动: kpanda/user-guide/gpu/gpu_driver.md
+                - 安装 Nvidia GPU 驱动: kpanda/user-guide/gpu/vgpu_driver.md
                 - 安装 vGPU Addon : kpanda/user-guide/gpu/vgpu_addon.md
                 - 应用使用 vGPU : kpanda/user-guide/gpu/vgpu_user.md
               - NVIDIA MIG :
