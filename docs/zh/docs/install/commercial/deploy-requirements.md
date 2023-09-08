@@ -1,3 +1,4 @@
+
 # 部署要求
 
 部署 DCE 5.0 时需要先做好软件规划、硬件规划、网络规划。
@@ -9,6 +10,7 @@
 | AMD 64   | centos 7.X          | Kernel 3.10.0-1127.el7.x86_64 on an x86_64 | 操作系统推荐 CentOS 7.9<br />[离线安装 DCE 5.0 商业版](start-install.md) |
 |          | Redhat 8.X          | 4.18.0-305.el8.x86_64                      | 操作系统推荐 Redhat 8.4<br />[离线安装 DCE 5.0 商业版](start-install.md) |
 |          | Redhat 7.X          | 3.10.0-1160.e17.x86                        | 操作系统推荐 Redhat 7.9<br />[离线安装 DCE 5.0 商业版](start-install.md) |
+| | Redhat 9.X | 5.14.0-284.11.1.e9_2.x86_64 | 操作系统推荐 Redhat 9.2<br />[离线安装 DCE 5.0 商业版](start-install.md)<br /> |
 |          | Ubuntu 20.04        | 5.10.104                                   | [离线安装 DCE 5.0 商业版](start-install.md) |
 |          | 统信 UOS V20 （1020a） | 5.4.0-125-generic                          | [UOS V20 (1020a) 操作系统上部署 DCE 5.0 商业版](../os-install/uos-v20-install-dce5.0.md) |
 |          | openEuler 22.03     | 5.10.0-60.18.0.50.oe2203.x86_64            | [离线安装 DCE 5.0 商业版](start-install.md) |
