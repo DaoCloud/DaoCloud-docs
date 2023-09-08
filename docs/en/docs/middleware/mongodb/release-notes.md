@@ -2,6 +2,15 @@
 
 This page lists the release notes for MongoDB databases, allowing you to understand the evolution path and feature changes for each version.
 
+## 2023-08-31
+
+### v0.3.0
+
+#### Improvements
+
+- **Improved** Syntax compatibility for KindBase.
+- **Improved** Page display during operator creation process.
+
 ## 2023-07-31
 
 ### v0.2.0

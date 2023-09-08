@@ -2,6 +2,32 @@
 
 This page provides the Release Notes for container management to help you understand the evolution path and feature changes from release to release.
 
+## 2023-9-06
+
+### v0.21.0
+
+#### New Features
+
+- **Added** Connectivity check for `Helm Repo` passwords, with support for skipping TLS certificate authentication.
+- **Added** Scaling of worker nodes for global service machines.
+
+#### Improvements
+
+- **Improved** Support for uninstalling related components during cluster integration.
+- **Improved** Pod status handling logic, including sub-status for pods.
+- **Improved** Ability to configure the number of task records to keep for cluster operations.
+- **Improved** Support for configuring the number of control nodes when creating working clusters.
+- **Improved** Prompt for installing Insight-agent if it is not already installed.
+
+#### Bug Fixes
+
+- **Fixed** Issue of missing configuration parameters when updating Helm application instances.
+- **Fixed** Display error in associated instances for Networkpolicy.
+- **Fixed** Issue of cluster creation failure due to maximum pod count in cluster configuration.
+- **Fixed** Issue of failed creation of working clusters with `Redhat` type.
+- **Fixed** Issue of "no permission" error when namespace-level users view scheduled task details.
+- **Fixed** Issue of users unable to bind to workspaces.
+
 ## 2023-8-01
 
 ### v0.20.0

@@ -7,6 +7,28 @@ Date: 2023-06-29
 
 This page lists the Release Notes of the installer, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-8-31
+
+### v0.11.0
+
+#### New Features
+
+- **Added** Update the k8s version of Global clusters to v1.26.7 to avoid security vulnerabilities in older versions
+- **Added** Support for setting ansible extension parameters in clusterConfig.yaml
+- **Added** Support for adding certificate renewal configuration in clusterConfig.yaml, including periodic and one-time updates
+- **Added** Support for offline deployment of Red Hat 9.2 systems
+- **Added** Diagnostic script diag.sh for Global cluster in the offline package
+- **Added** Added `--multi-arch` flag to avoid upgrading issues with overriding multi-architecture images
+
+#### Improvements
+
+- **Improved** Optimized installer source code structure modules
+
+#### Bug Fixes
+
+- **Fixed** Fixed issue where redis sentinel mode does not support sentinel instance password
+- **Fixed** Fixed failure when adding TencentOS 3.1 system nodes to the working cluster
+
 ## 2023-7-31
 
 ### v0.10.0

@@ -2,6 +2,16 @@
 
 This page lists the Release Notes of Elasticsearch indexing service, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-08-31
+
+### v0.10.0
+
+#### Improvements
+
+- **Improved** Syntax compatibility for KindBase.
+- **Improved** Added default anti-affinity configuration on the creation page.
+- **Improved** Page display during operator creation process.
+
 ## 2023-07-31
 
 ### v0.9.3

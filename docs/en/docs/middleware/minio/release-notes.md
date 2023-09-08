@@ -2,6 +2,19 @@
 
 This page lists the Release Notes of MinIO object storage, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-08-31
+
+### v0.8.0
+
+#### Improvements
+
+- **Improved** Syntax compatibility for KindBase.
+- **Improved** Page display during operator creation process.
+
+#### Upgrade
+
+- **Upgraded** Operator image to v5.0.6.
+
 ## 2023-07-31
 
 ### v0.7.3
