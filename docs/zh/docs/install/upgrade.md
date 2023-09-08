@@ -137,6 +137,7 @@ DCE 5.0 基础设施模块的组件特指 [mainfest.yaml](commercial/manifest.md
 - `install-app` 或 `cluster-create`，代表安装 DCE 5.0 的安装模式类型。如果最初的环境是通过 `cluster-create` 来安装的，则升级时也采用这个命令
 - `--upgrade` 可以简写为 `-u`，目前支持升级 DCE 5.0 产品功能模块（gproduct）与基础设施模块（infrastructures）
 - 如果需要一起升级产品功能模块和基础设施模块，则可以指定参数 `--upgrade infrastructures,gproduct`
+- 安装器 v0.12.0 支持了 `--multi-arch` 参数，主要是用户在当前环境存在多架构镜像时，进行升级过程中添加该参数可以避免覆盖原有的多架构镜像。
 
 ### 第 5 步：安装成功提示
 

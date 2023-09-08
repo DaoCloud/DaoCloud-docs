@@ -1,14 +1,37 @@
 # 安装排障
 
-本页汇总了常见的安装器问题及其排障方案，便于用户快速解决安装过程中遇到的问题。
+本页汇总了常见的安装器问题及其排障方案，便于用户快速解决安装及运行过程中遇到的问题。
 
-## 火种节点重启后 Podman 无法自动恢复
 
-火种节点重启后，等待 kind 启动成功：
+## 当 DCE 5.0 平台界面打不开时，执行 diag.sh 脚本快速排障
 
-1. 执行 `podman exec` 进入容器。
-2. `sed -i 's/server: .*:6443/server: https://127.0.0.1:6443/g' /etc/kubernetes/controller-manager.conf`
-3. `sed -i 's/server: .*:6443/server: https://127.0.0.1:6443/g ' /etc/kubernetes/scheduler.conf`
+安装器 v0.12.0 版本之后新增了 diag.sh 脚本，方便用户可以在 DCE 5.0 平台界面打不开时快速排障。
+
+执行命令：
+
+```bash
+./offline/diag.sh
+```
+
+执行结果示例：
+
+![FAQ1](images/faq11.png)
+
+## Kind 容器重启后，kubelet 服务无法启动
+
+Kind 容器重启后，kubelet 服务无法启动，并报错 `failed to initialize top level QOS containers: root container [kubelet kubepods] doesn't exist`
+
+解决方案：
+
+- 方案一 重新重启，执行命令 `podman restart [kind] --time 120`，执行过程中不能通过 ctrl+c 中断该任务
+
+- 方案二 `podman exec` 进入 Kind 容器，执行以下命令：
+  
+  ```bash
+  for i in $(systemctl list-unit-files --no-legend --no-pager -l | grep --color=never -o .*.slice | grep kubepod);
+  do systemctl stop $i;
+  done
+  ```
 
 ## 禁用 IPv6 后安装时 Podman 无法创建容器
 

@@ -50,7 +50,7 @@ ISO 操作系统镜像文件需要在[集群配置文件](./cluster-config.md)�
 | CPU 架构 | 操作系统版本                                        | 下载地址                                                     |
 | :------- | :-------------------------------------------------- | :----------------------------------------------------------- |
 | AMD64    | Centos 7                                            | <https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-DVD-2009.iso> |
-|          | Redhat 7、8                                         | <https://developers.redhat.com/products/rhel/download#assembly-field-downloads-page-content-61451> <br />注意：Redhat 操作系统需要 Redhat 的账号才可以下载 |
+|          | Redhat 7、8、9                                      | <https://developers.redhat.com/products/rhel/download#assembly-field-downloads-page-content-61451> <br />注意：Redhat 操作系统需要 Redhat 的账号才可以下载 |
 |          | Ubuntu 20.04                                        | <https://releases.ubuntu.com/focal/ubuntu-20.04.6-live-server-amd64.iso> |
 |          | 统信UOS V20（1020a）                                | <https://cdimage-download.chinauos.com/uniontechos-server-20-1020a-amd64.iso> |
 |          | openEuler 22.03                                     | <https://mirrors.nju.edu.cn/openeuler/openEuler-22.03-LTS-SP1/ISO/x86_64/openEuler-22.03-LTS-SP1-x86_64-dvd.iso> |
@@ -70,6 +70,7 @@ osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源
 | Centos 7                                            | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.7.4/os-pkgs-centos7-v0.7.4.tar.gz> |
 | Redhat 8                                            | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.7.4/os-pkgs-redhat8-v0.7.4.tar.gz> |
 | Redhat 7                                            | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.7.4/os-pkgs-redhat7-v0.7.4.tar.gz> |
+| Redhat 9                                            | https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.8.3/os-pkgs-redhat9-v0.8.3.tar.gz |
 | Kylin Linux Advanced Server release V10 (Sword) SP2 | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.7.4/os-pkgs-kylinv10-v0.7.4.tar.gz> |
 | Ubuntu20.04                                         | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.7.4/os-pkgs-ubuntu2004-v0.7.4.tar.gz> |
 | openEuler 22.03                                     | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.7.4/os-pkgs-openeuler22.03-v0.7.4.tar.gz> |
@@ -90,7 +91,7 @@ osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源
 !!! note
 
     ```
-    由于不同的 ISO 操作系统下载方式不一致，所以暂不支持。
+    由于不同的 ISO 操作系统下载方式不一致，所以一键下载出来的离线包并不包含 ISO 文件。
     ```
 
 ### 第 2 步：配置集群配置文件
@@ -100,6 +101,7 @@ osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源
 !!! note
 
     目前离线镜像包中提供了标准的 7 节点模式模板。
+    使用 Redhat 9.2 操作系统部署时，需要开启内核调优参数 `node_sysctl_tuning: true`
 
 ### 第 3 步：开始安装
 
