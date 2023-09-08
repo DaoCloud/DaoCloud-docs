@@ -476,6 +476,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: reduce the permissions of all processes in the container, and no longer run the privileged container by default; expose an endpoint for viewing pprof diagnostic data; support the collection of Prometheus metrics inside the controller, such as the amount of memory allocated and spent CPU time; if the ingress rules do not match, it supports custom setting of the backend port.
 
+- [Harbor Container Image Repository v2.9.0 released (CNCF project)](https://github.com/goharbor/harbor/releases/tag/v2.9.0)
+
+    Release features: Administrators can access security information including the number of scanned and unscanned artifacts, dangerous artifacts, and CVEs; provides more detailed information to track garbage collection operations and supports enabling parallel deletion to accelerate the triggering and execution process of garbage collection; supports the OCI Distribution Specification v1.1.0-rc2 and adds support for Notation signatures and Nydus conversions; Introduces a new mechanism that uses Redis for optimistic locking to update quotas when pushing mirrors.
+
 - [Harbor Container Container Registry v2.8.0 Released (CNCF Project)](https://github.com/goharbor/harbor/releases/tag/v2.8.0)
 
     Version features: support for OCI distribution spec v1.1.0-rc1, support for sending Webhook loads via CloudEvents format, support for skipping automatic update pull times for task scanners, removal of helm chart repository server ChartMuseum.
@@ -533,6 +537,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Ingress-NGINX Controller v1.7.0 Released](https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.7.0)
 
     Version features: support for golang 1.20, removal of support for Kubernetes 1.23, integration with OpenTelemetry module.
+
+- [Istio Service Mesh 1.19 released (CNCF project)](https://istio.io/latest/news/releases/1.19.x/announcing-1.19/)
+
+    Release features: Gateway API v0.8.0 adds support for Service Mesh; Ambient Mesh adds support for `ServiceEntry`, `WorkloadEntry`, `PeerAuthentication`, and DNS proxies; support for optional client-side certificate validation; support for configuring non-Istio mTLS traffic cipher suites.
 
 - [Istio Community Releases Istio 1.18 Performance Test Results](https://istio.io/latest/docs/ops/deployment/performance-and-scalability/)
 
@@ -1358,6 +1366,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      [Serverless Devs](https://github.com/Serverless-Devs/Serverless-Devs) is open sourced by Alibaba Cloud and is committed to providing developers with a powerful tool chain system. In this way, developers can not only experience multicloud serverless products with one click, quickly deploy serverless projects, but also carry out project management in the whole lifecycle of serverless applications, integrate with other tools/platforms, and improve the efficiency of R & D and operation and maintenance.
 
+- [Skywalking Application Performance Monitor v9.6.0 released](https://github.com/apache/skywalking/releases/tag/v9.6.0)
+
+    Release Features: Supports MQE (Metrics Query Expression) and introduces a new notification mechanism; Loki LogQL query language and Grafana Loki Dashboard can now be used to view and analyze logs collected by SkyWalking; Supports OTEL-based implementation of MongoDB server/cluster monitoring; Improved build process. /cluster monitoring; improvements to the build process to make it replicable for automated release CI processes.
+
 - [Skywalking Application Performance Monitoring System v9.5.0 Released](https://github.com/apache/skywalking/releases/tag/v9.5.0)
 
     Release features: new topology layout, support for Elasticsearch server monitoring, support for continuous analysis, support for collecting process-level related metrics, support for cross-thread trace analysis, support for monitoring the total number of metrics in k8s StatefulSet and DaemonSet, support for Redis and RabbitMQ monitoring.
@@ -1425,6 +1437,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Telepresence K8s Native Development Tool v2.10.0 Release (CNCF Project)](https://www.getambassador.io/docs/telepresence/latest/release-notes#2.10.0)
 
     The main new features of this release: Traffic Manager supports team mode and single-user mode, adding the secret of pulling mirrors in Helm Chart, OSS Helm chart will be pushed to telepresence proprietary repository (formerly datawire Helm repository).
+
+- [Tetragon Security Observable and Runtime Enhancement Platform v0.11.0 released](https://github.com/cilium/tetragon/releases/tag/v0.11.0)
+
+    Added Tetragon operator deployment to Helm Chart, IPv6 support, support for monitoring Kubernetes service, added access to K8sResourceWatcher, removed metrics for deleted Pods, added workload labeling to metrics with Pod information, added registration logic to Pod information CRD. Pod Information CRD.
 
 - [Tetragon Security Observable and Runtime Enhancement Platform v0.10.0 released](https://github.com/cilium/tetragon/releases/tag/v0.10.0)
 
