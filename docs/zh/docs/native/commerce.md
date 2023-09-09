@@ -100,6 +100,10 @@
 
     Azure Kubernetes 舰队管理器将多个群集地视为单个集群来管理。用户可通过创建一个 Fleet 资源来管理多个集群。用户可将现有 AKS 集群当作成员集群，加入到舰队中，然后用这些集群的元数据，编排多个集群场景，如 Kubernetes 资源传播和多集群负载均衡。
 
+- [阿里云微服务引擎 MSE 8 月产品更新](https://mp.weixin.qq.com/s/odXdOMFiBvbpq09xhLrcZA)
+
+    更新内容：云原生网关支持为路由配置JT认证，并对指定的消费者进行鉴权；支持将线上流量复制到指定服务；MSEIngress 支持路由级别的 Sentinel全局限流和并发控制；支持同一 Service 下多 Deployment 的灰度发布；应用相关监控数据支持 1 天内的监控回放；基于 KruiseRollout 实现全链路灰度发布能力。
+
 - [阿里云应用实时监控服务 ARMS 7 月产品更新](https://mp.weixin.qq.com/s/NyRu3zNJwSfnV8Pc4tJBrQ)
 
     更新内容：新增对 JVM 系统参数、K8s Yaml 等参数信息的脱敏功能；支持 ZGC 垃圾回收器相关指标展示；应用告警支持 p99 等分位数、慢调用次数等规则指标配置；应用告警规则支持区间检测模式。
@@ -441,6 +445,10 @@
 
     更新内容：增加集群的 etcd 备份支持；支持创建镜像备份仓库；支持可选应用镜像源的镜像备份；支持沙箱恢复，恢复后不影响原业务；支持备份恢复任务使用钩子程序进行灵活的附属功能配置；支持基于备份恢复的数据卷同步方式；持配置容灾实例时同时配置 ingress 映射。
 
+- [京东云云原生安全平台发布](https://mp.weixin.qq.com/s/SSs3231b2wU75dKXue8Fxw)
+
+    京东云云原生安全平台包含资产清点、镜像安全、运行时安全、网络安全、集群安全、节点安全等安全服务，提供从镜像生成、存储到运行时的全生命周期云原生安全解决方案。
+
 - [Kong 服务网格产品 Kong Mesh v2.3 发布](https://konghq.com/blog/product-releases/kong-mesh-2-3)
 
     更新内容：支持 Envoy 1.26、在 Kubernetes 中采用最小权限的安全默认配置、支持 TLS 网关监听器、允许细粒度控制网格的安装方式、支持只向全局控制平面发送配置更新中的变化、GitOps 工作流支持定制/禁用默认策略创建、支持 init 容器排序、支持 GAMMA 倡议。
@@ -707,6 +715,10 @@
 - [ServiceNow 发布统一查询语言 Lightstep UQL，扩展 Kubernetes 应用的可见性](https://lightstep.com/blog/announcing-the-lightstep-unified-query-language)
 
     Lightstep UQL 支持统一的“可观测性即代码”，通过单一查询语言简化从多个不同工具迁移到统一 Lightstep 平台的过程，还支持跨多个 Kubernetes 节点、服务器或 serverless 函数查询和关联指标、日志和跟踪。
+
+- [SmartX 超融合产品组合 SmartX HCI 5.1 发布](https://mp.weixin.qq.com/s/GTG3APMu_8IHeIVXS-UZjA)
+
+    除近期发布的容器管理与服务组件（ SMTX Kubernetes Service 1.0），SmartX HCI 5.1 新增跨虚拟化与容器平台的软件定义负载均衡、可观测平台等组件，并全面提升虚拟化、分布式存储、分布式防火墙、系统运维、灾备、迁移工具等组件能力。
 
 - [SmartX 携手灵雀云推出全栈云原生联合解决方案](https://mp.weixin.qq.com/s/_mhgQ3YsGdWgWCbQyuT9xA)
 

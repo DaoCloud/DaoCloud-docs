@@ -104,6 +104,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
     Azure Kubernetes Fleet Manager treats multiple cluster sites as a single cluster to be managed. Users can manage multiple clusters by creating a Fleet resource. Users can treat existing AKS clusters as member clusters, join them to the fleet, and then orchestrate multiple cluster Cases such as Kubernetes resource propagation and multicluster load balancing using metadata from those clusters.
 
+- [AliCloud Microservice Engine MSE August Product Update](https://mp.weixin.qq.com/s/odXdOMFiBvbpq09xhLrcZA)
+
+    Updates: Cloud Native Gateway supports configuring JT authentication for routes and authenticating specified consumers; supports replicating online traffic to specified services; MSEIngress supports route-level Sentinel fully-confined flow and concurrency control; supports gray-scale release of multiple Deployments under the same Service; application-related monitoring data supports monitoring within 1 day Application-related monitoring data supports monitoring and playback within 1 day; based on KruiseRollout, it realizes the ability of full-link grayscale release.
+
 - [AliCloud Application Real-time Monitoring Service ARMS July Product Update](https://mp.weixin.qq.com/s/NyRu3zNJwSfnV8Pc4tJBrQ)
 
     Updates: New desensitization functions for JVM system parameters, K8s Yaml and other parameter information; support for displaying ZGC garbage collector-related indicators; application alerts support the configuration of rule indicators such as p99 equidistant quartiles and the number of slow invocations; and the application alert rules support the interval detection mode.
@@ -429,6 +433,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 ### J, K
 
+- [JD Cloud Cloud Native Security Platform Released](https://mp.weixin.qq.com/s/SSs3231b2wU75dKXue8Fxw)
+
+    Jingdong Cloud Cloud Native Security Platform includes security services such as asset inventory, image security, runtime security, network security, cluster security, node security, etc., providing a full lifecycle cloud native security solution from image generation, storage to runtime.
+
 - [Jibudata's multi-cloud data backup and recovery products YS1000 v3.3 & v3.4 released](https://mp.weixin.qq.com/s/lW4ZgiX3aZ39OgAiqLHIlQ)
 
     Updates: Multi-user self-service based on tenant segregation for private cloud, third-party login support, migration task hooks, migration policy support, image pre-pulling to shorten disaster recovery time, support for external mysql database during installation, set taint-tolerant nodes during installation, support for adding logical database backups to backup plans, support for selecting pvc resources but not including them in backup templates, and support for selecting only pvc resources but not including pvc resources in backup templates. In the backup template, it supports selecting only the pvc resource but not the corresponding data volume.
@@ -693,6 +701,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [ServiceNow Releases Unified Query Language Lightstep UQL, Extending the Visibility of Kubernetes Applications](https://lightstep.com/blog/announcing-the-lightstep-unified-query-language)
 
      Lightstep UQL supports unified "observability as code", simplifies the process of migrating from multiple disparate tools to the unified Lightstep platform through a single query language, and also supports querying and correlating metrics, logs and track.
+
+- [SmartX HCI 5.1 for SmartX Hyperconverged Portfolio Released](https://mp.weixin.qq.com/s/GTG3APMu_8IHeIVXS-UZjA)
+
+    In addition to the recently released container management and service component (SMTX Kubernetes Service 1.0), SmartX HCI 5.1 adds new components such as software-defined load balancing across virtualization and container platforms, observable platforms, and comprehensively improves the capabilities of virtualization, distributed storage, distributed firewalls, system operation and maintenance, disaster recovery, migration tools, and other components.
 
 - [SmartX Partners with Spirit Sparrow Cloud to Launch Joint Full-Stack Cloud Native Solution](https://mp.weixin.qq.com/s/_mhgQ3YsGdWgWCbQyuT9xA)
 

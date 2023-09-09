@@ -481,6 +481,10 @@
 
     该版本主要新特性：降低容器中所有进程的权限，不再默认运行 privileged 容器；暴露了一个用于查看 pprof 诊断数据的端点；支持收集控制器内部的 Prometheus 指标，如分配的内存量和花费的 CPU 时间；若入口规则不匹配，支持自定义设置后端端口。
 
+- [Harbor 容器镜像仓库 v2.9.0 发布（CNCF 项目）](https://github.com/goharbor/harbor/releases/tag/v2.9.0)
+
+    版本特性：管理员可以访问包括扫描和未扫描的构件数量、危险构件和 CVE 等安全信息；提供更详细的信息来跟踪垃圾回收操作，并支持启用并行删除以加速垃圾回收的触发和执行过程；支持 OCI分发规范 v1.1.0-rc2，并增加了对 Notation 签名和 Nydus 转换的支持；引入一种新的机制，使用 Redis 进行乐观锁以在推送镜像时更新配额。
+
 - [Harbor 容器镜像仓库 v2.8.0 发布（CNCF 项目）](https://github.com/goharbor/harbor/releases/tag/v2.8.0)
 
     版本特性：支持 OCI distribution spec v1.1.0-rc1、支持通过 CloudEvents 格式发送 Webhook 负载、支持跳过任务扫描器的自动更新拉取时间、移除 helm chart 仓库服务器 ChartMuseum。
@@ -538,6 +542,10 @@
 - [Ingress-NGINX Controller v1.7.0 发布](https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.7.0)
 
     版本特性：支持 golang 1.20、移除对 Kubernetes 1.23 的支持、集成 OpenTelemetry 模块。
+
+- [Istio 服务网格 1.19 发布（CNCF 项目）](https://istio.io/latest/news/releases/1.19.x/announcing-1.19/)
+
+    版本特性：Gateway API v0.8.0 增加对服务网格的支持；Ambient Mesh 增加对 `ServiceEntry`、`WorkloadEntry`、`PeerAuthentication` 和 DNS 代理的支持；支持可选的客户端证书验证；支持配置非 Istio mTLS流量的密码套件。
 
 - [Istio 社区发布 Istio 1.18 性能测试结果](https://istio.io/latest/docs/ops/deployment/performance-and-scalability/)
 
@@ -1357,6 +1365,10 @@
 
     [Serverless Devs](https://github.com/Serverless-Devs/Serverless-Devs) 由阿里云开源，致力于为开发者提供强大的工具链体系。借此，开发者不仅可以一键体验多云 Serverless 产品，极速部署 Serverless 项目，还可以在 Serverless 应用全生命周期进行项目管理，与其他工具/平台集成，提升研发运维效能。
 
+- [Skywalking 应用性能监控系统 v9.6.0 发布](https://github.com/apache/skywalking/releases/tag/v9.6.0)
+
+    版本特性：支持 MQE（Metrics Query Expression），并引入一种新的通知机制；现在可以使用 Loki LogQL 查询语言和 Grafana Loki Dashboard 来查看和分析 SkyWalking 收集的日志；支持基于 OTEL 实现的 MongoDB 服务器/集群监控；改进构建过程，使其具备可复制性，以便于进行自动发布的 CI 流程。
+
 - [Skywalking 应用性能监控系统 v9.5.0 发布](https://github.com/apache/skywalking/releases/tag/v9.5.0)
 
     版本特性：新的拓扑结构布局图、支持对 Elasticsearch 服务器监控、支持持续分析功能、支持收集进程级相关指标、支持跨线程跟踪分析、支持监控 k8s StatefulSet 和 DaemonSet 的总数量指标、支持 Redis 和 RabbitMQ 监控。
@@ -1424,6 +1436,10 @@
 - [Telepresence K8s 本地开发工具 v2.10.0 发布（CNCF 项目）](https://www.getambassador.io/docs/telepresence/latest/release-notes#2.10.0)
 
     该版本主要新特性：流量管理器支持被团队模式和单用户模式、在 Helm Chart 中添加拉取镜像的 secret、OSS Helm chart 将被推送到 telepresence 专有仓库（原先为 datawire Helm 仓库）。
+
+- [Tetragon 安全可观测和运行时增强平台 v0.11.0 发布](https://github.com/cilium/tetragon/releases/tag/v0.11.0)
+
+    在 Helm Chart 中添加 Tetragon operator 的 deployment、支持 IPv6、支持监视 Kubernetes service、添加访问 K8sResourceWatcher 的功能、删除已删除 Pod 的指标、在带有 Pod 信息的指标中添加工作负载标签、为 Pod 信息 CRD 添加注册逻辑。
 
 - [Tetragon 安全可观测和运行时增强平台 v0.10.0 发布](https://github.com/cilium/tetragon/releases/tag/v0.10.0)
 
