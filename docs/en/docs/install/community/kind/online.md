@@ -34,57 +34,58 @@ precheck pass...
 
     - If you have installed Docker v1.18+, skip this step.
     - Use domestic source to accelerate: <https://developer.aliyun.com/mirror/docker-ce>
-    - If you have Podman on your node but not Docker, you still need to install Docker.This is because of a known bug: although Podman can start kind, there will be a problem of insufficient file handles and IP mismatch.
+    - If you have Podman on your node but not Docker, you still need to install Docker.
+      This is because of a known bug: although Podman can start kind, there will be a problem of insufficient file handles and IP mismatch.
 
 === "On CentOS"
 
-     ```shell
-     set -e
-     if  [ -x "$(command -v docker )" ] ;then
+    ```shell
+    set -e
+    if  [ -x "$(command -v docker )" ] ;then
         echo "docker already installed : version = "$(docker -v);
-     else
+    else
         echo "docker not found, please install it first."
-     fi
+    fi
     
-     sudo yum install -y yum-utils device-mapper-persistent-data lvm2
-     sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
-     sudo sed -i 's+download.docker.com+mirrors.aliyun.com/docker-ce+' /etc/yum.repos.d/docker-ce.repo
-     sudo yum makecache fast
-     sudo yum -y install docker-ce
-     sudo service docker start
-     sudo systemctl enable docker
-     sudo yum install -y wget
-     ```
+    sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+    sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+    sudo sed -i 's+download.docker.com+mirrors.aliyun.com/docker-ce+' /etc/yum.repos.d/docker-ce.repo
+    sudo yum makecache fast
+    sudo yum -y install docker-ce
+    sudo service docker start
+    sudo systemctl enable docker
+    sudo yum install -y wget
+    ```
 
 === "On Ubuntu"
 
-     ```shell
-     set -e
-     if  [ -x "$(command -v docker )" ] ;then
+    ```shell
+    set -e
+    if  [ -x "$(command -v docker )" ] ;then
         echo "docker already installed : version = "$(docker -v);
-     else
+    else
         echo "docker not found, please install it first."
-     fi
-     sudo apt-get update
-     sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common
-     curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -
-     sudo add-apt-repository --yes "deb [arch=amd64] https://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable"
-     sudo apt-get -y update
-     sudo apt-get -y install docker-ce
-     sudo apt-get -y install wget
-     sudo service docker start
-     sudo systemctl enable docker
-     ```
+    fi
+    sudo apt-get update
+    sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common
+    curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -
+    sudo add-apt-repository --yes "deb [arch=amd64] https://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable"
+    sudo apt-get -y update
+    sudo apt-get -y install docker-ce
+    sudo apt-get -y install wget
+    sudo service docker start
+    sudo systemctl enable docker
+    ```
 
 ## Install kind cluster
 
-1. Download the binary package of kind .
+1. Download the binary package of kind.
 
     ```shell
     curl -Lo ./kind https://qiniu-download-public.daocloud.io/kind/v0.17.0/kind-linux-amd64
     chmod +x ./kind
     old_kind=$(which kind)
-    if [ -f "$old_kind" ]; then mv ./kind $old_kind; else mv ./kind /usr/bin/kind ;
+    if [ -f "$old_kind" ]; then mv ./kind $old_kind; else mv ./kind /usr/bin/kind ; fi
     ```
 
 1. Check the kind version.
@@ -101,7 +102,8 @@ precheck pass...
 
 2. Modify the `kind_cluster.yaml` to make it applicable in your environment.
 
-    Expose the internal port `32088` to port 8888 (customizable) for external communication. The configuration file example is as follows:
+    Expose the internal port `32088` to port 8888 (customizable) for external communication.
+    The configuration file example is as follows:
 
     ```yaml title="kind_cluster.yaml"
     apiVersion: kind.x-k8s.io/v1alpha4
@@ -115,34 +117,34 @@ precheck pass...
 
 3. Create a Kubernetes cluster of v1.25.3, named (for example) `fire-kind-cluster`.
 
-     ```shell
-     kind create cluster --image release.daocloud.io/kpanda/kindest-node:v1.25.3 --name=fire-kind-cluster --config=kind_cluster.yaml
-     ```
+    ```shell
+    kind create cluster --image release.daocloud.io/kpanda/kindest-node:v1.25.3 --name=fire-kind-cluster --config=kind_cluster.yaml 
+    ```
 
-     The expected output is like:
+    The expected output is like:
 
-     ```console
-     Creating cluster "fire-kind-cluster" ...
-      ✓ Ensuring node image (release.daocloud.io/kpanda/kindest-node:v1.25.3) 🖼
-      ✓ Preparing nodes 📦
-      ✓ Writing configuration 📜
-      ✓ Starting control-plane 🕹️
-      ✓ Installing CNI 🔌
-      ✓ Installing StorageClass 💾
-     Set kubectl context to "kind-fire-kind-cluster"
-     ```
+    ```console
+    Creating cluster "fire-kind-cluster" ...
+     ✓ Ensuring node image (release.daocloud.io/kpanda/kindest-node:v1.25.3) 🖼 
+     ✓ Preparing nodes 📦  
+     ✓ Writing configuration 📜 
+     ✓ Starting control-plane 🕹️ 
+     ✓ Installing CNI 🔌 
+     ✓ Installing StorageClass 💾 
+    Set kubectl context to "kind-fire-kind-cluster"
+    ```
 
 4. Check the newly created cluster.
 
-     ```shell
-     kind get clusters
-     ```
+    ```shell
+    kind get clusters
+    ```
 
-     The expected output is like:
+    The expected output is like:
 
-     ```console
-     fire-kind-cluster
-     ```
+    ```console
+    fire-kind-cluster
+    ```
 
 ## Install DCE Community package
 
@@ -190,7 +192,7 @@ precheck pass...
 
     !!! success
 
-        Please write down the prompted URL for your next visit.
+        It's recommended to write down the prompted URL for your next visit.
 
 !!! success
 

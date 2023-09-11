@@ -110,6 +110,7 @@ Click [Online Install DCE Community](../../../videos/install.md) to watch a vide
 
     !!! success
 
-        Please write down the prompted URL for your next visit.
+        It's recommended to write down the prompted URL for your next visit.
 
-5. Before fully explore the features of DCE 5.0, you need to apply for a license. The Community package is provided for free. All you need to do is to [apply for a free license](../../../dce/license0.md).
+5. Before fully explore the features of DCE 5.0, you need to apply for a license.
+   The Community package is provided for free. All you need to do is to [apply for a free license](../../../dce/license0.md).

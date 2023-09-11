@@ -8,26 +8,23 @@
 
 - 准备一个 Kubernetes 集群，集群配置请参考文档[资源规划](../resources.md)。
 
-    !!! note
-
-        - 存储：需要提前准备好 StorageClass，并设置为默认 SC
-        - 确保集群已安装 CoreDNS
-        - 如果是单节点集群，请确保您已移除该节点的污点
+    - 存储：需要提前准备好 StorageClass，并设置为默认 SC
+    - 确保集群已安装 CoreDNS
+    - 如果是单节点集群，请确保您已移除该节点的污点
 
 - [安装依赖项](../../install-tools.md)。
 
-    !!! note
-
-        如果集群中已安装所有依赖项，请确保依赖项版本符合要求：
+    如果集群中已安装所有依赖项，请确保依赖项版本符合要求：
         
-        - helm ≥ 3.11.1
-        - skopeo ≥ 1.11.1
-        - kubectl ≥ 1.25.6
-        - yq ≥ 4.31.1
+    - helm ≥ 3.11.1
+    - skopeo ≥ 1.11.1
+    - kubectl ≥ 1.25.6
+    - yq ≥ 4.31.1
 
 ## 下载和安装
 
-1. 在 k8s 集群控制平面节点（Controller Node）下载社区版的对应离线包并解压，或者从[下载中心](../../../download/index.md)下载离线包并解压。
+1. 在 k8s 集群控制平面节点（Controller Node）下载社区版的对应离线包并解压，
+   或者从[下载中心](../../../download/index.md)下载离线包并解压。
 
     假定版本 VERSION=0.10.0
 

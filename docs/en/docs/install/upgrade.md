@@ -15,7 +15,9 @@ The components specific to the infrastructure modules of DCE 5.0 are defined in 
 
 ## Offline Upgrade Steps
 
-This demonstration shows how to upgrade from v0.8.0 to v0.9.0. Currently, when upgrading from a lower version to v0.9.0, it is necessary to upgrade both the product functionality modules and the infrastructure modules of DCE 5.0 in order to make use of the high availability feature of the `istio-gateway` component.
+This demonstration shows how to upgrade from v0.8.0 to v0.9.0. Currently, when upgrading from a lower version
+to v0.9.0, it is necessary to upgrade both the product functionality modules and the infrastructure modules
+of DCE 5.0 in order to make use of the high availability feature of the `istio-gateway` component.
 
 ### Step 1: Download the v0.9.0 Offline Package
 
@@ -87,7 +89,10 @@ The file is located under the `offline/sample` directory after extracting the of
 
 #### Configuration of DCE 5.0 Product Functionality Modules
 
-The components specific to the product functionality modules of DCE 5.0 are defined in the `components` section of the [manifest.yaml](commercial/manifest.md) file. If you don't want to upgrade certain product components, you can disable them. For example, if you want to skip the upgrade for Kpanda (container management), use the following configuration:
+The components specific to the product functionality modules of DCE 5.0 are defined in the `components` section
+of the [manifest.yaml](commercial/manifest.md) file. If you don't want to upgrade certain product components,
+you can disable them. For example, if you want to skip the upgrade for Kpanda (container management),
+use the following configuration:
 
 ```yaml
   components:
@@ -99,7 +104,9 @@ The components specific to the product functionality modules of DCE 5.0 are defi
 
 #### Configuration of DCE 5.0 Infrastructure Modules
 
-The components specific to the infrastructure modules of DCE 5.0 are defined in the `infrastructures` section of the [manifest.yaml](commercial/manifest.md) file. For example, the following configuration is for the `hwameiStor` component in the infrastructure module:
+The components specific to the infrastructure modules of DCE 5.0 are defined in the `infrastructures` section
+of the [manifest.yaml](commercial/manifest.md) file. For example, the following configuration is for the
+`hwameiStor` component in the infrastructure module:
 
 ```yaml
   infrastructures:
@@ -111,7 +118,8 @@ The components specific to the infrastructure modules of DCE 5.0 are defined in 
 
 !!! note
 
-Currently, only the upgrade of product components that are already installed in the current environment is supported. Non-existent components will be skipped during the upgrade process.
+    Currently, only the upgrade of product components that are already installed in the current environment
+    is supported. Non-existent components will be skipped during the upgrade process.
 
 ### Step 4: Start the Upgrade
 
@@ -136,6 +144,9 @@ Explanation of upgrade parameters:
 - `install-app` or `cluster-create`: Represents the installation mode type of DCE 5.0. If the initial environment was installed using `cluster-create`, use this command for the upgrade as well.
 - `--upgrade`, can be abbreviated as `-u`: Currently supports upgrading DCE 5.0 product functionality modules (`gproduct`) and infrastructure modules (`infrastructures`).
 - To upgrade both the product functionality modules and the infrastructure modules together, specify the parameter `--upgrade infrastructures,gproduct`.
+- The installer v0.12.0 introduces support for the `--multi-arch` parameter.
+  This parameter is mainly used when there are multiple architecture images in the current environment.
+  By adding this parameter during the upgrade process, it prevents overwriting of existing multi-architecture images.
 
 ### Step 5: Successful Installation Message
 

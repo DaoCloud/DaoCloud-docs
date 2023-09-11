@@ -32,7 +32,7 @@ spec:
 
   loadBalancer:
 
-    # NodePort (default), metallb, cloudLB (Cloud Controller)
+    # NodePort (default), metallb, cloudLB (Cloud Controller is not supported currently)
     type: metallb
     istioGatewayVip: xx.xx.xx.xx/32 # Required when loadBalancer.type is metallb, providing UI and OpenAPI access for DCE
     insightVip: xx.xx.xx.xx/32 # Do not discard /32, required when loadBalancer.type is metallb, used as the Insight data collection entry point for the global cluster, where the insight-agent of sub-clusters can report data to
@@ -46,23 +46,27 @@ spec:
       ansibleUser: "root"
       ansiblePass: "dangerous"
       #ansibleSSHPort: "22"
+      #ansibleExtraArgs: "" # "ansible_shell_executable='/bin/sh' ansible_python_interpreter='/usr/local/bin/python'" , format: "k='v'  k1='v1'  k2='v2' "
     - nodeName: "g-master2"
       ip: xx.xx.xx.xx
       ansibleUser: "root"
       ansiblePass: "dangerous"
       #ansibleSSHPort: "22"
+      #ansibleExtraArgs: ""
     - nodeName: "g-master3"
       ip: xx.xx.xx.xx
       ansibleUser: "root"
       ansiblePass: "dangerous"
       #ansibleSSHPort: "22"
+      #ansibleExtraArgs: ""
   workerNodes:
     - nodeName: "g-worker1"
       ip: xx.xx.xx.xx
       ansibleUser: "root"
       ansiblePass: "dangerous"
       #ansibleSSHPort: "22"
-      nodeTaints:                       # For the 7-node mode: At least 3 worker nodes should have a taint applied (only for ES nodes). If an external ES is used, there is no need to add this taint.
+      #ansibleExtraArgs: ""
+      nodeTaints:     # For the 7-node mode: At least 3 worker nodes should have a taint applied (only for ES nodes). If an external ES is used, there is no need to add this taint.
        - "node.daocloud.io/es-only=true:NoSchedule"
       # nodeLabels:
       #   daocloud.io/hostname: g-worker1
@@ -71,6 +75,7 @@ spec:
       ansibleUser: "root"
       ansiblePass: "dangerous"
       #ansibleSSHPort: "22"
+      #ansibleExtraArgs: ""
       nodeTaints:
        - "node.daocloud.io/es-only=true:NoSchedule"
       # nodeLabels:
@@ -80,6 +85,7 @@ spec:
       ansibleUser: "root"
       ansiblePass: "dangerous"
       #ansibleSSHPort: "22"
+      #ansibleExtraArgs: ""
       nodeTaints:
        - "node.daocloud.io/es-only=true:NoSchedule"
       # nodeLabels:
@@ -228,85 +234,100 @@ spec:
   #  criProvider: containerd
   #  criVersion only take effect in online mode, don't set it in offline mode
   #  criVersion: 1.6.8
+  # renewCerts: Certificate renewal for the cluster
+  #  # There are only 2 modes of renewing certificates: `onetime` or `cyclical`, with the default value `cyclical`.
+  #  # 1. When mode is set to `cyclical`, certificate renewal will be performed on a timer in a cyclical manner.
+  #  mode: cyclical
+
+  #  # 2. When mode is set to `onetime`, certificate renewal will be completed at once, and you can set the validity days of the certificate.
+  #  mode: onetime
+  #  # Valid days can be set when in `onetime` mode, with the default valid days being 3650.
+  #  oneTimeValidDays: 3650
 ```
 
 ## Key fields
 
 For key field descriptions in this YAML file, see the table below.
 
-| Field             | Description                                                          | Default Value                                         |
-| ----------------- | -------------------------------------------------------------------- | ----------------------------------------------------- |
-| clusterName       | Name of the Global cluster within KuBean Cluster                      | -                                                     |
-| tinderKind        | Configuration for the TinderKind cluster                              | -                                                     |
-| tinderKind.instanceName | Container name for the TinderKind cluster                         | -                                                     |
-| tinderKind.resourcesMountPath | Host path where the Kind cluster will be mounted                | /home/kind                                            |
-| tinderKind.registryPort | Port of the container registry in the Kind cluster                     | 443                                                   |
-| tinderKind.minioServerPort | Port of the MinIO Server in the Kind cluster                          | 9000                                                  |
-| tinderKind.minioConsolePort | Port of the MinIO Console in the Kind cluster                         | 9001                                                  |
-| tinderKind.chartmuseumPort | Port of the ChartMuseum in the Kind cluster                           | 8081                                                  |
-| masterNodes       | List of Master nodes in the Global cluster, including nodeName/ip/ansibleUser/ansiblePass fields | -                                                     |
-| masterNodes.nodeName | Node name that overrides hostName                                  | -                                                     |
-| masterNodes.ip    | Node IP                                                             | -                                                     |
-| masterNodes.ansibleUser | Node account                                                      | -                                                     |
-| masterNodes.ansiblePass | Node password                                                     | -                                                     |
-| masterNodes.ansibleSSHPort | ssh port, default is 22                                             | 22                                                    |
-| workerNodes       | List of Worker nodes in the Global cluster, including nodeName/ip/ansibleUser/ansiblePass fields | -                                                     |
-| privateKeyPath    | Path to the SSH private key file for deploying the cluster. If specified, ansibleUser and ansiblePass are not required | -                                                     |
-| k8sVersion        | K8s version for installing the cluster, must match KuBean and offline package       | -                                                     |
-| loadBalancer.insightVip | VIP used for Insight data collection in the Global cluster, required when loadBalancer.type is metallb   | -                                                     |
-| loadBalancer.istioGatewayVip | VIP used for DCE UI and OpenAPI access when loadBalancer.type is metallb  | -                                                     |
-| loadBalancer.type | Load balancer mode used, metallb for physical environments, NodePort for POC, cloudLB for public cloud and SDN CNI environments | NodePort (default), metallb, cloudLB (Cloud Controller) |
-| fullPackagePath   | Path to the extracted offline package, required in offline mode      | -                                                     |
-| addonPackage.path | Local file system path for the application store addon package       | -                                                     |
-| imagesAndCharts   | Container registry and Chart repository sources                        | -                                                     |
-| imagesAndCharts.externalChartRepo | IP or domain name of the external Chart repository              | -                                                     |
-| imagesAndCharts.externalChartRepoPassword | Password for the external Chart repository, used for image push  | -                                                     |
-| imagesAndCharts.externalChartRepoType | Type of the external Chart repository, either chartmuseum or harbor    | -                                                     |
-| imagesAndCharts.externalChartRepoUsername | Username for the external Chart repository, used for image push | -                                                     |
-| imagesAndCharts.externalImageRepo | IP or domain name of the external container registry with protocol header specified   | -                                                     |
-| imagesAndCharts.externalImageRepoPassword | Password for the external container registry, used for image push  | -                                                     |
-| imagesAndCharts.externalImageRepoUsername | Username for the external container registry, used for image push  | -                                                     |
+| Field             | Description         | Default Value              |
+| ----------------- | --------------- | ---------------- |
+| clusterName       | Name of the Global cluster within Kubean Cluster                      | -    |
+| tinderKind        | Configuration for the TinderKind cluster         | -    |
+| tinderKind.instanceName | Container name for the TinderKind cluster                         | -    |
+| tinderKind.resourcesMountPath | Host path where the Kind cluster will be mounted         | /home/kind   |
+| tinderKind.registryPort | Port of the container registry in the Kind cluster    | 443                                                   |
+| tinderKind.minioServerPort | Port of the MinIO Server in the Kind cluster    | 9000                                                  |
+| tinderKind.minioConsolePort | Port of the MinIO Console in the Kind cluster        | 9001                                                  |
+| tinderKind.chartmuseumPort | Port of the ChartMuseum in the Kind cluster       | 8081                                                  |
+| masterNodes       | List of Master nodes in the Global cluster, including nodeName/ip/ansibleUser/ansiblePass fields | -    |
+| masterNodes.nodeName | Node name that overrides hostName                                  | -    |
+| masterNodes.ip    | Node IP                                                             | -    |
+| masterNodes.ansibleUser | Node account                                                      | -    |
+| masterNodes.ansiblePass | Node password              | -       |
+| masterNodes.ansibleSSHPort | ssh port, default is 22      | 22    |
+| masterNodes.ansibleExtraArgs | Specify additional arguments for the Ansible inventory | - |
+| workerNodes       | List of Worker nodes in the Global cluster, including nodeName/ip/ansibleUser/ansiblePass fields | -    |
+| privateKeyPath    | Path to the SSH private key file for deploying the cluster. If specified, ansibleUser and ansiblePass are not required | -    |
+| k8sVersion        | K8s version for installing the cluster, must match KuBean and offline package       | -    |
+| loadBalancer.insightVip | VIP used for Insight data collection in the Global cluster, required when loadBalancer.type is metallb   | -    |
+| loadBalancer.istioGatewayVip | VIP used for DCE UI and OpenAPI access when loadBalancer.type is metallb  | -    |
+| loadBalancer.type | Load balancer mode used, metallb for physical environments, NodePort for POC, cloudLB (not supported currently) for public cloud and SDN CNI environments | NodePort (default), metallb, cloudLB (Cloud Controller) |
+| fullPackagePath   | Path to the extracted offline package, required in offline mode      | -    |
+| addonPackage.path | Local file system path for the application store addon package       | -    |
+| imagesAndCharts   | Container registry and Chart repository sources                        | -    |
+| imagesAndCharts.externalChartRepo | IP or domain name of the external Chart repository              | -    |
+| imagesAndCharts.externalChartRepoPassword | Password for the external Chart repository, used for image push  | -    |
+| imagesAndCharts.externalChartRepoType | Type of the external Chart repository, either chartmuseum or harbor    | -    |
+| imagesAndCharts.externalChartRepoUsername | Username for the external Chart repository, used for image push | -    |
+| imagesAndCharts.externalImageRepo | IP or domain name of the external container registry with protocol header specified   | -    |
+| imagesAndCharts.externalImageRepoPassword | Password for the external container registry, used for image push  | -    |
+| imagesAndCharts.externalImageRepoUsername | Username for the external container registry, used for image push  | -    |
 | imagesAndCharts.type | Access mode for images and charts, official-service (online), buitin (TinderKind built-in registry and chartmuseum), external | official-service                                      |
 | auditConfig       | Audit log configuration for the k8s api-server                        | Disabled by default                                   |
-| binaries          | Executable binary files                                               | -                                                     |
-| binaries.externalRepository | Access address of the external binary executable file repository in URL format | -                                                     |
+| binaries          | Executable binary files                                               | -    |
+| binaries.externalRepository | Access address of the external binary executable file repository in URL format | -    |
 | binaries.type     | Access mode for executable binary files, official-service (online), builtin (MinIO built-in in TinderKind nodes) | official-service                                      |
-| network.clusterCIDR | Cluster CIDR                                                        | -                                                     |
+| network.clusterCIDR | Cluster CIDR                                                        | -    |
 | network.cni       | CNI selection, such as Calico, Cilium                                | calico                                                |
-| network.serviceCIDR | Service CIDR                                                        | -                                                     |
-| ntpServer         | Available NTP servers for time synchronization of new nodes           | -                                                     |
-| osRepos           | Operating system software repositories                                | -                                                     |
-| osRepos.externalRepoType | Operating system type of the external software repository, centos (all Red Hat series), debian, ubuntu | -                                                     |
+| network.serviceCIDR | Service CIDR                                                        | -    |
+| ntpServer         | Available NTP servers for time synchronization of new nodes           | -    |
+| osRepos           | Operating system software repositories                                | -    |
+| osRepos.externalRepoType | Operating system type of the external software repository, centos (all Red Hat series), debian, ubuntu | -    |
 | osRepos.externalRepoURLs | Access addresses of the external software repositories | - |
-| osRepos.isoPath                    | Path to the operating system ISO file, required when type is builtin | -                                                     |
-| osRepos.osPackagePath              | Path to the system package file, required when type is builtin        | -                                                     |
+| osRepos.isoPath                    | Path to the operating system ISO file, required when type is builtin | -    |
+| osRepos.osPackagePath              | Path to the system package file, required when type is builtin        | -    |
 | osRepos.type                       | Access mode for the operating system software repository, either official-service (online) or builtin (MinIO built-in in TinderKind nodes) | official-service                                      |
-| kubeanConfig.ntp_timezone          | Timezone setting for the nodes, if not configured, it will default to the timezone in the nodes | -                                                       |
+| kubeanConfig.ntp_timezone          | Timezone setting for the nodes, if not configured, it will default to the timezone in the nodes | -      |
 | kubeanConfig.node_sysctl_tuning    | Enable to adjust the Systemctl kernel parameters for the Global cluster | false                                                   |
 | kubeanConfig.extra_sysctl          | Set additional Systemctl kernel parameters                          | /usr/local/bin                                          |
-| externalMiddlewares                | External middlewares                                                 | -                                                       |
-| externalMiddlewares.database       | External database                                                   | -                                                       |
-| externalMiddlewares.database.ghippoApiserver | Configuration for the external ghippoApiserver database         | -                                                       |
-| externalMiddlewares.database.ghippoAuditserver | Configuration for the external ghippoAuditserver database     | -                                                       |
-| externalMiddlewares.database.ghippoKeycloak | Configuration for the external ghippoKeycloak database          | -                                                       |
-| externalMiddlewares.database.kpanda | Configuration for the external kpanda database                   | -                                                       |
+| externalMiddlewares                | External middlewares                                                 | -      |
+| externalMiddlewares.database       | External database                                                   | -      |
+| externalMiddlewares.database.ghippoApiserver | Configuration for the external ghippoApiserver database         | -      |
+| externalMiddlewares.database.ghippoAuditserver | Configuration for the external ghippoAuditserver database     | -      |
+| externalMiddlewares.database.ghippoKeycloak | Configuration for the external ghippoKeycloak database          | -      |
+| externalMiddlewares.database.kpanda | Configuration for the external kpanda database                   | -      |
 | externalMiddlewares.database.kpanda[0].accessType | Access type for the external kpanda database, either readwrite or readonly | readwrite                                               |
 | externalMiddlewares.database.kpanda[0].driver | Database type for the external kpanda database, currently only supports mysql | mysql                                                   |
-| externalMiddlewares.database.kpanda[0].dataSourceName | Data source information for connecting to the external kpanda database, refer to https://gorm.io/docs/connecting_to_the_database.html | -                                                       |
+| externalMiddlewares.database.kpanda[0].dataSourceName | Data source information for connecting to the external kpanda database, refer to https://gorm.io/docs/connecting_to_the_database.html | -      |
 | externalMiddlewares.database.kpanda[0].maxOpenConnections | Maximum number of open connections for the external kpanda database | 10                                                      |
 | externalMiddlewares.database.kpanda[0].maxIdleConnections | Maximum number of idle connections for the external kpanda database | 10                                                      |
 | externalMiddlewares.database.kpanda[0].connectionMaxLifetimeSeconds | Maximum connection lifetime in seconds for the external kpanda database | 0                                                       |
 | externalMiddlewares.database.kpanda[0].connectionMaxIdleTimeSeconds | Maximum idle connection time in seconds for the external kpanda database | 0                                                       |
-| externalMiddleware.elasticsearch | External Elasticsearch                                               | -                                                       |
-| externalMiddleware.elasticsearch.insight | Configuration for the external Elasticsearch used by Insight       | -                                                       |
-| externalMiddleware.elasticsearch.insight.endpoint | Access endpoint for the external Elasticsearch used by Insight | -                                                       |
+| externalMiddleware.elasticsearch | External Elasticsearch                                               | -      |
+| externalMiddleware.elasticsearch.insight | Configuration for the external Elasticsearch used by Insight       | -      |
+| externalMiddleware.elasticsearch.insight.endpoint | Access endpoint for the external Elasticsearch used by Insight | -      |
 | externalMiddleware.elasticsearch.insight.anonymous | Enable anonymous access to the external Elasticsearch used by Insight, either true or false. When set to true, credentials should not be provided | false                                                   |
-| externalMiddleware.elasticsearch.insight.username | Username for accessing the external Elasticsearch used by Insight   | -                                                       |
-| externalMiddleware.elasticsearch.insight.password | Password for accessing the external Elasticsearch used by Insight   | -                                                       |
+| externalMiddleware.elasticsearch.insight.username | Username for accessing the external Elasticsearch used by Insight   | -      |
+| externalMiddleware.elasticsearch.insight.password | Password for accessing the external Elasticsearch used by Insight   | -      |
+| renewCerts             | Certificate renewal for the cluster           | -    |
+| renewCerts.mode        | Two modes for certificate renewal, supports cyclical and onetime | -     |
 
 ## Simplified configuration instructions
 
-**In the offline mode, use the builtin method to install**
+**In the offline mode, use the `builtin` method to install**
+
+The `builtin` mode means that the required third-party software (such as ChartMuseum, Minio, Docker registry)
+will be deployed and provided by the installer for use in the DCE 5.0 platform.
 
 ```yaml
 apiVersion: provision.daocloud.io/v1alpha3
@@ -339,7 +360,11 @@ spec:
      type: builtin
 ```
 
-**Installation in external mode in offline mode**
+**Installation in `external` mode in offline mode**
+
+The `external` mode means that the required third-party software (such as ChartMuseum, Minio, Docker registry, etc.)
+does not need to be installed by the installer. Instead, the user provides the addresses for these services
+to be used by the DCE 5.0 platform.
 
 ```yaml
 apiVersion: provision.daocloud.io/v1alpha3
@@ -394,7 +419,10 @@ spec:
      externalRepository: https://external-binaries.daocloud.io:9000/kubean
 ```
 
-**Online mode is installed by official-service**
+**Online mode is installed by `official-service`**
+
+In the `official-service` mode, when users choose to install DCE 5.0 online, the resources used by
+the DCE 5.0 platform will be obtained from DaoCloud's official repository.
 
 ```yaml
 apiVersion: provision.daocloud.io/v1alpha3
