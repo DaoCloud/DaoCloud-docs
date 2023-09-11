@@ -17,7 +17,7 @@ Next, we will use the openAnolis operating system as an example to demonstrate h
 
 ### Online Node - Building an Offline Package
 
-Find an online environment with the same architecture and OS as the nodes in the target cluster. In this example, we will use [AnolisOS 8.8 GA](https://openanolis.cn/download). Execute the following command to generate an offline `os-pkgs` package:
+Find an online environment with the same architecture and OS as the nodes in the target cluster. In this example, we will use [AnolisOS 8.8 GA](https://openanolis.cn/download). Run the following command to generate an offline `os-pkgs` package:
 
 ```bash
 # Download relevant scripts and build os packages package

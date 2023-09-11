@@ -4,13 +4,14 @@ This page provides offline installation packages for different versions of the M
 
 ## Download
 
-| Version                                            | Architecture | File Size | Installation Package                                                                                                                             | Checksum File | Update Date |
-|-----------------------------------------------| ----- |-------- |---------------------------------------------------------------------------------------------------------------------------------| ---------- |-----------|
+| Version     | Architecture | File Size | Package      | Checksum File | Update Date |
+|-------------| ----- |-------- |---------------| ---------- |-----------|
 | [v0.11.0](../../kairship/intro/release-notes.md) | AMD64 | 486 MB | [:arrow_down: kairship_v0.11.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kairship_v0.11.0_amd64.tar) | [:arrow_down: kairship_v0.11.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kairship_v0.11.0_amd64_checksum.sha512sum) | 2023-7-31 |
 
 ## Verification
 
-To verify the integrity of the downloaded offline installation package and checksum file, execute the following command in the directory:
+To verify the integrity of the downloaded offline installation package and checksum file,
+ run the following command in the directory:
 
 ```sh
 echo "$(cat kairship_v0.11.0_amd64_checksum.sha512sum)" | sha512sum -c

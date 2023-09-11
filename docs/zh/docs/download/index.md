@@ -53,7 +53,7 @@ DCE 5.0 包含的众多子模块可以单独下载，按需对每个模块进行
 | 网络模块 | 55.47 MB | [:arrow_right: 下载页](./modules/spidernet.md) | 2023-04-26 |
 | 镜像仓库 | 293.24 MB | [:arrow_right: 下载页](./modules/kangaroo.md) | 2023-09-04 |
 | 运营管理 | 56.90 MB | [:arrow_right: 下载页](./modules/gmagpie.md) | 2023-08-02 |
-| 多云编排 | 525.11MB | [:arrow_right: 下载页](./modules/kairship.md) | 2023-09-01 |
+| 多云编排 | 525.11 MB | [:arrow_right: 下载页](./modules/kairship.md) | 2023-09-01 |
 
 !!! note
 

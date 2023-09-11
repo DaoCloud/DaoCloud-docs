@@ -42,7 +42,7 @@ nav:
               - With Oracle Linux R9/R8 U1: install/os-install/oracleLinux-install-dce5.0.md
               - With TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
               - With Other Linux: install/os-install/otherlinux.md
-          - Release Notes: install/release-notes.md
+          - Installer Release Notes: install/release-notes.md
       - Container Management:
           - Intro:
               - What is Container Management: kpanda/intro/index.md
@@ -50,7 +50,7 @@ nav:
               - Benefits: kpanda/intro/benefits.md
               - Use Cases: kpanda/intro/scenarios.md
               - Concepts: kpanda/intro/concepts.md
-              - Release Notes: kpanda/intro/release-notes.md
+              - Container Management Release Notes: kpanda/intro/release-notes.md
               - Latest News: kpanda/intro/news.md
               - FAQs: kpanda/intro/faq.md
           - Clusters:
@@ -153,7 +153,7 @@ nav:
               - What is Global Management: ghippo/intro/index.md
               - Features: ghippo/intro/features.md
               - Glossary: ghippo/intro/glossary.md
-              - Release Notes: ghippo/intro/release-notes.md
+              - Global Management Release Notes: ghippo/intro/release-notes.md
           - Install, Login, and Upgrade:
               - Offline Upgrade: ghippo/install/offline-install.md
               - Customize Reverse Proxy Address: ghippo/install/reverse-proxy.md
@@ -228,7 +228,7 @@ nav:
               - Scenario: insight/intro/scenarios.md
               - Features: insight/intro/features.md
               - Permissions: insight/intro/permission.md
-              - Release Notes: insight/intro/releasenote.md
+              - Insight Release Notes: insight/intro/releasenote.md
           - Quick Start:
               - Enable Observability:
                   - insight/quickstart/install/index.md
@@ -311,7 +311,7 @@ nav:
               - Use Cases: amamba/intro/scenario.md
               - Basic Concepts: amamba/intro/concepts.md
               - Permissions: amamba/intro/permission.md
-              - Release Notes: amamba/intro/release-notes.md
+              - Workbench Release Notes: amamba/intro/release-notes.md
           - Offline Upgrade: amamba/offline-upgrade.md
           - Namespaces: amamba/user-guide/namespace/namespace.md
           - Wizard:
@@ -370,7 +370,7 @@ nav:
               - Competitiveness: kairship/intro/benefits.md
               - Basic Concepts: kairship/intro/concepts.md
               - FAQ: kairship/intro/faq.md
-              - Release Notes: kairship/intro/release-notes.md
+              - Multicloud Release Notes: kairship/intro/release-notes.md
           - Multicloud Instances:
               - Overview: kairship/instance/README.md
               - Add Instance: kairship/instance/add.md
@@ -409,7 +409,7 @@ nav:
               - Features: skoala/intro/index.md
               - Use Cases: skoala/intro/scenarios.md
               - Competitiveness: skoala/intro/advantages.md
-              - Release Notes: skoala/intro/release-notes.md
+              - Microservices Release Notes: skoala/intro/release-notes.md
           - Quick Start:
               - Install: skoala/quickstart/install.md
               - Online Upgrade: skoala/quickstart/online-upgrade.md
@@ -503,7 +503,7 @@ nav:
                   - System Namespaces: mspider/intro/comp-archi-ui/namespaces.md
                   - Features Supported on UI: mspider/intro/comp-archi-ui/features-on-ui.md
               - FAQs: mspider/intro/faq.md
-              - Release Notes: mspider/intro/release-notes.md
+              - Service Mesh Release Notes: mspider/intro/release-notes.md
           - Install, Config, and Upgrade:
               - Install: mspider/install/install.md
               - Upgrade Istio: mspider/install/istio-update.md
@@ -639,7 +639,7 @@ nav:
               - DPDK: network/modules/multus-underlay/dpdk.md
               - NmState: network/modules/multus-underlay/nmstat.md
           - Spiderpool:
-              - Release notes: network/modules/spiderpool/releasenotes.md
+              - Spiderpool Release notes: network/modules/spiderpool/releasenotes.md
               - Intro: network/modules/spiderpool/index.md
               - Install: network/modules/spiderpool/install.md
               - Create an IP pool: network/modules/spiderpool/createpool.md
@@ -678,7 +678,7 @@ nav:
               - View Logs: middleware/elasticsearch/user-guide/logs.md
               - Troubleshooting Manual: middleware/elasticsearch/faq/common-question-es.md
               - Elasticsearch Migration Practice Based on Hwameistor: middleware/elasticsearch/user-guide/migrate-es.md
-              - Release Notes: middleware/elasticsearch/release-notes.md
+              - Elasticsearch Release Notes: middleware/elasticsearch/release-notes.md
           - Kafka:
               - What is Kafka: middleware/kafka/intro/index.md
               - Use Cases: middleware/kafka/intro/scenarios.md
@@ -690,7 +690,7 @@ nav:
               - Instance Monitoring: middleware/kafka/user-guide/insight.md
               - Configuration Parameters: middleware/kafka/user-guide/config.md
               - View Logs: middleware/kafka/user-guide/logs.md
-              - Release Notes: middleware/kafka/release-notes.md
+              - Kafka Release Notes: middleware/kafka/release-notes.md
           - MinIO object storage:
               - What is MinIO: middleware/minio/intro/index.md
               - Use cases: middleware/minio/intro/scenarios.md
@@ -703,7 +703,7 @@ nav:
               - Instance monitoring: middleware/minio/user-guide/insight.md
               - Configuration parameters: middleware/minio/user-guide/config.md
               - MinIO Identity Management: middleware/minio/user-guide/user-management.md
-              - Release Notes: middleware/minio/release-notes.md
+              - MinIO Release Notes: middleware/minio/release-notes.md
           - MySQL database:
               - What is MySQL: middleware/mysql/intro/index.md
               - Feature description: middleware/mysql/intro/features.md
@@ -714,7 +714,7 @@ nav:
               - Delete MySQL: middleware/mysql/user-guide/delete.md
               - View MySQL logs: middleware/mysql/user-guide/logs.md
               - MySQL Troubleshooting Manual: middleware/mysql/faq/common-question.md
-              - Release Notes: middleware/mysql/release-notes.md
+              - MySQL Release Notes: middleware/mysql/release-notes.md
           - RabbitMQ message queue:
               - What is RabbitMQ: middleware/rabbitmq/intro/index.md
               - Function description: middleware/rabbitmq/intro/features.md
@@ -729,7 +729,7 @@ nav:
               - Instance monitoring: middleware/rabbitmq/user-guide/insight.md
               - View RabbitMQ logs: middleware/rabbitmq/user-guide/logs.md
               - Add custom plugins for RabbitMQ: middleware/rabbitmq/faq/add-plugin.md
-              - Release Notes: middleware/rabbitmq/release-notes.md
+              - RabbitMQ Release Notes: middleware/rabbitmq/release-notes.md
           - Redis cache service:
               - What is Redis: middleware/redis/intro/index.md
               - Use cases: middleware/redis/intro/scenarios.md
@@ -738,7 +738,7 @@ nav:
               - Delete Redis instance: middleware/redis/user-guide/delete.md
               - View Redis logs: middleware/redis/user-guide/logs.md
               - Redis DR Deployment Solution: middleware/redis/best-practice/disaster-tolerance.md
-              - Release Notes: middleware/redis/release-notes.md
+              - Redis Release Notes: middleware/redis/release-notes.md
           - PostgreSQL database:
               - What is PostgreSQL: middleware/postgresql/intro/index.md
               - Create PostgreSQL: middleware/postgresql/user-guide/create.md
@@ -750,7 +750,7 @@ nav:
               - Intro:
                   - What is MongoDB: middleware/mongodb/intro/index.md
                   - Features: middleware/mongodb/intro/features.md
-                  - Release Notes: middleware/mongodb/release-notes.md
+                  - MongoDB Release Notes: middleware/mongodb/release-notes.md
               - Quick Start:
                   - Create MongoDB: middleware/mongodb/user-guide/create.md
                   - Update MongoDB: middleware/mongodb/user-guide/update.md
@@ -761,7 +761,7 @@ nav:
               - Background: storage/background.md
               - Benefits: storage/benefits.md
               - Features: storage/features.md
-              - Release Notes: storage/hwameistor/releasenotes.md
+              - Storage Release Notes: storage/hwameistor/releasenotes.md
           - HwameiStor storage:
               - Intro: storage/hwameistor/intro/index.md
               - Modules:
@@ -825,7 +825,7 @@ nav:
       - Container Registry:
           - Intro:
               - What is Container Registry: kangaroo/index.md
-              - Release Notes: kangaroo/release-notes.md
+              - Registry Release Notes: kangaroo/release-notes.md
               - FAQs: kangaroo/faq.md
           - Upgrade:
               - Offline Upgrade Container Registry: kangaroo/upgrade/upgrade.md
@@ -897,8 +897,8 @@ nav:
   - Download:
       - DaoCloud Enterprise 5.0:
           - Index: download/index.md
-          - Download DCE Community: download/free/dce5-installer-v0.9.0.md
-          - Download DCE 5.0 Enterprise: download/business/dce5-installer-v0.9.0.md
+          - Download DCE Community: download/free/dce5-installer-v0.11.0.md
+          - Download DCE 5.0 Enterprise: download/business/dce5-installer-v0.11.0.md
           - Modules and Addons:
               - Download Addons: download/addon/v0.9.0.md
               - Download Global Management: download/modules/ghippo.md
