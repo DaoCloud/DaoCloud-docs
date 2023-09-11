@@ -918,6 +918,7 @@ nav:
       - Free Trial: trial/index.md
   - Blogs:
       - Index: blogs/index.md
+      - 202309 | K8s Contributor Summit in Shanghai: blogs/230911-kubecon-contributor.md
       - 202308 | K8s 1.28 Released: blogs/230815-k8s1.28.md
       - 202308 | Unlease K8sGPT: blogs/230808-k8sgpt.md
       - 202306 | Explore Ray Core (II): blogs/230615-ray.md

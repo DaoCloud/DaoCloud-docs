@@ -982,6 +982,7 @@ nav:
       - 体验社区版: trial/index.md
   - 博客:
       - 博文索引: blogs/index.md
+      - 202309 | 上海 Kubernetes 贡献者峰会: blogs/230911-kubecon-contributor.md
       - 202308 | K8s 本地开发工具比较: blogs/230824-tools.md
       - 202308 | K8s 1.28 震撼发布: blogs/230815-k8s1.28.md
       - 202308 | K8sGPT 赋能 K8s: blogs/230808-k8sgpt.md
