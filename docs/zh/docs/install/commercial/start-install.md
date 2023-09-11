@@ -90,9 +90,7 @@ osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源
 
 !!! note
 
-    ```
     由于不同的 ISO 操作系统下载方式不一致，所以一键下载出来的离线包并不包含 ISO 文件。
-    ```
 
 ### 第 2 步：配置集群配置文件
 
@@ -116,7 +114,7 @@ osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源
         安装器脚本命令说明：
         
         - -c 来指定集群配置文件，必选
-        - -m 参数指定 manifest 文件，
+        - -m 参数指定 manifest 文件
         - -z 最小化安装
         - -d 开启 debug 模式
         - 更多命令请使用 --help 查询

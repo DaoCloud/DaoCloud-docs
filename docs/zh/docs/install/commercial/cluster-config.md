@@ -50,7 +50,7 @@ spec:
       ansibleUser: "root"
       ansiblePass: "dangerous"
       #ansibleSSHPort: "22"
-      #ansibleExtraArgs: "" 
+      #ansibleExtraArgs: ""
     - nodeName: "g-master3"
       ip: xx.xx.xx.xx
       ansibleUser: "root"
