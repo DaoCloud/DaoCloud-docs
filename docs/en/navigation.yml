@@ -858,6 +858,8 @@ nav:
           - Best Practice:
               - Ingress or NodePort for Managed Harbor: kangaroo/best-practice/managed-harbor-select-access-type.md
               - Log in to an Insecure Container Registry: kangaroo/best-practice/insecure_registry.md
+              - Harbor Nginx Configuration Practices: kangaroo/best-practice/harbor-nginx.md
+              - Registry Capacity Resource Planning: kangaroo/best-practice/capacity-planning.md
       - Cloud Edge Collaboration:
           - Intro:
               - What is Cloud Edge Collaboration: kant/intro/index.md
