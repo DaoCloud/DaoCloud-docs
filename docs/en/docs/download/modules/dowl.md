@@ -4,13 +4,13 @@ This page provides offline installation packages for different versions of the D
 
 ## Download
 
-| Version                                            | Architecture | File Size | Installation Package                                                                                                                             | Checksum File | Update Date |
-|-----------------------------------------------| ----- |-------- |---------------------------------------------------------------------------------------------------------------------------------| ---------- |-----------|
+| Version  | Architecture | File Size | Package     | Checksum File      | Update Date |
+|----------|--------------|-----------|-------------|--------------------|-------------|
 | [v0.4.0](../../kpanda/intro/release-notes.md) | AMD64 | 163 MB | [:arrow_down: dowl_v0.4.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dowl_v0.4.0_amd64.tar) | [:arrow_down: dowl_v0.4.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dowl_v0.4.0_amd64_checksum.sha512sum) | 2023-8-25 |
 
 ## Verification
 
-To verify the integrity of the downloaded offline installation package and checksum file, execute the following command in the directory:
+To verify the integrity of the downloaded offline installation package and checksum file, run the following command in the directory:
 
 ```sh
 echo "$(cat dowl_v0.4.0_amd64_checksum.sha512sum)" | sha512sum -c

@@ -4,8 +4,8 @@ This page provides offline installation packages for different versions of the C
 
 ## Download
 
-| Version                                           | Architecture | File Size | Installation Package                                                                                                             | Checksum File                                                                                                                            | Updated Date |
-|--------------------------------------------------|--------------|-----------|---------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|--------------|
+| Version     | Architecture | File Size | Package    | Checksum File       | Updated Date |
+|---------|--------------|-----------|---------------|-----------------|--------------|
 | [v0.19.0](../../kpanda/intro/release-notes.md#v0190)    | AMD64        | 2.41 GB    | [:arrow_down: kpanda_v0.19.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_v0.19.0_amd64.tar) | [:arrow_down: kpanda_v0.19.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_v0.19.0_amd64_checksum.sha512sum) | 2023-7-06   |
 
 ## Checksum
