@@ -7,6 +7,45 @@ hide:
 
 DCE 5.0 集成社区最优秀的众多技术，内置依赖项数以万计，经海量调测后熔于一炉，铸就新一代 PaaS 服务平台，在各类使用场景中都游刃有余。
 
+## DCE 5.0 场景化视频
+
+我们精心制作了 Step-By-Step 场景化视频，以满足具体的场景化业务需求：
+
+=== "多云和混合云"
+
+    - [如何将单云应用一键转换为多云应用？](../videos/use-cases.md#_2)
+    - [如何在 DCE 5.0 中部署混合云应用？](../videos/use-cases.md#dce-50)
+
+=== "流量治理"
+
+    - [如何将微服务接入 DCE 5.0 并治理南北向流量？](../videos/use-cases.md#dce-50_1)
+    - [如何借助服务网格治理传统微服务东西向流量？](../videos/use-cases.md#_3)
+
+=== "OEM IN 和 OUT"
+
+    - [如何将客户平台集成到 DCE 5.0？](../videos/use-cases.md#dce-50_3)
+    - [如何将 DCE 5.0 集成到客户平台？](../videos/use-cases.md#dce-50_2)
+
+=== "网络和通信"
+
+    - [如何让传统应用上云后仍通过固定 IP 对外通信？](../videos/use-cases.md#ip)
+    - [如何实现应用加速与跨集群通信？](../videos/use-cases.md#_4)
+
+=== "CICD 和 GitOps"
+
+    - [如何利用 CICD 快速交付应用？](../videos/use-cases.md#cicd)
+    - [如何利用 GitOps 持续部署云原生应用？](../videos/use-cases.md#gitops)
+
+=== "ChatGPT、中间件和故障排查"
+
+    - [如何利用可观测性快速定位异常并排障？](../videos/use-cases.md#_5)
+    - [如何用中间件和 pgvector 部署 ChatGPT 应用？](../videos/use-cases.md#pgvector-chatgpt)
+    - [如何实现 Redis 的跨集群数据同步？](../videos/use-cases.md#redis)
+
+## DCE 5.0 适用场景
+
+DCE 5.0 从总体上看，可以支持以下场景：
+
 === "生产级容器管理"
 
 用户在运维团队需要承接数十个至上百个集群运行维护任务，且集群网络规划需满足用户传统网络监管要求。
