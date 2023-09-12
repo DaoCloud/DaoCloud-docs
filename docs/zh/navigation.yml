@@ -10,6 +10,7 @@ nav:
           - 云原生词汇: dce/terms.md
           - K8s 认证服务商: dce/kcsp.md
           - DCE 5.0 Release Notes:
+              - 20230831 版本发布: dce/dce-rn/20230831.md
               - 20230731 版本发布: dce/dce-rn/20230731.md
               - 20230630 版本发布: dce/dce-rn/20230630.md
               - 20230531 版本发布: dce/dce-rn/20230531.md
@@ -42,7 +43,7 @@ nav:
               - Oracle Linux R9/R8 U1 操作系统: install/os-install/oracleLinux-install-dce5.0.md
               - TencentOS Server 3.1 操作系统: install/os-install/TencentOS-install-dce5.0.md
               - 其他 Linux 操作系统: install/os-install/otherlinux.md
-          - Release Notes: install/release-notes.md
+          - 安装器 Release Notes: install/release-notes.md
       - 容器管理:
           - 介绍:
               - 什么是容器管理: kpanda/intro/index.md
@@ -144,17 +145,16 @@ nav:
               - 权限说明: kpanda/user-guide/permissions/permission-brief.md
               - 集群和命名空间授权: kpanda/user-guide/permissions/cluster-ns-auth.md
           - GPU管理:
-              - NVIDIA vGPU :
+              - NVIDIA vGPU:
                 - 安装 Nvidia GPU 驱动: kpanda/user-guide/gpu/vgpu_driver.md
-                - 安装 vGPU Addon : kpanda/user-guide/gpu/vgpu_addon.md
-                - 应用使用 vGPU : kpanda/user-guide/gpu/vgpu_user.md
-              - NVIDIA MIG :
-                - NVIDIA多实例GPU(MIG) 概述: kpanda/user-guide/gpu/mig_index.md
+                - 安装 vGPU Addon: kpanda/user-guide/gpu/vgpu_addon.md
+                - 应用使用 vGPU: kpanda/user-guide/gpu/vgpu_user.md
+              - NVIDIA MIG:
+                - NVIDIA多实例GPU(MIG)概述: kpanda/user-guide/gpu/mig_index.md
                 - GPU Operator 创建 MIG: kpanda/user-guide/gpu/create_mig.md
                 - 应用使用 MIG GPU: kpanda/user-guide/gpu/mig_usage.md
                 - MIG 相关命令: kpanda/user-guide/gpu/mig_command.md
               - GPU 配额管理: kpanda/user-guide/gpu/vgpu_quota.md
-
           - 最佳实践:
               - 对 ETCD 进行备份还原: kpanda/best-practice/etcd-backup.md
               - 对 MySQL 应用及数据进行跨集群备份恢复: kpanda/best-practice/backup-mysql-on-nfs.md
