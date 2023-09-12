@@ -3,13 +3,13 @@
 OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 5.0 一级导航栏。
 用户通过 DCE 5.0 进行登录和统一管理。实现 OEM IN 共分为 5 步，分别是：
 
-1. 统一域名
-1. 打通用户体系
-1. 对接导航栏
-1. 定制外观
-1. 打通权限体系（可选）
+1. [统一域名](#_2)
+1. [打通用户体系](#_3)
+1. [对接导航栏](#_4)
+1. [定制外观](#_5)
+1. [打通权限体系（可选）](#_6)
 
-具体操作演示请参见：[OEM IN 最佳实践视频教程](../../videos/use-cases.md#dce-50_2)。
+具体操作演示请参见：[OEM IN 最佳实践视频教程](../../videos/use-cases.md#dce-50_3)。
 
 !!! note
 
@@ -36,16 +36,16 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 
 ## 统一域名
 
-### 1. 为客户平台配置 subpath
+### 为客户平台配置 subpath
 
 1. ssh 登录到客户平台服务器。
-1. 使用 vim 命令创建 subpath-envoyfilter.yaml 文件
+1. 使用 vim 命令创建 `subpath-envoyfilter.yaml` 文件
 
     ```bash
     vim subpath-envoyfilter.yaml
     ```
 
-    ```yaml
+    ```yaml title="subpath-envoyfilter.yaml"
     apiVersion: networking.istio.io/v1alpha3
     kind: EnvoyFilter
     metadata:
@@ -126,13 +126,13 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
     helm get values ghippo -n ghippo-system > dce5-slave-values.yaml
     ```
 
-1. 使用 vim 命令，编辑 dce5-slave-values.yaml 文件：
+1. 使用 vim 命令，编辑 `dce5-slave-values.yaml` 文件：
 
     ```bash
     vim dce5-slave-values.yaml
     ```
 
-    ```yaml
+    ```yaml title="dce5-slave-values.yaml"
     USER-SUPPLIED VALUES:
     USER-SUPPLIED VALUES: null
     anakin:
@@ -163,20 +163,20 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
       replicaCount: 1
     ```
 
-1. 使用 helm 命令，应用 dce5-slave-values.yaml 配置（注意：替换版本号）：
+1. 使用 helm 命令，应用 `dce5-slave-values.yaml` 配置（注意：替换版本号）：
 
     ```bash
     helm upgrade ghippo ghippo/ghippo -n ghippo-system -f dce5-slave-values.yaml --version v0.19.2 --debug
     ```
 
-1. 使用 kubectl 重启 ghippo pod，使配置生效：
+1. 使用 kubectl 重启 ghippo Pod，使配置生效：
 
     ```bash
     kubectl rollout restart deploy/ghippo-apiserver -n ghippo-system
     kubectl rollout restart statefulset/ghippo-keycloakx -n ghippo-system
     ```
 
-### 2. 为 DCE 5.0 配置客户平台的 jwksUri 发现地址
+### 为 DCE 5.0 配置客户平台的 jwksUri 发现地址
 
 1. ssh 登录到 DCE 5.0 服务器。
 1. 使用 vim 命令创建 `external-svc-anyproduct.yaml` 文件
@@ -185,7 +185,7 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
     vim external-svc-anyproduct.yaml
     ```
 
-    ```yaml
+    ```yaml title="external-svc-anyproduct.yaml"
     apiVersion: networking.istio.io/v1beta1
     kind: ServiceEntry
     metadata:
@@ -225,7 +225,7 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
     kubectl edit RequestAuthentication ghippo -n istio-system
     ```
 
-    ```yaml
+    ```yaml title="external-svc-anyproduct.yaml"
     apiVersion: security.istio.io/v1
     kind: RequestAuthentication
     metadata:
@@ -263,14 +263,13 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 
 将客户平台与 DCE 5.0 平台通过 OIDC/OAUTH 等协议对接，使用户登录 DCE 5.0 平台后进入客户平台时无需再次登录。
 
-1. 在两套 DCE 5.0 的场景下，可以在 DCE 5.0 `全局管理` -> `用户与访问控制` -> `接入管理` 创建 SSO 接入。
+1. 在两套 DCE 5.0 的场景下，可以在 DCE 5.0 中通过`全局管理` -> `用户与访问控制` -> `接入管理`创建 SSO 接入。
 
     ![接入管理列表](./images/oemin-jierulist.png)
 
     ![接入管理列表](./images/oem-out01.png)
 
-2. 创建后将详情中的客户端 ID、密钥、单点登录 URL 等填写到客户平台的`全局管理` -> `用户与访问控制` -> `身份提供商` ->
-   `OIDC` 中，完成用户对接。
+2. 创建后将详情中的客户端 ID、密钥、单点登录 URL 等填写到客户平台的`全局管理` -> `用户与访问控制` -> `身份提供商` -> `OIDC` 中，完成用户对接。
 
     ![oidc](./images/oeminoidc.png)
 
@@ -286,16 +285,18 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 1. 下载 gproduct-demo-main.tar.gz 文件，将 src 文件夹下 App-iframe.vue 中的 src 属性值改为用户进入客户平台的绝对地址，如：
    `src="http://192.168.1.6/external-anyproduct" (DCE 5.0 地址 + subpath)` 或相对地址，如：`src="./external-anyproduct/insight"`
 
-   ![src 地址](./images/src.png)
+    ![src 地址](./images/src.png)
 
-1. 删除 src 文件夹下的 App.vue 和 main.ts 文件，同时将 App-iframe.vue 重命名为 App.vue，main-iframe.ts 重命名为 main.ts
+1. 删除 src 文件夹下的 App.vue 和 main.ts 文件，同时将：
+    - App-iframe.vue 重命名为 App.vue
+    - main-iframe.ts 重命名为 main.ts
 1. 编辑 demo.yaml 文件
 
     ```bash
     vim demo.yaml
     ```
 
-    ```yaml
+    ```yaml title="demo.yaml"
     kind: Namespace
     apiVersion: v1
     metadata:
@@ -345,11 +346,11 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
           authnCheck: false
     ```
 
-1. 按照 readme 步骤构建镜像（注意：执行最后一步前需要将 demo.yaml 中的镜像地址替换成构建出的镜像地址）
+1. 按照 readme 步骤构建镜像（注意：执行最后一步前需要将 `demo.yaml` 中的镜像地址替换成构建出的镜像地址）
 
-   ![构建镜像](./images/oemin-image.png)
+    ![构建镜像](./images/oemin-image.png)
 
-对接完成后，将在 DCE 5.0 的一级导航栏出现“客户平台”，点击可进入客户平台。
+对接完成后，将在 DCE 5.0 的一级导航栏出现`客户平台`，点击可进入客户平台。
 
 ![客户平台](./images/oemin-menu.png)
 
@@ -379,5 +380,5 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 
 ## 参考资料
 
-- [参考 OEM OUT 文档](./oem-out.md)
+- 参考 [OEM OUT 文档](./oem-out.md)
 - 参阅 [gProduct-demo-main 对接 tar 包](./examples/gproduct-demo-main.tar.gz)

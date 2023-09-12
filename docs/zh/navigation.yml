@@ -792,7 +792,7 @@ nav:
                   - 删除 Redis 实例: middleware/redis/user-guide/delete.md
                   - 查看 Redis 日志: middleware/redis/user-guide/logs.md
               - 跨集群数据同步:
-                  - 数据同步介绍: middleware/redis/best-practice/disaster-tolerance.md
+                  - 数据同步介绍: middleware/redis/best-practice/index.md
                   - 集群模式 to 集群模式: middleware/redis/best-practice/cluster2cluster.md
                   - 哨兵模式 to 哨兵模式: middleware/redis/best-practice/sentinel2sentinel.md
                   - 集群模式 to 哨兵模式: middleware/redis/best-practice/cluster2sentinel.md

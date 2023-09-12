@@ -34,10 +34,10 @@ Ghippo 0.15.0及以上版本。
 
     如果需要两个定制化 IdP，需要复制两个 jar 包。
 
-### 部署 ghippo keycloak plugin 步骤
+### 部署 Ghippo keycloak plugin 步骤
 
-1. [把 ghippo 升级到 0.15.0 或以上](../install/offline-install.md)。
-   您也可以直接安装部署 ghippo 0.15.0 版本，但需要把以下信息手动记录下来。
+1. [把 Ghippo 升级到 0.15.0 或以上](../install/offline-install.md)。
+   您也可以直接安装部署 Ghippo 0.15.0 版本，但需要把以下信息手动记录下来。
 
     ```sh
     helm -n ghippo-system get values ghippo -o yaml
