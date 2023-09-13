@@ -476,7 +476,7 @@ nav:
                   - 查看注册配置中心: skoala/trad-ms/hosted/check-registry.md
                   - 删除注册配置中心: skoala/trad-ms/hosted/delete-registry.md
                   - 微服务命名空间: skoala/trad-ms/hosted/namespace.md
-                  - 微服务列表:
+                  - 服务列表:
                       - 介绍: skoala/trad-ms/hosted/services/intro.md
                       - 查看微服务详情: skoala/trad-ms/hosted/services/check-details.md
                       - 流量治理:
