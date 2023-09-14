@@ -63,6 +63,14 @@ See [Sidecar Upgrade](../mspider/install/sidecar-update.md) for reference.
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/sidecarup.mp4" preload="metadata" poster="images/mspider-sidecar.png"></video>
 </div>
 
+## Traffic Monitor Metrics
+
+See [traffic monitor metrics](../mspider/user-guide/traffic-monitor/monitoring-indicators.md) for reference.
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/traffic-monitor.mp4" preload="metadata" poster="images/traffic-monitor.jpg"></video>
+</div>
+
 ## Traffic passthrough
 
 See [traffic passthrough](../mspider/user-guide/sidecar-management/passthrough.md) for reference.

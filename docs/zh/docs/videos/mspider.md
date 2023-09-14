@@ -66,7 +66,7 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/sidecarup.mp4" preload="metadata" poster="images/mspider-sidecar.png"></video>
 </div>
 
-## 流量监控
+## 流量监控指标
 
 参阅[流量监控指标说明](../mspider/user-guide/traffic-monitor/monitoring-indicators.md)文档页面。
 
