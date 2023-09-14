@@ -926,8 +926,13 @@ nav:
               - 功能特性: kant/intro/features.md
               - 产品优势: kant/intro/benefits.md
               - 应用场景: kant/intro/use-cases.md
-              - 边缘节点接入要求: kant/intro/join-rqmt.md
               - 基本概念: kant/intro/concepts.md
+          - 边缘节点:
+              - 边缘节点概述: kant/user-guide/node/overview.md
+              - 边缘节点接入要求: kant/user-guide/node/join-rqmt.md
+              - 批量注册边缘节点: kant/user-guide/node/batch-registration.md
+              - 纳管边缘节点: kant/user-guide/node/managed-node.md
+              - 批量升级边缘节点: kant/user-guide/node/batch-upgrade.md
           - 边云消息:
               - 边云消息概述: kant/user-guide/route/overview.md
               - 创建消息路由: kant/user-guide/route/create-route.md
