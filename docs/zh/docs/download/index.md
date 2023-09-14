@@ -1,6 +1,7 @@
 # DaoCloud Enterprise 5.0
 
 DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
+[点击下载 DCE 5.0 产品介绍 PDF](https://harbor-test2.cn-sh2.ufileos.com/docs/download/DCE5.0-intro.pdf)：1.4 MB。
 
 目前下载中心仅提供离线安装包。有关在线安装方式，请参阅[在线安装](../install/index.md)。
 
