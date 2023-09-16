@@ -935,6 +935,10 @@ nav:
           - 介绍:
               - 简介: virtnest/intro/index.md
               - Release Notes: virtnest/intro/release-notes.md
+          - 快速入门:
+              - 创建虚拟机: virtnest/user-guide/vm/create.md
+              - 通过 nodeport 访问虚拟机: virtnest/user-guide/vm/nodeport.md
+              - Rook Ceph 部署流程: virtnest/user-guide/vm/rook ceph.md
       - 云原生安全:
           - 介绍: security/index.md
           - Falco:
