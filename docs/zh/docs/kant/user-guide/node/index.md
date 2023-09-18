@@ -13,4 +13,16 @@
 
 使用流程如下：
 
-![使用流程](../../images/node-overview01.png)
+```mermaid
+graph TB
+
+start1([开始]) --> config[配置边缘节点]
+config --> register[注册节点批量任务] --> join[参考安装指南<br/>接入节点] --> end1([结束])
+
+classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
+classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
+classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
+
+class start1,end1 cluster;
+class config,register,join k8s
+```

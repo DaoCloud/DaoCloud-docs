@@ -867,10 +867,15 @@ nav:
               - Features: kant/intro/features.md
               - Benefits: kant/intro/benefits.md
               - Use Cases: kant/intro/use-cases.md
-              - Requirements to Join Edge Node: kant/intro/join-rqmt.md
               - Concepts: kant/intro/concepts.md
+          - Edge Node:
+              - Overview: kant/user-guide/node/index.md
+              - Requirements to Join Edge Node: kant/user-guide/node/join-rqmt.md
+              - Batch Register Edge Nodes: kant/user-guide/node/batch-registration.md
+              - Manage Edge Nodes: kant/user-guide/node/managed-node.md
+              - Batch Upgrade Edge Nodes: kant/user-guide/node/batch-upgrade.md
           - Edge to Cloud Message:
-              - Overview: kant/user-guide/route/overview.md
+              - Overview: kant/user-guide/route/index.md
               - Create Message Route: kant/user-guide/route/create-route.md
       - Cloud Native Security:
           - Intro: security/index.md
