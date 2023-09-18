@@ -16,16 +16,18 @@ hide:
 ## 创建 service 的方式
 
 1. 通过容器管理页面
-   - 选择目标访问的虚拟机所在集群页面创建服务（Service）
-   - 选择访问类型为节点访问（NodePort）
-   - 选择命名空间（虚拟机所在 namespace）
-   - 标签选择器填写 `vm.kubevirt.io/name:you-vm-name`
-   - 端口配置：协议选择 TCP，端口名称自定义，服务端口、容器端口填写 22
+
+    - 选择目标访问的虚拟机所在集群页面创建服务（Service）
+    - 选择访问类型为节点访问（NodePort）
+    - 选择命名空间（虚拟机所在 namespace）
+    - 标签选择器填写 `vm.kubevirt.io/name:you-vm-name`
+    - 端口配置：协议选择 TCP，端口名称自定义，服务端口、容器端口填写 22
+
 2. 创建成功后，就可以通过 `ssh username@nodeip -p port` 来访问虚拟机
 
 ## 通过 kubectl 创建 svc
 
-1. 编写 Yaml 文件，示例如下：
+1. 编写 YAML 文件，示例如下：
 
     ```yaml
     apiVersion: v1
@@ -46,10 +48,10 @@ hide:
       type: NodePort
     ```
 
-2. 执行以下命令
+1. 执行以下命令
 
-   ```sh
-   kubectl apply -f you-svc.yaml
-   ```
+    ```sh
+    kubectl apply -f you-svc.yaml
+    ```
 
-4. 创建成功后，就可以通过 `ssh username@nodeip -p 32090` 来访问虚拟机
+1. 创建成功后，就可以通过 `ssh username@nodeip -p 32090` 来访问虚拟机
