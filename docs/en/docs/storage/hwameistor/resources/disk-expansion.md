@@ -39,9 +39,9 @@ After inserting the new disk into the HwameiStor storage node `k8s-worker-4`, ch
     k8s-worker-4-sdc   k8s-worker-4       Unclaimed 
     ```
 
-### Add the new disk to the node's storage pool
+### Add the new disk to the node's StorageClass
 
-To add the new disk to the node's storage pool, create a LocalDiskClaim resource. After performing the following steps, the new disk should be automatically added to the SSD storage pool of the node. If there is no SSD storage pool on that node, HwameiStor will create one automatically and add the new disk to it.
+To add the new disk to the node's StorageClass, create a LocalDiskClaim resource. After performing the following steps, the new disk should be automatically added to the SSD StorageClass of the node. If there is no SSD StorageClass on that node, HwameiStor will create one automatically and add the new disk to it.
 
 ```console
 $ kubectl apply -f - <<EOF
@@ -59,7 +59,7 @@ EOF
 ## Post check
 
 After completing the above steps, you should check the status of the
-newly added disk and its storage pool to ensure the normal operation
+newly added disk and its StorageClass to ensure the normal operation
 of both the node and the HwameiStor system. Here are the specific steps:
 
 ```yaml

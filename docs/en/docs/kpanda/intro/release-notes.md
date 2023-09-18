@@ -222,7 +222,7 @@ This page provides the Release Notes for container management to help you unders
 - **Added** CronHPA, which enables timed scaling of workloads.
 - **Added** VPA (Vertical Scaling), which supports the manual/automatic modification of resource request values to achieve vertical workload scaling.
 - **Added** Exclusive hosting capabilities for namespaces.
-- **Added** Storage Pools (StorageClass) support exclusive or shared entitlement to specific namespaces.
+- **Added** StorageClass (StorageClass) support exclusive or shared entitlement to specific namespaces.
 - **Added** Creation of Workloads exposes the remaining resource quota for the current namespace.
 - **Added** Node connectivity check function.
 - **Added** Mirror Selector to support the selection of mirrors within the Container registry while creating workloads.

@@ -8,11 +8,11 @@
 
 - Dynamic Memory Management
 
-    Supports dynamic allocation of storage pool resources, eliminating the need for administrators to manually manage, operate, and maintain data volumes.
+    Supports dynamic allocation of StorageClass resources, eliminating the need for administrators to manually manage, operate, and maintain data volumes.
 
 - Creation of Multiple Data Volumes
 
-    Data volumes can be dynamically created through storage pools, and snapshots can be used to create data volumes.
+    Data volumes can be dynamically created through StorageClass, and snapshots can be used to create data volumes.
 
 ## Cloud Native Local Storage (Hwameistor)
 
@@ -68,4 +68,4 @@
 
 - Rich Metrics
 
-    Hwameistor provides all-around data service monitoring and alerting, realizing comprehensive monitoring of data disks, storage pools, and storage drivers, and comprehensively guarantees data security.
+    Hwameistor provides all-around data service monitoring and alerting, realizing comprehensive monitoring of data disks, StorageClass, and storage drivers, and comprehensively guarantees data security.

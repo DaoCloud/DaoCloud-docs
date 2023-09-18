@@ -42,7 +42,7 @@ This page provides updates on DCE 5.0 container management.
 <td>Integrated the independent open-source storage component HwameiStor</td>
 <td>Users can now view local storage resource overview and other information in the <code>container storage</code>.</td>
 <td>0.16.0</td>
-<td><a href="https://docs.daocloud.io/kpanda/user-guide/storage/sc/">Storage Pool</a></td>
+<td><a href="https://docs.daocloud.io/kpanda/user-guide/storage/sc/">StorageClass</a></td>
 </tr>
 <tr>
 <td>New cluster inspection function</td>

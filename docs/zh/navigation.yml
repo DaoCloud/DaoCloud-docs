@@ -943,7 +943,7 @@ nav:
               - Release Notes: virtnest/intro/release-notes.md
           - 快速入门:
               - 创建虚拟机: virtnest/quick-start/index.md
-              - 通过 nodeport 访问虚拟机: virtnest/quick-start/nodeport.md
+              - 通过 NodePort 访问虚拟机: virtnest/quick-start/nodeport.md
               - Rook Ceph 部署流程: virtnest/quick-start/rook-ceph.md
       - 云原生安全:
           - 介绍: security/index.md

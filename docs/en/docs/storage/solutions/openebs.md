@@ -44,7 +44,7 @@ In other words, the granularity of control of CAS simplifies the movement of sta
 
 #### Cloud Native
 
-CAS containerizes storage software and uses Kubernetes Custom Resource Definitions (CRDs) to represent underlying storage resources such as disks and storage pools.
+CAS containerizes storage software and uses Kubernetes Custom Resource Definitions (CRDs) to represent underlying storage resources such as disks and StorageClass.
 This model enables storage to be seamlessly integrated into other cloud-native tools.
 Cloud-native tools such as Prometheus, Grafana, Fluentd, Weavescope, Jaeger, etc. can be used to configure, monitor, and manage storage resources.
 
@@ -180,7 +180,7 @@ A declarative API can be used to configure the data engine and set volume profil
 Even data engine upgrades are performed using this API. These APIs can be used to:
 
 - Manage the configuration of each data engine
-- How to manage storage needs to be managed or storage pools
+- How to manage storage needs to be managed or StorageClass
 - Manage volumes and their services - create, snapshot, clone, backup, restore, delete
 - Manage pool and volume upgrades
 

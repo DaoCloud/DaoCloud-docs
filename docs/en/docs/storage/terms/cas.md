@@ -24,7 +24,7 @@ Avoiding lock-in to cloud providers is a common goal for many Kubernetes users. 
 
 ### Native Cloud
 
-CAS containerizes storage software and uses Kubernetes CRDs to represent underlying storage resources such as disks and storage pools. This model enables storage to be seamlessly integrated into other cloud hosting tools. You can use Prometheus, Grafana, Fluentd, Weavescope, Jaeger and other cloud host tools to provision, monitor and manage storage resources.
+CAS containerizes storage software and uses Kubernetes CRDs to represent underlying storage resources such as disks and StorageClass. This model enables storage to be seamlessly integrated into other cloud hosting tools. You can use Prometheus, Grafana, Fluentd, Weavescope, Jaeger and other cloud host tools to provision, monitor and manage storage resources.
 
 In addition, the storage and performance of volumes in CAS are scalable. Since each volume has its own storage controller, it can be elastically scaled within the allowed range of the node's storage capacity. As the number of container applications in a given Kubernetes cluster increases, more nodes are added, increasing the overall availability of storage capacity and performance, making storage available for new application containers.
 

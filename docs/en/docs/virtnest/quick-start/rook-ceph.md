@@ -1,18 +1,20 @@
-# Rook Ceph 部署流程
+# Rook Ceph Deployment Process
 
-本文将介绍如何部署 Rook Ceph，用于创建虚拟机。
+This page explains how to deploy Rook Ceph for creating virtual machines.
 
-## 前提条件
+## Prerequisites
 
-具体可参考[部署前提](https://rook.io/docs/rook/latest/Getting-Started/Prerequisites/prerequisites/)和[安装指引文档](https://rook.io/docs/rook/latest/Getting-Started/quickstart/#prerequisites)
+Refer to the [Prerequisites](https://rook.io/docs/rook/latest/Getting-Started/Prerequisites/prerequisites/) and [Installation Guide](https://rook.io/docs/rook/latest/Getting-Started/quickstart/#prerequisites) for detailed requirements.
 
-- k8s 版本 >= 1.22
-- 服务器节点的操作系统需要为 Linux 操作系统，Linux 内核版本必须在 4 以上。建议使用 Ubuntu 18.04、Ubuntu 20.04、CentOS 7.9、CentOS 8.5
-- 每个节点都必须至少具有 1 个未格式化且未分区的磁盘，或 1 个未格式化的分区。该磁盘或分区的最低配置为 100 GB，推荐配置为 200 GB
+- Kubernetes version >= 1.22
+- The server nodes must have a Linux operating system with a kernel version of at least 4.
+  Recommended operating systems are Ubuntu 18.04, Ubuntu 20.04, CentOS 7.9, or CentOS 8.5.
+- Each node must have at least one unformatted and unpartitioned disk or one unformatted partition.
+  The minimum configuration for the disk or partition is 100 GB, but it is recommended to have 200 GB.
 
-## 部署步骤
+## Deployment Steps
 
-1. 安装 Snapshot CRD、Snapshot Controller 和 CSI Driver
+1. Install Snapshot CRD, Snapshot Controller, and CSI Driver
 
     ```sh
     git config --global http.sslVerify "false"
@@ -23,61 +25,61 @@
     kubectl kustomize deploy/kubernetes/csi-snapshotter | kubectl -n kube-system create -f -
     ```
 
-1. 下载 rook 仓库
+2. Download the Rook repository
 
     ```git
     git clone --single-branch --branch master https://github.com/rook/rook.git
     ```
 
-1. 部署 rook operator
+3. Deploy the Rook operator
 
     ```sh
     cd rook/deploy/examples
     kubectl create -f crds.yaml -f common.yaml -f operator.yaml
     ```
 
-1. Operator 部署就绪后，部署 rook cluster
+4. After the Operator is ready, deploy the Rook cluster
 
     ```sh
     kubectl create -f cluster.yaml
     ```
 
-    如果 K8s 集群为单节点，请使用 cluster-test.yaml，不要使用 cluster.yaml。
-    如果 K8s 集群为多节点，请按照实际集群配置修改 cluster.yaml（将所有的 `allowMultiplePerNode` 改为 true）后创建 cluster
+    If the Kubernetes cluster is a single-node cluster, use cluster-test.yaml instead of cluster.yaml.
+    If the Kubernetes cluster has multiple nodes, modify cluster.yaml according to your actual cluster configuration (change all `allowMultiplePerNode` to true) and then create the cluster.
 
-1. rook cluster 部署成功后，创建 CephFilesystem
+5. After successfully deploying the Rook cluster, create a CephFilesystem
 
     ```sh
     kubectl create -f filesystem.yaml
     ```
 
-    如果为单节点集群，请使用 filesystem-test.yaml
+    If it is a single-node cluster, use filesystem-test.yaml.
 
-1. 创建 storageclass 以及 snapshotclass
+6. Create a storage class and snapshot class
 
     ```sh
     kubectl create -f csi/cephfs/storageclass.yaml -f csi/cephfs/snapshotclass.yaml
     ```
 
-1. 安装完成后验证
+7. Verify the installation
 
     ```sh
     kubectl get VolumeSnapshotClass
     ```
 
-    输出类似于：
+    The output should be similar to:
 
     ```console
     NAME DRIVER DELETIONPOLICY AGE
     csi-cephfsplugin-snapclass rook-ceph.cephfs.csi.ceph.com Delete 10m
     ```
 
-## Rook Ceph 镜像拉不下来怎么办？
+## What if Rook Ceph Images Cannot Be Pulled?
 
-由于 rook ceph 使用 Operator 安装，修改 deploy/statefult/daemon 里的镜像地址，再重装 rook ceph 时还是会失效。
-这时可以通过拉取代理的镜像地址，然后重新打 tag 为所需的镜像（镜像版本根据实际情况进行替换）
+If the Rook Ceph images cannot be pulled due to using an Operator for installation and modifying the image address in deploy/stateful/daemon, it may still fail when reinstalling Rook Ceph.
+In this case, you can pull the images from a proxy address and retag them as the desired images (replace the image version as needed).
 
-1. 拉取代理地址的镜像：
+1. Pull the images from the proxy address:
 
     ```sh
     crictl pull k8s.m.daocloud.io/sig-storage/csi-provisioner:v3.5.0
@@ -90,7 +92,7 @@
     crictl pull docker.m.daocloud.io/rook/ceph:v1.11.8
     ```
 
-1. 重新打 tag
+2. Retag the images
 
     ```console
     ctr --namespace=k8s.io image tag k8s.m.daocloud.io/sig-storage/csi-provisioner:v3.5.0 registry.k8s.io/sig-storage/csi-provisioner:v3.5.0
@@ -100,3 +102,5 @@
     ctr --namespace=k8s.io image tag quay.m.daocloud.io/cephcsi/cephcsi:v3.9.0 registry.k8s.io/cephcsi/cephcsi:v3.9.0
     ctr --namespace=k8s.io image tag k8s.m.daocloud.io/sig-storage/csi-node-driver-registrar:v2.8.0 registry.k8s.io/sig-storage/csi-node-driver-registrar:v2.8.0
     ```
+
+Now the images are retagged and ready to be used for Rook Ceph deployment.

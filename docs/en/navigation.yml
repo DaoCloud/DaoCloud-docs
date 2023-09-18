@@ -107,8 +107,8 @@ nav:
           - Container Storage:
               - Volume Claim: kpanda/user-guide/storage/pvc.md
               - Volume: kpanda/user-guide/storage/pv.md
-              - Storage Pool: kpanda/user-guide/storage/sc.md
-              - Shared Storage Pool: kpanda/user-guide/storage/sc-share.md
+              - StorageClass: kpanda/user-guide/storage/sc.md
+              - Shared StorageClass: kpanda/user-guide/storage/sc-share.md
           - ConfigMaps and Secrets:
               - Create ConfigMap: kpanda/user-guide/configmaps-secrets/create-configmap.md
               - Use ConfigMap: kpanda/user-guide/configmaps-secrets/use-configmap.md
@@ -789,8 +789,8 @@ nav:
                   - Disk node expansion: storage/hwameistor/resources/disk-nodes.md
                   - Disk expansion: storage/hwameistor/resources/disk-expansion.md
                   - Disk reservation: storage/hwameistor/resources/reserveddisk.md
-              - Storage Pool:
-                  - Storage pool management: storage/hwameistor/resources/storagepool.md
+              - StorageClass:
+                  - StorageClass management: storage/hwameistor/resources/storagepool.md
               - Volume:
                   - Volume migration: storage/hwameistor/resources/migrate.md
                   - Volume expansion: storage/hwameistor/resources/expand.md
@@ -877,6 +877,14 @@ nav:
           - Edge to Cloud Message:
               - Overview: kant/user-guide/route/index.md
               - Create Message Route: kant/user-guide/route/create-route.md
+      - Virtual Machine Container:
+          - Intro:
+              - Introduction: virtnest/intro/index.md
+              - Release Notes: virtnest/intro/release-notes.md
+          - Quick Start:
+              - Create VM: virtnest/quick-start/index.md
+              - Access VM by NodePort: virtnest/quick-start/nodeport.md
+              - Deploy with Rook Ceph: virtnest/quick-start/rook-ceph.md
       - Cloud Native Security:
           - Intro: security/index.md
           - Falco:

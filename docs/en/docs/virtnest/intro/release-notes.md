@@ -3,6 +3,19 @@
 This page provides the release notes for VirtNest (Virtual Machine Containers),
 allowing you to understand the evolution path and feature changes of each version.
 
+## 2023-8-31
+
+### v0.2.0
+
+#### New Features
+
+- **Added** support for restarting virtual machines.
+- **Added** support for editing virtual machines using forms.
+- **Added** support for creating virtual machines using YAML.
+- **Added** support for cloning virtual machines.
+- **Added** support for creating snapshots of virtual machines.
+- **Added** support for restoring virtual machines from snapshots and displaying restore records.
+
 ## 2023-07-31
 
 ### v0.1.0
