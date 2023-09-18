@@ -25,30 +25,31 @@ hide:
 
 ## 通过 kubectl 创建 svc
 
-1.编写 Yaml 文件，示例如下：
+1. 编写 Yaml 文件，示例如下：
 
     ```yaml
     apiVersion: v1
     kind: Service
-    metadata:
-    name: test-ssh
+      metadata:
+        name: test-ssh
     spec:
-    ports:
-    - name: tcp-ssh
+      ports:
+      - name: tcp-ssh
         nodePort: 32090
         protocol: TCP
         // 22 端口，不要更改
         port: 22 
         targetPort: 22
-    selector:
+      selector:
         // 虚拟机的 name
        vm.kubevirt.io/name: test-image-s3
-    type: NodePort
+      type: NodePort
     ```
 
 2. 执行以下命令
-   `kubectl apply -f you-svc.yaml`
 
-3. 创建成功后，就可以通过 `ssh username@nodeip -p 32090` 来访问虚拟机
+   ```sh
+   kubectl apply -f you-svc.yaml
+   ```
 
-
+4. 创建成功后，就可以通过 `ssh username@nodeip -p 32090` 来访问虚拟机
