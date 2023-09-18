@@ -12,11 +12,11 @@
 
 `Cluster Admin` 具有以下权限：
 
-1. 可管理、编辑、查看对应集群
+- 可管理、编辑、查看对应集群
 
-2. 管理、编辑、查看 命名空间下的所有工作负载及集群内所有资源
+- 管理、编辑、查看 命名空间下的所有工作负载及集群内所有资源
 
-3. 可授权用户为集群内角色 (Cluster Admin、NS Admin、NS Edit、NS View)
+- 可授权用户为集群内角色 (Cluster Admin、NS Admin、NS Editor、NS Viewer)
 
 该集群角色的 YAML 示例如下：
 
@@ -47,17 +47,17 @@ rules:
 
 ## 命名空间权限
 
-命名空间权限是基于 Kubernetes RBAC 能力的授权，可以实现不同的用户/用户组对命名空间下的资源具有不同的操作权限(包括 Kubernetes API 权限，详情可参考：[Kubernetes RBAC](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)。目前容器管理的默认角色为：NS Admin、NS Edit、NS View。
+命名空间权限是基于 Kubernetes RBAC 能力的授权，可以实现不同的用户/用户组对命名空间下的资源具有不同的操作权限(包括 Kubernetes API 权限)，详情可参考：[Kubernetes RBAC](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)。目前容器管理的默认角色为：NS Admin、NS Editor、NS Viewer。
 
 ### `NS Admin`
 
 `NS Admin` 具有以下权限：
 
-1. 可查看对应命名空间
+- 可查看对应命名空间
 
-2. 管理、编辑、查看 命名空间下的所有工作负载，及自定义资源
+- 管理、编辑、查看 命名空间下的所有工作负载，及自定义资源
 
-3. 可授权用户为对应命名空间角色 (NS Edit、NS View)
+- 可授权用户为对应命名空间角色 (NS Editor、NS Viewer)
 
 该集群角色的 YAML 示例如下：
 
@@ -86,13 +86,13 @@ rules:
   - '*'    
 ```
 
-### `NS Edit`
+### `NS Editor`
 
-`NS Edit` 具有以下权限：
+`NS Editor` 具有以下权限：
 
-1. 可查看对应有权限的命名空间
+- 可查看对应有权限的命名空间
 
-2. 管理、编辑、查看 命名空间下的所有工作负载
+- 管理、编辑、查看 命名空间下的所有工作负载
 
 ??? note "点击查看集群角色的 YAML 示例"
 
@@ -211,13 +211,13 @@ rules:
       - '*'      
     ```
 
-### `NS View`
+### `NS Viewer`
 
-`NS View` 具有以下权限：
+`NS Viewer` 具有以下权限：
 
-1. 可查看对应命名空间
+- 可查看对应命名空间
 
-2. 可查看对应命名空间下的所有工作负载，及自定义资源
+- 可查看对应命名空间下的所有工作负载，及自定义资源
 
 ??? note "点击查看集群角色的 YAML 示例"
 
