@@ -142,7 +142,8 @@ nav:
               - 漏洞扫描: kpanda/user-guide/security/hunter.md
               - 离线升级安全管理模块: kpanda/user-guide/security/offline-upgrade-dowl.md
           - 权限管理:
-              - 权限说明: kpanda/user-guide/permissions/permission-brief.md
+              - 权限体系介绍: kpanda/user-guide/permissions/permission-brief.md
+              - 权限详情说明: kpanda/user-guide/permissions/permissions.md
               - 集群和命名空间授权: kpanda/user-guide/permissions/cluster-ns-auth.md
           - GPU管理:
               - NVIDIA vGPU:
@@ -217,7 +218,7 @@ nav:
               - 访问密钥: ghippo/user-guide/personal-center/accesstoken.md
               - 语言设置: ghippo/user-guide/personal-center/language.md
           - 各模块权限说明:
-              - 容器管理权限说明: kpanda/user-guide/permissions/permission-brief.md
+              - 容器管理权限说明: ghippo/permissions/kpanda.md
               - 微服务引擎权限说明: ghippo/permissions/skoala.md
               - 应用工作台权限说明: ghippo/permissions/amamba.md
               - 服务网格权限说明: ghippo/permissions/mspider.md
