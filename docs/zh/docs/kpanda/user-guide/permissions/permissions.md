@@ -8,10 +8,10 @@ hide:
 容器管理模块使用以下角色：
 
 - Admin / Kpanda Owner
-- [Cluster Admin](../../kpanda/user-guide/permissions/permission-brief.md#cluster-admin)
-- [NS Admin](../../kpanda/user-guide/permissions/permission-brief.md#ns-admin) 
-- [NS Edit](../../kpanda/user-guide/permissions/permission-brief.md#ns-edit)
-- [NS View](../../kpanda/user-guide/permissions/permission-brief.md#ns-view)
+- [Cluster Admin](permission-brief.md#cluster-admin)
+- [NS Admin](permission-brief.md#ns-admin) 
+- [NS Edit](permission-brief.md#ns-edit)
+- [NS View](permission-brief.md#ns-view)
 
 各角色所具备的权限如下：
 
@@ -19,7 +19,7 @@ hide:
 有权限使用`&check;`，无权限使用`&cross;`
 -->
 
-| 一级功能 | 二级功能               | 权限点                   | Cluster admin（针对当前cluster） | Ns admin（针对当前ns）      | Ns edit（针对当前ns）       | NS view（针对当前ns）       |
+| 一级功能 | 二级功能               | 权限点                   | Cluster Admin（针对当前集群） | Ns Admin（针对当前命名空间）      | Ns Edit（针对当前命名空间）       | NS View（针对当前命名空间）       |
 | -------- | ---------------------- | ------------------------ | -------------------------------- | --------------------------- | --------------------------- | --------------------------- |
 | 集群     | 集群列表               | 查看集群列表             | &check                               | &check                          | &check                          | &check                          |
 |          |                        | 接入集群                 | &cross                                | &cross                           | &cross                           | &cross                           |
@@ -360,6 +360,6 @@ hide:
 |          |                        | 创建扫描策略             | &check                               | &cross                           | &cross                           | &cross                           |
 |          |                        | 删除扫描策略             | &check                               | &cross                           | &cross                           | &cross                           |
 
-有关权限的更多信息，请参阅[容器管理权限说明](../../kpanda/user-guide/permissions/permission-brief.md)。
+有关权限的更多信息，请参阅[容器管理权限说明](permission-brief.md)。
 
-有关角色的创建、管理和删除，请参阅[角色和权限管理](../../ghippo/user-guide/access-control/role.md)。
+有关角色的创建、管理和删除，请参阅[角色和权限管理](../../../ghippo/user-guide/access-control/role.md)。
