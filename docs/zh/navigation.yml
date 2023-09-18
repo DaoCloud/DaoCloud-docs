@@ -143,7 +143,6 @@ nav:
               - 离线升级安全管理模块: kpanda/user-guide/security/offline-upgrade-dowl.md
           - 权限管理:
               - 权限体系介绍: kpanda/user-guide/permissions/permission-brief.md
-              - 权限详情说明: kpanda/user-guide/permissions/permissions.md
               - 集群和命名空间授权: kpanda/user-guide/permissions/cluster-ns-auth.md
           - GPU管理:
               - NVIDIA vGPU:
