@@ -15,9 +15,9 @@ hide:
 
 - 在集群内安装 virtnest-agent 。
 
-- 创建一个[命名空间](../namespaces/createns.md)和[用户](../../../ghippo/user-guide/access-control/user.md)。
+- 创建一个[命名空间](../../../kpanda/user-guide/namespaces/createns.md)和[用户](../../../ghippo/user-guide/access-control/user.md)。
 
-- 当前操作用户应具有 [Cluster Admin](../../kpanda/user-guide/permissions/permission-brief.md#cluster-admin) 或更高权限，详情可参考[命名空间授权](../namespaces/createns.md)。
+- 当前操作用户应具有 [Cluster Admin](../../../kpanda/user-guide/permissions/permission-brief.md#cluster-admin) 或更高权限，详情可参考[命名空间授权](../../../kpanda/user-guide/namespaces/createns.md)。
 
 - 提前准备好镜像。
 
@@ -48,7 +48,7 @@ hide:
 - 名称：最多包含 63 个字符，只能包含小写字母、数字及分隔符（“-”），且必须以小写字母或数字开头及结尾。同一命名空间内名称不得重复，而且名称在虚拟机创建好之后不可更改。
 - 别名：允许任何字符，最长60个字符。
 - 集群：选择将新建的虚拟机部署在哪个集群内。
-- 命名空间：选择将新建的虚拟机部署在哪个命名空间。找不到所需的命名空间时可以根据页面提示去[创建新的命名空间](../namespaces/createns.md)。
+- 命名空间：选择将新建的虚拟机部署在哪个命名空间。找不到所需的命名空间时可以根据页面提示去[创建新的命名空间](../../../kpanda/user-guide/namespaces/createns.md)。
 - 标签/注解：选择为虚拟机添加所需的标签/注解信息。
 
 ### 容器配置
