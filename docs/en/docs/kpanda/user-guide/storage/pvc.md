@@ -31,11 +31,11 @@ Currently, there are two ways to create data volume declarations: YAML and form.
 2. Fill in the basic information.
 
     - The name, namespace, creation method, data volume, capacity, and access mode of the data volume declaration cannot be changed after creation.
-    - Creation method: dynamically create a new data volume claim in an existing storage pool or data volume, or create a new data volume claim based on a snapshot of a data volume claim.
+    - Creation method: dynamically create a new data volume claim in an existing StorageClass or data volume, or create a new data volume claim based on a snapshot of a data volume claim.
 
         > The declared capacity of the data volume cannot be modified when the snapshot is created, and can be modified after the creation is complete.
 
-    - After selecting the creation method, select the desired storage pool/data volume/snapshot from the drop-down list.
+    - After selecting the creation method, select the desired StorageClass/data volume/snapshot from the drop-down list.
     - access mode:
 
       - ReadWriteOnce, the data volume declaration can be mounted by a node in read-write mode.
@@ -55,7 +55,7 @@ Click the name of the target cluster in the cluster list, and then click `Contai
 
     
 
-- Click the name of the data volume declaration to view the basic configuration, storage pool information, labels, comments and other information of the data volume declaration.
+- Click the name of the data volume declaration to view the basic configuration, StorageClass information, labels, comments and other information of the data volume declaration.
 
     
 
@@ -115,13 +115,13 @@ On the data volume declaration list page, find the data to be deleted, and selec
 
 ## common problem
 
-1. If there is no optional storage pool or data volume in the list, you can [Create a storage pool](sc.md) or [Create a data volume](pv.md).
+1. If there is no optional StorageClass or data volume in the list, you can [Create a StorageClass](sc.md) or [Create a data volume](pv.md).
 
 2. If there is no optional snapshot in the list, you can enter the details page of the data volume declaration and create a snapshot in the upper right corner.
 
     
 
-3. If the storage pool (SC) used by the data volume declaration is not enabled for snapshots, snapshots cannot be made, and the page will not display the "Make Snapshot" option.
-4. If the storage pool (SC) used by the data volume declaration does not have the capacity expansion feature enabled, the data volume does not support capacity expansion, and the page will not display the capacity expansion option.
+3. If the StorageClass (SC) used by the data volume declaration is not enabled for snapshots, snapshots cannot be made, and the page will not display the "Make Snapshot" option.
+4. If the StorageClass (SC) used by the data volume declaration does not have the capacity expansion feature enabled, the data volume does not support capacity expansion, and the page will not display the capacity expansion option.
 
     

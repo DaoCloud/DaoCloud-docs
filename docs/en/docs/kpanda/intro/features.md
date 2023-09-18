@@ -45,7 +45,7 @@ Service (Service) is a Kubernetes-native resource that provides cloud-native loa
 ## Container Storage
 
 - Data Volume Management: Supports local storage, file storage, and block storage, accessed through CSI capabilities, and provided for application workloads.
-- Dynamic Creation of Data Volumes: Supports storage pools to dynamically create data volumes.
+- Dynamic Creation of Data Volumes: Supports StorageClass to dynamically create data volumes.
 
 ## Policy Management
 

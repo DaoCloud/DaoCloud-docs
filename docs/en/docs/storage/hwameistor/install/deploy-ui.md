@@ -54,7 +54,7 @@ Please confirm that your cluster has successfully connected to `container manage
         After Hwameistor is deployed, Storage Class will be created automatically.
     
         - `AllowVolumeExpansion`: It is off by default. After it is turned on, the data volume created based on the Storage Class can be expanded.
-        - `DiskType`: the disk type of the created storage pool (Storage Class), supported types are: HDD, SSD. HDD is the default.
+        - `DiskType`: the disk type of the created StorageClass (Storage Class), supported types are: HDD, SSD. HDD is the default.
         - `Enable HA`: `HA` is turned off by default, that is, the created data volume is `non-highly available`, when enabled, use this `Storage Class`
         The created data volume can be set as `highly available data volume`. Please complete [DRDB Installation](drbdinstall.md) before opening.
         - `Replicas`: In non-HA mode, the number of `Replicas` is `1`; when the `HA` mode is enabled, the number of `Replicas` can be `1` or `2`, and the number is `1`, which can be converted to `2`.

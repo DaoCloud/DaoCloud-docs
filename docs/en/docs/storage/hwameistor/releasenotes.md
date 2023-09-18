@@ -41,7 +41,7 @@ This page lists the Release Notes related to Hwameistor, providing an overview o
 
 #### Improvements
 
-- **Fixed** Inconsistency in creation time field for storage pools.
+- **Fixed** Inconsistency in creation time field for StorageClass.
 
 ## 2023-5-26
 
@@ -71,7 +71,7 @@ This page lists the Release Notes related to Hwameistor, providing an overview o
 
 #### Improvements
 
-**Fixed** inconsistency issue with storage pool creation time field
+**Fixed** inconsistency issue with StorageClass creation time field
 
 ## 2023-5-26
 
@@ -100,7 +100,7 @@ This page lists the Release Notes related to Hwameistor, providing an overview o
 - **Added** identification and setting of local disk Manager Owner information
 - **Improved** marking disk status as 'inactive' when removal time is received
 - **Improved** dashboard for disk Smart indicators
-- **Added** local storage pool
+- **Added** local StorageClass
 - **Improved** display of UI component statuses
 - **Improved** separation of disk allocation and disk status update processes
 - **Improved** renaming of Exporter port to http-metrics
@@ -180,7 +180,7 @@ This page lists the Release Notes related to Hwameistor, providing an overview o
 
 - **Added** Hwameistor Dashboard UI, which displays storage resource and storage node usage status
 - **Added** interface for managing Hwameistor storage nodes, local disks, and migration records
-- **Added** storage pool management functionality, displaying basic information about storage pools and corresponding nodes
+- **Added** StorageClass management functionality, displaying basic information about StorageClass and corresponding nodes
 - **Added** local volume management functionality, supporting data volume migration and high availability conversion
 
 #### Improvements

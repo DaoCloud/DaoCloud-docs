@@ -13,7 +13,7 @@ hide:
 
     !!! warning
 
-        - Modify the storage pool/database. After the storage location is changed, the previous data will not be migrated.
+        - Modify the StorageClass/database. After the storage location is changed, the previous data will not be migrated.
         - The managed registry name and deployment location are not editable.
 
     <!--![]()screenshots-->

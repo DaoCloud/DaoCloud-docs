@@ -17,7 +17,7 @@ This article introduces how to install Hwameistor through the Hwameistor Operato
     - Apiserver
     - Graph UI
 - Configuring node disks for different purposes and use cases
-- Automatically discovering the type of node disks and creating HwameiStor storage pools accordingly
+- Automatically discovering the type of node disks and creating HwameiStor StorageClass accordingly
 - Automatically creating corresponding StorageClasses based on the configuration and features of the HwameiStor system
 
 ## Prerequisites

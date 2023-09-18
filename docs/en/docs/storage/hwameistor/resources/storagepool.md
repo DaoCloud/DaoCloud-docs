@@ -1,4 +1,4 @@
-# Create storage pool
+# Create StorageClass
 
 The following example is from a 4-node Kubernetes cluster:
 
@@ -13,8 +13,8 @@ k8s-worker-3 Ready worker 36d v1.24.3-2+63243a96d1c393
 
 ## Create `LocalDiskClaim` object
 
-HwameiStor creates a `LocalDiskClaim` object according to the storage medium type to create a storage pool.
-To create a HDD storage pool on all Kubernetes Worker nodes, users need to enter the name of each Worker node through the `storageNodes` parameter:
+HwameiStor creates a `LocalDiskClaim` object according to the storage medium type to create a StorageClass.
+To create a HDD StorageClass on all Kubernetes Worker nodes, users need to enter the name of each Worker node through the `storageNodes` parameter:
 
 ```console
 helm template ./hwameistor \
@@ -111,7 +111,7 @@ $ vgdisplay LocalStorage_PoolHDD
 
 !!! note
 
-    You can also configure the storage pool by setting the `storageNode` parameter during HwameiStor installation:
+    You can also configure the StorageClass by setting the `storageNode` parameter during HwameiStor installation:
 
     ```console
     helm install hwameistor ./hwameistor \

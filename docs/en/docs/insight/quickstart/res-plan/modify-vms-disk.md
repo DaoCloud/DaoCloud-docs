@@ -5,14 +5,14 @@ Please refer to the [vmstorage disk capacity planning](../res-plan/vms-res-plan.
 
 ## Procedure
 
-### Enable Storage Pool Expansion
+### Enable StorageClass Expansion
 
 1. Log in to the DCE 5.0 platform as a global service cluster administrator and go to the details of the `kpanda-global-cluster` cluster.
 2. Select the left navigation menu `Container Storage` -> `PVC` and find the PVC bound to the vmstorage.
 
 
 
-3. Click a vmstorage PVC to enter the details of the volume claim for vmstorage and confirm the storage pool that the PVC is bound to.
+3. Click a vmstorage PVC to enter the details of the volume claim for vmstorage and confirm the StorageClass that the PVC is bound to.
 
 
 

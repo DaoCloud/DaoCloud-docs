@@ -48,7 +48,7 @@ The steps to create a managed registry are as follows.
 
             <!--![]()screenshots-->
 
-        - Using a storage pool: Select an existing storage pool in the registry cluster and configure the storage capacity. 
+        - Using a StorageClass: Select an existing StorageClass in the registry cluster and configure the storage capacity. 
 
             <!--![]()screenshots-->
 
