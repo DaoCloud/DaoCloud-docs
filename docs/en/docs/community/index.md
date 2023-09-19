@@ -170,7 +170,7 @@
 <p align="center">
 <img src="https://landscape.cncf.io/images/left-logo.svg" width="150"/>&nbsp;&nbsp;<img src="https://landscape.cncf.io/images/right-logo.svg" width="200"/>
 <br/><br/>
-[Clusterpedia](./clusterpedia.md), [HwameiStor](./hwameistor.md) and [Merbridge](./merbridge.md) have been listed in <a href="https://www.cncf.io/projects/clusterpedia/">CNCF Sandbox</a>.
+Clusterpedia, HwameiStor, and Merbridge have been selected for the <a href="https://www.cncf.io/projects/clusterpedia/">CNCF Sandbox</a>.
 </p>
 
 [Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
