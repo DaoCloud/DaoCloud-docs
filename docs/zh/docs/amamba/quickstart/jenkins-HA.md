@@ -58,21 +58,16 @@ HwameiStor 支持使用 DRBD 的方式，可以将一份数据副本同时挂载
     apiVersion: hwameistor.io/v1alpha1
     kind: LocalDiskClaim
     metadata:
-      name: controller-node-1      # (1)
+      name: controller-node-1      # 改为当前节点的名称
     spec:
-      nodeName: controller-node-1  # (2)
-      owner: local-storage         # (3)
+      nodeName: controller-node-1  # 改为当前节点的名称 (kubectl get node)
+      owner: local-storage         # owner 与 disk 类型是不同的，只有 lvm 类型的才支持 HA 和扩容。注意区分 lvm 和 disk 类型
       description:
-        diskType: HDD              # (4)
+        diskType: HDD              # 改为当前节点的磁盘类型
     EOF
     ```
 
-    1. 改为当前节点的名称
-    2. 改为当前节点的名称 (kubectl get node)
-    3. owner 与 disk 类型是不同的，只有 lvm 类型的才支持 HA 和扩容。注意区分 lvm 和 disk 类型
-    4. 改为当前节点的磁盘类型
-
-4. 验证是否加入成功
+4. 验证是否加入成功。
 
     ```shell
     kubectl get localstoragenode $nodeName -o yaml

@@ -362,7 +362,8 @@ nav:
               - Progressive canary release based on Argo Rollout: amamba/quickstart/argocd-rollout.md
               - Run the pipeline on the specified node: amamba/quickstart/pipeline-on-node.md
               - Jenkins scenario configuration: amamba/quickstart/scenarios-config.md
-              - Using a custom toolchain in Jenkins: amamba/user-guide/tools/jenkins-custom.md
+              - Using a custom toolchain in Jenkins: amamba/quickstart/jenkins-custom.md
+              - Jenkins high availability solution: amamba/quickstart/jenkins-HA.md
       - Multicloud Management:
           - Intro:
               - What is Multicloud Management: kairship/intro/index.md
