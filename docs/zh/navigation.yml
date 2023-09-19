@@ -390,8 +390,8 @@ nav:
               - 基于 Argo Rollout 实现渐进式灰度发布: amamba/quickstart/argocd-rollout.md
               - 在指定的节点上运行流水线: amamba/quickstart/pipeline-on-node.md
               - Jenkins 场景配置: amamba/quickstart/scenarios-config.md
-              - 在 Jenkins 中使用自定义工具链: amamba/user-guide/tools/jenkins-custom.md
-              - Jenkins高可用方案: amamba/quickstart/jenkins-HA.md
+              - 在 Jenkins 中使用自定义工具链: amamba/quickstart/jenkins-custom.md
+              - Jenkins 高可用方案: amamba/quickstart/jenkins-HA.md
       - 多云编排:
           - 介绍:
               - 什么是多云编排: kairship/intro/index.md
