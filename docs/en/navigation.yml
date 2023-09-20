@@ -655,9 +655,9 @@ nav:
               - Intro: network/modules/submariner/index.md
               - Install: network/modules/submariner/install.md
               - Use: network/modules/submariner/usage.md
-      - Data Services:
+      - Middleware Data Services:
           - Intro:
-              - What is Data Service: middleware/index.md
+              - What is Middleware Data Service: middleware/index.md
               - Supported Kubernetes Versions: middleware/compatibility.md
               - Permissions: middleware/permission.md
           - Common Features:
