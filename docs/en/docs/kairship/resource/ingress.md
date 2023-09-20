@@ -13,7 +13,7 @@ Currently, two creation methods are provided: form creation and YAML creation. T
 
     <!--screenshot-->
 
-2. On the `Create Multicloud Ingress` page, after configuring the deployment location, setting ingress rules, Ingress Class, whether to enable session persistence, etc., click `OK`. For details, please refer to [Create Ingress](../../kpanda/user-guide/services-routes/create-ingress.md)
+2. On the `Create Multicloud Ingress` page, after configuring the deployment location, setting ingress rules, Ingress Class, whether to enable session persistence, etc., click `OK`. For details, please refer to [Create Ingress](../../kpanda/user-guide/network/create-ingress.md)
 
     <!--screenshot-->
 

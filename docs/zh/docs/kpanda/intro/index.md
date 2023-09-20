@@ -95,9 +95,9 @@ hide:
 
     DCE 5.0 自带的容器网络便于对外提供服务，通过 Ingress 定义路由规则，根据网络策略控制流量。
 
-    - [服务 Service](../user-guide/services-routes/create-services.md)：ClusterIP、NodePort、LoadBalancer
-    - [路由 Ingress](../user-guide/services-routes/create-ingress.md)
-    - [网络策略 NetworkPolicy](../user-guide/services-routes/network-policy.md)
+    - [服务 Service](../user-guide/network/create-services.md)：ClusterIP、NodePort、LoadBalancer
+    - [路由 Ingress](../user-guide/network/create-ingress.md)
+    - [网络策略 NetworkPolicy](../user-guide/network/network-policy.md)
 
 - :material-harddisk:{ .lg .middle } __容器存储__
 

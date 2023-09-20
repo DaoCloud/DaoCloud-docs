@@ -49,7 +49,7 @@ spec:
 
 ### Create Ingress through the interface and specify IngressClass
 
-If [the route（Ingress) is created through the interface](../../../kpanda/user-guide/services-routes/create-ingress.md), you can directly enter the corresponding `IngressClassName` in the interface.
+If [the route（Ingress) is created through the interface](../../../kpanda/user-guide/network/create-ingress.md), you can directly enter the corresponding `IngressClassName` in the interface.
 
 ### Default IngressClass
 

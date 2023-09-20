@@ -96,13 +96,13 @@
 
 ### 服务配置
 
-为 Job 配置[服务（Service）](../services-routes/create-services.md)，使其能够被外部访问。
+为 Job 配置[服务（Service）](../network/create-services.md)，使其能够被外部访问。
 
 1. 点击`创建服务`按钮。
 
     ![服务配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/job07.png)
 
-2. 参考[创建服务](../services-routes/create-services.md)，配置服务参数。
+2. 参考[创建服务](../network/create-services.md)，配置服务参数。
 
     ![创建服务](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy13.png)
 

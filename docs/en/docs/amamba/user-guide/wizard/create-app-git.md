@@ -58,7 +58,7 @@ Workbench supports building applications in four ways: Git repository, [Jar pack
         - name: service protocol: TCP port: 9555 targetPort: 9555
         ```
         
-        > For more detailed instructions on service configuration, please refer to [Create Service](../../../kpanda/user-guide/services-routes/create-services.md).
+        > For more detailed instructions on service configuration, please refer to [Create Service](../../../kpanda/user-guide/network/create-services.md).
         
     - Resource limit: Specify the upper limit of resources that the application can use, including CPU and memory.
 

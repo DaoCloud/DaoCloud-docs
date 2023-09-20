@@ -13,7 +13,7 @@ hide:
 
     ![路由列表](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/create-ingress01.png)
 
-2. 在`创建多云路由`页面中，配置部署位置、设置路由规则、Ingress Class、是否开启会话保持等信息后，点击`确定`。填写详情可参考[创建路由](../../kpanda/user-guide/services-routes/create-ingress.md)
+2. 在`创建多云路由`页面中，配置部署位置、设置路由规则、Ingress Class、是否开启会话保持等信息后，点击`确定`。填写详情可参考[创建路由](../../kpanda/user-guide/network/create-ingress.md)
 
     ![创建多云路由](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/create-ingress02.png)
 

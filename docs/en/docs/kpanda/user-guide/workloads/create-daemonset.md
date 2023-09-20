@@ -107,13 +107,13 @@ Container configuration is divided into six parts: basic information, life cycle
 
 ### Service configuration
 
-Create a [Service (Service)](../services-routes/create-services.md) for the daemon, so that the daemon can be accessed externally.
+Create a [Service (Service)](../network/create-services.md) for the daemon, so that the daemon can be accessed externally.
 
 1. Click the `Create Service` button.
 
      
 
-2. Configure service parameters, please refer to [Create Service](../services-routes/create-services.md) for details.
+2. Configure service parameters, please refer to [Create Service](../network/create-services.md) for details.
 
      
 

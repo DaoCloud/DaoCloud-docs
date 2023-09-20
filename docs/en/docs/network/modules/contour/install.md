@@ -57,4 +57,4 @@ Please confirm that your cluster has successfully connected to the `Container Ma
 
     ![contour-yaml](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/contour-install-8.png)
 
-Once created, create the Ingress route and select the Contour instance via `Platform Load Balancing`. For details, refer to: [Create Route](../../../kpanda/user-guide/services-routes/create-ingress.md)
+Once created, create the Ingress route and select the Contour instance via `Platform Load Balancing`. For details, refer to: [Create Route](../../../kpanda/user-guide/network/create-ingress.md)

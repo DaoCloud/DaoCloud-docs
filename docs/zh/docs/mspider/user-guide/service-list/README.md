@@ -42,4 +42,4 @@ hide:
 
 ![菜单项](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/servicelist05.png)
 
-关于如何创建和配置服务，请参阅[创建服务](../../../kpanda/user-guide/services-routes/create-services.md)。
+关于如何创建和配置服务，请参阅[创建服务](../../../kpanda/user-guide/network/create-services.md)。

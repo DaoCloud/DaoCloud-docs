@@ -102,9 +102,9 @@ nav:
               - 管理 Helm 应用: kpanda/user-guide/helm/helm-app.md
               - 管理 Helm 仓库: kpanda/user-guide/helm/helm-repo.md
           - 容器网络:
-              - 创建服务: kpanda/user-guide/services-routes/create-services.md
-              - 创建路由: kpanda/user-guide/services-routes/create-ingress.md
-              - 网络策略: kpanda/user-guide/services-routes/network-policy.md
+              - 创建服务: kpanda/user-guide/network/create-services.md
+              - 创建路由: kpanda/user-guide/network/create-ingress.md
+              - 网络策略: kpanda/user-guide/network/network-policy.md
           - 自定义资源: kpanda/user-guide/custom-resources/create.md
           - 容器存储:
               - 数据卷声明: kpanda/user-guide/storage/pvc.md

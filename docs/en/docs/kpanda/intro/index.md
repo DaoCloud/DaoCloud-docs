@@ -102,9 +102,9 @@ and quickly build an enterprise-grade container cloud management platform.
     DCE 5.0 comes with a container network that facilitates external service provision,
     routing rules defined through Ingress, and traffic control based on network policies.
 
-    - [Service](../user-guide/services-routes/create-services.md): ClusterIP, NodePort, LoadBalancer
-    - [Ingress](../user-guide/services-routes/create-ingress.md): Path-based, Name-based
-    - [Network Policies](../user-guide/services-routes/network-policies.md)
+    - [Service](../user-guide/network/create-services.md): ClusterIP, NodePort, LoadBalancer
+    - [Ingress](../user-guide/network/create-ingress.md): Path-based, Name-based
+    - [Network Policies](../user-guide/network/network-policy.md)
 
 - :material-harddisk:{ .lg .middle } __Container Storage__
 

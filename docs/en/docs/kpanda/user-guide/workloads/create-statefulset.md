@@ -100,13 +100,13 @@ Container configuration is divided into six parts: basic information, life cycle
 
 ### Service configuration
 
-Configure [Service (Service)](../services-routes/create-services.md) for the stateful load, so that the stateful load can be accessed externally.
+Configure [Service (Service)](../network/create-services.md) for the stateful load, so that the stateful load can be accessed externally.
 
 1. Click the `Create Service` button.
 
      
 
-2. Refer to [Create Service](../services-routes/create-services.md) to configure service parameters.
+2. Refer to [Create Service](../network/create-services.md) to configure service parameters.
 
      
 
