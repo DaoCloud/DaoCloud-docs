@@ -189,6 +189,7 @@ nav:
                   - LDAP: ghippo/user-guide/access-control/ldap.md
                   - OIDC: ghippo/user-guide/access-control/oidc.md
               - 接入管理: ghippo/user-guide/access-control/docking.md
+                  - webhook: ghippo/user-guide/access-control/webhook.md
           - 工作空间与层级:
               - ghippo/user-guide/workspace/ws-folder.md
               - 创建和删除工作空间: ghippo/user-guide/workspace/workspace.md
@@ -237,7 +238,6 @@ nav:
                   - OEM OUT: ghippo/oem/oem-out.md
                   - 定制 DCE 5.0 对接 IdP: ghippo/oem/custom-idp.md
                   - Keycloak 自定义 IdP: ghippo/oem/keycloak-idp.md
-                  - Webhook 消息通知: ghippo/oem/webhook.md
       - 可观测性:
           - 介绍:
               - 可观测性: insight/intro/index.md
