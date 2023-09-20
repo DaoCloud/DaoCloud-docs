@@ -221,7 +221,7 @@ nav:
               - 微服务引擎权限说明: ghippo/permissions/skoala.md
               - 应用工作台权限说明: ghippo/permissions/amamba.md
               - 服务网格权限说明: ghippo/permissions/mspider.md
-              - 数据服务权限说明: ghippo/permissions/mcamel.md
+              - 中间件服务权限说明: ghippo/permissions/mcamel.md
           - 最佳实践:
               - 工作空间最佳实践: ghippo/user-guide/workspace/ws-best-practice.md
               - 工作空间绑定命名空间: ghippo/user-guide/workspace/ws-to-ns.md
@@ -690,9 +690,9 @@ nav:
               - 介绍: network/modules/submariner/index.md
               - 安装: network/modules/submariner/install.md
               - 使用说明: network/modules/submariner/usage.md
-      - 数据服务:
+      - 中间件数据服务:
           - 介绍:
-              - 什么是数据服务: middleware/index.md
+              - 什么是中间件数据服务: middleware/index.md
               - 版本适配: middleware/compatibility.md
               - 权限设计说明: middleware/permission.md
           - 通用配置:

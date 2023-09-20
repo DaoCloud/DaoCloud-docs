@@ -30,6 +30,9 @@ classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
 classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
 classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
-class start1,end1 cluster;
-class config,register,join k8s
+class start1,end1 k8s;
+class config,register,join cluster
+
+click register "https://docs.daocloud.io/en/kant/user-guide/node/batch-registration.html"
+click join "https://docs.daocloud.io/en/kant/user-guide/node/managed-node.html"
 ```
