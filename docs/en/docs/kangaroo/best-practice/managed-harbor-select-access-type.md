@@ -61,7 +61,7 @@ The table below explains the advantages and disadvantages of these two access ty
 - The cluster must have a DNS service installed, such as CoreDNS, KubeDNS, Bind, etc.
   For specific installation methods, please refer to the
   [DNS](https://kubernetes.io/zh-cn/docs/concepts/services-networking/dns-pod-service/) documentation.
-- The cluster must have a LoadBalancer component installed, such as MetalLB, F5, Nginx, etc.
+- The cluster must have a LoadBalancer component installed, such as MetalLB and F5.
   For specific installation methods, please refer to the
   [LoadBalancer](../../network/modules/metallb/index.md) documentation.
 

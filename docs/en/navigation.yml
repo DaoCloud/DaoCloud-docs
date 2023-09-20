@@ -172,7 +172,9 @@ nav:
                   - ghippo/user-guide/access-control/idprovider.md
                   - LDAP: ghippo/user-guide/access-control/ldap.md
                   - OIDC: ghippo/user-guide/access-control/oidc.md
-              - Docking Portal: ghippo/user-guide/access-control/docking.md
+              - Docking Portal:
+                  - ghippo/user-guide/access-control/docking.md
+                  - Webhook: ghippo/user-guide/access-control/webhook.md
           - Workspaces and Folders:
               - ghippo/user-guide/workspace/ws-folder.md
               - Create and Delete Workspace: ghippo/user-guide/workspace/workspace.md
@@ -221,7 +223,6 @@ nav:
                   - OEM OUT: ghippo/oem/oem-out.md
                   - Customize DCE 5.0 to Sync IdP: ghippo/oem/custom-idp.md
                   - Customize IdP with Keycloak: ghippo/oem/keycloak-idp.md
-                  - Webhook Message Notification: ghippo/oem/webhook.md
       - Insight:
           - Intro:
               - What is Insight: insight/intro/index.md
