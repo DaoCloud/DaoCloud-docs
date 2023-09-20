@@ -42,18 +42,20 @@ DCE 5.0 provides comprehensive Addons for different use cases, which can be down
 The numerous modules included in DCE 5.0 can be downloaded separately to upgrade each module on demand.
 
 | Module                | File Size | Download                                         | Update Date |
-| --------------------- | --------- | ------------------------------------------------ | ----------- |
+| --------------------- |-----------|--------------------------------------------------|-------------|
 | Global Management     | 440 MB    | [:arrow_right: Download](./modules/ghippo.md)    | 2023-08-28  |
 | Container Management  | 2.41 GB   | [:arrow_right: Download](./modules/ghippo.md)    | 2023-07-06  |
 | Cluster Inspection    | 205.11 MB | [:arrow_right: Download](./modules/kcollie.md)   | 2023-08-08  |
 | Backup and Restore    | 59.29 MB  | [:arrow_right: Download](./modules/kcoral.md)    | 2023-08-08  |
-| Security Management   | 163 MB   | [:arrow_right: Download](./modules/dowl.md)      | 2023-08-25 |
+| Security Management   | 163 MB    | [:arrow_right: Download](./modules/dowl.md)      | 2023-08-25  |
 | Insight              | 2.64 GB   | [:arrow_right: Download](./modules/insight.md)   | 2023-08-04  |
 | Service Mesh         | 2.41 GB   | [:arrow_right: Download](./modules/mspider.md)   | 2023-08-23  |
 | Network Module        | 55.47 MB  | [:arrow_right: Download](./modules/spidernet.md) | 2023-04-26  |
 | Container Registry    | 293.24 MB | [:arrow_right: Download](./modules/kangaroo.md)  | 2023-08-22  |
 | Operations Management | 56.90 MB  | [:arrow_right: Download](./modules/gmagpie.md)   | 2023-08-02  |
-| Multicloud Management | 525.11 MB  | [:arrow_right: Download](./modules/kairship.md) | 2023-09-01 |
+| Multicloud Management | 525.11 MB | [:arrow_right: Download](./modules/kairship.md)  | 2023-09-01  |
+| Cloud Edge Collaboration | 94.2 MB   | [:arrow_right: Download](./modules/kant.md)      | 2023-09-19  |
+
 
 !!! note
 
