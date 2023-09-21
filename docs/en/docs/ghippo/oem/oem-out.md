@@ -1,4 +1,4 @@
-# Integrating DCE 5.0 into Customer Platform (OEM OUT)
+# Integrating DCE 5.0 into Customer System (OEM OUT)
 
 OEM OUT refers to integrating DCE 5.0 as a sub-module into other products, appearing in their menus.
 You can directly access DCE 5.0 without logging in again after logging into other products.
@@ -51,25 +51,25 @@ For detailed instructions, refer to the [OEM OUT Best Practices video tutorial](
 3. Assuming the Nginx entry address is 10.6.165.50, follow the
    [Customize DCE 5.0 Reverse Proxy Server Address](../install/reverse-proxy.md) to
    set the DCE_PROXY reverse proxy as `http://10.6.165.50/dce5`. Ensure that DCE 5.0
-   can be accessed via `http://10.6.165.50/dce5`. The customer platform also needs
+   can be accessed via `http://10.6.165.50/dce5`. The customer system also needs
    to configure the reverse proxy based on its specific requirements.
 
 ## User System Integration
 
-Integrate the customer platform with DCE 5.0 using protocols like OIDC/OAUTH,
+Integrate the customer system with DCE 5.0 using protocols like OIDC/OAUTH,
 allowing users to access DCE 5.0 without logging in again after logging into
-the customer platform. Fill in the OIDC information of the customer platform in
+the customer system. Fill in the OIDC information of the customer system in
 `Global Management` -> `Access Control` -> `Identity Providers`.
 
 After integration, the DCE 5.0 login page will display the OIDC (custom) option.
-When accessing DCE 5.0 from the customer platform for the first time,
+When accessing DCE 5.0 from the customer system for the first time,
 select OIDC login, and subsequent logins will directly enter DCE 5.0 without needing to choose again.
 
 ## Navigation Bar Integration
 
-Navigation bar integration means adding DCE 5.0 to the menu of the customer platform.
+Navigation bar integration means adding DCE 5.0 to the menu of the customer system.
 You can directly access DCE 5.0 by clicking the corresponding menu item. The navigation bar
-integration depends on the customer platform and needs to be handled based on specific circumstances.
+integration depends on the customer system and needs to be handled based on specific circumstances.
 
 ## Customizing Appearance
 

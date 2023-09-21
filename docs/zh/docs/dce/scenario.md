@@ -23,8 +23,8 @@ DCE 5.0 集成社区最优秀的众多技术，内置依赖项数以万计，经
 
 === "OEM IN 和 OUT"
 
-    - [如何将客户平台集成到 DCE 5.0？](../videos/use-cases.md#dce-50_3)
-    - [如何将 DCE 5.0 集成到客户平台？](../videos/use-cases.md#dce-50_2)
+    - [如何将客户系统集成到 DCE 5.0？](../videos/use-cases.md#dce-50_3)
+    - [如何将 DCE 5.0 集成到客户系统？](../videos/use-cases.md#dce-50_2)
 
 === "网络和通信"
 
