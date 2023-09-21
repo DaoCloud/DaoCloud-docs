@@ -62,10 +62,13 @@ kubectl describe limits -n istio-system dce-default-limit-range
 
 Root cause analysis: DCE 4.0 uses Kubernetes version 1.18, which is relatively outdated for the new version of the service mesh.
 
-To resolve this issue, manually set the `istio.custom_params.values.global.jwtPolicy` parameter of GlobalMesh to `first-party-jwt`.
+Symptom 01: 'istio-managed-istio-hosted' fails to start, indicating that the Configmap of 'istio-token' does not exist.
+
+To resolve this issue, manually for grid instance of CR ` GlobalMesh ` add corresponding parameters: `istio.custom_params.values.global.jwtPolicy`.
 
 ![params](./images/dce4-01.png)
 
 !!! tip
 
-    Before integrating with the new version of the service mesh, deploy coreDNS in advance for DCE 4.0.
+    1. Before integrating with the new version of the service mesh, deploy coreDNS in advance for DCE 4.0.
+    2. The `Global Mesh` configuration is in Global Cluster, not in the access cluster.

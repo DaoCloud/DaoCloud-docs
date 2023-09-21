@@ -21,3 +21,4 @@ If you encounter problems with the use of the service mesh, please review this t
 - [Failed to add cluster to hosted mesh](./failed-to-add-cluster.md)
 - [The istio-ingressgateway is abnormal when hosting the mesh management cluster](./hosted-mesh-errors.md)
 - [Unable to unbind mesh space](./mesh-space-cannot-unbind.md)
+- [Troubleshooting on joining DCE 4.0](./dce4.0-issues.md)
