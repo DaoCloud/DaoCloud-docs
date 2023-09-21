@@ -50,7 +50,7 @@ Redis-shake 支持哨兵模式实例间的数据同步与迁移能力，现以 3
 
 Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上，因此，本例中为了实现数据同步，需要在 **实例 redis-b** 所在集群部署redis-shake，配置方式如下。
 
-#### 1. 创建配置项
+#### 创建配置项
 
 在`容器管理` - `目标端实例所在集群` - `配置与存储` - `配置项`为 Redis-shake 实例创建配置项 `redis-sync`。导入文件 `sync.toml` （文件内容见`附录`），并注意需要修改以下内容：
 
@@ -96,7 +96,7 @@ Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上�
     type = "standalone" # "standalone" or "cluster"
     ```
 
-#### 2. 创建 Redis-shake
+#### 创建 Redis-shake
 
 1. 打开`应用工作台`，选择`向导`-`基于容器镜像`，创建一个应用 `Redis-shake-sync`：
 
@@ -161,9 +161,7 @@ Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 
 ## 附录
 
-sync.toml
-
-```toml
+```toml title="sync.toml"
 type = "sync"
  
 [source]
