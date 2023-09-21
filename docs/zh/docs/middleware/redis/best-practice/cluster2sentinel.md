@@ -273,9 +273,7 @@ Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 
 3. 点击`确定`，完成 Redis-shake 创建。
 
-
 完成 Redis-shake 的创建后，实际就已经开始 Redis 实例间的同步，此时可通过 `redis-cli` 工具验证同步，这里就不做赘述。
-
 
 ## 复原主从关系
 
@@ -283,12 +281,9 @@ Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 
 ![sync](../images/sync11.png)
 
-
 ## 附录
 
-sync.toml
-
-??? note “请点击查看配置文件”
+??? note “请点击查看配置文件” title="sync.toml"
 
     ```toml
     type = "sync"

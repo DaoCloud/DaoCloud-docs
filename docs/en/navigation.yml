@@ -733,15 +733,21 @@ nav:
               - View RabbitMQ logs: middleware/rabbitmq/user-guide/logs.md
               - Add custom plugins for RabbitMQ: middleware/rabbitmq/faq/add-plugin.md
               - RabbitMQ Release Notes: middleware/rabbitmq/release-notes.md
-          - Redis cache service:
-              - What is Redis: middleware/redis/intro/index.md
-              - Use cases: middleware/redis/intro/scenarios.md
-              - Create a Redis instance: middleware/redis/user-guide/create.md
-              - Update Redis instance: middleware/redis/user-guide/update.md
-              - Delete Redis instance: middleware/redis/user-guide/delete.md
-              - View Redis logs: middleware/redis/user-guide/logs.md
-              - Redis DR Deployment Solution: middleware/redis/best-practice/disaster-tolerance.md
-              - Redis Release Notes: middleware/redis/release-notes.md
+          - Redis Cache Service:
+              - Introduction:
+                  - What is Redis: middleware/redis/intro/index.md
+                  - Use Cases: middleware/redis/intro/scenarios.md
+                  - Release Notes: middleware/redis/release-notes.md
+              - Quick Start:
+                  - Create Redis Instance: middleware/redis/user-guide/create.md
+                  - Update Redis Instance: middleware/redis/user-guide/update.md
+                  - Delete Redis Instance: middleware/redis/user-guide/delete.md
+                  - View Redis Logs: middleware/redis/user-guide/logs.md
+              - Cross-Cluster Data Synchronization:
+                  - Data Synchronization Introduction: middleware/redis/best-practice/index.md
+                  - Cluster Mode to Cluster Mode: middleware/redis/best-practice/cluster2cluster.md
+                  - Sentinel Mode to Sentinel Mode: middleware/redis/best-practice/sentinel2sentinel.md
+                  - Cluster Mode to Sentinel Mode: middleware/redis/best-practice/cluster2sentinel.md
           - PostgreSQL database:
               - What is PostgreSQL: middleware/postgresql/intro/index.md
               - Create PostgreSQL: middleware/postgresql/user-guide/create.md
