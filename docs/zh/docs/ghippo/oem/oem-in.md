@@ -13,7 +13,10 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 
 !!! note
 
-    以下使用两套 DCE 5.0 来做嵌套演示。
+    以下使用两套 DCE 5.0 来做嵌套演示。实际场景需要自己解决客户系统的如下问题：
+    1. 客户系统需要自己添加一个 subpath，用于区分哪些是 DCE 5.0 的服务，哪些是客户系统的服务。
+    2. 提供客户系统的 jwksUri 发现地址（如果客户系统使用了 HTTP Headers Authorization 字段作为 TOKEN 校验）
+    3. 提供客户系统的 TLS 证书（如果客户系统使用了 TLS，并且 TLS 证书是自签的）
 
 ## 环境准备
 
@@ -85,7 +88,7 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
                     end
                   end
     ---
-    apiVersion: security.istio.io/v1
+    apiVersion: security.istio.io/v1beta1
     kind: AuthorizationPolicy
     metadata:
       # Please edit the object below. Lines beginning with a '#' will be ignored,
