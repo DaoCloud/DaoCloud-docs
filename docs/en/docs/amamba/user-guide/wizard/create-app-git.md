@@ -6,7 +6,7 @@ Workbench supports building applications in four ways: Git repository, [Jar pack
 
 - Need to create a workspace and a user, the user needs to join the workspace and give `workspace edit` role.
   Refer to [Creating a workspace](../../../ghippo/user-guide/workspace/workspace.md), [Users and roles](../../../ghippo/user-guide/access-control/user.md).
-- Create two credentials that can access the code warehouse warehouse and mirror warehouse, refer to [credential management](../pipelines/credential.md).
+- Create two credentials that can access the code warehouse warehouse and mirror warehouse, refer to [credential management](../pipeline/credential.md).
 - Prepare a Gitlab warehouse, Harbor warehouse.
 
 ## Create Credentials

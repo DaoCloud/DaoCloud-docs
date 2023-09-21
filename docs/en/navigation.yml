@@ -320,27 +320,32 @@ nav:
               - Build Microservice based on Git Repo: amamba/user-guide/wizard/create-app-git.md
               - Build Java Apps based on Jar Packages: amamba/user-guide/wizard/jar-java-app.md
               - Deploy Helm Apps based on Helm Charts: amamba/user-guide/wizard/helm.md
+          - Native Applications:
+              - Manage Native Applications: amamba/user-guide/native/manage.md
+              - Deploy Traditional Microservices with Native Apps: amamba/user-guide/native/native-app.md
           - OAM Application:
               - OAM Concepts: amamba/user-guide/oam/concept.md
+              - Create OAM Application: amamba/user-guide/oam/create.md
+              - Manage OAM Application: amamba/user-guide/oam/manage.md
           - Pipelines:
-              - Install Jenkins: amamba/user-guide/pipelines/install-jenkins.md
+              - Install Jenkins: amamba/user-guide/pipeline/install-jenkins.md
               - Create Pipeline:
-                  - Custom Creation: amamba/user-guide/pipelines/create/custom.md
-                  - Creat based on Jenkinsfile: amamba/user-guide/pipelines/create/jenkins.md
-                  - Create based on Template: amamba/user-guide/pipelines/create/template.md
-                  - Create a Multi-branch Pipeline: amamba/user-guide/pipelines/create/mutilpipeline.md
-              - Edit Pipeline: amamba/user-guide/pipelines/edit.md
+                  - Custom Creation: amamba/user-guide/pipeline/create/custom.md
+                  - Creat based on Jenkinsfile: amamba/user-guide/pipeline/create/jenkins.md
+                  - Create based on Template: amamba/user-guide/pipeline/create/template.md
+                  - Create a Multi-branch Pipeline: amamba/user-guide/pipeline/create/mutilpipeline.md
+              - Edit Pipeline: amamba/user-guide/pipeline/edit.md
               - Run Pipeline:
-                  - Auto Trigger: amamba/user-guide/pipelines/run/trigger.md
-                  - Manual Trigger: amamba/user-guide/pipelines/run/manual.md
+                  - Auto Trigger: amamba/user-guide/pipeline/run/trigger.md
+                  - Manual Trigger: amamba/user-guide/pipeline/run/manual.md
               - Pipeline Parameters:
-                  - Concepts in Pipeline: amamba/user-guide/pipelines/config/concept.md
-                  - Graphical task template parameters: amamba/user-guide/pipelines/config/step.md
-                  - Pipeline Node (Agent): amamba/user-guide/pipelines/config/agent.md
+                  - Concepts in Pipeline: amamba/user-guide/pipeline/config/concept.md
+                  - Graphical task template parameters: amamba/user-guide/pipeline/config/step.md
+                  - Pipeline Node (Agent): amamba/user-guide/pipeline/config/agent.md
               - Pipeline Template:
-                  - Custom Template: amamba/user-guide/pipelines/template/custom-template.md
-                  - Template File: amamba/user-guide/pipelines/template/info.md
-              - Credentials: amamba/user-guide/pipelines/credential.md
+                  - Custom Template: amamba/user-guide/pipeline/template/custom-template.md
+                  - Template File: amamba/user-guide/pipeline/template/info.md
+              - Credentials: amamba/user-guide/pipeline/credential.md
           - GitOps:
               - Manually Sync App: amamba/user-guide/gitops/sync-manually.md
               - Import Code Repo: amamba/user-guide/gitops/import-repo.md

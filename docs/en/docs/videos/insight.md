@@ -1,10 +1,13 @@
 # Insight Tutorials
 
+We have meticulously crafted the following video tutorials for Insight.
+We sincerely appreciate any feedback you may have. Thank you 🙏
+
 > If any problem with the video display, please refresh your page or try to clear your browser cache.
 
-## Install insight-agent
+## Installing insight-agent
 
-See [Install insight-agent](../insight/quickstart/install/install-agent.md) for reference.
+Refer to the [Installing insight-agent](../insight/quickstart/install/install-agent.md) documentation page.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/insight-agent.mp4" preload="metadata" poster="images/insight-agent.png"></video>
@@ -12,31 +15,31 @@ See [Install insight-agent](../insight/quickstart/install/install-agent.md) for 
 
 ## Dashboard
 
-See [Dashboard](../insight/user-guide/dashboard/dashboard.md) for reference.
+Refer to the [Dashboard](../insight/user-guide/dashboard/dashboard.md) documentation page.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/dashboard.mp4" preload="metadata" poster="images/insight-dashboard.png"></video>
 </div>
 
-## Container insight
+## Container Monitoring
 
-See [Container Insight](../ghippo/user-guide/workspace/folders.md) for reference.
+Refer to the [Container Monitoring](../ghippo/user-guide/workspace/folders.md) documentation page.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/container-monitor.mp4" preload="metadata" poster="images/insight-container.png"></video>
 </div>
 
-## Scenario Insight and Traces
+## Scenario Monitoring
 
-Refer to the document pages: [Installing insight-agent](../insight/quickstart/install/install-agent.md), [Intrusive Enhancements with Operator](../insight/quickstart/otel/operator.md), [Traces](../insight/user-guide/data-query/trace.md)
+Refer to the [Installing Insight Agent](../insight/quickstart/install/install-agent.md), [Enhance Applications without Intrusion Using Operator](../insight/quickstart/otel/operator.md), [Distributed Tracing](../insight/user-guide/data-query/trace.md), and other related documents.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/trace.mp4" preload="metadata" poster="images/insight-trace.png"></video>
 </div>
 
-## Logs
+## Log Query
 
-See [Logs](../insight/user-guide/data-query/log.md) for reference.
+Refer to the [Log Query](../insight/user-guide/data-query/log.md) documentation page.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/logs.mp4" preload="metadata" poster="images/insight-log.png"></video>
@@ -44,23 +47,23 @@ See [Logs](../insight/user-guide/data-query/log.md) for reference.
 
 ## Event Query
 
-See [Event Query](../insight/user-guide/data-query/event.md) documentation page.
+Refer to the [Event Query](../insight/user-guide/data-query/event.md) documentation page.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/event-query.mp4" preload="metadata" poster="images/event-query.jpg"></video>
 </div>
 
-## Alerts
+## Alert Center
 
-See [Alerts](../insight/user-guide/alert-center/alert-policy.md) for reference.
+Refer to the [Alert Center](../insight/user-guide/alert-center/alert-policy.md) documentation page.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/alerts.mp4" preload="metadata" poster="images/insight-alert.png"></video>
 </div>
 
-## Modify system configuration
+## System Management
 
-See [modification of system configuration](../insight/user-guide/system-config/modify-config.md) for reference.
+Refer to the [Modify System Configuration](../insight/user-guide/system-config/modify-config.md) documentation page.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/sys-config.mp4" preload="metadata" poster="images/insight-sysconfig.png"></video>

@@ -57,6 +57,8 @@
 
 ## DCE 4.0 应用升级为 DCE 5.0 应用
 
+参阅文档：[如何实现 DCE 4.0 到 DCE 5.0 应用的一键转换](../kairship/best-practice/one-click-conversion.md)。
+
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kairship-migrate.mp4" preload="metadata" poster="images/kairship-migrate.png"></video>
 </div>

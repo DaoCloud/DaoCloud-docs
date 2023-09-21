@@ -1,5 +1,7 @@
 # Service Mesh Tutorials
 
+We have crafted the following video tutorials for service mesh, any kind of feedback is welcome, thanks 🙏
+
 > If any problem with the video display, please refresh your page or try to clear your browser cache.
 
 <div class="grid cards" markdown>

@@ -1,5 +1,7 @@
 # Container Registry Video Tutorial
 
+We have crafted the following video tutorials for Container Registry, any kind of feedback is welcome, thanks 🙏
+
 > If there is a problem with the video display, please refresh the page, or try to clear the browser cache.
 
 ## Integrate registry (workspace)

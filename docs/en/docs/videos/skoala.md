@@ -1,53 +1,83 @@
 # Microservice Governance Tutorials
 
+We have crafted the following video tutorials for Microservice Governance, any kind of feedback is welcome, thanks 🙏
+
 > If any problem with the video display, please refresh your page or try to clear your browser cache.
 
-## Accessing the Registry Center
+## Cloud-Native Gateway
 
-See to the [Accessing the Registry Center](../skoala/trad-ms/integrated/integrate-registry.md) for reference.
+### Manage Gateway and APIs
 
-<div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/integrate-registry.mp4" preload="metadata" poster="images/skoala-integrate.png"></video>
-</div>
-
-## Microservice configuration list
-
-See [Microservice configuration list](../skoala/trad-ms/hosted/configs.md) for reference.
-
-<div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-config.mp4" preload="metadata" poster="images/skoala-config.png"></video>
-</div>
-
-## Manage gateways and APIs
-
-See [Management Gateway and API](../skoala/gateway/api/add-api.md) for reference.
+Refer to the [Manage Gateway and APIs](../skoala/gateway/api/add-api.md) documentation page.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/gateway%26api.mp4" preload="metadata" poster="images/skoala-gateway.png"></video>
 </div>
 
-## Advanced Configuration of API Policy (1)
+### Advanced Configuration of API Policy (1)
 
-See [API Policy Configuration](../skoala/gateway/api/api-policy.md) for reference.
+Refer to the [API Policy Configuration](../skoala/gateway/api/api-policy.md) documentation page.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/apipolicy1.mp4" preload="metadata" poster="images/skoala-api1.png"></video>
 </div>
 
-## Advanced Configuration of API Policies (2)
+### Advanced Configuration of API Policy (2)
 
-See [API Policy Configuration](../skoala/gateway/api/api-policy.md) for reference.
+Refer to the [API Policy Configuration](../skoala/gateway/api/api-policy.md) documentation page.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/api-policy2.mp4" preload="metadata" poster="images/skoala-api2.png"></video>
 </div>
 
-## Governing Microservice Traffic with Service Mesh
+## Cloud-Native Microservices
 
-See [Microservice Traffic Governance](../mspider/user-guide/traffic-governance/README.md) for reference.
+Refer to the [Traffic Governance of Microservices by Service Mesh](../mspider/user-guide/traffic-governance/README.md) documentation page.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/traffic-governance.mp4" preload="metadata" poster="images/skoala-mesh.png"></video>
+</div>
+
+## Traditional Microservices
+
+### Register Configuration Center
+
+Refer to the [Microservice Configuration List](../skoala/trad-ms/hosted/configs.md) documentation page.
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-config.mp4" preload="metadata" poster="images/skoala-config.png"></video>
+</div>
+
+### Access Registry Center
+
+Refer to the [Access Registry Center](../skoala/trad-ms/integrated/integrate-registry.md) documentation page.
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/integrate-registry.mp4" preload="metadata" poster="images/skoala-integrate.png"></video>
+</div>
+
+### Sentinel Flow Control Rules
+
+Refer to the [Sentinel Flow Control Rules](../skoala/trad-ms/hosted/services/flow-control.md) documentation page.
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/sentinel-flow-control.mp4" preload="metadata" poster="images/skoala-flow-control.png"></video>
+</div>
+
+### Sentinel Circuit Breaker Rules
+
+Refer to the [Sentinel Circuit Breaker Rules](../skoala/trad-ms/hosted/services/circuit-breaker.md) documentation page.
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/circuit-breaker.mp4" preload="metadata" poster="images/skoala-circuit-breaker.png"></video>
+</div>
+
+### Sentinel Hotspot Rules
+
+Refer to the [Sentinel Hotspot Rules](../skoala/trad-ms/hosted/services/hotspot.md) documentation page.
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/sentinel-hotspot.mp4" preload="metadata" poster="images/skoala-hotspot.png"></video>
 </div>
 
 [Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }

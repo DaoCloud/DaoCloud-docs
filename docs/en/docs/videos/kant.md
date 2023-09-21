@@ -1,7 +1,6 @@
 # Cloud to Edge Continuum Video Tutorials
 
-We have carefully created the following video tutorials for Cloud to Edge Continuum.
-We welcome any form of feedback. Thank you 🙏
+We have crafted the following video tutorials for Cloud Edge Collaboration, any kind of feedback is welcome, thanks 🙏
 
 > If there are any issues with the videos, please refresh the page or try clearing your browser cache.
 
