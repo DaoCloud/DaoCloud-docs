@@ -86,7 +86,7 @@ In `Container Management` - `Target Cluster` - `Configuration & Storage` - `Conf
 
 ### Deploying Redis-Shake
 
-#### 2. Create Redis-Shake
+#### Create Redis-Shake
 
 1. Open `Application Workbench`, select `Wizard` - `Based on Container Image`, and create an application named `Redis-shake-sync-0`.
 
@@ -131,7 +131,6 @@ After creating Redis-Shake, the data synchronization between Redis instances has
 ## Data Recovery
 
 Diagram: Data recovery from **instance redis-b** to **instance redis-a**
-
 
 When the source instance **instance redis-a** goes offline due to a failure, the target instance **instance redis-b** takes over and starts serving requests. During this time, new data will be generated on the target instance. When the source instance **instance redis-a** comes back online, it needs to recover the incremental data from **instance redis-b**. At this point, the roles of **instance redis-a** and **instance redis-b** are swapped, and **instance redis-b** becomes the data source that synchronizes data to **instance redis-a**.
 
@@ -207,7 +206,7 @@ In `Container Management` - `Source Cluster` - `Configuration & Storage` - `Conf
     type = "cluster" # "standalone" or "cluster"
     ```
 
-#### 2. Create Redis-Shake
+#### Create Redis-Shake
 
 1. Open `Application Workbench`, select `Wizard` - `Based on Container Image`, and create an application named `Redis-shake-recovery`.
 
