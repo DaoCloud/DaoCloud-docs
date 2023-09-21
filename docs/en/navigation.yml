@@ -411,7 +411,7 @@ nav:
               - Overview: kairship/failover/failover.md
               - Optimize Failover Latency Sensitivity: kairship/failover/optimization-failover.md
           - Best Practices:
-              - DCE4 to DCE5: kairship/best-pratice/one-click-conversion.md
+              - DCE 4.0 to DCE 5.0: kairship/best-practice/one-click-conversion.md
       - Microservices:
           - Intro:
               - Features: skoala/intro/index.md
@@ -460,8 +460,13 @@ nav:
                       - Intro: skoala/trad-ms/hosted/services/intro.md
                       - Check Microservice: skoala/trad-ms/hosted/services/check-details.md
                       - Traffic Rules:
-                          - Rules Intro: skoala/trad-ms/hosted/services/governance-policy.md
+                          - Introduction: skoala/trad-ms/hosted/services/governance-policy.md
                           - Flow Control: skoala/trad-ms/hosted/services/flow-control.md
+                          - Circuit Breaker: skoala/trad-ms/hosted/services/circuit-breaker.md
+                          - Authorization: skoala/trad-ms/hosted/services/auth.md
+                          - Hotspot: skoala/trad-ms/hosted/services/hotspot.md
+                          - System Rules: skoala/trad-ms/hosted/services/system.md
+                          - Cluster Flow: skoala/trad-ms/hosted/services/cluster-flow.md
                   - Configurations:
                       - skoala/trad-ms/hosted/configs.md
                   - Monitoring:
