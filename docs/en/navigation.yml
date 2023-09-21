@@ -100,9 +100,9 @@ nav:
               - Helm Apps: kpanda/user-guide/helm/helm-app.md
               - Helm Registries: kpanda/user-guide/helm/helm-repo.md
           - Container Network:
-              - Create Service: kpanda/user-guide/services-routes/create-services.md
-              - Create Ingress: kpanda/user-guide/services-routes/create-ingress.md
-              - Network Policies: kpanda/user-guide/services-routes/network-policy.md
+              - Create Service: kpanda/user-guide/network/create-services.md
+              - Create Ingress: kpanda/user-guide/network/create-ingress.md
+              - Network Policies: kpanda/user-guide/network/network-policy.md
           - CRDs: kpanda/user-guide/custom-resources/create.md
           - Container Storage:
               - Volume Claim: kpanda/user-guide/storage/pvc.md

@@ -41,7 +41,7 @@ Workbench supports building applications in four ways: [Git warehouse](create-ap
     - Access type: Support access to the application only within the cluster through clusterIP, or allow access outside the cluster through NodePort, or access through a load balancer.
     - Port configuration: fill in the port number that needs to be exposed according to the actual business scenario.
 
-        > For more detailed instructions on service configuration, please refer to [Create Service](../../../kpanda/user-guide/services-routes/create-services.md).
+        > For more detailed instructions on service configuration, please refer to [Create Service](../../../kpanda/user-guide/network/create-services.md).
 
     - Resource limits: CPU and memory quotas must not exceed the remaining resources in the current workspace of the application's namespace.
 

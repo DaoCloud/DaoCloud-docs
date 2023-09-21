@@ -45,7 +45,7 @@ hide:
 
     ---
 
-    命名空间是构建虚拟空间隔离物理资源的一种方式，仅作用于带有命名空间等对象。
+    命名空间是构建虚拟空间隔离物理资源的一种方式，仅作用于带有命名空间的对象。
 
     - [创建/删除命名空间](../user-guide/namespaces/createns.md)
     - [命名空间独享节点](../user-guide/namespaces/exclusive.md)
@@ -95,15 +95,15 @@ hide:
 
     DCE 5.0 自带的容器网络便于对外提供服务，通过 Ingress 定义路由规则，根据网络策略控制流量。
 
-    - [服务 Service](../user-guide/services-routes/create-services.md)：ClusterIP, NodePort, LoadBalancer
-    - [路由 Ingress](../user-guide/services-routes/create-ingress.md)
-    - [网络策略 NetworkPolicy](../user-guide/services-routes/network-policy.md)
+    - [服务 Service](../user-guide/network/create-services.md)：ClusterIP、NodePort、LoadBalancer
+    - [路由 Ingress](../user-guide/network/create-ingress.md)
+    - [网络策略 NetworkPolicy](../user-guide/network/network-policy.md)
 
 - :material-harddisk:{ .lg .middle } __容器存储__
 
     ---
 
-    DCE 5.0 容器管理奉行 Kubernetes 的容器化存储理念，支持原生 CSI 制备动态卷、卷快照、克隆等。
+    DCE 5.0 容器管理奉行 Kubernetes 的容器化存储理念，支持原生 CSI，能够制备动态卷、卷快照、克隆等。
 
     - [数据卷声明 PVC](../user-guide/storage/pvc.md)
     - [数据卷 Volume](../user-guide/storage/pv.md)
@@ -161,7 +161,7 @@ hide:
 !!! success
 
     通过容器化，您可以更快速、简单地开发和部署应用程序，比构建虚拟设备更加高效。
-    容器化架构带来了令人瞩目的运维和经济效益，包括更低甚至免费的许可成本、更高的物理资源利用率、更好的可扩展性以及更高的服务可靠性。
+    容器化架构带来了令人瞩目的运维和经济效益，包括更低的许可成本、更高的物理资源利用率、更好的可扩展性以及更高的服务可靠性。
 
     展望未来，容器虚拟化将帮助企业更好地利用混合云和多云环境，实现更优化的资源管理和应用部署。
 

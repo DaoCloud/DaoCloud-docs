@@ -58,7 +58,7 @@
         - name: service         protocol: TCP      port: 9555      targetPort: 9555
         ```
         
-        > 有关服务配置的更多详细说明，可参考[创建服务](../../../kpanda/user-guide/services-routes/create-services.md)。
+        > 有关服务配置的更多详细说明，可参考[创建服务](../../../kpanda/user-guide/network/create-services.md)。
         
     - 资源限制：指定应用能使用的资源上限，包括 CPU、内存。
 

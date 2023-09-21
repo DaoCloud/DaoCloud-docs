@@ -42,4 +42,4 @@ On the right side of the service list, click on `⋮` and select the correspondi
 
 ![Menu Items](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/servicelist05.png)
 
-For information on how to create and configure services, please refer to [Create Services](../../../kpanda/user-guide/services-routes/create-services.md).
+For information on how to create and configure services, please refer to [Create Services](../../../kpanda/user-guide/network/create-services.md).

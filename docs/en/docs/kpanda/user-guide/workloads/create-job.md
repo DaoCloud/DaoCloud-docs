@@ -96,13 +96,13 @@ Container configuration is divided into six parts: basic information, life cycle
 
 ### Service configuration
 
-Configure [Service](../services-routes/create-services.md) for the Job so that it can be accessed externally.
+Configure [Service](../network/create-services.md) for the Job so that it can be accessed externally.
 
 1. Click the `Create Service` button.
 
      
 
-2. Refer to [Create Service](../services-routes/create-services.md) to configure service parameters.
+2. Refer to [Create Service](../network/create-services.md) to configure service parameters.
 
      
 
