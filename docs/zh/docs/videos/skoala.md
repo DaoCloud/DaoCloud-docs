@@ -80,4 +80,4 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/sentinel-hotspot.mp4" preload="metadata" poster="images/skoala-hotspot.png"></video>
 </div>
 
-<!--[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }-->
+[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

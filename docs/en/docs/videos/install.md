@@ -1,8 +1,8 @@
 # Install DCE Community
 
-> If any problem with the video display, please refresh your page or try to clear your browser cache.
-
 DCE 5.0 is divided into DCE Community and Enterprise Package. The DCE Community is free to use and includes three modules: global management, container management, and observability. With the Enterprise Package, you can order any module such as microservices, service mesh, multicloud, middleware, etc. For more details, please refer to [What is DCE 5.0](../dce/index.md) and [Use Cases](../dce/scenario.md).
+
+> If any problem with the video display, please refresh your page or try to clear your browser cache.
 
 ## Use kind to build a cluster
 

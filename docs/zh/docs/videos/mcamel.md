@@ -54,7 +54,7 @@
 
 ## 中间件工作负载反亲和性
 
-<!--参阅[RabbitMQ 消息服务实例管理](../middleware/rabbitmq/user-guide/create.md)文档页面。-->
+参阅[中间件工作负载反亲和性](../middleware/common/workload-antiaffinity.md)文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/anti-affinity.mp4" preload="metadata" poster="images/mcamel-anti-affinity.png"></video>

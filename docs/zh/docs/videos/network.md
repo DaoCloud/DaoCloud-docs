@@ -55,7 +55,9 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/MetalLB.mp4" preload="metadata" poster="images/net-metallb.png"></video>
 </div>
 
-## kdoctor 的安装与使用
+## Kdoctor 的安装与使用
+
+参阅 [Kdoctor 文档站](https://kdoctor-io.github.io/kdoctor/v0.1/)。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kdoctor.mp4" preload="metadata" poster="images/net-kdoctor.jpg"></video>

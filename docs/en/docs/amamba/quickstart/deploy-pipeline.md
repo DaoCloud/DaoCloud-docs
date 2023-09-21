@@ -5,7 +5,7 @@ This section describes how to create an pipeline by compiling, constructing, and
 ## prerequisite
 
 - Create a workspace and a user. Add the user to the workspace and assign the role `workspace edit`. See [Create Workspace](../../ghippo/user-guide/workspace/workspace.md), [Users and Roles](../../ghippo/user-guide/access-control/user.md).
-- Create two credentials that can access the mirrored warehouse and cluster, and name them `registry` and `kubeconfig`. For more information on creating credentials, see [Credential Management](../user-guide/pipelines/credential.md).
+- Create two credentials that can access the mirrored warehouse and cluster, and name them `registry` and `kubeconfig`. For more information on creating credentials, see [Credential Management](../user-guide/pipeline/credential.md).
 - Prepare a GitHub repository and a DockerHub repository.
 
 ## Create credentials

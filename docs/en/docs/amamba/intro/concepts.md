@@ -21,7 +21,7 @@ Workbench is your one-stop-shop for deploying DCE 5.0 cloud-native applications,
 
 - Credential
 
-    To allow pipeline interaction with third-party applications, the user must configure Jenkins [credentials](../user-guide/pipelines/credential.md).
+    To allow pipeline interaction with third-party applications, the user must configure Jenkins [credentials](../user-guide/pipeline/credential.md).
 
 - GitOps
 

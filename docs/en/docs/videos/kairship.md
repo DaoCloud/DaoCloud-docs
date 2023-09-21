@@ -1,5 +1,7 @@
 # Multicloud orchestration video tutorial
 
+We have crafted the following video tutorials for multicloud orchestration, any kind of feedback is welcome, thanks 🙏
+
 > If there is a problem with the video display, please refresh the page, or try to clear the browser cache.
 
 ## Multicloud Module Introduction
@@ -43,6 +45,8 @@ See [Multicloud Services](../kairship/resource/service.md), [Multicloud Namespac
 </div>
 
 ## Migrating Applications from DCE 4.0 to DCE 5.0
+
+Refer to the documentation: [How to Migrate Applications from DCE 4.0 to DCE 5.0 with One-Click](../kairship/best-practice/one-click-conversion.md).
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kairship-migrate.mp4" preload="metadata" poster="images/kairship-migrate.png"></video>

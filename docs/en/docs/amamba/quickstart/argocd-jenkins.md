@@ -29,7 +29,7 @@ This example includes the following steps: pull the service code, build an image
 
 After the `Update app profile` step is successfully executed, Argo CD detects the change and triggers the update to synchronize the latest configuration file and deploy it to the cluster.
 
-1. For details about how to create a pipeline, see [crate pipeline](../user-guide/pipelines/create/custom.md).
+1. For details about how to create a pipeline, see [crate pipeline](../user-guide/pipeline/create/custom.md).
 
 2. After successful creation, select the pipeline operation: `Edit Jenkinsfile`
 

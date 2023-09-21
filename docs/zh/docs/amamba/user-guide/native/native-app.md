@@ -49,7 +49,9 @@
 
             ![示意图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/native05.png)
 
-    !!! note "如需添加更多微服务，点击屏幕右侧的 `➕` 即可。"
+    !!! note
+    
+        如需添加更多微服务，点击屏幕右侧的 `➕` 即可。
 
         ![示意图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/native06.png)
 
