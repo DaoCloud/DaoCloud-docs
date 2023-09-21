@@ -37,7 +37,7 @@ For more details, please refer to the [Service Mesh - Traffic Governance](../msp
 
 For more details, please refer to the [Service Mesh - Traffic Governance](../mspider/user-guide/traffic-governance/README.md).
 
-## How to integrate DCE 5.0 into the customer platform?
+## How to integrate DCE 5.0 into the customer system?
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/oem-out.mp4" preload="metadata" poster="images/oem-out.png"></video>
@@ -45,7 +45,7 @@ For more details, please refer to the [Service Mesh - Traffic Governance](../msp
 
 For more details, please refer to the [OEM OUT documentation](../ghippo/oem/oem-out.md).
 
-## How to integrate the customer platform into DCE 5.0?
+## How to integrate the customer system into DCE 5.0?
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/oem-in.mp4" preload="metadata" poster="images/oem-in.png"></video>

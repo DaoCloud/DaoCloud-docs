@@ -36,7 +36,7 @@
 
 更多细节请参阅[服务网格 - 流量治理](../mspider/user-guide/traffic-governance/README.md)。
 
-## 如何将 DCE 5.0 集成到客户平台？
+## 如何将 DCE 5.0 集成到客户系统？
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/oem-out.mp4" preload="metadata" poster="images/oem-out.png"></video>
@@ -44,7 +44,7 @@
 
 更多细节请参阅 [OEM OUT 文档](../ghippo/oem/oem-out.md)。
 
-## 如何将客户平台集成到 DCE 5.0？
+## 如何将客户系统集成到 DCE 5.0？
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/oem-in.mp4" preload="metadata" poster="images/oem-in.png"></video>

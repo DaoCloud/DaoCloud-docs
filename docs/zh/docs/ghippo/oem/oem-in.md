@@ -1,4 +1,4 @@
-# 如何将客户平台集成到 DCE 5.0（OEM IN）
+# 如何将客户系统集成到 DCE 5.0（OEM IN）
 
 OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 5.0 一级导航栏。
 用户通过 DCE 5.0 进行登录和统一管理。实现 OEM IN 共分为 5 步，分别是：
@@ -20,25 +20,25 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 1. 部署两套 DCE 5.0 环境：
  
     - `http://192.168.1.6:30444` 作为 DCE 5.0
-    - `http://192.168.1.6:30080` 作为客户平台
+    - `http://192.168.1.6:30080` 作为客户系统
    
-    应用过程中对客户平台的操作请根据实际情况进行调整。
+    应用过程中对客户系统的操作请根据实际情况进行调整。
 
-2. 规划客户平台的 subpath 路径：`http://192.168.1.6:30080/external-anyproduct/`
+2. 规划客户系统的 subpath 路径：`http://192.168.1.6:30080/external-anyproduct/`
   （强烈建议使用辨识度高的名称作为 subpath，不能与主 DCE 5.0 的 HTTP router 发生冲突！！！）
 
 !!! note
 
     1. 本文采用了 HTTP 的方式部署 DCE 5.0，实际应用中可以使用 HTTP，或者使用公网的 TLS 证书。请勿使用自签的 TLS 证书。
-    2. 本文中的 `/external-anyproduct` 是客户平台的 subpath，请将它替换成你的 subpath。
+    2. 本文中的 `/external-anyproduct` 是客户系统的 subpath，请将它替换成你的 subpath。
     3. 本文中 `http://192.168.1.6:30444` 是 DCE 5.0 的访问地址，
-       `http://192.168.1.6:30080` 是客户平台的访问地址，请将它替换成你的 DCE 5.0 访问地址和客户平台访问地址。
+       `http://192.168.1.6:30080` 是客户系统的访问地址，请将它替换成你的 DCE 5.0 访问地址和客户系统访问地址。
 
 ## 统一域名
 
-### 为客户平台配置 subpath
+### 为客户系统配置 subpath
 
-1. ssh 登录到客户平台服务器。
+1. ssh 登录到客户系统服务器。
 1. 使用 vim 命令创建 `subpath-envoyfilter.yaml` 文件
 
     ```bash
@@ -176,7 +176,7 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
     kubectl rollout restart statefulset/ghippo-keycloakx -n ghippo-system
     ```
 
-### 为 DCE 5.0 配置客户平台的 jwksUri 发现地址
+### 为 DCE 5.0 配置客户系统的 jwksUri 发现地址
 
 1. ssh 登录到 DCE 5.0 服务器。
 1. 使用 vim 命令创建 `external-svc-anyproduct.yaml` 文件
@@ -199,17 +199,17 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
       hosts:
       - external.svc.anyproduct
       ports:
-      # 改为客户平台的端口号
+      # 改为客户系统的端口号
       - number: 30080
         name: http
         protocol: HTTP
       location: MESH_EXTERNAL
       resolution: STATIC
       endpoints:
-      # 改为客户平台的域名（或IP）
+      # 改为客户系统的域名（或IP）
       - address: 192.168.1.6
         ports:
-          # 改为客户平台的端口号
+          # 改为客户系统的端口号
           http: 30080
     ```
 
@@ -261,7 +261,7 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 
 ## 打通用户体系
 
-将客户平台与 DCE 5.0 平台通过 OIDC/OAUTH 等协议对接，使用户登录 DCE 5.0 平台后进入客户平台时无需再次登录。
+将客户系统与 DCE 5.0 平台通过 OIDC/OAUTH 等协议对接，使用户登录 DCE 5.0 平台后进入客户系统时无需再次登录。
 
 1. 在两套 DCE 5.0 的场景下，可以在 DCE 5.0 中通过`全局管理` -> `用户与访问控制` -> `接入管理`创建 SSO 接入。
 
@@ -269,20 +269,20 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 
     ![接入管理列表](./images/oem-out01.png)
 
-2. 创建后将详情中的客户端 ID、密钥、单点登录 URL 等填写到客户平台的`全局管理` -> `用户与访问控制` -> `身份提供商` -> `OIDC` 中，完成用户对接。
+2. 创建后将详情中的客户端 ID、密钥、单点登录 URL 等填写到客户系统的`全局管理` -> `用户与访问控制` -> `身份提供商` -> `OIDC` 中，完成用户对接。
 
     ![oidc](./images/oeminoidc.png)
 
-3. 对接完成后，客户平台登录页面将出现 OIDC（自定义）选项，首次从 DCE 5.0 平台进入客户平台时选择通过 OIDC 登录，
-   后续将直接进入客户平台无需再次选择。
+3. 对接完成后，客户系统登录页面将出现 OIDC（自定义）选项，首次从 DCE 5.0 平台进入客户系统时选择通过 OIDC 登录，
+   后续将直接进入客户系统无需再次选择。
 
     ![登录页](./images/oeminlogin.png)
 
 ## 对接导航栏
 
-参考文档下方的 tar 包来实现一个空壳的前端子应用，把客户平台以 iframe 的形式放进该空壳应用里。
+参考文档下方的 tar 包来实现一个空壳的前端子应用，把客户系统以 iframe 的形式放进该空壳应用里。
 
-1. 下载 gproduct-demo-main.tar.gz 文件，将 src 文件夹下 App-iframe.vue 中的 src 属性值改为用户进入客户平台的绝对地址，如：
+1. 下载 gproduct-demo-main.tar.gz 文件，将 src 文件夹下 App-iframe.vue 中的 src 属性值改为用户进入客户系统的绝对地址，如：
    `src="http://192.168.1.6/external-anyproduct" (DCE 5.0 地址 + subpath)` 或相对地址，如：`src="./external-anyproduct/insight"`
 
     ![src 地址](./images/src.png)
@@ -341,7 +341,7 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
               prefix: /external-anyproduct
           destination:
             host: external.svc.anyproduct
-            # 端口号替换成客户平台的端口号（ServiceEntry 定义的端口号）
+            # 端口号替换成客户系统的端口号（ServiceEntry 定义的端口号）
             port: 30080
           authnCheck: false
     ```
@@ -350,17 +350,17 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 
     ![构建镜像](./images/oemin-image.png)
 
-对接完成后，将在 DCE 5.0 的一级导航栏出现`客户平台`，点击可进入客户平台。
+对接完成后，将在 DCE 5.0 的一级导航栏出现`客户系统`，点击可进入客户系统。
 
-![客户平台](./images/oemin-menu.png)
+![客户系统](./images/oemin-menu.png)
 
 ## 定制外观
 
 !!! note
 
-    DCE 5.0 支持通过写 CSS 的方式来实现外观定制。实际应用中客户平台如何实现外观定制需要根据实际情况处理。
+    DCE 5.0 支持通过写 CSS 的方式来实现外观定制。实际应用中客户系统如何实现外观定制需要根据实际情况处理。
 
-登录客户平台，通过`全局管理` -> `平台设置` -> `外观定制`可以自定义平台背景颜色、logo、名称等，
+登录客户系统，通过`全局管理` -> `平台设置` -> `外观定制`可以自定义平台背景颜色、logo、名称等，
 具体操作请参照[外观定制](../user-guide/platform-setting/appearance.md)。
 
 ## 打通权限体系（可选）

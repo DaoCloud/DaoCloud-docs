@@ -1,4 +1,4 @@
-# How to Integrate Customer Platform into DCE 5.0 (OEM IN)
+# How to Integrate Customer System into DCE 5.0 (OEM IN)
 
 OEM IN refers to embedding a partner's platform as a sub-module in DCE 5.0, appearing in the top-level navigation bar of DCE 5.0. Users can log in and manage the platform through DCE 5.0. The implementation of OEM IN involves 5 steps:
 
@@ -19,24 +19,24 @@ For detailed instructions, please refer to the [OEM IN best practices video tuto
 1. Deploy two instances of DCE 5.0:
 
    - `http://192.168.1.6:30444` as DCE 5.0
-   - `http://192.168.1.6:30080` as the customer platform
+   - `http://192.168.1.6:30080` as the customer system
    
-   Adjust the operations on the customer platform according to your actual situation.
+   Adjust the operations on the customer system according to your actual situation.
 
-2. Plan the subpath path for the customer platform: `http://192.168.1.6:30080/external-anyproduct/`
+2. Plan the subpath path for the customer system: `http://192.168.1.6:30080/external-anyproduct/`
    (It is highly recommended to use a distinctive name as the subpath, and it should not conflict with the main DCE 5.0 HTTP router!!)
 
 !!! note
 
     1. This article uses HTTP for deploying DCE 5.0. In practical applications, you can use either HTTP or TLS certificates from public sources. Please do not use self-signed TLS certificates.
-    2. In this article, `/external-anyproduct` represents the subpath of the customer platform. Replace it with your subpath.
-    3. In this article, `http://192.168.1.6:30444` is the access address for DCE 5.0, and `http://192.168.1.6:30080` is the access address for the customer platform. Replace them with your DCE 5.0 access address and customer platform access address.
+    2. In this article, `/external-anyproduct` represents the subpath of the customer system. Replace it with your subpath.
+    3. In this article, `http://192.168.1.6:30444` is the access address for DCE 5.0, and `http://192.168.1.6:30080` is the access address for the customer system. Replace them with your DCE 5.0 access address and customer system access address.
 
 ## Unified Domain Name
 
-### 1. Configure subpath for the customer platform
+### 1. Configure subpath for the customer system
 
-1. SSH into the customer platform server.
+1. SSH into the customer system server.
 2. Use the vim command to create the subpath-envoyfilter.yaml file.
 
     ```bash
@@ -174,7 +174,7 @@ For detailed instructions, please refer to the [OEM IN best practices video tuto
     kubectl rollout restart statefulset/ghippo-keycloakx -n ghippo-system
     ```
 
-### 2. Configure the jwksUri discovery address for the customer platform in DCE 5.0
+### 2. Configure the jwksUri discovery address for the customer system in DCE 5.0
 
 1. Log in to the DCE 5.0 server via SSH.
 2. Use the vim command to create the `external-svc-anyproduct.yaml` file.
@@ -259,7 +259,7 @@ For detailed instructions, please refer to the [OEM IN best practices video tuto
 
 ## Docking User Systems
 
-Integrate the customer platform with the DCE 5.0 platform using protocols such as OIDC/OAUTH, allowing users to access the customer platform without having to log in again after logging into the DCE 5.0 platform.
+Integrate the customer system with the DCE 5.0 platform using protocols such as OIDC/OAUTH, allowing users to access the customer system without having to log in again after logging into the DCE 5.0 platform.
 
 1. In the scenario of two instances of DCE 5.0, you can create an SSO integration under DCE 5.0 `Global Management` -> `Users and Access Control` -> `Access Management`.
 
@@ -267,19 +267,19 @@ Integrate the customer platform with the DCE 5.0 platform using protocols such a
 
     ![Access Management List](./images/oem-out01.png)
 
-2. After creation, fill in the client ID, secret key, single sign-on URL, and other details from the Access Management page into the customer platform's `Global Management` -> `Users and Access Control` -> `Identity Providers` -> `OIDC`, completing the user integration.
+2. After creation, fill in the client ID, secret key, single sign-on URL, and other details from the Access Management page into the customer system's `Global Management` -> `Users and Access Control` -> `Identity Providers` -> `OIDC`, completing the user integration.
 
     ![OIDC](./images/oeminoidc.png)
 
-3. After integration, the customer platform login page will display the OIDC (Custom) option. When accessing the customer platform from the DCE 5.0 platform for the first time, select OIDC as the login method. Subsequently, users will be directly redirected to the customer platform without needing to choose again.
+3. After integration, the customer system login page will display the OIDC (Custom) option. When accessing the customer system from the DCE 5.0 platform for the first time, select OIDC as the login method. Subsequently, users will be directly redirected to the customer system without needing to choose again.
 
     ![Login Page](./images/oeminlogin.png)
 
 ## Docking Navigation Bar
 
-Refer to the tar package provided in the documentation below to create a blank frontend sub-application. Embed the customer platform within this blank application using an iframe.
+Refer to the tar package provided in the documentation below to create a blank frontend sub-application. Embed the customer system within this blank application using an iframe.
 
-1. Download the gproduct-demo-main.tar.gz file. Open the App-iframe.vue file located in the src folder and modify the value of the src attribute to the absolute address that users will use to access the customer platform, such as: `src="http://192.168.1.6/external-anyproduct"` (DCE 5.0 address + subpath) or a relative address, such as: `src="./external-anyproduct/insight"`
+1. Download the gproduct-demo-main.tar.gz file. Open the App-iframe.vue file located in the src folder and modify the value of the src attribute to the absolute address that users will use to access the customer system, such as: `src="http://192.168.1.6/external-anyproduct"` (DCE 5.0 address + subpath) or a relative address, such as: `src="./external-anyproduct/insight"`
 
    ![src address](./images/src.png)
 
@@ -335,7 +335,7 @@ Refer to the tar package provided in the documentation below to create a blank f
               prefix: /external-anyproduct
           destination:
             host: external.svc.anyproduct
-            # Replace the port number with the port number of the customer platform (defined in the ServiceEntry).
+            # Replace the port number with the port number of the customer system (defined in the ServiceEntry).
             port: 30080
           authnCheck: false
     ```
@@ -344,17 +344,17 @@ Refer to the tar package provided in the documentation below to create a blank f
 
    ![Build Image](./images/oemin-image.png)
 
-Once the integration is complete, the "Customer Platform" will appear in the top-level navigation bar of DCE 5.0. Clicking on it will take you to the customer platform.
+Once the integration is complete, the "Customer System" will appear in the top-level navigation bar of DCE 5.0. Clicking on it will take you to the customer system.
 
-![Customer Platform](./images/oemin-menu.png)
+![Customer System](./images/oemin-menu.png)
 
 ## Customizing Appearance
 
 !!! note
 
-    DCE 5.0 supports customizing the appearance using CSS. The actual implementation of appearance customization for the customer platform may vary depending on the specific requirements.
+    DCE 5.0 supports customizing the appearance using CSS. The actual implementation of appearance customization for the customer system may vary depending on the specific requirements.
 
-Login to the customer platform and navigate to `Global Management` -> `Platform Settings` -> `Appearance Customization` to customize the platform's background color, logo, name, and more.
+Login to the customer system and navigate to `Global Management` -> `Platform Settings` -> `Appearance Customization` to customize the platform's background color, logo, name, and more.
 For detailed instructions, please refer to [Appearance Customization](../user-guide/platform-setting/appearance.md).
 
 ## Integration of Authorization System (Optional)
