@@ -111,6 +111,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      Main new features of this version: Search API upgraded to v1, new backend system (experimental), deprecation of a large number of command line and authorization backend symbols, added support for $ref processing in the OpenAPI specification, added Apollo Explorer support ( PoCs).
 
+- [Beyla: Grafana Releases Open Source eBPF Automated Instrumentation Tool for Application Observability](https://mp.weixin.qq.com/s/H5yw6jSeJdLoLFc32OTeyA)
+
+    Beyla is able to report spanning information and RED metrics (Rate-Error-Duration) for Linux HTTP/S and gRPC services, and does so without the need to insert probes to make code changes.Grafana Beyla supports HTTP and HTTPS services written in Go, NodeJS, Python, Rust, Ruby, . NET, etc. gRPC services written in Go are also supported.
+
 ### C
 
 - [Calico CNI Plugin v3.26.0 Released (CNCF Project)](https://github.com/projectcalico/calico/blob/v3.26.0/release-notes/v3.26.0-release-notes.md)
@@ -157,6 +161,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Cert-manager cloud native certificate management project v1.9.0 release (CNCF project)](https://github.com/cert-manager/cert-manager/releases/tag/v1.9.0)
 
      The main new features of this version: support for using cert-manager certificate (alpha), and support for configuring ingress-shim certificates through annotations on Ingress resources.
+
+- [ChaosMeta Chaos Project v0.5 released](https://mp.weixin.qq.com/s/4VG5TkQPotr_BrweIznW_w)
+
+    Version features: new platform interface component, mainly providing space management, user rights management, orchestration experiments, experiment results, etc.; new metrics component, providing the expected judgment on the value of monitoring items, the number of pods related to them, http requests, tcp requests; new traffic injection component, currently only supports injection of HTTP traffic, and it will be supplemented with other types of traffic such as RPC, DB client, redis client, etc. gradually. It will gradually add the ability to inject other types of traffic such as RPC, DB client, redis client, and so on.
 
 - [Chaosblade Chaos Engineering Project v1.7.0 Release (CNCF Project)](https://github.com/rook/rook/releases/tag/v1.10.0)
 
@@ -433,6 +441,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: support for replacing HPA with KEDA ScaledObjects, adding namespace parameters in the parameter table, and adding an optional `appProtocol` field for Canary.Service.
 
+- [Fluent Operator Cloud Native Log Collection Solution 2.5.0 Released](https://github.com/fluent/fluent-operator/releases/tag/v2.5.0)
+
+    Version features: add support for 7 plugins, including Prometheus Exporter, Forward, OpenTelemetry, HTTP, MQTT, etc.; add support for Fluentd running as DaemonSet.
+
 - [Fluent Bit log processing tool v2.0.0 release (CNCF project)](https://github.com/fluent/fluent-bit/releases/tag/v2.0.0)
 
      The main new features of this version: Add support for Traces (fully integrated with Prometheus and OpenTelemetry), allow the input plug-in to run in a separate thread, all network transport layers that need to be enabled will use OpenSSL, and the input plug-in will add native TLS functionality, support for integrating more plugin types with Golang and WebAssembly, support for inspecting data flowing through pipelines, and introduction of new input plugins that collect and process internal metrics.
@@ -466,6 +478,10 @@ This page lists activity in cloud native open source projects in alphabetical or
      The main new features of this version: add constraint mode verification tests, add TLS support for external data providers, add pod security context variables, support verification sub-resources, allow skipping tests in gator verification, add dockerfile for gator, add opencensus and stackdriver exporter.
 
 ### H
+
+- [Harvester Hyperconverged Infrastructure v1.2.0 released](https://github.com/harvester/harvester/releases/tag/v1.2.0)
+
+    Release features: Reduced system footprint (better suited for edge scenarios), support for automatic resource limit adjustment, support for adding analog Trusted Platform Modules (TPMs) to VMs, support for SR-IOV network virtualization, new rancher-vcluster plug-in and bare-metal container support, support for installing third-party Container Storage Interfaces (CSIs) in Harvester clusters, support for per-node Pods, and more, and an increase in the per-node pod limit to 200.
 
 - [HoloInsight: an intelligent observable platform open sourced by Ant Group](https://mp.weixin.qq.com/s/Tx7EKr0P_rhO-kltlW-wuQ)
 
@@ -668,6 +684,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Katalyst: byte-hopping open source cloud-native resource control system](https://mp.weixin.qq.com/s/A5_1h3RLmDNazmAddbhYaA)
 
     The main features of [Katalyst](https://github.com/kubewharf/katalyst-core) include: fully incubated in the mega-mixed-part practice and synchronously take over the resource control link in the byte service cloud-native process; equipped with ByteBeat's internal Kubernetes distribution Enhanced Kubernetes is synchronized with open source; the system is built based on plug-in model, and users can customize various scheduling, control, policy, data and other module plug-ins on Katalyst Framework.
+
+- [KCL: Configuration Language KCL Becomes CNCF Sandbox Project](https://mp.weixin.qq.com/s/VbIIHj28DZZea3R4tYT66A)
+
+    [KCL](https://github.com/kcl-lang/kcl) is an open source constraint-based record and function language that expects to improve the writing of a large number of complex configurations such as cloud-native Kubernetes configuration scenarios through mature programming language techniques and practices, and is committed to building a simpler logic authoring experience around the modularity, extensibility, and stability of configurations. We are committed to creating a simpler logic authoring experience and building simpler automation and eco-integration paths around configuration modularity, scalability, and stability.
 
 - [KEDA: CNCF Announces KEDA Graduation for K8s Auto Scaler](https://mp.weixin.qq.com/s/Jkl8bGreQPk77VADOB-MOw)
 

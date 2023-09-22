@@ -251,6 +251,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 ### D, E
 
+- [D2iQ K8s Platform D2iQ Kubernetes Platform v2.6 released](https://docs.d2iq.com/dkp/2.6/dkp-2-6-0-features-and-enhancements)
+
+    Updates: Support for container runtime Podman, support for vehicle Kubernetes 1.26.6, support for telemetry, addition of natural language AI assistant DKP AI Navigator, support for prioritizing DKP workloads and applications, and support for observability and monitoring of network-constrained clusters in edge computing environments.
+
 - [D2iQ launches DKP AI Navigator, a natural language AI assistant to simplify Kubernetes management](https://d2iq.com/press-release/dkp-ai-navigator)
 
     DKP AI Navigator is trained on D2iQ's internal knowledge base, which contains solutions to the toughest problems users encounter in production.D2iQ users can use the tool to instantly access this expertise and manage Kubernetes clusters from a single window.DKP AI Navigator will be available in DKP 2.6. DKP AI Navigator will be officially available in DKP 2.6.
@@ -305,6 +309,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      The Davis AI causal analysis engine provides root cause analysis of Kubernetes performance issues and their impact on business continuity. Specific features: Automated root cause analysis, support for real-time tracking of Kubernetes orchestration processes, linking performance issues to pod evictions, support for identifying the cause of performance degradation issues related to misconfigurations based on changes in workload deployment inventory.
 
+- [EMQX Enterprise 5.2, EMQX's cloud-native distributed IoT access platform, is released](https://mp.weixin.qq.com/s/iT9eo-MHBWi5KhMqoTnUaA).
+
+    New drag-and-drop visual flow designer for quickly creating, testing, and deploying data integrations; new standalone Webhook page to simplify the configuration process; integration with Amazon Kinesis, a fully managed real-time streaming data processing service; integration with Azure Event Hubs, a fully managed real-time data introduction service; integration with HStream, an open source cloud-native distributed streaming data platform HStream; integration with GreptimeDB, an open source distributed cloud-native time-series database; integration with OpenTelemetry metrics.
+
 - [Ermetic Cloud Native Application Protection Platform supports Kubernetes security posture management](https://ermetic.com/news/ermetic-adds-kubernetes-security-posture-management-to-cloud-native-application-protection-platform/)
 
     The Ermetic Cloud Native Application Protection Platform's Kubernetes Security Posture Management feature supports automatic discovery and remediation of misconfigurations, compliance violations, and risky or excessive privileges in Kubernetes clusters.
@@ -321,6 +329,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Fairwinds Kubernetes Governance and Security Platform Insights November Update](https://www.fairwinds.com/blog/fairwinds-insights-release-notes-10.2-10.6-spotlight-on-workload-cost-allocation)
 
      Update: Added workload cost allocation functionality to allow viewing historical costs for a group of workloads; optimized cost page to refine the categorization of Kubernetes cluster costs; support for viewing the dynamics of costs over time.
+
+- [Fermyon Launches Serverless AI Solution Serverless AI](https://www.fermyon.com/blog/introducing-fermyon-serverless-ai)
+
+    Fermyon introduces Serverless AI, a Serverless framework for invoking AI models in its platform. And by leveraging GPU compute services provided by Civo to reduce the cost of accessing the GPUs needed to build and run these AI models and reduce cold start times to 50 milliseconds.
 
 - [Finout Launches Agentless Kubernetes Cost Governance Suite](https://www.businesswire.com/news/home/20230413005018/en/Finout-Announces-Agentless-Cost-Governance-Suite-for-Kubernetes)
 
