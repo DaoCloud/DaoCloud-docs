@@ -51,8 +51,8 @@ nav:
               - Benefits: kpanda/intro/benefits.md
               - Use Cases: kpanda/intro/scenarios.md
               - Concepts: kpanda/intro/concepts.md
-              - Container Management Release Notes: kpanda/intro/release-notes.md
-              - Latest News: kpanda/intro/news.md
+              - Release Notes: kpanda/intro/release-notes.md
+              - Offline Upgrade Procedure: kpanda/intro/offline-upgrade.md
               - FAQs: kpanda/intro/faq.md
           - Clusters:
               - Create Cluster: kpanda/user-guide/clusters/create-cluster.md
@@ -67,6 +67,7 @@ nav:
           - Namespaces:
               - Create Namespace: kpanda/user-guide/namespaces/createns.md
               - Exclusive Node to Namespace: kpanda/user-guide/namespaces/exclusive.md
+              - Pod Security Policy: kpanda/user-guide/namespaces/podsecurity.md
           - Nodes:
               - Node Availability Check: kpanda/user-guide/nodes/node-check.md
               - Node Config: kpanda/user-guide/nodes/node-config.md
@@ -119,26 +120,41 @@ nav:
               - Upgrade Cluster: kpanda/user-guide/clusters/upgrade-cluster.md
               - Cluster Settings: kpanda/user-guide/clusterops/cluster-settings.md
           - Cluster Inspection:
+              - Intro: kpanda/user-guide/inspect/index.md
               - Create Inspection Settings: kpanda/user-guide/inspect/config.md
               - Start Inspection: kpanda/user-guide/inspect/inspect.md
               - Check Inspection Reports: kpanda/user-guide/inspect/report.md
+              - Offline Upgrade Cluster Inspection: kpanda/user-guide/inspect/offline-upgrade.md
           - Backup Recovery:
-              - ETCD Backup: kpanda/user-guide/backup/etcd-backup.md
+              - Intro: kpanda/user-guide/backup/index.md
+              - etcd Backup: kpanda/user-guide/backup/etcd-backup.md
               - Install Velero: kpanda/user-guide/backup/install-velero.md
               - Back up Deployment: kpanda/user-guide/backup/deployment.md
+              - Offline Upgrade Backup Recovery: kpanda/user-guide/backup/offline-upgrade.md
           - Security Management:
-              - Scan Types: kpanda/user-guide/security/intro.md
+              - Scan Types: kpanda/user-guide/security/index.md
               - CIS:
                   - Scan Configuration: kpanda/user-guide/security/cis/config.md
                   - Scan Policies: kpanda/user-guide/security/cis/policy.md
                   - Scan Report: kpanda/user-guide/security/cis/report.md
               - Kube-audit: kpanda/user-guide/security/audit.md
               - Kube-hunter: kpanda/user-guide/security/hunter.md
+              - Offline Upgrade Security: kpanda/user-guide/security/offline-upgrade-dowl.md
           - Permissions:
               - Permission Brief: kpanda/user-guide/permissions/permission-brief.md
               - Cluster and Namespace Authorization: kpanda/user-guide/permissions/cluster-ns-auth.md
-          - GPU:
-              - Install Nvidia GPU Driver: kpanda/user-guide/gpu/driver.md
+          - GPU Management:
+              - Intro: kpanda/user-guide/gpu/index.md
+              - NVIDIA vGPU:
+                - Install Nvidia GPU Driver: kpanda/user-guide/gpu/vgpu_driver.md
+                - Install vGPU Addon: kpanda/user-guide/gpu/vgpu_addon.md
+                - Use vGPU: kpanda/user-guide/gpu/vgpu_user.md
+              - NVIDIA MIG:
+                - NVIDIA GPU (MIG): kpanda/user-guide/gpu/mig_index.md
+                - Create MIG via GPU Operator: kpanda/user-guide/gpu/create_mig.md
+                - Use MIG GPU: kpanda/user-guide/gpu/mig_usage.md
+                - MIG Commands: kpanda/user-guide/gpu/mig_command.md
+              - GPU Quota Management: kpanda/user-guide/gpu/vgpu_quota.md
           - Best Practices:
               - Backup and Restore ETCD: kpanda/best-practice/etcd-backup.md
               - Cross-cluster Backup and Restore of MySQL Apps and Data: kpanda/best-practice/backup-mysql-on-nfs.md

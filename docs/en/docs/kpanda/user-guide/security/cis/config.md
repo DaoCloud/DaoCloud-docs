@@ -1,6 +1,6 @@
 # Scan Configuration
 
-The first step in using [CIS Scanning](../intro.md) is to create a scan configuration. Based on the scan configuration, you can then create scan policies, execute scan policies, and finally view scan results.
+The first step in using [CIS Scanning](../index.md) is to create a scan configuration. Based on the scan configuration, you can then create scan policies, execute scan policies, and finally view scan results.
 
 ## Create a Scan Configuration
 

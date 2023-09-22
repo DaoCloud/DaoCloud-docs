@@ -52,7 +52,6 @@ nav:
               - 适用场景: kpanda/intro/scenarios.md
               - 基本概念: kpanda/intro/concepts.md
               - Release Notes: kpanda/intro/release-notes.md
-              - 功能发布动态: kpanda/intro/news.md
               - 离线升级容器管理模块: kpanda/intro/offline-upgrade.md
               - 常见问题: kpanda/intro/faq.md
           - 集群管理:
@@ -121,19 +120,19 @@ nav:
               - 集群升级: kpanda/user-guide/clusters/upgrade-cluster.md
               - 集群设置: kpanda/user-guide/clusterops/cluster-settings.md
           - 集群巡检:
-              - 介绍: kpanda/user-guide/inspect/intro.md
+              - 介绍: kpanda/user-guide/inspect/index.md
               - 创建巡检配置: kpanda/user-guide/inspect/config.md
               - 执行巡检: kpanda/user-guide/inspect/inspect.md
               - 查看巡检报告: kpanda/user-guide/inspect/report.md
               - 离线升级集群巡检模块: kpanda/user-guide/inspect/offline-upgrade.md
           - 备份恢复:
-              - 介绍: kpanda/user-guide/backup/intro.md
+              - 介绍: kpanda/user-guide/backup/index.md
               - 安装 Velero 插件: kpanda/user-guide/backup/install-velero.md
               - 应用备份: kpanda/user-guide/backup/deployment.md
               - ETCD 备份: kpanda/user-guide/backup/etcd-backup.md
               - 离线升级备份恢复模块: kpanda/user-guide/backup/offline-upgrade.md
           - 安全管理:
-              - 安全扫描类型: kpanda/user-guide/security/intro.md
+              - 安全扫描类型: kpanda/user-guide/security/index.md
               - 合规性扫描:
                   - 扫描配置: kpanda/user-guide/security/cis/config.md
                   - 扫描策略: kpanda/user-guide/security/cis/policy.md
@@ -144,7 +143,8 @@ nav:
           - 权限管理:
               - 权限体系介绍: kpanda/user-guide/permissions/permission-brief.md
               - 集群和命名空间授权: kpanda/user-guide/permissions/cluster-ns-auth.md
-          - GPU管理:
+          - GPU 管理:
+              - 简介: kpanda/user-guide/gpu/index.md
               - NVIDIA vGPU:
                 - 安装 Nvidia GPU 驱动: kpanda/user-guide/gpu/vgpu_driver.md
                 - 安装 vGPU Addon: kpanda/user-guide/gpu/vgpu_addon.md
@@ -156,7 +156,7 @@ nav:
                 - MIG 相关命令: kpanda/user-guide/gpu/mig_command.md
               - GPU 配额管理: kpanda/user-guide/gpu/vgpu_quota.md
           - 最佳实践:
-              - 对 ETCD 进行备份还原: kpanda/best-practice/etcd-backup.md
+              - 对 etcd 进行备份还原: kpanda/best-practice/etcd-backup.md
               - 对 MySQL 应用及数据进行跨集群备份恢复: kpanda/best-practice/backup-mysql-on-nfs.md
               - 加固自建工作集群: kpanda/best-practice/hardening-cluster.md
               - 工作集群离线升级指南: kpanda/best-practice/update-offline-cluster.md
