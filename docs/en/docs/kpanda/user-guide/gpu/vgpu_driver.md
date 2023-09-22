@@ -1,12 +1,9 @@
 # Nvidia GPU Driver Installation
 
-## GPU Driver Installation
+> Two installation methods are provided: manual installation and using gpu-operator.
+> Using gpu-operator for installation simplifies the process, and it is recommended.
 
-> Two installation methods are provided: manual installation and installation using gpu-operator.
-> Using gpu-operator simplifies the process, so it is recommended.
-
-To use GPUs on Kubernetes, you need to install the relevant drivers and programs.
-This involves the following steps:
+Using GPUs on K8s requires the installation of relevant drivers and programs, which involves the following steps:
 
 - [ ] Install the GPU physical device driver
 - [ ] Install the CUDA toolkit
@@ -17,24 +14,24 @@ This involves the following steps:
 
 1. Install the physical device driver
 
-    - Add the PPA repository
+    - Add the PPA repository source
 
         ```shell
         add-apt-repository ppa:graphics-drivers/ppa
         apt-get update
         ```
 
-    - View the available driver versions
+    - Check the available driver versions
 
         ```shell
         ubuntu-drivers devices
         ```
 
-        ![Alt text](image.png)
+        ![Alt text](images/image.png)
 
-    - Select the appropriate version for installation
+    - Choose the appropriate version to install
 
-    - Recommended version for installation:
+    - Recommended installation:
 
         ```shell
         ubuntu-drivers autoinstall
@@ -69,19 +66,19 @@ This involves the following steps:
 
 2. Install the `cuda toolkit`
 
-    - [https://github.com/NVIDIA/nvidia-container-toolkit](https://github.com/NVIDIA/nvidia-container-toolkit)
-    - [https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
+    - https://github.com/NVIDIA/nvidia-container-toolkit
+    - https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html
 
-    - Conditions for running `nvidia-container-toolkit`:
-        - Operating system kernel version > 3.10
+    - The conditions for running `nvidia-container-toolkit` are:
+        - Kernel version > 3.10
         - Docker >= 19.03 or use Containerd.
-        - NVIDIA GPU architecture above version 3.0
+        - NVIDIA GPU architecture is above version 3.0
         - NVIDIA Linux drivers >= 418.81.07
-    - The following demonstrates how to install using containerd:
+    - Below is an example of installing with containerd:
 
-        - Set nvidia-container-runtime in the /etc/containerd/config.toml configuration file and restart
+        - Add nvidia-container-runtime to the /etc/containerd/config.toml configuration file and then restart
 
-            ```toml
+            ```toml title="/etc/containerd/config.toml"
                 [plugins."io.containerd.grpc.v1.cri".containerd]
                 default_runtime_name = "nvidia"
                 [plugins."io.containerd.grpc.v1.cri".containerd.runtimes]
@@ -97,10 +94,10 @@ This involves the following steps:
                         SystemdCgroup = true
             ```
 
-        - Set the package repository nvidia-container-toolkit
+        - Set up the package repository for nvidia-container-toolkit
 
             ```shell
-                $ distribution=$(. /etc/os-release;echo $ID$VERSION_ID) && curl -s -L https://nvidia.github.io/libnvidia-container/gpgkey | sudo apt-key add - && curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.list | sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+            $ distribution=$(. /etc/os-release;echo $ID$VERSION_ID) && curl -s -L https://nvidia.github.io/libnvidia-container/gpgkey | sudo apt-key add - && curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.list | sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
             ```
 
         - Install:
@@ -117,25 +114,20 @@ This involves the following steps:
 
 ### Installation using gpu-operator
 
-![Alt text](image-1.png)
+![Alt text](images/image-1.png)
 
-GPU Operator can perform operations related to GPU underlying dependencies on top of Kubernetes,
-including GPU drivers, Container ToolKit, automatic reporting of Device Plugin resources, and more.
-You no longer need to worry about driver installation and other troublesome tasks. In theory,
-as long as you have a GPU card installed, K8s is installed, and you use GPU Operator,
-you can utilize all the capabilities.
+GPU Operator can perform operations on GPU-related underlying dependencies on top of K8s. This includes GPU drivers, Container ToolKit, automatic reporting of Device Plugin resources, and more. You no longer need to worry about driver installation and other troublesome tasks. In theory, as long as the GPU card is installed, K8s is installed, and then you can use all the capabilities through GPU Operator.
 
 - Check if the GPU card is mounted correctly
 
     ```shell
     $ lspci | grep -i nvidia
-    1b:00.0 VGA compatible controller: NVIDIA Corporation GP102 [TITAN Xp] (rev a1)
+    1b:00.0 VGA compatible controller: NVIDIA Corporation GP102 [TITAN Xp] (reva1)
     ```
 
-- Determine the kernel version (this step is important, the nvidia driver image version needs
-  to be compatible with the node's kernel version, including the minor version number)
+- Determine the kernel version (This step is important, as the NVIDIA driver image version needs to match the node's kernel version exactly, including the minor version number)
 
-    > To check if the driver version corresponds to the kernel, please visit the following website:
+    > To check if the corresponding driver version exists for a specific kernel version, please visit the following website:
     > <https://catalog.ngc.nvidia.com/orgs/nvidia/containers/driver/tags>
 
     ```shell
@@ -155,6 +147,6 @@ you can utilize all the capabilities.
 
 ## Install vGPU Driver
 
-After installing the above two methods, the pod can only use the entire GPU resources, and
-cannot utilize the vGPU functionality. If you need to use vGPU, you need to search for
-the nvidia-vgpu module in the Helm repository managed by DCE 5.0 container management and install it.
+After installing either of the above two methods, the pods can only use the full GPU resources and cannot utilize the vGPU functionality. If you need to use vGPU, you can find the "nvidia-vgpu" module in the Helm Repository of DCE 5.0 Container Management and install it.
+
+![Alt text](images/image-2.png)

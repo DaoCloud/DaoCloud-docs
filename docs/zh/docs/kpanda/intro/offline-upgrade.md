@@ -21,6 +21,7 @@
     !!! note  
 
         该 YAML 文件中的各项参数均为必填项。
+
     === "已添加 Helm repo"
 
         若当前环境已安装 chart repo，chart-syncer 也支持将 chart 导出为 tgz 文件。
@@ -139,8 +140,9 @@
         helm search repo kpanda/kpanda --versions
         ```
 
+        输出类似于：
+        
         ```none
-        [root@master ~]# helm search repo kpanda/kpanda --versions
         NAME                   CHART VERSION  APP VERSION  DESCRIPTION
         kpanda/kpanda  0.20.0          v0.20.0       A Helm chart for kpanda
         ...
