@@ -8,13 +8,13 @@
 
 1. 关闭 PVC 的申请
 
-    ```bash
+    ```console
     orchestrator.persistence.enabled=false 
     ```
 
 2. 指定 storageClass 去获取 PVC
 
-    ```bash
+    ```console
     orchestrator.persistence.storageClass={storageClassName} 
     ```
 

@@ -54,7 +54,7 @@ Refer to the [Redis Cache Service](../middleware/redis/intro/index.md) documenta
 
 ## Middleware Workload Anti-Affinity
 
-Refer to the [Middleware Workload Anti-Affinity](../middleware/common/workload-antiaffinity.md) documentation page.
+Refer to the [Middleware Workload Anti-Affinity](../middleware/common/antiaffinity.md) documentation page.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/anti-affinity.mp4" preload="metadata" poster="images/mcamel-anti-affinity.png"></video>

@@ -4,6 +4,7 @@ hide:
 ---
 
 # 什么是 PostgreSQL
+
 [PostgreSQL](https://www.postgresql.org/) 是一种开源的关系型数据库管理系统（RDBMS），它采用了美国加州大学伯克利分校开发的 Postgres 作为基础，并由 PostgreSQL 全球开发团队进行开发和维护。它是一款功能丰富、可扩展性强、安全可靠、兼容性好的数据库，已广泛应用于企业、互联网公司和开源社区中。
 
 PostgreSQL 的特点包括：

@@ -1,14 +1,14 @@
-# MySQL 主备关系
+# MySQL Master-Slave Relationship
 
-MySQL 的主备关系故障相对比较复杂，基于不同现象，会有不同的解决方案。
+The master-slave relationship in MySQL can be complex when it comes to troubleshooting, as different symptoms may require different solutions.
 
-1. 执行以下命令确认 MySQL 状态:
+1. Execute the following command to confirm the MySQL status:
 
     ```bash
     kubectl get mysql -A
     ```
 
-    输出类似于：
+    The output will be similar to:
 
     ```
     NAMESPACE       NAME                          READY   REPLICAS   AGE
@@ -16,47 +16,47 @@ MySQL 的主备关系故障相对比较复杂，基于不同现象，会有不�
     mcamel-system   mcamel-common-mysql-cluster   False   2          62d
     ```
 
-2. 关注 `Ready` 字段值为 `False` 的库 (这里为 `True` 的判断是延迟小于 30s 同步)，查看 MySQL 从库的日志
+2. Pay attention to the databases with a `Ready` field value of `False` (here, the judgement of `True` is that the delay is less than 30 seconds), and check the logs of the MySQL slave:
 
     ```bash
     [root@master-01 ~]$ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}' | xargs -I {} kubectl logs {} -n mcamel-system -c mysql | grep ERROR
     ```
 
-当实例状态为 `False` 时，可能存在以下几类故障，可以结合库日志信息排查修复。
+When the instance status is `False`, there may be several types of failures. You can troubleshoot and fix them based on the information in the database logs.
 
-## 实例状态为 `false` 但日志无报错信息
+## Instance Status is `False` but No Error Messages in Logs
 
-如果从库的日志中没有任何错误 `ERROR` 信息，说明 `False` 只是因为主从同步的延迟过大，可对从库执行以下命令进一步排查：
+If there are no `ERROR` messages in the logs of the slave, it means that the `False` status is due to a large delay in master-slave synchronization. You can further investigate the slave by performing the following steps:
 
-1. 寻找到从节点的 Pod
+1. Find the Pod of the slave node:
 
     ```bash
     kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}'
     ```
 
-    输出类似于：
+    The output will be similar to:
 
     ```
     mcamel-common-mysql-cluster-mysql-1
     ```
 
-2. 设置 `binlog` 参数
+2. Set the `binlog` parameter:
 
     ```bash
     kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB -e 'set global sync_binlog=10086;'
     ```
 
-3. 进入 MySQL 的容器
+3. Enter the MySQL container:
 
     ```bash
     kubectl exec -it mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf
     ```
 
-4. 在 MySQL 容器中执行查看命令，获取从库状态。
+4. Execute the following command inside the MySQL container to check the slave status.
 
-    `Seconds_Behind_Master` 字段为主从延迟，如果取值在 0~30，可以认为没有延迟；表示主从可以保持同步。
+    The `Seconds_Behind_Master` field indicates the delay between the master and slave. If the value is between 0 and 30, it can be considered as no delay, indicating that the master and slave are in sync.
 
-    ??? note "SQL 语句如下"
+    ??? note "SQL statements"
 
         ```sql
         mysql> show slave status\G; 
@@ -131,30 +131,30 @@ MySQL 的主备关系故障相对比较复杂，基于不同现象，会有不�
         1 row in set, 1 warning (0.00 sec)
         ```
 
-5. 主从同步后 `Seconds_Behind_Master` 小于 30s，设置 `sync_binlog=1`
+5. After the master-slave synchronization, if `Seconds_Behind_Master` is less than 30s, set `sync_binlog=1`:
 
     ```bash
     kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB -e 'set global sync_binlog=1';
     ```
 
-6. 如果此时依然不见缓解，可以查看从库的宿主机负载或者 IO 是否太高，执行以下命令：
+6. If the issue persists, you can check the host load or IO of the slave node by running the following command:
 
     ```bash
     [root@master-01 ~]$ uptime
     11:18  up 1 day, 17:49, 2 users, load averages: 9.33 7.08 6.28
     ```
 
-    `load averages` 在正常情况下 3 个数值都不应长期超过 10；如果超过 30 以上，请合理调配下该节点的 Pod 和磁盘。
+    In normal circumstances, the `load averages` should not exceed 10 for a prolonged period. If it exceeds 30 or above, consider adjusting the Pod and disk allocation for that node.
 
-## 从库日志出现`复制错误`
+## Replication Error in Slave Logs
 
-如果从库 Pod 日志中出现从库复制错误，可能由多种原因引起，下文将针对不同情况介绍判断及修复方法。
+If there are replication errors in the logs of the slave Pod, it may be caused by various reasons. The following sections will provide different scenarios along with their corresponding diagnosis and repair methods.
 
-### purged binlog 错误
+### Purged Binlog Error
 
-注意以下示例，如果出现关键字 `purged binlog`，通常需要对从库执行重建处理。
+In case you encounter the keyword `purged binlog` in the logs, it typically indicates the need to rebuild the slave.
 
-??? note "错误示例"
+??? note "Erros"
 
     ```bash
     [root@demo-alpha-master-01 /]$ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}' | xargs -I {} kubectl logs {} -n mcamel-system -c mysql | grep ERROR
@@ -162,119 +162,118 @@ MySQL 的主备关系故障相对比较复杂，基于不同现象，会有不�
     2023-02-08T18:43:21.991777Z 116 [ERROR] [MY-013114] [Repl] Slave I/O for channel '': Got fatal error 1236 from master when reading data from binary log: 'Cannot replicate because the master purged required binary logs. Replicate the missing transactions from elsewhere, or provision a new slave from backup. Consider increasing the master's binary log expiration period. The GTID sets and the missing purged transactions are too long to print in this message. For more information, please see the master's error log or the manual for GTID_SUBTRACT', Error_code: MY-013114
     ```
 
-重建操作如下：
+The steps to perform the rebuild operation are as follows:
 
-1. 寻找从节点的 Pod
+1. Find the Pod of the slave node:
 
     ```bash
     [root@master-01 ~]$ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}'
     mcamel-common-mysql-cluster-mysql-1
     ```
 
-2. 寻找从节点的  PVC
+2. Find the PVC (PersistentVolumeClaim) of the slave node:
 
     ```bash
     [root@master-01 /]$ kubectl get pvc -n mcamel-system | grep mcamel-common-mysql-cluster-mysql-1
     data-mcamel-common-mysql-cluster-mysql-1                                        Bound    pvc-5840569e-834f-4236-a5c6-878e41c55c85   50Gi       RWO            local-path                   33d
     ```
 
-3. 删除从节点的 PVC
+3. Delete the PVC of the slave node:
 
     ```bash
     [root@master-01 /]$ kubectl delete pvc data-mcamel-common-mysql-cluster-mysql-1 -n mcamel-system
     persistentvolumeclaim "data-mcamel-common-mysql-cluster-mysql-1" deleted
     ```
 
-4. 删除从库的 Pod
+4. Delete the Pod of the slave:
 
     ```bash
     [root@master-01 /]$ kubectl delete pod mcamel-common-mysql-cluster-mysql-1 -n mcamel-system
     pod "mcamel-common-mysql-cluster-mysql-1" deleted
     ```
 
-### 主键冲突错误
+### Primary Key Conflict Error
 
-??? note "错误实例"
+??? note "Errors"
 
     ```bash
     [root@demo-alpha-master-01 /]$ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}' | xargs -I {} kubectl logs {} -n mcamel-system -c mysql | grep ERROR
     2023-02-08T18:43:21.991730Z 116 [ERROR] [MY-010557] [Repl] Could notexecute Write_rows event on table dr_brower_db.dr_user_info; Duplicate entry '24' for key 'PRIMARY', Error_code:1062; handler error HA_ERR_FOUND_DUPP_KEY; the event's master logmysql-bin.000010, end_log_pos 5295916
     ```
 
-如果在错误日志中看到：`Duplicate entry '24' for key 'PRIMARY', Error_code:1062; handler error HA_ERR_FOUND_DUPP_KEY;`，
+If you see the following error in the error log: `Duplicate entry '24' for key 'PRIMARY', Error_code:1062; handler error HA_ERR_FOUND_DUPP_KEY;`, it indicates a primary key conflict or an error where the primary key does not exist. In such cases, you can recover using an idempotent mode or skip the error by inserting an empty transaction:
 
-说明出现了主键冲突，或者主键不存在的错误。此时，可以以幂等模式恢复或插入空事务的形式跳过错误：
+**Method 1**: Idempotent Recovery
 
-**方法1**：幂等模式恢复
-
-1. 寻找到从节点的 Pod
+1. Find the Pod of the slave node:
 
     ```bash
     [root@master-01 ~]$ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}'
     mcamel-common-mysql-cluster-mysql-1
     ```
 
-2. 设置 mysql 幂等模式
+2. Set MySQL to idempotent mode:
 
     ```bash
     [root@master-01 ~]$ kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB -e 'stop slave;set global slave_exec_mode="IDEMPOTENT";set global sync_binlog=10086;start slave;'
     ```
 
-**方法 2** ：插入空事务跳过错误
+**Method 2**: Insert Empty Transaction to Skip Error
 
 ```sql
 mysql> stop slave;
-mysql> SET @@SESSION.GTID_NEXT= 'xxxxx:105220'; /* 具体数值，在日志里面提到 */
+mysql> SET @@SESSION.GTID_NEXT= 'xxxxx:105220'; /* Specific value mentioned in the logs */
 mysql> BEGIN;
 mysql> COMMIT;
 mysql> SET SESSION GTID_NEXT = AUTOMATIC;
 mysql> START SLAVE;
 ```
 
-执行完成以上操作后，观察从库重建的进度：
+After completing the above steps, observe the progress of the slave rebuild:
 
 ```bash
-# 进入 mysql 的容器
+# Enter the MySQL container
 [root@master-01 ~]$ kubectl exec -it mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf
 ```
 
-执行以下命令，查看从库的主从延迟状态字段 `Seconds_Behind_Master`，如果取值在 0~30，表示已没有主从延迟，主库和从库基本保持同步。
+Run the following command to check the slave's replication delay status in the field `Seconds_Behind_Master`. If the value is between 0 and 30, it indicates that there is no significant delay, and the master and slave databases are essentially synchronized.
 
 ```sql
 mysql> show slave status\G;
 ```
 
-确认主从同步后 (Seconds_Behind_Master 小于 30s)，执行以下命令，设定 MySQL 严格模式：
+After confirming the master-slave synchronization (when `Seconds_Behind_Master` is less than 30s), execute the following command to set MySQL strict mode:
 
 ```bash
 [root@master-01 ~]$ kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB -e 'stop slave;set global slave_exec_mode="STRICT";set global sync_binlog=10086;start slave;
 ```
 
-### 主从库复制错误
+### Replication Error in Master-Slave Setup
 
-当从库出现类似 `[Note] Slave: MTS group recovery relay log info based on Worker-Id 0, group_r` 的错误信息，可以执行如下操作：
+When the slave database encounters an error message similar to `[Note] Slave: MTS group recovery relay log info based on Worker-Id 0, group_r`, you can perform the following steps:
 
-1. 寻找到从节点的 Pod
+1. Find the Pod of the slave node:
 
     ```shell
-    [root@master-01 ~]# kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}' 
+    [root@master-01 ~]# kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}'
     mcamel-common-mysql-cluster-mysql-1
     ```
 
-2. 设置让从库跳过这个日志继续复制
+2. Set the slave to skip this particular log and continue replication:
 
     ```shell
-    [root@master-01 ~]# kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB -e 'stop slave;reset slave;change master to MASTER_AUTO_POSITION = 1;start slave;'; 
+    [root@master-01 ~]# kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB -e 'stop slave;reset slave;change master to MASTER_AUTO_POSITION = 1;start slave;'
     ```
 
 !!! tip
 
-    1. 这种情况可以以幂等模式执行
-    2. 此种类型错误也可以重做从库
+    1. This situation can be handled using an idempotent mode.
+    2. In such replication errors, redoing the setup on the slave database is also a viable option.
 
-## 主备 Pod 均为 `replica`
+## Both Primary and Replica Pods are Labeled as `replica`
 
-1. 通过以下命令，发现两个 MySQL 的 Pod均为 `replica` 角色，需修正其中一个为 `master`。
+1. By executing the following command, you will discover that both MySQL Pods
+   are labeled as `replica` role. You need to correct one of them to `master`.
 
     ```bash
     [root@aster-01 ~]$ kubectl get pod -n mcamel-system -Lhealthy,role|grep mysql
@@ -283,15 +282,15 @@ mysql> show slave status\G;
     mysql-operator-0                                             2/2     Running   1 (16h ago)   16h
     ```
 
-2. 进入 MySQL 查看：
+2. Go to MySQL to check:
 
     ```bash
     kubectl exec -it mcamel-common-mysql-cluster-mysql-0 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf
     ```
 
-3. 查看 `slave` 的状态信息，查询结果为空的就是原来的 `master`，如下方示例中 `mysql-0` 对应的内容:
+3. To check the status information of the `slave`, look for the results where the query output is empty. These correspond to the original `master`. In the example below, `mysql-0` corresponds to the relevant content:
 
-    ??? note "状态信息示例“
+    ??? note "Status examples“
 
         ```sql
         -- mysql-0
@@ -364,30 +363,30 @@ mysql> show slave status\G;
         1 row in set, 1 warning (0.01 sec)
         ```
 
-4. 针对 master 的 mysql shell 执行重置操作：
+4. Perform a reset operation on the MySQL shell of the master:
 
     ```sql
-    mysql > stop slave;reset slave;
+    mysql> stop slave; reset slave;
     ```
 
-5. 此时再手动编辑 master 的 Pod：`role replica => master ,healthy no => yes`。
+5. Manually edit the Pod of the master: change its label from `role replica` to `master` and set `healthy no` to `yes`.
 
-6. 针对 slave 的 mysql shell 执行：
+6. Execute the following command on the MySQL shell of the slave:
 
     ```sql
-    mysql > start slave;
+    mysql> start slave;
     ```
 
-7. 如果主从没有建立联系，在 slave 的 mysql shell 执行：
+7. If the master and slave are not establishing a connection, execute the following command on the MySQL shell of the slave:
 
     ```sql
-    -- 注意替换下 {master-host-pod-index}
+    -- Note to replace {master-host-pod-index}
     mysql > change master to master_host='mcamel-common-mysql-cluster-mysql-{master-host-pod-index}.mysql.mcamel-system',master_port=3306,master_user='root',master_password='{password}',master_auto_position=1,MASTER_HEARTBEAT_PERIOD=2,MASTER_CONNECT_RETRY=1, MASTER_RETRY_COUNT=86400;
     ```
 
-## 主备数据不一致
+## Inconsistent Primary and Standby Data
 
-当主从实例数据不一致时，可以执行以下命令完成主从一致性同步：
+When there is inconsistency in data between the primary and standby instances, you can execute the following commands to achieve primary-standby consistency synchronization:
 
 ```sql
 pt-table-sync --execute --charset=utf8 --ignore-databases=mysql,sys,percona --databases=amamba,audit,ghippo,insight,ipavo,keycloak,kpanda,skoala dsn=u=root,p=xxx,h=mcamel-common-kpanda-mysql-cluster-mysql-0.mysql.mcamel-system,P=3306 dsn=u=root,p=xxx,h=mcamel-common-kpanda-mysql-cluster-mysql.mysql.mcamel-system,P=3306  --print
@@ -395,8 +394,8 @@ pt-table-sync --execute --charset=utf8 --ignore-databases=mysql,sys,percona --da
 pt-table-sync --execute --charset=utf8 --ignore-databases=mysql,sys,percona --databases=kpanda dsn=u=root,p=xxx,h=mcamel-common-kpanda-mysql-cluster-mysql-0.mysql.mcamel-system,P=3306 dsn=u=root,p=xxx,h=mcamel-common-kpanda-mysql-cluster-mysql-1.mysql.mcamel-system,P=3306  --print
 ```
 
-使用 pt-table-sync 即可完成数据补充，示例中是 `mysql-0=> mysql-1` 补充数据。
+To address this issue and achieve data supplementation, you can use `pt-table-sync`. The following example demonstrates how to supplement data from `mysql-0` to `mysql-1`.
 
-这种场景往往适用于主从切换，发现新从库有多余的已执行的 gtid 在重做之前补充数据。
+This scenario is often applicable during master-slave switching, where the new slave has extra executed GTIDs that need to be synchronized before redoing the process.
 
-这种补充数据只能保证数据不丢失，如果新主库已经删除的数据会被重新补充回去，是一个潜在的风险，如果是新主库有数据，会被替换成老数据，也是一个风险。
+Data supplementation ensures that data is not lost. However, there are potential risks involved. If the new master has deleted data, it will be re-supplemented. Additionally, if the new master has existing data, it will be replaced with older data.

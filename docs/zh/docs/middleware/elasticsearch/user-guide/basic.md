@@ -22,4 +22,5 @@ hide:
     - 最近事件：当前实例的事件信息
 
         ![概览](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/elasticsearch/images/basic01.png)
+
         ![概览](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/elasticsearch/images/basic02.png)
