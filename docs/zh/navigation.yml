@@ -701,7 +701,7 @@ nav:
           - 通用配置:
               - 首次进入: middleware/common/first-visit.md
               - 自定义角色权限说明: middleware/common/permissions.md
-              - 配置管理: middleware/common/confign.md
+              - 配置管理: middleware/common/config.md
               - 工作负载反亲和性: middleware/common/antiaffinity.md
           - Elasticsearch 搜索服务:
               - 介绍:
