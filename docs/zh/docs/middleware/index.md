@@ -14,7 +14,7 @@ DCE 5.0 针对实际应用场景，精选了一些经典的中间件来处理数
 
 <div class="grid cards" markdown>
 
-- :material-server:{ .lg .middle } __Elasticsearch 搜索服务__
+- :simple-elasticsearch:{ .lg .middle } __Elasticsearch 搜索服务__
 
     ---
 
@@ -26,7 +26,7 @@ DCE 5.0 针对实际应用场景，精选了一些经典的中间件来处理数
     - [跨节点迁移 ES 数据](./elasticsearch/user-guide/migrate-es.md)
     - [ES 故障排查](./elasticsearch/faq/common-question-es.md)
 
-- :fontawesome-brands-node:{ .lg .middle } __MinIO 对象存储__
+- :simple-minio:{ .lg .middle } __MinIO 对象存储__
 
     ---
 
@@ -42,7 +42,7 @@ DCE 5.0 针对实际应用场景，精选了一些经典的中间件来处理数
 
 <div class="grid cards" markdown>
 
-- :simple-myspace:{ .lg .middle } __MySQL 数据库__
+- :simple-mysql:{ .lg .middle } __MySQL 数据库__
 
     ---
 
@@ -53,7 +53,7 @@ DCE 5.0 针对实际应用场景，精选了一些经典的中间件来处理数
     - [查看 MySQL 日志](./mysql/user-guide/logs.md)
     - [MySQL 故障排查](./mysql/faq/quick-check.md)
 
-- :octicons-tasklist-16:{ .lg .middle } __PostgreSQL 数据库__
+- :simple-postgresql:{ .lg .middle } __PostgreSQL 数据库__
 
     ---
 
@@ -68,7 +68,7 @@ DCE 5.0 针对实际应用场景，精选了一些经典的中间件来处理数
 
 <div class="grid cards" markdown>
 
-- :material-expand-all:{ .lg .middle } __MongoDB 数据库__
+- :simple-mongodb:{ .lg .middle } __MongoDB 数据库__
 
     ---
 
@@ -78,7 +78,7 @@ DCE 5.0 针对实际应用场景，精选了一些经典的中间件来处理数
     - [创建/更新/删除 MongoDB 实例](./mongodb/user-guide/create.md)
     - [查看 MongoDB 日志](./mongodb/user-guide/logs.md)
 
-- :simple-helm:{ .lg .middle } __Redis 缓存服务__
+- :simple-redis:{ .lg .middle } __Redis 缓存服务__
 
     ---
 
@@ -93,7 +93,7 @@ DCE 5.0 针对实际应用场景，精选了一些经典的中间件来处理数
 
 <div class="grid cards" markdown>
 
-- :material-dot-net:{ .lg .middle } __RabbitMQ 消息队列__
+- :simple-rabbitmq:{ .lg .middle } __RabbitMQ 消息队列__
 
     ---
 
@@ -105,7 +105,7 @@ DCE 5.0 针对实际应用场景，精选了一些经典的中间件来处理数
     - [RabbitMQ 数据迁移](./rabbitmq/user-guide/migrate.md)
     - [RabbitMQ 自定义插件](./rabbitmq/faq/add-plugin.md)
 
-- :material-harddisk:{ .lg .middle } __Kafka 消息队列__
+- :simple-apachekafka:{ .lg .middle } __Kafka 消息队列__
 
     ---
 
