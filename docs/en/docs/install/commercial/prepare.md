@@ -32,6 +32,13 @@ Refer to [7 Nodes Mode](./deploy-arch.md#7-1-6).
 
 ## Prerequisites Check
 
+!!! note
+
+    Currently, the installer script only performs pre-checks on the bootstrap machine.
+    This mainly includes checking if the prerequisite dependencies have been installed
+    and whether the bootstrap machine meets the following requirements:
+    CPU > 10 cores, Memory > 12 GB, disk > 100 GB.
+
 ### Machine Check
 
 | **Check Item** | **Requirements**               | **Description**                                                                                                                                                                                                                                                               |

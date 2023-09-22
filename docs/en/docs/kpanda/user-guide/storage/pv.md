@@ -69,7 +69,7 @@ Click the name of the target cluster in the cluster list, and then click `Contai
 
     
 
-- Click the name of a data volume to view the basic configuration, storage pool information, labels, comments, etc. of the data volume.
+- Click the name of a data volume to view the basic configuration, StorageClass information, labels, comments, etc. of the data volume.
 
     
 

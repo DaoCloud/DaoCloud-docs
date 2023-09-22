@@ -93,11 +93,11 @@ NAME              NODEMATCH     PHASE
 10-6-234-42-sdh   10-6-234-42   Bound
 ```
 
-## View `LocalStorageNodes` and Storage Pools
+## View `LocalStorageNodes` and StorageClass
 
 HwameiStor creates a Custom Resource Definition (CRD) resource called `LocalStorageNode (LSN)`
 for each storage node. Each LSN will record the state of the storage node and all storage resources
-on that node, including storage pools, data volumes, and related configuration information.
+on that node, including StorageClass, data volumes, and related configuration information.
 
 ```console
 $ kubectl get lsn

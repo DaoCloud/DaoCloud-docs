@@ -1,110 +1,267 @@
----
-hide:
-  - toc
----
-
 # 服务接入 Sentinel 规范
 
 为了正常使用 DCE 5.0 微服务引擎提供的 [Sentinel 流量治理](../trad-ms/hosted/plugins/sentinel.md)和查看 [Sentinel 数据监控](../trad-ms/hosted/monitor/components.md)，需要将应用接入 Sentinel 控制台，并且传递应用参数时需要满足一定规范。
 
-## 微服务中引入 Sentinel 相关 SDK
+## JAVA（无框架）
 
-`pom.xml` 文件中加入相关引用，常见的 SDK 如下：
+!!! note
 
-```
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
-        </dependency>
+    - 下述操作使用于任何版本的 Sentinel SDK 版本。
+    - 使用下述方式接入服务时，使用界面创建规则并不会生效，因为客户端并无连接 Nacos 等存储获取规则，而是直接基于内存设置规则。
+    - 下述方式主要适用于 Sentinel 快速接入验证或者没有使用 Spring Cloud 框架的场景。
 
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-datasource-nacos</artifactId>
-        </dependency>
+<!-- - 代码可参考：<https://gitlab.daocloud.cn/ndx/sentinel/-/tree/main/sentinel-demo/daocloud-java> -->
 
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-core</artifactId>
-            <version>2.0.0-alpha</version>
-        </dependency>
-```
+1. 在 `pom.xml` 文件中添加依赖项。
 
-## bootstrap.yml 配置文件中注意如下设置
+    ```xml
+    <!-- 添加 sentinel 核心依赖-->
+    <dependency>
+      <groupId>com.alibaba.csp</groupId>
+      <artifactId>sentinel-core</artifactId>
+      <version>1.8.6</version>
+    </dependency>
 
-project.name 参数的格式应为：`{{nacos_namespace_id}}@@{{nacos_group}}@@{{appName}}`。
+    <!-- 添加 sentinel 控制台依赖-->
+    <dependency>
+      <groupId>com.alibaba.csp</groupId>
+      <artifactId>sentinel-transport-simple-http</artifactId>
+      <version>1.8.6</version>
+    </dependency>
+    ```
 
-```yaml
----
-project:
-  # 服务注册在sentinel中的名称, 建议与nacos注册服务名相同
-  name: ${spring.cloud.nacos.discovery.namespace}@@${spring.cloud.nacos.discovery.group}@@${spring.application.name}
-```
+2. 使用 Sentinel API 设置规则。
 
-**需要注意的是**：
+    ```java
+    private static void initFlowRules(){
+      List<FlowRule> rules = new ArrayList<>();
+      FlowRule rule = new FlowRule();
+      rule.setResource("HelloWorld");
+      rule.setGrade(RuleConstant.FLOW_GRADE_QPS);
+      // Set limit QPS to 20.
+      rule.setCount(20);
+      rules.add(rule);
+      FlowRuleManager.loadRules(rules);
+    }
+    ```
 
-- 符合此规范时，Sentinel 的治理规则会被推送到对应命名空间下，对应配置分组下的配置中心。
+3. 使用 Sentinel API 定义资源。
 
-- 如果不符合此规范，比如只有 `appName` 或者 `{{nacos_group}}@@{{appName}}`，则所有治理规则都会被推送到 `public` 命名空间下的 `SENTINEL_GROUP` 配置中心。
+    ```java
+    public static void main( String[] args ) {
+      // 配置规则
+      initFlowRules();
+   
+      while (true) {
+      // 1.5.0 版本开始可以直接利用 try-with-resources 特性
+      try (Entry entry = SphU.entry("HelloWorld")) {
+      // 被保护的逻辑
+      System.out.println("hello world");
+      } catch (BlockException ex) {
+      // 处理被流控的逻辑
+      System.out.println("blocked!");
+      }
+      }
+    }
+    ```
 
-- 第一部分 `{{nacos_namespace_id}}` 指的是 Nacos 命名空间的 **ID**，而非命名空间的名称。
+4. 添加 jvm 参数连接 Sentinel 控制台，并启动应用。
 
-- Nacos 的 `public` 命名空间对应的 ID 是空字符 “”。
+    ```shell
+    # ip:port 为 Sentinel 控制台地址
+    -Dcsp.sentinel.dashboard.server=10.6.176.50:32196
+    ```
 
-- 如果想把应用接入 `public` 命名空间，必须使用空字符串，例如 `@@A@@appA`。
+5. 打开 Sentinel 控制台，找到相应应用验证流控效果。
 
-## Sentinel 接入配置
+    ![screenshot](../images/sentinel01.png)
 
-```yaml
----
-spring:
-  cloud:
-    sentinel:
-      enabled: false
-      # 是否开启预加载, 设置为true时实例启动后自动在sentinel dashboard中展示, 设置为false, 需要实例有流量后该实例才会出现在sentinel dashboard中
-      eager: true
-      transport:
-        # 配置sentinel dashboard地址
-        dashboard: 10.6.222.24:31165
-      # 以下配置为规则存放在nacos配置中心的相关参数
-      datasource:
-        flow:
-          nacos:
-            server-addr: ${spring.cloud.nacos.config.server-addr}
-            dataId: ${spring.application.name}-flow-rules
-            groupId: ${spring.cloud.nacos.discovery.group}
-            namespace: ${spring.cloud.nacos.discovery.namespace}
-            ruleType: flow
-        degrade:
-          nacos:
-            server-addr: ${spring.cloud.nacos.config.server-addr}
-            dataId: ${spring.application.name}-degrade-rules
-            groupId: ${spring.cloud.nacos.discovery.group}
-            namespace: ${spring.cloud.nacos.discovery.namespace}
-            rule-type: degrade
-        system:
-          nacos:
-            server-addr: ${spring.cloud.nacos.config.server-addr}
-            dataId: ${spring.application.name}-system-rules
-            groupId: ${spring.cloud.nacos.discovery.group}
-            namespace: ${spring.cloud.nacos.discovery.namespace}
-            rule-type: system
-        authority:
-          nacos:
-            server-addr: ${spring.cloud.nacos.config.server-addr}
-            dataId: ${spring.application.name}-authority-rules
-            groupId: ${spring.cloud.nacos.discovery.group}
-            namespace: ${spring.cloud.nacos.discovery.namespace}
-            rule-type: authority
-        param-flow:
-          nacos:
-            server-addr: ${spring.cloud.nacos.config.server-addr}
-            dataId: ${spring.application.name}-param-flow-rules
-            groupId: ${spring.cloud.nacos.discovery.group}
-            namespace: ${spring.cloud.nacos.discovery.namespace}
-            rule-type: param-flow
+## JAVA（SpringCloud）框架
 
+接入 SpringCloud 框架的微服务时，需要符合以下要求。
+
+### project.name 名称规范
+
+应用接入 Sentinel 控制台的参数 `project.name` 必须使用如下格式：
+
+```java
+{{nacos_namespace_id}}@@{{nacos_group}}@@{{appName}}
 ```
 
 !!! note
 
-    为了正常显示 Sentinel 监控数据，应使用 Sentinel 官方 SDK v1.8.6 **以上** 的版本。如未能显示监控数据，可查看 Sentinel 的版本是否符合要求。
+    - 符合此规范时，Sentinel 的治理规则会被推送到对应命名空间下，对应配置分组中的配置中心。
+    - 第一部分 `{{nacos_namespace_id}}` 指的是 Nacos 命名空间的 **ID**，而非命名空间的名称。
+    - Nacos 的 `public` 命名空间对应的 ID 是空字符 “”。如果想把应用接入 `public` 命名空间，必须使用空字符串，例如 `@@A@@appA`。
+    - 必须符合此规范，否则会引起未知错误。
+
+### Sentinel 写入 Nacos 配置中心 dataId 的命名规范
+
+流控规则：{{appName}}-flow-rules
+
+熔断规则：{{appName}}-degrade-rules
+
+系统规则：{{appName}}-system-rules
+
+授权规则：{{appName}}-authority-rules
+
+热点规则：{{appName}}-param-rules
+
+appName 为 project.name 三段式的最后一段。
+
+### Sentinel 与 Nacos 约定的内置通讯用户
+
+```yaml
+username: skoala
+password: 98985ba0-da90-41f6-b6dc-96f2ec49d973
+```
+
+### 推荐的接入方式
+
+满足上述三项条件之后，推荐使用下述接入方式将 SpringCloud 框架的微服务接入 Sentinel。
+
+!!! note
+
+    - 满足上述三项条件后，DCE 5.0 微服务引擎并不强制要求使用某种特定的接入方式。
+    - DCE 5.0 微服务引擎完全兼容相关开源框架使用，开发者可以根据需求灵活使用合适的接入方式。
+
+<!--- 代码可参考：https://gitlab.daocloud.cn/ndx/sentinel/-/tree/main/sentinel-demo/daocloud-springcloud-->
+
+1. 在 `pom.xml` 文件中添加依赖项，
+
+    版本对应关系参考：[版本说明](https://github.com/spring-cloud-incubator/spring-cloud-alibaba/wiki/版本说明)。
+
+    ```xml
+    <!-- 添加 Sentinel 依赖-->
+    <dependency>
+      <groupId>com.alibaba.cloud</groupId>
+      <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+    </dependency>
+
+    <!-- 添加 Sentinel Nacos 数据源依赖-->
+    <dependency>
+      <groupId>com.alibaba.csp</groupId>
+      <artifactId>sentinel-datasource-nacos</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    ```
+
+1. 在项目中添加 `application.yaml` 配置文件。
+
+    ```yaml
+    nacos:
+      # Nacos 地址
+      address: 10.6.176.50:30760
+      # Nacos 配置中心命名空间
+      namespace:
+      # Nacos 配置中心分组
+      group: DEFAULT_GROUP
+
+    # 接入 sentinel 控制台的应用名
+    project:
+      name: ${nacos.namespace}@@${nacos.group}@@${spring.application.name}
+    spring:
+      application:
+        name: daocloud-springcloud
+      cloud:
+        sentinel:
+          # Sentinel Nacos 数据源
+          datasource:
+            flow:
+              nacos:
+                server-addr: ${nacos.address}
+                dataId: ${spring.application.name}-flow-rules
+                groupId: ${nacos.group}
+                namespace: ${nacos.namespace}
+                # 微服务引擎规定：Nacos 和 Sentinel 约定的用户及密码
+                username: skoala
+                password: 98985ba0-da90-41f6-b6dc-96f2ec49d973
+                ruleType: flow
+            degrade:
+              nacos:
+                server-addr: ${nacos.address}
+                # 微服务引擎规定：Sentinel 写入 Nacos 的名称约定
+                dataId: ${spring.application.name}-degrade-rules
+                groupId: ${nacos.group}
+                namespace: ${nacos.namespace}
+                # 微服务引擎规定：Nacos 和 Sentinel 约定的用户及密码
+                username: skoala
+                password: 98985ba0-da90-41f6-b6dc-96f2ec49d973
+                rule-type: degrade
+            system:
+              nacos:
+                server-addr: ${nacos.address}
+                # 微服务引擎规定：Sentinel 写入 Nacos 的名称约定
+                dataId: ${spring.application.name}-system-rules
+                groupId: ${nacos.group}
+                namespace: ${nacos.namespace}
+                # 微服务引擎规定：Nacos 和 Sentinel 约定的用户及密码
+                username: skoala
+                password: 98985ba0-da90-41f6-b6dc-96f2ec49d973
+                rule-type: system
+            authority:
+              nacos:
+                server-addr: ${nacos.address}
+                # 微服务引擎规定：sentinel 写入 nacos 的名称约定
+                dataId: ${spring.application.name}-authority-rules
+                groupId: ${nacos.group}
+                namespace: ${nacos.namespace}
+                # 微服务引擎规定：nacos 和 sentinel 约定的用户及密码
+                username: skoala
+                password: 98985ba0-da90-41f6-b6dc-96f2ec49d973
+                rule-type: authority
+            param-flow:
+              nacos:
+                server-addr: ${nacos.address}
+                # 微服务引擎规定：sentinel 写入 nacos 的名称约定
+                dataId: ${spring.application.name}-param-rules
+                groupId: ${nacos.group}
+                namespace: ${nacos.namespace}
+                # 微服务引擎规定：nacos 和 sentinel 约定的用户及密码
+                username: skoala
+                password: 98985ba0-da90-41f6-b6dc-96f2ec49d973
+                rule-type: param-flow
+
+    ```
+
+1. 编写相关的 Web API。
+
+    ```java
+    @SpringBootApplication
+    @RestController
+    @RequestMapping
+    public class App {
+        public static void main( String[] args ) {
+            SpringApplication.run(App.class, args);
+        }
+   
+        @GetMapping("/hello")
+        public String hello(){
+            return "hello world";
+        }
+    }
+    ```
+
+1. 在 Sentinel 控制台创建流控规则。
+
+    ![screenshot](../images/sentinel02.png)
+
+1. 启动应用并添加连接 Sentinel 控制台的 jvm 参数
+
+    ```java
+    -Dcsp.sentinel.dashboard.server=10.6.176.50:32196
+    ```
+
+1. 使用脚本访问设置了流控规则的 Web API。例如：
+
+    ```
+    while true; do curl http://localhost:8080/hello; done
+    ```
+
+1. Sentinel 控制台验证规则是否生效。
+
+    ![screenshot](../images/sentinel03.png)

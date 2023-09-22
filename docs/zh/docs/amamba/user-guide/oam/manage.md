@@ -16,7 +16,7 @@
 
         ![status](../../images/oam08.png)
 
-    - 应用资源：当前应用下部署的的 Kubernetes  资源的信息。
+    - 应用资源：当前应用下部署的的 Kubernetes 资源的信息。
 
         ![resources](../../images/oam09.png)
 

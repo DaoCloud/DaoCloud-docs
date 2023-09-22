@@ -22,6 +22,7 @@ DCE 5.0 提供的网络方案对当前主流的开源网络组件进行优化组
 - [Multus-underlay](../modules/multus-underlay/index.md)：基于 Multus、搭配 Macvlan + SRIOV-CNI 的多网卡方案。
 - [Spiderpool](../modules/spiderpool/index.md)：自动化管理 IP 资源
 - [Submariner](../modules/submariner/index.md): 跨集群的网络通讯方案
+- [Aliyun CNI](../modules/aliyun-terway/index.md): 运行在阿里云上的 CNI 插件，提供稳定、高性能，支持Kubernetes network policy、流控等高级特性。
 
 !!! note
 

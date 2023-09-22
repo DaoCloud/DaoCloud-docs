@@ -7,7 +7,7 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
 - Abstraction
 
     In the context of computing, an abstraction is a representation that
-    hides specifics from a consumer of [services](../kpanda/user-guide/services-routes/create-services.md)
+    hides specifics from a consumer of [services](../kpanda/user-guide/network/create-services.md)
     (a consumer being a computer program or human),
     making a system more generic and thus easily understood.
     A good example is your laptop's operating system (OS).

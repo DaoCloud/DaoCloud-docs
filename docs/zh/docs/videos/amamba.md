@@ -55,4 +55,3 @@
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/canary.mp4" preload="metadata" poster="images/amamba-canary.png"></video>
 </div>
-

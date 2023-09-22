@@ -4,6 +4,10 @@
 此外，`Multus-underlay` 还解决了 Underlay CNI 的一些通信问题。
 比如当 MacVLAN 作为 CNI 时，它无法与集群 ClusterIP 直接通信，并且它也无法直接与主机 MacVLAN Master 接口通信的（这是 Linux MacVLAN 技术的限制）。
 
+> **Warning⚠️**
+> 
+>  目前 Multus-underlay 已经被标记为 deprecated 状态, 可能在未来被移除, 目前已经不再更新
+
 ## 解决的问题
 
 - Underlay CNI 类型的 Pod 无法访问集群 ClusterIP

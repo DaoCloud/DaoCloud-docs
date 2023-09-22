@@ -111,6 +111,6 @@ The configuration information in the corresponding `value.yaml`:
 
 
 
-After the Ingress instance is deployed, you can [create Ingress rules](../../../kpanda/user-guide/services-routes/create-ingress.md)) in the corresponding namespace and select the Ingress Class for the corresponding instance to use.
+After the Ingress instance is deployed, you can [create Ingress rules](../../../kpanda/user-guide/network/create-ingress.md)) in the corresponding namespace and select the Ingress Class for the corresponding instance to use.
 
 For more information you can refer to [scope](https://kubernetes.github.io/ingress-nginx/deploy/#scope).

@@ -64,4 +64,20 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/sentinel-flow-control.mp4" preload="metadata" poster="images/skoala-flow-control.png"></video>
 </div>
 
-<!--[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }-->
+### Sentinel 熔断规则
+
+参阅[Sentinel 熔断规则](../skoala/trad-ms/hosted/services/circuit-breaker.md)文档页面。
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/circuit-breaker.mp4" preload="metadata" poster="images/skoala-circuit-breaker.png"></video>
+</div>
+
+### Sentinel 热点规则
+
+参阅[Sentinel 热点规则](../skoala/trad-ms/hosted/services/hotspot.md)文档页面。
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/sentinel-hotspot.mp4" preload="metadata" poster="images/skoala-hotspot.png"></video>
+</div>
+
+[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

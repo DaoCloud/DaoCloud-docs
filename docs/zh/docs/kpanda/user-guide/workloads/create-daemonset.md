@@ -107,13 +107,13 @@
 
 ### 服务配置
 
-为守护进程创建[服务（Service）](../services-routes/create-services.md)，使守护进程能够被外部访问。
+为守护进程创建[服务（Service）](../network/create-services.md)，使守护进程能够被外部访问。
 
 1. 点击`创建服务`按钮。
 
     ![服务配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/daemon03.png)
 
-2. 配置服务参数，详情请参考[创建服务](../services-routes/create-services.md)。
+2. 配置服务参数，详情请参考[创建服务](../network/create-services.md)。
 
     ![创建服务](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy13.png)
 

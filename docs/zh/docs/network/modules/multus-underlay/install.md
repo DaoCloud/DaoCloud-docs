@@ -2,6 +2,14 @@
 
 本页介绍如何安装 Multus-underlay 组件。
 
+> **Warning⚠️**
+> 
+> 1. 目前 Multus-underlay 已经被标记为 deprecated 状态, 可能在未来被移除, 目前已经不再更新
+> 
+> 2. Spiderpool > v0.7.0 后支持安装 Multus, 所以不需要再安装 Multus-underlay, 并且 Multus-underlay 大部分功能已经迁移到 [Spiderpool v0.7.0](../spiderpool), 请使用 [Spiderpool v0.7.0](../spiderpool)
+> 
+> 3. 现在不再通过 Multus-underlay 安装 Sriov-CNI, 而是通过 [sriov-network-operator](../sriov-network-operator) 安装, 请使用 [sriov-network-operator](../sriov-network-operator)
+
 ## 注意事项
 
 - 默认 CNI：安装 Multus-underlay 之前，需要确认当前集群是否存在默认 CNI, 比如 Calico 或者 Cilium，否则 Multus 可能会无法工作。

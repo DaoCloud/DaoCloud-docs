@@ -4,14 +4,15 @@ This page can download the offline installation packages of various versions of 
 
 ## Download
 
-| Version | Architecture | File Size |
-| --------------------------| ----- |-------- | ------- -------------------------------------------------- -------------------------------------------------- ------| ---------- | ---------- |
+| Version   | Architecture | File Size |  Package      | Checksum File                    | Update Date |
+|----------|--------------|-----------|----------------|----------|-------------|
 | v0.6.0 | AMD64 | 55.47 MB | [:arrow_down: spidernet_v0.6.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/spidernet_v0.6.0_amd64.tar) | [:arrow_down: spidernet_v0.6.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/spidernet_v0.6.0_amd64_checksum.sha512sum) | 2023-04-26 |
 | v0.5.0 | AMD64 | 51.68 MB | [:arrow_down: spidernet_v0.5.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/spidernet_v0.5.0_amd64.tar) | [:arrow_down: spidernet_v0.5.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/spidernet_v0.5.0_amd64_checksum.sha512sum) | 2023-04-25 |
 
 ## Verification
 
-In the directory where the offline installation package and verification file are downloaded, take `v0.5.0_amd64` as an example, run the following command to verify the integrity:
+In the directory where the offline installation package and verification file are downloaded,
+take `v0.5.0_amd64` as an example, run the following command to verify the integrity:
 
 ```sh
 echo "$(cat spidernet_v0.5.0_amd64_checksum.sha512sum)" | sha512sum -c

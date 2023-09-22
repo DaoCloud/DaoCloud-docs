@@ -1,53 +1,58 @@
 # Workbench Tutorials
 
+We have meticulously crafted the following video tutorials for the Workbench.
+We sincerely appreciate any feedback you may have. Thank you 🙏
+
 > If any problem with the video display, please refresh your page or try to clear your browser cache.
 
-## Pipeline management
+## Namespaces
 
-See [Pipeline Management](../amamba/user-guide/pipelines/create/custom.md) for reference.
-
-<div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-pipeline.mp4" preload="metadata" poster="images/amamba-pipeline.png"></video>
-</div>
-
-## Create namespace
-
-See [Namespace Management](../amamba/user-guide/namespace/namespace.md) for reference.
+Refer to the [Namespace Management](../amamba/user-guide/namespace/namespace.md) documentation page.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-ns.mp4" preload="metadata" poster="images/amamba-ns.png"></video>
 </div>
 
-## Create a git-based microservice app
+## Pipelines
 
-See [Create a git-based microservice app](../amamba/user-guide/wizard/create-app-git.md) for reference.
+Refer to the [Pipeline Management](../amamba/user-guide/pipeline/create/custom.md) documentation page.
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-pipeline.mp4" preload="metadata" poster="images/amamba-pipeline.png"></video>
+</div>
+
+## GitOps
+
+### Creating Microservices Applications from Git Repositories
+
+Refer to the [Creating Microservices Applications from Git Repositories](../amamba/user-guide/wizard/create-app-git.md) documentation page.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/createservice-gitrepo.mp4" preload="metadata" poster="images/amamba-git.png"></video>
 </div>
 
-## Continuous deployment based on Argo CD
+### CI/CD with Pipelines and GitOps
 
-See [Creating an Argo CD Application](../amamba/user-guide/gitops/create-argo-cd.md) for reference.
-
-<div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/gitops.mp4" preload="metadata" poster="images/amamba-gitops.png"></video>
-</div>
-
-## Progressive Delivery with Argo Rollout
-
-See [Creating a Canary Release Task](../amamba/user-guide/release/canary.md) for reference.
-
-<div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/canary.mp4" preload="metadata" poster="images/amamba-canary.png"></video>
-</div>
-
-## CICD based on Pipeline and GitOps
-
-See [CICD based on Pipeline and GitOps](../amamba/quickstart/argocd-jenkins.md) for reference。
+Refer to the [CI/CD with Pipelines and GitOps](../amamba/quickstart/argocd-jenkins.md) documentation page.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/amamba-cicd.mp4" preload="metadata" poster="images/amamba-cicd.png"></video>
 </div>
 
-[FAQ](../amamba/intro/faq.md){ .md-button .md-button--primary }
+## Canary Release
+
+### Continuous Deployment with Argo CD
+
+Refer to the [Creating Argo CD Applications](../amamba/user-guide/gitops/create-argo-cd.md) documentation page.
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/gitops.mp4" preload="metadata" poster="images/amamba-gitops.png"></video>
+</div>
+
+### Progressive Canary Release with Argo Rollout
+
+Refer to the [Creating Canary Release Tasks](../amamba/user-guide/release/canary.md) documentation page.
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/canary.mp4" preload="metadata" poster="images/amamba-canary.png"></video>
+</div>

@@ -132,7 +132,7 @@ If you want a storage component to be installed in Layer 7 load balancing mode, 
     - `storageClassName`: the storageClass Name, which will be used by the f5-ipam-controller component for common PVC objects.
       When `install f5-ipam-controller` is turned off, this option can be ignored.
 
-    - `storageSize`: the storage pool size, which will be used by the f5-ipam-controller component for common PVC objects.
+    - `storageSize`: the StorageClass size, which will be used by the f5-ipam-controller component for common PVC objects.
       This option can be ignored when `install f5-ipam-controller` is turned off.
 
 ## Configuration in cluster forwarding mode (optional)

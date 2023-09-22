@@ -56,7 +56,7 @@
   [Ingress](../../network/modules/ingress-nginx/index.md)。
 - 集群必须安装 DNS 服务，DNS 服务可以是 CoreDNS、KubeDNS、Bind 等，具体安装方法请参考
   [DNS](https://kubernetes.io/zh-cn/docs/concepts/services-networking/dns-pod-service/)。
-- 集群必须安装 LoadBalancer 组件，LoadBalancer 组件可以是 MetalLB、F5、Nginx 等，具体安装方法请参考
+- 集群必须安装 LoadBalancer 组件，LoadBalancer 组件可以是 MetalLB、F5 等，具体安装方法请参考
   [LoadBalancer](../../network/modules/metallb/index.md)。
 
 **Ingress 流程**

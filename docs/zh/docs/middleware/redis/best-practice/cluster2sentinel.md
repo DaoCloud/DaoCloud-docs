@@ -2,36 +2,26 @@
 
 Redis-shake 支持不同部署模式实例间的数据同步与迁移能力，现以 3 主 3 从集群模式实例与 3 副本哨兵模式实例的场景为例，演示不同模式之间的同步配置方法。
 
-假设 Redis 实例 A 为 3 主 3 从集群模式，实例 B 为 3 副本哨兵模式，两实例处于不同集群。现将实例 A 作为主实例，实例 B 作为从实例搭建同步结构，提供以下灾备支持：
+假设 Redis **实例 redis-a** 为 3 主 3 从集群模式，**实例 redis-b** 为 3 副本哨兵模式，两实例处于不同集群。现将 **实例 redis-a** 作为主实例，**实例 redis-b** 作为从实例搭建同步结构，提供以下灾备支持：
 
-- 正常状态下，由实例 A 对外提供服务，并持续同步数据  实例 A >> 实例 B ；
-- 当主实例 A 故障离线后，由实例 B 对外提供服务；
-- 待实例 A 恢复上线后， 实例 B >> 实例 A 回写增量数据；
-- 实例 A 数据恢复完成后，切换为初始状态，即由实例 A 提供服务，并向实例 B 持续数据同步。
-
-图例：数据同步 实例 A >> 实例 B
-
-![sync](../images/sync17.jpg)
-
-图例：数据恢复 实例 B >> 实例 A
-
-![recovery](../images/sync18.jpg)
+- 正常状态下，由 **实例 redis-a** 对外提供服务，并持续同步数据 **实例 redis-a** >> **实例 redis-b** ；
+- 当主 **实例 redis-a** 故障离线后，由 **实例 redis-b** 对外提供服务；
+- 待 **实例 redis-a** 恢复上线后，**实例 redis-b** >> **实例 redis-a** 回写增量数据；
+- **实例 redis-a** 数据恢复完成后，切换为初始状态，即由 **实例 redis-a** 提供服务，并向 **实例 redis-b** 持续数据同步。
 
 !!! note
 
-    由上图可见，数据传输的方式与传输源端实例有关，在`数据同步`中源端实例 A 为集群模式，需要为每个 leader 节点分别部署一个 Redis-shake（Redis-shake-recovery）；在`数据恢复`中源端实例 B 为哨兵模式，则仅需部署一个 Redis-shake（Redis-shake-sync），
+    数据传输的方式与传输源端实例有关，在`数据同步`中源端 **实例 redis-a** 为集群模式，需要为 3 个 leader 副本分别部署一个 Redis-shake（Redis-shake-sync）；在`数据恢复`中源端 **实例 redis-b** 为哨兵模式，则仅需部署一个 Redis-shake（Redis-shake-recovery）。
 
 ## 数据同步部署
 
-### 为 **实例 A** 配置服务
+图例：数据同步 **实例 redis-a** >> **实例 redis-b**
 
-如果源端实例处于 DCE 5.0 的集群中，可在`数据服务` - `Redis` - `解决方案` - `跨集群主从同步`中开启方案，将自动完成服务配置工作。
+![sync](../images/sync17.jpg)
 
-![svc](../images/sync17.png)
+### 为 **实例 redis-a** 配置服务
 
-如果源端实例处于第三方集群上，则需要手工完成服务配置，配置方法如下文：
-
-为 Redis 实例的每一个 Leader Pod 创建一个 `Nodeport` 服务，用于 Redis-Shake 的数据同步访问。本例中需要为实例 A 的 3 个 Leader Pod 分别创建服务，下面以 Pod `redis-a-leader-0` 为例，为其创建服务：
+为 Redis 实例的每一个 Leader Pod 创建一个 `Nodeport` 服务，用于 Redis-Shake 的数据同步访问。本例中需要为 **实例 redis-a** 的 3 个 Leader Pod 分别创建服务，下面以 Pod `redis-a-leader-0` 为例，为其创建服务：
 
 1. 进入`容器管理` - `源端实例所在集群` - `有状态工作负载`：选择工作负载 `redis-a-leader`，为其创建一个服务，命名为 `redis-a-leader-svc-0`，访问类型为 `Nodeport`，容器端口和服务端口均为 6379。
 
@@ -43,7 +33,6 @@ Redis-shake 支持不同部署模式实例间的数据同步与迁移能力，�
     app.kubernetes.io/component: redis
     app.kubernetes.io/managed-by: redis-operator
     app.kubernetes.io/name: redis-a
-    app.kubernetes.io/part-of: redis-failover
     role: leader
     # 注意 pod-name 一定要选择正确的 leader pod 名称
     statefulset.kubernetes.io/pod-name: redis-a-leader-0
@@ -53,11 +42,19 @@ Redis-shake 支持不同部署模式实例间的数据同步与迁移能力，�
 
 重复执行以上操作，为 `redis-a-leader-1` `redis-a-leader-2` 分别创建服务。
 
+### 为 **实例 redis-b** 配置服务
+
+参考`图例：数据同步 **实例 redis-a** >> **实例 redis-b**` 可见，**实例 redis-b** 与 `redis-shake` 处于同一集群，因此为 **实例 redis-b** 创建一个 ClusterIP 服务即可,端口指向 6379，如下图所示：
+
+![svc](../images/sync23.png)
+
+![svc](../images/sync24.png)
+
 ### Redis-shake 部署
 
-Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上，因此，本例中为了实现数据同步，需要在目标端部署redis-shake，配置方式如下。
+Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群及命名空间上，因此，本例中为了实现数据同步，需要在 **实例 redis-b** 所在集群部署 redis-shake，配置方式如下。
 
-注意，在集群模式下，Redis-shake 要求与源端 Redis 实例的 Leader Pod 形成一对一关系（请参考图例：数据同步 实例 A >> 实例 B），因此这里需要部署 3 个独立的 Redis-shake。以 `redis-a-leader-0` 为例，创建 `Redis-shake-sync-0`：
+注意，在集群模式下，Redis-shake 要求与源端 Redis 实例的 Leader Pod 形成一对一关系（请参考图例：数据同步 **实例 redis-a** >> **实例 redis-b**），因此这里需要部署 3 个独立的 Redis-shake。以 `redis-a-leader-0` 为例，创建 `Redis-shake-sync-0`：
 
 #### 1. 创建配置项
 
@@ -65,7 +62,7 @@ Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 
 ![conf](../images/sync05.png)
 
-- source.address：源端实例 `redis-a` 的 `redis-a-leader-svc-0` 服务地址：
+- source.address：源端 **实例 redis-a** 的 `redis-a-leader-svc-0` 服务地址：
 
     ```toml
     address = "10.233.109.145:32283"
@@ -79,16 +76,12 @@ Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 
     ![svc](../images/sync06.png)
 
-- 目标端实例访问地址，此处采用实例 `redis-b` 的默认 Headless 服务 `rfr-redis-b` 的地址：
+- 目标端实例访问地址，采用上一步为 **实例 redis-b** 创建的 ClusterIP 服务（端口 6379）作为目标端的访问地址：
 
     ```toml
-    address = "rfr-redis-b:6379"
+    # 注意：由于 headless 服务可直接连接工作负载，因此可以通过该服务访问工作负载默认端口 6379。
+    address = "10.233.16.241:6379"
     ```
- 
-    该服务信息可在`集群管理` - `目标端所在集群` - `工作负载` - `访问方式`中查看。类似下图所示页面
-
-    ![conf](../images/sync22.png)
-
 
 - 目标端实例的访问密码，可在`数据服务`模块下的 Redis 实例概览页获取该信息:
 
@@ -105,7 +98,7 @@ Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 
 #### 2. 创建 Redis-shake
 
-1. 打开`应用工作台`，选择`向导`-`基于容器镜像`，创建一个应用 `Redis-shake-sync-0`：
+1. 打开`应用工作台`，选择`向导` -> `基于容器镜像`，创建一个应用 `Redis-shake-sync-0`：
 
     ![sync](../images/sync07.png)
 
@@ -136,7 +129,7 @@ Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上�
         /etc/sync
         ```
 
-    - `高级设置` -` 数据存储`：添加一个临时路径，容器路径必须为：
+    - `高级设置` -`数据存储`：添加一个临时路径，读写权限为`读写`，容器路径必须为：
 
         ```yaml
         /data
@@ -152,21 +145,27 @@ Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 
 ## 数据恢复
 
-当源端实例 **实例 A** 发生故障离线后，将由目标端 **实例 B** 提供服务，该过程必然产生新增数据。**实例 A** 恢复上线后，首先需要从 **实例 B** 恢复增量数据，因 **实例 A** 为集群模式，因此需要在 **源端实例所在集群** 部署 3 个 redis-shake 实例，实现 **实例 B >> 实例 A** 的数据回传，配置方式如下。
+图例：数据恢复 **实例 redis-b** >> **实例 redis-a**
+
+![recovery](../images/sync18.jpg)
+
+当源端实例 **实例 redis-a** 发生故障离线后，将由目标端 **实例 redis-b** 提供服务，该过程必然产生新增数据。**实例 redis-a** 恢复上线后，首先需要从 **实例 redis-b** 恢复增量数据，此时 **实例 redis-a** 与 **实例 redis-b** 角色互换， **实例 redis-b** 作为数据源向 **实例 redis-a** 同步数据。
+
+参考`图例：数据恢复  **实例 redis-b** >> 实例 redis-a`，因 **实例 redis-a** 为集群模式，需要在其所在集群部署 3 个 redis-shake 实例，实现 **实例 redis-b** >>  **实例 redis-a** 的数据回传，配置方式如下。
 
 !!! note
 
-    源端实例上线前，请先关闭运行在 **目标端实例所在集群** 的 3 个 Redis-shake 实例，避免发生错误的数据同步覆盖掉新增数据。
+    **实例 redis-a** 上线前，请先关闭用于实例 **redis-a** >> **实例 redis-b** 数据同步的 3 个 Redis-shake 实例(`edis-shake-sync-0`、`edis-shake-sync-1`、`edis-shake-sync-2`)，避免发生错误的数据同步覆盖掉新增数据。
 
-### 为 **实例 B** 配置服务
+### 为 **实例 redis-b** 配置服务
 
-在`数据服务` - `Redis` - `实例 B` - `解决方案` - `跨集群主从同步`中开启方案，如果 **实例 B** 不在 DCE 5.0 下集群，执行以下操作。
+恢复流程中 **实例 redis-b** 为数据源，因此需要为该实例创建一个 Nodeport 服务，用于 Redis-shake 的跨集群访问。
 
-此时的数据源 **实例 B** 为哨兵模式，因此仅需要创建 1 个服务，以下为创建过程 ：
+此时的数据源 **实例 redis-b** 为哨兵模式，因此仅需要创建 1 个服务，以下为创建过程 ：
 
-1. 进入`容器管理` - `源端实例所在集群` - `有状态工作负载`：选择工作负载 `redis-b`，创建一个 `Nodeport` 服务，容器端口和服务端口均为 6379
+1. 进入`容器管理` - `源端实例所在集群` - `有状态工作负载`：选择工作负载 `redis-b`，创建一个 `Nodeport` 服务 `redis-b-recovery-svc`，容器端口和服务端口均为 6379
 
-    ![svc](../images/sync03.png)
+    ![svc](../images/sync25.png)
 
 2. 查看该服务。并确定工作负载选择器包含以下标签
    
@@ -189,42 +188,42 @@ Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 
 在`容器管理` - `目标端实例所在集群` - `配置与存储` - `配置项`为 Redis-shake 实例创建配置项 `redis-sync`。导入文件 `sync.toml` （文件内容见`附录`），并注意需要修改以下内容：
 
-![conf](../images/sync15.jpg)
+![conf](../images/sync15.png)
 
-- source.address：上一步骤创建的源端 `redis-b` 的服务地址：
+- source.address：此时的源端为 **实例 redis-b** ，填写上一步骤为该实例创建的服务地址：
 
     ```toml
     address = "10.233.109.145:32283"
     ```
     
-- 源端实例的访问密码：可在 Redis 实例的概览页获取该信息：
+- 源端实例的访问密码：可在 **实例 redis-b** 的概览页获取该信息：
 
     ```toml
     password = "3wPxzWffdn" # keep empty if no authentication is required
     ```
     ![conf](../images/sync16.png)
 
-- 目标端实例访问地址，此处需要填写目标端实例 redis-b 的指向端口 6379 的 clusterIP 服务，这里使用 redis-a-leader 的地址：
+- 目标端实例访问地址，此时的目标端为 **实例 redis-a** ，这里可以采用系统默认创建的服务 `redis-a-leader`（端口：6379），无需创建：
 
     ```toml
     address = "172.30.120.202:6379"
     ```
 
-    该配置可在`集群管理` - `目标端所在集群` - `工作负载` - `访问方式` 中查看。如下图所示
+    该配置可在`集群管理` - `redis-a 所在集群` - `工作负载` - `访问方式` 中查看。如下图所示：
 
     ![conf](../images/sync18.png)
 
-    点击服务名称，进入服务详情，可见 ClusterIP 地址
+    点击服务名称，进入服务详情，可见 ClusterIP 地址：
 
     ![conf](../images/sync19.png)
 
-- 目标端实例的访问密码，可在`数据服务`模块下的 Redis 实例概览页获取该信息:
+- 目标端实例的访问密码，可在 **实例 redis-a** 的概览页获取该信息:
 
     ```toml
-    password = "3wPxzWffdn" # keep empty if no authentication is required
+    password = "3wPxzWffss" # keep empty if no authentication is required
     ```
 
-- 目标端类型需设置为 `cluster`：
+- 此时数据接收端为 **实例 redis-b**，因此目标端类型需设置为 `cluster`：
 
     ```toml
     [target]
@@ -233,7 +232,7 @@ Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 
 #### 2. 创建 Redis-shake
 
-1. 打开`应用工作台`，选择`向导`-`基于容器镜像`，创建一个应用 `Redis-shake-sync`：
+1. 打开`应用工作台`，选择`向导` -> `基于容器镜像`，创建一个应用 `Redis-shake-recovery`：
 
     ![sync](../images/sync07.png)
 
@@ -274,22 +273,17 @@ Redis-shake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 
 3. 点击`确定`，完成 Redis-shake 创建。
 
-
 完成 Redis-shake 的创建后，实际就已经开始 Redis 实例间的同步，此时可通过 `redis-cli` 工具验证同步，这里就不做赘述。
-
 
 ## 复原主从关系
 
-如需复原初始的主从同步关系 **实例 A >> 实例 B**，需在`容器管理`中停止当前运行在 **实例 A** 所在集群的 `Redis-shake-sync` 实例，重新启动目标端实例所在集群中的 3 个 `Redis-shake` 实例，即可重建初始主从关系。
+如需复原初始的主从同步关系 **实例 redis-a** >> **实例 redis-b**，需在`容器管理`中停止当前运行在 **实例 redis-a** 所在集群的 `Redis-shake-sync` 实例，重新启动目标端实例所在集群中的 3 个 `Redis-shake` 实例，即可重建初始主从关系。
 
 ![sync](../images/sync11.png)
 
-
 ## 附录
 
-sync.toml
-
-??? note “请点击查看配置文件”
+??? note “请点击查看配置文件” title="sync.toml"
 
     ```toml
     type = "sync"

@@ -26,7 +26,7 @@ spec:
    ...
 ```
 
-Create `LoadBalancer Service`, please refer to: [Create Service](../../../kpanda/user-guide/services-routes/create-services.md).![metallb ip pool](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/metallb-use-1.png)
+Create `LoadBalancer Service`, please refer to: [Create Service](../../../kpanda/user-guide/network/create-services.md).![metallb ip pool](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/metallb-use-1.png)
 
 ### Specify the IP address
 

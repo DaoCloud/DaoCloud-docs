@@ -557,7 +557,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Ondat v2.9 Cloud Native Block Storage Platform Launch](https://www.ondat.io/blog/ondat-launches-version-2.9)
 
-     The main new features of this version: support for resizing volumes with zero downtime, control the type of storage used by workloads through storage pools, and allow the topology of volumes to be defined.
+     The main new features of this version: support for resizing volumes with zero downtime, control the type of storage used by workloads through StorageClass, and allow the topology of volumes to be defined.
 
 - [Oracle Kubernetes Release Container Engine for Kubernetes Support for Virtual Node Pools and Virtual Nodes](https://docs.oracle.com/en-us/iaas/releasenotes/changes/c3688114-0104-40b0-aece-67169868f990/)
 

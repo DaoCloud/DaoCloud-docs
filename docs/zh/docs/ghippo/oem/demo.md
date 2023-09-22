@@ -1,5 +1,7 @@
 # gproduct-demo
 
+本页说明如何搭建 GProduct Demo 环境。
+
 ## 搭建环境
 
 ```sh

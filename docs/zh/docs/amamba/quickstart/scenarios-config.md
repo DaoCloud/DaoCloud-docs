@@ -126,6 +126,8 @@ resources:
 > 参照场景 1 的 agent 配置
 
 ### 注意事项
-- 当jenkins pod因为OOM重启时，建议加大master的内存。为了保证Qos，建议master的内存和cpu的request和limit保持一致。
-- 当流水线模块接口调用存在超时情况时，建议加大master的CPU。
-- 当master 内存配置超过`4G`时，建议修改`JavaOpts`中的`-XX:+UseConcMarkSweepGC`为`-XX:+UseG1GC`。
+
+- 当 jenkins pod 因为 OOM 重启时，建议加大 master 的内存。
+  为了保证 QoS，建议 master 的内存和 cpu 的 request 和 limit 保持一致。
+- 当流水线模块接口调用存在超时情况时，建议加大 master 的CPU。
+- 当 master 内存配置超过 `4G` 时，建议修改 `JavaOpts` 中的 `-XX:+UseConcMarkSweepGC` 为 `-XX:+UseG1GC`。

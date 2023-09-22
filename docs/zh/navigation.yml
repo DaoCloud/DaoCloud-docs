@@ -10,6 +10,7 @@ nav:
           - 云原生词汇: dce/terms.md
           - K8s 认证服务商: dce/kcsp.md
           - DCE 5.0 Release Notes:
+              - 20230831 版本发布: dce/dce-rn/20230831.md
               - 20230731 版本发布: dce/dce-rn/20230731.md
               - 20230630 版本发布: dce/dce-rn/20230630.md
               - 20230531 版本发布: dce/dce-rn/20230531.md
@@ -42,7 +43,7 @@ nav:
               - Oracle Linux R9/R8 U1 操作系统: install/os-install/oracleLinux-install-dce5.0.md
               - TencentOS Server 3.1 操作系统: install/os-install/TencentOS-install-dce5.0.md
               - 其他 Linux 操作系统: install/os-install/otherlinux.md
-          - Release Notes: install/release-notes.md
+          - 安装器 Release Notes: install/release-notes.md
       - 容器管理:
           - 介绍:
               - 什么是容器管理: kpanda/intro/index.md
@@ -101,9 +102,9 @@ nav:
               - 管理 Helm 应用: kpanda/user-guide/helm/helm-app.md
               - 管理 Helm 仓库: kpanda/user-guide/helm/helm-repo.md
           - 容器网络:
-              - 创建服务: kpanda/user-guide/services-routes/create-services.md
-              - 创建路由: kpanda/user-guide/services-routes/create-ingress.md
-              - 网络策略: kpanda/user-guide/services-routes/network-policy.md
+              - 创建服务: kpanda/user-guide/network/create-services.md
+              - 创建路由: kpanda/user-guide/network/create-ingress.md
+              - 网络策略: kpanda/user-guide/network/network-policy.md
           - 自定义资源: kpanda/user-guide/custom-resources/create.md
           - 容器存储:
               - 数据卷声明: kpanda/user-guide/storage/pvc.md
@@ -141,20 +142,19 @@ nav:
               - 漏洞扫描: kpanda/user-guide/security/hunter.md
               - 离线升级安全管理模块: kpanda/user-guide/security/offline-upgrade-dowl.md
           - 权限管理:
-              - 权限说明: kpanda/user-guide/permissions/permission-brief.md
+              - 权限体系介绍: kpanda/user-guide/permissions/permission-brief.md
               - 集群和命名空间授权: kpanda/user-guide/permissions/cluster-ns-auth.md
           - GPU管理:
-              - NVIDIA vGPU :
+              - NVIDIA vGPU:
                 - 安装 Nvidia GPU 驱动: kpanda/user-guide/gpu/vgpu_driver.md
-                - 安装 vGPU Addon : kpanda/user-guide/gpu/vgpu_addon.md
-                - 应用使用 vGPU : kpanda/user-guide/gpu/vgpu_user.md
-              - NVIDIA MIG :
-                - NVIDIA多实例GPU(MIG) 概述: kpanda/user-guide/gpu/mig_index.md
+                - 安装 vGPU Addon: kpanda/user-guide/gpu/vgpu_addon.md
+                - 应用使用 vGPU: kpanda/user-guide/gpu/vgpu_user.md
+              - NVIDIA MIG:
+                - NVIDIA多实例GPU(MIG)概述: kpanda/user-guide/gpu/mig_index.md
                 - GPU Operator 创建 MIG: kpanda/user-guide/gpu/create_mig.md
                 - 应用使用 MIG GPU: kpanda/user-guide/gpu/mig_usage.md
                 - MIG 相关命令: kpanda/user-guide/gpu/mig_command.md
               - GPU 配额管理: kpanda/user-guide/gpu/vgpu_quota.md
-
           - 最佳实践:
               - 对 ETCD 进行备份还原: kpanda/best-practice/etcd-backup.md
               - 对 MySQL 应用及数据进行跨集群备份恢复: kpanda/best-practice/backup-mysql-on-nfs.md
@@ -188,7 +188,9 @@ nav:
                   - ghippo/user-guide/access-control/idprovider.md
                   - LDAP: ghippo/user-guide/access-control/ldap.md
                   - OIDC: ghippo/user-guide/access-control/oidc.md
-              - 接入管理: ghippo/user-guide/access-control/docking.md
+              - 接入管理:
+                  - ghippo/user-guide/access-control/docking.md
+                  - Webhook: ghippo/user-guide/access-control/webhook.md
           - 工作空间与层级:
               - ghippo/user-guide/workspace/ws-folder.md
               - 创建和删除工作空间: ghippo/user-guide/workspace/workspace.md
@@ -217,11 +219,11 @@ nav:
               - 访问密钥: ghippo/user-guide/personal-center/accesstoken.md
               - 语言设置: ghippo/user-guide/personal-center/language.md
           - 各模块权限说明:
-              - 容器管理权限说明: kpanda/user-guide/permissions/permission-brief.md
+              - 容器管理权限说明: ghippo/permissions/kpanda.md
               - 微服务引擎权限说明: ghippo/permissions/skoala.md
               - 应用工作台权限说明: ghippo/permissions/amamba.md
               - 服务网格权限说明: ghippo/permissions/mspider.md
-              - 数据服务权限说明: ghippo/permissions/mcamel.md
+              - 中间件服务权限说明: ghippo/permissions/mcamel.md
           - 最佳实践:
               - 工作空间最佳实践: ghippo/user-guide/workspace/ws-best-practice.md
               - 工作空间绑定命名空间: ghippo/user-guide/workspace/ws-to-ns.md
@@ -237,7 +239,6 @@ nav:
                   - OEM OUT: ghippo/oem/oem-out.md
                   - 定制 DCE 5.0 对接 IdP: ghippo/oem/custom-idp.md
                   - Keycloak 自定义 IdP: ghippo/oem/keycloak-idp.md
-                  - Webhook 消息通知: ghippo/oem/webhook.md
       - 可观测性:
           - 介绍:
               - 可观测性: insight/intro/index.md
@@ -390,7 +391,8 @@ nav:
               - 基于 Argo Rollout 实现渐进式灰度发布: amamba/quickstart/argocd-rollout.md
               - 在指定的节点上运行流水线: amamba/quickstart/pipeline-on-node.md
               - Jenkins 场景配置: amamba/quickstart/scenarios-config.md
-              - 在 Jenkins 中使用自定义工具链: amamba/user-guide/tools/jenkins-custom.md
+              - 在 Jenkins 中使用自定义工具链: amamba/quickstart/jenkins-custom.md
+              - Jenkins 高可用方案: amamba/quickstart/jenkins-HA.md
       - 多云编排:
           - 介绍:
               - 什么是多云编排: kairship/intro/index.md
@@ -476,7 +478,7 @@ nav:
                   - 查看注册配置中心: skoala/trad-ms/hosted/check-registry.md
                   - 删除注册配置中心: skoala/trad-ms/hosted/delete-registry.md
                   - 微服务命名空间: skoala/trad-ms/hosted/namespace.md
-                  - 微服务列表:
+                  - 服务列表:
                       - 介绍: skoala/trad-ms/hosted/services/intro.md
                       - 查看微服务详情: skoala/trad-ms/hosted/services/check-details.md
                       - 流量治理:
@@ -514,6 +516,8 @@ nav:
               - 接入 Sentinel 集群流控能力: skoala/standard/flow-control.md
           - 最佳实践:
               - 示例应用体验微服务治理: skoala/best-practice/use-skoala-01.md
+              - 在云原生微服务中使用插件:
+                  - JWT 插件: skoala/best-practice/plugins/jwt.md
               - 微服务网关 JWT 功能: skoala/best-practice/jwt.md
               - 微服务网关接入认证服务器: skoala/best-practice/auth-server.md
               - 网关 API 策略: skoala/best-practice/gateway02.md
@@ -689,9 +693,9 @@ nav:
               - 介绍: network/modules/submariner/index.md
               - 安装: network/modules/submariner/install.md
               - 使用说明: network/modules/submariner/usage.md
-      - 数据服务:
+      - 中间件数据服务:
           - 介绍:
-              - 什么是数据服务: middleware/index.md
+              - 什么是中间件数据服务: middleware/index.md
               - 版本适配: middleware/compatibility.md
               - 权限设计说明: middleware/permission.md
           - 通用配置:
@@ -792,7 +796,7 @@ nav:
                   - 删除 Redis 实例: middleware/redis/user-guide/delete.md
                   - 查看 Redis 日志: middleware/redis/user-guide/logs.md
               - 跨集群数据同步:
-                  - 数据同步介绍: middleware/redis/best-practice/disaster-tolerance.md
+                  - 数据同步介绍: middleware/redis/best-practice/index.md
                   - 集群模式 to 集群模式: middleware/redis/best-practice/cluster2cluster.md
                   - 哨兵模式 to 哨兵模式: middleware/redis/best-practice/sentinel2sentinel.md
                   - 集群模式 to 哨兵模式: middleware/redis/best-practice/cluster2sentinel.md
@@ -926,15 +930,24 @@ nav:
               - 功能特性: kant/intro/features.md
               - 产品优势: kant/intro/benefits.md
               - 应用场景: kant/intro/use-cases.md
-              - 边缘节点接入要求: kant/intro/join-rqmt.md
               - 基本概念: kant/intro/concepts.md
+          - 边缘节点:
+              - 边缘节点概述: kant/user-guide/node/index.md
+              - 边缘节点接入要求: kant/user-guide/node/join-rqmt.md
+              - 批量注册边缘节点: kant/user-guide/node/batch-registration.md
+              - 纳管边缘节点: kant/user-guide/node/managed-node.md
+              - 批量升级边缘节点: kant/user-guide/node/batch-upgrade.md
           - 边云消息:
-              - 边云消息概述: kant/user-guide/route/overview.md
+              - 边云消息概述: kant/user-guide/route/index.md
               - 创建消息路由: kant/user-guide/route/create-route.md
       - 虚拟机容器:
           - 介绍:
               - 简介: virtnest/intro/index.md
               - Release Notes: virtnest/intro/release-notes.md
+          - 快速入门:
+              - 创建虚拟机: virtnest/quick-start/index.md
+              - 通过 NodePort 访问虚拟机: virtnest/quick-start/nodeport.md
+              - Rook Ceph 部署流程: virtnest/quick-start/rook-ceph.md
       - 云原生安全:
           - 介绍: security/index.md
           - Falco:
@@ -963,8 +976,8 @@ nav:
   - 下载中心:
       - DaoCloud Enterprise 5.0:
           - 索引列表: download/index.md
-          - 下载 DCE 5.0 社区版: download/free/dce5-installer-v0.9.0.md
-          - 下载 DCE 5.0 商业版: download/business/dce5-installer-v0.9.0.md
+          - 下载 DCE 5.0 社区版: download/free/dce5-installer-v0.11.0.md
+          - 下载 DCE 5.0 商业版: download/business/dce5-installer-v0.11.0.md
           - 子模块和插件:
               - 下载 Addon 离线包: download/addon/v0.9.0.md
               - 下载全局管理: download/modules/ghippo.md
@@ -978,10 +991,12 @@ nav:
               - 下载镜像仓库: download/modules/kangaroo.md
               - 下载运营管理: download/modules/gmagpie.md
               - 下载多云编排: download/modules/kairship.md
+              - 下载云边协同: download/modules/kant.md
   - 免费体验:
       - 体验社区版: trial/index.md
   - 博客:
       - 博文索引: blogs/index.md
+      - 202309 | 上海 Kubernetes 贡献者峰会: blogs/230911-kubecon-contributor.md
       - 202308 | K8s 本地开发工具比较: blogs/230824-tools.md
       - 202308 | K8s 1.28 震撼发布: blogs/230815-k8s1.28.md
       - 202308 | K8sGPT 赋能 K8s: blogs/230808-k8sgpt.md

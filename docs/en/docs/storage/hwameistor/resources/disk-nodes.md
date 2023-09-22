@@ -47,7 +47,7 @@ spec:
 ...
 ```
 
-To add a storage node, create a LocalStorageClaim resource to build a storage pool for the new storage node. By doing this, the node will be successfully added to the HwameiStor system. Follow the steps below:
+To add a storage node, create a LocalStorageClaim resource to build a StorageClass for the new storage node. By doing this, the node will be successfully added to the HwameiStor system. Follow the steps below:
 
 ```console
 $ kubectl apply -f - <<EOF
@@ -65,7 +65,7 @@ EOF
 
 ### 3. Post-check
 
-After completing the above steps, check the status of the new storage node and its storage pool to ensure the normal operation of the node and HwameiStor system. Follow the steps below:
+After completing the above steps, check the status of the new storage node and its StorageClass to ensure the normal operation of the node and HwameiStor system. Follow the steps below:
 
 ```shell
 kubectl get localdisknode k8s-worker-2 -o yaml

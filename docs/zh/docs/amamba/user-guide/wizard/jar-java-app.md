@@ -41,7 +41,7 @@
     - 访问类型：支持通过 clusterIP 仅允许在集群内访问该应用，或者通过 NodePort 允许在集群外部访问，或者通过负载均衡器进行访问。
     - 端口配置：根据实际业务场景填写需要暴露的端口号。
 
-        > 有关服务配置的更多详细说明，可参考[创建服务](../../../kpanda/user-guide/services-routes/create-services.md)。
+        > 有关服务配置的更多详细说明，可参考[创建服务](../../../kpanda/user-guide/network/create-services.md)。
 
     - 资源限制：CPU 和内存配额不得超出应用所在的命名空间在当前工作空间中的剩余资源。
 

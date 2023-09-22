@@ -30,7 +30,7 @@ spec:
 
   loadBalancer:
  
-    # NodePort(default), metallb, cloudLB (Cloud Controller)
+    # NodePort(default), metallb, cloudLB (Cloud Controller 暂不支持)
     type: metallb
     istioGatewayVip: xx.xx.xx.xx/32 # 当 loadBalancer.type 是 metallb 时必填，为 DCE 提供 UI 和 OpenAPI 访问权限
     insightVip: xx.xx.xx.xx/32 # 别丢弃 /32，当 loadBalancer.type 是 metallb 时必填，用作 global 集群的 Insight 数据采集入口，子集群的 insight-agent 可以向这个 VIP 报告数据
@@ -44,22 +44,26 @@ spec:
       ansibleUser: "root"
       ansiblePass: "dangerous"
       #ansibleSSHPort: "22"
+      #ansibleExtraArgs: ""  # "ansible_shell_executable='/bin/sh'  ansible_python_interpreter='/usr/local/bin/python'" , format: "k='v'  k1='v1'  k2='v2' "
     - nodeName: "g-master2"
       ip: xx.xx.xx.xx
       ansibleUser: "root"
       ansiblePass: "dangerous"
       #ansibleSSHPort: "22"
+      #ansibleExtraArgs: ""
     - nodeName: "g-master3"
       ip: xx.xx.xx.xx
       ansibleUser: "root"
       ansiblePass: "dangerous"
       #ansibleSSHPort: "22"
+      #ansibleExtraArgs: ""
   workerNodes:
     - nodeName: "g-worker1"
       ip: xx.xx.xx.xx
       ansibleUser: "root"
       ansiblePass: "dangerous"
       #ansibleSSHPort: "22"
+      #ansibleExtraArgs: ""
       nodeTaints:                       # 对于 7 节点模式：至少 3 个 worker 节点应打污点（仅 ES 节点），如果使用外接 ES 则不需要添加该污点
        - "node.daocloud.io/es-only=true:NoSchedule"
       # nodeLabels:
@@ -69,6 +73,7 @@ spec:
       ansibleUser: "root"
       ansiblePass: "dangerous"
       #ansibleSSHPort: "22"
+      #ansibleExtraArgs: ""
       nodeTaints:
        - "node.daocloud.io/es-only=true:NoSchedule"
       # nodeLabels:
@@ -78,6 +83,7 @@ spec:
       ansibleUser: "root"
       ansiblePass: "dangerous"
       #ansibleSSHPort: "22"
+      #ansibleExtraArgs: ""
       nodeTaints:
        - "node.daocloud.io/es-only=true:NoSchedule"
       # nodeLabels:
@@ -226,6 +232,16 @@ spec:
   #  criProvider: containerd
   #  criVersion only take effect in online mode, don't set it in offline mode
   #  criVersion: 1.6.8
+
+  # renewCerts: 集群证书续期
+  #  # there are only 2 modes of renew certs: `onetime` or `cyclical`, default value is `cyclical`.
+  #  # 1. When mode is set to `cyclical`, certificate renewal will be performed on a timer in a cyclical manner.
+  #  mode: cyclical
+
+  #  # 2. When mode is set to `onetime`, certificate renewal will be completed at once, and you can set the validity days of the certificate.
+  #  mode: onetime
+  #  # valid days can be set when in `onetime` mode, default valid days is 3650.
+  #  oneTimeValidDays: 3650
 ```
 
 ## 关键字段
@@ -248,12 +264,13 @@ spec:
 | masterNodes.ansibleUser                                      | 节点账号                                                     | -                                                       |
 | masterNodes.ansiblePass                                      | 节点密码                                                     | -                                                       |
 | masterNodes.ansibleSSHPort                                   | ssh 的端口，默认为22                                         | 22                                                      |
+| masterNodes.ansibleExtraArgs                                 | 指定 ansible 主机清单参数                                    | -                                                       |
 | workerNodes                                                  | Global 集群：Worker 节点列表，包括 nodeName/ip/ansibleUser/ansiblePass 几个关键字段 | -                                                       |
 | privateKeyPath                                               | kuBean 部署集群的 SSH 私钥文件路径，如果填写则不需要定义 ansibleUser、ansiblePass | -                                                       |
 | k8sVersion                                                   | kuBean 安装集群的 K8s 版本必须跟 KuBean 和离线包相匹配       | -                                                       |
 | loadBalancer.insightVip                                      | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 GLobal 集群的 insight 数据收集入口使用，子集群的 insight-agent 可上报数据到这个 VIP | -                                                       |
 | loadBalancer.istioGatewayVip                                 | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 DCE 的 UI 界面和 OpenAPI 访问入口 | -                                                       |
-| loadBalancer.type                                            | 所使用的 LoadBalancer 的模式，物理环境用 metallb，POC 用 NodePort，公有云和 SDN CNI 环境用 cloudLB | NodePort (default)、metallb、cloudLB (Cloud Controller) |
+| loadBalancer.type                                            | 所使用的 LoadBalancer 的模式，物理环境用 metallb，POC 用 NodePort，公有云和 SDN CNI 环境用 cloudLB（暂时还未未支持 cloudLB 模式） | NodePort (default)、metallb、cloudLB (Cloud Controller) |
 | fullPackagePath                                              | 解压后的离线包的路径，离线模式下该字段必填                   | -                                                       |
 | addonPackage.path                                            | 应用商店 addon 包本地文件系统路径                            | -                                                       |
 | imagesAndCharts                                              | 镜像仓库和 Chart仓库源                                       | -                                                       |
@@ -301,10 +318,14 @@ spec:
 | externalMiddleware.elasticsearch.insight.anonymous           | insight 所使用的外置 Elasticsearch 的匿名访问，取值 true，false，配置为 true时不应再填访问凭证 | false                                                   |
 | externalMiddleware.elasticsearch.insight.username            | insight 所使用的外置 Elasticsearch 的访问用户名              | -                                                       |
 | externalMiddleware.elasticsearch.insight.password            | insight 所使用的外置 Elasticsearch 的访问密码                | -                                                       |
+| renewCerts                                                   | 集群证书续期                                                 | -                                                       |
+| renewCerts.mode                                              | 证书续期的两种模式，支持 cyclical、onetime                   | -                                                       |
 
 ## 精简配置说明
 
 **离线模式下采用 builtin 方式安装**
+
+builtin 模式意味着所需的第三方软件（如 chartMusem 、Minio、Docker registry）将由安装器进行部署并提供 DCE 5.0 平台使用。
 
 ```yaml
 apiVersion: provision.daocloud.io/v1alpha3
@@ -338,6 +359,8 @@ spec:
 ```
 
 **离线模式下采用 external 方式安装**
+
+external 模式意味着所需的第三方软件（如 chartMusem 、Minio、Docker registry 等等）无需安装器安装，由使用者提供地址供 DCE 5.0 平台使用。
 
 ```yaml
 apiVersion: provision.daocloud.io/v1alpha3
@@ -393,6 +416,8 @@ spec:
 ```
 
 **在线模式采用 official-service 方式安装**
+
+official-service 模式，当使用者采用在线安装 DCE 5.0 时，DCE 5.0 平台使用的资源将从 DaoCloud 的官方仓库进行获取。
 
 ```yaml
 apiVersion: provision.daocloud.io/v1alpha3

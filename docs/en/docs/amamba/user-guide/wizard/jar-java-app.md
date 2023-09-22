@@ -6,7 +6,7 @@ Workbench supports building applications in four ways: [Git warehouse](create-ap
 
 1. Create a [workspace](../../../ghippo/user-guide/workspace/workspace.md) and a [user](../../../ghippo/user-guide/access-control/user.md), the user needs to join the workspace and have the `Workspace Editor` role.
 
-2. [Create a credential to access the registry](../pipelines/credential.md), such as `registry`.
+2. [Create a credential to access the registry](../pipeline/credential.md), such as `registry`.
 
 3. Prepare a mirror repository, such as Harbor repository.
 
@@ -41,7 +41,7 @@ Workbench supports building applications in four ways: [Git warehouse](create-ap
     - Access type: Support access to the application only within the cluster through clusterIP, or allow access outside the cluster through NodePort, or access through a load balancer.
     - Port configuration: fill in the port number that needs to be exposed according to the actual business scenario.
 
-        > For more detailed instructions on service configuration, please refer to [Create Service](../../../kpanda/user-guide/services-routes/create-services.md).
+        > For more detailed instructions on service configuration, please refer to [Create Service](../../../kpanda/user-guide/network/create-services.md).
 
     - Resource limits: CPU and memory quotas must not exceed the remaining resources in the current workspace of the application's namespace.
 

@@ -6,6 +6,7 @@
 
 | 版本                                            | 架构 | 文件大小 | 安装包                                                                                                                             |  校验文件 | 更新日期      |
 |-----------------------------------------------| ----- |-------- |---------------------------------------------------------------------------------------------------------------------------------| ---------- |-----------|
+| [0.21.1](../../kpanda/intro/release-notes.md) | AMD 64 | 716.15MB | [:arrow_down: kpanda_0.21.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.21.1_amd64.tar) | [:arrow_down: kpanda_0.21.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.21.1_amd64_checksum.sha512sum) | 2023-09-15 |
 | [v0.19.0](../../kpanda/intro/release-notes.md) | AMD64 | 2.41 GB | [:arrow_down: kpanda_v0.19.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_v0.19.0_amd64.tar) | [:arrow_down: kpanda_v0.19.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_v0.19.0_amd64_checksum.sha512sum) | 2023-7-06 |
 
 ## 校验
