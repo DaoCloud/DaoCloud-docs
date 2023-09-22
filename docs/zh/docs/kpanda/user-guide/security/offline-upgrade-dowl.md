@@ -21,6 +21,7 @@
     !!! note  
 
         该 YAML 文件中的各项参数均为必填项。
+
     === "已添加 Helm repo"
 
         若当前环境已安装 chart repo，chart-syncer 也支持将 chart 导出为 tgz 文件。

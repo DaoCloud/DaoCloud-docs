@@ -1,8 +1,7 @@
 # Nvidia GPU 驱动安装
 
-## GPU 驱动安装
-
-> 提供了手动安装和使用 gpu-operator 两种安装方式，使用 gpu-operator 安装会简化很多，推荐使用 gpu-operator 模式。
+> 提供了手动安装和使用 gpu-operator 两种安装方式，使用 gpu-operator 安装会简化很多，
+> 推荐使用 gpu-operator 模式。
 
 在 K8s 上使用 GPU 需要安装相关的驱动和程序，其中需要涉及到如下几个步骤：
 
@@ -79,7 +78,7 @@
 
         - 设置 nvidia-container-runtime 到 /etc/containerd/config.toml 配置中，然后重启
 
-            ```toml
+            ```toml title="/etc/containerd/config.toml"
                 [plugins."io.containerd.grpc.v1.cri".containerd]
                 default_runtime_name = "nvidia"
                 [plugins."io.containerd.grpc.v1.cri".containerd.runtimes]
@@ -98,7 +97,7 @@
         - 设置包仓库 nvidia-container-toolkit
 
             ```shell
-                $ distribution=$(. /etc/os-release;echo $ID$VERSION_ID) && curl -s -L https://nvidia.github.io/libnvidia-container/gpgkey | sudo apt-key add - && curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.list | sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+            $ distribution=$(. /etc/os-release;echo $ID$VERSION_ID) && curl -s -L https://nvidia.github.io/libnvidia-container/gpgkey | sudo apt-key add - && curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.list | sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
             ```
 
         - 安装：

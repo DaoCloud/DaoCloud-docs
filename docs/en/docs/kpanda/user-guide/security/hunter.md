@@ -1,6 +1,6 @@
 # Vulnerability Scan
 
-To use the [Vulnerability Scan](intro.md) function, you need to create a scan policy first. After executing the policy, a scan report will be automatically generated for viewing.
+To use the [Vulnerability Scan](index.md) function, you need to create a scan policy first. After executing the policy, a scan report will be automatically generated for viewing.
 
 ## Create a Scan Policy
 
