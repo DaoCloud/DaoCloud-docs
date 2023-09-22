@@ -687,78 +687,93 @@ nav:
               - What is Middleware Data Service: middleware/index.md
               - Supported Kubernetes Versions: middleware/compatibility.md
               - Permissions: middleware/permission.md
-          - Common Features:
-              - Fisrt-time Use: middleware/common/first-visit.md
-              - Customize Permissions: middleware/common/customize-permission.md
-              - Workload Antiaffinity: middleware/common/workload-antiaffinity.md
+          - Common Config:
+              - First-Time Use: middleware/common/first-visit.md
+              - Custom Permissions: middleware/common/permissions.md
+              - Config Management: middleware/common/config.md
+              - Workload Antiaffinity: middleware/common/antiaffinity.md
           - Elasticsearch:
-              - What is Elasticsearch: middleware/elasticsearch/intro/index.md
-              - Features: middleware/elasticsearch/intro/features.md
-              - Competitiveness: middleware/elasticsearch/intro/benefits.md
-              - Use Cases: middleware/elasticsearch/intro/scenarios.md
-              - Basic Concepts: middleware/elasticsearch/intro/concepts.md
-              - Create Instance: middleware/elasticsearch/user-guide/create.md
-              - Update Instance: middleware/elasticsearch/user-guide/edit.md
-              - Delete Instance: middleware/elasticsearch/user-guide/delete.md
-              - Cluster Capacityg: middleware/elasticsearch/user-guide/cluster-capacity-plan.md
-              - View Instance: middleware/elasticsearch/user-guide/view.md
-              - Overview: middleware/elasticsearch/user-guide/basic.md
-              - Instance Monitoring: middleware/elasticsearch/user-guide/monitor.md
-              - View Logs: middleware/elasticsearch/user-guide/logs.md
-              - Troubleshooting Manual: middleware/elasticsearch/faq/common-question-es.md
-              - Elasticsearch Migration Practice Based on Hwameistor: middleware/elasticsearch/user-guide/migrate-es.md
-              - Elasticsearch Release Notes: middleware/elasticsearch/release-notes.md
-          - Kafka:
-              - What is Kafka: middleware/kafka/intro/index.md
-              - Use Cases: middleware/kafka/intro/scenarios.md
-              - Basic Concepts: middleware/kafka/intro/concepts.md
-              - Create Instance: middleware/kafka/user-guide/create.md
-              - Update Instance: middleware/kafka/user-guide/update.md
-              - Delete Instance: middleware/kafka/user-guide/delete.md
-              - View Instance: middleware/kafka/user-guide/view.md
-              - Instance Monitoring: middleware/kafka/user-guide/insight.md
-              - Configuration Parameters: middleware/kafka/user-guide/config.md
-              - View Logs: middleware/kafka/user-guide/logs.md
-              - Kafka Release Notes: middleware/kafka/release-notes.md
-          - MinIO object storage:
-              - What is MinIO: middleware/minio/intro/index.md
-              - Use cases: middleware/minio/intro/scenarios.md
-              - Common terms: middleware/minio/intro/concepts.md
-              - Create a MinIO instance: middleware/minio/user-guide/create.md
-              - Update MinIO instance: middleware/minio/user-guide/update.md
-              - Delete MinIO instance: middleware/minio/user-guide/delete.md
-              - View MinIO logs: middleware/minio/user-guide/logs.md
-              - View instance details: middleware/minio/user-guide/view.md
-              - Instance monitoring: middleware/minio/user-guide/insight.md
-              - Configuration parameters: middleware/minio/user-guide/config.md
-              - MinIO Identity Management: middleware/minio/user-guide/user-management.md
-              - MinIO Release Notes: middleware/minio/release-notes.md
-          - MySQL database:
-              - What is MySQL: middleware/mysql/intro/index.md
-              - Feature description: middleware/mysql/intro/features.md
-              - Competitive Advantages: middleware/mysql/intro/benefits.md
-              - Basic concepts: middleware/mysql/intro/concepts.md
-              - Create MySQL: middleware/mysql/user-guide/create.md
-              - Update MySQL: middleware/mysql/user-guide/update.md
-              - Delete MySQL: middleware/mysql/user-guide/delete.md
-              - View MySQL logs: middleware/mysql/user-guide/logs.md
-              - MySQL Troubleshooting Manual: middleware/mysql/faq/common-question.md
-              - MySQL Release Notes: middleware/mysql/release-notes.md
-          - RabbitMQ message queue:
-              - What is RabbitMQ: middleware/rabbitmq/intro/index.md
-              - Function description: middleware/rabbitmq/intro/features.md
-              - Competitive advantage: middleware/rabbitmq/intro/benefits.md
-              - Use cases: middleware/rabbitmq/intro/scenarios.md
-              - Basic concepts: middleware/rabbitmq/intro/concepts.md
-              - Create a RabbitMQ instance: middleware/rabbitmq/user-guide/create.md
-              - Update RabbitMQ instance: middleware/rabbitmq/user-guide/update.md
-              - Delete RabbitMQ instance: middleware/rabbitmq/user-guide/delete.md
-              - View instance details: middleware/rabbitmq/user-guide/view.md
-              - Data migration: middleware/rabbitmq/user-guide/migrate.md
-              - Instance monitoring: middleware/rabbitmq/user-guide/insight.md
-              - View RabbitMQ logs: middleware/rabbitmq/user-guide/logs.md
-              - Add custom plugins for RabbitMQ: middleware/rabbitmq/faq/add-plugin.md
-              - RabbitMQ Release Notes: middleware/rabbitmq/release-notes.md
+              - Intro:
+                  - What is Elasticsearch: middleware/elasticsearch/intro/index.md
+                  - Features: middleware/elasticsearch/intro/features.md
+                  - Benefits: middleware/elasticsearch/intro/benefits.md
+                  - Use Cases: middleware/elasticsearch/intro/scenarios.md
+                  - Concepts: middleware/elasticsearch/intro/concepts.md
+                  - Release Notes: middleware/elasticsearch/release-notes.md
+              - ES Cluster Capacity Planning: middleware/elasticsearch/user-guide/cluster-capacity-plan.md
+              - Quick Start:
+                  - Create ES Instance: middleware/elasticsearch/user-guide/create.md
+                  - Update ES Instance: middleware/elasticsearch/user-guide/edit.md
+                  - Delete ES Instance: middleware/elasticsearch/user-guide/delete.md
+                  - Instance Overview: middleware/elasticsearch/user-guide/basic.md
+                  - Monitor Instance: middleware/elasticsearch/user-guide/monitor.md
+                  - View ES Logs: middleware/elasticsearch/user-guide/logs.md
+              - Migrate ES across Nodes: middleware/elasticsearch/user-guide/migrate-es.md
+              - ES Troubleshooting: middleware/elasticsearch/faq/common-question-es.md
+          - Kafka Message Queue:
+              - Intro:
+                  - What is Kafka: middleware/kafka/intro/index.md
+                  - Use Cases: middleware/kafka/intro/scenarios.md
+                  - Concepts: middleware/kafka/intro/concepts.md
+                  - Release Notes: middleware/kafka/release-notes.md
+              - Quick Start:
+                  - Create Kafka Instance: middleware/kafka/user-guide/create.md
+                  - Update Kafka Instance: middleware/kafka/user-guide/update.md
+                  - Delete Kafka Instance: middleware/kafka/user-guide/delete.md
+                  - View Instance Details: middleware/kafka/user-guide/view.md
+                  - Monitor Instance: middleware/kafka/user-guide/insight.md
+                  - Config Parameters: middleware/kafka/user-guide/config.md
+                  - View Kafka Logs: middleware/kafka/user-guide/logs.md
+          - MinIO Object Storage:
+              - Intro:
+                  - What is MinIO: middleware/minio/intro/index.md
+                  - Use Cases: middleware/minio/intro/scenarios.md
+                  - Concepts: middleware/minio/intro/concepts.md
+                  - Release Notes: middleware/minio/release-notes.md
+              - Quick Start:
+                  - Create MinIO Instance: middleware/minio/user-guide/create.md
+                  - Update MinIO Instance: middleware/minio/user-guide/update.md
+                  - Delete MinIO Instance: middleware/minio/user-guide/delete.md
+                  - View MinIO Logs: middleware/minio/user-guide/logs.md
+                  - View Instance Details: middleware/minio/user-guide/view.md
+                  - Monitor Instance: middleware/minio/user-guide/insight.md
+                  - Config Parameters: middleware/minio/user-guide/config.md
+                  - MinIO Identity Management: middleware/minio/user-guide/user-management.md
+          - MySQL Database:
+              - Intro:
+                  - What is MySQL: middleware/mysql/intro/index.md
+                  - Features: middleware/mysql/intro/features.md
+                  - Benefits: middleware/mysql/intro/benefits.md
+                  - Concepts: middleware/mysql/intro/concepts.md
+                  - Release Notes: middleware/mysql/release-notes.md
+              - Quick Start:
+                  - Create MySQL: middleware/mysql/user-guide/create.md
+                  - Update MySQL: middleware/mysql/user-guide/update.md
+                  - Delete MySQL: middleware/mysql/user-guide/delete.md
+                  - View MySQL Logs: middleware/mysql/user-guide/logs.md
+              - Troubleshooting:
+                  - MySQL Health Check: middleware/mysql/faq/quick-check.md
+                  - MySQL Pod: middleware/mysql/faq/faq-pod.md
+                  - MySQL Operator: middleware/mysql/faq/faq-operator.md
+                  - MySQL Master/Slave Issues: middleware/mysql/faq/faq-master-slave.md
+                  - Other MySQL Issues: middleware/mysql/faq/faq-others.md
+          - RabbitMQ Message Queue:
+              - Intro:
+                  - What is RabbitMQ: middleware/rabbitmq/intro/index.md
+                  - Features: middleware/rabbitmq/intro/features.md
+                  - Benefits: middleware/rabbitmq/intro/benefits.md
+                  - Use Cases: middleware/rabbitmq/intro/scenarios.md
+                  - Concepts: middleware/rabbitmq/intro/concepts.md
+                  - Release Notes: middleware/rabbitmq/release-notes.md
+              - Quick Start:
+                  - Create RabbitMQ Instance: middleware/rabbitmq/user-guide/create.md
+                  - Update RabbitMQ Instance: middleware/rabbitmq/user-guide/update.md
+                  - Delete RabbitMQ Instance: middleware/rabbitmq/user-guide/delete.md
+                  - View Instance Detail: middleware/rabbitmq/user-guide/view.md
+                  - Migrate Data: middleware/rabbitmq/user-guide/migrate.md
+                  - Monitor Instance: middleware/rabbitmq/user-guide/insight.md
+                  - View RabbitMQ Logs: middleware/rabbitmq/user-guide/logs.md
+              - Add Custom Addons to RabbitMQ: middleware/rabbitmq/faq/add-plugin.md
           - Redis Cache Service:
               - Introduction:
                   - What is Redis: middleware/redis/intro/index.md
@@ -774,13 +789,17 @@ nav:
                   - Cluster Mode to Cluster Mode: middleware/redis/best-practice/cluster2cluster.md
                   - Sentinel Mode to Sentinel Mode: middleware/redis/best-practice/sentinel2sentinel.md
                   - Cluster Mode to Sentinel Mode: middleware/redis/best-practice/cluster2sentinel.md
-          - PostgreSQL database:
-              - What is PostgreSQL: middleware/postgresql/intro/index.md
-              - Create PostgreSQL: middleware/postgresql/user-guide/create.md
-              - Update PostgreSQL: middleware/postgresql/user-guide/update.md
-              - Delete PostgreSQL: middleware/postgresql/user-guide/delete.md
-              - View PostgreSQL logs: middleware/postgresql/user-guide/logs.md
-              - Release Notes: middleware/postgresql/release-notes.md
+          - PostgreSQL Database:
+              - Intro:
+                  - What is PostgreSQL: middleware/postgresql/intro/index.md
+                  - Features: middleware/postgresql/intro/concepts.md
+                  - Release Notes: middleware/postgresql/release-notes.md
+              - Quick Start:
+                  - Create PostgreSQL: middleware/postgresql/user-guide/create.md
+                  - Update PostgreSQL: middleware/postgresql/user-guide/update.md
+                  - Delete PostgreSQL: middleware/postgresql/user-guide/delete.md
+                  - View PostgreSQL Logs: middleware/postgresql/user-guide/logs.md
+                  - Manually Set Antiaffinity: middleware/postgresql/user-guide/antiaffinity.md
           - MongoDB Database:
               - Intro:
                   - What is MongoDB: middleware/mongodb/intro/index.md
@@ -790,6 +809,7 @@ nav:
                   - Create MongoDB: middleware/mongodb/user-guide/create.md
                   - Update MongoDB: middleware/mongodb/user-guide/update.md
                   - Delete MongoDB: middleware/mongodb/user-guide/delete.md
+                  - View MongDB Logs: middleware/mongodb/user-guide/logs.md
       - Cloud-native Storage:
           - Intro:
               - What is storage: storage/index.md

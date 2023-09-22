@@ -700,9 +700,9 @@ nav:
               - 权限设计说明: middleware/permission.md
           - 通用配置:
               - 首次进入: middleware/common/first-visit.md
-              - 自定义角色权限说明: middleware/common/customize-permission.md
-              - 配置管理: middleware/common/storage-configuration.md
-              - 工作负载反亲和性: middleware/common/workload-antiaffinity.md
+              - 自定义角色权限说明: middleware/common/permissions.md
+              - 配置管理: middleware/common/config.md
+              - 工作负载反亲和性: middleware/common/antiaffinity.md
           - Elasticsearch 搜索服务:
               - 介绍:
                   - 什么是 Elasticsearch: middleware/elasticsearch/intro/index.md
