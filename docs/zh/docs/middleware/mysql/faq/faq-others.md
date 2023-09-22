@@ -12,7 +12,7 @@
     [root@master-01 ~]$ kubectl get secret -n mcamel-system mcamel-common-mysql-cluster-secret -o=jsonpath='{.data.ROOT_PASSWORD}' | base64 -d
     ```
 
-2. 如果密码含有特殊字符 `-` ，进入 MySQL 的 shell 输入原密码出现以下错误
+2. 如果密码含有特殊字符 ` -> ` ，进入 MySQL 的 shell 输入原密码出现以下错误
 
     ```bash
     bash-4.4# mysql -uroot -p
