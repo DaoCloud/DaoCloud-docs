@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# What is Container Management
+# Container Management
 
 Container management is a containerization management module for cloud native applications
 built on Kubernetes. It is the core of DCE 5.0 and is based on a native multi-cluster architecture,

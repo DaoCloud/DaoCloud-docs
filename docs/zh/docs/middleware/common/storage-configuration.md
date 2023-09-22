@@ -24,7 +24,7 @@
 
             ![list](images/cfg04.png)
 
-        2. 点击 `Identity`-`Service Account`，创建一个新的 `Service Account`；
+        2. 点击 `Identity` -> `Service Account`，创建一个新的 `Service Account`；
 
             ![list](images/cfg05.png)
 
