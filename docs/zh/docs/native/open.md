@@ -111,6 +111,10 @@
 
     该版本主要新特性：Search API 升级到 v1、新增后端系统（实验性）、大量命令行及授权后端符号弃用、增加了对 OpenAPI 规范中 $ref 处理的支持、增加 Apollo Explorer 支持（PoC）。
 
+- [Beyla：Grafana 发布用于应用程序可观测性的开源 eBPF 自动仪表化工具](https://mp.weixin.qq.com/s/H5yw6jSeJdLoLFc32OTeyA)
+
+    Beyla 能够报告 Linux HTTP/S 和 gRPC 服务的跨度信息和 RED 指标（速率-错误-持续时间），且无需插入探针进行代码修改即可完成此操作。Grafana Beyla 支持用 Go、NodeJS、Python、Rust、Ruby、.NET 等编写的 HTTP 和 HTTPS 服务。还支持用 Go 编写的 gRPC 服务。
+
 ### C
 
 - [Calico CNI 插件 v3.26.0 发布（CNCF 项目）](https://github.com/projectcalico/calico/blob/v3.26.0/release-notes/v3.26.0-release-notes.md)
@@ -157,6 +161,10 @@
 - [Cert-manager 云原生证书管理项目 v1.9.0 发布（CNCF 项目）](https://github.com/cert-manager/cert-manager/releases/tag/v1.9.0)  
 
     该版本主要新特性：支持使用cert-manager certificate（alpha）、支持通过 Ingress 资源上的注释配置 ingress-shim 证书。
+
+- [ChaosMeta 混沌工程 v0.5 发布](https://mp.weixin.qq.com/s/4VG5TkQPotr_BrweIznW_w)
+
+    版本特性：新增平台界面组件，主要提供空间管理、用户权限管理、编排实验、实验结果等功能；新增度量组件，提供对监控项的值、Pod 相关数、http 请求、tcp 请求进行预期判断；新增流量注入组件，当前只支持 HTTP 流量类型的注入，后续会逐步补充 RPC、DB client、redis client 等其他类型的流量注入能力。
 
 - [Chaosblade 混沌工程项目 v1.7.0 发布（CNCF 项目）](https://github.com/rook/rook/releases/tag/v1.10.0)
 
@@ -438,6 +446,10 @@
 
     该版本主要新特性：支持以 KEDA ScaledObjects 替代 HPA、在参数表中添加命名空间参数、为 Canary.Service 添加可选的 `appProtocol` 字段。
 
+- [Fluent Operator 云原生日志收集方案 2.5.0 发布](https://github.com/fluent/fluent-operator/releases/tag/v2.5.0)
+
+    版本特性：新增支持 7 个插件，包括 Prometheus Exporter、Forward、OpenTelemetry、HTTP、MQTT 等；增加对 Fluentd 作为 DaemonSet 运行的支持。
+
 - [Fluent Bit 日志处理工具 v2.0.0 发布 （CNCF 项目）](https://github.com/fluent/fluent-bit/releases/tag/v2.0.0)
 
     该版本主要新特性：增加对 Traces 的支持（与 Prometheus 和 OpenTelemetry 完全集成）、允许 input 插件在一个单独的线程中运行、所有需启用安全的网络传输层将使用 OpenSSL、input 插件新增原生 TLS 功能、支持将更多的插件类型与 Golang 和 WebAssembly 集成、支持检查流经管道的数据、引入收集和处理内部指标的新 input 插件。
@@ -471,6 +483,10 @@
     该版本主要新特性：增加约束模式验证测试、增加对外部数据提供商的 TLS 支持、增加 pod 安全上下文变量、支持验证子资源、允许在 gator 验证中跳过测试、为 gator 添加 dockerfile、添加 opencensus 和 stackdriver exporter。
 
 ### H
+
+- [Harvester 超融合基础设施 v1.2.0 发布](https://github.com/harvester/harvester/releases/tag/v1.2.0)
+
+    版本特性：系统占用空间减少（更适合边缘场景）、支持资源限制自动调整、支持将模拟可信平台模块 (TPM) 添加到虚拟机、支持 SR-IOV 网络虚拟功能、新增 rancher-vcluster 插件和裸机容器支持、支持在 Harvester 集群中安装第三方容器存储接口 (CSI)、每个节点的 Pod 限制增加到 200。
 
 - [HoloInsight：由蚂蚁集团开源的智能可观测平台](https://mp.weixin.qq.com/s/Tx7EKr0P_rhO-kltlW-wuQ)
 
@@ -673,6 +689,10 @@
 - [Katalyst：字节跳动开源的云原生资源管控系统](https://mp.weixin.qq.com/s/A5_1h3RLmDNazmAddbhYaA)
 
     [Katalyst](https://github.com/kubewharf/katalyst-core) 的主要特点包括：完全孵化于超大规模混部实践，并在字节服务云原生化的进程中同步接管资源管控链路；搭载字节跳动内部的 Kubernetes 发行版 Enhanced Kubernetes 同步开源；系统基于插件化模式构建，用户可以在 Katalyst Framework 之上自定制各类调度、管控、策略、数据等模块插件等。
+
+- [KCL：配置语言 KCL 成为 CNCF 沙箱项目](https://mp.weixin.qq.com/s/VbIIHj28DZZea3R4tYT66A)
+
+    [KCL](https://github.com/kcl-lang/kcl) 是一个开源的基于约束的记录及函数语言，期望通过成熟的编程语言技术和实践来改进对大量繁杂配置比如云原生 Kubernetes 配置场景的编写，致力于围绕配置的模块化、扩展性和稳定性，打造更简单的逻辑编写体验，构建更简单的自动化和生态集成路径。
 
 - [KEDA：CNCF 宣布 K8s 自动缩放器 KEDA 毕业](https://mp.weixin.qq.com/s/Jkl8bGreQPk77VADOB-MOw)
 

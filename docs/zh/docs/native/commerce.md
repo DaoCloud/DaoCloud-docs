@@ -247,6 +247,10 @@
 
 ### D, E
 
+- [D2iQ K8s 平台 D2iQ Kubernetes Platform v2.6 发布](https://docs.d2iq.com/dkp/2.6/dkp-2-6-0-features-and-enhancements)
+
+    更新内容：支持容器运行时 Podman、支持车 Kubernetes 1.26.6、支持遥测功能、新增自然语言 AI 助手 DKP AI Navigator、支持设置 DKP 工作负载和应用的优先级、支持边缘计算环境中网络受限集群的可观测性和监控。
+
 - [D2iQ 推出自然语言 AI 助手 DKP AI Navigator，用于简化 Kubernetes 管理](https://d2iq.com/press-release/dkp-ai-navigator)
 
     DKP AI Navigator 是在 D2iQ 的内部知识库中训练出来的，知识库中包含了用户在生产中遇到的最棘手问题的解决方案。D2iQ 用户可以通过该工具，即时获得这些专业知识，并通过单一窗口管理 Kubernetes 集群。DKP AI Navigator 将在 DKP 2.6 中正式可用。
@@ -301,6 +305,10 @@
 
     Davis AI 因果分析引擎为 Kubernetes 性能问题及其对业务连续性的影响提供根因分析。具体功能：自动化根因分析、支持实时跟踪 Kubernetes 的编排流程、将性能问题与 Pod 驱逐联系起来、支持根据工作负载部署清单的变化来识别与错误配置有关的性能下降问题的原因。
 
+- [EMQX 云原生分布式物联网接入平台 EMQX Enterprise 5.2 发布](https://mp.weixin.qq.com/s/iT9eo-MHBWi5KhMqoTnUaA)
+
+    新增可拖拽的可视化 Flow 设计器，用于快速创建、测试和部署数据集成；新增独立的 Webhook 页面，简化配置流程；集成全托管实时流数据处理服务 Amazon Kinesis； 集成完全托管型实时数据引入服务 Azure Event Hubs；集成 开源云原生分布式流数据平台 HStream；集成开源分布式云原生时序数据库 GreptimeDB；集成 OpenTelemetry 指标。
+
 - [Ermetic 云原生应用保护平台支持 Kubernetes 安全态势管理](https://ermetic.com/news/ermetic-adds-kubernetes-security-posture-management-to-cloud-native-application-protection-platform/)
 
     Ermetic 云原生应用保护平台的 Kubernetes 安全姿势管理功能支持自动发现和修复 Kubernetes 集群中的错误配置、合规性违规以及风险或过度特权。
@@ -317,6 +325,10 @@
 - [Fairwinds 的 Kubernetes 治理和安全平台 Fairwinds Insights 十一月更新](https://www.fairwinds.com/blog/fairwinds-insights-release-notes-10.2-10.6-spotlight-on-workload-cost-allocation)
 
     更新内容：增加工作负载成本分配功能，允许查看一组工作负载的历史成本；优化成本页面，细化 Kubernetes 集群成本的分类；支持查看成本随时间变化的动态。
+
+- [Fermyon 推出 Serverless AI 方案 Serverless AI](https://www.fermyon.com/blog/introducing-fermyon-serverless-ai)
+
+    Fermyon 在其平台中引入了一个 Serverless 框架 Serverless AI，用于调用人工智能模型。并且通过利用 Civo 提供的 GPU 计算服务，以降低访问构建和运行这些 AI 模型所需 GPU 的成本，并将冷启动时间降低至 50 毫秒。
 
 - [Finout 推出无代理 Kubernetes 成本治理套件](https://www.businesswire.com/news/home/20230413005018/en/Finout-Announces-Agentless-Cost-Governance-Suite-for-Kubernetes)
 
