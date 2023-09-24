@@ -129,14 +129,47 @@ DCE 5.0 基础设施模块的组件特指 [mainfest.yaml](commercial/manifest.md
 执行升级命令
 
 ```bash
-./offline/dce5-installer cluster-create -c ./offline/sample/clusterConfig.yaml -m ./offline/sample/manifest.yaml --upgrade infrastructures
+./offline/dce5-installer cluster-create -c ./offline/sample/clusterConfig.yaml -m ./offline/sample/manifest.yaml --upgrade infrastructure
+```
+
+#### DCE 5.0 升级
+
+执行升级命令
+
+```bash
+./offline/dce5-installer cluster-create --help
+
+provision DaoCloud 5.0 clusters and install software stacks
+
+Usage:
+  dce5-installer cluster-create [flags]
+
+Flags:
+  -c, --clusterConfig string   The cluster config file
+  -y, --dry-run                Dump installer scripts only
+  -h, --help                   help for cluster-create
+  -m, --manifest string        manifest BOM file
+      --max-tasks int          Controls the maximum number of concurrent tasks. Must be positive number. (default 4)
+      --multi-arch             Whether to use the multi-arch image import mode.
+      --serial                 Disable concurrent run
+  -u, --upgrade string         Choose the component which you want to upgrade, for example  tinder,cluster,infrastructure,hwameistor,middleware,gproduct,addon .
+
+Global Flags:
+  -s, --customized-script string   (Optional)Your override script path
+  -d, --debug                      Enable debug output
+  -l, --logfile string             The installation log to be dump (default "/var/log/dce5.log")
+  -z, --minimized-replicas         Whether to minimized all components replicas as small as possible.
+  -j, --steps string               (Optional)Debug Only, to specific a range of steps to be executed(format, 2+;  1,2,4; 3 ) (default "1+")
+  -t, --tinder-host-ip string      (Optional)The desired host IP on tinder node if it is not on default route.
+
+./offline/dce5-installer cluster-create -c ./offline/sample/clusterConfig.yaml -m ./offline/sample/manifest.yaml --upgrade infrastructure,gproduct
 ```
 
 升级参数说明：
 
 - `install-app` 或 `cluster-create`，代表安装 DCE 5.0 的安装模式类型。如果最初的环境是通过 `cluster-create` 来安装的，则升级时也采用这个命令
-- `--upgrade` 可以简写为 `-u`，目前支持升级 DCE 5.0 产品功能模块（gproduct）与基础设施模块（infrastructures）
-- 如果需要一起升级产品功能模块和基础设施模块，则可以指定参数 `--upgrade infrastructures,gproduct`
+- `--upgrade` 可以简写为 `-u`，目前支持升级 DCE 5.0 产品功能模块（gproduct）与基础设施模块（infrastructure）
+- 如果需要一起升级产品功能模块和基础设施模块，则可以指定参数 `--upgrade infrastructure,gproduct`
 - 安装器 v0.12.0 支持了 `--multi-arch` 参数，主要是用户在当前环境存在多架构镜像时，进行升级过程中添加该参数可以避免覆盖原有的多架构镜像。
 
 ### 第 5 步：安装成功提示
