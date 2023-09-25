@@ -3,13 +3,13 @@ hide:
   - toc
 ---
 
-# 云原生启航图
+# 云原生启航
 
 在当今时代，云原生容器化技术正在迅猛发展，席卷全球。想要抓住这一市场趋势，获得巨大的商业机遇，必须紧跟时代的脉搏。
-而将数据中心转型为 Kubernetes（简称 K8s）作为底座，无疑是实现云原生图景的最佳途径。
+而将数据中心转型为 Kubernetes（简称 K8s）底座，无疑是实现云原生图景的最佳途径。
 
-DCE 5.0 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的功能，使得企业能够轻松构建和管理分布式应用程序。
-通过使用 DCE 5.0 ，企业可以充分利用云计算的优势，实现资源的最优利用，提高 IT 系统的可靠性和弹性，并极大地加速应用程序的交付速度。
+DCE 5.0 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的各项生产级功能，使得企业能够轻松构建和管理分布式应用程序。
+借助 DCE 5.0 的云原生天赋，企业可以充分利用云上云下优势，实现资源的最优利用，提高 IT 系统的可靠性和弹性，极大地加速应用程序的交付速度。
 
 !!! tip
 
@@ -38,11 +38,11 @@ DCE 5.0 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的�
     我们为 DCE 5.0 的各个模块制作了精良的视频教程，供大家快速上手。
 
     - [场景化视频](../videos/use-cases.md)
-    - [应用工作台](../videos/amamba.md)
-    - [容器](../videos/kpanda.md)
-    - [微服务](../videos/skoala.md)
-    - [数据服务 - 中间件](../videos/mcamel.md)
-    - [全局管理](../videos/ghippo.md)
+    - [应用工作台视频](../videos/amamba.md)
+    - [容器频道视频](../videos/kpanda.md)
+    - [微服务视频](../videos/skoala.md)
+    - [数据服务 - 中间件视频](../videos/mcamel.md)
+    - [全局管理视频](../videos/ghippo.md)
 
 </div>
 
@@ -246,3 +246,5 @@ DCE 5.0 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的�
 [下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
 [安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](./license0.md){ .md-button .md-button--primary }
+
+![启航图](./images/sail.jpg)
