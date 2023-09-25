@@ -3,6 +3,7 @@ nav:
   - DaoCloud 官网: https://www.daocloud.io/
   - 产品文档:
       - 首页: dce/index.md
+      - 云原生启航图: dce/get-started.md
       - 安装:
           - 产品介绍:
               - 申请社区免费体验: dce/license0.md
