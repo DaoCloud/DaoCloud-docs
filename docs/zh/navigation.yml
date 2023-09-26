@@ -220,11 +220,11 @@ nav:
               - GPU 管理:
                   - 简介: kpanda/user-guide/gpu/index.md
                   - NVIDIA vGPU:
-                      - 安装 Nvidia GPU 驱动: kpanda/user-guide/gpu/vgpu_driver.md
+                      - 安装 NVIDIA GPU 驱动: kpanda/user-guide/gpu/install_nvidia_driver_of_operator.md
                       - 安装 vGPU Addon: kpanda/user-guide/gpu/vgpu_addon.md
                       - 应用使用 vGPU: kpanda/user-guide/gpu/vgpu_user.md
                   - NVIDIA MIG:
-                      - NVIDIA多实例GPU(MIG)概述: kpanda/user-guide/gpu/mig_index.md
+                      - NVIDIA 多实例GPU(MIG)概述: kpanda/user-guide/gpu/mig_index.md
                       - GPU Operator 创建 MIG: kpanda/user-guide/gpu/create_mig.md
                       - 应用使用 MIG GPU: kpanda/user-guide/gpu/mig_usage.md
                       - MIG 相关命令: kpanda/user-guide/gpu/mig_command.md
