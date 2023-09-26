@@ -7,7 +7,7 @@
 - 确认集群节点上具有对应型号的 GPU 卡（[NVIDIA H100](https://www.nvidia.com/en-us/data-center/h100/)、
   [A100](https://www.nvidia.com/en-us/data-center/a100/) 和
   [A30](https://www.nvidia.com/en-us/data-center/products/a30-gpu/) Tensor Core GPU）
-- 当前集群已通过 Operator 或手动方式部署，具体参考 [Nvidia 驱动部署](vgpu_driver.md)
+- 当前集群已通过 Operator 或手动方式部署，具体参考 [Nvidia 驱动部署](install_nvidia_driver_of_operator.md)
 
 ## 操作步骤
 
