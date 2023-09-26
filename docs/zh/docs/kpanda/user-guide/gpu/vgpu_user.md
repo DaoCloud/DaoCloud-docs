@@ -4,7 +4,7 @@
 
 ## 前提条件
 
-- 当前集群已通过 Operator 或手动方式部署，具体参考 [Nvidia 驱动部署](vgpu_driver.md)
+- 当前集群已通过 Operator 或手动方式部署，具体参考 [Nvidia 驱动部署](install_nvidia_driver_of_operator.md)
 - 当前集群已安装 [vGPU Addon 安装](vgpu_addon.md)
 
 ## 操作步骤
