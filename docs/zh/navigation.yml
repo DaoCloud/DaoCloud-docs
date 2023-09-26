@@ -228,9 +228,9 @@ nav:
                         - 安装 vGPU Addon: kpanda/user-guide/gpu/vgpu_addon.md
                         - 应用使用 NVIDIA vGPU: kpanda/user-guide/gpu/vgpu_user.md
                       - NVIDIA GPU 虚拟化 —— MIG: kpanda/user-guide/gpu/mig_index.md
+                      - 应用使用 NVIDIA MIG GPU: kpanda/user-guide/gpu/mig_usage.md
                       # - GPU Operator 创建 MIG: kpanda/user-guide/gpu/create_mig.md
                       # - MIG 相关命令: kpanda/user-guide/gpu/mig_command.md
-                        - 应用使用 NVIDIA MIG GPU: kpanda/user-guide/gpu/mig_usage.md
                   - 昇腾 GPU 卡管理:
                       - 应用使用昇腾 GPU: kpanda/user-guide/gpu/Ascend_usage.md
                   - 天数 GPU 卡管理:
