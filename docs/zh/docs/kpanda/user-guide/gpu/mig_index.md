@@ -1,5 +1,24 @@
 # NVIDIA 多实例 GPU(MIG) 概述
 
+## NVIDIA MIG（Multi-Instance GPU）适用业务场景：
+
+- **多租户云环境**
+    MIG 允许云服务提供商将一块物理 GPU 划分为多个独立的 GPU 实例，每个实例可以独立分配给不同的租户。这样可以实现资源的隔离和独立性，满足多个租户对 GPU 计算能力的需求。
+
+- **容器化应用程序**
+    MIG 可以在容器化环境中实现更细粒度的 GPU 资源管理。通过将物理 GPU 划分为多个 MIG 实例，可以为每个容器分配独立的 GPU 计算资源，提供更好的性能隔离和资源利用。
+
+- **批处理作业**
+    对于需要大规模并行计算的批处理作业，MIG 可以提供更高的计算性能和更大的显存容量。每个 MIG 实例可以利用物理 GPU 的一部分计算资源，从而加速大规模计算任务的处理。
+
+- **AI/机器学习训练**
+    MIG 可以在训练大规模深度学习模型时提供更大的计算能力和显存容量。将物理 GPU 划分为多个 MIG 实例，每个实例可以独立进行模型训练，提高训练效率和吞吐量。
+
+总体而言，NVIDIA MIG 适用于需要更细粒度的GPU资源分配和管理的场景，可以实现资源的隔离、提高性能利用率，并且满足多个用户或应用程序对 GPU 计算能力的需求。
+
+
+## MIG 概述
+
 NVIDIA 多实例 GPU（Multi-Instance GPU，简称 MIG）是 NVIDIA 在 H100，A100，A30 系列 GPU 卡上推出的一项新特性，
 旨在将一块物理 GPU 分割为多个 GPU 实例，以提供更细粒度的资源共享和隔离。MIG 最多可将一块 GPU 划分成七个 GPU 实例，
 使得一个 物理 GPU 卡可为多个用户提供单独的 GPU 资源，以实现最佳 GPU 利用率。
@@ -18,13 +37,13 @@ MIG 允许多个 vGPU（以及虚拟机）在单个 GPU 实例上并行运行，
 有关使用 vGPU 和 MIG 进行 GPU 分区的详细信息，请参阅
 [NVIDIA Multi-Instance GPU and NVIDIA Virtual Compute Server](https://www.nvidia.com/content/dam/en-zz/Solutions/design-visualization/solutions/resources/documents1/TB-10226-001_v01.pdf)。
 
-## MIG 使用场景
+## MIG 架构
 
 如下是一个 MIG 的概述图，可以看出 MIG 将一张物理 GPU 卡虚拟化成了 7 个 GPU 实例，这些 GPU 实例能够可以被多个 User 使用。
 
 ![img](images/mig_overview.png)
 
-**重要概念：**
+## 重要概念
 
 * `SM`：流式多处理器（Streaming Multiprocessor），GPU 的核心计算单元，负责执行图形渲染和通用计算任务。
   每个 SM 包含一组 CUDA 核心，以及共享内存、寄存器文件和其他资源，可以同时执行多个线程。
@@ -41,7 +60,7 @@ MIG 允许多个 vGPU（以及虚拟机）在单个 GPU 实例上并行运行，
 * `Compute Instance `：GPU 实例的计算切片可以进一步细分为多个计算实例 （CI），其中 CI 共享父
   GI 的引擎和内存，但每个 CI 都有专用的 SM 资源。
 
-## GPU 实例（GI）
+### GPU 实例（GI）
 
 本节介绍如何在 GPU 上创建各种分区。将使用 A100-40GB 作为示例演示如何对单个 GPU 物理卡上进行分区。
 
@@ -57,7 +76,7 @@ GPU 的分区是使用内存切片进行的，因此可以认为 A100-40GB GPU �
 
 ![img](images/mig_4g20gb.png)
 
-#### 计算实例（CI）
+### 计算实例（CI）
 
 GPU 实例的计算切片(GI)可以进一步细分为多个计算实例（CI），其中 CI 共享父 GI 的引擎和内存，但每个 CI 都有专用的 SM 资源。使用上面的相同 `4g.20gb` 示例，可以创建一个 CI 以仅使用第一个计算切片的 `1c.4g.20gb` 计算配置，如下图蓝色部分所示：
 
@@ -82,3 +101,30 @@ GPU 实例的计算切片(GI)可以进一步细分为多个计算实例（CI）�
 | A100-PCIE A100-PCIE | NVIDIA Ampere | GA100      | 8.0          | 40GB         | 7                  |
 | A100-PCIE A100-PCI  | NVIDIA Ampere | GA100      | 8.0          | 80GB         | 7                  |
 | A30                 | NVIDIA Ampere | GA100      | 8.0          | 24GB         | 4                  |
+
+## MIG 相关命令
+
+GI 相关命名：
+
+| 子命令                                  | 说明                          |
+| --------------------------------------- | ----------------------------- |
+| nvidia-smi mig -lgi                   | 查看创建 GI 实例列表          |
+| nvidia-smi mig -dgi -gi {Instance ID} | 删除指定的 GI 实例            |
+| nvidia-smi mig -lgip                  | 查看 GI 的`profile`           |
+| nvidia-smi mig -cgi {profile id}      | 通过指定 profile 的 ID 创建 GI |
+
+CI 相关命令：
+
+| 子命令                                                  | 说明                                                         |
+| ------------------------------------------------------- | ------------------------------------------------------------ |
+| nvidia-smi mig -lcip  { -gi {gi Instance ID}}         | 查看 CI 的 `profile`，指定 `-gi` 可以查看特定 GI 实例可以创建的 CI |
+| nvidia-smi mig -lci                                   | 查看创建的 CI 实例列表                                       |
+| nvidia-smi mig -cci {profile id} -gi {gi instance id} | 指定的 GI 创建 CI 实例                                       |
+| nvidia-smi mig -dci -ci {ci instance id}              | 删除指定 CI 实例                                             |
+
+GI+CI 相关命令：
+
+| 子命令                                                       | 说明                 |
+| ------------------------------------------------------------ | -------------------- |
+| nvidia-smi mig -i 0 -cgi {gi profile id} -C {ci profile id} | 直接创建 GI + CI 实例 |
+

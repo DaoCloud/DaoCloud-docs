@@ -5,7 +5,7 @@ hide:
 
 # GPU 管理概述
 
-本文介绍 Daocloud 容器管理平台在 GPU 等异构资源调度的能力。
+本文介绍 Daocloud 容器管理平台对 GPU为代表的异构资源统一运维管理能力。
 
 ## 背景信息
 
@@ -28,7 +28,7 @@ Daocloud 容器管理平台支持对 GPU、NPU 等异构资源进行统一调度
 
 | GPU 厂商 | 类型                | 支持 GPU 型号                                                | 在线版适配的操作系统及内核版本 | 在线版推荐操作系统及内核                                     | 推荐的操作系统 | 推荐的系统内核 | 安装文档                                                     |
 | -------- | ------------------- | ------------------------------------------------------------ | ------------------------------ | ------------------------------------------------------------ | -------------- | -------------- | ------------------------------------------------------------ |
-| NVIVIDA  | NVIVIDA GPU（整卡） | NVIDIA Fermi (2.1)架构。如NVIDIA GeForce 400 系列、NVIDIA Quadro 4000 系列、NVIDIA Tesla 20 系列 | CentOS 7                       | 操作系统支持的版本范围即可。Kernel 3.10.0-123 ~ 3.10.0-1160  | CentOS 7.9     | `3.10.0-1160`  | [内核对应文档](https://blog.csdn.net/weixin_42915431/article/details/105845001) |
+| NVIVIDA  | NVIVIDA GPU（整卡） | NVIDIA Fermi (2.1)架构。如NVIDIA GeForce 400 系列、NVIDIA Quadro 4000 系列、NVIDIA Tesla 20 系列 | CentOS 7                       | 操作系统支持的版本范围即可。Kernel 3.10.0-123 ~ 3.10.0-1160  | CentOS 7.9     | `3.10.0-1160`  | [内核参考文档](https://blog.csdn.net/weixin_42915431/article/details/105845001) |
 |          |                     |                                                              | CentOS 8                       | Kernel 4.18.0-80~4.18.0-348                                  |                |                |                                                              |
 |          |                     |                                                              | Ubuntu 20.04                   | Kernel 5.4                                                   |                |                |                                                              |
 |          | NVIVIDA GPU（vGPU） |                                                              | Ubuntu 22.04                   | Kernel 5.19                                                  |                |                |                                                              |

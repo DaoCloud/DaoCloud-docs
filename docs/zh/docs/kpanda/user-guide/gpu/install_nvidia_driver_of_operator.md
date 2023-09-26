@@ -10,16 +10,16 @@ Kubernetes 通过 [Device Plugins](https://kubernetes.io/docs/concepts/extend-ku
 
 NVIDIA GPU Operator 架构图：
 
-    ![NVIDIA GPU Operator 架构图](images/nvidia-gpu-operator-image.jpg)
+![NVIDIA GPU Operator 架构图](images/nvidia-gpu-operator-image.jpg)
 
-#### 前提条件
+### 前提条件
 
 - 已经[部署 DCE 5.0](https://docs.daocloud.io/install/index.html) 容器管理平台，且平台运行正常。
 - 容器管理模块[已接入 Kubernetes 集群](../clusters/integrate-cluster.md)或者[已创建 Kubernetes 集群](../clusters/create-cluster.md)，且能够访问集群的 UI 界面。
 - 待安装 GPU 驱动集群的节点操作系统（OS）必须一致。
 - 能够使用 root 或具有 root 权限的用户登陆到待安装 GPU 驱动的集群任一控制（Master）节点。
 
-经过验证的操作系统和内核版本：
+**经过验证的操作系统和内核版本**：
 
     |    架构   | 操作系统      | 内核版本                         |
     | -------- | ------------ | ------------------------------- |
@@ -31,11 +31,11 @@ NVIDIA GPU Operator 架构图：
 
 > 推荐使用 CentOS 7.9
 
-#### 操作步骤
+### 操作步骤
 
 本文将使用 CentOS 7.9 为例，介绍如何安装 NVIDIA GPU 驱动。
 
-1. 使用 root 或具有root 权限的用户登陆到待安装 GPU 驱动的集群任一控制（Master）节点。
+1. 使用 root 或具有root 权限的用户登陆到待安装 GPU 驱动集群的任一控制（Master）节点。
 
 2. 在 控制节点上执行如下命令，检查节点上的 GPU 卡是否正常挂载。
 
@@ -71,5 +71,5 @@ NVIDIA GPU Operator 架构图：
 
 !!!注意
 
-    如果节点操作系统为 ubuntu 20.04，参数 `--set driver.version` 的镜像版本需要和节点内核版本强一致，包括小版本号，可前往 [NVIDIA GPU Driver](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/driver/tags) 网站查看不同内核 的 ubuntu 系统对应的驱动版本。
+    如果节点操作系统为 ubuntu，参数 `--set driver.version` 的镜像版本需要和节点内核版本强一致，包括小版本号，可前往 [NVIDIA GPU Driver](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/driver/tags) 网站查看不同内核 的 ubuntu 系统对应的驱动版本。
 
