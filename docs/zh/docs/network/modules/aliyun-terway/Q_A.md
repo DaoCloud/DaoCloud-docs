@@ -30,6 +30,6 @@
 
 > 阿里云原生支持 Flannel CNI 插件，除此之外也支持 Calico 和 Cilium 运行。
 >> 对于 Calico:
-> - 只支持隧道模式(vxlan or ipip)，不支持路由模式。隧道模式下 Pod 之间的通信不依赖 CCM 组件，但 LoadBalancer Service 依赖 CCM 实现。
+> - 支持隧道模式(vxlan or ipip) 和路由模式。隧道模式下 Pod 之间的通信不依赖 CCM 组件，但 LoadBalancer Service 依赖 CCM 实现。路由模式下需要切换 ipam 为 `host-local` 或 Spiderpool。详见 [阿里云运行 Calico](aliyun-calico.md)
 >> 对于 Cilium:
-> - 只支持 tunnel 模式，不支持 native 模式，Pod 通信不依赖 CCM 组件，但 LoadBalancer Service 依赖 CCM 实现。
+> - 支持 tunnel 和 native 模式，tunnel 模式 Pod 通信不依赖 CCM 组件，但 LoadBalancer Service 依赖 CCM 实现。native 模式需要切换 Cilium 的 ipam-mode 为 kubernetes, 详见 [阿里云运行 Cilium](aliyun-cilium.md)

@@ -22,7 +22,7 @@
 
 > 安装 Kubernetes 集群要求每台机器的 CPU >= 2, 内存 >= 2 GB.
 
-## 搭建 Kubernetes 集群
+## 搭建Kubernetes集群
 
 参考 [官方文档](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/), 在控制节点安装 kubeadm、kubectl.
 在控制节点和工作节点安装: kubelet、容器运行时(如 containerd)。
@@ -163,7 +163,7 @@ terway-rjqbj                                                2/2     Running   0 
 terway-z5cvh                                                2/2     Running   0           3m   192.168.200.1   cn-chengdu.i-2vcxxxxx   <none>           <none>
 ```
 
-### 安装 CCM 组件，发布 VPC 路由
+### 安装CCM组件，发布VPC路由
 
 CCM 组件用于发布 Pod 跨节点访问路由以及 LoadBalancer Service 的实现:
 
