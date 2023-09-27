@@ -11,7 +11,7 @@ hide:
 
 1. 在 DCE 5.0 集群内使用 SpiderPool，需要结合 [Macvlan](../multus-underlay/macvlan.md) + [Multus](../multus-underlay/index.md) + [Calico](../calico/index.md)/[Cillium](../cilium/index.md)。
 
-2. 使用前请先安装 [Multus](../multus-underlay/install.md) 以及 Underlay CNI（[Macvlan](../multus-underlay/macvlan.md) 或 [SR-IOV](../multus-underlay/sriov.md)），并确认待使用的网卡接口和子网。
+2. 在使用小于 v0.7.0 的 Spiderpool 版本前，请先安装 [Multus](../multus-underlay/install.md) 以及 Underlay CNI（[Macvlan](../multus-underlay/macvlan.md) 或 [SR-IOV](../multus-underlay/sriov.md)），并确认待使用的网卡接口和子网。
 
 ## 安装步骤
 
@@ -21,15 +21,15 @@ hide:
 
 2. 在左侧导航栏中选择 `Helm 应用` -> `Helm 模板`，找到并点击 `spiderpool`。
 
-    ![spiderpool helm](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/spiderpool-helm.png)
+    ![spiderpool helm](../../images/spiderpool-helm.png)
 
 3. 在`版本选择`中选择希望安装的版本，点击`安装`。
 
 4. 在安装界面，填写所需的安装参数。
 
-    ![spiderpool instal1](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/spiderpool-install1.png)
+    ![spiderpool instal1](../../images/spiderpool-install1.png)
 
-    ![spiderpool instal2](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/spiderpool-install2.png)
+    ![spiderpool instal2](../../images/spiderpool-install2.png)
 
     上图中的各项参数说明：
 
@@ -43,11 +43,11 @@ hide:
 
     - `Spiderpool Agent Setting` —> `Spiderpool Agent ServiceMonitor` -> `Install`：安装 Spiderpool Agent 的 ServiceMonitor 对象，这要求集群内已安装 Prometheus，否则会创建失败。
 
-    - `Spiderpool Agent Setting` —> `Spiderpool Agent PrometheusRule` -> `Install`：安装 Spiderpool Agent 的 prometheusRule 对象，这要求集群内已安装 Prometheus，否则会创建失败。
-
-    ![spiderpool instal3](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/spiderpool-install3.png)
+    ![spiderpool instal3](../../images/spiderpool-install3.png)
 
     上图中的各项参数说明：
+
+    - `Spiderpool Agent Setting` —> `Spiderpool Agent PrometheusRule` -> `Install`：安装 Spiderpool Agent 的 prometheusRule 对象，这要求集群内已安装 Prometheus，否则会创建失败。
 
     - `Spiderpool Controller Setting` -> `replicas number`：设置 Spiderpool Controller 的副本数，主要负责 Spiderpool 的控制器逻辑。
 
@@ -62,11 +62,21 @@ hide:
 
     - `Spiderpool Controller Setting` -> `Spiderpool Controller PrometheusRule` -> `Install`：安装 Spiderpool Controller 的 prometheusRule 对象，这要求集群内已安装 Prometheus，否则创建失败。
 
+    ![spiderpool instal4](../../images/spiderpool-install4.png)
+
+    上图中的各项参数说明：
+
+    - `Multus Setting -> MultusCNI -> Install Multus CNI`：启用 Multus 安装。如果您已经安装了 Multus，则可以将其设置为 false。默认为 true。
+
+    - `Multus Setting -> MultusCNI -> Default CNI Name`：集群默认 CNI 名称。 默认为空，如果该值为空，Spiderpool 将根据/etc/cni/net.d/ 中已有的 CNI conf 文件自动获取默认 CNI。
+
+    - `Multus Setting -> Multus Image -> repository`：设置 Multus 的镜像仓库地址，默认已经填写了可用的在线仓库，如果是私有化环境，可修改为私有仓库地址。
+
     - `IP Family Setting -> enable IPv4`：开启 IPv4 支持。若开启，在给 pod 分配 IP 时，会尝试分配 IPv4 地址，否则会导致 Pod 启动失败。所以，请开启 `Cluster Default Ippool Installation` -> `install IPv4 ippool`，以创建集群的默认 IPv4 池。
 
     - `IP Family Setting -> enable IPv6`：开启 IPv6 支持。若开启，在给 pod 分配 IP 时，会尝试分配 IPv6 地址，否则会导致 Pod 启动失败。所以，请开启 `Cluster Default Ippool Installation` -> `install IPv6 ippool`，以创建集群的默认 IPv6 池。
 
-    ![spiderpool instal4](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/spiderpool-install4.png)
+    ![spiderpool instal5](../../images/spiderpool-install5.png)
 
     上图中的各项参数说明：
 
