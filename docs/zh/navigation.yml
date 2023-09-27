@@ -882,6 +882,7 @@ nav:
                   - Release Notes: network/modules/spiderpool/releasenotes.md
                   - 介绍: network/modules/spiderpool/index.md
                   - 安装: network/modules/spiderpool/install.md
+                  - 升级: network/modules/spiderpool/upgrade.md
                   - 创建 IP 池: network/modules/spiderpool/createpool.md
                   - IP 池场景说明: network/modules/spiderpool/ippoolusage.md
                   - 工作负载使用 IP 池: network/modules/spiderpool/usage.md
@@ -893,6 +894,9 @@ nav:
                   - 介绍: network/modules/submariner/index.md
                   - 安装: network/modules/submariner/install.md
                   - 使用说明: network/modules/submariner/usage.md
+              - sriov-network-operator:
+                  - 介绍: network/modules/sriov-network-operator/index.md
+                  - 安装: network/modules/sriov-network-operator/install.md
           - 云原生存储:
               - 介绍:
                   - 什么是云原生存储: storage/index.md
