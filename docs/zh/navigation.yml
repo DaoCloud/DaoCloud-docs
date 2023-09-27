@@ -997,7 +997,7 @@ nav:
           - 下载 DCE 5.0 社区版: download/free/dce5-installer-v0.11.0.md
           - 下载 DCE 5.0 商业版: download/business/dce5-installer-v0.11.0.md
           - 子模块和插件:
-              - 下载 Addon 离线包: download/addon/v0.9.0.md
+              - 下载 Addon 离线包: download/addon/v0.11.0.md
               - 下载全局管理: download/modules/ghippo.md
               - 下载容器管理: download/modules/kpanda.md
               - 下载集群巡检: download/modules/kcollie.md
