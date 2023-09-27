@@ -24,7 +24,7 @@ DevOps 工具链是一组工具，使 DevOps 团队能够在整个产品生命�
     - 工具：选择一个工具链类型进行集成。
     - 集成名称：集成工具的名称，不可重复。
     - 地址：可访问工具链的地址，以 http://, https:// 开头的域名或 IP 地址。
-    - 用户名和密码：可以登录工具链的用户和密码、
+    - 用户名和密码：可以登录工具链的用户和密码。
 
     ![tool02](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/tool02.png)
 
