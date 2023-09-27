@@ -10,6 +10,8 @@
 
 3. 准备一个镜像仓库，例如 Harbor 仓库。
 
+4. 下载 [daocloud-demo.jar](https://github.com/huoyinghao/filedownload/raw/main/daocloud-demo.jar)
+
 ## 操作步骤
 
 1. 在左侧导航栏点击`向导`，然后选择`基于 Jar 包构建`。
@@ -39,7 +41,7 @@
 4. 参考下列要求填写容器配置，然后点击`下一步`。
 
     - 访问类型：支持通过 clusterIP 仅允许在集群内访问该应用，或者通过 NodePort 允许在集群外部访问，或者通过负载均衡器进行访问。
-    - 端口配置：根据实际业务场景填写需要暴露的端口号。
+    - 端口配置：根据实际业务场景填写需要暴露的端口号，此示例中的 jar 包需要暴露 8080 端口。
 
         > 有关服务配置的更多详细说明，可参考[创建服务](../../../kpanda/user-guide/network/create-services.md)。
 
