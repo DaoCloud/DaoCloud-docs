@@ -16,7 +16,7 @@
 
 ## 隧道模式(IPIP)
 
-Vxlan 和 IPIP 协议不依赖底层网络如何实现，通过封装构建一个大二层覆盖网络以实现网络联通，所以能够运行在大多数公有云上，此模式不依赖 [CCM]()。Calico 部署清单文件默认使用 IPIP 模式，使用以下命令安装:
+Vxlan 和 IPIP 协议不依赖底层网络如何实现，通过封装构建一个大二层覆盖网络以实现网络联通，所以能够运行在大多数公有云上，此模式不依赖 [CCM](https://github.com/AliyunContainerService/alicloud-controller-manager)。Calico 部署清单文件默认使用 IPIP 模式，使用以下命令安装:
 
 ```shell
 ~# kubectl apply -f calico.yaml
@@ -72,12 +72,12 @@ Date: Wed, 27 Sep 2023 08:15:34 GMT
 Content-Length: 153
 ```
 
-经过测试: IPIP 和 Vxlan 模式下各种通信正常，并且不依赖 [CCM]()发布路由以实现 Pod 间的通信, 但 LoadBalancer Service 的实现依赖 [CCM]()
+经过测试: IPIP 和 Vxlan 模式下各种通信正常，并且不依赖 [CCM](https://github.com/AliyunContainerService/alicloud-controller-manager)发布路由以实现 Pod 间的通信, 但 LoadBalancer Service 的实现依赖 [CCM](https://github.com/AliyunContainerService/alicloud-controller-manager)
 
 ## 非隧道模式
 
-当 Calico 运行在非隧道模式，Pod 之间通信直接对接底层网络，所以常常需要一些其他设备发布路由，以使 Pod 子网路由集群外可达。在非公有云上需要支持运行 BGP 协议的路由器，在公有云上需要支持一些往外的组件发布 Pod 子网路由到 VPC 网络，如阿里云的 [CCM]()。
-但 [CCM]()组件发布路由常常以节点为单位，这就要求不同节点的 Pod 属于不同的段，同一节点的 Pod 属于同一个段。而 Calico 自有的 IPAM: calico-ipam 无法满足这一点(calico-ipam 以 block 为单位, 而不是以节点为单位)。所以针对这种情况，我们可以通过切换 ipam 为
+当 Calico 运行在非隧道模式，Pod 之间通信直接对接底层网络，所以常常需要一些其他设备发布路由，以使 Pod 子网路由集群外可达。在非公有云上需要支持运行 BGP 协议的路由器，在公有云上需要支持一些往外的组件发布 Pod 子网路由到 VPC 网络，如阿里云的 [CCM](https://github.com/AliyunContainerService/alicloud-controller-manager)。
+但 [CCM](https://github.com/AliyunContainerService/alicloud-controller-manager)组件发布路由常常以节点为单位，这就要求不同节点的 Pod 属于不同的段，同一节点的 Pod 属于同一个段。而 Calico 自有的 IPAM: calico-ipam 无法满足这一点(calico-ipam 以 block 为单位, 而不是以节点为单位)。所以针对这种情况，我们可以通过切换 ipam 为
 `host-local` 或 `spiderpool` 来解决。
 
 > 节点的 PodCIDR 对应 Node.spec.podCIDR 字段
@@ -85,7 +85,7 @@ Content-Length: 153
 * host-local: 非常简单的 ipam，从节点的 PodCIDR 中分配 IP, 分配的数据存放于本地磁盘, 无其他 ipam 能力
 * spiderpool: 提供非常强大的 IPAM 能力，支持按节点分配IP、支持固定 IP、多网卡分配 IP 等高级特性
 
-在介绍如何使用之前，需要先安装 [CCM组件](),参考 [安装CCM文档](usage.md#安装CCM组件，发布VPC路由), 并且切换 Calico 为 非隧道模式，修改 calico-node daemonSet 部署清单文件中以下几个环境变量为 Never:
+在介绍如何使用之前，需要先安装 [CCM组件](https://github.com/AliyunContainerService/alicloud-controller-manager),参考 [安装CCM文档](usage.md#安装CCM组件，发布VPC路由), 并且切换 Calico 为 非隧道模式，修改 calico-node daemonSet 部署清单文件中以下几个环境变量为 Never:
 
 ```shell
             # Enable IPIP
