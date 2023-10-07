@@ -13,10 +13,10 @@
 
 3. 修改数据库
 
-   ```sql
-   alter table config_info drop column encrypted_data_key;
-   alter table config_info_beta drop column encrypted_data_key;
-   alter table his_config_info drop column encrypted_data_key;
-   ```
+    ```sql
+    alter table config_info drop column encrypted_data_key;
+    alter table config_info_beta drop column encrypted_data_key;
+    alter table his_config_info drop column encrypted_data_key;
+    ```
 
 4. 重启此 Nacos 的 StatefulSet。
