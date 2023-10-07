@@ -25,7 +25,7 @@
     - 目标服务：选择将请求直接发送到后端服务，或者重定向到其他服务，或者直接返回 HTTP 状态码。
     - 如果选择后端服务，则需要配置权重。权重越大，网关向其分发的流量就越多。
 
-        ![配置信息](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/config.png)
+    ![配置信息](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/config.png)
 
 3. 参考下方说明填写策略配置（选填）。
 
@@ -38,7 +38,7 @@
     - JWT 认证：开启或禁用 JWT 认证
     - 安全认证：开启或禁用安全认证
 
-        ![配置策略](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/policy02.png)
+    ![安全配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/policy02.png)
 
 5. 在页面右下角点击`保存`（不上线）。如果点击`保存并上线`则可以直接上线 API。
 
@@ -50,11 +50,11 @@
 
     API 创建成功后，**默认处于下线状态，此时无法访问**。需要将 API 调整为`上线`，才能正常访问。API 上线有两种方式。
 
-    - 在 API在 `API 管理`页面找到需要更新的 API，在该 API 的右侧点击 **`ⵗ`** 选择`API 上线`。
+    - 在 API在 `API 管理`页面找到需要更新的 API，在该 API 的右侧点击 `ⵗ` 选择 `API 上线`。
 
         ![API 上线](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/online.png)
 
-    - 点击 API 名称进入 API 详情页，在页面右上角点击 **`ⵗ`** 并选择`API 上线`。
+    - 点击 API 名称进入 API 详情页，在页面右上角点击 `ⵗ` 并选择 `API 上线`。
 
         ![API 上线](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/online1.png)
 

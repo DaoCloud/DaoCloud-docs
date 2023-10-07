@@ -73,9 +73,9 @@
   
     !!! note
 
-        - 需要将 `version`、`nacos-operator.image.tag`、`skoala-agent.image.tag`、`sentinel-operator.image.tag` 四个参数的值调整为您需要升级到的微服务引擎的版本号。
+        需要将 `version`、`nacos-operator.image.tag`、`skoala-agent.image.tag`、`sentinel-operator.image.tag` 四个参数的值调整为您需要升级到的微服务引擎的版本号。
 
-5. 根据自身需要，手动删除所需更新的其他 crd 文件，重新运行对应的文件。
+5. 根据自身需要，手动删除所需更新的其他 CRD 文件，重新运行对应的文件。
 
     ```bash
     kubectl apply -f xxx.yaml

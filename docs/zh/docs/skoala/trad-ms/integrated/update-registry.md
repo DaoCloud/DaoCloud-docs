@@ -7,7 +7,7 @@ hide:
 
 微服务引擎目前仅支持更新 Nacos/Zookeeper/Eureka 注册中心的配置。
 
-1. 在`接入注册中心列表`页选择需要更新的注册中心，在右侧点击 **`⋯`** 并选择`编辑`。
+1. 在`接入注册中心列表`页选择需要更新的注册中心，在右侧点击 `⋯` 并选择`编辑`。
 
     ![进入更新页面](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/integrated/imgs/update-1.png)
 

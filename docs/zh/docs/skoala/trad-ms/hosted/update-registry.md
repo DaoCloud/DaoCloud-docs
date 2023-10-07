@@ -5,7 +5,7 @@ hide:
 
 # 更新托管注册中心
 
-1. 在`接入注册中心列表`页选择需要更新的注册中心，在右侧点击 **`⋯`** 并选择`编辑`。
+1. 在`接入注册中心列表`页选择需要更新的注册中心，在右侧点击 `⋯` 并选择`编辑`。
 
     ![进入更新页面](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/registry-lcm/imgs/update01.png)
 

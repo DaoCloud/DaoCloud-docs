@@ -5,7 +5,7 @@ hide:
 
 # 删除注册中心
 
-1. 在`托管注册中心列表`页选择需要删除的注册中心，在右侧点击 **`⋯`** 并选择`删除`。
+1. 在`托管注册中心列表`页选择需要删除的注册中心，在右侧点击 `⋯` 并选择`删除`。
 
     ![进入删除页面](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/registry-lcm/imgs/delete01.png)
 

@@ -1,6 +1,7 @@
 # 服务接入 Sentinel 规范
 
-为了正常使用 DCE 5.0 微服务引擎提供的 [Sentinel 流量治理](../trad-ms/hosted/plugins/sentinel.md)和查看 [Sentinel 数据监控](../trad-ms/hosted/monitor/components.md)，需要将应用接入 Sentinel 控制台，并且传递应用参数时需要满足一定规范。
+为了正常使用 DCE 5.0 微服务引擎提供的 [Sentinel 流量治理](../trad-ms/hosted/plugins/sentinel.md)和查看
+[Sentinel 数据监控](../trad-ms/hosted/monitor/components.md)，需要将应用接入 Sentinel 控制台，并且传递应用参数时需要满足一定规范。
 
 ## JAVA（无框架）
 
@@ -97,15 +98,11 @@
 
 ### Sentinel 写入 Nacos 配置中心 dataId 的命名规范
 
-流控规则：{{appName}}-flow-rules
-
-熔断规则：{{appName}}-degrade-rules
-
-系统规则：{{appName}}-system-rules
-
-授权规则：{{appName}}-authority-rules
-
-热点规则：{{appName}}-param-rules
+- 流控规则：{{appName}}-flow-rules
+- 熔断规则：{{appName}}-degrade-rules
+- 系统规则：{{appName}}-system-rules
+- 授权规则：{{appName}}-authority-rules
+- 热点规则：{{appName}}-param-rules
 
 appName 为 project.name 三段式的最后一段。
 
@@ -152,7 +149,7 @@ password: 98985ba0-da90-41f6-b6dc-96f2ec49d973
 
 1. 在项目中添加 `application.yaml` 配置文件。
 
-    ```yaml
+    ```yaml title="application.yaml"
     nacos:
       # Nacos 地址
       address: 10.6.176.50:30760
@@ -258,7 +255,7 @@ password: 98985ba0-da90-41f6-b6dc-96f2ec49d973
 
 1. 使用脚本访问设置了流控规则的 Web API。例如：
 
-    ```
+    ```java
     while true; do curl http://localhost:8080/hello; done
     ```
 

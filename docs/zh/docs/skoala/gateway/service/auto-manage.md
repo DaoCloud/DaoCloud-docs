@@ -16,7 +16,7 @@
 
 ## 配置服务策略
 
-1. 在`服务列表`->`自动纳管`页面找到目标服务，在右侧点击 **`ⵗ`** 选择`策略配置`。
+1. 在`服务列表`->`自动纳管`页面找到目标服务，在右侧点击 `ⵗ` 选择`策略配置`。
 
     ![策略配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/service/imgs/policy1.png)
 
@@ -25,7 +25,7 @@
     - HTTPS 证书验证：开启后，必须通过证书校验才能成功访问该服务。
     - 服务熔断：当最大连接数、最大处理连接数、最大并行请求数、最大并行重试数 **任何一个** 指标达到设定的阈值时，自动切断对该服务的调用，保护系统整体的可用性。当指标降到设定的阈值之后，自动恢复对该服务的调用。
 
-        ![策略配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/service/imgs/policy2.png)
+    ![策略配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/service/imgs/policy2.png)
 
 ## 查看服务详情
 

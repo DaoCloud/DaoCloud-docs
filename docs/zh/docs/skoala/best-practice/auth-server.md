@@ -8,6 +8,7 @@
 - [创建一个网关](../gateway/create-gateway.md)
 
 ## 配置认证服务器
+
 ### 使用默认的认证服务器
 
 1. 将认证服务器的代码模板克隆到本地。
@@ -16,7 +17,9 @@
     git clone https://github.com/projectsesame/envoy-authz-java
     ```
     
-2. 直接使用 [all-in-one-contour.yaml](https://github.com/projectsesame/envoy-authz-java/blob/main/all-in-one-contour.yaml) 以及 [all-in-one-contour.yaml](https://github.com/projectsesame/envoy-authz-java/blob/main/all-in-one-contour.yaml) 下的默认镜像。
+2. 直接使用 [all-in-one-contour.yaml](https://github.com/projectsesame/envoy-authz-java/blob/main/all-in-one-contour.yaml)
+   以及 [all-in-one-contour.yaml](https://github.com/projectsesame/envoy-authz-java/blob/main/all-in-one-contour.yaml)
+   下的默认镜像。
 
     默认镜像如下：
     
@@ -41,7 +44,7 @@
 
 2. 使用如下命令编译 API 模块，解决类找不到的问题
 
-    ```
+    ```bash
     mvn clean package
     ```
 
@@ -60,7 +63,9 @@
 
 ## 接入认证服务器
 
-1. 在网关所在的集群内创建以下资源。使用 `kubectl apply` 命令基于 [all-in-one-contour.yaml](https://github.com/projectsesame/envoy-authz-java/blob/main/all-in-one-contour.yaml) 文件可以一次性快速创建下述三项资源。
+1. 在网关所在的集群内创建以下资源。使用 `kubectl apply` 命令基于
+   [all-in-one-contour.yaml](https://github.com/projectsesame/envoy-authz-java/blob/main/all-in-one-contour.yaml)
+   文件可以一次性快速创建下述三项资源。
 
     - 认证服务器的 Deployment
     - 认证服务器的 Service
@@ -76,7 +81,9 @@
 
     !!! note
 
-        认证服务器的 `namespace/name` 指的是 [all-in-one-contour.yaml](https://github.com/projectsesame/envoy-authz-java/blob/main/all-in-one-contour.yaml) 文件中 ExtensionService 下的 `metadata` 部分的 `namespace` 和 `name` 字段的取值。
+        认证服务器的 `namespace/name` 指的是
+        [all-in-one-contour.yaml](https://github.com/projectsesame/envoy-authz-java/blob/main/all-in-one-contour.yaml)
+        文件中 ExtensionService 下的 `metadata` 部分的 `namespace` 和 `name` 字段的取值。
 
         ![基础配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/jwt05.png)
 

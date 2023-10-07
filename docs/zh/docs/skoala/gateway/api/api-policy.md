@@ -1,6 +1,8 @@
 # 配置 API 策略
 
-DCE 5.0 微服务网关支持九种 API 策略：负载均衡、路径改写、超时配置、重试机制、请求头重写、响应头重写、Websocket、本地限流、健康检查。可以单独使用某一种策略，也可以组合使用多种策略达到最佳实践。<!--有关 API 策略的组合配置，参考[API 策略配置最佳实践]()-->
+DCE 5.0 微服务网关支持九种 API 策略：负载均衡、路径改写、超时配置、重试机制、请求头重写、响应头重写、Websocket、本地限流、健康检查。
+可以单独使用某一种策略，也可以组合使用多种策略达到最佳实践。
+有关 API 策略的组合配置，参考[API 策略配置最佳实践](../../best-practice/gateway02.md)。
 
 有两种方式可以配置 API 策略：
 
@@ -51,7 +53,7 @@ DCE 5.0 微服务网关支持九种 API 策略：负载均衡、路径改写、�
 如果对外暴露的 API 路径与后端服务提供的路径不一致，可以改写 API 路径使其与后端服务的路径一致，确保服务的正常访问。
 启用路径改写后，网关会将外部请求流量转发到重写后的路径。
 
-注意：**需要确保重写的路径是真实存在的，并且路径正确，以 “/” 开头**。
+注意：**需要确保重写的路径是真实存在的，并且路径正确，以 “/” 开头**
 
 ![路径改写](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/rewrite.png)
 
@@ -65,7 +67,8 @@ DCE 5.0 微服务网关支持九种 API 策略：负载均衡、路径改写、�
 
 ## 重试机制
 
-微服务网关的 API 支持配置非常丰富的重试机制。启用重试机制后，网关会在请求失败时自动重新尝试访问。达到重试超时时间之后自动触发再次重试，当重试次数达到配置的最大重试次数时停止重试。重试机制默认处于关闭状态，开启后必须配置重试次数和重试超时时长。
+微服务网关的 API 支持配置非常丰富的重试机制。启用重试机制后，网关会在请求失败时自动重新尝试访问。
+达到重试超时时间之后自动触发再次重试，当重试次数达到配置的最大重试次数时停止重试。重试机制默认处于关闭状态，开启后必须配置重试次数和重试超时时长。
 
 支持通过自定义配置选择不同的重试条件，自定义重试状态码等。
 
@@ -86,7 +89,7 @@ DCE 5.0 微服务网关支持九种 API 策略：负载均衡、路径改写、�
 - 资源不足：当响应结果为资源不足时，自动进行重试。
 - 服务不可用时：当响应结果为后端不可用时，自动进行重试。
 
-    ![重试](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/retry.png)
+![重试](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/retry.png)
 
 ## 请求头/响应头改写
 
@@ -96,7 +99,7 @@ DCE 5.0 微服务网关支持九种 API 策略：负载均衡、路径改写、�
 - 修改请求头/响应头：使用`设置`动作，填写已有的关键字并赋予新值。
 - 移除请求头/响应头，使用`移除`动作，只填写需要移除的关键字即可，无需填写对应的值。
 
-    ![header 改写](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/header-rewrite.png)
+![header 改写](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/header-rewrite.png)
 
 ## Websocket
 
@@ -112,16 +115,19 @@ WebSocket 是一种在单个 TCP 连接上进行全双工通信的协议。WebSo
 
 - 请求速率：时间窗口（秒/分/时）内允许的最大请求速率，例如每分钟最多允许 3 次请求。支持输入 >=1 的整数。
 - 允许溢出速率：达到预设的请求速率时，仍旧允许额外处理一部分请求，适用于业务突增的流量高峰时段。支持输入 >=1 的整数。
-- 限制返回码：默认返回码为 429，表示请求次数过多。可参考 envoy 官方文档了解[本地限流支持的状态码](https://github.com/envoyproxy/envoy/blob/v1.23.1/api/envoy/type/v3/http_status.proto#L137)。
+- 限制返回码：默认返回码为 429，表示请求次数过多。可参考 envoy
+  官方文档了解[本地限流支持的状态码](https://github.com/envoyproxy/envoy/blob/v1.23.1/api/envoy/type/v3/http_status.proto#L137)。
 - Header 关键字：默认为空，可根据需求自行设置。
 
-下图中的配置表示：每分钟最多允许请求 8 次 (3+5)，第 9 次访问时会返回 429 状态码，提示访问次数过多。每次请求成功后返回的响应内容都会带上 `ratelimit：8` 响应头。
+下图中的配置表示：每分钟最多允许请求 8 次 (3+5)，第 9 次访问时会返回 429 状态码，提示访问次数过多。
+每次请求成功后返回的响应内容都会带上 `ratelimit：8` 响应头。
 
 ![本地限流](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/ratelimit.png)
 
 !!! info
 
-    除了在 API 层级的本地限流能力之外，还可以通过[配置域名策略](../domain/domain-policy.md)针对整个域名进行限流处理。当 API 与域名同时配置限流策略时，以 API 层级的限流策略为准。
+    除了在 API 层级的本地限流能力之外，还可以通过[配置域名策略](../domain/domain-policy.md)针对整个域名进行限流处理。
+    当 API 与域名同时配置限流策略时，以 API 层级的限流策略为准。
 
 ## 健康检查
 
@@ -131,10 +137,12 @@ WebSocket 是一种在单个 TCP 连接上进行全双工通信的协议。WebSo
 - 特定健康检查主机：配置主机地址后，仅对该主机进行健康检查。
 - 检查时间间隔：每次健康检查的时间间隔，时间单位为“秒”，例如每隔 10 秒进行一次健康检查。
 - 检查超时时间：健康检查的最大超时时长，当健康检查超过配置的时长时，直接标记健康检查失败。
-- 标记健康检查次数：连续检查 N 次并且每次结果都是健康时，才将服务实例标记为健康状态；当服务实例被标记为健康状态后，请求流量将会自动分发到该服务实例。
-- 标记不健康检查次数：连续检查 N 次并且每次结果都是不健康时，就将服务实例标记为不健康状态，当服务实例被标记为不健康时，停止向该实例分发请求流量。
+- 标记健康检查次数：连续检查 N 次并且每次结果都是健康时，才将服务实例标记为健康状态；
+  当服务实例被标记为健康状态后，请求流量将会自动分发到该服务实例。
+- 标记不健康检查次数：连续检查 N 次并且每次结果都是不健康时，就将服务实例标记为不健康状态，
+  当服务实例被标记为不健康时，停止向该实例分发请求流量。
 
-    ![健康检查](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/healthcheck.png)
+![健康检查](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/healthcheck.png)
 
 ## Cookie 重写
 
@@ -143,24 +151,26 @@ WebSocket 是一种在单个 TCP 连接上进行全双工通信的协议。WebSo
 - 名称：必须填写当前已经存在的 cookie 名称
 - 域名：重新定义 cookie 的域名
 - 路径：重新定义 cookie 的路径
-- Secure：`保持`指启用安全模式，`禁用`指禁用安全模式。在安全模式下，请求必须为安全连接（HTTPS），cookie 才会被保存下来。如果使用 HTTP 协议下，cookie 将无效
+- Secure：`保持`指启用安全模式，`禁用`指禁用安全模式。在安全模式下，请求必须为安全连接（HTTPS），
+  cookie 才会被保存下来。如果使用 HTTP 协议下，cookie 将无效
 - Samesite：是否在跨域时发送 cookie
 
     - Strict：跨域请求严禁携带本站 cookie
     - Lax：大多数情况禁止，但是导航到目标网址的 Get 请求除外。
     - None：跨域请求允许携带本站 cookie，前提是 Secure 必须设置为`保持`，即只能在 HTTPS 协议下使用
 
-        ![cookie 重写](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/cookie.png)
+![cookie 重写](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/cookie.png)
 
 ## 访问黑白名单
 
 启用`访问黑白名单`后，可以仅允许白名单上的 IP 请求通过网关，拒绝其他所有来源的请求；或者拒绝黑名单上的 IP 请求通过网关，允许其他所有来源的请求。
 
-- 网关前置代理层数：请求从客户端到网关中途需要经过几个代理端点。例如 `**客户端-Nginx-网关**` 的代理层数为 1，因为中间只经过 1 个 Nginx 代理端点。
+- 网关前置代理层数：请求从客户端到网关中途需要经过几个代理端点。例如 `客户端-Nginx-网关` 的代理层数为 1，因为中间只经过 1 个 Nginx 代理端点。
 
     > 创建/更新网关时，可以在网关的`高级配置`部分设置代理层数，需要按照实际情况填写。
 
-- Remote：IP 来源为 Remote 时，黑白名单是否生效取决于网关前置代理层数。当代理层数为 n 时，生效的是从网关开始向前第 n+1 个端点的 IP。例如 `**客户端-Nginx-网关**` 前置代理层数为 1，则仅对网关向前第 2 个端点的 IP 生效，即客户端的 IP。如果填写 Nginx 的 IP，黑白名单不会生效。
+- Remote：IP 来源为 Remote 时，黑白名单是否生效取决于网关前置代理层数。当代理层数为 n 时，生效的是从网关开始向前第 n+1 个端点的 IP。
+  例如 `客户端-Nginx-网关` 前置代理层数为 1，则仅对网关向前第 2 个端点的 IP 生效，即客户端的 IP。如果填写 Nginx 的 IP，黑白名单不会生效。
 
     ![黑白名单](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/backlist01.png)
 

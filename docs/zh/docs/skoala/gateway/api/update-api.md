@@ -4,7 +4,7 @@
 
 可以通过两种方式更新 API 的基础配置、策略配置和安全配置。
 
-- 在 `API 管理`页面找到需要更新的 API，在该 API 的右侧点击 **`ⵗ`** 选择`修改基础配置`、`修改策略配置`或`修改安全配置`。
+- 在 `API 管理`页面找到需要更新的 API，在该 API 的右侧点击 `ⵗ` 选择`修改基础配置`、`修改策略配置`或`修改安全配置`。
 
     ![在列表页更新基础信息](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/update-api-1.png)
 

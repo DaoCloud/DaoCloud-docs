@@ -5,7 +5,7 @@ hide:
 
 # 移除注册中心
 
-1. 在`接入注册中心列表`页选择需要移除的注册中心，在右侧点击 **`⋯`** 并选择`移除`。
+1. 在`接入注册中心列表`页选择需要移除的注册中心，在右侧点击 `⋯` 并选择`移除`。
 
     ![进入移除页面](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/integrated/imgs/delete-1.png)
 

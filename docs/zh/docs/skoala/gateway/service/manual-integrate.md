@@ -48,7 +48,7 @@
 
 更新基础配置指修改服务的名称、协议、地址和端口等连接信息。
 
-1. 在`服务列表`页面找到需要更新的服务，在服务右侧点击 **`ⵗ`**，选择`修改基础配置`。
+1. 在`服务列表`页面找到需要更新的服务，在服务右侧点击 `ⵗ`，选择`修改基础配置`。
 
     ![更新服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-service07.png)
 
@@ -58,11 +58,12 @@
 
 !!! danger
 
-    如果更新基础配置时选择了其他服务或修改了外部服务的连接信息，那么原来的服务会被删除，相当于添加了一个新的服务。但原服务关联的 API 会被自动关联到新的服务。
+    如果更新基础配置时选择了其他服务或修改了外部服务的连接信息，那么原来的服务会被删除，相当于添加了一个新的服务。
+    但原服务关联的 API 会被自动关联到新的服务。
 
 ### 更新策略配置
 
-1. 在`服务列表`页面找到需要更新的服务，在服务右侧点击 **`ⵗ`**，选择`修改策略配置`。
+1. 在`服务列表`页面找到需要更新的服务，在服务右侧点击 `ⵗ`，选择`修改策略配置`。
 
     ![更新服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-service09.png)
 
@@ -72,10 +73,11 @@
 
 ## 删除服务
 
-在`服务列表`页面找到需要删除的服务，在服务右侧点击 **`ⵗ`**，选择`删除`。
+在`服务列表`页面找到需要删除的服务，在服务右侧点击 `ⵗ`，选择`删除`。
 
 ![删除服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-service10.png)
 
-删除服务之前，需要确保没有 API 正在使用该服务。如果该服务正在被某个 API 使用，需要先根据页面提示，点击 `API 管理`删除关联的 API 之后才能删除该服务。
+删除服务之前，需要确保没有 API 正在使用该服务。如果该服务正在被某个 API 使用，需要先根据页面提示，
+点击 `API 管理`删除关联的 API 之后才能删除该服务。
 
 ![删除服务](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/service/imgs/delete1.png)
