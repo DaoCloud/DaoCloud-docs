@@ -176,15 +176,162 @@ nav:
                   - 管理 Helm 应用: kpanda/user-guide/helm/helm-app.md
                   - 管理 Helm 仓库: kpanda/user-guide/helm/helm-repo.md
               - 容器网络:
-                  - 创建服务: kpanda/user-guide/network/create-services.md
-                  - 创建路由: kpanda/user-guide/network/create-ingress.md
-                  - 网络策略: kpanda/user-guide/network/network-policy.md
+                  - UI 操作说明:
+                      - 创建服务: kpanda/user-guide/network/create-services.md
+                      - 创建路由: kpanda/user-guide/network/create-ingress.md
+                      - 网络策略: kpanda/user-guide/network/network-policy.md
+                  - 容器网络介绍:
+                      - 什么是容器网络: network/intro/index.md
+                      - 背景: network/intro/background.md
+                      - 挑战: network/intro/challenges.md
+                      - 网络组件: network/modules/modules.md
+                  - 网络规划:
+                      - 网卡规划: network/plans/ethplan.md
+                      - 网络规划: network/plans/netplan.md
+                  - 网络性能测试:
+                      - 网络 CNI 性能测试报告: network/performance/cni-performance.md
+                      - Spiderpool 性能测试报告: network/performance/spiderpool-performance.md
+                      - Cilium 性能测试报告:
+                          - Cilium 对于 Pod 访问 Service 的加速: network/performance/cilium-performance/cilium-service.md
+                          - Cilium 在 Pod 跨节点通信场景下的性能测试: network/performance/cilium-performance/cilium-crossnode.md
+                          - Cilium 在 nodePort 场景下的访问加速测试: network/performance/cilium-performance/cilium-nodeport.md
+                          - Cilium 基于 eBPF 技术实施 Pod 带宽管控场景下的性能测试: network/performance/cilium-performance/cilium-bandwidth.md
+                      - 基于 eBPF 技术实施网络策略场景下的性能测试: network/performance/ebpf-performance.md
+                  - 集成 Calico:
+                      - 介绍: network/modules/calico/index.md
+                      - 安装参数配置: network/modules/calico/install.md
+                      - ippool: network/modules/calico/ippool.md
+                      - 监控指标: network/modules/calico/metrics.md
+                      - Calico 网络策略: network/modules/calico/policy.md
+                      - 故障排查: network/modules/calico/debug.md
+                  - 集成 Cilium:
+                      - 介绍: network/modules/cilium/index.md
+                      - 安装参数配置: network/modules/cilium/install.md
+                      - 未支持功能说明: network/modules/cilium/not-support.md
+                      - Cilium 网络通信加速: network/modules/cilium/cross-cluster.md
+                      - 应用跨集群通信: network/modules/cilium/cilium-speedup.md
+                  - 集成 Contour:
+                      - 介绍: network/modules/contour/index.md
+                      - 安装: network/modules/contour/install.md
+                  - 集成 F5networks:
+                      - 介绍: network/modules/f5networks/index.md
+                      - 安装: network/modules/f5networks/install.md
+                      - 使用: network/modules/f5networks/usage.md
+                      - 调试: network/modules/f5networks/debug.md
+                  - 集成 Ingress-nginx:
+                      - 介绍: network/modules/ingress-nginx/index.md
+                      - 安装: network/modules/ingress-nginx/install.md
+                      - Ingress Class: network/modules/ingress-nginx/ingressclass.md
+                      - Ingress Scope: network/modules/ingress-nginx/scope.md
+                      - 跨域配置: network/modules/ingress-nginx/cors.md
+                      - 负载均衡: network/modules/ingress-nginx/proxy.md
+                      - 超时配置: network/modules/ingress-nginx/timeout.md
+                      - 日志配置: network/modules/ingress-nginx/log.md
+                      - 上传限制: network/modules/ingress-nginx/upload.md
+                      - 镜像流量: network/modules/ingress-nginx/mirror.md
+                  - 集成 Metallb:
+                      - 介绍: network/modules/metallb/index.md
+                      - 安装: network/modules/metallb/install.md
+                      - IPPool 使用说明: network/modules/metallb/usage.md
+                      - L2和BGP 模式说明: network/modules/metallb/l2-bgp.md
+                      - 获取客户端源 IP: network/modules/metallb/source_ip.md
+                  - 集成 Multus-underlay:
+                      - 介绍: network/modules/multus-underlay/index.md
+                      - 安装: network/modules/multus-underlay/install.md
+                      - MacVLAN: network/modules/multus-underlay/macvlan.md
+                      - SR-IOV: network/modules/multus-underlay/sriov.md
+                      - DPDK: network/modules/multus-underlay/dpdk.md
+                      - NmState: network/modules/multus-underlay/nmstat.md
+                  - 集成 Spiderpool:
+                      - Release Notes: network/modules/spiderpool/releasenotes.md
+                      - 介绍: network/modules/spiderpool/index.md
+                      - 安装: network/modules/spiderpool/install.md
+                      - 升级: network/modules/spiderpool/upgrade.md
+                      - 创建 IP 池: network/modules/spiderpool/createpool.md
+                      - IP 池场景说明: network/modules/spiderpool/ippoolusage.md
+                      - 工作负载使用 IP 池: network/modules/spiderpool/usage.md
+                      - 第三方工作负载使用 IP 池: network/modules/spiderpool/cutomizedusage.md
+                      - 在阿里云环境运行: network/modules/spiderpool/alibabacloud.md
+                      - 配置参考: network/modules/spiderpool/config.md
+                      - 常用命令: network/modules/spiderpool/command.md
+                  - 集成 Submariner:
+                      - 介绍: network/modules/submariner/index.md
+                      - 安装: network/modules/submariner/install.md
+                      - 使用说明: network/modules/submariner/usage.md
+                  - 集成 sriov-network-operator:
+                      - 介绍: network/modules/sriov-network-operator/index.md
+                      - 安装: network/modules/sriov-network-operator/install.md                  
               - 自定义资源: kpanda/user-guide/custom-resources/create.md
               - 容器存储:
-                  - 数据卷声明: kpanda/user-guide/storage/pvc.md
-                  - 数据卷: kpanda/user-guide/storage/pv.md
-                  - 存储池: kpanda/user-guide/storage/sc.md
-                  - 共享存储池: kpanda/user-guide/storage/sc-share.md
+                  - UI 操作说明:
+                      - 数据卷声明: kpanda/user-guide/storage/pvc.md
+                      - 数据卷: kpanda/user-guide/storage/pv.md
+                      - 存储池: kpanda/user-guide/storage/sc.md
+                      - 共享存储池: kpanda/user-guide/storage/sc-share.md
+                  - 容器存储介绍:
+                      - 什么是云原生存储: storage/index.md
+                      - 背景和挑战: storage/background.md
+                      - 功能优势: storage/benefits.md
+                      - 功能列表: storage/features.md
+                      - Release Notes: storage/hwameistor/releasenotes.md
+                  - HwameiStor 本地存储:
+                      - 介绍: storage/hwameistor/intro/index.md
+                      - 组件介绍:
+                          - 本地磁盘管理器: storage/hwameistor/intro/ldm.md
+                          - 本地存储: storage/hwameistor/intro/ls.md
+                          - DRBD 安装器: storage/hwameistor/intro/drbd.md
+                          - 调度器: storage/hwameistor/intro/scheduler.md
+                          - 准入控制器: storage/hwameistor/intro/admission-controller.md
+                      - 资源介绍: storage/hwameistor/intro/resources.md
+                      - 安装管理:
+                          - 准备工作: storage/hwameistor/install/prereq.md
+                          - Hwameistor 安装: storage/hwameistor/install/deploy-operator.md
+                          - 资源要求: storage/hwameistor/install/proresource.md
+                          - DRDB 安装: storage/hwameistor/install/drbdinstall.md
+                          - 安装后检查: storage/hwameistor/install/post-check.md
+                          - 存储网卡配置: storage/hwameistor/install/storage-eth.md
+                          - 自定义 kubelet 根目录: storage/hwameistor/install/customized-kubelet.md
+                          - 升级: storage/hwameistor/install/upgrade.md
+                          - 卸载: storage/hwameistor/install/uninstall.md
+                      - 节点和磁盘:
+                          - LVM 节点扩展: storage/hwameistor/resources/lvm-nodes.md
+                          - 磁盘节点扩展: storage/hwameistor/resources/disk-nodes.md
+                          - 磁盘扩展: storage/hwameistor/resources/disk-expansion.md
+                          - 磁盘预留: storage/hwameistor/resources/reserveddisk.md
+                      - 存储池:
+                          - 存储池管理: storage/hwameistor/resources/storagepool.md
+                      - 数据卷:
+                          - 数据卷迁移: storage/hwameistor/resources/migrate.md
+                          - 数据卷扩容: storage/hwameistor/resources/expand.md
+                          - 数据卷 IO 限速: storage/hwameistor/resources/volume-ProvisionedIO.md
+                      - 应用场景:
+                          - 应用场景概述: storage/hwameistor/application/overview.md
+                          - 部署有状态应用:
+                              - 使用本地卷部署: storage/hwameistor/application/local.md
+                              - 使用高可用卷部署: storage/hwameistor/application/ha.md
+                      - 常见问题: storage/hwameistor/faqs.md
+                  - 集成开源存储方案:
+                      - Rook-Ceph:
+                          - Rook-Ceph 介绍: storage/solutions/rook-ceph.md
+                          - Rook-Ceph 部署 - 应用商店: storage/solutions/dce-rook-ceph.md
+                          - Rook-Ceph 部署 - Helm: storage/solutions/helm-rook-ceph.md
+                          - 如何接入 Ceph Dashboard: storage/solutions/ceph-dashboard.md
+                      - Longhorn:
+                          - Longhorn 介绍: storage/solutions/longhorn.md
+                          - Longhorn 部署 - 应用商店: storage/solutions/dce-longhorn.md
+                      - OpenEBS:
+                          - OpenEBS 介绍: storage/solutions/openebs.md
+                          - 通过 Helm 部署 OpenEBS: storage/solutions/openebs-helm.md
+                      - TiDB: storage/hwameistor/application/tidb.md
+                      - MinIO: storage/hwameistor/application/minio/minio.md
+                  - 存储基本概念:
+                      - Kubernetes 存储: storage/terms/k8s_storage.md
+                      - CAS 存储: storage/terms/cas.md
+                      - CSI 接口: storage/terms/csi.md
+                      - CRD 和 CR: storage/terms/crd_and_cr.md
+                      - 存储卷: storage/terms/volume.md
+                      - LVM: storage/terms/lvm.md
+                      - PV 和 PVC: storage/terms/pv_pvc.md
               - 配置与密钥:
                   - 创建配置项: kpanda/user-guide/configmaps-secrets/create-configmap.md
                   - 使用配置项: kpanda/user-guide/configmaps-secrets/use-configmap.md
@@ -215,6 +362,10 @@ nav:
                   - 权限扫描: kpanda/user-guide/security/audit.md
                   - 漏洞扫描: kpanda/user-guide/security/hunter.md
                   - 离线升级安全管理模块: kpanda/user-guide/security/offline-upgrade-dowl.md
+                  - 集成 Falco 安全工具:
+                      - 介绍: security/falco.md
+                      - 安装: security/falco-install.md
+                      - Falco-exporter: security/falco-exporter.md
               - 权限管理:
                   - 权限体系介绍: kpanda/user-guide/permissions/permission-brief.md
                   - 集群和命名空间授权: kpanda/user-guide/permissions/cluster-ns-auth.md
@@ -236,6 +387,14 @@ nav:
                   - 天数 GPU 卡管理:
                       - 应用使用天数 GPU: kpanda/user-guide/gpu/Iluvatar_usage.md
                   - GPU 配额管理: kpanda/user-guide/gpu/vgpu_quota.md
+              - 虚拟机容器:
+                  - 介绍:
+                      - 简介: virtnest/intro/index.md
+                      - Release Notes: virtnest/intro/release-notes.md
+                  - 快速入门:
+                      - 创建虚拟机: virtnest/quick-start/index.md
+                      - 通过 NodePort 访问虚拟机: virtnest/quick-start/nodeport.md
+                      - Rook Ceph 部署流程: virtnest/quick-start/rook-ceph.md
               - 最佳实践:
                   - 对 etcd 进行备份还原: kpanda/best-practice/etcd-backup.md
                   - 对 MySQL 应用及数据进行跨集群备份恢复: kpanda/best-practice/backup-mysql-on-nfs.md
@@ -325,7 +484,7 @@ nav:
                   - 登录非安全镜像仓库: kangaroo/best-practice/insecure_registry.md
                   - Harbor Nginx 配置最佳实践: kangaroo/best-practice/harbor-nginx.md
                   - 镜像仓库容量资源规划: kangaroo/best-practice/capacity-planning.md
-      - 微服务:
+      - 可观测:
           - 可观测性:
               - 介绍:
                   - 可观测性: insight/intro/index.md
@@ -409,6 +568,7 @@ nav:
                   - K8s 集群兼容性测试: insight/compati-test/k8s-compatibility.md
                   - Rancher 集群兼容性测试: insight/compati-test/rancher-compatibility.md
                   - OCP 集群兼容性测试: insight/compati-test/ocp-compatibility.md
+      - 微服务:
           - 微服务引擎:
               - 介绍:
                   - 功能总览: skoala/intro/index.md
@@ -815,167 +975,6 @@ nav:
                   - ingressgateway 无法启动: reference/troubleshooting/ghippo01.md
                   - 登录报错 401 或 403: reference/troubleshooting/ghippo02.md
                   - keycloak 无法启动: reference/troubleshooting/ghippo03.md
-          - 云原生网络:
-              - 介绍:
-                  - 什么是云原生网络: network/intro/index.md
-                  - 背景: network/intro/background.md
-                  - 挑战: network/intro/challenges.md
-                  - 网络组件: network/modules/modules.md
-              - 规划:
-                  - 网卡规划: network/plans/ethplan.md
-                  - 网络规划: network/plans/netplan.md
-              - 性能测试:
-                  - 网络 CNI 性能测试报告: network/performance/cni-performance.md
-                  - Spiderpool 性能测试报告: network/performance/spiderpool-performance.md
-                  - Cilium 性能测试报告:
-                      - Cilium 对于 Pod 访问 Service 的加速: network/performance/cilium-performance/cilium-service.md
-                      - Cilium 在 Pod 跨节点通信场景下的性能测试: network/performance/cilium-performance/cilium-crossnode.md
-                      - Cilium 在 nodePort 场景下的访问加速测试: network/performance/cilium-performance/cilium-nodeport.md
-                      - Cilium 基于 eBPF 技术实施 Pod 带宽管控场景下的性能测试: network/performance/cilium-performance/cilium-bandwidth.md
-                  - 基于 eBPF 技术实施网络策略场景下的性能测试: network/performance/ebpf-performance.md
-              - Calico:
-                  - 介绍: network/modules/calico/index.md
-                  - 安装参数配置: network/modules/calico/install.md
-                  - ippool: network/modules/calico/ippool.md
-                  - 监控指标: network/modules/calico/metrics.md
-                  - Calico 网络策略: network/modules/calico/policy.md
-                  - 故障排查: network/modules/calico/debug.md
-              - Cilium:
-                  - 介绍: network/modules/cilium/index.md
-                  - 安装参数配置: network/modules/cilium/install.md
-                  - 未支持功能说明: network/modules/cilium/not-support.md
-                  - Cilium 网络通信加速: network/modules/cilium/cross-cluster.md
-                  - 应用跨集群通信: network/modules/cilium/cilium-speedup.md
-              - Contour:
-                  - 介绍: network/modules/contour/index.md
-                  - 安装: network/modules/contour/install.md
-              - F5networks:
-                  - 介绍: network/modules/f5networks/index.md
-                  - 安装: network/modules/f5networks/install.md
-                  - 使用: network/modules/f5networks/usage.md
-                  - 调试: network/modules/f5networks/debug.md
-              - Ingress-nginx:
-                  - 介绍: network/modules/ingress-nginx/index.md
-                  - 安装: network/modules/ingress-nginx/install.md
-                  - Ingress Class: network/modules/ingress-nginx/ingressclass.md
-                  - Ingress Scope: network/modules/ingress-nginx/scope.md
-                  - 跨域配置: network/modules/ingress-nginx/cors.md
-                  - 负载均衡: network/modules/ingress-nginx/proxy.md
-                  - 超时配置: network/modules/ingress-nginx/timeout.md
-                  - 日志配置: network/modules/ingress-nginx/log.md
-                  - 上传限制: network/modules/ingress-nginx/upload.md
-                  - 镜像流量: network/modules/ingress-nginx/mirror.md
-              - Metallb:
-                  - 介绍: network/modules/metallb/index.md
-                  - 安装: network/modules/metallb/install.md
-                  - IPPool 使用说明: network/modules/metallb/usage.md
-                  - L2和BGP 模式说明: network/modules/metallb/l2-bgp.md
-                  - 获取客户端源 IP: network/modules/metallb/source_ip.md
-              - Multus-underlay:
-                  - 介绍: network/modules/multus-underlay/index.md
-                  - 安装: network/modules/multus-underlay/install.md
-                  - MacVLAN: network/modules/multus-underlay/macvlan.md
-                  - SR-IOV: network/modules/multus-underlay/sriov.md
-                  - DPDK: network/modules/multus-underlay/dpdk.md
-                  - NmState: network/modules/multus-underlay/nmstat.md
-              - Spiderpool:
-                  - Release Notes: network/modules/spiderpool/releasenotes.md
-                  - 介绍: network/modules/spiderpool/index.md
-                  - 安装: network/modules/spiderpool/install.md
-                  - 升级: network/modules/spiderpool/upgrade.md
-                  - 创建 IP 池: network/modules/spiderpool/createpool.md
-                  - IP 池场景说明: network/modules/spiderpool/ippoolusage.md
-                  - 工作负载使用 IP 池: network/modules/spiderpool/usage.md
-                  - 第三方工作负载使用 IP 池: network/modules/spiderpool/cutomizedusage.md
-                  - 阿里云环境运行: network/modules/spiderpool/alibabacloud.md
-                  - 配置参考: network/modules/spiderpool/config.md
-                  - 常用命令: network/modules/spiderpool/command.md
-              - Submariner:
-                  - 介绍: network/modules/submariner/index.md
-                  - 安装: network/modules/submariner/install.md
-                  - 使用说明: network/modules/submariner/usage.md
-              - sriov-network-operator:
-                  - 介绍: network/modules/sriov-network-operator/index.md
-                  - 安装: network/modules/sriov-network-operator/install.md
-          - 云原生存储:
-              - 介绍:
-                  - 什么是云原生存储: storage/index.md
-                  - 背景和挑战: storage/background.md
-                  - 功能优势: storage/benefits.md
-                  - 功能列表: storage/features.md
-                  - Release Notes: storage/hwameistor/releasenotes.md
-              - HwameiStor 本地存储:
-                  - 介绍: storage/hwameistor/intro/index.md
-                  - 组件介绍:
-                      - 本地磁盘管理器: storage/hwameistor/intro/ldm.md
-                      - 本地存储: storage/hwameistor/intro/ls.md
-                      - DRBD 安装器: storage/hwameistor/intro/drbd.md
-                      - 调度器: storage/hwameistor/intro/scheduler.md
-                      - 准入控制器: storage/hwameistor/intro/admission-controller.md
-                  - 资源介绍: storage/hwameistor/intro/resources.md
-                  - 安装管理:
-                      - 准备工作: storage/hwameistor/install/prereq.md
-                      - Hwameistor 安装: storage/hwameistor/install/deploy-operator.md
-                      - 资源要求: storage/hwameistor/install/proresource.md
-                      - DRDB 安装: storage/hwameistor/install/drbdinstall.md
-                      - 安装后检查: storage/hwameistor/install/post-check.md
-                      - 存储网卡配置: storage/hwameistor/install/storage-eth.md
-                      - 自定义 kubelet 根目录: storage/hwameistor/install/customized-kubelet.md
-                      - 升级: storage/hwameistor/install/upgrade.md
-                      - 卸载: storage/hwameistor/install/uninstall.md
-                  - 节点和磁盘:
-                      - LVM 节点扩展: storage/hwameistor/resources/lvm-nodes.md
-                      - 磁盘节点扩展: storage/hwameistor/resources/disk-nodes.md
-                      - 磁盘扩展: storage/hwameistor/resources/disk-expansion.md
-                      - 磁盘预留: storage/hwameistor/resources/reserveddisk.md
-                  - 存储池:
-                      - 存储池管理: storage/hwameistor/resources/storagepool.md
-                  - 数据卷:
-                      - 数据卷迁移: storage/hwameistor/resources/migrate.md
-                      - 数据卷扩容: storage/hwameistor/resources/expand.md
-                      - 数据卷 IO 限速: storage/hwameistor/resources/volume-ProvisionedIO.md
-                  - 应用场景:
-                      - 应用场景概述: storage/hwameistor/application/overview.md
-                      - 部署有状态应用:
-                          - 使用本地卷部署: storage/hwameistor/application/local.md
-                          - 使用高可用卷部署: storage/hwameistor/application/ha.md
-                  - 常见问题: storage/hwameistor/faqs.md
-              - 开源存储方案集成:
-                  - Rook-Ceph:
-                      - Rook-Ceph 介绍: storage/solutions/rook-ceph.md
-                      - Rook-Ceph 部署 - 应用商店: storage/solutions/dce-rook-ceph.md
-                      - Rook-Ceph 部署 - Helm: storage/solutions/helm-rook-ceph.md
-                      - 如何接入 Ceph Dashboard: storage/solutions/ceph-dashboard.md
-                  - Longhorn:
-                      - Longhorn 介绍: storage/solutions/longhorn.md
-                      - Longhorn 部署 - 应用商店: storage/solutions/dce-longhorn.md
-                  - OpenEBS:
-                      - OpenEBS 介绍: storage/solutions/openebs.md
-                      - 通过 Helm 部署 OpenEBS: storage/solutions/openebs-helm.md
-                  - TiDB: storage/hwameistor/application/tidb.md
-                  - MinIO: storage/hwameistor/application/minio/minio.md
-              - 存储基本概念:
-                  - Kubernetes 存储: storage/terms/k8s_storage.md
-                  - CAS 存储: storage/terms/cas.md
-                  - CSI 接口: storage/terms/csi.md
-                  - CRD 和 CR: storage/terms/crd_and_cr.md
-                  - 存储卷: storage/terms/volume.md
-                  - LVM: storage/terms/lvm.md
-                  - PV 和 PVC: storage/terms/pv_pvc.md
-          - 虚拟机容器:
-              - 介绍:
-                  - 简介: virtnest/intro/index.md
-                  - Release Notes: virtnest/intro/release-notes.md
-              - 快速入门:
-                  - 创建虚拟机: virtnest/quick-start/index.md
-                  - 通过 NodePort 访问虚拟机: virtnest/quick-start/nodeport.md
-                  - Rook Ceph 部署流程: virtnest/quick-start/rook-ceph.md
-          - 云原生安全:
-            - 介绍: security/index.md
-            - Falco:
-                - 介绍: security/falco.md
-                - 安装: security/falco-install.md
-                - Falco-exporter: security/falco-exporter.md
   - 视频教程:
       - 介绍: videos/index.md
       - 安装教程: videos/install.md
@@ -989,7 +988,7 @@ nav:
       - 服务网格: videos/mspider.md
       - 中间件: videos/mcamel.md
       - 镜像仓库: videos/kangaroo.md
-      - 云原生网络: videos/network.md
+      - 容器网络: videos/network.md
       - 云边协同: videos/kant.md
   - 下载中心:
       - DaoCloud Enterprise 5.0:
