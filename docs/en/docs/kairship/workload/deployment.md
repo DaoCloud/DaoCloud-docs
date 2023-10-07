@@ -18,7 +18,7 @@ This page will introduce how to create a multi-cloud deployment from an image. F
 
 Follow the steps below to create a multi-cloud deployment from an image.
 
-1. Click on the name of the multi-cloud instance, then navigate to `Multi-Cloud Workloads` in the left navigation pane, and click on `Create from Image` in the top right corner.
+1. Click on the name of the multi-cloud instance, then navigate to `MultiCloud Workloads` in the left navigation pane, and click on `Create from Image` in the top right corner.
 
     ![Create from Image](../images/deploy-create04.png)
 

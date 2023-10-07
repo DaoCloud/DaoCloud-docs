@@ -227,7 +227,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: support for automatic renewal of machine certificates provided by the Kubeadm control plane provider, the ability to publish and consume cluster API images from the new container container registry registry.k8s.io, allowing the creation of clusters without taints on control plane nodes, clusterctl can now manage IPAM and RuntimeExtension providers.
 
-- [Clusternet Multi-Cloud Multi-Cluster Management Project v0.16.0 Released (CNCF Project)](https://github.com/clusternet/clusternet/releases/tag/v0.16.0)
+- [Clusternet MultiCloud Multi-Cluster Management Project v0.16.0 Released (CNCF Project)](https://github.com/clusternet/clusternet/releases/tag/v0.16.0)
 
     Updates: support for migrating workloads from non-ready clusters to healthy standby clusters, support for adding taint to non-ready clusters, configurable cluster score percentages for scheduling, add license scan reports and status, support for logging metrics data for health checks.
 
@@ -637,11 +637,11 @@ This page lists activity in cloud native open source projects in alphabetical or
 
     [KapacityStack](https://github.com/traas-stack/kapacity) provides IHPA (Intelligent Horizontal Pod Autoscaler) capabilities: supports scaling up and down using different algorithms for different scenarios; supports fine-grained control of each Pod's state throughout the The entire IHPA capability is split into three modules: control, decision, and execution, any of which can be replaced or extended.
 
-- [Karmada Multi-Cloud Multi-Cluster Container Orchestration Platform v1.7.0 Released (CNCF Project)](https://github.com/karmada-io/karmada/blob/master/docs/CHANGELOG/CHANGELOG-1.7.md)
+- [Karmada MultiCloud Multi-Cluster Container Orchestration Platform v1.7.0 Released (CNCF Project)](https://github.com/karmada-io/karmada/blob/master/docs/CHANGELOG/CHANGELOG-1.7.md)
 
     Features: Introduces the CronFederatedHPA API for automatically adjusting the number of replicas of a workload at regular intervals; introduces the MultiClusterService API for controlling the exposure of a service to multiple external clusters and realizing service discovery between clusters; supports the preemption of resources according to the priority declaration reservation policy; supports the batch migration of resources without the need to terminate or restart a container; supports the batch migration of resources without the need to terminate or restart a container; supports the batch migration of resources without the need to terminate or restart a container; supports the batch migration of resources without the need to terminate or restart a container. support for batch migration of resources without container termination or restart; FederatedHPA support for adjusting the number of replicas based on customized metrics other than CPU and memory.
 
-- [Karmada Multi-Cloud Multi-Cluster Container Orchestration Platform v1.6.0 Released (CNCF Project)](https://github.com/karmada-io/karmada/releases/tag/v1.6.0)
+- [Karmada MultiCloud Multi-Cluster Container Orchestration Platform v1.6.0 Released (CNCF Project)](https://github.com/karmada-io/karmada/releases/tag/v1.6.0)
 
     Release features: Introduces FederatedHPA API to address the requirement of scaling workloads across clusters; supports automatic migration of unhealthy applications to other available clusters; introduces new declarative deployment method Karmada operator; supports third-party resource interpreters.
 

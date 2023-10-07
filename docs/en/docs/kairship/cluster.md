@@ -6,7 +6,7 @@ After creating multicloud instances, you need to connect them to work clusters.
 
 1. Click on `Work Cluster Management` in the left navigation bar, then click on `Connect Cluster` in the top-right corner.
 
-    If you want to establish network connectivity between work clusters, you need to create a mesh instance and manage work clusters on the Service Mesh page. For detailed steps, refer to [Multi-Cloud Network Interconnect](../mspider/user-guide/multicluster/cluster-interconnect.md).
+    If you want to establish network connectivity between work clusters, you need to create a mesh instance and manage work clusters on the Service Mesh page. For detailed steps, refer to [MultiCloud Network Interconnect](../mspider/user-guide/multicluster/cluster-interconnect.md).
 
     ![Connect Cluster](images/cluster01.png)
 

@@ -660,7 +660,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
     Updates: Support for Istio 1.16 and Kiali 1.65, formal support for cluster-wide deployment topologies, integration with Cert-Manager, formal support for external licensing, support for single-stack IPv6, new Prometheus extension provider for OpenShift monitoring or external Prometheus.
 
-- [Red Hat Releases Service Interconnect, a Service Connectivity Product for Hybrid and Multi-Cloud Environments](https://www.redhat.com/en/blog/introducing-red-hat-service-interconnect)
+- [Red Hat Releases Service Interconnect, a Service Connectivity Product for Hybrid and MultiCloud Environments](https://www.redhat.com/en/blog/introducing-red-hat-service-interconnect)
 
     Red Hat Service Interconnect, created based on the open source project Skupper.io, enables application and service connectivity between Red Hat platforms, including Red Hat Enterprise Linux, Red Hat OpenShift and non-Red Hat environments, including Kubernetes clusters, public clouds, virtual machines or bare metal hosts, without the need for complex network reconfiguration or elevated security privileges.
 

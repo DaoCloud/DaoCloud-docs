@@ -1571,7 +1571,7 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
 
 - OverridePolicy
 
-    [OverridePolicy](../kairship/policy/override-policy.md) is a differentiated configuration policy that defines the differentiated configuration policy for distributing multicloud resource objects to different working clusters, such as using different images and adding different labels in different working clusters. OverridePolicy, as an independent policy API, can automatically handle cluster-related configurations, such as adding different prefixes to images based on the geographical distribution of subsets of clusters and using different StorageClasses based on your cloud provider.
+    [OverridePolicy](../kairship/policy/override.md) is a differentiated configuration policy that defines the differentiated configuration policy for distributing multicloud resource objects to different working clusters, such as using different images and adding different labels in different working clusters. OverridePolicy, as an independent policy API, can automatically handle cluster-related configurations, such as adding different prefixes to images based on the geographical distribution of subsets of clusters and using different StorageClasses based on your cloud provider.
 
 ### P
 
@@ -1671,7 +1671,7 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
 
 - PropagationPolicy
 
-    In Multicloud Management, [PropagationPolicy](../kairship/policy/propagation-policy.md) defines the distribution strategy for multicloud resource objects, supporting planning which workloads to deploy to which working clusters using specified clusters or labels. PropagationPolicy is an independent policy API that can define multicluster scheduling methods based on distribution requirements.
+    In Multicloud Management, [PropagationPolicy](../kairship/policy/propagation.md) defines the distribution strategy for multicloud resource objects, supporting planning which workloads to deploy to which working clusters using specified clusters or labels. PropagationPolicy is an independent policy API that can define multicluster scheduling methods based on distribution requirements.
 
     - Supports 1:n `policy:workload`, and users do not need to repeat the scheduling constraints each time they create a multicloud application.
     - When using the default policy, users can interact directly with the Kubernetes API.
