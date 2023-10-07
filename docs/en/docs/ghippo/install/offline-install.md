@@ -31,12 +31,12 @@ First, synchronize the image to the specified container registry through chart-s
           kind: HARBOR # Can also be any other supported Helm Chart repository class
           url: http://10.16.10.111/chartrepo/release.daocloud.io # need to change to chart repo url
           auth:
-          username: "admin" # Your container registry username
-          password: "Harbor12345" # Your container registry password
+            username: "admin" # Your container registry username
+            password: "Harbor12345" # Your container registry password
         containers:
           auth:
-          username: "admin" # Your container registry username
-          password: "Harbor12345" # Your container registry password
+            username: "admin" # Your container registry username
+            password: "Harbor12345" # Your container registry password
         ```
 
     === "chart repo not installed"
