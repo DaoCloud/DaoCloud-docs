@@ -13,7 +13,7 @@ to meet common and practical business requirements in specific scenarios.
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/crosscloud-migrate-en.mp4" preload="metadata" poster="images/multicloud-convert.png"></video>
 </div>
 
-For more details, please refer to the [Multi-Cloud Orchestration documentation](../kairship/intro/index.md).
+For more details, please refer to the [MultiCloud Orchestration documentation](../kairship/intro/index.md).
 
 ## How to expand applications across private and public clouds?
 

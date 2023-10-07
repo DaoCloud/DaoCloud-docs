@@ -425,8 +425,8 @@ nav:
                   - Update Multicloud ConfigMaps: kairship/resource/update-configmap.md
                   - More Multicloud Ingress: kairship/resource/update-ingress.md
               - Policy Management:
-                  - Propagation Policy: kairship/policy/propagation-policy.md
-                  - Override Policy: kairship/policy/override-policy.md
+                  - Propagation Policy: kairship/policy/propagation.md
+                  - Override Policy: kairship/policy/override.md
               - Bind Workspace: kairship/workspace.md
               - Failover:
                   - Overview: kairship/failover/failover.md
