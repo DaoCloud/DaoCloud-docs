@@ -1,6 +1,7 @@
 # 示例应用体验微服务治理
 
-微服务引擎属于 DCE 5.0 高级版功能，其中包含注册中心、配置中心、微服务治理（传统微服务、云原生微服务）、云原生网关等功能。本文将通过示例应用带您体验其中的微服务治理功能。
+微服务引擎属于 DCE 5.0 高级版功能，其中包含注册中心、配置中心、微服务治理（传统微服务、云原生微服务）、云原生网关等功能。
+本文将通过示例应用带您体验其中的微服务治理功能。
 
 此次最佳实践包含的全部流程如下：
 
@@ -11,9 +12,11 @@
 
 ## 示例应用介绍
 
-本次实践使用的示例应用基于 OpenTelemetry 的标准演示应用，由 DaoCloud 大微服务团队根据 DCE 5.0 的功能加以优化，以便更好地体现云原生以及可观测能力，呈现微服务治理效果。
+本次实践使用的示例应用基于 OpenTelemetry 的标准演示应用，由 DaoCloud 大微服务团队根据 DCE 5.0
+的功能加以优化，以便更好地体现云原生以及可观测能力，呈现微服务治理效果。
 
-示例应用已经在 Github 开源，访问该应用的 [Github 仓库地址](https://github.com/openinsight-proj/openinsight-helm-charts)可以获取详细信息。
+示例应用已经在 Github 开源，访问该应用的
+[Github 仓库地址](https://github.com/openinsight-proj/openinsight-helm-charts)可以获取详细信息。
 
 示例应用的架构图如下：
 
@@ -21,7 +24,9 @@
 
 ## 应用部署
 
-[应用工作台](../../amamba/intro/index.md)是 DCE 5.0 的应用管理模块，支持创建/维护多种类型的应用、GitOps 和灰度发布等功能，可以快速将应用部署到任何集群。应用工作台支持基于 Git 仓、Jar 包、容器镜像、Helm 模板部署应用。本次实践基于 `Helm 模板` 部署示例应用。
+[应用工作台](../../amamba/intro/index.md)是 DCE 5.0 的应用管理模块，支持创建/维护多种类型的应用、GitOps
+和灰度发布等功能，可以快速将应用部署到任何集群。应用工作台支持基于 Git 仓、Jar 包、容器镜像、Helm 模板部署应用。
+本次实践基于 `Helm 模板` 部署示例应用。
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/chooseInstalltype.png)
 
@@ -71,7 +76,7 @@
         -Dspring.cloud.sentinel.transport.dashboard=nacos-test-sentinel.skoala-test:8080  # 修改，以配置 Sentinel 控制台地址
     ```
 
-   > 获取集群 ID、集群名称、命名空间名称的方法可参考: `kubectl get cluster <clusername> -o json | jq .metadata.uid`
+   > 获取集群 ID、集群名称、命名空间名称的方法可参考：`kubectl get cluster <clusername> -o json | jq .metadata.uid`
 
 3. 应用创建成功后，会显示在应用工作台的 Helm 应用列表。
 
@@ -79,9 +84,11 @@
 
 ### Java 项目自行开发调试
 
-如果采用其他部署方式，配置注册中心地址的方法可能有所不同。Java 项目在开发时需要集成 Nacos 的 SDK，而 DCE 5.0 提供的注册中心完全兼容开源 Nacos，所以可以直接使用开源 Nacos 的 SDK。具体操作步骤可参考[基于 Jar 包部署 Java 应用](../../amamba/user-guide/wizard/jar-java-app.md)。
+如果采用其他部署方式，配置注册中心地址的方法可能有所不同。Java 项目在开发时需要集成 Nacos 的 SDK，
+而 DCE 5.0 提供的注册中心完全兼容开源 Nacos，所以可以直接使用开源 Nacos 的 SDK。
+具体操作步骤可参考[基于 Jar 包部署 Java 应用](../../amamba/user-guide/wizard/jar-java-app.md)。
 
-使用 `java -jar` 启动项目时，添加对应的环境变量配置即可
+使用 `java -jar` 启动项目时，添加对应的环境变量配置：
 
 ```java
     -Dspring.cloud.nacos.discovery.enabled=false        # 启用 Nacos 服务注册发现
@@ -105,21 +112,26 @@
 
 ### 使用容器镜像部署
 
-如果选择基于容器镜像部署应用，可以直接在用户界面配置中开启微服务治理并选取对应的注册中心模块，操作更简便。具体步骤可参考[基于 Git 仓构建微服务应用](../../amamba/user-guide/wizard/create-app-git.md)。
+如果选择基于容器镜像部署应用，可以直接在用户界面配置中开启微服务治理并选取对应的注册中心模块，操作更简便。
+具体步骤可参考[基于 Git 仓构建微服务应用](../../amamba/user-guide/wizard/create-app-git.md)。
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/createbyimage.png)
 
 ## 启用传统微服务治理
 
-开始使用微服务治理功能之前，需要在对应注册中心下的插件中心开启对应的治理插件。插件中心提供 Sentinel 治理和 Mesh 治理两种插件，支持通过用户界面实现可视化配置。安装插件后可以扩展微服务治理能力，满足不同场景下的业务诉求。
+开始使用微服务治理功能之前，需要在对应注册中心下的插件中心开启对应的治理插件。
+插件中心提供 Sentinel 治理和 Mesh 治理两种插件，支持通过用户界面实现可视化配置。
+安装插件后可以扩展微服务治理能力，满足不同场景下的业务诉求。
 
-本次实践采用传统微服务治理，即开启 Sentinel 治理插件。如需了解详细步骤，可参考[启用 Sentinel 治理插件](../trad-ms/hosted/plugins/sentinel.md)。
+本次实践采用传统微服务治理，即开启 Sentinel 治理插件。
+如需了解详细步骤，可参考[启用 Sentinel 治理插件](../trad-ms/hosted/plugins/sentinel.md)。
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/plugins/imgs/plugincenter01.png)
 
 ## 配置对应的治理规则
 
-应用部署成功后，可以在之前准备注册中心下的`微服务列表`中查看对应的服务。微服务列表提供流控规则、熔断降级、热点规则、系统规则、授权规则等流量治理规则。本次实践以流控规则为例进行演示。
+应用部署成功后，可以在之前准备注册中心下的`微服务列表`中查看对应的服务。
+微服务列表提供流控规则、熔断降级、热点规则、系统规则、授权规则等流量治理规则。本次实践以流控规则为例进行演示。
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/nacosservicelist.png)
 
@@ -135,7 +147,8 @@
 
 ## 暴露 API 并访问应用
 
-微服务应用部署完成后，需要通过 API 网关将应用入口开放给外部访问，完成这一步才是完成的服务使用体验。为了暴露服务 API，需要创建云原生网关，将服务接入该网关，并创建对应的 API 路由。
+微服务应用部署完成后，需要通过 API 网关将应用入口开放给外部访问，完成这一步才是完成的服务使用体验。
+为了暴露服务 API，需要创建云原生网关，将服务接入该网关，并创建对应的 API 路由。
 
 ### 创建云原生网关
 
@@ -179,7 +192,8 @@
 
 ## 结语
 
-以上就是整个微服务引擎模块的体验之旅。在整个 DCE 5.0 的能力支持下我们顺利完成了应用部署、启用微服务治理、配置并测试微服务治理策略、通过云原生网关开放 API、实际访问应用等操作。
+以上就是整个微服务引擎模块的体验之旅。在整个 DCE 5.0 的能力支持下我们顺利完成了应用部署、
+启用微服务治理、配置并测试微服务治理策略、通过云原生网关开放 API、实际访问应用等操作。
 
 ### 更多能力
 

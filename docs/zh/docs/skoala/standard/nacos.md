@@ -203,7 +203,7 @@
 1. 获取依赖
 
     ```go
-    $ go get -u github.com/nacos-group/nacos-sdk-go/v2
+    go get -u github.com/nacos-group/nacos-sdk-go/v2
     ```
 
 2. 在服务中添加服务注册的代码

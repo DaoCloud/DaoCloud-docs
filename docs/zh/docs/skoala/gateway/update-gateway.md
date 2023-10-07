@@ -11,7 +11,7 @@ hide:
 
 有两种方式可以更新网关配置。
 
-- 在`微服务网关列表`页选择需要更新的网关实例，在实例右侧点击 **`⋯`** 并选择`编辑`。
+- 在`微服务网关列表`页选择需要更新的网关实例，在实例右侧点击 `⋯` 并选择`编辑`。
 
     ![更新网关](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/gateway/imgs/update.png)
 

@@ -66,16 +66,17 @@
 
         ![基础配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/jwt11.png)
 
-5. 基于 [YAML 模板](https://github.com/projectsesame/enovy-remote-jwks-go/blob/main/all-in-one.yaml)创建 YAML 文件，然后使用 `kubectl apply` 命令安装 JWKS 应用
+5. 基于 [YAML 模板](https://github.com/projectsesame/enovy-remote-jwks-go/blob/main/all-in-one.yaml)创建
+   YAML 文件，然后使用 `kubectl apply` 命令安装 JWKS 应用：
 
     - 将 `namespace` 修改为网关所在的命名空间，在本例中使用 `envoy-yang`
     - 将 `jwks.json` 修改为上述第三步生成的 JWKS 内容
 
-        ![基础配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/jwt13.png)
+    ![基础配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/jwt13.png)
 
-    ??? note "本例中配置的 YAML 文件如下所示"
+    ??? note "点击查看本例中配置的 YAML 文件"
 
-        ```yaml
+        ```yaml title="all-in-one.yaml"
         apiVersion: apps/v1
         kind: Deployment
         metadata:
@@ -162,8 +163,8 @@
 
 6. 访问应用的 `8080` 端口，出现 `success` 说明应用安装成功。
 
-    JWKS 地址应为 `网关访问地址/jwks`构成，例如 <http://13.5.245.34:31456/jwks>
+    JWKS 地址应为 `网关访问地址/jwks`构成，例如 `http://13.5.245.34:31456/jwks`
 
-    > 在微服务引擎下的网关概览页面可以查看网关的访问地址。
+    > 在微服务引擎的网关概览页面可以查看网关的访问地址。
 
     ![基础配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/jwt12.png)

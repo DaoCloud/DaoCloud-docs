@@ -120,7 +120,8 @@ java -jar -Xms2g -Xmx2g -Dnacos.server=10.6.222.21:30168 -Dthead.count=100 -Dser
 
 ## 探究 JVM 资源配置对 Nacos 的性能影响
 
-为探究 JVM 的资源配置对托管 Nacos 注册配置中心的性能影响，在 Nacos 申请资源为 `2 Core 4 GiB` 时，为 JVM 也配置相同的资源，即 `2 Core 4 GiB`。
+为探究 JVM 的资源配置对托管 Nacos 注册配置中心的性能影响，在 Nacos 申请资源为 `2 Core 4 GiB` 时，
+为 JVM 也配置相同的资源，即 `2 Core 4 GiB`。
 
 这种情况下得出的测试结果如下：
 

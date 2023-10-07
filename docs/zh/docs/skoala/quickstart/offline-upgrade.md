@@ -105,6 +105,7 @@ DCE 5.0 的各个模块松散耦合，支持独立安装、升级各个模块。
         ```
 
 !!! note
+
     - 需要在每个节点上都通过 Docker 或 containerd 加载镜像。
     - 加载完成后需要 tag 镜像，保持 Registry、Repository 与安装时一致。
 
@@ -146,8 +147,7 @@ DCE 5.0 的各个模块松散耦合，支持独立安装、升级各个模块。
         helm search repo skoala-release/skoala --versions
         ```
 
-        ```none
-        [root@master ~]# helm search repo skoala-release/skoala --versions
+        ```text
         NAME                   CHART VERSION  APP VERSION  DESCRIPTION
         skoala-release/skoala  0.14.0          v0.14.0       A Helm chart for Skoala
         ...

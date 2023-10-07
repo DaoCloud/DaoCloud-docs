@@ -1,6 +1,7 @@
 # 配置域名策略
 
-微服务网关提供了域名级的策略配置能力。配置域名级的策略之后，无需对同一域名下的多个 API 重复配置策略。目前支持两种域名级的策略：跨域和本地限流。
+微服务网关提供了域名级的策略配置能力。配置域名级的策略之后，无需对同一域名下的多个 API 重复配置策略。
+目前支持两种域名级的策略：跨域和本地限流。
 
 有两种方式可以配置域名策略：
 
@@ -26,10 +27,11 @@
 填写配置时需要注意：
 
 - 启用凭证：开启后，需要对跨域请求进行凭证检查。检查通过之后，才能开始处理跨域请求。
-- 允许的请求方法：选择 HTTP 协议的请求方式。有关各种请求方式的详细说明，可参考 W3C 的官方文档[方式定义](https://www.rfc-editor.org/rfc/rfc9110.html#name-method-definitions)。
+- 允许的请求方法：选择 HTTP 协议的请求方式。有关各种请求方式的详细说明，
+  可参考 W3C 的官方文档[方式定义](https://www.rfc-editor.org/rfc/rfc9110.html#name-method-definitions)。
 - 允许的请求来源：限定多个特定的请求来源，通常使用 IP。
 - 预检时长：在处理跨域请求之前检查凭证、请求方法等事项所用的时间，时间单位为秒、分、时。
 - 允许的请求头：限定特定的 HTTP 请求头关键字。添加关键字后，需在请求头中加上对应的关键字才能正常访问目标服务。
 - 暴露的请求头：控制暴露的请求头关键字，可以配置多项。
 
-    ![跨域](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/domain/imgs/cross-domain.png)
+![跨域](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/domain/imgs/cross-domain.png)
