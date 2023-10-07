@@ -32,8 +32,8 @@
             kind: HARBOR # (4)
             url: http://10.16.10.111/chartrepo/release.daocloud.io # (5)
             auth:
-            username: "admin" # (6)
-            password: "Harbor12345" # (7)
+              username: "admin" # (6)
+              password: "Harbor12345" # (7)
           containers:
             auth:
               username: "admin" # (8)
