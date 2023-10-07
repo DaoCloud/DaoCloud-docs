@@ -661,10 +661,11 @@ nav:
               - 性能测试:
                   - 云原生网关吞吐量测试: skoala/tests/gateway-stress-test.md
                   - Nacos 压测报告: skoala/tests/nacos-stress-test.md
-              - 通用参考:
-                  - 微服务: reference/basic-knowledge/microservice.md
-                  - 注册中心: reference/basic-knowledge/registry.md
-                  - 云原生网关: reference/basic-knowledge/gateway.md
+              - 参考文档:
+                  - 微服务: skoala/reference/microservice.md
+                  - 注册中心: skoala/reference/registry.md
+                  - 云原生网关: skoala/reference/gateway.md
+                  - Nacos 版本降级: skoala/reference/nacos.md
           - 服务网格:
               - 介绍:
                   - 什么是服务网格: mspider/intro/index.md
@@ -972,9 +973,9 @@ nav:
                       - 定制 DCE 5.0 对接 IdP: ghippo/oem/custom-idp.md
                       - Keycloak 自定义 IdP: ghippo/oem/keycloak-idp.md
               - 故障排查:
-                  - ingressgateway 无法启动: reference/troubleshooting/ghippo01.md
-                  - 登录报错 401 或 403: reference/troubleshooting/ghippo02.md
-                  - keycloak 无法启动: reference/troubleshooting/ghippo03.md
+                  - ingressgateway 无法启动: ghippo/troubleshooting/ghippo01.md
+                  - 登录报错 401 或 403: ghippo/troubleshooting/ghippo02.md
+                  - keycloak 无法启动: ghippo/troubleshooting/ghippo03.md
   - 视频教程:
       - 介绍: videos/index.md
       - 安装教程: videos/install.md

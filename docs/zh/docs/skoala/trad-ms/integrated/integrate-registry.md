@@ -5,7 +5,7 @@ hide:
 
 # 接入注册中心
 
-注册中心支持接入 [Nacos 注册中心](../../../reference/basic-knowledge/registry.md#nacos-注册中心)、[Eureka 注册中心](../../../reference/basic-knowledge/registry.md#eureka-注册中心)、[Zookeeper 注册中心](../../../reference/basic-knowledge/registry.md#zookeeper-注册中心)、[Kubernetes 注册中心](../../../reference/basic-knowledge/registry.md#kubernetes-注册中心)、[Mesh 注册中心](../../../reference/basic-knowledge/registry.md#service-mesh-注册中心)。
+注册中心支持接入 [Nacos 注册中心](../../reference/registry.md)、[Eureka 注册中心](../../reference/registry.md)、[Zookeeper 注册中心](../../reference/registry.md)、[Kubernetes 注册中心](../../reference/registry.md)、[Mesh 注册中心](../../reference/registry.md)。
 
 相对于托管型注册中心而言，接入型注册中心只支持一些基础操作，例如查看基本信息、监控信息等。如需体验更高级更全面的管理操作，需要创建[托管注册中心](../hosted/create-registry.md)。
 

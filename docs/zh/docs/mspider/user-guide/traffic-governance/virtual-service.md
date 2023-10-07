@@ -194,4 +194,4 @@ status: {}
 
 ## 参考资料
 
-- [什么是虚拟服务？](../../../reference/basic-knowledge/virtual-service.md)
+- [什么是虚拟服务？](../../../skoala/reference/virtual-service.md)
