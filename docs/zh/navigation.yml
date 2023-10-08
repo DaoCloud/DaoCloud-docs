@@ -226,7 +226,7 @@ nav:
                   - GPU 管理概述: kpanda/user-guide/gpu/index.md
                   - NVIDIA GPU 卡管理:
                       - NVIDIA GPU 管理概述: kpanda/user-guide/gpu/overvie_nvidia_gpu.md
-                      - 安装 NVIDIA GPU 驱动: kpanda/user-guide/gpu/install_nvidia_driver_of_operator.md
+                      - GPU Operator 离线安装——以 CentOS 7.9 为例: kpanda/user-guide/gpu/install_nvidia_driver_of_operator.md
                       - 应用独占整张 GPU 卡: kpanda/user-guide/gpu/full_gpu_userguide.md
                       - NVIDIA GPU 虚拟化 —— vGPU: 
                         - 安装 vGPU Addon: kpanda/user-guide/gpu/vgpu_addon.md
