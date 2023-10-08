@@ -31,8 +31,8 @@ elasticity of IT systems, and significantly accelerating application delivery.
     DCE 5.0 supports both offline and online installation methods, and can be installed on various Linux distributions.
 
     - [Install Dependencies](../install/install-tools.md)
-    - [Install Community Edition](../install/community/resources.md)
-    - [Install Enterprise Edition](../install/commercial/deploy-requirements.md)
+    - [Install Community Package](../install/community/resources.md)
+    - [Install Enterprise Package](../install/commercial/deploy-requirements.md)
     - [Install on Different Linux Distributions](../install/os-install/uos-v20-install-dce5.0.md)
     - [Install on Different K8s Versions](../install/k8s-install/ocp-install-dce5.0.md)
 
@@ -95,13 +95,13 @@ elasticity of IT systems, and significantly accelerating application delivery.
     - [Resource Management: Service, Routing, Namespace, etc.](../kairship/resource/service.md)
     - [Policy Management](../kairship/policy/propagation.md)
 
-- :material-warehouse:{ .lg .middle } __Image Registry__
+- :material-warehouse:{ .lg .middle } __Container Registry__
 
     ---
 
-    This is a cloud native image hosting service that supports the management of multiple instances and integrates with image registries like Harbor and Docker.
+    This is a cloud native image hosting service that supports the management of multiple instances and integrates with container registries like Harbor and Docker.
 
-    - [Image Spaces](../kangaroo/space/index.md)
+    - [Registry Spaces](../kangaroo/space/index.md)
     - [Registry Integration (Workspace)](../kangaroo/integrate/integrate-ws.md)
     - [Registry Integration (Admin)](../kangaroo/integrate/integrate-admin.md)
     - [Managed Harbor](../kangaroo/managed/intro.md)
@@ -114,7 +114,7 @@ elasticity of IT systems, and significantly accelerating application delivery.
 
     ---
 
-    This is a comprehensive microservice management platform tailored for mainstream microservice ecosystems, providing functionality in two dimensions: Microservice Governance Center and Microservice Gateway.
+    This is a comprehensive microservice management platform tailored for mainstream microservice ecosystems.
 
     - [Cloud Native Gateway](../skoala/gateway/create-gateway.md)
     - [Cloud Native Microservices](../skoala/cloud-ms/service.md)
@@ -125,7 +125,7 @@ elasticity of IT systems, and significantly accelerating application delivery.
 
     ---
 
-    This next-generation service mesh is built on the open-source technology Istio and designed for cloud native applications.
+    This next-generation service mesh is built on Istio and designed for cloud native applications.
 
     - [Traffic Governance](../mspider/user-guide/traffic-governance/README.md)
     - [Security Governance](../mspider/user-guide/security/README.md)
@@ -166,7 +166,7 @@ elasticity of IT systems, and significantly accelerating application delivery.
 
     ---
 
-    This comprehensive service section focuses on user-centric services, including user and access control, enterprise spaces, audit logs, platform settings, and other basic services.
+    This comprehensive service section focuses on user-centric services, including access control, workspaces, audit logs, platform settings.
 
     - [Access Control](../ghippo/user-guide/access-control/user.md)
     - [Workspaces and Folders](../ghippo/user-guide/workspace/workspace.md)
@@ -177,7 +177,7 @@ elasticity of IT systems, and significantly accelerating application delivery.
 
     ---
 
-    This next-generation observability platform is application-centric and provides real-time monitoring of applications and resources. It collects metrics, logs, events, and other data to analyze the health status of applications.
+    This provides real-time monitoring of applications and resources, collects metrics, logs, and events to analyze the health status.
 
     - [Infrastructure Monitoring](../insight/user-guide/scenario-insight/cluster.md)
     - [Log Query](../insight/user-guide/data-query/log.md)
@@ -192,7 +192,7 @@ elasticity of IT systems, and significantly accelerating application delivery.
     
     ---
 
-    Built on multiple open-source technologies, this module provides support for both single CNI networks and combinations of multiple CNI networks.
+    It provides support for both single CNI networks and combinations of multiple CNI networks.
 
     - [Network Interface and Planning](../network/plans/ethplan.md)
     - [Performance Testing Report](../network/performance/cni-performance.md)
@@ -202,7 +202,7 @@ elasticity of IT systems, and significantly accelerating application delivery.
     
     ---
 
-    DCE 5.0 cloud native storage is based on the Kubernetes CSI standard and can integrate with storage solutions that comply with the CSI standard, based on different SLA requirements and user scenarios.
+    It is based on the K8s CSI standard and can integrate with different storage solutions based on different SLA requirements and user cases.
 
     - [Introduction to DCE 5.0 Cloud Native Storage](../storage/index.md)
     - [HwameiStor Local Storage](../storage/hwameistor/intro/index.md)
@@ -218,10 +218,10 @@ elasticity of IT systems, and significantly accelerating application delivery.
 
     ---
 
-    The Download Center contains offline installation packages for the DCE 5.0 Community Edition, Business Edition, and various sub-modules.
+    It contains offline installation packages for the DCE 5.0 Community Package, Enterprise Package, and sub-modules.
 
-    - [Download Community Edition](../download/free/dce5-installer-v0.11.0.md)
-    - [Download Business Edition](../download/business/dce5-installer-v0.11.0.md)
+    - [Download Community Package](../download/free/dce5-installer-v0.11.0.md)
+    - [Download Enterprise Package](../download/business/dce5-installer-v0.11.0.md)
     - [Download Sub-Modules](../download/modules/ghippo.md)
 
 - :simple-opensourceinitiative:{ .lg .middle } __DaoCloud Open Source Ecosystem__

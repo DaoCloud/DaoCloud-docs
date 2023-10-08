@@ -170,160 +170,15 @@ nav:
                   - Helm Apps: kpanda/user-guide/helm/helm-app.md
                   - Helm Registries: kpanda/user-guide/helm/helm-repo.md
               - Container Network:
-                  - UI Config:
-                      - Create Service: kpanda/user-guide/network/create-services.md
-                      - Create Ingress: kpanda/user-guide/network/create-ingress.md
-                      - Network Policies: kpanda/user-guide/network/network-policy.md
-                  - Intro:
-                      - What is Network: network/intro/index.md
-                      - Background: network/intro/background.md
-                      - Challenges: network/intro/challenges.md
-                      - Components: network/modules/modules.md
-                  - Plan:
-                      - Eth card plan: network/plans/ethplan.md
-                      - Network plan: network/plans/netplan.md
-                  - Performance report:
-                      - Network CNI performance test report: network/performance/cni-performance.md
-                      - Spiderpool performance test report: network/performance/spiderpool-performance.md
-                      - Cilium performance test reports:
-                          - Accelerate Pod access to Services: network/performance/cilium-performance/cilium-service.md
-                          - Cross-node communication between Pods: network/performance/cilium-performance/cilium-crossnode.md
-                          - Access acceleration test in the nodePort mode: network/performance/cilium-performance/cilium-nodeport.md
-                          - eBPF-based Pod bandwidth management: network/performance/cilium-performance/cilium-bandwidth.md
-                      - Performance test in eBPF-based network policies: network/performance/ebpf-performance.md
-                  - Calico:
-                      - Intro: network/modules/calico/index.md
-                      - Install: network/modules/calico/install.md
-                      - ippool: network/modules/calico/ippool.md
-                      - Metrics: network/modules/calico/metrics.md
-                      - Calico Policies: network/modules/calico/policy.md
-                      - Troubleshooting: network/modules/calico/debug.md
-                  - Cilium:
-                      - Intro: network/modules/cilium/index.md
-                      - Args Config: network/modules/cilium/install.md
-                      - Unsupported Features: network/modules/cilium/notSupport.md
-                      - Cilium Network Communication Acceleration: network/modules/cilium/cross-cluster.md
-                      - Cross-Cluster Application Communication: network/modules/cilium/cilium-speedup.md
-                  - Contour:
-                      - Intro: network/modules/contour/index.md
-                      - Install: network/modules/contour/install.md
-                  - F5networks:
-                      - Intro: network/modules/f5networks/index.md
-                      - Install: network/modules/f5networks/install.md
-                      - Use: network/modules/f5networks/usage.md
-                      - Debug: network/modules/f5networks/debug.md
-                  - Ingress-nginx:
-                      - Intro: network/modules/ingress-nginx/index.md
-                      - Install: network/modules/ingress-nginx/install.md
-                      - Ingress Class: network/modules/ingress-nginx/ingressclass.md
-                      - Ingress Scope: network/modules/ingress-nginx/scope.md
-                      - Load Balance: network/modules/ingress-nginx/proxy.md
-                      - Configure timeout: network/modules/ingress-nginx/timeout.md
-                      - Configure log: network/modules/ingress-nginx/log.md
-                      - Upload limit: network/modules/ingress-nginx/upload.md
-                      - Traffic mirror: network/modules/ingress-nginx/mirror.md
-                      - Cross-Origin Resource Sharing: network/modules/ingress-nginx/cors.md
-                  - Metallb:
-                      - Intro: network/modules/metallb/index.md
-                      - Install: network/modules/metallb/install.md
-                      - Instructions for IP pool use: network/modules/metallb/usage.md
-                      - L2 and BGP mode: network/modules/metallb/l2-bgp.md
-                      - Get client source IPs: network/modules/metallb/source_ip.md
-                  - Multus-underlay:
-                      - Intro: network/modules/multus-underlay/index.md
-                      - Install: network/modules/multus-underlay/install.md
-                      - MacVLAN: network/modules/multus-underlay/macvlan.md
-                      - SR-IOV: network/modules/multus-underlay/sriov.md
-                      - DPDK: network/modules/multus-underlay/dpdk.md
-                      - NmState: network/modules/multus-underlay/nmstat.md
-                  - Spiderpool:
-                      - Spiderpool Release notes: network/modules/spiderpool/releasenotes.md
-                      - Intro: network/modules/spiderpool/index.md
-                      - Install: network/modules/spiderpool/install.md
-                      - Create an IP pool: network/modules/spiderpool/createpool.md
-                      - IP pool use cases: network/modules/spiderpool/ippoolusage.md
-                      - Workloads uses IP pools: network/modules/spiderpool/usage.md
-                      - Third-pary workloads use IP pools: network/modules/spiderpool/cutomizedusage.md
-                      - Running on Alibaba Cloud: network/modules/spiderpool/alibabacloud.md
-                      - Config: network/modules/spiderpool/config.md
-                      - Commands: network/modules/spiderpool/command.md
-                  - Submariner:
-                      - Intro: network/modules/submariner/index.md
-                      - Install: network/modules/submariner/install.md
-                      - Use: network/modules/submariner/usage.md
+                  - Create Service: kpanda/user-guide/network/create-services.md
+                  - Create Ingress: kpanda/user-guide/network/create-ingress.md
+                  - Network Policies: kpanda/user-guide/network/network-policy.md
               - CRDs: kpanda/user-guide/custom-resources/create.md
               - Container Storage:
-                  - UI Config:
-                      - Volume Claim: kpanda/user-guide/storage/pvc.md
-                      - Volume: kpanda/user-guide/storage/pv.md
-                      - StorageClass: kpanda/user-guide/storage/sc.md
-                      - Shared StorageClass: kpanda/user-guide/storage/sc-share.md
-                  - Intro:
-                      - What is storage: storage/index.md
-                      - Background: storage/background.md
-                      - Benefits: storage/benefits.md
-                      - Features: storage/features.md
-                      - Storage Release Notes: storage/hwameistor/releasenotes.md
-                  - HwameiStor storage:
-                      - Intro: storage/hwameistor/intro/index.md
-                      - Modules:
-                          - Local disk manager: storage/hwameistor/intro/ldm.md
-                          - Local storage: storage/hwameistor/intro/ls.md
-                          - DRBD installer: storage/hwameistor/intro/drbd.md
-                          - Scheduler: storage/hwameistor/intro/scheduler.md
-                          - Admission controller: storage/hwameistor/intro/admission-controller.md
-                      - Resources: storage/hwameistor/intro/resources.md
-                      - Installation:
-                          - Preparation: storage/hwameistor/install/prereq.md
-                          - Resource requirements: storage/hwameistor/install/proresource.md
-                          - Install DRDB: storage/hwameistor/install/drbdinstall.md
-                          - Install with Operator: storage/hwameistor/install/deploy-operator.md
-                          - Intall with UI: storage/hwameistor/install/deploy-ui.md
-                          - Install with Helm Charts: storage/hwameistor/install/deploy-helm.md
-                          - Post-check: storage/hwameistor/install/post-check.md
-                          - Storage and network adapter config: storage/hwameistor/install/storage-eth.md
-                          - Custom Kubelet root directory: storage/hwameistor/install/customized-kubelet.md
-                          - Upgrade: storage/hwameistor/install/upgrade.md
-                          - Uninstall: storage/hwameistor/install/uninstall.md
-                      - Nodes and Disks:
-                          - LVM node expansion: storage/hwameistor/resources/lvm-nodes.md
-                          - Disk node expansion: storage/hwameistor/resources/disk-nodes.md
-                          - Disk expansion: storage/hwameistor/resources/disk-expansion.md
-                          - Disk reservation: storage/hwameistor/resources/reserveddisk.md
-                      - StorageClass:
-                          - StorageClass management: storage/hwameistor/resources/storagepool.md
-                      - Volumes:
-                          - Volume migration: storage/hwameistor/resources/migrate.md
-                          - Volume expansion: storage/hwameistor/resources/expand.md
-                          - Volume IO rate limit: storage/hwameistor/resources/volume-ProvisionedIO.md
-                      - Use Cases:
-                          - Overview: storage/hwameistor/application/overview.md
-                          - Deploy StatefulSets:
-                              - Deploy via local volume: storage/hwameistor/application/local.md
-                              - Deploy via ha volume: storage/hwameistor/application/ha.md
-                      - FAQs: storage/hwameistor/faqs.md
-                  - Solutions to Integrate Open Source:
-                      - Rook-Ceph:
-                          - Rook-Ceph intro: storage/solutions/rook-ceph.md
-                          - Deploy Rook-Ceph with app store: storage/solutions/dce-rook-ceph.md
-                          - Deploy Rook-Ceph with Helm: storage/solutions/helm-rook-ceph.md
-                          - How to connect Ceph Dashboard: storage/solutions/ceph-dashboard.md
-                      - Longhorn:
-                          - Longhorn intro: storage/solutions/longhorn.md
-                          - Deploy Longhorn with app store: storage/solutions/dce-longhorn.md
-                      - OpenEBS:
-                          - OpenEBS intro: storage/solutions/openebs.md
-                          - Deploy OpenEBS with Helm: storage/solutions/openebs-helm.md
-                      - TiDB: storage/hwameistor/application/tidb.md
-                      - MinIO: storage/hwameistor/application/minio/minio.md
-                  - Concepts:
-                      - Kubernetes storage: storage/terms/k8s_storage.md
-                      - CAS: storage/terms/cas.md
-                      - CSI: storage/terms/csi.md
-                      - CRD and CR: storage/terms/crd_and_cr.md
-                      - Volume: storage/terms/volume.md
-                      - LVM: storage/terms/lvm.md
-                      - PV and PVC: storage/terms/pv_pvc.md
+                  - Volume Claim: kpanda/user-guide/storage/pvc.md
+                  - Volume: kpanda/user-guide/storage/pv.md
+                  - StorageClass: kpanda/user-guide/storage/sc.md
+                  - Shared StorageClass: kpanda/user-guide/storage/sc-share.md
               - ConfigMaps and Secrets:
                   - Create ConfigMap: kpanda/user-guide/configmaps-secrets/create-configmap.md
                   - Use ConfigMap: kpanda/user-guide/configmaps-secrets/use-configmap.md
@@ -373,14 +228,6 @@ nav:
                       - Use MIG GPU: kpanda/user-guide/gpu/mig_usage.md
                       - MIG Commands: kpanda/user-guide/gpu/mig_command.md
                   - GPU Quota Management: kpanda/user-guide/gpu/vgpu_quota.md
-              - Virtual Machine Container:
-                  - Intro:
-                      - Intro: virtnest/intro/index.md
-                      - Release Notes: virtnest/intro/release-notes.md
-                  - Quick Start:
-                      - Create VM: virtnest/quick-start/index.md
-                      - Access VM by NodePort: virtnest/quick-start/nodeport.md
-                      - Deploy with Rook Ceph: virtnest/quick-start/rook-ceph.md
               - Best Practices:
                   - Backup and Restore ETCD: kpanda/best-practice/etcd-backup.md
                   - Cross-cluster Backup and Restore of MySQL Apps and Data: kpanda/best-practice/backup-mysql-on-nfs.md
@@ -471,6 +318,158 @@ nav:
                   - Log in to an Insecure Container Registry: kangaroo/best-practice/insecure_registry.md
                   - Harbor Nginx Configuration Practices: kangaroo/best-practice/harbor-nginx.md
                   - Registry Capacity Resource Planning: kangaroo/best-practice/capacity-planning.md
+          - Cloud Native Network:
+              - Intro:
+                  - What is Network: network/intro/index.md
+                  - Background: network/intro/background.md
+                  - Challenges: network/intro/challenges.md
+                  - Components: network/modules/modules.md
+              - Plan:
+                  - Eth card plan: network/plans/ethplan.md
+                  - Network plan: network/plans/netplan.md
+              - Performance report:
+                  - Network CNI performance test report: network/performance/cni-performance.md
+                  - Spiderpool performance test report: network/performance/spiderpool-performance.md
+                  - Cilium performance test reports:
+                      - Accelerate Pod access to Services: network/performance/cilium-performance/cilium-service.md
+                      - Cross-node communication between Pods: network/performance/cilium-performance/cilium-crossnode.md
+                      - Access acceleration test in the nodePort mode: network/performance/cilium-performance/cilium-nodeport.md
+                      - eBPF-based Pod bandwidth management: network/performance/cilium-performance/cilium-bandwidth.md
+                  - Performance test in eBPF-based network policies: network/performance/ebpf-performance.md
+              - Calico:
+                  - Intro: network/modules/calico/index.md
+                  - Install: network/modules/calico/install.md
+                  - ippool: network/modules/calico/ippool.md
+                  - Metrics: network/modules/calico/metrics.md
+                  - Calico Policies: network/modules/calico/policy.md
+                  - Troubleshooting: network/modules/calico/debug.md
+              - Cilium:
+                  - Intro: network/modules/cilium/index.md
+                  - Args Config: network/modules/cilium/install.md
+                  - Unsupported Features: network/modules/cilium/notSupport.md
+                  - Cilium Network Communication Acceleration: network/modules/cilium/cross-cluster.md
+                  - Cross-Cluster Application Communication: network/modules/cilium/cilium-speedup.md
+              - Contour:
+                  - Intro: network/modules/contour/index.md
+                  - Install: network/modules/contour/install.md
+              - F5networks:
+                  - Intro: network/modules/f5networks/index.md
+                  - Install: network/modules/f5networks/install.md
+                  - Use: network/modules/f5networks/usage.md
+                  - Debug: network/modules/f5networks/debug.md
+              - Ingress-nginx:
+                  - Intro: network/modules/ingress-nginx/index.md
+                  - Install: network/modules/ingress-nginx/install.md
+                  - Ingress Class: network/modules/ingress-nginx/ingressclass.md
+                  - Ingress Scope: network/modules/ingress-nginx/scope.md
+                  - Load Balance: network/modules/ingress-nginx/proxy.md
+                  - Configure timeout: network/modules/ingress-nginx/timeout.md
+                  - Configure log: network/modules/ingress-nginx/log.md
+                  - Upload limit: network/modules/ingress-nginx/upload.md
+                  - Traffic mirror: network/modules/ingress-nginx/mirror.md
+                  - Cross-Origin Resource Sharing: network/modules/ingress-nginx/cors.md
+              - Metallb:
+                  - Intro: network/modules/metallb/index.md
+                  - Install: network/modules/metallb/install.md
+                  - Instructions for IP pool use: network/modules/metallb/usage.md
+                  - L2 and BGP mode: network/modules/metallb/l2-bgp.md
+                  - Get client source IPs: network/modules/metallb/source_ip.md
+              - Multus-underlay:
+                  - Intro: network/modules/multus-underlay/index.md
+                  - Install: network/modules/multus-underlay/install.md
+                  - MacVLAN: network/modules/multus-underlay/macvlan.md
+                  - SR-IOV: network/modules/multus-underlay/sriov.md
+                  - DPDK: network/modules/multus-underlay/dpdk.md
+                  - NmState: network/modules/multus-underlay/nmstat.md
+              - Spiderpool:
+                  - Spiderpool Release notes: network/modules/spiderpool/releasenotes.md
+                  - Intro: network/modules/spiderpool/index.md
+                  - Install: network/modules/spiderpool/install.md
+                  - Create an IP pool: network/modules/spiderpool/createpool.md
+                  - IP pool use cases: network/modules/spiderpool/ippoolusage.md
+                  - Workloads uses IP pools: network/modules/spiderpool/usage.md
+                  - Third-pary workloads use IP pools: network/modules/spiderpool/cutomizedusage.md
+                  - Running on Alibaba Cloud: network/modules/spiderpool/alibabacloud.md
+                  - Config: network/modules/spiderpool/config.md
+                  - Commands: network/modules/spiderpool/command.md
+              - Submariner:
+                  - Intro: network/modules/submariner/index.md
+                  - Install: network/modules/submariner/install.md
+                  - Use: network/modules/submariner/usage.md
+          - Cloud Native Storage:
+              - Intro:
+                  - What is storage: storage/index.md
+                  - Background: storage/background.md
+                  - Benefits: storage/benefits.md
+                  - Features: storage/features.md
+                  - Storage Release Notes: storage/hwameistor/releasenotes.md
+              - HwameiStor storage:
+                  - Intro: storage/hwameistor/intro/index.md
+                  - Modules:
+                      - Local disk manager: storage/hwameistor/intro/ldm.md
+                      - Local storage: storage/hwameistor/intro/ls.md
+                      - DRBD installer: storage/hwameistor/intro/drbd.md
+                      - Scheduler: storage/hwameistor/intro/scheduler.md
+                      - Admission controller: storage/hwameistor/intro/admission-controller.md
+                  - Resources: storage/hwameistor/intro/resources.md
+                  - Installation:
+                      - Preparation: storage/hwameistor/install/prereq.md
+                      - Resource requirements: storage/hwameistor/install/proresource.md
+                      - Install DRDB: storage/hwameistor/install/drbdinstall.md
+                      - Install with Operator: storage/hwameistor/install/deploy-operator.md
+                      - Intall with UI: storage/hwameistor/install/deploy-ui.md
+                      - Install with Helm Charts: storage/hwameistor/install/deploy-helm.md
+                      - Post-check: storage/hwameistor/install/post-check.md
+                      - Storage and network adapter config: storage/hwameistor/install/storage-eth.md
+                      - Custom Kubelet root directory: storage/hwameistor/install/customized-kubelet.md
+                      - Upgrade: storage/hwameistor/install/upgrade.md
+                      - Uninstall: storage/hwameistor/install/uninstall.md
+                  - Nodes and Disks:
+                      - LVM node expansion: storage/hwameistor/resources/lvm-nodes.md
+                      - Disk node expansion: storage/hwameistor/resources/disk-nodes.md
+                      - Disk expansion: storage/hwameistor/resources/disk-expansion.md
+                      - Disk reservation: storage/hwameistor/resources/reserveddisk.md
+                  - StorageClass: storage/hwameistor/resources/storagepool.md
+                  - Volumes:
+                      - Volume migration: storage/hwameistor/resources/migrate.md
+                      - Volume expansion: storage/hwameistor/resources/expand.md
+                      - Volume IO rate limit: storage/hwameistor/resources/volume-ProvisionedIO.md
+                  - Use Cases:
+                      - Overview: storage/hwameistor/application/overview.md
+                      - Deploy StatefulSets:
+                          - Deploy via local volume: storage/hwameistor/application/local.md
+                          - Deploy via ha volume: storage/hwameistor/application/ha.md
+                  - FAQs: storage/hwameistor/faqs.md
+              - Solutions to Integrate Open Source:
+                  - Rook-Ceph:
+                      - Rook-Ceph intro: storage/solutions/rook-ceph.md
+                      - Deploy Rook-Ceph with app store: storage/solutions/dce-rook-ceph.md
+                      - Deploy Rook-Ceph with Helm: storage/solutions/helm-rook-ceph.md
+                      - How to connect Ceph Dashboard: storage/solutions/ceph-dashboard.md
+                  - Longhorn:
+                      - Longhorn intro: storage/solutions/longhorn.md
+                      - Deploy Longhorn with app store: storage/solutions/dce-longhorn.md
+                  - OpenEBS:
+                      - OpenEBS intro: storage/solutions/openebs.md
+                      - Deploy OpenEBS with Helm: storage/solutions/openebs-helm.md
+                  - TiDB: storage/hwameistor/application/tidb.md
+                  - MinIO: storage/hwameistor/application/minio/minio.md
+              - Concepts:
+                  - Kubernetes storage: storage/terms/k8s_storage.md
+                  - CAS: storage/terms/cas.md
+                  - CSI: storage/terms/csi.md
+                  - CRD and CR: storage/terms/crd_and_cr.md
+                  - Volume: storage/terms/volume.md
+                  - LVM: storage/terms/lvm.md
+                  - PV and PVC: storage/terms/pv_pvc.md
+          - Virtualized Container:
+              - Intro:
+                  - Intro: virtnest/intro/index.md
+                  - Release Notes: virtnest/intro/release-notes.md
+              - Quick Start:
+                  - Create VM: virtnest/quick-start/index.md
+                  - Access VM by NodePort: virtnest/quick-start/nodeport.md
+                  - Deploy with Rook Ceph: virtnest/quick-start/rook-ceph.md
       - Observability:
           - Insight:
               - Intro:
