@@ -15,7 +15,10 @@ DCE 5.0 集成社区最优秀的众多技术，内置依赖项数以万计，经
 
     - [如何将单云应用一键转换为多云应用？](../videos/use-cases.md#_2)
     - [如何在 DCE 5.0 中部署混合云应用？](../videos/use-cases.md#dce-50)
+=== "可观测"
 
+    - [如何利用可观测性快速定位异常并排障？](../videos/use-cases.md#_5)
+    
 === "流量治理"
 
     - [如何将微服务接入 DCE 5.0 并治理南北向流量？](../videos/use-cases.md#dce-50_1)
@@ -36,9 +39,8 @@ DCE 5.0 集成社区最优秀的众多技术，内置依赖项数以万计，经
     - [如何利用 CICD 快速交付应用？](../videos/use-cases.md#cicd)
     - [如何利用 GitOps 持续部署云原生应用？](../videos/use-cases.md#gitops)
 
-=== "ChatGPT、中间件和故障排查"
+=== "中间件及 AI&向量库"
 
-    - [如何利用可观测性快速定位异常并排障？](../videos/use-cases.md#_5)
     - [如何用中间件和 pgvector 部署 ChatGPT 应用？](../videos/use-cases.md#pgvector-chatgpt)
     - [如何实现 Redis 的跨集群数据同步？](../videos/use-cases.md#redis)
 
