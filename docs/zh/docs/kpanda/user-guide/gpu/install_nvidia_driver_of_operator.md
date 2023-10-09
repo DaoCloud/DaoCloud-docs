@@ -128,22 +128,30 @@
         - Config.default: 节点默认使用的切分配置参数，默认为 `all-disbled`，可填入配置文件中对应的规格（如：`all-1g.10gb`等），输入值说明如下：
 
             -  `all-disbled` ： 所有节点设备默认禁用 MIG
-
             - `配置规格（如：all-1g.10gb）`：所有节点默认使用输入规格切分
 
-            - 如需要定制某个节点的切分规格，请给对应 GPU 节点打上切分规格进行使用：
+            若需要给个别GPU 节点按照某种切分规格进行使用，请给对应节点打上 Label：
 
-                ```
-                kubectl label nodes {node} nvidia.com/mig.config="all-1g.10gb" --overwrite
-                ```
+            - **single** 模式请给对应节点打上如下 Label：
 
-        - Config.name 参数：MIG 的切分配置参数文件名，参考如下 YAML 创建名为 `custom-mig-parted-config`的配置文件，用来配置 MIG 的切分策略。MIG 切分逻辑可参考 [NVIDIA 多实例 GPU(MIG) 概述](./mig_index.md)。
+              ```
+              kubectl label nodes {node} nvidia.com/mig.config="all-1g.10gb" --overwrite
+              ```
+
+            - **mixed** 模式请给对应节点打上如下 Label：
+
+              ```
+              kubectl label nodes {node} nvidia.com/mig.config="custom-config" --overwrite
+              ```
+
+            - Config.name 参数：MIG 的切分配置参数文件名，参考如下 YAML 创建名为 `custom-mig-parted-config`的配置文件，用来配置 MIG 的（GI ,CI）切分策略。MIG 切分逻辑可参考 [NVIDIA 多实例 GPU(MIG) 概述](./mig_index.md)。
 
             注意： 创建的配置文件（`custom-mig-parted-config`）名称不能同默认配置文件（`default-mig-parted-config`) 相同。
 
             A800 80G 卡配置的切分规则，默认如下，用户可基于自身卡的特性进行调整：
 
         ```yaml
+        # 自定义切分 GI 实例配置
           all-disabled:
           - devices: all
               mig-enabled: false
@@ -204,7 +212,7 @@
               2g.20gb: 1
               3g.40gb: 1
               # 所有设备启用 MIG，使用不同规格的 MIG 设备进行平衡切分
-          # 自定义切分配置
+          # 自定义切分 CI 实例配置
           custom-config: # 设置后会按照设置规格切分 CI 实例
           - devices: all
               mig-enabled: true
@@ -221,8 +229,20 @@
 
     -  点击`确定`按钮，完成 `gpu-operator` 插件的安装。
 
-    - 若开启了 **MIG 模式**，并且需要给个别GPU 节点按照某种切分规格进行使用，请给对应节点打上如下 Label：
+    - 若开启了 **MIG 模式**，并且需要给个别GPU 节点按照某种切分规格进行使用，否则按照 MigManager.Config 中的 default 值进行切分
 
-    ```
-    kubectl label nodes {node} nvidia.com/mig.config="all-1g.10gb" --overwrite
-    ```
+        - **single** 模式请给对应节点打上如下 Label：
+
+            ```
+            kubectl label nodes {node} nvidia.com/mig.config="all-1g.10gb" --overwrite
+            ```
+
+        - **mixed** 模式请给对应节点打上如下 Label：
+
+            ```
+            kubectl label nodes {node} nvidia.com/mig.config="custom-config" --overwrite
+            ```
+
+            
+
+    
