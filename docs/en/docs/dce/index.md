@@ -26,17 +26,19 @@ and unleashes cloud-native productivity.
 <div class="grid cards" markdown>
 
 - :fontawesome-solid-jet-fighter-up: **Install** [Installation instructions](../install/index.md)
-- :octicons-container-16: **Container Management** [Cluster/node/workload infrastructure](../kpanda/intro/index.md)
-- :fontawesome-solid-user-group: **Global Management** [Login/permissions/appearance](../ghippo/intro/index.md)
-- :material-monitor-dashboard: **Observability** [One-stop graphical dashboard](../insight/intro/index.md)
 - :material-microsoft-azure-devops: **Workbench** [CI/CD pipeline](../amamba/intro/index.md)
+- :octicons-container-16: **Container Management** [Cluster/node/workloads/gpu](../kpanda/intro/index.md)
 - :material-cloud-check: **Multicloud Management** [Multicloud instance/workload/policy](../kairship/intro/index.md)
+- :material-warehouse: **Container Registry** [Integrate and host registries](../kangaroo/index.md)
+- :material-dot-net: **Network** [Multi-CNI fusion solution](../network/intro/index.md)
+- :floppy_disk: **Storage** [Containerized storage](../storage/index.md)
+- :material-train-car-container: **VM Containers** [Containerized virtual machine](../virtnest/intro/index.md)
+- :material-monitor-dashboard: **Insight** [One-stop graphical dashboard](../insight/intro/index.md)
 - :material-engine: **Microservice Engine** [Microservice governance and gateway](../skoala/intro/index.md)
 - :material-table-refresh: **Service Mesh** [Non-intrusive service governance](../mspider/intro/index.md)
 - :material-middleware: **Middleware** [ES, Kafka, MinIO, MySQL, etc.](../middleware/index.md)
-- :material-warehouse: **Container Registry** [Registry integration and hosting service](../kangaroo/index.md)
-- :material-dot-net: **Network** [Multi-CNI fusion solution](../network/intro/index.md)
-- :floppy_disk: **Storage** [Containerized storage](../storage/index.md)
+- :fontawesome-brands-edge: **Cloud Edge Collaboration** [Containers extend to edge](../kant/intro/index.md)
+- :fontawesome-solid-user-group: **Global Management** [Login/permissions/appearance](../ghippo/intro/index.md)
 
 </div>
 
