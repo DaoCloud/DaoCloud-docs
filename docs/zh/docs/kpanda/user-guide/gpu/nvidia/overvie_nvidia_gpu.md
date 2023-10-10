@@ -28,17 +28,14 @@ Daocloud 容器管理平台全面兼容了上述 Nvidia 的能力特性，用户
   - 每个 GPU 可启用或不启用 MIG，并且可以自由配置任何可用 MIG 设备类型的混合搭配。
   - 在节点上运行的 k8s-device-plugin 将：
     - 使用传统的 [nvidia.com/gpu](http://nvidia.com/gpu) 资源类型公开任何不处于 MIG 模式的 GPU
-    - 使用遵循架构 nvidia.com/mig-<slice_count>g.<memory_size>gb 的资源类型公开各个 MIG 设备
+    - 使用遵循架构 `nvidia.com/mig-<slice_count>g.<memory_size>gb` 的资源类型公开各个 MIG 设备
 
 开启配置详情参考： [GPU Operator 离线安装](install_nvidia_driver_of_operator.md)
-
-
 
 ## 如何使用
 
 您可以参考以下链接，快速使用 Daocloud 关于 Nvidia GPU 卡的管理能力。
 
-- **[NVIDIA GPU 整卡使用](./full_gpu_userguide.md)**
-- **[NVIDIA vGPU 使用](./vgpu_user.md)**
-- **[NVIDIA MIG 使用](./mig_usage.md)**
-
+- **[NVIDIA GPU 整卡使用](full_gpu_userguide.md)**
+- **[NVIDIA vGPU 使用](vgpu/vgpu_user.md)**
+- **[NVIDIA MIG 使用](mig/mig_usage.md)**

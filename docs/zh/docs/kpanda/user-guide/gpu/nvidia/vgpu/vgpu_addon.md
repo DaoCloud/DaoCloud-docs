@@ -4,14 +4,14 @@
 本节介绍如何在 DCE 5.0 平台中安装 vGPU 插件，这是使用 Nvidia vGPU 能力的前提。
 ## 前提条件
 
-- 参考 [GPU 支持矩阵](gpu_matrix.md) 确认集群节点上具有对应型号的 GPU 卡。
-- 当前集群已通过 Operator 部署 Nvidia 驱动，具体参考 [GPU Operator 离线安装](./install_nvidia_driver_of_operator.md)。
+- 参考 [GPU 支持矩阵](../../gpu_matrix.md) 确认集群节点上具有对应型号的 GPU 卡。
+- 当前集群已通过 Operator 部署 Nvidia 驱动，具体参考 [GPU Operator 离线安装](../install_nvidia_driver_of_operator.md)。
 
 ## 操作步骤
 
 1. 功能模块路径：`容器管理` -> `集群管理` -> 点击目标集群 -> `Helm应用` -> `Helm 仓库` -> 搜索 nvidia-vgpu。
 
-    ![Alt text](./images/vgpu-addon.png)
+    ![Alt text](../../images/vgpu-addon.png)
 
 2. 在安装 vGPU 的过程中提供了几个基本修改的参数，如果需要修改高级参数点击 YAML 列进行修改：
 
@@ -21,11 +21,10 @@
     
     - `Resources`：就是对应 vgpu-device-plugin 和 vgpu-schedule pod 的资源使用量。
 
-    ![Alt text](./images/vgpu-pararm.png)
+    ![Alt text](../../images/vgpu-pararm.png)
 
 3. 安装成功之后会在指定 `Namespace` 下出现如下两个类型的 Pod，即表示 Nvidia GPU 插件已安装成功：
    
-    ![Alt text](./images/vgpu-pod.png)
+    ![Alt text](../../images/vgpu-pod.png)
 
 安装成功后，[部署应用可使用 vGPU 资源](vgpu_user.md) 。
-

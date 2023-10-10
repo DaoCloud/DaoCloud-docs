@@ -226,17 +226,17 @@ nav:
                   - GPU 管理概述: kpanda/user-guide/gpu/index.md
                   - GPU 支持矩阵: kpanda/user-guide/gpu/gpu_matrix.md
                   - NVIDIA GPU 管理:
-                      - GPU Operator 离线安装: kpanda/user-guide/gpu/install_nvidia_driver_of_operator.md
-                      - NVIDIA GPU 模式说明: kpanda/user-guide/gpu/overvie_nvidia_gpu.md
-                      - NVIDIA GPU 整卡模式: kpanda/user-guide/gpu/full_gpu_userguide.md
+                      - GPU Operator 离线安装: kpanda/user-guide/gpu/nvidia/install_nvidia_driver_of_operator.md
+                      - NVIDIA GPU 模式说明: kpanda/user-guide/gpu/nvidia/overvie_nvidia_gpu.md
+                      - NVIDIA GPU 整卡模式: kpanda/user-guide/gpu/nvidia/full_gpu_userguide.md
                       - NVIDIA vGPU 模式: 
-                        - 安装 vGPU Addon: kpanda/user-guide/gpu/vgpu_addon.md
-                        - 应用使用 NVIDIA vGPU: kpanda/user-guide/gpu/vgpu_user.md
+                        - 安装 vGPU Addon: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_addon.md
+                        - 应用使用 NVIDIA vGPU: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_user.md
                       - NVIDIA MIG 模式:
-                        - NVIDIA MIG 概述: kpanda/user-guide/gpu/mig_index.md
-                        - 应用使用 NVIDIA MIG: kpanda/user-guide/gpu/mig_usage.md
+                        - NVIDIA MIG 概述: kpanda/user-guide/gpu/nvidia/mig/mig_index.md
+                        - 应用使用 NVIDIA MIG: kpanda/user-guide/gpu/nvidia/mig/mig_usage.md
                       # - GPU Operator 创建 MIG: kpanda/user-guide/gpu/create_mig.md
-                        - MIG 相关命令: kpanda/user-guide/gpu/mig_command.md
+                        - MIG 相关命令: kpanda/user-guide/gpu/nvidia/mig/mig_command.md
                   - 昇腾 GPU 管理:
                       - 应用使用昇腾 GPU: kpanda/user-guide/gpu/Ascend_usage.md
                   - 天数 GPU 管理:
