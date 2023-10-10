@@ -215,7 +215,7 @@
 
 完成上述相关参数配置和创建后：
 
-1. 如果使用**整卡模式**，[应用创建时可使用 GPU 资源](full_gpu_userguide.md)
+1. 如果使用 **整卡模式**，[应用创建时可使用 GPU 资源](full_gpu_userguide.md)
 
 2. 如果使用 **vGPU 模式** ，完成上述相关参数配置和创建后，下一步请完成 [vGPU Addon 安装](vgpu_addon.md)
 
