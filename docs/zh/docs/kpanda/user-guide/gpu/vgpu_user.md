@@ -6,7 +6,11 @@
 
 - 已经[部署 DCE 5.0](https://docs.daocloud.io/install/index.html) 容器管理平台，且平台运行正常。
 - 容器管理模块[已接入 Kubernetes 集群](../clusters/integrate-cluster.md)或者[已创建 Kubernetes 集群](../clusters/create-cluster.md)，且能够访问集群的 UI 界面。
-- 当前集群已离线安装，GPU Operator，且已关闭 Nvidia DevicePlugin 特性。
+-  集群节点上具有[对应型号的 GPU 卡](gpu_matrix.md)
+-  已安装 [GPU Operator ](./install_nvidia_driver_of_operator.md)
+- 已安装 [NVIDIA vGPU Addon](vgpu_addon.md)
+
+- 当前集群已关闭 Nvidia DevicePlugin 特性
 
 ## 操作步骤
 

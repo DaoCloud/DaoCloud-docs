@@ -4,10 +4,8 @@
 本节介绍如何在 DCE 5.0 平台中安装 vGPU 插件，这是使用 Nvidia vGPU 能力的前提。
 ## 前提条件
 
-- 已经[部署 DCE 5.0](https://docs.daocloud.io/install/index.html) 容器管理平台，且平台运行正常。
-- 容器管理模块[已接入 Kubernetes 集群](../clusters/integrate-cluster.md)或者[已创建 Kubernetes 集群](../clusters/create-cluster.md)，且能够访问集群的 UI 界面。
-- 参考 [Daocloud GPU 支持矩阵](./overvie_nvidia_gpu.md)确认集群节点上具有对应型号的 GPU 卡。
-- 当前集群已通过 Operator 部署 Nvidia 驱动，具体参考 [Nvidia 驱动部署](./install_nvidia_driver_of_operator.md)。
+- 参考 [GPU 支持矩阵](gpu_matrix.md) 确认集群节点上具有对应型号的 GPU 卡。
+- 当前集群已通过 Operator 部署 Nvidia 驱动，具体参考 [GPU Operator 离线安装](./install_nvidia_driver_of_operator.md)。
 
 ## 操作步骤
 
@@ -36,3 +34,5 @@
    即表示 Nvidia GPU 插件已安装成功：
    
     ![Alt text](./images/vgpu-pod.png)
+
+安装成功后，[部署应用可使用 vGPU 资源](vgpu_user.md) 。

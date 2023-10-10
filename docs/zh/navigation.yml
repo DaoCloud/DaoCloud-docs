@@ -224,17 +224,19 @@ nav:
                   - 集群和命名空间授权: kpanda/user-guide/permissions/cluster-ns-auth.md
               - GPU 管理:
                   - GPU 管理概述: kpanda/user-guide/gpu/index.md
+                  - GPU 支持矩阵: kpanda/user-guide/gpu/gpu_matrix.md
                   - NVIDIA GPU 卡管理:
-                      - NVIDIA GPU 管理概述: kpanda/user-guide/gpu/overvie_nvidia_gpu.md
-                      - GPU Operator 离线安装——以 CentOS 7.9 为例: kpanda/user-guide/gpu/install_nvidia_driver_of_operator.md
-                      - 应用独占整张 GPU 卡: kpanda/user-guide/gpu/full_gpu_userguide.md
-                      - NVIDIA GPU 虚拟化 —— vGPU: 
+                      - GPU Operator 离线安装: kpanda/user-guide/gpu/install_nvidia_driver_of_operator.md
+                      - NVIDIA GPU 卡使用模式: kpanda/user-guide/gpu/overvie_nvidia_gpu.md
+                      - NVIDIA GPU 整卡模式: kpanda/user-guide/gpu/full_gpu_userguide.md
+                      - NVIDIA vGPU 模式: 
                         - 安装 vGPU Addon: kpanda/user-guide/gpu/vgpu_addon.md
                         - 应用使用 NVIDIA vGPU: kpanda/user-guide/gpu/vgpu_user.md
-                      - NVIDIA GPU 虚拟化 —— MIG: kpanda/user-guide/gpu/mig_index.md
-                      - 应用使用 NVIDIA MIG GPU: kpanda/user-guide/gpu/mig_usage.md
+                      - NVIDIA MIG 模式:
+                        - NVIDIA MIG 概述: kpanda/user-guide/gpu/mig_index.md
+                        - 应用使用 NVIDIA MIG: kpanda/user-guide/gpu/mig_usage.md
                       # - GPU Operator 创建 MIG: kpanda/user-guide/gpu/create_mig.md
-                      # - MIG 相关命令: kpanda/user-guide/gpu/mig_command.md
+                        - MIG 相关命令: kpanda/user-guide/gpu/mig_command.md
                   - 昇腾 GPU 卡管理:
                       - 应用使用昇腾 GPU: kpanda/user-guide/gpu/Ascend_usage.md
                   - 天数 GPU 卡管理:
