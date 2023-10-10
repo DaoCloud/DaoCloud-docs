@@ -15,24 +15,17 @@
 
 2. 在安装 vGPU 的过程中提供了几个基本修改的参数，如果需要修改高级参数点击 YAML 列进行修改：
 
-    - `deviceMemoryScaling`：
+    - `deviceMemoryScaling`：浮点数类型，预设值是 1。NVIDIA 装置显存使用比例，可以大于 1（启用虚拟显存，实验功能）。对于有 M 显存大小的 NVIDIA GPU，如果我们配置 `devicePlugin.deviceMemoryScaling` 参数为 S，在部署了我们装置插件的 Kubenetes 集群中，这张 GPU 分出的 vGPU 将总共包含 `S * M` 显存。
 
-        浮点数类型，预设值是 1。NVIDIA 装置显存使用比例，可以大于 1（启用虚拟显存，实验功能）。
-        对于有 M 显存大小的 NVIDIA GPU，如果我们配置 `devicePlugin.deviceMemoryScaling` 参数为 S，
-        在部署了我们装置插件的 Kubenetes 集群中，这张 GPU 分出的 vGPU 将总共包含 `S * M` 显存。
-
-    - `deviceSplitCount`：
-
-        整数类型，预设值是 10。GPU 的分割数，每一张 GPU 都不能分配超过其配置数目的任务。
-        若其配置为 N 的话，每个 GPU 上最多可以同时存在 N 个任务。
-
+    - `deviceSplitCount`：整数类型，预设值是 10。GPU 的分割数，每一张 GPU 都不能分配超过其配置数目的任务。若其配置为 N 的话，每个 GPU 上最多可以同时存在 N 个任务。
+    
     - `Resources`：就是对应 vgpu-device-plugin 和 vgpu-schedule pod 的资源使用量。
 
     ![Alt text](./images/vgpu-pararm.png)
 
-3. 安装成功之后会在指定 `Namespace` 下出现如下两个类型的 Pod，
-   即表示 Nvidia GPU 插件已安装成功：
+3. 安装成功之后会在指定 `Namespace` 下出现如下两个类型的 Pod，即表示 Nvidia GPU 插件已安装成功：
    
     ![Alt text](./images/vgpu-pod.png)
 
 安装成功后，[部署应用可使用 vGPU 资源](vgpu_user.md) 。
+

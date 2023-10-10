@@ -1,4 +1,4 @@
-# GPU Operator 创建 MIG（多实例 GPU）
+# 在线开启 MIG 功能
 
 NVIDIA 当前提供两种在 Kubernetes 节点上公开 MIG 设备的策略： 
 
@@ -32,7 +32,7 @@ NVIDIA 当前提供两种在 Kubernetes 节点上公开 MIG 设备的策略：
     helm upgrade -i  gpu-operator -n gpu-operator -n gpu-operator --create-namespace nvidia/gpu-operator --set migStrategy=single --set node-feature-discovery.image.repository=k8s.m.daocloud.io/nfd/node-feature-discovery --set driver.version=525-5.15.0-78-generic # 通过 set 指定 MIG 模式为 Single
     ```
 
-2. 给对应节点(已插入对应 GPU 卡节点)打上 切分规格
+2. 如需要按照某种规则切分，可以给对应节点(已插入对应 GPU 卡节点)打上 切分规格，如不执行此操作，将按照默认方式切分，详情请参考：
 
     ```sh
     kubectl label nodes {node} nvidia.com/mig.config="all-1g.10gb" --overwrite
