@@ -8,9 +8,9 @@
 
     Ubuntu LTS (Xenial Xerus)、Ubuntu LTS (Bionic Beaver) 、CentOS、EulerOS、RHEL、银河麒麟、中兴新支点、中标麒麟、openEuler
 
-- armv7i（arm32）架构
+<!-- - armv7i（arm32）架构
 
-    Raspbian GNU/Linux (stretch)
+    Raspbian GNU/Linux (stretch) -->
 
 - aarch64（arm64）架构
 
