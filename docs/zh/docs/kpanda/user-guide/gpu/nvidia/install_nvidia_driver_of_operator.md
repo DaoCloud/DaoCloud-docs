@@ -8,14 +8,14 @@
 
 使用模式详情请参考：[NVIDIA GPU 卡使用模式](overvie_nvidia_gpu.md)
 
-!!!note
+!!! note
 
-    Daocloud 内置了 Centos 7.9 3.10.0-1160 的 GPU Operator 离线包，如需使用其它操作系统和内核版本，请参考构建 GPU Operator 离线包进行构建。
+    DCE 5.0 内置了 Centos 7.9 3.10.0-1160 的 GPU Operator 离线包，如需使用其它操作系统和内核版本，请参考构建 GPU Operator 离线包进行构建。
 
 ### 前提条件
 
-- 待安装 GPU 驱动节点系统要求请参考：[GPU 支持矩阵](gpu_matrix.md)，本章节使用  AMD 架构的 Centos 7.9 （3.10.0-1160）
-- 确认集群节点上具有对应型号的 GPU 卡（[NVIDIA H100](https://www.nvidia.com/en-us/data-center/h100/)、 [A100](https://www.nvidia.com/en-us/data-center/a100/) 和 [A30](https://www.nvidia.com/en-us/data-center/products/a30-gpu/) Tensor Core GPU），详情参考：[GPU 支持矩阵](gpu_matrix.md)
+- 待安装 GPU 驱动节点系统要求请参考：[GPU 支持矩阵](../gpu_matrix.md)，本章节使用 AMD 架构的 Centos 7.9 （3.10.0-1160）
+- 确认集群节点上具有对应型号的 GPU 卡（[NVIDIA H100](https://www.nvidia.com/en-us/data-center/h100/)、 [A100](https://www.nvidia.com/en-us/data-center/a100/) 和 [A30](https://www.nvidia.com/en-us/data-center/products/a30-gpu/) Tensor Core GPU），详情参考：[GPU 支持矩阵](../gpu_matrix.md)
 
 ### 操作步骤
 
@@ -41,8 +41,8 @@
     - DivicePlugin.enable 参数：用于配置安装 GPU Operator 时，是否启用 Device Plugin，这取决于您对 GPU 的使用规划，请根据以下使用场景选择开启或关闭：
 
         - 使用应用独占 **整张 GPU** 卡时请 **启用**。
-        - 使用  **vGPU** 时请 **关闭**。
-        - 使用 **GPU MIG** 时请 **启用**。启用前请确认卡型号符合要求：[GPU 支持矩阵](gpu_matrix.md)
+        - 使用 **vGPU** 时请 **关闭**。
+        - 使用 **GPU MIG** 时请 **启用**。启用前请确认卡型号符合要求：[GPU 支持矩阵](../gpu_matrix.md)
 
     - Driver.enable 参数：开启后自动部署 NVIDIA 驱动默认开启。
 
@@ -52,23 +52,15 @@
 
         - 在 DCE 5 平台部署完成后，使用 ssh 或其它方式进入火种节点，获取火种节点离线源配置文件 `extension.repo`，可执行如下命令查看：
 
-            ```yaml
-            cat /etc/yum.repos.d/extension.repo #查看 extension.repo 中的内容。
+            查看 extension.repo 中的内容
+
+            ```sh
+            cat /etc/yum.repos.d/extension.repo
+            ```
             
-            # 一般输出如下：
-            [extension-0]
-            async = 1
-            baseurl = http://x.x.x.x:9000/kubean/centos/$releasever/os/$basearch
-            gpgcheck = 0
-            name = kubean extension 0
-            
-            [extension-1]
-            async = 1
-            baseurl = http://x.x.x.x:9000/kubean/centos-iso/$releasever/os/$basearch
-            gpgcheck = 0
-            name = kubean extension 1
-            
-            [root@g-master1 yum.repos.d]# cat /etc/yum.repos.d/extension.repo
+            一般输出如下：
+
+            ```ini
             [extension-0]
             async = 1
             baseurl = http://x.x.x.x:9000/kubean/centos/$releasever/os/$basearch
@@ -82,14 +74,14 @@
             name = kubean extension 1
             ```
 
-            复制配置文件 extension.repo 中的内容，在需要安装 GPU-Operator 的集群中使用界面新建一个名为`local-repo-config` 的配置文件，可参考[创建配置项](../configmaps-secrets/create-configmap.md)进行创建。
+            复制配置文件 extension.repo 中的内容，在需要安装 GPU-Operator 的集群中使用界面新建一个名为`local-repo-config` 的配置文件，可参考[创建配置项](../../configmaps-secrets/create-configmap.md)进行创建。
             **注意：配置数据的 key 值必须为 "CentOS-Base.repo",value 值为火种节点离线源配置文件 extension.repo 中的内容**
 
     - RepoConfig.repository 参数： GPU 驱动离线源仓库。推荐使用默认参数：`nvcr.io`。
 
     - RepoConfig.version 参数： GPU 驱动的镜像版本，仅在线安装 GPU Operator 时需要配置，NVIDIA 为常用的操作系统和内核提供了相关的驱动镜像，不同的操作系统 Driver 镜像的名称会存在差异：
 
-         - Ubuntu 系统，Driver 镜像的命名规则为：<driver-branch>-<linux-kernel-version>-<os-tag>。
+         - Ubuntu 系统，Driver 镜像的命名规则为：`<driver-branch>-<linux-kernel-version>-<os-tag>`。
            如 "525-5.15.0-69-ubuntu22.04"，525 用于指定 CUDA 的版本，5.15.0-69 指定内核的版本，ubuntu22.04 指定 OS 版本。
            注意：对于 Ubuntu ，NVIDIA 的 driver 镜像版本需要和节点内核版本强一致，包括小版本号，可前往  NVIDIA GPU Driver 检查该版本驱动是否存在。
 
@@ -103,7 +95,7 @@
 
     - Mig.enabled 参数：是否启用 MIG 能力特性。需要注意：
 
-        - 启用 MIG 需要您的 GPU 卡支持 MIG 特性，才能使用 MIG 切分 GPU 资源，参考[GPU 支持矩阵](gpu_matrix.md)查看您的 GPU 卡是否支持 MIG 特性。
+        - 启用 MIG 需要您的 GPU 卡支持 MIG 特性，才能使用 MIG 切分 GPU 资源，参考[GPU 支持矩阵](../gpu_matrix.md)查看您的 GPU 卡是否支持 MIG 特性。
         - 启用 MIG 需要开启 DivicePlugin 参数。
 
     - Mig.strategy 参数：用于配置节点上 GPU 卡的 MIG 设备的公开策略。NVIDIA 提供了两种在节点上公开 MIG 设备的策略（`single` 、`mixed`策略，详情参考：[GNVIDIA GPU 卡使用模式](overvie_nvidia_gpu.md)）:
@@ -133,14 +125,14 @@
               kubectl label nodes {node} nvidia.com/mig.config="custom-config" --overwrite
               ```
 
-            - Config.name 参数：自定义 MIG 的切分配置参数文件名，用于定义MIG 的（GI ,CI）切分策略。默认为default-mig-parted-config。如下 YAML 为创建示例配置文件 `custom-mig-parted-config`，MIG 切分逻辑可参考 [NVIDIA 多实例 GPU(MIG) 概述](./mig_index.md)。
+            - Config.name 参数：自定义 MIG 的切分配置参数文件名，用于定义MIG 的（GI ,CI）切分策略。默认为default-mig-parted-config。如下 YAML 为创建示例配置文件 `custom-mig-parted-config`，MIG 切分逻辑可参考 [NVIDIA 多实例 GPU(MIG) 概述](mig/mig_index.md)。
 
-            注意：创建的配置文件（`custom-mig-parted-config`）名称不能同默认配置文件（`default-mig-parted-config`) 相同。
+            注意：创建的配置文件（`custom-mig-parted-config`）名称不能同默认配置文件（`default-mig-parted-config`）相同。
 
             A800 80G 卡配置的切分规则，默认如下，用户可基于自身卡的特性进行调整：
 
         ```yaml
-        ## 自定义切分 GI 实例配置
+          # 自定义切分 GI 实例配置
           all-disabled:
           - devices: all
               mig-enabled: false
@@ -217,23 +209,19 @@
 
 1. 如果使用 **整卡模式**，[应用创建时可使用 GPU 资源](full_gpu_userguide.md)
 
-2. 如果使用 **vGPU 模式** ，完成上述相关参数配置和创建后，下一步请完成 [vGPU Addon 安装](vgpu_addon.md)
+2. 如果使用 **vGPU 模式** ，完成上述相关参数配置和创建后，下一步请完成 [vGPU Addon 安装](vgpu/vgpu_addon.md)
 
 3. 如果使用 **MIG 模式**，并且需要给个别 GPU 节点按照某种切分规格进行使用，否则按照 MigManager.Config 中的 `default` 值进行切分
 
-   - **single** 模式请给对应节点打上如下 Label：
+    - **single** 模式请给对应节点打上如下 Label：
 
-     ```
-     kubectl label nodes {node} nvidia.com/mig.config="all-1g.10gb" --overwrite
-     ```
-   
-   
-      - **mixed** 模式请给对应节点打上如下 Label：
-   
+        ```sh
+        kubectl label nodes {node} nvidia.com/mig.config="all-1g.10gb" --overwrite
         ```
+   
+   
+    - **mixed** 模式请给对应节点打上如下 Label：
+   
+        ```sh
         kubectl label nodes {node} nvidia.com/mig.config="custom-config" --overwrite
         ```
-   
-
-   
-

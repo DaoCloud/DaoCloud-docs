@@ -26,7 +26,7 @@ Daocloud 容器管理平台支持对 GPU、NPU 等异构资源进行统一调度
 
 ## GPU Operator 介绍
 
-同普通计算机硬件一样，Nvidia GPU 卡作为物理硬件，必须安装 Nvidia GPU 驱动后才能使用。为了降低用户在 kuberneets 上使用 GPU 的成本，Nvidia 官方提供了 NVIDIA GPU Operator 组件来管理使用 Nvidia GPU 所依赖的各种组件。这些组件包括 NVIDIA 驱动程序（用于启用 CUDA）、NVIDIA 容器运行时、GPU 节点标记、基于 DCGM 的监控等。理论上来说用户只需要将 GPU 卡插在已经被 kubernetes 所纳管的计算设备上，然后通过 GPU Operator 就能使用 NVIDIA GPU 的所有能力了。了解更多 NVIDIA GPU Operator 相关信息，请参考 [NVIDIA 官方文档](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/index.html)。如何部署请参考： [GPU Operator 离线安装 ](install_nvidia_driver_of_operator.md)
+同普通计算机硬件一样，Nvidia GPU 卡作为物理硬件，必须安装 Nvidia GPU 驱动后才能使用。为了降低用户在 kuberneets 上使用 GPU 的成本，Nvidia 官方提供了 NVIDIA GPU Operator 组件来管理使用 Nvidia GPU 所依赖的各种组件。这些组件包括 NVIDIA 驱动程序（用于启用 CUDA）、NVIDIA 容器运行时、GPU 节点标记、基于 DCGM 的监控等。理论上来说用户只需要将 GPU 卡插在已经被 kubernetes 所纳管的计算设备上，然后通过 GPU Operator 就能使用 NVIDIA GPU 的所有能力了。了解更多 NVIDIA GPU Operator 相关信息，请参考 [NVIDIA 官方文档](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/index.html)。如何部署请参考： [GPU Operator 离线安装 ](nvidia/install_nvidia_driver_of_operator.md)
 
 NVIDIA GPU Operator 架构图：
 
