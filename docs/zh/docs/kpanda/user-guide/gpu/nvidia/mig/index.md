@@ -1,21 +1,24 @@
 # NVIDIA 多实例 GPU(MIG) 概述
 
-##  MIG 场景
+## MIG 场景
 
 - **多租户云环境**
+
     MIG 允许云服务提供商将一块物理 GPU 划分为多个独立的 GPU 实例，每个实例可以独立分配给不同的租户。这样可以实现资源的隔离和独立性，满足多个租户对 GPU 计算能力的需求。
 
 - **容器化应用程序**
+
     MIG 可以在容器化环境中实现更细粒度的 GPU 资源管理。通过将物理 GPU 划分为多个 MIG 实例，可以为每个容器分配独立的 GPU 计算资源，提供更好的性能隔离和资源利用。
 
 - **批处理作业**
+
     对于需要大规模并行计算的批处理作业，MIG 可以提供更高的计算性能和更大的显存容量。每个 MIG 实例可以利用物理 GPU 的一部分计算资源，从而加速大规模计算任务的处理。
 
 - **AI/机器学习训练**
+
     MIG 可以在训练大规模深度学习模型时提供更大的计算能力和显存容量。将物理 GPU 划分为多个 MIG 实例，每个实例可以独立进行模型训练，提高训练效率和吞吐量。
 
 总体而言，NVIDIA MIG 适用于需要更细粒度的GPU资源分配和管理的场景，可以实现资源的隔离、提高性能利用率，并且满足多个用户或应用程序对 GPU 计算能力的需求。
-
 
 ## MIG 概述
 
@@ -41,7 +44,7 @@ MIG 允许多个 vGPU（以及虚拟机）在单个 GPU 实例上并行运行，
 
 如下是一个 MIG 的概述图，可以看出 MIG 将一张物理 GPU 卡虚拟化成了 7 个 GPU 实例，这些 GPU 实例能够可以被多个 User 使用。
 
-![img](images/mig_overview.png)
+![img](../../images/mig_overview.png)
 
 ## 重要概念
 
@@ -57,7 +60,7 @@ MIG 允许多个 vGPU（以及虚拟机）在单个 GPU 实例上并行运行，
   GPU 实例中的任何内容始终共享所有 GPU 内存切片和其他 GPU 引擎，但它的 SM 切片可以进一步细分为计算实例（CI）。
   GPU 实例提供内存 QoS。每个 GPU 切片都包含专用的 GPU 内存资源，这些资源会限制可用容量和带宽，并提供内存 QoS。
   每个 GPU 内存切片获得总 GPU 内存资源的 1/8，每个 GPU SM 切片获得 SM 总数的 1/7。
-* `Compute Instance `：GPU 实例的计算切片可以进一步细分为多个计算实例 （CI），其中 CI 共享父
+* `Compute Instance`：GPU 实例的计算切片可以进一步细分为多个计算实例 （CI），其中 CI 共享父
   GI 的引擎和内存，但每个 CI 都有专用的 SM 资源。
 
 ### GPU 实例（GI）
@@ -66,25 +69,25 @@ MIG 允许多个 vGPU（以及虚拟机）在单个 GPU 实例上并行运行，
 
 GPU 的分区是使用内存切片进行的，因此可以认为 A100-40GB GPU 具有 8x5GB 内存切片和 7 个 GPU SM 切片，如下图所示，展示了 A100 上可用的内存切片。
 
-![img](images/mig_7m.png)
+![img](../../images/mig_7m.png)
 
 如上所述，创建 GPU 实例 （GI） 需要将一定数量的内存切片与一定数量的计算切片相结合。在下图中，一个 5GB 内存切片与 1 个计算切片相结合，以创建 `1g.5gb` GI 配置文件：
 
-![img](images/mig_1g5gb.png)
+![img](../../images/mig_1g5gb.png)
 
 同样，4x5GB 内存切片可以与 4x1 计算切片结合使用以创建 `4g.20gb` 的 GI 配置文件：
 
-![img](images/mig_4g20gb.png)
+![img](../../images/mig_4g20gb.png)
 
 ### 计算实例（CI）
 
 GPU 实例的计算切片(GI)可以进一步细分为多个计算实例（CI），其中 CI 共享父 GI 的引擎和内存，但每个 CI 都有专用的 SM 资源。使用上面的相同 `4g.20gb` 示例，可以创建一个 CI 以仅使用第一个计算切片的 `1c.4g.20gb` 计算配置，如下图蓝色部分所示：
 
-![img](images/mig_1c.4g.20gb.png)
+![img](../../images/mig_1c.4g.20gb.png)
 
 在这种情况下，可以通过选择任何计算切片来创建 4 个不同的 CI。还可以将两个计算切片组合在一起以创建 `2c.4g.20gb` 的计算配置）：
 
-![img](images/mig2c.4g.20gb.png)
+![img](../../images/mig2c.4g.20gb.png)
 
 除此之外，还可以组合 3 个计算切片以创建计算配置文件，或者可以组合所有 4 个计算切片以创建 `3c.4g.20gb`、`4c.4g.20gb` 计算配置文件。合并所有 4 个计算切片时，配置文件简称为 `4g.20gb`。
 
@@ -101,30 +104,3 @@ GPU 实例的计算切片(GI)可以进一步细分为多个计算实例（CI）�
 | A100-PCIE A100-PCIE | NVIDIA Ampere | GA100      | 8.0          | 40GB         | 7                  |
 | A100-PCIE A100-PCI  | NVIDIA Ampere | GA100      | 8.0          | 80GB         | 7                  |
 | A30                 | NVIDIA Ampere | GA100      | 8.0          | 24GB         | 4                  |
-
-## MIG 相关命令
-
-GI 相关命名：
-
-| 子命令                                  | 说明                          |
-| --------------------------------------- | ----------------------------- |
-| nvidia-smi mig -lgi                   | 查看创建 GI 实例列表          |
-| nvidia-smi mig -dgi -gi {Instance ID} | 删除指定的 GI 实例            |
-| nvidia-smi mig -lgip                  | 查看 GI 的`profile`           |
-| nvidia-smi mig -cgi {profile id}      | 通过指定 profile 的 ID 创建 GI |
-
-CI 相关命令：
-
-| 子命令                                                  | 说明                                                         |
-| ------------------------------------------------------- | ------------------------------------------------------------ |
-| nvidia-smi mig -lcip  { -gi {gi Instance ID}}         | 查看 CI 的 `profile`，指定 `-gi` 可以查看特定 GI 实例可以创建的 CI |
-| nvidia-smi mig -lci                                   | 查看创建的 CI 实例列表                                       |
-| nvidia-smi mig -cci {profile id} -gi {gi instance id} | 指定的 GI 创建 CI 实例                                       |
-| nvidia-smi mig -dci -ci {ci instance id}              | 删除指定 CI 实例                                             |
-
-GI+CI 相关命令：
-
-| 子命令                                                       | 说明                 |
-| ------------------------------------------------------------ | -------------------- |
-| nvidia-smi mig -i 0 -cgi {gi profile id} -C {ci profile id} | 直接创建 GI + CI 实例 |
-

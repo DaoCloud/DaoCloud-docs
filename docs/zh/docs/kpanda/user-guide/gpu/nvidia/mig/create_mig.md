@@ -1,6 +1,6 @@
 # GPU Operator 创建 MIG（多实例 GPU）
 
-NVIDIA 当前提供两种在 Kubernetes 节点上公开 MIG 设备的策略： 
+NVIDIA 当前提供两种在 Kubernetes 节点上公开 MIG 设备的策略：
 
 - **Single 模式**，节点仅在其所有 GPU 上公开单一类型的 MIG 设备，节点上的所有 GPU 必须：
     - 属于同一个型号（例如 A100-SXM-40GB），只有同一型号 GPU 的 MIG Profile 才是一样的
@@ -24,15 +24,17 @@ NVIDIA 当前提供两种在 Kubernetes 节点上公开 MIG 设备的策略：
 
 ## 开启 GPU MIG Single 模式
 
-1. 通过 Operator 开启 MIG  Single 模式
+1. 通过 Operator 开启 MIG Single 模式
 
     ```sh
     helm repo add nvidia https://helm.ngc.nvidia.com/nvidia
     helm repo update
-    helm upgrade -i  gpu-operator -n gpu-operator -n gpu-operator --create-namespace nvidia/gpu-operator --set migStrategy=single --set node-feature-discovery.image.repository=k8s.m.daocloud.io/nfd/node-feature-discovery --set driver.version=525-5.15.0-78-generic # 通过 set 指定 MIG 模式为 Single
+    helm upgrade -i  gpu-operator -n gpu-operator -n gpu-operator --create-namespace nvidia/gpu-operator --set migStrategy=single --set node-feature-discovery.image.repository=k8s.m.daocloud.io/nfd/node-feature-discovery --set driver.version=525-5.15.0-78-generic
     ```
 
-2. 给对应节点(已插入对应 GPU 卡节点)打上 切分规格
+    通过 `--set` 指定 MIG 模式为 Single。
+
+2. 给对应节点（已插入对应 GPU 卡节点）打上切分规格
 
     ```sh
     kubectl label nodes {node} nvidia.com/mig.config="all-1g.10gb" --overwrite
@@ -51,12 +53,14 @@ NVIDIA 当前提供两种在 Kubernetes 节点上公开 MIG 设备的策略：
     ```sh
     helm repo add nvidia https://helm.ngc.nvidia.com/nvidia
     helm repo update
-    helm install --generate-name --set migStrategy=mixed --set allowDefaultNamespace=true  nvidia/nvidia-device-plugin --set node-feature-discovery.image.repository=k8s.m.daocloud.io/nfd/node-feature-discovery # 通过 set 指定 MIG 模式为 Mixed
+    helm install --generate-name --set migStrategy=mixed --set allowDefaultNamespace=true  nvidia/nvidia-device-plugin --set node-feature-discovery.image.repository=k8s.m.daocloud.io/nfd/node-feature-discovery
     ```
 
-2. 设置`config.yaml`文件，此`config`文件中设置 MIG GI 实例切分规格。
+    通过 `--set` 指定 MIG 模式为 Mixed。
 
-    ```yaml
+2. 配置 YAML 文件以设置 MIG GI 实例切分规格。
+
+    ```yaml title="config.yaml"
     version: v1
     mig-configs:
       all-disabled:

@@ -10,7 +10,7 @@
 
 1. 进入 Namespaces 中，点击配额管理可以配置当个 Namespace 可以使用的 GPU 资源。
 
-    ![Alt text](./images/cluster-ns.png)
+    ![Alt text](images/cluster-ns.png)
 
 2. 当前命名空间配额管理覆盖的卡类型为：Nvidia vGPU、Nvidia MIG、天数、昇腾。
 
@@ -20,4 +20,4 @@
         - GPU算力（nvidia.com/gpucores）: 表示每张卡占用的 GPU 算力，值范围为 0-100；如果配置为 0， 则认为不强制隔离；配置为100，则认为独占整张卡。
         - GPU显存（nvidia.com/gpumem）: 表示每张卡占用的 GPU 显存，值单位为 MB，最小值为1，最大值为整卡的显存值。
 
-    ![Alt text](./images/vgpu-quota.png)
+    ![Alt text](images/vgpu-quota.png)
