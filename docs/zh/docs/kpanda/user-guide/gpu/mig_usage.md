@@ -9,7 +9,7 @@
 - 已启用 Nvidia DevicePlugin 和 MIG 能力，可参考 [GPU Operator 离线安装](./install_nvidia_driver_of_operator.md)。
 - 集群节点上具有[对应型号的 GPU 卡](gpu_matrix.md)
 
-## 通过界面使用 MIG GPU
+## 界面使用 MIG GPU
 
 1. 确认集群是否已识别 GPU 卡类型
 
@@ -21,7 +21,7 @@
 
     ![mig02](../../images/gpu_mig02.jpg)
 
-###  YAML 配置应用使用 MIG
+###  YAML 配置使用 MIG
 
 
 1. `MIG Single` 模式：

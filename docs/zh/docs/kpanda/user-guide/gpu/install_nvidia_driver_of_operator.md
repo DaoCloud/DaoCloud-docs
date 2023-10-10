@@ -40,9 +40,9 @@
 
     - DivicePlugin.enable 参数：用于配置安装 GPU Operator 时，是否启用 Device Plugin，这取决于您对 GPU 的使用规划，请根据以下使用场景选择开启或关闭：
 
-        - 使用应用独占**整张 GPU** 卡时请**启用**。
+        - 使用应用独占 **整张 GPU** 卡时请 **启用**。
         - 使用  **vGPU** 时请 **关闭**。
-        - 使用 **GPU MIG  **时请 **启用**。启用前请确认卡型号符合要求：[GPU 支持矩阵](gpu_matrix.md)
+        - 使用 **GPU MIG** 时请 **启用**。启用前请确认卡型号符合要求：[GPU 支持矩阵](gpu_matrix.md)
 
     - Driver.enable 参数：开启后自动部署 NVIDIA 驱动默认开启。
 
@@ -85,17 +85,17 @@
             复制配置文件 extension.repo 中的内容，在需要安装 GPU-Operator 的集群中使用界面新建一个名为`local-repo-config` 的配置文件，可参考[创建配置项](../configmaps-secrets/create-configmap.md)进行创建。
             **注意：配置数据的 key 值必须为 "CentOS-Base.repo",value 值为火种节点离线源配置文件 extension.repo 中的内容**
 
-    - RepoConfig.repository 参数：用于指定 GPU 驱动离线源仓库。推荐使用默认参数：`nvcr.io`。
+    - RepoConfig.repository 参数： GPU 驱动离线源仓库。推荐使用默认参数：`nvcr.io`。
 
-    - RepoConfig.version 参数：用于指定 GPU 驱动的镜像版本，仅使用在线安装 GPU Operator 时需要配置，NVDIA 为常用的操作系统和内核提供了相关的驱动镜像，详情查阅 NVIDIA GPU Driver 。对于不同的操作系统 Driver 镜像的名称会存在显著的差异：
+    - RepoConfig.version 参数： GPU 驱动的镜像版本，仅在线安装 GPU Operator 时需要配置，NVIDIA 为常用的操作系统和内核提供了相关的驱动镜像，不同的操作系统 Driver 镜像的名称会存在差异：
 
-         - 对于 Ubuntu 系统，Driver 镜像的命名规则为：<driver-branch>-<linux-kernel-version>-<os-tag>。
+         - Ubuntu 系统，Driver 镜像的命名规则为：<driver-branch>-<linux-kernel-version>-<os-tag>。
            如 "525-5.15.0-69-ubuntu22.04"，525 用于指定 CUDA 的版本，5.15.0-69 指定内核的版本，ubuntu22.04 指定 OS 版本。
-           注意：对于 Ubuntu ，NVIDIA 的 driver 镜像版本需要和节点内核版本强一致，包括小版本号)，可前往  NVIDIA GPU Driver 检查该版本驱动是否存在。
+           注意：对于 Ubuntu ，NVIDIA 的 driver 镜像版本需要和节点内核版本强一致，包括小版本号，可前往  NVIDIA GPU Driver 检查该版本驱动是否存在。
 
-         - 对于 RedHat/CentOS 系列的系统， Driver 镜像的命名规则通常为 CUDA 的版本和 OS 版本组成，如 "535.104.05-centos7"。
+         - RedHat/CentOS 系列的系统， Driver 镜像的命名规则通常为 CUDA 的版本和 OS 版本组成，如 "535.104.05-centos7"。
 
-    - Driver.image 参数：用于指定 GPU 驱动的镜像版本，推荐使用默认镜像：`nvidia/driver`。
+    - Driver.image 参数：GPU 驱动的镜像版本，推荐使用默认镜像：`nvidia/driver`。
 
      
 
@@ -103,18 +103,18 @@
 
     - Mig.enabled 参数：是否启用 MIG 能力特性。需要注意：
 
-        - 启用 MIG 需要您的 GPU 卡支持 MIG 特性，才能使用 MIG 切分 GPU 资源，参考[GPU 支持矩阵](gpu_matrix.md)查看您的 GPU 卡是否支持开启 MIG 特性。
+        - 启用 MIG 需要您的 GPU 卡支持 MIG 特性，才能使用 MIG 切分 GPU 资源，参考[GPU 支持矩阵](gpu_matrix.md)查看您的 GPU 卡是否支持 MIG 特性。
         - 启用 MIG 需要开启 DivicePlugin 参数。
 
-    - Mig.strategy 参数：用于配置节点上 GPU 卡的 MIG 设备的公开策略。NVIDIA 提供了两种在节点上公开 MIG 设备的策略（`single` 、`mixed`策略，策略详情参考：[GNVIDIA GPU 卡使用模式](overvie_nvidia_gpu.md)）:
+    - Mig.strategy 参数：用于配置节点上 GPU 卡的 MIG 设备的公开策略。NVIDIA 提供了两种在节点上公开 MIG 设备的策略（`single` 、`mixed`策略，详情参考：[GNVIDIA GPU 卡使用模式](overvie_nvidia_gpu.md)）:
 
-         **single 模式 **：节点仅在其所有 GPU 上公开单一类型的 MIG 设备，为“完全相同”的 MIG 设备类型，创建相同的GI 和 CI。
+         **single 模式 **：节点仅在其所有 GPU 上公开单一类型的 MIG 设备，为“完全相同”的 MIG 设备类型，创建相同的 GI 和 CI。
 
          **mixed 模式**：节点在其所有 GPU 上公开混合 MIG 设备类型，为“完全相同”的 MIG 设备类型，提供不同的 GI 和 CI 。
 
-    - MigManager.Config : 用于配置 MIG 切分配置参数和默认切分规格。
+    - MigManager.Config : 用于配置 MIG 切分配置参数和默认值。
 
-        - Config.default: 节点默认使用的切分配置参数，默认为 `all-disbled`，可填入配置文件中对应的规格（如：`all-1g.10gb`等），输入值说明如下：
+        - Config.default: 节点使用的切分配置默认值，默认为 `all-disbled`，可填入配置文件中对应的规格（如：`all-1g.10gb`等），输入值说明如下：
 
             -  `all-disbled` ： 所有节点设备默认禁用 MIG
             - `配置规格（如：all-1g.10gb）`：所有节点默认使用输入的规格切分
@@ -206,10 +206,10 @@
 
         复制上述内容，作为配置数据中的 vaule 值，前往界面创建名为 `custom-mig-parted-config` 的配置文件。注意：配置数据的 key 必须为 `config.yaml`。
 
-    - Node-Feature-Discovery.enableNodeFeatureAPI 参数：启用或禁用节点特性API（Node Feature Discovery API）。
+    - Node-Feature-Discovery.enableNodeFeatureAPI 参数：启用或禁用节点特性 API（Node Feature Discovery API）。
 
-        - 当设置为 true 时，表示启用了节点特性 API，Kubernetes 集群收集节点的特性信息并将其提供给其他组件和工具使用。
-        - 当设置为 false 或未设置时，禁用节点特性 API，节点的特性信息将不会被收集和公开。
+        - 当设置为 `true` 时，表示启用了节点特性 API，Kubernetes 集群收集节点的特性信息并将其提供给其他组件和工具使用。
+        - 当设置为 `false` 或`未设置`时，禁用节点特性 API，节点的特性信息将不会被收集和公开。
 
 ### 下一步操作
 
@@ -226,13 +226,14 @@
      ```
      kubectl label nodes {node} nvidia.com/mig.config="all-1g.10gb" --overwrite
      ```
-
-
-   - **mixed** 模式请给对应节点打上如下 Label：
-
-     ```
-     kubectl label nodes {node} nvidia.com/mig.config="custom-config" --overwrite
-     ```
+   
+   
+      - **mixed** 模式请给对应节点打上如下 Label：
+   
+        ```
+        kubectl label nodes {node} nvidia.com/mig.config="custom-config" --overwrite
+        ```
+   
 
    
 
