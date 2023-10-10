@@ -108,7 +108,7 @@
 
     - Mig.strategy 参数：用于配置节点上 GPU 卡的 MIG 设备的公开策略。NVIDIA 提供了两种在节点上公开 MIG 设备的策略（`single` 、`mixed`策略，详情参考：[GNVIDIA GPU 卡使用模式](overvie_nvidia_gpu.md)）:
 
-         **single 模式 **：节点仅在其所有 GPU 上公开单一类型的 MIG 设备，为“完全相同”的 MIG 设备类型，创建相同的 GI 和 CI。
+         **single 模式** ：节点仅在其所有 GPU 上公开单一类型的 MIG 设备，为“完全相同”的 MIG 设备类型，创建相同的 GI 和 CI。
 
          **mixed 模式**：节点在其所有 GPU 上公开混合 MIG 设备类型，为“完全相同”的 MIG 设备类型，提供不同的 GI 和 CI 。
 
