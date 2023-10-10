@@ -4,10 +4,11 @@
 
 ## 前提条件
 
-- 已经[部署 DCE 5.0](https://docs.daocloud.io/install/index.html) 容器管理平台，且平台运行正常。
-- 容器管理模块[已接入 Kubernetes 集群](../clusters/integrate-cluster.md)或者[已创建 Kubernetes 集群](../clusters/create-cluster.md)，且能够访问集群的 UI 界面。
-- 已启用 Nvidia DevicePlugin 和 MIG 能力，可参考 [GPU Operator 离线安装](./install_nvidia_driver_of_operator.md)。
-- 集群节点上具有[对应型号的 GPU 卡](gpu_matrix.md)
+- 已经[部署 DCE 5.0](https://docs.daocloud.io/install/index.html) 容器管理平台，且平台运行正常
+- 容器管理模块[已接入 Kubernetes 集群](../clusters/integrate-cluster.md)或者[已创建 Kubernetes 集群](../clusters/create-cluster.md)，且能够访问集群的 UI 界面
+- 已启用 Nvidia DevicePlugin 能力，可参考 [GPU Operator 离线安装](./install_nvidia_driver_of_operator.md)
+- 已开启 MIG 能力，可参考：[开启 MIG 功能](create_mig.md)
+- 集群节点上具有 [对应型号的 GPU 卡](gpu_matrix.md)
 
 ## 界面使用 MIG GPU
 

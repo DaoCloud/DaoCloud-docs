@@ -6,7 +6,7 @@
 
 -  集群节点上具有[对应型号的 GPU 卡](gpu_matrix.md)
 -  已成功安装 vGPU Addon，详情参考 [GPU Addon 安装 ](vgpu_addon.md)
-- 已安装 GPU Operator，并已关闭 Nvidia DevicePlugin  能力，可参考 [GPU Operator 离线安装](./install_nvidia_driver_of_operator.md)
+- 已安装 GPU Operator，并已**关闭** `Nvidia DevicePlugin`  能力，可参考 [GPU Operator 离线安装](./install_nvidia_driver_of_operator.md) 
 
 ## 操作步骤
 
