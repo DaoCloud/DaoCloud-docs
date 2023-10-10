@@ -140,7 +140,7 @@ DCE 5.0 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的�
     - [Elasticsearch 搜索服务](../middleware/elasticsearch/intro/index.md)
     - [MinIO 对象存储](../middleware/minio/intro/index.md)
     - [MySQL 数据库](../middleware/mysql/intro/index.md)
-    - [MySQL 数据库](../middleware/mysql/intro/index.md)
+    - [PostgreSQL 数据库](../middleware/postgresql/intro/index.md)
 
 - :material-middleware:{ .lg .middle } __中间件之二__
 

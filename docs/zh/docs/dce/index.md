@@ -23,13 +23,15 @@ DCE 5.0 原生支持 DevOps 开发运维模式，可以实现应用交付的全�
 - :octicons-container-16: **容器管理** [集群/节点/负载等基础设施](../kpanda/intro/index.md)
 - :material-cloud-check: **多云编排** [多云实例/负载/策略](../kairship/intro/index.md)
 - :material-warehouse: **镜像仓库** [镜像集成和托管服务](../kangaroo/index.md)
+- :material-dot-net: **云原生网络** [多 CNI 融合方案](../network/intro/index.md)
+- :floppy_disk: **云原生存储** [容器化存储综合方案](../storage/index.md)
+- :material-train-car-container: **虚拟机容器** [容器化的虚拟机](../virtnest/intro/index.md)
 - :material-monitor-dashboard: **可观测性** [一站式图形化仪表盘](../insight/intro/index.md)
 - :material-engine: **微服务引擎** [微服务治理中心和网关](../skoala/intro/index.md)
 - :material-table-refresh: **服务网格** [非侵入式服务治理](../mspider/intro/index.md)
 - :material-middleware: **中间件** [ES, Kafka, MinIO, MySQL 等](../middleware/index.md)
+- :fontawesome-brands-edge: **云边协同** [容器能力扩展至边缘](../kant/intro/index.md)
 - :fontawesome-solid-user-group: **全局管理** [设置登录/访问权限/外观](../ghippo/intro/index.md)
-- :material-dot-net: **网络** [多 CNI 融合方案](../network/intro/index.md)
-- :floppy_disk: **存储** [容器化存储综合方案](../storage/index.md)
 
 </div>
 

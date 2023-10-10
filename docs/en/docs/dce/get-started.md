@@ -145,7 +145,7 @@ elasticity of IT systems, and significantly accelerating application delivery.
     - [Elasticsearch Search Service](../middleware/elasticsearch/intro/index.md)
     - [MinIO Object Storage](../middleware/minio/intro/index.md)
     - [MySQL Database](../middleware/mysql/intro/index.md)
-    - [MySQL Database](../middleware/mysql/intro/index.md)
+    - [PostgreSQL Database](../middleware/postgresql/intro/index.md)
 
 - :material-middleware:{ .lg .middle } __Middleware 2__
 
@@ -166,14 +166,14 @@ elasticity of IT systems, and significantly accelerating application delivery.
 
     ---
 
-    This comprehensive service section focuses on user-centric services, including access control, workspaces, audit logs, platform settings.
+    It focuses on user-centric services, including access control, workspaces, audit logs, platform settings.
 
     - [Access Control](../ghippo/user-guide/access-control/user.md)
     - [Workspaces and Folders](../ghippo/user-guide/workspace/workspace.md)
     - [Audit Logs](../ghippo/user-guide/audit/open-audit.md)
     - [Operations Management and System Settings](../ghippo/user-guide/platform-setting/appearance.md)
 
-- :material-monitor-dashboard:{ .lg .middle } __Observability__
+- :material-monitor-dashboard:{ .lg .middle } __Insight__
 
     ---
 
