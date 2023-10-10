@@ -69,7 +69,7 @@
 
       - `name`: 默认为 `default-mig-parted-config`，可自定义切分策略配置文件。
 
-        如下 YAML 为示例配置 `custom-mig-parted-config`。创建的文件名称不能同默认（`default-mig-parted-config`) 相同。
+        如下 YAML 为示例自定义配置 `custom-mig-parted-config`。创建的文件名称不能同默认（`default-mig-parted-config`) 相同。
 
         新建名为 `custom-mig-parted-config` 的配置文件，配置数据的 `key` 必须为如下 `config.yaml`中内容。
 
