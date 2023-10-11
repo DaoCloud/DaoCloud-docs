@@ -13,9 +13,9 @@ DCE 5.0 服务网格默认支持注入 Deployment、DaemonSet 和 StatefulSet �
 
 DCE 5.0 服务网格提供的 Istio 版本中已对此能力进行了增强，用户仅需简单的配置即可完成对特殊工作负载类型的治理。
 
-## 启用特定工作负载
+## 网格控制面启用自定义工作负载能力
 
-标准方式，通过 `helm upgrade` 升级的方式，为网格模块增加对应的特殊工作负载类型。
+通过标准方式，`helm upgrade` 升级的方式，为网格控制面模块增加对应的特殊工作负载类型。
 
 ### 备份参数
 
@@ -26,7 +26,7 @@ helm -n mspider-system get values mspider > mspider.yaml
 
 ### 更新配置
 
-编辑配置文件，并追加自定义工作负载类型的配置，如果存在多个配置类型，可以增加多个：
+编辑上述备份的 `mspider.yaml`，并追加自定义工作负载类型的配置，如果存在多个配置类型，可以增加多个：
 
 ```yaml
 global:
@@ -66,6 +66,80 @@ helm upgrade --install --create-namespace \
 --version=$VERSION \
 --set global.imageRegistry=release.daocloud.io/mspider \
 -f mspider.yaml
+```
+
+更新网格控制面的工作负载：
+
+```shell
+# 执行更新命令在 kpanda-global-cluster
+kubectl -n mspider-system rollout restart deployment mspider-api-service mspider-ckube-remote mspider-gsc-controller mspider-ckube mspider-work-api
+```
+
+## 为指定的网格实例添加自定义工作负载类型
+
+在我们为网格全局控制面启动了自定义工作负载能力之后，我们只需要在对应的网格控制面的实例中启用对应的自定义工作负载类型即可
+
+```shell
+# 这里仍旧是 kpanda-global-cluster 操作
+[root@ globalcluster]# kubectl -n mspider-system get globalmesh
+NAME      MODE       OWNERCLUSTER            DEPLOYNAMESPACE   PHASE       MESHVERSION
+local     EXTERNAL   kpanda-global-cluster   istio-system      SUCCEEDED   1.16.1
+test-ce   HOSTED     dsm01                   istio-system      SUCCEEDED   1.17.1-mspider
+
+# 编辑 需要启用的网格实例的 CR 配置
+[root@ globalcluster]# kubectl -n mspider-system edit globalmesh test-ce
+
+apiVersion: discovery.mspider.io/v3alpha1
+kind: GlobalMesh
+metadata:
+  finalizers:
+  - gsc-controller
+  generation: 31
+  name: test-ce
+  ...
+spec:
+  clusters:
+  - dsm01
+  hub: release.daocloud.io/mspider
+  mode: HOSTED
+  ownerCluster: dsm01
+  ownerConfig:
+    controlPlaneParams:
+      global.high_available: "true"
+      global.istio_version: 1.17.1-mspider
+      ...
+    controlPlaneParamsStruct:  # <<< 注意找到这一行
+      # --- add start ---
+      global:
+        custom_workloads:
+        - localized_name:
+            en-US: DeploymentConfig
+            zh-CN: DeploymentConfig
+          name: deploymentconfigs
+          path:
+            pod_template: .spec.template
+            replicas: .spec.replicas
+            status_ready_replicas: .status.availableReplicas
+          resource_schema:
+            group: apps.openshift.io
+            kind: DeploymentConfig
+            resource: deploymentconfigs
+            version: v1
+      # --- end ---
+      istio:
+        custom_params:
+          values:
+            sidecarInjectorWebhook:
+              injectedAnnotations:
+                k8s.v1.cni.cncf.io/networks: default/istio-cni
+    deployNamespace: istio-system
+```
+
+网格实例的 CR 修改成功，注意网格控制面所在集群的控制面服务
+
+```shell
+# 这里需要在网格控制面所在的集群操作
+[root@ meshcontorlcluster]#kubectl -n istio-system rollout restart deployment mspider-mcpc-ckube-remote mspider-mcpc-mcpc-controller mspider-mcpc-reg-proxy test-ce-hosted-apiserver
 ```
 
 ## 示例应用
@@ -110,7 +184,7 @@ spec:
   selector:
     app: nginx-app-samzong
   ports:
-    port: 80
+  - port: 80
     protocol: TCP
     targetPort: 80
 ```
