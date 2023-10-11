@@ -34,7 +34,7 @@ containerd 配置非安全仓库有两种方法，一种是从 `1.4` 版本之�
   config_path = "/etc/containerd/certs.d"
 ```
 
-​在 `/etc/containerd/certs.d` 目录下创建一个以`registry` 命名的文件夹，并在其中创建一个 `hosts.tomo`的文件。
+​在 `/etc/containerd/certs.d` 目录下创建一个以`registry` 命名的文件夹，并在其中创建一个 `hosts.toml`的文件。
 
 ```sh
 mkdir /etc/containerd/certs.d/test.registry.com
