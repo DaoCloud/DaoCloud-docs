@@ -15,7 +15,7 @@
 
 ## 开启 GPU MIG Single 模式
 
-1. [通过 Operator 开启](nvida/install_nvidia_driver_of_operator.md) MIG  Single 模式，在安装界面配置如下参数：
+1. [通过 Operator 开启](nvidia/install_nvidia_driver_of_operator.md) MIG  Single 模式，在安装界面配置如下参数：
 
     1. `DevicePlugin` 设置为 `enable` 
 
