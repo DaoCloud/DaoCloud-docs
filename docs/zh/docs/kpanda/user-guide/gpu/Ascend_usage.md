@@ -1,4 +1,4 @@
-# 应用使用昇腾（Ascend） GPU
+# 应用使用昇腾（Ascend）GPU
 
 本节介绍如何在 DCE 5.0 平台使用昇腾 GPU。
 
