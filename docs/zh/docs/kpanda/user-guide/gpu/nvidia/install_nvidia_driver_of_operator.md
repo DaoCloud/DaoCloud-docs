@@ -8,14 +8,14 @@
 
 详情请参考：[NVIDIA GPU 卡使用模式](overvie_nvidia_gpu.md)
 
-!!!note
+!!! note
 
     Daocloud 内置了 Centos 7.9 3.10.0-1160 的 GPU Operator 离线包，如需使用其它操作系统和内核版本，请参考构建 GPU Operator 离线包进行构建。
 
 ### 前提条件
 
-- 待安装 GPU 驱动节点系统要求请参考：[GPU 支持矩阵](gpu_matrix.md)，本章节使用  AMD 架构的 Centos 7.9 （3.10.0-1160）
-- 确认集群节点上具有对应型号的 GPU 卡（[NVIDIA H100](https://www.nvidia.com/en-us/data-center/h100/)、 [A100](https://www.nvidia.com/en-us/data-center/a100/) 和 [A30](https://www.nvidia.com/en-us/data-center/products/a30-gpu/) Tensor Core GPU），详情参考：[GPU 支持矩阵](gpu_matrix.md)
+- 待安装 GPU 驱动节点系统要求请参考 [GPU 支持矩阵](../gpu_matrix.md)，本章节使用  AMD 架构的 Centos 7.9 （3.10.0-1160）
+- 确认集群节点上具有对应型号的 GPU 卡（[NVIDIA H100](https://www.nvidia.com/en-us/data-center/h100/)、 [A100](https://www.nvidia.com/en-us/data-center/a100/) 和 [A30](https://www.nvidia.com/en-us/data-center/products/a30-gpu/) Tensor Core GPU），详情参考 [GPU 支持矩阵](../gpu_matrix.md)
 
 ### 操作步骤
 
@@ -92,13 +92,13 @@
 
 6.  **MIG 配置参数**
 
-    详细配置方式请参考： [开启 MIG 功能](../../create_mig.md)
+    详细配置方式请参考[开启 MIG 功能](../create_mig.md)
 
     - `Mig.enabled` ：是否启用 MIG 能力特性。
     - `Mig.strategy` ：节点上 GPU 卡的 MIG 设备的公开策略。NVIDIA 提供了两种公开 MIG 设备的策略（`single` 、`mixed`策略，详情参考：[NVIDIA GPU 卡模式说明](overvie_nvidia_gpu.md)
     - `MigManager.Config` : 用于配置 MIG 切分配置参数和默认值。
     - `default`: 节点使用的切分配置默认值，默认为 `all-disbled`。
-        - `name` ：MIG 的切分配置文件名，用于定义 MIG 的（GI ,CI）切分策略。默认为`default-mig-parted-config`。自定义参数参考： [开启 MIG 功能](../../create_mig.md)
+        - `name` ：MIG 的切分配置文件名，用于定义 MIG 的（GI ,CI）切分策略。默认为`default-mig-parted-config`。自定义参数参考[开启 MIG 功能](../create_mig.md)
 
 
 ### 下一步操作
@@ -107,7 +107,7 @@
 
 1. 如果使用 **整卡模式**，[应用创建时可使用 GPU 资源](full_gpu_userguide.md)
 
-2. 如果使用 **vGPU 模式** ，完成上述相关参数配置和创建后，下一步请完成 [vGPU Addon 安装](../vgpu/vgpu_addon.md)
+2. 如果使用 **vGPU 模式** ，完成上述相关参数配置和创建后，下一步请完成 [vGPU Addon 安装](vgpu/vgpu_addon.md)
 
 3. 如果使用 **MIG 模式**，并且需要给个别 GPU 节点按照某种切分规格进行使用，否则按照 MigManager.Config 中的 `default` 值进行切分
 
@@ -123,4 +123,3 @@
         ```
         kubectl label nodes {node} nvidia.com/mig.config="custom-config" --overwrite
         ```
-   
