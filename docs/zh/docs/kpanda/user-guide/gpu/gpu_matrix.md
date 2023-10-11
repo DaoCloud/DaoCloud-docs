@@ -9,7 +9,7 @@ hide:
 
 | GPU 厂商及类型                    | 支持 GPU 型号                                                | 适配的操作系统(在线) | 推荐内核                                                     | 推荐的操作系统及内核                                 | 安装文档                                                     |
 | --------------------------------- | ------------------------------------------------------------ | -------------------- | ------------------------------------------------------------ | ---------------------------------------------------- | ------------------------------------------------------------ |
-| **NVIDIA GPU<br />（整卡/vGPU）** | NVIDIA Fermi (2.1)架构：<br />NVIDIA GeForce 400 系列；<br />NVIDIA Quadro 4000 系列；<br />NVIDIA Tesla 20 系列； | CentOS 7             | Kernel 3.10.0-123 ~ 3.10.0-1160<br />[内核参考文档](https://blog.csdn.net/weixin_42915431/article/details/105845001) | 操作系统： CentOS 7.9；<br />内核版本：`3.10.0-1160` | [GPU Operator   离线安装](nvidia/install_nvidia_driver_of_operator.md) |
+| **NVIDIA GPU<br />（整卡/vGPU）** | NVIDIA Fermi (2.1)架构：<br />NVIDIA GeForce 400 系列；<br />NVIDIA Quadro 4000 系列；<br />NVIDIA Tesla 20 系列； | CentOS 7             | Kernel 3.10.0-123 ~ 3.10.0-1160<br />[内核参考文档](https://docs.nvidia.com/grid/15.0/product-support-matrix/index.html#abstract__ubuntu) | 操作系统： CentOS 7.9；<br />内核版本：`3.10.0-1160` | [GPU Operator 离线安装](nvidia/install_nvidia_driver_of_operator.md) |
 |                                   |                                                              | CentOS 8             | Kernel 4.18.0-80~4.18.0-348                                  |                                                      |                                                              |
 |                                   |                                                              | Ubuntu 20.04         | Kernel 5.4                                                   |                                                      |                                                              |
 |                                   |                                                              | Ubuntu 22.04         | Kernel 5.19                                                  |                                                      |                                                              |
@@ -24,7 +24,7 @@ hide:
 
 ### 支持 MIG 的 GPU 卡型号
 
-从 NVIDIA Ampere 一代开始的 GPU（即具有计算能力 >= 8.0）的 GPU）支持 MIG。下表提供了支持 MIG 的 GPU 列表：
+从 NVIDIA Ampere 一代开始的 GPU支持 MIG。下表提供了支持 MIG 的 GPU 列表：
 
 | GPU 型号            | **架构**      | **微架构** | **计算能力** | **内存大小** | **最大 GI 实例数** |
 | ------------------- | ------------- | ---------- | ------------ | ------------ | ------------------ |
