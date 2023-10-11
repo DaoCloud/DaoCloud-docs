@@ -1,6 +1,13 @@
+---
+hide:
+  - navigation
+---
+
 # 应用工作台 Amamba
 
 本页可下载应用工作台模块各版本的离线安装包。
+
+[返回下载首页](../index.md){ .md-button }
 
 ## 下载
 

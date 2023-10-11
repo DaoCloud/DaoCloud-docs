@@ -1,12 +1,12 @@
 ---
 date: 2022-11-17
-hide:
-  - navigation
 ---
 
 # DCE 5.0 社区版 v0.3.28
 
 本页可下载 DCE 5.0 社区版的离线安装包。
+
+[返回下载首页](../index.md){ .md-button }
 
 ## 下载
 

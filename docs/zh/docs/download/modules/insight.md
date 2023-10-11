@@ -1,6 +1,13 @@
+---
+hide:
+  - navigation
+---
+
 # 可观测性 Insight
 
 本页可下载可观测性模块各版本的离线安装包。
+
+[返回下载首页](../index.md){ .md-button }
 
 ## 下载
 

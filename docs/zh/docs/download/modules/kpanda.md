@@ -1,6 +1,13 @@
+---
+hide:
+  - navigation
+---
+
 # 容器管理 Kpanda
 
 本页可下载容器管理模块各版本的离线安装包。
+
+[返回下载首页](../index.md){ .md-button }
 
 ## 下载
 

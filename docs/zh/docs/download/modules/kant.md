@@ -1,6 +1,13 @@
+---
+hide:
+  - navigation
+---
+
 # 云边协同 kant
 
 本页可下载云边协同各版本的离线安装包。
+
+[返回下载首页](../index.md){ .md-button }
 
 ## 下载
 

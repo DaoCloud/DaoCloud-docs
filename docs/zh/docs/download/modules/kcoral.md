@@ -1,6 +1,13 @@
+---
+hide:
+  - navigation
+---
+
 # 应用备份 Kcoral
 
 本页可下载应用备份模块各版本的离线安装包。
+
+[返回下载首页](../index.md){ .md-button }
 
 ## 下载
 

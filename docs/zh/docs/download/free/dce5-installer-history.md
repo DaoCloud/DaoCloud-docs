@@ -1,10 +1,12 @@
 ---
 date: 2022-11-23
 hide:
-  - navigation
+  - toc
 ---
 
 # DaoCloud Enterprise 5.0 社区版历史版本
+
+[返回下载首页](../index.md){ .md-button }
 
 ## 社区版
 

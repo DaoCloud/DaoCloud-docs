@@ -1,6 +1,13 @@
+---
+hide:
+  - navigation
+---
+
 # 多云编排 Kairship
 
 本页可下载多云编排模块各版本的离线安装包。
+
+[返回下载首页](../index.md){ .md-button }
 
 ## 下载
 

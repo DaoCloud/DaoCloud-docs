@@ -1,6 +1,13 @@
+---
+hide:
+  - navigation
+---
+
 # 网络 Spidernet
 
 本页可下载网络 Spidernet 模块各版本的离线安装包。
+
+[返回下载首页](../index.md){ .md-button }
 
 ## 下载
 
