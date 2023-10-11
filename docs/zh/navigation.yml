@@ -659,7 +659,6 @@ nav:
                   - 网关 API 策略: skoala/best-practice/gateway02.md
                   - 通过网关访问微服务: skoala/best-practice/gateway01.md
                   - 网关对接服务网格: skoala/best-practice/gateway-mesh.md
-                  - 多云互联网格的精准控制: skoala/best-practice/multinet-control.md
               - 性能测试:
                   - 云原生网关吞吐量测试: skoala/tests/gateway-stress-test.md
                   - Nacos 压测报告: skoala/tests/nacos-stress-test.md
@@ -753,6 +752,7 @@ nav:
                   - 使用网格完成定向服务访问限制: mspider/best-practice/use-egress-and-authorized-policy.md
                   - 支持接入自定义工作负载类型: mspider/best-practice/use-custom-workloads.md
                   - 优化 Sidecar 资源占用问题: mspider/best-practice/optimize-sidecar-resource.md
+                  - 多云互联网格的精准控制: mspider/best-practice/multinet-control.md
       - 数据服务:
           - 中间件:
               - 介绍:
