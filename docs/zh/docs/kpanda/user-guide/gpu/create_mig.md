@@ -5,7 +5,7 @@
 - **Single 模式**，节点仅在其所有 GPU 上公开单一类型的 MIG 设备。
 - **Mixed 模式**，节点在其所有 GPU 上公开混合 MIG 设备类型。
 
-详情参考：[NVIDIA GPU 卡使用模式](overvie_nvidia_gpu.md)
+详情参考：[NVIDIA GPU 卡使用模式](nvidia/overvie_nvidia_gpu.md)
 
 ## 前提条件
 
@@ -15,7 +15,7 @@
 
 ## 开启 GPU MIG Single 模式
 
-1. [通过 Operator 开启](install_nvidia_driver_of_operator.md) MIG  Single 模式，在安装界面配置如下参数：
+1. [通过 Operator 开启](nvida/install_nvidia_driver_of_operator.md) MIG  Single 模式，在安装界面配置如下参数：
 
     1. `DevicePlugin` 设置为 `enable` 
 
@@ -26,14 +26,12 @@
     4. `MigManager Config` : 用于配置 MIG 切分配置参数和默认值
 
         - `default`: 默认为 `all-disbled`，可填入配置文件（`default-mig-parted-config`）中对应的规格（如：`all-1g.10gb`等）：
-          -  **all-disbled** ： 所有节点设备默认禁用 MIG。
-          -  **配置规格（如：all-1g.10gb）**：所有节点设备默认使用输入的规格切分。
+            -  **all-disbled** ： 所有节点设备默认禁用 MIG。
+            -  **配置规格（如：all-1g.10gb）**：所有节点设备默认使用输入的规格切分。
 
         - `name` ：MIG 的切分策略配置，默认为 `default-mig-parted-config`。
 
         ![single](./images/single01.jpg)
-
-    
 
 2. 如需要按照某种规则切分，可以给对应节点(已插入对应 GPU 卡节点)打上 切分规格，如不执行此操作，将按照默认方式切分。
 
@@ -55,11 +53,11 @@
 
 ## 开启 GPU MIG Mixed 模式
 
-1. [通过 Operator 开启](../nvidia/vgpu/install_nvidia_driver_of_operator.md)  MIG  Mixed 模式,在安装界面配置如下参数：
+1. [通过 Operator 开启](nvidia/install_nvidia_driver_of_operator.md) MIG Mixed 模式，在安装界面配置如下参数：
 
    1. `DevicePlugin` 设置为 `enable` 
 
-   2.   `MIG strategy`设置为 `mixed` 
+   2. `MIG strategy`设置为 `mixed` 
 
    3. `Mig Manager`下的`enabled` 参数开启
 
@@ -163,5 +161,5 @@
 kubectl get node 10.206.0.17 -o yaml|grep nvidia.com/mig.config
 ```
 
- 设置完成后，在确认部署应用时即可[使用 GPU MIG 资源](../nvidia/mig/mig_usage.md)。
+ 设置完成后，在确认部署应用时即可[使用 GPU MIG 资源](nvidia/mig/mig_usage.md)。
 
