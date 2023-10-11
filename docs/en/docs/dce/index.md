@@ -27,7 +27,7 @@ and unleashes cloud-native productivity.
 
 - :fontawesome-solid-jet-fighter-up: **Install** [Installation instructions](../install/index.md)
 - :material-microsoft-azure-devops: **Workbench** [CI/CD pipeline](../amamba/intro/index.md)
-- :octicons-container-16: **Container Management** [Cluster/node/workloads/gpu](../kpanda/intro/index.md)
+- :octicons-container-16: **Container Management** [Cluster/node/workloads](../kpanda/intro/index.md)
 - :material-cloud-check: **Multicloud Management** [Multicloud instance/workload/policy](../kairship/intro/index.md)
 - :material-warehouse: **Container Registry** [Integrate and host registries](../kangaroo/index.md)
 - :material-dot-net: **Network** [Multi-CNI fusion solution](../network/intro/index.md)

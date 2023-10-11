@@ -27,17 +27,19 @@ and unleashes cloud-native productivity.
 <div class="grid cards" markdown>
 
 - :fontawesome-solid-jet-fighter-up: **Install** [Installation instructions](install/index.md)
-- :octicons-container-16: **Container Management** [Cluster/node/workload infrastructure](kpanda/intro/index.md)
-- :fontawesome-solid-user-group: **Global Management** [Login/Permissions/Appearance](ghippo/intro/index.md)
-- :material-monitor-dashboard: **Observability** [One-stop graphical dashboard](insight/intro/index.md)
 - :material-microsoft-azure-devops: **Workbench** [CI/CD pipeline](amamba/intro/index.md)
+- :octicons-container-16: **Container Management** [Cluster/node/workloads](kpanda/intro/index.md)
 - :material-cloud-check: **Multicloud Management** [Multicloud instance/workload/policy](kairship/intro/index.md)
+- :material-warehouse: **Container Registry** [Integrate and host registries](kangaroo/index.md)
+- :material-dot-net: **Network** [Multi-CNI fusion solution](network/intro/index.md)
+- :floppy_disk: **Storage** [Containerized storage](storage/index.md)
+- :material-train-car-container: **VM Containers** [Containerized virtual machine](virtnest/intro/index.md)
+- :material-monitor-dashboard: **Insight** [One-stop graphical dashboard](insight/intro/index.md)
 - :material-engine: **Microservice Engine** [Microservice governance and gateway](skoala/intro/index.md)
 - :material-table-refresh: **Service Mesh** [Non-intrusive service governance](mspider/intro/index.md)
 - :material-middleware: **Middleware** [ES, Kafka, MinIO, MySQL, etc.](middleware/index.md)
-- :material-warehouse: **Container Registry** [Registry integration and hosting service](kangaroo/index.md)
-- :material-dot-net: **Network** [Multi-CNI fusion solution](network/intro/index.md)
-- :floppy_disk: **Storage** [Containerized storage](storage/index.md)
+- :fontawesome-brands-edge: **Cloud Edge Collaboration** [Containers extend to edge](kant/intro/index.md)
+- :fontawesome-solid-user-group: **Global Management** [Login/permissions/appearance](ghippo/intro/index.md)
 
 </div>
 
@@ -189,6 +191,13 @@ day by day, making things better over time.
      **Related modules**: [Global Management](ghippo/intro/index.md), [Container Management](kpanda/intro/index.md),
      [Cluster Lifecycle Management](community/kubean.md), [cloud-native network](network/intro/index.md),
      [cloud-native storage](storage/index.md)
+
+Once you have obtained the [license authorization](./dce/license0.md) and successfully logged into DCE 5.0
+for the first time, you will be greeted by a user-friendly dashboard. This dashboard provides an intuitive display
+of various information, including the status of running containers and pods, CPU and memory usage, health status
+of clusters/nodes/pods, alerts, resource utilization, and an overview of available functionalities.
+
+![dashboard](./dce/images/ipavo.png)
 
 [Download DCE 5.0](download/index.md){ .md-button .md-button--primary }
 [Install DCE 5.0](install/index.md){ .md-button .md-button--primary }
