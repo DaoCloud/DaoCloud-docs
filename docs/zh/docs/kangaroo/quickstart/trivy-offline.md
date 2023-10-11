@@ -54,6 +54,7 @@ trivy:
 1. 选择 `harborcluster` 的资源
 1. 进入托管 Harbor 所在 Namespace
 1. 选择 YAML
+1. 选择 v1beta1 版本
 1. 编辑 YAML：
 
 ```yaml
