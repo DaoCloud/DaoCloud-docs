@@ -1008,6 +1008,15 @@ nav:
               - 下载服务网格: download/modules/mspider.md
               - 下载网络 Spidernet: download/modules/spidernet.md
               - 下载镜像仓库: download/modules/kangaroo.md
+              - 下载中间件:
+                  - 下载Elasticsearch 搜索服务: download/modules/middleware/elasticsearch.md
+                  - 下载Kafka 消息队列: download/modules/middleware/kafka.md
+                  - 下载MinIo 对象存储: download/modules/middleware/minio.md
+                  - 下载MySQL 数据库: download/modules/middleware/mysql.md
+                  - 下载RabbitMQ 消息队列: download/modules/middleware/rabbitmq.md
+                  - 下载Redis 缓存服务: download/modules/middleware/redis.md
+                  - 下载PostgreSQL 数据库: download/modules/middleware/postgresql.md
+                  - 下载MongoDB 数据库: download/modules/middleware/mongodb.md
               - 下载运营管理: download/modules/gmagpie.md
               - 下载多云编排: download/modules/kairship.md
               - 下载云边协同: download/modules/kant.md
