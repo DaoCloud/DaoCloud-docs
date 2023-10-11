@@ -184,7 +184,7 @@ spec:
   selector:
     app: nginx-app-samzong
   ports:
-    port: 80
+  - port: 80
     protocol: TCP
     targetPort: 80
 ```
