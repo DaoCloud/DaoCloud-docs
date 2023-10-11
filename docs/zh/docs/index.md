@@ -6,30 +6,31 @@ hide:
 
 # DaoCloud Enterprise 5.0
 
-2022 年金秋送爽之际，「DaoCloud 道客」融合开源社区最流行的众多云原生技术，由上百位行业大咖经过为期两年日夜不辍的开发、测试和验证，理想主义的花最终盛开在了浪漫主义的地里，现隆重推出新一代云原生容器化综合平台，引领时下正如火如荼的云原生浪潮。
+DaoCloud Enterprise 5.0 (DCE 5.0) 是一款高性能、可扩展的云原生操作系统。
+它能够在任何基础设施和任意环境中提供一致、稳定的体验，支持异构云、边缘云和多云编排。
+DCE 5.0 集成了最新的服务网格和微服务技术，能够跟踪每一个流量的生发始终，
+帮助您洞察集群、节点、应用和服务的详细指标，并通过动态仪表盘和拓扑大图可视化掌握应用健康状态。
 
-DaoCloud Enterprise 5.0 (DCE 5.0) 是高性能可扩展的云原生操作系统，在任何基础设施上、任意环境上提供一致、稳定的体验，支持信创异构、边云协同、多云编排，
-融合前沿的服务网格和微服务技术，将可观测性贯穿于每一个流量生发的始终，助力洞察集群、节点、应用和服务的详细指标，
-通过动态仪表盘和拓扑大图可视化掌握应用健康状态。原生支持 DevOps 开发运维模式，实现应用交付的全流程标准化和自动化，
-原生集成各类精选数据库和中间件，使得运维治理更高效。
-
-DCE 5.0 的各个产品模块独立解耦，灵活升级，业务无感知，开放对接超百家云原生生态产品，形成完整的解决方案体系，
-经近千家行业客户生产场景锤炼，构建坚实可靠的数字底座，释放云原生生产力，助力企业定义数字边界。
+DCE 5.0 原生支持 DevOps 开发运维模式，可以实现应用交付的全流程标准化和自动化，并集成各类精选数据库和中间件，使运维治理更加高效。
+各个产品模块独立解耦，支持灵活升级，对业务没有影响，并且能够与众多云原生生态产品对接，提供完整的解决方案体系。
+它经过了近千家行业客户的生产场景检验，构建了坚实、可靠的数字底座，帮助企业定义数字边界，释放云原生生产力。
 
 <div class="grid cards" markdown>
 
-- :fontawesome-solid-jet-fighter-up: **安装** [安装社区版和商业版](install/index.md)
-- :octicons-container-16: **容器管理** [集群/节点/负载等基础设施](kpanda/intro/index.md)
-- :fontawesome-solid-user-group: **全局管理** [设置登录、访问权限、外观](ghippo/intro/index.md)
-- :material-monitor-dashboard: **可观测性** [一站式图形化仪表盘](insight/intro/index.md)
+- :fontawesome-solid-jet-fighter-up: **安装** [详尽的安装教程](install/index.md)
 - :material-microsoft-azure-devops: **应用工作台** [CI/CD 流水线](amamba/intro/index.md)
+- :octicons-container-16: **容器管理** [集群/节点/负载等基础设施](kpanda/intro/index.md)
 - :material-cloud-check: **多云编排** [多云实例/负载/策略](kairship/intro/index.md)
-- :material-engine: **微服务引擎** [微服务治理中心和网关](skoala/intro/index.md)
-- :material-table-refresh: **服务网格** [Istio 定制增强版](mspider/intro/index.md)
-- :material-middleware: **中间件** [ES, Kafka, MinIO, MySQL 等](middleware/index.md)
 - :material-warehouse: **镜像仓库** [镜像集成和托管服务](kangaroo/index.md)
-- :material-dot-net: **网络** [多 CNI 融合方案](network/intro/index.md)
-- :floppy_disk: **存储** [容器化存储综合方案](storage/index.md)
+- :material-dot-net: **云原生网络** [多 CNI 融合方案](network/intro/index.md)
+- :floppy_disk: **云原生存储** [容器化存储综合方案](storage/index.md)
+- :material-train-car-container: **虚拟机容器** [容器化的虚拟机](virtnest/intro/index.md)
+- :material-monitor-dashboard: **可观测性** [一站式图形化仪表盘](insight/intro/index.md)
+- :material-engine: **微服务引擎** [微服务治理中心和网关](skoala/intro/index.md)
+- :material-table-refresh: **服务网格** [非侵入式服务治理](mspider/intro/index.md)
+- :material-middleware: **中间件** [ES, Kafka, MinIO, MySQL 等](middleware/index.md)
+- :fontawesome-brands-edge: **云边协同** [容器能力扩展至边缘](kant/intro/index.md)
+- :fontawesome-solid-user-group: **全局管理** [设置登录/访问权限/外观](ghippo/intro/index.md)
 
 </div>
 
@@ -114,6 +115,11 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
     **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)
 
     ![云原生底座](https://docs.daocloud.io/daocloud-docs-images/docs/images/07base.png)
+
+在成功获取[许可证授权](./dce/license0.md)后，首次登录 DCE 5.0 将会呈现一个仪表盘。
+该仪表盘以直观的方式展示了各种信息，包括正在运行的容器和 Pod、CPU 和内存使用情况、集群/节点/Pod 的健康状态、告警信息、资源利用情况以及功能一览等内容。
+
+![dashboard](./dce/images/ipavo.png)
 
 [下载 DCE 5.0](download/index.md){ .md-button .md-button--primary }
 [安装 DCE 5.0](install/index.md){ .md-button .md-button--primary }
