@@ -870,6 +870,13 @@ nav:
                   - Batch Register Edge Nodes: kant/user-guide/node/batch-registration.md
                   - Manage Edge Nodes: kant/user-guide/node/managed-node.md
                   - Batch Upgrade Edge Nodes: kant/user-guide/node/batch-upgrade.md
+              - Edge Node Group:
+                  - Create Edge Node Group: kant/user-guide/node-group/create-group.md
+                  - Manage Edge Node Group: kant/user-guide/node-group/manage-group.md
+              - End Device:
+                  - Intro: kant/user-guide/device/index.md
+                  - Create End Device: kant/user-guide/device/create-device.md
+                  - Manage End Device: kant/user-guide/device/manage-device.md
               - Edge to Cloud Message:
                   - Overview: kant/user-guide/route/index.md
                   - Create Message Route: kant/user-guide/route/create-route.md

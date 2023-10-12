@@ -896,6 +896,13 @@ nav:
                   - 批量注册边缘节点: kant/user-guide/node/batch-registration.md
                   - 纳管边缘节点: kant/user-guide/node/managed-node.md
                   - 批量升级边缘节点: kant/user-guide/node/batch-upgrade.md
+              - 边缘节点组:
+                  - 创建边缘节点组: kant/user-guide/node-group/create-group.md
+                  - 管理边缘节点组: kant/user-guide/node-group/manage-group.md
+              - 终端设备:
+                  - 介绍: kant/user-guide/device/index.md
+                  - 创建终端设备: kant/user-guide/device/create-device.md
+                  - 管理终端设备: kant/user-guide/device/manage-device.md
               - 边云消息:
                   - 边云消息概述: kant/user-guide/route/index.md
                   - 创建消息路由: kant/user-guide/route/create-route.md
