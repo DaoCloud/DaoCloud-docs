@@ -122,3 +122,6 @@
         ```sh
         kubectl label nodes {node} nvidia.com/mig.config="custom-config" --overwrite
         ```
+
+
+​        	切分后，应用可[使用 MIG GPU 资源](../mig/mig_usage.md)

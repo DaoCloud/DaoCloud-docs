@@ -157,9 +157,9 @@
 
 3. 查看配置结果。
 
-```sh
-kubectl get node 10.206.0.17 -o yaml|grep nvidia.com/mig.config
-```
+   ```
+   kubectl get node 10.206.0.17 -o yaml|grep nvidia.com/mig.config
+   ```
 
- 设置完成后，在确认部署应用时即可[使用 GPU MIG 资源](nvidia/mig/mig_usage.md)。
+​        设置完成后，在确认部署应用时即可[使用 GPU MIG 资源](nvidia/mig/mig_usage.md)。
 
