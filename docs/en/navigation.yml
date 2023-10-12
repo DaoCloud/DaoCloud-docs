@@ -977,22 +977,34 @@ nav:
   - Download:
       - DaoCloud Enterprise 5.0:
           - Index: download/index.md
-          - Download DCE Community: download/free/dce5-installer-v0.11.0.md
-          - Download DCE 5.0 Enterprise: download/business/dce5-installer-v0.11.0.md
-          - Modules and Addons:
-              - Download Addons: download/addon/v0.9.0.md
-              - Download Global Management: download/modules/ghippo.md
-              - Download Container Management: download/modules/kpanda.md
-              - Download Cluster Inspection: download/modules/kcollie.md
-              - Download Backup and Restore: download/modules/kcoral.md
-              - Download Security Management: download/modules/dowl.md
-              - Download Insight: download/modules/insight.md
-              - Download Service Mesh: download/modules/mspider.md
-              - Download Spidernet: download/modules/spidernet.md
-              - Download Container Registry: download/modules/kangaroo.md
-              - Download Operation Management: download/modules/gmagpie.md
-              - Download Multicloud Management: download/modules/kairship.md
-              - Download Cloud Edge Collaboration: download/modules/kant.md
+          - Download DCE 5.0 Community: download/free/dce5-installer-history.md
+          - Download DCE 5.0 Enterprise: download/business/dce5-installer-history.md
+          - Download Addon: download/addon/history.md
+          - Download Modules:
+              - Workbench: download/modules/amamba.md
+              - Container:
+                  - Container Management: download/modules/kpanda.md
+                  - Cluster Inspection: download/modules/kcollie.md
+                  - Application Backup: download/modules/kcoral.md
+                  - Security: download/modules/dowl.md
+                  - Network: download/modules/spidernet.md
+              - MultiCloud Management: download/modules/kairship.md
+              - Container Registry: download/modules/kangaroo.md
+              - Insight: download/modules/insight.md
+              - Service Mesh: download/modules/mspider.md
+              - Middleware:
+                  - Elasticsearch: download/modules/middleware/elasticsearch.md
+                  - Kafka: download/modules/middleware/kafka.md
+                  - MinIO: download/modules/middleware/minio.md
+                  - MongoDB: download/modules/middleware/mongodb.md
+                  - MySQL: download/modules/middleware/mysql.md
+                  - PostgreSQL: download/modules/middleware/postgresql.md
+                  - RabbitMQ: download/modules/middleware/rabbitmq.md
+                  - Redis: download/modules/middleware/redis.md
+              - Cloud Edge Collaboration: download/modules/kant.md
+              - Management:
+                  - Global Management: download/modules/ghippo.md
+                  - Operation Management: download/modules/gmagpie.md
   - Free Trial:
       - Free Trial: trial/index.md
   - Blogs:

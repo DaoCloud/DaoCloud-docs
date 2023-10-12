@@ -1,10 +1,15 @@
 ---
 date: 2023-06-06
+hide:
+  - navigation
 ---
 
 # DCE Community v0.8.0
 
 This page provides offline installation packages and checksum files for DCE Community.
+
+[Return to Download Index](../index.md){ .md-button }
+[More Historical Versions](./dce5-installer-history.md){ .md-button }
 
 ## Download
 
