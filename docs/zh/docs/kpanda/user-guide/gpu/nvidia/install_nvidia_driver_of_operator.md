@@ -111,16 +111,14 @@
 
 3. 如果使用 **MIG 模式**，并且需要给个别 GPU 节点按照某种切分规格进行使用，否则按照 MigManager.Config 中的 `default` 值进行切分。
 
-   - **single** 模式请给对应节点打上如下 Label：
+    - **single** 模式请给对应节点打上如下 Label：
 
-      ```
-      kubectl label nodes {node} nvidia.com/mig.config="all-1g.10gb" --overwrite
-      ```
+        ```sh
+        kubectl label nodes {node} nvidia.com/mig.config="all-1g.10gb" --overwrite
+        ```
 
-   - **mixed** 模式请给对应节点打上如下 Label：
+    - **mixed** 模式请给对应节点打上如下 Label：
 
-      ```
-      kubectl label nodes {node} nvidia.com/mig.config="custom-config" --overwrite
-      ```
-
-   
+        ```sh
+        kubectl label nodes {node} nvidia.com/mig.config="custom-config" --overwrite
+        ```
