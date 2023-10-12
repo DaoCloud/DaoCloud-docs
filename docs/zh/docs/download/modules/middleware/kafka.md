@@ -6,7 +6,7 @@
 
 | 版本                                                         | 架构 | 文件大小 | 安装包                                                                                                                       |  校验文件 | 更新日期       |
 |------------------------------------------------------------| ----- |-------- |---------------------------------------------------------------------------------------------------------------------------| ---------- |------------|
-| [v0.8.1](../../../middleware/kafka/release-notes.md)          | AMD 64 | 296.23MB | [:arrow_down: kafka_0.8.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kafka_0.8.1_amd64.tar) | [:arrow_down: kafka_0.8.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kafka_0.8.1_amd64_checksum.sha512sum) | 2023-10-10 |
+| [v0.8.1](../../../middleware/kafka/release-notes.md) | AMD 64 | 957.21MB | [:arrow_down: kafka_0.8.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kafka_0.8.1_amd64.tar) | [:arrow_down: kafka_0.8.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kafka_0.8.1_amd64_checksum.sha512sum) | 2023-10-12 |
 
 ## 校验
 
