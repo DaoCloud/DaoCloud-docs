@@ -6,8 +6,6 @@ hide:
 
 # Addon 历史版本
 
-[返回下载导览页](../index.md#addon){ .md-button }
-
 | 文件名称 | 版本 | 架构 | 文件大小 | 下载 | 更新日期 |
 | ------- | --- | ---- | ------ | --- | ------- |
 | addon-offline-full-package-v0.11.0-arm64.tar.gz | v0.11.0 | ARM 64 | 11.4 GB | [:arrow_right: 下载页](./v0.11.0.md) | 2023-09-22 |

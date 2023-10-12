@@ -1,5 +1,7 @@
 ---
 date: 2023-03-06
+hide:
+  - navigation
 ---
 
 # DCE 5.0 社区版 v0.5.0
