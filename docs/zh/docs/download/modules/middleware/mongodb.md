@@ -6,7 +6,7 @@
 
 | 版本                                                         | 架构 | 文件大小 | 安装包                                                                                                                             |  校验文件 | 更新日期       |
 |------------------------------------------------------------| ----- |-------- |---------------------------------------------------------------------------------------------------------------------------------| ---------- |------------|
-| [v0.3.1](../../../middleware/mongodb/release-notes.md)        | AMD64 | 293.24 MB | [:arrow_down: mongodb_0.3.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mongodb_0.3.1_amd64.tar) | [:arrow_down: mongodb_0.3.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mongodb_0.3.1_amd64_checksum.sha512sum) | 2023-10-10 |
+| [v0.3.1](../../../middleware/mongodb/release-notes.md) | AMD 64 | 72.95MB | [:arrow_down: mongodb_0.3.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mongodb_0.3.1_amd64.tar) | [:arrow_down: mongodb_0.3.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mongodb_0.3.1_amd64_checksum.sha512sum) | 2023-10-12 |
 
 ## 校验
 
