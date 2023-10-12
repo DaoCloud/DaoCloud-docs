@@ -21,7 +21,7 @@ DCE 5.0 原生支持 DevOps 开发运维模式，可以实现应用交付的全�
 - :material-microsoft-azure-devops: **应用工作台** [CI/CD 流水线](amamba/intro/index.md)
 - :octicons-container-16: **容器管理** [集群/节点/负载等基础设施](kpanda/intro/index.md)
 - :material-cloud-check: **多云编排** [多云实例/负载/策略](kairship/intro/index.md)
-- :material-warehouse: **镜像仓库** [镜像集成和托管服务](kangaroo/index.md)
+- :material-warehouse: **镜像仓库** [镜像集成和托管服务](kangaroo/intro/index.md)
 - :material-dot-net: **云原生网络** [多 CNI 融合方案](network/intro/index.md)
 - :floppy_disk: **云原生存储** [容器化存储综合方案](storage/index.md)
 - :material-train-car-container: **虚拟机容器** [容器化的虚拟机](virtnest/intro/index.md)
@@ -86,7 +86,7 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
     通过一致性可推广的应用交付流程实现自助式上云，支持柔性租户体系，动态适配用户组织架构规划和实时资源分配，基于云原生化的 CI/CD 流水线，集成丰富的工具链并支持流水线高效并发执行流转，
     自动化完成应用的构建、部署，创新性引入 Gitops、渐进式交付能力体系，实现应用更精细的管理运维。
 
-    **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[应用工作台](amamba/intro/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)、[镜像仓库](kangaroo/index.md)
+    **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[应用工作台](amamba/intro/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)、[镜像仓库](kangaroo/intro/index.md)
 
     ![应用交付](https://docs.daocloud.io/daocloud-docs-images/docs/images/06appdeliv.png)
 

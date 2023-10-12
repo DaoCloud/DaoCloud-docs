@@ -295,11 +295,10 @@ nav:
                   - 一键转换 DCE 4.0 到 5.0 应用: kairship/best-practice/one-click-conversion.md
           - 镜像仓库:
               - 介绍:
-                  - 什么是镜像仓库: kangaroo/index.md
-                  - Release Notes: kangaroo/release-notes.md
-                  - 镜像仓库 FAQ: kangaroo/faq.md
-              - 升级:
-                  - 离线升级镜像仓库: kangaroo/upgrade/upgrade.md
+                  - 什么是镜像仓库: kangaroo/intro/index.md
+                  - Release Notes: kangaroo/intro/release-notes.md
+                  - 镜像仓库 FAQ: kangaroo/intro/faq.md
+                  - 离线升级镜像仓库: kangaroo/intro/upgrade.md
               - 快速入门:
                   - 管理外部镜像仓库: kangaroo/quickstart/registry-in-one.md
                   - 推送镜像: kangaroo/quickstart/push.md
