@@ -95,7 +95,7 @@ DCE 5.0 从总体上看，可以支持以下场景：
 
 用户大规模采用云原生技术，并且期望规范化、流程化结合 DevOps 理念将云原生技术推广至更广泛的应用项目组。
 
-涉及模块：[容器管理](../kpanda/intro/index.md)、[应用工作台](../amamba/intro/index.md)、[容器网络](../network/intro/index.md)、[镜像仓库](../kangaroo/index.md)、边云协同、信创云
+涉及模块：[容器管理](../kpanda/intro/index.md)、[应用工作台](../amamba/intro/index.md)、[容器网络](../network/intro/index.md)、[镜像仓库](../kangaroo/intro/index.md)、边云协同、信创云
 
 方案优势：支持层级多租户体系，无缝适配用户组织架构规划资源分配。
 CI/CD 流水线能力自动化完成应用构建、部署工作。创新性引入 GitOps、渐进式交付的能力体系，帮助应用进行更细致的交付管理能力。
