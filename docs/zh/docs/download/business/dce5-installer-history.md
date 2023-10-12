@@ -6,7 +6,7 @@ hide:
 
 # DaoCloud Enterprise 5.0 商业版历史版本
 
-[返回下载首页](../index.md){ .md-button }
+[返回下载导览页](../index.md#_2){ .md-button }
 
 ## 商业版
 
