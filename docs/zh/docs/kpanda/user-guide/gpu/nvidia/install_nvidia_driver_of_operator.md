@@ -124,4 +124,4 @@
         ```
 
 
-​        	切分后，应用可[使用 MIG GPU 资源](../mig/mig_usage.md)
+​        	切分后，应用可[使用 MIG GPU 资源](mig/mig_usage.md)
