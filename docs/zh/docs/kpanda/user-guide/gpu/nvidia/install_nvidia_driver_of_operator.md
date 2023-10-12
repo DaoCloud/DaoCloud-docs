@@ -77,9 +77,9 @@
 
     - `RepoConfig.version` ： GPU 驱动的镜像版本，仅在线安装时需配置，不同操作系统 Driver 镜像的名称存在差异：
 
-         - Ubuntu 系统，命名规则为：<driver-branch>-<linux-kernel-version>-<os-tag>。
-           如 `525-5.15.0-69-ubuntu22.04`，`525` 用于指定 CUDA 的版本，`5.15.0-69` 指定内核的版本，`ubuntu22.04` 指定 OS 版本。
-           注意：对于 Ubuntu ，NVIDIA 的 driver 镜像版本需要和节点内核版本强一致，包括小版本号，可前往  NVIDIA GPU Driver 检查该版本驱动是否存在。
+         - Ubuntu 系统，命名规则为：`<driver-branch>-<linux-kernel-version>-<os-tag>`。
+           如 `525-5.15.0-69-ubuntu22.04`，`525` 为 CUDA 的版本，`5.15.0-69` 为内核版本，`ubuntu22.04` 为 OS 版本。
+           注意：对于 Ubuntu ， Driver 镜像版本需和节点内核版本强一致，包括小版本号。
 
          - RedHat/CentOS 系统， 命名规则通常为 CUDA 的版本和 OS 版本组成，如 `535.104.05-centos7`。
 
@@ -122,3 +122,6 @@
         ```sh
         kubectl label nodes {node} nvidia.com/mig.config="custom-config" --overwrite
         ```
+
+
+​        	切分后，应用可[使用 MIG GPU 资源](mig/mig_usage.md)
