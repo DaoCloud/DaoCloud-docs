@@ -4,7 +4,7 @@ hide:
   - toc
 ---
 
-# DaoCloud Enterprise 5.0 社区版历史版本
+# DaoCloud Enterprise 5.0 社区版
 
 本页列出了已发布的 DCE 5.0 所有社区版离线安装包，您可以按需择一下载：
 
