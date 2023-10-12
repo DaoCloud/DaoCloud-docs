@@ -25,6 +25,8 @@ kpanda_v0.19.0_amd64.tar: ok
 
 ## Installation
 
+Refer to the [Offline Upgrade Container Management Module](../../kpanda/intro/offline-upgrade.md) for installation instructions.
+
 If this is your first installation, please [apply for a free trial](../../dce/license0.md) or contact us for authorization:
 email info@daocloud.io or call 400 002 6898.
 If you have any questions regarding license keys, please contact the DaoCloud delivery team.
