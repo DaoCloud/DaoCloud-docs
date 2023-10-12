@@ -68,7 +68,8 @@ DCE 5.0 还提供了各种精选中间件：
 | MySQL  |1.17 GB| [:arrow_right: 下载页](./modules/middleware/mysql.md) |2023-10-12|
 | PostgreSQL    | 296.23 MB | [:arrow_right: 下载页](./modules/middleware/postgresql.md)    | 2023-10-11 |
 | RabbitMQ |162.34MB| [:arrow_right: 下载页](./modules/middleware/rabbitmq.md) |2023-10-12|
-| Redis         | 296.23 MB | [:arrow_right: 下载页](./modules/middleware/redis.md)         | 2023-10-11 |
+| Redis |537.81MB| [:arrow_right: 下载页](./modules/middleware/redis.md) |2023-10-12|
+
 
 !!! note
 
