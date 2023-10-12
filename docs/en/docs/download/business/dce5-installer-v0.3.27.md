@@ -1,6 +1,15 @@
+---
+date: 2022-11-23
+hide:
+  - navigation
+---
+
 # DCE 5.0 Enterprise v0.3.27
 
 This page can download the offline installation package and verification file of DCE 5.0 Enterprise.
+
+[Return to Download Index](../index.md#download-enterprise-package){ .md-button }
+[More Historical Versions](./dce5-installer-history.md){ .md-button }
 
 ## Download
 

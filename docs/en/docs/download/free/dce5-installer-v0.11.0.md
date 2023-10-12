@@ -1,10 +1,15 @@
 ---
 date: 2023-09-08
+hide:
+  - navigation
 ---
 
 # DCE 5.0 Community v0.11.0
 
 This page provides downloads for the offline installation package and verification files of DCE 5.0 Community.
+
+[Return to Download Index](../index.md){ .md-button }
+[More Historical Versions](./dce5-installer-history.md){ .md-button }
 
 ## Downloads
 

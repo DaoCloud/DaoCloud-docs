@@ -5,7 +5,7 @@ hide:
 
 # Technical Features and Basic Concepts
 
-The containerized PostgreSQL database provided in DCE 5.0 Enterprise Edition offers the following features:
+The containerized PostgreSQL database provided in DCE 5.0 Enterprise Package offers the following features:
 
 - **Multiversion Concurrency Control (MVCC)**
 

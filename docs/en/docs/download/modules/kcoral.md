@@ -8,7 +8,7 @@ This page provides offline installation packages for different versions of the A
 |-----------| ----- |---------------| ---------- |------------|
 | [v0.4.0](../../dce/dce-rn/20230731.md) | AMD64        | 59.29 MB    | [:arrow_down: kcoral_v0.4.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.4.0_amd64.tar) | [:arrow_down: kcoral_v0.4.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.4.0_amd64_checksum.sha512sum) | 2023-08-08   |
 
-## Checksum
+## Verification
 
 To verify the integrity of the downloaded offline installation package and checksum file,
 take `v0.4.0_amd64` as an example, run the following command in the directory:

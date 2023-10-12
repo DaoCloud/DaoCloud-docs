@@ -1,10 +1,15 @@
 ---
 date: 2023-06-06
+hide:
+  - navigation
 ---
 
 # DCE 5.0 Enterprise v0.8.0
 
 This page provides offline installation packages and checksum files for DCE 5.0 Enterprise.
+
+[Return to Download Index](../index.md#download-enterprise-package){ .md-button }
+[More Historical Versions](./dce5-installer-history.md){ .md-button }
 
 ## Download
 
