@@ -220,9 +220,9 @@ elasticity of IT systems, and significantly accelerating application delivery.
 
     It contains offline installation packages for the DCE 5.0 Community Package, Enterprise Package, and sub-modules.
 
-    - [Download Community Package](../download/free/dce5-installer-v0.11.0.md)
-    - [Download Enterprise Package](../download/business/dce5-installer-v0.11.0.md)
-    - [Download Sub-Modules](../download/modules/ghippo.md)
+    - [Download Community Package](../download/free/dce5-installer-history.md)
+    - [Download Enterprise Package](../download/business/dce5-installer-history.md)
+    - [Download Sub-Modules](../download/index.md#download-modules)
 
 - :simple-opensourceinitiative:{ .lg .middle } __DaoCloud Open Source Ecosystem__
 
