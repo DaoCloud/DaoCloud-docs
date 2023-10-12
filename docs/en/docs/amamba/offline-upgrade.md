@@ -1,6 +1,7 @@
 # Offline upgrade
 
-Workbench supports offline upgrade. This guide will walk you through Workbench upgrade process.
+Workbench supports offline upgrade. This guide will walk you through Workbench upgrade process
+from an [installation package](../download/modules/amamba.md).
 
 <!--!!! note
 
