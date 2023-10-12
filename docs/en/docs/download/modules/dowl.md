@@ -24,5 +24,7 @@ dowl_v0.4.0_amd64.tar: ok
 
 ## Installation
 
+Refer to the [Offline Upgrade Security Management Module](../../kpanda/user-guide/security/offline-upgrade-dowl.md) for installation instructions.
+
 If this is your first installation, please [apply for a free trial](../../dce/license0.md) or contact us for authorization: email info@daocloud.io or call 400 002 6898.
 For any license key-related inquiries, please contact the DaoCloud delivery team.

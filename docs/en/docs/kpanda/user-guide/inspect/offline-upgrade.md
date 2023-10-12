@@ -1,6 +1,6 @@
 # Offline Upgrade of Cluster Inspection Module
 
-This page explains how to install or upgrade the cluster inspection module after downloading it from the [Download Center](../../../download/index.md).
+This page explains how to install or upgrade the cluster inspection module after [downloading it from the Download Center](../../../download/modules/kcollie.md).
 
 !!! info
 

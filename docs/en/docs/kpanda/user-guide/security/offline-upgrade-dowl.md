@@ -1,6 +1,6 @@
 # Offline Upgrade of Security Management Module
 
-This page explains how to install or upgrade the security management module after downloading it from the [Download Center](../../../download/index.md).
+This page explains how to install or upgrade the security management module after [downloading it from the Download Center](../../../download/modules/dowl.md).
 
 !!! info
 

@@ -1,6 +1,6 @@
 # 离线升级安全管理模块
 
-本页说明从[下载中心](../../../download/index.md)下载安全管理模块后，应该如何安装或升级。
+本页说明[下载安全管理模块](../../../download/modules/dowl.md)后，应该如何安装或升级。
 
 !!! info
 
@@ -134,7 +134,7 @@
         helm repo update dowl
         ```
 
-        1. helm 版本过低会导致失败，若失败，请尝试执行 helm update repo
+        > helm 版本过低会导致失败，若失败，请尝试执行 helm update repo
 
     1. 选择您想安装的安全管理版本（建议安装最新版本）。
 

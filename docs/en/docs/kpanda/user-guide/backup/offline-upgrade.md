@@ -1,6 +1,6 @@
 # Offline Upgrade Backup and Restore Module
 
-This page explains how to install or upgrade the backup and restore module after downloading it from the [Download Center](../../../download/index.md).
+This page explains how to install or upgrade the backup and restore module after [downloading it from the Download Center](../../../download/modules/kcoral.md).
 
 !!! info
 
