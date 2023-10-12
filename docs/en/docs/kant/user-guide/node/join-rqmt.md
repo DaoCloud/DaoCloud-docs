@@ -8,9 +8,9 @@ The edge nodes need to meet the specifications in the table below.
 
     Ubuntu LTS (Xenial Xerus), Ubuntu LTS (Bionic Beaver), CentOS, RHEL, Kylin, NewStart, NeoKylin, and EulerOS
 
-- armv7i (arm32) architecture
+<!-- - armv7i (arm32) architecture
 
-    Raspbian GNU/Linux (stretch)
+    Raspbian GNU/Linux (stretch) -->
 
 - aarch64 (arm64) architecture
 
