@@ -4,9 +4,9 @@ hide:
   - toc
 ---
 
-# DCE 5.0 Enterprise History
+# DCE 5.0 Enterprise Versions
 
-This page lists all the released offline installation packages for the commercial edition of DCE 5.0. You can choose and download the one you need according to your requirements.
+This page lists all the released offline installation packages for DCE 5.0 Enterprise. You can choose and download the one you need according to your requirements.
 
 | File Name | Version | Architecture | File Size | Downloads | Date Updated |
 | ------- | --- | ---- | ------ | --- | ------- |
