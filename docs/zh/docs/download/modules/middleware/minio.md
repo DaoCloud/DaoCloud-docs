@@ -1,8 +1,6 @@
-# Minio
+# MinIO
 
 本页可下载 MinIO 各版本的离线安装包。
-
-[返回下载首页](../../index.md){ .md-button }
 
 ## 下载
 
