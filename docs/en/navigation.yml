@@ -282,11 +282,10 @@ nav:
                   - DCE 4.0 to DCE 5.0: kairship/best-practice/one-click-conversion.md
           - Container Registry:
               - Intro:
-                  - What is Container Registry: kangaroo/index.md
-                  - Registry Release Notes: kangaroo/release-notes.md
-                  - FAQs: kangaroo/faq.md
-              - Upgrade:
-                  - Offline Upgrade Container Registry: kangaroo/upgrade/upgrade.md
+                  - What is Container Registry: kangaroo/intro/index.md
+                  - Registry Release Notes: kangaroo/intro/release-notes.md
+                  - FAQs: kangaroo/intro/faq.md
+                  - Offline Upgrade Container Registry: kangaroo/intro/upgrade.md
               - Quick Start:
                   - Manage External Registry: kangaroo/quickstart/registry-in-one.md
                   - Push Image: kangaroo/quickstart/push.md
