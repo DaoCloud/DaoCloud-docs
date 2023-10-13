@@ -1,7 +1,7 @@
 # Offline Upgrade of Operations Management Module
 
 This page provides instructions on how to install or upgrade the Operations Management module
-after downloading it from the [Download Center](../../download/index.md).
+after [downloading it from the Download Center](../../../download/modules/gmagpie.md).
 
 !!! info
 

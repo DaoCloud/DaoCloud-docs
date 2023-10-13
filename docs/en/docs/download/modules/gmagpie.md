@@ -27,8 +27,7 @@ gmagpie_v0.2.2_amd64.tar: ok
 
 ## Installation
 
-Refer to the [Global Management](../../ghippo/install/offline-install.md) installation process
-for installation instructions.
+Refer to the [Global Management installation process](../../ghippo/install/offline-install.md) for installation instructions.
 
 If this is your first-time installation, please [apply for a free trial](../../dce/license0.md)
 or contact us for authorization at info@daocloud.io or call 400 002 6898.
