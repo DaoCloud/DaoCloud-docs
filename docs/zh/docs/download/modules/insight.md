@@ -25,7 +25,7 @@ insight_v0.13.1_amd64.tar: ok
 
 ## 安装
 
-参阅[可观测性](../../insight/quickstart/install/offline-install.md)安装流程进行安装。
+参阅[可观测性安装流程](../../insight/quickstart/install/offline-install.md)进行安装。
 
 如果是初次安装，请[申请免费体验](../../dce/license0.md)或联系我们授权：电邮 info@daocloud.io 或致电 400 002 6898。
 如果有任何许可密钥相关的问题，请联系 DaoCloud 交付团队。
