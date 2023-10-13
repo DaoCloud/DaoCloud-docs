@@ -182,6 +182,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
     [ChaosMeta](https://github.com/traas-stack/chaosmeta) is designed to be a one-stop walkthrough comprehensive solution that includes the complete chaos engineering lifecycle, covering multiple phases such as admission checking, traffic injection, fault injection, fault metrics, recovery metrics and fault recovery. At this stage, ChaosMeta has opened up rich fault injection features to the public, supporting not only standalone deployments and Kubernetes cloud-native deployments, but also experiments with cloud-native fault cases such as Kubernetes itself and Operator.
 
+- [Cilium: eBPF-based CNI project Cilium upgraded to CNCF graduation project](https://mp.weixin.qq.com/s/zMy5efZc0kf3UWpNAxC8_w)
+
+    Cilium is an eBPF-based open source cloud-native solution for provisioning, securing and observing network connectivity between workloads. Being a CNCF graduation project is not the end of the road, but the beginning of the creation of the Cilium ecosystem, which is planned to provide support for non-Kubernetes workloads such as bare metal and virtual machines.
+
 - [Cilium CNI Plugin v1.14.0 Released (CNCF Project)](https://github.com/cilium/cilium/releases/tag/v1.14.0)
 
     Release features: support for two-way authentication, support for deploying Envoys as DaemonSets, support for WireGuard encryption of inter-node traffic and the ability to use Layer 7 policies on WireGuard, Cilium Mesh provides consistent network connectivity between the cloud and heterogeneous workloads, support for broadcasting external IP addresses to the local network via the Layer 2 transport protocol, and support for the Cilium CNI Plugin v1.14.0 (CNCF project). protocol to broadcast external IP addresses to the local network, support for multiple IPAM pools, and BIG TCP support for IPv4.
@@ -1042,6 +1046,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: allow users to define and run authorization policies based on HTTP routes in a completely zero-trust manner; support configuration using the Kubernetes Gateway API; add support for `iptables-nft` to the initialization container.
 
+- [Litmus: Chaos Engineering Framework 3.0 released (CNCF project)](https://github.com/litmuschaos/litmus/releases/tag/3.0.0)
+
+    Release features: Improved user experience, added Chaos Infrastructure Organization environment, added Chaos Studio to simplify experimental tuning, elastic probes now support plug-and-play, MongoDB high availability support.
+
 - [Litmus Chaos Engineering Framework v2.14.0 release (CNCF project)](https://github.com/litmuschaos/litmus/releases/tag/2.14.0)
 
      The main new features of this version: Add support for containerd CRI in DNS experiment, support for http-chaos experiment in service mesh environment, add support for source and destination ports in network experiment, support for providing custom labels for chaos runner pods, Optimizing the description of probe state patterns in chaotic results.
@@ -1167,6 +1175,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [OPA Common Policy Engine v0.41.0 release (CNCF project)](https://github.com/open-policy-agent/opa/releases/tag/v0.41.0)
 
      The main new features of this version: a new set of built-in features for validating, parsing, and verifying GraphQL queries and schemas; built-in feature declarations support specifying the names and descriptions of feature parameters and return values ​​through metadata; support skipping based on the summary of OCI artifacts Bundle reload; delete empty list in bundle signature; unit resolution and token update, etc.
+
+- [OpenClusterManagement (OCM) multi-cluster management platform v0.12.0 released (CNCF project)](https://github.com/open-cluster-management-io/ocm/releases/tag/v0.12.0)
+
+    Release features: add plugin management function gate, support proxy between hub cluster and managed cluster, support single instance in managed mode, add ClusterAnnotations support, add issue and PR expiration check.
 
 - [OpenClusterManagement (OCM) multicluster management platform v0.7 release (CNCF project)](https://mp.weixin.qq.com/s/EQgdnZVOqzfvuxOzg-Q0cQ)
 
@@ -1524,11 +1536,15 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 ### V
 
-- [Vcluster Virtual Kubernetes Clustering Implementation Solution v0.15.0 Released](https://github.com/vmware-tanzu/velero/releases/tag/v1.11.0)
+- [vcluster Virtual Kubernetes Cluster Implementation Solution v0.16.0 Released](https://github.com/loft-sh/vcluster/releases/tag/v0.16.0)
+
+    Release features: supports Kubernetes v1.28, allows user-defined Pod conditions and node taint, supports vcluster creation without templates, adds vcluster and vcluster cli binary sbom, improves coredns integration.
+
+- [vcluster Virtual Kubernetes Clustering Implementation Solution v0.15.0 Released](https://github.com/vmware-tanzu/velero/releases/tag/v1.11.0)
 
     Release features: allows users to access all host cluster services within vcluster, new built-in metrics server, generic synchronization feature supports importing cluster-wide resources from host clusters.
 
-- [Vcluster virtual Kubernetes cluster implementation v0.13.0 released](https://github.com/loft-sh/vcluster/releases/tag/v0.13.0)
+- [vcluster virtual Kubernetes cluster implementation v0.13.0 released](https://github.com/loft-sh/vcluster/releases/tag/v0.13.0)
 
      The main new features of this version: adding log and backup features, adding high availability support for k3s with external data storage, and automatically synchronizing CSI resources when the vcluster scheduler is turned on.
 
