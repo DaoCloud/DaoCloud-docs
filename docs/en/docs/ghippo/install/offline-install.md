@@ -1,6 +1,7 @@
 # Offline upgrade global management module
 
-This page explains how to install or upgrade the global management module after downloading it from [Download Center](../../download/index.md).
+This page explains how to install or upgrade the global management module after
+[downloading it from Download Center](../../download/modules/ghippo.md).
 
 !!! info
 
