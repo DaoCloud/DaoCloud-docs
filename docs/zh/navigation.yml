@@ -1093,6 +1093,7 @@ nav:
       - Merbridge: community/merbridge.md
       - Spiderpool: community/spiderpool.md
       - 公开镜像加速: community/mirror.md
+      - 开源图标库: community/icons/index.md
   - 云原生研究院:
       - 社区要闻:
           - 2023 云原生社区要闻: native/news/news-2023.md
