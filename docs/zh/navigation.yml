@@ -893,6 +893,10 @@ nav:
                   - 产品优势: kant/intro/benefits.md
                   - 应用场景: kant/intro/use-cases.md
                   - 基本概念: kant/intro/concepts.md
+                  - 离线升级云边协同: kant/intro/offline-upgrade.md
+              - 边缘单元:
+                  - 创建边缘单元: kant/user-guide/edge-unit/create-unit.md
+                  - 管理边缘单元: kant/user-guide/edge-unit/manage-unit.md
               - 边缘节点:
                   - 边缘节点概述: kant/user-guide/node/index.md
                   - 边缘节点接入要求: kant/user-guide/node/join-rqmt.md
