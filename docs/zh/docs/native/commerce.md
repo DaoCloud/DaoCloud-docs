@@ -4,6 +4,10 @@
 
 ### A
 
+- [AppViewX 推出 KUBE+ ——为确保 Kubernetes 环境安全而构建的证书生命周期管理方案](https://appviewx.com/blogs/introducing-appviewx-kube-a-certificate-lifecycle-management-solution-built-to-secure-your-kubernetes-environments/)
+
+    AppViewX KUBE+ 提供了统一的可视化界面用于控制和管理证书。具体功能包括：自动发现所有 SSL/TLS 证书、维护最新的证书清单、提供对证书元数据的可见性、端到端证书生命周期自动化、强大的策略和合规引擎、广泛的本地集成等。
+
 - [Aqua 云原生安全平台引入基于 eBPF 技术的零日漏洞检测工具 Lightning Enforcer](https://blog.aquasec.com/combat-zero-day-threats-with-aquas-ebpf-lightning-enforcer)
 
     Aqua Lightning Enforcer 利用漂移和基于行为的自动化检测方法，检测零日漏洞等未知威胁，并提供事件管理、可疑行为告警以及开箱即用的 CNDR（云本地检测和响应）。
@@ -666,6 +670,10 @@
 
     Rainbond 企业版拥有全局可观测中心，用于监视、调试和分析运行在 Kubernetes 集群和 rainbond 平台中的基础设施及应用服务。此外，还为 IT 业务系统向国产化信创环境中迁移提供了方案，支持全链路灰度发布和集群巡检，内置 WAF 防火墙和操作审计功能，支持私有化部署应用商店等。
 
+- [Red Hat OpenShift GitOps 1.10 发布](https://cloud.redhat.com/blog/whats-new-in-red-hat-openshift-gitops-1.10)
+
+    支持 Argo CD 2.8，包括引入 ApplicationSet 插件生成器、删除传统配置管理插件 (CMP)、忽略资源更新等新功能；GitOps 文档将从 OpenShift 文档中的一个子部分（目前在 CI/CD 下）移至独立的部分；允许动态缩放应用程序控制器；自动安装控制台仪表盘。
+
 - [Red Hat 容器镜像仓库 Red Hat Quay v3.9.0 发布](https://cloud.redhat.com/blog/red-hat-quay-3.9-is-generally-available)
 
     更新内容：增加容器镜像漏洞报告的覆盖范围、审计日志与外部日志管理系统 Splunk 集成、提供了一种可扩展的方式来跟踪注册表中大量租户的存储消耗、自动化异地备份功能。
@@ -828,6 +836,10 @@
     该版本新特性：支持集成任意 OCI 镜像仓库，扫描其中的容器镜像；支持集成任意 Kubernetes 集群，扫描其中的工作负载配置及镜像；支持扫描第三方软件物料清单文件；支持在任意 CI/CD 流水线中集成 SEAL 的安全扫描功能；能够聚合管理全链路各个阶段的资源提供全链路安全洞察；支持自动生成多策略修复建议、漏洞优先级排序、因时制宜处理安全问题。
 
 ### T
+
+- [Tetrate 发布企业级云原生服务网关 Tetrate Enterprise Envoy Gateway](https://mp.weixin.qq.com/s/XV7b6W3GiKbamuTabypIBQ)
+
+    Tetrate Enterprise Envoy Gateway 基于开源 Envoy Gateway 构建，支持 CVE 和升级管理，符合 FIPS 标准的政府环境构建，并支持 Envoy 的功能（如全局速率限制、OIDC 和 OAuth2 的应用程序身份验证处理）。
 
 - [Tetrate 推出针对 Amazon EKS 设计的服务网格解决方案 TSE](https://mp.weixin.qq.com/s/Q4qTLOv8kNn7lf0flHCOzg)
 
