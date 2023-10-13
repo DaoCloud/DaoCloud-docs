@@ -1,6 +1,6 @@
 # Offline Upgrade Container Registry Module
 
-This page explains how to install or upgrade the container registry module after downloading it from the [Download Center](../../download/index.md).
+This page explains how to install or upgrade the container registry module after [downloading it from the Download Center](../../download/modules/kangaroo.md).
 
 !!! info
 

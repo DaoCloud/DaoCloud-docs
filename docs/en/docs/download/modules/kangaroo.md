@@ -6,7 +6,7 @@ On this page, you can download offline installation packages for different versi
 
 | Version  | Architecture | File Size | Package     | Checksum File      | Update Date |
 |----------|--------------|-----------|-------------|--------------------|-------------|
-| [v0.10.0](../../kangaroo/release-notes.md) | AMD64        | 293.24 MB | [:arrow_down: kangaroo_v0.10.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kangaroo_0.10.0_amd64.tar) | [:arrow_down: kangaroo_0.10.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kangaroo_0.10.0_amd64_checksum.sha512sum) | 2023-8-22   |
+| [v0.10.0](../../kangaroo/intro/release-notes.md) | AMD64        | 293.24 MB | [:arrow_down: kangaroo_v0.10.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kangaroo_0.10.0_amd64.tar) | [:arrow_down: kangaroo_0.10.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kangaroo_0.10.0_amd64_checksum.sha512sum) | 2023-8-22   |
 
 ## Verification
 
@@ -24,6 +24,8 @@ kangaroo_0.10.0_amd64.tar: ok
 ```
 
 ## Installation
+
+Refer to [Offline Upgrade Container Registry Module](../../kangaroo/intro/upgrade.md) for installation instructions.
 
 If this is your first installation, please [apply for a free trial](../../dce/license0.md)
 or contact us for authorization: send an email to info@daocloud.io or call 400 002 6898.
