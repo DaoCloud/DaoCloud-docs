@@ -28,10 +28,9 @@
 | AMD64    | v0.8.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.8.0-amd64.tar> |
 | ARM64    | v0.8.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.8.0-arm64.tar> |
 
-下载完毕后解压离线包：
+下载完毕后解压离线包。此处我们下载 arm64 架构的离线包：
 
 ```bash
-# 此处我们下载 arm64 架构的离线包
 tar -xvf offline-v0.8.0-arm64.tar
 ```
 
@@ -164,18 +163,19 @@ tar -xvf offline-v0.8.0-arm64.tar
                     kube_node: 
     ```
 
-按照上述的配置注释，添加新增的工作节点信息
+按照上述的配置注释，添加新增的工作节点信息。
 
 ```shell
-# cluster-name 为工作集群的名称，通过容器管理创建集群时会默认生成
 kubectl edit cm ${cluster-name}-hosts-conf -n kubean-system
 ```
+
+`cluster-name` 为工作集群的名称，通过容器管理创建集群时会默认生成。
 
 #### 通过 ClusterOperation.yml 新增扩容任务
 
 示例：
 
-```yaml
+```yaml title="ClusterOperation.yml"
 apiVersion: kubean.io/v1alpha1
 kind: ClusterOperation
 metadata:
@@ -208,10 +208,9 @@ spec:
     - spec.extraArgs 设置为 --limit=g-worker
     - pec.preHook 中的 enable-repo.yml 剧本参数，要填写相关OS的正确的 repo_list 
 
-按照上述的配置，创建并部署 join-node-ops.yaml
+按照上述的配置，创建并部署 join-node-ops.yaml：
 
 ```shell
-# 复制上述清单文件
 vi join-node-ops.yaml
 kubectl kubectl apply -f join-node-ops.yaml -n kubean-system
 ```

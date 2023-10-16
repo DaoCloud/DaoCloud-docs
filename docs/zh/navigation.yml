@@ -244,7 +244,7 @@ nav:
                   - GPU 配额管理: kpanda/user-guide/gpu/vgpu_quota.md
               - 最佳实践:
                   - 对 etcd 进行备份还原: kpanda/best-practice/etcd-backup.md
-                  - 对 MySQL 应用及数据进行跨集群备份恢复: kpanda/best-practice/backup-mysql-on-nfs.md
+                  - 跨集群备份恢复 MySQL 应用及数据: kpanda/best-practice/backup-mysql-on-nfs.md
                   - 加固自建工作集群: kpanda/best-practice/hardening-cluster.md
                   - 工作集群离线升级指南: kpanda/best-practice/update-offline-cluster.md
                   - 为工作集群添加异构节点: kpanda/best-practice/multi-arch.md
