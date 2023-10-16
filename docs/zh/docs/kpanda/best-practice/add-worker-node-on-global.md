@@ -32,19 +32,24 @@
 3. 执行如下命令，进入 kind 集群容器内：
 
     ```bash
-    podman exec -it {CONTAINER ID} bash # {CONTAINER ID} 替换为您真实的容器 ID
+    podman exec -it {CONTAINER ID} bash
     ```
+
+    `{CONTAINER ID}` 替换为您真实的容器 ID
 
 4. 在 kind 集群容器内执行如下命令获取 kind 集群的 kubeconfig 配置信息：
 
     ```bash
-    kubectl config view --minify --flatten --raw # {CONTAINER ID} 替换为您真实的容器 ID
+    kubectl config view --minify --flatten --raw
     ```
+
+    `{CONTAINER ID}` 替换为您真实的容器 ID
+
 待控制台输出后，复制 kind 集群的 kubeconfig 配置信息，为下一步做准备。
 
 ## 在火种节点上 kind 集群内创建 `cluster.kubean.io` 资源
 
-1. 使用 `podman exec -it {CONTAINER ID} bash`  命令进入 kind 集群容器内。
+1. 使用 `podman exec -it {CONTAINER ID} bash` 命令进入 kind 集群容器内。
 
 2. 复制并执行如下命令，在 kind 集群内执行，以创建 `cluster.kubean.io` 资源：
 
@@ -68,12 +73,16 @@
         namespace: kubean-system
     EOF
     ```
+
 3. 在 kind 集群内执行如下命令，检验 cluster.kubean.io` 资源是否正常创建：
 
     ```bash
     root@my-cluster-installer-control-plane:/# kubectl get clusters
+    ```
 
-    # 预期输出如下
+    预期输出如下：
+
+    ```console
     NAME                    AGE
     kpanda-global-cluster   3s
     my-cluster              16d
@@ -97,8 +106,10 @@
 
     ```bash
     cd /root
-    podman cp config.toml {CONTAINER ID}:/etc/containerd # {CONTAINER ID} 替换为您真实的容器 ID
+    podman cp config.toml {CONTAINER ID}:/etc/containerd
     ```
+
+    `{CONTAINER ID}` 替换为您真实的容器 ID
 
 4. 在 kind 集群内执行如下命令，重启 containerd 服务
 
@@ -129,10 +140,9 @@
 
 !!! note
 
-    注意：标签 “kpanda.io/managed-by=my-cluster” 中的 vaule 值为接入集群时指定的集群名称，默认为 "my-cluster"，具体依据您的实际情况。
+    标签 “kpanda.io/managed-by=my-cluster” 中的 vaule 值为接入集群时指定的集群名称，默认为 "my-cluster"，具体依据您的实际情况。
 
     ![img](../images/add-global-node02.png)
-
 
 ## 为全局服务集群添加节点
 
@@ -142,7 +152,7 @@
 
 3. 在`自定义参数`处添加如下自定义参数：
 
-    ```bash
+    ```console
     download_run_once: false
     download_container: false
     download_force_cache: false
@@ -152,4 +162,3 @@
     ![img](../images/add-global-node03.png)
 
 4. 点击确认按钮，等待节点添加完成。
-

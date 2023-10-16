@@ -12,24 +12,24 @@
 - kubean version: 0.4.9
 - kubespary version: v2.22
 
-#### 未通过扫描项
+### 未通过扫描项
 
 1. [FAIL] 1.2.5 Ensure that the --kubelet-certificate-authority argument is set as appropriate (Automated)
 2. [FAIL] 1.3.7 Ensure that the --bind-address argument is set to 127.0.0.1 (Automated)
 3. [FAIL] 1.4.1 Ensure that the --profiling argument is set to false (Automated)
 4. [FAIL] 1.4.2 Ensure that the --bind-address argument is set to 127.0.0.1 (Automated)
 
-#### 扫描失败原因分析
+### 扫描失败原因分析
 
 1. [FAIL] 1.2.5 Ensure that the --kubelet-certificate-authority argument is set as appropriate (Automated)
 
-    **原因：**CIS 要求 kube-apiserver 必须指定 kubelet 的 CA 证书路径：
+    **原因：** CIS 要求 kube-apiserver 必须指定 kubelet 的 CA 证书路径：
 
     ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/hardening01.png)
 
 2. [FAIL] 1.3.7 Ensure that the --bind-address argument is set to 127.0.0.1 (Automated)
 
-    **原因：**CIS 要求 kube-controller-manager 的 --bing-address=127.0.0.1
+    **原因：** CIS 要求 kube-controller-manager 的 --bing-address=127.0.0.1
 
     ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/hardening02.png)
 
@@ -45,7 +45,7 @@
 
     ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/hardening04.png)
 
-#### 加固配置以通过 CIS 扫描
+### 加固配置以通过 CIS 扫描
 
 kubespray 官方为了解决这些安全扫描问题，在 v2.22 中添加默认值解决了一部分问题，
 更多细节请参考 [kubespray 加固文档](https://github.com/kubernetes-sigs/kubespray/blob/master/docs/hardening.md)。
