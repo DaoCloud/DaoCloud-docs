@@ -17,21 +17,19 @@
 
 ### 方案 1 ：NodePort + 阿里云 SLB
 
-1. 登陆一台机器，下载 dce5-installer 二进制文件。
+1. 登录一台机器，下载 dce5-installer 二进制文件。
 
     假定 VERSION 为 v0.11.0
 
     ```shell
     export VERSION=v0.11.0
-    
     curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
-
     chmod +x ./dce5-installer
     ```
 
 2. 配置集群配置文件 `clusterConfig.yaml`。
 
-   参考以下配置，注意设置 `loadBalancer.type = NodePort`，并填写主机的私网 IP 地址：
+    参考以下配置，注意设置 `loadBalancer.type = NodePort`，并填写主机的私网 IP 地址：
 
     ```yaml title="clusterConfig.yaml"
     apiVersion: provision.daocloud.io/v1alpha3
@@ -84,19 +82,18 @@
 7. 修改 ghippo 反向代理配置，参考文档 https://docs.daocloud.io/ghippo/install/reverse-proxy/#_1，修改后直接通过 SLB 的公网 IP +Port 访问 DCE5.0。如下图：
 
     ![ghippo](../images/7.1.png)
+
     ![ghippo](../images/7.2.png)
 
 ### 方案2 ：cloudLB + 部署 CCM 组件
 
-1. 登陆一台机器，下载 dce5-installer 二进制文件。
+1. 登录一台机器，下载 dce5-installer 二进制文件。
 
     假定 VERSION 为 v0.11.0
 
     ```shell
     export VERSION=v0.11.0
-    
     curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
-
     chmod +x ./dce5-installer
     ```
 
@@ -148,6 +145,7 @@
     安装成功后如下图：
 
     ![cc01](../images/ccm01.png)
+
     ![cc02](../images/ccm01.png)
 
 5. 继续安装 DCE5.0，将所有产品组件安装
@@ -161,19 +159,18 @@
 6. 安装成功后，会默认创建公网的 LB 实例，并且可基于分配的 IP 来访问 DCE5.0。
 
     ![dce5.02](../images/dce501.png)
+
     ![dce5.03](../images/dce502.png)
 
 ### 方案 3：NodePort + 部署 CCM 组件
 
-1. 登陆一台机器，下载 dce5-installer 二进制文件。
+1. 登录一台机器，下载 dce5-installer 二进制文件。
 
     假定 VERSION 为 v0.11.0
 
     ```shell
     export VERSION=v0.11.0
-    
     curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
-
     chmod +x ./dce5-installer
     ```
 
@@ -229,6 +226,7 @@
 
 8. 修改 ghippo 反向代理配置
 
-    参考文档 https://docs.daocloud.io/ghippo/install/reverse-proxy/#_1，其中代理地址为上步中 `istio-ingressgateway` 的 type 为 `LoadBalancer` 时分配的 IP 地址。修改成功后即可用该 IP 地址进行访问
+    参考文档 [自定义反向代理服务器地址](../../ghippo/install/reverse-proxy.md#_1)，其中代理地址为上一步中
+    `istio-ingressgateway` 的 type 为 `LoadBalancer` 时分配的 IP 地址。修改成功后即可通过该 IP 地址进行访问。
 
     ![ghippo](../images/ghippo01.png)
