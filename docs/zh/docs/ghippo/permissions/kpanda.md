@@ -329,7 +329,6 @@ hide:
 |          |                        | 查看/管理详情            | &check;                               | &cross;                           | &cross;                           | &cross;                           |
 |          |                        | 删除备份记录             | &check;                               | &cross;                           | &cross;                           | &cross;                           |
 |          |                        | 查看备份点列表           | &check;                               | &cross;                           | &cross;                           | &cross;                           |
-|          |                        | 从备份恢复               | &check;                               | &cross;                           | &cross;                           | &cross;                           |
 | 集群巡检 | 集群巡检               | 查看列表                 | &check;                               | &cross;                           | &cross;                           | &cross;                           |
 |          |                        | 查看/管理详情            | &check;                               | &cross;                           | &cross;                           | &cross;                           |
 |          |                        | 集群巡检                 | &check;                               | &cross;                           | &cross;                           | &cross;                           |
