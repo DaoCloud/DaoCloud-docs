@@ -262,6 +262,7 @@ nav:
                   - 产品优势: kairship/intro/benefits.md
                   - 基本概念: kairship/intro/concepts.md
                   - 常见问题: kairship/intro/faq.md
+                  - 离线升级: kairship/intro/offline-upgrade.md
                   - Release Notes: kairship/intro/release-notes.md
               - 工作空间: kairship/workspace.md
               - 多云实例:
@@ -295,6 +296,7 @@ nav:
                   - 优化故障转移延迟灵敏度: kairship/failover/optimization-failover.md
               - 最佳实践:
                   - 一键转换 DCE 4.0 到 5.0 应用: kairship/best-practice/one-click-conversion.md
+                  - 跨集群弹性伸缩: kairship/best-practice/fhpa.md
           - 镜像仓库:
               - 介绍:
                   - 什么是镜像仓库: kangaroo/intro/index.md
