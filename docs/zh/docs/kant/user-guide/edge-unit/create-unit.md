@@ -41,7 +41,7 @@ ControllerManager：KubeEdge CRD 扩展，目前应用于边缘应用和边缘�
         - 默认：系统提供的默认镜像仓库地址
         - 自定义：用户可以选择填入企业常用的镜像仓库地址
 
-    ![边缘单元列表](../../images/create-unit-03.png)
+    ![创建边缘单元](../../images/create-unit-03.png)
 
 4. 访问设置。KubeEdge 云端组件的访问设置，边缘节点通过此设置与云端建立连接；
 
@@ -54,7 +54,7 @@ ControllerManager：KubeEdge CRD 扩展，目前应用于边缘应用和边缘�
         - CloudStreamPort：云端流处理接口端口，默认30003；
         - TunnelPort：边缘节点业务数据通道端口，默认30004。
 
-    ![边缘单元列表](../../images/create-unit-04.png)
+    ![创建边缘单元](../../images/create-unit-04.png)
 
 5. 完成以上信息配置后，点击`确定`按钮，完成边缘单元创建，自动返回边缘单元列表。
 
