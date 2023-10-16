@@ -40,6 +40,8 @@ nav:
                 - 安装排障: install/faq.md
             - 在不同 K8s 发行版上安装:
                 - 在 OpenShift OCP 上安装: install/k8s-install/ocp-install-dce5.0.md
+            - 在公有云上安装: 
+                - 在阿里云 ECS 上安装 DCE 5.0 商业版: install/k8s-install/ecs-install-dce5.0.md
             - 在不同操作系统上安装:
                 - 在 UOS V20 (1020a): install/os-install/uos-v20-install-dce5.0.md
                 - Oracle Linux R9/R8 U1 操作系统: install/os-install/oracleLinux-install-dce5.0.md
