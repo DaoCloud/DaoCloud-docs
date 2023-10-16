@@ -912,8 +912,8 @@ nav:
                   - 管理终端设备: kant/user-guide/device/manage-device.md
               - 边缘应用:
                   - 边缘应用概述: kant/user-guide/edge-app/overview.md
-                  - 创建工作负载: kant/user-guide/edge-app/creat-app.md
-                  - 创建批量工作负载: kant/user-guide/edge-app/creat-batch-app.md
+                  - 创建工作负载: kant/user-guide/edge-app/create-app.md
+                  - 创建批量工作负载: kant/user-guide/edge-app/create-batch-app.md
                   - 部署批量工作负载: kant/user-guide/edge-app/deploy.md
               - 边云消息:
                   - 边云消息概述: kant/user-guide/route/index.md
