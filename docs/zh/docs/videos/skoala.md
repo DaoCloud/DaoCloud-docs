@@ -80,4 +80,12 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/sentinel-hotspot.mp4" preload="metadata" poster="images/skoala-hotspot.png"></video>
 </div>
 
+### Sentinel 系统规则
+
+参阅[Sentinel 系统规则](../skoala/trad-ms/hosted/services/system.md)文档页面。
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/sys-rule.mp4" preload="metadata" poster="images/sentinel-sys-rule.jpg"></video>
+</div>
+
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
