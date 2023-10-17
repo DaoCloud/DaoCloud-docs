@@ -162,6 +162,14 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./mirror.md)
 
+-   :simple-iconify:{ .lg .middle } __DaoCloud 开源图标库__
+
+    ---
+
+    收集了 DaoCloud 公司内部常用的一些开源图标。
+
+    [:octicons-arrow-right-24: 了解更多](./icons/index.md)
+
 </div>
 
 !!! success
