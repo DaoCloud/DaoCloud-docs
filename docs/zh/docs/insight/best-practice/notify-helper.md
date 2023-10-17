@@ -47,7 +47,7 @@
 
     在当前作用域下渲染指定对象。
 
-    示例 1：取顶级作用域下的所有内容，即示例代码中上下文数据的全部内容。
+    示例 1: 取顶级作用域下的所有内容，即示例代码中上下文数据的全部内容。
 
     ```go
     {{ . }}
@@ -58,14 +58,14 @@
     使用 if 检查数据，如果不满足可以执行 else。
 
     ```go
-    {{if .Labels.namespace }}命名空间：{{ .Labels.namespace }} \n{{ end }}
+    {{if .Labels.namespace }}命名空间: {{ .Labels.namespace }} \n{{ end }}
     ```
 
 3. 循环函数 `for`
 
     for 函数用于重复执行代码内容。
 
-    示例 1：遍历 labels 列表，获取告警的所有 label 内容。
+    示例 1: 遍历 labels 列表，获取告警的所有 label 内容。
 
     ```go
     {{ for .Labels}} \n {{end}}
@@ -77,7 +77,7 @@ Insight 的”通知模板“和”短信模板“支持 70 多个 [sprig](http:
 
 ### Sprig 函数
 
-Sprig 内置了 70 多种常见的模板函数帮助渲染数据。以下列举常见函数：
+Sprig 内置了 70 多种常见的模板函数帮助渲染数据。以下列举常见函数: 
 
 * [时间操作](http://masterminds.github.io/sprig/date.html)
 * [字符串操作](http://masterminds.github.io/sprig/strings.html)
@@ -96,7 +96,7 @@ Sprig 内置了 70 多种常见的模板函数帮助渲染数据。以下列举�
 func toClusterName(id string) (string, error)
 ```
 
-**示例：**
+**示例: **
 
 ```go-templates
 {{ toClusterName "clusterId" }}
@@ -111,7 +111,7 @@ func toClusterName(id string) (string, error)
 func toClusterId(name string) (string, error)
 ```
 
-**示例：**
+**示例: **
 
 ```go-templates
 {{ toClusterId "clusterName" }}
@@ -126,19 +126,19 @@ func toClusterId(name string) (string, error)
 func toDateInZone(fmt string, date interface{}, zone string) string
 ```
 
-**示例 1**：
+**示例 1**: 
 
 ```go-templates
 {{ toDateInZone "2006-01-02T15:04:05" "2022-08-15T05:59:08.064449533Z" "Asia/Shanghai" }}
 ```
 
-将获得返回值 `2022-08-15T13:59:08`。此外，也可以通过 sprig 内置的函数达到 `toDateInZone` 的效果：
+将获得返回值 `2022-08-15T13:59:08`。此外，也可以通过 sprig 内置的函数达到 `toDateInZone` 的效果: 
 
 ```go-templates
 {{ dateInZone "2006-01-02T15:04:05" (toDate "2006-01-02T15:04:05Z07:00" .StartsAt) "Asia/Shanghai" }}
 ```
 
-**示例 2**：
+**示例 2**: 
 
 ```go-templates
 {{ toDateInZone "2006-01-02T15:04:05" .StartsAt "Asia/Shanghai" }}
@@ -149,30 +149,30 @@ func toDateInZone(fmt string, date interface{}, zone string) string
 Insight 内置 Webhook 告警模板如下，其他如邮件、企业微信等内容相同，只是对换行进行相应调整。
 
 ```text
-规则名称：{{ .Labels.alertname }} \n
-策略名称：{{ .Labels.alertgroup }} \n
-告警级别：{{ .Labels.severity }} \n
-集群：{{ .Labels.cluster }} \n
-{{if .Labels.namespace }}命名空间：{{ .Labels.namespace }} \n{{ end }}
-{{if .Labels.node }}节点：{{ .Labels.node }} \n{{ end }}
-资源类型：{{ .Labels.target_type }} \n
-{{if .Labels.target }}资源名称：{{ .Labels.target }} \n{{ end }}
-触发值：{{ .Annotations.value }} \n
-发生时间：{{ .StartsAt }} \n
-{{if ne "0001-01-01T00:00:00Z" .EndsAt }}结束时间：{{ .EndsAt }} \n{{ end }}
-描述：{{ .Annotations.description }} \n
+规则名称: {{ .Labels.alertname }} \n
+策略名称: {{ .Labels.alertgroup }} \n
+告警级别: {{ .Labels.severity }} \n
+集群: {{ .Labels.cluster }} \n
+{{if .Labels.namespace }}命名空间: {{ .Labels.namespace }} \n{{ end }}
+{{if .Labels.node }}节点: {{ .Labels.node }} \n{{ end }}
+资源类型: {{ .Labels.target_type }} \n
+{{if .Labels.target }}资源名称: {{ .Labels.target }} \n{{ end }}
+触发值: {{ .Annotations.value }} \n
+发生时间: {{ .StartsAt }} \n
+{{if ne "0001-01-01T00:00:00Z" .EndsAt }}结束时间: {{ .EndsAt }} \n{{ end }}
+描述: {{ .Annotations.description }} \n
 ```
 
 ### 邮箱主题参数
 
 由于 Insight 在发送告警消息时，会对同一时间同一条规则产生的消息进行合并发送，
-所以 email 主题不同于上面四种模板，只会使用告警消息中的 commonLabels 内容对模板进行渲染。默认模板如下：
+所以 email 主题不同于上面四种模板，只会使用告警消息中的 commonLabels 内容对模板进行渲染。默认模板如下: 
 
 ```go
-[{{ .status }}] [{{ .severity }}] 告警：{{ .alertname }}
+[{{ .status }}] [{{ .severity }}] 告警: {{ .alertname }}
 ```
 
-其他可作为邮箱主题的字段如下：
+其他可作为邮箱主题的字段如下: 
 
 ```text
 {{ .status }} 告警消息的触发状态
