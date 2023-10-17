@@ -1,14 +1,14 @@
-# DaoCloud 开源图标库
+# DaoCloud Open Source Icon Library
 
-本页列出 DaoCloud 自主开源项目的图标以及友商公开的图标，方便大家查阅取用。
+This page lists the icons of DaoCloud's self-developed open source projects, as well as icons from other companies that are publicly available, making it convenient for everyone to browse and use.
 
 !!! tip
 
-    有些图标为白色背景，正常不可见，可以点击本页顶部的 ⚙️ 图标切换为 Dark 模式。
+    Some icons have a white background and may not be visible by default. You can click the ⚙️ icon at the top of this page and switch to dark mode.
 
-## DaoCloud 开源项目图标
+## DaoCloud Open Source Project Icons
 
-| 名称         | 彩色白底       | 彩色黑底       | 黑白白底     | 黑白黑底        |
+| Name         | Color on White Background      | Color on Black Background      | Black & White on White Background    | Black & White on Black Background       |
 | :----------- | :--------------------------- | ----------- | ------ | ----- |
 | CloudTTY     | ![](./open/Cloudtty.svg)     | ![](./open/Cloudtty-on-dark-bg.svg)     | ![](./open/Cloudtty-white.svg)     | ![](./open/Cloudtty-dark.svg)     |
 | Clusterpedia | ![](./open/Clusterpedia.svg) | ![](./open/Clusterpedia-on-dark-bg.svg) | ![](./open/Clusterpedia-white.svg) | ![](./open/Clusterpedia-dark.svg) |
@@ -17,9 +17,9 @@
 | Merbridge    | ![](./open/Merbridge.svg)    | ![](./open/Merbridge-on-dark-bg.svg)    | ![](./open/Merbridge-white.svg)    | ![](./open/Merbridge-dark.svg)    |
 | Spidernet    | ![](./open/Spidernet.svg)    | ![](./open/Spidernet-on-dark-bg.svg)    | ![](./open/Spidernet-white.svg)    | ![](./open/Spidernet-dark.svg)    |
 
-## DaoCloud 中间件图标
+## DaoCloud Middleware Icons
 
-| 名称          | 图标                            |
+| Name          | Icon                            |
 | ------------- | --- |
 | Elasticsearch | ![](./mcamel/elasticserach.svg) |
 | Kafka         | ![](./mcamel/kafka.svg)         |
@@ -31,23 +31,23 @@
 | Redis         | ![](./mcamel/redis.svg)         |
 | RocketMQ      | ![](./mcamel/rocketmq.svg)      |
 
-## 云厂商和社区项目图标
+## Cloud Service Provider and Community Project Icons
 
 | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Airship   | 阿里云             | Argo            | ARM       | AWS         | Azure           | CentOS        | Cilium   |
+| Airship   | Alibaba Cloud             | Argo            | ARM       | AWS         | Azure           | CentOS        | Cilium   |
 | ![](providers/airship.svg)    | ![](providers/aliyun.svg)              | ![](providers/argo.svg)             | ![](providers/arm.svg)        | ![](providers/aws.svg)          | ![](providers/azure.svg)            | ![](providers/centos.svg)         | ![](providers/cilium.svg)    |
 | Consul    | containerd         | Contour         | DaoCloud  | DCE         | Debian          | Docker        | Dubbo    |
 | ![](providers/consul.svg)     | ![](providers/containerd.svg)          | ![](providers/contour.svg)          | ![](providers/daocloud.svg)   | ![](providers/dce.svg)          | ![](providers/debian.svg)           | ![](providers/docker.svg)         | ![](providers/dubbo.svg)     |
 | Envoy     | Eureka             | FluentBit       | GitLab    | GCP         | Grafana         | Harbor        | Helm     |
 | ![](providers/envoy.svg)      | ![](providers/eureka.svg)              | ![](providers/fluentbit.svg)        | ![](providers/gitlab.svg)     | ![](providers/google-cloud.svg) | ![](providers/grafana.svg)          | ![](providers/harbor.svg)         | ![](providers/helm.svg)      |
-| 华为      | Insight-agent      | Istio           | Jaeger    | Jenkins     | Jfrog           | Jira          | Karmada  |
+| Huawei      | Insight-agent      | Istio           | Jaeger    | Jenkins     | Jfrog           | Jira          | Karmada  |
 | ![](providers/huawei.svg)     | ![](providers/insight-agent-green.svg) | ![](providers/istio.svg)            | ![](providers/jaeger.svg)     | ![](providers/jenkins.svg)      | ![](providers/jfrog.svg)            | ![](providers/jira.svg)          | ![](providers/karmada.svg)   |
 | Kiali     | KLTS               | KubeEdge        | Kubernetes                      | Kubernetes-2       | Kubespray       | Kylin mini    | Kylin    |
 | ![](providers/kiali.svg)      | ![](providers/klts.svg)                | ![](providers/kubeedge.svg)         | ![](providers/kubernetes-2.svg) | ![](providers/kubernetes.svg) | ![](providers/kubespray.svg)        | ![](providers/kylin-mini.svg)     | ![](providers/kylin.svg)     |
-| 灵雀      | MetalLB            | Metric Server   | Multus    | Nacos       | Nginx           | OTel          | Openshift                      |
+| Lingque      | MetalLB            | Metric Server   | Multus    | Nacos       | Nginx           | OTel          | Openshift                      |
 | ![](providers/lingque.svg)    | ![](providers/metal-lb.svg)            | ![](providers/victoria-metrics.svg) | ![](providers/multus.svg)     | ![](providers/nacos.svg)        | ![](providers/nginx.svg)            | ![](providers/open-telemetry.svg) | ![](providers/openshift.svg) |
 | Prometheus                      | Pulsar             | Rancher         | RedHat    | Sentinel    | Spring Cloud    | Submariner    | Tanzu    |
 | ![](providers/prometheus.svg) | ![](providers/pulsar.svg)              | ![](providers/rancher.svg)          | ![](providers/redhat.svg)     | ![](providers/sentinel.svg)     | ![](providers/spring-cloud.svg)     | ![](providers/submariner.svg)     | ![](providers/tanzu.svg)     |
-| Tekton    | 腾讯云             | TiDB            | Ubuntu    | Velero      | Victoria metrics                      | Zookeeper     |          |
+| Tekton    | Tencent Cloud             | TiDB            | Ubuntu    | Velero      | Victoria metrics                      | Zookeeper     |          |
 | ![](providers/tekton.svg)     | ![](providers/tencent-cloud.svg)       | ![](providers/tidb.svg)             | ![](providers/ubuntu.svg)     | ![](providers/velero.svg)       | ![](providers/victoria-metrics.svg) | ![](providers/zookeeper.svg)      |          |
