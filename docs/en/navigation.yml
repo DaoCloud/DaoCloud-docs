@@ -40,6 +40,7 @@ nav:
                   - Troubleshoot: install/faq.md
               - Install with Different K8s Distributions:
                   - With OpenShift OCP: install/k8s-install/ocp-install-dce5.0.md
+                  - With Alibaba Cloud ECS: install/k8s-install/ecs-install-dce5.0.md
               - Install on Different OS:
                   - With UOS V20 (1020a): install/os-install/uos-v20-install-dce5.0.md
                   - With Oracle Linux R9/R8 U1: install/os-install/oracleLinux-install-dce5.0.md
