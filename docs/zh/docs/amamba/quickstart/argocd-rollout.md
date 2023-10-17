@@ -5,9 +5,7 @@
 ## 前提条件
 
 - 示例中的镜像需要访问公网：`argoproj/rollouts-demo:yellow` 和 `argoproj/rollouts-demo:blue`。
-
 - 仅适用于通过安装器以 metallb 方式部署出来的 DCE 5.0 平台。
-
 - 使用灰度发布能力需要所在集群中安装 Istio 和 Argo Rollout 组件。
 
 ## 操作步骤
@@ -21,7 +19,6 @@
 **需要注意**：
 
 - 容器镜像为：argoproj/rollouts-demo:blue
-
 - 服务端口：名称为 `http`、容器端口为 `8082`、服务端口为 `8082`。
 
     ![容器配置](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/argorollout01.png)

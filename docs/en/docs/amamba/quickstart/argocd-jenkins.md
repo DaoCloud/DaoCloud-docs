@@ -12,7 +12,7 @@ Based on the overall process, we need to prepare the following information:
 
 1. Prepare two code repositories on gitlab, one as a repository for business code and one as a repository for application configuration files (yaml).
 
-    ```bash
+    ```console
     Refer to github config:
    
     Business code: <https://github.com/jzhupup/dao-2048.git>
@@ -35,7 +35,7 @@ After the `Update app profile` step is successfully executed, Argo CD detects th
 
     ??? note "The following Jenkinsfile parameters can be updated as required"
 
-        ```yaml
+        ```groovy
         pipeline {
           agent {
             node {
@@ -101,7 +101,7 @@ After the `Update app profile` step is successfully executed, Argo CD detects th
 
     <!--![]()screenshots-->
 
-## CI/CD is triggered by running the pipeline
+## Run pipeline to trigger CI/CD
 
 1. Select the pipeline created above and click Run Now
 

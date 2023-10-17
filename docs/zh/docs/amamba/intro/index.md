@@ -9,11 +9,8 @@
 以[工作空间](../../ghippo/user-guide/workspace/ws-folder.md)作为最小的租户单元，不仅支持单集群的独享资源的能力，还支持跨集群共享资源的能力：
 
 - 支持弱绑定集群，从而获得跨集群、跨命名空间共享资源的能力
-
 - 支持强绑定集群，从而获得独享资源的能力
-
 - 工作空间管理成员可以在关联的集群中创建命名空间资源
-
 - 自助式资源创建的模式，用户可以在工作空间内自助创建命名空间来进行资源隔离
 
 ![多租户资源管理](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/what01.png)
@@ -52,7 +49,7 @@
 
 ## 部署方法
 
-建议通过【DCE 5.0 商业版】的安装包（../../install/commercial/start-install.md）安装Workbench，因为这样可以一次性安装 DCE 5.0 的所有模块 ，无需担心组件不兼容的问题。
+建议通过 [DCE 5.0 商业版安装包](../../install/commercial/start-install.md)安装 Workbench，因为这样可以一次性安装 DCE 5.0 的所有模块 ，无需担心组件不兼容的问题。
 
 但是，如果你想单独安装或升级应用工作台模块，执行以下命令即可：
 

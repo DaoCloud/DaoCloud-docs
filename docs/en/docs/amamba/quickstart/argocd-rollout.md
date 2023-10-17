@@ -211,4 +211,3 @@ In the gray release object, the specified colors are blue, yellow, which will be
 At this time, you can choose to continue publishing the application in the gray release module of the application console to adjust the traffic ratio until the final successful release.
 
 <!--![]()screenshots-->
-

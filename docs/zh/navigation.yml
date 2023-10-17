@@ -107,18 +107,18 @@ nav:
                   - 集成工具链: amamba/user-guide/tools/integrated-toolchain.md
                   - 管理工具链实例: amamba/user-guide/tools/toolchain-instances.md
               - 常见问题:
-                  - 流水线相关问题: amamba/intro/faq-jenkins.md
-                  - GitOps 相关问题: amamba/intro/faq-gitops.md
+                  - 流水线相关问题: amamba/faq/faq-jenkins.md
+                  - GitOps 相关问题: amamba/faq/faq-gitops.md
               - 最佳实践:
                   - 快速创建流水线: amamba/quickstart/deploy-pipeline.md
-                  - 基于流水线 + GitOps 实现CI/CD: amamba/quickstart/argocd-jenkins.md
+                  - 流水线+GitOps实现CI/CD: amamba/quickstart/argocd-jenkins.md
                   - 使用流水线实现代码扫描: amamba/quickstart/scan-with-pipeline.md
-                  - 集成 Harbor 实现镜像安全扫描: amamba/quickstart/scan-with-harbor.md
-                  - 基于 Argo Rollout 实现渐进式灰度发布: amamba/quickstart/argocd-rollout.md
+                  - 集成Harbor实现镜像安全扫描: amamba/quickstart/scan-with-harbor.md
+                  - 基于Argo Rollout实现灰度发布: amamba/quickstart/argocd-rollout.md
                   - 在指定的节点上运行流水线: amamba/quickstart/pipeline-on-node.md
                   - Jenkins 场景配置: amamba/quickstart/scenarios-config.md
-                  - 在 Jenkins 中使用自定义工具链: amamba/quickstart/jenkins-custom.md
-                  - Jenkins 高可用方案: amamba/quickstart/jenkins-HA.md
+                  - 在Jenkins中使用自定义工具链: amamba/quickstart/jenkins-custom.md
+                  - Jenkins高可用方案: amamba/quickstart/jenkins-HA.md
       - 容器:
           - 容器管理:
               - 介绍:
