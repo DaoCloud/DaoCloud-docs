@@ -962,19 +962,22 @@ nav:
                   - keycloak cannot start: reference/troubleshooting/ghippo03.md
   - Video Tutorial:
       - Index: videos/index.md
-      - Installation: videos/install.md
-      - Best Practices: videos/use-cases.md
-      - Container Management: videos/kpanda.md
-      - Global Management: videos/ghippo.md
-      - Obsevability: videos/insight.md
+      - Get Started:
+          - Installation: videos/install.md
+          - Scenario-based Videos: videos/use-cases.md
       - Workbench: videos/amamba.md
-      - Service Mesh: videos/mspider.md
-      - Microservice Engine: videos/skoala.md
-      - Multicloud Orchestration: videos/kairship.md
+      - Container:
+          - Container Management: videos/kpanda.md
+          - Multicloud Management: videos/kairship.md
+          - Container Registry: videos/kangaroo.md
+          - Network: videos/network.md
+      - Obsevability: videos/insight.md
+      - Microservices:
+          - Service Mesh: videos/mspider.md
+          - Microservice Engine: videos/skoala.md
       - Middleware: videos/mcamel.md
-      - Network: videos/network.md
-      - Container Registry: videos/kangaroo.md
       - Cloud to Edge Continuum: videos/kant.md
+      - Global Management: videos/ghippo.md
   - Download:
       - DaoCloud Enterprise 5.0:
           - Index: download/index.md
