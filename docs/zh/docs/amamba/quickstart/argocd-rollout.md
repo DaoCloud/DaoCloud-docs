@@ -30,7 +30,7 @@
 
 4. 填写高级配置，选择开启 `启用网格`
 
-    ![application03](../images/application03app.png)
+    ![application03](../images/application03.png)
 
 5. 创建完成后会在 `概览`->`原生应用` 生成一条应用记录。
 
