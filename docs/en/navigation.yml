@@ -247,12 +247,13 @@ nav:
                   - Competitiveness: kairship/intro/benefits.md
                   - Basic Concepts: kairship/intro/concepts.md
                   - FAQs: kairship/intro/faq.md
+                  - Offline Upgrade: kairship/intro/offline-upgrade.md
                   - Multicloud Release Notes: kairship/intro/release-notes.md
+              - Workspaces: kairship/workspace.md
               - Multicloud Instances:
                   - Overview: kairship/instance/README.md
                   - Add Instance: kairship/instance/add.md
                   - Delete Instance: kairship/instance/delete.md
-                  - Workspaces: kairship/instance/workspace.md
               - Worker Clusters: kairship/cluster.md
               - Multicloud Workloads:
                   - Create Deployment from Image: kairship/workload/deployment.md
@@ -275,12 +276,12 @@ nav:
               - Policy Management:
                   - Propagation Policy: kairship/policy/propagation.md
                   - Override Policy: kairship/policy/override.md
-              - Bind Workspace: kairship/workspace.md
               - Failover:
                   - Overview: kairship/failover/failover.md
                   - Optimize Failover Latency Sensitivity: kairship/failover/optimization-failover.md
               - Best Practices:
                   - DCE 4.0 to DCE 5.0: kairship/best-practice/one-click-conversion.md
+                  - Cross-cluster autoscaling: kairship/best-practice/fhpa.md
           - Container Registry:
               - Intro:
                   - What is Container Registry: kangaroo/intro/index.md
@@ -935,7 +936,7 @@ nav:
                   - Access Key: ghippo/user-guide/personal-center/accesstoken.md
                   - Language Settings: ghippo/user-guide/personal-center/language.md
               - Permissions:
-                  - Container Management Permissions: kpanda/user-guide/permissions/permission-brief.md
+                  - Container Management Permissions: ghippo/permissions/kpanda.md
                   - Microservice Permissions: ghippo/permissions/skoala.md
                   - Workbench Permissions: ghippo/permissions/amamba.md
                   - Service Mesh Permissions: ghippo/permissions/mspider.md
