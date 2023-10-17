@@ -25,7 +25,6 @@
     ![负载使用](./images/workload_iluvatargpu_userguide.jpg)
     > 如果上述值配置的有问题则会出现调度失败，资源分配不了的情况。
 
-
 ### 使用 YAML 配置
 
 创建工作负载申请 GPU 资源，在资源申请和限制配置中增加 `iluvatar.ai/vcuda-core: 1`、`iluvatar.ai/vcuda-memory: 200` 参数配置应用使用物理卡的资源。

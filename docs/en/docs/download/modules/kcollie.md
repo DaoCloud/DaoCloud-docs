@@ -6,9 +6,10 @@ This page provides offline installation packages for different versions of the C
 
 | Version     | Architecture | File Size | Package         | Checksum File           | Updated Date |
 |------------|--------------|-----------|----------|----------------------|--------------|
+| [v0.5.0](../../kpanda/intro/release-notes.md) | AMD 64 | 216.64MB | [:arrow_down: kcollie_v0.5.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcollie_v0.5.0_amd64.tar) | [:arrow_down: kcollie_v0.5.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcollie_v0.5.0_amd64_checksum.sha512sum) | 2023-09-01 |
 | [v0.4.0](../../dce/dce-rn/20230731.md) | AMD64        | 205.11 MB    | [:arrow_down: kcollie_v0.4.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcollie_v0.4.0_amd64.tar) | [:arrow_down: kcollie_v0.4.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcollie_v0.4.0_amd64_checksum.sha512sum) | 2023-08-08   |
 
-## Checksum
+## Verification
 
 To verify the integrity of the downloaded offline installation package and checksum file,
 take `v0.4.0_amd64` as an example, run the following command in the directory:
@@ -24,6 +25,8 @@ kcollie_v0.4.0_amd64.tar: ok
 ```
 
 ## Installation
+
+Refer to the [Offline Upgrade Cluster Inspection Module](../../kpanda/user-guide/inspect/offline-upgrade.md) for installation instructions.
 
 If this is your first installation, please [apply for a free trial](../../dce/license0.md)
 or contact us for authorization: email info@daocloud.io or call 400 002 6898.

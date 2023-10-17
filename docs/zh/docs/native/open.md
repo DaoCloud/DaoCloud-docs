@@ -182,6 +182,10 @@
 
     [ChaosMeta](https://github.com/traas-stack/chaosmeta) 设计上是包含了完整混沌工程生命周期的一站式演练综合解决方案，涵盖了准入检查、流量注入、故障注入、故障度量、恢复度量和故障恢复等多个阶段。现阶段，ChaosMeta 已经对外开放了丰富的故障注入功能，不仅支持单机部署和 Kubernetes 云原生部署，还支持 Kubernetes 本身和 Operator 等云原生故障场景的实验。
 
+- [Cilium：基于 eBPF 的 CNI 项目 Cilium 升级成为 CNCF 的毕业项目](https://mp.weixin.qq.com/s/zMy5efZc0kf3UWpNAxC8_w)
+
+    Cilium 是一种基于 eBPF 的开源云原生解决方案，用于提供、保护和观测工作负载之间的网络连接。成为 CNCF 毕业项目不是终点，而是创建 Cilium 生态系统的开始。Cilium 计划对非 Kubernetes 工作负载（如裸机和虚拟机）提供支持。
+
 - [Cilium CNI 插件 v1.14.0 发布（CNCF 项目）](https://github.com/cilium/cilium/releases/tag/v1.14.0)
 
     版本特性：支持双向认证、支持以 DaemonSet 的形式部署 Envoy、支持对节点间的流量进行 WireGuard 加密并且可以在 WireGuard 上使用 Layer 7 策略、Cilium Mesh可以在云端和异构工作负载之间提供一致的网络连接、支持通过 Layer 2 传输协议向本地网络广播外部 IP 地址、支持多个 IPAM 池、BIG TCP 支持 IPv4。
@@ -1041,6 +1045,10 @@
 
     该版本主要新特性：允许用户以完全零信任的方式定义和执行基于 HTTP 路由的授权策略；支持使用 Kubernetes Gateway API 进行配置；初始化容器增加对 `iptables-nft` 的支持。
 
+- [Litmus：混沌工程框架 3.0 发布（CNCF 项目）](https://github.com/litmuschaos/litmus/releases/tag/3.0.0)
+
+    版本特性：改进用户体验、增加混沌基础设施组织的环境、新增用于简化实验调整的 Chaos Studio、弹性探针现在支持即插即用、支持 MongoDB 高可用性。
+
 - [Litmus 混沌工程框架 v2.14.0 发布（CNCF 项目）](https://github.com/litmuschaos/litmus/releases/tag/2.14.0)
 
     该版本主要新特性：在 DNS 实验中添加对 containerd CRI 支持、支持在service mesh 环境下执行 http-chaos 实验、在网络实验中增加源和目的端口支持、支持为混沌运行器的 pod 提供自定义标签、优化混沌结果中探针状态模式的描述。
@@ -1166,6 +1174,10 @@
 - [OPA 通用策略引擎 v0.41.0 发布（CNCF 项目）](https://github.com/open-policy-agent/opa/releases/tag/v0.41.0)
 
     该版本主要新特性：新增一组内置函数用于验证、解析和查证 GraphQL query 和模式；内置函数声明支持通过元数据指定函数参数和返回值的名称和描述；支持根据 OCI 工件的摘要跳过捆绑重载；捆绑签名中删除空清单；单位解析和 token 更新等。
+
+- [OpenClusterManagement（OCM）多集群管理平台 v0.12.0 发布（CNCF 项目）](https://github.com/open-cluster-management-io/ocm/releases/tag/v0.12.0)
+
+    版本特性：新增插件管理功能门、支持 hub 集群和托管集群之间的代理、支持托管模式下的单例、添加 ClusterAnnotations 支持、增加 issue 和 PR 的过期检查。
 
 - [OpenClusterManagement（OCM）多集群管理平台 v0.7 发布（CNCF 项目）](https://mp.weixin.qq.com/s/EQgdnZVOqzfvuxOzg-Q0cQ)
 
@@ -1523,11 +1535,15 @@
 
 ### V
 
-- [Vcluster 虚拟 Kubernetes 集群实现方案 v0.15.0 发布](https://github.com/vmware-tanzu/velero/releases/tag/v1.11.0)
+- [vcluster 虚拟 Kubernetes 集群实现方案 v0.16.0 发布](https://github.com/loft-sh/vcluster/releases/tag/v0.16.0)
+
+    版本特性：支持 Kubernetes v1.28、允许用户自定义的 Pod 条件和节点污点、支持不使用模版创建 vcluster、添加 vcluster 和 vcluster cli 二进制 sbom、改进 coredns 集成。
+
+- [vcluster 虚拟 Kubernetes 集群实现方案 v0.15.0 发布](https://github.com/vmware-tanzu/velero/releases/tag/v1.11.0)
 
     版本特性：允许用户在 vcluster 内访问所有主机集群服务、新增内置指标服务器、通用同步功能支持从主机集群导入集群范围资源。
 
-- [Vcluster 虚拟 Kubernetes 集群实现方案 v0.13.0 发布](https://github.com/loft-sh/vcluster/releases/tag/v0.13.0)
+- [vcluster 虚拟 Kubernetes 集群实现方案 v0.13.0 发布](https://github.com/loft-sh/vcluster/releases/tag/v0.13.0)
 
     该版本主要新特性：增加日志和备份功能、增加具有外部数据存储的 k3s 的高可用性支持、vcluster 调度器开启时自动同步 CSI 资源。
 

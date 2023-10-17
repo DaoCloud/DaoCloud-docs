@@ -4,8 +4,8 @@
 
 # first person is the doc owner, second person is the product owner
 
-docs/en/docs/amamba/* @Michelle951 @jzhupup
-docs/zh/docs/amamba/* @Michelle951 @jzhupup
+docs/en/docs/amamba/* @jzhupup
+docs/zh/docs/amamba/* @jzhupup
 
 docs/en/docs/blogs/* @windsonsea
 docs/zh/docs/blogs/* @windsonsea
@@ -16,35 +16,35 @@ docs/zh/docs/community/* @windsonsea
 docs/en/docs/dce/* @windsonsea
 docs/zh/docs/dce/* @windsonsea
 
-docs/en/docs/download/* @windsonsea @yitingdc
-docs/zh/docs/download/* @windsonsea @yitingdc
+docs/en/docs/download/* @hexiaodai @yitingdc
+docs/zh/docs/download/* @hexiaodai @yitingdc
 
-docs/en/docs/ghippo/* @windsonsea @yitingdc @lemontrees123
-docs/zh/docs/ghippo/* @windsonsea @yitingdc @lemontrees123
+docs/en/docs/ghippo/* @yitingdc @lemontrees123
+docs/zh/docs/ghippo/* @yitingdc @lemontrees123
 
-docs/en/docs/insight/* @windsonsea @justedennnnn
-docs/zh/docs/insight/* @windsonsea @justedennnnn
+docs/en/docs/insight/* @justedennnnn
+docs/zh/docs/insight/* @justedennnnn
 
-docs/en/docs/install/* @windsonsea @jzhupup
-docs/zh/docs/install/* @windsonsea @jzhupup
+docs/en/docs/install/* @jzhupup
+docs/zh/docs/install/* @jzhupup
 
-docs/en/docs/kairship/* @Michelle951 @wlp1153468871
-docs/zh/docs/kairship/* @Michelle951 @wlp1153468871
+docs/en/docs/kairship/*  @wlp1153468871
+docs/zh/docs/kairship/*  @wlp1153468871
 
-docs/en/docs/kangaroo/* @windsonsea @lemontrees123
-docs/zh/docs/kangaroo/* @windsonsea @lemontrees123
+docs/en/docs/kangaroo/* @lemontrees123
+docs/zh/docs/kangaroo/* @lemontrees123
 
-docs/en/docs/kant/* @windsonsea @zhiyingfang2022
-docs/zh/docs/kant/* @windsonsea @zhiyingfang2022
+docs/en/docs/kant/* @zhiyingfang2022
+docs/zh/docs/kant/* @zhiyingfang2022
 
-docs/en/docs/kpanda/* @Michelle951 @yanrongshi
-docs/zh/docs/kpanda/* @Michelle951 @yanrongshi
+docs/en/docs/kpanda/*  @yanrongshi
+docs/zh/docs/kpanda/*  @yanrongshi
 
-docs/en/docs/middleware/* @Michelle951 @huan555
-docs/zh/docs/middleware/* @Michelle951 @huan555
+docs/en/docs/middleware/* @huan555
+docs/zh/docs/middleware/* @huan555
 
-docs/en/docs/mspider/* @windsonsea @samzong @kebe7jun
-docs/zh/docs/mspider/* @windsonsea @samzong @kebe7jun
+docs/en/docs/mspider/* @samzong @kebe7jun
+docs/zh/docs/mspider/* @samzong @kebe7jun
 
 docs/en/docs/native/* @Jeanine-tw
 docs/zh/docs/native/* @Jeanine-tw
@@ -52,11 +52,17 @@ docs/zh/docs/native/* @Jeanine-tw
 docs/en/docs/network/* @Jeanine-tw
 docs/zh/docs/network/* @Jeanine-tw
 
-docs/en/docs/skoala/* @Michelle951 @Adityayxt
-docs/zh/docs/skoala/* @Michelle951 @Adityayxt
+docs/en/docs/skoala/*  @Adityayxt
+docs/zh/docs/skoala/*  @Adityayxt
 
-docs/en/docs/storage/* @windsonsea @qiupingdai
-docs/zh/docs/storage/* @windsonsea @qiupingdai
+docs/en/docs/storage/* @qiupingdai
+docs/zh/docs/storage/* @qiupingdai
+
+docs/en/docs/videos/* @windsonsea
+docs/zh/docs/videos/* @windsonsea
+
+docs/en/docs/virtnest/* @wlp1153468871
+docs/zh/docs/virtnest/* @wlp1153468871
 
 # code
 

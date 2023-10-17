@@ -8,7 +8,7 @@ This article explains how to create an Ubuntu work cluster on an existing CentOS
 
 ## Prerequisites
 
-- A fully deployed DCE 5.0 Enterprise Edition in offline mode, with all components running. For deployment instructions, refer to the documentation [Offline Installation of DCE 5.0 Enterprise Edition](../../install/commercial/start-install.md).
+- A fully deployed DCE 5.0 Enterprise Package in offline mode, with all components running. For deployment instructions, refer to the documentation [Offline Installation of DCE 5.0 Enterprise Package](../../install/commercial/start-install.md).
 
 ## Procedure
 

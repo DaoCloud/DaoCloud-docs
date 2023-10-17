@@ -8,6 +8,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
     Kubeflow-chart customizes the way Kubeflow is installed using the Helm Chart approach, making it easy to run a single command to complete Kubeflow and its dependencies. Alauda MLOps builds on this foundation, supporting non-intrusive visual workflow orchestration of development environments, visual distribution, multi-tenancy and quotas, virtual GPUs, and integrated MLFlow, Alauda MLOps builds on this foundation with support for non-intrusive visual workflow orchestration development environments, visual distribution, multi-tenancy and quota, virtual GPUs, and integrated MLFlow.
 
+- [AppViewX introduces KUBE+ - a certificate lifecycle management solution built to secure Kubernetes environments](https://appviewx.com/blogs/introducing-appviewx-kube-a-certificate-lifecycle-management-solution-built-to-secure-your-kubernetes-environments/)
+
+    AppViewX KUBE+ provides a unified visual interface for controlling and managing certificates. Specific features include: auto-discovery of all SSL/TLS certificates, maintenance of an up-to-date certificate inventory, visibility into certificate metadata, end-to-end certificate lifecycle automation, a powerful policy and compliance engine, extensive native integration, and more.
+
 - [ARMO Platform, Kubernetes Security Platform, introduces vulnerability analysis and assessment capabilities based on eBPF technology](https://www.armosec.io/blog/kubernetes-vulnerability-relevancy-and-prioritization/)
 
     This feature analyzes and evaluates vulnerabilities on the Kubernetes platform, identifies and prioritizes vulnerabilities, and provides users with targeted remediation recommendations. Among other things, relevance and prioritization allows users to deprioritize vulnerabilities in unused packages and components to focus on addressing vulnerabilities that pose a greater threat to the cluster.
@@ -652,6 +656,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
     Rainbond Enterprise Package has a global observable center for monitoring, debugging, and analyzing infrastructure and application services running in Kubernetes clusters and the rainbond platform. In addition, it also provides solutions for IT business system migration to the localized Cintron environment, supports full-link grayscale release and cluster patrol, built-in WAF firewall and operation audit features, supports private deployment of application stores, etc.
 
+- [Red Hat OpenShift GitOps 1.10 released](https://cloud.redhat.com/blog/whats-new-in-red-hat-openshift-gitops-1.10)
+
+    Support for Argo CD 2.8, including the introduction of the ApplicationSet plugin generator, removal of the legacy Configuration Management Plugin (CMP), ignoring resource updates, and other new features; the GitOps documentation will be moved from a sub-section of the OpenShift documentation (currently under CI/CD) to a standalone section; allows dynamic scaling of the application controllers; and automated installation of the Console Dashboard.
+
 - [Red Hat container image repository Red Hat Quay v3.9.0 released](https://cloud.redhat.com/blog/red-hat-quay-3.9-is-generally-available)
 
     Updates: Increased coverage of container image vulnerability reports, audit log integration with external log management system Splunk, provides a scalable way to track storage consumption for large numbers of tenants in the registry, automated offsite backup capabilities.
@@ -830,6 +838,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Tencent Cloud K8s release version TKE August update](https://mp.weixin.qq.com/s/t6yGrxcn4JZdd9877raXhA)
   
      The updates include: Added SecurityGroupPolicy enhancement component, which supports binding security groups for pods matching policies; supports business pods to use Service Account Token to access cloud resources such as CVM and VPC; supports modifying CPU and memory requests without restarting pods /limit value; support node/workload resource insight capabilities; add Request intelligent recommendation function; add native node-specific scheduler; optimize native node initialization process.
+
+- [Tetrate Releases Tetrate Enterprise Envoy Gateway for Enterprise Cloud Native Services](https://mp.weixin.qq.com/s/XV7b6W3GiKbamuTabypIBQ)
+
+    Built on the open source Envoy Gateway, the Tetrate Enterprise Envoy Gateway supports CVE and escalation management, FIPS-compliant builds for government environments, and support for Envoy features such as global rate limiting, application authentication processing for OIDC and OAuth2.
 
 - [Tetrate Launches TSE, a service mesh Solution Designed for Amazon EKS](https://mp.weixin.qq.com/s/Q4qTLOv8kNn7lf0flHCOzg)
 

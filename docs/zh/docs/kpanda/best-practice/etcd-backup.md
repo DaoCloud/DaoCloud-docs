@@ -4,7 +4,8 @@
 
 !!! note
 
-    - DCE 5.0 ETCD 备份还原仅限于针对同一集群（节点数和 IP 地址没有变化）进行备份与还原。例如，备份了 A 集群 的 etcd 数据后，只能将备份数据还原到 A 集群中，不能还原到 B 集群。
+    - DCE 5.0 ETCD 备份还原仅限于针对同一集群（节点数和 IP 地址没有变化）进行备份与还原。
+      例如，备份了 A 集群 的 etcd 数据后，只能将备份数据还原到 A 集群中，不能还原到 B 集群。
     - 对于跨集群的备份与还原，建议使用[应用备份还原](../user-guide/backup/deployment.md)功能。
     - 首先创建备份策略，备份当前状态，建议参考[ETCD 备份](../user-guide/backup/etcd-backup.md)功能。
 
@@ -25,7 +26,9 @@
 
 ### 安装 etcdbrctl 工具
 
-为了实现 ETCD 数据备份还原，需要在上述任意一个 Kubernetes 节点上安装 etcdbrctl 开源工具。此工具暂时没有二进制文件，需要自行编译。编译方式请参考：<https://github.com/gardener/etcd-backup-restore/blob/master/doc/development/local_setup.md#build>。
+为了实现 ETCD 数据备份还原，需要在上述任意一个 Kubernetes 节点上安装 etcdbrctl 开源工具。
+此工具暂时没有二进制文件，需要自行编译。编译方式请参考
+[Gardener / etcd-backup-restore 本地开发文档](https://github.com/gardener/etcd-backup-restore/blob/master/docs/development/local_setup.md#build)。
 
 安装完成后用如下命令检查工具是否可用：
 
@@ -57,9 +60,11 @@ INFO[0000] Go OS/Arch: linux/amd64
 
 ### 关闭集群
 
-在备份之前，必须要先关闭集群。默认集群 `etcd` 和 `kube-apiserver` 都是以静态 Pod 的形式启动的。这里的关闭集群是指将静态 Pod manifest 文件移动到 `/etc/kubernetes/manifest` 目录外，集群就会移除对应 Pod，达到关闭服务的作用。
+在备份之前，必须要先关闭集群。默认集群 `etcd` 和 `kube-apiserver` 都是以静态 Pod 的形式启动的。
+这里的关闭集群是指将静态 Pod manifest 文件移动到 `/etc/kubernetes/manifest` 目录外，集群就会移除对应 Pod，达到关闭服务的作用。
 
-1. 首先删除之前的备份数据，移除数据并非将现有 etcd 数据删除，而是指修改 etcd 数据目录的名称。等备份还原成功之后再删除此目录。这样做的目的是，如果 etcd 备份还原失败，还可以尝试还原当前集群。此步骤每个节点均需执行。
+1. 首先删除之前的备份数据，移除数据并非将现有 etcd 数据删除，而是指修改 etcd 数据目录的名称。
+   等备份还原成功之后再删除此目录。这样做的目的是，如果 etcd 备份还原失败，还可以尝试还原当前集群。此步骤每个节点均需执行。
 
     ```shell
     rm -rf /var/lib/etcd_bak

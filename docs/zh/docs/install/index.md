@@ -41,7 +41,7 @@ DCE 5.0 大体分为两个版本：社区版和商业版。
           <li><a href="https://docs.daocloud.io/skoala/intro/index.html"><span style="white-space: nowrap;">微服务引擎</span></a></li>
           <li><a href="https://docs.daocloud.io/mspider/intro/index.html">服务网格</a></li>
           <li><a href="https://docs.daocloud.io/middleware/index.html"><span style="white-space: nowrap;">精选中间件</span></a></li>
-          <li><a href="https://docs.daocloud.io/kangaroo/index.html">镜像仓库</a></li>
+          <li><a href="https://docs.daocloud.io/kangaroo/intro/index.html">镜像仓库</a></li>
         </ul>
       </td>
       <td>

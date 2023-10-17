@@ -1,6 +1,6 @@
 # Offline Upgrade of Container Management Module
 
-This page explains how to install or upgrade the Container Management Module after downloading it from the [Download Center](../../download/index.md).
+This page explains how to install or upgrade the Container Management Module after [downloading it from the Download Center](../../download/modules/kpanda.md).
 
 !!! info
 

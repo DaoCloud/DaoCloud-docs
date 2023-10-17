@@ -63,7 +63,6 @@ jobs:
             corrupted-hyperlink
           assignees: |
             windsonsea
-            Michelle951
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_BODY_PATH: ./issue-body.txt

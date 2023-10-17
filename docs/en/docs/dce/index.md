@@ -29,7 +29,7 @@ and unleashes cloud-native productivity.
 - :material-microsoft-azure-devops: **Workbench** [CI/CD pipeline](../amamba/intro/index.md)
 - :octicons-container-16: **Container Management** [Cluster/node/workloads](../kpanda/intro/index.md)
 - :material-cloud-check: **Multicloud Management** [Multicloud instance/workload/policy](../kairship/intro/index.md)
-- :material-warehouse: **Container Registry** [Integrate and host registries](../kangaroo/index.md)
+- :material-warehouse: **Container Registry** [Integrate and host registries](../kangaroo/intro/index.md)
 - :material-dot-net: **Network** [Multi-CNI fusion solution](../network/intro/index.md)
 - :floppy_disk: **Storage** [Containerized storage](../storage/index.md)
 - :material-train-car-container: **VM Containers** [Containerized virtual machine](../virtnest/intro/index.md)
@@ -143,7 +143,7 @@ day by day, making things better over time.
      progressive delivery capability systems, achieving more refined management and operation of applications.
 
      **Modules involved**: [Global Management](../ghippo/intro/index.md), [Container Management](../kpanda/intro/index.md),
-     [Workbench](../amamba/intro/index.md), [container registry](../kangaroo/index.md), [cloud native network](../network/intro/index.md),
+     [Workbench](../amamba/intro/index.md), [container registry](../kangaroo/intro/index.md), [cloud native network](../network/intro/index.md),
      [cloud native storage](../storage/index.md)
 
     ![app delivery](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/06appdeliv.jpg)

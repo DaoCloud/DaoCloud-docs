@@ -12,7 +12,7 @@
 
 1. 准备两个代码仓库，其中一个作为存业务代码的仓库，一个作为应用的配置文件（yaml）仓库。
 
-    ```bash
+    ```console
     可以参考 GitHub 中的配置：
    
     业务代码：<https://github.com/jzhupup/dao-2048.git>
@@ -35,7 +35,7 @@
 
     ??? note "点击查看流水线 Jenkinsfile 文件，可根据实际需要参数"
 
-        ```yaml
+        ```groovy
         pipeline {
           agent {
             node {

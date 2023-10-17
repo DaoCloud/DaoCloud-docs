@@ -40,6 +40,7 @@ nav:
                 - 安装排障: install/faq.md
             - 在不同 K8s 发行版上安装:
                 - 在 OpenShift OCP 上安装: install/k8s-install/ocp-install-dce5.0.md
+                - 在阿里云 ECS 上安装: install/k8s-install/ecs-install-dce5.0.md
             - 在不同操作系统上安装:
                 - 在 UOS V20 (1020a): install/os-install/uos-v20-install-dce5.0.md
                 - Oracle Linux R9/R8 U1 操作系统: install/os-install/oracleLinux-install-dce5.0.md
@@ -106,18 +107,18 @@ nav:
                   - 集成工具链: amamba/user-guide/tools/integrated-toolchain.md
                   - 管理工具链实例: amamba/user-guide/tools/toolchain-instances.md
               - 常见问题:
-                  - 流水线相关问题: amamba/intro/faq-jenkins.md
-                  - GitOps 相关问题: amamba/intro/faq-gitops.md
+                  - 流水线相关问题: amamba/faq/faq-jenkins.md
+                  - GitOps 相关问题: amamba/faq/faq-gitops.md
               - 最佳实践:
                   - 快速创建流水线: amamba/quickstart/deploy-pipeline.md
-                  - 基于流水线 + GitOps 实现CI/CD: amamba/quickstart/argocd-jenkins.md
+                  - 流水线+GitOps实现CI/CD: amamba/quickstart/argocd-jenkins.md
                   - 使用流水线实现代码扫描: amamba/quickstart/scan-with-pipeline.md
-                  - 集成 Harbor 实现镜像安全扫描: amamba/quickstart/scan-with-harbor.md
-                  - 基于 Argo Rollout 实现渐进式灰度发布: amamba/quickstart/argocd-rollout.md
+                  - 集成Harbor实现镜像安全扫描: amamba/quickstart/scan-with-harbor.md
+                  - 基于Argo Rollout实现灰度发布: amamba/quickstart/argocd-rollout.md
                   - 在指定的节点上运行流水线: amamba/quickstart/pipeline-on-node.md
                   - Jenkins 场景配置: amamba/quickstart/scenarios-config.md
-                  - 在 Jenkins 中使用自定义工具链: amamba/quickstart/jenkins-custom.md
-                  - Jenkins 高可用方案: amamba/quickstart/jenkins-HA.md
+                  - 在Jenkins中使用自定义工具链: amamba/quickstart/jenkins-custom.md
+                  - Jenkins高可用方案: amamba/quickstart/jenkins-HA.md
       - 容器:
           - 容器管理:
               - 介绍:
@@ -244,7 +245,7 @@ nav:
                   - GPU 配额管理: kpanda/user-guide/gpu/vgpu_quota.md
               - 最佳实践:
                   - 对 etcd 进行备份还原: kpanda/best-practice/etcd-backup.md
-                  - 对 MySQL 应用及数据进行跨集群备份恢复: kpanda/best-practice/backup-mysql-on-nfs.md
+                  - 跨集群备份恢复 MySQL 应用及数据: kpanda/best-practice/backup-mysql-on-nfs.md
                   - 加固自建工作集群: kpanda/best-practice/hardening-cluster.md
                   - 工作集群离线升级指南: kpanda/best-practice/update-offline-cluster.md
                   - 为工作集群添加异构节点: kpanda/best-practice/multi-arch.md
@@ -260,6 +261,7 @@ nav:
                   - 产品优势: kairship/intro/benefits.md
                   - 基本概念: kairship/intro/concepts.md
                   - 常见问题: kairship/intro/faq.md
+                  - 离线升级: kairship/intro/offline-upgrade.md
                   - Release Notes: kairship/intro/release-notes.md
               - 工作空间: kairship/workspace.md
               - 多云实例:
@@ -293,13 +295,13 @@ nav:
                   - 优化故障转移延迟灵敏度: kairship/failover/optimization-failover.md
               - 最佳实践:
                   - 一键转换 DCE 4.0 到 5.0 应用: kairship/best-practice/one-click-conversion.md
+                  - 跨集群弹性伸缩: kairship/best-practice/fhpa.md
           - 镜像仓库:
               - 介绍:
-                  - 什么是镜像仓库: kangaroo/index.md
-                  - Release Notes: kangaroo/release-notes.md
-                  - 镜像仓库 FAQ: kangaroo/faq.md
-              - 升级:
-                  - 离线升级镜像仓库: kangaroo/upgrade/upgrade.md
+                  - 什么是镜像仓库: kangaroo/intro/index.md
+                  - Release Notes: kangaroo/intro/release-notes.md
+                  - 镜像仓库 FAQ: kangaroo/intro/faq.md
+                  - 离线升级镜像仓库: kangaroo/intro/upgrade.md
               - 快速入门:
                   - 管理外部镜像仓库: kangaroo/quickstart/registry-in-one.md
                   - 推送镜像: kangaroo/quickstart/push.md
@@ -339,8 +341,15 @@ nav:
                   - 网络组件: network/modules/modules.md
               - 网络规划:
                   - 网卡规划: network/plans/ethplan.md
-                  - 网络规划: network/plans/netplan.md
-              - 网络性能测试:
+                  - 网络规划: network/plans/netplan.md     
+              - 网络配置: 
+                  - IP 池管理: 
+                    - 创建 IP 池: network/modules/spiderpool/createpool.md
+                    - IP 池场景说明: network/modules/spiderpool/ippoolusage.md
+                  - IP 池使用:
+                    - 工作负载使用 IP 池: network/modules/spiderpool/usage.md
+                    - 第三方工作负载使用 IP 池: network/modules/spiderpool/cutomizedusage.md 
+              - 网络性能:
                   - 网络 CNI 性能测试报告: network/performance/cni-performance.md
                   - Spiderpool 性能测试报告: network/performance/spiderpool-performance.md
                   - Cilium 性能测试报告:
@@ -349,6 +358,20 @@ nav:
                       - Cilium 在 nodePort 场景下的访问加速测试: network/performance/cilium-performance/cilium-nodeport.md
                       - Cilium 基于 eBPF 技术实施 Pod 带宽管控场景下的性能测试: network/performance/cilium-performance/cilium-bandwidth.md
                   - 基于 eBPF 技术实施网络策略场景下的性能测试: network/performance/ebpf-performance.md
+              - 集成 Spiderpool:
+                  - Release Notes: network/modules/spiderpool/releasenotes.md
+                  - 介绍: network/modules/spiderpool/index.md
+                  - 安装: network/modules/spiderpool/install.md
+                  - 升级: network/modules/spiderpool/upgrade.md                 
+                  - 配置参考: network/modules/spiderpool/config.md
+                  - 常用命令: network/modules/spiderpool/command.md  
+                  - 公有云适配:
+                    - 在阿里云环境运行: network/modules/spiderpool/alibabacloud.md 
+              - 集成 sriov-network-operator:
+                  - 介绍: network/modules/sriov-network-operator/index.md
+                  - 安装: network/modules/sriov-network-operator/install.md
+                  - SR-IOV: network/modules/multus-underlay/sriov.md
+                  - DPDK: network/modules/multus-underlay/dpdk.md          
               - 集成 Calico:
                   - 介绍: network/modules/calico/index.md
                   - 安装参数配置: network/modules/calico/install.md
@@ -391,28 +414,11 @@ nav:
                   - 介绍: network/modules/multus-underlay/index.md
                   - 安装: network/modules/multus-underlay/install.md
                   - MacVLAN: network/modules/multus-underlay/macvlan.md
-                  - SR-IOV: network/modules/multus-underlay/sriov.md
-                  - DPDK: network/modules/multus-underlay/dpdk.md
                   - NmState: network/modules/multus-underlay/nmstat.md
-              - 集成 Spiderpool:
-                  - Release Notes: network/modules/spiderpool/releasenotes.md
-                  - 介绍: network/modules/spiderpool/index.md
-                  - 安装: network/modules/spiderpool/install.md
-                  - 升级: network/modules/spiderpool/upgrade.md
-                  - 创建 IP 池: network/modules/spiderpool/createpool.md
-                  - IP 池场景说明: network/modules/spiderpool/ippoolusage.md
-                  - 工作负载使用 IP 池: network/modules/spiderpool/usage.md
-                  - 第三方工作负载使用 IP 池: network/modules/spiderpool/cutomizedusage.md
-                  - 在阿里云环境运行: network/modules/spiderpool/alibabacloud.md
-                  - 配置参考: network/modules/spiderpool/config.md
-                  - 常用命令: network/modules/spiderpool/command.md
               - 集成 Submariner:
                   - 介绍: network/modules/submariner/index.md
                   - 安装: network/modules/submariner/install.md
                   - 使用说明: network/modules/submariner/usage.md
-              - 集成 sriov-network-operator:
-                  - 介绍: network/modules/sriov-network-operator/index.md
-                  - 安装: network/modules/sriov-network-operator/install.md
           - 云原生存储:          
               - 介绍:
                   - 什么是云原生存储: storage/index.md
@@ -752,6 +758,7 @@ nav:
                   - 使用网格完成定向服务访问限制: mspider/best-practice/use-egress-and-authorized-policy.md
                   - 支持接入自定义工作负载类型: mspider/best-practice/use-custom-workloads.md
                   - 优化 Sidecar 资源占用问题: mspider/best-practice/optimize-sidecar-resource.md
+                  - 多云互联网格的精准控制: mspider/best-practice/multinet-control.md
       - 数据服务:
           - 中间件:
               - 介绍:
@@ -889,12 +896,28 @@ nav:
                   - 产品优势: kant/intro/benefits.md
                   - 应用场景: kant/intro/use-cases.md
                   - 基本概念: kant/intro/concepts.md
+                  - 离线升级云边协同: kant/intro/offline-upgrade.md
+              - 边缘单元:
+                  - 创建边缘单元: kant/user-guide/edge-unit/create-unit.md
+                  - 管理边缘单元: kant/user-guide/edge-unit/manage-unit.md
               - 边缘节点:
                   - 边缘节点概述: kant/user-guide/node/index.md
                   - 边缘节点接入要求: kant/user-guide/node/join-rqmt.md
                   - 批量注册边缘节点: kant/user-guide/node/batch-registration.md
                   - 纳管边缘节点: kant/user-guide/node/managed-node.md
                   - 批量升级边缘节点: kant/user-guide/node/batch-upgrade.md
+              - 边缘节点组:
+                  - 创建边缘节点组: kant/user-guide/node-group/create-group.md
+                  - 管理边缘节点组: kant/user-guide/node-group/manage-group.md
+              - 终端设备:
+                  - 介绍: kant/user-guide/device/index.md
+                  - 创建终端设备: kant/user-guide/device/create-device.md
+                  - 管理终端设备: kant/user-guide/device/manage-device.md
+              - 边缘应用:
+                  - 边缘应用概述: kant/user-guide/edge-app/overview.md
+                  - 创建工作负载: kant/user-guide/edge-app/create-app.md
+                  - 创建批量工作负载: kant/user-guide/edge-app/create-batch-app.md
+                  - 部署批量工作负载: kant/user-guide/edge-app/deploy.md
               - 边云消息:
                   - 边云消息概述: kant/user-guide/route/index.md
                   - 创建消息路由: kant/user-guide/route/create-route.md
@@ -978,25 +1001,54 @@ nav:
                   - 登录报错 401 或 403: ghippo/troubleshooting/ghippo02.md
                   - keycloak 无法启动: ghippo/troubleshooting/ghippo03.md
   - 视频教程:
-      - 介绍: videos/index.md
-      - 安装教程: videos/install.md
-      - 最佳实践: videos/use-cases.md
-      - 容器管理: videos/kpanda.md
-      - 全局管理: videos/ghippo.md
-      - 可观测性: videos/insight.md
+      - 索引: videos/index.md
+      - 入门:
+          - 安装教程: videos/install.md
+          - 场景化视频: videos/use-cases.md
       - 应用工作台: videos/amamba.md
-      - 多云编排: videos/kairship.md
-      - 微服务引擎: videos/skoala.md
-      - 服务网格: videos/mspider.md
+      - 容器:
+          - 容器管理: videos/kpanda.md
+          - 多云编排: videos/kairship.md
+          - 镜像仓库: videos/kangaroo.md
+          - 容器网络: videos/network.md
+      - 可观测性: videos/insight.md
+      - 微服务:
+          - 微服务引擎: videos/skoala.md
+          - 服务网格: videos/mspider.md
       - 中间件: videos/mcamel.md
-      - 镜像仓库: videos/kangaroo.md
-      - 容器网络: videos/network.md
       - 云边协同: videos/kant.md
+      - 全局管理: videos/ghippo.md
   - 下载中心:
       - DaoCloud Enterprise 5.0:
-          - 索引列表: download/index.md
-          - 下载 DCE 5.0 社区版: download/free/dce5-installer-v0.11.0.md
-          - 下载 DCE 5.0 商业版: download/business/dce5-installer-v0.11.0.md
+          - 导览页: download/index.md
+          - 下载 DCE 5.0 社区版: download/free/dce5-installer-history.md
+          - 下载 DCE 5.0 商业版: download/business/dce5-installer-history.md
+          - 下载 Addon 离线包: download/addon/history.md
+          - 下载子模块:
+              - 应用工作台: download/modules/amamba.md
+              - 容器:
+                  - 容器管理: download/modules/kpanda.md
+                  - 集群巡检: download/modules/kcollie.md
+                  - 应用备份: download/modules/kcoral.md
+                  - 安全管理: download/modules/dowl.md
+                  - 网络模块: download/modules/spidernet.md
+              - 多云编排: download/modules/kairship.md
+              - 镜像仓库: download/modules/kangaroo.md
+              - 可观测性: download/modules/insight.md
+              - 服务网格: download/modules/mspider.md
+              - 中间件:
+                  - Elasticsearch: download/modules/middleware/elasticsearch.md
+                  - Kafka: download/modules/middleware/kafka.md
+                  - MinIO: download/modules/middleware/minio.md
+                  - MongoDB: download/modules/middleware/mongodb.md
+                  - MySQL: download/modules/middleware/mysql.md
+                  - PostgreSQL: download/modules/middleware/postgresql.md
+                  - RabbitMQ: download/modules/middleware/rabbitmq.md
+                  - Redis: download/modules/middleware/redis.md
+              - 云边协同: download/modules/kant.md
+              - 管理:
+                  - 全局管理: download/modules/ghippo.md
+                  - 运营管理: download/modules/gmagpie.md
   - 免费体验:
       - 体验社区版: trial/index.md
   - 博客:
@@ -1056,6 +1108,7 @@ nav:
       - Merbridge: community/merbridge.md
       - Spiderpool: community/spiderpool.md
       - 公开镜像加速: community/mirror.md
+      - DaoCloud 开源图标库: community/icons/index.md
   - 云原生研究院:
       - 社区要闻:
           - 2023 云原生社区要闻: native/news/news-2023.md

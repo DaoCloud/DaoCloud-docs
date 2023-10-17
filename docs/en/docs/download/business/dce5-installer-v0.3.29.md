@@ -1,6 +1,15 @@
+---
+date: 2022-11-25
+hide:
+  - navigation
+---
+
 # DCE 5.0 Enterprise v0.3.29
 
 This page can download the offline installation package and verification file of DCE 5.0 Enterprise.
+
+[Return to Download Index](../index.md#download-enterprise-package){ .md-button }
+[More Historical Versions](./dce5-installer-history.md){ .md-button }
 
 ## Download
 
@@ -83,7 +92,7 @@ The DCE 5.0 Enterprise includes the following modules, which are plug-and-play o
 | Middleware MySQL | The most widely used open source relational database | [v0.4](../../middleware/mysql/release-notes.md#v04) |
 | Middleware RabbitMQ | Open source message broker software implementing the Advanced Message Queuing Protocol (AMQP) | [v0.6](../../middleware/rabbitmq/release-notes.md#v06) |
 | Middleware Redis | An in-memory database caching service | [v0.3](../../middleware/redis/release-notes.md#v03) |
-| Container Registry | Images for storing K8s, DevOps, and container application development | [Release Notes](../../kangaroo/release-notes.md) |
+| Container Registry | Images for storing K8s, DevOps, and container application development | [Release Notes](../../kangaroo/intro/release-notes.md) |
 | Network | Support multiple CNI combinations for different Linux kernels | [Release Notes](../../network/modules/spiderpool/releasenotes.md) |
 | Storage | Provide unified data storage services, support files, objects, blocks, and local storage, and easily access storage vendor solutions | [Release Notes](../../storage/hwameistor/releasenotes.md) |
 

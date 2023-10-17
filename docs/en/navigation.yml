@@ -40,6 +40,7 @@ nav:
                   - Troubleshoot: install/faq.md
               - Install with Different K8s Distributions:
                   - With OpenShift OCP: install/k8s-install/ocp-install-dce5.0.md
+                  - With Alibaba Cloud ECS: install/k8s-install/ecs-install-dce5.0.md
               - Install on Different OS:
                   - With UOS V20 (1020a): install/os-install/uos-v20-install-dce5.0.md
                   - With Oracle Linux R9/R8 U1: install/os-install/oracleLinux-install-dce5.0.md
@@ -52,7 +53,7 @@ nav:
                   - What is Workbench?: amamba/intro/index.md
                   - Features: amamba/intro/features.md
                   - Competitiveness: amamba/intro/benefits.md
-                  - Use Cases: amamba/intro/scenario.md
+                  - Use Cases: amamba/intro/scenarios.md
                   - Basic Concepts: amamba/intro/concepts.md
                   - Permissions: amamba/intro/permission.md
                   - Workbench Release Notes: amamba/intro/release-notes.md
@@ -100,15 +101,15 @@ nav:
                   - Integrated Toolchain: amamba/user-guide/tools/integrated-toolchain.md
                   - Manage Toolchain Instances: amamba/user-guide/tools/toolchain-instances.md
               - FAQs:
-                  - Pipeline Issues: amamba/intro/faq-jenkins.md
-                  - GitOps Issues: amamba/intro/faq-gitops.md
+                  - Pipeline FAQs: amamba/faq/faq-jenkins.md
+                  - GitOps FAQs: amamba/faq/faq-gitops.md
               - Best Practices:
                   - Quick Start Pipeline: amamba/quickstart/deploy-pipeline.md
                   - CI/CD based on pipeline + GitOps: amamba/quickstart/argocd-jenkins.md
                   - Code scanning with pipeline: amamba/quickstart/scan-with-pipeline.md
-                  - Integrate Harbor to implement image security scanning: amamba/quickstart/scan-with-harbor.md
-                  - Progressive canary release based on Argo Rollout: amamba/quickstart/argocd-rollout.md
-                  - Run the pipeline on the specified node: amamba/quickstart/pipeline-on-node.md
+                  - Integrate Harbor to scan images: amamba/quickstart/scan-with-harbor.md
+                  - Canary release based on Argo Rollout: amamba/quickstart/argocd-rollout.md
+                  - Run pipelines on specified node: amamba/quickstart/pipeline-on-node.md
                   - Jenkins scenario configuration: amamba/quickstart/scenarios-config.md
                   - Using a custom toolchain in Jenkins: amamba/quickstart/jenkins-custom.md
                   - Jenkins high availability solution: amamba/quickstart/jenkins-HA.md
@@ -246,12 +247,13 @@ nav:
                   - Competitiveness: kairship/intro/benefits.md
                   - Basic Concepts: kairship/intro/concepts.md
                   - FAQs: kairship/intro/faq.md
+                  - Offline Upgrade: kairship/intro/offline-upgrade.md
                   - Multicloud Release Notes: kairship/intro/release-notes.md
+              - Workspaces: kairship/workspace.md
               - Multicloud Instances:
                   - Overview: kairship/instance/README.md
                   - Add Instance: kairship/instance/add.md
                   - Delete Instance: kairship/instance/delete.md
-                  - Workspaces: kairship/instance/workspace.md
               - Worker Clusters: kairship/cluster.md
               - Multicloud Workloads:
                   - Create Deployment from Image: kairship/workload/deployment.md
@@ -274,19 +276,18 @@ nav:
               - Policy Management:
                   - Propagation Policy: kairship/policy/propagation.md
                   - Override Policy: kairship/policy/override.md
-              - Bind Workspace: kairship/workspace.md
               - Failover:
                   - Overview: kairship/failover/failover.md
                   - Optimize Failover Latency Sensitivity: kairship/failover/optimization-failover.md
               - Best Practices:
                   - DCE 4.0 to DCE 5.0: kairship/best-practice/one-click-conversion.md
+                  - Cross-cluster autoscaling: kairship/best-practice/fhpa.md
           - Container Registry:
               - Intro:
-                  - What is Container Registry: kangaroo/index.md
-                  - Registry Release Notes: kangaroo/release-notes.md
-                  - FAQs: kangaroo/faq.md
-              - Upgrade:
-                  - Offline Upgrade Container Registry: kangaroo/upgrade/upgrade.md
+                  - What is Container Registry: kangaroo/intro/index.md
+                  - Registry Release Notes: kangaroo/intro/release-notes.md
+                  - FAQs: kangaroo/intro/faq.md
+                  - Offline Upgrade Container Registry: kangaroo/intro/upgrade.md
               - Quick Start:
                   - Manage External Registry: kangaroo/quickstart/registry-in-one.md
                   - Push Image: kangaroo/quickstart/push.md
@@ -870,6 +871,13 @@ nav:
                   - Batch Register Edge Nodes: kant/user-guide/node/batch-registration.md
                   - Manage Edge Nodes: kant/user-guide/node/managed-node.md
                   - Batch Upgrade Edge Nodes: kant/user-guide/node/batch-upgrade.md
+              - Edge Node Group:
+                  - Create Edge Node Group: kant/user-guide/node-group/create-group.md
+                  - Manage Edge Node Group: kant/user-guide/node-group/manage-group.md
+              - End Device:
+                  - Intro: kant/user-guide/device/index.md
+                  - Create End Device: kant/user-guide/device/create-device.md
+                  - Manage End Device: kant/user-guide/device/manage-device.md
               - Edge to Cloud Message:
                   - Overview: kant/user-guide/route/index.md
                   - Create Message Route: kant/user-guide/route/create-route.md
@@ -915,7 +923,7 @@ nav:
               - Operations Management:
                   - ghippo/user-guide/report-billing/index.md
                   - Reports: ghippo/user-guide/report-billing/report.md
-                  - Upgrade Operations Management: ghippo/install/gmagpie-offline-install.md
+                  - Upgrade Operations Management: ghippo/user-guide/report-billing/gmagpie-offline-install.md
                   - Billing and Accounting: ghippo/user-guide/report-billing/billing.md
               - Platform Settings:
                   - Security Policies: ghippo/user-guide/platform-setting/security.md
@@ -928,7 +936,7 @@ nav:
                   - Access Key: ghippo/user-guide/personal-center/accesstoken.md
                   - Language Settings: ghippo/user-guide/personal-center/language.md
               - Permissions:
-                  - Container Management Permissions: kpanda/user-guide/permissions/permission-brief.md
+                  - Container Management Permissions: ghippo/permissions/kpanda.md
                   - Microservice Permissions: ghippo/permissions/skoala.md
                   - Workbench Permissions: ghippo/permissions/amamba.md
                   - Service Mesh Permissions: ghippo/permissions/mspider.md
@@ -954,38 +962,53 @@ nav:
                   - keycloak cannot start: reference/troubleshooting/ghippo03.md
   - Video Tutorial:
       - Index: videos/index.md
-      - Installation: videos/install.md
-      - Best Practices: videos/use-cases.md
-      - Container Management: videos/kpanda.md
-      - Global Management: videos/ghippo.md
-      - Obsevability: videos/insight.md
+      - Get Started:
+          - Installation: videos/install.md
+          - Scenario-based Videos: videos/use-cases.md
       - Workbench: videos/amamba.md
-      - Service Mesh: videos/mspider.md
-      - Microservice Engine: videos/skoala.md
-      - Multicloud Orchestration: videos/kairship.md
+      - Container:
+          - Container Management: videos/kpanda.md
+          - Multicloud Management: videos/kairship.md
+          - Container Registry: videos/kangaroo.md
+          - Network: videos/network.md
+      - Obsevability: videos/insight.md
+      - Microservices:
+          - Service Mesh: videos/mspider.md
+          - Microservice Engine: videos/skoala.md
       - Middleware: videos/mcamel.md
-      - Network: videos/network.md
-      - Container Registry: videos/kangaroo.md
       - Cloud to Edge Continuum: videos/kant.md
+      - Global Management: videos/ghippo.md
   - Download:
       - DaoCloud Enterprise 5.0:
           - Index: download/index.md
-          - Download DCE Community: download/free/dce5-installer-v0.11.0.md
-          - Download DCE 5.0 Enterprise: download/business/dce5-installer-v0.11.0.md
-          - Modules and Addons:
-              - Download Addons: download/addon/v0.9.0.md
-              - Download Global Management: download/modules/ghippo.md
-              - Download Container Management: download/modules/kpanda.md
-              - Download Cluster Inspection: download/modules/kcollie.md
-              - Download Backup and Restore: download/modules/kcoral.md
-              - Download Security Management: download/modules/dowl.md
-              - Download Insight: download/modules/insight.md
-              - Download Service Mesh: download/modules/mspider.md
-              - Download Spidernet: download/modules/spidernet.md
-              - Download Container Registry: download/modules/kangaroo.md
-              - Download Operation Management: download/modules/gmagpie.md
-              - Download Multicloud Management: download/modules/kairship.md
-              - Download Cloud Edge Collaboration: download/modules/kant.md
+          - Download DCE 5.0 Community: download/free/dce5-installer-history.md
+          - Download DCE 5.0 Enterprise: download/business/dce5-installer-history.md
+          - Download Addon: download/addon/history.md
+          - Download Modules:
+              - Workbench: download/modules/amamba.md
+              - Container:
+                  - Container Management: download/modules/kpanda.md
+                  - Cluster Inspection: download/modules/kcollie.md
+                  - Application Backup: download/modules/kcoral.md
+                  - Security: download/modules/dowl.md
+                  - Network: download/modules/spidernet.md
+              - MultiCloud Management: download/modules/kairship.md
+              - Container Registry: download/modules/kangaroo.md
+              - Insight: download/modules/insight.md
+              - Service Mesh: download/modules/mspider.md
+              - Middleware:
+                  - Elasticsearch: download/modules/middleware/elasticsearch.md
+                  - Kafka: download/modules/middleware/kafka.md
+                  - MinIO: download/modules/middleware/minio.md
+                  - MongoDB: download/modules/middleware/mongodb.md
+                  - MySQL: download/modules/middleware/mysql.md
+                  - PostgreSQL: download/modules/middleware/postgresql.md
+                  - RabbitMQ: download/modules/middleware/rabbitmq.md
+                  - Redis: download/modules/middleware/redis.md
+              - Cloud Edge Collaboration: download/modules/kant.md
+              - Management:
+                  - Global Management: download/modules/ghippo.md
+                  - Operation Management: download/modules/gmagpie.md
   - Free Trial:
       - Free Trial: trial/index.md
   - Blogs:
@@ -1043,6 +1066,7 @@ nav:
       - Merbridge: community/merbridge.md
       - Mirror Acceleration in China: community/mirror.md
       - Spiderpool: community/spiderpool.md
+      - DaoCloud Icon Library: community/icons/index.md
   - Cloud Native Institute:
       - Cloud Native News:
           - Cloud Native News 2023: native/news/news-2023.md

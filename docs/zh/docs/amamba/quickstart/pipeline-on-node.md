@@ -74,7 +74,7 @@
 
 1. 在`应用工作台` 创建一个流水线任务，并编辑 `Jenkinsfile` 如下：
 
-    ```bash        
+    ```groovy        
     pipeline {
       agent {
         node {

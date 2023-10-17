@@ -1,6 +1,15 @@
+---
+date: 2022-11-23
+hide:
+  - navigation
+---
+
 # DCE 5.0 Enterprise v0.3.27
 
 This page can download the offline installation package and verification file of DCE 5.0 Enterprise.
+
+[Return to Download Index](../index.md#download-enterprise-package){ .md-button }
+[More Historical Versions](./dce5-installer-history.md){ .md-button }
 
 ## Download
 
@@ -42,7 +51,7 @@ The DCE 5.0 Enterprise includes the following modules, which are plug-and-play o
 | Microservice Engine | Provides governance capabilities such as registration discovery, service governance, configuration management, and microservice gateway | [Release Notes](../../skoala/intro/release-notes.md) |
 | Service Mesh | A next-generation service mesh for cloud-native applications based on Istio open source technology | [v0.10.0](../../mspider/intro/release-notes.md) |
 | Middleware | Contains selected middleware such as RabbitMQ, Kafka, Elasticsearch, MySQL, Redis, MinIO, etc. | [Release Notes](../../middleware/index.md) |
-| Container Registry | Images for storing K8s, DevOps, and container application development | [Release Notes](../../kangaroo/release-notes.md) |
+| Container Registry | Images for storing K8s, DevOps, and container application development | [Release Notes](../../kangaroo/intro/release-notes.md) |
 | Network | Support multiple CNI combinations for different Linux kernels | [Release Notes](../../network/modules/spiderpool/releasenotes.md) |
 | Storage | Provide unified data storage services, support files, objects, blocks, and local storage, and easily access storage vendor solutions | [Release Notes](../../storage/hwameistor/releasenotes.md) |
 

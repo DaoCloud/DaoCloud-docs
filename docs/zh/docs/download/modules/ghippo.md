@@ -2,8 +2,6 @@
 
 本页可下载全局管理模块各版本的离线安装包。
 
-[返回下载首页](../index.md){ .md-button }
-
 ## 下载
 
 | 版本  | 架构 | 文件大小 | 安装包      | 校验文件 | 更新日期   |
@@ -39,7 +37,7 @@ ghippo_v0.13.2_amd64.tar: ok
 
 ## 安装
 
-参阅[全局管理](../../ghippo/install/offline-install.md)安装流程进行安装。
+参阅[全局管理安装流程](../../ghippo/install/offline-install.md)进行安装。
 
 如果是初次安装，请[申请免费体验](../../dce/license0.md)或联系我们授权：电邮 info@daocloud.io 或致电 400 002 6898。
 如果有任何许可密钥相关的问题，请联系 DaoCloud 交付团队。

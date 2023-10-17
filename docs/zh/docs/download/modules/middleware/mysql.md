@@ -2,13 +2,11 @@
 
 本页可下载 MySQL 各版本的离线安装包。
 
-[返回下载首页](../../index.md){ .md-button }
-
 ## 下载
 
 | 版本                                                         | 架构 | 文件大小 | 安装包                                                                                                                             |  校验文件 | 更新日期       |
 |------------------------------------------------------------| ----- |-------- |---------------------------------------------------------------------------------------------------------------------------------| ---------- |------------|
-| [v0.11.1](../../../middleware/mysql/release-notes.md)         | AMD 64 | 296.23MB | [:arrow_down: mysql_0.11.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mysql_0.11.1_amd64.tar) | [:arrow_down: mysql_0.11.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mysql_0.11.1_amd64_checksum.sha512sum) | 2023-10-10 |
+| [v0.11.1](../../../middleware/mysql/release-notes.md) | AMD 64 | 1.17GB | [:arrow_down: mysql_0.11.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mysql_0.11.1_amd64.tar) | [:arrow_down: mysql_0.11.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mysql_0.11.1_amd64_checksum.sha512sum) | 2023-10-12 |
 
 ## 校验
 

@@ -1,4 +1,4 @@
-# DaoCloud Enterprise 5.0
+# DaoCloud Enterprise 5.0 下载导览页
 
 DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 [点击下载 DCE 5.0 产品介绍 PDF](https://harbor-test2.cn-sh2.ufileos.com/docs/download/DCE5.0-intro.pdf)：1.4 MB。
@@ -52,7 +52,7 @@ DCE 5.0 包含的众多子模块可以单独下载，按需对每个模块进行
 | 多云编排 | 525.11 MB | [:arrow_right: 下载页](./modules/kairship.md)  | 2023-09-01 |
 | 镜像仓库 | 293.24 MB | [:arrow_right: 下载页](./modules/kangaroo.md)  | 2023-09-04 |
 | 可观测性 | 2.64 GB   | [:arrow_right: 下载页](./modules/insight.md)   | 2023-08-04 |
-| 服务网格 | 2.41 GB   | [:arrow_right: 下载页](./modules/mspider.md)   | 2023-08-31 |
+| 服务网格 | 949.41 MB   | [:arrow_right: 下载页](./modules/mspider.md)   | 2023-10-12 |
 | 云边协同 | 94.2 MB   | [:arrow_right: 下载页](./modules/kant.md)      | 2023-09-19 |
 | 全局管理 | 440 MB    | [:arrow_right: 下载页](./modules/ghippo.md)    | 2023-09-04 |
 | 运营管理 | 56.90 MB  | [:arrow_right: 下载页](./modules/gmagpie.md)   | 2023-08-02 |
@@ -61,14 +61,14 @@ DCE 5.0 还提供了各种精选中间件：
 
 | 中间件        | 文件大小  | 下载                                                          | 更新日期   |
 | ------------- | --------- | ------------------------------------------------------------- | ---------- |
-| Elasticsearch | 296.23 MB | [:arrow_right: 下载页](./modules/middleware/elasticsearch.md) | 2023-10-11 |
-| Kafka         | 296.23 MB | [:arrow_right: 下载页](./modules/middleware/kafka.md)         | 2023-10-11 |
-| MinIO         | 296.23 MB | [:arrow_right: 下载页](./modules/middleware/minio.md)         | 2023-10-11 |
-| MongoDB       | 296.23 MB | [:arrow_right: 下载页](./modules/middleware/mongodb.md)       | 2023-10-11 |
-| MySQL         | 296.23 MB | [:arrow_right: 下载页](./modules/middleware/mysql.md)         | 2023-10-11 |
-| PostgreSQL    | 296.23 MB | [:arrow_right: 下载页](./modules/middleware/postgresql.md)    | 2023-10-11 |
-| RabbitMQ      | 296.23 MB | [:arrow_right: 下载页](./modules/middleware/rabbitmq.md)      | 2023-10-11 |
-| Redis         | 296.23 MB | [:arrow_right: 下载页](./modules/middleware/redis.md)         | 2023-10-11 |
+| Elasticsearch | 974.93 MB | [:arrow_right: 下载页](./modules/middleware/elasticsearch.md) | 2023-10-12 |
+| Kafka         | 957.21 MB | [:arrow_right: 下载页](./modules/middleware/kafka.md)         | 2023-10-12 |
+| MinIO         | 219.91 MB | [:arrow_right: 下载页](./modules/middleware/minio.md)         | 2023-10-11 |
+| MongoDB       | 72.95 MB  | [:arrow_right: 下载页](./modules/middleware/mongodb.md)       | 2023-10-12 |
+| MySQL         | 1.17 GB   | [:arrow_right: 下载页](./modules/middleware/mysql.md)         | 2023-10-12 |
+| PostgreSQL    | 822.51 MB | [:arrow_right: 下载页](./modules/middleware/postgresql.md)    | 2023-10-12 |
+| RabbitMQ      | 162.34 MB | [:arrow_right: 下载页](./modules/middleware/rabbitmq.md)      | 2023-10-12 |
+| Redis         | 537.81 MB | [:arrow_right: 下载页](./modules/middleware/redis.md)         | 2023-10-12 |
 
 !!! note
 
