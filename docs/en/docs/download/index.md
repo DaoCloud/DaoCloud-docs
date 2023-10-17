@@ -10,8 +10,8 @@ This package is dedicated to the community and is available for free trial.
 
 | Offline Package                     | Version | Download                                                        | Update Date |
 | ----------------------------------- | ------- | --------------------------------------------------------------- | ----------- |
-| offline-community-v0.11.0-arm64.tar | v0.11.0 | [:arrow_right: Download Page](./free/dce5-installer-v0.11.0.md) | 2023-06-06  |
-| offline-community-v0.11.0-amd64.tar | v0.11.0 | [:arrow_right: Download Page](./free/dce5-installer-v0.11.0.md) | 2023-06-06  |
+| offline-community-v0.11.0-arm64.tar | v0.11.0 | [:arrow_right: Download Page](./free/dce5-installer-v0.11.0.md) | 2023-09-08  |
+| offline-community-v0.11.0-amd64.tar | v0.11.0 | [:arrow_right: Download Page](./free/dce5-installer-v0.11.0.md) | 2023-09-08  |
 
 [More Historical Versions](./free/dce5-installer-history.md)
 
@@ -21,8 +21,8 @@ This package is suitable for private cloud, hybrid cloud, multicloud, microservi
 
 | Offline Package           | Version | Download                                                            | Update Date |
 | ------------------------- | ------- | ------------------------------------------------------------------- | ----------- |
-| offline-v0.11.0-arm64.tar | v0.11.0 | [:arrow_right: Download Page](./business/dce5-installer-v0.11.0.md) | 2023-06-06  |
-| offline-v0.11.0-amd64.tar | v0.11.0 | [:arrow_right: Download Page](./business/dce5-installer-v0.11.0.md) | 2023-06-06  |
+| offline-v0.11.0-arm64.tar | v0.11.0 | [:arrow_right: Download Page](./business/dce5-installer-v0.11.0.md) | 2023-09-08  |
+| offline-v0.11.0-amd64.tar | v0.11.0 | [:arrow_right: Download Page](./business/dce5-installer-v0.11.0.md) | 2023-09-08  |
 
 [More Historical Versions](./business/dce5-installer-history.md)
 
@@ -51,7 +51,7 @@ The numerous modules included in DCE 5.0 can be downloaded separately to upgrade
 | MultiCloud Management    | 525.11 MB | [:arrow_right: Download Page](./modules/kairship.md)  | 2023-09-01  |
 | Container Registry       | 293.24 MB | [:arrow_right: Download Page](./modules/kangaroo.md)  | 2023-09-04  |
 | Insight                  | 2.64 GB   | [:arrow_right: Download Page](./modules/insight.md)   | 2023-08-04  |
-| Service Mesh             | 2.41 GB   | [:arrow_right: Download Page](./modules/mspider.md)   | 2023-08-31  |
+| Service Mesh             | 949.41 MB | [:arrow_right: Download Page](./modules/mspider.md)   | 2023-08-31  |
 | Cloud Edge Collaboration | 94.2 MB   | [:arrow_right: Download Page](./modules/kant.md)      | 2023-09-19  |
 | Global Management        | 440 MB    | [:arrow_right: Download Page](./modules/ghippo.md)    | 2023-09-04  |
 | Operation Management     | 56.90 MB  | [:arrow_right: Download Page](./modules/gmagpie.md)   | 2023-08-02  |
