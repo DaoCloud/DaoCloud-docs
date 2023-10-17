@@ -154,7 +154,7 @@ Click on `Global Settings`, select node from the `Type` drop-down list, and sele
 
 ### Run the pipeline
 
-1. Click `Execute Now` on the transaction details page. In the pop-up dialog box, set the three string parameters defined in the prerequisites, and click `OK` to run the pipeline.
+1. Click `Run Now` on the transaction details page. In the pop-up dialog box, set the three string parameters defined in the prerequisites, and click `OK` to run the pipeline.
 
      <!--![]()screenshots-->
 

@@ -1,4 +1,4 @@
-# Integrate Harbor to realize image security scanning
+# Integrate Harbor to scan image security
 
 This page will introduce how to integrate Harbor in the pipeline and implement image security scanning.
 
@@ -14,7 +14,7 @@ This page will introduce how to integrate Harbor in the pipeline and implement i
 
 ## Configure the pipeline in Workbench
 
-1. In Workbench, create a pipeline, refer to [Quickly create a pipeline](deploy-pipeline.md), and click `Execute Now` after the configuration is complete.
+1. In Workbench, create a pipeline, refer to [Quickly create a pipeline](deploy-pipeline.md), and click `Run Now` after the configuration is complete.
 
      <!--![]()screenshots-->
 

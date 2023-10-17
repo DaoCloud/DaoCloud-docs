@@ -53,7 +53,7 @@ nav:
                   - What is Workbench?: amamba/intro/index.md
                   - Features: amamba/intro/features.md
                   - Competitiveness: amamba/intro/benefits.md
-                  - Use Cases: amamba/intro/scenario.md
+                  - Use Cases: amamba/intro/scenarios.md
                   - Basic Concepts: amamba/intro/concepts.md
                   - Permissions: amamba/intro/permission.md
                   - Workbench Release Notes: amamba/intro/release-notes.md
@@ -101,15 +101,15 @@ nav:
                   - Integrated Toolchain: amamba/user-guide/tools/integrated-toolchain.md
                   - Manage Toolchain Instances: amamba/user-guide/tools/toolchain-instances.md
               - FAQs:
-                  - Pipeline Issues: amamba/intro/faq-jenkins.md
-                  - GitOps Issues: amamba/intro/faq-gitops.md
+                  - Pipeline FAQs: amamba/faq/faq-jenkins.md
+                  - GitOps FAQs: amamba/faq/faq-gitops.md
               - Best Practices:
                   - Quick Start Pipeline: amamba/quickstart/deploy-pipeline.md
                   - CI/CD based on pipeline + GitOps: amamba/quickstart/argocd-jenkins.md
                   - Code scanning with pipeline: amamba/quickstart/scan-with-pipeline.md
-                  - Integrate Harbor to implement image security scanning: amamba/quickstart/scan-with-harbor.md
-                  - Progressive canary release based on Argo Rollout: amamba/quickstart/argocd-rollout.md
-                  - Run the pipeline on the specified node: amamba/quickstart/pipeline-on-node.md
+                  - Integrate Harbor to scan images: amamba/quickstart/scan-with-harbor.md
+                  - Canary release based on Argo Rollout: amamba/quickstart/argocd-rollout.md
+                  - Run pipelines on specified node: amamba/quickstart/pipeline-on-node.md
                   - Jenkins scenario configuration: amamba/quickstart/scenarios-config.md
                   - Using a custom toolchain in Jenkins: amamba/quickstart/jenkins-custom.md
                   - Jenkins high availability solution: amamba/quickstart/jenkins-HA.md
