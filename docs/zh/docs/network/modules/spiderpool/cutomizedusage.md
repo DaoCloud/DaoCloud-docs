@@ -5,13 +5,13 @@ hide:
 
 # 第三方工作负载使用 IP 池
 
-本章节主要介绍结合 Multus 及 Underlay CNI 插件，为自定义工作负载（本文采用 [OpenKruise](https://github.com/openkruise/kruise) 控制器 创建的工作负载 CloneSet） Pod 配置 IP Pool，通过 Spiderpool 进行 Underlay 网络的 IP 的分配和固定。
+本本章节主要介绍结合 Spiderpool 及 Multus CR 管理，为自定义工作负载（本文采用 [OpenKruise](https://github.com/openkruise/kruise) 控制器 创建的工作负载 CloneSet） Pod 配置 IP Pool，通过 Spiderpool 进行 Underlay 网络的 IP 的分配和固定。
 
 ## 前提条件
 
 1. [SpiderPool 已成功部署](../../modules/spiderpool/install.md)。
-2. [Multus 搭配 Macvlan/SR-IOV 已成功部署](../../modules/multus-underlay/install.md)。
-3. 如使用手动选择 IP 池，请提前完成[创建 IP 子网和 IP 池](../../modules/spiderpool/createpool.md)。本示例中需要使用固定 IP 池，请提前完成[创建 固定 IP 池](../../modules/spiderpool/createpool.md)。
+
+2. 如使用手动选择 IP 池，请提前完成[创建 IP 子网和 IP 池](../../modules/spiderpool/createpool.md)。本示例中需要使用固定 IP 池，请提前完成[创建 固定 IP 池](../../modules/spiderpool/createpool.md)。
 
 ## 操作步骤
 
