@@ -351,6 +351,7 @@ nav:
                     - 第三方工作负载使用 IP 池: network/modules/spiderpool/cutomizedusage.md 
                   - Multus CR 管理:
                     - 创建 Multus CR: network/configration/multus-cr.md
+                  - 出口网关:
               - 网络性能:
                   - 网络 CNI 性能测试报告: network/performance/cni-performance.md
                   - Spiderpool 性能测试报告: network/performance/spiderpool-performance.md
