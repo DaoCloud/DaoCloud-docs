@@ -328,7 +328,16 @@ nav:
               - Plan:
                   - Eth card plan: network/plans/ethplan.md
                   - Network plan: network/plans/netplan.md
-              - Performance report:
+              - Network Config: 
+                  - IP Pool: 
+                    - Create Subnet and IP Pool: network/modules/spiderpool/createpool.md
+                    - IP Pool Scenarios: network/modules/spiderpool/ippoolusage.md
+                  - IP Pool Usage:
+                    - Use IP Pool by Workload: network/modules/spiderpool/usage.md
+                    - Use IP Pool by Workload from 3rd party: network/modules/spiderpool/cutomizedusage.md 
+                  - Multus CRs:
+                    - Create Multus CR: network/config/multus-cr.md
+              - Performance reports:
                   - Network CNI performance test report: network/performance/cni-performance.md
                   - Spiderpool performance test report: network/performance/spiderpool-performance.md
                   - Cilium performance test reports:
@@ -337,6 +346,14 @@ nav:
                       - Access acceleration test in the nodePort mode: network/performance/cilium-performance/cilium-nodeport.md
                       - eBPF-based Pod bandwidth management: network/performance/cilium-performance/cilium-bandwidth.md
                   - Performance test in eBPF-based network policies: network/performance/ebpf-performance.md
+              - Spiderpool:
+                  - Spiderpool Release notes: network/modules/spiderpool/releasenotes.md
+                  - Intro: network/modules/spiderpool/index.md
+                  - Install: network/modules/spiderpool/install.md
+                  - Upgrade: network/modules/spiderpool/upgrade.md
+                  - Config: network/modules/spiderpool/config.md
+                  - Commands: network/modules/spiderpool/command.md
+                  - Running on Alibaba Cloud: network/modules/spiderpool/alibabacloud.md
               - Calico:
                   - Intro: network/modules/calico/index.md
                   - Install: network/modules/calico/install.md
@@ -382,17 +399,11 @@ nav:
                   - SR-IOV: network/modules/multus-underlay/sriov.md
                   - DPDK: network/modules/multus-underlay/dpdk.md
                   - NmState: network/modules/multus-underlay/nmstat.md
-              - Spiderpool:
-                  - Spiderpool Release notes: network/modules/spiderpool/releasenotes.md
-                  - Intro: network/modules/spiderpool/index.md
-                  - Install: network/modules/spiderpool/install.md
-                  - Create an IP pool: network/modules/spiderpool/createpool.md
-                  - IP pool use cases: network/modules/spiderpool/ippoolusage.md
-                  - Workloads uses IP pools: network/modules/spiderpool/usage.md
-                  - Third-pary workloads use IP pools: network/modules/spiderpool/cutomizedusage.md
-                  - Running on Alibaba Cloud: network/modules/spiderpool/alibabacloud.md
-                  - Config: network/modules/spiderpool/config.md
-                  - Commands: network/modules/spiderpool/command.md
+              - sriov-network-operator:
+                  - Intro: network/modules/sriov-network-operator/index.md
+                  - Install: network/modules/sriov-network-operator/install.md
+                  - SR-IOV: network/modules/multus-underlay/sriov.md
+                  - DPDK: network/modules/multus-underlay/dpdk.md  
               - Submariner:
                   - Intro: network/modules/submariner/index.md
                   - Install: network/modules/submariner/install.md

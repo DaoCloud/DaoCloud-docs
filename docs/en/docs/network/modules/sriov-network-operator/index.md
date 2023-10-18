@@ -1,18 +1,8 @@
----
-MTPE: Jeanine-tw
-Revised: Jeanine-tw
-Pics: NA
-Date: 2023-01-04
----
+# Sriov-network-operator
 
-# 什么是 Sriov-network-operator
+[Sriov-network-operator](https://github.com/k8snetworkplumbingwg/sriov-network-operator) is an open-source project that aims to simplify the usage of SR-IOV technology by integrating the sriov-cni and sriov-device-plugin projects. It uses Custom Resource Definitions (CRDs) to configure and manage SR-IOV, making it easier for administrators to use.
 
-目前使用 sriov 的方式比较复杂繁琐，需要管理员完全手动配置,  如手动确认网卡是否支持SRIOV、配置PF 和 VF等，参考
-[sriov](../multus-underlay/sriov.md)。 社区开源 [Sriov-network-operator](https://github.com/k8snetworkplumbingwg/sriov-network-operator)，
-旨在降低使用 sriov-cni 的难度。sriov-operator 整合 sriov-cni 和 sriov-device-plugin 两个项目，
-完全使用 CRD 的方式统一使用和配置 sriov，包括组件本身和节点上的必要配置，极大的降低了使用难度。
-
-## 组件
+## Components
 
 ```shell
 [root@controller1 ~]# kubectl  get po -n sriov-network-operator -o wide
@@ -22,16 +12,21 @@ sriov-network-config-daemon-nhmws                                 3/3     Runnin
 sriov-network-operator-6955b75d8c-gmpcc                           1/1     Running     0          67s    10.233.73.233    controller1   <none>           <none>
 ```
 
-- sriov-operator：控制层面组件，监听 CRs 变化，安装和配置 sriov-cni 和 sriov-device-plugin 组件
-- sriov-network-config-daemon：与节点交互，用于开启节点网卡的 SR-IOV 功能和配置 VFs。内置 srivo-cni, 将 sriov-cni 的二进制文件拷贝至主机的 `/opt/cni/bin` 目录下
-- sriov-device-plugin：发现主机上的 VFs，并宣告给 kubelet
+The Sriov-network-operator consists of the following components:
 
-## CRD
+- **sriov-operator**: This controller monitors changes in CRs and installs/configures the sriov-cni and sriov-device-plugin components.
+- **sriov-network-config-daemon**: This component interacts with the nodes to enable SR-IOV on the network interfaces and configure Virtual Functions (VFs). It contains the sriov-cni binary and copies it to the `/opt/cni/bin` directory on the host.
+- **sriov-device-plugin**: This component discovers the VFs available on the host and exposes them to the kubelet.
 
-**SriovNetworkNodeState：** SriovNetworkNodeState 发现主机上支持 SR-IOV 功能的网卡，并且写入到 status 中
+## Custom Resource Definitions (CRDs)
 
-```shell
-[root@controller1 ~]# kubectl get SriovNetworkNodeState -n sriov-network-operator worker1 -o yaml
+The Sriov-network-operator introduces two CRDs:
+
+**SriovNetworkNodeState**: This CRD discovers network interfaces on the host that support SR-IOV and writes them into the status field.
+
+Example:
+
+```yaml
 apiVersion: sriovnetwork.openshift.io/v1
 kind: SriovNetworkNodeState
 metadata:
@@ -75,13 +70,13 @@ status:
   syncStatus: Succeeded
 ```
 
-上面信息说明: 在 `worker1` 节点上的接口 `enp4s0f0np0` 和 `enp4s0f1np1` 具有 SR-IOV 功能，我们可以基于它们配置 VFs，供 Pod 使用。
+The above example shows that the interfaces `enp4s0f0np0` and `enp4s0f1np1` on worker1 have SR-IOV capability and can be used to configure VFs for Pods.
 
-**SriovNetworkNodePolicy：** 用于配置 VFs 的数量和安装 sriov-device-plugin 组件
+**SriovNetworkNodePolicy**: This CRD is used to configure the number of VFs and install the sriov-device-plugin component.
 
-```shell
+Example:
 
-[root@controller1 ~]# kubectl get sriovnetworknodepolicies.sriovnetwork.openshift.io -n sriov-network-operator policy1 -o yaml
+```yaml
 apiVersion: sriovnetwork.openshift.io/v1
 kind: SriovNetworkNodePolicy
 metadata:
@@ -100,10 +95,10 @@ spec:
     pfNames:
     - enp4s0f0np0
   nodeSelector:
-    kubernetes.io/hostname: 10-20-1-240  # 只作用于 10-20-1-240 这个节点
-  numVfs: 4 # 渴望的 VFs 数量
+    kubernetes.io/hostname: 10-20-1-240  # Only effect to the node 10-20-1-240
+  numVfs: 4 # Desired VFs quantity
   resourceName: sriov_netdevice
 ```
 
-- **spce.nicSelector.pfNames** ：PF 的列表，创建 CR 后将基于列表中的 PF 创建指定数量的 VFs
-- **spec.nodeSelector** ：此 Policy 在哪些节点生效。注：会安装 sriov-device-plugin 组件到指定节点
+- **spec.nicSelector.pfNames**: The list of PFs where the specified number of VFs will be created.
+- **spec.nodeSelector**: Specifies the nodes where this policy should be applied. Note: The sriov-device-plugin component will be installed on the specified nodes.

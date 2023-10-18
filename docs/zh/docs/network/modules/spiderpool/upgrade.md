@@ -9,13 +9,11 @@
 
 ## 升级环境
 
-DCE 5.0 中已部署 v0.5.0 或者其他更低版本的 Spiderpool
+DCE 5.0 中已部署 v0.5.0 或者其他更低版本的 Spiderpool。
 
 ![spiderpool 0.5.0](../../images/spiderpool-before-upgrade.png)
 
-## 步骤
-
-### 获取 chart 包
+## 获取 Chart 包
 
 1. 通过如下方式，获取 Chart 包
 
@@ -26,10 +24,10 @@ DCE 5.0 中已部署 v0.5.0 或者其他更低版本的 Spiderpool
 2. 上传并解压 Chart 包到环境中
 
     ```bash
-    ~# tar -xvf spiderpool-0.7.0.tgz -C /root/spiderpool
+    tar -xvf spiderpool-0.7.0.tgz -C /root/spiderpool
     ```
 
-### 删除 spiderpool-init
+## 删除 spiderpool-init
 
 新版本中引入了 Spidercoordinators 插件，Spidercoordinators 的默认配置将在 spiderpool-init 被创建时自动下发，在进行升级前，请先删除该 Pod。通过 helm upgrade 更新时，会自动创建 spiderpool-init Pod，并下发创建 coordinator 的默认配置。
 
@@ -41,7 +39,7 @@ spiderpool-init   0/1     Completed   0          49m
 pod "spiderpool-init" deleted
 ```
 
-### 更新 CRD
+## 更新 CRD
 
 通过 kubectl apply 更新 spiderpool v0.7.0 版本所有的 CRD。
 
@@ -59,13 +57,13 @@ customresourcedefinition.apiextensions.k8s.io/spiderreservedips.spiderpool.spide
 customresourcedefinition.apiextensions.k8s.io/spidersubnets.spiderpool.spidernet.io configured
 ```
 
-### 通过 DCE 5.0 界面升级
+## 通过 DCE 5.0 界面升级
 
 通过 5.0 界面升级，在之前的版本中 Spiderpool 会搭配 Multus-underlay 插件使用，而新版本的 Spiderpool 中已经集成了 Multus 插件，在界面进行更新操作时，请关闭「安装 multus」按钮，避免重复安装，如下图所示。点击更新，等待更新完成。
 
 ![disable multus](../../images/spiderpool-disable-multus.png)
 
-### 验证
+## 验证
 
 升级后检查版本正常。
 
