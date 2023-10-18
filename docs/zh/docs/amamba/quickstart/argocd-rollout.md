@@ -10,22 +10,29 @@
 
 ## 操作步骤
 
-整个过程分为四个步骤：首先基于容器镜像构建应用，然后配置 Istio 相关资源，创建灰度发布任务，最后验证效果。
+整个过程分为四个步骤：基于容器镜像构建应用、配置 Istio 相关资源、创建灰度发布任务、验证效果。
 
 ### 基于容器镜像构建应用
 
-具体操作步骤可参考[基于 Git 仓构建微服务应用](../user-guide/wizard/create-app-git.md)、[基于 Jar 包部署 Java 应用](../user-guide/wizard/jar-java-app.md)。
+1. 向导入口选择 `基于容器镜像`。
 
-**需要注意**：
+2. 填写基本信息：
 
-- 容器镜像为：argoproj/rollouts-demo:blue
-- 服务端口：名称为 `http`、容器端口为 `8082`、服务端口为 `8082`。
+    ![application01](../images/application01.png)
 
-    ![容器配置](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/argorollout01.png)
+3. 填写容器配置，示例为：
 
-- 填写高级配置时需要开启灰度发布。
+    - 容器镜像为：`argoproj/rollouts-demo:blue`
 
-    ![开启灰度发布](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/argorollout02.png)
+    - 服务端口：名称为 `http`、容器端口为 `8082`、服务端口为 `8082`。
+
+    ![application02](../images/application02.png)
+
+4. 填写高级配置，选择开启 `启用网格`
+
+    ![application03](../images/application03.png)
+
+5. 创建完成后会在 `概览`->`原生应用` 生成一条应用记录。
 
 ### Istio 相关资源配置
 
@@ -74,7 +81,7 @@
     metadata:
       creationTimestamp: "2022-11-07T10:46:23Z"
       generation: 84
-      name: demo01
+      name: demo
       namespace: default
       resourceVersion: "5741370"
       uid: 8109f754-aa9d-49f1-b8a9-d4daf5108032
@@ -87,11 +94,11 @@
       - name: primary
         route:
         - destination:
-            host: demo01
+            host: demo
             subset: stable
           weight: 100
         - destination:
-            host: demo01
+            host: demo
             subset: canary
           weight: 0
     ```
@@ -186,11 +193,11 @@
 
 1. 选择开启灰度发布的应用
 
-    ![选择应用](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/argorollout03.png)
+    ![选择应用](../images/application04.png)
 
-2. 修改发布规则（为了更明显的演示效果）
+2. 设置发布规则，选择流量管理类型为 `Istio`，流量调度类型为 `基于权重`。
 
-    ![修改规则](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/argorollout04.png)
+    ![修改规则](../images/application05.png)
 
 3. 点击创建并更新应用，在弹出的对话框中填写镜像地址：`argoproj/rollouts-demo:yellow`
 
