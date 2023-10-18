@@ -96,9 +96,10 @@
 2. 更新应用工作台的 Helm 仓库。
 
     ```shell
-    # Helm 版本过低会导致失败。若失败，请尝试执行 helm update repo
     helm repo update amamba
     ```
+
+    Helm 版本过低会导致失败。若失败，请尝试执行 helm update repo
 
 3. 备份 `--set` 参数。在升级全局管理版本之前，建议执行如下命令备份旧版本的 `--set` 参数。
 
@@ -109,9 +110,14 @@
 4. 选择想安装的应用工作台版本（建议安装最新版本）。
 
     ```shell
-    $ helm search  repo amamba-release-ci --versions |head
-    NAME                                   CHART VERSION      	APP VERSION        	DESCRIPTION                               
-    amamba-release-ci/amamba                0.14.0  	        0.14.0  	         Amamba is the entrypoint to DCE 5.0, provides de...
+    helm search  repo amamba-release-ci --versions |head
+    ```
+
+    输出类似于：
+    
+    ```console
+    NAME                       CHART VERSION   APP VERSION  DESCRIPTION                               
+    amamba-release-ci/amamba   0.14.0  	       0.14.0  	    Amamba is the entrypoint to DCE 5.0, provides de...
     ```
 
 5. 修改 `amamba.bak.yaml` 文件里的 `registry` 和 `tag`。

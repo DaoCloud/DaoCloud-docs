@@ -165,7 +165,7 @@ In `Container Management` - `Source Redis Cluster` - `ConfigMap and Storage` - `
 
 #### Create Redis-shake
 
-1. In the `Application Workbench`, select `Wizard` - `Based on Container Image` to create an application named `redis-shake-sync-0`:
+1. In the `Workbench`, select `Wizard` - `Based on Container Image` to create an application named `redis-shake-sync-0`:
 
 2. Fill in the application configuration as described below:
     
