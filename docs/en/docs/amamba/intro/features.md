@@ -7,11 +7,16 @@ hide:
 
 Workbench provides the following features:
 
-- Application Management
-
-    - Supports "multi-form" cloud-native applications, including Kubernetes native applications, Helm applications, OAM applications, and so on.
-    - Provides full lifecycle management for cloud-native applications, such as scaling, logs, monitoring, and application updates.
-    - Supports integrating and managing SpringCloud and Dubbo microservices, as well as cloud-native microservices based on Kubernetes and Service Mesh.
+- **Application Management**
+  
+    - Supports "polyform" cloud-native applications in various cloud-native scenarios,
+      including Kubernetes native applications, Helm applications, and OAM applications.
+    - Provides comprehensive lifecycle management for cloud-native applications,
+      including scaling, logging, monitoring, and application updates.
+    - Enables seamless integration with microservice applications based on Spring Cloud,
+      Dubbo, and Service Mesh frameworks to achieve effective microservice governance.
+      It seamlessly integrates with DCE 5.0's [Microservice Engine](../../skoala/intro/index.md)
+      and [Service Mesh](../../mspider/intro/index.md).
 
 - Pipeline Orchestration
 

@@ -117,11 +117,12 @@ If a mirror warehouse exists in the environment, it is recommended to use chart-
 2. Update Workbench's Helm repository.
 
     ```shell
-    # outdated Helm versions may cause failure. If failed, try `helm update repo`
     helm repo update amamba
     ```
 
-3. Backup `--set` parameters. Before upgrading the global management version, it is recommended to run the following commands to back up `--set` parameters of the previous version.
+    Outdated Helm versions may cause failure. If failed, try `helm update repo`
+
+3. Back up `--set` parameters. Before upgrading the global management version, it is recommended to run the following commands to back up `--set` parameters of the previous version.
 
     ```shell
     helm get values amamba -n amamab-system -o yaml > amamba.bak.yaml
@@ -130,9 +131,14 @@ If a mirror warehouse exists in the environment, it is recommended to use chart-
 4. Select the version of Workbench you want to install (the latest version is recommended).
 
     ```shell
-    $ helm search  repo amamba-release-ci --versions |head
-    NAME                                   CHART VERSION      	APP VERSION        	DESCRIPTION                               
-    amamba-release-ci/amamba                0.14.0  	        0.14.0  	         Amamba is the entrypoint to DCE 5.0, provides de...
+    helm search  repo amamba-release-ci --versions |head
+    ```
+    
+    The output is similar to:
+
+    ```console
+    NAME                       CHART VERSION   APP VERSION  DESCRIPTION                               
+    amamba-release-ci/amamba   0.14.0  	       0.14.0  	    Amamba is the entrypoint to DCE 5.0, provides de...
     ```
 
 5. Modify `registry` and `tag` in `amamba.bak.yaml`.
