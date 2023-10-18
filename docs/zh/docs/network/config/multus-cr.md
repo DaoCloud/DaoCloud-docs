@@ -1,34 +1,32 @@
 # 创建 Multus CR
 
-Multus CR 管理，是 Spiderpool 对 Multus CNI 中配置实例的二次封装。旨在为容器提供更灵活的网络连接和配置选项，
-以满足不同的网络需求，为用户提供更简单和经济高效的使用体验。本页介绍在创建工作负载使用多网卡配置之前，如何创建 Multus CR。
+ Multus CR 管理，是 Spiderpool 对 Multus CNI 中配置实例的二次封装。旨在为容器提供更灵活的网络连接和配置选项，以满足不同的网络需求，为用户提供更简单和经济高效的使用体验。本页介绍在创建工作负载使用多网卡配置之前，如何创建 Multus CR。
 
-- 如部署 SpiderPool 组件时已创建 Multus CR 实例，可直接使用该 Multus CR
-  实例创建[工作负载](https://docs.daocloud.io/network/modules/spiderpool/usage.html)。
+- 如部署 SpiderPool 组件时已创建  Multus CR 实例，可直接使用该 Multus CR 实例创建[工作负载](https://docs.daocloud.io/network/modules/spiderpool/usage.html)。
 - 如需创建新的 Multus CR 实例，可参考此文档。
 
 ## 前提条件
 
-- [SpiderPool 已成功部署](../modules/spiderpool/install.md)，新版本的 SpiderPool 已包含 Multus-underlay 的全部功能。
+- [SpiderPool 已成功部署](https://docs.daocloud.io/network/modules/spiderpool/install.html)，新版本的 SpiderPool 已包含 Multus-underlay 的全部功能。
 
-## UI 界面操作
+## 界面操作
 
 1. 登录 DCE UI 后，在左侧导航栏点击 `容器管理` —> `集群列表`，找到对应集群。然后在左侧导航栏点击`容器网络` —> `网络配置`。
 
     ![网络配置](../images/networkconfig01.png)
 
-1. 进入`网络配置` —> `Multus CR 管理`，点击创建 `Multus CR`。
+2. 进入`网络配置` —> `Multus CR 管理`，点击创建 `Multus CR`。
 
     ![Multus CR 管理](../images/networkconfig02.png)
-
+  
     !!! note
 
-        注意：创建 Multus CR 时，CNI 类型只能为 `macvlan`、`ipvlan`、`sriov`、`自定义`四种类型四选一，可分成三种场景。
+        注意：创建 Multus CR 时，CNI 类型只能为 `macvlan`、`ipvlan`、`sriov`、`自定义`四种类型四选一，可分成三种场景，参考以下三种参数方式进行配置。
 
-1. 进入创建页面
+### 创建 macvlan 或 ipvlan 类型的 Multus CR
 
-    场景一：当 CNI 类型为 `macvlan` 或 `ipvlan` 时，输入如下参数：
-
+    输入如下参数：
+   
     ![创建multus cr](../images/networkconfig03.png)
 
     - `名称`：Multus CNI 配置的实例名称，即 Multus CR 名称。
@@ -47,19 +45,23 @@ Multus CR 管理，是 Spiderpool 对 Multus CNI 中配置实例的二次封装�
         - 802.3ad
         - balance-tlb
         - balance-alb
-    参数是可选的，输入格式为 `k1=v1;k2=v2;k3=v3`，用 `;` 隔开。
+    参数是可选的, 输入格式为 `k1=v1;k2=v2;k3=v3`，用 `;` 隔开。
 
-    场景二：当 CNI 类型为 `sriov` 时，输入如下参数：
+### 创建 sriov 类型的 Multus CR
+
+    输入如下参数：
 
     ![创建multus cr](../images/networkconfig04.png)
 
-    - 其中 `名称`、`描述`、`CNI 类型`、`IPv4 默认池`、`IPv6 默认池`、`Vlan ID` 配置同场景一。
-    - `SR-IOV 资源`：只用于 `sriov` 类型，填写资源名称，不能为空。
+    - `名称`、`描述`、`CNI 类型`、`IPv4 默认池`、`IPv6 默认池`、`Vlan ID` 配置同场景一。
+    - `SR-IOV 资源`：只用于`sriov`类型, 填写资源名称，不能为空。
 
-    场景三：当 CNI 类型为`自定义`时，输入如下参数：
+### 创建自定义类型的 Multus CR
+
+    输入如下参数：
 
     ![创建multus cr](../images/networkconfig05.png)
 
     - `JSON`：自定义类型时，需判断输入一个合法格式的 Json 文件。
   
-1. 创建完成后[工作负载](../modules/spiderpool/usage.md)即可使用 Multus CR 管理。
+3. 创建完成后[工作负载](../modules/spiderpool/usage.md)即可使用 Multus CR 管理。
