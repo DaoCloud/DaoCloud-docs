@@ -13,22 +13,21 @@ hide:
 ## 前提条件
 
 - [SpiderPool 已成功部署](./install.md)。
-- [Multus 搭配 Macvlan/SR-IOV 已成功部署](../multus-underlay/install.md)。
 - 创建子网及 IP 池前建议做好子网和 IP 规划，并充分了解 [IP 池的使用方式](ippoolusage.md)。
 
 ## 界面操作
 
 1. 登录 DCE UI 后，在左侧导航栏点击 `容器管理` —> `集群列表`，找到对应集群。然后在左侧导航栏点击`容器网络` —> `网络配置`。
 
-    ![网络配置](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/networkconfig01.jpg)
+    ![网络配置](../../images/networkconfig01.png)
 
-1. 进入`网络配置`，确认待使用子网是否已创建。
+2. 进入`网络配置`，确认待使用子网是否已创建。
 
     - 如待使用子网已默认创建，可直接`创建 IP 池`。
 
     - 如待使用子网没有默认创建，可进入页面点击`创建子网`。
 
-    ![创建子网](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/subnetcreate.jpg)
+    ![创建子网](../../images/subnet01.png)
 
     参数说明：
 
@@ -40,15 +39,15 @@ hide:
 
     - `VLAN ID`：子网所对应的 VLAN ID。
 
-1. 点击`下一步`进入 `IP 选择`，输入待使用的 IP 段（输入上述子网内 IP）。点击`确定`，完成子网创建。
+3. 点击`下一步`进入 `IP 选择`，输入待使用的 IP 段（输入上述子网内 IP）。点击`确定`，完成子网创建。
 
-    ![创建子网](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/subnetcreate02.jpg)
+    ![创建子网](../../images/subnet02.png)
 
-1. 点击待使用的`子网名称`，进入子网详情页面。
+4. 点击待使用的`子网名称`，进入子网详情页面。
 
-    ![子网详情](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/subnetlist.jpg)
+    ![子网详情](../../images/subnet03.png)
 
-1. 在子网详情页，点击`创建 IP 池`。
+5. 在子网详情页，点击`创建 IP 池`。
 
     !!! note
 
@@ -59,7 +58,7 @@ hide:
 
     进入创建页面，输入如下参数：
 
-    ![创建 IP 池](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/createippool01.jpg)
+    ![创建 IP 池](../../images/subnet04.png)
 
     - `网关`：`网关`默认继承`子网网关`，可修改。
 
@@ -77,13 +76,13 @@ hide:
 
         如果创建时不添加任何亲和性，创建后的 IP 池为`共享 IP 池`。
 
-1. 点击 IP 池名称，然后点击`添加 IP` 选择 `IP 开始地址`以及加入 IP 池中的 `IP 数量`，点击`确定`，完成 IP 添加，再次点击完成 IP 池创建。
+6. 点击 IP 池名称，然后点击`添加 IP` 选择 `IP 开始地址`以及加入 IP 池中的 `IP 数量`，点击`确定`，完成 IP 添加，再次点击完成 IP 池创建。
 
     `获取 IP 规则`：从 `IP 开始地址`依次获取输入对应数量的 IP，IP 段如不是连续的 IP，则跳过中间断档 IP，依次往后获取。
 
     ![添加 IP](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/createippool02.jpg)
 
-2. 创建完成后[工作负载即可使用 IP 池](../../modules/spiderpool/usage.md)。
+7. 创建完成后[工作负载即可使用 IP 池](../../modules/spiderpool/usage.md)。
 
 ## YAML 创建
 

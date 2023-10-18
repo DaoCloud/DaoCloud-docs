@@ -344,11 +344,13 @@ nav:
                   - 网络规划: network/plans/netplan.md     
               - 网络配置: 
                   - IP 池管理: 
-                    - 创建 IP 池: network/modules/spiderpool/createpool.md
+                    - 创建子网及 IP 池: network/modules/spiderpool/createpool.md
                     - IP 池场景说明: network/modules/spiderpool/ippoolusage.md
                   - IP 池使用:
                     - 工作负载使用 IP 池: network/modules/spiderpool/usage.md
                     - 第三方工作负载使用 IP 池: network/modules/spiderpool/cutomizedusage.md 
+                  - Multus CR 管理:
+                    - 创建 Multus CR: network/configration/multus-cr.md
               - 网络性能:
                   - 网络 CNI 性能测试报告: network/performance/cni-performance.md
                   - Spiderpool 性能测试报告: network/performance/spiderpool-performance.md

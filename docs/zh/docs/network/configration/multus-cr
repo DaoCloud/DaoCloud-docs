@@ -1,0 +1,46 @@
+# 创建 Multus CR
+
+ Multus CR 管理，即管理 Multus CNI 实例。本页介绍在创建工作负载使用多网卡配置之前，如何创建 Multus CR。
+
+- 如部署 SpiderPool 组件时已创建  multus CRD 实例，可直接[使用 IP 池](https://docs.daocloud.io/network/modules/spiderpool/usage.html)。
+- 如需创建新的 Multus CNI 类型并配置 Multus CR 实例，可参考此文档。
+
+## 前提条件
+
+- [SpiderPool 已成功部署](https://docs.daocloud.io/network/modules/spiderpool/install.html)，新版本的 SpiderPool 已包含 Multus-underlay 的全部功能。
+
+## 界面操作
+
+1. 登录 DCE UI 后，在左侧导航栏点击 `容器管理` —> `集群列表`，找到对应集群。然后在左侧导航栏点击`容器网络` —> `网络配置`
+![网络配置](../images/networkconfig01.png)
+2. 进入`网络配置`—>`Multus CR 管理`，点击创建`Multus CR`
+![Multus CR 管理](../images/networkconfig02.png)
+!!! note
+
+        注意：创建 Multus CR 时，CNI 类型只能为 `macvlan`，`ipvlan`，`sriov`，`自定义` 四种类型四选一，可分成三种场景。
+
+3. 进入创建页面
+
+   场景一：当CNI 类型为`macvlan`或`ipvlan`时，输入如下参数：
+![创建multus cr](../images/networkconfig03.png)
+
+- `名称`：Multus CNI 配置的实例名称，即 Multus CR 名称。
+- `描述`：实例的描述信息。
+- `CNI 类型`：CNI 的类型，目前界面可选择 `macvlan`，`ipvlan`。
+- `IPv4 默认池`：CNI 配置文件 IPv4 默认池。
+- `IPv6 默认池`：CNI 配置文件 IPv6 默认池。
+- `Vlan ID`：当 CNI 类型为 `macvlan`，`ipvlan`，`sriov` 时被允许配置， "0" 和 ""的效果一样。
+- `网卡配置`：网卡配置中包含接口配置信息，当网卡接口数量为一个时，则默认网卡配置中只有一个网卡接口。当添加接口数量大于等于两个时，可以做 Bond 相关配置。
+- `网卡接口`：只用于 CNI 类型 为 `macvlan`，`ipvlan` ，至少有一个元素。如果有两个及其以上的元素, bond 必须不能为空。
+- `Bond 信息`：名称不能为空，模式必须在范围 [0,6] 内, 分别对应 balance-rr,active-backup,balance-xor,broadcast,802.3ad,balance-tlb,balance-alb 七种模式。参数是可选的, 输入格式为 k1=v1;k2=v2;k3=v3,用 ; 隔开。
+
+场景二：当CNI 类型为`sriov`时，输入如下参数：
+![创建multus cr](../images/networkconfig04.png)
+- `名称`、`描述`、`CNI 类型`、`IPv4 默认池`、`IPv6 默认池`、`Vlan ID`配置同场景一。
+- `SR-IOV 资源`：只用于`sriov`类型, 填写资源名称，不能为空。
+
+场景三：当CNI 类型为`自定义`时，输入如下参数：
+![创建multus cr](../images/networkconfig05.png)
+- `JSON`：自定义类型时，需判断输入一个合法格式的 Json 文件。
+  
+1. 创建完成后[工作负载](../modules/spiderpool/usage.md)即可使用 Multus CR 管理。
