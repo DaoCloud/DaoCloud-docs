@@ -976,19 +976,24 @@ nav:
       - Get Started:
           - Installation: videos/install.md
           - Scenario-based Videos: videos/use-cases.md
-      - Workbench: videos/amamba.md
+      - Workbench:
+          - Workbench: videos/amamba.md
       - Container:
           - Container Management: videos/kpanda.md
           - Multicloud Management: videos/kairship.md
           - Container Registry: videos/kangaroo.md
           - Network: videos/network.md
-      - Obsevability: videos/insight.md
+      - Obsevability:
+          - Insight: videos/insight.md
       - Microservices:
           - Service Mesh: videos/mspider.md
           - Microservice Engine: videos/skoala.md
-      - Middleware: videos/mcamel.md
-      - Cloud to Edge Continuum: videos/kant.md
-      - Global Management: videos/ghippo.md
+      - Data Service:
+          - Middleware: videos/mcamel.md
+      - Edge Computing:
+          - Cloud Edge Collaboration: videos/kant.md
+      - Management:
+          - Global Management: videos/ghippo.md
   - Download:
       - DaoCloud Enterprise 5.0:
           - Index: download/index.md
@@ -1082,6 +1087,8 @@ nav:
       - Cloud Native News:
           - Cloud Native News 2023: native/news/news-2023.md
           - Cloud Native News 2022: native/news/news-2022.md
-      - Business Products: native/commerce.md
-      - Open Source Projects: native/open.md
-      - Knowledge Sharing: native/knowledge.md
+      - Industry Insight:
+          - Business Products: native/commerce.md
+          - Open Source Projects: native/open.md
+      - Knowledge:
+          - Knowledge Sharing: native/knowledge.md

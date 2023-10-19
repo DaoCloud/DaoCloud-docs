@@ -2,20 +2,21 @@
 
 本页介绍如何安装 Multus-underlay 组件。
 
-> **Warning⚠️**
-> 
-> 1. 目前 Multus-underlay 已经被标记为 deprecated 状态, 可能在未来被移除, 目前已经不再更新
-> 
-> 2. Spiderpool > v0.7.0 后支持安装 Multus, 所以不需要再安装 Multus-underlay, 并且 Multus-underlay 大部分功能已经迁移到 [Spiderpool v0.7.0](../spiderpool), 请使用 [Spiderpool v0.7.0](../spiderpool)
-> 
-> 3. 现在不再通过 Multus-underlay 安装 Sriov-CNI, 而是通过 [sriov-network-operator](../sriov-network-operator) 安装, 请使用 [sriov-network-operator](../sriov-network-operator)
+!!! warning
+
+    1. 目前 Multus-underlay 已经被标记为 deprecated 状态，可能在未来被移除，目前已经不再更新
+    2. Spiderpool > v0.7.0 后支持安装 Multus，所以不需要再安装 Multus-underlay，并且 Multus-underlay
+       大部分功能已经迁移到 [Spiderpool v0.7.0](https://github.com/spidernet-io/spiderpool/releases/tag/v0.7.0)，
+       请使用 Spiderpool v0.7.0。
+    3. 现在不再通过 Multus-underlay 安装 Sriov-CNI，而是通过 [sriov-network-operator](../sriov-network-operator/install.md)
+       安装，请使用 [sriov-network-operator](../sriov-network-operator/index.md)
 
 ## 注意事项
 
-- 默认 CNI：安装 Multus-underlay 之前，需要确认当前集群是否存在默认 CNI, 比如 Calico 或者 Cilium，否则 Multus 可能会无法工作。
+- 默认 CNI：安装 Multus-underlay 之前，需要确认当前集群是否存在默认 CNI，比如 Calico 或者 Cilium，否则 Multus 可能会无法工作。
 - Spiderpool：Multus-underlay 依赖 [Spiderpool](https://github.com/spidernet-io/spiderpool) 作为 `ipam`。
   安装 `Spiderpool` 请参考 [Install Spiderpool](../spiderpool/install.md)。
-- 如需安装 SRIOV-CNI, 需要确认节点是否为物理主机且节点拥有支持 SRIOV 的物理网卡。
+- 如需安装 SRIOV-CNI，需要确认节点是否为物理主机且节点拥有支持 SRIOV 的物理网卡。
   如果节点为 VM 虚拟机或者没有支持 SR-IOV 的网卡，那么 SR-IOV 将无法工作。
   详情参考 [sriov-device-plugin](https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin)。
 - 不建议同时安装 MacVLAN 和 SR-IOV。
@@ -24,22 +25,23 @@
 
 请确认您的集群已成功接入`容器管理`平台，然后执行以下步骤安装 Multus-underlay。
 
-1. 在左侧导航栏点击`容器管理`—>`集群列表`，然后找到准备安装 Multus-underlay 的集群名称。然后，在左侧导航栏中选择 `Helm 应用` -> `Helm 模板`，找到并点击 `multus-underlay`。
+1. 在左侧导航栏点击`容器管理`—>`集群列表`，然后找到准备安装 Multus-underlay 的集群名称。
+   然后，在左侧导航栏中选择 `Helm 应用` -> `Helm 模板`，找到并点击 `multus-underlay`。
 
     ![helm repo](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/repo.png)
 
-2. 进入安装界面，填写基础配置信息。命名空间选择 `kube-system`, 并开启`就绪等待`:
+2. 进入安装界面，填写基础配置信息。命名空间选择 `kube-system`，并开启`就绪等待`:
 
     ![helm install-1](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/install1.png)
 
 3. 为 Multus 配置默认 CNI：
 
-    安装 Multus 之前, 必须要先安装一种 CNI 作为默认CNI。注意: 保证选择的 Value 必须与集群目前安装的默认 CNI 保持一致。
+    安装 Multus 之前，必须要先安装一种 CNI 作为默认CNI。注意: 保证选择的 Value 必须与集群目前安装的默认 CNI 保持一致。
 
     !!! note
 
-        > 如果当前通过 kubean 安装的集群，那么 value 为 calico 或者 cilium 中二选一。
-        > 或通过查看主机：`/etc/cni/net.d/` 路径，按照字典顺序第一个 CNI 配置文件的 `name` key 所对应的 Value 值就为默认 CNI。比如：
+        如果当前是通过 kubean 安装的集群，那么 value 为 calico 或者 cilium 中二选一。
+        或通过查看主机 `/etc/cni/net.d/` 路径，按照字典顺序第一个 CNI 配置文件的 `name` key 所对应的 Value 值就为默认 CNI。比如：
         
         ```shell
         root@master:~# ls /etc/cni/net.d/
@@ -50,13 +52,17 @@
           "cniVersion": "0.3.1",
         ...
         ```
-        > `name` 的值如果为 `k8s-pod-network`，那么这里就应该选中 `k8s-pod-network`。
-        > ![Default CNI](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/install2.png)        
-        > 如果当前集群是接入的第三方、calico 为 CNI 的集群, 那么这里应该选择为 `k8s-pod-network`. 同样, 也可以通过查看主机上`/etc/cni/net.d`文件确认。
+        `name` 的值如果为 `k8s-pod-network`，那么这里就应该选中 `k8s-pod-network`。
+
+        ![Default CNI](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/install2.png)
+
+        如果当前集群是接入的第三方、calico 为 CNI 的集群，那么这里应该选择为 `k8s-pod-network`。
+        同样，也可以通过查看主机上 `/etc/cni/net.d` 文件确认。
 
 4. 配置目前集群 Service 和 Pod 的 CIDR:
 
-    此步骤的目的是告知 [Meta-Plugins](https://github.com/spidernet-io/cni-plugins) 集群的 CIDR，Meta-Plugins 会创建对应的路由规则，解决 Underlay CNI 的集群东西向通信问题。
+    此步骤的目的是告知 [Meta-Plugins](https://github.com/spidernet-io/cni-plugins)
+    集群的 CIDR，Meta-Plugins 会创建对应的路由规则，解决 Underlay CNI 的集群东西向通信问题。
 
     ![Cluster CIDR](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/install3.png)
 
@@ -66,7 +72,7 @@
 
     !!! note
 
-        如果为双栈集群, 也需要填写 IPv6 的地址。
+        如果为双栈集群，也需要填写 IPv6 的地址。
         如果 CNI 为 Calico 且 有多个 IP 池，Pod CIDR 可配置多个。
 
 5. 安装 MacVLAN（可选，默认安装）：
@@ -83,7 +89,7 @@
         - `macvlan-standalone`：此类型下，Pod 中只会插入一张 MacVLAN 的网卡，只由其完成与集群东西向和南北向的通信问题。
       
     - `Multus CR Name`：Multus CRD 实例的名称。
-    - `Master Interface`：MacVLAN 主接口的名称。注意：配置的主接口必须存在于主机上, 否则 MacVLAN 无法工作。
+    - `Master Interface`：MacVLAN 主接口的名称。注意：配置的主接口必须存在于主机上，否则 MacVLAN 无法工作。
     - `Vlan ID`：可选，MacVLAN 主接口的 Vlan tag。
 
 6. 安装 SR-IOV（可选，默认不安装）：
@@ -112,8 +118,8 @@
     ![sriov-net-device](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/sriov-net-device.png)
 
     !!! note
-    
-        不建议同时启用 MacVLAN 和 SR-IOV。另外启用 SR-IOV 需要硬件支持, 安装前确认物理主机的网卡是否支持 SR-IOV。
+
+        不建议同时启用 MacVLAN 和 SR-IOV。另外启用 SR-IOV 需要硬件支持，安装前确认物理主机的网卡是否支持 SR-IOV。
 
 7. 配置完成，点击`安装`。
 
@@ -164,7 +170,7 @@
               annotations:
                 ipam.spidernet.io/ippool: |-
                   {
-                      "interface": "net1",  # 1. 指定 Pod 第二张网卡(net1)从哪一个 IPPool 池中分配 IP. 
+                      "interface": "net1",  # (1)
                       "ipv4": [
                         "172-81-0-1"
                       ],
@@ -172,16 +178,18 @@
                         "172-81-0-1-v6"
                       ]
                   }
-                k8s.v1.cni.cncf.io/networks: kube-system/macvlan-vlan0  # 2. 设置 Pod 第二张网卡.
+                k8s.v1.cni.cncf.io/networks: kube-system/macvlan-vlan0  # (2)
                 ...
         ```
 
-        `ipam.spidernet.io/ippool`：指定从哪一个 IP 池为 MacVLAN 网卡分配 IP 地址。
-        如果不指定，将会从默认池中分配。更多 Spiderpool 使用说明请参考 [Spiderpool](../spiderpool/index.md)。
+        1. 指定 Pod 第二张网卡 (net1) 从哪一个 IP 池中分配 IP
+        2. 设置 Pod 第二张网卡
 
-        `k8s.v1.cni.cncf.io/networks`：通过指定 MacVLAN Multus CRD, 为 Pod 再分配一张 MacVLAN 网卡 (net1)。
+        - `ipam.spidernet.io/ippool`：指定从哪一个 IP 池为 MacVLAN 网卡分配 IP 地址。
+          如果不指定，将会从默认池中分配。更多 Spiderpool 使用说明请参考 [Spiderpool](../spiderpool/index.md)。
+        - `k8s.v1.cni.cncf.io/networks`：通过指定 MacVLAN Multus CRD，为 Pod 再分配一张 MacVLAN 网卡 (net1)。
 
-        创建成功:
+        创建成功：
 
         ```shell
         root@master:~# kubectl get po  -o wide | grep overlay

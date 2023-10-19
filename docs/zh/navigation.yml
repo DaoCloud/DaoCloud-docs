@@ -1007,19 +1007,24 @@ nav:
       - 入门:
           - 安装教程: videos/install.md
           - 场景化视频: videos/use-cases.md
-      - 应用工作台: videos/amamba.md
+      - 工作台:
+          - 应用工作台: videos/amamba.md
       - 容器:
           - 容器管理: videos/kpanda.md
           - 多云编排: videos/kairship.md
           - 镜像仓库: videos/kangaroo.md
           - 容器网络: videos/network.md
-      - 可观测性: videos/insight.md
+      - 可观测:
+          - 可观测性: videos/insight.md
       - 微服务:
           - 微服务引擎: videos/skoala.md
           - 服务网格: videos/mspider.md
-      - 中间件: videos/mcamel.md
-      - 云边协同: videos/kant.md
-      - 全局管理: videos/ghippo.md
+      - 数据服务:
+          - 中间件: videos/mcamel.md
+      - 边缘计算:
+          - 云边协同: videos/kant.md
+      - 管理:
+          - 全局管理: videos/ghippo.md
   - 下载中心:
       - DaoCloud Enterprise 5.0:
           - 导览页: download/index.md
@@ -1115,8 +1120,9 @@ nav:
       - 社区要闻:
           - 2023 云原生社区要闻: native/news/news-2023.md
           - 2022 云原生社区要闻: native/news/news-2022.md
-      - 商业产品: native/commerce.md
-      - 开源项目: native/open.md
+      - 行业洞察:
+          - 商业产品: native/commerce.md
+          - 开源项目: native/open.md
       - 知识分享:
           - 索引: native/knowledge/knowledge.md
           - 排障方案: native/knowledge/troubleshoot.md
