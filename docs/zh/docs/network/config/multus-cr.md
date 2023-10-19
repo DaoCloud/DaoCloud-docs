@@ -31,19 +31,19 @@
 
 ### 创建 macvlan 或 ipvlan 类型的 Multus CR
 
-  输入如下参数：
+输入如下参数：
 
-  ![创建multus cr](../images/networkconfig03.png)
+![创建multus cr](../images/networkconfig03.png)
 
-  - `名称`：Multus CNI 配置的实例名称，即 Multus CR 名称。
-  - `描述`：实例的描述信息。
-  - `CNI 类型`：CNI 的类型，目前界面可选择 `macvlan`，`ipvlan`。
-  - `IPv4 默认池`：CNI 配置文件 IPv4 默认池。
-  - `IPv6 默认池`：CNI 配置文件 IPv6 默认池。
-  - `Vlan ID`：当 CNI 类型为 `macvlan`，`ipvlan`，`sriov` 时被允许配置， "0" 和 ""的效果一样。
-  - `网卡配置`：网卡配置中包含接口配置信息，当网卡接口数量为一个时，则默认网卡配置中只有一个网卡接口。当添加接口数量大于等于两个时，可以做 Bond 相关配置。
-  - `网卡接口`：只用于 CNI 类型 为 `macvlan`，`ipvlan` ，至少有一个元素。如果有两个及其以上的元素, bond 必须不能为空。
-  - `Bond 信息`：名称不能为空，模式必须在范围 [0,6] 内, 分别对应七种模式：
+- `名称`：Multus CNI 配置的实例名称，即 Multus CR 名称。
+- `描述`：实例的描述信息。
+- `CNI 类型`：CNI 的类型，目前界面可选择 `macvlan`，`ipvlan`。
+- `IPv4 默认池`：CNI 配置文件 IPv4 默认池。
+- `IPv6 默认池`：CNI 配置文件 IPv6 默认池。
+- `Vlan ID`：当 CNI 类型为 `macvlan`，`ipvlan`，`sriov` 时被允许配置， "0" 和 ""的效果一样。
+- `网卡配置`：网卡配置中包含接口配置信息，当网卡接口数量为一个时，则默认网卡配置中只有一个网卡接口。当添加接口数量大于等于两个时，可以做 Bond 相关配置。
+- `网卡接口`：只用于 CNI 类型 为 `macvlan`，`ipvlan` ，至少有一个元素。如果有两个及其以上的元素, bond 必须不能为空。
+- `Bond 信息`：名称不能为空，模式必须在范围 [0,6] 内, 分别对应七种模式：
     - balance-rr
     - active-backup
     - balance-xor
@@ -51,23 +51,23 @@
     - 802.3ad
     - balance-tlb
     - balance-alb
-    参数是可选的, 输入格式为 `k1=v1;k2=v2;k3=v3`，用 `;` 隔开。
+参数是可选的, 输入格式为 `k1=v1;k2=v2;k3=v3`，用 `;` 隔开。
 
 ### 创建 sriov 类型的 Multus CR
 
-  输入如下参数：
+输入如下参数：
 
-  ![创建multus cr](../images/networkconfig04.png)
+![创建multus cr](../images/networkconfig04.png)
 
-  - `名称`、`描述`、`CNI 类型`、`IPv4 默认池`、`IPv6 默认池`、`Vlan ID` 配置同场景一。
-  - `SR-IOV 资源`：只用于`sriov`类型, 填写资源名称，不能为空。
+- `名称`、`描述`、`CNI 类型`、`IPv4 默认池`、`IPv6 默认池`、`Vlan ID` 配置同场景一。
+- `SR-IOV 资源`：只用于`sriov`类型, 填写资源名称，不能为空。
 
 ### 创建自定义类型的 Multus CR
 
-  输入如下参数：
+输入如下参数：
 
-  ![创建multus cr](../images/networkconfig05.png)
+![创建multus cr](../images/networkconfig05.png)
 
-  - `JSON`：自定义类型时，需判断输入一个合法格式的 Json 文件。
-  
-3. 创建完成后[工作负载](../modules/spiderpool/usage.md)即可使用 Multus CR 管理。
+- `JSON`：自定义类型时，需判断输入一个合法格式的 Json 文件。
+
+创建完成后[工作负载](../modules/spiderpool/usage.md)即可使用 Multus CR 管理。
