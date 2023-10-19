@@ -10,7 +10,7 @@ This page provides downloadable offline installation packages for various versio
 
 ## Verification
 
-In the directory where you downloaded the offline installation package and checksum file, execute the following command to verify integrity:
+In the directory where you downloaded the offline installation package and checksum file, run the following command to verify integrity:
 
 ```sh
 echo "$(cat redis_0.11.1_amd64_checksum.sha512sum)" | sha512sum -c

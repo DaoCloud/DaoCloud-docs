@@ -41,7 +41,7 @@ This article explains how to access a virtual machine using NodePort.
       type: NodePort
     ```
 
-2. Execute the following command:
+2. Run the following command:
 
     ```sh
     kubectl apply -f your-svc.yaml

@@ -10,7 +10,7 @@ This page allows you to download offline installation packages for different ver
 
 ## Verification
 
-In the directory where you downloaded the offline installation package and checksum file, execute the following command to verify the integrity:
+In the directory where you downloaded the offline installation package and checksum file, run the following command to verify the integrity:
 
 ```sh
 echo "$(cat rabbitmq_0.13.1_amd64_checksum.sha512sum)" | sha512sum -c

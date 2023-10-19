@@ -10,7 +10,7 @@ This page provides downloadable offline installation packages for various versio
 
 ## Verification
 
-To verify the integrity of the downloaded offline installation package and checksum file, execute the following command in the directory:
+To verify the integrity of the downloaded offline installation package and checksum file, run the following command in the directory:
 
 ```sh
 echo "$(cat mysql_0.11.1_amd64_checksum.sha512sum)" | sha512sum -c

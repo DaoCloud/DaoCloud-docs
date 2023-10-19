@@ -10,7 +10,7 @@ This page allows you to download offline installation packages for different ver
 
 ## Verification
 
-To verify the integrity of the downloaded offline package and checksum file, execute the following command in the directory where they are located:
+To verify the integrity of the downloaded offline package and checksum file, run the following command in the directory where they are located:
 
 ```sh
 echo "$(cat elasticsearch_0.10.1_amd64_checksum.sha512sum)" | sha512sum -c

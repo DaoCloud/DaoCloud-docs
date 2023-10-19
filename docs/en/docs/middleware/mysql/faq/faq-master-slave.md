@@ -2,7 +2,7 @@
 
 The master-slave relationship in MySQL can be complex when it comes to troubleshooting, as different symptoms may require different solutions.
 
-1. Execute the following command to confirm the MySQL status:
+1. Run the following command to confirm the MySQL status:
 
     ```bash
     kubectl get mysql -A
@@ -52,7 +52,7 @@ If there are no `ERROR` messages in the logs of the slave, it means that the `Fa
     kubectl exec -it mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf
     ```
 
-4. Execute the following command inside the MySQL container to check the slave status.
+4. Run the following command inside the MySQL container to check the slave status.
 
     The `Seconds_Behind_Master` field indicates the delay between the master and slave. If the value is between 0 and 30, it can be considered as no delay, indicating that the master and slave are in sync.
 
@@ -242,7 +242,7 @@ Run the following command to check the slave's replication delay status in the f
 mysql> show slave status\G;
 ```
 
-After confirming the master-slave synchronization (when `Seconds_Behind_Master` is less than 30s), execute the following command to set MySQL strict mode:
+After confirming the master-slave synchronization (when `Seconds_Behind_Master` is less than 30s), run the following command to set MySQL strict mode:
 
 ```bash
 [root@master-01 ~]$ kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB -e 'stop slave;set global slave_exec_mode="STRICT";set global sync_binlog=10086;start slave;
@@ -371,13 +371,13 @@ When the slave database encounters an error message similar to `[Note] Slave: MT
 
 5. Manually edit the Pod of the master: change its label from `role replica` to `master` and set `healthy no` to `yes`.
 
-6. Execute the following command on the MySQL shell of the slave:
+6. Run the following command on the MySQL shell of the slave:
 
     ```sql
     mysql> start slave;
     ```
 
-7. If the master and slave are not establishing a connection, execute the following command on the MySQL shell of the slave:
+7. If the master and slave are not establishing a connection, run the following command on the MySQL shell of the slave:
 
     ```sql
     -- Note to replace {master-host-pod-index}
@@ -386,7 +386,7 @@ When the slave database encounters an error message similar to `[Note] Slave: MT
 
 ## Inconsistent Primary and Standby Data
 
-When there is inconsistency in data between the primary and standby instances, you can execute the following commands to achieve primary-standby consistency synchronization:
+When there is inconsistency in data between the primary and standby instances, you can run the following commands to achieve primary-standby consistency synchronization:
 
 ```sql
 pt-table-sync --execute --charset=utf8 --ignore-databases=mysql,sys,percona --databases=amamba,audit,ghippo,insight,ipavo,keycloak,kpanda,skoala dsn=u=root,p=xxx,h=mcamel-common-kpanda-mysql-cluster-mysql-0.mysql.mcamel-system,P=3306 dsn=u=root,p=xxx,h=mcamel-common-kpanda-mysql-cluster-mysql.mysql.mcamel-system,P=3306  --print
