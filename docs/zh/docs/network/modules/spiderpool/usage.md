@@ -33,7 +33,7 @@ hide:
 
     - `网卡信息`: 若创建的应用容器需要使用多张网卡（如一张东西向通信，一张南北向通信），可以添加多网卡。
 
-        - eth0（默认网卡）：默认为 Overlay CNI，Calico/Cilium。
+        - eth0（默认网卡）：默认为 Overlay CNI，可选 Calico/Cilium/Macvlan CR，设置前请确认[Multus CR 已创建](../../config/multus-cr.md)。当 eth0（默认网卡）设置为 Macvlan 网络时，net1，net2 等新增网卡只能选择 Macvlan 网络。
 
         - net1: 可选择 Underlay CNI 配置，如 Macvlan/SR-IOV ，本文示例为 Macvlan。
 
@@ -68,7 +68,7 @@ hide:
     提前创建好 IP 池，并在 Multus CNI 配置中，选择带有默认 IP 池的网卡，即可使用默认 IP 池功能。
     ![默认IP池](../../images/useippool05.png)
     
-4. 创建完工作负载后，可点击对应工作负载 `test01` 查看工作负载 Pod 使用的 IP。
+1. 创建完工作负载后，可点击对应工作负载 `test01` 查看工作负载 Pod 使用的 IP。
 
     ![工作负载 IP](../../images/useippool06.png)
 
