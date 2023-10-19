@@ -20,7 +20,7 @@ repo_url: https://github.com/DaoCloud/DaoCloud-docs
 edit_uri: edit/main/docs/en/docs/
 
 use_directory_urls: false # disbale https://www.mkdocs.org/user-guide/configuration/#use_directory_urls
-strict: true # enable strict mode, https://www.mkdocs.org/user-guide/configuration/#strict
+strict: false # enable strict mode, https://www.mkdocs.org/user-guide/configuration/#strict
 
 # Configuration
 theme:
@@ -175,8 +175,10 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.details
   - pymdownx.emoji:
+      # emoji_index: !!python/name:materialx.emoji.twemoji
+      # emoji_generator: !!python/name:material.extensions.emoji.to_svg
       emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
