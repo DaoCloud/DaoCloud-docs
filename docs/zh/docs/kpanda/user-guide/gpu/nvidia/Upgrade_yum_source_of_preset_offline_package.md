@@ -192,12 +192,12 @@ mc cp centos-base minio/centos-base --recursive
 # 文件名称必须为 CentOS-Base.repo，否则安装 gpu-operator 时无法被识别
 cat > CentOS-Base.repo << EOF
 [extension-0]
-baseurl = http://10.5.14.200:9000/centos-base #步骤三中，放置 yum 源的文件服务器地址
+baseurl = http://10.5.14.200:9000/centos-base/centos-base #步骤三中，放置 yum 源的文件服务器地址
 gpgcheck = 0
 name = kubean extension 0
   
 [extension-1]
-baseurl = http://10.5.14.200:9000/centos-base #步骤三中，放置 yum 源的文件服务器地址
+baseurl = http://10.5.14.200:9000/centos-base/centos-base #步骤三中，放置 yum 源的文件服务器地址
 gpgcheck = 0
 name = kubean extension 1
 EOF
