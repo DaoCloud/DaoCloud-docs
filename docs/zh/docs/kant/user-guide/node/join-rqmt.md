@@ -34,7 +34,7 @@
 
 Docker 版本必须高于 19.0，推荐使用 19.03.6 版本。
 
-须知：如果 KubeEdge 版本高于或等于 1.14 且云端 Kubernetes 版本高于 1.24，除 Docker 之外，还需要安装 CRI-Dockerd 。
+<!-- 须知：如果 KubeEdge 版本高于或等于 1.14 且云端 Kubernetes 版本高于 1.24，除 Docker 之外，还需要安装 CRI-Dockerd 。 -->
 
 ## glibc
 
