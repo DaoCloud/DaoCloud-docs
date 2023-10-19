@@ -15,7 +15,7 @@ We have created video tutorials to help you quickly get started.
 - :material-engine: **Microservice Engine** [Microservice governance center and gateway](skoala.md)
 - :material-table-refresh: **Service Mesh** [Non-intrusive service governance](mspider.md)
 - :material-middleware: **Middleware** [ES, Kafka, MinIO, MySQL, etc.](mcamel.md)
-- :fontawesome-brands-edge-legacy: **Cloud to Edge Continuum** [Extend containers to edge](kant.md)
+- :fontawesome-brands-edge-legacy: **Cloud Edge Collaboration** [Extend containers to edge](kant.md)
 - :fontawesome-solid-user-group: **Global Management** [Login settings, access permissions, appearance](ghippo.md)
 
 </div>
