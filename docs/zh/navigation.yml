@@ -228,6 +228,7 @@ nav:
                   - GPU 支持矩阵: kpanda/user-guide/gpu/gpu_matrix.md
                   - NVIDIA GPU 管理:
                       - GPU Operator 离线安装: kpanda/user-guide/gpu/nvidia/install_nvidia_driver_of_operator.md
+                      - 升级预置 GPU Operator 离线包的 yum 源: kpanda/user-guide/gpu/nvidia/Upgrade_yum_source_of_preset_offline_package.md
                       - NVIDIA GPU 模式说明: kpanda/user-guide/gpu/nvidia/overvie_nvidia_gpu.md
                       - NVIDIA GPU 整卡模式: kpanda/user-guide/gpu/nvidia/full_gpu_userguide.md
                       - NVIDIA vGPU 模式: 
