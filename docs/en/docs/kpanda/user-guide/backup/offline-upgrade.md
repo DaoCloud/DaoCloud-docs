@@ -149,7 +149,7 @@ There are two upgrade methods. You can choose the appropriate upgrade method bas
 
     1. Backup the `--set` parameters.
 
-        Before upgrading the backup and restore version, it is recommended to execute the following command to back up the `--set` parameters of the old version.
+        Before upgrading the backup and restore version, it is recommended to run the following command to back up the `--set` parameters of the old version.
 
         ```shell
         helm get values kcoral -n kcoral-system -o yaml > bak.yaml
@@ -182,7 +182,7 @@ There are two upgrade methods. You can choose the appropriate upgrade method bas
 
     1. Backup the `--set` parameters.
 
-        Before upgrading the backup and restore version, it is recommended to execute the following command to back up the `--set` parameters of the old version.
+        Before upgrading the backup and restore version, it is recommended to run the following command to back up the `--set` parameters of the old version.
 
         ```shell
         helm get values kcoral -n k pan da-system -o yaml > bak.yaml

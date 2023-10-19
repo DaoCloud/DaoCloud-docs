@@ -53,10 +53,10 @@ facilitating progressive delivery.
 ## Deployment Method
 
 It is recommended to install Workbench using the
-[DCE 5.0 Commercial Edition installation package](../../install/commercial/start-install.md),
+[DCE 5.0 Enterprise Package installation package](../../install/commercial/start-install.md),
 as it installs all modules of DCE 5.0 at once, without worrying about component compatibility.
 
-However, if you want to install or upgrade the Workbench module separately, execute the following command:
+However, if you want to install or upgrade the Workbench module separately, run the following command:
 
 ```bash
 export VERSION=**** # Replace with the actual version to be deployed.

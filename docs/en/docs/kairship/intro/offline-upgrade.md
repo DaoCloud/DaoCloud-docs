@@ -150,7 +150,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
     
     1. Backup the `--set` parameters.
     
-        Before upgrading the multi-cloud orchestration version, it is recommended to execute the following command to backup the `--set` parameters of the old version.
+        Before upgrading the multi-cloud orchestration version, it is recommended to run the following command to backup the `--set` parameters of the old version.
     
         ```shell
         helm get values kairship -n kairship-system -o yaml > bak.yaml
@@ -183,7 +183,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
 
     1. Backup the `--set` parameters.
     
-        Before upgrading the multi-cloud orchestration version, it is recommended to execute the following command to backup the `--set` parameters of the old version.
+        Before upgrading the multi-cloud orchestration version, it is recommended to run the following command to backup the `--set` parameters of the old version.
     
         ```shell
         helm get values kairship -n kairship-system -o yaml > bak.yaml
