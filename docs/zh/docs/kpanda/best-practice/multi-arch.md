@@ -25,13 +25,13 @@
 
 | CPU 架构 | 版本   | 下载地址                                                     |
 | :------- | :----- | :----------------------------------------------------------- |
-| AMD64    | v0.8.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.8.0-amd64.tar> |
-| ARM64    | v0.8.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.8.0-arm64.tar> |
+| AMD64    | v0.10.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.10.0-amd64.tar> |
+| ARM64    | v0.10.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.10.0-arm64.tar> |
 
 下载完毕后解压离线包。此处我们下载 arm64 架构的离线包：
 
 ```bash
-tar -xvf offline-v0.8.0-arm64.tar
+tar -xvf offline-v0.10.0-arm64.tar
 ```
 
 #### ISO 离线包（Kylin v10 sp2）
@@ -46,7 +46,7 @@ tar -xvf offline-v0.8.0-arm64.tar
 
 | 操作系统版本                                        | 下载地址                                                     |
 | :-------------------------------------------------- | :----------------------------------------------------------- |
-| Kylin Linux Advanced Server release V10 (Sword) SP2 | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.5.2/os-pkgs-kylinv10-v0.5.2.tar.gz> |
+| Kylin Linux Advanced Server release V10 (Sword) SP2 | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.7.4/os-pkgs-kylinv10-v0.7.4.tar.gz> |
 
 !!! note
 
@@ -58,10 +58,9 @@ tar -xvf offline-v0.8.0-arm64.tar
 
 ```bash
 ./offline/dce5-installer import-artifact -c clusterConfig.yaml \
-    --target-arch=arm64 \
     --offline-path=/root/offline \
     --iso-path=/root/Kylin-Server-10-SP2-aarch64-Release-Build09-20210524.iso \
-    --os-pkgs-path=/root/os-pkgs-kylinv10-v0.5.2.tar.gz
+    --os-pkgs-path=/root/os-pkgs-kylinv10-v0.7.4.tar.gz
 ```
 
 !!! note
@@ -69,7 +68,6 @@ tar -xvf offline-v0.8.0-arm64.tar
     参数说明：
 
     - `-c clusterConfig.yaml` 指定之前部署 DCE5.0 时使用的 clusterConfig.yaml 文件
-    - `--target-arch`  指定架构，支持 arm64、amd64
     - `--offline-path` 指定下载的离线镜像包文件地址
     - `--iso-path` 指定下载的 ISO 操作系统镜像文件地址
     - `--os-pkgs-path` 指定下载的 osPackage 离线包文件地址
