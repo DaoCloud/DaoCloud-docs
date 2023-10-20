@@ -1,8 +1,8 @@
-# 离线升级 Spidernet
+# 离线升级云原生网络模块
 
-DCE 5.0 的各个模块松散耦合，支持独立安装、升级各个模块。此文档适用于通过离线方式升级 Spidernet。
+DCE 5.0 的各个模块松散耦合，支持独立安装、升级各个模块。此文档适用于通过离线方式升级云原生网络模块 Spidernet。
 
-Spidernet 为网络管理引擎，主要提供 Spidernet、Multus CR、Egress IP 等网络模块功能的管理。
+Spidernet 为云原生网络管理引擎，主要提供 Spidernet、Multus CR、Egress IP 等网络模块功能的管理。
 
 ## 从下载的安装包中加载镜像
 

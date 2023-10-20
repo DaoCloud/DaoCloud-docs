@@ -17,36 +17,36 @@ nav:
                   - 20230630 版本发布: dce/dce-rn/20230630.md
                   - 20230531 版本发布: dce/dce-rn/20230531.md
           - 安装教程:
-            - 安装简介: install/index.md
-            - 安装依赖项: install/install-tools.md
-            - 安装社区版:
-                - 资源规划: install/community/resources.md
-                - 新手尝鲜在线安装: install/community/kind/online.md
-                - 已有 K8s 集群在线安装: install/community/k8s/online.md
-                - 已有 K8s 集群离线安装: install/community/k8s/offline.md
-            - 安装商业版:
-                - 部署架构: install/commercial/deploy-arch.md
-                - 部署要求: install/commercial/deploy-requirements.md
-                - 准备工作: install/commercial/prepare.md
-                - 离线安装步骤: install/commercial/start-install.md
-                - 使用场景示例: install/commercial/scenarios.md
-                - 集群配置文件 clusterConfig.yaml: install/commercial/cluster-config.md
-                - 产品清单文件 manifest.yaml: install/commercial/manifest.md
-            - 升级/卸载/导入/FAQ:
-                - 升级 DCE 5.0 组件: install/upgrade.md
-                - 标准版升级白金版: install/evolve.md
-                - 卸载: install/uninstall.md
-                - 导入离线资源: install/import.md
-                - 安装排障: install/faq.md
-            - 在不同 K8s 发行版上安装:
-                - 在 OpenShift OCP 上安装: install/k8s-install/ocp-install-dce5.0.md
-                - 在阿里云 ECS 上安装: install/k8s-install/ecs-install-dce5.0.md
-            - 在不同操作系统上安装:
-                - 在 UOS V20 (1020a): install/os-install/uos-v20-install-dce5.0.md
-                - Oracle Linux R9/R8 U1 操作系统: install/os-install/oracleLinux-install-dce5.0.md
-                - TencentOS Server 3.1 操作系统: install/os-install/TencentOS-install-dce5.0.md
-                - 其他 Linux 操作系统: install/os-install/otherlinux.md
-            - 安装器 Release Notes: install/release-notes.md
+              - 安装简介: install/index.md
+              - 安装依赖项: install/install-tools.md
+              - 安装社区版:
+                  - 资源规划: install/community/resources.md
+                  - 新手尝鲜在线安装: install/community/kind/online.md
+                  - 已有 K8s 集群在线安装: install/community/k8s/online.md
+                  - 已有 K8s 集群离线安装: install/community/k8s/offline.md
+              - 安装商业版:
+                  - 部署架构: install/commercial/deploy-arch.md
+                  - 部署要求: install/commercial/deploy-requirements.md
+                  - 准备工作: install/commercial/prepare.md
+                  - 离线安装步骤: install/commercial/start-install.md
+                  - 使用场景示例: install/commercial/scenarios.md
+                  - 集群配置文件 clusterConfig.yaml: install/commercial/cluster-config.md
+                  - 产品清单文件 manifest.yaml: install/commercial/manifest.md
+              - 升级/卸载/导入/FAQ:
+                  - 升级 DCE 5.0 组件: install/upgrade.md
+                  - 标准版升级白金版: install/evolve.md
+                  - 卸载: install/uninstall.md
+                  - 导入离线资源: install/import.md
+                  - 安装排障: install/faq.md
+              - 在不同 K8s 发行版上安装:
+                  - 在 OpenShift OCP 上安装: install/k8s-install/ocp-install-dce5.0.md
+                  - 在阿里云 ECS 上安装: install/k8s-install/ecs-install-dce5.0.md
+              - 在不同操作系统上安装:
+                  - 在 UOS V20 (1020a): install/os-install/uos-v20-install-dce5.0.md
+                  - Oracle Linux R9/R8 U1 操作系统: install/os-install/oracleLinux-install-dce5.0.md
+                  - TencentOS Server 3.1 操作系统: install/os-install/TencentOS-install-dce5.0.md
+                  - 其他 Linux 操作系统: install/os-install/otherlinux.md
+              - 安装器 Release Notes: install/release-notes.md
       - 工作台:
           - 应用工作台:
               - 介绍:
@@ -231,14 +231,14 @@ nav:
                       - 升级预置 GPU Operator 离线包的 yum 源: kpanda/user-guide/gpu/nvidia/Upgrade_yum_source_of_preset_offline_package.md
                       - NVIDIA GPU 模式说明: kpanda/user-guide/gpu/nvidia/overvie_nvidia_gpu.md
                       - NVIDIA GPU 整卡模式: kpanda/user-guide/gpu/nvidia/full_gpu_userguide.md
-                      - NVIDIA vGPU 模式: 
-                        - 安装 vGPU Addon: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_addon.md
-                        - 应用使用 NVIDIA vGPU: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_user.md
+                      - NVIDIA vGPU 模式:
+                          - 安装 vGPU Addon: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_addon.md
+                          - 应用使用 NVIDIA vGPU: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_user.md
                       - NVIDIA MIG 模式:
-                        - NVIDIA MIG 概述: kpanda/user-guide/gpu/nvidia/mig/mig_index.md
-                        - 开启 MIG 功能: kpanda/user-guide/gpu/create_mig.md
-                        - 应用使用 NVIDIA MIG: kpanda/user-guide/gpu/nvidia/mig/mig_usage.md
-                        - MIG 相关命令: kpanda/user-guide/gpu/nvidia/mig/mig_command.md
+                          - NVIDIA MIG 概述: kpanda/user-guide/gpu/nvidia/mig/mig_index.md
+                          - 开启 MIG 功能: kpanda/user-guide/gpu/create_mig.md
+                          - 应用使用 NVIDIA MIG: kpanda/user-guide/gpu/nvidia/mig/mig_usage.md
+                          - MIG 相关命令: kpanda/user-guide/gpu/nvidia/mig/mig_command.md
                   - 昇腾 GPU 管理:
                       - 应用使用昇腾 GPU: kpanda/user-guide/gpu/Ascend_usage.md
                   - 天数 GPU 管理:
@@ -340,18 +340,19 @@ nav:
                   - 背景: network/intro/background.md
                   - 挑战: network/intro/challenges.md
                   - 网络组件: network/modules/modules.md
+                  - 离线升级云原生网络: network/intro/offline.md
               - 网络规划:
                   - 网卡规划: network/plans/ethplan.md
-                  - 网络规划: network/plans/netplan.md     
-              - 网络配置: 
-                  - IP 池管理: 
-                    - 创建子网及 IP 池: network/modules/spiderpool/createpool.md
-                    - IP 池场景说明: network/modules/spiderpool/ippoolusage.md
+                  - 网络规划: network/plans/netplan.md
+              - 网络配置:
+                  - IP 池管理:
+                      - 创建子网及 IP 池: network/modules/spiderpool/createpool.md
+                      - IP 池场景说明: network/modules/spiderpool/ippoolusage.md
                   - IP 池使用:
-                    - 工作负载使用 IP 池: network/modules/spiderpool/usage.md
-                    - 第三方工作负载使用 IP 池: network/modules/spiderpool/cutomizedusage.md 
+                      - 工作负载使用 IP 池: network/modules/spiderpool/usage.md
+                      - 第三方工作负载使用 IP 池: network/modules/spiderpool/cutomizedusage.md
                   - Multus CR 管理:
-                    - 创建 Multus CR: network/config/multus-cr.md
+                      - 创建 Multus CR: network/config/multus-cr.md
               - 网络性能:
                   - 网络 CNI 性能测试报告: network/performance/cni-performance.md
                   - Spiderpool 性能测试报告: network/performance/spiderpool-performance.md
@@ -365,16 +366,16 @@ nav:
                   - Release Notes: network/modules/spiderpool/releasenotes.md
                   - 介绍: network/modules/spiderpool/index.md
                   - 安装: network/modules/spiderpool/install.md
-                  - 升级: network/modules/spiderpool/upgrade.md                 
+                  - 升级: network/modules/spiderpool/upgrade.md
                   - 配置参考: network/modules/spiderpool/config.md
-                  - 常用命令: network/modules/spiderpool/command.md  
+                  - 常用命令: network/modules/spiderpool/command.md
                   - 公有云适配:
-                    - 在阿里云环境运行: network/modules/spiderpool/alibabacloud.md 
+                      - 在阿里云环境运行: network/modules/spiderpool/alibabacloud.md
               - 集成 sriov-network-operator:
                   - 介绍: network/modules/sriov-network-operator/index.md
                   - 安装: network/modules/sriov-network-operator/install.md
                   - SR-IOV: network/modules/multus-underlay/sriov.md
-                  - DPDK: network/modules/multus-underlay/dpdk.md          
+                  - DPDK: network/modules/multus-underlay/dpdk.md
               - 集成 Calico:
                   - 介绍: network/modules/calico/index.md
                   - 安装参数配置: network/modules/calico/install.md
@@ -422,7 +423,7 @@ nav:
                   - 介绍: network/modules/submariner/index.md
                   - 安装: network/modules/submariner/install.md
                   - 使用说明: network/modules/submariner/usage.md
-          - 云原生存储:          
+          - 云原生存储:
               - 介绍:
                   - 什么是云原生存储: storage/index.md
                   - 背景和挑战: storage/background.md
