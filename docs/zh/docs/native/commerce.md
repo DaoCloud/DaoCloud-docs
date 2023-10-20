@@ -44,6 +44,10 @@
 
     本地集群减少了因云端网络中断而导致的应用停机风险。在此期间，应用程序仍然可用，并且可以执行集群操作。当连接到云时，EKS 管理 Outposts 上 K8s 控制平面的可用性。本地集群运行的 Kubernetes 与云上 EKS 功能相同，支持自动部署最新的安全补丁。
 
+- [Azure Kubernetes 发行版 AKS 9 月更新](https://azure.microsoft.com/en-us/updates/?query=AKS)
+
+    更新内容：新增 Vertical Pod 自动伸缩（VPA）附加组件、新增镜像清理器、新增节点操作系统补丁功能、 网关负载均衡器现已支持 IPv6、支持 Kubernetes 1.28、支持 Azure Functions 中的 Dapr 扩展、Azure 容器存储更新（支持在 26 个区域部署、支持卷大小调整、克隆、支持更多磁盘类型）。
+
 - [Azure 推出容器应用程序网关预览版](https://azure.microsoft.com/en-us/updates/public-preview-application-gateway-for-containers/)
 
     Azure 容器应用程序网关是一个应用程序负载均衡和动态流量管理产品，适用于在 Kubernetes 集群中运行的工作负载。它是 Azure 应用网关入口控制器（AGIC）的增强版，增强的功能包括：在反映 Kubernetes YAML 配置变化时，实现近乎实时的收敛时间；支持超过 1400 个后端 Pod 和 100 个监听；支持蓝绿部署策略和主动/主动或主动/被动路由。
@@ -434,6 +438,10 @@
 - [华为云发布分布式云原生产品——容器 CCE Turbo 和分布式云原生 UCS (Ubiquitous Cloud Native Service)](https://mp.weixin.qq.com/s/Bm_kFuyK3uLaSb4AvcYdmA)
 
     CCE Turbo 可通过计算、网络、调度全方位加速，实现极致弹性，如帮助客户以 3000 pod/min 的弹性轻松应对业务流量洪峰；UCS 提供跨云、跨地域的云原生应用管理，实现一致体验。
+
+- [火山引擎容器服务 VKE 第三季度产品更新](https://mp.weixin.qq.com/s/YTeVFW4myz26LALQ4AyCPA)
+
+    更新内容：新增云原生批量计算套件、VPC-CNI 集群支持 NetworkPolicy、新增 rdma-device-plugin 组件、新增集群巡检及故障诊断工具、支持 NUMA 拓扑感知调度、提供镜像懒加载 Nydus 监控看板、支持 GPU Xid 信息输出到日志文件、支持 Kubernetes 1.26 版本。
 
 - [火山引擎云原生 PaaS 平台 veStack 敏捷版第二季度产品更新](https://mp.weixin.qq.com/s/t_38mWzGurd0QrgdQg6O_A)
 
@@ -836,6 +844,10 @@
     该版本新特性：支持集成任意 OCI 镜像仓库，扫描其中的容器镜像；支持集成任意 Kubernetes 集群，扫描其中的工作负载配置及镜像；支持扫描第三方软件物料清单文件；支持在任意 CI/CD 流水线中集成 SEAL 的安全扫描功能；能够聚合管理全链路各个阶段的资源提供全链路安全洞察；支持自动生成多策略修复建议、漏洞优先级排序、因时制宜处理安全问题。
 
 ### T
+
+- [Tetrate 推出企业级服务网格项目 TIS（Tetrate Istio Subscription）](https://mp.weixin.qq.com/s/lwVqOlwPgtaZ8BMsvLuT1Q)
+
+    TIS 是行业内唯一基于开源 Istio 的完全上游服务网格。其基于 Tetrate Istio Distro，提供了经过验证的针对所有主要云平台的 Istio 构建版本。此外，还提供了 CVE 保护、FedRAMP 合规性，并符合美国联邦零信任架构的标准。
 
 - [Tetrate 发布企业级云原生服务网关 Tetrate Enterprise Envoy Gateway](https://mp.weixin.qq.com/s/XV7b6W3GiKbamuTabypIBQ)
 

@@ -373,6 +373,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 ### E
 
+- [Envoy v1.28.0 released (CNCF project)](https://www.envoyproxy.io/docs/envoy/v1.28.0/version_history/v1.28/v1.28.0)
+
+    Release features: working node support for delayed cluster creation, added EDS (Endpoint Discovery Service) response caching support for ADS, added ECDS (External Configuration Discovery Service) support for downstream and upstream web filters, and support for the use of the Envoy's EDS (Endpoint Discovery Service) response caching service even if the number of zones in the source and upstream clusters is different. upstream clusters, support for enabling area-aware routing even if the number of areas in the source and upstream clusters are different, and the deprecation of OpenTracing and OpenCensus in v1.30.
+
 - [Envoy v1.27.0 released (CNCF project)](https://github.com/envoyproxy/envoy/releases/tag/v1.27.0)
 
     Release features: Introduced new golang network filter, added Load shed point for rejecting requests when resources are insufficient, support for CONNECT-UDP, introduced Open Telemetry-compatible stats collector, added access log formatter for printing CEL expressions.
@@ -797,6 +801,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      [KubeClipper](https://github.com/KubeClipper-labs) is based on the kubeadm tool for secondary packaging, providing rapid deployment of K8S clusters and continuous full lifecycle management (installation, uninstallation, upgrade, scaling, remote access, etc.) capabilities,
      It supports multiple deployment methods such as online, proxy, and offline, and also provides rich and scalable management services for CRI, CNI, CSI, and various CRD components.
+
+- [KubeEdge Cloud Native Edge Computing Platform v1.15.0 Released (CNCF Project)](https://github.com/kubeedge/kubeedge/blob/master/CHANGELOG/CHANGELOG-1.15.md)
+
+    Release features: support for Windows edge nodes, device API upgraded to v1beta1, new support for DMI data plane (alpha), new mapper development framework sub-project Mapper-Framework, support for static pods native to Kubernetes, support for Kubernetes dependent on non-resource class requests plugins that rely on requests from non-resource categories (e.g., Cilium, Calico), upgraded Kubernetes dependencies to v1.26.7.
 
 - [KubeEdge Sedna v0.6 & Ianvs SideCloud Collaborative Lifelong Learning Program v0.2 Released](https://mp.weixin.qq.com/s/OQdNmmzRl4GC_ZssU4vatQ)
 
@@ -1356,6 +1364,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 ### R
 
+- [Radius: Azure's open source, cloud-native application platform](https://azure.microsoft.com/en-us/blog/the-microsoft-azure-incubations-team-launches-radius-a-new-open- application-platform-for-the-cloud/)
+
+    [Radius](https://github.com/radius-project/radius) By supporting Kubernetes, existing infrastructure tools such as Terraform and Bicep, and integrating with existing CI/CD systems such as GitHub Actions, it aims to enable Developers and platform engineers to collaborate on the delivery and management of cloud-native applications that meet cost requirements and operational and security best practices. Deployment of applications on cloud platforms such as Azure and AWS in private clouds is currently supported, with plans to support additional cloud providers.
+
 - [Rainbond IT innovation version of cloud-native multi-cloud application management platform released](https://mp.weixin.qq.com/s/eelPIhoCQdAfBnQOm_YDAg)
 
     Rainbond Cintron Edition supports deployment and management of multiple single-architecture clusters. It supports one-click deployment and management of amd64 clusters, arm64 clusters, and amd64 & arm64 hybrid architecture clusters. Compatible with mainstream localized CPUs and adapted to multiple localized operating systems. Supports rapid migration of legacy applications to Cintron environment. Cloud native app store supports publishing and installation of arm64 architecture apps.
@@ -1492,6 +1504,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [ThreatMapper Cloud Native Security Observation Platform v1.4.0 release](https://github.com/deepfence/ThreatMapper/releases/tag/v1.4.0)
 
      The main new features of this version: the new feature ThreatGraph can combine the network and other runtime environments to determine the priority of threat scanning results, support agentless cloud security situation management for cloud assets, and integrate cloud-native environment malicious program scanning tools [YaraHunter]( https://github.com/deepfence/YaraHunter).
+
+- [Trivy Container Vulnerability Scanning Tool v0.46.0 released (CNCF project)](https://github.com/aquasecurity/trivy/releases/tag/v0.46.0)
+
+    Release features: support for scanning for vulnerabilities in Kubernetes control plane and node components, added ability to retrieve licensing information for .NET projects, added metadata to scan reports for Kubernetes resources, added a workflow for checking Go versions of dependencies in the CI process.
 
 - [Trivy Container Vulnerability Scanning Tool v0.44.0 Released (CNCF Project)](https://github.com/aquasecurity/trivy/releases/tag/v0.44.0)
 
