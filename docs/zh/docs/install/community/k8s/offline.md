@@ -29,7 +29,7 @@
     假定版本 VERSION=0.10.0
 
     ```bash
-    export VERSION=v0.10.0
+    export VERSION=v0.11.0
     wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-$VERSION-amd64.tar
     tar -xvf offline-community-$VERSION-amd64.tar
     ```
