@@ -104,7 +104,7 @@ K8s 官方不再维护（但 DaoCloud [KLTS](https://klts.io/) 会持续维护�
 - [DaoCloud 文档编写风格](./style.md)
 - [社区贡献指南](./CONTRIBUTING.md)
 - [社区行为准则](./CODE_OF_CONDUCT.md)
-- [导出 Word 和 PDF](./scripts/generate_pdf.md)
+- [导出 Word 和 PDF](./scripts/generate_pdf_zh.md)
 - [页面自动翻译](./scripts/README.md)；推荐使用质量更高的 ChatGPT 翻译
 
 ## 感谢所有贡献者 ❤
