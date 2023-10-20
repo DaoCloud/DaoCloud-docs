@@ -136,7 +136,7 @@ Run the upgrade command:
 Run the upgrade command:
 
 ```bash
-./offline/dce5-installer cluster-create -c ./offline/sample/clusterConfig.yaml -m ./offline/sample/manifest.yaml --upgrade infrastructures
+./offline/dce5-installer cluster-create -c ./offline/sample/clusterConfig.yaml -m ./offline/sample/manifest.yaml --upgrade infrastructure
 ```
 
 Explanation of upgrade parameters:
