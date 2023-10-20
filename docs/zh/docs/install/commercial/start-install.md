@@ -30,7 +30,7 @@ tar -xvf offline-v0.11.0-amd64.tar
 
 #### addon 离线包 （可选）
 
-addon 离线包包含一些常用的组件的 Helm Chart 离线包，具体清单请参考[addon](https://docs.daocloud.io/download/addon/v0.10.0/#_2)。
+addon 离线包包含一些常用的组件的 Helm Chart 离线包，具体清单请参考[addon](https://docs.daocloud.io/download/addon/v0.11.0.html#addon)。
 
 安装器从 v0.5.0 版本，支持了 addon 的离线包导入能力，如果需要支持 addon 中所有的 helm chart 离线化。可以在[下载中心](https://docs.daocloud.io/download/dce5/)下载最新版本。
 
