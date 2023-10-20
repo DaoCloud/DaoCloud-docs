@@ -26,27 +26,27 @@
 
 2. 参考以下说明填写基本信息，然后点击`下一步`：
 
-    - 名称：填写应用的名称。
-    - 资源类型：支持无状态负载、有状态负载，本演示选择无状态负载。
-    - 输入或选择应用组。
+    - 名称：填写资源负载的名称。
+    - 资源类型：本演示选择无状态负载，目前仅支持无状态堵在
     - 部署位置：选择将应用部署到哪个集群下的哪个命名空间。如果要接入微服务，请确保当前工作空间下已经[创建了注册中心](../../../skoala/trad-ms/hosted/create-registry.md)。
+    - 所属应用：原生应用名称，支持从已有的原生应用列表中选择，也可以新建，默认与名称一致。
     - 实例数：填写实例的数量，Pod 的数量。
 
-        ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/ms02.png)
+        ![基本信息](../../images/git01.png)
 
 3. 参考以下说明填写流水线配置，然后点击`下一步`。
 
-    - 代码仓库：输入 Git 仓库地址，例如 `https://gitlab.daocloud.cn/ndx/skoala.git`。在实际操作中请使用自己的仓库地址。
+    - 代码仓库：支持选择仓库与自定义，本示例中 Git 仓库地址为 `https://gitlab.daocloud.cn/ndx/skoala.git`，需要根据实际情况替换。其中选择仓库是从用户集成的 GitLab 实例中选择。
     - 分支：默认为`main`，此处为`main`，无需更改。
     - 凭证：选择访问代码仓库的凭证 `git-credential`，如果为公开仓库，则无需填写。
-    - Dockerfile 路径：输入 Dockerfile 在代码仓库中的绝对路径，例如 `demo/integration/springcloud-nacos-sentinel/code/Dockerfile`。
-    - 目标镜像名称：输入镜像仓库名称，例如 [`release-ci.daocloud.io/test-lfj/fromgit`](http://release-ci.daocloud.io/test-lfj/fromgit) 。
+    - Dockerfile 路径：，支持输入 Dockerfile 在代码仓库中的绝对路径，例如 `demo/integration/springcloud-nacos-sentinel/code/Dockerfile`。
+    - 目标镜像名称：支持选择与输入，本示例中地址为 [`release-ci.daocloud.io/test-lfj/fromgit`](http://release-ci.daocloud.io/test-lfj/fromgit) ，需要根据实际情况替换。其中选择的镜像仓库是从镜像仓库模块中集成并绑定到当前工作空间的镜像仓库实例中选择。
     - Tag：输入镜像仓库版本，例如 `v2.0.0`。
     - 凭证：选择访问镜像仓库的凭证，例如 `registry-credential`。
     - ContextPath：ContextPath 为 docker build 命令执行上下文路径。填写相对于代码根目录的路径，如 target，如果不填则为 Dockerfile 文件所在目录。
     - 构建参数：构建参数会以 --build-arg 的形式传递到 build 命令的参数中，支持将上游制品下载地址、上游镜像下载地址设置为参数，同时支持自定义任意参数。
 
-        ![流水线构建](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/ms03.png)
+        ![流水线构建](../../images/git02.png)
 
 4. 参考以下说明填写容器配置，然后点击`下一步`。
 
@@ -79,17 +79,18 @@
     - 注册中心命名空间：微服务应用的 nacos 命名空间
     - 注册中心服务分组：微服务应用的服务分组
     - 用户名/密码：如果该注册中心实例被认证，则需要填写用户名密码
-    - 开启微服务治理：所选择的注册中心实例应[开启了 Sentinel 或 Mesh 治理插件](../../../skoala/trad-ms/hosted/plugins/plugin-center.md)
-    - 监控：选择开启，开启后可查看服务相关监控信息
-    - 日志：默认开启
-    - 链路追踪：开启后可查看服务的链路追踪信息，目前仅支持 Java 语言
+    - 开启服务治理：所选择的注册中心实例应[开启了 Sentinel 或 Mesh 治理插件](../../../skoala/trad-ms/hosted/plugins/plugin-center.md)
 
-        ![高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/ms05.png)
+        ![高级配置](../../images/git03.png)
 
 ## 查看并访问微服务相关信息
 
-1. 在左侧导航栏点击`概览`，在`原生应用`页签中，光标悬浮在某一个应用上，点击悬浮菜单`查看更多详情`。
+1. 在左侧导航栏点击`概览`，在`原生应用`页签中，选择原生应用进入到详情页面。
 
-    ![悬浮菜单](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/ms06.png)
+    ![原生应用](../../images/git04.png)
 
-1. 跳转到微服务引擎，查看服务详情。
+2. 在详情页面中，`应用资源` 页签中，选择带有 `服务网格` 标签的资源，并点击。
+
+    ![跳转](../../images/git05.png)
+
+3. 跳转到微服务引擎，查看[服务详情](https://docs.daocloud.io/skoala/trad-ms/hosted/services/check-details.html)。
