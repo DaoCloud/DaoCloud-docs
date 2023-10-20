@@ -213,7 +213,7 @@ nav:
                   - Integrate Falco:
                       - Intro: security/falco.md
                       - Install: security/falco-install.md
-                      - Falco-exporter: security/falco-exporter.md                  
+                      - Falco-exporter: security/falco-exporter.md
               - Permissions:
                   - Permission Brief: kpanda/user-guide/permissions/permission-brief.md
                   - Cluster and Namespace Authorization: kpanda/user-guide/permissions/cluster-ns-auth.md
@@ -325,18 +325,19 @@ nav:
                   - Background: network/intro/background.md
                   - Challenges: network/intro/challenges.md
                   - Components: network/modules/modules.md
+                  - Offline Upgrade: network/intro/offline.md
               - Plan:
                   - Eth card plan: network/plans/ethplan.md
                   - Network plan: network/plans/netplan.md
-              - Network Config: 
-                  - IP Pool: 
-                    - Create Subnet and IP Pool: network/modules/spiderpool/createpool.md
-                    - IP Pool Scenarios: network/modules/spiderpool/ippoolusage.md
+              - Network Config:
+                  - IP Pool:
+                      - Create Subnet and IP Pool: network/modules/spiderpool/createpool.md
+                      - IP Pool Scenarios: network/modules/spiderpool/ippoolusage.md
                   - IP Pool Usage:
-                    - Use IP Pool by Workload: network/modules/spiderpool/usage.md
-                    - Use IP Pool by Workload from 3rd party: network/modules/spiderpool/cutomizedusage.md 
+                      - Use IP Pool by Workload: network/modules/spiderpool/usage.md
+                      - Use IP Pool by Workload from 3rd party: network/modules/spiderpool/cutomizedusage.md
                   - Multus CRs:
-                    - Create Multus CR: network/config/multus-cr.md
+                      - Create Multus CR: network/config/multus-cr.md
               - Performance reports:
                   - Network CNI performance test report: network/performance/cni-performance.md
                   - Spiderpool performance test report: network/performance/spiderpool-performance.md
@@ -403,7 +404,7 @@ nav:
                   - Intro: network/modules/sriov-network-operator/index.md
                   - Install: network/modules/sriov-network-operator/install.md
                   - SR-IOV: network/modules/multus-underlay/sriov.md
-                  - DPDK: network/modules/multus-underlay/dpdk.md  
+                  - DPDK: network/modules/multus-underlay/dpdk.md
               - Submariner:
                   - Intro: network/modules/submariner/index.md
                   - Install: network/modules/submariner/install.md
@@ -746,10 +747,10 @@ nav:
                   - Supported Kubernetes Versions: middleware/compatibility.md
                   - Permissions: middleware/permission.md
               - Common Config:
-                - First-Time Use: middleware/common/first-visit.md
-                - Custom Permissions: middleware/common/permissions.md
-                - Config Management: middleware/common/config.md
-                - Workload Antiaffinity: middleware/common/antiaffinity.md
+                  - First-Time Use: middleware/common/first-visit.md
+                  - Custom Permissions: middleware/common/permissions.md
+                  - Config Management: middleware/common/config.md
+                  - Workload Antiaffinity: middleware/common/antiaffinity.md
               - Elasticsearch:
                   - Intro:
                       - What is Elasticsearch: middleware/elasticsearch/intro/index.md
