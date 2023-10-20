@@ -30,7 +30,7 @@ and unleashes cloud-native productivity.
 - :material-microsoft-azure-devops: **Workbench** [CI/CD pipeline](amamba/intro/index.md)
 - :octicons-container-16: **Container Management** [Cluster/node/workloads](kpanda/intro/index.md)
 - :material-cloud-check: **Multicloud Management** [Multicloud instance/workload/policy](kairship/intro/index.md)
-- :material-warehouse: **Container Registry** [Integrate and host registries](kangaroo/index.md)
+- :material-warehouse: **Container Registry** [Integrate and host registries](kangaroo/intro/index.md)
 - :material-dot-net: **Network** [Multi-CNI fusion solution](network/intro/index.md)
 - :floppy_disk: **Storage** [Containerized storage](storage/index.md)
 - :material-train-car-container: **VM Containers** [Containerized virtual machine](virtnest/intro/index.md)
@@ -139,7 +139,7 @@ day by day, making things better over time.
      progressive delivery capability systems, achieving more refined management and operation of applications.
 
      **Modules involved**: [Global Management](ghippo/intro/index.md), [Container Management](kpanda/intro/index.md),
-     [Workbench](amamba/intro/index.md), [container registry](kangaroo/index.md), [cloud native network](network/intro/index.md),
+     [Workbench](amamba/intro/index.md), [container registry](kangaroo/intro/index.md), [cloud native network](network/intro/index.md),
      [cloud native storage](storage/index.md)
 
     ![app delivery](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/06appdeliv.jpg)
@@ -162,7 +162,7 @@ day by day, making things better over time.
 
     ![Heterogeneous](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/08xinchuan.jpg)
 
-=== "Cloud to Edge Continuum"
+=== "Cloud Edge Collaboration"
 
      DCE 5.0 extends cloud-native capabilities to the edge by adopting the edge cluster
      and edge node mode. It moves the computing power of the data center down, while
@@ -173,7 +173,7 @@ day by day, making things better over time.
      and maintenance, management, and control on the Internet. Additionally, it realizes
      true integration of cloud and edge by bringing cloud-native capabilities to the edge.
 
-    ![Cloud to edge continuum](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/09cloud-edge.jpg)
+    ![Cloud Edge Collaboration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/09cloud-edge.jpg)
 
 === "Cloud Native Base"
 

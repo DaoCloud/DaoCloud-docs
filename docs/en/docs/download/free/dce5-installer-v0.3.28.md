@@ -1,6 +1,15 @@
+---
+date: 2022-11-17
+hide:
+  - navigation
+---
+
 # DCE Community v0.3.28
 
 This page can download the offline installation package of DCE Community.
+
+[Return to Download Index](../index.md){ .md-button }
+[More Historical Versions](./dce5-installer-history.md){ .md-button }
 
 ## Download
 

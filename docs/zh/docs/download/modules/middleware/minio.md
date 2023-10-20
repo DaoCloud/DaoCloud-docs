@@ -1,14 +1,12 @@
-# Minio
+# MinIO
 
 本页可下载 MinIO 各版本的离线安装包。
-
-[返回下载首页](../../index.md){ .md-button }
 
 ## 下载
 
 | 版本                                                         | 架构 | 文件大小 | 安装包                                                                                                                             |  校验文件 | 更新日期       |
 |------------------------------------------------------------| ----- |-------- |---------------------------------------------------------------------------------------------------------------------------------| ---------- |------------|
-| [v0.8.1](../../../middleware/minio/release-notes.md)          | AMD 64 | 296.23MB | [:arrow_down: minio_0.8.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/minio_0.8.1_amd64.tar) | [:arrow_down: minio_0.8.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/minio_0.8.1_amd64_checksum.sha512sum) | 2023-10-10 |
+| [v0.8.1](../../../middleware/minio/release-notes.md) | AMD 64 | 219.91MB | [:arrow_down: minio_0.8.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/minio_0.8.1_amd64.tar) | [:arrow_down: minio_0.8.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/minio_0.8.1_amd64_checksum.sha512sum) | 2023-10-11 |
 
 ## 校验
 

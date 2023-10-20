@@ -74,7 +74,7 @@ First of all, it is necessary to expose the access address of Jenkins Dashbord t
 
 1. Create a pipeline job in `Workbench`, and edit `Jenkinsfile` as follows:
 
-    ```bash        
+    ```groovy        
     pipeline {
       agent {
         node {
@@ -102,7 +102,7 @@ First of all, it is necessary to expose the access address of Jenkins Dashbord t
 
         It should be noted that the agent part needs to select label as base. Because the specified node is only set for the base in the configuration file, if it needs to be set for other agents. Repeat the above operation.
 
-1. Click `Execute Now` for the pipeline, and go to `Container Management` to view the running node of the Pod that executes the task.
+1. Click `Run Now` for the pipeline, and go to `Container Management` to view the running node of the Pod that executes the task.
 
      <!--![]()screenshots-->
 

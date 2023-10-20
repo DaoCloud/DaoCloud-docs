@@ -58,7 +58,7 @@
 
 ### Sentinel 流控规则
 
-参阅[Sentinel 流控规则](../skoala/trad-ms/hosted/services/flow-control.md)文档页面。
+参阅 [Sentinel 流控规则](../skoala/trad-ms/hosted/services/flow-control.md)文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/sentinel-flow-control.mp4" preload="metadata" poster="images/skoala-flow-control.png"></video>
@@ -66,7 +66,7 @@
 
 ### Sentinel 熔断规则
 
-参阅[Sentinel 熔断规则](../skoala/trad-ms/hosted/services/circuit-breaker.md)文档页面。
+参阅 [Sentinel 熔断规则](../skoala/trad-ms/hosted/services/circuit-breaker.md)文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/circuit-breaker.mp4" preload="metadata" poster="images/skoala-circuit-breaker.png"></video>
@@ -74,10 +74,26 @@
 
 ### Sentinel 热点规则
 
-参阅[Sentinel 热点规则](../skoala/trad-ms/hosted/services/hotspot.md)文档页面。
+参阅 [Sentinel 热点规则](../skoala/trad-ms/hosted/services/hotspot.md)文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/sentinel-hotspot.mp4" preload="metadata" poster="images/skoala-hotspot.png"></video>
+</div>
+
+### Sentinel 系统规则
+
+参阅 [Sentinel 系统规则](../skoala/trad-ms/hosted/services/system.md)文档页面。
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/sys-rule.mp4" preload="metadata" poster="images/sentinel-sys-rule.jpg"></video>
+</div>
+
+### Sentinel 授权规则
+
+参阅 [Sentinel 授权规则](../skoala/trad-ms/hosted/services/auth.md)文档页面。
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/authn-rule.mp4" preload="metadata" poster="images/authn-rule.jpg"></video>
 </div>
 
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

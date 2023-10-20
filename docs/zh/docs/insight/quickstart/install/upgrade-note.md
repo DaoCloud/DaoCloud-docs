@@ -7,6 +7,15 @@ hide:
 
 ## insight server
 
+### 从 v0.19.x（或更低版本）升级到 0.20.x
+
+在升级 `Insight` 之前，您需要执行以下命令手动删除 `jaeger-collector` 和 `jaeger-query` 部署：
+
+```bash
+kubectl -n insight-system delete deployment insight-jaeger-collector
+kubectl -n insight-system delete deployment insight-jaeger-query
+```
+
 ### 从 v0.17.x（或更低版本）升级到 v0.18.x
 
 由于 0.18.x 中更新了 Jaeger 相关部署文件，因此需要在升级 insight server 前手动执行如下命令：
@@ -53,6 +62,17 @@ kubectl apply --server-side -f https://raw.githubusercontent.com/VictoriaMetrics
     ```
 
 ## insight-agent
+
+### 从 0.19.x（或更低版本）升级到 v0.20.x
+
+由于 0.20.x 中增加了 Kafka 日志导出配置，日志导出配置做了一些调整。升级 `insight-agent` 之前需要注意参数变化，即原来 logging 的配置已经移到了配置中 logging.elasticsearch：
+
+```diff
+-  --set global.exporters.logging.host \
+-  --set global.exporters.logging.port \
++  --set global.exporters.logging.elasticsearch.host \
++  --set global.exporters.logging.elasticsearch.port \
+```
 
 ### 从 v0.17.x（或更低版本）升级到 v0.18.x
 

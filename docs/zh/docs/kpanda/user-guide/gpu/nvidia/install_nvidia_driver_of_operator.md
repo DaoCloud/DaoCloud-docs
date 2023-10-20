@@ -77,9 +77,9 @@
 
     - `RepoConfig.version` ： GPU 驱动的镜像版本，仅在线安装时需配置，不同操作系统 Driver 镜像的名称存在差异：
 
-         - Ubuntu 系统，命名规则为：<driver-branch>-<linux-kernel-version>-<os-tag>。
-           如 `525-5.15.0-69-ubuntu22.04`，`525` 用于指定 CUDA 的版本，`5.15.0-69` 指定内核的版本，`ubuntu22.04` 指定 OS 版本。
-           注意：对于 Ubuntu ，NVIDIA 的 driver 镜像版本需要和节点内核版本强一致，包括小版本号，可前往  NVIDIA GPU Driver 检查该版本驱动是否存在。
+         - Ubuntu 系统，命名规则为：`<driver-branch>-<linux-kernel-version>-<os-tag>`。
+           如 `525-5.15.0-69-ubuntu22.04`，`525` 为 CUDA 的版本，`5.15.0-69` 为内核版本，`ubuntu22.04` 为 OS 版本。
+           注意：对于 Ubuntu ， Driver 镜像版本需和节点内核版本强一致，包括小版本号。
 
          - RedHat/CentOS 系统， 命名规则通常为 CUDA 的版本和 OS 版本组成，如 `535.104.05-centos7`。
 
@@ -97,7 +97,7 @@
     - `Mig.enabled` ：是否启用 MIG 能力特性。
     - `Mig.strategy` ：节点上 GPU 卡的 MIG 设备的公开策略。NVIDIA 提供了两种公开 MIG 设备的策略（`single` 、`mixed`策略，详情参考：[NVIDIA GPU 卡模式说明](overvie_nvidia_gpu.md)
     - `MigManager.Config` : 用于配置 MIG 切分配置参数和默认值。
-    - `default`: 节点使用的切分配置默认值，默认为 `all-disbled`。
+        - `default`: 节点使用的切分配置默认值，默认为 `all-disbled`。
         - `name` ：MIG 的切分配置文件名，用于定义 MIG 的（GI ,CI）切分策略。默认为`default-mig-parted-config`。自定义参数参考[开启 MIG 功能](../create_mig.md)
 
 
@@ -109,17 +109,19 @@
 
 2. 如果使用 **vGPU 模式** ，完成上述相关参数配置和创建后，下一步请完成 [vGPU Addon 安装](vgpu/vgpu_addon.md)
 
-3. 如果使用 **MIG 模式**，并且需要给个别 GPU 节点按照某种切分规格进行使用，否则按照 MigManager.Config 中的 `default` 值进行切分
+3. 如果使用 **MIG 模式**，并且需要给个别 GPU 节点按照某种切分规格进行使用，否则按照 MigManager.Config 中的 `default` 值进行切分。
 
-   - **single** 模式请给对应节点打上如下 Label：
+    - **single** 模式请给对应节点打上如下 Label：
 
-     ```
-     kubectl label nodes {node} nvidia.com/mig.config="all-1g.10gb" --overwrite
-     ```
-   
-   
-      - **mixed** 模式请给对应节点打上如下 Label：
-   
+        ```sh
+        kubectl label nodes {node} nvidia.com/mig.config="all-1g.10gb" --overwrite
         ```
+
+    - **mixed** 模式请给对应节点打上如下 Label：
+
+        ```sh
         kubectl label nodes {node} nvidia.com/mig.config="custom-config" --overwrite
         ```
+
+
+​        	切分后，应用可[使用 MIG GPU 资源](mig/mig_usage.md)

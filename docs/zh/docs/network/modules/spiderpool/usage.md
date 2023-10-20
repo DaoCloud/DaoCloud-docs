@@ -5,7 +5,7 @@ hide:
 
 # 工作负载使用 IP 池
 
-本章节主要介绍结合 Multus 及 Underlay CNI 插件，为工作负载 Pod 配置多网卡，并通过 Spiderpool 进行 Underlay 网络的 IP 的分配和固定。主要介绍内容如下：
+本章节主要介绍结合 Spiderpool 及 Multus CR 管理，为工作负载 Pod 配置多网卡，并通过 Spiderpool 进行 Underlay 网络的 IP 的分配和固定。主要介绍内容如下：
 
 1. Pod 设置多容器网卡
 2. 工作负载使用 IP 池
@@ -16,9 +16,9 @@ hide:
 ## 前提条件
 
 1. [SpiderPool 已成功部署](../../modules/spiderpool/install.md)。
-2. [Multus 搭配 Macvlan/SR-IOV 已成功部署](../../modules/multus-underlay/install.md)。
-3. 如使用手动选择 IP 池，请提前完成[创建 IP 子网和 IP 池](../../modules/spiderpool/createpool.md)。如使用自动创建固定 IP 池，请提前完成[创建 IP 池](../../modules/spiderpool/createpool.md)。
-4. 如果使用默认 IP 池，请提前完成[创建 IP 子网和 IP 池](../../modules/spiderpool/createpool.md)。并在容器网络 Multus CNI 配置中，配置好带有默认 IP 池的网卡。
+2. 如使用手动选择 IP 池，请提前完成[创建 IP 子网和 IP 池](../../modules/spiderpool/createpool.md)。如使用自动创建固定 IP 池，请提前完成[创建 IP 池](../../modules/spiderpool/createpool.md)。
+3. 如果使用默认 IP 池，请提前完成[创建 IP 子网和 IP 池](../../modules/spiderpool/createpool.md)。并在容器网络 Multus CNI 配置中，配置好带有默认 IP 池的网卡。
+4. 对应使用的[Multus CR 已创建](../../config/multus-cr.md)。
 
 ## 界面操作
 
@@ -34,7 +34,7 @@ hide:
 
     - `网卡信息`: 若创建的应用容器需要使用多张网卡（如一张东西向通信，一张南北向通信），可以添加多网卡。
 
-        - eth0（默认网卡）：默认为 Overlay CNI，Calico/Cilium。
+        - eth0（默认网卡）：默认为 Overlay CNI，可选 Calico/Cilium/Macvlan CR，设置前请确认[Multus CR 已创建](../../config/multus-cr.md)。当 eth0（默认网卡）设置为 Macvlan 网络时，net1，net2 等新增网卡只能选择 Macvlan 网络。
 
         - net1: 可选择 Underlay CNI 配置，如 Macvlan/SR-IOV ，本文示例为 Macvlan。
 
@@ -69,11 +69,11 @@ hide:
     提前创建好 IP 池，并在 Multus CNI 配置中，选择带有默认 IP 池的网卡，即可使用默认 IP 池功能。
     ![默认IP池](../../images/useippool05.png)
     
-4. 创建完工作负载后，可点击对应工作负载 `workload01` 查看工作负载 Pod 使用的 IP。
+1. 创建完工作负载后，可点击对应工作负载 `test01` 查看工作负载 Pod 使用的 IP。
 
-    ![工作负载 IP](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/useippool06.jpg)
+    ![工作负载 IP](../../images/useippool06.png)
 
-    ![工作负载 IP](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/useippool07.jpg)
+    ![工作负载 IP](../../images/useippool07.png)
 
 ## YAML 使用
 

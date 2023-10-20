@@ -1,6 +1,6 @@
 # Offline Upgrade of Cluster Inspection Module
 
-This page explains how to install or upgrade the cluster inspection module after downloading it from the [Download Center](../../../download/index.md).
+This page explains how to install or upgrade the cluster inspection module after [downloading it from the Download Center](../../../download/modules/kcollie.md).
 
 !!! info
 
@@ -149,7 +149,7 @@ There are two upgrade methods. You can choose the corresponding upgrade approach
 
     5. Backup `--set` parameters.
 
-        Before upgrading the cluster inspection module, it is recommended to execute the following command to backup the `--set` parameters of the previous version.
+        Before upgrading the cluster inspection module, it is recommended to run the following command to backup the `--set` parameters of the previous version.
 
         ```shell
         helm get values kocllie -n kocllie-system -o yaml > bak.yaml
@@ -182,7 +182,7 @@ There are two upgrade methods. You can choose the corresponding upgrade approach
 
     1. Backup `--set` parameters.
 
-        Before upgrading the cluster inspection module, it is recommended to execute the following command to backup the `--set` parameters of the previous version.
+        Before upgrading the cluster inspection module, it is recommended to run the following command to backup the `--set` parameters of the previous version.
 
         ```shell
         helm get values kocllie -n kocllie-system -o yaml > bak.yaml

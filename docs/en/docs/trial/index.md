@@ -100,7 +100,7 @@ If you have limited network access, you can choose to perform an offline install
 ## <font color="green"><strong>3rd</strong> Embark on the Cloud-Native Journey</font>
 
 - [Cloud-Native Technology Practice Public Course](https://appu8cplrlw7661.h5.xiaoeknow.com): Suitable for beginners or junior cloud-native developers to learn about the development background, basic knowledge, and operational practices of cloud-native technology.
-- [Video Tutorials](../videos/index.md): Covering the usage demonstrations of the three major functional modules: container management, global management, and observability. There are also tutorials demonstrating commercial edition features. Feel free to check them out.
+- [Video Tutorials](../videos/index.md): Covering the usage demonstrations of the three major functional modules: container management, global management, and observability. There are also tutorials demonstrating Enterprise Package features. Feel free to check them out.
 
 <p style="font-size: 20px; color: green;">Learn more about DaoCloud Enterprise Community Edition</p>
 

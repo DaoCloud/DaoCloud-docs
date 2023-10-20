@@ -1,12 +1,14 @@
 ---
 date: 2023-04-12
+hide:
+  - navigation
 ---
 
 # DCE 5.0 社区版 v0.6.1
 
 本页可下载 DCE 5.0 社区版的离线安装包和校验文件。
 
-[返回下载首页](../index.md){ .md-button }
+[返回下载导览页](../index.md){ .md-button } [更多历史版本](./dce5-installer-history.md){ .md-button }
 
 ## 下载
 

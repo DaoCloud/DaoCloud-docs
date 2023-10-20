@@ -80,6 +80,22 @@ Refer to the [Sentinel Hotspot Rules](../skoala/trad-ms/hosted/services/hotspot.
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/sentinel-hotspot.mp4" preload="metadata" poster="images/skoala-hotspot.png"></video>
 </div>
 
+### Sentinel System Rules
+
+Refer to the [Sentinel System Rules](../skoala/trad-ms/hosted/services/system.md) documentation page.
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/sys-rule.mp4" preload="metadata" poster="images/sentinel-sys-rule.jpg"></video>
+</div>
+
+### Sentinel Authorization Rules
+
+Refer to the [Sentinel Authorization Rules](../skoala/trad-ms/hosted/services/auth.md) documentation page.
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/authn-rule.mp4" preload="metadata" poster="images/authn-rule.jpg"></video>
+</div>
+
 [Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [Free Trial](../dce/license0.md){ .md-button .md-button--primary }

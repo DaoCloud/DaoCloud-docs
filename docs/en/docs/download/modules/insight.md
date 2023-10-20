@@ -26,7 +26,8 @@ insight_v0.13.1_amd64.tar: ok
 
 ## Installation
 
-Refer to [Observability](../../insight/quickstart/install/offline-install.md) installation process to install.
+Refer to [Offline upgrade observability module](../../insight/quickstart/install/offline-install.md)
+for installation instructions.
 
 If you are installing for the first time, please [apply for a free trial](../../dce/license0.md) or contact us for authorization: email info@daocloud.io or call 400 002 6898.
 If you have any license key related questions, please contact DaoCloud delivery team.

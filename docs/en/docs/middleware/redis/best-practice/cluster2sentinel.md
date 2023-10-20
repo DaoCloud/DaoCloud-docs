@@ -88,7 +88,7 @@ In `Container Management` - `Target Cluster` - `Configuration & Storage` - `Conf
 
 #### Create Redis-Shake
 
-1. Open `Application Workbench`, select `Wizard` - `Based on Container Image`, and create an application named `Redis-shake-sync-0`.
+1. Open `Workbench`, select `Wizard` - `Based on Container Image`, and create an application named `Redis-shake-sync-0`.
 
 
 2. Fill in the application configuration details as follows:
@@ -208,7 +208,7 @@ In `Container Management` - `Source Cluster` - `Configuration & Storage` - `Conf
 
 #### Create Redis-Shake
 
-1. Open `Application Workbench`, select `Wizard` - `Based on Container Image`, and create an application named `Redis-shake-recovery`.
+1. Open `Workbench`, select `Wizard` - `Based on Container Image`, and create an application named `Redis-shake-recovery`.
 
 
 2. Fill in the application configuration details as follows:

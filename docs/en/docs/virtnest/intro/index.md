@@ -51,3 +51,7 @@ Here are the general steps to use Virtnest:
 With Virtnest, users can fully unleash the potential of Kubernetes clusters for efficient management
 of virtualized infrastructure. We are committed to continuously optimizing and enhancing Virtnest's
 containerization capabilities, providing users with a superior virtual machine management experience.
+
+!!! note
+
+    The VM container, Virtnest, is a feature exclusive to the DCE 5.0 Enterprise Package (Standard, Advanced, and Platinum editions).

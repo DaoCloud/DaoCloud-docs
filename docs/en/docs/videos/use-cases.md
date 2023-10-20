@@ -1,4 +1,4 @@
-# Best Practices
+# Scenario-based Videos
 
 The best practice video on this page demonstrates how to leverage the key features of DCE 5.0
 to meet common and practical business requirements in specific scenarios.

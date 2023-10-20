@@ -157,6 +157,14 @@
 
     [:octicons-arrow-right-24: Learn more](./mirror.md)
 
+-   :simple-iconify:{ .lg .middle } __DaoCloud Icons Library__
+
+    ---
+
+    Here is a collection of commonly used open source icons from DaoCloud company.
+
+    [:octicons-arrow-right-24: Learn More](./icons/index.md)
+
 </div>
 
 !!! success

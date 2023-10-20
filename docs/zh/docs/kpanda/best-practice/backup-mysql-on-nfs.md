@@ -35,8 +35,8 @@
     yum install nfs-utils iscsi-initiator-utils nfs-utils iscsi-initiator-utils nfs-utils iscsi-initiator-utils -y
     ```
 
-    <details>
-    <summary>预期输出</summary>
+    预期输出为：
+
     ```bash
     [root@g-master1 ~]# kubectl apply -f nfs.yaml
     clusterrole.rbac.authorization.k8s.io/nfs-provisioner-runner created
@@ -48,15 +48,14 @@
     deployment.apps/nfs-provisioner created
     storageclass.storage.k8s.io/nfs created
     ```
-    </details>
 
 2. 为 MySQL 应用准备 NFS 存储服务。
 
     登录 `main-cluster` 集群和 `recovery-cluster` 集群的任一控制节点，使用 `vi nfs.yaml` 命令在节点上创建一个 名为 `nfs.yaml` 的文件，将下面的 YAML 内容复制到 `nfs.yaml` 文件。
 
     <details>
-    <summary>nfs.yaml</summary>
-    ```yaml
+    <summary>点击查看完整的 nfs.yaml</summary>
+    ```yaml title="nfs.yaml"
     kind: ClusterRole
     apiVersion: rbac.authorization.k8s.io/v1
     metadata:
@@ -270,14 +269,13 @@
     kubectl get pod -n nfs-system -owide
     ```
 
-    <details>
-    <summary>预期输出</summary>
+    预期输出为：
+
     ```bash
     [root@g-master1 ~]# kubectl get pod -owide
     NAME                               READY   STATUS    RESTARTS   AGE     IP              NODE        NOMINATED NODE   READINESS GATES
     nfs-provisioner-7dfb9bcc45-74ws2   1/1     Running   0          4m45s   10.6.175.100   g-master1   <none>           <none>
     ```
-    </details>
 
 ### 部署 MySQL 应用
 
@@ -285,9 +283,7 @@
 
     使用 `vi pvc.yaml` 命令在节点上创建名为 `pvc.yaml` 的文件，将下面的 YAML 内容复制到 `pvc.yaml` 文件内。
 
-    <details>
-    <summary>pvc.yaml</summary>
-    ```yaml
+    ```yaml  title="pvc.yaml"
     apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
@@ -310,8 +306,8 @@
     kubectl apply -f pvc.yaml
     ```
 
-    <details>
-    <summary>预期输出</summary>
+    预期输出为：
+
     ```bash
     [root@g-master1 ~]# kubectl apply -f pvc.yaml
     persistentvolumeclaim/mydata created
@@ -323,8 +319,8 @@
     使用 `vi mysql.yaml` 命令在节点上创建名为 `mysql.yaml` 的文件，将下面的 YAML 内容复制到 `mysql.yaml` 文件。
 
     <details>
-    <summary>mysql.yaml</summary>
-    ```yaml
+    <summary>点击查看完整的 mysql.yaml</summary>
+    ```yaml title="nfs.yaml"
     apiVersion: apps/v1
     kind: Deployment
     metadata:
@@ -391,31 +387,30 @@
     kubectl apply -f mysql.yaml
     ```
 
-    <details>
-    <summary>预期输出</summary>
+    预期输出为：
+
     ```bash
     [root@g-master1 ~]# kubectl apply -f mysql.yaml
     deployment.apps/mysql-deploy created
     ```
-    </details>
 
 5. 查看 MySQL Pod 状态。
 
     执行 `kubectl get pod | grep mysql` 查看 MySQL Pod 状态，等待其状态变为 `running`（大约需要 2 分钟）。
 
-    <details>
-    <summary>预期输出</summary>
+    预期输出为：
+
     ```bash
     [root@g-master1 ~]# kubectl get pod |grep mysql
     mysql-deploy-5d6f94cb5c-gkrks      1/1     Running   0          2m53s
     ```
-    </details>
 
     !!! note
         
         - 如果  MySQL Pod 状态长期处于非 running 状态，通常是因为没有在集群的所有节点上安装 NFS 依赖。
         - 执行 `kubectl describe pod ${mysql pod 名称}` 查看 Pod 的详细信息。
-        - 如果报错中有 `MountVolume.SetUp failed for volume "pvc-4ad70cc6-df37-4253-b0c9-8cb86518ccf8" : mount failed: exit status 32` 之类的信息，请分别执行 `kubectl delete -f nfs.yaml/pvc.yaml/mysql.yaml` 删除之前的资源后，重新从部署 NFS 服务开始。
+        - 如果报错中有 `MountVolume.SetUp failed for volume "pvc-4ad70cc6-df37-4253-b0c9-8cb86518ccf8" : mount failed: exit status 32`
+          之类的信息，请分别执行 `kubectl delete -f nfs.yaml/pvc.yaml/mysql.yaml` 删除之前的资源后，重新从部署 NFS 服务开始。
 
 6. 向 MySQL 应用写入数据。
 
@@ -423,9 +418,7 @@
 
     1. 使用 `vi insert.sh` 命令在节点上创建名为 `insert.sh` 的脚本，将下面的 YAML 内容复制到该脚本。
 
-        <details>
-        <summary>insert.sh</summary>
-        ```
+        ```shell title="insert.sh"
         #!/bin/bash
 
         function rand(){
@@ -454,7 +447,6 @@
             sleep 1
         done
         ```
-        </details>
 
     2. 为 `insert.sh` 脚本添加权限并运行该脚本。
 
@@ -463,9 +455,9 @@
         [root@g-master1 ~]# ./insert.sh
         ```
 
-        <details>
-        <summary>预期输出</summary>
-        ```
+        预期输出为：
+
+        ```console
         mysql: [Warning] Using a password on the command line interface can be insecure.
         mysql: [Warning] Using a password on the command line interface can be insecure.
         INSERT INTO test.users(user_name, age)VALUES('dc09195ba', 10);
@@ -481,7 +473,6 @@
         INSERT INTO test.users(user_name, age)VALUES('a4d1b8d68', 17);
         mysql: [Warning] Using a password on the command line interface can be insecure.
         ```
-        </details>
 
     3. 在键盘上同时按下 `control` 和 `c` 暂停脚本的执行。
 
@@ -491,10 +482,9 @@
         kubectl exec deploy/mysql-deploy -- mysql -uroot -pdangerous -e "SELECT * FROM test.users;"
         ```
 
-        <details>
-        <summary>预期输出</summary>
-        ```bash
-        [root@g-master1 ~]# kubectl exec deploy/mysql-deploy -- mysql -uroot -pdangerous -e "SELECT * FROM test.users;"
+        预期输出为：
+
+        ```console
         mysql: [Warning] Using a password on the command line interface can be insecure.
         user_name	age
         dc09195ba	10
@@ -514,7 +504,6 @@
         3ae078d0e	23
         6e041631e	96
         ```
-        </details>
 
 ### 在两个集群安装 velero 插件
 
@@ -526,7 +515,7 @@
 
 | minio 服务器访问地址     | 存储桶     | 用户名 | 密码      |
 | ------------------------ | ---------- | ------ | --------- |
-| http://10.7.209.110:9000 | mysql-demo | root   | dangerous |
+| `http://10.7.209.110:9000` | mysql-demo | root   | dangerous |
 
 !!! note
 
@@ -536,10 +525,10 @@
 
 1. 为 MySQL 应用及 PVC 数据添加独有的标签：`backup=mysql`，便于备份时选择资源。
 
-    ```
-    kubectl label deploy mysql-deploy backup=mysql #为 `mysql-deploy` 负载添加标签
-    kubectl label pod mysql-deploy-5d6f94cb5c-gkrks backup=mysql #为 mysql pod 添加标签
-    kubectl label pvc mydata backup=mysql #为 mysql 的 pvc 添加标签
+    ```bash
+    kubectl label deploy mysql-deploy backup=mysql # 为 `mysql-deploy` 负载添加标签
+    kubectl label pod mysql-deploy-5d6f94cb5c-gkrks backup=mysql # 为 mysql pod 添加标签
+    kubectl label pvc mydata backup=mysql # 为 mysql 的 pvc 添加标签
     ```
 
 2. 参考[应用备份](../user-guide/backup/deployment.md#_3)中介绍的步骤，以及下方的参数创建应用备份。
@@ -601,8 +590,8 @@
     ```
 
     预期输出如下：
-    ```
-    [root@g-master1 ~]# kubectl exec deploy/mysql-deploy -- mysql -uroot -pdangerous -e "SELECT * FROM test.users;"
+
+    ```console
     mysql: [Warning] Using a password on the command line interface can be insecure.
     user_name	age
     dc09195ba	10

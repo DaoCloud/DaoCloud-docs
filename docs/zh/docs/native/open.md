@@ -1530,7 +1530,7 @@
 
 - [Trivy 容器漏洞扫描工具现在可以扫描几乎所有与云原生相关的东西（CNCF 项目）](https://thenewstack.io/aqua-securitys-trivy-security-scanner-can-scan-anything-now/)  
 
-    Aqua 称，[Trivy]((https://github.com/aquasecurity/trivy)) 是当前最全面的漏洞和错误配置扫描工具，
+    Aqua 称，[Trivy](https://github.com/aquasecurity/trivy) 是当前最全面的漏洞和错误配置扫描工具，
     可用于扫描云原生应用程序和基础设施，如源代码、存储库、镜像、工件注册表、基础设施即代码（IaC）模板和 Kubernetes 环境等。
 
 ### V

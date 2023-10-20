@@ -67,7 +67,7 @@ When a new edge node is connected, the latest version of the EdgeCore software i
             docker load -i kantadm-installation.tar
             ```
 
-3. Execute the following command to connect the edge node.
+3. Run the following command to connect the edge node.
 
     - Register via token.
 
@@ -81,7 +81,7 @@ When a new edge node is connected, the latest version of the EdgeCore software i
 
         2. Click the `Download Certificate` button to download the certificate to your local machine.
 
-        3. Save the certificate and execute the following command:
+        3. Save the certificate and run the following command:
 
             ```shell
             mkdir -p /etc/kant && mv ./cert.tar /etc/kantcert.tar

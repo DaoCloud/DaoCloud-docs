@@ -215,9 +215,9 @@ DCE 5.0 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的�
 
     下载中心包含了 DCE 5.0 社区版、商业版以及各个子模块的离线安装包。
 
-    - [下载社区版](../download/free/dce5-installer-v0.11.0.md)
-    - [下载商业版](../download/business/dce5-installer-v0.11.0.md)
-    - [下载子模块](../download/modules/ghippo.md)
+    - [下载社区版](../download/free/dce5-installer-history.md)
+    - [下载商业版](../download/business/dce5-installer-history.md)
+    - [下载子模块](../download/index.md#_3)
 
 - :simple-opensourceinitiative:{ .lg .middle } __DaoCloud 开源生态__
     

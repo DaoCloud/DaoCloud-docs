@@ -1,6 +1,6 @@
 # Offline Upgrade of Security Management Module
 
-This page explains how to install or upgrade the security management module after downloading it from the [Download Center](../../../download/index.md).
+This page explains how to install or upgrade the security management module after [downloading it from the Download Center](../../../download/modules/dowl.md).
 
 !!! info
 
@@ -151,7 +151,7 @@ There are two methods for upgrading. Choose the corresponding upgrade method bas
 
 5. Backup the `--set` parameters.
 
-    Before upgrading the security management version, it is recommended to execute the following command to backup the `--set` parameters of the old version.
+    Before upgrading the security management version, it is recommended to run the following command to backup the `--set` parameters of the old version.
 
     ```shell
     helm get values dowl -n dowl-system -o yaml > bak.yaml
@@ -184,7 +184,7 @@ There are two methods for upgrading. Choose the corresponding upgrade method bas
 
     1. Backup the `--set` parameters.
 
-        Before upgrading the security management version, it is recommended to execute the following command to backup the `--set` parameters of the old version.
+        Before upgrading the security management version, it is recommended to run the following command to backup the `--set` parameters of the old version.
 
         ```shell
         helm get values dowl -n dowl-system -o yaml > bak.yaml
