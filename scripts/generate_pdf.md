@@ -1,50 +1,59 @@
-# 批量生产 PDF 文件
+# Batch Production of Word and PDF Files
 
-## 转换为 Word
+English | [中文](./generate_pdf_zh.md)
 
-### 生成所有文档的 Word 文件（不推荐）
+## Conversion to Word
 
-下方命令可以批量生成一个全量的 Word 文件，包含所有的文档。
+### Generating Word Files for All Documents (Not Recommended)
+
+The following command can be used to batch generate a complete Word file that includes all documents.
 
 ```bash
 cd /path/to/this/repo
-python3 scripts/md2docx-v2.py docs/zh/docs # 生成 Word 文件
+python3 scripts/md2docx-v2.py docs/zh/docs # Generate Word files
 ```
 
-但这样生成的 Word 文件包含了 docs.daocloud.io 所有的内容，不方便阅读。
+However, the resulting Word file will contain all the content from docs.daocloud.io, making it difficult to read.
 
-> 目前此命令会生成大量 Word 文件，注意不要提交到 GitHub 上。
+> Currently, this command generates a large number of Word files. Make sure not to commit them to GitHub.
 
-建议在提 PR 之前，运行以下命令，移除缓存的 Word 文件：
+It is recommended to run the following command before submitting a PR to remove cached Word files:
 
 ```bash
 find ./docs -type f -name "*.docx" ! -name "TiDBonHwameiStor.docx" | xargs rm -f
 ```
 
-### 生成具体项目的 Word 文件（推荐）
+### Generating Word File for Specific Folder (Recommended)
 
 ```bash
 cd /path/to/this/repo
-python3 scripts/md2docx-v2.py docs/zh/docs/kpanda # 生成 Word 文件
+python3 scripts/md2docx-v2.py docs/zh/docs/kpanda # Generate Word files
 ```
 
-> 以上为例，这里是生成单个 Kpanda 项目的文档。
+> The above is an example to generate documentation for the `kpanda` folder.
 
-## 转换为 PDF
+If there are any errors during export, you can try running the following command to install the required dependencies:
 
-### 生成所有文档的 PDF 文件（暂不支持）
+```bash
+pip install python-docx
+brew install pandoc
+```
 
-目前全部文档过大，所以生成全量文档的 PDF 文件会失败。
+## Conversion to PDF
 
-> 暂不支持
+### Generating PDF Files for All Documents (Not Supported)
 
-### 生成具体项目的 PDF 文件（推荐）
+Currently, generating a full PDF file for all documents fails due to the large size of the complete documentation.
 
-1. 修改 [pdf.yaml](../docs/zh/pdf.yaml) 文件，只需修改 2 个字段：
-   - `docs_dir` 需要读取的文件夹名称
-   - `output_path` 导出 pdf 的位置
-2. 然后执行 `mkdocs build` 命令，此时需要配置好 poetry 环境
-   1. 使用 `poetry install` 安装依赖项
-   2. 运行 `poetry run mkdocs build -f pdf.yaml` 生成 PDF 文件
+> Not supported at the moment.
 
-文档站的二次开发以开源项目为基础，目前支持的功能尚有限，后续会继续完善。
+### Generating PDF File for Specific Folder (Recommended)
+
+1. Modify the [pdf.yaml](../docs/zh/pdf.yaml) file, only modifying 2 fields:
+   - `docs_dir` for the folder name to be read
+   - `output_path` for the location to export the PDF
+2. Run the `mkdocs build` command, ensuring that the poetry environment is properly configured
+   1. Use `poetry install` to install the dependencies
+   2. Run `poetry run mkdocs build -f pdf.yaml` to generate the PDF files
+
+The secondary development of the documentation site is based on an open-source project. Currently, the supported features are limited, but they will be improved in the future.
