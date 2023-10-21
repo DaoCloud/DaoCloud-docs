@@ -4,7 +4,7 @@
 
 ## 前提条件
 
-当前集群已通过 Operator 或手动方式部署对应类型 GPU 驱动（Nvidia GPU、Nvidia MIG、天数、昇腾）
+当前集群已通过 Operator 或手动方式部署对应类型 GPU 驱动（NVIDIA GPU、NVIDIA MIG、天数、昇腾）
 
 ## 操作步骤
 
@@ -12,9 +12,9 @@
 
     ![Alt text](./images/cluster-ns.png)
 
-2. 当前命名空间配额管理覆盖的卡类型为：Nvidia vGPU、Nvidia MIG、天数、昇腾。
+2. 当前命名空间配额管理覆盖的卡类型为：NVIDIA vGPU、NVIDIA MIG、天数、昇腾。
 
-    - **Nvidia vGPU 配额管理**：配置具体可以使用的配额，会创建 ResourcesQuota CR：
+    - **NVIDIA vGPU 配额管理**：配置具体可以使用的配额，会创建 ResourcesQuota CR：
 
         - 物理卡数量（nvidia.com/vgpu）：表示当前POD需要挂载几张物理卡，并且要 **小于等于** 宿主机上的卡数量。
         - GPU算力（nvidia.com/gpucores）: 表示每张卡占用的 GPU 算力，值范围为 0-100；如果配置为 0， 则认为不强制隔离；配置为100，则认为独占整张卡。

@@ -56,7 +56,7 @@ MIG 允许多个 vGPU（以及虚拟机）在单个 GPU 实例上并行运行，
 * `GPU Instance`：GPU 实例 （GI） 是 GPU 切片和 GPU 引擎（DMA、NVDEC 等）的组合。
   GPU 实例中的任何内容始终共享所有 GPU 内存切片和其他 GPU 引擎，但它的 SM 切片可以进一步细分为计算实例（CI）。
   GPU 实例提供内存 QoS。每个 GPU 切片都包含专用的 GPU 内存资源，这些资源会限制可用容量和带宽，并提供内存 QoS。
-  每个 GPU 内存切片获得总 GPU 内存资源的 1/8，每个 GPU SM 切片获得 SM 总数的 1/7。
+  每个 GPU 内存切片获得总 GPU 内存资源的八分之一，每个 GPU SM 切片获得 SM 总数的七分之一。
 * `Compute Instance `：GPU 实例的计算切片可以进一步细分为多个计算实例 （CI），其中 CI 共享父
   GI 的引擎和内存，但每个 CI 都有专用的 SM 资源。
 

@@ -3,8 +3,7 @@
 ## 使用场景介绍
 
 DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。由于离线 GPU Operator 部署要求节点内核版本和离线包的内核版本保持强一致。
-当用户计划部署的 GPU Operator 的节点的 OS 为 CentOS 7.9 但内核版本不为 3.10.0-1160，而是 3.10.0-1160 的小版本（如 3.10.0-1160.95.1）时。
-可参考本文档，手动更新预置 GPU Operator 离线包的 yum 源，以保证 gpu-operator 组件的正常运行。
+当CentOS 7.9 内核版本不为 3.10.0-1160 的小版本（如 3.10.0-1160.95.1）时。可参考本文档，手动更新预置 GPU Operator 离线包的 yum 源。
 
 本文介绍如何升级 CentOS 7.9 的预置的 GPU operator 离线包的 yum 源，并为集群部署 GPU operator。
 
@@ -30,7 +29,7 @@ uname -a
 ```
 Linux localhost.localdomain 3.10.0-1160.95.1.el7.x86_64 #1 SMP Mon Oct 19 16:18:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
 ```
-输出结果中 `3.10.0-1160.95.1.el7.x86_64` 为当前节点的内核版本。如果输出结果为 `3.10.0-1160.el7.x86_64`，则当前节点的内核版本为系统预置离线包的内核版本，请忽略下文内容，直接前往安装。
+输出结果为当前节点内核版本 `3.10.0-1160.el7.x86_64`。
 
 ### 步骤二：制作离线 yum 源
 
@@ -86,7 +85,7 @@ Linux localhost.localdomain 3.10.0-1160.95.1.el7.x86_64 #1 SMP Mon Oct 19 16:18:
     tar -zcf centos-base.tar.gz centos-base/
     echo "end install kernel repo"
     ```
-    按下 Esc 键退出插入模式，然后输入 :wq 保存并退出。
+    按下 `Esc` 键退出插入模式，然后输入 `:wq` 保存并退出。
 
 3. 在节点当前路径下，继续执行如下命令构建名为 `test:v1` 的镜像。
 
@@ -107,7 +106,7 @@ Linux localhost.localdomain 3.10.0-1160.95.1.el7.x86_64 #1 SMP Mon Oct 19 16:18:
     ```bash
     docker run -e KERNEL_VERSION=3.10.0-1160.95.1 --name centos7.9 test:v1
     ```
-    `KERNEL_VERSION` 参数用于指定集群节点的内核版本，请输入“步骤一：检查集群节点的内核版本” 中节点的内核版本。注意：操作系统发行版标识符（如：`.el7.x86_64 `）无需输入。
+    `KERNEL_VERSION` 参数用于指定集群节点的内核版本，注意：发行版标识符（如：`.el7.x86_64 `）无需输入。
 
 5. 在节点当前路径下，执行如下命令将 centos7.9 容器内的 `centos-base.tar.gz` 离线包拷贝至节点：
 
