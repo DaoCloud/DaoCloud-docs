@@ -6,7 +6,7 @@
 
 -  集群节点上具有[对应型号的 GPU 卡](../../gpu_matrix.md)
 -  已成功安装 vGPU Addon，详情参考 [GPU Addon 安装 ](vgpu_addon.md)
-- 已安装 GPU Operator，并已 **关闭**  `Nvidia DevicePlugin`  能力，可参考 [GPU Operator 离线安装](../install_nvidia_driver_of_operator.md) 
+- 已安装 GPU Operator，并已 **关闭**  `Nvidia.DevicePlugin` 能力，可参考 [GPU Operator 离线安装](../install_nvidia_driver_of_operator.md) 
 
 ## 操作步骤
 
@@ -29,7 +29,7 @@
 
 ###  YAML 配置使用 vGPU
 
-参考如下工作负载配置，在资源申请和限制配置中增加 `nvidia.com/gpu: 1` 参数来配置应用使用物理卡的数量。
+参考如下工作负载配置，在资源申请和限制配置中增加 `nvidia.com/gpu: '1'` 参数来配置应用使用物理卡的数量。
 
 ```yaml
 apiVersion: apps/v1
@@ -54,7 +54,7 @@ spec:
           resources:
             limits:
               nvidia.com/gpucores: '20'   # 申请每张卡占用 20% 的 GPU 算力
-              nvidia.com/gpumem: 200MB   # 申请每张卡占用 200MB 的显存
+              nvidia.com/gpumem: '200'   # 申请每张卡占用 200MB 的显存
               nvidia.com/vgpu: '1'   # 申请GPU的数量
           imagePullPolicy: Always
       restartPolicy: Always
