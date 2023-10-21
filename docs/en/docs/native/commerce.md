@@ -48,6 +48,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Local clustering reduces the risk of application downtime due to network outages in the cloud. During this time, the application remains available and cluster operations can be performed. EKS manages the availability of the K8s control plane on Outposts when connected to the cloud. The Kubernetes running on the local cluster has the same features as the EKS on the cloud, and supports automatic deployment of the latest security patches.
 
+- [Azure Kubernetes Distribution AKS September Update](https://azure.microsoft.com/en-us/updates/?query=AKS)
+
+    Updates: New Vertical Pod Auto Scaling (VPA) add-on, new image cleaner, new node OS patching feature, Gateway Load Balancer now supports IPv6, Kubernetes 1.28 support, support for Dapr extensions in Azure Functions, Azure Container Storage updates (support for deployments in 26 regions, support for volume resizing, cloning, and support for more disk types).
+
 - [Azure Launches Container Application Gateway Preview](https://azure.microsoft.com/en-us/updates/public-preview-application-gateway-for-containers/)
 
     Azure Container Application Gateway is an application load balancing and dynamic traffic management product for workloads running in Kubernetes clusters. It is an enhanced version of the Azure Application Gateway Ingress Controller (AGIC), with enhancements that include: near real-time convergence times when reflecting Kubernetes YAML configuration changes; support for more than 1,400 backend Pods and 100 listens; and support for blue-green deployment policies and active/active or active/passive routing.
@@ -839,6 +843,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
   
      The updates include: Added SecurityGroupPolicy enhancement component, which supports binding security groups for pods matching policies; supports business pods to use Service Account Token to access cloud resources such as CVM and VPC; supports modifying CPU and memory requests without restarting pods /limit value; support node/workload resource insight capabilities; add Request intelligent recommendation function; add native node-specific scheduler; optimize native node initialization process.
 
+- [Tetrate Launches TIS (Tetrate Istio Subscription), an Enterprise Service Grid Project](https://mp.weixin.qq.com/s/lwVqOlwPgtaZ8BMsvLuT1Q)
+
+    TIS is the industry's only fully upstream service grid based on open source Istio. Based on the Tetrate Istio Distro, it provides proven builds of Istio for all major cloud platforms. It also offers CVE protection, FedRAMP compliance, and is compliant with the U.S. Federal Zero Trust Architecture standards.
+
 - [Tetrate Releases Tetrate Enterprise Envoy Gateway for Enterprise Cloud Native Services](https://mp.weixin.qq.com/s/XV7b6W3GiKbamuTabypIBQ)
 
     Built on the open source Envoy Gateway, the Tetrate Enterprise Envoy Gateway supports CVE and escalation management, FIPS-compliant builds for government environments, and support for Envoy features such as global rate limiting, application authentication processing for OIDC and OAuth2.
@@ -893,6 +901,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      TLS Protect for Kubernetes is part of Control Plane for Machine Identities, Venafi's platform for machine identity management.
      Helps security and platform teams manage cloud-native machine identities such as TLS, mTLS, and SPIFFE in multicloud and multicluster Kubernetes environments, enhancing the observability, control, and automation of machine identity management.
+
+- [Volcano Engine Container Service VKE Q3 Product Update](https://mp.weixin.qq.com/s/YTeVFW4myz26LALQ4AyCPA)
+
+    Updates: New cloud-native batch compute suite, NetworkPolicy support for VPC-CNI clusters, new rdma-device-plugin component, new cluster inspection and troubleshooting tool, support for NUMA topology-aware scheduling, provide mirrors to lazily load the Nydus monitoring dashboard, support for outputting GPU Xid information to log files, support for Kubernetes version 1.26.
 
 - [Volcano Engine cloud-native PaaS platform veStack Agile Edition Q2 product update](https://mp.weixin.qq.com/s/t_38mWzGurd0QrgdQg6O_A)
 

@@ -376,6 +376,10 @@
 
 ### E
 
+- [Envoy v1.28.0 发布（CNCF 项目）](https://www.envoyproxy.io/docs/envoy/v1.28.0/version_history/v1.28/v1.28.0)
+
+    版本特性：工作节点支持延迟集群的创建、增加对 ADS 的 EDS（Endpoint Discovery Service）响应缓存支持、为下游和上游网络过滤器添加了 ECDS（External Configuration Discovery Service）支持、即使在源集群和上游集群的区域数量不同的情况下也支持启用区域感知路由、将在 v1.30 中废弃 OpenTracing 和 OpenCensus。
+
 - [Envoy v1.27.0 发布（CNCF 项目）](https://github.com/envoyproxy/envoy/releases/tag/v1.27.0)
 
     版本特性：引入新的 golang 网络过滤器、新增用于在资源不足时拒绝请求的负载削减点（Load shed point）、支持 CONNECT-UDP、引入 Open Telemetry 兼容的统计数据收集器、新增用于打印 CEL 表达式的访问日志格式化器。
@@ -802,6 +806,10 @@
 
     [KubeClipper](https://github.com/KubeClipper-labs) 基于 kubeadm 工具进行二次封装，提供在企业自有基础设施中快速部署 K8S 集群和持续化全生命周期管理（安装、卸载、升级、扩缩容、远程访问等）能力，
     支持在线、代理、离线等多种部署方式，还提供了丰富可扩展的 CRI、CNI、CSI、以及各类 CRD 组件的管理服务。
+
+- [KubeEdge 云原生边缘计算平台 v1.15.0 发布（CNCF 项目）](https://github.com/kubeedge/kubeedge/blob/master/CHANGELOG/CHANGELOG-1.15.md)
+
+    版本特性：支持 Windows 边缘节点、设备 API 升级到 v1beta1、新增对 DMI 数据平面的支持（alpha）、新增映射器开发框架子项目 Mapper-Framework、支持 Kubernetes 原生的静态 Pod、支持依赖于非资源类别请求的 Kubernetes 插件（如 Cilium、Calico）、将 Kubernetes 的依赖升级到了 v1.26.7。
 
 - [KubeEdge Sedna v0.6 & Ianvs 边云协同终身学习方案 v0.2 发布](https://mp.weixin.qq.com/s/OQdNmmzRl4GC_ZssU4vatQ)
 
@@ -1355,6 +1363,10 @@
 
 ### R
 
+- [Radius：Azure 开源的云原生应用平台](https://azure.microsoft.com/en-us/blog/the-microsoft-azure-incubations-team-launches-radius-a-new-open-application-platform-for-the-cloud/)
+
+    [Radius](https://github.com/radius-project/radius) 通过支持 Kubernetes 、现有的基础设施工具（如 Terraform 和 Bicep）以及与现有的 CI/CD 系统（如 GitHub Actions）集成，旨在使开发人员和平台工程师能够合作交付和管理符合成本要求及运维和安全最佳实践的云原生应用。目前支持在私有云Azure 和 AWS 等云平台上部署应用，并计划支持更多的云提供商。
+
 - [Rainbond 信创版本的云原生多云应用管理平台发布](https://mp.weixin.qq.com/s/eelPIhoCQdAfBnQOm_YDAg)
 
     Rainbond 信创版支持部署和管理多个单架构集群。支持 amd64 集群、arm64 集群、amd64 & arm64 混合架构集群的一键部署和管理。兼容主流国产化 CPU，同时与多个国产化操作系统进行了适配。支持传统应用快速迁移到信创环境。云原生应用商店支持发布和安装 arm64 架构的应用。
@@ -1491,6 +1503,10 @@
 - [ThreatMapper 云原生安全观测平台 v1.4.0 发布](https://github.com/deepfence/ThreatMapper/releases/tag/v1.4.0)  
 
     该版本主要新特性：新功能 ThreatGraph 能够结合网络等运行时环境来确定威胁扫描结果的优先级、支持对云资产进行无代理的云安全态势管理、集成云原生环境恶意程序扫描工具 [YaraHunter](https://github.com/deepfence/YaraHunter)。
+
+- [Trivy 容器漏洞扫描工具 v0.46.0 发布（CNCF 项目）](https://github.com/aquasecurity/trivy/releases/tag/v0.46.0)
+
+    版本特性：支持扫描 Kubernetes 控制平面和节点组件中的漏洞、增加对 .NET 项目许可信息的检索功能、向 Kubernetes 资源的扫描报告中添加了元数据、在 CI 流程中添加了一个用于检查依赖项的 Go 版本的工作流。
 
 - [Trivy 容器漏洞扫描工具 v0.44.0 发布（CNCF 项目）](https://github.com/aquasecurity/trivy/releases/tag/v0.44.0)
 
