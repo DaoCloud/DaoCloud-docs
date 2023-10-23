@@ -104,75 +104,6 @@
 
 有两种升级方式。您可以根据前置操作，选择对应的升级方案：
 
-!!! note  
-
-    当从 v0.11.x (或更低版本) 升级到 v0.12.0 (或更高版本) 时，需要将 `bak.yaml` 中所有 keycloak key 修改为 `keycloakx`。  
-
-    这个 key 的修改示例：  
-
-    ```yaml title="bak.yaml"
-    USER-SUPPLIED VALUES:
-    keycloak:
-        ...
-    ```
-
-    修改为：
-
-    ```yaml title="bak.yaml"
-    USER-SUPPLIED VALUES:
-    keycloakx:
-        ...
-    ```
-
-!!! note  
-
-    当从 v0.15.x (或更低版本) 升级到 v0.16.0 (或更高版本) 时，需要修改数据库连接参数。  
-
-    数据库连接参数的修改示例：
-
-    ```yaml title="bak.yaml"
-    USER-SUPPLIED VALUES:
-    global:
-      database:
-        host: 127.0.0.1
-        port: 3306
-        apiserver:
-          dbname: virtnest
-          password: passowrd
-          user: virtnest
-        keycloakx:
-          dbname: keycloak
-          password: passowrd
-          user: keycloak
-      auditDatabase:
-        auditserver:
-          dbname: audit
-          password: passowrd
-          user: audit
-        host: 127.0.0.1
-        port: 3306
-    ```
-
-    修改为：
-
-    ```yaml title="bak.yaml"
-    USER-SUPPLIED VALUES:
-    global:
-      storage:
-        virtnest:
-        - driver: mysql
-          accessType: readwrite
-          dsn: {global.database.apiserver.user}:{global.database.apiserver.password}@tcp({global.database.host}:{global.database.port})/{global.database.apiserver.dbname}?charset=utf8mb4&multiStatements=true&parseTime=true
-        audit:
-        - driver: mysql
-          accessType: readwrite
-          dsn: {global.auditDatabase.auditserver.user}:{global.auditDatabase.auditserver.password}@tcp({global.auditDatabase.host}:{global.auditDatabase.port})/{global.auditDatabase.auditserver.dbname}?charset=utf8mb4&multiStatements=true&parseTime=true
-        keycloak:
-        - driver: mysql
-          accessType: readwrite
-          dsn: {global.database.keycloakx.user}:{global.database.keycloakx.password}@tcp({global.database.host}:{global.database.port})/{global.database.keycloakx.dbname}?charset=utf8mb4
-    ```
-
 === "通过 helm repo 升级"
 
     1. 检查虚拟机容器 helm 仓库是否存在。
@@ -225,7 +156,7 @@
     1. 更新 virtnest crds
 
         ```shell
-        helm pull virtnest/virtnest --version 0.9.0 && tar -zxf virtnest-0.9.0.tgz
+        helm pull virtnest/virtnest --version 0.2.0 && tar -zxf virtnest-0.2.0.tgz
         kubectl apply -f virtnest/crds
         ```
 
@@ -242,7 +173,7 @@
           -n virtnest-system \
           -f ./bak.yaml \
           --set global.imageRegistry=$imageRegistry \
-          --version 0.9.0
+          --version 0.2.0
         ```
 
 === "通过 chart 包升级"
