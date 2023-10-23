@@ -56,6 +56,8 @@ DCE 5.0 包含的众多子模块可以单独下载，按需对每个模块进行
 | 云边协同 | 94.2 MB   | [:arrow_right: 下载页](./modules/kant.md)      | 2023-09-19 |
 | 全局管理 | 440 MB    | [:arrow_right: 下载页](./modules/ghippo.md)    | 2023-09-04 |
 | 运营管理 | 56.90 MB  | [:arrow_right: 下载页](./modules/gmagpie.md)   | 2023-08-02 |
+| 虚拟机容器 | 36.90 MB | [:arrow_right: 下载页](./modules/virtnest.md) | 2023-10-20 |
+
 
 DCE 5.0 还提供了各种精选中间件：
 
