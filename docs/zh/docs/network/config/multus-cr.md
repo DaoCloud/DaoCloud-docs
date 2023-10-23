@@ -13,7 +13,8 @@
 3. 如果需要自动创建 VLAN 子接口 ，那么需要配置 `VLAN ID`，并且 `网卡接口`(Master)  为对应的父接口，Spiderpool 将在创建 Pod 时动态的在主机创建一张名为: `master`，`vlanID` 的子接口，该接口承接 Pod 的 VLAN 网络。
 4. 如果需要自动创建 Bond 网卡 ，那么VLAN ID 配置为 `0`，并且配置 2张 `网卡接口`(Master)  为组件 Bond 的 Slave 网卡 ，Spiderpool 将在创建 Pod 时动态的在主机创建一张名为: <name> 的 Bond 网卡，该 Bond 网卡承接 Pod 的 Underlay 网络。
 5. 如果同时需要以 Bond 网卡创建的 VLAN 子接口承接 Pod 的网络， 需要配置 `VLAN ID`。Spiderpool 将在创建 Pod 时动态的在主机创建一张名为: <bondName>.<vlanID> 的 Vlan子接口，该子接口承接 Pod 的 VLAN 网络。
-6. 如需创建新的 Multus CR 实例，可参考此文档。
+6. 所有通过 Spiderpool 创建的接口，都不会配置 IP。 并且这些接口会被移除当节点重启，但 Pod 重启又会自动添加回来。如果需要这些接口不会随着重启节点丢失或需要配置 IP，可以考虑使用 nmcli 工具添加。 
+7. 如需创建新的 Multus CR 实例，可参考此文档。
 
 ## 界面操作
 
