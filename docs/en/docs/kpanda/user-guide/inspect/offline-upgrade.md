@@ -96,7 +96,7 @@ Unzip and load the image files.
     === "containerd"
 
         ```shell
-        ctr image import images.tar
+        ctr -n k8s.io image import images.tar
         ```
 
 !!! note
@@ -125,7 +125,7 @@ There are two upgrade methods. You can choose the corresponding upgrade approach
     2. Add the cluster inspection Helm repository.
 
         ```shell
-        heml repo add kocllie http://{harbor url}/chartrepo/{project}
+        helm repo add kocllie http://{harbor url}/chartrepo/{project}
         ```
 
     3. Update the cluster inspection Helm repository.

@@ -96,7 +96,7 @@ Unpack and load the image files.
     === "containerd"
 
         ```shell
-        ctr image import images.tar
+        ctr -n k8s.io image import images.tar
         ```
 
 !!! note
@@ -125,7 +125,7 @@ There are two upgrade methods. You can choose the appropriate upgrade method bas
     1. Add the backup and restore Helm repository.
 
         ```shell
-        heml repo add kcoral http://{harbor url}/chartrepo/{project}
+        helm repo add kcoral http://{harbor url}/chartrepo/{project}
         ```
 
     1. Update the backup and restore Helm repository.

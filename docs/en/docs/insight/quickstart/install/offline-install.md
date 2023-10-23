@@ -93,7 +93,7 @@ Unzip and load the image file.
      === "containerd"
 
          ```shell
-         ctr image import images.tar
+         ctr -n k8s.io image import images.tar
          ```
 
 !!! note

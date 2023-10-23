@@ -24,31 +24,21 @@ You can load the images in one of the following two ways. When an container regi
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: kangaroo-offline # (1)
+          intermediateBundlesPath: kangaroo-offline # Go to the relative path where the charts-syncer command is executed, instead of the relative path between this YAML file and the offline package.
         target:
-          containerRegistry: 10.16.10.111 # (2)
-          containerRepository: release.daocloud.io/kangaroo # (3)
+          containerRegistry: 10.16.10.111 # Modify it to your container registry URL.
+          containerRepository: release.daocloud.io/kangaroo # Modify it to your container registry.
           repo:
-            kind: HARBOR # (4)
-            url: http://10.16.10.111/chartrepo/release.daocloud.io # (5)
+            kind: HARBOR # It can also be any other supported Helm Chart repository category.
+            url: http://10.16.10.111/chartrepo/release.daocloud.io # Modify it to the chart repo URL.
             auth:
-            username: "admin" # (6)
-            password: "Harbor12345" # (7)
+              username: "admin" # Your container registry username.
+              password: "Harbor12345" # Your container registry password.
           containers:
             auth:
-              username: "admin" # (8)
-              password: "Harbor12345" # (9)
+              username: "admin" # Your container registry username.
+              password: "Harbor12345" # Your container registry password.
         ```
-
-        1. Go to the relative path where the charts-syncer command is executed, instead of the relative path between this YAML file and the offline package.
-        2. Modify it to your container registry URL.
-        3. Modify it to your container registry.
-        4. It can also be any other supported Helm Chart repository category.
-        5. Modify it to the chart repo URL.
-        6. Your container registry username.
-        7. Your container registry password.
-        8. Your container registry username.
-        9. Your container registry password.
 
     === "If chart repo is not installed"
 
@@ -109,7 +99,7 @@ Extract and load the image files.
     === "containerd"
 
         ```shell
-        ctr image import images.tar
+        ctr -n k8s.io image import images.tar
         ```
 
 !!! note
