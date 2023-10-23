@@ -835,6 +835,8 @@ nav:
                       - 更新 MySQL: middleware/mysql/user-guide/update.md
                       - 删除 MySQL: middleware/mysql/user-guide/delete.md
                       - 查看 MySQL 日志: middleware/mysql/user-guide/logs.md
+                  - 最佳实践: 
+                      - MySQL 跨集群同步: middleware/mysql/best-practice/crossclusterssync.md
                   - 故障排查:
                       - MySQL 健康检查: middleware/mysql/faq/quick-check.md
                       - MySQL Pod: middleware/mysql/faq/faq-pod.md
@@ -868,8 +870,9 @@ nav:
                       - 更新 Redis 实例: middleware/redis/user-guide/update.md
                       - 删除 Redis 实例: middleware/redis/user-guide/delete.md
                       - 查看 Redis 日志: middleware/redis/user-guide/logs.md
-                  - 跨集群数据同步:
-                      - 数据同步介绍: middleware/redis/best-practice/index.md
+                  - 最佳实践:
+                      - 单集群跨机房高可用部署: middleware/redis/best-practice/singleclustercrosszone.md
+                      - 跨集群数据同步介绍: middleware/redis/best-practice/index.md
                       - 集群模式 to 集群模式: middleware/redis/best-practice/cluster2cluster.md
                       - 哨兵模式 to 哨兵模式: middleware/redis/best-practice/sentinel2sentinel.md
                       - 集群模式 to 哨兵模式: middleware/redis/best-practice/cluster2sentinel.md
