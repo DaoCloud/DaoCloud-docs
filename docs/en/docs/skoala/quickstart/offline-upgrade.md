@@ -18,31 +18,21 @@ After downloading the image to your local node, you need to sync the latest imag
 
         ```yaml
         source:
-          intermediateBundlesPath: skoala-offline # (1)
+          intermediateBundlesPath: skoala-offline # Relative path to executing chart-syncer command, **not** the relative path between
         target:
-          containerRegistry: 10.16.23.145 # (2)
-          containerRepository: release.daocloud.io/skoala # (3)
+          containerRegistry: 10.16.23.145 # Change to your container registry url
+          containerRepository: release.daocloud.io/skoala # Change to your container registry
           repo:
-            kind: HARBOR # (4)
-            url: http://10.16.23.145/chartrepo/release.daocloud.io # (5)
+            kind: HARBOR # Can be any of the supported Helm Chart registries
+            url: http://10.16.23.145/chartrepo/release.daocloud.io # Change to chart repo url
             auth:
-            username: "admin" # (6)
-            password: "Harbor12345" # (7)
+              username: "admin" # Your container registry username
+              password: "Harbor12345" # Your container registry password
           containers:
             auth:
-              username: "admin" # (8)
-              password: "Harbor12345" # (9)
+              username: "admin" # Your container registry username
+              password: "Harbor12345" # Your image vault password
         ```
-
-        1. Relative path to executing chart-syncer command, **not** the relative path between this YAML file and the offline package
-        2. Change to your container registry url
-        3. Change to your container registry
-        4. Can be any of the supported Helm Chart registries
-        5. Change to chart repo url
-        6. Your container registry username
-        7. Your container registry password
-        8. Your container registry username
-        9. Your image vault password
 
     === "chart repo not installed"
 
@@ -101,7 +91,7 @@ After downloading the image to your local node, you need to sync the latest imag
     === "containerd"
 
         ```shell
-        ctr image import images.tar
+        ctr -n k8s.io image import images.tar
         ```
 
 !!! note

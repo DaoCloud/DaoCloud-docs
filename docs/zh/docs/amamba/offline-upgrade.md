@@ -76,7 +76,7 @@
 
     ```shell
     docker load -i images.tar # for Docker
-    ctr image import images.tar # for containerd
+    ctr -n k8s.io image import images.tar # for containerd
     ```
 
 ## 升级
@@ -90,7 +90,7 @@
     若返回结果为空或出现 `Error: no repositories to show` 提示，则执行如下命令添加应用工作台的 Helm 仓库。
 
     ```shell
-    heml repo add amamba http://{harbor url}/chartrepo/{project}
+    helm repo add amamba http://{harbor url}/chartrepo/{project}
     ```
 
 2. 更新应用工作台的 Helm 仓库。

@@ -30,32 +30,21 @@ as it is more efficient and convenient.
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: gmagpie-offline # (1)
+          intermediateBundlesPath: gmagpie-offline # Use the relative path to run the `charts-syncer` command, not the relative path
         target:
-          containerRegistry: 10.16.10.111 # (2)
-          containerRepository: release.daocloud.io/gmagpie # (3)
+          containerRegistry: 10.16.10.111 # Modify it to your image repository URL.
+          containerRepository: release.daocloud.io/gmagpie # Modify it to your image repository.
           repo:
-            kind: HARBOR # (4)
-            url: http://10.16.10.111/chartrepo/release.daocloud.io # (5)
+            kind: HARBOR # It can also be any other supported Helm Chart repository category.
+            url: http://10.16.10.111/chartrepo/release.daocloud.io # Modify it to the chart repo URL.
             auth:
-            username: "admin" # (6)
-            password: "Harbor12345" # (7)
+              username: "admin" # Your image repository username.
+              password: "Harbor12345" # Your image repository password.
           containers:
             auth:
-              username: "admin" # (8)
-              password: "Harbor12345" # (9)
+              username: "admin" # Your image repository username.
+              password: "Harbor12345" # Your image repository password.
         ```
-
-        1. Use the relative path to run the `charts-syncer` command, not the relative path
-           between this YAML file and the offline package.
-        2. Modify it to your image repository URL.
-        3. Modify it to your image repository.
-        4. It can also be any other supported Helm Chart repository category.
-        5. Modify it to the chart repo URL.
-        6. Your image repository username.
-        7. Your image repository password.
-        8. Your image repository username.
-        9. Your image repository password.
 
     === "Chart Repo Not Installed"
 
@@ -118,7 +107,7 @@ Unpack and load the image file.
     === "containerd"
 
         ```shell
-        ctr image import images.tar
+        ctr -n k8s.io image import images.tar
         ```
 
 !!! note

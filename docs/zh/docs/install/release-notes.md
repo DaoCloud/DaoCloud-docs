@@ -209,7 +209,7 @@
 
 #### 修复
 
-- **修复** 修复在线安装时 Kcoral heml chart 无法查到问题
+- **修复** 修复在线安装时 Kcoral helm chart 无法查到问题
 - **修复** 修复升级时 KubeConfig 无法找到问题
 
 #### 已知问题

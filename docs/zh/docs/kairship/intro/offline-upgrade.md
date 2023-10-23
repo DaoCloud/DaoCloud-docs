@@ -96,7 +96,7 @@
     === "containerd"
 
         ```shell
-        ctr image import images.tar
+        ctr -n k8s.io image import images.tar
         ```
 
 !!! note
@@ -125,7 +125,7 @@
     1. 添加多云编排的 helm 仓库。
     
         ```shell
-        heml repo add kairship http://{harbor url}/chartrepo/{project}
+        helm repo add kairship http://{harbor url}/chartrepo/{project}
         ```
     
     1. 更新多云编排的 helm 仓库。

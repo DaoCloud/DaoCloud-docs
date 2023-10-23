@@ -26,31 +26,21 @@ First, find a node (e.g., Spark Node) that can connect to the image repository a
   
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: spidernet-offline # (1)
+          intermediateBundlesPath: spidernet-offline # Path where the load-image.yaml file is executed on the node
         target:
-          containerRegistry: 10.16.23.145 # (2)
-          containerRepository: release.daocloud.io/spidernet # (3)
+          containerRegistry: 10.16.23.145 # Image repository address
+          containerRepository: release.daocloud.io/spidernet # Image repository path
           repo:
-            kind: HARBOR # (4)
-            url: http://10.16.23.145/chartrepo/release.daocloud.io # (5)
+            kind: HARBOR # Helm Chart repository type
+            url: http://10.16.23.145/chartrepo/release.daocloud.io # Helm repository address
             auth:
-            username: "admin" # (6)
-            password: "Harbor12345" # (7)
+              username: "admin" # Image repository username
+              password: "Harbor12345" # Image repository password
           containers:
             auth:
-              username: "admin" # (8)
-              password: "Harbor12345" # (9)
+              username: "admin" # Helm repository username
+              password: "Harbor12345" # Helm repository password
         ```
-  
-        1. Path where the load-image.yaml file is executed on the node
-        2. Image repository address
-        3. Image repository path
-        4. Helm Chart repository type
-        5. Helm repository address
-        6. Image repository username
-        7. Image repository password
-        8. Helm repository username
-        9. Helm repository password 
 
     === "Helm Repo Not Added"
 
@@ -111,7 +101,7 @@ Unpack and load the image files.
     === "containerd"
 
         ```shell
-        ctr image import images.tar
+        ctr -n k8s.io image import images.tar
         ```
 
 !!! note

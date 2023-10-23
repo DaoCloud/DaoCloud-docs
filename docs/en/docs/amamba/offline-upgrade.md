@@ -92,7 +92,7 @@ If a mirror warehouse exists in the environment, it is recommended to use chart-
     === "containerd"
 
         ```shell
-        ctr image import images.tar
+        ctr -n k8s.io image import images.tar
         ```
 
 !!! note

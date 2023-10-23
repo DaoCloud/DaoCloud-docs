@@ -24,31 +24,21 @@
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: gmagpie-offline # (1)
+          intermediateBundlesPath: gmagpie-offline # 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
         target:
-          containerRegistry: 10.16.10.111 # (2)
-          containerRepository: release.daocloud.io/gmagpie # (3)
+          containerRegistry: 10.16.10.111 # 需更改为你的镜像仓库 url
+          containerRepository: release.daocloud.io/gmagpie # 需更改为你的镜像仓库
           repo:
-            kind: HARBOR # (4)
-            url: http://10.16.10.111/chartrepo/release.daocloud.io # (5)
+            kind: HARBOR # 也可以是任何其他支持的 Helm Chart 仓库类别
+            url: http://10.16.10.111/chartrepo/release.daocloud.io # 需更改为 chart repo url
             auth:
-            username: "admin" # (6)
-            password: "Harbor12345" # (7)
+              username: "admin" # 你的镜像仓库用户名
+              password: "Harbor12345" #  你的镜像仓库密码
           containers:
             auth:
-              username: "admin" # (8)
-              password: "Harbor12345" # (9)
+              username: "admin" # 你的镜像仓库用户名
+              password: "Harbor12345" # 你的镜像仓库密码
         ```
-
-        1. 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
-        2. 需更改为你的镜像仓库 url
-        3. 需更改为你的镜像仓库
-        4. 也可以是任何其他支持的 Helm Chart 仓库类别
-        5. 需更改为 chart repo url
-        6. 你的镜像仓库用户名
-        7. 你的镜像仓库密码
-        8. 你的镜像仓库用户名
-        9. 你的镜像仓库密码
 
     === "未安装 chart repo"
 
@@ -109,7 +99,7 @@
     === "containerd"
 
         ```shell
-        ctr image import images.tar
+        ctr -n k8s.io image import images.tar
         ```
 
 !!! note
@@ -168,7 +158,7 @@
     1. 添加运营管理的 Helm 仓库。
 
         ```shell
-        heml repo add gmagpie http://{harbor url}/chartrepo/{project}
+        helm repo add gmagpie http://{harbor url}/chartrepo/{project}
         ```
 
     1. 更新运营管理的 Helm 仓库。
