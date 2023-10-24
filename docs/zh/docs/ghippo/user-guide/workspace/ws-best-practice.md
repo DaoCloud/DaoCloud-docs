@@ -16,7 +16,7 @@
     这里的管理员可以是 Admin 角色、该工作空间的 Workspace Admin 角色或该工作空间上层的 Folder Admin 角色。
     查看 [Folder 与 Workspace 的关系](ws-folder.md)。
 
-2. 资源组：资源组支持 Cluster、Cluster-Namespace (跨集群)、Mesh、Mesh-Namespace 四种资源类型。
+2. 资源组：资源组支持 Cluster、Cluster-Namespace (跨集群)、Mesh、Mesh-Namespace、Kairship、Kairship-Namespace 六种资源类型。
     一个资源只能绑定一个资源组，资源被绑定到资源组后，工作空间的所有者将拥有该资源的所有管理权限，相当于该资源的所有者，因此不受资源配额的限制。
 
     最佳实践：工作空间通过“授权”功能可以给部门成员授予不同角色权限，而工作空间能够把人与角色的授权关系一次性应用到工作空间的所有资源上。因此运维人员只需将资源绑定到资源组，将部门中的不同角色加入不同的资源组，就能确保资源的权限被正确分配。
