@@ -78,6 +78,10 @@ videos:
   - "docs/en/docs/videos/**/*"
   - "docs/zh/docs/videos/**/*"
 
+virtnest:
+  - "docs/en/docs/virtnest/**/*"
+  - "docs/zh/docs/virtnest/**/*"
+
 en:
   - "docs/en/**/*"
 
