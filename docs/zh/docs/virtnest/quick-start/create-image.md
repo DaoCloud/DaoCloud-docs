@@ -9,12 +9,9 @@
 
 创建虚拟机之前，需要满足以下前提条件：
 
-- 在集群内安装 virtnest-agent。
+- 在指定集群[安装 virtnest-agent](../quick-start/agent.md)
 - 创建一个[命名空间](../../kpanda/user-guide/namespaces/createns.md)和[用户](../../ghippo/user-guide/access-control/user.md)。
-- 当前操作用户应具有
-  [Cluster Admin](../../kpanda/user-guide/permissions/permission-brief.md#cluster-admin)
-  或更高权限，详情可参考[命名空间授权](../../kpanda/user-guide/namespaces/createns.md)。
-- 提前准备好镜像。
+- 提前准备好镜像，平台内置三种镜像(如下文所示)，如需制作镜像，可参考开源项目[制作镜像](https://github.com/Tedezed/kubevirt-images-generator/tree/master)。
 
 ## 镜像创建
 
@@ -24,7 +21,7 @@
 
     ![虚拟机容器](../images/createvm01.png)
 
-2. 在虚拟机列表页面，点击创建虚拟机-选择镜像创建虚拟机
+2. 在虚拟机列表页面，点击创建虚拟机-选择镜像创建虚拟机。
 
     ![镜像创建](../images/createvm02.png)
 

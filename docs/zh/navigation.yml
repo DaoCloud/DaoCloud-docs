@@ -492,8 +492,13 @@ nav:
               - 介绍:
                   - 简介: virtnest/intro/index.md
                   - Release Notes: virtnest/intro/release-notes.md
+                  - 安装虚拟机容器: virtnest/intro/install.md
+                  - 离线升级: virtnest/intro/offline-update.md
               - 快速入门:
-                  - 创建虚拟机: virtnest/quick-start/index.md
+                  - 在指定集群内安装 virtnest-agent: virtnest/quick-start/agent.md
+                  - 创建虚拟机: virtnest/quick-start/create-image.md
+                  - 通过模板创建虚拟机: virtnest/quick-start/create-tep.md
+                  - 虚拟机模板: virtnest/quick-start/tep.md
                   - 通过 NodePort 访问虚拟机: virtnest/quick-start/nodeport.md
                   - Rook Ceph 部署流程: virtnest/quick-start/rook-ceph.md
                   - 离线升级: virtnest/install/offline-install.md
