@@ -6,7 +6,7 @@ Spidernet 为云原生网络管理引擎，主要提供 Spidernet、Multus CR、
 
 ## 从下载的安装包中加载镜像
 
-您可以根据下面两种方式之一加载镜像，当环境中存在镜像仓库时，建议选择 chart-syncer 同步镜像到镜像仓库，该方法更加高效便捷。
+您需要先从[安装包](../../download/modules/spidernet.md)中获取 Spidernet 的离线包，然后可以根据下面两种方式之一加载镜像，当环境中存在镜像仓库时，建议选择 chart-syncer 同步镜像到镜像仓库，该方法更加高效便捷。
 
 #### 方式一：使用 chart-syncer 同步镜像
 
