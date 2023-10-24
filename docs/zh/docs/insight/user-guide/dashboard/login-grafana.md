@@ -5,11 +5,11 @@ hide:
 
 # 访问原生 Grafana
 
-请确认您的全局管理集群中 Helm 应用 `Insight` 处于`运行中`状态。
+访问原生 Grafana UI
 
-具体操作步骤如下：
+## 操作步骤
 
-1. 登录控制台，访问原生 Grafana。
+1. 登录浏览器，在浏览器中输入 Grafana 地址。
 
     访问地址： `http://ip:访问端口/ui/insight-grafana`
 
