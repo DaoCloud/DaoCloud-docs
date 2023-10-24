@@ -18,6 +18,7 @@
 ### Insight v0.21.x
 
 ```bash
+K8S_CLUSTER_UID=$(kubectl get namespace kube-system -o jsonpath='{.metadata.uid}')
 kubectl apply -f - <<EOF
 apiVersion: opentelemetry.io/v1alpha1
 kind: Instrumentation
@@ -35,7 +36,7 @@ spec:
     # Enum: always_on, always_off, traceidratio, parentbased_always_on, parentbased_always_off, parentbased_traceidratio, jaeger_remote, xray
     type: always_on
   java:
-    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-java:1.29.0
+    image: ghcr.m.daocloud.io/openinsight-proj/autoinstrumentation-java:1.31.0
     env:
       - name: OTEL_JAVAAGENT_DEBUG
         value: "false"
@@ -47,6 +48,8 @@ spec:
         value: "prometheus"
       - name: OTEL_METRICS_EXPORTER_PORT
         value: "9464"
+      - name: OTEL_K8S_CLUSTER_UID
+        value: $K8S_CLUSTER_UID
   nodejs:
     image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs:0.41.1
   python:
