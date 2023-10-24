@@ -140,6 +140,7 @@ nav:
                   - 集群状态: kpanda/user-guide/clusters/cluster-status.md
                   - 如何选择运行时: kpanda/user-guide/clusters/runtime.md
                   - 集群版本支持范围: kpanda/user-guide/clusters/cluster-version.md
+                  - 接入 rancher 集群: kpanda/user-guide/clusters/integrate-rancher-cluster.md
               - 命名空间:
                   - 创建命名空间: kpanda/user-guide/namespaces/createns.md
                   - 启用命名空间独享节点: kpanda/user-guide/namespaces/exclusive.md
