@@ -533,19 +533,21 @@ nav:
                   - 仪表盘: insight/user-guide/dashboard/dashboard.md
                   - 以管理员登录 Grafana: insight/user-guide/dashboard/login-grafana.md
                   - 导入自定义仪表盘: insight/user-guide/dashboard/import-dashboard.md
-              - 资源监控:
-                  - 集群监控: insight/user-guide/scenario-insight/cluster.md
-                  - 节点监控: insight/user-guide/scenario-insight/node.md
-                  - 容器监控: insight/user-guide/scenario-insight/container.md
-              - 场景监控:
-                  - 服务监控: insight/user-guide/scenario-insight/service.md
-                  - 服务拓扑元素说明: insight/user-guide/scenario-insight/topology-helper.md
-                  - 服务拓扑: insight/user-guide/scenario-insight/topology.md
-              - 数据查询:
-                  - 日志查询: insight/user-guide/data-query/log.md
-                  - 指标查询: insight/user-guide/data-query/metric.md
-                  - 链路查询: insight/user-guide/data-query/trace.md
+              - 基础设施:
+                  - 集群: insight/user-guide/scenario-insight/cluster.md
+                  - 节点: insight/user-guide/scenario-insight/node.md
+                  - 命名空间: insight/user-guide/scenario-insight/namespace.md
+                  - 容器: insight/user-guide/scenario-insight/container.md
                   - 事件查询: insight/user-guide/data-query/event.md
+              - 指标:
+                  - insight/user-guide/data-query/metric.md
+              - 日志查询: 
+                  - insight/user-guide/data-query/log.md
+              - 链路追踪: 
+                  - 服务拓扑: insight/user-guide/scenario-insight/topology.md
+                  - 服务拓扑元素说明: insight/user-guide/scenario-insight/topology-helper.md
+                  - 服务监控: insight/user-guide/scenario-insight/service.md
+                  - 链路查询: insight/user-guide/data-query/trace.md
               - 告警中心:
                   - insight/user-guide/alert-center/index.md
                   - 告警策略: insight/user-guide/alert-center/alert-policy.md

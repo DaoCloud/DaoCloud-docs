@@ -7,12 +7,16 @@
 
 -- 集群中已[安装 insight-agent](../../quickstart/install/install-agent.md) 且应用处于`运行中`状态。
 
-## 查看节点详情
+## 操作步骤
 
-1. 在左侧导航栏中，选择`节点监控`，默认展示第一个集群下的节点。
+1. 进入`可观测性` 产品模块。
+  
+2. 在左边导航栏选择 `基础设施 > 节点`。在该页面可查看以下信息：
 
-    ![节点监控](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/node01.png)
+    1. **集群切换**：切换顶部的下拉框可切换集群；
+    2. **节点列表**：所选集群中的节点列表，单击切换节点。
+    3. **故障**：统计当前集群产生的告警数量；
+    4. **资源消耗**：所选节点的 CPU、内存、磁盘的实际使用量和总量；
+    5. **指标说明**：所选节点的 CPU、内存、磁盘读写、网络接收发送的变化趋势。
 
-2. 在筛选列表中，可按照集群、健康状态筛选节点，也可以通过搜索框进行搜索。
-
-    ![节点监控](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/node02.png)
+    ![节点监控](../../images/node00.png)
