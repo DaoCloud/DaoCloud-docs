@@ -38,13 +38,13 @@
 - `网卡配置`：网卡配置中包含接口配置信息，当网卡接口数量为一个时，则默认网卡配置中只有一个网卡接口。当添加接口数量大于等于两个时，可以做 Bond 相关配置。
 - `网卡接口`：只用于 CNI 类型 为 `macvlan`，`ipvlan` ，至少有一个元素。如果有两个及其以上的元素, bond 必须不能为空。
 - `Bond 信息`：名称不能为空，模式必须在范围 [0,6] 内, 分别对应七种模式：
-  - balance-rr
-  - active-backup
-  - balance-xor
-  - broadcast
-  - 802.3ad
-  - balance-tlb
-  - balance-alb
+    - balance-rr
+    - active-backup
+    - balance-xor
+    - broadcast
+    - 802.3ad
+    - balance-tlb
+    - balance-alb
 
 参数是可选的, 输入格式为 `k1=v1;k2=v2;k3=v3`，用 `;` 隔开。
 
