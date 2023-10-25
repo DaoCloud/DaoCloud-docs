@@ -6,7 +6,11 @@
 
 此方式同样适配 Istio 高可用模式下，获取客户端源 IP 。
 
+商业版安装后，默认开启获取客户端源IP功能。
+
 ## 操作步骤
+
+### 开启获取客户端源IP功能
 
 1. 配置 Metallb 宣告上述节点作为 LB IPs 的下一跳。
 
@@ -105,3 +109,7 @@
     ![source-ip-1](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/source-ip-1.png)
 
     ![source-ip-2](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/source-ip-2.png)
+
+### 关闭获取客户端源IP功能
+
+1. 修改名为 `istio-ingressgateway` 的 Service 中的字段 `spec.externalTrafficPolicy` = `Cluster`

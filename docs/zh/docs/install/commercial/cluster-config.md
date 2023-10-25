@@ -34,6 +34,7 @@ spec:
     type: metallb
     istioGatewayVip: xx.xx.xx.xx/32 # 当 loadBalancer.type 是 metallb 时必填，为 DCE 提供 UI 和 OpenAPI 访问权限
     insightVip: xx.xx.xx.xx/32 # 别丢弃 /32，当 loadBalancer.type 是 metallb 时必填，用作 global 集群的 Insight 数据采集入口，子集群的 insight-agent 可以向这个 VIP 报告数据
+    SourceIP: auto # 默认值auto表示开启审计日志获取源IP功能，设置为false则关闭审计日志获取源IP功能
  
   # 指定 ssh 私钥，定义后无需再定义节点的 ansibleUser、ansiblePass
   # privateKeyPath: /root/.ssh/id_rsa_sample
@@ -271,6 +272,7 @@ spec:
 | loadBalancer.insightVip                                      | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 GLobal 集群的 insight 数据收集入口使用，子集群的 insight-agent 可上报数据到这个 VIP | -                                                       |
 | loadBalancer.istioGatewayVip                                 | 如果负载均衡模式是 metallb，则需要指定一个 VIP，供给 DCE 的 UI 界面和 OpenAPI 访问入口 | -                                                       |
 | loadBalancer.type                                            | 所使用的 LoadBalancer 的模式，物理环境用 metallb，POC 用 NodePort，公有云和 SDN CNI 环境用 cloudLB（暂时还未未支持 cloudLB 模式） | NodePort (default)、metallb、cloudLB (Cloud Controller) |
+| loadBalancer.SourceIP                                        | 审计日志获取源IP，副作用：在节点层面无法进行负载均衡              | auto
 | fullPackagePath                                              | 解压后的离线包的路径，离线模式下该字段必填                   | -                                                       |
 | addonPackage.path                                            | 应用商店 addon 包本地文件系统路径                            | -                                                       |
 | imagesAndCharts                                              | 镜像仓库和 Chart仓库源                                       | -                                                       |
