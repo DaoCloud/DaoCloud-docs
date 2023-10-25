@@ -553,7 +553,7 @@ nav:
                   - 事件查询: insight/user-guide/data-query/event.md
               - 指标:
                   - insight/user-guide/data-query/metric.md
-              - 日志查询: 
+              - 日志: 
                   - insight/user-guide/data-query/log.md
               - 链路追踪: 
                   - 服务拓扑: insight/user-guide/scenario-insight/topology.md
