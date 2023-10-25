@@ -9,7 +9,7 @@ hide:
 
 1. 点击右侧导航栏，选择`系统配置`。
 
-    ![系统配置](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/sysconfig01.png)
+    ![系统配置](../../images/systemconfig00.png){: width="1000px"}
 
 2. 目前仅支持修改历史告警存储时长，点击 `编辑` 输入目标时长。
 

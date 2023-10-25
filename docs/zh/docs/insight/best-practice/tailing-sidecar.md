@@ -12,7 +12,7 @@ Insight 支持通过 Sidercar 模式采集日志，即在每个 Pod 中运行一
 
 Insight Agent 中默认安装了 `tailing-sidecar operator`。
 若您想开启采集容器内文件日志，请通过给 Pod 添加注解进行标记，`tailing-sidecar operator` 将自动注入 Tailing Sidecar 容器，
-被注入的 Sidecar 容器读取业务容器内的文件， 并输出到标准输出流。
+被注入的 Sidecar 容器读取业务容器内的文件，并输出到标准输出流。
 
 具体操作步骤如下：
 

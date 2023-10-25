@@ -2,7 +2,7 @@
 
 在链路查询页面，您可以过 TraceID 或精确查询调用链路详细情况或结合多种条件筛选查询调用链路。
 
-## 名词说明
+## 名词解释
 
 - TraceID：用于标识一个完整的请求调用链路。
 - 操作：描述 Span 所代表的具体操作或事件。
@@ -17,24 +17,29 @@
 请按照以下步骤查询链路：
 
 1. 进入`可观测性` 产品模块，
-2. 在左边导航栏选择 `数据查询` -> `链路查询`。
-3. 通过多种条件查询链路或通过 TraceID 精确查询链路。
+2. 在左边导航栏选择 `链路追踪` -> `调用链`。
 
-    ![jaeger](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/trace01.png)
+    ![jaeger](../../images/trace00.png){: width="1000px"}
 
     !!! note
 
         列表中支持对 Span 数、延时、发生时间进行排序。
 
-4. 点击需要查询的 TraceID 名称，查看该链路的详情调用情况
+3. 点击筛选栏中的 `Trace ID 搜索` 切换使用 TraceID 搜索链路。
 
-    ![jaeger](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/trace02.png)
+   - 使用 TraceID 搜索请输入完整的 TraceID。
 
-!!! note
+    ![jaeger](../../images/trace04.png){: width="1000px"}
 
-    使用 TraceID 搜索请输入完整的 TraceID。
+## 其他操作
 
-### 关联日志
+### 查看链路详情
+
+1. 点击链路列表中的某一链路的 TraceID，可查看该链路的详情调用情况。
+
+    ![jaeger](../../images/trace03.png){: width="1000px"}
+
+### 查看关联日志
 
 1. 点击链路数据右侧的图标，可查询该链路的关联日志。
 
@@ -44,9 +49,8 @@
 2. 点击 `查看更多` 后可带条件跳转到`日志查询` 的页面。
 3. 支持基于 `容器组` 过滤和关键字模糊搜索。
 
-    ![tracelog](../../images/tracelog.png)
+    ![tracelog](../../images/trace01.png){: width="1000px"}
 
     !!! note
 
-        1. 由于链路会跨集群或跨命名空间，若用户权限不足，则无法查询该链路的关联日志。
-        2. 跳转到 `日志查询` 后会根据用户权限默认搜索一次。
+        由于链路会跨集群或跨命名空间，若用户权限不足，则无法查询该链路的关联日志。
