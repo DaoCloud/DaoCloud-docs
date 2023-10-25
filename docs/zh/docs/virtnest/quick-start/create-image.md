@@ -62,11 +62,11 @@
 
 - 目前可以使用以下的操作系统和版本。
 
-    | 操作系统 |   对应版本   | 镜像地址                                                     |
-    | :------: | :----------: | ------------------------------------------------------------ |
-    |  CentOS  |  CentOS 8.3  | release-ci.daocloud.io/virtnest/system-images/centos-7.9-x86_64:v1 |
+    | 操作系统 |   对应版本   | 镜像地址                                                             |
+    | :------: | :----------: | -------------------------------------------------------------------- |
+    |  CentOS  |  CentOS 8.3  | release-ci.daocloud.io/virtnest/system-images/centos-7.9-x86_64:v1   |
     |  Ubuntu  | Ubuntu 22.04 | release-ci.daocloud.io/virtnest/system-images/ubuntu-22.04-x86_64:v1 |
-    |  Debian  |  Debian 12   | release-ci.daocloud.io/virtnest/system-images/debian-12-x86_64:v1 |
+    |  Debian  |  Debian 12   | release-ci.daocloud.io/virtnest/system-images/debian-12-x86_64:v1    |
 
 - CPU 配额、内存 配额：CPU 建议使用整数，若填写小数则会向上取整。
 
@@ -103,4 +103,58 @@
 
     ![yaml 创建](../images/createvm09.png)
 
-2. 输入或粘贴事先准备好的 YAML 文件，点击`确定`即可完成创建。
+??? note "点击查看创建定时任务的 YAML 示例"
+
+    ```yaml
+    apiVersion: kubevirt.io/v1
+    kind: VirtualMachine
+    metadata:
+      name: example
+      namespace: default
+    spec:
+      dataVolumeTemplates:
+        - metadata:
+            name: systemdisk-example
+          spec:
+            pvc:
+              accessModes:
+                - ReadWriteOnce
+              resources:
+                requests:
+                  storage: 10Gi
+              storageClassName: rook-ceph-block
+            source:
+              registry:
+                url: >-
+                  docker://release-ci.daocloud.io/virtnest/system-images/centos-7.9-x86_64:v1
+      runStrategy: Always
+      template:
+        spec:
+          domain:
+            cpu:
+              cores: 1
+            devices:
+              disks:
+                - disk:
+                    bus: virtio
+                  name: systemdisk-example
+                - disk:
+                    bus: virtio
+                  name: cloudinitdisk
+              interfaces:
+                - masquerade: {}
+                  name: default
+            machine:
+              type: q35
+            resources:
+              requests:
+                memory: 1Gi
+          networks:
+            - name: default
+              pod: {}
+          volumes:
+            - dataVolume:
+                name: systemdisk-example
+              name: systemdisk-example
+    ```
+
