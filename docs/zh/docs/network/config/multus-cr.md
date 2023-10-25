@@ -1,11 +1,11 @@
 # 创建 Multus CR
 
  Multus CR 管理，是 Spiderpool 对 Multus CNI 中配置实例的二次封装。旨在为容器提供更灵活的网络连接和配置选项，以满足不同的网络需求，为用户提供更简单和经济高效的使用体验。本页介绍在创建工作负载使用多网卡配置之前，如何创建 Multus CR。
+如需创建新的 **Multus CR 实例**，可参考此文档。
 
 ## 前提条件
 
 - [SpiderPool 已成功部署](https://docs.daocloud.io/network/modules/spiderpool/install.html)，新版本的 SpiderPool 已包含 Multus-underlay 的全部功能。
-- 如需创建新的 **Multus CR 实例**，可参考此文档。
 
 ## 界面操作
 
