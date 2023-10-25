@@ -8,7 +8,7 @@ This page explains how to install or upgrade the container registry module after
 
 ## Load Images from the Installation Package
 
-You can load the images in one of the following two ways. When an container registry exists in the environment, it is recommended to choose the chart-syncer to synchronize the images to the container registry, as this method is more efficient and convenient.
+You can load the images in one of the following two ways. When a container registry exists in the environment, it is recommended to choose the chart-syncer to synchronize the images to the container registry, as this method is more efficient and convenient.
 
 ### Synchronize Images to the Container Registry using chart-syncer
 
@@ -24,21 +24,31 @@ You can load the images in one of the following two ways. When an container regi
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: kangaroo-offline # Go to the relative path where the charts-syncer command is executed, instead of the relative path between this YAML file and the offline package.
+          intermediateBundlesPath: kangaroo-offline # (1)
         target:
-          containerRegistry: 10.16.10.111 # Modify it to your container registry URL.
-          containerRepository: release.daocloud.io/kangaroo # Modify it to your container registry.
+          containerRegistry: 10.16.10.111 # (2)
+          containerRepository: release.daocloud.io/kangaroo # (3)
           repo:
-            kind: HARBOR # It can also be any other supported Helm Chart repository category.
-            url: http://10.16.10.111/chartrepo/release.daocloud.io # Modify it to the chart repo URL.
+            kind: HARBOR # (4)
+            url: http://10.16.10.111/chartrepo/release.daocloud.io # (5)
             auth:
-              username: "admin" # Your container registry username.
-              password: "Harbor12345" # Your container registry password.
+              username: "admin" # (6)
+              password: "Harbor12345" # (7)
           containers:
             auth:
-              username: "admin" # Your container registry username.
-              password: "Harbor12345" # Your container registry password.
+              username: "admin" # (8)
+              password: "Harbor12345" # (9)
         ```
+
+        1. Go to the relative path where the charts-syncer command is running, instead of the relative path between this YAML file and the offline package.
+        2. Modify it to your container registry URL.
+        3. Modify it to your container registry.
+        4. It can also be any other supported Helm Chart repository category.
+        5. Modify it to the chart repo URL.
+        6. Your container registry username.
+        7. Your container registry password.
+        8. Your container registry username.
+        9. Your container registry password.
 
     === "If chart repo is not installed"
 
@@ -59,7 +69,8 @@ You can load the images in one of the following two ways. When an container regi
               password: "Harbor12345" # (6)
         ```
 
-        1. Provide the relative path to execute the charts-syncer command, instead of the relative path between this YAML file and the offline package.
+        1. Provide the relative path to run the charts-syncer command,
+           instead of the relative path between this YAML file and the offline package.
         2. Change it to your container registry URL.
         3. Change it to your container registry.
         4. Local path of the chart.
@@ -137,9 +148,9 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
         helm repo update kangaroo # (1)
         ```
 
-        1. If the helm version is too low, it may fail. If it fails, try executing `helm update repo`.
+        1. If the helm version is too low, it may fail. If it fails, try to run `helm update repo`.
 
-    1. Select the global management version you want to install (it is recommended to install the latest version).
+    1. Select the container registry version you want to install (it is recommended to install the latest version).
 
         ```shell
         helm search repo kangaroo/kangaroo --versions
@@ -154,7 +165,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
 
     1. Backup the `--set` parameters.
 
-        Before upgrading the global management version, it is recommended to run the following command to backup the `--set` parameters of the old version.
+        Before upgrading the container registry version, it is recommended to run the following command to backup the `--set` parameters of the old version.
 
         ```shell
         helm get values kangaroo -n kangaroo-system -o yaml > bak.yaml
@@ -167,12 +178,12 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
         kubectl apply -f kangaroo/crds
         ```
 
-    1. Execute `helm upgrade`.
+    1. Run `helm upgrade`.
 
         Before upgrading, it is recommended to replace the `global.imageRegistry` field in bak.yaml with the current container registry address.
 
         ```shell
-        export imageRegistry={你的镜像仓库}
+        export imageRegistry={your_registry}
         ```
 
         ```shell
@@ -187,7 +198,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
 
     1. Back up the `--set` parameters.
 
-        Before upgrading the global management version, it is recommended to run the following command to backup the `--set` parameters of the old version.
+        Before upgrading the container registry version, it is recommended to run the following command to backup the `--set` parameters of the old version.
 
         ```shell
         helm get values kangaroo -n kangaroo-system -o yaml > bak.yaml
@@ -199,7 +210,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
         kubectl apply -f ./crds
         ```
 
-    1. Execute `helm upgrade`.
+    1. Run `helm upgrade`.
 
         Before upgrading, it is recommended to replace the `global.imageRegistry` field in bak.yaml with the current container registry address.
 

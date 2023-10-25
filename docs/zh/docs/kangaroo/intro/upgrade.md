@@ -8,7 +8,7 @@
 
 ## 从安装包中加载镜像
 
-您可以根据下面两种方式之一加载镜像，当环境中存在镜像仓库时，建议选择chart-syncer同步镜像到镜像仓库，该方法更加高效便捷。
+您可以根据下面两种方式之一加载镜像，当环境中存在镜像仓库时，建议选择 chart-syncer 同步镜像到镜像仓库，该方法更加高效便捷。
 
 ### chart-syncer 同步镜像到镜像仓库
 
@@ -20,29 +20,39 @@
 
     === "已安装 chart repo"
 
-        若当前环境已安装 chart repo，chart-syncer 也支持将 chart 导出为 tgz 文件。
+        若当前环境已安装 chart repo，且 chart-syncer 也支持将 chart 导出为 tgz 文件。
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: kangaroo-offline # 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
+          intermediateBundlesPath: kangaroo-offline # (1)
         target:
-          containerRegistry: 10.16.10.111 # 需更改为你的镜像仓库 url
-          containerRepository: release.daocloud.io/kangaroo # 需更改为你的镜像仓库
+          containerRegistry: 10.16.10.111 # (2)
+          containerRepository: release.daocloud.io/kangaroo # (3)
           repo:
-            kind: HARBOR # 也可以是任何其他支持的 Helm Chart 仓库类别
-            url: http://10.16.10.111/chartrepo/release.daocloud.io # 需更改为 chart repo url
+            kind: HARBOR # (4)
+            url: http://10.16.10.111/chartrepo/release.daocloud.io # (5)
             auth:
-              username: "admin" # 你的镜像仓库用户名
-              password: "Harbor12345" # 你的镜像仓库密码
+              username: "admin" # (6)
+              password: "Harbor12345" # (7)
           containers:
             auth:
-              username: "admin" # 你的镜像仓库用户名
-              password: "Harbor12345" # 你的镜像仓库密码
+              username: "admin" # (8)
+              password: "Harbor12345" # (9)
         ```
+
+        1. 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
+        2. 需更改为你的镜像仓库 url
+        3. 需更改为你的镜像仓库
+        4. 也可以是任何其他支持的 Helm Chart 仓库类别
+        5. 需更改为 chart repo url
+        6. 你的镜像仓库用户名
+        7. 你的镜像仓库密码
+        8. 你的镜像仓库用户名
+        9. 你的镜像仓库密码
 
     === "未安装 chart repo"
 
-        若当前环境未安装 chart repo，chart-syncer 也支持将 chart 导出为 tgz 文件，并存放在指定路径。
+        若当前环境未安装 chart repo，且 chart-syncer 也支持将 chart 导出为 tgz 文件，并存放在指定路径。
 
         ```yaml title="load-image.yaml"
         source:
@@ -113,7 +123,7 @@
 
 === "通过 helm repo 升级"
 
-    1. 检查全局管理 helm 仓库是否存在。
+    1. 检查镜像仓库 helm 仓库是否存在。
 
         ```shell
         helm repo list | grep kangaroo
@@ -125,13 +135,13 @@
         Error: no repositories to show
         ```
 
-    1. 添加全局管理的 helm 仓库。
+    1. 添加镜像仓库的 helm 仓库。
 
         ```shell
         helm repo add kangaroo http://{harbor url}/chartrepo/{project}
         ```
 
-    1. 更新全局管理的 helm 仓库。
+    1. 更新镜像仓库的 helm 仓库。
 
         ```shell
         helm repo update kangaroo # (1)
@@ -139,7 +149,7 @@
 
         1. helm 版本过低会导致失败，若失败，请尝试执行 helm update repo
 
-    1. 选择您想安装的全局管理版本（建议安装最新版本）。
+    1. 选择您想安装的镜像仓库版本（建议安装最新版本）。
 
         ```shell
         helm search repo kangaroo/kangaroo --versions
@@ -154,7 +164,7 @@
 
     1. 备份 `--set` 参数。
 
-        在升级全局管理版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
+        在升级镜像仓库版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
 
         ```shell
         helm get values kangaroo -n kangaroo-system -o yaml > bak.yaml
@@ -187,13 +197,13 @@
 
     1. 备份 `--set` 参数。
 
-        在升级全局管理版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
+        在升级镜像仓库版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
 
         ```shell
         helm get values kangaroo -n kangaroo-system -o yaml > bak.yaml
         ```
 
-    1. 查看版本更新记录，如果CRD有更新，更新 kangaroo crds
+    1. 查看版本更新记录，如果 CRD 有更新，更新 kangaroo crds。
 
         ```shell
         kubectl apply -f ./crds
