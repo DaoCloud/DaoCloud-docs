@@ -8,18 +8,18 @@
 
 1. 进入 `告警中心` -> `通知配置` -> `通知服务器`。
 
-    ![通知服务器](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/sms01.png)
+    ![通知服务器](../../images/smsserver00.png){: width="1000"}
 
 2. 点击`添加通知服务器`。
 
-    - 配置阿里云服务器。
+    1. 配置阿里云服务器。
 
         > 申请阿里云短信服务，请参考[阿里云短信服务](https://help.aliyun.com/document_detail/108062.html?spm=a2c4g.57535.0.0.2cec637ffna8ye)。
 
-        字段说明：
+        **字段说明：**
 
-        - `AccessKey ID`： 阿里云用于标识用户的参数。
-        - `AccessKey Secret`：阿里云用于验证用户的密钥。AccessKey Secret必须保密。
+        - `AccessKey ID`：阿里云用于标识用户的参数。
+        - `AccessKey Secret`：阿里云用于验证用户的密钥。AccessKey Secret 必须保密。
         - `短信签名`：短信服务支持根据用户需求创建符合要求的签名。发送短信时，短信平台会将已审核通过的短信签名添加到短信内容中，再发送给短信接收方。
         - `模板 CODE`：短信模板是发送短信的具体内容。
         - `参数模板`：短信正文模板可以包含变量，用户可通过变量实现自定义短信内容。
@@ -32,7 +32,7 @@
 
             举例：在阿里云定义的模板内容为：${severity}：${alertname} 在 ${startat} 被触发。参数模板中的配置参考上图。
 
-    - 配置腾讯云服务器。
+    2. 配置腾讯云服务器。
 
         > 申请腾讯云短信服务，请参考[腾讯云短信](https://cloud.tencent.com/document/product/382/37794)。
 
