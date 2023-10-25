@@ -17,4 +17,4 @@ hide:
 
 1. 在左边导航栏选择`概览`。
 
-    ![概览](../../images/overview.png)
+    ![概览](../../images/overview.png){: width="1000px"}
