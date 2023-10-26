@@ -797,6 +797,7 @@ nav:
                       - 竞争优势: middleware/elasticsearch/intro/benefits.md
                       - 适用场景: middleware/elasticsearch/intro/scenarios.md
                       - 基本概念: middleware/elasticsearch/intro/concepts.md
+                      - 离线升级中间件 - elasticsearch 模块: middleware/elasticsearch/intro/offline-install.md
                       - Release Notes: middleware/elasticsearch/release-notes.md
                   - ES 集群容量规划: middleware/elasticsearch/user-guide/cluster-capacity-plan.md
                   - 快速入门:
@@ -812,6 +813,7 @@ nav:
                   - 介绍:
                       - 什么是 Kafka: middleware/kafka/intro/index.md
                       - 适用场景: middleware/kafka/intro/scenarios.md
+                      - 离线升级中间件 - kafka 模块: middleware/kafka/intro/offline-install.md
                       - 常见术语: middleware/kafka/intro/concepts.md
                       - Release Notes: middleware/kafka/release-notes.md
                   - 快速入门:
@@ -826,6 +828,7 @@ nav:
                   - 介绍:
                       - 什么是 MinIO: middleware/minio/intro/index.md
                       - 适用场景: middleware/minio/intro/scenarios.md
+                      - 离线升级中间件 - MinIO 模块: middleware/minio/intro/offline-install.md
                       - 常见术语: middleware/minio/intro/concepts.md
                       - Release Notes: middleware/minio/release-notes.md
                   - 快速入门:
@@ -843,6 +846,7 @@ nav:
                       - 功能说明: middleware/mysql/intro/features.md
                       - 竞争优势: middleware/mysql/intro/benefits.md
                       - 基本概念: middleware/mysql/intro/concepts.md
+                      - 离线升级中间件 - MySQL 模块: middleware/mysql/intro/offline-install.md
                       - Release Notes: middleware/mysql/release-notes.md
                   - 快速入门:
                       - 创建 MySQL: middleware/mysql/user-guide/create.md
@@ -864,6 +868,7 @@ nav:
                       - 竞争优势: middleware/rabbitmq/intro/benefits.md
                       - 适用场景: middleware/rabbitmq/intro/scenarios.md
                       - 基本概念: middleware/rabbitmq/intro/concepts.md
+                      - 离线升级中间件 - RabbitMQ 模块: middleware/rabbitmq/intro/offline-install.md
                       - Release Notes: middleware/rabbitmq/release-notes.md
                   - 快速入门:
                       - 创建 RabbitMQ 实例: middleware/rabbitmq/user-guide/create.md
@@ -878,6 +883,7 @@ nav:
                   - 介绍:
                       - 什么是 Redis: middleware/redis/intro/index.md
                       - 适用场景: middleware/redis/intro/scenarios.md
+                      - 离线升级中间件 - Redis 模块: middleware/redis/intro/offline-install.md
                       - Release Notes: middleware/redis/release-notes.md
                   - 快速入门:
                       - 创建 Redis 实例: middleware/redis/user-guide/create.md
@@ -894,6 +900,7 @@ nav:
                   - 介绍:
                       - 什么是 PostgreSQL: middleware/postgresql/intro/index.md
                       - 技术特性及基本概念: middleware/postgresql/intro/concepts.md
+                      - 离线升级中间件 - PostgreSQL 模块: middleware/postgresql/intro/offline-install.md
                       - Release Notes: middleware/postgresql/release-notes.md
                   - 快速入门:
                       - 创建 PostgreSQL: middleware/postgresql/user-guide/create.md
@@ -905,6 +912,7 @@ nav:
                   - 介绍:
                       - 什么是 MongoDB: middleware/mongodb/intro/index.md
                       - 技术特性: middleware/mongodb/intro/features.md
+                      - 离线升级中间件 - MongoDB 模块: middleware/mongodb/intro/offline-install.md
                       - Release Notes: middleware/mongodb/release-notes.md
                   - 快速入门:
                       - 创建 MongoDB: middleware/mongodb/user-guide/create.md

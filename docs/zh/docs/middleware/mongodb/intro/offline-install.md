@@ -1,6 +1,6 @@
-# 离线升级中间件 - MinIO 模块
+# 离线升级中间件 - Mongodb 模块
 
-本页说明从[下载中心](../../../download/index.md)下载中间件 - MinIO 模块后，应该如何安装或升级。
+本页说明从[下载中心](../../../download/index.md)下载中间件 - Mongodb 模块后，应该如何安装或升级。
 
 !!! info
 
@@ -71,7 +71,9 @@
 1. 解压 tar 压缩包。
 
     ```shell
-    tar xvf minio_0.8.1_amd64.tar
+    tar -xvf mcamel-mongodb_0.3.1_amd64.tar
+    cd mcamel-mongodb_0.3.1_amd64
+    tar -xvf mcamel-mongodb_0.3.1.bundle.tar
     ```
 
     解压成功后会得到 3 个文件：
@@ -108,7 +110,7 @@
     1. 检查 helm 仓库是否存在。
 
         ```shell
-        helm repo list | grep minio
+        helm repo list | grep mongodb
         ```
 
         若返回结果为空或如下提示，则进行下一步；反之则跳过下一步。
@@ -120,27 +122,25 @@
     1. 添加 helm 仓库。
 
         ```shell
-        helm repo add mcamel-minio http://{harbor url}/chartrepo/{project}
+        helm repo add mcamel-mongodb http://{harbor url}/chartrepo/{project}
         ```
 
     1. 更新 helm 仓库。
 
         ```shell
-        helm repo update mcamel/mcamel-minio # (1)
+        helm repo update mcamel/mcamel-mongodb # helm 版本过低会导致失败，若失败，请尝试执行 helm update repo
         ```
-
-        1. helm 版本过低会导致失败，若失败，请尝试执行 helm update repo
 
     1. 选择您想安装的版本（建议安装最新版本）。
 
         ```shell
-        helm search repo mcamel/mcamel-minio --versions
+        helm search repo mcamel/mcamel-mongodb --versions
         ```
 
         ```none
-        [root@master ~]# helm search repo mcamel/mcamel-minio --versions
+        [root@master ~]# helm search repo mcamel/mcamel-mongodb --versions
         NAME                            CHART VERSION   APP VERSION     DESCRIPTION               
-        mcamel/mcamel-minio     0.8.1           0.8.1           A Helm chart for Kubernetes
+        mcamel/mcamel-mongodb     0.3.1           0.3.1           A Helm chart for Kubernetes
         ...
         ```
 
@@ -149,23 +149,23 @@
         在升级版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
 
         ```shell
-        helm get values mcamel-minio -n mcamel-system -o yaml > mcamel-minio.yaml
+        helm get values mcamel-mongodb -n mcamel-system -o yaml > mcamel-mongodb.yaml
         ```
 
     1. 执行 `helm upgrade`。
 
-        升级前建议您覆盖 mcamel-minio.yaml 中的 `global.imageRegistry` 字段为当前使用的镜像仓库地址。
+        升级前建议您覆盖 mcamel-mongodb.yaml 中的 `global.imageRegistry` 字段为当前使用的镜像仓库地址。
 
         ```shell
         export imageRegistry={你的镜像仓库}
         ```
 
         ```shell
-        helm upgrade mcamel-minio mcamel/mcamel-minio \
+        helm upgrade mcamel-mongodb mcamel/mcamel-mongodb \
           -n mcamel-system \
-          -f ./mcamel-minio.yaml \
+          -f ./mcamel-mongodb.yaml \
           --set global.imageRegistry=$imageRegistry \
-          --version 0.8.1
+          --version 0.3.1
         ```
 
 
@@ -176,7 +176,7 @@
         在升级版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
 
         ```shell
-        helm get values mcamel-minio -n mcamel-system -o yaml > mcamel-minio.yaml
+        helm get values mcamel-mongodb -n mcamel-system -o yaml > mcamel-mongodb.yaml
         ```
 
     1. 执行 `helm upgrade`。
@@ -188,9 +188,9 @@
         ```
 
         ```shell
-        helm upgrade mcamel-minio . \
+        helm upgrade mcamel-mongodb . \
           -n mcamel-system \
-          -f ./mcamel-minio.yaml \
+          -f ./mcamel-mongodb.yaml \
           --set global.imageRegistry=${imageRegistry} \
           --set console_image.registry=${imageRegistry} \ 
           --set operator_image.registry=${imageRegistry}
