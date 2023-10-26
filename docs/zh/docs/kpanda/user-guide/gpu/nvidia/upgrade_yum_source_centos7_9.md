@@ -1,11 +1,10 @@
-# 升级预置 GPU Operator 离线包的 yum 源
+# 构建 CentOS 7.9 离线 yum 源
 
 ## 使用场景介绍
 
-DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。由于离线 GPU Operator 部署要求节点内核版本和离线包的内核版本保持强一致。
-当CentOS 7.9 内核版本不为 3.10.0-1160 的小版本（如 3.10.0-1160.95.1）时。可参考本文档，手动更新预置 GPU Operator 离线包的 yum 源。
+DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。其它 OS 类型的节点或内核需要用户手动构建离线 yum 源。
 
-本文介绍如何升级 CentOS 7.9 的预置的 GPU operator 离线包的 yum 源，并为集群部署 GPU operator。
+本文介绍如何构建小内核版本的 CentOS 7.9 离线 yum 源，并在安装 Gpu Operator 时，通过 `RepoConfig.ConfigMapName` 参数来使用。
 
 ## 前提条件
 
@@ -35,31 +34,20 @@ Linux localhost.localdomain 3.10.0-1160.95.1.el7.x86_64 #1 SMP Mon Oct 19 16:18:
 
 本步骤在一个能够访问互联网和文件服务器的节点上进行操作。
 
-1. 在一个能够访问互联网和文件服务器的节点上执行如下命令，创建 `Dockerfile` 文件。
-
-    ```bash
-    cat > Dockerfile << EOF
-    FROM centos:7
-    ENV KERNEL_VERSION=""
-    ENV OS=7
-    RUN yum install -y createrepo
-    COPY run.sh .
-    ENTRYPOINT ["/bin/bash","run.sh"]
-    EOF
-    ```
-
-2. 在节点当前路径下继续执行如下命令新建 `run.sh` 脚本。
-
+1. 在一个能够访问互联网和文件服务器的节点上执行如下命令新建一个名为 `yum.sh` 的脚本文件。
     ```bash
     vi run.sh
     ```
     然后按下 i 键进入插入模式，输入以下内容：
     ```bash
+    export TARGET_KERNEL_VERSION=$1
+
+    cat >> run.sh << \EOF
     #! /bin/bash
     echo "start install kernel repo"
     echo ${KERNEL_VERSION}
     mkdir centos-base
-    
+
     if [ "$OS" -eq 7 ]; then
         yum install --downloadonly --downloaddir=./centos-base perl
         yum install --downloadonly --downloaddir=./centos-base elfutils-libelf.x86_64
@@ -79,58 +67,38 @@ Linux localhost.localdomain 3.10.0-1160.95.1.el7.x86_64 #1 SMP Mon Oct 19 16:18:
     else
         echo "Error os version"
     fi
-    
+
     createrepo centos-base/
     ls -lh centos-base/
     tar -zcf centos-base.tar.gz centos-base/
     echo "end install kernel repo"
+    EOF
+
+    cat >> Dockerfile << EOF
+    FROM centos:7
+    ENV KERNEL_VERSION=""
+    ENV OS=7
+    RUN yum install -y createrepo
+    COPY run.sh .
+    ENTRYPOINT ["/bin/bash","run.sh"]
+    EOF
+
+    docker build -t test:v1 -f Dockerfile .
+    docker run -e KERNEL_VERSION=$TARGET_KERNEL_VERSION --name centos7.9 test:v1
+    docker cp centos7.9:/centos-base.tar.gz .
+    tar -xzf centos-base.tar.gz
     ```
     按下 `Esc` 键退出插入模式，然后输入 `:wq` 保存并退出。
 
-3. 在节点当前路径下，继续执行如下命令构建名为 `test:v1` 的镜像。
+2. 运行 `yum.sh` 文件：
 
     ```bash
-    docker build -t test:v1 -f Dockerfile .
+    bash -x yum.sh TARGET_KERNEL_VERSION
     ```
-    等待镜像构建完成后，检查镜像是否正常创建：
+    `TARGET_KERNEL_VERSION` 参数用于指定集群节点的内核版本，注意：发行版标识符（如：`.el7.x86_64 `）无需输入。
+    例如：
     ```bash
-    docker ps -a |grep test:v1
-    ```
-    预期输出如下：
-    ```bash
-    ad76d39f2064   test:v1   "/bin/bash run.sh"   2s ago   Exited (0) 2s ago             centos7.9
-    ```
-
-4. 在节点当前路径下，使用生成的 `test:v1` 镜像，运行一个名为 centos7.9 的容器：
-
-    ```bash
-    docker run -e KERNEL_VERSION=3.10.0-1160.95.1 --name centos7.9 test:v1
-    ```
-    `KERNEL_VERSION` 参数用于指定集群节点的内核版本，注意：发行版标识符（如：`.el7.x86_64 `）无需输入。
-
-5. 在节点当前路径下，执行如下命令将 centos7.9 容器内的 `centos-base.tar.gz` 离线包拷贝至节点：
-
-    ```bash
-    docker cp centos7.9:/centos-base.tar.gz .
-    ```
-    预期输出如下：
-    ```bash
-    Successfully copied 160MB to /root/.
-    ```
-
-6. 在节点当前路径下，解压 `centos-base.tar.gz` 离线包：
-
-    ```bash
-    tar -xzf centos-base.tar.gz
-    ```
-    检查解压后的 `centos-base` 的文件夹：
-    ```bash
-    ls | grep centos-base
-    ```
-    预期输出如下：
-    ```bash
-    centos-base
-    centos-base.tar.gz
+    bash -x yum.sh 3.10.0-1160.95.1
     ```
 
 至此，您已经生成了内核为 `3.10.0-1160.95.1.el7.x86_64` 的离线的 yum 源：`centos-base`。

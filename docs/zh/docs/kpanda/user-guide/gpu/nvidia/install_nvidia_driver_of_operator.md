@@ -70,47 +70,50 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
     - RedHat/CentOS 系统， 命名规则通常为 CUDA 的版本和 OS 版本组成，如 `535.104.05-centos7`。
 
-6. `Driver.RepoConfig.ConfigMapName`：用来记录 GPU Operator 的离线 yum 源配置文件名称，当使用预置的离线包时，参考`使用火种节点 yum 源配置`，其它操作系统或内核可参考如下链接创建 yum 源文件。
+6. `Driver.RepoConfig.ConfigMapName`：用来记录 GPU Operator 的离线 yum 源配置文件名称，当使用预置的离线包时，参考`使用 Global 集群任意节点的 yum 源配置`。
 
-    - [升级预置 GPU Operator 离线包的 yum 源](./Upgrade_yum_source_of_preset_offline_package.md)。
+    ??? note "使用 Global 集群任意节点的 yum 源配置"
 
-    ??? note "使用火种节点 yum 源配置"
+        1. 使用 ssh 或其它方式进入 Global 集群的任意节点，获取平台离线源配置文件 `extension.repo`：
 
+            ```bash
+            cat /etc/yum.repos.d/extension.repo #查看 extension.repo 中的内容。
+            ```
+            # 预期输出如下：
 
-        1. 使用 ssh 或其它方式进入火种节点，获取火种节点离线源配置文件 `extension.repo`：
+            ```bash
+            [extension-0]
+            async = 1
+            baseurl = http://x.x.x.x:9000/kubean/centos/$releasever/os/$basearch
+            gpgcheck = 0
+            name = kubean extension 0
 
-        ```bash
-        cat /etc/yum.repos.d/extension.repo #查看 extension.repo 中的内容。
-        ```
-        # 预期输出如下：
+            [extension-1]
+            async = 1
+            baseurl = http://x.x.x.x:9000/kubean/centos-iso/$releasever/os/$basearch
+            gpgcheck = 0
+            name = kubean extension 1
+            ```
 
-        ```bash
-        [extension-0]
-        async = 1
-        baseurl = http://x.x.x.x:9000/kubean/centos/$releasever/os/$basearch
-        gpgcheck = 0
-        name = kubean extension 0
-
-        [extension-1]
-        async = 1
-        baseurl = http://x.x.x.x:9000/kubean/centos-iso/$releasever/os/$basearch
-        gpgcheck = 0
-        name = kubean extension 1
-        ```
-        2. 复制上述 `extension.repo` 文件中的内容，在待部署 GPU Operator 的集群中新建名为`local-repo-config` 的配置文件，可参考[创建配置项](../../configmaps-secrets/create-configmap.md)进行创建。
+        2. 复制上述 `extension.repo` 文件中的内容，在待部署 GPU Operator 的集群的 `gpu-operator` 命名空间下，新建名为`local-repo-config` 的配置文件，可参考[创建配置项](../../configmaps-secrets/create-configmap.md)进行创建。
         **注意：配置 `key` 值必须为 `CentOS-Base.repo`,`value` 值点离线源配置文件 `extension.repo` 中的内容**。
 
-6.  **MIG 配置参数**
+    其它操作系统或内核可参考如下链接创建 yum 源文件：
+    - [构建 CentOS 7.9 离线 yum 源](./Upgrade_yum_source_of_preset_offline_package.md)
+    - [构建 RedHat 8.4 离线 yum 源](./upgrade_yum_source_redhat_8.4.md)
+
+
+6. **MIG 配置参数**
 
     详细配置方式请参考[开启 MIG 功能](../create_mig.md)
 
     - `MigManager.enabled` ：是否启用 MIG 能力特性。
     - `Mig.strategy` ：节点上 GPU 卡的 MIG 设备的公开策略。NVIDIA 提供了两种公开 MIG 设备的策略（`single` 、`mixed`策略，详情参考：[NVIDIA GPU 卡模式说明](overvie_nvidia_gpu.md)
     - `MigManager.Config` : 用于配置 MIG 切分配置参数和默认值。
-        - `default`: 节点使用的切分配置默认值，默认为 `all-disbled`。
+        - `default`: 节点使用的切分配置默认值，默认为 `all-disabled`。
         - `name` ：MIG 的切分配置文件名，用于定义 MIG 的（GI ,CI）切分策略。默认为`default-mig-parted-config`。自定义参数参考[开启 MIG 功能](../create_mig.md)
 
-7. `Node-Feature-Discovery.enableNodeFeatureAPI` ：启用或禁用节点特性 API（Node Feature Discovery API）。
+7. `Node-Feature-Discovery.enableNodeFeatureAPI`：启用或禁用节点特性 API（Node Feature Discovery API）。
 
          - 当设置为 `true` 时，启用了节点特性 API。
          - 当设置为 `false` 或`未设置`时，禁用节点特性 API。
@@ -137,5 +140,4 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
         kubectl label nodes {node} nvidia.com/mig.config="custom-config" --overwrite
         ```
 
-
-​        	切分后，应用可[使用 MIG GPU 资源](mig/mig_usage.md)
+​    切分后，应用可[使用 MIG GPU 资源](mig/mig_usage.md)。
