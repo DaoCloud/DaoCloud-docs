@@ -228,7 +228,8 @@ nav:
                   - GPU 管理概述: kpanda/user-guide/gpu/index.md
                   - GPU 支持矩阵: kpanda/user-guide/gpu/gpu_matrix.md
                   - NVIDIA GPU 管理:
-                      - GPU Operator 离线安装: kpanda/user-guide/gpu/nvidia/install_nvidia_driver_of_operator.md
+                      - GPU Operator 离线安装: 
+                          - GPU Operator 离线安装: kpanda/user-guide/gpu/nvidia/install_nvidia_driver_of_operator.md
                           - 构建 CentOS 7_9 离线 yum 源: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_centos7_9.md
                           - 构建 RedHat 8_4 离线 yum 源: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_redhat8_4.md
                       - NVIDIA GPU 模式说明: kpanda/user-guide/gpu/nvidia/overvie_nvidia_gpu.md
