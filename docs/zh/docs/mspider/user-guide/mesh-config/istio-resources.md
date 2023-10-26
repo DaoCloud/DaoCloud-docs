@@ -14,7 +14,7 @@
 
 2. 在 YAML 创建页面中，输入正确的 YAML 语句后点击`确定`。
 
-    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/istio02.png)
+    ![img](../images/istio02.png)
 
     ```yaml
     apiVersion: telemetry.istio.io/v1alpha1
