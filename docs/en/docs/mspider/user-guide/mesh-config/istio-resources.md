@@ -2,8 +2,6 @@
 
 The `Istio Resource Management` page lists all Istio resources by resource type, providing users with the ability to display, create, edit, and delete various resources.
 
-
-
 This page provides the following resource types:
 
 ### Traffic management class
@@ -61,8 +59,8 @@ Users can add, delete, modify and query resources in the form of YAML. Here is a
      spec:
        # Unspecified selector, applies to all workloads in the namespace
        metrics:
-       -providers:
-         -name: prometheus
+       - providers:
+         - name: prometheus
          overrides:
          - tagOverrides:
      ​ request_method:
