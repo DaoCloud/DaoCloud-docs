@@ -2,6 +2,60 @@
 
 This page lists the release notes of DME to help you learn its feature development and bug fixing progress.
 
+## 2023-10-26
+
+### V0.28.0
+
+#### New Features
+
+- Added "Matching Type" field in the Gateway API list interface
+- Added Gateway query interface for integration with the application dashboard
+- Added Gateway API query interface for integration with the application dashboard
+- Added support for multiple versions of managed Nacos (currently supporting versions 2.0.4, 2.1.1, and 2.2.3)
+- Added v1alpha2 version interfaces for creating and querying Gateways
+- Added Seata Operator for the distributed transaction module controller
+- Added capabilities to connect Seata with databases and Nacos for the distributed transaction module 
+- Added initialization scripts for setting up Seata cluster MySQL and Nacos configurations in the Seata Operator
+- Added support for Seata in the managed Nacos governance capabilities interface
+- Added advanced options for upstream and downstream timeouts in the Gateway API timeout strategy
+- Added configuration option for maximum heap memory in the Gateway
+- Added interfaces for native Seata functionalities
+- Added detailed interface for cluster-level Gateway information
+- Added interfaces for cloud-native microservice traffic swimlane topology
+- Added interfaces for Gateway API documentation
+- Added overall architecture for the distributed transaction module
+- Added permission points for cloud-native microservices and traffic swimlane related interfaces
+- Added custom image configuration for Seata Server and synchronized it into the offline image logic
+- Added Base64 format icon to Skoala Helm Chart
+
+#### Fixes
+
+- Fixed issue with support for different versions of managed Nacos
+- Fixed issue with duplicate request methods in the Gateway API list
+- Fixed issue with Zookeeper registry integration unable to access TLS protocol instances
+- Fixed issue with domain deletion and update failures when global authentication is enabled in the Gateway
+- Fixed issue with incorrect CPU usage at namespace level in managed Nacos
+- Fixed issue with abnormal Service changes when switching from NodePod to ClusterIP mode in managed Nacos
+- Fixed issue with abnormal Seata interface validation
+- Fixed issue with abnormal Workspace integration when switching registry centers
+- Fixed permission issues with managed Nacos interfaces
+- Fixed issues with managed Nacos Grafana monitoring dashboard
+- Fixed issues with Sentinel Grafana monitoring dashboard
+- Fixed accuracy issues with overall permissions
+
+#### Improvements
+
+- Improved Gateway update logic, disallowing closure of gateway-level HTTPS after enabling HTTPS for domain names in the Gateway
+- Improved accuracy of audit log events
+- Optimized logic for cloud-native microservice WebAssembly plugins
+- Optimized Gateway health query logic on the overview page (changed from Rate to Increase)
+- Optimized Swagger paths, removing version information from URLs and supporting multiple version interfaces
+- Updated Skoala Init Helm Chart to support the distributed transaction controller (Seata Operator)
+- Optimized Skoala Agent certificates
+- Enhanced interface descriptions and details in all Swagger documentation
+- Optimized audit log format and auto-generation scheme
+- When releasing official versions, Skoala Helm Chart will be published to the official image repository's System project
+
 ## 2023-09-01
 
 ### v0.27.2
