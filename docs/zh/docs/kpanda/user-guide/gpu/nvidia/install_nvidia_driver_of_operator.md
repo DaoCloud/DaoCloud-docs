@@ -94,7 +94,8 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
             gpgcheck = 0
             name = kubean extension 1
             ```
-        2. 复制上述 `extension.repo` 文件中的内容，在待部署 GPU Operator 的集群中新建名为`local-repo-config` 的配置文件，可参考[创建配置项](../../configmaps-secrets/create-configmap.md)进行创建。
+
+        2. 复制上述 `extension.repo` 文件中的内容，在待部署 GPU Operator 的集群的 `gpu-operator` 命名空间下，新建名为`local-repo-config` 的配置文件，可参考[创建配置项](../../configmaps-secrets/create-configmap.md)进行创建。
         **注意：配置 `key` 值必须为 `CentOS-Base.repo`,`value` 值点离线源配置文件 `extension.repo` 中的内容**。
 
     其它操作系统或内核可参考如下链接创建 yum 源文件：
@@ -109,7 +110,7 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
     - `MigManager.enabled` ：是否启用 MIG 能力特性。
     - `Mig.strategy` ：节点上 GPU 卡的 MIG 设备的公开策略。NVIDIA 提供了两种公开 MIG 设备的策略（`single` 、`mixed`策略，详情参考：[NVIDIA GPU 卡模式说明](overvie_nvidia_gpu.md)
     - `MigManager.Config` : 用于配置 MIG 切分配置参数和默认值。
-        - `default`: 节点使用的切分配置默认值，默认为 `all-disbled`。
+        - `default`: 节点使用的切分配置默认值，默认为 `all-disabled`。
         - `name` ：MIG 的切分配置文件名，用于定义 MIG 的（GI ,CI）切分策略。默认为`default-mig-parted-config`。自定义参数参考[开启 MIG 功能](../create_mig.md)
 
 7. `Node-Feature-Discovery.enableNodeFeatureAPI`：启用或禁用节点特性 API（Node Feature Discovery API）。
