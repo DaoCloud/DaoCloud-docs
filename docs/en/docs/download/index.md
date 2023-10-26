@@ -51,7 +51,8 @@ The numerous modules included in DCE 5.0 can be downloaded separately to upgrade
 | MultiCloud Management    | 525.11 MB | [:arrow_right: Download Page](./modules/kairship.md)  | 2023-09-01  |
 | Container Registry       | 293.24 MB | [:arrow_right: Download Page](./modules/kangaroo.md)  | 2023-09-04  |
 | Insight                  | 2.64 GB   | [:arrow_right: Download Page](./modules/insight.md)   | 2023-08-04  |
-| Service Mesh             | 949.41 MB | [:arrow_right: Download Page](./modules/mspider.md)   | 2023-08-31  |
+| Microservice Engine | 1.3 GB   | [:arrow_right: Download Page](./modules/skoala.md)   | 2023-10-25 |
+| Service Mesh             | 949.41 MB | [:arrow_right: Download Page](./modules/mspider.md)   | 2023-10-18  |
 | Cloud Edge Collaboration | 94.2 MB   | [:arrow_right: Download Page](./modules/kant.md)      | 2023-09-19  |
 | Global Management        | 440 MB    | [:arrow_right: Download Page](./modules/ghippo.md)    | 2023-09-04  |
 | Operation Management     | 56.90 MB  | [:arrow_right: Download Page](./modules/gmagpie.md)   | 2023-08-02  |

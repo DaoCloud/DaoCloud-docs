@@ -1012,6 +1012,7 @@ nav:
               - MultiCloud Management: download/modules/kairship.md
               - Container Registry: download/modules/kangaroo.md
               - Insight: download/modules/insight.md
+              - Microservice Engine: download/modules/skoala.md
               - Service Mesh: download/modules/mspider.md
               - Middleware:
                   - Elasticsearch: download/modules/middleware/elasticsearch.md
