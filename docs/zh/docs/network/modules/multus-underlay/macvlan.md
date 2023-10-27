@@ -1,7 +1,7 @@
 # Macvlan
 
 Macvlan 是 Linux 的一种网卡虚拟化的解决方案，它可以将一张物理网卡虚拟为多张虚拟网卡。
-借助 Mutus，可以为 Pod 分配一张或者多张 Macvlan 网卡，从而实现 Pod 借助 macvlan 网卡与外部通讯。
+借助 Multus，可以为 Pod 分配一张或者多张 Macvlan 网卡，从而实现 Pod 借助 macvlan 网卡与外部通讯。
 
 ## 安装
 
