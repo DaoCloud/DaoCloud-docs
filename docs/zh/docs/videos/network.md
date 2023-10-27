@@ -12,6 +12,7 @@
 - :four: [Ingress Nginx 的安装与使用](#ingress-nginx)
 - :five: [MetalLB 的安装与使用](#metallb)
 - :six: [kdoctor 的安装与使用](#kdoctor)
+- :seven: [在阿里云环境运行 Spiderpool](#spiderpool)
 
 </div>
 
@@ -61,6 +62,14 @@
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kdoctor.mp4" preload="metadata" poster="images/net-kdoctor.jpg"></video>
+</div>
+
+## 在阿里云环境运行 Spiderpool
+
+参阅 Spiderpool [阿里云环境运行](https://docs.daocloud.io/network/modules/spiderpool/alibabacloud.html)文档页面。
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/alicloud.mp4" preload="metadata" poster="images/net-spiderpool.jpeg"></video>
 </div>
 
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
