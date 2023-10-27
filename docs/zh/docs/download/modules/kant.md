@@ -6,6 +6,7 @@
 
 | 版本                                          | 架构 | 文件大小    | 安装包                                                                                                                             |  校验文件 | 更新日期      |
 |---------------------------------------------| ----- |---------|---------------------------------------------------------------------------------------------------------------------------------| ---------- |-----------|
+| [0.5.0](../../kant/intro/release-notes.md) | AMD 64 | 92.49MB | [:arrow_down: kant_0.5.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kant_0.5.0_amd64.tar) | [:arrow_down: kant_0.5.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kant_0.5.0_amd64_checksum.sha512sum) | 2023-10-27 |
 | [v0.4.0](../../kant/intro/release-notes.md) | AMD64 | 94.2 MB | [:arrow_down: kant_0.4.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kant_0.4.0_amd64.tar) | [:arrow_down: kant_0.4.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kant_0.4.0_amd64_checksum.sha512sum) | 2023-9-19 |
 
 ## 校验
