@@ -232,6 +232,7 @@ nav:
                       - GPU Operator 离线安装: 
                           - GPU Operator 离线安装: kpanda/user-guide/gpu/nvidia/install_nvidia_driver_of_operator.md
                           - 构建 CentOS 7_9 离线 yum 源: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_centos7_9.md
+                          - 向火种节点仓库上传 RedHat GPU Opreator 离线镜像: kpanda/user-guide/gpu/nvidia/push_image_to_repo.md
                           - 构建 RedHat 8_4 离线 yum 源: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_redhat8_4.md
                       - NVIDIA GPU 模式说明: kpanda/user-guide/gpu/nvidia/overvie_nvidia_gpu.md
                       - NVIDIA GPU 整卡模式: kpanda/user-guide/gpu/nvidia/full_gpu_userguide.md
