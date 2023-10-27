@@ -6,11 +6,7 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 - GPU vGPU 模式
 - GPU MIG 模式
 
-详情请参考：[NVIDIA GPU 卡使用模式](overvie_nvidia_gpu.md)，本文使用的 AMD 架构的 Centos 7.9 （3.10.0-1160） 进行演示。
-
-!!! note
-
-    Daocloud 内置了 Centos 7.9 3.10.0-1160 的 GPU Operator 离线包，如需使用其它操作系统和内核版本，请参考构建 GPU Operator 离线包进行构建。
+详情请参考：[NVIDIA GPU 卡使用模式](overvie_nvidia_gpu.md)，本文使用的 AMD 架构的 Centos 7.9 （3.10.0-1160） 进行演示。如需使用 redhat8.4 部署，请参考[向火种节点仓库上传 RedHat GPU Opreator 离线镜像](./push_image_to_repo.md)和[构建 RedHat 8.4 离线 yum 源](./upgrade_yum_source_redhat8_4.md)。
 
 ## 前提条件
 
@@ -33,12 +29,12 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
 ### 基本参数配置
 
-    - `名称`：输入插件名称。
-    - `命名空间`：选择将插件安装的命名空间。
-    - `版本`：插件的版本，此处以 `23.6.10` 版本为例。
-    - `就绪等待`：启用后，所有关联资源都处于就绪状态，才会标记应用安装成功。
-    - `失败删除`：安装失败，则删除已经安装的关联资源。开启后，将默认同步开启`就绪等待`。
-    - `详情日志`：开启后，将记录安装过程的详细日志。
+- `名称`：输入插件名称。
+- `命名空间`：选择将插件安装的命名空间。
+- `版本`：插件的版本，此处以 `23.6.10` 版本为例。
+- `就绪等待`：启用后，所有关联资源都处于就绪状态，才会标记应用安装成功。
+- `失败删除`：安装失败，则删除已经安装的关联资源。开启后，将默认同步开启`就绪等待`。
+- `详情日志`：开启后，将记录安装过程的详细日志。
 
 ### 高级参数配置
 
@@ -52,7 +48,9 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
     !!! note
 
-        注意：一个集群只能使用一种 GPU 卡模式，部署 GPU Operator 前，请确认 GPU 卡的使用模式，以选择是否启用 `DevicePlugin` 特性。
+        注意：
+        1. 一个集群只能使用一种 GPU 卡模式，部署 GPU Operator 前，请确认 GPU 卡的使用模式，以选择是否启用 `DevicePlugin` 特性。
+        2. 当使用 vGPU 模式（关闭这个参数）时，守护进程 `nvidia-operator-validator` 将长期处于 “等待中”状态，这属于正常现象，不影响 vGPU 功能的使用。
 
 #### Driver 参数配置
 
@@ -64,11 +62,12 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
 5. `Driver.version`：GPU 驱动镜像的版本，离线部署请使用默认参数，仅在线安装时需配置，不同类型操作系统的 Driver 镜像的版本存在如下差异：
 
+    - RedHat 系统， 命名规则通常为 CUDA 的版本和 OS 版本组成，如内核为 `4.18.0-305.el8.x86_64` 的 RedHat 8.4 的 Driver.version 值为 `525.105.17`。
     - Ubuntu 系统，命名规则为：`<driver-branch>-<linux-kernel-version>-<os-tag>`。
     如 `525-5.15.0-69-ubuntu22.04`，`525` 为 CUDA 的版本，`5.15.0-69` 为内核版本，`ubuntu22.04` 为 OS 版本。
     注意：对于 Ubuntu ， Driver 镜像版本需和节点内核版本强一致，包括小版本号。
 
-    - RedHat/CentOS 系统， 命名规则通常为 CUDA 的版本和 OS 版本组成，如 `535.104.05-centos7`。
+    - CentOS 系统， 命名规则通常为 CUDA 的版本和 OS 版本组成，如 `535.104.05`。
 
 6. `Driver.RepoConfig.ConfigMapName`：用来记录 GPU Operator 的离线 yum 源配置文件名称，当使用预置的离线包时，参考`使用 Global 集群任意节点的 yum 源配置`。
 
@@ -115,8 +114,8 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
 7. `Node-Feature-Discovery.enableNodeFeatureAPI`：启用或禁用节点特性 API（Node Feature Discovery API）。
 
-         - 当设置为 `true` 时，启用了节点特性 API。
-         - 当设置为 `false` 或`未设置`时，禁用节点特性 API。
+     - 当设置为 `true` 时，启用了节点特性 API。
+     - 当设置为 `false` 或`未设置`时，禁用节点特性 API。
 
 ### 下一步操作
 
