@@ -27,20 +27,20 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
     ```bash
     cat /etc/yum.repos.d/extension.repo #查看 extension.repo 中的内容。
     ```
-    #预期输出如下：
+    预期输出如下：
     ```bash
     [extension-0]
-    baseurl = http://10.5.14.30:9000/kubean/redhat/$releasever/os/$basearch
+    baseurl = http://10.5.14.200:9000/kubean/redhat/$releasever/os/$basearch
     gpgcheck = 0
     name = kubean extension 0
 
     [extension-1]
-    baseurl = http://10.5.14.30:9000/kubean/redhat-iso/$releasever/os/$basearch/AppStream
+    baseurl = http://10.5.14.200:9000/kubean/redhat-iso/$releasever/os/$basearch/AppStream
     gpgcheck = 0
     name = kubean extension 1
 
     [extension-2]
-    baseurl = http://10.5.14.30:9000/kubean/redhat-iso/$releasever/os/$basearch/BaseOS
+    baseurl = http://10.5.14.200:9000/kubean/redhat-iso/$releasever/os/$basearch/BaseOS
     gpgcheck = 0
     name = kubean extension 2
     ```
@@ -53,11 +53,11 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
 3. 下载 yum 源中的 rpm 包到本地：
 
-    #下载 extension-1 中的 rpm 包
+    下载 extension-1 中的 rpm 包
     ```bash
     reposync  -p redhat-base-repo  -n --repoid=extension-1
     ```
-    #下载 extension-2 中的 rpm 包
+    下载 extension-2 中的 rpm 包
     ```bash
     reposync  -p redhat-base-repo  -n --repoid=extension-1
     ```
@@ -109,7 +109,11 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
 ### 步骤四：将本地生成的 yum repo 上传至文件服务器
 
-本文以 minio 为例，用户可基于自身情况选择文件服务器
+本操作示例采用的是 DCE5 火种节点内置的 Minio 作为文件服务器，用户可基于自身情况选择文件服务器。Minio 相关信息如下：
+
+- 访问地址：http://10.5.14.200:9000（一般为{火种节点 IP} + {9000 端口}）
+- 登录用户名：rootuser
+- 登录密码：rootpass123
 
 1. 在节点当前路径下，执行如下命令将节点本地 mc 命令行工具和 minio 服务器建立链接。
 

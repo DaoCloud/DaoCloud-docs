@@ -36,7 +36,7 @@ Linux localhost.localdomain 3.10.0-1160.95.1.el7.x86_64 #1 SMP Mon Oct 19 16:18:
 
 1. 在一个能够访问互联网和文件服务器的节点上执行如下命令新建一个名为 `yum.sh` 的脚本文件。
     ```bash
-    vi run.sh
+    vi yum.sh
     ```
     然后按下 i 键进入插入模式，输入以下内容：
     ```bash
@@ -108,9 +108,9 @@ Linux localhost.localdomain 3.10.0-1160.95.1.el7.x86_64 #1 SMP Mon Oct 19 16:18:
 本步骤继续在一个能够访问互联网和文件服务器的节点上进行操作。主要用于将上一步中生成的 yum 源上传到可以被待部署 GPU Operator 的集群进行访问的文件服务器中。
 文件服务器可以为 Nginx 、 Minio 或其它支持 Http 协议的文件服务器。
 
-本操作示例采用的是 Minio 作为文件服务器，Minio 相关信息如下：
+本操作示例采用的是 DCE5 火种节点内置的 Minio 作为文件服务器，Minio 相关信息如下：
 
-- 访问地址：http://10.5.14.200:9000
+- 访问地址：http://10.5.14.200:9000（一般为{火种节点 IP} + {9000 端口}）
 - 登录用户名：rootuser
 - 登录密码：rootpass123
 
