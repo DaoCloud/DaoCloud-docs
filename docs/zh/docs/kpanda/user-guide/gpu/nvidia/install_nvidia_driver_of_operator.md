@@ -99,6 +99,7 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
     其它操作系统或内核可参考如下链接创建 yum 源文件：
     - [构建 CentOS 7.9 离线 yum 源](./Upgrade_yum_source_of_preset_offline_package.md)
+
     - [构建 RedHat 8.4 离线 yum 源](./upgrade_yum_source_redhat_8.4.md)
 
 
