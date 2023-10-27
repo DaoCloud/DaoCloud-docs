@@ -740,6 +740,7 @@ nav:
                   - Restrict Service Access with Mesh: mspider/best-practice/use-egress-and-authorized-policy.md
                   - Support for Custom Workload Types: mspider/best-practice/use-custom-workloads.md
                   - Optimize Sidecar Resource Usage: mspider/best-practice/optimize-sidecar-resource.md
+                  - Traffic Control for Multicloud Mesh: mspider/best-practice/multinet-control.md
       - Data Service:
           - Middleware:
               - Intro:
