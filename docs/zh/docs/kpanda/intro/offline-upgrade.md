@@ -6,7 +6,9 @@
 
     下述命令或脚本内出现的 `kpanda` 字样是容器管理模块的内部开发代号。
 
-## 从下载的安装包中加载镜像
+## 通过命令行方式升级
+
+### 从下载的安装包中加载镜像
 
 您可以根据下面两种方式之一加载镜像，当环境中存在镜像仓库时，建议选择 chart-syncer 同步镜像到镜像仓库，该方法更加高效便捷。
 
@@ -104,7 +106,7 @@
     每个 node 都需要做 Docker 或 containerd 加载镜像操作，
     加载完成后需要 tag 镜像，保持 Registry、Repository 与安装时一致。
 
-## 升级
+### 升级
 
 有两种升级方式。您可以根据前置操作，选择对应的升级方案：
 
@@ -209,3 +211,22 @@
           -f ./bak.yaml \
           --set global.imageRegistry=$imageRegistry
         ```
+## 2、通过页面方式升级
+
+### 前提条件
+
+在安装 DCE 5.0 或在产品模块升级前已执行以下命令：
+
+```
+~/dce5-installer cluster-create -c /home/dce5/sample/clusterConfig.yaml -m /home/dce5/sample/manifest.yaml -d -j 14,15
+```
+
+### 操作步骤
+
+1、在`集群列表`页面中，搜索找到 kpanda-global-cluster 集群，进入集群详情
+
+ ![集群列表](../../images/clusterlist.png)
+
+2、在左侧导航栏中找到 Helm 应用，搜索 kpanda 找到容器管理模块，展开右侧操作栏，点击`更新`按钮，进行升级。
+
+ ![集群列表](../../images/update-kpanda.png)
