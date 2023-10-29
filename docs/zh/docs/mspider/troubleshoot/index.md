@@ -23,3 +23,4 @@
 - [网格空间无法正常解绑](./mesh-space-cannot-unbind.md)
 - [DCE 4.0 接入问题追踪](./dce4.0-issues.md)
 - [命名空间边车配置与工作负载边车冲突](./sidecar.md)
+- [托管网格多云互联异常](./cluster-interconnect.md)
