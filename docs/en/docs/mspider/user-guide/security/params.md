@@ -134,6 +134,14 @@ notPaths: ["/admin*"]
 | `paths` | `string[]` | Optional. A list of paths specified in the HTTP request. For gRPC services, this will be the fully qualified name in the format "/package.service/method". If not set, all paths are allowed. Applies to HTTP only. |
 | `notPaths` | `string[]` | Optional. A list of reverse matches for paths. |
 
+**In the actual operational scenario, it is important to include additional common keys:**
+
+- `request.headers[User-Agent]`
+- `request.auth.claims[iss]`
+- `experimental.envoy.filters.network.mysql_proxy[db.table]`
+
+For more information on configuration parameters for `AuthorizationPolicy`, please refer to the documentation at <https://istio.io/latest/docs/reference/config/security/conditions/>.
+
 #### Policy Condition Condition
 
 You can also add policy conditions (Condition). Condition specifies other required properties.
