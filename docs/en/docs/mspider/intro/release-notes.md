@@ -2,12 +2,57 @@
 MTPE: windsonsea
 Revised: done
 Pics: NA
-Date: 2023-07-28
+Date: 2023-10-30
 ---
 
 # Service Mesh Release Notes
 
 This page lists all the Release Notes for each version of Service Mesh, providing convenience for users to learn about the evolution path and feature changes.
+
+## 2023-10-30
+
+### v0.20.3
+
+#### Upgrade
+
+- **Added** `sidecarScopeToLocal` configuration field to `GlobalMesh CRD`.
+- **Added** `HideIdleNodes` field to `Graph` interface, supporting hiding idle nodes.
+- **Added** control of adding and deleting `cluster_bind_timestamps` field in `gsc-controller` for `globalmesh`.
+- **Added** support for container runtime in `Mspider VM Agent`.
+- **Added** `services` and `resourceManagement` fields to `Status` section of `WorkloadShadow CRD`.
+- **Added** field `has_user_custom` to indicate if the namespace scope for sidecars has user-defined resources.
+- **Added** implementation of namespace scope for sidecar access.
+- **Added** workload metric query interface.
+- **Added** `Hpa` detection to cluster component interface.
+- **Added** implementation of `Hpa` detection in cluster component interface.
+- **Added** interface for deleting virtual machine type workloads.
+- **Added** optional ability to hide idle nodes in `Graph` implementation.
+- **Added** optional ability to hide idle nodes in `Graph` implementation.
+- **Added** timestamp field `cluster_bind_timestamps` to managed mesh record clusters.
+- **Added** information about clusters that have this `Service` in grid service.
+- **Added** interface definition for namespace scope discovery in grid namespace.
+- **Added** elastic scaling configuration `auto_scaling` to grid gateway.
+- **Added** API to download configuration file token for virtual machines.
+- **Improved** service metric query interface with `reporter` and `label_selectors`.
+- **Upgraded** `ckube` to `1.3.7` to fix issue where searching queries above a certain level couldn't be resolved.
+- **Upgraded** frontend version to `v0.18.2`, see CHANGELOG.
+
+#### Fixes
+
+- **Fixed** cancellation of host `glibc` version detection for `vmagent` installation in `docker` mode.
+- **Fixed** cancellation of host `glibc` version detection for `vmagent` installation in `docker` mode.
+- **Fixed** issue where querying namespaces in `Graph` resulted in request URLs exceeding length limit when requesting `Prometheus` service.
+- **Fixed** issue where querying namespaces in `Graph` resulted in request URLs exceeding length limit when requesting `Prometheus` service.
+- **Fixed** validation of workload metrics and monitoring panel support for virtual machine workloads.
+- **Fixed** incorrect status of workload injection.
+- **Fixed** inaccurate resource binding display in workspace interface.
+- **Fixed** consistency in assigning grid details between `MeshList` and `MeshDetails`.
+- **Fixed** port conflict `15090` in virtual machine monitoring service, causing `istio` to be unavailable.
+- **Fixed** asynchronous execution of pre-installation cleanup and installation operations during virtual machine startup, occasional rule failures causing traffic to pass through.
+- **Fixed** asynchronous execution of pre-installation cleanup and installation operations during virtual machine startup, occasional rule failures causing traffic to pass through.
+- **Fixed** issue where `su` command caused `envoy` process `ulimit` value to be too small.
+- **Improved** `ListClusters` call now includes the time of joining the mesh as `BindAt`.
+- **Improved** added subscription notification update for `WorkloadShadow` in `Notification Center`, unified state update operation in `WorkloadShadow Controller`.
 
 ## 2023-08-31
 
