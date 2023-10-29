@@ -736,6 +736,7 @@ nav:
                   - istio-ingressgateway abnormal: mspider/troubleshoot/hosted-mesh-errors.md
                   - Unable to unbind mesh space: mspider/troubleshoot/mesh-space-cannot-unbind.md
                   - Issues on joining DCE 4.0: mspider/troubleshoot/dce4.0-issues.md
+                  - Issue with Sidecar Configuration Activation: mspider/troubleshoot/sidecar.md
               - Best Practice:
                   - Restrict Service Access with Mesh: mspider/best-practice/use-egress-and-authorized-policy.md
                   - Support for Custom Workload Types: mspider/best-practice/use-custom-workloads.md
