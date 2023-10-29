@@ -22,3 +22,4 @@ If you encounter problems with the use of the service mesh, please review this t
 - [The istio-ingressgateway is abnormal when hosting the mesh management cluster](./hosted-mesh-errors.md)
 - [Unable to unbind mesh space](./mesh-space-cannot-unbind.md)
 - [Troubleshooting on joining DCE 4.0](./dce4.0-issues.md)
+- [Issue with Sidecar Configuration Activation](./sidecar.md)
