@@ -673,6 +673,7 @@ nav:
                   - Install: mspider/install/install.md
                   - Upgrade Istio: mspider/install/istio-update.md
                   - Upgrade Sidecar: mspider/install/sidecar-update.md
+                  - Offline Upgrade: mspider/install/offline-upgrade.md
               - Create/Delete Mesh:
                   - Create managed/private mesh: mspider/user-guide/service-mesh/README.md
                   - Create external mesh: mspider/user-guide/service-mesh/external-mesh.md
