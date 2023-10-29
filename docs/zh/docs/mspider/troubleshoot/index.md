@@ -22,3 +22,4 @@
 - [托管网格纳管集群时 istio-ingressgateway 异常](./hosted-mesh-errors.md)
 - [网格空间无法正常解绑](./mesh-space-cannot-unbind.md)
 - [DCE 4.0 接入问题追踪](./dce4.0-issues.md)
+- [托管网格多云互联异常](./cluster-interconnect.md)
