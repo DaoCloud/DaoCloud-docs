@@ -712,6 +712,7 @@ nav:
                   - 安装部署网格: mspider/install/install.md
                   - Istio 版本升级: mspider/install/istio-update.md
                   - 边车版本升级: mspider/install/sidecar-update.md
+                  - 升级服务网格: mspider/install/offline-update.md
               - 创建/删除网格:
                   - 创建托管/专有网格: mspider/user-guide/service-mesh/README.md
                   - 创建外接网格: mspider/user-guide/service-mesh/external-mesh.md
