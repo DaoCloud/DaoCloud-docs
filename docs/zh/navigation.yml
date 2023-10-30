@@ -1092,6 +1092,7 @@ nav:
               - 管理:
                   - 全局管理: download/modules/ghippo.md
                   - 运营管理: download/modules/gmagpie.md
+              - 虚拟机容器：download/modules/virtnest.md
   - 免费体验:
       - 体验社区版: trial/index.md
   - 博客:
