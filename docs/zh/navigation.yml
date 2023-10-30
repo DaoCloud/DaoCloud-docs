@@ -178,6 +178,8 @@ nav:
                   - 管理 Helm 应用: kpanda/user-guide/helm/helm-app.md
                   - 管理 Helm 仓库: kpanda/user-guide/helm/helm-repo.md
                   - 多架构 Helm 应用: kpanda/user-guide/helm/multi-archi-helm.md
+              - Operator 应用:
+                  - 导入离线 MinIo Operator: kpanda/user-guide/olm/import-miniooperator.md
               - 容器网络:
                   - 创建服务: kpanda/user-guide/network/create-services.md
                   - 创建路由: kpanda/user-guide/network/create-ingress.md
