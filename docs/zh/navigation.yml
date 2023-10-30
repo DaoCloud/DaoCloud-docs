@@ -1074,6 +1074,7 @@ nav:
                   - 应用备份: download/modules/kcoral.md
                   - 安全管理: download/modules/dowl.md
                   - 网络模块: download/modules/spidernet.md
+                  - 虚拟机容器: download/modules/virtnest.md
               - 多云编排: download/modules/kairship.md
               - 镜像仓库: download/modules/kangaroo.md
               - 可观测性: download/modules/insight.md
