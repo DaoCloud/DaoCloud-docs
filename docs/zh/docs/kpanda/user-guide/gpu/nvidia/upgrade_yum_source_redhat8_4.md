@@ -27,8 +27,10 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
     ```bash
     cat /etc/yum.repos.d/extension.repo #查看 extension.repo 中的内容。
     ```
+
     预期输出如下：
-    ```bash
+
+    ```ini
     [extension-0]
     baseurl = http://10.5.14.200:9000/kubean/redhat/$releasever/os/$basearch
     gpgcheck = 0
@@ -53,11 +55,14 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
 3. 下载 yum 源中的 rpm 包到本地：
 
-    下载 extension-1 中的 rpm 包
+    下载 extension-1 中的 rpm 包：
+
     ```bash
     reposync  -p redhat-base-repo  -n --repoid=extension-1
     ```
-    下载 extension-2 中的 rpm 包
+
+    下载 extension-2 中的 rpm 包：
+
     ```bash
     reposync  -p redhat-base-repo  -n --repoid=extension-1
     ```
@@ -77,7 +82,9 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
     ```bash
     scp  elfutils-libelf-devel-0.187-4.el8.x86_64.rpm user@ip:~/redhat-base-repo/extension-2/Packages/
     ```
-    例如
+
+    例如：
+
     ```bash
     scp  elfutils-libelf-devel-0.187-4.el8.x86_64.rpm root@10.6.175.10:~/redhat-base-repo/extension-2/Packages/
     ```
@@ -90,8 +97,6 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
     ```bash
     mkdir /root/redhat-base-repo/extension-1/repodata
-    ```
-    ```bash
     mkdir /root/redhat-base-repo/extension-2/repodata
     ```
 
@@ -99,9 +104,6 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
     ```bash
     createrepo -po ~/redhat-base-repo/extension-1/repodata ~/redhat-base-repo/extension-1/Packages
-    ```
-
-    ```bash
     createrepo -po ~/redhat-base-repo/extension-2/repodata ~/redhat-base-repo/extension-2/Packages
     ```
 
@@ -111,7 +113,7 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
 本操作示例采用的是 DCE5 火种节点内置的 Minio 作为文件服务器，用户可基于自身情况选择文件服务器。Minio 相关信息如下：
 
-- 访问地址：http://10.5.14.200:9000（一般为{火种节点 IP} + {9000 端口}）
+- 访问地址：`http://10.5.14.200:9000（一般为{火种节点 IP} + {9000 端口}）`
 - 登录用户名：rootuser
 - 登录密码：rootpass123
 
@@ -120,22 +122,30 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
     ```bash
     mc config host add minio 文件服务器访问地址 用户名 密码
     ```
+
     例如：
+
     ```bash
     mc config host add minio http://10.5.14.200:9000 rootuser rootpass123
     ```
+
     预期输出如下：
+
     ```bash
     Added `minio` successfully.
     ```
-    mc 命令行工具是 Minio 文件服务器提供的客户端命令行工具，详情请参考：[MinIO Client](https://min.io/docs/minio/linux/reference/minio-mc.html)。
+
+    mc 命令行工具是 Minio 文件服务器提供的客户端命令行工具，详情请参考：
+    [MinIO Client](https://min.io/docs/minio/linux/reference/minio-mc.html)。
 
 2. 在节点当前路径下，新建一个名为 `redhat-base` 的存储桶(bucket)。
 
     ```bash
     mc mb -p minio/redhat-base
     ```
+
     预期输出如下：
+
     ```bash
     Bucket created successfully `minio/redhat-base`.
     ```
@@ -145,7 +155,9 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
     ```bash
     mc anonymous set download minio/redhat-base
     ```
+
     预期输出如下：
+
     ```bash
     Access permission for `minio/redhat-base` is set to `download`
     ```
@@ -156,7 +168,7 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
     mc cp redhat-base-repo minio/redhat-base --recursive
     ```
 
-### 步骤四：在集群创建配置项用来保存 yum 源信息。
+### 步骤五：在集群创建配置项用来保存 yum 源信息
 
 本步骤在待部署 GPU Operator 集群的控制节点上进行操作。
 
@@ -182,10 +194,13 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
     ```bash
     kubectl create configmap local-repo-config  -n gpu-operator --from-file=./redhat.repo 
     ```
+
     预期输出如下：
+
     ```
     configmap/local-repo-config created
     ```
+
     `local-repo-config` 配置文件用于在安装 gpu-operator 时，提供 `RepoConfig.ConfigMapName` 参数的值，配置文件名称用户可自定义。
 
 3. 查看 `local-repo-config` 的配置文件的内容：
@@ -194,5 +209,5 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
     kubectl get configmap local-repo-config  -n gpu-operator -oyaml
     ```
 
-至此，您已成功为待部署 GPU Operator 的集群创建了离线 yum 源配置文件。通过在[离线安装 GPU Operator](./install_nvidia_driver_of_operator.md) 时通过 `RepoConfig.ConfigMapName` 参数来使用。
-
+至此，您已成功为待部署 GPU Operator 的集群创建了离线 yum 源配置文件。
+通过在[离线安装 GPU Operator](./install_nvidia_driver_of_operator.md) 时通过 `RepoConfig.ConfigMapName` 参数来使用。
