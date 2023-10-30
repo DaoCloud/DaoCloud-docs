@@ -6,7 +6,7 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 - GPU vGPU 模式
 - GPU MIG 模式
 
-详情请参考：[NVIDIA GPU 卡使用模式](overvie_nvidia_gpu.md)，本文使用的 AMD 架构的 Centos 7.9 （3.10.0-1160） 进行演示。如需使用 redhat8.4 部署，请参考[向火种节点仓库上传 RedHat GPU Opreator 离线镜像](./push_image_to_repo.md)和[构建 RedHat 8.4 离线 yum 源](./upgrade_yum_source_redhat8_4.md)。
+详情请参考：[NVIDIA GPU 卡使用模式](index.md)，本文使用的 AMD 架构的 Centos 7.9 （3.10.0-1160） 进行演示。如需使用 redhat8.4 部署，请参考[向火种节点仓库上传 RedHat GPU Opreator 离线镜像](./push_image_to_repo.md)和[构建 RedHat 8.4 离线 yum 源](./upgrade_yum_source_redhat8_4.md)。
 
 ## 前提条件
 
@@ -102,18 +102,17 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
     - [构建 RedHat 8.4 离线 yum 源](./upgrade_yum_source_redhat_8.4.md)
 
+7. **MIG 配置参数**
 
-6. **MIG 配置参数**
-
-    详细配置方式请参考[开启 MIG 功能](../create_mig.md)
+    详细配置方式请参考[开启 MIG 功能](mig/create_mig.md)
 
     - `MigManager.enabled` ：是否启用 MIG 能力特性。
-    - `Mig.strategy` ：节点上 GPU 卡的 MIG 设备的公开策略。NVIDIA 提供了两种公开 MIG 设备的策略（`single` 、`mixed`策略，详情参考：[NVIDIA GPU 卡模式说明](overvie_nvidia_gpu.md)
+    - `Mig.strategy` ：节点上 GPU 卡的 MIG 设备的公开策略。NVIDIA 提供了两种公开 MIG 设备的策略（`single` 、`mixed`策略，详情参考：[NVIDIA GPU 卡模式说明](index.md)
     - `MigManager.Config` : 用于配置 MIG 切分配置参数和默认值。
         - `default`: 节点使用的切分配置默认值，默认为 `all-disabled`。
-        - `name` ：MIG 的切分配置文件名，用于定义 MIG 的（GI ,CI）切分策略。默认为`default-mig-parted-config`。自定义参数参考[开启 MIG 功能](../create_mig.md)
+        - `name` ：MIG 的切分配置文件名，用于定义 MIG 的（GI ,CI）切分策略。默认为`default-mig-parted-config`。自定义参数参考[开启 MIG 功能](mig/create_mig.md)
 
-7. `Node-Feature-Discovery.enableNodeFeatureAPI`：启用或禁用节点特性 API（Node Feature Discovery API）。
+8. `Node-Feature-Discovery.enableNodeFeatureAPI`：启用或禁用节点特性 API（Node Feature Discovery API）。
 
      - 当设置为 `true` 时，启用了节点特性 API。
      - 当设置为 `false` 或`未设置`时，禁用节点特性 API。

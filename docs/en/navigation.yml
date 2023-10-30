@@ -220,15 +220,27 @@ nav:
                   - Cluster and Namespace Authorization: kpanda/user-guide/permissions/cluster-ns-auth.md
               - GPU Management:
                   - Intro: kpanda/user-guide/gpu/index.md
-                  - NVIDIA vGPU:
-                      - Install Nvidia GPU Driver: kpanda/user-guide/gpu/vgpu_driver.md
-                      - Install vGPU Addon: kpanda/user-guide/gpu/vgpu_addon.md
-                      - Use vGPU: kpanda/user-guide/gpu/vgpu_user.md
-                  - NVIDIA MIG:
-                      - NVIDIA GPU (MIG): kpanda/user-guide/gpu/mig_index.md
-                      - Create MIG via GPU Operator: kpanda/user-guide/gpu/create_mig.md
-                      - Use MIG GPU: kpanda/user-guide/gpu/mig_usage.md
-                      - MIG Commands: kpanda/user-guide/gpu/mig_command.md
+                  - GPU Matrix: kpanda/user-guide/gpu/gpu_matrix.md
+                  - NVIDIA GPU Management:
+                      - NVIDIA GPU Modes: kpanda/user-guide/gpu/nvidia/index.md
+                      - Install GPU Operator: 
+                          - Install GPU Operator: kpanda/user-guide/gpu/nvidia/install_nvidia_driver_of_operator.md
+                          - Build Offline yum Source for CentOS 7.9: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_centos7_9.md
+                          - Upload RedHat GPU Opreator Image to Bootstrap Registry: kpanda/user-guide/gpu/nvidia/push_image_to_repo.md
+                          - Build Offline yum Source for RedHat 8.4: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_redhat8_4.md
+                      - NVIDIA GPU Full Card Mode: kpanda/user-guide/gpu/nvidia/full_gpu_userguide.md
+                      - NVIDIA vGPU Mode:
+                          - Install vGPU Addon: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_addon.md
+                          - Use NVIDIA vGPU: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_user.md
+                      - NVIDIA MIG Mode:
+                          - NVIDIA MIG Overview: kpanda/user-guide/gpu/nvidia/mig/index.md
+                          - Enable MIG Features: kpanda/user-guide/gpu/nvidia/mig/create_mig.md
+                          - Use NVIDIA MIG: kpanda/user-guide/gpu/nvidia/mig/mig_usage.md
+                          - MIG Commands: kpanda/user-guide/gpu/nvidia/mig/mig_command.md
+                  - Ascend GPU:
+                      - Use Ascend GPU: kpanda/user-guide/gpu/Ascend_usage.md
+                  - Iluvatar GPU:
+                      - Use Iluvatar GPU: kpanda/user-guide/gpu/Iluvatar_usage.md
                   - GPU Quota Management: kpanda/user-guide/gpu/vgpu_quota.md
               - Best Practices:
                   - Backup and Restore ETCD: kpanda/best-practice/etcd-backup.md
