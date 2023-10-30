@@ -9,21 +9,21 @@ DaoCloud is a Certified Kubernetes Service Provider (KCSP). DCE has been certifi
 
 Current releases maintained by K8s community:
 
-[![1.25](../images/1.25.png)](https://github.com/cncf/k8s-conformance/pull/2240)
-[![1.26](../images/1.26.png)](https://github.com/cncf/k8s-conformance/pull/2451)
-[![1.27](../images/1.27.png)](https://github.com/cncf/k8s-conformance/pull/2666)
-[![1.28](../images/1.28.png)](https://github.com/cncf/k8s-conformance/pull/2835)
+[![1.25](./images/1.25.png)](https://github.com/cncf/k8s-conformance/pull/2240)
+[![1.26](./images/1.26.png)](https://github.com/cncf/k8s-conformance/pull/2451)
+[![1.27](./images/1.27.png)](https://github.com/cncf/k8s-conformance/pull/2666)
+[![1.28](./images/1.28.png)](https://github.com/cncf/k8s-conformance/pull/2835)
 
 Legacy versions that are no longer maintained by the K8s community but will continue to be maintained by DaoCloud's [KLTS](https://klts.io/):
 
-[![1.7](../images/1.7.png)](https://github.com/cncf/k8s-conformance/pull/68)
-[![1.9](../images/1.9.png)](https://github.com/cncf/k8s-conformance/pull/210)
-[![1.13](../images/1.13.png)](https://github.com/cncf/k8s-conformance/pull/418)
-[![1.15](../images/1.15.png)](https://github.com/cncf/k8s-conformance/pull/794)
-[![1.18](../images/1.18.png)](https://github.com/cncf/k8s-conformance/pull/1144)
-[![1.20](../images/1.20.png)](https://github.com/cncf/k8s-conformance/pull/1463)
-[![1.23](../images/1.23.png)](https://github.com/cncf/k8s-conformance/pull/2072)
-[![1.24](../images/1.24.png)](https://github.com/cncf/k8s-conformance/pull/2239)
+[![1.7](./images/1.7.png)](https://github.com/cncf/k8s-conformance/pull/68)
+[![1.9](./images/1.9.png)](https://github.com/cncf/k8s-conformance/pull/210)
+[![1.13](./images/1.13.png)](https://github.com/cncf/k8s-conformance/pull/418)
+[![1.15](./images/1.15.png)](https://github.com/cncf/k8s-conformance/pull/794)
+[![1.18](./images/1.18.png)](https://github.com/cncf/k8s-conformance/pull/1144)
+[![1.20](./images/1.20.png)](https://github.com/cncf/k8s-conformance/pull/1463)
+[![1.23](./images/1.23.png)](https://github.com/cncf/k8s-conformance/pull/2072)
+[![1.24](./images/1.24.png)](https://github.com/cncf/k8s-conformance/pull/2239)
 
 DCE 5.0 website is created with MkDocs. All pages are written in markdown.
 We use GitOps to control workflow and versions.
