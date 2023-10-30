@@ -9,21 +9,21 @@ DaoCloud 是经认证的 K8s 服务提供商。目前 DCE 经 CNCF 认证可以�
 
 K8s 官方维护的当前 4 个版本：
 
-[![1.25](../images/1.25.png)](https://github.com/cncf/k8s-conformance/pull/2240)
-[![1.26](../images/1.26.png)](https://github.com/cncf/k8s-conformance/pull/2451)
-[![1.27](../images/1.27.png)](https://github.com/cncf/k8s-conformance/pull/2666)
-[![1.28](../images/1.28.png)](https://github.com/cncf/k8s-conformance/pull/2835)
+[![1.25](./images/1.25.png)](https://github.com/cncf/k8s-conformance/pull/2240)
+[![1.26](./images/1.26.png)](https://github.com/cncf/k8s-conformance/pull/2451)
+[![1.27](./images/1.27.png)](https://github.com/cncf/k8s-conformance/pull/2666)
+[![1.28](./images/1.28.png)](https://github.com/cncf/k8s-conformance/pull/2835)
 
 K8s 官方不再维护（但 DaoCloud [KLTS](https://klts.io/) 会持续维护）的历史版本：
 
-[![1.7](../images/1.7.png)](https://github.com/cncf/k8s-conformance/pull/68)
-[![1.9](../images/1.9.png)](https://github.com/cncf/k8s-conformance/pull/210)
-[![1.13](../images/1.13.png)](https://github.com/cncf/k8s-conformance/pull/418)
-[![1.15](../images/1.15.png)](https://github.com/cncf/k8s-conformance/pull/794)
-[![1.18](../images/1.18.png)](https://github.com/cncf/k8s-conformance/pull/1144)
-[![1.20](../images/1.20.png)](https://github.com/cncf/k8s-conformance/pull/1463)
-[![1.23](../images/1.23.png)](https://github.com/cncf/k8s-conformance/pull/2072)
-[![1.24](../images/1.24.png)](https://github.com/cncf/k8s-conformance/pull/2239)
+[![1.7](./images/1.7.png)](https://github.com/cncf/k8s-conformance/pull/68)
+[![1.9](./images/1.9.png)](https://github.com/cncf/k8s-conformance/pull/210)
+[![1.13](./images/1.13.png)](https://github.com/cncf/k8s-conformance/pull/418)
+[![1.15](./images/1.15.png)](https://github.com/cncf/k8s-conformance/pull/794)
+[![1.18](./images/1.18.png)](https://github.com/cncf/k8s-conformance/pull/1144)
+[![1.20](./images/1.20.png)](https://github.com/cncf/k8s-conformance/pull/1463)
+[![1.23](./images/1.23.png)](https://github.com/cncf/k8s-conformance/pull/2072)
+[![1.24](./images/1.24.png)](https://github.com/cncf/k8s-conformance/pull/2239)
 
 本文档站采用 MkDocs 编译而成，文档内容通过 Markdown 格式写作，并在 GitHub 上完成版本管理、协作开发等工作。
 
