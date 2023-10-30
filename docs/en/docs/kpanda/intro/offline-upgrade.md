@@ -6,7 +6,9 @@ This page explains how to install or upgrade the Container Management Module aft
 
     The term "kpanda" mentioned in the following commands or scripts is the internal development codename for the Container Management Module.
 
-## Load Images from the Downloaded Package
+## Upgrade from CLI
+
+### Load Images from the Downloaded Package
 
 You can load the images in one of the following two ways. When an image repository exists in the environment, it is recommended to use chart-syncer to synchronize the images to the image repository, as it is more efficient and convenient.
 
@@ -104,7 +106,7 @@ Unpack and load the image files.
     Each node needs to perform the Docker or containerd image loading operation.
     After loading is complete, tag the images to keep the Registry and Repository consistent with the installation.
 
-## Upgrade
+### Upgrade
 
 There are two ways to upgrade. You can choose the corresponding upgrade method based on the pre-operation:
 
@@ -209,3 +211,22 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
       -f ./bak.yaml \
       --set global.imageRegistry=$imageRegistry
     ```
+
+## Upgrade via Web UI
+
+### Prerequisites
+
+Before installing DCE 5.0 or upgrading the product module, execute the following command:
+
+```shell
+~/dce5-installer cluster-create -c /home/dce5/sample/clusterConfig.yaml -m /home/dce5/sample/manifest.yaml -d -j 14,15
+```
+
+### Steps
+
+1. On the `Clusters` page, search for the kpanda-global-cluster and enter its details.
+
+
+2. In the left navigation panel, locate `Helm App` and search for kpanda to find the
+   Container Management module. Expand the right-hand operation column and click the
+   `Update` button to initiate the upgrade.
