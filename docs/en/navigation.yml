@@ -170,6 +170,7 @@ nav:
                   - Helm Charts: kpanda/user-guide/helm/README.md
                   - Helm Apps: kpanda/user-guide/helm/helm-app.md
                   - Helm Registries: kpanda/user-guide/helm/helm-repo.md
+                  - Multi-architecture Helm Apps: kpanda/user-guide/helm/multi-archi-helm.md
               - Container Network:
                   - Create Service: kpanda/user-guide/network/create-services.md
                   - Create Ingress: kpanda/user-guide/network/create-ingress.md

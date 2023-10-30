@@ -177,6 +177,7 @@ nav:
                   - Helm 模板: kpanda/user-guide/helm/README.md
                   - 管理 Helm 应用: kpanda/user-guide/helm/helm-app.md
                   - 管理 Helm 仓库: kpanda/user-guide/helm/helm-repo.md
+                  - 多架构 Helm 应用: kpanda/user-guide/helm/multi-archi-helm.md
               - 容器网络:
                   - 创建服务: kpanda/user-guide/network/create-services.md
                   - 创建路由: kpanda/user-guide/network/create-ingress.md

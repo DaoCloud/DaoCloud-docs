@@ -211,22 +211,23 @@
           -f ./bak.yaml \
           --set global.imageRegistry=$imageRegistry
         ```
-## 2、通过页面方式升级
+
+## 通过页面方式升级
 
 ### 前提条件
 
 在安装 DCE 5.0 或在产品模块升级前已执行以下命令：
 
-```
+```shell
 ~/dce5-installer cluster-create -c /home/dce5/sample/clusterConfig.yaml -m /home/dce5/sample/manifest.yaml -d -j 14,15
 ```
 
 ### 操作步骤
 
-1、在`集群列表`页面中，搜索找到 kpanda-global-cluster 集群，进入集群详情
+1. 在`集群列表`页面中，搜索找到 kpanda-global-cluster 集群，进入集群详情
 
- ![集群列表](../../images/clusterlist.png)
+    ![集群列表](../../images/clusterlist.png)
 
-2、在左侧导航栏中找到 Helm 应用，搜索 kpanda 找到容器管理模块，展开右侧操作栏，点击`更新`按钮，进行升级。
+2. 在左侧导航栏中找到 Helm 应用，搜索 kpanda 找到容器管理模块，展开右侧操作栏，点击`更新`按钮，进行升级。
 
- ![集群列表](../../images/update-kpanda.png)
+    ![集群列表](../../images/update-kpanda.png)
