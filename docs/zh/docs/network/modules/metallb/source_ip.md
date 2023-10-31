@@ -6,7 +6,9 @@
 
 此方式同样适配 Istio 高可用模式下，获取客户端源 IP 。
 
-商业版安装后，默认开启获取客户端源IP功能。
+但次方案对负载均衡有影响，详情请参考[L2和BGP模式说明](l2-bgp.md)中的负载均衡性
+
+商业版安装后，默认开启获取客户端源IP功能。若期望安装前关闭该功能可[修改安装器 clusterConfigt.yaml](../../../install/commercial/cluster-config.md) 来配置（SourceIP 设置为false）
 
 ## 操作步骤
 
