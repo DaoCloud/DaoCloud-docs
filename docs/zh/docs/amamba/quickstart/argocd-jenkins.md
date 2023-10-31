@@ -87,27 +87,27 @@
 
 ## 创建持续部署应用
 
-1. 用 Https 方式导入 argocd-example-apps 仓库，[参考步骤](../user-guide/gitops/import-repo.md)
+1. 用 Https 方式导入 argocd-example-apps 仓库，[参考步骤](../user-guide/gitops/import-repo.md)。
 
-2. 创建一个 GitOps 应用
+2. 创建一个 GitOps 应用。
 
     ![cd:ci02](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci02.png)
 
-3. 创建完成后，会自动生成一条记录，同步状态显示`未同步`
+3. 创建完成后，会自动生成一条记录，同步状态显示`未同步`。
 
     ![cd:ci03](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci03.png)
 
-4. 点击`同步`，完成应用部署
+4. 点击`同步`，完成应用部署。
 
     ![cd:ci04](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci04.png)
 
 ## 运行流水线触发 CI/CD
 
-1. 选择上述创建的流水线，点击`立即运行`
+1. 选择上述创建的流水线，点击`立即运行`。
 
     ![cd:ci05](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci05.png)
 
-2. 查看运行日志
+2. 查看运行日志。
 
     ![cd:ci06](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci06.png)
 
