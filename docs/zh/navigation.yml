@@ -233,7 +233,7 @@ nav:
                   - GPU 支持矩阵: kpanda/user-guide/gpu/gpu_matrix.md
                   - NVIDIA GPU 管理:
                       - NVIDIA GPU 模式说明: kpanda/user-guide/gpu/nvidia/index.md
-                      - GPU Operator 离线安装: 
+                      - GPU Operator 离线安装:
                           - GPU Operator 离线安装: kpanda/user-guide/gpu/nvidia/install_nvidia_driver_of_operator.md
                           - 构建 CentOS 7_9 离线 yum 源: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_centos7_9.md
                           - 向火种节点仓库上传 RedHat GPU Opreator 离线镜像: kpanda/user-guide/gpu/nvidia/push_image_to_repo.md
@@ -436,9 +436,9 @@ nav:
                   - 介绍: network/modules/aliyun-terway/index.md
                   - Terway 网络模式: network/modules/aliyun-terway/what.md
                   - 使用说明: network/modules/aliyun-terway/usage.md
-                  - 阿里云运行 Calico: network/modules/aliyun-terway/aliyun-calico.md 
+                  - 阿里云运行 Calico: network/modules/aliyun-terway/aliyun-calico.md
                   - 阿里云运行 Cilium: network/modules/aliyun-terway/aliyun-cilium.md
-          云原生存储:
+          - 云原生存储:
               - 介绍:
                   - 什么是云原生存储: storage/index.md
                   - 背景和挑战: storage/background.md
@@ -565,9 +565,9 @@ nav:
                   - 事件查询: insight/user-guide/data-query/event.md
               - 指标:
                   - insight/user-guide/data-query/metric.md
-              - 日志: 
+              - 日志:
                   - insight/user-guide/data-query/log.md
-              - 链路追踪: 
+              - 链路追踪:
                   - 服务拓扑: insight/user-guide/scenario-insight/topology.md
                   - 服务拓扑元素说明: insight/user-guide/scenario-insight/topology-helper.md
                   - 服务监控: insight/user-guide/scenario-insight/service.md
@@ -865,7 +865,7 @@ nav:
                       - 更新 MySQL: middleware/mysql/user-guide/update.md
                       - 删除 MySQL: middleware/mysql/user-guide/delete.md
                       - 查看 MySQL 日志: middleware/mysql/user-guide/logs.md
-                  - 最佳实践: 
+                  - 最佳实践:
                       - MySQL 跨集群同步: middleware/mysql/best-practice/crossclusterssync.md
                   - 故障排查:
                       - MySQL 健康检查: middleware/mysql/faq/quick-check.md
