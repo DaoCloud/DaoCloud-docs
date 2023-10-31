@@ -563,10 +563,8 @@ nav:
                   - 命名空间: insight/user-guide/scenario-insight/namespace.md
                   - 容器: insight/user-guide/scenario-insight/container.md
                   - 事件查询: insight/user-guide/data-query/event.md
-              - 指标:
-                  - insight/user-guide/data-query/metric.md
-              - 日志:
-                  - insight/user-guide/data-query/log.md
+              - 指标: insight/user-guide/data-query/metric.md
+              - 日志: insight/user-guide/data-query/log.md
               - 链路追踪:
                   - 服务拓扑: insight/user-guide/scenario-insight/topology.md
                   - 服务拓扑元素说明: insight/user-guide/scenario-insight/topology-helper.md

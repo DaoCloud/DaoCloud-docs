@@ -535,18 +535,19 @@ nav:
                   - Dashboard: insight/user-guide/dashboard/dashboard.md
                   - Log in to Grafana with Admin: insight/user-guide/dashboard/login-grafana.md
                   - Import Custom Dashboard: insight/user-guide/dashboard/import-dashboard.md
-              - Cloud Insight:
-                  - Cluster Insight: insight/user-guide/scenario-insight/cluster.md
-                  - Node Insight: insight/user-guide/scenario-insight/node.md
-                  - Container Insight: insight/user-guide/scenario-insight/container.md
-              - Scenario Insight:
-                  - Service Insight: insight/user-guide/scenario-insight/service.md
+              - Infrastructure:
+                  - Clusters: insight/user-guide/scenario-insight/cluster.md
+                  - Nodes: insight/user-guide/scenario-insight/node.md
+                  - Namespaces: insight/user-guide/scenario-insight/namespace.md
+                  - Containers: insight/user-guide/scenario-insight/container.md
+                  - Events: insight/user-guide/data-query/event.md
+              - Metrics: insight/user-guide/data-query/metric.md
+              - Logging: insight/user-guide/data-query/log.md
+              - Traces:
                   - Service Topology: insight/user-guide/scenario-insight/topology.md
-              - Data Query:
-                  - Log Query: insight/user-guide/data-query/log.md
-                  - Metric Query: insight/user-guide/data-query/metric.md
+                  - Topology Helper: insight/user-guide/scenario-insight/topology-helper.md
+                  - Service Monitor: insight/user-guide/scenario-insight/service.md
                   - Trace Query: insight/user-guide/data-query/trace.md
-                  - Event Query: insight/user-guide/data-query/event.md
               - Alert Center:
                   - insight/user-guide/alert-center/index.md
                   - Alert Rules: insight/user-guide/alert-center/alert-policy.md

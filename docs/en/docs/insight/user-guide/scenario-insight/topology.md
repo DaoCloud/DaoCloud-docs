@@ -1,28 +1,23 @@
-# Service topology
+# Service Topology
 
-On the service topology page, you can view the previous calls and dependencies of services that access trace data. Understand the call relationship between services through the visualized topology, and view the calls and performance status of services within a specified time.
+Service topology is a visual representation of the connections, communication, and dependencies between services. It provides insights into the service-to-service interactions, allowing you to view the calls and performance of services within a specified time range. The connections between nodes in the topology represent the existence of service-to-service calls during the queried time period.
 
-## Service Topology
+## Prerequisites
 
-The connection between the nodes of the topology graph represents the calling relationship between the two services within the query time range.
-Follow the steps below to view service monitoring metrics:
+1. Insight Agent is [installed](../../quickstart/install/install-agent.md) in the cluster and the applications are in the `Running` state.
+2. Services have been instrumented for distributed tracing using
+   [Operator](../../quickstart/otel/operator.md) or [OpenTelemetry SDK](../../quickstart/otel/golang.md).
 
-1. Go to `Observability` product module,
-2. In the left navigation bar, select `Scene Monitoring -> Service Topology`.
-3. In the topology map, you can perform the following operations as required:
+## Steps
 
-- Click on the node to view the traffic metrics of the service.
-- When the mouse hovers over the connection, you can view the traffic metrics requested between services.
-- In the `Display Settings` module, it is possible to configure the display elements in the topology map.
+1. Go to the `Observability` product module.
 
-     
+2. Select `Distributed Tracing > Service Topology` from the left navigation pane.
 
-## Node health status
+3. In the topology graph, you can perform the following actions:
 
-The node health status is determined according to the error rate and request delay of all current service traffic. The judgment logic is as follows:
-
-| Status | Rules |
-| ---- | ---------------------------------------- |
-| Healthy | The error rate is equal to 0% and the request latency is less than 100ms |
-| Warning | Error Rate (0, 5%] or Request Latency (100ms, 200ms] |
-| Exception | Error Rate (5%, 100%] or Request Latency (200ms, +Infinity)|
+    - Click on a node to slide out the details of the service on the right side. Here,
+      you can view metrics such as request latency, throughput, and error rate for the service.
+      Clicking on the service name takes you to the service details page.
+    - Hover over the connections to view the traffic metrics between the two services.
+    - In the "Display Settings" module, you can configure the display elements in the topology graph.

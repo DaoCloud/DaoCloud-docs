@@ -1,23 +1,23 @@
-# Import custom dashboard
+# Importing Custom Dashboards
 
-This page introduces how to import customized dashboards through CRD and UI interface.
+By using Grafana CRD, you can incorporate the management and deployment of dashboards into the lifecycle management of Kubernetes. This enables version control, automated deployment, and cluster-level management of dashboards. This page describes how to import custom dashboards using CRD and the UI interface.
 
-## Import Dashboard via CRD
+## Steps
 
-1. Log in to the DCE 5.0 platform, enter `Container Management` from the left navigation bar, and select the target cluster in the cluster list.
+1. Log in to the DCE 5.0 platform and go to `Container Management`. Select the `kpanda-global-cluster` from the cluster list.
 
-2. Select `Custom Resources` on the left navigation bar, find `grafanadashboards.integreatly.org` file in the list, and enter the details.
+2. Choose `Custom Resources` from the left navigation pane. Look for the `grafanadashboards.integreatly.org`
+   file in the list and click on it to view the details.
 
-    
+3. Click on `YAML Create` and use the following template. Replace the dashboard JSON in the `Json` field.
 
-3. Click `Create with YAML` and use the following template, replacing the dashboard JSON in the `Json` field.
-
-    - `namespace`: Fill in the target namespace;
-    - `name`: fill in the name of the dashboard.
+    - `namespace`: Specify the target namespace.
+    - `name`: Provide a name for the dashboard.
+    - `label`: Mandatory. Set the label as `operator.insight.io/managed-by: insight`.
 
     ```yaml
-    apiVersion: integrally.org/v1alpha1
-    kind: Grafana Dashboard
+    apiVersion: integreatly.org/v1alpha1
+    kind: GrafanaDashboard
     metadata:
       labels:
         app: insight-grafana-operator
@@ -59,34 +59,7 @@ This page introduces how to import customized dashboards through CRD and UI inte
 
 4. After clicking `Confirm`, wait for a while to view the newly imported dashboard in `Dashboard`.
 
-## Import Dashboard via UI
-
-This section explains how to access native Grafana to build custom dashboards.
-
-1. Click `Dashboards` > `Import` on the left navigation bar.
-
-    
-
-2. You can choose to import in the following ways:
-
-    - Upload the dashboard JSON file
-    - Paste the [Grafana.com](https://grafana.com) dashboard URL
-    - Paste the dashboard JSON into the text area
-
-    
-
-3. After clicking `Load`, fill in the following parameters:
-
-    - name: set the name of the dashboard
-    - Floder: select the target path for dashboard storage
-    - Prometheus: select data source
-
-    
-
-4. Click `Import` to import the dashboard successfully.
-
-    
-
 !!! info
 
-    If you need to customize the dashboard, please refer to [Add Dashboard Panel](https://grafana.com/docs/grafana/latest/dashboards/add-organize-panels/).
+    If you need to customize the dashboard, refer to
+    [Add Dashboard Panel](https://grafana.com/docs/grafana/latest/dashboards/add-organize-panels/).

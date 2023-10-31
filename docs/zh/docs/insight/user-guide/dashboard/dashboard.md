@@ -27,6 +27,6 @@ Grafana 是一种开源的数据可视化和监控平台，它提供了丰富的
 
 !!! note
 
-    1. 访问 Grafana UI 请参考：[以管理员身份登录 Grafana](../../user-guide/dashboard/login-grafana.md)。
+    1. 访问 Grafana UI 请参考[以管理员身份登录 Grafana](../../user-guide/dashboard/login-grafana.md)。
     
-    2. 导入自定义仪表盘请参考：[导入自定义仪表盘](./import-dashboard.md)。
+    2. 导入自定义仪表盘请参考[导入自定义仪表盘](./import-dashboard.md)。
