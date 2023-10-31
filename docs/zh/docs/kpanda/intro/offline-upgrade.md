@@ -38,8 +38,8 @@
             kind: HARBOR # Helm Chart 仓库类别
             url: http://10.16.10.111/chartrepo/release.daocloud.io # Helm 仓库地址
             auth:
-            username: "admin" # 镜像仓库用户名
-            password: "Harbor12345" # 镜像仓库密码
+              username: "admin" # 镜像仓库用户名
+              password: "Harbor12345" # 镜像仓库密码
           containers:
             auth:
               username: "admin" # Helm 仓库用户名
