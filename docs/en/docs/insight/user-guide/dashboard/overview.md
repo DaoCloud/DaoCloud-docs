@@ -5,16 +5,12 @@ hide:
 
 # Overview
 
-This page introduces the overview information of the clusters managed in `Container Management`, including the abnormal number and total number of all cluster resources, alerts, trace data, and log data statistics, the resource usage of Top5 clusters and nodes, and the status of nodes and pods. Top 5 trends and service delays.
+`Insight` only collects data from clusters that have `insight-agent` installed and running in a normal state. The overview provides an overview of resources across multiple clusters:
 
-1. Select `Overview` in the left navigation bar to enter the details page.
+- Alert Statistics: Provides statistics on active alerts across all clusters.
+- Resource Consumption: Displays the resource usage trends for the top 5 clusters and nodes in the past hour, based on CPU usage, memory usage, and disk usage.
+- By default, the sorting is based on CPU usage. You can switch the metric to sort clusters and nodes.
+- Resource Trends: Shows the trends in the number of nodes over the past 15 days and the running trend of pods in the last hour.
+- Service Requests Ranking: Displays the top 5 services with the highest request latency and error rates, along with their respective clusters and namespaces in the multi-cluster environment.
 
-    
-
-2. (Optional) Click the `Refresh` button in the upper right corner to automatically update the data.
-
-    - alert statistics: You can view the alert statistics of all clusters.
-    - Resource consumption: You can view the resource change trends of TOP5 clusters and nodes in the past hour according to CPU usage, memory usage, and disk usage.
-      The default is to sort by CPU usage. You can switch metrics to switch the sorting method of clusters and nodes.
-    - Resource change trend: You can view the trend of the number of nodes in the past 15 days and the running trend of Pods in one hour.
-    - Service request ranking: You can view the TOP5 services in the multicluster request delay and error rate, as well as their clusters and namespaces.
+Select `Overview` in the left navigation bar to enter the details page.
