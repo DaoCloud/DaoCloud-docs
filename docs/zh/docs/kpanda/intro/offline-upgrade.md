@@ -188,7 +188,7 @@
         在升级容器管理版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
 
         ```shell
-        helm get values kpanda -n k pan da-system -o yaml > bak.yaml
+        helm get values kpanda -n kpanda-system -o yaml > bak.yaml
         ```
 
     1. 更新 kpanda crds
