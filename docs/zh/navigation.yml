@@ -432,7 +432,13 @@ nav:
                   - 介绍: network/modules/submariner/index.md
                   - 安装: network/modules/submariner/install.md
                   - 使用说明: network/modules/submariner/usage.md
-          - 云原生存储:
+              - 集成阿里云 Terway:
+                  - 介绍: network/modules/aliyun-terway/index.md
+                  - Terway 网络模式: network/modules/aliyun-terway/what.md
+                  - 使用说明: network/modules/aliyun-terway/usage.md
+                  - 阿里云运行 Calico: network/modules/aliyun-terway/aliyun-calico.md 
+                  - 阿里云运行 Cilium: network/modules/aliyun-terway/aliyun-cilium.md
+          云原生存储:
               - 介绍:
                   - 什么是云原生存储: storage/index.md
                   - 背景和挑战: storage/background.md
