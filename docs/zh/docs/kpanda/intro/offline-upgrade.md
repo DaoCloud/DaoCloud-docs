@@ -38,8 +38,8 @@
             kind: HARBOR # Helm Chart 仓库类别
             url: http://10.16.10.111/chartrepo/release.daocloud.io # Helm 仓库地址
             auth:
-            username: "admin" # 镜像仓库用户名
-            password: "Harbor12345" # 镜像仓库密码
+              username: "admin" # 镜像仓库用户名
+              password: "Harbor12345" # 镜像仓库密码
           containers:
             auth:
               username: "admin" # Helm 仓库用户名
@@ -188,7 +188,7 @@
         在升级容器管理版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
 
         ```shell
-        helm get values kpanda -n k pan da-system -o yaml > bak.yaml
+        helm get values kpanda -n kpanda-system -o yaml > bak.yaml
         ```
 
     1. 更新 kpanda crds
