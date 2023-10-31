@@ -7,6 +7,13 @@ hide:
 
 This page summarizes blogs and public account articles related to DCE 5.0 and cloud-native technology, sorted by date by default.
 
+## 2023
+
+- [20231008 | A Look Back for Kubernetes Contributor Summits in Shanghai, China](./20231008-kcs.md)
+
+    On September 26, 2023, the first day of KubeCon + CloudNativeCon + Open Source Summit China 2023,
+    nearly 50 community contributors gathered in Shanghai for the Kubernetes Contributor Summit.
+
 - [20230815 | Kubernetes 1.28 is Released](./230815-k8s1.28.md)
 
     Announcing the release of Kubernetes v1.28 Planternetes, the second release of 2023!
@@ -125,6 +132,8 @@ This page summarizes blogs and public account articles related to DCE 5.0 and cl
 - [20230201 | DCE 5.0 Struggle Quotations Collection](230201-peter.md)
 
     In 2022, in Shanghai, ravaged by the epidemic, lockdowns, controls, and home stays, programmers ran between the cracks of the virus 🦠. That year was the time when DCE 5.0 struggled, and it was also a difficult year for every Chinese person.
+
+## 2022
 
 - [20221209 | K8s 1.26 officially released](221209-k8s-1.26.md)
 
