@@ -14,21 +14,21 @@ This article describes how to implement progressive gray release based on open s
 
 The whole process is divided into four steps: first, build the application based on the container image, then configure the Istio-related resources, create the gray release task, and finally verify the effect.
 
-### Build Application Based on Container Image
+### Building the Application Based on Container Image
 
-For specific operating steps, please refer to [Building Microservice Applications Based on Git Repositories](../user-guide/wizard/create-app-git.md) and [Deploying Java Applications Based on Jar Packages](../user-guide/wizard/jar-java-app.md).
+1. Select `Container Image` as the entry point in the wizard.
 
-**Note**:
+2. Fill in the basic information:
 
-- Container image: argoproj/rollouts-demo:blue
+3. Fill in the container configuration. For example:
 
-- Service port: named `http`, container port is `8082`, and service port is `8082`.
+    - Container image: `argoproj/rollouts-demo:blue`
+    - Service port: Name is `http`, container port is `8082`, and service port is `8082`.
 
-    <!--![]()screenshots-->
 
-- When filling in advanced configurations, it is necessary to enable gray release.
+4. Fill in the advanced configuration and enable `Enable Mesh`.
 
-    <!--![]()screenshots-->
+5. After creation, an application record will be generated in `Overview` -> `Native Apps`.
 
 ### Configuration of Istio-related Resources
 
@@ -141,7 +141,7 @@ Create the following resources in the [Service Mesh](../../mspider/intro/index.m
         port: 15021
         protocol: TCP
         targetPort: 15021
-      # 新增以下内容
+      # Add this content
       - name: rollout-demo
         port: 8082
         protocol: TCP
@@ -156,7 +156,7 @@ Create the following resources in the [Service Mesh](../../mspider/intro/index.m
 
 5. Create AuthorizationPolicy Resource
 
-The purpose of this step is to ensure that js-related resources can be accessed normally when accessing through a browser.
+    The purpose of this step is to ensure that js-related resources can be accessed normally when accessing through a browser.
 
     ```yaml
     apiVersion: security.istio.io/v1beta1
@@ -184,27 +184,24 @@ The purpose of this step is to ensure that js-related resources can be accessed 
     ```
 
 ### Create Gray Release Task
-Create a gray release task in the application console. For more detailed instructions on creating, please refer to Creating Canary Release Tasks.
 
-1. Select the application that enables gray release.
+To create a canary release task in the application workspace, follow these steps. For more detailed instructions, you can refer to the [Creating Canary Release Tasks](../user-guide/release/canary.md) guide.
 
-    <!--![]()screenshots-->
+1. Select the application for which you want to enable canary release.
 
-2. Modify the publishing rule (for a clearer demonstration effect)
 
-    <!--![]()screenshots-->
 
-3. Click "Create and Update Application", and fill in the image address argoproj/rollouts-demo:yellow in the pop-up dialog box.
+2. Set up the release rules. Choose "Istio" as the traffic management type and "Weight Based" as the traffic routing type.
 
-    <!--![]()screenshots-->
+
+3. Click `Create and Update App`. In the pop-up dialog, enter the image address: `argoproj/rollouts-demo:yellow`.
 
 ### Verify Effect
 
-Access the address: http://{istio-ingressgateway LB IP}:8082, and the following access effect will be obtained.
+Access the address: `http://{istio-ingressgateway LB IP}:8082`, and the following access effect will be obtained.
 
-This interface will concurrently call http://{istio-ingressgateway LB IP}:8082/color to obtain color information and fill it into the grid.
+This interface will concurrently call `http://{istio-ingressgateway LB IP}:8082/color` to obtain color information and fill it into the grid.
 In the gray release object, the specified colors are blue, yellow, which will be displayed according to the defined traffic ratio of 1:9.
-
 
 <!--![]()screenshots-->
 

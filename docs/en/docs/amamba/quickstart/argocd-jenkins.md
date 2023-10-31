@@ -43,8 +43,8 @@ After the `Update app profile` step is successfully executed, Argo CD detects th
             }
           }
           parameters {
-            string(name: 'DOCKER_REPO', defaultValue: 'release-ci.daocloud.io/test-jzh/dao-2048', description: 'image name')
-            string(name: 'DOCKER_IMAGE_VERSION', defaultValue: 'v2.0', description: 'image version')
+            string(name: 'DOCKER_REPO', defaultValue: 'release-ci.daocloud.io/test-jzh/dao-2048', description: 'Image-name')
+            string(name: 'DOCKER_IMAGE_VERSION', defaultValue: 'v2.0', description: 'Image-version')
           }
           stages {
             stage('git clone') {
@@ -87,7 +87,7 @@ After the `Update app profile` step is successfully executed, Argo CD detects th
 
 ## Create continuous deployment applications
 
-1. Import argocd-example-apps repository in Http mode, [refer to steps](../user-guide/gitops/import-repo.md)
+1. Import argocd-example-apps repository in Http mode, [refer to steps](../user-guide/gitops/import-repo.md).
 
 2. Create a continuously deployed application
 
