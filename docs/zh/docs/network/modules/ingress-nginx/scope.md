@@ -98,13 +98,13 @@ spec:
 
 部署负载均衡器时，指定给某个工作空间使用后，此工作空间中对应当前集群下的命名空间，其中 Pod 都可以接收到由该负载均衡分发的请求。
 
-部署 Ingress-Ngnix 时 指定 在 `Namespace Selector` 中输入 `kubernetes.io/metadata.name :workspace01`,创建后的 Ingress 实例为 工作空间 `workspace01` 独享。
+部署 Ingress-Ngnix 时 指定 在 `Namespace Selector` 中输入 `workspace.ghippo.io/id:1235`,创建后的 Ingress 实例为 `ID`为`1235`的 工作空间独享。
 
-![工作空间Ingress](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/workspaceingress.jpg)
+![工作空间Ingress](../../images/workspaceingress.jpg)
 
 对应的 `value.yaml` 中的配置信息：
 
-![workspaceingress02](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/workspaceingress02.jpg)
+![workspaceingress02](../../images/workspaceingress02.jpg)
 
 Ingress 实例部署后，可在对应的命名空间中[创建 Ingress 规则](../../../kpanda/user-guide/network/create-ingress.md)，并选择对应实例的 Ingress Class 进行使用。
 
