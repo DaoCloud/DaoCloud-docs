@@ -52,7 +52,7 @@ DCE 5.0 包含的众多子模块可以单独下载，按需对每个模块进行
 | 多云编排 | 525.11 MB | [:arrow_right: 下载页](./modules/kairship.md)  | 2023-10-26 |
 | 镜像仓库 | 293.24 MB | [:arrow_right: 下载页](./modules/kangaroo.md)  | 2023-10-29 |
 | 可观测性 | 2.64 GB   | [:arrow_right: 下载页](./modules/insight.md)   | 2023-08-04 |
-| 微服务引擎 | 1.3 GB   | [:arrow_right: 下载页](./modules/skoala.md)   | 2023-10-27 |
+| 微服务引擎 | 1.3 GB   | [:arrow_right: 下载页](./modules/skoala.md)   | 2023-11-01 |
 | 服务网格 | 949.41 MB   | [:arrow_right: 下载页](./modules/mspider.md)   | 2023-10-27 |
 | 云边协同 | 94.2 MB   | [:arrow_right: 下载页](./modules/kant.md)      | 2023-09-19 |
 | 全局管理 | 440 MB    | [:arrow_right: 下载页](./modules/ghippo.md)    | 2023-09-04 |
