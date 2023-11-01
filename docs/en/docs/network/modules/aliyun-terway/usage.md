@@ -1,27 +1,26 @@
-# 使用文档
+# Usage
 
-本文将介绍如何在阿里云上通过 `kubeadm` 工具安装一套 kubernetes 集群，并且安装 Terway 作为集群的 CNI 插件。
+This page demonstrate how to install a Kubernetes Cluster with `kubeadm` on Alibaba Cloud and also have Terway as the cluster's CNI plugin.
 
-## 创建 ECS 实例
+## Create ECS Instances
 
-详细创建教程可参考阿里云官方文档，需要注意以下几点:
+For detailed instructions, please refer to the Alibaba Cloud documentation. However, keep in mind the following points:
 
-- 地域最好选择靠近您的地域，可降低网络时延、提高访问速度
-- 需要创建专有网络(若无)，并选择可用区。创建虚拟交换机用于节点和 Pod 使用
-- 根据实际需求选择实例规格，实例规格决定了 ECS 实例上 ENI 和 ENI 上辅助 IP 的数量，从而决定可运行 Pod 的数量(非 VPC 模式)
+- Choose a region closer to your location to reduce network latency and improve access speed.
+- If no VPC exists, create a VPC and select an available zone. This VPC will be used for node and Pod communication.
+- Select the appropriate instance specifications based on your requirements. These specifications determine the number of ENIs and secondary IPs available on the ECS instances, which affects the number of Pods that can be run (in non-VPC mode).
 
 ![create-ecs](../../images/ECS-Create.png)
 
-> 安装 Kubernetes 集群要求每台机器的 CPU >= 2, 内存 >= 2 GB.
+> Installing a Kubernetes cluster requires each machine to have a minimum of 2 CPUs and 2 GB of memory.
 
-## 搭建 Kubernetes 集群
+## Set up the Kubernetes Cluster
 
-参考 [官方文档](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/), 在控制节点安装 kubeadm、kubectl。
-在控制节点和工作节点安装: kubelet、容器运行时(如 containerd)。
+Refer to the [official documentation](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/) to install kubeadm and kubectl on the control plane node. Install kubelet and a container runtime (e.g., containerd) on both the control plane and worker nodes.
 
 !!! note
 
-    需要修改每个节点 kubelet 的配置文件: `/usr/lib/systemd/system/kubelet.service.d/10-kubeadm.conf`, 配置 `--provider-id`:
+    Modify the kubelet configuration file (`/usr/lib/systemd/system/kubelet.service.d/10-kubeadm.conf`) on each node and configure `--provider-id`:
 
     ```shell
     META_EP=http://100.100.100.200/latest/meta-data
@@ -32,7 +31,7 @@
     ...
     ```
 
-以 containerd 作为容器运行时为例，使用以下配置安装集群:
+Taking containerd as an example for the container runtime, use the following configuration to install the cluster:
 
 ```yaml
 [root@iZ2v]# cat cluster.yaml
@@ -75,17 +74,17 @@ networking:
 [root@iZ2v]# kubeadm init --config cluster.yaml
 ```
 
-> 规划 serviceSubnet 和 podSubnet 不冲突
-> 
-> 可使用 `k8s.m.daocloud.io` 作为镜像加速站
+> Plan the serviceSubnet and podSubnet to avoid conflicts.
+>
+> You can use `k8s.m.daocloud.io` as a mirror acceleration site.
 
-创建集群之后，在工作节点使用 `kubeadm join` 加入工作节点到集群。
+After creating the cluster, use `kubeadm join` on join the worker node to the cluster.
 
-## 安装网络插件
+## Install Network Plugin
 
-### 安装 Terway CNI 插件
+### Install Terway CNI Plugin
 
-1. 在安装之前，Terway 访问阿里云 OpenAPI 需要得到 [RAM 权限](https://ram.console.aliyun.com/) 的 `access_id` 和 `access_key`，通过脚本编辑新建自定义权限策略，赋予 Terway 需要的权限:
+1. Before installation, Terway requires access to Alibaba Cloud OpenAPI using the `access_id` and `access_key` of a [RAM role](https://ram.console.aliyun.com/). Create a custom permission policy script granting Terway the necessary permissions:
 
     ```json
     {
@@ -122,31 +121,31 @@ networking:
     }
     ```
 
-    > 注: 为确保后续步骤中所使用的 RAM 用户具备足够的权限，请与本文保持一致，给予 RAM 用户 AdministratorAccess 和 AliyunSLBFullAccess 权限
+    > To ensure that the RAM user used in the subsequent steps has sufficient permissions, grant the RAM user the AdministratorAccess and AliyunSLBFullAccess permissions.
 
     ![edit-ram](../../images/custom-ram.png)
 
-    当创建完成，将该自定义权限策略绑定到用户或用户组:
+    Once created, bind the custom permission policy to the user or user group:
 
     ![bind_ram](../../images/bind_ram.png)
 
-    最后点击创建 AccessKey，并保存 `access_secret` 和 `access_key`，这需要在下面安装 Terway 的时候用到。
+    Finally, create an AccessKey and save the `access_secret` and `access_key`, as you will need them during the Terway installation.
 
     ```shell 
     [root@iZ2v]# export ACCESS_KEY_ID=LTAI********************
     [root@iZ2v]# export ACCESS_KEY_SECRET=HAeS**************************
     ```
 
-2. 安装 Terway CNI 插件。
+2. Install Terway CNI Plugin.
 
-    安装之前，需要更新[部署文件](../../yamls/terway.yaml)中 eni-config 的 configMap:
+    Before installation, update the configMap of eni-config in the deployment file:
 
-    - 更新 `access_secret` 和 `access_key`
-    - 更新 vswitches, 这将决定 ENI模式下，Pod 将从哪个虚拟机交换机分配 IP 地址。格式为: "vswitches": {"cn-chengdu-a":["vsw-xxxx"]}。表示某个可用区下的虚拟交换机列表。
-    - 更新 security_group，填写安全组ID, 这是集群级别生效。
-    - 确保 service_cidr 为集群 service_subnet。
+    - Update the `access_secret` and `access_key`
+    - Update the vswitches to determine the virtual switch responsible for assigning Pod addresses in ENI mode. The format is: "vswitches": {"cn-chengdu-a":["vsw-xxxx"]}, representing a list of virtual switches in a specific availability zone.
+    - Update the security_group by providing the security group ID for cluster-wide effect.
+    - Ensure that service_cidr matches the cluster's service_subnet.
 
-    执行安装:
+    Run the installation:
 
     ```shell
     [root@iZ2v]# kubectl apply -f  terway.yaml
@@ -156,11 +155,11 @@ networking:
     terway-z5cvh                                                2/2     Running   0           3m   192.168.200.1   cn-chengdu.i-2vcxxxxx   <none>           <none>
     ```
 
-### 安装 CCM 组件，发布 VPC 路由
+### Install the CCM Component and Publish VPC Routes
 
-CCM 组件用于发布 Pod 跨节点访问路由以及 LoadBalancer Service 的实现:
+The CCM component is used to publish Pod-to-Pod routes across nodes and implement LoadBalancer Service:
 
-1. 安装 ccm 的 configMap: cloud-config。 需要将 access 凭证进行 base64 转码:
+1. Install the configMap cloud-config for CCM. Encode the access credentials using base64:
 
     ```shell
     [root@iZ2v]# accessKeyIDBase64=`echo -n "$ACCESS_KEY_ID" |base64 -w 0`
@@ -182,27 +181,27 @@ CCM 组件用于发布 Pod 跨节点访问路由以及 LoadBalancer Service 的�
     EOF
     ```
 
-2. 安装 CCM 组件, manifests 存放于 [cloud-controller-manager.yaml](../../yamls/cloud-controller-manager.yaml)。
+2. Install the CCM component with the manifests provided in [cloud-controller-manager.yaml](../../yamls/cloud-controller-manager.yaml).
 
-    > 注意需要修改 `cluster_cidr` 为你集群真实的 podSubnet(10.244.0.0/16)。
+    > It requires to modify `cluster_cidr` to match your actual podSubnet(10.244.0.0/16).
 
-    执行安装:
+    Run the installation:
 
     ```shell
     [root@iZ2v]# kubectl apply -f cloud-controller-manager.yaml
     ```
 
-3. 安装成功后，可在阿里云管理界面查看 VPC 路由已经成功同步:
+3. After installation, verify that the VPC routes have synchronized by checking the Alibaba Cloud management console:
 
     ![ccm-route](../../images/ccm-route.png)
 
-    访问 Pod 子网路由的下一跳指向该节点。
+    The next hop for accessing Pod subnets points to the node.
 
-## 验证
+## Verification
 
-### VPC 模式
+### VPC Mode
 
-下面将通过创建测试应用验证安装:
+To verify the installation, create a test application:
 
 ```shell
 cat << EOF | kubectl apply -f -
@@ -234,11 +233,12 @@ spec:
 EOF
 ```
 
-创建完成后，经过测试: 网络联通正常(包括 Pod -> Pod, Pod -> Service, nodePort, LoadBalancer Service)，网络策略等功能正常。
+After creation, the tests show normal network connectivity, including Pod -> Pod, Pod -> Service, nodePort, LoadBalancer Service.
+and network policies and other features are working as expected.
 
-### 使用ENI模式
+### ENI Mode
 
-在 VPC 模式下，Pod 的 IP 是来自虚拟子网，并且不会使用任何的弹性网卡。如果你想要 Pod 独占 ENI，在 VPC 模式，你可以过下面的方式实现:
+In VPC mode, Pods obtain their IP addresses from the virtual subnet without using any ENIs. If you want a Pod to exclusively use an ENI in VPC mode, you can achieve this with the following way:
 
 ```shell
 cat << EOF | kubectl apply -f -
@@ -272,7 +272,7 @@ spec:
 EOF
 ```
 
-> 通过在 resources 中声明: aliyun/eni: 1, 使 Pod 独占 ENI 网卡。
+> Declare aliyun/eni: 1 in the resources configuration to make the Pod exclusively use the ENI network card.
 
 ```shell
 [root@iZ2v vpc]# kubectl get po -o wide | grep eni
@@ -280,13 +280,13 @@ dao2048-eni-7f85b8dcc4-6v97q   1/1     Running   0              15s   192.168.20
 dao2048-eni-7f85b8dcc4-mvjbs   1/1     Running   0              15s   192.168.20.223   cn-chengdu.i-2vcxxxxxxxx   <none>           <none>
 ```
 
-可以发现该 Pod 的 IP 与节点是同一网段，属于同一个 VPC 网卡，并且其 IP 是 ENI 网卡的主私网 IP。
+You will notice that the Pod's IP address is in the same subnet as the node, belonging to the same VPC network card, and its IP is the primary private IP of the ENI.
 
 ![eni_ip](../../images/eni_ip.png)
 
-经过测试，当设置 LoadBalancer/NodePort Service 的 **_ExternalTrafficPolicy 为 Local_** 时，会出现通信问题，参考 [#531](https://github.com/AliyunContainerService/terway/issues/531)
+During testing, it was observed that setting the **_ExternalTrafficPolicy to Local_** for LoadBalancer/NodePort Services may cause communication issues. Refer to [the issue](https://github.com/AliyunContainerService/terway/issues/531) for details.
 
-### ENIIP 模式(对自建集群支持不够)
+### ENIIP Mode (Limited support for self-built clusters)
 
-- 自建集群安装 Veth 模式失败，详见 [#Issue 524](https://github.com/AliyunContainerService/terway/issues/524), 所以暂不支持 Veth 模式。
-- 自建集群安装 IPVlan 模式后，有各种通信问题(Node 访问 Pod 及 LoadBalancer Service不通)，详见 [#Discussion 306](https://github.com/AliyunContainerService/terway/discussions/306), 所以暂不推荐使用此模式。
+- Installation of the Veth mode might fail in self-built clusters. Refer to [#Issue 524](https://github.com/AliyunContainerService/terway/issues/524) for details. Therefore, Veth mode is not recommended.
+- After installing the ipvlan mode in self-built clusters, various communication issues may arise, such as Node being unable to access Pods or LoadBalancer Service. Refer to [#Discussion 306](https://github.com/AliyunContainerService/terway/discussions/306) for more information. Therefore, this mode is not recommended.
