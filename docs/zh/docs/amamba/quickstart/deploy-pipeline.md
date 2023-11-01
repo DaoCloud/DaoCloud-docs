@@ -4,8 +4,10 @@
 
 ## 前提条件
 
-- 需创建一个工作空间和一个用户，该用户需加入该工作空间并赋予 `workspace edit` 角色。参考[创建工作空间](../../ghippo/user-guide/workspace/workspace.md)、[用户和角色](../../ghippo/user-guide/access-control/user.md)。
-- 创建可以访问镜像仓库、集群的两个凭证，分别命名为：`registry`、`kubeconfig`。创建凭证的更多信息，请参考[凭证管理](../user-guide/pipeline/credential.md)。
+- 需创建一个工作空间和一个用户，该用户需加入该工作空间并赋予 `workspace edit` 角色。
+  参考[创建工作空间](../../ghippo/user-guide/workspace/workspace.md)、[用户和角色](../../ghippo/user-guide/access-control/user.md)。
+- 创建可以访问镜像仓库、集群的两个凭证，分别命名为：`registry`、`kubeconfig`。
+  创建凭证的更多信息，请参考[凭证管理](../user-guide/pipeline/credential.md)。
 - 准备一个 GitHub 仓库、DockerHub 仓库。
 
 ## 创建凭证
@@ -119,11 +121,11 @@
 
     - 在步骤模块中选择开启`使用凭证`，在弹出的对话框中填写相关参数，然后点击`确定`。
 
-         - 凭证：选择 kubeconfig 类型的凭证。
+        - 凭证：选择 kubeconfig 类型的凭证。
 
-         - kubeconfig 变量：如果您使用的是 kubectl apply 的部署方式，变量值必须为 KUBECONFIG。
+        - kubeconfig 变量：如果您使用的是 kubectl apply 的部署方式，变量值必须为 KUBECONFIG。
 
-         ![quickstart03](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/quickstart03.png)
+        ![quickstart03](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/quickstart03.png)
 
     - 点击`添加步骤`以进行集群部署操作，在弹出的对话框中步骤类型下选择 shell，参并在命令行中输入以下命令，然后点击`确定`。
 
