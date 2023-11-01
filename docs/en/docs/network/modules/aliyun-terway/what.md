@@ -48,11 +48,6 @@ In the ipvlan mode, Terway leverages the Cilium CNI chaining. It uses ipvlan as 
 
 ![eniip-ipvlan](../../images/terway_cilium.png)
 
-- 使用的是 IPVlan L2 模式
-- 会为每一个用于 Pod 的弹性网卡创建子接口，解决父子接口不通的问题
-- Pod 内只有一张 eth0 网卡，并且 Pod 的网关指向 VPC 网络，这意味着 Pod 访问外部时不会经过主机转发
-- 依赖 Cilium 实现 Service 解析以及 NetworkPolicy
-- 有内核版本要求，必须大于 4.2
 - ipvlan operates in L2 mode
 - Each ENI used by Pods has a corresponding subinterface, resolving communication issues between parent and child interfaces.
 - Each Pod has a single eth0 interface, and its gateway is directed to the VPC network. This allows Pods to access external resources without passing through host forwarding.
