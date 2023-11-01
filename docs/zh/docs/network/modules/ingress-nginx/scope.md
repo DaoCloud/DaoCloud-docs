@@ -61,7 +61,7 @@ spec:
 
 ## 工作空间 Ingress 实例
 
-当创建 Ingress 实例时，如果启用 `Ingress Scope`，IngressClass 设置了 `.spec.parameters`，并且设置 `.spec.parameters.scope` 为 `namespaceSelector`，并输入的 Label 为 `workspace.ghippo.io/id='12345'`(其中 `12345` 为指定的工作空间 `workspace01`  ID)，那么 Ingress 实例的 Ingress Class 指向为`命名空间`，适用范围为`workspace01`中所有在当前集群的命名空间。
+当创建 Ingress 实例时，如果启用 `Ingress Scope`，IngressClass 设置了 `.spec.parameters`，并且设置 `.spec.parameters.scope` 为 `namespaceSelector`，并输入的 Label 为 `workspace.ghippo.io/id='12345'`(其中 `12345` 为指定的工作空间 `workspace01`  ID)，那么 Ingress 实例的 Ingress Class 指向为`工作空间`，适用范围为`workspace01`中所有在当前集群的命名空间。
 
 租户级的 Ingress 实例，相当于管理员将 Ingress 的使用权限下发给到某个工作空间，从而实现租户资源隔离。
 
