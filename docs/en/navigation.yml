@@ -223,7 +223,7 @@ nav:
                   - GPU Matrix: kpanda/user-guide/gpu/gpu_matrix.md
                   - NVIDIA GPU Management:
                       - NVIDIA GPU Modes: kpanda/user-guide/gpu/nvidia/index.md
-                      - Install GPU Operator: 
+                      - Install GPU Operator:
                           - Install GPU Operator: kpanda/user-guide/gpu/nvidia/install_nvidia_driver_of_operator.md
                           - Build Offline yum Source for CentOS 7.9: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_centos7_9.md
                           - Upload RedHat GPU Opreator Image to Bootstrap Registry: kpanda/user-guide/gpu/nvidia/push_image_to_repo.md
@@ -422,6 +422,9 @@ nav:
                   - Intro: network/modules/submariner/index.md
                   - Install: network/modules/submariner/install.md
                   - Use: network/modules/submariner/usage.md
+              - Terway:
+                  - Intro: network/modules/aliyun-terway/index.md
+                  - Terway Network: network/modules/aliyun-terway/what.md
           - Cloud Native Storage:
               - Intro:
                   - What is storage: storage/index.md
