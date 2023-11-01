@@ -26,6 +26,6 @@
 
 ## 在 Harbor 中查看镜像安全扫描信息
 
-在 Harbor 中依次访问 `项目` → `镜像仓库`，查看镜像的漏洞信息。
+在 Harbor 中依次访问 `项目` -> `镜像仓库`，查看镜像的漏洞信息。
 
 ![harbor](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/harbor05.png)

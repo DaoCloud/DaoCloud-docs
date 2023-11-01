@@ -12,11 +12,12 @@
 
     ![配置项](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipeline-node02.png)
 
-3. 搜索 `jenkins-casc-config`，在列表选择`编辑 YAML` 。
+3. 搜索 `jenkins-casc-config`，在列表选择`编辑 YAML`。
 
     ![编辑 YAML](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipeline-node03.png)
 
-4. 在 YAML 配置项 `jenkins.yaml` 中的 `jenkins.cloud.kubernetes.templates` 位置下为某个具体的 Agent 添加 `nodeSelector: "ci=base"` ，点击`确定`保存更改。
+4. 在 YAML 配置项 `jenkins.yaml` 中的 `jenkins.cloud.kubernetes.templates` 位置下为某个具体的
+   Agent 添加 `nodeSelector: "ci=base"`，点击`确定`保存更改。
 
     ![添加selector](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipeline-node04.png)
 
@@ -26,7 +27,7 @@
 
     ![节点管理](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipeline-node05.png)
 
-2. 选择目标的工作节点（例如 demo-dev-worker-03），点击`修改标签` 。
+2. 选择目标的工作节点（例如 demo-dev-worker-03），点击`修改标签`。
 
     ![修改标签](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipeline-node06.png)
 
@@ -38,11 +39,11 @@
 
 首先需要讲通过 NodePort 方式暴露 Jenkins Dashbord 的访问地址（其他暴露方式根据业务实际情况进行暴露）。
 
-1. 进入`容器管理`模块，在 `kpanda-global-cluster` 集群页面，在左侧导航栏点击`容器网络` ->`服务`。
+1. 进入`容器管理`模块，在 `kpanda-global-cluster` 集群页面，在左侧导航栏点击`容器网络` -> `服务`。
 
     ![进入服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipeline-node08.png)
 
-2. 搜索 `amamba-jenkins`，在列表选择`更新` 。
+2. 搜索 `amamba-jenkins`，在列表选择`更新`。
 
     ![更新jenkins](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipeline-node09.png)
 
@@ -54,19 +55,19 @@
 
     ![访问jenkins dashboard](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipeline-node11.png)
 
-5. 输入账号/密码（默认为 `admin/Admin01`） ，进入到 Jenkins Dashboard 页面。
+5. 输入账号/密码（默认为 `admin/Admin01`），进入到 Jenkins Dashboard 页面。
 
     ![登录](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipeline-node12.png)
 
-6. 在左侧导航栏选择 `Manage Jenkins` 。
+6. 在左侧导航栏选择 `Manage Jenkins`。
 
     ![manage jennkins](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipeline-node13.png)
 
-7. 点击 `Configuration as Code` 。
+7. 点击 `Configuration as Code`。
 
     ![configascode](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipeline-node14.png)
 
-8. 在 `Configuration as Code` 点击 `Reload existing configuration` 。如果点击后在当前页面没有任何提示，说明配置加载生效。
+8. 在 `Configuration as Code` 点击 `Reload existing configuration`。如果点击后在当前页面没有任何提示，说明配置加载生效。
 
     ![reload](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipeline-node15.png)
 
@@ -100,7 +101,8 @@
 
     !!! note
 
-        需要注意 agent 部分需要选择 label 为 base。因为在配置文件中只为 base 设置了指定节点，如果需要为其他的 agent 设置。重复上述操作即可。
+        需要注意 agent 部分需要选择 label 为 base。因为在配置文件中只为 base 设置了指定节点，
+        如果需要为其他的 agent 设置。重复上述操作即可。
 
 2. 点击`立即执行` 该流水线，前往`容器管理`查看执行该任务的 Pod 运行的节点。
 

@@ -45,7 +45,7 @@
 
 迭代版本：1.22 alpha，1.27 到达 beta 版本
 
-追踪的组件：API → etcd tracing
+追踪的组件：API -> etcd tracing
 
 ## 演示
 

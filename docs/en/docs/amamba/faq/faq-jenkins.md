@@ -19,7 +19,7 @@ In the pipeline's Jenkinsfile, change the deployment command from `kubectl apply
 
 The Workbench module declares 7 labels with the podTemplate CRD: `base`, `maven`, `mavenjdk11`, `go`, `go16`, `node.js`, and `python`. You can specify an Agent label to use the corresponding podTemplate for your applications. If these build-in images cannot satisfy your need, update or add images with the following steps.
 
-1. Go to the Container Management module and click the name of the cluster where the Jenkins component is running.
+1. Go to the `Container Management` module and click the name of the cluster where the Jenkins component is running.
 
 2. In the left navigation bar, click `ConfigMaps & Secrets` -> `ConfigMaps`.
 
