@@ -134,6 +134,7 @@ nav:
                   - Cluster Status: kpanda/user-guide/clusters/cluster-status.md
                   - Choose Runtime: kpanda/user-guide/clusters/runtime.md
                   - Cluster Versions: kpanda/user-guide/clusters/cluster-version.md
+                  - Integrate Rancher Cluster: kpanda/user-guide/clusters/integrate-rancher-cluster.md
               - Namespaces:
                   - Create Namespace: kpanda/user-guide/namespaces/createns.md
                   - Exclusive Node to Namespace: kpanda/user-guide/namespaces/exclusive.md
@@ -171,6 +172,8 @@ nav:
                   - Helm Apps: kpanda/user-guide/helm/helm-app.md
                   - Helm Registries: kpanda/user-guide/helm/helm-repo.md
                   - Multi-architecture Helm Apps: kpanda/user-guide/helm/multi-archi-helm.md
+              - Operator:
+                  - Import Offline MinIo Operator: kpanda/user-guide/olm/import-miniooperator.md
               - Container Network:
                   - Create Service: kpanda/user-guide/network/create-services.md
                   - Create Ingress: kpanda/user-guide/network/create-ingress.md

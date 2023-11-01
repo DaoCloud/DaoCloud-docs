@@ -1,23 +1,23 @@
-# 接入 rancher 集群
+# Integrate the Rancher Cluster
 
-本文介绍如何接入 rancher 集群。
+This guide explains how to integrate a Rancher cluster.
 
-## 前提条件
+## Prerequisites
 
-- 准备一个具有管理员权限的待接入 ranhcer 集群，确保容器管理集群和待接入集群之间网络通畅。
-- 当前操作用户应具有 [`kpanda owner`](../permissions/permission-brief.md) 或更高权限。
+- Prepare a Rancher cluster with administrator privileges and ensure network connectivity between the container management cluster and the target cluster.
+- The current user performing the operation should have [`kpanda owner`](../permissions/permission-brief.md) or higher permissions.
 
-## 操作步骤
+## Steps
 
-### 步骤一：在 rancher 集群创建具有管理员权限的 ServiceAccount 用户
+### Step 1: Create a ServiceAccount user with administrator privileges in the Rancher cluster
 
-1. 使用具有管理员权限的角色进入 rancher 集群，并使用终端新建一个名为 `sa.yaml` 的文件。
+1. Log in to the Rancher cluster with a role that has administrator privileges, and create a file named `sa.yaml` using the terminal.
 
     ```bash
     vi sa.yaml
     ```
 
-    然后按下 i 键进入插入模式，输入以下内容：
+    Press the `i` key to enter insert mode, and enter the following content:
 
     ```yaml title="sa.yaml"
     apiVersion: rbac.authorization.k8s.io/v1
@@ -56,15 +56,15 @@
       namespace: kube-system
     ```
 
-    按下 `Esc` 键退出插入模式，然后输入 `:wq` 保存并退出。
+    Press the `Esc` key to exit insert mode, then enter `:wq` to save and exit.
 
-2. 在当前路径下执行如下命令新建名为 `rancher-rke` 的 ServiceAccount（以下简称为 `SA`）：
+2. Run the following command in the current directory to create a ServiceAccount named `rancher-rke` (referred to as `SA` for short):
 
     ```bash
     kubectl apply -f sa.yaml
     ```
 
-    预期输出如下：
+    The expected output is as follows:
 
     ```console
     clusterrole.rbac.authorization.k8s.io/rancher-rke created
@@ -72,7 +72,7 @@
     serviceaccount/rancher-rke created
     ```
 
-3. 创建名为 `rancher-rke-secret` 的密钥，并将密钥和 `rancher-rke` SA 绑定。
+3. Create a secret named `rancher-rke-secret` and bind the secret to the `rancher-rke` SA.
 
     ```bash
     kubectl apply -f - <<EOF
@@ -87,7 +87,7 @@
     EOF
     ```
 
-    预期输出如下：
+    The output is similar to:
 
     ```bash
     secret/rancher-rke-secret created
@@ -95,27 +95,27 @@
 
     !!! note
 
-        如果您的集群版本低于 1.24，请忽略此步骤，直接前往下一步。
+        If your cluster version is lower than 1.24, please ignore this step and proceed to the next one.
 
-4. 查找 `rancher-rke` SA 的密钥：
+4. Check secret for `rancher-rke` SA:
 
     ```bash
     kubectl -n kube-system get secret | grep rancher-rke | awk '{print $1}'
     ```
 
-    预期输出：
+    The output is similar to:
 
     ```bash
     rancher-rke-secret
     ```
 
-    查看密钥 `rancher-rke-secret` 的详情：
+    Check the `rancher-rke-secret` secret:
 
     ```bash
     kubectl -n kube-system describe secret rancher-rke-secret
     ```
 
-    预期输出：
+    The output is similar to:
 
     ```console
     Name:         rancher-rke-secret
@@ -133,62 +133,62 @@
     token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IjUtNE9nUWZLRzVpbEJORkZaNmtCQXhqVzRsZHU4MHhHcDBfb0VCaUo0V1kifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJyYW5jaGVyLXJrZS1zZWNyZXQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoicmFuY2hlci1ya2UiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiJkODNkZjVkOS1iZDdkLTQ4OGQtYTA0Ni1iNzQwNjE4YTAxNzQiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06cmFuY2hlci1ya2UifQ.VNsMtPEFOdDDeGt_8VHblcMRvjOwPXMM-79o9UooHx6q-VkHOcIOp3FOT2hnEdNnIsyODZVKCpEdCgyozX-3y5x2cZSZpocnkMcBbQm-qfTyUcUhAY7N5gcYUtHUhvRAsNWJcsDCn6d96gT_qo-ddo_cT8Ri39Lc123FDYOnYG-YGFKSgRQVy7Vyv34HIajZCCjZzy7i--eE_7o4DXeTjNqAFMFstUxxHBOXI3Rdn1zKQKqh5Jhg4ES7X-edSviSUfJUX-QV_LlAw5DuAyGPH7bDH4QaQ5k-p6cIctmpWZE-9wRDlKA4LYRblKE7MJcI6OmM4ldlMM0Jc8N-gCtl4w
     ```
 
-### 步骤二：在本地使用 rancher-rke SA 的认证信息更新 kubeconfig 文件
+### Step 2: Update kubeconfig with the rancher-rke SA authentication on your local machine
 
-在任意一台安装了 `kubelet` 的本地节点执行如下操作：
+Perform the following steps on any local node where `kubelet` is installed:
 
-1. 配置 kubelet token：
+1. Configure kubelet token.
 
     ```bash
     kubectl config set-credentials rancher-rke --token=`rancher-rke-secret` 里面的 token 信息
     ```
 
-    例如：
+    For example,
 
     ```
     kubectl config set-credentials eks-admin --token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjUtNE9nUWZLRzVpbEJORkZaNmtCQXhqVzRsZHU4MHhHcDBfb0VCaUo0V1kifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJyYW5jaGVyLXJrZS1zZWNyZXQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoicmFuY2hlci1ya2UiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiJkODNkZjVkOS1iZDdkLTQ4OGQtYTA0Ni1iNzQwNjE4YTAxNzQiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06cmFuY2hlci1ya2UifQ.VNsMtPEFOdDDeGt_8VHblcMRvjOwPXMM-79o9UooHx6q-VkHOcIOp3FOT2hnEdNnIsyODZVKCpEdCgyozX-3y5x2cZSZpocnkMcBbQm-qfTyUcUhAY7N5gcYUtHUhvRAsNWJcsDCn6d96gT_qo-ddo_cT8Ri39Lc123FDYOnYG-YGFKSgRQVy7Vyv34HIajZCCjZzy7i--eE_7o4DXeTjNqAFMFstUxxHBOXI3Rdn1zKQKqh5Jhg4ES7X-edSviSUfJUX-QV_LlAw5DuAyGPH7bDH4QaQ5k-p6cIctmpWZE-9wRDlKA4LYRblKE7MJcI6OmM4ldlMM0Jc8N-gCtl4w
     ```
 
-2. 配置 kubelet APIServer 信息：
+2. Configure the kubelet APIServer information:
 
     ```bash
-    kubectl config set-cluster {集群名} --insecure-skip-tls-verify=true --server={APIServer}
+    kubectl config set-cluster {cluster-name} --insecure-skip-tls-verify=true --server={APIServer}
     ```
 
-    - `{集群名}`：指 rancher 集群的名称。
-    - `{APIServer}`：指集群的访问地址，一般为集群控制节点 IP + 6443 端口，如 `https://10.X.X.X:6443`
+    - `{cluster-name}`: Refers to the name of your Rancher cluster.
+    - `{APIServer}`: Refers to the access address of the cluster, usually the IP address of the control node + port 6443, such as `https://10.X.X.X:6443`.
 
-    例如：
+    For example,
 
     ```bash
     kubectl config set-cluster rancher-rke --insecure-skip-tls-verify=true --server=https://10.X.X.X:6443
     ```
 
-3.  配置 kubelet 上下文信息：
+3.  Configure the kubelet context:
 
     ```bash
-    kubectl config set-context {上下文名称} --cluster={集群名} --user={SA 用户名}
+    kubectl config set-context {context-name} --cluster={cluster-name} --user={SA-usename}
     ```
 
-    例如：
+    For example, 
 
     ```bash
     kubectl config set-context rancher-rke-context --cluster=rancher-rke --user=rancher-rke
     ```
 
-4. 在 kubelet 中指定我们刚刚新建的上下文 `rancher-rke-context`：
+4. Specify the newly created context `rancher-rke-context` in kubelet.
 
     ```bash
     kubectl config use-context rancher-rke-context
     ```
 
-5. 获取上下文 `rancher-rke-context` 中的 kubeconfig 信息。
+5. Retrieve the kubeconfig information for the context `rancher-rke-context`.
 
     ```bash
     kubectl config view --minify --flatten --raw
     ```
 
-    预期输出：
+    The output is similar to:
 
     ```yaml
     apiVersion: v1
@@ -210,6 +210,6 @@
       user:
         token: eyJhbGciOiJSUzI1NiIsImtpZCI6ImcxTjJwNkktWm5IbmRJU1RFRExvdWY1TGFWVUtGQ3VIejFtNlFQcUNFalEifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2V
 
-### 步骤三：在 DCE 界面接入集群
+### Step 3: Connect the Cluster in the DCE Interface
 
-使用刚刚获取的 kubeconfig 文件，参考[接入集群](./integrate-cluster.md)文档，将 rancher 集群接入 rancher 集群。
+Using the kubeconfig file obtained earlier, refer to the [Integrate Cluster](./integrate-cluster.md) documentation to connect the Rancher cluster to the Rancher cluster.

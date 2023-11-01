@@ -123,7 +123,7 @@ hide:
     ```bash
     $ docker run --user root  -v $PWD:/minio-operator  -w /minio-operator ${OPM_IMG} index add  --bundles ${OFFLINE_BUNDLE_IMG} --generate --binary-image ${OPM_IMG} --skip-tls-verify
 
-     #预期结果
+    # 预期结果
     .
     ├── bundle.Dockerfile
     ├── database
