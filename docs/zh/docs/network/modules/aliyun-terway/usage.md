@@ -2,14 +2,6 @@
 
 本文将介绍如何在阿里云上通过 `kubeadm` 工具安装一套 kubernetes 集群，并且安装 Terway 作为集群的 CNI 插件。
 
-术语解释:
-
-* ECS 实例: 对应 Kubernetes 的节点
-* 弹性网卡（Elastic Network Interfaces，简称ENI): 是专有网络 VPC 中的虚拟网络接口，用于连接云服务器ECS 与 专有网络。
-* 辅助IP: 弹性网卡（包括主网卡和辅助弹性网卡）支持分配一个或多个辅助私网IP地址
-* 虚拟交换机: ECS使用的交换机，用于节点间网络通信
-* Pod虚拟交换机: Pod地址从该交换机分配，用于Pod网络通信。Terway网络模式下，Pod分配的Pod IP就是从这个交换机网段内获取。
-
 ## 创建 ECS 实例
 
 详细创建教程可参考阿里云官方文档，需要注意以下几点:
@@ -22,21 +14,23 @@
 
 > 安装 Kubernetes 集群要求每台机器的 CPU >= 2, 内存 >= 2 GB.
 
-## 搭建Kubernetes集群
+## 搭建 Kubernetes 集群
 
-参考 [官方文档](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/), 在控制节点安装 kubeadm、kubectl.
+参考 [官方文档](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/), 在控制节点安装 kubeadm、kubectl。
 在控制节点和工作节点安装: kubelet、容器运行时(如 containerd)。
 
-> 注意: 需要修改每个节点 kubelet 的配置文件: `/usr/lib/systemd/system/kubelet.service.d/10-kubeadm.conf`, 配置 `--provider-id`:
+!!! note
 
-```shell
-META_EP=http://100.100.100.200/latest/meta-data
-provider_id=`curl -s $META_EP/region-id`.`curl -s $META_EP/instance-id`
-vi /usr/lib/systemd/system/kubelet.service.d/10-kubeadm.conf
-...
-Environment="KUBELET_EXTRA_ARGS=--hostname-override=${provider_id} --provider-id=${provider_id}"
-...
-```
+    需要修改每个节点 kubelet 的配置文件: `/usr/lib/systemd/system/kubelet.service.d/10-kubeadm.conf`, 配置 `--provider-id`:
+
+    ```shell
+    META_EP=http://100.100.100.200/latest/meta-data
+    provider_id=`curl -s $META_EP/region-id`.`curl -s $META_EP/instance-id`
+    vi /usr/lib/systemd/system/kubelet.service.d/10-kubeadm.conf
+    ...
+    Environment="KUBELET_EXTRA_ARGS=--hostname-override=${provider_id} --provider-id=${provider_id}"
+    ...
+    ```
 
 以 containerd 作为容器运行时为例，使用以下配置安装集群:
 
@@ -91,77 +85,76 @@ networking:
 
 ### 安装 Terway CNI 插件
 
-* 在安装之前，Terway 访问阿里云 Openapi 需要得到 [RAM 权限](https://ram.console.aliyun.com/) 的 `access_id` 和 `access_key`，通过脚本编辑新建自定义权限策略，赋予 Terway
-  需要的权限:
+1. 在安装之前，Terway 访问阿里云 OpenAPI 需要得到 [RAM 权限](https://ram.console.aliyun.com/) 的 `access_id` 和 `access_key`，通过脚本编辑新建自定义权限策略，赋予 Terway 需要的权限:
 
-```json
-{
-  "Version": "1",
-  "Statement": [{
-      "Action": [
-        "ecs:CreateNetworkInterface",
-        "ecs:DescribeNetworkInterfaces",
-        "ecs:AttachNetworkInterface",
-        "ecs:DetachNetworkInterface",
-        "ecs:DeleteNetworkInterface",
-        "ecs:DescribeInstanceAttribute",
-        "ecs:DescribeInstanceTypes",
-        "ecs:AssignPrivateIpAddresses",
-        "ecs:UnassignPrivateIpAddresses",
-        "ecs:DescribeInstances",
-        "ecs:ModifyNetworkInterfaceAttribute"
-      ],
-      "Resource": [
-        "*"
-      ],
-      "Effect": "Allow"
-    },
+    ```json
     {
-      "Action": [
-        "vpc:DescribeVSwitches"
-      ],
-      "Resource": [
-        "*"
-      ],
-      "Effect": "Allow"
+      "Version": "1",
+      "Statement": [{
+          "Action": [
+            "ecs:CreateNetworkInterface",
+            "ecs:DescribeNetworkInterfaces",
+            "ecs:AttachNetworkInterface",
+            "ecs:DetachNetworkInterface",
+            "ecs:DeleteNetworkInterface",
+            "ecs:DescribeInstanceAttribute",
+            "ecs:DescribeInstanceTypes",
+            "ecs:AssignPrivateIpAddresses",
+            "ecs:UnassignPrivateIpAddresses",
+            "ecs:DescribeInstances",
+            "ecs:ModifyNetworkInterfaceAttribute"
+          ],
+          "Resource": [
+            "*"
+          ],
+          "Effect": "Allow"
+        },
+        {
+          "Action": [
+            "vpc:DescribeVSwitches"
+          ],
+          "Resource": [
+            "*"
+          ],
+          "Effect": "Allow"
+        }
+      ]
     }
-  ]
-}
-```
+    ```
 
-> 注: 为确保后续步骤中所使用的 RAM 用户具备足够的权限，请与本文保持一致，给予 RAM 用户 AdministratorAccess 和 AliyunSLBFullAccess 权限
+    > 注: 为确保后续步骤中所使用的 RAM 用户具备足够的权限，请与本文保持一致，给予 RAM 用户 AdministratorAccess 和 AliyunSLBFullAccess 权限
 
-![edit-ram](../../images/custom-ram.png)
+    ![edit-ram](../../images/custom-ram.png)
 
-当创建完成，将该自定义权限策略绑定到用户或用户组:
+    当创建完成，将该自定义权限策略绑定到用户或用户组:
 
-![bind_ram](../../images/bind_ram.png)
+    ![bind_ram](../../images/bind_ram.png)
 
-最后点击创建 AccessKey，并保存 `access_secret` 和 `access_key`，这需要在下面安装 Terway 的时候用到。
+    最后点击创建 AccessKey，并保存 `access_secret` 和 `access_key`，这需要在下面安装 Terway 的时候用到。
 
-```shell 
-[root@iZ2v]# export ACCESS_KEY_ID=LTAI********************
-[root@iZ2v]# export ACCESS_KEY_SECRET=HAeS**************************
-```
+    ```shell 
+    [root@iZ2v]# export ACCESS_KEY_ID=LTAI********************
+    [root@iZ2v]# export ACCESS_KEY_SECRET=HAeS**************************
+    ```
 
-* 安装 Terway CNI 插件。
+2. 安装 Terway CNI 插件。
 
-安装之前，需要更新[部署文件](../../yamls/terway.yaml)中 eni-config 的 configMap:
+    安装之前，需要更新[部署文件](../../yamls/terway.yaml)中 eni-config 的 configMap:
 
-    * 更新 `access_secret` 和 `access_key`
-    * 更新 vswitches, 这将决定 ENI模式下，Pod 将从哪个虚拟机交换机分配 IP 地址。格式为: "vswitches": {"cn-chengdu-a":["vsw-xxxx"]}。表示某个可用区下的虚拟交换机列表。
-    * 更新 security_group，填写安全组ID, 这是集群级别生效。
-    * 确保 service_cidr 为集群 service_subnet。
+    - 更新 `access_secret` 和 `access_key`
+    - 更新 vswitches, 这将决定 ENI模式下，Pod 将从哪个虚拟机交换机分配 IP 地址。格式为: "vswitches": {"cn-chengdu-a":["vsw-xxxx"]}。表示某个可用区下的虚拟交换机列表。
+    - 更新 security_group，填写安全组ID, 这是集群级别生效。
+    - 确保 service_cidr 为集群 service_subnet。
 
-执行安装:
+    执行安装:
 
-```shell
-[root@iZ2v]# kubectl apply -f  terway.yaml
-[root@iZ2v]# kubectl get po -n kube-system -o wide | grep terway
-[root@iZ2v]# kubectl get po -n kube-system -o wide | grep terway
-terway-rjqbj                                                2/2     Running   0           3m   192.168.200.2   cn-chengdu.i-2vcxxxxx   <none>           <none>
-terway-z5cvh                                                2/2     Running   0           3m   192.168.200.1   cn-chengdu.i-2vcxxxxx   <none>           <none>
-```
+    ```shell
+    [root@iZ2v]# kubectl apply -f  terway.yaml
+    [root@iZ2v]# kubectl get po -n kube-system -o wide | grep terway
+    [root@iZ2v]# kubectl get po -n kube-system -o wide | grep terway
+    terway-rjqbj                                                2/2     Running   0           3m   192.168.200.2   cn-chengdu.i-2vcxxxxx   <none>           <none>
+    terway-z5cvh                                                2/2     Running   0           3m   192.168.200.1   cn-chengdu.i-2vcxxxxx   <none>           <none>
+    ```
 
 ### 安装CCM组件，发布VPC路由
 
@@ -207,7 +200,7 @@ EOF
 
 ## 验证
 
-### VPC模式
+### VPC 模式
 
 下面将通过创建测试应用验证安装:
 
