@@ -22,9 +22,7 @@
     ![namespace-create01](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/namespace-create01.png)
 
     - 名称：设置命名空间的名称
-
     - 集群：从当前工作空间下绑定的所有集群中选择一个集群
-
     - 标签：设置命名空间的标签
 
 3. 基本信息设置完成后，还需要配置命名空间的资源配额。
@@ -57,8 +55,9 @@
 
     ![namespace-quota](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/namespace-quota.png)
 
-2. 在弹出的`资源配额`对话框中，可以看到目前命名空间的资源配额信息。在`应用资源`下点击`添加`，选择一个资源并设置配额，具体请参阅 [Kubernetes 资源配额](https://kubernetes.io/zh-cn/docs/concepts/policy/resource-quotas/)。
+2. 在弹出的`资源配额`对话框中，可以看到目前命名空间的资源配额信息。在`应用资源`下点击`添加`，
+   选择一个资源并设置配额，具体请参阅 [Kubernetes 资源配额](https://kubernetes.io/zh-cn/docs/concepts/policy/resource-quotas/)。
 
     ![namespace-quota01](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/namespace-quota01.png)
 
-3.点击`确定`完成配额设置。
+3. 点击`确定`完成配额设置。

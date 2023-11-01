@@ -18,7 +18,9 @@ OAM 应用功能基于开源软件 [KubeVela](http://kubevela.net/zh/docs/v1.2/)
 2. 参考以下说明填写基本信息，然后点击`下一步`：
 
     - 名称/别名：填写 OAM 应用的名称/别名。
-    - 主组件类型：不同组件需要配置的参数有所不同。有关各种组件类型的详细介绍，可参考[内置组件列表](https://kubevela.io/zh/docs/end-user/components/references)。
+    - 主组件类型：不同组件需要配置的参数有所不同。有关各种组件类型的详细介绍，
+      可参考[内置组件列表](https://kubevela.io/zh/docs/end-user/components/references)。
+
         - CronTask：定义一个周期性运行代码或者脚本的任务。
         - Task：定义一个只执行一次代码或者脚本的任务。
         - Daemon：定义一个在 Kubernetes 每个节点上都运行的服务。

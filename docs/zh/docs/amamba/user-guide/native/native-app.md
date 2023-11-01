@@ -1,6 +1,7 @@
 # 通过原生应用部署传统微服务
 
-原生应用旨在为客户提供由多个 Kubernets 资源关联组成的应用，并提供统一视图。本文介绍如何通过原生应用部署传统的微服务应用。本文用到的两个示例微服务应用名为 `adservice` 和 `dataservice`。
+原生应用旨在为客户提供由多个 Kubernets 资源关联组成的应用，并提供统一视图。
+本文介绍如何通过原生应用部署传统的微服务应用。本文用到的两个示例微服务应用名为 `adservice` 和 `dataservice`。
 
 ![示意图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/native01.png)
 
@@ -23,7 +24,7 @@
     - 别名：原生应用的别名。
     - 部署位置：选择将原生应用部署到哪个集群下的哪个命名空间。
 
-        ![示意图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/native03.png)
+    ![示意图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/native03.png)
 
 3. 参考以下说明添加传统微服务。
 
@@ -35,7 +36,7 @@
         - 容器镜像：填写微服务的镜像地址
         - 服务配置：端口配置取决于服务代码。就此处的演示应用 `adservice` 而言，需要填写如下信息：
 
-            ![示意图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/native04.png)
+        ![示意图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/native04.png)
 
     - 高级配置
 
@@ -47,7 +48,7 @@
         - 用户名/密码：如果该注册中心实例被认证，则需要填写用户名密码
         - 开启微服务治理：所选的注册中心实例应开启 [Sentinel 或 Mesh 治理能力](../../../skoala/trad-ms/hosted/plugins/plugin-center.md)
 
-            ![示意图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/native05.png)
+        ![示意图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/native05.png)
 
     !!! note
     
