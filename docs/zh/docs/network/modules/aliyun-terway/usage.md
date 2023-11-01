@@ -156,47 +156,47 @@ networking:
     terway-z5cvh                                                2/2     Running   0           3m   192.168.200.1   cn-chengdu.i-2vcxxxxx   <none>           <none>
     ```
 
-### 安装CCM组件，发布VPC路由
+### 安装 CCM 组件，发布 VPC 路由
 
 CCM 组件用于发布 Pod 跨节点访问路由以及 LoadBalancer Service 的实现:
 
-* 安装 ccm 的 configMap: cloud-config。 需要将 access 凭证进行 base64 转码:
+1. 安装 ccm 的 configMap: cloud-config。 需要将 access 凭证进行 base64 转码:
 
-```shell
-[root@iZ2v]# accessKeyIDBase64=`echo -n "$ACCESS_KEY_ID" |base64 -w 0`
-[root@iZ2v]# accessKeySecretBase64=`echo -n "$ACCESS_KEY_SECRET"|base64 -w 0`
-cat <<EOF | kubectl apply -f -
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: cloud-config
-  namespace: kube-system
-data:
-  cloud-config.conf: |-
-    {
-        "Global": {
-            "accessKeyID": "$accessKeyIDBase64",
-            "accessKeySecret": "$accessKeySecretBase64"
+    ```shell
+    [root@iZ2v]# accessKeyIDBase64=`echo -n "$ACCESS_KEY_ID" |base64 -w 0`
+    [root@iZ2v]# accessKeySecretBase64=`echo -n "$ACCESS_KEY_SECRET"|base64 -w 0`
+    cat <<EOF | kubectl apply -f -
+    apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: cloud-config
+      namespace: kube-system
+    data:
+      cloud-config.conf: |-
+        {
+            "Global": {
+                "accessKeyID": "$accessKeyIDBase64",
+                "accessKeySecret": "$accessKeySecretBase64"
+            }
         }
-    }
-EOF
-```
+    EOF
+    ```
 
-* 安装 CCM 组件, manifests 存放于 [cloud-controller-manager.yaml](../../yamls/cloud-controller-manager.yaml)。
+2. 安装 CCM 组件, manifests 存放于 [cloud-controller-manager.yaml](../../yamls/cloud-controller-manager.yaml)。
 
-> 注意需要修改 `cluster_cidr` 为你集群真实的 podSubnet(10.244.0.0/16)。
+    > 注意需要修改 `cluster_cidr` 为你集群真实的 podSubnet(10.244.0.0/16)。
 
-执行安装:
+    执行安装:
 
-```shell
-[root@iZ2v]# kubectl apply -f cloud-controller-manager.yaml
-```
+    ```shell
+    [root@iZ2v]# kubectl apply -f cloud-controller-manager.yaml
+    ```
 
-安装成功后，可在阿里云管理界面查看 VPC 路由已经成功同步:
+3. 安装成功后，可在阿里云管理界面查看 VPC 路由已经成功同步:
 
-![ccm-route](../../images/ccm-route.png)
+    ![ccm-route](../../images/ccm-route.png)
 
-访问 Pod 子网路由的下一跳指向该节点。
+    访问 Pod 子网路由的下一跳指向该节点。
 
 ## 验证
 
