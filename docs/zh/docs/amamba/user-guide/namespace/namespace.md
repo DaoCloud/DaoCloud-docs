@@ -13,7 +13,7 @@
 
     仅支持 `Workspace Admin` 创建命名空间，并设置命名空间配额，其他角色均不支持此操作。
 
-1. 在左侧导航栏中点击`命名空间`，进入命名空间列表，点击右上角的`创建`。
+1. 在应用工作台的左侧导航栏中点击`命名空间`，进入命名空间列表，点击右上角的`创建`。
 
     ![namespace-listpng](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/namespace-listpng.png)
 

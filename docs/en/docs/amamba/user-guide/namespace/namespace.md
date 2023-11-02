@@ -1,64 +1,62 @@
-# Namespace management
+# Namespace Management
 
 A namespace is an abstraction used in Kubernetes to isolate resources.
 
-## prerequisites
+## Prerequisites
 
-- The current workspace already has cluster resources, refer to [Binding Resources](../../../ghippo/user-guide/workspace/quota.md).
-- The current user is authorized to the `Workspace Admin` role, for details, refer to [Workspace Best Practice](../../../ghippo/user-guide/workspace/ws-best-practice.md).
+- The current workspace already has cluster resources. Refer to [Binding Resources](../../../ghippo/user-guide/workspace/quota.md) for more information.
+- The current user is authorized with the `Workspace Admin` role. Refer to [Workspace Best Practices](../../../ghippo/user-guide/workspace/ws-best-practice.md) for details.
 
-## create namespace
+## Create a Namespace
 
 !!! note
 
-    Only `Workspace Admin` is supported to create namespaces and set namespace quotas, other roles do not support this operation.
+    Only `Workspace Admin` has the privilege to create namespaces and set namespace quotas. Other roles do not support this operation.
 
-1. Click `Namespace` in the left navigation bar to enter the namespace list, and click `Create` in the upper right corner.
+1. Click `Namespaces` in the left navigation pane of your Workbench, then click `Create` in the upper right corner.
 
-    <!--![]()screenshots-->
+    ![namespace-listpng](../../images/create00.png)
 
-2. On the `Create Namespace` page, configure the basic information of the namespace.
+2. On the `Create Namespace` page, configure the basic information for the namespace.
 
-    <!--![]()screenshots-->
+    ![namespace-create01](../../images/create01.png)
 
-    - name: set the name of the namespace
+    - Name: Set the name of the namespace.
+    - Cluster: Select a cluster from all the clusters bound under the current workspace.
+    - Label: Set labels for the namespace.
 
-    - Cluster: Select a cluster from all the clusters bound under the current workspace
-
-    - label: set the label of the namespace
-
-3. After the basic information is set, you need to configure the resource quota of the namespace.
+3. After configuring the basic information, you also need to set resource quotas for the namespace.
 
     !!! note
 
-        - If the current cluster has any resource quotas set on the workspace, this resource quota must be set for the namespace when the namespace is created.
-        - The resource quota set for the namespace cannot exceed the resource usage limit set by the current cluster in the workspace.
-        - An empty request or limit field for a resource quota means that no quota is set for the current namespace.
+        - If any resource quotas are set for the current cluster in the workspace, you must set these quotas for the namespace when creating it.
+        - The resource quotas for the namespace cannot exceed the resource usage limits set for the current cluster in the workspace.
+        - Leaving the request or limit fields empty means no quota is set for the current namespace.
 
-    The resource quotas currently supported in the workspace include: CPU request, CPU limit, memory request, memory limit, total storage request, and storage volume declaration. Among them, the limit value of CPU and memory resources must be greater than the requested value.
+    The currently supported resource quotas in the workspace include CPU requests, CPU limits, memory requests, memory limits, total storage requests, and storage volume claims. The limit values for CPU and memory resources must be greater than the request values.
 
-    <!--![]()screenshots-->
+    ![namespace-create02](../../images/create02.png)
 
-4. Click `OK` to complete the resource creation. The screen prompts that the creation is successful, and returns to the namespace list page.
+4. Click `OK` to complete the resource creation. A message will appear indicating the successful creation, and you will be returned to the namespace list page.
 
-    <!--![]()screenshots-->
+    ![namespace-list01](../../images/create03.png)
 
-5. Click `︙` on the right side of the list, and you can choose `Quota Management`, `Edit Label`, `Delete` and other operations in the pop-up menu.
+5. Click the `︙` on the right side of the list to perform operations such as `Resource Quotas`, `Update Label`, and `Delete` from the pop-up menu.
 
     !!! warning
 
-        If a namespace is deleted, all resources under the namespace will be deleted, so please proceed with caution.
+        Deleting a namespace will delete all the resources under that namespace. Please proceed with caution.
 
 ## Namespace Quotas
 
-In addition to the CPU request, CPU limit, memory request, memory limit, total storage request, and storage volume declaration resource quota required in creating a namespace, other resource quotas can also be set in namespace quota management, such as containers under the namespace Resources such as groups, stateless workloads, stateful workloads, common tasks, and scheduled tasks.
+In addition to CPU requests, CPU limits, memory requests, memory limits, total storage requests, and storage volume claims resource quotas required when creating a namespace, other resource quotas can also be set in the namespace quota management. For example, resources such as container groups, stateless loads, stateful loads, ordinary tasks, and scheduled tasks under the namespace.
 
-1. On the namespace list page, select a namespace and click `Quota Management`.
+1. On the namespace list page, select a namespace and click `Resource Quotas`.
 
-    <!--![]()screenshots-->
+    ![namespace-quota](../../images/ns-quota01.png)
 
-2. In the pop-up `Resource Quota` dialog box, you can see the resource quota information of the current namespace. Click `Add` under `Application Resources`, select a resource and set a quota, for details, please refer to [Kubernetes Resource Quotas](https://kubernetes.io/docs/concepts/policy/resource-quotas/) .
+2. In the popped-up `Resource Quotas` dialog box, you can see the current resource quota information for the namespace. Click `Add` under `Apply Resources`, select a resource, and set the quota. Refer to [Kubernetes Resource Quotas](https://kubernetes.io/docs/concepts/policy/resource-quotas/) for details.
 
-    <!--![]()screenshots-->
+    ![namespace-quota01](../../images/ns-quota02.png)
 
-3. Click `OK` to complete the quota setting.
+3. Click `OK` to complete the quota settings.
