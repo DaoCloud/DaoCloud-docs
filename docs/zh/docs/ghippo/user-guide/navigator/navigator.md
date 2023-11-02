@@ -32,9 +32,11 @@ kubectl apply -f xxx.yaml
 
 ![导航栏菜单](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/user-guide/access-control/images/nav01.png)
 
-若需要新增或重新排序导航栏分类可以通过新增、navigator yaml实现。
+若需要新增或重新排序导航栏分类可以通过新增、navigator yaml 实现。
+
 !!! note
-    若需要编辑已存在的导航栏菜单（非用户自己新增的custom菜单），需要令新增custom菜单gproduct字段与需要覆盖的菜单的gproduct相同，新的导航栏菜单会将menus中name相同的部分执行覆盖，name不同的地方做新增操作。
+
+    若需要编辑已存在的导航栏菜单（非用户自己新增的 custom 菜单），需要令新增 custom 菜单 gproduct 字段与需要覆盖的菜单的 gproduct 相同，新的导航栏菜单会将 menus 中 name 相同的部分执行覆盖，name 不同的地方做新增操作。
 
 navigator的yaml示例如下：
 
