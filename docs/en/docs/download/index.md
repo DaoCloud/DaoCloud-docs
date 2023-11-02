@@ -48,27 +48,29 @@ The numerous modules included in DCE 5.0 can be downloaded separately to upgrade
 | Application Backup       | 59.29 MB  | [:arrow_right: Download Page](./modules/kcoral.md)    | 2023-08-08  |
 | Security Management      | 163 MB    | [:arrow_right: Download Page](./modules/dowl.md)      | 2023-08-25  |
 | Network Modules          | 55.47 MB  | [:arrow_right: Download Page](./modules/spidernet.md) | 2023-04-26  |
-| MultiCloud Management    | 525.11 MB | [:arrow_right: Download Page](./modules/kairship.md)  | 2023-09-01  |
-| Container Registry       | 293.24 MB | [:arrow_right: Download Page](./modules/kangaroo.md)  | 2023-09-04  |
+| MultiCloud Management    | 525.11 MB | [:arrow_right: Download Page](./modules/kairship.md)  | 2023-10-26  |
+| Container Registry       | 293.24 MB | [:arrow_right: Download Page](./modules/kangaroo.md)  | 2023-10-29  |
 | Insight                  | 2.64 GB   | [:arrow_right: Download Page](./modules/insight.md)   | 2023-08-04  |
-| Microservice Engine | 1.3 GB   | [:arrow_right: Download Page](./modules/skoala.md)   | 2023-10-25 |
-| Service Mesh             | 949.41 MB | [:arrow_right: Download Page](./modules/mspider.md)   | 2023-10-18  |
+| Microservice Engine | 1.3 GB   | [:arrow_right: Download Page](./modules/skoala.md)   | 2023-11-01  |
+| Service Mesh             | 949.41 MB | [:arrow_right: Download Page](./modules/mspider.md)   | 2023-10-27  |
 | Cloud Edge Collaboration | 94.2 MB   | [:arrow_right: Download Page](./modules/kant.md)      | 2023-09-19  |
 | Global Management        | 440 MB    | [:arrow_right: Download Page](./modules/ghippo.md)    | 2023-09-04  |
 | Operation Management     | 56.90 MB  | [:arrow_right: Download Page](./modules/gmagpie.md)   | 2023-08-02  |
+| VM Container             | 36.90 MB | [:arrow_right: 下载页](./modules/virtnest.md)           | 2023-10-20 |
 
 DCE 5.0 also provides a variety of selected middleware:
 
-| Middleware    | File Size | Download                                                             | Update Date |
-| ------------- | --------- | -------------------------------------------------------------------- | ----------- |
-| Elasticsearch | 974.93 MB | [:arrow_right: Download Page](./modules/middleware/elasticsearch.md) | 2023-10-12  |
-| Kafka         | 957.21 MB | [:arrow_right: Download Page](./modules/middleware/kafka.md)         | 2023-10-12  |
-| MinIO         | 219.91 MB | [:arrow_right: Download Page](./modules/middleware/minio.md)         | 2023-10-11  |
-| MongoDB       | 72.95 MB  | [:arrow_right: Download Page](./modules/middleware/mongodb.md)       | 2023-10-12  |
-| MySQL         | 1.17 GB   | [:arrow_right: Download Page](./modules/middleware/mysql.md)         | 2023-10-12  |
-| PostgreSQL    | 822.51 MB | [:arrow_right: Download Page](./modules/middleware/postgresql.md)    | 2023-10-12  |
-| RabbitMQ      | 162.34 MB | [:arrow_right: Download Page](./modules/middleware/rabbitmq.md)      | 2023-10-12  |
-| Redis         | 537.81 MB | [:arrow_right: Download Page](./modules/middleware/redis.md)         | 2023-10-12  |
+| Middleware    | File Size | Download                                                | Update Date |
+| ------------- | --------- | ------------------------------------------------------- | ----------- |
+| Elasticsearch |975.36 MB| [:arrow_right: 下载页](./modules/middleware/elasticsearch.md) | 2023-11-02 |
+| Kafka         |957.66 MB| [:arrow_right: 下载页](./modules/middleware/kafka.md)         | 2023-11-02 |
+| MinIO         |253.79 MB| [:arrow_right: 下载页](./modules/middleware/minio.md)         | 2023-11-02 |
+| MongoDB       |73.37 MB| [:arrow_right: 下载页](./modules/middleware/mongodb.md)       | 2023-11-02 |
+| MySQL         |1.17 GB| [:arrow_right: 下载页](./modules/middleware/mysql.md)         | 2023-11-02 |
+| PostgreSQL    |1.37 GB| [:arrow_right: 下载页](./modules/middleware/postgresql.md)    | 2023-11-02 |
+| RabbitMQ      |162.75 MB| [:arrow_right: 下载页](./modules/middleware/rabbitmq.md)      | 2023-11-02 |
+| Redis         |537.81 MB| [:arrow_right: 下载页](./modules/middleware/redis.md)         | 2023-10-20 |
+| RocketMQ      |354.39 MB| [:arrow_right: 下载页](./modules/middleware/rocketmq.md)      |2023-11-02|
 
 !!! note
 

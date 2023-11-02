@@ -1,6 +1,6 @@
-# rocketmq
+# RocketMQ
 
-本页可下载 rocketmq 各版本的离线安装包。
+本页可下载 RocketMQ 各版本的离线安装包。
 
 ## 下载
 
