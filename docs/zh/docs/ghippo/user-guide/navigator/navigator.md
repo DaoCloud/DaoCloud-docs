@@ -7,6 +7,7 @@
 ![导航栏分类](../../images/nav01.png)
 
 若需要新增或重新排序导航栏分类可以通过新增、修改 category yaml 实现。
+
 category 的 yaml 示例如下：
 
 ```yaml
@@ -16,7 +17,7 @@ metadata:
   name: management-custom # 命名规则：由小写的"spec.name"与"-custom"而成
 spec:
   name: Management # 若是用于修改category
-  isCustom: true
+  isCustom: true # 该字段必须为true
   localizedName: # 定义分类的中英文名称
     zh-CN: 管理管理
     en-US: Management
@@ -86,6 +87,6 @@ spec:
       order: 10
   gproduct: gmagpie # 定义菜单的标志，用于和parentGProduct字段联动，实现父子关系。
   visible: true # 设置该菜单是否可见，默认为true
-  isCustom: true
+  isCustom: true # 该字段必须为true
   order: 20 # 排序，数字越小，越靠上
 ```
