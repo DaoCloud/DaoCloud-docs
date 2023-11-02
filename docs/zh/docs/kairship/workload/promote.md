@@ -5,6 +5,7 @@ status: new
 # 一键转换为多云工作负载
 
 借助多云编排模块，您可以将单云工作负载一键转换为多云工作负载，操作非常简单，可以极大地提高多云环境中的运维效率。
+参阅[视频教程](../../videos/use-cases.md#_2)。
 
 具体操作步骤如下：
 
@@ -20,7 +21,7 @@ status: new
     - 已经转化为多云应用的资源不支持二次转换，不会出现在列表中。
     - 转换过程中，系统会自动创建对应的部署策略，纳管原来的子集群。
 
-        ![转换应用](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/promote02.png)
+    ![转换应用](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/promote02.png)
 
 3. 在弹框右下角点击`确定`即可完成转换。
 

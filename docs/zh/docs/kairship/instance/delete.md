@@ -17,4 +17,4 @@ hide:
 
 2. 在弹窗中输入该实例的名称，确认无误后，点击`删除`按钮。
 
-    ![delete](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/delete02.png)
+    ![delete](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/delete02.png){ width="600" }

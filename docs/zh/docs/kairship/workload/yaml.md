@@ -86,7 +86,8 @@ spec:
       kind: Deployment
       name: demo-nginx # (2)
   placement:
-    clusterAffinity:
+    clusterAffinities:
+      affinityName: default
       clusterNames:
         - demo-stage
         - demo-dev
