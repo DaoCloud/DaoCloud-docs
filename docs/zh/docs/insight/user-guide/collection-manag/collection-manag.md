@@ -15,12 +15,12 @@ hide:
 
 2. 选择左侧导航栏的`采集管理`，查看全部集群采集插件的状态。
 
-    ![集群列表](../../images/collect00.png){: width="1000px"}
+    ![集群列表](../../images/collect00.png)
 
 3. 集群接入 `insight-agent` 且处于运行中状态时，点击某个集群名称进入详情。
 
-    ![集群列表](../../images/collect01.png){: width="1000px"}
+    ![集群列表](../../images/collect01.png)
 
 4. 在`服务监控`页签中，点击快捷链接跳转到`容器管理` -> `自定义资源`添加服务发现规则。
 
-    ![集群列表](../../images/collect02.png){: width="1000px"}
+    ![集群列表](../../images/collect02.png)

@@ -26,7 +26,7 @@ hide:
 
      ![安装](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/insight-agent03.png)
 
-4. 选择安装的版本并在下方表单分别填写全局管理集群中对应数据存储组件的地址，确认填写的信息无误后，点击`确定` 。
+4. 选择安装的版本并在下方表单分别填写全局管理集群中对应数据存储组件的地址，确认填写的信息无误后，点击`确定`。
 
       - insight-agent 默认部署在集群的 insight-system 命名空间下。
       - 建议安装最新版本的 insight-agent。
