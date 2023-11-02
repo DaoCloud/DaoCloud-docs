@@ -27,12 +27,10 @@
 - **新增** Spiderpool 集成了 RDMA CNI 和 RDMA 设备插件
 - **新增** `sriov network operator` 的 Chart 配置信息
 - **新增** 支持为 KubeVirt 虚拟机分配静态 IP 地址
-- **新增** 所有插件构建了全新的 Docker 镜像
 - **新增** 在 SpiderAgent 的初始化容器中安装 CNI、OVS 和 RDMA
 
 #### 优化
 - **优化** OpenTelemetry 升级版本升级至 1.19.0
-- **优化** Egressgateway 可用于低内核版本。
 - **优化** Spiderpool 初始化时，如果默认的 SpiderMultusConfig 网络不为空，将自动创建
 - **优化** 所有插件构建了全新的 Docker 镜像
 - **优化** 改进 GetTopController 方法
