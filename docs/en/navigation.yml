@@ -1041,6 +1041,7 @@ nav:
                   - Application Backup: download/modules/kcoral.md
                   - Security: download/modules/dowl.md
                   - Network: download/modules/spidernet.md
+                  - VM Container: download/modules/virtnest.md
               - MultiCloud Management: download/modules/kairship.md
               - Container Registry: download/modules/kangaroo.md
               - Insight: download/modules/insight.md
@@ -1055,6 +1056,7 @@ nav:
                   - PostgreSQL: download/modules/middleware/postgresql.md
                   - RabbitMQ: download/modules/middleware/rabbitmq.md
                   - Redis: download/modules/middleware/redis.md
+                  - RocketMQ: download/modules/middleware/rocketmq.md
               - Cloud Edge Collaboration: download/modules/kant.md
               - Management:
                   - Global Management: download/modules/ghippo.md

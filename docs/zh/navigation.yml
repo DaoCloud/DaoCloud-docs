@@ -1095,6 +1095,7 @@ nav:
                   - PostgreSQL: download/modules/middleware/postgresql.md
                   - RabbitMQ: download/modules/middleware/rabbitmq.md
                   - Redis: download/modules/middleware/redis.md
+                  - RocketMQ: download/modules/middleware/rocketmq.md
               - 云边协同: download/modules/kant.md
               - 管理:
                   - 全局管理: download/modules/ghippo.md
