@@ -2,8 +2,46 @@
 
 本页列出 Spidernet 的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
-其中包含的 Spiderpool 是 DaoCloud 自研开源的 IPAM 模块，请参考 [Spiderpool Release Notes](https://github.com/spidernet-io/spiderpool/releases)。
+其中包含:
 
+* Spiderpool 是 DaoCloud 自研开源的 IPAM 模块，请参考 [Spiderpool Release Notes](https://github.com/spidernet-io/spiderpool/releases)。
+* Egressgateway 是 DaoCloud 自研开源的出口网关模块，请参考 [Egressgateway Release Notes](https://github.com/spidernet-io/egressgateway/releases)。
+
+## 2023-10-30
+
+### v0.10.1
+
+* 适配 **Spiderpool 版本** : `v0.8.0`
+* 适配 **Egressgateway 版本** : `v0.3.0`
+
+#### 新功能
+
+- **新增** 出口网关界面，支持创建、编辑和删除功能
+- **新增** 支持创建多个出口网关实例
+- **新增** 支持查看出口网关默认 EgressIP、EgressIP 池、节点列表以及节点 IP 地址范围
+- **新增** 集群级别和命名空间级别网关策略界面，支持创建、编辑和删除功能
+- **新增** 支持网关策略使用 Pod 选择器选择要使用 Egress 的 Pods、允许根据目标 CIDR 过滤出口流量等。
+- **新增** 支持查看网关策略中选择的网关、EgressIP 或节点 IP、容器组等
+- **新增** 支持 Egressgateway 用于低内核版本。
+- **新增** Multus CR 管理界面，支持创建使用不同 Multus CNI 类型的 CR 实例
+- **新增** Spiderpool 集成了 RDMA CNI 和 RDMA 设备插件
+- **新增** `sriov network operator` 的 Chart 配置信息
+- **新增** 支持为 KubeVirt 虚拟机分配静态 IP 地址
+- **新增** 在 SpiderAgent 的初始化容器中安装 CNI、OVS 和 RDMA
+
+#### 优化
+- **优化** OpenTelemetry 升级版本升级至 1.19.0
+- **优化** Spiderpool 初始化时，如果默认的 SpiderMultusConfig 网络不为空，将自动创建
+- **优化** 所有插件构建了全新的 Docker 镜像
+- **优化** 改进 GetTopController 方法
+- **优化** 工作负载网络配置中 Multus CR 管理对应的 CNI类型
+  
+#### 修复
+
+- **修复** coordinator 通过 veth0 传递的数据包中的 eth0 源 IP 问题
+- **修复** SpiderMultusConfig 在 `spidermultusconfig.spec` 为空时引发的错误
+- **修复** SpiderCoordinator 在自动获取 PodCIDR 类型时的问题
+  
 ## 2023-08-30
 
 ### v0.9.0
@@ -16,7 +54,7 @@
 - **新增** 在双栈 SpiderSubnet自动池功能下分配单栈 IP
 - **新增** IPAM 核心算法优化，优先在亲和的池中分配IP
 - **新增** SpiderSubnet 自动池功能下，孤儿 IPPool 的创建
-- **新增** Multus  卸载钩子移除 CNI 配置文件
+- **新增** Multus 卸载钩子移除 CNI 配置文件
 - **新增** Coordinator 支持自动模式(默认)，这将自动检测 Coordinator 的工作模式，不再需要手动指定 Underlay 或 Overlay。
  相同的 multus CNI 配置，可以同时被用作 Underlay 或 Overlay 模式。
 - **新增** 通过 `spidermultusconfig` 配置 `ovs-cni`
