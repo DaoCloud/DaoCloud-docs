@@ -2,9 +2,11 @@
 status: new
 toc: hide
 ---
+
 # One-Click Conversion to MultiCloud Workload
 
 With the MultiCloud Orchestration module, you can easily convert a single-cloud workload into a multi-cloud workload with just one click. This operation greatly improves operational efficiency in multi-cloud environments.
+Refer to [video tutorials](../../videos/use-cases.md)。
 
 Here are the specific steps:
 
@@ -20,7 +22,7 @@ Here are the specific steps:
     - Resources that have already been converted to multi-cloud applications cannot be converted again and will not appear in the list.
     - During the conversion, the system will automatically create corresponding deployment policies and manage the original sub-clusters.
 
-        ![Convert Application](../images/promote02.png)
+    ![Convert Application](../images/promote02.png)
 
 3. Click `OK` in the lower-right corner of the dialog box to complete the conversion.
 
