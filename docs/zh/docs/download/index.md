@@ -65,7 +65,7 @@ DCE 5.0 还提供了各种精选中间件：
 | 中间件        | 文件大小  | 下载                                                          | 更新日期   |
 | ------------- | --------- | ------------------------------------------------------------- | ---------- |
 | Elasticsearch |975.36 MB| [:arrow_right: 下载页](./modules/middleware/elasticsearch.md) |2023-11-02|
-| Kafka |957.22 MB| [:arrow_right: 下载页](./modules/middleware/kafka.md) |2023-10-20|
+| Kafka |957.66 MB| [:arrow_right: 下载页](./modules/middleware/kafka.md) |2023-11-02|
 | MinIO |253.79 MB| [:arrow_right: 下载页](./modules/middleware/minio.md) |2023-11-02|
 | MongoDB |73.37 MB| [:arrow_right: 下载页](./modules/middleware/mongodb.md) |2023-11-02|
 | MySQL |1.17 GB| [:arrow_right: 下载页](./modules/middleware/mysql.md) |2023-11-02|
