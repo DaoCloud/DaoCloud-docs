@@ -535,6 +535,7 @@ nav:
                       - 离线升级 insight-agent: insight/quickstart/install/offline-install.md
                       - 获取数据上传地址: insight/quickstart/install/gethosturl.md
                       - 升级注意事项: insight/quickstart/install/upgrade-note.md
+                      - 已知问题: insight/quickstart/install/knownissues.md
                   - 在其他发行版安装 insight-agent:
                       - 在 DCE 4.0.x 上: insight/quickstart/other/install-agentindce.md
                       - 在 OpenShift 4.x 上: insight/quickstart/other/install-agent-on-ocp.md
@@ -544,6 +545,7 @@ nav:
                       - OTel SDK 增强 Go 应用: insight/quickstart/otel/golang.md
                       - OTel SDK 为应用暴露指标: insight/quickstart/otel/meter.md
                       - OTel 自动探针增强 Go 应用: insight/quickstart/otel/golang-ebpf.md
+                      - 向 Insight 发送链路数据: insight/quickstart/otel/send_tracing_to_insight.md
                   - 开始监控 Java 应用:
                       - insight/quickstart/jvm-monitor/jvm-catelogy.md
                       - 使用 JMX Exporter 暴露 JVM 监控指标: insight/quickstart/jvm-monitor/jmx-exporter.md
@@ -956,7 +958,7 @@ nav:
                   - 创建终端设备: kant/user-guide/device/create-device.md
                   - 管理终端设备: kant/user-guide/device/manage-device.md
               - 边缘应用:
-                  - 边缘应用概述: kant/user-guide/edge-app/overview.md
+                  - 边缘应用概述: kant/user-guide/edge-app/index.md
                   - 创建工作负载: kant/user-guide/edge-app/create-app.md
                   - 创建批量工作负载: kant/user-guide/edge-app/create-batch-app.md
                   - 部署批量工作负载: kant/user-guide/edge-app/deploy.md

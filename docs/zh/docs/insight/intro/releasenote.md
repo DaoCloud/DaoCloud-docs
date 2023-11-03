@@ -2,6 +2,36 @@
 
 本页列出 Insight 可观测性的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2023.10.31
+
+!!! note
+
+    Insight Agent v0.21.0 修复了 PodMonitor 配置后会重复集多份 JVM 指标数据的问题，建议升级至该版本进行修复。
+    详情可查看[已知问题](../../insight/quickstart/install/knownissues.md)。
+
+### Insight Server: v0.21.0
+
+#### 新增
+
+- **新增** 命名空间维度监控
+
+#### 优化
+
+- **优化** 更新 Insight 导航栏结构
+- **优化** 点击链路分布图可快速查看对应链路详情
+
+#### 修复
+
+- **修复** 无法查看到容器日志的上下文
+- **修复** 初始化事件索引出错
+
+### Insight Agent: v0.21.0
+
+#### 修复
+
+- **修复** 链路查询中的操作中出现异常 Span 名称
+- **修复** 银行麒麟 Kylin-V10(SP3) 操作系统中，tailing-sidecar 启动的容器无法正常启动
+
 ## 2023.08.31
 
 ### Insight Server: v0.20.0

@@ -519,6 +519,7 @@ nav:
                       - Offline Install insight-agent: insight/quickstart/install/offline-install.md
                       - Get URL to Upload Data: insight/quickstart/install/gethosturl.md
                       - Upgrade Notes: insight/quickstart/install/upgrade-note.md
+                      - Known Issues: insight/quickstart/install/knownissues.md
                   - Install insight-agent on Other Distributions:
                       - On DCE 4.0.x: insight/quickstart/other/install-agentindce.md
                       - On OpenShift 4.x: insight/quickstart/other/install-agent-on-ocp.md
@@ -528,6 +529,7 @@ nav:
                       - Enhance GO Apps with OTel SDK: insight/quickstart/otel/golang.md
                       - Expose Metrics with OTel SDK: insight/quickstart/otel/meter.md
                       - Enhance Go Apps with OTel Auto-Instrumentation: insight/quickstart/otel/golang-ebpf.md
+                      - Send Trace Data to Insight: insight/quickstart/otel/send_tracing_to_insight.md
                   - Enable Observability for Java Apps:
                       - insight/quickstart/jvm-monitor/jvm-catelogy.md
                       - Use JMX Exporter to Expose JVM Metrics: insight/quickstart/jvm-monitor/jmx-exporter.md
@@ -909,6 +911,9 @@ nav:
                   - Benefits: kant/intro/benefits.md
                   - Use Cases: kant/intro/use-cases.md
                   - Concepts: kant/intro/concepts.md
+              - Edge Unit:
+                  - Create Edge Unit: kant/user-guide/edge-unit/create-unit.md
+                  - Manage Edge Unit: kant/user-guide/edge-unit/manage-unit.md
               - Edge Node:
                   - Overview: kant/user-guide/node/index.md
                   - Requirements to Join Edge Node: kant/user-guide/node/join-rqmt.md
@@ -922,6 +927,11 @@ nav:
                   - Intro: kant/user-guide/device/index.md
                   - Create End Device: kant/user-guide/device/create-device.md
                   - Manage End Device: kant/user-guide/device/manage-device.md
+              - Edge App:
+                  - Overview: kant/user-guide/edge-app/index.md
+                  - Create Deployment: kant/user-guide/edge-app/create-app.md
+                  - Create Deployment in Batch: kant/user-guide/edge-app/create-batch-app.md
+                  - Deploy Deployment in Batch: kant/user-guide/edge-app/deploy.md
               - Edge to Cloud Message:
                   - Overview: kant/user-guide/route/index.md
                   - Create Message Route: kant/user-guide/route/create-route.md

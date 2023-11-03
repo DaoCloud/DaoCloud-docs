@@ -9,8 +9,8 @@ Cloud-edge collaboration provides six core advantage capabilities to solve diffe
     - Edge node full lifecycle monitoring
     - Edge application full lifecycle monitoring
 - Pluggable Device Access
-    - The device side supports multiple protocol terminal access such as Modbus and provides standard interface DMI to connect with devices.
-    - Supports bulk import of devices through specified format files.
+    - The device side supports multiple protocol terminal access such as Modbus and provides standard interface DMI to connect with device.
+    - Supports bulk import of device through specified format files.
 - Comprehensive Security Assurance
     - Provides multi-level permission management for platforms, folders, and workspaces, resource isolation.
     - Supports cloud-edge bidirectional data encryption transmission, such as TLS encryption.
