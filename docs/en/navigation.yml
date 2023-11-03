@@ -909,6 +909,9 @@ nav:
                   - Benefits: kant/intro/benefits.md
                   - Use Cases: kant/intro/use-cases.md
                   - Concepts: kant/intro/concepts.md
+              - Edge Unit:
+                  - Create Edge Unit: kant/user-guide/edge-unit/create-unit.md
+                  - Manage Edge Unit: kant/user-guide/edge-unit/manage-unit.md
               - Edge Node:
                   - Overview: kant/user-guide/node/index.md
                   - Requirements to Join Edge Node: kant/user-guide/node/join-rqmt.md
@@ -922,6 +925,11 @@ nav:
                   - Intro: kant/user-guide/device/index.md
                   - Create End Device: kant/user-guide/device/create-device.md
                   - Manage End Device: kant/user-guide/device/manage-device.md
+              - Edge App:
+                  - Overview: kant/user-guide/edge-app/index.md
+                  - Create Deployment: kant/user-guide/edge-app/create-app.md
+                  - Create Deployment in Batch: kant/user-guide/edge-app/create-batch-app.md
+                  - Deploy Deployment in Batch: kant/user-guide/edge-app/deploy.md
               - Edge to Cloud Message:
                   - Overview: kant/user-guide/route/index.md
                   - Create Message Route: kant/user-guide/route/create-route.md
