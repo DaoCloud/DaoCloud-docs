@@ -86,7 +86,7 @@ In 2023, you will not only see [many technologically advanced companies](https:/
 
 ## Backstage Developer Portal Maturity
 
-The developer experience has always been a concern for organizations reaching a certain scale to increase engineering throughput. As more and more organizations start their cloud-native journey, this becomes very important for most industries.
+The developer experience has always been a concern for organizations reaching a certain scale to increase engineering throughput. As more and more organizations start their cloud native journey, this becomes very important for most industries.
 In my previous set of [predictions](https://www.aniszczyk.org/2021/01/19/cloud-native-predictions-for-2021-and-beyond/), it was mentioned that the "service catalog" would becomes a necessity, but it will be more than that.
 
 In the CNCF community, Backstage is one of the few projects I've seen deployed in traditional enterprises even before adopting Kubernetes.
@@ -102,7 +102,7 @@ Another interesting thing about Backstage and modern developer portals is that G
 
 I firmly believe that WebAssembly (Wasm) will become the dominant form of computing in the near future, and it is exploring use cases beyond the browser, from the edge to server workloads.
 I found this [article](https://sapphireventures.com/blog/whats-up-with-webassembly-computes-next-paradigm-shift/) by Sapphire Ventures on Wasm promises to be one of the better ones on the topic one.
-From personal experience, I keep seeing Wasm popping up in more areas for future cloud-native ecosystems, from the refactoring of the plugin system in Envoy,
+From personal experience, I keep seeing Wasm popping up in more areas for future cloud native ecosystems, from the refactoring of the plugin system in Envoy,
 Or projects like WasmCloud and WasmEdge. Also, even [Docker](https://www.docker.com/blog/docker-wasm-technical-preview/) also supports Wasm in the recent technical preview.
 
 However, as Wasm use cases are discovered, the runtime matures, and the technology fully develops, there will be some growing pains. In terms of the hype cycle,
@@ -168,7 +168,7 @@ Large conference, registration is open!
 **DaoCloud Company Profile**
 
 DaoCloud is an innovative leader in the field of cloud native. Founded at the end of 2014, it has core technologies with independent intellectual property rights and is committed to creating an open cloud operating system to empower digital transformation of enterprises.
-Product capabilities cover the entire life cycle of cloud-native application development, delivery, and operation and maintenance, and provide multiple delivery methods such as public cloud, private cloud, and hybrid cloud. Since its establishment, the company has been involved in financial technology, advanced manufacturing, smart cars,
+Product capabilities cover the entire life cycle of cloud native application development, delivery, and operation and maintenance, and provide multiple delivery methods such as public cloud, private cloud, and hybrid cloud. Since its establishment, the company has been involved in financial technology, advanced manufacturing, smart cars,
 Retail outlets, urban brain and other fields have been deeply cultivated. Benchmark customers include Bank of Communications, Shanghai Pudong Development Bank, SAIC Motor, Dongfeng Motor, Haier Group, Watsons, Golden Arches (McDonald's), etc.
 At present, the company has completed the D round of financing exceeding 100 million yuan, and is known as a quasi-unicorn enterprise in the technology field. The company has set up a number of branches and joint ventures in Beijing, Nanjing, Wuhan, Shenzhen and Chengdu.
 The total number of employees exceeds 400. It is a high-tech enterprise in Shanghai, a "little giant of science and technology" in Shanghai, and a "specialized and special new" enterprise in Shanghai, and has been selected into the list of enterprises cultivated by the Science and Technology Innovation Board.

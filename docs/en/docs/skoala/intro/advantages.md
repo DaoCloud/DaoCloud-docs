@@ -5,7 +5,7 @@ hide:
 
 # Competitiveness
 
-DaoCloud Microservice Engine (DME) provides a set of easy-to-use, practical and high-performance microservice governance capabilities, such as registration and discovery, east-west and north-south traffic governance, configuration management, API management, multiple gateways, etc. DME helps you to steadily and safely upgrade traditional microservice architecture to cloud-native microservice architecture.
+DaoCloud Microservice Engine (DME) provides a set of easy-to-use, practical and high-performance microservice governance capabilities, such as registration and discovery, east-west and north-south traffic governance, configuration management, API management, multiple gateways, etc. DME helps you to steadily and safely upgrade traditional microservice architecture to cloud native microservice architecture.
 
 DME has the following advantages over its counterparts:
 
@@ -19,7 +19,7 @@ DME has the following advantages over its counterparts:
 
 - Easy Transition
 
-    DME can manage both traditional and cloud-native microservices. You can integrate traditional registries (Zookeeper, Eureka, Nacos) and cloud-native registries (Kubernetes, Service Mesh) into DME. You can also create a Nacos registry in DME and enable Mesh plugin to change traditional microservices to cloud-native ones, no need to change service codes.
+    DME can manage both traditional and cloud native microservices. You can integrate traditional registries (Zookeeper, Eureka, Nacos) and cloud native registries (Kubernetes, Service Mesh) into DME. You can also create a Nacos registry in DME and enable Mesh plugin to change traditional microservices to cloud native ones, no need to change service codes.
 
 - Visualization
 

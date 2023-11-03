@@ -59,7 +59,7 @@
 
 Note: Currently, only integration with Jenkins installed via the DCE 5.0 platform is supported.
 
-1. Log in to DCE 5.0 with a user who has the role of an Application Workspace Administrator and go to the Application Workspace.
+1. Log in to DCE 5.0 with a user who has the role of an Workbench Administrator and go to the Workbench.
 
     ![Deployment Completed](../../images/install-jenkins16.png)
 

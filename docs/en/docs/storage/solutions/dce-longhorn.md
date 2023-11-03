@@ -1,6 +1,6 @@
 # Deploy Longhorn via App Store
 
-This page will provide the operation steps and instructions for deploying the Longhorn cloud-native storage system in the DCE 5.0 app store with the Addon graphical interface.
+This page will provide the operation steps and instructions for deploying the Longhorn cloud native storage system in the DCE 5.0 app store with the Addon graphical interface.
 
 ## Format conversion of Longhorn helm charts
 

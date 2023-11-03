@@ -86,7 +86,7 @@ which are plug-and-play to meet various application scenarios:
 | Workbench | Container-based DevOps application platform, supports Jenkins, Tekton, GitOps, and other pipeline jobs. | [0.20.0](../../amamba/intro/release-notes.md#0200) |
 | MultiCloud Orchestration | Centralized management of multi-cloud, hybrid cloud, and cross-cloud resource application orchestrations, with multi-cloud disaster recovery and fault tolerance capabilities. | [0.12.0](../../kairship/intro/release-notes.md#0120) |
 | Microservice Engine | Provides governance capabilities such as service registration and discovery, service governance, configuration management, and microservice gateway |
-| Service Mesh | Next-generation service mesh built on the open-source technology Istio, designed for cloud-native applications. | [v0.19.0](../../mspider/intro/release-notes.md#v0190) |
+| Service Mesh | Next-generation service mesh built on the open-source technology Istio, designed for cloud native applications. | [v0.19.0](../../mspider/intro/release-notes.md#v0190) |
 | Middleware Elasticsearch | Currently the preferred full-text search engine. | [0.10.0](../../middleware/elasticsearch/release-notes.md#0100) |
 | Middleware Kafka | Distributed message queue service based on the open-source software Kafka. | [0.8.0](../../middleware/kafka/release-notes.md#080) |
 | Middleware MinIO | A popular lightweight, open-source object storage solution. | [0.8.0](../../middleware/minio/release-notes.md#080) |

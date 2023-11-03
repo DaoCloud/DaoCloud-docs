@@ -1,6 +1,6 @@
 # Functional Features
 
-Cloud-edge collaboration extends cloud-native capabilities to the edge through an integrated "end-edge-cloud" collaborative architecture, helping enterprises quickly expand secure, flexible, efficient, and reliable edge cloud-native capabilities,
+Cloud-edge collaboration extends cloud native capabilities to the edge through an integrated "end-edge-cloud" collaborative architecture, helping enterprises quickly expand secure, flexible, efficient, and reliable edge cloud native capabilities,
 widely applicable to industrial Internet, Internet of Things (IoT), smart factories, smart parks, smart retail, and other fields. The cloud side implements the registration, management, and distribution of applications and configurations of edge nodes, while the edge side is responsible for running edge applications, achieving edge autonomy. Device side supports multi-protocol terminal access and provides standard interfaces to connect with device.
 
 The functional architecture of the edge computing platform is shown in the following figure:

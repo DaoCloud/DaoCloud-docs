@@ -19,7 +19,7 @@ The DaoCloud container management platform supports unified scheduling and opera
 
 - Support for unified management of heterogeneous computing resources from domestic and foreign manufacturers such as NVIDIA, Huawei Ascend, and Days.
 - Support for multi-card heterogeneous scheduling within the same cluster, with automatic recognition of GPU cards in the cluster.
-- Support for native management solutions for NVIDIA GPUs, vGPUs, and MIG, with cloud-native capabilities.
+- Support for native management solutions for NVIDIA GPUs, vGPUs, and MIG, with cloud native capabilities.
 - Support for partitioning a single physical card for use by different tenants, and allocate GPU resources to tenants and containers based on computing power and memory quotas.
 - Support for multi-dimensional GPU resource monitoring at the cluster, node, and application levels, assisting operators in managing GPU resources.
 - Compatibility with various training frameworks such as TensorFlow and PyTorch.

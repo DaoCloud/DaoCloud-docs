@@ -1,6 +1,6 @@
 # kdoctor
 
-kdoctor is a cloud-native project that performs data plane tests.
+kdoctor is a cloud native project that performs data plane tests.
 It uses pressure injection to carry out active inspections of the function and performance of clusters.
 
 Traditionally, cluster and application status have been confirmed through passive inspection methods

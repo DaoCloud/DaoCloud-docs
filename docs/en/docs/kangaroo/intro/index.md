@@ -5,7 +5,7 @@ hide:
 
 # What is a Container Registry
 
-A container registry is a cloud-native image hosting service that supports multi-instance lifecycle management. It allows deploying container registry instances to any cloud-native basic environment and integrating external container registries such as Harbor Registry and Docker Registry.
+A container registry is a cloud native image hosting service that supports multi-instance lifecycle management. It allows deploying container registry instances to any cloud native basic environment and integrating external container registries such as Harbor Registry and Docker Registry.
 
 Through the container registry service, you can assign private registry space to one or more workspaces (tenants) to ensure the security of private images. You can also expose the registry space to all Kubernetes namespaces. The container registry cooperates with the [Container Management](../../kpanda/intro/index.md) service to help users quickly deploy applications.
 

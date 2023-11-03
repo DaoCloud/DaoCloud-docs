@@ -20,7 +20,7 @@ Stateful key applications such as databases, message queues, and big data are gr
 
 **Agility Challenge**
 
-Cloud-native use cases have very high requirements for service agility and flexibility. Many use cases expect fast container startup and flexible scheduling, which requires both storage volumes and agile adjustments to Pod changes. To achieve this:
+Cloud native use cases have very high requirements for service agility and flexibility. Many use cases expect fast container startup and flexible scheduling, which requires both storage volumes and agile adjustments to Pod changes. To achieve this:
 
 1. Improve the efficiency of cloud disk mounting and uninstallation.
 2. Enable the block device to be flexibly mounted and quickly switched between different nodes.

@@ -13,22 +13,22 @@ MinIO is a GNU AGPL v3 open source software-defined product that can run well on
 ![MinIO Architecture](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/minio-design.png)
 
 MinIO's architectural design has been aimed at private cloud standards with high performance requirements from the very beginning, pursuing the ultimate performance on the basis of realizing all the features required by object storage.
-MinIO is easy to use, efficient, and high-performance, and can provide cloud-native object storage services with elastic scalability in a simpler way.
+MinIO is easy to use, efficient, and high-performance, and can provide cloud native object storage services with elastic scalability in a simpler way.
 
 MinIO performs well in traditional object storage use cases (such as auxiliary storage, disaster recovery, and archiving), and is also unique in storage technologies in machine learning, big data, private cloud, hybrid cloud, etc., including data analysis, high-performance application loads, native cloud applications, etc.
 
 ### MinIO architecture design
 
-MinIO is designed for a cloud-native architecture that can run as a lightweight container and be managed by an external orchestration service such as Kubernetes.
+MinIO is designed for a cloud native architecture that can run as a lightweight container and be managed by an external orchestration service such as Kubernetes.
 MinIO's entire service package is approximately less than 100 MB of static binaries, makes efficient use of CPU and memory resources even under heavy load, and can co-host a large number of tenants on shared hardware.
 The corresponding architecture diagram is as follows:
 
 ![Architecture Diagram](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/architect.png)
 
-MinIO is used as the main storage for cloud-native applications. Compared with traditional object storage, cloud-native applications require higher throughput and lower latency, and these are the performance metrics that MinIO can achieve. The read/write speed is as high as 183 GB/s and 171 GB/s.
+MinIO is used as the main storage for cloud native applications. Compared with traditional object storage, cloud native applications require higher throughput and lower latency, and these are the performance metrics that MinIO can achieve. The read/write speed is as high as 183 GB/s and 171 GB/s.
 
 The ultimate high performance of MinIO is inseparable from the underlying storage platform. Local storage has the highest read and write performance among many storage protocols, which undoubtedly provides performance guarantee for MinIO.
-HwameiStor is exactly the storage system that meets the requirements of the cloud-native era. It has the advantages of high performance, high availability, automation, low cost, and rapid deployment, and can replace expensive traditional SAN storage.
+HwameiStor is exactly the storage system that meets the requirements of the cloud native era. It has the advantages of high performance, high availability, automation, low cost, and rapid deployment, and can replace expensive traditional SAN storage.
 
 MinIO can run on standard servers with local drives (JBOD/JBOF).
 The cluster is a fully symmetric architecture, meaning that all servers are functionally identical, there are no namenodes or metadata servers.

@@ -6,7 +6,7 @@
 
 [DaoCloud](https://www.daocloud.io/en/), founded in 2014, is an innovation leader in the field of cloud native. It boasts independent intellectual property rights of core technologies for crafting an open cloud platform to empower the digital transformation of enterprises.
 
-DaoCloud has been engaging in cloud native since its inception. As containerization is crucial for cloud-native business, a cloud platform that does not have containers as infrastructure is unlikely to attract its potential users.Therefore, the first challenge confronting DaoCloud is how to efficiently manage and schedule numerous containers while maintaining communication between them.
+DaoCloud has been engaging in cloud native since its inception. As containerization is crucial for cloud native business, a cloud platform that does not have containers as infrastructure is unlikely to attract its potential users.Therefore, the first challenge confronting DaoCloud is how to efficiently manage and schedule numerous containers while maintaining communication between them.
 
 As cloud native gains momentum, cloud native solutions proliferate like mushrooms after rain. However, having more choices is not always a good thing, because choosing from various products to globally maximize benefits and minimize cost is always challenging and demanding. Therefore, another obstacle ahead of DaoCloud is how to pick out the best runner in each field and organize them into one platform that can achieve global optimum for cloud native.
 
@@ -18,7 +18,7 @@ Regarding finding the global optimal solutions for cloud native, Peter Pan, R&D 
 
 ## Results
 
-In the process of embracing cloud native, DaoCloud continues to learn from Kubernetes and other excellent CNCF open source projects. It has formed a product architecture centered on [DaoCloud Enterprise](https://docs.daocloud.io/), a platform for cloud-native applications. Using Kubernetes and other cutting-edge cloud native technologies as a foundation, DaoCloud provides satisfying cloud native solutions for military, finance, manufacturing, energy, government, and retail clients,It helps companies with their digital transformation, such as SPD Bank, Huatai Securities, Fullgoal Fund, SAIC Motor, Haier, Fudan University, Watsons, Genius Auto Finance, State Grid Corporation of China, etc.
+In the process of embracing cloud native, DaoCloud continues to learn from Kubernetes and other excellent CNCF open source projects. It has formed a product architecture centered on [DaoCloud Enterprise](https://docs.daocloud.io/), a platform for cloud native applications. Using Kubernetes and other cutting-edge cloud native technologies as a foundation, DaoCloud provides satisfying cloud native solutions for military, finance, manufacturing, energy, government, and retail clients,It helps companies with their digital transformation, such as SPD Bank, Huatai Securities, Fullgoal Fund, SAIC Motor, Haier, Fudan University, Watsons, Genius Auto Finance, State Grid Corporation of China, etc.
 
 !!! note ""
 
@@ -46,7 +46,7 @@ Kubernetes served as an inseparable part of these four releases over six years, 
 
     Vice President of Product Innovation of DaoCloud
 
-On the one hand, Kubernetes makes our products more performant and competitive. DaoCloud integrates relevant practices and technologies around Kubernetes to polish its flagship offering – DaoCloud Enterprise. The latest 5th version, released in 2022, covers application stores, application delivery, microservice governance, observability, data services, multicloud management, cloud edge collaboration, and other features. DaoCloud Enterprise 5.0 is an inclusive integration of cloud-native technologies.
+On the one hand, Kubernetes makes our products more performant and competitive. DaoCloud integrates relevant practices and technologies around Kubernetes to polish its flagship offering – DaoCloud Enterprise. The latest 5th version, released in 2022, covers application stores, application delivery, microservice governance, observability, data services, multicloud management, cloud edge collaboration, and other features. DaoCloud Enterprise 5.0 is an inclusive integration of cloud native technologies.
 
 DaoCloud deployed a Kubernetes platform for SPD Bank, improving its application deployment efficiency by 82%, shortening its delivery cycle from half a year to one month, and promoting its transaction success rate to 99.999%.
 
@@ -58,7 +58,7 @@ For a large-scale securities firm, its business procedure efficiency was enhance
 
 With this product, Fullgoal Fund shortened its middleware deployment time from hours to minutes, improved middleware operation and maintenance capabilities by 50%, containerization by 60%, and resource utilization by 40%.
 
-On the other hand, our product development is also based on Kubernetes. DaoCloud deployed Gitlab based on Kubernetes and established a product development process of "Gitlab -> PR -> Auto Tests -> Builds & Releases", which significantly improved our development efficiency, reduced repetitive tests, and realized automatic release of applications. This approach greatly saves operation and maintenance costs, enabling technicians to invest more time and energy in product development to offer better cloud-native products.
+On the other hand, our product development is also based on Kubernetes. DaoCloud deployed Gitlab based on Kubernetes and established a product development process of "Gitlab -> PR -> Auto Tests -> Builds & Releases", which significantly improved our development efficiency, reduced repetitive tests, and realized automatic release of applications. This approach greatly saves operation and maintenance costs, enabling technicians to invest more time and energy in product development to offer better cloud native products.
 
 !!! note ""
 
@@ -68,17 +68,17 @@ On the other hand, our product development is also based on Kubernetes. DaoCloud
 
     Header of Open Source & Advanced Development Team of DaoCloud
 
-DaoCloud is deeply involved in contributing to Kubernetes and other cloud-native open source projects. Our participation and contributions in these communities continue to grow. In the year of 2022, DaoCloud was ranked third globally in terms of cumulative contribution to Kubernetes (data from Stackalytics as of January 5, 2023).
+DaoCloud is deeply involved in contributing to Kubernetes and other cloud native open source projects. Our participation and contributions in these communities continue to grow. In the year of 2022, DaoCloud was ranked third globally in terms of cumulative contribution to Kubernetes (data from Stackalytics as of January 5, 2023).
 
 In August 2022, Kubernetes officially organized an interview with community contributors, and four outstanding contributors from the Asia-Pacific region were invited. Half of them came from DaoCloud, namely [Shiming Zhang](https://github.com/wzshiming) and [Paco Xu](https://github.com/pacoxu). Both are Reviewers of SIG Node. Furthermore, at the KubeCon + CloudNative North America 2022, [Kante Yin](https://github.com/kerthcet) from DaoCloud won the 2022 Contributor Award of Kubernetes.
 
-In addition, DaoCloud continue to practice its cloud-native beliefs and contribute to the Kubernetes ecosystem by sharing source code of several excellent projects, including Clusterpedia, Kubean, CloudTTY, KLTS, Merbridge, HwameiStor, Spiderpool, and Piraeus, on Github.
+In addition, DaoCloud continue to practice its cloud native beliefs and contribute to the Kubernetes ecosystem by sharing source code of several excellent projects, including Clusterpedia, Kubean, CloudTTY, KLTS, Merbridge, HwameiStor, Spiderpool, and Piraeus, on Github.
 
 In particular:
 
 - Clusterpedia, compatible with Kubernetes OpenAPIs, is designed for resource synchronization across clusters and powerful search feature that allows quick, easy and effective retrieval of all resources in clusters.
 - Kubean makes it possible to quickly create production-ready Kubernetes clusters and integrate clusters from other providers.
-- CloudTTY is a web terminal and cloud shell operator for Kubernetes cloud-native environment. It can manage Kubernetes clusters on a web page, anytime and anywhere.
+- CloudTTY is a web terminal and cloud shell operator for Kubernetes cloud native environment. It can manage Kubernetes clusters on a web page, anytime and anywhere.
 - KLTS provides long-term free maintenance for earlier versions of Kubernetes.
 - Piraeus is an easy and secure storage solution for Kubernetes with high performance and availability.
 
@@ -86,7 +86,7 @@ DaoCloud utilizes its practical experience across industries to contribute to Ku
 
 !!! note ""
 
-    "DaoCloud, as one of the first cloud-native technology training partners certified by CNCF, will continue to carry out trainings to help more companies find their best ways for going to the cloud."
+    "DaoCloud, as one of the first cloud native technology training partners certified by CNCF, will continue to carry out trainings to help more companies find their best ways for going to the cloud."
 
     Song Zheng,
 

@@ -9,7 +9,7 @@ This page shares some technical articles related to cloud native, and we hope th
     The poor scaling of standalone storage is a widely criticized problem with Prometheus. The article gives 3 clustering solutions to this problem.
     Prometheus federal cluster, remote storage solution, Prometheus own build cluster, these three solutions can solve the storage problem of Prometheus well.
 
-- [How can nettrace quickly perform network troubleshooting in cloud-native use cases?](https://mp.weixin.qq.com/s/0n7kbOhHr6m5JClTrSIysA)
+- [How can nettrace quickly perform network troubleshooting in cloud native use cases?](https://mp.weixin.qq.com/s/0n7kbOhHr6m5JClTrSIysA)
 
     [nettrace](https://github.com/OpenCloudOS/nettrace) is an eBPF-based network toolset that integrates network message tracing (fault location), network troubleshooting, and network anomaly monitoring.
     It provides a more efficient and easy-to-use method to solve network problems in complex cases.
@@ -83,9 +83,9 @@ This page shares some technical articles related to cloud native, and we hope th
     Running StatefulSet reliably across clusters may require addressing both network and storage issues.
     The article describes one way to configure and manage stateful application services across clusters, based on an example.
 
-- [How can we develop open source communities based on cloud-native projects?](https://thenewstack.io/how-do-we-cultivate-community-within-cloud-native-projects/)
+- [How can we develop open source communities based on cloud native projects?](https://thenewstack.io/how-do-we-cultivate-community-within-cloud-native-projects/)
 
-    Developing an open source community based on a cloud-native project starts with knowing who will care about your project, who are the end users, stakeholders and contributors?
+    Developing an open source community based on a cloud native project starts with knowing who will care about your project, who are the end users, stakeholders and contributors?
     What work do they do, where do they work, and what are their usage goals?
     Discovering more potential stakeholders and providing them with a path to contribute is critical to increasing the adoption of your project.
 
@@ -95,7 +95,7 @@ This page shares some technical articles related to cloud native, and we hope th
     By breaking through the network isolation between computing environments with L7-based traffic management capabilities, a virtual flat network is created that allows applications in different computing environments to communicate with each other.
     The article describes the integration of Dapr with the Flomesh service mesh for cross-cluster service calls, enabling "true" multicluster interoperability.
 
-- [How to mitigate container isolation vulnerabilities and monitor kernel critical paths in cloud-native use cases?](https://mp.weixin.qq.com/s/qlmm2h8RpQnKOnEjlK0pMA)
+- [How to mitigate container isolation vulnerabilities and monitor kernel critical paths in cloud native use cases?](https://mp.weixin.qq.com/s/qlmm2h8RpQnKOnEjlK0pMA)
 
     This page introduces two solutions developed by the OpenCloudOS community: CgroupFS and SLI, for mitigating container isolation vulnerabilities and monitoring kernel critical paths.
     The CgroupFS scheme provides a kernel-state container view of the VM file system (/proc, /sys), which enhances container resource view isolation.
@@ -126,7 +126,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Alibaba Cloud Cloud Native Hands-on Guide](https://developer.aliyun.com/ebook/7879?spm=a2c6h.26392470.ebook-read.13.3e855bc8YpIdco)
 
-    The guide covers global cloud-native application insights and trends, AliCloud's latest product and technology layout in the cloud-native space, AliCloud's new thinking and input on All in Serverless, and hands-on experience on cloud from companies like Transn, New Oriental, and Little Red Book.
+    The guide covers global cloud native application insights and trends, AliCloud's latest product and technology layout in the cloud native space, AliCloud's new thinking and input on All in Serverless, and hands-on experience on cloud from companies like Transn, New Oriental, and Little Red Book.
 
 - [service mesh Security and High Availability Deployment Best Practices](https://mp.weixin.qq.com/s/hFCshQpmF7Vr0jrpugArjA)
 
@@ -167,9 +167,9 @@ This page shares some technical articles related to cloud native, and we hope th
     The article introduces the practical experience of building a large-scale Kubernetes container platform Nginx load balancing system from 0 to 1,
     Including the business requirements and operation and maintenance requirements of the system, requirements for Nginx-Controller components, architecture design, experience optimization, and core considerations.
 
-- [How to manage dependencies of cloud-native applications](https://mp.weixin.qq.com/s/SipnQhbaa7WlpwORTVLCRw)
+- [How to manage dependencies of cloud native applications](https://mp.weixin.qq.com/s/SipnQhbaa7WlpwORTVLCRw)
 
-    The article introduces some best practices for cloud-native application dependency management, such as using depcheck to check for unused dependencies, using dependency check scripts to detect expired dependencies,
+    The article introduces some best practices for cloud native application dependency management, such as using depcheck to check for unused dependencies, using dependency check scripts to detect expired dependencies,
     And leverage the automated dependency management open source tool [Mend Renovate](https://github.com/marketplace/renovate) to automatically create pull requests for all types of dependency updates.
 
 - [K8s: Using Mutating Admission Controller to Simplify Application Environment Migration](https://blog.getambassador.io/using-mutating-admission-controllers-to-ease-kubernetes-migrations-5699c1901015)
@@ -200,7 +200,7 @@ This page shares some technical articles related to cloud native, and we hope th
     We often pay attention to the capabilities of Ingress, but ignore the security control of Egress traffic. However, no matter from the perspective of security or compliance, egress traffic should be strictly controlled.
     This page analyzes the reasons for egress traffic policy control, existing challenges, and analysis of industry solutions. The solutions include six categories: based on K8s Network Policy, CNI, Service Mesh, micro-segmentation technology, and DNS interception.
 
-- [How to ensure cloud-native clustersSecurity](https://mp.weixin.qq.com/s/sv40SzD7Ic1eMeElvccs7A)
+- [How to ensure cloud native clustersSecurity](https://mp.weixin.qq.com/s/sv40SzD7Ic1eMeElvccs7A)
 
     This page is a summary of the contents of the container cluster security exchange forum.
     Contents include: classification, prevention and solutions of cloud cluster security, principles of cluster division on container cloud, cluster audit, node security guarantee, etcd cluster security, design of network strategy to ensure the security of cluster resources, network isolation issues, and security levels according to security Standardized policies or configurations for k8s clusters, etc.
@@ -238,9 +238,9 @@ This page shares some technical articles related to cloud native, and we hope th
     This method is based on the precipitation of best practices, can accelerate the development efficiency of typical applications, and is a prerequisite for successfully building an internal development platform (IDP).
     The article describes what a "Golden Path" should be and a simple correlation maturity model, and shows an example of how to implement a "Golden Path".
 
-- [Managing GPU resources in a cloud-native way](https://mp.weixin.qq.com/s/W-Ntu2xdjypFgs5EPMVjkg)
+- [Managing GPU resources in a cloud native way](https://mp.weixin.qq.com/s/W-Ntu2xdjypFgs5EPMVjkg)
 
-    The article introduces how to manage GPU resources in a cloud-native way, including unifying GPU resources and frameworks, and improving GPU utilization through qGPU sharing, which reduces the difficulty of managing GPU resources at the cluster level.
+    The article introduces how to manage GPU resources in a cloud native way, including unifying GPU resources and frameworks, and improving GPU utilization through qGPU sharing, which reduces the difficulty of managing GPU resources at the cluster level.
 
 - [Microservice Full Link Grayscale New Capabilities](https://mp.weixin.qq.com/s/JL7Ru4nIiP2XuXwNiw2TtA)
 
@@ -302,7 +302,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [vivo container cluster monitoring system architecture and practice](https://mp.weixin.qq.com/s/SBZO48fWcEojlDlBROdogQ)
 
-    Based on the practical experience of vivo container cluster monitoring, This page discusses how to build the cloud-native monitoring architecture, introduces the design ideas of vivo container cluster monitoring architecture from two aspects of monitoring high availability and data forwarding layer components high availability, and finally summarizes the practical Challenges encountered in the process and countermeasures.
+    Based on the practical experience of vivo container cluster monitoring, This page discusses how to build the cloud native monitoring architecture, introduces the design ideas of vivo container cluster monitoring architecture from two aspects of monitoring high availability and data forwarding layer components high availability, and finally summarizes the practical Challenges encountered in the process and countermeasures.
 
 - [Multi-Active Architecture Guide for Hybrid Cloud](https://mp.weixin.qq.com/s/NXXwjxUAGXDD3krKXyJbaQ)
 
@@ -318,12 +318,12 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Application of Chaos Engineering in Microservice Scenario](https://mp.weixin.qq.com/s/dEA3g3JnAKloW6K7cUskYQ)
 
-    Hangzhou Mike Technology introduced Chaos Mesh, a cloud-native chaos engineering testing platform, to solve the pain points encountered in the robustness testing of microservices in cloud financial use cases.
+    Hangzhou Mike Technology introduced Chaos Mesh, a cloud native chaos engineering testing platform, to solve the pain points encountered in the robustness testing of microservices in cloud financial use cases.
 
 - [Baidu Cloud Native Mixed Department Large-scale Implementation Road](https://mp.weixin.qq.com/s/OgU2uRGhIy7r6WucvdrPzg)
 
     Hybrid technology, that is, online business and offline tasks are mixed and deployed on the same physical resources, and resource isolation, scheduling and other control methods are used to make full use of resources while ensuring service stability.
-    The Baidu cloud-native hybrid system is mainly divided into three parts: stand-alone management layer, scheduling layer, and operation layer.
+    The Baidu cloud native hybrid system is mainly divided into three parts: stand-alone management layer, scheduling layer, and operation layer.
     The stand-alone layer provides resource quality management, kernel-level QoS isolation, resource view reporting and policy enforcement, and eBPF fine-grained metric collection capabilities;
     The scheduling layer is responsible for the perception of resource dynamic source view and providing the best scheduling strategy;
     The operation layer provides features such as resource portrait, resource operation, water level setting, and hot spot management.
@@ -354,8 +354,8 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Alibaba Cloud Releases Enterprise Cloud Native IT Cost Governance Solution: Five Capabilities Accelerate Enterprise FinOps Process](https://mp.weixin.qq.com/s/hAHNlAi8c0OAO7zSq31J1w)
 
-    Enterprise cloud-native IT cost governance has problems such as the lifecycle mismatch between business units and billing units, the contradiction between dynamic resource delivery and static capacity planning, and the adaptation of enterprise IT cost governance models to cloud-native architectures.
-    As a result, Alibaba Cloud Container Service has launched an enterprise cloud-native IT cost governance solution, which provides features such as enterprise IT cost management, cost visualization, and cost optimization.
+    Enterprise cloud native IT cost governance has problems such as the lifecycle mismatch between business units and billing units, the contradiction between dynamic resource delivery and static capacity planning, and the adaptation of enterprise IT cost governance models to cloud native architectures.
+    As a result, Alibaba Cloud Container Service has launched an enterprise cloud native IT cost governance solution, which provides features such as enterprise IT cost management, cost visualization, and cost optimization.
 
 - [DevOps Trends and Best Practices to Watch in 2022](https://technostacks.com/blog/devops-trends)
 
@@ -399,7 +399,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [Why is the experience of debugging applications in Kubernetes so bad?](https://mp.weixin.qq.com/s/maI6Nu6r431LtGzrgq_6rg)
 
     For developers, what they want is: a fast internal development loop where they can use familiar IDE tools to do local debugging; find bugs in advance to avoid entering Outer Loop prematurely; and collaboration between teams in an internal environment where they can not interfere with each other.
-    To solve the above pain points, the article introduces three tools: Kubernetes local development tool [Telepresence](https://github.com/telepresenceio/telepresence), cloud-native collaborative development and testing solution [KT-Connect](https://github.com/alibaba/kt-connect) and the IDE-based cloud-native application development tool [Nocalhost](https://github.com/nocalhost/nocalhost).
+    To solve the above pain points, the article introduces three tools: Kubernetes local development tool [Telepresence](https://github.com/telepresenceio/telepresence), cloud native collaborative development and testing solution [KT-Connect](https://github.com/alibaba/kt-connect) and the IDE-based cloud native application development tool [Nocalhost](https://github.com/nocalhost/nocalhost).
 
 - [Building an End-to-End Non-Intrusive Open Source Observable Solution on K8s](https://mp.weixin.qq.com/s/HUFawiyv55Hi0aEoEPl6rA)
 
@@ -417,7 +417,7 @@ This page shares some technical articles related to cloud native, and we hope th
     [Score](https://github.com/score-spec/spec) is an open source project that provides a developer-centric, platform-independent workload specification,
     Being able to declaratively describe its runtime requirements eliminates configuration inconsistencies between local and remote environments and increases developer productivity.
 
-- [Use Bindle to easily store and distribute cloud-native applications](https://mp.weixin.qq.com/s/gGp_CneC8BzU3GKOKIfbWA)
+- [Use Bindle to easily store and distribute cloud native applications](https://mp.weixin.qq.com/s/gGp_CneC8BzU3GKOKIfbWA)
 
     [Bindle](https://github.com/deislabs/bindle) is an open source package manager commonly used to store and distribute WebAssembly applications and binaries.
     Bindle can package multiple different microservices in one big application and deploy it wherever needed, or it can store applications containing dozens of different binaries.
@@ -445,7 +445,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [How is the Java framework of Quarkus used for serverless feature development?](https://mp.weixin.qq.com/s/oeJjQtqK8h2JSGy4wOlQ6w)
 
     [Quarkus](https://github.com/quarkusio/quarkus) solves the problem of large memory consumption of traditional frameworks and the expansion of container environments.
-    With Quarkus, developers can build cloud-native microservices and serverless features using familiar technologies.
+    With Quarkus, developers can build cloud native microservices and serverless features using familiar technologies.
     Articles explaining how to get started with Quarkus develops serverless features, how to optimize features and achieve continuous testing, and make portable features across serverless platforms, etc.
 
 - [GitLab + Jenkins + Harbor Toolchain Quick Landing Guide](https://mp.weixin.qq.com/s/fA38H5up9VqZ3zEBy1eXnA)
@@ -478,9 +478,9 @@ This page shares some technical articles related to cloud native, and we hope th
     Placement provides some default prioritizers for sorting and selecting the most suitable clusters. In some cases, the sorter needs more data to calculate the score of the cluster.
     Therefore, we need a scalable way to support scheduling based on custom scores.
 
-- [HummerRisk, an open source cloud-native security governance platform](https://mp.weixin.qq.com/s/00cER0lVP2u40GROPP_ZbA)
+- [HummerRisk, an open source cloud native security governance platform](https://mp.weixin.qq.com/s/00cER0lVP2u40GROPP_ZbA)
 
-    [HummerRisk](https://github.com/HummerRisk/HummerRisk) is an open source cloud security governance platform that conducts comprehensive security inspections on cloud-native environments in a non-intrusive manner, and solves three core problems. Cloud security compliance, middle-level K8s container cloud security and upper-level software security.
+    [HummerRisk](https://github.com/HummerRisk/HummerRisk) is an open source cloud security governance platform that conducts comprehensive security inspections on cloud native environments in a non-intrusive manner, and solves three core problems. Cloud security compliance, middle-level K8s container cloud security and upper-level software security.
 
 - [GitOps deployment of OCI artifacts and Helm charts with Config Sync](https://cloud.google.com/blog/products/containers-kubernetes/gitops-with-oci-artifacts-and-config-sync)
 
@@ -494,7 +494,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [K8s DevOps Platform TAP Knative-based Cloud Native Runtime](https://mp.weixin.qq.com/s/kvUDvEVaNC3qordCtaMosw)
 
-    The core of TAP's cloud-native application runtime abstraction layer (CNR) is Knative.
+    The core of TAP's cloud native application runtime abstraction layer (CNR) is Knative.
     TAP provides a Runtime runtime layer, which not only supports users to use K8S Deployment and Service, but also Knative Serving, Scale From/To Zero, Eventing and Streaming, etc.
 
 - [Using Tekton and Kyverno's Policy-Based Approach to Secure CI/CD Pipelines](https://www.cncf.io/blog/2022/09/14/protect-the-pipe-secure-ci-cd-pipelines-with-a-policy-based-approach-using-tekton-and-kyverno/)
@@ -554,7 +554,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Using Nocalhost to develop microservice applications on Rainbond](https://mp.weixin.qq.com/s/kC9P7fvMtJvKK7_TM2LbTw)
 
-    [Nocalhost](https://github.com/nocalhost/nocalhost) is an IDE-based cloud-native application development tool, and [Rainbond](https://github.com/goodrain/rainbond) is a cloud-native multicloud application management tool platform.
+    [Nocalhost](https://github.com/nocalhost/nocalhost) is an IDE-based cloud native application development tool, and [Rainbond](https://github.com/goodrain/rainbond) is a cloud native multicloud application management tool platform.
     Nocalhost can directly develop applications in Kubernetes. Rainbond can quickly deploy microservice projects without writing Yaml. Nocalhost combines Rainbond to accelerate the efficiency of microservice development.
 
 - [Two OCI image build tool introduction builders - melange and apko](https://blog.chainguard.dev/secure-your-software-factory-with-melange-and-apko/)
@@ -564,8 +564,8 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Application continuous delivery practice based on Flux v2 in multicluster use cases](https://mp.weixin.qq.com/s/a9lRoa36tFl1_1-ESvXJpA)
 
-    [Flux v2](https://github.com/fluxcd/flux2) provides a set of tools that can support the implementation of GitOps, and provides a general solution for the continuous delivery of cloud-native applications.
-    This page mainly starts from deploying cloud-native applications with differentiated configurations in multicluster use cases, and introduces the practice of continuous app delivery based on Flux v2.
+    [Flux v2](https://github.com/fluxcd/flux2) provides a set of tools that can support the implementation of GitOps, and provides a general solution for the continuous delivery of cloud native applications.
+    This page mainly starts from deploying cloud native applications with differentiated configurations in multicluster use cases, and introduces the practice of continuous app delivery based on Flux v2.
 
 - [Use Chain-bench to Audit Your Software Supply Chain for CIS Compliance](https://blog.aquasec.com/cis-software-supply-chain-compliance)
 
@@ -598,7 +598,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Nightingale - Enterprise version of Prometheus](https://mp.weixin.qq.com/s/OXmnH9KsygpB70-NmwxM1w)
 
-    [Nightingale](https://github.com/ccfos/nightingale) is an open source cloud-native monitoring and analysis system, adopting the All-In-One design, integrating data collection, visualization, monitoring and alerting, and data analysis. The cloud-native ecosystem provides out-of-the-box enterprise-level monitoring, analysis and alert capabilities.
+    [Nightingale](https://github.com/ccfos/nightingale) is an open source cloud native monitoring and analysis system, adopting the All-In-One design, integrating data collection, visualization, monitoring and alerting, and data analysis. The cloud native ecosystem provides out-of-the-box enterprise-level monitoring, analysis and alert capabilities.
     The article mainly introduces how Nightingale correlates the three observability metrics, operation and maintenance quantification, alert noise processing, product positioning, and AIOps applications, etc.
 
 - [Porting eBPF applications to BumbleBee - the easiest way to develop BPF CO-RE programs](https://www.solo.io/blog/porting-ebpf-applications-to-bumblebee/)
@@ -651,7 +651,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Kruise Rollout: Enabling Progressive Delivery for All Application Loads](https://mp.weixin.qq.com/s/m-r3AQMbv2IPoAAJMhReZg)
 
-    [Kruise Rollout](https://github.com/openkruise/rollouts) is the definition model of OpenKruise (Alibaba Cloud's open-source cloud-native application automation management suite) for progressive delivery abstraction, aiming to solve traffic scheduling in the field of app delivery and Batch deployment problem.
+    [Kruise Rollout](https://github.com/openkruise/rollouts) is the definition model of OpenKruise (Alibaba Cloud's open-source cloud native application automation management suite) for progressive delivery abstraction, aiming to solve traffic scheduling in the field of app delivery and Batch deployment problem.
     It can cooperate with application traffic and canary release, blue-green release, etc. of actual deployment instances, and the release process can be automated in batches and pauses based on Prometheus Metrics, compatible with various workloads, etc.
 
 - [Prometheus long-term remote storage solution VictoriaMetrics entry practice](https://mp.weixin.qq.com/s/C3fzohygl5_tey70Qnz3og)
@@ -698,7 +698,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [Comparison of 12 open source monitoring tools that have been open sourced in the past two decades](https://mp.weixin.qq.com/s/ByQ3skUrcf1c_DPD4dCbRg)
 
     The article briefly introduces and analyzes 12 typical open source monitoring tools, and points out their respective advantages and disadvantages.
-    The tools mentioned include the distributed monitoring system Zabbix, the time series database VictoriaMetrics, Prometheus, the cloud-native monitoring and analysis system Nightingale Monitoring, etc.
+    The tools mentioned include the distributed monitoring system Zabbix, the time series database VictoriaMetrics, Prometheus, the cloud native monitoring and analysis system Nightingale Monitoring, etc.
 
 - [Discussion on the selection and application of cloud native storage tools](https://mp.weixin.qq.com/s/QoVlOe01hGWSYEKS8wfsKw)
 
@@ -710,9 +710,9 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [The Way of DevOps Platform Design in the Cloud Native Era (Rancher vs KubeSphere vs Rainbond)](https://mp.weixin.qq.com/s/oxeNq4GHE85NUBIDcgixcg)
 
-    The article focuses on the different DevOps implementations of Rancher, KubeSphere, and Rainbond, three cloud-native platform-level products.
+    The article focuses on the different DevOps implementations of Rancher, KubeSphere, and Rainbond, three cloud native platform-level products.
     The author believes that DevOps teams can choose the combination of Rancher + KubeSphere or Rancher + Rainbond.
-    Rancher is best at docking infrastructure downwards, managing cluster security and compliance, and providing developers with an easy-to-use cloud-native platform upwards is handed over to KubeSphere or Rainbond.
+    Rancher is best at docking infrastructure downwards, managing cluster security and compliance, and providing developers with an easy-to-use cloud native platform upwards is handed over to KubeSphere or Rainbond.
 
 -[Who is stronger? Grafana Mimir and VictoriaMetrics performance test](https://mp.weixin.qq.com/s/TVJZ5k5U7bs8WEyE4rikSQ)
 
@@ -731,7 +731,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [How to choose a reliable APM system in a production environment](https://mp.weixin.qq.com/s/3dD0hIuqpXdepLVC6V7aoA)
 
-    The article starts from the introduction of mainstream APM products (compared with Pinpoint, Jaeger, Skywalking, Tingyun, Tencent Cloud + Alibaba Cloud Arms and Datadog), and passes through several important dimensions in the production environment, such as product experience, Agent capability, alert + DB support, cloud-native support capabilities, large data screens, etc., and give suggestions for APM selection solutions.
+    The article starts from the introduction of mainstream APM products (compared with Pinpoint, Jaeger, Skywalking, Tingyun, Tencent Cloud + Alibaba Cloud Arms and Datadog), and passes through several important dimensions in the production environment, such as product experience, Agent capability, alert + DB support, cloud native support capabilities, large data screens, etc., and give suggestions for APM selection solutions.
 
 ### Frontier hotspot
 
@@ -744,13 +744,13 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Where to Go After Microservices Enter Deep Water](https://mp.weixin.qq.com/s/yBY-E-tndUJCmA4KYRfrDw)
 
-    As microservices enter deep water, developers and architects are more concerned about microservice security, stability, cost optimization, standardization of microservice governance, and driving the gradual evolution of cloud-native microservice architectures to multi-runtime microservice architectures.
+    As microservices enter deep water, developers and architects are more concerned about microservice security, stability, cost optimization, standardization of microservice governance, and driving the gradual evolution of cloud native microservice architectures to multi-runtime microservice architectures.
     For the limitations of multi-runtime architecture, it is necessary to realize more standardized and platform-based service mesh development and operation and maintenance capabilities, standardize the definition of Sidecar and runtime, and make the operation and maintenance platform more standard and easy to use.
 
-- [Predictions for cloud-native trends in 2023](https://mp.weixin.qq.com/s/QePkownt0_Ex9RWWeGtaag)
+- [Predictions for cloud native trends in 2023](https://mp.weixin.qq.com/s/QePkownt0_Ex9RWWeGtaag)
 
-    The article is CNCF CTO Chris Aniszczyk's predictions on the hot topics in cloud-native and technology in 2023.
-    These include: cloud-native IDEs becoming the norm, FinOps becoming mainstream and moving left, open source SBOMs becoming ubiquitous, GitOps maturing and entering substantial peak production, OpenTelemetry maturing, Backstage developer portal continuing to improve, WebAssembly entering a steady climb, and more.
+    The article is CNCF CTO Chris Aniszczyk's predictions on the hot topics in cloud native and technology in 2023.
+    These include: cloud native IDEs becoming the norm, FinOps becoming mainstream and moving left, open source SBOMs becoming ubiquitous, GitOps maturing and entering substantial peak production, OpenTelemetry maturing, Backstage developer portal continuing to improve, WebAssembly entering a steady climb, and more.
 
 - [Exploring Tunnel-based Kubernetes Cross-Cluster Communication](https://mp.weixin.qq.com/s/uuWCr1d7V_aFdCAJCJS_XQ)
 
@@ -802,7 +802,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Ant large-scale platform engineering practice for more than two years, what we have learned](https://mp.weixin.qq.com/s/X8AWh43qp4fb4eJSkx50hw)
 
-    Platform engineering is the discipline of designing and building toolchains and workflows that provide self-service capabilities for software engineering organizations in the cloud-native era.
+    Platform engineering is the discipline of designing and building toolchains and workflows that provide self-service capabilities for software engineering organizations in the cloud native era.
     The article is based on the practice of programmable cloud native protocol stack [KusionStack](https://github.com/KusionStack) in Ant Platform engineering and automation, from platform engineering, special language, divide and conquer, modeling, automation and collaborative culture, etc. From several perspectives, the benefits and challenges in the practice of large-scale platform engineering are explained.
 
 - [Observable and Traceable | Continuous Performance Analysis Continuous Profiling Practice Analysis](https://mp.weixin.qq.com/s/yiwq81ZHB0nSTcYSjOeyZg)
@@ -873,7 +873,7 @@ This page shares some technical articles related to cloud native, and we hope th
 - [OPLG: New Generation Cloud Native Observable Best Practices](https://mp.weixin.qq.com/s/Bf6nmOymcG9bk91VxLL_Kw)
 
     OPLG refers to the unified display of OpenTelemetry Traces, Prometheus Metrics, and Loki Logs through Grafana Dashboards to meet most use cases of enterprise-level monitoring and analysis.
-    Based on the OPLG system, a unified observable platform covering the full stack of cloud-native applications can be quickly built to comprehensively monitor infrastructure, containers, middleware, applications, and end-user experience.
+    Based on the OPLG system, a unified observable platform covering the full stack of cloud native applications can be quickly built to comprehensively monitor infrastructure, containers, middleware, applications, and end-user experience.
 
 - [Four Essential Elements of Kubernetes Software Supply Chain Security](https://www.cncf.io/blog/2022/04/12/a-map-for-kubernetes-supply-chain-security/)
 
@@ -930,13 +930,13 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [Excellent Case Collection of Cloud Native Architecture Containers & Microservices](https://developer.aliyun.com/ebook/7898?spm=a2c6h.20345107.ebook-index.7.195a7863AvgDpI)
 
-    The case set is a summary of relevant customers' experience sharing and best practices in building production business systems through AliCloud cloud-native products.
+    The case set is a summary of relevant customers' experience sharing and best practices in building production business systems through AliCloud cloud native products.
     There are 37 enterprise cases centered on container microservices, covering 7 industries and 10+ products such as ACK, MSE, ACR, ASK, ACK One, ASM, and observable.
 
 - [Chinese version of white paper "Assessment of Cloud Native Maturity Matrix"](https://mp.weixin.qq.com/s/xLuAOXwCVif7KrrpZIcUow)
 
-    The white paper summarizes a cloud-native maturity matrix assessment process for enterprises undergoing cloud-native transformation. Evaluate the current state of the organization from nine areas: culture, product, team, process, architecture, maintenance, delivery, configuration, and infrastructure.
-    At the same time, it clarifies four classic cloud-native transformation misunderstandings, and summarizes typical cloud-native transformation solutions.
+    The white paper summarizes a cloud native maturity matrix assessment process for enterprises undergoing cloud native transformation. Evaluate the current state of the organization from nine areas: culture, product, team, process, architecture, maintenance, delivery, configuration, and infrastructure.
+    At the same time, it clarifies four classic cloud native transformation misunderstandings, and summarizes typical cloud native transformation solutions.
     Click to read [White Paper](https://pan.baidu.com/s/1qfEqtL-LCbBo9GhnZBcyyg), extraction code: kvrv
 
 - [E-book "The Foundation of Zero Trust: Using SPIFFE to Create Universal Identity for Infrastructure"](https://mp.weixin.qq.com/s/3qwVW8AeyRvUVxYAq22XKg)
@@ -951,15 +951,15 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [From construction to governance, the industry's first white paper on microservice governance technology is officially released](https://mp.weixin.qq.com/s/mG0jX66BLOHY0TWTqYO50A)
 
-    Alibaba Cloud's cloud-native microservice team recently released ["White Paper on Microservice Governance Technology"](https://developer.aliyun.com/ebook/read/7565?spm=a2c6h.26392459.ebook-detail.4.12d9775enBrpOH).
+    Alibaba Cloud's cloud native microservice team recently released ["White Paper on Microservice Governance Technology"](https://developer.aliyun.com/ebook/read/7565?spm=a2c6h.26392459.ebook-detail.4.12d9775enBrpOH).
     This white paper focuses on the business domain of microservice governance, covering the whole process of microservice implementation including technical principles, business cases, solutions, and best practices.
 
 ### Other
 
 - [How Cloud Native is Changing Telecom Standards: Top-Down vs. Bottom-Up](https://mp.weixin.qq.com/s/dH_3CAd0PS3EPYKpJA2yNQ)
 
-    The article describes the logic of cloud-native bottom-up development principles, best practices, and de facto standards, as well as top-down, committee-driven standards, such as those in the telecom industry.
-    And what happens when top-down and bottom-up standards meet, and what happens when managers of protocols meet cloud-native standards?
+    The article describes the logic of cloud native bottom-up development principles, best practices, and de facto standards, as well as top-down, committee-driven standards, such as those in the telecom industry.
+    And what happens when top-down and bottom-up standards meet, and what happens when managers of protocols meet cloud native standards?
 
 - [Is the infrastructure team ready to take over K8s deployment ops?](https://mp.weixin.qq.com/s/7Y5GfShZhFwBQkQfRUPnoA)
 
@@ -973,7 +973,7 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [2022 Cloud Native Technology Inventory and Outlook](https://mp.weixin.qq.com/s/yRMTS5z15-PERwlameMOIw)
 
-    The article takes stock of the development of cloud-native in 2022 from both the underlying basic technology and scenario-based application technology: the mixed part brings efficiency improvement; Serverless completes standardization based on containers; Service Mesh makes new attempts, the landing method is still being explored; the FinOps concept is rapidly developing under the major theme of cost reduction and efficiency increase Development, etc.
+    The article takes stock of the development of cloud native in 2022 from both the underlying basic technology and scenario-based application technology: the mixed part brings efficiency improvement; Serverless completes standardization based on containers; Service Mesh makes new attempts, the landing method is still being explored; the FinOps concept is rapidly developing under the major theme of cost reduction and efficiency increase Development, etc.
 
 - [In-depth analysis of Containerd - NRI articles](https://mp.weixin.qq.com/s/2LrWqOtqIfbIzWG9fv5ANA)
 
@@ -999,14 +999,14 @@ This page shares some technical articles related to cloud native, and we hope th
 
 - [ToB application privatization delivery technology development history and comparison](https://mp.weixin.qq.com/s/JcDZxabHImljPCEus_inlg)
 
-    In traditional app delivery, managing runtime environment and operating system differences is a pain point. The current cloud-native app delivery uses container and kubernetes-related technologies to solve this problem, but the learning and use threshold of these technologies is too high.
+    In traditional app delivery, managing runtime environment and operating system differences is a pain point. The current cloud native app delivery uses container and kubernetes-related technologies to solve this problem, but the learning and use threshold of these technologies is too high.
     Thus, the abstracted application model becomes the next-generation solution, for example, OAM-based KubeVela app delivery and RAM-based Rainbond app delivery.
 
 - [Survey on Backup and Recovery Solutions for Container Services of Domestic and Foreign Cloud Vendors](https://mp.weixin.qq.com/s/P71vBPiID8o1GI6pqbaO6w)
 
     This page investigates and analyzes the container service backup and recovery solutions of four vendors (Alibaba Cloud Container Service ACK, Tencent Cloud Container Service TKE, Huawei Cloud Backup Product CBR, Google Cloud Backup for GKE), and compares their respective advantages and disadvantages.
 
-- [Trends behind Apache APISIX 3.0 and Kong 3.0 features in cloud-native gateways](https://mp.weixin.qq.com/s/hyqqDojuzEU-LvfR5deBZw)
+- [Trends behind Apache APISIX 3.0 and Kong 3.0 features in cloud native gateways](https://mp.weixin.qq.com/s/hyqqDojuzEU-LvfR5deBZw)
 
     The article analyzes in detail the latest versions of two API gateway projects APISIX and Kong, trying to gain insight into valuable technical trends from update details.
     Kong 3.0 began to gradually lean towards the enterprise version, focusing on the government, financial industry, and large enterprises that pay more attention to security compliance.

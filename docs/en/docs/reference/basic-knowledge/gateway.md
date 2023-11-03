@@ -6,9 +6,9 @@ hide:
 # Cloud Native Gateway
 
 The gateway is the middle layer between the client and the server, and all external requests need to go through the gateway layer.
-The cloud-native gateway refers to a gateway developed based on the cloud-native declarative API concept and decoupled from the business, such as Zuul, Kong, Nginx, Spring Cloud Gateway, Envoy, etc.
-The most notable feature of the cloud-native gateway is that the runtime configuration of the gateway can be defined in a declarative manner, and the configuration can be automatically generated through the declaration of the control plane.
-The features of the cloud-native gateway are basically similar to those of the microservice gateway, such as authentication, routing, monitoring, load balancing, caching, service upgrading and upgrading, static response processing, flow control, logging, retrying, circuit breaking, etc.
+The cloud native gateway refers to a gateway developed based on the cloud native declarative API concept and decoupled from the business, such as Zuul, Kong, Nginx, Spring Cloud Gateway, Envoy, etc.
+The most notable feature of the cloud native gateway is that the runtime configuration of the gateway can be defined in a declarative manner, and the configuration can be automatically generated through the declaration of the control plane.
+The features of the cloud native gateway are basically similar to those of the microservice gateway, such as authentication, routing, monitoring, load balancing, caching, service upgrading and upgrading, static response processing, flow control, logging, retrying, circuit breaking, etc.
 
 - Sentinel
 

@@ -6,7 +6,7 @@ The CAS pattern fits well with the trend towards distributed data and is also su
 
 CAS means that developers can work without worrying about the underlying requirements of the enterprise storage architecture. For CAS, cloud disk is no different from SAN, bare metal or virtual machine. Developers and platform SRE engineers don't have to meet to decide on the next storage vendor, or go back and forth on how to set it up to support a use case. Developers remain autonomous and can spin up their own CAS containers using whatever storage is available to the Kubernetes cluster.
 
-CAS reflects a broader trend of solutions, many of which are CNCF projects, built on top of Kubernetes and microservices, resulting in a thriving cloud-native ecosystem. Today, CNCF's cloud-native ecosystem includes security, DNS, networking, network policy management, messaging, tracking, logging, and many other projects.
+CAS reflects a broader trend of solutions, many of which are CNCF projects, built on top of Kubernetes and microservices, resulting in a thriving cloud native ecosystem. Today, CNCF's cloud native ecosystem includes security, DNS, networking, network policy management, messaging, tracking, logging, and many other projects.
 
 ## Benefits of CAS
 

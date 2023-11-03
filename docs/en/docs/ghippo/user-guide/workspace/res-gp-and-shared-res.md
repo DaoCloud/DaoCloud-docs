@@ -16,7 +16,7 @@ Currently, it is not supported to limit the cluster quota of secondary suppliers
 ## Differences in Cluster Quota Usage
 
 - Cluster Binding for Resource Groups: The workspace administrator is mapped as the administrator of the cluster and is equivalent to being granted the Cluster Admin role in Container Management-Permission Management. They can have unrestricted access to cluster resources, manage important content such as management nodes, and cannot be subject to resource quotas.
-- Cluster Binding for Shared Resources: The workspace administrator can only use the quota in the cluster to create namespaces in the application workspace and does not have cluster management permissions. If the workspace is restricted by a quota, the workspace administrator can only create and use namespaces within the quota range.
+- Cluster Binding for Shared Resources: The workspace administrator can only use the quota in the cluster to create namespaces in the Workbench and does not have cluster management permissions. If the workspace is restricted by a quota, the workspace administrator can only create and use namespaces within the quota range.
 
 ## Differences in Resource Types
 
@@ -25,4 +25,4 @@ Currently, it is not supported to limit the cluster quota of secondary suppliers
 
 ## Similarities between Resource Groups and Shared Resources
 
-After binding to a cluster, both resource groups and shared resources can go to the application workspace to create namespaces, which will be automatically bound to the workspace.
+After binding to a cluster, both resource groups and shared resources can go to the Workbench to create namespaces, which will be automatically bound to the workspace.

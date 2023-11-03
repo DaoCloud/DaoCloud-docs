@@ -11,9 +11,9 @@ With years of leading experience in cloud native field, DaoCloud developed a bra
 
     With containerized workflows, Workbench provides continuous integration, continuous delivery, and horizontal scaling, to run thousands of concurrent users and pipelines in a high availability (HA) environment.
 
-- Cloud-native Infrastructure
+- Cloud native Infrastructure
 
-    Workbench containerized the environment of building applications, customized resources such as building machines, ensuring pipeline-level resource isolation. It also supports deployment of multiple types of applications, simplifying the delivery of cloud-native applications.
+    Workbench containerized the environment of building applications, customized resources such as building machines, ensuring pipeline-level resource isolation. It also supports deployment of multiple types of applications, simplifying the delivery of cloud native applications.
 
 - Higher R&D Efficiency
 
@@ -39,4 +39,4 @@ With years of leading experience in cloud native field, DaoCloud developed a bra
 
 - Experience Accumulation
 
-    After years of cultivation in the cloud-native field, DaoCloud has extensive practical experience in industries such as finance, e-commerce, and manufacturing. It can provide stable and reliable IT delivery production lines to help enterprises build a platform suitable for integrated R&D and operation.
+    After years of cultivation in the cloud native field, DaoCloud has extensive practical experience in industries such as finance, e-commerce, and manufacturing. It can provide stable and reliable IT delivery production lines to help enterprises build a platform suitable for integrated R&D and operation.

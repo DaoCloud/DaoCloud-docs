@@ -37,7 +37,7 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
 
 - Enterprise-level cloud native CI/CD capabilities enable standardized continuous integration and delivery ability, and agile iteration of applications. It meets new business needs quickly, and improve the efficiency of application integration and release.
 
-- Cloud-native ability of continuous delivery, containerized management of application construction environment, and custom build machine and other resources to ensure pipeline-level resource isolation, and supporting multiple types of application deployment, making the delivery of cloud-native application easier.
+- Cloud native ability of continuous delivery, containerized management of application construction environment, and custom build machine and other resources to ensure pipeline-level resource isolation, and supporting multiple types of application deployment, making the delivery of cloud native application easier.
 
 - Improve R&D (Research and Development) efficiency. In a visual pipeline construction environment, declarative steps are pre-packaged, and complex pipelines can be created without scripts, making operation simpler. The environment can be automatically created/destroyed according to the resource size to avoid resource waste.
 
@@ -80,7 +80,7 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
 
 === "[Insight](../insight/intro/index.md)"
 
-- The application-centric, out-of-the-box, new generation cloud-native observability operation and maintenance platform realizes fast fault location and quick troubleshooting.
+- The application-centric, out-of-the-box, new generation cloud native observability operation and maintenance platform realizes fast fault location and quick troubleshooting.
 
 - Monitor applications and resources in real time, collect data such as various metrics, logs, and events to analyze application health status, and provide alert capabilities and comprehensive, clear, and multi-dimensional data visualization capabilities.
 
@@ -106,7 +106,7 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
 
 - One-click creation/joining of container clusters for unified management of large-scale clusters across
   clouds/clusters. Graphical creation of pipelines to meet various needs. One-stop application distribution,
-  compatible with multiple application formats. Comprehensive one-stop cloud-native management platform.
+  compatible with multiple application formats. Comprehensive one-stop cloud native management platform.
 - No need to perceive differences in the underlying Kubernetes platform, simplifying the application
   deployment process and lowering the difficulty of deploying applications to the cloud, allowing users
   to focus on application development without worrying about underlying infrastructure settings. At the
@@ -120,9 +120,9 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of featueres, and the typi
   to the cloud, allowing users to focus on application development without worrying about underlying
   infrastructure settings. At the same time, it establishes a foundation for users to
   **use multiple clusters like they use a single cluster** .
-- Compatible with traditional microservice frameworks and cloud-native frameworks.
+- Compatible with traditional microservice frameworks and cloud native frameworks.
   Traditional microservice frameworks do not require modification and can be easily integrated,
-  highly compatible with traditional registration centers such as Zookeeper, as well as cloud-native
+  highly compatible with traditional registration centers such as Zookeeper, as well as cloud native
   Kubernetes and Mesh registration centers. It also supports mainstream open-source microservice
   frameworks, such as Spring Cloud and Dubbo, and open-source gateway components, such as Envoy, Sentinel, and Contour.
 - Rich monitoring metrics to achieve all-round monitoring of applications and early warning of

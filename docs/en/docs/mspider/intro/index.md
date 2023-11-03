@@ -50,7 +50,7 @@ DCE 5.0 Service Mesh offers several advantages compared to other products:
 - Protocol Extensions: Extend the support of Dubbo protocol.
 
 - Legacy SDK Integration: Provides integrated solutions for traditional microservice SDKs such as Spring Cloud
-  and Dubbo. Businesses developed by traditional microservice SDKs can be quickly migrated to cloud-native mesh
+  and Dubbo. Businesses developed by traditional microservice SDKs can be quickly migrated to cloud native mesh
   operating environments without extensive code modification.
 
 ## Learning Path

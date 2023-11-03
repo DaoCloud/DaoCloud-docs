@@ -24,18 +24,18 @@ and gateway rules, enabling fine-grained control over traffic between services w
 
 ## Microservice Registration & Discovery
 
-Microservice Governance can manage both traditional microservices and cloud-native microservices.
-It facilitates the process of "Go to Cloud" by making it easier to change traditional microservices to cloud-native ones.
+Microservice Governance can manage both traditional microservices and cloud native microservices.
+It facilitates the process of "Go to Cloud" by making it easier to change traditional microservices to cloud native ones.
 
 With Microservice Governance, you can:
 
 - Create Nacos registries to manage microservice namespaces, govern east-west traffic, set configuration files, and monitor invocation traces.
 - Integrate three traditional microservice registries: Eureka, Zookeeper, and Nacos.
-- Integrate two cloud-native microservice registries: Kubernetes and Service Mesh.
+- Integrate two cloud native microservice registries: Kubernetes and Service Mesh.
 
 ## Traffic Governance
 
-Microservice Governance uses Sentinel and service mesh to meet the different demands of governing service-to-service traffic of traditional and cloud-native microservices.
+Microservice Governance uses Sentinel and service mesh to meet the different demands of governing service-to-service traffic of traditional and cloud native microservices.
 
 - Use Sentinel to set flow control, circuit breaker, degradation, hotspot, system, authorization, cluster flow control and other rules to govern the east-west traffic of traditional micro services.
 - Use Service Mesh to set virtual services, target rules and gateway rules to control traffic between services in a mesh.

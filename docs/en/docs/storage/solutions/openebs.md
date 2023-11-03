@@ -45,8 +45,8 @@ In other words, the granularity of control of CAS simplifies the movement of sta
 #### Cloud Native
 
 CAS containerizes storage software and uses Kubernetes Custom Resource Definitions (CRDs) to represent underlying storage resources such as disks and StorageClass.
-This model enables storage to be seamlessly integrated into other cloud-native tools.
-Cloud-native tools such as Prometheus, Grafana, Fluentd, Weavescope, Jaeger, etc. can be used to configure, monitor, and manage storage resources.
+This model enables storage to be seamlessly integrated into other cloud native tools.
+Cloud native tools such as Prometheus, Grafana, Fluentd, Weavescope, Jaeger, etc. can be used to configure, monitor, and manage storage resources.
 
 Similar to hyperconverged systems, the storage and performance of volumes in CAS are scalable.
 Since each volume has its own storage controller, storage can scale as much as the node's storage capacity allows.
