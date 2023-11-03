@@ -18,7 +18,7 @@
 
     - 负载名称：最多包含 63 个字符，只能包含小写字母、数字及分隔符（“-”），且必须以小写字母或数字开头及结尾，例如 deployment-01。同一命名空间内同一类型工作负载的名称不得重复，而且负载名称在工作负载创建好之后不可更改
     - 命名空间：选择将新建的负载部署在哪个命名空间，默认使用 default 命名空间。找不到所需的命名空间时可以根据页面提示去创建新的命名空间
-    - 实例数：负载的 Pod 实例数量，默认创建 1 个 Pod 实例，不可修改
+    - 实例数：负载的 Pod 实例数量，默认创建 1 个 Pod 实例，可以修改
     - 描述：输入负载的描述信息，内容自定义
 
     ![填写基本信息](../../images/create-batch-app-02.png)
@@ -116,53 +116,53 @@
 
 参考示例如下。
 
-```yaml
-apiVersion: apps.kubeedge.io/v1alpha1
-kind: EdgeApplication
-metadata:
-  name: nginx-app2
-  namespace: default
-spec:
-  workloadScope:
-    targetNodeGroups:
-      - name: test
-        overriders:
-          imageOverriders:
-            - component: Repository
-              operator: replace
-              predicate:
-                path: /spec/template/spec/containers/0/image
-              value: nginx1
-            - component: Tag
-              operator: replace
-              predicate:
-                path: /spec/template/spec/containers/0/image
-              value: v1
-          replicas: 1
-  workloadTemplate:
-    manifests:
-      - apiVersion: apps/v1
-        kind: Deployment
-        metadata:
-          labels:
-            kant.io/app: ''
-          name: nginx-test2
-          namespace: default
-        spec:
-          replicas: 10
-          selector:
-            matchLabels:
-              app: nginx-test2
-          template:
+    ```yaml
+    apiVersion: apps.kubeedge.io/v1alpha1
+    kind: EdgeApplication
+    metadata:
+      name: nginx-app2
+      namespace: default
+    spec:
+      workloadScope:
+        targetNodeGroups:
+          - name: test
+            overriders:
+              imageOverriders:
+                - component: Repository
+                  operator: replace
+                  predicate:
+                    path: /spec/template/spec/containers/0/image
+                  value: nginx1
+                - component: Tag
+                  operator: replace
+                  predicate:
+                    path: /spec/template/spec/containers/0/image
+                  value: v1
+              replicas: 1
+      workloadTemplate:
+        manifests:
+          - apiVersion: apps/v1
+            kind: Deployment
             metadata:
               labels:
-                app: nginx-test2
+                kant.io/app: ''
+              name: nginx-test2
+              namespace: default
             spec:
-              containers:
-                - image: nginx
-                  imagePullPolicy: IfNotPresent
-                  name: nginx
- ```
+              replicas: 10
+              selector:
+                matchLabels:
+                  app: nginx-test2
+              template:
+                metadata:
+                  labels:
+                    app: nginx-test2
+                spec:
+                  containers:
+                    - image: nginx
+                      imagePullPolicy: IfNotPresent
+                      name: nginx
+    ```
 
     ![YAML 创建](../../images/create-app-14.png)
   
