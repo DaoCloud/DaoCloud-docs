@@ -528,6 +528,7 @@ nav:
                       - Enhance GO Apps with OTel SDK: insight/quickstart/otel/golang.md
                       - Expose Metrics with OTel SDK: insight/quickstart/otel/meter.md
                       - Enhance Go Apps with OTel Auto-Instrumentation: insight/quickstart/otel/golang-ebpf.md
+                      - Send Trace Data to Insight: insight/quickstart/otel/send_tracing_to_insight.md
                   - Enable Observability for Java Apps:
                       - insight/quickstart/jvm-monitor/jvm-catelogy.md
                       - Use JMX Exporter to Expose JVM Metrics: insight/quickstart/jvm-monitor/jmx-exporter.md
