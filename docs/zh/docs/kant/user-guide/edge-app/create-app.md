@@ -119,20 +119,20 @@
 
 在使用 YAML 创建工作负载的时候，建议加上以下限制。标签（labels）用于标识边缘应用，节点亲和性（affinity）用于将 Pod 分配到指定边缘节点。
 
-```yaml
-labels:
-    kant.io/app: ''
+    ```yaml
+    labels:
+        kant.io/app: ''
 
-affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-              - matchExpressions:
-                  - key: kubernetes.io/hostname
-                    operator: In
-                    values:
-                      - edge1h6382jnk
- ```
+    affinity:
+            nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+                nodeSelectorTerms:
+                - matchExpressions:
+                    - key: kubernetes.io/hostname
+                        operator: In
+                        values:
+                        - edge1h6382jnk
+    ```
 
 影响：
 
