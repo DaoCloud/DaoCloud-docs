@@ -6,6 +6,7 @@ This page provides offline installation packages for different versions of the M
 
 | Version     | Architecture | File Size | Package      | Checksum File | Update Date |
 |-------------| ----- |-------- |---------------| ---------- |-----------|
+| [v0.13.0](../../kairship/intro/release-notes.md) | AMD 64 | 527.09MB | [:arrow_down: kairship_v0.13.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kairship_v0.13.0_amd64.tar) | [:arrow_down: kairship_v0.13.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kairship_v0.13.0_amd64_checksum.sha512sum) | 2023-10-26 |
 | [v0.12.0](../../kairship/intro/release-notes.md) | AMD 64 | 525.11MB | [:arrow_down: kairship_v0.12.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kairship_v0.12.0_amd64.tar) | [:arrow_down: kairship_v0.12.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kairship_v0.12.0_amd64_checksum.sha512sum) | 2023-09-01 |
 | [v0.11.0](../../kairship/intro/release-notes.md) | AMD64 | 486 MB | [:arrow_down: kairship_v0.11.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kairship_v0.11.0_amd64.tar) | [:arrow_down: kairship_v0.11.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kairship_v0.11.0_amd64_checksum.sha512sum) | 2023-7-31 |
 

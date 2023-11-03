@@ -18,7 +18,7 @@ After creating multicloud instances, you need to connect them to work clusters.
 
 ## Remove a Cluster
 
-1. Click the `...` button on the right side of the cluster, and select `Remove` from the pop-up menu.
+1. Click the `⋮` button on the right side of the cluster, and select `Remove` from the pop-up menu.
 
     ![Removal](images/cluster03.png)
 
@@ -32,7 +32,7 @@ After creating multicloud instances, you need to connect them to work clusters.
 
 ## More Operations
 
-The system will automatically return to the work cluster list. Click the `...` button on the right side of the cluster to perform operations such as `Pause/Resume Schedule`, `Edit Cluster Labels`, and `Modify Cluster Taints`.
+The system will automatically return to the work cluster list. Click the `⋮` button on the right side of the cluster to perform operations such as `Pause/Resume Schedule`, `Edit Cluster Labels`, and `Modify Cluster Taints`.
 
 ![More Operations](images/cluster05.png)
 

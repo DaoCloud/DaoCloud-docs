@@ -134,6 +134,7 @@ nav:
                   - Cluster Status: kpanda/user-guide/clusters/cluster-status.md
                   - Choose Runtime: kpanda/user-guide/clusters/runtime.md
                   - Cluster Versions: kpanda/user-guide/clusters/cluster-version.md
+                  - Integrate Rancher Cluster: kpanda/user-guide/clusters/integrate-rancher-cluster.md
               - Namespaces:
                   - Create Namespace: kpanda/user-guide/namespaces/createns.md
                   - Exclusive Node to Namespace: kpanda/user-guide/namespaces/exclusive.md
@@ -171,6 +172,8 @@ nav:
                   - Helm Apps: kpanda/user-guide/helm/helm-app.md
                   - Helm Registries: kpanda/user-guide/helm/helm-repo.md
                   - Multi-architecture Helm Apps: kpanda/user-guide/helm/multi-archi-helm.md
+              - Operator:
+                  - Import Offline MinIo Operator: kpanda/user-guide/olm/import-miniooperator.md
               - Container Network:
                   - Create Service: kpanda/user-guide/network/create-services.md
                   - Create Ingress: kpanda/user-guide/network/create-ingress.md
@@ -525,6 +528,7 @@ nav:
                       - Enhance GO Apps with OTel SDK: insight/quickstart/otel/golang.md
                       - Expose Metrics with OTel SDK: insight/quickstart/otel/meter.md
                       - Enhance Go Apps with OTel Auto-Instrumentation: insight/quickstart/otel/golang-ebpf.md
+                      - Send Trace Data to Insight: insight/quickstart/otel/send_tracing_to_insight.md
                   - Enable Observability for Java Apps:
                       - insight/quickstart/jvm-monitor/jvm-catelogy.md
                       - Use JMX Exporter to Expose JVM Metrics: insight/quickstart/jvm-monitor/jmx-exporter.md
@@ -906,6 +910,9 @@ nav:
                   - Benefits: kant/intro/benefits.md
                   - Use Cases: kant/intro/use-cases.md
                   - Concepts: kant/intro/concepts.md
+              - Edge Unit:
+                  - Create Edge Unit: kant/user-guide/edge-unit/create-unit.md
+                  - Manage Edge Unit: kant/user-guide/edge-unit/manage-unit.md
               - Edge Node:
                   - Overview: kant/user-guide/node/index.md
                   - Requirements to Join Edge Node: kant/user-guide/node/join-rqmt.md
@@ -919,6 +926,11 @@ nav:
                   - Intro: kant/user-guide/device/index.md
                   - Create End Device: kant/user-guide/device/create-device.md
                   - Manage End Device: kant/user-guide/device/manage-device.md
+              - Edge App:
+                  - Overview: kant/user-guide/edge-app/index.md
+                  - Create Deployment: kant/user-guide/edge-app/create-app.md
+                  - Create Deployment in Batch: kant/user-guide/edge-app/create-batch-app.md
+                  - Deploy Deployment in Batch: kant/user-guide/edge-app/deploy.md
               - Edge to Cloud Message:
                   - Overview: kant/user-guide/route/index.md
                   - Create Message Route: kant/user-guide/route/create-route.md
@@ -1038,6 +1050,7 @@ nav:
                   - Application Backup: download/modules/kcoral.md
                   - Security: download/modules/dowl.md
                   - Network: download/modules/spidernet.md
+                  - VM Container: download/modules/virtnest.md
               - MultiCloud Management: download/modules/kairship.md
               - Container Registry: download/modules/kangaroo.md
               - Insight: download/modules/insight.md
@@ -1052,6 +1065,7 @@ nav:
                   - PostgreSQL: download/modules/middleware/postgresql.md
                   - RabbitMQ: download/modules/middleware/rabbitmq.md
                   - Redis: download/modules/middleware/redis.md
+                  - RocketMQ: download/modules/middleware/rocketmq.md
               - Cloud Edge Collaboration: download/modules/kant.md
               - Management:
                   - Global Management: download/modules/ghippo.md

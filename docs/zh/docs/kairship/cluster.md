@@ -22,9 +22,9 @@
 
     ![removal](images/cluster01.png)
 
-2. 在弹窗中输入集群的名称，确认无误后点击`确认移除`。
+2. 在弹窗中输入集群的名称，确认无误后点击`删除`。
 
-    ![removal](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/removecl02.png)
+    ![removal](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/removecl02.png){ width="500" }
 
 !!! note
 

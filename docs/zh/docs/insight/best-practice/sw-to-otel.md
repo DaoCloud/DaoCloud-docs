@@ -1,6 +1,6 @@
 # 使用 OpenTelemetry 零代码接收 SkyWalking 链路数据
 
-可观测性 Insight 通过 OpenTelemetry 将应用数据进行上报。若您的应用已使用 Skywalking 来采集链路，可参考本文进行零代码改造将链路数据接入 Insight 。
+可观测性 Insight 通过 OpenTelemetry 将应用数据进行上报。若您的应用已使用 Skywalking 来采集链路，可参考本文进行零代码改造将链路数据接入 Insight。
 
 ## 代码解读
 
@@ -42,7 +42,7 @@ OpenTelemetry 与 SkyWalking 有一些共同点：都是使用 Trace 来定义�
 > 1. https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/skywalkingreceiver/skywalkingproto_to_traces.go#L272
 > 2. https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/11562
 
-接下来，我们来看如何构造 OpenTelemetry 的 ParentSpanId。在一个 Segment 内部，SkyWalking 的 ParentSpanId 字段可直接用于构造 OpenTelemetry 的 ParentSpanId 字段。但当一个 Trace 跨多个 Segment 时，SkyWalking 是通过 Reference 中的 ParentTraceSegmentId 和 ParentSpanId 表示的关联信息，于是此时需要通过 Reference 中的信息构建 OpenTelemetry 的 ParentSpanId 。
+接下来，我们来看如何构造 OpenTelemetry 的 ParentSpanId。在一个 Segment 内部，SkyWalking 的 ParentSpanId 字段可直接用于构造 OpenTelemetry 的 ParentSpanId 字段。但当一个 Trace 跨多个 Segment 时，SkyWalking 是通过 Reference 中的 ParentTraceSegmentId 和 ParentSpanId 表示的关联信息，于是此时需要通过 Reference 中的信息构建 OpenTelemetry 的 ParentSpanId。
 
 > 代码实现见 GitHub：https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/skywalkingreceiver/skywalkingproto_to_traces.go#L173
 

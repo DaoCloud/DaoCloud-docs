@@ -20,21 +20,27 @@ Using [Workspace](../../ghippo/user-guide/workspace/ws-folder.md) as the smalles
 - Workspace members can create namespace resources in associated clusters.
 - Self-service resource creation allows users to create namespaces within workspaces for resource isolation.
 
+![Multi-tenant management](../images/what01.png)
+
 === "Centered around Cloud-Native Applications"
 
 Supports "polyform" cloud-native applications in cloud-native scenarios, including Kubernetes native applications, Helm applications, OAM applications, etc.
 Can integrate microservice applications based on SpingCloud, Dubbo, and ServiceMesh frameworks to achieve microservice governance. Seamlessly integrates with DCE 5.0's [Microservice Engine](../../skoala/intro/index.md) and [Service Mesh](../../mspider/intro/index.md).
 Provides full lifecycle management for cloud-native applications, such as scaling, logging, monitoring, and application updates.
 
+![Cloud native apps](../images/what02.png)
+
 === "Efficient Continuous Integration"
 
 Supports Jenkins and Tekton as dual pipeline engine systems. Allows graphical editing of pipelines with a WYSIWYG effect. Can build applications from different code sources.
 
-![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/scenarios01.png)
+![CI](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/scenarios01.png)
 
 === "Secure Automated Progressive Delivery"
 
 Workbench embraces the GitOps concept for continuous deployment of cloud-native applications. It fully integrates with progressive delivery component Argo Rollout to support canary deployments, improving application delivery stability and efficiency.
+
+![Progressive CD](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/what04.png)
 
 !!! info
 

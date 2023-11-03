@@ -544,6 +544,7 @@ nav:
                       - OTel SDK 增强 Go 应用: insight/quickstart/otel/golang.md
                       - OTel SDK 为应用暴露指标: insight/quickstart/otel/meter.md
                       - OTel 自动探针增强 Go 应用: insight/quickstart/otel/golang-ebpf.md
+                      - 向 Insight 发送链路数据: insight/quickstart/otel/send_tracing_to_insight.md
                   - 开始监控 Java 应用:
                       - insight/quickstart/jvm-monitor/jvm-catelogy.md
                       - 使用 JMX Exporter 暴露 JVM 监控指标: insight/quickstart/jvm-monitor/jmx-exporter.md
@@ -956,7 +957,7 @@ nav:
                   - 创建终端设备: kant/user-guide/device/create-device.md
                   - 管理终端设备: kant/user-guide/device/manage-device.md
               - 边缘应用:
-                  - 边缘应用概述: kant/user-guide/edge-app/overview.md
+                  - 边缘应用概述: kant/user-guide/edge-app/index.md
                   - 创建工作负载: kant/user-guide/edge-app/create-app.md
                   - 创建批量工作负载: kant/user-guide/edge-app/create-batch-app.md
                   - 部署批量工作负载: kant/user-guide/edge-app/deploy.md
@@ -1038,6 +1039,7 @@ nav:
                       - OEM OUT: ghippo/oem/oem-out.md
                       - 定制 DCE 5.0 对接 IdP: ghippo/oem/custom-idp.md
                       - Keycloak 自定义 IdP: ghippo/oem/keycloak-idp.md
+                  - 导航栏定制: ghippo/user-guide/navigator/navigator.md
               - 故障排查:
                   - ingressgateway 无法启动: ghippo/troubleshooting/ghippo01.md
                   - 登录报错 401 或 403: ghippo/troubleshooting/ghippo02.md
@@ -1094,6 +1096,7 @@ nav:
                   - PostgreSQL: download/modules/middleware/postgresql.md
                   - RabbitMQ: download/modules/middleware/rabbitmq.md
                   - Redis: download/modules/middleware/redis.md
+                  - RocketMQ: download/modules/middleware/rocketmq.md
               - 云边协同: download/modules/kant.md
               - 管理:
                   - 全局管理: download/modules/ghippo.md

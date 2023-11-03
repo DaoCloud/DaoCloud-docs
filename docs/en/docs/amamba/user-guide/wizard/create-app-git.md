@@ -1,95 +1,131 @@
-# Build microservice applications based on Git repository
+# Building Microservices Apps from Git Repo
 
-Workbench supports building applications in four ways: Git repository, [Jar package](jar-java-app.md), container image, and Helm chart. This article introduces how to build a traditional microservice application through the source code of the Git warehouse, so as to manage the traffic of the application, view logs, monitor, traces and other features.
+The Workbench supports building applications using four methods:
+Git repo, Jar packages, container images, and Helm templates. This article
+explains how to build a traditional microservices application from a Git repo
+source code, enabling features such as traffic governance, log viewing, monitoring, and tracing.
 
-## prerequisites
+## Prerequisites
 
-- Need to create a workspace and a user, the user needs to join the workspace and give `workspace edit` role.
-  Refer to [Creating a workspace](../../../ghippo/user-guide/workspace/workspace.md), [Users and roles](../../../ghippo/user-guide/access-control/user.md).
-- Create two credentials that can access the code warehouse warehouse and mirror warehouse, refer to [credential management](../pipeline/credential.md).
-- Prepare a Gitlab warehouse, Harbor warehouse.
+- You need to create a workspace and a user who is added to the workspace with the
+  `workspace edit` role. Refer to [Creating a Workspace](../../../ghippo/user-guide/workspace/workspace.md)
+  and [Users and Roles](../../../ghippo/user-guide/access-control/user.md).
+- Create two credentials that can access the code repo and image repo.
+  See [Credential Management](../pipeline/credential.md).
+- Prepare a GitLab repo and a Harbor repo.
 
 ## Create Credentials
 
-1. Create two credentials on the Credentials page:
+Following [Credential Management](../pipeline/credential.md), create two credentials:
 
-    - git-credential: username and password for accessing the code repository
-    - registry-credential: username and password for accessing the mirror warehouse
+1. On the `Credentials` page, create two credentials:
 
-1. After the creation is complete, you can see the credential information on the `Certificate List` page.
+    - git-credential: Username and password for accessing the code repo.
+    - registry-credential: Username and password for accessing the image repo.
 
-## Create a microservice application based on Git
+2. Once created, you can view the credentials on the `Credential List` page.
 
-1. On `Workbench` -> `Wizard` page, click `Build Based on Git Repository`.
+## Create Microservices App from Git
 
-    <!--![]()screenshots-->
+1. In the `Workbench` -> `Wizard` page, click `Build with Git Repo`.
 
-2. Fill in the basic information by referring to the following instructions, and then click `Next`:
+    ![Wizard](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/ms01.png)
 
-    - Name: Fill in the name of the application.
-    - Resource type: supports stateless load and stateful load. This demo chooses stateless load.
-    - Enter or select an application group.
-    - Deployment location: Select which namespace under which cluster to deploy the application to. If you want to access microservices, please make sure that you have [created a registry](../../../skoala/trad-ms/hosted/create-registry.md) under the current workspace.
-    - Number of instances: Fill in the number of instances and the number of Pods.
+2. Fill in the basic information as per the instructions and click `Next`:
 
-        <!--![]()screenshots-->
+    - Name: Specify the name of the resource workload.
+    - Resource Type: Select Stateless Workload, which is currently the only supported option.
+    - Deployment Location: Choose the cluster and namespace where the application will be deployed.
+      If you want to integrate with microservices, make sure you have
+      [created a registry](../../../skoala/trad-ms/hosted/create-registry.md) in the current workspace.
+    - Application: Specify the name of the native application. You can select from an existing list
+      or create a new one, which by default will have the same name as specified.
+    - Instances: Specify the number of instances (Pods).
 
-3. Fill in the pipeline configuration by referring to the instructions below, and then click `Next`.
+    ![Basic Information](../../images/git01.png)
 
-    - Code repository: Enter the Git repository address, such as `https://gitlab.daocloud.cn/ndx/skoala.git`. Please use your own warehouse address in actual operation.
-    - Branch: The default is `main`, here is `main`, no need to change.
-    - Credentials: Select the credential `git-credential` for accessing the code warehouse. If it is a public warehouse, you do not need to fill in.
-    - Dockerfile path: Enter the absolute path of the Dockerfile in the code warehouse, such as `demo/integration/springcloud-nacos-sentinel/code/Dockerfile`.
-    - Target mirror name: Enter the name of the mirror warehouse, for example [`release-ci.daocloud.io/test-lfj/fromgit`](http://release-ci.daocloud.io/test-lfj/fromgit) .
-    - Tag: Enter the mirror repository version, such as `v2.0.0`.
-    - Credentials: Select the credential to access the registry, such as `registry-credential`.
-    - ContextPath: ContextPath is the execution context path of the docker build command. Fill in the path relative to the root directory of the code, such as target, or the directory where the Dockerfile is located if not filled.
-    - Build parameters: Build parameters will be passed to the parameters of the build command in the form of --build-arg, which supports setting the upstream product download address and upstream image download address as parameters, and supports custom arbitrary parameters.
+3. Fill in the pipeline configuration details based on the instructions and click `Next`.
 
-        <!--![]()screenshots-->
+    - Repo: Select a repo or enter the Git repo address. In this example, the Git repo address
+      is `https://gitlab.daocloud.cn/ndx/skoala.git`, which should be replaced with the actual
+      address. The choice of repo is from the GitLab instance integrated by the user.
+    - Branch: The default branch is `main` and can be left unchanged.
+    - Credentials: Select the credential (`git-credential`) for accessing the code repo.
+      If it is a public repo, no need to fill this field.
+    - Dockerfile Path: Enter the absolute path of the Dockerfile in the code repo.
+      For example, `demo/integration/springcloud-nacos-sentinel/code/Dockerfile`.
+    - Target Image Name: Select or enter the target image name. In this example, the address is
+      [`release-ci.daocloud.io/test-lfj/fromgit`](http://release-ci.daocloud.io/test-lfj/fromgit),
+      which should be replaced with the actual address. The choice of image repo is from the
+      image repo instance integrated and bound to the current workspace.
+    - Tag: Enter the version of the image repo, for example, `v2.0.0`.
+    - Credentials: Select the credentials for accessing the image repo, for example, `registry-credential`.
+    - ContextPath: Set the context path for the docker build command execution. Specify the relative path
+      to the root of the code directory, such as `target`. If left blank, it defaults to the directory
+      where the Dockerfile is located.
+    - Build Arguments: The build arguments are passed to the build command in the form of `--build-arg`.
+      You can set the upstream artifact download address, upstream image download address as parameters
+      and also define custom parameters.
 
-4. Fill in the container configuration by referring to the instructions below, and click `Next`.
+    ![Pipeline Configuration](../../images/git02.png)
 
-    - Service configuration: support intra-cluster access, node access, and load balancing. Example values ​​are as follows:
+4. Fill in the container configuration details based on the instructions and click `Next`.
 
-        ```
-        - name: http protocol: TCP port: 8081 targetPort: 8081
-        - name: health-http protocol: TCP port: 8999 targetPort: 8999
-        - name: service protocol: TCP port: 9555 targetPort: 9555
-        ```
-        
-        > For more detailed instructions on service configuration, please refer to [Create Service](../../../kpanda/user-guide/network/create-services.md).
-        
-    - Resource limit: Specify the upper limit of resources that the application can use, including CPU and memory.
+    - Service Configuration: Specify how the service can be accessed within the
+      cluster, node, or load balancer. Example values:
 
-    - Lifecycle: Set the commands that need to be executed when the container starts, after it starts, and before it stops. For details, please refer to [Container Lifecycle Configuration](../../../kpanda/user-guide/workloads/pod-config/lifecycle.md).
+        name | protocol | port | targetPort
+        ---- | -------- | ---- | ----------
+        http | TCP      | 8081 | 8081
+        health-http | TCP | 8999 | 8999
+        service | TCP      | 9555 | 9555
 
-    - Health check: used to judge the health status of containers and applications, which helps to improve the availability of applications. For details, please refer to [Container Health Check Configuration](../../../kpanda/user-guide/workloads/pod-config/health-check.md).
+        > For more detailed information about service configuration, refer to
+        > [Creating Services](../../../kpanda/user-guide/network/create-services.md).
 
-    - Environment variables: Configure container parameters in Pods, add environment variables or pass configurations to Pods, etc. For details, please refer to [Container environment variable configuration](../../../kpanda/user-guide/workloads/pod-config/env-variables.md).
+    - Resource Limits: Specify the resource limits for the application, including CPU and memory.
 
-    - Data Storage: Configure the settings for container mounted data volumes and data persistence.
+    - Lifecycle: Set commands that need to be executed during container startup, after startup,
+      and before shutdown. For more details, refer to
+      [Container Lifecycle Configuration](../../../kpanda/user-guide/workloads/pod-config/lifecycle.md).
 
-        <!--![]()screenshots-->
+    - Health Checks: Define health checks to determine the health status of the container and application,
+      improving availability. For more details, refer to
+      [Container Health Check Configuration](../../../kpanda/user-guide/workloads/pod-config/health-check.md).
 
-5. On the `Advanced Configuration` page, click `Enable Microservice Access`, refer to the following instructions to configure parameters, and then click `OK`.
+    - Environment Variables: Configure container parameters, add environment variables, or pass
+      configurations to the Pod. For more details, refer to
+      [Container Environment Variable Configuration](../../../kpanda/user-guide/workloads/pod-config/env-variables.md).
 
-    - Select framework: support `Spring Cloud`, `Dubbo`, here choose `Spring Cloud`.
-    - Registry instance: currently only supports the selection of [managed Nacos registry instance in the microservice engine](../../../skoala/trad-ms/hosted/create-registry.md).
-    - Registry namespace: nacos namespace for microservice applications
-    - Registry service grouping: service grouping of microservice applications
-    - Username/Password: If the registry instance is authenticated, you need to fill in the username and password
-    - Enable microservice governance: The selected registry instance should [enable the Sentinel or Mesh governance plugin](../../../skoala/trad-ms/hosted/plugins/plugin-center.md)
-    - Monitoring: Select Enable, and you can view service-related monitoring information after enabling it
-    - Log: enabled by default
-    - Traces: After enabled, you can view the traces information of the service, currently only supports Java language
+    - Data Storage: Configure data volume mounting and data persistence for containers.
 
-        <!--![]()screenshots-->
+    ![Container Configuration](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/ms04.png)
 
-## View and access microservice related information
+5. On the `Advanced Configuration` page, click on `Enable Microservice Integration`.
+   Configure the parameters as per the instructions and click `Confirm`.
 
-1. Click `Overview` on the left navigation bar, and in the `Native App` tab, hover the cursor over an app, and click `View More Details` on the floating menu.
+    - Framework Selection: Choose between `Spring Cloud` and `Dubbo`. In this case, select `Spring Cloud`.
+    - Registry Instance: Currently, only hosted Nacos registry instances from the
+     [Microservices Engine](../../../skoala/trad-ms/hosted/create-registry.md) are supported.
+    - Registry Namespace: The Nacos namespace for the microservices application.
+    - Registry Service Group: The service group for the microservices application.
+    - Username/Password: If the registry instance requires authentication, enter the username and password.
+    - Enable Service Governance: The selected registry instance should have
+     [Sentinel or Mesh governance plugins enabled](../../../skoala/trad-ms/hosted/plugins/plugin-center.md).
 
-    <!--![]()screenshots-->
+    ![Advanced Configuration](../../images/git03.png)
 
-1. Jump to the microservice engine to view service details.
+## Viewing and Accessing Microservices Information
+
+1. On the left navigation bar, click on `Overview`, and within the `Native Applications` tab,
+   select the native application to view its details.
+
+    ![Native Applications](../../images/git04.png)
+
+2. In the details page, under the `Application Resources` tab, select the resource with
+   the `Service Mesh` label and click on it.
+
+    ![Navigate](../../images/git05.png)
+
+3. You will be redirected to the Microservices Engine where you can view the
+   [service details](../../../skoala/trad-ms/hosted/services/check-details.md).

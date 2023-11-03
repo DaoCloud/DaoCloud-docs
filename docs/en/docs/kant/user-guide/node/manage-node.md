@@ -4,7 +4,7 @@ After successfully connecting and managing edge nodes, the platform provides the
 
 ## Scheduling Pause
 
-Use case: When maintenance operations need to be performed on a node, users can choose to pause the scheduling of the node. During the scheduling pause, workloads will not be deployed to this node.
+Use case: When maintenance operations need to be performed on a node, you can choose to pause the scheduling of the node. During the scheduling pause, workloads will not be deployed to this node.
 
 > Note: Workloads that have already been deployed on the node will not be affected and will continue to run normally.
 
@@ -28,14 +28,14 @@ The steps to remove a node are as follows:
 
     ![Remove Node](../../images/node-manage-02.png)
 
-3. Manually unbind the workloads and terminal device resources. If the resources on the node have already been cleared, you can skip this step.
+3. Manually unbind the workloads and end device resources. If the resources on the node have already been cleared, you can skip this step.
 
     1. Click the `Workloads` button in the dialog box to go to the workloads list page.
 
     2. Find the workloads on the node and delete them one by one.
 
-    3. Click the `Terminal Devices` button in the dialog box to go to the terminal devices list page.
+    3. Click the `End Device` button in the dialog box to go to the end device list page.
 
-    4. Find the terminal devices bound to the node and unbind them.
+    4. Find the end device bound to the node and unbind them.
 
 4. Enter the node name in the input box and click the `Delete` button to complete the node removal process.

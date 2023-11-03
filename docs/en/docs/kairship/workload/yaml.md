@@ -83,8 +83,9 @@ spec:
     - apiVersion: apps/v1
       kind: Deployment
       name: demo-nginx # (2)
-  placement:
-    clusterAffinity:
+   placement:
+    clusterAffinities:
+      affinityName: default
       clusterNames:
         - demo-stage
         - demo-dev

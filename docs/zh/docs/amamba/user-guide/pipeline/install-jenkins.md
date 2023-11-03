@@ -4,7 +4,7 @@
 
 - 安装 Jenkins 之前需要确保将要 Jenkins 的集群中存在默认的存储类。
 - 请确保安装在 `amamba-system` 命名空间下。
-- 如果在全局服务集群安装，请确保在`容器管理->helm 应用`，`amamba-system` 命名空间下的 `amamba-jenkins` 实例。
+- 如果在全局服务集群安装，请确保在`容器管理` -> `helm 应用`，`amamba-system` 命名空间下的 `amamba-jenkins` 实例。
 
 ## 开始安装
 
@@ -49,7 +49,7 @@
     | eventProxy.imagePullPolicy           | 如果 enabled=true 必须填写                                   |
     | eventProxy.configMap.eventroxy.host  | 如果 enabled=true 必须填写                                   |
     | eventProxy.configMap.eventroxy.proto | 如果 enabled=true 必须填写                                   |
-    | eventProxy.configMap.eventroxy.token | 如果 enabled=true 必须填写<br />token 获取方式参考全局管理访问密钥文档：https://docs.daocloud.io/ghippo/04UserGuide/06PersonalCenter/Password/ |
+    | eventProxy.configMap.eventroxy.token | 如果 enabled=true 必须填写<br />token 获取方式参考[全局管理访问密钥文档](../../../ghippo/user-guide/personal-center/accesstoken.md) |
 
 5. 前往 Helm 应用查看部署结果。
 
@@ -59,7 +59,7 @@
 
 说明：目前仅支持集成通过 DCE 5.0 平台安装的 Jenkins。
 
-1. 使用具有应用工作台管理员角色的用户登录 DCE 5.0 并进入应用工作台
+1. 使用具有应用工作台管理员角色的用户登录 DCE 5.0 并进入应用工作台。
 
     ![完成创建](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/install-jenkins16.png)
 

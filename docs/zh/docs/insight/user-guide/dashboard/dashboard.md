@@ -19,11 +19,11 @@ Grafana 是一种开源的数据可视化和监控平台，它提供了丰富的
 
     - 点击仪表盘右下侧可切换查询的时间范围。
 
-    ![dashboard](../../images/dashboard00.png){: width="1000px"}
+    ![dashboard](../../images/dashboard00.png)
 
 2. Insight 精选多个社区推荐仪表盘，可从节点、命名空间、工作负载等多个维度进行监控。点击 `insight-system / Insight 概览` 区域切换仪表盘。
 
-    ![dashboard](../../images/dashboard01.png){: width="1000px"}
+    ![dashboard](../../images/dashboard01.png)
 
 !!! note
 

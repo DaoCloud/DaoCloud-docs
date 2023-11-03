@@ -18,17 +18,17 @@
 
     It abstracts nodes according to specific attributes into a node group concept to uniformly manage and operate nodes in different edge regions by node group dimensions.
 
-- Terminal Device
+- End Device
 
-    A terminal device can be as small as a sensor or controller, or as large as a smart camera or industrial control machine. Terminal devices can be connected to edge nodes, support access through Modbus protocol, and be managed uniformly.
+    An end device can be as small as a sensor or controller, or as large as a smart camera or industrial control machine. End device can be connected to edge nodes, support access through Modbus protocol, and be managed uniformly.
 
 - Workload
 
     It is an API object that manages application replicas. Specifically, it is a Pod without local state. These Pods are completely independent and have the same function. They can be updated in a rolling manner, and the number of instances can be flexibly expanded or reduced.
 
-- Batch Workload
+- Batch Deployment
 
-    Defining and deploying workloads with the same configuration or small differences to a node group is a task or batch deployment action.
+    Defining and deploying stateless workloads with the same configuration or small differences to a node group is a task or batch deployment action.
 
 - ConfigMap
 
@@ -40,7 +40,7 @@
 
 - Message Endpoint
 
-    The sender or receiver of messages, which can be terminal devices, cloud services, etc.
+    The sender or receiver of messages, which can be end device, cloud services, etc.
 
 - Message Routing
 
