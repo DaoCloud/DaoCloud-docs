@@ -535,6 +535,7 @@ nav:
                       - 离线升级 insight-agent: insight/quickstart/install/offline-install.md
                       - 获取数据上传地址: insight/quickstart/install/gethosturl.md
                       - 升级注意事项: insight/quickstart/install/upgrade-note.md
+                      - 已知问题: insight/quickstart/install/knownissues.md
                   - 在其他发行版安装 insight-agent:
                       - 在 DCE 4.0.x 上: insight/quickstart/other/install-agentindce.md
                       - 在 OpenShift 4.x 上: insight/quickstart/other/install-agent-on-ocp.md

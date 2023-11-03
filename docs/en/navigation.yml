@@ -519,6 +519,7 @@ nav:
                       - Offline Install insight-agent: insight/quickstart/install/offline-install.md
                       - Get URL to Upload Data: insight/quickstart/install/gethosturl.md
                       - Upgrade Notes: insight/quickstart/install/upgrade-note.md
+                      - Known Issues: insight/quickstart/install/knownissues.md
                   - Install insight-agent on Other Distributions:
                       - On DCE 4.0.x: insight/quickstart/other/install-agentindce.md
                       - On OpenShift 4.x: insight/quickstart/other/install-agent-on-ocp.md
