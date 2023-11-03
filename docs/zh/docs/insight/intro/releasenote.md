@@ -4,9 +4,10 @@
 
 ## 2023.10.31
 
-!!!note
+!!! note
 
-    Insight Agent v0.21.0 修复了 PodMonitor 配置后会重复集多份 JVM 指标数据的问题，建议升级至该版本进行修复。详情可查看: [已知问题](../../insight/quickstart/install/knownissues.md)
+    Insight Agent v0.21.0 修复了 PodMonitor 配置后会重复集多份 JVM 指标数据的问题，建议升级至该版本进行修复。
+    详情可查看: [已知问题](../../insight/quickstart/install/knownissues.md)
 
 ### Insight Server: v0.21.0
 
@@ -17,7 +18,7 @@
 #### 优化
 
 - **优化** 更新 Insight 导航栏结构
-- **优化** 点击链路分布图可快速查看对应链路详情。
+- **优化** 点击链路分布图可快速查看对应链路详情
 
 #### 修复
 
@@ -28,8 +29,8 @@
 
 #### 修复
 
-- **修复** 链路查询中的操作中出现异常 Span 名称。
-- **修复** 银行麒麟 Kylin-V10(SP3) 操作系统中，tailing-sidecar 启动的容器无法正常启动。
+- **修复** 链路查询中的操作中出现异常 Span 名称
+- **修复** 银行麒麟 Kylin-V10(SP3) 操作系统中，tailing-sidecar 启动的容器无法正常启动
 
 ## 2023.08.31
 
