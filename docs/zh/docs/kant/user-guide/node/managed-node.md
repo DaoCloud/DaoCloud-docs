@@ -40,33 +40,48 @@
 
         1. 在安装指南界面，点击第一步`获取安装文件`按钮，右侧弹出获取安装文件抽屉。
 
-        1. 根据节点运行时环境，将镜像安装包文件拷贝到指定文件夹下。
-
-        1. 直接从界面复制镜像地址：
-
-        ```shell
-        release.daocloud.io/kant/kantadm-installation:v0.5.0-dev-7c54ddd4
-        ```
-
-        示例操作如下：
-
-        1. 在一台可以访问镜像仓库的机器上执行操作命令，获取边端安装资源镜像。
-
-            ```shell
-            docker pull release.daocloud.io/kant/kantadm-installation:v0.5.0-dev-7c54ddd4
+        1. 根据节点运行时环境，将以下镜像安装包文件拷贝到指定文件夹下。
+            
+            Kant 安装包镜像
+            
+            ```
+            release.daocloud.io/kant/kantadm-installation:v0.5.1
+            ```
+            KubeEdge Mosquitto 镜像 
+              
+            ```
+            docker.m.daocloud.io/kubeedge/eclipse-mosquitto:1.6.15
+            ```
+            KubeEdge 容器沙箱镜像 
+            
+            ```
+            docker.m.daocloud.io/kubeedge/pause:3.1
+            ```
+            KubeEdge 安装包镜像 
+            
+            ```
+            docker.m.daocloud.io/kubeedge/installation-package:v1.12.5
             ```
 
-        1. 将资源镜像打包，完成后上传至目标节点。
+            示例操作如下：
 
-            ```shell
-            docker save release.daocloud.io/kant/kantadm-installation:v0.5.0-dev-7c54ddd4 > kantadm-installation.tar
-            ```
+            1. 在一台可以访问镜像仓库的机器上执行操作命令，获取边端安装资源镜像。
 
-        1. 登录节点，加载已上传的资源镜像包。
+                ```shell
+                docker pull release.daocloud.io/kant/kantadm-installation:v0.5.1
+                ```
 
-            ```shell
-            docker load -i kantadm-installation.tar
-            ```
+            1. 将资源镜像打包，完成后上传至目标节点。
+
+                ```shell
+                docker save release.daocloud.io/kant/kantadm-installation:v0.5.0-dev-7c54ddd4 > kantadm-installation.tar
+                ```
+
+            1. 登录节点，加载已上传的资源镜像包。
+
+                ```shell
+                docker load -i kantadm-installation.tar
+                ```
 
 1. 执行如下命令，纳管边缘节点。
 
