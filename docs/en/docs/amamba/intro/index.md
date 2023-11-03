@@ -1,6 +1,6 @@
 # What is Workbench?
 
-Workbench is a container-based DevOps cloud-native application platform.
+Workbench is a container-based DevOps cloud native application platform.
 It provides a unified entry point for creating applications in DCE 5.0.
 It offers various functionalities such as graphical form-based creation
 of multiple pipelines, GitOps, canary deployments, blue/green deployments,
@@ -24,9 +24,9 @@ Using [Workspace](../../ghippo/user-guide/workspace/ws-folder.md) as the smalles
 
 === "Centered around Cloud-Native Applications"
 
-Supports "polyform" cloud-native applications in cloud-native scenarios, including Kubernetes native applications, Helm applications, OAM applications, etc.
+Supports "polyform" cloud native applications in cloud native scenarios, including Kubernetes native applications, Helm applications, OAM applications, etc.
 Can integrate microservice applications based on SpingCloud, Dubbo, and ServiceMesh frameworks to achieve microservice governance. Seamlessly integrates with DCE 5.0's [Microservice Engine](../../skoala/intro/index.md) and [Service Mesh](../../mspider/intro/index.md).
-Provides full lifecycle management for cloud-native applications, such as scaling, logging, monitoring, and application updates.
+Provides full lifecycle management for cloud native applications, such as scaling, logging, monitoring, and application updates.
 
 ![Cloud native apps](../images/what02.png)
 
@@ -38,7 +38,7 @@ Supports Jenkins and Tekton as dual pipeline engine systems. Allows graphical ed
 
 === "Secure Automated Progressive Delivery"
 
-Workbench embraces the GitOps concept for continuous deployment of cloud-native applications. It fully integrates with progressive delivery component Argo Rollout to support canary deployments, improving application delivery stability and efficiency.
+Workbench embraces the GitOps concept for continuous deployment of cloud native applications. It fully integrates with progressive delivery component Argo Rollout to support canary deployments, improving application delivery stability and efficiency.
 
 ![Progressive CD](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/what04.png)
 
@@ -51,7 +51,7 @@ Workbench embraces the GitOps concept for continuous deployment of cloud-native 
 ## Positioning in DCE 5.0
 
 Built on container management, hierarchical resource management through global management,
-creating and managing cloud-native applications with CI/CD pipelines and GitOps processes,
+creating and managing cloud native applications with CI/CD pipelines and GitOps processes,
 facilitating progressive delivery.
 
 ![Workbench Role in DCE 5.0](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/what01.png)

@@ -185,7 +185,7 @@ Create the following resources in the [Service Mesh](../../mspider/intro/index.m
 
 ### Create Gray Release Task
 
-To create a canary release task in the application workspace, follow these steps. For more detailed instructions, you can refer to the [Creating Canary Release Tasks](../user-guide/release/canary.md) guide.
+To create a canary release task in the Workbench, follow these steps. For more detailed instructions, you can refer to the [Creating Canary Release Tasks](../user-guide/release/canary.md) guide.
 
 1. Select the application for which you want to enable canary release.
 

@@ -5,7 +5,7 @@ hide:
 
 # Blog Posts
 
-This page summarizes blogs and public account articles related to DCE 5.0 and cloud-native technology, sorted by date by default.
+This page summarizes blogs and public account articles related to DCE 5.0 and cloud native technology, sorted by date by default.
 
 ## 2023
 
@@ -40,7 +40,7 @@ This page summarizes blogs and public account articles related to DCE 5.0 and cl
 
 - [20230605 | Cloud Native Federation Middleware - FedState Officially Open Sourced](./230605-fedstate.md)
 
-    In the cloud-native scenario, there has been great development of stateful services. In a multi-cloud/federation environment, how to design and implement the scheduling, deployment, and automated operation and maintenance of stateful services based on multiple clusters, multiple data centers, and hybrid cloud scenarios? The newly open-sourced FedState project is trying to solve such situation problems.
+    In the cloud native scenario, there has been great development of stateful services. In a multi-cloud/federation environment, how to design and implement the scheduling, deployment, and automated operation and maintenance of stateful services based on multiple clusters, multiple data centers, and hybrid cloud scenarios? The newly open-sourced FedState project is trying to solve such situation problems.
 
 - [2023061| API Server Tracing feature upgraded to beta](./230601-api-server-tracing.md)
 
@@ -64,7 +64,7 @@ This page summarizes blogs and public account articles related to DCE 5.0 and cl
 
 - [20230508 | Cilium Accelerates Sockets with eBPF](./230508-cilium.md)
 
-    With the continuous development of cloud-native technology, more and more applications are deployed on the cloud. Some of these applications have very strict real-time requirements, which requires us to improve their performance to achieve faster service speeds.
+    With the continuous development of cloud native technology, more and more applications are deployed on the cloud. Some of these applications have very strict real-time requirements, which requires us to improve their performance to achieve faster service speeds.
     To achieve faster service speeds, a scenario is that when two applications that call each other are deployed on the same node, each request and response must pass through the socket layer, TCP/IP protocol stack, data link layer, and physical layer. 
     If requests and responses bypass the TCP/IP protocol stack and directly redirect data packets to the peer socket at the socket layer, it will greatly reduce the time consumed for sending data packets and increase the speed of the service.
     Based on this idea, eBPF technology maps and stores socket information, and uses helper functions to achieve the ability to redirect data packets to the peer socket layer. Cilium is based on this ability of eBPF to achieve socket acceleration effects.
@@ -77,7 +77,7 @@ This page summarizes blogs and public account articles related to DCE 5.0 and cl
 
 - [20230427 | Cloud-Native Monitoring - Basics of VictoriaMetrics](./230427-victoriametrics.md)
 
-    When it comes to cloud-native monitoring solutions, the first thing that comes to mind is basically a mature solution set of Prometheus+AlertManager+Grafana. 
+    When it comes to cloud native monitoring solutions, the first thing that comes to mind is basically a mature solution set of Prometheus+AlertManager+Grafana. 
     As a monitoring core, Prometheus has powerful features such as strong data modeling, efficient operation, rich monitoring capabilities, powerful query language PromQL, simplicity, and easy management. However, Prometheus is currently not perfect in terms of high availability. For this reason, many alternative and enhanced solutions have emerged in the open source community, and VictoriaMetrics is one of the more outstanding ones. It is a fast, cost-effective, and scalable monitoring solution and time-series database.
 
 - [20230418 | Detailed Explanation of Karmada Failover](./230418-karmada-failover.md)
@@ -123,11 +123,11 @@ This page summarizes blogs and public account articles related to DCE 5.0 and cl
 
 - [20230214 | "DaoCloud Dao Ke" and Kubernetes](230214-daocloud_k8s.md)
 
-    Describes how "DaoCloud Dao Ke" leverages Kubernetes to create a new generation of enterprise-level cloud-native application cloud platforms - DaoCloud Enterprise 5.0, and how to give back to the open-source community and practice cloud-native beliefs.
+    Describes how "DaoCloud Dao Ke" leverages Kubernetes to create a new generation of enterprise-level cloud native application cloud platforms - DaoCloud Enterprise 5.0, and how to give back to the open-source community and practice cloud native beliefs.
 
 - [20230201 | 2023 Cloud-Native Predictions](230201-forecast.md)
 
-    Based on CNCF's Cloud-Native Report, this article talks about the development of various technologies and trends in the cloud-native field in 2023.
+    Based on CNCF's Cloud-Native Report, this article talks about the development of various technologies and trends in the cloud native field in 2023.
 
 - [20230201 | DCE 5.0 Struggle Quotations Collection](230201-peter.md)
 
@@ -145,11 +145,11 @@ This page summarizes blogs and public account articles related to DCE 5.0 and cl
 
 - [20221125 | KubeCon 2022 North America Station | Highlights Review](https://mp.weixin.qq.com/s/HIxBZjCK8ofCN6C5KRY25w)
 
-    The top cloud-native conference, 2022 KubeCon North America Station, which ended in November 2022, brought together more than 300 exciting speeches from cloud-native technology experts, product or solution providers, and users from around the world. The themes covered include Kubernetes, GitOps, observability, eBPF, networking, service mesh, and security, among others. This article carefully selects several hot topic speeches from this conference for a brief introduction, to feel the cloud-native trends behind each speech and discussion.
+    The top cloud native conference, 2022 KubeCon North America Station, which ended in November 2022, brought together more than 300 exciting speeches from cloud native technology experts, product or solution providers, and users from around the world. The themes covered include Kubernetes, GitOps, observability, eBPF, networking, service mesh, and security, among others. This article carefully selects several hot topic speeches from this conference for a brief introduction, to feel the cloud native trends behind each speech and discussion.
 
 - [20221123 | On the Digital Native Road of Auto Enterprises | Review of the Forum](https://mp.weixin.qq.com/s/1leu7b8KQw9pcqma8A_cuw)
 
-    On November 18th, the "Native Road Forum | Cloud-Native Digital Ecosystem Private Sharing Meeting for Auto Enterprises" hosted by DaoCloud was successfully held. Starting from specific cases of auto enterprises, this event mainly shared the application and practice of cloud-native in the automotive industry. Let's review the wonderful content of this event together.
+    On November 18th, the "Native Road Forum | Cloud-Native Digital Ecosystem Private Sharing Meeting for Auto Enterprises" hosted by DaoCloud was successfully held. Starting from specific cases of auto enterprises, this event mainly shared the application and practice of cloud native in the automotive industry. Let's review the wonderful content of this event together.
 
 - [20221115 | SpiderPool - Cloud-Native Container Network IPAM Plugin](https://mp.weixin.qq.com/s/r6YiuUBGD2KmmMOxl26X6A)
 
@@ -165,11 +165,11 @@ This page summarizes blogs and public account articles related to DCE 5.0 and cl
 
 - [20221105 | Financial Digital Transformation from a Native Thinking Perspective](https://mp.weixin.qq.com/s/9BggFRr0aoEzzmemXplRWg)
 
-    On November 5th to 6th, 2022, the 5th International Forum on Financial Technology was successfully held in Chengdu, jointly organized by Southwest University of Finance and Economics, Chengdu Local Financial Supervision and Administration Bureau, and Wenchuan District People's Government of Chengdu. On the afternoon of November 5th, DaoCloud founder and CEO, cloud-native computing foundation ambassador Chen Qiyuan, gave a keynote speech on the theme of "Digital Economy Empowers Financial Technology Innovation." Thisspeech mainly discusses the importance of cloud-native technology in the financial industry's digital transformation. Chen Qiyuan points out that when promoting digital transformation, companies should not only focus on technology but also pay attention to native thinking, which means understanding the needs of the business and users, and providing personalized solutions based on cloud-native technology. The speech also introduces several successful cases of cloud-native technology application in the financial industry, such as real-time risk control, intelligent investment advisory, and intelligent customer service.
+    On November 5th to 6th, 2022, the 5th International Forum on Financial Technology was successfully held in Chengdu, jointly organized by Southwest University of Finance and Economics, Chengdu Local Financial Supervision and Administration Bureau, and Wenchuan District People's Government of Chengdu. On the afternoon of November 5th, DaoCloud founder and CEO, cloud native computing foundation ambassador Chen Qiyuan, gave a keynote speech on the theme of "Digital Economy Empowers Financial Technology Innovation." Thisspeech mainly discusses the importance of cloud native technology in the financial industry's digital transformation. Chen Qiyuan points out that when promoting digital transformation, companies should not only focus on technology but also pay attention to native thinking, which means understanding the needs of the business and users, and providing personalized solutions based on cloud native technology. The speech also introduces several successful cases of cloud native technology application in the financial industry, such as real-time risk control, intelligent investment advisory, and intelligent customer service.
 
 - [20221103 | DaoCloud Empowers Digital Transformation of Small and Medium-sized Enterprises and Smart Agriculture](https://mp.weixin.qq.com/s/G2nT3DIvWUaCk0aNZmAs1A)
 
-    On November 2nd, 2022, the "Smart Agriculture and Cross-border E-commerce Summit Forum" was held in Chengdu. At the forum, DaoCloud founder and CEO, cloud-native computing foundation ambassador Chen Qiyuan gave a speech on "DaoCloud Empowers Digital Transformation of Small and Medium-sized Enterprises and Smart Agriculture." In this speech, Chen Qiyuan shared his insights on digital transformation and introduced how DaoCloud can help small and medium-sized enterprises and smart agriculture through cloud-native technology solutions. He emphasized that the key to digital transformation lies in "people-oriented", and only by focusing on the user experience can technology bring real value.
+    On November 2nd, 2022, the "Smart Agriculture and Cross-border E-commerce Summit Forum" was held in Chengdu. At the forum, DaoCloud founder and CEO, cloud native computing foundation ambassador Chen Qiyuan gave a speech on "DaoCloud Empowers Digital Transformation of Small and Medium-sized Enterprises and Smart Agriculture." In this speech, Chen Qiyuan shared his insights on digital transformation and introduced how DaoCloud can help small and medium-sized enterprises and smart agriculture through cloud native technology solutions. He emphasized that the key to digital transformation lies in "people-oriented", and only by focusing on the user experience can technology bring real value.
 
 - [20221025 | Openyurt Goes to Europe! Openyurt Community Organizes Meetup in Germany](https://mp.weixin.qq.com/s/EBL-r8LZfGJydEi28N8jYw)
 
@@ -177,7 +177,7 @@ This page summarizes blogs and public account articles related to DCE 5.0 and cl
 
 - [20221022 | KubeCon 2022 North America Station | DaoCloud Shares Cloud-Native Best Practices with Global Developers](https://mp.weixin.qq.com/s/5Uoq9uuITZJFhJjyRcJX0A)
 
-    On October 20th, 2022, KubeCon North America Station officially kicked off in Los Angeles, California. As a cloud-native technology service provider with many years of experience, DaoCloud was invited to participate in this grand event and shared its insights on cloud-native best practices with global developers. In this article, we will summarize DaoCloud's speeches and interactions during the event, including how to choose the right container container registry, how to optimize Kubernetes cluster performance, and how to implement GitOps-based continuous delivery.
+    On October 20th, 2022, KubeCon North America Station officially kicked off in Los Angeles, California. As a cloud native technology service provider with many years of experience, DaoCloud was invited to participate in this grand event and shared its insights on cloud native best practices with global developers. In this article, we will summarize DaoCloud's speeches and interactions during the event, including how to choose the right container container registry, how to optimize Kubernetes cluster performance, and how to implement GitOps-based continuous delivery.
 
 - [20221021 | DaoCloud Launches Container Registry Service Based on Alibaba Cloud Object Storage Service (OSS)](https://mp.weixin.qq.com/s/C89eKlFw8nH7QJzPxT4v1g)
 
@@ -191,13 +191,13 @@ This page summarizes blogs and public account articles related to DCE 5.0 and cl
 
     This article explains the capabilities provided by the global management module of DCE 5.0.
 
-- [20220925 | Introduction to Application Workspace Capability of DCE 5.0](220925-amamba.md)
+- [20220925 | Introduction to Workbench Capability of DCE 5.0](220925-amamba.md)
 
-    This article explains the capabilities provided by the application workspace module of DCE 5.0.
+    This article explains the capabilities provided by the Workbench module of DCE 5.0.
 
 - [20220914 | Merbridge Selected in eBPF Panorama](https://mp.weixin.qq.com/s/Ia9Oi3pKuLcrFJwazmpEjg)
 
-    In April 2022, Merbridge was successfully selected for CNCF Cloud Native Landscape and recommended as a cloud-native service mesh accelerator.
+    In April 2022, Merbridge was successfully selected for CNCF Cloud Native Landscape and recommended as a cloud native service mesh accelerator.
 
 - [20220909 | Experience Using Clusterpedia](https://mp.weixin.qq.com/s/GAcBIshuaOXUrDgzIguWHg)
 
@@ -205,11 +205,11 @@ This page summarizes blogs and public account articles related to DCE 5.0 and cl
 
 - [20220908 | Huawei and DaoCloud Launch Cloud-Edge Collaborative Superconverged All-in-One Machine for Metaverse](https://mp.weixin.qq.com/s/r8vfFofBy7v1VcUMInp_Iw)
 
-    On September 2, 2022, at the World Artificial Intelligence Conference, Huawei and Shanghai DaoCloud Network Technology jointly launched a "cloud-edge collaborative superconverged all-in-one machine" for innovative businesses in the metaverse, bringing cloud-native capabilities to the edge to provide real-time virtual digital world experiences and achieve true cloud-edge integration in the metaverse.
+    On September 2, 2022, at the World Artificial Intelligence Conference, Huawei and Shanghai DaoCloud Network Technology jointly launched a "cloud-edge collaborative superconverged all-in-one machine" for innovative businesses in the metaverse, bringing cloud native capabilities to the edge to provide real-time virtual digital world experiences and achieve true cloud-edge integration in the metaverse.
 
 - [20220905 | How to Build a Storage Foundation and Create a Cloud-Native Application Base? | Discussion on Native](https://mp.weixin.qq.com/s/vrBAjdCkI2BKxG7SsSX2Uw)
 
-    The cloud-native transformation of applications greatly improves their core capabilities such as availability, stability, scalability, and performance, while also profoundly changing all aspects of applications. As the cornerstone of application running, storage is inevitably affected. In the context of the cloud-native era, what challenges has it brought to storage, and how can we respond to them? In the eleventh issue of Discussion on Native, DaoCloud and Huawei will share their cloud-native storage solutions.
+    The cloud native transformation of applications greatly improves their core capabilities such as availability, stability, scalability, and performance, while also profoundly changing all aspects of applications. As the cornerstone of application running, storage is inevitably affected. In the context of the cloud native era, what challenges has it brought to storage, and how can we respond to them? In the eleventh issue of Discussion on Native, DaoCloud and Huawei will share their cloud native storage solutions.
 
 - [20220810 | Cluster API Retrieval Has Never Been So Easy](https://mp.weixin.qq.com/s/8F20pchW6WhbEdlU56qFsg)
 
@@ -227,13 +227,13 @@ This page summarizes blogs and public account articles related to DCE 5.0 and cl
 
     On June 15, 2022, the Cloud Native Computing Foundation (CNCF) announced that Clusterpedia had officially joined the CNCF sandbox project. Clusterpedia is an open-source project launched by DaoCloud at the end of 2021. It is a tool that can perform complex resource retrieval across multiple clusters with kubectl, and it is currently the only project in CNCF that focuses on multicloud information retrieval and is widely used.
 
-- [20220611 | CloudTTY: Next-generation Cloud-native Open Source Cloud Shell](https://mp.weixin.qq.com/s/sFjZmvumQNbP6gnlnpglWQ)
+- [20220611 | CloudTTY: Next-generation Cloud native Open Source Cloud Shell](https://mp.weixin.qq.com/s/sFjZmvumQNbP6gnlnpglWQ)
 
-    CloudTTY is a cloud-native open-source project based on Kubernetes, which solves a series of functional requirements under "web command line" permission control on the cluster.
+    CloudTTY is a cloud native open-source project based on Kubernetes, which solves a series of functional requirements under "web command line" permission control on the cluster.
 
-- [20220609 | Hot Cloud-native Technology Sharing at KubeCon EU | Highlights Review](https://mp.weixin.qq.com/s/2ukrV3M6dGdwzRPnigovkw)
+- [20220609 | Hot Cloud native Technology Sharing at KubeCon EU | Highlights Review](https://mp.weixin.qq.com/s/2ukrV3M6dGdwzRPnigovkw)
 
-    At the recently concluded flagship cloud-native conference KubeCon + CloudNativeCon Europe 2022, global cloud-native technology experts, product or solution providers, and users exchanged and discussed extensively on cloud-native technology. This article shares some of the popular cloud-native open-source projects at the conference from three aspects: external integration, self-evolution, and internal related functional features, so let's dive into the cloud-native world together.
+    At the recently concluded flagship cloud native conference KubeCon + CloudNativeCon Europe 2022, global cloud native technology experts, product or solution providers, and users exchanged and discussed extensively on cloud native technology. This article shares some of the popular cloud native open-source projects at the conference from three aspects: external integration, self-evolution, and internal related functional features, so let's dive into the cloud native world together.
 
 - [20220606 | Merbridge CNI Mode](https://mp.weixin.qq.com/s/3t2FshkQpVHQ44zbBIQDRQ)
 
@@ -241,15 +241,15 @@ This page summarizes blogs and public account articles related to DCE 5.0 and cl
 
 - [20220606 | DCE 5.0 Development Background](221008-dce-bg.md)
 
-    Describes the background of the birth of DaoCloud Enterprise 5.0, the new generation of cloud-native operating system.
+    Describes the background of the birth of DaoCloud Enterprise 5.0, the new generation of cloud native operating system.
 
 - [20220530 | Cloud-Native Layout Speeds up, What is the Market Prospect? Take a Look at This Guide](https://mp.weixin.qq.com/s/S6CUDwCDZh-I4e5D1SZa4A)
 
-    This article uses an infographic to illustrate the fast-developing cloud-native and cloud computing trends currently.
+    This article uses an infographic to illustrate the fast-developing cloud native and cloud computing trends currently.
 
 - [20220520 | Into Observability | Discussion on Native](https://mp.weixin.qq.com/s/f0oZV5nWfc42b-b0cLkh2g)
 
-    Since 2018, observability has been introduced into the IT field, and the CNCF-Landscape organization created a subgroup for observability. Since then, observability has gradually replaced traditional system monitoring and shifted from passive monitoring to active observation of various data related to application associations, becoming one of the hottest topics in the cloud-native field.
+    Since 2018, observability has been introduced into the IT field, and the CNCF-Landscape organization created a subgroup for observability. Since then, observability has gradually replaced traditional system monitoring and shifted from passive monitoring to active observation of various data related to application associations, becoming one of the hottest topics in the cloud native field.
 
-[^1]: CNCF: Cloud Native Computing Foundation, affiliated with the Linux Foundation, was established in December 2015 as a non-profit organization dedicated to cultivating and maintaining a vendor-neutral open-source ecosystem to promote cloud-native technology and popularize cloud-native applications.
-[^2]: Cloud-native landscape: Maintained by CNCF since December 2016, it summarizes mature and widely used products and solutions in the community, classifies them, and provides references for enterprises to build a cloud-native system. It has extensive influence in the development and operation and maintenance fields of the cloud ecosystem.
+[^1]: CNCF: Cloud Native Computing Foundation, affiliated with the Linux Foundation, was established in December 2015 as a non-profit organization dedicated to cultivating and maintaining a vendor-neutral open-source ecosystem to promote cloud native technology and popularize cloud native applications.
+[^2]: Cloud native landscape: Maintained by CNCF since December 2016, it summarizes mature and widely used products and solutions in the community, classifies them, and provides references for enterprises to build a cloud native system. It has extensive influence in the development and operation and maintenance fields of the cloud ecosystem.

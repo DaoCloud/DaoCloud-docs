@@ -9,7 +9,7 @@ hide:
 
 **IO Localization**
 
-Hwameistor cloud-native local storage ensures 100% local throughput, with no network overhead. In case of node failure, the Pod starts on the replica node and uses the replica data volume for local IO read and write.
+Hwameistor cloud native local storage ensures 100% local throughput, with no network overhead. In case of node failure, the Pod starts on the replica node and uses the replica data volume for local IO read and write.
 
 **High Performance, High Availability**
 
@@ -23,7 +23,7 @@ Hwameistor cloud-native local storage ensures 100% local throughput, with no net
 
 **Small CPU and Memory Overhead**
 
-Hwameistor cloud-native local storage ensures that CPU is stable with no large fluctuations in the same IO read and write, while memory resource overhead is minimal due to IO localization.
+Hwameistor cloud native local storage ensures that CPU is stable with no large fluctuations in the same IO read and write, while memory resource overhead is minimal due to IO localization.
 
 **Operational Manageability**
 

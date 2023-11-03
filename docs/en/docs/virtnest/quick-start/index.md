@@ -7,7 +7,7 @@ hide:
 
 This article will explain how to create a virtual machine using two methods: image and YAML file.
 
-Virtual machine containers, based on KubeVirt technology, manage virtual machines as cloud-native applications,
+Virtual machine containers, based on KubeVirt technology, manage virtual machines as cloud native applications,
 seamlessly integrating with containers. This allows users to easily deploy virtual machine applications and
 enjoy a smooth experience similar to containerized applications.
 

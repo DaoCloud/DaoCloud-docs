@@ -12,7 +12,7 @@ such as Git repositories and image registries. During this process, correspondin
 to be provided. Therefore, users are required to configure credentials for pipelines. Once configured,
 these credentials can be used to interact with third-party websites or applications.
 
-Currently, you can create the following three types of credentials in the Application Workspace:
+Currently, you can create the following three types of credentials in the Workbench:
 
 - **Username and Password**: This type is used to store authentication information for
   username and password. If the third-party website or application supports authentication

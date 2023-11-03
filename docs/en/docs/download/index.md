@@ -17,7 +17,7 @@ This package is dedicated to the community and is available for free trial.
 
 ## Download Enterprise Package
 
-This package is suitable for private cloud, hybrid cloud, multicloud, microservices and other scenarios, providing a variety of customizable cloud-native modules.
+This package is suitable for private cloud, hybrid cloud, multicloud, microservices and other scenarios, providing a variety of customizable cloud native modules.
 
 | Offline Package           | Version | Download                                                            | Update Date |
 | ------------------------- | ------- | ------------------------------------------------------------------- | ----------- |

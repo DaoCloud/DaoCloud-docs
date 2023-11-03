@@ -20,7 +20,7 @@ Platforms and platform engineering are a popular topic in today’s cloud comput
 
 Process improvements over the past 2-3 decades have significantly increased the agility of software application and product teams, offering them flexible services for both infrastructure like compute, network and storage as well as developer services like builds, tests, delivery and observability. This autonomy and process improvement has also had the effect of gradually shifting more and more responsibility for supporting services to product teams, forcing them to spend more and more time and cognitive energy on infrastructure concerns and reducing their time to produce value relevant to their organization.
 
-The desire to refocus delivery teams on their core focus and reduce duplication of effort across the organisation has motivated enterprises to implement platforms for cloud-native computing. By investing in platforms, enterprises can:
+The desire to refocus delivery teams on their core focus and reduce duplication of effort across the organisation has motivated enterprises to implement platforms for cloud native computing. By investing in platforms, enterprises can:
 
 1. Reduce the cognitive load on product teams and thereby accelerate product development and delivery
 2. Improve reliability and resiliency of products relying on platform capabilities by dedicating experts to configure and manage them
@@ -34,7 +34,7 @@ A team of platform experts not only reduces common work demanded of product team
 
 ## What is a platform
 
-A platform for cloud-native computing is an integrated collection of capabilities defined and presented according to the needs of the platform’s users. It is a cross-cutting layer that ensures a consistent experience for acquiring and integrating typical capabilities and services for a broad set of applications and use cases. A good platform provides consistent user experiences for using and managing its capabilities and services, such as Web portals, project templates, and self-service APIs.
+A platform for cloud native computing is an integrated collection of capabilities defined and presented according to the needs of the platform’s users. It is a cross-cutting layer that ensures a consistent experience for acquiring and integrating typical capabilities and services for a broad set of applications and use cases. A good platform provides consistent user experiences for using and managing its capabilities and services, such as Web portals, project templates, and self-service APIs.
 
 According to Atlassian [1](https://www.atlassian.com/devops/frameworks/team-topologies), “platform teams create capabilities that can be used by numerous stream-aligned product teams with little overhead…. platform teams minimize resources and cognitive load of the stream-aligned product team… platform teams can create a cohesive experience that spans across different user experiences or products.”
 
@@ -44,7 +44,7 @@ The specific set of capabilities and use cases supported by a platform should be
 
 Because these platforms target no more and no less than an enterprise’s internal users we often refer to them as *internal* platforms.
 
-Platforms are particularly relevant for cloud-native architectures because they separate supporting capabilities from application-specific logic more than previous paradigms. In cloud-like environments resources and capabilities are often managed independently and integrated with custom business components; such resources may include databases and object stores, message queues and brokers, observability collectors and dashboards, user directories and authentication systems, task runners and reconcilers and more. An internal platform provides these to enterprise teams in ways that make them easy to integrate in their applications and systems.
+Platforms are particularly relevant for cloud native architectures because they separate supporting capabilities from application-specific logic more than previous paradigms. In cloud-like environments resources and capabilities are often managed independently and integrated with custom business components; such resources may include databases and object stores, message queues and brokers, observability collectors and dashboards, user directories and authentication systems, task runners and reconcilers and more. An internal platform provides these to enterprise teams in ways that make them easy to integrate in their applications and systems.
 
 ### Platform maturity
 
@@ -151,15 +151,15 @@ Generally, a key objective of platform teams is to align infrastructure and othe
 
 ## Capabilities of platforms
 
-As we’ve described, a platform for cloud-native computing offers and composes capabilities and services from many supporting providers. These providers may be other teams within the same enterprise or third parties like cloud service providers. In a nutshell, platforms bridge from underlying *capability providers* to platform users like application developers; and in the process implement and enforce desired practices for security, performance, cost governance and consistent experience. The following graphic illustrates the relationships between products, platforms, and capability providers.
+As we’ve described, a platform for cloud native computing offers and composes capabilities and services from many supporting providers. These providers may be other teams within the same enterprise or third parties like cloud service providers. In a nutshell, platforms bridge from underlying *capability providers* to platform users like application developers; and in the process implement and enforce desired practices for security, performance, cost governance and consistent experience. The following graphic illustrates the relationships between products, platforms, and capability providers.
 
 ![platform components](images/platform_components.png)
 
-We’ve focused in this paper on how to construct a good platform and platform team; now in this last section we’ll describe the capabilities a platform may actually offer. This list is intended to guide platform builders and includes capabilities typically required by cloud-native applications. As we’ve noted throughout though, a good platform reflects its users’ needs, so ultimately platform teams should choose and prioritize the capabilities their platform offers together with its users.
+We’ve focused in this paper on how to construct a good platform and platform team; now in this last section we’ll describe the capabilities a platform may actually offer. This list is intended to guide platform builders and includes capabilities typically required by cloud native applications. As we’ve noted throughout though, a good platform reflects its users’ needs, so ultimately platform teams should choose and prioritize the capabilities their platform offers together with its users.
 
 Capabilities may comprise several *features*, meaning aspects or attributes of the parent capability’s domain. For example, observability may include features for gathering and publishing metrics, traces and logs as well as for observing costs and energy consumption. Consider the need and priority for each feature or aspect in your organization. Later CNCF publications may expand on each domain further.
 
-Here are capability domains to consider when building platforms for cloud-native computing:
+Here are capability domains to consider when building platforms for cloud native computing:
 
 1. **Web portals** for observing and provisioning products and capabilities
 2. **APIs** (and CLIs) for automatically provisioning products and capabilities

@@ -85,7 +85,7 @@ The DCE 5.0 Enterprise includes the following modules, which are plug-and-play o
 | Workbench | A container-based DevOps application platform that supports pipeline operations such as Jenkins, Tekton, GitOps, etc. | [v0.10](../../amamba/intro/release-notes.md#v010) |
 | Multicloud Management| Centralized management of application orchestration of multicloud, hybrid cloud, and cross-cloud resources, with multicloud disaster recovery and fault recovery capabilities| [v0.4](../../kairship/intro/release-notes.md# v04) |
 | Microservice Engine | Provide registration discovery, service governance, configuration management, microservice gateway and other governance capabilities | [v0.12](../../skoala/intro/release-notes.md#v012) |
-| Service Mesh | A next-generation service mesh for cloud-native applications based on Istio open source technology | [v0.11](../../mspider/intro/release-notes.md#v011) |
+| Service Mesh | A next-generation service mesh for cloud native applications based on Istio open source technology | [v0.11](../../mspider/intro/release-notes.md#v011) |
 | middleware Elasticsearch | current preferred full-text search engine | [v0.3](../../middleware/elasticsearch/release-notes.md#v03) |
 | Middleware Kafka | Distributed message queue service based on open source software Kafka | [v0.1](../../middleware/kafka/release-notes.md#v01) |
 | Middleware MinIO | A very popular lightweight, open source object storage solution | [v0.1](../../middleware/minio/release-notes.md#v01) |

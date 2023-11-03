@@ -29,4 +29,4 @@ It is necessary to unify the distribution of network security policies for diffe
 
 **New challenges brought by the combination of new technologies such as software and hardware integration, network acceleration**
 
-In order to meet the high-performance and low-latency network requirements, the combination with hardware-based virtualization acceleration network solutions such as SR-IOV and network acceleration solutions such as eBPF is also a major opportunity and challenge for cloud-native container networks.
+In order to meet the high-performance and low-latency network requirements, the combination with hardware-based virtualization acceleration network solutions such as SR-IOV and network acceleration solutions such as eBPF is also a major opportunity and challenge for cloud native container networks.

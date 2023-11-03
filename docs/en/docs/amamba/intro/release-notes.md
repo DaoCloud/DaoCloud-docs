@@ -1,6 +1,6 @@
 # Releases Notes
 
-This page lists the release notes for Application Workspace to help you understand the development and feature changes in each version.
+This page lists the release notes for Workbench to help you understand the development and feature changes in each version.
 
 ## 2023-08-31
 

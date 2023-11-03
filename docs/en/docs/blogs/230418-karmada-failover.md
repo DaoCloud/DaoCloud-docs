@@ -9,7 +9,7 @@ In a single cluster, if the cluster fails, all applications in the cluster will 
 Is there a way to help us automatically migrate the application to a new cluster when the cluster fails, so as to ensure the continuous external access of the application?
 Obviously, **Karmada, as the most popular multicloud project in the community, provides such a capability.**
 
-Karmada (Kubernetes Armada) enables users to run cloud-native applications across multiple clusters without changing existing applications.
+Karmada (Kubernetes Armada) enables users to run cloud native applications across multiple clusters without changing existing applications.
 Enables a truly open multicloud by providing advanced scheduling capabilities using Kubernetes-native APIs. Karmada
 It aims to provide convenient automation for multicluster application management in multicloud and hybrid cloud cases, with key features such as centralized multicloud management, high availability and fault recovery.
 **This article is based on Karmada's release version v1.4.2, and we will explore with you how Karmada's cross-cluster fault recovery is realized**,
@@ -912,6 +912,6 @@ With the rapid response from the community, I believe that Karmada will bring us
 
 - [Karmada source code](https://github.com/karmada-io/karmada)
 - [Karmada official document](https://karmada.io/docs/)
-- [Cloud-native multicloud booster - Karmada overview](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273869&idx=1&sn=f6e03df6f34aa6106972193dba1604d8&chksm=8bcbcc1fbcbc4509060f92b3d636c28c6ccaad62fa3aeb4da9f17971b06e655d1d1385ab2f2c&scene=21#wechat_redirect)
-- [Cloud-native multicloud booster - Karmada controller](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273922&idx=1&sn=f17630589507999fc0690741c22178b9&scene=21#wechat_redirect)
-- [Cloud-native multicloud booster - Karmada scheduler](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273971&idx=1&sn=2c81b1959c101573b5b185c342495f30&chksm=8bcbcc61bcbc45772270811a23c210e3faa156078e991f56a288bd58be4246e9572badfb1fbc&scene=21&cur_album_id=2687691821095059459#wechat_redirect)
+- [Cloud native multicloud booster - Karmada overview](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273869&idx=1&sn=f6e03df6f34aa6106972193dba1604d8&chksm=8bcbcc1fbcbc4509060f92b3d636c28c6ccaad62fa3aeb4da9f17971b06e655d1d1385ab2f2c&scene=21#wechat_redirect)
+- [Cloud native multicloud booster - Karmada controller](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273922&idx=1&sn=f17630589507999fc0690741c22178b9&scene=21#wechat_redirect)
+- [Cloud native multicloud booster - Karmada scheduler](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659273971&idx=1&sn=2c81b1959c101573b5b185c342495f30&chksm=8bcbcc61bcbc45772270811a23c210e3faa156078e991f56a288bd58be4246e9572badfb1fbc&scene=21&cur_album_id=2687691821095059459#wechat_redirect)

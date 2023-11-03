@@ -18,7 +18,7 @@ Calico can achieve Pod-level IP fixation by injecting annotations into Pods: `cn
 
 - Fixed IP only takes effect at the Pod level, and has no effect on Deployment and StatefulSet types;
 - The administrator needs to ensure that the annotation IPs of Pods do not overlap to avoid IP conflicts. Especially in large-scale clusters, it is difficult to troubleshoot conflicting IPs;
-- The configuration and management of fixed IP addresses are cumbersome and not cloud-native.
+- The configuration and management of fixed IP addresses are cumbersome and not cloud native.
 
 ## Solution: [Spiderpool](https://github.com/spidernet-io/spiderpool)
 

@@ -169,8 +169,8 @@ It includes components related to the infrastructure and products involved in th
 | components.insight-agent         | Data collection component for observability module |
 | components.ipavo                 | Dashboard module                                  |
 | components.kairship              | MultiCloud Management module                  |
-| components.amamba                | Application workspace module                      |
-| components.jenkins               | Pipeline engine component for application workspace module |
+| components.amamba                | Workbench module                      |
+| components.jenkins               | Pipeline engine component for Workbench module |
 | components.skoala                | Microservice engine module                        |
 | components.mspider               | Service mesh module                               |
 | components.mcamel-*              | Middleware modules including ES, Kafka, MinIO, etc. |

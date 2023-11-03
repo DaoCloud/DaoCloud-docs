@@ -32,7 +32,7 @@ This page lists the main features of container management.
 
 ## Service and Routing
 
-Service (Service) is a Kubernetes-native resource that provides cloud-native load balancing capabilities and is accessed through a fixed IP address and port. Currently supported Service types include:
+Service (Service) is a Kubernetes-native resource that provides cloud native load balancing capabilities and is accessed through a fixed IP address and port. Currently supported Service types include:
 
 - Intra-Cluster Access (ClusterIP): Access services only within the cluster.
 - Node Access (NodePort): Use node IP + service port to access.
