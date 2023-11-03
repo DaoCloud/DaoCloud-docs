@@ -14,7 +14,7 @@ Help users quickly build a cloud-edge collaboration platform close to the data s
 
 ## Smart Store
 
-Rebuild the management of people, goods, and scenes (consumption scenarios) with edge computing, artificial intelligence, and cloud-native technologies to find new opportunities, bring new efficiencies, and enhance user experience.
+Rebuild the management of people, goods, and scenes (consumption scenarios) with edge computing, artificial intelligence, and cloud native technologies to find new opportunities, bring new efficiencies, and enhance user experience.
 
 - Computing and business capabilities sink, fast response speed, low coupling.
 - Under complex network environments, store marketing videos can be independently controlled and have high stability.

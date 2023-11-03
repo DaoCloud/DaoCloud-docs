@@ -13,7 +13,7 @@ Literally, CloudTTY herein refers to a virtual console, shell, or terminal runni
 Currently, the community has explored TTY technology to a certain depth through projects like
 [ttyd](https://github.com/tsl0922/ttyd), providing terminal capabilities on top of web browsers.
 
-However, in the context of Kubernetes, these TTY projects require more cloud-native capabilities.
+However, in the context of Kubernetes, these TTY projects require more cloud native capabilities.
 How can ttyd be run inside containers? How can it be accessed through NodePort or Ingress?
 How can multiple instances be created using CRDs?
 

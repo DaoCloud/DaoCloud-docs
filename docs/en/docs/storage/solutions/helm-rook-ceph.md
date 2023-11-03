@@ -1,6 +1,6 @@
 # Deploy Rook-Ceph via Helm
 
-This page will provide the steps and instructions for deploying the Rook-Ceph cloud-native storage system with Helm.
+This page will provide the steps and instructions for deploying the Rook-Ceph cloud native storage system with Helm.
 
 ## Install by Helm
 

@@ -9,12 +9,12 @@
 According to Gartner's latest forecast: "In 2023, global enterprise spending on cloud services is expected to grow by 20.7% to $600 billion,
 This is higher than the US$490 billion and 18.8% growth forecast in 2022, and the PaaS growth rate will reach 23.2%.
 By 2025, more than 85% of enterprises will adopt the principle of prioritizing the cloud. "
-At the same time, many businesses stated that “the full execution of a digital strategy will not be possible without cloud-native technologies.”
+At the same time, many businesses stated that “the full execution of a digital strategy will not be possible without cloud native technologies.”
 
 For enterprises that have embraced cloud native, cloud technology has created substantial value for them.
 Since most modern enterprises want to build applications that are highly scalable, elastic, and flexible,
 And it can quickly update and iterate to meet the needs of itself and customers. At present, no technology can help enterprises achieve these goals like cloud technology.
-Especially in terms of improving resource utilization and saving costs, cloud-native has been ranked first for many years, and has become the best path for enterprises to reduce costs and increase efficiency.
+Especially in terms of improving resource utilization and saving costs, cloud native has been ranked first for many years, and has become the best path for enterprises to reduce costs and increase efficiency.
 
 However, as the scale of many enterprises continues to expand and the volume of business continues to grow, the problems of high cost of cloud infrastructure services and low resource utilization are becoming more and more prominent.
 Not all computing resources can be fully utilized, and wasteful spending on the cloud is still a headache for many enterprises.

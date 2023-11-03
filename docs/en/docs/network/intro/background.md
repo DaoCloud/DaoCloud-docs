@@ -7,7 +7,7 @@ hide:
 
 **Multicloud hybrid cloud**
 
-Cloud-native use cases are gradually scaled up, cloud-based applications continue to surge, and the use cases are becoming more and more complex.
+Cloud native use cases are gradually scaled up, cloud-based applications continue to surge, and the use cases are becoming more and more complex.
 In order to cope with Cases such as high availability, disaster recovery, and business traffic surge, users gradually adopt multicluster and cross-cloud deployments. During the implementation of the solution, problems such as application distribution, application connectivity, and platform management have gradually become prominent.
 
 Among them, the network is the key to the implementation of the overall plan, and the main problems are as follows:
@@ -30,14 +30,14 @@ Among them, the network is the key to the implementation of the overall plan, an
 
 **Database, machine learning and other applications on the cloud**
 
-With the development of the cloud-native field, resource-sensitive applications such as databases and machine learning have also begun to run on the Kubernetes platform.
+With the development of the cloud native field, resource-sensitive applications such as databases and machine learning have also begun to run on the Kubernetes platform.
 Such applications have high requirements on computing power, network performance, and latency.
 Therefore, the integration of hardware-based virtualization acceleration network solutions such as SR-IOV (Single Root I/O Virtualization) and network acceleration solutions such as eBPF with Kubernetes is also an inevitable development direction.
 
 **Network Security Regulatory Requirements**
 
-Containers and cloud-native platforms help enterprises automate application deployment and bring huge business benefits.
+Containers and cloud native platforms help enterprises automate application deployment and bring huge business benefits.
 However, the pods inside the platform are all flat, and the horizontal network security isolation is not guaranteed.
-In addition, with the expansion of cloud-native scale and the advancement of micro-services, east-west network traffic has increased dramatically.
+In addition, with the expansion of cloud native scale and the advancement of micro-services, east-west network traffic has increased dramatically.
 Although a single application can be protected by traditional firewalls and host security tools, for containers dynamically deployed between hosts and even various clouds, it is necessary to strengthen monitoring of east-west traffic and internal traffic attacks.
 When building a container cloud platform, enterprises need to consider finer-grained network policies to improve network security.

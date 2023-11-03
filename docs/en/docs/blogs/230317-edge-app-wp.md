@@ -32,26 +32,26 @@ Categories defined by the [Linux Foundation Edge Whitepaper](https://www.lfedge.
 
 ![edgetype](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/edgetype.png)
 
-There are many similarities between edge-native principles and cloud-native principles, but there are also some key differences.
+There are many similarities between edge-native principles and cloud native principles, but there are also some key differences.
 
 ## Cloud Native vs Edge Native
 
 According to the definition of [Cloud Native Foundation (CNCF)](https://github.com/cncf/foundation/blob/main/charter.md), cloud native technologies are:
 
-> **"Cloud-native technologies empower organizations to build and run scalable applications in modern dynamic environments such as public, private, and hybrid clouds. Containers, service meshes, microservices, immutable infrastructure, and declarative The API is a great example of this approach.**
+> **"Cloud native technologies empower organizations to build and run scalable applications in modern dynamic environments such as public, private, and hybrid clouds. Containers, service meshes, microservices, immutable infrastructure, and declarative The API is a great example of this approach.**
 >
 > **These techniques enable loosely coupled systems to be resilient, manageable, and observable. Combined with powerful automation, they allow engineers to make frequent and predictable high-impact changes with minimal redundancies. "**
 
 This broad mission still holds true for edge applications, as the [Open Edge Computing Glossary](https://github.com/State-of-the-Edge/glossary/blob/master/edge-glossary.md#edge- native-application) states that,
-"Edge-native applications" refer to cloud-native principles:
+"Edge-native applications" refer to cloud native principles:
 
-> **"Edge-native applications are applications built using edge computing capabilities and are not suitable for running in the central cloud. Edge-native applications refer to cloud-native principles, while considering the unique characteristics of the edge, such as resource constraints, security, latency, and autonomy .Edge-native applications are built in a way that leverages cloud computing capabilities and work with upstream resources. Edge applications that don't care about centralized resource management, remote management, orchestration, CI/CD are not really "native", but more like for traditional native applications."**
+> **"Edge-native applications are applications built using edge computing capabilities and are not suitable for running in the central cloud. Edge-native applications refer to cloud native principles, while considering the unique characteristics of the edge, such as resource constraints, security, latency, and autonomy .Edge-native applications are built in a way that leverages cloud computing capabilities and work with upstream resources. Edge applications that don't care about centralized resource management, remote management, orchestration, CI/CD are not really "native", but more like for traditional native applications."**
 
-As cloud-native use cases involve data and events at edge locations beyond the traditional cloud, new tools and techniques are evolving to enable loosely coupled systems that are elastic, governable, and observable while managing the uniqueness of the edge.
+As cloud native use cases involve data and events at edge locations beyond the traditional cloud, new tools and techniques are evolving to enable loosely coupled systems that are elastic, governable, and observable while managing the uniqueness of the edge.
 
-## Similarity between edge-native and cloud-native
+## Similarity between edge-native and cloud native
 
-Edge-native has many similarities to cloud-native, which are described in this section.
+Edge-native has many similarities to cloud native, which are described in this section.
 
 | Attributes | Cloud Native vs. Edge Native |
 | ------------------- | ----------------------------- -------------------------------------------------- -|
@@ -62,7 +62,7 @@ Edge-native has many similarities to cloud-native, which are described in this s
 
 ## The difference between edge native and cloud native
 
-There are similarities in the broad missions of edge-native and cloud-native, but there are differences that developers should be aware of.
+There are similarities in the broad missions of edge-native and cloud native, but there are differences that developers should be aware of.
 
 | Properties | Cloud Native | Edge Native |
 | ------------- | ----------------------------------- ---------------------- | --------------------------- ----------- |
@@ -72,7 +72,7 @@ There are similarities in the broad missions of edge-native and cloud-native, bu
 | Stability | Outsource stability to cloud providers, using redundant nodes distributed across different geographies. | Often relies on a hardened infrastructure, with a recovery architecture for stateful components; in many cases, may be less stable than on the cloud. |
 | Scale | Typically limited to a small number of regions and instances | Can support large-scale regions (up to tens of thousands), support large numbers of external devices (up to hundreds of thousands) |
 | Orchestration | Orchestration in large public or private clouds aims to achieve efficiency and availability by running workloads on centrally pooled hosts, scheduled in a horizontal fashion. | The edge is decentralized, and workloads are deployed in a distributed manner, usually scheduled in a designated region. |
-| Governance | Although both cloud-native and edge-native are manageable, the mechanisms are different; cloud-native relies on centralized control and automation. | Edge-native requires a mix of remote and centralized management and zero-touch deployment (ZTP) of hardware and software. Operations personnel at the edge may not be trained, few in number, or even non-existent. The upgrade process needs to be atomic and consistent to prevent equipment from being unavailable due to failed upgrades. |
+| Governance | Although both cloud native and edge-native are manageable, the mechanisms are different; cloud native relies on centralized control and automation. | Edge-native requires a mix of remote and centralized management and zero-touch deployment (ZTP) of hardware and software. Operations personnel at the edge may not be trained, few in number, or even non-existent. The upgrade process needs to be atomic and consistent to prevent equipment from being unavailable due to failed upgrades. |
 | Network | Applications can rely on high-speed networks. | The application needs to consider various network speeds (unstable, relatively poor, very good) and features. Including mobile and wireless based, integrating data and events from non-IP protocol networks. |
 | Security | Infrastructure for security management. | "Zero Trust" in an untrusted and insecure environment. |
 | Hardware Configuration | Rarely requiredFocus on hardware configuration, can be suitable for most applications. |Applications may have higher real-time requirements, requiring hardware platform, location, and security awareness. Developers need to understand a wider range of hardware and interfaces. |
@@ -91,7 +91,7 @@ In order to achieve the edge-native mission mentioned earlier in this article, e
 | Hardware management capabilities | Developers need to understand a wide range of hardware platforms and interfaces, not only homogeneous hardware platforms. |
 | External Device Connections | An application must know how to connect to devices in its environment and be aware of changes in functionality at runtime. For example, after initial configuration, they can respond to sensor connection/disconnection or new device connection. Features are not fixed, and the application environment needs to be considered, so the orchestrator needs to be able to coordinate application state and feature changes. |
 | Variable connection awareness | Applications must adapt to unreliable or even unusable (completely isolated) network connections, using mechanisms such as asynchronous communication, queuing and caching. When the edge obtains configuration from the central site, a "pull" mechanism may need to be used to overcome scale, networking, and security issues. |
-| Centralized Observability | While both edge and cloud-native applications require centralized observability, edge-native applications have unique considerations. Edge-native applications may be deployed in large-scale instances, with limited operation and maintenance personnel and on-site support. Therefore, technologies such as distributed collection and centralized aggregation of data, open loop (personnel observable/operable) and closed loop (machine automation) need to be adopted. Observability includes metrics, logs, digital twins, alerts (events and alerts), and health monitoring. |
+| Centralized Observability | While both edge and cloud native applications require centralized observability, edge-native applications have unique considerations. Edge-native applications may be deployed in large-scale instances, with limited operation and maintenance personnel and on-site support. Therefore, technologies such as distributed collection and centralized aggregation of data, open loop (personnel observable/operable) and closed loop (machine automation) need to be adopted. Observability includes metrics, logs, digital twins, alerts (events and alerts), and health monitoring. |
 | Large-Scale Infrastructure and Platform Management | Infrastructure and platform management are very important in large-scale edge applications and need to support declarative management. In addition, there may be some special requirements, such as device access, scale-out restrictions, managing bare-metal environments, etc. At the platform level, deploying or managing Kubernetes or virtualization layers and various plugins is also an issue; the platform level needs to be kept vendor-neutral for application portability. |
 | Large-Scale Application Management | The number of applications and the number of instances of those applications can be very large at the edge, requiring configuration based on declarative rules and conditions, enforced through automated services, and aggregated management views across multiple application instances. Applications may also have real-time requirements, which means that the connection between applications and infrastructure platforms (e.g. using GPUs, DPUs, FPGAs, CPU architectures, kernel optimizations, Kubernetes plugins) may be tighter than cloud applications. In other words, application orchestration may trigger underlying infrastructure and platform orchestration. |
 | Cross-regional | Applications are deployed in more than one region, and there are cross-regional delays and failures. In fact, edge applications may also span public clouds and private clouds. |

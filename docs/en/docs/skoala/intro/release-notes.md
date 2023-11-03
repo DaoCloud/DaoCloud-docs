@@ -21,10 +21,10 @@ This page lists the release notes of DME to help you learn its feature developme
 - Added configuration option for maximum heap memory in the Gateway
 - Added interfaces for native Seata functionalities
 - Added detailed interface for cluster-level Gateway information
-- Added interfaces for cloud-native microservice traffic swimlane topology
+- Added interfaces for cloud native microservice traffic swimlane topology
 - Added interfaces for Gateway API documentation
 - Added overall architecture for the distributed transaction module
-- Added permission points for cloud-native microservices and traffic swimlane related interfaces
+- Added permission points for cloud native microservices and traffic swimlane related interfaces
 - Added custom image configuration for Seata Server and synchronized it into the offline image logic
 - Added Base64 format icon to Skoala Helm Chart
 
@@ -47,7 +47,7 @@ This page lists the release notes of DME to help you learn its feature developme
 
 - Improved Gateway update logic, disallowing closure of gateway-level HTTPS after enabling HTTPS for domain names in the Gateway
 - Improved accuracy of audit log events
-- Optimized logic for cloud-native microservice WebAssembly plugins
+- Optimized logic for cloud native microservice WebAssembly plugins
 - Optimized Gateway health query logic on the overview page (changed from Rate to Increase)
 - Optimized Swagger paths, removing version information from URLs and supporting multiple version interfaces
 - Updated Skoala Init Helm Chart to support the distributed transaction controller (Seata Operator)
@@ -69,7 +69,7 @@ This page lists the release notes of DME to help you learn its feature developme
 #### Bug Fixes
 
 - **Fixed** Issue of duplicate details in batch deletion response
-- **Fixed** Problem with sorting plugin information in cloud-native microservices port list
+- **Fixed** Problem with sorting plugin information in cloud native microservices port list
 - **Fixed** Issue with abnormal display of traffic swimlane list
 - **Fixed** Inconsistent container names for frontend components
 - **Fixed** Some errors in Sentinel business application monitoring reports
@@ -123,7 +123,7 @@ This page lists the release notes of DME to help you learn its feature developme
 - **Improved** Changed the deletion of swimlane services from delete method to put method as required.
 - **Improved** Removed redundant permission dependencies and improved internal permission dependencies
 - **Improved** Adapted interface display requirements for traffic swimlane
-- **Improved** Cloud-native microservice plugin interface
+- **Improved** Cloud native microservice plugin interface
 - **Improved** Changed the method of adding swimlane services from batch to single entry
 - **Improved** Front-end component Deployment port from 80 to 8080
 - **Improved** Upgraded Ghippo SDK to v0.20.0-dev2
@@ -165,8 +165,8 @@ This page lists the release notes of DME to help you learn its feature developme
 #### New Features
 
 - **Added** interface for viewing Sentinel flow control rules.
-- **Added** APIs for cloud-native microservice governance.
-- **Added** APIs for cloud-native microservice traffic lanes.
+- **Added** APIs for cloud native microservice governance.
+- **Added** APIs for cloud native microservice traffic lanes.
 - **Added** support for version 0.19 of the observability module.
 - **Added** API for displaying audit log in the overall overview.
 - **Added** API for displaying resources in the gateway overview page.
@@ -178,9 +178,9 @@ This page lists the release notes of DME to help you learn its feature developme
 - **Fixed** the issue of cluster flow control rules in Sentinel not being saved.
 - **Fixed** the issue of API exception when deleting non-empty services in Nacos.
 - **Fixed** the issue of duplicate data in gateway monitoring data.
-- **Fixed** the issue with the use of plugins in cloud-native microservices related APIs.
+- **Fixed** the issue with the use of plugins in cloud native microservices related APIs.
 - **Fixed** the issues with gateway domain naming rules.
-- **Fixed** the issue of incorrect version in cloud-native microservice traffic lanes.
+- **Fixed** the issue of incorrect version in cloud native microservice traffic lanes.
 
 #### Optimizations
 
@@ -194,8 +194,8 @@ This page lists the release notes of DME to help you learn its feature developme
 
 - **Added** tagging of gateway runtime mesh injection.
 - **Added** cascading selection capability for permissions associated with middleware.
-- **Added** API for viewing cloud-native microservice flow control rules.
-- **Added** APIs for cloud-native microservice governance.
+- **Added** API for viewing cloud native microservice flow control rules.
+- **Added** APIs for cloud native microservice governance.
 - **Added** component version information for cluster readiness check during managed resource installation.
 - **Added** fuzzy search capability for various search APIs.
 
@@ -232,7 +232,7 @@ This page lists the release notes of DME to help you learn its feature developme
 
 #### New Features
 
-- **Added** API for cloud-native microservices plugins
+- **Added** API for cloud native microservices plugins
 - **Added** cascading selection capability for permissions associated with middleware operations
 
 #### Fixes
@@ -314,11 +314,11 @@ This page lists the release notes of DME to help you learn its feature developme
 
 - Support for Nacos 2.2.x version.
 - Gateway tracing.
-- Cloud-native microservice path rewrite API.
-- Cloud-native microservice timeout API.
-- Cloud-native microservice fault injection API.
-- Cloud-native microservice retry and other APIs.
-- WASM plugin for Cloud-native microservices.
+- Cloud native microservice path rewrite API.
+- Cloud native microservice timeout API.
+- Cloud native microservice fault injection API.
+- Cloud native microservice retry and other APIs.
+- WASM plugin for Cloud native microservices.
 - Skoala-init Chart adds JSON Schema.
 - OpenAPI document publishing process.
 - Hive supports database neutrality.
@@ -370,7 +370,7 @@ This page lists the release notes of DME to help you learn its feature developme
 
 #### Bug Fixes
 
-- Cloud-native microservice pagination
+- Cloud native microservice pagination
 
 #### Enhancement
 
@@ -386,7 +386,7 @@ This page lists the release notes of DME to help you learn its feature developme
 #### New Features
 
 - Separate display of gateway access internal and external addresses
-- API related to cloud-native microservice governance capability
+- API related to cloud native microservice governance capability
 - Alert message list API
 - API related to gateway using plugins
 - Gateway logical API of various plugins
@@ -396,11 +396,11 @@ This page lists the release notes of DME to help you learn its feature developme
 - Envoy configuration is not updated when the gateway is updated
 - Only a single port can be added to the gateway
 - Insight problems of integrating JVM queries
-- Cloud-native microservice governance API
+- Cloud native microservice governance API
 - Sentinel rule cannot be stored or pulled
 - Some API calls cause the program to crash when the database is not connected
 - Resource state API
-- Cloud-native microservice governance API time unit
+- Cloud native microservice governance API time unit
 - Domain format verification
 - Some fields of plugins are named incorrectly
 
@@ -494,8 +494,8 @@ This page lists the release notes of DME to help you learn its feature developme
 - API for obtaining Nacos and gateway version information
 - Registry statistics collector in overview page
 - Registry statistics API in overview page
-- Cloud-native microservice list API
-- APIs related to importing cloud-native microservices
+- Cloud native microservice list API
+- APIs related to importing cloud native microservices
 - Custom resource design of plugins
 - APIs related to plugin management
 - API to intercept gateway front-end traffic

@@ -7,7 +7,7 @@ Instructions for installing, deploying, and uninstalling the graphical interface
 
 ## Introduction
 
-Rook is an open source cloud-native storage orchestrator that provides a platform, framework, and support for various storage solutions (storage providers) and natively integrates with cloud-native environments.
+Rook is an open source cloud native storage orchestrator that provides a platform, framework, and support for various storage solutions (storage providers) and natively integrates with cloud native environments.
 
 Rook supports multiple storage providers. It turns distributed storage software into a self-managing, self-scaling, and self-healing storage service.
 It does this by automating storage provider deployment, bootstrapping, configuration, provisioning, scaling, upgrading, migration, disaster recovery, monitoring, and resource management.

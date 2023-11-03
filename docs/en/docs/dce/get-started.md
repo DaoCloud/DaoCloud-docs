@@ -43,7 +43,7 @@ elasticity of IT systems, and significantly accelerating application delivery.
     We have created excellent video tutorials for different modules and scenarios of DCE 5.0.
 
     - [Scenario-based Videos](../videos/use-cases.md)
-    - [Application Workspace Videos](../videos/amamba.md)
+    - [Workbench Videos](../videos/amamba.md)
     - [Container Management Videos](../videos/kpanda.md)
     - [Microservices Videos](../videos/skoala.md)
     - [Middleware Videos](../videos/mcamel.md)
@@ -55,7 +55,7 @@ elasticity of IT systems, and significantly accelerating application delivery.
 
 <div class="grid cards" markdown>
 
-- :material-microsoft-azure-devops:{ .lg .middle } __Application Workspace__
+- :material-microsoft-azure-devops:{ .lg .middle } __Workbench__
 
     ---
 

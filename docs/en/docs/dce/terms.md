@@ -366,7 +366,7 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
     the cloud-controller-manager component enables cloud providers to release new features at a different pace than
     the Kubernetes main project.
 
-    In addition, cloud-native apps are specifically designed to take advantage of innovations in cloud computing.
+    In addition, cloud native apps are specifically designed to take advantage of innovations in cloud computing.
     These applications integrate easily with their respective cloud architectures, taking advantage of the cloud's
     resources and scaling capabilities. Cloud native applications today include apps that run in a cloud provider's
     datacenter and on cloud native platforms on-premise.
@@ -494,7 +494,7 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
 - CNCF, Cloud Native Computing Foundation
 
     A non-profit organization under the Linux Foundation, established in December 2015, dedicated to cultivating
-    and maintaining a vendor-neutral open-source ecosystem to promote cloud-native technology and popularize cloud-native applications.
+    and maintaining a vendor-neutral open-source ecosystem to promote cloud native technology and popularize cloud native applications.
 
 - CNI, Container network interface
 
@@ -614,7 +614,7 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
     Because users only buy the resources they need (scheduling capabilities, load balancing, etc.),
     they save money and increase efficiency.
     Containers create consistent environments to rapidly develop and
-    deliver cloud-native applications that can run anywhere.
+    deliver cloud native applications that can run anywhere.
 
     Without CaaS, software development teams need to deploy, manage, and monitor
     the underlying infrastructure that containers run on.
@@ -1488,11 +1488,11 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
 
     A microservice is an architectural style that builds a single application by combining multiple small services. In a microservice engine, a microservice refers to the various small services obtained by splitting a complete application according to business features.
 
-    Microservices are a modern approach to application development using cloud-native technologies. Although modern applications like Netflix appear to be a single application, they are actually a collection of smaller services that work closely together. For example, a single page that allows you to access, search, and preview videos is likely provided by smaller services, each of which handles one aspect (such as search, authentication, and running previews in the browser). In short, microservices refer to an application architecture pattern that is typically contrasted with monolithic applications.
+    Microservices are a modern approach to application development using cloud native technologies. Although modern applications like Netflix appear to be a single application, they are actually a collection of smaller services that work closely together. For example, a single page that allows you to access, search, and preview videos is likely provided by smaller services, each of which handles one aspect (such as search, authentication, and running previews in the browser). In short, microservices refer to an application architecture pattern that is typically contrasted with monolithic applications.
 
     Microservices are a response to the challenges posed by monolithic applications. In a monolithic application, different parts of the application cannot be separately deployed or scaled. This can lead to inefficient resource utilization and high coupling between different parts of the codebase. Microservices address these issues by separating functionality into different services that can be independently deployed, updated, and scaled. This allows different teams to focus on their own small part of the application, without negatively impacting other parts of the organization.
 
-    However, microservices also come with increased operational overhead, as there are more things to deploy and track. Many cloud-native technologies aim to make microservices easier to deploy and manage.
+    However, microservices also come with increased operational overhead, as there are more things to deploy and track. Many cloud native technologies aim to make microservices easier to deploy and manage.
 
 - Microservice instance
 
@@ -1597,7 +1597,7 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
 
     PaaS is an external platform on which application development teams deploy and run their applications. Heroku, Cloud Foundry, and App Engine are examples of PaaS products.
 
-    To make good use of cloud-native patterns such as microservices or distributed applications, operations teams and developers need to be able to eliminate a lot of operational work, including provisioning infrastructure, handling service discovery and load balancing, and scaling applications.
+    To make good use of cloud native patterns such as microservices or distributed applications, operations teams and developers need to be able to eliminate a lot of operational work, including provisioning infrastructure, handling service discovery and load balancing, and scaling applications.
 
     PaaS provides application developers with general infrastructure tools in a fully automated way. It enables developers to understand the infrastructure and reduce their concerns about it, and to spend more time and energy writing application code. It also provides some monitoring and observability to help application teams ensure that their applications are healthy.
 
@@ -1692,7 +1692,7 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
 
 - Reliability
 
-    From a cloud-native perspective, reliability refers to a system's ability to respond to failures. If we have a distributed system that can continue to work through infrastructure changes and individual component failures, then it is reliable. On the other hand, if it is prone to failure and requires manual intervention by operators to keep it running, then it is unreliable. The goal of cloud-native applications is to build inherently reliable systems.
+    From a cloud native perspective, reliability refers to a system's ability to respond to failures. If we have a distributed system that can continue to work through infrastructure changes and individual component failures, then it is reliable. On the other hand, if it is prone to failure and requires manual intervention by operators to keep it running, then it is unreliable. The goal of cloud native applications is to build inherently reliable systems.
 
 - ReplicaSet
 
@@ -1720,7 +1720,7 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
 
 - Resource Template
 
-    In [Multicloud Management](../kairship/intro/index.md), a template called a federated resource is used. This is a multicloud resource template based on the native K8s API, which facilitates the integration of all cloud-native tools within the K8s ecosystem. This resource template can be used to centrally manage [multicloud services](../kairship/resource/service.md), [multicloud namespaces](../kairship/resource/ns.md), [multicloud configmap](../kairship/resource/configmap.md), and [multicloud secret](../kairship/resource/secret.md).
+    In [Multicloud Management](../kairship/intro/index.md), a template called a federated resource is used. This is a multicloud resource template based on the native K8s API, which facilitates the integration of all cloud native tools within the K8s ecosystem. This resource template can be used to centrally manage [multicloud services](../kairship/resource/service.md), [multicloud namespaces](../kairship/resource/ns.md), [multicloud configmap](../kairship/resource/configmap.md), and [multicloud secret](../kairship/resource/secret.md).
 
 - Role
 
@@ -1774,7 +1774,7 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
 
 - Serverless
 
-    Serverless is a cloud-native development model that allows developers to build and run applications without
+    Serverless is a cloud native development model that allows developers to build and run applications without
     managing servers. There are still servers in Serverless, but they are abstracted away from application development.
     Cloud providers handle the daily work of configuring, maintaining, and scaling server infrastructure. Developers
     can simply package their code in containers for deployment. After deployment, the Serverless application responds
@@ -1816,7 +1816,7 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
 
     Service discovery is the process of finding the various instances that make up a service. Service discovery tools continuously track the various nodes or endpoints that make up a service.
 
-    Cloud-native architectures are dynamic and uncertain, which means they are constantly changing. Containerized applications may start and stop multiple times during their lifecycle. Each time this happens, it has a new address, and any application that wants to find it needs a tool to provide the new address information.
+    Cloud native architectures are dynamic and uncertain, which means they are constantly changing. Containerized applications may start and stop multiple times during their lifecycle. Each time this happens, it has a new address, and any application that wants to find it needs a tool to provide the new address information.
 
     Service discovery continuously tracks applications in the network so that they can find each other when needed. It provides a common place to look up and identify different services. The service discovery engine is a database-like tool used to store which services are currently available and how to find them.
 
@@ -1979,7 +1979,7 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
 
 - Virtualization
 
-    Virtualization, in the context of cloud-native computing, refers to the process of taking a physical computer, sometimes called a server, and allowing it to run multiple isolated operating systems. These isolated operating systems and their dedicated computing resources (CPU, memory, and networking) are called virtual machines or VMs. When we talk about a virtual machine, we are talking about a software-defined computer. It looks and acts like a real computer, but shares hardware with other virtual machines. For example, you can rent a 'computer' from AWS that is actually a virtual machine.
+    Virtualization, in the context of cloud native computing, refers to the process of taking a physical computer, sometimes called a server, and allowing it to run multiple isolated operating systems. These isolated operating systems and their dedicated computing resources (CPU, memory, and networking) are called virtual machines or VMs. When we talk about a virtual machine, we are talking about a software-defined computer. It looks and acts like a real computer, but shares hardware with other virtual machines. For example, you can rent a 'computer' from AWS that is actually a virtual machine.
 
     Virtualization solves many problems, including improving the use of physical hardware by allowing more applications to run on the same physical machine while still being isolated from each other for security purposes.
 

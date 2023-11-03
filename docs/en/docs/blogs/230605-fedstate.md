@@ -20,7 +20,7 @@ First of all, let's roughly analyze what requirements customers have for middlew
 - Contraction of middleware clusters.
 - Data replication/disaster recovery capabilities across container clusters.
 - Automated operation and maintenance ability of middleware clusters.
-- Cloud-native service delivery.
+- Cloud native service delivery.
 - The ability to manage middleware clusters in a page.
 - Open API capability for easy construction of upper layer capabilities.
 - Openness of storage, compatible with CSI.
@@ -399,6 +399,6 @@ spec:
 
 With the increasing demand for cross-cloud distribution and automated operation and maintenance capabilities of stateful services, exploring and practicing solutions around this scenario will become more meaningful.
 
-Now, the cloud-native federation middleware - FedState project has been open-sourced on Github. Developers who are interested in stateful services in multi-cloud and federation scenarios are welcome to experience and try it out. We also welcome everyone to participate and contribute together.
+Now, the cloud native federation middleware - FedState project has been open-sourced on Github. Developers who are interested in stateful services in multi-cloud and federation scenarios are welcome to experience and try it out. We also welcome everyone to participate and contribute together.
 
 Repo url: https://github.com/fedstate/fedstate

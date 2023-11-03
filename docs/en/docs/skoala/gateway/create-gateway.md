@@ -9,7 +9,7 @@ The micro-service gateway supports the high-availability architecture of multi-t
 
 To create a microservice gateway, perform the following steps:
 
-1. In the left navigation bar, click `Cloud-native Gateway`, and in the upper right corner of the `Gateway List` page, click `Create Gateway` to enter the page for creating the micro-service gateway.
+1. In the left navigation bar, click `Cloud native Gateway`, and in the upper right corner of the `Gateway List` page, click `Create Gateway` to enter the page for creating the micro-service gateway.
 
     <!--![]()screenshots-->
 

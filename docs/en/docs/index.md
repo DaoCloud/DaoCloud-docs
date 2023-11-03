@@ -6,7 +6,7 @@ hide:
 
 # DaoCloud Enterprise 5.0
 
-DaoCloud Enterprise 5.0 (DCE 5.0) is a high-performance and scalable cloud-native operating system
+DaoCloud Enterprise 5.0 (DCE 5.0) is a high-performance and scalable cloud native operating system
 that provides a consistent and stable experience in any infrastructure or environment.
 It supports heterogeneous clouds, edge clouds, and multicloud management. DCE 5.0
 integrates the latest service mesh and microservice technologies, enabling tracking
@@ -19,10 +19,10 @@ standardization and automation of the entire app delivery process. It also integ
 various selected databases and middleware to make operation and maintenance governance
 more efficient. Each product module is independently decoupled and supports flexible
 upgrades, with no impact on business operations. Additionally, it can be docked with
-many cloud-native ecological products to provide a complete solution system. With nearly
+many cloud native ecological products to provide a complete solution system. With nearly
 a thousand industry customers having tested it in production cases, DCE 5.0 builds a
 solid and reliable digital foundation, helps enterprises define digital boundaries,
-and unleashes cloud-native productivity.
+and unleashes cloud native productivity.
 
 <div class="grid cards" markdown>
 
@@ -46,10 +46,10 @@ and unleashes cloud-native productivity.
 ![modules](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/dce-modules04.jpg)
 
 Over the past nine years, DaoCloud has made significant investments to explore
-and develop a cloud-native operating system with customizable and scalable modules
+and develop a cloud native operating system with customizable and scalable modules
 that facilitate business digitalization. Each module can be used as a LEGO brick,
 allowing for zero downtime while upgrading any module. DCE 5.0 is also easy to
-integrate with hundreds of cloud-native ecological plugins, making it simple to
+integrate with hundreds of cloud native ecological plugins, making it simple to
 customize solutions for different use cases. This modular style allows for growth
 day by day, making things better over time.
 
@@ -71,7 +71,7 @@ day by day, making things better over time.
 
 === "Data Middleware Service"
 
-     The cloud-native local storage capability, specially designed for stateful applications, meets
+     The cloud native local storage capability, specially designed for stateful applications, meets
      the high I/O storage requirements of middleware and improves the efficiency of operation and
      maintenance management. It offers middleware management capabilities for the entire lifecycle
      of multi-tenancy, deployment, observation, backup, operation, and maintenance operations, among others.
@@ -87,11 +87,11 @@ day by day, making things better over time.
 === "Microservice Governance"
 
      DCE 5.0 provides non-intrusive traffic management features, supporting non-sensing access to
-     traditional microservices, cloud-native microservices, and open-source microservice frameworks.
+     traditional microservices, cloud native microservices, and open-source microservice frameworks.
      It achieves integrated management of existing microservice systems and old and new microservice systems of enterprises.
 
      This capability supports the full lifecycle management of microservices from development, deployment,
-     access, observation, operation, and maintenance. It also provides high-performance cloud-native
+     access, observation, operation, and maintenance. It also provides high-performance cloud native
      microservice gateways, ensuring continuous availability of microservice applications. Additionally,
      DCE 5.0 introduces independent open-source eBPF mesh acceleration technology to comprehensively improve traffic forwarding efficiency.
 
@@ -113,7 +113,7 @@ day by day, making things better over time.
      *[eBPF]: Extended Berkeley Packet Filter, which is a component of the Linux kernel that can run sandboxed programs in the kernel
 
      **Modules involved**: [Global Management](ghippo/intro/index.md), [Container Management](kpanda/intro/index.md),
-     [Observability](insight/intro/index.md), [cloud-native network](network/intro/index.md), [cloud-native storage](storage/index.md)
+     [Observability](insight/intro/index.md), [cloud native network](network/intro/index.md), [cloud native storage](storage/index.md)
 
     ![Observability](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/04insight.jpg)
 
@@ -133,7 +133,7 @@ day by day, making things better over time.
      scalable app delivery process. It supports flexible tenant systems, dynamically
      adapting to user organizational structure planning and real-time resource allocation.
 
-     This capability is based on cloud-native CI/CD pipelines, integrating rich toolchains,
+     This capability is based on cloud native CI/CD pipelines, integrating rich toolchains,
      and supporting efficient concurrent execution flow. Additionally, it automates the
      construction and deployment of applications, innovatively introducing GitOps and
      progressive delivery capability systems, achieving more refined management and operation of applications.
@@ -146,7 +146,7 @@ day by day, making things better over time.
 
 === "Heterogeneous Architecture"
 
-     DCE 5.0 adopts a heterogeneous cloud-native technology architecture, compatible
+     DCE 5.0 adopts a heterogeneous cloud native technology architecture, compatible
      with domestic chips and servers. It supports a heterogeneous operating system and
      heterogeneous application ecosystem, shielding the complexity of underlying
      heterogeneous infrastructure, and liberating traditional operating systems
@@ -164,20 +164,20 @@ day by day, making things better over time.
 
 === "Cloud Edge Collaboration"
 
-     DCE 5.0 extends cloud-native capabilities to the edge by adopting the edge cluster
+     DCE 5.0 extends cloud native capabilities to the edge by adopting the edge cluster
      and edge node mode. It moves the computing power of the data center down, while
      moving up the computing power of the end device. This unifies control and scheduling
      of discrete and heterogeneous computing resources, solving the problem of massive edge and end devices.
 
      This capability unifies the requirements of large-scale app delivery, operation
      and maintenance, management, and control on the Internet. Additionally, it realizes
-     true integration of cloud and edge by bringing cloud-native capabilities to the edge.
+     true integration of cloud and edge by bringing cloud native capabilities to the edge.
 
     ![Cloud Edge Collaboration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/09cloud-edge.jpg)
 
 === "Cloud Native Base"
 
-     DCE 5.0 provides cloud-native computing, networking, storage, and other capabilities,
+     DCE 5.0 provides cloud native computing, networking, storage, and other capabilities,
      compatible with various cluster access. It supports the entire lifecycle of the cluster
      from deployment, version upgrade, certificate change, configuration change, and recycling,
      enabling lifecycle management. 
@@ -186,11 +186,11 @@ day by day, making things better over time.
      enterprise users to use multiple clusters concurrently. Additionally, for the enterprise
      environment, it provides scenario-based network solutions to maximize the reuse of
      the current enterprise network infrastructure and lower the threshold for enterprises
-     to use cloud-native applications.
+     to use cloud native applications.
 
      **Related modules**: [Global Management](ghippo/intro/index.md), [Container Management](kpanda/intro/index.md),
-     [Cluster Lifecycle Management](community/kubean.md), [cloud-native network](network/intro/index.md),
-     [cloud-native storage](storage/index.md)
+     [Cluster Lifecycle Management](community/kubean.md), [cloud native network](network/intro/index.md),
+     [cloud native storage](storage/index.md)
 
 Once you have obtained the [license authorization](./dce/license0.md) and successfully logged into DCE 5.0
 for the first time, you will be greeted by a user-friendly dashboard. This dashboard provides an intuitive display

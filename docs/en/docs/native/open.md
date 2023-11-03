@@ -20,7 +20,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [AlterShield: change control platform open sourced by Ant Group](https://mp.weixin.qq.com/s/8L2LqxeRK9LCtfSkKG94wg)
 
-    [AlterShield](https://github.com/traas-stack/altershield) is a one-stop control platform that integrates change awareness, change defense and change analysis. It aims to define change standard protocols and standardize change control processes, enabling users to quickly identify problems in changes and reduce the impact of failures in a timely manner. For cloud-native scenarios, AlterShield provides Operator to connect various CI/CD tools to OCMS (Open Change Management Specification) SDK, and Operator itself provides change flow control and exception rollback policy control.
+    [AlterShield](https://github.com/traas-stack/altershield) is a one-stop control platform that integrates change awareness, change defense and change analysis. It aims to define change standard protocols and standardize change control processes, enabling users to quickly identify problems in changes and reduce the impact of failures in a timely manner. For cloud native scenarios, AlterShield provides Operator to connect various CI/CD tools to OCMS (Open Change Management Specification) SDK, and Operator itself provides change flow control and exception rollback policy control.
 
 - [Antrea CNI Plugin v1.12.0 Released (CNCF Project)](https://github.com/antrea-io/antrea/releases/tag/v1.12.0)
 
@@ -81,7 +81,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Argo becomes a CNCF graduation project](https://mp.weixin.qq.com/s/l8veOjEZV4xlrtqdCWPljg)
 
-     [Argo](https://github.com/argoproj) enables teams to declaratively deploy and run cloud-native applications and workflows on Kubernetes using GitOps.
+     [Argo](https://github.com/argoproj) enables teams to declaratively deploy and run cloud native applications and workflows on Kubernetes using GitOps.
      Argo adoption has grown 250% since it became a CNCF-incubated project and passed a third-party security audit in July of this year,
      Has become an important part of the cloud native technology stack and GitOps.
 
@@ -129,7 +129,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: support IPv6 network wireguard encryption, expose IPAM configuration and IPAM block affinity through API, add new fields to operator API, support split IP pool, and transition from pod security policy to pod security standard.
 
-- [Carina cloud-native local storage project v0.11.0 released](https://github.com/carina-io/carina/releases/tag/v0.11.0)
+- [Carina cloud native local storage project v0.11.0 released](https://github.com/carina-io/carina/releases/tag/v0.11.0)
 
      Main new features of this version: support Cgroup v2, remove HTTP Server, upgrade CSI official image version, remove ConfigMap synchronization controller, move carina image to a separate namespace, add carina e2e test to replace the original e2e test code ( In development and testing), optimize the pvc scheduling logic of Storageclass parameters.
 
@@ -156,7 +156,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Cert-manager cloud native certificate management project upgraded to CNCF incubation project](https://www.cncf.io/blog/2022/10/19/cert-manager-becomes-a-cncf-incubating-project/)
 
-     Cert-manager is a plugin for Kubernetes that automates the management and issuance of TLS certificates from various sources, providing cryptographic protection for cloud-native workloads. Recently, the CNCF Technical Oversight Committee has voted to accept cert-manager as a CNCF incubation project.
+     Cert-manager is a plugin for Kubernetes that automates the management and issuance of TLS certificates from various sources, providing cryptographic protection for cloud native workloads. Recently, the CNCF Technical Oversight Committee has voted to accept cert-manager as a CNCF incubation project.
 
 - [Cert-manager cloud native certificate management project v1.9.0 release (CNCF project)](https://github.com/cert-manager/cert-manager/releases/tag/v1.9.0)
 
@@ -178,13 +178,13 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: Add the StatusCheck feature to check the health of the application, and stop the chaos experiment when the application is unhealthy; support the use of `Chaosctl` for outbound forced recovery, and add workflows based on flow charts in the dashboard interface etc.
 
-- [ChaosMeta: Ant Group's open source cloud-native automated chaos engineering platform](https://mp.weixin.qq.com/s/QUiWocMwbnSoUyfAu1z-cg)
+- [ChaosMeta: Ant Group's open source cloud native automated chaos engineering platform](https://mp.weixin.qq.com/s/QUiWocMwbnSoUyfAu1z-cg)
 
-    [ChaosMeta](https://github.com/traas-stack/chaosmeta) is designed to be a one-stop walkthrough comprehensive solution that includes the complete chaos engineering lifecycle, covering multiple phases such as admission checking, traffic injection, fault injection, fault metrics, recovery metrics and fault recovery. At this stage, ChaosMeta has opened up rich fault injection features to the public, supporting not only standalone deployments and Kubernetes cloud-native deployments, but also experiments with cloud-native fault cases such as Kubernetes itself and Operator.
+    [ChaosMeta](https://github.com/traas-stack/chaosmeta) is designed to be a one-stop walkthrough comprehensive solution that includes the complete chaos engineering lifecycle, covering multiple phases such as admission checking, traffic injection, fault injection, fault metrics, recovery metrics and fault recovery. At this stage, ChaosMeta has opened up rich fault injection features to the public, supporting not only standalone deployments and Kubernetes cloud native deployments, but also experiments with cloud native fault cases such as Kubernetes itself and Operator.
 
 - [Cilium: eBPF-based CNI project Cilium upgraded to CNCF graduation project](https://mp.weixin.qq.com/s/zMy5efZc0kf3UWpNAxC8_w)
 
-    Cilium is an eBPF-based open source cloud-native solution for provisioning, securing and observing network connectivity between workloads. Being a CNCF graduation project is not the end of the road, but the beginning of the creation of the Cilium ecosystem, which is planned to provide support for non-Kubernetes workloads such as bare metal and virtual machines.
+    Cilium is an eBPF-based open source cloud native solution for provisioning, securing and observing network connectivity between workloads. Being a CNCF graduation project is not the end of the road, but the beginning of the creation of the Cilium ecosystem, which is planned to provide support for non-Kubernetes workloads such as bare metal and virtual machines.
 
 - [Cilium CNI Plugin v1.14.0 Released (CNCF Project)](https://github.com/cilium/cilium/releases/tag/v1.14.0)
 
@@ -221,7 +221,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      [Cloud Native Application Scaffolding](https://github.com/alibaba/cloud-native-app-initializer) is built based on the Spring open source Initializr project.
      Not only can it help users manage dependencies, but it can also help users generate tests or code snippets that can be used directly. Users can test after creating a project, and develop projects based on sample code after testing.
-     Therefore, building a project based on cloud-native application scaffolding only needs to be completed: create a new project and run the test.
+     Therefore, building a project based on cloud native application scaffolding only needs to be completed: create a new project and run the test.
 
 - [Cluster API declarative cluster lifecycle management tool v1.5.0 released (CNCF project)](https://github.com/kubernetes-sigs/cluster-api/releases/tag/v1.5.0)
 
@@ -242,7 +242,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Clusternet Distributed Cloud Native Multicluster Management Project Selected for CNCF Sandbox Project](https://www.51cto.com/article/748691.html)
 
     On March 8, [Clusternet](https://github.com/clusternet/clusternet) was selected by the CNCF Foundation TOC Committee as a CNCF Sandbox project.
-    Clusternet extends the powerful single-cluster capability of Kubernetes to multiple clusters in a component-based, non-intrusive and lightweight way, and is well compatible with the cloud-native ecosystem.
+    Clusternet extends the powerful single-cluster capability of Kubernetes to multiple clusters in a component-based, non-intrusive and lightweight way, and is well compatible with the cloud native ecosystem.
     In the future, Clusternet will explore richer multicluster use cases and promote a fully functional and standardized multicluster framework.
 
 - [Clusternet multicloud multicluster management project v0.13.0 released](https://github.com/clusternet/clusternet/releases/tag/v0.13.0)
@@ -322,7 +322,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      Major new features in this release: block `unshare` syscall for containers without CAP_SYS_ADMIN by default, use task sets to generate new cri-o run commands, add pause and unpause functionality to CRI-O HTTP API.
 
-- [Crossplane cloud-native control plane build framework completes fuzz testing security audit](https://mp.weixin.qq.com/s/BJXg8CCjaHFK29hxWe9W-g)
+- [Crossplane cloud native control plane build framework completes fuzz testing security audit](https://mp.weixin.qq.com/s/BJXg8CCjaHFK29hxWe9W-g)
 
     The fuzzing test found 4 issues. One of the issues was that allowing a partially untrusted user to control the amount of memory allocated by crossplane-runtime in a certain state could lead to a DoS attack due to resource exhaustion. The fixes for this vulnerability are [crossplane-runtime 0.19.2](https://github.com/crossplane/crossplane-runtime/releases/tag/v0.19.2) and [Crossplane 1.11.2](https://github.com/crossplane/crossplane/releases/tag/v1.11.2) have been released.
 
@@ -336,7 +336,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [CubeFS distributed storage system upgraded from CNCF sandbox to incubation project](https://mp.weixin.qq.com/s/sAVaCa-yGEsJk3bUaJizmA)
   
-     [CubeFS](https://github.com/cubefs) is the first cloud-native storage product in China with complete object and file storage capabilities.
+     [CubeFS](https://github.com/cubefs) is the first cloud native storage product in China with complete object and file storage capabilities.
      CubeFS supports multiple copies and erasure code engines, and provides features such as multi-tenant, multi-AZ deployment, and cross-region replication; it is suitable for a wide range of Cases such as big data, AI, container platforms, databases, and middleware separation of storage and computing.
 
 ### D
@@ -353,7 +353,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: allow custom pluggable components, support OTel protocol, add elastic observation metrics, support application health checks, support setting default elastic policies, allow service calls using any middleware components, add pub/sub Namespace consumer groups, support for Podman container runtime.
 
-- [The first open source version of the DeepFlow automated cloud-native observability platform is officially released](https://mp.weixin.qq.com/s/79wZ00RKoei_boZfiUmqgg)
+- [The first open source version of the DeepFlow automated cloud native observability platform is officially released](https://mp.weixin.qq.com/s/79wZ00RKoei_boZfiUmqgg)
 
      [DeepFlow](https://github.com/deepflowys/deepflow) is an observability platform developed by Yunshan Network. Based on technologies such as eBPF, it realizes automatic synchronization of resources, services, and K8s custom labels and injects them into observations as labels data.
      It can automatically collect application performance metrics and track data without interpolation, and the innovative mechanism of SmartEncoding reduces the resource consumption of tag storage by 10 times.
@@ -549,15 +549,15 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      [Higress](https://github.com/alibaba/higress) follows the Ingress/Gateway API standard, combining traffic gateway, microservice gateway and security gateway, and extending the service management plug-in and security class on this basis Plug-ins and custom plug-ins are highly integrated with K8s and microservice ecology, including Nacos registration and configuration, Sentinel current limit and downgrade capabilities, and support hot update capabilities such as rule changes taking effect in milliseconds.
 
-- [Horizon: a cloud-native application deployment platform open sourced by NetEase](https://mp.weixin.qq.com/s/hRuHQ5egP_vzLD4IdKiOvA)
+- [Horizon: a cloud native application deployment platform open sourced by NetEase](https://mp.weixin.qq.com/s/hRuHQ5egP_vzLD4IdKiOvA)
 
-    [Horizon](https://github.com/horizoncd/horizon) is a cloud-native continuous deployment platform based on Kubernetes and fully practices GitOps.
+    [Horizon](https://github.com/horizoncd/horizon) is a cloud native continuous deployment platform based on Kubernetes and fully practices GitOps.
     Platform teams can customize and create versioned service templates to define uniform standards-compliant deployment and operations for business applications and middleware.
     Development teams can select pre-defined templates to automate service deployments and ensure uniform Kubernetes-based best practices. Ensure that any change (code, configuration, environment) is persistent, rollbackable, and auditable through Horizon GitOps mechanism.
 
 - [HwameiStor Cloud Native Local Storage Becomes CNCF Sandbox Project](https://mp.weixin.qq.com/s/KvoQq24M8Pv4hDloVLtYVQ)
 
-    On June 23, [HwameiStor](https://github.com/hwameistor/hwameistor), a cloud-native local storage open-sourced by "DaoCloud", was selected as a CNCF sandbox project with high votes. HwameiStor unifies the management of all local disks on system nodes to form a pool of different types of local storage resources and provides local data volume services through CSI standard interface to provide data persistence capability for stateful cloud-native applications or components.
+    On June 23, [HwameiStor](https://github.com/hwameistor/hwameistor), a cloud native local storage open-sourced by "DaoCloud", was selected as a CNCF sandbox project with high votes. HwameiStor unifies the management of all local disks on system nodes to form a pool of different types of local storage resources and provides local data volume services through CSI standard interface to provide data persistence capability for stateful cloud native applications or components.
 
 ### I
 
@@ -638,9 +638,9 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: add kubernetes instances for hotrod applications, add streamingSpanWriterPlugin to improve the writing performance of grpc plugins, add metrics to MetricsReader, etc.
 
-- [Jakarta EE 10 Java-based framework released, opening the era of cloud-native Java](https://mp.weixin.qq.com/s/BQBy5AWFOc7kS55JBtBjiQ)
+- [Jakarta EE 10 Java-based framework released, opening the era of cloud native Java](https://mp.weixin.qq.com/s/BQBy5AWFOc7kS55JBtBjiQ)
 
-     [Jakarta EE 10](https://github.com/jakartaee/jakarta.ee) introduces features for building modern and lightweight cloud-native Java applications.
+     [Jakarta EE 10](https://github.com/jakartaee/jakarta.ee) introduces features for building modern and lightweight cloud native Java applications.
      These include: a new configuration file specification that defines a multi-vendor platform for lightweight Java applications and microservices; a subset of the specification for smaller runtimes suitable for microservice development, including the New CDI-Lite specification; supports polymorphic types; standardizes UUID as a primitive type and extends the query language and query API.
 
 ### K
@@ -653,7 +653,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: can access LeaderElection through environment variables, support the OpenTelemetry tracing scheme, support the creation of Grafana dashboard samples of K8GB metrics, and implement a consistent polling load balancing strategy.
 
-- [KapacityStack: Cloud-native intelligent capacity technology open sourced by Ant Group](https://mp.weixin.qq.com/s/Wm4wj1OTANLYZaziRH2sDw)
+- [KapacityStack: Cloud native intelligent capacity technology open sourced by Ant Group](https://mp.weixin.qq.com/s/Wm4wj1OTANLYZaziRH2sDw)
 
     [KapacityStack](https://github.com/traas-stack/kapacity) provides IHPA (Intelligent Horizontal Pod Autoscaler) capabilities: supports scaling up and down using different algorithms for different scenarios; supports fine-grained control of each Pod's state throughout the The entire IHPA capability is split into three modules: control, decision, and execution, any of which can be replaced or extended.
 
@@ -695,7 +695,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Kata Containers Secure Container Runtime v3.0.0 released](https://github.com/kata-containers/kata-containers/releases/tag/3.0.0)
 
-     The main new features of this version: a new Rust language rewritten container runtime component and an optional integrated virtual machine management component, support for mainstream cloud-native ecological components (including Kubernetes,CRI-O, Containerd, and OCI container runtime standards, etc.), supports cgroupv2, and supports the latest stable version of the Linux kernel.
+     The main new features of this version: a new Rust language rewritten container runtime component and an optional integrated virtual machine management component, support for mainstream cloud native ecological components (including Kubernetes,CRI-O, Containerd, and OCI container runtime standards, etc.), supports cgroupv2, and supports the latest stable version of the Linux kernel.
 
 - [Kata Container Container Security Project v2.5.0 release](https://github.com/kata-containers/kata-containers/releases/tag/2.5.0)
 
@@ -705,13 +705,13 @@ This page lists activity in cloud native open source projects in alphabetical or
 
     Version features: KCNR API increases the ability to request, schedule, and allocate network bandwidth resources, and provides network bandwidth isolation capability in combination with EDT/TC and other speed-limiting schemes; new task execution framework; new asynchronous execution framework; algorithm realizes multi-CPU Region mode; mixed-sections capability enhancement.
 
-- [Katalyst: byte-hopping open source cloud-native resource control system](https://mp.weixin.qq.com/s/A5_1h3RLmDNazmAddbhYaA)
+- [Katalyst: byte-hopping open source cloud native resource control system](https://mp.weixin.qq.com/s/A5_1h3RLmDNazmAddbhYaA)
 
-    The main features of [Katalyst](https://github.com/kubewharf/katalyst-core) include: fully incubated in the mega-mixed-part practice and synchronously take over the resource control link in the byte service cloud-native process; equipped with ByteBeat's internal Kubernetes distribution Enhanced Kubernetes is synchronized with open source; the system is built based on plug-in model, and users can customize various scheduling, control, policy, data and other module plug-ins on Katalyst Framework.
+    The main features of [Katalyst](https://github.com/kubewharf/katalyst-core) include: fully incubated in the mega-mixed-part practice and synchronously take over the resource control link in the byte service cloud native process; equipped with ByteBeat's internal Kubernetes distribution Enhanced Kubernetes is synchronized with open source; the system is built based on plug-in model, and users can customize various scheduling, control, policy, data and other module plug-ins on Katalyst Framework.
 
 - [KCL: Configuration Language KCL Becomes CNCF Sandbox Project](https://mp.weixin.qq.com/s/VbIIHj28DZZea3R4tYT66A)
 
-    [KCL](https://github.com/kcl-lang/kcl) is an open source constraint-based record and function language that expects to improve the writing of a large number of complex configurations such as cloud-native Kubernetes configuration scenarios through mature programming language techniques and practices, and is committed to building a simpler logic authoring experience around the modularity, extensibility, and stability of configurations. We are committed to creating a simpler logic authoring experience and building simpler automation and eco-integration paths around configuration modularity, scalability, and stability.
+    [KCL](https://github.com/kcl-lang/kcl) is an open source constraint-based record and function language that expects to improve the writing of a large number of complex configurations such as cloud native Kubernetes configuration scenarios through mature programming language techniques and practices, and is committed to building a simpler logic authoring experience around the modularity, extensibility, and stability of configurations. We are committed to creating a simpler logic authoring experience and building simpler automation and eco-integration paths around configuration modularity, scalability, and stability.
 
 - [KEDA: CNCF Announces KEDA Graduation for K8s Auto Scaler](https://mp.weixin.qq.com/s/Jkl8bGreQPk77VADOB-MOw)
 
@@ -761,15 +761,15 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Keycloak Identity and Access Management Project becomes a CNCF Incubation Project](https://www.cncf.io/blog/2023/04/11/keycloak-joins-cncf-as-an-incubating-project/)
 
-    [Keycloak](https://github.com/keycloak/keycloak) provides centralized authentication and authorization of applications and APIs. Keycloak integrates well with cloud-native ecosystems.
+    [Keycloak](https://github.com/keycloak/keycloak) provides centralized authentication and authorization of applications and APIs. Keycloak integrates well with cloud native ecosystems.
     It supports running on Kubernetes and can be installed using Operator Framework built operators. It also provides Prometheus metrics and integrates with the standard Kubernetes stack.
     Many CNCF projects integrate directly with Keycloak for authentication and access, including Argo, Envoy, and Jaeger, among others.
 
-- [Kindling Cloud-native observable tool v0.7.0 Released](https://github.com/KindlingProject/kindling/releases/tag/v0.7.0)
+- [Kindling Cloud native observable tool v0.7.0 Released](https://github.com/KindlingProject/kindling/releases/tag/v0.7.0)
 
     Release features: provides a simple version of the view to display Trace Profiling data, adds tracing functionality to cpuevents, supports NoAPM Java applications with dependent agents.
 
-- [Kindling Cloud-native observable tool v0.6.0 released](https://github.com/KindlingProject/kindling/releases/tag/v0.6.0)
+- [Kindling Cloud native observable tool v0.6.0 released](https://github.com/KindlingProject/kindling/releases/tag/v0.6.0)
 
      Main new features in this release: add tracing span data in cpu events, add debugging tool for Trace Profiling, support RocketMQ protocol.
 
@@ -789,11 +789,11 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: modify the default domain, upgrade HPA to version v2, allow setting seccompProfile to enable the use of restricted security profiles, the minimum k8s support version is upgraded to v1.23, the reconciliation timeout is increased to 30 seconds, and EmptyDir is enabled by default Volume feature parameters.
 
-- [Koordinator cloud-native hybrid system v1.0 released](https://github.com/koordinator-sh/koordinator/releases/tag/v1.0.0)
+- [Koordinator cloud native hybrid system v1.0 released](https://github.com/koordinator-sh/koordinator/releases/tag/v1.0.0)
 
      The main new features of this version are: optimized task scheduling, optimized ElasticQuota scheduling, support for fine-grained device scheduling management mechanism, support for adjusting the CPU resource quota of BestEffort type Pod according to the load level of the node, support for using CPU Burst to improve the performance of delay-sensitive applications, Realize the eviction mechanism based on memory safety threshold and resource satisfaction, fine-grained CPU scheduling, support resource reservation without intruding Kubernetes' existing mechanisms and codes, and simplify the operation of custom rescheduling strategies.
 
-- [Koordinator cloud-native hybrid system v0.6.0 released](https://github.com/koordinator-sh/koordinator/releases/tag/v0.6.0)
+- [Koordinator cloud native hybrid system v0.6.0 released](https://github.com/koordinator-sh/koordinator/releases/tag/v0.6.0)
 
      The main new features of this version: improve the CPU fine-grained orchestration strategy, support resource reservation without intruding on the existing mechanisms and codes of Kubernetes, support Pod MigrationJob, and release a new Descheduler framework.
 
@@ -811,7 +811,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [KubeAdmiral byte-jumping open source K8s-based next-generation multi-cluster orchestration scheduling engine](https://mp.weixin.qq.com/s/aS18urPF8UB4K2I_9ECbHg)
 
-    [KubeAdmiral](https://github.com/kubewharf/kubeadmiral) is based on the Kubernetes Federation v2 iterative evolution, designed to provide cloud-native multi-cloud multi-cluster management and application distribution capabilities. KubeAdmiral builds on its enhancements KubeAdmiral: compatible with native Kubernetes API; provides a more flexible scheduling framework and supports rich scheduling distribution policies; differentiated policies; dependent scheduling/following scheduling; provides a framework for state collection and provides more flexible state collection.
+    [KubeAdmiral](https://github.com/kubewharf/kubeadmiral) is based on the Kubernetes Federation v2 iterative evolution, designed to provide cloud native multi-cloud multi-cluster management and application distribution capabilities. KubeAdmiral builds on its enhancements KubeAdmiral: compatible with native Kubernetes API; provides a more flexible scheduling framework and supports rich scheduling distribution policies; differentiated policies; dependent scheduling/following scheduling; provides a framework for state collection and provides more flexible state collection.
 
 - [KubeClipper K8S Cluster Lifecycle Management Service Becomes CNCF Sandbox Project](https://mp.weixin.qq.com/s/UEFtUZR8BZX9pK_PYsAWlA)
 
@@ -835,15 +835,15 @@ This page lists activity in cloud native open source projects in alphabetical or
     In the recent v1.13.0 release, the KubeEdge project has reached [SLSA](https://slsa.dev/) L3 level (including binary and container image artifacts), making it the first project in the CNCF community to reach SLSA L3 level.
     This means that KubeEdge can be securely hardened from end-to-end from the source build to the release process to protect the binary or container image products obtained by users from malicious tampering.
 
-- [KubeEdge cloud-native edge computing platform v1.12 release (CNCF project)](https://github.com/kubeedge/kubeedge/blob/master/CHANGELOG/CHANGELOG-1.12.md)
+- [KubeEdge cloud native edge computing platform v1.12 release (CNCF project)](https://github.com/kubeedge/kubeedge/blob/master/CHANGELOG/CHANGELOG-1.12.md)
 
-     The main new features of this version: the introduction of the next generation of cloud-native device management interface (DMI), the new version of the lightweight engine Edged upgraded to GA, EdgeMesh new high-availability mode, support for edge nodes to upgrade from the cloud, support for edge Kube-API endpoints Authorization, support GigE Device Mapper.
+     The main new features of this version: the introduction of the next generation of cloud native device management interface (DMI), the new version of the lightweight engine Edged upgraded to GA, EdgeMesh new high-availability mode, support for edge nodes to upgrade from the cloud, support for edge Kube-API endpoints Authorization, support GigE Device Mapper.
 
 - [KubeEdge Audit Report Release](https://github.com/kubeedge/community/blob/master/sig-security/sig-security-audit/KubeEdge-security-audit-2022.pdf)
 
      OSTIF (Open Source Technology Improvement Fund, Open Source Technology Improvement Foundation) completed a security audit of KubeEdge. The audit found 12 medium-severity issues, a threat model was built, and integrated into OSS Fuzz. The KubeEdge security team has fixed all issues in the newly released v1.11.1, v1.10.2 and v1.9.4.
 
-- [KubeEdge cloud-native edge computing platform v1.11.0 release (CNCF project)](https://github.com/kubeedge/kubeedge/blob/master/CHANGELOG/CHANGELOG-1.11.md)
+- [KubeEdge cloud native edge computing platform v1.11.0 release (CNCF project)](https://github.com/kubeedge/kubeedge/blob/master/CHANGELOG/CHANGELOG-1.11.md)
 
      The main new features of this version: new node group management function; edge device Mapper SDK is provided to reduce the workload of developing Mapper; Keadm subcommands such as containerized deployment and offline security are officially supported; edge node agent Edged is applicable to more use cases.
 
@@ -1004,7 +1004,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [KubeWharf: Bytedance Open Source Cloud Native Project Collection](https://mp.weixin.qq.com/s/uNbT3Ss0rBYc9pqlZe3n8Q)
 
-     [KubeWharf](https://github.com/kubewharf) is a distributed operating system based on Kubernetes, which consists of a set of cloud-native components, focusing on improving system scalability, resource utilization, and scalability. Observability, security, etc., support Cases such as large-scale multi-tenant clusters, offline mixing, and storage.
+     [KubeWharf](https://github.com/kubewharf) is a distributed operating system based on Kubernetes, which consists of a set of cloud native components, focusing on improving system scalability, resource utilization, and scalability. Observability, security, etc., support Cases such as large-scale multi-tenant clusters, offline mixing, and storage.
      The first batch of KubeWharf plans to open source three projects: KubeBrain, a high-performance meta-information storage system, KubeGateway, a seven-layer gateway for kube-apiserver, and KubeZoo, a lightweight multi-tenant solution.
 
 - [Kuma service mesh Project v2.2.0 Released (CNCF Project)](https://github.com/kumahq/kuma/releases/tag/2.2.0)
@@ -1033,9 +1033,9 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Kurator Distributed Cloud Native Platform v0.2.0 Released](https://github.com/kurator-dev/kurator/releases/tag/v0.2.0)
 
-    Release features: support for Thanos-based multicluster monitoring and metrics persistence storage; support for Pixie-based real-time K8s application monitoring; new component Cluster Operator to manage the kubernetes cluster lifecycle for various infrastructures, including public clouds, hybrid clouds and local data centers, in a cloud-native way.
+    Release features: support for Thanos-based multicluster monitoring and metrics persistence storage; support for Pixie-based real-time K8s application monitoring; new component Cluster Operator to manage the kubernetes cluster lifecycle for various infrastructures, including public clouds, hybrid clouds and local data centers, in a cloud native way.
 
-- [KusionStack: Ant Group's open source programmable cloud-native protocol stack](https://mp.weixin.qq.com/s/EZrVKdZ_hG5-p_HltaTCMg)
+- [KusionStack: Ant Group's open source programmable cloud native protocol stack](https://mp.weixin.qq.com/s/EZrVKdZ_hG5-p_HltaTCMg)
 
      [KusionStack](https://github.com/KusionStack) deposits the operation and maintenance model ([Kusion Model](http://github.com/KusionStack/konfig)) through the self-developed DSL (KCL), and the infrastructure part The use of capabilities is changed from white screen to code, and combined with the DevOps tool chain (Kusion CLI) to achieve rapid configuration verification and validation, so as to improve the openness and operation and maintenance efficiency of the infrastructure.
 
@@ -1055,7 +1055,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: add podSecurity verification sub-rules, integrate Pod Security Admission library; support YAML manifest signature verification; allow generation rules to generate multiple resources in a single rule; support OpenTelemetry; support test generation policies; support Kubernetes 1.25.
 
-- [Kyverno cloud-native strategy engine upgraded to CNCF incubation project](https://mp.weixin.qq.com/s/GijHJm6-JcqfcLn91vSs6g)
+- [Kyverno cloud native strategy engine upgraded to CNCF incubation project](https://mp.weixin.qq.com/s/GijHJm6-JcqfcLn91vSs6g)
 
      [Kyverno](https://github.com/kyverno/kyverno) is a policy engine built for Kubernetes that provides automation and security for K8s configuration management.
      Next, the project plans to add features such as YAML signing and verification, OpenTelemetry support, idempotent auto-generated pod controller policies, enhanced pod security standard integration, OCI-based policy bundling, in-cluster API calls, and more.
@@ -1153,7 +1153,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: Two new SPI plug-ins are added: respectively used to configure encryption, decryption and authentication, support cluster gRPC client to set thread pool size, support reset raft cluster, etc.
 
-- [Narrows: Cloud-native security detector open-sourced by VMware that adds dynamic scanning for container security on Harbor](https://mp.weixin.qq.com/s/xJ1Sx5pc0rKkJaYopD-vjw)
+- [Narrows: Cloud native security detector open-sourced by VMware that adds dynamic scanning for container security on Harbor](https://mp.weixin.qq.com/s/xJ1Sx5pc0rKkJaYopD-vjw)
 
     [Narrows](https://github.com/vmware-tanzu/cloud-native-security-inspector) enables runtime security posture assessment of Kubernetes clusters and the workloads within them, finds misconfigurations in Kubernetes clusters, and Ability to aggregate, aggregate, and analyze scan reports and provide an openAPI; seamlessly integrate with Harbor and automatically sync images from external public image repositories to Harbor to generate security data.
 
@@ -1238,7 +1238,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [OpenKruise upgraded to CNCF Incubation Program](https://mp.weixin.qq.com/s/9knMn8eKJBNdXUU-TcmTQg)
 
-    [OpenKruise](https://github.com/openkruise/kruise/) is an extended suite of components focused on application automation such as deployment, upgrades, operations and availability protection. OpenKruise helps organizations with large workloads adopt and automate Kubernetes and cloud-native deployments, opening the door to new use cases in areas such as AI / ML.
+    [OpenKruise](https://github.com/openkruise/kruise/) is an extended suite of components focused on application automation such as deployment, upgrades, operations and availability protection. OpenKruise helps organizations with large workloads adopt and automate Kubernetes and cloud native deployments, opening the door to new use cases in areas such as AI / ML.
 
 - [OpenKruise Cloud Native Application Automation Management Suite v1.4.0 Released (CNCF Project)](https://github.com/openkruise/kruise/releases/tag/v1.4.0)
 
@@ -1260,7 +1260,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: support for custom trust domains (that is, the common name of certificates), Envoy updated to v1.22, and use envoyproxy/envoy-distroless mirroring, added support for Kubernetes 1.23 and 1.24, support for limiting TCP connections and HTTP requests local per-instance rate, fix Statefulset and headless service.
 
-- [OpenShift Toolkit 1.0, simplifying the development of cloud-native applications](https://cloud.redhat.com/blog/announcing-openshift-toolkit-enhance-cloud-native-application-development-in-ides)
+- [OpenShift Toolkit 1.0, simplifying the development of cloud native applications](https://cloud.redhat.com/blog/announcing-openshift-toolkit-enhance-cloud-native-application-development-in-ides)
 
      [OpenShift Toolkit](https://github.com/redhat-developer/vscode-openshift-tools) is a set of extensions for VS Code and IntelliJ. Its features include: support for connecting and configuring OpenShift; providing hybrid cloud support, developers can connect to any running OpenShift instance; develop applications through local workspaces, git repositories, or default devfile templates; allow one-click Strategy, directly deploy registry code to OpenShift; provide Kubernetes resource management, seamless Kube configuration context switching; multi-platform s platform support.
 
@@ -1392,11 +1392,11 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 ### R
 
-- [Radius: Azure's open source, cloud-native application platform](https://azure.microsoft.com/en-us/blog/the-microsoft-azure-incubations-team-launches-radius-a-new-open- application-platform-for-the-cloud/)
+- [Radius: Azure's open source, cloud native application platform](https://azure.microsoft.com/en-us/blog/the-microsoft-azure-incubations-team-launches-radius-a-new-open- application-platform-for-the-cloud/)
 
-    [Radius](https://github.com/radius-project/radius) By supporting Kubernetes, existing infrastructure tools such as Terraform and Bicep, and integrating with existing CI/CD systems such as GitHub Actions, it aims to enable Developers and platform engineers to collaborate on the delivery and management of cloud-native applications that meet cost requirements and operational and security best practices. Deployment of applications on cloud platforms such as Azure and AWS in private clouds is currently supported, with plans to support additional cloud providers.
+    [Radius](https://github.com/radius-project/radius) By supporting Kubernetes, existing infrastructure tools such as Terraform and Bicep, and integrating with existing CI/CD systems such as GitHub Actions, it aims to enable Developers and platform engineers to collaborate on the delivery and management of cloud native applications that meet cost requirements and operational and security best practices. Deployment of applications on cloud platforms such as Azure and AWS in private clouds is currently supported, with plans to support additional cloud providers.
 
-- [Rainbond IT innovation version of cloud-native multi-cloud application management platform released](https://mp.weixin.qq.com/s/eelPIhoCQdAfBnQOm_YDAg)
+- [Rainbond IT innovation version of cloud native multi-cloud application management platform released](https://mp.weixin.qq.com/s/eelPIhoCQdAfBnQOm_YDAg)
 
     Rainbond Cintron Edition supports deployment and management of multiple single-architecture clusters. It supports one-click deployment and management of amd64 clusters, arm64 clusters, and amd64 & arm64 hybrid architecture clusters. Compatible with mainstream localized CPUs and adapted to multiple localized operating systems. Supports rapid migration of legacy applications to Cintron environment. Cloud native app store supports publishing and installation of arm64 architecture apps.
 
@@ -1408,11 +1408,11 @@ This page lists activity in cloud native open source projects in alphabetical or
 
     Release features: support for platform-level plugins and capability extensions, new pipeline plugins, support for creating components via OpenAPI, and optimized Helm repository installation application logic.
 
-- [Rainbond cloud-native multicloud application management platform v5.9.0 released](https://github.com/goodrain/rainbond/releases/tag/v5.9.0-release)
+- [Rainbond cloud native multicloud application management platform v5.9.0 released](https://github.com/goodrain/rainbond/releases/tag/v5.9.0-release)
 
      The main new features of this version: support for Containerd container runtime, support for using the grctl command to change the cluster API address, support for K8s 1.24 and 1.25, support for MiniKube deployment, and support for custom monitoring rules.
 
-- [Rainbond cloud-native multicloud application management platform v5.8.0 released](https://github.com/goodrain/rainbond/releases/tag/v5.8.0-release)
+- [Rainbond cloud native multicloud application management platform v5.8.0 released](https://github.com/goodrain/rainbond/releases/tag/v5.8.0-release)
 
      The main new features of this version: support for one-click import of existing applications in the Kubernetes cluster, support for deploying components directly through Jar, War packages or Yaml files, support for creating Job/CronJob type tasks, support for extending the properties supported by applications and components, and support for Dockerfile Build using a private image.
 
@@ -1432,7 +1432,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Serverless-cd: Serverless Devs released a lightweight CI/CD framework based on Serverless architecture——](https://mp.weixin.qq.com/s/ps_ZFsv7KGwV2V61SvvWIA)
 
-     Serverless Devs is the industry's first platform that supports cloud-native full lifecycle management of mainstream serverless services/frameworks. [Serverless-cd](https://github.com/Serverless-Devs/serverless-cd) is built based on Serverless Devs, fully follows the best practices of Serverless architecture, and refers to the implementation of Github Action at the specification and ecological level. It adopts the Master Worker model and event-driven architecture, which can be used to quickly build an enterprise internal application management PaaS platform.
+     Serverless Devs is the industry's first platform that supports cloud native full lifecycle management of mainstream serverless services/frameworks. [Serverless-cd](https://github.com/Serverless-Devs/serverless-cd) is built based on Serverless Devs, fully follows the best practices of Serverless architecture, and refers to the implementation of Github Action at the specification and ecological level. It adopts the Master Worker model and event-driven architecture, which can be used to quickly build an enterprise internal application management PaaS platform.
 
 - [Serverless Devs entered the CNCF sandbox and became the first serverless tool project selected](https://mp.weixin.qq.com/s/ICVDO3U5Ea1DzP3LFJq8mQ)
 
@@ -1475,9 +1475,9 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: separate edgeadm from the SuperEdge project, tunnel supports http_proxy capability, Lite-apiserver supports caching some key resources (nodes, services, etc.) and ExternalName Service forwarding on edge nodes.
 
-- [Sylva cloud-native infrastructure stack launched by Linux Foundation Europe to lay a cloud-native foundation for telecom services](https://www.prnewswire.com/news-releases/linux-foundation-europe-announces-project-sylva-to-create-open-source-telco-cloud-software-framework-to-complement-open-networking-momentum-301678955.html)
+- [Sylva cloud native infrastructure stack launched by Linux Foundation Europe to lay a cloud native foundation for telecom services](https://www.prnewswire.com/news-releases/linux-foundation-europe-announces-project-sylva-to-create-open-source-telco-cloud-software-framework-to-complement-open-networking-momentum-301678955.html)
 
-     [Sylva](https://gitlab.com/sylva-projects/sylva) Leverages container network features (CNF) and cloud-native platforms such as Kubernetes to create a telecom cloud technology stack to reduce the fragmentation of cloud infrastructure for telecom and edge services sex.
+     [Sylva](https://gitlab.com/sylva-projects/sylva) Leverages container network features (CNF) and cloud native platforms such as Kubernetes to create a telecom cloud technology stack to reduce the fragmentation of cloud infrastructure for telecom and edge services sex.
      The technology stack provided by Sylva consists of 5 components: network performance (SR-IOV, DPDK, designated CNI, etc.), distributed cloud (multicluster Kubernetes, bare metal automation), energy efficiency, security (hardening and compliance), and openness and standardized API.
 
 ### T
@@ -1490,7 +1490,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
     Release Features: Upgraded CSI and scheduled volume workspace functionality to stable, upgraded standalone workspace functionality to beta, support for restoring PVC creation, added event configuration mapping, introduced coschedule switch, support for automatically deleting PVCs created by their volume declaration templates after a PipelineRun completes.
 
-- [Tekton Cloud-native CI/CD framework v0.43.0 released](https://github.com/tektoncd/pipeline/releases/tag/v0.43.0)
+- [Tekton Cloud native CI/CD framework v0.43.0 released](https://github.com/tektoncd/pipeline/releases/tag/v0.43.0)
 
      The main new features in this release: support for parsing sidecar logs to extract results into task-running CRD, enable custom tasks in pipeline by default, add support for PipelineRun regulator, allow users to configure public keys for trusted resources, PodTemplate can be used to update global environment variables.
 
@@ -1535,7 +1535,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [ThreatMapper Cloud Native Security Observation Platform v1.4.0 release](https://github.com/deepfence/ThreatMapper/releases/tag/v1.4.0)
 
-     The main new features of this version: the new feature ThreatGraph can combine the network and other runtime environments to determine the priority of threat scanning results, support agentless cloud security situation management for cloud assets, and integrate cloud-native environment malicious program scanning tools [YaraHunter]( https://github.com/deepfence/YaraHunter).
+     The main new features of this version: the new feature ThreatGraph can combine the network and other runtime environments to determine the priority of threat scanning results, support agentless cloud security situation management for cloud assets, and integrate cloud native environment malicious program scanning tools [YaraHunter]( https://github.com/deepfence/YaraHunter).
 
 - [Trivy Container Vulnerability Scanning Tool v0.46.0 released (CNCF project)](https://github.com/aquasecurity/trivy/releases/tag/v0.46.0)
 
@@ -1580,7 +1580,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Trivy Container Vulnerability Scanner Can Now Scan Almost Everything Cloud Native Related (CNCF Project)](https://thenewstack.io/aqua-securitys-trivy-security-scanner-can-scan-anything-now/ )
 
      According to Aqua, [Trivy](https://github.com/aquasecurity/trivy) is the most comprehensive vulnerability and misconfiguration scanning tool available,
-     Can be used to scan cloud-native applications and infrastructure such as source code, repositories, images, artifact registries, Infrastructure-as-Code (IaC) templates, Kubernetes environments, and more.
+     Can be used to scan cloud native applications and infrastructure such as source code, repositories, images, artifact registries, Infrastructure-as-Code (IaC) templates, Kubernetes environments, and more.
 
 ### V
 
@@ -1650,7 +1650,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Wolfi: Chainguard Releases First Linux Distribution to Secure Software Supply Chain, Designed for Containers and Cloud-Native Environments](https://www.chainguard.dev/unchained/introducing-wolfi-the-first-linux-un-distro)
 
-     [Wolfi](https://github.com/wolfi-dev) is a stripped-down Linux distribution designed for cloud-native, but it does not have a Linux kernel, instead relying on the environment (such as a container runtime) to provide the kernel. Main features: Provide high-quality build-time SBOM as a standard for all packages; packages are fine-grained and independent of each other to support lightweight mirroring; use mature and reliable apk package format, fully declarative, repeatable Build system, supports glibc and musl.
+     [Wolfi](https://github.com/wolfi-dev) is a stripped-down Linux distribution designed for cloud native, but it does not have a Linux kernel, instead relying on the environment (such as a container runtime) to provide the kernel. Main features: Provide high-quality build-time SBOM as a standard for all packages; packages are fine-grained and independent of each other to support lightweight mirroring; use mature and reliable apk package format, fully declarative, repeatable Build system, supports glibc and musl.
 
 ### X, Z
 
@@ -1662,6 +1662,6 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      [Xline](https://github.com/datenlord/Xline) aims to solve the problem that etcd cannot fully meet the needs of cross-cloud and cross-data center use cases. Xline is a distributed KV storage, which is used to manage a small amount of critical data, and still ensure high performance and strong data consistency in cross-cloud and cross-data center use cases. It is compatible with the etcd interface, allowing users to use and migrate more smoothly.
 
-- [Zadig cloud-native continuous delivery tool v1.12.0 released](https://github.com/koderover/zadig/releases/tag/v1.12.0)
+- [Zadig cloud native continuous delivery tool v1.12.0 released](https://github.com/koderover/zadig/releases/tag/v1.12.0)
 
      The main new features of this version: support for code scanning, support for service association with multiple builds, K8s YAML project support for importing services from existing K8s, support for synchronizing service configuration from the Gitee code base, support for automatically updating the environment after service configuration changes, and support for global construction Template, K8s Helm Chart environment supports self-test mode, supports integration of multiple Jenkins, etc.

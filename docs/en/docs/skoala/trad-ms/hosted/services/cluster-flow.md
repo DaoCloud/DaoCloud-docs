@@ -5,7 +5,7 @@ hide:
 
 # Create Cluster Flow Control Rules
 
-[Flow control rules](flow-control.md), [circuit breaking rules](circuit-breaker.md), [authorization rules](auth.md), [hotspot rules](hotspot.md), and [system rules](system.md) can only collect local resource invocation information and are suitable for single-node applications. However, in the current era of cloud-native applications, many applications are deployed in clusters and distributed across multiple machines. In distributed scenarios, the above rules have some limitations. For example, if the traffic routed to each machine in the cluster is unbalanced, one machine may stop serving requests due to exceeding its threshold before reaching the overall threshold sum of the entire cluster.
+[Flow control rules](flow-control.md), [circuit breaking rules](circuit-breaker.md), [authorization rules](auth.md), [hotspot rules](hotspot.md), and [system rules](system.md) can only collect local resource invocation information and are suitable for single-node applications. However, in the current era of cloud native applications, many applications are deployed in clusters and distributed across multiple machines. In distributed scenarios, the above rules have some limitations. For example, if the traffic routed to each machine in the cluster is unbalanced, one machine may stop serving requests due to exceeding its threshold before reaching the overall threshold sum of the entire cluster.
 
 Cluster flow control mode is designed to solve this problem. In cluster flow control mode, two concepts need to be understood:
 

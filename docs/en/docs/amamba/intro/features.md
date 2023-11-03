@@ -9,9 +9,9 @@ Workbench provides the following features:
 
 - **Application Management**
   
-    - Supports "polyform" cloud-native applications in various cloud-native scenarios,
+    - Supports "polyform" cloud native applications in various cloud native scenarios,
       including Kubernetes native applications, Helm applications, and OAM applications.
-    - Provides comprehensive lifecycle management for cloud-native applications,
+    - Provides comprehensive lifecycle management for cloud native applications,
       including scaling, logging, monitoring, and application updates.
     - Enables seamless integration with microservice applications based on Spring Cloud,
       Dubbo, and Service Mesh frameworks to achieve effective microservice governance.

@@ -2,7 +2,7 @@
 
 ![VictoriaMetrics](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/victoria.png)
 
-When it comes to cloud-native monitoring solutions, the first thing that comes to mind is a mature solution of Prometheus+AlertManager+Grafana.
+When it comes to cloud native monitoring solutions, the first thing that comes to mind is a mature solution of Prometheus+AlertManager+Grafana.
 As the core of monitoring, Prometheus has a powerful data model, high-efficiency operation, rich monitoring capabilities, a powerful query language PromQL,
 Easy to use, easy to manage and so on. But Prometheus is not perfect at the high availability level. To this end, in the open source community,
 Many alternatives and enhancements have been bred, and VictoriaMetrics is one of the better ones. It is a fast, cost-effective and scalable monitoring solution and time series database.

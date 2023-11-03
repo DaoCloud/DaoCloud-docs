@@ -16,8 +16,8 @@ However, as the business continues to expand, the business logic becomes more an
 
 - Cloud Native Microservices
 
-    Cloud-native microservices refer to the cross-technology stack microservice governance model developed based on Kubernetes, which has gradually developed into a service mesh since there was no framework.
-    This model uses cloud-native frameworks (such as Kubernetes, Istio, and Linkered), cloud-native registries (such as Kubernetes registries and Mesh registries), and cloud-native gateways (such as Nginx, Envoy, and Contour).
+    Cloud native microservices refer to the cross-technology stack microservice governance model developed based on Kubernetes, which has gradually developed into a service mesh since there was no framework.
+    This model uses cloud native frameworks (such as Kubernetes, Istio, and Linkered), cloud native registries (such as Kubernetes registries and Mesh registries), and cloud native gateways (such as Nginx, Envoy, and Contour).
 
 - Microservice framework
 

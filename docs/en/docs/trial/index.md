@@ -10,7 +10,7 @@ hide:
   <p style="font-size: 28px; color: green;">DaoCloud Enterprise Community <img src="./images/hu02.gif" alt="Image" width="80"></p>
 </div>
 
-DCE 5.0, with cloud-native infrastructure at its core, is supported by self-developed open-source components. It provides cloud-native computing, networking, storage, and other capabilities, supporting unified management of multi-cloud and multi-cluster lifecycles. It abstracts the complexity of underlying infrastructure, reduces the threshold for enterprises to use cloud-native applications, and improves application development efficiency.
+DCE 5.0, with cloud native infrastructure at its core, is supported by self-developed open-source components. It provides cloud native computing, networking, storage, and other capabilities, supporting unified management of multi-cloud and multi-cluster lifecycles. It abstracts the complexity of underlying infrastructure, reduces the threshold for enterprises to use cloud native applications, and improves application development efficiency.
 
 <div style="text-align: center;">
   <p style="font-size: 24px; color: green;">Unlease DaoCloud Enterprise Community in 3 Steps</p>
@@ -28,7 +28,7 @@ DCE 5.0, with cloud-native infrastructure at its core, is supported by self-deve
 
 === "Kind Cluster for Beginner"
 
-    **Applicable Scenarios:** Suitable for cloud-native beginners and enthusiasts who have limited machine resources and a shallow understanding of Kubernetes clusters.
+    **Applicable Scenarios:** Suitable for cloud native beginners and enthusiasts who have limited machine resources and a shallow understanding of Kubernetes clusters.
 
     **Estimated Time:** 10-30 minutes
 
@@ -99,7 +99,7 @@ If you have limited network access, you can choose to perform an offline install
 
 ## <font color="green"><strong>3rd</strong> Embark on the Cloud-Native Journey</font>
 
-- [Cloud-Native Technology Practice Public Course](https://appu8cplrlw7661.h5.xiaoeknow.com): Suitable for beginners or junior cloud-native developers to learn about the development background, basic knowledge, and operational practices of cloud-native technology.
+- [Cloud-Native Technology Practice Public Course](https://appu8cplrlw7661.h5.xiaoeknow.com): Suitable for beginners or junior cloud native developers to learn about the development background, basic knowledge, and operational practices of cloud native technology.
 - [Video Tutorials](../videos/index.md): Covering the usage demonstrations of the three major functional modules: container management, global management, and observability. There are also tutorials demonstrating Enterprise Package features. Feel free to check them out.
 
 <p style="font-size: 20px; color: green;">Learn more about DaoCloud Enterprise Community Edition</p>

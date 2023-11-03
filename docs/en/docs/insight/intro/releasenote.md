@@ -3,6 +3,38 @@
 This page lists the Release Notes of Insight Observability, so that you can understand
 the evolution path and feature changes of each version.
 
+## 2023.10.31
+
+!!! note
+
+    Insight Agent v0.21.0 has fixed the issue of collecting duplicate JVM metrics after
+    configuring PodMonitor. It is recommended to upgrade to this version for the fix.
+    For more details, refer to [Known Issues](../../insight/quickstart/install/knownissues.md).
+
+### Insight Server: v0.21.0
+
+#### New Features
+
+- **New** Namespace-level monitoring.
+
+#### Enhancements
+
+- **Enhancement** Updated navigation structure in Insight.
+- **Enhancement** Clicking on a link distribution graph allows quick access to proper link details.
+
+#### Fixes
+
+- **Fixed** Unable to view container log context.
+- **Fixed** Error when initializing event index.
+
+### Insight Agent: v0.21.0
+
+#### Bug Fixes
+
+- **Fixed** Abnormal span names appearing in link queries.
+- **Fixed** An issue where containers started by the tailing-sidecar in
+  the Bank Kirin Kylin-V10 (SP3) operating system could not start properly.
+
 ## 2023.08.31
 
 ### Insight Server: v0.20.0

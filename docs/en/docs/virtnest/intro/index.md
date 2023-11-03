@@ -6,7 +6,7 @@ hide:
 # What is Virtnest (Virtual Machine Container)?
 
 Virtnest is a technology based on KubeVirt that allows virtual machines to be managed as
-cloud-native applications, seamlessly integrating with containers. This enables users to
+cloud native applications, seamlessly integrating with containers. This enables users to
 easily deploy virtual machine applications and enjoy a smooth experience similar to
 containerized applications.
 
