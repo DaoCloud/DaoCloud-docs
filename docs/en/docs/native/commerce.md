@@ -112,6 +112,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
     Azure Kubernetes Fleet Manager treats multiple cluster sites as a single cluster to be managed. Users can manage multiple clusters by creating a Fleet resource. Users can treat existing AKS clusters as member clusters, join them to the fleet, and then orchestrate multiple cluster Cases such as Kubernetes resource propagation and multicluster load balancing using metadata from those clusters.
 
+- [AliCloud Container Computing Service ACS officially released](https://mp.weixin.qq.com/s/KRyMjqGebXH4Mx0D0sWbyw)
+
+    Container Computing Service ACS integrates containers with resources so that users don't need to focus on the underlying nodes and clusters. It provides a flexible Pod configuration mode, supporting 1:1~1:8 resource ratios; at the same time, it also provides second-level elasticity to cope with traffic fluctuations; it supports arithmetic provisioning resource reuse, allowing flexible resource provisioning in user loads and cloud product loads; in addition to native support for general-purpose business loads such as web servers, microservices applications, web applications, etc., it also supports task class loads such as big data computing, AI computing, and middleware, database, etc. It also provides a flexible resource provisioning mode. In addition to natively supporting general-purpose business loads such as web servers, microservice applications, and web applications, Loft Labs also supports task-based business loads such as big data computing and AI computing, as well as real-time performance-sensitive business loads such as middleware and database.
+
 - [AliCloud Microservice Engine MSE August Product Update](https://mp.weixin.qq.com/s/odXdOMFiBvbpq09xhLrcZA)
 
     Updates: Cloud Native Gateway supports configuring JT authentication for routes and authenticating specified consumers; supports replicating online traffic to specified services; MSEIngress supports route-level Sentinel fully-confined flow and concurrency control; supports gray-scale release of multiple Deployments under the same Service; application-related monitoring data supports monitoring within 1 day Application-related monitoring data supports monitoring and playback within 1 day; based on KruiseRollout, it realizes the ability of full-link grayscale release.
@@ -217,6 +221,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
     Support mixed management of X86 and ARM architectures, support localized database Damon, support production-grade windows containers, provide unified resource management service for ACK and TKE public cloud container clusters, support simultaneous release of multiple native yaml files, support native ingress capability, manage high-performance virtual machines independently as a new resource type, provide It also provides container resource oversharing capability, and completes the deep integration of container cloud, microservice management, service mesh, middleware and other sub-products.
 
+- [Buoyant Launches Enterprise Edition of Linkerd, a Service Grid Project](https://buoyant.io/newsroom/announcing-linkerd-enterprise-the-first-enterprise-focused-distribution-of-the-popular-linkerd-service-mesh-project)
+
+    Linkerd Enterprise Edition builds on the open source project Linkerd by adding enterprise-only features including zero trust and FIPS 140-2 compliance, a cost-aware load balancer, lifecycle automation, and more.
+
 ### C
 
 - [Calico Enterprise 3.16, Calico's cloud-native security platform, was released](https://www.tigera.io/blog/whats-new-in-calico-enterprise-3-16-egress-gateway-on-aks-service-graph-optimizations-and-more/)
@@ -295,6 +303,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Datadog Launches Cloud Security Management to Provide Cloud Security Management](https://www.datadoghq.com/about/latest-news/press-releases/datadog-launches-cloud-security-management-to-provide-cloud-native-application-protection/)
 
      Cloud Security Management brings cloud security posture management, cloud workload security, alerting, event management, and reporting together in one platform, enabling development and security teams to identify misconfigurations, detect threats, and secure cloud-native applications.
+
+- [Docker launches its own generative AI tool, Docker AI](https://www.docker.com/press-release/announces-ai-boosting-developer-productivity-through-automated-guidance/)
+
+    Docker AI, which has been trained on Docker's proprietary data from millions of Dockerfiles, compose files, and error logs, will be integrated directly into developer workflows to help in the event of an error. It will show potential fix options in the development environment, allowing developers to test fixes before committing changes.
 
 - [Docker releases technical preview of WebAssembly tools](https://www.docker.com/blog/docker-wasm-technical-preview/)
 
@@ -439,6 +451,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      Harness GitOps-as-a-Service builds on Argo CD, integrates OPA, supports audit trails, provides fine-grained RBAC, supports unified single sign-on for different deployments, supports declarative settings, and provides a centralized GitOps control center for management and View deployments in multiple environments and support integration with existing Argo CD instances.
 
+- [Huawei Cloud Container Service CCE releases next-generation cloud-native observable platform](https://mp.weixin.qq.com/s/oK4otkzskwD55TBwpy7fMQ)
+
+    The Cloud Native Observable Platform focuses on four major capabilities: it supports one-click enablement of the monitoring center capability and provides one-stop visual monitoring from the container perspective, supporting monitoring views of clusters, nodes, workloads, pods, and other dimensions; it adds the alert center capability and provides one-click template-based configuration of container alerts; it integrates the LTS logging service capability and launches the Cloud Native Logging Center; and it provides the health center capability to detect cluster failures and potential risks, and to identify cluster failures and potential risks. Docker's health center provides the ability to detect cluster failures and potential risks and provide repair recommendations.
+
 - [Huawei Cloud Container Engine CCE Turbo 2023 First-Half Product Update](https://mp.weixin.qq.com/s/7cEh_383i3sxz7aCgRqPNA)
 
     Updates: Supports Kubernetes version 1.25; adds network priority control, CPU multi-core load balancing isolation, and CPU burst capability; provides one-click in-situ non-destructive automatic upgrades; supports multi-container shared GPUs; supports mixed management of multiple series and specification instances in the same node pool; and supports batch automatic node OS updates and upgrades.
@@ -502,6 +518,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Lacework Platform Cloud Security Platform September Update](https://docs.lacework.com/releases/2022-09_september-platform-releases)
   
      Updates include: support for agentless workload scanning, support for host vulnerability assessment of Linux hosts on AWS, and support for container image vulnerability assessment.
+
+- [Loft Labs Launches vCluster.Pro, an Enterprise-Class Virtualized Large-Scale Virtual Kubernetes Cluster Management Platform](https://loft.sh/blog/introducing-vcluster-pro/)
+
+    vCluster.Pro builds on the open source project vCluster by providing an integrated CoreDNS container and vCluster synchronizer; supports separation of the control plane from the worker nodes by isolating the control plane; provides a synchronization patching feature to patch Kubernetes resources during synchronization of virtual and host clusters; and uses the Chainguard busybox image as the base image.
 
 - [Logz.io releases K8s full-stack observation platform Kubernetes360](https://logz.io/blog/unified-observability-kubernetes-360/)
 
@@ -600,6 +620,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
      The main new features of this version: support for sharing backups with other users and groups, support for customizing backup licenses based on specific infrastructure, and support for encryption support for different types of backups using user-supplied or default keys.
 
 ### Q
+
+- [QingCloud Releases Distributed Multi-Tenant Cloud Native Operating System KubeSphere Enterprise Edition 3.5.0 Released](https://mp.weixin.qq.com/s/OxqjZM3H473zLWBdAS5iNQ)
+
+    Updates: Support for configuring multiple notification subscriptions for email notification channels, support for adding custom labels to specified alert policies, support for searching by alert content, support for categorizing tenant storage usage data by storage type, and the addition of new on-premises alerts for components such as Redis, Kafka, OpenSearch, and so on, to the DMP of the cloud-native database management module.
 
 - [QingCloud Releases KubeSphere Enterprise Edition 4.0, a Distributed Multi-Tenant Cloud Native Operating System](https://mp.weixin.qq.com/s/v-n4ztqQG8p2Tt9aPfQiuA)
 
