@@ -18,14 +18,27 @@
 
 | CPU 架构 | 版本   | 点击下载                                                     |
 | :------- | :----- | :----------------------------------------------------------- |
-| AMD64    | v0.11.0 | [offline-v0.12.0-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.12.0-amd64.tar) |
-| ARM64    | v0.11.0 | [offline-v0.12.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.12.0-arm64.tar) |
+| AMD64    | v0.11.0 | [offline-v0.11.0-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.11.0-amd64.tar) |
+| ARM64    | v0.11.0 | [offline-v0.11.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.11.0-arm64.tar) |
 
 下载完毕后解压离线包。以 amd64 架构离线包为例：
 
 ```bash
-tar -xvf offline-v0.12.0-amd64.tar
+tar -xvf offline-v0.11.0-amd64.tar
 ```
+
+#### addon 离线包 （可选）
+
+addon 离线包包含一些常用的组件的 Helm Chart 离线包，具体清单请参考[addon](https://docs.daocloud.io/download/addon/v0.11.0.html#addon)。
+
+安装器从 v0.5.0 版本，支持了 addon 的离线包导入能力，如果需要支持 addon 中所有的 helm chart 离线化。可以在[下载中心](https://docs.daocloud.io/download/dce5/)下载最新版本。
+
+首先需要事先下载好离线包，并在[集群配置文件（clusterConfig.yaml）](./cluster-config.md)中定义 `addonOfflinePackagePath`。
+
+| CPU 架构 | 版本   | 点击下载                                                     |
+| :------- | :----- | :----------------------------------------------------------- |
+| AMD64    | v0.11.0 | [addon-offline-full-package-v0.11.0-amd64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.11.0-amd64.tar.gz) |
+| ARM64    | v0.11.0 | [addon-offline-full-package-v0.11.0-arm64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.11.0-arm64.tar.gz) |
 
 #### ISO 操作系统镜像文件 （必需）
 
@@ -53,20 +66,7 @@ osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源
 
 目前安装器版本要求 osPackage 离线包的版本与之匹配，请根据根据对应版本下载 osPackage 离线包：
 
-=== "V0.12.0"
-
-    | 操作系统版本                                        | 点击下载                                                     |
-    | :-------------------------------------------------- | :----------------------------------------------------------- |
-    | Centos 7                                            | [os-pkgs-centos7-vv0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-centos7-v0.9.3.tar.gz) |
-    | Redhat 8                                            | [os-pkgs-redhat8-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-redhat8-v0.9.3.tar.gz) |
-    | Redhat 7                                            | [os-pkgs-redhat7-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-redhat7-v0.9.3.tar.gz) |
-    | Redhat 9                                            | [os-pkgs-redhat9-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-redhat9-v0.9.3.tar.gz) |
-    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-kylinv10-v0.9.3.tar.gz) |
-    | Ubuntu20.04                                         | [os-pkgs-ubuntu2004-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-ubuntu2004-v0.9.3.tar.gz) |
-    | openEuler 22.03                                     | [os-pkgs-openeuler22.03-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-openeuler22.03-v0.9.3.tar.gz) |
-    | OracleLinux R9 U1                                   | [os-pkgs-oracle9-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-oracle9-v0.9.3.tar.gz) |
-
-=== "V0.11.0"
+=== "V0.11"
 
     | 操作系统版本                                        | 点击下载                                                     |
     | :-------------------------------------------------- | :----------------------------------------------------------- |
@@ -105,19 +105,6 @@ osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源
     | OracleLinux R9 U1                                   | [os-pkgs-oracle9-v0.6.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.6.6/os-pkgs-oracle9-v0.6.6.tar.gz) |
 
 统信 UOS V20（1020a）osPackage 部署请参考 [UOS V20 (1020a) 操作系统上部署 DCE 5.0](../os-install/uos-v20-install-dce5.0.md)
-
-#### addon 离线包 （可选）
-
-addon 离线包包含一些常用的组件的 Helm Chart 离线包，具体清单请参考[addon](https://docs.daocloud.io/download/addon/v0.12.0.html#addon)。
-
-安装器从 v0.5.0 版本，支持了 addon 的离线包导入能力，如果需要支持 addon 中所有的 helm chart 离线化。可以在[下载中心](https://docs.daocloud.io/download/dce5/)下载最新版本。
-
-首先需要事先下载好离线包，并在[集群配置文件（clusterConfig.yaml）](./cluster-config.md)中定义 `addonOfflinePackagePath`。
-
-| CPU 架构 | 版本   | 点击下载                                                     |
-| :------- | :----- | :----------------------------------------------------------- |
-| AMD64    | v0.12.0 | [addon-offline-full-package-v0.12.0-amd64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.11.0-amd64.tar.gz) |
-| ARM64    | v0.12.0 | [addon-offline-full-package-v0.12.0-arm64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.11.0-arm64.tar.gz) |
 
 #### 一键下载所需离线包
 
