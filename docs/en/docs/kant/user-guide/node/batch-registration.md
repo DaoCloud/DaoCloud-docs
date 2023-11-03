@@ -14,7 +14,7 @@ The following steps explain how to perform batch registration of edge nodes.
 
     ![Batch Management](../../images/batch-register02.png)
 
-2. Fill in the registration information.
+1. Fill in the registration information.
 
     - Task Name: The name of the batch task, which cannot be empty and has a length limit of 63 characters.
     - Name Prefix: The nodes accessed through the batch task will have names consisting of the "prefix + random code".
@@ -26,7 +26,7 @@ The following steps explain how to perform batch registration of edge nodes.
 
     ![Create Batch Task](../../images/batch-register03.png)
 
-3. After completing the registration information, click the `OK` button to finish creating the batch task for the nodes.
+1. After completing the registration information, click the `OK` button to finish creating the batch task for the nodes.
 
 ## What's Next
 

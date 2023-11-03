@@ -50,21 +50,21 @@ This page lists the release notes for Cloud Edge Collaboration, providing an ove
 - Display and editing of access configuration information for deployed workloads, such as network type.
 - Display of event lists for deployed workloads.
 - Bulk deployment of applications to edge node groups using image-based deployment.
-- Creation of batch workloads using YAML.
+- Creation of batch deployments using YAML.
 - Differentiated configuration of workload instances and container images for different node groups.
-- Display and editing of batch workload definitions.
+- Display and editing of batch deployment definitions.
 - Deletion of deployed workload instances.
 - Creation and deletion of configuration items and keys using forms and YAML, decoupling configuration items and encrypted files from container images to enhance portability of container workloads.
 - Updating, exporting, and deleting configuration items and keys for easy management of configuration files.
 - Creation and deletion of message endpoints.
 - Creation of message routes, allowing messages to be forwarded to corresponding endpoints based on configured routing rules.
 - Deletion of message routes.
-- Support for Modbus protocol terminal device integration and visualization management.
-- Binding and unbinding of terminal devices with registered edge nodes.
+- Support for Modbus protocol end device integration and visualization management.
+- Binding and unbinding of end device with registered edge nodes.
 - Addition, modification, and deletion of device twin properties.
-- Editing of device twin properties to change expected values stored in device twin information on edge nodes, allowing devices to synchronize changes with twin information.
-- Adding tags to devices for querying devices based on multiple tag key-value pairs.
+- Editing of device twin properties to change expected values stored in device twin information on edge nodes, allowing device to synchronize changes with twin information.
+- Adding tags to device for querying device based on multiple tag key-value pairs.
 - Setting device access configurations for retrieving device data.
-- Deletion of terminal devices.
-- Display of basic information for registered devices, such as device name, access protocol, namespace, etc.
-- Display and editing of terminal device twin properties, tags, and access configuration information.
+- Deletion of end device.
+- Display of basic information for registered device, such as device name, access protocol, namespace, etc.
+- Display and editing of end device twin properties, tags, and access configuration information.

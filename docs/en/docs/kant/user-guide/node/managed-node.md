@@ -95,9 +95,9 @@ When a new edge node is connected, the latest version of the EdgeCore software i
 
 4. Verify if the edge node has been successfully connected.
 
-    1. Select `Edge Computing` -> `Cloud-Edge Collaboration` from the left navigation pane to access the Edge Unit list page.
+    1. Select `Edge Computing` -> `Cloud Edge Collaboration` from the left navigation pane to access the Edge Unit list page.
 
-    2. Click on the name of an edge unit to view its details.
+    2. Click the name of an edge unit to view its details.
 
     3. Select `Edge Resources` -> `Edge Nodes` from the left navigation pane to access the Edge Node list page.
 

@@ -8,7 +8,7 @@ Follow these steps:
 
 1. Go to the edge unit details page and select the left menu `Edge Resources` -> `Edge Node Groups`.
 
-2. Click on the `Group Name` in the edge node group list.
+2. Click the `Group Name` in the edge node group list.
 
 3. On the node group details page, click the `Edit Node Group` button at the top right corner.
 
@@ -24,7 +24,7 @@ Follow these steps:
 
 1. Go to the edge unit details page and select the left menu `Edge Resources` -> `Edge Node Groups`.
 
-2. On the right side of the node group list, click the `...` button and select `Delete` from the popup menu.
+2. On the right side of the node group list, click the `⋮` button and select `Delete` from the popup menu.
 
 3. Enter the node group name, click `Delete` to confirm and complete the deletion operation.
 
