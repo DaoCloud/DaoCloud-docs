@@ -269,7 +269,6 @@
     在此审计过程中，在 OCI 镜像导入程序中发现了一个[漏洞](https://github.com/containerd/containerd/security/advisories/GHSA-259w-8hf6-59c2)：导入恶意镜像可能会导致节点的 DoS 攻击。
     该问题已在 containerd 1.5.18 和 1.6.18 中修复。
 
-
 - [Contour Kubernetes ingress 控制器 v1.26.0 发布（CNCF 项目）](https://github.com/projectcontour/contour/releases/tag/v1.26.0)
 
     版本特性：支持两个以上端口的网关监听器、支持输出状态更新负载指标、支持限制 Contour 实例所监测资源的命名空间、引入新的临界访问日志级别、支持定义默认的全局速率限制策略。
@@ -392,6 +391,10 @@
 
     该版本主要新特性：在一个 SDS 请求中发送多个集群或监听器的 SDS 资源、通过 HTTP 过滤器的配置名称来获取过滤器配置、监听器过滤器统计更新、dns_resolver 增加对多个地址的支持、为监听器过滤器添加动态监听器过滤器配置等。
 
+- [Envoy Gateway API 网关 v0.6 发布](https://github.com/envoyproxy/gateway/releases/tag/v0.6.0)
+
+    版本特性：添加容器端口指标、支持设置全局速率限制的超时和故障开启/关闭、为路由添加 serviceImport 后端、支持负载均衡器类、在 EnvoyProxy 资源下引入并发性、在命名空间模式下为 envoy 网关实现角色和角色绑定、在 EnvoyProxy API 中引入 initContainers 字段、为 CORS 添加 ir 和 xds 转换。
+
 - [Envoy Gateway API 网关 v0.5 发布](https://gateway.envoyproxy.io/v0.5.0/releases/v0.5.html)
 
     版本特性：添加数据平面代理遥测、支持直接配置 xDS、支持基于 IP 地址的不同速率限制、支持配置 EnvoyProxy Pod 标签、支持配置 EnvoyProxy 部署策略设置、卷和卷挂载、支持将 EnvoyProxy 配置为 NodePort 类型服务、添加 Pprof 调试支持。
@@ -490,6 +493,10 @@
 
     该版本主要新特性：增加约束模式验证测试、增加对外部数据提供商的 TLS 支持、增加 pod 安全上下文变量、支持验证子资源、允许在 gator 验证中跳过测试、为 gator 添加 dockerfile、添加 opencensus 和 stackdriver exporter。
 
+- [Gateway API v1.0 发布](https://github.com/kubernetes-sigs/gateway-api/releases/tag/v1.0.0)
+
+    版本特性: 将 CEL 验证规则纳入 CRD、Gateway、GatewayClass 和 HTTPRoute 升级成为 GA 功能、新增对 HTTPRoute 超时、从 Gateway 到后端的 TLS 配置、WebSocket 支持等实验性功能。
+
 ### H
 
 - [Harvester 超融合基础设施 v1.2.0 发布](https://github.com/harvester/harvester/releases/tag/v1.2.0)
@@ -562,6 +569,10 @@
 
     近日，阿里云正式发布完整功能的 [iLogtail](https://github.com/alibaba/ilogtail) 社区版。
     本次更新开源全部 C++ 核心代码，该版本在内核能力上首次对齐企业版。新增日志文件采集、容器文件采集、无锁化事件处理、多租户隔离、基于 Pipeline 的新版配置方式等诸多重要特性。
+
+- [ingress2gateway 发布，简化从 Ingress 迁移到 Gateway API](https://kubernetes.io/blog/2023/10/25/introducing-ingress2gateway/)
+
+    [ingress2gateway](https://github.com/kubernetes-sigs/ingress2gateway) 用于将 Ingress 资源转换为 Gateway API 资源（特别是HTTPRoutes），目前暂不支持广泛使用的提供者特定注释和/或 CRD。未来计划引入对更多类型的 Gateway API 路由的支持。
 
 - [Ingress-NGINX Controller v1.7.0 发布](https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.7.0)
 
@@ -678,6 +689,10 @@
 
     该版本主要新特性：默认驱逐无控制器的 pod、将 AWS 设置从 CLI Args 迁移到 ConfigMap、支持 IPv6 自动发现、将 webhook和控制器合并为一个二进制文件。
 
+- [Kata Containers 容器安全项目 v3.2.0 发布](https://github.com/kata-containers/kata-containers/releases/tag/3.2.0)
+
+    版本特性：将 CI 转换为 GitHub Actions、启用代理稳定性测试、添加 k0s 支持、添加 CRI-O 测试、为所有支持的 k8s 版本启用 kata-deploy 测试、支持在 K8s 中启用 Kata runtime 来进行 FIO 测试、添加用于非加密机密测试的镜像。
+
 - [Kata Container 容器安全项目 v3.1.0 发布](https://github.com/kata-containers/kata-containers/releases/tag/3.1.0)
 
     版本特性：支持 AMD SEV-SNP 机密虚拟机；支持 EROFS 文件系统；完善 Docker/Moby 网络支持改进运行时（runtime-rs），包括增加对大页面（hugepages）的支持；增加 QEMU 日志记录功能；兼容 CRI-O 和 containerd 1.6.8；支持 Kubernetes 1.23.1-00。
@@ -762,6 +777,10 @@
 
     该版本主要新特性：在 cpu 事件中增加 tracing span 数据、增加 Trace Profiling 的调试工具、支持 RocketMQ 协议。
 
+- [Knative 基于 Kubernetes 的 serverless 架构方案 v1.12.0 发布（CNCF 项目）](https://github.com/knative/serving/releases/tag/knative-v1.12.0)
+
+    版本特性：新增状态字段 cluster-local-domain-tls，用于控制集群本地域的 TLS 证书；在启用安全 Pod 默认特性时，验证 Webhook 将允许添加 NET_BIND_SERVICE 或 nil 能力；支持 gRPC 探测；允许为 Knative Service 设置共享进程命名空间功能。
+
 - [Knative 基于 Kubernetes 的 serverless 架构方案 v1.11.0 发布（CNCF 项目）](https://github.com/knative/serving/releases/tag/knative-v1.11.0)
 
     版本特性：域映射控制器逻辑已与Serving控制器合并、新增字段用于启用 Queue Proxy 时的资源请求和限制（仅适用于 CPU 和内存）、Activator 现在有一个单独的服务账号、支持通过服务级别的注释来配置 Queue Proxy 资源。
@@ -831,6 +850,10 @@
 - [KubeEdge 云原生边缘计算平台 v1.11.0 发布（CNCF 项目）](https://github.com/kubeedge/kubeedge/blob/master/CHANGELOG/CHANGELOG-1.11.md)  
 
     该版本主要新特性：新增节点组管理功能；提供边缘设备 Mapper 的 SDK，减少开发 Mapper 的工作量；正式支持容器化部署、离线安全等 Keadm 子命令；边缘节点代理 Edged 适用更多场景。
+
+- [Kubefirst GitOps 基础设施及应用交付平台 v2.3.0 发布](https://github.com/kubefirst/kubefirst/releases/tag/v2.3.0)
+
+    版本特性：为安全问题添加 SECURITY.md 文件、添加一个工作流程来验证 Markdown 语法、在错误问题模板中添加 DNS 信息、添加一个 Markdown 链接检查器操作。
 
 - [Kubeflow：Kubernetes 机器学习平台 Kubeflow 升级成为 CNCF 孵化项目](https://mp.weixin.qq.com/s/8bZr2Edmyh-unE5ghIBhJg)
 
@@ -993,6 +1016,10 @@
 - [Kuma 服务网格项目 v1.8.0 发布（CNCF 项目）](https://github.com/kumahq/kuma/releases/tag/1.8.0)  
 
     该版本主要新特性：跨网格网关支持多区域运行、网格网关/内置网关增加可观测性功能、重写 CNI、网格网关支持路径重写和报头添加/删除、支持过滤代理的指标、简化 TCP 流量日志实现、支持 Projected Service Account Tokens。
+
+- [Kurator 分布式云原生平台 v0.5.0 发布](https://github.com/kurator-dev/kurator/releases/tag/v0.5.0)
+
+    版本特性：基于 Velero 提供了统一的备份、还原和迁移方案；基于 Rook 引入分布式云本地存储功能；attachedcluster 新增验证 webhook；新增自定义集群控制器的单元测试；新增集群选择器。
 
 - [Kurator 分布式云原生平台 v0.3.0 发布](https://github.com/kurator-dev/kurator/releases/tag/v0.4.0)
 
@@ -1480,6 +1507,10 @@
 - [Telepresence K8s 本地开发工具 v2.10.0 发布（CNCF 项目）](https://www.getambassador.io/docs/telepresence/latest/release-notes#2.10.0)
 
     该版本主要新特性：流量管理器支持被团队模式和单用户模式、在 Helm Chart 中添加拉取镜像的 secret、OSS Helm chart 将被推送到 telepresence 专有仓库（原先为 datawire Helm 仓库）。
+
+- [Tetragon 安全可观测和运行时增强平台 v1.0 发布](https://github.com/cilium/tetragon/releases/tag/v1.0.0)
+
+    版本特性：调整 Kubernetes 中导出的日志 JSON 文件的权限、构建 ARM64 架构的tarball（压缩归档文件）、支持显示 UID 和 GID 信息以及检测进程是否正在以特权执行的方式运行、在 kprobe 事件中添加内核堆栈跟踪功能、在多个系统调用上附加 killer 程序、默认开启命名空间策略和 Pod 标签过滤器的功能。
 
 - [Tetragon 安全可观测和运行时增强平台 v0.11.0 发布](https://github.com/cilium/tetragon/releases/tag/v0.11.0)
 

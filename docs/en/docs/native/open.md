@@ -373,6 +373,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 ### E
 
+- [Envoy Gateway API gateway v0.6 released](https://github.com/envoyproxy/gateway/releases/tag/v0.6.0)
+
+    Release features: add container port metrics, support setting timeouts and failures on/off for global rate limiting, add serviceImport backend for routing, support load balancer classes, introduce concurrency under EnvoyProxy resources, implement roles and role bindings for the envoy gateway in namespace mode, introduce the initContainers field, adding ir and xds transformations to CORS.
+
 - [Envoy v1.28.0 released (CNCF project)](https://www.envoyproxy.io/docs/envoy/v1.28.0/version_history/v1.28/v1.28.0)
 
     Release features: working node support for delayed cluster creation, added EDS (Endpoint Discovery Service) response caching support for ADS, added ECDS (External Configuration Discovery Service) support for downstream and upstream web filters, and support for the use of the Envoy's EDS (Endpoint Discovery Service) response caching service even if the number of zones in the source and upstream clusters is different. upstream clusters, support for enabling area-aware routing even if the number of areas in the source and upstream clusters are different, and the deprecation of OpenTracing and OpenCensus in v1.30.
@@ -485,6 +489,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: add constraint mode verification tests, add TLS support for external data providers, add pod security context variables, support verification sub-resources, allow skipping tests in gator verification, add dockerfile for gator, add opencensus and stackdriver exporter.
 
+- [Gateway API v1.0 released](https://github.com/kubernetes-sigs/gateway-api/releases/tag/v1.0.0)
+
+    Release Features: Incorporation of CEL validation rules into CRDs, Gateway, GatewayClass, and HTTPRoute upgraded to GA functionality, experimental features such as HTTPRoute timeouts, TLS configuration from Gateway to backend, and WebSocket support.
+
 ### H
 
 - [Harvester Hyperconverged Infrastructure v1.2.0 released](https://github.com/harvester/harvester/releases/tag/v1.2.0)
@@ -557,6 +565,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      Recently, Alibaba Cloud officially released the community version of [iLogtail](https://github.com/alibaba/ilogtail) with full features.
      This update open-sources all C++ core codes, and this version aligns with the enterprise version for the first time in terms of core capabilities. Added many important features such as log file collection, container file collection, lock-free event processing, multi-tenant isolation, and new configuration methods based on Pipeline.
+
+- [ingress2gateway released to simplify migration from Ingress to Gateway API](https://kubernetes.io/blog/2023/10/25/introducing-ingress2gateway/)
+
+    [ingress2gateway](https://github.com/kubernetes-sigs/ingress2gateway) is used to convert Ingress resources to Gateway API resources (specifically HTTPRoutes), and currently does not support widely used provider-specific annotations and/or CRDs. Support for more types of Gateway API routes is planned to be introduced in the future.
 
 - [Ingress-NGINX Controller v1.7.0 Released](https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.7.0)
 
@@ -673,6 +685,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      Major new features in this version: Evicting pods without a controller by default, migrating AWS settings from CLI Args to ConfigMap, supporting IPv6 auto-discovery, merging webhooks and controllers into one binary.
 
+- [Kata Containers Container Security Project v3.2.0 Released](https://github.com/kata-containers/kata-containers/releases/tag/3.2.0)
+
+    Release features: convert CIs to GitHub Actions, enable proxy stability testing, add k0s support, add CRI-O testing, enable kata-deploy testing for all supported versions of k8s, support enabling Kata runtime for FIO testing in K8s, add mirrors for non-encrypted secrets testing.
+
 - [Kata Container Container Security Project v3.1.0 Released](https://github.com/kata-containers/kata-containers/releases/tag/3.1.0)
 
     Release features: support for AMD SEV-SNP confidential VMs; support for EROFS file system; improved Docker/Moby network support for improved runtime (runtime-rs), including adding support for large pages (hugepages); added QEMU logging capabilities; CRI-O and containerd 1.6.8 compatible; Support for Kubernetes 1.23.1-00.
@@ -757,6 +773,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      Main new features in this release: add tracing span data in cpu events, add debugging tool for Trace Profiling, support RocketMQ protocol.
 
+- [Knative serverless architecture solution based on Kubernetes v1.12.0 released (CNCF project)](https://github.com/knative/serving/releases/tag/knative-v1.12.0)
+
+    Release features: new status field cluster-local-domain-tls to control cluster-local TLS certificates; authentication webhook will allow adding NET_BIND_SERVICE or nil capability when enabling the Security Pod default feature; support for gRPC probing; allow setting shared process namespace capability for Knative Service. Setting the Shared Process Namespace feature for Knative Service.
+
 - [Knative serverless architecture solution based on Kubernetes v1.11.0 released (CNCF project)](https://github.com/knative/serving/releases/tag/knative-v1.11.0)
 
     Release features: Domain Mapping Controller logic has been merged with Serving Controller, new fields for resource requests and limits when Queue Proxy is enabled (CPU and Memory only), Activator now has a separate service account, and support for configuring Queue Proxy resources via service level annotations.
@@ -830,6 +850,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [KubeKey Cluster Deployment Tool v3.0 released](https://github.com/kubesphere/kubekey/releases/tag/v3.0.0)
 
      Main new features of this version: Add GitHub workflow for docker build and push, support for executing custom setup scripts, add k3s control plane controller and startup controller, add k3s container runtime configuration, add k3s e2e test support, customize OpenEBS Base path, refactor KubeKey project, support more Kubernetes and k3s versions.
+
+- [Kubefirst GitOps Infrastructure and Application Delivery Platform v2.3.0 released](https://github.com/kubefirst/kubefirst/releases/tag/v2.3.0)
+
+    Release features: add a SECURITY.md file for security issues, add a workflow to validate Markdown syntax, add DNS information to error issue templates, add a Markdown link checker action.
 
 - [Kubeflow: Kubeflow, the Machine Learning Platform for Kubernetes, upgraded to become a CNCF Incubation Project](https://mp.weixin.qq.com/s/8bZr2Edmyh-unE5ghIBhJg)
 
@@ -994,6 +1018,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Kuma Service Mesh Project v1.8.0 release (CNCF project)](https://github.com/kumahq/kuma/releases/tag/1.8.0)
 
     The main new features of this version: cross-mesh gateway supports multi-region operation, mesh gateway/built-in gateway adds observability function, rewrites CNI, mesh gateway supports path rewriting and header addition/deletion, supports filtering proxy metrics, Simplify the implementation of TCP traffic logs and support Projected Service Account Tokens.
+
+- [Kurator Distributed Cloud Native Platform v0.5.0 Released](https://github.com/kurator-dev/kurator/releases/tag/v0.5.0)
+
+    Version features: provides a unified backup, restore and migration solution based on Velero; introduces distributed cloud local storage based on Rook; attachescluster adds validation webhook; adds unit test for customizing cluster controllers; adds cluster selector.
 
 - [Kurator Distributed Cloud Native Platform v0.3.0 Released](https://github.com/kurator-dev/kurator/releases/tag/v0.4.0)
 
@@ -1481,6 +1509,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Telepresence K8s Native Development Tool v2.10.0 Release (CNCF Project)](https://www.getambassador.io/docs/telepresence/latest/release-notes#2.10.0)
 
     The main new features of this release: Traffic Manager supports team mode and single-user mode, adding the secret of pulling mirrors in Helm Chart, OSS Helm chart will be pushed to telepresence proprietary repository (formerly datawire Helm repository).
+
+- [Tetragon Security Observable and Runtime Enhancement Platform v1.0 released](https://github.com/cilium/tetragon/releases/tag/v1.0.0)
+
+    Release features: Adjust permissions on exported log JSON files in Kubernetes, build tarballs (compressed archives) for ARM64 architecture, support for displaying UID and GID information and detecting if a process is running as privileged execution, add kernel stack trace functionality to kprobe events, append killer programs to multiple system calls, enable namespace policies and runtime enhancements by default, and add a kernel stack trace function to kprobe events, add a kernel stack trace function to kprobe events. program, and the ability to turn on namespace policies and pod tag filters by default.
 
 - [Tetragon Security Observable and Runtime Enhancement Platform v0.11.0 released](https://github.com/cilium/tetragon/releases/tag/v0.11.0)
 

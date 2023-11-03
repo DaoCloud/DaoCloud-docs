@@ -108,6 +108,10 @@
 
     Azure Kubernetes 舰队管理器将多个群集地视为单个集群来管理。用户可通过创建一个 Fleet 资源来管理多个集群。用户可将现有 AKS 集群当作成员集群，加入到舰队中，然后用这些集群的元数据，编排多个集群场景，如 Kubernetes 资源传播和多集群负载均衡。
 
+- [阿里云容器计算服务 ACS 正式发布](https://mp.weixin.qq.com/s/KRyMjqGebXH4Mx0D0sWbyw)
+
+    容器计算服务 ACS 将容器与资源一体化，用户无需关注底层节点和集群。提供灵活的 Pod 配置模式，支持 1:1~1:8 资源配比；同时，还提供了秒级弹性能力，以应对流量波动；支持算力调配资源复用，让资源在用户负载和云产品负载中灵活调配；除了原生支持网络服务器、微服务应用、Web 应用等通用业务负载外，还支持大数据计算、AI 计算等任务类负载，以及中间件、数据库等实时性能敏感类业务。
+
 - [阿里云微服务引擎 MSE 8 月产品更新](https://mp.weixin.qq.com/s/odXdOMFiBvbpq09xhLrcZA)
 
     更新内容：云原生网关支持为路由配置JT认证，并对指定的消费者进行鉴权；支持将线上流量复制到指定服务；MSEIngress 支持路由级别的 Sentinel全局限流和并发控制；支持同一 Service 下多 Deployment 的灰度发布；应用相关监控数据支持 1 天内的监控回放；基于 KruiseRollout 实现全链路灰度发布能力。
@@ -205,6 +209,10 @@
 
     [Alpaquita Cloud Native Platform](https://bell-sw.com/cloud-native-platform/) 利用适用于 Java 的 Linux 发行版、JVM 优化、多用途框架和原生镜像技术，提供了一个专为在容器中运行的 Java 应用而优化的运行时环境。该平台特性：云成本降低 20%，使用更小的 Pod，所需节点的数量减少；零迁移成本，不需要重构；效率提升 50%，实现低延迟、低成本、快启动。
 
+- [Buoyant 推出服务网格项目 Linkerd 的企业版](https://buoyant.io/newsroom/announcing-linkerd-enterprise-the-first-enterprise-focused-distribution-of-the-popular-linkerd-service-mesh-project)
+
+    Linkerd 企业版在开源项目 Linkerd 的基础上，增加了一些仅适用于企业的功能，包括零信任和 FIPS 140-2 合规性、成本感知负载均衡器、生命周期自动化等。
+
 - [博云容器中间件 BMM v2.1 更新发布](https://mp.weixin.qq.com/s/opPpG0g3wcJV3on133ZSeg)
 
     更新内容：新增 RabbitMQ 及生命周期管理能力、首页新增中间件概览、支持存储扩容可视化、支持版本升级可视化、支持中间件操作审计、支持事件查询与告警。
@@ -291,6 +299,10 @@
 - [Datadog 推出云安全平台 Cloud Security Management](https://www.datadoghq.com/about/latest-news/press-releases/datadog-launches-cloud-security-management-to-provide-cloud-native-application-protection/)
 
     Cloud Security Management 将云安全态势管理、云工作负载安全、警报、事件管理和报告等功能集中在一个平台上，开发和安全团队能够借此识别错误配置、检测威胁并确保云原生应用的安全。
+
+- [Docker 推出自家生成式 AI 工具 Docker AI](https://www.docker.com/press-release/announces-ai-boosting-developer-productivity-through-automated-guidance/)
+
+    Docker AI 已经接受了来自数百万个 Dockerfile、compose 文件及错误日志中 Docker 专有数据的训练。Docker AI 将被直接集成至开发者的工作流程当中，以便在发生错误时提供帮助。它将显示开发环境中潜在的修复选项，允许开发者在提交变更之前测试修复效果。
 
 - [Docker 发布技术预览版 WebAssembly 工具](https://www.docker.com/blog/docker-wasm-technical-preview/)
 
@@ -431,6 +443,10 @@
 
     Harness GitOps-as-a-Service 基于 Argo CD 构建，集成 OPA，支持审计跟踪，提供细粒度的 RBAC，支持不同部署的统一单点登录，支持声明式设置，提供集中的 GitOps 控制中心用于管理和查看多个环境中的部署情况，支持与已有的 Argo CD 实例集成。
 
+- [华为云容器服务 CCE 发布新一代云原生可观测平台](https://mp.weixin.qq.com/s/oK4otkzskwD55TBwpy7fMQ)
+
+    云原生可观测平台聚焦四大能力：支持一键启用监控中心能力，并提供从容器视角的一站式可视化监控，支持集群、节点、工作负载、Pod 等多种维度的监控视图；增加告警中心能力，提供容器告警基于模板的一键配置能力；集成 LTS 日志服务能力，推出云原生日志中心；提供健康中心能力，发现集群故障与潜在风险并给出修复建议。
+
 - [华为云云容器引擎 CCE Turbo 2023 上半年产品更新](https://mp.weixin.qq.com/s/7cEh_383i3sxz7aCgRqPNA)
 
     更新内容：支持 Kubernetes 1.25 版本；新增网络优先级控制、CPU 多核负载均衡隔离、CPU burst 能力；提供一键式原地无损自动升级；支持多容器共享 GPU；支持同节点池多系列、规格实例混合管理；支持节点 OS 批量自动更新升级。
@@ -513,6 +529,10 @@
 - [Lacework Platform 云安全平台 9 月更新](https://docs.lacework.com/releases/2022-09_september-platform-releases)
   
     更新内容包括：支持无代理工作负载扫描、支持对 AWS 上的 Linux 主机进行主机漏洞评估、支持容器镜像漏洞评估。
+
+- [Loft Labs 推出企业级虚拟大规模虚拟 Kubernetes 集群管理平台 vCluster.Pro](https://loft.sh/blog/introducing-vcluster-pro/)
+
+    vCluster.Pro 在开源项目 vCluster 的基础上，提供了集成了 CoreDNS 容器和 vCluster 同步器；支持通过隔离控制平面将控制平面与工作节点分离；提供同步补丁功能在虚拟集群和主机集群的同步过程中为 Kubernetes 资源打补丁；使用 Chainguard busybox 镜像作为基础镜像。
 
 - [Logz.io 发布 K8s 全栈观测平台 Kubernetes360](https://logz.io/blog/unified-observability-kubernetes-360/)
 
@@ -618,6 +638,10 @@
     该版本主要新特性：支持与其他用户和组共享备份、支持根据特定的基础设施定制备份许可证、支持使用用户提供的或默认的密钥为不同类型的备份提供加密支持。
 
 ### Q
+
+- [青云发布分布式多租户云原生操作系统 KubeSphere 企业版 3.5.0 发布](https://mp.weixin.qq.com/s/OxqjZM3H473zLWBdAS5iNQ)
+
+    更新内容：支持邮件通知渠道配置多个通知订阅、支持在指定告警策略中新增自定义标签、支持按告警内容检索、支持按存储类型对租户存储使用数据进行分类统计、云原生数据库管理模块 DMP 中的 Redis、Kafka、OpenSearch 等组件新增预置告警功能。
 
 - [青云发布分布式多租户云原生操作系统 KubeSphere 企业版 4.0](https://mp.weixin.qq.com/s/v-n4ztqQG8p2Tt9aPfQiuA)
 
