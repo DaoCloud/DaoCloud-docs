@@ -23,12 +23,10 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 #### Improved
 
 - **Improved** traffic topology `Graph` implementation with optional hiding of idle nodes.
-- **Upgraded** `ckube` to `1.3.7`, resolving the issue of being unable to parse search queries exceeding a certain volume.
-- **Upgraded** frontend version to `v0.18.2`.
+- **Improved** detection of host `glibc` version during `docker` mode installation of `vmagent`.
 
 #### Fixes
 
-- **Fixed** detection of host `glibc` version during `docker` mode installation of `vmagent`.
 - **Fixed** issue where querying the `Graph` with long namespaces resulted in URL length exceeding the limit while making requests to the `Prometheus` service.
 - **Fixed** incorrect injection status of workloads.
 - **Fixed** inaccurate display of resource bindings in workspace interfaces.
