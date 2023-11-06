@@ -230,6 +230,6 @@ To check the progress of the scaling task, you can view the logs of the correspo
 
     ![Node Management](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/arm02.png)
 
-2. Click on the newly added node to view details.
+2. Click the newly added node to view details.
 
     ![Node Details](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/arm01.png)

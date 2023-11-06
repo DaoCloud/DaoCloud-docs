@@ -95,7 +95,7 @@ role: sync
 statefulset.kubernetes.io/pod-name: redis-a-leader-sync-0
 ```
 
-Click on `Deploy`.
+Click `Deploy`.
 
 Repeat the above steps to create Redis-shake-sync-1 and Redis-shake-sync-2 for `redis-a-leader-1` and `redis-a-leader-2` respectively.
 
@@ -103,7 +103,7 @@ Repeat the above steps to create Redis-shake-sync-1 and Redis-shake-sync-2 for `
 
 After completing the above steps, Redis-shake will start synchronizing data from the source Redis instance to the target Redis instance. You can verify the synchronization status by checking the logs of each Redis-shake instance:
 
-In `Container Management` - `Target Redis Cluster` - `Stateful Workloads`, select the Redis-shake workloads (`redis-a-leader-sync-0`, `redis-a-leader-sync-1`, and `redis-a-leader-sync-2`) one by one, go to `Pods`, click on the pod name, and then click on the `Logs` tab.
+In `Container Management` - `Target Redis Cluster` - `Stateful Workloads`, select the Redis-shake workloads (`redis-a-leader-sync-0`, `redis-a-leader-sync-1`, and `redis-a-leader-sync-2`) one by one, go to `Pods`, click the pod name, and then click the `Logs` tab.
 
 Check the logs to ensure that the data synchronization is successful and there are no errors.
 
@@ -147,7 +147,7 @@ In `Container Management` - `Source Redis Cluster` - `ConfigMap and Storage` - `
     You can find this configuration in `Container Management` - `Target Redis Cluster` - `Workloads` - `Access Method`. Refer to the following screenshot:
 
 
-    Click on the service name, go to the service details page, and you will see the ClusterIP address:
+    Click the service name, go to the service details page, and you will see the ClusterIP address:
 
 
 - Access password for the target instance: You can obtain this information from the Redis instance overview page in the Data Service module:
@@ -196,7 +196,7 @@ In `Container Management` - `Source Redis Cluster` - `ConfigMap and Storage` - `
         /data
         ```
 
-3. Click `Confirm` to complete the creation of Redis-shake.
+3. Click `OK` to complete the creation of Redis-shake.
 
 Repeat the above steps to create `redis-shake-sync-1` and `redis-shake-sync-2` for the other two Leader Pods.
 

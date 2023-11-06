@@ -33,5 +33,5 @@ The configuration management feature provides a general configuration solution f
   
 
 
-4. Click `Confirm` to complete the creation. This configuration will be available for middleware `Backup/Restore`.
+4. Click `OK` to complete the creation. This configuration will be available for middleware `Backup/Restore`.
 

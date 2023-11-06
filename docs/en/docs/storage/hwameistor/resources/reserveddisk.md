@@ -21,7 +21,7 @@ The operation and maintenance administrator has disk planning requirements, and 
 
 ## Steps
 
-Enter the corresponding `cluster`, select `storage`-->`Hwameistor`; click `node` to enter the node details page, find the corresponding disk; click `...`, select `reserved disk`; click `confirm` to proceed reserved.
+Enter the corresponding `cluster`, select `storage`-->`Hwameistor`; click `node` to enter the node details page, find the corresponding disk; click `...`, select `reserved disk`; click `OK` to proceed reserved.
 
 The reserved disk will not be used by Hwameistor.
 

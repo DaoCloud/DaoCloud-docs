@@ -99,7 +99,7 @@ There are two ways to update data volumes. Support for updating data volumes via
 
     
 
-- Click on the name of the data volume to enter the details page of the data volume, select `Update` in the upper right corner of the page to update through the form, select `Edit YAML` to update through YAML.
+- Click the name of the data volume to enter the details page of the data volume, select `Update` in the upper right corner of the page to update through the form, select `Edit YAML` to update through YAML.
 
     
 

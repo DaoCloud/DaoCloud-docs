@@ -70,7 +70,7 @@ Workspaces can be mapped to various concepts such as projects, tenants, enterpri
 
     
 
-Tip: If the created namespace already exists in the platform, click on a workspace, and under the `Resource Group` tab, click `Bind Resource` to directly bind the namespace.
+Tip: If the created namespace already exists in the platform, click a workspace, and under the `Resource Group` tab, click `Bind Resource` to directly bind the namespace.
 
 
 

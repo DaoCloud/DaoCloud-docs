@@ -6,7 +6,7 @@ Note: If the sidecar injection setting for a workload is disabled, the workload 
 
 ## View Sidecar Injection Information
 
-In the left navigation menu, click on `Mesh Sidecar` -> `Namespace`, to view the sidecar status of all namespaces under the corresponding service mesh.
+In the left navigation menu, click `Mesh Sidecar` -> `Namespace`, to view the sidecar status of all namespaces under the corresponding service mesh.
 
 When there are many namespaces, you can sort them by name and search for them using the search function.
 
@@ -16,11 +16,11 @@ When there are many namespaces, you can sort them by name and search for them us
 
 You can select one or more namespaces and enable sidecar injection using the following steps:
 
-1. Select one or more namespaces that have not had sidecars injected and click on `Enable injection`.
+1. Select one or more namespaces that have not had sidecars injected and click `Enable injection`.
 
     ![Click Enable Injection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/ns-sidecar02.png)
 
-2. In the pop-up dialog, confirm the selected namespace(s) and click on `OK`.
+2. In the pop-up dialog, confirm the selected namespace(s) and click `OK`.
 
     ![Confirm](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/ns-sidecar03.png)
 
@@ -34,11 +34,11 @@ You can select one or more namespaces and enable sidecar injection using the fol
 
 You can select one or more namespaces and disable sidecar injection using the following steps:
 
-1. Select one or more namespaces that have sidecar injection enabled and click on `Disable injection`.
+1. Select one or more namespaces that have sidecar injection enabled and click `Disable injection`.
 
     ![Disable Injection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/ns-sidecar04.png)
 
-2. In the pop-up dialog, confirm the selected namespace(s) and click on `OK`.
+2. In the pop-up dialog, confirm the selected namespace(s) and click `OK`.
 
     ![Confirm](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/ns-sidecar05.png)
 
@@ -50,11 +50,11 @@ You can select one or more namespaces and disable sidecar injection using the fo
 
 You can select one or more namespaces and clean up the namespace-level sidecar policy. After cleanup, the sidecar status of workloads in the namespace will only be controlled by `Workload`. The following steps can be used:
 
-1. Select one or more namespaces that have sidecar injection enabled and click on `Cleanup Policy`.
+1. Select one or more namespaces that have sidecar injection enabled and click `Cleanup Policy`.
 
     ![Cleanup Policy](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/ns-sidecar04.png)
 
-2. In the pop-up dialog, confirm the selected namespace(s) and click on `OK`.
+2. In the pop-up dialog, confirm the selected namespace(s) and click `OK`.
 
     ![Confirm](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/ns-sidecar07.png)
 

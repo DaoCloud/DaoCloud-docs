@@ -71,7 +71,7 @@ After successfully verifying the offline package,
      ```
 
 - For installation, please refer to [DCE Community Installation Process](../../install/community/k8s/online.md#_2)
-- After successful installation, please [apply for free community experience](../../dce/license0.md)
+- After successful installation, please [Free Trial](../../dce/license0.md)
 
 ## Modules
 

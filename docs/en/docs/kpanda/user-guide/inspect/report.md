@@ -14,11 +14,11 @@ After the [inspection execution](inspect.md) is completed, you can view the insp
 
 ## Steps
 
-1. Go to the Cluster Inspection page and click on the name of the target inspection cluster.
+1. Go to the Cluster Inspection page and click the name of the target inspection cluster.
 
     ![start](../../images/inspect07.png)
 
-2. Click on the name of the inspection record you want to view.
+2. Click the name of the inspection record you want to view.
 
     - Each inspection execution generates an inspection record.
     - When the number of inspection records exceeds the maximum retention specified in the [inspection configuration](config.md), the earliest record will be deleted starting from the execution time.

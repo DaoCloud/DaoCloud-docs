@@ -4,7 +4,7 @@ Before managing cloud native microservices, you need to import these microservic
 
 ## Import Service
 
-1. Go to the `Microservices` module, click on `Cloud Native Microservices`→`Service Governance` on the left, and then click `Manual import` in the upper right corner.
+1. Go to the `Microservices` module, click `Cloud Native Microservices`→`Service Governance` on the left, and then click `Manual import` in the upper right corner.
 
     <!--![](../images/cloudms-import01.png)-->
 

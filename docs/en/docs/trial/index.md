@@ -7,13 +7,13 @@ hide:
 
 <div style="text-align: center;">
   <p style="font-size: 18px;"><img src="./images/hu01.gif" alt="Image" width="80"> Welcome to Install and Experience!</p>
-  <p style="font-size: 28px; color: green;">DaoCloud Enterprise Community <img src="./images/hu02.gif" alt="Image" width="80"></p>
+  <p style="font-size: 28px; color: green;">DCE Community <img src="./images/hu02.gif" alt="Image" width="80"></p>
 </div>
 
 DCE 5.0, with cloud native infrastructure at its core, is supported by self-developed open-source components. It provides cloud native computing, networking, storage, and other capabilities, supporting unified management of multi-cloud and multi-cluster lifecycles. It abstracts the complexity of underlying infrastructure, reduces the threshold for enterprises to use cloud native applications, and improves application development efficiency.
 
 <div style="text-align: center;">
-  <p style="font-size: 24px; color: green;">Unlease DaoCloud Enterprise Community in 3 Steps</p>
+  <p style="font-size: 24px; color: green;">Unlease DCE Community in 3 Steps</p>
 </div>
 
 ## <font color="green"><strong>1st</strong> Installation Tutorials</font>
@@ -32,7 +32,7 @@ DCE 5.0, with cloud native infrastructure at its core, is supported by self-deve
 
     **Estimated Time:** 10-30 minutes
 
-    **Background Description:** Kind is a tool used to quickly create and test Kubernetes clusters. It minimizes the dependencies on the environment and only requires Docker to be installed on the machine. Please note that this installation method only supports accessing DaoCloud Enterprise Community Edition through node ports.
+    **Background Description:** Kind is a tool used to quickly create and test Kubernetes clusters. It minimizes the dependencies on the environment and only requires Docker to be installed on the machine. Please note that this installation method only supports accessing DCE Community through node ports.
 
     :material-run: [Start Online Installation of Kind Cluster](../install/community/kind/online.md)
 
@@ -42,7 +42,7 @@ DCE 5.0, with cloud native infrastructure at its core, is supported by self-deve
 
     **Estimated Time:** 10-30 minutes
 
-    **Background Description:** You need to have a certain understanding of Kubernetes and set up a standard Kubernetes cluster before starting the installation. The feature of this installation method is that it supports accessing DaoCloud Enterprise Community Edition through node ports and VIPs.
+    **Background Description:** You need to have a certain understanding of Kubernetes and set up a standard Kubernetes cluster before starting the installation. The feature of this installation method is that it supports accessing DCE Community through node ports and VIPs.
 
     :material-run: [Start Online Installation of Standard K8s Cluster](../install/community/k8s/online.md)
 
@@ -52,7 +52,7 @@ DCE 5.0, with cloud native infrastructure at its core, is supported by self-deve
 
     **Estimated Time:** 10-30 minutes
 
-    **Background Description:** Create a Kubernetes cluster directly on a public cloud platform, and the remaining installation steps are the same as the online installation of a standard Kubernetes cluster. The feature of this installation method is that it supports accessing DaoCloud Enterprise Community Edition through the CLB (Cloud Load Balancer) provided by public cloud vendors and supports integration with mainstream Kubernetes distributions in the market.
+    **Background Description:** Create a Kubernetes cluster directly on a public cloud platform, and the remaining installation steps are the same as the online installation of a standard Kubernetes cluster. The feature of this installation method is that it supports accessing DCE Community through the CLB (Cloud Load Balancer) provided by public cloud vendors and supports integration with mainstream Kubernetes distributions in the market.
 
     :material-run: [Start Online Installation of Public Cloud K8s Cluster](../install/community/k8s/online.md)
 
@@ -75,14 +75,14 @@ If you have limited network access, you can choose to perform an offline install
 
     ![check mail](./images/license01.png)
 
-2. While waiting for the email, follow the on-screen instructions to access the Community Edition login page (access it through the link obtained after successful installation) and click on `Apply for Authorization Code`.
+2. While waiting for the email, follow the on-screen instructions to access the Community Edition login page (access it through the link obtained after successful installation) and click `Apply for Authorization Code`.
 
     ![get code](./images/license02.png)
 
 3. As shown above, you also need to obtain the ESN (a unique device code for the cluster system). Here's how to get it:
 
-    1. Log in to DCE Community Edition.
-    2. Click on the left navigation bar `Global Management` -> `Platform Settings` -> `Genuine Authorization`.
+    1. Log in to DCE Community.
+    2. Click `Global Management` -> `Platform Settings` -> `Genuine Authorization` on the left navigation bar.
     3. Click the `Manage License` button to open the `Manage License` page and copy the ESN code.
 
     ![esn](./images/license03.png)
@@ -91,7 +91,7 @@ If you have limited network access, you can choose to perform an offline install
 
     ![get offline](./images/license04.png)
 
-5. Copy and paste the offline authorization code obtained in the previous step, go back to the ESN code retrieval page, and enter the offline authorization code in the code block at the bottom. Click on `Activate Now`. Congratulations! You can now explore the brand new DCE 5.0!
+5. Copy and paste the offline authorization code obtained in the previous step, go back to the ESN code retrieval page, and enter the offline authorization code in the code block at the bottom. Click `Activate Now`. Congratulations! You can now explore the brand new DCE 5.0!
 
 !!! note
 
@@ -102,7 +102,7 @@ If you have limited network access, you can choose to perform an offline install
 - [Cloud-Native Technology Practice Public Course](https://appu8cplrlw7661.h5.xiaoeknow.com): Suitable for beginners or junior cloud native developers to learn about the development background, basic knowledge, and operational practices of cloud native technology.
 - [Video Tutorials](../videos/index.md): Covering the usage demonstrations of the three major functional modules: container management, global management, and observability. There are also tutorials demonstrating Enterprise Package features. Feel free to check them out.
 
-<p style="font-size: 20px; color: green;">Learn more about DaoCloud Enterprise Community Edition</p>
+<p style="font-size: 20px; color: green;">Learn more about DCE Community</p>
 
 [What is Container Management](../kpanda/intro/index.md){ .md-button .md-button--primary }
 [What is Global Management](../ghippo/intro/index.md){ .md-button .md-button--primary }

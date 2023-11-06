@@ -12,7 +12,7 @@ Please confirm that your cluster has successfully connected to the container man
 
     
 
-1. Click on the name of the cluster where you want to install insight-agent.
+1. Click the name of the cluster where you want to install insight-agent.
 
     
 

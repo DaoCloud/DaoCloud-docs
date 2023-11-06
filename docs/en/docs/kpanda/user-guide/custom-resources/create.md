@@ -19,7 +19,7 @@ The container management module supports interface-based management of custom re
 
 ## Create custom resources via YAML
 
-1. Click on a cluster name to enter `Cluster Details`.
+1. Click a cluster name to enter `Cluster Details`.
 
     
 
@@ -72,7 +72,7 @@ spec:
 
 ## Create a custom resource example via YAML
 
-1. Click on a cluster name to enter `Cluster Details`.
+1. Click a cluster name to enter `Cluster Details`.
 
     
 

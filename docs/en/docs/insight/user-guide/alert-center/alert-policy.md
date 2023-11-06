@@ -2,7 +2,7 @@
 
 In addition to the built-in alert policies, DCE 5.0 allows users to create custom alert policies. Each alert policy is a collection of alert rules that can be set for clusters, nodes, and workloads. When an alert object reaches the threshold set by any of the rules in the policy, an alert is automatically triggered and a notification is sent.
 
-Taking the built-in alerts as an example, click on the first alert policy `alertmanager.rules`.
+Taking the built-in alerts as an example, click the first alert policy `alertmanager.rules`.
 
 ![alert policy](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/alert-policy01.png)
 
@@ -46,7 +46,7 @@ You can see that some alert rules have been set under it. You can add more rules
 
 ### Creating Log Rules
 
-After filling in the basic information, click on `Add Rule` and select `Log Rule` as the rule type.
+After filling in the basic information, click `Add Rule` and select `Log Rule` as the rule type.
 
 Creating log rules is supported only when the resource object is selected as a node or workload.
 
@@ -61,7 +61,7 @@ Creating log rules is supported only when the resource object is selected as a n
 
 ### Creating Event Rules
 
-After filling in the basic information, click on `Add Rule` and select `Event Rule` as the rule type.
+After filling in the basic information, click `Add Rule` and select `Event Rule` as the rule type.
 
 Creating event rules is supported only when the resource object is selected as a workload.
 
@@ -75,7 +75,7 @@ Creating event rules is supported only when the resource object is selected as a
 
 ## Other Operations
 
-Click on `⋮` at the right side of the list, then choose `Delete` from the pop-up menu to delete an alert strategy. By clicking on the strategy name, you can enter the strategy details where you can add, edit, or delete the alert rules under it.
+Click `⋮` at the right side of the list, then choose `Delete` from the pop-up menu to delete an alert strategy. By clicking on the strategy name, you can enter the strategy details where you can add, edit, or delete the alert rules under it.
 
 ![alert rule](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/alert-policy07.png)
 

@@ -10,13 +10,13 @@ The antiaffinity policy of the PostgreSQL middleware is shared across all instan
 
 1. Go to `Container Management` -> `Cluster List` and select the cluster where the instance resides.
 
-2. Click on `Custom Resources` and search for the resource: `operatorconfigurations.acid.zalan.do`
+2. Click `Custom Resources` and search for the resource: `operatorconfigurations.acid.zalan.do`
 
 
 3. Under that resource, select the correct `Namespace` and `CR Instance`.
 
 
-4. Click on `Edit YAML` and modify the following fields according to your needs:
+4. Click `Edit YAML` and modify the following fields according to your needs:
 
 
     | Field                                          | Description                                           |

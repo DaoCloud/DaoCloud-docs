@@ -19,7 +19,7 @@ If you want to update or modify the resource configuration of PostgreSQL, you ca
 
     <!--screenshot-->
 
-4. After modifying the service settings, click `Confirm`.
+4. After modifying the service settings, click `OK`.
 
     <!--screenshot-->
 

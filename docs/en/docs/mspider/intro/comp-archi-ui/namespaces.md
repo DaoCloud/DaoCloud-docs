@@ -16,7 +16,7 @@ The namespaces and their purposes are described below.
 | K8s System Namespace   | kube-system        | Control plane components      |
 |                      | kube-public        | Cluster configurations, certificates, etc. |
 |                      | kube-node-lease    | Monitors and maintains node activity |
-| DCE 5.0 System Namespace | amamba-system      | Application workplace         |
+| DCE 5.0 System Namespace | amamba-system      | Workbench         |
 |                      | ghippo-system      | Global management             |
 |                      | insight-system     | Observability                 |
 |                      | ipavo-system       | Homepage dashboard            |

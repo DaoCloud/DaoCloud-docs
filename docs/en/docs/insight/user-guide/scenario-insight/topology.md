@@ -16,7 +16,7 @@ Service topology is a visual representation of the connections, communication, a
 
 3. In the topology graph, you can perform the following actions:
 
-    - Click on a node to slide out the details of the service on the right side. Here,
+    - Click a node to slide out the details of the service on the right side. Here,
       you can view metrics such as request latency, throughput, and error rate for the service.
       Clicking on the service name takes you to the service details page.
     - Hover over the connections to view the traffic metrics between the two services.

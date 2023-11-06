@@ -12,10 +12,10 @@ Native applications are designed to provide customers with applications composed
 
 ## Create a Native Application
 
-1. In the `App Workbench` - `Overview` page, click on the `Native App` tab, and then click on `Create App` in the upper-right corner.
+1. In the `App Workbench` - `Overview` page, click the `Native App` tab, and then click `Create App` in the upper-right corner.
 
 
-2. Fill in the basic information according to the instructions below and click on `Next`.
+2. Fill in the basic information according to the instructions below and click `Next`.
 
     - Name: The name of the native application.
     - Alias: The alias of the native application.
@@ -44,15 +44,15 @@ Native applications are designed to provide customers with applications composed
 
     !!! note 
     
-        To add more microservices, click on the `➕` on the right side of the screen.
+        To add more microservices, click the `➕` on the right side of the screen.
 
-4. Configure the routing as needed and click `Confirm` in the lower-right corner.
+4. Configure the routing as needed and click `OK` in the lower-right corner.
 
 
 
 ## View Microservices under Native Applications
 
-1. After the application is successfully created, click on the application name to view the workloads with the label `Traditional Microservice` under the current application.
+1. After the application is successfully created, click the application name to view the workloads with the label `Traditional Microservice` under the current application.
 
     > Clicking on the black link that appears will redirect you to the service details page of the Microservice Engine.
 
@@ -66,7 +66,7 @@ Native applications are designed to provide customers with applications composed
 
 1. First, change the access type of the `adservice` service to `NodePort` in the `Container Management`.
 
-2. On the service details page, click on the external access address for the service port `8081`.
+2. On the service details page, click the external access address for the service port `8081`.
 
 
 
