@@ -429,6 +429,9 @@ nav:
                   - Intro: network/modules/aliyun-terway/index.md
                   - Terway Network: network/modules/aliyun-terway/what.md
                   - Usage: network/modules/aliyun-terway/usage.md
+                  - Run Calico on Alibaba Cloud: network/modules/aliyun-terway/aliyun-calico.md
+                  - Run Cilium on Alibaba Cloud: network/modules/aliyun-terway/aliyun-cilium.md
+                  - Q & A: network/modules/aliyun-terway/Q_A.md
           - Cloud Native Storage:
               - Intro:
                   - What is storage: storage/index.md

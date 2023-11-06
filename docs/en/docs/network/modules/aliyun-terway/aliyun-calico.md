@@ -1,28 +1,28 @@
-# 阿里云运行 Calico 
+# Run Calico on Alibaba Cloud
 
-本文将介绍如何在阿里云自建集群上，安装使用 [Calico](https://github.com/projectcalico/calico) 作为集群 CNI。
+This page introduce how to install and use [Calico](https://github.com/projectcalico/calico) as the cluster CNI in a self-built Alibaba Cloud cluster.
 
-## 安装集群
+## Install Clusters
 
-在阿里云上准备好一套自建 Kubernetes 集群，或按照 [搭建 Kubernetes 集群](usage.md#搭建Kubernetes集群) 文档手动搭建一套集群。 集群安装完成之后，下载 Calico 的部署清单文件:
+To get started, prepare a self-built Kubernetes cluster on Alibaba Cloud. Alternatively, you can manually set up a cluster by following the instructions about [building a Kubernetes cluster](usage.md#set-up-the-kubernetes-cluster). Once the cluster is ready, download the Calico deployment manifest file:
 
 ```shell
 ~# wget https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/calico.yaml
 ```
 
-> 推荐使用以下命令加速镜像拉取: `sed -i 's?docker.io?docker.m.daocloud.io?g' calico.yaml`
+> To speed up image pulling, we recommend running the following command: `sed -i 's?docker.io?docker.m.daocloud.io?g' calico.yaml`
 
-下面分别演示使用隧道模式和路由模式:
+Next, let's explore the installation process for both tunnel mode (IPIP) and route mode:
 
-## 隧道模式(IPIP)
+## Tunnel Mode (IPIP)
 
-Vxlan 和 IPIP 协议不依赖底层网络，通过封装构建一个大二层覆盖网络以实现网络联通，所以能够运行在大多数公有云上，此模式不依赖 [CCM](https://github.com/AliyunContainerService/alicloud-controller-manager)。Calico 部署清单文件默认使用 IPIP 模式，使用以下命令安装:
+Tunneling protocols like VXLAN and IPIP enable network connectivity regardless of the underlying network implementation. They create a large Layer 2 overlay network that can be used in most public cloud environments. In this mode, the [CCM](https://github.com/AliyunContainerService/alicloud-controller-manager) is not required. The default Calico deployment manifest file uses IPIP mode. Install Calico using the following command:
 
 ```shell
 ~# kubectl apply -f calico.yaml
 ```
 
-等待安装完成:
+Wait for the installation to complete:
 
 ```shell
 # kubectl get po -n kube-system | grep calico
@@ -31,7 +31,7 @@ calico-node-679wb                                           1/1     Running     
 calico-node-6wzkj                                           1/1     Running     0              1m
 ```
 
-创建测试 deployment，验证联通性:
+Create a test deployment to verify connectivity:
 
 ```shell
 ~# kubectl  get po -o wide
@@ -43,7 +43,7 @@ NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
 kubernetes   ClusterIP   172.21.0.1     <none>        443/TCP        31d
 test         ClusterIP   172.21.0.83    <none>        80/TCP         2m
 
-~# # 跨节点访问 Pod 
+~# # Access Pods across nodes 
 ~# kubectl exec test-77877f4755-24gqt -- ping -c1 10.244.140.2
 PING 10.244.140.2 (10.244.140.2) 56(84) bytes of data.
 64 bytes from 10.244.140.2: icmp_seq=1 ttl=62 time=0.471 ms
@@ -52,7 +52,7 @@ PING 10.244.140.2 (10.244.140.2) 56(84) bytes of data.
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 rtt min/avg/max/mdev = 0.471/0.471/0.471/0.000 ms
 
-~# # 访问外部
+~# # Access external targets
 ~# kubectl exec test-77877f4755-24gqt -- ping -c1 8.8.8.8
 PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 64 bytes from 8.8.8.8: icmp_seq=1 ttl=109 time=38.5 ms
@@ -61,7 +61,7 @@ PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 rtt min/avg/max/mdev = 38.479/38.479/38.479/0.000 ms
 
-~# # 访问 ClusterIP
+~# # Access ClusterIP
 ~# kubectl exec test-77877f4755-24gqt -- curl -i 172.21.0.83
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -72,20 +72,19 @@ Date: Wed, 27 Sep 2023 08:15:34 GMT
 Content-Length: 153
 ```
 
-经过测试: IPIP 和 Vxlan 模式下各种通信正常，并且不依赖 [CCM](https://github.com/AliyunContainerService/alicloud-controller-manager)发布路由以实现 Pod 间的通信, 但 LoadBalancer Service 的实现依赖 [CCM](https://github.com/AliyunContainerService/alicloud-controller-manager)
+After testing, it was found that communication between Pods is functional in both IPIP and Vxlan modes without relying on the [CCM](https://github.com/AliyunContainerService/alicloud-controller-manager) for route publication. However, the implementation of LoadBalancer Services does depend on the CCM.
 
-## 非隧道模式
+## Non-tunnel Mode
 
-当 Calico 运行在非隧道模式，Pod 之间通信直接对接底层网络，所以常常需要一些其他设备发布路由，以使 Pod 子网路由集群外可达。在非公有云上需要支持运行 BGP 协议的路由器，在公有云上需要支持一些往外的组件发布 Pod 子网路由到 VPC 网络，如阿里云的 [CCM](https://github.com/AliyunContainerService/alicloud-controller-manager)。
-但 [CCM](https://github.com/AliyunContainerService/alicloud-controller-manager)组件发布路由常常以节点为单位，这就要求不同节点的 Pod 属于不同的段，同一节点的 Pod 属于同一个段。而 Calico 自有的 IPAM: calico-ipam 无法满足这一点(calico-ipam 以 block 为单位, 而不是以节点为单位)。所以针对这种情况，我们可以通过切换 ipam 为
-`host-local` 或 `spiderpool` 来解决。
+In non-tunnel mode, Calico enables direct communication between Pods by connecting with the underlying network. Additional devices or components may be required to publish routes, allowing Pod subnets to be reachable from outside the cluster. On non-public clouds, routers supporting the BGP protocol are needed, while on public clouds, components like Alibaba Cloud's CCM are used to publish Pod subnet routes to the VPC network.
+However, the route publication provided by the CCM component is usually based on nodes. This requires Pods on different nodes to belong to different subnets, while Pods on the same node should belong to the same subnet. Unfortunately, Calico's built-in IPAM (calico-ipam) cannot meet this requirement, as it allocates IP addresses in blocks rather than per node. To address this limitation, we can switch the IPAM to either `host-local` or `spiderpool`.
 
-> 节点的 PodCIDR 对应 Node.spec.podCIDR 字段
+> The PodCIDR of a node corresponds to the Node's spec.podCIDR field.
 
-* host-local: 非常简单的 IPAM，从节点的 PodCIDR 中分配 IP, 分配的数据存放于本地磁盘, 无其他 IPAM 能力
-* Spiderpool: 提供非常强大的 IPAM 能力，支持按节点分配 IP、支持固定 IP、多网卡分配 IP 等高级特性
+* host-local: a simple IPAM solution that allocates IP addresses from the node's PodCIDR. The allocated data is stored on the local disk without any additional IPAM capabilities.
+* Spiderpool: provide robust IPAM capabilities, including IP allocation per node, support for fixed IP addresses, and IP allocation for multiple network interfaces
 
-在介绍如何使用之前，需要先安装 [CCM 组件](https://github.com/AliyunContainerService/alicloud-controller-manager)，参考 [安装 CCM 文档](usage.md#安装CCM组件，发布VPC路由), 并且切换 Calico 为非隧道模式，修改 calico-node daemonSet 部署清单文件中以下几个环境变量为 Never:
+Before diving into how to use, make sure to install the [CCM component](https://github.com/AliyunContainerService/alicloud-controller-manager) following the instructions in the [CCM installation](usage.md#install-the-ccm-component-and-publish-vpc-routes). Additionally, switch Calico to non-tunnel mode by modifying specific environment variables to "Never" in the calico-node daemonSet deployment manifest file:
 
 ```shell
 # Enable IPIP
@@ -100,9 +99,9 @@ value: "Never"
 # Set MTU for tunnel device used if ipip is enabled
 ```
 
-### Host-local 作为 IPAM
+### Use Host-local as IPAM
 
-首先切换 IPAM 为 `host-local`，这需要修改 Calico 安装清单文件中 ConfigMap, 如下:
+To switch to `host-local` IPAM, modify the ConfigMap in the Calico installation manifest file as follows:
 
 ```shell
 # Source: calico/templates/calico-config.yaml
@@ -162,9 +161,9 @@ data:
 ---
 ```
 
-> IPAM 部分切换为 host-local, 并且指定使用节点的 PodCIDR 作为 Pod 的子网
+> Switch the IPAM to host-local and specify the node's PodCIDR as the subnet for Pods
 
-安装并等待 Calico 就绪之后，创建测试应用可以发现 Pod 的 IP 属于节点的 PodCIDR(10.244.0.0/24 和 10.244.1.0/24):
+After installing and ensuring Calico is ready, create a test application to observe that the Pods' IP addresses belong to the node's PodCIDR (10.244.0.0/24 and 10.244.1.0/24):
 
 ```shell
 ~# k get po -o wide
@@ -173,11 +172,11 @@ test-77877f4755-58hlc   1/1     Running   0          5s    10.244.0.2   cn-cheng
 test-77877f4755-npcgs   1/1     Running   0          5s    10.244.1.2   cn-chengdu.i-2vcxxs   <none>           <none>
 ```
 
-经过测试，Pod 的各种通信正常。
+The test finds that communication between Pods functions correctly.
 
-## Spiderpool 作为 IPAM
+## Use Spiderpool as IPAM
 
-1. 首先切换 IPAM 为 `spiderpool`，这需要修改 Calico 安装清单文件中 ConfigMap, 如下:
+1. To switch to `spiderpool` IPAM, modify the ConfigMap in the Calico installation manifest file as follows:
 
     ```shell
     # Source: calico/templates/calico-config.yaml
@@ -235,20 +234,19 @@ test-77877f4755-npcgs   1/1     Running   0          5s    10.244.1.2   cn-cheng
         }
     ```
 
-    切换 IPAM 为 Spiderpool 并等待就绪
+    Switch the IPAM to Spiderpool and wait for it to be ready.
 
     !!! note
 
-        如果遇到 Calico 无法启动，并报以下错误，可以尝试删除每个节点 `/var/lib/cni/networks/k8s-pod-network/`
+        If you encounter any issues where Calico fails to start and reports the following error, try deleting the `/var/lib/cni/networks/k8s-pod-network/` on each node.
 
         ```shell
         2023-09-27 10:14:42.096 [ERROR][1] ipam_plugin.go 106: failed to migrate ipam, retrying... error=failed to get add IPIP tunnel addr 10.244.1.1: The provided IP address is not in a configured pool
         ```
 
+2. Install Spiderpool
 
-2. 安装 Spiderpool
-
-    使用以下命令安装 Spiderpool:
+    Run the following command to install  Spiderpool:
 
     ```shell
     ~# helm repo add spiderpool https://spidernet-io.github.io/spiderpool
@@ -256,10 +254,10 @@ test-77877f4755-npcgs   1/1     Running   0          5s    10.244.1.2   cn-cheng
     ~# helm install spiderpool spiderpool/spiderpool --namespace kube-system --wait
     ```
 
-    > 需要提前安装 Helm 二进制
-    > Spiderpool 默认会安装 Multus 组件，如果你不需要 Multus 或已经安装 Multus，可以使用 `--set multus.multusCNI.install=false"` 关闭安装 Multus。
+    > Helm binary should be installed in advance
+    > By default, Spiderpool installs the Multus component. If you don't need Multus or have already installed it, you can disable Multus installation by using `--set multus.multusCNI.install=false"`.
 
-    安装完成之后，需要为每个节点的 podCIDR 创建一个对应的 Spiderpool IP 池供 Pod 使用:
+    After the installation is complete, you need to create a dedicated Spiderpool IP pool for the podCIDR of each node to be used by Pods:
 
     ```shell
     ~# kubectl  get nodes -o=custom-columns='NAME:.metadata.name,podCIDR:.spec.podCIDR'
@@ -268,7 +266,7 @@ test-77877f4755-npcgs   1/1     Running   0          5s    10.244.1.2   cn-cheng
     cn-chengdu.i-2vcxxs   10.244.1.0/24
     ```
 
-    创建以下 Spiderpool IP 池:
+    Create the following Spiderpool IP pools:
 
     ```yaml
     apiVersion: spiderpool.spidernet.io/v2beta1
@@ -296,9 +294,9 @@ test-77877f4755-npcgs   1/1     Running   0          5s    10.244.1.2   cn-cheng
       - cn-chengdu.i-2vcxxs
     ```
 
-    > 注意 ips 中属于对应 nodeName 节点的 podCIDR 
+    > The IPs in the pool should belong to the corresponding nodeName node's podCIDR.
 
-1. 创建测试应用，并测试联通性
+3. Create a test application and verify connectivity. 
 
     ```shell
     ~# kubectl get po -o wide
@@ -321,7 +319,7 @@ test-77877f4755-npcgs   1/1     Running   0          5s    10.244.1.2   cn-cheng
     rtt min/avg/max/mdev = 0.434/0.434/0.434/0.000 ms
     ```
 
-    测试访问 ClusterIP:
+    Test accessing ClusterIP:
 
     ```shell
     ~# kubectl  exec test-77877f4755-nhm4f -- curl -i 172.21.0.166
@@ -334,4 +332,4 @@ test-77877f4755-npcgs   1/1     Running   0          5s    10.244.1.2   cn-cheng
     Content-Length: 153
     ```
 
-    经过测试，Pod 各种联通性正常。另外 Calico 创建的 Pod 也可以使用 Spiderpool 的其他高级 IPAM 能力。
+    After testing, it has been confirmed that the communication between Pods functions correctly. Additionally, Pods created by Calico can utilize other advanced IPAM capabilities provided by Spiderpool.
