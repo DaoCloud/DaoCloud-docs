@@ -41,7 +41,7 @@ tar -zxvf offline-community-v0.3.28.tar
 
 Then refer to [DCE Community Installation Process](../../install/community/k8s/online.md#_2) to install.
 
-After successful installation, please [apply for free community experience](../../dce/license0.md).
+After successful installation, please [Free Trial](../../dce/license0.md).
 
 ## Modules
 

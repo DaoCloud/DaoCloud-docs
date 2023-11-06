@@ -40,7 +40,7 @@ elasticity of IT systems, and significantly accelerating application delivery.
 
     ---
 
-    We have created excellent video tutorials for different modules and scenarios of DCE 5.0.
+    We have created many video tutorials for different modules and scenarios of DCE 5.0.
 
     - [Scenario-based Videos](../videos/use-cases.md)
     - [Workbench Videos](../videos/amamba.md)
@@ -210,7 +210,7 @@ elasticity of IT systems, and significantly accelerating application delivery.
 
 </div>
 
-## Download and Open Source Ecosystem
+## Download and Ecosystem
 
 <div class="grid cards" markdown>
 
@@ -251,6 +251,6 @@ elasticity of IT systems, and significantly accelerating application delivery.
 
 [Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
-[Apply for Free Community Experience](./license0.md){ .md-button .md-button--primary }
+[Free Trial](./license0.md){ .md-button .md-button--primary }
 
 ![Sail Image](./images/sail.jpg)

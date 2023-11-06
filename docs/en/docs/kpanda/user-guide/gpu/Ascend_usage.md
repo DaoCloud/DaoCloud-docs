@@ -9,7 +9,7 @@ This section explains how to use Ascend GPU on the DCE 5.0 platform.
 
 ## Configuration through the User Interface
 
-1. Confirm whether the cluster has detected the GPU cards. Click on `Cluster` -> `Cluster Settings` -> `Addon Plugins` and check if the corresponding GPU type has been automatically enabled and detected.
+1. Confirm whether the cluster has detected the GPU cards. Click `Cluster` -> `Cluster Settings` -> `Addon Plugins` and check if the corresponding GPU type has been automatically enabled and detected.
    Currently, the cluster will automatically enable `GPU`, and set the GPU type as `Ascend`.
 
    

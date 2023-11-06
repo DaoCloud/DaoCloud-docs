@@ -23,7 +23,7 @@ After accessing the Redis cache service, follow the steps below to create a Redi
 
     <!--screenshot-->
 
-5. After confirming that the basic information, specification configuration, and service settings are correct, click `Confirm`.
+5. After confirming that the basic information, specification configuration, and service settings are correct, click `OK`.
 
     <!--screenshot-->
 

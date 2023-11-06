@@ -12,7 +12,7 @@ The cluster has [insight-agent installed](../../quickstart/install/install-agent
 
 2. Select `Infrastructure > Clusters` from the left navigation pane. On this page, you can view the following information:
 
-    1. **Cluster List**: Shows a list of clusters with the `insight-agent` installed. Click on a specific cluster to view detailed information.
+    1. **Cluster List**: Shows a list of clusters with the `insight-agent` installed. Click a specific cluster to view detailed information.
     2. **Resource Overview**: Provides statistics on the number of normal and total nodes and workloads across multiple clusters.
     3. **Incidents**: Displays the number of alerts generated in the current cluster.
     4. **Resource Consumption**: Shows the actual usage and total capacity of CPU, memory, and disk for the selected cluster.

@@ -31,7 +31,7 @@ In the RabbitMQ message queue, do the following:
 
     <!--screenshot-->
 
-5. Confirm that the instance information is correct, and click `Confirm` to complete the creation.
+5. Confirm that the instance information is correct, and click `OK` to complete the creation.
 
     <!--screenshot-->
 

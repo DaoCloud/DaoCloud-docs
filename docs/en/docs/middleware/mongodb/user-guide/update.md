@@ -7,7 +7,7 @@ hide:
 
 If you want to update or modify the resource configuration of MongoDB, follow the instructions on this page.
 
-1. In the instance list, click on the `...` button on the right side and select `Update Instance` from the dropdown menu.
+1. In the instance list, click the `...` button on the right side and select `Update Instance` from the dropdown menu.
 
 
 
@@ -19,6 +19,6 @@ If you want to update or modify the resource configuration of MongoDB, follow th
 
 
 
-4. After modifying the service settings, click `Confirm`.
+4. After modifying the service settings, click `OK`.
 
 

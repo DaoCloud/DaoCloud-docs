@@ -7,7 +7,7 @@ hide:
 
 `System Configuration` displays the default storage time of metrics, logs, traces and the default Apdex threshold.
 
-1. Click on the right navigation bar and select `System Configuration`.
+1. Click the right navigation bar and select `System Configuration`.
 
      
 

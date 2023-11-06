@@ -33,7 +33,7 @@ Follow the steps below to create a virtual machine using an image.
 2. On the virtual machine list page, click `Create Virtual Machine` and select `Create VM from Image`.
 
 
-3. Fill in the basic information, image configuration, storage and networking, login settings, and click `Confirm` at the bottom right corner to complete the creation.
+3. Fill in the basic information, image configuration, storage and networking, login settings, and click `OK` at the bottom right corner to complete the creation.
 
     The system will automatically return to the virtual machine list. By clicking the `︙` button
     on the right side of the list, you can perform operations such as power on/off, restart,
@@ -110,4 +110,4 @@ In addition to the image method, you can also create a virtual machine more quic
 1. Go to the virtual machine container list page and click the `Create via YAML` button.
 
 
-2. Enter or paste the prepared YAML file and click `Confirm` to complete the creation.
+2. Enter or paste the prepared YAML file and click `OK` to complete the creation.

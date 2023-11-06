@@ -24,7 +24,7 @@ Please follow these steps to search for a trace:
 
         Sorting by span count, latency, and start time is supported in the list.
 
-4. Click on the TraceID name to view the detailed invocation information for that trace.
+4. Click the TraceID name to view the detailed invocation information for that trace.
 
 
 !!! note
@@ -33,7 +33,7 @@ Please follow these steps to search for a trace:
 
 ### Associated Logs
 
-1. Click on the icon on the right side of the trace data to search for associated logs.
+1. Click the icon on the right side of the trace data to search for associated logs.
 
     - By default, it queries the log data within the duration of the trace and one minute after its completion.
     - The queried logs include those with the trace's TraceID in their log text and container logs related to the trace invocation process.

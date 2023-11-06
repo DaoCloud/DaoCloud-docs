@@ -34,13 +34,13 @@ Ensure that you have a SonarQube environment and that it is properly connected t
 
 
 
-3. Enter a name and use default values for other fields, then click `Confirm`.
+3. Enter a name and use default values for other fields, then click `OK`.
 
 
 
 ## Editing Pipeline Steps
 
-1. Click on a pipeline to enter its details page, and click `Edit Pipeline` in the upper right corner.
+1. Click a pipeline to enter its details page, and click `Edit Pipeline` in the upper right corner.
 
 
 
@@ -54,10 +54,10 @@ Ensure that you have a SonarQube environment and that it is properly connected t
 
 4. In the graphical interface, define Stage 2 `SonarQube analysis` with the following configuration:
 
-   - SonarQube Instance: Select the previously integrated SonarQube instance.
-   - Code Language: Different code languages correspond to different scanning commands in SonarQube. If it is Java language, select Maven; otherwise, choose other. For this example, we select "other".
-   - Project: Define the project to be scanned in SonarQube.
-   - Scan Files: Specify the directory address of the code repository to be scanned.
+    - SonarQube Instance: Select the previously integrated SonarQube instance.
+    - Code Language: Different code languages correspond to different scanning commands in SonarQube. If it is Java language, select Maven; otherwise, choose other. For this example, we select "other".
+    - Project: Define the project to be scanned in SonarQube.
+    - Scan Files: Specify the directory address of the code repository to be scanned.
 
 
 5. Save the changes and immediately run the pipeline, then wait for the pipeline to run successfully.

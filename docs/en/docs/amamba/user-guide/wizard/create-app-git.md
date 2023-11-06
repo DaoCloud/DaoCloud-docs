@@ -101,8 +101,8 @@ Following [Credential Management](../pipeline/credential.md), create two credent
 
     ![Container Configuration](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/ms04.png)
 
-5. On the `Advanced Configuration` page, click on `Enable Microservice Integration`.
-   Configure the parameters as per the instructions and click `Confirm`.
+5. On the `Advanced Configuration` page, click `Enable Microservice Integration`.
+   Configure the parameters as per the instructions and click `OK`.
 
     - Framework Selection: Choose between `Spring Cloud` and `Dubbo`. In this case, select `Spring Cloud`.
     - Registry Instance: Currently, only hosted Nacos registry instances from the
@@ -117,13 +117,13 @@ Following [Credential Management](../pipeline/credential.md), create two credent
 
 ## Viewing and Accessing Microservices Information
 
-1. On the left navigation bar, click on `Overview`, and within the `Native Applications` tab,
+1. On the left navigation bar, click `Overview`, and within the `Native Applications` tab,
    select the native application to view its details.
 
     ![Native Applications](../../images/git04.png)
 
 2. In the details page, under the `Application Resources` tab, select the resource with
-   the `Service Mesh` label and click on it.
+   the `Service Mesh` label and click it.
 
     ![Navigate](../../images/git05.png)
 

@@ -21,7 +21,7 @@ When performing an inspection, you can choose to inspect multiple clusters in ba
 
 === "Batch Inspection"
 
-    1. Click on `Cluster Inspection` in the top-level navigation bar of the Container Management module, then click on `Inspection` on the right side of the page.
+    1. Click `Cluster Inspection` in the top-level navigation bar of the Container Management module, then click `Inspection` on the right side of the page.
 
         ![start](../../images/inspect04.png)
 
@@ -35,6 +35,6 @@ When performing an inspection, you can choose to inspect multiple clusters in ba
 === "Individual Inspection"
 
     1. Go to the Cluster Inspection page.
-    2. Click on the more options button (`ⵗ`) on the right of the corresponding inspection configuration, then select `Inspection` from the popup menu.
+    2. Click the more options button (`ⵗ`) on the right of the corresponding inspection configuration, then select `Inspection` from the popup menu.
 
         ![basic](../../images/inspect06.png)

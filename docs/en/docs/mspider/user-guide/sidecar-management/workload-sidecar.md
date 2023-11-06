@@ -5,7 +5,7 @@ disabling, and setting resource quota.
 
 ## View Sidecar Injection Information
 
-In the left navigation menu, click on `Mesh Sidecar` -> `Workload` and select a cluster to
+In the left navigation menu, click `Mesh Sidecar` -> `Workload` and select a cluster to
 view all workloads, their related namespaces, sidecar injection statuses, and resource quota under that cluster.
 
 ![Workload Sidecar List](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/wl-sidecar01.png)
@@ -42,7 +42,7 @@ You can enable automatic sidecar injection for one or more workloads and restart
 their corresponding Pods. Please ensure that the Pods can be restarted before
 performing this operation. Follow these steps:
 
-1. Select one or more workloads that have not had sidecars injected, click on `Enable Injection` at the top right.
+1. Select one or more workloads that have not had sidecars injected, click `Enable Injection` at the top right.
 
     ![Select Sidecar Injection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/wl-sidecar03.png)
 
@@ -67,7 +67,7 @@ You can disable automatic sidecar injection for one or more workloads and restar
 their corresponding Pods. Please ensure that the Pods can be restarted before performing
 this operation. Follow these steps:
 
-1. Select one or more workloads that have had sidecars injected, click on `Injection Disable` at the top right.
+1. Select one or more workloads that have had sidecars injected, click `Injection Disable` at the top right.
 
     ![Select Sidecar Injection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/sc-disable01.png)
 
@@ -91,7 +91,7 @@ this operation. Follow these steps:
 
 You can set CPU and memory limits for one or more workloads that have had sidecars injected. Follow these steps:
 
-1. Select one or more workloads that have had sidecars injected, click on `Sidecar Resource Quota` at the top right.
+1. Select one or more workloads that have had sidecars injected, click `Sidecar Resource Quota` at the top right.
 
     ![Resource quota](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/sc-disable01.png)
 
@@ -106,7 +106,7 @@ You can set CPU and memory limits for one or more workloads that have had sideca
 
 You can clean up the sidecar policy for one or more workloads that have had sidecars injected. Follow these steps:
 
-1. Select one or more workloads that have had sidecars injected, click on `Cleanup Policy` at the top right.
+1. Select one or more workloads that have had sidecars injected, click `Cleanup Policy` at the top right.
 
     ![Cleanup policy](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/sc-disable01.png)
 

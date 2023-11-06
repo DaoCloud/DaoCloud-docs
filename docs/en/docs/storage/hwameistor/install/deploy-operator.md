@@ -42,7 +42,7 @@ Ensure that your cluster has successfully connected to the container management 
 
 1. In the left navigation bar, click `Container Management` -> `Cluster List`, and find the name of the cluster where Hwameistor will be installed.
 
-2. In the left navigation bar, select `Helm Apps` -> `Helm chart`, find and click on `Hwameistor Operator`.
+2. In the left navigation bar, select `Helm Apps` -> `Helm chart`, find and click `Hwameistor Operator`.
 
 3. Within the `Version Selection` section, choose the version to install, and then click `Install`.
 

@@ -13,12 +13,12 @@ This section describes how to allocate the entire NVIDIA GPU card to a single ap
 
 ### Configuring via the User Interface
 
-1. Check if the cluster has detected the GPU cards. Click on the corresponding `Cluster` -> `Cluster Settings` -> `Addon Plugins` to see if it has automatically enabled and detected the corresponding GPU types.
+1. Check if the cluster has detected the GPU cards. Click the corresponding `Cluster` -> `Cluster Settings` -> `Addon Plugins` to see if it has automatically enabled and detected the corresponding GPU types.
    Currently, the cluster will automatically enable `GPU` and set the `GPU Type` as `Nvidia GPU`.
 
     
 
-2. Deploy a workload. Click on the corresponding `Cluster` -> `Workloads`, and deploy the workload using the image method. After selecting the type (`Nvidia GPU`), configure the number of physical cards used by the application:
+2. Deploy a workload. Click the corresponding `Cluster` -> `Workloads`, and deploy the workload using the image method. After selecting the type (`Nvidia GPU`), configure the number of physical cards used by the application:
 
     **Physical Card Count (nvidia.com/gpu)**: Indicates the number of physical cards that the current pod needs to mount. The input value must be an integer and **less than or equal to** the number of cards on the host machine.
 

@@ -26,7 +26,7 @@ Workbench has designed a graphical pipeline editing view, which is compatible wi
 
 ### Interface layout description
 
-1. Click on a created custom pipeline. Click `Edit Pipeline` in the upper right corner to enter the graphical editing page.
+1. Click a created custom pipeline. Click `Edit Pipeline` in the upper right corner to enter the graphical editing page.
 
      <!--![]()screenshots-->
 
@@ -42,7 +42,7 @@ Workbench has designed a graphical pipeline editing view, which is compatible wi
 
 ### Configure global settings
 
-Click on `Global Settings`, select node from the `Type` drop-down list, and select go 16 from the label drop-down list.
+Click `Global Settings`, select node from the `Type` drop-down list, and select go 16 from the label drop-down list.
 
 <!--![]()screenshots-->
 
@@ -180,7 +180,7 @@ The various stages of the pipeline can be quickly defined through the Jenkinsfil
 
      <!--![]()screenshots-->
 
-     > You can also click on the name of the pipeline and click `Edit Jenkinsfile` in the upper right corner of the page.
+     > You can also click the name of the pipeline and click `Edit Jenkinsfile` in the upper right corner of the page.
 
 2. Enter or paste the Jenkinsfile prepared in advance, and click `OK`.
 

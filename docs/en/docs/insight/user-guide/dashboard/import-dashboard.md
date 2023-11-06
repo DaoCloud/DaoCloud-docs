@@ -7,9 +7,9 @@ By using Grafana CRD, you can incorporate the management and deployment of dashb
 1. Log in to the DCE 5.0 platform and go to `Container Management`. Select the `kpanda-global-cluster` from the cluster list.
 
 2. Choose `Custom Resources` from the left navigation pane. Look for the `grafanadashboards.integreatly.org`
-   file in the list and click on it to view the details.
+   file in the list and click it to view the details.
 
-3. Click on `YAML Create` and use the following template. Replace the dashboard JSON in the `Json` field.
+3. Click `YAML Create` and use the following template. Replace the dashboard JSON in the `Json` field.
 
     - `namespace`: Specify the target namespace.
     - `name`: Provide a name for the dashboard.
@@ -57,7 +57,7 @@ By using Grafana CRD, you can incorporate the management and deployment of dashb
         }
     ```
 
-4. After clicking `Confirm`, wait for a while to view the newly imported dashboard in `Dashboard`.
+4. After clicking `OK`, wait for a while to view the newly imported dashboard in `Dashboard`.
 
 !!! info
 

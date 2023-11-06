@@ -7,7 +7,7 @@ hide:
 
 After connecting to the MongoDB database, follow the steps below to create a MongoDB instance.
 
-1. In the instance list, click on `New Instance` in the upper right corner.
+1. In the instance list, click `New Instance` in the upper right corner.
 
 
 
@@ -26,7 +26,7 @@ After connecting to the MongoDB database, follow the steps below to create a Mon
 
 
 
-5. After confirming that the basic information, spec configurations, and service settings are correct, click `Confirm`.
+5. After confirming that the basic information, spec configurations, and service settings are correct, click `OK`.
 
 
 

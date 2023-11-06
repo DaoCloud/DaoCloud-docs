@@ -8,7 +8,7 @@
 
 ## Getting Started with Installation
 
-1. Go to the `Container Management` module and find the cluster where you want to install Jenkins in the `Cluster List`. Click on the name of that cluster.
+1. Go to the `Container Management` module and find the cluster where you want to install Jenkins in the `Cluster List`. Click the name of that cluster.
 
     !!! note
 
@@ -16,15 +16,15 @@
 
     ![Click Cluster Name](../../images/install-jenkins11.png)
 
-2. In the left navigation bar, select `Helm Applications` -> `Helm Templates`, and find and click on `Jenkins`.
+2. In the left navigation bar, select `Helm Applications` -> `Helm Templates`, and find and click `Jenkins`.
 
     ![jenkins helm](../../images/install-jenkins12.png)
 
-3. In the `Version Selection`, choose the desired version of Jenkins to install, and click on `Install`.
+3. In the `Version Selection`, choose the desired version of Jenkins to install, and click `Install`.
 
     ![Install](../../images/install-jenkins13.png)
 
-4. On the installation page, fill in the required installation parameters, and finally click the `Confirm` button at the bottom right.
+4. On the installation page, fill in the required installation parameters, and finally click the `OK` button at the bottom right.
 
     ![Fill in Configuration](../../images/install-jenkins14.png)
 

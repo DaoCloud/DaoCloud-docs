@@ -4,7 +4,7 @@ The micro-service engine supports group management of micro-services based on th
 
 ## New configuration
 
-1. Enter `Microservice Engine` -- > `Microservice Governance` -- > `Managed Registry` module, click on the name of the target registry.
+1. Enter `Microservice Engine` -- > `Microservice Governance` -- > `Managed Registry` module, click the name of the target registry.
 
     <!--![]()screenshots-->
 
@@ -47,7 +47,7 @@ The micro-service engine supports group management of micro-services based on th
 
 ## Viewing configuration
 
-1. Enter `Microservice Engine` -- > `Microservice Governance` -- > `Managed Registry` module, click on the name of the target registry.
+1. Enter `Microservice Engine` -- > `Microservice Governance` -- > `Managed Registry` module, click the name of the target registry.
 
     <!--![]()screenshots-->
 
@@ -66,7 +66,7 @@ The micro-service engine supports group management of micro-services based on th
 
 The micro-service configuration list records the historical version of the configuration file and supports one-click rollback to a specific historical version. This helps users quickly recover incorrect configurations and reduces configuration availability risks in the micro-service system. Comparison between the current version and the target rollback version is supported during the rollback. This helps you verify the changes and reduce risks caused by error correction.
 
-1. Enter `Microservice Engine` -- > `Microservice Governance`-- > `Managed Registry`module, click on the name of the target registry.
+1. Enter `Microservice Engine` -- > `Microservice Governance`-- > `Managed Registry`module, click the name of the target registry.
 
     <!--![]()screenshots-->
 
@@ -84,7 +84,7 @@ The micro-service configuration list records the historical version of the confi
 
 ## The configuration was updated or deleted
 
-1. Enter `Microservice Engine` -- > `Microservice Governance`-- > `Managed Registry`module, click on the name of the target registry.
+1. Enter `Microservice Engine` -- > `Microservice Governance`-- > `Managed Registry`module, click the name of the target registry.
 
     <!--![]()screenshots-->
 

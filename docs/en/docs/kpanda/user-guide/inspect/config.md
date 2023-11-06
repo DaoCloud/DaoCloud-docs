@@ -13,11 +13,11 @@ DCE 5.0 Container Management module provides cluster inspection functionality, w
 
 Here's how to create an inspection configuration.
 
-1. Click on `Cluster Inspection` in the left navigation bar.
+1. Click `Cluster Inspection` in the left navigation bar.
 
     ![nav](../../images/inspect01.png)
 
-2. On the right side of the page, click on `Inspection Configuration`.
+2. On the right side of the page, click `Inspection Configuration`.
 
     ![create](../../images/inspect02.png)
 
@@ -31,10 +31,10 @@ Here's how to create an inspection configuration.
 
         ![basic](../../images/inspect03.png)
 
-After creating the inspection configuration, it will be automatically displayed in the inspection configuration list. Click on the more options button on the right of the configuration to immediately perform an inspection or modify the inspection configuration.
+After creating the inspection configuration, it will be automatically displayed in the inspection configuration list. Click the more options button on the right of the configuration to immediately perform an inspection or modify the inspection configuration.
 
-- Click on `Inspection` to perform an inspection once based on the configuration.
-- Click on `Inspection Configuration` to modify the inspection configuration.
+- Click `Inspection` to perform an inspection once based on the configuration.
+- Click `Inspection Configuration` to modify the inspection configuration.
 
     ![basic](../../images/inspect06.png)
 

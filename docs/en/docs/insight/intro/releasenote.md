@@ -268,7 +268,7 @@ the evolution path and feature changes of each version.
 - **Added** Added a refresh button to the chart
 - **Added** service topology supports selecting multiple clusters and supports searching by service name
 - **Added** service topology details and metrics of traffic egress and ingress
-- **Added** Click on the service name in the service topology details to jump to the details of the service
+- **Added** Click the service name in the service topology details to jump to the details of the service
 - **Added** list of service monitoring and metrics of traffic egress and ingress
 - **Added** system component monitoring list
 - **Added** CoreDNS monitoring panel

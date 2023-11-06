@@ -190,7 +190,7 @@ In `Container Management` - `Source Cluster` - `Configuration & Storage` - `Conf
     This configuration can be found in `Cluster Management` - `Cluster where redis-a is located` - `Workloads` - `Access Method`. As shown in the following figure:
 
 
-    Click on the service name to enter the service details and you can see the ClusterIP address:
+    Click the service name to enter the service details and you can see the ClusterIP address:
 
 
 - Access password for the target instance: You can obtain this information from the overview page of **instance redis-a**:

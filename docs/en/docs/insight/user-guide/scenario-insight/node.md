@@ -13,7 +13,7 @@ Through node monitoring, you can get an overview of the current health status of
 2. Select `Infrastructure` > `Nodes` from the left navigation pane. On this page, you can view the following information:
 
     1. **Cluster Switching**: Use the dropdown at the top to switch between clusters.
-    2. **Node List**: Shows a list of nodes within the selected cluster. Click on a specific node to view detailed information.
+    2. **Node List**: Shows a list of nodes within the selected cluster. Click a specific node to view detailed information.
     3. **Incidents**: Displays the number of alerts generated in the current cluster.
     4. **Resource Consumption**: Shows the actual usage and total capacity of CPU, memory, and disk for the selected node.
     5. **Metric Explanations**: Describes the trends in CPU, memory, disk I/O, and network traffic for the selected node.

@@ -9,7 +9,7 @@ hide:
 
 By accessing the instance details page of each MongoDB instance, you can view the MongoDB logs.
 
-1. In the MongoDB instance list, select the logs you want to view and click on the `Instance Name` to enter the instance details page.
+1. In the MongoDB instance list, select the logs you want to view and click the `Instance Name` to enter the instance details page.
 
 
 
@@ -17,7 +17,7 @@ By accessing the instance details page of each MongoDB instance, you can view th
 
 
 
-3. Click on `Log Viewer` to access the log viewing page (Insight Log Viewer).
+3. Click `Log Viewer` to access the log viewing page (Insight Log Viewer).
 
 ## Log Viewing Instructions
 
@@ -26,7 +26,7 @@ In the log viewing page, we can conveniently view logs. Here are some commonly u
 * Customizing the log time range: In the top right corner of the log page, you can easily switch the time range for log viewing (the available log range depends on the log retention period set in the observability system).
 * Searching logs with keywords: The left-hand search area supports viewing more log information.
 * Viewing log volume distribution: The bar chart in the upper-middle area allows you to see the distribution of log quantities within the selected time range.
-* Viewing log context: Click on the `Context` icon on the right side.
+* Viewing log context: Click the `Context` icon on the right side.
 * Exporting logs.
 
 
