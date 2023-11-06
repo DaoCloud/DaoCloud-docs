@@ -13,46 +13,26 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 
 ### v0.20.3
 
-#### Upgrade
+#### Feature
 
-- **Added** `sidecarScopeToLocal` configuration field to `GlobalMesh CRD`.
-- **Added** `HideIdleNodes` field to `Graph` interface, supporting hiding idle nodes.
-- **Added** control of adding and deleting `cluster_bind_timestamps` field in `gsc-controller` for `globalmesh`.
-- **Added** support for container runtime in `Mspider VM Agent`.
-- **Added** `services` and `resourceManagement` fields to `Status` section of `WorkloadShadow CRD`.
-- **Added** field `has_user_custom` to indicate if the namespace scope for sidecars has user-defined resources.
-- **Added** implementation of namespace scope for sidecar access.
-- **Added** workload metric query interface.
-- **Added** `Hpa` detection to cluster component interface.
-- **Added** implementation of `Hpa` detection in cluster component interface.
-- **Added** interface for deleting virtual machine type workloads.
-- **Added** optional ability to hide idle nodes in `Graph` implementation.
-- **Added** optional ability to hide idle nodes in `Graph` implementation.
-- **Added** timestamp field `cluster_bind_timestamps` to managed mesh record clusters.
-- **Added** information about clusters that have this `Service` in grid service.
-- **Added** interface definition for namespace scope discovery in grid namespace.
-- **Added** elastic scaling configuration `auto_scaling` to grid gateway.
-- **Added** API to download configuration file token for virtual machines.
-- **Improved** service metric query interface with `reporter` and `label_selectors`.
-- **Upgraded** `ckube` to `1.3.7` to fix issue where searching queries above a certain level couldn't be resolved.
-- **Upgraded** frontend version to `v0.18.2`, see CHANGELOG.
+- **Added** support for running `VM Agent` in containers.
+- **Added** support for deleting virtual machine type workloads.
+- **Added** customizable namespace scope for edge discovery in the mesh, significantly reducing resource consumption pressure on `Sidecar`.
+- **Added** elastic scaling configuration `auto_scaling` for the mesh gateway.
+
+#### Improved
+
+- **Improved** traffic topology `Graph` implementation with optional hiding of idle nodes.
+- **Improved** detection of host `glibc` version during `docker` mode installation of `vmagent`.
 
 #### Fixes
 
-- **Fixed** cancellation of host `glibc` version detection for `vmagent` installation in `docker` mode.
-- **Fixed** cancellation of host `glibc` version detection for `vmagent` installation in `docker` mode.
-- **Fixed** issue where querying namespaces in `Graph` resulted in request URLs exceeding length limit when requesting `Prometheus` service.
-- **Fixed** issue where querying namespaces in `Graph` resulted in request URLs exceeding length limit when requesting `Prometheus` service.
-- **Fixed** validation of workload metrics and monitoring panel support for virtual machine workloads.
-- **Fixed** incorrect status of workload injection.
-- **Fixed** inaccurate resource binding display in workspace interface.
-- **Fixed** consistency in assigning grid details between `MeshList` and `MeshDetails`.
-- **Fixed** port conflict `15090` in virtual machine monitoring service, causing `istio` to be unavailable.
-- **Fixed** asynchronous execution of pre-installation cleanup and installation operations during virtual machine startup, occasional rule failures causing traffic to pass through.
-- **Fixed** asynchronous execution of pre-installation cleanup and installation operations during virtual machine startup, occasional rule failures causing traffic to pass through.
-- **Fixed** issue where `su` command caused `envoy` process `ulimit` value to be too small.
-- **Improved** `ListClusters` call now includes the time of joining the mesh as `BindAt`.
-- **Improved** added subscription notification update for `WorkloadShadow` in `Notification Center`, unified state update operation in `WorkloadShadow Controller`.
+- **Fixed** issue where querying the `Graph` with long namespaces resulted in URL length exceeding the limit while making requests to the `Prometheus` service.
+- **Fixed** incorrect injection status of workloads.
+- **Fixed** inaccurate display of resource bindings in workspace interfaces.
+- **Fixed** port conflict (`15090`) causing `istio` to become unavailable in the virtual machine monitoring service.
+- **Fixed** asynchronous occurrence of rule faults during virtual machine startup, due to prior cleanup and installation operations, resulting in traffic communication issues.
+- **Fixed** `ulimit` value for the `envoy` process being too small due to the use of the `su` command.
 
 ## 2023-08-31
 
