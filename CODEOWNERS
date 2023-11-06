@@ -16,8 +16,28 @@ docs/zh/docs/community/* @windsonsea
 docs/en/docs/dce/* @windsonsea
 docs/zh/docs/dce/* @windsonsea
 
-docs/en/docs/download/* @yitingdc
-docs/zh/docs/download/* @yitingdc
+docs/en/docs/download/modules/amamba.md @jzhupup
+docs/zh/docs/download/modules/amamba.md @jzhupup
+docs/en/docs/download/modules/ghippo @yitingdc
+docs/zh/docs/download/modules/ghippo @yitingdc
+docs/en/docs/download/modules/insight.md @justedennnnn
+docs/zh/docs/download/modules/insight.md @justedennnnn
+docs/en/docs/download/modules/kairship.md @wlp1153468871
+docs/zh/docs/download/modules/kairship.md @wlp1153468871
+docs/en/docs/download/modules/kangaroo.md @lemontrees123
+docs/zh/docs/download/modules/kangaroo.md @lemontrees123
+docs/en/docs/download/modules/kant.md @zhiyingfang2022
+docs/zh/docs/download/modules/kant.md @zhiyingfang2022
+docs/en/docs/download/modules/kpanda.md @yanrongshi
+docs/zh/docs/download/modules/kpanda.md @yanrongshi
+docs/en/docs/download/modules/mspider.md @samzong
+docs/zh/docs/download/modules/mspider.md @samzong
+docs/en/docs/download/modules/skoala.md @Adityayxt
+docs/zh/docs/download/modules/skoala.md @Adityayxt
+docs/en/docs/download/modules/spidernet.md @Jeanine-tw
+docs/zh/docs/download/modules/spidernet.md @Jeanine-tw
+docs/en/docs/download/modules/virtnest.md @Jeanine-tw
+docs/zh/docs/download/modules/virtnest.md @Jeanine-tw
 
 docs/en/docs/ghippo/* @yitingdc @lemontrees123
 docs/zh/docs/ghippo/* @yitingdc @lemontrees123
@@ -28,11 +48,11 @@ docs/zh/docs/insight/* @justedennnnn
 docs/en/docs/install/* @jzhupup
 docs/zh/docs/install/* @jzhupup
 
-docs/en/docs/kairship/*  @wlp1153468871
-docs/zh/docs/kairship/*  @wlp1153468871
+docs/en/docs/kairship/*  @wlp1153468871 @Jeanine-tw
+docs/zh/docs/kairship/*  @wlp1153468871 @Jeanine-tw
 
-docs/en/docs/kangaroo/* @lemontrees123
-docs/zh/docs/kangaroo/* @lemontrees123
+docs/en/docs/kangaroo/* @lemontrees123 @Jeanine-tw
+docs/zh/docs/kangaroo/* @lemontrees123 @Jeanine-tw
 
 docs/en/docs/kant/* @zhiyingfang2022
 docs/zh/docs/kant/* @zhiyingfang2022
@@ -55,14 +75,14 @@ docs/zh/docs/network/* @Jeanine-tw
 docs/en/docs/skoala/*  @Adityayxt
 docs/zh/docs/skoala/*  @Adityayxt
 
-docs/en/docs/storage/* @qiupingdai
-docs/zh/docs/storage/* @qiupingdai
+docs/en/docs/storage/* @qiupingdai @Jeanine-tw
+docs/zh/docs/storage/* @qiupingdai @Jeanine-tw
 
 docs/en/docs/videos/* @windsonsea
 docs/zh/docs/videos/* @windsonsea
 
-docs/en/docs/virtnest/* @wlp1153468871
-docs/zh/docs/virtnest/* @wlp1153468871
+docs/en/docs/virtnest/* @wlp1153468871 @Jeanine-tw
+docs/zh/docs/virtnest/* @wlp1153468871 @Jeanine-tw
 
 # code
 
