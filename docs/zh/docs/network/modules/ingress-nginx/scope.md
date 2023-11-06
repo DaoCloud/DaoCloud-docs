@@ -96,7 +96,7 @@ spec:
 
     ![scope02](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/scope02.jpg)
 
-3. `命名空间负载均衡`：部署 Ingress-Ngnix 时 ,`scope`设置为 `disabled` 并指定在 `Namespace Selector` 中输入 `workspace.ghippo.io/id=12345`,创建后的 Ingress 实例为 `ID`为`12345`的 工作空间独享。
+3. `工作空间 Ingress 实例`：部署 Ingress-Ngnix 时 ,`scope`设置为 `disabled` 并指定在 `Namespace Selector` 中输入 `workspace.ghippo.io/id=12345`,创建后的 Ingress 实例为 `ID`为`12345`的 工作空间独享。
    ![工作空间Ingress](../../images/workspaceingress.jpg)对应的 `value.yaml` 中的配置信息：![workspaceingress02](../../images/workspaceingress02.jpg)
 
 Ingress 实例部署后，可在对应的命名空间中[创建 Ingress 规则](../../../kpanda/user-guide/network/create-ingress.md)，并选择对应实例的 Ingress Class 进行使用。
