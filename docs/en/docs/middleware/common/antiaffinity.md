@@ -46,7 +46,7 @@ After configuring workload anti-affinity and successfully creating the instance,
 
 You can see that there are a total of 3 Pods, with two of them running normally and distributed on different nodes.
 
-The third Pod is in the waiting state. Click on the Pod name to view the details, and it is found that it cannot be deployed due to taints and the anti-affinity rule.
+The third Pod is in the waiting state. Click the Pod name to view the details, and it is found that it cannot be deployed due to taints and the anti-affinity rule.
 
 <!--![Event Log](images/anti-affinity03.jpg)-->
 

@@ -12,7 +12,7 @@ This section explains how to use the vGPU capability in the DCE 5.0 platform.
 
 ### Using vGPU through the UI
 
-1. Confirm if the cluster has detected the GPU cards. Click on the corresponding `Cluster` -> `Cluster Settings` -> `Addon Plugins` and check if the GPU plugin has been automatically enabled and the corresponding GPU type has been detected. Currently, the cluster will automatically enable the `GPU` addon and set the `GPU Type` as `Nvidia vGPU`.
+1. Confirm if the cluster has detected the GPU cards. Click the corresponding `Cluster` -> `Cluster Settings` -> `Addon Plugins` and check if the GPU plugin has been automatically enabled and the corresponding GPU type has been detected. Currently, the cluster will automatically enable the `GPU` addon and set the `GPU Type` as `Nvidia vGPU`.
 
     
 

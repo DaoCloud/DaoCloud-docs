@@ -38,7 +38,7 @@ Take istiod on the working cluster under the hosted mesh as an example, the spec
 1. View the hosted mesh nicole-dsm-mesh access cluster under the service mesh is nicole-dsm-c2, as shown in the figure below.
 
 
-2. Click on the cluster name, jump to the cluster page in the `Container Management` module, click to enter the `Workload` -> `Stateless Load` page to find istiod;
+2. Click the cluster name, jump to the cluster page in the `Container Management` module, click to enter the `Workload` -> `Stateless Load` page to find istiod;
 
 
 3. Click the workload name to enter `Container Configuration` -> `Basic Information` tab page;

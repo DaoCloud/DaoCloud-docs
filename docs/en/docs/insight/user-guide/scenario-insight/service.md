@@ -27,7 +27,7 @@ Follow these steps to view service monitoring metrics:
     1. If the namespace of a service in the list is `_unknown`, it means that the service has not been properly instrumented. We recommend reconfiguring the instrumentation.
     2. If multiple services have the same name and none of them have the correct `Namespace` environment variable configured, the metrics displayed in the list and service details page will be aggregated for all those services.
 
-3. Click on a service name (e.g., `ghippo-keycloakx`) to view the detailed metrics and operation metrics for that service.
+3. Click a service name (e.g., `ghippo-keycloakx`) to view the detailed metrics and operation metrics for that service.
 
    1. In the Traffic Metrics section, you can view the monitoring metrics for all requests to the service within the past hour (including inbound and outbound traffic).
    2. You can use the time selector in the upper right corner to quickly select a time range or specify a custom time range.

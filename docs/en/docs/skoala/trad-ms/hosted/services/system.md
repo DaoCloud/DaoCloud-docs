@@ -11,15 +11,15 @@ System rules are applied to the entire application, not individual resources, an
 
 Follow the steps below to create a system rule:
 
-1. Click on the name of the target managed registry, then click on `Microservices` in the left sidebar and click on the `Governance` option on the right side.
+1. Click the name of the target managed registry, then click `Microservices` in the left sidebar and click the `Governance` option on the right side.
 
     > Note that the microservice you want to govern should have the "Can be governed" status set to "Yes" in order to proceed with the following steps.
 
 
-2. Select `System Rules`, then click on `Create System Rule` on the right side.
+2. Select `System Rules`, then click `Create System Rule` on the right side.
 
 
-3. Fill in the rule configuration based on the instructions below and click `Confirm` in the bottom right corner.
+3. Fill in the rule configuration based on the instructions below and click `OK` in the bottom right corner.
 
     - Resource Name: Specify the name of the resource that needs traffic control.
     - Load: Trigger system protection when the system load1 (average load in 1 minute) exceeds the threshold and the current concurrent thread count exceeds the system capacity. The system capacity is calculated by `maxQps * minRt`. The recommended value is usually CPU cores * 2.5.
@@ -29,4 +29,4 @@ Follow the steps below to create a system rule:
     - CPU Usage: Trigger system flow control rule when the system's CPU usage exceeds the threshold (range 0.0-1.0).
 
 
-4. After creating the rule, you can view it in the list of system rules. Click on the more options button on the right side to update or delete the rule.
+4. After creating the rule, you can view it in the list of system rules. Click the more options button on the right side to update or delete the rule.

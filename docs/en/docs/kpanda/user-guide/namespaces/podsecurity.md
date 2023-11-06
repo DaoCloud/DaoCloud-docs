@@ -16,10 +16,10 @@ This section will explain how to configure container group security policies for
 
 ## Configuring Container Group Security Policies for a Namespace
 
-1. Select the namespace for which you want to configure the container group security policies and navigate to its details page. Click on `Configure Policy` on the `Container Group Security Policies` page to enter the configuration page.
+1. Select the namespace for which you want to configure the container group security policies and navigate to its details page. Click `Configure Policy` on the `Container Group Security Policies` page to enter the configuration page.
 
 
-2. On the configuration page, click on `Add Policy` to create a new policy. You will need to specify the security level and security mode. The following table provides detailed descriptions of the security levels and security modes.
+2. On the configuration page, click `Add Policy` to create a new policy. You will need to specify the security level and security mode. The following table provides detailed descriptions of the security levels and security modes.
 
     | Security Level | Description                                                                                                                                                                     |
     | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -35,7 +35,7 @@ This section will explain how to configure container group security policies for
 
     ![Add Policy](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/ps02.png)
 
-3. Different security levels correspond to different checks. If you are unsure how to configure your namespace, you can click on `Policy Configuration Explanation` in the upper right corner of the page to view detailed information.
+3. Different security levels correspond to different checks. If you are unsure how to configure your namespace, you can click `Policy Configuration Explanation` in the upper right corner of the page to view detailed information.
 
 
 4. Click `OK` to save the configuration. If successful, the configured security policy will appear on the page.

@@ -24,7 +24,7 @@ Follow these steps to view service monitoring metrics:
 3. Switch between tabs at the top to view data for different types of workloads.
 
 
-4. Click on the target workload name to view the details.
+4. Click the target workload name to view the details.
 
     1. Incidents: Displays the total number of active alerts for the workload.
     2. Resource Consumption: Shows the CPU, memory, and network usage of the workload.

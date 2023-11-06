@@ -19,15 +19,15 @@ Cluster flow control mode is designed to solve this problem. In cluster flow con
 
 Follow the steps below to create a cluster flow control rule:
 
-1. Click on the name of the target managed registry, then click on `Microservices` in the left sidebar and click on the `Governance` option on the right side.
+1. Click the name of the target managed registry, then click `Microservices` in the left sidebar and click the `Governance` option on the right side.
 
     > Note that the microservice you want to govern should have the "Can be governed" status set to "Yes" in order to proceed with the following steps.
 
 
-2. Select `Cluster Flow Control Rules`, then click on `Create Cluster Flow Control Rule` on the right side.
+2. Select `Cluster Flow Control Rules`, then click `Create Cluster Flow Control Rule` on the right side.
 
 
-3. Fill in the rule configuration based on the instructions below and click `Confirm` in the bottom right corner.
+3. Fill in the rule configuration based on the instructions below and click `OK` in the bottom right corner.
 
     - Server Name: The name of the TokenServer.
     - TokenServer IP: The IP address of the TokenServer.
@@ -35,5 +35,5 @@ Follow the steps below to create a cluster flow control rule:
     - Client Selection: The cluster flow control client used to communicate with the associated TokenServer and request tokens.
 
 
-4. After creating the rule, you can view it in the list of system rules. Click on the more options button on the right side to update or delete the rule.
+4. After creating the rule, you can view it in the list of system rules. Click the more options button on the right side to update or delete the rule.
 

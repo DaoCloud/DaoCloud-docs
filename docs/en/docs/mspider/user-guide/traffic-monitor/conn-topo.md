@@ -2,7 +2,7 @@
 
 DCE 5.0 Service Mesh provides a dynamic flow visualization feature called Traffic Topology.
 
-In the left navigation menu, click on `Traffic Monitoring` -> `Traffic Topology`.
+In the left navigation menu, click `Traffic Monitoring` -> `Traffic Topology`.
 Here, you can choose the `View`, `Namespace`, `Collection source`, and `Time` to view the service topology.
 
 ![Traffic Topology](../images/topo01.png)
@@ -21,7 +21,7 @@ The service topology graph supports operations like panning and zooming.
 
 ## Legend
 
-Click on the `Legend` button in the bottom-left corner to see the meaning of the current lines, circles, and colors.
+Click the `Legend` button in the bottom-left corner to see the meaning of the current lines, circles, and colors.
 
 ![Legend](../images/topo03.png)
 
@@ -34,7 +34,7 @@ Services are represented by circles, and the color of the circle indicates the h
 
 ## Service Metrics Information
 
-Click on any service to open a sidebar that displays relevant metrics based on the protocol type:
+Click any service to open a sidebar that displays relevant metrics based on the protocol type:
 
 - HTTP Protocol: Error Rate (%), Request Rate (RPM), Average Latency (ms)
 - TCP Protocol: Connection Count, Receive Throughput (B/s), Send Throughput (B/s)

@@ -51,7 +51,7 @@ This page lists some frequently asked questions that may arise in container mana
 
     - Authorization of users in the global management module: Use the admin account to enter `Global Management` -> `User and Access Control` -> `Users` menu, find the corresponding user. In the `Authorized User Groups` tab, if there are roles such as Admin, Kpanda Owner, etc. that have container management permissions, even if the cluster permission or namespace permission is not bound in the container management module, the user can see all clusters. Please refer to [User Authorization Document](../../ghippo/user-guide/access-control/user.md).
 
-    - Workspace binding in the global management module: Use an account to enter `Global Management` -> `Workspace and Folder`, and you can see your authorized workspace. Click on the workspace name.
+    - Workspace binding in the global management module: Use an account to enter `Global Management` -> `Workspace and Folder`, and you can see your authorized workspace. Click the workspace name.
 
         1. If the workspace is separately authorized to oneself, the user can see their account on the authorization tab. Then check the resource group or shared resource tab. If the resource group is bound with the namespace or the shared resource is bound with the cluster, the user can see the corresponding cluster.
 

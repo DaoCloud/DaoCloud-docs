@@ -101,7 +101,7 @@ There are two ways to update data volume claims. Support for updating data volum
 
     
 
-- Click on the name of the data volume declaration, enter the details page of the data volume declaration, select `Update` in the upper right corner of the page to update through the form, select `Edit YAML` to update through YAML.
+- Click the name of the data volume declaration, enter the details page of the data volume declaration, select `Update` in the upper right corner of the page to update through the form, select `Edit YAML` to update through YAML.
 
     
 

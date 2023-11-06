@@ -35,7 +35,7 @@ For integrated repositories, images appear on the list. You can manually scan im
     - Not Supported: This image does not support scanning.
     - Queued: The scan task is scheduled but not yet run.
     - Scanning: The scanning task is in progress, and a progress bar is displayed.
-    - View log: The scan task failed to complete. Click on `View Logs` to view the related logs.
+    - View log: The scan task failed to complete. Click `View Logs` to view the related logs.
     - Scan Complete: The scan task completed successfully.
 
 4. After the scan is complete, hover the cursor over the scale bar of the scan to view the scan details.

@@ -27,7 +27,7 @@ After accessing the PostgreSQL database, follow the steps below to create a Post
 
     <!--screenshot-->
 
-6. After confirming that the basic information, specification configuration, and service settings are correct, click `Confirm`.
+6. After confirming that the basic information, specification configuration, and service settings are correct, click `OK`.
 
     <!--screenshot-->
 

@@ -16,6 +16,6 @@ There are also two ways to delete a gateway. To ensure that services are not aff
 
     <!--![]()screenshots-->
 
-- After entering into the overview page, click on the gateway name in the upper right corner of the ** `⋯` ** and select `Delete`.
+- After entering into the overview page, click the gateway name in the upper right corner of the ** `⋯` ** and select `Delete`.
 
     <!--![]()screenshots-->

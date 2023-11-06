@@ -114,7 +114,7 @@ Please plan your resources before deploying the platform.
 
 ## Add the kind cluster to the DCE cluster list
 
-1. Log in to the DCE management console, go to Container Management, click on the "Access Cluster "Add" button on the right side of the cluster list page to enter the cluster access page.
+1. Log in to the DCE management console, go to Container Management, click the "Access Cluster "Add" button on the right side of the cluster list page to enter the cluster access page.
 
 2. In the access configuration section, enter and edit the kubeconfig configuration of the kind cluster that was copied earlier. The following parameters need to be configured:
 

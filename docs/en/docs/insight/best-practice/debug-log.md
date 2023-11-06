@@ -6,7 +6,7 @@ After installing the `insight-agent` in the cluster, `Fluent Bit` in `insight-ag
 
     ![nav](../images/insight01.png)
 
-2. Click on the dashboard title `Overview`.
+2. Click the dashboard title `Overview`.
 
     ![dashboard](../images/insight02.png)
 

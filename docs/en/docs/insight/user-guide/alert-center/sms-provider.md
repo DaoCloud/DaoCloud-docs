@@ -10,7 +10,7 @@ Insight supports SMS notifications and currently sends alert messages using inte
 
     ![Notification Server](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/sms01.png)
 
-2. Click on `Add Notification Server`.
+2. Click `Add Notification Server`.
 
     - Configure Alibaba Cloud server.
 

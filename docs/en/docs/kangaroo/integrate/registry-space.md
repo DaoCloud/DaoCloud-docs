@@ -16,7 +16,7 @@ Prerequisite: An external Harbor registry has been created or integrated.
 
     ![Integrated Registry (Admin)](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/bind01.png)
 
-1. Click on a registry name.
+1. Click a registry name.
 
     ![click a name](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/bind02.png)
 

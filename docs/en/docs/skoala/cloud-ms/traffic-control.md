@@ -4,7 +4,7 @@ Service governance allows you to manage the east-west traffic of microservices i
 
 After [microservices](service.md) are imported, different east-west traffic policies can be set individually for each exposed port of the service.
 
-1. Click on the service name.
+1. Click the service name.
 
     <!--![](../images/cloudms-traffic01.png)-->
 

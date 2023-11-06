@@ -7,7 +7,7 @@ hide:
 
 You can create a multi-cloud deployment either from an [image](deployment.md) or a [YAML file](yaml.md). Therefore, you can also update it with these two methods.
 
-1. Click on `Multicloud Workloads` -> `Deployments` in the left navigation menu. Then, click on the `ⵈ` icon on the far right of the corresponding workload to display more options.
+1. Click `Multicloud Workloads` -> `Deployments` in the left navigation menu. Then, click the `ⵈ` icon on the far right of the corresponding workload to display more options.
 
     - Select `Edit YAML` to update the deployment using YAML.
     - Select `Update` to update the deployment using a form.

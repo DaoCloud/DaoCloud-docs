@@ -34,7 +34,7 @@ Prerequisite: The group already exists.
 
     ![button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/group03.png)
 
-3. Click `Confirm` to add permissions to the group. Automatically return to the group list, click a group to view the permissions granted to the group.
+3. Click `OK` to add permissions to the group. Automatically return to the group list, click a group to view the permissions granted to the group.
 
     ![view](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/group04.png)
 
@@ -48,7 +48,7 @@ Prerequisite: The group already exists.
 
     ![new user](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/group06.png)
 
-3. Click `Confirm` to finish adding users to the group.
+3. Click `OK` to finish adding users to the group.
 
 !!! note
 

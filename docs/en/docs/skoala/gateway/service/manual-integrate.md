@@ -8,7 +8,7 @@ You need to add the corresponding service source in Source management so that yo
 
 ## Access service
 
-1. In the `Gateway List` page click on the name of the target gateway, enter the gateway overview page, in the left navigation bar click `Add Service` -- > `Service List`.
+1. In the `Gateway List` page click the name of the target gateway, enter the gateway overview page, in the left navigation bar click `Add Service` -- > `Service List`.
 
     <!--![]()screenshots-->
 
@@ -22,7 +22,7 @@ You need to add the corresponding service source in Source management so that yo
 
         <!--![]()screenshots-->
 
-        For the cluster service access, can be in the `Container Management` -- > `Container Network` -- > `Services` click on the service name to view:
+        For the cluster service access, can be in the `Container Management` -- > `Container Network` -- > `Services` click the service name to view:
 
         <!--![]()screenshots-->
 
