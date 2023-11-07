@@ -2,6 +2,16 @@
 
 This page lists the Release Notes of Elasticsearch indexing service, so that you can understand the evolution path and feature changes of each version.
 
+### 2023-10-31
+
+#### v0.11.0
+
+##### Enhancements
+
+- **New Feature:** Added offline upgrade functionality.
+- **New Feature:** Added restart functionality for instances.
+- **Bug Fix:** Fixed cloudshell permissions issue.
+
 ## 2023-08-31
 
 ### v0.10.0

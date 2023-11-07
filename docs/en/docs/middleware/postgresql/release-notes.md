@@ -2,6 +2,18 @@
 
 This page lists the Release Notes of the PostgreSQL database, so that you can understand the evolution path and feature changes of each version.
 
+### 2023-10-31
+
+#### v0.6.0
+
+##### Enhancements
+
+- **New Feature:** Added offline upgrade functionality.
+- **New Feature:** Added restart functionality for instances.
+- **New Feature:** Added support for managing external instances.
+- **Bug Fix:** Fixed Pod list display to show Host IP.
+- **Bug Fix:** Fixed cloudshell permissions issue.
+
 ## 2023-08-31
 
 ### v0.5.0
