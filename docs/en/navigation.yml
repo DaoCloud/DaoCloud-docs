@@ -11,7 +11,8 @@ nav:
               - Use Cases: dce/scenario.md
               - Glossary: dce/terms.md
               - DaoCloud is a KCSP: dce/kcsp.md
-              - DCE 5.0 Enterprise Release Notes:
+              - Enterprise Release Notes:
+                  - 20231031 Release: dce/dce-rn/20231031.md
                   - 20230831 Release: dce/dce-rn/20230831.md
                   - 20230731 Release: dce/dce-rn/20230731.md
                   - 20230630 Release: dce/dce-rn/20230630.md
