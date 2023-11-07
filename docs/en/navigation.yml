@@ -780,56 +780,6 @@ nav:
                   - Custom Permissions: middleware/common/permissions.md
                   - Config Management: middleware/common/config.md
                   - Workload Antiaffinity: middleware/common/antiaffinity.md
-              - Elasticsearch:
-                  - Intro:
-                      - What is Elasticsearch: middleware/elasticsearch/intro/index.md
-                      - Features: middleware/elasticsearch/intro/features.md
-                      - Benefits: middleware/elasticsearch/intro/benefits.md
-                      - Use Cases: middleware/elasticsearch/intro/scenarios.md
-                      - Concepts: middleware/elasticsearch/intro/concepts.md
-                      - Offline Upgrade elasticsearch: middleware/elasticsearch/intro/offline-install.md
-                      - Release Notes: middleware/elasticsearch/release-notes.md
-                  - ES Cluster Capacity Planning: middleware/elasticsearch/user-guide/cluster-capacity-plan.md
-                  - Quick Start:
-                      - Create ES Instance: middleware/elasticsearch/user-guide/create.md
-                      - Update ES Instance: middleware/elasticsearch/user-guide/edit.md
-                      - Delete ES Instance: middleware/elasticsearch/user-guide/delete.md
-                      - Instance Overview: middleware/elasticsearch/user-guide/basic.md
-                      - Monitor Instance: middleware/elasticsearch/user-guide/monitor.md
-                      - View ES Logs: middleware/elasticsearch/user-guide/logs.md
-                  - Migrate ES across Nodes: middleware/elasticsearch/user-guide/migrate-es.md
-                  - ES Troubleshooting: middleware/elasticsearch/faq/common-question-es.md
-              - Kafka Message Queue:
-                  - Intro:
-                      - What is Kafka: middleware/kafka/intro/index.md
-                      - Use Cases: middleware/kafka/intro/scenarios.md
-                      - Offline Upgrade kafka: middleware/kafka/intro/offline-install.md
-                      - Concepts: middleware/kafka/intro/concepts.md
-                      - Release Notes: middleware/kafka/release-notes.md
-                  - Quick Start:
-                      - Create Kafka Instance: middleware/kafka/user-guide/create.md
-                      - Update Kafka Instance: middleware/kafka/user-guide/update.md
-                      - Delete Kafka Instance: middleware/kafka/user-guide/delete.md
-                      - View Instance Details: middleware/kafka/user-guide/view.md
-                      - Monitor Instance: middleware/kafka/user-guide/insight.md
-                      - Config Parameters: middleware/kafka/user-guide/config.md
-                      - View Kafka Logs: middleware/kafka/user-guide/logs.md
-              - MinIO Object Storage:
-                  - Intro:
-                      - What is MinIO: middleware/minio/intro/index.md
-                      - Use Cases: middleware/minio/intro/scenarios.md
-                      - Offline Upgrade MinIO: middleware/minio/intro/offline-install.md
-                      - Concepts: middleware/minio/intro/concepts.md
-                      - Release Notes: middleware/minio/release-notes.md
-                  - Quick Start:
-                      - Create MinIO Instance: middleware/minio/user-guide/create.md
-                      - Update MinIO Instance: middleware/minio/user-guide/update.md
-                      - Delete MinIO Instance: middleware/minio/user-guide/delete.md
-                      - View MinIO Logs: middleware/minio/user-guide/logs.md
-                      - View Instance Details: middleware/minio/user-guide/view.md
-                      - Monitor Instance: middleware/minio/user-guide/insight.md
-                      - Config Parameters: middleware/minio/user-guide/config.md
-                      - MinIO Identity Management: middleware/minio/user-guide/user-management.md
               - MySQL Database:
                   - Intro:
                       - What is MySQL: middleware/mysql/intro/index.md
@@ -849,24 +799,6 @@ nav:
                       - MySQL Operator: middleware/mysql/faq/faq-operator.md
                       - MySQL Master/Slave Issues: middleware/mysql/faq/faq-master-slave.md
                       - Other MySQL Issues: middleware/mysql/faq/faq-others.md
-              - RabbitMQ Message Queue:
-                  - Intro:
-                      - What is RabbitMQ: middleware/rabbitmq/intro/index.md
-                      - Features: middleware/rabbitmq/intro/features.md
-                      - Benefits: middleware/rabbitmq/intro/benefits.md
-                      - Use Cases: middleware/rabbitmq/intro/scenarios.md
-                      - Offline Upgrade RabbitMQ: middleware/rabbitmq/intro/offline-install.md
-                      - Concepts: middleware/rabbitmq/intro/concepts.md
-                      - Release Notes: middleware/rabbitmq/release-notes.md
-                  - Quick Start:
-                      - Create RabbitMQ Instance: middleware/rabbitmq/user-guide/create.md
-                      - Update RabbitMQ Instance: middleware/rabbitmq/user-guide/update.md
-                      - Delete RabbitMQ Instance: middleware/rabbitmq/user-guide/delete.md
-                      - View Instance Detail: middleware/rabbitmq/user-guide/view.md
-                      - Migrate Data: middleware/rabbitmq/user-guide/migrate.md
-                      - Monitor Instance: middleware/rabbitmq/user-guide/insight.md
-                      - View RabbitMQ Logs: middleware/rabbitmq/user-guide/logs.md
-                  - Add Custom Addons to RabbitMQ: middleware/rabbitmq/faq/add-plugin.md
               - Redis Cache Service:
                   - Intro:
                       - What is Redis: middleware/redis/intro/index.md
@@ -906,6 +838,78 @@ nav:
                       - Update MongoDB: middleware/mongodb/user-guide/update.md
                       - Delete MongoDB: middleware/mongodb/user-guide/delete.md
                       - View MongDB Logs: middleware/mongodb/user-guide/logs.md
+              - Elasticsearch:
+                  - Intro:
+                      - What is Elasticsearch: middleware/elasticsearch/intro/index.md
+                      - Features: middleware/elasticsearch/intro/features.md
+                      - Benefits: middleware/elasticsearch/intro/benefits.md
+                      - Use Cases: middleware/elasticsearch/intro/scenarios.md
+                      - Concepts: middleware/elasticsearch/intro/concepts.md
+                      - Offline Upgrade elasticsearch: middleware/elasticsearch/intro/offline-install.md
+                      - Release Notes: middleware/elasticsearch/release-notes.md
+                  - ES Cluster Capacity Planning: middleware/elasticsearch/user-guide/cluster-capacity-plan.md
+                  - Quick Start:
+                      - Create ES Instance: middleware/elasticsearch/user-guide/create.md
+                      - Update ES Instance: middleware/elasticsearch/user-guide/edit.md
+                      - Delete ES Instance: middleware/elasticsearch/user-guide/delete.md
+                      - Instance Overview: middleware/elasticsearch/user-guide/basic.md
+                      - Monitor Instance: middleware/elasticsearch/user-guide/monitor.md
+                      - View ES Logs: middleware/elasticsearch/user-guide/logs.md
+                  - Migrate ES across Nodes: middleware/elasticsearch/user-guide/migrate-es.md
+                  - ES Troubleshooting: middleware/elasticsearch/faq/common-question-es.md
+              - Kafka Message Queue:
+                  - Intro:
+                      - What is Kafka: middleware/kafka/intro/index.md
+                      - Use Cases: middleware/kafka/intro/scenarios.md
+                      - Offline Upgrade kafka: middleware/kafka/intro/offline-install.md
+                      - Concepts: middleware/kafka/intro/concepts.md
+                      - Release Notes: middleware/kafka/release-notes.md
+                  - Quick Start:
+                      - Create Kafka Instance: middleware/kafka/user-guide/create.md
+                      - Update Kafka Instance: middleware/kafka/user-guide/update.md
+                      - Delete Kafka Instance: middleware/kafka/user-guide/delete.md
+                      - View Instance Details: middleware/kafka/user-guide/view.md
+                      - Monitor Instance: middleware/kafka/user-guide/insight.md
+                      - Config Parameters: middleware/kafka/user-guide/config.md
+                      - View Kafka Logs: middleware/kafka/user-guide/logs.md
+              - RocketMQ Message Queue:
+                  - Intro:
+                      - Offline Upgrade RocketMQ: middleware/rocketmq/intro/offline-install.md
+                      - Release Notes: middleware/rocketmq/release-notes.md
+              - RabbitMQ Message Queue:
+                  - Intro:
+                      - What is RabbitMQ: middleware/rabbitmq/intro/index.md
+                      - Features: middleware/rabbitmq/intro/features.md
+                      - Benefits: middleware/rabbitmq/intro/benefits.md
+                      - Use Cases: middleware/rabbitmq/intro/scenarios.md
+                      - Offline Upgrade RabbitMQ: middleware/rabbitmq/intro/offline-install.md
+                      - Concepts: middleware/rabbitmq/intro/concepts.md
+                      - Release Notes: middleware/rabbitmq/release-notes.md
+                  - Quick Start:
+                      - Create RabbitMQ Instance: middleware/rabbitmq/user-guide/create.md
+                      - Update RabbitMQ Instance: middleware/rabbitmq/user-guide/update.md
+                      - Delete RabbitMQ Instance: middleware/rabbitmq/user-guide/delete.md
+                      - View Instance Detail: middleware/rabbitmq/user-guide/view.md
+                      - Migrate Data: middleware/rabbitmq/user-guide/migrate.md
+                      - Monitor Instance: middleware/rabbitmq/user-guide/insight.md
+                      - View RabbitMQ Logs: middleware/rabbitmq/user-guide/logs.md
+                  - Add Custom Addons to RabbitMQ: middleware/rabbitmq/faq/add-plugin.md
+              - MinIO Object Storage:
+                  - Intro:
+                      - What is MinIO: middleware/minio/intro/index.md
+                      - Use Cases: middleware/minio/intro/scenarios.md
+                      - Offline Upgrade MinIO: middleware/minio/intro/offline-install.md
+                      - Concepts: middleware/minio/intro/concepts.md
+                      - Release Notes: middleware/minio/release-notes.md
+                  - Quick Start:
+                      - Create MinIO Instance: middleware/minio/user-guide/create.md
+                      - Update MinIO Instance: middleware/minio/user-guide/update.md
+                      - Delete MinIO Instance: middleware/minio/user-guide/delete.md
+                      - View MinIO Logs: middleware/minio/user-guide/logs.md
+                      - View Instance Details: middleware/minio/user-guide/view.md
+                      - Monitor Instance: middleware/minio/user-guide/insight.md
+                      - Config Parameters: middleware/minio/user-guide/config.md
+                      - MinIO Identity Management: middleware/minio/user-guide/user-management.md
       - Edge Computing:
           - Cloud Edge Collaboration:
               - Intro:

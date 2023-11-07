@@ -2,6 +2,31 @@
 
 This page lists the Release Notes of MinIO object storage, so that you can understand the evolution path and feature changes of each version.
 
+### 2023-10-31
+
+#### v0.9.0
+
+##### Enhancements
+
+- **New Feature:** Added offline upgrade functionality.
+- **New Feature:** Added restart functionality for instances.
+- **New Feature:** Added PVC resizing.
+- **New Feature:** Added support for managing external instances.
+- **Bug Fix:** Fixed Pod list display to show Host IP.
+- **Bug Fix:** Fixed cloudshell permissions issue.
+
+### 2023-09-30
+
+#### v0.8.1
+
+##### Enhancements
+
+- **Optimization:** Added relok8s file.
+
+#### Upgrade
+
+- **Upgrade:** Upgraded Operator image to v5.0.6.
+
 ## 2023-08-31
 
 ### v0.8.0
