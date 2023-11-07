@@ -4,11 +4,11 @@
 
 ## 新建配置
 
-1. 进入`微服务引擎` -> `微服务治理中心` -> `托管注册中心`模块，点击目标注册中心的名称。
+1. 进入`微服务引擎` -> `传统微服务` -> `注册配置中心`模块，点击目标注册中心的名称。
 
     ![点击注册中心名称](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/imgs/config01.png)
 
-2. 在左侧导航栏点击`微服务配置列表`，然后在右上角点击`创建`。
+2. 在左侧导航栏点击`配置管理`，然后在右上角点击`创建`。
 
     ![创建第一步](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/imgs/config02.png)
 
@@ -51,7 +51,7 @@
 
     ![点击注册中心名称](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/imgs/config01.png)
 
-2. 在左侧导航栏点击`微服务配置列表`，点击目标配置的 Data ID。
+2. 在左侧导航栏点击`配置管理`，点击目标配置的 Data ID。
 
     ![点击名称](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/imgs/config05.png)
 
@@ -66,11 +66,11 @@
 
 微服务配置列表会记录配置文件的历史版本，支持一键回滚到特定的历史版本，便于用户在改错配置时快速恢复，降低微服务系统中的配置可用性风险。回滚时支持版本差异对比，便于对比当前版本和目标回滚版本的差异，校验修改内容，降低改错带来的风险。
 
-1. 进入`微服务引擎` -> `微服务治理中心` -> `托管注册中心`模块，点击目标注册中心的名称。
+1. 进入`微服务引擎` -> `传统微服务` -> `注册配置中心`模块，点击目标注册中心的名称。
 
     ![点击注册中心名称](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/imgs/config01.png)
 
-2. 在左侧导航栏点击`微服务配置列表`，点击目标配置的 Data ID。
+2. 在左侧导航栏点击`配置管理`，点击目标配置的 Data ID。
 
     ![点击名称](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/imgs/config05.png)
 
@@ -84,10 +84,10 @@
 
 ## 更新/删除配置
 
-1. 进入`微服务引擎` -> `微服务治理中心` -> `托管注册中心`模块，点击目标注册中心的名称。
+1. 进入`微服务引擎` -> `传统微服务` -> `注册配置中心`模块，点击目标注册中心的名称。
 
     ![点击注册中心名称](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/imgs/config01.png)
 
-2. 在左侧导航栏点击`微服务配置列表`，在目标配置右侧点击 `ⵗ` 按钮根据需要选择更新或删除。
+2. 在左侧导航栏点击`配置管理`，在目标配置右侧点击 `ⵗ` 按钮根据需要选择更新或删除。
 
     ![更新/删除](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/imgs/config07.png)

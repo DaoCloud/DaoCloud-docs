@@ -12,7 +12,7 @@ microservices can be built system more quickly and efficiently.
 
 Microservice Governance provides the capabilities to create Nacos registries for managing microservice namespaces,
 governing east-west traffic, setting configuration files, and monitoring invocation traces. It also integrates
-three traditional microservice registries: Eureka, Zookeeper, and Nacos. Additionally, Microservice Governance
+four traditional microservice registries: Eureka, Zookeeper, Nacos, and Consul. Additionally, Microservice Governance
 integrates with two cloud native microservice registries, Kubernetes and Service Mesh.
 
 Microservice Governance leverages Sentinel and Service Mesh to address the distinct requirements governing
@@ -30,7 +30,7 @@ It facilitates the process of "Go to Cloud" by making it easier to change tradit
 With Microservice Governance, you can:
 
 - Create Nacos registries to manage microservice namespaces, govern east-west traffic, set configuration files, and monitor invocation traces.
-- Integrate three traditional microservice registries: Eureka, Zookeeper, and Nacos.
+- Integrate four traditional microservice registries: Eureka, Zookeeper, Nacos, and Consul.
 - Integrate two cloud native microservice registries: Kubernetes and Service Mesh.
 
 ## Traffic Governance

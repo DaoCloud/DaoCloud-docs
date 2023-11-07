@@ -5,13 +5,13 @@ hide:
 
 # 接入注册中心
 
-注册中心支持接入 [Nacos 注册中心](../../reference/registry.md)、[Eureka 注册中心](../../reference/registry.md)、[Zookeeper 注册中心](../../reference/registry.md)、[Kubernetes 注册中心](../../reference/registry.md)、[Mesh 注册中心](../../reference/registry.md)。
+注册中心支持接入 [Nacos 注册中心](../../reference/registry.md)、[Eureka 注册中心](../../reference/registry.md)、[Zookeeper 注册中心](../../reference/registry.md)、Consul 注册中心、[Kubernetes 注册中心](../../reference/registry.md)、[Mesh 注册中心](../../reference/registry.md)。
 
 相对于托管型注册中心而言，接入型注册中心只支持一些基础操作，例如查看基本信息、监控信息等。如需体验更高级更全面的管理操作，需要创建[托管注册中心](../hosted/create-registry.md)。
 
 接入注册中心的步骤如下：
 
-1. 在左侧导航栏点击`微服务治理中心`-->`接入注册中心`，然后在页面右上角点击`接入注册中心`。
+1. 在左侧导航栏点击`传统微服务`-->`接入注册中心`，然后在页面右上角点击`接入注册中心`。
 
     ![进入接入注册中心页面](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/integrated/imgs/integrate01.png)
 
@@ -27,6 +27,6 @@ hide:
 
             ![接入 Mesh/Kubernetes](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/integrated/imgs/integrate03.png)
 
-    - Nacos/Zookeeper/Eureka 注册中心：填写注册中心的名称和地址，点击`确认`。
+    - Nacos/Zookeeper/Eureka/Consul 注册中心：填写注册中心的名称和地址，点击`确认`。
 
         ![接入 Nacos/Zookeeper/Eureka](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/integrated/imgs/integrate02.png)
