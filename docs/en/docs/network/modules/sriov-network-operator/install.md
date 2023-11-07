@@ -14,7 +14,7 @@ Ensure that your cluster is successfully connected to the `Container Management`
 
 2. In the left navigation pane, select `Helm App` -> `Helm Charts` and find the `sriov-network-operator` chart.
 
-3. Select the desired version in the `Version Selection` and click on `Install`.
+3. Select the desired version in the `Version Selection` and click `Install`.
 
 4. On the installation page, fill in the required installation parameters.
 

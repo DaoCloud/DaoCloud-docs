@@ -7,7 +7,7 @@ hide:
 
 This article introduces the basic information of an Elasticsearch instance.
 
-1. On the homepage of the `Elasticsearch Search Service`, click on the instance name.
+1. On the homepage of the `Elasticsearch Search Service`, click the instance name.
 
 
 2. View the overview information of the instance, including:

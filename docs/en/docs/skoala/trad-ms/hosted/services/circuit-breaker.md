@@ -9,15 +9,15 @@ Circuit breaking rules can monitor the response time or exception ratio of inter
 
 Follow the steps below to create a circuit breaking rule:
 
-1. Click on the name of the target managed registry, then click on `Microservices` in the left sidebar and click on the `Governance` option on the right side.
+1. Click the name of the target managed registry, then click `Microservices` in the left sidebar and click the `Governance` option on the right side.
 
     > Note that the microservice you want to govern should have the "Can be governed" status set to "Yes" in order to proceed with the following steps.
 
 
-2. Select `Circuit Breaking Rules`, then click on `Create Circuit Breaking Rule` on the right side.
+2. Select `Circuit Breaking Rules`, then click `Create Circuit Breaking Rule` on the right side.
 
 
-3. Fill in the rule configuration based on the instructions below and click `Confirm` in the bottom right corner.
+3. Fill in the rule configuration based on the instructions below and click `OK` in the bottom right corner.
 
     - Resource Name: Specify the resource for which you want to control the traffic, such as a specific API endpoint, function, or variable within the current service.
     - Slow Call Ratio: If the ratio of slow calls within a unit statistical period exceeds the set threshold, the resource will be circuit broken for the remaining time within the circuit breaker's duration.
@@ -30,4 +30,4 @@ Follow the steps below to create a circuit breaking rule:
     - Statistical Period: The length of the statistical time window, in milliseconds. Valid values range from 1 second to 120 minutes.
 
 
-4. After creating the rule, you can view it in the list of circuit breaking rules. Click on the more options button on the right side to update or delete the rule.
+4. After creating the rule, you can view it in the list of circuit breaking rules. Click the more options button on the right side to update or delete the rule.

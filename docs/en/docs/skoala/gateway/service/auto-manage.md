@@ -6,7 +6,7 @@ After [created a gateway](../create-gateway.md) succeeds, the services in the se
 
 ## View automatic managed services
 
-1. In the `Gateway List` page click on the name of the target gateway, enter the gateway overview page, in the left navigation bar click `Add Service` -- > `Service List`.
+1. In the `Gateway List` page click the name of the target gateway, enter the gateway overview page, in the left navigation bar click `Add Service` -- > `Service List`.
 
     <!--![]()screenshots-->
 
@@ -29,7 +29,7 @@ After [created a gateway](../create-gateway.md) succeeds, the services in the se
 
 ## Viewing service details
 
-1. Locate the target service on the `Service List` -> `Auto Add` page and click on the service name.
+1. Locate the target service on the `Service List` -> `Auto Add` page and click the service name.
 
     <!--![]()screenshots-->
 

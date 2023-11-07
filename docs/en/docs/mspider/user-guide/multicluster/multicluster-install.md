@@ -126,7 +126,7 @@ Create a mesh using the service mesh and add the planned clusters to the corresp
 
 ### Create a Mesh
 
-First, go to the mesh management page and click on `Create Mesh`:
+First, go to the mesh management page and click `Create Mesh`:
 
 ![Create Mesh](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-mesh1.png)
 
@@ -350,7 +350,7 @@ The creation process is as follows:
 1. Access the corresponding work cluster in the container management platform.
 2. Search for `IstioOperator` in the `Custom Resources` module.
 3. Select the `istio-system` namespace.
-4. Click on `Create YAML`.
+4. Click `Create YAML`.
 
 ![Create Gateway Instance](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-ew.png)
 

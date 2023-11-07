@@ -32,7 +32,7 @@ Before configuring the built-in index auto scaling policy for the workload, the 
 
 Refer to the following steps to configure the built-in index auto scaling policy for the workload.
 
-1. Click `Cluster List` on the left navigation bar to enter the cluster list page. Click on a cluster name to enter the `Cluster Details` page.
+1. Click `Cluster List` on the left navigation bar to enter the cluster list page. Click a cluster name to enter the `Cluster Details` page.
 
      
 
@@ -85,7 +85,7 @@ Before configuring a custom index auto scaling policy for a workload, the follow
 
 Refer to the following steps to configure an index auto-scaling policy for a workload.
 
-1. Click `Cluster List` on the left navigation bar to enter the cluster list page. Click on a cluster name to enter the `Cluster Details` page.
+1. Click `Cluster List` on the left navigation bar to enter the cluster list page. Click a cluster name to enter the `Cluster Details` page.
 
      
 

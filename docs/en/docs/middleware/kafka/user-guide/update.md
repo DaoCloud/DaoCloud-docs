@@ -19,7 +19,7 @@ If you want to update or modify Kafka's resource configuration, you can follow t
 
     <!--screenshot-->
 
-4. After modifying the service settings, click `Confirm`.
+4. After modifying the service settings, click `OK`.
 
     <!--screenshot-->
 

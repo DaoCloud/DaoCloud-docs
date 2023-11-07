@@ -4,7 +4,7 @@ This page will introduce how to integrate Harbor in the pipeline and implement i
 
 ## Enable automatic scanning of images in Harbor
 
-1. Log in to Harbor and click on a specific project.
+1. Log in to Harbor and click a specific project.
 
      <!--![]()screenshots-->
 

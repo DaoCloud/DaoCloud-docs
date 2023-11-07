@@ -4,7 +4,7 @@ The Microservice engine provides a full range of Grafana monitoring capabilities
 
 To view component monitoring, perform the following steps:
 
-1. Go to the Microservices Engine module and click on the name of the target registry.
+1. Go to the Microservices Engine module and click the name of the target registry.
 
     <!--![]()screenshots-->
 

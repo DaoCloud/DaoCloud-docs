@@ -13,12 +13,12 @@ This section describes how to use Days (Iluvatar) virtual GPU on the DCE 5.0 pla
 
 ### Configuration via User Interface
 
-1. Check if the GPU card in the cluster has been detected. Click on `Cluster` -> `Cluster Settings` -> `Addon Plugins`, and check if the corresponding GPU type has been automatically enabled and detected.
+1. Check if the GPU card in the cluster has been detected. Click `Cluster` -> `Cluster Settings` -> `Addon Plugins`, and check if the corresponding GPU type has been automatically enabled and detected.
    Currently, the cluster will automatically enable `GPU` and set the GPU type as `Iluvatar`.
 
    
 
-2. Deploy a workload. Click on `Cluster` -> `Workloads` and deploy a workload using the image. After selecting the type as `(Iluvatar)`, configure the GPU resources used by the application:
+2. Deploy a workload. Click `Cluster` -> `Workloads` and deploy a workload using the image. After selecting the type as `(Iluvatar)`, configure the GPU resources used by the application:
    
    **Physical Card Count (iluvatar.ai/vcuda-core):** Indicates the number of physical cards that the current pod needs to mount. The input value must be an integer and **less than or equal to** the number of cards on the host machine.
    

@@ -44,7 +44,7 @@ default 100 lines of context for that log. You can switch the `Display Rows` opt
 
 ## Export log
 
-Click on the download button located in the upper right corner of the list.
+Click the download button located in the upper right corner of the list.
 
 - You can configure the exported log fields. The available fields may vary depending on the log type,
   with the `Log Content` field being mandatory.

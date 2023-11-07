@@ -1,6 +1,6 @@
 # 在阿里云上运行 Cilium
 
-本文将介绍如何在阿里云自建 Kubernetes 集群上使用 Cilium 作为集群 CNI，您能够阿里云上体验 Cilium 的各种能力，包括网络加速、网络策略等。
+本文将介绍如何在阿里云自建 Kubernetes 集群上使用 Cilium 作为集群 CNI，您能够在阿里云上体验 Cilium 的各种能力，包括网络加速、网络策略等。
 
 > 注意: 使用 Cilium 有内核要求，请检查您的 ECS 实例是否满足 Cilium 最低内核版本要求
 
@@ -10,7 +10,7 @@
 
 ## 安装 Cilium
 
-使用 cilium 二进制安装，首先参考[官方文档](https://docs.cilium.io/en/stable/gettingstarted/k8s-install-default/) 安装 cilium 二进制:
+使用 Cilium 二进制安装，首先参考[官方文档](https://docs.cilium.io/en/stable/gettingstarted/k8s-install-default/) 安装 Cilium 二进制:
 
 ```shell
 CILIUM_CLI_VERSION=$(curl -s https://raw.githubusercontent.com/cilium/cilium-cli/main/stable.txt)
@@ -27,7 +27,7 @@ rm cilium-linux-${CLI_ARCH}.tar.gz{,.sha256sum}
 ### Tunnel 模式
 
 Cilium tunnel 模式支持 Vxlan(默认) 和 Geneve 协议，这类似 Calico 的隧道模式。在这种模式下，Cilium 不关系底层网络如何实现，也不需要跟它们对接。通过 Vxlan 等协议将 Pod 网络虚拟化一个二层覆盖网络，然后接入到主机网络，所以
-在这种模式下，Cilium 不依赖与类似 CCM 等插件发布 Pod 的路由。所以在这个模式下，您不需要安装 CCM。使用下面的命令安装:
+在这种模式下，Cilium 不依赖类似 CCM 等插件发布 Pod 的路由。所以在这个模式下，您不需要安装 CCM。使用下面的命令安装:
 
 ```shell
 cilium install 
@@ -89,7 +89,7 @@ cilium install --set ipam.mode=kubernetes --set routingMode=native --set ipv4Nat
 
 > ipam.mode 需要调整为 kubernetes，使 Pod 的 IP 从各自节点的 podCIDR 中分配
 > routingMode 设置为 native 模式，而不是默认的隧道模式
-> ipv4NativeRoutingCIDR 需要设置需要路由发布的子网，这里填集群的 ClusterCIDR 即可(你可以通过查看 kubeadm-config configmap 找到)
+> ipv4NativeRoutingCIDR 需要设置为需要路由发布的子网，这里填集群的 ClusterCIDR 即可(你可以通过查看 kubeadm-config configmap 找到)
 
 等待 Cilium Running，创建测试应用，验证连通性:
 

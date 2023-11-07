@@ -14,15 +14,15 @@ Hotspot refers to frequently accessed data. Hotspot rules are used to control th
 
 Follow the steps below to create a hotspot rule:
 
-1. Click on the name of the target managed registry, then click on `Microservices` in the left sidebar and click on the `Governance` option on the right side.
+1. Click the name of the target managed registry, then click `Microservices` in the left sidebar and click the `Governance` option on the right side.
 
     > Note that the microservice you want to govern should have the "Can be governed" status set to "Yes" in order to proceed with the following steps.
 
 
-2. Select `Hotspot Rules`, then click on `Create Hotspot Rule` on the right side.
+2. Select `Hotspot Rules`, then click `Create Hotspot Rule` on the right side.
 
 
-3. Fill in the rule configuration based on the instructions below and click `Confirm` in the bottom right corner.
+3. Fill in the rule configuration based on the instructions below and click `OK` in the bottom right corner.
 
     - Resource Name: Specify the name of the resource that needs traffic control, such as an API interface, function, variable, etc., within the current service.
     - Parameter Index: The index position of the hotspot parameter, corresponding to the parameter index position in `WithArgs(args ...interface{})`, starting from 0.
@@ -32,4 +32,4 @@ Follow the steps below to create a hotspot rule:
     - Parameter Exception: Set the threshold for a specific parameter value separately, which is not subject to the above "Single Machine Threshold" limitation.
 
 
-4. After creating the rule, you can view it in the list of hotspot rules. Click on the more options button on the right side to update or delete the rule.
+4. After creating the rule, you can view it in the list of hotspot rules. Click the more options button on the right side to update or delete the rule.

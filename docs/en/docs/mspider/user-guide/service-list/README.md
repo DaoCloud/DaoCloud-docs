@@ -30,7 +30,7 @@ The service list also indicates services from other microservice registries.
 
 ![other microservice registries](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/servicelist02.png)
 
-You can click on a service name to enter the details page and view specific information such as service addresses and ports in each cluster. You can also modify the communication protocol in the `Address` tab.
+You can click a service name to enter the details page and view specific information such as service addresses and ports in each cluster. You can also modify the communication protocol in the `Address` tab.
 
 ![Address](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/servicelist03.png)
 
@@ -38,7 +38,7 @@ Pay special attention to the `Diagnostic Configuration` column in the service li
 
 ![Abnormal Prompt](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/servicelist04.png)
 
-On the right side of the service list, click on `⋮` and select the corresponding menu item to navigate to traffic management and security governance.
+On the right side of the service list, click `⋮` and select the corresponding menu item to navigate to traffic management and security governance.
 
 ![Menu Items](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/servicelist05.png)
 

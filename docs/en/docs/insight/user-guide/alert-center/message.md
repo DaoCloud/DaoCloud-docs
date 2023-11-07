@@ -4,7 +4,7 @@ On the `Notification Settings` page, you can configure how to send messages to u
 
 ## Email Group
 
-1. After entering `Insight`, click `Alert Center` -> `Notification Settings` in the left navigation bar. By default, the email notification object is selected. Click on `Add email group` and add one or more email addresses.
+1. After entering `Insight`, click `Alert Center` -> `Notification Settings` in the left navigation bar. By default, the email notification object is selected. Click `Add email group` and add one or more email addresses.
 
 2. Multiple email addresses can be added.
 

@@ -31,7 +31,7 @@ Generally, for private registry spaces, binding to a workspace is helpful to all
 
     ![Binding](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/bind04.png)
 
-    To unbind a workspace, simply click on the `x` in the selected workspaces list.
+    To unbind a workspace, simply click the `x` in the selected workspaces list.
 
 1. The prompt message "Bound/Unbound workspace successfully" will be displayed,
    and the `Workspace` column will display the bound workspace when you move the cursor over it.

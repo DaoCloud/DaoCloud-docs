@@ -10,7 +10,7 @@ Refer to [video tutorials](../../videos/use-cases.md)。
 
 Here are the specific steps:
 
-1. Click on the name of the multi-cloud instance, then click on `Multicloud Workloads` on the left side and select `Convert Now` for the new feature.
+1. Click the name of the multi-cloud instance, then click `Multicloud Workloads` on the left side and select `Convert Now` for the new feature.
 
     ![Workloads](../images/promote01.png)
 

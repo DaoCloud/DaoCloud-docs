@@ -44,7 +44,7 @@ The following explains the steps to create a Hosted Mesh/Dedicated Mesh:
 
     ![Sidecar Settings](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/create-mesh05.png)
 
-6. You will automatically return to the Mesh List page, and the newly created mesh will be listed at the top. After some time, the status will change from `Creating` to `Running`. Click on the `...` on the right to perform operations such as editing mesh basic information, adding clusters, accessing the console, etc.
+6. You will automatically return to the Mesh List page, and the newly created mesh will be listed at the top. After some time, the status will change from `Creating` to `Running`. Click the `...` on the right to perform operations such as editing mesh basic information, adding clusters, accessing the console, etc.
 
 !!! info
 

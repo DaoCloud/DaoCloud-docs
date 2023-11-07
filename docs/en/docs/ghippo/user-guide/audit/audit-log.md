@@ -21,7 +21,7 @@ The audit log feature has the following characteristics:
 
     ![Log in to DCE 5.0](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/lang00.png)
 
-2. At the bottom of the left navigation bar, click on `Global Management` -> `Audit Logs`.
+2. At the bottom of the left navigation bar, click `Global Management` -> `Audit Logs`.
 
     ![Audit Logs](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/audit01.png)
 

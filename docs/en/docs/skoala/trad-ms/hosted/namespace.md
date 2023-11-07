@@ -9,7 +9,7 @@ Microservice namespaces can be used to isolate services, configuration, and othe
 
 ## Create the microservice namespace
 
-1. Enter `Microservice Engine` -- > `Microservice Governance` -- > `Managed Registry` module, click on the name of the target registry.
+1. Enter `Microservice Engine` -- > `Microservice Governance` -- > `Managed Registry` module, click the name of the target registry.
 
     <!--![]()screenshots-->
 

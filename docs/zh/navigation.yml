@@ -12,6 +12,7 @@ nav:
               - 云原生词汇: dce/terms.md
               - K8s 认证服务商: dce/kcsp.md
               - DCE 5.0 Release Notes:
+                  - 20231031 版本发布: dce/dce-rn/20231031.md
                   - 20230831 版本发布: dce/dce-rn/20230831.md
                   - 20230731 版本发布: dce/dce-rn/20230731.md
                   - 20230630 版本发布: dce/dce-rn/20230630.md
@@ -439,6 +440,7 @@ nav:
                   - 使用说明: network/modules/aliyun-terway/usage.md
                   - 阿里云运行 Calico: network/modules/aliyun-terway/aliyun-calico.md
                   - 阿里云运行 Cilium: network/modules/aliyun-terway/aliyun-cilium.md
+                  - 常见问题: network/modules/aliyun-terway/Q_A.md
           - 云原生存储:
               - 介绍:
                   - 什么是云原生存储: storage/index.md
@@ -803,56 +805,6 @@ nav:
                   - 自定义角色权限说明: middleware/common/permissions.md
                   - 配置管理: middleware/common/config.md
                   - 工作负载反亲和性: middleware/common/antiaffinity.md
-              - Elasticsearch 搜索服务:
-                  - 介绍:
-                      - 什么是 Elasticsearch: middleware/elasticsearch/intro/index.md
-                      - 功能说明: middleware/elasticsearch/intro/features.md
-                      - 竞争优势: middleware/elasticsearch/intro/benefits.md
-                      - 适用场景: middleware/elasticsearch/intro/scenarios.md
-                      - 基本概念: middleware/elasticsearch/intro/concepts.md
-                      - 离线升级 elasticsearch: middleware/elasticsearch/intro/offline-install.md
-                      - Release Notes: middleware/elasticsearch/release-notes.md
-                  - ES 集群容量规划: middleware/elasticsearch/user-guide/cluster-capacity-plan.md
-                  - 快速入门:
-                      - 创建 ES 实例: middleware/elasticsearch/user-guide/create.md
-                      - 更新 ES 实例: middleware/elasticsearch/user-guide/edit.md
-                      - 删除 ES 实例: middleware/elasticsearch/user-guide/delete.md
-                      - 实例概览: middleware/elasticsearch/user-guide/basic.md
-                      - 实例监控: middleware/elasticsearch/user-guide/monitor.md
-                      - 查看 ES 日志: middleware/elasticsearch/user-guide/logs.md
-                  - 跨节点迁移 ES: middleware/elasticsearch/user-guide/migrate-es.md
-                  - ES 故障排查: middleware/elasticsearch/faq/common-question-es.md
-              - Kafka 消息队列:
-                  - 介绍:
-                      - 什么是 Kafka: middleware/kafka/intro/index.md
-                      - 适用场景: middleware/kafka/intro/scenarios.md
-                      - 离线升级 kafka: middleware/kafka/intro/offline-install.md
-                      - 常见术语: middleware/kafka/intro/concepts.md
-                      - Release Notes: middleware/kafka/release-notes.md
-                  - 快速入门:
-                      - 创建 Kafka 实例: middleware/kafka/user-guide/create.md
-                      - 更新 Kafka 实例: middleware/kafka/user-guide/update.md
-                      - 删除 Kafka 实例: middleware/kafka/user-guide/delete.md
-                      - 查看实例详情: middleware/kafka/user-guide/view.md
-                      - 实例监控: middleware/kafka/user-guide/insight.md
-                      - 配置参数: middleware/kafka/user-guide/config.md
-                      - 查看 Kafka 日志: middleware/kafka/user-guide/logs.md
-              - MinIO 对象存储:
-                  - 介绍:
-                      - 什么是 MinIO: middleware/minio/intro/index.md
-                      - 适用场景: middleware/minio/intro/scenarios.md
-                      - 离线升级 MinIO: middleware/minio/intro/offline-install.md
-                      - 常见术语: middleware/minio/intro/concepts.md
-                      - Release Notes: middleware/minio/release-notes.md
-                  - 快速入门:
-                      - 创建 MinIO 实例: middleware/minio/user-guide/create.md
-                      - 更新 MinIO 实例: middleware/minio/user-guide/update.md
-                      - 删除 MinIO 实例: middleware/minio/user-guide/delete.md
-                      - 查看 MinIO 日志: middleware/minio/user-guide/logs.md
-                      - 查看实例详情: middleware/minio/user-guide/view.md
-                      - 实例监控: middleware/minio/user-guide/insight.md
-                      - 配置参数: middleware/minio/user-guide/config.md
-                      - MinIO 的身份管理: middleware/minio/user-guide/user-management.md
               - MySQL 数据库:
                   - 介绍:
                       - 什么是 MySQL: middleware/mysql/intro/index.md
@@ -874,24 +826,6 @@ nav:
                       - MySQL Operator: middleware/mysql/faq/faq-operator.md
                       - MySQL 主备关系: middleware/mysql/faq/faq-master-slave.md
                       - MySQL 其他故障: middleware/mysql/faq/faq-others.md
-              - RabbitMQ 消息队列:
-                  - 介绍:
-                      - 什么是 RabbitMQ: middleware/rabbitmq/intro/index.md
-                      - 功能说明: middleware/rabbitmq/intro/features.md
-                      - 竞争优势: middleware/rabbitmq/intro/benefits.md
-                      - 适用场景: middleware/rabbitmq/intro/scenarios.md
-                      - 离线升级 RabbitMQ: middleware/rabbitmq/intro/offline-install.md
-                      - 基本概念: middleware/rabbitmq/intro/concepts.md
-                      - Release Notes: middleware/rabbitmq/release-notes.md
-                  - 快速入门:
-                      - 创建 RabbitMQ 实例: middleware/rabbitmq/user-guide/create.md
-                      - 更新 RabbitMQ 实例: middleware/rabbitmq/user-guide/update.md
-                      - 删除 RabbitMQ 实例: middleware/rabbitmq/user-guide/delete.md
-                      - 查看实例详情: middleware/rabbitmq/user-guide/view.md
-                      - 数据迁移: middleware/rabbitmq/user-guide/migrate.md
-                      - 实例监控: middleware/rabbitmq/user-guide/insight.md
-                      - 查看 RabbitMQ 日志: middleware/rabbitmq/user-guide/logs.md
-                      - 为 RabbitMQ 添加自定义插件: middleware/rabbitmq/faq/add-plugin.md
               - Redis 缓存服务:
                   - 介绍:
                       - 什么是 Redis: middleware/redis/intro/index.md
@@ -932,6 +866,78 @@ nav:
                       - 更新 MongoDB: middleware/mongodb/user-guide/update.md
                       - 删除 MongoDB: middleware/mongodb/user-guide/delete.md
                       - 查看 MongDB 日志: middleware/mongodb/user-guide/logs.md
+              - Elasticsearch 搜索服务:
+                  - 介绍:
+                      - 什么是 Elasticsearch: middleware/elasticsearch/intro/index.md
+                      - 功能说明: middleware/elasticsearch/intro/features.md
+                      - 竞争优势: middleware/elasticsearch/intro/benefits.md
+                      - 适用场景: middleware/elasticsearch/intro/scenarios.md
+                      - 基本概念: middleware/elasticsearch/intro/concepts.md
+                      - 离线升级 elasticsearch: middleware/elasticsearch/intro/offline-install.md
+                      - Release Notes: middleware/elasticsearch/release-notes.md
+                  - ES 集群容量规划: middleware/elasticsearch/user-guide/cluster-capacity-plan.md
+                  - 快速入门:
+                      - 创建 ES 实例: middleware/elasticsearch/user-guide/create.md
+                      - 更新 ES 实例: middleware/elasticsearch/user-guide/edit.md
+                      - 删除 ES 实例: middleware/elasticsearch/user-guide/delete.md
+                      - 实例概览: middleware/elasticsearch/user-guide/basic.md
+                      - 实例监控: middleware/elasticsearch/user-guide/monitor.md
+                      - 查看 ES 日志: middleware/elasticsearch/user-guide/logs.md
+                  - 跨节点迁移 ES: middleware/elasticsearch/user-guide/migrate-es.md
+                  - ES 故障排查: middleware/elasticsearch/faq/common-question-es.md
+              - Kafka 消息队列:
+                  - 介绍:
+                      - 什么是 Kafka: middleware/kafka/intro/index.md
+                      - 适用场景: middleware/kafka/intro/scenarios.md
+                      - 离线升级 kafka: middleware/kafka/intro/offline-install.md
+                      - 常见术语: middleware/kafka/intro/concepts.md
+                      - Release Notes: middleware/kafka/release-notes.md
+                  - 快速入门:
+                      - 创建 Kafka 实例: middleware/kafka/user-guide/create.md
+                      - 更新 Kafka 实例: middleware/kafka/user-guide/update.md
+                      - 删除 Kafka 实例: middleware/kafka/user-guide/delete.md
+                      - 查看实例详情: middleware/kafka/user-guide/view.md
+                      - 实例监控: middleware/kafka/user-guide/insight.md
+                      - 配置参数: middleware/kafka/user-guide/config.md
+                      - 查看 Kafka 日志: middleware/kafka/user-guide/logs.md
+              - RocketMQ 消息队列:
+                  - 介绍:
+                      - 离线升级 RocketMQ: middleware/rocketmq/intro/offline-install.md
+                      - Release Notes: middleware/rocketmq/release-notes.md
+              - RabbitMQ 消息队列:
+                  - 介绍:
+                      - 什么是 RabbitMQ: middleware/rabbitmq/intro/index.md
+                      - 功能说明: middleware/rabbitmq/intro/features.md
+                      - 竞争优势: middleware/rabbitmq/intro/benefits.md
+                      - 适用场景: middleware/rabbitmq/intro/scenarios.md
+                      - 离线升级 RabbitMQ: middleware/rabbitmq/intro/offline-install.md
+                      - 基本概念: middleware/rabbitmq/intro/concepts.md
+                      - Release Notes: middleware/rabbitmq/release-notes.md
+                  - 快速入门:
+                      - 创建 RabbitMQ 实例: middleware/rabbitmq/user-guide/create.md
+                      - 更新 RabbitMQ 实例: middleware/rabbitmq/user-guide/update.md
+                      - 删除 RabbitMQ 实例: middleware/rabbitmq/user-guide/delete.md
+                      - 查看实例详情: middleware/rabbitmq/user-guide/view.md
+                      - 数据迁移: middleware/rabbitmq/user-guide/migrate.md
+                      - 实例监控: middleware/rabbitmq/user-guide/insight.md
+                      - 查看 RabbitMQ 日志: middleware/rabbitmq/user-guide/logs.md
+                      - 为 RabbitMQ 添加自定义插件: middleware/rabbitmq/faq/add-plugin.md                      
+              - MinIO 对象存储:
+                  - 介绍:
+                      - 什么是 MinIO: middleware/minio/intro/index.md
+                      - 适用场景: middleware/minio/intro/scenarios.md
+                      - 离线升级 MinIO: middleware/minio/intro/offline-install.md
+                      - 常见术语: middleware/minio/intro/concepts.md
+                      - Release Notes: middleware/minio/release-notes.md
+                  - 快速入门:
+                      - 创建 MinIO 实例: middleware/minio/user-guide/create.md
+                      - 更新 MinIO 实例: middleware/minio/user-guide/update.md
+                      - 删除 MinIO 实例: middleware/minio/user-guide/delete.md
+                      - 查看 MinIO 日志: middleware/minio/user-guide/logs.md
+                      - 查看实例详情: middleware/minio/user-guide/view.md
+                      - 实例监控: middleware/minio/user-guide/insight.md
+                      - 配置参数: middleware/minio/user-guide/config.md
+                      - MinIO 的身份管理: middleware/minio/user-guide/user-management.md
       - 边缘计算:
           - 云边协同:
               - 介绍:
@@ -1083,6 +1089,7 @@ nav:
                   - 应用备份: download/modules/kcoral.md
                   - 安全管理: download/modules/dowl.md
                   - 网络模块: download/modules/spidernet.md
+                  - 存储模块: download/modules/hwameistor.md
                   - 虚拟机容器: download/modules/virtnest.md
               - 多云编排: download/modules/kairship.md
               - 镜像仓库: download/modules/kangaroo.md

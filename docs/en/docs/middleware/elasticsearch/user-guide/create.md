@@ -39,7 +39,7 @@ In the list of Elasticsearch instances, do the following to create a new instanc
 
     <!--screenshot-->
 
-5. After confirming that the above basic information, specification configuration and service settings are correct, click `Confirm`.
+5. After confirming that the above basic information, specification configuration and service settings are correct, click `OK`.
 
     <!--screenshot-->
 

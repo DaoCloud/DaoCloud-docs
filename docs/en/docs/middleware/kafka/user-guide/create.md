@@ -31,7 +31,7 @@ In the Kafka message queue, perform the following operations to create a Kafka i
 
     <!--screenshot-->
 
-5. Confirm that the instance configuration information is correct, and click `Confirm` to complete the creation.
+5. Confirm that the instance configuration information is correct, and click `OK` to complete the creation.
 
     <!--screenshot-->
 

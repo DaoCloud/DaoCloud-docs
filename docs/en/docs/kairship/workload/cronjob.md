@@ -56,7 +56,7 @@ Follow the steps below to create a scheduled task (Cronob).
 1. On the `Advanced Configuration` page, you can configure task settings and labels and annotations.
 
 
-    If you do not need to configure override policy after the creation is complete, you can directly use `Confirm` to complete the creation of the multicloud task
+    If you do not need to configure override policy after the creation is complete, you can directly use `OK` to complete the creation of the multicloud task
 
 1. On the `Override Configuration` page, after selecting the personalized container configuration, labels and annotations, click `OK`.
 

@@ -14,14 +14,14 @@ This section will take [cert-manager](https://cert-manager.io/docs/) as an examp
 
 Follow the steps below to install the Helm application.
 
-1. Click on a cluster name to enter `Cluster Details`.
+1. Click a cluster name to enter `Cluster Details`.
 
      
 
 2. In the left navigation bar, click `Helm Apps` -> `Helm chart` to enter the Helm chart page.
 
      On the Helm chart page, select the [Helm repository](helm-repo.md) named `addon`, and all the Helm chart templates under the `addon` repository will be displayed on the interface.
-     Click on the Chart named `cert-manager`.
+     Click the Chart named `cert-manager`.
 
      
 
@@ -43,7 +43,7 @@ After we have completed the installation of a Helm application through the inter
 
 Follow the steps below to update the Helm application.
 
-1. Click on a cluster name to enter `Cluster Details`.
+1. Click a cluster name to enter `Cluster Details`.
 
      
 

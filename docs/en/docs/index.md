@@ -6,23 +6,13 @@ hide:
 
 # DaoCloud Enterprise 5.0
 
-DaoCloud Enterprise 5.0 (DCE 5.0) is a high-performance and scalable cloud native operating system
-that provides a consistent and stable experience in any infrastructure or environment.
-It supports heterogeneous clouds, edge clouds, and multicloud management. DCE 5.0
-integrates the latest service mesh and microservice technologies, enabling tracking
-of the entire lifecycle of each traffic. This helps users understand detailed metrics
-of clusters, nodes, applications, and services, and visualize the health status of
-applications through dynamic dashboards and topology maps.
+DaoCloud Enterprise 5.0 (DCE 5.0) is an advanced and highly scalable cloud native operating system designed to provide a consistent and dependable experience across diverse infrastructures and environments. With its support for heterogeneous clouds, edge clouds, and multicloud management, DCE 5.0 offers unparalleled flexibility.
 
-DCE 5.0 natively supports the DevOps development and operation mode, allowing for
-standardization and automation of the entire app delivery process. It also integrates
-various selected databases and middleware to make operation and maintenance governance
-more efficient. Each product module is independently decoupled and supports flexible
-upgrades, with no impact on business operations. Additionally, it can be docked with
-many cloud native ecological products to provide a complete solution system. With nearly
-a thousand industry customers having tested it in production cases, DCE 5.0 builds a
-solid and reliable digital foundation, helps enterprises define digital boundaries,
-and unleashes cloud native productivity.
+By seamlessly integrating state-of-the-art service mesh and microservice technologies, DCE 5.0 enables comprehensive tracking of the entire traffic lifecycle. Users can gain valuable insights into detailed metrics related to clusters, nodes, applications, and services. Visualizing the health status of applications through dynamic dashboards and topology maps empowers users with actionable information to optimize performance.
+
+A major advantage of DCE 5.0 is its native support for the DevOps development and operation mode, facilitating standardization and automation throughout the application delivery process. Additionally, DCE 5.0 effortlessly integrates a range of carefully selected databases and middleware, enhancing operational efficiency and governance. Each product module operates independently, ensuring flexible upgrades without disrupting critical business operations. Furthermore, DCE 5.0 seamlessly integrates with various cloud native ecosystem products, forming a comprehensive and robust solution system.
+
+With extensive testing from thousands of industry customers in real production cases, DCE 5.0 has established itself as a solid and trustworthy digital foundation. It assists enterprises in defining their digital boundaries and unleashing the full potential of cloud native productivity. Embrace DCE 5.0 to elevate your organization's capabilities in the cloud native landscape.
 
 <div class="grid cards" markdown>
 
@@ -45,7 +35,7 @@ and unleashes cloud native productivity.
 
 ![modules](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/dce-modules04.jpg)
 
-Over the past nine years, DaoCloud has made significant investments to explore
+Over the past ten years, DaoCloud has made significant investments to explore
 and develop a cloud native operating system with customizable and scalable modules
 that facilitate business digitalization. Each module can be used as a LEGO brick,
 allowing for zero downtime while upgrading any module. DCE 5.0 is also easy to
@@ -53,7 +43,7 @@ integrate with hundreds of cloud native ecological plugins, making it simple to
 customize solutions for different use cases. This modular style allows for growth
 day by day, making things better over time.
 
-=== "Multicloud Management"
+=== "Multicloud"
 
      DCE 5.0 supports unified and centralized management of multicloud and hybrid clouds,
      providing cross-cloud resource retrieval and application deployment, release, and
@@ -69,7 +59,7 @@ day by day, making things better over time.
 
     ![multicloud](./images/01multi-cloud.png)
 
-=== "Data Middleware Service"
+=== "Middleware"
 
      The cloud native local storage capability, specially designed for stateful applications, meets
      the high I/O storage requirements of middleware and improves the efficiency of operation and
@@ -84,7 +74,7 @@ day by day, making things better over time.
 
     ![data](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/02data.jpg)
 
-=== "Microservice Governance"
+=== "Microservice"
 
      DCE 5.0 provides non-intrusive traffic management features, supporting non-sensing access to
      traditional microservices, cloud native microservices, and open-source microservice frameworks.

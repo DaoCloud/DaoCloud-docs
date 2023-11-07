@@ -13,7 +13,7 @@ You can delete a domain name in two ways.
 
     <!--![]()screenshots-->
 
-- Click on the page to enter details of the domain name, domain name at the upper right corner of the page by clicking on the ** `ⵗ` ** hold and select `Delete`.
+- Click the page to enter details of the domain name, domain name at the upper right corner of the page by clicking on the ** `ⵗ` ** hold and select `Delete`.
 
     <!--![]()screenshots-->
 

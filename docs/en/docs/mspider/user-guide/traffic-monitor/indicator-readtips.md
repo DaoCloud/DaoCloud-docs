@@ -39,7 +39,7 @@ By clicking on the title of a corresponding metric chart, you can expand the vie
 
 ### Exporting Metric Data
 
-To view the raw data corresponding to a chart, click on the title of the metric chart and select Inspect > Data to display the data in tabular form.
+To view the raw data corresponding to a chart, click the title of the metric chart and select Inspect > Data to display the data in tabular form.
 
 ![inspect data](../images/readtips04.png)
 

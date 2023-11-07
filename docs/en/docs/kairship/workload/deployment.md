@@ -18,7 +18,7 @@ This page will introduce how to create a multi-cloud deployment from an image. F
 
 Follow the steps below to create a multi-cloud deployment from an image.
 
-1. Click on the name of the multi-cloud instance, then navigate to `MultiCloud Workloads` in the left navigation pane, and click on `Create from Image` in the top right corner.
+1. Click the name of the multi-cloud instance, then navigate to `MultiCloud Workloads` in the left navigation pane, and click `Create from Image` in the top right corner.
 
     ![Create from Image](../images/deploy-create04.png)
 
@@ -67,7 +67,7 @@ Follow the steps below to create a multi-cloud deployment from an image.
 
     - `Default`: This refers to the general configuration filled in the previous steps and cannot be modified here.
     - If you need to modify the default configuration, you need to click `Previous` at the bottom of the page to return to the corresponding configuration environment and re-enter the information.
-    - Below the default configuration, click on the `+` button and select a cluster to set differentiated configurations for that specific cluster, different from other clusters.
+    - Below the default configuration, click the `+` button and select a cluster to set differentiated configurations for that specific cluster, different from other clusters.
     - Clusters that do not have differentiated configurations will use the default configuration.
     - Currently, you can configure different container images, environment variables, labels, and annotations for different clusters.
 

@@ -43,7 +43,7 @@ Follow the steps below to create a Job.
     - Timeout: When this time is exceeded, the job will be marked as failed to execute, and all Pods under the job will be deleted. When it is empty, it means that no timeout is set.
     - Restart Policy: Whether to restart the Pod when the setting fails.
 
-    If you do not need to configure differentiation after the creation is complete, you can directly use `Confirm` to complete the creation of the multicloud job
+    If you do not need to configure differentiation after the creation is complete, you can directly use `OK` to complete the creation of the multicloud job
 
 1. On the `Override Configuration` page, after selecting the personalized container configuration, labels and annotations, click `OK`.
 

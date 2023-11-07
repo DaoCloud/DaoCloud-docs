@@ -21,7 +21,7 @@ External mesh means that the existing mesh can be connected to the DCE 5.0 servi
 
     ![Basic Information](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/external02.png)
 
-3. You will automatically return to the Mesh List page, and the newly created mesh will be listed at the top. After some time, the status will change from `Creating` to `Running`. Click on the `...` on the right to perform operations such as editing basic information, adding clusters, accessing the console, and deleting.
+3. You will automatically return to the Mesh List page, and the newly created mesh will be listed at the top. After some time, the status will change from `Creating` to `Running`. Click the `...` on the right to perform operations such as editing basic information, adding clusters, accessing the console, and deleting.
 
     ![Mesh List](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/external03.png)
 

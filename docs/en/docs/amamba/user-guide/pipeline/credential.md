@@ -31,7 +31,7 @@ The specific steps to create and manage credentials are as follows:
 
     ![createcredential](../../images/cred01.png)
 
-2. In the `Create Credential` page, configure the relevant parameters and click on `OK`.
+2. In the `Create Credential` page, configure the relevant parameters and click `OK`.
 
     ![createcredential](../../images/cred02.png)
 

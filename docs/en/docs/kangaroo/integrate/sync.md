@@ -36,7 +36,7 @@ DCE 5.0 container registry allows users to create synchronization policies and a
     
     Destination registry: if not filled in, the images will be placed in the same registry space as the source registry.
 
-4. Return to the sync rule list, the newly created rule is enabled by default. Click on the `⋮` on the right-hand side to run sync, edit, disable, delete.
+4. Return to the sync rule list, the newly created rule is enabled by default. Click the `⋮` on the right-hand side to run sync, edit, disable, delete.
 
     ![More operations](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/sync03.png)
 
@@ -56,4 +56,4 @@ DCE 5.0 container registry allows users to create synchronization policies and a
 
     ![Customize](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/target03.png)
 
-4. Return to the destination registry list, click on the `⋮` on the right-side to perform edit or delete.
+4. Return to the destination registry list, click the `⋮` on the right-side to perform edit or delete.

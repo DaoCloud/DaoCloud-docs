@@ -11,10 +11,10 @@ Multus CR management is the secondary encapsulation of configuration instances i
 
 ## UI Interface Operations
 
-1. After logging in to the DCE UI, click on `Container Management` -> `Cluster List` in the left navigation menu to find the corresponding cluster. Then click on `Container Network` -> `Network Configuration` on the left navigation menu.
+1. After logging in to the DCE UI, click `Container Management` -> `Cluster List` in the left navigation menu to find the corresponding cluster. Then click `Container Network` -> `Network Configuration` on the left navigation menu.
 
 
-2. Go to `Network Configuration` -> `Multus CR Management`, and click on `Create Multus CR`.
+2. Go to `Network Configuration` -> `Multus CR Management`, and click `Create Multus CR`.
 
 
     !!! note
