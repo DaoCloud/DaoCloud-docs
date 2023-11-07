@@ -21,13 +21,13 @@ hide:
 
 - 平稳过渡
 
-    统一管理传统微服务和云原生微服务，支持接入传统注册中心（Zookeeper、Eureka、Nacos）和云原生注册中心
+    统一管理传统微服务和云原生微服务，支持接入传统注册中心（Zookeeper、Eureka、Nacos、Consul）和云原生注册中心
     （Kubernetes、Service Mesh）类型的注册中心，实现从传统微服务生态向云原生微服务生态的平稳过渡，助力企业走向云原生化。
 
 - 开放兼容
 
     微服务引擎支持传统和云原生的注册中心，也支持 Spring Cloud、Dubbo 等主流的开源微服务框架，
-    以及 Envoy、Sentinel、Contour 等开源网关组件。此外，还可以和 [DCE 5.0](../../dce/index.md)
+    以及 Envoy、Contour 等开源网关组件。此外，还可以和 [DCE 5.0](../../dce/index.md)
     的多云编排、数据服务中间件、服务网格、应用工作台等模块自由组合，实现更多定制化、精细化的功能。
 
 - 可视化界面与数据

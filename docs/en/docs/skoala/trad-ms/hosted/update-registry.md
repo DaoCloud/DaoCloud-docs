@@ -5,7 +5,7 @@ hide:
 
 # Update the managed registry
 
-1. In the `Integrated Registry List` page choose need to update the registry, on the right side click ** `⋯` ** and select `Edit`.
+1. In the `Managed Registry List` page choose need to update the registry, on the right side click ** `⋯` ** and select `Edit`.
 
     <!--![]()screenshots-->
 

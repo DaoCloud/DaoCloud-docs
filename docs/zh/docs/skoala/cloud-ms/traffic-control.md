@@ -6,12 +6,12 @@
 
 1. 点击服务名称
 
-    ![点击某个名称](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/cloudms-traffic01.png)
+    ![点击某个名称](../images/cloudms-traffic01.png)
 
-2. 选择目标端口
+2. 进入治理能力页面
 
-    ![选择端口](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/cloudms-traffic02.png)
+    ![治理能力](../images/cloudms-traffic02.png)
 
-3. 根据需要配置流量策略，最后点击`确定`
+3. 根据需要在端口上创建规则，最后点击`确定`
 
 <!--关于各个策略的具体说明，待后续补充-->

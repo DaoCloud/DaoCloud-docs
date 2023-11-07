@@ -67,13 +67,13 @@
 ```bash
 $ kubectl -n skoala-system get pods
 NAME                                   READY   STATUS    RESTARTS        AGE
-hive-8548cd9b59-948j2                  2/2     Running   2 (3h48m ago)   3h48m
+hive-8548cd9b59-948j2                  2/2     Running   0               3h48m
 sesame-5955c878c6-jz8cd                2/2     Running   0               3h48m
-ui-7c9f5b7b67-9rpzc                    2/2     Running   0               3h48m
+skoala-ui-75b8f8c776-nbw9d             2/2     Running   0               3h48m
  
 $ helm -n skoala-system list
 NAME        NAMESPACE       REVISION    UPDATED                                 STATUS      CHART               APP VERSION
-skoala      skoala-system   3           2022-12-16 11:17:35.187799553 +0800 CST deployed    skoala-0.13.0       0.13.0
+skoala     	skoala-system	2       	2023-11-03 10:23:22.373053803 +0800 CST	deployed    skoala-0.28.1       0.28.1
 ```
 
 ### 检测依赖的存储组件
@@ -206,10 +206,10 @@ helm repo update
 $ helm repo update skoala-release
 $ helm search repo skoala-release/skoala --versions
 NAME                        CHART VERSION   APP VERSION DESCRIPTION
-skoala-release/skoala       0.13.0          0.13.0      The helm chart for Skoala
-skoala-release/skoala       0.12.2          0.12.2      The helm chart for Skoala
-skoala-release/skoala       0.12.1          0.12.1      The helm chart for Skoala
-skoala-release/skoala       0.12.0          0.12.0      The helm chart for Skoala
+skoala-release/skoala       0.28.1       	0.28.1     	The helm chart for Skoala
+skoala-release/skoala       0.28.0       	0.28.0     	The helm chart for Skoala
+skoala-release/skoala       0.27.2       	0.27.2     	The helm chart for Skoala
+skoala-release/skoala       0.27.1       	0.27.1     	The helm chart for Skoala
 ......
 ```
 
@@ -219,10 +219,10 @@ skoala-release/skoala       0.12.0          0.12.0      The helm chart for Skoal
 $ helm repo update skoala-release
 $ helm search repo skoala-release/skoala-init --versions
 NAME                        CHART VERSION   APP VERSION DESCRIPTION
-skoala-release/skoala-init  0.13.0          0.13.0      A Helm Chart for Skoala init, it includes Skoal...
-skoala-release/skoala-init  0.12.2          0.12.2      A Helm Chart for Skoala init, it includes Skoal...
-skoala-release/skoala-init  0.12.1          0.12.1      A Helm Chart for Skoala init, it includes Skoal...
-skoala-release/skoala-init  0.12.0          0.12.0      A Helm Chart for Skoala init, it includes Skoal...
+skoala-release/skoala-init	0.28.1       	0.28.1     	A Helm Chart for Skoala init, it includes Skoal...
+skoala-release/skoala-init	0.28.0       	0.28.0     	A Helm Chart for Skoala init, it includes Skoal...
+skoala-release/skoala-init	0.27.2       	0.27.2     	A Helm Chart for Skoala init, it includes Skoal...
+skoala-release/skoala-init	0.27.1       	0.27.1     	A Helm Chart for Skoala init, it includes Skoal...
 ......
 ```
 
@@ -232,11 +232,11 @@ skoala-release/skoala-init  0.12.0          0.12.0      A Helm Chart for Skoala 
 
 ```bash
 $ helm upgrade --install skoala --create-namespace -n skoala-system --cleanup-on-fail \
-    --set ui.image.tag=v0.17.0 \
+    --set ui.image.tag=v0.19.0 \
     --set hive.configMap.database[0].driver="mysql" \
     --set hive.configMap.database[0].dsn="skoala:xxx@tcp(mcamel-common-mysql-cluster-mysql-master.mcamel-system.svc.cluster.local:3306)/skoala?charset=utf8&parseTime=true&loc=Local&timeout=10s" \
     skoala-release/skoala \ 
-    --version 0.24.2
+    --version 0.28.1
 ```
 
 查看 Pod 是否启动成功：
@@ -244,7 +244,7 @@ $ helm upgrade --install skoala --create-namespace -n skoala-system --cleanup-on
 ```bash
 $ kubectl -n skoala-system get pods
 NAME                                   READY   STATUS    RESTARTS        AGE
-hive-8548cd9b59-948j2                  2/2     Running   2 (3h48m ago)   3h48m
+hive-8548cd9b59-948j2                  2/2     Running   0               3h48m
 sesame-5955c878c6-jz8cd                2/2     Running   0               3h48m
 skoala-ui-7c9f5b7b67-9rpzc             2/2     Running   0               3h48m
 ```
@@ -256,11 +256,11 @@ skoala-ui-7c9f5b7b67-9rpzc             2/2     Running   0               3h48m
 
 ```bash
 $ helm search repo skoala-release/skoala-init --versions
-NAME                      	CHART VERSION	APP VERSION	DESCRIPTION
-skoala-release/skoala-init	0.24.2       	0.24.2     	A Helm Chart for Skoala init, it includes Skoal...
-skoala-release/skoala-init	0.24.1       	0.24.1     	A Helm Chart for Skoala init, it includes Skoal...
-skoala-release/skoala-init	0.24.0       	0.24.0     	A Helm Chart for Skoala init, it includes Skoal...
-skoala-release/skoala-init	0.23.0       	0.23.0     	A Helm Chart for Skoala init, it includes Skoal...
+NAME                        CHART VERSION   APP VERSION DESCRIPTION
+skoala-release/skoala-init	0.28.1       	0.28.1     	A Helm Chart for Skoala init, it includes Skoal...
+skoala-release/skoala-init	0.28.0       	0.28.0     	A Helm Chart for Skoala init, it includes Skoal...
+skoala-release/skoala-init	0.27.2       	0.27.2     	A Helm Chart for Skoala init, it includes Skoal...
+skoala-release/skoala-init	0.27.1       	0.27.1     	A Helm Chart for Skoala init, it includes Skoal...
 ......
 ```
 
@@ -269,7 +269,7 @@ skoala-release/skoala-init	0.23.0       	0.23.0     	A Helm Chart for Skoala ini
 ```bash
 helm upgrade --install skoala-init --create-namespace -n skoala-system --cleanup-on-fail \
     skoala-release/skoala-init \
-    --version 0.24.2
+    --version 0.28.1
 ```
 
 除了通过终端安装，也可以在 `容器管理`->`Helm 应用` 内找到 `skoala-init` 进行安装。

@@ -59,15 +59,15 @@ Chart in the blue box on the right is the `skoala-init` component that needs to 
 Check whether the following resources exist in the `skoala-system` namespace. If no resources, it means DME is not installed yet.
 
 ```bash
-~ kubectl -n skoala-system get pods
+$ kubectl -n skoala-system get pods
 NAME                                   READY   STATUS    RESTARTS        AGE
-hive-8548cd9b59-948j2                  2/2     Running   2 (3h48m ago)   3h48m
+hive-8548cd9b59-948j2                  2/2     Running   0               3h48m
 sesame-5955c878c6-jz8cd                2/2     Running   0               3h48m
-ui-7c9f5b7b67-9rpzc                    2/2     Running   0               3h48m
+skoala-ui-75b8f8c776-nbw9d             2/2     Running   0               3h48m
  
-~ helm -n skoala-system list
+$ helm -n skoala-system list
 NAME        NAMESPACE       REVISION    UPDATED                                 STATUS      CHART               APP VERSION
-skoala      skoala-system   3           2022-12-16 11:17:35.187799553 +0800 CST deployed    skoala-0.13.0       0.13.0
+skoala     	skoala-system	2       	2023-11-03 10:23:22.373053803 +0800 CST	deployed    skoala-0.28.1       0.28.1
 ```
 
 #### If `common-mysql` is installed
@@ -201,10 +201,10 @@ In the global management cluster, check the latest version of `skoala` directly 
 ~ helm repo update skoala-release
 ~ helm search repo skoala-release/skoala --versions
 NAME                        CHART VERSION   APP VERSION DESCRIPTION
-skoala-release/skoala       0.13.0          0.13.0      The helm chart for skoala
-skoala-release/skoala       0.12.2          0.12.2      The helm chart for skoala
-skoala-release/skoala       0.12.1          0.12.1      The helm chart for skoala
-skoala-release/skoala       0.12.0          0.12.0      The helm chart for skoala
+skoala-release/skoala       0.28.1       	0.28.1     	The helm chart for Skoala
+skoala-release/skoala       0.28.0       	0.28.0     	The helm chart for Skoala
+skoala-release/skoala       0.27.2       	0.27.2     	The helm chart for Skoala
+skoala-release/skoala       0.27.1       	0.27.1     	The helm chart for Skoala
 ......
 ```
 
@@ -214,10 +214,10 @@ In the working cluster, check the latest version of `skoala-init` directly by th
 ~ helm repo update skoala-release
 ~ helm search repo skoala-release/skoala-init --versions
 NAME                        CHART VERSION   APP VERSION DESCRIPTION
-skoala-release/skoala-init  0.13.0          0.13.0      A Helm Chart for skoala init, it includes Skoal...
-skoala-release/skoala-init  0.12.2          0.12.2      A Helm Chart for skoala init, it includes Skoal...
-skoala-release/skoala-init  0.12.1          0.12.1      A Helm Chart for skoala init, it includes Skoal...
-skoala-release/skoala-init  0.12.0          0.12.0      A Helm Chart for skoala init, it includes Skoal...
+skoala-release/skoala-init	0.28.1       	0.28.1     	A Helm Chart for Skoala init, it includes Skoal...
+skoala-release/skoala-init	0.28.0       	0.28.0     	A Helm Chart for Skoala init, it includes Skoal...
+skoala-release/skoala-init	0.27.2       	0.27.2     	A Helm Chart for Skoala init, it includes Skoal...
+skoala-release/skoala-init	0.27.1       	0.27.1     	A Helm Chart for Skoala init, it includes Skoal...
 ......
 ```
 
@@ -226,34 +226,22 @@ skoala-release/skoala-init  0.12.0          0.12.0      A Helm Chart for skoala 
 Run the command directly to deploy or upgrade `skoala`. Pay attention to setting a right version.
 
 ```bash
-~ helm upgrade --install skoala --create-namespace -n skoala-system --cleanup-on-fail \
-    --set ui.image.tag=v0.9.0 \
-    --set sweet.enable=true \
-    --set hive.configMap.data.database.host=mcamel-common-mysql-cluster-mysql-master.mcamel-system.svc.cluster.local \
-    --set hive.configMap.data.database.port=3306 \
-    --set hive.configMap.data.database.user=root \
-    --set hive.configMap.data.database.password=xxxxxxxx \
-    --set hive.configMap.data.database.database=skoala \
-    skoala-release/skoala \
-    --version 0.13.0
+$ helm upgrade --install skoala --create-namespace -n skoala-system --cleanup-on-fail \
+    --set ui.image.tag=v0.19.0 \
+    --set hive.configMap.database[0].driver="mysql" \
+    --set hive.configMap.database[0].dsn="skoala:xxx@tcp(mcamel-common-mysql-cluster-mysql-master.mcamel-system.svc.cluster.local:3306)/skoala?charset=utf8&parseTime=true&loc=Local&timeout=10s" \
+    skoala-release/skoala \ 
+    --version 0.28.1
 ```
-
-> Customize and initialize database parameters; the database information needs to be added into the configuration
-> --set sweet. enable=true \
-> --set hive.configMap.data.database. host= \
-> --set hive.configMap.data.database. port= \
-> --set hive.configMap.data.database. user= \
-> --set hive.configMap.data.database. password= \
-> --set hive.configMap.data.database. database= \
 
 Check whether the Pod is successfully started:
 
 ```bash
 ~ kubectl -n skoala-system get pods
 NAME                                   READY   STATUS    RESTARTS        AGE
-hive-8548cd9b59-948j2                  2/2     Running   2 (3h48m ago)   3h48m
+hive-8548cd9b59-948j2                  2/2     Running   0               3h48m
 sesame-5955c878c6-jz8cd                2/2     Running   0               3h48m
-ui-7c9f5b7b67-9rpzc                    2/2     Running   0               3h48m
+skoala-ui-7c9f5b7b67-9rpzc             2/2     Running   0               3h48m
 ```
 
 #### Install/upgrade `skoala-init` to a working cluster
@@ -263,10 +251,10 @@ Since DME contains many components, we packaged these components into the same C
 ```bash
 ~  helm search repo skoala-release/skoala-init --versions
 NAME                        CHART VERSION   APP VERSION DESCRIPTION
-skoala-release/skoala-init  0.13.0          0.13.0      A Helm Chart for skoala init, it includes Skoal...
-skoala-release/skoala-init  0.12.2          0.12.2      A Helm Chart for skoala init, it includes Skoal...
-skoala-release/skoala-init  0.12.1          0.12.1      A Helm Chart for skoala init, it includes Skoal...
-skoala-release/skoala-init  0.12.0          0.12.0      A Helm Chart for skoala init, it includes Skoal...
+skoala-release/skoala-init	0.28.1       	0.28.1     	A Helm Chart for Skoala init, it includes Skoal...
+skoala-release/skoala-init	0.28.0       	0.28.0     	A Helm Chart for Skoala init, it includes Skoal...
+skoala-release/skoala-init	0.27.2       	0.27.2     	A Helm Chart for Skoala init, it includes Skoal...
+skoala-release/skoala-init	0.27.1       	0.27.1     	A Helm Chart for Skoala init, it includes Skoal...
 ......
 ```
 
@@ -275,7 +263,7 @@ Use the following command to check all Pods are running as expected：
 ```bash
 ~ helm upgrade --install skoala-init --create-namespace -n skoala-system --cleanup-on-fail \
     skoala-release/skoala-init \
-    --version 0.13.0
+    --version 0.28.1
 ```
 
 In addition to terminal installation, you can also install `skoala-init` by Helm chart in `Container Management` -> `Helm App`.

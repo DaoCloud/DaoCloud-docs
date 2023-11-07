@@ -14,9 +14,9 @@ hide:
 
 创建托管注册中心的步骤如下。
 
-1. 在左侧导航栏点击`微服务治理中心`->`托管注册中心`，然后在页面右上角点击`创建托管注册中心`，进入托管注册中心实例的创建页面。
+1. 在左侧导航栏点击`传统微服务`->`注册配置中心`，然后在页面右上角点击`创建注册配置中心`，进入托管注册中心实例的创建页面。
 
-    ![进入创建注册中心页面](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/registry-lcm/imgs/create01.png)
+    ![进入创建注册中心页面](../../images/create01.png)
 
 2. 填写配置信息。
 
@@ -34,29 +34,27 @@ hide:
 
         - 点击`《实例能力评估》`可以查看在 2 Core 4 GiB、4 Core 8 GiB 和 8 Core 16 GiB 等主流规格下的吞吐量 (TPS)。
 
-        ![进入创建注册中心页面](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/registry-lcm/imgs/create02.png)
+        ![进入创建注册中心页面](../../images/create02.png)
 
     - 访问方式：选择`节点访问`可通过 **服务端口+目标端口** 的方式从外部访问注册中心，选择`内部访问`则只能在所在的集群范围内通过服务端口访问注册中心。默认的服务端口为 8848。
+    - 服务认证：开启服务认证时，注册至该注册中心的服务需要认证信息。默认用户名/密码为 nacos/nacos。当数据持久化为内置数据库模式时，不支持开启服务认证。
     - 部署模式：选择高可用模式时，节点数量不少于 3 个。生产环境下建议使用`高可用`模式。
+    - 镜像版本：目前支持 v2.0.4-slim 、v2.1.1-slim 和 v2.2.3-slim 三种版本。
 
-        ![进入创建注册中心页面](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/registry-lcm/imgs/create03.png)
+        ![进入创建注册中心页面](../../images/create03.png)
 
     - 数据持久化：建议使用外置存储化。
 
         - 不使用外置存储化：数据存储在 Nacos 所在的 Pod 的文件系统里。Pod 重启之后数据会遗失，因此建议使用外部存储。
         - 使用数据库：填写数据库的名称、地址、端口、用户名和密码
 
-            ![进入创建注册中心页面](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/registry-lcm/imgs/create04.png)
-
-        - 使用存储池：选择注册中心所在集群中已有的存储池并配置存储容量。<!--如果找不到想要的存储池，可以通过容器管理模块[创建一个存储池]。-->
-
-            ![进入创建注册中心页面](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/registry-lcm/imgs/create05.png)
+            ![进入创建注册中心页面](../../images/create04.png)
 
 3. 在页面底部点击`确定`。
 
     如果操作正确，页面右上角会弹出创建成功的消息，`托管注册中心列表`页会展示新建的注册中心实例。
 
-    ![创建成功](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/registry-lcm/imgs/create06.png)
+    ![创建成功](../../images/create06.png)
 
 !!! info
 

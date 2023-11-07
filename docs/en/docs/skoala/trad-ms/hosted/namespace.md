@@ -17,7 +17,7 @@ Microservice namespaces can be used to isolate services, configuration, and othe
   
     <!--![]()screenshots-->
 
-3. Enter the ID, name, and description of the namespace and click `OK` in the lower right corner of the page.
+3. Enter the ID, and name and click `OK` in the lower right corner of the page.
 
     If you do not enter an ID, the system automatically generates an ID. ** The namespace ID cannot be changed after creation **
 
@@ -29,7 +29,7 @@ Microservice namespaces can be used to isolate services, configuration, and othe
 
     <!--![]()screenshots-->
 
-2. To modify the namespace name and description, click `OK`.
+2. To modify the namespace name, click `OK`.
   
     <!--![]()screenshots-->
 
