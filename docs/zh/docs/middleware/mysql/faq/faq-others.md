@@ -39,3 +39,14 @@
         ```bash
         kubectl delete pod mcamel-common-mysql-cluster-mysql-1 -n mcamel-system
         ```
+
+## DCE 5.0 管理平台中出现如下 MySQL 提示
+
+当在管理平台的操作中产生如下提示，说明 MySQL 节点主从关系发生变化，但平台其他模块没有及时转换连接对象，在只读从节点执行了写操作。
+
+```prompt
+The MysQL server is running with the read-only option so it cannot excute this statement
+```
+![image](../images/faq01.png)
+
+解决方法：前往`容器管理`平台重启所有相关 `replica`。
