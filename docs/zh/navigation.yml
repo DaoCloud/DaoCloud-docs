@@ -12,6 +12,7 @@ nav:
               - 云原生词汇: dce/terms.md
               - K8s 认证服务商: dce/kcsp.md
               - DCE 5.0 Release Notes:
+                  - 20231031 版本发布: dce/dce-rn/20231031.md
                   - 20230831 版本发布: dce/dce-rn/20230831.md
                   - 20230731 版本发布: dce/dce-rn/20230731.md
                   - 20230630 版本发布: dce/dce-rn/20230630.md
