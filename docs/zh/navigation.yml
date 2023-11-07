@@ -902,6 +902,8 @@ nav:
                       - 查看 Kafka 日志: middleware/kafka/user-guide/logs.md
               - RocketMQ 消息队列:
                   - 介绍:
+                      - 什么是 RocketMQ: middleware/rocketmq/intro/index.md
+                      - 基本概念: middleware/rocketmq/intro/concepts.md
                       - 离线升级 RocketMQ: middleware/rocketmq/intro/offline-install.md
                       - Release Notes: middleware/rocketmq/release-notes.md
               - RabbitMQ 消息队列:
