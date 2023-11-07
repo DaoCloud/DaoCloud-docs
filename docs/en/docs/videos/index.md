@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Video Tutorials
 
 We have created video tutorials to help you quickly get started.
