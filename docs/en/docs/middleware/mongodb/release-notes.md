@@ -2,6 +2,16 @@
 
 This page lists the release notes for MongoDB databases, allowing you to understand the evolution path and feature changes for each version.
 
+### 2023-10-31
+
+#### v0.4.0
+
+##### Enhancements
+
+- **New Feature:** Added offline upgrade functionality.
+- **New Feature:** Added restart functionality for instances.
+- **Bug Fix:** Fixed cloudshell permissions issue.
+
 ## 2023-08-31
 
 ### v0.3.0
