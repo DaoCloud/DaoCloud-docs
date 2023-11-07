@@ -15,7 +15,7 @@ This package is dedicated to the community and is available for free trial.
 
 [More Historical Versions](./free/dce5-installer-history.md)
 
-## Download Enterprise Package
+## Download DCE 5.0 Enterprise
 
 This package is suitable for private cloud, hybrid cloud, multicloud, microservices and other scenarios, providing a variety of customizable cloud native modules.
 
@@ -26,7 +26,7 @@ This package is suitable for private cloud, hybrid cloud, multicloud, microservi
 
 [More Historical Versions](./business/dce5-installer-history.md)
 
-## Download Addon Offline Package
+## Download Addons
 
 DCE 5.0 provides comprehensive Addons for different use cases, which can be downloaded and used as needed.
 
@@ -37,7 +37,7 @@ DCE 5.0 provides comprehensive Addons for different use cases, which can be down
 
 [More Historical Versions](./addon/history.md)
 
-## Download modules
+## Download Modules
 
 The numerous modules included in DCE 5.0 can be downloaded separately to upgrade each module on demand.
 
