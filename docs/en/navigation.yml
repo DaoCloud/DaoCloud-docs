@@ -54,7 +54,7 @@ nav:
                   - Features: amamba/intro/features.md
                   - Competitiveness: amamba/intro/benefits.md
                   - Use Cases: amamba/intro/scenarios.md
-                  - Basic Concepts: amamba/intro/concepts.md
+                  - Concepts: amamba/intro/concepts.md
                   - Permissions: amamba/intro/permission.md
                   - Workbench Release Notes: amamba/intro/release-notes.md
               - Offline Upgrade: amamba/offline-upgrade.md
@@ -261,7 +261,7 @@ nav:
                   - Features: kairship/intro/features.md
                   - Architecture: kairship/intro/architecture.md
                   - Competitiveness: kairship/intro/benefits.md
-                  - Basic Concepts: kairship/intro/concepts.md
+                  - Concepts: kairship/intro/concepts.md
                   - FAQs: kairship/intro/faq.md
                   - Offline Upgrade: kairship/intro/offline-upgrade.md
                   - Multicloud Release Notes: kairship/intro/release-notes.md
@@ -874,6 +874,8 @@ nav:
                       - View Kafka Logs: middleware/kafka/user-guide/logs.md
               - RocketMQ Message Queue:
                   - Intro:
+                      - What is RocketMQ: middleware/rocketmq/intro/index.md
+                      - Concepts: middleware/rocketmq/intro/concepts.md
                       - Offline Upgrade RocketMQ: middleware/rocketmq/intro/offline-install.md
                       - Release Notes: middleware/rocketmq/release-notes.md
               - RabbitMQ Message Queue:
