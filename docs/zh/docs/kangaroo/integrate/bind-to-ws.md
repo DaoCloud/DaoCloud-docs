@@ -44,7 +44,7 @@
 
     - 排查该 Kubernetes 命名空间是否绑定了工作空间（需要绑定）。
     - 排查该镜像空间是否绑定了 Kubernetes 命名空间所在的工作空间（需要绑定）。
-    - 排查该镜像空间状态是私有该是公开，切换如下 tab 查找。
+    - 排查该镜像空间状态是私有还是公开，切换如下 tab 查找。
 
     ![镜像仓库](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/bind-space-to-ws02.png)
 

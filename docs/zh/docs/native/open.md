@@ -909,7 +909,7 @@
 
 - [Kubernetes 发布 Kubernetes CVE 订阅列表](https://kubernetes.io/blog/2022/09/12/k8s-cve-feed-alpha/)
 
-    Kubernetes 现在支持通过订阅一个自动更新的 [JSON feed](https://kubernetes.io/docs/reference/issues-security/official-cve-feed/index.json)，跟踪 Kubernetes 的安全问题（也称为 "CVE"，来自于不同产品和供应商的公共安全问题的数据库）。
+    Kubernetes 现在支持通过订阅一个自动更新的 [JSON feed](https://kubernetes.io/docs/reference/issues-security/official-cve-feed/index.json)，跟踪 Kubernetes 的安全问题（也称为 "CVE"，来自不同产品和供应商的公共安全问题的数据库）。
 
 - [Kubernetes v1.25 发布（CNCF 项目）](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.25.md)  
 
