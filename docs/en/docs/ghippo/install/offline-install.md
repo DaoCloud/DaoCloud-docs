@@ -124,6 +124,56 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
         ...
     ```
 
+!!! note  
+
+    When upgrading from v0.15.x (or lower) to v0.16.0 (or higher) versions,
+    the database connection parameters need to be modified.
+
+    Here is an example of modifying the database connection parameters:
+
+    ```yaml title="bak.yaml"
+    USER-SUPPLIED VALUES:
+    global:
+      database:
+        host: 127.0.0.1
+        port: 3306
+        apiserver:
+          dbname: ghippo
+          password: passowrd
+          user: ghippo
+        keycloakx:
+          dbname: keycloak
+          password: passowrd
+          user: keycloak
+      auditDatabase:
+        auditserver:
+          dbname: audit
+          password: passowrd
+          user: audit
+        host: 127.0.0.1
+        port: 3306
+    ```
+
+    Change it to:
+
+    ```yaml title="bak.yaml"
+    USER-SUPPLIED VALUES:
+    global:
+      storage:
+        ghippo:
+        - driver: mysql
+          accessType: readwrite
+          dsn: {global.database.apiserver.user}:{global.database.apiserver.password}@tcp({global.database.host}:{global.database.port})/{global.database.apiserver.dbname}?charset=utf8mb4&multiStatements=true&parseTime=true
+        audit:
+        - driver: mysql
+          accessType: readwrite
+          dsn: {global.auditDatabase.auditserver.user}:{global.auditDatabase.auditserver.password}@tcp({global.auditDatabase.host}:{global.auditDatabase.port})/{global.auditDatabase.auditserver.dbname}?charset=utf8mb4&multiStatements=true&parseTime=true
+        keycloak:
+        - driver: mysql
+          accessType: readwrite
+          dsn: {global.database.keycloakx.user}:{global.database.keycloakx.password}@tcp({global.database.host}:{global.database.port})/{global.database.keycloakx.dbname}?charset=utf8mb4
+    ```
+
 === "upgrade via helm repo"
 
     1. Check whether the global management helm repository exists.
@@ -147,8 +197,10 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
     1. Update the globally managed helm repository.
 
         ```shell
-        helm repo update ghippo # If the helm version is too low, it will fail. If it fails, please try to run helm update repo
+        helm repo update ghippo # (1) 
         ```
+
+        1. If the helm version is too low, it will fail. If it fails, please try to run helm update repo
 
     1. Select the version of Global Management you want to install (the latest version is recommended).
 
@@ -197,12 +249,18 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
         helm get values ​​ghippo -n ghippo-system -o yaml > bak.yaml
         ```
 
+    1. Update ghippo crds
+
+        ```shell
+        kubectl apply -f ./crds
+        ```
+
     1. Execute `helm upgrade`.
 
         Before upgrading, it is recommended that you overwrite `global.imageRegistry` in bak.yaml to the address of the current container registry.
 
         ```shell
-        export imageRegistry={your image registry}
+        export imageRegistry={your-container-registry}
         ```
 
         ```shell
