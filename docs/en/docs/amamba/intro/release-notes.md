@@ -1,6 +1,38 @@
 # Releases Notes
 
-This page lists the release notes for Workbench to help you understand the development and feature changes in each version.
+This page lists the release notes for Workbench to help you understand
+the development and feature changes in each version.
+
+## 2023-10-31
+
+### v0.21.0
+
+#### New Features
+
+- **New** Support for creating OLM applications
+- **New** Support for editing OLM application YAML
+- **New** Support for deleting OLM applications
+- **New** Support for request-based feature rollout with Istio
+- **New** Native application version management (create, delete, update, retrieve)
+- **New** Export template for native applications
+
+#### Improvements
+
+- **Improvement** API now supports returning the installation status of argocd/kubevela components
+- **Improvement** Git remote branches and tags can now be searched
+- **Improvement** Regular expression validation for multi-branch pipelines input
+- **Improvement** Provided an interface to check feature gate status (frontend only displays when enabled)
+- **Improvement** Added an interface to create kube-app-manager
+- **Improvement** Upgraded argo-rollout chart version to v2.32.0
+
+#### Fixes
+
+- **Fixed** bug causing errors in checking project binding relationships for kangaroo
+- **Fixed** Resolved issues related to control plane namespace when creating OAM applications
+- **Fixed** error in form git/jar deployment caused by Kubernetes CD plugin
+- **Fixed** Non-listed users were able to approve pipelines issue
+- **Fixed** pipeline configuration errors caused by sync pipelines
+- **Fixed** Resolved issue where type reset occurred during rollout updates
 
 ## 2023-08-31
 
@@ -43,7 +75,7 @@ This page lists the release notes for Workbench to help you understand the devel
 - **Added** Integration of Sonarqube instances in the toolchain
 - **Added** Default binding of native applications when creating applications based on git, jar, and container images in the wizard
 
-#### Enhancements
+#### Improvements
 
 - **Optimized** Steps to integrate gitlab with jenkins credentials
 - **Optimized** Display of binding time and added a division for sonarqube instances with bound workspaces in the administrator view
@@ -55,28 +87,28 @@ This page lists the release notes for Workbench to help you understand the devel
 
 #### New Features
 
-- **Added**: Added permission support for running pipelines in the pipeline module.
-- **Added**: Added support for updating and deleting native applications and their subresources.
-- **Added**: Added basic functionality for creating and managing OAM (Open Application Model) applications.
-- **Added**: Installed Kubevela open-source components.
-- **Added**: Added support for automatic and manual synchronization of toolchain resources, along with corresponding metric indicators.
-- **Added**: Added version information to pipeline templates.
-- **Added**: Added support for creating native applications and viewing their resource information.
-- **Added**: Added cluster-wide check for nginx ingress-class.
+- **Added** permission support for running pipelines in the pipeline module.
+- **Added** support for updating and deleting native applications and their subresources.
+- **Added** basic functionality for creating and managing OAM (Open Application Model) applications.
+- **Added** Installed Kubevela open-source components.
+- **Added** support for automatic and manual synchronization of toolchain resources, along with corresponding metric indicators.
+- **Added** version information to pipeline templates.
+- **Added** support for creating native applications and viewing their resource information.
+- **Added** cluster-wide check for nginx ingress-class.
 
 #### Fixes
 
-- **Fixed**: Fixed an issue where an error occurred on the native application list page when the target cluster did not have the CRD (Custom Resource Definition) for native applications installed.
-- **Fixed**: Fixed an issue where no values were modified when updating pipeline credentials, resulting in a null return when password information was not returned.
-- **Fixed**: Fixed the problem where the orphan strategy for multi-branch pipelines showed as -1 when it was empty.
+- **Fixed** an issue where an error occurred on the native application list page when the target cluster did not have the CRD (Custom Resource Definition) for native applications installed.
+- **Fixed** an issue where no values were modified when updating pipeline credentials, resulting in a null return when password information was not returned.
+- **Fixed** the problem where the orphan strategy for multi-branch pipelines showed as -1 when it was empty.
 
 #### Improvements
 
-- **Improved**: Optimized API handling for exceptional scenarios in pipelines.
-- **Improved**: Added a status field to display the runtime status of clusters in the API.
-- **Improved**: Optimized hardcoding to support deployment in different namespaces.
-- **Improved**: When integrating with GitLab, returning the GitLab address.
-- **Improved**: Returning toolchainID when integrating GitLab with Jenkinsfile-based pipelines and multi-branch pipelines.
+- **Improvement** Optimized API handling for exceptional scenarios in pipelines.
+- **Improvement** Added a status field to display the runtime status of clusters in the API.
+- **Improvement** Optimized hardcoding to support deployment in different namespaces.
+- **Improvement** When integrating with GitLab, returning the GitLab address.
+- **Improvement** Returning toolchainID when integrating GitLab with Jenkinsfile-based pipelines and multi-branch pipelines.
 
 ## 2023-6-15
 
@@ -84,7 +116,7 @@ This page lists the release notes for Workbench to help you understand the devel
 
 #### Fixes
 
-- **Fixed**: Resolved an issue with abnormal operations in the canary release tasks.
+- **Fixed** Resolved an issue with abnormal operations in the canary release tasks.
 
 ## 2022-05-31
 
@@ -92,25 +124,25 @@ This page lists the release notes for Workbench to help you understand the devel
 
 #### New Features
 
-- **Added**: API now supports selecting integrated code repositories using code selectors.
-- **Added**: Added support for nginx-ingress based canary release strategy.
-- **Added**: API now supports resource topology for applications.
-- **Added**: API unified credentials.
-- **Added**: Added version information to pipeline templates.
-- **Added**: Added support for creating native applications and viewing their resource information.
+- **Added** API now supports selecting integrated code repositories using code selectors.
+- **Added** support for nginx-ingress based canary release strategy.
+- **Added** API now supports resource topology for applications.
+- **Added** API unified credentials.
+- **Added** version information to pipeline templates.
+- **Added** support for creating native applications and viewing their resource information.
 
 #### Fixes
 
-- **Fixed**: Resolved the issue where containers in container images didn't support underscores.
-- **Fixed**: Resolved the error with replica numbers in blue-green deployments.
-- **Fixed**: Fixed the problem where the orphan strategy for multi-branch pipelines showed as -1 when it was empty.
+- **Fixed** Resolved the issue where containers in container images didn't support underscores.
+- **Fixed** Resolved the error with replica numbers in blue-green deployments.
+- **Fixed** the problem where the orphan strategy for multi-branch pipelines showed as -1 when it was empty.
 
 #### Improvements
 
-- **Improved**: Added retry functionality to the http-client of the jira-provider, improving the handling speed of pipeline events.
-- **Improved**: Improved the handling speed of pipeline events.
-- **Improved**: Refactored pipeline templates for from-git and from-jar.
-- **Improved**: Unified the URL for requesting Jenkins, for both regular pipelines and multi-branch pipelines.
+- **Improvement** Added retry functionality to the http-client of the jira-provider, improving the handling speed of pipeline events.
+- **Improvement** Improved the handling speed of pipeline events.
+- **Improvement** Refactored pipeline templates for from-git and from-jar.
+- **Improvement** Unified the URL for requesting Jenkins, for both regular pipelines and multi-branch pipelines.
 
 ## 2022-04-30
 
@@ -129,7 +161,7 @@ This page lists the release notes for Workbench to help you understand the devel
 - When an administrator binds a project to a specific workspace, the associated toolchain instance details cannot be obtained
 - IMAGE_TAG is set to latest in the corresponding template file when it is empty during application creation based on a jar package or a git repo
 
-#### Optimization
+#### Improvements
 
 - Unified toolchain interface
 
@@ -151,7 +183,7 @@ This page lists the release notes for Workbench to help you understand the devel
 - Creation of pipelines based on templates
 - Creation of custom pipeline templates
 
-#### Optimization
+#### Improvements
 
 - Adjusted CPU and memory parameters for Jenkins
 
@@ -171,7 +203,7 @@ This page lists the release notes for Workbench to help you understand the devel
 - `event-proxy`component supports Jenkins event persistence
 - Retry and rate limit when accessing Jenkins
 
-#### Optimization
+#### Improvements
 
 - The prompt message when rerunning a pipeline fails
 
@@ -190,7 +222,7 @@ This page lists the release notes for Workbench to help you understand the devel
 - Gray release supports editing YAML
 - The Chart for deploying Workbench no longer includes Jenkins. You can install Jenkins using a separate Helm Chart
 
-#### Optimization
+#### Improvements
 
 - Downloaded artifact reports are no longer fully cached in `apiserver`; they are partly cached through io chunking mode forwarding
 
@@ -239,7 +271,7 @@ This page lists the release notes for Workbench to help you understand the devel
 - A solution for invalid credentials after adding migration Jenkins
 - Fuzzy search for credential list by name
 
-#### Optimization
+#### Improvements
 
 - Use jvm parameters to reduced Jenkins memory usage when without workloads
 - Repository connectivity test when creating gitops modules
@@ -260,7 +292,7 @@ This page lists the release notes for Workbench to help you understand the devel
 - Gitops repository, supporting import and delete
 - Synchronization for gitops applications
 
-#### Optimization
+#### Improvements
 
 - The process of integrating an application into a service mesh
 
