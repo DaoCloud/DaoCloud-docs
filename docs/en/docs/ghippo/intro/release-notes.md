@@ -2,6 +2,30 @@
 
 This page lists the Release Notes for global management of each version, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-11-1
+
+### v0.21.0
+
+#### Features
+
+- Support for integrating with multiple AD/LDAP servers
+- Support for integrating with multiple OIDC providers
+- Differentiate users based on their LDAP/OIDC source
+- Dependencies for permissions cannot be cancelled
+- Backend customization of the primary navigation bar
+- Support for redirecting to English documentation site in non-Chinese languages
+
+#### Enhancements
+
+- Improved handling of interface error 400 without specific cause
+- Enhanced display of empty data in "Operational Management" reports
+- Improved functionality of jumping from cluster billing list to node billing list in "Operational Management"
+
+#### Fixes
+
+- Fixed potential deadlock issue during startup of Ghippo APIServer
+- Fixed calculation error in cluster billing for "Operational Management"
+
 ## 2023-09-04
 
 ### v0.20.1
@@ -16,10 +40,10 @@ This page lists the Release Notes for global management of each version, so that
 
 #### Features
 
-- Added support for integrating with WeChat Work.
+- Added support for integrating with WeCom.
 - Passwords now support 8-32 characters.
 - Added support for Cloud-Edge Collaboration Kant integration with a license.
-- [Operations Management] Added support for PostgreSQL/Kingbase databases.
+- `Operations Management` Added support for PostgreSQL/Kingbase databases.
 
 #### Improvements
 
@@ -56,7 +80,7 @@ This page lists the Release Notes for global management of each version, so that
 - Fixed the permission issue with Folder Admin role workspace authorization list.
 - Fixed the upgrade failure from GHippo 0.17 to 0.18.
 - Fixed the issue where the options for selecting cluster types were the same when adding shared resources.
-- Fixed the problem in the resource group list where grid-type resources could not be unbound.
+- Fixed the issue in the resource group list where grid-type resources could not be unbound.
 
 ## 2023-06-29
 
@@ -134,8 +158,8 @@ This page lists the Release Notes for global management of each version, so that
 
 #### Fixes
 
-- Fixed the problem of high CPU usage caused by infinite loop
-- Fixed the problem of incomplete export of audit logs
+- Fixed the issue of high CPU usage caused by infinite loop
+- Fixed the issue of incomplete export of audit logs
 
 ## 2023-04-27
 
@@ -177,8 +201,8 @@ This page lists the Release Notes for global management of each version, so that
 
 #### Fixes
 
-- Fixed the problem that the token can still be used after the key expires
-- Fixed the problem that the container registry is not controlled by the license
+- Fixed the issue that the token can still be used after the key expires
+- Fixed the issue that the container registry is not controlled by the license
 
 ## 2023-02-27
 
@@ -235,7 +259,7 @@ This page lists the Release Notes for global management of each version, so that
 
 #### Fixes
 
-- Fixed the problem that OpenAPI cycle is a required parameter, and it is an optional parameter after the repair
+- Fixed the issue that OpenAPI cycle is a required parameter, and it is an optional parameter after the repair
 
 ## 2022-11-30
 
@@ -268,8 +292,8 @@ This page lists the Release Notes for global management of each version, so that
 
 #### Fixes
 
-- Fixed the problem of strong binding cluster
-- Fixed the problem that the option `Client secret sent as basic auth` in the configuration identity provider interface was not saved to keycloak
+- Fixed the issue of strong binding cluster
+- Fixed the issue that the option `Client secret sent as basic auth` in the configuration identity provider interface was not saved to keycloak
 
 ## 2022-11-01
 
@@ -278,7 +302,7 @@ This page lists the Release Notes for global management of each version, so that
 #### Fixes
 
 - Turn off the resource group binding cluster function
-- Fixed the problem that the workspace cannot be created when there is no workspace
+- Fixed the issue that the workspace cannot be created when there is no workspace
 
 ## 2022-10-28
 
@@ -304,9 +328,9 @@ This page lists the Release Notes for global management of each version, so that
 
 #### Fixes
 
-- Fixed deleted clusters still have problems
+- Fixed deleted clusters still have issues
 - Fixed istio cache not being reset after keycloak jwks change
-- Fixed the zero value problem of group creation time
+- Fixed the zero value issue of group creation time
 - Fixed access key 'last used time' field returning null character when not used`
 
 ## v0.10
