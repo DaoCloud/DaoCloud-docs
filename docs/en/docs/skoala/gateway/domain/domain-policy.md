@@ -1,6 +1,6 @@
 # Configuring Domain name Policies
 
-The micro-service gateway provides the domain name level policy configuration capability. After a domain name level policy is configured, you do not need to configure policies for multiple apis under the same domain name. Currently, two domain-level policies are supported: cross-domain and local traffic limiting.
+The micro-service gateway provides the domain name level policy configuration capability. After a domain name level policy is configured, you do not need to configure policies for multiple apis under the same domain name. Currently, four domain-level policies are supported: cross-domain、global rate limit、local traffic limiting、black/white List.
 
 You can configure domain name policies in either of the following ways:
 
@@ -17,6 +17,8 @@ For details about configuring local traffic limiting, see [Local Rate Limit](../
 
 !!! note
 
+    If the traffic limiting policy at the API level conflicts with that at the domain name level, the traffic limiting policy at the API level prevails.
+
 
 ## cross-domain
 
@@ -31,4 +33,4 @@ Note the following when filling in the configuration:
 - Allowable request headers: Qualifies specific HTTP request header keywords. After the keyword is added, the corresponding keyword must be added to the request header to access the target service.
 - Exposed request header: Controls the exposed request header keyword. Multiple values can be configured.
 
-    <!--![]()screenshots-->
+   ![跨域](./images/cross-domain.png)
