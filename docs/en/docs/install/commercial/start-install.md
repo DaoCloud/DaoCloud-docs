@@ -18,28 +18,15 @@ You can download the latest version from the [Download Center](https://docs.daoc
 
 | CPU Architecture | Version | Download                                                |
 | :--------------- | :------ | :---------------------------------------------------------- |
-| AMD64            | v0.11.0 | [offline-v0.11.0-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.11.0-amd64.tar) |
-| ARM64            | v0.11.0 | [offline-v0.11.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.11.0-arm64.tar) |
+| AMD64    | v0.12.0 | [offline-v0.12.0-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.12.0-amd64.tar) |
+| ARM64    | v0.12.0 | [offline-v0.12.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.12.0-arm64.tar) |
 
 After downloading, extract the offline package.
 Take the amd64 architecture offline package as an example
 
 ```bash
-tar -xvf offline-v0.11.0-amd64.tar
+tar -xvf offline-v0.12.0-amd64.tar
 ```
-
-#### Addon Offline Package (Optional)
-
-The addon offline package includes offline Helm Chart packages for some commonly used components. For a specific list, refer to [addon](https://docs.daocloud.io/download/addon/v0.11.0.html#addon).
-
-Starting from version v0.5.0, the installer supports importing addon offline packages. If you need to offline all Helm Chart packages in the addon, you can download the latest version from the [Download Center](https://docs.daocloud.io/download/dce5/).
-
-First, download the offline package and define `addonOfflinePackagePath` in the [cluster configuration file (clusterConfig.yaml)](./cluster-config.md).
-
-| CPU Architecture | Version | Download                                                |
-| :--------------- | :------ | :---------------------------------------------------------- |
-| AMD64            | v0.11.0 | [addon-offline-full-package-v0.11.0-amd64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.11.0-amd64.tar.gz) |
-| ARM64            | v0.11.0 | [addon-offline-full-package-v0.11.0-arm64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.11.0-arm64.tar.gz) |
 
 #### ISO Operating System Image File (Required)
 
@@ -57,7 +44,7 @@ The ISO operating system image file needs to be configured in the [cluster confi
 |                   | OracleLinux R9 U1                                  | [OracleLinux-R9-U1-x86_64-dvd.iso](https://yum.oracle.com/ISOS/OracleLinux/OL9/u1/x86_64/OracleLinux-R9-U1-x86_64-dvd.iso) |
 | ARM64             | Kylin Linux Advanced Server release V10 (Sword) SP2 | [Application Address](https://www.kylinos.cn/scheme/server/1.html) <br />Note: Kylin operating system requires providing personal information to download and use. Please select V10 (Sword) SP2 when downloading |
 
-#### osPackage Offline Package (Required)
+#### osPackage Offline Packages (Required)
 
 The osPackage offline package is a supplement to the Linux operating system offline software source provided by the open-source project [Kubean](https://github.com/kubean-io/kubean). For example, openEuler 22.03 lacks the `selinux-policy-35.5-15.oe2203.noarch.rpm`.
 
@@ -67,7 +54,20 @@ Starting from version v0.5.0, the installer requires the osPackage offline packa
 
 Currently, the installer version requires the osPackage offline package version to match. Please download the osPackage offline package based on the corresponding version:
 
-=== "V0.11"
+=== "V0.12.0"
+
+    | Operating System                                        | Download                                                     |
+    | :-------------------------------------------------- | :----------------------------------------------------------- |
+    | Centos 7                                            | [os-pkgs-centos7-vv0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-centos7-v0.9.3.tar.gz) |
+    | Redhat 8                                            | [os-pkgs-redhat8-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-redhat8-v0.9.3.tar.gz) |
+    | Redhat 7                                            | [os-pkgs-redhat7-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-redhat7-v0.9.3.tar.gz) |
+    | Redhat 9                                            | [os-pkgs-redhat9-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-redhat9-v0.9.3.tar.gz) |
+    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-kylinv10-v0.9.3.tar.gz) |
+    | Ubuntu20.04                                         | [os-pkgs-ubuntu2004-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-ubuntu2004-v0.9.3.tar.gz) |
+    | openEuler 22.03                                     | [os-pkgs-openeuler22.03-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-openeuler22.03-v0.9.3.tar.gz) |
+    | OracleLinux R9 U1                                   | [os-pkgs-oracle9-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-oracle9-v0.9.3.tar.gz) |
+
+=== "V0.11.0"
 
     | Operating System                                        | Download                                                     |
     | :-------------------------------------------------- | :----------------------------------------------------------- |
@@ -107,6 +107,20 @@ Currently, the installer version requires the osPackage offline package version 
 
 For deploying DCE 5.0 on UOS V20 (1020a) operating system, please refer to [Deploying DCE 5.0 on UOS V20 (1020a)](../os-install/uos-v20-install-dce5.0.md).
 
+#### Addon Offline Packages (Optional)
+
+Addon offline packages contain Helm Chart offline packages for commonly used components. For the specific list, please refer to the [addon](https://docs.daocloud.io/download/addon/v0.12.0.html#addon) documentation.
+
+Starting from installer version v0.5.0, support for importing addon offline packages is available. If you want to offline all the Helm charts in the addon package, you can download the latest version from the [Download Center](https://docs.daocloud.io/download/dce5/).
+
+First, make sure to download the offline package in advance and define `addonOfflinePackagePath` in the [cluster configuration file (clusterConfig.yaml)](./cluster-config.md).
+
+| CPU Architecture | Version | Download Link                                                |
+| :--------------- | :------ | :----------------------------------------------------------- |
+| AMD64            | v0.12.0 | [addon-offline-full-package-v0.12.0-amd64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.12.0-amd64.tar.gz) |
+| ARM64            | v0.12.0 | [addon-offline-full-package-v0.12.0-arm64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.12.0-arm64.tar.gz) |
+
+
 #### One-Click Download of Required Offline Packages
 
 We provide a script for [one-click downloading and installing the offline packages required for DCE 5.0](../air-tag-download.md).
@@ -121,14 +135,15 @@ The following packages are included:
 
     Due to different methods of downloading ISO operating systems, the one-click download does not include the ISO files.
 
-### Step 2: Configure Cluster Configuration File
+### Step 2: Configure clusterConfig.yaml
 
 The cluster configuration file is located in the `offline/sample` directory of the offline image package. For detailed parameter introduction, please refer to [clusterConfig.yaml](cluster-config.md).
 
 !!! note
 
     Currently, the offline image package provides a standard 7-node mode template.
-    When deploying with Redhat 9.2 operating system, you need to enable the kernel tuning parameter `node_sysctl_tuning: true`.
+    When deploying with Redhat 9.2 operating system, you need to enable the kernel
+    tuning parameter `node_sysctl_tuning: true`.
 
 ### Step 3: Start Installation
 

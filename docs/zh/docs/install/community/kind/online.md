@@ -30,9 +30,11 @@ precheck pass..
 
 ## 安装 Docker
 
-> 如果您的机器已安装了 Docker 且版本高于 1.18，请跳过这一步。
->
-> 安装 Docker 时可使用国内源：<https://developer.aliyun.com/mirror/docker-ce>
+!!! note
+
+    如果您的机器已安装了 Docker 且版本高于 1.18，请跳过这一步。
+
+    装 Docker 时可使用国内源：<https://developer.aliyun.com/mirror/docker-ce>
 
 === "如果是 CentOS"
 

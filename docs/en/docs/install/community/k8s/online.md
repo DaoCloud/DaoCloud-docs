@@ -28,12 +28,12 @@ This page will guide you to install DCE Community package online in a standard K
 
 1. Download the `dce5-installer` binary file on the controller node of the Kubernetes cluster (you can also [download it via browser](../../../download/index.md).
 
-    Take VERSION=v0.10.0 as an example.
+    Take VERSION=v0.12.0 as an example.
 
     ```shell
-    export VERSION=v0.10.0
+    export VERSION=v0.12.0
 
-    ## For ARM CPU, change `dce5-installer-$VERSION` to `dce5-installer-$VERSION-linux-arm64`.
+    ## For ARM CPU, change `dce5-installer-$VERSION` to `dce5-installer-$VERSION-linux-arm64`
 
     curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer
@@ -43,7 +43,9 @@ This page will guide you to install DCE Community package online in a standard K
 
     - If Console is exposed via NodePort (recommended only for PoC use cases), skip this step.
 
-    - In non-public cloud environment (virtual/physical machine), please enable load balancer (metallb) to avoid NodePort instability caused by node IP changes. Plan your network carefully and set up 2 necessary VIPs. Here is an example of `clusterConfig.yaml`:
+    - In non-public cloud environment (virtual/physical machine), please enable load balancer (metallb) to
+      avoid NodePort instability caused by node IP changes. Plan your network carefully and set up 2 necessary VIPs.
+      Here is an example of `clusterConfig.yaml`:
 
         ```yaml title="clusterConfig.yaml"
         apiVersion: provision.daocloud.io/v1alpha3
@@ -56,7 +58,8 @@ This page will guide you to install DCE Community package online in a standard K
         ```
 
         1. This is the VIP of the Istio gateway and also the browser URL of the DCE 5.0
-        2. The VIP used by the Insight-Server of the global service cluster to collect the network paths of all sub-cluster monitoring metrics
+        2. The VIP used by the Insight-Server of the global service cluster to collect the network paths
+           of all sub-cluster monitoring metrics
 
      - If it is a public cloud environment that already has a Kubernetes load balancer, set `clusterConfig.yaml` as follows:
 
@@ -79,7 +82,8 @@ This page will guide you to install DCE Community package online in a standard K
         - Parameter `-p` specifies the offline directory to decompress the offline package.
         - For `clusterConfig.yaml` file settings, refer to [Online Installation](online.md#_2).
         - `-z` minimal install
-        - `-c` specifies the cluster configuration file. You don't need to specify `-c` when using NodePort to expose the console.
+        - `-c` specifies the cluster configuration file. You don't need to specify `-c`
+          when using NodePort to expose the console.
         - `-d` enable debug mode
         - `--serial` specifies that all installation tasks are executed serially
 
@@ -93,4 +97,6 @@ This page will guide you to install DCE Community package online in a standard K
 
         Please write down the prompted URL for your next visit.
 
-5. Before fully explore the features of DCE 5.0, you need to apply for a license. The Community package is provided for free. All you need to do is to [apply for a free license](../../../dce/license0.md).
+5. Before fully explore the features of DCE 5.0, you need to apply for a license.
+   The Community package is provided for free. All you need to do is to
+   [apply for a free license](../../../dce/license0.md).
