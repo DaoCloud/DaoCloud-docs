@@ -7,6 +7,44 @@ Date: 2023-06-29
 
 This page lists the Release Notes of the installer, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-10-31
+
+### v0.12.0
+
+#### Added
+
+- **Added** download offline package breakpoint resume feature.
+- **Added** Installer now checks if lvm2 is installed on each host node when enabling Brow Storage component.
+- **Added** Default Kubernetes version in the installer upgraded to `1.27.5`.
+
+#### Optimized
+
+- **Optimized** Removed CPU/Memory resource request and limit for Global Management, Container Management, and Observability components in community edition minimal installation with `-z` flag.
+- **Optimized** Improved error handling for installer's `-m` parameter, now it throws an error and exits installation when manifest file is not specified for `-m`.
+- **Optimized** Enhanced logging display for upgrade functionality.
+- **Optimized** Adapted containerd-related parameters from kubean.
+- **Optimized** Repackaged GProduct component and uploaded it to ChartMuseum on Sparkle nodes.
+- **Optimized** Improved log output when uploading addon fails.
+- **Optimized** Adapted helm installation parameters for reusing during GProduct component upgrade.
+- **Optimized** Adjusted maximum pod count per node to 180 for Global cluster.
+- **Optimized** Improved excessive logging during migration of charts.
+
+#### Fixed
+
+- **Fixed** privilege issue with cache files when installing with non-root user.
+- **Fixed** error during migration of data from Sparkle nodes to Global cluster during installation.
+- **Fixed** possible failure during addon upload.
+- **Fixed** Addressed potential "helm operation in progress" issue in the code.
+- **Fixed** support for external redis with password in sentry mode for Kpanda component.
+- **Fixed** failure to deploy Global cluster with docker runtime.
+- **Fixed** redirection issue in LB mode for Ghippo.
+- **Fixed** missing metric indicators when starting MinIo component.
+
+#### Known Issues
+
+- Podman in Sparkle nodes requires IPv6 to be enabled.
+- Global cluster may encounter `etcd NOSPACE` warning risk.
+
 ## 2023-8-31
 
 ### v0.11.0
@@ -26,8 +64,8 @@ This page lists the Release Notes of the installer, so that you can understand t
 
 #### Bug Fixes
 
-- **Fixed** Fixed issue where redis sentinel mode does not support sentinel instance password
-- **Fixed** Fixed failure when adding TencentOS 3.1 system nodes to the working cluster
+- **Fixed** issue where redis sentinel mode does not support sentinel instance password
+- **Fixed** failure when adding TencentOS 3.1 system nodes to the working cluster
 
 ## 2023-7-31
 

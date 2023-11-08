@@ -17,14 +17,14 @@ This page describes how to install DCE 5.0 on OCP.
 
      | CPU Architecture | Version | Download URL |
      | -------- | ------ | ------------------------------ -------------------------------------------------- -------------- |
-     | AMD64 | v0.10.0 | <https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.10.0-amd64.tar> |
-     | ARM64 | v0.10.0 | <https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.10.0-arm64.tar> |
+     | AMD64 | v0.12.0 | <https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.12.0-amd64.tar> |
+     | ARM64 | v0.12.0 | <https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.12.0-arm64.tar> |
 
      Unzip the offline package after downloading:
 
      ```bash
      ## Take the amd64 architecture offline package as an example
-     tar -xvf offline-v0.10.0-amd64.tar
+     tar -xvf offline-v0.12.0-amd64.tar
      ```
 
 3. Set [clusterConfig.yaml](../commercial/cluster-config.md), which can be obtained under the offline package `offline/sample` and modified as needed.

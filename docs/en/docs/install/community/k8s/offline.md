@@ -25,10 +25,10 @@ Click [Online Install DCE Community](../../../videos/install.md) to watch a vide
 
 1. Download and decompress the offline package of DCE Community on the controller node of your kubernetes cluster, or download and decompress the offline package from [Download Center](../../../download/index.md).
 
-    Take VERSION=0.10.0 as an example
+    Take VERSION=0.12.0 as an example.
 
     ```bash
-    export VERSION=v0.10.0
+    export VERSION=v0.12.0
     wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-$VERSION-amd64.tar
     tar -xvf offline-community-$VERSION-amd64.tar
     ```
@@ -37,7 +37,9 @@ Click [Online Install DCE Community](../../../videos/install.md) to watch a vide
 
     - If Console is exposed via NodePort (recommended only for PoC use cases), skip this step.
 
-    - In non-public cloud environment (virtual/physical machine), please enable load balancer (metallb) to avoid NodePort instability caused by node IP changes. Plan your network carefully and set up 2 necessary VIPs. Here is an example of `clusterConfig.yaml`:
+    - In non-public cloud environment (virtual/physical machine), please enable load balancer (metallb) to avoid
+      NodePort instability caused by node IP changes. Plan your network carefully and set up 2 necessary VIPs.
+      Here is an example of `clusterConfig.yaml`:
 
         ```yaml title="clusterConfig.yaml"
         apiVersion: provision.daocloud.io/v1alpha3
@@ -48,9 +50,9 @@ Click [Online Install DCE Community](../../../videos/install.md) to watch a vide
             istioGatewayVip: 10.6.229.10/32
             insightVip: 10.6.229.11/32
           fullPackagePath: absolute-path-of-the-offline-directory # path for decompressed offline package
-          imagesAndCharts: # image registry
+          imagesAndCharts: # container registry
             type: external
-            externalImageRepo: your-external-registry # image registry address, must be http or https
+            externalImageRepo: your-external-registry # container registry address, must be http or https
             # externalImageRepoUsername: admin
             # externalImageRepoPassword: Harbor123456
          ```
@@ -64,9 +66,9 @@ Click [Online Install DCE Community](../../../videos/install.md) to watch a vide
           loadBalancer:
             type: cloudLB
           fullPackagePath: absolute-path-of-the-offline-directory # path for decompressed offline package
-          imagesAndCharts: # image registry
+          imagesAndCharts: # container registry
             type: external
-            externalImageRepo: your-external-registry # image registry address, must be http or https
+            externalImageRepo: your-external-registry # container registry address, must be http or https
             # externalImageRepoUsername: admin
             # externalImageRepoPassword: Harbor123456
         ```
@@ -80,9 +82,9 @@ Click [Online Install DCE Community](../../../videos/install.md) to watch a vide
           loadBalancer:
             type: NodePort
           fullPackagePath: absolute-path-of-the-offline-directory # path for decompressed offline package
-          imagesAndCharts: # image registry
+          imagesAndCharts: # container registry
             type: external
-            externalImageRepo: your-external-registry # image registry address, must be http or https
+            externalImageRepo: your-external-registry # container registry address, must be http or https
             # externalImageRepoUsername: admin
             # externalImageRepoPassword: Harbor123456
          ```

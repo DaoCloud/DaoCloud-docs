@@ -17,8 +17,8 @@
 
     | CPU 架构 | 版本   | 下载地址                                                                                          |
     | -------- | ------ | ------------------------------------------------------------------------------------------------- |
-    | AMD64    | v0.12.0 | <https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.10.0-amd64.tar> |
-    | ARM64     | v0.12.0 | <https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.10.0-arm64.tar> |
+    | AMD64    | v0.12.0 | <https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.12.0-amd64.tar> |
+    | ARM64     | v0.12.0 | <https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.12.0-arm64.tar> |
 
     下载完毕后解压离线包：
 

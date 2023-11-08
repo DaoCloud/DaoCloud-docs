@@ -33,9 +33,9 @@ precheck pass...
 !!! note
 
     - If you have installed Docker v1.18+, skip this step.
-    - Use domestic source to accelerate: <https://developer.aliyun.com/mirror/docker-ce>
     - If you have Podman on your node but not Docker, you still need to install Docker.
-      This is because of a known bug: although Podman can start kind, there will be a problem of insufficient file handles and IP mismatch.
+      This is caused by a known bug: although Podman can start kind, there will be a
+      problem of insufficient file handles and IP mismatch.
 
 === "On CentOS"
 
@@ -159,10 +159,10 @@ precheck pass...
 
 2. Download the `dce5-installer` binary file on the kind host.
 
-    Takve VERSION=v0.10.0 as an example:
+    Takve VERSION=v0.12.0 as an example:
 
     ```shell
-    export VERSION=v0.10.0
+    export VERSION=v0.12.0
     curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer
     ```

@@ -10,7 +10,7 @@
 
 请根据业务环境下载对应的离线包。
 
-#### 离线镜像包 （必需）
+#### 离线镜像包（必需）
 
 离线镜像包包含安装 DCE 5.0 各个产品模块所需的配置文件、镜像资源以及 chart 包。
 
@@ -18,8 +18,8 @@
 
 | CPU 架构 | 版本   | 点击下载                                                     |
 | :------- | :----- | :----------------------------------------------------------- |
-| AMD64    | v0.11.0 | [offline-v0.12.0-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.12.0-amd64.tar) |
-| ARM64    | v0.11.0 | [offline-v0.12.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.12.0-arm64.tar) |
+| AMD64    | v0.12.0 | [offline-v0.12.0-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.12.0-amd64.tar) |
+| ARM64    | v0.12.0 | [offline-v0.12.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.12.0-arm64.tar) |
 
 下载完毕后解压离线包。以 amd64 架构离线包为例：
 
@@ -116,8 +116,8 @@ addon 离线包包含一些常用的组件的 Helm Chart 离线包，具体清�
 
 | CPU 架构 | 版本   | 点击下载                                                     |
 | :------- | :----- | :----------------------------------------------------------- |
-| AMD64    | v0.12.0 | [addon-offline-full-package-v0.12.0-amd64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.11.0-amd64.tar.gz) |
-| ARM64    | v0.12.0 | [addon-offline-full-package-v0.12.0-arm64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.11.0-arm64.tar.gz) |
+| AMD64    | v0.12.0 | [addon-offline-full-package-v0.12.0-amd64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.12.0-amd64.tar.gz) |
+| ARM64    | v0.12.0 | [addon-offline-full-package-v0.12.0-arm64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.12.0-arm64.tar.gz) |
 
 #### 一键下载所需离线包
 
@@ -133,9 +133,9 @@ addon 离线包包含一些常用的组件的 Helm Chart 离线包，具体清�
 
     由于不同的 ISO 操作系统下载方式不一致，所以一键下载出来的离线包并不包含 ISO 文件。
 
-### 第 2 步：配置集群配置文件
+### 第 2 步：配置 clusterConfig.yaml
 
-集群配置文件位于离线镜像包 `offline/sample` 目录下，具体的参数介绍请参考 [clusterConfig.yaml](cluster-config.md)。
+这是集群配置文件，位于离线镜像包 `offline/sample` 目录下，具体的参数介绍请参考 [clusterConfig.yaml](cluster-config.md)。
 
 !!! note
 
