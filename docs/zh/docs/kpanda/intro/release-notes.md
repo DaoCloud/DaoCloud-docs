@@ -2,6 +2,43 @@
 
 本页列出容器管理的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2023-11-06
+
+### v0.22.0
+
+#### 新功能
+
+- **新增** 支持界面升级系统组件版本、修改系统组件参数。
+- **新增** 适配 [RedHat 9.2 创建集群](../best-practice/create-redhat9.2-on-centos-platform.md)。
+- **新增** 支持 Nvidia 整卡、vGPU、MIG GPU 模式。
+- **新增** 支持天数智芯 GPU 卡。
+- **新增** 支持命名空间级 GPU 资源配额管理。
+- **新增** 支持应用级 GPU 资源配额。
+- **新增** 适配 [CentOS 7.9](../user-guide/gpu/nvidia/install_nvidia_driver_of_operator.md) 、[Redhat8.4 GPU Operator](../user-guide/gpu/nvidia/upgrade_yum_source_redhat8_4.md) 的离线化部署和使用。
+- **新增** 支持集群、节点、应用级 GPU 资源监控。
+- **新增** 支持容器管理、应用备份恢复、集群巡检、安全扫描产品模块的离线升级。
+- **新增** 支持 Helm Chart 的多架构混部。
+- **新增** 支持集群同版本升级。
+- **新增** 支持 [Configmap/Secret 热加载](../user-guide/configmaps-secrets/configmap-hot-loading.md)。
+- **新增** 创建集群-节点检查支持自定义参数配置，满足企业节点加密认证等场景
+
+#### 优化
+
+- **优化** 支持在 Configmap/Secret 详情页查看关联信息
+- **优化** 不同权限用户进入容器管理可见资源
+- **优化** 新增 Helm Repo 支持自动刷新和间隔时间内自动刷新开关
+
+#### 修复
+
+- **修复** 集群状态未知时，无法卸载集群的问题
+- **修复** 容器组列表  CPU 使用率无数据问题
+- **修复** 修复 ARM 架构无法安装 Insight-agent、Metrics-server 插件问题
+- **修复** 使用密钥创建集群无法通过节点检查问题
+- **修复** 修复创建负载无法添加环境变量问题
+- **修复** 被删除用户数据残留问题
+- **修复** CIS 合规性扫描、权限扫描以及漏洞扫描报告列表页面分页问题
+- **修复** 创建静态 PV 指向错误 StrogeClass 问题
+
 ## 2023-9-06
 
 ### v0.21.0
