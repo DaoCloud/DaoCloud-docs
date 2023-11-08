@@ -1,6 +1,17 @@
 # Container Registry Release Notes
 
-This page lists the release notes of the container registry, so that you can understand the evolution path and feature changes of each version.
+This page lists the release notes of the container registry, so that you can
+understand the evolution path and feature changes of each version.
+
+## 2023-11-03
+
+### v0.12.0
+
+- **New**: Support for quick deployment of middleware when creating a hosted Harbor in non-platinum versions
+- **New**: Best practices for publishing Harbor Nginx configuration
+- **New**: Best practices for resource planning when releasing container registries
+- **Improvement**: Improved resource validation when creating a hosted Harbor
+- **Improvement**: Prompt for installing cert manager as a dependency for Harbor operator
 
 ## 2023-09-06
 
@@ -10,15 +21,15 @@ This page lists the release notes of the container registry, so that you can und
 - Added deployment to download station
 - Added best practices for Nginx proxy, resource capacity planning
 - Optimized fix for the issue preventing updates to hosted Harbor description
-- Optimized display of truncated image space in ignition image repository
+- Optimized display of truncated registry space in bootstrap container registry
 - Optimized frontend error for WS admin when creating recycle rules
 
 ## 2023-08-02
 
 ### v0.10
 
-- Added a solution for migrating/backing up/restoring image repositories, which has been verified through the migration of the release-ci repository
-- Added best practices for logging into non-secure image repositories
+- Added a solution for migrating/backing up/restoring container registry, which has been verified through the migration of the release-ci repository
+- Added best practices for logging into non-secure container registry
 - Added support for using the internal middleware MINIO when creating hosted Harbor
 - Added support for the PG mode of Renmin Jincang
 - Improved the format validation for PG and Redis addresses when creating hosted Harbor
@@ -44,7 +55,7 @@ This page lists the release notes of the container registry, so that you can und
 #### New Features
 
 - Added image description information to the `harbor` type repository.
-- Added instance status to the image space list.
+- Added instance status to the registry space list.
 - Added support for randomly generating `nodeport` port numbers when creating a `harbor`.
 - Added validation for duplicate usage of `redis`, `postgresql`, and `s3` in the creation of `harbor`.
 - Added image recycling feature to the `project`.
@@ -132,7 +143,7 @@ This page lists the release notes of the container registry, so that you can und
 
 #### Features
 
-- Support for creating managed image registries based on Harbor
+- Support for creating managed registries based on Harbor
 - Support multi-copy deployment
 - Support full life cycle management of container registry
 - Support deploying managed harbor instances in any namespace under any cluster of the platform
