@@ -77,7 +77,7 @@ spec:
 
 ### Router-Plugin
 
-Router 插件通过在 Pod Netns 中设置一些路由规则，使来自主机、集群内的数据包从 Pod 的 eth0（默认 CNI 创建的网卡）转发，而来自于集群外的数据包从 MacVLAN/SR-IOV 创建的网卡转发。
+Router 插件通过在 Pod Netns 中设置一些路由规则，使来自主机、集群内的数据包从 Pod 的 eth0（默认 CNI 创建的网卡）转发，而来自集群外的数据包从 MacVLAN/SR-IOV 创建的网卡转发。
 下面是 Router 插件搭配 MacVLAN 的 Multus CRD 实例的配置示例：
 
 ```yaml

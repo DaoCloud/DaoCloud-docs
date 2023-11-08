@@ -4,7 +4,7 @@ HwameiStor 使用开源的 DRBD 数据同步技术创建**高可用卷**，本�
 
 !!! note
 
-    下面的 MySQL Yaml 文件来自于 [Kubernetes 的官方 Repo](https://github.com/kubernetes/website/blob/main/content/en/examples/application/mysql/mysql-statefulset.yaml)
+    下面的 MySQL Yaml 文件来自 [Kubernetes 的官方 Repo](https://github.com/kubernetes/website/blob/main/content/en/examples/application/mysql/mysql-statefulset.yaml)
 
 ## 前提条件
 

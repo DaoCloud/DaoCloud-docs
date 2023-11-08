@@ -1,6 +1,6 @@
 # 创建存储池
 
-下面的例子来自于一个 4 节点的 Kubernetes 集群：
+下面的例子来自一个 4 节点的 Kubernetes 集群：
 
 ```console
 $ kubectl get no
