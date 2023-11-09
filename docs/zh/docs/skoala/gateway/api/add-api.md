@@ -11,11 +11,11 @@
 
 1. 点击网关名称进入网关概览页面，然后在左侧导航栏点击 `API 管理`，在页面右上角点击 `添加 API`。
 
-    ![进入添加页面](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/add-api-01.png)
+    ![进入添加页面](./images/add-api-01.png)
 
 2. 参考下方说明填写基本配置。
 
-    配置分为基本配置和策略配置两部分。填写基本配置信息时需要注意：
+    配置分为基本配置和策略配置和安全配置三部分。填写基本配置信息时需要注意：
 
     - API 名称：包含小写字母、数字和以及特殊字符(- .)，不能以特殊字符开头和结尾。
     - API 分组：选择 API 所属的分组组名。如果输入不存在的分组名称，则自动创建一个新的分组。
@@ -25,26 +25,26 @@
     - 目标服务：选择将请求直接发送到后端服务，或者重定向到其他服务，或者直接返回 HTTP 状态码。
     - 如果选择后端服务，则需要配置权重。权重越大，网关向其分发的流量就越多。
 
-    ![配置信息](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/config.png)
+    ![配置信息](./images/config.png)
 
 3. 参考下方说明填写策略配置（选填）。
 
-    支持 11 种 API 策略：负载均衡、路径改写、超时配置、重试机制、请求头重写、响应头重写、Websocket、本地限流、健康检查、cookie 重写、访问黑白名单。有关各项策略的配置说明，可参考[API 策略配置](api-policy.md)。
+    支持 12 种 API 策略：负载均衡、路径改写、超时配置、重试机制、请求头重写、响应头重写、Websocket、本地限流、健康检查、cookie 重写、全局限流、访问黑白名单。有关各项策略的配置说明，可参考[API 策略配置](api-policy.md)。
 
-    ![配置策略](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/policy01.png)
+    ![配置策略](./images/policy01.png)
 
 4. 参考下方说明填写安全配置（选填）。
 
-    - JWT 认证：开启或禁用 JWT 认证
-    - 安全认证：开启或禁用安全认证
+    - JWT 认证：应用域名配置或不启用
+    - 安全认证：应用域名配置或自定义
 
-    ![安全配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/policy02.png)
+    ![安全配置](./images/policy02.png)
 
 5. 在页面右下角点击`保存`（不上线）。如果点击`保存并上线`则可以直接上线 API。
 
     点击`确定`后，如果所有配置都正常，右上角会弹出`创建网关 API 成功`的提示信息。可以在 `API 管理`页面查看新建的 API。
 
-    ![创建成功](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/result.png)
+    ![创建成功](./images/result.png)
 
 6. API 上线
 
@@ -52,14 +52,14 @@
 
     - 在 API在 `API 管理`页面找到需要更新的 API，在该 API 的右侧点击 `ⵗ` 选择 `API 上线`。
 
-        ![API 上线](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/online.png)
+        ![API 上线](./images/online.png)
 
     - 点击 API 名称进入 API 详情页，在页面右上角点击 `ⵗ` 并选择 `API 上线`。
 
-        ![API 上线](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/online1.png)
+        ![API 上线](./images/online1.png)
 
 !!! info
 
     点击 API 名称进入 API 详情，可查看 API 的详细配置信息，例如上下线状态、域名、匹配规则、目标服务、策略配置等。
 
-    ![API 上线](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/online1.png)
+    ![API 上线](./images/online1.png)
