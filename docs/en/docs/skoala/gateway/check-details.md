@@ -25,7 +25,7 @@ Some of the data are described as follows:
 
 ## Related operation
 
-In addition to viewing the gateway details, you can update the gateway configuration, delete the gateway, and diagnose the gateway on the gateway details page.
+In addition to viewing the gateway details, you can update the gateway configuration and delete the gateway on the gateway details page.
 
 - Update gateway: Click `Edit` at the top of the page to jump to the page for updating gateway configuration. For details, see [Update Gateway Settings](update-gateway.md).
 - Delete gateway: Click `⋯` at the top of the page and select `Delete` to go to the page for deleting gateway. For details, see [Delete Gateway](delete-gateway.md).
