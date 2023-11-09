@@ -237,7 +237,7 @@ skoala-ui-7c9f5b7b67-9rpzc             2/2     Running   0               3h48m
 helm uninstall skoala -n skoala-system
 ```
 
-# 在线安装微服务引擎集群初始化组件
+## 在线安装微服务引擎集群初始化组件
 
 ### 微服务引擎集群初始化组件部署结构
 
