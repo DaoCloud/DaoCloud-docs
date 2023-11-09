@@ -10,7 +10,7 @@ On this page, you can download the offline installation packages for different v
 
 ## Verification
 
-To verify the integrity of the downloaded offline installation package and checksum file in the directory, execute the following command:
+To verify the integrity of the downloaded offline installation package and checksum file in the directory, run the following command:
 
 ```sh
 echo "$(cat mcamel-rocketmq_0.1.1_amd64_checksum.sha512sum)" | sha512sum -c

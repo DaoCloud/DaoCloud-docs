@@ -1,6 +1,6 @@
 # Insight
 
-On this page, you can download the offline installation packages of each version of the observability module.
+On this page, you can download the offline installation packages of each version of the Insight module.
 
 ## Download
 
@@ -26,7 +26,7 @@ insight_v0.13.1_amd64.tar: ok
 
 ## Installation
 
-Refer to [Offline upgrade observability module](../../insight/quickstart/install/offline-install.md)
+Refer to [Offline upgrade Insight module](../../insight/quickstart/install/offline-install.md)
 for installation instructions.
 
 If you are installing for the first time, please [apply for a free trial](../../dce/license0.md) or contact us for authorization: email info@daocloud.io or call 400 002 6898.
