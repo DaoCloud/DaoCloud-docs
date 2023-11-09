@@ -229,7 +229,7 @@ skoala-ui-7c9f5b7b67-9rpzc             2/2     Running   0               3h48m
 
 ## 更新微服务引擎管理组件
 
-支持离线升级和在线升级两种方式，具体可参考[离线升级](../quickstart/offline-upgrade.md)或[在线升级](online-upgrade.md)
+支持离线升级和在线升级两种方式，具体可参考[离线升级](offline-upgrade.md)或[在线升级](online-upgrade.md)
 
 ## 卸载微服务引擎管理组件
 
@@ -295,3 +295,4 @@ skoala-agent-54d4df7897-7p4pz                         1/1     Running     0     
 
 ```bash
 helm uninstall skoala-init -n skoala-system
+```
