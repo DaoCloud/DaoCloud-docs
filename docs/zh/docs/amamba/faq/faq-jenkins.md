@@ -72,3 +72,42 @@ error: unexpected error when reading response body. Please retry. Original error
     修改时注意格式缩进，并且每个 registry 需要一个单独的 `[[registry]]` 部分，如下图所示：
 
     ![faq-ci1](../images/faq-ci1.png)
+
+    !!! note
+
+    `registries` 关键字的值应该是完整的镜像仓库域名或IP地址，不需要加上`http`或`https`前缀。如果镜像仓库使用非标准端口号，可以在地址后面加上冒号`:`和端口号。
+
+        ```
+        [registries]
+        location = "registry.example.com:5000"
+        insecure=true
+
+        [registries]
+        location = "192.168.1.100:8080"
+        insecure=true
+        ```
+
+    也可参考官网指导文档：https://podman-desktop.io/docs/containers/registries/insecure-registry。
+
+### 集群运行时为 docker
+
+1. 打开Docker的配置文件。在大多数Linux发行版上，配置文件位于`/etc/docker/daemon.json`，如果文件不存在，请创建它。
+
+2. 在 `insecure-registries` 的字段将仓库地址添加进去。
+
+    ```
+    {
+      "insecure-registries": ["10.16.10.120:4443"]
+    }
+    ```
+
+3. 保存后重启 docker，执行如下命令：
+
+    ```bash
+    sudo systemctl daemon-reload
+    sudo systemctl restart docker
+    ```
+
+!!! note
+
+    可以参考官方指导文档：https://docs.docker.com/engine/reference/commandline/dockerd/#configuration-reload-behavior。
