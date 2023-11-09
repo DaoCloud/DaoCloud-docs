@@ -3,9 +3,9 @@
 <!--## 前提条件-->
 ## 操作步骤
 
-1. 在托管注册中心列表页面点击目标注册中心的名称，然后。
+1. 进入`微服务引擎` -> `传统微服务` -> `注册配置中心`模块，点击目标注册中心的名称。
 
-    ![进入插件中心](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/plugins/imgs/ns-1.png)
+   ![插件中心](../../../images/ns-1.png)
 
 2. 在左侧导航栏点击`插件中心`，在`Mesh 治理`卡片上点击`立即开启`。
 

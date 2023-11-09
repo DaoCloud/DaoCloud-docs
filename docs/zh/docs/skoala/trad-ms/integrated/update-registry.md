@@ -9,11 +9,11 @@ hide:
 
 1. 在`接入注册中心列表`页选择需要更新的注册中心，在右侧点击 `⋯` 并选择`编辑`。
 
-    ![进入更新页面](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/integrated/imgs/update-1.png)
+    ![进入更新页面](../../images/update-1.png)
 
-2. 增加或删除注册中心的地址，然后在页面底部点击`确定`。
+2. 修改、增加或删除注册中心的地址，然后在页面底部点击`确定`。
 
-    ![进入更新页面](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/integrated/imgs/update-2.png)
+    ![进入更新页面](../../images/update-2.png)
 
 !!! note
 
