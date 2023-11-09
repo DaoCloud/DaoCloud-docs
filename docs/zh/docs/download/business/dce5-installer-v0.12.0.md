@@ -26,7 +26,7 @@ hide:
     执行以下命令校验安装包：
 
     ```sh
-    echo "58b57b7b4441b311ad390ecc4b34def1c18f3df61f4daa61bdc9bb987f22504c10d71bdd24e39996d566cc9965cdd7ba26dbc3d71bfbe982b82b17aa20ff0751  offline-v0.12.0-amd64.tar" | sha512sum -c
+    echo "6a2bc869f2ec916dff35a5a473f13dcccef8126d664089ea0465e1a343eececf5a357520244990c765c9de608b765e26b8950bf0322b26b5e53491826d1d919a  offline-v0.12.0-amd64.tar" | sha512sum -c
     ```
 
     校验成功会打印：
@@ -40,7 +40,7 @@ hide:
     执行以下命令校验安装包：
 
     ```sh
-    echo "70b4f637f27d97c716f94d11acf9527f03ddd32a8899557494550a3d644bc4f5ba5c5a6b89bac9023b0a4da88c38a4b3e3ba9d3320bc7eeff483921f31d546cf  offline-v0.12.0-arm64.tar" | sha512sum -c
+    echo "c7fba9dfe0979caa2910b9aa2674e3a744455b185f9ee8e70264d8833e962df3361fb85d9d5d33be8fc643e36d9929e3d7af37ead66e7d30483d76dc77faa04c  offline-v0.12.0-arm64.tar" | sha512sum -c
     ```
 
     校验成功会打印：

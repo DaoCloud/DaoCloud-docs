@@ -26,7 +26,7 @@ hide:
     执行以下命令校验安装包：
 
     ```sh
-    echo "54326e5b62cd7bb2711904adff5d2128e647dcd0993ae7109645889d3c923a8c590ae6d1623a85e846e9a0acf7f0149936c686a1544f7b933d4444b33916d876  offline-community-v0.12.0-amd64.tar" | sha512sum -c
+    echo "9e7298e2706ea70d08db71098843edf9fbf775835fc047bb4cbe01328ca49d7f40b7d8b7a01fbd48c0d9df3d21bc22393a55351238be59ac89eb4815816c4961  offline-community-v0.12.0-amd64.tar" | sha512sum -c
     ```
 
     校验成功会打印：
@@ -40,7 +40,7 @@ hide:
     执行以下命令校验安装包：
 
     ```sh
-    echo "25b7688637e57eea4488386a28f9357601ff53f497f439808a34a91e02ba2ceb8f7b92a74fd7184602efdb853e81472f8de7b53a04f9a93903f0131a4acac1be  offline-community-v0.12.0-arm64.tar" | sha512sum -c
+    echo "2fcf216c566b9e57b88bf8af9cfc5e18d86ec8a713b862a9973c38ac87ff054868a245d27e1da825528a26f7c46bc44b34b33391aa1dd36006d454c0b56c72a3  offline-community-v0.12.0-arm64.tar" | sha512sum -c
     ```
 
     校验成功会打印：
