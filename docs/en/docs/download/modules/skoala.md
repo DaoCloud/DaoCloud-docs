@@ -11,7 +11,7 @@ On this page, you can download offline installation packages for various version
 
 ## Verification
 
-In the directory where you downloaded the offline installation package and checksum file, execute the following command to verify the integrity:
+In the directory where you downloaded the offline installation package and checksum file, run the following command to verify the integrity:
 
 ```sh
 echo "$(cat skoala_v0.28.0_amd64_checksum.sha512sum)" | sha512sum -c

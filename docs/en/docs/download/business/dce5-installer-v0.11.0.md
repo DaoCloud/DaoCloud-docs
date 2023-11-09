@@ -82,7 +82,7 @@ which are plug-and-play to meet various application scenarios:
 | ---------------- | -------------------- | --------------------------- |
 | Global Management | Responsible for user access control, permissions, enterprise spaces, audit logs, personalized appearance settings, etc. | [0.20.1](../../ghippo/intro/release-notes.md#0201) |
 | Container Management | Manages clusters, nodes, workloads, Helm applications, CRD, namespaces, and other core features of K8s. | [0.21.0](../../kpanda/intro/release-notes.md#0210) |
-| Observability   | Provides rich dashboards, scenario monitoring, data queries, alerts, and other graphical information. | [0.20.0](../../insight/intro/releasenote.md#0200)     |
+| Insight   | Provides rich dashboards, scenario monitoring, data queries, alerts, and other graphical information. | [0.20.0](../../insight/intro/releasenote.md#0200)     |
 | Workbench | Container-based DevOps application platform, supports Jenkins, Tekton, GitOps, and other pipeline jobs. | [0.20.0](../../amamba/intro/release-notes.md#0200) |
 | MultiCloud Orchestration | Centralized management of multi-cloud, hybrid cloud, and cross-cloud resource application orchestrations, with multi-cloud disaster recovery and fault tolerance capabilities. | [0.12.0](../../kairship/intro/release-notes.md#0120) |
 | Microservice Engine | Provides governance capabilities such as service registration and discovery, service governance, configuration management, and microservice gateway |
