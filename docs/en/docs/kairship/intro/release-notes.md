@@ -1,6 +1,28 @@
 # Release Notes
 
-This page lists the release notes of Multicloud Management module, so that you can understand the evolution path and feature changes of each version.
+This page lists the release notes of Multicloud Management module,
+so that you can understand the evolution path and feature changes of each version.
+
+## 2023-10-31
+
+### v0.13
+
+#### Bug Fixes
+
+- **Fixed** the issue where corresponding Pods cannot be viewed when viewing svc.
+- **Fixed** the issue of being unable to delete member clusters after enabling metricAdaptor.
+
+## 2023-08-31
+
+### v0.12
+
+#### New Features
+
+- **Added** Support for [Cross-Cluster Horizontal Pod Autoscaling (FHPA)](../best-practice/fhpa.md).
+
+#### Bug Fixes
+
+- **Fixed** the issue of continuous restart of kairship-apiserver.
 
 ## 2023-08-31
 
@@ -12,7 +34,7 @@ This page lists the release notes of Multicloud Management module, so that you c
 
 #### Bug Fixes
 
-- **Fixed** Addressed the issue of continuous restarts of kairship-apiserver
+- **Fixed** the issue of continuous restarts of kairship-apiserver
 
 ## 2023-07-31
 
@@ -32,16 +54,16 @@ This page lists the release notes of Multicloud Management module, so that you c
 
 #### New Features
 
-- **Added**: Added support for LoadBalancer type in Service.
-- **Added**: Added distribution status display for resources.
-- **Added**: Added multi-cloud audit logs.
+- **Added** support for LoadBalancer type in Service.
+- **Added** distribution status display for resources.
+- **Added** multi-cloud audit logs.
 
 #### Fixes
 
-- **Fixed**: Fixed the issue of audit log out of range.
-- **Fixed**: Fixed the duplicate icon issue when adding a working cluster to the multi-cloud instance details page.
-- **Fixed**: Fixed the error that occurs when modifying the number of instances while creating a multi-cloud workload.
-- **Fixed**: Fixed the icon style issue with the distribution status of multi-cloud resources.
+- **Fixed** the issue of audit log out of range.
+- **Fixed** the duplicate icon issue when adding a working cluster to the multi-cloud instance details page.
+- **Fixed** the error that occurs when modifying the number of instances while creating a multi-cloud workload.
+- **Fixed** the icon style issue with the distribution status of multi-cloud resources.
 
 #### Improvements
 
@@ -104,7 +126,7 @@ This page lists the release notes of Multicloud Management module, so that you c
 - Cluster-level deployment policies and override policies
 - Custom permissions of roles
 
-#### Enhancement
+#### Improvement
 
 - Choice to hide annotations prefixed with 'kairship.io/'
 - Guide users to select cluster when setting override policies
@@ -126,7 +148,7 @@ This page lists the release notes of Multicloud Management module, so that you c
 - Management of multicloud custom resources, supporting CRUD and deployment actions
 - Management of multicloud Services, supporting CRUD and deployment actions
 
-#### Enhancement
+#### Improvement
 
 - Auto-propagation fields when creating a multicloud workload
 - Specify the deployment position of multicloud Services
@@ -160,7 +182,7 @@ This page lists the release notes of Multicloud Management module, so that you c
 - Create and update propagation policies with graphical forms
 - Display eviction status of worker clusters
 
-#### Enhancement
+#### Improvement
 
 - Add Enable/Disenable slider for propagation constraints when creating propagation policies
 - Upgrade the version of karmada-operator to v0.1.9, solving the problem of pod anti-affinity of multiple instances of etcd
@@ -205,7 +227,7 @@ This page lists the release notes of Multicloud Management module, so that you c
 - Query the namespace and deployment resources of the member cluster
 - Added prompts for creating multicloud resources
 
-#### Enhancement
+#### Improvement
 
 - The protobuf data structure of karmada PropagationPolicy and OverridePolicy
 
@@ -246,6 +268,6 @@ This page lists the release notes of Multicloud Management module, so that you c
 - API to download kubeconfig of for Karmada instances
 - API to update instance's alias and labels
 
-#### Enhancement
+#### Improvement
 
 - Enhance instance API and collect resource statistics of Karmada instances
