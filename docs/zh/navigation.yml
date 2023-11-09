@@ -59,6 +59,7 @@ nav:
                   - 权限说明: amamba/intro/permission.md
                   - Release Notes: amamba/intro/release-notes.md
               - 离线升级: amamba/offline-upgrade.md
+              - 部署应用工作台可插拔组件: amamba/pluggable-components.md
               - 命名空间管理: amamba/user-guide/namespace/namespace.md
               - 向导:
                   - 基于 Git 仓构建微服务应用: amamba/user-guide/wizard/create-app-git.md
