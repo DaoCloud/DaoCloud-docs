@@ -6,7 +6,7 @@
 
 当 Jenkins 所在集群与应用部署集群跨数据中心时，网络通信延迟会变高，可能遇到如下的报错信息：
 
-```bash
+```console
 E0113 01:47:27.690555 50 request.go:1058] Unexpected error when reading response body: net/http: request canceled (Client.Timeout or context cancellation while reading body)
 error: unexpected error when reading response body. Please retry. Original error: net/http: request canceled (Client.Timeout or context cancellation while reading body)
 ```
@@ -17,7 +17,8 @@ error: unexpected error when reading response body. Please retry. Original error
 
 ## 如何更新内置 Label 的 podTemplate 镜像？
 
-应用工作台通过 podTemplate 能力声明了 7 个 label：`base`、`maven`、`mavenjdk11`、`go`、`go16`、`node.js` 和 `python`。您可以指定具体的 Agent 标签来使用对应的 podTemplate。
+应用工作台通过 podTemplate 能力声明了 7 个 label：`base`、`maven`、`mavenjdk11`、`go`、`go16`、`node.js` 和 `python`。
+您可以指定具体的 Agent 标签来使用对应的 podTemplate。
 
 如果内置 podTemplate 中的镜像不满足您的需求，可以通过以下方式替换容器镜像或者添加容器镜像。
 
@@ -25,9 +26,9 @@ error: unexpected error when reading response body. Please retry. Original error
 
     ![faq-ci2](../images/faq-ci2.png)
 
-2. 在左侧导航栏依次点击`配置与密钥`->`配置项`。
+2. 在左侧导航栏依次点击`配置与密钥` -> `配置项`。
 
-3. 搜索 `jenkins-casc-config` ，在操作列点击`编辑YAML` 。
+3. 搜索 `jenkins-casc-config`，在操作列点击`编辑 YAML`。
 
     ![faq-ci3](../images/faq-ci3.png)
 
@@ -35,7 +36,7 @@ error: unexpected error when reading response body. Please retry. Original error
 
     ![faq-ci4](../images/faq-ci4.png)
 
-5. 更新完成后，前往`工作负载`重启 jenkins。
+5. 更新完成后，前往`工作负载`重启 Jenkins。
 
 ## 流水线构建环境为 maven 时，如何在 settings.xml 中修改依赖包来源？
 
@@ -45,9 +46,9 @@ error: unexpected error when reading response body. Please retry. Original error
 
     ![faq-ci2](../images/faq-ci2.png)
 
-2. 在左侧导航栏依次点击`配置与密钥`->`配置项`。
+2. 在左侧导航栏依次点击`配置与密钥` -> `配置项`。
 
-3. 搜索 `amamba-devops-agent` ，在操作列点击 `编辑YAML` 。
+3. 搜索 `amamba-devops-agent`，在操作列点击 `编辑 YAML`。
 
     ![faq-ci5](../images/faq-ci5.png)
 
@@ -59,13 +60,13 @@ error: unexpected error when reading response body. Please retry. Original error
 
 ## 通过 Jenkins 构建镜像时，容器无法访问私有镜像仓库
 
-### 集群运行时为 podman
+### 集群运行时为 Podman
 
 1. 在容器管理模块的 `集群列表` 界面找到 Jenkins 组件所在的集群，点击集群名称。
 
-2. 在左侧导航栏依次点击`配置与密钥`->`配置项`。
+2. 在左侧导航栏依次点击`配置与密钥` -> `配置项`。
 
-3. 搜索 `insecure-registries`，在操作列点击`编辑YAML` 。
+3. 搜索 `insecure-registries`，在操作列点击`编辑 YAML`。
 
 4. 在 `data` 模块下的 `registries.conf` 下配置。
 
@@ -75,9 +76,10 @@ error: unexpected error when reading response body. Please retry. Original error
 
     !!! note
 
-    `registries` 关键字的值应该是完整的镜像仓库域名或IP地址，不需要加上`http`或`https`前缀。如果镜像仓库使用非标准端口号，可以在地址后面加上冒号`:`和端口号。
+        `registries` 关键字的值应该是完整的镜像仓库域名或 IP 地址，无需增加 `http` 或 `https` 前缀。
+        如果镜像仓库使用非标准端口号，可以在地址后面加上冒号 `:` 和端口号。
 
-        ```
+        ```toml
         [registries]
         location = "registry.example.com:5000"
         insecure=true
@@ -87,21 +89,21 @@ error: unexpected error when reading response body. Please retry. Original error
         insecure=true
         ```
 
-    也可参考官网指导文档：https://podman-desktop.io/docs/containers/registries/insecure-registry。
+    另请参考 [Podman 官网指导文档](https://podman-desktop.io/docs/containers/registries/insecure-registry)。
 
-### 集群运行时为 docker
+### 集群运行时为 Docker
 
-1. 打开Docker的配置文件。在大多数Linux发行版上，配置文件位于`/etc/docker/daemon.json`，如果文件不存在，请创建它。
+1. 打开 Docker 的配置文件。在大多数 Linux 发行版上，配置文件位于 `/etc/docker/daemon.json`，如果不存在，请创建此配置文件。
 
 2. 在 `insecure-registries` 的字段将仓库地址添加进去。
 
-    ```
+    ```json
     {
       "insecure-registries": ["10.16.10.120:4443"]
     }
     ```
 
-3. 保存后重启 docker，执行如下命令：
+3. 保存后重启 Docker，执行如下命令：
 
     ```bash
     sudo systemctl daemon-reload
@@ -110,4 +112,4 @@ error: unexpected error when reading response body. Please retry. Original error
 
 !!! note
 
-    可以参考官方指导文档：https://docs.docker.com/engine/reference/commandline/dockerd/#configuration-reload-behavior。
+    参考 [Docker 官方指导文档](https://docs.docker.com/engine/reference/commandline/dockerd/#configuration-reload-behavior)。
