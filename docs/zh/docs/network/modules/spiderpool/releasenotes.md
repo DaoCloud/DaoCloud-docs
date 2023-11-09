@@ -4,72 +4,74 @@
 
 其中包含:
 
-* Spiderpool 是 DaoCloud 自研开源的 IPAM 模块，请参考 [Spiderpool Release Notes](https://github.com/spidernet-io/spiderpool/releases)。
-* Egressgateway 是 DaoCloud 自研开源的出口网关模块，请参考 [Egressgateway Release Notes](https://github.com/spidernet-io/egressgateway/releases)。
+- Spiderpool 是 DaoCloud 自研开源的 IPAM 模块，请参考 [Spiderpool Release Notes](https://github.com/spidernet-io/spiderpool/releases)。
+- Egressgateway 是 DaoCloud 自研开源的出口网关模块，请参考 [Egressgateway Release Notes](https://github.com/spidernet-io/egressgateway/releases)。
 
 ## 2023-10-30
 
 ### v0.10.1
 
-* 适配 **Spiderpool 版本** : `v0.8.0`
-* 适配 **Egressgateway 版本** : `v0.3.0`
+- 适配 **Spiderpool v0.8.0**
+- 适配 **Egressgateway v0.3.0**
 
 #### 新功能
 
-- **新增** 支持出口网关通过节点选择器选择一组节点作为 Egress 节点,并通过指定节点转发外部流量
-- **新增** 支持为节点组配置IP 池,确保有足够可用 IP 地址,供网络中的不同节点或节点组使用
-- **新增** 支持在Calico、Flannel、Weave、Spiderpool的网络模式下，系统为命名空间或工作负载设置 EIP,Pod 在访问外部网络时，会统一使用此 EIP 作为出口地址
+- **新增** 支持出口网关通过节点选择器选择一组节点作为 Egress 节点，并通过指定节点转发外部流量
+- **新增** 支持为节点组配置 IP 池，确保有足够可用 IP 地址，供网络中的不同节点或节点组使用
+- **新增** 支持在 Calico、Flannel、Weave、Spiderpool 的网络模式下，系统为命名空间或工作负载设置
+  EIP，Pod 在访问外部网络时，会统一使用此 EIP 作为出口地址
 - **新增** 支持设置默认的 Egress IP 作为集群或命名空间的出口地址
 - **新增** 支持通过网关策略进行出网管控，支持根据目标 CIDR 过滤出口流量
 - **新增** 支持查看出口网关默认 EgressIP、EgressIP 池、节点列表以及节点 IP 地址范围
-- **新增** 支持网关策略使用 Pod 标签选择器或源地址,选择要使用 Egress 的 Pods,指定特定的 Pods 遵循网关策略
+- **新增** 支持网关策略使用 Pod 标签选择器或源地址，选择要使用 Egress 的 Pods，指定特定的 Pods 遵循网关策略
 - **新增** 支持查看网关策略中选择的网关、EgressIP 或节点 IP、容器组等进行网络配置管控
 - **新增** 支持 Egressgateway 用于低内核版本
-- **新增** Multus CR 管理界面，支持创建使用不同 Multus CNI (包括Macvlan、IPvlan、SRIOV 、自定义)类型的 CR 实例
+- **新增** Multus CR 管理界面，支持创建使用不同 Multus CNI（包括 Macvlan、IPvlan、SRIOV、自定义）类型的 CR 实例
 - **新增** Spiderpool 集成了 RDMA CNI 和 RDMA 设备插件
 - **新增** `sriov network operator` 的 Chart 配置信息
 - **新增** 支持为 KubeVirt 虚拟机分配静态 IP 地址
 - **新增** 在 SpiderAgent 的初始化容器中安装 CNI、OVS 和 RDMA
 
 #### 优化
+
 - **优化** OpenTelemetry 升级版本升级至 1.19.0
 - **优化** Spiderpool 初始化时，如果默认的 SpiderMultusConfig 网络不为空，将自动创建
 - **优化** 所有插件构建了全新的 Docker 镜像
 - **优化** 改进 GetTopController 方法
-- **优化** 工作负载网络配置中 Multus CR 管理对应的 CNI类型
-  
+- **优化** 工作负载网络配置中 Multus CR 管理对应的 CNI 类型
+
 #### 修复
 
 - **修复** coordinator 通过 veth0 传递的数据包中的 eth0 源 IP 问题
 - **修复** SpiderMultusConfig 在 `spidermultusconfig.spec` 为空时引发的错误
 - **修复** SpiderCoordinator 在自动获取 PodCIDR 类型时的问题
-  
+
 ## 2023-08-30
 
 ### v0.9.0
 
-适配 **Spiderpool 版本** : `v0.7.0`
+适配 **Spiderpool v0.7.0**
 
 #### 新功能
 
 - **新增** SpiderMultusConfig 的 Annotation Webhook 校验
-- **新增** 在双栈 SpiderSubnet自动池功能下分配单栈 IP
-- **新增** IPAM 核心算法优化，优先在亲和的池中分配IP
+- **新增** 在双栈 SpiderSubnet 自动池功能下分配单栈 IP
+- **新增** IPAM 核心算法优化，优先在亲和的池中分配 IP
 - **新增** SpiderSubnet 自动池功能下，孤儿 IPPool 的创建
 - **新增** Multus 卸载钩子移除 CNI 配置文件
 - **新增** Coordinator 支持自动模式(默认)，这将自动检测 Coordinator 的工作模式，不再需要手动指定 Underlay 或 Overlay。
- 相同的 multus CNI 配置，可以同时被用作 Underlay 或 Overlay 模式。
+  相同的 multus CNI 配置，可以同时被用作 Underlay 或 Overlay 模式。
 - **新增** 通过 `spidermultusconfig` 配置 `ovs-cni`
 
 #### 修复
 
 - **修复** 无控制器 Pod 打上自动池 Annotation 无法启动的 Bug
-- **修复**  Coordinator Webhook 校验 Bug
-- **修复**  Coordinator 监听 Calico 资源 Bug
-- **修复**  CRD 错误的 VLAN 范围
-- **修复**  自动池资源名字长度限制
-- **修复**  Coordinator 添加路由失败
-- **修复** 如果 `spidercoordinator.status.phase` 未 Ready, 清理已收集的集群子网信息，并且阻止 Pod 创建
+- **修复** Coordinator Webhook 校验 Bug
+- **修复** Coordinator 监听 Calico 资源 Bug
+- **修复** CRD 错误的 VLAN 范围
+- **修复** 自动池资源名字长度限制
+- **修复** Coordinator 添加路由失败
+- **修复** 如果 `spidercoordinator.status.phase` 未 Ready， 清理已收集的集群子网信息，并且阻止 Pod 创建
 - **修复** 清理 `spidermultusconfig` 中 `sriov-cni` 的 `resourceName` 字段
 - **修复** 验证 `spidermultusconfig` 中自定义 CNI 配置文件是否是合法的 Json 格式
 - **修复** 所有节点与 Pod 的路由都统一的被创建在主机的 `table500` 中，而不是每一个 Pod 独占一个 `table`
@@ -78,12 +80,13 @@
 
 ### v0.8.1
 
-适配 **Spiderpool 版本** : `v0.6.0`
+适配 **Spiderpool v0.6.0**
 
 #### 新功能
 
 - **新增** Spiderpool CR 中新增 nodeName、multusName 字段，用于支持节点拓扑，能按需配置网络
-- **新增** Spiderpool 提供了 SpiderMultusConfig CR ，简化书写 JSON 格式的 Multus CNI 配置，自动管理 Multus NetworkAttachmentDefinition CR
+- **新增** Spiderpool 提供了 SpiderMultusConfig CR ，简化书写 JSON 格式的 Multus CNI 配置，
+  自动管理 Multus NetworkAttachmentDefinition CR
 - **新增** Spiderpool 提供了 Coordinator 插件，解决 Underlay Pod 无法访问 ClusterIP、调谐 Pod
   的路由、检测 Pod 的 IP 是否冲突、Pod 的网关是否可达等。参考
   [Coordinator 文档](https://github.com/spidernet-io/spiderpool/blob/main/docs/usage/coordinator-zh_CN.md)
@@ -99,7 +102,7 @@
 
 ### v0.8.0
 
-适配 **Spiderpool 版本** : `v0.5.0`
+适配 **Spiderpool v0.5.0**
 
 #### 优化
 
@@ -112,7 +115,7 @@
 
 ### v0.7.0
 
-适配 **Spiderpool 版本** : `v0.4.1`
+适配 **Spiderpool v0.4.1**
 
 #### 修复
 
@@ -122,7 +125,7 @@
 
 ### v0.6.0
 
-适配 **Spiderpool 版本** : `v0.4.1`
+适配 **Spiderpool v0.4.1**
 
 #### 修复
 
@@ -146,7 +149,7 @@
 
 ### v0.5.0
 
-适配 **SpiderPool 版本** : `v0.4.0`
+适配 **Spiderpool v0.4.0**
 
 #### 优化
 
@@ -155,11 +158,8 @@
 #### 修复
 
 - **修复** 有状态负载使用了自动 IP 池，IP 池创建成功，IP 分配成功，查询 IP 池为空问题。
-
 - **修复** 子网管理-删除子网， 选择删除一个子网，系统提示成功，但是刷新后这个子网还在。
-
 - **修复** 点击几次“容器网卡”，拿不到数据问题。
-
 - **修复** `Spidernet Chart` 中的 Spidernet-UI Service Label 不正确问题。
 
 ## 2023-02-28
@@ -173,11 +173,8 @@
 #### 修复
 
 - **修复** 有状态负载使用了自动 IP 池，IP 池创建成功，IP 分配成功，查询 IP 池为空问题。
-
 - **修复** 子网管理-删除子网，选择删除一个子网，系统提示成功，但是刷新后这个子网还在。
-
 - **修复** 点击几次“容器网卡”，拿不到数据问题。
-
 - **修复** `Spidernet Chart` 中的 Spidernet-UI Service Label 不正确问题。
 
 ## 2022-11-30
@@ -186,14 +183,14 @@
 
 #### 优化
 
-- **优化** 资源使用量，降低 CPU,内存请求量。
+- **优化** 资源使用量，降低 CPU，内存请求量。
 
 ### v0.4.2
 
 #### 优化
 
-- **优化** 资源使用量，降低 CPU,内存请求量。
-- **优化** 在有 IP 占用的情况下,不能删除 Subnet 或 IPPool。
+- **优化** 资源使用量，降低 CPU，内存请求量。
+- **优化** 在有 IP 占用的情况下，不能删除 Subnet 或 IPPool。
 - **优化** 分页问题
 
 ### v0.4.1
@@ -201,13 +198,10 @@
 #### 新功能
 
 - **新增** 基于界面进行 IP 预留，IP 解除预留等功能。
-
 - **新增** IP 池管理，可基于界面创建、编辑、删除。
-
 - **新增** 工作负载使用容器多网卡功能，并可选择 IP 池 并固定。
-
 - **新增** 应用固定 IP 池可用 IP /总 IP 数量查看。
 
 #### 优化
 
-- **优化** 资源使用量，降低 CPU,内存请求量。
+- **优化** 资源使用量，降低 CPU，内存请求量。
