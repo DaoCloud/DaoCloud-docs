@@ -2,7 +2,7 @@
 
 The microservice gateway supports the full lifecycle management of the API of the gateway instance, including adding, updating, and deleting the API. This page explains how to add an API.
 
-** Prerequisites **
+**Prerequisites**
 
 - For optional domain names, see [Domain Management](../domain/add-domain.md) to create a domain name.
 - If the target service of the API is the back-end service, ensure that an optional back-end service is available. For details, see [Manual](../service/manual-integrate.md) or [Auto](../service/auto-manage.md).
@@ -29,14 +29,14 @@ The steps to create an API are as follows:
 
 3. Fill in the policy configuration by referring to the following description (Optional).
 
-    Supports 12 API policies: load balancing, path rewriting, timeout configuration, retry mechanism, request header rewriting, response header rewriting, Websocket, local traffic limiting, health check, cookie rewriting,access whitelist and global rate limit . For details about how to configure each policy, see [API Policies](api-policy.md).
+    Supports 12 API policies: load balancing, path rewriting, timeout configuration, retry mechanism, request header rewriting, response header rewriting, WebSocket, local traffic limiting, health check, cookie rewriting, access whitelist, and global rate limit. For details about how to configure each policy, see [API Policies](api-policy.md).
 
     ![allocation strategy](./imgs/policy01.png)
 
 4. Fill in the security configuration by referring to the following description (Optional).
 
-    - JWT authentication: The application domain name is configured or disabled
-    - Security authentication: Application domain name configuration or user-defined
+    - Auth: Enable Security Auth or customize it.
+    - JWT: Enable JWT domain settings or customize it.
 
         ![security configuration](./imgs/policy02.png)
 
