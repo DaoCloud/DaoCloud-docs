@@ -11,17 +11,23 @@
 
 1. 进入微服务引擎模块，点击目标注册中心的名称。
 
-    ![点击名称](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/monitor/imgs/monitor01.png)
+    ![点击名称](../../../images/monitor01.png)
 
 2. 在左侧导航栏点击`监控` -> `组件监控`。
 
-    ![导航栏](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/monitor/imgs/monitor02.png)
+    ![导航栏](../../../images/monitor02.png)
 
 3. 点击 `Naocs 实例`页签即可查看 Nacos 实例的监控信息。
 
-    > 下拉页面可查看请求耗时、请求次数等统计详情。在页面右上角可切换统计时间窗口和刷新周期。
+    > 下拉页面可查看请求耗时、请求次数等统计详情。
 
-    ![查看信息](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/monitor/imgs/monitor03.png)
+    ![查看信息](../../../images/monitor03.png)
+
+4. 点击 `Sentinel 实例`页签即可查看 Sentinel 实例的监控信息。
+
+   > 下拉页面可查看请求耗时、请求次数、负载等统计详情。
+
+   ![查看信息](../../../images/monitor04.png)
 
 ## 组件监控指标说明
 
