@@ -102,7 +102,7 @@ Remarks: If there is no verified operating system, you can try to deploy it thro
 
 ## Start offline installation
 
-1. Download the full mode offline package, you can download the latest version in [Download Center](https://docs.daocloud.io/download/dce5/).
+1. Download the full mode offline package, you can download the latest version in [Download Center](../../download/index.md).
 
     | CPU Architecture | Version | Download URL |
     | -------- | ------ | ------------------------------ -------------------------------------------------- -------------- |
