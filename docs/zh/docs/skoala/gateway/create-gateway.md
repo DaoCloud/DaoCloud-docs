@@ -75,7 +75,7 @@ hide:
 
     选择是否启用`全局限流`插件。
 
-    需要事先在插件中心接入插件，或在当前页面点击蓝色文字跳转到相应页面接入创建<!--待补充链接-->。
+    需要事先在插件中心接入插件，或在当前页面点击蓝色文字跳转到相应页面接入创建。
 
     ![填写高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-create09.png)
 
