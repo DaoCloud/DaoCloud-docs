@@ -4,10 +4,10 @@ The microservice gateway supports the full lifecycle management of the API of th
 
 You can update the base configuration, policy configuration, and security configuration of the API in two ways.
 
-- In the `API Management` page to find the need to update the API, on the API right click ** `ⵗ` ** choose `Change Basic Settings`, `Change Policy Settings` or `Change Security Settings`.
+- In the `API Management` page to find the need to update the API, on the API right click ** `ⵗ` ** choose `Update Basic Settings`, `Update Policy Settings` or `Update Security Settings`.
 
-    <!--![]()screenshots-->
+    ![update-api](./imgs/update-api-1.png)
 
-- Click the API name to enter the API details page. In the upper right corner of the page, `Change Basic Settings`, `Change Policy Settings` or `Change Security Settings`.
+- Click the API name to enter the API details page. In the upper right corner of the page, `Update Basic Settings`, `Update Policy Settings` or `Update Security Settings`.
 
-    <!--![]()screenshots-->
+    ![update-api](./imgs/update-api-2.png)
