@@ -14,7 +14,7 @@ Please download the corresponding offline package based on your business environ
 
 The offline image package contains configuration files, image resources, and chart packages required for installing DCE 5.0 modules.
 
-You can download the latest version from the [Download Center](https://docs.daocloud.io/download/dce5/).
+You can download the latest version from the [Download Center](../../download/index.md).
 
 | CPU Architecture | Version | Download                                                |
 | :--------------- | :------ | :---------------------------------------------------------- |
@@ -109,9 +109,9 @@ For deploying DCE 5.0 on UOS V20 (1020a) operating system, please refer to [Depl
 
 #### Addon Offline Packages (Optional)
 
-Addon offline packages contain Helm Chart offline packages for commonly used components. For the specific list, please refer to the [addon](https://docs.daocloud.io/download/addon/v0.12.0.html#addon) documentation.
+Addon offline packages contain Helm Chart offline packages for commonly used components. For the specific list, please refer to the [addon](../../download/addon/v0.11.0.md#components-in-the-addon-offline-package) documentation.
 
-Starting from installer version v0.5.0, support for importing addon offline packages is available. If you want to offline all the Helm charts in the addon package, you can download the latest version from the [Download Center](https://docs.daocloud.io/download/dce5/).
+Starting from installer version v0.5.0, support for importing addon offline packages is available. If you want to offline all the Helm charts in the addon package, you can download the latest version from the [Download Center](../../download/index.md).
 
 First, make sure to download the offline package in advance and define `addonOfflinePackagePath` in the [cluster configuration file (clusterConfig.yaml)](./cluster-config.md).
 

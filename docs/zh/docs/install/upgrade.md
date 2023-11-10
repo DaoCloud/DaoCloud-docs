@@ -18,7 +18,7 @@ DCE 5.0 基础设施模块的组件特指 [mainfest.yaml](commercial/manifest.md
 
 ### 第 1 步：下载 v0.9.0 离线包
 
-可以在[下载中心](https://docs.daocloud.io/download/dce5/)下载最新版本。
+可以在[下载中心](../download/index.md)下载最新版本。
 
 | CPU 架构 | 版本   | 下载地址                                                     |
 | :------- | :----- | :----------------------------------------------------------- |

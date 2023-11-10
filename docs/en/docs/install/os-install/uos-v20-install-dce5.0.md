@@ -20,7 +20,7 @@ This page will introduce how to deploy DCE 5.0 on UOS V20(1020a) operating syste
     rpm -ivh python3-pip-9.0.3-18.uelc20.01.noarch.rpm python3-setuptools-39.2.0-7.uelc20.2.noarch.rpm python36-3.6.8-2.module+uelc20+36 +6174170c.x86_64.rpm
     ```
 
-2. Download the full mode offline package, you can download the latest version in [Download Center](https://docs.daocloud.io/download/dce5/).
+2. Download the full mode offline package, you can download the latest version in [Download Center](../../download/index.md).
 
     | CPU Architecture | Version | Download URL |
     | -------- | ------ | ------------------------------ -------------------------------------------------- -------------- |
