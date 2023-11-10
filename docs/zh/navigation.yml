@@ -452,7 +452,6 @@ nav:
               - HwameiStor 本地存储:
                   - 介绍: storage/hwameistor/intro/index.md
                   - 组件:
-                      - 本地磁盘管理器: storage/hwameistor/intro/ldm.md
                       - 本地存储: storage/hwameistor/intro/ls.md
                       - DRBD 安装器: storage/hwameistor/intro/drbd.md
                       - 调度器: storage/hwameistor/intro/scheduler.md
@@ -924,7 +923,7 @@ nav:
                       - 数据迁移: middleware/rabbitmq/user-guide/migrate.md
                       - 实例监控: middleware/rabbitmq/user-guide/insight.md
                       - 查看 RabbitMQ 日志: middleware/rabbitmq/user-guide/logs.md
-                      - 为 RabbitMQ 添加自定义插件: middleware/rabbitmq/faq/add-plugin.md                      
+                      - 为 RabbitMQ 添加自定义插件: middleware/rabbitmq/faq/add-plugin.md
               - MinIO 对象存储:
                   - 介绍:
                       - 什么是 MinIO: middleware/minio/intro/index.md

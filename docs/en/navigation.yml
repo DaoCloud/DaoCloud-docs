@@ -443,7 +443,6 @@ nav:
               - HwameiStor storage:
                   - Intro: storage/hwameistor/intro/index.md
                   - Modules:
-                      - Local disk manager: storage/hwameistor/intro/ldm.md
                       - Local storage: storage/hwameistor/intro/ls.md
                       - DRBD installer: storage/hwameistor/intro/drbd.md
                       - Scheduler: storage/hwameistor/intro/scheduler.md
