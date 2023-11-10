@@ -4,6 +4,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 ### A
 
+- [Ant Group Releases SOFAStack 5.0, a Next-Generation AI Cloud-Native PaaS Platform](https://mp.weixin.qq.com/s/pmTvM62OFf2DPrQxw6W5uA)
+
+    SOFAStack 5.0 introduces CodeFuse, a big model of code covering design, R&D, testing, O&M, etc. It is expected to improve the efficiency and quality of daily code R&D, testing, O&M processes through human-computer interaction assistants, and enhance the efficiency of enterprises' production and research by 30%. In addition, SOFAStack provides multi-task fine-tuning and high-performance reasoning capabilities for the Codefuse model.
+
 - [Alauda MLOps, an enterprise-class cloud native MLOps solution, and its open source version, kubeflow-chart, have been released by Alauda](https://mp.weixin.qq.com/s/RdD1yb81ua9vy645XA_2PQ)
 
     Kubeflow-chart customizes the way Kubeflow is installed using the Helm Chart approach, making it easy to run a single command to complete Kubeflow and its dependencies. Alauda MLOps builds on this foundation, supporting non-intrusive visual workflow orchestration of development environments, visual distribution, multi-tenancy and quotas, virtual GPUs, and integrated MLFlow, Alauda MLOps builds on this foundation with support for non-intrusive visual workflow orchestration development environments, visual distribution, multi-tenancy and quota, virtual GPUs, and integrated MLFlow.
@@ -111,6 +115,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Azure Releases AKS Fleet Manager (Public Preview)](https://mp.weixin.qq.com/s/YVUuFQLKe8DGADenZCKsyw)
 
     Azure Kubernetes Fleet Manager treats multiple cluster sites as a single cluster to be managed. Users can manage multiple clusters by creating a Fleet resource. Users can treat existing AKS clusters as member clusters, join them to the fleet, and then orchestrate multiple cluster Cases such as Kubernetes resource propagation and multicluster load balancing using metadata from those clusters.
+
+- [AliCloud Container Service ACK Product October Update](https://mp.weixin.qq.com/s/9hrm67Y2e8iGGHjhSwWCow)
+
+    Updates: Support for Sidecar acceleration in service grid scenarios, support for container monitoring observability at the OS kernel layer, new OpenAPI support for individually initiated cluster checks, and support for arm64 architecture for the backup center component migrate-controller.
 
 - [AliCloud Container Computing Service ACS officially released](https://mp.weixin.qq.com/s/KRyMjqGebXH4Mx0D0sWbyw)
 
@@ -254,6 +262,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Chainguard Enforce Cloud Native Supply Chain Security Platform Update](https://www.chainguard.dev/unchained/chainguard-enforce-announces-new-software-signing-capability)
 
      Updates: Provide Sigstore-based keyless signature mode, add an out-of-the-box security policy library, support users to log in through their Gitlab accounts, support CloudEvents, support policies for fine-grained Kubernetes workload objects, and enhance large-scale clusters User stability.
+
+- [Chkk Launches SaaS Platform Kubernetes Availability Platform Aimed at Reducing Availability Risks for Cloud-Native Applications](https://www.chkk.io/blog/chkk-launches-the-kubernetes-availability-platform)
+
+    The Kubernetes Availability Platform is designed for organizations running mission-critical applications on Kubernetes. Designed to reduce availability risks, prevent failures and outages, and enable safe and efficient running of Kubernetes, the product not only identifies and prioritizes risks, but also provides users with pre-validated escalation plans that reduce weeks of preparation to days and securely remediate those risks.
 
 - [Cisco Releases Full Stack Observation Platform FSO](https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2023/m06/cisco-launches-full-stack-observability-platform.html)
 

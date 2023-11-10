@@ -71,6 +71,10 @@
 
     [Arbiter](https://github.com/kube-arbiter/arbiter) 聚合各种类型的数据，用户可以基于这些数据管理、调度或扩展集群中的应用程序。它可以帮助 Kubernetes 用户了解和管理集群中部署的资源，进而提高企业应用程序的资源利用率和运行效率。
 
+- [Argo CD GitOps 工具 v2.9.0 发布（CNCF 项目）](https://github.com/argoproj/argo-cd/releases/tag/v2.9.0)
+
+    版本特性：为 k8s 客户端添加重试逻辑、为 repo 错误添加宽限期、支持 git 请求可配置、支持跨分片动态重新平衡集群功能、支持为 opentelemetry 输入额外属性、为 argocd-k8s-auth 添加 kubelogin 功能。
+
 - [Argo CD 持续部署工具 v2.8.0 发布（CNCF 项目）](https://github.com/argoproj/argo-cd/releases/tag/v2.8.0)
 
     版本特性：添加 kubelogin 功能、允许用户在任意命名空间中使用 ApplicationSet 资源、为快照卷添加健康检查、新增插件生成器功能、支持从环境变量或命令行参数中指定监听地址、创建 job action、支持刷新 ExternalSecret。
@@ -161,6 +165,10 @@
 - [Cert-manager 云原生证书管理项目 v1.9.0 发布（CNCF 项目）](https://github.com/cert-manager/cert-manager/releases/tag/v1.9.0)  
 
     该版本主要新特性：支持使用cert-manager certificate（alpha）、支持通过 Ingress 资源上的注释配置 ingress-shim 证书。
+
+- [ChaosMeta 云原生自动化混沌工程 v0.6 发布](https://github.com/traas-stack/chaosmeta/releases/tag/v0.6.0)
+
+    版本特性:新增 DNS 异常、日志注入等故障能力；在可视化编排界面中提供对流量注入、度量等各类节点的支持；可视化支撑演练全流程。
 
 - [ChaosMeta 混沌工程 v0.5 发布](https://mp.weixin.qq.com/s/4VG5TkQPotr_BrweIznW_w)
 
@@ -624,6 +632,10 @@
     - Telemetry：新增 OpenTelemetry 访问日志、在日志中添加 `WorkloadMode` 选项。
     - 扩展：支持 WasmPlugin 通过 `imagePullSecret` 从私有仓库中拉取镜像。
 
+- [iSulad：容器引擎 iSulad 通过 Sandbox API 支持多沙箱运行时 Kuasar，提供高效和稳定的沙箱管理能力](https://mp.weixin.qq.com/s/D2vvEQmi5Lzo7QHDynRDrw)
+
+    [iSulad](https://gitee.com/openeuler/iSulad) 引入了 Sandbox 的语义，新增核心模块 Sandbox ，实现了容器管理与沙箱管理的解耦。Sandbox API 的实现使 iSulad 能够直接通过 Controller 来管理沙箱，因此 Kuasar 容器运行时也无需创建 Pause 容器以兼容 OCI 标准，避免了 Pause 容器的冗余。
+
 ### J
 
 - [Jaeger 分布式追踪系统 v1.46.0 发布（CNCF 项目）](https://github.com/jaegertracing/jaeger/releases/tag/v1.46.0)
@@ -976,6 +988,10 @@
 
     该版本主要新特性：支持多集群认证、使用 kubeconfig 的控制器自动登录、支持更多的授权方式；允许在 GC 策略中按资源类型选择资源、新增策略控制器为 VelaUX 和 CLI 参数生成 OpenAPI 模式；CLI 支持显示资源拓扑结构等。
 
+- [KubeVirt 虚拟机运行项目 v1.1.0 发布（CNCF 项目）](https://github.com/kubevirt/kubevirt/releases/tag/v1.1.0)
+
+    版本特性：网络绑定插件 API 支持 CNI、集群范围内的 CommonInstancetypes 资源现在可以通过 virt-operator 使用、支持动态启用和配置 KSM、添加内存热插拔功能、允许实时更新虚拟机亲和性和节点选择器、为 Slirp 网络引入网络绑定插件、引入 sidecar-shim 容器镜像、增加对基于迁移的 SRIOV 热插拔的支持、为 VMI 添加性能规模基准。
+
 - [KubeVirt 虚拟机运行项目 v1.0 发布（CNCF 项目）](https://github.com/kubevirt/kubevirt/releases/tag/v1.0.0)
 
     版本特性：移除热插拔 VMI API、引入 CPU 热拔插、实验性支持 AMD 的安全加密虚拟化 (SEV) 、支持在偏好中设置 CPU 和内存最低资源需求、支持 VirtualMachine 对象上网络接口的热拔插、支持指定集群级别的虚拟机行为、增加多架构支持、 允许指定创建的虚拟机的内存、 允许在创建虚拟机时指定卷的启动顺序、克隆和导出虚拟机支持 RBAC 配置。
@@ -1218,6 +1234,10 @@
 
     该版本主要新特性：新增“DefaultClusterSet”功能，所有注册进 OCM 环境中的托管集群都会被默认注册进名叫“default” 的 ClusterSet 中；支持基于 Taint / Toleration 的语义的多集群调度；部署架构调整为“Hosted 部署”模式，即托管集群内将不需要再部署其他的组件，所有的代理控制器均在远端执行。
 
+- [OpenCost 引入多云成本监控](https://www.opencost.io/blog/cloud-costs)
+
+    OpenCost 的新多云成本监控解决方案为跨多个云平台管理成本提供了无缝体验。通过易于使用的界面和简单的 API，OpenCost 让你能够在 Google Cloud、Amazon Web Services（AWS）和 Microsoft Azure 上以统一的视图监控云费用。
+
 - [OpenCost 支持 FinOps 开放成本和使用规范（FOCUS)](https://www.opencost.io/blog/focus)
 
     FinOps 开放成本和使用规范（FinOps Open Cost and Usage Specification，FOCUS）发布了其规范的第一个版本，以定义云成本、使用和计费数据的开放标准。OpenCost 项目宣布支持这个标准，并已经开始使用这个标准支持初始补丁。
@@ -1277,6 +1297,10 @@
 - [OpenTelemetry v1.11.0 发布 （CNCF 项目）](https://github.com/open-telemetry/opentelemetry-specification/releases/tag/v1.11.0)
 
     该版本主要新特性：用更加了然的 bucket 直方图取代直方图、支持在 OpenMetrics 计数器上显示示例、增加数据库连接池指标的语义规范、允许所有 metrics 规范为同步或异步、添加HTTP/3 等。
+
+- [Openyurt 云原生边缘计算项目 v1.4.0 发布（CNCF 项目）](https://github.com/openyurtio/openyurt/releases/tag/v1.4.0)
+
+    版本特性：支持 HostNetwork 模式的 NodePool、支持多区域工作负载的 NodePool 级别自定义配置、通过 PlatformAdmin 支持构建 EdgeX IoT 系统、支持将 yurt-iot-dock 部署为 IoT 系统组件。
 
 - [Openyurt 云原生边缘计算项目 v1.3.0 发布（CNCF 项目）](https://github.com/openyurtio/openyurt/releases/tag/v1.3.0)
 
