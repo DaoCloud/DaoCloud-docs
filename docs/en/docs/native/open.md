@@ -71,6 +71,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      [Arbiter](https://github.com/kube-arbiter/arbiter) aggregates various types of data based on which users can manage, schedule, or scale applications in a cluster. It can help Kubernetes users understand and manage the resources deployed in the cluster, thereby improving the resource utilization and operational efficiency of enterprise applications.
 
+- [Argo CD GitOps Tool v2.9.0 released (CNCF project)](https://github.com/argoproj/argo-cd/releases/tag/v2.9.0)
+
+    Release features: add retry logic for k8s clients, add grace period for repo errors, support git request configurability, support dynamic rebalancing of clusters across shards, support inputting additional attributes for opentelemetry, add kubelogin functionality for argocd-k8s-auth.
+
 - [Argo CD continuous deployment tool v2.8.0 released (CNCF project)](https://github.com/argoproj/argo-cd/releases/tag/v2.8.0)
 
     Features: add kubelogin function, allow users to use ApplicationSet resources in any namespace, add health check for snapshot volume, add plugin generator function, support specifying listening address from environment variable or command line parameter, create job action, support refreshing ExternalSecret.
@@ -161,6 +165,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Cert-manager cloud native certificate management project v1.9.0 release (CNCF project)](https://github.com/cert-manager/cert-manager/releases/tag/v1.9.0)
 
      The main new features of this version: support for using cert-manager certificate (alpha), and support for configuring ingress-shim certificates through annotations on Ingress resources.
+
+- [ChaosMeta Cloud Native Automation Chaos Engineering v0.6 released](https://github.com/traas-stack/chaosmeta/releases/tag/v0.6.0)
+
+    Features:New DNS anomaly, log injection and other fault capabilities; provide support for traffic injection, metrics and other types of nodes in the visual orchestration interface; visualize and support the whole process of the exercise.
 
 - [ChaosMeta Chaos Project v0.5 released](https://mp.weixin.qq.com/s/4VG5TkQPotr_BrweIznW_w)
 
@@ -620,6 +628,11 @@ This page lists activity in cloud native open source projects in alphabetical or
      - Telemetry: Added OpenTelemetry access log, added `WorkloadMode` option to log.
      - Extension: Support WasmPlugin to pull images from private repositories via `imagePullSecret`.
 
+
+- [iSulad: Container Engine iSulad supports multi-sandbox runtime Kuasar through Sandbox API, providing efficient and stable sandbox management capabilities](https://mp.weixin.qq.com/s/D2vvEQmi5Lzo7QHDynRDrw)
+
+    [iSulad](https://gitee.com/openeuler/iSulad) introduces the semantics of Sandbox and adds a new core module Sandbox, which decouples container management from sandbox management. The implementation of Sandbox API enables iSulad to manage sandboxes directly through the Controller. The implementation of Sandbox API enables iSulad to manage the sandbox directly through the Controller, thus eliminating the need to create a Pause container when Kuasar containers are running in order to be compatible with the OCI standard, and avoiding the redundancy of Pause containers.
+
 ### J
 
 - [Jaeger Distributed Tracking System v1.46.0 Released (CNCF Project)](https://github.com/jaegertracing/jaeger/releases/tag/v1.46.0)
@@ -978,6 +991,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: support multicluster authentication, automatic login of controllers using kubeconfig, support for more authorization methods; allow resources to be selected by resource type in GC policies, and new policy controllers to generate OpenAPI patterns for VelaUX and CLI parameters ; CLI supports displaying resource topology, etc.
 
+- [KubeVirt VM Runtime Project v1.1.0 Released (CNCF Project)](https://github.com/kubevirt/kubevirt/releases/tag/v1.1.0)
+
+    Release features: Network Binding Plugin API support for CNI, cluster-wide CommonInstancetypes resources are now available via virt-operator, support for dynamically enabling and configuring KSMs, add memory hot-plugging, allow for real-time updating of VM affinities and node selectors, introduce Network Binding Plugin for Slirp networking, introduce sidecar-shim container image, adds support for migration-based SRIOV hotplugging, and adds a performance scale benchmark for VMI.
+
 - [KubeVirt Virtual Machine Operations Project v1.0 Released (CNCF Project)](https://github.com/kubevirt/kubevirt/releases/tag/v1.0.0)
 
     Release features: removes hot-plugging VMI API, introduces CPU hot-plugging, experimental support for AMD's Secure Encryption Virtualization (SEV), supports setting minimum resource requirements for CPU and memory in preferences, supports hot-plugging of network interfaces on VirtualMachine objects, supports specifying cluster-level VM behavior, adds multi-architecture support, allows specifying the memory of created VMs, allows specifying the memory of created VMs, allows specifying the memory of created VMs, and allows specifying the memory of created VMs when creating VMs. The support for cloning and exporting virtual machines supports RBAC configuration.
@@ -1220,6 +1237,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: Add the "DefaultClusterSet" function, all managed clusters registered in the OCM environment will be registered in the ClusterSet named "default" by default; support multicluster scheduling based on Taint / Toleration semantics; deployment architecture Adjust to the "Hosted deployment" mode, that is, no other components need to be deployed in the managed cluster, and all proxy controllers are executed remotely.
 
+- [OpenCost introduces multi-cloud cost monitoring](https://www.opencost.io/blog/cloud-costs)
+
+    OpenCost's new multi-cloud cost monitoring solution provides a seamless experience for managing costs across multiple cloud platforms. With an easy-to-use interface and simple APIs, OpenCost lets you monitor cloud costs with a unified view across Google Cloud, Amazon Web Services (AWS), and Microsoft Azure.
+
 - [OpenCost supports FinOps Open Cost and Usage Specification (FOCUS)](https://www.opencost.io/blog/focus)
 
     The FinOps Open Cost and Usage Specification (FOCUS) released the first version of its specification to define an open standard for cloud cost, usage, and billing data.The OpenCost project has announced support for this standard and has already begun using it to support initial patches.
@@ -1279,6 +1300,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [OpenTelemetry v1.11.0 release (CNCF project)](https://github.com/open-telemetry/opentelemetry-specification/releases/tag/v1.11.0)
 
      The main new features of this version: replace the histogram with a more clear bucket histogram, support displaying examples on OpenMetrics counters, increase the semantic specification of database connection pool metrics, allow all metrics specifications to be synchronous or asynchronous, add HTTP/3, etc.
+
+- [Openyurt Cloud Native Edge Computing Project v1.4.0 Released (CNCF Project)](https://github.com/openyurtio/openyurt/releases/tag/v1.4.0)
+
+    Release features: NodePool support for HostNetwork mode, NodePool level customization for multi-region workloads, support for building EdgeX IoT systems via PlatformAdmin, support for deploying yurt-iot-dock as an IoT system component.
 
 - [Openyurt Cloud Native Edge Computing Project v1.3.0 Released (CNCF Project)](https://github.com/openyurtio/openyurt/releases/tag/v1.3.0)
 

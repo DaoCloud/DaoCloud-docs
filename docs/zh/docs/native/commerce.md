@@ -108,6 +108,10 @@
 
     Azure Kubernetes 舰队管理器将多个群集地视为单个集群来管理。用户可通过创建一个 Fleet 资源来管理多个集群。用户可将现有 AKS 集群当作成员集群，加入到舰队中，然后用这些集群的元数据，编排多个集群场景，如 Kubernetes 资源传播和多集群负载均衡。
 
+- [阿里云容器服务 ACK 产品 10 月更新](https://mp.weixin.qq.com/s/9hrm67Y2e8iGGHjhSwWCow)
+
+    更新内容：支持服务网格场景 Sidecar 加速、支持操作系统内核层的容器监控可观测能力、新增 OpenAPI 支持单独发起集群检查、备份中心组件migrate-controller支持 arm64 架构。
+
 - [阿里云容器计算服务 ACS 正式发布](https://mp.weixin.qq.com/s/KRyMjqGebXH4Mx0D0sWbyw)
 
     容器计算服务 ACS 将容器与资源一体化，用户无需关注底层节点和集群。提供灵活的 Pod 配置模式，支持 1:1~1:8 资源配比；同时，还提供了秒级弹性能力，以应对流量波动；支持算力调配资源复用，让资源在用户负载和云产品负载中灵活调配；除了原生支持网络服务器、微服务应用、Web 应用等通用业务负载外，还支持大数据计算、AI 计算等任务类负载，以及中间件、数据库等实时性能敏感类业务。
@@ -250,6 +254,10 @@
 - [Chainguard 云原生供应链安全平台  Chainguard Enforce 更新](https://www.chainguard.dev/unchained/chainguard-enforce-announces-new-software-signing-capability)
 
     更新内容：提供基于 Sigstore 的无密钥签名模式、增加一个开箱即用的安全策略库、支持用户通过其 Gitlab 账号登录、支持 CloudEvents、支持细粒度的 Kubernetes 工作负载对象的策略、增强大规模集群用户的稳定性。
+
+- [Chkk 推出 SaaS 平台 Kubernetes Availability Platform，旨在降低云原生应用的可用性风险](https://www.chkk.io/blog/chkk-launches-the-kubernetes-availability-platform)
+
+    Kubernetes Availability Platform 专为在 Kubernetes 上运行关键任务应用程序的组织而设计。目的在于降低可用性风险，预防故障和以外中断，实现安全高效地运行 Kubernetes。该产品不仅能识别风险并对风险进行优先排序，还能为用户提供预先验证的升级计划，将数周的准备工作缩短到数天，并安全地修复这些风险。
 
 - [Cisco 发布全栈观测平台 FSO](https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2023/m06/cisco-launches-full-stack-observability-platform.html)
 
@@ -543,6 +551,10 @@
     Kubeflow-chart 使用 Helm Chart 方式定制了 Kubeflow 的安装方式，只需运行一个命令，即可轻松完成 Kubeflow 及其依赖组件。Alauda MLOps 在此基础上进行了强化，支持非侵入式的可视化工作流编排开发环境、可视化分布式、多租户和配额、虚拟 GPU 以及集成 MLFlow 等。
 
 ### M
+
+- [蚂蚁集团发布新一代 AI 云原生 PaaS 平台 SOFAStack 5.0](https://mp.weixin.qq.com/s/pmTvM62OFf2DPrQxw6W5uA)
+
+    SOFAStack 5.0 引入代码大模型 CodeFuse，涵盖设计、研发、测试、运维等领域，通过人机交互助手提升日常代码研发、测试、运维过程中的效率和质量，预计将为企业产研效能提升 30%。此外，SOFAStack 还针对 Codefuse 大模型提供了多任务微调和高性能推理能力。
 
 - [Mirantis 发布轻量级 Kubernetes 发行版 k0s v1.27](https://www.mirantis.com/blog/k0s-1-27-released)
 
