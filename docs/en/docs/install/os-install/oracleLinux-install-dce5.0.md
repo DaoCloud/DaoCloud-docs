@@ -15,7 +15,7 @@ starting from version v0.8.0 and above.
 ## Offline Installation
 
 1. Download the full mode offline package. You can download the latest version
-   from the [Download Center](https://docs.daocloud.io/download/dce5/).
+   from the [Download Center](../../download/index.md).
 
     | CPU Architecture | Version | Download Link                                                                                   |
     | ---------------- | ------- | ---------------------------------------------------------------------------------------------- |

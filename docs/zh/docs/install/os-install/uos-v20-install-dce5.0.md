@@ -20,10 +20,10 @@
     rpm -ivh python3-pip-9.0.3-18.uelc20.01.noarch.rpm python3-setuptools-39.2.0-7.uelc20.2.noarch.rpm python36-3.6.8-2.module+uelc20+36+6174170c.x86_64.rpm
     ```
 
-2. 下载全模式离线包，可以在[下载中心](https://docs.daocloud.io/download/dce5/)下载最新版本。
+2. 下载全模式离线包，可以在[下载中心](../../download/index.md)下载最新版本。
 
-    | CPU 架构 | 版本   | 下载地址                                                                                          |
-    | -------- | ------ | ------------------------------------------------------------------------------------------------- |
+    | CPU 架构 | 版本   | 下载地址    |
+    | -------- | ----- | -------- |
     | AMD64    | v0.6.1 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.1-amd64.tar> |
 
     下载完毕后解压离线包：

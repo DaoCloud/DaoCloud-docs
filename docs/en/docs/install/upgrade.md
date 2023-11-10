@@ -21,7 +21,7 @@ of DCE 5.0 in order to make use of the high availability feature of the `istio-g
 
 ### Step 1: Download the v0.9.0 Offline Package
 
-You can download the latest version from the [Download Center](https://docs.daocloud.io/download/dce5/).
+You can download the latest version from the [Download Center](../download/index.md).
 
 | CPU Architecture | Version | Download Link                                                 |
 | :--------------- | :------ | :----------------------------------------------------------- |

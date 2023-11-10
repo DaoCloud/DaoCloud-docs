@@ -14,7 +14,7 @@
 
 离线镜像包包含安装 DCE 5.0 各个产品模块所需的配置文件、镜像资源以及 chart 包。
 
-可以在[下载中心](https://docs.daocloud.io/download/dce5/)下载最新版本。
+可以在[下载中心](../../download/index.md)下载最新版本。
 
 | CPU 架构 | 版本   | 点击下载                                                     |
 | :------- | :----- | :----------------------------------------------------------- |
@@ -108,16 +108,16 @@ osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源
 
 #### addon 离线包 （可选）
 
-addon 离线包包含一些常用的组件的 Helm Chart 离线包，具体清单请参考[addon](https://docs.daocloud.io/download/addon/v0.11.0.html#addon)。
+addon 离线包包含一些常用的组件的 Helm Chart 离线包，具体清单请参考[addon](../../download/addon/v0.11.0.md#addon)。
 
-安装器从 v0.5.0 版本，支持了 addon 的离线包导入能力，如果需要支持 addon 中所有的 helm chart 离线化。可以在[下载中心](https://docs.daocloud.io/download/dce5/)下载最新版本。
+安装器从 v0.5.0 版本，支持了 addon 的离线包导入能力，如果需要支持 addon 中所有的 helm chart 离线化。可以在[下载中心](../../download/index.md)下载最新版本。
 
 首先需要事先下载好离线包，并在[集群配置文件（clusterConfig.yaml）](./cluster-config.md)中定义 `addonOfflinePackagePath`。
 
 | CPU 架构 | 版本   | 点击下载                                                     |
 | :------- | :----- | :----------------------------------------------------------- |
-| AMD64    | v0.11.0 | [addon-offline-full-package-v0.12.0-amd64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.11.0-amd64.tar.gz) |
-| ARM64    | v0.11.0 | [addon-offline-full-package-v0.12.0-arm64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.11.0-arm64.tar.gz) |
+| AMD64    | v0.11.0 | [addon-offline-full-package-v0.11.0-amd64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.11.0-amd64.tar.gz) |
+| ARM64    | v0.11.0 | [addon-offline-full-package-v0.11.0-arm64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.11.0-arm64.tar.gz) |
 
 #### 一键下载所需离线包
 

@@ -10,7 +10,7 @@ This document will guide you on how to deploy DCE 5.0 on TencentOS Server 3.1, s
 
 ## Offline Installation
 
-1. Download the full mode offline package. You can download the latest version from the [Download Center](https://docs.daocloud.io/download/dce5/).
+1. Download the full mode offline package. You can download the latest version from the [Download Center](../../download/index.md).
 
     | CPU Architecture | Version | Download Link                                                                                      |
     | ---------------- | ------- | ------------------------------------------------------------------------------------------------- |
