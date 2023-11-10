@@ -617,9 +617,8 @@ nav:
                   - 产品优势: skoala/intro/advantages.md
                   - Release Notes: skoala/intro/release-notes.md
               - 快速入门:
-                  - 安装微服务引擎: skoala/quickstart/install.md
-                  - 在线升级: skoala/quickstart/online-upgrade.md
-                  - 离线升级: skoala/quickstart/offline-upgrade.md
+                  - 微服务引擎管理组件: skoala/quickstart/skoala.md
+                  - 微服务引擎集群初始化组件: skoala/quickstart/skoala-init.md
                   - 选择工作空间: skoala/quickstart/select-workspace.md
               - 云原生网关:
                   - 网关管理:
