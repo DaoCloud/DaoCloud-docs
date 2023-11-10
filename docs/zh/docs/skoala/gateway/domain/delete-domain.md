@@ -20,4 +20,4 @@
 
     如果域名正在被某个 API 使用，需要页面提示点击`查看服务详情`去删除对应的 API。<!--待ui更新后更新描述-->
 
-    ![在详情页删除](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/domain/imgs/delete-domain-3.png)
+    ![在详情页删除](./images/delete-domain-3.png)
