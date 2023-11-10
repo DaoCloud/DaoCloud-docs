@@ -59,6 +59,7 @@ nav:
                   - Permissions: amamba/intro/permission.md
                   - Workbench Release Notes: amamba/intro/release-notes.md
               - Offline Upgrade: amamba/offline-upgrade.md
+              - Deploy Pluggable Components: amamba/pluggable-components.md
               - Namespaces: amamba/user-guide/namespace/namespace.md
               - Wizard:
                   - Build Microservice based on Git Repo: amamba/user-guide/wizard/create-app-git.md

@@ -2,7 +2,7 @@
 
 ## 前提条件
 
-- 安装 Jenkins 之前需要确保将要 安装Jenkins 的集群中存在默认的存储类。
+- 安装 Jenkins 之前需要确保将要安装 Jenkins 的集群中存在默认的存储类。
 - 请确保安装在 `amamba-system` 命名空间下。
 - 如果在全局服务集群安装，请确保在`容器管理` -> `helm 应用`，`amamba-system` 命名空间下的 `amamba-jenkins` 实例。
 
@@ -14,7 +14,7 @@
 
         需要根据实际情况选择 Jenkins 的部署集群。目前不建议将其部署在全局服务集群，因为 Jenkins 执行流水线高并发时会占用大量资源，可能会导致全局服务集群的瘫痪。
 
-    ![点击集群名称](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/install-jenkins11.png)
+    ![点击集群名称](../../images/install-jenkins11.png)
 
 2. 在左侧导航栏中选择 `Helm 应用` -> `Helm 模板`，找到并点击 `Jenkins`。
 
@@ -79,12 +79,11 @@
 
 5. 接下来就可以前往工作空间内[创建流水线](create/custom.md)。
 
-## 集注意事项
+## 集成注意事项
 
 如果集成的 Jenkins 实例部署在非 `kpanda-global-cluster` 集群时，会导致应用工作台无法更新 Jenkins 实例的配置文件（后续版本时会优化集成 Jenkins 实例需要填写所在集群、命名空间），从而引发出下述两个问题：
 
 - 流水线`通知`步骤，在全局管理 -> 平台设置 -> 邮件服务器设置，配置好邮件服务器地址后，无法更新到 Jenkins 中配置中。
-
 - 流水线 `SonarQube 配置` 步骤，在工具链集成 SonarQube 实例后并绑定到当前工作空间，使用该实例会失效。
 
 针对上述问题，需要前往 Jenkins 后台进行相关配置。
@@ -96,14 +95,10 @@
 2. 填写相关参数，参数说明如下：
 
     - SMTP 服务器：能够提供邮件服务的 SMTP 服务器地址
-
     - 启用 SMTP 认证：根据需求选择，建议启用 SMTP 认证
-
     - 用户名：SMTP 用户的名称
-
     - 密码：SMTP 用户的密码
-
-    - SMTP端口：发送邮件的端口，不填写此项将使用协议默认端口.
+    - SMTP 端口：发送邮件的端口，不填写此项将使用协议默认端口.
 
     !!! note
 
@@ -116,7 +111,5 @@
 2. 填写相关参数，参数说明如下：
 
     - Name：给 SonarQube 服务器配置一个名称，在应用工作台流水线的 SonarQube 配置步骤中需要输入该名字。
-
     - Server URL：SonarQube 服务器的 URL。
-
     - Server authentication token：SonarQube 服务器的身份验证令牌。您可以在 SonarQube 控制台中生成一个令牌。
