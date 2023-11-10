@@ -116,8 +116,8 @@ addon 离线包包含一些常用的组件的 Helm Chart 离线包，具体清�
 
 | CPU 架构 | 版本   | 点击下载                                                     |
 | :------- | :----- | :----------------------------------------------------------- |
-| AMD64    | v0.11.0 | [addon-offline-full-package-v0.12.0-amd64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.11.0-amd64.tar.gz) |
-| ARM64    | v0.11.0 | [addon-offline-full-package-v0.12.0-arm64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.11.0-arm64.tar.gz) |
+| AMD64    | v0.11.0 | [addon-offline-full-package-v0.11.0-amd64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.11.0-amd64.tar.gz) |
+| ARM64    | v0.11.0 | [addon-offline-full-package-v0.11.0-arm64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.11.0-arm64.tar.gz) |
 
 #### 一键下载所需离线包
 

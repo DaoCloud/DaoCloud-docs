@@ -117,9 +117,8 @@ First, make sure to download the offline package in advance and define `addonOff
 
 | CPU Architecture | Version | Download Link                                                |
 | :--------------- | :------ | :----------------------------------------------------------- |
-| AMD64            | v0.12.0 | [addon-offline-full-package-v0.12.0-amd64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.12.0-amd64.tar.gz) |
-| ARM64            | v0.12.0 | [addon-offline-full-package-v0.12.0-arm64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.12.0-arm64.tar.gz) |
-
+| AMD64    | v0.11.0 | [addon-offline-full-package-v0.11.0-amd64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.11.0-amd64.tar.gz) |
+| ARM64    | v0.11.0 | [addon-offline-full-package-v0.11.0-arm64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.11.0-arm64.tar.gz) |
 
 #### One-Click Download of Required Offline Packages
 
