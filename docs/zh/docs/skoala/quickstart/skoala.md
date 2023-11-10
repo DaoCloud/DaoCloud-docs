@@ -1,14 +1,25 @@
-# 在线安装微服务引擎管理组件
+# 微服务引擎管理组件
+
+微服务引擎管理组件部署结构
+
+![image](../images/install-arch-skoala.png)
+
+蓝色框内的 chart 即 `skoala` 组件，需要安装在控制面集群，即 DCE 5.0 的全局集群 `kpanda-global-clsuter`，
+详情可参考 DCE 5.0 的[部署架构](../../install/commercial/deploy-arch.md)。
+安装 `skoala` 组件之后即可以在 DCE 5.0 的一级导航栏中看到微服务引擎模块。
+另外需要注意：安装 `skoala` 之前需要安装好其依赖的 `common-mysql` 组件用于存储资源。
+
+## 在线安装
 
 如需安装微服务引擎，推荐通过 [DCE 5.0 商业版](../../install/commercial/start-install.md)的安装包进行安装；通过商业版可以一次性同时安装 DCE 的所有模块。
 
-本教程旨在补充需要手工 **单独在线安装** 微服务引擎模块的场景。下文出现的 `skoala` 是微服务引擎管理组件的内部开发代号，代指微服务引擎管理组件。
+本教程旨在补充需要手工 **单独在线安装** 微服务引擎模块的场景。下文出现的 `skoala` 是微服务引擎的内部开发代号，代指微服务引擎。
 
 !!! note
 
     本文提供了在线安装的方式，如果已部署了离线商业版，建议参考[离线升级微服务引擎](offline-upgrade.md)离线安装或升级微服务引擎。
 
-## 使用商业版安装包安装
+### 使用商业版安装包安装
 
 通过商业版安装微服务引擎管理组件时，需要注意商业版的版本号（[点击查看最新版本](../../download/index.md)）。需要针对不同版本执行不同操作。
 
@@ -40,15 +51,6 @@
         variables:
     ...
     ```
-
-### 微服务引擎管理组件部署结构
-
-![image](../images/install-arch-skoala.png)
-
-蓝色框内的 chart 即 `skoala` 组件，需要安装在控制面集群，即 DCE 5.0 的全局集群 `kpanda-global-clsuter`，
-详情可参考 DCE 5.0 的[部署架构](../../install/commercial/deploy-arch.md)。
-安装 `skoala` 组件之后即可以在 DCE 5.0 的一级导航栏中看到微服务引擎模块。
-另外需要注意：安装 `skoala` 之前需要安装好其依赖的 `common-mysql` 组件用于存储资源。
 
 ### 检测微服务引擎是否已安装
 
@@ -85,6 +87,10 @@ mcamel-common-mysql-cluster-mysql             2/2     7d23h
 - user: skoala
 - password:
 
+!!! note
+
+    - 如果未安装 common-mysql，可用自定义的数据库，上述参数按照实际情况填写即可。
+
 ### 检测依赖的监控组件
 
 微服务引擎依赖 [DCE 5.0 可观测性](../../insight/intro/index.md)模块的能力。
@@ -93,12 +99,7 @@ mcamel-common-mysql-cluster-mysql             2/2     7d23h
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/cluster-list.png)
 
-!!! note
-
-    - 如果安装 `skoala-init` 之前没有事先安装 `insight-agent`，则不会安装 `service-monitor`。
-    - 如果需要安装 `service-monitor`，请先安装 `insight-agent`，然后再安装 `skoala-init`。
-
-## 手动安装过程
+### 手动安装过程
 
 一切就绪之后，就可以开始正式安装微服务引擎管理组件了。具体的流程如下：
 
@@ -166,7 +167,7 @@ mcamel-common-mysql-cluster-mysql             2/2     7d23h
 
 ### 配置 skoala helm repo
 
-配置好 skoala 仓库，即可查看和获取到 skoala 的应用 chart
+配置好 Skoala 仓库，即可查看和获取到 skoala 的应用 chart
 
 ```bash
 helm repo add skoala-release https://release.daocloud.io/chartrepo/skoala
@@ -177,14 +178,10 @@ helm repo update
 
 注意：添加 Skoala-release 仓库之后，通常需要关注的有 2 个 Chart：
 
-- `Skoala` 是 微服务引擎 的控制端的服务
-    - 安装完成后，可以在 DCE 5.0 平台看到微服务引擎的入口
-    - 包含 3 个组件 skoala-ui、hive、sesame
-    - 需要安装在全局管理集群
-- Skoala-init 是 微服务引擎 所有的组件 Operator
-    - 仅安装到工作集群即可
-    - 包含组件有：skoala-agent、nacos、contour、sentinel、seata
-    - 未安装时，创建注册中心和网关时会提示缺少组件
+`Skoala` 是 微服务引擎 的控制端的服务
+  - 安装完成后，可以在 DCE 5.0 平台看到微服务引擎的入口
+  - 包含 3 个组件 skoala-ui、hive、sesame
+  - 需要安装在全局管理集群
 
 默认情况下，安装完成 skoala 到 kpanda-global-cluster（全局管理集群），就可以在侧边栏看到对应的微服务引擎的入口了。
 
@@ -201,7 +198,6 @@ skoala-release/skoala       0.28.0       	0.28.0     	The helm chart for Skoala
 skoala-release/skoala       0.27.2       	0.27.2     	The helm chart for Skoala
 skoala-release/skoala       0.27.1       	0.27.1     	The helm chart for Skoala
 ......
-
 ```
 
 ### 执行部署（同样适用于升级）
@@ -227,72 +223,244 @@ sesame-5955c878c6-jz8cd                2/2     Running   0               3h48m
 skoala-ui-7c9f5b7b67-9rpzc             2/2     Running   0               3h48m
 ```
 
-## 更新微服务引擎管理组件
+## 在线升级
 
-支持离线升级和在线升级两种方式，具体可参考[离线升级](offline-upgrade.md)或[在线升级](online-upgrade.md)
+开始升级操作之前，了解一下微服务引擎的部署架构有助于更好地理解后续的升级过程。
+
+微服务引擎由两个组件构成：
+
+- `skoala` 组件安装在控制面集群，用于在 DCE 5.0 的一级导航栏中加载微服务引擎模块
+- `skoala-init` 组件安装在工作集群，用于提供微服务引擎的核心功能，例如创建注册中心、网关实例等
+
+!!! note
+
+    - 升级微服务引擎时需要同时升级这两个组件，否则会存在版本不兼容的情况。
+    - 有关微服务引擎的版本更新情况，可参考 [release notes](../intro/release-notes.md)。
+
+由于 `skoala` 组件安装在控制面集群中，所以需要在控制面集群中执行下列操作。
+
+1. 执行如下命令备份原有数据
+
+    ```bash
+    helm -n skoala-system get values skoala > skoala.yaml
+    ```
+
+2. 添加微服务引擎的 Helm 仓库
+
+    ```bash
+    helm repo add skoala https://release.daocloud.io/chartrepo/skoala
+    ```
+
+3. 更新微服务引擎的 Helm 仓库
+
+    ```bash
+    helm repo update
+    ```
+
+4. 执行 `helm upgrade` 命令
+
+    ```bash
+    helm --kubeconfig /tmp/deploy-kube-config upgrade --install --create-namespace -n skoala-system skoala skoala/skoala --version=0.28.1 --set hive.image.tag=v0.28.1 --set sesame.image.tag=v0.28.1 --set ui.image.tag=v0.19.0 -f skoala.yaml
+    ```
+
+    > 需要将 `version`、`hive.image.tag`、`sesame.image.tag`、`ui.image.tag` 四个参数的值调整为您需要升级到的微服务引擎的版本号。
+
+## 离线升级
+
+DCE 5.0 的各个模块松散耦合，支持独立安装、升级各个模块。此文档适用于通过离线方式安装微服务引擎之后进行的升级。
+
+### 同步镜像
+
+将镜像下载到本地节点之后，需要通过 [chart-syncer](https://github.com/bitnami-labs/charts-syncer) 或容器运行时将最新版镜像同步到您的镜像仓库。推荐使用 chart-syncer 同步镜像，因为该方法更加高效便捷。
+
+#### chart-syncer 同步镜像
+
+1. 使用如下内容创建 `load-image.yaml` 作为 chart-syncer 的配置文件
+
+    `load-image.yaml` 文件中的各项参数均为必填项。您需要一个私有的镜像仓库，并参考如下说明修改各项配置。有关 chart-syncer 配置文件的详细解释，可参考其[官方文档](https://github.com/bitnami-labs/charts-syncer)。
+
+    === "已安装 chart repo"
+
+        若当前环境已安装 chart repo，则可以使用如下配置直接同步镜像。
+
+        ```yaml
+        source:
+          intermediateBundlesPath: skoala-offline # 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
+        target:
+          containerRegistry: 10.16.23.145 # 需更改为你的镜像仓库 url
+          containerRepository: release.daocloud.io/skoala # 需更改为你的镜像仓库
+          repo:
+            kind: HARBOR # 也可以是任何其他支持的 Helm Chart 仓库类别
+            url: http://10.16.23.145/chartrepo/release.daocloud.io # 需更改为 chart repo url
+            auth:
+              username: "admin" # 你的镜像仓库用户名
+              password: "Harbor12345" # 你的镜像仓库密码
+          containers:
+            auth:
+              username: "admin" # 你的镜像仓库用户名
+              password: "Harbor12345" # 你的镜像仓库密码
+        ```
+
+    === "未安装 chart repo"
+
+        若当前环境未安装 chart repo，chart-syncer 也支持将 chart 导出为 `tgz` 文件并存放在指定路径。
+
+        ```yaml
+        source:
+          intermediateBundlesPath: skoala-offline # (1)
+        target:
+          containerRegistry: 10.16.23.145 # (2)
+          containerRepository: release.daocloud.io/skoala # (3)
+          repo:
+            kind: LOCAL
+            path: ./local-repo # (4)
+          containers:
+            auth:
+              username: "admin" # (5)
+              password: "Harbor12345" # (6)
+        ```
+
+        1. 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
+        2. 需更改为你的镜像仓库 url
+        3. 需更改为你的镜像仓库
+        4. chart 本地路径
+        5. 你的镜像仓库用户名
+        6. 你的镜像仓库密码
+
+2. 执行同步镜像命令。
+
+    ```shell
+    charts-syncer sync --config load-image.yaml
+    ```
+
+#### Docker/containerd 同步镜像
+
+1. 解压 `tar` 压缩包。
+
+    ```shell
+    tar xvf skoala.bundle.tar
+    ```
+
+    解压成功后会得到 3 个文件：
+
+    - hints.yaml
+    - images.tar
+    - original-chart
+
+2. 从本地加载镜像到 Docker 或 containerd。
+
+    === "Docker"
+
+        ```shell
+        docker load -i images.tar
+        ```
+
+    === "containerd"
+
+        ```shell
+        ctr -n k8s.io image import images.tar
+        ```
+
+!!! note
+
+    - 需要在每个节点上都通过 Docker 或 containerd 加载镜像。
+    - 加载完成后需要 tag 镜像，保持 Registry、Repository 与安装时一致。
+
+### 开始升级
+
+镜像同步完成之后，就可以开始升级微服务引擎了。
+
+=== "通过 helm repo 升级"
+
+    1. 检查微服务引擎 helm 仓库是否存在。
+
+        ```shell
+        helm repo list | grep skoala
+        ```
+
+        若返回结果为空或如下提示，则进行下一步；反之则跳过下一步。
+
+        ```none
+        Error: no repositories to show
+        ```
+
+    2. 添加微服务引擎的 helm 仓库。
+
+        ```shell
+        helm repo add skoala-release http://{harbor url}/chartrepo/{project}
+        ```
+
+    3. 更新微服务引擎的 helm 仓库。
+
+        ```shell
+        helm repo update skoala-release # (1)
+        ```
+
+        1. helm 版本过低会导致失败，若失败，请尝试执行 helm update repo
+
+    4. 选择您想安装的微服务引擎版本（建议安装最新版本）。
+
+        ```shell
+        helm search repo skoala-release/skoala --versions
+        ```
+
+        ```text
+        NAME                   CHART VERSION  APP VERSION  DESCRIPTION
+        skoala-release/skoala  0.14.0          v0.14.0       A Helm chart for Skoala
+        ...
+        ```
+
+    5. 备份 `--set` 参数。
+
+        在升级微服务引擎版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
+
+        ```shell
+        helm get values skoala -n skoala-system -o yaml > bak.yaml
+        ```
+
+    6. 执行 `helm upgrade`。
+
+        升级前建议您覆盖 bak.yaml 中的 `global.imageRegistry` 字段为当前使用的镜像仓库地址。
+
+        ```shell
+        export imageRegistry={你的镜像仓库}
+        ```
+
+        ```shell
+        helm upgrade skoala skoala-release/skoala \
+        -n skoala-system \
+        -f ./bak.yaml \
+        --set global.imageRegistry=$imageRegistry
+        --version 0.14.0
+        ```
+
+=== "通过 chart 包升级"
+
+    1. 备份 `--set` 参数。
+
+        在升级微服务引擎版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
+
+        ```shell
+        helm get values skoala -n skoala-system -o yaml > bak.yaml
+        ```
+
+    2. 执行 `helm upgrade`。
+
+        升级前建议您覆盖 bak.yaml 中的 `global.imageRegistry` 为当前使用的镜像仓库地址。
+
+        ```shell
+        export imageRegistry={你的镜像仓库}
+        ```
+
+        ```shell
+        helm upgrade skoala . \
+        -n skoala-system \
+        -f ./bak.yaml \
+        --set global.imageRegistry=$imageRegistry
+        ```
 
 ## 卸载微服务引擎管理组件
 
 ```bash
 helm uninstall skoala -n skoala-system
-```
-
-## 在线安装微服务引擎集群初始化组件
-
-### 微服务引擎集群初始化组件部署结构
-
-![image](../images/install-arch-skoala-init.png)
-
-蓝色框内的 chart 即 `skoala-init` 组件，需要安装在工作集群。安装 `skoala-init`
-组件之后即可以使用微服务引擎的各项功能，例如创建注册中心、网关实例等。另外需要注意，
-`skoala-init` 组件依赖 DCE 5.0 可观测模块的 `insight-agent` 组件提供指标监控和链路追踪等功能。
-如您需要使用该项功能，则需要事先安装好 `insight-agent` 组件，
-具体步骤可参考[安装组件 insight-agent](../../insight/quickstart/install/install-agent.md)。
-
-### 安装 skoala-init 到工作集群
-
-由于 Skoala 涉及的组件较多，我们将这些组件打包到同一个 Chart 内，也就是 skoala-init，
-所以我们应该在用到微服务引擎的工作集群安装好 skoala-init。此安装命令也可用于更新该组件。
-
-```bash
-$ helm search repo skoala-release/skoala-init --versions
-NAME                        CHART VERSION   APP VERSION DESCRIPTION
-skoala-release/skoala-init	0.28.1       	0.28.1     	A Helm Chart for Skoala init, it includes Skoal...
-skoala-release/skoala-init	0.28.0       	0.28.0     	A Helm Chart for Skoala init, it includes Skoal...
-skoala-release/skoala-init	0.27.2       	0.27.2     	A Helm Chart for Skoala init, it includes Skoal...
-skoala-release/skoala-init	0.27.1       	0.27.1     	A Helm Chart for Skoala init, it includes Skoal...
-......
-```
-
-执行以下命令，注意对应的版本号：
-
-```bash
-helm upgrade --install skoala-init --create-namespace -n skoala-system --cleanup-on-fail \
-    skoala-release/skoala-init \
-    --version 0.28.1
-```
-
-查看 Pod 是否启动成功：
-
-```bash
-$ kubectl -n skoala-system get pods
-NAME                                   READY   STATUS    RESTARTS        AGE
-contour-provisioner-54b55958b7-5ltng                  1/1     Running     0          2d6h
-gateway-api-admission-patch-bk7c8                     0/1     Completed   0          2d6h
-gateway-api-admission-pwhdh                           0/1     Completed   0          2d6h
-gateway-api-admission-server-77545d74c4-v6fpr         1/1     Running     0          2d6h
-nacos-operator-6d94bdccc8-wx4w5                       1/1     Running     0          2d6h
-seata-operator-f556d989d-8qrf8                        1/1     Running     0          2d6h
-sentinel-operator-6fb9dc98f4-d44k5                    1/1     Running     0          2d6h
-skoala-agent-54d4df7897-7p4pz                         1/1     Running     0          2d6h
-```
-
-除了通过终端安装，也可以在 `容器管理`->`Helm 应用` 内找到 `skoala-init` 进行安装。
-
-![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/skoala-init.png)
-
-## 卸载微服务引擎集群初始化组件
-
-```bash
-helm uninstall skoala-init -n skoala-system
 ```
