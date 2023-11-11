@@ -32,7 +32,7 @@
     "@supabase/supabase-js": "^2.38.0",
     "dotenv": "^16.0.3",
     "json-2-csv": "^4.1.0",
-    "langchain": "^0.0.39",
+    "langchain": "^0.0.186",
     "tsup": "^6.7.0"
   },
   "devDependencies": {
