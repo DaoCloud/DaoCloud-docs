@@ -15,7 +15,7 @@
 
 在 insight-system 命名空间下安装, 不同版本之间有一些细小的差别。
 
-### Insight v0.21.x
+=== Insight v0.21.x
 
 ```bash
 K8S_CLUSTER_UID=$(kubectl get namespace kube-system -o jsonpath='{.metadata.uid}')
@@ -64,7 +64,7 @@ EOF
 ```
 
 
-### Insight v0.20.x
+=== Insight v0.20.x
 
 ```bash
 kubectl apply -f - <<EOF
@@ -109,7 +109,7 @@ spec:
 EOF
 ```
 
-### Insight v0.18.x
+=== Insight v0.18.x
 
 ```bash
 kubectl apply -f - <<EOF
@@ -152,7 +152,7 @@ spec:
 EOF
 ```
 
-### Insight v0.17.x
+=== Insight v0.17.x
 
 ```bash
 kubectl apply -f - <<EOF
@@ -191,7 +191,7 @@ spec:
 EOF
 ```
 
-### Insight v0.16.x
+=== Insight v0.16.x
 
 ```bash
 kubectl apply -f - <<EOF
@@ -385,8 +385,7 @@ metadata:
     cni.projectcalico.org/containerID: 234eae5e55ea53db2a4bc2c0384b9a1021ed3908f82a675e4a92a49a7e80dd61
     cni.projectcalico.org/podIP: 192.168.134.133/32
     cni.projectcalico.org/podIPs: 192.168.134.133/32
-    instrumentation.opentelemetry.io/inject-java: 'true'
-    sidecar.opentelemetry.io/inject: 'false'
+    instrumentation.opentelemetry.io/inject-java: "insight-system/insight-opentelemetry-autoinstrumentation"
 spec:
   volumes:
     - name: kube-api-access-sp2mz
