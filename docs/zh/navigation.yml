@@ -460,6 +460,7 @@ nav:
                   - 安装管理:
                       - 准备工作: storage/hwameistor/install/prereq.md
                       - Hwameistor 安装: storage/hwameistor/install/deploy-operator.md
+                      - 通过 HwameiStor-Operator 安装: storage/hwameistor/install/deploy-helm.md
                       - 资源要求: storage/hwameistor/install/proresource.md
                       - DRDB 安装: storage/hwameistor/install/drbdinstall.md
                       - 安装后检查: storage/hwameistor/install/post-check.md
