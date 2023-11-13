@@ -26,7 +26,7 @@
 
 2. 在工作负载详情页面，点击`弹性伸缩`页签，在 `CronHPA` 右侧点击 `安装`。
 
-    ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/installcronhpa.png)
+    ![工作负载](../../images/installcronhpa.png)
 
 3. 阅读该插件的相关介绍，选择版本后点击`安装`按钮。推荐安装 `1.3.0` 或更高版本。
 
