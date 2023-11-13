@@ -153,7 +153,7 @@
 | TCP      | 5723     | Spiderpool-CLI HTTP server port.  |
 | TCP      | 5724     | SpiderPool Controller gops enabled  |
 
-参考 [SpiderPool Docs](https://github.com/spidernet-io/spiderpool/blob/main/docs/concepts/config.md)
+参考文档: [spiderpool-controller](https://github.com/spidernet-io/spiderpool/blob/main/docs/reference/spiderpool-controller.md) 及 [spiderpool-agent](https://github.com/spidernet-io/spiderpool/blob/main/docs/reference/spiderpool-agent.md)
 
 #### KubeVIP - (可选)
 

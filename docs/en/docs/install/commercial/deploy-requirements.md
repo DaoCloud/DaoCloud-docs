@@ -152,7 +152,7 @@ If SpiderPool is used as CNI, **all k8s nodes** need to be opened.
 | TCP | 5723 | Spiderpool-CLI HTTP server port. |
 | TCP | 5724 | SpiderPool Controller gops enabled |
 
-Refer to [SpiderPool Docs](https://github.com/spidernet-io/spiderpool/blob/main/docs/concepts/config.md).
+Refer to [spiderpool-controller](https://github.com/spidernet-io/spiderpool/blob/main/docs/reference/spiderpool-controller.md) and [spiderpool-agent](https://github.com/spidernet-io/spiderpool/blob/main/docs/reference/spiderpool-agent.md)
 
 #### KubeVIP - (optional)
 
