@@ -1,27 +1,27 @@
-# Deployment requirements
+# Deployment Requirements
 
 When deploying DCE 5.0, software planning, hardware planning, and network planning need to be done well.
 
-## Operating System Requirements
+## Operating system requirements
 
 | **Architecture** | **Operating System** | **Kernel Version**                          | Remarks (Installation Guide)                                     |
 | ---------------- | -------------------- | -------------------------------------------- | ------------------------------------------------------- |
-| AMD 64           | CentOS 7.X           | Kernel 3.10.0-1127.el7.x86_64 on an x86_64   | Recommended OS: CentOS 7.9<br />[Offline Installation of DCE 5.0 Enterprise](start-install.md) |
-|                  | Redhat 8.X           | 4.18.0-305.el8.x86_64                        | Recommended OS: Redhat 8.4<br />[Offline Installation of DCE 5.0 Enterprise](start-install.md) |
-|                  | Redhat 7.X           | 3.10.0-1160.e17.x86                          | Recommended OS: Redhat 7.9<br />[Offline Installation of DCE 5.0 Enterprise](start-install.md) |
-| | Redhat 9.X | 5.14.0-284.11.1.e9_2.x86_64 | Recommended OS: Redhat 9.2<br />[Offline Installation of DCE 5.0 Enterprise](start-install.md)<br /> |
-|                  | Ubuntu 20.04         | 5.10.104                                     | [Offline Installation of DCE 5.0 Enterprise](start-install.md) |
-|                  | UOS V20 (1020a)      | 5.4.0-125-generic                            | [Deploying DCE 5.0 Enterprise on UOS V20 (1020a)](../os-install/uos-v20-install-dce5.0.md) |
-|                  | openEuler 22.03      | 5.10.0-60.18.0.50.oe2203.x86_64              | [Offline Installation of DCE 5.0 Enterprise](start-install.md) |
-|                  | Oracle Linux R9/R8 U1 | 5.15.0-3.60.5.1.el9uek.x86_64                | [Deploying DCE 5.0 Enterprise on Oracle Linux R9 U1](../os-install/oracleLinux-install-dce5.0.md) |
-|                  | TencentOS Server 3.1 | 5.4.119-19.0009.14                           | [Deploying DCE 5.0 Enterprise on TencentOS Server 3.1](../os-install/TencentOS-install-dce5.0.md) |
-| ARM 64           | Kylin OS V10 SP2     | 4.19.90-24.4.v2101.ky10.aarch64              | [Offline Installation of DCE 5.0 Enterprise](start-install.md) |
+| AMD 64           | CentOS 7.X           | Kernel 3.10.0-1127.el7.x86_64 on an x86_64   | Recommended: CentOS 7.9<br />[Offline Installation of DCE 5.0 Enterprise](start-install.md) |
+|                  | RedHat 8.X           | 4.18.0-305.el8.x86_64                        | Recommended: RedHat 8.4<br />[Offline Installation of DCE 5.0 Enterprise](start-install.md) |
+|                  | RedHat 7.X           | 3.10.0-1160.e17.x86                          | Recommended: RedHat 7.9<br />[Offline Installation of DCE 5.0 Enterprise](start-install.md) |
+| | RedHat 9.X | 5.14.0-284.11.1.e9_2.x86_64 | Recommended: RedHat 9.2<br />Refer to [Offline Installation of DCE 5.0 Enterprise](start-install.md)<br /> |
+|                  | Ubuntu 20.04         | 5.10.104                                     | Refer to [Offline Installation of DCE 5.0 Enterprise](start-install.md) |
+|                  | UOS V20 (1020a)      | 5.4.0-125-generic                            | Refer to [Deploying DCE 5.0 Enterprise on UOS V20 (1020a)](../os-install/uos-v20-install-dce5.0.md) |
+|                  | openEuler 22.03      | 5.10.0-60.18.0.50.oe2203.x86_64              | Refer to [Offline Installation of DCE 5.0 Enterprise](start-install.md) |
+|                  | Oracle Linux R9/R8 U1 | 5.15.0-3.60.5.1.el9uek.x86_64                | Refer to [Deploying DCE 5.0 Enterprise on Oracle Linux R9 U1](../os-install/oracleLinux-install-dce5.0.md) |
+|                  | TencentOS Server 3.1 | 5.4.119-19.0009.14                           | Refer to [Deploying DCE 5.0 Enterprise on TencentOS Server 3.1](../os-install/TencentOS-install-dce5.0.md) |
+| ARM 64           | Kylin OS V10 SP2     | 4.19.90-24.4.v2101.ky10.aarch64              | Refer to [Offline Installation of DCE 5.0 Enterprise](start-install.md) |
 
 !!! note
 
-    For operating systems not mentioned in the table above, please refer to the documentation [Other Linux Offline Deployment of DCE 5.0 Enterprise](../os-install/otherlinux.md) for installation and deployment instructions.
+    For operating systems not mentioned in the table above, refer to the documentation [Other Linux Offline Deployment of DCE 5.0 Enterprise](../os-install/otherlinux.md) for installation and deployment instructions.
 
-## Hardware Requirements
+## Hardware requirements
 
 | **Type** | **Specific Requirements** |
 | -------- | --------------------------- |
@@ -29,9 +29,9 @@ When deploying DCE 5.0, software planning, hardware planning, and network planni
 | Memory | No Oversold |
 | HDD | IOPS > 500 Throughput >200 MB/s |
 
-For resource requirements, please refer to [Preparation](./prepare.md)
+For resource requirements, refer to [Preparation](./prepare.md).
 
-## Network Requirements
+## Network requirements
 
 ### Network topology
 
@@ -39,7 +39,7 @@ Assuming that VIP is used as the load balancing method of the global cluster:
 
 ![Network-Topology](https://docs.daocloud.io/daocloud-docs-images/docs/install/commercial/images/Network-Topology.png)
 
-### Network Requirements
+### Network requirements
 
 | **Resources** | **Requirements** | **Instructions** |
 | ----------------- | ---------- | -------------------- ----------------- |
@@ -57,7 +57,7 @@ Assuming that VIP is used as the load balancing method of the global cluster:
 In order To function properly, some ports need to be open. If your network is configured with firewall rules, you need to ensure that infrastructure components can communicate with each other over specific ports.
 Make sure the required following ports are open on the network and configured to allow access between hosts. Some ports are optional based on configuration and usage.
 
-### bootstrapping node
+### Bootstrap node
 
 | Protocol | Port | Description |
 |----------|--------| ------------|
@@ -66,12 +66,12 @@ Make sure the required following ports are open on the network and configured to
 | TCP | 9000 | Minio API |
 | TCP | 9001 | Minio UI |
 
-### Kube cluster (including global cluster and working cluster)
+### K8s clusters (including global cluster and working cluster)
 
-Both global and worker clusters are deployed via Kubean, so they need to open the same ports
+Both global and worker clusters are deployed via Kubean, so they need to open the same ports.
 In addition to standard k8s ports, ports also need to be opened for CNI and some network components.
 
-#### k8s Control plane
+#### K8s control plane
 
 | Protocol | Port | Description |
 |----------|--------| ------------|
@@ -93,7 +93,7 @@ Every node in the cluster needs to be turned on.
 | TCP | 10250 | kubelet-api |
 | TCP | 30000-32767 | kube nodePort range |
 
-Reference: [Kubernetes Docs](https://kubernetes.io/docs/reference/networking/ports-and-protocols/)
+Refer to [Kubernetes Docs](https://kubernetes.io/docs/reference/networking/ports-and-protocols/).
 
 #### Calico (default)
 
@@ -108,7 +108,7 @@ By default, Calico will be used as CNI, so **all k8s nodes** need to be turned o
 | UDP | 51821 | Calico with IPv6 Wireguard enabled |
 | IPENCAP / IPIP | - | Calico CNI with IPIP enabled |
 
-Reference: [Calico Docs](https://docs.tigera.io/calico/latest/getting-started/kubernetes/requirements#network-requirements)
+Refer to [Calico Docs](https://docs.tigera.io/calico/latest/getting-started/kubernetes/requirements#network-requirements).
 
 #### MetalLB (default)
 
@@ -121,7 +121,7 @@ When enabling MetalLB to build a VIP, **all k8s nodes** need to be turned on.
 
 #### Cilium (optional)
 
-If you use Cilium as CNI, so **all k8s nodes** need to be opened.
+If you use Cilium as CNI, **all k8s nodes** need to be opened.
 
 | Protocol | Port | Description |
 |----------|-------- | ------------ |
@@ -135,7 +135,7 @@ If you use Cilium as CNI, so **all k8s nodes** need to be opened.
 | UDP | 51871 | WireGuard encryption tunnel endpoint |
 | ICMP | - | health checks |
 
-Reference: [Cilium Docs](https://docs.cilium.io/en/v1.13/operations/system_requirements/)
+Refer to [Cilium Docs](https://docs.cilium.io/en/v1.13/operations/system_requirements/).
 
 #### SpiderPool (optional)
 
@@ -152,7 +152,7 @@ If SpiderPool is used as CNI, **all k8s nodes** need to be opened.
 | TCP | 5723 | Spiderpool-CLI HTTP server port. |
 | TCP | 5724 | SpiderPool Controller gops enabled |
 
-Reference: [SpiderPool Docs](https://github.com/spidernet-io/spiderpool/blob/main/docs/concepts/config.md)
+Refer to [SpiderPool Docs](https://github.com/spidernet-io/spiderpool/blob/main/docs/concepts/config.md).
 
 #### KubeVIP - (optional)
 
@@ -186,7 +186,8 @@ When KubeVIP is enabled to create a Kube API VIP, **all Control Plane nodes** ne
 
 ### Working cluster Other ports that need to be opened
 
-The working cluster needs to open port 6443 of the k8s API to give access to the global management cluster. If you want to use the deployment function, you need to open port 22 for global cluster access.
+The working cluster needs to open port 6443 of the k8s API to give access to the global management cluster.
+If you want to use the deployment function, you need to open port 22 for global cluster access.
 
 | Protocol | Port | Description | Used By |
 |----------|-------- | ------------ | ------- |
@@ -207,5 +208,5 @@ The working cluster needs to open port 6443 of the k8s API to give access to the
 
 ## Client browser requirements
 
-- Firefox **≥** 49
-- Chrome **≥** 54
+- Firefox **≥** v49
+- Chrome **≥** v54
