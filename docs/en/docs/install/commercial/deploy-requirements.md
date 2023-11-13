@@ -121,7 +121,7 @@ When enabling MetalLB to build a VIP, **all k8s nodes** need to be turned on.
 
 #### Cilium (optional)
 
-If you use Cilium as CNI, so **all k8s nodes** need to be opened.
+If you use Cilium as CNI, **all k8s nodes** need to be opened.
 
 | Protocol | Port | Description |
 |----------|-------- | ------------ |
@@ -152,7 +152,7 @@ If SpiderPool is used as CNI, **all k8s nodes** need to be opened.
 | TCP | 5723 | Spiderpool-CLI HTTP server port. |
 | TCP | 5724 | SpiderPool Controller gops enabled |
 
-Reference: [SpiderPool Docs](https://github.com/spidernet-io/spiderpool/blob/main/docs/concepts/config.md)
+Reference: [spiderpool-controller](https://github.com/spidernet-io/spiderpool/blob/main/docs/reference/spiderpool-controller.md) and [spiderpool-agent](https://github.com/spidernet-io/spiderpool/blob/main/docs/reference/spiderpool-agent.md)
 
 #### KubeVIP - (optional)
 

@@ -122,7 +122,7 @@
 
 #### Cilium (可选)
 
-如果使用 Cilium 作为　CNI , 因此 **全部 k8s 节点** 都需要打开。
+如果使用 Cilium 作为　CNI , 需要打开 **全部 k8s 节点**。
 
 | Protocol | Port     | Description   |
 |----------|--------  | ------------  |
@@ -140,7 +140,7 @@
 
 #### SpiderPool (可选)
 
-如果使用 SpiderPool 作为　CNI , 因此 **全部 k8s 节点** 都需要打开。
+如果使用 SpiderPool 作为　CNI , 需要打开 **全部 k8s 节点**。
 
 | Protocol | Port     | Description   |
 |----------|--------  | ------------  |
@@ -153,7 +153,7 @@
 | TCP      | 5723     | Spiderpool-CLI HTTP server port.  |
 | TCP      | 5724     | SpiderPool Controller gops enabled  |
 
-参考: [SpiderPool Docs](https://github.com/spidernet-io/spiderpool/blob/main/docs/concepts/config.md)
+参考文档: [spiderpool-controller](https://github.com/spidernet-io/spiderpool/blob/main/docs/reference/spiderpool-controller.md) 及 [spiderpool-agent](https://github.com/spidernet-io/spiderpool/blob/main/docs/reference/spiderpool-agent.md)
 
 #### KubeVIP - (可选)
 
