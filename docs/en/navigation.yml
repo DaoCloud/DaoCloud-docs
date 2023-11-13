@@ -444,7 +444,6 @@ nav:
               - HwameiStor storage:
                   - Intro: storage/hwameistor/intro/index.md
                   - Modules:
-                      - Local disk manager: storage/hwameistor/intro/ldm.md
                       - Local storage: storage/hwameistor/intro/ls.md
                       - DRBD installer: storage/hwameistor/intro/drbd.md
                       - Scheduler: storage/hwameistor/intro/scheduler.md
@@ -456,7 +455,7 @@ nav:
                       - Install DRDB: storage/hwameistor/install/drbdinstall.md
                       - Install with Operator: storage/hwameistor/install/deploy-operator.md
                       - Intall with UI: storage/hwameistor/install/deploy-ui.md
-                      - Install with Helm Charts: storage/hwameistor/install/deploy-helm.md
+                      - Install with hwameistor-operator: storage/hwameistor/install/deploy-helm.md
                       - Post-check: storage/hwameistor/install/post-check.md
                       - Storage and network adapter config: storage/hwameistor/install/storage-eth.md
                       - Custom Kubelet root directory: storage/hwameistor/install/customized-kubelet.md

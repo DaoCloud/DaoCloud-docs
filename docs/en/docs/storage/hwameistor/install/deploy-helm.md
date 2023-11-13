@@ -3,58 +3,101 @@ hide:
    - toc
 ---
 
-# Install via Helm Chart
+# Install with hwameistor-operator
 
-Any component of HwameiStor can be installed through Helm Chart.
+You can use hwameistor-operator to deploy and manage HwameiStor system.
 
-## Prerequisites
-
-- Free HDD and SSD disks have been prepared on the nodes to be used
-- Completed the items in [Preparation](prereq.md)
-- If you need to use highly available data volumes, please complete [DRDB installation](drbdinstall.md) in advance
-- If the deployment environment is a production environment, please read [Resource Requirements for Production Environment](proresource.md) in advance
-- If your Kubernetes distribution uses a different `kubelet` directory, please confirm `kubeletRootDir` in advance.
-   For details, please refer to [Customize Kubelet root directory](customized-kubelet.md).
+- Perform Life Cycle Management (LCM) for HwameiStor components:
+  - LocalDiskManager
+  - LocalStorage
+  - Scheduler
+  - AdmissionController
+  - VolumeEvictor
+  - Exporter
+  - HA module
+  - Apiserver
+  - Graph UI
+- Configure the disks for different purposes
+- Set up the storage pools automatically by discovering the underlying disks' type (e.g. HDD, SSD)
+- Set up the StorageClasses automatically according to the Hwameistor's configurations and capabilities
 
 ## Steps
 
-1. Prepare the Helm tool, install the [Helm](https://helm.sh/) command-line tool, see the [Helm Documentation](https://helm.sh/docs/).
-
-2. Download `hwameistor` Repo, download and decompress the Repo file to local:
+1. Add hwameistor-operator Helm Repo
 
     ```console
-    helm repo add hwameistor http://hwameistor.io/hwameistor
-    helm repo update hwameistor
-    helm pull hwameistor/hwameistor --untar
+    helm repo add hwameistor-operator https://hwameistor.io/hwameistor-operator
+    helm repo update hwameistor-operator
     ```
 
-3. Install HwameiStor, named as follows:
+2. Install HwameiStor with hwameistor-operator
+
+    !!! note
+        If no available clean disk provided, the operator will not create StorageClass automatically.
+        Operator will claim disk automatically while installing, the available disks will be added into
+        pool of LocalStorageNode. If available clean disk provided after installing, it's needed to apply
+        a LocalDiskClaim manually to added the disk into pool of LocalStorageNode. Once LocalStorageNode has
+        any disk available in its pool, the operator will create StorageClass automatically.
+        That is to say, no capacity, no StorageClass.
 
     ```console
-    helm install hwameistor ./hwameistor \
-        -n hwameistor --create-namespace
+    helm install hwameistor-operator hwameistor-operator/hwameistor-operator -n hwameistor --create-namespace
     ```
 
+Optional installation parameters:
 
-!!! tip
+- Disk Reserve
 
-    The default registries are `registry.k8s.io` and `ghcr.io`.
-    
-    If you can't access it, you can try to use the mirror sources provided by DaoCloud: `m.daocloud.io` and `ghcr.m.daocloud.io`.
+    Available clean disk will be claimed and added into pool of LocalStorageNode by default.If you want to
+    reserve some disks for other use before installing,you can set diskReserveConfigurations by helm values.
 
-To switch the mirroring of the registry, use `--set` to change the values of these two parameters: `global.k8sImageRegistry` and `global.hwameistorImageRegistry`.
+    Method 1:
 
-```console
-helm install hwameistor ./hwameistor \
-    -n hwameistor --create-namespace \
-    --set global.k8sImageRegistry=m.daocloud.io/registry.k8s.io\
-    --set global.hwameistorImageRegistry=ghcr.m.daocloud.io
-```
+    ```console
+    helm install hwameistor-operator hwameistor-operator/hwameistor-operator  -n hwameistor --create-namespace \
+    --set diskReserve\[0\].nodeName=node1 \
+    --set diskReserve\[0\].devices={/dev/sdc\,/dev/sdd} \
+    --set diskReserve\[1\].nodeName=node2 \
+    --set diskReserve\[1\].devices={/dev/sdc\,/dev/sde}
+    ```
 
-!!! success
+    This is a example to set diskReserveConfigurations by helm install --set,it may be hard to write --set options like that.If it's possible, we suggest write the diskReserveConfigurations values into a file.
 
-    The installation is complete! To verify the installation effect, please refer to the next chapter [Post-check](./post-check.md).
+    Method 2:
 
-If you need to customize the Kubelet root directory, please refer to [Customize the Kubelet root directory](customized-kubelet.md).
+    ```console
+    diskReserve:
+    - nodeName: node1
+      devices:
+      - /dev/sdc
+      - /dev/sdd
+    - nodeName: node2
+    devices:
+      - /dev/sdc
+      - /dev/sde
+    ```
 
-The installation is complete! To verify the installation effect, please refer to the next chapter [Post-check](./post-check.md).
+    For example, you write values like this into a file call diskReserve.yaml, you can apply the file when helm install.
+
+    ```console
+    helm install hwameistor-operator hwameistor-operator/hwameistor-operator -n hwameistor --create-namespace -f diskReserve.yaml
+    ```
+
+- Enable authentication
+
+    ```console
+    helm install hwameistor-operator hwameistor-operator/hwameistor-operator  -n hwameistor --create-namespace \
+    --set apiserver.authentication.enable=true \
+    --set apiserver.authentication.accessId={YourName} \
+    --set apiserver.authentication.secretKey={YourPassword}
+    ```
+
+    You can also enable authentication by editing deployment/apiserver.
+
+- Install operator by using DaoCloud image registry:
+
+    ```console
+    helm install hwameistor-operator hwameistor-operator/hwameistor-operator  -n hwameistor --create-namespace \
+    --set global.hwameistorImageRegistry=ghcr.m.daocloud.io \
+    --set global.k8sImageRegistry=m.daocloud.io/registry.k8s.io
+    ```

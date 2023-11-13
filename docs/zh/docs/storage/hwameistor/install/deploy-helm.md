@@ -1,59 +1,93 @@
----
-hide:
-  - toc
----
+# 通过 HwameiStor-Operator 安装
 
-# 通过 Helm Chart 安装
+Hwameistor-Operator 负责自动化安装并管理 HwameiStor 系统。
 
-HwameiStor 的任何组件都可以通过 Helm Chart 进行安装。
+- 所有组件的全生命周期管理 (LCM)：
+    - LocalDiskManager
+    - LocalStorage
+    - Scheduler
+    - AdmissionController
+    - VolumeEvictor
+    - Exporter
+    - Apiserver
+    - Graph UI
+- 根据不同目的和用途配置节点磁盘
+- 自动发现节点磁盘的类型，并以此自动创建 HwameiStor 存储池
+- 根据 HwameiStor 系统的配置和功能自动创建相应的 StorageClass
 
-## 前提条件
+## 安装步骤
 
-- 待使用节点上已准备空闲 HDD、SSD 磁盘
-- 已完成[准备工作](prereq.md)中事项
-- 如需要使用高可用数据卷，请提前完成[DRDB 安装](drbdinstall.md)
-- 如部署环境为生产环境，请提前阅读[生产环境资源要求](proresource.md)
-- 如果您的 Kubernetes 发行版使用不同的 `kubelet` 目录，请提前确认 `kubeletRootDir`。
-  详细信息请参考[自定义 Kubelet 根目录](customized-kubelet.md)。
-
-## 操作步骤
-
-1. 准备 Helm 工具，安装 [Helm](https://helm.sh/) 命令行工具，请参阅 [Helm 文档](https://helm.sh/docs/)。
-
-2. 下载 `hwameistor` Repo，下载并解压 Repo 文件到本地：
+1. 添加 hwameistor-operator Helm Repo
 
     ```console
-    helm repo add hwameistor http://hwameistor.io/hwameistor
-    helm repo update hwameistor
-    helm pull hwameistor/hwameistor --untar
+    helm repo add hwameistor-operator https://hwameistor.io/hwameistor-operator
+    helm repo update hwameistor-operator
     ```
 
-3. 安装 HwameiStor，命名如下：
+2. 通过 hwameistor-operator 部署 HwameiStor
+
+    !!! note
+        如果没有可用的干净磁盘，Operator 就不会自动创建 StorageClass。 Operator 会在安装过程中自动纳管磁盘，可用的磁盘会被添加到 LocalStorage 的 pool 里。
+        如果可用磁盘是在安装后提供的，则需要手动下发 LocalDiskClaim 将磁盘纳管到 LocalStorageNode 里。
+        一旦 LocalStorageNode 的 pool 里有磁盘，Operator 就会自动创建 StorageClass。也就是说，如果没有容量，就不会自动创建 StorageClass。
 
     ```console
-    helm install hwameistor ./hwameistor \
-        -n hwameistor --create-namespace
+    helm install hwameistor-operator hwameistor-operator/hwameistor-operator -n hwameistor --create-namespace
     ```
 
-!!! tip
+可选参数:
 
-    默认的镜像仓库是 `registry.k8s.io` 和 `ghcr.io`。
-    
-    如果无法访问，可尝试使用 DaoCloud 提供的镜像源：`m.daocloud.io` 和 `ghcr.m.daocloud.io`。
+- 磁盘预留
 
-要切换镜像仓库的镜像，请使用 `--set` 更改这两个参数值：`global.k8sImageRegistry` 和 `global.hwameistorImageRegistry`。
+    可用的干净磁盘默认会被纳管并且添加到 LocalStorageNode 的 pool 里。如果你想在安装前预留一部分磁盘留作他用，你可以通过 helm 的 values 来设置磁盘预留配置。
 
-```console
-helm install hwameistor ./hwameistor \
-    -n hwameistor --create-namespace \
-    --set global.k8sImageRegistry=m.daocloud.io/registry.k8s.io \
-    --set global.hwameistorImageRegistry=ghcr.m.daocloud.io
-```
+    方法 1:
 
-!!! success
+    ```console
+    helm install hwameistor-operator hwameistor-operator/hwameistor-operator  -n hwameistor --create-namespace \
+    --set diskReserve\[0\].nodeName=node1 \
+    --set diskReserve\[0\].devices={/dev/sdc\,/dev/sdd} \
+    --set diskReserve\[1\].nodeName=node2 \
+    --set diskReserve\[1\].devices={/dev/sdc\,/dev/sde}
+    ```
 
-    安装完成！要验证安装效果，请参见下一章[安装后检查](./post-check.md)。
+    这个例子展示了在 helm install 时通过 --set 选项来设置磁盘预留配置，可能比较棘手。我们更建议把磁盘预留的配置写到一个文件里。
 
-如需要`自定义 Kubelet 根目录` 请参考[自定义 Kubelet 根目录](customized-kubelet.md)。
+    方法 2:
 
-安装完成！要验证安装效果，请参见下一章[安装后检查](./post-check.md)。
+    ```console
+    diskReserve:
+    - nodeName: node1
+      devices:
+      - /dev/sdc
+      - /dev/sdd
+    - nodeName: node2
+    devices:
+      - /dev/sdc
+      - /dev/sde
+    ```
+
+    比如，你可以把如上的 helm values 写到一个叫 diskReserve.yaml 的文件里，并在 helm install 时 apply。
+
+    ```console
+    helm install hwameistor-operator hwameistor-operator/hwameistor-operator -n hwameistor --create-namespace -f diskReserve.yaml
+    ```
+
+- 开启验证
+
+    ```console
+    helm install hwameistor-operator hwameistor-operator/hwameistor-operator  -n hwameistor --create-namespace \
+    --set apiserver.authentication.enable=true \
+    --set apiserver.authentication.accessId={用户名} \
+    --set apiserver.authentication.secretKey={密码}
+    ```
+
+    您也可以在安装后通过修改 deployment/apiserver 来开启验证。
+
+- 使用 DaoCloud 镜像仓库安装 operator：
+
+    ```console
+    helm install hwameistor-operator hwameistor-operator/hwameistor-operator  -n hwameistor --create-namespace \
+    --set global.hwameistorImageRegistry=ghcr.m.daocloud.io \
+    --set global.k8sImageRegistry=m.daocloud.io/registry.k8s.io
+    ```
