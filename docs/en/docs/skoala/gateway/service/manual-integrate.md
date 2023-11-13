@@ -14,7 +14,9 @@ You need to add the corresponding service source in Source management so that yo
 
 2. Select the service source, configure the service connection information and click `OK`.
 
-    === Cluster service: Select the cluster and namespace where the target service resides, and enter the access protocol, address, and port number.
+    === "Cluster/Service Mesh"
+
+        Select the cluster and namespace where the target service resides, and enter the access protocol, address, and port number.
 
         ![adding a cluster service](./images/gw-service01.png)
 
@@ -22,13 +24,15 @@ You need to add the corresponding service source in Source management so that yo
 
         ![get the service access address](./images/service-access.png)
 
-    === mesh service:
+    === "Registry Service/Hosted Registration Center Service"
 
         - Registry Service: Select the registry where the target service resides, and enter the access protocol, address, and port number.
 
         ![add registry services](./images/gw-service04.png)
 
-    === External service: Enter the service name, access protocol, address, and port number.
+    === "External service" 
+         
+        Enter the service name, access protocol, address, and port number.
   
         ![adding external services](./images/gw-service02.png)
 
