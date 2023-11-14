@@ -420,6 +420,7 @@ nav:
                   - 日志配置: network/modules/ingress-nginx/log.md
                   - 上传限制: network/modules/ingress-nginx/upload.md
                   - 镜像流量: network/modules/ingress-nginx/mirror.md
+                  - 重定向: network/modules/ingress-nginx/redirect.md
               - 集成 Metallb:
                   - 介绍: network/modules/metallb/index.md
                   - 安装: network/modules/metallb/install.md
