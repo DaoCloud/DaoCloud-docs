@@ -14,9 +14,9 @@ The microservices engine supports hosting the Nacos registry, which creates a ne
 
 The steps to create a managed registry are as follows.
 
-1. Click `Microservice Governance`-> `Managed Registry`in the left navigation bar, and then click `Create Managed Registry` in the upper right corner of the page to enter the page for creating the hosting registry instance.
+1. Click `Traditional Microservices`-> `Hosted Registry`in the left navigation bar, and then click `Create Hosted Registry` in the upper right corner of the page to enter the page for creating the hosting registry instance.
 
-    <!--![]()screenshots-->
+   ![](../../images/create01.png)
 
 2. Enter the configuration information.
 
@@ -32,31 +32,27 @@ The steps to create a managed registry are as follows.
 
         -  `1Core2G` indicates that the request value and limit value of CPU are 2 cores respectively, the request value and limit value of memory are 2 G respectively, and so on.
 
-        - Click `Resource Advice` to see throughput (TPS) for mainstream specifications such as 2 Core 4 GiB, 4 Core 8 GiB, and 8 Core 16 GiB.
+        - Click `Recommended Quotas` to see throughput (TPS) for mainstream specifications such as 2 Core 4 GiB, 4 Core 8 GiB, and 8 Core 16 GiB.
 
-        <!--![]()screenshots-->
+      ![](../../images/create02.png)
 
     - Access mode: If `NodePort` is selected, the registry can be accessed externally through ** Service port + destination port **. If `Internal Access` is selected, the registry can be accessed through service ports only in the cluster where the registry resides. The default service port is 8848.
     - Deployment mode: If high availability mode is selected, the number of nodes must be at least three. In the production environment, the `High Availability` mode is recommended.
 
-        <!--![]()screenshots-->
+      ![](../../images/create03.png)
 
     - Data persistence: External storage is recommended.
 
         - No external storage is used: The data is stored in the Pod file system where Nacos resides. Data is lost after the Pod restarts, so external storage is recommended.
         - Using the database: Enter the name, address, port, username, and password of the database
 
-            <!--![]()screenshots-->
-
-        - Using a StorageClass: Select an existing StorageClass in the registry cluster and configure the storage capacity. 
-
-            <!--![]()screenshots-->
+          ![](../../images/create04.png)
 
 3. At the bottom of the page click `OK`.
 
     If the operation is correct, a message indicating that the registry is created successfully is displayed in the upper right corner of the page. The `Managed Registry List` page displays the new registry instance.
 
-    <!--![]()screenshots-->
+   ![](../../images/create05.png)
 
 !!! info
 

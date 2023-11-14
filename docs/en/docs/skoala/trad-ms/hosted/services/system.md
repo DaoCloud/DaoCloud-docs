@@ -15,9 +15,11 @@ Follow the steps below to create a system rule:
 
     > Note that the microservice you want to govern should have the "Can be governed" status set to "Yes" in order to proceed with the following steps.
 
+   ![](../../../images/gov00.png)
 
 2. Select `System Rules`, then click `Create System Rule` on the right side.
 
+   ![](../../../images/gov14.png)
 
 3. Fill in the rule configuration based on the instructions below and click `OK` in the bottom right corner.
 
@@ -27,6 +29,9 @@ Follow the steps below to create a system rule:
     - Thread Count: Trigger system flow control rule when the concurrent thread count of all incoming traffic on a single machine reaches the threshold.
     - Incoming QPS: Trigger system flow control rule when the QPS of all incoming traffic on a single machine reaches the threshold.
     - CPU Usage: Trigger system flow control rule when the system's CPU usage exceeds the threshold (range 0.0-1.0).
-
+   
+      ![](../../../images/gov15.png)
 
 4. After creating the rule, you can view it in the list of system rules. Click the more options button on the right side to update or delete the rule.
+
+   ![](../../../images/gov16.png)

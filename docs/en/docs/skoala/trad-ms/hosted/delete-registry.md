@@ -5,13 +5,13 @@ hide:
 
 # Delete registry
 
-1. In the `Managed Registry List` page select need to delete the registry, on the right side click ** `⋯` ** and select `Delete`.
+1. In the `Hosted Registries` page select need to delete the registry, on the right side click ** `⋯` ** and select `Delete`.
 
-    <!--![]()screenshots-->
+   ![](../../images/delete01.png)
 
-2. Enter a name for the registry and click `Remove`.
+2. Enter a name for the registry and click `Delete`.
 
-    <!--![]()screenshots-->
+   ![](../../images/delete02.png)
 
 !!! note
 

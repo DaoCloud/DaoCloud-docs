@@ -18,18 +18,23 @@ Follow the steps below to create a hotspot rule:
 
     > Note that the microservice you want to govern should have the "Can be governed" status set to "Yes" in order to proceed with the following steps.
 
+   ![](../../../images/gov00.png)
 
 2. Select `Hotspot Rules`, then click `Create Hotspot Rule` on the right side.
 
+   ![](../../../images/gov11.png)
 
 3. Fill in the rule configuration based on the instructions below and click `OK` in the bottom right corner.
 
-    - Resource Name: Specify the name of the resource that needs traffic control, such as an API interface, function, variable, etc., within the current service.
+    - Name: Specify the name of the resource that needs traffic control, such as an API interface, function, variable, etc., within the current service.
     - Parameter Index: The index position of the hotspot parameter, corresponding to the parameter index position in `WithArgs(args ...interface{})`, starting from 0.
-    - Flow Control Mode: Choose whether to control the traffic based on the thread count of the called resource or QPS (Queries Per Second).
-    - Single Machine Threshold: The threshold that applies to each hotspot parameter. For example, when the QPS reaches a certain value, flow control will be applied to the hotspot parameter.
+    - Current limiting mode: Choose whether to control the traffic based on the thread count of the called resource or QPS (Queries Per Second).
+    - Single Threshold: The threshold that applies to each hotspot parameter. For example, when the QPS reaches a certain value, flow control will be applied to the hotspot parameter.
     - Statistic Window Duration: The duration for calculating the thread count or QPS, for example, if the statistic window duration is 10s and the QPS threshold is 5, it means that the access to each hotspot parameter should not exceed 5 times within 10 seconds.
-    - Parameter Exception: Set the threshold for a specific parameter value separately, which is not subject to the above "Single Machine Threshold" limitation.
+    - Advanced Settings: Set the threshold for a specific parameter value separately, which is not subject to the above "Single Machine Threshold" limitation.
 
+      ![](../../../images/gov12.png)
 
 4. After creating the rule, you can view it in the list of hotspot rules. Click the more options button on the right side to update or delete the rule.
+
+   ![](../../../images/gov13.png)

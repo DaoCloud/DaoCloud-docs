@@ -12,17 +12,17 @@ After [integrating a registry](integrate-registry.md), you can manage the micros
 
 1. Click the name of the target registry on the `In` page.
 
-    <!--![]()screenshots-->
+   ![](../../images/service01.png)
 
 2. Click `Microservice Management` in the left navigation bar to view the list of micro-services and basic information.
 
     On the current page, you can copy the name of the micro-service and view all micro-services in the current registry, as well as the namespace, instance, and request statistics of each micro-service.
 
-    <!--![]()screenshots-->
+   ![](../../images/service02.png)
 
 3. Click the name of the micro-service to view the instance list, interface list, and monitoring information of the micro-service.
 
-    <!--![]()screenshots-->
+   ![](../../images/service03.png)
 
     - Instance list: Displays instance status, IP address, and service port.
 

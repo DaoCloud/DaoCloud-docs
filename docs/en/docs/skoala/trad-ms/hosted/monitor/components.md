@@ -6,14 +6,20 @@ To view component monitoring, perform the following steps:
 
 1. Go to the Microservices Engine module and click the name of the target registry.
 
-    <!--![]()screenshots-->
+   ![](../../../images/monitor01.png)
 
 2. In the left navigation bar, click `Monitoring` -> `Components`.
 
-    <!--![]()screenshots-->
+   ![](../../../images/monitor02.png)
 
 3. Click the `Naocs Instances` Tab to view the Nacos instance monitoring information.
 
-    > On the drop-down list page, you can view the statistics about request time and request counts. You can switch the statistics time window and refresh period in the upper right corner of the page.
+    > On the drop-down list page, you can view the statistics about request time and request counts.
 
-    <!--![]()screenshots-->
+   ![](../../../images/monitor03.png)
+
+4. Click the `Sentinel Instances` Tab to view the Sentinel instance monitoring information.
+
+   > On the drop-down list page, you can view the statistics about request time and request counts.
+
+   ![](../../../images/monitor04.png)

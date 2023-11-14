@@ -13,27 +13,27 @@ You can create a flow control rule as follows:
 
     > Notice that the incognito to be controlled should be displayed as `Yes` in the column `Traffic Governance` before you proceed to the subsequent steps.
 
-    <!--![]()screenshots-->
+   ![](../../../images/gov00.png)
 
 2. Select `Flow Control Rules` and click `Create Rules` on the right.
 
-    <!--![]()screenshots-->
+   ![](../../../images/gov01.png)
 
 3. Follow the instructions below to fill in the rule configuration and click `OK` in the lower right corner.
 
-    <!--![]()screenshots-->
+    - Name: Specifies the name of the resource. Resource refers to the domain of the rule. That is, the rule is created to govern the traffic of the service. Must be a resource that does exist.
 
-    - Resource name: Specifies the name of the resource. Resource refers to the domain of the rule. That is, the rule is created to govern the traffic of the service. Must be a resource that does exist.
+    - Source Application: Sentinel can limit streams for callers. The default value is default, which means it does not distinguish sources and is applicable to all callers.
 
-    - Source application: Sentinel can limit streams for callers. The default value is default, which means it does not distinguish sources and is applicable to all callers.
+    - Threshold Types: When the current resource reaches the threshold, the current flow is restricted directly.
 
-    - Direct mode: When the current resource reaches the threshold, the current flow is restricted directly.
+    - Flow Control Mode: When the associated resource reaches the threshold, the resource is restricted to traffic.
 
-    - Association mode: When the associated resource reaches the threshold, the resource is restricted to traffic.
+    - Flow Control Mode: Records only the traffic on the specified link. If the inbound traffic of the specified resource reaches the threshold, the traffic can be restricted.
 
-    - Link mode: Records only the traffic on the specified link. If the inbound traffic of the specified resource reaches the threshold, the traffic can be restricted.
+      ![](../../../images/gov02.png)
 
 4. After the rule is created, you can view it in the flow control rule list. Click More on the right to edit the update rule or delete it.
 
-    <!--![]()screenshots-->
+   ![](../../../images/gov03.png)
 

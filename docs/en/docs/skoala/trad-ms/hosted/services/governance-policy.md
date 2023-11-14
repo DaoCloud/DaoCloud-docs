@@ -8,15 +8,15 @@ The micro-service engine supports east-west traffic governance via a service mes
 
     The principle of the flow control rule is to monitor the QPS metric of application or service traffic. When the metric reaches the threshold, the traffic is controlled according to the preset rule, preventing application crashes due to excessive traffic processing in a short period of time. After the flow control rule is used, the system can gradually process the accumulated requests in the following idle period. When the metric falls below the threshold again, normal traffic request control is resumed.
 
-- Fuse degradation
+- Fusing Rules
 
     In a distributed system, each service usually needs to call other internal or external services in order to run properly. If the called service is not stable, the cascading effect will lead to the response time of the caller, resulting in thread accumulation and even service unavailability. To avoid this situation, the circuit breaker should be used to cut off unstable call traces according to preset rules, or degrade downstream services to protect the overall availability of the system.
 
-- Hotspot rule
+- Hot Rules
 
     Hotspot refers to frequently accessed data. When setting a hotspot rule, you need to set hotspot parameters (target parameters for traffic statistics). Then, the system collects statistics on the request volume of the hotspot parameter. When the request volume reaches a certain threshold, the resource containing the hotspot parameter is restricted. Hotspot rules apply to statistics on frequently accessed resources. When a certain threshold is reached, the access to the resource is restricted.
 
-- System rule
+- System rules
 
     System rules refer to the automatic selection of flow control rules to control the request traffic from the overall dimension based on Sentinel"s integrated system capacity, CPU usage, average response time, inbound QPS and other data. Different from other rules, system rules take effect only on the inbound traffic at the application level. Other rules usually control the resource dimension.
 
