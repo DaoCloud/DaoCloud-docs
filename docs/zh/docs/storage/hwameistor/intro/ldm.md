@@ -1,8 +1,7 @@
 # 本地磁盘管理器
 
-本地磁盘管理器 (Local Disk Manager, LDM) 是 HwameiStor 系统的一个重要功能模块。`LDM` 旨在简化管理节点上的磁盘。它将磁盘抽象成一种可以被管理和监控的资源。它本身是一种 DaemonSet 对象，集群中每一个节点都会运行该服务，通过该服务检测存在的磁盘并将其转换成相应的 LocalDisk 资源。
 
-![LDM 架构图](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/img/ldm.png)
+![LDM 架构图](../../images/ldm.png)
 
 目前 LDM 还处于 `alpha` 阶段。
 
@@ -20,71 +19,50 @@
 
 ## 用法
 
-如果想完整地部署 HwameiStor，请参考[使用 Helm Chart 安装部署](../install/deploy-helm.md)。
-
-如果只想单独部署 LDM，可以参考下面的步骤进行安装。
-
-## 安装本地磁盘管理器
-
-1. 克隆  repo 到本机
+1. 查看 LocalDisk 信息
 
     ```bash
-    git clone https://github.com/hwameistor/local-disk-manager.git
+    kubectl get localdisk
+    NAME               NODEMATCH        PHASE
+    10-6-118-11-sda    10-6-118-11      Available
+    10-6-118-11-sdb    10-6-118-11      Available
     ```
 
-2. 进入 repo 对应的目录
+    该命令用于获取集群中磁盘资源信息，获取的信息总共有三列，含义分别如下：
 
-    ```bash
-    cd deploy
-    ```
+    - **NAME:** 代表磁盘在集群中的名称。
+    - **NODEMATCH:** 表明磁盘所在的节点名称。
+    - **PHASE:** 表明这个磁盘当前的状态。
 
-3. 安装 CRDs 和 运行 LocalDiskManager
+    通过 `kubectl get localdisk <name> -o yaml` 查看更多关于某块磁盘的信息。
 
-    安装 LocalDisk 和 LocalDiskClaim 的 CRD
+2. 申请可用磁盘。
 
-    ```bash
-    kubectl apply -f deploy/crds/
-    ```
+    1. 创建 LocalDiskClaim。
 
-    安装权限认证的 CR 以及 LDM 的 Operators
+       ```bash
+       cat << EOF | kubectl apply -f -
+       apiVersion: hwameistor.io/v1alpha1
+       kind: LocalDiskClaim
+       metadata:
+         name: <localDiskClaimName>
+       spec:
+         description:
+           # e.g. HDD,SSD,NVMe
+           diskType: <diskType>
+         # 磁盘所在节点
+         nodeName: <nodeName>
+         # 使用磁盘的系统名称 比如：local-storage,local-disk-manager
+         owner: <ownerName>
+       EOF
+       ```
 
-    ```bash
-    kubectl apply -f deploy/
-    ```
+        该命令用于创建一个磁盘使用的申请请求。在这个 yaml 文件里面，您可以在 description 字段添加对申请磁盘的描述，比如磁盘类型、磁盘的容量等等。
 
-4. 查看 LocalDisk 信息
+    2. 查看 LocalDiskClaim 信息
 
-    ```bash
-    $ kubectl get localdisk
-    10-6-118-11-sda    10-6-118-11       Unclaimed
-    10-6-118-11-sdb    10-6-118-11       Unclaimed
-    ```
+        ```bash
+        kubectl get localdiskclaim <name>
+        ```
 
-    该命令用于获取集群中磁盘资源信息，获取的信息总共有四列，含义分别如下：
-
-    - **NAME：** 代表磁盘在集群中的名称。
-    - **NODEMATCH：** 表明磁盘所在的节点名称。
-    - **CLAIM：** 表明这个磁盘是被哪个 `Claim` 所引用。
-    - **PHASE：** 表明这个磁盘当前的状态。
-
-    通过 `kuebctl get localdisk <name> -o yaml` 查看更多关于某块磁盘的信息。
-
-5. 申请可用磁盘
-
-    **创建 LocalDiskClaim**
-
-    ```bash
-    kubectl apply -f deploy/samples/hwameistor.io_v1alpha1_localdiskclaim_cr.yaml
-    ```
-
-    该命令用于创建一个磁盘使用的申请请求。
-    在这个 yaml 文件里面，您可以在 description 字段添加对申请磁盘的描述，比如磁盘类型、磁盘的容量等等。
-
-    **查看 LocalDiskClaim 信息**
-
-    ```bash
-    kubectl get localdiskclaim <name>
-    ```
-
-    查看 `Claim` 的 Status 字段信息。
-    如果存在可用的磁盘，您将会看到该字段的值为 `Bound`。
+    3. LDC 被处理完成后，将立即被系统自动清理。如果 `owner` 是 `local-storage`，处理后的结果可以在对应的 `LocalStorageNode` 里查看。

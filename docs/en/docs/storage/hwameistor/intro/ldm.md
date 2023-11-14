@@ -1,90 +1,68 @@
-# local disk manager
+# Local Disk Manager
 
-Local Disk Manager (LDM) is an important functional module of HwameiStor system. `LDM` is designed to simplify managing disks on nodes. It abstracts the disk into a resource that can be managed and monitored. It itself is a DaemonSet object, and each node in the cluster will run the service, through which the existing disks are detected and converted into corresponding LocalDisk resources.
+Local Disk Manager (LDM) is one of the modules of HwameiStor. `LDM` is used to simplify the management of disks on nodes. It can abstract the disk on a node into a resource for monitoring and management purposes. It's a daemon that will be deployed on each node, then detect the disk on the node, abstract it into local disk (LD) resources and save it to kubernetes.
 
+![LDM 架构图](../../hwameistor/img/ldm-en.png)
 
+At present, the LDM project is still in the `alpha` stage.
 
-Currently LDM is still in `alpha` stage.
+## Concepts
 
-## Basic concept
+LocalDisk (LD): LDM abstracts disk resources into objects in kubernetes. An `LD` resource object represents the disk resources on the host.
 
-**LocalDisk(LD)**: This is the disk resource abstracted by LDM. An `LD` represents a physical disk on the node.
+LocalDiskClaim (LDC): This is a way to use disks. A user can add the disk description to select a disk for use.
 
-**LocalDiskClaim (LDC)**: This is the way the system uses the disk, by creating an `LDC` object to request a disk from the system. Users can add some description to the disk to select the disk.
-
-> Currently, LDC supports the following description options for disks:
+> At present, LDC supports the following options to describe disk:
 >
 > - NodeName
 > - Capacity
-> - DiskType(e.g. HDD/SSD)
+> - DiskType (such as HDD/SSD/NVMe)
 
 ## Usage
 
-If you want to fully deploy HwameiStor, please refer to [Using Helm Chart to install and deploy](../../hwameistor/install/deploy-operator.md).
-
-If you only want to deploy LDM separately, you can refer to the following steps to install it.
-
-## Install local disk manager
-
-1. Clone repo to local machine
+1. Get the LocalDisk information.
 
     ```bash
-    git clone https://github.com/hwameistor/local-disk-manager.git
+    kubectl get localdisk
+    NAME               NODEMATCH        PHASE
+    10-6-118-11-sda    10-6-118-11      Available
+    10-6-118-11-sdb    10-6-118-11      Available
     ```
 
-2. Enter the directory corresponding to repo
+    Get locally discovered disk resource information with three columns displayed.
 
-    ```bash
-    cd deploy
-    ```
+    - **NAME:** represents how this disk is displayed in the cluster resources.
+    - **NODEMATCH:** indicates which host this disk is on.
+    - **PHASE:** represents the current state of the disk.
 
-3. Install CRDs and run LocalDiskManager
+    Use `kubectl get localdisk <name> -o yaml` to view more information about disks.
 
-    Install the CRD for LocalDisk and LocalDiskClaim
+2. Claim available disks.
 
-    ```bash
-    kubectl apply -f deploy/crds/
-    ```
+    1. Apply a LocalDiskClaim.
 
-    Install the authorized CR and LDM Operators
+       ```bash
+       cat << EOF | kubectl apply -f -
+       apiVersion: hwameistor.io/v1alpha1
+       kind: LocalDiskClaim
+       metadata:
+         name: <localDiskClaimName>
+       spec:
+         description:
+           # e.g. HDD,SSD,NVMe
+           diskType: <diskType>
+         # the node where disks attached
+         nodeName: <nodeName>
+         # the owner of the allocated disks e.g. local-storage,local-disk-manager
+         owner: <ownerName>
+       EOF
+       ```
 
-    ```bash
-    kubectl apply -f deploy/
-    ```
+        Allocate available disks by issuing a disk usage request. In the request description, you can add more requirements about the disk, such as disk type and capacity.
 
-4. View LocalDisk information
+    2. Get the LocalDiskClaim information.
 
-    ```bash
-    $ kubectl get localdisk
-    10-6-118-11-sda 10-6-118-11 Unclaimed
-    10-6-118-11-sdb 10-6-118-11 Unclaimed
-    ```
-
-    This command is used to obtain the disk resource information in the cluster. The obtained information has a total of four columns, and the meanings are as follows:
-
-      - **NAME:** represents the name of the disk in the cluster.
-      - **NODEMATCH:** Indicates the node name where the disk resides.
-      - **CLAIM:** Indicates which `Claim` this disk is referenced by.
-      - **PHASE:** Indicates the current state of the disk.
-
-    View more information about a disk with `kuebctl get localdisk <name> -o yaml`.
-
-5. Apply for an available disk
-
-    **Create LocalDiskClaim**
-
-    ```bash
-    kubectl apply -f deploy/samples/hwameistor.io_v1alpha1_localdiskclaim_cr.yaml
-    ```
-
-    This command is used to create a disk usage request.
-    In this yaml file, you can add a description of the requested disk in the description field, such as disk type, disk capacity, and so on.
-
-    **View LocalDiskClaim information**
-
-    ```bash
-    kubectl get localdiskclaim <name>
-    ```
-
-    View the Status field information of `Claim`.
-    If there is a disk available, you will see a value of `Bound` for this field.
+        ```bash
+        kubectl get localdiskclaim <name>
+        ```
+    3. Once the LDC is processed successfully, it will be cleanup by the system automatically. The result will be recorded in the `LocalStorageNode` if the owner is `local-storage`.

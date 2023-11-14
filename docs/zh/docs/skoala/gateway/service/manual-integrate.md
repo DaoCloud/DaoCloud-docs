@@ -10,7 +10,7 @@
 
 2. 选择服务来源，配置服务连接信息，点击`确定`。
 
-    === "集群服务/网格服务"
+    === "集群服务"
 
         选择目标服务所在的集群和命名空间，填写访问协议、地址以及端口。
 
@@ -19,13 +19,25 @@
         对于集群服务的访问方式，可在`容器管理`->`容器网络`->`服务`中点击服务名称进行查看：
 
         ![获取服务访问地址](./images/service-access.png)
+    
+    === "网格服务"
+     
+        选择目标服务所在的集群和命名空间，填写访问协议、地址以及端口。
 
-    === "接入注册中心服务/注册配置中心服务"
+        ![添加网格服务](./images/mesh-access.png)
+            
+    === "接入注册中心服务"
 
         选择目标服务所在的注册中心，填写访问协议、地址和端口。
 
-        ![添加注册中心服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-service04.png)
+        ![添加注册中心服务](./images/gw-access-service.png)
+    
+    === "注册配置中心服务"
+         
+        选择目标服务所在的注册中心，填写访问协议、地址和端口。
 
+        ![添加注册中心服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-service04.png)
+        
     === "外部服务"
 
         填写服务名称、访问协议、地址、端口。
