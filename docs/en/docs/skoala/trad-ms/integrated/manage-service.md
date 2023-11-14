@@ -5,24 +5,25 @@ hide:
 
 # Microservice management
 
-After [integrating a registry](integrate-registry.md), you can manage the microservices in the registry. Microservice management refers to viewing the microservices in the registry.
+After [integrating a registry](index.md), you can manage the microservices in the registry. Microservice management refers to viewing the microservices in the registry.
 
 !!! note
 
+    An access-based registry center only supports basic management operations. For more complex management scenarios, it is recommended to create a [hosted registry center](../hosted/index.md) to perform more advanced operations.
 
 1. Click the name of the target registry on the `In` page.
 
-   ![](../../images/service01.png)
+    ![](../../images/service01.png)
 
 2. Click `Microservice Management` in the left navigation bar to view the list of micro-services and basic information.
 
     On the current page, you can copy the name of the micro-service and view all micro-services in the current registry, as well as the namespace, instance, and request statistics of each micro-service.
 
-   ![](../../images/service02.png)
+    ![](../../images/service02.png)
 
 3. Click the name of the micro-service to view the instance list, interface list, and monitoring information of the micro-service.
 
-   ![](../../images/service03.png)
+    ![](../../images/service03.png)
 
     - Instance list: Displays instance status, IP address, and service port.
 

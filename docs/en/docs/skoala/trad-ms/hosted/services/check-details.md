@@ -12,19 +12,19 @@ Log in to the target registry, click `Microservice List` in the left navigation 
 
     Provides traffic weight control and threshold protection for service traffic, which helps users protect the service provider cluster from unexpected breakdown. You can click the Edit button of the instance to change the weight of the instance. To increase the traffic volume of the instance, increase the weight. To prevent the instance from receiving traffic, set the weight to 0.
 
-  ![](../../../images/detail02.png)
+    ![](../../../images/detail02.png)
 
 - Instance up and down
 
     Provides online and offline operations for service instances. In the operation column of the instance list, click `Online` or `Offline` of the instance. Offline instances are not included in the healthy instances list.
 
-  ![](../../../images/detail03.png)
+    ![](../../../images/detail03.png)
 
 - Instance details
 
     Click the instance name to access the instance details and view the monitoring and metadata of the instance.
 
-  ![](../../../images/detail04.png)
+    ![](../../../images/detail04.png)
 
     - Instance monitoring
 
@@ -32,11 +32,11 @@ Log in to the target registry, click `Microservice List` in the left navigation 
 
         > In response time, p95 represents that 95% of online requests take less than a certain time.
 
-      ![](../../../images/detail05.png)
+        ![](../../../images/detail05.png)
 
     - Instance metadata
 
-      ![](../../../images/detail06.png)
+        ![](../../../images/detail06.png)
 
 ## subscriber
 

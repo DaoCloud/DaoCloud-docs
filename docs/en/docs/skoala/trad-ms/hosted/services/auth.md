@@ -13,11 +13,11 @@ Follow the steps below to create an authorization rule:
 
     > Note that the microservice you want to govern should have the "Can be governed" status set to "Yes" in order to proceed with the following steps.
 
-   ![](../../../images/gov00.png)
+    ![](../../../images/gov00.png)
 
 2. Select `Authorization Rules`, then click `Create Authorization Rule` on the right side.
 
-   ![](../../../images/gov08.png)
+    ![](../../../images/gov08.png)
 
 3. Fill in the rule configuration based on the instructions below and click `OK` in the bottom right corner.
 
@@ -26,8 +26,8 @@ Follow the steps below to create an authorization rule:
     - Authorization Type - Whitelist: Only requests from sources within the whitelist are allowed to access the resource.
     - Authorization Type - Blacklist: Requests from sources within the blacklist are denied access to the resource. Requests from sources not on the blacklist are not restricted.
 
-      ![](../../../images/gov09.png)
+    ![](../../../images/gov09.png)
    
 4. After creating the rule, you can view it in the list of authorization rules. Click the more options button on the right side to update or delete the rule.
 
-   ![](../../../images/gov10.png)
+    ![](../../../images/gov10.png)

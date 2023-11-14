@@ -37,7 +37,7 @@ Following [Credential Management](../pipeline/credential.md), create two credent
     - Resource Type: Select Stateless Workload, which is currently the only supported option.
     - Deployment Location: Choose the cluster and namespace where the application will be deployed.
       If you want to integrate with microservices, make sure you have
-      [created a registry](../../../skoala/trad-ms/hosted/create-registry.md) in the current workspace.
+      [created a registry](../../../skoala/trad-ms/hosted/index.md) in the current workspace.
     - Application: Specify the name of the native application. You can select from an existing list
       or create a new one, which by default will have the same name as specified.
     - Instances: Specify the number of instances (Pods).
@@ -106,7 +106,7 @@ Following [Credential Management](../pipeline/credential.md), create two credent
 
     - Framework Selection: Choose between `Spring Cloud` and `Dubbo`. In this case, select `Spring Cloud`.
     - Registry Instance: Currently, only hosted Nacos registry instances from the
-     [Microservices Engine](../../../skoala/trad-ms/hosted/create-registry.md) are supported.
+     [Microservices Engine](../../../skoala/trad-ms/hosted/index.md) are supported.
     - Registry Namespace: The Nacos namespace for the microservices application.
     - Registry Service Group: The service group for the microservices application.
     - Username/Password: If the registry instance requires authentication, enter the username and password.

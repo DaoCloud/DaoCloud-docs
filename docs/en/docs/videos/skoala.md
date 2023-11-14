@@ -8,7 +8,7 @@ We have crafted the following video tutorials for Microservice Governance, any k
 
 ### Manage Gateway and APIs
 
-Refer to the [Manage Gateway and APIs](../skoala/gateway/api/add-api.md) documentation page.
+Refer to the [Manage Gateway and APIs](../skoala/gateway/api/index.md) documentation page.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/gateway%26api.mp4" preload="metadata" poster="images/skoala-gateway.png"></video>
@@ -50,7 +50,7 @@ Refer to the [Microservice Configuration List](../skoala/trad-ms/hosted/configs.
 
 ### Access Registry Center
 
-Refer to the [Access Registry Center](../skoala/trad-ms/integrated/integrate-registry.md) documentation page.
+Refer to the [Access Registry Center](../skoala/trad-ms/integrated/index.md) documentation page.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/integrate-registry.mp4" preload="metadata" poster="images/skoala-integrate.png"></video>

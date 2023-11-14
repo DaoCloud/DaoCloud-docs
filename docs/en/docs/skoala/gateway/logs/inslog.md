@@ -15,9 +15,6 @@ Click the name of the target gateway to enter the gateway overview page, and the
 
 - Automatic refresh: When viewing logs, you can view real-time logs.
 
-<! -- Add screenshots -->
-
 !!! info
 
     If you want to view more logs or download logs, you can go to [Observability Module](../../../insight/intro/index.md) through [Log Query](../../../insight/user-guide/data-query/log.md) feature to query or download logs of a specific cluster, namespace, workload, or pod.
-

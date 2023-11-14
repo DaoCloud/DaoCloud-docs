@@ -13,24 +13,24 @@ DCE 5.0 Cloud Native Gateway supports two methods for importing services: manual
 
 ### Automatic Discovery of Services
 
-1. Refer to the documentation [Creating a Gateway](../gateway/create-gateway.md) to create a gateway. **Add the namespace where the service is located as the jurisdictional namespace of the gateway**.
+1. Refer to the documentation [Creating a Gateway](../gateway/index.md) to create a gateway. **Add the namespace where the service is located as the jurisdictional namespace of the gateway**.
 
 2. After the namespace where the service is located is added as a "jurisdictional namespace", all services under that namespace will be automatically integrated with the gateway without the need for manual intervention.
 
-3. Refer to [Adding Domain Names](../gateway/domain/add-domain.md) to create a domain name under the gateway, such as `adservice.virtualhost`.
-4. Refer to [Adding APIs](../gateway/api/add-api.md) to create an API under the gateway. **Add the service as the backend service of the API**.
+3. Refer to [Adding Domain Names](../gateway/domain/index.md) to create a domain name under the gateway, such as `adservice.virtualhost`.
+4. Refer to [Adding APIs](../gateway/api/index.md) to create an API under the gateway. **Add the service as the backend service of the API**.
 
-    When adding a backend service, select the target service from the "auto-discovered" services, and click "OK".
+    When adding a backend service, select the target service from the "auto-discovered" services, and click `OK`.
 
 ### Manual Integration of Services
 
-1. Refer to [Creating a Gateway](../gateway/create-gateway.md) to create a gateway.
+1. Refer to [Creating a Gateway](../gateway/index.md) to create a gateway.
 2. Refer to the document [Manual Integration](../gateway/service/manual-integrate.md) to integrate the service with the gateway.
 
-3. Refer to [Adding Domain Names](../gateway/domain/add-domain.md) to create a domain name under the gateway, such as `adservice.virtualhost`.
-4. Refer to [Adding APIs](../gateway/api/add-api.md) to create an API under the gateway. **Add the service as the backend service of the API**.
+3. Refer to [Adding Domain Names](../gateway/domain/index.md) to create a domain name under the gateway, such as `adservice.virtualhost`.
+4. Refer to [Adding APIs](../gateway/api/index.md) to create an API under the gateway. **Add the service as the backend service of the API**.
 
-    When adding a backend service, select the target service from the "manually integrated" services, and click "OK".
+    When adding a backend service, select the target service from the "manually integrated" services, and click `OK`.
 
 ## Obtain Gateway Address
 

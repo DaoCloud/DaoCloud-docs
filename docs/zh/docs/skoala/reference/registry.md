@@ -39,7 +39,7 @@
     Kubernetes 使用 DNS 作为服务注册表。
     为了满足这一需要，每个 Kubernetes 集群都会在 kube-system 命名空间中用 Pod 的形式运行一个 DNS 服务 (kube-dns/coredns)，通常称之为集群 DNS。
     服务注册过程是：
-    
+
     1. 向 API Server 用 POST 方式提交一个新的 Service 定义。
     2. 该请求需要经过认证、鉴权以及其他的准入策略检查过程之后才会放行。
     3. Service 得到一个 ClusterIP（虚拟 IP 地址），并保存到集群数据仓库。

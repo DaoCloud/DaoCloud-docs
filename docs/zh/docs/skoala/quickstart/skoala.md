@@ -178,10 +178,11 @@ helm repo update
 
 注意：添加 Skoala-release 仓库之后，通常需要关注的有 2 个 Chart：
 
-`Skoala` 是 微服务引擎 的控制端的服务
-  - 安装完成后，可以在 DCE 5.0 平台看到微服务引擎的入口
-  - 包含 3 个组件 skoala-ui、hive、sesame
-  - 需要安装在全局管理集群
+`Skoala` 是微服务引擎的控制端的服务：
+
+- 安装完成后，可以在 DCE 5.0 平台看到微服务引擎的入口
+- 包含 3 个组件 skoala-ui、hive、sesame
+- 需要安装在全局管理集群
 
 默认情况下，安装完成 skoala 到 kpanda-global-cluster（全局管理集群），就可以在侧边栏看到对应的微服务引擎的入口了。
 

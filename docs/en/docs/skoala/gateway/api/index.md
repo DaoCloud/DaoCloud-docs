@@ -1,10 +1,10 @@
 # Add API
 
-The microservice gateway supports the full lifecycle management of the API of the gateway instance, including adding, updating, and deleting the API. This page explains how to add an API.
+The microservice gateway supports the full lifecycle management of the API of the gateway instance, including adding, updating, and deleting the API. 
 
 **Prerequisites**
 
-- For optional domain names, see [Domain Management](../domain/add-domain.md) to create a domain name.
+- For optional domain names, see [Domain Management](../domain/index.md) to create a domain name.
 - If the target service of the API is the back-end service, ensure that an optional back-end service is available. For details, see [Manual](../service/manual-integrate.md) or [Auto](../service/auto-manage.md).
 
 The steps to create an API are as follows:
@@ -19,7 +19,7 @@ The steps to create an API are as follows:
 
     - API name: Contains lowercase letters, numbers, and special characters (-.). Cannot start or end with a special character.
     - API group: Select the name of the group to which the API belongs. If you enter a group name that does not exist, a new group is automatically created.
-    - Associated domain name: After you enter the associated domain name, you can access the API in `Domain + Port`. If the domain name cannot be found, you can add a new domain name. For details, see [Add Domain](../domain/add-domain.md).
+    - Associated domain name: After you enter the associated domain name, you can access the API in `Domain + Port`. If the domain name cannot be found, you can add a new domain name. For details, see [Add Domain](../domain/index.md).
     - Matching rule: Only the requests that match the rule are allowed through. If multiple rules are set, all the rules must be met. If a request header is added, it needs to be added when the API is accessed.
     - Request Method: Select the HTTP request mode. See the official W3C document [Name Method Definitions](https://www.rfc-editor.org/rfc/rfc9110.html#name-method-definitions) for detailed instructions on the various request methods.
     - Target service: Choose to send the request directly to the back-end service, redirect it to another service, or return the HTTP status code directly.

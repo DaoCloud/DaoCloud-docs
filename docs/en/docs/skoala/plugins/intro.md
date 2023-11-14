@@ -1,9 +1,15 @@
 # Plugin Center
 
-You can add Auth, JWT, Global Rate Limiting, and Wasm plugins into DaoCloud Microservice Engine.
+The Plugin Center is a unified plugin management portal for cloud-native gateways and cloud-native microservices. It involves various flow control, authorization, and custom plugins. Once configured, these plugins can be used in cloud-native gateways and cloud-native microservices, eliminating the need for redundant plugin development for the same business logic requirements and providing more convenience for developers and operators.
 
-- Auth/JWT: with this added, you can enable and configure security authentication policies for domains.
-- Global Rate Limit: with this added, you can enable and configure rate limit for cloud native gateways.
-- Wasm: with this added, you can have more options when setting flow control of cloud native microservices.
+The microservice engine supports the integration of Auth, JWT, Global Rate Limit, and Wasm plugins. **Plugins need to be integrated in the Plugin Center before they can be used in cloud-native microservices or gateways**.
+
+- JWT (JSON Web Token) is an open standard for authentication and authorization. It consists of three parts: header, payload, and signature. JWT can be used to transmit information between clients and servers and verify it using signatures. In the cloud computing and cloud-native industry, JWT is commonly used for authentication and authorization in microservices architecture.
+
+- Auth (Authorization) is a plugin used for user identity verification and access authorization. It can be used together with JWT to authenticate requests and determine whether to allow access to specific resources based on user permissions. The Auth plugin ensures that only authenticated users can access specific APIs or services.
+
+- Rate Limit is a plugin used to limit the request rate. In cloud computing and cloud-native environments, a large number of requests can put a load on the system. The Rate Limit plugin helps limit the request rate per user or IP address to ensure system stability and security.
+
+- Wasm (WebAssembly) is a low-level bytecode format that enables high-performance compiled code to run in web browsers. In the cloud computing and cloud-native industry, Wasm can be used as a runtime environment for plugins, allowing developers to use a wider range of programming languages and tools to extend and customize cloud services. By using Wasm plugins, more efficient, scalable, and flexible cloud-native applications can be achieved.
 
 <!--![](../images/plugin01.png)-->
