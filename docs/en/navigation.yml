@@ -777,7 +777,7 @@ nav:
                   - Supported Kubernetes Versions: middleware/compatibility.md
                   - Permissions: middleware/permission.md
               - Common Config:
-                  - First-Time Use: middleware/common/first-visit.md
+                  - First-Time Use: middleware/common/index.md
                   - Custom Permissions: middleware/common/permissions.md
                   - Config Management: middleware/common/config.md
                   - Workload Antiaffinity: middleware/common/antiaffinity.md
@@ -800,6 +800,29 @@ nav:
                       - MySQL Operator: middleware/mysql/faq/faq-operator.md
                       - MySQL Master/Slave Issues: middleware/mysql/faq/faq-master-slave.md
                       - Other MySQL Issues: middleware/mysql/faq/faq-others.md
+              - MongoDB Database:
+                  - Intro:
+                      - What is MongoDB: middleware/mongodb/intro/index.md
+                      - Features: middleware/mongodb/intro/features.md
+                      - Offline Upgrade MongoDB: middleware/mongodb/intro/offline-install.md
+                      - Release Notes: middleware/mongodb/release-notes.md
+                  - Quick Start:
+                      - Create MongoDB: middleware/mongodb/user-guide/create.md
+                      - Update MongoDB: middleware/mongodb/user-guide/update.md
+                      - Delete MongoDB: middleware/mongodb/user-guide/delete.md
+                      - View MongDB Logs: middleware/mongodb/user-guide/logs.md
+              - PostgreSQL Database:
+                  - Intro:
+                      - What is PostgreSQL: middleware/postgresql/intro/index.md
+                      - Features: middleware/postgresql/intro/concepts.md
+                      - Offline Upgrade PostgreSQL: middleware/postgresql/intro/offline-install.md
+                      - Release Notes: middleware/postgresql/release-notes.md
+                  - Quick Start:
+                      - Create PostgreSQL: middleware/postgresql/user-guide/create.md
+                      - Update PostgreSQL: middleware/postgresql/user-guide/update.md
+                      - Delete PostgreSQL: middleware/postgresql/user-guide/delete.md
+                      - View PostgreSQL Logs: middleware/postgresql/user-guide/logs.md
+                      - Manually Set Antiaffinity: middleware/postgresql/user-guide/antiaffinity.md
               - Redis Cache Service:
                   - Intro:
                       - What is Redis: middleware/redis/intro/index.md
@@ -816,29 +839,6 @@ nav:
                       - Cluster Mode to Cluster Mode: middleware/redis/best-practice/cluster2cluster.md
                       - Sentinel Mode to Sentinel Mode: middleware/redis/best-practice/sentinel2sentinel.md
                       - Cluster Mode to Sentinel Mode: middleware/redis/best-practice/cluster2sentinel.md
-              - PostgreSQL Database:
-                  - Intro:
-                      - What is PostgreSQL: middleware/postgresql/intro/index.md
-                      - Features: middleware/postgresql/intro/concepts.md
-                      - Offline Upgrade PostgreSQL: middleware/postgresql/intro/offline-install.md
-                      - Release Notes: middleware/postgresql/release-notes.md
-                  - Quick Start:
-                      - Create PostgreSQL: middleware/postgresql/user-guide/create.md
-                      - Update PostgreSQL: middleware/postgresql/user-guide/update.md
-                      - Delete PostgreSQL: middleware/postgresql/user-guide/delete.md
-                      - View PostgreSQL Logs: middleware/postgresql/user-guide/logs.md
-                      - Manually Set Antiaffinity: middleware/postgresql/user-guide/antiaffinity.md
-              - MongoDB Database:
-                  - Intro:
-                      - What is MongoDB: middleware/mongodb/intro/index.md
-                      - Features: middleware/mongodb/intro/features.md
-                      - Offline Upgrade MongoDB: middleware/mongodb/intro/offline-install.md
-                      - Release Notes: middleware/mongodb/release-notes.md
-                  - Quick Start:
-                      - Create MongoDB: middleware/mongodb/user-guide/create.md
-                      - Update MongoDB: middleware/mongodb/user-guide/update.md
-                      - Delete MongoDB: middleware/mongodb/user-guide/delete.md
-                      - View MongDB Logs: middleware/mongodb/user-guide/logs.md
               - Elasticsearch:
                   - Intro:
                       - What is Elasticsearch: middleware/elasticsearch/intro/index.md
@@ -873,12 +873,6 @@ nav:
                       - Monitor Instance: middleware/kafka/user-guide/insight.md
                       - Config Parameters: middleware/kafka/user-guide/config.md
                       - View Kafka Logs: middleware/kafka/user-guide/logs.md
-              - RocketMQ Message Queue:
-                  - Intro:
-                      - What is RocketMQ: middleware/rocketmq/intro/index.md
-                      - Concepts: middleware/rocketmq/intro/concepts.md
-                      - Offline Upgrade RocketMQ: middleware/rocketmq/intro/offline-install.md
-                      - Release Notes: middleware/rocketmq/release-notes.md
               - RabbitMQ Message Queue:
                   - Intro:
                       - What is RabbitMQ: middleware/rabbitmq/intro/index.md
@@ -897,6 +891,12 @@ nav:
                       - Monitor Instance: middleware/rabbitmq/user-guide/insight.md
                       - View RabbitMQ Logs: middleware/rabbitmq/user-guide/logs.md
                   - Add Custom Addons to RabbitMQ: middleware/rabbitmq/faq/add-plugin.md
+              - RocketMQ Message Queue:
+                  - Intro:
+                      - What is RocketMQ: middleware/rocketmq/intro/index.md
+                      - Concepts: middleware/rocketmq/intro/concepts.md
+                      - Offline Upgrade RocketMQ: middleware/rocketmq/intro/offline-install.md
+                      - Release Notes: middleware/rocketmq/release-notes.md
               - MinIO Object Storage:
                   - Intro:
                       - What is MinIO: middleware/minio/intro/index.md

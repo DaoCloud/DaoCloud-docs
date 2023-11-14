@@ -11,7 +11,7 @@ hide:
 
 2. 可以点击列表右上角的`新建实例`按钮。
 
-    > 如果是首次使用，需要[先选择工作空间](../../common/first-visit.md)，然后点击`立即部署`创建 MinIO 实例。
+    > 如果是首次使用，需要[先选择工作空间](../../common/index.md)，然后点击`立即部署`创建 MinIO 实例。
 
     ![点击新建实例](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/create02.png)
 

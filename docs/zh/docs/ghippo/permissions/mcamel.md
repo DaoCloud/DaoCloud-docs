@@ -1,6 +1,7 @@
 # 中间件数据服务权限说明
 
-[中间件数据服务](../../middleware/index.md)包括六大中间件：MySQL、RabbitMQ、Elasticsearch、Kafka、Redis、MinIO。中间件数据服务支持三种用户角色：
+[中间件数据服务](../../middleware/index.md)包括了许多精选的中间件：MySQL、Redis、MongoDB、PostgreSQL、Elasticsearch、Kafka、RabbitMQ、RocketMQ、MinIO。
+中间件数据服务支持三种用户角色：
 
 - Workspace Admin
 - Workspace Editor
