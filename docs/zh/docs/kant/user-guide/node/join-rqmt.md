@@ -40,10 +40,10 @@ Docker 版本必须高于 19.0，推荐使用 19.03.6 版本。
 
 版本必须高于 2.17。
 
-查看方法：
+ubuntu 查看版本示例：
 
 ```sh
-ubuntu：ldd --version
+ldd --version
 ```
 
 ## 端口
