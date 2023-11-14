@@ -405,6 +405,7 @@ nav:
                   - Upload limit: network/modules/ingress-nginx/upload.md
                   - Traffic mirror: network/modules/ingress-nginx/mirror.md
                   - Cross-Origin Resource Sharing: network/modules/ingress-nginx/cors.md
+                  - Redirect: network/modules/ingress-nginx/redirect.md
               - Metallb:
                   - Intro: network/modules/metallb/index.md
                   - Install: network/modules/metallb/install.md
