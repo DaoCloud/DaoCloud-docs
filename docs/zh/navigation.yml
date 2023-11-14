@@ -866,6 +866,7 @@ nav:
                       - 集群模式 to 集群模式: middleware/redis/best-practice/cluster2cluster.md
                       - 哨兵模式 to 哨兵模式: middleware/redis/best-practice/sentinel2sentinel.md
                       - 集群模式 to 哨兵模式: middleware/redis/best-practice/cluster2sentinel.md
+                      - 基于 Spiderpool 的外部访问: middleware/redis/best-practice/spiderpoolconfig.md
               - Elasticsearch 搜索服务:
                   - 介绍:
                       - 什么是 Elasticsearch: middleware/elasticsearch/intro/index.md
