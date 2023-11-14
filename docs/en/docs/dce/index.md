@@ -5,13 +5,24 @@ hide:
 
 # DaoCloud Enterprise 5.0
 
-DaoCloud Enterprise 5.0 (DCE 5.0) is an advanced and highly scalable cloud native operating system designed to provide a consistent and dependable experience across diverse infrastructures and environments. With its support for heterogeneous clouds, edge clouds, and multicloud management, DCE 5.0 offers unparalleled flexibility.
+DaoCloud Enterprise 5.0 (DCE 5.0) is an advanced and highly scalable cloud native operating system designed to provide
+a consistent and dependable experience across diverse infrastructures and environments. With its support for heterogeneous
+clouds, edge clouds, and multicloud management, DCE 5.0 offers unparalleled flexibility.
 
-By seamlessly integrating state-of-the-art service mesh and microservice technologies, DCE 5.0 enables comprehensive tracking of the entire traffic lifecycle. Users can gain valuable insights into detailed metrics related to clusters, nodes, applications, and services. Visualizing the health status of applications through dynamic dashboards and topology maps empowers users with actionable information to optimize performance.
+By seamlessly integrating state-of-the-art service mesh and microservice technologies, DCE 5.0 enables comprehensive tracking
+of the entire traffic lifecycle. Users can gain valuable insights into detailed metrics related to clusters, nodes, applications,
+and services. Visualizing the health status of applications through dynamic dashboards and topology maps empowers users with
+actionable information to optimize performance.
 
-A major advantage of DCE 5.0 is its native support for the DevOps development and operation mode, facilitating standardization and automation throughout the application delivery process. Additionally, DCE 5.0 effortlessly integrates a range of carefully selected databases and middleware, enhancing operational efficiency and governance. Each product module operates independently, ensuring flexible upgrades without disrupting critical business operations. Furthermore, DCE 5.0 seamlessly integrates with various cloud native ecosystem products, forming a comprehensive and robust solution system.
+A major advantage of DCE 5.0 is its native support for the DevOps development and operation mode, facilitating standardization
+and automation throughout the application delivery process. Additionally, DCE 5.0 effortlessly integrates a range of carefully
+selected databases and middleware, enhancing operational efficiency and governance. Each product module operates independently,
+ensuring flexible upgrades without disrupting critical business operations. Furthermore, DCE 5.0 seamlessly integrates with
+various cloud native ecosystem products, forming a comprehensive and robust solution system.
 
-With extensive testing from thousands of industry customers in real production cases, DCE 5.0 has established itself as a solid and trustworthy digital foundation. It assists enterprises in defining their digital boundaries and unleashing the full potential of cloud native productivity. Embrace DCE 5.0 to elevate your organization's capabilities in the cloud native landscape.
+With extensive testing from thousands of industry customers in real production cases, DCE 5.0 has established itself as a solid
+and trustworthy digital foundation. It assists enterprises in defining their digital boundaries and unleashing the full potential
+of cloud native productivity. Embrace DCE 5.0 to elevate your organization's capabilities in the cloud native landscape.
 
 <div class="grid cards" markdown>
 
@@ -88,7 +99,7 @@ day by day, making things better over time.
      DCE 5.0 introduces independent open-source eBPF mesh acceleration technology to comprehensively improve traffic forwarding efficiency.
 
      **Related modules**: [Global Management](../ghippo/intro/index.md), [Container Management](../kpanda/intro/index.md),
-     [Microservice Engine](../skoala/intro/index.md), [Service Mesh](../mspider/intro/index.md), [Observability](../insight/intro/index.md),
+     [Microservice Engine](../skoala/intro/index.md), [Service Mesh](../mspider/intro/index.md), [Insight](../insight/intro/index.md),
      [Workbench](../amamba/intro/index.md), [Cloud Native Network](../network/intro/index.md), [Cloud Native Storage](../storage/index.md)
 
     ![microservie engine](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/03msgov.jpg)
@@ -107,9 +118,9 @@ day by day, making things better over time.
      *[eBPF]: Extended Berkeley Packet Filter, which is a component of the Linux kernel that can run sandboxed programs in the kernel
 
      **Modules involved**: [Global Management](../ghippo/intro/index.md), [Container Management](../kpanda/intro/index.md),
-     [Observability](../insight/intro/index.md), [cloud native network](../network/intro/index.md), [cloud native storage](../storage/index.md)
+     [Insight](../insight/intro/index.md), [cloud native network](../network/intro/index.md), [cloud native storage](../storage/index.md)
 
-    ![Observability](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/04insight.jpg)
+    ![Insight](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/04insight.jpg)
 
 === "App Store"
 
