@@ -7,7 +7,7 @@
 
 ## 前提条件
 
-- 当前工作空间下有创建好的托管 Nacos 实例，参考[创建托管注册中心](../../../skoala/trad-ms/hosted/create-registry.md)。
+- 当前工作空间下有创建好的托管 Nacos 实例，参考[创建托管注册中心](../../../skoala/trad-ms/hosted/index.md)。
 - 准备好需要部署的传统微服务的镜像，在本文中即 `adservice` 和 `dataservice` 的镜像。
 - 需要改造传统微服务的代码，在代码中集成 Nacos 注册中心的 SDK。
 - 如果要使用 Sentinel 治理传统微服务的流量，则还需要在代码中集成 Sentinel 的 Client。
