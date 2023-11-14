@@ -5,4 +5,4 @@
 - 与当前注册配置中心同名的工作负载就是该注册配置中心自身。
 - 如果启用了 Sentinel 治理能力，则会出现另外一个实例，代表对应的 Sentinel 实例。
 
-![](../../images/trad-resource-info.png)
+![资源信息](../../images/trad-resource-info.png)

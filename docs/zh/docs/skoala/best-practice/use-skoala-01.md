@@ -36,7 +36,7 @@
 
     ![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/addhelmrepo.png)
 
-- 在微服务引擎中[创建 Nacos 注册中心实例](../trad-ms/hosted/create-registry.md)
+- 在微服务引擎中[创建 Nacos 注册中心实例](../trad-ms/hosted/index.md)
 
     > 注意记录注册中心的地址信息，后续安装应用时需要用到。
 
@@ -152,7 +152,7 @@
 
 ### 创建云原生网关
 
-首先需要创建一个云原生网关，具体操作步骤可以参考： [创建云原生网关](../gateway/create-gateway.md)
+首先需要创建一个云原生网关，具体操作步骤可以参考： [创建云原生网关](../gateway/index.md)
 
 !!! note
 
@@ -174,7 +174,7 @@
 
 ### 创建 API 路由
 
-参考文档 [添加 API](../gateway/api/add-api.md) 创建对应的 API 路由。
+参考文档 [添加 API](../gateway/api/index.md) 创建对应的 API 路由。
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/apiroute.png)
 

@@ -10,7 +10,7 @@ DCE 5.0 云原生网关支持支持负载均衡、超时重试、黑白名单等
 ## 前提条件
 
 - 准备一个演示服务，例如 `my-otel-demo-adservice`
-- 创建[网关](../gateway/create-gateway.md)、[域名](../gateway/domain/add-domain.md)、[API](../gateway/api/add-api.md)
+- 创建[网关](../gateway/index.md)、[域名](../gateway/domain/index.md)、[API](../gateway/api/index.md)
 - 将演示[服务接入网关](gateway01.md)
 
 ## 负载均衡

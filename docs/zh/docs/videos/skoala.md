@@ -8,7 +8,7 @@
 
 ### 管理网关和 API
 
-参阅[管理网关和 API](../skoala/gateway/api/add-api.md)文档页面。
+参阅[管理网关和 API](../skoala/gateway/api/index.md)文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/gateway%26api.mp4" preload="metadata" poster="images/skoala-gateway.png"></video>
@@ -50,7 +50,7 @@
 
 ### 接入注册中心
 
-参阅[接入注册中心](../skoala/trad-ms/integrated/integrate-registry.md)文档页面。
+参阅[接入注册中心](../skoala/trad-ms/integrated/index.md)文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/integrate-registry.mp4" preload="metadata" poster="images/skoala-integrate.png"></video>
