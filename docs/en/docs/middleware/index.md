@@ -55,6 +55,20 @@ Install and enable these middleware components as needed to achieve optimal perf
     - [View MySQL Logs](./mysql/user-guide/logs.md)
     - [MySQL Troubleshooting](./mysql/faq/quick-check.md)
 
+- :simple-mongodb:{ .lg .middle } __MongoDB Database__
+
+    ---
+
+    MongoDB is a document-oriented NoSQL database management system known for its flexible data model and scalability.
+
+    - [What is MongoDB](./mongodb/intro/index.md)
+    - [Create/Update/Delete MongoDB Instances](./mongodb/user-guide/create.md)
+    - [View MongoDB Logs](./mongodb/user-guide/logs.md)
+
+</div>
+
+<div class="grid cards" markdown>
+
 - :simple-postgresql:{ .lg .middle } __PostgreSQL Database__
 
     ---
@@ -65,20 +79,6 @@ Install and enable these middleware components as needed to achieve optimal perf
     - [Create/Update/Delete PostgreSQL Instances](./postgresql/user-guide/create.md)
     - [View PostgreSQL Logs](./postgresql/user-guide/logs.md)
     - [PostgreSQL Anti-Affinity](./postgresql/user-guide/antiaffinity.md)
-
-</div>
-
-<div class="grid cards" markdown>
-
-- :simple-mongodb:{ .lg .middle } __MongoDB Database__
-
-    ---
-
-    MongoDB is a document-oriented NoSQL database management system known for its flexible data model and scalability.
-
-    - [What is MongoDB](./mongodb/intro/index.md)
-    - [Create/Update/Delete MongoDB Instances](./mongodb/user-guide/create.md)
-    - [View MongoDB Logs](./mongodb/user-guide/logs.md)
 
 - :simple-redis:{ .lg .middle } __Redis Cache Service__
 

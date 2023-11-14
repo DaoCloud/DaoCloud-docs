@@ -53,6 +53,20 @@ DCE 5.0 针对实际应用场景，精选了一些经典的中间件来处理数
     - [查看 MySQL 日志](./mysql/user-guide/logs.md)
     - [MySQL 故障排查](./mysql/faq/quick-check.md)
 
+- :simple-mongodb:{ .lg .middle } __MongoDB 数据库__
+
+    ---
+
+    MongoDB 是一种面向文档的 NoSQL 数据库管理系统，它以灵活的数据模型和可扩展性而闻名。
+
+    - [什么是 MongoDB](./mongodb/intro/index.md)
+    - [创建/更新/删除 MongoDB 实例](./mongodb/user-guide/create.md)
+    - [查看 MongoDB 日志](./mongodb/user-guide/logs.md)
+
+</div>
+
+<div class="grid cards" markdown>
+
 - :simple-postgresql:{ .lg .middle } __PostgreSQL 数据库__
 
     ---
@@ -63,20 +77,6 @@ DCE 5.0 针对实际应用场景，精选了一些经典的中间件来处理数
     - [创建/更新/删除 PostgreSQL 实例](./postgresql/user-guide/create.md)
     - [查看 PostgreSQL 日志](./postgresql/user-guide/logs.md)
     - [PostgreSQL 反亲和设置](./postgresql/user-guide/antiaffinity.md)
-
-</div>
-
-<div class="grid cards" markdown>
-
-- :simple-mongodb:{ .lg .middle } __MongoDB 数据库__
-
-    ---
-
-    MongoDB 是一种面向文档的 NoSQL 数据库管理系统，它以灵活的数据模型和可扩展性而闻名。
-
-    - [什么是 MongoDB](./mongodb/intro/index.md)
-    - [创建/更新/删除 MongoDB 实例](./mongodb/user-guide/create.md)
-    - [查看 MongoDB 日志](./mongodb/user-guide/logs.md)
 
 - :simple-redis:{ .lg .middle } __Redis 缓存服务__
 

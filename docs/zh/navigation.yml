@@ -801,7 +801,7 @@ nav:
                   - 版本适配: middleware/compatibility.md
                   - 权限设计说明: middleware/permission.md
               - 通用配置:
-                  - 首次进入: middleware/common/first-visit.md
+                  - 首次进入: middleware/common/index.md
                   - 自定义角色权限说明: middleware/common/permissions.md
                   - 配置管理: middleware/common/config.md
                   - 工作负载反亲和性: middleware/common/antiaffinity.md
@@ -826,6 +826,29 @@ nav:
                       - MySQL Operator: middleware/mysql/faq/faq-operator.md
                       - MySQL 主备关系: middleware/mysql/faq/faq-master-slave.md
                       - MySQL 其他故障: middleware/mysql/faq/faq-others.md
+              - MongoDB 数据库:
+                  - 介绍:
+                      - 什么是 MongoDB: middleware/mongodb/intro/index.md
+                      - 技术特性: middleware/mongodb/intro/features.md
+                      - 离线升级 MongoDB: middleware/mongodb/intro/offline-install.md
+                      - Release Notes: middleware/mongodb/release-notes.md
+                  - 快速入门:
+                      - 创建 MongoDB: middleware/mongodb/user-guide/create.md
+                      - 更新 MongoDB: middleware/mongodb/user-guide/update.md
+                      - 删除 MongoDB: middleware/mongodb/user-guide/delete.md
+                      - 查看 MongDB 日志: middleware/mongodb/user-guide/logs.md
+              - PostgreSQL 数据库:
+                  - 介绍:
+                      - 什么是 PostgreSQL: middleware/postgresql/intro/index.md
+                      - 技术特性及基本概念: middleware/postgresql/intro/concepts.md
+                      - 离线升级 PostgreSQL: middleware/postgresql/intro/offline-install.md
+                      - Release Notes: middleware/postgresql/release-notes.md
+                  - 快速入门:
+                      - 创建 PostgreSQL: middleware/postgresql/user-guide/create.md
+                      - 更新 PostgreSQL: middleware/postgresql/user-guide/update.md
+                      - 删除 PostgreSQL: middleware/postgresql/user-guide/delete.md
+                      - 查看 PostgreSQL 日志: middleware/postgresql/user-guide/logs.md
+                      - 手工设置工作负载反亲和: middleware/postgresql/user-guide/antiaffinity.md
               - Redis 缓存服务:
                   - 介绍:
                       - 什么是 Redis: middleware/redis/intro/index.md
@@ -843,29 +866,6 @@ nav:
                       - 集群模式 to 集群模式: middleware/redis/best-practice/cluster2cluster.md
                       - 哨兵模式 to 哨兵模式: middleware/redis/best-practice/sentinel2sentinel.md
                       - 集群模式 to 哨兵模式: middleware/redis/best-practice/cluster2sentinel.md
-              - PostgreSQL 数据库:
-                  - 介绍:
-                      - 什么是 PostgreSQL: middleware/postgresql/intro/index.md
-                      - 技术特性及基本概念: middleware/postgresql/intro/concepts.md
-                      - 离线升级 PostgreSQL: middleware/postgresql/intro/offline-install.md
-                      - Release Notes: middleware/postgresql/release-notes.md
-                  - 快速入门:
-                      - 创建 PostgreSQL: middleware/postgresql/user-guide/create.md
-                      - 更新 PostgreSQL: middleware/postgresql/user-guide/update.md
-                      - 删除 PostgreSQL: middleware/postgresql/user-guide/delete.md
-                      - 查看 PostgreSQL 日志: middleware/postgresql/user-guide/logs.md
-                      - 手工设置工作负载反亲和: middleware/postgresql/user-guide/antiaffinity.md
-              - MongoDB 数据库:
-                  - 介绍:
-                      - 什么是 MongoDB: middleware/mongodb/intro/index.md
-                      - 技术特性: middleware/mongodb/intro/features.md
-                      - 离线升级 MongoDB: middleware/mongodb/intro/offline-install.md
-                      - Release Notes: middleware/mongodb/release-notes.md
-                  - 快速入门:
-                      - 创建 MongoDB: middleware/mongodb/user-guide/create.md
-                      - 更新 MongoDB: middleware/mongodb/user-guide/update.md
-                      - 删除 MongoDB: middleware/mongodb/user-guide/delete.md
-                      - 查看 MongDB 日志: middleware/mongodb/user-guide/logs.md
               - Elasticsearch 搜索服务:
                   - 介绍:
                       - 什么是 Elasticsearch: middleware/elasticsearch/intro/index.md
@@ -900,12 +900,6 @@ nav:
                       - 实例监控: middleware/kafka/user-guide/insight.md
                       - 配置参数: middleware/kafka/user-guide/config.md
                       - 查看 Kafka 日志: middleware/kafka/user-guide/logs.md
-              - RocketMQ 消息队列:
-                  - 介绍:
-                      - 什么是 RocketMQ: middleware/rocketmq/intro/index.md
-                      - 基本概念: middleware/rocketmq/intro/concepts.md
-                      - 离线升级 RocketMQ: middleware/rocketmq/intro/offline-install.md
-                      - Release Notes: middleware/rocketmq/release-notes.md
               - RabbitMQ 消息队列:
                   - 介绍:
                       - 什么是 RabbitMQ: middleware/rabbitmq/intro/index.md
@@ -924,6 +918,12 @@ nav:
                       - 实例监控: middleware/rabbitmq/user-guide/insight.md
                       - 查看 RabbitMQ 日志: middleware/rabbitmq/user-guide/logs.md
                       - 为 RabbitMQ 添加自定义插件: middleware/rabbitmq/faq/add-plugin.md
+              - RocketMQ 消息队列:
+                  - 介绍:
+                      - 什么是 RocketMQ: middleware/rocketmq/intro/index.md
+                      - 基本概念: middleware/rocketmq/intro/concepts.md
+                      - 离线升级 RocketMQ: middleware/rocketmq/intro/offline-install.md
+                      - Release Notes: middleware/rocketmq/release-notes.md
               - MinIO 对象存储:
                   - 介绍:
                       - 什么是 MinIO: middleware/minio/intro/index.md
