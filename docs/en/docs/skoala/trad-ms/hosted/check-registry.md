@@ -13,20 +13,8 @@ In basic information page to view the registry `Basic Info`, `Governance Info` (
 
 - Restart the registry instance: Click `Restart` in the upper right corner of the page to restart the entire managed registry instance.
 
-    <!--![]()screenshots-->
-
-- Node offline: Select a node in the node list and modify the node status.
-
-    - Go offline
-
-        Click `Offline` in the `Actions` column to change the node instance status to "offline".
-
-    - Go online
-
-        Click `Online` in the `Actions` column to change the node instance status to "Online".
-
-        <!--![]()screenshots-->
+  ![](../../images/check-1.png)
 
 - View node metadata
 
-    <!--![]()screenshots-->
+  ![](../../images/check-2.png)

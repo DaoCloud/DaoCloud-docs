@@ -9,14 +9,14 @@ To view microservice monitoring, perform the following steps:
 
 1. Go to the Microservices Engine module and click the name of the target registry.
 
-    <!--![]()screenshots-->
+   ![](../../../images/monitor01.png)
 
 2. In the left navigation bar, click `Monitoring` -> `Microservices`.
 
-    <!--![]()screenshots-->
+   ![](../../../images/monitor05.png)
 
-3. Select a microservice namespace to view the microservice monitoring data in the namespace.
+3. Select a microservice namespace, service, instance, and resource to view the microservice monitoring data in the namespace.
 
     > Click the dashboard name to further view or share the monitoring information. You can switch the statistics time window and refresh period in the upper right corner of the page.
 
-    <!--![]()screenshots-->
+   ![](../../../images/monitor06.png)

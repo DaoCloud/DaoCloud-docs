@@ -6,7 +6,7 @@
 
     同一个注册中心实例不能同时开启这两种插件，但可以根据不同的场景进行切换。
 
-![插件中心](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/registry/managed/plugins/imgs/plugincenter01.png)
+![插件中心](../../../images/plugincenter01.png)
 
 ## Sentinel 治理
 

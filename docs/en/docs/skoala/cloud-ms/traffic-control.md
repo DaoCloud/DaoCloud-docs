@@ -6,11 +6,11 @@ After [microservices](service.md) are imported, different east-west traffic poli
 
 1. Click the service name.
 
-    <!--![](../images/cloudms-traffic01.png)-->
+    ![](../images/cloudms-traffic01.png)
 
 2. Select the target port.
 
-    <!--![](../images/cloudms-traffic02.png)-->
+    ![](../images/cloudms-traffic02.png)
 
 3. Configure the traffic policy as needed, and click `OK` to confirm.
 

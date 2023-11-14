@@ -4,17 +4,17 @@ The micro-service engine supports group management of micro-services based on th
 
 ## New configuration
 
-1. Enter `Microservice Engine` -- > `Microservice Governance` -- > `Managed Registry` module, click the name of the target registry.
+1. Enter `Microservices` -- > `Traditional Microservices` -- > `Hosted Registry` module, click the name of the target registry.
 
-    <!--![]()screenshots-->
+   ![](../../images/config01.png)
 
 2. Click `Configuration List` in the left navigation bar, then click `Create` in the upper right corner.
 
-    <!--![]()screenshots-->
+   ![](../../images/config02.png)
 
 3. Enter the configuration information
 
-    <!--![]()screenshots-->
+   ![](../../images/config03.png)
 
     - Namespace: Select the micro-service namespace to which the current configuration belongs. The default is `public`
 
@@ -41,53 +41,53 @@ The micro-service engine supports group management of micro-services based on th
 
     - More Configurations -> Owning Application (Optional) : Select the application to which the current configuration belongs.
 
-        <!--![]()screenshots-->
+      ![](../../images/config04.png)
 
 4. Click `OK` in the bottom right corner of the page.
 
 ## Viewing configuration
 
-1. Enter `Microservice Engine` -- > `Microservice Governance` -- > `Managed Registry` module, click the name of the target registry.
+1. Enter `Microservices` -- > `Traditional Microservices` -- > `Hosted Registry` module, click the name of the target registry.
 
-    <!--![]()screenshots-->
+   ![](../../images/config01.png)
 
-2. In the left navigation bar, click `Configuration List` and click the Data ID of the target configuration.
+2. In the left navigation bar, click `Configuration Management` and click the Data ID of the target configuration.
 
-    <!--![]()screenshots-->
+   ![](../../images/config05.png)
 
 3. You can view the basic configuration information, configuration content, historical version, listener, and example code.
 
     - Novice users can quickly consume this configuration using client-side programming with the help of sample code, lowering the threshold for novice users.
     - You can query the listener of the current configuration and the MD5 checksum to learn about the microservice that is using this configuration and whether the configuration changes are successfully pushed to the client.
 
-        <!--![]()screenshots-->
+      ![](../../images/config06.png)
 
 ## The historical version is rolled back
 
 The micro-service configuration list records the historical version of the configuration file and supports one-click rollback to a specific historical version. This helps users quickly recover incorrect configurations and reduces configuration availability risks in the micro-service system. Comparison between the current version and the target rollback version is supported during the rollback. This helps you verify the changes and reduce risks caused by error correction.
 
-1. Enter `Microservice Engine` -- > `Microservice Governance`-- > `Managed Registry`module, click the name of the target registry.
+1. Enter `Microservices` -- > `Traditional Microservices` -- > `Hosted Registry` module, click the name of the target registry.
 
-    <!--![]()screenshots-->
+   ![](../../images/config01.png)
 
-2. In the left navigation bar, click `Configuration List` and click the Data ID of the target configuration.
+2. In the left navigation bar, click `Configuration Management` and click the Data ID of the target configuration.
 
-    <!--![]()screenshots-->
+   ![](../../images/config05.png)
 
-3. Click the `Historical Version` TAB to find the corresponding record. Click `ⵗ` on the right of the record and select `Rollback`.
+3. Click the `History Version` TAB to find the corresponding record. Click `ⵗ` on the right of the record and select `Rollback`.
 
-    <!--![]()screenshots-->
+   ![](../../images/config07.png)
 
 4. Compare the version differences and confirm, then click `Rollback` in the lower right corner.
 
-    <!--![]()screenshots-->
+   ![](../../images/config08.png)
 
 ## The configuration was updated or deleted
 
-1. Enter `Microservice Engine` -- > `Microservice Governance`-- > `Managed Registry`module, click the name of the target registry.
+1. Enter `Microservices` -- > `Traditional Microservices` -- > `Hosted Registry` module, click the name of the target registry.
 
-    <!--![]()screenshots-->
+   ![](../../images/config01.png)
 
-2. Click `Configuration List` in the left navigation bar, and click `ⵗ` on the right of the target configuration to update or delete as required.
+2. Click `Configuration Management` in the left navigation bar, and click `ⵗ` on the right of the target configuration to update or delete as required.
 
-    <!--![]()screenshots-->
+   ![](../../images/config09.png)
