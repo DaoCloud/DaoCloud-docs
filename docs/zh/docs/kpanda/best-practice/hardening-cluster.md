@@ -1,9 +1,9 @@
 # 如何加固自建工作集群
 
-在 DCE 5.0 中，使用 cisbenchmark (CIS) 扫描使用界面创建的工作集群，有一些扫描项并没有通过扫描。
-本文将基于不同的 cisbenchmark 版本进行加固说明。
+在 DCE 5.0 中，使用 CIS Benchmark (CIS) 扫描使用界面创建的工作集群，有一些扫描项并没有通过扫描。
+本文将基于不同的 CIS Benchmark 版本进行加固说明。
 
-## cisbenchmark 1.27
+## CIS Benchmark 1.27
 
 扫描环境说明：
 
@@ -74,4 +74,4 @@ kubespray 官方为了解决这些安全扫描问题，在 v2.22 中添加默认
     ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/hardening07.png)
 
 扫描后所有的扫描项都通过了扫描（WARN 和 INFO 计算为 PASS），
-由于 cibenchmark 会不断更新，此文档的内容只适用于 cibenchmark 1.27。
+由于 CIS Benchmark 会不断更新，此文档的内容只适用于 CIS Benchmark 1.27。
