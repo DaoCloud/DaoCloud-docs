@@ -10,7 +10,7 @@ You need to add the corresponding service source in Source management so that yo
 
 ## Access service
 
-1. In the `Gateway List` page click the name of the target gateway, enter the gateway overview page, in the left navigation bar click `Add Service` -- > `Service List`.
+1. In the `Gateway List` page click the name of the target gateway, enter the gateway overview page, in the left navigation bar click `Add Service` -> `Service List`.
 
     ![service list](./images/gw-service03.png)
 
@@ -22,7 +22,7 @@ You need to add the corresponding service source in Source management so that yo
 
         ![adding a cluster service](./images/gw-service01.png)
 
-        For the cluster service access, can be in the `Container Management` -- > `Container Network` -- > `Services` click the service name to view:
+        For the cluster service access, in the `Container Management` -> `Container Network` -> `Services` click the service name to view:
 
         ![get the service access address](./images/service-access.png)
     
@@ -64,7 +64,7 @@ You need to add the corresponding service source in Source management so that yo
 
 ### Update basic information
 
-1. In the `Service List` page find need to update the service, in the service of right click ** `ⵗ` **, choose `Basic Info`.
+1. In the `Service List` page find need to update the service, in the service of right click  `ⵗ`, choose `Basic Info`.
 
     ![update service](./images/gw-service07.png)
 
@@ -80,7 +80,7 @@ You need to add the corresponding service source in Source management so that yo
 
 ### Update policy configuration
 
-1. In the `Service List` page find need to update the service, in the service of right click ** `ⵗ` **, choose `modifying policy settings`.
+1. In the `Service List` page find need to update the service, in the service of right click `ⵗ`, choose `modifying policy settings`.
 
     ![update service](./images/gw-service09.png)
 
@@ -90,7 +90,7 @@ You need to add the corresponding service source in Source management so that yo
 
 ## Deletion service
 
-In the `Service List` page to find the need to delete the service, in the service of right click ** `ⵗ` **, choose `Delete`.
+In the `Service List` page to find the need to delete the service, in the service of right click `ⵗ`, choose `Delete`.
 
 ![delete service](./images/gw-service10.png)
 

@@ -30,4 +30,3 @@ hide:
     Contour 支持动态配置更新，而且还引入了一个新的入口 API (HTTPProxy)。
     该 API 通过自定义资源定义 (CRD) 实现，目标是扩展 Ingress API 的功能，提供更丰富的用户体验并解决原始设计中的缺陷。
     Contour 架构灵活，可以部署为 Kubernetes Deployment 或 Daemonset。此外，Contour 还具有 TLS 证书授权特性，管理员可以安全地委派通配符证书访问。
-

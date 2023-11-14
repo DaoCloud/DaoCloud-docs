@@ -4,7 +4,7 @@ The micro-service gateway provides the domain name level policy configuration ca
 
 You can configure domain name policies in either of the following ways:
 
-- For details about how to set policies when creating domain names, see [Add Domain](add-domain.md).
+- For details about how to set policies when creating domain names, see [Add Domain](index.md).
 - After the domain name is created, run the [Change Domain](update-domain.md) command to adjust the domain name.
 
 The cross-domain and local traffic limiting policies are described as follows:

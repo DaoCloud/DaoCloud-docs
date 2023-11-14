@@ -25,5 +25,7 @@ skoala_v0.28.0_amd64.tar: ok
 
 ## Installation
 
+Refer to [Offline Upgrade Microservice Engine](../../skoala/quickstart/skoala.md#offline-upgrade)。
+
 If this is your first installation, please apply for a free trial or contact us for authorization: email info@daocloud.io or call 400 002 6898.
 If you have any questions regarding the license key, please contact the DaoCloud delivery team.

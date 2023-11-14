@@ -1,6 +1,6 @@
 # 微服务引擎集群初始化组件
 
-微服务引擎集群初始化组件部署结构
+微服务引擎集群初始化组件部署结构：
 
 ![image](../images/skoala-init-cn.png)
 
@@ -17,15 +17,16 @@
 
 ## 在线安装
 
-skoala-init 是 微服务引擎 所有的组件 Operator
-  - 仅安装到工作集群即可
-  - 包含组件有：skoala-agent、nacos、contour、sentinel、seata
-  - 未安装时，创建注册中心和网关时会提示缺少组件
+skoala-init 是微服务引擎所有的组件 Operator：
+
+- 仅安装到工作集群即可
+- 包含组件有：skoala-agent、nacos、contour、sentinel、seata
+- 未安装时，创建注册中心和网关时会提示缺少组件
 
 由于 Skoala 涉及的组件较多，我们将这些组件打包到同一个 Chart 内，也就是 skoala-init，
 所以我们应该在用到微服务引擎的工作集群安装好 skoala-init。此安装命令也可用于更新该组件。
 
-配置好 Skoala 仓库，即可查看和获取到 skoala-init 的应用 chart
+配置好 Skoala 仓库，即可查看和获取到 skoala-init 的应用 chart。
 
 ```bash
 helm repo add skoala-release https://release.daocloud.io/chartrepo/skoala
@@ -116,7 +117,7 @@ skoala-agent-54d4df7897-7p4pz                         1/1     Running     0     
 
 ## 离线升级
 
-参考微服务引擎管理组件的[离线升级](skoala-global.md#离线升级)方式
+参考微服务引擎管理组件的[离线升级](./skoala.md#_11)方式
 
 ## 卸载微服务引擎集群初始化组件
 

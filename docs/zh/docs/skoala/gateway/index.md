@@ -21,7 +21,7 @@
     - 安装环境检测：选择集群和命名空间后，系统会自动检测安装环境。未通过检测时，页面会给出原因和操作建议，根据页面提示操作即可。
     - 管辖命名空间：设置新建的网关可以管辖哪些命名空间。默认管辖网关所在的命名空间。支持同时管辖多个命名空间。同一个命名空间不能被两个网关同时管辖。
 
-        ![填写基本配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-create02.png)
+    ![填写基本配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-create02.png)
 
 3. 参考以下说明填写配置信息
 
@@ -44,7 +44,7 @@
             - MetalLB IP 池：支持自动选择或指定 IP 池子
             - 负载均衡器 IP 地址：支持自动选择或指定 IP
 
-                ![填写基本配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-create05.png)
+            ![填写基本配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-create05.png)
 
     === "资源配置"
 
@@ -57,7 +57,7 @@
         - 控制节点：设置为控制节点（contour）配置多少 CPU 和内存资源
         - 工作节点：设置为工作节点 （envoy）配置多少 CPU 和内存资源
 
-          ![填写高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-create07.png)
+        ![填写高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-create07.png)
 
 4. 参考以下信息填写高级配置
 
@@ -66,7 +66,7 @@
     - 网关前置代理层数：请求从客户端到网关中途需要经过几个代理端点。需要根据实际情况填写。例如`客户端-Nginx-网关`的代理层数为 1，因为中间只经过 1 个 Nginx 代理端点。
     - 网关链路：启用后，可以根据通过网关进行的请求生成链路信息并发送给可观测模块进行数据采集。
 
-        ![填写高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-create08.png)
+    ![填写高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-create08.png)
 
 5. 参考以下信息填写插件配置（选填），最后在页面右下角点击`确认`即可。
 

@@ -29,7 +29,7 @@ Before deploying applications, the following conditions must be met:
 
     <!--![]()screenshots-->
 
-- [ Create the Nacos registry instance ](../trad-ms/hosted/create-registry.md)
+- [ Create the Nacos registry instance ](../trad-ms/hosted/index.md)
 
     > Notice Record the address of the registry for subsequent application installation.
 
@@ -69,7 +69,7 @@ Before deploying applications, the following conditions must be met:
         -Dspring.cloud.sentinel.transport.dashboard=nacos-test-sentinel.skoala-test:8080  # change to address of Sentinel console
     ```
 
-> For details about how to obtain the cluster ID, cluster name, and namespace name, see `kubectl get cluster <clusername> -o json | jq.metadata.uid`.
+    > For details about how to obtain the cluster ID, cluster name, and namespace name, see `kubectl get cluster <clusername> -o json | jq.metadata.uid`.
 
 1. After the application is successfully created, the list of Helm applications in Workbench is displayed.
 
@@ -99,6 +99,7 @@ When using `java -jar` to start a project, add the corresponding environment var
 
 !!! note
 
+    The `metadata` information above should not be missing, as the services displayed in the registry will lack this information.
 
 ### Use container image deployment
 
@@ -136,10 +137,11 @@ After the deployment of a micro-service application is complete, the application
 
 ### Create a cloud native gateway
 
-Create a cloud native gateway. For details, see [Create Gateway](../gateway/create-gateway.md).
+Create a cloud native gateway. For details, see [Create Gateway](../gateway/index.md).
 
 !!! note
 
+    When creating a gateway, it is recommended to deploy the gateway in the cluster where the sample application is located, and the gateway should govern the namespace where the sample application resides.
 
 <!--![]()screenshots-->
 
@@ -153,10 +155,11 @@ Nacos Registry services are adopted in this demonstration, which greatly expands
 
 !!! info
 
+    When a service is not within the namespace governed by the gateway or when you want to access the registry or other external services (using domain names/IP), you can manually connect to the service.
 
 ### Create an API route
 
-See [Add API](../gateway/api/add-api.md) to create an API route.
+See [Add API](../gateway/api/index.md) to create an API route.
 
 <!--![]()screenshots-->
 
@@ -172,11 +175,11 @@ After the gateway API is created, you can access the application page by using *
 
 <!--![]()screenshots-->
 
-## conclusion
+## Conclusion
 
 This is the experience of the entire microservices engine module. With the support of the entire DCE 5.0 capability, we successfully completed application deployment, enabling micro-service governance, configuring and testing micro-service governance policies, opening apis through cloud native gateway, and actually accessing applications.
 
-### More capacity
+### More capabilities
 
 After our application is deployed successfully, we rely heavily on the observation capability provided by DCE 5.0 for subsequent application maintenance. Next, we will add the corresponding observable capability practice.
 

@@ -5,7 +5,7 @@ DCE 5.0 Microservice gateway supports twelve API policies: load balancing, path 
 
 There are two ways to configure API policies:
 
-- To set policies during API creation, see [Add API](add-api.md).
+- To set policies during API creation, see [Add API](index.md).
 - Adjust by [ Update the API policy configuration ](update-api.md) after the API is created.
 
 ** Video tutorial: **

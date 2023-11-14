@@ -5,7 +5,7 @@ The microservice gateway supports access to a third-party authentication server.
 ## prerequisite
 
 - [Create a cluster](../../kpanda/user-guide/clusters/create-cluster.md) OR [Integrate a cluster](../../kpanda/user-guide/clusters/integrate-cluster.md)
-- [Create a gateway](../gateway/create-gateway.md)
+- [Create a gateway](../gateway/index.md)
 
 ## Configuring the authentication Server
 
@@ -21,7 +21,9 @@ The microservice gateway supports access to a third-party authentication server.
     The default image is as follows:
     - release.daocloud.io/skoala/demo/envoy-authz-java:0.1.0
     - release-ci.daocloud.io/skoala/demo/envoy-authz-java:0.1.0
+
 3. The template is simple path identification. If the access path is `/`, the access is authenticated, and other paths are denied.
+
 ### Use a custom authentication server
 
 1. Clone the code template of the authentication server to a local directory.
@@ -73,7 +75,7 @@ The microservice gateway supports access to a third-party authentication server.
 
     !!! note
 
-
+        The `namespace/name` of the authentication server refers to the values of the `namespace` and `name` fields in the `metadata` section of the ExtensionService under the [all-in-one-contour.yaml](https://github.com/projectsesame/envoy-authz-java/blob/main/all-in-one-contour.yaml) file.
 
 4. Create an API under the gateway, and enter the newly created domain name in the path `/`. Enable `Security Auth`, and take the API online.
 

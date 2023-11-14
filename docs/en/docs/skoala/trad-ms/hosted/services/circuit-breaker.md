@@ -17,7 +17,7 @@ Follow the steps below to create a circuit breaking rule:
    
 2. Select `Fusing rule`, then click `Create Fusing Rule` on the right side.
 
-![](../../../images/gov04.png)
+    ![](../../../images/gov04.png)
 
 3. Fill in the rule configuration based on the instructions below and click `OK` in the bottom right corner.
 
@@ -31,7 +31,7 @@ Follow the steps below to create a circuit breaking rule:
     - Minimum Request Count: The minimum number of requests required to trigger the circuit breaker within a statistical period. **Even if the circuit-breaking conditions are met, the circuit breaker will not be triggered if the current number of requests within the statistical period is less than this value**.
     - Statistical Period: The length of the statistical time window, in milliseconds. Valid values range from 1 second to 120 minutes.
 
-      ![](../../../images/gov06.png)
+    ![](../../../images/gov06.png)
 
 4. After creating the rule, you can view it in the list of circuit breaking rules. Click the more options button on the right side to update or delete the rule.
 

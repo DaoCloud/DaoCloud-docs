@@ -7,9 +7,7 @@ hide:
 
 Sentinel is a traffic governance component oriented to distributed and multi-language heterogeneous service architecture. It mainly takes traffic as the entry point and helps developers to ensure the stability of micro-services from multiple dimensions, such as traffic routing, traffic control, traffic shaping, circuit breaker degradation, system adaptive overload protection and hotspot traffic protection.
 
-<! --## Prerequisite -->
-
-## Operation procedure
+## Steps
 
 1. Click the name of the target registry on the Hosting Registry list page, and.
 

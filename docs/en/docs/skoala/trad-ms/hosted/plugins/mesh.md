@@ -1,6 +1,5 @@
 # The Mesh governance plug-in is enabled
 
-<! --## Prerequisite -->
 ## Operation procedure
 
 1. Click the name of the target registry on the Hosting Registry list page, and.

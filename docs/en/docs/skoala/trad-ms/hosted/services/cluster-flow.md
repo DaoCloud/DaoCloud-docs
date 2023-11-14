@@ -23,11 +23,11 @@ Follow the steps below to create a cluster flow control rule:
 
     > Note that the microservice you want to govern should have the "Can be governed" status set to "Yes" in order to proceed with the following steps.
 
-   ![](../../../images/gov00.png)
+    ![](../../../images/gov00.png)
 
 2. Select `Cluster Flow Control`, then click `Create Cluster Flow Control` on the right side.
 
-   ![](../../../images/gov17.png)
+    ![](../../../images/gov17.png)
 
 3. Fill in the rule configuration based on the instructions below and click `OK` in the bottom right corner.
 
@@ -36,8 +36,8 @@ Follow the steps below to create a cluster flow control rule:
     - TokenServer Port: The port number of the TokenServer.
     - Select Client: The cluster flow control client used to communicate with the associated TokenServer and request tokens.
 
-      ![](../../../images/gov18.png)
+    ![](../../../images/gov18.png)
 
 4. After creating the rule, you can view it in the list of system rules. Click the more options button on the right side to update or delete the rule.
 
-   ![](../../../images/gov19.png)
+    ![](../../../images/gov19.png)

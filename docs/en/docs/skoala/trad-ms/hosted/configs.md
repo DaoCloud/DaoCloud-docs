@@ -4,7 +4,7 @@ The micro-service engine supports group management of micro-services based on th
 
 ## New configuration
 
-1. Enter `Microservices` -- > `Traditional Microservices` -- > `Hosted Registry` module, click the name of the target registry.
+1. Enter `Microservices` -> `Traditional Microservices` -> `Hosted Registry` module, click the name of the target registry.
 
    ![](../../images/config01.png)
 
@@ -30,7 +30,7 @@ The micro-service engine supports group management of micro-services based on th
 
     - Group: Select the group to which the current configuration belongs. The default value is `DEFAULT_GROUP`.
 
-        > ** Namespaces are typically used to isolate environments and groups to separate projects **。
+        > Namespaces are typically used to isolate environments and groups to separate projects。
 
     - Configuration format: Sets the format of the current configuration file.
 
@@ -47,7 +47,7 @@ The micro-service engine supports group management of micro-services based on th
 
 ## Viewing configuration
 
-1. Enter `Microservices` -- > `Traditional Microservices` -- > `Hosted Registry` module, click the name of the target registry.
+1. Enter `Microservices` -> `Traditional Microservices` -> `Hosted Registry` module, click the name of the target registry.
 
    ![](../../images/config01.png)
 
@@ -66,28 +66,28 @@ The micro-service engine supports group management of micro-services based on th
 
 The micro-service configuration list records the historical version of the configuration file and supports one-click rollback to a specific historical version. This helps users quickly recover incorrect configurations and reduces configuration availability risks in the micro-service system. Comparison between the current version and the target rollback version is supported during the rollback. This helps you verify the changes and reduce risks caused by error correction.
 
-1. Enter `Microservices` -- > `Traditional Microservices` -- > `Hosted Registry` module, click the name of the target registry.
+1. Enter `Microservices` -> `Traditional Microservices` -> `Hosted Registry` module, click the name of the target registry.
 
-   ![](../../images/config01.png)
+    ![](../../images/config01.png)
 
 2. In the left navigation bar, click `Configuration Management` and click the Data ID of the target configuration.
 
-   ![](../../images/config05.png)
+    ![](../../images/config05.png)
 
 3. Click the `History Version` TAB to find the corresponding record. Click `ⵗ` on the right of the record and select `Rollback`.
 
-   ![](../../images/config07.png)
+    ![](../../images/config07.png)
 
 4. Compare the version differences and confirm, then click `Rollback` in the lower right corner.
 
-   ![](../../images/config08.png)
+    ![](../../images/config08.png)
 
 ## The configuration was updated or deleted
 
-1. Enter `Microservices` -- > `Traditional Microservices` -- > `Hosted Registry` module, click the name of the target registry.
+1. Enter `Microservices` -> `Traditional Microservices` -> `Hosted Registry` module, click the name of the target registry.
 
-   ![](../../images/config01.png)
+    ![](../../images/config01.png)
 
 2. Click `Configuration Management` in the left navigation bar, and click `ⵗ` on the right of the target configuration to update or delete as required.
 
-   ![](../../images/config09.png)
+    ![](../../images/config09.png)
