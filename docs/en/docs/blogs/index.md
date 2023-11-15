@@ -5,9 +5,17 @@ hide:
 
 # Blog Posts
 
-This page summarizes blogs and public account articles related to DCE 5.0 and cloud native technology, sorted by date by default.
+This page summarizes blogs and public account articles related to DCE 5.0 and cloud native
+technology, sorted by date by default.
 
 ## 2023
+
+- [20231115 | Removals, Deprecations, and Major Changes in Kubernetes 1.29](./231115-k8s-1.29-changes.md)
+
+    As with every release, Kubernetes v1.29 will introduce feature deprecations and removals.
+    Our continued ability to produce high-quality releases is a testament to our robust development
+    cycle and healthy community. The following are some deprecations and removals coming
+    in the Kubernetes 1.29 release.
 
 - [20231008 | A Look Back for Kubernetes Contributor Summits in Shanghai, China](./20231008-kcs.md)
 

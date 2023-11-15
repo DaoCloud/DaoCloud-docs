@@ -1080,6 +1080,7 @@ nav:
   - Blogs:
       - Index: blogs/index.md
       - 2023 Blogs:
+          - 202311 | Removals, Deprecations, and Changes in K8s 1.29: blogs/231115-k8s-1.29-changes.md
           - 202310 | A Look Back for K8s Contributor Summit in Shanghai: blogs/20231008-kcs.md
           - 202309 | Call for K8s Contributor Summit in Shanghai: blogs/230911-kubecon-contributor.md
           - 202308 | K8s 1.28 Released: blogs/230815-k8s1.28.md
