@@ -7,11 +7,23 @@ hide:
 
 Based on the existing PV and PVC object classes of Kubernetes, Hwameistor defines richer object classes to associate PV/PVC with local data disks.
 
-|Kind|Abbreviation|Function|
-|--|--|--|
-|LocalDiskNode|ldn|registered node|
-|LocalDisk|ld|Register the data disk on the node and automatically identify the free and available data disk|
-|LocalDiskClaim|ldc|Filter and register local data disk|
-|LocalStorageNode|lsn|Automatically create StorageClass, that is, LVM logical volume groups|
-|LocalVolume|lv|Create LVM logical volume, assign to PersistentVolume|
-|LocalDiskExpand|lvexpand|StorageClass Expansion|
+| Name                               | Abbr                       | Kind                              | Function                                                             |
+|------------------------------------|----------------------------|-----------------------------------|----------------------------------------------------------------------|
+| clusters                           | hmcluster                  | Cluster                           | HwameiStor cluster                                                   |
+| events                             | evt                        | Event                             | Audit information of HwameiStor cluster                              |
+| localdiskclaims                    | ldc                        | LocalDiskClaim                    | Filter and allocate local data disks                                 |
+| localdisknodes                     | ldn                        | LocalDiskNode                     | Storage pool for disk volumes                                        |
+| localdisks                         | ld                         | LocalDisk                         | Data disks on nodes and automatically find which disks are available |
+| localdiskvolumes                   | ldv                        | LocalDiskVolume                   | Disk volumes                                                         |
+| localstoragenodes                  | lsn                        | LocalStorageNode                  | Storage pool for lvm volumes                                         |
+| localvolumeconverts                | lvconvert                  | LocalVolumeConvert                | Convert common LVM volume to highly available LVM volume             |
+| localvolumeexpands                 | lvexpand                   | LocalVolumeExpand                 | Expand local volume storage capacity                                 |                                                        |
+| localvolumegroups                  | lvg                        | LocalVolumeGroup                  | LVM volume groups                                                    |                                                          |
+| localvolumemigrates                | lvmigrate                  | LocalVolumeMigrate                | Migrate LVM volume                                                   |
+| localvolumereplicas                | lvr                        | LocalVolumeReplica                | Replicas of LVM volume                                               |
+| localvolumereplicasnapshotrestores | lvrsrestore,lvrsnaprestore | LocalVolumeReplicaSnapshotRestore | Restore snapshots of LVM volume Replicas                             |
+| localvolumereplicasnapshots        | lvrs                       | LocalVolumeReplicaSnapshot        | Snapshots of LVM volume Replicas                                     |
+| localvolumes                       | lv                         | LocalVolume                       | LVM local volumes                                                    |
+| localvolumesnapshotrestores        | lvsrestore,lvsnaprestore   | LocalVolumeSnapshotRestore        | Restore snapshots of LVM volume                                      |
+| localvolumesnapshots               | lvs                        | LocalVolumeSnapshot               | Snapshots of LVM volume                                              |                                                      |
+| resizepolicies                     |                            | ResizePolicy                      | PVC automatic expansion policy                                       |                      |
