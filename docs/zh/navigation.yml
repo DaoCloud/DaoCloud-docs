@@ -1104,6 +1104,7 @@ nav:
   - 博客:
       - 博文索引: blogs/index.md
       - 2023 年:
+          - 202310 | K8s 1.29 前瞻：移除、弃用及重大变更: blogs/231115-k8s-1.29-changes
           - 202310 | 上海 K8s 贡献者峰会回顾: blogs/20231008-kcs.md
           - 202309 | 上海 K8s 贡献者峰会召集令: blogs/230911-kubecon-contributor.md
           - 202308 | K8s 本地开发工具比较: blogs/230824-tools.md
