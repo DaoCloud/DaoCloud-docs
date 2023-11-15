@@ -1,103 +1,101 @@
-# Check after installation
+# Post-Check after Deployment
 
-The examples below are from a 4-node Kubernetes cluster.
+This page takes 3-node kubernetes cluster as an example to perform post-check after installing HwameiStor.
 
 ```console
-$ kubectl get no
-NAME STATUS ROLES AGE VERSION
-k8s-master-1 Ready master 82d v1.24.3-2+63243a96d1c393
-k8s-worker-1 Ready worker 36d v1.24.3-2+63243a96d1c393
-k8s-worker-2 Ready worker 59d v1.24.3-2+63243a96d1c393
-k8s-worker-3 Ready worker 36d v1.24.3-2+63243a96d1c393
+$ kubectl get node
+NAME           STATUS   ROLES   AGE   VERSION
+10-6-234-40   Ready    control-plane,master   140d   v1.21.11
+10-6-234-41   Ready    <none>                 140d   v1.21.11
+10-6-234-42   Ready    <none>                 140d   v1.21.11
 ```
 
-## Check Hwameistor system components
+## Check Components
 
-Run the following command to check hwameistor related pods.
+The following pods should be up and running:
 
 ```console
 $ kubectl -n hwameistor get pod
-NAME                                                       READY   STATUS                  RESTARTS   AGE
-drbd-adapter-10-6-234-40-rhel7-shfgt                      0/2     Completed   0          39s
-drbd-adapter-10-6-234-41-rhel7-sw75z                      0/2     Completed   0          39s
-drbd-adapter-10-6-234-42-rhel7-4vnl9                      0/2     Completed   0          39s
-hwameistor-admission-controller-6995559b48-rxs4s          1/1     Running     0          40s
-hwameistor-apiserver-677ddbdb8-9969c                      1/1     Running     0          40s
-hwameistor-exporter-66784d5745-xwsxx                      1/1     Running     0          39s
-hwameistor-local-disk-csi-controller-5d74d6c8cf-8vx5v     2/2     Running     0          40s
-hwameistor-local-disk-manager-9vc75                       2/2     Running     0          40s
-hwameistor-local-disk-manager-r42sg                       2/2     Running     0          40s
-hwameistor-local-disk-manager-v75qb                       2/2     Running     0          40s
-hwameistor-local-storage-csi-controller-758c94489-7g5tl   4/4     Running     0          40s
-hwameistor-local-storage-pr265                            2/2     Running     0          40s
-hwameistor-local-storage-qvrgb                            2/2     Running     0          40s
-hwameistor-local-storage-zvggz                            2/2     Running     0          40s
-hwameistor-scheduler-7585d88d9-8tbms                      1/1     Running     0          40s
-hwameistor-ui-9885d9dc5-l4tlx                             1/1     Running     0          40s
-hwameistor-volume-evictor-56df755847-m4h8b                1/1     Running     0          40s
+NAME                                                       READY   STATUS    RESTARTS      AGE
+drbd-adapter-k8s-master-rhel7-gtk7t                        0/2     Completed 0             23m
+drbd-adapter-k8s-node1-rhel7-gxfw5                         0/2     Completed 0             23m
+drbd-adapter-k8s-node2-rhel7-lv768                         0/2     Completed 0             23m
+hwameistor-admission-controller-dc766f976-mtlvw            1/1     Running   0             23m
+hwameistor-apiserver-86d6c9b7c8-v67gg                      1/1     Running   0             23m
+hwameistor-auditor-54f46fcbc6-jb4f4                        1/1     Running   0             23m
+hwameistor-exporter-6498478c57-kr8r4                       1/1     Running   0             23m
+hwameistor-failover-assistant-cdc6bd665-56wbw              1/1     Running   0             23m
+hwameistor-local-disk-csi-controller-6587984795-fztcd      2/2     Running   0             23m
+hwameistor-local-disk-manager-7gg9x                        2/2     Running   0             23m
+hwameistor-local-disk-manager-kqkng                        2/2     Running   0             23m
+hwameistor-local-disk-manager-s66kn                        2/2     Running   0             23m
+hwameistor-local-storage-csi-controller-5cdff98f55-jj45w   6/6     Running   0             23m
+hwameistor-local-storage-mfqks                             2/2     Running   0             23m
+hwameistor-local-storage-pnfpx                             2/2     Running   0             23m
+hwameistor-local-storage-whg9t                             2/2     Running   0             23m
+hwameistor-pvc-autoresizer-86dc79d57-s2l68                 1/1     Running   0             23m
+hwameistor-scheduler-6db69957f-r58j6                       1/1     Running   0             23m
+hwameistor-ui-744cd78d84-vktjq                             1/1     Running   0             23m
+hwameistor-volume-evictor-5db99cf979-4674n                 1/1     Running   0             23m
 ```
 
-!!! info
+> The components of `local-disk-manager` and `local-storage` are `DaemonSets`, and should have one Pod on each Kubernetes node.
 
-    `local-disk-manager` and `local-storage` are `DaemonSet`. There should be a DaemonSet Pod on each Kubernetes node.
+## Check CRDs
 
-## Check HwameiStor CRDs (i.e. APIs)
-
-The following HwameiStor Custom Resource Definitions (CRDs) must be installed on the system.
+HwameiStor create the following CRDs.
 
 ```console
 $ kubectl api-resources --api-group hwameistor.io
-NAME                       SHORTNAMES   APIVERSION               NAMESPACED   KIND
-localdiskclaims            ldc          hwameistor.io/v1alpha1   false        LocalDiskClaim
-localdisknodes             ldn          hwameistor.io/v1alpha1   false        LocalDiskNode
-localdisks                 ld           hwameistor.io/v1alpha1   false        LocalDisk
-localdiskvolumes           ldv          hwameistor.io/v1alpha1   false        LocalDiskVolume
-localstoragenodes          lsn          hwameistor.io/v1alpha1   false        LocalStorageNode
-localvolumeconverts        lvconvert    hwameistor.io/v1alpha1   true         LocalVolumeConvert
-localvolumeexpands         lvexpand     hwameistor.io/v1alpha1   false        LocalVolumeExpand
-localvolumegroupconverts   lvgconvert   hwameistor.io/v1alpha1   true         LocalVolumeGroupConvert
-localvolumegroupmigrates   lvgmigrate   hwameistor.io/v1alpha1   true         LocalVolumeGroupMigrate
-localvolumegroups          lvg          hwameistor.io/v1alpha1   true         LocalVolumeGroup
-localvolumemigrates        lvmigrate    hwameistor.io/v1alpha1   true         LocalVolumeMigrate
-localvolumereplicas        lvr          hwameistor.io/v1alpha1   false        LocalVolumeReplica
-localvolumes               lv           hwameistor.io/v1alpha1   false        LocalVolume
+NAME                                 SHORTNAMES                   APIVERSION               NAMESPACED   KIND
+clusters                             hmcluster                    hwameistor.io/v1alpha1   false        Cluster
+events                               evt                          hwameistor.io/v1alpha1   false        Event
+localdiskclaims                      ldc                          hwameistor.io/v1alpha1   false        LocalDiskClaim
+localdisknodes                       ldn                          hwameistor.io/v1alpha1   false        LocalDiskNode
+localdisks                           ld                           hwameistor.io/v1alpha1   false        LocalDisk
+localdiskvolumes                     ldv                          hwameistor.io/v1alpha1   false        LocalDiskVolume
+localstoragenodes                    lsn                          hwameistor.io/v1alpha1   false        LocalStorageNode
+localvolumeconverts                  lvconvert                    hwameistor.io/v1alpha1   false        LocalVolumeConvert
+localvolumeexpands                   lvexpand                     hwameistor.io/v1alpha1   false        LocalVolumeExpand
+localvolumegroups                    lvg                          hwameistor.io/v1alpha1   false        LocalVolumeGroup
+localvolumemigrates                  lvmigrate                    hwameistor.io/v1alpha1   false        LocalVolumeMigrate
+localvolumereplicas                  lvr                          hwameistor.io/v1alpha1   false        LocalVolumeReplica
+localvolumereplicasnapshotrestores   lvrsrestore,lvrsnaprestore   hwameistor.io/v1alpha1   false        LocalVolumeReplicaSnapshotRestore
+localvolumereplicasnapshots          lvrs                         hwameistor.io/v1alpha1   false        LocalVolumeReplicaSnapshot
+localvolumes                         lv                           hwameistor.io/v1alpha1   false        LocalVolume
+localvolumesnapshotrestores          lvsrestore,lvsnaprestore     hwameistor.io/v1alpha1   false        LocalVolumeSnapshotRestore
+localvolumesnapshots                 lvs                          hwameistor.io/v1alpha1   false        LocalVolumeSnapshot
+resizepolicies                                                    hwameistor.io/v1alpha1   false        ResizePolicy
 ```
 
-## Check `LocalDiskNode` and `localDisks`
+For the details about CRDs, please also refer to [CRDs](../../architecture/apis.md).
+
+## Check `LocalDiskNodes` and `LocalDisks`
+
+HwameiStor automatically scans each node and registers each disk as CRD `LocalDisk(ld)`.
+The unused disks are displayed with `PHASE: Available`.
 
 ```console
 $ kubectl get localdisknodes
-NAME          TOTALDISK   FREEDISK
-10-6-234-40   1
-10-6-234-41   8
-10-6-234-42   8
+NAME         FREECAPACITY   TOTALCAPACITY   TOTALDISK   STATUS   AGE
+k8s-master                                              Ready    28h
+k8s-node1                                               Ready    28h
+k8s-node2                                               Ready    28h
 
 $ kubectl get localdisks
-NAME              NODEMATCH     PHASE
-10-6-234-40-sda   10-6-234-40   Bound
-10-6-234-41-sda   10-6-234-41   Bound
-10-6-234-41-sdb   10-6-234-41   Bound
-10-6-234-41-sdc   10-6-234-41   Bound
-10-6-234-41-sdd   10-6-234-41   Bound
-10-6-234-41-sde   10-6-234-41   Bound
-10-6-234-41-sdf   10-6-234-41   Bound
-10-6-234-41-sdg   10-6-234-41   Bound
-10-6-234-41-sdh   10-6-234-41   Bound
-10-6-234-42-sda   10-6-234-42   Bound
-10-6-234-42-sdb   10-6-234-42   Bound
-10-6-234-42-sdc   10-6-234-42   Bound
-10-6-234-42-sdd   10-6-234-42   Bound
-10-6-234-42-sde   10-6-234-42   Bound
-10-6-234-42-sdf   10-6-234-42   Bound
-10-6-234-42-sdg   10-6-234-42   Bound
-10-6-234-42-sdh   10-6-234-42   Bound
+NAME                                         NODEMATCH    DEVICEPATH   PHASE       AGE
+localdisk-2307de2b1c5b5d051058bc1d54b41d5c   k8s-node1    /dev/sdb     Available   28h
+localdisk-311191645ea00c62277fe709badc244e   k8s-node2    /dev/sdb     Available   28h
+localdisk-37a20db051af3a53a1c4e27f7616369a   k8s-master   /dev/sdb     Available   28h
+localdisk-b57b108ad2ccc47f4b4fab6f0b9eaeb5   k8s-node2    /dev/sda     Bound       28h
+localdisk-b682686c65667763bda58e391fbb5d20   k8s-master   /dev/sda     Bound       28h
+localdisk-da121e8f0dabac9ee1bcb6ed69840d7b   k8s-node1    /dev/sda     Bound       28h
 ```
 
-## View `LocalStorageNodes` and StorageClass
+## Check `LocalStorageNodes` and Storage Pools
 
-HwameiStor creates a Custom Resource Definition (CRD) resource called `LocalStorageNode (LSN)`
-for each storage node. Each LSN will record the state of the storage node and all storage resources
-on that node, including StorageClass, data volumes, and related configuration information.
+HwameiStor automatically generates the LocalStorageNode (i.e. LSN) resource for each node.
+Each LSN will record the resources and status of the node, including Storage Pool, Volumes, etc.
 
 ```console
 $ kubectl get lsn
@@ -162,31 +160,14 @@ status:
   state: Ready
 ```
 
-## Check StorageClass
+## Check `StorageClass`
 
-After completing the installation of HwameiStor system components and system initialization,
-the HwameiStor Operator will automatically create corresponding `StorageClass` based on system
-configuration (e.g., whether HA module is enabled, disk types, etc.) for creating data volumes.
+The Operator will automatically create the StorageClasses as following according to the HwameiStor system's configuration (e.g. HA enabled or not, disk type, and more.)
 
-```sh
+```console
 $ kubectl get sc
 NAME                                     PROVISIONER         RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
 hwameistor-storage-lvm-hdd               lvm.hwameistor.io   Delete          WaitForFirstConsumer   false                  23h
 hwameistor-storage-lvm-hdd-convertible   lvm.hwameistor.io   Delete          WaitForFirstConsumer   false                  23h
 hwameistor-storage-lvm-hdd-ha            lvm.hwameistor.io   Delete          WaitForFirstConsumer   false                  23h
-```
-
-## (Optional) Check DRBD installation
-
-On each worker node, the DRBD kernel module must be loaded, for example on node `k8s-worker-1`:
-
-```console
-[root@k8s-worker-1 ~]$ lsmod | grep ^drbd
-drbd_transport_tcp     22227  0
-drbd                  606840  1 drbd_transport_tcp
-
-$ cat /proc/drbd
-version: 9.0.32-1 (api:2/proto:86-121)
-GIT-hash: 7d2933d5a3764fcc5e0bf54b71fd9cfb0363be1a build by @4904565a901d, 2022-09-07 08:53:17
-Transports (api:17): tcp (9.0.32-1)
 ```
