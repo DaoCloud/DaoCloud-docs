@@ -47,7 +47,7 @@
 
     如需更新 Kubernetes/Mesh 注册中心：
 
-    - 可以先[移除已经接入的注册中心](remove-registry.md)，然后再重新接入其他的注册中心。
+    - 可以先[移除已经接入的注册中心](#_4)，然后再重新接入其他的注册中心。
     - 也可以去容器管理模块[更新对应的集群](../../../kpanda/user-guide/clusters/upgrade-cluster.md)，或者去服务网格模块[更新对应的网格服务](../../../mspider/user-guide/service-mesh/README.md)。
 
 ## 移除注册中心
