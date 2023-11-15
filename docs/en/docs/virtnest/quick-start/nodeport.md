@@ -1,14 +1,15 @@
 # Accessing Virtual Machine via NodePort
 
-This article explains how to access a virtual machine using NodePort.
+This page explains how to access a virtual machine using NodePort.
 
 ## Limitations of Existing Access Methods
 
-1. Virtual machines support access via VNC or console, but both methods have a limitation: they do not allow multiple terminals to be simultaneously online.
+1. Virtual machines support access via VNC or console, but both methods have a limitation:
+   they do not allow multiple terminals to be simultaneously online.
 
 2. Using a NodePort-formatted Service can help solve this problem.
 
-## Creating a Service
+## Create a Service
 
 1. Using the Container Management Page
 
@@ -20,7 +21,7 @@ This article explains how to access a virtual machine using NodePort.
 
 2. After successful creation, you can access the virtual machine by using `ssh username@nodeip -p port`.
 
-## Creating the Service via kubectl
+## Create the Service via kubectl
 
 1. Write the YAML file as follows:
 
