@@ -8,11 +8,11 @@
 
     ![安装提示](../images/virtnest001.png)
 
-2. 选择所需集群，点击左侧导航栏的`Helm 应用`，然后点击`Helm 模板`，查看模板列表。
+2. 选择所需集群，点击左侧导航栏的 `Helm 应用`，然后点击 `Helm 模板`，查看模板列表。
 
     ![helm模板](../images/virtnest002.png)
 
-3. 搜索`virtnest-agent`组件，进入组件详情，选择合适版本，点击`安装`按钮，进行安装。
+3. 搜索 `virtnest-agent` 组件，进入组件详情，选择合适版本，点击`安装`按钮，进行安装。
 
     ![virtnest-agent 组件](../images/virtnest003.png)
 
@@ -25,5 +25,3 @@
 5. 重新点击`虚拟机容器`导航栏，成功出现虚拟机列表，可以正常使用虚拟机容器能力。
 
     ![虚拟机列表](../images/virtnest006.png)
-    
-    

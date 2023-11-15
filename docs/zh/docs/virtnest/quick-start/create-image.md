@@ -10,7 +10,7 @@
 创建虚拟机之前，需要满足以下前提条件：
 
 - 向用户机操作系统公开硬件辅助的虚拟化。
-- 在指定集群[安装 virtnest-agent](../quick-start/agent.md)，操作系统内核版本需要在3.15以上。
+- 在指定集群[安装 virtnest-agent](index.md)，操作系统内核版本需要在3.15以上。
 - 创建一个[命名空间](../../kpanda/user-guide/namespaces/createns.md)和[用户](../../ghippo/user-guide/access-control/user.md)。
 - 提前准备好镜像，平台内置三种镜像(如下文所示)，如需制作镜像，可参考开源项目[制作镜像](https://github.com/Tedezed/kubevirt-images-generator/tree/master)。
 
@@ -100,9 +100,9 @@
 
 除了通过镜像方式外，还可以通过 YAML 文件更快速地创建创建虚拟机。
 
-1. 进入虚拟机容器列表页，点击 `通过 YAML 创建`按钮
+进入虚拟机容器列表页，点击 `通过 YAML 创建`按钮
 
-    ![yaml 创建](../images/createvm09.png)
+![yaml 创建](../images/createvm09.png)
 
 ??? note "点击查看创建定时任务的 YAML 示例"
 
@@ -158,4 +158,3 @@
                 name: systemdisk-example
               name: systemdisk-example
     ```
-
