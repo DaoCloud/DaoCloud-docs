@@ -70,7 +70,7 @@ resizepolicies                                                    hwameistor.io/
 
 For the details about CRDs, please also refer to [CRDs](../../architecture/apis.md).
 
-## 查看 `LocalDiskNodes` 和 `localDisks`
+## 查看 `LocalDiskNodes` 和 `LocalDisks`
 
 HwameiStor 自动扫描每个节点上的磁盘，并为每一块磁盘生成一个 CRD 资源 `LocalDisk (LD)`。 没有被使用的磁盘，其状态被标记为 `PHASE: Available`。
 

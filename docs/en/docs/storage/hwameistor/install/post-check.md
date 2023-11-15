@@ -41,9 +41,9 @@ hwameistor-volume-evictor-5db99cf979-4674n                 1/1     Running   0  
 
 > The components of `local-disk-manager` and `local-storage` are `DaemonSets`, and should have one Pod on each Kubernetes node.
 
-## Check APIs
+## Check CRDs
 
-HwameiStor CRDs create the following APIs.
+HwameiStor create the following CRDs.
 
 ```console
 $ kubectl api-resources --api-group hwameistor.io
@@ -70,7 +70,7 @@ resizepolicies                                                    hwameistor.io/
 
 For the details about CRDs, please also refer to [CRDs](../../architecture/apis.md).
 
-## Check `LocalDiskNodes` and `localDisks`
+## Check `LocalDiskNodes` and `LocalDisks`
 
 HwameiStor automatically scans each node and registers each disk as CRD `LocalDisk(ld)`.
 The unused disks are displayed with `PHASE: Available`.
