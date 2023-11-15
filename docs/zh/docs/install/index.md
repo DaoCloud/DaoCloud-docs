@@ -92,23 +92,23 @@ class plan,k8s,tools,kind,s1,s2,kpanda,ghippo,insight,free,ask cluster;
 class start plain
 class S,U spacewhite
 
-click plan "https://docs.daocloud.io/install/community/resources/"
-click k8s "https://docs.daocloud.io/install/community/kind/online/#kind"
-click tools "https://docs.daocloud.io/install/install-tools/"
-click kind "https://docs.daocloud.io/install/community/kind/online/"
-click s1 "https://docs.daocloud.io/install/community/k8s/online/"
-click s2 "https://docs.daocloud.io/install/community/k8s/offline/"
+click plan "https://docs.daocloud.io/install/community/resources.html"
+click k8s "https://docs.daocloud.io/install/community/kind/online.html#kind"
+click tools "https://docs.daocloud.io/install/install-tools.html"
+click kind "https://docs.daocloud.io/install/community/kind/online.html"
+click s1 "https://docs.daocloud.io/install/community/k8s/online.html"
+click s2 "https://docs.daocloud.io/install/community/k8s/offline.html"
 
-click kpanda "https://docs.daocloud.io/kpanda/intro/"
-click ghippo "https://docs.daocloud.io/ghippo/intro/"
-click insight "https://docs.daocloud.io/insight/intro/"
-click free "https://docs.daocloud.io/dce/license0/"
-click ask "https://docs.daocloud.io/install/intro/#_4"
+click kpanda "https://docs.daocloud.io/kpanda/intro/index.html"
+click ghippo "https://docs.daocloud.io/ghippo/intro/index.html"
+click insight "https://docs.daocloud.io/insight/intro/index.html"
+click free "https://docs.daocloud.io/dce/license0.html"
+click ask "https://docs.daocloud.io/install/index.html#_4"
 ```
 
 !!! tip
 
-    上图中的蓝色文字可点击跳转
+    上图中的蓝色文字可点击跳转。
 
 ## 商业版安装流程
 
@@ -117,12 +117,24 @@ DCE 5.0 商业版的安装流程如下图：
 ```mermaid
 flowchart TB
 
-    start([fa:fa-user DCE 5.0 商业版<br>安装流程]) -.- arch[部署架构]
-    arch --> deploy[部署要求]
+    start([fa:fa-user DCE 5.0 商业版<br>安装流程]) -.- arch[了解部署架构]
+    arch --> deploy[查阅部署要求]
     deploy --> prepare[准备工作]
     prepare --> download[下载离线包]
     download --> config[编辑并配置<br>clusterConfig.yaml]
-    config --> install[开始安装]
+    
+    config --> other-k8s[安装到不同 K8s]
+    config --> install[正常开始安装]
+    config --> other-os[安装到不同 Linux]
+
+    other-k8s --> ocp[安装到 OpenShift OCP]
+    other-k8s --> ali[安装到阿里云 ECS]
+
+    other-os --> uos[安装到 UOS]
+    other-os --> oracle[安装到 Oracle Linux]
+    other-os --> tencent[安装到 TencentOS Server]
+    other-os --> other[安装到更多 Linux]
+
 
 classDef grey fill:#dddddd,stroke:#ffffff,stroke-width:1px,color:#000000, font-size:15px;
 classDef white fill:#ffffff,stroke:#000,stroke-width:1px,color:#000,font-weight:bold
@@ -131,16 +143,23 @@ classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
 classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
 classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
-class arch,deploy,prepare,download,config,install cluster
-class start plain
+class arch,deploy,prepare,download,config,install,ocp,ali,uos,oracle,tencent,other cluster
+class start,other-k8s,other-os plain
 
-click arch "https://docs.daocloud.io/install/commercial/deploy-arch/"
-click deploy "https://docs.daocloud.io/install/commercial/deploy-requirements/"
-click prepare "https://docs.daocloud.io/install/commercial/prepare/"
-click download "https://docs.daocloud.io/install/commercial/start-install/#1"
-click config "https://docs.daocloud.io/install/commercial/start-install/#2"
-click install "https://docs.daocloud.io/install/commercial/start-install/#3"
+click arch "https://docs.daocloud.io/install/commercial/deploy-arch.html"
+click deploy "https://docs.daocloud.io/install/commercial/deploy-requirements.html"
+click prepare "https://docs.daocloud.io/install/commercial/prepare.html"
+click download "https://docs.daocloud.io/install/commercial/start-install.html#1"
+click config "https://docs.daocloud.io/install/commercial/start-install.html#2-clusterconfigyaml"
+click install "https://docs.daocloud.io/install/commercial/start-install.html#3"
 ```
+
+click ocp "https://docs.daocloud.io/install/k8s-install/ocp-install-dce5.0.html"
+click ali "https://docs.daocloud.io/install/k8s-install/ecs-install-dce5.0.html"
+click uos "https://docs.daocloud.io/install/os-install/uos-v20-install-dce5.0.html"
+click oracle "https://docs.daocloud.io/install/os-install/oracleLinux-install-dce5.0.html"
+click tencent "https://docs.daocloud.io/install/os-install/TencentOS-install-dce5.0.html"
+click other "https://docs.daocloud.io/install/os-install/otherlinux.html"
 
 ## 联系我们
 

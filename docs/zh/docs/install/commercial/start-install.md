@@ -144,7 +144,7 @@ addon 离线包包含一些常用的组件的 Helm Chart 离线包，具体清�
 
 ### 第 3 步：开始安装
 
-1. 执行以下命令开始安装 DCE 5.0，安装器二进制文件位置为 `offline/dce5-installer`
+1. 执行以下命令开始安装 DCE 5.0，安装器二进制文件位于 `offline/dce5-installer`。
 
     ```shell
     ./offline/dce5-installer cluster-create -c ./offline/sample/clusterConfig.yaml -m ./offline/sample/manifest.yaml
