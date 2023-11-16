@@ -58,7 +58,7 @@ Currently, the installer version requires the osPackage offline package version 
 
     | Operating System                                        | Download                                                     |
     | :-------------------------------------------------- | :----------------------------------------------------------- |
-    | Centos 7                                            | [os-pkgs-centos7-vv0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-centos7-v0.9.3.tar.gz) |
+    | Centos 7                                            | [os-pkgs-centos7-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-centos7-v0.9.3.tar.gz) |
     | Redhat 8                                            | [os-pkgs-redhat8-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-redhat8-v0.9.3.tar.gz) |
     | Redhat 7                                            | [os-pkgs-redhat7-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-redhat7-v0.9.3.tar.gz) |
     | Redhat 9                                            | [os-pkgs-redhat9-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-redhat9-v0.9.3.tar.gz) |
@@ -117,8 +117,8 @@ First, make sure to download the offline package in advance and define `addonOff
 
 | CPU Architecture | Version | Download Link                                                |
 | :--------------- | :------ | :----------------------------------------------------------- |
-| AMD64    | v0.11.0 | [addon-offline-full-package-v0.11.0-amd64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.11.0-amd64.tar.gz) |
-| ARM64    | v0.11.0 | [addon-offline-full-package-v0.11.0-arm64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.11.0-arm64.tar.gz) |
+| AMD64    | v0.12.0 | [addon-offline-full-package-v0.12.0-amd64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.12.0-amd64.tar.gz) |
+| ARM64    | v0.12.0 | [addon-offline-full-package-v0.12.0-arm64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.12.0-arm64.tar.gz) |
 
 #### One-Click Download of Required Offline Packages
 
