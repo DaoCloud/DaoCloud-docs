@@ -1,26 +1,26 @@
-# Cilium 为 IPVlan 提供网络策略支持
+# Cilium Network Policy Support for IPVlan
 
-本文介绍 IPVlan 如何与 Cilium 集成，为 IPVlan CNI 提供网络策略能力。
+This article describes how IPVlan integrates with Cilium to provide network policy capabilities for IPVlan CNI.
 
-## 背景
+## Background
 
-目前社区中大多数 Underlay 类型的 CNI 如 IPVlan、Macvlan 等, 并不支持 Kubernetes 原生的网络策略能力，我们可借助 Cilium chaining-mode 功能为 IPVlan 提供网络策略能力。
-但 Cilium 在 1.12 版本正式移除了对 IPVlan Dataplane 的支持, 详见 [removed-options](https://docs.cilium.io/en/v1.12/operations/upgrade/#removed-options) 。
-由于受到 [Terway](https://github.com/AliyunContainerService/terway) 的启发， [cilium-chaining](https://github.com/spidernet-io/cilium-chaining) 项目基于 Cilium
-v1.12.7 版本修改 IPVlan Dataplane 部分, 使 Cilium 能够以 chaining-mode 的方式与 IPVlan 一起工作。
-解决 IPVlan 不支持 Kubernetes 原生的网络策略能力。
+Most Underlay CNIs such as IPVlan, Macvlan, etc. do not support Kubernetes native network policy capability, so we can use Cilium chaining-mode feature to provide network policy capability for IPVlan.
+However, Cilium officially removed support for IPVlan Dataplane in version 1.12, see [removed-options](https://docs.cilium.io/en/v1.12/operations/upgrade/#removed-options).
+Inspired by [Terway](https://github.com/AliyunContainerService/terway), [cilium-chaining](https://github.com/spidernet-io/cilium-chaining) project is based on the Cilium
+v1.12.7 to modify the IPVlan Dataplane section so that Cilium can work with IPVlan in chaining-mode.
+This solves the problem that IPVlan does not support the network policy capabilities native to Kubernetes.
 
-接下来，我们将通过一个例子来介绍这个功能。
+Next, we'll walk through an example of this feature.
 
-## 环境准备
+## Environment Preparation
 
-1. 要求节点内核版本至少大于 4.19
-2. 准备一个 Kubernetes 集群，并注意不能安装 Cilium
-3. 已安装 [Helm](https://helm.sh/docs/intro/install/)
+1. Node kernel versions should be greater than 4.19
+2. A Kubernetes cluster without Cilium installed
+3. [Helm](https://helm.sh/docs/intro/install/) is installed
 
-## 安装 Spiderpool
+## Install Spiderpool
 
-1. 安装 Spiderpool
+1. Install Spiderpool
 
     ```bash
     helm repo add spiderpool https://spidernet-io.github.io/spiderpool
@@ -30,15 +30,15 @@ v1.12.7 版本修改 IPVlan Dataplane 部分, 使 Cilium 能够以 chaining-mode
     helm install spiderpool spiderpool/spiderpool --namespace kube-system --set multus.multusCNI.defaultCniCRName="ipvlan-ens192" ---set plugins.installCNI=true
     ```
 
-   > 如果您的集群未安装 Macvlan CNI, 可指定 Helm 参数 `--set plugins.installCNI=true` 安装 Macvlan 到每个节点。
-   >
-   > 如果您是国内用户，可以指定参数 `--set global.imageRegistryOverride=ghcr.m.daocloud.io` 避免 Spiderpool 的镜像拉取失败。
-   >
-   > 通过 `multus.multusCNI.defaultCniCRName` 指定集群的 Multus clusterNetwork，clusterNetwork 是 Multus 插件的一个特定字段，用于指定 Pod 的默认网络接口。
+    > If your cluster does not have Macvlan CNI installed, specify the Helm parameter `-set plugins.installCNI=true` to install Macvlan on each node.
+    >
+    > If you are a user from the Chinese Mainland, you can specify the parameter `-set global.imageRegistryOverride=ghcr.m.daocloud.io` to avoid image pull failures for Spiderpool.
+    >
+    > Specify the Multus clusterNetwork for the cluster via `multus.multusCNI.defaultCniCRName`. clusterNetwork is a specific field of the Multus plugin that specifies the default network interface for the Pod.
 
-2. 创建 SpiderIPPool 实例
+2. Create a SpiderIPPool instance
 
-   创建与网络接口 `ens192` 在同一个子网的 IP 池以供 Pod 使用，以下是创建相关的 SpiderIPPool 示例：
+   To create a pool of IPs on the same subnet as the network interface `ens192` for Pod, here is an example of creating a SpiderIPPool:
 
     ```shell
     cat <<EOF | kubectl apply -f -
@@ -56,7 +56,7 @@ v1.12.7 版本修改 IPVlan Dataplane 部分, 使 Cilium 能够以 chaining-mode
     EOF
     ```
 
-3. 验证安装
+3. Validate installation
 
    ```shell
     ~# kubectl get po -n kube-system | grep spiderpool
@@ -69,9 +69,9 @@ v1.12.7 版本修改 IPVlan Dataplane 部分, 使 Cilium 能够以 chaining-mode
     ippool-test     4         10.6.0.0/16     0                    10               false
    ```
 
-## 安装 Cilium-chaining
+## Install Cilium-chaining
 
-1. 使用以下命令安装 cilium-chaining 组件:
+1. Install the cilium-chaining component using the following command:
 
     
     helm repo add cilium-chaining https://spidernet-io.github.io/cilium-chaining
@@ -81,18 +81,17 @@ v1.12.7 版本修改 IPVlan Dataplane 部分, 使 Cilium 能够以 chaining-mode
     helm install cilium-chaining/cilium-chaining --namespace kube-system
 
 
-2. 验证安装:
+2. Validate installation:
 
 
-     ~# kubectl  get po -n kube-system
-     NAME                                     READY   STATUS      RESTARTS         AGE
-     cilium-chaining-4xnnm                    1/1     Running     0                5m48s
-     cilium-chaining-82ptj                    1/1     Running     0                5m48s
+    ~# kubectl  get po -n kube-system
+    NAME                                     READY   STATUS      RESTARTS         AGE
+    cilium-chaining-4xnnm                    1/1     Running     0                5m48s
+    cilium-chaining-82ptj                    1/1     Running     0                5m48s
 
-## 配置 CNI
+## Configure CNI
 
-创建 Multus NetworkAttachmentDefinition CR, 如下是创建 IPvlan NetworkAttachmentDefinition 配置的示例：
-
+To create a Multus NetworkAttachmentDefinition CR, the following is an example of creating an IPvlan NetworkAttachmentDefinition configuration:
 
 ```shell
 IPVLAN_MASTER_INTERFACE="ens192"
@@ -127,17 +126,17 @@ spec:
 EOF
 ```
 
-> 在上面的配置中，指定 master 为 ens192, ens192 必须存在于节点上
+> In the above configuration, specify master as ens192, which must exist on the node.
 > 
-> 将 cilium 嵌入到 CNI 配置中，放置于 ipvlan plugin 之后
+> Embed Cilium into the CNI configuration, placing it after the ipvlan plugin.
 > 
-> 注意 CNI 的 name 必须和安装 cilium-chaining 时的 cniChainingMode 保持一致，否则无法正常工作
+> The name of the CNI must match the cniChainingMode used during the installation of cilium-chaining, otherwise it will not work properly.
 
-## 创建测试应用
+## Create a Test Application
 
-### 创建应用
+### Create an Application
 
-以下的示例 Yaml 中，会创建 1 组 DaemonSet 应用，其中使用 `v1.multus-cni.io/default-network`：用于指定应用所使用的 CNI 配置文件:
+The following example YAML will create a group of DaemonSet applications that utilize the `v1.multus-cni.io/default-network` to specify the CNI configuration file for the application:
 
 ```shell
 APP_NAME=test
@@ -171,7 +170,7 @@ spec:
 EOF
 ```
 
-查看 Pod 运行状态：
+Check the running status of Pod:
 
 ```bash
 ~# kubectl get po -owide
@@ -180,9 +179,9 @@ test-55c97ccfd8-l4h5w   1/1     Running             0          3m50s   10.6.185.
 test-55c97ccfd8-w62k7   1/1     Running             0          3m50s   10.6.185.206   controller1   <none>           <none>
 ```
 
-### 验证网络策略是否生效
+### Validate the Effectiveness of Network Policies
 
-- 测试 Pod 与跨节点、跨子网 Pod 的通讯情况
+- Test the communication between Pods across nodes and subnets
 
     ```shell
     ~# kubectl exec -it test-55c97ccfd8-l4h5w -- ping -c2 10.6.185.30
@@ -204,7 +203,7 @@ test-55c97ccfd8-w62k7   1/1     Running             0          3m50s   10.6.185.
 
     ```
 
-- 创建禁止 Pod 与外部通信的网络策略
+- Create a network policy that restricts Pods from communicating with the external network
 
     ```shell
     ~# cat << EOF | kubectl apply -f -
@@ -220,10 +219,10 @@ test-55c97ccfd8-w62k7   1/1     Running             0          3m50s   10.6.185.
       - Egress
       - Ingress
     ```
-
-    > deny-all 根据 label 匹配所有 pod, 该策略禁止 Pod 对外通信
+ 
+    > The deny-all policy matches all Pods based on their labels and prohibits them from communicating with the external network.
   
-- 再次验证 Pod 对外通信
+- Re-validate the accessibility of Pods to the external network.
 
     ```shell
     ~# kubectl exec -it test-55c97ccfd8-l4h5w -- ping -c2 10.6.185.206
@@ -233,4 +232,4 @@ test-55c97ccfd8-w62k7   1/1     Running             0          3m50s   10.6.185.
     14 packets transmitted, 0 packets received, 100% packet loss
     ```
 
-从结果看出，Pod 访问外部的流量被禁止，网络策略生效，证明通过 Cilium-chaining 项目 帮助 IPVlan 实现网络策略能力。
+From the results, it can be seen that the access of Pods to the external network is blocked, confirming the effectiveness of the network policy. This demonstrates how the Cilium-chaining project enables IPVlan to enforce network policy capabilities.

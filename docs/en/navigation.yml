@@ -386,6 +386,7 @@ nav:
                   - Unsupported Features: network/modules/cilium/notSupport.md
                   - Cilium Network Communication Acceleration: network/modules/cilium/cross-cluster.md
                   - Cross-Cluster Application Communication: network/modules/cilium/cilium-speedup.md
+                  - Cilium Network Policy Support for IPVlan: network/modules/cilium/cilium_chaining.md
               - Contour:
                   - Intro: network/modules/contour/index.md
                   - Install: network/modules/contour/install.md
