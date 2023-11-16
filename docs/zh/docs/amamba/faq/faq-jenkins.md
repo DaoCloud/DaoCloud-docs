@@ -113,3 +113,19 @@ error: unexpected error when reading response body. Please retry. Original error
 !!! note
 
     参考 [Docker 官方指导文档](https://docs.docker.com/engine/reference/commandline/dockerd/#configuration-reload-behavior)。
+
+## 如何修改 Jenkins 流水线并发执行数量
+
+目前 DCE 5.0 部署出来后 Jenkins 流水线并发执行数量为 2，下述将描述如何更改并发执行数量：
+
+1. 前往容器管理模块，找到 Jenkins 组件所在的集群，点击集群名称。
+
+2. 在左侧导航栏依次点击`配置与密钥` -> `配置项`。
+
+3. 搜索 `jenkins-casc-config`，在操作列点击`编辑 YAML`。
+
+4. 在 `data` -> `jenkins.yaml` -> `jenkins.clouds.kubernetes.containerCapStr` 字段下修改数值。
+
+    ![jenkins001](../images/jenkinsadd.png)
+
+5. 更新完成后，前往`工作负载`重启 Jenkins。
