@@ -4,17 +4,17 @@
 
 ## 下载脚本
 
-    ```bash
-    export VERSION= v0.8.0
-    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/download_packages_${VERSION}.sh
-    chmod +x download_packages_${VERSION}.sh
-    ```
+```bash
+export VERSION= v0.8.0
+curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/download_packages_${VERSION}.sh
+chmod +x download_packages_${VERSION}.sh
+```
 
 ## 执行脚本
 
-    ```bash
-    ./download_packages_${VERSION}.sh ${DISTRO} ${INSTALLER_VERSION} ${ARCH}
-    ```
+```bash
+./download_packages_${VERSION}.sh ${DISTRO} ${INSTALLER_VERSION} ${ARCH}
+```
 
 参数说明：
 

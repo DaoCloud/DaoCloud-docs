@@ -4,8 +4,8 @@ When deploying DCE 5.0, software planning, hardware planning, and network planni
 
 ## Operating system requirements
 
-| **Architecture** | **Operating System** | **Kernel Version**                          | Remarks (Installation Guide)                                     |
-| ---------------- | -------------------- | -------------------------------------------- | ------------------------------------------------------- |
+| **Architecture** | **Operating System** | **Kernel Version** | Remarks (Installation Guide) |
+| ---------------- | -------------------- | ------------------ | ------------------- |
 | AMD 64           | CentOS 7.X           | Kernel 3.10.0-1127.el7.x86_64 on an x86_64   | Recommended: CentOS 7.9<br />[Offline Installation of DCE 5.0 Enterprise](start-install.md) |
 |                  | RedHat 8.X           | 4.18.0-305.el8.x86_64                        | Recommended: RedHat 8.4<br />[Offline Installation of DCE 5.0 Enterprise](start-install.md) |
 |                  | RedHat 7.X           | 3.10.0-1160.e17.x86                          | Recommended: RedHat 7.9<br />[Offline Installation of DCE 5.0 Enterprise](start-install.md) |
@@ -54,8 +54,10 @@ Assuming that VIP is used as the load balancing method of the global cluster:
 
 ## Port requirements
 
-In order To function properly, some ports need to be open. If your network is configured with firewall rules, you need to ensure that infrastructure components can communicate with each other over specific ports.
-Make sure the required following ports are open on the network and configured to allow access between hosts. Some ports are optional based on configuration and usage.
+In order To function properly, some ports need to be open. If your network is configured with firewall rules,
+you need to ensure that infrastructure components can communicate with each other over specific ports.
+Make sure the required following ports are open on the network and configured to allow access between hosts.
+Some ports are optional based on configuration and usage.
 
 ### Bootstrap node
 
