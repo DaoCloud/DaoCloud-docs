@@ -2,9 +2,9 @@
 
 DCE 5.0 大体分为两个版本：社区版和商业版。
 
-社区版可包括容器管理、全局管理、可观测性三大模块，可永久免费使用。
-
-商业版在社区版的基础上可按需购买服务网格、微服务引擎、多云编排、数据服务中间件、镜像仓库等高级模块，功能更全面，更能适应生产环境需求。
+- 社区版包括容器管理、全局管理、可观测性三大模块，可永久免费使用。
+- 商业版在社区版的基础上可按需购买服务网格、微服务引擎、多云编排、数据服务中间件、镜像仓库、云边协同、容器化虚拟机等高级模块，
+  功能更全面，更能适应各类生产环境需求。
 
 <table>
   <thead>
@@ -31,7 +31,7 @@ DCE 5.0 大体分为两个版本：社区版和商业版。
     </tr>
     <tr>
       <td>商业版</td>
-      <td><p>在社区版的基础上增加了：</p>
+      <td><p>社区版基础上增加了：</p>
         <ul>
           <li><a href="https://docs.daocloud.io/amamba/intro/index.html"><span style="white-space: nowrap;">应用工作台</span></a></li>
           <li><a href="https://docs.daocloud.io/kairship/intro/index.html">多云编排</a></li>
@@ -119,7 +119,7 @@ flowchart TB
     arch --> deploy[查阅部署要求]
     deploy --> prepare[准备工作]
     prepare --> download[下载离线包]
-    download --> config[编辑并配置<br>clusterConfig.yaml]
+    download --> config[编辑<br>clusterConfig.yaml]
     
     config --> other-k8s[安装到<br>不同 K8s]
     config --> install[正常开始安装]
@@ -160,10 +160,9 @@ click other "https://docs.daocloud.io/install/os-install/otherlinux.html"
 
 ## 联系我们
 
-DaoCloud Enterprise 5.0 还处于发布初期，安装流程可能会有变更。请收藏此页，关注更新动态，更多操作文档也在制作之中。
+DCE 5.0 的安装流程可能会有变更。请收藏此页，关注更新动态，更多操作文档也在制作之中。
 
 - 若有任何安装或使用问题，请[提出反馈](https://github.com/DaoCloud/DaoCloud-docs/issues)。
-
 - 欢迎扫描二维码，与开发者畅快交流：
 
     ![社区版交流群](https://docs.daocloud.io/daocloud-docs-images/docs/images/assist.png)

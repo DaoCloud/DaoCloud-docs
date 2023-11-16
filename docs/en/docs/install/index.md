@@ -2,19 +2,19 @@
 
 DCE 5.0 has two versions: DCE Community and DCE 5.0 Enterprise.
 
-The DCE Community includes Container Management, Global Management, and Insight modules,
+- DCE Community includes Container Management, Global Management, and Insight modules,
 which can be used for free permanently.
 
-DCE 5.0 Enterprise can be purchased on demand with advanced modules such as Service Mesh,
-Microservice Engine, MultiCloud Management, Data Middleware, Container Registry, etc. in addtion to
-those modules contained in the DCE Community. It has more comprehensive features and can better
-meet the needs of production environments.
+- DCE 5.0 Enterprise can be purchased on demand with advanced modules such as Service Mesh,
+  Microservice Engine, MultiCloud Management, Data Middleware, Container Registry,
+  Cloud Edge Collaboration, and Containerized VM on the basis of DCE Community.
+  It has more comprehensive features and applicable to a variety of production environments.
 
 <table>
   <thead>
     <tr>
-      <th>Version</th>
-      <th>Included Modules</th>
+      <th>Releases</th>
+      <th>Modules</th>
       <th>Description</th>
     </tr>
   </thead>
@@ -34,7 +34,7 @@ meet the needs of production environments.
     </tr>
     <tr>
       <td>DCE 5.0 Enterprise</td>
-      <td> <p>On top of the Community Edition, more modules are added:</p>
+      <td> <p>On top of DCE Community, more modules are added:</p>
         <ul>
           <li><a href="https://docs.daocloud.io/en/amamba/intro/index.html"><span style="white-space: nowrap;">Workbench</span></a></li>
           <li><a href="https://docs.daocloud.io/en/kairship/intro/index.html">MultiCloud Management</a></li>
@@ -55,7 +55,7 @@ meet the needs of production environments.
 
 ## Install DCE Community
 
-The installation process of DCE 5.0 DCE Community is as follows:
+The installation process of DCE Community is as follows:
 
 ```mermaid
 flowchart TB
@@ -108,7 +108,7 @@ click ask "https://docs.daocloud.io/en/install/index.html#contact-us"
 
 !!! tip
 
-    Click the blue text in the diagram, you can go to the corresponding page for details.
+    Click the blue text in the diagram, you can go to the proper page for details.
 
 ## Install DCE 5.0 Enterprise
 
@@ -117,7 +117,7 @@ The installation process of DCE 5.0 Enterprise is as follows:
 ```mermaid
 flowchart TB
 
-    start([fa:fa-user DCE 5.0 Enterprise Edition<br>Installation Process]) -.- arch[Learn Deployment Architecture]
+    start([fa:fa-user DCE 5.0 Enterprise<br>Installation Process]) -.- arch[Learn Deployment Architecture]
     arch --> deploy[Check Deployment Requirements]
     deploy --> prepare[Prepare Environment]
     prepare --> download[Download Offline Package]
@@ -162,8 +162,7 @@ click other "https://docs.daocloud.io/en/install/os-install/otherlinux.html"
 
 ## Contact us
 
-DaoCloud Enterprise 5.0 is still in the early stage of release, and the installation guide may change.
-Please bookmark this page and pay attention to the update dynamics.
+The installation guide may change. Please bookmark this page and follow the update information.
 
 - If you have any installation or usage problems, please
   [give us a feedback](https://github.com/DaoCloud/DaoCloud-docs/issues).
