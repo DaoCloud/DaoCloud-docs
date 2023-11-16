@@ -88,7 +88,7 @@ classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
 classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
 class plan,k8s,tools,kind,s1,s2,kpanda,ghippo,insight,free,ask cluster;
-class start plain
+class start k8s
 class S,U spacewhite
 
 click plan "https://docs.daocloud.io/install/community/resources.html"
@@ -121,17 +121,17 @@ flowchart TB
     prepare --> download[下载离线包]
     download --> config[编辑<br>clusterConfig.yaml]
     
-    config --> other-k8s[安装到<br>不同 K8s]
-    config --> install[正常开始安装]
-    config --> other-os[安装到<br>不同 Linux]
+    config -.-> other-k8s[安装到<br>不同 K8s]
+    config -.-> install[正常开始安装]
+    config -.-> other-os[安装到<br>不同 Linux]
 
-    other-k8s --> ocp[安装到<br>OpenShift OCP]
-    other-k8s --> ali[安装到<br>阿里云 ECS]
+    other-k8s -.-> ocp[安装到<br>OpenShift OCP]
+    other-k8s -.-> ali[安装到<br>阿里云 ECS]
 
-    other-os --> uos[安装到<br>UOS]
-    other-os --> oracle[安装到<br>Oracle Linux]
-    other-os --> tencent[安装到<br>TencentOS Server]
-    other-os --> other[安装到<br>更多 Linux]
+    other-os -.-> uos[安装到<br>UOS]
+    other-os -.-> oracle[安装到<br>Oracle Linux]
+    other-os -.-> tencent[安装到<br>TencentOS Server]
+    other-os -.-> other[安装到<br>更多 Linux]
 
 
 classDef grey fill:#dddddd,stroke:#ffffff,stroke-width:1px,color:#000000, font-size:15px;
@@ -142,7 +142,7 @@ classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
 classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
 class arch,deploy,prepare,download,config,install,ocp,ali,uos,oracle,tencent,other cluster
-class start,other-k8s,other-os plain
+class start,other-k8s,other-os k8s
 
 click arch "https://docs.daocloud.io/install/commercial/deploy-arch.html"
 click deploy "https://docs.daocloud.io/install/commercial/deploy-requirements.html"
