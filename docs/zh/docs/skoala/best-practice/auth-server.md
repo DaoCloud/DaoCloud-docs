@@ -84,7 +84,7 @@
 
 ### 认证服务器配置在网关层面
 
-    !!! note
+!!! note
 
         HTTP 和 HTTPS 域名都支持安全认证，如需使用 HTTPS 域名，网关需要开启 HTTPS。
 
@@ -101,15 +101,14 @@
     ![网关 API 认证服务器](../images/gateway-api-auth-plugin.png)
 
 4. 现在即可通过认证服务器访问该 API 了。
-
-   - 访问 `/`
+   - 访问 `/`，请求通过。
 
         ```bash
         [root@node ~]# curl -H 'header: true' http://gateway.test:30000/
         adservice-springcloud: hello world!
         ```
 
-    - 访问 `/test1`
+    - 访问 `/test1`，请求被拦截。
 
         ```bash
         [root@node ~]# curl -H 'header: true' http://gateway.test:30000/test1
@@ -118,9 +117,9 @@
 
 ### 认证服务器配置在域名或 API 层面
 
-    !!! note
+!!! note
 
-        只有 HTTPS 域名支持安全认证，网关需要开启 HTTPS。
+    只有 HTTPS 域名支持安全认证，网关需要开启 HTTPS。
 
 1. 创建 `HTTPS` 域名，并手动配置安全认证。
 
@@ -131,15 +130,14 @@
     ![网关 API 认证服务器](../images/gateway-api-auth-plugin.png)
 
 3. 现在即可通过认证服务器访问该 API 了。
-
-   - 访问 `/`
+   - 访问 `/`，请求通过。
 
         ```bash
         [root@node ~]# curl -k -H 'header: true' https://gateway.test:30001/
         adservice-springcloud: hello world!
         ```
 
-    - 访问 `/test1`
+   - 访问 `/test1`，请求被拦截。
 
         ```bash
         [root@node ~]# curl -k -H 'header: true' https://gateway.test:30001/test1
