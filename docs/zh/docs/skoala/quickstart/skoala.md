@@ -176,8 +176,6 @@ helm repo update
 
 > 需要事先安装 Helm
 
-注意：添加 Skoala-release 仓库之后，通常需要关注的有 2 个 Chart：
-
 `Skoala` 是微服务引擎的控制端的服务：
 
 - 安装完成后，可以在 DCE 5.0 平台看到微服务引擎的入口
