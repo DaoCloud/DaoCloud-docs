@@ -505,10 +505,17 @@ nav:
               - Intro:
                   - Intro: virtnest/intro/index.md
                   - Release Notes: virtnest/intro/release-notes.md
+                  - Install VM Container: virtnest/intro/install.md
               - Quick Start:
-                  - Create VM: virtnest/quick-start/index.md
+                  - Install virtnest-agent: virtnest/quick-start/index.md
+                  - Create VM: virtnest/quick-start/create-image.md
+                  - Create VM by Template: virtnest/quick-start/create-tep.md
+                  - VM Template: virtnest/quick-start/tep.md
+                  - Connect VM: virtnest/quick-start/access.md
+                  - Snapshots: virtnest/quick-start/snapshot.md
                   - Access VM by NodePort: virtnest/quick-start/nodeport.md
-                  - Deploy with Rook Ceph: virtnest/quick-start/rook-ceph.md
+                  - Deploy Rook Ceph: virtnest/quick-start/rook-ceph.md
+                  - Offline Upgrade: virtnest/install/offline-install.md
       - Observability:
           - Insight:
               - Intro:
@@ -609,7 +616,7 @@ nav:
               - Cloud Native Gateway:
                   - Gateway Management: skoala/gateway/index.md
                   - API Management:
-                      - Add API: skoala/gateway/api/add-api.md
+                      - Add API: skoala/gateway/api/index.md
                       - Update/Delete API: skoala/gateway/api/update-api.md
                       - API Policies: skoala/gateway/api/api-policy.md
                   - Service Management:

@@ -512,9 +512,8 @@ nav:
                   - 简介: virtnest/intro/index.md
                   - Release Notes: virtnest/intro/release-notes.md
                   - 安装虚拟机容器: virtnest/intro/install.md
-                  - 离线升级: virtnest/intro/offline-update.md
               - 快速入门:
-                  - 在指定集群内安装 virtnest-agent: virtnest/quick-start/agent.md
+                  - 在指定集群内安装 virtnest-agent: virtnest/quick-start/index.md
                   - 创建虚拟机: virtnest/quick-start/create-image.md
                   - 通过模板创建虚拟机: virtnest/quick-start/create-tep.md
                   - 虚拟机模板: virtnest/quick-start/tep.md
@@ -624,7 +623,7 @@ nav:
               - 云原生网关:
                   - 网关管理: skoala/gateway/index.md
                   - API 管理:
-                      - 添加 API: skoala/gateway/api/add-api.md
+                      - 添加 API: skoala/gateway/api/index.md
                       - 更新和删除 API: skoala/gateway/api/update-api.md
                       - 配置 API 策略: skoala/gateway/api/api-policy.md
                   - 服务接入:
