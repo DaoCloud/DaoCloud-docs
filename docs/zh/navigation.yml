@@ -751,6 +751,7 @@ nav:
               - 网格网关:
                   - 创建网格网关: mspider/user-guide/gateway-instance/create.md
                   - 删除网格网关: mspider/user-guide/gateway-instance/delete.md
+                  - 外接网格的网关管理: mspider/user-guide/gateway-instance/gateway-in-external-mesh.md
               - 网格配置:
                   - 多云网络互联: mspider/user-guide/multicluster/cluster-interconnect.md
                   - 多云网络分流配置: mspider/user-guide/multicluster/traffic-branch.md
