@@ -31,17 +31,16 @@ DCE 5.0 大体分为两个版本：社区版和商业版。
     </tr>
     <tr>
       <td>商业版</td>
-      <td>
+      <td><p>在社区版的基础上增加了：</p>
         <ul>
-          <li><a href="https://docs.daocloud.io/ghippo/intro/index.html">全局管理</a></li>
-          <li><a href="https://docs.daocloud.io/kpanda/intro/index.html">容器管理</a></li>
-          <li><a href="https://docs.daocloud.io/insight/intro/index.html">可观测性</a></li>
           <li><a href="https://docs.daocloud.io/amamba/intro/index.html"><span style="white-space: nowrap;">应用工作台</span></a></li>
           <li><a href="https://docs.daocloud.io/kairship/intro/index.html">多云编排</a></li>
           <li><a href="https://docs.daocloud.io/skoala/intro/index.html"><span style="white-space: nowrap;">微服务引擎</span></a></li>
           <li><a href="https://docs.daocloud.io/mspider/intro/index.html">服务网格</a></li>
           <li><a href="https://docs.daocloud.io/middleware/index.html"><span style="white-space: nowrap;">精选中间件</span></a></li>
           <li><a href="https://docs.daocloud.io/kangaroo/intro/index.html">镜像仓库</a></li>
+          <li><a href="https://docs.daocloud.io/kant/intro/index.html">云边协同</a></li>
+          <li><a href="https://docs.daocloud.io/virtnest/intro/index.html">容器化的虚拟机</a></li>
         </ul>
       </td>
       <td>
@@ -122,17 +121,17 @@ flowchart TB
     prepare --> download[下载离线包]
     download --> config[编辑并配置<br>clusterConfig.yaml]
     
-    config --> other-k8s[安装到不同 K8s]
+    config --> other-k8s[安装到<br>不同 K8s]
     config --> install[正常开始安装]
-    config --> other-os[安装到不同 Linux]
+    config --> other-os[安装到<br>不同 Linux]
 
-    other-k8s --> ocp[安装到 OpenShift OCP]
-    other-k8s --> ali[安装到阿里云 ECS]
+    other-k8s --> ocp[安装到<br>OpenShift OCP]
+    other-k8s --> ali[安装到<br>阿里云 ECS]
 
-    other-os --> uos[安装到 UOS]
-    other-os --> oracle[安装到 Oracle Linux]
-    other-os --> tencent[安装到 TencentOS Server]
-    other-os --> other[安装到更多 Linux]
+    other-os --> uos[安装到<br>UOS]
+    other-os --> oracle[安装到<br>Oracle Linux]
+    other-os --> tencent[安装到<br>TencentOS Server]
+    other-os --> other[安装到<br>更多 Linux]
 
 
 classDef grey fill:#dddddd,stroke:#ffffff,stroke-width:1px,color:#000000, font-size:15px;
