@@ -11,7 +11,7 @@ DCE 5.0 supports multiple versions, and all versions except DCE Community are DC
 
 ## Steps
 
-### Step 1: Configure the manifest.yaml file
+### Step 1: Edit manifest.yaml
 
 Change the values of `enable` fields in the `manifest.yaml` from `false` to `true`.
 
@@ -59,7 +59,7 @@ skoala:
    variables:
 ```
 
-### Step 2: run commands
+### Step 2: Run commands
 
 Perform the upgrade command by running:
 

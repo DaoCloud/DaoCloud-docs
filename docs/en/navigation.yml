@@ -744,6 +744,7 @@ nav:
               - Mesh Gateway:
                   - Create Mesh Gateway: mspider/user-guide/gateway-instance/create.md
                   - Delete Mesh Gateway: mspider/user-guide/gateway-instance/delete.md
+                  - Gateway Management for External Mesh: mspider/user-guide/gateway-instance/gateway-in-external-mesh.md
               - Mesh Config:
                   - Multicloud interconnection: mspider/user-guide/multicluster/cluster-interconnect.md
                   - Multicloud config: mspider/user-guide/multicluster/traffic-branch.md
