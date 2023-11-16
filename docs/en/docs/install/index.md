@@ -3,7 +3,7 @@
 DCE 5.0 has two versions: DCE Community and DCE 5.0 Enterprise.
 
 - DCE Community includes Container Management, Global Management, and Insight modules,
-which can be used for free permanently.
+  which can be used for free permanently.
 
 - DCE 5.0 Enterprise can be purchased on demand with advanced modules such as Service Mesh,
   Microservice Engine, MultiCloud Management, Data Middleware, Container Registry,
@@ -90,7 +90,7 @@ classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
 classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
 class plan,k8s,tools,kind,s1,s2,kpanda,ghippo,insight,free,ask cluster;
-class start plain
+class start k8s
 class S,U spacewhite
 
 click plan "https://docs.daocloud.io/en/install/community/resources.html"
@@ -123,17 +123,17 @@ flowchart TB
     prepare --> download[Download Offline Package]
     download --> config[Edit<br>clusterConfig.yaml]
     
-    config --> other-k8s[Install on<br>Different K8s]
-    config --> install[Normal Installation]
-    config --> other-os[Install on<br>Different Linux]
+    config -.-> other-k8s[Install on<br>Different K8s]
+    config -.-> install[Normal Installation]
+    config -.-> other-os[Install on<br>Different Linux]
 
-    other-k8s --> ocp[Install on<br>OpenShift OCP]
-    other-k8s --> ali[Install on<br>Alibaba Cloud ECS]
+    other-k8s -.-> ocp[Install on<br>OpenShift OCP]
+    other-k8s -.-> ali[Install on<br>Alibaba Cloud ECS]
 
-    other-os --> uos[Install on UOS]
-    other-os --> oracle[Install on<br>Oracle Linux]
-    other-os --> tencent[Install on<br>TencentOS Server]
-    other-os --> other[Install on<br>Other Linux]
+    other-os -.-> uos[Install on UOS]
+    other-os -.-> oracle[Install on<br>Oracle Linux]
+    other-os -.-> tencent[Install on<br>TencentOS Server]
+    other-os -.-> other[Install on<br>Other Linux]
 
 
 classDef grey fill:#dddddd,stroke:#ffffff,stroke-width:1px,color:#000000, font-size:15px;
@@ -144,7 +144,7 @@ classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
 classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
 class arch,deploy,prepare,download,config,install,ocp,ali,uos,oracle,tencent,other cluster
-class start,other-k8s,other-os plain
+class start,other-k8s,other-os k8s
 
 click arch "https://docs.daocloud.io/en/install/commercial/deploy-arch.html"
 click deploy "https://docs.daocloud.io/en/install/commercial/deploy-requirements.html"
