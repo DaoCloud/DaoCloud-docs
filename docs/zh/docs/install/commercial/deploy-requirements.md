@@ -6,7 +6,7 @@
 ## 操作系统要求
 
 | **架构** | **操作系统**  | **内核版本** | 备注（安装指导文档）  |
-| -------- | ------------------- | ------------------------------------------ | -------------------------------- |
+| -------- | ----------- | ----------- | ----------------- |
 | AMD 64   | CentOS 7.X    | Kernel 3.10.0-1127.el7.x86_64 on an x86_64 | 推荐 CentOS 7.9<br />[离线安装 DCE 5.0 商业版](start-install.md) |
 |    | Redhat 8.X    | 4.18.0-305.el8.x86_64    | 推荐 Redhat 8.4<br />参考[离线安装 DCE 5.0 商业版](start-install.md) |
 |    | Redhat 7.X    | 3.10.0-1160.e17.x86      | 推荐 Redhat 7.9<br />参考[离线安装 DCE 5.0 商业版](start-install.md) |
@@ -74,29 +74,29 @@
 
 #### K8s 控制平面
 
-| 协议 | 端口   | 描述     |
-|----------|--------| ------------    |
-| TCP      | 2379   | etcd client port|
-| TCP      | 2380   | etcd peer port  |
-| TCP      | 6443   | kubernetes api  |
-| TCP      | 10250  | kubelet api     |
-| TCP      | 10257  | kube-scheduler  |
-| TCP      | 10259  | kube-controller-manager  |
+| 协议 | 端口    | 描述     |
+|----- |--------| ------------    |
+| TCP  | 2379   | etcd client port|
+| TCP  | 2380   | etcd peer port  |
+| TCP  | 6443   | kubernetes api  |
+| TCP  | 10250  | kubelet api     |
+| TCP  | 10257  | kube-scheduler  |
+| TCP  | 10259  | kube-controller-manager  |
 
 #### 全部 K8s 节点
 
 集群中的每一个节点都需要打开。
 
 | 协议 | 端口   | 描述     |
-|----------|--------    | ------------    |
-| TCP      | 22         | ssh for ansible |
-| TCP      | 9100       | node exporter(Insight-Agent) |
-| TCP      | 10250      | kubelet api     |
-| TCP      | 30000-32767| kube nodePort range |
+|----- | ----- | ------------    |
+| TCP  | 22         | ssh for ansible |
+| TCP  | 9100       | node exporter (Insight-Agent) |
+| TCP  | 10250      | kubelet api     |
+| TCP  | 30000-32767| kube nodePort range |
 
 参考 [Kubernetes 端口和协议文档](https://kubernetes.io/zh-cn/docs/reference/networking/ports-and-protocols/)。
 
-#### Calico (默认)
+#### Calico（默认）
 
 默认使用 Calico 作为　CNI， **全部 K8s 节点** 都需要打开。
 
@@ -111,7 +111,7 @@
 
 参考 [Calico 网络要求文档](https://docs.tigera.io/calico/latest/getting-started/kubernetes/requirements#network-requirements)。
 
-#### MetalLB (默认)
+#### MetalLB（默认）
 
 当启用 MetalLB 建 VIP 时， **全部 K8s 节点** 都需要打开。
 
@@ -120,7 +120,7 @@
 | TCP/UDP  | 7472       | metallb metrics ports |
 | TCP/UDP  | 7946       | metallb L2 operating mode |
 
-#### Cilium (可选)
+#### Cilium（可选）
 
 如果使用 Cilium 作为 CNI， **全部 K8s 节点** 都需要打开。
 
@@ -138,7 +138,7 @@
 
 参考 [Cilium 系统要求文档](https://docs.cilium.io/en/v1.13/operations/system_requirements/)。
 
-#### SpiderPool (可选)
+#### SpiderPool（可选）
 
 如果使用 SpiderPool 作为 CNI， **全部 K8s 节点** 都需要打开。
 
@@ -153,9 +153,10 @@
 | TCP      | 5723     | Spiderpool-CLI HTTP server port.  |
 | TCP      | 5724     | SpiderPool Controller gops enabled  |
 
-参考文档: [spiderpool-controller](https://github.com/spidernet-io/spiderpool/blob/main/docs/reference/spiderpool-controller.md) 及 [spiderpool-agent](https://github.com/spidernet-io/spiderpool/blob/main/docs/reference/spiderpool-agent.md)
+参考文档：[spiderpool-controller](https://github.com/spidernet-io/spiderpool/blob/main/docs/reference/spiderpool-controller.md)
+及 [spiderpool-agent](https://github.com/spidernet-io/spiderpool/blob/main/docs/reference/spiderpool-agent.md)。
 
-#### KubeVIP - (可选)
+#### KubeVIP（可选）
 
 当启用 KubeVIP 建 Kube API VIP 时， **全部 Control Plane 节点** 都需要打开。
 
@@ -167,7 +168,7 @@
 #### 其他 Addon, 如 kube-vip
 -->
 
-### 全局集群 其他 需要开放的端口
+### 全局管理集群其他需要开放的端口
 
 #### Istio-Gateway VIP
 
