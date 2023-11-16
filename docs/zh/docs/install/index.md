@@ -98,7 +98,6 @@ click tools "https://docs.daocloud.io/install/install-tools.html"
 click kind "https://docs.daocloud.io/install/community/kind/online.html"
 click s1 "https://docs.daocloud.io/install/community/k8s/online.html"
 click s2 "https://docs.daocloud.io/install/community/k8s/offline.html"
-
 click kpanda "https://docs.daocloud.io/kpanda/intro/index.html"
 click ghippo "https://docs.daocloud.io/ghippo/intro/index.html"
 click insight "https://docs.daocloud.io/insight/intro/index.html"
@@ -152,14 +151,13 @@ click prepare "https://docs.daocloud.io/install/commercial/prepare.html"
 click download "https://docs.daocloud.io/install/commercial/start-install.html#1"
 click config "https://docs.daocloud.io/install/commercial/start-install.html#2-clusterconfigyaml"
 click install "https://docs.daocloud.io/install/commercial/start-install.html#3"
-```
-
 click ocp "https://docs.daocloud.io/install/k8s-install/ocp-install-dce5.0.html"
 click ali "https://docs.daocloud.io/install/k8s-install/ecs-install-dce5.0.html"
 click uos "https://docs.daocloud.io/install/os-install/uos-v20-install-dce5.0.html"
 click oracle "https://docs.daocloud.io/install/os-install/oracleLinux-install-dce5.0.html"
 click tencent "https://docs.daocloud.io/install/os-install/TencentOS-install-dce5.0.html"
 click other "https://docs.daocloud.io/install/os-install/otherlinux.html"
+```
 
 ## 联系我们
 
