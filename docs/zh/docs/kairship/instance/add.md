@@ -28,14 +28,22 @@ hide:
 
         ![Management](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/instance-guanli.png)
 
-3. 选择安装多云实例的管理面集群时，建议使用运行正常并且安装了存储卷声明（PVC）的集群，否则存在安装失败的风险。若安装失败，可以在对应的管理面集群中查看原因。
+3. 选择安装多云实例的管理面集群时，选择安装多云实例的管理面集群时，建议使用运行正常并且安装了存储类（SC）的集群并保证对应的存储卷空间充足，否则存在安装失败的风险。若安装失败，可以在对应的管理面集群中查看原因。可根据以下步骤检查问题。
 
-    - 在管理面集群详情页面中，选择`kairship-system`命名空间下的`kairship-apiserver`无状态负载，并进行更新操作。
+    - 在管理面集群无状态负载中，检查`etcd`的运行状态。
+
+        ![check-etcd](../../virtnest/images/check-etcd.png)
+
+    - 检查 PVC 是否为就绪（bound）状态.
+
+        ![check-pvc](../../virtnest/images/check-pvc.png)
+
+    - 选择`kairship-system`命名空间下的`kairship-apiserver`无状态负载，进行更新操作。
 
         ![更新无状态负载](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/update-deployment.png)
 
-    - 进入更新页面后，修改容器配置-生命周期的启动命令，可根据管理面集群的真实情况更新。
+      - 进入更新页面后，修改容器配置-生命周期的启动命令，可根据管理面集群的真实情况更新。
 
-        ![更新启动命令](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/update-setting.png)
+          ![更新启动命令](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/update-setting.png)
 
     - 如果管理面集群中不存在存储卷声明（PVC），而是使用 hostPath，尽管可以成功安装，但无法实现高可用功能。
