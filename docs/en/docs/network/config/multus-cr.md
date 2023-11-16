@@ -16,7 +16,7 @@ If you need to create a new **Multus CR instance**, you can refer to this docume
 
 2. Go to `Network Configuration` -> `Multus CR Management`, and click `Create Multus CR`.
 
-    ![Multus CR 管理](../images/networkconfig02.png)
+    ![Multus CR management](../images/networkconfig02.png)
 
     !!! note
 
