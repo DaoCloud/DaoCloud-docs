@@ -1,6 +1,7 @@
 # UOS V20 (1020a) 操作系统上部署 DCE 5.0 商业版
 
-本文将介绍如何在 UOS V20(1020a) 操作系统上部署 DCE 5.0，v0.6.0 及以上支持。
+本文将介绍如何在 UOS V20(1020a) 操作系统上部署 DCE 5.0。
+安装器 v0.6.0 及更高版本支持这种部署方式。
 
 ## 前提条件
 
@@ -13,7 +14,7 @@
 1. 由于安装器依赖 python，所以需要在火种机器中先安装 `python3.6`。
 
     ```bash
-    ## 执行以下命令下载依赖
+    # 执行以下命令下载依赖
     dnf install -y --downloadonly --downloaddir=rpm/python36
 
     ## 执行以下命令开始安装
@@ -56,8 +57,8 @@
 
 5. 下载 addon 离线包，可以在[下载中心](../../download/index.md)下载最新版本（可选）
 
-6. 设置[集群配置文件 clusterConfig.yaml](../commercial/cluster-config.md)，可以在离线包 `offline/sample` 下获取该文件并按需修改。
-    参考配置为：
+6. 设置[集群配置文件 clusterConfig.yaml](../commercial/cluster-config.md)，可以在离线包 `offline/sample`
+   下获取该文件并按需修改。参考配置为：
 
     ```yaml
     apiVersion: provision.daocloud.io/v1alpha3
