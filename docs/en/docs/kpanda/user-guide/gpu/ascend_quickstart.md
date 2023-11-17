@@ -1,47 +1,52 @@
-# 华为昇腾 NPU 快速使用指南
+# Huawei Ascend NPU Quick Start Guide
 
-本节将介绍如何快速使用华为昇腾 NPU 运行推理例。
+This section will guide you through the process of quickly using the Huawei Ascend NPU for inference tasks.
 
-## 前置条件
+## Prerequisites
 
-1. 安装昇腾 NPU 驱动
+1. Install the Ascend NPU driver.
 
-    然后能够运行 `npu-smi info` 命令，并且能够正常返回 npu 信息，表示 NPU 驱动与固件已就绪。
+    Make sure you have installed the Ascend NPU driver and can run the `npu-smi info` command,
+    which should return NPU information indicating that the driver and firmware are ready.
 
-    ![昇腾信息](./images/npu-smi-info.png)
+    ![Ascend Information](./images/npu-smi-info.png)
 
-2. 安装昇腾 NPU Device Plugin
+2. Install the Ascend NPU Device Plugin.
 
-    NPU Device Plugin 默认安装在 `kube-system` 命名空间下。这是一个 DaemonSet 类型的工作负载，
-    可以通过 `kubectl get pod -n kube-system | grep ascend` 命令查看，输出如下：
+    The NPU Device Plugin is installed by default in the `kube-system` namespace. It is a DaemonSet
+    workload that can be verified by running the command `kubectl get pod -n kube-system | grep ascend`,
+    which should output the following:
 
-    ![昇腾 Device Plugin](./images/ascend-device-plugin.png)
+    ![Ascend Device Plugin](./images/ascend-device-plugin.png)
 
-    如驱动与 Device Plugin 未安装，请参考昇腾官方文档进行安装：
+    If the driver and Device Plugin are not installed, please refer to the official Ascend documentation
+    for installation instructions:
 
-    1. 例如 Ascend910，参考
-      [910 驱动安装文档](https://www.hiascend.com/document/detail/zh/Atlas%20200I%20A2/23.0.RC3/EP/installationguide/Install_87.html)，
-      和[其他型号显卡](https://support.huawei.com/enterprise/zh/category/ascend-computing-pid-1557196528909)
-    2. [昇腾 NPU Device Plugin](https://www.hiascend.com/document/detail/zh/mindx-dl/50rc3/clusterscheduling/clusterschedulingig/dlug_installation_001.html)
+    - For example, for Ascend910, refer to the
+      [910 Driver Installation Guide](https://www.hiascend.com/document/detail/en/Atlas%20200I%20A2/23.0.RC3/EP/installationguide/Install_87.html)
+      and [other GPU models](https://support.huawei.com/enterprise/en/category/ascend-computing-pid-1557196528909).
+    - [Ascend NPU Device Plugin](https://www.hiascend.com/document/detail/en/mindx-dl/50rc3/clusterscheduling/clusterschedulingig/dlug_installation_001.html)
 
-3. 下载昇腾代码库。
+3. Download the Ascend code repository.
 
-    运行以下命令下载昇腾 demo 示例代码库，并且请记住代码存放的位置，后续需要使用。
+    Run the following command to download the Ascend sample code repository and remember the
+    location where the code is stored, as it will be needed later.
 
     ```git
     git clone https://gitee.com/ascend/samples.git
     ```
 
-## 快速使用
+## Quick Start
 
-本文使用昇腾示例库中的
-[AscentCL 图片分类应用](https://gitee.com/ascend/samples/tree/master/inference/modelInference/sampleResnetQuickStart/python)示例。
+This guide uses the [AscentCL Image Classification Application](https://gitee.com/ascend/samples/tree/master/inference/modelInference/sampleResnetQuickStart/python)
+example from the Ascend sample repository.
 
-### 准备基础镜像
+### Prepare the base image
 
-此例使用 Ascent-pytorch 基础镜像，可访问[昇腾镜像仓库](https://ascendhub.huawei.com/#/index)获取。
+This example uses the Ascent-pytorch base image, which can be obtained from the
+[Ascend Image Repository](https://ascendhub.huawei.com/#/index).
 
-### 准备 yaml
+### Edit YAML
 
 ```yaml
 apiVersion: batch/v1
@@ -132,30 +137,33 @@ spec:
       restartPolicy: OnFailure
 ```
 
-以上 yaml 中有一些字段需要根据实际情况进行修改：
+There are some fields in the above YAML that need to be modified according to your specific situation:
 
-1. `atc ... --soc_version=Ascend910` 使用的是 `Ascend910`，请以实际情况为主。
-   您可以使用 `npu-smi info` 命令查看显卡型号然后加上 Ascend 前缀即可
-2. `samples-path` 以实际情况为准。
-3. `resources` 以实际情况为准。
+1. `atc ... --soc_version=Ascend910` is using `Ascend910` as an example. Please replace it with
+   the actual model you are using. You can use the `npu-smi info` command to check the model of
+   your card and add the Ascend prefix accordingly.
+2. `samples-path` should be replaced with the actual path in your system.
+3. `resources` should be adjusted based on your specific requirements.
 
-### 部署 Job 并查看结果
+### Deploy Job and View Results
 
-使用如下命令创建 Job：
+Use the following command to create a Job:
 
 ```shell
 kubectl apply -f ascend-demo.yaml
 ```
 
-查看 Pod 运行状态：
+Check the Pod status:
 
-![昇腾 Pod 状态](./images/ascend-demo-pod-status.png)
+![Ascend Pod Status](./images/ascend-demo-pod-status.png)
 
-Pod 成功运行后，查看日志结果。在屏幕上的关键提示信息示例如下图，
-提示信息中的 label 表示类别标识，conf 表示该分类的最大置信度，class 表示所属类别。这些值可能会根据版本、环境有所不同，请以实际情况为准：
+Once the Pod is successfully running, view the log results. The key information displayed on the screen
+is as shown in the following image. The label in the prompt represents the category label, conf represents
+the maximum confidence of that category, and class represents the corresponding category. These values may
+vary depending on the version and environment, so please refer to your actual situation.
 
-![昇腾 demo 运行结果](./images/ascend-demo-pod-result.png)
+![Ascend demo execution result](./images/ascend-demo-pod-result.png)
 
-结果图片展示：
+Result is as follows:
 
-![昇腾 demo 运行结果图片](./images/ascend-demo-infer-result.png)
+![Ascend demo inference result image](./images/ascend-demo-infer-result.png)
