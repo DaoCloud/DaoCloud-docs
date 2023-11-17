@@ -1,13 +1,14 @@
-# Other Linux Offline Deployment of DCE 5.0 Enterprise
+# Deploy DCE 5.0 Enterprise on Other Linux Distributions
 
-This page will introduce how to deploy DCE 5.0 on Other Linux operating system.
+This page introduces how to deploy DCE 5.0 on other Linux distributions.
+Installer v0.7.0 and higher versions support this deployment method.
 
-Other Linux is essentially because DCE does not provide the installation system offline package (OS package) for some Linux operating systems, and customers need to make it themselves.
+Other Linux is essentially because DCE does not provide the installation system offline package (OS package) for some Linux distributions, and customers need to make it themselves.
 
 ## Authenticated OS
 
 | Architecture | Release | System Family | Recommended Kernel |
-| ----- | ---------------------------- | ------------ | - ------------------ |
+| ----- | -------------- | ------------ | ----- |
 | AMD64 | UOS V20 (1050d) | Debian | 4.19.0-server-amd64 |
 | AMD64 | AnolisOS 8.8 GA  | Redhat | 5.10.134-13.an8.x86_64 |
 
@@ -15,15 +16,16 @@ Remarks: If there is no verified operating system, you can try to deploy it thro
 
 ## Prerequisites
 
-- Please read [Deployment Architecture](../commercial/deploy-arch.md) in advance to confirm this deployment mode.
-- Please read [Deployment Requirements](../commercial/deploy-requirements.md) in advance to confirm whether the network, hardware, ports, etc. meet the requirements.
-- Please read [Preparation](../commercial/prepare.md) in advance to confirm machine resources and pre-check.
+- Read [Deployment Architecture](../commercial/deploy-arch.md) in advance to confirm this deployment mode.
+- Read [Deployment Requirements](../commercial/deploy-requirements.md) in advance to confirm
+  whether the network, hardware, ports, etc. meet the requirements.
+- Read [Preparation](../commercial/prepare.md) in advance to confirm machine resources and pre-check.
 
 ## Make the operating system offline package (OS package)
 
 ### Production and installation
 
-1. Download the authoring tool.
+1. Download tools.
 
     ```bash
     cd /home
@@ -33,28 +35,28 @@ Remarks: If there is no verified operating system, you can try to deploy it thro
 
 2. Build the operating system offline package
 
-     ```bash
-     # Specify the path of the pkgs.yml package configuration file (if pkgs.yml is located in the same path as other_os_pkgs.sh, you can not set this environment variable)
-     export PKGS_YML_PATH=/home/pkgs.yml
-     # Run the system offline package build command
-     ./other_os_pkgs.sh build
-     ```
+    ```bash
+    # Specify the path of the pkgs.yml package configuration file (if pkgs.yml is located in the same path as other_os_pkgs.sh, you can not set this environment variable)
+    export PKGS_YML_PATH=/home/pkgs.yml
+    # Run the system offline package build command
+    ./other_os_pkgs.sh build
+    ```
 
 3. Install the OS offline package
 
-     ```bash
-     # Specify the path of the pkgs.yml package configuration file (if pkgs.yml is located in the same path as other_os_pkgs.sh, you can not set this environment variable)
-     export PKGS_YML_PATH=/home/pkgs.yml
-     # Specify the path of the os pkgs offline package
-     export PKGS_TAR_PATH=/home/os-pkgs-${DISTRO}-${VERSION}.tar.gz
-     # Specify the cluster master/worker node IP (multi-node IP addresses are separated by spaces)
-     export HOST_IPS='192.168.10.11 192.168.10.12'
-     # Specify the target node access information for installation (multi-node usernames and passwords must be consistent)
-     export SSH_USER=root
-     export SSH_PASS=dangerous
-     # Run the installation command and output the log
-     ./other_os_pkgs.sh install >>log.txt
-     ```
+    ```bash
+    # Specify the path of the pkgs.yml package configuration file (if pkgs.yml is located in the same path as other_os_pkgs.sh, you can not set this environment variable)
+    export PKGS_YML_PATH=/home/pkgs.yml
+    # Specify the path of the os pkgs offline package
+    export PKGS_TAR_PATH=/home/os-pkgs-${DISTRO}-${VERSION}.tar.gz
+    # Specify the cluster master/worker node IP (multi-node IP addresses are separated by spaces)
+    export HOST_IPS='192.168.10.11 192.168.10.12'
+    # Specify the target node access information for installation (multi-node usernames and passwords must be consistent)
+    export SSH_USER=root
+    export SSH_PASS=dangerous
+    # Run the installation command and output the log
+    ./other_os_pkgs.sh install >>log.txt
+    ```
 
 4. After the installation is successful, the following log will be output:
 
@@ -125,69 +127,70 @@ Remarks: If there is no verified operating system, you can try to deploy it thro
 
 4. Download the addon offline package, you can download the latest version in [Download Center](../../download/index.md) (optional)
 
-5. Set [clusterConfig.yaml](../commercial/cluster-config.md), which can be obtained under the offline package `offline/sample` and modified as needed.
+5. Edit [clusterConfig.yaml](../commercial/cluster-config.md), which can be obtained under the
+   offline package `offline/sample` and modified as needed.
 
     === "UnionTech OS Server 20 1050d"
 
-    ```yaml
-    apiVersion: provision.daocloud.io/v1alpha3
-    kind: ClusterConfig
-    metadata:
-    spec:
-      clusterName: test-cluster
-      loadBalancer:
-        type: metallb
-        istioGatewayVip: 172.30.41.XXX/32
-        insightVip: 172.30.41.XXX/32
-      masterNodes:
-        - nodeName: "g-master1"
-          ip: 172.30.41.xxx
-          ansibleUser: "root"
-          ansiblePass: "******"
-      fullPackagePath: "/root/offline"
-      osRepos:
-        type: none
-      imagesAndCharts:
-        type: builtin
-      binaries:
-        type: builtin
-      kubeanConfig: |-
-      allow_unsupported_distribution_setup: true
-        debian_os_family_extensions:
-          - "UnionTech OS Server 20\" "
-    ```
+        ```yaml
+        apiVersion: provision.daocloud.io/v1alpha3
+        kind: ClusterConfig
+        metadata:
+        spec:
+          clusterName: test-cluster
+          loadBalancer:
+            type: metallb
+            istioGatewayVip: 172.30.41.XXX/32
+            insightVip: 172.30.41.XXX/32
+          masterNodes:
+            - nodeName: "g-master1"
+              ip: 172.30.41.xxx
+              ansibleUser: "root"
+              ansiblePass: "******"
+          fullPackagePath: "/root/offline"
+          osRepos:
+            type: none
+          imagesAndCharts:
+            type: builtin
+          binaries:
+            type: builtin
+          kubeanConfig: |-
+          allow_unsupported_distribution_setup: true
+            debian_os_family_extensions:
+              - "UnionTech OS Server 20\" "
+        ```
 
     === "AnolisOS 8.8 GA"
 
-    ```yaml
-    apiVersion: provision.daocloud.io/v1alpha3
-    kind: ClusterConfig
-    metadata:
-    spec:
-      clusterName: test-cluster
-      loadBalancer:
-        type: metallb
-        istioGatewayVip: 172.30.41.XXX/32
-        insightVip: 172.30.41.XXX/32
-      masterNodes:
-        - nodeName: "g-master1"
-          ip: 172.30.41.xxx
-          ansibleUser: "root"
-          ansiblePass: "******"
-      fullPackagePath: "/root/offline"
-      osRepos:
-        type: none
-      imagesAndCharts:
-        type: builtin
-      binaries:
-        type: builtin
-      kubeanConfig: |-
-      allow_unsupported_distribution_setup: true
-        redhat_os_family_extensions:
-          - "Anolis OS"
-    ```
+        ```yaml
+        apiVersion: provision.daocloud.io/v1alpha3
+        kind: ClusterConfig
+        metadata:
+        spec:
+          clusterName: test-cluster
+          loadBalancer:
+            type: metallb
+            istioGatewayVip: 172.30.41.XXX/32
+            insightVip: 172.30.41.XXX/32
+          masterNodes:
+            - nodeName: "g-master1"
+              ip: 172.30.41.xxx
+              ansibleUser: "root"
+              ansiblePass: "******"
+          fullPackagePath: "/root/offline"
+          osRepos:
+            type: none
+          imagesAndCharts:
+            type: builtin
+          binaries:
+            type: builtin
+          kubeanConfig: |-
+          allow_unsupported_distribution_setup: true
+            redhat_os_family_extensions:
+              - "Anolis OS"
+        ```
 
-    Parameter description:
+    Parameter tips:
 
     | Parameter                                               | Description                                | Required |
     | ------------------------------------------------------- | ------------------------------------------ | -------- |
@@ -205,7 +208,7 @@ Remarks: If there is no verified operating system, you can try to deploy it thro
     ansible -m setup -a 'filter=ansible_os_family' -e "ansible_user=${USER} ansible_password=${PASS}" -i ${ADDR}, all
     ```
 
-    After successful execution, the following information will be output:
+    If success, the following information will be output:
 
     ```bash
     192.168.10.xxx | SUCCESS => {
@@ -232,7 +235,9 @@ Remarks: If there is no verified operating system, you can try to deploy it thro
         - `-d` enable debug mode
         - `--serial` specifies that all installation tasks are executed serially
 
-7. After the installation is complete, the command line will prompt that the installation is successful. congratulations! :smile: Now you can use the default account and password (admin/changeme) to explore the new DCE 5.0 through the URL prompted on the screen!
+7. After the installation is complete, the command line will prompt that the installation is successful.
+   congratulations! :smile: Now you can use the default account and password (admin/changeme) to explore
+   the new DCE 5.0 through the URL prompted on the screen!
 
     ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
 
@@ -240,4 +245,5 @@ Remarks: If there is no verified operating system, you can try to deploy it thro
 
         Please record the prompted URL for your next visit.
 
-8. After successfully installing DCE 5.0 Enterprise, please contact us for authorization: email [info@daocloud.io](mailto:info@daocloud.io) or call 400 002 6898.
+8. After successfully installing DCE 5.0 Enterprise, please contact us for authorization: email
+   [info@daocloud.io](mailto:info@daocloud.io) or call 400 002 6898.

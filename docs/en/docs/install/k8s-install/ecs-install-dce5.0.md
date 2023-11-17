@@ -1,6 +1,6 @@
 # Installing DCE 5.0 Enterprise Package on Alibaba Cloud ECS
 
-This article will guide you through the process of installing DCE 5.0 on Alibaba Cloud ECS.
+This page will guide you through the process of installing DCE 5.0 on Alibaba Cloud ECS.
 
 ## Prerequisites
 

@@ -39,10 +39,10 @@ nav:
                   - Uninstall: install/uninstall.md
                   - Import Offline Resources: install/import.md
                   - Troubleshoot: install/faq.md
-              - Install with Different K8s Distributions:
+              - Install with Different K8s:
                   - With OpenShift OCP: install/k8s-install/ocp-install-dce5.0.md
                   - With Alibaba Cloud ECS: install/k8s-install/ecs-install-dce5.0.md
-              - Install on Different OS:
+              - Install on Different Linux:
                   - With UOS V20 (1020a): install/os-install/uos-v20-install-dce5.0.md
                   - With Oracle Linux R9/R8 U1: install/os-install/oracleLinux-install-dce5.0.md
                   - With TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
