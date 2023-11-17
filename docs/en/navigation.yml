@@ -244,6 +244,7 @@ nav:
                           - MIG Commands: kpanda/user-guide/gpu/nvidia/mig/mig_command.md
                   - Ascend GPU:
                       - Use Ascend GPU: kpanda/user-guide/gpu/Ascend_usage.md
+                      - Huawei Ascend NPU Quick Start Guide: kpanda/user-guide/gpu/ascend_quickstart.md
                   - Iluvatar GPU:
                       - Use Iluvatar GPU: kpanda/user-guide/gpu/Iluvatar_usage.md
                   - GPU Quota Management: kpanda/user-guide/gpu/vgpu_quota.md
