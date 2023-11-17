@@ -102,7 +102,7 @@
 
 4. 现在即可通过认证服务器访问该 API 了。
 
-   - 访问 `/`，请求通过。
+    - 访问 `/`，请求通过。
 
         ```bash
         [root@node ~]# curl -H 'header: true' http://gateway.test:30000/
@@ -132,14 +132,14 @@
 
 3. 现在即可通过认证服务器访问该 API 了。
 
-   - 访问 `/`，请求通过。
+    - 访问 `/`，请求通过。
 
         ```bash
         [root@node ~]# curl -k -H 'header: true' https://gateway.test:30001/
         adservice-springcloud: hello world!
         ```
 
-   - 访问 `/test1`，请求被拦截。
+    - 访问 `/test1`，请求被拦截。
 
         ```bash
         [root@node ~]# curl -k -H 'header: true' https://gateway.test:30001/test1
