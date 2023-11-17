@@ -497,6 +497,10 @@
 
     京东云云原生安全平台包含资产清点、镜像安全、运行时安全、网络安全、集群安全、节点安全等安全服务，提供从镜像生成、存储到运行时的全生命周期云原生安全解决方案。
 
+- [Juicedata 云原生分布式文件系统 JuiceFS 企业版 5.0 发布](https://mp.weixin.qq.com/s/bL69_Q9yeoQYnpVJ9Q2p8Q)
+
+    更新内容：提升缓存可观测性、支持主动清除缓存、支持异构的缓存集群、支持自动故障感知、提供多种缓存淘汰策略、支持共享块设备做数据持久化、为对象存储中已有数据提供加速访问、将分块格式文件“转存”为对象。
+
 - [Kong 服务网格产品 Kong Mesh v2.3 发布](https://konghq.com/blog/product-releases/kong-mesh-2-3)
 
     更新内容：支持 Envoy 1.26、在 Kubernetes 中采用最小权限的安全默认配置、支持 TLS 网关监听器、允许细粒度控制网格的安装方式、支持只向全局控制平面发送配置更新中的变化、GitOps 工作流支持定制/禁用默认策略创建、支持 init 容器排序、支持 GAMMA 倡议。
@@ -714,6 +718,10 @@
 
     Rainbond 企业版拥有全局可观测中心，用于监视、调试和分析运行在 Kubernetes 集群和 rainbond 平台中的基础设施及应用服务。此外，还为 IT 业务系统向国产化信创环境中迁移提供了方案，支持全链路灰度发布和集群巡检，内置 WAF 防火墙和操作审计功能，支持私有化部署应用商店等。
 
+- [Red Hat OpenShift 4.14 发布](https://cloud.redhat.com/blog/red-hat-openshift-4.14-is-now-available)
+
+    更新内容：推出面向裸机红帽 OpenShift 和红帽 OpenShift 虚拟化的托管控制面板、新增密钥管理 OpenShift Shared Resource CSI Driver、支持跨命名空间共享 ConfigMap 和 Secret、为所有架构的部署提供了 24 个月的支持。
+
 - [Red Hat OpenShift GitOps 1.10 发布](https://cloud.redhat.com/blog/whats-new-in-red-hat-openshift-gitops-1.10)
 
     支持 Argo CD 2.8，包括引入 ApplicationSet 插件生成器、删除传统配置管理插件 (CMP)、忽略资源更新等新功能；GitOps 文档将从 OpenShift 文档中的一个子部分（目前在 CI/CD 下）移至独立的部分；允许动态缩放应用程序控制器；自动安装控制台仪表盘。
@@ -847,6 +855,10 @@
 - [StormForge Kubernetes 集群性能优化方案 Optimize Live 利用机器学习优化 K8 自动扩缩容能力](https://www.stormforge.io/blog/introducing-intelligent-bi-dimensional-autoscaling/)
 
     最新版本的 Optimize Live 提供了二维自动缩放能力，HPA 和 VPA 能够协同工作，既能调整 pod 的大小，又能水平设置利用率，最大程度优化自动缩放的效率。此外，还利用机器学习分析历史资源使用情况，以找到最佳的 HPA 目标利用率。
+
+- [SUSE 企业级容器管理平台 Rancher Prime 2.0 发布](https://mp.weixin.qq.com/s/kMJ1tj_UKbT5Qpmh0o_Z_w)
+
+    更新内容：通过 UI 扩展框架，将 SUSE 和第三方工具的功能直接构建到 Rancher Prime UI；推出 Rancher Prime 应用程序集合；生成式 AI 助手；提供基于横向（集群数量）和纵向（pods 和 nods）压力测试的性能基准测试与记录。
 
 - [SUSE 推出企业级容器管理平台 Rancher Prime](https://mp.weixin.qq.com/s/iVFsSGlRd4TdJGcRKLQBuQ)
 
