@@ -86,7 +86,7 @@
 
 !!! note
 
-        HTTP 和 HTTPS 域名都支持安全认证，如需使用 HTTPS 域名，网关需要开启 HTTPS。
+    HTTP 和 HTTPS 域名都支持安全认证，如需使用 HTTPS 域名，网关需要开启 HTTPS。
 
 1. 网关配置认证服务器。
 
@@ -101,6 +101,7 @@
     ![网关 API 认证服务器](../images/gateway-api-auth-plugin.png)
 
 4. 现在即可通过认证服务器访问该 API 了。
+
    - 访问 `/`，请求通过。
 
         ```bash
@@ -130,6 +131,7 @@
     ![网关 API 认证服务器](../images/gateway-api-auth-plugin.png)
 
 3. 现在即可通过认证服务器访问该 API 了。
+
    - 访问 `/`，请求通过。
 
         ```bash

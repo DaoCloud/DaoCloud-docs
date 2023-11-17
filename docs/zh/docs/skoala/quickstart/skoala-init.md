@@ -56,7 +56,7 @@ helm upgrade --install skoala-init --create-namespace -n skoala-system --cleanup
 查看 Pod 是否启动成功：
 
 ```bash
-$ kubectl -n skoala-system get pods
+$ kubectl get pods -n skoala-system
 NAME                                   READY   STATUS    RESTARTS        AGE
 contour-provisioner-54b55958b7-5ltng                  1/1     Running     0          2d6h
 gateway-api-admission-patch-bk7c8                     0/1     Completed   0          2d6h
@@ -80,7 +80,7 @@ skoala-agent-54d4df7897-7p4pz                         1/1     Running     0     
 1. 备份原有参数
 
     ```bash
-    helm -n skoala-system get values skoala-init > skoala-init.yaml
+    helm get values skoala-init -n skoala-system -o yaml > skoala-init.yaml
     ```
 
 2. 添加微服务引擎的 Helm 仓库
@@ -95,10 +95,10 @@ skoala-agent-54d4df7897-7p4pz                         1/1     Running     0     
     helm repo update
     ```
 
-4. 删除 gateway-api-admission 和 gateway-api-admission-path 两个 job
+4. 删除 gateway-api 相关 job
 
     ```bash
-    kubectl -n skoala-system delete jobs gateway-api-admission gateway-api-admission-patch
+    kubectl delete jobs gateway-api-admission gateway-api-admission-patch -n skoala-system
     ```
 
 5. 执行 `helm upgrade` 命令
@@ -123,6 +123,39 @@ skoala-agent-54d4df7897-7p4pz                         1/1     Running     0     
 
 ## 卸载微服务引擎集群初始化组件
 
+!!! note
+
+    - nacos sentinel seata 的 crd 会随之卸载，特别注意，相关 cr 会被删除。
+    - 网关相关 crd 不会被随之卸载，如需清除需手动处理，特别注意，清除 crd 时相关 cr 会被删除。
+
+??? note "网关相关 crd 清单"
+
+    contourconfigurations.projectcontour.io
+    contourdeployments.projectcontour.io
+    extensionservices.projectcontour.io
+    gatewayclasses.gateway.networking.k8s.io
+    gateways.gateway.networking.k8s.io
+    grpcroutes.gateway.networking.k8s.io
+    httpproxies.projectcontour.io
+    httproutes.gateway.networking.k8s.io
+    referencegrants.gateway.networking.k8s.io
+    tcproutes.gateway.networking.k8s.io
+    tlscertificatedelegations.projectcontour.io
+    tlsroutes.gateway.networking.k8s.io
+    udproutes.gateway.networking.k8s.io
+
 ```bash
 helm uninstall skoala-init -n skoala-system
+```
+
+### 手动清理 gateway-api 相关 job
+
+```bash
+kubectl delete jobs gateway-api-admission gateway-api-admission-patch -n skoala-system
+```
+
+### 手动清理网关相关 crd
+
+```bash
+kubectl delete crds `kubectl get crds | grep -E "contour|gateway" | awk '{print $1}'`
 ```

@@ -43,7 +43,7 @@
 
 4. 点击右下角确定按钮即可完成安装。可以查看 `argocd-system` 命名空间下的 argo-cd 相关的负载是否均处于 `运行中` 状态判断。
 
-5. 确认上述的负载成功部署后，在当前集群切换到 amamba-system 命名空间并点击左侧菜单栏的`配置项与密钥` -> `配置项`，搜索 `amamba-config`，点击`编辑 YAML`。
+5. 确认上述的负载成功部署后，在当前集群切换到 `amamba-system` 命名空间并点击左侧菜单栏的`配置项与密钥` -> `配置项`，搜索 `amamba-config`，点击`编辑 YAML`。
 
 6. 在 `data->amamba-config.yaml` 中添加如下参数:
 
@@ -56,7 +56,7 @@
 
     ![argocd02](images/argocd02.png)
 
-7. 修改完成后，在当前集群详情左侧菜单栏的 `工作负载` -> `容器`，分别搜索 `amamba-apiserver` 、`amamba-syncer`，并依次进行重启。
+7. 修改完成后，在当前集群详情左侧菜单栏的 `工作负载` -> `容器组`，分别搜索 `amamba-apiserver` 、`amamba-syncer`，并依次进行重启。
 
 8. 重启成功后，即可前往 `应用工作台` 模块使用持续部署能力。
 
