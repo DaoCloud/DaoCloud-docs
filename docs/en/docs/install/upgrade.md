@@ -38,8 +38,8 @@ tar -xvf offline-v0.9.0-amd64.tar
 
 !!! note
 
-- Make sure that the [cluster configuration file](commercial/cluster-config.md) is consistent with the parameters used during installation.
-- Currently, only the `builtin` method of `imagesAndCharts` has been tested.
+    - Make sure that the [cluster configuration file](commercial/cluster-config.md) is consistent with the parameters used during installation.
+    - Currently, only the `builtin` method of `imagesAndCharts` has been tested.
 
 The file is located under the `offline/sample` directory after extracting the offline package. Refer to the following sample configuration:
 

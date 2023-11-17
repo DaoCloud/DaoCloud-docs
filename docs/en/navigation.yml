@@ -39,10 +39,10 @@ nav:
                   - Uninstall: install/uninstall.md
                   - Import Offline Resources: install/import.md
                   - Troubleshoot: install/faq.md
-              - Install with Different K8s Distributions:
+              - Install with Different K8s:
                   - With OpenShift OCP: install/k8s-install/ocp-install-dce5.0.md
                   - With Alibaba Cloud ECS: install/k8s-install/ecs-install-dce5.0.md
-              - Install on Different OS:
+              - Install on Different Linux:
                   - With UOS V20 (1020a): install/os-install/uos-v20-install-dce5.0.md
                   - With Oracle Linux R9/R8 U1: install/os-install/oracleLinux-install-dce5.0.md
                   - With TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
@@ -244,6 +244,7 @@ nav:
                           - MIG Commands: kpanda/user-guide/gpu/nvidia/mig/mig_command.md
                   - Ascend GPU:
                       - Use Ascend GPU: kpanda/user-guide/gpu/Ascend_usage.md
+                      - Huawei Ascend NPU Quick Start Guide: kpanda/user-guide/gpu/ascend_quickstart.md
                   - Iluvatar GPU:
                       - Use Iluvatar GPU: kpanda/user-guide/gpu/Iluvatar_usage.md
                   - GPU Quota Management: kpanda/user-guide/gpu/vgpu_quota.md
@@ -744,6 +745,7 @@ nav:
               - Mesh Gateway:
                   - Create Mesh Gateway: mspider/user-guide/gateway-instance/create.md
                   - Delete Mesh Gateway: mspider/user-guide/gateway-instance/delete.md
+                  - Gateway Management for External Mesh: mspider/user-guide/gateway-instance/gateway-in-external-mesh.md
               - Mesh Config:
                   - Multicloud interconnection: mspider/user-guide/multicluster/cluster-interconnect.md
                   - Multicloud config: mspider/user-guide/multicluster/traffic-branch.md

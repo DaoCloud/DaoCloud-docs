@@ -40,13 +40,13 @@ nav:
                   - 导入离线资源: install/import.md
                   - 安装排障: install/faq.md
               - 在不同 K8s 发行版上安装:
-                  - 在 OpenShift OCP 上安装: install/k8s-install/ocp-install-dce5.0.md
-                  - 在阿里云 ECS 上安装: install/k8s-install/ecs-install-dce5.0.md
+                  - OpenShift OCP: install/k8s-install/ocp-install-dce5.0.md
+                  - 阿里云 ECS: install/k8s-install/ecs-install-dce5.0.md
               - 在不同操作系统上安装:
-                  - 在 UOS V20 (1020a): install/os-install/uos-v20-install-dce5.0.md
-                  - Oracle Linux R9/R8 U1 操作系统: install/os-install/oracleLinux-install-dce5.0.md
-                  - TencentOS Server 3.1 操作系统: install/os-install/TencentOS-install-dce5.0.md
-                  - 其他 Linux 操作系统: install/os-install/otherlinux.md
+                  - UOS V20 (1020a): install/os-install/uos-v20-install-dce5.0.md
+                  - Oracle Linux R9/R8 U1: install/os-install/oracleLinux-install-dce5.0.md
+                  - TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
+                  - 其他 Linux: install/os-install/otherlinux.md
               - 安装器 Release Notes: install/release-notes.md
       - 工作台:
           - 应用工作台:
@@ -251,6 +251,7 @@ nav:
                           - MIG 相关命令: kpanda/user-guide/gpu/nvidia/mig/mig_command.md
                   - 昇腾 GPU 管理:
                       - 应用使用昇腾 GPU: kpanda/user-guide/gpu/Ascend_usage.md
+                      - 华为昇腾NPU快速使用指南: kpanda/user-guide/gpu/ascend_quickstart.md
                   - 天数 GPU 管理:
                       - 应用使用天数 GPU: kpanda/user-guide/gpu/Iluvatar_usage.md
                   - GPU 配额管理: kpanda/user-guide/gpu/vgpu_quota.md
@@ -751,6 +752,7 @@ nav:
               - 网格网关:
                   - 创建网格网关: mspider/user-guide/gateway-instance/create.md
                   - 删除网格网关: mspider/user-guide/gateway-instance/delete.md
+                  - 外接网格的网关管理: mspider/user-guide/gateway-instance/gateway-in-external-mesh.md
               - 网格配置:
                   - 多云网络互联: mspider/user-guide/multicluster/cluster-interconnect.md
                   - 多云网络分流配置: mspider/user-guide/multicluster/traffic-branch.md

@@ -79,7 +79,7 @@ subgraph first[Install DCE Community]
     tools -.-> s2[Offline Install with K8s]
 end
 
-start([fa:fa-user DCE 5.0 DCE Community Installation]) --> first
+start([fa:fa-user DCE Community<br>Installation Process]) --> first
 start --> second
 
 classDef grey fill:#dddddd,stroke:#ffffff,stroke-width:px,color:#000000, font-size:15px;

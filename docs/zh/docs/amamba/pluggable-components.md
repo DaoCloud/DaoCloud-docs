@@ -25,7 +25,7 @@
 
 1. 在 DCE 5.0 产品模块，进入`容器管理` -> `集群列表`，进入 `kpanda-global-cluster` 集群详情页面。
 
-2. 在集群详情中左侧菜单栏的 `Helm 应用` -> `Helm 模板` -> 选择 addon 仓库 。搜索 `argo-cd`，点击进入详情页面并安装。
+2. 在集群详情中左侧菜单栏的 `Helm 应用` -> `Helm 模板` -> 选择全部仓库 。搜索 `argo-cd`，点击进入详情页面并安装。
 
 3. 在安装界面，填写所需要的安装参数
 
@@ -43,20 +43,20 @@
 
 4. 点击右下角确定按钮即可完成安装。可以查看 `argocd-system` 命名空间下的 argo-cd 相关的负载是否均处于 `运行中` 状态判断。
 
-5. 确认上述的负载成功部署后，在当前集群详情左侧菜单栏的`配置项与密钥` -> `配置项`，搜索 `amamba-config`，点击`编辑 YAML`。
+5. 确认上述的负载成功部署后，在当前集群切换到 `amamba-system` 命名空间并点击左侧菜单栏的`配置项与密钥` -> `配置项`，搜索 `amamba-config`，点击`编辑 YAML`。
 
 6. 在 `data->amamba-config.yaml` 中添加如下参数:
 
-    ```yaml 
+    ```yaml
     generic:
       argocd:
-        host: argocd-server.argocd-system.svc.cluster.local:80  # argocd的服务地址，格式为：argocd-server的服务名.命名空间.svc.cluster.local:80
+        host: argo-cd-argocd-server.argocd-system.svc.cluster.local:80  # argocd的服务地址，格式为：argocd-server的服务名.命名空间.svc.cluster.local:80
         namespace: argocd-system  # argocd安装的命名空间
     ```
 
     ![argocd02](images/argocd02.png)
 
-7. 修改完成后，在当前集群详情左侧菜单栏的 `工作负载` -> `容器`，分别搜索 `amamba-apiserver` 、`amamba-syncer`，并依次进行重启。
+7. 修改完成后，在当前集群详情左侧菜单栏的 `工作负载` -> `容器组`，分别搜索 `amamba-apiserver` 、`amamba-syncer`，并依次进行重启。
 
 8. 重启成功后，即可前往 `应用工作台` 模块使用持续部署能力。
 

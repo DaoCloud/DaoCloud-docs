@@ -1,19 +1,21 @@
-# Deploying DCE 5.0 Enterprise on TencentOS Server 3.1
+# Deploy DCE 5.0 Enterprise on TencentOS Server 3.1
 
-This document will guide you on how to deploy DCE 5.0 on TencentOS Server 3.1, starting from version v0.9.0 and above.
+This document will guide you on how to deploy DCE 5.0 on TencentOS Server 3.1.
+Installer v0.9.0 and higher versions support this deployment method.
 
 ## Prerequisites
 
-- Please read the [Deployment Architecture](../commercial/deploy-arch.md) beforehand to confirm the deployment mode.
-- Please read the [Deployment Requirements](../commercial/deploy-requirements.md) beforehand to verify if the network, hardware, and ports meet the requirements.
-- Please read the [Preparation](../commercial/prepare.md) beforehand to ensure machine resources and pre-checks.
+- Read the [Deployment Architecture](../commercial/deploy-arch.md) beforehand to confirm the deployment mode.
+- Read the [Deployment Requirements](../commercial/deploy-requirements.md) beforehand to verify if the network, hardware, and ports meet the requirements.
+- Read the [Preparation](../commercial/prepare.md) beforehand to ensure machine resources and pre-checks.
 
 ## Offline Installation
 
-1. Download the full mode offline package. You can download the latest version from the [Download Center](../../download/index.md).
+1. Download the full mode offline package. You can download the latest version
+   from the [Download Center](../../download/index.md).
 
-    | CPU Architecture | Version | Download Link                                                                                      |
-    | ---------------- | ------- | ------------------------------------------------------------------------------------------------- |
+    | CPU Architecture | Version | Download Link                                                                                 |
+    | ---------------- | ------- | --------------------------------------------------------------------------------------------- |
     | AMD64            | v0.9.0  | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.9.0-amd64.tar> |
 
     After downloading, extract the offline package:
@@ -37,8 +39,8 @@ This document will guide you on how to deploy DCE 5.0 on TencentOS Server 3.1, s
 
 4. Download the addon offline package. You can download the latest version from the [Download Center](../../download/index.md) (optional).
 
-5. Set up the [clusterConfig.yaml](../commercial/cluster-config.md). You can find this file in the `offline/sample` directory of the offline package and modify it as needed.
-   The reference configuration is as follows:
+5. Set up the [clusterConfig.yaml](../commercial/cluster-config.md). You can find this file in the `offline/sample` directory
+   of the offline package and modify it as needed. The reference configuration is as follows:
 
     ```yaml
     apiVersion: provision.daocloud.io/v1alpha3
@@ -72,8 +74,10 @@ This document will guide you on how to deploy DCE 5.0 on TencentOS Server 3.1, s
 
     !!! note
 
-        - TencentOS Server 3.1 belongs to the Redhat system family, so you need to define the `redhat_os_family_extensions` parameter in kubeanConfig.
-        - Run the following command to check the OS Family identifier for TencentOS Server 3.1. The output should be `TencentOS`.
+        - TencentOS Server 3.1 belongs to the Redhat system family, so you need to define the
+          `redhat_os_family_extensions` parameter in kubeanConfig.
+        - Run the following command to check the OS Family identifier for TencentOS Server 3.1.
+          The output should be `TencentOS`.
 
             ```bash
             export USER=root
@@ -93,10 +97,10 @@ This document will guide you on how to deploy DCE 5.0 on TencentOS Server 3.1, s
 
         Here are some parameter descriptions. For more parameters, you can use `./dce5-installer --help` to view:
 
-- `-z`: Minimize installation
-- `-c`: Specify the cluster configuration file. Not required when exposing the console using NodePort.
-- `-d`: Enable debug mode
-- `--serial`: Execute all installation tasks sequentially
+        - `-z`: Minimize installation
+        - `-c`: Specify the cluster configuration file. Not required when exposing the console using NodePort.
+        - `-d`: Enable debug mode
+        - `--serial`: Execute all installation tasks sequentially
 
 7. After the installation is complete, the command line will prompt a successful installation. Congratulations! :smile: Now you can explore the brand new DCE 5.0 using the default account and password (admin/changeme) provided in the URL shown on the screen.
 
