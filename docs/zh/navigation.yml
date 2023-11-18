@@ -283,12 +283,12 @@ nav:
                   - 删除实例: kairship/instance/delete.md
               - 多云工作集群: kairship/cluster.md
               - 多云工作负载:
-                  - 镜像创建多云 Deployment: kairship/workload/deployment.md
-                  - YAML 创建多云 Deployment: kairship/workload/yaml.md
-                  - 更新/删除多云 Deployment: kairship/workload/update-deployment.md
-                  - 一键升级为多云 Deployment: kairship/workload/promote.md
-                  - 镜像创建 Job: kairship/workload/job.md
-                  - 镜像创建 CronJob: kairship/workload/cronjob.md
+                  - 镜像创建多云工作负载: kairship/workload/deployment.md
+                  - YAML 创建多云工作负载: kairship/workload/yaml.md
+                  - 更新多云工作负载: kairship/workload/update-deployment.md
+                  - 一键升级为多云工作负载: kairship/workload/promote.md
+                  - 多云任务: kairship/workload/job.md
+                  - 多云定时任务: kairship/workload/cronjob.md
               - 多云自定义资源: kairship/crds/crd.md
               - 多云资源管理:
                   - 多云服务: kairship/resource/service.md
