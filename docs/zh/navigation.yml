@@ -480,6 +480,7 @@ nav:
                       - 数据卷迁移: storage/hwameistor/resources/migrate.md
                       - 数据卷扩容: storage/hwameistor/resources/expand.md
                       - 数据卷 IO 限速: storage/hwameistor/resources/volume-ProvisionedIO.md
+                  - 系统审计日志: storage/hwameistor/resources/audit.md
                   - 应用场景:
                       - 应用场景概述: storage/hwameistor/application/overview.md
                       - 部署有状态应用:
