@@ -26,7 +26,7 @@
 
 #### 修复
 
-- **修复**修 复了检查 kangaroo 的 project 绑定关系报错的 bug
+- **修复** 修复了检查 kangaroo 的 project 绑定关系报错的 bug
 - **修复** 创建 OAM 应用时对应控制面 ns 相关 bug
 - **修复** kubernetes cd 插件导致的 form git/jar deploy 错误
 - **修复** 不在审核名单中的用户也可以审核流水线的问题

@@ -79,14 +79,14 @@ error: unexpected error when reading response body. Please retry. Original error
         `registries` 关键字的值应该是完整的镜像仓库域名或 IP 地址，无需增加 `http` 或 `https` 前缀。
         如果镜像仓库使用非标准端口号，可以在地址后面加上冒号 `:` 和端口号。
 
-        ```toml
-        [registries]
+        ```
+        [[registry]]
         location = "registry.example.com:5000"
-        insecure=true
+        insecure = true
 
-        [registries]
+        [[registry]]
         location = "192.168.1.100:8080"
-        insecure=true
+        insecure = true
         ```
 
     另请参考 [Podman 官网指导文档](https://podman-desktop.io/docs/containers/registries/insecure-registry)。
