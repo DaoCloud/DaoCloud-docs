@@ -1,6 +1,6 @@
 # CloudTTY：A Kubernates Cloud Shell (Web Terminal) Operator
 
-cloudtty is an easy-to-use operator to run a web terminal and cloud shell intended for a kubernetes-native environment. You can easily open a terminal on your own browser via CloudTTY. The community is always open for any contributor and those who want to have a try.
+CloudTTY is an easy-to-use operator to run a web terminal and cloud shell intended for a kubernetes-native environment. You can easily open a terminal on your own browser via CloudTTY. The community is always open for any contributor and those who want to have a try.
 
 Literally, CloudTTY herein refers to a virtual console, shell, or terminal running on web and clouds. You can use it anywhere with an internet conneciton and it will be automatically connected to the cloud.
 
@@ -24,7 +24,7 @@ CloudTTY has been selected for inclusion in the CNCF Landscape:
 
 ## Use Cases
 
-cloudtty is applicable to the following cases:
+CloudTTY is applicable to the following cases:
 
 1. Many enterprises use a cloud platform to manage Kubernetes, but due to security reasons,
    you cannot use SSH to connect the node host to run `kubectl` commands.
