@@ -94,23 +94,33 @@
 
     ![网关域名认证服务器](../images/gateway-virtualhost-auth-plugin.png)
 
-3. 在网关下创建一个 API，`关联域名`填写刚才新创建的域名，匹配路径为 `/`，并开启`安全认证`，并将 API 上线。API 默认状态是应用域名的安全认证配置，也可以自定义插件的生效与否和附加参数。
+3. 在网关下创建一个 API，`关联域名`填写刚才新创建的域名，匹配路径为 `/`，并将 API 上线。API 默认状态是应用域名的安全认证配置，也可以自定义插件的生效与否和附加参数。
 
     ![网关 API 认证服务器](../images/gateway-api-auth-plugin.png)
 
 4. 现在即可通过认证服务器访问该 API 了。
 
-    - 访问 `/`，请求通过。
+    - 访问 `/`。
 
         ```bash
-        [root@node ~]# curl -H 'header: true' http://gateway.test:30000/
+        curl -H 'header: true' http://gateway.test:30000/
+        ```
+
+        访问结果如下，可以看到请求通过了。
+
+        ```bash
         adservice-springcloud: hello world!
         ```
 
-    - 访问 `/test1`，请求被拦截。
+    - 访问 `/test1`。
 
         ```bash
-        [root@node ~]# curl -H 'header: true' http://gateway.test:30000/test1
+        curl -H 'header: true' http://gateway.test:30000/test1
+        ```
+
+        访问结果如下，可以看到请求被拦截了。
+
+        ```bash
         No permission
         ```
 
@@ -124,22 +134,32 @@
 
     ![域名认证服务器](../images/virtualhost-auth-plugin.png)
 
-2. 在网关下创建一个 API，`关联域名`填写刚才新创建的域名，匹配路径为 `/`，并开启`安全认证`，并将 API 上线。API 默认状态是应用域名的安全认证配置，也可以自定义插件的生效与否和附加参数。
+2. 在网关下创建一个 API，`关联域名`填写刚才新创建的域名，匹配路径为 `/`，并将 API 上线。API 默认状态是应用域名的安全认证配置，也可以自定义插件的生效与否和附加参数。
 
     ![网关 API 认证服务器](../images/gateway-api-auth-plugin.png)
 
 3. 现在即可通过认证服务器访问该 API 了。
 
-    - 访问 `/`，请求通过。
+    - 访问 `/`。
 
         ```bash
-        [root@node ~]# curl -k -H 'header: true' https://gateway.test:30001/
+        curl -k -H 'header: true' https://gateway.test:30001/
+        ```
+
+        访问结果如下，可以看到请求通过了。
+
+        ```bash
         adservice-springcloud: hello world!
         ```
 
-    - 访问 `/test1`，请求被拦截。
+    - 访问 `/test1`。
 
         ```bash
-        [root@node ~]# curl -k -H 'header: true' https://gateway.test:30001/test1
+        curl -k -H 'header: true' https://gateway.test:30001/test1
+        ```
+
+        访问结果如下，可以看到请求被拦截了。
+
+        ```bash
         No permission
         ```

@@ -130,18 +130,18 @@ skoala-agent-54d4df7897-7p4pz                         1/1     Running     0     
 
 ??? note "网关相关 crd 清单"
 
-    contourconfigurations.projectcontour.io
-    contourdeployments.projectcontour.io
-    extensionservices.projectcontour.io
-    gatewayclasses.gateway.networking.k8s.io
-    gateways.gateway.networking.k8s.io
-    grpcroutes.gateway.networking.k8s.io
-    httpproxies.projectcontour.io
-    httproutes.gateway.networking.k8s.io
-    referencegrants.gateway.networking.k8s.io
-    tcproutes.gateway.networking.k8s.io
-    tlscertificatedelegations.projectcontour.io
-    tlsroutes.gateway.networking.k8s.io
+    contourconfigurations.projectcontour.io  
+    contourdeployments.projectcontour.io  
+    extensionservices.projectcontour.io  
+    gatewayclasses.gateway.networking.k8s.io  
+    gateways.gateway.networking.k8s.io  
+    grpcroutes.gateway.networking.k8s.io  
+    httpproxies.projectcontour.io  
+    httproutes.gateway.networking.k8s.io  
+    referencegrants.gateway.networking.k8s.io  
+    tcproutes.gateway.networking.k8s.io  
+    tlscertificatedelegations.projectcontour.io  
+    tlsroutes.gateway.networking.k8s.io  
     udproutes.gateway.networking.k8s.io
 
 ```bash
@@ -157,5 +157,5 @@ kubectl delete jobs gateway-api-admission gateway-api-admission-patch -n skoala-
 ### 手动清理网关相关 crd
 
 ```bash
-kubectl delete crds `kubectl get crds | grep -E "contour|gateway" | awk '{print $1}'`
+kubectl delete crds `kubectl get crds | grep -E "projectcontour.io|gateway.networking.k8s.io" | awk '{print $1}'`
 ```
