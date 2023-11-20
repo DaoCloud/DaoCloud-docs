@@ -516,6 +516,7 @@ nav:
               - 快速入门:
                   - 在指定集群内安装 virtnest-agent: virtnest/quick-start/index.md
                   - 创建虚拟机: virtnest/quick-start/create-image.md
+                  - 创建密钥: virtnest/quick-start/create-secret.md
                   - 通过模板创建虚拟机: virtnest/quick-start/create-tep.md
                   - 虚拟机模板: virtnest/quick-start/tep.md
                   - 连接虚拟机: virtnest/quick-start/access.md

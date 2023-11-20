@@ -61,15 +61,16 @@
     - HTTP类型：镜像存储于 HTTP 协议的文件服务器中，支持HTTPS://和HTTP://前缀；
     - 对象存储（S3）：支持通过对象存储协议(S3)获取的虚拟机镜像，若是无需认证的对象存储文件，请使用 HTTP 来源。
 
-- 目前可以使用以下的操作系统和版本。
+- 以下是平台内置的镜像信息。
 
     | 操作系统 |   对应版本   | 镜像地址                                                             |
     | :------: | :----------: | -------------------------------------------------------------------- |
-    |  CentOS  |  CentOS 8.3  | release-ci.daocloud.io/virtnest/system-images/centos-7.9-x86_64:v1   |
+    |  CentOS  |  CentOS 7.9  | release-ci.daocloud.io/virtnest/system-images/centos-7.9-x86_64:v1   |
     |  Ubuntu  | Ubuntu 22.04 | release-ci.daocloud.io/virtnest/system-images/ubuntu-22.04-x86_64:v1 |
     |  Debian  |  Debian 12   | release-ci.daocloud.io/virtnest/system-images/debian-12-x86_64:v1    |
 
-- CPU 配额、内存 配额：CPU 建议使用整数，若填写小数则会向上取整。
+- 镜像密钥：仅支持默认（Opaque）类型密钥，具体操作可参考[创建密钥](create-secret.md)。
+- 资源配置：CPU 建议使用整数，若填写小数则会向上取整。
 
 ### 存储与网络配置
 
