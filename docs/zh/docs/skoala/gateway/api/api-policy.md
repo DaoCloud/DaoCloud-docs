@@ -21,29 +21,29 @@ DCE 5.0 微服务网关支持十二种 API 策略：负载均衡、路径改写�
 当 API 的目标后端服务为多实例服务时，可以通过负载均衡策略控制流量分发，根据业务场景调整不同服务的实例接收到的流量。
 
 - 随机
-  
+
     默认的负载均衡策略。选择随机规则时，网关会将请求随机分发给后端服务的任意实例。在流量较小时，部分后端服务可能会负载较多。效果参考下图：
 
     ![负载均衡](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/lb-random.png)
 
 - 轮询
-  
+
     向后端服务的所有实例轮流分发请求，各个服务实例接收到的请求数基本相近。此规则可以在流量较小时保障流量的平均分配。效果参考下图：
 
     ![负载均衡](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/lb-rc.png)
 
 - 权重
-  
+
     根据 API 目标后端服务的权重分发流量，权重数值越大，优先级越高，承担的流量也相对较多。服务权重的配置入口见下图：
 
     ![负载均衡](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/lb-weight.png)
 
 - Cookie
-  
+
     将来源请求头中属于相同 Cookie 的流量分发到固定的后端服务实例，前提是后端服务能够根据 Cookie 做出不同的响应处理。
 
 - 请求 Hash
-  
+
     选择请求 Hash 时，可以通过一些高级策略来进负载均衡分配。当前支持的 Hash 策略为：IP、请求参数。
 
     ![负载均衡](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/lb.png)
@@ -94,7 +94,7 @@ DCE 5.0 微服务网关支持十二种 API 策略：负载均衡、路径改写�
 ## 请求头/响应头改写
 
 支持添加、修改、删除请求头和响应头及其对应的值。
-  
+
 - 增加请求头/响应头：使用`设置`动作，填写新的关键字和新值。
 - 修改请求头/响应头：使用`设置`动作，填写已有的关键字并赋予新值。
 - 移除请求头/响应头，使用`移除`动作，只填写需要移除的关键字即可，无需填写对应的值。
