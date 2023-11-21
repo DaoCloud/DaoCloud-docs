@@ -501,6 +501,7 @@ nav:
                       - 通过 Helm 部署 OpenEBS: storage/solutions/openebs-helm.md
                   - TiDB: storage/hwameistor/application/tidb.md
                   - MinIO: storage/hwameistor/application/minio/minio.md
+                  - Fluid: storage/solutions/fluid.md
               - 存储基本概念:
                   - Kubernetes 存储: storage/terms/k8s_storage.md
                   - CAS 存储: storage/terms/cas.md
