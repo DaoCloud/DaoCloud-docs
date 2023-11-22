@@ -17,8 +17,8 @@ hide:
 
 2. 点击右下角的登录，使用默认用户名、密码（admin/admin）进行登录。
 
-    ![登录 grafana](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/grafana02.png)
+    ![登录 grafana](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/grafana02.png){ width="1000px"}
 
 3. 点击 `Log in` 完成登录。
 
-    ![成功登录 grafana](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/grafana03.png)
+    ![成功登录 grafana](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/grafana03.png){ width="1000px"}

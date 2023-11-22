@@ -28,4 +28,4 @@
 - 拓扑图中发现异常应用后，通过调用链一键下钻，故障根因清晰可见。
 - 通过关联工作负载查询错误日志，快速解决故障。
 
-![安装采集器](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/scenerio02.png)
+![安装采集器](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/scenerio02.png){ width="700"}
