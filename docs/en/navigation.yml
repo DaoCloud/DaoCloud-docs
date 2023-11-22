@@ -949,6 +949,9 @@ nav:
               - Edge to Cloud Message:
                   - Overview: kant/user-guide/route/index.md
                   - Create Message Route: kant/user-guide/route/create-route.md
+              - Application Mesh:
+                  - Overview: kant/user-guide/edge-network/index.md
+                  - Deploy EdgeMesh: kant/user-guide/edge-network/deploy-edgemesh.md
       - Management:
           - Global Management:
               - Intro:

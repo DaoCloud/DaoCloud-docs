@@ -968,7 +968,7 @@ nav:
                   - 边云消息概述: kant/user-guide/route/index.md
                   - 创建消息路由: kant/user-guide/route/create-route.md
               - 应用网格:
-                  - 应用网格概述: kant/user-guide/edge-network/overview-network.md
+                  - 应用网格概述: kant/user-guide/edge-network/index.md
                   - 部署 edgemesh 应用: kant/user-guide/edge-network/deploy-edgemesh.md
       - 管理:
           - 全局管理:
