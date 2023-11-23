@@ -33,15 +33,15 @@
 
     参数说明：
 
-    - 名称：请填写 `argo-cd`，建议。
+    - 名称：请填写 `argocd`，建议。
     - 版本：默认选择为 `5.34.6`，addon 仓库目前仅有改版本。
-    - 命名空间：选择 `argocd-system`，建议。
+    - 命名空间：选择 `argocd`，建议。
 
     !!! note
 
         其余参数均使用默认值即可。
 
-4. 点击右下角确定按钮即可完成安装。可以查看 `argocd-system` 命名空间下的 argo-cd 相关的负载是否均处于 `运行中` 状态判断。
+4. 点击右下角确定按钮即可完成安装。可以查看 `argocd` 命名空间下的 argocd 相关的负载是否均处于 `运行中` 状态判断。
 
 5. 确认上述的负载成功部署后，在当前集群切换到 `amamba-system` 命名空间并点击左侧菜单栏的`配置项与密钥` -> `配置项`，搜索 `amamba-config`，点击`编辑 YAML`。
 
@@ -50,8 +50,8 @@
     ```yaml
     generic:
       argocd:
-        host: argo-cd-argocd-server.argocd-system.svc.cluster.local:80  # argocd的服务地址，格式为：argocd-server的服务名.命名空间.svc.cluster.local:80
-        namespace: argocd-system  # argocd安装的命名空间
+        host: argocd-server.argocd.svc.cluster.local:80  # argocd的服务地址，格式为：argocd-server的服务名.命名空间.svc.cluster.local:80
+        namespace: argocd  # argocd安装的命名空间
     ```
 
     ![argocd02](images/argocd02.png)
@@ -66,10 +66,10 @@ addon 中的 argo-cd 组件我们基于开源版本做了一些配置，主要�
 
 - 修改 helm template 中的 image 改为 registry:repository:tag 的三段式结构，可以通过 global.imageRegistry 来设置全局的仓库地址
 
-- 修改了 argocd 的下面两个configmap，用以鉴权，这部分直接安装 addon 中的 argocd 即可，不需要手动操作
+- 修改了 argo-cd 的下面两个 configmap，用以鉴权，这部分直接安装 addon 中的 argo-cd 即可，不需要手动操作
 
 ```shell
-[root@demo-dev-master1 ~]# kubectl get cm -n argocd-system argocd-cm -o yaml
+[root@demo-dev-master1 ~]# kubectl get cm -n argocd argocd-cm -o yaml
 apiVersion: v1
 data:
   accounts.amamba: apiKey
@@ -78,7 +78,7 @@ kind: ConfigMap
 metadata:
   name: argocd-cm
 
-[root@demo-dev-master1 ~]# kubectl get cm -n argocd-system argocd-rbac-cm -o yaml
+[root@demo-dev-master1 ~]# kubectl get cm -n argocd argocd-rbac-cm -o yaml
 apiVersion: v1
 data:
   policy.csv: |
