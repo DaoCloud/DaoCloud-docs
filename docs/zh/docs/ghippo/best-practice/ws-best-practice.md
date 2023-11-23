@@ -1,6 +1,7 @@
 # 工作空间最佳实践
 
-工作空间是一种资源分组单元，大多数资源都可以在工作空间下创建或手动绑定到某一个工作空间中。而工作空间通过授权和资源绑定，能够实现用户与角色的绑定关系，并一次性应用到工作空间的所有资源上。
+工作空间是一种资源分组单元，大多数资源都可以在工作空间下创建或手动绑定到某一个工作空间中。
+而工作空间通过授权和资源绑定，能够实现用户与角色的绑定关系，并一次性应用到工作空间的所有资源上。
 
 通过工作空间，可以轻松管理团队与资源，解决跨模块、跨集群的资源授权问题。
 
@@ -14,7 +15,7 @@
 
     最佳实践：普通用户想要使用应用工作台、微服务引擎、服务网格、中间件模块功能，或者需要拥有容器管理、服务网格中部分资源的使用权限时，需要管理员授予该工作空间的使用权限（Workspace Admin、Workspace Edit、Workspace View）。
     这里的管理员可以是 Admin 角色、该工作空间的 Workspace Admin 角色或该工作空间上层的 Folder Admin 角色。
-    查看 [Folder 与 Workspace 的关系](ws-folder.md)。
+    查看 [Folder 与 Workspace 的关系](../user-guide/workspace/ws-folder.md)。
 
 2. 资源组：资源组支持 Cluster、Cluster-Namespace (跨集群)、Mesh、Mesh-Namespace、Kairship、Kairship-Namespace 六种资源类型。
     一个资源只能绑定一个资源组，资源被绑定到资源组后，工作空间的所有者将拥有该资源的所有管理权限，相当于该资源的所有者，因此不受资源配额的限制。
@@ -46,7 +47,7 @@
 
 ## 工作空间对 DCE 各模块的作用
 
-1. 模块名称：[应用工作台](../../../amamba/intro/index.md)、[微服务引擎](../../../skoala/intro/index.md)、[中间件](../../../middleware/index.md)、[镜像仓库](../../../kangaroo/intro/index.md)、[云边协同](../../../kant/intro/index.md)
+1. 模块名称：[应用工作台](../../amamba/intro/index.md)、[微服务引擎](../../skoala/intro/index.md)、[中间件](../../middleware/index.md)、[镜像仓库](../../kangaroo/intro/index.md)、[云边协同](../../kant/intro/index.md)
 
     进入上述几个模块的前提是拥有某个工作空间的权限，因此在使用模块功能前必须具有 Admin 角色或者拥有某个工作空间的一定角色权限。
 
@@ -56,7 +57,7 @@
 
     另外，您在这些模块创建的资源也将自动被绑定到对应的工作空间中，而不需要其他额外的操作。
 
-2. 模块名称：[容器管理](../../../kpanda/intro/index.md)、[服务网格](../../../mspider/intro/index.md)、、[多云编排](../../../kariship/intro/index.md)
+2. 模块名称：[容器管理](../../kpanda/intro/index.md)、[服务网格](../../mspider/intro/index.md)、[多云编排](../../kairship/intro/index.md)
 
     由于功能模块的特殊性，在容器管理模块创建的资源不会自动被绑定到某个工作空间。
 

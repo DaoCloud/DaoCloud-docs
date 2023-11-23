@@ -9,11 +9,12 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 1. [定制外观](#_5)
 1. [打通权限体系（可选）](#_6)
 
-具体操作演示请参见：[OEM IN 最佳实践视频教程](../../videos/use-cases.md#dce-50_3)。
+具体操作演示请参见：[OEM IN 最佳实践视频教程](../../../videos/use-cases.md#dce-50_3)。
 
 !!! note
 
     以下使用两套 DCE 5.0 来做嵌套演示。实际场景需要自己解决客户系统的如下问题：
+
     1. 客户系统需要自己添加一个 subpath，用于区分哪些是 DCE 5.0 的服务，哪些是客户系统的服务。
     2. 提供客户系统的 jwksUri 发现地址（如果客户系统使用了 HTTP Headers Authorization 字段作为 TOKEN 校验）
     3. 提供客户系统的 TLS 证书（如果客户系统使用了 TLS，并且 TLS 证书是自签的）
@@ -364,14 +365,14 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
     DCE 5.0 支持通过写 CSS 的方式来实现外观定制。实际应用中客户系统如何实现外观定制需要根据实际情况处理。
 
 登录客户系统，通过`全局管理` -> `平台设置` -> `外观定制`可以自定义平台背景颜色、logo、名称等，
-具体操作请参照[外观定制](../user-guide/platform-setting/appearance.md)。
+具体操作请参照[外观定制](../../user-guide/platform-setting/appearance.md)。
 
 ## 打通权限体系（可选）
 
 **方案思路一：**
 
 定制化团队可实现一定制模块，DCE 5 将每一次的用户登录事件通过 Webhook 的方式通知到定制模块，
-定制模块可自行调用 AnyProduct 和 DCE 5.0 的 [OpenAPI](https://docs.daocloud.io/openapi/) 作该用户的权限信息同步。
+定制模块可自行调用 AnyProduct 和 DCE 5.0 的 [OpenAPI](https://docs.daocloud.io/openapi/index.html) 作该用户的权限信息同步。
 
 **方案思路二：**
 
@@ -379,7 +380,7 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 
 ### AnyProduct 使用 DCE 5.0 的其他能力(可选)
 
-方法为：调用 DCE 5.0 [OpenAPI](https://docs.daocloud.io/openapi/)
+方法为：调用 DCE 5.0 [OpenAPI](https://docs.daocloud.io/openapi/index.html)
 
 ## 参考资料
 

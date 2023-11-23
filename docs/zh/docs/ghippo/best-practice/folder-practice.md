@@ -23,7 +23,7 @@ hide:
 2. 用户身份管理
 
     文件夹提供了 Folder Admin、Folder Editor、Folder Viewer 三种角色。
-    [查看角色权限](../access-control/role.md)，可通过[授权](../access-control/role.md)给同一文件夹中的用户/用户组授予不同的角色。
+    [查看角色权限](../user-guide/access-control/role.md)，可通过[授权](../user-guide/access-control/role.md)给同一文件夹中的用户/用户组授予不同的角色。
 
 3. 角色权限映射
 

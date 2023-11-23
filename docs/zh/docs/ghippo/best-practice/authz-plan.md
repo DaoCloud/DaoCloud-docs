@@ -29,8 +29,8 @@ click authu "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-permission/
 
 授权后普通用户在各模块的权限为：
 
-- [应用工作台](../../permissions/amamba.md)
-- [微服务引擎](../..//permissions/skoala.md)
-- [服务网格](../../permissions/mspider.md)（需要重复 2 - 4 准备网格/网格命名空间并绑定到工作空间）
-- [可观测性](../../../insight/intro/permission.md)
-- [数据服务](../../permissions/mcamel.md)
+- [应用工作台](../permissions/amamba.md)
+- [微服务引擎](../permissions/skoala.md)
+- [服务网格](../permissions/mspider.md)（需要重复 2 - 4 准备网格/网格命名空间并绑定到工作空间）
+- [可观测性](../../insight/intro/permission.md)
+- [数据服务](../permissions/mcamel.md)

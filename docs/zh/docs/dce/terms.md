@@ -65,7 +65,7 @@
     API (即应用程序接口) 是计算机程序间交互的一种方式。
     就像人类可以通过网页与网站进行交互一样，API 允许计算机程序之间进行交互。
     与人类的交互不同，API 可以限制对方可以问什么和不能问什么。对交互的限制有助于在程序之间创建稳定、实用的信息传输。
-    我们提供了完善的 [OpenAPI 文档](https://docs.daocloud.io/openapi/)供第三方调用和开发。
+    我们提供了完善的 [OpenAPI 文档](https://docs.daocloud.io/openapi/index.html)供第三方调用和开发。
 
 - API-initiated eviction, API 发起的驱逐
 

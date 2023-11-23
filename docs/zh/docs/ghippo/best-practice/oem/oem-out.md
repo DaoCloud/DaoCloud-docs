@@ -9,7 +9,7 @@ OEM OUT 是指将 DCE 5.0 作为子模块接入其他产品，出现在其他产
 * [定制外观](#_4)
 * [打通权限体系(可选)](#_5)
 
-具体操作演示请参见 [OEM OUT 最佳实践视频教程](../../videos/use-cases.md#dce-50_2)。
+具体操作演示请参见 [OEM OUT 最佳实践视频教程](../../../videos/use-cases.md#dce-50_2)。
 
 ## 统一域名
 
@@ -48,7 +48,7 @@ OEM OUT 是指将 DCE 5.0 作为子模块接入其他产品，出现在其他产
     }
     ```
 
-1. 假设 Nginx 入口地址为 10.6.165.50，按[自定义 DCE 5.0 反向代理服务器地址](../install/reverse-proxy.md)把
+1. 假设 Nginx 入口地址为 10.6.165.50，按[自定义 DCE 5.0 反向代理服务器地址](../../install/reverse-proxy.md)把
    DCE_PROXY 反代设为 `http://10.6.165.50/dce5`。确保能够通过 `http://10.6.165.50/dce5` 访问 DCE 5.0。
    客户系统也需要进行反代设置，需要根据不同平台的情况进行处理。
   
@@ -74,7 +74,7 @@ OEM OUT 是指将 DCE 5.0 作为子模块接入其他产品，出现在其他产
 ## 定制外观
 
 通过`全局管理` -> `平台设置` -> `外观定制`可以自定义平台背景颜色、logo、名称等，
-具体操作请参照[外观定制](../user-guide/platform-setting/appearance.md)。
+具体操作请参照[外观定制](../../user-guide/platform-setting/appearance.md)。
 
 ## 打通权限体系（可选）
 
