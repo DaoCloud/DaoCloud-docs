@@ -36,7 +36,7 @@ Ghippo 0.15.0及以上版本。
 
 ### 部署 Ghippo keycloak plugin 步骤
 
-1. [把 Ghippo 升级到 0.15.0 或以上](../install/offline-install.md)。
+1. [把 Ghippo 升级到 0.15.0 或以上](../../install/offline-install.md)。
    您也可以直接安装部署 Ghippo 0.15.0 版本，但需要把以下信息手动记录下来。
 
     ```sh

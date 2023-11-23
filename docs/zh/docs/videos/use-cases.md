@@ -42,7 +42,7 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/oem-out.mp4" preload="metadata" poster="images/oem-out.png"></video>
 </div>
 
-更多细节请参阅 [OEM OUT 文档](../ghippo/oem/oem-out.md)。
+更多细节请参阅 [OEM OUT 文档](../ghippo/best-practice/oem/oem-out.md)。
 
 ## 将客户系统集成到 DCE 5.0（OEM IN）
 
@@ -50,7 +50,7 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/oemin-istio.mp4" preload="metadata" poster="images/oemin-istio.png"></video>
 </div>
 
-更多细节请参阅 [OEM IN 文档](../ghippo/oem/oem-in.md)。
+更多细节请参阅 [OEM IN 文档](../ghippo/best-practice/oem/oem-in.md)。
 
 ## 配置并使用 Underlay IP
 
