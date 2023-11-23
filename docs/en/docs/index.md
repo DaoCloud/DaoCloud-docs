@@ -163,7 +163,7 @@ day by day, making things better over time.
      and maintenance, management, and control on the Internet. Additionally, it realizes
      true integration of cloud and edge by bringing cloud native capabilities to the edge.
 
-    ![Cloud Edge Collaboration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/09cloud-edge.jpg)
+    ![Cloud Edge Collaboration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/09cloud-edge-update.png)
 
 === "Cloud Native Base"
 
