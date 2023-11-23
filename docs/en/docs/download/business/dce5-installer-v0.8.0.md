@@ -6,7 +6,7 @@ hide:
 
 # DCE 5.0 Enterprise v0.8.0
 
-This page provides offline installation packages and checksum files for DCE 5.0 Enterprise.
+This page provides offline packages and checksum files for DCE 5.0 Enterprise.
 
 [Return to Download Index](../index.md#download-enterprise-package){ .md-button }
 [More Historical Versions](./dce5-installer-history.md){ .md-button }
@@ -18,19 +18,19 @@ This page provides offline installation packages and checksum files for DCE 5.0 
 | offline-v0.8.0-amd64.tar | v0.8.0  | AMD64        | 18.43GB   | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.8.0-amd64.tar) | 2023-06-06 |
 | offline-v0.8.0-arm64.tar | v0.8.0  | ARM64        | 16.99GB   | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.8.0-arm64.tar) | 2023-06-06 |
 
-## Verification
+## Validation
 
-Enter the directory where the offline installation package is downloaded.
+Enter the directory where the offline package is downloaded.
 
 === "AMD64"
 
-    Run the following command to verify the installation package:
+    Run the following command to validate the offline package:
 
     ```sh
     echo "fbd3e646f5849406db1c221ab6956afd0e3dfd76e75394dfaeec06d2f2ec74934801cd7118c4bf2f51a3610dcb69fd7a010c613fcda3339abd20a1630029723e  offline-v0.8.0-amd64.tar" | sha512sum -c
     ```
 
-    If the verification is successful, it will print:
+    If the validation is successful, it will print:
 
     ```none
     offline-v0.8.0-amd64.tar: OK
@@ -38,13 +38,13 @@ Enter the directory where the offline installation package is downloaded.
 
 === "ARM64"
 
-    Run the following command to verify the installation package:
+    Run the following command to validate the offline package:
 
     ```sh
     echo "f2854f0a90c2db16b9c206708b140069a953b68a575ce59b1dc656f84cb47c42647697067582e28e16175f4bfbcfcdb6c14d79c3d999c7646f1c58c40f1b35cc  offline-v0.8.0-arm64.tar" | sha512sum -c
     ```
 
-    If the verification is successful, it will print:
+    If the validation is successful, it will print:
 
     ```none
     offline-v0.8.0-arm64.tar: OK
@@ -52,7 +52,7 @@ Enter the directory where the offline installation package is downloaded.
 
 ## Installation
 
-After verifying the offline package,
+After the offline package is validated,
 
 === "AMD64"
 
@@ -70,7 +70,7 @@ After verifying the offline package,
     tar -zxvf offline-v0.8.0-arm64.tar
     ```
 
-- For installation, please refer to [Enterprise Package Installation Process](../../install/commercial/start-install.md).
+- For installation, refer to [DCE 5.0 Enterprise Installation Process](../../install/commercial/start-install.md).
 - After successful installation, please contact us for authorization by email info@daocloud.io or call 400 002 6898.
 
 ## Modules

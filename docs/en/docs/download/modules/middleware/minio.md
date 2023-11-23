@@ -1,6 +1,6 @@
 # MinIO
 
-This page provides downloadable offline installation packages for various versions of MinIO.
+This page provides downloadable offline packages for various versions of MinIO.
 
 ## Download
 
@@ -8,15 +8,15 @@ This page provides downloadable offline installation packages for various versio
 |------------------------------------------------------------|--------------|-----------|---------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|-------------|
 | [v0.8.1](../../../middleware/minio/release-notes.md) | AMD 64       | 219.91MB  | [:arrow_down: minio_0.8.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/minio_0.8.1_amd64.tar) | [:arrow_down: minio_0.8.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/minio_0.8.1_amd64_checksum.sha512sum) | 2023-10-11   |
 
-## Verification
+## Validation
 
-To verify the integrity of the downloaded offline installation package and checksum file, run the following command in the directory where they are located:
+To validate the integrity of the downloaded offline package and checksum file, run the following command in the directory where they are located:
 
 ```sh
 echo "$(cat minio_0.8.1_amd64_checksum.sha512sum)" | sha512sum -c
 ```
 
-If the verification is successful, the printed result will be similar to:
+If the validation is successful, the printed result will be similar to:
 
 ```none
 minio_0.8.1_amd64.tar: OK

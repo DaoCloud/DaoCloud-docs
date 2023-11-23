@@ -4,11 +4,12 @@ hide:
   - toc
 ---
 
-# DCE Community Versions
+# DCE 5.0 Community Packages
 
-This page lists all the community packages released for DCE 5.0. You can choose to download as per your requirement.
+This page lists all packages released for DCE 5.0 Community.
+You can choose and download the one you need.
 
-| File Name | Version | Architecture | File Size | Downloads | Date Updated |
+| Filename | Version | Architecture | File Size | Downloads | Update Date |
 | ------- | --- | ---- | ------ | --- | ------- |
 | offline-community-v0.12.0-arm64.tar | v0.12.0 | ARM 64 | 5.65 GB | [:arrow_right: Go to Download](./dce5-installer-v0.12.0.md) | 2023-11-08 |
 | offline-community-v0.12.0-amd64.tar | v0.12.0 | AMD 64 | 6.03 GB | [:arrow_right: Go to Download](./dce5-installer-v0.12.0.md) | 2023-11-08 |

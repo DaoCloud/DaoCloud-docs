@@ -1,6 +1,6 @@
 # Cluster Inspection
 
-This page provides offline installation packages for different versions of the Cluster Inspection module.
+This page provides offline packages for different versions of the Cluster Inspection module.
 
 ## Download
 
@@ -9,16 +9,16 @@ This page provides offline installation packages for different versions of the C
 | [v0.5.0](../../kpanda/intro/release-notes.md) | AMD 64 | 216.64MB | [:arrow_down: kcollie_v0.5.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcollie_v0.5.0_amd64.tar) | [:arrow_down: kcollie_v0.5.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcollie_v0.5.0_amd64_checksum.sha512sum) | 2023-09-01 |
 | [v0.4.0](../../dce/dce-rn/20230731.md) | AMD64        | 205.11 MB    | [:arrow_down: kcollie_v0.4.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcollie_v0.4.0_amd64.tar) | [:arrow_down: kcollie_v0.4.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcollie_v0.4.0_amd64_checksum.sha512sum) | 2023-08-08   |
 
-## Verification
+## Validation
 
-To verify the integrity of the downloaded offline installation package and checksum file,
+To validate the integrity of the downloaded offline package and checksum file,
 take `v0.4.0_amd64` as an example, run the following command in the directory:
 
 ```sh
 echo "$(cat kcollie_v0.4.0_amd64_checksum.sha512sum)" | sha512sum -c
 ```
 
-If the verification is successful, the result will be similar to:
+If the validation is successful, the result will be similar to:
 
 ```none
 kcollie_v0.4.0_amd64.tar: ok
