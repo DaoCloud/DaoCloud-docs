@@ -32,22 +32,22 @@ to deploy it and use the continuous deployment capability provided by the Workbe
 1. In the DCE 5.0 product module, go to `Container Management` -> `Cluster List` and enter the details page of the `kpanda-global-cluster`.
 
 2. In the cluster details page, navigate to the menu on the left side and go to `Helm Apps` -> `Helm Charts`
-   -> select the `addon` repository. Search for `argo-cd`, click on it to enter the details page, and install it.
+   -> select the `All` repository. Search for `argo-cd`, click on it to enter the details page, and install it.
 
 3. On the installation interface, fill in the required installation parameters.
 
 
     Parameter descriptions:
 
-    - Name: Please enter `argo-cd`.
+    - Name: Please enter `argocd`.
     - Version: The default version is `5.34.6`, which is the only version available in the addon repository.
-    - Namespace: Select `argocd-system`.
+    - Namespace: Select `argocd`.
 
     !!! note
 
         You can use the default values for the rest of the parameters.
 
-4. Click the OK button at the bottom right to complete the installation. Confirm that the related argo-cd resources in the `argocd-system` namespace are all in the `Running` state.
+4. Click the OK button at the bottom right to complete the installation. Confirm that the related argo-cd resources in the `argocd` namespace are all in the `Running` state.
 
 5. After successfully deploying the resources mentioned above, go to the `Configurations & Secrets` -> `Configurations`
    menu on the left side of the current cluster details page. Search for `amamba-config` and click on `Edit YAML`.
@@ -57,8 +57,8 @@ to deploy it and use the continuous deployment capability provided by the Workbe
     ```yaml
     generic:
       argocd:
-        host: argocd-server.argocd-system.svc.cluster.local:80  # argo-cd server address, format: argocd-server service name.namespace.svc.cluster.local:80
-        namespace: argocd-system  # argo-cd deployment namespace
+        host: argocd-server.argocd.svc.cluster.local:80  # argocd server address, format: argocd-server service name.namespace.svc.cluster.local:80
+        namespace: argocd  # argocd deployment namespace
     ```
 
 7. After making the changes, go to the `Workloads` -> `Pods` menu on the left side of the current cluster details
@@ -76,7 +76,7 @@ For the argo-cd component in the addon, we made some configuration changes based
   the argo-cd component in the addon, and no manual operation is required.
 
 ```shell
-[root@demo-dev-master1 ~]# kubectl get cm -n argocd-system argocd-cm -o yaml
+[root@demo-dev-master1 ~]# kubectl get cm -n argocd argocd-cm -o yaml
 apiVersion: v1
 data:
   accounts.amamba: apiKey
@@ -85,7 +85,7 @@ kind: ConfigMap
 metadata:
   name: argocd-cm
 
-[root@demo-dev-master1 ~]# kubectl get cm -n argocd-system argocd-rbac-cm -o yaml
+[root@demo-dev-master1 ~]# kubectl get cm -n argocd argocd-rbac-cm -o yaml
 apiVersion: v1
 data:
   policy.csv: |
