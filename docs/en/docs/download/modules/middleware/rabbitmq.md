@@ -1,6 +1,6 @@
 # RabbitMQ
 
-This page allows you to download offline installation packages for different versions of RabbitMQ.
+This page allows you to download offline packages for different versions of RabbitMQ.
 
 ## Download
 
@@ -8,15 +8,15 @@ This page allows you to download offline installation packages for different ver
 |------------------------------------------------------------| ----- |-------- |---------------------------------------------------------------------------------------------------------------------------------| ---------- |------------|
 | [v0.13.1](../../../middleware/rabbitmq/release-notes.md)      | AMD 64 | 296.23MB | [:arrow_down: rabbitmq_0.13.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/rabbitmq_0.13.1_amd64.tar) | [:arrow_down: rabbitmq_0.13.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/rabbitmq_0.13.1_amd64_checksum.sha512sum) | 2023-10-10 |
 
-## Verification
+## Validation
 
-In the directory where you downloaded the offline installation package and checksum file, run the following command to verify the integrity:
+In the directory where you downloaded the offline package and checksum file, run the following command to validate the integrity:
 
 ```sh
 echo "$(cat rabbitmq_0.13.1_amd64_checksum.sha512sum)" | sha512sum -c
 ```
 
-Upon successful verification, the output will be similar to:
+Upon successful validation, the output will be similar to:
 
 ```none
 rabbitmq_0.13.1_amd64.tar: OK

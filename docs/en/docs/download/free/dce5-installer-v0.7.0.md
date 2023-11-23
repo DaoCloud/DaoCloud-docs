@@ -4,27 +4,27 @@ hide:
   - navigation
 ---
 
-# DCE Community v0.7.0
+# DCE 5.0 Community v0.7.0
 
-This page can download the offline installation package and verification file of DCE Community.
+This page allows you to download the offline package and checksum file of DCE 5.0 Community.
 
 [Return to Download Index](../index.md){ .md-button }
 [More Historical Versions](./dce5-installer-history.md){ .md-button }
 
 ## Download
 
-| File Name | Version | Architecture | File Size | Downloads | Date Updated |
+| Filename | Version | Architecture | File Size | Downloads | Update Date |
 | ----------------------------- | ------- | -------- | -- ----------------------------------------------- | ----- ----- | -------------------------------- |
 | offline-community-v0.7.0-amd64.tar | v0.7.0 | AMD64 | 5.96GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.7.0-amd64.tar) | 2023-05-09 |
 | offline-community-v0.7.0-arm64.tar | v0.7.0 | ARM64 | 5.60GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.7.0-arm64.tar) | 2023-05-09 |
 
-## Verification
+## Validation
 
-Go to the download directory of the offline installation package.
+Go to the download directory of the offline package.
 
 === "AMD64"
 
-     run the following command to verify the installation package:
+     run the following command to validate the offline package:
 
      ```sh
      echo "e80596e138a932d0d28101440ae22fbb319f048ad92043507e0202696ebc4a39717e65cbc12b6a6c02f5c9eb8c9fe7d027f381f037b6ae5dc1c21af00106e 2b7 offline-community-v0.7.0-amd64.tar" | sha512sum -c
@@ -38,7 +38,7 @@ Go to the download directory of the offline installation package.
 
 === "ARM64"
 
-     run the following command to verify the installation package:
+     run the following command to validate the offline package:
 
      ```sh
      echo "3f68086d55ba413473eb3abae5756779ef22bc264950d0a3ef21714977463e3ac7fa01a574a0488f3a547fc6a2c9d0b979e1e3a02c9632b222f879c5e0a32b 78 offline-community-v0.7.0-arm64.tar" | sha512sum -c
@@ -50,9 +50,9 @@ Go to the download directory of the offline installation package.
      offline-community-v0.7.0-arm64.tar: OK
      ```
 
-## Install
+## Installation
 
-After successfully verifying the offline package,
+After the offline package has been successfully validated,
 
 === "AMD64"
 
@@ -70,12 +70,12 @@ After successfully verifying the offline package,
      tar -zxvf offline-community-v0.7.0-arm64.tar
      ```
 
-- For installation, please refer to [DCE Community Installation Process](../../install/community/k8s/online.md#_2)
+- For installation, refer to [DCE 5.0 Community Installation Process](../../install/community/k8s/online.md#_2)
 - After successful installation, please [Free Trial](../../dce/license0.md)
 
 ## Modules
 
-DCE Community includes the following modules by default:
+DCE 5.0 Community includes the following modules by default:
 
 | Modules | Introduction | What's New |
 | -------- | ----------------------------------------- ------------------------- | ------------------------ ------------------------------------- |

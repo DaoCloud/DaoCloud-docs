@@ -6,25 +6,25 @@ hide:
 
 # DCE 5.0 Enterprise v0.6.0
 
-This page can download the offline installation package and verification file of DCE 5.0 Enterprise.
+This page allows you to download the offline package and checksum file of DCE 5.0 Enterprise.
 
 [Return to Download Index](../index.md#download-enterprise-package){ .md-button }
 [More Historical Versions](./dce5-installer-history.md){ .md-button }
 
 ## Download
 
-| File Name | Version | Architecture | File Size | Downloads | Date Updated |
+| Filename | Version | Architecture | File Size | Downloads | Update Date |
 | ----------------------------- | ------- | -------- | -- ----------------------------------------------- | ----- ----- | -------------------------------- |
 | offline-v0.6.0-amd64.tar | v0.6.0 | AMD64 | 16.36GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.0-amd64.tar) | 2023-04-07 |
 | offline-v0.6.0-arm64.tar | v0.6.0 | ARM64 | 15.12GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.0-arm64.tar) | 2023-04-07 |
 
-## Verification
+## Validation
 
-Go to the download directory of the offline installation package.
+Go to the download directory of the offline package.
 
 === "AMD64"
 
-    run the following command to verify the installation package:
+    run the following command to validate the offline package:
 
     ```sh
     echo "4e810a67268f8e0125a486018c3da8e8165d16cd0206d6d6e0560773caf8983cfe2b0827692e3ac6efbd26345c0bbfed58139ff01affd96d525b59f7967cec5d9 offline. var0-var1" sum -c
@@ -38,7 +38,7 @@ Go to the download directory of the offline installation package.
 
 === "ARM64"
 
-    run the following command to verify the installation package:
+    run the following command to validate the offline package:
 
     ```sh
     echo "4c778c6aad168e19bdffec234c5096795b6b7cfa9c5d17c9d9e64cb7ddc526263d6f0d863c631e2e4cc5d205866f29a69d9a38c92b8c751af0ed1db25304ba7d4.offline-varm0" um -c
@@ -50,9 +50,9 @@ Go to the download directory of the offline installation package.
     offline-v0.6.0-arm64.tar: OK
     ```
 
-## Install
+## Installation
 
-After successfully verifying the offline package,
+After the offline package has been successfully validated,
 
 === "AMD64"
 
@@ -70,13 +70,13 @@ After successfully verifying the offline package,
     tar -zxvf offline-v0.6.0-arm64.tar
     ```
 
-- For installation, please refer to [Enterprise Package installation process](../../install/commercial/start-install.md)
+- For installation, refer to [DCE 5.0 Enterprise Installation Process](../../install/commercial/start-install.md)
 - After successful installation, please contact us for authorization: email info@daocloud.io or call 400 002 6898
 
 ## Modules
 
 
-The DCE 5.0 Enterprise includes the following modules, which are plug-and-play on-demand to meet various use cases:
+The DCE 5.0 Enterprise includes the following modules, which are plug-and-play to meet various use cases:
 
 
 | Modules | Introduction | What's New |

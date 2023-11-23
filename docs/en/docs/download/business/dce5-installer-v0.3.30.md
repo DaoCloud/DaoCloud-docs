@@ -6,25 +6,25 @@ hide:
 
 # DCE 5.0 Enterprise v0.3.30
 
-This page can download the offline installation package and verification file of DCE 5.0 Enterprise.
+This page allows you to download the offline package and checksum file of DCE 5.0 Enterprise.
 
 [Return to Download Index](../index.md#download-enterprise-package){ .md-button }
 [More Historical Versions](./dce5-installer-history.md){ .md-button }
 
 ## Download
 
-| File Name | Version | Architecture | File Size | Downloads | Date Updated |
+| Filename | Version | Architecture | File Size | Downloads | Update Date |
 | ----------------------------- | ------- | -------- | -- ----------------------------------------------- | ----- ----- | -------------------------------- |
 | offline-centos7-v0.3.30-amd64.tar | v0.3.30 | AMD64 | 16.33GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-v0.3.30-amd64.tar) | 2023-01-03 |
 | offline-kylin-v10sp2-v0.3.30-arm64.tar | v0.3.30 | ARM64 | 14.96GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-kylin-v10sp2-v0.3.30-arm64.tar) | 2023-01-03 |
 
-## Verification
+## Validation
 
-Go to the download directory of the offline installation package.
+Go to the download directory of the offline package.
 
 === "AMD64"
 
-     run the following command to verify the installation package:
+     run the following command to validate the offline package:
 
      ```sh
      echo "08ccfce8e3f551e82bdb89f26d0e9bb9b0f40e02cd5bcd0db8662c70d22932f24b2958ab3ea71e0ec497d8ad75a1cc134cdd24eabbfe9003c3c120c83d4d0417 offline-cent os7-v0.3.30-amd64.tar" | sha512sum -c
@@ -38,7 +38,7 @@ Go to the download directory of the offline installation package.
 
 === "ARM64"
 
-     run the following command to verify the installation package:
+     run the following command to validate the offline package:
 
      ```sh
      echo "a970526876754b763d8cc3df32ac522075ad2e08989a9bbad08b3a9be75366be6208f6e8d2865ee05c07291545373ef045bfc6fb31179df1ad2140b2b8741998 offline-kylin-v10sp2-v0.3.30-arm64.tar" | sha512sum -c
@@ -50,9 +50,9 @@ Go to the download directory of the offline installation package.
      offline-kylin-v10sp2-v0.3.30-arm64.tar: OK
      ```
 
-## Install
+## Installation
 
-After successfully verifying the offline package,
+After the offline package has been successfully validated,
 
 === "AMD64"
 
@@ -70,12 +70,12 @@ After successfully verifying the offline package,
      tar -zxvf offline-kylin-v10sp2-v0.3.30-arm64.tar
      ```
 
-- For installation, please refer to [Enterprise Package installation process](../../install/commercial/start-install.md)
+- For installation, refer to [DCE 5.0 Enterprise Installation Process](../../install/commercial/start-install.md)
 - After successful installation, please contact us for authorization: email info@daocloud.io or call 400 002 6898
 
 ## Modules
 
-The DCE 5.0 Enterprise includes the following modules, which are plug-and-play on-demand to meet various use cases:
+The DCE 5.0 Enterprise includes the following modules, which are plug-and-play to meet various use cases:
 
 | Modules | Introduction | What's New |
 | -------------------- | ---------------------------- ----------------------------------------------- | ----- -------------------------------------------------- ------ |

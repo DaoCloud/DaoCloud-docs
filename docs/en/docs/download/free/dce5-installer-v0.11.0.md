@@ -6,7 +6,7 @@ hide:
 
 # DCE 5.0 Community v0.11.0
 
-This page provides downloads for the offline installation package and verification files of DCE 5.0 Community.
+This page provides downloads for the offline package and checksum files of DCE 5.0 Community.
 
 [Return to Download Index](../index.md){ .md-button }
 [More Historical Versions](./dce5-installer-history.md){ .md-button }
@@ -18,19 +18,19 @@ This page provides downloads for the offline installation package and verificati
 | offline-community-v0.11.0-amd64.tar     | v0.11.0  | AMD64        | 6.03 GB    | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.11.0-amd64.tar) | 2023-09-08 |
 | offline-community-v0.11.0-arm64.tar     | v0.11.0  | ARM64        | 5.65 GB    | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.11.0-arm64.tar) | 2023-09-08 |
 
-## Verification
+## Validation
 
-Navigate to the download directory of the offline installation package.
+Navigate to the download directory of the offline package.
 
 === "AMD64"
 
-    Run the following command to verify the installation package:
+    Run the following command to validate the offline package:
 
     ```sh
     echo "54326e5b62cd7bb2711904adff5d2128e647dcd0993ae7109645889d3c923a8c590ae6d1623a85e846e9a0acf7f0149936c686a1544f7b933d4444b33916d876  offline-community-v0.11.0-amd64.tar" | sha512sum -c
     ```
 
-    If the verification is successful, it will print:
+    If the validation is successful, it will print:
 
     ```none
     offline-community-v0.11.0-amd64.tar: OK
@@ -38,13 +38,13 @@ Navigate to the download directory of the offline installation package.
 
 === "ARM64"
 
-    Run the following command to verify the installation package:
+    Run the following command to validate the offline package:
 
     ```sh
     echo "25b7688637e57eea4488386a28f9357601ff53f497f439808a34a91e02ba2ceb8f7b92a74fd7184602efdb853e81472f8de7b53a04f9a93903f0131a4acac1be  offline-community-v0.11.0-arm64.tar" | sha512sum -c
     ```
 
-    If the verification is successful, it will print:
+    If the validation is successful, it will print:
 
     ```none
     offline-community-v0.11.0-arm64.tar: OK
@@ -52,7 +52,7 @@ Navigate to the download directory of the offline installation package.
 
 ## Installation
 
-After successfully verifying the offline package,
+After the offline package has been successfully validated,
 
 === "AMD64"
 
@@ -70,7 +70,7 @@ After successfully verifying the offline package,
     tar -zxvf offline-community-v0.11.0-arm64.tar
     ```
 
-- For installation instructions, please refer to [DCE 5.0 Community Installation](../../install/community/k8s/online.md#_2)
+- For installation instructions, refer to [DCE 5.0 Community Installation](../../install/community/k8s/online.md#_2)
 - After successful installation, please apply for a [Free Community Experience](../../dce/license0.md)
 
 ## Modules

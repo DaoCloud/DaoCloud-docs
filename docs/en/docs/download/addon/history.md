@@ -6,12 +6,13 @@ hide:
 
 # Addon Historical Versions
 
-This page lists all the Addon offline installation packages released for DCE 5.0. You can choose and download the one you need.
+This page lists all the Addon offline packages released for DCE 5.0.
+You can choose and download the one you need.
 
 | Filename | Version | Architecture | File Size | Download | Update Date |
 | ------- | --- | ---- | ------ | --- | ------- |
-| addon-offline-full-package-v0.12.0-arm64.tar.gz | v0.12.0 | ARM 64 | 13.08 GB | [:arrow_right: 下载页](./v0.12.0.md) | 2023-11-14 |
-| addon-offline-full-package-v0.12.0-amd64.tar.gz | v0.12.0 | AMD 64 | 24.23 GB | [:arrow_right: 下载页](./v0.12.0.md) | 2023-11-14 |
+| addon-offline-full-package-v0.12.0-arm64.tar.gz | v0.12.0 | ARM 64 | 13.08 GB | [:arrow_right: Go to Download](./v0.12.0.md) | 2023-11-14 |
+| addon-offline-full-package-v0.12.0-amd64.tar.gz | v0.12.0 | AMD 64 | 24.23 GB | [:arrow_right: Go to Download](./v0.12.0.md) | 2023-11-14 |
 | addon-offline-full-package-v0.11.0-arm64.tar.gz | v0.11.0 | ARM 64 | 11.4 GB | [:arrow_right: Go to Download](./v0.11.0.md) | 2023-09-22 |
 | addon-offline-full-package-v0.11.0-amd64.tar.gz | v0.11.0 | AMD 64 | 18.4 GB | [:arrow_right: Go to Download](./v0.11.0.md) | 2023-09-22 |
 | addon-offline-full-package-v0.10.0-arm64.tar.gz | v0.10.0 | ARM 64 | 11.1 GB | [:arrow_right: Go to Download](./v0.10.0.md) | 2023-09-22 |

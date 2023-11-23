@@ -1,6 +1,6 @@
 # PostgreSQL
 
-This page provides downloadable offline installation packages for various versions of PostgreSQL.
+This page provides downloadable offline packages for various versions of PostgreSQL.
 
 ## Download
 
@@ -8,15 +8,15 @@ This page provides downloadable offline installation packages for various versio
 |------------------------------------------------------------| ------------- |-------- |---------------------------------------------------------------------------------------------------------------------------------| ---------- |------------|
 | [v0.5.1](../../../middleware/postgresql/release-notes.md)     | AMD 64 | 296.23MB | [:arrow_down: postgresql_0.5.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/postgresql_0.5.1_amd64.tar) | [:arrow_down: postgresql_0.5.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/postgresql_0.5.1_amd64_checksum.sha512sum) | 2023-10-10 |
 
-## Verification
+## Validation
 
-To verify the integrity of the downloaded offline installation package and checksum file, run the following command in the directory:
+To validate the integrity of the downloaded offline package and checksum file, run the following command in the directory:
 
 ```sh
 echo "$(cat postgresql_0.5.1_amd64_checksum.sha512sum)" | sha512sum -c
 ```
 
-If the verification is successful, the printed result will be similar to:
+If the validation is successful, the printed result will be similar to:
 
 ```none
 postgresql_0.5.1_amd64.tar: OK
