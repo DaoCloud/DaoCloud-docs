@@ -90,3 +90,19 @@
 !!! warning
 
     删除后的告警策略将完全消失，请谨慎操作。
+
+## 通过 YAML 导入告警策略
+
+1. 进入告警策略列表，点击 `YAML 创建`。
+
+   - 集群、命名空间的选择是为了告警策略的管理权限。
+   - YAML 编辑器中请填写 `spec`及其中的内容，仅支持导入一个 group。
+   - `告警规则名称` 需要符合规范：名称只能包含大小写字母、数字、下划线（_）和连字符（-），必须以字母开头，最长 63 个字符。
+   - 必填 `severity`且符合规范：critical、warning、info。
+   - 必填表达式 `expr`。
+
+    ![yaml 创建](../../images/create-from-yaml.png){ width=1000px}
+
+2. 导入 YAML 文件后，点击`预览`，可以对导入的 YAML 格式进行验证，并快速确认导入的告警规则。
+
+    ![yaml 创建](../../images/create-from-yaml01.png){ width=1000px}
