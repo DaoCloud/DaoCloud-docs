@@ -5,7 +5,7 @@ hide:
 
 # Docking navigation bar
 
-Take container management (codename `kpanda`) as an example, docking to the navigation bar.
+Take container management (dev-code `kpanda`) as an example, docking to the navigation bar.
 
 The expected effect after docking is as follows:
 
