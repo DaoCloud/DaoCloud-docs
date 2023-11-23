@@ -21,7 +21,7 @@ spec:
   localizedName: # 定义分类的中英文名称
     zh-CN: 管理管理
     en-US: Management
-  order: 100 # 排序，数字越小，越靠上
+  order: 100 # 排序，数字越大，越靠上
 ```
 
 编写好 yaml文件后，通过执行如下命令后，刷新页面即可看到新增、修改的导航栏分类。
@@ -34,7 +34,7 @@ kubectl apply -f xxx.yaml
 
 ![导航栏菜单](../../images/nav02.png)
 
-若需要新增或重新排序导航栏分类可以通过新增 navigator yaml 实现。
+若需要新增或重新排序导航栏一级菜单可以通过新增 navigator yaml 实现。
 
 !!! note
 
@@ -55,7 +55,8 @@ spec:
     zh-CN: 运营管理
     en-US: Operations Management
   url: ./gmagpie
-  parentGProduct: ghippo # 可选, 若添加该字段，则会忽视掉menus字段，并将该菜单作为二级菜单插入到与gproduct为ghippo的一级菜单中
+  category: management # 与parentGProduct二选一，用于区分一级菜单还是二级菜单，与NavigatorCategory的spec.name字段对应来完成匹配，也可以与NavigatorCategory的中文名称匹配
+  parentGProduct: ghippo # 与category二选一，用于区分一级菜单还是二级菜单, 若添加该字段，则会忽视掉menus字段，并将该菜单作为二级菜单插入到与gproduct为ghippo的一级菜单中
   menus: # 二级菜单
     - name: Access Control
       iconUrl: ./ui/ghippo/menus/access-control.svg
@@ -88,5 +89,5 @@ spec:
   gproduct: gmagpie # 定义菜单的标志，用于和parentGProduct字段联动，实现父子关系。
   visible: true # 设置该菜单是否可见，默认为true
   isCustom: true # 该字段必须为true
-  order: 20 # 排序，数字越小，越靠上
+  order: 20 # 排序，数字越大，越靠上
 ```
