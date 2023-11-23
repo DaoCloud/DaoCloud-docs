@@ -45,7 +45,7 @@ The numerous modules included in DCE 5.0 can be downloaded separately to upgrade
 | ------------------------ | --------- | ----------------------------------------------------- | ----------- |
 | Container Management     | 2.41 GB   | [:arrow_right: Go to Download](./modules/ghippo.md)    | 2023-11-14  |
 | Cluster Inspection       | 205.11 MB | [:arrow_right: Go to Download](./modules/kcollie.md)   | 2023-08-08  |
-| Application Backup       | 59.29 MB  | [:arrow_right: Go to Download](./modules/kcoral.md)    | 2023-08-08  |
+| Application Backup       | 59.38 MB  | [:arrow_right: Go to Download](./modules/kcoral.md)    | 2023-11-07  |
 | Security Management      | 163 MB    | [:arrow_right: Go to Download](./modules/dowl.md)      | 2023-08-25  |
 | Network Module           | 55.47 MB  | [:arrow_right: Go to Download](./modules/spidernet.md) | 2023-04-26  |
 | Storage Module           | 1.62 GB   | [:arrow_right: Go to Download](./modules/hwameistor.md) | 2023-11-06 |
