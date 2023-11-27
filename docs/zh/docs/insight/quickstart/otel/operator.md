@@ -1,6 +1,6 @@
 # 通过 Operator 实现应用程序无侵入增强
 
-> 目前只有 Java、NodeJs、Python、.Net 支持 Operator 的方式无侵入接入，Golang 后续会完善。
+> 目前只有 Java、NodeJs、Python、.Net、Golang 支持 Operator 的方式无侵入接入。
 
 ## 前提条件
 
@@ -337,6 +337,16 @@ EOF
         ```bash
         instrumentation.opentelemetry.io/inject-dotnet: "insight-system/insight-opentelemetry-autoinstrumentation"
         ```
+
+!!! tip
+
+    opentelemetry operator 在注入探针时会自动添加一些 OTEL 相关环境变量，同时也支持这些环境变量的覆盖。这些环境变量的覆盖优先级：
+
+    original container env vars > language specific env vars > common env vars > instrument spec configs' vars.
+
+    但是需要避免手动覆盖 OTEL_RESOURCE_ATTRIBUTES_NODE_NAME, 它在 operator 内部作为一个 Pod 是否已经注入探针的标识，如果手动
+    添加了，探针可能无法注入。
+
 
 ## 自动注入示例 Demo
 
