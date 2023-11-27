@@ -25,7 +25,7 @@
 5. 参考下列说明填写模板参数，然后点击`确定`。
 
     - 代码仓库地址：远程代码仓库的地址，必填
-    - 分支：基于哪个分支的代码构建流水线，必填
+    - 分支：基于哪个分支的代码构建流水线，默认是main
     - 凭证：如果是私有仓库，需要提前[创建凭证](../credential.md)并在此处选择该凭证
     - 测试命令：单元测试命令
 
@@ -33,10 +33,10 @@
         > 如果使用 Nodejs 模板，则测试命令默认为 `npm test`
         > 如果使用 Maven 模板，则测试命令默认为 `mvn -B test -Dmaven.test.failure.ignore=true`
 
-    - 测试报告位置：测试报告所在的位置，并进行分析生成测试报告
-    - Dockerfile 路径：Dockerfile 文件在代码仓库中的绝对路径，必填
+    - 测试报告位置：测试报告所在的位置，并进行分析生成测试报告，默认是`./target/***`
+    - Dockerfile 路径：Dockerfile 文件在代码仓库中的绝对路径，默认是`Dockerfile`
     - 目标镜像地址：输入镜像仓库名称，必填
-    - tag：为运行此流水线后新生成的镜像添加 tag
+    - tag：为运行此流水线后新生成的镜像添加 tag，默认是`latest`
     - 像仓库凭证：访问镜像仓库的凭证。如果是私有仓库，需要提前[创建凭证](../credential.md)并在此处选择该凭证
 
         ![golang](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/golang.png)
