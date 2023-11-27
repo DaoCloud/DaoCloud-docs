@@ -1011,6 +1011,7 @@ nav:
                   - K8s审计日志采集开关: ghippo/user-guide/audit/open-audit.md
                   - K8s审计日志输出开关: ghippo/user-guide/audit/open-k8s-audit.md
                   - 下载和导出审计日志: ghippo/user-guide/audit/audit-log.md
+                  - 获取审计日志源IP: ghippo/user-guide/audit/source-ip.md
               - 运营管理:
                   - ghippo/user-guide/report-billing/index.md
                   - 报表管理: ghippo/user-guide/report-billing/report.md
