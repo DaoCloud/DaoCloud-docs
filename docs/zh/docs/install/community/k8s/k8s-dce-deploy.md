@@ -1,15 +1,4 @@
----
-layout: post
-tagline: ""
-description: ""
-category: Kubernetes
-tags: []
-last_updated: 
----
-
-# 保姆式安装 DCE 5.0 社区版
-
-作者：[Peter Pan](https://github.com/panpan0000), [SAMZONG](https://github.com/SAMZONG)
+# 从零部署 K8s 集群到安装 DCE 5.0 社区版
 
 本文在 3 个节点的集群中完成了从 0 到 1 的 DCE 5.0 社区版安装，包含了 K8s 集群、依赖项、网络、存储等细节及更多注意事项。
 
@@ -103,9 +92,14 @@ last_updated:
 1. 安装依赖
 
     ```bash
+    sudo cd /etc/yum.repos.d/
+    sudo mkdir bak
+    sudo mv CentOS-*.repo ./bak
+    sudo curl -o CentOS-base.repo http://mirrors.aliyun.com/repo/Centos-8.repo
+    sudo yum clean all
     sudo yum install -y yum-utils device-mapper-persistent-data lvm2
     ```
-  
+
 1. 安装 containerd，可以用二进制也可以用 yum 包（yum 是 docker 社区维护的，本例中使用 yum 包）
 
     ```bash
@@ -133,7 +127,7 @@ last_updated:
     sudo systemctl enable containerd
     ```
 
-1. 安装 CNI
+1. 安装 CNI（可选）
 
     ```bash
     curl -JLO https://github.com/containernetworking/plugins/releases/download/v1.2.0/cni-plugins-linux-amd64-v1.2.0.tgz
@@ -240,21 +234,22 @@ last_updated:
 
     【请以官方安装方案为准。参考[官方 Calico 安装文档](https://docs.tigera.io/calico/latest/getting-started/kubernetes/self-managed-onprem/onpremises#install-calico)】
 
-    1. 先安装 calico-operator
+    1. 下载 Calico 的部署清单文件:
 
         ```bash
-        kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/tigera-operator.yaml
+        wget https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/calico.yaml
         ```
 
-    1. 再下发经过修改/配置过的 CR
+    1. 使用以下命令加速镜像拉取:
 
         ```bash
-        # 下载配置文件模板
-        curl -LO https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/custom-resources.yaml
-        grep cidr custom-resources.yaml #打印出默认的CIDR
-        # 请确认 calico 配置文件里的 CIDR 和之前 kubeadm init 时的 CIDR 是一致的！！！否则请修改!!!⚠️ 
-        vim custom-resources.yaml
-        kubectl apply -f custom-resources.yaml
+        sed -i 's?docker.io?docker.m.daocloud.io?g' calico.yaml
+        ```
+
+    1. 使用以下命令安装 Calico:
+
+        ```bash
+        kubectl apply -f calico.yaml
         ```
 
     1. 等待部署成功
@@ -318,7 +313,7 @@ bash install_prerequisite.sh online community
 ### 下载 dce5-installer
 
 ```bash
-export VERSION=v0.5.0
+export VERSION=v0.13.0
 curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
 chmod +x ./dce5-installer 
 ```

@@ -1,4 +1,4 @@
-# 新手尝鲜在线安装 DCE 5.0 社区版
+# 从零部署 Kind 集群到安装 DCE 5.0 社区版
 
 本页说明如何使用 kind 集群实现新手尝鲜在线安装 DCE 5.0 社区版。
 
@@ -162,10 +162,10 @@ precheck pass..
 
 1. 在 kind 主机下载 dce5-installer 二进制文件。
 
-    假定 VERSION 为 v0.12.0
+    假定 VERSION 为 v0.13.0
 
     ```shell
-    export VERSION=v0.12.0
+    export VERSION=v0.13.0
     curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer
     ```
