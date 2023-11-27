@@ -39,7 +39,7 @@
     - tag：为运行此流水线后新生成的镜像添加 tag，默认是`latest`
     - 像仓库凭证：访问镜像仓库的凭证。如果是私有仓库，需要提前[创建凭证](../credential.md)并在此处选择该凭证
 
-        ![golang](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/golang.png)
+        ![golang](../../images/golang.png)
 
 6. 完成创建后，可以在流水线列表查看新建的流水线。在流水线右侧点击更多操作按钮，可以进行执行、编辑、复制流水线等操作。
 
