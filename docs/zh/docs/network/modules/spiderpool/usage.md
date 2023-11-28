@@ -34,7 +34,7 @@ hide:
 
     - `网卡信息`: 若创建的应用容器需要使用多张网卡（如一张东西向通信，一张南北向通信），可以添加多网卡。
 
-        - eth0（默认网卡）：默认为 Overlay CNI，可选 Calico/Cilium/Macvlan CR，设置前请确认[Multus CR 已创建](../../config/multus-cr.md)。当 eth0（默认网卡）设置为 Macvlan 网络时，net1，net2 等新增网卡只能选择 Macvlan 网络。
+        - eth0（默认网卡）：默认为 Overlay CNI，可选 Calico/Cilium/Macvlan CR，设置前请确认[Multus CR 已创建](../../config/multus-cr.md)。当 eth0（默认网卡）设置为 Underlay CNI，如 Macvlan 时，net1，net2 等新增网卡只能选择 Underlay CNI。
 
         - net1: 可选择 Underlay CNI 配置，如 Macvlan/SR-IOV ，本文示例为 Macvlan。
 
