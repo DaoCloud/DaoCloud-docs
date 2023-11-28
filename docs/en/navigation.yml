@@ -245,9 +245,9 @@ nav:
                   - Ascend GPU:
                       - Use Ascend GPU: kpanda/user-guide/gpu/Ascend_usage.md
                       - Huawei Ascend NPU Quick Start Guide: kpanda/user-guide/gpu/ascend_quickstart.md
-                  - Iluvatar GPU:
-                      - Use Iluvatar GPU: kpanda/user-guide/gpu/Iluvatar_usage.md
+                  - Iluvatar GPU: kpanda/user-guide/gpu/Iluvatar_usage.md
                   - GPU Quota Management: kpanda/user-guide/gpu/vgpu_quota.md
+                  - GPU Metrics: kpanda/user-guide/gpu/gpu-metrics.md
               - Best Practices:
                   - Backup and Restore ETCD: kpanda/best-practice/etcd-backup.md
                   - Cross-cluster Backup and Restore of MySQL Apps and Data: kpanda/best-practice/backup-mysql-on-nfs.md
