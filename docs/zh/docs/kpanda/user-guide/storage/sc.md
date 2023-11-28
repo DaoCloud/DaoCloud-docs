@@ -50,6 +50,10 @@
     - 回收策略：删除数据卷时，保留数据卷中的数据或者删除其中的数据。
     - 快照/扩容：开启后，基于该存储池的数据卷/数据卷声明才能支持扩容和快照功能，但 **前提是底层使用的存储驱动支持快照和扩容功能**。
 
+    !!! note
+
+        目前 Hwameistor xfs、ext4 两种文件系统，其中默认使用的是 xfs 文件系统，如果想要替换为 ext4，可以在自定义参数添加 `csi.storage.k8s.io/fstype: ext4` 
+
     ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/sc04.jpg)
 
 ## 更新存储池(SC)
