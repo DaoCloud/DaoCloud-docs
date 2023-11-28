@@ -27,10 +27,10 @@ git commit --amend --no-edit
 提交 PR 后提示 rebase，先按顺序运行以下命令：
 
 ```bash
-git checkout master
+git checkout main
 git pull -r
 git checkout yourbranch
-git rebase master
+git rebase main
 ```
 
 屏幕上会提示有冲突的文件，手动解决所列文件内的所有冲突后，运行以下命令：
