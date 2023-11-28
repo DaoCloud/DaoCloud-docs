@@ -8,13 +8,13 @@
 
 ## Spiderpool 针对阿里云存在的局限性提供的解决方案
 
-Spiderpool 有节点拓扑、解决 MAC 地址合法性、对接基于 `spec.externalTrafficPolicy` 为 Local 模式的 service 等功能。Spiderpool 能基于 IPVlan Underlay CNI 运行在公有云环境上，它的实现原理如下：
+Spiderpool 的节点拓扑功能可以将 IPPool 与每个节点的每个网卡的可用 IP 形成绑定，同时还具备解决 MAC 地址合法性等功能。
+
+Spiderpool 能基于 IPVlan Underlay CNI 在阿里云环境上运行，并保证集群的东西向与南北向流量均正常，它的实现原理如下：
 
 1. 公有云下使用 Underlay 网络，但公有云的每个云服务器的每张网卡只能分配有限的 IP 地址，当应用运行在某个云服务器上时，需要同步获取到 VPC 网络中分配给该云服务器不同网卡的合法 IP 地址，才能实现通信。根据上述分配 IP 的特点，Spiderpool 的 CRD：`SpiderIPPool` 可以设置 nodeName，multusName 实现节点拓扑的功能，通过 IP 池与节点、IPvlan Multus 配置的亲和性，能最大化的利用与管理节点可用的 IP 地址，给应用分配到合法的 IP 地址，让应用在 VPC 网络内自由通信，包括 Pod 与 Pod 通信，Pod 与云服务器通信等。
 
 2. 公有云的 VPC 网络中，处于网络安全管控和数据包转发的原理，当网络数据报文中出现 VPC 网络未知的 MAC 和 IP 地址时，它无法得到正确的转发。例如，基于 Macvlan 和 OVS 原理的 Underlay CNI 插件，Pod 网卡中的 MAC 地址是新生成的，会导致 Pod 无法通信。针对该问题，Spiderpool 可搭配 [IPVlan](https://www.cni.dev/plugins/current/main/ipvlan/) CNI 进行解决。IPVlan 基于三层网络，无需依赖二层广播，并且不会重新生成 Mac 地址，与父接口保持一致，因此通过 IPvlan 可以解决公有云中关于 MAC 地址合法性的问题。
-
-3. 在 service 将 `.spec.externalTrafficPolicy` 设置为 `Local`，可以保留客户端源 IP ，但公有云自建集群在这种模式下使用平台的 Loadbalancer 组件进行 nodePort 转发时，会出现访问不通。针对该问题 Spiderpool 提供了 coordinator 插件，该插件通过 iptables 在数据包中打标记，确认从 veth0 进入的数据的回复包仍从 veth0 转发，进而解决在该模式下 nodeport 访问不通的问题。
 
 ## 实施要求
 
@@ -29,6 +29,9 @@ Spiderpool 有节点拓扑、解决 MAC 地址合法性、对接基于 `spec.ext
 - 准备一个阿里云环境，给虚拟机分配 2 个网卡，每张网卡均分配一些辅助私网 IP，如图：
 
     ![alicloud-web-network](../../images/alicloud-network-web.png)
+
+    > - 实例（虚拟机）是能够为您的业务提供计算服务的最小单位，不同的实例规格可创建网卡数和每张网卡可分配的辅助 IP 数存在差异，根据业务场景和使用场景，参考阿里云[实例规格族](https://help.aliyun.com/zh/ecs/user-guide/overview-of-instance-families#concept-sx4-lxv-tdb)选择对应规格进行创建实例。
+    > - 如果有 IPv6 的需求，可以参考阿里云[配置 IPv6 地址](https://help.aliyun.com/zh/ecs/user-guide/configure-ipv6-addresses/?spm=a2c4g.11186623.0.0.21ee48beYHt7ZW)。
 
 - 使用上述配置的虚拟机，搭建一套 Kubernetes 集群，节点的可用 IP 及集群网络拓扑图如下：
 
@@ -48,11 +51,13 @@ helm install spiderpool spiderpool/spiderpool --namespace kube-system --set ipam
 
 !!! note
 
+    - 如果您的集群未安装 IPVlan, 你可以通过指定 Helm 参数 `--set plugins.installCNI=true` 安装 IPVlan。
+
     - 如果您使用的是中国大陆的云厂商服务器，可以指定参数 `--set global.imageRegistryOverride=ghcr.m.daocloud.io` ，以帮助您更快的拉取镜像。
 
     - Spiderpool 可以为控制器类型为：`Statefulset` 的应用副本固定 IP 地址。在公有云的 Underlay 网络场景中，云主机只能使用限定的 IP 地址，当 StatefulSet 类型的应用副本漂移到其他节点，但由于原固定的 IP 在其他节点是非法不可用的，新的 Pod 将出现网络不可用的问题。对此场景，将 `ipam.enableStatefulSet` 设置为 `false`，禁用该功能。
 
-    - 通过 `multus.multusCNI.defaultCniCRName` 指定集群的 Multus clusterNetwork，clusterNetwork 是 Multus 插件的一个特定字段，用于指定 Pod 的默认网络接口。
+    - 通过 `multus.multusCNI.defaultCniCRName` 指定 multus 默认使用的 CNI 的 NetworkAttachmentDefinition 实例名。如果 `multus.multusCNI.defaultCniCRName` 选项不为空，则安装后会自动生成一个数据为空的 NetworkAttachmentDefinition 对应实例。如果 `multus.multusCNI.defaultCniCRName` 选项为空，会尝试通过 /etc/cni/net.d 目录下的第一个 CNI 配置来创建对应的 NetworkAttachmentDefinition 实例，否则会自动生成一个名为 `default` 的 NetworkAttachmentDefinition 实例，以完成 multus 的安装。
 
 ### 安装 CNI 配置
 
@@ -376,6 +381,23 @@ worker-192   4         192.168.0.0/24    1                    5                t
     Server: bfe/1.0.8.18
     ```
 
+- 如果希望通过 IPv6 地址实现集群内 Pod 的流量出口访问，你需要通过 IPv6 网关，为 Pod 所分配到的 IPv6 地址 `开通公网带宽`，将私网 IPv6 转换为公网 IPv6 地址。配置如下。
+
+    ![alicloud-ipv6-natgateway](../../images/alicloud-ipv6-gateway.png)
+
+    测试 IPv6 访问如下：
+
+    ```bash
+    ~# kubectl exec -ti test-app-2-qbhwx -- ping -6 aliyun.com -c 2
+    PING aliyun.com (2401:b180:1:60::6): 56 data bytes
+    64 bytes from 2401:b180:1:60::6: seq=0 ttl=96 time=6.058 ms
+    64 bytes from 2401:b180:1:60::6: seq=1 ttl=96 time=6.079 ms
+
+    --- aliyun.com ping statistics ---
+    2 packets transmitted, 2 packets received, 0% packet loss
+    round-trip min/avg/max = 6.058/6.068/6.079 ms
+    ```
+
 #### 负载均衡流量入口访问
 
 ##### 部署 Cloud Controller Manager
@@ -389,13 +411,15 @@ CCM（Cloud Controller Manager）是阿里云提供的一个用于 Kubernetes �
     ```bash
     ~# META_EP=http://100.100.100.200/latest/meta-data
     ~# provider_id=`curl -s $META_EP/region-id`.`curl -s $META_EP/instance-id`
+    ~# echo $provider_id
+    cn-hangzhou.i-bp17345hor9*******
     ```
 
     在集群的 `master` 节点通过 `kubectl patch` 命令为集群中的 `每个节点` 补充各自的 `providerID`，该步骤必须被执行，否则对应节点的 CCM Pod 将无法运行。
 
     ```bash
     ~# kubectl get nodes
-    ~# kubectl patch node ${NODE_NAME} -p '{"spec":{"providerID": "${provider_id}"}}'
+    ~# kubectl patch node <NODE_NAME> -p '{"spec":{"providerID": "<provider_id>"}}' # 将 <NODE_NAME> 与 <provider_id> 替换为对应值。
     ```
 
 2. 创建阿里云的 RAM 用户，并授权。
@@ -464,7 +488,7 @@ CCM（Cloud Controller Manager）是阿里云提供的一个用于 Kubernetes �
 
 - `service.beta.kubernetes.io/alibaba-cloud-loadbalancer-protocol-port`：CCM 提供的创建七层负载均衡注解。可以通过它自定义暴露端口。更多用法参考 [CCM 使用文档](https://github.com/kubernetes/cloud-provider-alibaba-cloud/blob/master/docs/usage.md) 。
 
-- `.spec.externalTrafficPolicy`：表示此 Service 是否希望将外部流量路由到节点本地或集群范围的端点。它有两个可用选项：Cluster（默认）和 Local。将`.spec.externalTrafficPolicy` 设置为 `Local`，可以保留客户端源 IP。
+- `.spec.externalTrafficPolicy`：表示此 Service 是否希望将外部流量路由到节点本地或集群范围的端点。它有两个可用选项：Cluster（默认）和 Local。将`.spec.externalTrafficPolicy` 设置为 `Local`，可以保留客户端源 IP，但公有云自建集群在这种模式下使用平台的 Loadbalancer 组件进行 nodePort 转发时，会出现访问不通。针对该问题 Spiderpool 提供了 coordinator 插件，该插件通过 iptables 在数据包中打标记，确认从 veth0 进入的数据的回复包仍从 veth0 转发，进而解决在该模式下 nodeport 访问不通的问题。
 
 ```bash
 ~# cat <<EOF | kubectl apply -f -
@@ -543,6 +567,17 @@ Connection: keep-alive
 Last-Modified: Tue, 13 Jun 2023 15:08:10 GMT
 ETag: "6488865a-267"
 Accept-Ranges: bytes
+```
+
+> 阿里云的 CCM 实现负载均衡流量的入口访问时，其不支持后端 `service` 的 `spec.ipFamilies` 设置为 IPv6 。
+
+```bash
+~# kubectl describe svc lb-ipv6
+...
+Events:
+  Type     Reason                  Age                   From            Message
+  ----     ------                  ----                  ----            -------
+  Warning  SyncLoadBalancerFailed  3m5s (x37 over 159m)  nlb-controller  Error syncing load balancer [nlb-rddqbe6gnp9jil4i15]: Message: code: 400, The operation is not allowed because of ServerGroupNotSupportIpv6.
 ```
 
 ## 总结
