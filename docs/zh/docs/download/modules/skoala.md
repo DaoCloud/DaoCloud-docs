@@ -6,6 +6,7 @@
 
 | 版本                                                   | 架构 | 文件大小 | 安装包                                                                                                     |  校验文件 | 更新日期   |
 | ------------------------------------------------------ | ----- |-------- | ---------------------------------------------------------------------------------------------------------- | ---------- | ---------- |
+| [v0.29.0](../../skoala/intro/release-notes.md) | AMD 64 | 1.34GB | [:arrow_down: skoala_v0.29.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/skoala_v0.29.0_amd64.tar) | [:arrow_down: skoala_v0.29.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/skoala_v0.29.0_amd64_checksum.sha512sum) | 2023-11-27 |
 | [v0.28.1](../../skoala/intro/release-notes.md) | AMD 64 | 1.34GB | [:arrow_down: skoala_v0.28.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/skoala_v0.28.1_amd64.tar) | [:arrow_down: skoala_v0.28.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/skoala_v0.28.1_amd64_checksum.sha512sum) | 2023-11-01 |
 | [v0.28.0](../../skoala/intro/release-notes.md) | AMD 64 | 1.33 GB | [:arrow_down: skoala_v0.28.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/skoala_v0.28.0_amd64.tar) | [:arrow_down: skoala_v0.28.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/skoala_v0.28.0_amd64_checksum.sha512sum) | 2023-10-27 |
 
