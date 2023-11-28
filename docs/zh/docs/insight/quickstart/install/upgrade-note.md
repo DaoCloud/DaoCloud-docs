@@ -63,21 +63,6 @@ kubectl apply --server-side -f https://raw.githubusercontent.com/VictoriaMetrics
 
 ## insight-agent
 
-### 从 v0.21.x（或更低版本）升级到 v0.22.x
-
-在 v0.22.x 中将 opentelemetry-operator chart 从 0.37.1 升级到 0.43.0。其中 opentelemetry-operator 添加了新的 CRD, 因此需要在升级 insight agent 前执行如下命令：
-```shell
-kubectl apply -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-helm-charts/opentelemetry-operator-0.43.0/charts/opentelemetry-operator/crds/crd-opentelemetry.io_opampbridges.yaml
-```
-
-!!! note
-
-    如您是离线安装，可以在解压 insight-agent 离线包后，执行以下命令更新 CRD。
-    
-    ```shell
-    kubectl apply -f insight-agent/charts/opentelemetry-operator/crds/crd-opentelemetry.io_opampbridges.yaml
-    ```
-
 ### 从 0.19.x（或更低版本）升级到 v0.20.x
 
 由于 0.20.x 中增加了 Kafka 日志导出配置，日志导出配置做了一些调整。升级 `insight-agent` 之前需要注意参数变化，即原来 logging 的配置已经移到了配置中 logging.elasticsearch：
