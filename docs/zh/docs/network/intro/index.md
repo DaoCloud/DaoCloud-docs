@@ -23,7 +23,7 @@ DCE 5.0 云原生网络基于多个开源技术构建，不仅提供单个 CNI �
     > 在此方案组合中，Cilium 为必备的网络 CNI。
 
 4. 通过 MacVLAN / SRIOV / IPVLAN CNI 提供对外访问 IP，实现 Pod 二层对外通信能力。
-搭配 Calico 动态虚拟网络，降低网络运维难度，并节省 IP 资源。
+搭配 Cilium 动态虚拟网络，降低网络运维难度，并节省 IP 资源。
 
     > 如果在应用落地场景中没有对外访问需求，可以不安装 Underlay CNI。
 
