@@ -52,7 +52,7 @@ cat > clusterb-cidr.yaml <<EOF
   apiVersion: projectcalico.org/v3
   kind: IPPool
   metadata:
-    name: clusterB-pod-cidr
+    name: clusterA-pod-cidr
   spec:
     cidr: 10.244.64.0/18
     natOutgoing: false
@@ -63,7 +63,7 @@ cat > podwestcluster.yaml <<EOF
   apiVersion: projectcalico.org/v3
   kind: IPPool
   metadata:
-    name: clusterB-service-cidr
+    name: clusterA-service-cidr
   spec:
     cidr: 10.244.0.0/18
     natOutgoing: false
