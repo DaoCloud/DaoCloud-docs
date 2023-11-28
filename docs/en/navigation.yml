@@ -991,6 +991,7 @@ nav:
                   - Enable/Disable Collection of K8s Audit Logs: ghippo/user-guide/audit/open-audit.md
                   - Enable/Disable Output of K8s Audit Logs: ghippo/user-guide/audit/open-k8s-audit.md
                   - Download and Export: ghippo/user-guide/audit/audit-log.md
+                  - Get Source IP in Audit Logs: ghippo/user-guide/audit/source-ip.md
               - Operations Management:
                   - ghippo/user-guide/report-billing/index.md
                   - Reports: ghippo/user-guide/report-billing/report.md
