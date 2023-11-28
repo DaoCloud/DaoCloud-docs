@@ -815,6 +815,7 @@ nav:
                       - 查看 MySQL 日志: middleware/mysql/user-guide/logs.md
                   - 最佳实践:
                       - MySQL 跨集群同步: middleware/mysql/best-practice/crossclusterssync.md
+                      - MySQL 归档方案: middleware/mysql/best-practice/mysql-pt-archiver.md
                   - 故障排查:
                       - MySQL 健康检查: middleware/mysql/faq/quick-check.md
                       - MySQL Pod: middleware/mysql/faq/faq-pod.md
@@ -920,6 +921,11 @@ nav:
                       - 基本概念: middleware/rocketmq/intro/concepts.md
                       - 离线升级 RocketMQ: middleware/rocketmq/intro/offline-install.md
                       - Release Notes: middleware/rocketmq/release-notes.md
+                  - 快速入门:
+                      - 创建 RocketMQ 实例: middleware/rocketmq/quick-start/create-rocketmq.md
+                      - 更新 RocketMQ 实例: middleware/rocketmq/quick-start/update-rocketmq.md
+                  - 最佳实践: 
+                      - RocketMQ 跨集群高可用: middleware/rocketmq/best-pratice/singleclustercrosszone.md
               - MinIO 对象存储:
                   - 介绍:
                       - 什么是 MinIO: middleware/minio/intro/index.md
