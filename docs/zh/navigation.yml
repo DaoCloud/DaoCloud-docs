@@ -383,6 +383,7 @@ nav:
                   - 常用命令: network/modules/spiderpool/command.md
                   - 公有云适配:
                       - 在阿里云环境运行: network/modules/spiderpool/alibabacloud.md
+                      - 在 AWS 环境运行: network/modules/spiderpool/awscloud.md
               - 集成 sriov-network-operator:
                   - 介绍: network/modules/sriov-network-operator/index.md
                   - 安装: network/modules/sriov-network-operator/install.md
