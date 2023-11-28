@@ -72,4 +72,12 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/alicloud.mp4" preload="metadata" poster="images/net-spiderpool.jpeg"></video>
 </div>
 
+## 自建集群安装 EgressGateway
+
+参阅[自建集群安装 EgressGateway](https://spidernet-io.github.io/egressgateway/dev/zh/usage/Install/#egressgateway_1)文档页面。
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/egress-gw.mp4" preload="metadata" poster="images/egress.jpg"></video>
+</div>
+
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
