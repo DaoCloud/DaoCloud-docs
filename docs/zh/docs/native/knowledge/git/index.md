@@ -22,9 +22,13 @@
 
 ### 网页直接修改
 
-这种方式适合只改一个文件的小幅修改。
+这种方式仅适合改 1 个文件的小幅修改。
 
 1. 在任何一个网页上点击编辑图标。
+
+    !!! tip
+
+        K8s 和 Istio 网站都有类似的按钮，比如 `Edit this page`、`Edit this page on GitHub`。
 
     ![点击图标按钮](../images/local01.png)
 
@@ -61,7 +65,8 @@
 
 !!! tip
 
-    目前免费的 Codespace 只能留存 4 小时的数据。
+    - 目前免费的 Codespace 貌似只能留存 1 小时的数据。
+    - 提了 PR 只是一个开始，Reviewer 可能会给出许多 comment，要记得及时去修改。
 
 ## Git 本地编写 (For Author)
 
@@ -115,14 +120,14 @@
 
     ![review 列表](../images/review2.png)
 
-1. 如果对某句话有不同想法，可以直接添加 comments。
+1. 如果对某句话有不同想法，可以直接添加 comment。
 
     ![添加注释](../images/review3.png)
 
     - 建议点击 `Add a suggestion` 图标后进行修改，这样 PR 作者可以清晰看到评审建议。
     - 写好 comment 后，点击 `Start a review` 按钮，继续看其他字句，全部看完以后统一 `Submit review`
 
-1. PR 作者修复所有问题后，运行以下命令覆盖原来的提交。
+1. PR 作者收到 comment 后，要及时去修复，最后运行以下命令覆盖原来的提交。
 
     ```git
     git add .
