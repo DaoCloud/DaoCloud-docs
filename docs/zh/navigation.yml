@@ -1201,9 +1201,8 @@ nav:
           - 电子书: native/knowledge/ebooks.md
           - Git:
               - Git 文档流程: native/knowledge/git/index.md
-              - Git 代理设置: native/knowledge/git/proxy.md
-              - GitHub 混迹技巧: native/knowledge/git/github.md
               - 开启两步安全验证: native/knowledge/git/2auth.md
               - Git 常见问题: native/knowledge/git/rebase.md
               - UI 翻译预览: native/knowledge/git/ui-preview.md
+              - GitHub 混迹技巧: native/knowledge/git/github.md
           - 其他: native/knowledge/other.md
