@@ -12,10 +12,13 @@
 - [VScode](https://code.visualstudio.com/)，推荐，常用的 Markdown 编辑器
 - [Typora](https://macwk.com/soft/typora)，可选，可以粘贴网页的图表文字，转换成 markdown 格式
 
-学习资料：
+参考资料：
 
 - [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/reference/)：
   这是 DCE 5.0 文档站的编译器帮助手册
+- [Issues](https://github.com/DaoCloud/DaoCloud-docs/issues)：目前文档站存在的一些问题
+- [Discussions](https://github.com/DaoCloud/DaoCloud-docs/discussions)：
+  类似于 Issue 频道，也列出了一些文档站的问题
 
 ## Git 云端编写 (For Author)
 
