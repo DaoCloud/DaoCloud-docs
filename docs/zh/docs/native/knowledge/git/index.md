@@ -2,11 +2,12 @@
 
 本页简要说明一些通用的 Git 文档编写、评审、翻译流程和技巧。
 
-## 工具
+## 前提条件
 
-预先安装几个工具：
+- [科学上网 🪜](./proxy.md)：这是走出去的第一步
 
-- [科学上网 🪜](./proxy.md)
+在本地编辑时，需要预先安装几个工具（云端编辑无需安装）：
+
 - [Git](https://git-scm.com/downloads)，必需，装完才能支持各种 Git 命令
 - [VScode](https://code.visualstudio.com/)，推荐，常用的 Markdown 编辑器
 - [Typora](https://macwk.com/soft/typora)，可选，可以粘贴网页的图表文字，转换成 markdown 格式
@@ -14,11 +15,11 @@
 学习资料：
 
 - [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/reference/)：
-  这是整个文档站的编译软件帮助手册
+  这是 DCE 5.0 文档站的编译器帮助手册
 
 ## Git 云端编写 (For Author)
 
-如今云无处不在，只要能连通互联网，就可以在线编辑，无需在本地安装上述工具。
+如今云无处不在，只要能连通互联网，就可以在线编辑，无需在本地构建环境和安装工具。
 
 ### 网页直接修改
 
