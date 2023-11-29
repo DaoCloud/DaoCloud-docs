@@ -1,6 +1,8 @@
-# 道客写作风格指南
+# DaoCloud 写作风格指南
 
-本风格指南适用于道客文本。
+[English Style Guide](./style.md) | 中文
+
+本风格指南适用于 DaoCloud 所有文档。
 
 ## 目录
 
@@ -64,7 +66,7 @@
 
 #### 良好示例 1
 
-运行如下命令以检查当前的 Pods：
+运行如下命令以检查当前的 Pod：
 
 ```sh
 kubectl get pods
@@ -83,8 +85,8 @@ piraeus-csi-node-q6nn7                    3/3     Running   1 (17d ago)   20d
 
 #### 良好示例 2
 
-您需要确保一些YAML文件的缩进全部正确，并在开头附上代码符号。
-参考 [yaml.org](https://yaml.org/)
+您需要确保一些 YAML 文件的缩进全部正确，并在开头附上代码符号。
+参考 [yaml.org](https://yaml.org/)。
 
 ```yaml
 apiVersion: batch/v1
@@ -105,7 +107,7 @@ spec:
 
 ### 列表
 
-DCE 5.0网站使用 Mkdocs 编译和构建，构建列表需要使用4个空格。
+DCE 5.0 网站使用 Mkdocs 编译和构建，构建列表需要使用 4 个空格。
 
 以下是列表写作提示:
 
@@ -114,68 +116,60 @@ DCE 5.0网站使用 Mkdocs 编译和构建，构建列表需要使用4个空格�
 - 没有顺序的功能、优点等，请使用无序列表。
 
 ```none
-1. 有序列表1
-
-    - 无序列表1
-        - 下级无序列表(1)
-        - 下级无序列表(2)
-    - 无序列表2
-
-1. 有序列表2
-
-    1. 嵌套列表1
-        1. 嵌套列表(1)
-        1. 嵌套列表(2)
-    1. 嵌套列表2
-
-1. 有序列表3
+1. 有序列表 1
+    - 无序列表 1
+        - 下级无序列表 (1)
+        - 下级无序列表 (2)
+    - 无序列表 2
+1. 有序列表 2
+    1. 嵌套列表 1
+        1. 嵌套列表 (1)
+        1. 嵌套列表 (2)
+    1. 嵌套列表 2
+1. 有序列表 3
 ```
 
 输出为:
 
-1. 有序列表1
+1. 有序列表 1
+    - 无序列表 1
+        - 下级无序列表 (1)
+        - 下级无序列表 (2)
+    - 无序列表 2
+1. 有序列表 2
+    1. 嵌套列表 1
+        1. 嵌套列表 (1)
+        1. 嵌套列表 (2)
+    1. 嵌套列表 2
+1. 有序列表 3
 
-    - 无序列表1
-        - 下级无序列表(1)
-        - 下级无序列表(2)
-    - 无序列表2
-
-1. 有序列表2
-
-    1. 嵌套列表1
-        1. 嵌套列表(1)
-        1. 嵌套列表(2)
-    1. 嵌套列表2
-
-1. 有序列表3
-
-参考 [MkDocs 列表](https://squidfunk.github.io/mkdocs-material/reference/lists/#using-unordered-lists)
+参考 [MkDocs 列表](https://squidfunk.github.io/mkdocs-material/reference/lists/#using-unordered-lists)。
 
 ### 表格
 
 数据表是为了呈现表格数据。
 
-DCE文档是使用markdown编写的。 不建议使用表格，但很难避免。
+DCE 文档是使用 markdown 编写的。 不建议使用表格，但很难避免。
 使用表格时，表格不能缩进，否则将丢失表格样式。
 建议将所有参数表放在一个页面中。
 
 此外，表格可以轻松显示比较，例如：
 
 ```none
-| 这样做                      | 不要做                         |
+| 建议                      | 不建议                         |
 | --------------------------- | -------------------------------|
 | 创建 ReplicaSet，           |为了创建 ReplicaSet，           |
 | 查看配置文件。              | 请查看配置文件。                |
-| 查看 pods。                 | 用下面的命令，我们将查看 pods。 |
+| 查看 Pod。                 | 用下面的命令，我们将查看 pods。 |
 ```
 
 输出为：
 
-| 这样做                          | 不要做                                    |
+| 建议                          | 不建议                                    |
 | --------------------------- | -------------------------------------------- |
 | 创建 ReplicaSet，            |为了创建 ReplicaSet，|
 | 查看配置文件。 | 请查看配置文件。          |
-| 查看 pods。             | 用下面的命令，我们将查看 pods。 |
+| 查看 Pod。             | 用下面的命令，我们将查看 pods。 |
 
 参考 [MkDocs 表格](https://squidfunk.github.io/mkdocs-material/reference/data-tables/)
 
@@ -233,6 +227,6 @@ DCE文档是使用markdown编写的。 不建议使用表格，但很难避免�
 npx prettier --w 文件名
 ```
 
-查看 [prettier 文档](https://prettier.io/docs/en/install.html) 安装。
+查阅 [prettier 安装文档](https://prettier.io/docs/en/install.html)。
 
 > 注意: 运行 prettier 命令后，您应该手动检查格式和布局，该命令自动将您的 Markdown 调整为标准格式。
