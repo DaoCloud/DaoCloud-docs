@@ -16,7 +16,54 @@
 - [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/reference/)：
   这是整个文档站的编译软件帮助手册
 
-## Git 编写流程 (For Author)
+## Git 云端编写 (For Author)
+
+如今云无处不在，只要能连通互联网，就可以在线编辑，无需在本地安装上述工具。
+
+### 网页直接修改
+
+这种方式适合只改一个文件的小幅修改。
+
+1. 在任何一个网页上点击编辑图标。
+
+    ![点击图标按钮](../images/local01.png)
+
+1. 完成编辑操作后，点击右上角的 `Commit changes` 按钮。
+
+    ![commit change](../images/local02.png)
+
+1. 修改 `Commit message`，填写 `Extended description` 后，点击 `Propose changes` 按钮。
+
+    ![propose change](../images/local03.png)
+
+1. 点击 `Create pull request` 按钮就完成了提交 PR 的操作。
+
+    ![create PR](../images/local04.png)
+
+### 通过 Codespace 编辑
+
+如果你修改的文件不止 1 个，那可以试试 Codespace。Codespace 是一个云端的 VSCode 环境。
+这种云端的 VSCode 好处是随时随地，缺点是免费版本只能保留几小时的环境，只有 VIP 才能长期留存数据。
+
+1. 进入你的 Fork，点击 `Code` -> `Codespaces` -> `Create Codespace on main`。
+
+    ![Create Codespace](../images/cloud01.png)
+
+1. 稍待片刻完成环境的创建，
+
+    ![online vscode](../images/cloud02.png)
+
+1. 你可以在底部 TERMINAL 中运行各种命令，从左侧目录树中找到要修改的文件。
+
+    ![online edit](../images/cloud03.png)
+
+1. 编辑完成后，跟在本地一样，运行 git 命令提交修改。
+
+!!! tip
+
+    目前免费的 Codespace 只能留存 4 小时的数据。
+
+## Git 本地编写 (For Author)
 
 1. Fork 后克隆 GitHub 仓库。
 
