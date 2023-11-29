@@ -1,10 +1,10 @@
-# 混迹 GitHub 社区的技巧
+# 混迹 GitHub 社区技巧
 
-GitHub 号称有 8000 万名开发者活跃，如何能在目标社区展露头角？
+GitHub 号称有一亿开发者活跃，如何能在目标社区展露头角？
 
 一方面需要你自己的专业水平过硬，另一方面需要了解一些社区礼仪和基本技巧。
 
-## 在社区留痕的形式
+## 在社区留痕
 
 - PR 和 Issue
 
@@ -44,3 +44,23 @@ GitHub 号称有 8000 万名开发者活跃，如何能在目标社区展露头�
 !!! tip
 
     走过路过，千万不要沉默！！！让大家知道你来过！！！
+
+## 在社区成长
+
+当你初入 GitHub 可能会有些茫然，数百万个 Repo 仓库，一亿开发者汇聚，怎么找到热点呢？
+
+对于 DaoCloud 的船员，主要混迹于 CNCF 社区，特别是以 K8s 为首的各个项目。
+每个项目都有这些文件：
+
+- [README.md](https://github.com/DaoCloud/DaoCloud-docs)
+- [CONTRIBUTING.md](https://github.com/kubernetes/website/blob/main/CONTRIBUTING.md)
+
+慢慢你会发现 member -> reviewer -> approver/maintainer -> lead/chair -> committee 等成长路线。
+
+如果你能在著名项目有所建树，那不亚于另一张文凭。
+
+## 贡献统计
+
+- [K8s 贡献统计 Devstatus](https://k8s.devstats.cncf.io/d/13/developer-activity-counts-by-repository-group?orgId=1&var-period_name=Last%20year&var-metric=contributions&var-repogroup_name=SIG%20Docs&var-repo_name=kubernetes&var-country_name=All)
+- [Istio 贡献统计 Devstatus](https://istio.teststats.cncf.io/d/66/developer-activity-counts-by-companies?orgId=1&var-period_name=Last%20year&var-metric=contributions&var-repogroup_name=All&var-country_name=All&var-companies=All)
+- [OSSinsight 仪表盘](https://ossinsight.io/)
