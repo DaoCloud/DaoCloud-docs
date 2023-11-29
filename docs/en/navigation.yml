@@ -799,6 +799,9 @@ nav:
                       - Update MySQL: middleware/mysql/user-guide/update.md
                       - Delete MySQL: middleware/mysql/user-guide/delete.md
                       - View MySQL Logs: middleware/mysql/user-guide/logs.md
+                  - Best Practice:
+                      - MySQL Cross-Cluster Synchronization: middleware/mysql/best-practice/crossclusterssync.md
+                      - MySQL Archiving Solution: middleware/mysql/best-practice/mysql-pt-archiver.md
                   - Troubleshooting:
                       - MySQL Health Check: middleware/mysql/faq/quick-check.md
                       - MySQL Pod: middleware/mysql/faq/faq-pod.md
