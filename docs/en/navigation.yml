@@ -374,6 +374,7 @@ nav:
                   - Config: network/modules/spiderpool/config.md
                   - Commands: network/modules/spiderpool/command.md
                   - Running on Alibaba Cloud: network/modules/spiderpool/alibabacloud.md
+                  - Running on AWS: network/modules/spiderpool/awscloud.md
               - Calico:
                   - Intro: network/modules/calico/index.md
                   - Install: network/modules/calico/install.md
