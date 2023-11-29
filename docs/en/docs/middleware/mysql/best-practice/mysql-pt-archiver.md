@@ -1,19 +1,17 @@
-# MySQL 归档方案
+# MySQL Archiving Solution
 
-pt-archiver 是用来归档表的工具，可以做到低影响、高性能的归档工具，从表中删除旧数据，而不会对 OLTP 查询产生太大影响。
-可以将数据插入到另一个表中，该表不需要在同一台服务器上。可以将其写入适合 LOAD DATA INFILE 的格式的文件中。
-或者两者都不做，只做删除。在归档的时候也可以指定归档的列和行。
+pt-archiver is a tool used to archive tables. It can achieve low-impact, high-performance archiving by deleting old data from the table without causing significant impact on OLTP queries. It can insert the data into another table, which does not need to be on the same server. It can also write the data to a file in a format suitable for LOAD DATA INFILE. Alternatively, it can simply delete the data. During archiving, you can also specify the columns and rows to archive.
 
-## 安装
+## Installation
 
-默认部署 MySQL 时已经安装了 `pt-heartbeat` 工具，通过以下命令检查：
+The `pt-heartbeat` tool is already installed by default when deploying MySQL. You can check it using the following command:
 
 ```shell
 [root@mysql1012-mysql-2 /]# pt-archiver --version
 pt-archiver 3.4.0
 ```
 
-`pt-heartbeat` 至少需要指定 `--dest`、`--file`、`--purge` 其中的一个，有一些选项是互斥的。
+`pt-heartbeat` requires at least one of the `--dest`, `--file`, or `--purge` options to be specified, and some options are mutually exclusive.
 
 ```console
 Specify at least one of --dest, --file, or --purge.
@@ -26,9 +24,9 @@ Specify at least one of --dest, --file, or --purge.
   DSN values in --dest default to values from --source if COPY is yes
 ```
 
-## 归档方法
+## Archiving Methods
 
-### 仅删除数据，不归档
+### Delete Data Without Archiving
 
 ```shell
 pt-archiver \
@@ -38,15 +36,15 @@ pt-archiver \
 --nosafe-auto-incremen
 ```
 
-### 归档到文件
+### Archive to File
 
-文件格式：通过 `--output-format` 指定，归档出来的文件有 header：使用 `--header` 选项。
+File Format: Specify the file format using the `--output-format` option. If you want to include a header in the archived file, use the `--header` option.
 
 - dump: MySQL dump format using tabs as field separator (default)
 - csv: Dump rows using ‘,’ as separator and optionally enclosing fields by ‘”’.
   This format is equivalent to FIELDS TERMINATED BY ‘,’ OPTIONALLY ENCLOSED BY ‘”’.
 
-恢复：可以采用 LOAD DATA local INFILE 语法
+Recovery: You can use the `LOAD DATA LOCAL INFILE` syntax to restore the archived data.
 
 ```shell
 pt-archiver \
@@ -71,7 +69,7 @@ pt-archiver \
 cat /var/log/one_column_csv.txt
 1, "zhangsan"
  
-# 使用--header选项，这里要保证--file指定的文件不存在才会添加header
+# Using the `--header` option, the header will only be added if the file specified by `--file` does not exist.
 pt-archiver \
 --source h=172.30.47.0,u=root,p='ZoO1l1K%YbG!zlh',P=31898,D=test,t=one_column \
 --file=/var/log/one_column_csv.txt \
@@ -86,12 +84,12 @@ cat /var/log/one_column_csv.txt
 id  name
 1   zhangsan
  
-# 恢复
+# Restore
 mysql -uroot -p'ZoO1l1K%YbG!zlh' -h172.30.47.0 -P31898 --local-infile=1
 LOAD DATA local INFILE '/var/log/one_column_csv.txt' INTO TABLE one_column;
 ```
 
-### 不做任何操作，只打印要执行的查询语句，--dry-run 选项
+### No Operation, Only Print the Executed Queries, using the `--dry-run` option
 
 ```shell
 pt-archiver \
@@ -101,7 +99,7 @@ pt-archiver \
 --dry-run
 ```
 
-### 归档到别的表（这个表可以在另一个数据库实例）
+### Archive to Another Table (which can be in another database instance)
 
 ```shell
 pt-archiver \
@@ -111,7 +109,7 @@ pt-archiver \
 --no-delete
 ```
 
-### 指定要归档的列，--cloumns 参数
+### Specify Columns to Archive, using the `--columns` parameter
 
 ```shell
 pt-archiver \
@@ -122,10 +120,10 @@ pt-archiver \
 --columns=name,email
 ```
 
-### 有从库的归档，从库延迟大于 1s 就暂停归档：--check-slave-lag
+### Archiving with a Replica, Pause Archiving if Replica Lag is Greater than 1s: `--check-slave-lag`
 
 ```shell
-# 在replica里执行
+# Run in replica
 mysql>stop slave;
 mysql>CHANGE MASTER TO MASTER_DELAY = 10;
 mysql>start slave;
@@ -142,12 +140,14 @@ pt-archiver \
 --statistics
 ```
 
-## 常见问题
+## FAQs
 
-1. 归档出来的新数据总是少一行，可参考[故障分析 | pt-archiver 归档丢失一条记录](https://opensource.actionsky.com/20220926-mysql/)
+1. If the archived data is always missing one row, you can refer to
+   [Troubleshooting | Missing One Record in pt-archiver Archive](https://opensource.actionsky.com/20220926-mysql/).
 
     ```mysql
-    # 加上--dry-run 查看生成的语句，注意 WHERE (1=1) AND (`id` < '3')
+    # Add --dry-run to view the generated query, pay attention to WHERE (1=1) AND (`id` < '3')
+    ```
     
     pt-archiver \
     --source h=172.30.47.0,u=root,p='ZoO1l1K%YbG!zlh',P=31898,D=test,t=myTableSimple \
@@ -169,7 +169,7 @@ pt-archiver \
     +---------+
     ```
 
-    **解决办法一： --nosafe-auto-incremen**
+    **Solution 1: --nosafe-auto-incremen**
 
     ```shell
     pt-archiver \
@@ -185,7 +185,7 @@ pt-archiver \
     INSERT INTO `test`.`myTableSimple`(`id`,`name`,`phone`,`email`,`address`,`list`,`country`,`region`,`postalzip`,`text`,`numberrange`,`currency`,`alphanumeric`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)
     ```
 
-    **解决办法二：--no-ascend 和在--source 的 DSN 里通过 i=specified_index 指定索引**
+    **Solution 2: Use `--no-ascend` and specify the index using `i=specified_index` in the `--source` DSN**
 
     ```shell
     pt-archiver \
@@ -200,10 +200,10 @@ pt-archiver \
     INSERT INTO `test`.`myTableSimple`(`id`,`name`,`phone`,`email`,`address`,`list`,`country`,`region`,`postalzip`,`text`,`numberrange`,`currency`,`alphanumeric`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)
     ```
 
-1. 没有主键，采用默认参数会归档失败
+1. If there is no primary key defined on the table, the default parameters may cause the archiving process to fail.
 
-    - 默认会去找 `ascendable index`，如果没有就会失败。
-    - 可以在 `–source` 的 DSN 指定其他索引：`i=specified_index`
+    - By default, `pt-archiver` looks for an "ascendable index". If no such index is found, the archiving process fails.
+    - To resolve this issue, you can specify an alternative index in the `--source` DSN by adding `i=specified_index`. This allows `pt-archiver` to use the specified index for archiving, even if there is no primary key defined on the table.
 
     ```shell
     show create table myTableNoPrimaryKey\G
@@ -227,7 +227,7 @@ pt-archiver \
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
     1 row in set (0.03 sec)
     
-    # 没有主键，没有在--source 里指定索引，失败
+    # No primary key specified, no index specified in --source, failed.
     pt-archiver \
     --source h=172.30.47.0,u=root,p='ZoO1l1K%YbG!zlh',P=31898,D=test,t=myTableNoPrimaryKey \
     --dest h=172.30.47.0,u=root,p='12345678@',P=31507 \
@@ -241,8 +241,7 @@ pt-archiver \
     --where "1=1"
     ```
 
-
-    **解决办法：在–source 的 DSN 里通过 i=other_index 指定其他索引**
+    **Solution: Specify another index in the `--source` DSN using `i=other_index`**
 
     ```shell
     pt-archiver \
@@ -251,9 +250,9 @@ pt-archiver \
     --where "1=1"
     ```
 
-1. 批量插入失败
+1. Bulk insert failure
 
-    - 当使用了--bulk-insert 的时候，出现失败的情况。
+   - When using the `--bulk-insert` option, failures may occur during bulk insertion.
 
         ```mysql
         pt-archiver \
@@ -267,7 +266,7 @@ pt-archiver \
         DBD::mysql::st execute failed: Loading local data is disabled; this must be enabled on both the client and server sides [for Statement "LOAD DATA LOCAL INFILE ? INTO TABLE `test`.`myTableSimple`(`id`,`name`,`phone`,`email`,`address`,`list`,`country`,`region`,`postalzip`,`text`,`numberrange`,`currency`,`alphanumeric`)" with ParamValues: 0='/tmp/GPJHnHSRUspt-archiver'] at /usr/bin/pt-archiver line 6876.
         ```
 
-    - 查看 MySQL 相关变量
+    - Check relevant variables of MySQL
 
         ```mysql
         mysql> show variables like 'local_infile';
@@ -279,10 +278,10 @@ pt-archiver \
         1 row in set (0.04 sec)
         ```
 
-    - 需要在 client 和 server 两边都设置 local_infile=on, set global local_infile=on; 还需要在--source 和--dest 里设置 L=1
+    - Ensure that the `local_infile` option is enabled on both the client and server sides. You can do this by setting `local_infile=on` in both the source and destination MySQL instances.
 
         ```mysql
-        # 需要在 source 和 dest 两边的 MySQL 都设置
+        # Set local_infile=on on both the source and destination MySQL instances
         mysql> set global local_infile=on;
         Query OK, 0 rows affected (0.04 sec)
         
