@@ -24,7 +24,7 @@ EgressGateway 使用了 vxlan 隧道，经过测试 vxlan 损耗在 10% 左右�
 | case2 | egress vxlan -> egress vxlan | `9.11 Gbits/sec sender - 9.09 Gbits/sec receiver` |
 | case3 | pod -> egress node -> target | `9.01 Gbits/sec sender - 8.98 Gbits/sec receiver` |
 
-![egress-check](../../network/images/egressgateway/speed%20(1).svg)
+![egress-check](../../network/images/egressgateway/speed01.svg)
 
 #### 虚拟机
 
