@@ -81,8 +81,8 @@ jobs:
 
       # build docs
       - run: pwd
-      - run: mkdocs build -f docs/zh/mkdocs.path.yml -d ../../public/
-      - run: mkdocs build -f docs/en/mkdocs.path.yml -d ../../public/en/
+      - run: mkdocs build -f docs/zh/mkdocs.path.yaml -d ../../public/
+      - run: mkdocs build -f docs/en/mkdocs.path.yaml -d ../../public/en/
 
       # upload to ucloud bucket
       - run: cd public && pwd && python ../scripts/upload-ucloud.py \
