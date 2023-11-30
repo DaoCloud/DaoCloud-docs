@@ -3,7 +3,7 @@
 Harbor 内部涉及到 portal 和 core 两个服务对外暴露功能，并且控制流和数据流都经过 Nginx 组件，
 如果 Nginx 配置不合理就会出现镜像拉取失败、Helm repo 添加或者更新失败。
 
-![架构图](../images/nginx-architecture.png)
+![架构图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/nginx-architecture.png)
 
 ## 场景一：504 Gateway Timeout 报错
 
@@ -20,11 +20,11 @@ Nginx proxy 后端服务默认超时时间是 60s，镜像 Pull 或者 Push 都�
 1. 在创建托管 harbor 的场景中，使用 Helm 模板部署 ingress-nginx。
    可以在 `容器管理` -> `集群详情` -> `配置项` 中搜索找到 nginx-config。
 
-    ![配置项](../images/nginx-configlist.png)
+    ![配置项](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/nginx-configlist.png)
 
 2. 进入详情，通过`更新`按钮，在如下位置增加 proxy 配置，将超时时间修改为 900s（15min），保存后需要重启 Pod。
 
-    ![配置项详情](../images/nginx-configdetail1.png)
+    ![配置项详情](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/nginx-configdetail1.png)
 
 3. proxy 配置 demo。
 
@@ -55,11 +55,11 @@ Nginx proxy 后端服务默认超时时间是 60s，镜像 Pull 或者 Push 都�
 1. 在创建托管 harbor 的场景中，使用 Helm 模板部署 ingress-nginx。
    可以在 `容器管理` -> `集群详情` -> `配置项` 中搜索找到 nginx-config。
 
-    ![配置项](../images/nginx-configlist.png)
+    ![配置项](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/nginx-configlist.png)
 
 2. 进入 config 详情，通过`更新`按钮，在如下位置增加 proxy 配置，保存后需要重启 Pod。
 
-    ![配置项详情](../images/nginx-configdetail2.png)
+    ![配置项详情](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/nginx-configdetail2.png)
 
 3. 通过 Proxy 配置 demo：
 

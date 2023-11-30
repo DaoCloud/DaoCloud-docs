@@ -63,7 +63,7 @@ MySQL 自带的复制能力提供了主从、多从、多主、级联等多种�
     1. 进入实例的 CR 文件：容器管理 - 实例所在集群 - 自定义资源 - mysqlclusters.mysql.presslabs.org - 实例CR
     1. 增加字段：spec.serverIDOffset: 200
 
-    ![sync](../images/sync01.png)
+    ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/mysql/images/sync01.png)
 
 2. 创建复制账户
 
@@ -82,13 +82,13 @@ MySQL 自带的复制能力提供了主从、多从、多主、级联等多种�
     - `%`：所有机器能够访问
     - `by '123456ab'`：该用户密码
 
-    ![sync](../images/sync02.png)
+    ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/mysql/images/sync02.png)
 
 3. 服务配置
 
     进入`容器管理` 模块，为实例配置一个 Nodeport 服务，用于目标端实例的同步访问：
 
-    ![sync](../images/sync03.png)
+    ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/mysql/images/sync03.png)
 
     - 服务端口、容器端口：3306
     - 添加标签：role/master
@@ -120,7 +120,7 @@ MySQL 自带的复制能力提供了主从、多从、多主、级联等多种�
     mysql> SHOW MASTER STATUS;
     ````
 
-    ![sync](../images/sync04.png)
+    ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/mysql/images/sync04.png)
 
     样例：
 
@@ -147,13 +147,13 @@ MySQL 自带的复制能力提供了主从、多从、多主、级联等多种�
     mysql> SHOW SLAVE STATUS\G
     ````
 
-    ![sync](../images/sync05.png)
+    ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/mysql/images/sync05.png)
 
     !!! note
 
         此时目标端处于 slave 状态，在中间件列表中将显示为`未就绪`状态，这是正常的，解除主从关系后可以恢复正常。
 
-        ![sync](../images/sync06.png)
+        ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/mysql/images/sync06.png)
 
 ## 目标端提供服务
 

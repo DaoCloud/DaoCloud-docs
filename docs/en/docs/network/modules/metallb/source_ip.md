@@ -109,9 +109,9 @@ You can [modify the installer clusterConfigt.yaml](../../../install/commercial/c
 
 3. On the `Global Management`->`Audit Log` page, click `View Details` in any event to view the obtained client source IP.
 
-    ![source-ip-1](../../images/source-ip1.png)
+    ![source-ip-1](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/source-ip1.png)
 
-    ![source-ip-2](../../images/source-ip2.png)
+    ![source-ip-2](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/source-ip2.png)
 
 ### Disable getting client source IP
 

@@ -10,7 +10,7 @@ For detailed instructions, please refer to the Alibaba Cloud documentation. Howe
 - If no VPC exists, create a VPC and select an available zone. This VPC will be used for node and Pod communication.
 - Select the appropriate instance specifications based on your requirements. These specifications determine the number of ENIs and secondary IPs available on the ECS instances, which affects the number of Pods that can be run (in non-VPC mode).
 
-![create-ecs](../../images/ECS-Create.png)
+![create-ecs](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/ECS-Create.png)
 
 > Installing a Kubernetes cluster requires each machine to have a minimum of 2 CPUs and 2 GB of memory.
 
@@ -123,7 +123,7 @@ After creating the cluster, use `kubeadm join` on join the worker node to the cl
 
     > To ensure that the RAM user used in the subsequent steps has sufficient permissions, grant the RAM user the AdministratorAccess and AliyunSLBFullAccess permissions.
 
-    ![edit-ram](../../images/custom-ram.png)
+    ![edit-ram](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/custom-ram.png)
 
     Once created, bind the custom permission policy to the user or user group:
 
@@ -193,7 +193,7 @@ The CCM component is used to publish Pod-to-Pod routes across nodes and implemen
 
 3. After installation, verify that the VPC routes have synchronized by checking the Alibaba Cloud management console:
 
-    ![ccm-route](../../images/ccm-route.png)
+    ![ccm-route](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/ccm-route.png)
 
     The next hop for accessing Pod subnets points to the node.
 
@@ -282,7 +282,7 @@ dao2048-eni-7f85b8dcc4-mvjbs   1/1     Running   0              15s   192.168.20
 
 You will notice that the Pod's IP address is in the same subnet as the node, belonging to the same VPC network card, and its IP is the primary private IP of the ENI.
 
-![eni_ip](../../images/eni_ip.png)
+![eni_ip](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/eni_ip.png)
 
 During testing, it was observed that setting the **_ExternalTrafficPolicy to Local_** for LoadBalancer/NodePort Services may cause communication issues. Refer to [the issue](https://github.com/AliyunContainerService/terway/issues/531) for details.
 

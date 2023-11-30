@@ -11,7 +11,7 @@
 
 2. 点击节点组列表右上角`创建边缘节点组`按钮。
 
-    ![创建边缘节点组](../../images/create-group-01.png)
+    ![创建边缘节点组](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-group-01.png)
 
 3. 填写相关参数。
 
@@ -19,7 +19,7 @@
     - 描述：节点组描述信息。
     - 节点选择方式：边缘节点组中的节点可以指定多个节点或通过标签选择器匹配，两种方式可以同时使用并生效。
 
-    ![创建边缘节点组](../../images/create-group-02.png)
+    ![创建边缘节点组](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-group-02.png)
 
 4. 点击`确定`按钮，即创建边缘节点组成功，返回到边缘节点组列表。
 

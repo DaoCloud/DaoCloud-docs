@@ -22,7 +22,7 @@ Follow the steps below to create a hotspot rule:
 
 2. Select `Hotspot Rules`, then click `Create Hotspot Rule` on the right side.
 
-    ![](../../../images/gov11.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/gov11.png)
 
 3. Fill in the rule configuration based on the instructions below and click `OK` in the bottom right corner.
 
@@ -33,8 +33,8 @@ Follow the steps below to create a hotspot rule:
     - Statistic Window Duration: The duration for calculating the thread count or QPS, for example, if the statistic window duration is 10s and the QPS threshold is 5, it means that the access to each hotspot parameter should not exceed 5 times within 10 seconds.
     - Advanced Settings: Set the threshold for a specific parameter value separately, which is not subject to the above "Single Machine Threshold" limitation.
 
-    ![](../../../images/gov12.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/gov12.png)
 
 4. After creating the rule, you can view it in the list of hotspot rules. Click the more options button on the right side to update or delete the rule.
 
-    ![](../../../images/gov13.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/gov13.png)

@@ -4,7 +4,7 @@
 
 微服务引擎集群初始化组件部署结构：
 
-![image](../images/skoala-init-cn.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/skoala-init-cn.png)
 
 蓝色框内的 chart 即 `skoala-init` 组件，需要安装在工作集群。安装 `skoala-init`
 组件之后即可以使用微服务引擎的各项功能，例如创建注册中心、网关实例等。另外需要注意，

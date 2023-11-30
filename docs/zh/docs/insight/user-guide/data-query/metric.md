@@ -16,11 +16,11 @@
 
    - 支持自定义时间范围。可手动点击`刷新`图标或选择默认时间间隔进行刷新。
 
-    ![查询结果](../../images/metrics00.png)
+    ![查询结果](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/metrics00.png)
 
 4. 点击`高级查询`页签通过原生的 PromQL 查询。
 
-    ![高级查询](../../images/metics01.png)
+    ![高级查询](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/metics01.png)
 
 !!! NOTE
 

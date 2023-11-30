@@ -45,7 +45,7 @@
     - 排查该镜像空间是否绑定了 Kubernetes 命名空间所在的工作空间（需要绑定）。
     - 排查该镜像空间状态是私有还是公开，切换如下 tab 查找。
 
-      ![公开镜像](../images/publicimage.png)
+      ![公开镜像](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/publicimage.png)
     
 
 2. 将镜像空间分配给工作空间使用，与在工作空间下集成仓库有什么区别？

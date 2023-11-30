@@ -6,7 +6,7 @@ The plug-in Center provides two plug-ins, Sentinel governance and Mesh governanc
 
     The same registry center instance cannot have both of these plugins enabled simultaneously, but you can switch between them based on different scenarios.
 
-![](../../../images/plugincenter01.png)
+![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/plugincenter01.png)
 
 ## Sentinel governance
 

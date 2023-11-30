@@ -15,11 +15,11 @@ Here's how to create an inspection configuration.
 
 1. Click `Cluster Inspection` in the left navigation bar.
 
-    ![nav](../../images/inspect01.png)
+    ![nav](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/inspect01.png)
 
 2. On the right side of the page, click `Inspection Configuration`.
 
-    ![create](../../images/inspect02.png)
+    ![create](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/inspect02.png)
 
 3. Fill in the inspection configuration based on the following instructions, then click `OK` at the bottom of the page.
 
@@ -29,7 +29,7 @@ Here's how to create an inspection configuration.
     - Number of Inspection Records to Retain: Specifies the maximum number of inspection records to be retained, including all inspection records for each cluster.
     - Parameter Configuration: The parameter configuration is divided into three parts: cluster level, node level, and container group level. You can enable or disable specific inspection items based on your requirements.
 
-        ![basic](../../images/inspect03.png)
+        ![basic](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/inspect03.png)
 
 After creating the inspection configuration, it will be automatically displayed in the inspection configuration list. Click the more options button on the right of the configuration to immediately perform an inspection or modify the inspection configuration.
 

@@ -41,7 +41,7 @@ Please make sure the Linux Kernel version >= 4.9.17 with 5.10+ recommended. To v
 
 1. Create two clusters with different names, cluster01 and cluster02.
 
-    ![create-cluster1](../../images/cilium-cross1.png)
+    ![create-cluster1](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-cross1.png)
 
     - Choose cilium as the CNI plugin for cluster01.
     - Add two parameters, `cluster-id` and `cluster-name`.
@@ -49,7 +49,7 @@ Please make sure the Linux Kernel version >= 4.9.17 with 5.10+ recommended. To v
 
 2. Follow the same steps to create cluster02.
 
-    ![Create cluster2](../../images/cilium-cross2.png)
+    ![Create cluster2](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-cross2.png)
 
     > The container and service segments used by the two clusters must not overlap. The values of the two parameters must not conflict to identify the clusters uniquely and avoid conflicts for cross-cluster communication.
 
@@ -57,9 +57,9 @@ Please make sure the Linux Kernel version >= 4.9.17 with 5.10+ recommended. To v
 
 1. After the cluster is created, create a Service on each of the two clusters to expose API server for that cluster.
 
-    ![create service](../../images/cilium-cross3.png)
+    ![create service](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-cross3.png)
 
-    ![Create service](../../images/cilium-cross4.png)
+    ![Create service](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-cross4.png)
 
     - Choose NodePort as the access type for external access for cluster01.
     - Choose `kube-system` as the namespace of API Server.
@@ -69,9 +69,9 @@ Please make sure the Linux Kernel version >= 4.9.17 with 5.10+ recommended. To v
 
 2. Create a Service for API Server on cluster02 in the same way.
 
-    ![create service](../../images/cilium-cross3.png)
+    ![create service](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-cross3.png)
 
-    ![Create service](../../images/cilium-cross5.png)
+    ![Create service](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-cross5.png)
 
 ## Modify cluster configuration
 
@@ -156,9 +156,9 @@ Run the following commands to verify cluster connectivity:
 
 4. The presence of both `connected cluster1 and cluster2!` on cluster01, and `ClusterMesh enabled!` on cluster02 indicate that both clusters are connected.
 
-    ![connect](../../images/network-cross-cluster7.png)
+    ![connect](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/network-cross-cluster7.png)
 
-    ![connect](../../images/network-cross-cluster8.png)
+    ![connect](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/network-cross-cluster8.png)
 
 ## Create a demo application
 
@@ -246,15 +246,15 @@ Run the following commands to verify cluster connectivity:
 
 2. Quickly create two applications for cluster01 and cluster02 in DCE 5.0 using yaml file.
 
-    ![Create Application](../../images/cilium-cross9.png)
+    ![Create Application](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-cross9.png)
 
     Modify the contents of `ConfigMap` so that the data returned is labeled with the names of cluster01 and cluster02, respectively when you access a Service in cluster01 and cluster02. The Pod labels can be found in the `rebel-base` application.
 
 3. Create a Service for a global service video in each of the two clusters, which points to the created `rebel-base` application.
 
-    ![Create service application](../../images/cilium-cross10.png)
+    ![Create service application](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-cross10.png)
 
-    ![Create service application](../../images/cilium-cross10.png)
+    ![Create service application](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-cross10.png)
 
     - Service type is ClusterIP
     - Add the application's Pod labels to filter the corresponding application

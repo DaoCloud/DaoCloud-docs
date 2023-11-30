@@ -14,7 +14,7 @@
 
         需要根据实际情况选择 Jenkins 的部署集群。目前不建议将其部署在全局服务集群，因为 Jenkins 执行流水线高并发时会占用大量资源，可能会导致全局服务集群的瘫痪。
 
-    ![点击集群名称](../../images/install-jenkins11.png)
+    ![点击集群名称](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/install-jenkins11.png)
 
 2. 在左侧导航栏中选择 `Helm 应用` -> `Helm 模板`，找到并点击 `Jenkins`。
 

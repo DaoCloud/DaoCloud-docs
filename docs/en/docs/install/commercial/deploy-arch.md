@@ -16,16 +16,16 @@ The following table provides an overview of the terms used in the architecture:
 The beginner mode is suitable for individual customers and requires only one host. However,
 it is recommended to use this mode minimally by adding the `-z` parameter after the installation command when installing DCE 5.0.
 
-![Beginner Mode Diagram](../images/allinone.png)
+![Beginner Mode Diagram](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/install/images/allinone.png)
 
 ## 4-Node Mode
 
 The 4-node mode consists of one bootstrapping node and three master nodes within the cluster. It is recommended for PoC or test environments.
 
-![4-Node Mode Diagram](../images/four.png)
+![4-Node Mode Diagram](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/install/images/four.png)
 
 ## 7-Node Mode (1 + 6)
 
 The 7-node mode includes one bootstrapping node, three master nodes within the cluster, and three worker nodes exclusively dedicated to the Elasticsearch component. This mode is recommended for production environments.
 
-![7-Node Mode Diagram](../images/seven.png)
+![7-Node Mode Diagram](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/install/images/seven.png)

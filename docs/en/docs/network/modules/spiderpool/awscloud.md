@@ -30,7 +30,7 @@ Spiderpool can run on public cloud environments based on the ipvlan Underlay CNI
 
     In AWS VPC, a subnet created with an outbound route of 0.0.0.0/0, ::/0 to an Internet Gateway is considered a *public subnet*, while a subnet without this outbound route is considered a *private subnet*.
 
-    ![aws-subnet-concept](../../images/aws/aws-subnet-concept.png)
+    ![aws-subnet-concept](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/aws/aws-subnet-concept.png)
 
 ## Steps
 
@@ -40,19 +40,19 @@ Spiderpool can run on public cloud environments based on the ipvlan Underlay CNI
 
     > In this example, we will create one public subnet and two private subnets under the same VPC (please deploy the subnets in different availability zones). Then, we will create an AWS EC2 instance as a jump host under the public subnet. Finally, we will create AWS EC2 instances under the two private subnets to deploy the Kubernetes cluster.
 
-    ![aws-subnet-1](../../images/aws/aws-subnet-1.png)
+    ![aws-subnet-1](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/aws/aws-subnet-1.png)
 
 2. Create two additional private subnets to provide a second network interface (NIC) for the instances (please deploy the subnets in the same availability zones as the instances), as shown in the diagram:
 
-    ![aws-subnet-2](../../images/aws/aws-subnet-2.png)
+    ![aws-subnet-2](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/aws/aws-subnet-2.png)
 
-    ![aws-interfaces](../../images/aws/aws-interfaces.png)
+    ![aws-interfaces](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/aws/aws-interfaces.png)
 
 3. Assign some secondary private IP addresses to each NIC of the instances, as shown in the diagram:
 
     > According to [AWS EC2 instance types](https://docs.aws.amazon.com/ec2/instance-types/index.html), there are limitations on the number of NICs and secondary IP addresses that can be assigned to each NIC. To make full use of instance resources for application deployment, we choose to bind two NICs and corresponding secondary IP addresses to the instances.
 
-    ![aws-web-network](../../images/aws/aws-secondary-nic.png)
+    ![aws-web-network](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/aws/aws-secondary-nic.png)
 
     ```console
     | Node    | ens5 primary IP | ens5 secondary IPs        | ens6 primary IP | ens6 secondary IPs        |  
@@ -65,13 +65,13 @@ Spiderpool can run on public cloud environments based on the ipvlan Underlay CNI
 
     > Create a NAT Gateway in the public subnet `public-172-31-0-0` and configure the route table of the private subnet with an outbound route of 0.0.0.0/0 and the NAT Gateway as the next-hop. (Note that IPv6 addresses are globally unique addresses assigned by AWS and can directly access the Internet via the Internet Gateway.)
 
-    ![aws-nat-gateway](../../images/aws/aws-nat-gateway.png)
+    ![aws-nat-gateway](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/aws/aws-nat-gateway.png)
 
-    ![aws-nat-route](../../images/aws/aws-nat-route.png)
+    ![aws-nat-route](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/aws/aws-nat-route.png)
 
 5. Use the configured VMs to set up a Kubernetes cluster. The available IP addresses for the nodes and the network topology of the cluster are as follows:
 
-    ![Network Topology](../../images/aws/aws-k8s-network.png)
+    ![Network Topology](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/aws/aws-k8s-network.png)
 
 ### Install Spiderpool
 
@@ -299,9 +299,9 @@ AWS provides a load balancing service called "Elastic Load Balancer" (ELB) with 
     > 2. Run `curl -o iam-policy.json https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.6.0/docs/install/iam_policy.json`.
     > 3. Create a new policy in the AWS IAM dashboard using the JSON content obtained in the previous step. Associate this policy with the IAM role of your virtual machine instance.
 
-    ![aws-iam-policy](../../images/aws/aws-iam-policy.png)
+    ![aws-iam-policy](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/aws/aws-iam-policy.png)
 
-    ![aws-iam-role](../../images/aws/aws-iam-role.png)
+    ![aws-iam-role](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/aws/aws-iam-role.png)
 
 3. Create a public subnet in the availability zone where your AWS EC2 instance is located and tag it for automatic discovery.
 
@@ -357,7 +357,7 @@ spec:
 EOF
 ```
 
-![aws-network-load-balancer](../../images/aws/aws-lb.png)
+![aws-network-load-balancer](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/aws/aws-lb.png)
 
 We can now see that an NLB has been created and is accessible in the AWS EC2 Load Balancing section.
 
@@ -474,7 +474,7 @@ spec:
                   number: 80
 ```
 
-![aws-application-load-balancer](../../images/aws/aws-ingress.png)
+![aws-application-load-balancer](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/aws/aws-ingress.png)
 
 We can now see that an ALB has been created and is accessible in the AWS EC2 Load Balancing section.
 

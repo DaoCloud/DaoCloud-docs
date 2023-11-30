@@ -13,7 +13,7 @@
 
 1. 在左侧导航栏点击`传统微服务`-->`接入注册中心`，然后在页面右上角点击`接入注册中心`。
 
-    ![进入接入注册中心页面](../../images/integrate01.png)
+    ![进入接入注册中心页面](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/integrate01.png)
 
 2. 填写配置信息，然后在页面底部点击`确定`。
 
@@ -25,11 +25,11 @@
 
         - 如果找不到想要添加的网格服务，可以去网格服务模块[创建网格](../../../mspider/user-guide/service-mesh/README.md)。
 
-            ![接入 Mesh/Kubernetes](../../images/integrate02.png)
+            ![接入 Mesh/Kubernetes](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/integrate02.png)
 
     - Nacos/Zookeeper/Eureka/Consul 注册中心：填写注册中心的名称和地址，点击`确认`。
 
-        ![接入 Nacos/Zookeeper/Eureka](../../images/integrate03.png)
+        ![接入 Nacos/Zookeeper/Eureka](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/integrate03.png)
 
 ## 更新注册中心
 
@@ -37,11 +37,11 @@
 
 1. 在`接入注册中心列表`页选择需要更新的注册中心，在右侧点击 `⋯` 并选择`编辑`。
 
-    ![进入更新页面](../../images/update-1.png)
+    ![进入更新页面](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/update-1.png)
 
 2. 修改、增加或删除注册中心的地址，然后在页面底部点击`确定`。
 
-    ![进入更新页面](../../images/update-2.png)
+    ![进入更新页面](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/update-2.png)
 
 !!! note
 
@@ -54,11 +54,11 @@
 
 1. 在`接入注册中心列表`页选择需要移除的注册中心，在右侧点击 `⋯` 并选择`移除`。
 
-    ![进入移除页面](../../images/delete-1.png)
+    ![进入移除页面](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/delete-1.png)
 
 2. 输入注册中心的名称，点击`移除`。
 
-    ![进入移除页面](../../images/delete-2.png)
+    ![进入移除页面](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/delete-2.png)
 
 !!! note
 

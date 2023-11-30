@@ -4,7 +4,7 @@
 
 In the VPC mode, the IP addresses of Pods in the cluster are allocated from a global virtual subnet that is not associated with any specific VPC network. To enable cross-node communication for Pods, the VPC routing needs to be configured using the [CCM component](https://github.com/AliyunContainerService/alicloud-controller-manager).
 
-![vpc](../../images/vpc_connection.jpeg)
+![vpc](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/vpc_connection.jpeg)
 
 - External access for Pods requires forwarding through eth0 to the host before being further routed.
 - Communication between Pods on the same node does not rely on VPC networking; it leverages direct routing between the Pod and the node.
@@ -17,7 +17,7 @@ For deployment and usage instructions, please refer to [VPC Mode Usage](usage.md
 
 In the ENI mode, Terway directly attaches the ENI of ECS instances to the network namespace of Pods, ensuring optimal performance for Pods. However, a limitation of this mode is that the number of deployable Pods is constrained by the available ECS instances. In this mode, the IP subnet of Pods aligns with the host's subnet.
 
-![eni](../../images/eni_connection.jpeg)
+![eni](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/eni_connection.jpeg)
 
 - Pods have two network interfaces: eth0 and veth1. The default route for Pods is set to eth0, enabling external access through eth0 to the VPC network. To access Service, the routing is set on veth1. Therefore, traffic from the Pod to Services must first be forwarded through veth1 to the host, and then routed through the host's network stack to reach the destination.
 - In this mode, the maximum number of deployable Pods is determined by the number of available ENIs on the ECS instance. Specifically, the number of Pods equals the number of ENIs on the ECS instance.
@@ -33,7 +33,7 @@ The ENI mode allows Pods to have dedicated use of an ENI, resulting in optimal p
 
 In the veth-pair mode, external access from Pods is forwarded through eth0 to the host, and then further routed to the VPC network. Similar to the VPC mode, the veth-pair mode establishes network connectivity between the host and Pods using a pair of veth devices. However, unlike the VPC routing method, the IP address of the Pods is derived from the secondary IP addresses of the ENI. To ensure proper routing, policy-based routing needs to be configured on the node so that traffic from the secondary IP addresses is correctly forwarded through the associated ENI:
 
-![eniip-veth](../../images/eniip_veth.png)
+![eniip-veth](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/eniip_veth.png)
 
 - The IP addresses of the Pods belong to the same subnet as the host
 - The traffic from Pods to Services is routed through the host
@@ -46,7 +46,7 @@ In the veth-pair mode, external access from Pods is forwarded through eth0 to th
 
 In the ipvlan mode, Terway leverages the Cilium CNI chaining. It uses ipvlan as the Main  CNI to create multiple virtual subinterfaces from an interface. Terway binds the secondary IP addresses of the ENI to different ipvlan subinterfaces, enabling network connectivity. Cilium acts as the meta CNI, attaching eBPF programs to the subinterfaces for accelerated Service access and NetworkPolicy enforcement. This mode simplifies the ENIIP network structure and provides better performance compared to veth pair policy routing. Kernel version 4.2 or higher is required.
 
-![eniip-ipvlan](../../images/terway_cilium.png)
+![eniip-ipvlan](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/terway_cilium.png)
 
 - ipvlan operates in L2 mode
 - Each ENI used by Pods has a corresponding subinterface, resolving communication issues between parent and child interfaces.
@@ -137,11 +137,11 @@ status:
 
 Data flow:
 
-![eniip-trunking](../../images/eni_trunking.png)
+![eniip-trunking](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/eni_trunking.png)
 
 - Each ECS node is allocated an ENI for trunking, similar to a trunk port on a traditional switch.
 - All external access from Pods is forwarded through the host and then routed to the target ENI via the host's trunking ENI. Terway plugin adds or removes VLAN tags in the trunking ENI's TC hook, and packets are matched to the target ENI based on the VLAN tag.
 
-![eni_trunking_tc](../../images/eni_trunking_tc.png)
+![eni_trunking_tc](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/eni_trunking_tc.png)
 
 > ENIIP-Trunking mode is not supported in self-built clusters.

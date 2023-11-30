@@ -9,7 +9,7 @@ status: new
 
 ## 全局监控
 
-![全局监控](../images/monitoring-indicators1.png)
+![全局监控](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/user-guide/images/monitoring-indicators1.png)
 
 | 分类                  | 参数                      | 参数介绍                                                     | 计算方式                                                     |
 | --------------------- | ------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -40,7 +40,7 @@ status: new
 
 ## 性能监控
 
-![性能监控](../images/monitoring-indicators2.png)
+![性能监控](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/user-guide/images/monitoring-indicators2.png)
 
 | 分类           | 参数               | 参数介绍                                                  | 计算方式                                                  |
 | --------------------- | ------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -59,7 +59,7 @@ status: new
 
 ## 服务监控
 
-![服务监控](../images/monitoring-indicators3.png)
+![服务监控](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/user-guide/images/monitoring-indicators3.png)
 
 | 分类           | 参数               | 参数介绍                                                  | 计算方式                                                  |
 | --------------------- | ------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -88,7 +88,7 @@ status: new
 
 ## 工作负载监控
 
-![工作负载监控](../images/monitoring-indicators4.png)
+![工作负载监控](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/user-guide/images/monitoring-indicators4.png)
 
 | 分类           | 参数               | 参数介绍                                                  | 计算方式                                                  |
 | --------------------- | ------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |

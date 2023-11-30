@@ -19,11 +19,11 @@ GitHub 号称有一亿开发者活跃，如何能在目标社区展露头角？
 
     1. 点击每一行左侧的 `+` 号
 
-        ![comments](../images/comments1.png)
+        ![comments](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/comments1.png)
     
     2. 点击 `Add a suggestion` 图标，修改代码后，点击 `Start a review`
 
-        ![comments](../images/comments2.png)
+        ![comments](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/comments2.png)
 
         !!! warning
 
@@ -33,13 +33,13 @@ GitHub 号称有一亿开发者活跃，如何能在目标社区展露头角？
 
     3. 看完全文，做了所有 comment 之后，点击右上角 `Finish your review`，勾选 `Comment` 后点击 `Submit review`。
 
-        ![comments](../images/comments3.png)
+        ![comments](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/comments3.png)
 
 - 表示关注
 
     如果你对某个 PR 感兴趣，但暂时没有合适的 comment，可以用表情符号来留下痕迹。
 
-    ![comments](../images/comments4.png)
+    ![comments](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/comments4.png)
 
 !!! tip
 

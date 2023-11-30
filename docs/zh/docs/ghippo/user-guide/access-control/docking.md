@@ -10,13 +10,13 @@
 
 1. 管理员进入`用户与访问控制`，选择`接入管理`，进入接入管理列表，点击右上方的`创建 SSO 接入`。
 
-    ![创建 SSO 接入按钮](../../images/sso1.png)
+    ![创建 SSO 接入按钮](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/sso1.png)
 
 2. 在`创建 SSO 接入`页面填写客户端 ID。
 
-    ![创建 SSO 接入](../../images/sso2.png)
+    ![创建 SSO 接入](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/sso2.png)
   
 3. 创建 SSO 接入成功后，在`接入管理`管理列表，点击刚创建的客户端 ID 进入详情，
    复制客户端 ID、密钥和单点登录 URL 信息，填写至客户系统完成用户体系打通。
 
-    ![接入管理详情](../../images/sso3.png)
+    ![接入管理详情](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/sso3.png)

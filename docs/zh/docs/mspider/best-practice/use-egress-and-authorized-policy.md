@@ -19,15 +19,15 @@ hide:
 
 配置网格启用仅出口流量，请修改网格的治理信息，查看下方的截图介绍，注意修改了之后，我们的服务对集群外的访问需要配合 `Service Entry` 来使用。
 
-![image](../images/egress-and-authorized-03.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/egress-and-authorized-03.png)
 
-![image](../images/egress-and-authorized-04.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/egress-and-authorized-04.png)
 
 ### 创建一个 Egress 网关
 
-![image](../images/egress-and-authorized-01.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/egress-and-authorized-01.png)
 
-![image](../images/egress-and-authorized-02.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/egress-and-authorized-02.png)
 
 ### 准备测试应用
 
@@ -37,7 +37,7 @@ hide:
 
 另外，需要保证应用的 `Pod` 被成功注入了 `sidecar`，这个可以在网格的界面中查看对应服务的状态。
 
-![image](../images/egress-and-authorized-14.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/egress-and-authorized-14.png)
 
 ## 规则配置
 
@@ -47,33 +47,33 @@ hide:
 
 这里我们首先创建一个允许的出口访问地址，这里我们使用了 **baidu** 的地址，可以安装如图进行操作
 
-![image](../images/egress-and-authorized-05.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/egress-and-authorized-05.png)
 
-![image](../images/egress-and-authorized-05-2.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/egress-and-authorized-05-2.png)
 
 ### 创建 Virtual Service
 
-![image](../images/egress-and-authorized-09.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/egress-and-authorized-09.png)
 
 ### 创建 网关规则
 
 注意使用 `ISTIO_MUTAL` ，这样才可以用授权策略
 
-![image](../images/egress-and-authorized-10.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/egress-and-authorized-10.png)
 
 ### 创建网关规则的 DR
 
-![image](../images/egress-and-authorized-06.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/egress-and-authorized-06.png)
 
 ### 创建 **baidu** 的 DR
 
 让所有流量走 HTTPS
 
-![image](../images/egress-and-authorized-07.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/egress-and-authorized-07.png)
 
 ## 启用授权策略
 
-![image](../images/egress-and-authorized-11.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/egress-and-authorized-11.png)
 
 ## 功能测试
 
@@ -81,10 +81,10 @@ hide:
 
 可以成功看到访问的结果是正常的，这是因为我们在网格中启用了出口流量，并且限制了来源使用的服务。
 
-![image](../images/egress-and-authorized-12.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/egress-and-authorized-12.png)
 
 ### 从其他应用的 Pod 中访问 baidu
 
 此时因为有限定来源服务，所以对于从其他服务发起的咨询，会被拒绝。
 
-![image](../images/egress-and-authorized-13.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/egress-and-authorized-13.png)

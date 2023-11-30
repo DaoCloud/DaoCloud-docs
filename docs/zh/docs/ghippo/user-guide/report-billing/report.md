@@ -32,7 +32,7 @@ hide:
 
 1. 使用具有 `admin` 角色的用户登录 DCE 5.0。点击左侧导航栏底部的`全局管理` -> `运营管理`。
 
-    ![报表管理](../../images/gmagpiereport.png)
+    ![报表管理](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/gmagpiereport.png)
    
 3. 进入运营管理后切换不同菜单可查看集群、节点、容器组等报表。
 

@@ -17,6 +17,6 @@ hide:
 
 还提供了流量拓扑，监测不同命名空间、采集源的流量，还增加了流量动画，方便查看动态的流量流转情况。
 
-![traffic topology](../images/monitor01.png)
+![traffic topology](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/user-guide/images/monitor01.png)
 
 有关更多信息，请参阅 Istio 的 [Grafana Dashboard 说明](https://istio.io/latest/docs/tasks/observability/metrics/using-istio-dashboard/)。

@@ -9,11 +9,11 @@
 
 1. 在左侧导航栏中，选择`告警中心` -> `告警静默`,点击`新建静默规则`按钮。
 
-    ![点击按钮](../../images/silence00.png)
+    ![点击按钮](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/silence00.png)
 
 2. 填写静默规则的各项参数，如集群、命名空间、标签、时间等，以定义这条规则的作用范围和生效时间。
 
-    ![静默规则](../../images/silence01.png)
+    ![静默规则](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/silence01.png)
 
 3. 返回规则列表，在列表右侧点击 `︙`，可以编辑或删除静默规则。
 

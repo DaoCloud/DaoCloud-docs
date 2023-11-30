@@ -19,14 +19,14 @@ DCE 5.0 平台存在三种角色范围，能够灵活、有效地解决您在权
 - IAM Owner
 - Audit Owner
 
-![5 个预置平台角色](../../images/newrole01.png)
+![5 个预置平台角色](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/newrole01.png)
 
 同时，DCE 5.0 还支持用户创建自定义平台角色，可根据需要自定义角色内容。
 如创建一个平台角色，包含应用工作台的所有功能权限，由于应用工作台依赖于工作空间，
 因此平台会帮助用户默认勾选工作空间的查看权限，请不要手动取消勾选。
 若用户 A 被授予该 Workbench（应用工作台）角色，将自动拥有所有工作空间下的应用工作台相关功能的增删改查等权限。
 
-![权限列表](../../images/newrole02.png)
+![权限列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/newrole02.png)
 
 ### 平台角色授权方式
 
@@ -34,17 +34,17 @@ DCE 5.0 平台存在三种角色范围，能够灵活、有效地解决您在权
 
 - 在`全局管理` -> `用户与访问控制` -> `用户`的用户列表中，找到该用户，点击 `...`，选择`授权`，为该用户赋予平台角色权限。
 
-    ![点击授权](../../images/newrole03.png)
+    ![点击授权](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/newrole03.png)
 
 - 在`全局管理` -> `用户与访问控制` -> `用户组`的用户组列表中创建用户组，将该用户加入用户组，并给用户组授权
    （具体操作为：在用户组列表找到该用户组，点击 `...`，选择`授权`，为该用户组赋予平台角色）。
 
-    ![点击授权](../../images/newrole04.png)
+    ![点击授权](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/newrole04.png)
 
 - 在`全局管理` -> `用户与访问控制` -> `角色`的角色列表中，找到相应的平台角色，
    点击角色名称进入详情，点击`关联成员` 按钮，选中该用户或用户所在的用户组，点击`确定`。
 
-    ![关联成员按钮](../../images/newrole05.png)
+    ![关联成员按钮](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/newrole05.png)
 
 ## 工作空间角色
 
@@ -55,7 +55,7 @@ DCE 5.0 平台存在三种角色范围，能够灵活、有效地解决您在权
 - Workspace Editor
 - Workspace Viewer
 
-![3 种工作空间预置角色](../../images/newrole06.png)
+![3 种工作空间预置角色](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/newrole06.png)
 
 同时，DCE 5.0 还支持用户创建自定义工作空间角色，可根据需要自定义角色内容。如创建一个工作空间角色，
 包含应用工作台的所有功能权限，由于应用工作台依赖于工作空间，因此平台会帮助用户默认勾选工作空间的查看权限，
@@ -69,9 +69,9 @@ DCE 5.0 平台存在三种角色范围，能够灵活、有效地解决您在权
 
 在`全局管理` -> `工作空间与层级` 列表中，找到该工作空间，点击`添加授权`，为该用户赋予工作空间角色权限。
 
-![添加授权按钮](../../images/newrole07.png)
+![添加授权按钮](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/newrole07.png)
 
-![填写和选择](../../images/newrole08.png)
+![填写和选择](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/newrole08.png)
 
 ## 文件夹角色
 
@@ -84,7 +84,7 @@ DCE 5.0 提供了 3 个预置的、用户可直接使用文件夹角色：
 - Folder Editor
 - Folder Viewer
 
-![3 种预置文件夹角色](../../images/newrole09.png)
+![3 种预置文件夹角色](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/newrole09.png)
 
 同时，DCE 5.0 还支持用户创建自定义文件夹角色，可根据需要自定义角色内容。
 如创建一个文件夹角色，包含应用工作台的所有功能权限。若用户 A 在文件夹 01 中被授予该角色，
@@ -99,6 +99,6 @@ DCE 5.0 提供了 3 个预置的、用户可直接使用文件夹角色：
 
 在`全局管理` -> `工作空间与层级`列表中，找到该文件夹，点击`添加授权`，为该用户赋予文件夹角色权限。
 
-![添加授权按钮](../../images/newrole10.png)
+![添加授权按钮](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/newrole10.png)
 
-![填写和选择](../../images/newrole11.png)
+![填写和选择](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/newrole11.png)

@@ -65,9 +65,9 @@ spec:
     - 部署策略：调度类型、污点容忍度、可以选择是否开启拓扑约束（可参考创建工作负载文档）、支持填写优先级（创建资源时也可以同时创建部署策略，当在本页面也创建了部署策略时，可以根据优先级的高低来判断该资源使用哪个部署策略）
       - 调度类型相比「创建工作负载」新增静态权重(StaticWeight):按照用户定义的权重比例进行调度。
 
-    ![表单创建命名空间级别](../images/pp-new01.png)
+    ![表单创建命名空间级别](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/pp-new01.png)
 
-    ![表单创建](../images/pp-new02.png)
+    ![表单创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/pp-new02.png)
 
 2. 表单创建集群级别的部署策略，不需要选择命名空间。
 

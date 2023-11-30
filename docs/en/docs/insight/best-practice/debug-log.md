@@ -12,11 +12,11 @@ After installing the `insight-agent` in the cluster, `Fluent Bit` in `insight-ag
 
 3. Switch to the `insight-system` -> `Fluent Bit` dashboard.
 
-    ![fluent](../images/insight03.png)
+    ![fluent](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/insight03.png)
 
 4. There are several check boxes above the `Fluent Bit` dashboard to select the input plugin, filter plugin, output plugin, and cluster in which it is located.
 
-    ![fluent](../images/insight04.png)
+    ![fluent](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/insight04.png)
 
 ## Plugin Description
 

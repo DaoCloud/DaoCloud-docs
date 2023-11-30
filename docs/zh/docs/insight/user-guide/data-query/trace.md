@@ -19,7 +19,7 @@
 1. 进入`可观测性` 产品模块，
 2. 在左边导航栏选择 `链路追踪` -> `调用链`。
 
-    ![jaeger](../../images/trace00.png)
+    ![jaeger](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/trace00.png)
 
     !!! note
 
@@ -29,7 +29,7 @@
 
    - 使用 TraceID 搜索请输入完整的 TraceID。
 
-    ![jaeger](../../images/trace04.png)
+    ![jaeger](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/trace04.png)
 
 ## 其他操作
 
@@ -37,7 +37,7 @@
 
 1. 点击链路列表中的某一链路的 TraceID，可查看该链路的详情调用情况。
 
-    ![jaeger](../../images/trace03.png)
+    ![jaeger](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/trace03.png)
 
 ### 查看关联日志
 
@@ -49,7 +49,7 @@
 2. 点击 `查看更多` 后可带条件跳转到`日志查询` 的页面。
 3. 支持基于 `容器组` 过滤和关键字模糊搜索。
 
-    ![tracelog](../../images/trace01.png)
+    ![tracelog](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/trace01.png)
 
     !!! note
 

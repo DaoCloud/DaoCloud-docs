@@ -18,7 +18,7 @@
 
 2. 填写基本信息：
 
-    ![application01](../images/application01.png)
+    ![application01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/application01.png)
 
 3. 填写容器配置，示例为：
 
@@ -26,11 +26,11 @@
 
     - 服务端口：名称为 `http`、容器端口为 `8082`、服务端口为 `8082`。
 
-    ![application02](../images/application02.png)
+    ![application02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/application02.png)
 
 4. 填写高级配置，选择开启 `启用网格`
 
-    ![application03](../images/application03.png)
+    ![application03](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/application03.png)
 
 5. 创建完成后会在 `概览`->`原生应用` 生成一条应用记录。
 
@@ -193,11 +193,11 @@
 
 1. 选择开启灰度发布的应用
 
-    ![选择应用](../images/application04.png)
+    ![选择应用](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/application04.png)
 
 2. 设置发布规则，选择流量管理类型为 `Istio`，流量调度类型为 `基于权重`。
 
-    ![修改规则](../images/application05.png)
+    ![修改规则](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/application05.png)
 
 3. 点击创建并更新应用，在弹出的对话框中填写镜像地址：`argoproj/rollouts-demo:yellow`
 

@@ -16,12 +16,12 @@
 
 1. 点击左侧导航栏上的`容器管理`，然后点击`虚拟机`，进入列表页面，点击列表右侧的 `︙`，可以对运行状态下的虚拟机进行迁移动作。目前虚拟机所在节点为`virtnest-rook-ceph-2`。
 
-    ![实时迁移](../images/live01.png)
+    ![实时迁移](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/live01.png)
 
 2. 弹出弹框，提示在实时迁移期间，正在运行的虚拟机实例会移动到另一个节点，但是无法决定目标节点，同时请确保其他节点资源充足。
 
-    ![迁移提示](../images/live02.png)
+    ![迁移提示](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/live02.png)
 
 3. 迁移成功后可以在虚拟机列表内查看节点信息，此时节点迁移到`virtnest-rook-ceph-1`。
 
-    ![迁移结果](../images/live03.png)
+    ![迁移结果](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/live03.png)

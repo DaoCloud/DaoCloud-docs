@@ -14,15 +14,15 @@ for access control.
 1. Log in with an admin, navigate to `Access Control`, select `Docking Portal`,
    enter the Docking Portal list, and click `Dock product` in the upper right corner.
 
-    ![Dock product button](../../images/sso1.png)
+    ![Dock product button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/sso1.png)
 
 2. On the `Dock product` page, fill in the Client ID.
 
-    ![Dock product](../../images/sso2.png)
+    ![Dock product](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/sso2.png)
 
 3. After successfully creating the SSO access, in the Docking Portal list,
    click the just created Client ID to enter the details,
    copy the Client ID, Secret Key, and Single Sign-On URL information,
    and fill them in the client platform to complete the user system integration.
 
-    ![Docking Portal Details](../../images/sso3.png)
+    ![Docking Portal Details](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/sso3.png)

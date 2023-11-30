@@ -21,15 +21,15 @@ hide:
 
 2. 在左侧导航栏中选择 `Helm 应用` -> `Helm 模板`，找到并点击 `spiderpool`。
 
-    ![spiderpool helm](../../images/spiderpool-helm.png)
+    ![spiderpool helm](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/spiderpool-helm.png)
 
 3. 在`版本选择`中选择希望安装的版本，点击`安装`。
 
 4. 在安装界面，填写所需的安装参数。
 
-    ![spiderpool instal1](../../images/spiderpool-install1.png)
+    ![spiderpool instal1](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/spiderpool-install1.png)
 
-    ![spiderpool instal2](../../images/spiderpool-install2.png)
+    ![spiderpool instal2](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/spiderpool-install2.png)
 
     上图中的各项参数说明：
 
@@ -43,7 +43,7 @@ hide:
 
     - `Spiderpool Agent Setting` —> `Spiderpool Agent ServiceMonitor` -> `Install`：安装 Spiderpool Agent 的 ServiceMonitor 对象，这要求集群内已安装 Prometheus，否则会创建失败。
 
-    ![spiderpool instal3](../../images/spiderpool-install3.png)
+    ![spiderpool instal3](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/spiderpool-install3.png)
 
     上图中的各项参数说明：
 
@@ -62,7 +62,7 @@ hide:
 
     - `Spiderpool Controller Setting` -> `Spiderpool Controller PrometheusRule` -> `Install`：安装 Spiderpool Controller 的 prometheusRule 对象，这要求集群内已安装 Prometheus，否则创建失败。
 
-    ![spiderpool instal4](../../images/spiderpool-install4.png)
+    ![spiderpool instal4](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/spiderpool-install4.png)
 
     上图中的各项参数说明：
 
@@ -76,7 +76,7 @@ hide:
 
     - `IP Family Setting -> enable IPv6`：开启 IPv6 支持。若开启，在给 pod 分配 IP 时，会尝试分配 IPv6 地址，否则会导致 Pod 启动失败。所以，请开启 `Cluster Default Ippool Installation` -> `install IPv6 ippool`，以创建集群的默认 IPv6 池。
 
-    ![spiderpool instal5](../../images/spiderpool-install5.png)
+    ![spiderpool instal5](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/spiderpool-install5.png)
 
     上图中的各项参数说明：
 

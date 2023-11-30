@@ -16,17 +16,17 @@ This guide explains how to create a multi-cloud deployment using a YAML file. If
 
 1. Click `Multicloud Workloads` -> `Deployments`, and `Create from YAML` in the top-right corner.
 
-    ![yaml creation](../images/deploy-create01.png)
+    ![yaml creation](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/deploy-create01.png)
 
 2. Enter or import the YAML file for the Deployment, then click `Next`.
 
     > The `Download` button allows you to download the current YAML file and save it locally for future use.
 
-    ![yaml creation](../images/deploy-create02.png)
+    ![yaml creation](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/deploy-create02.png)
 
 3. Enter or import the YAML file for the deployment policy, then click `Next`.
 
-    ![yaml creation](../images/deploy-create03.png)
+    ![yaml creation](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/deploy-create03.png)
 
 4. Enter or import the YAML file for the override policy, then click `OK`.
 
@@ -36,7 +36,7 @@ This guide explains how to create a multi-cloud deployment using a YAML file. If
 
 Then you will be automatically directed to the multi-cloud deployment list. You can click the `⋮` icon on the right of the list to edit the YAML, pause, restart, or delete the workload.
 
-![more actions](../images/deploy-update01.png)
+![more actions](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/deploy-update01.png)
 
 ## YAML File Examples
 

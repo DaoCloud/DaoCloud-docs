@@ -17,12 +17,12 @@ Sentinel 是面向分布式、多语言异构化服务架构的流量治理组�
 
 2. 在左侧导航栏点击`插件中心`，在`Sentinel 治理`卡片上点击`立即开启`。
 
-    ![开启插件](../../../images/sentinel01.png)
+    ![开启插件](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/sentinel01.png)
 
 3. 填写各项配置信息，然后在弹框底部点击`确定`。
 
-    ![配置](../../../images/sentinel02.png)
+    ![配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/sentinel02.png)
 
 4. 如果满足前提条件并且配置正确，页面右上角会弹出"启用 Sentinel 插件成功"的消息。
 
-    ![配置](../../../images/sentinel03.png)
+    ![配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/sentinel03.png)

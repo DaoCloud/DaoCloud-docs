@@ -21,7 +21,7 @@ before activating the `Delete` button in the dialog box.
 
     - Delete External Mesh. Only need to confirm the mesh name to complete the deletion operation.
 
-        ![External Mesh](../images/deletemesh02.png)
+        ![External Mesh](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/deletemesh02.png)
 
     - Delete Dedicated Mesh. Follow the prompts to disable mesh deletion protection, uninstall injected sidecars, clean up gateways, and then confirm the deletion operation by entering the mesh name.
 

@@ -246,9 +246,7 @@
 
 完整示例如下：
 
-### Insight v0.18.x
-
-```bash
+```bash "For Insight v0.18.x"
 kubectl apply -f - <<EOF
 apiVersion: opentelemetry.io/v1alpha1
 kind: Instrumentation
@@ -342,7 +340,7 @@ EOF
 
     opentelemetry operator 在注入探针时会自动添加一些 OTEL 相关环境变量，同时也支持这些环境变量的覆盖。这些环境变量的覆盖优先级：
 
-    original container env vars > language specific env vars > common env vars > instrument spec configs' vars.
+    original container env vars -> language specific env vars -> common env vars -> instrument spec configs' vars.
 
     但是需要避免手动覆盖 OTEL_RESOURCE_ATTRIBUTES_NODE_NAME, 它在 operator 内部作为一个 Pod 是否已经注入探针的标识，如果手动
     添加了，探针可能无法注入。

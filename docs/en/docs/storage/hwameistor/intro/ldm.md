@@ -2,7 +2,7 @@
 
 Local Disk Manager (LDM) is one of the modules of HwameiStor. `LDM` is used to simplify the management of disks on nodes. It can abstract the disk on a node into a resource for monitoring and management purposes. It's a daemon that will be deployed on each node, then detect the disk on the node, abstract it into local disk (LD) resources and save it to kubernetes.
 
-![LDM 架构图](../../hwameistor/img/ldm-en.png)
+![LDM 架构图](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/storage/hwameistor/img/ldm-en.png)
 
 At present, the LDM project is still in the `alpha` stage.
 

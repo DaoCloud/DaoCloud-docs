@@ -38,4 +38,4 @@ hide:
    
 2. 进入运营管理后切换不同菜单可查看集群、节点、容器组等计费报表。
 
-    ![计费报表](../../images/billing.png)
+    ![计费报表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/billing.png)

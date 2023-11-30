@@ -12,11 +12,11 @@ If you need to create a new **Multus CR instance**, you can refer to this docume
 
 1. After logging in to the DCE UI, click `Container Management` -> `Cluster List` in the left navigation menu to find the corresponding cluster. Then click `Container Network` -> `Network Configuration` on the left navigation menu.
 
-    ![config](../images/networkconfig01.png)
+    ![config](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/networkconfig01.png)
 
 2. Go to `Network Configuration` -> `Multus CR Management`, and click `Create Multus CR`.
 
-    ![Multus CR management](../images/networkconfig02.png)
+    ![Multus CR management](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/networkconfig02.png)
 
     !!! note
 
@@ -26,7 +26,7 @@ If you need to create a new **Multus CR instance**, you can refer to this docume
 
 Enter the following parameters:
 
-![multus cr](../images/networkconfig03.png)
+![multus cr](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/networkconfig03.png)
 
 - `Name`: The instance name of the Multus CNI configuration, which is the Multus CR name.
 - `Description`: Description of the instance.
@@ -65,14 +65,14 @@ Parameters are optional, and the input format is `k1=v1;k2=v2;k3=v3`, separated 
 
 Enter the following parameters:
 
-![multus cr](../images/networkconfig04.png)
+![multus cr](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/networkconfig04.png)
 
 - The `Name`, `Description`, `CNI Type`, `IPv4 Default Pool`, `IPv6 Default Pool`, and `Vlan ID` configurations are the same as in scenario 1.
 - `SR-IOV Resource`: Only used for the `sriov` type, enter the resource name, which cannot be empty.
 
 ### Create a Custom  Multus CR
 
-![multus cr](../images/networkconfig05.png)
+![multus cr](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/networkconfig05.png)
 
 - `JSON`: for custom types, make sure to input a valid JSON file.
 

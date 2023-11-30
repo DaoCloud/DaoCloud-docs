@@ -23,7 +23,7 @@ hide:
     4. **事件**：统计所选命名空间下 24 小时内 Warning 级别的事件数量；
     5. **资源消耗**：统计所选命名空间下容器组的 CPU、内存使用量之和 及 CPU、内存配额情况。
 
-    ![命名空间](../../images/namespace00.png){ width="1000"}
+    ![命名空间](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/namespace00.png){ width="1000"}
 
 ### 指标说明
 

@@ -16,7 +16,7 @@
 4. 编辑弹框，修改设备描述信息。
 5. 点击`确定`，完成基本信息修改，系统自动返回到设备详情页。
 
-    ![编辑基本信息](../../images/manage-device-01.png)
+    ![编辑基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/manage-device-01.png)
 
 ### 编辑孪生属性
 
@@ -26,9 +26,9 @@
 2. 点击属性列表右上角`新增孪生属性`或在列表的右侧，点击 `⋮` 按钮，在弹出菜单中选择 `编辑`、`删除`。
 3. 在对应操作的弹框页，点击`确定`按钮，完成孪生属性的新增、编辑、删除操作。
 
-    ![编辑孪生属性](../../images/manage-device-02.png)
+    ![编辑孪生属性](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/manage-device-02.png)
 
-    ![编辑孪生属性](../../images/manage-device-03.png)
+    ![编辑孪生属性](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/manage-device-03.png)
 
 ### 修改标签
 
@@ -42,7 +42,7 @@
 
 4. 点击`确定`按钮，完成设备标签修改操作。
 
-    ![修改标签](../../images/manage-device-04.png)
+    ![修改标签](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/manage-device-04.png)
 
 ### 编辑访问配置
 
@@ -56,10 +56,10 @@
 
 4. 点击`确定`按钮，完成设备访问配置修改操作。
 
-    ![编辑访问配置](../../images/manage-device-05.png)
+    ![编辑访问配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/manage-device-05.png)
 
 ### 删除终端设备
 
 在终端设备列表的右侧，点击 `⋮` 按钮，在弹出菜单中选择`删除`。
 
-![删除终端设备](../../images/manage-device-06.png)
+![删除终端设备](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/manage-device-06.png)

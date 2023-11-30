@@ -24,17 +24,17 @@ hide:
 
 1. 登录 DaoCloud 控制台，进入网格实例详情页，点击`边车信息`菜单，进入边车信息修改页面
 
-    ![image](../../images/sidecar-log-level-01.png)
+    ![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/sidecar-log-level-01.png)
 
 2. 在边车信息修改页面，可以修改全局默认边车日志级别，修改完成后，点击`保存`按钮，即可保存修改
 
-    ![image](../../images/sidecar-log-level-02.png)
+    ![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/sidecar-log-level-02.png)
 
 ### 临时修改工作负载边车日志级别
 
 通常情况下我们在临时分析问题时，需要修改某个工作负载的边车日志级别，所以，我们支持通过到工作负载的边车容器内临时修改。
 
-![image](../../images/sidecar-log-level-03.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/sidecar-log-level-03.png)
 
 这里需要使用 Kubectl 来进行容器边车的配置更新，您需要访问集群控制台，并打开终端，执行如下命令：
 
@@ -56,4 +56,4 @@ kubectl -n default exec -it productpage-v1-5b4f8f9b9f-8q9q2  -c istio-proxy -- c
 
 执行完成后，可以在页面点击查看日志，确认边车日志级别是否已经修改成功。
 
-![image](../../images/sidecar-log-level-04.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/sidecar-log-level-04.png)

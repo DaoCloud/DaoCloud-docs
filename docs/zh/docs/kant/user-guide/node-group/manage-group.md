@@ -12,11 +12,11 @@
 
 3. 节点组详情页，点击右上角`编辑节点组`按钮。
 
-    ![编辑节点组](../../images/manage-group-01.png)
+    ![编辑节点组](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/manage-group-01.png)
 
 4. 编辑页面，修改节点组配置信息。
 
-    ![编辑节点组](../../images/manage-group-02.png)
+    ![编辑节点组](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/manage-group-02.png)
 
 5. 点击`确定`，完成节点组配置修改，系统自动返回到节点组详情页。
 
@@ -30,4 +30,4 @@
 
 3. 输入节点组名称，点击`删除`，完成删除操作。
 
-    ![删除节点组](../../images/manage-group-03.png)
+    ![删除节点组](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/manage-group-03.png)

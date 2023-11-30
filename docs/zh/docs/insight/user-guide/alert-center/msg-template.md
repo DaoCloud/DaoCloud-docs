@@ -8,11 +8,11 @@
 
    - Insight 默认内置中英文两个模版，以便用户使用。
 
-    ![点击按钮](../../images/template00.png)
+    ![点击按钮](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/template00.png)
 
 2. 点击`新建消息模板`按钮，填写模板内容。
 
-    ![点击按钮](../../images/template01.png)
+    ![点击按钮](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/template01.png)
 
 !!! info
 

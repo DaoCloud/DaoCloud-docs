@@ -23,7 +23,7 @@
     - SonarQube 地址：可访问工具链的地址，以 http://, https:// 开头的域名或 IP 地址。
     - Token：在 SonarQube 生成管理员令牌（Token），操作路径为：My Account -> Profile -> Security -> Generate -> Copy
 
-    ![scan](../images/sonarqube11.png)
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/sonarqube11.png)
 
 3. 点击`确定`，集成成功返回到工具链列表页面。
 
@@ -39,21 +39,21 @@
 
 3. 输入名称，其他可使用默认值，点击`确定`。
 
-    ![scan](../images/sonarqube12.png)
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/sonarqube12.png)
 
 ## 编辑流水线步骤
 
 1. 点击一个流水线进入其详情页面，在右上角点击`编辑流水线`。
 
-    ![scan](../images/sonarqube13.png)
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/sonarqube13.png)
 
 2. 配置全局设置：
 
-    ![scan](../images/sonarqube14.png)
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/sonarqube14.png)
 
 3. 图形化界面定义阶段一 `git clone` 如下配置：
 
-    ![scan](../images/sonarqube15.png)
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/sonarqube15.png)
 
 4. 图形化界面定义阶段二 `SonarQube analysis` 如下配置：
 
@@ -62,9 +62,9 @@
    - 项目：定义在 SonarQube 中扫描的项目
    - 扫描文件：需要扫描代码仓库中文件目录地址
 
-    ![scan](../images/sonarqube16.png)
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/sonarqube16.png)
     
-    ![scan](../images/sonarqube17.png)
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/sonarqube17.png)
 
 5. 保存后立即运行该流水线，并等待流水线运行成功。
 
@@ -72,8 +72,8 @@
 
 1. 等待流水线运行成功后，在流水线详情页面点击`代码质量检查`。
 
-    ![scan](../images/sonarqube18.png)
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/sonarqube18.png)
 
 2. 查看代码扫描结果，点击`查看更多`可前往 SonarQube 后台查看更多扫描信息。
 
-    ![scan](../images/sonarqube19.png)
+    ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/sonarqube19.png)

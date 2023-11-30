@@ -17,7 +17,7 @@
 
 图例：数据同步 `redis-a` >> `redis-b`
 
-![sync](../images/sync01.png)
+![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync01.png)
 
 ### 为源端实例配置服务
 
@@ -49,7 +49,7 @@
 
     1. 注意 `pod-name` 一定要选择正确的 leader pod 名称
 
-    ![svc](../images/sync04.png)
+    ![svc](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync04.png)
 
 重复执行以上操作，为 `redis-a-leader-1`、`redis-a-leader-2` 分别创建服务。
 
@@ -66,7 +66,7 @@ RedisShake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 在`容器管理` -> `目标端 Redis 实例所在集群` -> `配置与存储` -> `配置项`中，为 RedisShake 实例创建配置项 `redis-sync-0`。
 导入文件 [sync.toml](#_6)，并注意需要修改以下内容：
 
-![conf](../images/sync05.png)
+![conf](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync05.png)
 
 - source.address：源端 `redis-a-leader-0` 的 `redis-a-leader-svc-0` 服务地址：
 
@@ -90,11 +90,11 @@ RedisShake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 
     您可以在`集群管理` -> `目标端所在集群` -> `工作负载` -> `访问方式` 中查看此配置。
 
-    ![conf](../images/sync18.png)
+    ![conf](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync18.png)
 
     点击服务名称，进入服务详情，查看 ClusterIP 地址。
 
-    ![conf](../images/sync19.png)
+    ![conf](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync19.png)
 
 - 目标端实例的访问密码，可在`数据服务`模块下的 Redis 实例概览页获取该信息:
 
@@ -148,7 +148,7 @@ RedisShake 通常与数据传输的目标 Redis 实例运行于同一集群上�
         /data
         ```
 
-       ![sync](../images/sync10.png)
+       ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync10.png)
 
 3. 点击`确定`，完成 RedisShake 创建。
 
@@ -160,7 +160,7 @@ RedisShake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 
 图例：数据恢复 `redis-b` >> `redis-a`
 
-![recovery](../images/sync02.png)
+![recovery](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync02.png)
 
 当源端 `redis-a` 恢复上线后，首先需要从目标端 `redis-b` 恢复增量数据，因此需要在 `redis-a` 所在集群再次部署 3 个 RedisShake 实例，
 实现 `redis-b` >> `redis-a` 的数据回传。此处配置方法与[数据同步](#_1)过程类似，执行 **反方向** 配置部署即可。完成 RedisShake 创建后，即自动开始数据恢复。

@@ -15,7 +15,7 @@
 
 2. 在批量工作负载列表的右侧，点击 `⋮` 按钮，在弹出菜单中选择`部署。`
 
-    ![批量工作负载列表](../../images/deploy-01.png)
+    ![批量工作负载列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/deploy-01.png)
 
 3. 填写相关参数。
 
@@ -30,9 +30,9 @@
             1. 默认实例数为批量工作负载定义的实例数，随着定义的修改而修改。修改后的实例数不受批量负载定义的更新影响。
             2. 支持对容器镜像的镜像、镜像仓、版本进行分段配置，配置后的分段对象不受批量负载定义的更新影响。
 
-    ![部署](../../images/deploy-02.png)
+    ![部署](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/deploy-02.png)
 
-    ![选择边缘节点组](../../images/deploy-03.png)
+    ![选择边缘节点组](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/deploy-03.png)
 
 ## 查看定义
 
@@ -48,4 +48,4 @@
 
 3. 在定义详情页，切换容器配置、标签与注解、访问配置 Tab，点击 编辑 按钮，进入对应编辑界面，完成定义配置修改操作。
 
-![查看定义](../../images/deploy-04.png)
+![查看定义](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/deploy-04.png)

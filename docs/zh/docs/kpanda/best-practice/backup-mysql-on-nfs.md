@@ -542,7 +542,7 @@
 
 3. 创建好备份计划之后页面会自动返回备份计划列表，找到新建的备份计划 `backup-mysq`，在计划点击更多操作按钮 `...` 选择 `立即执行` 执行新建的备份计划。
 
-    ![img](../images/mysql05.png)
+    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/mysql05.png)
 
 4. 等待备份计划执行完成后，即可执行后续操作。
 
@@ -554,7 +554,7 @@
 
 2. 在左侧功能栏选择 `恢复`，然后在右侧点击 `恢复备份`。
 
-    ![img](../images/mysql07.png)
+    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/mysql07.png)
 
 3. 查看以下说明填写参数：
   

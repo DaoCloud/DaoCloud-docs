@@ -10,7 +10,7 @@
 
 2. 点击消息端点列表右上角`创建消息端点`按钮。
 
-    ![创建消息端点](../../images/create-route-01.png)
+    ![创建消息端点](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-route-01.png)
 
 3. 填写相关参数。
 
@@ -21,7 +21,7 @@
 
 4. 点击`确定`，即创建消息端点成功，返回到消息端点列表页面。
 
-    ![创建消息端点](../../images/create-route-02.png)
+    ![创建消息端点](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-route-02.png)
 
 ## 创建消息路由
 
@@ -31,7 +31,7 @@
 
 2. 点击消息路由列表右上角`创建消息路由`按钮。
 
-    ![创建消息路由](../../images/create-route-03.png)
+    ![创建消息路由](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-route-03.png)
 
 3. 填写相关参数。
 
@@ -46,7 +46,7 @@
         - 当目的端点为云端 Rest 类型，输入 URL，如 http://127.0.0.1:8080/hello。
         - 当目的端点为边端 Service Bus 类型，输入 Service Bus 路径，如 /abc/bc。
 
-    ![创建消息路由](../../images/create-route-04.png)
+    ![创建消息路由](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-route-04.png)
 
 4. 点击`确定`，即创建路由规则成功，返回到消息路由列表页面。
 
@@ -64,4 +64,4 @@
 
 4. 点击`删除`，即删除成功，放回到消息路由列表页。
 
-    ![删除消息路由](../../images/create-route-05.png)
+    ![删除消息路由](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-route-05.png)

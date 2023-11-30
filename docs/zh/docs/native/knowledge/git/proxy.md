@@ -10,7 +10,7 @@
 
 1. 查找你的 http 代理地址和端口号。
 
-    ![http 地址和端口](../images/proxy1.png)
+    ![http 地址和端口](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/proxy1.png)
 
 2. 在系统盘的用户根目录找到 `.gitconfig` 文件，比如我的电脑是：
 
@@ -58,7 +58,7 @@
 
 2. 打开梯子，查找 http 代理地址和端口号。
 
-    ![mac 梯子](../images/mac-proxy.png)
+    ![mac 梯子](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/mac-proxy.png)
 
 3. 在用户根目录，找到 `.gitconfig` 文件，用 VScode 等编辑器进行修改。
 

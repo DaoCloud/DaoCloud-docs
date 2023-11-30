@@ -44,7 +44,7 @@ MIG 允许多个 vGPU（以及虚拟机）在单个 GPU 实例上并行运行，
 
 如下是一个 MIG 的概述图，可以看出 MIG 将一张物理 GPU 卡虚拟化成了 7 个 GPU 实例，这些 GPU 实例能够可以被多个 User 使用。
 
-![img](../../images/mig_overview.png)
+![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/mig_overview.png)
 
 ## 重要概念
 
@@ -69,27 +69,27 @@ MIG 允许多个 vGPU（以及虚拟机）在单个 GPU 实例上并行运行，
 
 GPU 的分区是使用内存切片进行的，因此可以认为 A100-40GB GPU 具有 8x5GB 内存切片和 7 个 GPU SM 切片，如下图所示，展示了 A100 上可用的内存切片。
 
-![img](../../images/mig_7m.png)
+![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/mig_7m.png)
 
 如上所述，创建 GPU 实例 （GI） 需要将一定数量的内存切片与一定数量的计算切片相结合。
 在下图中，一个 5GB 内存切片与 1 个计算切片相结合，以创建 `1g.5gb` GI 配置文件：
 
-![img](../../images/mig_1g5gb.png)
+![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/mig_1g5gb.png)
 
 同样，4x5GB 内存切片可以与 4x1 计算切片结合使用以创建 `4g.20gb` 的 GI 配置文件：
 
-![img](../../images/mig_4g20gb.png)
+![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/mig_4g20gb.png)
 
 ### 计算实例（CI）
 
 GPU 实例的计算切片(GI)可以进一步细分为多个计算实例（CI），其中 CI 共享父 GI 的引擎和内存，
 但每个 CI 都有专用的 SM 资源。使用上面的相同 `4g.20gb` 示例，可以创建一个 CI 以仅使用第一个计算切片的 `1c.4g.20gb` 计算配置，如下图蓝色部分所示：
 
-![img](../../images/mig_1c.4g.20gb.png)
+![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/mig_1c.4g.20gb.png)
 
 在这种情况下，可以通过选择任何计算切片来创建 4 个不同的 CI。还可以将两个计算切片组合在一起以创建 `2c.4g.20gb` 的计算配置）：
 
-![img](../../images/mig2c.4g.20gb.png)
+![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/mig2c.4g.20gb.png)
 
 除此之外，还可以组合 3 个计算切片以创建计算配置文件，或者可以组合所有 4 个计算切片以创建 `3c.4g.20gb`、`4c.4g.20gb` 计算配置文件。
 合并所有 4 个计算切片时，配置文件简称为 `4g.20gb`。

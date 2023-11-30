@@ -24,17 +24,17 @@ error: unexpected error when reading response body. Please retry. Original error
 
 1. 前往容器管理模块，找到 Jenkins 组件所在的集群，点击集群名称。
 
-    ![faq-ci2](../images/faq-ci2.png)
+    ![faq-ci2](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/faq-ci2.png)
 
 2. 在左侧导航栏依次点击`配置与密钥` -> `配置项`。
 
 3. 搜索 `jenkins-casc-config`，在操作列点击`编辑 YAML`。
 
-    ![faq-ci3](../images/faq-ci3.png)
+    ![faq-ci3](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/faq-ci3.png)
 
 4. 在 `data` -> `jenkins.yaml` -> `jenkins.clouds.kubernetes.templates` 字段下选择需要更改的 podTemplate 的镜像。
 
-    ![faq-ci4](../images/faq-ci4.png)
+    ![faq-ci4](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/faq-ci4.png)
 
 5. 更新完成后，前往`工作负载`重启 Jenkins。
 
@@ -44,17 +44,17 @@ error: unexpected error when reading response body. Please retry. Original error
 
 1. 前往容器管理模块，在`集群列表` 界面选择 Jenkins 组件所在的集群，点击集群名称。
 
-    ![faq-ci2](../images/faq-ci2.png)
+    ![faq-ci2](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/faq-ci2.png)
 
 2. 在左侧导航栏依次点击`配置与密钥` -> `配置项`。
 
 3. 搜索 `amamba-devops-agent`，在操作列点击 `编辑 YAML`。
 
-    ![faq-ci5](../images/faq-ci5.png)
+    ![faq-ci5](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/faq-ci5.png)
 
 4. 在 `data` 模块 下的 `MavenSetting` 按需修改。
 
-    ![faq-ci6](../images/faq-ci6.png)
+    ![faq-ci6](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/faq-ci6.png)
 
 5. 更新完成后，需要前往`工作负载`重启 Jenkins。
 
@@ -72,7 +72,7 @@ error: unexpected error when reading response body. Please retry. Original error
 
     修改时注意格式缩进，并且每个 registry 需要一个单独的 `[[registry]]` 部分，如下图所示：
 
-    ![faq-ci1](../images/faq-ci1.png)
+    ![faq-ci1](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/faq-ci1.png)
 
     !!! note
 
@@ -126,6 +126,6 @@ error: unexpected error when reading response body. Please retry. Original error
 
 4. 在 `data` -> `jenkins.yaml` -> `jenkins.clouds.kubernetes.containerCapStr` 字段下修改数值。
 
-    ![jenkins001](../images/jenkinsadd.png)
+    ![jenkins001](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/jenkinsadd.png)
 
 5. 更新完成后，前往`工作负载`重启 Jenkins。

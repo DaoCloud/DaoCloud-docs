@@ -12,20 +12,20 @@
     - 集群：单击集群下拉框可切换集群；
     - 命名空间：单击命名空间切换下拉框。
 
-    ![告警策略](../../images/policy00.png)
+    ![告警策略](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/policy00.png)
 
 3. 点击告警策略名称可查看策略的基本信息、规则以及通知配置。
 
     1. 在规则列表中可查看规则类型、规则的表达式、级别、状态等信息。
     2. 进入策略详情，可以添加、编辑、删除其下的告警规则。
 
-    ![告警策略](../../images/policy06.png)
+    ![告警策略](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/policy06.png)
 
 ## 创建告警策略
 
 1. 填写基本信息，选择一个或多个集群、节点或工作负载为告警对象后点击`下一步`。
 
-    ![基本信息](../../images/policy01.png)
+    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/policy01.png)
 
 2. 列表需至少有一条规则。如果列表为空，请`添加规则`。
 
@@ -33,7 +33,7 @@
 
     在弹窗中创建告警规则，填写各项参数后点击`确定`。
 
-    ![创建规则](../../images/policy04.png)
+    ![创建规则](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/policy04.png)
 
     - 模板规则：预定义了基础指标，可以按 CPU、内存、磁盘、网络设定要监控的指标。
     - PromQL 规则：输入一个 PromQL 表达式，具体请[查询 Prometheus 表达式](https://prometheus.io/docs/prometheus/latest/querying/basics/)。
@@ -43,7 +43,7 @@
 
 3. 点击`下一步`后配置通知。
 
-    ![通知配置](../../images/policy05.png)
+    ![通知配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/policy05.png)
 
 4. 配置完成后，点击`确定`按钮，返回告警策略列表。
 
@@ -59,7 +59,7 @@
 
     仅当资源对象选择节点或工作负载时，支持创建日志规则。
 
-![通知配置](../../images/policy10.png)
+![通知配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/policy10.png)
 
 **字段说明：**
 
@@ -77,7 +77,7 @@
 
     仅当资源对象选择工作负载时，支持创建事件规则。
 
-![通知配置](../../images/policy04.png)
+![通知配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/policy04.png)
 
 **字段说明：**
 
@@ -101,8 +101,8 @@
    - 必填 `severity`且符合规范：critical、warning、info。
    - 必填表达式 `expr`。
 
-    ![yaml 创建](../../images/create-from-yaml.png){ width=1000px}
+    ![yaml 创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/create-from-yaml.png){ width=1000px}
 
 2. 导入 YAML 文件后，点击`预览`，可以对导入的 YAML 格式进行验证，并快速确认导入的告警规则。
 
-    ![yaml 创建](../../images/create-from-yaml01.png){ width=1000px}
+    ![yaml 创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/create-from-yaml01.png){ width=1000px}

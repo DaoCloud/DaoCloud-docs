@@ -15,13 +15,13 @@
 
 2. 在左侧导航栏点击`监控`->`微服务监控`。
 
-    ![导航栏](../../../images/monitor05.png)
+    ![导航栏](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/monitor05.png)
 
 3. 选择对应的微服务命名空间、服务、实例和资源即可查看该命名空间下的微服务监控数据。
 
     > 点击仪表盘名称可以进一步查看或分享该监控信息。在页面右上角可切换统计时间窗口和刷新周期。
 
-    ![查看信息](../../../images/monitor06.png)
+    ![查看信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/monitor06.png)
 
 ## 微服务监控指标说明
 

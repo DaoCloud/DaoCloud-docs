@@ -24,7 +24,7 @@
 
     - 指定集群：勾选具体的集群直接指定多云工作负载的部署集群。
 
-        ![指定集群](../images/deployment-new01.png)
+        ![指定集群](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/deployment-new01.png)
 
     - 指定区域：根据集群的厂商/地域/可用区筛选部署集群，可同时勾选三个筛选条件
 
@@ -32,7 +32,7 @@
         - `集群污点容忍度`：在[工作集群管理页面为集群添加污点](../cluster.md#_6)后，带有该污点的资源就无法调度到该集群上。在此处开启污点容忍后，即可允许带有对应污点的资源调度到所选集群。
         - `拓扑约束`：设置约束范围的目的在于，控制工作负载所在的集群至少/最多分布在几个区域/可用区。例如，最大数和最小数均为 1 时表示，将所有工作负载都部署到同一区域/可用区下的集群。支持同时配置地域+集群或者只配置集群的数值。
 
-            ![指定区域](../images/deployment-new02.png)
+            ![指定区域](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/deployment-new02.png)
 
     - 指定标签：通过标签选择将工作负载部署到哪些集群
 
@@ -40,7 +40,7 @@
         - 操作符——`In`：节点必须包含所选的标签，并且该标签的取值必须 **属于** 某个取值集合。多个值用 `；` 隔开
         - 操作符——`Exists`：节点包含某个标签即可，不关注标签的具体取值
 
-            ![指定标签](../images/deployment-new03.png)
+            ![指定标签](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/deployment-new03.png)
 
     - 自动传播：开启后，自动检测多云工作负载配置依赖的 ConfigMap 与 Secret 等资源，并将这些资源自动分发到所选的每个部署集群。
     - 实例数：设置多云工作负载的副本数
@@ -76,6 +76,6 @@
 
 页面会自动返回多云无状态负载列表，点击右侧的更多操作按钮，可以编辑工作负载的 YAML、更新/暂停/重启/删除工作负载。
 
-![more actions](../images/deploy12.png)
+![more actions](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/deploy12.png)
 
 [下一步：创建多云服务](../resource/service.md){ .md-button .md-button--primary }

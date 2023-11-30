@@ -39,7 +39,7 @@ hide:
     - 哨兵模式填写地址：`redis+sentinel://{host}:{port}?sentinelMasterId={master_id}`，需要替换 host、port、master_id 三个参数。
     - 密码：按需填写
 
-    ![规格配置](../images/hosted04.png)
+    ![规格配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/hosted04.png)
 
 5. 填写域名，选择 Ingress 实例，输入管理员密码后点击`确定`（用户名/密码用于登录原生 Harbor 实例，请妥善保管密码）。
 

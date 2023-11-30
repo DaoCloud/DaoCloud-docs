@@ -4,7 +4,7 @@
 
 客户机房环境为单一 k8s 集群横跨`机房A`、`机房B`，期望可以部署一套 3 主 3 从集群模式 Redis，实现跨机房高可用，当任一机房整体离线时，Redis 仍可以正常提供服务。
 
-![svc](../images/sync26.png)
+![svc](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync26.png)
 
 
 ## 解决方案
@@ -17,7 +17,7 @@
 
 - 确保每个集群节点仅运行一个 Redis 副本
 
-![svc](../images/sync27.png)
+![svc](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync27.png)
 
 本方案采用了工作负载的调度策略，通过具有权重的节点亲和性策略和工作负载反亲和策略达成以上部署目标。
 
@@ -140,7 +140,7 @@
 ### `机房 A` 离线
 `机房 A` 离线将导致两个 `Redis-leader` 副本离线，整个 Redis 将无法提供正常服务，如下图所示：
 
-![sync](../images/sync28.png)
+![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync28.png)
 
 **解决办法**
 
@@ -163,4 +163,4 @@ role
 
 `机房 B` 离线将仅导致一个 redis-leader 副本离线，Redis 服务不会中断，无需人工干预，如下图。
 
-![sync](../images/sync29.png)
+![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync29.png)

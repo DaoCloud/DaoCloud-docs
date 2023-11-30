@@ -26,17 +26,17 @@ hide:
     - 管理面集群：可选的集群列表来自[容器管理](../../kpanda/intro/index.md)模块中接入或创建的集群。如果没有想选的集群，可以去容器管理模块中[接入](../../kpanda/user-guide/clusters/integrate-cluster.md)或[创建](../../kpanda/user-guide/clusters/create-cluster.md)集群。
     - 实例释放：如果勾选，删除多云实例时会同步删除对应的 Karmada 实例。如果不删除，可以继续通过终端使用，但无法在 DCE 5.0 的多云编排模块内管理该 Karmada 实例。建议同步删除。
 
-        ![Management](../images/add-instance.png)
+        ![Management](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/add-instance.png)
 
 3. 选择安装多云实例的管理面集群时，选择安装多云实例的管理面集群时，建议使用运行正常并且安装了存储类（SC）的集群并保证对应的存储卷空间充足，否则存在安装失败的风险。若安装失败，可以在对应的管理面集群中查看原因。可根据以下步骤检查问题。
 
     - 在管理面集群无状态负载中，检查`etcd`的运行状态。
 
-        ![check-etcd](../../virtnest/images/check-etcd.png)
+        ![check-etcd](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/check-etcd.png)
 
     - 检查 PVC 是否为就绪（bound）状态.
 
-        ![check-pvc](../../virtnest/images/check-pvc.png)
+        ![check-pvc](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/check-pvc.png)
 
     - 选择`kairship-system`命名空间下的`kairship-apiserver`无状态负载，进行更新操作。
 

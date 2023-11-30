@@ -23,18 +23,18 @@ hide:
 
     1. 在容器管理模块的一级导航栏点击`集群巡检`，然后在页面右侧点击`巡检`。
     
-        ![start](../../images/inspect04.png)
+        ![start](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/inspect04.png)
     
     2. 勾选需要巡检的集群，然后在页面底部点击`确定`即可。
       
         - 若选择多个集群进行同时巡检，系统将根据不同集群的巡检配置进行巡检。
         - 如未设置集群巡检配置，将使用系统默认配置。
 
-            ![start](../../images/inspect05.png)
+            ![start](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/inspect05.png)
 
 === "单独巡检"
 
     1. 进入集群巡检页面。
     2. 在对应巡检配置的右侧点击 `ⵗ` 更多操作按钮，然后在弹出的菜单中选择`巡检`即可。
     
-        ![basic](../../images/inspect06.png)
+        ![basic](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/inspect06.png)

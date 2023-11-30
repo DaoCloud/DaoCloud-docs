@@ -15,21 +15,21 @@ Follow the steps below to create a workspace:
 1. Log in to DCE 5.0 with a user account having the admin/folder admin role.
    Click `Global Management` -> `Workspace and Folder` at the bottom of the left navigation bar.
 
-    ![Global Management](../../images/ws01.png)
+    ![Global Management](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/ws01.png)
 
 3. Click the `Create Workspace` button in the top right corner.
 
-    ![Create Workspace](../../images/ws02.png)
+    ![Create Workspace](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/ws02.png)
 
 4. Fill in the workspace name, folder assignment, and other information, then click `OK` to complete creating the workspace.
 
-    ![Confirm](../../images/ws03.png)
+    ![Confirm](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/ws03.png)
 
 !!! tip
 
     After successful creation, the workspace name will be displayed in the left tree structure, represented by different icons for folders and workspaces.
 
-    ![Folders and Workspaces](../../images/ws04.png)
+    ![Folders and Workspaces](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/ws04.png)
 
 !!! note
 

@@ -11,11 +11,11 @@ Cilium 官方提供的[测试报告](https://docs.cilium.io/en/v1.13/operations/
 
 ## 测试对象
 
-![cilium](../../images/cilium-cross-target.png)
+![cilium](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/cilium-cross-target.png)
 
 ## 测试环境配置
 
-![env](../../images/cilium-cross-env.png)
+![env](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/cilium-cross-env.png)
 
 ## 测试工具及指标
 
@@ -33,21 +33,21 @@ Cilium 官方提供的[测试报告](https://docs.cilium.io/en/v1.13/operations/
 
 TCP 单流，测试两个跨节点 Pod 之间的 TCP 吞吐量：
 
-![single1](../../images/cilium-singlestream01.png)
+![single1](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/cilium-singlestream01.png)
 
 客户端和服务端的 CPU 开销：
 
-![single2](../../images/cilium-singlestream02.png)
+![single2](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/cilium-singlestream02.png)
 
 ## 测试二
 
 32 核 CPU，32 并发 TCP 链接，测试两个跨节点 Pod 之间的 TCP 吞吐量
 
-![multi](../../images/cilium-multistream01.png)
+![multi](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/cilium-multistream01.png)
 
 客户端和服务端的 CPU 开销：
 
-![multi2](../../images/cilium-multistream02.png)
+![multi2](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/cilium-multistream02.png)
 
 ## 测试三
 
@@ -55,18 +55,18 @@ TCP 单流，测试两个跨节点 Pod 之间的 TCP 吞吐量：
 
 在 Pod 只有 1 核 CPU 的情况下，测试两个跨节点 Pod 之间的 TCP_RR 表现：
 
-![tcprr1](../../images/cilium-tcprr01.png)
+![tcprr1](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/cilium-tcprr01.png)
 
 客户端和服务端的 CPU 开销：
 
-![tcprr2](../../images/cilium-tcprr02.png)
+![tcprr2](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/cilium-tcprr02.png)
 
 ## 测试四
 
 在 Pod 只有 32 核 CPU 的情况下，测试两个跨节点 Pod 之间的 TCP_RR 表现：
 
-![tcprr3](../../images/cilium-tcprr03.png)
+![tcprr3](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/cilium-tcprr03.png)
 
 客户端和服务端的 CPU 开销：
 
-![tcprr4](../../images/cilium-tcprr04.png)
+![tcprr4](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/cilium-tcprr04.png)

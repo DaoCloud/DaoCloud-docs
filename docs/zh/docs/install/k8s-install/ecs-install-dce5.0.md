@@ -59,7 +59,7 @@
 
 4. 安装成功
 
-    ![success](../images/4.1.png)
+    ![success](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/4.1.png)
 
 5. 查询 svc `istio-ingressgateway` 的 https 服务暴露在 NodePort 端口，本示例是 32060
 
@@ -67,23 +67,23 @@
     kubectl get svc -A | grep NodePort
     ```
 
-    ![gateway](../images/5.1.png)
+    ![gateway](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/5.1.png)
 
 6. 创建阿里 SLB ，将 SLB 的公网 TCP 流量指向 ECS 主机的 32060 端口，3 台主机均需要添加。
 
-    ![slb01](../images/6.1.png)
+    ![slb01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/6.1.png)
 
-    ![slb02](../images/6.2.png)
+    ![slb02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/6.2.png)
 
-    ![slb03](../images/6.3.png)
+    ![slb03](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/6.3.png)
 
-    ![slb04](../images/6.4.png)
+    ![slb04](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/6.4.png)
 
 7. 修改 ghippo 反向代理配置，参考文档 https://docs.daocloud.io/ghippo/install/reverse-proxy/#_1，修改后直接通过 SLB 的公网 IP +Port 访问 DCE5.0。如下图：
 
-    ![ghippo](../images/7.1.png)
+    ![ghippo](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/7.1.png)
 
-    ![ghippo](../images/7.2.png)
+    ![ghippo](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/7.2.png)
 
 ### 方案2 ：cloudLB + 部署 CCM 组件
 
@@ -132,7 +132,7 @@
 
     成功后输出结果如下图：
 
-    ![dce5.01](../images/dce503.png)
+    ![dce5.01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/dce503.png)
 
 4. 安装阿里云 CCM
 
@@ -144,9 +144,9 @@
 
     安装成功后如下图：
 
-    ![cc01](../images/ccm01.png)
+    ![cc01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/ccm01.png)
 
-    ![cc02](../images/ccm01.png)
+    ![cc02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/ccm01.png)
 
 5. 继续安装 DCE5.0，将所有产品组件安装
 
@@ -158,9 +158,9 @@
 
 6. 安装成功后，会默认创建公网的 LB 实例，并且可基于分配的 IP 来访问 DCE5.0。
 
-    ![dce5.02](../images/dce501.png)
+    ![dce5.02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/dce501.png)
 
-    ![dce5.03](../images/dce502.png)
+    ![dce5.03](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/dce502.png)
 
 ### 方案 3：NodePort + 部署 CCM 组件
 
@@ -206,11 +206,11 @@
 
 4. 安装成功
 
-    ![success](../images/4.1.png)
+    ![success](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/4.1.png)
 
 5. 安装后的 svc `istio-ingressgateway` 如下图所示：
 
-    ![svc](../images/svc01.png)
+    ![svc](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/svc01.png)
 
 6. 安装 CCM，参考方案 2 中的步骤
 
@@ -218,15 +218,15 @@
 
     修改前：
 
-    ![svc2](../images/svc02.png)
+    ![svc2](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/svc02.png)
 
     修改后：
 
-    ![svc3](../images/svc03.png)
+    ![svc3](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/svc03.png)
 
 8. 修改 ghippo 反向代理配置
 
     参考文档 [自定义反向代理服务器地址](../../ghippo/install/reverse-proxy.md#_1)，其中代理地址为上一步中
     `istio-ingressgateway` 的 type 为 `LoadBalancer` 时分配的 IP 地址。修改成功后即可通过该 IP 地址进行访问。
 
-    ![ghippo](../images/ghippo01.png)
+    ![ghippo](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/ghippo01.png)

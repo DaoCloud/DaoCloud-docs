@@ -27,7 +27,7 @@ hide:
 
     - 如待使用子网没有默认创建，可进入页面点击`创建子网`。
 
-    ![创建子网](../../images/subnet01.png)
+    ![创建子网](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/subnet01.png)
 
     参数说明：
 
@@ -41,11 +41,11 @@ hide:
 
 3. 点击`下一步`进入 `IP 选择`，输入待使用的 IP 段（输入上述子网内 IP）。点击`确定`，完成子网创建。
 
-    ![创建子网](../../images/subnet02.png)
+    ![创建子网](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/subnet02.png)
 
 4. 点击待使用的`子网名称`，进入子网详情页面。
 
-    ![子网详情](../../images/subnet03.png)
+    ![子网详情](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/subnet03.png)
 
 5. 在子网详情页，点击`创建 IP 池`。
 
@@ -58,7 +58,7 @@ hide:
 
     进入创建页面，输入如下参数：
 
-    ![创建 IP 池](../../images/subnet04.png)
+    ![创建 IP 池](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/subnet04.png)
 
     - `网关`：默认继承`子网网关`，可修改。
 
@@ -80,7 +80,7 @@ hide:
 
     `获取 IP 规则`：从 `IP 开始地址`依次获取输入对应数量的 IP，IP 段如不是连续的 IP，则跳过中间断档 IP，依次往后获取。
 
-    ![添加 IP](../../images/subnet05.png)
+    ![添加 IP](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/subnet05.png)
 
 7. 创建完成后[工作负载即可使用 IP 池](../../modules/spiderpool/usage.md)。
 

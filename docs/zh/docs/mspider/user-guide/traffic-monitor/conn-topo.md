@@ -4,7 +4,7 @@ DCE 5.0 服务网格提供给了动态流转的流量拓扑功能。
 
 在左侧导航栏中，点击`流量监控` -> `流量拓扑`，您可以选择`视图方式`、`命名空间`、采集源、时间来查看服务的拓扑关系。
 
-![流量拓扑](../images/topo01.png)
+![流量拓扑](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/user-guide/images/topo01.png)
 
 ## 显示设置
 
@@ -14,7 +14,7 @@ DCE 5.0 服务网格提供给了动态流转的流量拓扑功能。
 - 显示空闲节点
 - 开启动画：展示流量流转的动态方向
 
-![显示设置](../images/topo02.png)
+![显示设置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/user-guide/images/topo02.png)
 
 服务拓扑图支持平移、缩放等操作。
 
@@ -22,7 +22,7 @@ DCE 5.0 服务网格提供给了动态流转的流量拓扑功能。
 
 点击左下角的`图例`按钮，可以查看当前线条、圆圈、颜色所代表的含义。
 
-![图例](../images/topo03.png)
+![图例](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/user-guide/images/topo03.png)
 
 服务用圆圈表示，圆圈的颜色表示了该服务的健康状态：
 
@@ -39,4 +39,4 @@ DCE 5.0 服务网格提供给了动态流转的流量拓扑功能。
 - TCP 协议：连接数（个）、接收吞吐量（B/S）、发送吞吐量（B/S）
 - 治理信息：查看治理的虚拟服务、目标服务、网关等
 
-![侧边栏](../images/topo04.png)
+![侧边栏](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/user-guide/images/topo04.png)

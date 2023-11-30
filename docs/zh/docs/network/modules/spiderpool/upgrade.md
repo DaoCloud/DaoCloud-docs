@@ -11,7 +11,7 @@
 
 DCE 5.0 中已部署其他更低版本的 Spiderpool，例如。
 
-![spiderpool 0.5.0](../../images/spiderpool-before-upgrade.png)
+![spiderpool 0.5.0](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/spiderpool-before-upgrade.png)
 
 ## 获取 Chart 包与镜像
 
@@ -25,7 +25,7 @@ Spiderpool 的离线包存放在 addon 中，你可以参考[下载 addon 离线
 
     - 参考如下方式，通过 DCE 5.0 界面下载 v0.7.0 的 chart 包
 
-    ![spiderpool chart](../../images/spiderpool-chart-version-7.png)
+    ![spiderpool chart](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/spiderpool-chart-version-7.png)
 
 2. 上传并解压 Chart 包到环境中
 
@@ -127,14 +127,14 @@ customresourcedefinition.apiextensions.k8s.io/spidersubnets.spiderpool.spidernet
 
 在前面的步骤中，已经正确上传离线 chart 与镜像包到离线环境中，现在可通过 5.0 界面执行升级。在低于 0.7.0 的版本中 Spiderpool 会搭配 Multus-underlay 插件使用，而新版本的 Spiderpool 中已经集成了 Multus 插件，在界面进行更新操作时，请关闭「安装 multus」按钮，避免重复安装，如下图所示。点击更新，等待更新完成。
 
-![disable multus](../../images/spiderpool-disable-multus.png)
+![disable multus](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/spiderpool-disable-multus.png)
 
 ## 验证
 
 升级后检查版本正常。
 
-![spiderpool 0.7.0](../../images/spiderpool-after-upgrade.png)
+![spiderpool 0.7.0](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/spiderpool-after-upgrade.png)
 
 在 0.7.0 及以上的 Spiderpool 版本中，提供了 SpiderMultusConfig CR 来自动管理 Multus NetworkAttachmentDefinition CR 。如果您的集群中存在旧的 Multus CR，在新版本由于创建机制的不同，UI 中并不会显示出来您旧有的 MUltus CR，你可以通过界面创建同名的 Multus CR 进行纳管，并不会影响您原有功能的使用。注意，界面上所填写的 `Vlan ID`、`网卡接口`等值，需要与您原本的 Multus CR 中保持完全一致。
 
-![multus cr create](../../images/spiderpool-multus-cr-create.png)
+![multus cr create](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/spiderpool-multus-cr-create.png)
