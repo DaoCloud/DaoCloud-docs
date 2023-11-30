@@ -87,3 +87,5 @@
     ```
 
 3. 运行 git clone xxx 命令，提示输入 UserName 和 Token。这样就会在用户根目录生成一个名为 `.git-credentials` 的文件，里面保存了你的 UserName 和 Token。
+
+For example, you can match traffic for targets `*.wikipedia.org`. However, you need to forward the traffic to a single final target, such as `en.wikipedia.org`. If there is another service, like `anyservice.wikipedia.org`, that is not hosted by the same server(s) as `en.wikipedia.org`, the traffic to that host will fail. This is because, even though the target hostname in the TLS handshake of the HTTP payload contains `anyservice.wikipedia.org`, the `en.wikipedia.org` servers will not be able to serve the request.

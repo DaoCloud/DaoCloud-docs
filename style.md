@@ -228,3 +228,9 @@ See [prettier documentation](https://prettier.io/docs/en/install.html) to instal
 
 > Note: You shall manually check the format and layout again after you run the prettier command,
 > which can automatically adjust your markdown to the standard format.
+
+## Reference
+
+- [K8s Documentation Style Guide](https://kubernetes.io/docs/contribute/style/style-guide/)
+- [K8s Diagram Guide](https://kubernetes.io/docs/contribute/style/diagram-guide/)
+- [Google Developer Documentation Style Guide](https://developers.google.com/style/)
