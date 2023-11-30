@@ -1,55 +1,91 @@
-# Architecture
+# Product Architecture
 
-Multicloud Management (internal code "kairship") has two core components: `kairship apiserver` and `kairship controller-manager`
+The management interface of Multi-Cloud Orchestration is primarily responsible for the following functionalities:
 
-## kairship apiserver
+- Lifecycle management (LCM) of multi-cloud instances (based on Karmada)
+- Serving as a unified entry point for multi-cloud products (OpenAPI, Kairship UI, internal module GRPC calls)
+- Proxying API requests for multi-cloud instances (in the native Karmada style)
+- Aggregating cluster information (monitoring, management, control) within multi-cloud instances
+- Management and monitoring of multi-cloud workloads and other resources
+- Potential future permission operations
 
-This is the entrance of data and all APIs. `protobuf` takes priority. All APIs are defined through `proto`, and the corresponding front-end and back-end codes are generated from this. `grpw-gateway` is used to support both HTTP Restful and GRPC.
+## Core Components
 
-When `kairship apiserver` starts, it will get the current user's role and permissions from [Global Management](../../ghippo/intro/index.md) module for authentication.
+Multi-Cloud Orchestration mainly consists of two core components: `kairship apiserver` and `kairship controller-manager`.
 
-!!! note
+## Kairship Apiserver
 
-    Multicloud Management only verifies permissions of the Karmada instances. The `kairship apiserver` verifies whether the interface from Cat interfaces have permission to operate or access the Karmada instances.
+The `kairship apiserver` primarily serves as the entry point for all traffic in Multi-Cloud Orchestration,
+including OpenAPI and GRPC. It acts as a unified entry point for all APIs. The APIs are defined using
+`protobuf`, which generates corresponding frontend and backend code. It supports both HTTP Restful
+and GRPC through `grpc-gateway`.
 
-## kairship controller-manager
+During startup, it retrieves identity information of the operator from the Global Management Module for subsequent security verification during AuthZ.
 
-This is the control plane of Multicloud Management, mainly responsible for processing control logic (each logic has a separate controller), such as syncing instance status, collecting resources, registering Karmada instances and global resources. Changes are listened by list-watch mechanism.
+<!-- Stateless service, specific interfaces to be supplemented (currently simple) -->
 
-Under multiple deployment, there is a leader selection mechanism to ensure only one Pod is running as the controller manager. Refer to the controller-manager election mechanism of Kubernetes.
+### Kairship Controller-Manager
 
-Specifically, there are five controllers:
+This is the controller for Multi-Cloud Orchestration, responsible for instance status synchronization,
+resource collection, Karmada instance registration, and global resource registration.
 
-- virtual-cluster-sync-controller
+In a multi-replica deployment, it utilizes the leader mechanism to maintain a single working pod
+at any given time (similar to Kubernetes' controller-manager election mechanism).
 
-    Listen the CRUD actions of multicloud management CRDs. Once an instance is created, it will create a corresponding virtual Kubernetes cluster for resource management. The same logic also applies to instance deletion.
+This component handles a series of control logic for Multi-Cloud Orchestration, with each logic
+represented as a separate controller. It listens for changes in specific objects through the
+list-watch mechanism and processes corresponding events. The main controllers include:
 
-    It uses [Clusterpedia]( ../../community/clusterpedia.md) for resource retrieval. Clusterpedia is an open-source project contributed by DaoCloud for resource management across clusters. It is integrated into the Container Management module of DCE 5.0
+- Virtual Cluster Sync Controller:
+    - Listens for CRUD events of Multi-Cloud Orchestration instance CRDs. When a Multi-Cloud Orchestration
+      instance is created, it synchronizes the creation of corresponding virtual cluster management resources.
+    - Retrieval of all resources for the Multi-Cloud Orchestration instance (Multi-Cloud Workloads, PP, OP)
+      is accomplished through the acceleration mechanism within the Container Management Module
+      (leveraging Clusterpedia), enabling read-write separation and improved performance.
+    - When an instance is deleted, it synchronously deletes the virtual cluster registered
+      in the Container Management Module.
 
-    If the instance is deleted, the virtual cluster registered in the container management module will be deleted synchronously.
+- Resource Statistics Controller:
+    - Collects statistical information for all clusters joined by Multi-Cloud Orchestration instances
+      and writes it back to the Multi-Cloud Orchestration instance CRD (e.g., total CPU, memory,
+      and node count in the clusters managed by the instance).
 
-- resource statistics controller
+- Status Sync Controller:
+    - Handles status synchronization and statistics for Multi-Cloud Orchestration instances.
 
-    Collect statistical information (e.g., CPU, memory, nodes) of all clusters added under multicloud management instances, and write this info back to the CRD of these multicloud management instances.
+- Instance Registry Controller:
+    - Multi-Cloud Orchestration registers all `Karmada` instances in the platform to the
+      Global Management Module using custom resources. This allows for the binding of roles and
+      Karmada instances in global management. Ultimately, these bindings are synchronized to
+      the Multi-Cloud Orchestration module.
 
-- status sync controller
-
-    Collect and Sync status of the multicloud management instances.
-
-- instance registry controller
-
-    Register the `Karmada` instances into [Global Management](../../ghippo/intro/index.md) module through custom resources, so as to bind the permission system of Karmada and DCE 5.0.
-
-    After the binding, these permission mapping relationships will be synced to the Multicloud Management module.
-
-- Ghippo webhook controller
-
-    Bind the roles and permissions with Karmada instances in the [Global Management](../../ghippo/intro/index.md) module, notify the Multicloud Management module through SDKs for authentication.
+- Ghippo Webhook Controller:
+    - After the binding of roles and Karmada instances is completed in the Global Management Module,
+      the Multi-Cloud Orchestration module is informed via SDK to perform authorization actions.
 
 ## Data Flow Diagram
 
-![data-flow](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/arch_kairship_instance.jpg)
+![Data Flow Diagram](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/arch_kairship_instance.jpg)
 
-Kairship Management API is the only entrance of all requests that come from UI/OpenAPI/internal call. It then distribute these requests to corresponding instances. All read requests are processed by Container Management (`kpanda` in the diagram) and all write requests are processed by Karmada instances. Separate read and write mechanisms can shorten request response time and enhance performance.
+It is important to note that multi-cloud instances are not aware of each other and are isolated from one another.
 
-You might wonder how can `kpanda` get information of Karmada instances? The answer is, each Karmada instances has a corresponding virtual Kubernetes cluster in `kpanda` module, allowing `kpanda` to collect info as quickly as possible.
+Multi-Cloud Orchestration Management:
+
+- Retrieves distribution policies and application status information related to Karmada.
+- Retrieves cluster and node statistics, monitoring information, and management and
+  control information for multi-cloud instances.
+- Edits, updates, and deletes information related to multi-cloud applications in Karmada instances
+  (mainly focused on Karmada workloads and PP, OP).
+
+All request data flows directly to the multi-cloud instances located in the Global Services Cluster.
+
+Next, all access requests are routed to the corresponding instances after passing through the
+Multi-Cloud Orchestration. All read requests such as get/list access the Container Management Module,
+while write requests access Karmada instances, achieving read-write separation and improving response time.
+
+You may wonder how the Container Management Module retrieves resource information for multi-cloud instances.
+The solution is to add the instance itself as a virtual cluster to the Container Management Module
+(not displayed in the Container Management). This allows for complete utilization of the Container Management
+Module's capabilities (accelerated retrieval of resources, CRDs, etc.). When querying resources
+(Deployments, deployment policies, differentiation policies, etc.) for a specific multi-cloud instance
+in the interface, it can be directly retrieved through the Container Management Module.
