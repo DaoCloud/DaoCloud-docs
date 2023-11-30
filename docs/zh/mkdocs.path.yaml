@@ -1,0 +1,237 @@
+---
+# This file is used to split config and docs navigation
+INHERIT: navigation.yml
+
+# Project information
+site_name: DaoCloud Enterprise
+site_url: https://docs.daocloud.io/
+site_author: DaoCloud
+site_description: >-
+  DaoCloud Enterprise 5.0 下一代容器化平台集大成者，引领云原生浪潮，推动数字化转型。
+
+# copyright
+copyright: Copyright &copy; 2016 - 2023 DaoCloud
+
+# Repository
+repo_name: DaoCloud/DaoCloud-docs
+
+repo_url: https://github.com/DaoCloud/DaoCloud-docs
+edit_uri: edit/main/docs/zh/docs/
+
+use_directory_urls: true # disbale https://www.mkdocs.org/user-guide/configuration/#use_directory_urls
+strict: false # enable strict mode, https://www.mkdocs.org/user-guide/configuration/#strict
+
+# Configuration
+theme:
+  name: material
+  custom_dir: "theme"
+  # custom_dir: !ENV [THEME_DIR, "material"]
+
+  # Don't include MkDocs' JavaScript
+  include_search_page: false
+  search_index_only: true
+  include_homepage_in_sidebar: false
+  
+
+  # Static files
+  static_templates:
+    - 404.html
+
+  language: "zh"
+  features:
+    - content.code.annotate
+    - content.code.copy
+    - content.tooltips
+    # - navigation.indexes
+    - navigation.tabs
+    # - navigation.instant
+    - navigation.prune
+    - navigation.sections
+    - navigation.tabs.sticky
+    - navigation.tracking
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - search.share
+    - toc.follow
+    - navigation.path
+    # - toc.integrate
+
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: images/favicon.ico
+  logo: images/DaoCloud.png
+  icon:
+    logo: logo
+    repo: fontawesome/brands/github
+
+# Plugins
+plugins:
+  - search:
+      separator: '[\\s\\u200b\\-]'
+  - swagger-ui-tag
+  # - mermaid2
+
+  # - with-pdf:
+  #     cover: true
+  #     # back_cover: true
+  #     # cover_title: DaoCloud
+  #     # enabled_if_env: ENABLE_PDF_EXPORT
+  #     verbose: false
+
+
+
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
+
+  - redirects:
+      redirect_maps:
+        "api.md": "dce/index.md"
+        "dce/what-is-dce.md": "dce/index.md"
+        "zh/dce/index.md": "dce/index.md"
+        "zh/install/install-dce.md": "install/community/k8s/online.md"
+
+        # module quick links
+        "kairship.md": "kairship/intro/index.md"
+        "skoala.md": "skoala/intro/index.md"
+        "mspider.md": "mspider/intro/index.md"
+        "insight.md": "insight/intro/index.md"
+        "mcamel.md": "middleware/index.md"
+        "kpanda.md": "kpanda/intro/index.md"
+        "amamba.md": "amamba/intro/index.md"
+        "blog.md": "blogs/index.md"
+        "ghippo.md": "ghippo/intro/index.md"
+        "video.md": "videos/index.md"
+
+
+  # - git-revision-date: #每页底部显示文档最后更新日期，安装 pip install mkdocs-git-revision-date-plugin
+  #     enabled_if_env: "CI"
+  # - git-revision-date-localized: #每个页面底部添加本地化更新和创建日期，安装 pip install mkdocs-git-revision-date-localized-plugin
+  #     timezone: Asia/Shanghai
+  #     type: timeago #日期格式，有效值为 date、datetime、iso_date、iso_datetimetimeago
+  #     fallback_to_build_date: true #默认 false，启用则回退到 mkdocs build 执行的时间
+  #     enable_creation_date: true #最后更新日期旁边显示与页面关联的文件的创建日期
+  #     exclude:
+  #       - index.md
+  #     enabled: !ENV [ENABLED_GIT_REVISION_DATE, true]
+
+  # auto desgin nav in dirs
+  # - awesome-pages:
+  #     filename: .pages.yml
+  #     collapse_single_pages: true
+  #     strict: false
+  # - tags:
+  #     tags_file: stylesheets/tags.md
+
+  # with mkdocs-git-authors-plugin
+  # - git-authors
+
+  # - print-site
+
+# Customization
+extra:
+  homepage: /
+  
+  # comments
+  comments:
+    enabled: true
+    mode: giscus
+    type: Discussions
+
+  # switch language
+  alternate:
+    - link: /
+      name: 简体中文
+      lang: zh
+    - link: /en/
+      name: English
+      lang: en
+  generator: false
+
+  status:
+    new: 最近添加
+    beta: beta
+
+# Customization Javascript
+extra_javascript:
+  - stylesheets/zoom_image.js
+  # - https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js # disable fix mermaid not working
+
+# Customization css
+extra_css:
+  - stylesheets/custom.css
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      title: 导航
+      toc_depth: 5
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      # emoji_index: !!python/name:materialx.emoji.twemoji
+      # emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: daocloud
+      repo: daocloud-docs
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.snippets
+  #     auto_append:
+  #       - includes/glossary.md
