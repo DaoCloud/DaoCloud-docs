@@ -2,6 +2,28 @@
 
 本页列出 Insight 可观测性的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2023.11.30
+
+### Insight Server: v0.22.0
+
+#### 新增
+
+- **新增** 支持网络连通性拨测功能
+- **新增** 通过 YAML 导入告警策略
+- **新增** 支持操作审计记录
+
+### 优化
+
+- **优化** 安装时自动下发 OTel instrumentation CR
+
+#### 修复
+
+- **修复** Elasticsearch 索引初始化失败的问题
+
+### Insight Agent: v0.22.0
+
+- **修复** Fluentbit 采集目录不兼容 DCE 4.0 的问题
+
 ## 2023.10.31
 
 !!! note
