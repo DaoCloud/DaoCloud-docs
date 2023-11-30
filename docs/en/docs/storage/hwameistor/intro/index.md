@@ -2,7 +2,7 @@
 
 HwameiStor is a Kubernetes-native container attached storage (CAS) solution that creates a local storage resource pool for centrally managing all disks such as HDD, SSD, and NVMe. It uses the CSI architecture to provide distributed services with local volumes and enables data persistence for stateful cloud native workloads or components.
 
-![architecture](../img/architecture.png)
+![architecture](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/storage/hwameistor/img/architecture.png)
 
 ## Features
 

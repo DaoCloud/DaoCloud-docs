@@ -30,7 +30,7 @@ DaoCloud will continue to provide adaptation work for new Istio versions. When a
 the `Mesh List` will prompt for upgradable mesh instances (a card with an exclamation mark icon will appear).
 Check the content of the icon and click the `Upgrade Now` button to enter the upgrade wizard.
 
-![Upgrade Now](../images/IstioUpdate01.png)
+![Upgrade Now](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/IstioUpdate01.png)
 
 The Istio upgrade wizard includes three steps: `Select target version`, `Environment detection`, and `Perform upgrade`.
 After the upgrade is completed, the mesh can be immediately deployed and run online. The specific steps are as follows:
@@ -38,7 +38,7 @@ After the upgrade is completed, the mesh can be immediately deployed and run onl
 1. **Select target version**: Select the desired version to upgrade from the list. After the upgrade,
    rolling back to a lower version will not be possible, so choose carefully.
 
-    ![Target Version](../images/IstioUpdate02.png)
+    ![Target Version](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/IstioUpdate02.png)
 
     > It is not recommended by the official to perform cross-version upgrades for Istio.
     > It is suggested to upgrade in a step-by-step manner, for example, upgrading from `1.15.x` to `1.16.x`.
@@ -48,7 +48,7 @@ After the upgrade is completed, the mesh can be immediately deployed and run onl
    the upgrade requirements based on the selected target version. If they meet the requirements, the `Next` button
    will be activated; otherwise, the user needs to address any environment issues.
 
-    ![Environment detection](../images/IstioUpdate04.png)
+    ![Environment detection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/IstioUpdate04.png)
 
 	  - If the cluster (k8s) version is too low, you can upgrade the cluster (k8s) version first in the
       container management and then click the `Redetect` button.
@@ -63,11 +63,11 @@ After the upgrade is completed, the mesh can be immediately deployed and run onl
 
 	  - Istio Health Check: Checking the running status of Istio control plane components.
 
-	  ![Perform upgrade](../images/IstioUpdate05.png)
+	  ![Perform upgrade](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/IstioUpdate05.png)
 
 After the upgrade is completed, go back to the mesh list page, and you will see that the Istio version of the mesh has been changed.
 
-![Perform upgrade](../images/IstioUpdate06.png)
+![Perform upgrade](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/IstioUpdate06.png)
 
 !!! note
 

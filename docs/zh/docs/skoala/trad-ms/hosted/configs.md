@@ -6,15 +6,15 @@
 
 1. 进入`微服务引擎` -> `传统微服务` -> `注册配置中心`模块，点击目标注册中心的名称。
 
-    ![点击注册中心名称](../../images/config01.png)
+    ![点击注册中心名称](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/config01.png)
 
 2. 在左侧导航栏点击`配置管理`，然后在右上角点击`创建`。
 
-    ![创建第一步](../../images/config02.png)
+    ![创建第一步](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/config02.png)
 
 3. 填写各项配置信息
 
-    ![填写配置](../../images/config03.png)
+    ![填写配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/config03.png)
 
     - 命名空间：选择当前配置所属的微服务命名空间,默认为 `public`
 
@@ -41,7 +41,7 @@
 
     - 更多配置->归属应用（选填）：选择当前配置所属的应用。
 
-        ![填写配置](../../images/config04.png)
+        ![填写配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/config04.png)
 
 4. 在页面右下角点击`确定`。
 
@@ -49,18 +49,18 @@
 
 1. 进入`微服务引擎` -> `传统微服务` -> `注册配置中心`模块，点击目标注册中心的名称。
 
-    ![点击注册中心名称](../../images/config01.png)
+    ![点击注册中心名称](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/config01.png)
 
 2. 在左侧导航栏点击`配置管理`，点击目标配置的 Data ID。
 
-    ![点击名称](../../images/config05.png)
+    ![点击名称](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/config05.png)
 
 3. 查看该配置的基本信息、配置内容、历史版本、监听者、示例代码等信息。
 
     - 新手可以借助示例代码快速使用客户端编程消费该配置，降低新手使用门槛。
     - 支持查询当前配置的监听者以及 MD5 校验值，便于了解正在使用此配置的微服务，以及配置变更是否成功推送到了客户端。
 
-        ![查看](../../images/config06.png)
+        ![查看](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/config06.png)
 
 ## 历史版本回滚
 
@@ -68,26 +68,26 @@
 
 1. 进入`微服务引擎` -> `传统微服务` -> `注册配置中心`模块，点击目标注册中心的名称。
 
-    ![点击注册中心名称](../../images/config01.png)
+    ![点击注册中心名称](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/config01.png)
 
 2. 在左侧导航栏点击`配置管理`，点击目标配置的 Data ID。
 
-    ![点击名称](../../images/config05.png)
+    ![点击名称](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/config05.png)
 
 3. 点击`历史版本`页签，找到对应的记录，在记录右侧点击 `ⵗ` 并选择`回滚`。
 
-    ![点击名称](../../images/config07.png)
+    ![点击名称](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/config07.png)
 
 4. 对比版本差异并确认，然后在右下角点击`回滚`。
 
-    ![回滚](../../images/config08.png)
+    ![回滚](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/config08.png)
 
 ## 更新/删除配置
 
 1. 进入`微服务引擎` -> `传统微服务` -> `注册配置中心`模块，点击目标注册中心的名称。
 
-    ![点击注册中心名称](../../images/config01.png)
+    ![点击注册中心名称](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/config01.png)
 
 2. 在左侧导航栏点击`配置管理`，在目标配置右侧点击 `ⵗ` 按钮根据需要选择更新或删除。
 
-    ![更新/删除](../../images/config09.png)
+    ![更新/删除](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/config09.png)

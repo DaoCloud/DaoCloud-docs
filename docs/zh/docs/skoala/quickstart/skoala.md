@@ -4,7 +4,7 @@
 
 微服务引擎管理组件部署结构
 
-![image](../images/install-arch-skoala.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/install-arch-skoala.png)
 
 蓝色框内的 chart 即 `skoala` 组件，需要安装在控制面集群，即 DCE 5.0 的全局集群 `kpanda-global-clsuter`，
 详情可参考 DCE 5.0 的[部署架构](../../install/commercial/deploy-arch.md)。

@@ -21,15 +21,15 @@ As shown in the above figure, any transmission failure at any step will result i
 
 1. Use DCE 5.0 platform, enter `Observability`, and select the `Dashboard` in the left navigation bar.
 
-    ![nav](../images/insight01.png)
+    ![nav](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/insight01.png)
 
 2. Click the dashboard title `Overview`.
 
-    ![dashboard](../images/insight02.png)
+    ![dashboard](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/insight02.png)
 
 3. Switch to the `insight-system` -> `insight tracing debug` dashboard.
 
-    ![trace](../images/insighttrace01.png)
+    ![trace](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/insighttrace01.png)
 
 4. You can see that this dashboard is composed of three blocks, each responsible for monitoring the data transmission of different clusters and components. Check whether there are problems with trace data transmission through the generated time series chart.
 
@@ -37,7 +37,7 @@ As shown in the above figure, any transmission failure at any step will result i
     - global opentelemetry collector
     - global jaeger collector
 
-    ![trace](../images/insighttrace02.png)
+    ![trace](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/insighttrace02.png)
 
 ## Block Introduction
 
@@ -45,7 +45,7 @@ As shown in the above figure, any transmission failure at any step will result i
 
     Display the `opentelemetry collector` in different working clusters receiving language probe/SDK trace data and sending aggregated trace data. You can select the cluster where it is located by the `Cluster` selection box in the upper left corner.
 
-    ![trace](../images/insighttrace03.png)
+    ![trace](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/insighttrace03.png)
 
     !!! note
 
@@ -55,7 +55,7 @@ As shown in the above figure, any transmission failure at any step will result i
 
     Display the `opentelemetry collector` in the `Global Service Cluster` receiving trace data from the `working cluster`'s `otel collector` and sending aggregated trace data.
 
-    ![trace](../images/insighttrace04.png)
+    ![trace](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/insighttrace04.png)
 
     !!! note
 

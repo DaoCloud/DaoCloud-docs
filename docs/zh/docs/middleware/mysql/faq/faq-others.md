@@ -47,6 +47,6 @@
 ```prompt
 The MysQL server is running with the read-only option so it cannot excute this statement
 ```
-![image](../images/faq01.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/mysql/images/faq01.png)
 
 解决方法：前往`容器管理`平台重启所有相关 `replica`。

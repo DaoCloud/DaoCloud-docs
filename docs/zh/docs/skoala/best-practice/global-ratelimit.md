@@ -187,19 +187,19 @@ data:
     - 配置获取接口: 获取限流服务器配置的地址，为端口 6070 对应的地址，协议为 HTTP。
     - 超时时间: 限流服务器响应的超时时间。
 
-    ![RATELIMIT插件](../images/rls-plugin.png)
+    ![RATELIMIT插件](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/rls-plugin.png)
 
 3. 网关配置全局限流插件。
 
-    ![网关配置全局限流插件](../images/gateway-rls.png)
+    ![网关配置全局限流插件](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gateway-rls.png)
 
 4. 创建域名并开启全局限流。
 
-    ![域名开启全局限流](../images/virtualhost-rls.png)
+    ![域名开启全局限流](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/virtualhost-rls.png)
 
 5. 在网关下创建一个 API，`关联域名`填写刚才新创建的域名，匹配路径为 `/`，并将 API 上线。API 默认状态是应用域名的全局限流配置，也可以自定义限流规则。
 
-    ![API全局限流](../images/api-rls.png)
+    ![API全局限流](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/api-rls.png)
 
 6. 现在即可通过限流服务器访问该 API 了。
 

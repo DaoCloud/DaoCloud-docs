@@ -128,7 +128,7 @@
     * `server`：将默认的 `https://my-cluster-installer-control-plane:6443` 参数中的 IP 替换为火种节点的 IP；
        `6443` 替换为 6443 端口在节点映射的端口。可执行 `podman ps ｜ grep 6443` 命令查看。
 
-    ![img](../images/add-global-node01.png)
+    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/add-global-node01.png)
 
 3. 点击`确认`按钮，完成 kind 集群的接入。
 
@@ -142,7 +142,7 @@
 
     标签 “kpanda.io/managed-by=my-cluster” 中的 vaule 值为接入集群时指定的集群名称，默认为 "my-cluster"，具体依据您的实际情况。
 
-    ![img](../images/add-global-node02.png)
+    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/add-global-node02.png)
 
 ## 为全局服务集群添加节点
 
@@ -159,6 +159,6 @@
     download_localhost: false
     ```
 
-    ![img](../images/add-global-node03.png)
+    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/add-global-node03.png)
 
 4. 点击确认按钮，等待节点添加完成。

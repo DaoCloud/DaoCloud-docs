@@ -27,8 +27,8 @@ hide:
 
 2. 在`创建网格网关`窗口中，按提示配置各项参数后点击`确定`。
 
-    ![创建](../images/create-gateway02-1.png)
-    ![创建](../images/create-gateway02-2.png)
+    ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/user-guide/images/create-gateway02-1.png)
+    ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/user-guide/images/create-gateway02-2.png)
 
 3. 返回网格网关列表，屏幕右上角提示创建成功。刚创建的网格网关状态为`创建中`。
 

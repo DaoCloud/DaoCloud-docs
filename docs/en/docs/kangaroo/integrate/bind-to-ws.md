@@ -19,7 +19,7 @@ Generally, for private registry spaces, binding to a workspace is helpful to all
 
 1. Click a registry name.
 
-    ![Click Name](../images/integrated02.png)
+    ![Click Name](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/integrated02.png)
 
 1. Click `Registry space` in the left navigation bar, then click the `⋮` on the far right of a specific registry space, and select `Bind/unbind workspace`.
 

@@ -23,7 +23,7 @@ hide:
         - 注意查看输入框下方的填写要求，输入符合要求的内容
         - 如未通过安装环境检测，需要根据提示安装组件之后方可进行下一步
 
-    ![基本信息](../images/create03.png)
+    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/minio/images/create03.png)
 
 4. 参考下方信息填写配置规格，然后点击`下一步`。
 
@@ -72,10 +72,10 @@ hide:
 
 6. 确认实例配置信息无误，点击`确认`完成创建。
 
-    ![点击确认](../images/create05.png)
+    ![点击确认](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/minio/images/create05.png)
 
 7. 返回实例列表页查看实例是否创建成功。
 
     > 创建中的实例状态为`未就绪`，等所有相关容器成功启动之后状态变为`运行中`。
 
-    ![状态](../images/create06.png)
+    ![状态](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/minio/images/create06.png)

@@ -28,7 +28,7 @@ hide:
 
     前往`容器管理` -> 选择当前集群 -> `helm 应用` -> 查看 `olm` 组件 -> `插件设置`，找到后续步骤所需 opm，minio，minio bundle，minio operator 的镜像。
 
-    ![olm](../../images/olm.png)
+    ![olm](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/olm.png)
 
     ```bash
     以上诉截图为例，则四个镜像地址如下
@@ -77,11 +77,11 @@ hide:
 
     替换前：
 
-    ![image1](../../images/csv1.png)
+    ![image1](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/csv1.png)
 
     替换后：
 
-    ![image2](../../images/csv2.png)
+    ![image2](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/csv2.png)
 
 4. 生成构建 bundle 镜像的 Dockerfile
 
@@ -158,10 +158,10 @@ hide:
 
 8. 前往容器管理，更新 helm 应用 olm 的内置 catsrc 镜像（填写构建 catalog 镜像指定的 ${catalog-image} 即可）
 
-    ![olm1](../../images/olm1.png)
+    ![olm1](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/olm1.png)
 
-    ![olm2](../../images/olm2.png)
+    ![olm2](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/olm2.png)
 
 9. 更新成功后，Operator Hub 中会出现 `minio-operator` 组件
 
-    ![olm3](../../images/olm3.png)
+    ![olm3](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/olm3.png)

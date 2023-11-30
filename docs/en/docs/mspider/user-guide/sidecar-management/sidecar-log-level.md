@@ -25,19 +25,19 @@ When deploying a mesh instance, DaoCloud supports configuring the global default
 1. Log in to the DaoCloud console, go to the mesh instance details page, and click `Edit Sidecar Information`
    to access the sidecar information modification page.
 
-    ![image](../../images/sidecar-log-level-01.png)
+    ![image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/sidecar-log-level-01.png)
 
 2. On the sidecar information modification page, you can modify the global default sidecar log level.
    After making the changes, click the `Save` button to save the modifications.
 
-    ![image](../../images/sidecar-log-level-02.png)
+    ![image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/sidecar-log-level-02.png)
 
 ### Temporary Modification of Workload Sidecar Log Level
 
 In most cases, when analyzing temporary issues, you may need to modify the sidecar log level of a specific workload.
 DCE service mesh supports temporary modification of the sidecar log level within the sidecar container of the workload.
 
-![image](../../images/sidecar-log-level-03.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/sidecar-log-level-03.png)
 
 To update the configuration of the sidecar container, you need to use `kubectl`.
 Access the cluster console, open the terminal, and run the following command:
@@ -61,4 +61,4 @@ kubectl -n default exec -it productpage-v1-5b4f8f9b9f-8q9q2  -c istio-proxy -- c
 
 After executing the command, you can click the Logs button to verify if the sidecar log level has been successfully modified.
 
-![image](../../images/sidecar-log-level-04.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/sidecar-log-level-04.png)

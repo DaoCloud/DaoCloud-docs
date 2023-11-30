@@ -19,7 +19,7 @@ Follow the steps below to create a system rule:
 
 2. Select `System Rules`, then click `Create System Rule` on the right side.
 
-    ![](../../../images/gov14.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/gov14.png)
 
 3. Fill in the rule configuration based on the instructions below and click `OK` in the bottom right corner.
 
@@ -30,8 +30,8 @@ Follow the steps below to create a system rule:
     - Incoming QPS: Trigger system flow control rule when the QPS of all incoming traffic on a single machine reaches the threshold.
     - CPU Usage: Trigger system flow control rule when the system's CPU usage exceeds the threshold (range 0.0-1.0).
    
-      ![](../../../images/gov15.png)
+      ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/gov15.png)
 
 4. After creating the rule, you can view it in the list of system rules. Click the more options button on the right side to update or delete the rule.
 
-    ![](../../../images/gov16.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/gov16.png)

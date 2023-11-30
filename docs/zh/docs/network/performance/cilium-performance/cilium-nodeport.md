@@ -23,7 +23,7 @@
 
 在裸金属机器测试环境下，使用发包工具 pktgen 产生了  10Mpps 的请求向数据，查看各个方案的 nodePort 转发吞吐量：
 
-![throughput1](../../images/cilium-nodeport01.png)
+![throughput1](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/cilium-nodeport01.png)
 
 从上图可以看出：
 
@@ -51,7 +51,7 @@ Cilium 的 eBPF TC 和 eBPF XDP 加速 nodePort，其性能都远远超过了 Ku
 
 在裸金属机器测试环境下，使用发包工具 pktgen 方便产生 1Mpps、2Mpps、4Mpps 的请求向数据，测试几种方案中实施 nodePort 转发主机 CPU 开销：
 
-![throughput2](../../images/cilium-nodeport02.png)
+![throughput2](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/cilium-nodeport02.png)
 
 从上图可以看出：
 

@@ -14,7 +14,7 @@
 
 1. 使用具有 Workspace Admin 角色的用户登录 DCE 5.0，点击左侧导航栏`镜像空间`，点击列表中的某个名称。
 
-    ![切换实例](../images/space01.png)
+    ![切换实例](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/space01.png)
 
 1. 点击`镜像回收`页签，点击`创建回收规则`按钮（只有 Harbor 仓库才支持镜像回收）。
 

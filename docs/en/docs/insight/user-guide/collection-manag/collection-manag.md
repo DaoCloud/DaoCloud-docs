@@ -14,11 +14,11 @@ The specific operation steps are as follows:
 
 1. Click in the upper left corner and select `Insight` -> `Data Collection`.
 
-    ![Data Collection](../../images/collectmanage01.png)
+    ![Data Collection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/collectmanage01.png)
 
 2. You can view the status of all cluster collection plug-ins.
 
-    ![Data Collection](../../images/collectmanage02.png)
+    ![Data Collection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/collectmanage02.png)
 
 3. When the cluster is connected to `insight-agent` and is running, click a cluster name
    to enter the details。

@@ -34,13 +34,13 @@
 
 2. 选择左侧菜单`Helm 应用` -> `Helm 模板`，在 `addon 仓库`下找到 EdgeMesh 插件。
 
-    ![Helm 模板](../../images/deploy-edgemesh-01.png)
+    ![Helm 模板](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/deploy-edgemesh-01.png)
 
 3. 点击 edgemesh 条目，进入模板详情页。
 
 4. 在页面右上角选择 EdgeMesh 版本，点击`安装`按钮，进入 EdgeMesh 安装页面。
 
-    ![edgemesh 安装](../../images/deploy-edgemesh-02.png)
+    ![edgemesh 安装](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/deploy-edgemesh-02.png)
 
 5. 填写 edgemesh 基础配置。
 
@@ -51,7 +51,7 @@
     - 就绪等待：启用后，将等待应用下所有关联资源处于就绪状态才标记应用安装成功。
     - 详细日志：开启安装过程日志的详细输出。
 
-    ![Helm 模板](../../images/deploy-edgemesh-03.png)
+    ![Helm 模板](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/deploy-edgemesh-03.png)
 
 6. YAML 参数配置。
 

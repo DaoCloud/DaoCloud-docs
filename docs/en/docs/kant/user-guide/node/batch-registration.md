@@ -8,11 +8,11 @@ The following steps explain how to perform batch registration of edge nodes.
 
 1. On the Edge Node List page, click the `Batch Management` button to enter the `Batch Management` page.
 
-    ![Batch Management](../../images/batch-register01.png)
+    ![Batch Management](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kant/images/batch-register01.png)
 
 1. Select the `Batch Register` tab and click the `Create Batch Job` button in the upper right corner.
 
-    ![Batch Management](../../images/batch-register02.png)
+    ![Batch Management](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kant/images/batch-register02.png)
 
 1. Fill in the registration information.
 
@@ -24,7 +24,7 @@ The following steps explain how to perform batch registration of edge nodes.
     - Description: Description of the batch task.
     - Labels: Labels for the batch task.
 
-    ![Create Batch Task](../../images/batch-register03.png)
+    ![Create Batch Task](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kant/images/batch-register03.png)
 
 1. After completing the registration information, click the `OK` button to finish creating the batch task for the nodes.
 

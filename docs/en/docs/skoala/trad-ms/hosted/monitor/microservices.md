@@ -14,13 +14,13 @@ To view microservice monitoring, perform the following steps:
 
 2. In the left navigation bar, click `Monitoring` -> `Microservices`.
 
-    ![](../../../images/monitor05.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/monitor05.png)
 
 3. Select a microservice namespace, service, instance, and resource to view the microservice monitoring data in the namespace.
 
     > Click the dashboard name to further view or share the monitoring information. You can switch the statistics time window and refresh period in the upper right corner of the page.
 
-    ![](../../../images/monitor06.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/monitor06.png)
 
 ## Microservice Monitoring Metrics Explanation
 

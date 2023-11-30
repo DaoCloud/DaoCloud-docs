@@ -20,7 +20,7 @@ hide:
 
 2. 选择`系统规则`，然后在右侧点击`创建系统规则`。
 
-    ![微服务列表](../../../images/gov14.png)
+    ![微服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gov14.png)
 
 3. 参考下列说明填写规则配置，并在右下角点击`确定`。
 
@@ -31,10 +31,10 @@ hide:
     - 入口 QPS：当单台机器上所有入口流量的 QPS 达到阈值时，触发系统流控规则。
     - CPU 使用率：当系统 CPU 使用率超过阈值时（取值范围 0.0-1.0），触发系统流控规则。
 
-        ![微服务列表](../../../images/gov15.png)
+        ![微服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gov15.png)
 
 4. 创建完成后可以在系统规则列表中查看新建的规则。在右侧点击更多按钮可以更新规则或者删除该规则。
 
-    ![流控规则列表](../../../images/gov16.png)
+    ![流控规则列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gov16.png)
 
 参阅视频教程：[Sentinel 系统规则](../../../../videos/skoala.md#sentinel_3)

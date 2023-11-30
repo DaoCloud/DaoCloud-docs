@@ -12,17 +12,17 @@ DCE 5.0 镜像仓库提供了基于镜像空间的镜像隔离功能。镜像空
 点击某一个镜像空间的名称，可以查看当前空间内的镜像列表以及镜像回收规则。
 您可以为当前镜像空间创建镜像回收规则。所有镜像回收规则独立计算并且适用于所有符合条件的镜像，最多支持 15 条回收规则。
 
-![镜像空间包含什么](../images/space02.png)
+![镜像空间包含什么](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/space02.png)
 
 通过左侧导航栏的`仓库集成(工作空间)`进入镜像空间后，点击右侧的`推送命令`按钮。
 
-![按钮](../images/push-cmd01.png)
+![按钮](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/push-cmd01.png)
 
 可以查看将镜像推送到当前镜像空间的推送命令。
 
-![推送命令](../images/push-cmd02.png)
+![推送命令](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/push-cmd02.png)
 
 点击`上传镜像`按钮，可以上传格式为 tar 或 tar.gz 的镜像文件。
 注意不要超过 2GB，一个文件对应一个镜像，目前仅支持上传 1.11.2 及以上容器引擎客户端版本制作的镜像压缩包。
 
-![上传镜像](../images/push-cmd03.png)
+![上传镜像](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/push-cmd03.png)

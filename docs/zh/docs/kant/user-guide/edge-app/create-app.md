@@ -14,7 +14,7 @@ Deployment 是无状态的，不支持数据持久化，适用于部署无状态
 
 2. 点击工作负载列表右上角`镜像创建`按钮。
 
-    ![工作负载列表](../../images/create-app-01.png)
+    ![工作负载列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-app-01.png)
 
 3. 填写基本信息
 
@@ -24,7 +24,7 @@ Deployment 是无状态的，不支持数据持久化，适用于部署无状态
     - 实例数：负载的 Pod 实例数量，默认创建 1 个 Pod 实例，不可修改
     - 描述：输入负载的描述信息，内容自定义
 
-    ![填写基本信息](../../images/create-app-02.png)
+    ![填写基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-app-02.png)
 
 4. 填写容器配置
 
@@ -45,38 +45,38 @@ Deployment 是无状态的，不支持数据持久化，适用于部署无状态
         - CPU/内存配额：CPU/内存资源的请求值（需要使用的最小资源）和限制值（允许使用的最大资源）。
           请根据需要为容器配置资源，避免资源浪费和因容器资源超额导致系统故障。默认值如图所示。
 
-        ![填写容器配置](../../images/create-app-03.png)
+        ![填写容器配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-app-03.png)
 
     === "生命周期（选填）"
 
         设置容器启动时、启动后、停止前需要执行的命令。详情可参考容[容器生命周期配置](../../../kpanda/user-guide/workloads/pod-config/lifecycle.md)。
 
-        ![生命周期](../../images/create-app-04.png)
+        ![生命周期](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-app-04.png)
 
     === "健康检查（选填）"
 
         用于判断容器和应用的健康状态，有助于提高应用的可用性。详情可参考[容器健康检查配置](../../../kpanda/user-guide/workloads/pod-config/health-check.md)。
 
-        ![健康检查](../../images/create-app-05.png)
+        ![健康检查](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-app-05.png)
 
     === "环境变量（选填）"
 
         配置 Pod 内的容器参数，为 Pod 添加环境变量或传递配置等。详情可参考[容器环境变量配置](../../../kpanda/user-guide/workloads/pod-config/env-variables.md)。
 
-        ![环境变量](../../images/create-app-06.png)
+        ![环境变量](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-app-06.png)
 
     === "数据存储（选填）"
 
         配置容器挂载数据卷和数据持久化的设置。详情可参考[容器数据存储配置](../../../kpanda/user-guide/workloads/pod-config/env-variables.md)。
 
-        ![数据存储](../../images/create-app-07.png)
+        ![数据存储](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-app-07.png)
 
     === "安全设置（选填）"
 
         通过 Linux 内置的账号权限隔离机制来对容器进行安全隔离。您可以通过使用不同权限的账号 UID（数字身份标记）来限制容器的权限。
         例如，输入 0 表示使用 root 账号的权限。
 
-        ![安全设置](../../images/create-app-08.png)
+        ![安全设置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-app-08.png)
 
 5. 填写高级配置
 
@@ -86,15 +86,15 @@ Deployment 是无状态的，不支持数据持久化，适用于部署无状态
 
         点击`选择边缘节点`按钮，在弹出的选择弹框中，可以选择指定的某一节点部署工作负载。
 
-        ![节点调度](../../images/create-app-09.png)
+        ![节点调度](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-app-09.png)
 
-        ![选择边缘节点](../../images/create-app-10.png)
+        ![选择边缘节点](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-app-10.png)
 
     === "标签与注解"
 
         点击`添加`按钮，可以为工作负载和容器组添加标签和注解。
 
-        ![标签与注解](../../images/create-app-11.png)
+        ![标签与注解](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-app-11.png)
 
     === "访问配置"
 
@@ -106,7 +106,7 @@ Deployment 是无状态的，不支持数据持久化，适用于部署无状态
           那主机 8080 端口的流量会流向容器的 80 端口。
         - 主机网络：使用宿主机（边缘节点）的网络，即容器与主机间不做网络隔离，使用同一个 IP。
 
-        ![访问配置](../../images/create-app-12.png)
+        ![访问配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-app-12.png)
 
 6. 点击`确定`按钮，完成工作负载的创建。
 
@@ -120,7 +120,7 @@ Deployment 是无状态的，不支持数据持久化，适用于部署无状态
 
 2. 点击终端设备列表右上角`YAML 创建`按钮。
 
-    ![工作负载列表](../../images/create-app-13.png)
+    ![工作负载列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-app-13.png)
 
 3. 输入或粘贴事先准备好的 YAML 文件，点击`确定`即可完成创建。
 
@@ -150,4 +150,4 @@ Deployment 是无状态的，不支持数据持久化，适用于部署无状态
 - 如未加上标签（labels）配置，云边协同模块的工作负载列表将不会显示该工作负载，此时用户可以到容器管理模块查看工作负载详情。
 - 如未加上节点亲和性（affinity）配置，工作负载可能会随机调度，无法部署到指定边缘节点。
 
-![YAML 创建](../../images/create-app-14.png)
+![YAML 创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-app-14.png)

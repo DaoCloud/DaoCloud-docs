@@ -10,7 +10,7 @@
 
 如下图所示，边缘节点上的应用实例通过访问对应的服务，可以实现不同边缘节点上的应用实例的通信。
 
-![服务流量访问示意图](../../images/network-overview-01.png)
+![服务流量访问示意图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/network-overview-01.png)
 
 应用网格能力依赖 EdgeMesh 应用，用户在使用网格能力前，需要先部署 EdgeMesh 应用。
 部署流程参考[部署 edgemesh 应用](./deploy-edgemesh.md)

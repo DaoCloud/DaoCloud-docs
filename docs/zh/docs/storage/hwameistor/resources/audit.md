@@ -8,7 +8,7 @@
 
 2. 展示了操作类型、资源名称、资源类型、状态、操作时间、操作内容字段。
 
-    ![audit01](../../images/auit01.png)
+    ![audit01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/auit01.png)
 
     其中资源类型支持：
 
@@ -28,4 +28,4 @@
 
     操作内容：可以查看到更多的操作细节信息，如下图展示了 `StorageNode` 资源的一条审计的操作内容。
 
-      ![audit02](../../images/audit02.png)
+      ![audit02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/audit02.png)

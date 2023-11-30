@@ -98,7 +98,7 @@ Configuration information in the corresponding `value.yaml`:
 ![scope02](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/scope02.png)
 
 3. `Workspace-level Ingress Instance`: When deploying Ingress-Ngnix, set the `scope` to `disabled` and specify `workspace.ghippo.io/id=12345` in the `Namespace Selector` to create an Ingress Instance with an `ID`  `12345` exclusive to the workspace.
-    ![WorkspaceIngress](../../images/workspace.png) The corresponding configuration information in `value.yaml`: ![workspaceingress02](../../images/workspace02.png)
+    ![WorkspaceIngress](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/workspace.png) The corresponding configuration information in `value.yaml`: ![workspaceingress02](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/workspace02.png)
 
 After the Ingress instance is deployed, you can [create Ingress rules](../../../kpanda/user-guide/network/create-ingress.md) in the corresponding namespace and select the Ingress Class for the corresponding instance to use.
 

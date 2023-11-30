@@ -64,11 +64,11 @@
         > 有关微服务引擎的配置，可参考[基于 Git 仓构建微服务应用](create-app-git.md)。
     - 可观测性：支持开启指标监控、链路追踪、JVM 监控。
 
-        ![高级配置](../../images/jar01.png)
+        ![高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/jar01.png)
 
 6. 选择需要上传的文件，点击`确定` 。
 
-    ![上传文件](../../images/jar02.png)
+    ![上传文件](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/jar02.png)
 
 7. 创建成功后会触发运行对应的流水线，在左侧导航栏点击`流水线`可查看其运行状态。
 

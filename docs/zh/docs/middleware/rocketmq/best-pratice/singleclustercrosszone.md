@@ -4,7 +4,7 @@
 
 客户机房环境为单一 k8s 集群横跨`机房A`、`机房B`，期望可以部署一套 3 主 3 从 RocketMQ 实现跨机房服务高可用，当任一机房整体离线时，RocketMQ 仍可以正常提供服务。
 
-![mutizone](../images/crosszone01.png){ width=700px}
+![mutizone](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/crosszone01.png){ width=700px}
 
 ## RocketMQ 5.1.4 各组件镜像地址
 
@@ -30,7 +30,7 @@ RocketMQ 5.0 通过 Dledger controller 实现 broker 高可用自动主从切换
 - 尽量形成两机房的 broker master 1:2 的关系，避免所有 master 运行在同一机房
 - name_srv 在两个机房分别存在副本
 
-![mutizone](../images/crosszone02.png){ width=700px}
+![mutizone](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/crosszone02.png){ width=700px}
 
 本方案采用了工作负载的调度策略，通过具有权重的节点亲和性策略和工作负载反亲和策略达成以上部署目标。
 
@@ -51,7 +51,7 @@ minInSyncReplicas=1
 enableAutoInSyncReplicas=true
 ```
 
-![mutizone](../images/crosszone03.png){ width=700px}
+![mutizone](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/crosszone03.png){ width=700px}
 
 2. 完成创建后，修改 CR，并 重启 broker sts：
 
@@ -230,11 +230,11 @@ broker 标签用于工作负载反亲和（自带标签，不用配置）：
 
 controller 运行于机房 B，基于 Dledger controller 的主从转换机制，可以实现机房 B 的 broker slave>>master 自动升级，无需人工干预。
 
-![mutizone](../images/crosszone04.png){ width=700px}
+![mutizone](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/crosszone04.png){ width=700px}
 
 ### 机房 B 离线
 
-![mutizone](../images/crosszone05.png){ width=700px}
+![mutizone](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/crosszone05.png){ width=700px}
 
 - 负责调度的 controller 离线，将暂时无法 slave>>master 转换，需要手动删除 Pod 漂移至其他节点。
 - controller 重新调度至现存节点，才能继续完成机房 A 的 slave>>master 自动升级。
@@ -245,7 +245,7 @@ controller 运行于机房 B，基于 Dledger controller 的主从转换机制�
 1. broker 角色升级失败：经实际测试，controller 稳定性不是很好，broker 的 slave>>master 自动升级有一定几率失败，可通过重启 controller 的方式，即可解决该问题。
 2. 谨慎使用 sts 的`删除`操作：删除重建 broker 会导致配置在实例中的调度策略丢失，但不会丢失配置在 CR 的策略，因此建议谨慎使用`删除`操作。`重启` sts 的操作不会造成以上的丢失情况。
 
-    ![mutizone](../images/crosszone06.png){ width=700px}
+    ![mutizone](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/crosszone06.png){ width=700px}
 
 3. 机房离线导致 console 无法获取数据：如果采用 2 副本 console，一个机房离线可能导致 console 无法连接 name_srv。
     - 解决办法：重启现存 console 工作负载。
@@ -256,7 +256,7 @@ controller 运行于机房 B，基于 Dledger controller 的主从转换机制�
     ./mqadmin clusterList -n 127.0.0.1:9876
     ````
 
-    ![mutizone](../images/crosszone07.png){ width=700px}
+    ![mutizone](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/crosszone07.png){ width=700px}
 
     BID = 0：表示该节点为 Master
     BID <> 0：表示该节点为 slave

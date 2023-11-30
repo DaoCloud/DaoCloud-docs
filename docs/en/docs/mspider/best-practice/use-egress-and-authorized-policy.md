@@ -19,15 +19,15 @@ Firstly, ensure that your mesh is in a healthy state. If you haven't installed I
 
 To configure the mesh for outbound traffic only, modify the governance information of the mesh as shown in the screenshots below. Please note that after making these changes, you will need to use `Service Entry` to allow access to services outside the cluster.
 
-![image](../images/egress01.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/egress01.png)
 
-![image](../images/egress02.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/egress02.png)
 
 ### Creating an Egress Gateway
 
-![image](../images/egress03.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/egress03.png)
 
-![image](../images/egress04.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/egress04.png)
 
 ### Setting up a Test Application
 
@@ -37,7 +37,7 @@ You can use any application for testing purposes. In the following steps, we wil
 
 Additionally, ensure that the application's `Pod` has been successfully injected with a sidecar. You can check the status of the corresponding service in the mesh interface.
 
-![image](../images/egress05.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/egress05.png)
 
 ## Rule Configuration
 
@@ -47,33 +47,33 @@ Below are example rules, which can be created using YAML format through the serv
 
 Firstly, let's create an allowed egress access address. In this example, we will use **baidu**. Follow the steps shown in the screenshots below.
 
-![image](../images/egress06.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/egress06.png)
 
-![image](../images/egress-and-authorized-05-2.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/egress-and-authorized-05-2.png)
 
 ### Creating a Virtual Service
 
-![image](../images/egress-and-authorized-09.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/egress-and-authorized-09.png)
 
 ### Creating Gateway Rules
 
 Note the use of `ISTIO_MUTAL` to enable authorization policies.
 
-![image](../images/egress-and-authorized-10.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/egress-and-authorized-10.png)
 
 ### Creating a DR (Destination Rule) for Gateway Rules
 
-![image](../images/egress-and-authorized-06.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/egress-and-authorized-06.png)
 
 ### Creating a DR for **baidu**
 
 Route all traffic through HTTPS.
 
-![image](../images/egress-and-authorized-07.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/egress-and-authorized-07.png)
 
 ## Enabling Authorization Policies
 
-![image](../images/egress-and-authorized-11.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/egress-and-authorized-11.png)
 
 ## Functionality Testing
 
@@ -81,10 +81,10 @@ Route all traffic through HTTPS.
 
 You should see successful access results because we have enabled outbound traffic and restricted usage to specific services within the mesh.
 
-![image](../images/egress-and-authorized-12.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/egress-and-authorized-12.png)
 
 ### Accessing baidu from the Pod of another application
 
 At this point, access from other services is denied due to the restricted source service.
 
-![image](../images/egress-and-authorized-13.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/egress-and-authorized-13.png)

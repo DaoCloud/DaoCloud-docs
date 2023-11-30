@@ -10,7 +10,7 @@
 - 需要创建专有网络(若无)，并选择可用区。创建虚拟交换机用于节点和 Pod 使用
 - 根据实际需求选择实例规格，实例规格决定了 ECS 实例上 ENI 和 ENI 上辅助 IP 的数量，从而决定可运行 Pod 的数量(非 VPC 模式)
 
-![create-ecs](../../images/ECS-Create.png)
+![create-ecs](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/ECS-Create.png)
 
 > 安装 Kubernetes 集群要求每台机器的 CPU >= 2, 内存 >= 2 GB.
 
@@ -124,11 +124,11 @@ networking:
 
     > 注: 为确保后续步骤中所使用的 RAM 用户具备足够的权限，请与本文保持一致，给予 RAM 用户 AdministratorAccess 和 AliyunSLBFullAccess 权限
 
-    ![edit-ram](../../images/custom-ram.png)
+    ![edit-ram](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/custom-ram.png)
 
     当创建完成，将该自定义权限策略绑定到用户或用户组:
 
-    ![bind_ram](../../images/bind_ram.png)
+    ![bind_ram](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/bind_ram.png)
 
     最后点击创建 AccessKey，并保存 `access_secret` 和 `access_key`，这需要在下面安装 Terway 的时候用到。
 
@@ -194,7 +194,7 @@ CCM 组件用于发布 Pod 跨节点访问路由以及 LoadBalancer Service 的�
 
 3. 安装成功后，可在阿里云管理界面查看 VPC 路由已经成功同步:
 
-    ![ccm-route](../../images/ccm-route.png)
+    ![ccm-route](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/ccm-route.png)
 
     访问 Pod 子网路由的下一跳指向该节点。
 
@@ -282,7 +282,7 @@ dao2048-eni-7f85b8dcc4-mvjbs   1/1     Running   0              15s   192.168.20
 
 可以发现该 Pod 的 IP 与节点是同一网段，属于同一个 VPC 网卡，并且其 IP 是 ENI 网卡的主私网 IP。
 
-![eni_ip](../../images/eni_ip.png)
+![eni_ip](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/eni_ip.png)
 
 经过测试，当设置 LoadBalancer/NodePort Service 的 **_ExternalTrafficPolicy 为 Local_** 时，会出现通信问题，参考 [#531](https://github.com/AliyunContainerService/terway/issues/531)
 

@@ -32,7 +32,7 @@ Earlier versions will not be compatible.
 The image scanner relies on vulnerability data, which is obtained by default from the [CVE official website](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=kubernetes).
 In a pure offline environment, vulnerability scanning cannot be performed, and the process will fail.
 
-![trivy](../images/trivy-nodb.png)
+![trivy](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/trivy-nodb.png)
 
 ## Error occurs when creating Harbor after cluster verification passes in the first step
 

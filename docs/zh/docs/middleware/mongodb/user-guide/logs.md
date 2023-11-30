@@ -11,11 +11,11 @@ hide:
 
 1. 在 MongDB 实例列表中，选择想要查看的日志，点击 `实例名称` 进入到实例详情页面。
 
-    ![日志](../../images/mongo-logs01.png)
+    ![日志](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/images/mongo-logs01.png)
 
 2. 在实例的左侧菜单栏，会发现有一个日志查看的菜单栏选项。
 
-    ![日志](../../images/mongo-logs02.png)
+    ![日志](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/images/mongo-logs02.png)
 
 3. 点击 `日志查看` 即可进入到日志查看页面（Insight 日志查看）。
 

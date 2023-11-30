@@ -14,7 +14,7 @@
 - 已经按要求准备好节点，并配置好节点环境，具体请参见[边缘节点接入要求](./join-rqmt.md)。
 - 已经注册好节点批量任务并获取到安装指南，具体请参见[批量注册边缘节点](./batch-registration.md)。
 
-![安装指南](../../images/node-managed-01.png)
+![安装指南](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/node-managed-01.png)
 
 ## 纳管边缘节点
 
@@ -119,4 +119,4 @@
 
     1. 查看边缘节点的状态，当前状态为`健康`表示纳管成功。
 
-        ![边缘节点纳管成果](../../images/node-managed-02.png)
+        ![边缘节点纳管成果](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/node-managed-02.png)

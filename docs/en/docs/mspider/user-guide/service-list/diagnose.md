@@ -11,7 +11,7 @@ DCE 5.0 Service Mesh provides built-in one-click diagnosis and repair functional
    In the `Diagnosis Config` column, next to services with an `Abnormal` status,
    the word `Diagnose` will appear. Click `Diagnose`.
 
-    ![Diagnose](../images/diagnose01.png)
+    ![Diagnose](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/diagnose01.png)
 
 2. A diagnosis popup will appear on the right-hand side. Follow the built-in checklist for inspection.
    Green checkmarks indicate that the item has <span style="color:green">Passed</span>, while red crosses indicate items that is <span style="color:red">Not Passed</span> and need to be repaired.
@@ -20,17 +20,17 @@ DCE 5.0 Service Mesh provides built-in one-click diagnosis and repair functional
     You can click `Rediagnose` to refresh the checklist, and the repair is usually
     completed within a few minutes.
 
-    ![Repair](../images/diagnose02.png)
+    ![Repair](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/diagnose02.png)
 
 3. After successful repair, all items in the checklist will turn gray and display as
    <span style="color:green">Passed</span>. Click `Next`.
 
-    ![Next](../images/diagnose03.png)
+    ![Next](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/diagnose03.png)
 
 4. A list of items that require `Manual Repair` will be displayed.
    You can click `View Troubleshooting Guide` to read the proper documentation page and manually repair the items.
 
-    ![Manual repair](../images/diagnose04.png)
+    ![Manual repair](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/diagnose04.png)
 
 !!! note
 

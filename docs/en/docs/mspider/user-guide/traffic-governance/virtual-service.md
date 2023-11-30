@@ -29,20 +29,20 @@ The specific steps for creating using the graphical wizard are as follows (refer
 
 1. Click `Traffic Management` in the left navigation bar, then click `Virtual Service`, and click the `Create` button in the upper right corner.
 
-    ![Create](../images/virtualserv01.png)
+    ![Create](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/virtualserv01.png)
 
 2. In the `Create Virtual Service` page, confirm and select the namespace, service,
    and application scope where the virtual service will be created, then click `Next`.
 
-    ![Create Virtual Service](../images/virtualserv02.png)
+    ![Create Virtual Service](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/virtualserv02.png)
 
 3. Configure the HTTP routes, TLS routes, and TCP routes as prompted on the screen, then click `OK`.
 
-    ![Routing Configuration](../images/virtualserv03.png)
+    ![Routing Configuration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/virtualserv03.png)
 
 4. Return to the Virtual Service list, and there will be a prompt indicating successful creation. On the right side of the Virtual Service list, click the `⋮` in the "Actions" column to perform more operations from the pop-up menu.
 
-    ![More Actions](../images/virtualserv04.png)
+    ![More Actions](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/virtualserv04.png)
 
 ## YAML Creation
 

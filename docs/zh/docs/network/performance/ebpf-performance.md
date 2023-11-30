@@ -18,15 +18,15 @@
 
 - 在 TCP 吞吐量测试场景下，结果如下图所示。其中，当存在上万条过滤规则的规模下，iptables 方案给数据包的吞吐量带来了较大的降低：
 
-    ![throughput](../images/ebpf-throughput.png)
+    ![throughput](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/ebpf-throughput.png)
 
 - 当存在上千条过滤规则的规模下，iptables 方案对主机的 CPU 产生了较大的开销：
 
-    ![cpu](../images/ebpf-cpu.png)
+    ![cpu](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/ebpf-cpu.png)
 
 - 当存在上千条过滤规则的规模下，iptables 方案对应用的访问延时带来了较大的负担
 
-    ![latency](../images/ebpf-latency.png)
+    ![latency](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/ebpf-latency.png)
 
 ## 结论
 

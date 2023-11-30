@@ -6,11 +6,11 @@
 
 1. 进入`可观测性`后，在左侧导航栏中点击`告警中心` -> `通知配置`，默认位于邮件通知对象。
 
-    ![邮件](../../images/email00.png)
+    ![邮件](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/email00.png)
 
 2. 点击`添加邮箱组`，添加一个或多个邮件地址。
 
-    ![添加邮箱组](../../images/email01.png)
+    ![添加邮箱组](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/email01.png)
 
 3. 配置完成后自动返回通知列表，点击列表右侧的 `︙`，可以编辑或删除邮箱组。
 
@@ -18,13 +18,13 @@
 
 1. 在左侧导航栏中点击`告警中心` -> `通知配置` -> `企业微信`。
 
-    ![企业微信](../../images/wechatbot00.png)
+    ![企业微信](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/wechatbot00.png)
 
     有关企业微信群机器人的 URL，请参阅[企业微信官方文档：如何使用群机器人](https://developer.work.weixin.qq.com/document/path/91770)。
 
 2. 点击`添加群机器人`，添加一个或多个群机器人。
 
-    ![企业微信](../../images/wechatbot01.png)
+    ![企业微信](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/wechatbot01.png)
 
 3. 配置完成后自动返回通知列表，点击列表右侧的 `︙`，选择`发送测试信息`，还可以编辑或删除群机器人。
 
@@ -42,13 +42,13 @@
 
 1. 在左侧导航栏中点击`告警中心` -> `通知配置` -> `Webhook`。
 
-    ![webhook](../../images/webhook00.png)
+    ![webhook](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/webhook00.png)
 
     有关 Webhook URL 及更多配置方式，请参阅 [webhook 文档](https://github.com/webhooksite/webhook.site)。
 
 2. 点击`新建 Webhook`，添加一个或多个 Webhook。
 
-    ![webhook](../../images/webhook01.png)
+    ![webhook](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/webhook01.png)
 
     有关 Webhook URL 及更多配置方式，请参阅 [webhook 文档](https://github.com/webhooksite/webhook.site)。
 

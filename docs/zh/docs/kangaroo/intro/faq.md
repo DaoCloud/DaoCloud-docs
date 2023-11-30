@@ -28,7 +28,7 @@ DCE 5.0标准版本中没有中间件，中间件属于白金版。
 [CVE 官网](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=kubernetes)获取漏洞数据。
 如果是一个纯离线环境，则不能正常进行漏洞扫描，会执行失败。
 
-![trivy](../images/trivy-nodb.png)
+![trivy](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/trivy-nodb.png)
 
 ## 创建托管 Harbor 时第一步集群校验通过后创建 Harbor 仍然出错
 
@@ -83,7 +83,7 @@ Error response from daemon: Get "https://{ip}/v2/": x509: cannot validate certif
 
 ## 创建的托管仓库状态为不健康
 
-![仓库不健康](../images/img.png)
+![仓库不健康](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/img.png)
 
 - A1：用户输入的数据库、Redis、S3 存储等信息有误，导致无法连接，可通过查看日志文件进行排查。
   现象主要是几个核心服务有 Pod 启动失败，可以通过查看日志进一步确认原因。
@@ -143,7 +143,7 @@ Error response from daemon: Get "https://{ip}/v2/": x509: cannot validate certif
 
 ## 仓库集成后但状态为不健康
 
-![仓库集成不健康](../images/img_1.png)
+![仓库集成不健康](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/img_1.png)
 
 首先确认实例是否真的健康，如果实例不健康，则需要排查实例的问题；
 如果实例健康，则通过在 `kpanda-global-cluster` 集群上排查 `registrysecrets.kangaroo.io`

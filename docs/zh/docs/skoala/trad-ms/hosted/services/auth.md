@@ -17,7 +17,7 @@ hide:
 
 2. 选择`授权规则`，然后在右侧点击`创建授权规则`。
 
-    ![微服务列表](../../../images/gov08.png)
+    ![微服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gov08.png)
 
 3. 参考下列说明填写规则配置，并在右下角点击`确定`。
 
@@ -26,8 +26,8 @@ hide:
     - 授权类型——白名单：只有请求来源位于白名单内时才允许访问该资源。
     - 授权类型——黑名单：如果请求来源位于黑名单时，不允许其访问该资源。对于不在黑名单上的请求来源，不做限制。
 
-        ![微服务列表](../../../images/gov09.png)
+        ![微服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gov09.png)
 
 4. 创建完成后可以在授权规则列表中查看新建的规则。在右侧点击更多按钮可以更新规则或者删除该规则。
 
-    ![流控规则列表](../../../images/gov10.png)
+    ![流控规则列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gov10.png)

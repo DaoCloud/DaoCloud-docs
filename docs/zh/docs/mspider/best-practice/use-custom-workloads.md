@@ -198,11 +198,11 @@ kubectl -n NS_NAME apply -f dc-nginx.yaml dc-nginx-svc.yaml
 
 在工作负载成功启动之后，可以在`边车管理`中查看工作负载。默认为未注入，我们可以手工注入。
 
-![image](../images/custom-workloads-01.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/custom-workloads-01.png)
 
 在服务列表可以看到对应的服务，此时服务的工作负载也是正常在运行的，我们可以增加对应的策略来提供对服务的访问。
 
-![image](../images/custom-workloads-02.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/custom-workloads-02.png)
 
 ## 结语
 

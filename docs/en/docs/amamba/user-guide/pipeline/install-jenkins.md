@@ -14,19 +14,19 @@
 
         Select the deployment cluster for Jenkins based on your actual situation. Currently, it is not recommended to deploy it on the global service cluster as executing pipelines in Jenkins with high concurrency can consume a significant amount of resources and may cause the global service cluster to become unresponsive.
 
-    ![Click Cluster Name](../../images/install-jenkins11.png)
+    ![Click Cluster Name](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins11.png)
 
 2. In the left navigation bar, select `Helm Applications` -> `Helm Templates`, and find and click `Jenkins`.
 
-    ![jenkins helm](../../images/install-jenkins12.png)
+    ![jenkins helm](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins12.png)
 
 3. In the `Version Selection`, choose the desired version of Jenkins to install, and click `Install`.
 
-    ![Install](../../images/install-jenkins13.png)
+    ![Install](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins13.png)
 
 4. On the installation page, fill in the required installation parameters, and finally click the `OK` button at the bottom right.
 
-    ![Fill in Configuration](../../images/install-jenkins14.png)
+    ![Fill in Configuration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins14.png)
 
     Here are some important parameter explanations. Change and write the parameters according to your actual business needs.
 
@@ -54,7 +54,7 @@
 
 5. Go to Helm Applications to check the deployment result.
 
-    ![Deployment Completed](../../images/install-jenkins15.png)
+    ![Deployment Completed](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins15.png)
 
 ## Integrating Jenkins
 
@@ -62,16 +62,16 @@ Note: Currently, only integration with Jenkins installed via the DCE 5.0 platfor
 
 1. Log in to DCE 5.0 with a user who has the role of an Workbench Administrator and go to the Workbench.
 
-    ![Deployment Completed](../../images/install-jenkins16.png)
+    ![Deployment Completed](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins16.png)
 
 2. On the left navigation bar under Platform Management, click `Toolchain Integration` and then click the `Integrate` button in the upper right corner.
 
-    ![Deployment Completed](../../images/install-jenkins17.png)
+    ![Deployment Completed](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins17.png)
 
 3. Select the toolchain type as `Jenkins`, fill in the integration name, Jenkins address, username, and password.
    If the Jenkins address is using the HTTPS protocol, provide the certificate. By default, the account/password for Jenkins deployed through Helm is `admin/Admin01`.
 
-    ![Deployment Completed](../../images/install-jenkins18.png)
+    ![Deployment Completed](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins18.png)
 
 4. After the integration is complete, a record will be successfully generated on the `Toolchain List` page.
 

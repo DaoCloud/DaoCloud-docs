@@ -8,7 +8,7 @@
 
 1. 进入 `告警中心` -> `通知配置` -> `通知服务器`。
 
-    ![通知服务器](../../images/smsserver00.png)
+    ![通知服务器](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/smsserver00.png)
 
 2. 点击`添加通知服务器`。
 

@@ -13,7 +13,7 @@ When a new edge node is connected, the latest version of the EdgeCore software i
 - The nodes have been prepared according to the requirements and the node environment has been configured as specified in the [Edge Node Access Requirements](./join-rqmt.md).
 - The batch task for registering the nodes has been successfully created, and the installation guide has been obtained as described in [Batch Registration of Edge Nodes](./batch-registration.md).
 
-![Installation Guide](../../images/node-managed-01.png)
+![Installation Guide](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kant/images/node-managed-01.png)
 
 ## Connecting Edge Nodes
 
@@ -103,4 +103,4 @@ When a new edge node is connected, the latest version of the EdgeCore software i
 
     4. Check the status of the edge node. If the current status is "Healthy," it indicates a successful connection.
 
-        ![Successful Management of Edge Node](../../images/node-managed-02.png)
+        ![Successful Management of Edge Node](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kant/images/node-managed-02.png)

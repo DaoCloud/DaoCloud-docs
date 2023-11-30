@@ -13,15 +13,15 @@ PostgreSQL 中间件的的反亲和策略由同一集群下的所有实例共用
 
 1. 点击`自定义资源`，查找资源：`operatorconfigurations.acid.zalan.do`
 
-    ![创建](../images/antiaff01.png)
+    ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/postgresql/images/antiaff01.png)
 
 1. 在该资源下选择正确的`命名空间` -> `CR 实例`
 
-    ![创建](../images/antiaff02.png)
+    ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/postgresql/images/antiaff02.png)
 
 1. 点击`编辑 YAML`，根据需求修改以下字段
 
-    ![创建](../images/antiaff03.png)
+    ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/postgresql/images/antiaff03.png)
 
     | 字段                                           | 说明                                               |
     | -------------------------------------------- | -------------------------------------------- |
@@ -30,4 +30,4 @@ PostgreSQL 中间件的的反亲和策略由同一集群下的所有实例共用
 
 1. 重启 Operator，已创建的实例也会随之重建并应用新的调度配置。
 
-    ![创建](../images/antiaff04.png)
+    ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/postgresql/images/antiaff04.png)

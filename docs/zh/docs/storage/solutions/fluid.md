@@ -27,15 +27,15 @@ DCE 5.0 支持了 Fluid， 并将其作为 Addon 集成了应用商店中。
 
 1. 进入`容器管理`模块，在`集群列表`中找到需要安装 Fluid， 的集群，点击该集群的名称。
 
-    ![点击集群名称](../images/fluid01.png)
+    ![点击集群名称](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/fluid01.png)
 
 2. 在左侧导航栏中选择 `Helm 应用` -> `Helm 模板`，找到并点击 `Fluid`。
 
-    ![fluid-helm](../images/fluid02.png)
+    ![fluid-helm](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/fluid02.png)
 
 3. 在安装界面，填写所需的安装参数，最后在右下角点击`确定`按钮。
 
-    ![填写配置](../images/fluid03.png)
+    ![填写配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/fluid03.png)
 
     - 名称：组件的名称，可以输入 `fluid`。
 
@@ -47,10 +47,10 @@ DCE 5.0 支持了 Fluid， 并将其作为 Addon 集成了应用商店中。
 
 4. 前往 Helm 应用查看部署结果。
 
-    ![完成创建](../images/fluid04.png)
+    ![完成创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/fluid04.png)
 
 5. 也可以在当前集群详情左侧菜单栏的 `工作负载` -> `容器组`，选择命名空间为 `fluid-system`，查看所有容器组的状态。
 
-    ![pod](../images/fluid05.png)
+    ![pod](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/fluid05.png)
 
 有关 Fulid 如何加速数据访问的 demo 请前往官网查看：https://fluid-cloudnative.github.io/#demo 。

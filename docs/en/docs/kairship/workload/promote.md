@@ -12,7 +12,7 @@ Here are the specific steps:
 
 1. Click the name of the multi-cloud instance, then click `Multicloud Workloads` on the left side and select `Convert Now` for the new feature.
 
-    ![Workloads](../images/promote01.png)
+    ![Workloads](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/promote01.png)
 
 2. Choose which application you want to convert.
 
@@ -22,7 +22,7 @@ Here are the specific steps:
     - Resources that have already been converted to multi-cloud applications cannot be converted again and will not appear in the list.
     - During the conversion, the system will automatically create corresponding deployment policies and manage the original sub-clusters.
 
-    ![Convert Application](../images/promote02.png)
+    ![Convert Application](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/promote02.png)
 
 3. Click `OK` in the lower-right corner of the dialog box to complete the conversion.
 

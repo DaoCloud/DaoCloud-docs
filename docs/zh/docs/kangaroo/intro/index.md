@@ -35,7 +35,7 @@ hide:
 
 **产品逻辑架构**
 
-![逻辑架构图](../images/harbordesign.png)
+![逻辑架构图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/harbordesign.png)
 
 [下载 DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
 [安装 DCE 5.0](../../install/index.md){ .md-button .md-button--primary }

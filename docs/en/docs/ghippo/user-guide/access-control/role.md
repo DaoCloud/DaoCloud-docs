@@ -23,7 +23,7 @@ platform roles that users can directly use:
 - IAM Owner
 - Audit Owner
 
-![5 pre-defined platform roles](../../images/newrole01.png)
+![5 pre-defined platform roles](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/newrole01.png)
 
 Additionally, DCE 5.0 supports the creation of custom platform roles with customized content
 as needed. For example, creating a platform role that includes all functional permissions in
@@ -32,7 +32,7 @@ select the "view" permission for workspaces by default. Please do not manually d
 If User A is granted this Workbench role, they will automatically have all functional permissions
 related to the Workbench in all workspaces.
 
-![Permission list](../../images/newrole02.png)
+![Permission list](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/newrole02.png)
 
 ### Platform Role Authorization Methods
 
@@ -41,18 +41,18 @@ There are three ways to authorize platform roles:
 - In the `Global Management` -> `Access Control` -> `Users` section, find the user
   in the user list, click `...`, select `Authorization`, and grant platform role permissions to the user.
 
-    ![Click Authorization](../../images/newrole03.png)
+    ![Click Authorization](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/newrole03.png)
 
 - In the `Global Management` -> `Access Control` -> `Groups` section, create a group in the group list,
   add the user to the group, and grant authorization to the group
    (the specific operation is: find the group in the group list, click `...`, select `Add Permissions`, and grant platform roles to the group).
 
-    ![Add permissions](../../images/newrole04.png)
+    ![Add permissions](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/newrole04.png)
 
 - In the `Global Management` -> `Access Control` -> `Roles` section, find the corresponding platform role
   in the role list, click the role name to access details, click the `Related Members` button, select the user or group, and click `OK`.
 
-    ![Related Members Button](../../images/newrole05.png)
+    ![Related Members Button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/newrole05.png)
 
 ## Workspace Roles
 
@@ -65,7 +65,7 @@ roles that users can directly use:
 - Workspace Editor
 - Workspace Viewer
 
-![3 pre-defined workspace roles](../../images/newrole06.png)
+![3 pre-defined workspace roles](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/newrole06.png)
 
 Moreover, DCE 5.0 supports the creation of custom workspace roles with customized content as needed.
 For example, creating a workspace role that includes all functional permissions in the Workbench.
@@ -83,9 +83,9 @@ Workspace 01, they will have all functional permissions related to the Workbench
 In the `Global Management` -> `Workspace and Folder` list, find the workspace,
 click `Authorization`, and grant workspace role permissions to the user.
 
-![Authorization Button](../../images/newrole07.png)
+![Authorization Button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/newrole07.png)
 
-![Fill and Select](../../images/newrole08.png)
+![Fill and Select](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/newrole08.png)
 
 ## Folder Roles
 
@@ -102,7 +102,7 @@ DCE 5.0 provides 3 pre-defined folder roles that users can directly use:
 - Folder Editor
 - Folder Viewer
 
-![3 pre-defined folder roles](../../images/newrole09.png)
+![3 pre-defined folder roles](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/newrole09.png)
 
 Additionally, DCE 5.0 supports the creation of custom folder roles with customized content as needed.
 For example, creating a folder role that includes all functional permissions in the Workbench.
@@ -120,6 +120,6 @@ to the Workbench in all workspaces within Folder 01.
 In the `Global Management` -> `Workspace and Folder` list, find the folder,
 click `Authorization`, and grant folder role permissions to the user.
 
-![Authorization Button](../../images/newrole10.png)
+![Authorization Button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/newrole10.png)
 
-![Fill and Select](../../images/newrole11.png)
+![Fill and Select](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/newrole11.png)

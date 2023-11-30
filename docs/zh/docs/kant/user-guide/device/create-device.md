@@ -12,7 +12,7 @@
 
 2. 点击终端设备列表右上角`创建设备`按钮。
 
-    ![创建设备](../../images/create-device-01.png)
+    ![创建设备](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-device-01.png)
 
 3. 填写基础信息。
 
@@ -21,14 +21,14 @@
     - 命名空间：设备所在命名空间，命名空间的资源相互隔离。
     - 描述：设备描述信息。
 
-    ![创建设备](../../images/create-device-02.png)
+    ![创建设备](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-device-02.png)
 
 4. 填写设备配置，可以添加设备孪生属性和标签。
 
     - 孪生属性：选填，指终端设备的动态数据，包括专有实时数据，例如灯的开、关状态，温湿度传感器的温度、适度等。
     - 标签：选填，通过给设备打上标签，将不同设备进行分类管理。
 
-    ![创建设备](../../images/create-device-03.png)
+    ![创建设备](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-device-03.png)
 
     新增孪生属性，用户可以根据设备类型选择对应的寄存器类型，并填写对应的参数。参数说明如下：
 
@@ -43,7 +43,7 @@
     - 属性值区间：对获取的原始数据进行范围限定。
     - 缩放因子：对获取的原始数据进行缩放处理。
 
-    ![创建设备](../../images/create-device-04.png)
+    ![创建设备](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-device-04.png)
 
 5. 填写设备访问配置。
 
@@ -59,18 +59,18 @@
     - 校验位：一种简单的校错方式，判断是否有噪声干扰通信或者是否存在传输和接收数据不同步。
     - 停止位：用于表示单个数据包的最后一位。
 
-    ![创建设备](../../images/create-device-05.png)
+    ![创建设备](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-device-05.png)
 
     **TCP 传输模式：**
 
     - IP地址：终端设备的IP地址。
     - 端口：终端设备的端口。
 
-    ![创建设备](../../images/create-device-06.png)
+    ![创建设备](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-device-06.png)
 
 6. 信息确认，确认所配置的信息无误，点击`创建`，完成设备创建。
 
-    ![创建设备](../../images/create-device-07.png)
+    ![创建设备](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-device-07.png)
 
 ## 终端设备绑定边缘节点
 
@@ -84,6 +84,6 @@
 
 3. 在弹框中选择要绑定的节点，点击`确定`，完成边缘节点的绑定。
 
-    ![创建设备](../../images/create-device-08.png)
+    ![创建设备](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-device-08.png)
 
 下一步：[管理终端设备](manage-device.md)

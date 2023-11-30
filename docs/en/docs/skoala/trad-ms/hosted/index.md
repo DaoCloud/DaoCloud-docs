@@ -19,7 +19,7 @@ The steps to create a hosted registry are as follows.
 1. Click `Traditional Microservices`-> `Hosted Registry`in the left navigation bar, and then click
    `Create Hosted Registry` in the upper right corner of the page to enter the page for creating the hosting registry instance.
 
-   ![create hosted registry](../../images/create01.png)
+   ![create hosted registry](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/create01.png)
 
 2. Enter the configuration information.
 
@@ -37,25 +37,25 @@ The steps to create a hosted registry are as follows.
 
         - Click `Recommended Quotas` to see throughput (TPS) for mainstream specifications such as 2 Core 4 GiB, 4 Core 8 GiB, and 8 Core 16 GiB.
 
-        ![recommended quotas](../../images/create02.png)
+        ![recommended quotas](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/create02.png)
 
     - Access mode: If `NodePort` is selected, the registry can be accessed externally through **Service port + destination port**. If `Internal Access` is selected, the registry can be accessed through service ports only in the cluster where the registry resides. The default service port is 8848.
     - Deployment mode: If high availability mode is selected, the number of nodes must be at least three. In the production environment, the `High Availability` mode is recommended.
 
-        ![ha](../../images/create03.png)
+        ![ha](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/create03.png)
 
     - Data persistence: External storage is recommended.
 
         - No external storage is used: The data is stored in the Pod file system where Nacos resides. Data is lost after the Pod restarts, so external storage is recommended.
         - Using the database: Enter the name, address, port, username, and password of the database
 
-        ![data persistence](../../images/create04.png)
+        ![data persistence](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/create04.png)
 
 3. At the bottom of the page click `OK`.
 
     If the operation is correct, a message indicating that the registry is created successfully is displayed in the upper right corner of the page. The `hosted registry List` page displays the new registry instance.
 
-    ![click ok](../../images/create05.png)
+    ![click ok](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/create05.png)
 
 !!! info
 
@@ -66,7 +66,7 @@ The steps to create a hosted registry are as follows.
 
 1. In the `Managed Registry List` page choose need to update the registry, on the right side click `⋯` and select `Edit`.
 
-   ![](../../images/update01.png)
+   ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/update01.png)
 
 2. Update the registry configuration, then click `OK` at the bottom of the page.
 
@@ -75,7 +75,7 @@ The steps to create a hosted registry are as follows.
         - Modify the StorageClass/database. After the storage location is changed, the previous data will not be migrated.
         - The managed registry name and deployment location are not editable.
 
-   ![](../../images/update02.png)
+   ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/update02.png)
 
 ## View
 
@@ -87,21 +87,21 @@ In basic information page to view the registry `Basic Info`, `Governance Info` (
 
 - Restart the registry instance: Click `Restart` in the upper right corner of the page to restart the entire managed registry instance.
 
-    ![](../../images/check-1.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/check-1.png)
 
 - View node metadata
 
-    ![](../../images/check-2.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/check-2.png)
 
 ## Delete
 
 1. In the `Hosted Registries` page select need to delete the registry, on the right side click `⋯` and select `Delete`.
 
-    ![](../../images/delete01.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/delete01.png)
 
 2. Enter a name for the registry and click `Delete`.
 
-    ![](../../images/delete02.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/delete02.png)
 
 !!! note
 

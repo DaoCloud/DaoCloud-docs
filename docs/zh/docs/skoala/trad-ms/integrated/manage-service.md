@@ -13,17 +13,17 @@ hide:
 
 1. 在`接入注册中心列表`页面点击目标注册中心的名称。
 
-    ![点击注册中心名称](../../images/service01.png)
+    ![点击注册中心名称](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/service01.png)
 
 2. 在左侧导航栏点击`微服务管理`，查看微服务列表和基本信息。
 
     在当前页面，可以复制微服务的名称，可以查看当前注册中心下的所有微服务，以及各个微服务的所属命名空间、实例情况、请求统计数据等。
 
-    ![点击注册中心名称](../../images/service02.png)
+    ![点击注册中心名称](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/service02.png)
 
 3. 点击微服务的名称，查看微服务的实例列表、接口列表、监控信息等。
 
-    ![点击注册中心名称](../../images/service03.png)
+    ![点击注册中心名称](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/service03.png)
 
     - 实例列表：查看实例状态、IP 地址、服务端口等。
 

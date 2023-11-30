@@ -24,11 +24,11 @@ hide:
 
 1. 登录平台 UI，在左侧导航栏点击`容器管理`->`集群列表`，找到对应集群。然后，在左侧导航栏选择`无状态负载`，点击`镜像创建`。
 
-    ![镜像创建](../../images/useippool01.png)
+    ![镜像创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/useippool01.png)
 
 2. 在`创建无状态负载`页面，完成`基本信息`、`容器配置`、`服务配置`页面的信息输入。然后，进入`高级配置`，点击配置`容器网卡`。
 
-    ![容器网卡](../../images/useippool02.png)
+    ![容器网卡](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/useippool02.png)
 
 3. 进入`容器网卡配置`页面，完成以下参数的配置：
 
@@ -56,24 +56,24 @@ hide:
 
     手动选择 IP 池需要提前创建 IP 池，可选择 IP 池范围为：`共享 IP 池`，添加了当前`应用亲和性的 IP 池`，添加了当前`命名空间亲和性的 IP 池`。
 
-    ![手动选择](../../images/useippool03.png)
+    ![手动选择](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/useippool03.png)
 
     **自动创建固定 IP 池**
 
     仅需要选择对应的子网，即可自动创建固定 IP 池。
 
-    ![自动创建](../../images/useippool04.png)
+    ![自动创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/useippool04.png)
 
     **使用默认 IP 池**
 
     提前创建好 IP 池，并在 Multus CNI 配置中，选择带有默认 IP 池的网卡，即可使用默认 IP 池功能。
-    ![默认IP池](../../images/useippool05.png)
+    ![默认IP池](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/useippool05.png)
     
 1. 创建完工作负载后，可点击对应工作负载 `test01` 查看工作负载 Pod 使用的 IP。
 
-    ![工作负载 IP](../../images/useippool06.png)
+    ![工作负载 IP](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/useippool06.png)
 
-    ![工作负载 IP](../../images/useippool07.png)
+    ![工作负载 IP](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/useippool07.png)
 
 ## YAML 使用
 

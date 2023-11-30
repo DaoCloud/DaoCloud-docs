@@ -24,7 +24,7 @@
 
 2. 在左侧导航栏中选择 `容器存储` -> `存储池 (SC)` ，并点击左上角按钮`创建存储池(SC)`。
 
-    ![sc01](../../images/sc01.png)
+    ![sc01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/sc01.png)
 
 3. 进入创建存储池界面，特别注意填写以下参数，其他参数可参考[表单创建](../../../kpanda/user-guide/storage/sc.md)。
 
@@ -46,8 +46,8 @@
 
         - `provision-throughput-on-creation: 1Mi` ：指定创建时卷的最大吞吐量。
   
-    ![sc02](../../images/sc02.png)
-    ![sc03](../../images/sc03.png)
+    ![sc02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/sc02.png)
+    ![sc03](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/sc03.png)
 
 4. 点击`确定`，创建成功后返回 SC 列表界面。
 
@@ -55,7 +55,7 @@
 
 1. 在左侧导航栏中选择 `容器存储` -> `数据卷声明 (PVC)` ，并点击左上角按钮`创建数据卷声明 (PVC)`。
 
-    ![pvc01](../../images/pvc01.png)
+    ![pvc01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/pvc01.png)
 
 2. 进入创建数据卷声明界面，填写以下参数。
 
@@ -67,7 +67,7 @@
 
     - 访问模式：默认选中`ReadWriteMany`。
 
-    ![pvc02](../../images/pvc02.png)
+    ![pvc02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/pvc02.png)
 
 3. 点击`确定`，创建成功后返回 SC 列表界面。完成后，您可以创建 Deployment 来使用 PVC。
 
@@ -75,7 +75,7 @@
 
 1. 在左侧导航栏中选择 `工作负载` -> `无状态负载` ，并点击左上角按钮`镜像创建`。
 
-    ![deploy01](../../images/deploy01.png)
+    ![deploy01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/deploy01.png)
 
 2. 需要注意可以填写以下参数：
 
@@ -91,7 +91,7 @@
 
     其余参数无特别要求。
 
-    ![deploy02](../../images/deploy02.png)
+    ![deploy02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/deploy02.png)
 
 3. 创建 Deployment 后，在详情界面点击 `控制台`，执行以下命令测试卷的 IOPS 和吞吐量：
 
@@ -101,7 +101,7 @@
 
     预期会输出如下：
 
-    ![deploy03](../../images/deploy03.png)
+    ![deploy03](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/deploy03.png)
 
 !!! note
 

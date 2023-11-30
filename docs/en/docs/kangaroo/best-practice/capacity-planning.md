@@ -6,7 +6,7 @@ The entire Harbor architecture can be divided into three layers: Consumer, Servi
 - Service: The service layer consists of core services that provide functionality in Harbor, such as core, registry, and jobserver.
 - Data Access: This layer provides persistent storage for data, such as image file data and image metadata.
 
-![Resource Architecture](../images/resource-architecture.png)
+![Resource Architecture](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/resource-architecture.png)
 
 Capacity planning is reflected in the service layer and the storage layer:
 

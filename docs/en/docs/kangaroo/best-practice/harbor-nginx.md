@@ -5,7 +5,7 @@ with both control flow and data flow passing through the Nginx component.
 If the Nginx configuration is not optimal, it can lead to image pull failures
 or failures in adding or updating Helm repositories.
 
-![Architecture Diagram](../images/nginx-architecture.png)
+![Architecture Diagram](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/nginx-architecture.png)
 
 ## Scenario 1: 504 Gateway Timeout Error
 
@@ -28,7 +28,7 @@ Here's an example:
 
 2. Access the details and click the `Update` button to add the proxy configuration shown below, modifying the timeout to 900s (15 minutes). Save the changes and restart the Pod.
 
-    ![ConfigMap Details](../images/nginx-configdetail1.png)
+    ![ConfigMap Details](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/nginx-configdetail1.png)
 
 3. Proxy configuration demo:
 
@@ -62,7 +62,7 @@ Here's an example:
 2. Access the details of the config and click the `Update` button to add the
    proxy configuration shown below. Save the changes and restart the Pod.
 
-    ![ConfigMap Details](../images/nginx-configdetail2.png)
+    ![ConfigMap Details](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/nginx-configdetail2.png)
 
 3. Proxy configuration demo:
 
