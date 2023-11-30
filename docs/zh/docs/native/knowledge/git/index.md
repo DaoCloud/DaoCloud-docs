@@ -66,6 +66,8 @@
 - [VScode](https://code.visualstudio.com/)，推荐，常用的 Markdown 编辑器
 - [Typora](https://macwk.com/soft/typora)，可选，可以粘贴网页的图表文字，转换成 markdown 格式
 
+准备好上述工具后，参照以下步骤从本地提 PR：
+
 1. Fork 后克隆 GitHub 仓库。
 
     ```bash
