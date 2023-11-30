@@ -18,7 +18,7 @@ In DCE 5.0 Container Management module, you can integrate a cluster of the follo
 
 1. Enter Container Management module, and click `Integrate Cluster` in the upper right corner.
 
-    ![screen](../../images/cluster-integrate01.png)
+    ![screen](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/cluster-integrate01.png)
 
 2. Fill in the basic information by referring to the following instructions.
 
@@ -30,7 +30,7 @@ In DCE 5.0 Container Management module, you can integrate a cluster of the follo
 
     > Click `How do I get the KubeConfig?` to see the specific steps for getting this file.
 
-    ![screen](../../images/cluster-integrate03.png)
+    ![screen](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/cluster-integrate03.png)
 
 4. Confirm that all parameters are filled in correctly and click `OK` in the lower right corner of the page.
 

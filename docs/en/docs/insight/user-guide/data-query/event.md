@@ -2,7 +2,7 @@
 
 DCE 5.0 Insight supports event querying by cluster and namespace.
 
-![event](../../images/event01.png)
+![event](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/event01.png)
 
 ## Event Status Distribution
 
@@ -29,11 +29,11 @@ By clicking on the ⚙️ icon on the right side, you can customize the displaye
 
 Additionally, you can click the refresh icon to update the current event list when needed.
 
-![list](../../images/event02.png)
+![list](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/event02.png)
 
 In the operation column on the right, clicking the icon allows you to view the history of a specific event.
 
-![history](../../images/event03.png)
+![history](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/event03.png)
 
 ## Reference
 

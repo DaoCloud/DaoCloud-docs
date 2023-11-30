@@ -31,7 +31,7 @@ spec:
 `MetalLB IP 池`：部署 MetalLB 时设置的 IP 池，其中的 IP 为真实可用的物理 IP 地址。
 `负载均衡 IP`: 负载均衡 IP 为 IP 池中随机分配或手动指定 地址，用于对外暴露服务。
 
-![metallb ip pool](../../images/metallb-use1.png)
+![metallb ip pool](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/metallb-use1.png)
 
 ## 指定 IP 地址
 
@@ -51,7 +51,7 @@ spec:
   ...
 ```
 
-![specify ip](../../images/metallb-use2.png)
+![specify ip](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/metallb-use2.png)
 
 ## 共享 IP 地址
 

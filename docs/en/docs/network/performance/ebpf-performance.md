@@ -18,15 +18,15 @@ The test was conducted on two bare-metal nodes, simulating cross-node communicat
 
 - In the TCP throughput test scenario, the results are shown in the following graph. It can be observed that when dealing with tens of thousands of filtering rules, the iptables approach significantly reduces packet throughput:
 
-    ![throughput](../images/ebpf-throughput.png)
+    ![throughput](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/ebpf-throughput.png)
 
 - When dealing with thousands of filtering rules, the iptables approach incurs substantial CPU overhead on the host:
 
-    ![cpu](../images/ebpf-cpu.png)
+    ![cpu](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/ebpf-cpu.png)
 
 - When dealing with thousands of filtering rules, the iptables approach imposes significant latency burden on the applications:
 
-    ![latency](../images/ebpf-latency.png)
+    ![latency](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/ebpf-latency.png)
 
 ## Conclusion
 

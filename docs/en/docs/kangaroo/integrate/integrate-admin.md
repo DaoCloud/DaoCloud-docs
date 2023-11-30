@@ -31,7 +31,7 @@ Refer to [Video Tutorial](../../videos/kangaroo.md#_3) to familiarize yourself w
 1. Log in to DCE 5.0 as a user with the Admin role, click `Container Registry` -> `Integrated Registry (Admin)`
   from the left navigation bar.
 
-    ![Integration](../images/integrated01.png)
+    ![Integration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/integrated01.png)
 
 1. Click the `Integrated Registry` button in the upper right corner.
 

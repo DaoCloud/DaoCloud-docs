@@ -35,7 +35,7 @@
     - 所属应用：原生应用名称，支持从已有的原生应用列表中选择，也可以新建，默认与名称一致。
     - 实例数：填写实例的数量，Pod 的数量。
 
-    ![基本信息](../../images/git01.png)
+    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/git01.png)
 
 3. 参考以下说明填写流水线配置，然后点击`下一步`。
 
@@ -49,7 +49,7 @@
     - ContextPath：ContextPath 为 docker build 命令执行上下文路径。填写相对于代码根目录的路径，如 target，如果不填则为 Dockerfile 文件所在目录。
     - 构建参数：构建参数会以 --build-arg 的形式传递到 build 命令的参数中，支持将上游制品下载地址、上游镜像下载地址设置为参数，同时支持自定义任意参数。
 
-    ![流水线构建](../../images/git02.png)
+    ![流水线构建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/git02.png)
 
 4. 参考以下说明填写容器配置，然后点击`下一步`。
 
@@ -84,16 +84,16 @@
     - 用户名/密码：如果该注册中心实例被认证，则需要填写用户名密码
     - 开启服务治理：所选择的注册中心实例应[开启了 Sentinel 或 Mesh 治理插件](../../../skoala/trad-ms/hosted/plugins/plugin-center.md)
 
-    ![高级配置](../../images/git03.png)
+    ![高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/git03.png)
 
 ## 查看并访问微服务相关信息
 
 1. 在左侧导航栏点击`概览`，在`原生应用`页签中，选择原生应用进入到详情页面。
 
-    ![原生应用](../../images/git04.png)
+    ![原生应用](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/git04.png)
 
 2. 在详情页面中，`应用资源` 页签中，选择带有 `服务网格` 标签的资源，并点击。
 
-    ![跳转](../../images/git05.png)
+    ![跳转](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/git05.png)
 
 3. 跳转到微服务引擎，查看[服务详情](../../../skoala/trad-ms/hosted/services/check-details.md)。

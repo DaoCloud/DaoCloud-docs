@@ -2,7 +2,7 @@
 
 1. 点击一级导航栏选择 `中间件 > RocketMQ 消息队列` 。
 
-    ![RocketMQ](../images/rocketmq00.png){ width=1000px}
+    ![RocketMQ](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/rocketmq00.png){ width=1000px}
 
 2. 进入目标工作空间，点击`新建实例`。
 
@@ -10,7 +10,7 @@
     - 集群 / 命名空间：选择实例部署的位置。
     - 安装环境检测：如未通过安装环境检测，需要根据提示安装组件之后方可进行下一步。
 
-    ![RocketMQ](../images/rocketmq01.png){ width=1000px}
+    ![RocketMQ](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/rocketmq01.png){ width=1000px}
 
 3. 参考下方信息填写配置规格，然后点击下一步。
     - 部署模式在实例创建之后不可更改
@@ -20,7 +20,7 @@
     - 存储容量：每个磁盘具有多少容量。实例创建之后不可调低
     - 每副本磁盘数：为每个副本提供多少个次盘。实例创建之后不可调低。
 
-    ![RocketMQ](../images/rocketmq02.png){ width=1000px}
+    ![RocketMQ](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/rocketmq02.png){ width=1000px}
 
 4. 参考下方信息填写服务设置，点击下一步。
 
@@ -32,14 +32,14 @@
     - Local：流量只能转发到本节点上的 Pod
     - 控制台账号：访问此新建实例时需要用到的用户名、密码
 
-    ![RocketMQ](../images/rocketmq03.png){ width=1000px}
+    ![RocketMQ](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/rocketmq03.png){ width=1000px}
 
 5. 确认实例配置信息无误，点击确认完成创建。
 
-    ![RocketMQ](../images/rocketmq04.png){ width=1000px}
+    ![RocketMQ](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/rocketmq04.png){ width=1000px}
 
 6. 返回实例列表页查看实例是否创建成功。
 
     - 创建中的实例状态为未就绪，等所有相关容器成功启动之后状态变为运行中。
 
-    ![RocketMQ](../images/rocketmq05.png){ width=1000px}
+    ![RocketMQ](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/rocketmq05.png){ width=1000px}

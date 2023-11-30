@@ -2,7 +2,7 @@
 
 为流水线配置触发器，周期性地自动触发流水线的执行。在编辑流水线时点击`编辑配置`，即可配置构建触发器。
 
-![trigger001](../../../images/trigger001.png)
+![trigger001](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/trigger001.png)
 
 **当前支持以下三种触发器类型：**
 
@@ -53,11 +53,11 @@
 
 3. 在 `URL` 区域填写开启 Webhook 生成的地址，在 `Trigger` 区域根据实际情况勾选触发事件。
 
-    ![webhook](../../../images/webhook01.png)
+    ![webhook](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/webhook01.png)
 
 4. 点击 `Add webhook` ，在 `Project Hooks` 区域会生成一条记录。
 
-    ![webhook](../../../images/webhook02.png)
+    ![webhook](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/webhook02.png)
 
 5. 点击 test ，可以测试是否触发成功。
 

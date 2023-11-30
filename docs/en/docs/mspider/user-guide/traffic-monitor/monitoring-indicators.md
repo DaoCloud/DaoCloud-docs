@@ -9,7 +9,7 @@ This document serves as a supplementary introduction to explain the metrics of e
 
 ## Global Monitor
 
-![Global Monitoring](../../images/metrics01.png)
+![Global Monitoring](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/metrics01.png)
 
 | Category  | Parameters                    | Description                                        | Calculation Method                                         |
 | ------------------- | --------------------------------------- | ---------------------------------------------------------------- | -------------------------------------------------------------- |
@@ -39,7 +39,7 @@ This document serves as a supplementary introduction to explain the metrics of e
 
 ## Performance Monitor
 
-![Performance Monitoring](../../images/metrics02.png)
+![Performance Monitoring](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/metrics02.png)
 
 | Category  | Parameter s                   | Description                                        | Calculation Method                                         |
 | ------------------- | --------------------------------------- | ---------------------------------------------------------------- | -------------------------------------------------------------- |
@@ -58,7 +58,7 @@ This document serves as a supplementary introduction to explain the metrics of e
 
 ## Service Monitor
 
-![Service Monitoring](../../images/metrics03.png)
+![Service Monitoring](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/metrics03.png)
 
 | Category   | Parameter s                         | Description                                    | Calculation Method                                           |
 | -------------------- | --------------------------------------- | -------------------------------------------------------- | ------------------------------------------------------------ |
@@ -81,7 +81,7 @@ This document serves as a supplementary introduction to explain the metrics of e
 
 ## Workload Monitor
 
-![Workload Monitoring](../../images/metrics04.png)
+![Workload Monitoring](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/metrics04.png)
 
 | Category    | Parameter s                   | Description                                 | Calculation Method                                  |
 | --------------------- | ------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |

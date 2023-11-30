@@ -19,7 +19,7 @@
        - Pending：Probe 正在尝试连接目标。
    - 支持模糊搜索拨测任务的名称。
 
-    ![probe](../../images/probe00.png){ width=1000px}
+    ![probe](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/probe00.png){ width=1000px}
 
 ## 创建拨测任务
 
@@ -27,7 +27,7 @@
 2. 第一步，填写以下参数：
    - 名称：名称只能包含小写字母、数字和连字符（-），必须以小写字母或数字开头和结尾，最长 63 个字符。
 
-    ![probe](../../images/probe01.png){ width=1000px}
+    ![probe](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/probe01.png){ width=1000px}
 
 3. 点击下一步，参考以下说明，配置相关参数。
    - Blackbox 实例：选择负责探测的 blackbox 实例；
@@ -40,7 +40,7 @@
    - 探测间隔：探测间隔时间。
    - 探测超时：探测目标时的最长等待时间。
 
-    ![probe](../../images/probe02.png){ width=1000px}
+    ![probe](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/probe02.png){ width=1000px}
 
 4. 配置完成后，点击确认即可完成创建。
 
@@ -54,7 +54,7 @@
 
 1. 点击操作列的 … ，点击`查看监控面板`
 
-    ![probe](../../images/probe03.png){ width=1000px}
+    ![probe](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/probe03.png){ width=1000px}
 
 | 指标名称 | 描述 |
 | -- | -- |
@@ -69,10 +69,10 @@
 
 1. 点击操作列的 … ，点击`编辑`。
 
-    ![probe](../../images/probe04.png){ width=400px}
+    ![probe](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/probe04.png){ width=400px}
 
 ### 删除拨测任务
 
 1. 点击操作列的 … ，点击`删除`
 
-    ![probe](../../images/probe05.png){ width=400px}
+    ![probe](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/probe05.png){ width=400px}

@@ -8,13 +8,13 @@
 
 1. 点击左侧导航栏上的`容器管理`，然后点击`虚拟机模板`，进入`虚拟机模板`页面。
 
-    ![虚拟机模板](../images/tep01.png)
+    ![虚拟机模板](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/tep01.png)
 
 2. 点击列表右侧的 `︙`，可以对内置模板执行创建虚拟机和删除操作；对自定义模板支持创建虚拟机操作。
 
-    ![虚拟机模板操作](../images/tep02.png)
+    ![虚拟机模板操作](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/tep02.png)
 
-    ![虚拟机模板操作](../images/tep03.png)
+    ![虚拟机模板操作](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/tep03.png)
 
 ### 内置模板
 
@@ -26,8 +26,8 @@
 
 1. 点击左侧导航栏上的`容器管理`，然后点击`虚拟机`，进入列表页面，点击列表右侧的 `︙`支持将配置转换为模板。只有运行中/关闭状态下的虚拟机支持转化。
 
-    ![点击转化为模板](../images/tep04.png)
+    ![点击转化为模板](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/tep04.png)
 
 2. 填写新模板的名称，提示原始虚拟机将会保留并且可用。转换成功后，将会在模板列表新增一条数据。
 
-    ![转化模板](../images/tep05.png)
+    ![转化模板](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/tep05.png)

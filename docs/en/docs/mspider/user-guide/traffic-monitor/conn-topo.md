@@ -5,7 +5,7 @@ DCE 5.0 Service Mesh provides a dynamic flow visualization feature called Traffi
 In the left navigation menu, click `Traffic Monitoring` -> `Traffic Topology`.
 Here, you can choose the `View`, `Namespace`, `Collection source`, and `Time` to view the service topology.
 
-![Traffic Topology](../images/topo01.png)
+![Traffic Topology](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/topo01.png)
 
 ## Display Settings
 
@@ -15,7 +15,7 @@ There are three options available:
 - Show Idle Nodes
 - Enable Animation: Shows the dynamic flow direction of traffic.
 
-![Display Settings](../images/topo02.png)
+![Display Settings](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/topo02.png)
 
 The service topology graph supports operations like panning and zooming.
 
@@ -40,4 +40,4 @@ Click any service to open a sidebar that displays relevant metrics based on the 
 - TCP Protocol: Connection Count, Receive Throughput (B/s), Send Throughput (B/s)
 - Governance Information: View virtual services, destination services, gateways, etc.
 
-![Sidebar](../images/topo04.png)
+![Sidebar](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/topo04.png)

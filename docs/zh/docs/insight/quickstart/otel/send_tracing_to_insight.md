@@ -9,7 +9,7 @@
 因此，该组件作为用户接入侧的入口，需要先获取该地址。可以通过 DCE 5.0 界面获取该集群 Opentelemtry Collector 的地址，
 比如 `insight-agent-opentelemetry-collector.insight-system.svc.cluster.local:4317`：
 
-![image](../images/get_insight_agent_otel_col_svc.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/quickstart/images/get_insight_agent_otel_col_svc.png)
 
 除此之外，针对不同上报方式，有一些细微差别：
 

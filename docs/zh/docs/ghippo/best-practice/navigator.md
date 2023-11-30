@@ -4,7 +4,7 @@
 
 ## 导航栏分类
 
-![导航栏分类](../images/nav01.png)
+![导航栏分类](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/nav01.png)
 
 若需要新增或重新排序导航栏分类可以通过新增、修改 category yaml 实现。
 
@@ -32,7 +32,7 @@ kubectl apply -f xxx.yaml
 
 ## 导航栏菜单
 
-![导航栏菜单](../images/nav02.png)
+![导航栏菜单](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/nav02.png)
 
 若需要新增或重新排序导航栏一级菜单可以通过新增 navigator yaml 实现。
 

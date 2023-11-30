@@ -28,14 +28,14 @@ Spiderpool 能基于 IPVlan Underlay CNI 在阿里云环境上运行，并保证
 
 - 准备一个阿里云环境，给虚拟机分配 2 个网卡，每张网卡均分配一些辅助私网 IP，如图：
 
-    ![alicloud-web-network](../../images/alicloud-network-web.png)
+    ![alicloud-web-network](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/alicloud-network-web.png)
 
     > - 实例（虚拟机）是能够为您的业务提供计算服务的最小单位，不同的实例规格可创建网卡数和每张网卡可分配的辅助 IP 数存在差异，根据业务场景和使用场景，参考阿里云[实例规格族](https://help.aliyun.com/zh/ecs/user-guide/overview-of-instance-families#concept-sx4-lxv-tdb)选择对应规格进行创建实例。
     > - 如果有 IPv6 的需求，可以参考阿里云[配置 IPv6 地址](https://help.aliyun.com/zh/ecs/user-guide/configure-ipv6-addresses/?spm=a2c4g.11186623.0.0.21ee48beYHt7ZW)。
 
 - 使用上述配置的虚拟机，搭建一套 Kubernetes 集群，节点的可用 IP 及集群网络拓扑图如下：
 
-    ![网络拓扑](../../images/alicloud-k8s-network.png)
+    ![网络拓扑](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/alicloud-k8s-network.png)
 
 ### 安装 Spiderpool
 
@@ -362,7 +362,7 @@ worker-192   4         192.168.0.0/24    1                    5                t
 
 - 阿里云的 NAT 网关能实现为 VPC 环境下构建一个公网或私网流量的出入口。通过 NAT 网关，实现集群的流量出口访问。参考 [NAT 网关文档](https://help.aliyun.com/product/44413.html?spm=a2c4g.86456.0.0.5ccf56b5vsa5M4) 创建 NAT 网关，如图：
 
-    ![alicloud-natgateway](../../images/alicloud-natgateway.png)
+    ![alicloud-natgateway](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/alicloud-natgateway.png)
 
 - 测试集群内 Pod 的流量出口访问
 
@@ -383,7 +383,7 @@ worker-192   4         192.168.0.0/24    1                    5                t
 
 - 如果希望通过 IPv6 地址实现集群内 Pod 的流量出口访问，你需要通过 IPv6 网关，为 Pod 所分配到的 IPv6 地址 `开通公网带宽`，将私网 IPv6 转换为公网 IPv6 地址。配置如下。
 
-    ![alicloud-ipv6-natgateway](../../images/alicloud-ipv6-gateway.png)
+    ![alicloud-ipv6-natgateway](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/alicloud-ipv6-gateway.png)
 
     测试 IPv6 访问如下：
 
@@ -538,7 +538,7 @@ tcp-service    LoadBalancer   10.233.4.245    47.98.137.75     999:32635/TCP   1
 
 CCM 将自动在 IaaS 层创建四层与七层的负载均衡器，可以通过阿里云界面进行查看，如下：
 
-![alicloud-loadbalancer](../../images/alicloud-loadbalancer.png)
+![alicloud-loadbalancer](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/alicloud-loadbalancer.png)
 
 ##### 验证负载均衡流量入口访问
 

@@ -4,7 +4,7 @@
 
 在`应用工作台`->`流水线`页面，选择某一条流水线，点击流水线的名称。
 
-![detail-pipeline1](../../../images/detail-pipeline1.png)
+![detail-pipeline1](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/detail-pipeline1.png)
 
 进入到流水线详情页面，可以查看到当前流水线的基本信息。
 
@@ -15,11 +15,11 @@
 - 描述：流水线的具体描述
 - 创建时间：流水线的创建时间
 
-    ![detail-pipeline2](../../../images/detail-pipeline2.png)
+    ![detail-pipeline2](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/detail-pipeline2.png)
 
 查看流水运行记录列表，展示当前流水线运行的记录的列表，支持通过ID 搜索，还支持取消、重新运行操作。
 
-![detail-pipeline3](../../../images/detail-pipeline3.png)
+![detail-pipeline3](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/detail-pipeline3.png)
 
 查看流水线代码质量扫描结果。查看结果需要确保完成以下要求：
 
@@ -29,4 +29,4 @@
 
 完成上述要求后，您可以在详情界面查看到扫描结果，点击查看更多可以跳转到 SonarQube 后台查看更详细的结果，如下图：
 
-![detail-pipeline4](../../../images/detail-pipeline4.png)
+![detail-pipeline4](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/detail-pipeline4.png)

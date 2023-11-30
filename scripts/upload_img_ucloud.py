@@ -14,15 +14,15 @@ import os
 import time
 from ufile import filemanager, config, logger
 
-public_key = ''  # 公钥或token
-private_key = ''  # 私钥或token
+public_key = 'TOKEN_bc05bd45-4f7e-4a0b-9525-1bcf04ea7074'  # 公钥或 token
+private_key = '42f6d464-136a-4f41-838f-50b549c281a3'  # 私钥或 token
 
 config.set_default(uploadsuffix='.cn-sh2.ufileos.com')  # ucloud domain
 
 ufile_handler = filemanager.FileManager(public_key, private_key)
 bucket = 'community-github'
 bucket_folder = 'daocloud-docs-images/'
-REMOTE_DOMAIN = 'docs.daocloud.io'
+REMOTE_DOMAIN = 'https://docs.daocloud.io'
 
 locallogname = 'ufile.log'
 logger.set_log_file(locallogname)
@@ -41,7 +41,7 @@ def modify_image_url(md_file, image, remote_file_url):
 def ufile_upload(bucket: str, remotefile: str, localfile: str, header=None):
     _, resp = ufile_handler.putfile(bucket, remotefile, localfile, header)
     if resp.status_code == 200:
-        return "https://" + bucket + REMOTE_DOMAIN + '/' + remotefile
+        return REMOTE_DOMAIN + '/' + remotefile
     else:
         return "failed"
 

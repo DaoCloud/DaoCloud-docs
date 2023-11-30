@@ -9,7 +9,7 @@
 
 DCE 5.0 集群内已部署 `multus-underlay` 和 `spiderpool`。
 
-![sync](../images/spiderpool09.png)
+![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/spiderpool09.png)
 
 ## 步骤
 
@@ -21,7 +21,7 @@ DCE 5.0 集群内已部署 `multus-underlay` 和 `spiderpool`。
         kubectl get network-attachment-definitions -A
     ```
 
-    ![sync](../images/spiderpool01.png)
+    ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/spiderpool01.png)
 
     存在 `macvlan-vlan0(standalone)`和 `macvlan-overlay-vlan0(overlay)` 则表示集群内已部署 macvlan。
 
@@ -31,7 +31,7 @@ DCE 5.0 集群内已部署 `multus-underlay` 和 `spiderpool`。
 
 2. 创建子网及 IP 池，具体操作可参见：[创建子网及 IP 池¶](https://docs.daocloud.io/network/modules/spiderpool/createpool.html)
 
-    ![sync](../images/spiderpool02.png)
+    ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/spiderpool02.png)
 
     !!! note
 
@@ -51,14 +51,14 @@ DCE 5.0 集群内已部署 `multus-underlay` 和 `spiderpool`。
 
 2. 更新 `CR` 后，查看实例节点信息，可见类似下图的 IP 地址变化，则表示配置成功：
 
-    ![sync](../images/spiderpool03.png)
+    ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/spiderpool03.png)
 
-    ![sync](../images/spiderpool04.png)
+    ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/spiderpool04.png)
 
 
 3. 完成配置后可从集群外部访问节点，访问成功
 
-    ![sync](../images/spiderpool05.png)
+    ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/spiderpool05.png)
 
 
 #### 哨兵模式
@@ -79,12 +79,12 @@ DCE 5.0 集群内已部署 `multus-underlay` 和 `spiderpool`。
 
 2. 更新 `CR` 后，查看实例节点信息，可见类似下图的 IP 地址变化，则表示配置成功：
 
-    ![sync](../images/spiderpool06.png)
+    ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/spiderpool06.png)
 
-    ![sync](../images/spiderpool07.png)
+    ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/spiderpool07.png)
 
 3. 完成配置后可从集群外部访问节点验证配置有效性。访问成功
 
-    ![sync](../images/spiderpool08.png)
+    ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/spiderpool08.png)
 
 

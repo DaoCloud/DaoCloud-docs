@@ -11,11 +11,11 @@
 
 1. 登录 DCE UI 后，在左侧导航栏点击 `容器管理` —> `集群列表`，找到对应集群。然后在左侧导航栏点击`容器网络` —> `网络配置`。
 
-    ![网络配置](../images/networkconfig01.png)
+    ![网络配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/networkconfig01.png)
 
 2. 进入`网络配置` —> `Multus CR 管理`，点击创建 `Multus CR`。
 
-    ![Multus CR 管理](../images/networkconfig02.png)
+    ![Multus CR 管理](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/networkconfig02.png)
   
     !!! note
 
@@ -25,7 +25,7 @@
 
 请输入如下参数：
 
-![创建multus cr](../images/networkconfig03.png)
+![创建multus cr](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/networkconfig03.png)
 
 参数说明:
 
@@ -65,7 +65,7 @@
 
 请输入如下参数：
 
-![创建multus cr](../images/networkconfig04.png)
+![创建multus cr](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/networkconfig04.png)
 
 - `名称`、`描述`、`CNI 类型`、`IPv4 默认池`、`IPv6 默认池`、`Vlan ID` 配置同场景一。
 - `SR-IOV 资源`：只用于`sriov`类型, 填写资源名称，不能为空。
@@ -74,7 +74,7 @@
 
 请输入如下参数：
 
-![创建multus cr](../images/networkconfig05.png)
+![创建multus cr](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/networkconfig05.png)
 
 - `JSON`：自定义类型时，需判断输入一个合法格式的 Json 文件。
 

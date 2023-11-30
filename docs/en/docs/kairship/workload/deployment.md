@@ -20,7 +20,7 @@ Follow the steps below to create a multi-cloud deployment from an image.
 
 1. Click the name of the multi-cloud instance, then navigate to `MultiCloud Workloads` in the left navigation pane, and click `Create from Image` in the top right corner.
 
-    ![Create from Image](../images/deploy-create04.png)
+    ![Create from Image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/deploy-create04.png)
 
 2. Fill in the basic information as per the instructions provided.
 
@@ -31,7 +31,7 @@ Follow the steps below to create a multi-cloud deployment from an image.
         - `Cluster Taint Tolerance`: After adding a taint to the cluster in the [Cluster](../cluster.md#_6) page, resources with that taint cannot be scheduled to that cluster. Enabling taint tolerance here allows resources with the corresponding taint to be scheduled to the selected cluster.
         - `Dynamic Regions`: Dynamically deploy workloads to clusters in different regions to ensure cross-region high availability.
 
-            ![Specify Region](../images/deploy-create05.png)
+            ![Specify Region](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/deploy-create05.png)
 
     - Specify Labels: Deploy the workload to specific clusters based on labels.
 
@@ -39,7 +39,7 @@ Follow the steps below to create a multi-cloud deployment from an image.
         - Operator - `In`: The node must contain the selected labels, and the label value must belong to the value group you defined. Multiple values are separated by `;`.
         - Operator - `Exists`: The node only needs to have the label and its value doesn't matter.
 
-            ![Specify Labels](../images/deploy-create06.png)
+            ![Specify Labels](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/deploy-create06.png)
 
     - Auto Propagation: When enabled, it automatically detects ConfigMaps, Secrets, and other resources that the multi-cloud workload depends on, and propagates these resources to each selected deployment cluster.
     - Pods: Set the number of replicas for the multi-cloud workload.
@@ -71,7 +71,7 @@ Follow the steps below to create a multi-cloud deployment from an image.
     - Clusters that do not have differentiated configurations will use the default configuration.
     - Currently, you can configure different container images, environment variables, labels, and annotations for different clusters.
 
-        ![Differentiated Configurations](../images/deploy-create07.png)
+        ![Differentiated Configurations](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/deploy-create07.png)
 
 You will be automatically redirected to the list of multi-cloud deployments. By clicking the "More Actions" button on the right side, you can edit the YAML of the workload, update/pause/restart/delete the workload.
 

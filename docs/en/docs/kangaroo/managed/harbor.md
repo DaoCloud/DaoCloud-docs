@@ -14,16 +14,16 @@ Prerequisite: [Cert Manager](https://cert-manager.io/docs/installation/) and [Ha
 
 1. Log in to DCE 5.0 as a user with the Admin role, and click `container registry` -> `Managed Harbor` from the left navigation bar.
 
-     ![nav](../images/hosted01.png)
+     ![nav](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/hosted01.png)
 
 1. Click the `Create Instance` button in the upper right corner.
 
-     ![button](../images/hosted02.png)
+     ![button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/hosted02.png)
 
 1. Fill in the instance name, select the deployment location and click `Next`
    (if there is no deployment location to choose, you need to go to the container management to create a cluster and namespace).
 
-     ![fill](../images/hosted03.png)
+     ![fill](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/hosted03.png)
 
 1. Fill in the database, Redis instance and image/Charts storage information and click `Next` (currently only supports access to external databases and Redis instances).
 
@@ -41,7 +41,7 @@ Prerequisite: [Cert Manager](https://cert-manager.io/docs/installation/) and [Ha
      - Fill in the address in sentinel mode: `redis+sentinel://{host}:{port}?sentinelMasterId={master_id}`, you need to replace the three parameters host, port, and master_id.
      - Password: Fill in as required
 
-     ![spec](../images/hosted04.png)
+     ![spec](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/hosted04.png)
 
 1. Fill in the domain name, select the ingress instance, enter the administrator password and click `OK` (username/password is used to log in to the native Harbor instance, please keep the password safe).
 

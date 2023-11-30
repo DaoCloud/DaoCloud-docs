@@ -17,14 +17,14 @@
 - 每一个节点组部署对应一个批量部署任务，一个工作负载定义可以部署到多个节点组
 - 避免由于网络抖动或高并发流量控制等导致的任务失败问题，平台提供可视化的部署视图，将批量部署的状态和结果及时同步
 
-![批量工作负载](../../images/overview-app-01.png)
+![批量工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/overview-app-01.png)
 
 ## 应用故障迁移
 
 - 当节点组中应用实例出现异常或节点故障时，平台离线自愈功能能够快速将应用实例调度到节点组中其它可用的节点上运行，确保应用的自主运行，保障业务的持续性
 - 即使在节点处于离线状态（边缘节点与云端断开连接）时仍然能够自动调度
 
-![应用故障迁移](../../images/overview-app-02.png)
+![应用故障迁移](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/overview-app-02.png)
 
 ## 配置项与密钥
 

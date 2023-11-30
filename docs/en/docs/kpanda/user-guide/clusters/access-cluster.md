@@ -12,11 +12,11 @@ Clusters integrate into or created in the DCE 5.0 Container Management module ca
 
 1. Enter the Container Management module, find your target cluster, click `...` on the right, and select `Console` in the drop-down list.
 
-    ![screen](../../images/cluster-access01.png)
+    ![screen](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/cluster-access01.png)
 
 2. Run `kubectl get node` command in the Console to verify the connectivity between CloudShell and the cluster. If the console returns node information of the cluster, you can access and manage the cluster through CloudShell.
 
-    <!--![screen](../../images/cluster-access01.png)-->
+    <!--![screen](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/cluster-access01.png)-->
 
 ## Access via kubectl
 
@@ -30,11 +30,11 @@ If everything is in place, follow these steps to access a cluster via kubectl fr
 
 1. Enter the Container Management module, find your target cluster, click `...` on the right, and select `Download kubeconfig` in the drop-down list.
 
-    ![screen](../../images/cluster-access02.png)
+    ![screen](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/cluster-access02.png)
 
 2. Set the certificate validity period and click `Download kubeconfig`.
 
-    ![screen](../../images/cluster-access02.png)
+    ![screen](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/cluster-access02.png)
 
 3. Open the downloaded certificate and copy its content to the `config` file of the local node.
 

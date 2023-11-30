@@ -14,7 +14,7 @@
 
 1. 确认集群是否已检测 GPU 卡。点击对应`集群` -> `集群设置` -> `Addon 插件`，查看是否已自动启用并自动检测对应 GPU 类型。目前集群会自动启用 `GPU`，并且设置`GPU` 类型为 `Nvidia vGPU`。
    
-    ![Alt text](../../images/vgpu-cluster.png)
+    ![Alt text](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/vgpu-cluster.png)
 
 2. 部署工作负载，点击对应`集群` -> `工作负载`，通过镜像方式部署工作负载，选择类型（Nvidia vGPU）之后，会自动出现如下几个参数需要填写：
 
@@ -25,7 +25,7 @@
 
     > 如果上述值配置的有问题则会出现调度失败，资源分配不了的情况。
 
-![Alt text](../../images/vgpu-deployment.png)
+![Alt text](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/vgpu-deployment.png)
 
 ### YAML 配置使用 vGPU
 

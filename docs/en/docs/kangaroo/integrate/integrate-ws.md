@@ -43,11 +43,11 @@ Support for integrating three registries:
 
 1. Click the `Integrated Registry` button in the upper right corner.
 
-    ![click button](../images/inte-ws01.png)
+    ![click button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/inte-ws01.png)
 
 1. After filling in the form information, click `OK`.
 
-    ![filling](../images/inte-ws02.png)
+    ![filling](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/inte-ws02.png)
 
     !!! note
 

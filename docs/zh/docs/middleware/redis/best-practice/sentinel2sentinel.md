@@ -17,13 +17,13 @@
 
 图例：数据同步 `实例 redis-a` >> `实例 redis-b` 
 
-![sync](../images/sync12.png)
+![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync12.png)
 
 ### 为源端实例配置服务
 
 如果源端实例处于 DCE 5.0 的集群中，可在`数据服务` - `Redis` - `解决方案` - `跨集群主从同步`中开启方案，将自动完成服务配置工作。
 
-![svc](../images/sync17.png)
+![svc](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync17.png)
 
 如果源端实例处于第三方集群上，则需要手工完成服务配置，配置方法如下文：
 
@@ -31,7 +31,7 @@
 
 1. 进入`容器管理` - `源端实例所在集群` - `有状态工作负载`：选择工作负载 `redis-a`，创建一个 `Nodeport` 服务，容器端口和服务端口均为 6379
 
-    ![svc](../images/sync03.png)
+    ![svc](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync03.png)
 
 2. 查看该服务。并确定工作负载选择器包含以下标签
    
@@ -44,7 +44,7 @@
     redisfailovers.databases.spotahome.com/name: redis-a
     ```
 
-    ![svc](../images/sync14.png)
+    ![svc](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync14.png)
 
 ### RedisShake 部署
 
@@ -54,7 +54,7 @@ RedisShake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 
 在`容器管理` - `目标端实例所在集群` - `配置与存储` - `配置项`为 RedisShake 实例创建配置项 `redis-sync`。导入文件 `sync.toml` （文件内容见`附录`），并注意需要修改以下内容：
 
-![conf](../images/sync15.jpg)
+![conf](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync15.jpg)
 
 - source.address：上一步骤创建的源端 `redis-a` 的服务地址：
 
@@ -67,7 +67,7 @@ RedisShake 通常与数据传输的目标 Redis 实例运行于同一集群上�
     ```toml
     password = "3wPxzWffdn" # keep empty if no authentication is required
     ```
-    ![conf](../images/sync16.png)
+    ![conf](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync16.png)
 
 - 目标端实例访问地址，该地址可以采用新建的 `ClusterIP` 服务地址，也可以采用实例 `redis-b` 的默认 `Headless` 服务 `rfr-redis-b` 的地址，本例中采用 `Headless` 服务地址：
 
@@ -77,7 +77,7 @@ RedisShake 通常与数据传输的目标 Redis 实例运行于同一集群上�
  
     该服务信息可在`集群管理` - `目标端所在集群` - `工作负载` - `访问方式`中查看。类似下图所示页面
 
-    ![conf](../images/sync22.png)
+    ![conf](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync22.png)
 
 - 目标端实例的访问密码，可在`数据服务`模块下的 Redis 实例概览页获取该信息:
 
@@ -87,7 +87,7 @@ RedisShake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 
     类似下图位置：
 
-    ![svc](../images/sync06.png)
+    ![svc](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync06.png)
 
 - 目标端类型需设置为 `standalone`：
 
@@ -100,7 +100,7 @@ RedisShake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 
 1. 打开`应用工作台`，选择`向导` - `基于容器镜像`，创建一个应用 `Redis-shake-sync`：
 
-    ![sync](../images/sync07.png)
+    ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync07.png)
 
 2. 参考如下说明填写应用配置。
     
@@ -113,7 +113,7 @@ RedisShake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 
     - 默认服务的访问类型为 Nodeport，容器端口和服务端口设置为 6379。
 
-        ![sync](../images/sync08.png)
+        ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync08.png)
 
     - `高级设置` - `生命周期` - `启动命令` - `运行参数`填入：
 
@@ -121,7 +121,7 @@ RedisShake 通常与数据传输的目标 Redis 实例运行于同一集群上�
         /etc/sync/sync.toml
         ```
 
-        ![sync](../images/sync09.png)
+        ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync09.png)
 
     - `高级设置` - `数据存储`：添加配置项 `redis-sync`，路径必须设置为：
 
@@ -135,7 +135,7 @@ RedisShake 通常与数据传输的目标 Redis 实例运行于同一集群上�
         /data
         ```
 
-       ![sync](../images/sync20.png)
+       ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync20.png)
 
 3. 点击`确定`，完成 RedisShake 创建。
 
@@ -145,7 +145,7 @@ RedisShake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 
 图例：数据恢复 `实例 redis-b` >> `实例 redis-a`
 
-![recovery](../images/sync13.png)
+![recovery](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync13.png)
 
 当源端 `实例 redis-a` 恢复上线后，首先需要从目标端 `实例 redis-b` 恢复增量数据，因此需要在 `实例 redis-a` 再次部署 1 个 RedisShake 实例，实现 `实例 redis-b` >> `实例 redis-a` 的数据回传，此处配置方法与数据同步过程类似，执行 **反方向** 配置部署即可，完成 RedisShake 创建后，即自动开始数据恢复。
 
@@ -157,7 +157,7 @@ RedisShake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 
 如需复原初始的主从同步关系 `实例 redis-a` >> `实例 redis-b`，需在`容器管理`中停止 `实例 redis-a` 所在集群中正在运行的 `Redis-shake-recovery` 实例，重新启动目标端集群中的 `Redis-shake-sync` 实例，即可重建初始主从关系。
 
-![sync](../images/sync11.png)
+![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync11.png)
 
 ## 附录
 

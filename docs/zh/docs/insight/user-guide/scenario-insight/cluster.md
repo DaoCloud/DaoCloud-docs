@@ -18,7 +18,7 @@
     4. **资源消耗**：所选集群的 CPU、内存、磁盘的实际使用量和总量；
     5. **指标说明**：所选集群的 CPU、内存、磁盘读写、网络接收发送的变化趋势。
 
-    ![容器监控](../../images/cluster00.png){ width="1000"}
+    ![容器监控](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/cluster00.png){ width="1000"}
 
 ### 指标说明
 

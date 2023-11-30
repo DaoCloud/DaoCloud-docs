@@ -49,19 +49,19 @@ You can build a new container image locally or grab a public image from DockerHu
 1. On the `Managed Harbor` list page, click `...` on the right side of the target registry,
    then click `Native Harbor` to enter the login page of the native Harbor.
 
-    ![native harbor](../images/push01.png)
+    ![native harbor](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/push01.png)
 
 2. Enter the username and password set when creating managed Harbor to enter native Harbor.
 
-    ![login harbor](../images/push02.png)
+    ![login harbor](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/push02.png)
 
 3. Click the name of the target registry space (project) to enter the registry space.
 
-    ![registry space](../images/push03.png)
+    ![registry space](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/push03.png)
 
 4. Click the push command on the right to view the push commands provided by native Harbor.
 
-    ![push command](../images/push03.png)
+    ![push command](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/push03.png)
 
 !!! Tip
 

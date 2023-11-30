@@ -60,7 +60,7 @@ When deploying DCE 5.0 on Alibaba Cloud ECS, special handling is required for lo
 
 4. Installation successful.
 
-    ![success](../images/4.1.png)
+    ![success](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/install/images/4.1.png)
 
 5. Check the NodePort port on which the `istio-ingressgateway` service is exposed. In this example, it's 32060.
 
@@ -68,14 +68,14 @@ When deploying DCE 5.0 on Alibaba Cloud ECS, special handling is required for lo
     kubectl get svc -A | grep NodePort
     ```
 
-    ![gateway](../images/5.1.png)
+    ![gateway](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/install/images/5.1.png)
 
 6. Create an Alibaba Cloud SLB and direct the public TCP traffic of the SLB to the ECS hosts' port 32060. This needs to be done for all three hosts.
 
 
 7. Modify the ghippo reverse proxy configuration following the documentation at [Custom Reverse Proxy Server Address](../../ghippo/install/reverse-proxy.md#_1). After modification, you can directly access DCE 5.0 using the SLB's public IP address + Port, as shown in the following image:
 
-    ![ghippo](../images/7.1.png)
+    ![ghippo](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/install/images/7.1.png)
 
 ### Solution 2: cloudLB + CCM Component Deployment
 
@@ -122,7 +122,7 @@ When deploying DCE 5.0 on Alibaba Cloud ECS, special handling is required for lo
 
 4. Installation successful.
 
-    ![success](../images/4.1.png)
+    ![success](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/install/images/4.1.png)
 
 5. Check the cloudLB ID and port on which the `istio-ingressgateway` service is exposed.
    In this example, the cloudLB ID is `lb-bp1kx7b5zjvz8v6vti2j1` and the port is `6443`.
@@ -143,7 +143,7 @@ When deploying DCE 5.0 on Alibaba Cloud ECS, special handling is required for lo
    [Custom Reverse Proxy Server Address](../../ghippo/install/reverse-proxy.md#_1).
    After modification, you can directly access DCE 5.0 using the cloudLB's public IP address + Port, as shown in the following image:
 
-    ![ghippo](../images/7.1.png)
+    ![ghippo](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/install/images/7.1.png)
 
 
 ### Solution 3: NodePort + CCM Component Deployment
@@ -192,11 +192,11 @@ When deploying DCE 5.0 on Alibaba Cloud ECS, special handling is required for lo
 
 4. Installation successful
 
-    ![success](../images/4.1.png)
+    ![success](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/install/images/4.1.png)
 
 5. The installed `istio-ingressgateway` service looks as shown in the following image:
 
-    ![svc](../images/svc01.png)
+    ![svc](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/install/images/svc01.png)
 
 6. Install CCM by following the steps mentioned in Solution 2.
 
@@ -204,11 +204,11 @@ When deploying DCE 5.0 on Alibaba Cloud ECS, special handling is required for lo
 
     Before modification:
 
-    ![svc2](../images/svc02.png)
+    ![svc2](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/install/images/svc02.png)
 
     After modification:
 
-    ![svc3](../images/svc03.png)
+    ![svc3](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/install/images/svc03.png)
 
 8. Modify the ghippo reverse proxy configuration.
 

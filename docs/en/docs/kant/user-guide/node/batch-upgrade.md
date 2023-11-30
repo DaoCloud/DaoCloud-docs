@@ -22,7 +22,7 @@ The platform periodically releases new versions, and you can upgrade their edge 
 
     ![Batch Upgrade](../../images/batch-register01.png)
 
-    ![Batch Upgrade](../../images/batch-upgrade-01.png)
+    ![Batch Upgrade](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kant/images/batch-upgrade-01.png)
 
 2. Fill in the relevant parameters.
 
@@ -33,7 +33,7 @@ The platform periodically releases new versions, and you can upgrade their edge 
 
     > Note: The upgrade will only be performed on nodes that have a version difference from the upgrade version. Nodes with the same version as the upgrade version will be automatically ignored.
 
-    ![Create Upgrade Task](../../images/batch-upgrade-02.png)
+    ![Create Upgrade Task](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kant/images/batch-upgrade-02.png)
 
 ## Node Upgrade Status
 

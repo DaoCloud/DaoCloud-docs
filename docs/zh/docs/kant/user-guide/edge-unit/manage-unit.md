@@ -15,13 +15,13 @@
 - 节点正常数/总数：节点状态为健康的节点数量/总数
 - 应用实例正常数/总数；工作负载运行正常数量/总数
 
-![边缘单元列表](../../images/manage-unit-01.png)
+![边缘单元列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/manage-unit-01.png)
 
 ## 编辑边缘单元
 
 在边缘单元列表的右侧，点击 `⋮` 按钮，在弹出菜单中选择`编辑`，可以对边缘单元的基础信息、组件仓库设置、访问设置进行编辑操作。
 
-![编辑边缘单元](../../images/manage-unit-02.png)
+![编辑边缘单元](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/manage-unit-02.png)
 
 ## 删除边缘单元
 
@@ -33,10 +33,10 @@
     - 如果边缘单元下有创建边缘节点和工作负载资源，需要用户先手动删除。
     - 点击边缘节点和工作负载，用户可以快速跳转到边缘节点列表和工作负载列表页。
 
-![删除边缘单元](../../images/manage-unit-03.png)
+![删除边缘单元](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/manage-unit-03.png)
 
 ## 边缘单元概览
 
 点击列表中`边缘单元名称`，进入边缘单元概览页面，可以查看基本信息和资源状态信息。更多管理操作点击左侧菜单栏进入对应菜单进行管理操作。
 
-![边缘单元概览](../../images/manage-unit-04.png)
+![边缘单元概览](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/manage-unit-04.png)

@@ -6,11 +6,11 @@ After [microservices](index.md) are imported, different east-west traffic polici
 
 1. Click the service name.
 
-    ![](../images/cloudms-traffic01.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/cloudms-traffic01.png)
 
 2. Select the target port.
 
-    ![](../images/cloudms-traffic02.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/cloudms-traffic02.png)
 
 3. Configure the traffic policy as needed, and click `OK` to confirm.
 

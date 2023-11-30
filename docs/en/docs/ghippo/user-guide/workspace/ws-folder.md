@@ -15,7 +15,7 @@ Workspace and Folder involves two concepts: workspaces and folders.
 Workspaces allow the management of resources through `Authorization`, `Resource Group`, and `Shared Resource`,
 enabling users (and user groups) to share resources within the workspace.
 
-![Workspaces](../../images/wsfd01.png)
+![Workspaces](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/wsfd01.png)
 
 - Resources
 

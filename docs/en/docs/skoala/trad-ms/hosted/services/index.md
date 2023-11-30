@@ -2,7 +2,7 @@
 
 The micro-service list page lists all the micro-services under the current registry instance. You can view the group, health status, protection threshold, request status, link tracing, and governance status of the micro-services. You can click the micro-service name in the list to view the micro-service instance list, monitoring information, interface list, and metadata.
 
-![](../../../images/servicelist-1.png)
+![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/servicelist-1.png)
 
 Group: Indicates the group of microservice configuration files. Separate configuration files and microservice instances to make it easier to apply the same configuration to different services or components.
 

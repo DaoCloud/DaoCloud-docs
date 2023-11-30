@@ -15,4 +15,4 @@ Refer to [Comparison between RocketMQ, ActiveMQ, and Kafka Message Queues](https
 DaoCloud has customized and containerized Apache RocketMQ, providing a simple and user-friendly
 UI interface for easy deployment of RocketMQ clusters to handle message processing tasks.
 
-![rocketmq ui](../images/what01.png)
+![rocketmq ui](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/middleware/rocketmq/images/what01.png)

@@ -9,13 +9,13 @@ hide:
 
 进入微服务引擎模块，在左侧导航栏点击微服务网关，点击目标网关的名称。
 
-![点击名称](../images/alert01.png)
+![点击名称](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/alert01.png)
 
 ## 业务监控看板
 
 在左侧导航栏点击`监控告警`，点击`业务监控看板`页签可查看业务监控信息。
 
-![点击名称](../images/alert02.png)
+![点击名称](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/alert02.png)
 
 | 指标 | 含义 |
 | :--- | :-- |
@@ -49,7 +49,7 @@ hide:
 
 点击`资源看板`页签可查看资源监控信息。
 
-![点击名称](../images/alert03.png)
+![点击名称](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/alert03.png)
 
 | 指标 | 含义 |
 | :-- | :-- |

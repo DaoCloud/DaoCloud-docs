@@ -14,11 +14,11 @@ The simple steps to perform this operation are as follows:
 1. Log in with the Workspace Admin role, click `Integrated Registry (Workspace)` from the left navigation bar,
    and click the `Integrated Registry` button in the upper right corner.
 
-    ![integrate registry](../images/relate02.png)
+    ![integrate registry](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/relate02.png)
 
 2. Fill in the form information, and click `OK`.
 
-    ![fill](../images/relate03.png)
+    ![fill](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/relate03.png)
 
     !!! note
 
@@ -39,21 +39,21 @@ The steps are as follows:
 
 1. Log in with the Admin role, and click `Integrated Registry (Admin)` on the left navigation bar.
 
-    ![nav](../images/interg01.png)
+    ![nav](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/interg01.png)
 
 2. Click the `Integrated Registry` button in the upper right corner.
 
-    ![button](../images/interg02.png)
+    ![button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/interg02.png)
 
 3. Select the registry type, fill in the integration name, registry address, username, and password, and click `OK`.
 
-    ![fill](../images/interg03.png)
+    ![fill](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/interg03.png)
 
 4. In the integrated registry list, hover the cursor over a certain registry, click the eye icon to view the overview.
 
-    ![view](../images/interg04.png)
+    ![view](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/interg04.png)
 
 5. The overview page displays the basic information and statistical information of the current registry and
    also provides a quick start at the top that is convenient for managing registry space, workspace, and creating applications.
 
-    ![overview](../images/interg05.png)
+    ![overview](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/interg05.png)

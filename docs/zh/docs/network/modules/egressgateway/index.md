@@ -4,7 +4,7 @@
 
 ## egressGateway 架构
 
-![Architecture](../../images/egressgateway/architecture.png)
+![Architecture](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/egressgateway/architecture.png)
 
 ## 为什么选择 EgressGateway
 

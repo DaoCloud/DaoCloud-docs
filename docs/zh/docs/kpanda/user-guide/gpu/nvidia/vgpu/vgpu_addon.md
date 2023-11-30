@@ -11,7 +11,7 @@
 
 1. 功能模块路径：`容器管理` -> `集群管理` -> 点击目标集群 -> `Helm应用` -> `Helm 仓库` -> 搜索 nvidia-vgpu。
 
-    ![Alt text](../../images/vgpu-addon.png)
+    ![Alt text](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/vgpu-addon.png)
 
 2. 在安装 vGPU 的过程中提供了几个基本修改的参数，如果需要修改高级参数点击 YAML 列进行修改：
 
@@ -21,10 +21,10 @@
     
     - `Resources`：就是对应 vgpu-device-plugin 和 vgpu-schedule pod 的资源使用量。
 
-    ![Alt text](../../images/vgpu-pararm.png)
+    ![Alt text](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/vgpu-pararm.png)
 
 3. 安装成功之后会在指定 `Namespace` 下出现如下两个类型的 Pod，即表示 NVIDIA GPU 插件已安装成功：
    
-    ![Alt text](../../images/vgpu-pod.png)
+    ![Alt text](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/vgpu-pod.png)
 
 安装成功后，[部署应用可使用 vGPU 资源](vgpu_user.md) 。

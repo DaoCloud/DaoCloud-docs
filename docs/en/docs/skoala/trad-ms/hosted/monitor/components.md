@@ -6,23 +6,23 @@ To view component monitoring, perform the following steps:
 
 1. Go to the Microservices Engine module and click the name of the target registry.
 
-    ![](../../../images/monitor01.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/monitor01.png)
 
 2. In the left navigation bar, click `Monitoring` -> `Components`.
 
-    ![](../../../images/monitor02.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/monitor02.png)
 
 3. Click the `Naocs Instances` Tab to view the Nacos instance monitoring information.
 
     > On the drop-down list page, you can view the statistics about request time and request counts.
 
-    ![](../../../images/monitor03.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/monitor03.png)
 
 4. Click the `Sentinel Instances` Tab to view the Sentinel instance monitoring information.
 
     > On the drop-down list page, you can view the statistics about request time and request counts.
 
-    ![](../../../images/monitor04.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/monitor04.png)
 
 ## Component Monitoring Metrics Explanation
 

@@ -11,11 +11,11 @@ The adjustment of Cilium including:
 
 ## Test objects
 
-![cilium](../../images/cilium-cross-target.png)
+![cilium](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-cross-target.png)
 
 ## Test environment
 
-![env](../../images/cilium-cross-env.png)
+![env](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-cross-env.png)
 
 ## Testing tool and metrics
 
@@ -33,21 +33,21 @@ The tests use netperf to generate workloads and collect metrics. The test metric
 
 For TCP Single Stream, test TCP throughput between two cross-node Pods:
 
-![single1](../../images/cilium-singlestream01.png)
+![single1](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-singlestream01.png)
 
 CPU overhead for client and server:
 
-![single2](../../images/cilium-singlestream02.png)
+![single2](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-singlestream02.png)
 
 ## Test two
 
 For 32-core CPU, 32 concurrent TCP connections, test TCP throughput between two cross-node Pods
 
-![multi](../../images/cilium-multistream01.png)
+![multi](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-multistream01.png)
 
 CPU overhead for client and server:
 
-![multi2](../../images/cilium-multistream02.png)
+![multi2](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-multistream02.png)
 
 ## Test three
 
@@ -55,18 +55,18 @@ Simulate the test of Layer 7 access based on the TCP_RR mode to repeat the behav
 
 The TCP_RR performance between two cross-node Pods is tested with the Pod having only 1 core CPU:
 
-![tcprr1](../../images/cilium-tcprr01.png)
+![tcprr1](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-tcprr01.png)
 
 CPU overhead of the client and server:
 
-![tcprr2](../../images/cilium-tcprr02.png)
+![tcprr2](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-tcprr02.png)
 
 ## Test four
 
 Test TCP_RR performance between two cross-node Pods when the Pod has only 32 cores of CPU:
 
-![tcprr3](../../images/cilium-tcprr03.png)
+![tcprr3](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-tcprr03.png)
 
 CPU overhead of the client and server:
 
-![tcprr4](../../images/cilium-tcprr04.png)
+![tcprr4](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-tcprr04.png)

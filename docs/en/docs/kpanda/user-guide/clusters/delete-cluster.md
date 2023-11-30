@@ -24,10 +24,10 @@ In DCE 5.0, the difference between `Delete` and `Remove` is:
 
 1. Enter the Container Management module, find your target cluster, click `...` on the right, and select `Delete cluster`/`Remove` in the drop-down list.
 
-    ![screen](../../images/cluster-delete01.png)
+    ![screen](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/cluster-delete01.png)
 
 2. Enter the cluster name to confirm and click `Delete`.
 
-    ![screen](../../images/cluster-delete02.png)
+    ![screen](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/cluster-delete02.png)
 
 3. You will be auto directed to cluster lists. The status of this cluster will changed to `Deleting`. It may take a while to delete/remove a cluster.

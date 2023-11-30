@@ -48,7 +48,7 @@ trivy:
 
 ## 也可以从 `DCE 5.0` 集群管理页面中进行修改
 
-![edit-harborcluster.png](../images/edit-harborcluster.png)
+![edit-harborcluster.png](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/edit-harborcluster.png)
 
 1. 从`集群列表`进入某个集群，选择`自定义资源`
 1. 选择 `harborcluster` 的资源
@@ -67,7 +67,7 @@ trivy:
 
 ### 先在 `trivy pod` 中创建对应的目录 `/home/scanner/.cache/trivy/db`
 
-![upload-trivy-db.png](../images/upload-trivy-db.png)
+![upload-trivy-db.png](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/upload-trivy-db.png)
 
 1. 从`集群列表`进入某个集群
 2. 进入托管 Harbor 所在 Namespace
@@ -78,7 +78,7 @@ trivy:
 
 ### 创建好目录之后上传离线包
 
-![upload-trivy-offline-db.png](../images/upload-trivy-offline-db.png)
+![upload-trivy-offline-db.png](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/upload-trivy-offline-db.png)
 
 1. 从`集群列表`进入某个集群
 2. 进入托管 Hharbor 所在 Namespace

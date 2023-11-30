@@ -16,7 +16,7 @@
 
 1. [创建云原生网关](../gateway/index.md)时，开启注入 Sidecar。
 
-    ![创建网关](../images/create-gw01.png)
+    ![创建网关](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/create-gw01.png)
 
 2. 为 Pod 设置 Annotation 注解 `traffic.sidecar.istio.io/includeInboundPorts: ""`。
 

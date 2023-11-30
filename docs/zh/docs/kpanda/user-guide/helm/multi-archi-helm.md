@@ -80,7 +80,7 @@ rm -rf addon-offline-target-package
 
 如果融合的离线包中包含了与导入的离线包不一致的镜像空间，可能会在融合过程中因为镜像空间不存在而报错：
 
-![helm](../../images/multi-arch-helm.png)
+![helm](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/multi-arch-helm.png)
 
 解决办法：只需要在融合之前创建好该镜像空间即可，例如上图报错可通过创建镜像空间 localhost 提前避免。
 

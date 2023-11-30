@@ -17,7 +17,7 @@
 
 1. 在左侧导航栏点击`传统微服务`->`注册配置中心`，然后在页面右上角点击`创建注册配置中心`，进入托管注册中心实例的创建页面。
 
-    ![进入创建注册中心页面](../../images/create01.png)
+    ![进入创建注册中心页面](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/create01.png)
 
 2. 填写配置信息。
 
@@ -35,27 +35,27 @@
 
         - 点击`《实例能力评估》`可以查看在 2 Core 4 GiB、4 Core 8 GiB 和 8 Core 16 GiB 等主流规格下的吞吐量 (TPS)。
 
-        ![进入创建注册中心页面](../../images/create02.png)
+        ![进入创建注册中心页面](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/create02.png)
 
     - 访问方式：选择`节点访问`可通过 **服务端口+目标端口** 的方式从外部访问注册中心，选择`内部访问`则只能在所在的集群范围内通过服务端口访问注册中心。默认的服务端口为 8848。
     - 服务认证：开启服务认证时，注册至该注册中心的服务需要认证信息。默认用户名/密码为 nacos/nacos。当数据持久化为内置数据库模式时，不支持开启服务认证。
     - 部署模式：选择高可用模式时，节点数量不少于 3 个。生产环境下建议使用`高可用`模式。
     - 镜像版本：目前支持 v2.0.4-slim 、v2.1.1-slim 和 v2.2.3-slim 三种版本。
 
-        ![进入创建注册中心页面](../../images/create03.png)
+        ![进入创建注册中心页面](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/create03.png)
 
     - 数据持久化：建议使用外置存储化。
 
         - 不使用外置存储化：数据存储在 Nacos 所在的 Pod 的文件系统里。Pod 重启之后数据会遗失，因此建议使用外部存储。
         - 使用数据库：填写数据库的名称、地址、端口、用户名和密码
 
-            ![进入创建注册中心页面](../../images/create04.png)
+            ![进入创建注册中心页面](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/create04.png)
 
 3. 在页面底部点击`确定`。
 
     如果操作正确，页面右上角会弹出创建成功的消息，`托管注册中心列表`页会展示新建的注册中心实例。
 
-    ![创建成功](../../images/create06.png)
+    ![创建成功](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/create06.png)
 
 !!! info
 
@@ -66,7 +66,7 @@
 
 1. 在`注册配置中心`列表页选择需要更新的注册中心，在右侧点击 `⋯` 并选择`编辑`。
 
-    ![进入更新页面](../../images/update01.png)
+    ![进入更新页面](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/update01.png)
 
 2. 更新注册中心的配置，然后在页面底部点击`确定`。
 
@@ -75,7 +75,7 @@
         - 修改存储池/数据库，变动存储位置后，之前的数据不会随之迁移！
         - 托管注册中心名称和部署位置不可编辑。
 
-    ![更新配置](../../images/update02.png)
+    ![更新配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/update02.png)
 
 ## 查看注册中心详情
 
@@ -88,21 +88,21 @@
 
 - 重启注册中心实例：在页面右上角点击 `⋯` 并选择`重启`可以对整个托管注册中心实例进行重启。
 
-    ![全量重启](../../images/check-1.png)
+    ![全量重启](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/check-1.png)
 
 - 查看节点元数据
 
-    ![查看元数据](../../images/check-2.png)
+    ![查看元数据](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/check-2.png)
 
 ## 删除注册中心
 
 1. 在`托管注册中心列表`页选择需要删除的注册中心，在右侧点击 `⋯` 并选择`删除`。
 
-    ![进入删除页面](../../images/delete01.png)
+    ![进入删除页面](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/delete01.png)
 
 2. 输入注册中心的名称，点击`移除`。
 
-    ![确认名称](../../images/delete02.png)
+    ![确认名称](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/delete02.png)
 
 !!! note
 

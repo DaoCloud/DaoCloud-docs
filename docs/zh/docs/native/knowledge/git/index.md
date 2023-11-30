@@ -20,19 +20,19 @@
 
         K8s 和 Istio 网站都有类似的按钮，比如 `Edit this page`、`Edit this page on GitHub`。
 
-    ![点击图标按钮](../images/local01.png)
+    ![点击图标按钮](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/local01.png)
 
 1. 完成编辑操作后，点击右上角的 `Commit changes` 按钮。
 
-    ![commit change](../images/local02.png)
+    ![commit change](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/local02.png)
 
 1. 修改 `Commit message`，填写 `Extended description` 后，点击 `Propose changes` 按钮。
 
-    ![propose change](../images/local03.png)
+    ![propose change](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/local03.png)
 
 1. 点击 `Create pull request` 按钮就完成了提交 PR 的操作。
 
-    ![create PR](../images/local04.png)
+    ![create PR](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/local04.png)
 
 ### 通过 Codespace 编辑
 
@@ -41,15 +41,15 @@
 
 1. 进入你的 Fork，点击 `Code` -> `Codespaces` -> `Create Codespace on main`。
 
-    ![Create Codespace](../images/cloud01.png)
+    ![Create Codespace](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/cloud01.png)
 
 1. 稍待片刻完成环境的创建，
 
-    ![online vscode](../images/cloud02.png)
+    ![online vscode](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/cloud02.png)
 
 1. 你可以在底部 TERMINAL 中运行各种命令，从左侧目录树中找到要修改的文件。
 
-    ![online edit](../images/cloud03.png)
+    ![online edit](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/cloud03.png)
 
 1. 编辑完成后，跟在本地一样，运行 git 命令提交修改。
 
@@ -82,7 +82,7 @@
 
 1. 在本地完成编辑工作后，推荐在本地运行 `mkdocs serve` 进行预览，以免把错误带到线上。
    
-    ![本地预览](../images/make-serve.png)
+    ![本地预览](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/make-serve.png)
 
     !!! tip
     
@@ -100,7 +100,7 @@
 
 1. 从网页上进入 GitHub 仓库，提交 PR。
    
-    ![提 PR](../images/pr.png)
+    ![提 PR](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/pr.png)
 
     > - 有些项目要求 1 个 commit 提交 1 次 PR，如遇到 rebase 提示可参考 [GitHub rebase 问题](rebase.md)
     > - 对于 Scrum 开发组，若改动较大，请在 main/release-notes/notes 目录仿照其他文件创建一个 yaml，填写必要的信息
@@ -112,15 +112,15 @@
 
 1. 作者提交 PR 后，相关 Reviewer 会收到一封邮件。
 
-    ![请求 review](../images/review1.png)
+    ![请求 review](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/review1.png)
 
 1. 点击 `Files changed` 查看改了什么内容。
 
-    ![review 列表](../images/review2.png)
+    ![review 列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/review2.png)
 
 1. 如果对某句话有不同想法，可以直接添加 comment。
 
-    ![添加注释](../images/review3.png)
+    ![添加注释](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/review3.png)
 
     - 建议点击 `Add a suggestion` 图标后进行修改，这样 PR 作者可以清晰看到评审建议。
     - 写好 comment 后，点击 `Start a review` 按钮，继续看其他字句，全部看完以后统一 `Submit review`
@@ -135,7 +135,7 @@
 
 1. 经作者反复修改后，若没有其他问题，Reviewer 会给出以下标记，批准合并 PR：
 
-    ![审批通过](../images/review4.png)
+    ![审批通过](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/review4.png)
 
     ```git
     /lgtm
@@ -156,7 +156,7 @@ make lint-yaml
 
 1. 安装 `i18n Ally` 插件。
 
-    ![安装插件](../images/i18n01.png)
+    ![安装插件](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/i18n01.png)
 
 1. 运行以下命令安装所有依赖项：
 
@@ -166,11 +166,11 @@ make lint-yaml
 
 1. 点击左侧的 `i18n Ally` 页签，找到 `No Translation` 内容，点击 `Open in editor` 图标。
 
-    ![开始翻译](../images/i18n02.png)
+    ![开始翻译](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/i18n02.png)
 
 1. 翻好一个字段后，点击下一个字段。可以在 Source Control 部分查看完成的译文。
 
-    ![翻译中](../images/i18n03.png)
+    ![翻译中](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/i18n03.png)
 
 1. 译文检查无误后，依次运行以下命令提交。
 

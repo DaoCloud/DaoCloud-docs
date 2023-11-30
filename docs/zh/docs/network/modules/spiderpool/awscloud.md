@@ -32,7 +32,7 @@ Spiderpool 能基于 ipvlan Underlay CNI 运行在公有云环境上，并实现
 
     在 AWS VPC 下创建的子网，如果设置了出口路由 0.0.0.0/0, ::/0 的下一跳为 Internet Gateway，则该子网就隶属于 *公有子网* ，否则就是 *私有子网* 。
 
-    ![aws-subnet-concept](../../images/aws/aws-subnet-concept.png)
+    ![aws-subnet-concept](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/aws/aws-subnet-concept.png)
 
 ## 步骤
 
@@ -43,20 +43,20 @@ Spiderpool 能基于 ipvlan Underlay CNI 运行在公有云环境上，并实现
     > 本例会在同一个 VPC 下先创建 1 个公有子网以及 2 个私有子网(请将子网部署在不同的可用区)，接着会在公有子网下创建一个 AWS EC2
     > 实例作为跳板机，然后会在两个不同的私有子网下创建对应的 AWS EC2 实例用于部署 Kubernetes 集群。
 
-    ![aws-subnet-1](../../images/aws/aws-subnet-1.png)
+    ![aws-subnet-1](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/aws/aws-subnet-1.png)
 
 2. 额外创建两个私有子网用于给实例补充第二张网卡(请将子网部署在与实例相同的可用区)，如图：
 
-    ![aws-subnet-2](../../images/aws/aws-subnet-2.png)
+    ![aws-subnet-2](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/aws/aws-subnet-2.png)
 
-    ![aws-interfaces](../../images/aws/aws-interfaces.png)
+    ![aws-interfaces](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/aws/aws-interfaces.png)
 
 3. 给实例们的每张网卡均分配一些辅助私网 IP，如图:
 
     > 因为根据 [AWS EC2 实例规格](https://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/using-eni.html)，
     > 实例的网卡数量以及每张网卡对应可绑定的辅助 IP 有限制，为了能够尽可能的充分利用实例资源来部署应用，我们因此选择给实例绑定2张网卡以及对应的辅助 IP。
 
-    ![aws-web-network](../../images/aws/aws-secondary-nic.png)
+    ![aws-web-network](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/aws/aws-secondary-nic.png)
 
     ```console
     | Node    | ens5 primary IP | ens5 secondary IPs        | ens6 primary IP | ens6 secondary IPs        |  
@@ -72,13 +72,13 @@ Spiderpool 能基于 ipvlan Underlay CNI 运行在公有云环境上，并实现
     > 在上述的公有子网 `public-172-31-0-0` 下创建 NAT 网关，并为私有子网的路由表配置 0.0.0.0/0 出口路由的下一跳为该 NAT 网关。
     > (注意 IPv6 是由 AWS 分配的全局唯一的地址，可直接借助 Internet Gateway 访问互联网)
 
-    ![aws-nat-gateway](../../images/aws/aws-nat-gateway.png)
+    ![aws-nat-gateway](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/aws/aws-nat-gateway.png)
 
-    ![aws-nat-route](../../images/aws/aws-nat-route.png)
+    ![aws-nat-route](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/aws/aws-nat-route.png)
 
 5. 使用上述配置的虚拟机，搭建一套 Kubernetes 集群，节点的的可用 IP 及集群网络拓扑图如下：
 
-    ![网络拓扑](../../images/aws/aws-k8s-network.png)
+    ![网络拓扑](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/aws/aws-k8s-network.png)
 
 ### 安装 Spiderpool
 
@@ -325,9 +325,9 @@ Layer4 与 Layer7。 aws-load-balancer-controller 是 AWS 提供的一个用于 
     > 2. 运行 `curl -o iam-policy.json https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.6.0/docs/install/iam_policy.json`
     > 3. 使用如上获取的 json 内容，在 AWS IAM Dashboard 中创建一个新的policy，并将该 policy 与您当前虚拟机实例的 IAM Role 进行关联。
 
-    ![aws-iam-policy](../../images/aws/aws-iam-policy.png)
+    ![aws-iam-policy](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/aws/aws-iam-policy.png)
 
-    ![aws-iam-role](../../images/aws/aws-iam-role.png)
+    ![aws-iam-role](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/aws/aws-iam-role.png)
 
 3. 为您 AWS EC2 实例所在的可用区创建一个 public subnet 并打上可自动发现的 tag.
 
@@ -388,7 +388,7 @@ spec:
 EOF
 ```
 
-![aws-network-load-balancer](../../images/aws/aws-lb.png)
+![aws-network-load-balancer](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/aws/aws-lb.png)
 
 我们可以在 AWS Dashboard EC2 Load Balancing 栏中看到已经有一个 NLB 已被创建出来且可被访问。
 
@@ -509,7 +509,7 @@ spec:
                   number: 80
 ```
 
-![aws-application-load-balancer](../../images/aws/aws-ingress.png)
+![aws-application-load-balancer](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/aws/aws-ingress.png)
 
 我们可以在 AWS Dashboard EC2 Load Balancing 栏中看到已经有一个 ALB 已被创建出来且可被访问。
 
