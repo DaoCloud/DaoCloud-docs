@@ -34,13 +34,13 @@
 
 2. 选择左侧菜单`Helm 应用` -> `Helm 模板`，在 `addon 仓库`下找到 EdgeMesh 插件。
 
-    ![Helm 模板](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/deploy-edgemesh-01.png)
+    ![Helm 模板](../../images/deploy-edgemesh-01.png)
 
 3. 点击 edgemesh 条目，进入模板详情页。
 
 4. 在页面右上角选择 EdgeMesh 版本，点击`安装`按钮，进入 EdgeMesh 安装页面。
 
-    ![edgemesh 安装](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/deploy-edgemesh-02.png)
+    ![edgemesh 安装](../../images/deploy-edgemesh-02.png)
 
 5. 填写 edgemesh 基础配置。
 
@@ -51,7 +51,7 @@
     - 就绪等待：启用后，将等待应用下所有关联资源处于就绪状态才标记应用安装成功。
     - 详细日志：开启安装过程日志的详细输出。
 
-    ![Helm 模板](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/deploy-edgemesh-03.png)
+    ![Helm 模板](../../images/deploy-edgemesh-03.png)
 
 6. YAML 参数配置。
 
@@ -64,26 +64,23 @@
 ```yaml
   # PSK：是一种认证密码，确保每个 edgemesh-agent 只有当拥有相同的 “PSK 密码” 时才能建立连接，更多信息请参考
   # [PSK](https://edgemesh.netlify.app/zh/guide/security.html)。建议使用 openssl 生成，也可以设置成自定义的随机字符串。
-  psk: Juis9HP1XBouyO5pWGeZa8LtipDURrf17EJvUHcJGuQ=
+
+  在节点上执行如下命令生成 PSK：
+
+  kubectl taint nodes --all node-role.kubernetes.io/master-
 
   # Relay Node：是指在网络通信中转发数据包的节点。它在通信的源节点和目标节点之间起到桥接的作用，
   # 帮助数据包在网络中传输并绕过某些限制或障碍，EdgeMesh 中通常为云上节点，也可以添加多个中继节点。
-
-  relayNodes:
-  - nodeName: masternode
-    advertiseAddress:
-    - 10.31.223.12
- # - nodeName: <your relay node name2>
- #   advertiseAddress:
- #   - 2.2.2.2
- #   - 3.3.3.3
 ```
 
 **参考示例**
 
 ```yaml
+global:
+  imageRegistry: docker.m.daocloud.io
 agent:
-  image: kubeedge/edgemesh-agent:v1.14.0
+  repository: kubeedge/edgemesh-agent
+  tag: v1.14.0
   affinity: {}
   nodeSelector: {}
   tolerations: []
@@ -94,13 +91,12 @@ agent:
     requests:
       cpu: 0.5
       memory: 128Mi
+  psk: JugH9HP1XBouyO5pWGeZa8LtipDURrf17EJvUHcJGuQ=
 
-  psk: Juis9HP1XBouyO5pWGeZa8LtipDURrf17EJvUHcJGuQ=
-
-  relayNodes:
-  - nodeName: masternode
+relayNodes:
+  - nodeName: masternode ## your relay node name
     advertiseAddress:
-    - 10.31.223.12
+    - x.x.x.x ## your relay node ip
 
   modules:
     edgeProxy:
@@ -111,22 +107,14 @@ agent:
 
 ## 检验部署结果
 
-部署完成后，可以执行以下命令检查 EdgeMesh 应用是否成功。
+部署完成后，可以执行以下命令检查 EdgeMesh 应用是否部署成功。
 
-```shell
-$ helm ls -A
-NAME            NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
-edgemesh        kubeedge        1               2022-09-18 12:21:47.097801805 +0800 CST deployed        edgemesh-0.1.0  latest
+1. 选择左侧导航栏的`容器` -> `容器管理`，进入集群列表页面，点击`集群名称`，进入集群详情页。
 
-$ kubectl get all -n kubeedge -o wide
-NAME                       READY   STATUS    RESTARTS   AGE   IP              NODE         NOMINATED NODE   READINESS GATES
-pod/edgemesh-agent-7gf7g   1/1     Running   0          39s   192.168.0.71    k8s-node1    <none>           <none>
-pod/edgemesh-agent-fwf86   1/1     Running   0          39s   192.168.0.229   k8s-master   <none>           <none>
-pod/edgemesh-agent-twm6m   1/1     Running   0          39s   192.168.5.121   ke-edge2     <none>           <none>
-pod/edgemesh-agent-xwxlp   1/1     Running   0          39s   192.168.5.187   ke-edge1     <none>           <none>
+1. 选择左侧菜单`Helm 应用` -> `Helm 应用`，进入 Helm 应用列表页面。
 
-NAME                            DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE   CONTAINERS       IMAGES                           SELECTOR
-daemonset.apps/edgemesh-agent   4         4         4       4            4           <none>          39s   edgemesh-agent   kubeedge/edgemesh-agent:latest   k8s-app=kubeedge,kubeedge=edgemesh-agent
-```
+1. 查看 Helm 应用的状态，当前状态为`已部署`表示 EdgeMesh 应用部署成功。
+
+ ![EdgeMesh 部署成功](../../images/deploy-edgemesh-12.png)
 
 下一步：[创建服务](./server.md)

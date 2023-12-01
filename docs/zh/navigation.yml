@@ -984,6 +984,7 @@ nav:
               - 应用网格:
                   - 应用网格概述: kant/user-guide/edge-network/index.md
                   - 部署 edgemesh 应用: kant/user-guide/edge-network/deploy-edgemesh.md
+                  - 服务: kant/user-guide/edge-network/server.md
       - 管理:
           - 全局管理:
               - 介绍:
