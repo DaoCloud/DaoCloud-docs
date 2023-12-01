@@ -409,6 +409,9 @@ nav:
                   - Traffic mirror: network/modules/ingress-nginx/mirror.md
                   - Cross-Origin Resource Sharing: network/modules/ingress-nginx/cors.md
                   - Redirect: network/modules/ingress-nginx/redirect.md
+              - EgressGateway:
+                  - Intro: network/modules/egressgateway/index.md
+                  - Usage: network/modules/egressgateway/usage.md
               - Metallb:
                   - Intro: network/modules/metallb/index.md
                   - Install: network/modules/metallb/install.md
@@ -437,7 +440,7 @@ nav:
                   - Usage: network/modules/aliyun-terway/usage.md
                   - Run Calico on Alibaba Cloud: network/modules/aliyun-terway/aliyun-calico.md
                   - Run Cilium on Alibaba Cloud: network/modules/aliyun-terway/aliyun-cilium.md
-                  - Q & A: network/modules/aliyun-terway/Q_A.md
+                  - FAQs: network/modules/aliyun-terway/Q_A.md
           - Cloud Native Storage:
               - Intro:
                   - What is storage: storage/index.md

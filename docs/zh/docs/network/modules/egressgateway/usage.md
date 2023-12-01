@@ -10,7 +10,6 @@
     # set chainInsertMode
     $ kubectl patch felixconfigurations  default --type='merge' -p '{"spec":{"chainInsertMode":"Append"}}'
     
-      
     # check status
     $ kubectl get FelixConfiguration default -o yaml
       apiVersion: crd.projectcalico.org/v1
@@ -41,8 +40,9 @@
 
     将集群外的服务地址添加到 spiderpool.spidercoordinators 的 'default' 对象的 'hijackCIDR' 中，使 Pod 访问这些外部服务时，流量先经过 Pod 所在的主机，从而被 EgressGateway 规则匹配。
 
-    ```
-    # "1.1.1.1/32", "2.2.2.2/32" 为外部服务地址。对于已经运行的 Pod，需要重启 Pod，这些路由规则才会在 Pod 中生效。
+    假如 "1.1.1.1/32", "2.2.2.2/32" 为外部服务地址。对于已经运行的 Pod，需要重启 Pod，这些路由规则才会在 Pod 中生效。
+
+    ```shell
     kubectl patch spidercoordinators default  --type='merge' -p '{"spec": {"hijackCIDR": ["1.1.1.1/32", "2.2.2.2/32"]}}'
     ```
 
@@ -50,17 +50,18 @@
 
 确认所有的 EgressGateway Pod 运行正常。
 
-    ```shell
-    $ kubectl get pod -n kube-system | grep egressgateway
-    egressgateway-agent-29lt5                  1/1     Running   0          9h
-    egressgateway-agent-94n8k                  1/1     Running   0          9h
-    egressgateway-agent-klkhf                  1/1     Running   0          9h
-    egressgateway-controller-5754f6658-7pn4z   1/1     Running   0          9h
-    ```
+```shell
+$ kubectl get pod -n kube-system | grep egressgateway
+egressgateway-agent-29lt5                  1/1     Running   0          9h
+egressgateway-agent-94n8k                  1/1     Running   0          9h
+egressgateway-agent-klkhf                  1/1     Running   0          9h
+egressgateway-controller-5754f6658-7pn4z   1/1     Running   0          9h
+```
 
 ## 创建 EgressGateway 实例
 
-1. EgressGateway 定义了一组节点作为集群的出口网关，集群内的 egress 流量将会通过这组节点转发而出集群。因此，我们需要预先定义一组 EgressGateway，例子如下：
+1. EgressGateway 定义了一组节点作为集群的出口网关，集群内的 egress 流量将会通过这组节点转发而出集群。
+   因此，我们需要预先定义一组 EgressGateway，例子如下：
 
     ```shell
     cat <<EOF | kubectl apply -f -
@@ -135,7 +136,7 @@
 
     EgressPolicy 实例用于定义哪些 Pod 的出口流量要经过 EgressGateway 节点转发，以及其它的配置细节。
     可创建如下例子，当匹配的 Pod 访问任意集群外部的地址（任意不是 Node IP、CNI Pod CIDR、ClusterIP 的地址）时，都会被 EgressGateway Node 转发。注意的是，
-    EgressPolicy 对象是租户级别的，因此，它务必创建在 selected 应用的租户下
+    EgressPolicy 对象是租户级别的，因此它务必创建在 selected 应用的租户下。
 
     ```shell
     cat <<EOF | kubectl apply -f -
@@ -225,6 +226,7 @@
     ```
 
 2. 在集群内部的 visitor Pod 中，验证出口流量的效果，我们可以看到 visitor 访问外部服务，nettools 返回的源 IP 符合了 EgressPolicy `.status.eip` 的效果。
+
     ```shell
     $ kubectl get pod
     NAME                       READY   STATUS    RESTARTS   AGE
