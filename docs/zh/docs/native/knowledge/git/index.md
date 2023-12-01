@@ -34,6 +34,18 @@
 
     ![create PR](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/local04.png)
 
+1. 提交 PR 后，Reviewer 会给出一些 comments，你也可以在网页上修改。
+
+    点击 `Files changed` 页签，点击右侧的 `...`，选择 `Edit file`，就能开始编辑修改文件了。
+
+    ![Edit file](../images/local05.png)
+
+    !!! caution
+
+        在看到 comment 后，不要关闭 PR！
+        社区法则第一条：尊重彼此及其劳动成果。
+        要努力按 suggestions 去解决问题！这个很重要！
+
 ### 通过 Codespace 编辑
 
 如果你修改的文件不止 1 个，那可以试试 Codespace。Codespace 是一个云端的 VSCode 环境。
