@@ -6,10 +6,12 @@ This page allows you to download the offline packages for different versions of 
 
 | Version  | Architecture | File Size | Package     | Checksum File      | Update Date |
 |----------|--------------|-----------|-------------|--------------------|-------------|
+| [v0.4.3](../../gmagpie/intro/release-notes.md) | AMD 64 | 95.90MB | [:arrow_down: gmagpie_v0.4.3_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/gmagpie_v0.4.3_amd64.tar) | [:arrow_down: gmagpie_v0.4.3_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/gmagpie_v0.4.3_amd64_checksum.sha512sum) | 2023-11-30 |
+| [v0.4.2](../../ghippo/intro/release-notes.md) | AMD 64 | 93.79MB | [:arrow_down: gmagpie_v0.4.2_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/gmagpie_v0.4.2_amd64.tar) | [:arrow_down: gmagpie_v0.4.2_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/gmagpie_v0.4.2_amd64_checksum.sha512sum) | 2023-10-30 |
 | [v0.4.1](../../ghippo/intro/release-notes.md) | AMD 64 | 93.72MB | [:arrow_down: gmagpie_v0.4.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/gmagpie_v0.4.1_amd64.tar) | [:arrow_down: gmagpie_v0.4.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/gmagpie_v0.4.1_amd64_checksum.sha512sum) | 2023-08-29 |
-| [v0.3.2](../../dce/dce-rn/20230630.md) | AMD 64 | 91.85 MB | [:arrow_down: gmagpie_v0.3.2_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/gmagpie_v0.3.2_amd64.tar) | [:arrow_down: gmagpie_v0.3.2_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/gmagpie_v0.3.2_amd64_checksum.sha512sum) | 2023-08-02 |
-| [v0.3.0](../../dce/dce-rn/20230630.md)       | AMD64        | 56.90 MB   | [:arrow_down: gmagpie_v0.3.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/gmagpie_v0.3.0_amd64.tar)         | [:arrow_down: gmagpie_v0.3.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/gmagpie_v0.3.0_amd64_checksum.sha512sum)           | 2023-06-28   |
-| [v0.2.2](../../ghippo/user-guide/report-billing/index.md) | AMD64        | 37.1 MB    | [:arrow_down: gmagpie_v0.2.2_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/gmagpie_v0.2.2_amd64.tar)           | [:arrow_down: gmagpie_v0.2.2_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/gmagpie_v0.2.2_amd64_checksum.sha512sum)          | 2023-5-30    |
+| [v0.3.2](../../ghippo/intro/release-notes.md) | AMD 64 | 91.85 MB | [:arrow_down: gmagpie_v0.3.2_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/gmagpie_v0.3.2_amd64.tar) | [:arrow_down: gmagpie_v0.3.2_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/gmagpie_v0.3.2_amd64_checksum.sha512sum) | 2023-08-02 |
+| [v0.3.0](../../ghippo/intro/release-notes.md) | AMD 64 | 56.90 MB | [:arrow_down: gmagpie_v0.3.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/gmagpie_v0.3.0_amd64.tar) | [:arrow_down: gmagpie_v0.3.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/gmagpie_v0.3.0_amd64_checksum.sha512sum) | 2023-06-28 |
+| [v0.2.2](../../ghippo/intro/release-notes.md) | AMD64 | 37.1 MB | [:arrow_down: gmagpie_v0.2.2_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/gmagpie_v0.2.2_amd64.tar) | [:arrow_down: gmagpie_v0.2.2_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/gmagpie_v0.2.2_amd64_checksum.sha512sum) | 2023-5-30 |
 
 ## Validation
 
@@ -28,7 +30,7 @@ gmagpie_v0.2.2_amd64.tar: ok
 
 ## Installation
 
-Refer to the [Global Management installation process](../../ghippo/install/offline-install.md) for installation instructions.
+Refer to the [Operation Management installation process](../../ghippo/user-guide/report-billing/gmagpie-offline-install.md) for installation instructions.
 
 If this is your first-time installation, please [apply for a free trial](../../dce/license0.md)
 or contact us for authorization at info@daocloud.io or call 400 002 6898.
