@@ -4,8 +4,8 @@
 
 ## 下载
 
-| 版本                                           | 架构  | 文件大小 | 安装包                                                                                                                          | 校验文件                                                                                                                                                      | 更新日期   |
-| ---------------------------------------------- | ----- | -------- | ------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| 版本 | 架构  | 文件大小 | 安装包 | 校验文件 | 更新日期   |
+| ---- | ---- | ------ | ----- | ------- | -------- |
 | [v0.5.2](../../kpanda/intro/release-notes.md) | AMD 64 | 216.70MB | [:arrow_down: kcollie_v0.5.2_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcollie_v0.5.2_amd64.tar) | [:arrow_down: kcollie_v0.5.2_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcollie_v0.5.2_amd64_checksum.sha512sum) | 2023-10-26 |
 | [v0.5.1](../../kpanda/intro/release-notes.md) | AMD 64 | 211.94MB | [:arrow_down: kcollie_v0.5.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcollie_v0.5.1_amd64.tar) | [:arrow_down: kcollie_v0.5.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcollie_v0.5.1_amd64_checksum.sha512sum) | 2023-10-20 |
 | [v0.5.0](../../kpanda/intro/release-notes.md) | AMD 64 | 216.64MB | [:arrow_down: kcollie_v0.5.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcollie_v0.5.0_amd64.tar) | [:arrow_down: kcollie_v0.5.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcollie_v0.5.0_amd64_checksum.sha512sum) | 2023-09-01 |

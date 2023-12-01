@@ -4,8 +4,8 @@
 
 ## 下载
 
-| 版本                                            | 架构 | 文件大小 | 安装包                                                                                                                             |  校验文件 | 更新日期      |
-|-----------------------------------------------| ----- |-------- |---------------------------------------------------------------------------------------------------------------------------------| ---------- |-----------|
+| 版本 | 架构 | 文件大小 | 安装包 |  校验文件 | 更新日期 |
+|----- | --- | ------ | ------ | ------- | ------- |
 | [v0.7.0](../../dowl/intro/release-notes.md) | AMD 64 | 167.29MB | [:arrow_down: dowl_v0.7.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dowl_v0.7.0_amd64.tar) | [:arrow_down: dowl_v0.7.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dowl_v0.7.0_amd64_checksum.sha512sum) | 2023-11-26 |
 | [v0.6.0](../../kpanda/intro/release-notes.md) | AMD 64 | 167.29MB | [:arrow_down: dowl_v0.6.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dowl_v0.6.0_amd64.tar) | [:arrow_down: dowl_v0.6.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dowl_v0.6.0_amd64_checksum.sha512sum) | 2023-11-02 |
 | [v0.5.1](../../kpanda/intro/release-notes.md) | AMD 64 | 167.29MB | [:arrow_down: dowl_v0.5.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dowl_v0.5.1_amd64.tar) | [:arrow_down: dowl_v0.5.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dowl_v0.5.1_amd64_checksum.sha512sum) | 2023-09-12 |
