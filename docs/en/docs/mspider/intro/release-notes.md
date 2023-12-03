@@ -9,6 +9,32 @@ Date: 2023-10-30
 
 This page lists all the Release Notes for each version of Service Mesh, providing convenience for users to learn about the evolution path and feature changes.
 
+## 2023-11-30
+
+### v0.21.0
+
+#### Features
+
+- **Added** support for multi-cloud connectivity in the proprietary mesh.
+- **Added** the ability to select and upgrade to new versions of `Istio (1.19.3, 1.18.5, 1.17.6)` for deploying mesh instances.
+- **Added** `VM Agent` support for health checks and fault recovery of `Istio` processes.
+- **Added** `TrafficLane API` support for operations via `Annotations`.
+
+#### Improvements
+
+- **Optimized** the algorithm mechanism for the service list state and diagnostic state to ensure consistency between diagnostic results and status fields.
+- **Improved** the automatic discovery strategy for managed mesh services to display any service from any cluster with the `mspider.io/managed` label.
+
+#### Fixes
+
+- **Fixed** a deadlock issue during mesh creation, preventing the premature creation of `Sidecar` resources before the initialization of mesh resources.
+- **Fixed** the issue with transparent traffic flow to ensure correct ingress and egress port permissions.
+- **Fixed** excessive detection of `ETCD` by the mesh, resolving the problem of abnormal mesh status display.
+- **Fixed** consistent removal of mesh clusters when removing a cluster, ensuring operational consistency.
+- **Fixed** the issue where the `MCPC Controller` failed to detect changes in `TrafficLane` resources after running for a long time.
+- **Fixed** the simultaneous termination of `pilot-agent` process when stopping a virtual machine to ensure proper resource release.
+- **Fixed** occasional rule failures caused by asynchronous clean-up and installation operations during the startup of a virtual machine.
+
 ## 2023-10-30
 
 ### v0.20.3
