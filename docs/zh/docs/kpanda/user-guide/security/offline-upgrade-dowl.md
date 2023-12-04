@@ -167,7 +167,7 @@
         helm get values dowl -n dowl-system -o yaml > bak.yaml
         ```
 
-    1. 更新 dowl crds
+    1. 更新 dowl crds (需要先解压并进入 original-chart 文件)
 
         ```shell
         helm pull dowl/dowl --version 0.4.0 && tar -zxf dowl-0.4.0.tgz
@@ -200,7 +200,13 @@
         helm get values dowl -n dowl-system -o yaml > bak.yaml
         ```
 
-    2. 执行 `helm upgrade`。
+    1. 更新 dowl crds (需要先解压并进入 original-chart 文件)
+
+        ```shell
+        kubectl apply -f ./crds
+        ```
+
+    1. 执行 `helm upgrade`。
 
         升级前建议您覆盖 bak.yaml 中的 `global.imageRegistry` 为当前使用的镜像仓库地址。
 

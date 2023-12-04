@@ -165,14 +165,7 @@
         helm get values kcoral -n kcoral-system -o yaml > bak.yaml
         ```
 
-    1. 更新 kcoral crds
-
-        ```shell
-        helm pull kcoral/kcoral --version 0.5.0 && tar -zxf kcoral-0.5.0.tgz
-        kubectl apply -f kcoral/crds
-        ```
-
-    1. 执行 `helm upgrade`。
+    2. 执行 `helm upgrade`。
 
         升级前建议您覆盖 bak.yaml 中的 `global.imageRegistry` 字段为当前使用的镜像仓库地址。
 
