@@ -374,6 +374,7 @@ nav:
                       - Cilium 在 nodePort 场景下的访问加速测试: network/performance/cilium-performance/cilium-nodeport.md
                       - Cilium 基于 eBPF 技术实施 Pod 带宽管控场景下的性能测试: network/performance/cilium-performance/cilium-bandwidth.md
                   - 基于 eBPF 技术实施网络策略场景下的性能测试: network/performance/ebpf-performance.md
+                  - Ingress 性能测试: network/performance/ingress-performance.md
                   - Egress 性能测试: network/performance/egress-performance.md
               - 集成 Spiderpool:
                   - Release Notes: network/modules/spiderpool/releasenotes.md
