@@ -23,4 +23,4 @@ hide:
 
 点击左侧导航栏上的`容器管理`，然后点击`虚拟机`，进入列表页面，点击列表右侧的 `︙`，支持通过控制台访问（VNC）的方式访问虚拟机。
 
-![创建快照](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/console02.png)
+![vnc](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/console02.png)

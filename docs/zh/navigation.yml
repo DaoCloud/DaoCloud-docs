@@ -531,7 +531,6 @@ nav:
                   - 快照管理: virtnest/quick-start/snapshot.md
                   - 实时迁移: virtnest/quick-start/live-migration.md
                   - 通过 NodePort 访问虚拟机: virtnest/quick-start/nodeport.md
-                  - Rook Ceph 部署流程: virtnest/quick-start/rook-ceph.md
                   - 离线升级: virtnest/install/offline-install.md
       - 可观测:
           - 可观测性:
