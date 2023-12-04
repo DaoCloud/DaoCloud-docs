@@ -95,7 +95,7 @@
 - 用户名/密码：可以通过用户名和密码登录至虚拟机。
 - SSH：选择 SSH 登录方式时可为虚拟机绑定 SSH 密钥，用于日后登录虚拟机。
 
-![登录设置](../images/createvm08.png)
+![登录设置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/createvm08.png)
 
 ## YAML 创建
 
@@ -105,7 +105,7 @@
 
 ![yaml 创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/createvm09.png)
 
-??? note "点击查看创建定时任务的 YAML 示例"
+??? note "点击查看创建虚拟机的 YAML 示例"
 
     ```yaml
     apiVersion: kubevirt.io/v1
