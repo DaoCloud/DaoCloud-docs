@@ -698,7 +698,7 @@ nav:
                   - 网关对接服务网格: skoala/best-practice/gateway-mesh.md
                   - 网关请求日志添加自定义属性: skoala/best-practice/add-custom-attributes.md
               - 故障排查:
-                  - skoala-init从v0.11.0升级到v0.12.0时报错:  unknown field "x-kubernets-validations" ....: skoala/troubleshoot/auth-server.md                
+                  - skoala-init的x-kubernets-validations未知字段问题: skoala/troubleshoot/auth-server.md                
               - 性能测试:
                   - 云原生网关吞吐量测试: skoala/tests/gateway-stress-test.md
                   - Nacos 压测报告: skoala/tests/nacos-stress-test.md
