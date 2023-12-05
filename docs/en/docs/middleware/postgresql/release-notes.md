@@ -2,17 +2,27 @@
 
 This page lists the Release Notes of the PostgreSQL database, so that you can understand the evolution path and feature changes of each version.
 
-### 2023-10-31
+## 2023-11-30
 
-#### v0.6.0
+### v0.7.0
 
-##### Enhancements
+#### Improvements
 
-- **New Feature:** Added offline upgrade functionality.
-- **New Feature:** Added restart functionality for instances.
-- **New Feature:** Added support for managing external instances.
-- **Bug Fix:** Fixed Pod list display to show Host IP.
-- **Bug Fix:** Fixed cloudshell permissions issue.
+- **Added** support for setting access whitelist for Mcamel-PostgreDB
+- **Added** support for recording operation audit logs
+- **Improved** prompt when instance list information is not obtained
+
+## 2023-10-31
+
+### v0.6.0
+
+#### Improvements
+
+- **New** Added offline upgrade functionality.
+- **New** Added restart functionality for instances.
+- **New** Added support for managing external instances.
+- **Bug Fix** Fixed Pod list display to show Host IP.
+- **Bug Fix** Fixed cloudshell permissions issue.
 
 ## 2023-08-31
 
@@ -61,7 +71,7 @@ This page lists the Release Notes of the PostgreSQL database, so that you can un
 - **Added** Added ability to install `Mcamel-PostgreSQL` PgAdmin offline mirror version.
 - **Added** `Mcamel-PostgreSQL` PgAdmin supports LoadBalancer type.
 
-#### upgrade
+#### Upgrade
 
 - **Optimized** `Mcamel-PostgreSQL` Exporter does not have permission to connect to PostgreSQL in the case of IPV6
 - **Optimized** `Mcamel-PostgreSQL` scheduling strategy adds a sliding button

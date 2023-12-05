@@ -2,15 +2,24 @@
 
 This page lists the Release Notes of Kafka message queue, so that you can understand the evolution path and feature changes of each version.
 
-### 2023-10-31
+## 2023-11-30
 
-#### v0.9.0
+### v0.10.0
 
-##### Enhancements
+#### Improvements
 
-- **New Feature:** Added offline upgrade functionality.
-- **New Feature:** Added restart functionality for instances.
-- **Bug Fix:** Fixed cloudshell permissions issue.
+- **Added** support for recording operation audit logs
+- **Improved** prompt when instance list information is not obtained
+
+## 2023-10-31
+
+### v0.9.0
+
+#### Improvements
+
+- **New** Added offline upgrade functionality.
+- **New** Added restart functionality for instances.
+- **Bug Fix** Fixed cloudshell permissions issue.
 
 ## 2023-08-31
 
@@ -72,8 +81,8 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 #### Optimization
 
 - **Optimized** `mcamel-kafka` optimizes Kafka's default configuration.
-- **upgrade** golang.org/x/net to v0.7.0
-- **Upgrade** GHippo SDK to v0.14.0
+- **Upgraded** golang.org/x/net to v0.7.0
+- **Upgraded** GHippo SDK to v0.14.0
 
 ## 2023-02-23
 

@@ -21,7 +21,7 @@
 
 - Data access 用户数据访问：Fluid 提供了一个统一的 Fuse 接口给用户应用，该接口完全兼容 POSIX 协议。用户应用就像访问本地数据一样，访问远程数据集。
 
-## 通过 Helm 模版部署 Fluid
+## 通过 Helm 模板部署 Fluid
 
 DCE 5.0 支持了 Fluid， 并将其作为 Addon 集成了应用商店中。
 

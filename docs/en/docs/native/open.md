@@ -898,7 +898,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Kubernetes Gateway API v0.8.0 released](https://github.com/kubernetes-sigs/gateway-api/releases/tag/v0.8.0)
 
-    Release features: Introduction of Service Grid support, support for CEL authentication (fully supported in Kubernetes 1.25+ only).
+    Release features: Introduction of Service Mesh support, support for CEL authentication (fully supported in Kubernetes 1.25+ only).
 
 - [Kubernetes Cluster API v1.4.0 Released](https://github.com/kubernetes-sigs/cluster-api/releases/tag/v1.4.0)
 
@@ -1032,7 +1032,7 @@ This page lists activity in cloud native open source projects in alphabetical or
      [KubeWharf](https://github.com/kubewharf) is a distributed operating system based on Kubernetes, which consists of a set of cloud native components, focusing on improving system scalability, resource utilization, and scalability. Observability, security, etc., support Cases such as large-scale multi-tenant clusters, offline mixing, and storage.
      The first batch of KubeWharf plans to open source three projects: KubeBrain, a high-performance meta-information storage system, KubeGateway, a seven-layer gateway for kube-apiserver, and KubeZoo, a lightweight multi-tenant solution.
 
-- [Kuma Service Grid Project v2.5.0 released (CNCF project)](https://github.com/kumahq/kuma/releases/tag/2.5.0)
+- [Kuma Service Mesh Project v2.5.0 released (CNCF project)](https://github.com/kumahq/kuma/releases/tag/2.5.0)
 
     Release Features: Supports geo-aware load balancing capabilities within and across regions, supports Gateway API v1, supports Envoy 1.28, uses incremental KDS in Global CP (Global Control Plane) and Zone CP (Zone Control Plane) protocols to dramatically reduce resource consumption, allows access to accessible services from MeshTrafficPermissions. accessible services from MeshTrafficPermissions.
 
@@ -1103,7 +1103,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: support for virtual machine shared file system virtiofs, support for Apple's virtualization framework Virtualization.framework, and support for Containerd command-line tool nerdctl 1.1.0.
 
-- [Linkerd Service Grid v2.14.0 released (CNCF project)](https://github.com/linkerd/linkerd2/releases/tag/stable-2.14.0)
+- [Linkerd Service Mesh v2.14.0 released (CNCF project)](https://github.com/linkerd/linkerd2/releases/tag/stable-2.14.0)
 
     Release features: New direct Pod-to-Pod multi-cluster service mirroring, support for Gateway API HTTPRoute resources.
 

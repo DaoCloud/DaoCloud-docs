@@ -2,18 +2,28 @@
 
 This page lists the release notes for the Redis Cache service, providing you with information about the evolution and feature changes in each version.
 
+## 2023-11-30
+
+### v0.13.0
+
+#### Improvements
+
+- **Added** support for recording operation audit logs
+- **Improved** prompt when instance list information is not obtained
+- **Improved** display of Mcamel-Redis monitoring dashboard in both Chinese and English
+
 ### 2023-10-31
 
 #### v0.12.0
 
-##### Enhancements
+##### Improvements
 
-- **New Feature:** Added offline upgrade functionality.
-- **New Feature:** Added restart functionality for instances.
-- **New Feature:** Added parameter template functionality.
-- **New Feature:** Added cross-cluster recovery for instances.
-- **Enhancement:** Optimized the calculation method for master-slave delay.
-- **Bug Fix:** Fixed cloudshell permissions issue.
+- **New** Added offline upgrade functionality.
+- **New** Added restart functionality for instances.
+- **New** Added parameter template functionality.
+- **New** Added cross-cluster recovery for instances.
+- **Improved** Optimized the calculation method for master-slave delay.
+- **Bug Fix** Fixed cloudshell permissions issue.
 
 ## 2023-08-31
 

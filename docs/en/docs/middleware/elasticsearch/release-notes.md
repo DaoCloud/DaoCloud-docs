@@ -2,15 +2,24 @@
 
 This page lists the Release Notes of Elasticsearch indexing service, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-11-30
+
+### v0.12.0
+
+#### Improvements
+
+- **Added** support for recording operation audit logs
+- **Improved** prompt when instance list information is not obtained
+
 ### 2023-10-31
 
 #### v0.11.0
 
-##### Enhancements
+##### Improvements
 
-- **New Feature:** Added offline upgrade functionality.
-- **New Feature:** Added restart functionality for instances.
-- **Bug Fix:** Fixed cloudshell permissions issue.
+- **New** Added offline upgrade functionality.
+- **New** Added restart functionality for instances.
+- **Bug Fix** Fixed cloudshell permissions issue.
 
 ## 2023-08-31
 
@@ -78,10 +87,10 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 - **Added** Enable traces according to parameter configuration when installing `mcamel-elasticsearch`.
 - **Added** `mcamel-elasticsearch` Kibana supports LoadBalancer type.
 
-#### upgrade
+#### Upgrade
 
-- **upgrade** golang.org/x/net to v0.7.0
-- **Upgrade** GHippo SDK to v0.14.0
+- **Upgraded** golang.org/x/net to v0.7.0
+- **Upgraded** GHippo SDK to v0.14.0
 
 ## 2023-02-23
 
@@ -99,9 +108,9 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 
 - **Added** log view operation instructions, support custom query, export and other features.
 
-#### upgrade
+#### Upgrade
 
-- **Upgrade** `mcamel-elasticsearch` upgrade offline mirror detection script.
+- **Upgraded** `mcamel-elasticsearch` upgrade offline mirror detection script.
 
 #### fix
 
@@ -144,7 +153,7 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 - **Added** Validation Service annotation
 - **Fixed** After updating the instance, the cluster uses the wrong image, resulting in abnormal cluster status
 - **Fixed** When using NodePort, the update instance reported an error
-- **Upgrade** depends on eck operator version 2.3.0
+- **Upgraded** depends on eck operator version 2.3.0
 - **Optimized** In some versions of K8s clusters, the default FD is insufficient and cannot be started
 - **Optimized** Reduce the running permissions of the elasticsearch container
 
