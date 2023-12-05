@@ -2,6 +2,14 @@
 
 本页列出 MongoDB 数据库的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2023-11-30
+
+### v0.5.0
+
+#### 新增
+
+- **新增** Mcamel-MangoDB 开启控制台 MongoDB Express
+
 ## 2023-10-31
 
 ### v0.4.0
