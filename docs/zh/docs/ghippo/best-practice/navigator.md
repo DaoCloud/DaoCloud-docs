@@ -55,7 +55,7 @@ spec:
     zh-CN: 运营管理
     en-US: Operations Management
   url: ./gmagpie
-  category: management # 与parentGProduct二选一，用于区分一级菜单还是二级菜单，与NavigatorCategory的spec.name字段对应来完成匹配，也可以与NavigatorCategory的中文名称匹配
+  category: management # 与parentGProduct二选一，用于区分一级菜单还是二级菜单，与NavigatorCategory的spec.name字段对应来完成匹配
   parentGProduct: ghippo # 与category二选一，用于区分一级菜单还是二级菜单, 若添加该字段，则会忽视掉menus字段，并将该菜单作为二级菜单插入到与gproduct为ghippo的一级菜单中
   menus: # 二级菜单
     - name: Access Control
