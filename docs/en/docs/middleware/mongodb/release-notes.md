@@ -2,15 +2,23 @@
 
 This page lists the release notes for MongoDB databases, allowing you to understand the evolution path and feature changes for each version.
 
-### 2023-10-31
+## 2023-11-30
 
-#### v0.4.0
+### v0.5.0
 
-##### Enhancements
+#### New Features
 
-- **New Feature:** Added offline upgrade functionality.
-- **New Feature:** Added restart functionality for instances.
-- **Bug Fix:** Fixed cloudshell permissions issue.
+- **Added** Mcamel-MangoDB console MongoDB Express
+
+## 2023-10-31
+
+### v0.4.0
+
+#### Improvements
+
+- **New** Added offline upgrade functionality.
+- **New** Added restart functionality for instances.
+- **Bug Fix** Fixed cloudshell permissions issue.
 
 ## 2023-08-31
 
@@ -29,11 +37,11 @@ This page lists the release notes for MongoDB databases, allowing you to underst
 
 - **Added** Configuration capabilities for the `pvc` where the `log` directory is located.
 
-#### Enhancements
+#### Improvements
 
-- **Enhanced** Added anti-affinity default label to the create instance dialog, simplifying the configuration process.
-- **Enhanced** Ability to create MongoDB instances in namespaces other than the one where the Operator is located.
-- **Enhanced** Added display information related to frontend interface permissions.
+- **Improved** Added anti-affinity default label to the create instance dialog, simplifying the configuration process.
+- **Improved** Ability to create MongoDB instances in namespaces other than the one where the Operator is located.
+- **Improved** Added display information related to frontend interface permissions.
 
 ## 2023-06-30
 

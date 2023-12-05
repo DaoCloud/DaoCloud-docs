@@ -6,7 +6,7 @@
 
 1. 在左侧导航栏中，选择`告警中心` -> `消息模板`。
 
-   - Insight 默认内置中英文两个模版，以便用户使用。
+   - Insight 默认内置中英文两个模板，以便用户使用。
 
     ![点击按钮](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/template00.png)
 

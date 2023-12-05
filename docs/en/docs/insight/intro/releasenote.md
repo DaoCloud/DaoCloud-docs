@@ -3,6 +3,28 @@
 This page lists the Release Notes of Insight Observability, so that you can understand
 the evolution path and feature changes of each version.
 
+## 2023.11.30
+
+### Insight Server: v0.22.0
+
+#### New Features
+
+- **Added** support for network connectivity testing
+- **Added** ability to import alarm policies via YAML
+- **Added** support for operation audit logging
+
+#### Improvements
+
+- **Improved** automatic deployment of OTel instrumentation CR during installation
+
+#### Fixes
+
+- **Fixed** issue with Elasticsearch index initialization failure
+
+### Insight Agent: v0.22.0
+
+- **Fixed** compatibility issue with Fluentbit directory collection and DCE 4.0
+
 ## 2023.10.31
 
 !!! note
@@ -17,7 +39,7 @@ the evolution path and feature changes of each version.
 
 - **New** Namespace-level monitoring.
 
-#### Enhancements
+#### Improvements
 
 - **Enhancement** Updated navigation structure in Insight.
 - **Enhancement** Clicking on a link distribution graph allows quick access to proper link details.
@@ -48,11 +70,11 @@ the evolution path and feature changes of each version.
 
 #### Optimization
 
-- **Optimization** Added prompts for cluster status abnormalities
-- **Optimization** Improved filtering conditions for logs
-- **Optimization** Allow adding duplicate tags when creating silent alert conditions
-- **Optimization** Node logs now support filtering by file path
-- **Optimization** by adding built-in alerting policies for CoreDNS.
+- **optimized** Added prompts for cluster status abnormalities
+- **optimized** Improved filtering conditions for logs
+- **optimized** Allow adding duplicate tags when creating silent alert conditions
+- **optimized** Node logs now support filtering by file path
+- **optimized** by adding built-in alerting policies for CoreDNS.
 
 #### Bug Fixes
 
@@ -68,7 +90,7 @@ the evolution path and feature changes of each version.
 
 #### Optimization
 
-- **Optimization** Support for consuming log and linked data via Kafka
+- **optimized** Support for consuming log and linked data via Kafka
 
 #### Bug Fixes
 
@@ -280,7 +302,7 @@ the evolution path and feature changes of each version.
 - **Optimized** The scatter diagram of the trace query is updated to a bubble diagram
 - **Optimized** reduce Prometheus's metrics retention time to 2 hours
 - **Optimized** The default parameter of retentionPeriod of VMStorage is adjusted to 1 month
-- **Upgrade** fluentbit helm chart version to 0.24.0
+- **Upgraded** fluentbit helm chart version to 0.24.0
 - **Updated** `tailing-sidecar/operator` mirror
 - **Updated** Global collection rule interval is 60 seconds
 
@@ -329,7 +351,7 @@ the evolution path and feature changes of each version.
 
 - **Optimized** log list field display
 - **Optimized** the judgment logic of insight-agent
-- **Upgrade** Jaeger Chart version upgraded from v0.62.1 to 0.65.1
+- **Upgraded** Jaeger Chart version upgraded from v0.62.1 to 0.65.1
 
 ### fix
 
@@ -353,9 +375,9 @@ the evolution path and feature changes of each version.
 
 - **Optimized** PromQL queries support raw metrics
 - **Optimized** the style of the topology map
-- **Upgrade** Built-in MySQL image version, upgraded from v5.7.34 to v8.0.29.
-- **Upgrade** Fluentbit ARM architecture helm Chart version from
-- **Upgrade** kube-prometheus-stack helm Chart version upgraded from v39.6.0 to v41.9.1
+- **Upgraded** Built-in MySQL image version, upgraded from v5.7.34 to v8.0.29.
+- **Upgraded** Fluentbit ARM architecture helm Chart version from
+- **Upgraded** kube-prometheus-stack helm Chart version upgraded from v39.6.0 to v41.9.1
 - **Updated** used Bitnami mirror, including grafana-operator, grafana, kubernetes-event-exporter
 - **Update** prometheus-related API proxy address, change `/prometheus` to `/apis/insight.io/prometheus`
 

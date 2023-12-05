@@ -19,7 +19,7 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
 1. 登录平台，进入`容器管理`-->`待安装 GPU Operator 的集群`-->进入集群详情。
 
-2. 在 `Helm 模版` 页面，选择 `全部仓库`，搜索 `gpu-operator` 。
+2. 在 `Helm 模板` 页面，选择 `全部仓库`，搜索 `gpu-operator` 。
 
 3. 选择 `gpu-operator`，点击`安装`。
 

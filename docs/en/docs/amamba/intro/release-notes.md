@@ -3,6 +3,32 @@
 This page lists the release notes for Workbench to help you understand
 the development and feature changes in each version.
 
+## 2023-11-30
+
+### v0.22.0
+
+#### New Features
+
+- **Added** sensitive operations to audit log
+- **Added** support for adding global environment variables to pipelines
+- **Added** support for deploying applications and updating application images in pipelines
+- **Added** support for deploying SonarQube toolchain
+
+#### Improvements
+
+- **Improved** API to support searching Jenkins node labels
+- **Improved** API to support integrating Jenkins across clusters
+- **Improved** pipeline templates with parameter validation
+- **Improved** each component service to expose golang metrics and pprof pages
+- **Improved** API to support rolling back native application versions
+- **Improved** deployment of applications from git/jar using serviceAccountToken to avoid permission escape
+
+#### Fixes
+
+- **Fixed** error when exporting application template and creating version for native applications without istio installed in the target cluster
+- **Fixed** failure to fetch git/tag when ArgoCD is installed in a specified namespace
+- **Fixed** issue with content changing after saving pipeline templates.
+
 ## 2023-10-31
 
 ### v0.21.0

@@ -1628,7 +1628,7 @@
 
 - [vcluster 虚拟 Kubernetes 集群实现方案 v0.16.0 发布](https://github.com/loft-sh/vcluster/releases/tag/v0.16.0)
 
-    版本特性：支持 Kubernetes v1.28、允许用户自定义的 Pod 条件和节点污点、支持不使用模版创建 vcluster、添加 vcluster 和 vcluster cli 二进制 sbom、改进 coredns 集成。
+    版本特性：支持 Kubernetes v1.28、允许用户自定义的 Pod 条件和节点污点、支持不使用模板创建 vcluster、添加 vcluster 和 vcluster cli 二进制 sbom、改进 coredns 集成。
 
 - [vcluster 虚拟 Kubernetes 集群实现方案 v0.15.0 发布](https://github.com/vmware-tanzu/velero/releases/tag/v1.11.0)
 

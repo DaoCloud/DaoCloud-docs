@@ -8,14 +8,14 @@
 
 #### 功能
 
-- 自动展开active导航栏
+- 自动展开 active 导航栏
 - 用户名支持下划线 SDK
-- DCE4 迁移到 DCE5 方案验证支持
+- DCE 4.0 迁移到 DCE 5.0 方案验证支持
 - `运营管理` 添加列表精准搜索
 
 #### 优化
 
-- 关于平台-产品版本子模块 kcoral ,dowl ，kcollie ,virtnest 支持中文
+- 关于平台 - 产品版本子模块 kcoral、dowl、kcollie、virtnest 支持中文
 
 #### 修复
 

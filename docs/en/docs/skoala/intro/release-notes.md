@@ -2,6 +2,42 @@
 
 This page lists the release notes of Microservices to help you learn its feature development and bug fixing progress.
 
+## 2023-12-01
+
+### v0.30.0
+
+#### Fixes
+
+- **Fixed** issue with incorrect running status of gateway
+- **Fixed** status check issue with Nacos Operator
+- **Fixed** status check issue with edge instance of mesh service
+
+#### Improvements
+
+- **Improved** gateway-related APIs
+- **Improved** query logic for gateway logs to support custom field queries
+
+## 2023-11-26
+
+### v0.29.0
+
+#### New Features
+
+- **Added** API documentation management and API querying
+- **Added** visualization of traffic swimlane for gray release, displaying the internal gray release swimlane division and data flow through views
+
+#### Fixes
+
+- **Fixed** logic for grid instance list in grid mode governance
+- **Fixed** synchronization issues with managed Nacos controllers
+
+#### Improvements
+
+- **Improved** gateway service list API and added access address display feature
+- **Improved** logic for synchronizing API updates after modifying services
+- **Improved** loading speed of gateway resource list
+- **Improved** configuration details for gateway timeout settings
+
 ### 2023-11-07
 
 #### V0.28.1
@@ -42,7 +78,7 @@ This page lists the release notes of Microservices to help you learn its feature
 - **Fixed** the issue with Sentinel Grafana monitoring panel.
 - **Fixed** the accuracy issue with overall permissions.
 
-#### Enhancements
+#### Improvements
 
 - **Improved** the update logic of the gateway, which does not allow disabling HTTPS at the gateway level when the domain has enabled HTTPS.
 - **Improved** the accuracy of audit log events.
@@ -118,7 +154,7 @@ This page lists the release notes of Microservices to help you learn its feature
 - **Fixed** Null pointer exception in swimlane list when error reason is empty
 - **Fixed** Non-functional Skoala-init Chart form mode configuration
 
-#### Enhancements
+#### Improvements
 
 - **Improved** Changed the deletion of swimlane services from delete method to put method as required.
 - **Improved** Removed redundant permission dependencies and improved internal permission dependencies

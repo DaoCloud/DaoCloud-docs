@@ -2,6 +2,32 @@
 
 This page provides the Release Notes for container management to help you understand the evolution path and feature changes from release to release.
 
+## 2023-12-05
+
+### v0.23.0
+
+#### New Features
+
+- **Added** audit logs for key functionalities such as cluster creation, deletion, access, unbinding, and upgrade; node access and unbinding; creation/deletion of stateless, stateful, daemon, task, and cron tasks; deployment/deletion of Helm applications
+- **Added** support for integrating with ghippo LDAP user systems with usernames that exceed the legal range of K8s
+- **Added** lifecycle management for large charts such as insight-agent
+- **Added** support for hot reloading of ConfigMaps/Secrets
+- **Added** support for subPathExpr in data storage
+
+#### Improvements
+
+- **Improved** display of the namespace to which an event belongs
+- **Improved** status of ETCD backup strategy
+- **Improved** error message when MySQL fails
+- **Improved** workload node affinity/workload affinity/workload anti-affinity
+- **Improved** support for removing abnormal nodes
+
+#### Fixes
+
+- **Fixed** issue with workspace exceeding total quota for allocated resources
+- **Fixed** security vulnerability of SQL injection
+- **Fixed** issue with failure to create UOS system clusters
+
 ## 2023-11-06
 
 ### v0.22.0
@@ -82,7 +108,7 @@ This page provides the Release Notes for container management to help you unders
 - **Added** Support for vGPU, with automatic detection of node CPUs and support
   for adding negative CPU quota in workload configuration.
 
-#### Enhancements
+#### Improvements
 
 - **Improved** Optimized cluster integration logic. When integrating a cluster with a new management platform
   after the initial integration, it is necessary to clean up the data redundancy from the old management platform
