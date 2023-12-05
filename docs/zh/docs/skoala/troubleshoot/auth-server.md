@@ -33,7 +33,7 @@ unknown field "x-kubernets-validations" in io.k8s.apiextensions-apiserver....
 
 - [Rollout, Upgrade and Rollback Planning](https://github.com/kubernetes/enhancements/blob/master/keps/sig-api-machinery/2876-crd-validation-expression-language/README.md#rollout-upgrade-and-rollback-planning)
 
-    ![Rollout](./images/Rollout,%20Upgrade%20and%20Rollback%20Planning.jpg)
+    ![Rollout](./images/rollout.jpg)
 
 - [KEP-2876：使用通用表达式语言（CEL）来验证 CRD](https://docs.daocloud.io/blogs/230412-k8s-1.27.html#kep-2876cel-crd)
 
