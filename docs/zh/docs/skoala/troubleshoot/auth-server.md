@@ -13,21 +13,21 @@ unknown field "x-kubernets-validations" in io.k8s.apiextensions-apiserver....
 
 1. Q: 操作步骤是否正确?
 
-   A: 先 kubectl apply CRD(s)，再 helm upgrade，所以此操作步骤无误，排除操作问题.
+    A: 先 kubectl apply CRD(s)，再 helm upgrade，所以此操作步骤无误，排除操作问题.
 
 1. Q: 版本是 QA 测试通过版本，且内部测试时升级功能正常?
 
-   A: 确认无误。
+    A: 确认无误。
 
 1. Q: 确认使用版本与测试时使用的 k8s 集群版本?
 
-   A: v1.21 (使用版本) ，v1.26 (测试版本)。
+    A: v1.21 (使用版本) ，v1.26 (测试版本)。
 
 1.  Q: 至此及根据相应的错误截图，初步推断是客户 k8s 集群版本与相应 CRD 不匹配，
     同时 skoala-init 为微服务相关的所有的服务提供初始条件配置，即其包含有多个 CRD，
     而根据 skoala-init v0.12.0 的 ChangeLog 可知，在此版本中 Gateway-API 的 CRD 有过升级，所以得出:<br>
 
-    A: 由 Gateway-API 相关升级引发。
+     A: 由 Gateway-API 相关升级引发。
 
 ## 参考文档:
 
