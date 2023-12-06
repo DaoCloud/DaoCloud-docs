@@ -6,15 +6,15 @@ The micro-service engine supports group management of micro-services based on th
 
 1. Enter `Microservices` -- > `Traditional Microservices` -- > `Hosted Registry` module, click the name of the target registry.
 
-   ![](../../images/config01.png)
+   ![Choose hosted registry](../../images/config01.png)
 
 2. Click `Configuration List` in the left navigation bar, then click `Create` in the upper right corner.
 
-   ![](../../images/config02.png)
+   ![Choose configuration](../../images/config02.png)
 
 3. Enter the configuration information
 
-   ![](../../images/config03.png)
+   ![Enter the configuration information](../../images/config03.png)
 
     - Namespace: Select the micro-service namespace to which the current configuration belongs. The default is `public`
 
@@ -41,7 +41,7 @@ The micro-service engine supports group management of micro-services based on th
 
     - More Configurations -> Owning Application (Optional) : Select the application to which the current configuration belongs.
 
-      ![](../../images/config04.png)
+      ![More configurations](../../images/config04.png)
 
 4. Click `OK` in the bottom right corner of the page.
 
@@ -49,18 +49,18 @@ The micro-service engine supports group management of micro-services based on th
 
 1. Enter `Microservices` -- > `Traditional Microservices` -- > `Hosted Registry` module, click the name of the target registry.
 
-   ![](../../images/config01.png)
+   ![Choose hosted registry](../../images/config01.png)
 
 2. In the left navigation bar, click `Configuration Management` and click the Data ID of the target configuration.
 
-   ![](../../images/config05.png)
+   ![Choose configuration](../../images/config05.png)
 
 3. You can view the basic configuration information, configuration content, historical version, listener, and example code.
 
     - Novice users can quickly consume this configuration using client-side programming with the help of sample code, lowering the threshold for novice users.
     - You can query the listener of the current configuration and the MD5 checksum to learn about the microservice that is using this configuration and whether the configuration changes are successfully pushed to the client.
 
-      ![](../../images/config06.png)
+      ![View configuration](../../images/config06.png)
 
 ## The historical version is rolled back
 
@@ -68,26 +68,74 @@ The micro-service configuration list records the historical version of the confi
 
 1. Enter `Microservices` -- > `Traditional Microservices` -- > `Hosted Registry` module, click the name of the target registry.
 
-   ![](../../images/config01.png)
+   ![Choose hosted registry](../../images/config01.png)
 
 2. In the left navigation bar, click `Configuration Management` and click the Data ID of the target configuration.
 
-   ![](../../images/config05.png)
+   ![Choose configuration](../../images/config05.png)
 
 3. Click the `History Version` TAB to find the corresponding record. Click `ⵗ` on the right of the record and select `Rollback`.
 
-   ![](../../images/config07.png)
+   ![View history version](../../images/config07.png)
 
 4. Compare the version differences and confirm, then click `Rollback` in the lower right corner.
 
-   ![](../../images/config08.png)
+   ![Rollback](../../images/config08.png)
 
-## The configuration was updated or deleted
+## The GA configuration was updated
 
 1. Enter `Microservices` -- > `Traditional Microservices` -- > `Hosted Registry` module, click the name of the target registry.
 
-   ![](../../images/config01.png)
+   ![Choose hosted registry](../../images/config01.png)
 
-2. Click `Configuration Management` in the left navigation bar, and click `ⵗ` on the right of the target configuration to update or delete as required.
+2. Click `Configuration Management` in the left navigation bar, and click `ⵗ` on the right of the target configuration and select `Edit GA Release`.
 
-   ![](../../images/config09.png)
+   ![Edit GA release](../../images/config09.png)
+
+3. Modify configuration content，and click `GA Release`。
+
+   ![Update GA release](../../images/config10.png)
+
+## New Beta configuration
+
+1. Enter `Microservices` -- > `Traditional Microservices` -- > `Hosted Registry` module, click the name of the target registry.
+
+   ![Choose hosted registry](../../images/config01.png)
+
+2. Click `Configuration Management` in the left navigation bar, and click `ⵗ` on the right of the target configuration and select `Edit GA Release`.
+
+   ![Edit GA release](../../images/config09.png)
+
+3. Enable `Beta Release`, select service instance from the `Beta IP` dropdown menu, modify the configuration content, and click `Beta Release`.
+   
+   - When configuring Beta release, the Data ID of the configuration needs to match the microservice name. Otherwise, it will not be possible to select service instance.
+
+   ![Create beta release](../../images/config11.png)
+
+## The Beta configuration was updated
+
+1. Enter `Microservices` -- > `Traditional Microservices` -- > `Hosted Registry` module, click the name of the target registry.
+
+   ![Choose hosted registry](../../images/config01.png)
+
+2. Click `Configuration Management` in the left navigation bar, and click `ⵗ` on the right of the target configuration and select `Edit Beta Release`.
+
+   ![Edit beta release](../../images/config12.png)
+
+3. Modify configuration content，and click button in the lower right corner to delete beta release or publish GA release as required.
+
+   - Click `Delete Beta`，then the beta configuration will be deleted.
+   - Click `GA Release`,then the beta configuration will be published as GA release，and the original GA release will be deleted and is no longer effective.
+
+   ![Update beta release](../../images/config13.png)
+
+
+## The configuration was deleted
+
+1. Enter `Microservices` -- > `Traditional Microservices` -- > `Hosted Registry` module, click the name of the target registry.
+
+   ![Choose hosted registry](../../images/config01.png)
+
+2. Click `Configuration Management` in the left navigation bar, and click `ⵗ` on the right of the target configuration to delete.
+
+   ![Delete configuration](../../images/config09.png)
