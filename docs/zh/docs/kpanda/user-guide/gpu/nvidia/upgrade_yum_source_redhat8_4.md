@@ -64,7 +64,7 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
     下载 extension-2 中的 rpm 包：
 
     ```bash
-    reposync  -p redhat-base-repo  -n --repoid=extension-1
+    reposync  -p redhat-base-repo  -n --repoid=extension-2
     ```
 
 ### 步骤二：下载 elfutils-libelf-devel-0.187-4.el8.x86_64.rpm 包
@@ -93,18 +93,17 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
 以下操作在步骤一中 global 集群的 master 节点上执行。
 
-1. 创建 yum repo 目录：
+1. 进入 yum repo 目录：
 
     ```bash
-    mkdir /root/redhat-base-repo/extension-1/repodata
-    mkdir /root/redhat-base-repo/extension-2/repodata
+    cd ~/redhat-base-repo/extension-1/Packages
+    cd ~/redhat-base-repo/extension-2/Packages
     ```
 
 2. 生成目录 repo 索引：
 
     ```bash
-    createrepo -po ~/redhat-base-repo/extension-1/repodata ~/redhat-base-repo/extension-1/Packages
-    createrepo -po ~/redhat-base-repo/extension-2/repodata ~/redhat-base-repo/extension-2/Packages
+    createrepo_c ./
     ```
 
 至此，您已经生成了内核为 `4.18.0-305.el8.x86_64` 的离线的 yum 源：`redhat-base-repo`。
@@ -176,14 +175,14 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
     ```bash
     # 文件名称必须为 redhat.repo，否则安装 gpu-operator 时无法被识别
-    cat > redhat.repo.repo << EOF
+    cat > redhat.repo << EOF
     [extension-0]
-    baseurl = http://10.5.14.200:9000/redhat-base/redhat-base-repo #步骤一中，放置 yum 源的文件服务器地址
+    baseurl = http://10.5.14.200:9000/redhat-base/redhat-base-repo/Packages #步骤一中，放置 yum 源的文件服务器地址
     gpgcheck = 0
     name = kubean extension 0
     
     [extension-1]
-    baseurl = http://10.5.14.200:9000/redhat-base/redhat-base-repo #步骤一中，放置 yum 源的文件服务器地址
+    baseurl = http://10.5.14.200:9000/redhat-base/redhat-base-repo/Packages #步骤一中，放置 yum 源的文件服务器地址
     gpgcheck = 0
     name = kubean extension 1
     EOF

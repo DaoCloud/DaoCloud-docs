@@ -54,9 +54,9 @@ spec:
         resources:
             limits:
               cpu: 250m
-                iluvatar.ai/vcuda-core: '1'
-                iluvatar.ai/vcuda-memory: '200'
-                memory: 512Mi
+              iluvatar.ai/vcuda-core: '1'
+              iluvatar.ai/vcuda-memory: '200'
+              memory: 512Mi
             requests:
                 cpu: 250m
                 memory: 512Mi

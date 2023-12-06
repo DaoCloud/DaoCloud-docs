@@ -93,18 +93,17 @@ Perform the following steps on a node with internet access. Before proceeding, e
 
 Perform the following steps on the master node of the Global cluster mentioned in Step 1.
 
-1. Create the yum repository directories:
+1. Enter the yum repository directories:
 
     ```bash
-    mkdir /root/redhat-base-repo/extension-1/repodata
-    mkdir /root/redhat-base-repo/extension-2/repodata
+    cd ~/redhat-base-repo/extension-1/Packages
+    cd ~/redhat-base-repo/extension-2/Packages
     ```
 
 2. Generate the repository index for the directories:
 
     ```bash
-    createrepo -po ~/redhat-base-repo/extension-1/repodata ~/redhat-base-repo/extension-1/Packages
-    createrepo -po ~/redhat-base-repo/extension-2/repodata ~/redhat-base-repo/extension-2/Packages
+    createrepo_c ./
     ```
 
 You have now generated the offline yum source named `redhat-base-repo` for kernel version `4.18.0-305.el8.x86_64`.
@@ -177,12 +176,12 @@ Perform the following steps on the control node of the cluster where you will de
     # The file name must be redhat.repo, otherwise it won't be recognized when installing gpu-operator
     cat > redhat.repo << EOF
     [extension-0]
-    baseurl = http://10.5.14.200:9000/redhat-base/redhat-base-repo # The file server address where the yum source is stored in Step 1
+    baseurl = http://10.5.14.200:9000/redhat-base/redhat-base-repo/Packages # The file server address where the yum source is stored in Step 1
     gpgcheck = 0
     name = kubean extension 0
     
     [extension-1]
-    baseurl = http://10.5.14.200:9000/redhat-base/redhat-base-repo # The file server address where the yum source is stored in Step 1
+    baseurl = http://10.5.14.200:9000/redhat-base/redhat-base-repo/Packages # The file server address where the yum source is stored in Step 1
     gpgcheck = 0
     name = kubean extension 1
     EOF
