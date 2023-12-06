@@ -681,6 +681,8 @@ nav:
                   - Gateway API Policies: skoala/best-practice/gateway02.md
                   - Access Microservie via Gateway: skoala/best-practice/gateway01.md
                   - Gateway to Service Mesh: skoala/best-practice/gateway-mesh.md
+              - Troubleshoot:
+                  - skoala-init error about x-kubernets-validations: skoala/troubleshoot/auth-server.md   
               - Performance Tests:
                   - Gateway RPS: skoala/tests/gateway-stress-test.md
                   - Nacos TPS: skoala/tests/nacos-stress-test.md
