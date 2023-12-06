@@ -821,7 +821,7 @@ nav:
                       - Create MongoDB: middleware/mongodb/user-guide/create.md
                       - Update MongoDB: middleware/mongodb/user-guide/update.md
                       - Delete MongoDB: middleware/mongodb/user-guide/delete.md
-                      - View MongDB Logs: middleware/mongodb/user-guide/logs.md
+                      - View MongoDB Logs: middleware/mongodb/user-guide/logs.md
               - PostgreSQL Database:
                   - Intro:
                       - What is PostgreSQL: middleware/postgresql/intro/index.md

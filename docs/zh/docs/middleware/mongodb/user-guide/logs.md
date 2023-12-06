@@ -3,13 +3,13 @@ hide:
   - toc
 ---
 
-# 查看 MongDB 日志
+# 查看 MongoDB 日志
 
 ## 操作步骤
 
-通过访问每个 MongDB 的实例详情页面，可以支持查看 MongDB 的日志。
+通过访问每个 MongoDB 的实例详情页面，可以支持查看 MongoDB 的日志。
 
-1. 在 MongDB 实例列表中，选择想要查看的日志，点击 `实例名称` 进入到实例详情页面。
+1. 在 MongoDB 实例列表中，选择想要查看的日志，点击 `实例名称` 进入到实例详情页面。
 
     ![日志](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/images/mongo-logs01.png)
 
@@ -17,7 +17,7 @@ hide:
 
     ![日志](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/images/mongo-logs02.png)
 
-3. 点击 `日志查看` 即可进入到日志查看页面（Insight 日志查看）。
+3. 点击 `日志查看` 即可进入到日志查看页面（[Insight](../../../insight/intro/index.md) 日志查看）。
 
 ## 日志查看说明
 
