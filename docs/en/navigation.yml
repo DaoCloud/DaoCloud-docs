@@ -1076,6 +1076,7 @@ nav:
                   - Application Backup: download/modules/kcoral.md
                   - Security: download/modules/dowl.md
                   - Network: download/modules/spidernet.md
+                  - Storage: download/modules/hwameistor.md
                   - VM Container: download/modules/virtnest.md
               - MultiCloud Management: download/modules/kairship.md
               - Container Registry: download/modules/kangaroo.md
