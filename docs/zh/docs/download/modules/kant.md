@@ -6,7 +6,7 @@
 
 | 版本 | 架构 | 文件大小    | 安装包 | 校验文件 | 更新日期 |
 | ---- | ---- | --------- | ----- | ------- |-------- |
-| [0.6.1](../../kant/intro/release-notes.md) | AMD 64 | 98.37MB | [:arrow_down: kant_0.6.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kant_0.6.1_amd64.tar)                                 | [:arrow_down: kant_0.6.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kant_0.6.1_amd64_checksum.sha512sum)                                 | 2023-12-01 |
+| [0.6.1](../../kant/intro/release-notes.md) | AMD 64 | 98.37 MB | [:arrow_down: kant_0.6.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kant_0.6.1_amd64.tar) | [:arrow_down: kant_0.6.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kant_0.6.1_amd64_checksum.sha512sum) | 2023-12-01 |
 | [0.6.1](../../kant/intro/release-notes.md) | AMD 64 | 45.1 MB | [:arrow_down: kantadm_installation_0.6.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kantadm_installation_0.6.1_amd64.tar) | [:arrow_down: kantadm_installation_0.6.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kantadm_installation_0.6.1_amd64_checksum.sha512sum) | 2023-12-01 |
 | [0.6.1](../../kant/intro/release-notes.md) | ARM 64 | 43.6 MB | [:arrow_down: kantadm_installation_0.6.1_arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kantadm_installation_0.6.1_arm64.tar) | [:arrow_down: kantadm_installation_0.6.1_arm64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kantadm_installation_0.6.1_arm64_checksum.sha512sum) | 2023-12-01 |
 
