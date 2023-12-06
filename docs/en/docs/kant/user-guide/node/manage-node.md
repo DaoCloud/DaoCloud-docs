@@ -14,7 +14,7 @@ The steps to pause scheduling are as follows:
 
 2. Click the `Pause Scheduling` button on the right side of the node list. A prompt will appear indicating the successful issuance of the scheduling pause task. Click the refresh icon later, and the node status will change to "Healthy/Scheduling Paused".
 
-    ![Pause Scheduling](../../images/node-manage-01.png)
+    ![Pause Scheduling](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kant/images/node-manage-01.png)
 
 3. If you need to resume scheduling, click the `Resume Scheduling` button on the right side of the list. A prompt will appear indicating the successful issuance of the scheduling resume task. Click the refresh icon later, and the node status will change to "Healthy/Schedulable".
 
@@ -26,7 +26,7 @@ The steps to remove a node are as follows:
 
 2. Click the `Remove` button on the right side of the node list, and a confirmation dialog box will appear.
 
-    ![Remove Node](../../images/node-manage-02.png)
+    ![Remove Node](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kant/images/node-manage-02.png)
 
 3. Manually unbind the workloads and end device resources. If the resources on the node have already been cleared, you can skip this step.
 

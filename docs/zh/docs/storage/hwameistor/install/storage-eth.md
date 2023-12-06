@@ -25,12 +25,12 @@ HwameiStor 支持使用单独的网卡进行数据卷同步，可以避免使用
 
 2. 在左侧导航栏中选择 `自定义资源`，找到 `localstoragenodes.hwameistor.io`，点击进入详情。
 
-    ![Ethedit01](../../images/ethEdit01.jpg)
+    ![Ethedit01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/ethEdit01.jpg)
 
 3. 找到`待修改节点`并点击`编辑 YAML`，修改 `spec` 中的 `storage-ipv4=172.30.40.12` 参数，
    指定 IP 地址为已规划网卡 IP [网卡规划](../../../network/plans/ethplan.md)。
    
-    ![ethedit02](../../images/ethedit02.jpg)
+    ![ethedit02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/ethedit02.jpg)
    
     ![ethedit03](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/editeth03.jpg)
 

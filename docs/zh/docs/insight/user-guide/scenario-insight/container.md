@@ -23,7 +23,7 @@ hide:
 
 3. 切换顶部 Tab，查看不同类型工作负载的数据。
 
-    ![容器监控](../../images/workload00.png)
+    ![容器监控](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/workload00.png){ width="1000"}
 
 4. 点击目标工作负载名称查看详情。
 
@@ -31,7 +31,7 @@ hide:
     2. 资源消耗：在该卡片可查看工作负载的 CPU、内存、网络的使用情况。
     3. 监控指标：可查看工作负载默认 1 小时的 CPU、内存、网络和磁盘的变化趋势。
 
-    ![容器监控](../../images/workload01.png)
+    ![容器监控](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/workload01.png){ width="1000"}
 
 ### 指标说明
 

@@ -9,29 +9,30 @@ Microservice namespaces can be used to isolate services, configuration, and othe
 
 ## Create the microservice namespace
 
-1. Enter `Microservices` -- > `Traditional Microservices` -- > `Hosted Registry` module, click the name of the target registry.
+1. Enter `Microservices` -> `Traditional Microservices` -> `Hosted Registry` module, click the name of the target registry.
 
-   ![](../../images/ns-1.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/ns-1.png)
 
 2. Click `Microservice Namespace` in the left navigation bar, then click `Create` in the upper right corner.
 
-   ![](../../images/create-ns-1.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/create-ns-1.png)
 
 3. Enter the ID, and name and click `OK` in the lower right corner of the page.
 
-    If you do not enter an ID, the system automatically generates an ID. ** The namespace ID cannot be changed after creation **
+    If you do not enter an ID, the system automatically generates an ID.
+    **The namespace ID cannot be changed after creation.**
 
-   ![](../../images/create-ns-2.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/create-ns-2.png)
 
 ## Update the microservice namespace
 
 1. In the right operation bar of the corresponding namespace, click `Edit` to enter the update page.
 
-   ![](../../images/update-ns-1.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/update-ns-1.png)
 
 2. To modify the namespace name, click `OK`.
 
-   ![](../../images/update-ns-2.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/update-ns-2.png)
 
 ## Delete the microservice namespace
 
@@ -39,5 +40,6 @@ Click `Delete` in the right operation bar of the corresponding namespace, and th
 
 !!! note
 
+    Before deleting a namespace, it is necessary to clean up all the resources within that namespace. Otherwise, the namespace cannot be deleted.
 
-![](../../images/delete-ns-1.png)
+![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/delete-ns-1.png)

@@ -21,6 +21,6 @@
 - EventBus -> Rest：用户向边缘中的 MQTT broker 发布消息，最终将消息发送到云端的 REST API。
 - Rest -> ServiceBus：用户应用调用云端 REST API 发送消息，最终消息发送到边缘应用。
 
-![路径](../../images/overview01.png)
+![路径](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/overview01.png)
 
 后续操作：[创建消息路由](./create-route.md)

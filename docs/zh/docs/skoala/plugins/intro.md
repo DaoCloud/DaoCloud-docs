@@ -21,4 +21,4 @@ Auth 插件可以确保只有经过身份验证的用户才能访问特定的 AP
 在云计算和云原生行业中，Wasm 可以用作插件的运行环境，使开发人员能够使用更多的编程语言和工具来扩展和定制云服务。
 通过使用 Wasm 插件，可以实现更高效、可扩展和灵活的云原生应用程序。
 
-![plugin list](../images/plugin01.png)
+![plugin list](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/plugin01.png)

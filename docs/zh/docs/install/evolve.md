@@ -13,7 +13,7 @@ DCE 5.0 支持多种版本，除社区版以外的其他版本均为商业版，
 
 ### 第 1 步：配置 manifest.yaml 文件
 
-将 manifest.yaml 文件里的被 `disable` 的 components 放开， 开启 `enable`。
+将 manifest.yaml 文件中所有 `enable: false` 改为 `enable: true`。
 
 ```yaml
 skoala:

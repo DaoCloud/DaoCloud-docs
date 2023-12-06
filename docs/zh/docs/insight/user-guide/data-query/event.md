@@ -7,7 +7,7 @@ DCE 5.0 Insight 支持按集群、命名空间查询事件，并提供了事件�
 1. 点击一级导航栏进入`可观测性`。
 2. 左侧导航栏中，选择`基础设置 > 事件`。
 
-    ![事件](../../images/event00.png)
+    ![事件](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/event00.png)
 
 ### 事件状态分布
 
@@ -38,11 +38,11 @@ Pod 调度失败次数、容器 OOM 内存耗尽次数、存储卷挂载失败�
 
 1. 在事件列表中操作列的图标，可查看某一事件的元数据信息。
 
-    ![history](../../images/event01.png)
+    ![history](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/event01.png){ width="1000"}
 
 2. 点击顶部页签的 `上下文` 可查看该事件对应资源的历史事件记录。
 
-    ![history](../../images/event02.png)
+    ![history](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/event02.png){ width="1000"}
 
 ## 参考
 

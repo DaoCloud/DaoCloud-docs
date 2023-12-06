@@ -14,24 +14,24 @@ in your container management system, with a minimum version requirement of 1.4.0
 
 1. If you encounter the following error message when creating a Harbor instance, click `Go to install`.
 
-   ![error](../images/errors.png)
+   ![error](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/errors.png)
 
 2. Go to `Container Management` -> `Helm Apps` -> `Helm Charts`, and find and click the harbor-operator card.
 
-   ![card](../images/operator01.png)
+   ![card](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/operator01.png)
 
 3. Choose the version and click `Install`.
 
-   ![install](../images/operator02.png)
+   ![install](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/operator02.png)
 
 4. After entering the name and namespace, click `OK`.
    If you want to add other parameters, please refer to the [Parameter Values](#parameter-values) below.
 
-   ![OK](../images/operator03.png)
+   ![OK](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/operator03.png)
 
 5. Wait for the installation to complete (Status from `Pending Install` to `Deployed`).
 
-   ![status](../images/operator04.png)
+   ![status](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/operator04.png)
 
 ## Parameter Values
 

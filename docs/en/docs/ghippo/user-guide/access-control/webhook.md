@@ -28,11 +28,11 @@ The steps to configure Webhooks in DCE 5.0 are as follows:
 
 1. On the left nav, click `Global Management` -> `Access Control` -> `Docking Portal`, create a client ID.
 
-    ![oem in](../../oem/images/webh01.png)
+    ![oem in](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/oem/images/webh01.png)
 
 2. Click a client ID to enter the details page, then click the `Create Webhook` button.
 
-    ![button](../../oem/images/webh02.png)
+    ![button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/oem/images/webh02.png)
 
 3. Fill in the field information in the popup window and click `OK`.
 
@@ -42,19 +42,19 @@ The steps to configure Webhooks in DCE 5.0 are as follows:
     - Method: Choose the appropriate method as required, e.g., for enterprise WeChat, POST is recommended.
     - Advanced Configuration: You can write the message body in JSON format. For enterprise WeChat groups, refer to the [Group Robot configuration guide](https://developer.work.weixin.qq.com/document/path/91770).
 
-    ![fill](../../oem/images/webh03.png)
+    ![fill](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/oem/images/webh03.png)
 
 4. A screen prompt indicates that the Webhook was created successfully.
 
-    ![success](../../oem/images/webh04.png)
+    ![success](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/oem/images/webh04.png)
 
 5. Now try creating a user.
 
-    ![create](../../oem/images/webh05.png)
+    ![create](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/oem/images/webh05.png)
 
 6. User creation succeeds, and you can see that an enterprise WeChat group received a message.
 
-    ![message](../../oem/images/webh06.png)
+    ![message](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/oem/images/webh06.png)
 
 ## Advanced Configuration Example
 

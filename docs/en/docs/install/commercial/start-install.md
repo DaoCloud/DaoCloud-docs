@@ -1,8 +1,10 @@
 # Install DCE 5.0 Enterprise offline
 
-Please ensure that you have read and understood the [deployment requirements](deploy-requirements.md), [deployment architecture](deploy-arch.md), and [preparation](prepare.md) before installation.
+Please ensure that you have read and understood the [deployment requirements](deploy-requirements.md),
+[deployment architecture](deploy-arch.md), and [preparation](prepare.md) before installation.
 
-Please refer to the [release notes](../release-notes.md) to avoid known issues with the installed version and to check for new features.
+Please refer to the [release notes](../release-notes.md) to avoid known issues with the
+installed version and to check for new features.
 
 ## Offline Installation Steps
 
@@ -12,14 +14,15 @@ Please download the corresponding offline package based on your business environ
 
 #### Offline Image Package (Required)
 
-The offline image package contains configuration files, image resources, and chart packages required for installing DCE 5.0 modules.
+The offline image package contains configuration files, image resources, and
+chart packages required for installing DCE 5.0 modules.
 
 You can download the latest version from the [Download Center](../../download/index.md).
 
-| CPU Architecture | Version | Download                                                |
-| :--------------- | :------ | :---------------------------------------------------------- |
-| AMD64    | v0.12.0 | [offline-v0.12.0-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.12.0-amd64.tar) |
-| ARM64    | v0.12.0 | [offline-v0.12.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.12.0-arm64.tar) |
+| CPU Architecture | Version | Download |
+| :--------------- | :------ | :------- |
+| AMD64 | v0.12.0 | [offline-v0.12.0-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.12.0-amd64.tar) |
+| ARM64 | v0.12.0 | [offline-v0.12.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.12.0-arm64.tar) |
 
 After downloading, extract the offline package.
 Take the amd64 architecture offline package as an example
@@ -30,9 +33,11 @@ tar -xvf offline-v0.12.0-amd64.tar
 
 #### ISO Operating System Image File (Required)
 
-The ISO format operating system image file should be downloaded based on the different operating systems during the installation process.
+The ISO format operating system image file should be downloaded based on the
+different operating systems during the installation process.
 
-The ISO operating system image file needs to be configured in the [cluster configuration file](./cluster-config.md), so please download according to the operating system.
+The ISO operating system image file needs to be configured in
+[clusterConfig.yaml](./cluster-config.md), so please download according to the operating system.
 
 | CPU Architecture | Operating System Version                           | Download                                                |
 | :--------------- | :------------------------------------------------- | :---------------------------------------------------------- |
@@ -46,19 +51,24 @@ The ISO operating system image file needs to be configured in the [cluster confi
 
 #### osPackage Offline Packages (Required)
 
-The osPackage offline package is a supplement to the Linux operating system offline software source provided by the open-source project [Kubean](https://github.com/kubean-io/kubean). For example, openEuler 22.03 lacks the `selinux-policy-35.5-15.oe2203.noarch.rpm`.
+The osPackage offline package is a supplement to the Linux operating system offline software source
+provided by the open-source project [Kubean](https://github.com/kubean-io/kubean). For example,
+openEuler 22.03 lacks the `selinux-policy-35.5-15.oe2203.noarch.rpm`.
 
-Starting from version v0.5.0, the installer requires the osPackage offline package for the operating system and defines `osPackagePath` in the [cluster configuration file (clusterConfig.yaml)](./cluster-config.md).
+Starting from version v0.5.0, the installer requires the osPackage offline package for the
+operating system and defines `osPackagePath` in [clusterConfig.yaml](./cluster-config.md).
 
-[Kubean](https://github.com/kubean-io/kubean) provides osPackage offline packages for different operating systems, which can be found at https://github.com/kubean-io/kubean/releases.
+[Kubean](https://github.com/kubean-io/kubean) provides osPackage offline packages for different
+operating systems, which can be found at <https://github.com/kubean-io/kubean/releases>.
 
-Currently, the installer version requires the osPackage offline package version to match. Please download the osPackage offline package based on the corresponding version:
+Currently, the installer version requires the osPackage offline package version to match.
+Please download the osPackage offline package based on the corresponding version:
 
 === "V0.12.0"
 
-    | Operating System                                        | Download                                                     |
+    | Operating System                                    | Download                                                     |
     | :-------------------------------------------------- | :----------------------------------------------------------- |
-    | Centos 7                                            | [os-pkgs-centos7-vv0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-centos7-v0.9.3.tar.gz) |
+    | Centos 7                                            | [os-pkgs-centos7-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-centos7-v0.9.3.tar.gz) |
     | Redhat 8                                            | [os-pkgs-redhat8-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-redhat8-v0.9.3.tar.gz) |
     | Redhat 7                                            | [os-pkgs-redhat7-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-redhat7-v0.9.3.tar.gz) |
     | Redhat 9                                            | [os-pkgs-redhat9-v0.9.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-redhat9-v0.9.3.tar.gz) |
@@ -69,7 +79,7 @@ Currently, the installer version requires the osPackage offline package version 
 
 === "V0.11.0"
 
-    | Operating System                                        | Download                                                     |
+    | Operating System                                    | Download                                                     |
     | :-------------------------------------------------- | :----------------------------------------------------------- |
     | Centos 7                                            | [os-pkgs-centos7-v0.8.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.8.6/os-pkgs-centos7-v0.8.6.tar.gz) |
     | Redhat 8                                            | [os-pkgs-redhat8-v0.8.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.8.6/os-pkgs-redhat8-v0.8.6.tar.gz) |
@@ -82,7 +92,7 @@ Currently, the installer version requires the osPackage offline package version 
 
 === "V0.10.0"
 
-    | Operating System                                        | Download                                                     |
+    | Operating System                                    | Download                                                     |
     | :-------------------------------------------------- | :----------------------------------------------------------- |
     | Centos 7                                            | [os-pkgs-centos7-v0.7.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.7.4/os-pkgs-centos7-v0.7.4.tar.gz) |
     | Redhat 8                                            | [os-pkgs-redhat8-v0.7.4.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.7.4/os-pkgs-redhat8-v0.7.4.tar.gz) |
@@ -95,7 +105,7 @@ Currently, the installer version requires the osPackage offline package version 
 
 === "V0.9.0"
 
-    | Operating System                                        | Download                                                     |
+    | Operating System                                    | Download                                                     |
     | :-------------------------------------------------- | :----------------------------------------------------------- |
     | Centos 7                                            | [os-pkgs-centos7-v0.6.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.6.6/os-pkgs-centos7-v0.6.6.tar.gz) |
     | Redhat 8                                            | [os-pkgs-redhat8-v0.6.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.6.6/os-pkgs-redhat8-v0.6.6.tar.gz) |
@@ -105,20 +115,25 @@ Currently, the installer version requires the osPackage offline package version 
     | openEuler 22.03                                     | [os-pkgs-openeuler22.03-v0.6.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.6.6/os-pkgs-openeuler22.03-v0.6.6.tar.gz) |
     | OracleLinux R9 U1                                   | [os-pkgs-oracle9-v0.6.6.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.6.6/os-pkgs-oracle9-v0.6.6.tar.gz) |
 
-For deploying DCE 5.0 on UOS V20 (1020a) operating system, please refer to [Deploying DCE 5.0 on UOS V20 (1020a)](../os-install/uos-v20-install-dce5.0.md).
+For deploying DCE 5.0 on UOS V20 (1020a) operating system, refer to
+[Deploying DCE 5.0 on UOS V20 (1020a)](../os-install/uos-v20-install-dce5.0.md).
 
 #### Addon Offline Packages (Optional)
 
-Addon offline packages contain Helm Chart offline packages for commonly used components. For the specific list, please refer to the [addon](../../download/addon/v0.11.0.md#components-in-the-addon-offline-package) documentation.
+Addon offline packages contain Helm Chart offline packages for commonly used components.
+For the specific list, refer to the [addon](../../download/addon/history.md) documentation.
 
-Starting from installer version v0.5.0, support for importing addon offline packages is available. If you want to offline all the Helm charts in the addon package, you can download the latest version from the [Download Center](../../download/index.md).
+Starting from installer version v0.5.0, support for importing addon offline packages is available.
+If you want to offline all the Helm charts in the addon package, you can download the latest version
+from the [Download Center](../../download/index.md).
 
-First, make sure to download the offline package in advance and define `addonOfflinePackagePath` in the [cluster configuration file (clusterConfig.yaml)](./cluster-config.md).
+First, make sure to download the offline package in advance and define `addonOfflinePackagePath`
+in [clusterConfig.yaml](./cluster-config.md).
 
-| CPU Architecture | Version | Download Link                                                |
-| :--------------- | :------ | :----------------------------------------------------------- |
-| AMD64    | v0.11.0 | [addon-offline-full-package-v0.11.0-amd64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.11.0-amd64.tar.gz) |
-| ARM64    | v0.11.0 | [addon-offline-full-package-v0.11.0-arm64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.11.0-arm64.tar.gz) |
+| CPU Architecture | Version | Download |
+| :--------------- | :------ | :------- |
+| AMD64    | v0.12.0 | [addon-offline-full-package-v0.12.0-amd64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.12.0-amd64.tar.gz) |
+| ARM64    | v0.12.0 | [addon-offline-full-package-v0.12.0-arm64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.12.0-arm64.tar.gz) |
 
 #### One-Click Download of Required Offline Packages
 
@@ -132,11 +147,13 @@ The following packages are included:
 
 !!! note
 
-    Due to different methods of downloading ISO operating systems, the one-click download does not include the ISO files.
+    Due to different methods of downloading ISO operating systems, the one-click download
+    does not include the ISO files.
 
-### Step 2: Configure clusterConfig.yaml
+### Step 2: Edit clusterConfig.yaml
 
-The cluster configuration file is located in the `offline/sample` directory of the offline image package. For detailed parameter introduction, please refer to [clusterConfig.yaml](cluster-config.md).
+`clusterConfig.yaml` is located in the `offline/sample` directory of the offline image package.
+For detailed parameter introduction, refer to [clusterConfig.yaml](cluster-config.md).
 
 !!! note
 
@@ -146,7 +163,8 @@ The cluster configuration file is located in the `offline/sample` directory of t
 
 ### Step 3: Start Installation
 
-1. Run the following command to start installing DCE 5.0. The installer binary file is located at `offline/dce5-installer`.
+1. Run the following command to start installing DCE 5.0. The installer binary file is
+   located at `offline/dce5-installer`.
 
     ```shell
     ./offline/dce5-installer cluster-create -c ./offline/sample/clusterConfig.yaml -m ./offline/sample/manifest.yaml
@@ -156,13 +174,15 @@ The cluster configuration file is located in the `offline/sample` directory of t
 
         Explanation of installer script command:
         
-        - Use `-c` to specify the cluster configuration file (required).
+        - Use `-c` to specify clusterConfig.yaml (required).
         - Use `-m` to specify the manifest file.
         - Use `-z` for minimal installation.
         - Use `-d` to enable debug mode.
-        - For more commands, use `--help` to query.
+        - For more options, use `--help` to query.
 
-1. After the installation is complete, the command line will prompt a successful installation. Congratulations! Now you can explore the brand new DCE 5.0 using the URL provided with the default account and password (admin/changeme) as shown in the screen prompt.
+1. After the installation is complete, the command line will prompt a successful installation.
+   Congratulations! Now you can explore the brand new DCE 5.0 using the URL provided with the
+   default account and password (admin/changeme) as shown in the screen prompt.
 
     ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
 
@@ -170,4 +190,5 @@ The cluster configuration file is located in the `offline/sample` directory of t
 
         Please record the provided URL for future access.
 
-1. After successfully installing DCE 5.0 Enterprise Edition, please contact us for authorization: email info@daocloud.io or call 400 002 6898.
+1. After successfully installing DCE 5.0 Enterprise Edition, please contact us for
+   authorization: email info@daocloud.io or call 400 002 6898.

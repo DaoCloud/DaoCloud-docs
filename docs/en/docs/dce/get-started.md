@@ -116,9 +116,9 @@ elasticity of IT systems, and significantly accelerating application delivery.
 
     This is a comprehensive microservice management platform tailored for mainstream microservice ecosystems.
 
-    - [Cloud Native Gateway](../skoala/gateway/create-gateway.md)
-    - [Cloud Native Microservices](../skoala/cloud-ms/service.md)
-    - [Traditional Microservices](../skoala/trad-ms/hosted/create-registry.md)
+    - [Cloud Native Gateway](../skoala/gateway/index.md)
+    - [Cloud Native Microservices](../skoala/cloud-ms/index.md)
+    - [Traditional Microservices](../skoala/trad-ms/hosted/index.md)
     - [Plugin Center](../skoala/plugins/intro.md)
 
 - :material-table-refresh:{ .lg .middle } __Service Mesh__

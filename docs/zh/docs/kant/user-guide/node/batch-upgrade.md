@@ -26,7 +26,7 @@
 
     > 说明：升级仅对与升级版本有差异的节点进行操作，与升级版本一致的节点将被自动忽略。
 
-    ![创建升级任务](../../images/node-batch-upgrade-01.png)
+    ![创建升级任务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/node-batch-upgrade-01.png)
 
 ## 节点升级状态说明
 

@@ -15,15 +15,15 @@
 
 2. 在左侧导航栏中选择 `Helm 应用` -> `Helm 模板`，找到并点击 `sriov-network-operator`。
 
-    ![sriov-network-operator helm](../../images/helm-sriov-network-operator.png)
+    ![sriov-network-operator helm](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/helm-sriov-network-operator.png)
 
 3. 在`版本选择`中选择希望安装的版本，点击`安装`。
 
 4. 在安装界面，填写所需的安装参数。
 
-    ![sriov instal1](../../images/sriov-network-operator-install-1.png)
+    ![sriov instal1](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/sriov-network-operator-install-1.png)
 
-    ![sriov instal2](../../images/sriov-network-operator-install-2.png)
+    ![sriov instal2](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/sriov-network-operator-install-2.png)
 
     上图中的各项参数说明：
 
@@ -34,7 +34,7 @@
     - `Images` —> `SriovCni` -> `repository`：设置 SriovCni 的镜像名，保持默认即可。
     - `Images` —> `SriovCni` -> `tag`：设置 SriovCni 的镜像版本，保持默认即可。
 
-    ![sriov instal3](../../images/sriov-network-operator-install-3.png)
+    ![sriov instal3](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/sriov-network-operator-install-3.png)
 
     上图中的各项参数说明：
 
@@ -45,7 +45,7 @@
     - `Operator` —> `resourcePrefix`：SRIOV 网络设备插件端点资源前缀。
     - `SriovNetworkNodePolicy` —> `name`：SRIOV 网络节点策略的名称。
 
-    ![sriov instal4](../../images/sriov-network-operator-install-4.png)
+    ![sriov instal4](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/sriov-network-operator-install-4.png)
 
     上图中的各项参数说明：
 

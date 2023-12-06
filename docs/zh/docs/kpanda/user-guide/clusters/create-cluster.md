@@ -52,7 +52,7 @@ hide:
     - 节点信息：填写节点名称和 IP 地址。
     - NTP 时间同步：开启后会自动同步各个节点上的时间，需要提供 NTP 服务器地址。
 
-        ![节点配置](../../images/createnew01.png)
+        ![节点配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/createnew01.png)
 
 4. 在页面底部点击节点检查。如果检查通过则继续下一步操作。如果检查未通过，则更新`节点信息`并再次执行检查。
 

@@ -17,7 +17,7 @@ RedisShake 支持不同部署模式实例间的数据同步与迁移能力，现
 
 图例：数据同步 `实例 redis-a` >> `实例 redis-b`
 
-![sync](../images/sync17.jpg)
+![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync17.jpg)
 
 ### 为 `实例 redis-a` 配置服务
 
@@ -46,9 +46,9 @@ RedisShake 支持不同部署模式实例间的数据同步与迁移能力，现
 
 参考`图例：数据同步 实例 redis-a >> 实例 redis-b` 可见，`实例 redis-b` 与 `RedisShake` 处于同一集群，因此为 `实例 redis-b` 创建一个 ClusterIP 服务即可,端口指向 6379，如下图所示：
 
-![svc](../images/sync23.png)
+![svc](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync23.png)
 
-![svc](../images/sync24.png)
+![svc](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync24.png)
 
 ### RedisShake 部署
 
@@ -147,7 +147,7 @@ RedisShake 通常与数据传输的目标 Redis 实例运行于同一集群及�
 
 图例：数据恢复 `实例 redis-b` >> `实例 redis-a`
 
-![recovery](../images/sync18.jpg)
+![recovery](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync18.jpg)
 
 当源端实例 `实例 redis-a` 发生故障离线后，将由目标端 `实例 redis-b` 提供服务，该过程必然产生新增数据。`实例 redis-a` 恢复上线后，首先需要从 `实例 redis-b` 恢复增量数据，此时 `实例 redis-a` 与 `实例 redis-b` 角色互换，`实例 redis-b` 作为数据源向 `实例 redis-a` 同步数据。
 
@@ -165,7 +165,7 @@ RedisShake 通常与数据传输的目标 Redis 实例运行于同一集群及�
 
 1. 进入`容器管理` - `源端实例所在集群` - `有状态工作负载`：选择工作负载 `redis-b`，创建一个 `Nodeport` 服务 `redis-b-recovery-svc`，容器端口和服务端口均为 6379
 
-    ![svc](../images/sync25.png)
+    ![svc](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync25.png)
 
 2. 查看该服务。并确定工作负载选择器包含以下标签
    
@@ -188,7 +188,7 @@ RedisShake 通常与数据传输的目标 Redis 实例运行于同一集群上�
 
 在`容器管理` - `目标端实例所在集群` - `配置与存储` - `配置项`为 RedisShake 实例创建配置项 `redis-sync`。导入文件 `sync.toml` （文件内容见`附录`），并注意需要修改以下内容：
 
-![conf](../images/sync15.png)
+![conf](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync15.png)
 
 - source.address：此时的源端为 `实例 redis-b` ，填写上一步骤为该实例创建的服务地址：
 

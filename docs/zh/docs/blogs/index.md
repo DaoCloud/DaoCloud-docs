@@ -9,7 +9,18 @@ hide:
 
 ## 2023 年
 
-- [20231008 | 2023 年中国上海 Kubernetes 贡献者峰会回顾](./20231008-kcs.md)
+- [20231205 | Kubernetes：裸机 vs 虚机性能对比](./231205-vm-bm-compare.md)
+
+    比较 Kubernetes 运行在虚拟机和裸机上的性能。
+
+- [20231115 | Kubernetes 1.29 前瞻：弃用、移除和重大变更](./231115-k8s-1.29-changes.md)
+
+    Kubernetes v1.29 计划将于 12 月初发布，这将是 2023 年的最后一个版本。
+    就像每次发布一样，Kubernetes v1.29 也将弃用和移除一些特性。
+    持续高质量发布的执行能力是开发周期稳健和社区健康的良好见证。
+    这篇博文说明了即将发布的 Kubernetes 1.29 中的一些弃用和移除事项。
+
+- [20231008 | 2023 年中国上海 Kubernetes 贡献者峰会回顾](./231008-kcs.md)
 
     2023 年 9 月 26 日，即 KubeCon + CloudNativeCon + Open Source Summit China 2023 第一天，
     近 50 位社区贡献者济济一堂，在上海聚首 Kubernetes 贡献者峰会。

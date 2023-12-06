@@ -7,7 +7,7 @@ hide:
 
 DaoCloud Enterprise 5.0 (DCE 5.0) 是一款高性能、可扩展的云原生操作系统。
 它能够在任何基础设施和任意环境中提供一致、稳定的体验，支持异构云、边缘云和多云编排。
-DCE 5.0 集成了最新的服务网格和微服务技术，能够跟踪每一个流量的生发始终，
+DCE 5.0 集成了服务网格和微服务技术，结合最新的 AI 引擎，能够跟踪每一个流量的生发始终，
 帮助您洞察集群、节点、应用和服务的详细指标，并通过动态仪表盘和拓扑大图可视化掌握应用健康状态。
 
 DCE 5.0 原生支持 DevOps 开发运维模式，可以实现应用交付的全流程标准化和自动化，并集成各类精选数据库和中间件，使运维治理更加高效。
@@ -50,7 +50,7 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
 
     多云应用的跨区域/集群分发机制如下：
 
-    ![多云](../images/01multi-cloud.png)
+    ![多云](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/01multi-cloud.png)
 
 === "数据中间件服务"
 
@@ -60,7 +60,7 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
     **涉及的模块**：[全局管理](../ghippo/intro/index.md)、[容器管理](../kpanda/intro/index.md)、[云原生网络](../network/intro/index.md)、
     [云原生存储](../storage/index.md)、[精选中间件](../middleware/index.md)
 
-    ![数据](../images/02data.png)
+    ![数据](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/02data.png)
 
 === "微服务治理"
 
@@ -71,7 +71,7 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
     [服务网格](../mspider/intro/index.md)、[可观测性](../insight/intro/index.md)、[应用工作台](../amamba/intro/index.md)、
     [云原生网络](../network/intro/index.md)、[云原生存储](../storage/index.md)
 
-    ![微服务](../images/03msgov.png)
+    ![微服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/03msgov.png)
 
 === "可观测性"
 
@@ -83,7 +83,7 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
     **涉及的模块**：[全局管理](../ghippo/intro/index.md)、[容器管理](../kpanda/intro/index.md)、[可观测性](../insight/intro/index.md)、
     [云原生网络](../network/intro/index.md)、[云原生存储](../storage/index.md)
 
-    ![观测](../images/04insight.png)
+    ![观测](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/04insight.png)
 
 === "应用商店"
 
@@ -100,7 +100,7 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
     **涉及的模块**：[全局管理](../ghippo/intro/index.md)、[容器管理](../kpanda/intro/index.md)、[应用工作台](../amamba/intro/index.md)、
     [镜像仓库](../kangaroo/intro/index.md)、[云原生网络](../network/intro/index.md)、[云原生存储](../storage/index.md)
 
-    ![应用交付](../images/06appdeliv.png)
+    ![应用交付](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/06appdeliv.png)
 
 === "信创异构"
 
@@ -110,7 +110,7 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
     **涉及的模块**：[全局管理](../ghippo/intro/index.md)、[容器管理](../kpanda/intro/index.md)、[集群生命周期管理](../community/kubean.md)、
     [信创中间件](../middleware/index.md)、[云原生网络](../network/intro/index.md)、[云原生存储](../storage/index.md)
 
-    ![信创](../images/08xinchuan.png)
+    ![信创](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/08xinchuan.png)
 
 === "云边协同"
 
@@ -134,7 +134,7 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
     **涉及的模块**：[全局管理](../ghippo/intro/index.md)、[容器管理](../kpanda/intro/index.md)、[集群生命周期管理](../community/kubean.md)、
     [云原生网络](../network/intro/index.md)、[云原生存储](../storage/index.md)
 
-    ![云原生底座](../images/07base.png)
+    ![云原生底座](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/07base.png)
 
 在成功获取[许可证授权](./license0.md)后，首次登录 DCE 5.0 将会呈现一个仪表盘。
 该仪表盘以直观的方式展示了各种信息，包括正在运行的容器和 Pod、CPU 和内存使用情况、集群/节点/Pod 的健康状态、告警信息、资源利用情况以及功能一览等内容。

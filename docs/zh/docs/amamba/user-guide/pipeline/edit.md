@@ -46,7 +46,7 @@
 
 ### 配置全局设置
 
-点击`全局设置`，从`类型`下拉列表中选择 node，从 label 下拉列表选择 go 16。
+点击`全局设置`，从`类型`下拉列表中选择 node，从 label 下拉列表选择 go 。
 
 ![pipelisetting](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipelisetting.png)
 

@@ -63,23 +63,23 @@ Here are the specific steps for creating a Destination Rule through the graphica
 1. Click `Traffic Management` -> `Destination Rule` in the left navigation bar,
    then click the `Create` button in the upper right corner.
 
-    ![Create](../images/destirule01.png)
+    ![Create](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/destirule01.png)
 
 2. In the `Create Destination` page, configure the basic settings and click `Next`.
 
-    ![Create Destination](../images/destirule02.png)
+    ![Create Destination](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/destirule02.png)
 
 3. Follow the on-screen prompts to select the policy type and configure the corresponding governance policy, then click `OK`.
 
-    ![Governance Policy](../images/destirule03.png)
+    ![Governance Policy](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/destirule03.png)
 
 4. Return to the Destination Rule list, and you will see a prompt indicating successful creation.
 
-    ![Creation Successful](../images/destirule04.png)
+    ![Creation Successful](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/destirule04.png)
 
 5. On the right side of the list, click the `⋮` in the operation column to access more options from the popup menu.
 
-    ![More Operations](../images/destirule05.png)
+    ![More Operations](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/destirule05.png)
 
 The YAML creation method is similar to [Virtual Service](./virtual-service.md).
 You can directly create a YAML file using the built-in templates, as shown in the following figure:

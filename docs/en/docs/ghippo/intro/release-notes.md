@@ -2,6 +2,26 @@
 
 This page lists the Release Notes for global management of each version, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-11-30
+
+### v0.22.0
+
+#### Features
+
+- Automatically expand the active navigation bar
+- Support for underscores in usernames in the SDK
+- DCE 4.0 to DCE 5.0 migration scheme validation support
+- Added precise search to `Operations Management` list
+
+#### Improvements
+
+- Added Chinese language support to the `About Platform` - `Product Versions` submodule for kcoral, dowl, kcollie, and virtnest
+
+#### Fixes
+
+- Fixed issue with adding user groups for synchronized LDAP users
+- Fixed issue with incomplete display of workspace reports in `Operations Management`
+
 ## 2023-11-1
 
 ### v0.21.0
@@ -15,16 +35,16 @@ This page lists the Release Notes for global management of each version, so that
 - Backend customization of the primary navigation bar
 - Support for redirecting to English documentation site in non-Chinese languages
 
-#### Enhancements
+#### Improvements
 
 - Improved handling of interface error 400 without specific cause
-- Enhanced display of empty data in "Operational Management" reports
-- Improved functionality of jumping from cluster billing list to node billing list in "Operational Management"
+- Enhanced display of empty data in `Operational Management` reports
+- Improved functionality of jumping from cluster billing list to node billing list in `Operational Management`
 
 #### Fixes
 
 - Fixed potential deadlock issue during startup of Ghippo APIServer
-- Fixed calculation error in cluster billing for "Operational Management"
+- Fixed calculation error in cluster billing for `Operational Management`
 
 ## 2023-09-04
 

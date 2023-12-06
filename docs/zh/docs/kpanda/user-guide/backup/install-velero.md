@@ -24,7 +24,7 @@ velero 是一个备份和恢复 Kubernetes 集群资源的开源工具。它可�
 
 2. 阅读 `velero` 插件相关介绍，选择版本后点击`安装`按钮。本文将以 `4.0.2` 版本为例进行安装，推荐安装 `4.0.2` 或更高版本。
 
-    ![备份恢复](../../images/backup2.png)
+    ![备份恢复](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/backup2.png)
 
 3. 查看以下说明填写 **基本参数**。
 
@@ -35,7 +35,7 @@ velero 是一个备份和恢复 Kubernetes 集群资源的开源工具。它可�
     - 失败删除：可选参数，开启后，将默认同步开启就绪等待。如果安装失败，将删除安装相关资源。
     - 详情日志：可选参数，开启后将输出安装过程的详细日志。
 
-        ![备份恢复](../../images/backup3.png)
+        ![备份恢复](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/backup3.png)
 
     !!! note
 
@@ -68,6 +68,6 @@ velero 是一个备份和恢复 Kubernetes 集群资源的开源工具。它可�
         - `S3 force path style`：保持默认配置 `true`。
         - `S3 server URL`：对象存储（minio）的控制台访问地址，minio 一般提供了 UI 访问和控制台访问两个服务，此处请使用控制台访问的地址。
 
-        ![备份恢复](../../images/backup4.png)
+        ![备份恢复](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/backup4.png)
 
 5. 点击`确定`按钮，完成 `velero` 插件的安装，之后系统将自动跳转至 `Helm 应用`列表页面，稍等几分钟后，为页面执行刷新操作，即可看到刚刚安装的应用。

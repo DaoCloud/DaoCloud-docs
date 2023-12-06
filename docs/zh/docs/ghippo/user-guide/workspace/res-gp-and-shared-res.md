@@ -9,7 +9,7 @@
 - 共享资源绑定集群：资源共享绑定集群通常被用来做资源限额。
   典型的场景是平台管理员将集群分配给一级供应商后，再由一级供应商分配给二级供应商并对二级供应商进行资源限额。
 
-![diff](../../images/res-gp01.png)
+![diff](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/res-gp01.png)
 
 说明：在该场景中，需要平台管理员对二级供应商进行资源限制，暂时还不支持一级供应商限制二级供应商的集群额度。
 

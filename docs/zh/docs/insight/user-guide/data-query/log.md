@@ -10,7 +10,7 @@ Insight 默认采集节点日志、容器日志以及 kubernetes 审计日志。
     - 默认查询最近 24 小时；
     - 第一次进入时，默认根据登录账号权限查询有权限的集群或命名空间的容器日志；
   
-    ![log](../../images/log00.png)
+    ![log](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/log00.png)
 
 3. 顶部 Tab 默认进入 `普通查询`。
 
@@ -22,13 +22,13 @@ Insight 默认采集节点日志、容器日志以及 kubernetes 审计日志。
 
     3. 支持对单个关键字进行模糊搜索。
 
-        ![log](../../images/log03.png)
+        ![log](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/log03.png)
 
 4. 顶部切换 Tab 选择 `Lucene 语法查询`。
 
     第一次进入时，默认选择登录账号权限查询有权限的集群或命名空间的容器日志。
 
-    ![log](../../images/log01.png)
+    ![log](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/log01.png)
 
     **Lucene 语法说明：**
 
@@ -44,7 +44,7 @@ Insight 默认采集节点日志、容器日志以及 kubernetes 审计日志。
 
 点击日志后的按钮，在右侧划出面板中可查看该条日志的默认 100 条上下文。可切换`显示行数`查看更多上下文内容。
 
-![log](../../images/logcontext.png)
+![log](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/logcontext.png)
 
 #### 导出日志数据
 
@@ -53,4 +53,4 @@ Insight 默认采集节点日志、容器日志以及 kubernetes 审计日志。
 - 支持配置导出的日志字段，根据日志类型可配置的字段不同，其中`日志内容` 字段为必选。
 - 支持将日志查询结果导出为 **.txt** 或 **.csv** 格式。
 
-![log](../../images/logexport.png){ width="500"}
+![log](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/logexport.png){ width="500"}

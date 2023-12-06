@@ -582,6 +582,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
     Version features: support for golang 1.20, removal of support for Kubernetes 1.23, integration with OpenTelemetry module.
 
+- [Istio Service Mesh v1.20.0 released (CNCF project)](https://istio.io/latest/news/releases/1.20.x/announcing-1.20/)
+
+    Features: Full support for Gateway API v1.0, new support for Network type WasmPlugin, allow traffic mirroring to multiple destinations, enhancements to ExternalName service, introduction of StartupProbe for Sidecar container to speed up startup, optimize consistency in Envoy filter ordering, enhanced TCP metadata exchange controls, support for plug-in root certificate rotation, and more.
+
 - [Istio Service Mesh 1.19 released (CNCF project)](https://istio.io/latest/news/releases/1.19.x/announcing-1.19/)
 
     Release features: Gateway API v0.8.0 adds support for Service Mesh; Ambient Mesh adds support for `ServiceEntry`, `WorkloadEntry`, `PeerAuthentication`, and DNS proxies; support for optional client-side certificate validation; support for configuring non-Istio mTLS traffic cipher suites.
@@ -894,7 +898,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
 - [Kubernetes Gateway API v0.8.0 released](https://github.com/kubernetes-sigs/gateway-api/releases/tag/v0.8.0)
 
-    Release features: Introduction of Service Grid support, support for CEL authentication (fully supported in Kubernetes 1.25+ only).
+    Release features: Introduction of Service Mesh support, support for CEL authentication (fully supported in Kubernetes 1.25+ only).
 
 - [Kubernetes Cluster API v1.4.0 Released](https://github.com/kubernetes-sigs/cluster-api/releases/tag/v1.4.0)
 
@@ -941,6 +945,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [kube-rs Rust client for Kubernetes v0.79.0 released (CNCF project)](https://github.com/kube-rs/kube/releases/tag/0.79.0)
 
     Release features: add support for metadata api to reduce network load, expose default namespace for clients, allow event subscription from watcher without consuming raw watcher stream, support for persistent metadata watch.
+
+- [Kubescape Kubernetes Security Platform 3.0 released (CNCF project)](https://kubescape.io/blog/2023/09/19/introducing-kubescape-3/)
+
+    Release Features: Stores compliance and container scan results as a resource within a Kubernetes cluster; scans container images for vulnerabilities via the command line interface; reports on vulnerabilities across all images in the cluster; new overview security scanning with support for baselining cluster security; highlights high-risk workloads; new competency-based Helm chart; support for testing via the Prometheus Alertmanager for alerting; support for sending data to out-of-cluster managed services.
 
 - [KubeSkoop: Kubernetes network monitoring tool open sourced by Alicloud](https://mp.weixin.qq.com/s/zbAcZCNT5vyzGvp7uTDB1w)
 
@@ -1024,6 +1032,10 @@ This page lists activity in cloud native open source projects in alphabetical or
      [KubeWharf](https://github.com/kubewharf) is a distributed operating system based on Kubernetes, which consists of a set of cloud native components, focusing on improving system scalability, resource utilization, and scalability. Observability, security, etc., support Cases such as large-scale multi-tenant clusters, offline mixing, and storage.
      The first batch of KubeWharf plans to open source three projects: KubeBrain, a high-performance meta-information storage system, KubeGateway, a seven-layer gateway for kube-apiserver, and KubeZoo, a lightweight multi-tenant solution.
 
+- [Kuma Service Mesh Project v2.5.0 released (CNCF project)](https://github.com/kumahq/kuma/releases/tag/2.5.0)
+
+    Release Features: Supports geo-aware load balancing capabilities within and across regions, supports Gateway API v1, supports Envoy 1.28, uses incremental KDS in Global CP (Global Control Plane) and Zone CP (Zone Control Plane) protocols to dramatically reduce resource consumption, allows access to accessible services from MeshTrafficPermissions. accessible services from MeshTrafficPermissions.
+
 - [Kuma service mesh Project v2.2.0 Released (CNCF Project)](https://github.com/kumahq/kuma/releases/tag/2.2.0)
 
     Release features: support for OpenTelemetry, support for defining MeshProxyPatch policies using JSONPatch, support for retry directives and priorities, upgrade the underlying Envoy version to 1.25, new policies for more fine-grained control of load balancing between services, support for deploying generic patterns in Kubernetes clusters for global Support for global control plane deployment in Kubernetes clusters (supported by Postgres), and support for providing public keys for offline token signing and verification.
@@ -1064,6 +1076,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 
     Release features: plan to reorganize telemetry components into one module; keep webhook CA bundles stable during Pod restarts and webhook modifications; added default timeout for HTTP requests; simplified Serverless configuration for internal Docker registry; support for otel-collector 0.77.0.
 
+- [Kyverno Cloud Native Policy Engine v1.11.0 Released (CNCF Project)](https://github.com/kyverno/kyverno/releases/tag/v1.11.0)
+
+    Release Features: Support for ValidatingAdmissionPolicy (alpha); Write validation rules using CEL; Generate ValidatingAdmissionPolicy (VAP) when writing Kyverno-compatible validation rules using CEL; Generate policy reports from VAP; Test VAPs using the Kyverno CLI to test VAPs; generate reports based on resources instead of policies; support for OCI 1.1 and Cosign 2.0.
+
 - [Kyverno Cloud Native Policy Engine v1.10.0 Released (CNCF Project)](https://github.com/kyverno/kyverno/releases/tag/v1.10.0)
 
     Release features: split Kyverno into 3 separate controllers/deployments, support for intra-cluster service calls, support for verifying Notary v2 signatures, update generation and change of existing policies.
@@ -1087,7 +1103,7 @@ This page lists activity in cloud native open source projects in alphabetical or
 
      The main new features of this version: support for virtual machine shared file system virtiofs, support for Apple's virtualization framework Virtualization.framework, and support for Containerd command-line tool nerdctl 1.1.0.
 
-- [Linkerd Service Grid v2.14.0 released (CNCF project)](https://github.com/linkerd/linkerd2/releases/tag/stable-2.14.0)
+- [Linkerd Service Mesh v2.14.0 released (CNCF project)](https://github.com/linkerd/linkerd2/releases/tag/stable-2.14.0)
 
     Release features: New direct Pod-to-Pod multi-cluster service mirroring, support for Gateway API HTTPRoute resources.
 
@@ -1098,6 +1114,10 @@ This page lists activity in cloud native open source projects in alphabetical or
 - [Linkerd Service Mesh Project v2.12.0 Release (CNCF Project)](https://github.com/linkerd/linkerd2/releases/tag/stable-2.12.0)
 
      The main new features of this version: allow users to define and run authorization policies based on HTTP routes in a completely zero-trust manner; support configuration using the Kubernetes Gateway API; add support for `iptables-nft` to the initialization container.
+
+- [Litmus Chaos Engineering Framework 3.1.0 released (CNCF project)](https://github.com/litmuschaos/litmus/releases/tag/3.1.0)
+
+    Release features: add port blacklisting to Pod-network failures, add UI changes to enable and disable cron functionality, add test cases for Grpc handler, add handler and service tests.
 
 - [Litmus: Chaos Engineering Framework 3.0 released (CNCF project)](https://github.com/litmuschaos/litmus/releases/tag/3.0.0)
 

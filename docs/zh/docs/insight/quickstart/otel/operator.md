@@ -1,6 +1,6 @@
 # 通过 Operator 实现应用程序无侵入增强
 
-> 目前只有 Java、NodeJs、Python、.Net 支持 Operator 的方式无侵入接入，Golang 后续会完善。
+> 目前只有 Java、NodeJs、Python、.Net、Golang 支持 Operator 的方式无侵入接入。
 
 ## 前提条件
 
@@ -12,6 +12,10 @@
   deployment/insight-agent-opentelemetry-collector 对应的 Pod 已经准备就绪
 
 ## 安装 Instrumentation CR
+
+!!! tip
+
+    从 Insight v0.22.0 版本开始，不再需要手动安装 Instrumentation CR。
 
 在 insight-system 命名空间下安装, 不同版本之间有一些细小的差别。
 
@@ -240,11 +244,10 @@
           fieldPath: metadata.labels['app'] 
 ```
 
-完整示例如下：
-
-### Insight v0.18.x
+完整示例如下（For Insight v0.21.x）：
 
 ```bash
+K8S_CLUSTER_UID=$(kubectl get namespace kube-system -o jsonpath='{.metadata.uid}')
 kubectl apply -f - <<EOF
 apiVersion: opentelemetry.io/v1alpha1
 kind: Instrumentation
@@ -266,7 +269,7 @@ spec:
     # Enum: always_on, always_off, traceidratio, parentbased_always_on, parentbased_always_off, parentbased_traceidratio, jaeger_remote, xray
     type: always_on
   java:
-    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-java:1.25.0
+    image: ghcr.m.daocloud.io/openinsight-proj/autoinstrumentation-java:1.31.0
     env:
       - name: OTEL_JAVAAGENT_DEBUG
         value: "false"
@@ -278,16 +281,18 @@ spec:
         value: "prometheus"
       - name: OTEL_METRICS_EXPORTER_PORT
         value: "9464"
+      - name: OTEL_K8S_CLUSTER_UID
+        value: $K8S_CLUSTER_UID
   nodejs:
-    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs:0.37.0
+    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs:0.41.1
   python:
-    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python:0.38b0
+    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python:0.40b0
   dotnet:
-    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-dotnet:0.6.0
+    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-dotnet:1.0.0
   go:
     # Must set the default value manually for now.
     # See https://github.com/open-telemetry/opentelemetry-operator/issues/1756 for details.
-    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-go-instrumentation/autoinstrumentation-go:v0.2.1-alpha
+    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-go-instrumentation/autoinstrumentation-go:v0.2.2-alpha
 EOF
 ```
 
@@ -333,6 +338,16 @@ EOF
         ```bash
         instrumentation.opentelemetry.io/inject-dotnet: "insight-system/insight-opentelemetry-autoinstrumentation"
         ```
+
+!!! tip
+
+    opentelemetry operator 在注入探针时会自动添加一些 OTEL 相关环境变量，同时也支持这些环境变量的覆盖。这些环境变量的覆盖优先级：
+
+    original container env vars -> language specific env vars -> common env vars -> instrument spec configs' vars.
+
+    但是需要避免手动覆盖 OTEL_RESOURCE_ATTRIBUTES_NODE_NAME, 它在 operator 内部作为一个 Pod 是否已经注入探针的标识，如果手动
+    添加了，探针可能无法注入。
+
 
 ## 自动注入示例 Demo
 

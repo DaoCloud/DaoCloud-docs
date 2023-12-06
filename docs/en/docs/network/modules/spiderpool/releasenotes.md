@@ -10,9 +10,33 @@ Spidernet includes:
 - Egressgateway, an open-source egress gateway module developed by DaoCloud. Refer to
   [Egressgateway Release Notes](https://github.com/spidernet-io/egressgateway/releases).
 
-### 2023-10-30
+## 2023-11-30
 
-#### v0.10.1
+### v0.11.1
+
+- Compatible with **Spiderpool v0.8.1**
+- Compatible with **Egressgateway v0.4.0**
+
+#### New Features
+
+- **Added** support for querying installation status of Spiderpool and Egressgateway
+- **Added** support for Multus CR to manage SR-IOV CNI and enable RDMA
+- **Added** support for automatically selecting network resource parameters such as RDMA, SR-IOV, and hugepages when creating a workload
+- **Added** support for Egressgateway to use EIP counting feature
+
+#### Improvements
+
+- **Improved** Spiderpool SDK dependencies
+
+#### Fixes
+
+- **Fixed** issue with matching namespaces when associating IP pool with Multus CR instances
+- **Fixed** issue with not updating Annotations when updating Multus CR
+- **Fixed** issue with incorrect policy reallocation caused by Egressgateway
+
+## 2023-10-30
+
+### v0.10.1
 
 - Compatible with **Spiderpool v0.8.0**
 - Compatible with **Egressgateway v0.3.0**
@@ -120,7 +144,7 @@ Compatible with **Spiderpool v0.6.0**
 
 Compatible with **Spiderpool v0.5.0**
 
-#### Enhancements
+#### Improvements
 
 - **Added** definition of Multus API in `spidernet`
 - **Improved** stability of `spidernet` e2e

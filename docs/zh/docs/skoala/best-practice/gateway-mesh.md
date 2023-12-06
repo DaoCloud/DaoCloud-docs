@@ -14,9 +14,9 @@
 
 ## 操作步骤
 
-1. [创建云原生网关](../gateway/create-gateway.md)时，开启注入 Sidecar。
+1. [创建云原生网关](../gateway/index.md)时，开启注入 Sidecar。
 
-    ![创建网关](../images/create-gw01.png)
+    ![创建网关](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/create-gw01.png)
 
 2. 为 Pod 设置 Annotation 注解 `traffic.sidecar.istio.io/includeInboundPorts: ""`。
 
@@ -26,7 +26,7 @@
 
     ![参数示意图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw-mesh01.png)
 
-4. 在网关下[添加 API](../gateway/api/add-api.md)时，设置 `Host` 请求头。
+4. 在网关下[添加 API](../gateway/api/index.md)时，设置 `Host` 请求头。
 
     这样可以让网关在多集群场景下，通过 Sidecar 访问其他集群的服务，实现服务的跨集群负载均衡。
 

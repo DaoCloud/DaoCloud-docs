@@ -17,8 +17,8 @@ Cilium 基于 eBPF 技术提升了 Pod 带宽的性能。本页介绍Cilium 基�
 
 - Cilium 的 EDT Pod 带宽管控对数据包的延时影响极低，而传统的基于 HTB qdisc 的 TC 方案，对数据包通信的延时影响较大
 
-    ![latency](../../images/cilium-ebpf-latency.png)
+    ![latency](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/cilium-ebpf-latency.png)
 
 - Cilium 的 EDT Pod 带宽管控对应用通信的 TPS 影响有限，而传统的基于 HTB qdisc 的 TC 方案，对应用通信的 TPS 影响较大
 
-    ![tps](../../images/cilium-ebpf-tps.png)
+    ![tps](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/cilium-ebpf-tps.png)

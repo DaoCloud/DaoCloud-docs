@@ -4,109 +4,108 @@
 
 请按照以下步骤创建具有最大 IOPS 和吞吐量的卷并创建工作负载来使用它。
 
-## 使用最大 IOPS 和吞吐量参数创建新的 StorageClass
+## 前提条件
 
-默认情况下，HwameiStor 在安装过程中不会自动创建这样的 StorageClass，因此您需要手动创建 StorageClass。
+- 集群已经[安装 HwameiStor](../install/deploy-ui.md)
 
-示例 StorageClass 如下：
+- cgroup v2 要求：
 
-```yaml
-allowVolumeExpansion: true
-apiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
-  name: hwameistor-storage-lvm-hdd-sample
-parameters:
-  convertible: "false"
-  csi.storage.k8s.io/fstype: xfs
-  poolClass: HDD
-  poolType: REGULAR
-  provision-iops-on-creation: "100"
-  provision-throughput-on-creation: 1Mi
-  replicaNumber: "1"
-  striped: "true"
-  volumeKind: LVM
-provisioner: lvm.hwameistor.io
-reclaimPolicy: Delete
-volumeBindingMode: WaitForFirstConsumer
-```
+  - 操作系统发行版启用 cgroup v2
 
-与 HwameiStor 安装程序创建的常规 StorageClass 相比，添加了以下参数：
+  - Linux 内核为 5.8 或更高版本
 
-- Provision-iops-on-creation：指定创建时卷的最大 IOPS。
-- Provision-throughput-on-creation：它指定创建时卷的最大吞吐量。
+  更多信息, 请参见 [Kubernetes 官网](https://kubernetes.io/zh-cn/docs/concepts/architecture/cgroups/)。
 
-创建 StorageClass 后，您可以使用它来创建 PVC。
+## 操作步骤
 
-## 使用 StorageClass 创建 PVC
+### 使用 IOPS 和吞吐量参数创建新的 StorageClass
 
-示例 PVC 如下：
+1. 进入`容器管理`模块，在集群列表中找到已安装 HwameiStor 的集群，点击该集群的名称。
 
-```yaml
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: pvc-sample
-spec:
-  accessModes:
-  - ReadWriteOnce
-  resources:
-    requests:
-      storage: 10Gi
-  storageClassName: hwameistor-storage-lvm-hdd-sample
-```
+2. 在左侧导航栏中选择 `容器存储` -> `存储池 (SC)` ，并点击左上角按钮`创建存储池(SC)`。
 
-创建 PVC 后，您可以创建 Deployment 来使用 PVC。
+    ![sc01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/sc01.png)
 
-## 创建带有 PVC 的 Deployment
+3. 进入创建存储池界面，特别注意填写以下参数，其他参数可参考[表单创建](../../../kpanda/user-guide/storage/sc.md)。
 
-示例 Deployment 如下：
+    - 名称：本示例输入`hwameistor-storage-lvm-hdd-sample` 。
 
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  creationTimestamp: null
-  labels:
-    app: pod-sample
-  name: pod-sample
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: pod-sample
-  strategy: {}
-  template:
-    metadata:
-      creationTimestamp: null
-      labels:
-        app: pod-sample
-    spec:
-      volumes:
-      - name: data
-        persistentVolumeClaim:
-          claimName: pvc-sample
-      containers:
-      - command:
-        - sleep
-        - "100000"
-        image: busybox
-        name: busybox
-        resources: {}
-        volumeMounts:
-        - name: data
-          mountPath: /data
-status: {}
-```
+    - 存储系统：选择 `HwameiStor`。
 
-创建 Deployment 后，您可以使用以下命令测试卷的 IOPS 和吞吐量：
+    - 存储类型：支持使用 `LVM 类型`、`裸辞盘类型`，本示例选择 `LVM 类型`。
 
-```bash
-kubectl exec -it pod-sample-5f5f8f6f6f-5q4q5 -- /bin/sh
-dd if=/dev/zero of=/data/test bs=4k count=1000000 oflag=direct
-```
+    - 磁盘类型：支持 `HDD`、`SSD`，本示例选择 `HDD`。
 
-**注意**：由于 cgroupv1 限制，最大 IOPS 和吞吐量的设置可能对非直接 IO 不生效。
+    - 自定义参数：需要填写以下四个参数，
+
+        - `poolType: REGULAR` ：指定存储池类型，暂时仅支持 `REGULAR`。
+
+        - `csi.storage.k8s.io/fstype: xfs` ：指定所需的文件系统类型，不定义默认为 `ext4`。
+
+        - `provision-iops-on-creation: "100"` ：指定创建时卷的最大 IOPS。
+
+        - `provision-throughput-on-creation: 1Mi` ：指定创建时卷的最大吞吐量。
+  
+    ![sc02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/sc02.png)
+    ![sc03](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/sc03.png)
+
+4. 点击`确定`，创建成功后返回 SC 列表界面。
+
+### 使用 StorageClass 创建 PVC
+
+1. 在左侧导航栏中选择 `容器存储` -> `数据卷声明 (PVC)` ，并点击左上角按钮`创建数据卷声明 (PVC)`。
+
+    ![pvc01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/pvc01.png)
+
+2. 进入创建数据卷声明界面，填写以下参数。
+
+    - 名称：本示例输入`pvc-hwameistor-sample` 。
+
+    - 存储池：选择上述创建的 SC，名称为 `hwameistor-storage-lvm-hdd-sample`。
+
+    - 容量：本示例输入`10`。
+
+    - 访问模式：默认选中`ReadWriteMany`。
+
+    ![pvc02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/pvc02.png)
+
+3. 点击`确定`，创建成功后返回 SC 列表界面。完成后，您可以创建 Deployment 来使用 PVC。
+
+### 创建带有 PVC 的 Deployment
+
+1. 在左侧导航栏中选择 `工作负载` -> `无状态负载` ，并点击左上角按钮`镜像创建`。
+
+    ![deploy01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/deploy01.png)
+
+2. 需要注意可以填写以下参数：
+
+    - image：本示例输入 `daocloud.io/daocloud/testtools:latest`。
+
+    - 数据存储：
+
+      - 类型：选择 `数据卷声明(PVC)`。
+
+      - 数据卷声明（PVC）：选择 `pvc-hwameistor-sample`。
+
+      - 容器路径（mountPath）：输入 `/data`。
+
+    其余参数无特别要求。
+
+    ![deploy02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/deploy02.png)
+
+3. 创建 Deployment 后，在详情界面点击 `控制台`，执行以下命令测试卷的 IOPS 和吞吐量：
+
+    ```bash
+    fio -direct=1  -iodepth=128 -rw=randwrite -ioengine=libaio -bs=4K -size=50M -numjobs=1 -runtime=600 -group_reporting -filename=/data/file.txt -name=Rand_Write_IOPS_Test
+    ```
+
+    预期会输出如下：
+
+    ![deploy03](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/deploy03.png)
+
+!!! note
+
+    由于 cgroupv1 限制，最大 IOPS 和吞吐量的设置可能对非直接 IO 不生效。
 
 ## 如何更改数据卷的最大 IOPS 和吞吐量
 

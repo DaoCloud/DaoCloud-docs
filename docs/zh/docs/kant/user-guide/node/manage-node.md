@@ -14,7 +14,7 @@
 
 2. 点击节点列表右侧`暂停调度`按钮，提示暂停调度任务下发成功，稍后点击`刷新`图标，节点状态变更为“健康/暂停调度”。
 
-    ![暂停调度](../../images/node-manage-01.png)
+    ![暂停调度](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/node-manage-01.png)
 
 3. 如果需要恢复调度，则点击列表右侧`恢复调度`按钮，提示恢复调度任务下发成功，稍后点击`刷新`图标，节点状态将变更为`健康/可调度`。
 
@@ -26,7 +26,7 @@
 
 2. 点击节点列表右侧`移除节点`按钮，弹出确认移除弹框。
 
-    ![暂停调度](../../images/node-manage-02.png)
+    ![暂停调度](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/node-manage-02.png)
 
 3. 手动完成工作负载和终端设备资源解绑操作。如果节点上的资源已清除，忽略此步骤。
 

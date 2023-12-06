@@ -17,8 +17,8 @@ Cilium improves the performance of Pod bandwidth based on eBPF technology. This 
 
 - Cilium's EDT Pod bandwidth control has a very low impact on packet latency, while the traditional HTB qdisc-based TC scheme has a high impact on packet communication latency.
 
-    ![latency](../../images/cilium-ebpf-latency.png)
+    ![latency](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-ebpf-latency.png)
 
 - Cilium's EDT Pod bandwidth management has a limited impact on the TPS of application communication, while the traditional HTB qdisc-based TC scheme has a large impact on the TPS of application communication.
 
-    ![tps](../../images/cilium-ebpf-tps.png)
+    ![tps](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-ebpf-tps.png)

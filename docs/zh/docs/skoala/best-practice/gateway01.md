@@ -13,7 +13,7 @@ DCE 5.0 云原生网关支持通过手动接入和自动发现两种方式导入
 
 ### 自动发现服务
 
-1. 参考文档[创建网关](../gateway/create-gateway.md)创建一个网关。
+1. 参考文档[创建网关](../gateway/index.md)创建一个网关。
    **将服务所在的命名空间添加为网关的管辖命名空间** 。
    此次演示使用的服务位于 `webstore-demo` 命名空间。所以创建网关时应该做如下配置:
 
@@ -23,8 +23,8 @@ DCE 5.0 云原生网关支持通过手动接入和自动发现两种方式导入
 
     ![自动发现](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw02.png)
 
-3. 参考[添加域名](../gateway/domain/add-domain.md)在网关下面创建域名，例如`adservice.virtualhost`。
-4. 参考[添加 API](../gateway/api/add-api.md)在网关下面创建 API。
+3. 参考[添加域名](../gateway/domain/index.md)在网关下面创建域名，例如`adservice.virtualhost`。
+4. 参考[添加 API](../gateway/api/index.md)在网关下面创建 API。
    **需要将服务添加为 API 的后端服务** 。
 
     添加后端服务时，筛选`自动发现`类型的服务，然后勾选目标服务，点击`确定`即可。
@@ -33,14 +33,15 @@ DCE 5.0 云原生网关支持通过手动接入和自动发现两种方式导入
 
 ### 手动接入服务
 
-1. 参考[创建网关](../gateway/create-gateway.md)创建网关。
+1. 参考[创建网关](../gateway/index.md)创建网关。
 
 2. 参考[手动接入](../gateway/service/manual-integrate.md)文档将服务接入网关
 
-    ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw04.png)
+    ![手动接入网关](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw04.png)
 
-3. 参考[添加域名](../gateway/domain/add-domain.md)在网关下面创建域名，例如`adservice.virtualhost`。
-4. 参考[添加 API](../gateway/api/add-api.md)在网关下面创建 API。
+3. 参考[添加域名](../gateway/domain/index.md)在网关下面创建域名，例如`adservice.virtualhost`。
+4. 参考[添加 API](../gateway/api/index.md)在网关下面创建 API。
+
    **需要将服务添加为 API 的后端服务** 。
 
     添加后端服务时，筛选`手工接入`类型的服务，然后勾选目标服务，点击`确定`即可。

@@ -1,4 +1,4 @@
-# Cilium 为 IPVlan 支持网络策略
+# Cilium 为 IPVlan 提供网络策略支持
 
 本文介绍 IPVlan 如何与 Cilium 集成，为 IPVlan CNI 提供网络策略能力。
 
@@ -127,9 +127,9 @@ spec:
 EOF
 ```
 
-> 在上面的配置中，指定 master 为 ens192, ens192 必须存在与节点上
+> 在上面的配置中，指定 master 为 ens192, ens192 必须存在于节点上
 > 
-> 将 cilium 嵌入到 CNI 配置中，放置与 ipvlan plugin 之后
+> 将 cilium 嵌入到 CNI 配置中，放置于 ipvlan plugin 之后
 > 
 > 注意 CNI 的 name 必须和安装 cilium-chaining 时的 cniChainingMode 保持一致，否则无法正常工作
 
@@ -137,7 +137,7 @@ EOF
 
 ### 创建应用
 
-以下的示例 Yaml 中，会创建 1 组 DaemonSet 应用和 其中使用 `v1.multus-cni.io/default-network`：用于指定应用所使用的 CNI 配置文件:
+以下的示例 Yaml 中，会创建 1 组 DaemonSet 应用，其中使用 `v1.multus-cni.io/default-network`：用于指定应用所使用的 CNI 配置文件:
 
 ```shell
 APP_NAME=test
@@ -182,54 +182,55 @@ test-55c97ccfd8-w62k7   1/1     Running             0          3m50s   10.6.185.
 
 ### 验证网络策略是否生效
 
-  - 测试 Pod 与跨节点、跨子网 Pod 的通讯情况
+- 测试 Pod 与跨节点、跨子网 Pod 的通讯情况
 
-      ```shell
-     ~# kubectl exec -it test-55c97ccfd8-l4h5w -- ping -c2 10.6.185.30
-     PING 10.6.185.30 (10.6.185.30): 56 data bytes
-     64 bytes from 10.6.185.30: seq=0 ttl=64 time=1.917 ms
-     64 bytes from 10.6.185.30: seq=1 ttl=64 time=1.406 ms
+    ```shell
+    ~# kubectl exec -it test-55c97ccfd8-l4h5w -- ping -c2 10.6.185.30
+    PING 10.6.185.30 (10.6.185.30): 56 data bytes
+    64 bytes from 10.6.185.30: seq=0 ttl=64 time=1.917 ms
+    64 bytes from 10.6.185.30: seq=1 ttl=64 time=1.406 ms
    
-     --- 10.6.185.30 ping statistics ---
-     2 packets transmitted, 2 packets received, 0% packet loss
-     round-trip min/avg/max = 1.406/1.661/1.917 ms
-     ~# kubectl exec -it test-55c97ccfd8-l4h5w -- ping -c2 10.6.185.206
-     PING 10.6.185.206 (10.6.185.206): 56 data bytes
-     64 bytes from 10.6.185.206: seq=0 ttl=64 time=1.608 ms
-     64 bytes from 10.6.185.206: seq=1 ttl=64 time=0.647 ms
+    --- 10.6.185.30 ping statistics ---
+    2 packets transmitted, 2 packets received, 0% packet loss
+    round-trip min/avg/max = 1.406/1.661/1.917 ms
+    ~# kubectl exec -it test-55c97ccfd8-l4h5w -- ping -c2 10.6.185.206
+    PING 10.6.185.206 (10.6.185.206): 56 data bytes
+    64 bytes from 10.6.185.206: seq=0 ttl=64 time=1.608 ms
+    64 bytes from 10.6.185.206: seq=1 ttl=64 time=0.647 ms
    
-     --- 10.6.185.206 ping statistics ---
-     2 packets transmitted, 2 packets received, 0% packet loss
-     round-trip min/avg/max = 0.647/1.127/1.608 ms
+    --- 10.6.185.206 ping statistics ---
+    2 packets transmitted, 2 packets received, 0% packet loss
+    round-trip min/avg/max = 0.647/1.127/1.608 ms
 
-      ```
-  - 创建禁止 Pod 与外部通信的网络策略
+    ```
 
-      ```shell
-      ~# cat << EOF | kubectl apply -f -
-      kind: NetworkPolicy
-      apiVersion: networking.k8s.io/v1
-      metadata:
-        name: deny-all
-      spec:
-        podSelector:
-          matchLabels:
-            app: test
-        policyTypes:
-        - Egress
-        - Ingress
-      ```
- 
-     > deny-all 根据 label 匹配所有 pod, 该策略禁止 Pod 对外通信
+- 创建禁止 Pod 与外部通信的网络策略
+
+    ```shell
+    ~# cat << EOF | kubectl apply -f -
+    kind: NetworkPolicy
+    apiVersion: networking.k8s.io/v1
+    metadata:
+      name: deny-all
+    spec:
+      podSelector:
+        matchLabels:
+          app: test
+      policyTypes:
+      - Egress
+      - Ingress
+    ```
+
+    > deny-all 根据 label 匹配所有 pod, 该策略禁止 Pod 对外通信
   
-  - 再次验证 Pod 对外通信
+- 再次验证 Pod 对外通信
 
-      ```shell
-      ~# kubectl exec -it test-55c97ccfd8-l4h5w -- ping -c2 10.6.185.206
-      kubectl exec [POD] [COMMAND] is DEPRECATED and will be removed in a future version. Use kubectl exec [POD] -- [COMMAND] instead.
-      PING 10.6.185.206 (10.6.185.206): 56 data bytes
-      --- 10.6.185.206 ping statistics ---
-      14 packets transmitted, 0 packets received, 100% packet loss
-      ```
-    
+    ```shell
+    ~# kubectl exec -it test-55c97ccfd8-l4h5w -- ping -c2 10.6.185.206
+    kubectl exec [POD] [COMMAND] is DEPRECATED and will be removed in a future version. Use kubectl exec [POD] -- [COMMAND] instead.
+    PING 10.6.185.206 (10.6.185.206): 56 data bytes
+    --- 10.6.185.206 ping statistics ---
+    14 packets transmitted, 0 packets received, 100% packet loss
+    ```
+
 从结果看出，Pod 访问外部的流量被禁止，网络策略生效，证明通过 Cilium-chaining 项目 帮助 IPVlan 实现网络策略能力。

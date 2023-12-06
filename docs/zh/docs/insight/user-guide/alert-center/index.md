@@ -3,7 +3,7 @@
 告警中心是 DCE 5.0 提供的一个重要功能，它让用户可以通过图形界面方便地按照集群和命名空间查看所有活动和历史告警，
 并根据告警级别（紧急、警告、提示）来搜索告警。
 
-![alert list](../../images/alert00.png)
+![alert list](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/alert00.png)
 
 所有告警都是基于预设的告警规则设定的阈值条件触发的。在 DCE 5.0 中，内置了一些全局告警策略，同时您也可以随时创建、删除告警策略，对以下指标进行设置：
 

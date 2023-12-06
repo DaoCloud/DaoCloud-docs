@@ -41,7 +41,7 @@ spec:
 
 当创建 Ingress 实例时，如果启用 `Ingress Scope`，IngressClass 设置了 `.spec.parameters`，并且设置 `.spec.parameters.scope` 为 `Namespace`，那么 Ingress 实例的 Ingress Class 指向为`命名空间级`，需要指定待使用的命名空间。
 
-命名空间级的 Ingress 实例，相当于管理员将 Ingress 的使用权限下发给到某个命名空间，可以实现资源隔离，如设置了命名空间级实例，创建 路由 时，可在 `租户级负载均衡`中选择并使用。
+命名空间级的 Ingress 实例，相当于管理员将 Ingress 的使用权限下发给到某个命名空间，可以实现资源隔离，如设置了命名空间级实例，创建路由时，可在 `租户级负载均衡`中选择并使用。
 
 ```yaml
 #示例
@@ -84,7 +84,7 @@ spec:
 ## 如何部署平台/工作空间级/命名空间级 Ingress 实例?
 
 可以通过指定 `--watch-namespace` 的方式，不同的实例 watch 不同的命名空间。
-若[ingress-nginx 实例通过 Helm 安装](install.md)，需通过指定 `controller.scope.enabled=true` 和 `--set controller.scope.namespace=$NAMESPACE` 开启并设置平台/命名空间级 Ingress。
+若[ingress-nginx 实例通过 Helm 安装](install.md)，需通过指定 `controller.scope.enabled=true` 和 `--set controller.scope.namespace=$NAMESPACE` 开启并设置平台/工作空间级/命名空间级 Ingress。
 
 1. `平台级 Ingress 实例`：创建 Ingress 实例时， `scope` 关闭，则创建的 Ingress 实例为 `平台级`。
 2. `命名空间 Ingress 实例`：创建 Ingresss 实例时，`scope` 开启，并在 `namespace`中指定对应的命名空间，则创建的 Ingress 为 `命名空间级 `。
@@ -96,8 +96,8 @@ spec:
 
     ![scope02](https://docs.daocloud.io/daocloud-docs-images/docs/network/images/scope02.jpg)
 
-3. `工作空间 Ingress 实例`：部署 Ingress-Ngnix 时 ,`scope`设置为 `disabled` 并指定在 `Namespace Selector` 中输入 `workspace.ghippo.io/id=12345`,创建后的 Ingress 实例为 `ID`为`12345`的 工作空间独享。
-   ![工作空间Ingress](../../images/workspaceingress.jpg)对应的 `value.yaml` 中的配置信息：![workspaceingress02](../../images/workspaceingress02.jpg)
+3. `工作空间 Ingress 实例`：部署 Ingress-Ngnix 时 ,`scope`设置为 `disabled` 并指定在 `Namespace Selector` 中输入 `workspace.ghippo.io/id=12345`,创建后的 Ingress 实例为 `ID`为`12345` 的 工作空间独享。
+   ![工作空间Ingress](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/workspaceingress.jpg)对应的 `value.yaml` 中的配置信息：![workspaceingress02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/workspaceingress02.jpg)
 
 Ingress 实例部署后，可在对应的命名空间中[创建 Ingress 规则](../../../kpanda/user-guide/network/create-ingress.md)，并选择对应实例的 Ingress Class 进行使用。
 

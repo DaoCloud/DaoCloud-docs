@@ -39,10 +39,10 @@ nav:
                   - Uninstall: install/uninstall.md
                   - Import Offline Resources: install/import.md
                   - Troubleshoot: install/faq.md
-              - Install with Different K8s Distributions:
+              - Install with Different K8s:
                   - With OpenShift OCP: install/k8s-install/ocp-install-dce5.0.md
                   - With Alibaba Cloud ECS: install/k8s-install/ecs-install-dce5.0.md
-              - Install on Different OS:
+              - Install on Different Linux:
                   - With UOS V20 (1020a): install/os-install/uos-v20-install-dce5.0.md
                   - With Oracle Linux R9/R8 U1: install/os-install/oracleLinux-install-dce5.0.md
                   - With TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
@@ -244,9 +244,10 @@ nav:
                           - MIG Commands: kpanda/user-guide/gpu/nvidia/mig/mig_command.md
                   - Ascend GPU:
                       - Use Ascend GPU: kpanda/user-guide/gpu/Ascend_usage.md
-                  - Iluvatar GPU:
-                      - Use Iluvatar GPU: kpanda/user-guide/gpu/Iluvatar_usage.md
+                      - Huawei Ascend NPU Quick Start Guide: kpanda/user-guide/gpu/ascend_quickstart.md
+                  - Iluvatar GPU: kpanda/user-guide/gpu/Iluvatar_usage.md
                   - GPU Quota Management: kpanda/user-guide/gpu/vgpu_quota.md
+                  - GPU Metrics: kpanda/user-guide/gpu/gpu-metrics.md
               - Best Practices:
                   - Backup and Restore ETCD: kpanda/best-practice/etcd-backup.md
                   - Cross-cluster Backup and Restore of MySQL Apps and Data: kpanda/best-practice/backup-mysql-on-nfs.md
@@ -373,6 +374,7 @@ nav:
                   - Config: network/modules/spiderpool/config.md
                   - Commands: network/modules/spiderpool/command.md
                   - Running on Alibaba Cloud: network/modules/spiderpool/alibabacloud.md
+                  - Running on AWS: network/modules/spiderpool/awscloud.md
               - Calico:
                   - Intro: network/modules/calico/index.md
                   - Install: network/modules/calico/install.md
@@ -386,6 +388,7 @@ nav:
                   - Unsupported Features: network/modules/cilium/notSupport.md
                   - Cilium Network Communication Acceleration: network/modules/cilium/cross-cluster.md
                   - Cross-Cluster Application Communication: network/modules/cilium/cilium-speedup.md
+                  - Cilium Network Policy Support for IPVlan: network/modules/cilium/cilium_chaining.md
               - Contour:
                   - Intro: network/modules/contour/index.md
                   - Install: network/modules/contour/install.md
@@ -405,6 +408,10 @@ nav:
                   - Upload limit: network/modules/ingress-nginx/upload.md
                   - Traffic mirror: network/modules/ingress-nginx/mirror.md
                   - Cross-Origin Resource Sharing: network/modules/ingress-nginx/cors.md
+                  - Redirect: network/modules/ingress-nginx/redirect.md
+              - EgressGateway:
+                  - Intro: network/modules/egressgateway/index.md
+                  - Usage: network/modules/egressgateway/usage.md
               - Metallb:
                   - Intro: network/modules/metallb/index.md
                   - Install: network/modules/metallb/install.md
@@ -433,7 +440,7 @@ nav:
                   - Usage: network/modules/aliyun-terway/usage.md
                   - Run Calico on Alibaba Cloud: network/modules/aliyun-terway/aliyun-calico.md
                   - Run Cilium on Alibaba Cloud: network/modules/aliyun-terway/aliyun-cilium.md
-                  - Q & A: network/modules/aliyun-terway/Q_A.md
+                  - FAQs: network/modules/aliyun-terway/Q_A.md
           - Cloud Native Storage:
               - Intro:
                   - What is storage: storage/index.md
@@ -503,10 +510,17 @@ nav:
               - Intro:
                   - Intro: virtnest/intro/index.md
                   - Release Notes: virtnest/intro/release-notes.md
+                  - Install VM Container: virtnest/intro/install.md
               - Quick Start:
-                  - Create VM: virtnest/quick-start/index.md
+                  - Install virtnest-agent: virtnest/quick-start/index.md
+                  - Create VM: virtnest/quick-start/create-image.md
+                  - Create VM by Template: virtnest/quick-start/create-tep.md
+                  - VM Template: virtnest/quick-start/tep.md
+                  - Connect VM: virtnest/quick-start/access.md
+                  - Snapshots: virtnest/quick-start/snapshot.md
                   - Access VM by NodePort: virtnest/quick-start/nodeport.md
-                  - Deploy with Rook Ceph: virtnest/quick-start/rook-ceph.md
+                  - Deploy Rook Ceph: virtnest/quick-start/rook-ceph.md
+                  - Offline Upgrade: virtnest/install/offline-install.md
       - Observability:
           - Insight:
               - Intro:
@@ -601,45 +615,35 @@ nav:
                   - Competitiveness: skoala/intro/advantages.md
                   - Microservices Release Notes: skoala/intro/release-notes.md
               - Quick Start:
-                  - Install: skoala/quickstart/install.md
-                  - Online Upgrade: skoala/quickstart/online-upgrade.md
-                  - Offline Upgrade: skoala/quickstart/offline-upgrade.md
+                  - Management Components: skoala/quickstart/skoala.md
+                  - Cluster Init Components: skoala/quickstart/skoala-init.md
                   - Select Workspace: skoala/quickstart/select-workspace.md
               - Cloud Native Gateway:
-                  - Gateway Management:
-                      - Create Gateway: skoala/gateway/create-gateway.md
-                      - Check Gateway: skoala/gateway/check-details.md
-                      - Update Gateway: skoala/gateway/update-gateway.md
-                      - Delete Gateway: skoala/gateway/delete-gateway.md
+                  - Gateway Management: skoala/gateway/index.md
                   - API Management:
-                      - Add API: skoala/gateway/api/add-api.md
-                      - Update API: skoala/gateway/api/update-api.md
+                      - Add API: skoala/gateway/api/index.md
+                      - Update/Delete API: skoala/gateway/api/update-api.md
                       - API Policies: skoala/gateway/api/api-policy.md
-                      - Delete API: skoala/gateway/api/delete-api.md
                   - Service Management:
                       - Manual Add: skoala/gateway/service/manual-integrate.md
                       - Auto Add: skoala/gateway/service/auto-manage.md
-                  - Monitoring and Alarming: skoala/gateway/alert.md
+                  - Monitor and Alert: skoala/gateway/alert.md
                   - Logs:
                       - Request Logs: skoala/gateway/logs/reqlog.md
                       - Instance Logs: skoala/gateway/logs/inslog.md
                   - Domain Management:
-                      - Add Domain: skoala/gateway/domain/add-domain.md
-                      - Update Domain: skoala/gateway/domain/update-domain.md
+                      - Add Domain: skoala/gateway/domain/index.md
+                      - Update/Delete Domain: skoala/gateway/domain/update-domain.md
                       - Domain Policies: skoala/gateway/domain/domain-policy.md
-                      - Delete Domain: skoala/gateway/domain/delete-domain.md
               - Cloud Native Microservices:
-                  - Import/Remove Service: skoala/cloud-ms/service.md
+                  - Import/Remove Service: skoala/cloud-ms/index.md
                   - Traffic Control: skoala/cloud-ms/traffic-control.md
               - Traditional Microservices:
-                  - Hostsed Nacos:
-                      - Create Naocs: skoala/trad-ms/hosted/create-registry.md
-                      - Update Nacos: skoala/trad-ms/hosted/update-registry.md
-                      - Check Nacos: skoala/trad-ms/hosted/check-registry.md
-                      - Delete Nacos: skoala/trad-ms/hosted/delete-registry.md
+                  - Hosted Nacos:
+                      - Hosted Naocs: skoala/trad-ms/hosted/index.md
                       - Microservice Namespace: skoala/trad-ms/hosted/namespace.md
                       - Microservice List:
-                          - Intro: skoala/trad-ms/hosted/services/intro.md
+                          - Intro: skoala/trad-ms/hosted/services/index.md
                           - Check Microservice: skoala/trad-ms/hosted/services/check-details.md
                           - Traffic Rules:
                               - Intro: skoala/trad-ms/hosted/services/governance-policy.md
@@ -654,27 +658,31 @@ nav:
                           - Monitor Microservices: skoala/trad-ms/hosted/monitor/microservices.md
                           - Monitor Components: skoala/trad-ms/hosted/monitor/components.md
                           - Tracing: skoala/trad-ms/hosted/monitor/traces.md
-                      - Resoruce Info: skoala/trad-ms/hosted/resource-info.md
+                      - Resource Info: skoala/trad-ms/hosted/resource-info.md
                       - Governance Plugin:
                           - Intro: skoala/trad-ms/hosted/plugins/plugin-center.md
                           - Enable Sentinel: skoala/trad-ms/hosted/plugins/sentinel.md
                           - Enable Mesh: skoala/trad-ms/hosted/plugins/mesh.md
                   - Integrated Registry:
-                      - Integrate Registry: skoala/trad-ms/integrated/integrate-registry.md
-                      - Update Registry: skoala/trad-ms/integrated/update-registry.md
-                      - Remove Registry: skoala/trad-ms/integrated/remove-registry.md
+                      - Integrate Registry: skoala/trad-ms/integrated/index.md
                       - Microservice Management: skoala/trad-ms/integrated/manage-service.md
                       - Traces: skoala/trad-ms/integrated/trace.md
-              - Service Standards:
+              - Plugins: skoala/plugins/intro.md
+              - Service Spec:
                   - Enable Sentinel: skoala/standard/sentinel.md
                   - Enable Nacos: skoala/standard/nacos.md
                   - Enable Sentinel Monitoring: skoala/standard/monitor.md
                   - Enable Sentinel Flow Control: skoala/standard/flow-control.md
               - Best Practices:
-                  - Complete Process of Microservice Governance: skoala/best-practice/use-skoala-01.md
+                  - Sample App in Microservices: skoala/best-practice/use-skoala-01.md
+                  - JWT Plugin in Cloud Native Microservice: skoala/best-practice/plugins/jwt.md
                   - Microservice Gateway JWT: skoala/best-practice/jwt.md
-                  - Microservice Gateway Authentication Server: skoala/best-practice/auth-server.md
-              - Plugins: skoala/plugins/intro.md
+                  - Authentication Server for Microservie Gateway: skoala/best-practice/auth-server.md
+                  - Gateway API Policies: skoala/best-practice/gateway02.md
+                  - Access Microservie via Gateway: skoala/best-practice/gateway01.md
+                  - Gateway to Service Mesh: skoala/best-practice/gateway-mesh.md
+              - Troubleshoot:
+                  - skoala-init error about x-kubernets-validations: skoala/troubleshoot/auth-server.md   
               - Performance Tests:
                   - Gateway RPS: skoala/tests/gateway-stress-test.md
                   - Nacos TPS: skoala/tests/nacos-stress-test.md
@@ -682,6 +690,7 @@ nav:
                   - Microservice: reference/basic-knowledge/microservice.md
                   - Registry: reference/basic-knowledge/registry.md
                   - Cloud Native Gateway: reference/basic-knowledge/gateway.md
+                  - Nacos Version Downgrade: skoala/reference/nacos.md
           - Service Mesh:
               - Intro:
                   - What is Service Mesh: mspider/intro/index.md
@@ -742,6 +751,7 @@ nav:
               - Mesh Gateway:
                   - Create Mesh Gateway: mspider/user-guide/gateway-instance/create.md
                   - Delete Mesh Gateway: mspider/user-guide/gateway-instance/delete.md
+                  - Gateway Management for External Mesh: mspider/user-guide/gateway-instance/gateway-in-external-mesh.md
               - Mesh Config:
                   - Multicloud interconnection: mspider/user-guide/multicluster/cluster-interconnect.md
                   - Multicloud config: mspider/user-guide/multicluster/traffic-branch.md
@@ -777,7 +787,7 @@ nav:
                   - Supported Kubernetes Versions: middleware/compatibility.md
                   - Permissions: middleware/permission.md
               - Common Config:
-                  - First-Time Use: middleware/common/first-visit.md
+                  - First-Time Use: middleware/common/index.md
                   - Custom Permissions: middleware/common/permissions.md
                   - Config Management: middleware/common/config.md
                   - Workload Antiaffinity: middleware/common/antiaffinity.md
@@ -794,12 +804,38 @@ nav:
                       - Update MySQL: middleware/mysql/user-guide/update.md
                       - Delete MySQL: middleware/mysql/user-guide/delete.md
                       - View MySQL Logs: middleware/mysql/user-guide/logs.md
+                  - Best Practice:
+                      - MySQL Cross-Cluster Synchronization: middleware/mysql/best-practice/crossclusterssync.md
+                      - MySQL Archiving Solution: middleware/mysql/best-practice/mysql-pt-archiver.md
                   - Troubleshooting:
                       - MySQL Health Check: middleware/mysql/faq/quick-check.md
                       - MySQL Pod: middleware/mysql/faq/faq-pod.md
                       - MySQL Operator: middleware/mysql/faq/faq-operator.md
                       - MySQL Master/Slave Issues: middleware/mysql/faq/faq-master-slave.md
                       - Other MySQL Issues: middleware/mysql/faq/faq-others.md
+              - MongoDB Database:
+                  - Intro:
+                      - What is MongoDB: middleware/mongodb/intro/index.md
+                      - Features: middleware/mongodb/intro/features.md
+                      - Offline Upgrade MongoDB: middleware/mongodb/intro/offline-install.md
+                      - Release Notes: middleware/mongodb/release-notes.md
+                  - Quick Start:
+                      - Create MongoDB: middleware/mongodb/user-guide/create.md
+                      - Update MongoDB: middleware/mongodb/user-guide/update.md
+                      - Delete MongoDB: middleware/mongodb/user-guide/delete.md
+                      - View MongoDB Logs: middleware/mongodb/user-guide/logs.md
+              - PostgreSQL Database:
+                  - Intro:
+                      - What is PostgreSQL: middleware/postgresql/intro/index.md
+                      - Features: middleware/postgresql/intro/concepts.md
+                      - Offline Upgrade PostgreSQL: middleware/postgresql/intro/offline-install.md
+                      - Release Notes: middleware/postgresql/release-notes.md
+                  - Quick Start:
+                      - Create PostgreSQL: middleware/postgresql/user-guide/create.md
+                      - Update PostgreSQL: middleware/postgresql/user-guide/update.md
+                      - Delete PostgreSQL: middleware/postgresql/user-guide/delete.md
+                      - View PostgreSQL Logs: middleware/postgresql/user-guide/logs.md
+                      - Manually Set Antiaffinity: middleware/postgresql/user-guide/antiaffinity.md
               - Redis Cache Service:
                   - Intro:
                       - What is Redis: middleware/redis/intro/index.md
@@ -816,29 +852,6 @@ nav:
                       - Cluster Mode to Cluster Mode: middleware/redis/best-practice/cluster2cluster.md
                       - Sentinel Mode to Sentinel Mode: middleware/redis/best-practice/sentinel2sentinel.md
                       - Cluster Mode to Sentinel Mode: middleware/redis/best-practice/cluster2sentinel.md
-              - PostgreSQL Database:
-                  - Intro:
-                      - What is PostgreSQL: middleware/postgresql/intro/index.md
-                      - Features: middleware/postgresql/intro/concepts.md
-                      - Offline Upgrade PostgreSQL: middleware/postgresql/intro/offline-install.md
-                      - Release Notes: middleware/postgresql/release-notes.md
-                  - Quick Start:
-                      - Create PostgreSQL: middleware/postgresql/user-guide/create.md
-                      - Update PostgreSQL: middleware/postgresql/user-guide/update.md
-                      - Delete PostgreSQL: middleware/postgresql/user-guide/delete.md
-                      - View PostgreSQL Logs: middleware/postgresql/user-guide/logs.md
-                      - Manually Set Antiaffinity: middleware/postgresql/user-guide/antiaffinity.md
-              - MongoDB Database:
-                  - Intro:
-                      - What is MongoDB: middleware/mongodb/intro/index.md
-                      - Features: middleware/mongodb/intro/features.md
-                      - Offline Upgrade MongoDB: middleware/mongodb/intro/offline-install.md
-                      - Release Notes: middleware/mongodb/release-notes.md
-                  - Quick Start:
-                      - Create MongoDB: middleware/mongodb/user-guide/create.md
-                      - Update MongoDB: middleware/mongodb/user-guide/update.md
-                      - Delete MongoDB: middleware/mongodb/user-guide/delete.md
-                      - View MongDB Logs: middleware/mongodb/user-guide/logs.md
               - Elasticsearch:
                   - Intro:
                       - What is Elasticsearch: middleware/elasticsearch/intro/index.md
@@ -873,12 +886,6 @@ nav:
                       - Monitor Instance: middleware/kafka/user-guide/insight.md
                       - Config Parameters: middleware/kafka/user-guide/config.md
                       - View Kafka Logs: middleware/kafka/user-guide/logs.md
-              - RocketMQ Message Queue:
-                  - Intro:
-                      - What is RocketMQ: middleware/rocketmq/intro/index.md
-                      - Concepts: middleware/rocketmq/intro/concepts.md
-                      - Offline Upgrade RocketMQ: middleware/rocketmq/intro/offline-install.md
-                      - Release Notes: middleware/rocketmq/release-notes.md
               - RabbitMQ Message Queue:
                   - Intro:
                       - What is RabbitMQ: middleware/rabbitmq/intro/index.md
@@ -897,6 +904,12 @@ nav:
                       - Monitor Instance: middleware/rabbitmq/user-guide/insight.md
                       - View RabbitMQ Logs: middleware/rabbitmq/user-guide/logs.md
                   - Add Custom Addons to RabbitMQ: middleware/rabbitmq/faq/add-plugin.md
+              - RocketMQ Message Queue:
+                  - Intro:
+                      - What is RocketMQ: middleware/rocketmq/intro/index.md
+                      - Concepts: middleware/rocketmq/intro/concepts.md
+                      - Offline Upgrade RocketMQ: middleware/rocketmq/intro/offline-install.md
+                      - Release Notes: middleware/rocketmq/release-notes.md
               - MinIO Object Storage:
                   - Intro:
                       - What is MinIO: middleware/minio/intro/index.md
@@ -945,6 +958,9 @@ nav:
               - Edge to Cloud Message:
                   - Overview: kant/user-guide/route/index.md
                   - Create Message Route: kant/user-guide/route/create-route.md
+              - Application Mesh:
+                  - Overview: kant/user-guide/edge-network/index.md
+                  - Deploy EdgeMesh: kant/user-guide/edge-network/deploy-edgemesh.md
       - Management:
           - Global Management:
               - Intro:
@@ -984,6 +1000,7 @@ nav:
                   - Enable/Disable Collection of K8s Audit Logs: ghippo/user-guide/audit/open-audit.md
                   - Enable/Disable Output of K8s Audit Logs: ghippo/user-guide/audit/open-k8s-audit.md
                   - Download and Export: ghippo/user-guide/audit/audit-log.md
+                  - Get Source IP in Audit Logs: ghippo/user-guide/audit/source-ip.md
               - Operations Management:
                   - ghippo/user-guide/report-billing/index.md
                   - Reports: ghippo/user-guide/report-billing/report.md
@@ -1061,6 +1078,7 @@ nav:
                   - Application Backup: download/modules/kcoral.md
                   - Security: download/modules/dowl.md
                   - Network: download/modules/spidernet.md
+                  - Storage: download/modules/hwameistor.md
                   - VM Container: download/modules/virtnest.md
               - MultiCloud Management: download/modules/kairship.md
               - Container Registry: download/modules/kangaroo.md
@@ -1086,6 +1104,7 @@ nav:
   - Blogs:
       - Index: blogs/index.md
       - 2023 Blogs:
+          - 202311 | Removals, Deprecations, and Changes in K8s 1.29: blogs/231115-k8s-1.29-changes.md
           - 202310 | A Look Back for K8s Contributor Summit in Shanghai: blogs/20231008-kcs.md
           - 202309 | Call for K8s Contributor Summit in Shanghai: blogs/230911-kubecon-contributor.md
           - 202308 | K8s 1.28 Released: blogs/230815-k8s1.28.md

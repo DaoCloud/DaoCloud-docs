@@ -23,7 +23,7 @@ In this test, the performance of forwarding for Kubernetes nodePort was compared
 
 In a bare metal machine testing environment, the pktgen packet generation tool was used to generate 10Mpps (million packets per second) of request traffic. The throughput of nodePort forwarding was observed for different solutions:
 
-![throughput1](../../images/cilium-nodeport01.png)
+![throughput1](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-nodeport01.png)
 
 From the above graph, the following can be observed:
 
@@ -51,7 +51,7 @@ Both Cilium's eBPF TC and eBPF XDP accelerate nodePort, delivering significantly
 
 In a bare metal machine testing environment, the pktgen packet generation tool was used to conveniently generate request traffic of 1Mpps, 2Mpps, and 4Mpps. The following solutions were tested to measure the CPU overhead on the host for implementing nodePort forwarding:
 
-![throughput2](../../images/cilium-nodeport02.png)
+![throughput2](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-nodeport02.png)
 
 From the above graph, the following can be observed:
 

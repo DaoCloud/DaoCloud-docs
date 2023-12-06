@@ -1,8 +1,10 @@
 # 微服务引擎管理组件
 
+本教程旨在补充需要手工 **单独在线安装** 微服务引擎模块的场景。下文出现的 `skoala` 是微服务引擎的内部开发代号，代指微服务引擎。
+
 微服务引擎管理组件部署结构
 
-![image](../images/install-arch-skoala.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/install-arch-skoala.png)
 
 蓝色框内的 chart 即 `skoala` 组件，需要安装在控制面集群，即 DCE 5.0 的全局集群 `kpanda-global-clsuter`，
 详情可参考 DCE 5.0 的[部署架构](../../install/commercial/deploy-arch.md)。
@@ -13,11 +15,9 @@
 
 如需安装微服务引擎，推荐通过 [DCE 5.0 商业版](../../install/commercial/start-install.md)的安装包进行安装；通过商业版可以一次性同时安装 DCE 的所有模块。
 
-本教程旨在补充需要手工 **单独在线安装** 微服务引擎模块的场景。下文出现的 `skoala` 是微服务引擎的内部开发代号，代指微服务引擎。
-
 !!! note
 
-    本文提供了在线安装的方式，如果已部署了离线商业版，建议参考[离线升级微服务引擎](offline-upgrade.md)离线安装或升级微服务引擎。
+    本文提供了在线安装的方式，如果已部署了离线商业版，建议参考[离线升级微服务引擎](#_11)离线安装或升级微服务引擎。
 
 ### 使用商业版安装包安装
 
@@ -57,13 +57,13 @@
 查看 `skoala-system` 命名空间中是否有以下对应的资源。如果没有任何资源，说明目前尚未安装微服务引擎。
 
 ```bash
-$ kubectl -n skoala-system get pods
+$ kubectl get pods -n skoala-system
 NAME                                   READY   STATUS    RESTARTS        AGE
 hive-8548cd9b59-948j2                  2/2     Running   0               3h48m
 sesame-5955c878c6-jz8cd                2/2     Running   0               3h48m
 skoala-ui-75b8f8c776-nbw9d             2/2     Running   0               3h48m
 
-$ helm -n skoala-system list
+$ helm list -n skoala-system
 NAME        NAMESPACE       REVISION    UPDATED                                 STATUS      CHART               APP VERSION
 skoala     	skoala-system	2       	2023-11-03 10:23:22.373053803 +0800 CST	deployed    skoala-0.28.1       0.28.1
 ```
@@ -74,7 +74,7 @@ skoala     	skoala-system	2       	2023-11-03 10:23:22.373053803 +0800 CST	deplo
 此外，还需要查看 `common-mysql` 命名空间中是否有名为 `skoala` 的数据库。
 
 ```bash
-$ kubectl -n mcamel-system get statefulset
+$ kubectl get statefulset -n mcamel-system
 NAME                                          READY   AGE
 mcamel-common-mysql-cluster-mysql             2/2     7d23h
 ```
@@ -176,12 +176,11 @@ helm repo update
 
 > 需要事先安装 Helm
 
-注意：添加 Skoala-release 仓库之后，通常需要关注的有 2 个 Chart：
+`Skoala` 是微服务引擎的控制端的服务：
 
-`Skoala` 是 微服务引擎 的控制端的服务
-  - 安装完成后，可以在 DCE 5.0 平台看到微服务引擎的入口
-  - 包含 3 个组件 skoala-ui、hive、sesame
-  - 需要安装在全局管理集群
+- 安装完成后，可以在 DCE 5.0 平台看到微服务引擎的入口
+- 包含 3 个组件 skoala-ui、hive、sesame
+- 需要安装在全局管理集群
 
 默认情况下，安装完成 skoala 到 kpanda-global-cluster（全局管理集群），就可以在侧边栏看到对应的微服务引擎的入口了。
 
@@ -216,7 +215,7 @@ $ helm upgrade --install skoala --create-namespace -n skoala-system --cleanup-on
 查看 Pod 是否启动成功：
 
 ```bash
-$ kubectl -n skoala-system get pods
+$ kubectl get pods -n skoala-system
 NAME                                   READY   STATUS    RESTARTS        AGE
 hive-8548cd9b59-948j2                  2/2     Running   0               3h48m
 sesame-5955c878c6-jz8cd                2/2     Running   0               3h48m
@@ -242,7 +241,7 @@ skoala-ui-7c9f5b7b67-9rpzc             2/2     Running   0               3h48m
 1. 执行如下命令备份原有数据
 
     ```bash
-    helm -n skoala-system get values skoala > skoala.yaml
+    helm get values skoala -n skoala-system -o yaml > skoala.yaml
     ```
 
 2. 添加微服务引擎的 Helm 仓库
@@ -260,7 +259,7 @@ skoala-ui-7c9f5b7b67-9rpzc             2/2     Running   0               3h48m
 4. 执行 `helm upgrade` 命令
 
     ```bash
-    helm --kubeconfig /tmp/deploy-kube-config upgrade --install --create-namespace -n skoala-system skoala skoala/skoala --version=0.28.1 --set hive.image.tag=v0.28.1 --set sesame.image.tag=v0.28.1 --set ui.image.tag=v0.19.0 -f skoala.yaml
+    helm upgrade --install --create-namespace -n skoala-system skoala skoala/skoala --version=0.28.1 --set hive.image.tag=v0.28.1 --set sesame.image.tag=v0.28.1 --set ui.image.tag=v0.19.0 -f skoala.yaml
     ```
 
     > 需要将 `version`、`hive.image.tag`、`sesame.image.tag`、`ui.image.tag` 四个参数的值调整为您需要升级到的微服务引擎的版本号。

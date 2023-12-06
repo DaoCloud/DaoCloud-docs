@@ -30,11 +30,11 @@ add images with the following steps.
 
 3. Search for `jenkins-casc-config` and click `Edit YAML` in the Actions column.
 
-    ![screen](../images/faq01.png)
+    ![screen](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/faq01.png)
 
 4. Under `data` -> `jenkins.yaml` -> `jenkins.clouds.kubernetes.templates`, select the podTemplate whose image you want to change.
 
-    ![screen](../images/faq02.png)
+    ![screen](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/faq02.png)
 
 5. Once you have made the necessary updates, go to `Workloads` section and restart Jenkins deployment.
 
@@ -51,7 +51,7 @@ file to change the dependency source. You can follow these steps:
 
 4. Modify the `MavenSetting` under the `data` section as per your requirement.
 
-    ![screen](../images/faq03.png)
+    ![screen](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/faq03.png)
 
 5. Once you have made the necessary updates, go to `Workloads` and restart Jenkins.
 
@@ -70,7 +70,7 @@ file to change the dependency source. You can follow these steps:
     Pay attention to the formatting and indentation when making modifications.
     Each registry should have a separate `[[registry]]` section, as shown in the image below:
 
-    ![faq-ci1](../images/faq04.png)
+    ![faq-ci1](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/faq04.png)
 
     !!! note
 

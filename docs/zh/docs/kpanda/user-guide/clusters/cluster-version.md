@@ -19,4 +19,4 @@ Kubernetes 版本发布说明
 | ----------------------- | -------------------------- | -------------------------- | ---------- | ---------- |
 | 1.25</br>1.26</br>1.27        | 1.24</br>1.25</br>1.26           | **1.26.5**                 | V0.7.0     | 2023.05.09 |
 
-![版本支持机制](../../images/cluster-version.png)
+![版本支持机制](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/cluster-version.png)

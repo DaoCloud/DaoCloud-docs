@@ -13,11 +13,11 @@ You can create a flow control rule as follows:
 
     > Notice that the incognito to be controlled should be displayed as `Yes` in the column `Traffic Governance` before you proceed to the subsequent steps.
 
-   ![](../../../images/gov00.png)
+    ![](../../../images/gov00.png)
 
 2. Select `Flow Control Rules` and click `Create Rules` on the right.
 
-   ![](../../../images/gov01.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/gov01.png)
 
 3. Follow the instructions below to fill in the rule configuration and click `OK` in the lower right corner.
 
@@ -31,9 +31,8 @@ You can create a flow control rule as follows:
 
     - Flow Control Mode: Records only the traffic on the specified link. If the inbound traffic of the specified resource reaches the threshold, the traffic can be restricted.
 
-      ![](../../../images/gov02.png)
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/gov02.png)
 
 4. After the rule is created, you can view it in the flow control rule list. Click More on the right to edit the update rule or delete it.
 
-   ![](../../../images/gov03.png)
-
+    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/gov03.png)

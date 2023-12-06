@@ -17,7 +17,7 @@
 此模式下，Terway 将 ECS 实例的弹性网卡直接挂载到 Pod 的网络命名空间内，所以 Pod 拥有最佳性能，
 但缺点是 Pod 可部署的数量将受到 ECS 实例的限制。此模式下，Pod 的网段与宿主机的网段是一致的。
 
-![eni](../../images/eni_connection.jpeg)
+![eni](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/eni_connection.jpeg)
 
 - Pod 内有两张网卡，分别是 eth0 和 veth1。Pod 的默认路由在 eth0，所以 Pod 访问外部会从 eth0 转发到 VPC 网络。
   而 Pod 内设置有转发 Servcice 的路由从 veth1 转发，所以 Pod 访问 Service 的流量需要先经过 veth1 转发到主机，再经过主机的网络协议栈转发到目标。
@@ -37,7 +37,7 @@ ENIIP 模式就是利用了这个辅助 IP 分配给容器，从而大幅提高�
 都是通过一对 Veth-pair 来联通宿主机和 Pod 的网络空间，但是和 VPC 路由方式区别在于：Pod 的地址是来源于弹性网卡的辅助 IP 地址，
 所以节点上需要配置策略路由来保证辅助 IP 的流量经过 Pod 的 IP 所属的弹性网卡转发：
 
-![eniip-veth](../../images/eniip_veth.png)
+![eniip-veth](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/eniip_veth.png)
 
 - Pod 的 IP 与节点属于同一网段
 - Pod 访问 Service 通过主机转发
@@ -52,7 +52,7 @@ ENIIP 模式就是利用了这个辅助 IP 分配给容器，从而大幅提高�
 Terway 将弹性网卡的辅助 IP 绑定到 ipvlan 的不同子网卡上来打通网络。Cilium 作为 meta CNI，为 ipvlan 子接口附加 ebpf 程序，
 完成 Service 访问加速以及 NetworkPolicy。使用这种模式使 ENIIP 的网络结构足够简单，性能也相对 veth 策略路由较好。需要内核至少大于 4.2。
 
-![eniip-ipvlan](../../images/terway_cilium.png)
+![eniip-ipvlan](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/terway_cilium.png)
 
 - 使用的是 ipvlan L2 模式
 - 会为每一个用于 Pod 的弹性网卡创建子接口，解决父子接口不通的问题
@@ -145,12 +145,12 @@ status:
 
 数据流:
 
-![eniip-trunking](../../images/eni-trunking.png)
+![eniip-trunking](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/eni-trunking.png)
 
 - 每个 ECS 节点将分配一个弹性网卡用于 Trunking 网卡，类似传统交换机的 Trunk 网口
 - Pod 对外所有访问都会通过主机转发。再经过主机的 Trunking 网卡转发到目标弹性网卡。
   注: Terway 插件会在 Trunking 网卡的 TC hook 打上或摘除 Vlan tag，数据包根据 vlan tag 匹配到目标弹性网卡。
 
-![eni_trunking_tc](../../images/eni_trunking_tc.png)
+![eni_trunking_tc](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/eni_trunking_tc.png)
 
 > 自建集群不支持运行 ENIIP-Trunking 模式

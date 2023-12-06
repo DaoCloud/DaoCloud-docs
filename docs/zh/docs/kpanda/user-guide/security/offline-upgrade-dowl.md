@@ -73,7 +73,17 @@
 
 解压并加载镜像文件。
 
-1. 解压 tar 压缩包。
+1. 解压第一层压缩包。
+
+    ```shell
+    tar xvf dowl.amd64.tar
+    ```
+
+    解压成功后会得到 1 个新的压缩包：
+
+    - dowl.bundle.tar
+
+2. 解压新的压缩包。
 
     ```shell
     tar xvf dowl.bundle.tar
@@ -85,7 +95,7 @@
     - images.tar
     - original-chart
 
-2. 从本地加载镜像到 Docker 或 containerd。
+3. 从本地加载镜像到 Docker 或 containerd。
 
     === "Docker"
 
@@ -157,7 +167,7 @@
         helm get values dowl -n dowl-system -o yaml > bak.yaml
         ```
 
-    1. 更新 dowl crds
+    1. 更新 dowl crds (需要先解压并进入 original-chart 文件)
 
         ```shell
         helm pull dowl/dowl --version 0.4.0 && tar -zxf dowl-0.4.0.tgz
@@ -187,10 +197,10 @@
         在升级安全管理版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
 
         ```shell
-        helm get values dowl -n k pan da-system -o yaml > bak.yaml
+        helm get values dowl -n dowl-system -o yaml > bak.yaml
         ```
 
-    1. 更新 dowl crds
+    1. 更新 dowl crds (需要先解压并进入 original-chart 文件)
 
         ```shell
         kubectl apply -f ./crds

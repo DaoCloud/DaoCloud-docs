@@ -2,15 +2,15 @@
 
 The microservice engine gateway supports JWT validation. Here"s how to use this feature.
 
-## prerequisite
+## Prerequisites
 
 - [Create a cluster](../../kpanda/user-guide/clusters/create-cluster.md) OR [Integrate a cluster](../../kpanda/user-guide/clusters/integrate-cluster.md)
-- [Create a gateway](../gateway/create-gateway.md)
+- [Create a gateway](../gateway/index.md)
 - Prepare a Token and the JWKS application used to validate the Token. If you do not already have a JWKS application, see [Create JWKS App](#jwks) to create one.
 
 ## Operation procedure
 
-1. Reference [Create Domain](../gateway/domain/add-domain.md) create a protocol for `https` domain, in the domain security policy enabled `JWT Auth`.
+1. Reference [Create Domain](../gateway/domain/index.md) create a protocol for `https` domain, in the domain security policy enabled `JWT Auth`.
 
     - JWKS name: Unique JWKS name that identifies a specific JWT policy. This parameter is mandatory
     - JWKS Server Address: Returns the full FQDN address of the JWT service for the JWKS content. This parameter is mandatory
@@ -22,7 +22,7 @@ The microservice engine gateway supports JWT validation. Here"s how to use this 
 
         <!--![]()screenshots-->
 
-2. See [Add API](../gateway/api/add-api.md) to create the API and enable the JWT authentication security policy.
+2. See [Add API](../gateway/api/index.md) to create the API and enable the JWT authentication security policy.
 
     <!--![]()screenshots-->
 

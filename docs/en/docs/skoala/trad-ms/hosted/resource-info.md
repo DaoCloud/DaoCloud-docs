@@ -5,4 +5,4 @@ The Microservice Engine supports viewing the operational status, deployment posi
 - The workload with the same name as the current registry represents the registry itself.
 - If Sentinel governance capabilities are enabled, another instance representing the corresponding Sentinel instance will appear.
 
-![](../../images/trad-resource-info.png)
+![resource info](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/trad-resource-info.png)

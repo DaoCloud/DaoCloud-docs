@@ -1,17 +1,19 @@
----
-MTPE: Jeanine-tw
-Revised: Jeanine-tw
-Pics: Jeanine-tw
-Date: 2022-12-29
----
-
 # Get client source IPs via Metallb + istio-ingressgateway
 
 ## Background
 
 With Metallb ARP mode, users can view the real IP of the operator in `Global Management`->`Audit Log`, instead of the IP address after SNAT. The key step is to set the `spec.externalTrafficPolicy` of the Service to `Local` mode.
 
-## How to get client source IPs
+This method is also suitable for Istio high availability mode to get the source IP of the client.
+
+However, this option has an impact on load balancing, please refer to Load Balancing in [L2 and BGP Mode](l2-bgp.md) for details.
+
+After the commercial version is installed, the function of obtaining client source IP is enabled by default. If you want to disable this feature before installation
+You can [modify the installer clusterConfigt.yaml](../../../install/commercial/cluster-config.md) to configure it (i.e. set SourceIP to false).
+
+## Steps
+
+### Enable getting client source IPs
 
 1. Configure Metallb to declare the above node as the next hop for LB IPs.
 
@@ -106,3 +108,11 @@ With Metallb ARP mode, users can view the real IP of the operator in `Global Man
     ```
 
 3. On the `Global Management`->`Audit Log` page, click `View Details` in any event to view the obtained client source IP.
+
+    ![source-ip-1](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/source-ip1.png)
+
+    ![source-ip-2](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/source-ip2.png)
+
+### Disable getting client source IP
+
+Modify the field `spec.externalTrafficPolicy` = `Cluster` in the Service named `istio-ingressgateway`.

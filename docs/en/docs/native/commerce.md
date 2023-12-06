@@ -118,7 +118,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [AliCloud Container Service ACK Product October Update](https://mp.weixin.qq.com/s/9hrm67Y2e8iGGHjhSwWCow)
 
-    Updates: Support for Sidecar acceleration in service grid scenarios, support for container monitoring observability at the OS kernel layer, new OpenAPI support for individually initiated cluster checks, and support for arm64 architecture for the backup center component migrate-controller.
+    Updates: Support for Sidecar acceleration in service mesh scenarios, support for container monitoring observability at the OS kernel layer, new OpenAPI support for individually initiated cluster checks, and support for arm64 architecture for the backup center component migrate-controller.
 
 - [AliCloud Container Computing Service ACS officially released](https://mp.weixin.qq.com/s/KRyMjqGebXH4Mx0D0sWbyw)
 
@@ -229,7 +229,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
     Support mixed management of X86 and ARM architectures, support localized database Damon, support production-grade windows containers, provide unified resource management service for ACK and TKE public cloud container clusters, support simultaneous release of multiple native yaml files, support native ingress capability, manage high-performance virtual machines independently as a new resource type, provide It also provides container resource oversharing capability, and completes the deep integration of container cloud, microservice management, service mesh, middleware and other sub-products.
 
-- [Buoyant Launches Enterprise Edition of Linkerd, a Service Grid Project](https://buoyant.io/newsroom/announcing-linkerd-enterprise-the-first-enterprise-focused-distribution-of-the-popular-linkerd-service-mesh-project)
+- [Buoyant Launches Enterprise Edition of Linkerd, a Service Mesh Project](https://buoyant.io/newsroom/announcing-linkerd-enterprise-the-first-enterprise-focused-distribution-of-the-popular-linkerd-service-mesh-project)
 
     Linkerd Enterprise Edition builds on the open source project Linkerd by adding enterprise-only features including zero trust and FIPS 140-2 compliance, a cost-aware load balancer, lifecycle automation, and more.
 
@@ -398,7 +398,7 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
 - [Google Cloud Launches GKE Enterprise](https://cloud.google.com/blog/products/containers-kubernetes/whats-new-with-gke-at-google-cloud-next)
 
-    GKE Enterprise combines the best of GKE and Anthos into an integrated, intuitive container platform. It supports multi-clustered workloads (fleet); has manageable security features including advanced workload vulnerability monitoring, governance and policy control, and a manageable service grid; and supports hybrid and multi-cloud. In addition, GKE Enterprise reduces software deployment time by more than 70 percent.
+    GKE Enterprise combines the best of GKE and Anthos into an integrated, intuitive container platform. It supports multi-clustered workloads (fleet); has manageable security features including advanced workload vulnerability monitoring, governance and policy control, and a manageable service mesh; and supports hybrid and multi-cloud. In addition, GKE Enterprise reduces software deployment time by more than 70 percent.
 
 - [Google Cloud GKE introduces Network Function Optimizer to help telcos adopt cloud native network features](https://cloud.google.com/blog/topics/telecommunications/network-function-optimizer-for-gke-and-gdc-edge)
 
@@ -492,6 +492,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 - [Jibudata multicloud data backup recovery product YS1000 v3.2 released](https://mp.weixin.qq.com/s/t64iDKWOQ_wUHRLvmGw8tQ)
 
     Update: add etcd backup support for clusters; support for creating mirror backup repository; support for mirror backup with optional application mirror source; support for sandbox recovery without affecting the original business after recovery; support for flexible subsidiary feature configuration using hooks for backup recovery tasks; support for synchronization of data volumes based on backup recovery; support for configuring ingress mapping while configuring disaster recovery instances.
+
+- [Juicedata Cloud Native Distributed File System JuiceFS Enterprise Edition 5.0 released](https://mp.weixin.qq.com/s/bL69_Q9yeoQYnpVJ9Q2p8Q)
+
+    Updates: Improve cache observability, support active cache clearing, support heterogeneous cache clustering, support automatic fault awareness, provide multiple cache deprecation policies, support shared block devices for data persistence, provide accelerated access to existing data in object storage, and "dump" chunk format files into objects.
 
 - [KSOC Launches Industry's First Real-Time Kubernetes Security Posture Management Platform](https://www.einnews.com/pr_news/628624388/ksoc-launches-first-real-time-kubernetes-security-posture-management-kspm-platform)
 
@@ -696,6 +700,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
     Rainbond Enterprise Package has a global observable center for monitoring, debugging, and analyzing infrastructure and application services running in Kubernetes clusters and the rainbond platform. In addition, it also provides solutions for IT business system migration to the localized Cintron environment, supports full-link grayscale release and cluster patrol, built-in WAF firewall and operation audit features, supports private deployment of application stores, etc.
 
+- [Red Hat OpenShift 4.14 Released](https://cloud.redhat.com/blog/red-hat-openshift-4.14-is-now-available)
+
+    Updates: Launched Managed Control Panel for bare-metal Red Hat OpenShift and Red Hat OpenShift Virtualization, added Key Management OpenShift Shared Resource CSI Driver, support for sharing ConfigMap and Secret across namespaces, and 24-month support for deployments across all architectures.
+
 - [Red Hat OpenShift GitOps 1.10 released](https://cloud.redhat.com/blog/whats-new-in-red-hat-openshift-gitops-1.10)
 
     Support for Argo CD 2.8, including the introduction of the ApplicationSet plugin generator, removal of the legacy Configuration Management Plugin (CMP), ignoring resource updates, and other new features; the GitOps documentation will be moved from a sub-section of the OpenShift documentation (currently under CI/CD) to a standalone section; allows dynamic scaling of the application controllers; and automated installation of the Console Dashboard.
@@ -830,6 +838,10 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
 
      The latest version of Optimize Live provides two-dimensional auto-scaling capabilities. HPA and VPA can work together to adjust the size of pods and set utilization horizontally to maximize the efficiency of auto-scaling. Additionally, machine learning is used to analyze historical resource usage to find the optimal HPA target utilization.
 
+- [Rancher Prime 2.0, SUSE's enterprise container management platform, released](https://mp.weixin.qq.com/s/kMJ1tj_UKbT5Qpmh0o_Z_w)
+
+    Updates: Builds functionality from SUSE and third-party tools directly into the Rancher Prime UI through the UI Extension Framework; introduces the Rancher Prime Application Collection; generative AI assistant; provides performance benchmarking and logging based on both horizontal (number of clusters) and vertical (pods and nods) stress tests.
+
 - [SUSE Launches Rancher Prime, an Enterprise Container Management Platform](https://mp.weixin.qq.com/s/iVFsSGlRd4TdJGcRKLQBuQ)
 
     Rancher Prime is a distribution of Rancher with core code from Rancher DCE Community, but with more emphasis on security and enhanced features and services for enterprise users.
@@ -879,9 +891,9 @@ This page lists, in alphabetical order, updates on some well-known commercial pr
   
      The updates include: Added SecurityGroupPolicy enhancement component, which supports binding security groups for pods matching policies; supports business pods to use Service Account Token to access cloud resources such as CVM and VPC; supports modifying CPU and memory requests without restarting pods /limit value; support node/workload resource insight capabilities; add Request intelligent recommendation function; add native node-specific scheduler; optimize native node initialization process.
 
-- [Tetrate Launches TIS (Tetrate Istio Subscription), an Enterprise Service Grid Project](https://mp.weixin.qq.com/s/lwVqOlwPgtaZ8BMsvLuT1Q)
+- [Tetrate Launches TIS (Tetrate Istio Subscription), an Enterprise Service Mesh Project](https://mp.weixin.qq.com/s/lwVqOlwPgtaZ8BMsvLuT1Q)
 
-    TIS is the industry's only fully upstream service grid based on open source Istio. Based on the Tetrate Istio Distro, it provides proven builds of Istio for all major cloud platforms. It also offers CVE protection, FedRAMP compliance, and is compliant with the U.S. Federal Zero Trust Architecture standards.
+    TIS is the industry's only fully upstream service mesh based on open source Istio. Based on the Tetrate Istio Distro, it provides proven builds of Istio for all major cloud platforms. It also offers CVE protection, FedRAMP compliance, and is compliant with the U.S. Federal Zero Trust Architecture standards.
 
 - [Tetrate Releases Tetrate Enterprise Envoy Gateway for Enterprise Cloud Native Services](https://mp.weixin.qq.com/s/XV7b6W3GiKbamuTabypIBQ)
 

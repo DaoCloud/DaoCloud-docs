@@ -1,15 +1,15 @@
-# Deploying DCE 5.0 Enterprise on Oracle Linux R9/R8 U1 Operating System
+# Deploy DCE 5.0 Enterprise on Oracle Linux R9/R8 U1
 
-This article will guide you on how to deploy DCE 5.0 on Oracle Linux R9/R8 U1 operating system,
-starting from version v0.8.0 and above.
+This page will guide you on how to deploy DCE 5.0 on Oracle Linux R9/R8 U1.
+Installer v0.8.0 and higher versions support this deployment method.
 
 ## Prerequisites
 
-- Please read the [Deployment Architecture](../commercial/deploy-arch.md) in advance to
+- Read the [Deployment Architecture](../commercial/deploy-arch.md) in advance to
   confirm the deployment mode for this installation.
-- Please read the [Deployment Requirements](../commercial/deploy-requirements.md)
+- Read the [Deployment Requirements](../commercial/deploy-requirements.md)
   in advance to ensure that the network, hardware, ports, etc., meet the requirements.
-- Please read the [Preparation](../commercial/prepare.md) in advance to verify
+- Read the [Preparation](../commercial/prepare.md) in advance to verify
   machine resources and pre-checks.
 
 ## Offline Installation
@@ -31,20 +31,20 @@ starting from version v0.8.0 and above.
 2. Download the Oracle Linux R9/R8 U1 image file.
 
     ```bash
-    ## Oracle Linux R9 U1
+    # Oracle Linux R9 U1
     curl -LO https://yum.oracle.com/ISOS/OracleLinux/OL9/u1/x86_64/OracleLinux-R9-U1-x86_64-dvd.iso
 
-    ## Oracle Linux R8 U1
+    # Oracle Linux R8 U1
     curl -LO https://yum.oracle.com/ISOS/OracleLinux/OL8/u7/x86_64/OracleLinux-R8-U7-x86_64-dvd.iso
     ```
 
 3. Download the Oracle Linux R9/R8 U1 osPackage offline package.
 
     ```bash
-    ## Oracle Linux R9 U1
+    # Oracle Linux R9 U1
     curl -LO https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.7.4/os-pkgs-oracle9-v0.7.4.tar.gz
 
-    ## Oracle Linux R8 U1
+    # Oracle Linux R8 U1
     curl -LO https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.7.4/os-pkgs-oracle8-v0.7.4.tar.gz
     ```
 

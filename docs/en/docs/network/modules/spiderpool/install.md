@@ -11,9 +11,9 @@ This page describes how to install Spiderpool.
 
 ## Prerequisites
 
-1. To use SpiderPool in a DCE 5.0 cluster, you need a combination of [Macvlan](../multus-underlay/macvlan.md) + [Multus](../multus-underlay/index.md) + [Calico](../calico/index.md)/[Cillium](../cilium/index.md).
+1. To use SpiderPool in a DCE 5.0 cluster, you need a combination of [Calico](../calico/index.md)/[Cillium](../cilium/index.md).
 
-2. Install [Multus](../multus-underlay/install.md) and Underlay CNI ([Macvlan](../multus-underlay/macvlan.md) or [SRIOV](../multus-underlay/sriov.md)) in advance, and confirm the NIC interface and subnet to be used.
+2. It is recommended to use Spiderpool version v0.7.0 and above. The new version of Spiderpool supports auto-installation of [Multus](../multus-underlay/install.md) which can work with [Multus CR Management](../../../network/config/multus-cr.md) to use Underlay CNIs including  [Macvlan](../multus-underlay/macvlan.md) or [SR-IOV](../multus-underlay/sriov.md), and confirm the network interface and subnet to be used.
 
 ## How to install Spiderpool
 

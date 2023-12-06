@@ -68,7 +68,7 @@ Offline installation means that the target host is in an offline state and canno
 
     !!! note
 
-        - For arm architecture, the download link is: https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_${VERSION}_arm64.tar.gz
+        - For arm architecture, the download link is: <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_${VERSION}_arm64.tar.gz>
         - Make sure the offline package and the script are in the same directory level.
 
 3. Perform the offline installation.

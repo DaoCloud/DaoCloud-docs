@@ -9,7 +9,7 @@
 
 1. 边缘节点列表 页面，点击`批量管理`按钮，进入`批量管理`页，选择`批量注册`页签，点击右上角`创建批量任务`按钮。
 
-    ![批量管理](../../images/node-batch-01.png)
+    ![批量管理](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/node-batch-01.png)
 
 2. 填写注册信息。
 
@@ -22,7 +22,7 @@
     - 描述：批量任务描述信息。
     - 标签：批量任务标签信息。
 
-    ![创建批量任务](../../images/create-route-02.png)
+    ![创建批量任务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/node-batch-02.png)
 
 3. 完成注册信息填写后，点击 创建 按钮，完成节点批量任务创建。
 

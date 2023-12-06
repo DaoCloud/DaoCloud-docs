@@ -10,23 +10,43 @@ hide:
 
 > 提示：Harbor Operator 依赖 Cert Manager，所以需要先安装好 Cert Manager。
 
-1. 如果在创建 Harbor 实例时，出现以下异常提示，请点击`前往安装`。
+ 如果在创建 Harbor 实例时，出现以下异常提示，请点击`前往安装`。（必须先安装 Cert Manager ！）
 
-    ![operator 异常](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/errors.png)
+    ![harbor-operator 异常](../../images/createharbor.png)
+
+## 第一步
+
+1. 进入`容器管理`的 `Helm 应用` -> `Helm 模板`，找到并点击 cert-manager 卡片。
+    ![搜索cert-manager](../../images/serchcertmangager.png)
+
+2. 选择版本，点击`安装`。
+
+    ![安装](../../images/applycertmanager.png)
+
+3. 输入名称和命名空间后，点击`确定`，如果想要添加其他参数，请参考下一节的参数说明。
+
+    ![填表](../../images/acertdetail.png)
+
+4. 等待安装完成。
+
+    ![安装](../../images/installcert.png)
+
+## 第二步
+
 
 1. 进入`容器管理`的 `Helm 应用` -> `Helm 模板`，找到并点击 harbor-operator 卡片。
 
     ![找到 operator](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/operator01.png)
 
-1. 选择版本，点击`安装`。
+2. 选择版本，点击`安装`。
 
     ![安装](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/operator02.png)
 
-1. 输入名称和命名空间后，点击`确定`，如果想要添加其他参数，请参考下一节的参数说明。
+3. 输入名称和命名空间后，点击`确定`，如果想要添加其他参数，请参考下一节的参数说明。
 
     ![填表](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/operator03.png)
 
-1. 等待安装完成。
+4. 等待安装完成。
 
     ![安装](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/operator04.png)
 

@@ -6,7 +6,7 @@
 - Service：服务层主要是 Harbor 提供功能的核心服务，如 core、registry、jobserver。
 - Data Access：主要是提供数据的持久化存储，比如镜像文件数据、镜像元数据。
 
-![资源架构](../images/resource-architecture.png)
+![资源架构](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/resource-architecture.png)
 
 在容量规划上体现在服务层和存储层：
 

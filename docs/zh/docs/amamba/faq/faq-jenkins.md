@@ -24,17 +24,17 @@ error: unexpected error when reading response body. Please retry. Original error
 
 1. 前往容器管理模块，找到 Jenkins 组件所在的集群，点击集群名称。
 
-    ![faq-ci2](../images/faq-ci2.png)
+    ![faq-ci2](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/faq-ci2.png)
 
 2. 在左侧导航栏依次点击`配置与密钥` -> `配置项`。
 
 3. 搜索 `jenkins-casc-config`，在操作列点击`编辑 YAML`。
 
-    ![faq-ci3](../images/faq-ci3.png)
+    ![faq-ci3](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/faq-ci3.png)
 
 4. 在 `data` -> `jenkins.yaml` -> `jenkins.clouds.kubernetes.templates` 字段下选择需要更改的 podTemplate 的镜像。
 
-    ![faq-ci4](../images/faq-ci4.png)
+    ![faq-ci4](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/faq-ci4.png)
 
 5. 更新完成后，前往`工作负载`重启 Jenkins。
 
@@ -44,17 +44,17 @@ error: unexpected error when reading response body. Please retry. Original error
 
 1. 前往容器管理模块，在`集群列表` 界面选择 Jenkins 组件所在的集群，点击集群名称。
 
-    ![faq-ci2](../images/faq-ci2.png)
+    ![faq-ci2](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/faq-ci2.png)
 
 2. 在左侧导航栏依次点击`配置与密钥` -> `配置项`。
 
 3. 搜索 `amamba-devops-agent`，在操作列点击 `编辑 YAML`。
 
-    ![faq-ci5](../images/faq-ci5.png)
+    ![faq-ci5](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/faq-ci5.png)
 
 4. 在 `data` 模块 下的 `MavenSetting` 按需修改。
 
-    ![faq-ci6](../images/faq-ci6.png)
+    ![faq-ci6](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/faq-ci6.png)
 
 5. 更新完成后，需要前往`工作负载`重启 Jenkins。
 
@@ -72,21 +72,21 @@ error: unexpected error when reading response body. Please retry. Original error
 
     修改时注意格式缩进，并且每个 registry 需要一个单独的 `[[registry]]` 部分，如下图所示：
 
-    ![faq-ci1](../images/faq-ci1.png)
+    ![faq-ci1](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/faq-ci1.png)
 
     !!! note
 
         `registries` 关键字的值应该是完整的镜像仓库域名或 IP 地址，无需增加 `http` 或 `https` 前缀。
         如果镜像仓库使用非标准端口号，可以在地址后面加上冒号 `:` 和端口号。
 
-        ```toml
-        [registries]
+        ```
+        [[registry]]
         location = "registry.example.com:5000"
-        insecure=true
+        insecure = true
 
-        [registries]
+        [[registry]]
         location = "192.168.1.100:8080"
-        insecure=true
+        insecure = true
         ```
 
     另请参考 [Podman 官网指导文档](https://podman-desktop.io/docs/containers/registries/insecure-registry)。
@@ -113,3 +113,19 @@ error: unexpected error when reading response body. Please retry. Original error
 !!! note
 
     参考 [Docker 官方指导文档](https://docs.docker.com/engine/reference/commandline/dockerd/#configuration-reload-behavior)。
+
+## 如何修改 Jenkins 流水线并发执行数量
+
+目前 DCE 5.0 部署出来后 Jenkins 流水线并发执行数量为 2，下述将描述如何更改并发执行数量：
+
+1. 前往容器管理模块，找到 Jenkins 组件所在的集群，点击集群名称。
+
+2. 在左侧导航栏依次点击`配置与密钥` -> `配置项`。
+
+3. 搜索 `jenkins-casc-config`，在操作列点击`编辑 YAML`。
+
+4. 在 `data` -> `jenkins.yaml` -> `jenkins.clouds.kubernetes.containerCapStr` 字段下修改数值。
+
+    ![jenkins001](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/jenkinsadd.png)
+
+5. 更新完成后，前往`工作负载`重启 Jenkins。

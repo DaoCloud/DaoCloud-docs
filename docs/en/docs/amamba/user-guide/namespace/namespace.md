@@ -15,11 +15,11 @@ A namespace is an abstraction used in Kubernetes to isolate resources.
 
 1. Click `Namespaces` in the left navigation pane of your Workbench, then click `Create` in the upper right corner.
 
-    ![namespace-listpng](../../images/create00.png)
+    ![namespace-listpng](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/create00.png)
 
 2. On the `Create Namespace` page, configure the basic information for the namespace.
 
-    ![namespace-create01](../../images/create01.png)
+    ![namespace-create01](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/create01.png)
 
     - Name: Set the name of the namespace.
     - Cluster: Select a cluster from all the clusters bound under the current workspace.
@@ -35,11 +35,11 @@ A namespace is an abstraction used in Kubernetes to isolate resources.
 
     The currently supported resource quotas in the workspace include CPU requests, CPU limits, memory requests, memory limits, total storage requests, and storage volume claims. The limit values for CPU and memory resources must be greater than the request values.
 
-    ![namespace-create02](../../images/create02.png)
+    ![namespace-create02](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/create02.png)
 
 4. Click `OK` to complete the resource creation. A message will appear indicating the successful creation, and you will be returned to the namespace list page.
 
-    ![namespace-list01](../../images/create03.png)
+    ![namespace-list01](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/create03.png)
 
 5. Click the `︙` on the right side of the list to perform operations such as `Resource Quotas`, `Update Label`, and `Delete` from the pop-up menu.
 
@@ -53,10 +53,10 @@ In addition to CPU requests, CPU limits, memory requests, memory limits, total s
 
 1. On the namespace list page, select a namespace and click `Resource Quotas`.
 
-    ![namespace-quota](../../images/ns-quota01.png)
+    ![namespace-quota](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/ns-quota01.png)
 
 2. In the popped-up `Resource Quotas` dialog box, you can see the current resource quota information for the namespace. Click `Add` under `Apply Resources`, select a resource, and set the quota. Refer to [Kubernetes Resource Quotas](https://kubernetes.io/docs/concepts/policy/resource-quotas/) for details.
 
-    ![namespace-quota01](../../images/ns-quota02.png)
+    ![namespace-quota01](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/ns-quota02.png)
 
 3. Click `OK` to complete the quota settings.

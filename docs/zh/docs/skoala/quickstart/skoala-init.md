@@ -1,8 +1,10 @@
 # 微服务引擎集群初始化组件
 
-微服务引擎集群初始化组件部署结构
+本教程旨在补充需要手工 **单独在线安装** 微服务引擎集群初始化组件的的场景。下文出现的 `skoala-init` 是微服务引擎集群初始化组件的内部开发代号，代指微服务引擎集群初始化组件。
 
-![image](../images/skoala-init-cn.png)
+微服务引擎集群初始化组件部署结构：
+
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/skoala-init-cn.png)
 
 蓝色框内的 chart 即 `skoala-init` 组件，需要安装在工作集群。安装 `skoala-init`
 组件之后即可以使用微服务引擎的各项功能，例如创建注册中心、网关实例等。另外需要注意，
@@ -17,15 +19,16 @@
 
 ## 在线安装
 
-skoala-init 是 微服务引擎 所有的组件 Operator
-  - 仅安装到工作集群即可
-  - 包含组件有：skoala-agent、nacos、contour、sentinel、seata
-  - 未安装时，创建注册中心和网关时会提示缺少组件
+skoala-init 是微服务引擎所有的组件 Operator：
+
+- 仅安装到工作集群即可
+- 包含组件有：skoala-agent、nacos、contour、sentinel、seata
+- 未安装时，创建注册中心和网关时会提示缺少组件
 
 由于 Skoala 涉及的组件较多，我们将这些组件打包到同一个 Chart 内，也就是 skoala-init，
 所以我们应该在用到微服务引擎的工作集群安装好 skoala-init。此安装命令也可用于更新该组件。
 
-配置好 Skoala 仓库，即可查看和获取到 skoala-init 的应用 chart
+配置好 Skoala 仓库，即可查看和获取到 skoala-init 的应用 chart。
 
 ```bash
 helm repo add skoala-release https://release.daocloud.io/chartrepo/skoala
@@ -53,7 +56,7 @@ helm upgrade --install skoala-init --create-namespace -n skoala-system --cleanup
 查看 Pod 是否启动成功：
 
 ```bash
-$ kubectl -n skoala-system get pods
+$ kubectl get pods -n skoala-system
 NAME                                   READY   STATUS    RESTARTS        AGE
 contour-provisioner-54b55958b7-5ltng                  1/1     Running     0          2d6h
 gateway-api-admission-patch-bk7c8                     0/1     Completed   0          2d6h
@@ -77,7 +80,7 @@ skoala-agent-54d4df7897-7p4pz                         1/1     Running     0     
 1. 备份原有参数
 
     ```bash
-    helm -n skoala-system get values skoala-init > skoala-init.yaml
+    helm get values skoala-init -n skoala-system -o yaml > skoala-init.yaml
     ```
 
 2. 添加微服务引擎的 Helm 仓库
@@ -92,16 +95,16 @@ skoala-agent-54d4df7897-7p4pz                         1/1     Running     0     
     helm repo update
     ```
 
-4. 删除 gateway-api-admission 和 gateway-api-admission-path 两个 job
+4. 删除 gateway-api 相关 job
 
     ```bash
-    kubectl -n skoala-system delete jobs gateway-api-admission gateway-api-admission-patch
+    kubectl delete jobs gateway-api-admission gateway-api-admission-patch -n skoala-system
     ```
 
 5. 执行 `helm upgrade` 命令
 
     ```bash
-    helm --kubeconfig /tmp/deploy-kube-config upgrade --install --create-namespace -n skoala-system skoala-init skoala/skoala-init --version=0.28.1 --set nacos-operator.image.tag=v0.28.1 --set skoala-agent.image.tag=v0.28.1 --set sentinel-operator.image.tag=v0.28.1 --set seata-operator.image.tag=v0.28.1 -f skoala-init.yaml
+    helm upgrade --install --create-namespace -n skoala-system skoala-init skoala/skoala-init --version=0.28.1 --set nacos-operator.image.tag=v0.28.1 --set skoala-agent.image.tag=v0.28.1 --set sentinel-operator.image.tag=v0.28.1 --set seata-operator.image.tag=v0.28.1 -f skoala-init.yaml
     ```
 
     !!! note
@@ -116,10 +119,43 @@ skoala-agent-54d4df7897-7p4pz                         1/1     Running     0     
 
 ## 离线升级
 
-参考微服务引擎管理组件的[离线升级](skoala-global.md#离线升级)方式
+参考微服务引擎管理组件的[离线升级](./skoala.md#_11)方式
 
 ## 卸载微服务引擎集群初始化组件
 
+!!! note
+
+    - nacos sentinel seata 的 crd 会随之卸载，特别注意，相关 cr 会被删除。
+    - 网关相关 crd 不会被随之卸载，如需清除需手动处理，特别注意，清除 crd 时相关 cr 会被删除。
+
+??? note "网关相关 crd 清单"
+
+    contourconfigurations.projectcontour.io  
+    contourdeployments.projectcontour.io  
+    extensionservices.projectcontour.io  
+    gatewayclasses.gateway.networking.k8s.io  
+    gateways.gateway.networking.k8s.io  
+    grpcroutes.gateway.networking.k8s.io  
+    httpproxies.projectcontour.io  
+    httproutes.gateway.networking.k8s.io  
+    referencegrants.gateway.networking.k8s.io  
+    tcproutes.gateway.networking.k8s.io  
+    tlscertificatedelegations.projectcontour.io  
+    tlsroutes.gateway.networking.k8s.io  
+    udproutes.gateway.networking.k8s.io
+
 ```bash
 helm uninstall skoala-init -n skoala-system
+```
+
+### 手动清理 gateway-api 相关 job
+
+```bash
+kubectl delete jobs gateway-api-admission gateway-api-admission-patch -n skoala-system
+```
+
+### 手动清理网关相关 crd
+
+```bash
+kubectl delete crds `kubectl get crds | grep -E "projectcontour.io|gateway.networking.k8s.io" | awk '{print $1}'`
 ```

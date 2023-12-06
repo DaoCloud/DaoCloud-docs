@@ -7,6 +7,30 @@
 - Spiderpool 是 DaoCloud 自研开源的 IPAM 模块，请参考 [Spiderpool Release Notes](https://github.com/spidernet-io/spiderpool/releases)。
 - Egressgateway 是 DaoCloud 自研开源的出口网关模块，请参考 [Egressgateway Release Notes](https://github.com/spidernet-io/egressgateway/releases)。
 
+## 2023-11-30
+
+### v0.11.1
+
+- 适配 **Spiderpool v0.8.1**
+- 适配 **Egressgateway v0.4.0**
+
+#### 新功能
+
+- **新增** 支持查询 spiderpool 与 egressgateway 安装查询接口
+- **新增** 支持 Multus CR 管理 SR-IOV CNI 开启 RDMA
+- **新增** 支持创建负载中自动选择 RDMA 、SR-IOV、hugepages 等网络资源参数
+- **新增** 支持 egressgateway 使用 EIP 计数功能
+
+#### 优化
+
+- **优化** spiderpool sdk 依赖
+
+#### 修复
+
+- **修复** IP 池关联 Multus CR 实例，需要匹配命名空间问题
+- **修复** 更新 Multus CR 时未更新 Annotations 问题
+- **修复** egressgateway 引起的策略重新分配错误问题
+
 ## 2023-10-30
 
 ### v0.10.1

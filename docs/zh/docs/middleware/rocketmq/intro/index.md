@@ -9,4 +9,4 @@ RocketMQ 已经成为业内共识的金融级可靠业务消息首选方案，�
 
 DaoCloud 在开源 Apache RocketMQ 做了容器化的定制开发，提供了简单易用的 UI 界面，可以轻松部署 RocketMQ 集群处理消息业务。
 
-![rocketmq ui](../images/what01.png)
+![rocketmq ui](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/what01.png)

@@ -2,6 +2,44 @@
 
 This page lists the Release Notes related to Hwameistor, providing an overview of the evolution path and feature changes for each version.
 
+## 2023-11-30
+
+### v0.13.3
+
+#### New Features
+
+- **Added** support for volume cloning
+- **Added** delayed volume deletion when snapshot is discovered
+- **Added** filtering nodes based on source volume accessibility
+
+#### Improvements
+
+- **Improved** logging disk claim events only when the disk is available
+
+#### Fixes
+
+- **Fixed** filtering replicaSnapRestoreName before submitting a job
+- **Fixed** incorrect state transition in LocalVolumeConvert
+- **Fixed** exiting when indexer addition fails
+- **Fixed** using storage node IP when migrating volumes
+- **Fixed** cleaning up replicas after canceling publication
+- **Fixed** error in `apiserver getnodedisk` and added set-diskowner API
+
+## 2023-10-30
+
+### v0.13.1
+
+#### New Features
+
+- **Added** compatibility with Kubernetes v1.28 version
+- **Added** LVM data volume snapshot feature
+
+#### Improvements
+
+- **Improved** Hwameistor Operator with additional component resource configuration
+- **Improved** snapshot recovery timeout
+- **Improved** default log level for LDM
+
 ## 2023-8-30
 
 ### v0.12.1

@@ -8,7 +8,7 @@ Both resource groups and shared resources support cluster binding, but they have
   the workspace administrator will be mapped as a cluster administrator and able to manage and use cluster resources.
 - Cluster Binding for Shared Resources: Shared resources are usually used for resource quotas. A typical scenario is that the platform administrator assigns a cluster to a first-level supplier, who then assigns the cluster to a second-level supplier and sets resource quotas for the second-level supplier.
 
-![diff](../../images/res-gp01.png)
+![diff](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/res-gp01.png)
 
 Note: In this scenario, the platform administrator needs to impose resource restrictions on secondary suppliers.
 Currently, it is not supported to limit the cluster quota of secondary suppliers by the primary supplier.

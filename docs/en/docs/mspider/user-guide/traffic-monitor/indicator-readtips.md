@@ -18,7 +18,7 @@ The dashboards primarily present the following dimensions:
 
 Taking performance monitoring as an example, the charts provide monitoring data for various metrics. The presentation formats include numerical values, graphs, and tables.
 
-![performance monitor](../images/readtips01.png)
+![performance monitor](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/readtips01.png)
 
 The search bar at the top of the chart provides some auxiliary search fields for the monitoring dashboard. The available search fields may vary depending on the specific dashboard.
 
@@ -33,22 +33,22 @@ The search bar at the top of the chart provides some auxiliary search fields for
 
 By clicking on the title of a corresponding metric chart, you can expand the view to access more options. The first option is to view the method, which can be returned to using the **ESC** key.
 
-![view menu](../images/readtips02.png)
+![view menu](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/readtips02.png)
 
-![view big](../images/readtips03.png)
+![view big](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/readtips03.png)
 
 ### Exporting Metric Data
 
 To view the raw data corresponding to a chart, click the title of the metric chart and select Inspect > Data to display the data in tabular form.
 
-![inspect data](../images/readtips04.png)
+![inspect data](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/readtips04.png)
 
 At this point, you can export the data in either CSV or Excel format.
 
-![data](../images/readtips05.png)
+![data](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/readtips05.png)
 
 ### Viewing Metric Calculation Expressions
 
 If you want to understand the calculation formula of a specific metric in detail, you can view the JSON structure of the metric chart. It provides the specific calculation method for the metric. The following steps demonstrate how to access this information:
 
-![json](../images/readtips06.png)
+![json](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/readtips06.png)

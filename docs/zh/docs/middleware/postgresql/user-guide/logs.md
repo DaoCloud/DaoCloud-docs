@@ -17,7 +17,7 @@ hide:
 
     ![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/postgresql/images/log02.png)
 
-3. 点击 `日志查看` 即可进入到日志查看页面（Insight 日志查看）。
+3. 点击 `日志查看` 即可进入到日志查看页面（[Insight](../../../insight/intro/index.md) 日志查看）。
 
 ## 日志查看说明
 

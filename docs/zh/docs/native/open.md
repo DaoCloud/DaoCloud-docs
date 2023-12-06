@@ -586,6 +586,10 @@
 
     版本特性：支持 golang 1.20、移除对 Kubernetes 1.23 的支持、集成 OpenTelemetry 模块。
 
+- [Istio 服务网格 v1.20.0 发布（CNCF 项目）](https://istio.io/latest/news/releases/1.20.x/announcing-1.20/)
+
+    版本特性：完全支持 Gateway API v1.0、新增对 Network 类型 WasmPlugin 的支持、允许流量镜像到多个目的地、对 ExternalName 服务进行增强、引入 Sidecar 容器的 StartupProbe 以加快启动速度、优化 Envoy 过滤器的一致性排序、增强 TCP 元数据交换控制、支持插入式根证书轮换等。
+
 - [Istio 服务网格 1.19 发布（CNCF 项目）](https://istio.io/latest/news/releases/1.19.x/announcing-1.19/)
 
     版本特性：Gateway API v0.8.0 增加对服务网格的支持；Ambient Mesh 增加对 `ServiceEntry`、`WorkloadEntry`、`PeerAuthentication` 和 DNS 代理的支持；支持可选的客户端证书验证；支持配置非 Istio mTLS流量的密码套件。
@@ -939,6 +943,10 @@
 
     版本特性：增加对元数据 api 的支持以减少网络负载、暴露客户端的默认命名空间、允许在不消耗原始的 watcher stream 的情况下从 watcher 订阅事件、支持持久元数据 watch。
 
+- [Kubescape Kubernetes 安全平台 3.0 发布（CNCF 项目）](https://kubescape.io/blog/2023/09/19/introducing-kubescape-3/)
+
+    版本特性：将合规性和容器扫描结果存储为 Kubernetes 集群内的资源；通过命令行界面扫描容器镜像的漏洞；报告集群中所有镜像的漏洞情况；全新的概览安全扫描，支持为集群安全设置基线；突出显示高风险工作负载；新的基于能力的 Helm chart；支持通过 Prometheus Alertmanager 进行告警；支持将数据发送到集群外的托管服务。
+
 - [KubeSkoop：由阿里云开源的 Kubernetes 网络监控工具](https://mp.weixin.qq.com/s/zbAcZCNT5vyzGvp7uTDB1w)
 
     [KubeSkoop](https://github.com/alibaba/kubeskoop) 支持功能包括：Pod 级别的网络监控，包括流量，应用层连接信息， socket 内存分配状态等；Pod 级别的网络异常状态的指标监控，例如 Pod 内进程对 socket 进行读写操作的等待时间超过 100ms 的次数等；Pod 级别的网络异常事件的现场，提供事件发生的详细信息的观测。
@@ -1021,6 +1029,10 @@
     [KubeWharf](https://github.com/kubewharf) 是一套以 Kubernetes 为基础构建的分布式操作系统，由一组云原生组件构成，专注于提高系统的可扩展性、资源利用率、可观测性、安全性等，支持大规模多租集群、在离线混部、存储等场景。
     KubeWharf 第一批计划开源三个项目：高性能元信息存储系统 KubeBrain、kube-apiserver 七层网关 KubeGateway、轻量级多租户方案 KubeZoo。
 
+- [Kuma 服务网格项目 v2.5.0 发布（CNCF 项目）](https://github.com/kumahq/kuma/releases/tag/2.5.0)
+
+    版本特性：支持区域内和跨区域的地域感知负载均衡能力、支持 Gateway API v1、支持 Envoy 1.28、在Global CP（全局控制平面）和 Zone CP（区域控制平面）协议中使用增量 KDS 显著降低资源消耗、允许从 MeshTrafficPermissions 中获取可访问的服务。
+
 - [Kuma 服务网格项目 v2.2.0 发布（CNCF 项目）](https://github.com/kumahq/kuma/releases/tag/2.2.0)
 
     版本特性：支持 OpenTelemetry、支持使用 JSONPatch 定义 MeshProxyPatch 策略、支持重试指令和优先级、将底层 Envoy 版本升级到 1.25、新增策略以用于更精细地控制服务间的负载均衡、支持在 Kubernetes 集群中部署通用模式的全局控制平面（由 Postgres 支持）、支持为离线令牌签名和验证提供公钥。
@@ -1061,6 +1073,10 @@
 
     版本特性：计划将遥测组件重构成一个模块；在 Pod 重启和 webhook 修改的过程中，保持webhook CA 捆绑稳定；新增 HTTP 请求的默认超时；简化了内部 Docker 注册中心的 Serverless 配置；支持 otel-collector 0.77.0。
 
+- [Kyverno 云原生策略引擎 v1.11.0 发布（CNCF 项目）](https://github.com/kyverno/kyverno/releases/tag/v1.11.0)
+
+    版本特性：支持 ValidatingAdmissionPolicy（alpha）；使用 CEL 编写验证规则；使用 CEL 编写兼容的 Kyverno 验证规则时，生成 ValidatingAdmissionPolicy（VAP）；从 VAP 生成策略报告；使用 Kyverno CLI 测试 VAP；基于资源而非策略生成报告；支持 OCI 1.1 和 Cosign 2.0。
+
 - [Kyverno 云原生策略引擎 v1.10.0 发布（CNCF 项目）](https://github.com/kyverno/kyverno/releases/tag/v1.10.0)
 
     版本特性：将 Kyverno 分成 3 个独立的控制器/Deployment、支持集群内服务调用、支持验证 Notary v2 签名、更新生成和变更现有策略。
@@ -1095,6 +1111,10 @@
 - [Linkerd 服务网格项目 v2.12.0 发布（CNCF 项目）](https://github.com/linkerd/linkerd2/releases/tag/stable-2.12.0)  
 
     该版本主要新特性：允许用户以完全零信任的方式定义和执行基于 HTTP 路由的授权策略；支持使用 Kubernetes Gateway API 进行配置；初始化容器增加对 `iptables-nft` 的支持。
+
+- [Litmus 混沌工程框架 3.1.0 发布（CNCF 项目）](https://github.com/litmuschaos/litmus/releases/tag/3.1.0)
+
+    版本特性：在 Pod-network 故障中添加端口黑名单、添加启用和禁用 cron 功能的 UI 更改、添加 Grpc handler 的测试用例、添加 handler 和 service 测试。
 
 - [Litmus：混沌工程框架 3.0 发布（CNCF 项目）](https://github.com/litmuschaos/litmus/releases/tag/3.0.0)
 
@@ -1608,7 +1628,7 @@
 
 - [vcluster 虚拟 Kubernetes 集群实现方案 v0.16.0 发布](https://github.com/loft-sh/vcluster/releases/tag/v0.16.0)
 
-    版本特性：支持 Kubernetes v1.28、允许用户自定义的 Pod 条件和节点污点、支持不使用模版创建 vcluster、添加 vcluster 和 vcluster cli 二进制 sbom、改进 coredns 集成。
+    版本特性：支持 Kubernetes v1.28、允许用户自定义的 Pod 条件和节点污点、支持不使用模板创建 vcluster、添加 vcluster 和 vcluster cli 二进制 sbom、改进 coredns 集成。
 
 - [vcluster 虚拟 Kubernetes 集群实现方案 v0.15.0 发布](https://github.com/vmware-tanzu/velero/releases/tag/v1.11.0)
 

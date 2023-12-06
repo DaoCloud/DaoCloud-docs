@@ -22,7 +22,7 @@
 
     - 名称：填写资源负载的名称。
     - 资源类型：本演示选择无状态负载，目前仅支持无状态堵在
-    - 部署位置：选择将应用部署到哪个集群下的哪个命名空间。如果要接入微服务，请确保当前工作空间下已经[创建了注册中心](../../../skoala/trad-ms/hosted/create-registry.md)。
+    - 部署位置：选择将应用部署到哪个集群下的哪个命名空间。如果要接入微服务，请确保当前工作空间下已经[创建了注册中心](../../../skoala/trad-ms/hosted/index.md)。
     - 所属应用：原生应用名称，支持从已有的原生应用列表中选择，也可以新建，默认与名称一致。
     - 实例数：填写实例的数量，Pod 的数量。
 
@@ -64,11 +64,11 @@
         > 有关微服务引擎的配置，可参考[基于 Git 仓构建微服务应用](create-app-git.md)。
     - 可观测性：支持开启指标监控、链路追踪、JVM 监控。
 
-        ![高级配置](../../images/jar01.png)
+        ![高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/jar01.png)
 
 6. 选择需要上传的文件，点击`确定` 。
 
-    ![上传文件](../../images/jar02.png)
+    ![上传文件](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/jar02.png)
 
 7. 创建成功后会触发运行对应的流水线，在左侧导航栏点击`流水线`可查看其运行状态。
 

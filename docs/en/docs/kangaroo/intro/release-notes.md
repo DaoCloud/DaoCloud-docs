@@ -3,7 +3,14 @@
 This page lists the release notes of the container registry, so that you can
 understand the evolution path and feature changes of each version.
 
-## 2023-11-03
+## 2023-11-30
+
+### v0.13.1
+
+- Fixed issue with binding workspace to image space
+- Fixed issue with granting authorization to all public image spaces when generating login instructions
+
+## 2023-10-31
 
 ### v0.12.0
 

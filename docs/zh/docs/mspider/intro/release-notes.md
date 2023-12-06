@@ -2,6 +2,32 @@
 
 本页列出服务网格各版本的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2023-11-30
+
+### v0.21.0
+
+#### 功能
+
+- **新增** 专有网格支持多云互联功能。
+- **新增** 支持选择和升级新版本的 `Istio（1.19.3、1.18.5、1.17.6）` 进行部署网格实例。
+- **新增** `VM Agent` 支持对 `Istio` 进程进行健康检测和故障自恢复。
+- **新增** `TrafficLane API` 支持通过 `Annotations` 进行操作。
+
+#### 优化
+
+- **优化** 将服务列表状态与诊断状态使用相同的算法机制，确保诊断结果与状态字段的一致性。
+- **优化** 改进托管网格服务的自动发现策略，只要任意集群的服务带有 `mspider.io/managed` 标签，就展示该服务。
+
+#### 修复
+
+- **修复** 解决创建网格时的死锁问题，防止在网格资源初始化完成之前提前创建 `Sidecar` 资源。
+- **修复** 修复流量透传的问题，使得出入端口都能够正确放行。
+- **修复** 修复网格对 `ETCD` 的过度检测，解决网格状态显示异常的问题。
+- **修复** 在集群移除时，容器管理现在会同步移除网格集群，确保操作的一致性。
+- **修复** 修复了长时间运行 `MCPC Controller` 后无法感知 `TrafficLane` 资源变化的问题。
+- **修复** 虚拟机停止时，现在会同时停止 `pilot-agent` 进程，确保资源的正常释放。
+- **修复** 修复了虚拟机启动时异步执行清理操作和安装操作导致的偶发规则故障。
+
 ## 2023-10-30
 
 ### v0.20.3
@@ -20,7 +46,6 @@
 
 #### 修复
 
-
 - **修复** `Graph` 查询命名空间过长，导致向 `Prometheus` 服务发起的请求 URL 超出长度限制。
 - **修复** 工作负载注入状态有误。
 - **修复** 工作空间接口资源绑定显示不准确。
@@ -34,7 +59,7 @@
 
 #### 升级
 
-- **新增** `userinfo` 接口，可以获取当前用户的权限信息。**注意：如果进入网格后，需要同时传入 `mesh_id` 参数才可以获取到精确的权限信息**。
+- **新增** `userinfo` 接口，可以获取当前用户的权限信息。**注意 如果进入网格后，需要同时传入 `mesh_id` 参数才可以获取到精确的权限信息**。
 - **新增** `Mcpc Controller` 支持虚拟机（自动创建 `WorkloadShadow`）。
 - **新增** 网格创建虚拟机（VM）服务接口。
 - **新增** 虚拟机（VM）离线安装包构建和上传脚本。
@@ -75,7 +100,7 @@
 - **新增** 获取集群命名空间列表接口。
 - **新增** `filter_system_namespaces` 支持过滤系统命名空间。
 - **新增** 获取集群中工作负载边车注入列表接口。
-- **新增** 监控拓扑为工作负载视图功能新增字段：`graph_type`，当前只支持 `SERVICE_SCOPE` 与 `WORKLOAD_SCOPE`，默认为 `SERVICE_SCOPE`。
+- **新增** 监控拓扑为工作负载视图功能新增字段 `graph_type`，当前只支持 `SERVICE_SCOPE` 与 `WORKLOAD_SCOPE`，默认为 `SERVICE_SCOPE`。
 - **新增** 删除网络分组检测新增检测条件，是否存在在网络互联池中（`NET_EXISTS_NET_POOLS`）。
 - **新增** 边车工作负载列表支持通过 `page.search` 搜索工作实例标签 `PodLabels`。
 - **新增** 查询多集群工作负载列表接口 `/apis/mspider.io/v3alpha1/meshes/{mesh_id}/clusters/-/sidecar-management/workloads`，同时也支持搜索 `PodLabels`。
@@ -190,7 +215,7 @@
 #### 升级
 
 - **新增** Ckube 按需加载资源。
-- **新增** IstioResource 字段：`labels` 与 `annotations`，能够更新 Label 与 Annotation。
+- **新增** IstioResource 字段 `labels` 与 `annotations`，能够更新 Label 与 Annotation。
 - **新增** MeshCluster 中 ClusterProvider 同步实现。
 - **新增** `mspider.io/protected` Label 定义，用于网格保护能力。
 - **新增** 边车升级支持多工作负载能力，`SidecarUpgrader` 中 `workloads` 同时支持 `workloadshadow.name` 和 `deployment.name`。
@@ -204,7 +229,7 @@
 - **新增** 默认启用 Reg-Proxy 组件。
 - **新增** 实现 Service 的 selector 字段输出。
 - **新增** 通过给 Namespace 加 Network label 解决未注入 Sidecar 跨集群访问问题。
-- **新增** 托管网格 hosted-apiserver 自定义参数配置能力。(该参数只有安装时生效，暂时不支持更新)，(更多参数请参考 helm 参数配置)：
+- **新增** 托管网格 hosted-apiserver 自定义参数配置能力。(该参数只有安装时生效，暂时不支持更新)，(更多参数请参考 helm 参数配置) 
 - **新增** 网格控制面组件状态
 - **新增** 网格网格查询接口新增 `loadBalancerStatus` 字段，用于描述实际分配的 LB 地址。
 - **新增** 网格组件进度详情接口 `/apis/mspider.io/v3alpha1/meshes/{mesh_id}/components-progress`。
@@ -213,7 +238,7 @@
 - **新增** 新增获取集群安装组件接口（目前支持 Insight Agent）。
 - **优化** 绑定/解绑工作空间的使用体验。
 - **优化** 工作负载相关接口字段 `workload_kind` 类型从枚举优化为 `string`。
-- **优化** 托管网格情况下，对于集群 k8s 版本检测：除包含工作集群外，也包含对控制面集群的版本检测。
+- **优化** 托管网格情况下，对于集群 k8s 版本检测 除包含工作集群外，也包含对控制面集群的版本检测。
 - **升级** 升级 CloudTTY 到 `0.5.3` 版本。
 - **升级** WorkloadShadow controller watcher 创建逻辑。
 
@@ -283,7 +308,7 @@
 - **优化** 减少 pod 变更不断更新 WorkloadShadow
 - **修复** relok8s 中 wasm 插件镜像地址拼写错误的问题。
 - **修复** TrafficLane 默认 repository 错误。
-- **优化** Helm 镜像渲染模板。镜像结构拆分为三个部分：registry/repository:tag
+- **优化** Helm 镜像渲染模板。镜像结构拆分为三个部分 registry/repository:tag
 
 #### 移除
 
@@ -326,7 +351,7 @@
 #### 优化
 
 - **优化** mcpc controller 启动逻辑，避免出现工作集群没有正确注册的情况
-- **优化** WorkloadShadow 清理逻辑：由定时触发改造事件触发：控制器启动时、检测到工作集群发生变化时；
+- **优化** WorkloadShadow 清理逻辑 由定时触发改造事件触发 控制器启动时、检测到工作集群发生变化时；
   WorkloadShadow 发生变化时，自健康检测，对应工作负载不存在时，触发清理逻辑
 - **优化** mcpc controller 启动逻辑，避免出现工作集群没有正确注册的情况
 - **升级** Insight api 升级到 v0.14.7 版本
@@ -336,7 +361,7 @@
 #### 修复
 
 - **修复** 东西网关没 Ready 时界面无显示的问题
-- **修复** 多云互联会自动注册东西网关 LB IP，可能导致内部网络异常（移除东西网关实例 label：topology.istio.io/network，该标签会将东西网关自动注册）
+- **修复** 多云互联会自动注册东西网关 LB IP，可能导致内部网络异常（移除东西网关实例 label topology.istio.io/network，该标签会将东西网关自动注册）
 - **修复** 携带东西网关的集群迁移会出错问题（无法修改实例的 label，如果需要修改组件 label 只能删除组件再重建）
 - **修复** 了一个导致 Mesh 绑定 workspace 服务失败（界面显示成功）的问题
 - **修复** 由于异常导致虚拟集群中存在游离的命名空间，在启动 mcpc-controller 时增加自检并且清除行为

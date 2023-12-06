@@ -58,7 +58,7 @@ Multus + Macvlan 一般会有两种使用场景：
 然后创建两个不同 vlan 的 macvlan multus 实例，它们的 master 接口分别为 bond0.100 和 bond0.200。
 这样使用不同 macvlan multus 实例创建的 Pod 也就属于不同的 vlan 了。但它们都可以通过交换机做到同 vlan 或不同 vlan 之间的通讯。
 
-注意：它们的网管应该指向交换机对应的 vlanif IP 地址。
+注意：它们的网关应该指向交换机对应的 vlanif IP 地址。
 
 这是一个比较常见、稍复杂的网络拓扑。总结：
 

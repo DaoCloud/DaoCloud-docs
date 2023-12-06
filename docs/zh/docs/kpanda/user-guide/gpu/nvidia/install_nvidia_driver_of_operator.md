@@ -11,7 +11,7 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 ## 前提条件
 
 1. 用户已经在平台上安装了 v0.12.0 及以上版本的 addon 离线包。
-2. 待部署 GPU Operator 的集群节点内核版本必须完全一致。节点 发行版和 GPU 卡型号在 [GPU 支持矩阵](../gpu_matrix.md)范围内。
+2. 待部署 GPU Operator 的集群节点内核版本必须完全一致。节点 发行版和 GPU 卡型号在 [GPU 支持矩阵](../gpu_matrix.md) 范围内。
 
 ## 操作步骤
 
@@ -19,7 +19,7 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
 1. 登录平台，进入`容器管理`-->`待安装 GPU Operator 的集群`-->进入集群详情。
 
-2. 在 `Helm 模版` 页面，选择 `全部仓库`，搜索 `gpu-operator` 。
+2. 在 `Helm 模板` 页面，选择 `全部仓库`，搜索 `gpu-operator` 。
 
 3. 选择 `gpu-operator`，点击`安装`。
 
@@ -74,26 +74,26 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
     ??? note "使用 Global 集群任意节点的 yum 源配置"
 
         1. 使用 ssh 或其它方式进入 Global 集群的任意节点，获取平台离线源配置文件 `extension.repo`：
-
+    
             ```bash
             cat /etc/yum.repos.d/extension.repo #查看 extension.repo 中的内容。
             ```
             # 预期输出如下：
-
+    
             ```bash
             [extension-0]
             async = 1
             baseurl = http://x.x.x.x:9000/kubean/centos/$releasever/os/$basearch
             gpgcheck = 0
             name = kubean extension 0
-
+    
             [extension-1]
             async = 1
             baseurl = http://x.x.x.x:9000/kubean/centos-iso/$releasever/os/$basearch
             gpgcheck = 0
             name = kubean extension 1
             ```
-
+    
         2. 复制上述 `extension.repo` 文件中的内容，在待部署 GPU Operator 的集群的 `gpu-operator` 命名空间下，新建名为`local-repo-config` 的配置文件，可参考[创建配置项](../../configmaps-secrets/create-configmap.md)进行创建。
         **注意：配置 `key` 值必须为 `CentOS-Base.repo`,`value` 值点离线源配置文件 `extension.repo` 中的内容**。
 

@@ -13,7 +13,7 @@
 
 2. 点击批量工作负载列表右上角`镜像创建`按钮。
 
-    ![批量工作负载列表](../../images/create-batch-app-01.png)
+    ![批量工作负载列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-batch-app-01.png)
 
 3. 填写基本信息
 
@@ -24,7 +24,7 @@
     - 实例数：负载的 Pod 实例数量，默认创建 1 个 Pod 实例，可以修改
     - 描述：输入负载的描述信息，内容自定义
 
-    ![填写基本信息](../../images/create-batch-app-02.png)
+    ![填写基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-batch-app-02.png)
 
 4. 填写容器配置
 
@@ -91,7 +91,7 @@
 
         点击`添加`按钮，可以为工作负载和容器组添加标签和注解。
 
-        ![标签与注解](../../images/create-batch-app-03.png)
+        ![标签与注解](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-batch-app-03.png)
 
     === "访问配置"
 
@@ -103,7 +103,7 @@
           那主机 8080 端口的流量会流向容器的 80 端口。
         - 主机网络：使用宿主机（边缘节点）的网络，即容器与主机间不做网络隔离，使用同一个IP。
 
-        ![访问配置](../../images/create-batch-app-04.png)
+        ![访问配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-batch-app-04.png)
 
 6. 点击`确定`按钮，完成批量工作负载的创建。
 
@@ -115,7 +115,7 @@
 
 2. 点击终端设备列表右上角`YAML 创建`按钮。
 
-    ![批量工作负载列表](../../images/create-batch-app-05.png)
+    ![批量工作负载列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-batch-app-05.png)
 
 3. 输入或粘贴事先准备好的 YAML 文件，点击`确定`即可完成创建。
 

@@ -5,12 +5,12 @@
 ## 前提条件
 
 - [创建一个集群](../../kpanda/user-guide/clusters/create-cluster.md)或[接入一个集群](../../kpanda/user-guide/clusters/integrate-cluster.md)
-- [创建一个网关](../gateway/create-gateway.md)
+- [创建一个网关](../gateway/index.md)
 - 准备一个 Token 和用于验证 Token 的 JWKS 应用。如果尚且没有 JWKS 应用，可以参考[创建 JWKS 应用](#jwks)创建一个。
 
 ## 操作步骤
 
-1. 参考[创建域名](../gateway/domain/add-domain.md)创建协议为 `https` 的域名，在域名的安全策略中启用 `JWT 认证`。
+1. 参考[创建域名](../gateway/domain/index.md)创建协议为 `https` 的域名，在域名的安全策略中启用 `JWT 认证`。
 
     - JWKS 名称：唯一的 JWKS 的名称，用于标识具体的 JWT 策略，必填
     - JWKS 服务器地址：返回 JWKS 内容的 JWT 服务的完整 FQDN 地址，必填
@@ -22,7 +22,7 @@
 
         ![基础配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/jwt06.png)
 
-2. 参考[添加 API](../gateway/api/add-api.md) 创建 API 并启用 JWT 认证安全策略。
+2. 参考[添加 API](../gateway/api/index.md) 创建 API 并启用 JWT 认证安全策略。
 
     ![基础配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/jwt07.png)
 

@@ -15,11 +15,11 @@ DCE 5.0 容器管理模块提供集群巡检功能，支持从集群维度、节
 
 1. 在左侧导航栏点击`集群巡检`。
 
-    ![nav](../../images/inspect01.png)
+    ![nav](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/inspect01.png)
 
 2. 在页面右侧点击`巡检配置`。
 
-    ![create](../../images/inspect02.png)
+    ![create](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/inspect02.png)
 
 3. 参考以下说明填写巡检配置，然后在页面底部点击`确定`即可。
 
@@ -29,7 +29,7 @@ DCE 5.0 容器管理模块提供集群巡检功能，支持从集群维度、节
     - 巡检记录保留条数：累计最多保留多少条巡检记录，包括所有集群的巡检记录
     - 参数配置：参数配置分为集群维度、节点维度、容器组维度三部分，可以根据场景需求启用或禁用某些巡检项。
 
-        ![basic](../../images/inspect03.png)
+        ![basic](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/inspect03.png)
 
 巡检配置创建完成后，会自动显示在巡检配置列表中。在配置右侧点击更多操作按钮可以立即执行巡检或修改巡检配置。
 

@@ -18,4 +18,4 @@
     - 鼠标悬浮在连线上时，可查看两个服务之间请求的流量指标。
     - 在 `显示设置` 模块，可配置拓扑图中的显示元素。
 
-    ![服务拓扑](../../images/servicemap00.png)
+    ![服务拓扑](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/servicemap00.png){ width="1000"}

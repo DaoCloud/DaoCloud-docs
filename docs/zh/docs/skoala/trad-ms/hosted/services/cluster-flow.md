@@ -27,7 +27,7 @@ hide:
 
 2. 选择`集群流控`，然后在右侧点击`创建集群流控`。
 
-    ![微服务列表](../../../images/gov17.png)
+    ![微服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gov17.png)
 
 3. 参考下列说明填写规则配置，并在右下角点击`确定`。
 
@@ -36,8 +36,8 @@ hide:
     - TokenServer 端口：Token 服务器的端口号
     - Client 选择：集群流控客户端，用于向所属 TokenServer 通信请求 Token。
 
-        ![微服务列表](../../../images/gov18.png)
+        ![微服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gov18.png)
 
 4. 创建完成后可以在系统规则列表中查看新建的规则。在右侧点击更多按钮可以更新规则或者删除该规则。
 
-    ![流控规则列表](../../../images/gov19.png)
+    ![流控规则列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gov19.png)

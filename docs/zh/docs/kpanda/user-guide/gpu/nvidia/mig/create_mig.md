@@ -1,6 +1,7 @@
 # 开启 MIG 功能
 
 本章节介绍如何开启 NVIDIA MIG 功能方式，NVIDIA 当前提供两种在 Kubernetes 节点上公开 MIG 设备的策略： 
+> Tips: MIG 模式 Disable 之后需要重新启动物理节点，才能正常的使用整卡模式。
 
 - **Single 模式**，节点仅在其所有 GPU 上公开单一类型的 MIG 设备。
 - **Mixed 模式**，节点在其所有 GPU 上公开混合 MIG 设备类型。
@@ -27,13 +28,13 @@
             -  **配置规格（如：all-1g.10gb）**：所有节点设备默认使用输入的规格切分。
         - `name` ：MIG 的切分策略配置，默认为 `default-mig-parted-config`。
 
-        ![single](../../images/single01.jpg)
+        ![single](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/single01.jpg)
 
 2. 如需要按照某种规则切分，可以给对应节点(已插入对应 GPU 卡节点)打上 切分规格，如不执行此操作，将按照默认方式切分。
 
     **界面配置** ：找到对应节点，选择 `修改标签` 添加 `nvidia.com/mig.config="all-1g.10gb"`
 
-    ![single02](../../images/single02.jpg)
+    ![single02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/single02.jpg)
 
     **命令配置**：
 
@@ -133,13 +134,13 @@
               1c.3g.40gb: 6
         ```
 
-        ![mixed](../../images/mixed.jpg)
+        ![mixed](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/mixed.jpg)
 
 2. 如需要按照自定义规则切分，可以给对应节点打上切分规格，如不执行此操作，将按照默认值切分。
 
     **界面配置** ：找到对应节点，选择 `修改标签` 添加 `nvidia.com/mig.config="custom-config"`
 
-    ![single02](../../images/mixed02.jpg)
+    ![single02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/mixed02.jpg)
 
     **命令配置**：
 

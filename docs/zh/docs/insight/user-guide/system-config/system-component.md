@@ -5,7 +5,7 @@
 1. 进入`可观测性` 产品模块，
 2. 在左边导航栏选择 `系统管理 -> 系统组件`。
   
-    ![系统组件](../../images/system00.png)
+    ![系统组件](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/system00.png)
 
 ## 组件说明
 
@@ -21,3 +21,7 @@
 |链路 | insight-jaeger-query                              | 负责查询各集群中采集到的链路数据。                                                                   |
 |链路 | insight-opentelemetry-collector                   | 负责接收各子集群转发的链路数据                                                                       |
 |日志 | elasticsearch                                     | 负责存储各集群的日志数据。                                                                           |
+
+!!! note
+
+    若使用外部 Elasticsearch 可能无法获取部分数据以致于 Elasticsearch 的信息为空。

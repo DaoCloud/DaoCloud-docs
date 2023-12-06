@@ -10,7 +10,7 @@ OAM 应用功能基于开源软件 [KubeVela](http://kubevela.net/zh/docs/v1.2/)
 
 可参考下图，来源于 KubeVela 官方文档站。
 
-![oam1](../../images/oam001.png)
+![oam1](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/oam001.png)
 
 ## 核心组件介绍
 

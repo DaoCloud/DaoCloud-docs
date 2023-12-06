@@ -20,13 +20,13 @@ Follow the steps below to create a folder:
 
 3. Fill in the folder name, parent folder, and other information, then click `OK` to complete creating the folder.
 
-    ![Confirm](../../images/fd03.png)
+    ![Confirm](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/fd03.png)
 
 !!! tip
 
     After successful creation, the folder name will be displayed in the left tree structure, represented by different icons for workspaces and folders.
 
-    ![Workspaces and Folders](../../images/fd04.png)
+    ![Workspaces and Folders](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/fd04.png)
 
 !!! note
 

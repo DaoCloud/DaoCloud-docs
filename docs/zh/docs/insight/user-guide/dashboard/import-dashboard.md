@@ -8,7 +8,7 @@
 
 2. 选择左侧导航栏的`自定义资源`，在列表中查找 `grafanadashboards.integreatly.org` 文件，进入详情。
 
-    ![导入仪表盘](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/importboard00.png)
+    ![导入仪表盘](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/importboard00.png){ width="1000"}
 
 3. 点击 `Yaml 创建`，使用以下模板，在 `Json` 字段中替换仪表盘 JSON。
 

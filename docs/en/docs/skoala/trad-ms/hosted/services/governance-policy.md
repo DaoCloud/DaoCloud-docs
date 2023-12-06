@@ -37,4 +37,3 @@ Traffic governance provides users with three resource configurations: virtual se
 See [Traffic Governance](../../../../mspider/user-guide/traffic-governance/README.md) for detailed descriptions of these three governance rules.
 
 [Virtual Service](../../../../mspider/user-guide/traffic-governance/virtual-service.md){ .md-button .md-button--primary }[Destination Rules](../../../../mspider/user-guide/traffic-governance/destination-rules.md) { .md-button .md-button--primary }[Gateways](../../../../mspider/user-guide/traffic-governance/gateway-rules.md) { .md-button .md-button--primary }
-

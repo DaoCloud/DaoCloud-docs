@@ -2,18 +2,28 @@
 
 This page lists the Release Notes of the MySQL database, so that you can understand the evolution path and feature changes of each version.
 
-### 2023-10-31
+## 2023-11-30
 
-#### v0.12.0
+### v0.13.0
 
-##### Enhancements
+#### Improvements
 
-- **New Feature:** Added offline upgrade functionality.
-- **New Feature:** Added restart functionality for instances.
-- **New Feature:** Added workload anti-affinity configuration.
-- **New Feature:** Added cross-cluster recovery for instances.
-- **Bug Fix:** Fixed Pod list display to show Host IP.
-- **Bug Fix:** Fixed cloudshell permissions issue.
+- **Added** support for recording operation audit logs
+- **Improved** prompt when instance list information is not obtained
+- **Improved** display of Mcamel-MySQL monitoring dashboard in both Chinese and English
+
+## 2023-10-31
+
+### v0.12.0
+
+#### Improvements
+
+- **New** Added offline upgrade functionality.
+- **New** Added restart functionality for instances.
+- **New** Added workload anti-affinity configuration.
+- **New** Added cross-cluster recovery for instances.
+- **Bug Fix** Fixed Pod list display to show Host IP.
+- **Bug Fix** Fixed cloudshell permissions issue.
 
 ## 2023-08-31
 
@@ -69,9 +79,9 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 - **Added** `mcamel-mysql` custom role
 - **Added** `mcamel-mysql` is connected to HwameiStor and supports storage capacity display (you need to manually create HwameiStor exporter ServiceMonitor)
 
-#### upgrade
+#### Upgrade
 
-- **Upgrade** Optimize the scheduling strategy to add a sliding button
+- **Upgraded** Optimize the scheduling strategy to add a sliding button
 
 ## 2023-03-28
 
@@ -83,11 +93,11 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 - **Added** Install `mcamel-mysql` to enable traces according to parameter configuration.
 - **Added** `mcamel-mysql` PhpMyAdmin supports LoadBalancer type.
 
-#### upgrade
+#### Upgrade
 
-- **upgrade** golang.org/x/net to v0.7.0
-- **Upgrade** GHippo SDK to v0.14.0
-- **optimization** `mcamel-mysql` common-mysql supports multiple instance optimization.
+- **Upgraded** golang.org/x/net to v0.7.0
+- **Upgraded** GHippo SDK to v0.14.0
+- **optimized** `mcamel-mysql` common-mysql supports multiple instance optimization.
 - **Optimized** `mcamel-mysql` troubleshooting manual adds more processing methods.
 
 ## 2023-02-23
@@ -112,7 +122,7 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 
 #### Optimization
 
-- **Upgrade** `mcamel-mysql` upgrade offline mirror detection script.
+- **Upgraded** `mcamel-mysql` upgrade offline mirror detection script.
 
 #### fix
 

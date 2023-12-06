@@ -13,11 +13,11 @@ hide:
 
     > 注意：微服务在`是否可以治理`一栏应该显示为`是`，才能进行后续步骤。
 
-    ![微服务列表](../../../images/gov00.png)
+    ![微服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gov00.png)
 
 2. 选择`熔断规则`，然后在右侧点击`创建熔断规则`。
 
-    ![微服务列表](../../../images/gov04.png)
+    ![微服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gov04.png)
 
 3. 参考下列说明填写规则配置，并在右下角点击`确定`。
 
@@ -31,10 +31,10 @@ hide:
     - 最小请求数：在一个统计时长内，触发熔断的最小请求数。**若当前统计时长内的请求数小于此值，即使达到熔断条件也不会触发熔断**。
     - 统计时长：统计的时间窗口长度，单位为毫秒，取值范围为 1 秒 —— 120 分钟。
 
-      ![微服务列表](../../../images/gov06.png)
+      ![微服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gov06.png)
 
 4. 创建完成后可以在熔断规则列表中查看新建的规则。在右侧点击更多按钮可以更新规则或者删除该规则。
 
-    ![流控规则列表](../../../images/gov07.png)
+    ![流控规则列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gov07.png)
 
 参阅视频教程：[Sentinel 熔断规则](../../../../videos/skoala.md#sentinel_1)。

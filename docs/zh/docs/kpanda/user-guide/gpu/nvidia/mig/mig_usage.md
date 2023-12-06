@@ -15,11 +15,11 @@
 
     进入`集群详情` -> `集群设置` -> `Addon 设置`，查看是否已正确识别，自动识别频率为 `10 分钟` 。
 
-    ![gpu](../../../../images/gpu_mig01.jpg)
+    ![gpu](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/gpu_mig01.jpg)
 
 1. 通过镜像部署应用可选择并使用 NVIDIA MIG 资源。
 
-    ![mig02](../../../../images/gpu_mig02.jpg)
+    ![mig02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/gpu_mig02.jpg)
 
 ## YAML 配置使用 MIG
 
@@ -83,4 +83,4 @@ spec:
 
 进入容器后可以查看只使用了一个 MIG 设备。
 
-![mig03](../../../../images/gpu_mig03.png)
+![mig03](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/gpu_mig03.png)

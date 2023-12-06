@@ -12,7 +12,7 @@ ControllerManager：KubeEdge CRD 扩展，目前应用于边缘应用和边缘�
 
 1. 选择左侧导航栏的`边缘计算` -> `云边协同`，进入边缘单元列表页面，点击页面右上角的`注册边缘单元`按钮；
 
-    ![边缘单元列表](../../images/create-unit-01.png)
+    ![边缘单元列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-unit-01.png)
 
 2. 填写基础信息；
 
@@ -25,23 +25,23 @@ ControllerManager：KubeEdge CRD 扩展，目前应用于边缘应用和边缘�
 
     - 描述：边缘单元描述信息。
 
-    ![边缘单元列表](../../images/create-unit-02.png)
+    ![边缘单元列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-unit-02.png)
 
 3. 组件仓库设置。KubeEdge 、Kant 的云端组件仓库设置；
 
-    - KubeEdge 镜像仓库：KubeEdge 云端组件镜像仓库，批量节点模块中 KubeEdge 边端镜像仓库默认值。
-        - 默认：系统提供的默认镜像仓库地址。
-        - 自定义：用户可以选择填入企业常用的镜像仓库地址。
+    - KubeEdge 镜像仓库：KubeEdge 云端组件镜像仓库。
+        - 默认：系统提供的默认镜像仓库地址，存储 KubeEdge 云端组件镜像，像 cloudcore 等。
+        - 自定义：如果用户将 KubeEdge 云端组件镜像存储在自己的镜像仓库，用户可以选择自定义镜像仓库地址。
 
     - KubeEdge helm 仓库：KubeEdge helm 应用仓库。
-        - 默认：系统提供的默认 helm 仓库地址。
-        - 自定义：用户可以选择填入企业常用的 helm 仓库地址。
+        - 默认：系统提供的默认 helm 仓库地址 。
+        - 自定义：如果用户将 KubeEdge 云端组件存储在自己的 helm 仓库，用户可以选择自定义 helm 仓库地址。
 
-    - Kant 镜像仓库：系统所需云端组件镜像仓库，Kant 代指云边协同模块；边端安装包镜像仓地址。
-        - 默认：系统提供的默认镜像仓库地址。
-        - 自定义：用户可以选择填入企业常用的镜像仓库地址。
+    - Kant 镜像仓库：系统所需云端组件镜像仓库，Kant 代指云边协同模块。
+        - 默认：系统提供的默认镜像仓库地址，存储云边协同模块所需云端组件镜像，像 kant-worker-admission;
+        - 自定义：如果用户将系统云端组件镜像存储在自己的镜像仓库，用户可以选择自定义仓库地址。
 
-    ![创建边缘单元](../../images/create-unit-03.png)
+    ![创建边缘单元](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-unit-03.png)
 
 4. 访问设置。KubeEdge 云端组件的访问设置，边缘节点通过此设置与云端建立连接；
 
@@ -58,7 +58,7 @@ ControllerManager：KubeEdge CRD 扩展，目前应用于边缘应用和边缘�
 
         Kubernetes 默认开放端口范围 3000-32767。如果 NodePort 端口有冲突，请修改。
 
-    ![创建边缘单元](../../images/create-unit-04.png)
+    ![创建边缘单元](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-unit-04.png)
 
 5. 完成以上信息配置后，点击`确定`按钮，完成边缘单元创建，自动返回边缘单元列表。
 

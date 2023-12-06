@@ -5,7 +5,7 @@ Native applications are designed to provide customers with applications composed
 
 ## Prerequisites
 
-- A managed Nacos instance has already been created in the current workspace. Refer to [Create Managed Registry](../../../skoala/trad-ms/hosted/create-registry.md).
+- A managed Nacos instance has already been created in the current workspace. Refer to [Create Managed Registry](../../../skoala/trad-ms/hosted/index.md).
 - Prepare the Docker images of the traditional microservices that need to be deployed, such as `adservice` and `dataservice`.
 - Modify the code of the traditional microservices to integrate the Nacos registry SDK.
 - If you want to use Sentinel for traffic management of traditional microservices, integrate the Sentinel client into the code.

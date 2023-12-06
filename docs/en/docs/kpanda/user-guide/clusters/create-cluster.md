@@ -24,7 +24,7 @@ Certain prerequisites must be met before creating a cluster:
 
 1. Enter the Container Management module, click `Create Cluster` on the upper right corner of the `Clusters` page.
 
-    ![screen](../../images/cluster-create01.png)
+    ![screen](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/cluster-create01.png)
 
 2. Fill in the basic information by referring to the following instructions.
 
@@ -33,7 +33,7 @@ Certain prerequisites must be met before creating a cluster:
     - Runtime: Select the runtime environment of the cluster. Currently support containerd and docker (see [How to Choose Container Runtime](runtime.md)).
     - Kubernetes Version: Allow span of three major versions, such as from 1.23-1.25, subject to the versions supported by the management cluster.
 
-        ![screen](../../images/cluster-create02.png)
+        ![screen](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/cluster-create02.png)
 
 3. Fill in the node configuration information and click `Node Check`.
 
@@ -43,7 +43,7 @@ Certain prerequisites must be met before creating a cluster:
     - Node Information: Set noe names and IPs.
     - NTP Synchronize: If enabled, time on each node will be automatically synchronized. And you need to provide an NTP server by the server IP.
 
-        ![screen](../../images/cluster-create03.png)
+        ![screen](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/cluster-create03.png)
 
 4. If node check is passed, click `Next`. If the check failed, update `Node Information` and check again.
 5. Fill in the network configuration and click `Next`.<!--补充后续步骤的-->

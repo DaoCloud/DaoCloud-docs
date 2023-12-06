@@ -18,6 +18,10 @@ env:
   UCLOUD_BUCKET : ${{ secrets.UCLOUD_BUCKET }}
   CI: 1
 
+concurrency:
+  group: ${{ github.workflow_ref }}
+  cancel-in-progress: true
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"

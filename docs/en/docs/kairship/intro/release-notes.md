@@ -3,6 +3,23 @@
 This page lists the release notes of Multicloud Management module,
 so that you can understand the evolution path and feature changes of each version.
 
+## 2023-11-30
+
+### v0.14
+
+- **Added** support for audit logs
+- **Added** differentiated configuration result display for workloads
+- **Added** support for creating workloads from YAML, allowing batch creation of multiple resources
+
+#### Fixes
+
+- **Fixed** pagination issue when querying service workloads
+- **Fixed** improved validation for replica count in workload topology constraints
+
+#### Upgrades
+
+- **Upgraded** karmada version to v1.7.0
+
 ## 2023-10-31
 
 ### v0.13

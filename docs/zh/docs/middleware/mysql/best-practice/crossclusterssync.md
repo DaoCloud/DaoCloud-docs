@@ -2,9 +2,13 @@
 
 MySQL 自带的复制能力提供了主从、多从、多主、级联等多种复制方式，并支持跨版本（5.x，8.x）数据同步。
 
-本例以 1 对 1 主从为例，实现跨集群的 MySQL 实例间数据同步，源端与目标端均为 3 副本实例，目标端实例在同步期间仅提供只读服务，解除同步关系后，可作为独立实例运行。
+本例以 1 对 1 主从为例，实现跨集群的 MySQL 实例间数据同步，源端与目标端均为 3 副本实例，
+目标端实例在同步期间仅提供只读服务，解除同步关系后，可作为独立实例运行。
 
-注意：复制功能仅执行增量同步，任务开始前已产生的数据差异不会同步，因此需在目标库中创建相同的库结构，或采用 mysqldump 命令先做一个全量数据同步，下面以 mysqldump 为例。
+!!! caution
+
+    复制功能仅执行增量同步，任务开始前已产生的数据差异不会同步，因此需在目标库中创建相同的库结构，
+    或采用 mysqldump 命令先做一个全量数据同步，下面以 mysqldump 为例。
 
 ## 全量数据 dump（可选）
 
@@ -28,6 +32,7 @@ MySQL 自带的复制能力提供了主从、多从、多主、级联等多种�
     # 将备份文件复制到目标节点。
     scp backup.sql [用户名]@[目标节点地址]:[存放路径]
     ````
+
 2. 登录目标端节点，执行恢复操作：
 
     ````shell
@@ -45,7 +50,7 @@ MySQL 自带的复制能力提供了主从、多从、多主、级联等多种�
 
 ### 源端
 
-1. 进入中间件的参数配置页面，确定以下配置参数
+1. 进入中间件的参数配置页面，确定以下配置参数：
 
     ````configuration
     server-id = <实例的唯一标识符> #源实例与目标实例的ID必须不同
@@ -55,40 +60,38 @@ MySQL 自带的复制能力提供了主从、多从、多主、级联等多种�
 
     其中 `server-id` 未在参数配置页面提供，修改方法如下：
 
-        a) 进入实例的 CR 文件：容器管理 - 实例所在集群 - 自定义资源 - mysqlclusters.mysql.presslabs.org - 实例CR
+    1. 进入实例的 CR 文件：容器管理 - 实例所在集群 - 自定义资源 - mysqlclusters.mysql.presslabs.org - 实例CR
+    1. 增加字段：spec.serverIDOffset: 200
 
-        b) 增加字段：spec.serverIDOffset: 200
-
-        ![sync](../images/sync01.png)
+    ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/mysql/images/sync01.png)
 
 2. 创建复制账户
 
 	进入 mysql 服务的控制台，执行以下创建命令。该用户专用于集群间数据同步，出于安全性考虑，建议创建该用户。
 
-    ````shell
+    ````mysql
     mysql> grant replication slave, replication client on *.* to 'rep'@'%' identified by '123456ab';
     ````
 
     参数解释：
 
-    - grant  # 授权
-    - replication  # 授予复制权限
-    - *.*   # 所有库和所有表
-    - rep        # 授权用户
-    - %   # 所有机器能够访问
-    - by '123456ab'  # 该用户密码
+    - `grant`：授权
+    - `replication`：授予复制权限
+    - `*.*`：所有库和所有表
+    - `rep`：授权用户
+    - `%`：所有机器能够访问
+    - `by '123456ab'`：该用户密码
 
-    ![sync](../images/sync02.png)
+    ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/mysql/images/sync02.png)
 
 3. 服务配置
 
     进入`容器管理` 模块，为实例配置一个 Nodeport 服务，用于目标端实例的同步访问：
 
-    ![sync](../images/sync03.png)
+    ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/mysql/images/sync03.png)
 
     - 服务端口、容器端口：3306
-
-    - 添加标签：role/master 
+    - 添加标签：role/master
 
 ### 目标端
 
@@ -117,7 +120,7 @@ MySQL 自带的复制能力提供了主从、多从、多主、级联等多种�
     mysql> SHOW MASTER STATUS;
     ````
 
-    ![sync](../images/sync04.png)
+    ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/mysql/images/sync04.png)
 
     样例：
 
@@ -144,15 +147,16 @@ MySQL 自带的复制能力提供了主从、多从、多主、级联等多种�
     mysql> SHOW SLAVE STATUS\G
     ````
 
-    ![sync](../images/sync05.png)
+    ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/mysql/images/sync05.png)
 
     !!! note
 
         此时目标端处于 slave 状态，在中间件列表中将显示为`未就绪`状态，这是正常的，解除主从关系后可以恢复正常。
 
-        ![sync](../images/sync06.png)
+        ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/mysql/images/sync06.png)
 
 ## 目标端提供服务
+
 当源端出现故障后，目标端转换角色对外提供服务，需要首先解除主从同步关系。操作如下
 
 ````mysql
@@ -167,4 +171,4 @@ mysql> service mysql restart
 
 ## 数据恢复
 
-如需数据恢复，可通过dump方式实现数据恢复，可参考 `全量数据 dump` 这里不再赘述。
+如需数据恢复，可通过 dump 方式实现数据恢复，可参考`全量数据 dump` 这里不再赘述。

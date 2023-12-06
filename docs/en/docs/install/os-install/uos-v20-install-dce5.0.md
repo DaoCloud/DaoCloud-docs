@@ -1,22 +1,24 @@
-# Deploy DCE 5.0 Enterprise on UOS V20 (1020a) operating system
+# Deploy DCE 5.0 Enterprise on UOS V20 (1020a)
 
-This page will introduce how to deploy DCE 5.0 on UOS V20(1020a) operating system.
+This page introduces how to deploy DCE 5.0 on UOS V20(1020a).
+Installer v0.6.0 and higher versions support this deployment method.
 
 ## Prerequisites
 
-- Please read [Deployment Architecture](../commercial/deploy-arch.md) in advance to confirm this deployment mode.
-- Please read [Deployment Requirements](../commercial/deploy-requirements.md) in advance to confirm whether the network, hardware, ports, etc. meet the requirements.
-- Please read [Preparation](../commercial/prepare.md) in advance to confirm machine resources and pre-check.
+- Read [Deployment Architecture](../commercial/deploy-arch.md) in advance to confirm this deployment mode.
+- Read [Deployment Requirements](../commercial/deploy-requirements.md) in advance to confirm whether the
+  network, hardware, ports, etc. meet the requirements.
+- Read [Preparation](../commercial/prepare.md) in advance to confirm machine resources and pre-check.
 
 ## Offline installation
 
 1. Since the installer depends on python, you need to install `python3.6` on the tinder machine first.
 
     ```bash
-    ## run the following command to download dependencies
+    # download dependencies
     dnf install -y --downloadonly --downloaddir=rpm/python36
 
-    ## run the following command to start the installation
+    # start the installation
     rpm -ivh python3-pip-9.0.3-18.uelc20.01.noarch.rpm python3-setuptools-39.2.0-7.uelc20.2.noarch.rpm python36-3.6.8-2.module+uelc20+36 +6174170c.x86_64.rpm
     ```
 
@@ -56,8 +58,8 @@ This page will introduce how to deploy DCE 5.0 on UOS V20(1020a) operating syste
 
 5. Download the addon offline package, you can download the latest version in [Download Center](../../download/index.md) (optional)
 
-6. Set [clusterConfig.yaml](../commercial/cluster-config.md), which can be obtained under the offline package `offline/sample` and modified as needed.
-    The reference configuration is:
+6. Edit [clusterConfig.yaml](../commercial/cluster-config.md), which can be obtained under the offline package
+   `offline/sample` and modified as needed. The sample configuration is for your reference:
 
     ```yaml
     apiVersion: provision.daocloud.io/v1alpha3
@@ -98,7 +100,9 @@ This page will introduce how to deploy DCE 5.0 on UOS V20(1020a) operating syste
         - `-d` enable debug mode
         - `--serial` specifies that all installation tasks are executed serially
 
-8. After the installation is complete, the command line will prompt that the installation is successful. congratulations! :smile: Now you can use the default account and password (admin/changeme) to explore the new DCE 5.0 through the URL prompted on the screen!
+8. After the installation is complete, the command line will prompt that the installation is successful.
+   Congratulations! :smile: Now you can use the default account and password (admin/changeme) to explore
+   the new DCE 5.0 through the URL prompted on the screen!
 
     ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
 

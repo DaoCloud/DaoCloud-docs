@@ -10,11 +10,11 @@ In enterprise microservice architectures, managing a large number of services wi
 
 In the example below, we observe that the node `Insight-Server` is highlighted in red on the service map. By hovering over the node, we can see the error rate associated with it. To investigate further and understand why the error rate is not `0`, we can explore more detailed information:
 
-![01](../images/root01.png)
+![01](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/root01.png)
 
 Alternatively, clicking on the service name at the top will take us to the service's overview UI:
 
-![02](../images/root02.png)
+![02](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/root02.png)
 
 ## Service Overview - Delving into Detailed Analysis
 

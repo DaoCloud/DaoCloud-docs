@@ -2,6 +2,27 @@
 
 This page lists the release notes for Cloud Edge Collaboration, providing an overview of the evolution path and feature changes in each version.
 
+## 2023-12-06
+
+### v0.6.1
+
+#### New Features
+
+- Added support for custom terminal device access, compatible with multiple device protocols
+- Provided service capabilities to support edge-to-edge communication
+- Added support for viewing container log information
+
+#### Improvements
+
+- Optimized interaction for setting component Helm repository when creating edge units
+- Optimized interaction for setting edge component image repository address when creating batch tasks
+- Supported editing and deleting edge units in the "In Progress" state
+
+#### Fixes
+
+- Fixed issue where the default image repository for edge units created in the cloud-edge collaboration installed via the installer was set to "release"
+- Fixed issue with abnormal edge unit status determination due to the addition of edge components
+
 ## 2023-11-06
 
 ### v0.5.0
