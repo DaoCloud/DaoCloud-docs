@@ -4,8 +4,8 @@ This page allows you to download the offline packages of various versions of the
 
 ## Download
 
-| Version   | Architecture | File Size |  Package      | Checksum File                    | Update Date |
-|----------|--------------|-----------|----------------|----------|-------------|
+| Version  | Architecture | File Size |  Package      | Checksum File | Update Date |
+|----------|--------------|-----------|---------------|----------|-------------|
 | v0.6.0 | AMD64 | 55.47 MB | [:arrow_down: spidernet_v0.6.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/spidernet_v0.6.0_amd64.tar) | [:arrow_down: spidernet_v0.6.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/spidernet_v0.6.0_amd64_checksum.sha512sum) | 2023-04-26 |
 | v0.5.0 | AMD64 | 51.68 MB | [:arrow_down: spidernet_v0.5.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/spidernet_v0.5.0_amd64.tar) | [:arrow_down: spidernet_v0.5.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/spidernet_v0.5.0_amd64_checksum.sha512sum) | 2023-04-25 |
 
