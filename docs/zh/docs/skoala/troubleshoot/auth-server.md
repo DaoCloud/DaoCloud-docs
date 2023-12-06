@@ -1,5 +1,5 @@
 
-# skoala-init 的 x-kubernets-validations 未知字段问题
+# skoala-init 的 x-kubernets-validations 报错问题
 
 将 skoala-init 从 v0.11.0 升级到 v0.12.0 时报错导致无法升级：
 
@@ -29,7 +29,7 @@ unknown field "x-kubernets-validations" in io.k8s.apiextensions-apiserver....
 
      A: 由 Gateway-API 相关升级引发。
 
-## 参考文档:
+## 参考文档
 
 - [Rollout, Upgrade and Rollback Planning](https://github.com/kubernetes/enhancements/blob/master/keps/sig-api-machinery/2876-crd-validation-expression-language/README.md#rollout-upgrade-and-rollback-planning)
 
@@ -46,7 +46,7 @@ unknown field "x-kubernets-validations" in io.k8s.apiextensions-apiserver....
 根据实际情况，选择适合的解决方案。
 
 - 方案一：升级使用的 k8s 集群版本为至少 v1.25
-- 方案二：按[CRD validation error for x-kubernetes-preserve-unknown-fields: true
+- 方案二：按 [CRD validation error for x-kubernetes-preserve-unknown-fields: true #88252
 ](https://github.com/kubernetes/kubernetes/issues/88252#issuecomment-587250746) 中所示，添加：
 
    ```shell
