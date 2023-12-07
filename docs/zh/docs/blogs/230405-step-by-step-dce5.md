@@ -340,7 +340,7 @@ chmod +x ./dce5-installer
 1. 如果你的浏览器跟 master 节点的 IP 是可以直通的，直接执行
 
     ```bash
-    ./dce5-installer install-app -z -k
+    ./dce5-installer install-app -z
     ```
 
 1. 如果 master 节点的 IP 是内网（比如本示例的公有云机器），请确认上述外部 IP 和防火墙配置完毕，然后执行如下命令：
