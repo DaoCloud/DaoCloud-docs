@@ -86,48 +86,48 @@
 
 1. 进入`微服务引擎` -> `传统微服务` -> `注册配置中心`模块，点击目标注册中心的名称。
 
-   ![点击注册中心名称](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/config01.png)
+    ![点击注册中心名称](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/config01.png)
 
 2. 在左侧导航栏点击`配置管理`，在目标配置右侧点击 `ⵗ` 按钮选择`正式版本编辑`。
 
-   ![更新/删除](../../images/config09.png)
+    ![更新/删除](../../images/config09.png)
 
 3. 修改配置内容，点击`发布正式版`。
 
-   ![更新/删除](../../images/config10.png)
+    ![更新/删除](../../images/config10.png)
 
 ## 发布灰度配置
 
 1. 进入`微服务引擎` -> `传统微服务` -> `注册配置中心`模块，点击目标注册中心的名称。
 
-   ![点击注册中心名称](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/config01.png)
+    ![点击注册中心名称](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/config01.png)
 
 2. 在左侧导航栏点击`配置管理`，在目标配置右侧点击 `ⵗ` 按钮选择`正式版本编辑`。
 
-   ![更新/删除](../../images/config09.png)
+    ![更新/删除](../../images/config09.png)
 
 3. 开启`Beta 发布`，在`Beta 发布 IP`下拉框中选择服务实例，修改配置内容，点击`发布Beta版`。
 
-   - 发布灰度配置时，配置的 Data ID 需要与接入 nacos 的服务名称一致，否则无法选择服务实例。
+    - 发布灰度配置时，配置的 Data ID 需要与接入 nacos 的服务名称一致，否则无法选择服务实例。
 
-   ![灰度发布配置](../../images/config11.png)
+    ![灰度发布配置](../../images/config11.png)
 
 ## 更新Beta版本配置
 
 1. 进入`微服务引擎` -> `传统微服务` -> `注册配置中心`模块，点击目标注册中心的名称。
 
-   ![点击注册中心名称](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/config01.png)
+    ![点击注册中心名称](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/config01.png)
 
 2. 在左侧导航栏点击`配置管理`，在目标配置右侧点击 `ⵗ` 按钮选择`Beta 版本编辑`。
 
-   ![更新/删除](../../images/config12.png)
+    ![更新/删除](../../images/config12.png)
 
 3. 修改配置内容，根据需要点击右下角的停止 Beta 版或发布正式版。
 
-   - 点击`停止 Beta 版`，则 Beta 版配置被删除。
-   - 点击`发布正式版`，则 Beta 版成为正式版本，原本的正式版本被删除不再生效。
+    - 点击`停止 Beta 版`，则 Beta 版配置被删除。
+    - 点击`发布正式版`，则 Beta 版成为正式版本，原本的正式版本被删除不再生效。
 
-   ![更新Beta版本配置](../../images/config13.png)
+    ![更新Beta版本配置](../../images/config13.png)
 
 ## 删除配置
 
