@@ -18,7 +18,9 @@ The micro-service engine supports group management of micro-services based on th
 
     - Namespace: Select the micro-service namespace to which the current configuration belongs. The default is `public`
 
-        > ** Services and configurations in different namespaces are strictly isolated and cannot reference each other. For example, A service in namespace A cannot reference a configuration in namespace B. **
+        !!! note
+
+            Services and configurations in different namespaces are strictly isolated and cannot reference each other. For example, A service in namespace A cannot reference a configuration in namespace B.
 
     - Data ID: indicates the name of the current configuration file. The Data ids in the same group cannot be the same.
 
@@ -30,7 +32,9 @@ The micro-service engine supports group management of micro-services based on th
 
     - Group: Select the group to which the current configuration belongs. The default value is `DEFAULT_GROUP`.
 
-        > ** Namespaces are typically used to isolate environments and groups to separate projects **。
+        !!! note
+  
+            Namespaces are typically used to isolate environments and groups to separate projects.
 
     - Configuration format: Sets the format of the current configuration file.
 
