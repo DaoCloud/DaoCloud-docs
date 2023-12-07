@@ -86,7 +86,7 @@
 
 1. 进入`微服务引擎` -> `传统微服务` -> `注册配置中心`模块，点击目标注册中心的名称。
 
-   ![点击注册中心名称](../../images/config01.png)
+   ![点击注册中心名称](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/config01.png)
 
 2. 在左侧导航栏点击`配置管理`，在目标配置右侧点击 `ⵗ` 按钮选择`正式版本编辑`。
 
@@ -100,7 +100,7 @@
 
 1. 进入`微服务引擎` -> `传统微服务` -> `注册配置中心`模块，点击目标注册中心的名称。
 
-   ![点击注册中心名称](../../images/config01.png)
+   ![点击注册中心名称](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/config01.png)
 
 2. 在左侧导航栏点击`配置管理`，在目标配置右侧点击 `ⵗ` 按钮选择`正式版本编辑`。
 
@@ -116,7 +116,7 @@
 
 1. 进入`微服务引擎` -> `传统微服务` -> `注册配置中心`模块，点击目标注册中心的名称。
 
-   ![点击注册中心名称](../../images/config01.png)
+   ![点击注册中心名称](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/config01.png)
 
 2. 在左侧导航栏点击`配置管理`，在目标配置右侧点击 `ⵗ` 按钮选择`Beta 版本编辑`。
 
