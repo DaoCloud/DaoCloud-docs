@@ -22,7 +22,8 @@ nav:
               - Install Dependencies: install/install-tools.md
               - Install DCE Community:
                   - Resource Planning: install/community/resources.md
-                  - Online Install in kind: install/community/kind/online.md
+                  - Install DCE Community on a Kind Cluster: install/community/kind/online.md
+                  - Deploy a K8s Cluster from Scratch to DCE 5.0 Community: install/community/kind/k8s-dce-deploy.md
                   - Online in K8s Cluster: install/community/k8s/online.md
                   - Offline Install in K8s Cluster: install/community/k8s/offline.md
               - Install DCE 5.0 Enterprise:
@@ -47,6 +48,8 @@ nav:
                   - With Oracle Linux R9/R8 U1: install/os-install/oracleLinux-install-dce5.0.md
                   - With TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
                   - With Other Linux: install/os-install/otherlinux.md
+              - Best Practices:
+                  - Etcd Components Deployed in Host Mode and Separated from Control Plane: install/best-practices/etcd-host-deploy.md
               - Installer Release Notes: install/release-notes.md
       - Workbench:
           - Workbench:

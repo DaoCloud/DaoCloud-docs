@@ -1,11 +1,35 @@
 ---
 MTPE: windsonsea
-Date: 2023-06-29
+Date: 2023-12-08
 ---
 
 # Installer Release Notes
 
 This page lists the Release Notes of the installer, so that you can understand the evolution path and feature changes of each version.
+
+## 2023-11-30
+
+### v0.13.0
+
+#### New Features
+
+- **New Feature:** Support separate deployment of etcd nodes.
+- **New Feature:** Support external Kafka component.
+
+#### Enhancements
+
+- **Enhancement:** Set the certificate validity period of the built-in image repository in the seed machine to 10 years.
+- **Enhancement:** Update versions of prerequisite software.
+
+#### Bug Fixes
+
+- **Bug Fix:** Fix the infinite loop issue in the chart values parsing framework caused by line breaks.
+- **Bug Fix:** Fix the incorrect handling of the Internal Field Separator (IFS) in the concurrent scheduling framework.
+
+#### Known Issues
+
+- IPv6 must be enabled in the seed node when using Podman.
+- Global clusters may encounter `etcd NOSPACE` warning risks.
 
 ## 2023-10-31
 
