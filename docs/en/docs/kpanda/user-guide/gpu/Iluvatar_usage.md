@@ -1,12 +1,12 @@
-# How to Use Days (Iluvatar) GPU in Applications
+# How to Use Iluvatar GPU in Applications
 
-This section describes how to use Days (Iluvatar) virtual GPU on the DCE 5.0 platform.
+This section describes how to use Iluvatar virtual GPU on DCE 5.0.
 
 ## Prerequisites
 
-- Deployed DCE 5.0 container management platform and it is running smoothly. 
+- Deployed DCE 5.0 container management platform and it is running smoothly.
 - The container management module has been integrated with a Kubernetes cluster or a Kubernetes cluster has been created, and the UI interface of the cluster can be accessed.
-- The Days (Iluvatar) GPU driver has been installed on the current cluster. Refer to the [Days (Iluvatar) official documentation](https://support.iluvatar.com/#/login) for driver installation instructions, or contact the DaoCloud ecosystem team for enterprise-level support at peg-pem@daocloud.io.
+- The Iluvatar GPU driver has been installed on the current cluster. Refer to the [Iluvatar official documentation](https://support.iluvatar.com/#/login) for driver installation instructions, or contact the DaoCloud ecosystem team for enterprise-level support at peg-pem@daocloud.io.
 - The GPU cards in the current cluster have not undergone any virtualization operations or been occupied by other applications.
 
 ## Procedure
@@ -30,7 +30,8 @@ This section describes how to use Days (Iluvatar) virtual GPU on the DCE 5.0 pla
 
 ### Configuration via YAML
 
-To request GPU resources for a workload, add the `iluvatar.ai/vcuda-core: 1` and `iluvatar.ai/vcuda-memory: 200` parameters to the resource request and limit configuration. These parameters configure the application to use the physical card resources.
+To request GPU resources for a workload, add the `iluvatar.ai/vcuda-core: 1` and `iluvatar.ai/vcuda-memory: 200` to the requests and limits.
+These parameters configure the application to use the physical card resources.
 
 ```yaml
 apiVersion: apps/v1
