@@ -10,8 +10,8 @@ This package is dedicated to the community and is available for free trial.
 
 | Filename | Version | Download  | Update Date |
 | -------- | ------- | --------- | ----------- |
-| offline-community-v0.12.0-arm64.tar | v0.12.0 | [:arrow_right: Go to Download](./free/dce5-installer-v0.12.0.md) | 2023-11-08  |
-| offline-community-v0.12.0-amd64.tar | v0.12.0 | [:arrow_right: Go to Download](./free/dce5-installer-v0.12.0.md) | 2023-11-08  |
+| offline-community-v0.13.0-arm64.tar | v0.13.0 | [:arrow_right: Go to Download](./free/dce5-installer-v0.13.0.md) | 2023-12-07  |
+| offline-community-v0.13.0-amd64.tar | v0.13.0 | [:arrow_right: Go to Download](./free/dce5-installer-v0.13.0.md) | 2023-12-07  |
 
 [More Historical Versions](./free/dce5-installer-history.md)
 
@@ -21,8 +21,8 @@ This package is suitable for private cloud, hybrid cloud, multicloud, microservi
 
 | Filename | Version | Download | Update Date |
 | -------- | ------- | -------- | ----------- |
-| offline-v0.12.0-arm64.tar | v0.12.0 | [:arrow_right: Go to Download](./business/dce5-installer-v0.12.0.md) | 2023-11-08  |
-| offline-v0.12.0-amd64.tar | v0.12.0 | [:arrow_right: Go to Download](./business/dce5-installer-v0.12.0.md) | 2023-11-08  |
+| offline-v0.13.0-arm64.tar | v0.13.0 | [:arrow_right: Go to Download](./business/dce5-installer-v0.13.0.md) | 2023-12-07  |
+| offline-v0.13.0-amd64.tar | v0.13.0 | [:arrow_right: Go to Download](./business/dce5-installer-v0.13.0.md) | 2023-12-07  |
 
 [More Historical Versions](./business/dce5-installer-history.md)
 
