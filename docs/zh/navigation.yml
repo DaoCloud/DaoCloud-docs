@@ -618,9 +618,9 @@ nav:
                   - 使用 OTel 零代码接收 SkyWalking 链路数据: insight/best-practice/sw-to-otel.md
                   - Kafka + ES 流式架构应对超大规模日志方案: insight/best-practice/insight-kafka.md
               - 兼容性测试:
-                  - K8s 集群兼容性测试: insight/compati-test/k8s-compatibility.md
-                  - Rancher 集群兼容性测试: insight/compati-test/rancher-compatibility.md
-                  - OCP 集群兼容性测试: insight/compati-test/ocp-compatibility.md
+                  - K8s 兼容性测试: insight/compati-test/k8s-compatibility.md
+                  - Rancher 兼容性测试: insight/compati-test/rancher-compatibility.md
+                  - Openshift 兼容性测试: insight/compati-test/ocp-compatibility.md
       - 微服务:
           - 微服务引擎:
               - 介绍:
