@@ -4,7 +4,7 @@ When deploying DCE 5.0, software planning, hardware planning, and network planni
 
 ## Operating system requirements
 
-| **Architecture** | **Operating System** | **Kernel Version** | Remarks (Installation Guide) |
+| **Architecture** | **Operating System** | **Recommended Kernel** | Remarks (Installation Guide) |
 | ---------------- | -------------------- | ------------------ | ------------------- |
 | AMD 64           | CentOS 7.X           | Kernel 3.10.0-1127.el7.x86_64 on an x86_64   | Recommended: CentOS 7.9<br />[Offline Installation of DCE 5.0 Enterprise](start-install.md) |
 |                  | RedHat 8.X           | 4.18.0-305.el8.x86_64                        | Recommended: RedHat 8.4<br />[Offline Installation of DCE 5.0 Enterprise](start-install.md) |

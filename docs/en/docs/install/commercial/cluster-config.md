@@ -187,6 +187,13 @@ spec:
   #      # basic auth
   #      username: "username"
   #      password: "password"
+  #  kafka:
+  #    brokers:
+  #      - host1:9092
+  #      - host2:9092
+  #    # the username and password of kafka is not necessary
+  #    username: "username"
+  #    password: "password"
   #  S3Storage:
   #    default:
   #      endpoint: "xx.xx.xx.xx:9000"
@@ -272,6 +279,7 @@ For key field descriptions in this YAML file, see the table below.
 | loadBalancer.insightVip | VIP used for Insight data collection in the Global cluster, required when loadBalancer.type is metallb   | -    |
 | loadBalancer.istioGatewayVip | VIP used for DCE UI and OpenAPI access when loadBalancer.type is metallb  | -    |
 | loadBalancer.type | Load balancer mode used, metallb for physical environments, NodePort for POC, cloudLB (not supported currently) for public cloud and SDN CNI environments | NodePort (default), metallb, cloudLB (Cloud Controller) |
+| loadBalancer.SourceIP                                        | Side effect: Unable to perform load balancing at the node level when obtaining source IP from audit logs. | auto  |
 | fullPackagePath   | Path to the extracted offline package, required in offline mode      | -    |
 | addonPackage.path | Local file system path for the application store addon package       | -    |
 | imagesAndCharts   | Container registry and Chart repository sources                        | -    |
@@ -319,6 +327,11 @@ For key field descriptions in this YAML file, see the table below.
 | externalMiddleware.elasticsearch.insight.anonymous | Enable anonymous access to the external Elasticsearch used by Insight, either true or false. When set to true, credentials should not be provided | false                                                   |
 | externalMiddleware.elasticsearch.insight.username | Username for accessing the external Elasticsearch used by Insight   | -      |
 | externalMiddleware.elasticsearch.insight.password | Password for accessing the external Elasticsearch used by Insight   | -      |
+| externalMiddleware.kafka | External Kafka |
+| externalMiddleware.kafka.insight | Configuration for Insight to use external Kafka |
+| externalMiddleware.kafka.insight.brokers | Broker addresses |
+| externalMiddleware.kafka.insight.username | Access username for Insight to use external Kafka | Optional |
+| externalMiddleware.kafka.insight.password | Access password for Insight to use external Kafka | Optional |
 | renewCerts             | Certificate renewal for the cluster           | -    |
 | renewCerts.mode        | Two modes for certificate renewal, supports cyclical and onetime | -     |
 

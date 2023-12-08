@@ -221,3 +221,32 @@ The steps to configure external S3Storage are as follows:
     ```
 
 2. After completing the above configuration, you can proceed with [deploying DCE 5.0 Enterprise](../start-install.md).
+
+## Using External Kafka
+
+Follow the steps below:
+
+1. In the [cluster configuration file clusterConfig.yaml](../cluster-config.md), configure the `externalMiddlewares.kafka` parameter:
+
+    ```yaml
+    apiVersion: provision.daocloud.io/v1alpha3
+    kind: ClusterConfig
+    metadata:
+    spec:
+      ..........
+      externalMiddlewares:
+        kafka:
+          brokers:
+            - host1:9092
+            - host2:9092
+          # the username and password of kafka is not necessary
+          username: "username"
+          password: "password"
+      ..........
+    ```
+
+    !!! note
+
+        Currently, only the observability module uses the Kafka component.
+
+2. After completing the above configuration, you can proceed with [deploying DCE 5.0 Business Edition](../start-install.md).
