@@ -22,7 +22,8 @@ nav:
               - 安装依赖项: install/install-tools.md
               - 安装社区版:
                   - 资源规划: install/community/resources.md
-                  - 新手尝鲜在线安装: install/community/kind/online.md
+                  - 从零部署 Kind 集群到安装 DCE 5.0 社区版: install/community/kind/online.md
+                  - 从零部署 K8s 集群到安装 DCE 5.0 社区版: install/community/kind/k8s-dce-deploy.md
                   - 已有 K8s 集群在线安装: install/community/k8s/online.md
                   - 已有 K8s 集群离线安装: install/community/k8s/offline.md
               - 安装商业版:
@@ -47,6 +48,8 @@ nav:
                   - Oracle Linux R9/R8 U1: install/os-install/oracleLinux-install-dce5.0.md
                   - TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
                   - 其他 Linux: install/os-install/otherlinux.md
+              - 最佳实践:
+                  - 部署 DCE5.0 商业版时，etcd 组件采用 host 模式部署与控制平面分离: install/best-practices/etcd-host-deploy.md
               - 安装器 Release Notes: install/release-notes.md
       - 工作台:
           - 应用工作台:
