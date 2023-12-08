@@ -14,8 +14,8 @@ hide:
 
 | 文件名                      | 版本    | 架构 | 文件大小 | 下载                                           | 更新日期   |
 | ----------------------------- | ------- | -------- | ---------------------------------------------- | ---------- | ----------------------------- |
-| offline-v0.13.0-amd64.tar | v0.13.0 | AMD64 | 23.41GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.13.0-amd64.tar) | 2023-12-07 |
-| offline-v0.13.0-arm64.tar | v0.13.0 | ARM64 | 20.15GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.13.0-arm64.tar) | 2023-12-07 |
+| offline-v0.13.0-amd64.tar | v0.13.0 | AMD64 | 23.41 GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.13.0-amd64.tar) | 2023-12-07 |
+| offline-v0.13.0-arm64.tar | v0.13.0 | ARM64 | 20.15 GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.13.0-arm64.tar) | 2023-12-07 |
 
 ## 校验
 
@@ -91,9 +91,9 @@ DCE 5.0 商业版包含以下模块，按需即插即用满足各类应用场景
 | 中间件 MySQL         | 应用最广泛的开源关系数据库                                               | [0.13.0](../../middleware/mysql/release-notes.md#0130)           |
 | 中间件 RabbitMQ      | 实现了高级消息队列协议 (AMQP) 的开源消息代理软件                         | [0.15.0](../../middleware/rabbitmq/release-notes.md#0150)        |
 | 中间件 Redis         | 一款内存数据库缓存服务                                                   | [0.13.0](../../middleware/redis/release-notes.md#0130)           |
-| 镜像仓库             | 用于存储 K8s、DevOps 和容器应用开发的镜像                                | [0.13.1](../../dce/dce-rn/20230630.md)                            |
-| 网络                 | 针对不同的 Linux 内核，支持多种 CNI 组合方案                             | [0.11.1](../../dce/dce-rn/20230630.md)                            |
-| 存储                 | 提供统一数据存储服务，支持文件、对象、块、本地存储，轻松接入存储厂商方案 | [v0.13.3](../../dce/dce-rn/20230630.md)                            |
+| 镜像仓库             | 用于存储 K8s、DevOps 和容器应用开发的镜像                                | [0.13.1](../../dce/dce-rn/20231130.md)                            |
+| 网络                 | 针对不同的 Linux 内核，支持多种 CNI 组合方案                             | [0.11.1](../../dce/dce-rn/20231130.md)                            |
+| 存储                 | 提供统一数据存储服务，支持文件、对象、块、本地存储，轻松接入存储厂商方案 | [v0.13.3](../../dce/dce-rn/20231130.md)                            |
 
 ## 更多
 
