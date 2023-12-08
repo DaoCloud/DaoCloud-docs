@@ -7,7 +7,7 @@ This section describes how to use Iluvatar virtual GPU on DCE 5.0.
 - Deployed DCE 5.0 container management platform and it is running smoothly.
 - The container management module has been integrated with a Kubernetes cluster or a Kubernetes cluster has been created, and the UI interface of the cluster can be accessed.
 - The Iluvatar GPU driver has been installed on the current cluster. Refer to the [Iluvatar official documentation](https://support.iluvatar.com/#/login) for driver installation instructions, or contact the DaoCloud ecosystem team for enterprise-level support at peg-pem@daocloud.io.
-- The GPU cards in the current cluster have not undergone any virtualization operations or been occupied by other applications.
+- The GPU cards in the current cluster have not undergone any virtualization operations and not been occupied by other applications.
 
 ## Procedure
 
