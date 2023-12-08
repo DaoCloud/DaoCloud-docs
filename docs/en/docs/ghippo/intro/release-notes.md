@@ -2,6 +2,14 @@
 
 This page lists the Release Notes for global management of each version, so that you can understand the evolution path and feature changes of each version.
 
+## 2023-12-05
+
+### v0.22.1
+
+#### Fix
+
+- Fixed issue with incomplete display of navigation bar
+
 ## 2023-11-30
 
 ### v0.22.0
