@@ -26,12 +26,13 @@ This page will guide you to install DCE Community package online in a standard K
 
 ## Download and Install
 
-1. Download the `dce5-installer` binary file on the controller node of the Kubernetes cluster (you can also [download it via browser](../../../download/index.md).
+1. Download the `dce5-installer` binary file on the controller node of the Kubernetes cluster
+   (you can also [download it via browser](../../../download/index.md)).
 
-    Take VERSION=v0.12.0 as an example.
+    Take VERSION=v0.13.0 as an example.
 
     ```shell
-    export VERSION=v0.12.0
+    export VERSION=v0.13.0
 
     ## For ARM CPU, change `dce5-installer-$VERSION` to `dce5-installer-$VERSION-linux-arm64`
 

@@ -340,7 +340,7 @@ chmod +x ./dce5-installer
 1. If your browser is directly connected to the IP of the master node, run directly
 
      ```bash
-     ./dce5-installer install-app -z -k
+     ./dce5-installer install-app -z
      ```
 
 1. If the IP of the master node is an internal network (such as the public cloud machine in this example), please confirm that the above external IP and firewall configurations are complete, and then run the following command:

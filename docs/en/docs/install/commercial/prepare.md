@@ -66,7 +66,7 @@ Refer to [7 Nodes Mode](./deploy-arch.md#7-1-6).
 If these dependencies have not been installed, refer to [Install Dependencies](../install-tools.md)。
 
 ```bash
-export VERSION=v0.9.0
+export VERSION=v0.13.0
 # download install script
 curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
 
@@ -82,9 +82,6 @@ bash install_prerequisite_${VERSION}.sh online full
 If you need to use existing components from the customer, you can refer to the following documents for preparation:
 
 - [Using External Service to Store Binary Resources](external/external-binary.md)
-
 - [Using External Image and Chart Repositories to Store Images and Chart Packages](external/external-imageandchart.md)
-
 - [Using External Middleware Services](external/external-middlewares.md)
-
 - [Using External Service to Store OS Repo Resources](external/external-os.md)
