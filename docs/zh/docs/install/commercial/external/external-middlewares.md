@@ -449,3 +449,32 @@
     ```
 
 2. 完成上述配置后，可以继续执行[部署 DCE 5.0 商业版](../start-install.md)。
+
+## 使用外接 kafka
+
+操作步骤如下：
+
+1. 在 [集群配置文件 clusterConfig.yaml](../cluster-config.md) 中，配置 `externalMiddlewares.elasticsearch` 参数：
+
+    ```yaml
+    apiVersion: provision.daocloud.io/v1alpha3
+    kind: ClusterConfig
+    metadata:
+    spec:
+      ..........
+      externalMiddlewares:
+        kafka:
+          brokers:
+              - host1:9092
+              - host2:9092
+            # the username and password of kafka is not necessary
+            username: "username"
+            password: "password"
+      ..........
+    ```
+
+    !!! note
+
+        目前仅有可观测产品模块使用到了 Kafka 组件。
+
+2. 完成上述配置后，可以继续执行[部署 DCE 5.0 商业版](../start-install.md)。
