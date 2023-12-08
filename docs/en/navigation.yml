@@ -571,6 +571,7 @@ nav:
                   - Namespaces: insight/user-guide/scenario-insight/namespace.md
                   - Containers: insight/user-guide/scenario-insight/container.md
                   - Events: insight/user-guide/data-query/event.md
+                  - Probes: insight/user-guide/scenario-insight/probe.md
               - Metrics: insight/user-guide/data-query/metric.md
               - Logging: insight/user-guide/data-query/log.md
               - Traces:
