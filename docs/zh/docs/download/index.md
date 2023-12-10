@@ -64,15 +64,15 @@ DCE 5.0 还提供了各种精选中间件：
 
 | 中间件         | 文件大小  | 下载                                                        | 更新日期    |
 |---------------| -------- |------------------------------------------------------------|------------|
-| Elasticsearch | 975.36 MB| [:arrow_right: 下载页](./modules/middleware/elasticsearch.md) | 2023-11-02 |
-| Kafka         | 957.66 MB| [:arrow_right: 下载页](./modules/middleware/kafka.md)         | 2023-11-02 |
-| MinIO         | 253.79 MB| [:arrow_right: 下载页](./modules/middleware/minio.md)         | 2023-11-02 |
-| MongoDB       | 73.37 MB | [:arrow_right: 下载页](./modules/middleware/mongodb.md)       | 2023-11-02 |
-| MySQL         | 1.17 GB  | [:arrow_right: 下载页](./modules/middleware/mysql.md)         | 2023-11-02 |
-| PostgreSQL    | 1.37 GB  | [:arrow_right: 下载页](./modules/middleware/postgresql.md)    | 2023-11-02 |
-| RabbitMQ      | 162.75 MB| [:arrow_right: 下载页](./modules/middleware/rabbitmq.md)      | 2023-11-02 |
-| Redis         | 531.92 MB| [:arrow_right: 下载页](./modules/middleware/redis.md)         | 2023-11-08 |
-| RocketMQ      | 354.39 MB| [:arrow_right: 下载页](./modules/middleware/rocketmq.md)      | 2023-11-02 |
+| Elasticsearch |978.37 MB| [:arrow_right: 下载页](./modules/middleware/elasticsearch.md) |2023-12-10|
+| Kafka |964.64 MB| [:arrow_right: 下载页](./modules/middleware/kafka.md) |2023-12-10|
+| MinIO |256.16 MB| [:arrow_right: 下载页](./modules/middleware/minio.md) |2023-12-10|
+| MongoDB |144.09 MB| [:arrow_right: 下载页](./modules/middleware/mongodb.md) |2023-12-10|
+| MySQL |1.17 GB| [:arrow_right: 下载页](./modules/middleware/mysql.md) |2023-12-10|
+| PostgreSQL |1.38 GB| [:arrow_right: 下载页](./modules/middleware/postgresql.md) |2023-12-10|
+| RabbitMQ |165.18 MB| [:arrow_right: 下载页](./modules/middleware/rabbitmq.md) |2023-12-10|
+| Redis |534.33 MB| [:arrow_right: 下载页](./modules/middleware/redis.md) |2023-12-10|
+| RocketMQ |360.39 MB| [:arrow_right: 下载页](./modules/middleware/rocketmq.md) |2023-12-10|
 
 !!! note
 
