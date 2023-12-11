@@ -2,7 +2,7 @@
 
 创建好流水线之后并运行过流水线，可以查看其流水线运行记录详情。
 
-在`应用工作台`->`流水线` -> 进入`流水线详情`页面，选择某一条流水线运行记录，点击执行 ID。
+在 **应用工作台** -> **流水线**  -> 进入 **流水线详情** 页面，选择某一条流水线运行记录，点击执行 ID。
 
 ![detail-run1](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/detail-run1.png)
 
@@ -28,10 +28,10 @@
 
 ![detail-run5](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/detail-run5.png)
 
-查看当前流水线记录的制品报告。当流水线中定义了`保存制品` 步骤，并且流水线执行该步骤后，即可缓存流水线定义中的制品，并支持用户进行下载，其中流水线的日志会默认保存为制品，如下图：
+查看当前流水线记录的制品报告。当流水线中定义了 **保存制品**  步骤，并且流水线执行该步骤后，即可缓存流水线定义中的制品，并支持用户进行下载，其中流水线的日志会默认保存为制品，如下图：
 
 ![detail-run3](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/detail-run3.png)
 
-查看当前流水线记录的测试报告。当流水线中拉取了远程代码并且定义了`收集测试报告` 步骤，并且流水线执行该步骤后，即可在当前界面查看到当前查看到测试报告的信息，如下图：
+查看当前流水线记录的测试报告。当流水线中拉取了远程代码并且定义了 **收集测试报告**  步骤，并且流水线执行该步骤后，即可在当前界面查看到当前查看到测试报告的信息，如下图：
 
 ![detail-run5](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/detail-run5.png)
