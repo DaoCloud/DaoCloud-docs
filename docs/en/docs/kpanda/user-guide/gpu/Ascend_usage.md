@@ -49,10 +49,10 @@ spec:
             limits:
               cpu: 250m
               huawei.com/Ascend910: '1'
-                memory: 512Mi
+              memory: 512Mi
             requests:
-                cpu: 250m
-                memory: 512Mi
+              cpu: 250m
+              memory: 512Mi
       imagePullSecrets:
       - name: default-secret
 ```

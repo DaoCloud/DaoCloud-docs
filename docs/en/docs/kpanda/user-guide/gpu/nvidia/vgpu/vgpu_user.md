@@ -29,7 +29,7 @@ This section explains how to use the vGPU capability in the DCE 5.0 platform.
 
 ### Using vGPU through YAML Configuration
 
-Refer to the following workload configuration and add the parameter `nvidia.com/gpu: '1'` in the resource requests and limits section to configure the number of physical cards used by the application.
+Refer to the following workload configuration and add the parameter `nvidia.com/vgpu: '1'` in the resource requests and limits section to configure the number of physical cards used by the application.
 
 ```yaml
 apiVersion: apps/v1
