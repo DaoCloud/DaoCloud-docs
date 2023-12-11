@@ -6,7 +6,9 @@ This page provides downloadable offline packages for various versions of MySQL.
 
 | Version                                                       | Architecture | File Size | Installation Package                                                                                                               | Checksum File | Date       |
 |------------------------------------------------------------| ------------- |-------- |---------------------------------------------------------------------------------------------------------------------------------| ---------- |------------|
-| [v0.11.1](../../../middleware/mysql/release-notes.md) | AMD 64 | 1.17GB | [:arrow_down: mysql_0.11.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mysql_0.11.1_amd64.tar) | [:arrow_down: mysql_0.11.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mysql_0.11.1_amd64_checksum.sha512sum) | 2023-10-12 |
+| [v0.13.0](../../../middleware/mysql/release-notes.md) | AMD 64 | 1.17 GB | [:arrow_down: mysql_0.13.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-mysql_0.13.0_amd64.tar) | [:arrow_down: mysql_0.13.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-mysql_0.13.0_amd64_checksum.sha512sum) | 2023-12-10 |
+| [v0.12.0](../../../middleware/mysql/release-notes.md) | AMD 64 | 1.17 GB | [:arrow_down: mysql_0.12.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-mysql_0.12.0_amd64.tar) | [:arrow_down: mysql_0.12.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-mysql_0.12.0_amd64_checksum.sha512sum) | 2023-11-02 |
+| [v0.11.1](../../../middleware/mysql/release-notes.md) | AMD 64 | 1.17 GB | [:arrow_down: mysql_0.11.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-mysql_0.11.1_amd64.tar) | [:arrow_down: mysql_0.11.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-mysql_0.11.1_amd64_checksum.sha512sum) | 2023-10-20 |
 
 ## Validation
 

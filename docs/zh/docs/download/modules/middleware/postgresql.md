@@ -6,6 +6,7 @@
 
 | 版本 | 架构 | 文件大小 | 安装包 | 校验文件 | 更新日期 |
 |----- | --- | ------ | ------ | ------ | ------- |
+| [v0.7.0](../../../middleware/postgresql/release-notes.md) | AMD 64 | 1.38 GB | [:arrow_down: postgresql_0.7.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-postgresql_0.7.0_amd64.tar) | [:arrow_down: postgresql_0.7.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-postgresql_0.7.0_amd64_checksum.sha512sum) | 2023-12-10 |
 | [v0.6.0](../../../middleware/postgresql/release-notes.md) | AMD 64 | 1.37 GB | [:arrow_down: postgresql_0.6.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-postgresql_0.6.0_amd64.tar) | [:arrow_down: postgresql_0.6.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-postgresql_0.6.0_amd64_checksum.sha512sum) | 2023-11-02 |
 | [v0.5.1](../../../middleware/postgresql/release-notes.md) | AMD 64 | 819.03 MB | [:arrow_down: postgresql_0.5.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-postgresql_0.5.1_amd64.tar) | [:arrow_down: postgresql_0.5.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-postgresql_0.5.1_amd64_checksum.sha512sum) | 2023-10-20 |
 

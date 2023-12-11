@@ -40,8 +40,8 @@
 
 - Rule Endpoint
 
-  A regular endpoint for sending or receiving messages. It has three types: rest, eventbus, servicebus.
+    A regular endpoint for sending or receiving messages. It has three types: rest, eventbus, servicebus.
 
 - Message Routing
 
-  Define how messages are delivered from the source message endpoint to the target message endpoint.
+    Define how messages are delivered from the source message endpoint to the target message endpoint.
