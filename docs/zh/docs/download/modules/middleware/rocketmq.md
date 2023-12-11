@@ -6,6 +6,7 @@
 
 | 版本 | 架构 | 文件大小 | 安装包 | 校验文件 | 更新日期 |
 | ---- | --- | ------- | ----- | ------ | ------- |
+| [v0.2.0](../../../middleware/rocketmq/release-notes.md) | AMD 64 | 360.39 MB | [:arrow_down: rocketmq_0.2.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-rocketmq_0.2.0_amd64.tar) | [:arrow_down: rocketmq_0.2.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-rocketmq_0.2.0_amd64_checksum.sha512sum) | 2023-12-10 |
 | [v0.1.1](../../../middleware/rocketmq/release-notes.md) | AMD 64 | 354.39 MB | [:arrow_down: rocketmq_0.1.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-rocketmq_0.1.1_amd64.tar) | [:arrow_down: rocketmq_0.1.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-rocketmq_0.1.1_amd64_checksum.sha512sum) | 2023-11-02 |
 
 ## 校验
