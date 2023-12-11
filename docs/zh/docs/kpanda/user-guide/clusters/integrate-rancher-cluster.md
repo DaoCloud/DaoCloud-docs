@@ -24,7 +24,7 @@
     kind: ClusterRole
     metadata:
       name: rancher-rke
-      rules:
+    rules:
       - apiGroups:
       - '*'
       resources:
@@ -40,7 +40,7 @@
     kind: ClusterRoleBinding
     metadata:
       name: rancher-rke
-      roleRef:
+    roleRef:
         apiGroup: rbac.authorization.k8s.io
         kind: ClusterRole
         name: rancher-rke
@@ -209,7 +209,8 @@
       - name: eks-admin
       user:
         token: eyJhbGciOiJSUzI1NiIsImtpZCI6ImcxTjJwNkktWm5IbmRJU1RFRExvdWY1TGFWVUtGQ3VIejFtNlFQcUNFalEifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2V
+    ```
 
 ### 步骤三：在 DCE 界面接入集群
 
-使用刚刚获取的 kubeconfig 文件，参考[接入集群](./integrate-cluster.md)文档，将 rancher 集群接入 rancher 集群。
+使用刚刚获取的 kubeconfig 文件，参考[接入集群](./integrate-cluster.md)文档，将 rancher 集群接入 global 集群。
