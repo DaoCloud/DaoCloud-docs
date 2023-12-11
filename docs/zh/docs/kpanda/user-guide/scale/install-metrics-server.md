@@ -51,87 +51,87 @@ hide:
 
     - 如果集群网络无法访问 `k8s.gcr.io` 仓库，请尝试修改 `repositort` 参数为 `repository: k8s.m.daocloud.io/metrics-server/metrics-server`。
 
-    - 安装 `metrics-server` 插件还需提供 SSL 证书。如需绕过证书校验，需要在 `defaultArgs:` 处添加 `- --kubelet-insecure-tls` 参数。
-
-    ??? note “推荐使用如下参数来替换参数配置内的默认 `YAML` 内容”
-
-        ```yaml
-        image:
-          repository: k8s.m.daocloud.io/metrics-server/metrics-server # 将仓库源地址修改为 k8s.m.daocloud.io
-          tag: ''
-          pullPolicy: IfNotPresent
-        imagePullSecrets: []
-        nameOverride: ''
-        fullnameOverride: ''
-        serviceAccount:
-          create: true
-          annotations: {}
-          name: ''
-        rbac:
-          create: true
-          pspEnabled: false
-        apiService:
-          create: true
-        podLabels: {}
-        podAnnotations: {}
-        podSecurityContext: {}
-        securityContext:
-          allowPrivilegeEscalation: false
-          readOnlyRootFilesystem: true
-          runAsNonRoot: true
-          runAsUser: 1000
-        priorityClassName: system-cluster-critical
-        containerPort: 4443
-        hostNetwork:
-          enabled: false
-        replicas: 1
-        updateStrategy: {}
-        podDisruptionBudget:
-          enabled: false
-          minAvailable: null
-          maxUnavailable: null
-        defaultArgs:
-          - '--cert-dir=/tmp'
-          - '--kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname'
-          - '--kubelet-use-node-status-port'
-          - '--metric-resolution=15s'
-          - --kubelet-insecure-tls # 绕过证书校验
-        args: []
-        livenessProbe:
-          httpGet:
-            path: /livez
-            port: https
-            scheme: HTTPS
-          initialDelaySeconds: 0
-          periodSeconds: 10
-          failureThreshold: 3
-        readinessProbe:
-          httpGet:
-            path: /readyz
-            port: https
-            scheme: HTTPS
-          initialDelaySeconds: 20
-          periodSeconds: 10
-          failureThreshold: 3
-        service:
-          type: ClusterIP
-          port: 443
-          annotations: {}
-          labels: {}
-        metrics:
-          enabled: false
-        serviceMonitor:
-          enabled: false
-          additionalLabels: {}
-          interval: 1m
-          scrapeTimeout: 10s
-        resources: {}
-        extraVolumeMounts: []
-        extraVolumes: []
-        nodeSelector: {}
-        tolerations: []
-        affinity: {}
-        ```
+    - 安装 `metrics-server` 插件还需提供 SSL 证书。如需绕过证书校验，需要在 `defaultArgs:` 处添加 `- --kubelet-insecure-tls` 参数。 
+      
+    ??? note "推荐使用如下参数来替换参数配置内的默认 YAML 内容"
+      
+       ```yaml
+       image:
+         repository: k8s.m.daocloud.io/metrics-server/metrics-server # 将仓库源地址修改为 k8s.m.daocloud.io
+         tag: ''
+         pullPolicy: IfNotPresent
+       imagePullSecrets: []
+       nameOverride: ''
+       fullnameOverride: ''
+       serviceAccount:
+         create: true
+         annotations: {}
+         name: ''
+       rbac:
+         create: true
+         pspEnabled: false
+       apiService:
+         create: true
+       podLabels: {}
+       podAnnotations: {}
+       podSecurityContext: {}
+       securityContext:
+         allowPrivilegeEscalation: false
+         readOnlyRootFilesystem: true
+         runAsNonRoot: true
+         runAsUser: 1000
+       priorityClassName: system-cluster-critical
+       containerPort: 4443
+       hostNetwork:
+         enabled: false
+       replicas: 1
+       updateStrategy: {}
+       podDisruptionBudget:
+         enabled: false
+         minAvailable: null
+         maxUnavailable: null
+       defaultArgs:
+         - '--cert-dir=/tmp'
+         - '--kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname'
+         - '--kubelet-use-node-status-port'
+         - '--metric-resolution=15s'
+         - --kubelet-insecure-tls # 绕过证书校验
+       args: []
+       livenessProbe:
+         httpGet:
+           path: /livez
+           port: https
+           scheme: HTTPS
+         initialDelaySeconds: 0
+         periodSeconds: 10
+         failureThreshold: 3
+       readinessProbe:
+         httpGet:
+           path: /readyz
+           port: https
+           scheme: HTTPS
+         initialDelaySeconds: 20
+         periodSeconds: 10
+         failureThreshold: 3
+       service:
+         type: ClusterIP
+         port: 443
+         annotations: {}
+         labels: {}
+       metrics:
+         enabled: false
+       serviceMonitor:
+         enabled: false
+         additionalLabels: {}
+         interval: 1m
+         scrapeTimeout: 10s
+       resources: {}
+       extraVolumeMounts: []
+       extraVolumes: []
+       nodeSelector: {}
+       tolerations: []
+       affinity: {}
+       ```
 
 5. 点击`确定`按钮，完成 `metrics-server` 插件的安装，之后系统将自动跳转至 `Helm 应用`列表页面，稍等几分钟后，为页面执行刷新操作，即可看到刚刚安装的应用。
 
