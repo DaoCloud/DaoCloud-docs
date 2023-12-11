@@ -12,6 +12,7 @@ nav:
               - Glossary: dce/terms.md
               - DaoCloud is a KCSP: dce/kcsp.md
               - Enterprise Release Notes:
+                  - 20231130 Release: dce/dce-rn/20231130.md
                   - 20231031 Release: dce/dce-rn/20231031.md
                   - 20230831 Release: dce/dce-rn/20230831.md
                   - 20230731 Release: dce/dce-rn/20230731.md
