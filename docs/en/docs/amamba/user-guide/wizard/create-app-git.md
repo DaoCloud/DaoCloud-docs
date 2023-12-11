@@ -27,9 +27,9 @@ Following [Credential Management](../pipeline/credential.md), create two credent
 
 ## Create Microservices App from Git
 
-1. In the `Workbench` -> `Wizard` page, click `Build with Git Repo`.
+1. In the `Workbench` -> `Wizard` page, click `Build With Git Repo`.
 
-    ![Wizard](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/ms01.png)
+    ![Wizard](../../images/ms01.png)
 
 2. Fill in the basic information as per the instructions and click `Next`:
 
@@ -99,9 +99,9 @@ Following [Credential Management](../pipeline/credential.md), create two credent
 
     - Data Storage: Configure data volume mounting and data persistence for containers.
 
-    ![Container Configuration](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/ms04.png)
+    ![Container Configuration](../../images/ms04.png)
 
-5. On the `Advanced Configuration` page, click `Enable Microservice Integration`.
+5. On the `Advanced Settings` page, click `Access MicroServices`.
    Configure the parameters as per the instructions and click `OK`.
 
     - Framework Selection: Choose between `Spring Cloud` and `Dubbo`. In this case, select `Spring Cloud`.
@@ -117,7 +117,7 @@ Following [Credential Management](../pipeline/credential.md), create two credent
 
 ## Viewing and Accessing Microservices Information
 
-1. On the left navigation bar, click `Overview`, and within the `Native Applications` tab,
+1. On the left navigation bar, click `Overview`, and within the `Applications` tab,
    select the native application to view its details.
 
     ![Native Applications](../../images/git04.png)
