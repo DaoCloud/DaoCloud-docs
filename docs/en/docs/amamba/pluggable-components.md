@@ -150,7 +150,7 @@ If you chose not to enable it during the deployment of DCE 5.0, follow the instr
 1. In the DCE 5.0 product module, go to `Container Management` -> `Cluster List` and enter the details page of the `kpanda-global-cluster` cluster (the cluster where you want to perform gray releases on applications).
 
 2. In the cluster details page, navigate to the left sidebar menu and select `Helm Apps` -> `Helm Charts` -> choose
-   the addon repository. Search for `vela-core`, click on it to enter the details page, and proceed with the installation.
+   the addon repository. Search for `argo-rollouts`, click on it to enter the details page, and proceed with the installation.
 
 3. On the installation page, fill in the required installation parameters:
 
