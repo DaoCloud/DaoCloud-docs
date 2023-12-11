@@ -10,15 +10,15 @@ hide:
 ## 前提条件
 
 - [创建工作空间](https://docs.daocloud.io/ghippo/user-guide/workspace/workspace/)、[创建用户](https://docs.daocloud.io/ghippo/user-guide/access-control/user/)。
-- 将该用户添加至该工作空间，并赋予 `workspace editor` 或更高权限。
+- 将该用户添加至该工作空间，并赋予 **workspace editor** 或更高权限。
 - 提供一个代码仓库，并且代码仓库的源码有多个分支，并且均有 Jenkinsfile 文本文件。
 - 如果是私有仓库，需要事先[创建仓库访问凭证](https://docs.daocloud.io/amamba/user-guide/pipeline/credential/)。
 
 ## 操作步骤
 
-1. 在流水线列表页点击`创建流水线`。
+1. 在流水线列表页点击**创建流水线**。
 
-2. 选择`创建多分支流水线`，点击`确定`。
+2. 选择**创建多分支流水线**，点击**确定**。
 
     ![mutilpipeline01](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/mutilpipeline01.png)
 
@@ -34,7 +34,7 @@ hide:
 
 4. 参考下方说明填写分支发现策略、扫描触发器、分支设置、克隆配置信息。
 
-    - 开启发现分支：默认值为 `.*` ，通过正则表达式来过滤分支。
+    - 开启发现分支：默认值为 **.*** ，通过正则表达式来过滤分支。
     - 开启多分支扫描：开启后，一旦代码仓库有分支变动，会进行同步。
     - 扫描间隔：根据预设的间隔来进行扫描代码仓库，来检查是否又更新。
     - 删除旧分支：开启后将根据策略删除旧分支及流水线
@@ -45,7 +45,7 @@ hide:
 
         ![mutilpipeline03](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/mutilpipeline03.png)
 
-5. 完成创建。确认所有参数输入完成后，点击`确定`按钮，完成多分枝流水线创建，自动返回流水线列表。
+5. 完成创建。确认所有参数输入完成后，点击**确定**按钮，完成多分枝流水线创建，自动返回流水线列表。
 
     ![mutilpipeline04](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/mutilpipeline04.png)
 
@@ -57,7 +57,7 @@ hide:
 
 ### 扫描仓库
 
-`扫描仓库`的目的是通过手动的方式触发发现代码仓库的新分支。
+**扫描仓库**的目的是通过手动的方式触发发现代码仓库的新分支。
 
 ![mutilpipeline06](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/mutilpipeline06.png)
 
@@ -69,6 +69,6 @@ hide:
 
 ### 查看分支
 
-根据分支发现策略获取的分支信息，其中`禁用` 状态的分支代表，最新扫描结果中不符合分支发现的策略。
+根据分支发现策略获取的分支信息，其中**禁用** 状态的分支代表，最新扫描结果中不符合分支发现的策略。
 
 ![mutilpipeline08](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/mutilpipeline08.png)

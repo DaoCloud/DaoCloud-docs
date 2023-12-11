@@ -19,27 +19,27 @@ hide:
 
 创建和管理凭证的具体步骤如下：
 
-1. 在左侧导航栏中点击`流水线`->`凭证`，进入凭证列表，点击右上角的`新建凭证`。
+1. 在左侧导航栏中点击**流水线**->**凭证**，进入凭证列表，点击右上角的**新建凭证**。
 
     ![createcredential](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cred01.png)
 
-2. 在`创建凭证`页面中，配置相关参数后点击`确定`。
+2. 在**创建凭证**页面中，配置相关参数后点击**确定**。
 
     ![createcredential](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cred02.png)
 
-    - 填写`凭证名称`，设置可以在流水线中使用的 ID，例如 `dockerhub-id`。注意：一旦设置就不能再进行更改。
-    - 在`类型`字段中，选择要添加的凭证类型。
+    - 填写**凭证名称**，设置可以在流水线中使用的 ID，例如 **dockerhub-id**。注意：一旦设置就不能再进行更改。
+    - 在**类型**字段中，选择要添加的凭证类型。
     - 根据不同的凭证类型填写相应的字段：
 
-        - 用户名和密码：在对应字段指定凭证的`用户名`和`密码`。
-        - 访问令牌（Secret text）：复制加密文本到`令牌`字段中。
-        - Kubeconfig：复制集群证书到 `Kubeconfig` 字段中。
+        - 用户名和密码：在对应字段指定凭证的**用户名**和**密码**。
+        - 访问令牌（Secret text）：复制加密文本到**令牌**字段中。
+        - Kubeconfig：复制集群证书到 **Kubeconfig** 字段中。
 
 3. 屏幕提示创建成功，新创建的凭证默认位于第一个。
 
     ![createcredential](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cred03.png)
 
-4. 点击列表右侧的 `︙`，可以在弹出菜单中选择编辑或删除等操作。
+4. 点击列表右侧的 **︙**，可以在弹出菜单中选择编辑或删除等操作。
 
     !!! warning
 

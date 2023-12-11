@@ -10,7 +10,7 @@
 
 如果环境中存在镜像仓库，建议通过 charts-syncer 将镜像同步到镜像仓库，更加高效便捷。
 
-1. 创建 `load-image.yaml` 文件。
+1. 创建 **load-image.yaml** 文件。
 
     > 注意：该 YAML 文件中的各项参数均为必填项。您需要一个私有的镜像仓库，并修改相关配置。
 
@@ -32,7 +32,7 @@
           password: "Harbor12345"
     ```
 
-    !!! note "若当前环境未安装 chart repo，也可以通过 chart-syncer 将 chart 导出为 `tgz` 文件，并存放在指定路径。"
+    !!! note "若当前环境未安装 chart repo，也可以通过 chart-syncer 将 chart 导出为 **tgz** 文件，并存放在指定路径。"
 
         ```yaml title="load-image.yaml"
         source:
@@ -63,7 +63,7 @@
     tar xvf amamba.bundle.tar
     ```
 
-    解压成功后会得到 3 个文件: `images.tar`、`hints.yaml`、`original-chart`。
+    解压成功后会得到 3 个文件: **images.tar**、**hints.yaml**、**original-chart**。
 
 1. 执行如下命令从本地加载镜像到 Docker 或 containerd。
 
@@ -82,7 +82,7 @@
     helm repo list | grep amamba
     ```
 
-    若返回结果为空或出现 `Error: no repositories to show` 提示，则执行如下命令添加应用工作台的 Helm 仓库。
+    若返回结果为空或出现 **Error: no repositories to show** 提示，则执行如下命令添加应用工作台的 Helm 仓库。
 
     ```shell
     helm repo add amamba http://{harbor url}/chartrepo/{project}
@@ -96,7 +96,7 @@
 
     Helm 版本过低会导致失败。若失败，请尝试执行 helm update repo
 
-3. 备份 `--set` 参数。在升级全局管理版本之前，建议执行如下命令备份旧版本的 `--set` 参数。
+3. 备份 **--set** 参数。在升级全局管理版本之前，建议执行如下命令备份旧版本的 **--set** 参数。
 
     ```shell
     helm get values ghippo -n ghippo-system -o yaml > amamba.bak.yaml
@@ -115,7 +115,7 @@
     amamba-release-ci/amamba   0.14.0  	       0.14.0  	    Amamba is the entrypoint to DCE 5.0, provides de...
     ```
 
-5. 修改 `amamba.bak.yaml` 文件里的 `registry` 和 `tag`。
+5. 修改 **amamba.bak.yaml** 文件里的 **registry** 和 **tag**。
 
     ??? note "点击查看示例的 YAML 文件"
 

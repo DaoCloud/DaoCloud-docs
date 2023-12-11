@@ -4,9 +4,9 @@
 
 ## 前提条件
 
-1. 创建一个[工作空间](../../../ghippo/user-guide/workspace/workspace.md)和一个[用户](../../../ghippo/user-guide/access-control/user.md)，该用户需加入该工作空间并具备 `Workspace Editor` 角色。
+1. 创建一个[工作空间](../../../ghippo/user-guide/workspace/workspace.md)和一个[用户](../../../ghippo/user-guide/access-control/user.md)，该用户需加入该工作空间并具备 **Workspace Editor** 角色。
 
-- 创建一个应用并开启`灰度发布`，可参考[基于 Git 仓构建微服务应用](../wizard/create-app-git.md)、[基于 Jar 包部署 Java 应用](../wizard/jar-java-app.md)。
+- 创建一个应用并开启**灰度发布**，可参考[基于 Git 仓构建微服务应用](../wizard/create-app-git.md)、[基于 Jar 包部署 Java 应用](../wizard/jar-java-app.md)。
 
 - 发布对象所在的集群已经安装了 Istio 和 Argo Rollout 两个组件。
 
@@ -20,11 +20,11 @@
 
 ## 操作步骤
 
-1. 进入`应用工作台`模块，在左侧导航栏点击 `灰度发布`，然后在页面右上角点击`创建发布任务`->`金丝雀发布`。
+1. 进入**应用工作台**模块，在左侧导航栏点击 **灰度发布**，然后在页面右上角点击**创建发布任务**->**金丝雀发布**。
 
     ![进入创建页面](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/canary01.png)
 
-2. 参考下列要求填写基本信息，然后点击`下一步`。
+2. 参考下列要求填写基本信息，然后点击**下一步**。
 
     - 名称：填写发布任务的名称。最长 63 个字符，只能包含小写字母、数字及分隔符("-")，且必须以小写字母或数字开头及结尾
     - 集群：选择发布对象所在的集群。需要确保该集群已经部署了 Istio 和 Argo Rollout。
@@ -80,12 +80,12 @@
 
             ![副本数](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/canary14.png)
 
-4. 在页面底部点击`创建并更新应用`，然后在弹框中设置灰度版本的镜像地址并点击`确定`。
+4. 在页面底部点击**创建并更新应用**，然后在弹框中设置灰度版本的镜像地址并点击**确定**。
 
     此时原工作负载的副本数会被设置为 0。
 
     ![填写镜像地址](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/canary15.png)
 
-5. 系统自动跳转至灰度发布的任务列表页面，提示`更新版本成功`。
+5. 系统自动跳转至灰度发布的任务列表页面，提示**更新版本成功**。
 
     ![返回列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/canary16.png)
