@@ -101,7 +101,7 @@ Following [Credential Management](../pipeline/credential.md), create two credent
 
     ![Container Configuration](../../images/ms04.png)
 
-5. On the `Advanced Configuration` page, click `Access MicroServices`.
+5. On the `Advanced Settings` page, click `Access MicroServices`.
    Configure the parameters as per the instructions and click `OK`.
 
     - Framework Selection: Choose between `Spring Cloud` and `Dubbo`. In this case, select `Spring Cloud`.
