@@ -93,8 +93,8 @@ agent:
       memory: 128Mi
   psk: JugH9HP1XBouyO5pWGeZa8LtipDURrf17EJvUHcJGuQ=
 
-relayNodes:
-  - nodeName: masternode ## your relay node name
+  relayNodes:
+   - nodeName: masternode ## your relay node name
     advertiseAddress:
     - x.x.x.x ## your relay node ip
 
