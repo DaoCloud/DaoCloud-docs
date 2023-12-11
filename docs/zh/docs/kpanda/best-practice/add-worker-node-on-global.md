@@ -43,8 +43,6 @@
     kubectl config view --minify --flatten --raw
     ```
 
-    `{CONTAINER ID}` 替换为您真实的容器 ID
-
 待控制台输出后，复制 kind 集群的 kubeconfig 配置信息，为下一步做准备。
 
 ## 在火种节点上 kind 集群内创建 `cluster.kubean.io` 资源

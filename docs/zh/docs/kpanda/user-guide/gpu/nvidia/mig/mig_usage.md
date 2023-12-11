@@ -47,7 +47,7 @@ spec:
           image: chrstnhntschl/gpu_burn
           resources:
             limits:
-            nvidia.com/gpu: 2 # 申请 MIG GPU 的数量
+              nvidia.com/gpu: 2 # 申请 MIG GPU 的数量
           imagePullPolicy: Always
       restartPolicy: Always
 ```
@@ -76,7 +76,7 @@ spec:
           image: chrstnhntschl/gpu_burn
           resources:
             limits:
-            nvidia.com/mig-4g.20gb: 1 # 通过 nvidia.com/mig-g.gb 的资源类型公开各个 MIG 设备
+              nvidia.com/mig-4g.20gb: 1 # 通过 nvidia.com/mig-g.gb 的资源类型公开各个 MIG 设备
           imagePullPolicy: Always
       restartPolicy: Always
 ```
