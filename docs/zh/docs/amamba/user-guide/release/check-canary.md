@@ -6,17 +6,17 @@
 
 ## 查看任务详情
 
-1. 进入`应用工作台`模块，在左侧导航栏点击`灰度发布`，点击目标任务的名称。
+1. 进入 **应用工作台** 模块，在左侧导航栏点击 **灰度发布** ，点击目标任务的名称。
 
     ![点击名称](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/checkcanary01.png)
 
 2. 查看灰度发布任务详情页面。
 
-    - `基本信息`区域：查看任务的名称、状态、发布类型、发布对象等信息。
+    -  **基本信息** 区域：查看任务的名称、状态、发布类型、发布对象等信息。
 
-    - `灰度进度`区域：以可视化的形式展示灰度发布任务的执行进度，可以直观地了解任务目前执行到了哪一步，以及执行的状态如何。
+    -  **灰度进度** 区域：以可视化的形式展示灰度发布任务的执行进度，可以直观地了解任务目前执行到了哪一步，以及执行的状态如何。
 
-    - `版本信息`区域：
+    -  **版本信息** 区域：
 
         - 主要版本：展示当前版本以及金丝雀版本信息。
         - 历史版本：展示历史版本记录。
@@ -27,7 +27,7 @@
 
 发布对象更新版本后，会自动触发灰度发布任务。
 
-1. 点击目标任务的名称，然后在右上角点击`更新版本`。
+1. 点击目标任务的名称，然后在右上角点击 **更新版本** 。
 
     ![详情页](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/checkcanary02.png)
 
@@ -43,11 +43,11 @@
 
 通过更新发布任务，可以修改灰度发布过程的流量调度策略。
 
-1. 在`灰度发布任务` 详情页面，在页面右上角点击 `ⵗ` 并选择`更新发布任务`。
+1. 在 **灰度发布任务**  详情页面，在页面右上角点击  **ⵗ**  并选择 **更新发布任务** 。
 
     ![详情页](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/checkcanary02.png)
 
-2. 调整发布规则并点击`确定`。
+2. 调整发布规则并点击 **确定** 。
 
     ![修改发布规则](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/checkcanary05.png)
 
@@ -55,11 +55,11 @@
 
 支持查看以往发布过的历史版本，可以一键回滚到之前的某个版本。
 
-1. 在`灰度发布任务`详情页面，点击`历史版本` 标签。
+1. 在 **灰度发布任务** 详情页面，点击 **历史版本**  标签。
 
     ![点击历史版本](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/checkcanary06.png)
 
-2. 选择目标版本，点击`回滚`。
+2. 选择目标版本，点击 **回滚** 。
 
     ![回滚](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/checkcanary07.png)
 
