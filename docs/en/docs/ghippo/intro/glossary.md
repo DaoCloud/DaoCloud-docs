@@ -5,8 +5,8 @@ This section lists common terms used in Global Management.
 ### IAM
 
 IAM (Identity and Access Management) is the abbreviation for the access control module.
-The administrator of this module is called the IAM Admin, who has the highest authority
-of this module. Users (groups) assigned to the IAM Admin will have all and the
+The administrator of this module is called the IAM Owner, who has the highest authority
+of this module. Users (groups) assigned to the IAM Owner will have all and the
 highest permissions for Access Control.
 
 For more details, see [What is IAM](../user-guide/access-control/iam.md).
@@ -53,7 +53,7 @@ There are two roles in Global Administration:
   global management brings together multiple submodules, each submodule also has a
   corresponding administrator role, for example:
 
-    - IAM Admin: Manage Access Control, that is, manage users/groups and authorization
+    - IAM Owner Manage Access Control, that is, manage users/groups and authorization
 
     - Workspace Admin: Permission to manage levels and workspaces, only this permission can create levels
 
