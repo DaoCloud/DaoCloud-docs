@@ -5,13 +5,13 @@
 ## 前提条件
 
 - 当前工作空间已经拥有集群资源，参考[绑定资源](../../../ghippo/user-guide/workspace/quota.md)。
-- 当前用户授权为  **Workspace Admin**  角色，详情参考[工作空间最佳实践](../../../ghippo/best-practice/ws-best-practice.md)。
+- 当前用户授权为 **Workspace Admin** 角色，详情参考[工作空间最佳实践](../../../ghippo/best-practice/ws-best-practice.md)。
 
 ## 创建命名空间
 
 !!! note
 
-    仅支持  **Workspace Admin**  创建命名空间，并设置命名空间配额，其他角色均不支持此操作。
+    仅支持 **Workspace Admin** 创建命名空间，并设置命名空间配额，其他角色均不支持此操作。
 
 1. 在应用工作台的左侧导航栏中点击 **命名空间** ，进入命名空间列表，点击右上角的 **创建** 。
 
@@ -41,7 +41,7 @@
 
     ![namespace-list01](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/namespace-list01.png)
 
-5. 点击列表右侧的  **︙** ，可以在弹出菜单中选择 **配额管理** 、 **编辑标签** 、 **删除** 等操作。
+5. 点击列表右侧的 **︙** ，可以在弹出菜单中选择 **配额管理** 、 **编辑标签** 、 **删除** 等操作。
 
     !!! warning
 
