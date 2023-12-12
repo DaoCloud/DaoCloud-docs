@@ -14,7 +14,7 @@ The following steps explain how to create an edge unit:
 
 2. Fill in the basic information:
 
-    - Edge Unit Name: A combination of lowercase letters, numbers, hyphens (-), and dots (.), and it should not have consecutive separators. It should start and end with a letter or number.
+    - Edge Unit Name: A combination of lowercase letters, numbers, hyphens (-), and dots (.), and it should not have consecutive separators. It should start and end with a letter or number. contains a maximum of 253 characters.
     - Cluster: The cluster where the edge unit control plane runs.
     - KubeEdge Version: A specific version released by the KubeEdge open-source system, used to extend containerized application orchestration capabilities to edge hosts. It is built on Kubernetes and provides infrastructure support for network applications.
 
