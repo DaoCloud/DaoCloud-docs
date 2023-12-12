@@ -20,7 +20,7 @@
 
     ![topology](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/native-app04.png)
 
-    - 支持查看资源的基本信息，可以跳转到 **容器管理**  模块查看资源的详情：
+    - 支持查看资源的基本信息，可以跳转到 **容器管理** 模块查看资源的详情：
 
         ![basic](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/native-app05.png)
 
@@ -30,14 +30,14 @@
 
 ## 编辑原生应用基本信息
 
-1. 点击原生应用的名称，然后在页面右上角点击  **ⵈ**  选择 **编辑基本信息** 。
+1. 点击原生应用的名称，然后在页面右上角点击 **ⵈ** 选择 **编辑基本信息** 。
 2. 根据需要设置别名，或补充描述信息描述信息。
 
     ![color](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/native-app07.png)
 
 ## 查看原生应用 YAML
 
-1. 点击原生应用的名称，然后在页面右上角点击  **ⵈ**  选择 **查看YAML** 。
+1. 点击原生应用的名称，然后在页面右上角点击 **ⵈ** 选择 **查看YAML** 。
 2. 查看原生应用的清单文件。
 
     ![color](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/native-app08.png)

@@ -6,13 +6,13 @@ Agent 描述了整个 **流水线** 执行过程或者某个 **阶段** 的执�
 
 ## Kubernetes Pod 模板介绍
 
-这个 Kubernetes 插件会在 Jenkins Agent Pod 中运行一个特殊的容器  **jnlp** ，目的是为了在 Jenkins Controller 和 Jenkins Agent 之间进行通信，所以需要定义其他容器来运行流水线步骤，并且可以通过  **container**  命令来切换不同的容器。
+这个 Kubernetes 插件会在 Jenkins Agent Pod 中运行一个特殊的容器 **jnlp** ，目的是为了在 Jenkins Controller 和 Jenkins Agent 之间进行通信，所以需要定义其他容器来运行流水线步骤，并且可以通过 **container** 命令来切换不同的容器。
 
 ## 使用内置 Label
 
-应用工作台通过 podTemplate 能力声明了 7 个 label： **base** 、 **maven** 、 **mavenjdk11** 、 **go** 、 **go16** 、 **node.js**  和  **python** 。您可以指定具体的 Agent 标签来使用对应的 podTemplate。
+应用工作台通过 podTemplate 能力声明了 7 个 label： **base** 、 **maven** 、 **mavenjdk11** 、 **go** 、 **go16** 、 **node.js** 和 **python** 。您可以指定具体的 Agent 标签来使用对应的 podTemplate。
 
-- 可以在 Jenkinsfile 中通过  **node('go')**  使用 go 的 podTemplate。
+- 可以在 Jenkinsfile 中通过 **node('go')** 使用 go 的 podTemplate。
 
     ```bash
     pipeline {
@@ -34,7 +34,7 @@ Agent 描述了整个 **流水线** 执行过程或者某个 **阶段** 的执�
     }
     ```
 
-- 也可以在 **编辑流水线** 页面上选择类型为  **node**  且 label 为  **go**  的 Agent。
+- 也可以在 **编辑流水线** 页面上选择类型为 **node** 且 label 为 **go** 的 Agent。
 
     ![agent-base](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/agent-base.jpeg)
 
@@ -127,11 +127,11 @@ Agent 描述了整个 **流水线** 执行过程或者某个 **阶段** 的执�
 
 如果需要运行特定环境的 Jenkins Agent，可以在流水线上自定义 Jenkins Agent。
 
-1. 在 **编辑流水线** 页面上选择 Agent 类型为  **kubernetes** 。
+1. 在 **编辑流水线** 页面上选择 Agent 类型为 **kubernetes** 。
 
     ![agent-kubernets](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/agent-kubernets.jpeg)
 
-2. 点击  **YAML 编辑器** ，在对话框中填写 YAML 语句，请参考以下示例：
+2. 点击 **YAML 编辑器** ，在对话框中填写 YAML 语句，请参考以下示例：
 
     ```bash
     apiVersion: v1
@@ -152,7 +152,7 @@ Agent 描述了整个 **流水线** 执行过程或者某个 **阶段** 的执�
         - 99d
       ```
 
-3. 在 Container 中输入  **golang**  作为流水线运行的默认容器。
+3. 在 Container 中输入 **golang** 作为流水线运行的默认容器。
 
     ![agent-golang](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/agent-golang.jpeg)
 

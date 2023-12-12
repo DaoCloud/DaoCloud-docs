@@ -22,14 +22,14 @@
 
 ## 编辑 OAM 应用基本信息
 
-1. 点击 OAM 应用名称，然后在页面右上角点击  **ⵈ**  选择 **编辑基本信息** 。
+1. 点击 OAM 应用名称，然后在页面右上角点击 **ⵈ** 选择 **编辑基本信息** 。
 2. 根据需要设置别名，或补充描述信息描述信息。
 
     ![edit](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/oam10.png)
 
 ## 编辑 OAM 应用 YAML 文件
 
-1. 点击 OAM 应用名称，然后在页面右上角点击  **ⵈ**  选择 **编辑 YAML** 。
+1. 点击 OAM 应用名称，然后在页面右上角点击 **ⵈ** 选择 **编辑 YAML** 。
 2. 根据需要编辑 OAM 应用的 YAML 文件。
 
     ![edit](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/oam11.png)
@@ -46,7 +46,7 @@
 
 ### 添加/更新运维特征
 
-1. 点击 OAM 应用名称，点击 **组件** 页签，在组件右侧点击  **ⵗ**  选择 **编辑运维特征** 。
+1. 点击 OAM 应用名称，点击 **组件** 页签，在组件右侧点击 **ⵗ** 选择 **编辑运维特征** 。
 
     ![add-component](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/oam14.png)
 

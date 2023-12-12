@@ -12,7 +12,7 @@
 
 请确保已有 SonarQube 环境，并且与当前环境网络联通无问题。
 
-1. 进入 **工具链集成**  页面，点击 **工具链集成** 按钮。
+1. 进入 **工具链集成** 页面，点击 **工具链集成** 按钮。
 
     ![tool01](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/tool01.png)
 
@@ -51,11 +51,11 @@
 
     ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/sonarqube14.png)
 
-3. 图形化界面定义阶段一  **git clone**  如下配置：
+3. 图形化界面定义阶段一 **git clone** 如下配置：
 
     ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/sonarqube15.png)
 
-4. 图形化界面定义阶段二  **SonarQube analysis**  如下配置：
+4. 图形化界面定义阶段二 **SonarQube analysis** 如下配置：
 
    - SonarQube 实例：选择上述步骤中集成的 SonaQube 实例。
    - 代码语言：由于不同代码语言对应的 SonaQube 的扫描命令不同，如果 java 语言，请选择 maven，其他语言则选择其他，本示例选择其他。

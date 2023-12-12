@@ -23,7 +23,7 @@
 
 ## 基于 Git 创建微服务应用
 
-1. 在 **应用工作台**  ->  **向导** 页面中，点击  **基于 Git 仓构建** 。
+1. 在 **应用工作台** -> **向导** 页面中，点击 **基于 Git 仓构建** 。
 
     ![向导](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/ms01.png)
 
@@ -41,11 +41,11 @@
 
     - 代码仓库：支持选择仓库与自定义，本示例中 Git 仓库地址为 `https://gitlab.daocloud.cn/ndx/skoala.git`，需要根据实际情况替换。其中选择仓库是从用户集成的 GitLab 实例中选择。
     - 分支：默认为 **main** ，此处为 **main** ，无需更改。
-    - 凭证：选择访问代码仓库的凭证  **git-credential** ，如果为公开仓库，则无需填写。
+    - 凭证：选择访问代码仓库的凭证 **git-credential** ，如果为公开仓库，则无需填写。
     - Dockerfile 路径：，支持输入 Dockerfile 在代码仓库中的绝对路径，例如 **demo/integration/springcloud-nacos-sentinel/code/Dockerfile** 。
     - 目标镜像名称：支持选择与输入，本示例中地址为 [release-ci.daocloud.io/test-lfj/fromgit](http://release-ci.daocloud.io/test-lfj/fromgit) ，需要根据实际情况替换。其中选择的镜像仓库是从镜像仓库模块中集成并绑定到当前工作空间的镜像仓库实例中选择。
-    - Tag：输入镜像仓库版本，例如  **v2.0.0** 。
-    - 凭证：选择访问镜像仓库的凭证，例如  **registry-credential** 。
+    - Tag：输入镜像仓库版本，例如 **v2.0.0** 。
+    - 凭证：选择访问镜像仓库的凭证，例如 **registry-credential** 。
     - ContextPath：ContextPath 为 docker build 命令执行上下文路径。填写相对于代码根目录的路径，如 target，如果不填则为 Dockerfile 文件所在目录。
     - 构建参数：构建参数会以 --build-arg 的形式传递到 build 命令的参数中，支持将上游制品下载地址、上游镜像下载地址设置为参数，同时支持自定义任意参数。
 
@@ -77,7 +77,7 @@
 
 5. 在 **高级配置** 页面点击 **开启接入微服务** ，参考以下说明配置参数，然后点击 **确定** 。
 
-    - 选择框架：支持 **Spring Cloud** 、 **Dubbo** ，此处选择  **Spring Cloud**  。
+    - 选择框架：支持 **Spring Cloud** 、 **Dubbo** ，此处选择 **Spring Cloud** 。
     - 注册中心实例：目前仅支持选择[微服务引擎中的托管 Nacos 注册中心实例](../../../skoala/trad-ms/hosted/index.md)。
     - 注册中心命名空间：微服务应用的 nacos 命名空间
     - 注册中心服务分组：微服务应用的服务分组
@@ -92,7 +92,7 @@
 
     ![原生应用](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/git04.png)
 
-2. 在详情页面中， **应用资源**  页签中，选择带有  **服务网格**  标签的资源，并点击。
+2. 在详情页面中， **应用资源** 页签中，选择带有 **服务网格** 标签的资源，并点击。
 
     ![跳转](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/git05.png)
 
