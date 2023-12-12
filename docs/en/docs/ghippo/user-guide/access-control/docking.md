@@ -8,7 +8,7 @@ you can achieve it by docking a product through `Docking Portal`.
 
 ## Docking a product
 
-Prerequisite: Administrator privileges for the platform or IAM Admin privileges
+Prerequisite: Administrator privileges for the platform or IAM Owner privileges
 for access control.
 
 1. Log in with an admin, navigate to `Access Control`, select `Docking Portal`,
