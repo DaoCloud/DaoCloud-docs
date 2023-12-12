@@ -55,7 +55,7 @@
             KubeEdge 容器沙箱镜像 
             
             ```
-            docker.m.daocloud.io/kubeedge/pause:3.1
+            kubeedge/pause:3.1
             ```
             KubeEdge 安装包镜像 
             
