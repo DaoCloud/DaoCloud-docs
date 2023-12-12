@@ -9,6 +9,7 @@
 
     开启审计日志会修改 istio-ingressgateway 的副本数，带来一定的性能损耗。
     开启审计日志需要关闭 kube-proxy 的负载均衡以及拓扑感知路由，会对集群性能产生一定的影响。
+    开启审计日志后，访问IP所对应的节点上必须保证存在 istio-ingressgateway ，若因为节点健康或其他问题导致istio-ingressgateway 发生漂移，需要手动调度回该节点，否则会影响 DCE 的正常使用。
 
 ## 判断安装模式的方法
 
