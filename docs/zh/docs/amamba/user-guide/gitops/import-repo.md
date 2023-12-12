@@ -11,11 +11,11 @@
 ## 导入仓库
 
 如果持续部署应用的清单文件所在的代码仓库不是公开的，则需要事先将仓库导入至应用工作台。
-应用工作台目前支持两种导入方式： **使用 HTTPS 导入仓库**  和 **使用 SSH 导入仓库** 。
+应用工作台目前支持两种导入方式： **使用 HTTPS 导入仓库** 和 **使用 SSH 导入仓库** 。
 
 ### 使用 HTTPS 导入仓库
 
-1. 在 **应用工作台**  ->  **GitOps**  ->  **仓库**  页面中，点击 **导入仓库** 按钮，选择 **使用 HTTPS** 。
+1. 在 **应用工作台** -> **GitOps** -> **仓库** 页面中，点击 **导入仓库** 按钮，选择 **使用 HTTPS** 。
 
     ![导入](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/import01.png)
 
@@ -25,7 +25,7 @@
 
 ### 使用 SSH 导入仓库
 
-1. 在 **应用工作台**  ->  **GitOps**  ->  **仓库**  页面中，点击 **导入仓库** 按钮，选择 **使用 SSH** 。
+1. 在 **应用工作台** -> **GitOps** -> **仓库** 页面中，点击 **导入仓库** 按钮，选择 **使用 SSH** 。
 
     ![导入](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/import01.png)
 

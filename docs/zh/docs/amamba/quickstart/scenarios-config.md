@@ -132,4 +132,4 @@ resources:
 - 当 Jenkins Pod 因为 OOM 重启时，建议加大 Master 的内存。
   为了保证 QoS，建议 Master 的内存和 cpu 的 request 和 limit 保持一致。
 - 当流水线模块接口调用存在超时情况时，建议加大 Master 的CPU。
-- 当 Master 内存配置超过  **4G**  时，建议修改  **JavaOpts**  中的  **-XX:+UseConcMarkSweepGC**  为  **-XX:+UseG1GC** 。
+- 当 Master 内存配置超过 **4G** 时，建议修改 **JavaOpts** 中的 **-XX:+UseConcMarkSweepGC** 为 **-XX:+UseG1GC** 。

@@ -5,7 +5,7 @@
 ## 前提条件
 
 - [创建工作空间](../../../../ghippo/user-guide/workspace/workspace.md)、[创建用户](../../../../ghippo/user-guide/access-control/user.md)。
-- 将该用户添加至该工作空间，并赋予  **workspace editor**  或更高权限。
+- 将该用户添加至该工作空间，并赋予 **workspace editor** 或更高权限。
 - 配置好[流水线模板文件](info.md)。
 
 ### 操作步骤
@@ -14,7 +14,7 @@
 
     ![click-create](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/template04.png)
 
-2. 参考以下说明填写基本信息，然后点击 **确定**  。
+2. 参考以下说明填写基本信息，然后点击 **确定** 。
 
     - 模板名称：填写流水线模板的名称。
     - 描述信息：对当前流水线的描述信息，支持中文。

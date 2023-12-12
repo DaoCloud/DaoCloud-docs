@@ -132,14 +132,14 @@ HwameiStor 支持使用 DRBD 的方式，可以将一份数据副本同时挂载
 
 5. 修改 Jenkins 的 storageClass
 
-    - 通过界面的方式安装的 Jenkins，可以在安装时设置 storageClass（存储类  **hwameistor-storage-lvm-hdd-ha** 。
-    - 通过 helm 安装时，可以设置 helm value.yaml 中的  **storageClassName**  改为  **hwameistor-storage-lvm-hdd-ha** 。
+    - 通过界面的方式安装的 Jenkins，可以在安装时设置 storageClass（存储类 **hwameistor-storage-lvm-hdd-ha** 。
+    - 通过 helm 安装时，可以设置 helm value.yaml 中的 **storageClassName** 改为 **hwameistor-storage-lvm-hdd-ha** 。
 
     !!! note
 
         - 在安装之前确认 storageClass 是否存在，可以通过 `kubectl get sc` 查看。
-        - 一般情况下在安装了 HwameiStor 之后，会自动创建  **hwameistor-storage-lvm-hdd-ha**  这个 storageClass。如果没有，请联系管理员。
-        - 根据添加的磁盘类型，也有可能是  **hwameistor-storage-lvm-ssd-ha** 。只需要指定为 ha 类型的 storageClass 即可。
+        - 一般情况下在安装了 HwameiStor 之后，会自动创建 **hwameistor-storage-lvm-hdd-ha** 这个 storageClass。如果没有，请联系管理员。
+        - 根据添加的磁盘类型，也有可能是 **hwameistor-storage-lvm-ssd-ha** 。只需要指定为 ha 类型的 storageClass 即可。
 
 部署完 Jenkins 后即可实现 Jenkins 的高可用功能。
 

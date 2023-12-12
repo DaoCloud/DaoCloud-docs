@@ -10,7 +10,7 @@ hide:
 ## 前提条件
 
 - [创建工作空间](https://docs.daocloud.io/ghippo/user-guide/workspace/workspace/)、[创建用户](https://docs.daocloud.io/ghippo/user-guide/access-control/user/)。
-- 将该用户添加至该工作空间，并赋予  **workspace editor**  或更高权限。
+- 将该用户添加至该工作空间，并赋予 **workspace editor** 或更高权限。
 - 提供一个代码仓库，并且代码仓库的源码有多个分支，并且均有 Jenkinsfile 文本文件。
 - 如果是私有仓库，需要事先[创建仓库访问凭证](https://docs.daocloud.io/amamba/user-guide/pipeline/credential/)。
 
@@ -34,7 +34,7 @@ hide:
 
 4. 参考下方说明填写分支发现策略、扫描触发器、分支设置、克隆配置信息。
 
-    - 开启发现分支：默认值为  **.***  ，通过正则表达式来过滤分支。
+    - 开启发现分支：默认值为 **.*** ，通过正则表达式来过滤分支。
     - 开启多分支扫描：开启后，一旦代码仓库有分支变动，会进行同步。
     - 扫描间隔：根据预设的间隔来进行扫描代码仓库，来检查是否又更新。
     - 删除旧分支：开启后将根据策略删除旧分支及流水线
@@ -69,6 +69,6 @@ hide:
 
 ### 查看分支
 
-根据分支发现策略获取的分支信息，其中 **禁用**  状态的分支代表，最新扫描结果中不符合分支发现的策略。
+根据分支发现策略获取的分支信息，其中 **禁用** 状态的分支代表，最新扫描结果中不符合分支发现的策略。
 
 ![mutilpipeline08](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/mutilpipeline08.png)

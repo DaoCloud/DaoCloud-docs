@@ -10,7 +10,7 @@
 
 ## 创建 Argo CD 应用
 
-1. 在 **应用工作台**  ->  **持续发布** 页面中，点击 **创建应用** 按钮。
+1. 在 **应用工作台** -> **持续发布** 页面中，点击 **创建应用** 按钮。
 
     ![创建应用](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/argo01.png)
 
@@ -44,11 +44,11 @@
 
     ![应用详情](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/argo03.png)
 
-1. 由于同步方式选择的是 **手动同步** ，所以我们需要手动进行同步，点击 **同步**  。
+1. 由于同步方式选择的是 **手动同步** ，所以我们需要手动进行同步，点击 **同步** 。
 
     ![手动同步](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/argo04.png)
 
-1. 同步过程中具体参数说明请参考[手动同步应用](./sync-manually.md)，点击 **确定**  。
+1. 同步过程中具体参数说明请参考[手动同步应用](./sync-manually.md)，点击 **确定** 。
 
     ![手动同步](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/argo05.png)
 
