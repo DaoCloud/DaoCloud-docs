@@ -53,7 +53,7 @@ Please perform the following steps to install the `metrics-server` plugin for th
 
     - An SSL certificate is also required to install the `metrics-server` plugin. To bypass certificate verification, you need to add `- --kubelet-insecure-tls` parameter at `defaultArgs:`.
 
-    ??? note "It is recommended to use the following parameters to replace the default `YAML` content in the parameter configuration"
+    ??? note "Click to view and use the YAML parameters to replace the default `YAML`"
 
         ```yaml
         image:
