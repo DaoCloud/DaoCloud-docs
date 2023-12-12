@@ -13,7 +13,7 @@ The user logs in through the account/password, and the system verifies whether t
 
 !!! note
 
-     If the user does not perform any operation within 2 hours after logging in, the login status will be automatically logged out. If the logged-in user is always active, the logged-in state will persist.
+     If the user does not perform any operation within 24 hours after logging in, the login status will be automatically logged out. If the logged-in user is always active, the logged-in state will persist.
 
 The simple process of user login is shown in the figure below.
 
