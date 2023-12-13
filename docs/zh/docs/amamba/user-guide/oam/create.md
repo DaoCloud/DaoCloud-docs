@@ -7,15 +7,15 @@ OAM 应用功能基于开源软件 [KubeVela](http://kubevela.net/zh/docs/v1.2/)
 ## 前提条件
 
 - [创建工作空间](../../../ghippo/user-guide/workspace/workspace.md)、[创建用户](../../../ghippo/user-guide/access-control/user.md)。
-- 将该用户添加至该工作空间，并赋予  **Workspace Editor**  或更高权限。
+- 将该用户添加至该工作空间，并赋予  __Workspace Editor__  或更高权限。
 
 ## 操作步骤
 
-1. 在 **应用工作台** -> **概览** 页面中， **OAM 应用** 页签下点击 **创建应用** 。
+1. 在 __应用工作台__ -> __概览__ 页面中， __OAM 应用__ 页签下点击 __创建应用__ 。
 
     ![step1](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/oam01.png)
 
-2. 参考以下说明填写基本信息，然后点击 **下一步** ：
+2. 参考以下说明填写基本信息，然后点击 __下一步__ ：
 
     - 名称/别名：填写 OAM 应用的名称/别名。
     - 主组件类型：不同组件需要配置的参数有所不同。有关各种组件类型的详细介绍，
@@ -38,7 +38,7 @@ OAM 应用功能基于开源软件 [KubeVela](http://kubevela.net/zh/docs/v1.2/)
 
     ![step4](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/oam04.png)
 
-5. 点击 **确定** 完成创建，创建成功后返回 OAM 应用列表页面。
+5. 点击 __确定__ 完成创建，创建成功后返回 OAM 应用列表页面。
 
     ![step5](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/oam05.png)
 

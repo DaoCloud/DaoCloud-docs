@@ -7,7 +7,7 @@ The following is a description of the parameters of the graphical pipeline task 
 | parameter | description |
 | -------- | ----------------------------------------- ---------------- |
 | Code Warehouse | Fill in the address of the remote code warehouse |
-| Branch | Fill in which branch you want to build the pipeline based on, the default is `master` |
+| Branch | Fill in which branch you want to build the pipeline based on, the default is __master__ |
 | Credentials | For private warehouses, you need to [create credentials](../credential.md) in advance and select the corresponding credentials when using |
 
 ## Shell
@@ -22,7 +22,7 @@ Choose this template if you want to output some messages in the terminal.
 
 | parameter | description |
 | -------------- | ---------------------------------- ----------------------------- |
-| Files for archiving | Use regular expressions to specify the path where the files are expected to be stored, for example: `module/dist/*/.zip`, please separate multiple files with English commas. |
+| Files for archiving | Use regular expressions to specify the path where the files are expected to be stored, for example: __module/dist/*/.zip__, please separate multiple files with English commas. |
 
 ## review
 
@@ -38,13 +38,13 @@ Using the credential component is a special step in graphical editing. If enable
 
 | Type | Description |
 | ------------ | ------------------------------------ ------------------------ |
-| Username and Password | The following parameters are required:<br /> `Username variable`: The name of the environment variable for username during Pipeline builds. <br />`Password variable`: The name of the environment variable for the password during Pipeline builds. |
-|Access Token| The following parameters are required:<br />`Text Variable`: The name of an environment variable that is texted during Pipeline builds. |
-| kubeconfig | The following parameters are required:<br /> `kubeconfig variable`: The name of the kubeconfig environment variable during pipeline builds. |
+| Username and Password | The following parameters are required:<br /> __Username variable__: The name of the environment variable for username during Pipeline builds. <br />__Password variable__: The name of the environment variable for the password during Pipeline builds. |
+|Access Token| The following parameters are required:<br />__Text Variable__: The name of an environment variable that is texted during Pipeline builds. |
+| kubeconfig | The following parameters are required:<br /> __kubeconfig variable__: The name of the kubeconfig environment variable during pipeline builds. |
 
 ## time out
 
-If the execution time of the current task exceeds the timeout period, the task will be aborted, and the pipeline status will become `failed`.
+If the execution time of the current task exceeds the timeout period, the task will be aborted, and the pipeline status will become __failed__.
 
 | parameter | description |
 | ---- | ----------------------------------------- |
@@ -55,12 +55,12 @@ If the execution time of the current task exceeds the timeout period, the task w
 
 | parameter | description |
 | --- | --- |
-| Code repository | Fill in the remote svn address, for example `http://svn.apache.org/repos/asf/ant/` |
+| Code repository | Fill in the remote svn address, for example __http://svn.apache.org/repos/asf/ant/__ |
 | Credentials | For private warehouses, you need to [create credentials](../credential.md) in advance and select the corresponding credentials when using |
 
 ## Collect test reports
 
-Collect JUnit test reports, which must be in `xml` format, and support filling in multiple addresses, separated by commas.
+Collect JUnit test reports, which must be in __xml__ format, and support filling in multiple addresses, separated by commas.
 
 Collect JUnit test reports, which must be in xml format and support multiple addresses, separated by commas.
 

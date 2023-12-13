@@ -1,11 +1,11 @@
 ## Pipeline Template File
 
-The pipeline template file mainly contains two parts: `parameterDefinitions` and `jenkinsfileTemplate`.
+The pipeline template file mainly contains two parts: __parameterDefinitions__ and __jenkinsfileTemplate__.
 
-- The `parameterDefinitions` section defines which parameters are exposed in the pipeline template. Multiple parameter types are supported, such as booleans, drop-down lists, credentials, passwords, and text.
-- The `jenkinsfileTemplate` section defines a `jenkinsfile` for the Jenkins pipeline and can reference the parameters exposed in `parameterDefinitions` part.
+- The __parameterDefinitions__ section defines which parameters are exposed in the pipeline template. Multiple parameter types are supported, such as booleans, drop-down lists, credentials, passwords, and text.
+- The __jenkinsfileTemplate__ section defines a __jenkinsfile__ for the Jenkins pipeline and can reference the parameters exposed in __parameterDefinitions__ part.
 
-## `parameterDefinitions` Section
+## __parameterDefinitions__ Section
 
 | Field | Type | Description | Default Value | Required |
 | --- | --- | --- | --- | --- |
@@ -17,7 +17,7 @@ The pipeline template file mainly contains two parts: `parameterDefinitions` and
 
 ## Supported Parameter Types
 
-- boolean: a Boolean value, with a default value of either `true` or `false`
+- boolean: a Boolean value, with a default value of either __true__ or __false__
 - choice: a drop-down list, must provide a default value, for example,
 
     ```yaml

@@ -1,11 +1,11 @@
 # 流水线模板文件
 
-流水线模板文件按照YAML的格式组织，主要包含两部分： **parameterDefinitions** 和 **jenkinsfileTemplate** 。
+流水线模板文件按照YAML的格式组织，主要包含两部分： __parameterDefinitions__ 和 __jenkinsfileTemplate__ 。
 
-- **parameterDefinitions** 区域：定义流水线模板暴露哪些参数。支持布尔值、下拉列表、凭证、密码、文本等多种参数类型。
-- **jenkinsfileTemplate** 区域：定义 Jenkins 流水线的 **jenkinsfile** ，使用[go template](https://pkg.go.dev/text/template)作为模板引擎渲染，可以引用 **parameterDefinitions** 中暴露的参数。
+- __parameterDefinitions__ 区域：定义流水线模板暴露哪些参数。支持布尔值、下拉列表、凭证、密码、文本等多种参数类型。
+- __jenkinsfileTemplate__ 区域：定义 Jenkins 流水线的 __jenkinsfile__ ，使用[go template](https://pkg.go.dev/text/template)作为模板引擎渲染，可以引用 __parameterDefinitions__ 中暴露的参数。
 
-## **parameterDefinitions** 区域
+## __parameterDefinitions__ 区域
 
 | 字段 | 类型 | 说明 | 默认值 | 是否必填 |
 | --- | --- | --- | --- | --- |
@@ -17,7 +17,7 @@
 
 ### 支持的参数类型
 
-- boolean：布尔值，默认值只能为 **true** 或 **false** ，在UI上是一个checkbox
+- boolean：布尔值，默认值只能为 __true__ 或 __false__ ，在UI上是一个checkbox
 - string: 字符串，输入框
 - text：文本，文本框
 - password：字符串，密码输入框
@@ -32,13 +32,13 @@
 
 - credential：凭证，在UI上是一个下拉列表，会获取当前工作空间下的凭证列表
 
-## **jenkinsfileTemplate** 区域
+## __jenkinsfileTemplate__ 区域
 
-整体上依然遵循[Jenkinsfile的语法](https://www.jenkins.io/doc/book/pipeline/syntax/)，但是可以使用[go template](https://pkg.go.dev/text/template)作为模板引擎，基于 **parameterDefinitions** 中定义的参数渲染。
+整体上依然遵循[Jenkinsfile的语法](https://www.jenkins.io/doc/book/pipeline/syntax/)，但是可以使用[go template](https://pkg.go.dev/text/template)作为模板引擎，基于 __parameterDefinitions__ 中定义的参数渲染。
 
 ### 变量
 
-通过 **{{ .params.<name> }}** 的方式引用上文定义的参数，例如 **{{ .params.gitCloneURL }}** 。
+通过 __{{ .params.<name> }}__ 的方式引用上文定义的参数，例如 __{{ .params.gitCloneURL }}__ 。
 
 ### 条件语句
 
@@ -72,7 +72,7 @@
 
 ### 其他
 
-上文描述的只是部分go template的语法，除此以外，你还能使用管道符 **|** ，函数（例如 **printf** ,），注释等，更多语法请参考[go template](https://pkg.go.dev/text/template)。
+上文描述的只是部分go template的语法，除此以外，你还能使用管道符 __|__ ，函数（例如 __printf__ ,），注释等，更多语法请参考[go template](https://pkg.go.dev/text/template)。
 
 ## 模板文件示例
 
@@ -101,7 +101,7 @@ parameterDefinitions:
     displayName: 测试报告位置
     description: The location of the test report
     type: string
-    default: ./target/**
+    default: ./target/__
   - name: dockerfilePath
     displayName: Dockerfile路径
     description: The path of the Dockerfile

@@ -11,13 +11,13 @@ E0113 01:47:27.690555 50 request.go:1058] Unexpected error when reading response
 error: unexpected error when reading response body. Please retry. Original error: net/http: request canceled (Client.Timeout or context cancellation while reading body)
 ```
 
-**解决方案**：
+__解决方案__：
 
 在该流水线的 Jenkinsfile 中将部署命令由 `kubectl apply -f` 修改为 `kubectl apply -f . --request-timeout=30m`。
 
 ## 如何更新内置 Label 的 podTemplate 镜像？
 
-应用工作台通过 podTemplate 能力声明了 7 个 label： **base** 、 **maven** 、 **mavenjdk11** 、 **go** 、 **go16** 、 **node.js** 和 **python** 。
+应用工作台通过 podTemplate 能力声明了 7 个 label： __base__ 、 __maven__ 、 __mavenjdk11__ 、 __go__ 、 __go16__ 、 __node.js__ 和 __python__ 。
 您可以指定具体的 Agent 标签来使用对应的 podTemplate。
 
 如果内置 podTemplate 中的镜像不满足您的需求，可以通过以下方式替换容器镜像或者添加容器镜像。
@@ -26,58 +26,58 @@ error: unexpected error when reading response body. Please retry. Original error
 
     ![faq-ci2](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/faq-ci2.png)
 
-2. 在左侧导航栏依次点击 **配置与密钥** -> **配置项** 。
+2. 在左侧导航栏依次点击 __配置与密钥__ -> __配置项__ 。
 
-3. 搜索 **jenkins-casc-config** ，在操作列点击 **编辑 YAML** 。
+3. 搜索 __jenkins-casc-config__ ，在操作列点击 __编辑 YAML__ 。
 
     ![faq-ci3](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/faq-ci3.png)
 
-4. 在 **data** -> **jenkins.yaml** -> **jenkins.clouds.kubernetes.templates** 字段下选择需要更改的 podTemplate 的镜像。
+4. 在 __data__ -> __jenkins.yaml__ -> __jenkins.clouds.kubernetes.templates__ 字段下选择需要更改的 podTemplate 的镜像。
 
     ![faq-ci4](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/faq-ci4.png)
 
-5. 更新完成后，前往 **工作负载** 重启 Jenkins。
+5. 更新完成后，前往 __工作负载__ 重启 Jenkins。
 
 ## 流水线构建环境为 maven 时，如何在 settings.xml 中修改依赖包来源？
 
-当流水线构建环境为 maven 时，大多数客户需要修改 **settings.xml** 以更换依赖源。可参考以下步骤：
+当流水线构建环境为 maven 时，大多数客户需要修改 __settings.xml__ 以更换依赖源。可参考以下步骤：
 
-1. 前往容器管理模块，在 **集群列表** 界面选择 Jenkins 组件所在的集群，点击集群名称。
+1. 前往容器管理模块，在 __集群列表__ 界面选择 Jenkins 组件所在的集群，点击集群名称。
 
     ![faq-ci2](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/faq-ci2.png)
 
-2. 在左侧导航栏依次点击 **配置与密钥** -> **配置项** 。
+2. 在左侧导航栏依次点击 __配置与密钥__ -> __配置项__ 。
 
-3. 搜索 **amamba-devops-agent** ，在操作列点击 **编辑 YAML** 。
+3. 搜索 __amamba-devops-agent__ ，在操作列点击 __编辑 YAML__ 。
 
     ![faq-ci5](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/faq-ci5.png)
 
-4. 在 **data** 模块 下的 **MavenSetting** 按需修改。
+4. 在 __data__ 模块 下的 __MavenSetting__ 按需修改。
 
     ![faq-ci6](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/faq-ci6.png)
 
-5. 更新完成后，需要前往 **工作负载** 重启 Jenkins。
+5. 更新完成后，需要前往 __工作负载__ 重启 Jenkins。
 
 ## 通过 Jenkins 构建镜像时，容器无法访问私有镜像仓库
 
 ### 集群运行时为 Podman
 
-1. 在容器管理模块的 **集群列表** 界面找到 Jenkins 组件所在的集群，点击集群名称。
+1. 在容器管理模块的 __集群列表__ 界面找到 Jenkins 组件所在的集群，点击集群名称。
 
-2. 在左侧导航栏依次点击 **配置与密钥** -> **配置项** 。
+2. 在左侧导航栏依次点击 __配置与密钥__ -> __配置项__ 。
 
-3. 搜索 **insecure-registries** ，在操作列点击 **编辑 YAML** 。
+3. 搜索 __insecure-registries__ ，在操作列点击 __编辑 YAML__ 。
 
-4. 在 **data** 模块下的 **registries.conf** 下配置。
+4. 在 __data__ 模块下的 __registries.conf__ 下配置。
 
-    修改时注意格式缩进，并且每个 registry 需要一个单独的 **[[registry]]** 部分，如下图所示：
+    修改时注意格式缩进，并且每个 registry 需要一个单独的 __[[registry]]__ 部分，如下图所示：
 
     ![faq-ci1](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/faq-ci1.png)
 
     !!! note
 
-        **registries** 关键字的值应该是完整的镜像仓库域名或 IP 地址，无需增加 **http** 或 **https** 前缀。
-        如果镜像仓库使用非标准端口号，可以在地址后面加上冒号 **:** 和端口号。
+        __registries__ 关键字的值应该是完整的镜像仓库域名或 IP 地址，无需增加 __http__ 或 __https__ 前缀。
+        如果镜像仓库使用非标准端口号，可以在地址后面加上冒号 __:__ 和端口号。
 
         ```
         [[registry]]
@@ -93,9 +93,9 @@ error: unexpected error when reading response body. Please retry. Original error
 
 ### 集群运行时为 Docker
 
-1. 打开 Docker 的配置文件。在大多数 Linux 发行版上，配置文件位于 **/etc/docker/daemon.json** ，如果不存在，请创建此配置文件。
+1. 打开 Docker 的配置文件。在大多数 Linux 发行版上，配置文件位于 __/etc/docker/daemon.json__ ，如果不存在，请创建此配置文件。
 
-2. 在 **insecure-registries** 的字段将仓库地址添加进去。
+2. 在 __insecure-registries__ 的字段将仓库地址添加进去。
 
     ```json
     {
@@ -120,12 +120,12 @@ error: unexpected error when reading response body. Please retry. Original error
 
 1. 前往容器管理模块，找到 Jenkins 组件所在的集群，点击集群名称。
 
-2. 在左侧导航栏依次点击 **配置与密钥** -> **配置项** 。
+2. 在左侧导航栏依次点击 __配置与密钥__ -> __配置项__ 。
 
-3. 搜索 **jenkins-casc-config** ，在操作列点击 **编辑 YAML** 。
+3. 搜索 __jenkins-casc-config__ ，在操作列点击 __编辑 YAML__ 。
 
-4. 在 **data** -> **jenkins.yaml** -> **jenkins.clouds.kubernetes.containerCapStr** 字段下修改数值。
+4. 在 __data__ -> __jenkins.yaml__ -> __jenkins.clouds.kubernetes.containerCapStr__ 字段下修改数值。
 
     ![jenkins001](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/jenkinsadd.png)
 
-5. 更新完成后，前往 **工作负载** 重启 Jenkins。
+5. 更新完成后，前往 __工作负载__ 重启 Jenkins。
