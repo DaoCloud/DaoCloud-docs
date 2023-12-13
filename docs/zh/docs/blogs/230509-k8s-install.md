@@ -15,8 +15,8 @@
 
 ### 确保节点上 MAC 地址和 product_uuid 的唯一性
 
-- 使用命令 `ip link` 或 `ifconfig -a` 来获取网络接口的 MAC 地址
-- 使用 `sudo cat /sys/class/dmi/id/product_uuid` 命令来校验 product_uuid
+- 使用命令 __ip link__ 或 __ifconfig -a__ 来获取网络接口的 MAC 地址
+- 使用 __sudo cat /sys/class/dmi/id/product_uuid__ 命令来校验 product_uuid
 
 一般来讲，硬件设备拥有唯一的地址，但是有些虚拟机的地址可能会重复。
 Kubernetes 使用 MAC 地址和 product_uuid 来确定集群中的唯一节点。
@@ -29,11 +29,11 @@ Kubernetes 使用 MAC 地址和 product_uuid 来确定集群中的唯一节点�
 
 ### 允许 iptables 检查桥接流量
 
-确保 `br_netfilter` 模块被加载。这一操作可以通过运行 `lsmod | grep br_netfilter`
-来完成。若要显式加载该模块，可执行命令 `sudo modprobe br_netfilter`。
+确保 __br_netfilter__ 模块被加载。这一操作可以通过运行 __lsmod | grep br_netfilter__ 
+来完成。若要显式加载该模块，可执行命令 __sudo modprobe br_netfilter__ 。
 
 为了让您的 Linux 节点上的 iptables 能够正确地查看桥接流量，您需要确保在
-`sysctl` 配置中将 `net.bridge.bridge-nf-call-iptables` 设置为 1。例如：
+ __sysctl__ 配置中将 __net.bridge.bridge-nf-call-iptables__ 设置为 1。例如：
 
 ```bash
 cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
@@ -94,7 +94,7 @@ echo "::1       $(hostname)" >> /etc/hosts
 swapoff -a
 ```
 
-如果需要永久关闭，请编辑 `/etc/fstab` 文件，注释掉 Swap 的挂载路径。
+如果需要永久关闭，请编辑 __/etc/fstab__ 文件，注释掉 Swap 的挂载路径。
 
 ### 关闭 Selinux
 
@@ -104,7 +104,7 @@ swapoff -a
 setenforce 0
 ```
 
-如果需要永久关闭，请编辑 `/etc/sysconfig/selinux` 将 `SELINUX=enforcing` 替换为 `SELINUX=disabled`。
+如果需要永久关闭，请编辑 __/etc/sysconfig/selinux__ 将 __SELINUX=enforcing__ 替换为 __SELINUX=disabled__ 。
 
 ### 安装运行时
 
@@ -128,7 +128,7 @@ setenforce 0
 这是必然的，即使您仅安装了 Docker，因为 Docker 18.09 附带了 Containerd，所以两者都是可以检测到的。
 如果检测到其他两个或多个运行时，则 kubeadm 输出错误信息并退出。
 
-kubelet 通过内置的 `dockershim` CRI 实现与 Docker 集成。
+kubelet 通过内置的 __dockershim__ CRI 实现与 Docker 集成。
 
 **对于 Docker**
 
@@ -151,7 +151,7 @@ kubelet 通过内置的 `dockershim` CRI 实现与 Docker 集成。
 **对于 containerd**
 
 containerd 官方默认只提供 amd64 架构的下载包，如果您采用的是其他基础架构，
-可以从 Docker 官方仓库安装 `containerd.io` 软件包。在[安装 Docker 引擎](https://docs.docker.com/engine/install/#server)中
+可以从 Docker 官方仓库安装 __containerd.io__ 软件包。在[安装 Docker 引擎](https://docs.docker.com/engine/install/#server)中
 找到为各自的 Linux 发行版设置 Docker 存储库和安装 containerd.io 软件包的有关说明。
 
 也可以使用以下源代码构建。
@@ -167,7 +167,7 @@ systemctl start containerd && systemctl enable containerd
 
 #### 如果是其它操作系统
 
-默认情况下，kubeadm 使用 docker 作为容器运行时。kubelet 通过内置的 `dockershim` CRI 实现与 Docker 集成。
+默认情况下，kubeadm 使用 docker 作为容器运行时。kubelet 通过内置的 __dockershim__ CRI 实现与 Docker 集成。
 
 **对于 Docker**
 
@@ -190,7 +190,7 @@ systemctl start containerd && systemctl enable containerd
 **对于 containerd**
 
 containerd 官方默认只提供 amd64 架构的下载包，如果您采用的是其他基础架构，
-可以从 Docker 官方仓库安装 `containerd.io` 软件包。在[安装 Docker 引擎](https://docs.docker.com/engine/install/#server)中
+可以从 Docker 官方仓库安装 __containerd.io__ 软件包。在[安装 Docker 引擎](https://docs.docker.com/engine/install/#server)中
 找到为各自的 Linux 发行版设置 Docker 存储库和安装 containerd.io 软件包的有关说明。
 
 也可以使用以下源代码构建。
@@ -476,7 +476,7 @@ systemctl enable kubelet
     kubeadm config images pull --image-repository ${REPOS} --kubernetes-version v${VERSION}
     ```
 
-后续对 kubeadm 的操作都需要加上 `--image-repository` 和 `--kubernetes-version` 以主动指定镜像。
+后续对 kubeadm 的操作都需要加上 __--image-repository__ 和 __--kubernetes-version__ 以主动指定镜像。
 
 ### 初始化控制面节点
 
