@@ -61,22 +61,19 @@ hwameistor-storage-lvm-hdd lvm.hwameistor.io Delete WaitForFirstConsumer true 11
 Run the following command:
 
 ```console
-kubectl get ld
+[root@k8s-master home]# kubectl get ld
 ```
 
 The output is similar to:
 
 ```console
-NAME NODEMATCH CLAIM PHASE
-k8s-worker-1-sda k8s-worker-1 Inuse
-k8s-worker-1-sdb k8s-worker-1 k8s-worker-1 Claimed
-k8s-worker-1-sdc k8s-worker-1 k8s-worker-1 Claimed
-k8s-worker-2-sda k8s-worker-2 Inuse
-k8s-worker-2-sdb k8s-worker-2 k8s-worker-2 Claimed
-k8s-worker-2-sdc k8s-worker-2 k8s-worker-2 Claimed
-k8s-worker-3-sda k8s-worker-3 Inuse
-k8s-worker-3-sdb k8s-worker-3 k8s-worker-3 Claimed
-k8s-worker-3-sdc k8s-worker-3 k8s-worker-3 Claimed
+NAME                                         NODEMATCH    DEVICEPATH   OWNER           PHASE       STATE    AGE
+localdisk-2307de2b1c5b5d051058bc1d54b41d5c   k8s-node1    /dev/sdb     local-storage   Bound       Active   5d23h
+localdisk-311191645ea00c62277fe709badc244e   k8s-node2    /dev/sdb                     Available   Active   5d23h
+localdisk-37a20db051af3a53a1c4e27f7616369a   k8s-master   /dev/sdb                     Available   Active   5d23h
+localdisk-b57b108ad2ccc47f4b4fab6f0b9eaeb5   k8s-node2    /dev/sda     system          Bound       Active   5d23h
+localdisk-b682686c65667763bda58e391fbb5d20   k8s-master   /dev/sda     system          Bound       Active   5d23h
+localdisk-da121e8f0dabac9ee1bcb6ed69840d7b   k8s-node1    /dev/sda     system          Bound       Active   5d23h
 ```
 
 ## Watch `VG` (optional)
