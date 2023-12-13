@@ -16,12 +16,19 @@
 
     ![切换实例](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/space01.png)
 
-1. 点击`镜像回收`页签，点击`创建回收规则`按钮（只有 Harbor 仓库才支持镜像回收）。
+1. 点击`镜像回收`页签，点击`创建回收规则`按钮。
 
     ![点击按钮](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/reclaim01.png)
+
+    !!! Note
+
+        只有 Harbor 仓库才支持镜像回收
+
 
 1. 按提示选择镜像，配置规则。
 
     ![创建规则](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/reclaim02.png)
 
 1. 返回镜像回收列表，点击右侧的 `⋮`，可以禁用、编辑或删除回收规则。
+
+    ![点击按钮](../images/reclaim03.png)

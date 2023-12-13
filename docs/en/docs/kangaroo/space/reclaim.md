@@ -20,12 +20,18 @@ Currently, DCE 5.0 supports up to 15 reclamation rules.
 
     ![Switch Instance](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/space01.png)
 
-2. Click the `Reclaim` tab and click the `Create Reclaim Rule` button (only Harbor repository supports image reclamation).
+2. Click the `Reclaim` tab and click the `Create Reclaim Rule` button.
 
     ![Click Button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/reclaim01.png)
+
+    !!! Note
+
+        Only Harbor repository supports image reclamation
 
 3. Follow the prompts to select the image and configure the rule.
 
     ![Create Rule](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/reclaim02.png)
 
 4. Return to the image reclamation list. Click the `⋮` on the right to disable, edit, or delete the reclamation rule.
+
+    ![Click Button](../images/reclaim03.png)
