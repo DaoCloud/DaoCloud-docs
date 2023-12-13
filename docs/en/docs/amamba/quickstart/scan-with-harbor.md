@@ -8,13 +8,13 @@ This page will introduce how to integrate Harbor in the pipeline and implement i
 
      <!--![]()screenshots-->
 
-2. Select the `Configuration Management` tab, and check `Automatically scan images`.
+2. Select the __Configuration Management__ tab, and check __Automatically scan images__.
 
      <!--![]()screenshots-->
 
 ## Configure the pipeline in Workbench
 
-1. In Workbench, create a pipeline, refer to [Quickly create a pipeline](deploy-pipeline.md), and click `Run Now` after the configuration is complete.
+1. In Workbench, create a pipeline, refer to [Quickly create a pipeline](deploy-pipeline.md), and click __Run Now__ after the configuration is complete.
 
      <!--![]()screenshots-->
 
@@ -26,6 +26,6 @@ This page will introduce how to integrate Harbor in the pipeline and implement i
 
 ## View image security scan information in Harbor
 
-Visit `Project` → `Mirror Warehouse` in turn in Harbor to view the vulnerability information of the mirror.
+Visit __Project__ → __Mirror Warehouse__ in turn in Harbor to view the vulnerability information of the mirror.
 
 <!--![]()screenshots-->

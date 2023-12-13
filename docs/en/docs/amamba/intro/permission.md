@@ -14,7 +14,7 @@ hide:
 Each role has different permissions, as described below.
 
 <!--
-Permissions are indicated with `✅` for granted access and `❌` for denied access.
+Permissions are indicated with __✅__ for granted access and __❌__ for denied access.
 -->
 
 | Object |Operation| Workspace Admin | Workspace Editor | Workspace Viewer |

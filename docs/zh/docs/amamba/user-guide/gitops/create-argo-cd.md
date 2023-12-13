@@ -4,17 +4,17 @@
 
 ## 前提条件
 
-- 需创建一个工作空间和一个用户，该用户需加入该工作空间并赋予  **workspace edit**  角色。
+- 需创建一个工作空间和一个用户，该用户需加入该工作空间并赋予  __workspace edit__  角色。
   参考[创建工作空间](../../../ghippo/user-guide/workspace/workspace.md)、[用户和角色](../../../ghippo/user-guide/access-control/user.md)。
 - 准备一个 Git 仓库，如果持续部署应用的清单文件所在的代码仓库不是公开的，则需要事先将仓库导入至应用工作台，参考[导入仓库](import-repo.md)。
 
 ## 创建 Argo CD 应用
 
-1. 在 **应用工作台** -> **持续发布** 页面中，点击 **创建应用** 按钮。
+1. 在 __应用工作台__ -> __持续发布__ 页面中，点击 __创建应用__ 按钮。
 
     ![创建应用](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/argo01.png)
 
-1. 在 **创建应用** 页面中，分配配置 **基本信息** 、 **部署位置** 、 **代码仓库来源** 和 **同步策略** 后，点击 **确定** 。
+1. 在 __创建应用__ 页面中，分配配置 __基本信息__ 、 __部署位置__ 、 __代码仓库来源__ 和 __同步策略__ 后，点击 __确定__ 。
 
     - 代码仓库来源：
         - 代码仓库：选择已导入的代码仓库或者输入公开的代码仓库地址。例如：https://github.com/argoproj/argocd-example-apps.git
@@ -44,11 +44,11 @@
 
     ![应用详情](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/argo03.png)
 
-1. 由于同步方式选择的是 **手动同步** ，所以我们需要手动进行同步，点击 **同步** 。
+1. 由于同步方式选择的是 __手动同步__ ，所以我们需要手动进行同步，点击 __同步__ 。
 
     ![手动同步](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/argo04.png)
 
-1. 同步过程中具体参数说明请参考[手动同步应用](./sync-manually.md)，点击 **确定** 。
+1. 同步过程中具体参数说明请参考[手动同步应用](./sync-manually.md)，点击 __确定__ 。
 
     ![手动同步](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/argo05.png)
 

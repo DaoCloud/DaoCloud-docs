@@ -12,7 +12,7 @@
 
 请确保已有 SonarQube 环境，并且与当前环境网络联通无问题。
 
-1. 进入 **工具链集成** 页面，点击 **工具链集成** 按钮。
+1. 进入 __工具链集成__ 页面，点击 __工具链集成__ 按钮。
 
     ![tool01](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/tool01.png)
 
@@ -25,25 +25,25 @@
 
     ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/sonarqube11.png)
 
-3. 点击 **确定** ，集成成功返回到工具链列表页面。
+3. 点击 __确定__ ，集成成功返回到工具链列表页面。
 
 ## 创建流水线
 
-1. 在流水线页面，点击 **创建流水线** 。
+1. 在流水线页面，点击 __创建流水线__ 。
 
     ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scanp01.png)
 
-2. 选择 **自定义创建** 。
+2. 选择 __自定义创建__ 。
 
     ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/scanp02.png)
 
-3. 输入名称，其他可使用默认值，点击 **确定** 。
+3. 输入名称，其他可使用默认值，点击 __确定__ 。
 
     ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/sonarqube12.png)
 
 ## 编辑流水线步骤
 
-1. 点击一个流水线进入其详情页面，在右上角点击 **编辑流水线** 。
+1. 点击一个流水线进入其详情页面，在右上角点击 __编辑流水线__ 。
 
     ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/sonarqube13.png)
 
@@ -51,11 +51,11 @@
 
     ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/sonarqube14.png)
 
-3. 图形化界面定义阶段一 **git clone** 如下配置：
+3. 图形化界面定义阶段一 __git clone__ 如下配置：
 
     ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/sonarqube15.png)
 
-4. 图形化界面定义阶段二 **SonarQube analysis** 如下配置：
+4. 图形化界面定义阶段二 __SonarQube analysis__ 如下配置：
 
    - SonarQube 实例：选择上述步骤中集成的 SonaQube 实例。
    - 代码语言：由于不同代码语言对应的 SonaQube 的扫描命令不同，如果 java 语言，请选择 maven，其他语言则选择其他，本示例选择其他。
@@ -70,10 +70,10 @@
 
 ## 查看代码扫描结果
 
-1. 等待流水线运行成功后，在流水线详情页面点击 **代码质量检查** 。
+1. 等待流水线运行成功后，在流水线详情页面点击 __代码质量检查__ 。
 
     ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/sonarqube18.png)
 
-2. 查看代码扫描结果，点击 **查看更多** 可前往 SonarQube 后台查看更多扫描信息。
+2. 查看代码扫描结果，点击 __查看更多__ 可前往 SonarQube 后台查看更多扫描信息。
 
     ![scan](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/sonarqube19.png)

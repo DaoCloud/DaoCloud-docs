@@ -2,7 +2,7 @@
 
 创建好流水线之后，可以根据需要查看流水线详情或更新配置，流水线详情页面包含流水线的运行记录、代码质量扫描。
 
-在 **应用工作台** -> **流水线** 页面，选择某一条流水线，点击流水线的名称。
+在 __应用工作台__ -> __流水线__ 页面，选择某一条流水线，点击流水线的名称。
 
 ![detail-pipeline1](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/detail-pipeline1.png)
 
