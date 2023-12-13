@@ -14,7 +14,7 @@
 - 传统微服务应用直接使用 Pod IP 进行微服务注册
 - 一些场景下业务 IP 为固定的 IP，不会变化
 
-Calico 通过在 Pod 中注入注解: `cni.projectcalico.org/ipAddrs` 可以实现 Pod 级别的 IP 固定，但是 **在使用中我们发现以下不足** :
+Calico 通过在 Pod 中注入注解: __cni.projectcalico.org/ipAddrs__ 可以实现 Pod 级别的 IP 固定，但是 **在使用中我们发现以下不足** :
 
 - 固定 IP 只在 Pod 级别生效，对 Deployment、StatefulSet 类型无能为力；
 - 需要管理员保证 Pod 的注解 IP 是不重叠的，避免出现 IP冲突。尤其是在大规模集群下，难以排查冲突的 IP；
@@ -153,7 +153,7 @@ spec.subnet 表示该 IP 池属于哪一个子网
 
 spec.ips 固定 IP 地址范围，范围为 10.244.120.10-10.244.120.20，共计 10 个 IP
 
-通过注解 `ipam.spidernet.io/ippool` 手动指定 IP 池：nginx-v4-ippool，创建应用：nginx-m：
+通过注解 __ipam.spidernet.io/ippool__ 手动指定 IP 池：nginx-v4-ippool，创建应用：nginx-m：
 
 ```shell
   cat <<EOF | kubectl create -f -
