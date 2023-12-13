@@ -10,7 +10,7 @@ This page describes the features of Global Management.
 1. Users
 
     Having a user account is a prerequisite for users to access the DCE platform.
-    [User](../user-guide/access-control/user.md) is created by Super Admin or IAM Admin in `Global Management` -> `Access Control` -> `Users` page, or connected via LDAP.
+    [User](../user-guide/access-control/user.md) is created by Admin or IAM Owner in `Global Management` -> `Access Control` -> `Users` page, or connected via LDAP.
     Each user has an independent username and password. By granting different permissions to a single or a group of users, users have access to different resources.
 
     ```mermaid

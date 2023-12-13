@@ -93,9 +93,9 @@ To meet the branch division of various departments in the enterprise, DCE introd
 each submodule on the DCE platform, which is the specific data to complete the authorization.
 Usually, resources describe one or more operation objects, and each submodule has its resources and corresponding resource definition details, such as clusters, namespaces, gateways, etc.
 
-The owner of the resource is the main account Super Admin. Super Admin has the authority to
+The owner of the resource is the main account Admin. Admin has the authority to
 create/manage/delete resources in each submodule. Ordinary users will not automatically have
-access to resources without authorization, and Super Admin is required to authorize.
+access to resources without authorization, and Admin is required to authorize.
 Workspace supports authorizing users (groups) to access resources across submodules.
 
 ### Credentials
