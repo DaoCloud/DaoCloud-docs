@@ -1136,6 +1136,7 @@ nav:
   - 博客:
       - 博文索引: blogs/index.md
       - 2023 年:
+          - 202312 | K8s 1.29 发布：宇宙主题雄心勃勃: blogs/231213-k8s-1.29.md
           - 202312 | K8s 裸机 vs 虚机性能对比: blogs/231205-vm-bm-compare.md
           - 202311 | K8s 1.29 前瞻：移除、弃用及重大变更: blogs/231115-k8s-1.29-changes.md
           - 202310 | 上海 K8s 贡献者峰会回顾: blogs/231008-kcs.md
