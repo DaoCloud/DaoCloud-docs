@@ -10,6 +10,10 @@ technology, sorted by date by default.
 
 ## 2023
 
+- [20231213 | Kubernetes 1.29 Released with an Ambious Mandala Theme](./231213-k8s-1.29.md)
+
+    On December 13, 2023, Pacific Time, Kubernetes 1.29 with the theme "Mandala" is officially released.
+
 - [20231115 | Removals, Deprecations, and Major Changes in Kubernetes 1.29](./231115-k8s-1.29-changes.md)
 
     As with every release, Kubernetes v1.29 will introduce feature deprecations and removals.

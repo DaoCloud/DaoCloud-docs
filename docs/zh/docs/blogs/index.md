@@ -9,6 +9,10 @@ hide:
 
 ## 2023 年
 
+- [20231213 | Kubernetes 1.29 发布：宇宙主题雄心勃勃](./231213-k8s-1.29.md)
+
+    太平洋时间 2023 年 12 月 13 日，主题为 Mandala（宇宙）的 Kubernetes 1.29 正式发布。
+
 - [20231205 | Kubernetes：裸机 vs 虚机性能对比](./231205-vm-bm-compare.md)
 
     比较 Kubernetes 运行在虚拟机和裸机上的性能。
