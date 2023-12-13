@@ -173,7 +173,7 @@ hide:
 
 - [20221209 | K8s 1.26 正式发布](221209-k8s-1.26.md)
 
-    Kubernetes 正式发布了主题为 `Electrifying` 的 v1.26。
+    Kubernetes 正式发布了主题为 __Electrifying__ 的 v1.26。
     作为 2022 年最后的一个版本，增加了很多新的功能，同时在稳定性上也得到显著提升，本文从多个角度介绍了 1.26 版本的更新。
 
 - [20221130 | Karmada 资源解释器](https://mp.weixin.qq.com/s/DLDmWRmhM_gMVg1qGnj_fA)
