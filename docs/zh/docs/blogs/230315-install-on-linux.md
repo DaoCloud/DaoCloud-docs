@@ -107,7 +107,7 @@ precheck pass..
     kind v0.17.0 go1.19.2 linux/amd64
     ```
 
-1. 创建 `kind_cluster.yaml` 配置文件。暴露集群内的 32088 端口到 kind 对外的 8888 端口（可自行修改）。
+1. 创建 __kind_cluster.yaml__ 配置文件。暴露集群内的 32088 端口到 kind 对外的 8888 端口（可自行修改）。
 
     ```bash
     cat > kind_cluster.yaml << EOF
@@ -121,7 +121,7 @@ precheck pass..
     EOF
     ```
 
-1. 通过 kind 创建一个名为 `fire-kind-cluster` 的 K8s 集群，以 k8s 1.25.3 为例。
+1. 通过 kind 创建一个名为 __fire-kind-cluster__ 的 K8s 集群，以 k8s 1.25.3 为例。
 
     ```bash
     kind create cluster --image docker.m.daocloud.io/kindest/node:v1.25.3  --name=fire-kind-cluster --config=kind_cluster.yaml 
@@ -179,7 +179,7 @@ precheck pass..
     !!! note
 
         - kind 集群仅支持 NodePort 模式。
-        - 如果是公有云机器，则只能手动指定公网 IP：`./dce5-installer install-app -z -k {公网IP}:8888`
+        - 如果是公有云机器，则只能手动指定公网 IP：__./dce5-installer install-app -z -k {公网IP}:8888__
 
 1. 安装完成后，命令行会提示安装成功。恭喜您！
 

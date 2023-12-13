@@ -38,14 +38,14 @@ Karmada (Kubernetes Armada) 使用户能够跨多个集群运行云原生应用�
 
 Karmada 故障恢复支持两种方式：
 
-- `Duplicated`（全量调度策略）。当满足 pp (propagationPolicy) 限制的未调度的候选集群数量不少于调度失败的集群数量时，将调度失败的集群重新调度到候选集群。
-- `Divided`（副本拆分调度策略）。集群故障时，调度器和控制器配合尝试将故障集群副本迁移到其他运行正常的集群。
+- __Duplicated__（全量调度策略）。当满足 pp (propagationPolicy) 限制的未调度的候选集群数量不少于调度失败的集群数量时，将调度失败的集群重新调度到候选集群。
+- __Divided__（副本拆分调度策略）。集群故障时，调度器和控制器配合尝试将故障集群副本迁移到其他运行正常的集群。
 
-本文以 `Divided` 为例：
+本文以 __Divided__ 为例：
 
 ![Divided](images/karmada02.png)
 
-1. 下载 Karmada 官方 v1.4.2 sourece code 后，使用 `hack/local-up-karmada.sh`，启动本地的 Karmada。
+1. 下载 Karmada 官方 v1.4.2 sourece code 后，使用 __hack/local-up-karmada.sh__，启动本地的 Karmada。
    启动后，自动纳管了三个工作集群，其中集群 member1 和 member2 使用 push 模式，member3 使用 pull 模式。
 
     ```shell
@@ -69,7 +69,7 @@ Karmada 故障恢复支持两种方式：
     ```
 
 2. 在 Karmada 控制平面部署如下的应用配置，可以发现我们定义了一个副本数为 3 的 nginx 的应用，同时定义了一个传播策略。
-   传播策略中，使用 `clusterNames` 的方式指定了集群亲和性，需要调度到集群 member1 和 member2 上。
+   传播策略中，使用 __clusterNames__ 的方式指定了集群亲和性，需要调度到集群 member1 和 member2 上。
    同时在副本调度策略中，采用副本拆分的方式进行调度，遵循 member1 权重为 1，member2 权重为 2 的静态权重方式进行调度。
 
     ```yaml

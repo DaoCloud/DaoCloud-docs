@@ -18,8 +18,8 @@ Kubernetes v1.27 已正式发布，本文也强调了 v1.27 中有助于加快 P
 换言之，kubelet 一次只会向镜像服务发送一个镜像拉取请求。
 其他的镜像拉取请求必须等到正在处理的拉取请求被完成才能进行。
 
-要启用并行镜像拉取，请在 kubelet 配置中将 `serializeImagePulls` 字段设置为 false。
-当 `serializeImagePulls` 被禁用时，将立即向镜像服务发送镜像拉取请求，并可以并行拉取多个镜像。
+要启用并行镜像拉取，请在 kubelet 配置中将 __serializeImagePulls__ 字段设置为 false。
+当 __serializeImagePulls__ 被禁用时，将立即向镜像服务发送镜像拉取请求，并可以并行拉取多个镜像。
 
 ### 设定并行镜像拉取最大值有助于防止节点因镜像拉取而过载
 
@@ -28,8 +28,8 @@ Kubernetes v1.27 已正式发布，本文也强调了 v1.27 中有助于加快 P
 该请求将被阻止，直到其中一个正在进行的镜像拉取完成为止。
 在启用此特性之前，请确保容器运行时的镜像服务可以有效处理并行镜像拉取。
 
-要限制并行镜像拉取的数量，你可以在 kubelet 中配置 `maxParallelImagePulls` 字段。
-将 `maxParallelImagePulls` 的值设置为 **n** 后，并行拉取的镜像数将不能超过 **n** 个。
+要限制并行镜像拉取的数量，你可以在 kubelet 中配置 __maxParallelImagePulls__ 字段。
+将 __maxParallelImagePulls__ 的值设置为 **n** 后，并行拉取的镜像数将不能超过 **n** 个。
 超过此限值的任何其他镜像拉取请求都需要等到至少一个正在进行的拉取被完成为止。
 
 你可以在关联的 KEP 中找到更多细节：
@@ -40,7 +40,7 @@ Kubernetes v1.27 已正式发布，本文也强调了 v1.27 中有助于加快 P
 为了在节点上具有多个 Pod 的场景中加快 Pod 启动，特别是在突然扩缩的情况下，
 kubelet 需要同步 Pod 状态并准备 ConfigMap、Secret 或卷。这就需要大带宽访问 kube-apiserver。
 
-在 v1.27 之前的版本中，`kubeAPIQPS` 的默认值为 5，`kubeAPIBurst` 的默认值为 10。
+在 v1.27 之前的版本中，__kubeAPIQPS__ 的默认值为 5，__kubeAPIBurst__ 的默认值为 10。
 然而在 v1.27 中，kubelet 为了提高 Pod 启动性能，将这些默认值分别提高到了 50 和 100。
 值得注意的是，提高 kubelet 的 API QPS 限值并不是唯一的原因。
 
@@ -48,15 +48,15 @@ kubelet 需要同步 Pod 状态并准备 ConfigMap、Secret 或卷。这就需�
 2. 在大型集群中，它们仍然可能产生相当大的负载，因为数量很多
 3. 有一个专用的 PriorityLevel 和 FlowSchema，这点我们可以轻松控制
 
-以前在具有 50 个以上 Pod 的节点中，我们经常在 Pod 启动期间在 kubelet 上遇到 `volume mount timeout`。
-特别是在使用裸金属节点时，我们建议集群操作员将 `kubeAPIQPS` 提高到 20，`kubeAPIBurst` 提高到 40。
+以前在具有 50 个以上 Pod 的节点中，我们经常在 Pod 启动期间在 kubelet 上遇到 __volume mount timeout__。
+特别是在使用裸金属节点时，我们建议集群操作员将 __kubeAPIQPS__ 提高到 20，__kubeAPIBurst__ 提高到 40。
 
 更多细节请参阅 KEP <https://kep.k8s.io/1040> 和
 [PR#116121](https://github.com/kubernetes/kubernetes/pull/116121)。
 
 ## 事件驱动的容器状态更新
 
-在 v1.27 中，`Evented PLEG`
+在 v1.27 中，__Evented PLEG__
 （PLEG 是英文 Pod Lifecycle Event Generator 的缩写，表示 “Pod 生命周期事件生成器”）
 进阶至 Beta 阶段。Kubernetes 为 kubelet 提供了两种方法来检测 Pod 的生命周期事件，
 例如容器中最后一个进程关闭。在 Kubernetes v1.27 中，**基于事件的** 机制已进阶至 Beta，
@@ -76,7 +76,7 @@ kubelet 需要同步 Pod 状态并准备 ConfigMap、Secret 或卷。这就需�
 该特性使 kubelet 能够在容器、Pod 和 QoS 级别上设置内存 QoS，以便更好地保护和确保内存质量。
 尽管此特性门控有所好处，但如果 Pod 启动消耗大量内存，启用此特性门控可能会影响 Pod 的启动速度。
 
-Kubelet 配置现在包括 `memoryThrottlingFactor`。该因子乘以内存限制或节点可分配内存，
+Kubelet 配置现在包括 __memoryThrottlingFactor__。该因子乘以内存限制或节点可分配内存，
 可以设置 cgroupv2 memory.high 值来执行 MemoryQoS。
 减小该因子将为容器 cgroup 设置较低的上限，同时增加了回收压力。
 提高此因子将减少回收压力。默认值最初为 0.8，并将在 Kubernetes v1.27 中更改为 0.9。
@@ -86,7 +86,7 @@ Kubelet 配置现在包括 `memoryThrottlingFactor`。该因子乘以内存限�
 
 ## 更多说明
 
-在 Kubernetes v1.26 中，新增了一个名为 `pod_start_sli_duration_seconds` 的直方图指标，
+在 Kubernetes v1.26 中，新增了一个名为 __pod_start_sli_duration_seconds__ 的直方图指标，
 用于显示 Pod 启动延迟 SLI/SLO 详情。此外，kubelet 日志现在会展示更多与 Pod 启动相关的时间戳信息，如下所示：
 
 ```

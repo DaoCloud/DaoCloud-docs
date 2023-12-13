@@ -15,8 +15,8 @@ This article takes [KLTS (Kubernetes Long Term Support)](https://klts.io/docs/in
 
 ### Ensure the uniqueness of the MAC address and product_uuid on the node
 
-- Use the command `ip link` or `ifconfig -a` to get the MAC address of the network interface
-- Use `sudo cat /sys/class/dmi/id/product_uuid` command to verify product_uuid
+- Use the command __ip link__ or __ifconfig -a__ to get the MAC address of the network interface
+- Use __sudo cat /sys/class/dmi/id/product_uuid__ command to verify product_uuid
 
 Generally speaking, hardware devices have unique addresses, but the addresses of some virtual machines may be repeated.
 Kubernetes uses the MAC address and product_uuid to identify unique nodes in the cluster.
@@ -29,11 +29,11 @@ We recommend that you pre-add IP routing rules so that Kubernetes clusters can b
 
 ### Allow iptables to inspect bridged traffic
 
-Make sure the `br_netfilter` module is loaded. This can be done by running `lsmod | grep br_netfilter`
-To be done. To explicitly load this module, run the command `sudo modprobe br_netfilter`.
+Make sure the __br_netfilter__ module is loaded. This can be done by running __lsmod | grep br_netfilter__
+To be done. To explicitly load this module, run the command __sudo modprobe br_netfilter__.
 
 In order for iptables on your Linux nodes to properly see bridged traffic, you need to ensure that the
-Set `net.bridge.bridge-nf-call-iptables` to 1 in `sysctl` configuration. For example:
+Set __net.bridge.bridge-nf-call-iptables__ to 1 in __sysctl__ configuration. For example:
 
 ```bash
 cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
@@ -94,7 +94,7 @@ Run the following command to close Swap:
 swapoff -a
 ```
 
-If you need to shut down permanently, please edit the `/etc/fstab` file and comment out the mount path of Swap.
+If you need to shut down permanently, please edit the __/etc/fstab__ file and comment out the mount path of Swap.
 
 ### Shutdown Selinux
 
@@ -104,7 +104,7 @@ Run the following command to shut down Selinux:
 setenforce 0
 ```
 
-To disable permanently, edit `/etc/sysconfig/selinux` and replace `SELINUX=enforcing` with `SELINUX=disabled`.
+To disable permanently, edit __/etc/sysconfig/selinux__ and replace __SELINUX=enforcing__ with __SELINUX=disabled__.
 
 ### Install the runtime
 
@@ -128,7 +128,7 @@ If both Docker and Containerd are detected, Docker will be preferred.
 This is true even if you only have Docker installed, since Docker 18.09 ships with Containerd, so both are detectable.
 If two or more other runtimes are detected, kubeadm outputs an error message and exits.
 
-The kubelet integrates with Docker through the built-in `dockershim` CRI.
+The kubelet integrates with Docker through the built-in __dockershim__ CRI.
 
 **For Docker**
 
@@ -151,7 +151,7 @@ The kubelet integrates with Docker through the built-in `dockershim` CRI.
 **for containerd**
 
 By default, containerd only provides download packages for the amd64 architecture. If you use other infrastructures,
-The `containerd.io` package can be installed from the official Docker repository. In [Install Docker Engine](https://docs.docker.com/engine/install/#server)
+The __containerd.io__ package can be installed from the official Docker repository. In [Install Docker Engine](https://docs.docker.com/engine/install/#server)
 Find instructions on setting up a Docker repository and installing the containerd.io package for your respective Linux distribution.
 
 It can also be built using the following source code.
@@ -167,7 +167,7 @@ systemctl start containerd && systemctl enable containerd
 
 #### If other OS
 
-By default, kubeadm uses docker as the container runtime. The kubelet integrates with Docker through the built-in `dockershim` CRI.
+By default, kubeadm uses docker as the container runtime. The kubelet integrates with Docker through the built-in __dockershim__ CRI.
 
 **For Docker**
 
@@ -189,7 +189,7 @@ By default, kubeadm uses docker as the container runtime. The kubelet integrates
 **for containerd**
 
 By default, containerd only provides download packages for the amd64 architecture. If you use other infrastructures,
-The `containerd.io` package can be installed from the official Docker repository. In [Install Docker Engine](https://docs.docker.com/engine/install/#server)
+The __containerd.io__ package can be installed from the official Docker repository. In [Install Docker Engine](https://docs.docker.com/engine/install/#server)
 Find instructions on setting up a Docker repository and installing the containerd.io package for your respective Linux distribution.
 
 It can also be built using the following source code.
@@ -475,7 +475,7 @@ systemctl enable kubelet
      kubeadm config images pull --image-repository ${REPOS} --kubernetes-version v${VERSION}
      ```
 
-Subsequent operations on kubeadm need to add `--image-repository` and `--kubernetes-version` to actively specify the image.
+Subsequent operations on kubeadm need to add __--image-repository__ and __--kubernetes-version__ to actively specify the image.
 
 ### Initialize control plane nodes
 

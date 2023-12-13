@@ -38,27 +38,27 @@ Prometheus's prometheus.yml can be configured with -promscrape.config
 
 For Prometheus, VictoriaMetrics has some optimizations:
 
-1. Added `extra_label=<label_name>=<label_value>` optional query support, which can be used for query filtering based on extra labels.
-    For example `/api/v1/query_range?extra_label=user_id=123&extra_label=group_id=456&query=<query>`,
-    will return results containing `{user_id="123",group_id="456"}` in the extra tags;
+1. Added __extra_label=<label_name>=<label_value>__ optional query support, which can be used for query filtering based on extra labels.
+    For example __/api/v1/query_range?extra_label=user_id=123&extra_label=group_id=456&query=<query>__,
+    will return results containing __{user_id="123",group_id="456"}__ in the extra tags;
 
-2. Added `extra_filters[]=series_selector` optional query support, which can be used for query filtering based on extended tags for rule matching.
-    For example `/api/v1/query_range?extra_filters[]={env=~"prod|staging",user="xyz"}&query=<query>`,
-    Will return the result containing `{env=~"prod|staging",user="xyz"}` in the extra tag;
+2. Added __extra_filters[]=series_selector__ optional query support, which can be used for query filtering based on extended tags for rule matching.
+    For example __/api/v1/query_range?extra_filters[]={env=~"prod|staging",user="xyz"}&query=<query>__,
+    Will return the result containing __{env=~"prod|staging",user="xyz"}__ in the extra tag;
 
 3. Support "start" and "end", using multiple time formats, such as 1562529662.678, 2022-03-29T01:02:03Z, 2022-03, 1h5m, etc.;
 
-4. Added the round_digits parameter in `/api/v1/query` and `/api/v1/query_range`, which can be used to round the response value to a given number of digits after the decimal point;
+4. Added the round_digits parameter in __/api/v1/query__ and __/api/v1/query_range__, which can be used to round the response value to a given number of digits after the decimal point;
 
-5. Added the limit parameter in `/api/v1/labels` and `/api/v1/label/<labelName>/values` to limit the number of returned entries;
+5. Added the limit parameter in __/api/v1/labels__ and __/api/v1/label/<labelName>/values__ to limit the number of returned entries;
 
-6. Added the limit parameter in `/api/v1/series` to limit the number of returned entries;
+6. Added the limit parameter in __/api/v1/series__ to limit the number of returned entries;
 
-7. Add `/api/v1/series/count` to return the total number of time series in the database;
+7. Add __/api/v1/series/count__ to return the total number of time series in the database;
 
-8. Add `/api/v1/status/active_queries` to return the list of currently running queries;
+8. Add __/api/v1/status/active_queries__ to return the list of currently running queries;
 
-9. Added `/api/v1/status/top_queries` to return the most frequently executed queries of "topByCount";
+9. Added __/api/v1/status/top_queries__ to return the most frequently executed queries of "topByCount";
     Returns "topByAvgDuration" the query with the longest average execution duration; returns "topBySumDuration" the query with the longest execution time.
 
 In addition to supporting Prometheus as a data source, VictoriaMetrics also supports other data sources:
@@ -167,14 +167,14 @@ Multiple identically configured vmagent or Prometheus instance writes data to th
 ### Storage
 
 VictoriaMetrics will store time series data in a MergeTree-like data structure. When inserted, VictoriaMetrics
-Accumulate up to 1s worth of data and dump it to `storageDataPath>/data/small/YYYY_MM/` on disk
-subdirectories, forming a `part with the following name pattern: "rowsCount_blocksCount_minTimestamp_maxTimestamp"`.
+Accumulate up to 1s worth of data and dump it to __storageDataPath>/data/small/YYYY_MM/__ on disk
+subdirectories, forming a __part with the following name pattern: "rowsCount_blocksCount_minTimestamp_maxTimestamp"__.
 Each part consists of two "columns": value and timestamp. These are sorted and compressed raw time series values.
 Additionally, part contains index files for searching for specific series in value and timestamp files.
 
-Parts are periodically merged into larger parts, and the resulting parts are constructed under the `<-storageDataPath>/data/{small,big}/YYYY_MM/tmp` subdirectory.
+Parts are periodically merged into larger parts, and the resulting parts are constructed under the __<-storageDataPath>/data/{small,big}/YYYY_MM/tmp__ subdirectory.
 When the generated part is complete, it is automatically moved from tmp to its own subdirectory, while the source part is automatically deleted. The end result is,
-The source part is replaced by a single larger part in the `<-storageDataPath>/data/{small,big}/YYYY_MM/` directory.
+The source part is replaced by a single larger part in the __<-storageDataPath>/data/{small,big}/YYYY_MM/__ directory.
 
 VictoriaMetrics will not merge parts if the part's summary size exceeds the available disk space. This prevents potential out of disk space errors during the merge.
 In the case of insufficient free disk space, the number of parts may increase significantly over time. This adds overhead during data query,
@@ -194,7 +194,7 @@ Storage or merging will not only save part of the part, the part will be in the 
 ### Monitoring
 
 VictoriaMetrics exports internal metrics in Prometheus exposure format on the "/metrics" page.
-These metrics can be fetched via vmagent or Prometheus. Or, when `-selfScrapeInterval`
+These metrics can be fetched via vmagent or Prometheus. Or, when __-selfScrapeInterval__
 Single-node VictoriaMetrics can self-grab metrics when the command-line flag is set to a duration greater than 0.
 
 VictoriaMetrics exposes currently running queries and their execution times on the "/api/v1/status/active_queries" page.

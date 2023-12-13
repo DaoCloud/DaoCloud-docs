@@ -44,7 +44,7 @@ technology, sorted by date by default.
     The 1.18 release is the second release of Istio in 2023 and the first to support Ambient mode.
 
     This release introduces many new features and changes, including but not limited to Istio in Ambient mode, enhanced Kubernetes Gateway API,
-    health check support for unregistered VMs, added support for metric expiration, and improved `istioctl analyze`.
+    health check support for unregistered VMs, added support for metric expiration, and improved __istioctl analyze__.
 
 - [20230605 | Cloud Native Federation Middleware - FedState Officially Open Sourced](./230605-fedstate.md)
 

@@ -67,7 +67,7 @@ last_updated:
 
 1. 设置内核参数并允许 iptables 进行桥接流量
 
-    加载 `br_netfilter` 模块：
+    加载 __br_netfilter__ 模块：
 
     ```bash
     cat <<EOF | tee /etc/modules-load.d/kubernetes.conf
@@ -79,7 +79,7 @@ last_updated:
     sudo modprobe br_netfilter
     ```
 
-    修改内核参数如 `ip_forward` 和 `bridge-nf-call-iptables`：
+    修改内核参数如 __ip_forward__ 和 __bridge-nf-call-iptables__：
 
     ```bash
     cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
@@ -205,7 +205,7 @@ last_updated:
     sudo kubeadm init --kubernetes-version=v1.25.8 --image-repository=k8s-gcr.m.daocloud.io --pod-network-cidr=192.168.0.0/16
     ```
 
-    经过十几分钟，你能看到打印成功的信息如下（请记住最后打印出的 `kubeadm join` 命令和相应 token，后续会用到 🔥）
+    经过十几分钟，你能看到打印成功的信息如下（请记住最后打印出的 __kubeadm join__ 命令和相应 token，后续会用到 🔥）
 
     ```none
     Your Kubernetes control-plane has initialized successfully!
@@ -267,7 +267,7 @@ last_updated:
 ### 接入其他 worker 工作节点
 
 最后在其他 worker 节点执行 join 命令。
-在上述 master 节点执行 `kubeadm init` 时最后会在屏幕打出（注意三个参数都是跟环境相关的，请勿直接拷贝）
+在上述 master 节点执行 __kubeadm init__ 时最后会在屏幕打出（注意三个参数都是跟环境相关的，请勿直接拷贝）
 
 ```bash
 kubeadm join $第一台master的IP:6443 --token p...7 --discovery-token-ca-cert-hash s....x
@@ -331,7 +331,7 @@ chmod +x ./dce5-installer
 
     - 请在公有云中为其创建外网可达的 IP
     - 请在公有云配置中，在该主机的的防火墙规则中，允许 32088 端口的进出
-    - 如上的 32088 端口是 `kubectl -n istio-system get svc istio-ingressgateway` 的 NodePort 端口
+    - 如上的 32088 端口是 __kubectl -n istio-system get svc istio-ingressgateway__ 的 NodePort 端口
 
     ![image](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/firewall.png)
 
@@ -349,7 +349,7 @@ chmod +x ./dce5-installer
     ./dce5-installer install-app -z -k $外部IP:32088
     ```
 
-    注意：上述的 32088 是 `kubectl -n istio-system get svc istio-ingressgateway` 的 NodePort 端口
+    注意：上述的 32088 是 __kubectl -n istio-system get svc istio-ingressgateway__ 的 NodePort 端口
 
 1. 在浏览器中打开登录界面。
 

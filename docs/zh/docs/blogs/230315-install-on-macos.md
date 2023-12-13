@@ -22,8 +22,8 @@
 调整容器资源上限：
 
 1. 启动 Docker。
-1. 点击右上角的 ⚙️，以打开 `Settings` 页面。
-1. 点击左侧的 `Resources`，将启动容器的资源上限调节到 8C14G，点击 `Apply & Restart` 按钮。
+1. 点击右上角的 ⚙️，以打开 __Settings__ 页面。
+1. 点击左侧的 __Resources__，将启动容器的资源上限调节到 8C14G，点击 __Apply & Restart__ 按钮。
 
 ![调整资源](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/docker.png)
 
@@ -121,7 +121,7 @@ fire-kind-cluster-control-plane   Ready    control-plane   18h   v1.25.3
     docker exec -it fire-kind-cluster-control-plane /bin/bash
     ```
 
-    假定 `VERSION=v0.5.0`
+    假定 __VERSION=v0.5.0__
 
     ```shell
     export VERSION=v0.5.0; 
@@ -138,10 +138,10 @@ fire-kind-cluster-control-plane   Ready    control-plane   18h   v1.25.3
         myIP=$(ip r get 1.1.1.1| awk '{print $NF}')
         ```
 
-        如果报错 `zsh: command not found: ip`，有 2 个方案：
+        如果报错 __zsh: command not found: ip__，有 2 个方案：
 
-        - 执行 `myIP=$(ifconfig en0| grep "inet[ ]" | awk '{print $2}')`
-        - 或通过 `brew install iproute2mac` 这类命令安装 iproute2mac 后重试。
+        - 执行 __myIP=$(ifconfig en0| grep "inet[ ]" | awk '{print $2}')__
+        - 或通过 __brew install iproute2mac__ 这类命令安装 iproute2mac 后重试。
 
     1. 开始安装，大概用时 30 分钟，取决于镜像拉取的网速
 

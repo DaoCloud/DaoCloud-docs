@@ -38,14 +38,14 @@ First of all, let's sort out the necessity of implementing failover:
 
 Karmada failback supports two methods:
 
-- `Duplicated` (full scheduling strategy). When the number of unscheduled candidate clusters meeting the pp (propagationPolicy) limit is not less than the number of failed scheduling clusters, reschedule the failed clusters to candidate clusters.
-- `Divided` (replica split scheduling policy). In the event of a cluster failure, the scheduler and controller cooperate to attempt to migrate copies of the failed cluster to other healthy clusters.
+- __Duplicated__ (full scheduling strategy). When the number of unscheduled candidate clusters meeting the pp (propagationPolicy) limit is not less than the number of failed scheduling clusters, reschedule the failed clusters to candidate clusters.
+- __Divided__ (replica split scheduling policy). In the event of a cluster failure, the scheduler and controller cooperate to attempt to migrate copies of the failed cluster to other healthy clusters.
 
-This article uses `Divided` as an example:
+This article uses __Divided__ as an example:
 
 ![Divided](images/karmada02.png)
 
-1. After downloading the official Karmada v1.4.2 source code, use `hack/local-up-karmada.sh` to start the local Karmada.
+1. After downloading the official Karmada v1.4.2 source code, use __hack/local-up-karmada.sh__ to start the local Karmada.
     After startup, three working clusters are automatically managed, among which clusters member1 and member2 use push mode, and member3 uses pull mode.
 
      ```shell
@@ -69,7 +69,7 @@ This article uses `Divided` as an example:
      ```
 
 2. Deploy the following application configuration on the Karmada control plane. It can be found that we have defined an nginx application with 3 replicas and a propagation strategy.
-    In the propagation strategy, the cluster affinity is specified by `clusterNames`, which needs to be scheduled to cluster member1 and member2.
+    In the propagation strategy, the cluster affinity is specified by __clusterNames__, which needs to be scheduled to cluster member1 and member2.
     At the same time, in the replica scheduling strategy, the replica splitting method is used for scheduling, and the scheduling follows the static weight method of member1 with a weight of 1 and member2 with a weight of 2.
 
      ```yaml
@@ -523,7 +523,7 @@ if needEviction || tolerationTime == 0 {
 }
 ```
 
-It can be noticed that when writing an eviction task, the cluster corresponding to the graceful eviction task will be removed from `rb.spec.clusters`, which means that the scheduling result will be modified. (Here it needs to be emphasized that the scheduling result is the scheduling and distribution cluster selected by Karmada scheduler based on the propagation strategy and cluster situation for resources, and the scheduling result will be recorded in the `spec.clusters` attribute of `rb` (ResourceBinding).) This means that due to cluster failures, the scheduler will be triggered to reschedule, and resources should be evicted from the failed cluster and created on the new cluster.
+It can be noticed that when writing an eviction task, the cluster corresponding to the graceful eviction task will be removed from __rb.spec.clusters__, which means that the scheduling result will be modified. (Here it needs to be emphasized that the scheduling result is the scheduling and distribution cluster selected by Karmada scheduler based on the propagation strategy and cluster situation for resources, and the scheduling result will be recorded in the __spec.clusters__ attribute of __rb__ (ResourceBinding).) This means that due to cluster failures, the scheduler will be triggered to reschedule, and resources should be evicted from the failed cluster and created on the new cluster.
 
 ```go
 // This feature no-(images cluster does not exist.
