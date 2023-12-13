@@ -14,6 +14,11 @@ technology, sorted by date by default.
 
     On December 13, 2023, Pacific Time, Kubernetes 1.29 with the theme "Mandala" is officially released.
 
+- [20231205 | Does Kubernetes Really Perform Better on Bare Metal vs. VMs?](./231205-vm-bm-compare.md)
+
+    Many people presume that a Kubernetes cluster deployed on bare metal performs better than one deployed on
+    virtual machines, but until now there hasn’t been any proof of that assumption.
+
 - [20231115 | Removals, Deprecations, and Major Changes in Kubernetes 1.29](./231115-k8s-1.29-changes.md)
 
     As with every release, Kubernetes v1.29 will introduce feature deprecations and removals.
