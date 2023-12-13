@@ -10,9 +10,9 @@ NAME           STATUS   ROLES   AGE   VERSION
 10-6-234-42   Ready    <none>                 140d   v1.21.11
 ```
 
-## Check Components
+## Check components
 
-The following pods should be up and running:
+The following pods should be running:
 
 ```console
 $ kubectl -n hwameistor get pod
@@ -68,7 +68,7 @@ localvolumesnapshots                 lvs                          hwameistor.io/
 resizepolicies                                                    hwameistor.io/v1alpha1   false        ResizePolicy
 ```
 
-For the details about CRDs, please also refer to [CRDs](../../architecture/apis.md).
+For the details about CRDs, please also refer to [CRDs](../intro/resources.md).
 
 ## Check `LocalDiskNodes` and `LocalDisks`
 
@@ -92,10 +92,10 @@ localdisk-b682686c65667763bda58e391fbb5d20   k8s-master   /dev/sda     Bound    
 localdisk-da121e8f0dabac9ee1bcb6ed69840d7b   k8s-node1    /dev/sda     Bound       28h
 ```
 
-## Check `LocalStorageNodes` and Storage Pools
+## Check `LocalStorageNodes` and pools
 
 HwameiStor automatically generates the LocalStorageNode (i.e. LSN) resource for each node.
-Each LSN will record the resources and status of the node, including Storage Pool, Volumes, etc.
+Each LSN will record the resources and status of the node, including Storage Pool, Volumes...
 
 ```console
 $ kubectl get lsn
@@ -162,7 +162,7 @@ status:
 
 ## Check `StorageClass`
 
-The Operator will automatically create the StorageClasses as following according to the HwameiStor system's configuration (e.g. HA enabled or not, disk type, and more.)
+The Operator will automatically create the `StorageClass` as following according to the HwameiStor system's configuration (e.g. HA enabled or not, disk type, and more.)
 
 ```console
 $ kubectl get sc
