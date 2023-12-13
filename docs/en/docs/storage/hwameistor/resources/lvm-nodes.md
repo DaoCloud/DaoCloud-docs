@@ -4,7 +4,7 @@ The storage system can be expanded by adding storage nodes. In HwameiStor, new s
 
 ## Steps
 
-### 1. Prepare the New Storage Node
+### 1. Prepare the new storage node
 
 Add a new node to the Kubernetes cluster or select an existing cluster node (non-HwameiStor node). The node must meet all the prerequisites mentioned in the [Prerequisites](../install/prereq.md) document. In this example, the details of the new storage node and disk are as follows:
 
@@ -47,7 +47,7 @@ NAME                 IP           ZONE      REGION    STATUS   AGE
 k8s-worker-4   10.6.182.103       default   default   Ready    8d
 ```
 
-### 2. Add the New Storage Node to the HwameiStor System
+### 2. Add the new storage node to the HwameiStor system
 
 To add a storage node, create a LocalStorageClaim resource to build a StorageClass for the new storage node. By doing this, the node will be successfully added to the HwameiStor system. Follow the steps below:
 
@@ -59,6 +59,7 @@ metadata:
   name: k8s-worker-4
 spec:
   nodeName: k8s-worker-4
+  owner: local-storage
   description:
     diskType: SSD
 EOF
