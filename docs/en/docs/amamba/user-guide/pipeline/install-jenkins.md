@@ -3,12 +3,12 @@
 ## Prerequisites
 
 - Before installing Jenkins, make sure there is a default storage class in the cluster where Jenkins will be installed.
-- Please ensure that it is installed in the `amamba-system` namespace.
-- If installing on a global service cluster, make sure to have an instance of `amamba-jenkins` in the `Container Management` -> `Helm Applications`, under the `amamba-system` namespace.
+- Please ensure that it is installed in the __amamba-system__ namespace.
+- If installing on a global service cluster, make sure to have an instance of __amamba-jenkins__ in the __Container Management__ -> __Helm Applications__, under the __amamba-system__ namespace.
 
 ## Getting Started with Installation
 
-1. Go to the `Container Management` module and find the cluster where you want to install Jenkins in the `Cluster List`. Click the name of that cluster.
+1. Go to the __Container Management__ module and find the cluster where you want to install Jenkins in the __Cluster List__. Click the name of that cluster.
 
     !!! note
 
@@ -16,15 +16,15 @@
 
     ![Click Cluster Name](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins11.png)
 
-2. In the left navigation bar, select `Helm Applications` -> `Helm Templates`, and find and click `Jenkins`.
+2. In the left navigation bar, select __Helm Applications__ -> __Helm Templates__, and find and click __Jenkins__.
 
     ![jenkins helm](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins12.png)
 
-3. In the `Version Selection`, choose the desired version of Jenkins to install, and click `Install`.
+3. In the __Version Selection__, choose the desired version of Jenkins to install, and click __Install__.
 
     ![Install](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins13.png)
 
-4. On the installation page, fill in the required installation parameters, and finally click the `OK` button at the bottom right.
+4. On the installation page, fill in the required installation parameters, and finally click the __OK__ button at the bottom right.
 
     ![Fill in Configuration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins14.png)
 
@@ -64,32 +64,32 @@ Note: Currently, only integration with Jenkins installed via the DCE 5.0 platfor
 
     ![Deployment Completed](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins16.png)
 
-2. On the left navigation bar under Platform Management, click `Toolchain Integration` and then click the `Integrate` button in the upper right corner.
+2. On the left navigation bar under Platform Management, click __Toolchain Integration__ and then click the __Integrate__ button in the upper right corner.
 
     ![Deployment Completed](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins17.png)
 
-3. Select the toolchain type as `Jenkins`, fill in the integration name, Jenkins address, username, and password.
-   If the Jenkins address is using the HTTPS protocol, provide the certificate. By default, the account/password for Jenkins deployed through Helm is `admin/Admin01`.
+3. Select the toolchain type as __Jenkins__, fill in the integration name, Jenkins address, username, and password.
+   If the Jenkins address is using the HTTPS protocol, provide the certificate. By default, the account/password for Jenkins deployed through Helm is __admin/Admin01__.
 
     ![Deployment Completed](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins18.png)
 
-4. After the integration is complete, a record will be successfully generated on the `Toolchain List` page.
+4. After the integration is complete, a record will be successfully generated on the __Toolchain List__ page.
 
 
 5. Now you can proceed to create pipelines in the workspace. [Create a pipeline](create/custom.md).
 
 ## Integration Considerations
 
-If the integrated Jenkins instance is deployed on a cluster other than `kpanda-global-cluster`, it will cause the Application Workbench to be unable to update the configuration file of the Jenkins instance (in subsequent versions, integration with the Jenkins instance will require specifying the cluster and namespace it belongs to), leading to the following two issues:
+If the integrated Jenkins instance is deployed on a cluster other than __kpanda-global-cluster__, it will cause the Application Workbench to be unable to update the configuration file of the Jenkins instance (in subsequent versions, integration with the Jenkins instance will require specifying the cluster and namespace it belongs to), leading to the following two issues:
 
-- In the pipeline `notification` step, when configuring the mail server address in Global Management -> Platform Settings -> Email Server Settings, the configuration cannot be updated in Jenkins.
-- In the pipeline `SonarQube Configuration` step, after integrating the SonarQube instance into the toolchain and binding it to the current workspace, using that instance will not work.
+- In the pipeline __notification__ step, when configuring the mail server address in Global Management -> Platform Settings -> Email Server Settings, the configuration cannot be updated in Jenkins.
+- In the pipeline __SonarQube Configuration__ step, after integrating the SonarQube instance into the toolchain and binding it to the current workspace, using that instance will not work.
 
 To address these issues, you need to go to the Jenkins backend for relevant configurations.
 
 ### Configuring Email Notifications in the Jenkins Backend for the Notification Step
 
-1. Go to the Jenkins backend, click on Manage Jenkins -> Configure System, and then scroll down to the `Email Notification` section.
+1. Go to the Jenkins backend, click on Manage Jenkins -> Configure System, and then scroll down to the __Email Notification__ section.
 
 2. Fill in the relevant parameters. The parameter descriptions are as follows:
 
@@ -101,11 +101,11 @@ To address these issues, you need to go to the Jenkins backend for relevant conf
 
     !!! note
 
-        To configure the sender's email address, click on the top-right user icon -> Settings, and then scroll down to `Email Address`.
+        To configure the sender's email address, click on the top-right user icon -> Settings, and then scroll down to __Email Address__.
 
 ### Configuring SonarQube Server Address in the Jenkins Backend for the SonarQube Configuration Step
 
-1. Go to the Jenkins backend, click on Manage Jenkins -> Configure System, and then scroll down to `SonarQube servers`. Click on `Add SonarQube`.
+1. Go to the Jenkins backend, click on Manage Jenkins -> Configure System, and then scroll down to __SonarQube servers__. Click on __Add SonarQube__.
 
 2. Fill in the relevant parameters. The parameter descriptions are as follows:
 

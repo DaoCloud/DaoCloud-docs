@@ -1,18 +1,18 @@
 # Pipeline node (Agent)
 
-Agent describes the entire `pipeline` execution process or the execution environment of a certain `stage`, and must appear at the top of the `description file` or each `stage`.
+Agent describes the entire __pipeline__ execution process or the execution environment of a certain __stage__, and must appear at the top of the __description file__ or each __stage__.
 
 This article describes how to extend the Jenkins Agent running in Kubernetes based on the [Kubernetes plugin for Jenkins](https://plugins.jenkins.io/kubernetes/) plugin.
 
 ## Kubernetes Pod template introduction
 
-This Kubernetes plugin will run a special container `jnlp` in the Jenkins Agent Pod. The purpose is to communicate between the Jenkins Controller and the Jenkins Agent, so you need to define other containers to run the pipeline steps, and you can use the `container` command to Switch between different containers.
+This Kubernetes plugin will run a special container __jnlp__ in the Jenkins Agent Pod. The purpose is to communicate between the Jenkins Controller and the Jenkins Agent, so you need to define other containers to run the pipeline steps, and you can use the __container__ command to Switch between different containers.
 
 ## Use the built-in Label
 
-Workbench declares 6 labels through the podTemplate capability: `base`, `maven`, `go`, `go16`, `node.js` and `python`. You can specify a specific Agent label to use the corresponding podTemplate.
+Workbench declares 6 labels through the podTemplate capability: __base__, __maven__, __go__, __go16__, __node.js__ and __python__. You can specify a specific Agent label to use the corresponding podTemplate.
 
-- Can use go podTemplate via `node('go')` in Jenkinsfile.
+- Can use go podTemplate via __node('go')__ in Jenkinsfile.
 
     ```bash
     pipeline {
@@ -34,7 +34,7 @@ Workbench declares 6 labels through the podTemplate capability: `base`, `maven`,
     }
     ```
 
-- You can also select an Agent whose type is `node` and whose label is `go` on the `Edit Pipeline` page.
+- You can also select an Agent whose type is __node__ and whose label is __go__ on the __Edit Pipeline__ page.
 
     <!--![]()screenshots-->
 
@@ -115,11 +115,11 @@ Workbench declares 6 labels through the podTemplate capability: `base`, `maven`,
 
 If you need to run the Jenkins Agent in a specific environment, you can customize the Jenkins Agent on the pipeline.
 
-1. Select the Agent type as `kubernetes` on the `Edit Pipeline` page.
+1. Select the Agent type as __kubernetes__ on the __Edit Pipeline__ page.
 
     <!--![]()screenshots-->
 
-2. Click `YAML Editor` and fill in the YAML statement in the dialog box, please refer to the following example:
+2. Click __YAML Editor__ and fill in the YAML statement in the dialog box, please refer to the following example:
 
     ```bash
     apiVersion: v1
@@ -140,10 +140,10 @@ If you need to run the Jenkins Agent in a specific environment, you can customiz
         -99d
       ```
 
-3. Enter `golang` in Container as the default container for pipeline operation.
+3. Enter __golang__ in Container as the default container for pipeline operation.
 
     <!--![]()screenshots-->
 
-4. To use other containers of the above examples in other steps of the pipeline, you can select `Specify container` to fill in the required container name.
+4. To use other containers of the above examples in other steps of the pipeline, you can select __Specify container__ to fill in the required container name.
 
     <!--![]()screenshots-->
