@@ -1,4 +1,4 @@
-# Image Scan
+# Scan Image
 
 Downloading an image provides convenience to users. However, downloaded images may not be safe and may contain backdoors that can be maliciously implanted. Therefore, it is essential to scan downloaded images for obtaining security information.
 
@@ -12,7 +12,7 @@ The final scan results should provide more guidance on corrective actions. When 
 
 ## Image Scan Features
 
-DCE 5.0's container registry module supports the following image scanning:
+DCE 5.0 container registry module supports the following image scanning:
 
 - Managed Harbor repositories support Trivy scanning.
 - Native Harbor repositories support Clair and Trivy scanning, depending on what plugins the user has installed.
@@ -23,11 +23,21 @@ When the user scans the image index, all indexed images will be scanned synchron
 
 For integrated repositories, images appear on the list. You can manually scan images on demand.
 
-1. Go to the container registry, enter the image list, select an instance and registry space, and click an image.
+1. Go to the registry space, enter the image list, select an instance and registry space, and click an image.
+
+    ![Image List](../images/scan01.png)
 
 2. In the image details list, click `⋮` on the right side of the list, and select `Scan` from the pop-up menu.
 
-3. The system starts to scan the image, usually displaying the status `queuing`, `scanning`, or `scanning completed`.
+    ![Scan](../images/scan02.png)
+
+3. The system starts to scan the image, usually displaying the status `Queued`, `Scanning`, or `Complete`.
+
+    ![Queued](../images/scan03.png)
+
+    ![Scanning](../images/scan04.png)
+
+    ![Complete](../images/scan05.png)
 
     Scan status includes:
 
@@ -36,9 +46,11 @@ For integrated repositories, images appear on the list. You can manually scan im
     - Queued: The scan task is scheduled but not yet run.
     - Scanning: The scanning task is in progress, and a progress bar is displayed.
     - View log: The scan task failed to complete. Click `View Logs` to view the related logs.
-    - Scan Complete: The scan task completed successfully.
+    - Complete: The scan task completed successfully.
 
 4. After the scan is complete, hover the cursor over the scale bar of the scan to view the scan details.
+
+    ![Details](../images/scan06.png)
 
 ## Scan Native Harbor Images
 
@@ -46,8 +58,12 @@ Integrated native Harbor repositories support scanning by Clair or Trivy.
 
 The specific steps are:
 
-1. Log in to the container registry as a platform administrator and click `registry Integration` at the bottom left.
+1. Log in to the container registry as a platform administrator and click `Registry Management` at the bottom left.
 
-2. In the list of integrated registries, hover the cursor over a certain registry and click the `Native Harbor` icon.
+    ![Integrated Registry](../images/scan07.png)
+
+2. In the list of integrated registry, hover the cursor over a certain registry and click the `Native Harbor` icon.
+
+    ![Go to NHR](../images/scan08.png)
 
 3. Jump to the native Harbor; see [Scanning Harbor images](https://goharbor.io/docs/2.1.0/administration/vulnerability-scanning/scan-individual-artifact/).
