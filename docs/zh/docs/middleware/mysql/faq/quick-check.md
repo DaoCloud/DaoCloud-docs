@@ -5,7 +5,7 @@
 常规的 MySQL 健康状态检查，可以通过一句命令快速查看 MySQL 实例的整体状态:
 
 ```none
-kubectl get pod -n mcamel-system -Lhealthy,role | grep mysql
+kubectl -n mcamel-system get pod -Lhealthy,role | grep mysql
 ```
 
 输出类似于：
