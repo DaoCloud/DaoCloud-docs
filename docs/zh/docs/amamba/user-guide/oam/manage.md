@@ -20,6 +20,10 @@
 
         ![resources](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/oam09.png)
 
+5. 在应用详情页面点击 __应用版本__ 页签，可以查看应用的版本信息，对应用的变更操作都会自动生成版本进行记录，并在需要时可以进行版本回滚。
+
+    ![oam-version](../../images/oam-version.png)
+
 ## 编辑 OAM 应用基本信息
 
 1. 点击 OAM 应用名称，然后在页面右上角点击 __ⵈ__ 选择 __编辑基本信息__ 。
@@ -53,3 +57,15 @@
 2. 参考[内置运维特征列表](https://kubevela.io/zh/docs/end-user/traits/references)更新运维特征属性。
 
     ![add-component](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/oam15.png)
+
+## 应用版本回滚
+
+1. 点击 __应用版本__ 页签，选择某一版本（除当前版本外）右侧点击 __ⵗ__ 选择 __回滚__ 。
+
+    ![rollback01](../../images/rollback01.png)
+
+2. 点击 __确认__ 按钮，回滚成功后会返回列表，并提示。
+
+    ![rollback02](../../images/rollback02.png)
+
+    ![rollback03](../../images/rollback03.png)
