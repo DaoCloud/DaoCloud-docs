@@ -19,7 +19,7 @@ MySQL 的主备关系故障相对比较复杂，基于不同现象，会有不�
 2. 关注 `Ready` 字段值为 `False` 的库 (这里为 `True` 的判断是延迟小于 30s 同步)，查看 MySQL 从库的日志
 
     ```bash
-    [root@master-01 ~]$ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}' | xargs -I {} kubectl logs {} -n mcamel-system -c mysql | grep ERROR
+    kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}' | xargs -I {} kubectl logs {} -n mcamel-system -c mysql | grep ERROR
     ```
 
 当实例状态为 `False` 时，可能存在以下几类故障，可以结合库日志信息排查修复。
