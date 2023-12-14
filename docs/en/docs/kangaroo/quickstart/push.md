@@ -2,7 +2,7 @@
 
 After creating managed Harbor and registry space, you can follow the instructions below to log in and push the image to the container registry or log in to native Harbor to view the guidance provided by native Harbor under each registry space (project).
 
-## Push Method 1
+## Push method 1
 
 **Prerequisites:** Managed Harbor and registry space have been created.
 
@@ -24,7 +24,7 @@ You can build a new container image locally or grab a public image from DockerHu
     docker tag <container registry name>:<artifact version> <container registry address>/<registry space name>/<container registry name>:<artifact version>
     ```
 
-    Example: `docker tag nginx:latest http://test.lrf02.kangaroo.com/library/nginx:latest`
+    Example: `docker tag nginx:latest test.lrf02.kangaroo.com/library/nginx:latest`
 
 3. Push the image to the registry space library using the following command:
 
@@ -32,7 +32,7 @@ You can build a new container image locally or grab a public image from DockerHu
     docker push <container registry address>/<registry space name>/<container registry name>:<artifact version>
     ```
 
-    Example: `docker push http://test.lrf02.kangaroo.com/library/nginx:latest`
+    Example: `docker push test.lrf02.kangaroo.com/library/nginx:latest`
 
 4. Pull the image using the following command:
 
@@ -40,9 +40,9 @@ You can build a new container image locally or grab a public image from DockerHu
     docker pull <container registry address>/<registry space name>/<container registry name>:<artifact version>
     ```
 
-    Example: `docker pull http://test.lrf02.kangaroo.com/library/nginx:latest`
+    Example: `docker pull test.lrf02.kangaroo.com/library/nginx:latest`
 
-## Push Method 2
+## Push method 2
 
 **Prerequisites:** Managed Harbor and registry space have been created.
 
