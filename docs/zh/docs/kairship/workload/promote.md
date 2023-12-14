@@ -9,9 +9,9 @@ status: new
 
 具体操作步骤如下：
 
-1. 点击多云实例的名称，在左侧点击`多云工作负载`，选择`立即体验`新功能。
+1. 点击多云实例的名称，在左侧点击`多云工作负载`，选择`立即转换`新功能。
 
-    ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/promote01.png)
+    ![工作负载](../images/promote01.png)
 
 2. 选择需要将哪个应用转换为多云应用。
 
