@@ -1,8 +1,10 @@
 # OAM 概念介绍
 
-OAM 应用功能基于开源软件 [KubeVela](http://kubevela.net/zh/docs/v1.2/) ，通过开放应用模型（OAM）作为应用交付的顶层抽象，主要是对 Kubernetes 的资源的抽象与整合。
+OAM 应用功能基于开源软件 [KubeVela](http://kubevela.net/zh/docs/v1.2/) ，通过开放应用模型（OAM）作为应用交付的顶层抽象，
+主要是对 Kubernetes 的资源的抽象与整合。
 
 一个 OAM 应用为了实现在混合环境中标准化和高效率的应用交付，由四部分概念组成：
+
 - 一个或多个组件
 - 各项运维动作
 - 应用的执行策略（Policy）
@@ -14,7 +16,7 @@ OAM 应用功能基于开源软件 [KubeVela](http://kubevela.net/zh/docs/v1.2/)
 
 ## 核心组件介绍
 
-仅介绍应用工作台涵盖的核心组件的介绍说明。
+本节仅介绍应用工作台涵盖的核心组件。
 
 ### 组件
 
