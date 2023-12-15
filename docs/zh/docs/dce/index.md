@@ -25,7 +25,7 @@ DCE 5.0 原生支持 DevOps 开发运维模式，可以实现应用交付的全�
 - :material-warehouse: **镜像仓库** [镜像集成和托管服务](../kangaroo/intro/index.md)
 - :material-dot-net: **云原生网络** [多 CNI 融合方案](../network/intro/index.md)
 - :floppy_disk: **云原生存储** [容器化存储综合方案](../storage/index.md)
-- :material-train-car-container: **虚拟机容器** [容器化的虚拟机](../virtnest/intro/index.md)
+- :material-train-car-container: **虚拟机** [容器化的虚拟机](../virtnest/intro/index.md)
 - :material-monitor-dashboard: **可观测性** [一站式图形化仪表盘](../insight/intro/index.md)
 - :material-engine: **微服务引擎** [微服务治理中心和网关](../skoala/intro/index.md)
 - :material-table-refresh: **服务网格** [非侵入式服务治理](../mspider/intro/index.md)
