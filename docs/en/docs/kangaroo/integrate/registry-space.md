@@ -3,7 +3,7 @@ hide:
    - toc
 ---
 
-# Registry space
+# Create Registry Space
 
 Harbor provides the image isolation feature based on the registry space (project). There are two types of registry spaces: public and private:
 
@@ -28,7 +28,11 @@ Prerequisite: An external Harbor registry has been created or integrated.
 
     ![filling](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/reg-space02.png)
 
-1. Return to the list of registry spaces, find the newly created registry space, click `⋮` on the right, you can perform [bind/unbind workspace](./bind-to-ws.md), delete and other operations.
+1. Return to the list of registry spaces, showing `Created registry space successfully`.
+
+    ![successful](../images/reg-space03.png)
+
+1. Find the newly created registry space, click `⋮` on the right, you can perform [bind/unbind workspace](./bind-to-ws.md), delete and other operations.
 
     ![filling](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/reg-space03.png)
 
@@ -39,4 +43,4 @@ Prerequisite: An external Harbor registry has been created or integrated.
      - If the status of the registry space is `private`, the registry space can only be used by the Kubernetes namespace
        under the workspace (tenant) after the administrator Admin binds the registry space to one or more workspaces (tenants).
 
-Next step: [Bind Workspace](./bind-to-ws.md)
+Next step: [Bind/Unbind Workspace](./bind-to-ws.md)
