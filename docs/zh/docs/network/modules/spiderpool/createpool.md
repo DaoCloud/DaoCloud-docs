@@ -64,7 +64,7 @@ hide:
 
     - `自定义路由`：当用户有特殊路由需求时，可基于 IP 池粒度的进行自定义。
     
-    - `Multus 实例`：Multus CNI 中的具体配置实例，可添加多个，添加后 创建的 `IPPool` 和 `Multus 实例`进行关联。创建应用时选择 Multus 实例仅可使用已关联的 IPPool ，更多信息可参考：[SpiderIPPool Affinity](https://spidernet-io.github.io/spiderpool/v0.8/usage/spider-affinity-zh_CN/#ippool_3 )。
+    - `Multus 实例`：Multus CNI 中的具体配置实例，可添加多个，添加后 创建的 `IPPool` 和 `Multus 实例`进行关联。[创建应用时选择 Multus 实例仅可使用已关联的 IPPool](usage.md) ，更多信息可参考：[SpiderIPPool Affinity](https://spidernet-io.github.io/spiderpool/v0.8/usage/spider-affinity-zh_CN/#ippool_3 )。
 
     - `工作负载亲和性`：工作负载标签（如 `app: workload01`）。IP 池创建后，仅可被对应的工作负载选择，实现固定 IP 池效果。
 
