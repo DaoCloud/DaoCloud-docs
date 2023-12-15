@@ -102,7 +102,9 @@ nav:
                   - Argo CD Application Status: amamba/user-guide/gitops/argo-cd-status.md
               - Canary Release:
                   - Create Canary Release: amamba/user-guide/release/canary.md
-                  - Check Canary Release: amamba/user-guide/release/check-canary.md
+                  - View Canary Release: amamba/user-guide/release/check-canary.md
+                  - Create Blue/Green Job: amamba/user-guide/release/blue-green.md
+                  - View Blue/Green Job: amamba/user-guide/release/check-bluegreen.md
               - Toolchain Integration:
                   - Integrated Toolchain: amamba/user-guide/tools/integrated-toolchain.md
                   - Manage Toolchain Instances: amamba/user-guide/tools/toolchain-instances.md
