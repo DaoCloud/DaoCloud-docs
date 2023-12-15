@@ -24,7 +24,7 @@
     - 无状态负载：选择具体的发布对象。
     - Service：选择发布对象的服务，该服务必须关联了该发布对象。
 
-        ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/blue-green02.png)
+    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/blue-green02.png)
 
 3. 系统自动跳转至灰度发布的任务列表页面，提示 __创建成功__ ，并成功在列表生成一条记录。
 
