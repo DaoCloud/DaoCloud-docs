@@ -33,28 +33,26 @@ hide:
 3. 进入`容器网卡配置`页面，完成以下参数的配置：
 
     - `网卡信息`: 若创建的应用容器需要使用多张网卡（如一张东西向通信，一张南北向通信），可以添加多网卡。
-
         - eth0（默认网卡）：默认为 Overlay CNI，可选 Calico/Cilium/Macvlan CR，设置前请确认[Multus CR 已创建](../../config/multus-cr.md)。当 eth0（默认网卡）设置为 Underlay CNI，如 Macvlan 时，net1，net2 等新增网卡只能选择 Underlay CNI。
-
+        
         - net1: 可选择 Underlay CNI 配置，如 Macvlan/SR-IOV ，本文示例为 Macvlan。
-
+        
     - `IP 池配置`：Underlay CNI IP 分配的规则。
-
-        - `创建固定 IP 池`： 开启后，只需要为新增的容器网卡（net1、net2、net3）选择对应子网，工作负载在部署时会自动创建固定 IP 池，部署后容器网卡仅能使用此 IP 池中的地址。
-
-        - `弹性 IP`: 开启后，IP 池中的 IP 数量会根据设置的弹性 IP 数量变动。最大可用 IP 数等于 Pod 副本数 + 弹性 IP 数量。Pod 扩容时IP 池也随之进行扩容。
-
-        - `自定义路由`：当应用创建有特殊路由需求时，可添加自定义路由。
-
-        - `网卡 IP 池`：选择对应网卡待使用的子网或对应 IP 池。
-
-        - `使用默认 IP 池`：开启后，会为新增的容器网卡（eth0、net1、net2）全部选择好默认的 IP 池。
+    - `创建固定 IP 池`： 开启后，只需要为新增的容器网卡（net1、net2、net3）选择对应子网，工作负载在部署时会自动创建固定 IP 池，部署后容器网卡仅能使用此 IP 池中的地址。
+        
+    - `弹性 IP`: 开启后，IP 池中的 IP 数量会根据设置的弹性 IP 数量变动。最大可用 IP 数等于 Pod 副本数 + 弹性 IP 数量。Pod 扩容时IP 池也随之进行扩容。
+        
+    - `自定义路由`：当应用创建有特殊路由需求时，可添加自定义路由。
+        
+    - `网卡 IP 池`：选择对应网卡待使用的子网或对应 IP 池。
+        
+    - `使用默认 IP 池`：开启后，会为新增的容器网卡（eth0、net1、net2）全部选择好默认的 IP 池。
 
     工作负载使用 IP 池有如下两种方式，两种方式的使用场景及流程差异可参考：[IP 池的使用说明](ippoolusage.md)
 
     **手动选择已有的 IP 池**
 
-    手动选择 IP 池需要提前创建 IP 池，可选择 IP 池范围为：`共享 IP 池`，添加了当前`应用亲和性的 IP 池`，添加了当前`命名空间亲和性的 IP 池`。
+    手动选择 IP 池需要提前创建 IP 池，可选择 IP 池范围为： [已关联所选择 的Multus CNI 配置的 IPPool](createpool.md) ，可以是：`共享 IP 池`，添加了当前`应用亲和性的 IP 池`，添加了当前`命名空间亲和性的 IP 池`。
 
     ![手动选择](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/useippool03.png)
 
