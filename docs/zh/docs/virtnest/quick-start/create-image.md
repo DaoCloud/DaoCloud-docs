@@ -2,7 +2,7 @@
 
 本文将介绍如何通过镜像和 YAML 文件两种方式创建虚拟机。
 
-虚拟机容器基于 KubeVirt 技术将虚拟机作为云原生应用进行管理，与容器无缝地衔接在一起，
+虚拟机基于 KubeVirt 技术将虚拟机作为云原生应用进行管理，与容器无缝地衔接在一起，
 使用户能够轻松地部署虚拟机应用，享受与容器应用一致的丝滑体验。
 
 ## 前提条件
@@ -18,9 +18,9 @@
 
 参考以下步骤，使用镜像创建一个虚拟机。
 
-1. 点击左侧导航栏上的`容器管理`，然后点击`虚拟机容器`，进入`虚拟机管理`页面。
+1. 点击左侧导航栏上的`容器管理`，然后点击`虚拟机`，进入`虚拟机管理`页面。
 
-    ![虚拟机容器](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/createvm01.png)
+    ![虚拟机](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/createvm01.png)
 
 2. 在虚拟机列表页面，点击创建虚拟机 - 选择镜像创建虚拟机。
 
@@ -101,7 +101,7 @@
 
 除了通过镜像方式外，还可以通过 YAML 文件更快速地创建创建虚拟机。
 
-进入虚拟机容器列表页，点击 `通过 YAML 创建`按钮
+进入虚拟机列表页，点击 `通过 YAML 创建`按钮
 
 ![yaml 创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/createvm09.png)
 
