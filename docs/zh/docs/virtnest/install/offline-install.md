@@ -1,10 +1,10 @@
-# 离线升级虚拟机容器模块
+# 离线升级虚拟机模块
 
-本页说明从[下载中心](../../download/index.md)下载虚拟机容器模块后，应该如何安装或升级。
+本页说明从[下载中心](../../download/index.md)下载虚拟机模块后，应该如何安装或升级。
 
 !!! info
 
-    下述命令或脚本内出现的 `virtnest` 字样是虚拟机容器模块的内部开发代号。
+    下述命令或脚本内出现的 `virtnest` 字样是虚拟机模块的内部开发代号。
 
 ## 从安装包中加载镜像
 
@@ -106,7 +106,7 @@
 
 === "通过 helm repo 升级"
 
-    1. 检查虚拟机容器 helm 仓库是否存在。
+    1. 检查虚拟机 helm 仓库是否存在。
 
         ```shell
         helm repo list | grep virtnest
@@ -118,13 +118,13 @@
         Error: no repositories to show
         ```
 
-    1. 添加虚拟机容器的 helm 仓库。
+    1. 添加虚拟机的 helm 仓库。
 
         ```shell
         helm repo add virtnest http://{harbor url}/chartrepo/{project}
         ```
 
-    1. 更新虚拟机容器的 helm 仓库。
+    1. 更新虚拟机的 helm 仓库。
 
         ```shell
         helm repo update virtnest # (1)
@@ -132,7 +132,7 @@
 
         1. helm 版本过低会导致失败，若失败，请尝试执行 helm update repo
 
-    1. 选择您想安装的虚拟机容器版本（建议安装最新版本）。
+    1. 选择您想安装的虚拟机版本（建议安装最新版本）。
 
         ```shell
         helm search repo virtnest/virtnest --versions
@@ -147,7 +147,7 @@
 
     1. 备份 `--set` 参数。
 
-        在升级虚拟机容器版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
+        在升级虚拟机版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
 
         ```shell
         helm get values virtnest -n virtnest-system -o yaml > bak.yaml
@@ -180,7 +180,7 @@
 
     1. 备份 `--set` 参数。
 
-        在升级虚拟机容器版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
+        在升级虚拟机版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
 
         ```shell
         helm get values virtnest -n virtnest-system -o yaml > bak.yaml
