@@ -1,27 +1,27 @@
-# deployment strategy
+# Propagation Policies
 
-Multicloud Management supports viewing the deployment policy list of the current instance and its associated multicloud resources on the interface, supports creating and editing deployment policy information in the form of YAML and forms, and only provides a delete button for idle deployment policies.
+Multicloud Management supports viewing the propagation policy list of the current instance and its associated multicloud resources on the interface, supports creating and editing propagation policy information in the form of YAML and forms, and only provides a delete button for idle propagation policies.
 
-Deployment policies define how resources are distributed across multicloud and multicluster. Deployment policy (PropagationPolicy) is divided into namespace level and cluster level.
+Propagation policies define how resources are distributed across multicloud and clusters. Propagation Policy is divided into Namespace Scope and Cluster Scope.
 
-- Namespace-level deployment policy (PropagationPolicy) represents a policy that propagates a set of resources to one or more member clusters, and can only propagate resources in its own namespace.
-- A cluster-level deployment policy (ClusterPropagationPolicy) represents a cluster-wide policy for propagating a set of resources to one or more member clusters, capable of propagating cluster-level resources and resources in any namespace other than the system-reserved namespace.
+- Namespace Propagation Policy represents a policy that propagates a set of resources to one or more member clusters, and can only propagate resources in its own namespace.
+- Cluster Propagation Policy represents a cluster-wide policy for propagating a set of resources to one or more member clusters, capable of propagating cluster-level resources and resources in any namespace other than the system-reserved namespace.
 
-## YAML creation
+## Create from YAML
 
-1. After entering a multicloud instance, in the left navigation bar, click `Policy Management` -> `Deployment Policy` -> `Namespace Level`, and click the `YAML Create` button in the upper right corner.
+1. After entering a multicloud instance, in the left navigation bar, click `Policy Management` -> `Propagation Policies` -> `Namespace Scope`, and click the `Create from YAML` button in the upper right corner.
 
-    <!--screenshot-->
+    ![Namespace YAML PP](../images/pp01.png)
 
-2. On the `YAML Creation` page, after entering the correct YAML statement, click `OK`.
+2. On the `Create from YAML` page, after entering the correct YAML statement, click `OK`.
 
-    <!--screenshot-->
+    ![Input YAML](../images/pp02.png)
 
-3. Return to the deployment policy list, and the newly created one is the first one by default. Click `⋮` on the right side of the list to edit YAML and perform delete operations.
+3. Return to the propagation policy list, and the newly created one is the first one by default. Click `⋮` on the right side of the list to edit YAML and perform delete operations.
 
 ## YAML example
 
-Here is an example YAML for a deployment policy that you can use with a little modification.
+Here is an example YAML for a propagation policy that you can use with a little modification.
 
 ```yaml title="YAML example"
 kind: PropagationPolicy
@@ -56,22 +56,22 @@ spec:
         tolerationSeconds: 300
 ```
 
-## Form Creation
+## Create Propagation Policy
 
-1. Follow the steps below to create a deployment policy.
+1. Follow the steps below to create a propagation policy.
 
-    - Basic configuration: fill in the name, select the multicloud namespace, and add label annotations
-    - Configure resources: select multicloud resources and target deployment clusters
-    - Deployment strategy: Scheduling type, taint tolerance, you can choose whether to enable propagation constraints, support filling in priority (deployment strategy can also be created at the same time when creating resources, when the deployment strategy is also created on this page, you can choose according to the priority level to determine which deployment strategy the resource uses)
+    - Basic Settings: fill in the name, select the multicloud namespace, and add label annotations
+    - Resource Quotas: select multicloud resources and target deployment clusters
+    - Propagation Policies: Scheduling type, taint tolerance, you can choose whether to enable spread constraints, support filling in priority (propagation policy can also be created at the same time when creating resources, when the propagation policy is also created on this page, you can choose according to the priority level to determine which propagation policy the resource uses)
 
-    <!--screenshot-->
+    ![Create Namespace PP](../images/pp-new01.png)
 
-    <!--screenshot-->
+    ![Fill the Form](../images/pp-new02.png)
 
-2. The form creates a cluster-level deployment strategy without selecting a namespace.
+2. The form creates a cluster scope propagation policy without selecting a namespace.
 
-    <!--screenshot-->
+    ![Create Cluster PP](../images/pp-new03.png)
 
     !!! note
 
-        If you want to delete a deployment policy, you need to remove the workload related to the policy first. After the deletion, all the information related to the policy will be deleted. Please operate with caution.
+        If you want to delete a propagation policy, you need to remove the workload related to the policy first. After the deletion, all the information related to the policy will be deleted. Please operate with caution.
