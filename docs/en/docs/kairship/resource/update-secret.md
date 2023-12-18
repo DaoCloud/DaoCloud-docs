@@ -1,17 +1,17 @@
-# update the multicloud key
+# Update Multicloud Secret
 
 Currently, two update methods are provided: editing YAML and form update.
 
-1. After entering a multicloud instance, in the left navigation bar, click `Resource Management` -> `multicloud Key`, click `···` to edit YAML or update the key.
+1. After entering a multicloud instance, in the left navigation bar, click `Resource Management` -> `Multicloud Secret`, click `⋮` to edit YAML or update the secret.
 
-    <!--screenshot-->
+    ![Secret List](../images/update-secret01.png)
 
-2. In the `Edit YAML` pop-up window, modify the YAML information, click OK to update the key.
+2. In the `Edit YAML` pop-up window, modify the YAML information, click `OK` to update the secret.
 
-    <!--screenshot-->
+    ![Edit YAML](../images/update-secret02.png)
 
-3. Click Update, you can update it through the form, but the name, multicloud namespace, and key type cannot be updated.
+3. Click `Update`, you can update it through the form, but the name, multicloud namespace, and secret type cannot be updated.
 
-    <!--screenshot-->
+    ![Update](../images/update-secret03.png)
 
-4. After completing the content that needs to be modified, click OK, and the update is successful.
+4. After completing the content that needs to be modified, click `OK`, and the update is successful.
