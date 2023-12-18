@@ -24,7 +24,7 @@ nav:
               - 安装社区版:
                   - 资源规划: install/community/resources.md
                   - 从零部署 Kind 集群到安装 DCE 5.0 社区版: install/community/kind/online.md
-                  - 从零部署 K8s 集群到安装 DCE 5.0 社区版: install/community/kind/k8s-dce-deploy.md
+                  - 从零部署 K8s 集群到安装 DCE 5.0 社区版: install/community/k8s/k8s-dce-deploy.md
                   - 已有 K8s 集群在线安装: install/community/k8s/online.md
                   - 已有 K8s 集群离线安装: install/community/k8s/offline.md
               - 安装商业版:
