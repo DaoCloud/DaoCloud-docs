@@ -55,7 +55,7 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
 
     **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)、信创异构
 
-    ![多云](../docs/images/kairship.png)
+    ![多云](../images/kairship.png)
 
 === "数据中间件服务"
 
@@ -114,7 +114,7 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
 
     **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)、[云边协同](kant/intro/index.md)
 
-    ![云边协同架构图](../docs/images/09cloud-edge-update.png)
+    ![云边协同架构图](../images/09cloud-edge-update.png)
 
 === "虚拟机"
 
@@ -122,7 +122,7 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
 
     **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)
 
-    ![虚拟机](../docs/images/virtnest.png)
+    ![虚拟机](../images/virtnest.png)
 
 在成功获取[许可证授权](./dce/license0.md)后，首次登录 DCE 5.0 将会呈现一个仪表盘。
 该仪表盘以直观的方式展示了各种信息，包括正在运行的容器和 Pod、CPU 和内存使用情况、集群/节点/Pod 的健康状态、告警信息、资源利用情况以及功能一览等内容。
