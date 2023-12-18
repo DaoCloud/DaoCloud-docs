@@ -631,7 +631,8 @@ nav:
       - 微服务:
           - 微服务引擎:
               - 介绍:
-                  - 功能总览: skoala/intro/index.md
+                  - 索引: skoala/intro/index.md
+                  - 功能总览: skoala/intro/features.md
                   - 使用场景: skoala/intro/scenarios.md
                   - 产品优势: skoala/intro/advantages.md
                   - Release Notes: skoala/intro/release-notes.md
