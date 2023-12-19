@@ -41,7 +41,7 @@ MultiCloud Management module has the following features:
 
 - **kubectl CLI**
 
-    You can use kubectl commands in the cloud shell to get the `kubeconfig` information so that users can manage the multicloud instance locally.
+    You can use kubectl commands in the cloud shell to get the __kubeconfig__ information so that users can manage the multicloud instance locally.
 
 ## MultiCloud Workloads
 

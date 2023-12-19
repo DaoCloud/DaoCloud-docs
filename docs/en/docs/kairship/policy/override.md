@@ -8,15 +8,15 @@ Multicloud Management supports differentiated strategies, supports viewing the l
 
 Follow the steps below to create a differentiation strategy using YAML.
 
-1. After entering a multicloud instance, in the left navigation bar, click `Policy Management` -> `Differential Policy`, and click the `YAML Create` button.
+1. After entering a multicloud instance, in the left navigation bar, click __Policy Management__ -> __Differential Policy__ , and click the __Create from YAML__ button.
 
      <!--screenshot-->
 
-2. On the `YAML Creation` page, after entering the correct YAML statement, click `OK`.
+2. On the __Create from YAML__ page, after entering the correct YAML statement, click __OK__ .
 
      <!--screenshot-->
 
-3. Return to the deployment policy list, and the newly created one is the first one by default. Click `⋮` on the right side of the list to edit YAML and perform delete operations.
+3. Return to the deployment policy list, and the newly created one is the first one by default. Click __⋮__ on the right side of the list to edit YAML and perform delete operations.
 
      !!! note
 
@@ -53,7 +53,7 @@ spec:
 
 Follow the steps below to create a differentiation strategy.
 
-1. Go to the namespace-level menu and click the `Create Differentiation Policy` button.
+1. Go to the namespace-level menu and click the __Create Differentiation Policy__ button.
 
 2. Enter the form creation page. To create a complete differentiated strategy, you need to configure three parts: basic configuration, resource configuration, and differentiated strategy.
 
@@ -101,7 +101,7 @@ Next, we will introduce the differentiation strategies in detail, which are divi
          | :-------- | :--- | :--------------------------------- -------------------------- | :---------------------- -- |
          | Component | is | Image component | Registry, Repository, Tag |
          | Operator | is | the operation on the image | add, remove, replace |
-         | Value | No | When the Operator is `add` or `replace`, it cannot be empty, and it is empty by default; when the operator is `remove`, leave it blank. | |
+         | Value | No | When the Operator is __add__ or __replace__ , it cannot be empty, and it is empty by default; when the operator is __remove__ , leave it blank. | |
 
 2. When ArgsOverrider is selected: Differential configuration of running parameters.
 
@@ -113,7 +113,7 @@ Next, we will introduce the differentiation strategies in detail, which are divi
          | :------------ | :--- | :---------------------------- ------------------------------ | :---------- |
          | ContainerName | is | container name | |
          | Operator | is | the operation to apply on args | add, remove |
-         | Value | No | The value to apply to args. When the operator is `add`, the value is appended to args; when the operator is `remove`, the value is removed from args; if the value is empty, args remains as it is. | |
+         | Value | No | The value to apply to args. When the operator is __add__ , the value is appended to args; when the operator is __remove__ , the value is removed from args; if the value is empty, args remains as it is. | |
 
 3. When CommandOverrider is selected: Run the differential configuration of the command.
 
@@ -125,7 +125,7 @@ Next, we will introduce the differentiation strategies in detail, which are divi
          | :------------ | :--- | :---------------------------- ------------------------------ | :------------------ ------------------ |
          | ContainerName | is | container name | |
          | Operator | is | the operation applied to the command | add, remove |
-         | Value | No | The value applied to the command. When the operator is `add`, the value is appended to the command; when the operator is `remove`, the value is removed from the command; if the value is empty, the command remains as it is. | You can add single or multiple values, use `;` to divide multiple values |
+         | Value | No | The value applied to the command. When the operator is __add__ , the value is appended to the command; when the operator is __remove__ , the value is removed from the command; if the value is empty, the command remains as it is. | You can add single or multiple values, use __;__ to divide multiple values |
 
 4. When PlainText is selected: Custom differentiated configuration.
 
@@ -136,7 +136,7 @@ Next, we will introduce the differentiation strategies in detail, which are divi
          | Field | Required | Description | Example |
          | :------- | :--- | :---------------------------------- ------------------------- | :------------------- |
          | Path | is | the path to the target field | |
-         | Operator | is | the type of operation on the target field | add, remove, replace || Value | No | The value to apply to the target field, when Operator is `remove`, this field must be empty | |
+         | Operator | is | the type of operation on the target field | add, remove, replace || Value | No | The value to apply to the target field, when Operator is __remove__ , this field must be empty | |
 
 5. When LabelsOverrider is selected: Label differentiation configuration.
 

@@ -11,15 +11,15 @@ Secret 类似于 ConfigMap 但专门用于保存机密数据。
 
 目前提供了两种创建方式：向导创建和 YAML 创建。本文以向导创建为例，参照以下步骤操作。
 
-1. 进入某一个多云实例后，在左侧导航栏中，点击`资源管理` -> `多云密钥`，点击右上角的`创建密钥`按钮。
+1. 进入某一个多云实例后，在左侧导航栏中，点击 __资源管理__ -> __多云密钥__ ，点击右上角的 __创建密钥__ 按钮。
 
     ![点击按钮](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/secret01.png)
 
-2. 在`创建密钥`页面中，输入名称，选择命名空间等信息后，点击`确定`。
+2. 在 __创建密钥__ 页面中，输入名称，选择命名空间等信息后，点击 __确定__ 。
 
     ![填写表单](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/secret02.png)
 
-3. 返回多云密钥列表，新创建的默认位于第一个。点击列表右侧的 `⋮`，可以编辑 YAML、更新、导出和删除 Secret。
+3. 返回多云密钥列表，新创建的默认位于第一个。点击列表右侧的 __⋮__ ，可以编辑 YAML、更新、导出和删除 Secret。
 
     ![其他操作](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/secret03.png)
 

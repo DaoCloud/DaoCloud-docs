@@ -98,7 +98,7 @@ so that you can understand the evolution path and feature changes of each versio
 
 - Overview of expected scheduling clusters on the resource details page.
 - Occasional failure of kairship-proxy.
-- No arm64 vesions of `cffssl` and `kubectl`.
+- No arm64 vesions of __cffssl__ and __kubectl__ .
 
 #### Improvements
 
@@ -108,7 +108,7 @@ so that you can understand the evolution path and feature changes of each versio
 #### Upgrades
 
 - `@dao-style/extend` to v1.2.1.
-- `cloudtty` API to v0.5.2.
+- cloudtty API to v0.5.2.
 
 ## 2023-04-27
 
@@ -123,7 +123,7 @@ so that you can understand the evolution path and feature changes of each versio
 
 #### Bug Fixes
 
-- If the deployment policy is the CR resource type, `kind` is not automatically filled
+- If the deployment policy is the CR resource type, __kind__ is not automatically filled
 
 #### Others
 

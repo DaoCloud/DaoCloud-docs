@@ -9,11 +9,11 @@ This section will take the stateless load nginx as an example to introduce how t
 
 ## One-click transfer
 
-1. Go to `multicloud Instance - Workload Management`, click `Connect to Cluster` and choose to connect the DCE4 cluster to the multicloud instance.
+1. Go to __Multicloud Instance - Workload Management__ , click __Connect to Cluster__ and choose to connect the DCE4 cluster to the multicloud instance.
 
     <!--screenshot-->
 
-2. Enter `multicloud Workload - Stateless Load`, click Experience Now, select the target application, and its associated service will be automatically selected, and the associated configuration items and keys will also be converted synchronously.
+2. Enter __Multicloud Workload - Deployment__ , click Experience Now, select the target application, and its associated service will be automatically selected, and the associated configuration items and keys will also be converted synchronously.
 
     <!--screenshot-->
 
