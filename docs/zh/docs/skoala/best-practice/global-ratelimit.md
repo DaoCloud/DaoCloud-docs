@@ -18,148 +18,148 @@ kubectl apply -f gateway-rls.yaml -n plugin-ns
 
 ??? note "默认的限流服务器"
 
-  ```yaml title="gateway-rls.yaml"
-  ---
-  # NOTE: this deployment is intended for demonstrating global
-  # rate limiting functionality only and should NOT be considered
-  # production-ready.
+    ```yaml title="gateway-rls.yaml"
+    ---
+    # NOTE: this deployment is intended for demonstrating global
+    # rate limiting functionality only and should NOT be considered
+    # production-ready.
 
-  apiVersion: apps/v1
-  kind: Deployment
-  metadata:
-    labels:
-      app: ratelimit
-    name: gateway-rls
-  spec:
-    replicas: 1
-    strategy:
-      type: RollingUpdate
-      rollingUpdate:
-        # This value of maxSurge means that during a rolling update
-        # the new ReplicaSet will be created first.
-        maxSurge: 50%
-    selector:
-      matchLabels:
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      labels:
         app: ratelimit
-    template:
-      metadata:
-        labels:
+      name: gateway-rls
+    spec:
+      replicas: 1
+      strategy:
+        type: RollingUpdate
+        rollingUpdate:
+          # This value of maxSurge means that during a rolling update
+          # the new ReplicaSet will be created first.
+          maxSurge: 50%
+      selector:
+        matchLabels:
           app: ratelimit
-      spec:
-        affinity:
-          podAntiAffinity:
-            preferredDuringSchedulingIgnoredDuringExecution:
-            - podAffinityTerm:
-                labelSelector:
-                  matchLabels:
-                    app: ratelimit
-                topologyKey: kubernetes.io/hostname
-              weight: 100
-        containers:
-          - name: redis
-            image: release-ci.daocloud.io/skoala/redis:6.2.6
-            env:
-              - name: REDIS_SOCKET_TYPE
-                value: tcp
-              - name: REDIS_URL
-                value: redis:6379
-          - name: ratelimit
-            image: release-ci.daocloud.io/skoala/envoy-ratelimit:v2  # latest a/o Mar 24 2022
-            ports:
-              - containerPort: 8080
-                name: http
-                protocol: TCP
-              - containerPort: 8081
-                name: grpc
-                protocol: TCP
-              - containerPort: 6070
-                name: debug
-                protocol: TCP
-            volumeMounts:
-              - name: ratelimit-config
-                mountPath: /data/ratelimit/config
-                readOnly: true
-            env:
-              - name: USE_STATSD
-                value: "false"
-              - name: LOG_LEVEL
-                value: debug
-              - name: REDIS_SOCKET_TYPE
-                value: tcp
-              - name: REDIS_URL
-                value: localhost:6379
-              - name: RUNTIME_ROOT
-                value: /data
-              - name: RUNTIME_SUBDIRECTORY
-                value: ratelimit
-              - name: RUNTIME_WATCH_ROOT
-                value: "false"
-              # need to set RUNTIME_IGNOREDOTFILES to true to avoid issues with
-              # how Kubernetes mounts configmaps into pods.
-              - name: RUNTIME_IGNOREDOTFILES
-                value: "true"
-            command: ["/bin/ratelimit"]
-            livenessProbe:
-              httpGet:
-                path: /healthcheck
-                port: 8080
-              initialDelaySeconds: 5
-              periodSeconds: 5
-        volumes:
-          - name: ratelimit-config
-            configMap:
-              name: gateway-rls
+      template:
+        metadata:
+          labels:
+            app: ratelimit
+        spec:
+          affinity:
+            podAntiAffinity:
+              preferredDuringSchedulingIgnoredDuringExecution:
+              - podAffinityTerm:
+                  labelSelector:
+                    matchLabels:
+                      app: ratelimit
+                  topologyKey: kubernetes.io/hostname
+                weight: 100
+          containers:
+            - name: redis
+              image: release-ci.daocloud.io/skoala/redis:6.2.6
+              env:
+                - name: REDIS_SOCKET_TYPE
+                  value: tcp
+                - name: REDIS_URL
+                  value: redis:6379
+            - name: ratelimit
+              image: release-ci.daocloud.io/skoala/envoy-ratelimit:v2  # latest a/o Mar 24 2022
+              ports:
+                - containerPort: 8080
+                  name: http
+                  protocol: TCP
+                - containerPort: 8081
+                  name: grpc
+                  protocol: TCP
+                - containerPort: 6070
+                  name: debug
+                  protocol: TCP
+              volumeMounts:
+                - name: ratelimit-config
+                  mountPath: /data/ratelimit/config
+                  readOnly: true
+              env:
+                - name: USE_STATSD
+                  value: "false"
+                - name: LOG_LEVEL
+                  value: debug
+                - name: REDIS_SOCKET_TYPE
+                  value: tcp
+                - name: REDIS_URL
+                  value: localhost:6379
+                - name: RUNTIME_ROOT
+                  value: /data
+                - name: RUNTIME_SUBDIRECTORY
+                  value: ratelimit
+                - name: RUNTIME_WATCH_ROOT
+                  value: "false"
+                # need to set RUNTIME_IGNOREDOTFILES to true to avoid issues with
+                # how Kubernetes mounts configmaps into pods.
+                - name: RUNTIME_IGNOREDOTFILES
+                  value: "true"
+              command: ["/bin/ratelimit"]
+              livenessProbe:
+                httpGet:
+                  path: /healthcheck
+                  port: 8080
+                initialDelaySeconds: 5
+                periodSeconds: 5
+          volumes:
+            - name: ratelimit-config
+              configMap:
+                name: gateway-rls
 
-  ---
-  apiVersion: v1
-  kind: Service
-  metadata:
-    name: gateway-rls
-  spec:
-    ports:
-    - port: 8081
-      name: grpc
-      protocol: TCP
-    - port: 6070
-      name: debug
-      protocol: TCP
-    selector:
-      app: ratelimit
-    type: NodePort
+    ---
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: gateway-rls
+    spec:
+      ports:
+      - port: 8081
+        name: grpc
+        protocol: TCP
+      - port: 6070
+        name: debug
+        protocol: TCP
+      selector:
+        app: ratelimit
+      type: NodePort
 
-  ---
-  apiVersion: v1
-  kind: ConfigMap
-  metadata:
-    name: gateway-rls
-  data:
-    ratelimit-config.yaml: |
-      domain: gateway-rls.skoala-dev
-      descriptors:
-        - name: test1
-          key: foo
-          value: goo
-          rate_limit:
-            name: test1
-            unit: Minute
-            requests_per_unit: 20
-          descriptors:
-            - name: test2
-              key: foo1
-              value: goo1
-              rate_limit:
-                name: test2
-                unit: Minute
-                requests_per_unit: 15
-              descriptors:
-                - name: test3
-                  key: foo2
-                  value: goo2
-                  rate_limit:
-                    name: test3
-                    unit: Minute
-                    requests_per_unit: 10
-  ```
+    ---
+    apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: gateway-rls
+    data:
+      ratelimit-config.yaml: |
+        domain: gateway-rls.skoala-dev
+        descriptors:
+          - name: test1
+            key: foo
+            value: goo
+            rate_limit:
+              name: test1
+              unit: Minute
+              requests_per_unit: 20
+            descriptors:
+              - name: test2
+                key: foo1
+                value: goo1
+                rate_limit:
+                  name: test2
+                  unit: Minute
+                  requests_per_unit: 15
+                descriptors:
+                  - name: test3
+                    key: foo2
+                    value: goo2
+                    rate_limit:
+                      name: test3
+                      unit: Minute
+                      requests_per_unit: 10
+    ```
 
 ### 接入限流服务器
 
