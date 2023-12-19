@@ -9,15 +9,15 @@ A multicloud namespace can manage workloads across clouds and across clusters. C
 
 This article takes wizard creation as an example, and follows the steps below.
 
-1. After entering a multicloud instance, in the left navigation bar, click `Resource Management` -> `Multicloud Namespace`, and click the `Create Namespace` button in the upper right corner.
+1. After entering a multicloud instance, in the left navigation bar, click __Resource Management__ -> __Multicloud Namespace__ , and click the __Create Namespace__ button in the upper right corner.
 
     ![Create](../images/ns01.png)
 
-2. On the `Create Multicloud Namespace` page, enter a name, add a tag, and click `OK`.
+2. On the __Create Multicloud Namespace__ page, enter a name, add a tag, and click __OK__ .
 
     ![Fill](../images/ns02.png)
 
-3. Return to the list of multicloud namespaces, and the newly created one will be the first one by default. Click `⋮` on the right side of the list to edit the YAML and delete the namespace.
+3. Return to the list of multicloud namespaces, and the newly created one will be the first one by default. Click __⋮__ on the right side of the list to edit the YAML and delete the namespace.
 
     ![Other operations](../images/ns03.png)
 

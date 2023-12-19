@@ -8,15 +8,15 @@
 
 参照以下步骤使用 YAML 创建一个差异化策略。
 
-1. 进入某一个多云实例后，在左侧导航栏中，点击`策略管理` -> `差异化策略`，点击 `YAML 创建`按钮。
+1. 进入某一个多云实例后，在左侧导航栏中，点击 __策略管理__ -> __差异化策略__ ，点击 __YAML 创建__ 按钮。
 
     ![命名空间级别](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/op001.png)
 
-2. 在 `YAML 创建`页面中，输入正确的 YAML 语句后，点击`确定`。
+2. 在 __YAML 创建__ 页面中，输入正确的 YAML 语句后，点击 __确定__ 。
 
     ![yaml创建](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/op002.png)
 
-3. 返回部署策略列表，新创建的默认位于第一个。点击列表右侧的 `⋮`，可以编辑 YAML 和执行删除操作。
+3. 返回部署策略列表，新创建的默认位于第一个。点击列表右侧的 __⋮__ ，可以编辑 YAML 和执行删除操作。
 
     !!! note
 
@@ -53,7 +53,7 @@ spec:
 
 参照以下步骤创建一个差异化策略。
 
-1. 进入命名空间级别的菜单，点击`创建差异化策略`按钮。
+1. 进入命名空间级别的菜单，点击 __创建差异化策略__ 按钮。
 
 2. 进入表单创建页面，创建一个完整的差异化策略需要配置基础配置、资源配置、差异化策略三部分。
 
@@ -101,7 +101,7 @@ spec:
         | :-------- | :--- | :----------------------------------------------------------- | :------------------------ |
         | Component | 是   | 镜像组成成分                                                 | Registry、Repository、Tag |
         | Operator  | 是   | 对镜像进行的操作                                             | add、remove、replace      |
-        | Value     | 否   | 当 Operator 为 `add` 或 `replace` 时不能为空，默认为空；当 operator 为 `remove` 时不填。 |                           |
+        | Value     | 否   | 当 Operator 为 __add__ 或 __replace__ 时不能为空，默认为空；当 operator 为 __remove__ 时不填。 |                           |
 
 2. 当选择 ArgsOverrider：运行参数的差异化配置。
 
@@ -113,7 +113,7 @@ spec:
         | :------------ | :--- | :----------------------------------------------------------- | :---------- |
         | ContainerName | 是   | 容器名                                                       |             |
         | Operator      | 是   | 应用在 args 上的操作                                         | add、remove |
-        | Value         | 否   | 应用在 args 上的值，当 operator 为 `add` 时该值 append 到 args；当 operator 为 `remove` 时，该值从 args 移除；如果该值为空，args 维持原状。 |             |
+        | Value         | 否   | 应用在 args 上的值，当 operator 为 __add__ 时该值 append 到 args；当 operator 为 __remove__ 时，该值从 args 移除；如果该值为空，args 维持原状。 |             |
 
 3. 当选择 CommandOverrider：运行命令的差异化配置。
 
@@ -125,7 +125,7 @@ spec:
         | :------------ | :--- | :----------------------------------------------------------- | :------------------------------------ |
         | ContainerName | 是   | 容器名                                                       |                                       |
         | Operator      | 是   | 应用在 command 上的操作                                      | add、remove                           |
-        | Value         | 否   | 应用在 command 上的值，当 operator 为 `add` 时该值 append 到 command；当 operator 为 `remove` 时，该值从 command 移除；如果该值为空，command 维持原状。 | 可以添加单个或多个值，多值使用 `;` 划分 |
+        | Value         | 否   | 应用在 command 上的值，当 operator 为 __add__ 时该值 append 到 command；当 operator 为 __remove__ 时，该值从 command 移除；如果该值为空，command 维持原状。 | 可以添加单个或多个值，多值使用 __;__ 划分 |
 
 4. 当选择 PlainText：自定义的差异化配置。
 
@@ -137,7 +137,7 @@ spec:
         | :------- | :--- | :----------------------------------------------------------- | :------------------- |
         | Path     | 是   | 目标字段的路径                                               |                      |
         | Operator | 是   | 对目标字段操作类型                                           | add、remove、replace |
-        | Value    | 否   | 应用在目标字段的值，当 Operator 为 `remove` 时，此字段必须为空 |                      |
+        | Value    | 否   | 应用在目标字段的值，当 Operator 为 __remove__ 时，此字段必须为空 |                      |
 
 5. 当选择 LabelsOverrider：标签的差异化配置。
 

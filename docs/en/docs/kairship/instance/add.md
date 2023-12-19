@@ -13,9 +13,9 @@ To use the fantastic features provided by Multicloud Management module, you must
 
     - The newly-created multicloud instance is deployed in the global management cluster by default, in the form of a virtual cluster, which is transparent to users.
     
-    - To distinguish from real clusters, all virtual clusters have a `k-` prefix in their names.
+    - To distinguish from real clusters, all virtual clusters have a __k-__ prefix in their names.
 
-1. Click `Create Multicloud Instance` in the upper right corner.
+1. Click __Create Multicloud Instance__ in the upper right corner.
 
     ![add](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/create-instance01.png)
 

@@ -7,9 +7,9 @@ hide:
 
 Follow the steps below to create a Job.
 
-1. In the left navigation bar, click `Multicloud Workload` to enter the job page, and click the `Image creation` button in the upper right corner.
+1. In the left navigation bar, click __Multicloud Workload__ to enter the job page, and click the __Image creation__ button in the upper right corner.
 
-1. On the `Create Job` page, after configuring the basic information of the load, click `Next`.
+1. On the __Create Job__ page, after configuring the basic information of the load, click __Next__ .
 
     - Payload Name: Can contain up to 63 characters, can only contain lowercase letters, numbers, and a separator ("-"), and must start and end with a lowercase letter or number. The name of the same type of workload in the same namespace cannot be repeated, and the name of the workload cannot be changed after the workload is created.
     - Multicloud namespace: Select the namespace where the newly created job will be deployed. The default namespace is used by default. If you cannot find the required namespace, you can create a new one according to the prompt on the page.
@@ -31,10 +31,10 @@ Follow the steps below to create a Job.
     - Aggregation: schedule as few instances as possible in all selected clusters
     - Dynamic weight: according to the real-time schedulable maximum number of instances of all selected clusters, the total number of filled instances will be run in equal proportion
 
-1. On the `Container Configuration` page, configure the basic information of the container where the load resides, and optionally configure information such as life cycle and health check, and then click `Next`.
+1. On the __Container Configuration__ page, configure the basic information of the container where the load resides, and optionally configure information such as life cycle and health check, and then click __Next__ .
 
 
-1. On the `Advanced Configuration` page, you can configure job settings and labels and annotations.
+1. On the __Advanced Configuration__ page, you can configure job settings and labels and annotations.
 
 
     Job settings need to include the following data:
@@ -43,9 +43,9 @@ Follow the steps below to create a Job.
     - Timeout: When this time is exceeded, the job will be marked as failed to execute, and all Pods under the job will be deleted. When it is empty, it means that no timeout is set.
     - Restart Policy: Whether to restart the Pod when the setting fails.
 
-    If you do not need to configure differentiation after the creation is complete, you can directly use `OK` to complete the creation of the multicloud job
+    If you do not need to configure differentiation after the creation is complete, you can directly use __OK__ to complete the creation of the multicloud job
 
-1. On the `Override Configuration` page, after selecting the personalized container configuration, labels and annotations, click `OK`.
+1. On the __Override Configuration__ page, after selecting the personalized container configuration, labels and annotations, click __OK__ .
 
     You can add the corresponding differentiated configuration item in the list area on the left. After you add a differentiated configuration item, you need to specify the corresponding cluster.
     The selectable range of the cluster is only the cluster selected at the beginning, and the selected cluster will use the specified differential configuration; the unspecified cluster will still use the default configuration.

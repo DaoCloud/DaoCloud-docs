@@ -14,9 +14,9 @@ You can load the images in one of the following two ways, but it is recommended 
 
 Using chart-syncer, you can upload the charts and their dependent image packages from the downloaded installation package to the image repository and helm repository used by the installer to deploy DCE.
 
-First, find a node that can connect to the image repository and helm repository (e.g., the spark node) and create the `load-image.yaml` configuration file on the node with the appropriate configuration information for the image repository and helm repository.
+First, find a node that can connect to the image repository and helm repository (e.g., the spark node) and create the __load-image.yaml__ configuration file on the node with the appropriate configuration information for the image repository and helm repository.
 
-1. Create `load-image.yaml`
+1. Create __load-image.yaml__ 
 
     !!! note  
 
@@ -148,9 +148,9 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
         ...
         ```
     
-    1. Backup the `--set` parameters.
+    1. Backup the __--set__ parameters.
     
-        Before upgrading the multi-cloud orchestration version, it is recommended to run the following command to backup the `--set` parameters of the old version.
+        Before upgrading the multi-cloud orchestration version, it is recommended to run the following command to backup the __--set__ parameters of the old version.
     
         ```shell
         helm get values kairship -n kairship-system -o yaml > bak.yaml
@@ -163,7 +163,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
         kubectl apply -f kairship/crds
         ```
     
-    1. Execute `helm upgrade`.
+    1. Execute __helm upgrade__ .
     
         Before upgrading, it is recommended to update the `global.imageRegistry` field in bak.yaml to the image repository address you are currently using.
     
@@ -181,9 +181,9 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
 
 === "Upgrade via chart package"
 
-    1. Backup the `--set` parameters.
+    1. Backup the __--set__ parameters.
     
-        Before upgrading the multi-cloud orchestration version, it is recommended to run the following command to backup the `--set` parameters of the old version.
+        Before upgrading the multi-cloud orchestration version, it is recommended to run the following command to backup the __--set__ parameters of the old version.
     
         ```shell
         helm get values kairship -n kairship-system -o yaml > bak.yaml
@@ -195,7 +195,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
         kubectl apply -f ./crds
         ```
     
-    1. Execute `helm upgrade`.
+    1. Execute __helm upgrade__ .
     
         Before upgrading, it is recommended to update the `global.imageRegistry` field in bak.yaml to the image repository address you are currently using.
     

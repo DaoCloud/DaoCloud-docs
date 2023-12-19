@@ -26,7 +26,7 @@ Refer to [Create Stateless Workload](../workload/deployment.md) to create a mult
 
 1. Go to the workload details page. The current workload is running normally with 4 replicas.
 
-2. Click `Elastic Scaling` and check if the metrics-server plugin is installed in each working cluster. The plugin runs as a `deployment` in the `kube-system` namespace. It should be installed and running correctly in all member clusters.
+2. Click __Elastic Scaling__ and check if the metrics-server plugin is installed in each working cluster. The plugin runs as a __deployment__ in the __kube-system__ namespace. It should be installed and running correctly in all member clusters.
 
 3. Create a new elastic scaling policy and configure it according to your requirements.
 

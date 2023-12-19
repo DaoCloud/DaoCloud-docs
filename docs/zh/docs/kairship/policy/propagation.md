@@ -9,15 +9,15 @@
 
 ## YAML 创建
 
-1. 进入某一个多云实例后，在左侧导航栏中，点击`策略管理` -> `部署策略`->`命名空间级别`，点击右上角的 `YAML 创建`按钮。
+1. 进入某一个多云实例后，在左侧导航栏中，点击 __策略管理__ -> __部署策略__ -> __命名空间级别__ ，点击右上角的 __YAML 创建__ 按钮。
 
     ![命名空间级别部署策略](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/pp01.png)
 
-2. 在 `YAML 创建`页面中，输入正确的 YAML 语句后，点击`确定`。
+2. 在 __YAML 创建__ 页面中，输入正确的 YAML 语句后，点击 __确定__ 。
 
     ![yaml创建](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/pp02.png)
 
-3. 返回部署策略列表，新创建的默认位于第一个。点击列表右侧的 `⋮`，可以编辑 YAML 和执行删除操作。
+3. 返回部署策略列表，新创建的默认位于第一个。点击列表右侧的 __⋮__ ，可以编辑 YAML 和执行删除操作。
 
 ## YAML 示例
 

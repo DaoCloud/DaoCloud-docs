@@ -11,14 +11,14 @@ The management interface of Multi-Cloud Orchestration is primarily responsible f
 
 ## Core Components
 
-Multi-Cloud Orchestration mainly consists of two core components: `kairship apiserver` and `kairship controller-manager`.
+Multi-Cloud Orchestration mainly consists of two core components: __kairship apiserver__ and __kairship controller-manager__ .
 
 ## Kairship Apiserver
 
-The `kairship apiserver` primarily serves as the entry point for all traffic in Multi-Cloud Orchestration,
+The __kairship apiserver__ primarily serves as the entry point for all traffic in Multi-Cloud Orchestration,
 including OpenAPI and GRPC. It acts as a unified entry point for all APIs. The APIs are defined using
-`protobuf`, which generates corresponding frontend and backend code. It supports both HTTP Restful
-and GRPC through `grpc-gateway`.
+ __protobuf__ , which generates corresponding frontend and backend code. It supports both HTTP Restful
+and GRPC through __grpc-gateway__ .
 
 During startup, it retrieves identity information of the operator from the Global Management Module for subsequent security verification during AuthZ.
 
@@ -54,7 +54,7 @@ list-watch mechanism and processes corresponding events. The main controllers in
     - Handles status synchronization and statistics for Multi-Cloud Orchestration instances.
 
 - Instance Registry Controller:
-    - Multi-Cloud Orchestration registers all `Karmada` instances in the platform to the
+    - Multi-Cloud Orchestration registers all __Karmada__ instances in the platform to the
       Global Management Module using custom resources. This allows for the binding of roles and
       Karmada instances in global management. Ultimately, these bindings are synchronized to
       the Multi-Cloud Orchestration module.

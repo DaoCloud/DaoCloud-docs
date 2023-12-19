@@ -29,7 +29,7 @@
 
    ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/fhpa02.png)
 
-2. 点击`弹性伸缩`，检查是否每个工作集群内都安装了 metrics-server 插件。该插件以 `deployment` 的形式在 `kube-system` 命名空间内运行，可以发现目前该插件在所有成员集群内都已经安装并且正常运行。
+2. 点击 __弹性伸缩__ ，检查是否每个工作集群内都安装了 metrics-server 插件。该插件以 __deployment__ 的形式在 __kube-system__ 命名空间内运行，可以发现目前该插件在所有成员集群内都已经安装并且正常运行。
 
    ![弹性伸缩列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/fhpa03.png)
 
@@ -57,7 +57,7 @@
 
    ![检查服务运行情况](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/fhpa08.png)
 
-2. 使用`hey -c 1000 -z 10m http://10.111.254.117:8080`命令进行压测。一段时间后，发现 CPU 上升，副本数增多，扩容成功。
+2. 使用 `hey -c 1000 -z 10m http://10.111.254.117:8080` 命令进行压测。一段时间后，发现 CPU 上升，副本数增多，扩容成功。
 
    ![扩容](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/fhpa09.png) 
 

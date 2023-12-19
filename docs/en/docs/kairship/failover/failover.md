@@ -8,7 +8,7 @@ The scheduling policy of multicloud workloads can only choose aggregation mode o
 
 ## Enable failover
 
-1. Enter the Multicloud Management module, click `System Settings`->`Advanced Configuration`, failover can realize copy scheduling between multiple clusters, it is disabled by default, please enable it if necessary.
+1. Enter the Multicloud Management module, click __System Settings__ -> __Advanced Configuration__ , failover can realize copy scheduling between multiple clusters, it is disabled by default, please enable it if necessary.
 
     <!--screenshot-->
 

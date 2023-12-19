@@ -9,15 +9,15 @@ Propagation policies define how resources are distributed across multicloud and 
 
 ## Create from YAML
 
-1. After entering a multicloud instance, in the left navigation bar, click `Policy Management` -> `Propagation Policies` -> `Namespace Scope`, and click the `Create from YAML` button in the upper right corner.
+1. After entering a multicloud instance, in the left navigation bar, click __Policy Management__ -> __Propagation Policies__ -> __Namespace Scope__ , and click the __Create from YAML__ button in the upper right corner.
 
     ![Namespace YAML PP](../images/pp01.png)
 
-2. On the `Create from YAML` page, after entering the correct YAML statement, click `OK`.
+2. On the __Create from YAML__ page, after entering the correct YAML statement, click __OK__ .
 
     ![Input YAML](../images/pp02.png)
 
-3. Return to the propagation policy list, and the newly created one is the first one by default. Click `⋮` on the right side of the list to edit YAML and perform delete operations.
+3. Return to the propagation policy list, and the newly created one is the first one by default. Click __⋮__ on the right side of the list to edit YAML and perform delete operations.
 
 ## YAML example
 

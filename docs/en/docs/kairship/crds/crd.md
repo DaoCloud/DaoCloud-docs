@@ -7,11 +7,11 @@ hide:
 
 Follow the steps below to create a multicloud custom resource (CRD).
 
-1. In the left navigation bar, click `multicloud Custom Resources` to enter the custom resource page, and click the `YAML Create` button in the upper right corner.
+1. In the left navigation bar, click __Multicloud Custom Resources__ to enter the custom resource page, and click the __Create from YAML__ button in the upper right corner.
 
     <!--screenshot-->
 
-2. On the `YAML Creation` page, fill in the YAML statement and click `OK`. Download and import features are also supported.
+2. On the __Create from YAML__ page, fill in the YAML statement and click __OK__ . Download and import features are also supported.
 
     <!--screenshot-->
 
@@ -62,21 +62,21 @@ spec:
 
 ## Create CR instance via YAML
 
-1. Enter the custom resource details, click the `YAML Create` button on the right side of the CR list.
+1. Enter the custom resource details, click the __Create from YAML__ button on the right side of the CR list.
 
     <!--screenshot-->
 
-2. On the `YAML Creation` page, first fill in the YAML information of the CR, which supports download and import features.
+2. On the __Create from YAML__ page, first fill in the YAML information of the CR, which supports download and import features.
 
     <!--screenshot-->
 
 3. Fill in the deployment strategy again to specify which clusters you want to distribute to. Note that the YAML information of the deployment strategy needs to be filled in according to the information of the resources to be propagated:
-   The four parameters `apiVersion`, `kind`, `namespace`, and `name` in `resourceSelector` of `spec` need to be consistent with the resources to be propagated.
+   The four parameters __apiVersion__ , __kind__ , __namespace__ , and __name__ in __resourceSelector__ of __spec__ need to be consistent with the resources to be propagated.
    If there is no differentiation requirement, the differentiation strategy can be left blank.
 
     <!--screenshot-->
 
-4. Return to the CR instance list page, and you can view the newly created CR instance named `my-new-cron-obiext`.
+4. Return to the CR instance list page, and you can view the newly created CR instance named __my-new-cron-obiext__ .
 
     <!--screenshot-->
 
