@@ -24,11 +24,11 @@ hide:
 
 ## 操作步骤
 
-1. 在`集群列表`页面中，点击`创建集群`按钮。
+1. 在 __集群列表__ 页面中，点击 __创建集群__ 按钮。
 
     ![创建集群按钮](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/create001.png)
 
-2. 参考下列要求填写集群基本信息，并点击`下一步`。
+2. 参考下列要求填写集群基本信息，并点击 __下一步__ 。
 
     - 集群名称：名称只包含小写字母、数字和连字符（"-"），必须以小写字母或者数字开头和结尾，最长 63 个字符。
     - 被纳管：选择由哪个集群来管理此集群，例如在集群生命周期中创建、升级、节点扩缩容、删除集群等。
@@ -37,7 +37,7 @@ hide:
 
         ![填写基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/create002.png)
 
-3. 填写节点配置信息，并点击`下一步`。
+3. 填写节点配置信息，并点击 __下一步__ 。
 
     - 高可用：开启后需要提供至少 3 个控制器节点。关闭后，只提供 1 个控制器节点即可。
 
@@ -54,11 +54,11 @@ hide:
 
         ![节点配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/createnew01.png)
 
-4. 在页面底部点击节点检查。如果检查通过则继续下一步操作。如果检查未通过，则更新`节点信息`并再次执行检查。
+4. 在页面底部点击节点检查。如果检查通过则继续下一步操作。如果检查未通过，则更新 __节点信息__ 并再次执行检查。
 
-5. 填写网络配置信息，并点击`下一步`。
+5. 填写网络配置信息，并点击 __下一步__ 。
 
-    - 网络插件：负责为集群内的 Pod 提供网络服务，**创建集群后不可更改网络插件**。支持 [cilium](../../../network/modules/cilium/index.md) 和 [calico](../../../network/modules/calico/index.md)。选择 `none` 表示暂不安装网络插件。
+    - 网络插件：负责为集群内的 Pod 提供网络服务，**创建集群后不可更改网络插件**。支持 [cilium](../../../network/modules/cilium/index.md) 和 [calico](../../../network/modules/calico/index.md)。选择 __none__ 表示暂不安装网络插件。
 
         > 有关网络插件的参数配置，可参考 [cilium 安装参数配置](../../../network/modules/cilium/install.md)或 [calico 安装参数配置](../../../network/modules/calico/install.md)。
 
@@ -69,19 +69,19 @@ hide:
         
         ![网络配置2](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew04.png)
 
-6. 填写插件配置信息，并点击`下一步`。
+6. 填写插件配置信息，并点击 __下一步__ 。
 
     ![插件配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew05.png)
 
-7. 填写高级配置信息，并点击`确定`。
+7. 填写高级配置信息，并点击 __确定__ 。
 
-    - `kubelet_max_pods`：设置每个节点的最大 Pod 数量，默认为 110 个。
-    - `hostname_overide`：重置主机名，建议使用默认值，采用系统默认生成的名称作为主机名称。
-    - `kubernetes_audit`：Kubernetes 的审计日志，默认开启。
-    - `auto_renew_certificate`：在每月第一个星期一自动更新 Kubernetes 控制平面证书，默认开启。
-    - `disable_firewalld&ufw`：禁用防火墙，避免节点在安装过程中无法被访问。
-    - `Insecure_registries`：私有镜像仓库配置。使用私有镜像仓库创建集群时，为了避免证书问题导致容器引擎拒绝访问，需要在这里填写私有镜像仓库地址，以绕过容器引擎的证书认证而获取镜像。
-    - `yum_repos`：填写 Yum 源仓库地址。
+    - __kubelet_max_pods__ ：设置每个节点的最大 Pod 数量，默认为 110 个。
+    - __hostname_overide__ ：重置主机名，建议使用默认值，采用系统默认生成的名称作为主机名称。
+    - __kubernetes_audit__ ：Kubernetes 的审计日志，默认开启。
+    - __auto_renew_certificate__ ：在每月第一个星期一自动更新 Kubernetes 控制平面证书，默认开启。
+    - __disable_firewalld&ufw__ ：禁用防火墙，避免节点在安装过程中无法被访问。
+    - __Insecure_registries__ ：私有镜像仓库配置。使用私有镜像仓库创建集群时，为了避免证书问题导致容器引擎拒绝访问，需要在这里填写私有镜像仓库地址，以绕过容器引擎的证书认证而获取镜像。
+    - __yum_repos__ ：填写 Yum 源仓库地址。
 
         ![高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew06.png)
 
@@ -89,8 +89,8 @@ hide:
 !!! success
 
     - 填写正确信息并完成上述步骤后，页面会提示集群正在创建中。
-    - 创建集群耗时较长，需要耐心等待。其间，可以点击`返回集群列表`按钮让安装过程后台运行。
-    - 如需查看当前状态，可点击`实时日志`。
+    - 创建集群耗时较长，需要耐心等待。其间，可以点击 __返回集群列表__ 按钮让安装过程后台运行。
+    - 如需查看当前状态，可点击 __实时日志__ 。
 
     ![查看实时日志](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/create009.png)
 

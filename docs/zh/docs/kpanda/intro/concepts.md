@@ -71,7 +71,7 @@ Kubernetes 允许指定一个所需类型的 Service，该类型的取值以及�
 
 - ClusterIP：集群内访问。通过集群的内部 IP 暴露服务，选择该值，服务只能够在集群内部访问，这也是默认的 ServiceType。
 
-- NodePort：节点访问。通过每个 Node 上的 IP 和静态端口（NodePort）暴露服务。NodePort 服务会路由到 ClusterIP 服务，这个 ClusterIP 服务会自动创建。通过请求 `<NodeIP>:<NodePort>`，可以从集群的外部访问一个 NodePort 服务。
+- NodePort：节点访问。通过每个 Node 上的 IP 和静态端口（NodePort）暴露服务。NodePort 服务会路由到 ClusterIP 服务，这个 ClusterIP 服务会自动创建。通过请求 __<NodeIP>:<NodePort>__ ，可以从集群的外部访问一个 NodePort 服务。
 
 - LoadBalancer：负载均衡。使用云提供商的负载均衡器，可以向外部暴露服务。外部的负载均衡器可以路由到 NodePort 服务和 ClusterIP 服务。
 
@@ -123,7 +123,7 @@ Horizontal Pod Autoscaling，简称 HPA，是 Kubernetes 中实现 Pod 水平自
 
 亲和性和反亲和性扩展了您可以定义的约束类型。使用亲和性与反亲和性的一些好处有：
 
-- 亲和性、反亲和性的表现能力更强。`nodeSelector` 只能选择拥有所有指定标签的节点。亲和性、反亲和性为您提供对选择逻辑的更强控制能力。
+- 亲和性、反亲和性的表现能力更强。 __nodeSelector__ 只能选择拥有所有指定标签的节点。亲和性、反亲和性为您提供对选择逻辑的更强控制能力。
 
 - 您可以标明某规则是“软需求”或者“偏好”，这样调度器在无法找到匹配节点时仍然调度该 Pod。
 

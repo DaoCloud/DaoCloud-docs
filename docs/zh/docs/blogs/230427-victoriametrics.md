@@ -320,7 +320,7 @@ remote_write:
 ```
 
 把 Prometheus 的数据，写入 VictoriaMetrics，通过 VictoriaMetrics 的 UI 地址
- __http://IP:NodePort/select/0/vmui__ ，即可查看 Prometheus 采集到的数据了。
+`http://IP:NodePort/select/0/vmui`，即可查看 Prometheus 采集到的数据了。
 
 ![Image](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/victoria03.jpeg)
 

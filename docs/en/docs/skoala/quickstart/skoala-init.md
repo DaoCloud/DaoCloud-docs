@@ -16,7 +16,7 @@ The chart inside the blue box, namely the `skoala-init` component, needs to be i
 `skoala-init` is the Operator for all components of the microservice engine:
 
 - Only needs to be installed in the working cluster
-- Includes components such as skoala-agent, nacos, contour, sentinel, seata
+- Includes components such as skoala-agent, nacos-operator, sentinel-operator, seata-operator, contour-provisioner, gateway-api-adminssion-server
 - When not installed, creating a registry center and gateway will prompt for missing components
 
 Since Skoala involves multiple components, we package these components into a single Chart, which is the `skoala-init`. Therefore, you should install `skoala-init` in the working cluster where you use the microservice engine. This installation command can also be used to update the component.
@@ -102,7 +102,10 @@ Since the `skoala-init` component is installed in the working cluster, you need 
 6. Manually update the CRD files that need to be upgraded based on your needs.
 
     ```bash
-    kubectl apply -f xxx.yaml
+    # projectcontour crd
+    kubectl apply -f skoala-init/charts/contour-provisioner/crds/contour.yaml
+    # gateway-api crd
+    kubectl apply -f skoala-init/charts/contour-provisioner-prereq/crds/gateway-api.yaml
     ```
 
 ## Offline Upgrade

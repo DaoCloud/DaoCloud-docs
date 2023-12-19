@@ -13,12 +13,12 @@
 
 ### 使用界面配置
 
-1. 确认集群是否已检测 GPU 卡。点击对应`集群` -> `集群设置` -> `Addon 插件`，查看是否已自动启用并自动检测对应 GPU 类型。
-    目前集群会自动启用 `GPU`，并且设置 `GPU` 类型为 `Iluvatar`。
+1. 确认集群是否已检测 GPU 卡。点击对应 __集群__ -> __集群设置__ -> __Addon 插件__ ，查看是否已自动启用并自动检测对应 GPU 类型。
+    目前集群会自动启用 __GPU__ ，并且设置 __GPU__ 类型为 __Iluvatar__ 。
 
     ![集群设置](./images/cluster-setting-iluvatar-gpu.jpg)
 
-2. 部署工作负载。点击对应`集群` -> `工作负载`，通过镜像方式部署工作负载，选择类型（Iluvatar）之后，需要配置 App 使用的 GPU 资源：
+2. 部署工作负载。点击对应 __集群__ -> __工作负载__ ，通过镜像方式部署工作负载，选择类型（Iluvatar）之后，需要配置 App 使用的 GPU 资源：
 
     **物理卡数量（iluvatar.ai/vcuda-core）**：表示当前 Pod 需要挂载几张物理卡，输入值必须为整数且 **小于等于** 宿主机上的卡数量。
     **显存使用数量（iluvatar.ai/vcuda-memory）**：表示每张卡占用的 GPU 显存，值单位为 MB，最小值为 1，最大值为整卡的显存值。
@@ -27,7 +27,7 @@
 
 ### 使用 YAML 配置
 
-创建工作负载申请 GPU 资源，在资源申请和限制配置中增加 `iluvatar.ai/vcuda-core: 1`、`iluvatar.ai/vcuda-memory: 200` 参数，配置 App 使用物理卡的资源。
+创建工作负载申请 GPU 资源，在资源申请和限制配置中增加`iluvatar.ai/vcuda-core: 1` 、 `iluvatar.ai/vcuda-memory: 200` 参数，配置 App 使用物理卡的资源。
 
 ```yaml
 apiVersion: apps/v1

@@ -13,12 +13,12 @@
 
 ### 使用界面配置
 
-1. 确认集群是否已检测 GPU 卡。点击对应`集群` -> `集群设置` -> `Addon 插件`，查看是否已自动启用并自动检测对应 GPU 类型。
-    目前集群会自动启用 `GPU`，并且设置`GPU` 类型为 `Nvidia GPU`。
+1. 确认集群是否已检测 GPU 卡。点击对应 __集群__ -> __集群设置__ -> __Addon 插件__ ，查看是否已自动启用并自动检测对应 GPU 类型。
+    目前集群会自动启用 __GPU__ ，并且设置 __GPU__ 类型为 __Nvidia GPU__ 。
 
     ![集群设置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/cluster-setting-gpu.jpg)
 
-2. 部署工作负载，点击对应`集群` -> `工作负载`，通过镜像方式部署工作负载，选择类型（Nvidia GPU）之后，需要配置应用使用的物理卡数量：
+2. 部署工作负载，点击对应 __集群__ -> __工作负载__ ，通过镜像方式部署工作负载，选择类型（Nvidia GPU）之后，需要配置应用使用的物理卡数量：
 
     **物理卡数量（nvidia.com/gpu）**：表示当前 Pod 需要挂载几张物理卡，输入值必须为整数且**小于等于**宿主机上的卡数量。
 
@@ -28,7 +28,7 @@
 
 ### 使用 YAML 配置
 
-创建工作负载申请 GPU 资源，在资源申请和限制配置中增加 `nvidia.com/gpu: 1` 参数配置应用使用物理卡的数量。
+创建工作负载申请 GPU 资源，在资源申请和限制配置中增加 __nvidia.com/gpu: 1__ 参数配置应用使用物理卡的数量。
 
 ```yaml
 apiVersion: apps/v1
@@ -64,4 +64,4 @@ spec:
 
 !!! note
 
-    使用 `nvidia.com/gpu` 参数指定GPU数量时，requests 和 limits 值需要保持一致。
+    使用 __nvidia.com/gpu__ 参数指定GPU数量时，requests 和 limits 值需要保持一致。

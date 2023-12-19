@@ -47,7 +47,7 @@
 
     聚合层允许您在自己的集群上安装额外的 K8s 风格的 API。
 
-    当配置了 K8s API 服务器来支持额外的 API 时，您就可以在 K8s API 中增加 `APIService` 对象来申领（Claim）一个 URL 路径。
+    当配置了 K8s API 服务器来支持额外的 API 时，您就可以在 K8s API 中增加 __APIService__ 对象来申领（Claim）一个 URL 路径。
 
 - Alert Rule, [告警规则](../insight/user-guide/alert-center/alert-policy.md)
 
@@ -71,10 +71,10 @@
 
     API 发起的驱逐是一个先调用 Eviction API 创建驱逐对象，再由该对象优雅地中止 Pod 的过程。
 
-    您可以通过 kube-apiserver 的客户端，比如 `kubectl drain` 这样的命令，直接调用 Eviction API 发起驱逐。
-    当 `Eviction` 对象创建出来之后，该对象将驱动 API 服务器终止选定的 Pod。
+    您可以通过 kube-apiserver 的客户端，比如 __kubectl drain__ 这样的命令，直接调用 Eviction API 发起驱逐。
+    当 __Eviction__ 对象创建出来之后，该对象将驱动 API 服务器终止选定的 Pod。
 
-    API 发起的驱逐取决于您配置的 `PodDisruptionBudgets` 和 `terminationGracePeriodSeconds`。
+    API 发起的驱逐取决于您配置的 __PodDisruptionBudgets__ 和 __terminationGracePeriodSeconds__ 。
 
     API 发起的驱逐不同于节点压力引发的驱逐。
 
@@ -85,7 +85,7 @@
     通过更改 API 服务器的配置，可以启用或禁用 API Group。
     您还可以禁用或启用指向特定资源的路径。
     API 组使扩展 K8s API 更加的容易。
-    API 组在 REST 路径和序列化对象的 `apiVersion` 字段中指定。
+    API 组在 REST 路径和序列化对象的 __apiVersion__ 字段中指定。
 
 - API 网关
 
@@ -246,7 +246,7 @@
     并将与该云平台交互的组件同与您的集群交互的组件分离开来。
 
     通过分离 Kubernetes 和底层云基础设置之间的互操作性逻辑，
-    `cloud-controller-manager` 组件使云提供商能够以不同于 Kubernetes 主项目的步调发布新特征。
+    __cloud-controller-manager__ 组件使云提供商能够以不同于 Kubernetes 主项目的步调发布新特征。
 
 - Cloud-Native Apps, 云原生应用程序
 
@@ -780,7 +780,7 @@
     有两种方法可以将 Pod 和容器字段暴露给正在运行的容器：
 
     - 使用环境变量
-    - 使用 `downwardAPI` 卷
+    - 使用 __downwardAPI__ 卷
 
     这两种暴露 Pod 和容器字段的方式统称为 **Downward API**。
 
@@ -856,7 +856,7 @@
 
     事件应该被视为一种告知性质的、尽力而为的、补充性质的数据。
 
-    在 Kubernetes 中，审计机制会生成一种不同类别的 Event 记录（API 组为 `audit.k8s.io`）。
+    在 Kubernetes 中，审计机制会生成一种不同类别的 Event 记录（API 组为 __audit.k8s.io__ ）。
 
 - Event-Driven Architecture, 事件驱动架构
 
@@ -915,12 +915,12 @@
     再完全删除被标记为删除的资源。Finalizer 提醒控制器清理被删除的对象拥有的资源。
 
     当您告诉 Kubernetes 删除一个指定了 Finalizer 的对象时，
-    Kubernetes API 通过填充 `.metadata.deletionTimestamp` 来标记要删除的对象，
-    并返回 `202` 状态码(HTTP "已接受") 使其进入只读状态。
+    Kubernetes API 通过填充 __.metadata.deletionTimestamp__ 来标记要删除的对象，
+    并返回 __202__ 状态码(HTTP "已接受") 使其进入只读状态。
     此时控制平面或其他组件会采取 Finalizer 所定义的行动，
     而目标对象仍然处于终止中（Terminating）的状态。
     这些行动完成后，控制器会删除目标对象相关的 Finalizer。
-    当 `metadata.finalizers` 字段为空时，Kubernetes 认为删除已完成并删除对象。
+    当 __metadata.finalizers__ 字段为空时，Kubernetes 认为删除已完成并删除对象。
 
     您可以使用 Finalizer 控制资源的垃圾回收。
     例如，您可以定义一个 Finalizer，在删除目标资源前清理相关资源或基础设施。
@@ -990,11 +990,11 @@
 - Histogram, 直方图
 
     直方图对观测结果（通常是请求持续时间或者响应大小这样的数据）进行采样，并在可配置的桶中对其进行统计。
-    有以下几种方式来产生直方图（假设度量指标为 `<basename>`）：
+    有以下几种方式来产生直方图（假设度量指标为 __<basename>__ ）：
 
-    - 按桶计数，相当于 `<basename>_bucket{le="<upper inclusive bound>"}`
-    - 采样值总和，相当于`<basename>_sum`
-    - 采样值总数，相当于 `<basename>_count` ，也等同于把所有采样值放到一个桶里来计数 `<basename>_bucket{le="+Inf"}`
+    - 按桶计数，相当于 __<basename>_bucket{le="<upper inclusive bound>"}__ 
+    - 采样值总和，相当于 __<basename>_sum__ 
+    - 采样值总数，相当于 __<basename>_count__ ，也等同于把所有采样值放到一个桶里来计数 __<basename>_bucket{le="+Inf"}__ 
 
     Histogram 可以理解为柱状图，典型的应用如：请求持续时间，响应大小。可以对观测结果采样，分组及统计。
 
@@ -1126,7 +1126,7 @@
     Kops 目前仅支持 AWS。对 GCE、VMware vSphere 及其他第三方 PaaS 平台的支持还处于 Alpha 阶段。
 
     您也可以将自己的集群作为一个构造块，使用 kubeadm 构造集群。
-    `kops` 是建立在 kubeadm 之上的。
+    __kops__ 是建立在 kubeadm 之上的。
 
 - kube-apiserver, k8s API 服务器
 
@@ -1139,8 +1139,8 @@
     API 服务器是 Kubernetes 控制平面的前端。
 
     Kubernetes API 服务器的主要实现是 [kube-apiserver](https://kubernetes.io//zh-cn/docs/reference/command-line-tools-reference/kube-apiserver/)。
-    `kube-apiserver` 设计上考虑了水平扩缩，也就是说，它可通过部署多个实例来进行扩缩。
-    您可以运行 `kube-apiserver` 的多个实例，并在这些实例之间平衡流量。
+    __kube-apiserver__ 设计上考虑了水平扩缩，也就是说，它可通过部署多个实例来进行扩缩。
+    您可以运行 __kube-apiserver__ 的多个实例，并在这些实例之间平衡流量。
 
 - kube-controller-manager
 
@@ -1172,7 +1172,7 @@
 - kubectl
 
     [kubectl](https://kubernetes.io/zh-cn/docs/reference/kubectl/) 是用来和 Kubernetes 集群进行通信的命令行工具。
-    您可以使用 `kubectl` 创建、检视、更新和删除 Kubernetes 对象。
+    您可以使用 __kubectl__ 创建、检视、更新和删除 Kubernetes 对象。
 
 - kubelet
 
@@ -1213,7 +1213,7 @@
 
     Kubernetes 资源和"意向记录"都是作为 API 对象储存的，并可以通过调用 RESTful 风格的 API 进行修改。
     API 允许以声明方式管理配置。
-    用户可以直接和 Kubernetes API 交互，也可以通过 `kubectl` 这样的工具进行交互。
+    用户可以直接和 Kubernetes API 交互，也可以通过 __kubectl__ 这样的工具进行交互。
     核心的 Kubernetes API 是很灵活的，可以扩展以支持定制资源。
 
 ### L
@@ -1417,7 +1417,7 @@
     网络策略是一种规范，规定了允许 Pod 组之间、Pod 与其他网络端点之间以怎样的方式进行通信。
 
     网络策略帮助您声明式地配置允许哪些 Pod 之间、哪些命名空间之间允许进行通信，
-    并具体配置了哪些端口号来执行各个策略。`NetworkPolicy` 资源使用标签来选择 Pod，
+    并具体配置了哪些端口号来执行各个策略。 __NetworkPolicy__ 资源使用标签来选择 Pod，
     并定义了所选 Pod 可以接受什么样的流量。网络策略由网络提供商提供的并被 Kubernetes 支持的网络插件实现。
     请注意，当没有控制器实现网络资源时，创建网络资源将不会生效。
 
@@ -1579,7 +1579,7 @@
     - Unknown
 
     关于 Pod 的阶段的更高级描述请查阅
-    [PodStatus](https://kubernetes.io/docs/reference/generated/kubernetes-api/{{< param "version" >}}/#podstatus-v1-core) `phase` 字段。
+    [PodStatus](https://kubernetes.io/docs/reference/generated/kubernetes-api/{{< param "version" >}}/#podstatus-v1-core) 的 `phase` 字段。
 
 - Pod Priority, Pod 优先级
 
@@ -1593,7 +1593,7 @@
     为 Pod 的创建和更新操作启用细粒度的授权。
 
     Pod 安全策略是集群级别的资源，它控制着 Pod 规约中的安全性敏感的内容。
-    `PodSecurityPolicy` 对象定义了一组条件以及相关字段的默认值，Pod
+    __PodSecurityPolicy__ 对象定义了一组条件以及相关字段的默认值，Pod
     运行时必须满足这些条件。Pod 安全策略控制实现上体现为一个可选的准入控制器。
 
     PodSecurityPolicy 已于 Kubernetes v1.21 起弃用，并在 v1.25 中删除。
@@ -1642,7 +1642,7 @@
 
     PropagationPolicy 是一种独立的策略 API，可以根据分发要求来定义多集群调度方式。
 
-    - 支持 1:n 的`策略:工作负载`，用户每次创建多云应用时无需重复指出调度的约束条件。
+    - 支持 1:n 的 __策略:工作负载__ ，用户每次创建多云应用时无需重复指出调度的约束条件。
     - 采用默认的策略时，用户可以直接与 Kubernetes API 交互。
 
 - Proxy, 代理
@@ -1781,10 +1781,10 @@
 
     securityContext 字段定义 Pod 或容器的特权和访问控制设置，包括运行时 UID 和 GID。
 
-    在一个 `securityContext` 字段中，您可以设置进程所属用户和用户组、权限相关设置。
+    在一个 __securityContext__ 字段中，您可以设置进程所属用户和用户组、权限相关设置。
     您也可以设置安全策略（例如 SELinux、AppArmor、seccomp）。
 
-    `PodSpec.securityContext` 字段配置会应用到一个 Pod 中的所有的容器。
+    __PodSpec.securityContext__ 字段配置会应用到一个 Pod 中的所有的容器。
 
 - Selector, 选择算符
 
@@ -1828,7 +1828,7 @@
 
     为在 Pod 中运行的进程提供标识。
 
-    当 Pod 中的进程访问集群时，API 服务器将它们作为特定的服务帐户进行身份验证，例如 `default`。
+    当 Pod 中的进程访问集群时，API 服务器将它们作为特定的服务帐户进行身份验证，例如 __default__ 。
     创建 Pod 时，如果您没有指定服务账号，它将自动被赋予同一个{{< glossary_tooltip text="命名空间" term_id="namespace" >}}中的 default 服务账号。
 
 - Service Catalog, 服务目录
@@ -2016,25 +2016,25 @@
     StorageClass 是管理员用来描述可用的不同存储类型的一种方法。
 
     StorageClass 可以映射到服务质量等级（QoS）、备份策略、或者管理员任意定义的策略。
-    每个 StorageClass 对象包含的字段有 `provisioner`、`parameters` 和 `reclaimPolicy`。
+    每个 StorageClass 对象包含的字段有 __provisioner__ 、 __parameters__ 和 __reclaimPolicy__ 。
     动态制备该存储类别的持久卷时需要用到这些字段值。
     通过设置 StorageClass 对象的名称，用户可以请求特定存储类别。
 
 - sysctl
 
-    用于获取和设置 Unix 内核参数的接口。`sysctl` 是一个半标准化的接口，用于读取或更改正在运行的 Unix 内核的属性。
+    用于获取和设置 Unix 内核参数的接口。 __sysctl__ 是一个半标准化的接口，用于读取或更改正在运行的 Unix 内核的属性。
 
-    在类 Unix 系统上，`sysctl` 既是管理员用于查看和修改这些设置的工具的名称，也是该工具所调用的系统调用的名称。
+    在类 Unix 系统上， __sysctl__ 既是管理员用于查看和修改这些设置的工具的名称，也是该工具所调用的系统调用的名称。
 
-    容器运行时和网络插件可能对 `sysctl` 的取值有一定的要求。
+    容器运行时和网络插件可能对 __sysctl__ 的取值有一定的要求。
 
 - Summary, 汇总
 
-    类似于直方图，汇总也对观测结果进行采样。除了可以统计采样值总和和总数，它还能够按分位数统计。有以下几种方式来产生汇总（假设度量指标为 `<basename>`）：
+    类似于直方图，汇总也对观测结果进行采样。除了可以统计采样值总和和总数，它还能够按分位数统计。有以下几种方式来产生汇总（假设度量指标为 __<basename>__ ）：
 
-    - 按分位数，也就是采样值小于该分位数的个数占总数的比例小于 φ，相当于 `<basename>{quantile="<φ>"}`
-    - 采样值总和，相当于 `<basename>_sum`
-    - 采样值总数，相当于 `<basename>_count`
+    - 按分位数，也就是采样值小于该分位数的个数占总数的比例小于 φ，相当于 __<basename>{quantile="<φ>"}__ 
+    - 采样值总和，相当于 __<basename>_sum__ 
+    - 采样值总数，相当于 __<basename>_count__ 
 
 ### T
 

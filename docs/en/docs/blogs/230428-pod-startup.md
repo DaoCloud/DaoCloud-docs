@@ -19,8 +19,8 @@ Pulling images always takes some time and what's worse is that image pulls are d
 default. In other words, kubelet will send only one image pull request to the image service at
 a time. Other image pull requests have to wait until the one being processed is complete.
 
-To enable parallel image pulls, set the `serializeImagePulls` field to false in the kubelet
-configuration. When `serializeImagePulls` is disabled, requests for image pulls are immediately
+To enable parallel image pulls, set the __serializeImagePulls__ field to false in the kubelet
+configuration. When __serializeImagePulls__ is disabled, requests for image pulls are immediately
 sent to the image service and multiple images can be pulled concurrently.
 
 ### Maximum parallel image pulls will help secure your node from overloading on image pulling
@@ -31,8 +31,8 @@ simultaneously. If there is an image pull request beyond this limit, it will be 
 one of the ongoing image pulls finishes. Before enabling this feature, please ensure that your
 container runtime's image service can handle parallel image pulls effectively.
 
-To limit the number of simultaneous image pulls, you can configure the `maxParallelImagePulls`
-field in kubelet. By setting `maxParallelImagePulls` to a value of _n_, only _n_ images will
+To limit the number of simultaneous image pulls, you can configure the __maxParallelImagePulls__ 
+field in kubelet. By setting __maxParallelImagePulls__ to a value of _n_, only _n_ images will
 be pulled concurrently. Any additional image pulls beyond this limit will wait until at least
 one ongoing pull is complete.
 
@@ -45,7 +45,7 @@ To improve pod startup in use cases with multiple pods on a node, particularly s
 situations, it is necessary for Kubelet to synchronize the pod status and prepare configmaps,
 secrets, or volumes. This requires a large bandwidth to access kube-apiserver.
 
-In versions prior to v1.27, the default `kubeAPIQPS` was 5 and `kubeAPIBurst` was 10. However,
+In versions prior to v1.27, the default __kubeAPIQPS__ was 5 and __kubeAPIBurst__ was 10. However,
 the kubelet in v1.27 has increased these defaults to 50 and 100 respectively for better performance during
 pod startup. It's worth noting that this isn't the only reason why we've bumped up the API QPS
 limits for Kubelet.
@@ -54,15 +54,15 @@ limits for Kubelet.
 2. In large clusters they can generate significant load anyway as there are a lot of them
 3. They have a dedicated PriorityLevel and FlowSchema that we can easily control
 
-Previously, we often encountered `volume mount timeout` on kubelet in node with more than 50 pods
-during pod start up. We suggest that cluster operators bump `kubeAPIQPS` to 20 and `kubeAPIBurst` to 40,
+Previously, we often encountered __volume mount timeout__ on kubelet in node with more than 50 pods
+during pod start up. We suggest that cluster operators bump __kubeAPIQPS__ to 20 and __kubeAPIBurst__ to 40,
  especially if using bare metal nodes.
 
 More detials can be found in the KEP <https://kep.k8s.io/1040> and the pull request [#116121](https://github.com/kubernetes/kubernetes/pull/116121).
 
 ## Event triggered updates to container status
 
-`Evented PLEG` (PLEG is short for "Pod Lifecycle Event Generator") is set to be in beta for v1.27,
+ __Evented PLEG__ (PLEG is short for "Pod Lifecycle Event Generator") is set to be in beta for v1.27,
 Kubernetes offers two ways for the kubelet to detect Pod lifecycle events, such as a the last
 process in a container shutting down.
 In Kubernetes v1.27, the _event based_ mechanism has graduated to beta but remains
@@ -86,7 +86,7 @@ quality of memory when running with cgroups v2. Although it has benefits, it is 
 enabling this feature gate may affect the start-up speed of the pod if the pod startup consumes
 a large amount of memory.
 
-Kubelet configuration now includes `memoryThrottlingFactor`. This factor is multiplied by
+Kubelet configuration now includes __memoryThrottlingFactor__ . This factor is multiplied by
 the memory limit or node allocatable memory to set the cgroupv2 memory.high value for enforcing
 MemoryQoS. Decreasing this factor sets a lower high limit for container cgroups, increasing reclaim
 pressure. Increasing this factor will put less reclaim pressure. The default value is 0.8 initially
@@ -97,7 +97,7 @@ Further details can be found in the KEP <https://kep.k8s.io/2570>.
 
 ## What's more?
 
-In Kubernetes v1.26, a new histogram metric `pod_start_sli_duration_seconds` was added for Pod
+In Kubernetes v1.26, a new histogram metric __pod_start_sli_duration_seconds__ was added for Pod
 startup latency SLI/SLO details. Additionally, the kubelet log will now display more information
 about pod start-related timestamps, as shown below:
 
