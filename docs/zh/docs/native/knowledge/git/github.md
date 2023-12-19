@@ -64,3 +64,10 @@ GitHub 号称有一亿开发者活跃，如何能在目标社区展露头角？
 - [K8s 贡献统计 Devstatus](https://k8s.devstats.cncf.io/d/13/developer-activity-counts-by-repository-group?orgId=1&var-period_name=Last%20year&var-metric=contributions&var-repogroup_name=SIG%20Docs&var-repo_name=kubernetes&var-country_name=All)
 - [Istio 贡献统计 Devstatus](https://istio.teststats.cncf.io/d/66/developer-activity-counts-by-companies?orgId=1&var-period_name=Last%20year&var-metric=contributions&var-repogroup_name=All&var-country_name=All&var-companies=All)
 - [OSSinsight 仪表盘](https://ossinsight.io/)
+
+## 社区资源
+
+- [K8s 文档](https://kubernetes.io/)
+- [Istio 文档](https://istio.io/)
+- [CNCF 词汇表](https://glossary.cncf.io/)
+- [Prometheus 文档](https://prometheus.io/docs/introduction/overview/)
