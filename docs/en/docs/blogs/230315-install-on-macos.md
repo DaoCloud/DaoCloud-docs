@@ -22,8 +22,8 @@ Depending on your MacBook's chip (Intel or M1), install [Docker Desktop](https:/
 Adjust the upper limit of container resources:
 
 1. Start Docker.
-1. Click ⚙️ in the upper right corner to open the `Settings` page.
-1. Click `Resources` on the left, adjust the resource limit of the startup container to 8C14G, and click the `Apply & Restart` button.
+1. Click ⚙️ in the upper right corner to open the __Settings__ page.
+1. Click __Resources__ on the left, adjust the resource limit of the startup container to 8C14G, and click the __Apply & Restart__ button.
 
 ![Adjust resources](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/docker.png)
 
@@ -121,7 +121,7 @@ fire-kind-cluster-control-plane Ready control-plane 18h v1.25.3
      docker exec -it fire-kind-cluster-control-plane /bin/bash
      ```
 
-     Assume `VERSION=v0.5.0`
+     Assume __VERSION=v0.5.0__ 
 
      ```shell
      export VERSION=v0.5.0;
@@ -138,10 +138,10 @@ fire-kind-cluster-control-plane Ready control-plane 18h v1.25.3
          myIP=$(ip r get 1.1.1.1| awk '{print $NF}')
          ```
 
-         If the error `zsh: command not found: ip` is reported, there are 2 solutions:
+         If the error __zsh: command not found: ip__ is reported, there are 2 solutions:
 
-         - Run `myIP=$(ifconfig en0| grep "inet[ ]" | awk '{print $2}')`
-         - Or install iproute2mac with a command like `brew install iproute2mac` and try again.
+         - Run __myIP=$(ifconfig en0| grep "inet[ ]" | awk '{print $2}')__ 
+         - Or install iproute2mac with a command like __brew install iproute2mac__ and try again.
 
      1. Start the installation, it will take about 30 minutes, depending on the network speed of the image pull
 
