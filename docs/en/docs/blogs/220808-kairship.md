@@ -51,15 +51,15 @@ In terms of hierarchical structure, a two-level architecture is adopted. The top
 On the multicloud cluster instance list interface, users can clearly perceive real-time information such as the running status, resource usage, and number of clusters of each multicloud cluster instance.
 And can enter details based on multicloud cluster instance name. At the same time, if users want to use kubectl to manage the cluster, they can also use the CloudTTY desktop console tool on the interface.
 
-On the `Overview` interface, users can view detailed cluster overview information, health status of cross-cluster workloads, resource information, etc.
+On the __Overview__ interface, users can view detailed cluster overview information, health status of cross-cluster workloads, resource information, etc.
 
-On the `work cluster management` interface, users can manage the access clusters of multicloud clusters, and can view information such as the status and release version of each cluster.
+On the __work cluster management__ interface, users can manage the access clusters of multicloud clusters, and can view information such as the status and release version of each cluster.
 
-On the `multicloud Workload` interface, users can perceive information such as workload status and number of instances under the current multicloud cluster with permissions. And you can enter the workload details by name, view logs, monitor, etc.
+On the __multicloud Workload__ interface, users can perceive information such as workload status and number of instances under the current multicloud cluster with permissions. And you can enter the workload details by name, view logs, monitor, etc.
 
-In the `Resource Management` interface, users can manage services and routes, namespaces, storage declarations, configuration and key modules. These resources are created across clusters to satisfy the resources that the deployment of cross-cluster workloads depends on.
+In the __Resource Management__ interface, users can manage services and routes, namespaces, storage declarations, configuration and key modules. These resources are created across clusters to satisfy the resources that the deployment of cross-cluster workloads depends on.
 
-In `Policy Center`, users can view the deployment policies and differentiated policies associated with workloads, but they are not allowed to delete the policies in use.
+In __Policy Center__ , users can view the deployment policies and differentiated policies associated with workloads, but they are not allowed to delete the policies in use.
 In addition, users can also customize and create deployment strategies and differentiated strategies to unlock advanced usage modes.
 
 ## What can Multicloud Management do
