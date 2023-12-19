@@ -17,30 +17,30 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
 参考如下步骤为集群安装 GPU Operator 插件。
 
-1. 登录平台，进入`容器管理`-->`待安装 GPU Operator 的集群`-->进入集群详情。
+1. 登录平台，进入 __容器管理__ --> __待安装 GPU Operator 的集群__ -->进入集群详情。
 
-2. 在 `Helm 模板` 页面，选择 `全部仓库`，搜索 `gpu-operator` 。
+2. 在 __Helm 模板__ 页面，选择 __全部仓库__ ，搜索 __gpu-operator__ 。
 
-3. 选择 `gpu-operator`，点击`安装`。
+3. 选择 __gpu-operator__ ，点击 __安装__ 。
 
-4. 参考下文参数配置，配置 `gpu-operator` 安装参数，完成 `gpu-operator` 的安装。
+4. 参考下文参数配置，配置 __gpu-operator__ 安装参数，完成 __gpu-operator__ 的安装。
 
 ## 参数配置
 
 ### 基本参数配置
 
-- `名称`：输入插件名称。
-- `命名空间`：选择将插件安装的命名空间。
-- `版本`：插件的版本，此处以 `23.6.10` 版本为例。
-- `就绪等待`：启用后，所有关联资源都处于就绪状态，才会标记应用安装成功。
-- `失败删除`：安装失败，则删除已经安装的关联资源。开启后，将默认同步开启`就绪等待`。
-- `详情日志`：开启后，将记录安装过程的详细日志。
+- __名称__ ：输入插件名称。
+- __命名空间__ ：选择将插件安装的命名空间。
+- __版本__ ：插件的版本，此处以 __23.6.10__ 版本为例。
+- __就绪等待__ ：启用后，所有关联资源都处于就绪状态，才会标记应用安装成功。
+- __失败删除__ ：安装失败，则删除已经安装的关联资源。开启后，将默认同步开启 __就绪等待__ 。
+- __详情日志__ ：开启后，将记录安装过程的详细日志。
 
 ### 高级参数配置
 
 #### DevicePlugin 参数配置
 
-1. `DevicePlugin.enable` ：配置是否启用 kubernentes [DevicePlugin](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/) 特性。请结合使用场景，确定是否启用。
+1. __DevicePlugin.enable__ ：配置是否启用 kubernentes [DevicePlugin](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/) 特性。请结合使用场景，确定是否启用。
 
     - 使用 GPU 整卡模式请 **启用**。
     - 使用 GPU vGPU 模式请 **关闭**。
@@ -49,31 +49,31 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
     !!! note
 
         注意：
-        1. 一个集群只能使用一种 GPU 卡模式，部署 GPU Operator 前，请确认 GPU 卡的使用模式，以选择是否启用 `DevicePlugin` 特性。
-        2. 当使用 vGPU 模式（关闭这个参数）时，守护进程 `nvidia-operator-validator` 将长期处于 “等待中”状态，这属于正常现象，不影响 vGPU 功能的使用。
+        1. 一个集群只能使用一种 GPU 卡模式，部署 GPU Operator 前，请确认 GPU 卡的使用模式，以选择是否启用 __DevicePlugin__ 特性。
+        2. 当使用 vGPU 模式（关闭这个参数）时，守护进程 __nvidia-operator-validator__ 将长期处于 “等待中”状态，这属于正常现象，不影响 vGPU 功能的使用。
 
 #### Driver 参数配置
 
-2. `Driver.enable`：配置是否在节点上部署 NVIDIA 驱动，默认开启，如果您在使用 GPU Operator 部署前，已经在节点上部署了 NVIDIA 驱动程序，请关闭。
+2. __Driver.enable__ ：配置是否在节点上部署 NVIDIA 驱动，默认开启，如果您在使用 GPU Operator 部署前，已经在节点上部署了 NVIDIA 驱动程序，请关闭。
 
-3. `Driver.image`：配置 GPU 驱动镜像，推荐默认镜像：`nvidia/driver`。
+3. __Driver.image__ ：配置 GPU 驱动镜像，推荐默认镜像： __nvidia/driver__ 。
 
-4. `Driver.repository`：GPU 驱动镜像所在的镜像仓库，默认为 nvidia 的 `nvcr.io` 仓库。
+4. __Driver.repository__ ：GPU 驱动镜像所在的镜像仓库，默认为 nvidia 的 __nvcr.io__ 仓库。
 
-5. `Driver.version`：GPU 驱动镜像的版本，离线部署请使用默认参数，仅在线安装时需配置，不同类型操作系统的 Driver 镜像的版本存在如下差异：
+5. __Driver.version__ ：GPU 驱动镜像的版本，离线部署请使用默认参数，仅在线安装时需配置，不同类型操作系统的 Driver 镜像的版本存在如下差异：
 
-    - RedHat 系统， 命名规则通常为 CUDA 的版本和 OS 版本组成，如内核为 `4.18.0-305.el8.x86_64` 的 RedHat 8.4 的 Driver.version 值为 `525.105.17`。
-    - Ubuntu 系统，命名规则为：`<driver-branch>-<linux-kernel-version>-<os-tag>`。
-    如 `525-5.15.0-69-ubuntu22.04`，`525` 为 CUDA 的版本，`5.15.0-69` 为内核版本，`ubuntu22.04` 为 OS 版本。
+    - RedHat 系统， 命名规则通常为 CUDA 的版本和 OS 版本组成，如内核为 `4.18.0-305.el8.x86_64` 的 RedHat 8.4 的 Driver.version 值为 __525.105.17__ 。
+    - Ubuntu 系统，命名规则为： __<driver-branch>-<linux-kernel-version>-<os-tag>__ 。
+    如 __525-5.15.0-69-ubuntu22.04__ ， __525__ 为 CUDA 的版本， __5.15.0-69__ 为内核版本， __ubuntu22.04__ 为 OS 版本。
     注意：对于 Ubuntu ， Driver 镜像版本需和节点内核版本强一致，包括小版本号。
 
-    - CentOS 系统， 命名规则通常为 CUDA 的版本和 OS 版本组成，如 `535.104.05`。
+    - CentOS 系统， 命名规则通常为 CUDA 的版本和 OS 版本组成，如 __535.104.05__ 。
 
-6. `Driver.RepoConfig.ConfigMapName`：用来记录 GPU Operator 的离线 yum 源配置文件名称，当使用预置的离线包时，参考`使用 Global 集群任意节点的 yum 源配置`。
+6. __Driver.RepoConfig.ConfigMapName__ ：用来记录 GPU Operator 的离线 yum 源配置文件名称，当使用预置的离线包时，参考 __使用 Global 集群任意节点的 yum 源配置__ 。
 
     ??? note "使用 Global 集群任意节点的 yum 源配置"
 
-        1. 使用 ssh 或其它方式进入 Global 集群的任意节点，获取平台离线源配置文件 `extension.repo`：
+        1. 使用 ssh 或其它方式进入 Global 集群的任意节点，获取平台离线源配置文件 __extension.repo__ ：
     
             ```bash
             cat /etc/yum.repos.d/extension.repo #查看 extension.repo 中的内容。
@@ -94,8 +94,8 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
             name = kubean extension 1
             ```
     
-        2. 复制上述 `extension.repo` 文件中的内容，在待部署 GPU Operator 的集群的 `gpu-operator` 命名空间下，新建名为`local-repo-config` 的配置文件，可参考[创建配置项](../../configmaps-secrets/create-configmap.md)进行创建。
-        **注意：配置 `key` 值必须为 `CentOS-Base.repo`,`value` 值点离线源配置文件 `extension.repo` 中的内容**。
+        2. 复制上述 __extension.repo__ 文件中的内容，在待部署 GPU Operator 的集群的 __gpu-operator__ 命名空间下，新建名为 __local-repo-config__ 的配置文件，可参考[创建配置项](../../configmaps-secrets/create-configmap.md)进行创建。
+        **注意：配置 __key__ 值必须为 __CentOS-Base.repo__ , __value__ 值点离线源配置文件 __extension.repo__ 中的内容**。
 
     其它操作系统或内核可参考如下链接创建 yum 源文件：
     - [构建 CentOS 7.9 离线 yum 源](./Upgrade_yum_source_of_preset_offline_package.md)
@@ -106,16 +106,16 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
     详细配置方式请参考[开启 MIG 功能](mig/create_mig.md)
 
-    - `MigManager.enabled` ：是否启用 MIG 能力特性。
-    - `Mig.strategy` ：节点上 GPU 卡的 MIG 设备的公开策略。NVIDIA 提供了两种公开 MIG 设备的策略（`single` 、`mixed`策略，详情参考：[NVIDIA GPU 卡模式说明](index.md)
-    - `MigManager.Config` : 用于配置 MIG 切分配置参数和默认值。
-        - `default`: 节点使用的切分配置默认值，默认为 `all-disabled`。
-        - `name` ：MIG 的切分配置文件名，用于定义 MIG 的（GI ,CI）切分策略。默认为`default-mig-parted-config`。自定义参数参考[开启 MIG 功能](mig/create_mig.md)
+    - __MigManager.enabled__ ：是否启用 MIG 能力特性。
+    - __Mig.strategy__ ：节点上 GPU 卡的 MIG 设备的公开策略。NVIDIA 提供了两种公开 MIG 设备的策略（ __single__ 、 __mixed__ 策略，详情参考：[NVIDIA GPU 卡模式说明](index.md)
+    - __MigManager.Config__ : 用于配置 MIG 切分配置参数和默认值。
+        - __default__ : 节点使用的切分配置默认值，默认为 __all-disabled__ 。
+        - __name__ ：MIG 的切分配置文件名，用于定义 MIG 的（GI ,CI）切分策略。默认为 __default-mig-parted-config__ 。自定义参数参考[开启 MIG 功能](mig/create_mig.md)
 
-8. `Node-Feature-Discovery.enableNodeFeatureAPI`：启用或禁用节点特性 API（Node Feature Discovery API）。
+8. __Node-Feature-Discovery.enableNodeFeatureAPI__ ：启用或禁用节点特性 API（Node Feature Discovery API）。
 
-     - 当设置为 `true` 时，启用了节点特性 API。
-     - 当设置为 `false` 或`未设置`时，禁用节点特性 API。
+     - 当设置为 __true__ 时，启用了节点特性 API。
+     - 当设置为 __false__ 或 __未设置__ 时，禁用节点特性 API。
 
 ### 下一步操作
 
@@ -125,7 +125,7 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
 2. 如果使用 **vGPU 模式** ，完成上述相关参数配置和创建后，下一步请完成 [vGPU Addon 安装](vgpu/vgpu_addon.md)
 
-3. 如果使用 **MIG 模式**，并且需要给个别 GPU 节点按照某种切分规格进行使用，否则按照 MigManager.Config 中的 `default` 值进行切分。
+3. 如果使用 **MIG 模式**，并且需要给个别 GPU 节点按照某种切分规格进行使用，否则按照 MigManager.Config 中的 __default__ 值进行切分。
 
     - **single** 模式请给对应节点打上如下 Label：
 

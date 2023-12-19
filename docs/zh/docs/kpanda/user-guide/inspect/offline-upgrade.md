@@ -4,7 +4,7 @@
 
 !!! info
 
-    下述命令或脚本内出现的 `kcollie` 字样是集群巡检模块的内部开发代号。
+    下述命令或脚本内出现的 __kcollie__ 字样是集群巡检模块的内部开发代号。
 
 ## 从下载的安装包中加载镜像
 
@@ -157,9 +157,9 @@
         ...
         ```
 
-    1. 备份 `--set` 参数。
+    1. 备份 __--set__ 参数。
 
-        在升级集群巡检版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
+        在升级集群巡检版本之前，建议您执行如下命令，备份老版本的 __--set__ 参数。
 
         ```shell
         helm get values kcollie -n kcollie-system -o yaml > bak.yaml
@@ -172,7 +172,7 @@
         kubectl apply -f kcollie/crds
         ```
 
-    1. 执行 `helm upgrade`。
+    1. 执行 __helm upgrade__ 。
 
         升级前建议您覆盖 bak.yaml 中的 `global.imageRegistry` 字段为当前使用的镜像仓库地址。
 
@@ -190,9 +190,9 @@
 
 === "通过 chart 包升级"
 
-    1. 备份 `--set` 参数。
+    1. 备份 __--set__ 参数。
 
-        在升级集群巡检版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
+        在升级集群巡检版本之前，建议您执行如下命令，备份老版本的 __--set__ 参数。
 
         ```shell
         helm get values kcollie -n kcollie-system -o yaml > bak.yaml
@@ -204,7 +204,7 @@
         kubectl apply -f ./crds
         ```
 
-    3. 执行 `helm upgrade`。
+    3. 执行 __helm upgrade__ 。
 
         升级前建议您覆盖 bak.yaml 中的 `global.imageRegistry` 为当前使用的镜像仓库地址。
 

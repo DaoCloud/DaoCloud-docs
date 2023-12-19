@@ -50,7 +50,7 @@ tar -xvf offline-v0.10.0-arm64.tar
 
 !!! note
 
-    osPackage 离线包的具体对应版本请查看离线镜像包中 `offline/sample/clusterConfig.yaml` 中对应的 kubean 版本
+    osPackage 离线包的具体对应版本请查看离线镜像包中 __offline/sample/clusterConfig.yaml__ 中对应的 kubean 版本
 
 #### 导入离线包至火种节点
 
@@ -67,10 +67,10 @@ tar -xvf offline-v0.10.0-arm64.tar
 
     参数说明：
 
-    - `-c clusterConfig.yaml` 指定之前部署 DCE5.0 时使用的 clusterConfig.yaml 文件
-    - `--offline-path` 指定下载的离线镜像包文件地址
-    - `--iso-path` 指定下载的 ISO 操作系统镜像文件地址
-    - `--os-pkgs-path` 指定下载的 osPackage 离线包文件地址
+    - __-c clusterConfig.yaml__ 指定之前部署 DCE5.0 时使用的 clusterConfig.yaml 文件
+    - __--offline-path__ 指定下载的离线镜像包文件地址
+    - __--iso-path__ 指定下载的 ISO 操作系统镜像文件地址
+    - __--os-pkgs-path__ 指定下载的 osPackage 离线包文件地址
 
 导入命令执行成功后，会将离线包上传到火种节点的 Minio 中。
 
@@ -167,7 +167,7 @@ tar -xvf offline-v0.10.0-arm64.tar
 kubectl edit cm ${cluster-name}-hosts-conf -n kubean-system
 ```
 
-`cluster-name` 为工作集群的名称，通过容器管理创建集群时会默认生成。
+ __cluster-name__ 为工作集群的名称，通过容器管理创建集群时会默认生成。
 
 #### 通过 ClusterOperation.yml 新增扩容任务
 
@@ -223,7 +223,7 @@ kubectl -n kubean-system get pod | grep add-worker-node
 
 ### 前往界面验证
 
-1. 前往`容器管理`->`集群`->`节点管理`
+1. 前往 __容器管理__ -> __集群__ -> __节点管理__ 
 
     ![节点管理](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/arm02.png)
 

@@ -15,19 +15,19 @@
 
 - 容器管理模块[已接入 Kubernetes 集群](../clusters/integrate-cluster.md)或者[已创建 Kubernetes](../clusters/create-cluster.md)，且能够访问集群的 UI 界面
 
-- 已完成一个[命名空间的创建](../namespaces/createns.md)、[用户的创建](../../../ghippo/user-guide/access-control/user.md)，并将用户授权为 [`Cluster Admin`](../permissions/permission-brief.md#cluster-admin) 角色 ，详情可参考[命名空间授权](../permissions/cluster-ns-auth.md)
+- 已完成一个[命名空间的创建](../namespaces/createns.md)、[用户的创建](../../../ghippo/user-guide/access-control/user.md)，并将用户授权为 [Cluster Admin](../permissions/permission-brief.md#cluster-admin) 角色 ，详情可参考[命名空间授权](../permissions/cluster-ns-auth.md)
 
 ## 通过 YAML 创建自定义资源
 
-1. 点击一个集群名称，进入`集群详情`。
+1. 点击一个集群名称，进入 __集群详情__ 。
 
     ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/crd01.png)
 
-2. 在左侧导航栏，点击`自定义资源`，点击右上角 `YAML 创建`按钮。
+2. 在左侧导航栏，点击 __自定义资源__ ，点击右上角 __YAML 创建__ 按钮。
 
     ![点击创建按钮](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/crd02.png)
 
-3. 在 `YAML 创建`页面中，填写 YAML 语句后，点击`确定`。
+3. 在 __YAML 创建__ 页面中，填写 YAML 语句后，点击 __确定__ 。
 
     ![填写 yaml](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/crd03.png)
 
@@ -72,23 +72,23 @@ spec:
 
 ## 通过 YAML 创建自定义资源示例
 
-1. 点击一个集群名称，进入`集群详情`。
+1. 点击一个集群名称，进入 __集群详情__ 。
 
     ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/crd01.png)
 
-2. 在左侧导航栏，点击`自定义资源`，点击右上角 `YAML 创建`按钮。
+2. 在左侧导航栏，点击 __自定义资源__ ，点击右上角 __YAML 创建__ 按钮。
 
     ![点击创建按钮](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/crd02.png)
 
-3. 点击名为 `crontabs.stable.example.com` 的自定义资源，进入详情，点击右上角 `YAML 创建`按钮。
+3. 点击名为 `crontabs.stable.example.com` 的自定义资源，进入详情，点击右上角 __YAML 创建__ 按钮。
 
     ![点击创建按钮](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/crd05.png)
 
-4. 在 `YAML 创建`页面中，填写 YAML 语句后，点击`确定`。
+4. 在 __YAML 创建__ 页面中，填写 YAML 语句后，点击 __确定__ 。
 
     ![填写 yaml](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/crd06.png)
 
-5. 返回 `crontabs.stable.example.com` 的详情页面，即可查看刚刚创建的名为 `my-new-cron-object` 的自定义资源。
+5. 返回 `crontabs.stable.example.com` 的详情页面，即可查看刚刚创建的名为 __my-new-cron-object__ 的自定义资源。
 
 **CR 示例：**
 
