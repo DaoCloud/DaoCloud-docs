@@ -60,8 +60,8 @@ INFO[0000] Go OS/Arch: linux/amd64
 
 ### 关闭集群
 
-在备份之前，必须要先关闭集群。默认集群 `etcd` 和 `kube-apiserver` 都是以静态 Pod 的形式启动的。
-这里的关闭集群是指将静态 Pod manifest 文件移动到 `/etc/kubernetes/manifest` 目录外，集群就会移除对应 Pod，达到关闭服务的作用。
+在备份之前，必须要先关闭集群。默认集群 __etcd__ 和 __kube-apiserver__ 都是以静态 Pod 的形式启动的。
+这里的关闭集群是指将静态 Pod manifest 文件移动到 __/etc/kubernetes/manifest__ 目录外，集群就会移除对应 Pod，达到关闭服务的作用。
 
 1. 首先删除之前的备份数据，移除数据并非将现有 etcd 数据删除，而是指修改 etcd 数据目录的名称。
    等备份还原成功之后再删除此目录。这样做的目的是，如果 etcd 备份还原失败，还可以尝试还原当前集群。此步骤每个节点均需执行。
@@ -70,7 +70,7 @@ INFO[0000] Go OS/Arch: linux/amd64
     rm -rf /var/lib/etcd_bak
     ```
 
-2. 然后需要关闭 `kube-apiserver` 的服务，确保 etcd 的数据没有新变化。此步骤每个节点均需执行。
+2. 然后需要关闭 __kube-apiserver__ 的服务，确保 etcd 的数据没有新变化。此步骤每个节点均需执行。
 
     ```shell
     mv /etc/kubernetes/manifests/kube-apiserver.yaml /tmp/kube-apiserver.yaml
@@ -82,11 +82,11 @@ INFO[0000] Go OS/Arch: linux/amd64
     mv /etc/kubernetes/manifests/etcd.yaml /tmp/etcd.yaml
     ```
 
-4. 确保所有控制平面的 `kube-apiserver` 和 `etcd` 服务都已经关闭。
+4. 确保所有控制平面的 __kube-apiserver__ 和 __etcd__ 服务都已经关闭。
    
-5. 关闭所有的节点后，使用如下命令检查 `etcd` 集群状态。此命令在任意一个节点执行即可。
+5. 关闭所有的节点后，使用如下命令检查 __etcd__ 集群状态。此命令在任意一个节点执行即可。
 
-    > `endpoints` 的值需要替换为实际节点名称
+    > __endpoints__ 的值需要替换为实际节点名称
 
     ```shell
     etcdctl endpoint status --endpoints=controller-node-1:2379,controller-node-2:2379,controller-node-3:2379 -w table \
@@ -95,7 +95,7 @@ INFO[0000] Go OS/Arch: linux/amd64
       --key="/etc/kubernetes/ssl/apiserver-etcd-client.key"
     ```
 
-    预期输出如下，表示所有的 `etcd` 节点都被销毁：
+    预期输出如下，表示所有的 __etcd__ 节点都被销毁：
 
     ```none
     {"level":"warn","ts":"2023-03-29T17:51:50.817+0800","logger":"etcd-client","caller":"v3@v3.5.6/retry_interceptor.go:62","msg":"retrying of unary invoker failed","target":"etcd-endpoints://0xc0001ba000/controller-node-1:2379","attempt":0,"error":"rpc error: code = DeadlineExceeded desc = latest balancer error: last connection error: connection error: desc = \"transport: Error while dialing dial tcp 10.5.14.31:2379: connect: connection refused\""}
@@ -174,13 +174,13 @@ INFO[0000] Go OS/Arch: linux/amd64
 
 3. 以下命令在节点 01 上执行，为了恢复节点 01 的 etcd 服务。
 
-    首先将 etcd 静态 Pod 的 manifest 文件移动到 `/etc/kubernetes/manifests` 目录下，kubelet 将会重启 etcd：
+    首先将 etcd 静态 Pod 的 manifest 文件移动到 __/etc/kubernetes/manifests__ 目录下，kubelet 将会重启 etcd：
 
     ```shell
     mv /tmp/etcd.yaml /etc/kubernetes/manifests/etcd.yaml
     ```
 
-    然后等待 etcd 服务启动完成以后，检查 etcd 的状态，etcd 相关证书默认目录：`/etc/kubernetes/ssl`。如果集群证书存放在其他位置，请指定对应路径。
+    然后等待 etcd 服务启动完成以后，检查 etcd 的状态，etcd 相关证书默认目录： __/etc/kubernetes/ssl__ 。如果集群证书存放在其他位置，请指定对应路径。
 
     - 检查 etcd 集群列表:
 

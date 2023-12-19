@@ -14,7 +14,7 @@ DCE 5.0 容器管理提供三种扫描类型：
 
 - 扫描控制平面节点（Controller）
 
-    - 关注 `API Server`、`controller-manager`、`scheduler`、`kubelet`等系统组件的安全性
+    - 关注 __API Server__ 、 __controller-manager__ 、 __scheduler__ 、 __kubelet__ 等系统组件的安全性
     - 检查 Etcd 数据库的安全配置
     - 检查集群身份验证机制、授权策略和网络安全配置是否符合安全标准
 
@@ -36,7 +36,7 @@ DCE 5.0 容器管理提供三种扫描类型：
 
 - 扫描集群中的所有节点的健康状态。
 
-- 扫描集群组件的运行状况，如 `kube-apiserver`、`kube-controller-manager`、`kube-scheduler`等。
+- 扫描集群组件的运行状况，如 __kube-apiserver__ 、 __kube-controller-manager__ 、 __kube-scheduler__ 等。
 
 - 扫描安全配置：检查 Kubernetes 的安全配置
 

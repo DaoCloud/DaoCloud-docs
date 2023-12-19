@@ -13,7 +13,7 @@
 
 1. 确认集群是否已识别 GPU 卡类型
 
-    进入`集群详情` -> `集群设置` -> `Addon 设置`，查看是否已正确识别，自动识别频率为 `10 分钟` 。
+    进入 __集群详情__ -> __集群设置__ -> __Addon 设置__ ，查看是否已正确识别，自动识别频率为 __10 分钟__ 。
 
     ![gpu](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/gpu_mig01.jpg)
 
@@ -23,7 +23,7 @@
 
 ## YAML 配置使用 MIG
 
-**`MIG Single` 模式：**
+** __MIG Single__ 模式：**
 
 ```yaml
 apiVersion: apps/v1
@@ -52,7 +52,7 @@ spec:
       restartPolicy: Always
 ```
 
-**`MIG  Mixed` 模式：**
+** __MIG  Mixed__ 模式：**
 
 ```yaml
 apiVersion: apps/v1

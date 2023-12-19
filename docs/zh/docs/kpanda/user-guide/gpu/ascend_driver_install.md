@@ -21,7 +21,7 @@
 
 1. 如驱动未安装，请参考昇腾官方文档进行安装：例如 Ascend910，参考：[910 驱动安装文档](https://www.hiascend.com/document/detail/zh/Atlas%20200I%20A2/23.0.RC3/EP/installationguide/Install_87.html)。
 
-2. 运行 `npu-smi info` 命令，并且能够正常返回 npu 信息，表示 NPU 驱动与固件已就绪。
+2. 运行 __npu-smi info__ 命令，并且能够正常返回 npu 信息，表示 NPU 驱动与固件已就绪。
 
     ![昇腾信息](./images/npu-smi-info.png)
 
@@ -99,7 +99,7 @@
    $ ctr -n k8s.io i tag harbor.daocloud.cn/library/ascend-k8sdeviceplugin:v5.0.RC2 ascend-k8sdeviceplugin:v5.0.RC2
    ```
 
-3. 获取 `device-plugin-310-v5.0.RC2.yaml` 文件，请参考[下载地址]([https://mindx.obs.cn-south-1.myhuaweicloud.com/OpenSource/MindX/MindX%205.0.RC2/MindX%20DL%205.0.RC2/Ascend-mindxdl-device-plugin_5.0.RC2_linux-x86_64.zip](https://mindx.obs.cn-south-1.myhuaweicloud.com/OpenSource/MindX/MindX 5.0.RC2/MindX DL 5.0.RC2/Ascend-mindxdl-device-plugin_5.0.RC2_linux-x86_64.zip))
+3. 获取 __device-plugin-310-v5.0.RC2.yaml__ 文件，请参考[下载地址]([https://mindx.obs.cn-south-1.myhuaweicloud.com/OpenSource/MindX/MindX%205.0.RC2/MindX%20DL%205.0.RC2/Ascend-mindxdl-device-plugin_5.0.RC2_linux-x86_64.zip](https://mindx.obs.cn-south-1.myhuaweicloud.com/OpenSource/MindX/MindX 5.0.RC2/MindX DL 5.0.RC2/Ascend-mindxdl-device-plugin_5.0.RC2_linux-x86_64.zip))
 
 4. 执行 Kube Apply：
 
@@ -109,9 +109,9 @@
    $ kubectl label nodes {node-name} accelerator=huawei-Ascend310
    ```
 
-   注意：`device-plugin-310-v5.0.RC2.yaml` 中的镜像地址是 `ascend-k8sdeviceplugin:v5.0.RC2`
+   注意： __device-plugin-310-v5.0.RC2.yaml__ 中的镜像地址是 __ascend-k8sdeviceplugin:v5.0.RC2__ 
 
-   构建 `ascend-k8sdeviceplugin` 镜像：从下载的代码包中有 `Dockerfile`文件（详情参考：[软件包说明](https://www.hiascend.com/document/detail/zh/mindx-dl/300/dluserguide/clusterscheduling/dlug_installation_02_000035.html)），执行构建命令：
+   构建 __ascend-k8sdeviceplugin__ 镜像：从下载的代码包中有 __Dockerfile__ 文件（详情参考：[软件包说明](https://www.hiascend.com/document/detail/zh/mindx-dl/300/dluserguide/clusterscheduling/dlug_installation_02_000035.html)），执行构建命令：
 
    ```
    # 310 卡构建使用Dockerfile 
@@ -124,7 +124,7 @@
    | --------------------- | ------------------------------------------------------------ |
    | Dockerfile-310P-1usoc | Atlas 200I Soc A1 核心版上Ascend Device Plugin镜像构建文本文件。 |
 
-   5. NPU Device Plugin 默认安装在 `kube-system` 命名空间下。这是一个 DaemonSet 类型的工作负载，可以通过 `kubectl get pod -n kube-system | grep ascend` 命令查看，输出如下：
+   5. NPU Device Plugin 默认安装在 __kube-system__ 命名空间下。这是一个 DaemonSet 类型的工作负载，可以通过 __kubectl get pod -n kube-system | grep ascend__ 命令查看，输出如下：
 
 ![昇腾 Device Plugin](./images/ascend-device-plugin.png)
 

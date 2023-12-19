@@ -24,27 +24,27 @@ DaoCloud Enterprise 5.0 支持 Pod 资源基于指标进行弹性伸缩（Horizo
 
 - 已完成一个[命名空间的创建](../namespaces/createns.md)、[无状态工作负载的创建](../workloads/create-deployment.md)或[有状态工作负载的创建](../workloads/create-statefulset.md)。
 
-- 当前操作用户应具有 [`NS Edit`](../permissions/permission-brief.md#ns-edit) 或更高权限，详情可参考[命名空间授权](../namespaces/createns.md)。
+- 当前操作用户应具有 [NS Edit](../permissions/permission-brief.md#ns-edit) 或更高权限，详情可参考[命名空间授权](../namespaces/createns.md)。
 
-- 已完成[`metrics-server 插件安装`](install-metrics-server.md)。
+- 已完成[ __metrics-server 插件安装__ ](install-metrics-server.md)。
 
 ### 操作步骤
 
 参考以下步骤，为工作负载配置内置指标弹性伸缩策略。
 
-1. 点击左侧导航栏上的`集群列表`进入集群列表页面。点击一个集群名称，进入`集群详情`页面。
+1. 点击左侧导航栏上的 __集群列表__ 进入集群列表页面。点击一个集群名称，进入 __集群详情__ 页面。
 
     ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy01.png)
 
-2. 在集群详情页面，点击左侧导航栏的`工作负载`进入工作负载列表后，点击一个负载名称，进入`工作负载详情`页面。
+2. 在集群详情页面，点击左侧导航栏的 __工作负载__ 进入工作负载列表后，点击一个负载名称，进入 __工作负载详情__ 页面。
 
     ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createScale.png)
 
-3. 点击`弹性伸缩`页签，查看当前集群的弹性伸缩配置情况。
+3. 点击 __弹性伸缩__ 页签，查看当前集群的弹性伸缩配置情况。
 
     ![弹性伸缩](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createScale02.png)
 
-4. 确认集群已[安装了 `metrics-server` 插件](install-metrics-server.md)，且插件运行状态为正常后，即可点击`新建伸缩`按钮。
+4. 确认集群已[安装了 __metrics-server__ 插件](install-metrics-server.md)，且插件运行状态为正常后，即可点击 __新建伸缩__ 按钮。
 
     ![新建伸缩](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createScale07.png)
 
@@ -59,7 +59,7 @@ DaoCloud Enterprise 5.0 支持 Pod 资源基于指标进行弹性伸缩（Horizo
     - 目标内存用量：工作负载资源下的 Pod 的内存用量。当实际内存用量大于/小于目标值时，系统自动减少/增加 Pod 副本数量。
     - 副本范围：Pod 副本数的弹性伸缩范围。默认区间为为 1 - 10。
 
-6. 完成参数配置后，点击`确定`按钮，自动返回弹性伸缩详情页面。点击列表右侧的 `⋮`，可以执行编辑、删除操作，还可以查看相关事件。
+6. 完成参数配置后，点击 __确定__ 按钮，自动返回弹性伸缩详情页面。点击列表右侧的 __⋮__ ，可以执行编辑、删除操作，还可以查看相关事件。
 
     ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createScale09.png)
 
@@ -75,9 +75,9 @@ DaoCloud Enterprise 5.0 支持 Pod 资源基于指标进行弹性伸缩（Horizo
 
 - 已完成一个[命名空间的创建](../namespaces/createns.md)、[无状态工作负载的创建](../workloads/create-deployment.md)或[有状态工作负载的创建](../workloads/create-statefulset.md)。
 
-- 当前操作用户应具有 [`NS Edit`](../permissions/permission-brief.md#ns-edit) 或更高权限，详情可参考[命名空间授权](../namespaces/createns.md)。
+- 当前操作用户应具有 [NS Edit](../permissions/permission-brief.md#ns-edit) 或更高权限，详情可参考[命名空间授权](../namespaces/createns.md)。
 
-- 已完成[`metrics-server 插件安装`](install-metrics-server.md)。
+- 已完成[ __metrics-server 插件安装__ ](install-metrics-server.md)。
 - 已完成 Insight 插件的安装。
 - 已完成 Prometheus-adapter 插件的安装。
 
@@ -85,19 +85,19 @@ DaoCloud Enterprise 5.0 支持 Pod 资源基于指标进行弹性伸缩（Horizo
 
 参考以下步骤，为工作负载配置指标弹性伸缩策略。
 
-1. 点击左侧导航栏上的`集群列表`进入集群列表页面。点击一个集群名称，进入`集群详情`页面。
+1. 点击左侧导航栏上的 __集群列表__ 进入集群列表页面。点击一个集群名称，进入 __集群详情__ 页面。
 
     ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy01.png)
 
-2. 在集群详情页面，点击左侧导航栏的`工作负载`进入工作负载列表后，点击一个负载名称，进入`工作负载详情`页面。
+2. 在集群详情页面，点击左侧导航栏的 __工作负载__ 进入工作负载列表后，点击一个负载名称，进入 __工作负载详情__ 页面。
 
     ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createScale.png)
 
-3. 点击`弹性伸缩`页签，查看当前集群的弹性伸缩配置情况。
+3. 点击 __弹性伸缩__ 页签，查看当前集群的弹性伸缩配置情况。
 
     ![弹性伸缩配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createScale02.png)
 
-4. 确认集群已[安装了 `metrics-server`](install-metrics-server.md)、Insight、Prometheus-adapter 插件且插件运行状态为正常后，即可点击`新建伸缩`按钮。
+4. 确认集群已[安装了 __metrics-server__ ](install-metrics-server.md)、Insight、Prometheus-adapter 插件且插件运行状态为正常后，即可点击 __新建伸缩__ 按钮。
 
     !!! note
 
