@@ -65,7 +65,10 @@
     docker tag <image-name> <registry-url>/<repository-name>:<tag>
     ```
 
-    `<image-name>` 是上一步 nvidia 镜像的名称，`<registry-url>` 是火种节点上 Registry 服务的地址，`<repository-name>` 是您要推送到的仓库名称，`<tag>` 是您为镜像指定的标签。
+    `<image-name>` 是上一步 nvidia 镜像的名称，
+    `<registry-url>` 是火种节点上 Registry 服务的地址，
+    `<repository-name>` 是您要推送到的仓库名称，
+    `<tag>` 是您为镜像指定的标签。
 
     例如：
 

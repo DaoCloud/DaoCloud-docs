@@ -129,15 +129,15 @@
 
 **重要参数：**
 
->* `all.hosts.node1`：原集群中已存在的主节点
->* `all.hosts.node2`、`all.hosts.node3`：集群扩容待新增的控制节点
->* `all.children.kube_control_plane.hosts`：集群中的控制节点组
->* `all.children.kube_node.hosts`：集群中的工作节点组
->* `all.children.etcd.hosts`：集群中的 ETCD 节点组
+* __all.hosts.node1__ ：原集群中已存在的主节点
+* __all.hosts.node2__ 、 __all.hosts.node3__ ：集群扩容待新增的控制节点
+* __all.children.kube_control_plane.hosts__ ：集群中的控制节点组
+* __all.children.kube_node.hosts__ ：集群中的工作节点组
+* __all.children.etcd.hosts__ ：集群中的 ETCD 节点组
 
 ## 新增 ClusterOperation.yml 扩容任务
 
-使用基于下面的 `ClusterOperation.yml` 模板，新增一个集群控制节点扩容任务 `scale-master-node-ops.yaml`。
+使用基于下面的 __ClusterOperation.yml__ 模板，新增一个集群控制节点扩容任务 __scale-master-node-ops.yaml__ 。
 
 ```yaml title="ClusterOperation.yml"
 apiVersion: kubean.io/v1alpha1

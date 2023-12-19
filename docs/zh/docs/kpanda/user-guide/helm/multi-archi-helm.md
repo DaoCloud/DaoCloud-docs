@@ -7,9 +7,9 @@
 
 ### 单架构导入
 
-准备好待导入的离线包 `addon-offline-full-package-${version}-${arch}.tar.gz`，可从
+准备好待导入的离线包 `addon-offline-full-package-${version}-${arch}.tar.gz` ，可从
 [下载中心](../../../download/addon/history.md)下载。
-把路径填写至 `clusterConfig.yml` 配置文件，例如：
+把路径填写至 __clusterConfig.yml__ 配置文件，例如：
 
 ```yaml
 addonPackage:
@@ -24,7 +24,7 @@ addonPackage:
 
 ### 多架构融合
 
-准备好待融合的离线包 `addon-offline-full-package-${version}-${arch}.tar.gz`，可从
+准备好待融合的离线包 `addon-offline-full-package-${version}-${arch}.tar.gz` ，可从
 [下载中心](../../../download/addon/history.md)下载。
 
 以 addon-offline-full-package-v0.9.0-arm64.tar.gz 为例，执行导入命令：
@@ -37,7 +37,7 @@ addonPackage:
 
 ### 单架构升级
 
-准备好待导入的离线包 `addon-offline-full-package-${version}-${arch}.tar.gz`，可从[下载中心](../../../download/addon/history.md)下载。
+准备好待导入的离线包 `addon-offline-full-package-${version}-${arch}.tar.gz` ，可从[下载中心](../../../download/addon/history.md)下载。
 
 把路径填写至 clusterConfig.yml 配置文件，例如：
 
@@ -54,7 +54,7 @@ addonPackage:
 
 ### 多架构融合
 
-准备好待融合的离线包 `addon-offline-full-package-${version}-${arch}.tar.gz`，可从[下载中心](../../../download/addon/history.md)下载。
+准备好待融合的离线包 `addon-offline-full-package-${version}-${arch}.tar.gz` ，可从[下载中心](../../../download/addon/history.md)下载。
 
 以 addon-offline-full-package-v0.11.0-arm64.tar.gz 为例，执行导入命令：
 

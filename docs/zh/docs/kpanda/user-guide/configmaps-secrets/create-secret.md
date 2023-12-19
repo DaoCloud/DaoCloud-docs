@@ -17,19 +17,19 @@
 
 - 容器管理模块[已接入 Kubernetes 集群](../clusters/integrate-cluster.md)或者[已创建 Kubernetes 集群](../clusters/create-cluster.md)，且能够访问集群的 UI 界面
 
-- 已完成一个[命名空间的创建](../namespaces/createns.md)、[用户的创建](../../../ghippo/user-guide/access-control/user.md)，并将用户授权为 [`NS Edit`](../permissions/permission-brief.md#ns-edit) 角色 ，详情可参考[命名空间授权](../permissions/cluster-ns-auth.md)。
+- 已完成一个[命名空间的创建](../namespaces/createns.md)、[用户的创建](../../../ghippo/user-guide/access-control/user.md)，并将用户授权为 [NS Edit](../permissions/permission-brief.md#ns-edit) 角色 ，详情可参考[命名空间授权](../permissions/cluster-ns-auth.md)。
 
 ## 图形化表单创建
 
-1. 在`集群列表`页面点击某个集群的名称，进入`集群详情`。
+1. 在 __集群列表__ 页面点击某个集群的名称，进入 __集群详情__ 。
 
     ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy01.png)
 
-2. 在左侧导航栏，点击`配置与密钥`->`密钥`，点击右上角`创建密钥`按钮。
+2. 在左侧导航栏，点击 __配置与密钥__ -> __密钥__ ，点击右上角 __创建密钥__ 按钮。
 
     ![创建密钥](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/secret01.png)
 
-3. 在`创建密钥`页面中填写配置信息，点击`确定`。
+3. 在 __创建密钥__ 页面中填写配置信息，点击 __确定__ 。
 
     ![创建密钥](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/secret02.png)
 
@@ -50,15 +50,15 @@
 
 ## YAML 创建
 
-1. 在`集群列表`页面点击某个集群的名称，进入`集群详情`。
+1. 在 __集群列表__ 页面点击某个集群的名称，进入 __集群详情__ 。
 
     ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy01.png)
 
-2. 在左侧导航栏，点击`配置与密钥`->`密钥`，点击右上角 `YAML 创建`按钮。
+2. 在左侧导航栏，点击 __配置与密钥__ -> __密钥__ ，点击右上角 __YAML 创建__ 按钮。
 
     ![YAML 创建](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/secret03.png)
 
-3. 在 `YAML 创建`页面中填写 YAML 配置，点击`确定`。
+3. 在 __YAML 创建__ 页面中填写 YAML 配置，点击 __确定__ 。
 
     > 支持从本地导入 YAML 文件或将填写好的文件下载保存到本地。
 

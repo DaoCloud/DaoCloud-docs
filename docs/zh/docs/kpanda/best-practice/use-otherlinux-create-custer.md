@@ -25,7 +25,7 @@ curl -Lo ./other_os_pkgs.sh https://raw.githubusercontent.com/kubean-io/kubean/m
 ./other_os_pkgs.sh build # 构建离线包
 ```
 
-执行完上述命令后，预期将在当前路径下生成一个名为 `os-pkgs-anolis-8.8.tar.gz` 的压缩包。当前路径下文件目录大概如下：
+执行完上述命令后，预期将在当前路径下生成一个名为 __os-pkgs-anolis-8.8.tar.gz__ 的压缩包。当前路径下文件目录大概如下：
 
 ```console
     .
@@ -36,7 +36,7 @@ curl -Lo ./other_os_pkgs.sh https://raw.githubusercontent.com/kubean-io/kubean/m
 
 ## 离线节点安装离线包
 
-将在线节点中生成的 `other_os_pkgs.sh`、`pkgs.yml`、`os-pkgs-anolis-8.8.tar.gz` 三个文件拷贝至离线环境中的待建集群的**所有**节点上。
+将在线节点中生成的 __other_os_pkgs.sh__ 、 __pkgs.yml__ 、 __os-pkgs-anolis-8.8.tar.gz__ 三个文件拷贝至离线环境中的待建集群的**所有**节点上。
 
 登录离线环境中，任一待建集群的其中一个节点上，执行如下命令，为节点安装 os-pkg 包。
 
@@ -50,7 +50,7 @@ export HOST_IPS='172.30.41.168' # 当前离线节点的 IP
 ./other_os_pkgs.sh install #安装离线包
 ```
 
-执行完成上述命令后，等待界面提示： `All packages for node (X.X.X.X) have been installed` 即表示安装完成。
+执行完成上述命令后，等待界面提示： __All packages for node (X.X.X.X) have been installed__ 即表示安装完成。
 
 ## 下一步
 
