@@ -1,10 +1,10 @@
 # 安装 Jenkins
 
-## 前提条件
+## 开始之前
 
-- 安装 Jenkins 之前需要确保将要安装 Jenkins 的集群中存在默认的存储类。
-- 请确保安装在 __amamba-system__ 命名空间下。
-- 如果在全局服务集群安装，请确保在 __容器管理__ -> __helm 应用__ ， __amamba-system__ 命名空间下的 __amamba-jenkins__ 实例。
+- 安装 Jenkins 之前需要确保将要安装 Jenkins 的集群中存在默认的存储类；
+- 请提前做好资源规划，评估未来最大并发的流水线数，并根据文档 ![Jenkins场景配置](../../quickstart/scenarios-config.md) 进行配置；
+- 请确认安装的目标集群的容器运行时：只有使用 docker 作为容器运行时才能选择 Agent 的 `ContainerRuntime` 为docker；
 
 ## 开始安装
 
@@ -32,7 +32,7 @@
 
     | 参数                                 | 描述                                                         |
     | ------------------------------------ | ------------------------------------------------------------ |
-    | ContainerRuntime                     | 选择运行时，支持 podman、docker                                 |
+    | ContainerRuntime                     | 选择运行时，支持 podman、docker。需要根据集群的容器运行时决定。               |
     | AdminUser                            | Jenkins 的用户名                                             |
     | AdminPassword                        | Jenkins 的密码                                               |
     | Deploy.JenkinsHost                   | Jenkins 的访问链接。如果选择Node Port 方式，访问地址规则为：http://{集群地址:端口} |
@@ -42,15 +42,13 @@
     | NodePort                             | 如果 ServiceType=NodePort 则需要必填，范围为：30000-32767    |
     | resources.requests                   | Jenkins 的资源请求值                                         |
     | resources.limits                     | Jenkins 的资源限制值                                         |
-    | image.registry                       | jenkins 镜像                                                 |
-    | eventProxy.enabled                   | true 代表部署在非全局服务集群<br />false 代表部署在全局服务集群 |
-    | eventProxy.image.registry            | 如果 enabled=true 必须填写                                   |
-    | eventProxy.image.repository          | 如果 enabled=true 必须填写                                   |
-    | eventProxy.image.tag                 | 如果 enabled=true 必须填写                                   |
-    | eventProxy.imagePullPolicy           | 如果 enabled=true 必须填写                                   |
-    | eventProxy.configMap.eventroxy.host  | 如果 enabled=true 必须填写                                   |
-    | eventProxy.configMap.eventroxy.proto | 如果 enabled=true 必须填写                                   |
-    | eventProxy.configMap.eventroxy.token | 如果 enabled=true 必须填写<br />token 获取方式参考[全局管理访问密钥文档](../../../ghippo/user-guide/personal-center/accesstoken.md) |
+    | image.registry                       | Jenkins 镜像仓库地址                                                 |
+    | eventProxy.enabled                   | EventProxy 是一个旨在为 Jenkins 到 Amamba APIServer提供可靠连接的边车容器，当Jenkins部署的集群和Global集群不在同一个区域的时候，最好开启。 |
+    | eventProxy.image.registry            | eventProxy 镜像仓库的地址。<br />如果 enabled=true 必须填写                                   |
+    | eventProxy.configMap.eventProxy.host  | Jenkins 事件的接收地址的Host，Jenkins如果部署在Worker集群，需要设置成DCE的入口地址。<br />如果 enabled=true 必须填写。                                   |
+    | eventProxy.configMap.eventProxy.proto | Jenkins 事件的接收地址的Protocol，默认是http。<br />如果 enabled=true 必须填写                                   |
+    | eventProxy.configMap.eventProxy.webhookUrl | Jenkins 事件的接收地址的路径，默认是 `/apis/internel.amamba.io/devops/pipeline/v1alpha1/webhooks/jenkins` 。  |
+    | eventProxy.configMap.eventProxy.token | 访问DCE的toekn，获取方式参考[全局管理访问密钥文档](../../../ghippo/user-guide/personal-center/accesstoken.md)<br />如果 enabled=true 必须填写 |
 
 5. 前往 Helm 应用查看部署结果。
 
@@ -81,7 +79,7 @@
 
 ## 集成注意事项
 
-如果集成的 Jenkins 实例部署在非 __kpanda-global-cluster__ 集群时，会导致应用工作台无法更新 Jenkins 实例的配置文件（后续版本时会优化集成 Jenkins 实例需要填写所在集群、命名空间），从而引发出下述两个问题：
+如果集成的 Jenkins 实例未提供集群和命名空间信息时，会导致应用工作台无法更新 Jenkins 实例的配置文件，从而引发出下述两个问题：
 
 - 流水线 __通知__ 步骤，在全局管理 -> 平台设置 -> 邮件服务器设置，配置好邮件服务器地址后，无法更新到 Jenkins 中配置中。
 - 流水线 __SonarQube 配置__ 步骤，在工具链集成 SonarQube 实例后并绑定到当前工作空间，使用该实例会失效。
