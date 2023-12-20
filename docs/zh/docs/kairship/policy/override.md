@@ -16,7 +16,7 @@
 
     ![yaml创建](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/op002.png)
 
-3. 返回部署策略列表，新创建的默认位于第一个。点击列表右侧的 `⋮`，可以编辑 YAML 和执行删除操作。
+3. 返回差异化策略列表，新创建的默认位于第一个。点击列表右侧的 `⋮`，可以编辑 YAML 和执行删除操作。
 
     !!! note
 
@@ -62,7 +62,6 @@ spec:
     - 资源配置：支持选取所选多云命名空间下的多云资源进行差异化配置，多云资源也支持多选。
 
     - 差异化策略：支持添加镜像/运行参数/运行命令/自定义等的差异化配置。
-      
 
     ![表单创建](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/op003.png)
 
@@ -166,6 +165,3 @@ spec:
        | Key      | 是   | 注解的键           |                      |
        | Operator | 是   | 对目标字段操作类型 | add、remove、replace |
        | Value    | 否   | 注解的值           |                      |
-
-    
-
