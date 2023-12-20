@@ -52,9 +52,11 @@ hide:
 
     **手动选择已有的 IP 池**
 
-    手动选择 IP 池需要提前创建 IP 池，可选择 IP 池范围为： [已关联所选择 的Multus CNI 配置的 IPPool](createpool.md) ，可以是：`共享 IP 池`，添加了当前`应用亲和性的 IP 池`，添加了当前`命名空间亲和性的 IP 池`。
+    手动选择 IP 池需要提前创建 IP 池，可选择 IP 池范围为： [已关联所选择 的Multus CNI 配置的 IPPool](createpool.md) ，可以是：`共享 IP 池`，以及添加了`当前应用亲和性`、 `命名空间亲和性`、`节点亲和性`的 IP 池。
 
     ![手动选择](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/useippool03.png)
+
+    注意：如果 所选择的[ IP 池创建时](/createpool.md) 加了节点亲和性如：`zone:beijing`，请在创建工作负载时，加上对应的标签`zone:beijing`	。使用场景请参考：[IP 池的使用说明](ippoolusage.md)![zone-beijing](../../images/zone-beijing.jpg)
 
     **自动创建固定 IP 池**
 
@@ -64,7 +66,7 @@ hide:
 
     **使用默认 IP 池**
 
-    提前创建好 IP 池，并在 Multus CNI 配置中，选择带有默认 IP 池的网卡，即可使用默认 IP 池功能。
+    提前创建好 IP 池，并在 Multus CNI 配置中，选择带有默认 IP 池的网卡，即可使用默认 IP 池功能。详情请参考：[Multus 创建](../config/multus-cr.md)
     ![默认IP池](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/useippool05.png)
     
 1. 创建完工作负载后，可点击对应工作负载 `test01` 查看工作负载 Pod 使用的 IP。
