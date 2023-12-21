@@ -617,7 +617,8 @@ nav:
       - Microservice:
           - Microservices:
               - Intro:
-                  - Features: skoala/intro/index.md
+                  - Index: skoala/intro/index.md
+                  - Features: skoala/intro/features.md
                   - Use Cases: skoala/intro/scenarios.md
                   - Competitiveness: skoala/intro/advantages.md
                   - Microservices Release Notes: skoala/intro/release-notes.md
