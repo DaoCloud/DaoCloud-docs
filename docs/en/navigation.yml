@@ -542,22 +542,22 @@ nav:
                   - Install insight-agent on Other Distributions:
                       - On DCE 4.0.x: insight/quickstart/other/install-agentindce.md
                       - On OpenShift 4.x: insight/quickstart/other/install-agent-on-ocp.md
-                  - Enable Observability with OTel:
-                      - insight/quickstart/otel/otel.md
-                      - Non-intrusive Enhancement with Operator: insight/quickstart/otel/operator.md
-                      - Enhance GO Apps with OTel SDK: insight/quickstart/otel/golang.md
-                      - Expose Metrics with OTel SDK: insight/quickstart/otel/meter.md
-                      - Enhance Go Apps with OTel Auto-Instrumentation: insight/quickstart/otel/golang-ebpf.md
-                      - Send Trace Data to Insight: insight/quickstart/otel/send_tracing_to_insight.md
-                  - Enable Observability for Java Apps:
-                      - insight/quickstart/jvm-monitor/jvm-catelogy.md
-                      - Use JMX Exporter to Expose JVM Metrics: insight/quickstart/jvm-monitor/jmx-exporter.md
-                      - Use OTel Java Agent to Expose JVM Metrics: insight/quickstart/jvm-monitor/otel-java-agent.md
-                      - How Does a Java App with JVM Metrics Enable Observability: insight/quickstart/jvm-monitor/legacy-jvm.md
                   - Resource Planning:
                       - Prometheus Resource Planning: insight/quickstart/res-plan/prometheus-res.md
                       - vmstorage Disk Planning: insight/quickstart/res-plan/vms-res-plan.md
                       - Adjust vmstorage Disks: insight/quickstart/res-plan/modify-vms-disk.md
+              - Enable Observability with OTel:
+                  - insight/quickstart/otel/otel.md
+                  - Non-intrusive Enhancement with Operator: insight/quickstart/otel/operator.md
+                  - Enhance GO Apps with OTel SDK: insight/quickstart/otel/golang.md
+                  - Expose Metrics with OTel SDK: insight/quickstart/otel/meter.md
+                  - Enhance Go Apps with OTel Auto-Instrumentation: insight/quickstart/otel/golang-ebpf.md
+                  - Send Trace Data to Insight: insight/quickstart/otel/send_tracing_to_insight.md   
+              - Enable Observability for Java Apps:
+                  - insight/quickstart/jvm-monitor/jvm-catelogy.md
+                  - Use JMX Exporter to Expose JVM Metrics: insight/quickstart/jvm-monitor/jmx-exporter.md
+                  - Use OTel Java Agent to Expose JVM Metrics: insight/quickstart/jvm-monitor/otel-java-agent.md
+                  - How Does a Java App with JVM Metrics Enable Observability: insight/quickstart/jvm-monitor/legacy-jvm.md      
               - Dashboard:
                   - Overview: insight/user-guide/dashboard/overview.md
                   - Dashboard: insight/user-guide/dashboard/dashboard.md
