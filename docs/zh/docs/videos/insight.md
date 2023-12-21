@@ -14,6 +14,7 @@
 - :six: [事件查询](#_6)
 - :seven: [告警中心](#_7)
 - :eight: [系统管理](#_8)
+- :nine: [拨测](#_9)
 
 </div>
 
@@ -79,6 +80,14 @@
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/sys-config.mp4" preload="metadata" poster="images/insight-sysconfig.png"></video>
+</div>
+
+## 拨测
+
+参阅[拨测](../insight/user-guide/scenario-insight/probe.md)文档页面。
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/Insight-probe.mp4" preload="metadata" poster="images/insight-probe.png"></video>
 </div>
 
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
