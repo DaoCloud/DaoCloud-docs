@@ -9,6 +9,12 @@ hide:
 
 ## 2023 年
 
+- [20231220 | 高速网络方案 Spiderpool 入选 CNCF Sandbox](./231220-spiderpool.md)
+
+    2023 年 12 月 19 日经 DaoCloud 开源，后捐赠给 CNCF 社区的
+    [Spiderpool](https://github.com/spidernet-io/spiderpool)
+    网络方案经 CNCF TOC 委员会投票，入选了 CNCF Sandbox。
+
 - [20231213 | Kubernetes 1.29 发布：宇宙主题雄心勃勃](./231213-k8s-1.29.md)
 
     太平洋时间 2023 年 12 月 13 日，主题为 Mandala（宇宙）的 Kubernetes 1.29 正式发布。
