@@ -33,7 +33,7 @@ of cloud native productivity. Embrace DCE 5.0 to elevate your organization's cap
 - :material-warehouse: **Container Registry** [Integrate and host registries](../kangaroo/intro/index.md)
 - :material-dot-net: **Network** [Multi-CNI fusion solution](../network/intro/index.md)
 - :floppy_disk: **Storage** [Containerized storage](../storage/index.md)
-- :material-train-car-container: **VM Containers** [Containerized virtual machine](../virtnest/intro/index.md)
+- :material-train-car-container: **VM** [Containerized virtual machine](../virtnest/intro/index.md)
 - :material-monitor-dashboard: **Insight** [One-stop graphical dashboard](../insight/intro/index.md)
 - :material-engine: **Microservice Engine** [Microservice governance and gateway](../skoala/intro/index.md)
 - :material-table-refresh: **Service Mesh** [Non-intrusive service governance](../mspider/intro/index.md)
@@ -52,6 +52,23 @@ allowing for zero downtime while upgrading any module. DCE 5.0 is also easy to
 integrate with hundreds of cloud native ecological plugins, making it simple to
 customize solutions for different use cases. This modular style allows for growth
 day by day, making things better over time.
+
+=== "Cloud Native Base"
+
+     DCE 5.0 provides cloud native computing, networking, storage, and other capabilities,
+     compatible with various cluster access. It supports the entire lifecycle of the cluster
+     from deployment, version upgrade, certificate change, configuration change, and recycling,
+     enabling lifecycle management. 
+
+     This capability breaks through K8s API performance bottlenecks, allowing large-scale
+     enterprise users to use multiple clusters concurrently. Additionally, for the enterprise
+     environment, it provides scenario-based network solutions to maximize the reuse of
+     the current enterprise network infrastructure and lower the threshold for enterprises
+     to use cloud native applications.
+
+     **Related modules**: [Global Management](../ghippo/intro/index.md), [Container Management](../kpanda/intro/index.md),
+     [Cluster Lifecycle Management](../community/kubean.md), [cloud native network](../network/intro/index.md),
+     [cloud native storage](../storage/index.md)
 
 === "Multicloud"
 
@@ -184,22 +201,11 @@ day by day, making things better over time.
 
     ![Cloud edge collaboration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/09cloud-edge.png)
 
-=== "Cloud Native Base"
+=== "Virtual Machine"
 
-     DCE 5.0 provides cloud native computing, networking, storage, and other capabilities,
-     compatible with various cluster access. It supports the entire lifecycle of the cluster
-     from deployment, version upgrade, certificate change, configuration change, and recycling,
-     enabling lifecycle management. 
+     Based on KubeVirt technology, virtual machines are managed as cloud-native applications, seamlessly integrated with containers. This allows users to easily manage the entire lifecycle of virtual machines, including capabilities such as snapshotting, recovery, cloning, and live migration. Users can enjoy a smooth experience similar to container applications.
 
-     This capability breaks through K8s API performance bottlenecks, allowing large-scale
-     enterprise users to use multiple clusters concurrently. Additionally, for the enterprise
-     environment, it provides scenario-based network solutions to maximize the reuse of
-     the current enterprise network infrastructure and lower the threshold for enterprises
-     to use cloud native applications.
-
-     **Related modules**: [Global Management](../ghippo/intro/index.md), [Container Management](../kpanda/intro/index.md),
-     [Cluster Lifecycle Management](../community/kubean.md), [cloud native network](../network/intro/index.md),
-     [cloud native storage](../storage/index.md)
+     **Related Modules**: [Global Management](../ghippo/intro/index.md), [Container Management](../kpanda/intro/index.md), [Cloud Native Network](../network/intro/index.md), [Cloud Native Storage](../storage/index.md), [Virtual Machine](../virtnest/intro/index.md)
 
 Once you have obtained the [license authorization](./license0.md) and successfully logged into DCE 5.0
 for the first time, you will be greeted by a user-friendly dashboard. This dashboard provides an intuitive display
