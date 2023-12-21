@@ -53,8 +53,8 @@ You can load the image in one of the following two ways. When there is a contain
              kind: CHARTMUSEUM # Can also be any other supported Helm Chart repository class
              url: http://10.16.10.111 # need to change to chart repo url
              auth:
-              username: "rootuser" # Your container registry username. If chartmuseum disable login verification, auth can be vacant.
-              password: "rootpass123" # Your container registry password
+               username: "rootuser" # Your container registry username. If chartmuseum disable login verification, auth can be vacant.
+               password: "rootpass123" # Your container registry password
            containers:
              auth:
                username: "rootuser" # Your container registry username
@@ -116,6 +116,7 @@ Unzip and load the image file.
          ```
 
 !!! note
+
      Each node needs to perform Docker or containerd loading image operation.
      After the loading is complete, the tag image is required to keep the Registry and Repository consistent with the installation.
 
