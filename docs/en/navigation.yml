@@ -685,9 +685,11 @@ nav:
                   - JWT Plugin in Cloud Native Microservice: skoala/best-practice/plugins/jwt.md
                   - Microservice Gateway JWT: skoala/best-practice/jwt.md
                   - Authentication Server for Microservie Gateway: skoala/best-practice/auth-server.md
+                  - Integrate Microservice Gateway with Rate Limit Server: skoala/best-practice/global-ratelimit.md
                   - Gateway API Policies: skoala/best-practice/gateway02.md
                   - Access Microservie via Gateway: skoala/best-practice/gateway01.md
                   - Gateway to Service Mesh: skoala/best-practice/gateway-mesh.md
+                  - Add Custom Attributes to Gateway Request Logs: skoala/best-practice/add-custom-attributes.md
               - Troubleshoot:
                   - skoala-init error about x-kubernets-validations: skoala/troubleshoot/auth-server.md   
               - Performance Tests:
