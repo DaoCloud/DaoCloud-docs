@@ -25,7 +25,7 @@ DCE 5.0 原生支持 DevOps 开发运维模式，可以实现应用交付的全�
 - :material-warehouse: **镜像仓库** [镜像集成和托管服务](../kangaroo/intro/index.md)
 - :material-dot-net: **云原生网络** [多 CNI 融合方案](../network/intro/index.md)
 - :floppy_disk: **云原生存储** [容器化存储综合方案](../storage/index.md)
-- :material-train-car-container: **虚拟机容器** [容器化的虚拟机](../virtnest/intro/index.md)
+- :material-train-car-container: **虚拟机** [容器化的虚拟机](../virtnest/intro/index.md)
 - :material-monitor-dashboard: **可观测性** [一站式图形化仪表盘](../insight/intro/index.md)
 - :material-engine: **微服务引擎** [微服务治理中心和网关](../skoala/intro/index.md)
 - :material-table-refresh: **服务网格** [非侵入式服务治理](../mspider/intro/index.md)
@@ -140,7 +140,7 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
 
     基于 KubeVirt 技术将虚拟机作为云原生应用进行管理，与容器无缝地衔接在一起，使用户能够轻松地实现虚拟机本身的全生命周期管理、虚拟机的快照、恢复、克隆、热迁移等能力，享受与容器应用一致的丝滑体验。
 
-    **涉及的模块**：[全局管理](../ghippo/intro/index.md)、[容器管理](../kpanda/intro/index.md)、[云原生网络](../network/intro/index.md)、[云原生存储](../storage/index.md)
+    **涉及的模块**：[全局管理](../ghippo/intro/index.md)、[容器管理](../kpanda/intro/index.md)、[云原生网络](../network/intro/index.md)、[云原生存储](../storage/index.md)、[虚拟机](../virtnest/intro/index.md)
 
     ![虚拟机](../../images/virtnest.png)
 
