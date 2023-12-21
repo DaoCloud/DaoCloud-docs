@@ -12,6 +12,7 @@ nav:
               - 云原生词汇: dce/terms.md
               - K8s 认证服务商: dce/kcsp.md
               - DCE 5.0 Release Notes:
+                  - 20231130 版本发布: dce/dce-rn/20231130.md
                   - 20231031 版本发布: dce/dce-rn/20231031.md
                   - 20230831 版本发布: dce/dce-rn/20230831.md
                   - 20230731 版本发布: dce/dce-rn/20230731.md
@@ -22,7 +23,8 @@ nav:
               - 安装依赖项: install/install-tools.md
               - 安装社区版:
                   - 资源规划: install/community/resources.md
-                  - 新手尝鲜在线安装: install/community/kind/online.md
+                  - 从零部署 Kind 集群到安装 DCE 5.0 社区版: install/community/kind/online.md
+                  - 从零部署 K8s 集群到安装 DCE 5.0 社区版: install/community/k8s/k8s-dce-deploy.md
                   - 已有 K8s 集群在线安装: install/community/k8s/online.md
                   - 已有 K8s 集群离线安装: install/community/k8s/offline.md
               - 安装商业版:
@@ -47,6 +49,8 @@ nav:
                   - Oracle Linux R9/R8 U1: install/os-install/oracleLinux-install-dce5.0.md
                   - TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
                   - 其他 Linux: install/os-install/otherlinux.md
+              - 最佳实践:
+                  - 部署 DCE5.0 商业版时，etcd 组件采用 host 模式部署与控制平面分离: install/best-practices/etcd-host-deploy.md
               - 安装器 Release Notes: install/release-notes.md
       - 工作台:
           - 应用工作台:
@@ -103,6 +107,7 @@ nav:
                   - 创建金丝雀发布任务: amamba/user-guide/release/canary.md
                   - 查看金丝雀发布任务: amamba/user-guide/release/check-canary.md
                   - 创建蓝绿发布任务: amamba/user-guide/release/blue-green.md
+                  - 查看蓝绿发布任务: amamba/user-guide/release/check-bluegreen.md
               - 项目研发管理:
                   - 查看缺陷: amamba/user-guide/project-mangement/issue.md
               - 工具链集成:
@@ -461,7 +466,9 @@ nav:
                   - 介绍: storage/hwameistor/intro/index.md
                   - 组件:
                       - 本地存储: storage/hwameistor/intro/ls.md
-                      - DRBD 安装器: storage/hwameistor/intro/drbd.md
+                      - DRBD 安装器:
+                          - 介绍: storage/hwameistor/intro/drbd.md
+                          - DRBD 适配的内核版本: storage/hwameistor/intro/drbd-support.md
                       - 调度器: storage/hwameistor/intro/scheduler.md
                       - 准入控制器: storage/hwameistor/intro/admission-controller.md
                   - 资源介绍: storage/hwameistor/intro/resources.md
@@ -516,11 +523,11 @@ nav:
                   - 存储卷: storage/terms/volume.md
                   - LVM: storage/terms/lvm.md
                   - PV 和 PVC: storage/terms/pv_pvc.md
-          - 虚拟机容器:
+          - 虚拟机:
               - 介绍:
                   - 简介: virtnest/intro/index.md
                   - Release Notes: virtnest/intro/release-notes.md
-                  - 安装虚拟机容器: virtnest/intro/install.md
+                  - 安装虚拟机: virtnest/intro/install.md
               - 快速入门:
                   - 在指定集群内安装 virtnest-agent: virtnest/quick-start/index.md
                   - 创建虚拟机: virtnest/quick-start/create-image.md
@@ -618,13 +625,14 @@ nav:
                   - 使用 OTel 零代码接收 SkyWalking 链路数据: insight/best-practice/sw-to-otel.md
                   - Kafka + ES 流式架构应对超大规模日志方案: insight/best-practice/insight-kafka.md
               - 兼容性测试:
-                  - K8s 集群兼容性测试: insight/compati-test/k8s-compatibility.md
-                  - Rancher 集群兼容性测试: insight/compati-test/rancher-compatibility.md
-                  - OCP 集群兼容性测试: insight/compati-test/ocp-compatibility.md
+                  - K8s 兼容性测试: insight/compati-test/k8s-compatibility.md
+                  - Rancher 兼容性测试: insight/compati-test/rancher-compatibility.md
+                  - Openshift 兼容性测试: insight/compati-test/ocp-compatibility.md
       - 微服务:
           - 微服务引擎:
               - 介绍:
-                  - 功能总览: skoala/intro/index.md
+                  - 索引: skoala/intro/index.md
+                  - 功能总览: skoala/intro/features.md
                   - 使用场景: skoala/intro/scenarios.md
                   - 产品优势: skoala/intro/advantages.md
                   - Release Notes: skoala/intro/release-notes.md
@@ -1107,7 +1115,7 @@ nav:
                   - 安全管理: download/modules/dowl.md
                   - 网络模块: download/modules/spidernet.md
                   - 存储模块: download/modules/hwameistor.md
-                  - 虚拟机容器: download/modules/virtnest.md
+                  - 虚拟机: download/modules/virtnest.md
               - 多云编排: download/modules/kairship.md
               - 镜像仓库: download/modules/kangaroo.md
               - 可观测性: download/modules/insight.md
@@ -1132,6 +1140,7 @@ nav:
   - 博客:
       - 博文索引: blogs/index.md
       - 2023 年:
+          - 202312 | K8s 1.29 发布：宇宙主题雄心勃勃: blogs/231213-k8s-1.29.md
           - 202312 | K8s 裸机 vs 虚机性能对比: blogs/231205-vm-bm-compare.md
           - 202311 | K8s 1.29 前瞻：移除、弃用及重大变更: blogs/231115-k8s-1.29-changes.md
           - 202310 | 上海 K8s 贡献者峰会回顾: blogs/231008-kcs.md
@@ -1211,6 +1220,7 @@ nav:
               - Git 文档流程: native/knowledge/git/index.md
               - 开启两步安全验证: native/knowledge/git/2auth.md
               - Git 常见问题: native/knowledge/git/rebase.md
+              - VSCode 编辑技巧: native/knowledge/git/vscode.md
               - UI 翻译预览: native/knowledge/git/ui-preview.md
               - GitHub 混迹技巧: native/knowledge/git/github.md
           - 其他: native/knowledge/other.md

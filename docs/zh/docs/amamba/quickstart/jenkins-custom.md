@@ -11,9 +11,9 @@
 
 ## 通过 Volume 挂载
 
-第一种方式是使用 `init` 容器和 `volumeMount` 的方式拷贝工具到 agent 容器里。
+第一种方式是使用 __init__ 容器和 __volumeMount__ 的方式拷贝工具到 agent 容器里。
 通过修改 jenkins casc 的 ConfigMap，修改容器的默认行为。以 go 为例，下面这个例子中，
-`init` 容器使用另一个版本的 Helm 覆盖了 agent 中自带的 Helm：
+ __init__ 容器使用另一个版本的 Helm 覆盖了 agent 中自带的 Helm：
 
 ```yaml
  jenkins.yaml: |

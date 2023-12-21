@@ -27,11 +27,11 @@ Based on the overall process, we need to prepare the following information:
 
 This example includes the following steps: pull the service code, build an image, and update the application configuration file
 
-After the `Update app profile` step is successfully executed, Argo CD detects the change and triggers the update to synchronize the latest configuration file and deploy it to the cluster.
+After the __Update app profile__ step is successfully executed, Argo CD detects the change and triggers the update to synchronize the latest configuration file and deploy it to the cluster.
 
 1. For details about how to create a pipeline, see [crate pipeline](../user-guide/pipeline/create/custom.md).
 
-2. After successful creation, select the pipeline operation: `Edit Jenkinsfile`
+2. After successful creation, select the pipeline operation: __Edit Jenkinsfile__
 
     ??? note "The following Jenkinsfile parameters can be updated as required"
 
@@ -93,7 +93,7 @@ After the `Update app profile` step is successfully executed, Argo CD detects th
 
     <!--![]()screenshots-->
 
-3. After the creation is complete, a record is generated, and the synchronization status is displayed `Not synced`
+3. After the creation is complete, a record is generated, and the synchronization status is displayed __Not synced__
 
     <!--![]()screenshots-->
 
@@ -115,13 +115,13 @@ After the `Update app profile` step is successfully executed, Argo CD detects th
 
     <!--![]()screenshots-->
 
-4. Continue to verify the continuous deployment application and find that the status is `Not synced`. See that Deployment resources are not synchronized and jump to `Container Management` to confirm the current image version.
+4. Continue to verify the continuous deployment application and find that the status is __Not synced__. See that Deployment resources are not synchronized and jump to __Container Management__ to confirm the current image version.
 
     <!--![]()screenshots-->
 
     <!--![]()screenshots-->
 
-5. Click `Sync`, wait until the synchronization is successful, view Deployment resources and confirm the current image version.
+5. Click __Sync__, wait until the synchronization is successful, view Deployment resources and confirm the current image version.
 
     <!--![]()screenshots-->
 

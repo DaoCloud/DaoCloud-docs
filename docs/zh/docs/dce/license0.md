@@ -9,7 +9,7 @@ DCE 5.0 社区版包含的模块为[全局管理](../ghippo/intro/index.md)、[�
 
 申请许可证的具体步骤如下：
 
-1. 点击 [申请许可证密钥](https://qingflow.com/f/58604bf8){ .md-button } ，填写表单后点击`提交`。
+1. 点击 [申请许可证密钥](https://qingflow.com/f/58604bf8){ .md-button } ，填写表单后点击 __提交__ 。
 
     ![license](https://docs.daocloud.io/daocloud-docs-images/docs/images/license011.png)
 
@@ -17,16 +17,16 @@ DCE 5.0 社区版包含的模块为[全局管理](../ghippo/intro/index.md)、[�
 
     ![get-auth-code](https://docs.daocloud.io/daocloud-docs-images/docs/images/license012.png)
 
-3. 输入上一步的许可证密钥，输入设备独有的 ESN 后，点击`获取离线授权码`。
+3. 输入上一步的许可证密钥，输入设备独有的 ESN 后，点击 __获取离线授权码__ 。
 
     ![offline-auth-code](https://docs.daocloud.io/daocloud-docs-images/docs/images/license03.png)
 
     其中 ESN 是集群系统独有的设备编码。
-    具体获取方式为：打开 DCE，点击左侧导航栏`全局管理` -> `平台设置` -> `正版授权`，点击`管理许可证`按钮，打开`管理许可证`页面，复制 ESN 编码。
+    具体获取方式为：打开 DCE，点击左侧导航栏 __全局管理__ -> __平台设置__ -> __正版授权__ ，点击 __管理许可证__ 按钮，打开 __管理许可证__ 页面，复制 ESN 编码。
 
     ![esn](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/license02.jpg)
 
-4. 复制并粘贴上一步换取的离线授权码，点击`立即激活`。恭喜您！现在可以探索全新的 DCE 5.0 啦！
+4. 复制并粘贴上一步换取的离线授权码，点击 __立即激活__ 。恭喜您！现在可以探索全新的 DCE 5.0 啦！
 
 !!! info "📢 温馨提示"
 
@@ -39,7 +39,7 @@ DCE 5.0 社区版包含的模块为[全局管理](../ghippo/intro/index.md)、[�
 
 ### 推荐方案
 
-1. 首先[清除设备编码](https://qingflow.com/f/58604bf8)，在表单中选择`清除设备编码（ESN/Cluster ID）`，输入[先前的许可证密钥](https://license.daocloud.io/dce5-licenses)，填写完成后点击`提交`。
+1. 首先[清除设备编码](https://qingflow.com/f/58604bf8)，在表单中选择 __清除设备编码（ESN/Cluster ID）__ ，输入[先前的许可证密钥](https://license.daocloud.io/dce5-licenses)，填写完成后点击 __提交__ 。
 
     ![清除 ESN](https://docs.daocloud.io/daocloud-docs-images/docs/images/esn.png)
 
@@ -49,7 +49,7 @@ DCE 5.0 社区版包含的模块为[全局管理](../ghippo/intro/index.md)、[�
 
 这种方法需要对安装的每个模块延续许可证。
 例如 DCE 5.0 社区版包含了容器管理、全局管理、可观测性 3 个模块，每个模块有 1 个许可证。
-这样就需要在[许可证页面](https://qingflow.com/f/58604bf8)，为每个模块选择`许可证续期`。
+这样就需要在[许可证页面](https://qingflow.com/f/58604bf8)，为每个模块选择 __许可证续期__ 。
 
 ![延期](https://docs.daocloud.io/daocloud-docs-images/docs/images/extend.png)
 

@@ -7,15 +7,15 @@
 
 目前提供了两种创建方式：向导创建和 YAML 创建。本文以向导创建为例，参照以下步骤操作。
 
-1. 进入某一个多云实例后，在左侧导航栏中，点击`资源管理` -> `多云配置项`，点击右上角的`创建配置项`按钮。
+1. 进入某一个多云实例后，在左侧导航栏中，点击 __资源管理__ -> __多云配置项__ ，点击右上角的 __创建配置项__ 按钮。
 
     ![点击按钮](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/config01.png)
 
-2. 在`创建配置项`页面中，输入名称，选择命名空间等信息后，点击`确定`。
+2. 在 __创建配置项__ 页面中，输入名称，选择命名空间等信息后，点击 __确定__ 。
 
     ![填写表单](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/config02.png)
 
-3. 返回多云配置项列表，新创建的默认位于第一个。点击列表右侧的 `⋮`，可以编辑 YAML、更新、导出和删除配置项。
+3. 返回多云配置项列表，新创建的默认位于第一个。点击列表右侧的 __⋮__ ，可以编辑 YAML、更新、导出和删除配置项。
 
     ![其他操作](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/config03.png)
 

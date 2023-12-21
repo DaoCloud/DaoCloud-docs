@@ -41,7 +41,7 @@ hwameistor-volume-evictor-5db99cf979-4674n                 1/1     Running   0  
 
 > `local-disk-manager` 和 `local-storage` 组件是以 `DaemonSets` 方式进行部署的，必须在每个节点上运行。
 
-## 查看 HwameiStor CRD (即 API)
+## 查看 HwameiStor CRD（即 API）
 
 以下 HwameiStor CRD 必须安装在系统上。
 
@@ -68,7 +68,7 @@ localvolumesnapshots                 lvs                          hwameistor.io/
 resizepolicies                                                    hwameistor.io/v1alpha1   false        ResizePolicy
 ```
 
-For the details about CRDs, please also refer to [CRDs](../../architecture/apis.md).
+详情参见 [CRD 表](../intro/resources.md)。
 
 ## 查看 `LocalDiskNodes` 和 `LocalDisks`
 
@@ -91,7 +91,7 @@ localdisk-b682686c65667763bda58e391fbb5d20   k8s-master   /dev/sda     Bound    
 localdisk-da121e8f0dabac9ee1bcb6ed69840d7b   k8s-node1    /dev/sda     Bound       28h
 ```
 
-## 查看 `LocalStorageNodes` 及 存储池
+## 查看 `LocalStorageNodes` 及存储池
 
 HwameiStor 为每个存储节点创建一个 CRD 资源 `LocalStorageNode` (LSN)。 每个 LSN 将会记录该存储节点的状态，及节点上的所有存储资源，包括存储池、数据卷、及相关配置信息。
 

@@ -20,7 +20,7 @@ IAM（Identity and Access Management，用户与访问控制）是全局管理�
 
 ## 使用流程
 
-1. 使用 DCE 平台主账号（Super Admin）或具有管理员权限的用户账号登录 DCE 平台。
+1. 使用 DCE 平台主账号（ Admin）或具有管理员权限的用户账号登录 DCE 平台。
 2. 创建用户，参见[用户](user.md)。
 3. 为用户授权，参见[权限管理](role.md)。
 4. 创建用户组，参见[用户组](group.md)。

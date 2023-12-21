@@ -6,7 +6,7 @@ Workbench module supports quick creation of pipelines based on built-in template
 
 The steps to create a pipeline based on a built-in template are as follows:
 
-1. Click `Create Pipeline` on the pipeline list page.
+1. Click __Create Pipeline__ on the pipeline list page.
 
     <!--![]()screenshots-->
 
@@ -14,24 +14,24 @@ The steps to create a pipeline based on a built-in template are as follows:
 
     <!--![]()screenshots-->
 
-3. Select the appropriate pipeline template and click `Next`.
+3. Select the appropriate pipeline template and click __Next__.
 
-    > All built-in templates are listed under the `Recommended Templates` heading, and all custom templates created by users are listed under the `Custom Templates` heading.
+    > All built-in templates are listed under the __Recommended Templates__ heading, and all custom templates created by users are listed under the __Custom Templates__ heading.
 
     <!--![]()screenshots-->
 
-4. Fill in the pipeline configuration by referring to [custom pipeline creation](custom.md), and then click `Next`.
+4. Fill in the pipeline configuration by referring to [custom pipeline creation](custom.md), and then click __Next__.
 
-5. Fill in the template parameters by referring to the following instructions, and then click `OK`.
+5. Fill in the template parameters by referring to the following instructions, and then click __OK__.
 
     - Code warehouse address: the address of the remote code warehouse, required
     - Branch: The code of which branch is used to build the pipeline, required
     - Credentials: If it is a private warehouse, you need to [create a credential](../credential.md) in advance and select the credential here
     - Test command: unit test command
 
-        > If using a Golang template, the test command defaults to `go test -v -coverprofile=coverage.out`
-        > If using Nodejs template, the test command defaults to `npm test`
-        > If using a Maven template, the test command defaults to `mvn -B test -Dmaven.test.failure.ignore=true`
+        > If using a Golang template, the test command defaults to __go test -v -coverprofile=coverage.out__
+        > If using Nodejs template, the test command defaults to __npm test__
+        > If using a Maven template, the test command defaults to __mvn -B test -Dmaven.test.failure.ignore=true__
 
     - Test report location: where the test report is located and analyzed to generate a test report
     - Dockerfile path: the absolute path of the Dockerfile in the code warehouse, required

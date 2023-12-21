@@ -5,7 +5,7 @@
 
 中文版 ｜ [English](README.md)
 
-DaoCloud 是经认证的 K8s 服务提供商。目前 DCE 经 CNCF 认证可以完美支撑以下版本：
+DaoCloud 是经认证的 K8s 服务提供商。目前 DCE 经 CNCF 认证可以完美支持以下版本：
 
 K8s 官方维护的当前 4 个版本：
 

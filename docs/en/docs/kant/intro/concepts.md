@@ -38,10 +38,10 @@
 
     It is an object that contains a small amount of sensitive information such as passwords, tokens, and keys saved in the form of key/value pairs. Decouple sensitive information from container images, and do not include confidential data in application code.
 
-- Message Endpoint
+- Rule Endpoint
 
-    The sender or receiver of messages, which can be end device, cloud services, etc.
+    A regular endpoint for sending or receiving messages. It has three types: rest, eventbus, servicebus.
 
 - Message Routing
 
-    The path of message forwarding.
+    Define how messages are delivered from the source message endpoint to the target message endpoint.

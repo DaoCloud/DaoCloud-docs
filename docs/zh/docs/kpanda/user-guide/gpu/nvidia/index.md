@@ -27,8 +27,8 @@ Daocloud 容器管理平台全面兼容了上述 NVIDIA 的能力特性，用户
     - 节点上的所有 GPU 必须：属于同一产品线（例如 A100-SXM-40GB）
     - 每个 GPU 可启用或不启用 MIG，并且可以自由配置任何可用 MIG 设备类型的混合搭配。
     - 在节点上运行的 k8s-device-plugin 将：
-        - 使用传统的 `nvidia.com/gpu` 资源类型公开任何不处于 MIG 模式的 GPU
-        - 使用遵循架构 `nvidia.com/mig-<slice_count>g.<memory_size>gb` 的资源类型公开各个 MIG 设备
+        - 使用传统的 __nvidia.com/gpu__ 资源类型公开任何不处于 MIG 模式的 GPU
+        - 使用遵循架构 __nvidia.com/mig-<slice_count>g.<memory_size>gb__ 的资源类型公开各个 MIG 设备
 
 开启配置详情参考 [GPU Operator 离线安装](install_nvidia_driver_of_operator.md)
 

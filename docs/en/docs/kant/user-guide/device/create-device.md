@@ -15,7 +15,7 @@ The steps are as follows:
 
 3. Fill in the basic information.
 
-    - Device Name: Combination of lowercase letters, numbers, hyphens (-), and dots (.), without consecutive symbols; starts and ends with a letter or number.
+    - Device Name: A combination of lowercase letters, numbers, hyphens (-), and dots (.), and it should not have consecutive separators. It should start and end with a letter or number. contains a maximum of 253 characters.
     - Access Protocol: The current platform supports Modbus protocol for device access.
     - Namespace: The namespace where the device is located. Namespaces isolate resources from each other.
     - Description: Device description information.

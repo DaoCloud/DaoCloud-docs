@@ -47,7 +47,7 @@ spec:
           image: chrstnhntschl/gpu_burn
           resources:
             limits:
-            nvidia.com/gpu: 2 # Number of MIG GPUs to request
+              nvidia.com/gpu: 2 # Number of MIG GPUs to request
           imagePullPolicy: Always
       restartPolicy: Always
 ```
@@ -76,7 +76,7 @@ spec:
           image: chrstnhntschl/gpu_burn
           resources:
             limits:
-            nvidia.com/mig-4g.20gb: 1 # Expose MIG device through nvidia.com/mig-g.gb resource type
+              nvidia.com/mig-4g.20gb: 1 # Expose MIG device through nvidia.com/mig-g.gb resource type
           imagePullPolicy: Always
       restartPolicy: Always
 ```

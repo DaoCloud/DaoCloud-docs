@@ -16,7 +16,7 @@ The following steps explain how to perform batch registration of edge nodes.
 
 1. Fill in the registration information.
 
-    - Task Name: The name of the batch task, which cannot be empty and has a length limit of 63 characters.
+    - Task Name: The name of the batch task, which cannot be empty and has a length limit of 253 characters.
     - Name Prefix: The nodes accessed through the batch task will have names consisting of the "prefix + random code".
     - CGroup Driver: The control group (CGroup) driver used for managing resources and configurations of pods and containers, such as CPU and memory resource requests and limits.
     - CRI Service Address: The socket file or TCP address for local communication between CRI Client and CRI Server, for example, `unix:///run/containerd/containerd.sock`.

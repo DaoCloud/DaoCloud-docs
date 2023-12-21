@@ -12,6 +12,7 @@ nav:
               - Glossary: dce/terms.md
               - DaoCloud is a KCSP: dce/kcsp.md
               - Enterprise Release Notes:
+                  - 20231130 Release: dce/dce-rn/20231130.md
                   - 20231031 Release: dce/dce-rn/20231031.md
                   - 20230831 Release: dce/dce-rn/20230831.md
                   - 20230731 Release: dce/dce-rn/20230731.md
@@ -22,7 +23,8 @@ nav:
               - Install Dependencies: install/install-tools.md
               - Install DCE Community:
                   - Resource Planning: install/community/resources.md
-                  - Online Install in kind: install/community/kind/online.md
+                  - Install DCE Community on a Kind Cluster: install/community/kind/online.md
+                  - Deploy a K8s Cluster from Scratch to DCE 5.0 Community: install/community/kind/k8s-dce-deploy.md
                   - Online in K8s Cluster: install/community/k8s/online.md
                   - Offline Install in K8s Cluster: install/community/k8s/offline.md
               - Install DCE 5.0 Enterprise:
@@ -47,6 +49,8 @@ nav:
                   - With Oracle Linux R9/R8 U1: install/os-install/oracleLinux-install-dce5.0.md
                   - With TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
                   - With Other Linux: install/os-install/otherlinux.md
+              - Best Practices:
+                  - Etcd Components Deployed in Host Mode and Separated from Control Plane: install/best-practices/etcd-host-deploy.md
               - Installer Release Notes: install/release-notes.md
       - Workbench:
           - Workbench:
@@ -98,7 +102,9 @@ nav:
                   - Argo CD Application Status: amamba/user-guide/gitops/argo-cd-status.md
               - Canary Release:
                   - Create Canary Release: amamba/user-guide/release/canary.md
-                  - Check Canary Release: amamba/user-guide/release/check-canary.md
+                  - View Canary Release: amamba/user-guide/release/check-canary.md
+                  - Create Blue/Green Job: amamba/user-guide/release/blue-green.md
+                  - View Blue/Green Job: amamba/user-guide/release/check-bluegreen.md
               - Toolchain Integration:
                   - Integrated Toolchain: amamba/user-guide/tools/integrated-toolchain.md
                   - Manage Toolchain Instances: amamba/user-guide/tools/toolchain-instances.md
@@ -568,6 +574,7 @@ nav:
                   - Namespaces: insight/user-guide/scenario-insight/namespace.md
                   - Containers: insight/user-guide/scenario-insight/container.md
                   - Events: insight/user-guide/data-query/event.md
+                  - Probes: insight/user-guide/scenario-insight/probe.md
               - Metrics: insight/user-guide/data-query/metric.md
               - Logging: insight/user-guide/data-query/log.md
               - Traces:
@@ -1104,6 +1111,8 @@ nav:
   - Blogs:
       - Index: blogs/index.md
       - 2023 Blogs:
+          - 202312 | K8s 1.29 Released - Ambious Mandala Theme: blogs/231213-k8s-1.29.md
+          - 202312 | Does K8s Perform Better on Bare Metal vs. VMs?: blogs/231205-vm-bm-compare.md
           - 202311 | Removals, Deprecations, and Changes in K8s 1.29: blogs/231115-k8s-1.29-changes.md
           - 202310 | A Look Back for K8s Contributor Summit in Shanghai: blogs/20231008-kcs.md
           - 202309 | Call for K8s Contributor Summit in Shanghai: blogs/230911-kubecon-contributor.md

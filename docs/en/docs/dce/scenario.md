@@ -89,7 +89,7 @@ CI/CD pipeline capability automates application construction and deployment. Inn
 
 Users have weak ability to observe running applications, and hope to complete observation access with light-weight or no-modification access, and complete all-round application operation observation (logs, metrics, traces).
 
-Modules involved: [Container Management](../kpanda/intro/index.md), [Observability](../insight/intro/index.md), [Container Network](../network/intro/index.md), Edge to Cloud Continuum, Dual-architecture Cloud
+Modules involved: [Container Management](../kpanda/intro/index.md), [Observability](../insight/intro/index.md), [Container Network](../network/intro/index.md), Cloud Edge Collabration, Dual-architecture Cloud
 
 Advantages of the solution: unified collection of observation data, one control panel can query all cluster and load observation data, and in-depth support for microservice architecture, [service mesh](../mspider/intro/index.md), network EBPF observation ability.
 
@@ -105,7 +105,7 @@ Solution advantages: seamlessly integrate the first-generation microservices rep
 
 The user application architecture relies on mainstream middleware capabilities, and it is hoped that middleware can be operated and maintained in a unified manner, and more professional support capabilities for middleware planning, operation and maintenance can be obtained.
 
-Modules involved: [Container Management](../kpanda/intro/index.md), [Container Network](../network/intro/index.md), [Container Local Storage](../storage/index.md), [Cloud native middleware](../middleware/index.md), Edge to Cloud Continuum, Dual-architecture Cloud
+Modules involved: [Container Management](../kpanda/intro/index.md), [Container Network](../network/intro/index.md), [Container Local Storage](../storage/index.md), [Cloud native middleware](../middleware/index.md), Cloud Edge Collabration, Dual-architecture Cloud
 
 Solution advantages: cloud native local storage capabilities designed for stateful applications, unified platform management cloud native middleware, providing middleware management capabilities for the full lifecycle of multi-tenancy, deployment, observation, backup, operation and maintenance, combined with the container platform Ability to adapt to edge and innovation use cases.
 
@@ -121,7 +121,7 @@ Solution advantages: Include software products from ten major fields of ecologic
 
 Multicluster and multicloud deployments have become the norm among users, and they hope to complete multicloud unified release and have the ability of cross-cloud disaster recovery and backup
 
-Involved modules: [Container Management](../kpanda/intro/index.md), [Multicloud Management](../kairship/intro/index.md), [Container Network](../network/intro/index.md), Edge to Cloud Continuum, Dual-architecture Cloud
+Involved modules: [Container Management](../kpanda/intro/index.md), [Multicloud Management](../kairship/intro/index.md), [Container Network](../network/intro/index.md), Cloud Edge Collabration, Dual-architecture Cloud
 
 Advantages of the solution: Innovative technology completes cross-cloud disaster recovery, high concurrency performance of cross-cloud resource retrieval, combined with container platform capabilities to adapt to edge and credit creation use cases.
 

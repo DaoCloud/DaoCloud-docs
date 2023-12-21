@@ -64,7 +64,7 @@
 如果不存在依赖组件，通过脚本进行安装依赖组件，[安装前置依赖](../install-tools.md)。
 
 ```bash
-export VERSION=v0.11.0
+export VERSION=v0.13.0
 # 下载脚本
 curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
 
@@ -80,9 +80,6 @@ bash install_prerequisite_${VERSION}.sh online full
 如果需要使用客户已有的一些组件，可以参考以下文档进行准备：
 
 - [使用外接服务存储 Binaries 资源](external/external-binary.md)
-
 - [使用外接镜像仓库与 Chart 仓库存储镜像与 Chart 包](external/external-imageandchart.md)
-
 - [使用外接中间件服务](external/external-middlewares.md)
-
 - [使用外接服务存储 OS Repo 资源](external/external-os.md)

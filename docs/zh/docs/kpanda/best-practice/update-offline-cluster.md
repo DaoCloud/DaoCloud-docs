@@ -39,13 +39,13 @@
     root     13024  0.0  0.0 112824   980 pts/0    S+   23:45   0:00 grep --color=auto docker
     ```
 
-2. 在联网节点的 `/root` 目录下创建一个名为 `manifest.yaml` 的文件，命令如下：
+2. 在联网节点的 __/root__ 目录下创建一个名为 __manifest.yaml__ 的文件，命令如下：
 
     ```bash
     vi manifest.yaml
     ```
 
-    `manifest.yaml` 内容如下：
+    __manifest.yaml__ 内容如下：
 
     ```yaml title="manifest.yaml"
     image_arch:
@@ -57,10 +57,10 @@
     - "v1.24.5"
     ```
 
-    - `image_arch` 用于指定 CPU 的架构类型，可填入的参数为 `amd64` 和`arm64`。
-    - `kube_version` 用于指定需要构建的 kubernetes 离线包版本，可参考上文的支持构建的离线 kubernetes 版本。
+    - __image_arch__ 用于指定 CPU 的架构类型，可填入的参数为 __amd64__ 和 __arm64__ 。
+    - __kube_version__ 用于指定需要构建的 kubernetes 离线包版本，可参考上文的支持构建的离线 kubernetes 版本。
 
-3. 在 `/root` 目录下新建一个名为 `/data` 的文件夹来存储增量离线包。
+3. 在 __/root__ 目录下新建一个名为 __/data__ 的文件夹来存储增量离线包。
 
     ```bash
     mkdir data
@@ -75,7 +75,7 @@
     docker run --rm -v $(pwd)/manifest.yml:/manifest.yml -v $(pwd)/data:/data ghcr.m.daocloud.io/kubean-io/airgap-patch:v0.4.8
     ```
 
-    等待 Docker 服务运行完成后，检查 `/data` 文件夹下的文件，文件目录如下：
+    等待 Docker 服务运行完成后，检查 __/data__ 文件夹下的文件，文件目录如下：
 
     ```console
     data
@@ -92,7 +92,7 @@
 
 ## 将离线包导入火种节点
 
-1. 将联网节点的 `/data` 文件拷贝至火种节点的 `/root` 目录下，在 **联网节点** 执行如下命令：
+1. 将联网节点的 __/data__ 文件拷贝至火种节点的 __/root__ 目录下，在 **联网节点** 执行如下命令：
 
     ```bash
     scp -r data root@x.x.x.x:/root
@@ -100,7 +100,7 @@
 
     `x.x.x.x` 为火种节点 IP 地址
 
-2. 在火种节点上将 `/data` 文件内的镜像文件拷贝至火种节点内置的 docker resgitry 仓库。登录火种节点后执行如下命令：
+2. 在火种节点上将 __/data__ 文件内的镜像文件拷贝至火种节点内置的 docker resgitry 仓库。登录火种节点后执行如下命令：
 
     1. 进入镜像文件所在的目录
     
@@ -108,7 +108,7 @@
         cd data/v_offline_patch/amd64/images
         ```
 
-    2. 执行 `import_images.sh` 脚本将镜像导入火种节点内置的 Docker Resgitry 仓库。
+    2. 执行 __import_images.sh__ 脚本将镜像导入火种节点内置的 Docker Resgitry 仓库。
    
         ```bash
         DEST_TLS_VERIFY=false ./import_images.sh 127.0.0.1:443
@@ -123,10 +123,10 @@
         ```
         
         - `https://x.x.x.x:443` 为外部仓库的地址。
-        - `DEST_USER=${username} DEST_PASS=${password}` 外部仓库的用户名和密码参数。
+        - __DEST_USER=${username} DEST_PASS=${password}__ 外部仓库的用户名和密码参数。
           如果外部仓库为免密，则可删除此参数。
 
-3. 在火种节点上将`/data` 文件内的二进制文件拷贝至火种节点内置的 Minio 服务上。
+3. 在火种节点上将 __/data__ 文件内的二进制文件拷贝至火种节点内置的 Minio 服务上。
 
     1. 进入二进制文件所在的目录
     
@@ -147,8 +147,8 @@
 
 ## 更新 Global 集群的 kubernetes 版本清单
 
-1. 将联网节点的 `/data` 文件内的 `kubeanofflineversion.cr.patch` 清单配置文件拷贝至 Global
-   集群内任一 **Master 节点** 的 `/root` 目录下，请在 **联网节点** 执行如下命令：
+1. 将联网节点的 __/data__ 文件内的 `kubeanofflineversion.cr.patch` 清单配置文件拷贝至 Global
+   集群内任一 **Master 节点** 的 __/root__ 目录下，请在 **联网节点** 执行如下命令：
 
     ```bash
     scp -r data/v_offline_patch/kubeanofflineversion.cr.patch.yaml root@x.x.x.x:/root

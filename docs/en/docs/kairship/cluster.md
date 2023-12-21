@@ -4,13 +4,13 @@ After creating multicloud instances, you need to connect them to work clusters.
 
 ## Add a Cluster
 
-1. Click `Work Cluster Management` in the left navigation bar, then click `Connect Cluster` in the top-right corner.
+1. Click __Work Cluster Management__ in the left navigation bar, then click __Connect Cluster__ in the top-right corner.
 
     If you want to establish network connectivity between work clusters, you need to create a mesh instance and manage work clusters on the Service Mesh page. For detailed steps, refer to [MultiCloud Network Interconnect](../mspider/user-guide/multicluster/cluster-interconnect.md).
 
     ![Connect Cluster](images/cluster01.png)
 
-2. Select the work cluster you want to add and click `OK`.
+2. Select the work cluster you want to add and click __OK__ .
 
     If the target cluster you want to add is not listed, you can either integrate or create a cluster in the Container Management module. For more details, refer to [Cluster Integration](../kpanda/user-guide/clusters/integrate-cluster.md) or [Create Cluster](../kpanda/user-guide/clusters/create-cluster.md).
 
@@ -18,11 +18,11 @@ After creating multicloud instances, you need to connect them to work clusters.
 
 ## Remove a Cluster
 
-1. Click the `⋮` button on the right side of the cluster, and select `Remove` from the pop-up menu.
+1. Click the __⋮__ button on the right side of the cluster, and select __Remove__ from the pop-up menu.
 
     ![Removal](images/cluster03.png)
 
-2. In the dialog box, enter the name of the cluster, and click `Confirm Removal` after confirming that it is correct.
+2. In the dialog box, enter the name of the cluster, and click __Confirm Removal__ after confirming that it is correct.
 
     ![Removal](images/cluster04.png)
 
@@ -32,25 +32,25 @@ After creating multicloud instances, you need to connect them to work clusters.
 
 ## More Operations
 
-The system will automatically return to the work cluster list. Click the `⋮` button on the right side of the cluster to perform operations such as `Pause/Resume Schedule`, `Edit Cluster Labels`, and `Modify Cluster Taints`.
+The system will automatically return to the work cluster list. Click the __⋮__ button on the right side of the cluster to perform operations such as __Pause/Resume Schedule__ , __Edit Cluster Labels__ , and __Modify Cluster Taints__ .
 
 ![More Operations](images/cluster05.png)
 
 ## Pause/Resume Scheduling
 
-1. Click `Pause Schedule` to pause the scheduling of the cluster. This means that new multi-cloud resources will not be distributed to this cluster, but the previously distributed resources to this cluster will not be affected.
+1. Click __Pause Schedule__ to pause the scheduling of the cluster. This means that new multi-cloud resources will not be distributed to this cluster, but the previously distributed resources to this cluster will not be affected.
 
-2. At this point, click `Modify Cluster Taint` and you will find that the cluster has been automatically tainted.
+2. At this point, click __Modify Cluster Taint__ and you will find that the cluster has been automatically tainted.
 
-    > If you want to resume scheduling, you can also click `Resume Schedule` or manually remove the corresponding cluster taint.
+    > If you want to resume scheduling, you can also click __Resume Schedule__ or manually remove the corresponding cluster taint.
 
 ## Modify Cluster Taints
 
-1. Click `Modify Cluster Taints` to control the deployment of workloads, containers, and other resources in the cluster.
+1. Click __Modify Cluster Taints__ to control the deployment of workloads, containers, and other resources in the cluster.
 
 2. Enter the key-value information of the taint in the pop-up box. The value can be left empty.
 
-3. Select the taint effect from the drop-down menu and click `OK`.
+3. Select the taint effect from the drop-down menu and click __OK__ .
 
     > Multiple taints can be added. Currently, two taint effects are supported:
 

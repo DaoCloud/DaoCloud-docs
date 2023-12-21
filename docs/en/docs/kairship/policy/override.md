@@ -8,6 +8,7 @@ Multicloud Management supports Override Policy, supports viewing the list of ove
 
 Follow the steps below to create an override policy using YAML.
 
+
 1. After entering a multicloud instance, in the left navigation bar, click __Policy Management__ -> __Override Policies__ , and click the __Create from YAML__ button.
 
      ![Namespace Scope](../images/op001.png)
@@ -100,7 +101,7 @@ Next, we will introduce the override policies in detail, which are divided into 
          | :-------- | :--- | :--------------------------------- -------------------------- | :---------------------- -- |
          | Component | is | Image component | Registry, Repository, Tag |
          | Operator | is | the operation on the image | add, remove, replace |
-         | Value | No | When the Operator is __add__ or __replace__, it cannot be empty, and it is empty by default; when the operator is __remove__, leave it blank. | |
+         | Value | No | When the Operator is __add__ or __replace__ , it cannot be empty, and it is empty by default; when the operator is __remove__ , leave it blank. | |
 
 2. When ArgsOverrider is selected: Override configuration of args.
 
@@ -112,7 +113,7 @@ Next, we will introduce the override policies in detail, which are divided into 
          | :------------ | :--- | :---------------------------- ------------------------------ | :---------- |
          | ContainerName | is | container name | |
          | Operator | is | the operation to apply on args | add, remove |
-         | Value | No | The value to apply to args. When the operator is __add__, the value is appended to args; when the operator is __remove__, the value is removed from args; if the value is empty, args remains as it is. | |
+         | Value | No | The value to apply to args. When the operator is __add__ , the value is appended to args; when the operator is __remove__ , the value is removed from args; if the value is empty, args remains as it is. | |
 
 3. When CommandOverrider is selected: Run the override configuration of the command.
 
@@ -124,7 +125,7 @@ Next, we will introduce the override policies in detail, which are divided into 
          | :------------ | :--- | :---------------------------- ------------------------------ | :------------------ ------------------ |
          | ContainerName | is | container name | |
          | Operator | is | the operation applied to the command | add, remove |
-         | Value | No | The value applied to the command. When the operator is __add__, the value is appended to the command; when the operator is __remove__, the value is removed from the command; if the value is empty, the command remains as it is. | You can add single or multiple values, use __;__ to divide multiple values |
+         | Value | No | The value applied to the command. When the operator is __add__ , the value is appended to the command; when the operator is __remove__ , the value is removed from the command; if the value is empty, the command remains as it is. | You can add single or multiple values, use __;__ to divide multiple values |
 
 4. When PlainText is selected: Plaintext override configuration.
 
@@ -135,7 +136,7 @@ Next, we will introduce the override policies in detail, which are divided into 
          | Field | Required | Description | Example |
          | :------- | :--- | :---------------------------------- ------------------------- | :------------------- |
          | Path | is | the path to the target field | |
-         | Operator | is | the type of operation on the target field | add, remove, replace || Value | No | The value to apply to the target field, when Operator is __remove__, this field must be empty | |
+         | Operator | is | the type of operation on the target field | add, remove, replace || Value | No | The value to apply to the target field, when Operator is __remove__ , this field must be empty | |
 
 5. When LabelsOverrider is selected: Label override configuration.
 

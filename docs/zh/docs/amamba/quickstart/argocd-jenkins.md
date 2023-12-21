@@ -27,11 +27,11 @@
 
 此教程主要包含的步骤有：拉取业务代码 -> 构建镜像 -> 更新应用配置文件
 
-当`更新应用配置文件`步骤执行成功后，Argo CD 会监测变化，并会触发更新同步最新的配置文件部署到集群中。
+当 __更新应用配置文件__ 步骤执行成功后，Argo CD 会监测变化，并会触发更新同步最新的配置文件部署到集群中。
 
 1. 创建流水线的步骤可以参考[创建流水线](../user-guide/pipeline/create/custom.md)。
 
-2. 创建成功后，选择该流水线操作：`编辑 Jenkinsfile`
+2. 创建成功后，选择该流水线操作： __编辑 Jenkinsfile__ 
 
     ??? note "点击查看流水线 Jenkinsfile 文件，可根据实际需要参数"
 
@@ -93,17 +93,17 @@
 
     ![cd:ci02](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci02.png)
 
-3. 创建完成后，会自动生成一条记录，同步状态显示`未同步`。
+3. 创建完成后，会自动生成一条记录，同步状态显示 __未同步__ 。
 
     ![cd:ci03](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci03.png)
 
-4. 点击`同步`，完成应用部署。
+4. 点击 __同步__ ，完成应用部署。
 
     ![cd:ci04](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci04.png)
 
 ## 运行流水线触发 CI/CD
 
-1. 选择上述创建的流水线，点击`立即运行`。
+1. 选择上述创建的流水线，点击 __立即运行__ 。
 
     ![cd:ci05](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci05.png)
 
@@ -115,13 +115,13 @@
 
     ![cd:ci07](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci07.png)
 
-4. 继续验证持续部署应用，发现处于`未同步`状态。看到 Deployment 资源未同步，并跳转到`容器管理`模块确认目前镜像版本。
+4. 继续验证持续部署应用，发现处于 __未同步__ 状态。看到 Deployment 资源未同步，并跳转到 __容器管理__ 模块确认目前镜像版本。
 
     ![cd:ci08](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci08.png)
 
     ![cd:ci09](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci09.png)
 
-5. 点击`同步`，等待同步成功后，查看 Deployment 资源，确认目前的镜像版本。
+5. 点击 __同步__ ，等待同步成功后，查看 Deployment 资源，确认目前的镜像版本。
 
     ![cd:ci11](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci11.png)
 

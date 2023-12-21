@@ -7,11 +7,11 @@ hide:
 
 接入或创建集群之后，可以查看集群中各个节点的信息，包括节点状态、标签、资源用量、Pod、监控信息等。
 
-1. 在`集群列表`页面点击目标集群的名称。
+1. 在 __集群列表__ 页面点击目标集群的名称。
 
     ![进入集群列表页面](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/schedule01.png)
 
-2. 在左侧导航栏点击`节点管理`，可以查看节点状态、角色、标签、CPU/内存使用情况、IP 地址、创建时间。
+2. 在左侧导航栏点击 __节点管理__ ，可以查看节点状态、角色、标签、CPU/内存使用情况、IP 地址、创建时间。
 
     ![暂停调度](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/node-details01.png)
 

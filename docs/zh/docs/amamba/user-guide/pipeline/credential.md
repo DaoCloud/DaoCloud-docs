@@ -11,35 +11,35 @@ hide:
 
 目前，您可以在应用工作台中创建以下 3 种类型的凭证：
 
-- **用户名和密码**：用于存储用户名和密码的认证信息，若第三方网站或应用程序支持用户名/密码的方式访问，则可以选择这种类型，例如 GitHub、GitLab 和 Docker Hub 的帐户。
+- __用户名和密码__：用于存储用户名和密码的认证信息，若第三方网站或应用程序支持用户名/密码的方式访问，则可以选择这种类型，例如 GitHub、GitLab 和 Docker Hub 的帐户。
 
-- **访问令牌（Secret text）**：API token 之类的 token (如 GitHub 个人访问 token)。
+- __访问令牌（Secret text）__：API token 之类的 token (如 GitHub 个人访问 token)。
 
-- **kubeconfig**：用于配置跨集群认证。
+- __kubeconfig__：用于配置跨集群认证。
 
 创建和管理凭证的具体步骤如下：
 
-1. 在左侧导航栏中点击`流水线`->`凭证`，进入凭证列表，点击右上角的`新建凭证`。
+1. 在左侧导航栏中点击 __流水线__ -> __凭证__ ，进入凭证列表，点击右上角的 __新建凭证__ 。
 
     ![createcredential](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cred01.png)
 
-2. 在`创建凭证`页面中，配置相关参数后点击`确定`。
+2. 在 __创建凭证__ 页面中，配置相关参数后点击 __确定__ 。
 
     ![createcredential](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cred02.png)
 
-    - 填写`凭证名称`，设置可以在流水线中使用的 ID，例如 `dockerhub-id`。注意：一旦设置就不能再进行更改。
-    - 在`类型`字段中，选择要添加的凭证类型。
+    - 填写 __凭证名称__ ，设置可以在流水线中使用的 ID，例如 __dockerhub-id__ 。注意：一旦设置就不能再进行更改。
+    - 在 __类型__ 字段中，选择要添加的凭证类型。
     - 根据不同的凭证类型填写相应的字段：
 
-        - 用户名和密码：在对应字段指定凭证的`用户名`和`密码`。
-        - 访问令牌（Secret text）：复制加密文本到`令牌`字段中。
-        - Kubeconfig：复制集群证书到 `Kubeconfig` 字段中。
+        - 用户名和密码：在对应字段指定凭证的 __用户名__ 和 __密码__ 。
+        - 访问令牌（Secret text）：复制加密文本到 __令牌__ 字段中。
+        - Kubeconfig：复制集群证书到 __Kubeconfig__ 字段中。
 
 3. 屏幕提示创建成功，新创建的凭证默认位于第一个。
 
     ![createcredential](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cred03.png)
 
-4. 点击列表右侧的 `︙`，可以在弹出菜单中选择编辑或删除等操作。
+4. 点击列表右侧的 __︙__ ，可以在弹出菜单中选择编辑或删除等操作。
 
     !!! warning
 

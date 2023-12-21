@@ -14,7 +14,7 @@ In the Calico Underlay network mode, users also hope that the IP addresses of De
 - Traditional microservice applications directly use Pod IP for microservice registration
 - In some cases, the service IP is a fixed IP and will not change
 
-Calico can achieve Pod-level IP fixation by injecting annotations into Pods: `cni.projectcalico.org/ipAddrs`, but **we found the following deficiencies in use**:
+Calico can achieve Pod-level IP fixation by injecting annotations into Pods: __cni.projectcalico.org/ipAddrs__ , but **we found the following deficiencies in use**:
 
 - Fixed IP only takes effect at the Pod level, and has no effect on Deployment and StatefulSet types;
 - The administrator needs to ensure that the annotation IPs of Pods do not overlap to avoid IP conflicts. Especially in large-scale clusters, it is difficult to troubleshoot conflicting IPs;
@@ -153,7 +153,7 @@ spec.subnet indicates which subnet the IP pool belongs to
 
 spec.ips Fixed IP address range, the range is 10.244.120.10-10.244.120.20, a total of 10 IPs
 
-Manually specify the IP pool via the annotation `ipam.spidernet.io/ippool`: nginx-v4-ippool, create an application: nginx-m:
+Manually specify the IP pool via the annotation __ipam.spidernet.io/ippool__ : nginx-v4-ippool, create an application: nginx-m:
 
 ```shell
    cat <<EOF | kubectl create -f -

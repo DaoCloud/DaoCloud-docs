@@ -8,7 +8,7 @@ source code, enabling features such as traffic governance, log viewing, monitori
 ## Prerequisites
 
 - You need to create a workspace and a user who is added to the workspace with the
-  `workspace edit` role. Refer to [Creating a Workspace](../../../ghippo/user-guide/workspace/workspace.md)
+  __workspace edit__ role. Refer to [Creating a Workspace](../../../ghippo/user-guide/workspace/workspace.md)
   and [Users and Roles](../../../ghippo/user-guide/access-control/user.md).
 - Create two credentials that can access the code repo and image repo.
   See [Credential Management](../pipeline/credential.md).
@@ -18,20 +18,20 @@ source code, enabling features such as traffic governance, log viewing, monitori
 
 Following [Credential Management](../pipeline/credential.md), create two credentials:
 
-1. On the `Credentials` page, create two credentials:
+1. On the __Credentials__ page, create two credentials:
 
     - git-credential: Username and password for accessing the code repo.
     - registry-credential: Username and password for accessing the image repo.
 
-2. Once created, you can view the credentials on the `Credential List` page.
+2. Once created, you can view the credentials on the __Credential List__ page.
 
 ## Create Microservices App from Git
 
-1. In the `Workbench` -> `Wizard` page, click `Build with Git Repo`.
+1. In the __Workbench__ -> __Wizard__ page, click __Build With Git Repo__.
 
-    ![Wizard](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/ms01.png)
+    ![Wizard](../../images/ms01.png)
 
-2. Fill in the basic information as per the instructions and click `Next`:
+2. Fill in the basic information as per the instructions and click __Next__:
 
     - Name: Specify the name of the resource workload.
     - Resource Type: Select Stateless Workload, which is currently the only supported option.
@@ -44,32 +44,32 @@ Following [Credential Management](../pipeline/credential.md), create two credent
 
     ![Basic Information](../../images/git01.png)
 
-3. Fill in the pipeline configuration details based on the instructions and click `Next`.
+3. Fill in the pipeline configuration details based on the instructions and click __Next__.
 
     - Repo: Select a repo or enter the Git repo address. In this example, the Git repo address
-      is `https://gitlab.daocloud.cn/ndx/skoala.git`, which should be replaced with the actual
+      is __https://gitlab.daocloud.cn/ndx/skoala.git__, which should be replaced with the actual
       address. The choice of repo is from the GitLab instance integrated by the user.
-    - Branch: The default branch is `main` and can be left unchanged.
-    - Credentials: Select the credential (`git-credential`) for accessing the code repo.
+    - Branch: The default branch is __main__ and can be left unchanged.
+    - Credentials: Select the credential (__git-credential__) for accessing the code repo.
       If it is a public repo, no need to fill this field.
     - Dockerfile Path: Enter the absolute path of the Dockerfile in the code repo.
-      For example, `demo/integration/springcloud-nacos-sentinel/code/Dockerfile`.
+      For example, __demo/integration/springcloud-nacos-sentinel/code/Dockerfile__.
     - Target Image Name: Select or enter the target image name. In this example, the address is
-      [`release-ci.daocloud.io/test-lfj/fromgit`](http://release-ci.daocloud.io/test-lfj/fromgit),
+      [__release-ci.daocloud.io/test-lfj/fromgit__](http://release-ci.daocloud.io/test-lfj/fromgit),
       which should be replaced with the actual address. The choice of image repo is from the
       image repo instance integrated and bound to the current workspace.
-    - Tag: Enter the version of the image repo, for example, `v2.0.0`.
-    - Credentials: Select the credentials for accessing the image repo, for example, `registry-credential`.
+    - Tag: Enter the version of the image repo, for example, __v2.0.0__.
+    - Credentials: Select the credentials for accessing the image repo, for example, __registry-credential__.
     - ContextPath: Set the context path for the docker build command execution. Specify the relative path
-      to the root of the code directory, such as `target`. If left blank, it defaults to the directory
+      to the root of the code directory, such as __target__. If left blank, it defaults to the directory
       where the Dockerfile is located.
-    - Build Arguments: The build arguments are passed to the build command in the form of `--build-arg`.
+    - Build Arguments: The build arguments are passed to the build command in the form of __--build-arg__.
       You can set the upstream artifact download address, upstream image download address as parameters
       and also define custom parameters.
 
     ![Pipeline Configuration](../../images/git02.png)
 
-4. Fill in the container configuration details based on the instructions and click `Next`.
+4. Fill in the container configuration details based on the instructions and click __Next__.
 
     - Service Configuration: Specify how the service can be accessed within the
       cluster, node, or load balancer. Example values:
@@ -99,12 +99,12 @@ Following [Credential Management](../pipeline/credential.md), create two credent
 
     - Data Storage: Configure data volume mounting and data persistence for containers.
 
-    ![Container Configuration](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/ms04.png)
+    ![Container Configuration](../../images/ms04.png)
 
-5. On the `Advanced Configuration` page, click `Enable Microservice Integration`.
-   Configure the parameters as per the instructions and click `OK`.
+5. On the __Advanced Settings__ page, click __Access MicroServices__.
+   Configure the parameters as per the instructions and click __OK__.
 
-    - Framework Selection: Choose between `Spring Cloud` and `Dubbo`. In this case, select `Spring Cloud`.
+    - Framework Selection: Choose between __Spring Cloud__ and __Dubbo__. In this case, select __Spring Cloud__.
     - Registry Instance: Currently, only hosted Nacos registry instances from the
      [Microservices Engine](../../../skoala/trad-ms/hosted/index.md) are supported.
     - Registry Namespace: The Nacos namespace for the microservices application.
@@ -117,13 +117,13 @@ Following [Credential Management](../pipeline/credential.md), create two credent
 
 ## Viewing and Accessing Microservices Information
 
-1. On the left navigation bar, click `Overview`, and within the `Native Applications` tab,
+1. On the left navigation bar, click __Overview__, and within the __Applications__ tab,
    select the native application to view its details.
 
     ![Native Applications](../../images/git04.png)
 
-2. In the details page, under the `Application Resources` tab, select the resource with
-   the `Service Mesh` label and click it.
+2. In the details page, under the __Application Resources__ tab, select the resource with
+   the __Service Mesh__ label and click it.
 
     ![Navigate](../../images/git05.png)
 

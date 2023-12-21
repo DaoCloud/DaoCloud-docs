@@ -17,13 +17,13 @@
 
 | CPU 架构 | 版本   | 点击下载 |
 | :------- | :----- | :-----|
-| AMD64    | v0.12.0 | [offline-v0.12.0-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.12.0-amd64.tar) |
-| ARM64    | v0.12.0 | [offline-v0.12.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.12.0-arm64.tar) |
+| AMD64    | v0.13.0 | [offline-v0.13.0-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.13.0-amd64.tar) |
+| ARM64    | v0.13.0 | [offline-v0.13.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.13.0-arm64.tar) |
 
 下载完毕后解压离线包。以 amd64 架构离线包为例：
 
 ```bash
-tar -xvf offline-v0.12.0-amd64.tar
+tar -xvf offline-v0.13.0-amd64.tar
 ```
 
 #### ISO 操作系统镜像文件（必需）
@@ -34,7 +34,7 @@ ISO 操作系统镜像文件需要在[集群配置文件 clusterConfig.yaml](./c
 
 | CPU 架构 | 操作系统版本  | 点击下载  |
 | :------- | :--------- | :------- |
-| AMD64    | CentOS 7 | [CentOS-7-x86_64-DVD-2009.iso](https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-DVD-2009.iso ) |
+| AMD64    | CentOS 7 | [CentOS-7-x86_64-DVD-2009.iso](http://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-DVD-2009.iso ) |
 |          | Redhat 7、8、9 | [assembly-field-downloads-page-content-61451](https://developers.redhat.com/products/rhel/download#assembly-field-downloads-page-content-61451) <br />注意：Redhat 操作系统需要 Redhat 的账号才可以下载 |
 |          | Ubuntu 20.04 | [ubuntu-20.04.6-live-server-amd64.iso](https://releases.ubuntu.com/focal/ubuntu-20.04.6-live-server-amd64.iso) |
 |          | 统信 UOS V20（1020a）| [uniontechos-server-20-1020a-amd64.iso](https://cdimage-download.chinauos.com/uniontechos-server-20-1020a-amd64.iso) |
@@ -53,6 +53,19 @@ osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源
 可以前往 <https://github.com/kubean-io/kubean/releases> 查看。
 
 目前安装器版本要求 osPackage 离线包的版本与之匹配，请根据对应版本下载 osPackage 离线包：
+
+=== "V0.13.0"
+
+    | 操作系统版本                                        | 点击下载                                                     |
+    | :-------------------------------------------------- | :----------------------------------------------------------- |
+    | CentOS 7                                            | [os-pkgs-centos7-v0.10.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.10.0/os-pkgs-centos7-v0.10.0.tar.gz) |
+    | Redhat 8                                            | [os-pkgs-redhat8-v0.10.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.10.0/os-pkgs-redhat8-v0.10.0.tar.gz) |
+    | Redhat 7                                            | [os-pkgs-redhat7-v0.10.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.10.0/os-pkgs-redhat7-v0.10.0.tar.gz) |
+    | Redhat 9                                            | [os-pkgs-redhat9-v0.10.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.10.0/os-pkgs-redhat9-v0.10.0.tar.gz) |
+    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.10.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.10.0/os-pkgs-kylinv10-v0.10.0.tar.gz) |
+    | Ubuntu 20.04                                         | [os-pkgs-ubuntu2004-v0.10.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.10.0/os-pkgs-ubuntu2004-v0.10.0.tar.gz) |
+    | openEuler 22.03                                     | [os-pkgs-openeuler22.03-v0.10.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.10.0/os-pkgs-openeuler22.03-v0.10.0.tar.gz) |
+    | Oracle Linux R9 U1                                   | [os-pkgs-oracle9-v0.10.0.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.10.0/os-pkgs-oracle9-v0.10.0.tar.gz) |
 
 === "V0.12.0"
 
@@ -118,8 +131,8 @@ addon 离线包包含一些常用组件的 Helm Chart 离线包，具体清单�
 
 | CPU 架构 | 版本   | 点击下载 |
 | :------- | :----- | :----- |
-| AMD64    | v0.12.0 | [addon-offline-full-package-v0.12.0-amd64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.12.0-amd64.tar.gz) |
-| ARM64    | v0.12.0 | [addon-offline-full-package-v0.21.0-arm64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.12.0-arm64.tar.gz) |
+| AMD64    | v0.13.0 | [addon-offline-full-package-v0.13.0-amd64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.13.0-amd64.tar.gz) |
+| ARM64    | v0.13.0 | [addon-offline-full-package-v0.13.0-arm64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.13.0-arm64.tar.gz) |
 
 #### 一键下载所需离线包
 

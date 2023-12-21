@@ -1,8 +1,10 @@
 # OAM 概念介绍
 
-OAM 应用功能基于开源软件 [KubeVela](http://kubevela.net/zh/docs/v1.2/) ，通过开放应用模型（OAM）作为应用交付的顶层抽象，主要是对 Kubernetes 的资源的抽象与整合。
+OAM 应用功能基于开源软件 [KubeVela](http://kubevela.net/zh/docs/v1.2/) ，通过开放应用模型（OAM）作为应用交付的顶层抽象，
+主要是对 Kubernetes 的资源的抽象与整合。
 
 一个 OAM 应用为了实现在混合环境中标准化和高效率的应用交付，由四部分概念组成：
+
 - 一个或多个组件
 - 各项运维动作
 - 应用的执行策略（Policy）
@@ -14,7 +16,7 @@ OAM 应用功能基于开源软件 [KubeVela](http://kubevela.net/zh/docs/v1.2/)
 
 ## 核心组件介绍
 
-仅介绍应用工作台涵盖的核心组件的介绍说明。
+本节仅介绍应用工作台涵盖的核心组件。
 
 ### 组件
 
@@ -23,7 +25,7 @@ OAM 应用功能基于开源软件 [KubeVela](http://kubevela.net/zh/docs/v1.2/)
 有关组件类型说明，可参考 [kubevela Component Definition](http://kubevela.net/zh/docs/v1.2/platform-engineers/oam/x-definition#%E7%BB%84%E4%BB%B6%E5%AE%9A%E4%B9%89%EF%BC%88componentdefinition%EF%BC%89)。
 
 目前应用工作台基于 [kubevela](https://kubevela.io/zh/docs/) 开源组件内置了
-**Cron-Task、Daemon、K8s-Objects、Task、Webservice** 五种组件。有关各种组件的具体参数介绍，
+__Cron-Task、Daemon、K8s-Objects、Task、Webservice__ 五种组件。有关各种组件的具体参数介绍，
 可参考[内置组件列表](https://kubevela.io/zh/docs/end-user/components/references)。
 
 ### 运维特征
@@ -32,7 +34,7 @@ OAM 应用功能基于开源软件 [KubeVela](http://kubevela.net/zh/docs/v1.2/)
 比如：副本数调整（手动、自动）、数据持久化、设置网关策略、自动设置 DNS 解析等。用户可以从社区获取成熟的能力，也可以自行定义。
 
 目前应用工作台基于 [kubevela](https://kubevela.io/zh/docs/) 开源组件内置了
-**Affinity、Annotations、Command、Container-Image、Cpuscaler** 等多种运维特征。
+__Affinity、Annotations、Command、Container-Image、Cpuscaler__ 等多种运维特征。
 有关运维特征的具体参数介绍，可参考[内置运维特征列表](https://kubevela.io/zh/docs/end-user/traits/references)。
 
 ### 应用的执行策略（Policy）

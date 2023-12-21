@@ -5,19 +5,19 @@
 ## 前提条件
 
 - 当前工作空间已经拥有集群资源，参考[绑定资源](../../../ghippo/user-guide/workspace/quota.md)。
-- 当前用户授权为 `Workspace Admin` 角色，详情参考[工作空间最佳实践](../../../ghippo/best-practice/ws-best-practice.md)。
+- 当前用户授权为 __Workspace Admin__ 角色，详情参考[工作空间最佳实践](../../../ghippo/best-practice/ws-best-practice.md)。
 
 ## 创建命名空间
 
 !!! note
 
-    仅支持 `Workspace Admin` 创建命名空间，并设置命名空间配额，其他角色均不支持此操作。
+    仅支持 __Workspace Admin__ 创建命名空间，并设置命名空间配额，其他角色均不支持此操作。
 
-1. 在应用工作台的左侧导航栏中点击`命名空间`，进入命名空间列表，点击右上角的`创建`。
+1. 在应用工作台的左侧导航栏中点击 __命名空间__ ，进入命名空间列表，点击右上角的 __创建__ 。
 
     ![namespace-listpng](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/namespace-listpng.png)
 
-2. 在`创建命名空间`页面中，配置命名空间的基本信息。
+2. 在 __创建命名空间__ 页面中，配置命名空间的基本信息。
 
     ![namespace-create01](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/namespace-create01.png)
 
@@ -37,11 +37,11 @@
 
     ![namespace-create02](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/namespace-create02.png)
 
-4. 点击`确定`完成资源创建。屏幕提示创建成功，返回命名空间列表页面。
+4. 点击 __确定__ 完成资源创建。屏幕提示创建成功，返回命名空间列表页面。
 
     ![namespace-list01](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/namespace-list01.png)
 
-5. 点击列表右侧的 `︙`，可以在弹出菜单中选择`配额管理`、`编辑标签`、`删除`等操作。
+5. 点击列表右侧的 __︙__ ，可以在弹出菜单中选择 __配额管理__ 、 __编辑标签__ 、 __删除__ 等操作。
 
     !!! warning
 
@@ -51,13 +51,13 @@
 
 除了在创建命名空间中需要的 CPU 请求、CPU 限制、内存请求、内存限制、存储请求总量、存储卷声明资源配额，在命名空间配额管理中还可以设置其他资源配额，例如命名空间下的容器组、无状态负载、有状态负载、普通任务、定时任务等资源。
 
-1. 在命名空间列表页面，选择某一个命名空间，点击`配额管理`。
+1. 在命名空间列表页面，选择某一个命名空间，点击 __配额管理__ 。
 
     ![namespace-quota](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/namespace-quota.png)
 
-2. 在弹出的`资源配额`对话框中，可以看到目前命名空间的资源配额信息。在`应用资源`下点击`添加`，
+2. 在弹出的 __资源配额__ 对话框中，可以看到目前命名空间的资源配额信息。在 __应用资源__ 下点击 __添加__ ，
    选择一个资源并设置配额，具体请参阅 [Kubernetes 资源配额](https://kubernetes.io/zh-cn/docs/concepts/policy/resource-quotas/)。
 
     ![namespace-quota01](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/namespace-quota01.png)
 
-3. 点击`确定`完成配额设置。
+3. 点击 __确定__ 完成配额设置。

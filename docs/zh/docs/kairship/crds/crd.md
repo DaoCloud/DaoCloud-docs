@@ -7,11 +7,11 @@ hide:
 
 参照以下步骤创建一个多云自定义资源（CRD）。
 
-1. 在左侧导航栏中，点击`多云自定义资源`，进入自定义资源页面，点击右上角的`YAML 创建`按钮。
+1. 在左侧导航栏中，点击 __多云自定义资源__ ，进入自定义资源页面，点击右上角的 __YAML 创建__ 按钮。
 
     ![创建crd](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/crd01.png)
 
-2. 在 `YAML 创建`页面中，填写 YAML 语句后，点击`确定`。还支持下载和导入功能。
+2. 在 __YAML 创建__ 页面中，填写 YAML 语句后，点击 __确定__ 。还支持下载和导入功能。
 
     ![yaml创建](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/crd02.png)
 
@@ -62,21 +62,21 @@ spec:
 
 ## 通过 YAML 创建 CR 实例
 
-1. 进入自定义资源详情，点击 CR 列表右侧的`YAML 创建`按钮。
+1. 进入自定义资源详情，点击 CR 列表右侧的 __YAML 创建__ 按钮。
 
     ![创建cr](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/crd05.png)
 
-2. 在 `YAML 创建`页面中，先填写 CR 的 YAML 信息，支持下载和导入功能。
+2. 在 __YAML 创建__ 页面中，先填写 CR 的 YAML 信息，支持下载和导入功能。
 
     ![yaml创建cr](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/crd06.png)
 
 3. 再填写部署策略，用来指定想要分发在哪些集群。注意需要将部署策略的 YAML 信息根据需要传播的资源的信息进行填写：
-   `spec`的`resourceSelector`中`apiVersion`、`kind`、`namespace`、`name`四个参数需要和所需要传播的资源保持一致。
+   __spec__ 的 __resourceSelector__ 中 __apiVersion__ 、 __kind__ 、 __namespace__ 、 __name__ 四个参数需要和所需要传播的资源保持一致。
    若没有差异化需求，差异化策略可不填。
 
     ![必填pp](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/crd07.png)
 
-4. 返回 CR 实例列表页，即可查看刚刚创建的名为 `my-new-cron-obiext` 的 CR 实例。
+4. 返回 CR 实例列表页，即可查看刚刚创建的名为 __my-new-cron-obiext__ 的 CR 实例。
 
     ![创建成功](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/crd08.png)
 

@@ -10,8 +10,8 @@ This package is dedicated to the community and is available for free trial.
 
 | Filename | Version | Download  | Update Date |
 | -------- | ------- | --------- | ----------- |
-| offline-community-v0.12.0-arm64.tar | v0.12.0 | [:arrow_right: Go to Download](./free/dce5-installer-v0.12.0.md) | 2023-11-08  |
-| offline-community-v0.12.0-amd64.tar | v0.12.0 | [:arrow_right: Go to Download](./free/dce5-installer-v0.12.0.md) | 2023-11-08  |
+| offline-community-v0.13.0-arm64.tar | v0.13.0 | [:arrow_right: Go to Download](./free/dce5-installer-v0.13.0.md) | 2023-12-07  |
+| offline-community-v0.13.0-amd64.tar | v0.13.0 | [:arrow_right: Go to Download](./free/dce5-installer-v0.13.0.md) | 2023-12-07  |
 
 [More Historical Versions](./free/dce5-installer-history.md)
 
@@ -21,8 +21,8 @@ This package is suitable for private cloud, hybrid cloud, multicloud, microservi
 
 | Filename | Version | Download | Update Date |
 | -------- | ------- | -------- | ----------- |
-| offline-v0.12.0-arm64.tar | v0.12.0 | [:arrow_right: Go to Download](./business/dce5-installer-v0.12.0.md) | 2023-11-08  |
-| offline-v0.12.0-amd64.tar | v0.12.0 | [:arrow_right: Go to Download](./business/dce5-installer-v0.12.0.md) | 2023-11-08  |
+| offline-v0.13.0-arm64.tar | v0.13.0 | [:arrow_right: Go to Download](./business/dce5-installer-v0.13.0.md) | 2023-12-07  |
+| offline-v0.13.0-amd64.tar | v0.13.0 | [:arrow_right: Go to Download](./business/dce5-installer-v0.13.0.md) | 2023-12-07  |
 
 [More Historical Versions](./business/dce5-installer-history.md)
 
@@ -61,17 +61,17 @@ The numerous modules included in DCE 5.0 can be downloaded separately to upgrade
 
 DCE 5.0 also provides a variety of selected middleware:
 
-| Middleware    | File Size | Download    | Update Date |
-| ------------- | --------- | ----------- | ----------- |
-| Elasticsearch | 975.36 MB | [:arrow_right: Go to Download](./modules/middleware/elasticsearch.md) | 2023-11-02 |
-| Kafka         | 957.66 MB | [:arrow_right: Go to Download](./modules/middleware/kafka.md)         | 2023-11-02 |
-| MinIO         | 253.79 MB | [:arrow_right: Go to Download](./modules/middleware/minio.md)         | 2023-11-02 |
-| MongoDB       | 73.37 MB  | [:arrow_right: Go to Download](./modules/middleware/mongodb.md)       | 2023-11-02 |
-| MySQL         | 1.17 GB   | [:arrow_right: Go to Download](./modules/middleware/mysql.md)         | 2023-11-02 |
-| PostgreSQL    | 1.37 GB   | [:arrow_right: Go to Download](./modules/middleware/postgresql.md)    | 2023-11-02 |
-| RabbitMQ      | 162.75 MB | [:arrow_right: Go to Download](./modules/middleware/rabbitmq.md)      | 2023-11-02 |
-| Redis         | 537.81 MB | [:arrow_right: Go to Download](./modules/middleware/redis.md)         | 2023-10-20 |
-| RocketMQ      | 354.39 MB | [:arrow_right: Go to Download](./modules/middleware/rocketmq.md)      | 2023-11-02 |
+| Modules         | File Size  | Download                                          | Update Date    |
+|---------------| -------- |------------------------------------------------------------|------------|
+| Elasticsearch |978.37 MB| [:arrow_right: Go to Download](./modules/middleware/elasticsearch.md) |2023-12-10|
+| Kafka |964.64 MB| [:arrow_right: Go to Download](./modules/middleware/kafka.md) |2023-12-10|
+| MinIO |256.16 MB| [:arrow_right: Go to Download](./modules/middleware/minio.md) |2023-12-10|
+| MongoDB |144.09 MB| [:arrow_right: Go to Download](./modules/middleware/mongodb.md) |2023-12-10|
+| MySQL |1.17 GB| [:arrow_right: Go to Download](./modules/middleware/mysql.md) |2023-12-10|
+| PostgreSQL |1.38 GB| [:arrow_right: Go to Download](./modules/middleware/postgresql.md) |2023-12-10|
+| RabbitMQ |165.18 MB| [:arrow_right: Go to Download](./modules/middleware/rabbitmq.md) |2023-12-10|
+| Redis |534.33 MB| [:arrow_right: Go to Download](./modules/middleware/redis.md) |2023-12-10|
+| RocketMQ |360.39 MB| [:arrow_right: Go to Download](./modules/middleware/rocketmq.md) |2023-12-10|
 
 !!! note
 

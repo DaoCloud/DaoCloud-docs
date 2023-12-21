@@ -11,7 +11,7 @@ hide:
 
 2. How to convert single-cluster applications to multicloud applications?
 
-    See [One-Click Conversion to multicloud Workloads](../workload/promote.md).
+    See [One-Click Conversion to Multicloud Workloads](../workload/promote.md).
 
 3. Can I collect logs of applications deployed in different cluster?
 
@@ -49,13 +49,13 @@ hide:
 
     Each Karmada instances has a corresponding virtual Kubernetes cluster in Container Management module, allowing it to collect info as quickly as possible.
 
-12. How to customize registry URL of `karmada` images?
+12. How to customize registry URL of __karmada__ images?
 
-    Add `--chat-repo-url` in the startup commands of containers to specify the image source.
+    Add __--chat-repo-url__ in the startup commands of containers to specify the image source.
 
 13. How to connect with karmada clusters?
 
-    Click `Console` in the upper right corner of the instance overview page.
+    Click __Console__ in the upper right corner of the instance overview page.
 
 14. Can I delete only the multicloud instance without deleting the corresponding karmada instance?
 

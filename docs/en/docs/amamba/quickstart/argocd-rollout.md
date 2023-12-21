@@ -4,7 +4,7 @@ This article describes how to implement progressive gray release based on open s
 
 ## Prerequisites
 
-- The images in the example need to be accessed over the Internet: `argoproj/rollouts-demo:yellow` and `argoproj/rollouts-demo:blue`.
+- The images in the example need to be accessed over the Internet: __argoproj/rollouts-demo:yellow__ and __argoproj/rollouts-demo:blue__.
 
 - Only applicable to DCE 5.0 platform deployed via installer with metallb.
 
@@ -16,19 +16,19 @@ The whole process is divided into four steps: first, build the application based
 
 ### Building the Application Based on Container Image
 
-1. Select `Container Image` as the entry point in the wizard.
+1. Select __Container Image__ as the entry point in the wizard.
 
 2. Fill in the basic information:
 
 3. Fill in the container configuration. For example:
 
-    - Container image: `argoproj/rollouts-demo:blue`
-    - Service port: Name is `http`, container port is `8082`, and service port is `8082`.
+    - Container image: __argoproj/rollouts-demo:blue__
+    - Service port: Name is __http__, container port is __8082__, and service port is __8082__.
 
 
-4. Fill in the advanced configuration and enable `Enable Mesh`.
+4. Fill in the advanced configuration and enable __Enable Mesh__.
 
-5. After creation, an application record will be generated in `Overview` -> `Native Apps`.
+5. After creation, an application record will be generated in __Overview__ -> __Native Apps__.
 
 ### Configuration of Istio-related Resources
 
@@ -100,7 +100,7 @@ Create the following resources in the [Service Mesh](../../mspider/intro/index.m
     ```
 
     1. Modify here, you need to add a new gateway, which points to the name of the gateway created in the previous step.
-    2. Modify here, the original host was the name of the virtual service, which needs to be deleted and changed to `‘*’`.
+    2. Modify here, the original host was the name of the virtual service, which needs to be deleted and changed to __‘*’__.
 
 4. Configure istio-ingressgateway gateway
 
@@ -194,13 +194,13 @@ To create a canary release task in the Workbench, follow these steps. For more d
 2. Set up the release rules. Choose "Istio" as the traffic management type and "Weight Based" as the traffic routing type.
 
 
-3. Click `Create and Update App`. In the pop-up dialog, enter the image address: `argoproj/rollouts-demo:yellow`.
+3. Click __Create and Update App__. In the pop-up dialog, enter the image address: __argoproj/rollouts-demo:yellow__.
 
 ### Verify Effect
 
-Access the address: `http://{istio-ingressgateway LB IP}:8082`, and the following access effect will be obtained.
+Access the address: __http://{istio-ingressgateway LB IP}:8082__, and the following access effect will be obtained.
 
-This interface will concurrently call `http://{istio-ingressgateway LB IP}:8082/color` to obtain color information and fill it into the grid.
+This interface will concurrently call __http://{istio-ingressgateway LB IP}:8082/color__ to obtain color information and fill it into the grid.
 In the gray release object, the specified colors are blue, yellow, which will be displayed according to the defined traffic ratio of 1:9.
 
 <!--![]()screenshots-->

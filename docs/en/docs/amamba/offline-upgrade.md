@@ -12,7 +12,7 @@ There are two ways to load the images from the installation package.
 If you have an image repository in your environment, it is recommended to use
 charts-syncer to sync the images to the repository, which is more efficient and convenient.
 
-1. Create the `load-image.yaml` file.
+1. Create the __load-image.yaml__ file.
 
     > Note: All parameters in this YAML file are required. You need to have a private image repository and modify the relevant configurations.
 
@@ -34,7 +34,7 @@ charts-syncer to sync the images to the repository, which is more efficient and 
           password: "Harbor12345"
     ```
 
-    !!! note "If the chart repo is not installed in the current environment, you can also export the chart as a `tgz` file using chart-syncer and place it in the specified path."
+    !!! note "If the chart repo is not installed in the current environment, you can also export the chart as a __tgz__ file using chart-syncer and place it in the specified path."
 
         ```yaml title="load-image.yaml"
         source:
@@ -65,7 +65,7 @@ charts-syncer to sync the images to the repository, which is more efficient and 
     tar xvf amamba.bundle.tar
     ```
 
-    After successful extraction, you will have three files: `images.tar`, `hints.yaml`, and `original-chart`.
+    After successful extraction, you will have three files: __images.tar__, __hints.yaml__, and __original-chart__.
 
 1. Run the following command to load the images from the local directory into Docker or containerd.
 
@@ -85,7 +85,7 @@ charts-syncer to sync the images to the repository, which is more efficient and 
     helm repo list | grep amamba
     ```
 
-    If the result is empty or shows an `Error: no repositories to show` message,
+    If the result is empty or shows an __Error: no repositories to show__ message,
     run the following command to add the Helm repository for Workbench:
 
     ```shell
@@ -99,10 +99,10 @@ charts-syncer to sync the images to the repository, which is more efficient and 
     ```
 
     Note that a low version of Helm can cause the update to fail.
-    If it fails, try executing `helm update repo`.
+    If it fails, try executing __helm update repo__.
 
-3. Back up the `--set` parameters. Before upgrading the global management version,
-   it is recommended to back up the `--set` parameters of the old version using the following command:
+3. Back up the __--set__ parameters. Before upgrading the global management version,
+   it is recommended to back up the __--set__ parameters of the old version using the following command:
 
     ```shell
     helm get values ghippo -n ghippo-system -o yaml > amamba.bak.yaml
@@ -121,7 +121,7 @@ charts-syncer to sync the images to the repository, which is more efficient and 
     amamba-release-ci/amamba   0.14.0  	       0.14.0  	    Amamba is the entrypoint to DCE 5.0, provides de...
     ```
 
-5. Modify the `registry` and `tag` in the `amamba.bak.yaml` file.
+5. Modify the __registry__ and __tag__ in the __amamba.bak.yaml__ file.
 
     ??? note "Click to view an example YAML file"
 

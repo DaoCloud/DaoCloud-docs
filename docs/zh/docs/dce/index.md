@@ -14,7 +14,7 @@ DCE 5.0 原生支持 DevOps 开发运维模式，可以实现应用交付的全�
 各个产品模块独立解耦，支持灵活升级，对业务没有影响，并且能够与众多云原生生态产品对接，提供完整的解决方案体系。
 它经过了近千家行业客户的生产场景检验，构建了坚实、可靠的数字底座，帮助企业定义数字边界，释放云原生生产力。
 
-*[DCE]: DaoCloud Enterprise 云原生操作系统的简称。
+*[DCE]: DaoCloud Enterprise 云原生操作系统的简称
 
 <div class="grid cards" markdown>
 
@@ -40,6 +40,20 @@ DCE 5.0 原生支持 DevOps 开发运维模式，可以实现应用交付的全�
 DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，可以应对海量应用场景。
 
 这些模块就像乐高搭积木一样，糅合社区最优秀的几十种开源技术，经过众多辩证选型、攻坚克难、编码调试、海量测试，“十年磨一剑，一朝试锋芒”，全新搭建的新一代容器化平台能够满足企业上云的各类场景需求。
+
+=== "云原生底座"
+
+    提供云原生计算、[网络](../network/intro/index.md)、存储等能力，兼容各种集群接入，支持集群从部署、版本升级、证书变更、配置变更、回收等全生命周期管理，突破
+    K8s API 性能瓶颈，实现企业超大规模用户并发使用多集群。针对企业环境，提供场景化的网络方案，实现当前企业网络基础设施复用的最大化，降低企业使用云原生应用门槛。
+
+    - **云原生计算内核**：抽象底层基础设施，为上次应用及其它模块提供计算、存储等强大内核能力。
+    - **云原生网络内核**：适配 overlay、underlay 等网络环境，支持 Spiderpool、Cillium、Macvlan、Multus 等多种网络模式
+    - **云原生安全内核**：融合 RBAC 权限认证体系，为运维安全保驾护航
+
+    **涉及的模块**：[全局管理](../ghippo/intro/index.md)、[容器管理](../kpanda/intro/index.md)、[集群生命周期管理](../community/kubean.md)、
+    [云原生网络](../network/intro/index.md)、[云原生存储](../storage/index.md)
+
+    ![云原生底座](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/07base.png)
 
 === "多云编排"
 
@@ -122,19 +136,13 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
 
     ![云边](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/09cloud-edge.png)
 
-=== "云原生底座"
+=== "虚拟机"
 
-    提供云原生计算、[网络](../network/intro/index.md)、存储等能力，兼容各种集群接入，支持集群从部署、版本升级、证书变更、配置变更、回收等全生命周期管理，突破
-    K8s API 性能瓶颈，实现企业超大规模用户并发使用多集群。针对企业环境，提供场景化的网络方案，实现当前企业网络基础设施复用的最大化，降低企业使用云原生应用门槛。
+    基于 KubeVirt 技术将虚拟机作为云原生应用进行管理，与容器无缝地衔接在一起，使用户能够轻松地实现虚拟机本身的全生命周期管理、虚拟机的快照、恢复、克隆、热迁移等能力，享受与容器应用一致的丝滑体验。
 
-    - **云原生计算内核**：抽象底层基础设施，为上次应用及其它模块提供计算、存储等强大内核能力。
-    - **云原生网络内核**：适配 overlay、underlay 等网络环境，支持 Spiderpool、Cillium、Macvlan、Multus 等多种网络模式
-    - **云原生安全内核**：融合 RBAC 权限认证体系，为运维安全保驾护航
+    **涉及的模块**：[全局管理](../ghippo/intro/index.md)、[容器管理](../kpanda/intro/index.md)、[云原生网络](../network/intro/index.md)、[云原生存储](../storage/index.md)
 
-    **涉及的模块**：[全局管理](../ghippo/intro/index.md)、[容器管理](../kpanda/intro/index.md)、[集群生命周期管理](../community/kubean.md)、
-    [云原生网络](../network/intro/index.md)、[云原生存储](../storage/index.md)
-
-    ![云原生底座](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/07base.png)
+    ![虚拟机](../../images/virtnest.png)
 
 在成功获取[许可证授权](./license0.md)后，首次登录 DCE 5.0 将会呈现一个仪表盘。
 该仪表盘以直观的方式展示了各种信息，包括正在运行的容器和 Pod、CPU 和内存使用情况、集群/节点/Pod 的健康状态、告警信息、资源利用情况以及功能一览等内容。

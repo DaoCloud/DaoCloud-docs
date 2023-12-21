@@ -6,7 +6,7 @@ Workspaces are a hierarchical mapping of resources designed for managing global 
 
 - The current operating user should have Admin or Workspace Admin permissions. For more information on permissions, refer to the [Role and Permission Management](../ghippo/user-guide/access-control/role.md) and [Workspace Permissions](../ghippo/user-guide/workspace/ws-permission.md) documentation.
 - After binding a multi-cloud instance/namespace with a workspace, all working clusters under the multi-cloud instance will automatically synchronize this binding, allowing users of the corresponding workspace to operate corresponding resources in the cluster.
-- After binding, you can go to the `Workspace & Hierarchy` -> `Resource Group` section in the Global Management module to view this resource. For more details, refer to the [Resource Quota](../ghippo/user-guide/workspace/quota.md#_1) documentation.
+- After binding, you can go to the __Workspace & Hierarchy__ -> __Resource Group__ section in the Global Management module to view this resource. For more details, refer to the [Resource Quota](../ghippo/user-guide/workspace/quota.md#_1) documentation.
 - Currently, one multi-cloud instance/namespace can only be bound to one workspace, creating a one-to-one mapping relationship.
 
     - This ensures stable matching of resources and permissions, preventing resource and permission conflicts.
@@ -18,11 +18,11 @@ In the Multicloud Management module, admin of the DCE 5.0 platform can bind mult
 
 After the binding, users of that workspace can operate instances or namespaces within their permission scope.
 
-1. Click `Workspace` in the upper-right corner of the homepage of the Multicloud Management module.
+1. Click __Workspace__ in the upper-right corner of the homepage of the Multicloud Management module.
 
     ![Management entrance.png](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/ws01.png)
 
-2. Check the binding status of multicloud instances/namespaces, then click the `ⵗ` action button and select `Bind Workspace` or `Unbind Workspace` as needed.
+2. Check the binding status of multicloud instances/namespaces, then click the __ⵗ__ action button and select __Bind Workspace__ or __Unbind Workspace__ as needed.
 
     ![Management interface](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/ws02.png)
 
@@ -35,7 +35,7 @@ After the binding, users of that workspace can operate instances or namespaces w
 !!! note
 
     - After multicloud instances/namespaces are bound to a workspace, all working clusters under the multicloud instance will automatically synchronize this binding relationship, allowing users in that workspace to operate the corresponding resources in the cluster.
-    - After the binding, you can enter the `Workspace and Folder` -> `Resource Group` section of the DCE 5.0 Global Management module to view the resources. For more details, see [Resource Quotas](../ghippo/user-guide/workspace/quota.md#_1).
+    - After the binding, you can enter the __Workspace and Folder__ -> __Resource Group__ section of the DCE 5.0 Global Management module to view the resources. For more details, see [Resource Quotas](../ghippo/user-guide/workspace/quota.md#_1).
     - Currently, one multicloud instance/namespace can be bound to ONLY ONE workspace. The mapping relationship is one-to-one.
 
         - This ensures stable matching of resources and permissions, preventing resource and permission conflicts.

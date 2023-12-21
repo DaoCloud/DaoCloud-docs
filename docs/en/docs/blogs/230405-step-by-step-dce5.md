@@ -67,7 +67,7 @@ Before installation, make some necessary settings for the three nodes.
 
 1. Set kernel parameters and allow iptables for bridging traffic
 
-     Load the `br_netfilter` module:
+     Load the __br_netfilter__ module:
 
      ```bash
      cat <<EOF | tee /etc/modules-load.d/kubernetes.conf
@@ -79,7 +79,7 @@ Before installation, make some necessary settings for the three nodes.
      sudo modprobe br_netfilter
      ```
 
-     Modify kernel parameters such as `ip_forward` and `bridge-nf-call-iptables`:
+     Modify kernel parameters such as __ip_forward__ and __bridge-nf-call-iptables__ :
 
      ```bash
      cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
@@ -205,7 +205,7 @@ The following operations are required on all three nodes:
      sudo kubeadm init --kubernetes-version=v1.25.8 --image-repository=k8s-gcr.m.daocloud.io --pod-network-cidr=192.168.0.0/16
      ```
 
-     After more than ten minutes, you can see the successful printing information as follows (please remember the `kubeadm join` command and the corresponding token that were printed last, which will be used later 🔥)
+     After more than ten minutes, you can see the successful printing information as follows (please remember the __kubeadm join__ command and the corresponding token that were printed last, which will be used later 🔥)
 
      ```none
      Your Kubernetes control-plane has initialized successfully!
@@ -267,7 +267,7 @@ The following operations are required on all three nodes:
 ### Connect to other worker nodes
 
 Finally run the join command on other worker nodes.
-When the above master node executes `kubeadm init`, it will be printed on the screen at the end (note that the three parameters are related to the environment, please do not copy them directly)
+When the above master node executes __kubeadm init__ , it will be printed on the screen at the end (note that the three parameters are related to the environment, please do not copy them directly)
 
 ```bash
 kubeadm join $ IP of the first master: 6443 --token p...7 --discovery-token-ca-cert-hash s....x
@@ -331,7 +331,7 @@ chmod +x ./dce5-installer
 
      - Please create an IP reachable from the external network in the public cloud
      - Please allow port 32088 in and out of the host's firewall rules in the public cloud configuration
-     - The above port 32088 is the NodePort port of `kubectl -n istio-system get svc istio-ingressgateway`
+     - The above port 32088 is the NodePort port of __kubectl -n istio-system get svc istio-ingressgateway__ 
 
      ![image](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/firewall.png)
 
@@ -340,7 +340,7 @@ chmod +x ./dce5-installer
 1. If your browser is directly connected to the IP of the master node, run directly
 
      ```bash
-     ./dce5-installer install-app -z -k
+     ./dce5-installer install-app -z
      ```
 
 1. If the IP of the master node is an internal network (such as the public cloud machine in this example), please confirm that the above external IP and firewall configurations are complete, and then run the following command:
@@ -349,13 +349,13 @@ chmod +x ./dce5-installer
      ./dce5-installer install-app -z -k $ external IP:32088
      ```
 
-     Note: The above 32088 is the NodePort port of `kubectl -n istio-system get svc istio-ingressgateway`
+     Note: The above 32088 is the NodePort port of __kubectl -n istio-system get svc istio-ingressgateway__ 
 
 1. Open the login interface in your browser.
 
      ![Login](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/login.png)
 
-1. Log in to DCE 5.0 with username `admin` and password `changeme`.
+1. Log in to DCE 5.0 with username __admin__ and password __changeme__ .
 
      ![Successful login](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/firstscreen.png)
 
