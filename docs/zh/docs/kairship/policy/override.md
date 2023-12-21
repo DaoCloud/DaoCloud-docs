@@ -8,15 +8,15 @@
 
 参照以下步骤使用 YAML 创建一个差异化策略。
 
-1. 进入某一个多云实例后，在左侧导航栏中，点击 __策略管理__ -> __差异化策略__ ，点击 __YAML 创建__ 按钮。
+1. 进入某一个多云实例后，在左侧导航栏中，点击 __策略管理__ -> __差异化策略__，点击 __YAML 创建__ 按钮。
 
     ![命名空间级别](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/op001.png)
 
-2. 在 __YAML 创建__ 页面中，输入正确的 YAML 语句后，点击 __确定__ 。
+2. 在 __YAML 创建__ 页面中，输入正确的 YAML 语句后，点击 __确定__。
 
     ![yaml创建](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/op002.png)
 
-3. 返回部署策略列表，新创建的默认位于第一个。点击列表右侧的 __⋮__ ，可以编辑 YAML 和执行删除操作。
+3. 返回差异化策略列表，新创建的默认位于第一个。点击列表右侧的 __⋮__，可以编辑 YAML 和执行删除操作。
 
     !!! note
 
@@ -62,7 +62,6 @@ spec:
     - 资源配置：支持选取所选多云命名空间下的多云资源进行差异化配置，多云资源也支持多选。
 
     - 差异化策略：支持添加镜像/运行参数/运行命令/自定义等的差异化配置。
-      
 
     ![表单创建](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/op003.png)
 
@@ -166,6 +165,3 @@ spec:
        | Key      | 是   | 注解的键           |                      |
        | Operator | 是   | 对目标字段操作类型 | add、remove、replace |
        | Value    | 否   | 注解的值           |                      |
-
-    
-
