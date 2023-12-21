@@ -1,25 +1,25 @@
-# 微服务网关接入限流服务器
+# Integrate Microservice Gateway with Rate Limit Server
 
-微服务网关支持接入第三方限流服务器，本文档演示使用默认的限流服务器的步骤。
+The microservice gateway supports integration with third-party rate limit servers. This document demonstrates the steps to integrate with the default rate limit server.
 
-## 前提条件
+## Prerequisites
 
-- [创建一个集群](../../kpanda/user-guide/clusters/create-cluster.md)或[接入一个集群](../../kpanda/user-guide/clusters/integrate-cluster.md)
-- [创建一个网关](../gateway/index.md)
+- [Create a cluster](../../kpanda/user-guide/clusters/create-cluster.md) or [integrate an existing cluster](../../kpanda/user-guide/clusters/integrate-cluster.md)
+- [Create a gateway](../gateway/index.md)
 
-## 选用限流服务器
+## Select a Rate Limit Server
 
-你可以选择默认的限流服务器，也可以自己接入一个。
+You have the option to choose the default rate limit server or integrate your own.
 
-### 默认的限流服务器
+### Default Rate Limit Server
 
-直接应用提供的限流服务器模板，具体逻辑可参考[限流服务器代码](https://github.com/projectsesame/ratelimit)。
+Apply the provided rate limit server template directly. For specific logic, refer to the [rate limit server code](https://github.com/projectsesame/ratelimit).
 
 ```bash
 kubectl apply -f gateway-rls.yaml -n plugin-ns
 ```
 
-??? note "默认的限流服务器"
+??? note "Default Rate Limit Server"
 
     ```yaml title="gateway-rls.yaml"
     ---
@@ -164,53 +164,53 @@ kubectl apply -f gateway-rls.yaml -n plugin-ns
                       requests_per_unit: 10
     ```
 
-### 接入限流服务器
+### Integrating with a Rate Limit Server
 
-1. 获取上述步骤部署的 gateway-rls 的外部访问地址。
+1. Obtain the external access address of the gateway-rls deployed in the previous steps.
 
     ```bash
     kubectl get svc -n plugin-ns
     ```
 
-    限流服务器地址: 10.6.222.21:32003
+    Rate Limit Server address: 10.6.222.21:32003
 
-    限流服务器配置地址: http://10.6.222.21:32004
+    Rate Limit Server configuration address: http://10.6.222.21:32004
 
     ```bash
     NAME               TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)                         AGE
     gateway-rls        NodePort   10.233.56.164   <none>        8081:32003/TCP,6070:32004/TCP   1m
     ```
 
-2. 在插件中心创建全局限流插件。
+2. Create a global rate limit plugin in the plugin center.
 
-    - 限流响应头信息: 是否开启在响应头中打印限流相关信息。
-    - 快速成功: 当限流服务器无法正常访问时，是否允许继续访问请求。
-    - 接入地址: 限流服务器的地址，8081 端口对应的地址，协议为 GRPC。
-    - 负载均衡策略: 当存在多个限流服务器时，多个限流服务器的访问策略。
-    - 配置获取接口: 获取限流服务器配置的地址，为端口 6070 对应的地址，协议为 HTTP。
-    - 超时时间: 限流服务器响应的超时时间。
+    - Rate Limit Response Header: Enable printing rate limit-related information in the response header.
+    - Fast Success: Allow continuing to access requests when the rate limit server is unreachable.
+    - Access Address: The address of the rate limit server, corresponding to port 8081, with the GRPC protocol.
+    - Load Balancing Strategy: Access strategy for multiple rate limit servers.
+    - Configuration Retrieval Interface: Address for retrieving rate limit server configuration, corresponding to port 6070, with the HTTP protocol.
+    - Timeout: Timeout for the rate limit server response.
 
-    ![RATELIMIT插件](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/rls-plugin.png)
+    ![RATELIMIT Plugin](../images/rls-plugin.png)
 
-3. 网关配置全局限流插件。
+3. Configure the gateway with the global rate limit plugin.
 
-    ![网关配置全局限流插件](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gateway-rls.png)
+    ![Configure Global Rate Limit Plugin](../images/gateway-rls.png)
 
-4. 创建域名并开启全局限流。
+4. Create a domain and enable global rate limiting.
 
-    ![域名开启全局限流](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/virtualhost-rls.png)
+    ![Enable Global Rate Limiting for Domain](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/virtualhost-rls.png)
 
-5. 在网关下创建一个 API，`关联域名`填写刚才新创建的域名，匹配路径为 `/`，并将 API 上线。API 默认状态是应用域名的全局限流配置，也可以自定义限流规则。
+5. Create an API under the gateway, enter the newly created domain in the "Associated Domain" field, set the path matching to "/", and deploy the API. The API will inherit the global rate limit configuration of the domain by default, but you can also customize the rate limit rules.
 
-    ![API全局限流](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/api-rls.png)
+    ![API with Global Rate Limiting](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/api-rls.png)
 
-6. 现在即可通过限流服务器访问该 API 了。
+6. Now you can access the API through the rate limit server.
 
     ```bash
     while true; do curl -w " http_code: %{http_code}" http://gateway.demo:30000/; let count+=1; echo " count: ${count}"; done
     ```
 
-    访问结果如下，可以看到访问 10 次后，就被限流了。
+    The access result is as follows: after accessing 10 times, it is rate limited.
 
     ```
     adservice-springcloud: hello world! http_code: 200 count: 1
@@ -236,15 +236,15 @@ kubectl apply -f gateway-rls.yaml -n plugin-ns
     ...
     ```
 
-### 基于 IP 的全局限流
+### Global Rate Limiting Based on IP
 
 !!! note
 
-    IP 限流规则的 Key 必须填写 remote_address。
+    The key for IP rate limit rules must be set as `remote_address`.
 
-#### 针对所有 IP 进行限流
+#### Rate Limiting for All IPs
 
-1. 编辑限流服务器的 configmap，在 descriptors 添加以下内容（注意格式）：
+1. Edit the configmap of the rate limit server and add the following content to the descriptors (pay attention to the format):
 
     ```yaml
     data:
@@ -259,24 +259,23 @@ kubectl apply -f gateway-rls.yaml -n plugin-ns
               requests_per_unit: 5
     ```
 
-2. 限流服务器会热加载配置，等待配置生效即可，当然，也可以访问限流服务器的配置接口，出现以下配置即可。
+2. The rate limit server will hot-reload the configuration. Just wait for the configuration to take effect. Alternatively, you can access the configuration interface of the rate limit server and check if the following configuration appears.
 
     ```
     $ curl http://10.6.222.21:32004/rlconfig
     gateway-rls.test.remote_address: unit=MINUTE requests_per_unit=5, shadow_mode: false
     ```
 
-3. 域名配置全局限流策略（当然，前提是网关需要开启全局限流插件）。
+3. Configure the global rate limit policy for the domain (assuming that the gateway has enabled the global rate limit plugin).
 
-    ![域名全局限流策略](../images/rls-ip-rule.png)
 
-4. 基于该域名的 API 访问，执行以下命令访问。
+4. Access the API based on the domain. Execute the following command:
 
     ```
     while true; do curl -w " http_code: %{http_code}"  http://ip.test:30000/; let count+=1; echo " count: ${count}"; done
     ```
 
-    访问结果如下，可以看到访问 5 次后，就被限流了。
+    The access result is as follows: after accessing 5 times, it is rate limited.
 
     ```
     adservice-springcloud: hello world! http_code: 200 count: 1
@@ -292,13 +291,13 @@ kubectl apply -f gateway-rls.yaml -n plugin-ns
     ...
     ```
 
-#### 针对指定 IP 进行限流
+#### Rate Limiting for Specific IPs
 
-1. 编辑 gateway-rls 的 configmap，在 descriptions 添加以下内容（注意格式）：
+1. Edit the configmap of the gateway-rls and add the following content to the descriptors (pay attention to the format):
 
-    - 对所有 IP 进行限流，每分钟访问 10 次。
-    - 对 IP 10.6.222.90 限流每分钟访问 5 次。
-    - 对 IP 10.70.4.1（本机）限流每分钟访问 3 次。
+    - Rate limit all IPs to 10 requests per minute.
+    - Rate limit IP 10.6.222.90 to 5 requests per minute.
+    - Rate limit IP 10.70.4.1 (local machine) to 3 requests per minute.
 
     ```yaml
     data:
@@ -323,7 +322,7 @@ kubectl apply -f gateway-rls.yaml -n plugin-ns
             requests_per_unit: 3
     ```
 
-2. 限流服务器会热加载配置，等待配置生效即可，当然，也可以访问限流服务器的配置接口，出现以下配置即可。
+2. The rate limit server will hot-reload the configuration. Just wait for the configuration to take effect. Alternatively, you can access the configuration interface of the rate limit server and check if the following configuration appears.
 
     ```
     $ curl http://10.6.222.21:32004/rlconfig
@@ -332,15 +331,15 @@ kubectl apply -f gateway-rls.yaml -n plugin-ns
     gateway-rls.test.remote_address_10.70.4.1: unit=MINUTE requests_per_unit=3, shadow_mode: false
     ```
 
-3. 域名配置全局限流策略。
+3. Configure the global rate limit policy for the domain.
 
-4. 基于该域名的 API 访问，执行以下命令访问。
+4. Access the API based on the domain. Execute the following command:
 
     ```
     while true; do curl -w " http_code: %{http_code}"  http://ip.test:30000/; let count+=1; echo " count: ${count}"; done
     ```
 
-    在本机执行命令的访问结果如下，访问 3 次被限流。
+    The access result for executing the command on the local machine is as follows: it is rate limited after accessing 3 times.
 
     ```
     adservice-springcloud: hello world! http_code: 200 count: 1
@@ -356,7 +355,8 @@ kubectl apply -f gateway-rls.yaml -n plugin-ns
     ...
     ```
 
-    在 10.6.222.90 主机执行命令的访问结果如下，访问 5 次被限流。
+    The access result for executing the command on the host with IP 10.6.222.90 is as follows: it is rate limited after accessing 5 times.
+
     ```
     adservice-springcloud: hello world! http_code: 200 count: 1
     adservice-springcloud: hello world! http_code: 200 count: 2
@@ -373,7 +373,8 @@ kubectl apply -f gateway-rls.yaml -n plugin-ns
     ...
     ```
 
-    在其他未额外设置限流规则的主机执行命令的访问结果如下，访问 10 次被限流。
+    The access result for executing the command on other hosts without additional rate limit rules is as follows: it is rate limited after accessing 10 times.
+
     ```
     adservice-springcloud: hello world! http_code: 200 count: 1
     adservice-springcloud: hello world! http_code: 200 count: 2
