@@ -52,12 +52,12 @@
             kind: CHARTMUSEUM # 也可以是任何其他支持的 Helm Chart 仓库类别
             url: http://10.16.10.111 # 需更改为 chart repo url
             auth:
-              username: "admin" # 你的镜像仓库用户名
-              password: "Harbor12345" # 你的镜像仓库密码
+              username: "rootuser" # 你的镜像仓库用户名, 如果 chartmuseum 没有开启登录验证，就不需要填写 auth
+              password: "rootpass123" # 你的镜像仓库密码
           containers:
             auth:
-              username: "admin" # 你的镜像仓库用户名
-              password: "Harbor12345" # 你的镜像仓库密码
+              username: "rootuser" # 你的镜像仓库用户名
+              password: "rootpass123" # 你的镜像仓库密码
         ```
 
     === "未安装 chart repo"

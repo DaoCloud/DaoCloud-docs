@@ -53,12 +53,12 @@ You can load the image in one of the following two ways. When there is a contain
              kind: CHARTMUSEUM # Can also be any other supported Helm Chart repository class
              url: http://10.16.10.111 # need to change to chart repo url
              auth:
-             username: "admin" # Your container registry username
-             password: "Harbor12345" # Your container registry password
+              username: "rootuser" # Your container registry username. If chartmuseum disable login verification, auth can be vacant.
+              password: "rootpass123" # Your container registry password
            containers:
              auth:
-               username: "admin" # Your container registry username
-               password: "Harbor12345" # Your container registry password
+               username: "rootuser" # Your container registry username
+               password: "rootpass123" # Your container registry password
          ```
 
      === "chart repo not installed"
