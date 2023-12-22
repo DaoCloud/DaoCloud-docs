@@ -802,6 +802,9 @@ nav:
                   - 网格空间无法正常解绑: mspider/troubleshoot/mesh-space-cannot-unbind.md
                   - DCE 4.0 接入问题追踪: mspider/troubleshoot/dce4.0-issues.md
                   - 命名空间边车配置与工作负载边车冲突: mspider/troubleshoot/sidecar.md
+                  - 托管网格多云互联异常: mspider/troubleshoot/cluster-interconnect.md
+                  - 边车占用大量内存: mspider/troubleshoot/sidecar-memory-err.md
+                  - 集群列表存在未知集群: mspider/troubleshoot/cluster-already-exist.md
               - 最佳实践:
                   - 使用网格完成定向服务访问限制: mspider/best-practice/use-egress-and-authorized-policy.md
                   - 支持接入自定义工作负载类型: mspider/best-practice/use-custom-workloads.md
