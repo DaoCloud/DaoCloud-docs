@@ -29,11 +29,11 @@
         -n insight-system
     ```
 
-!!! Info
+    !!! info
 
-    可参考 `如何获取连接地址`获取地址信息。
+        可参考 `如何获取连接地址`获取地址信息。
 
-1. 执行以下命令确认安装状态：
+3. 执行以下命令确认安装状态：
 
     ```shell
     helm list -A
@@ -44,7 +44,7 @@
 
 #### 在全局管理集群安装 Insight Agent
 
-1. 如果 Agent 是安装在管理集群，推荐通过域名来访问集群：
+如果 Agent 是安装在管理集群，推荐通过域名来访问集群：
 
 ```shell
 export vminsert_host="vminsert-insight-victoria-metrics-k8s-stack.insight-system.svc.cluster.local" # 指标
@@ -54,49 +54,57 @@ export otel_col_host="insight-opentelemetry-collector.insight-system.svc.cluster
 
 #### 在工作集群安装 Insight Agent
 
-方式一：全局管理集群使用默认的 LoadBalancer 方式暴露服务时，登录全局管理集群的控制台，执行以下命令：
+=== "全局管理集群使用默认的 LoadBalancer"
 
-```shell
-export INSIGHT_SERVER_IP=$(kubectl get service insight-server -n insight-system --output=jsonpath={.spec.clusterIP})
-curl --location --request POST 'http://'"${INSIGHT_SERVER_IP}"'/apis/insight.io/v1alpha1/agentinstallparam'
-```
+    全局管理集群使用默认的 LoadBalancer 方式暴露服务时，登录全局管理集群的控制台，执行以下命令：
 
-将获得如下的返回值：
+    ```shell
+    export INSIGHT_SERVER_IP=$(kubectl get service insight-server -n insight-system --output=jsonpath={.spec.clusterIP})
+    curl --location --request POST 'http://'"${INSIGHT_SERVER_IP}"'/apis/insight.io/v1alpha1/agentinstallparam'
+    ```
 
-```shell
-{"global":{"exporters":{"logging":{"output":"elasticsearch","elasticsearch":{"host":"10.6.182.32"},"kafka":{},"host":"10.6.182.32"},"metric":{"host":"10.6.182.32"},"auditLog":{"host":"10.6.182.32"}}},"opentelemetry-operator":{"enabled":true},"opentelemetry-collector":{"enabled":true}}
-```
+    将获得如下的返回值：
 
-其中：
-- `global.exporters.logging.elasticsearch.host` 是日志服务地址【不需要再设置对应服务的端口，都会使用相应默认值】；
-- `global.exporters.metric.host` 是指标服务地址；
-- `global.exporters.trace.host` 是链路服务地址；
-- `global.exporters.auditLog.host` 是审计日志服务地址 (和链路使用的同一个服务不同端口)；
+    ```shell
+    {"global":{"exporters":{"logging":{"output":"elasticsearch","elasticsearch":{"host":"10.6.182.32"},"kafka":{},"host":"10.6.182.32"},"metric":{"host":"10.6.182.32"},"auditLog":    {"host":"10.6.182.32"}}},"opentelemetry-operator":{"enabled":true},"opentelemetry-collector":{"enabled":true}}
+    ```
 
+    其中：
 
-方式二：登录全局管理集群的控制台，执行以下命令：
+    - `global.exporters.logging.elasticsearch.host` 是日志服务地址【不需要再设置对应服务的端口，都会使用相应默认值】；
+    - `global.exporters.metric.host` 是指标服务地址；
+    - `global.exporters.trace.host` 是链路服务地址；
+    - `global.exporters.auditLog.host` 是审计日志服务地址 (和链路使用的同一个服务不同端口)；
 
-```shell
-kubectl get service -n insight-system | grep lb
-kubectl get service -n mcamel-system | grep es
-```
+=== "登录全局管理集群的控制台操作"
 
-其中：
-- `lb-vminsert-insight-victoria-metrics-k8s-stack` 是指标服务的地址；
-- `lb-insight-opentelemetry-collector`是链路服务的地址;
-- `mcamel-common-es-cluster-masters-es-http` 是日志服务的地址;
+    登录全局管理集群的控制台，执行以下命令：
 
-方式三：全局管理集群使用 Nodeport 方式暴露服务时，登录全局管理集群的控制台，执行以下命令：
+    ```shell
+    kubectl get service -n insight-system | grep lb
+    kubectl get service -n mcamel-system | grep es
+    ```
 
-```shell
-kubectl get service -n insight-system
-kubectl get service -n mcamel-system
-```
+    其中：
 
-其中：
-- `vminsert-insight-victoria-metrics-k8s-stack` 是指标服务的地址；
-- `insight-opentelemetry-collector` 是链路服务的地址;
-- `mcamel-common-es-cluster-masters-es-http` 是日志服务的地址;
+    - `lb-vminsert-insight-victoria-metrics-k8s-stack` 是指标服务的地址；
+    - `lb-insight-opentelemetry-collector`是链路服务的地址;
+    - `mcamel-common-es-cluster-masters-es-http` 是日志服务的地址;
+
+=== "全局管理集群使用 Nodeport"
+
+    全局管理集群使用 Nodeport 方式暴露服务时，登录全局管理集群的控制台，执行以下命令：
+
+    ```shell
+    kubectl get service -n insight-system
+    kubectl get service -n mcamel-system
+    ```
+
+    其中：
+
+    - `vminsert-insight-victoria-metrics-k8s-stack` 是指标服务的地址；
+    - `insight-opentelemetry-collector` 是链路服务的地址;
+    - `mcamel-common-es-cluster-masters-es-http` 是日志服务的地址;
 
 ## 升级 Insight Agent
 
