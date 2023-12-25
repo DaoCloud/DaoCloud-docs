@@ -107,6 +107,7 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 2. 生成目录 repo 索引：
 
     ```bash
+    yum install createrepo -y  # 若已安装 createrepo 可省略此步骤
     createrepo_c ./
     ```
 
