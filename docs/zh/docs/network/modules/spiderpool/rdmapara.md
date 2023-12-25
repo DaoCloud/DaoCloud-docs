@@ -66,7 +66,7 @@ hide:
    | rdmaSharedDevicePlugin.deviceConfig.deviceIDs    | 1017               | 设备 ID 号， 同上步骤 2 中查询信息一致                   |
    | rdmaSharedDevicePlugin.deviceConfig.vendors      | 15b3               | 网卡 Vendors 信息，同上步骤 2 中查询信息一致             |
 
-   	![](../../images/rdma_macvlan01.jpg)
+   	![rdmamacvlan](../../images/rdma_macvlan01.jpg)
 
    成功部署后，可查看已安装组件。
    	![resource](../../images/rdma_macvlan02.jpg)
