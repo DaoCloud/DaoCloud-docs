@@ -109,13 +109,13 @@ To address these issues, you need to go to the Jenkins backend for relevant conf
 
 2. Fill in the relevant parameters. The parameter descriptions are as follows:
 
-   - Name: Assign a name to the SonarQube server configuration. The value will be required in the SonarQube Configuration step of the Application Workbench pipeline.
-   - Server URL: The URL of the SonarQube server.
-   - Server authentication token: The authentication token for the SonarQube server. You can generate a token in the SonarQube console.
+    - Name: Assign a name to the SonarQube server configuration. The value will be required in the SonarQube Configuration step of the Application Workbench pipeline.
+    - Server URL: The URL of the SonarQube server.
+    - Server authentication token: The authentication token for the SonarQube server. You can generate a token in the SonarQube console.
 
-   ![Jenkins SonarQube Config](../../images/install-jenkins08.png)
+    ![Jenkins SonarQube Config](../../images/install-jenkins08.png)
 
-   !!! note
+    !!! note
 
         If a SornarQube instance was already integrated and the Jenkins instance was updated with a new one, in this case, you should make sure the name was set exactly same with the SonarQube name. Which should be noted that Name is not the name entered during integration, instead, it is obtained in the SonarQube configuration step of the pipeline.
 
