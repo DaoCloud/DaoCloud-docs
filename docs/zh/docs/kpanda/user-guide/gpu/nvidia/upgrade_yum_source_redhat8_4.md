@@ -55,13 +55,17 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
 3. 下载 yum 源中的 rpm 包到本地：
 
-    下载 extension-1 中的 rpm 包：
+    ```bash
+    yum install yum-utils
+    ```
+
+4. 下载 extension-1 中的 rpm 包：
 
     ```bash
     reposync  -p redhat-base-repo  -n --repoid=extension-1
     ```
 
-    下载 extension-2 中的 rpm 包：
+5. 下载 extension-2 中的 rpm 包：
 
     ```bash
     reposync  -p redhat-base-repo  -n --repoid=extension-2
