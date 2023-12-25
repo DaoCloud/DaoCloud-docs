@@ -6,7 +6,7 @@
 
     下述命令或脚本内出现的 __kpanda__ 字样是容器管理模块的内部开发代号。
 
-## 通过命令行方式升级
+## 从安装包中加载镜像
 
 ### 从下载的安装包中加载镜像
 
@@ -109,6 +109,12 @@
 ### 升级
 
 有两种升级方式。您可以根据前置操作，选择对应的升级方案：
+
+!!! Note
+
+    从 kpanda 的 v0.21.0 版本开始，redis 支持设置 sentinal 密码，如果使用哨兵模式的 redis，升级时需要变更 --set global.db.redis.url。例如：
+    原来是：redis+sentinel://:3wPxzWffdn@rfs-mcamel-common-redis-cluster.mcamel-system.svc.cluster.local:26379/mymaster
+    现在就要改成：redis+sentinel://:3wPxzWffdn@rfs-mcamel-common-redis-cluster.mcamel-system.svc.cluster.local:26379/mymaster?master_password=3wPxzWffdn
 
 === "通过 helm repo 升级"
 
