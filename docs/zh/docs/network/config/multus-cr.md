@@ -80,7 +80,7 @@
  **SR-IOV 资源 配置说明：**
 `SRI-OV resourceName` 为部署`sriovnetworknodepolicies` 时自定义名称。
 
-1. 如果**基于 SRI-OV 搭配 RDMA** 使用，SR-IOV 资源配置查询如下：
+如果**基于 SRI-OV 搭配 RDMA** 使用，SR-IOV 资源配置查询如下：
    **命令查询：**
    如下的`spidernet.io/sriov_netdevice_enp4s0f0np0` 为查询的资源名称。
 
