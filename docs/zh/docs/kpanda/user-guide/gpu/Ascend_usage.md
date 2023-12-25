@@ -1,11 +1,11 @@
-# 应用使用昇腾（Ascend）GPU
+# 应用使用昇腾（Ascend）NPU
 
 本节介绍如何在 DCE 5.0 平台使用昇腾 GPU。
 
 ## 前提条件
 
-- 当前集群已[安装昇腾（Ascend） GPU 驱动](ascend_driver_install.md)。
-- 当前集群内 GPU 卡未进行任何虚拟化操作或被其它应用占用。
+- 当前集群已[安装昇腾（Ascend） NPU 驱动](ascend_driver_install.md)。
+- 当前集群内 NPU 卡未进行任何虚拟化操作或被其它应用占用。
 
 ## 快速使用
 

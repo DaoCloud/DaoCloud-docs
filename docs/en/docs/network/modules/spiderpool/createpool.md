@@ -5,7 +5,7 @@ Pics: Jeanine-tw
 Date: 2023-01-11
 ---
 
-# Create subnets and IP pools
+# Create Subnets and IP Pools
 
 This page describes how to create subnets and IP pools before creating workloads to use IP pools.
 
@@ -22,14 +22,14 @@ This page describes how to create subnets and IP pools before creating workloads
 
 1. After login to DCE, click `Container Management` -> `Clusters` in the left navigation bar, and find the cluster. Then click `Container Network` -> `Network Settings` in the left navigation bar.
 
-    
+    ![Network Config](../../images/networkconfig01.png)
 
 2. Enter `Network Configuration` to confirm whether the subnet to be used has been created.
 
-    - If the subnet to be used has been created by default, you can directly `create an IP pool`.
+    - If the subnet to be used has been created by default, you can directly create an IP pool.
     - If the subnet to be used is not created by default, you can enter the page and click `Create Subnet`.
 
-    
+    ![Create Subnet](../../images/subnet01.png)
 
     ​Parameter details:
 
@@ -43,11 +43,11 @@ This page describes how to create subnets and IP pools before creating workloads
 
 3. Click `Next` to enter `Select IP`, enter the IP segment to be used (the above-mentioned IP in the subnet), and click `OK` to complete the creation of the subnet.
 
-    
+    ![Choose IP](../../images/subnet02.png)
 
-4. Click the `subnet name` to be used to enter the subnet details page.
+4. Click the subnet name to be used to enter the subnet details page.
 
-    
+    ![Subnet Details](../../images/subnet03.png)
 
 5. On the subnet details page, click `Create IP Pool`.
 
@@ -60,7 +60,7 @@ This page describes how to create subnets and IP pools before creating workloads
 
     On the `Create IP Pool` page, input the following parameters:
 
-    
+    ![Create IP Pool](../../images/subnet04.png)
 
     - `Gateway`: `Gateway` inherits `Subnet Gateway` by default and can be modified.
     - `Custom Routing`: routes can be customized based on IP pool granularity for special needs.
@@ -72,11 +72,11 @@ This page describes how to create subnets and IP pools before creating workloads
 
         If no affinity is added at creation time, the created IP pool will be a `shared IP pool`.
 
-6. Click the IP pool name, and then click `Add IP` to select `IP start address` and `IP number` to join the IP pool. Click `OK` to complete the IP addition, and click again to complete the creation of the IP pool.
+6. Click the IP pool name, and then click `Add IP` to select `IP start Address` and `IP number` to join the IP pool. Click `OK` to complete the IP addition, and click again to complete the creation of the IP pool.
 
-    `Get IP rules`: obtain the corresponding number of IPs in turn from the `IP start address`. If the IP segments are not consecutive IPs, skip the intermediate IPs and obtain them sequentially.
+    `Get IP rules`: obtain the corresponding number of IPs in turn from the `IP Start Address`. If the IP segments are not consecutive IPs, skip the intermediate IPs and obtain them sequentially.
 
-    
+    ![Add IP](../../images/subnet05.png)
 
 7. After the creation is complete, [the workload can use the IP Pool](../../modules/spiderpool/usage.md)
 

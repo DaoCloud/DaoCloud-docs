@@ -23,33 +23,31 @@ Please confirm that your cluster has successfully connected to the `Container Ma
 
 2. Select `Helm Releases` -> `Helm Charts` in the left navigation bar, and then find and click `spiderpool`.
 
-    
+    ![spiderpool helm](../../images/spiderpool-helm.png)
 
 3. Select the version you want to install in `Version`, and click `Install`.
 
-    
-
 4. In the installation page, fill in the required parameters.
 
-    
+    ![spiderpool instal1](../../images/spiderpool-install1.png)
 
-    
+    ![spiderpool instal2](../../images/spiderpool-install2.png)  
 
     The parameters in the above screens are described as follows:
 
     - `namespace`: namespace where SpiderPool is deployed, and the default is `kube-system`. If you change to another Namespace, the interface might not be available.
 
-    - `Global Setting` —> `global container registry`: set the registry address of all images. The available online registry has been filled in by defaul. If it is a private environment, it can be modified to a private registry address.
+    - `Global Setting` -> `global container registry`: set the registry address of all images. The available online registry has been filled in by defaul. If it is a private environment, it can be modified to a private registry address.
 
-    - `Spiderpool Agent Setting` —> `Spiderpool Agent Image` —>  `repository`: set the image name and just keep the default.
+    - `Spiderpool Agent Setting` -> `Spiderpool Agent Image` ->  `repository`: set the image name and just keep the default.
 
-    - `Spiderpool Agent Setting` —> `Spiderpool Agent Prometheus Setting` -> `Enable Metrics`: if turned on, the Spiderpool Agent will collect metrics for external collection.
+    - `Spiderpool Agent Setting` -> `Spiderpool Agent Prometheus Setting` -> `Enable Metrics`: if turned on, the Spiderpool Agent will collect metrics for external collection.
 
-    - `Spiderpool Agent Setting` —> `Spiderpool Agent ServiceMonitor` -> `Install`: install the ServiceMonitor object of Spiderpool Agent, which requires Prometheus to be installed in the cluster, otherwise the creation will fail.
+    - `Spiderpool Agent Setting` -> `Spiderpool Agent ServiceMonitor` -> `Install`: install the ServiceMonitor object of Spiderpool Agent, which requires Prometheus to be installed in the cluster, otherwise the creation will fail.
 
-    - `Spiderpool Agent Setting` —> `Spiderpool Agent PrometheusRule` -> `Install`: install the prometheusRule object of Spiderpool Agent, which requires Prometheus to be installed in the cluster, otherwise the creation will fail.
+    - `Spiderpool Agent Setting` -> `Spiderpool Agent PrometheusRule` -> `Install`: install the prometheusRule object of Spiderpool Agent, which requires Prometheus to be installed in the cluster, otherwise the creation will fail.
 
-    
+    ![spiderpool instal3](../../images/spiderpool-install3.png)
 
     The parameters in the above screen are described as follows:
   
@@ -65,14 +63,21 @@ Please confirm that your cluster has successfully connected to the `Container Ma
 
     - `Spiderpool Controller Setting` -> `Spiderpool Controller PrometheusRule` -> `Install`: install the prometheusRule object of the Spiderpool Controller, which requires Prometheus to be installed in the cluster, otherwise the creation will fail.
 
+    ![spiderpool instal4](../../images/spiderpool-install4.png)
+
+    - `Multus Setting -> MultusCNI -> Install Multus CNI`: Enable Multus installation. If you have already installed Multus, you can set it to false. The default is true.
+
+    - `Multus Setting -> MultusCNI -> Default CNI Name`: Default CNI name of the cluster. It is empty by default. If this value is empty, Spiderpool will automatically obtain the default CNI based on the existing CNI conf files in /etc/cni/net.d/.
+
+    - `Multus Setting -> Multus Image -> repository`: Set the image repository address of Multus. The default is a usable online repository. If it is a private environment, you can modify it to a private repository address.
+
     - `IP Family Setting -> enable IPv4`: enable IPv4 support. If enabled, when assigning an IP to a pod, it must try to assign an IPv4 address, otherwise it will cause the Pod to fail to start.
     Therefore, be sure to open the subsequent `Cluster Default Ippool Installation` -> `install IPv4 ippool` to create the default IPv4 pool for the cluster.
 
     - `IP Family Setting -> enable IPv6`: enable IPv6 support. If enabled, when assigning an IP to the pod, it must try to assign an IPv6 address, otherwise it will cause the Pod to fail to start.
     Therefore, be sure to open the subsequent `Cluster Default Ippool Installation` -> `install IPv6 ippool` to create the default IPv6 pool for the cluster.
 
-    
-
+    ![spiderpool instal5](../../images/spiderpool-install5.png)
     The parameters in the above figure are described as follows:
 
     - `Cluster Default Ippool Installation` -> `install IPv4 ippool`: install IPv4 IP pool.
