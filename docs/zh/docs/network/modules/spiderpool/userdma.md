@@ -20,7 +20,7 @@
 3. 完成`基本信息`、进入`容器配置`完成如下信息输入。
    ![rdma_sriov](../../images/rdma_sriov01.jpg)
 
-   `网络资源参数`：资源名称为 [RDMA 安装及使用准备 ](rdmapara.md) 中创建 spiderPool 时自定义名称，如示例中的`spidernet.io/mellnoxrdma` 为**基于 SRIOV 使用 RoCE 网卡** 的示例。请求值和限制值目前保持一致，输入值不大于 最大可用值 。详情参考：RDMA 安装及使用准备 
+   `网络资源参数`：资源名称为 [RDMA 安装及使用准备 ](rdmapara.md) 中创建 spiderPool 时自定义名称，如示例中的`spidernet.io/mellnoxrdma` 为 **基于 SRIOV 使用 RoCE 网卡**  的示例。请求值和限制值目前保持一致，输入值不大于 最大可用值 。详情参考：RDMA 安装及使用准备 
 
    `运行命令`：添加如下内容:
 
