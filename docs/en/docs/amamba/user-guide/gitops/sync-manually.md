@@ -7,15 +7,15 @@ hide:
 
 This page demonstrates how to manually sync a continuously deployed application.
 
-1. On the `Workbench` -> `continuous delivery` page, click the name of an application whose synchronization status is `Not Synchronized`.
+1. On the __Workbench__ -> __continuous delivery__ page, click the name of an application whose synchronization status is __Not Synchronized__.
 
     <!--![]()screenshots-->
 
-1. On the application details page, click the `Sync` button to enter the synchronization page:
+1. On the application details page, click the __Sync__ button to enter the synchronization page:
 
     <!--![]()screenshots-->
 
-1. On the `Sync Application` page, configure the following parameters:
+1. On the __Sync Application__ page, configure the following parameters:
 
     - Resource name: read-only status, does not support secondary editing
     - Branch/Tag: Set the branch for synchronization. If the synchronization method is automatic synchronization, an error will be reported synchronously after the change
@@ -29,4 +29,4 @@ This page demonstrates how to manually sync a continuously deployed application.
 
     <!--![]()screenshots-->
 
-1. Click `OK`, wait for the synchronization to be successful, and then check the synchronization result.
+1. Click __OK__, wait for the synchronization to be successful, and then check the synchronization result.

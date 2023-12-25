@@ -9,11 +9,11 @@
 
 ## 一键转移
 
-1. 进入`多云实例-工作负载管理`，点击`接入集群`选择将 DCE4 集群接入多云实例。
+1. 进入 __多云实例-工作负载管理__ ，点击 __接入集群__ 选择将 DCE4 集群接入多云实例。
 
     ![接入集群](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/conversion01.png)
 
-2. 进入`多云工作负载-无状态负载`，点击立即体验，选中目标应用，将会自动勾选其关联的 service，同时相关联的配置项、密钥也会被同步转换。
+2. 进入 __多云工作负载-无状态负载__ ，点击立即体验，选中目标应用，将会自动勾选其关联的 service，同时相关联的配置项、密钥也会被同步转换。
 
     ![一键转移](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/conversion02.png)
 

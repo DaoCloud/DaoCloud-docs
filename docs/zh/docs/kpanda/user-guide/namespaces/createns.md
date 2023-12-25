@@ -11,19 +11,19 @@
 !!! note
 
     - 在创建命名空间之前，需要在容器管理模块[接入 Kubernetes 集群](../clusters/integrate-cluster.md)或者[创建 Kubernetes 集群](../clusters/create-cluster.md)。
-    - 集群初始化后通常会自动生成默认的命名空间 `default`。但对于生产集群而言，为便于管理，建议创建其他的命名空间，而非直接使用 `default` 命名空间。
+    - 集群初始化后通常会自动生成默认的命名空间 __default__ 。但对于生产集群而言，为便于管理，建议创建其他的命名空间，而非直接使用 __default__ 命名空间。
 
 ### 表单创建
 
-1. 在`集群列表`页面点击目标集群的名称。
+1. 在 __集群列表__ 页面点击目标集群的名称。
 
     ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/crd01.png)
 
-2. 在左侧导航栏点击`命名空间`，然后点击页面右侧的`创建`按钮。
+2. 在左侧导航栏点击 __命名空间__ ，然后点击页面右侧的 __创建__ 按钮。
 
     ![点击创建](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/ns01.png)
 
-3. 填写命名空间的名称，配置工作空间和标签（可选设置），然后点击`确定`。
+3. 填写命名空间的名称，配置工作空间和标签（可选设置），然后点击 __确定__ 。
 
     !!! info
 
@@ -33,24 +33,24 @@
 
     ![填写表单](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/ns02.png)
 
-4. 点击`确定`，完成命名空间的创建。在命名空间列表右侧，点击 `⋮`，可以从弹出菜单中选择更新、绑定/解绑工作空间、配额管理、删除等更多操作。
+4. 点击 __确定__ ，完成命名空间的创建。在命名空间列表右侧，点击 __⋮__ ，可以从弹出菜单中选择更新、绑定/解绑工作空间、配额管理、删除等更多操作。
 
     ![更多操作](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/ns03.png)
 
 ### YAML 创建
 
-1. 在`集群列表`页面点击目标集群的名称。
+1. 在 __集群列表__ 页面点击目标集群的名称。
 
     ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/crd01.png)
 
-2. 在左侧导航栏点击`命名空间`，然后点击页面右侧的`YAML 创建`按钮。
+2. 在左侧导航栏点击 __命名空间__ ，然后点击页面右侧的 __YAML 创建__ 按钮。
 
     ![点击创建](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/ns00.png)
 
 3. 输入或粘贴事先准备好的 YAML 内容，或者从本地直接导入已有的 YAML 文件。
 
-    > 输入 YAML 内容后，点击`下载`可以将该 YAML 文件保存到本地。
+    > 输入 YAML 内容后，点击 __下载__ 可以将该 YAML 文件保存到本地。
 
     ![点击创建](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/ns04.png)
 
-4. 最后在弹框右下角点击`确定`即可。
+4. 最后在弹框右下角点击 __确定__ 即可。

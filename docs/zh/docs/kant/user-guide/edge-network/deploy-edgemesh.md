@@ -93,8 +93,8 @@ agent:
       memory: 128Mi
   psk: JugH9HP1XBouyO5pWGeZa8LtipDURrf17EJvUHcJGuQ=
 
-relayNodes:
-  - nodeName: masternode ## your relay node name
+  relayNodes:
+   - nodeName: masternode ## your relay node name
     advertiseAddress:
     - x.x.x.x ## your relay node ip
 
@@ -107,7 +107,7 @@ relayNodes:
 
 ## 检验部署结果
 
-部署完成后，可以执行以下命令检查 EdgeMesh 应用是否部署成功。
+部署完成后，可以执行以下操作检查 EdgeMesh 应用是否部署成功。
 
 1. 选择左侧导航栏的`容器` -> `容器管理`，进入集群列表页面，点击`集群名称`，进入集群详情页。
 

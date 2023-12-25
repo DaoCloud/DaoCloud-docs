@@ -10,6 +10,15 @@ technology, sorted by date by default.
 
 ## 2023
 
+- [20231213 | Kubernetes 1.29 Released with an Ambious Mandala Theme](./231213-k8s-1.29.md)
+
+    On December 13, 2023, Pacific Time, Kubernetes 1.29 with the theme "Mandala" is officially released.
+
+- [20231205 | Does Kubernetes Really Perform Better on Bare Metal vs. VMs?](./231205-vm-bm-compare.md)
+
+    Many people presume that a Kubernetes cluster deployed on bare metal performs better than one deployed on
+    virtual machines, but until now there hasn’t been any proof of that assumption.
+
 - [20231115 | Removals, Deprecations, and Major Changes in Kubernetes 1.29](./231115-k8s-1.29-changes.md)
 
     As with every release, Kubernetes v1.29 will introduce feature deprecations and removals.
@@ -44,7 +53,7 @@ technology, sorted by date by default.
     The 1.18 release is the second release of Istio in 2023 and the first to support Ambient mode.
 
     This release introduces many new features and changes, including but not limited to Istio in Ambient mode, enhanced Kubernetes Gateway API,
-    health check support for unregistered VMs, added support for metric expiration, and improved `istioctl analyze`.
+    health check support for unregistered VMs, added support for metric expiration, and improved __istioctl analyze__ .
 
 - [20230605 | Cloud Native Federation Middleware - FedState Officially Open Sourced](./230605-fedstate.md)
 

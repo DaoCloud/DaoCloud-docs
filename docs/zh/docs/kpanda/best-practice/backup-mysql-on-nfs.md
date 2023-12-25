@@ -10,7 +10,7 @@
 
 ### 准备两个集群
 
-`main-cluster` 作为备份数据的源集群，`recovery-cluster` 集群作为需要恢复数据的目标集群。
+__main-cluster__ 作为备份数据的源集群， __recovery-cluster__ 集群作为需要恢复数据的目标集群。
 
 | 集群             | IP           | 节点   |
 | ---------------- | ------------ | ------ |
@@ -51,7 +51,7 @@
 
 2. 为 MySQL 应用准备 NFS 存储服务。
 
-    登录 `main-cluster` 集群和 `recovery-cluster` 集群的任一控制节点，使用 `vi nfs.yaml` 命令在节点上创建一个 名为 `nfs.yaml` 的文件，将下面的 YAML 内容复制到 `nfs.yaml` 文件。
+    登录 __main-cluster__ 集群和 __recovery-cluster__ 集群的任一控制节点，使用 __vi nfs.yaml__ 命令在节点上创建一个 名为 __nfs.yaml__ 的文件，将下面的 YAML 内容复制到 __nfs.yaml__ 文件。
 
     <details>
     <summary>点击查看完整的 nfs.yaml</summary>
@@ -257,13 +257,13 @@
     ```
     </details>
 
-3. 在两个集群的控制节点上执行 `nfs.yaml` 文件。
+3. 在两个集群的控制节点上执行 __nfs.yaml__ 文件。
 
     ```bash
     kubectl apply -f nfs.yaml
     ```
 
-4. 查看 NFS Pod 状态，等待其状态变为 `running`（大约需要 2 分钟）。
+4. 查看 NFS Pod 状态，等待其状态变为 __running__ （大约需要 2 分钟）。
 
     ```bash
     kubectl get pod -n nfs-system -owide
@@ -281,7 +281,7 @@
 
 1. 为 MySQL 应用准备基于 NFS 存储的 PVC，用来存储 MySQL 服务内的数据。
 
-    使用 `vi pvc.yaml` 命令在节点上创建名为 `pvc.yaml` 的文件，将下面的 YAML 内容复制到 `pvc.yaml` 文件内。
+    使用 __vi pvc.yaml__ 命令在节点上创建名为 __pvc.yaml__ 的文件，将下面的 YAML 内容复制到 __pvc.yaml__ 文件内。
 
     ```yaml  title="pvc.yaml"
     apiVersion: v1
@@ -300,7 +300,7 @@
     ```
     </details>
 
-2. 在节点上使用 kubectl 工具执行 `pvc.yaml` 文件。
+2. 在节点上使用 kubectl 工具执行 __pvc.yaml__ 文件。
 
     ```bash
     kubectl apply -f pvc.yaml
@@ -316,7 +316,7 @@
 
 3. 部署 MySQL 应用。
 
-    使用 `vi mysql.yaml` 命令在节点上创建名为 `mysql.yaml` 的文件，将下面的 YAML 内容复制到 `mysql.yaml` 文件。
+    使用 __vi mysql.yaml__ 命令在节点上创建名为 __mysql.yaml__ 的文件，将下面的 YAML 内容复制到 __mysql.yaml__ 文件。
 
     <details>
     <summary>点击查看完整的 mysql.yaml</summary>
@@ -381,7 +381,7 @@
     ```
     </details>
 
-4. 在节点上使用 kubectl 工具执行 `mysql.yaml` 文件。
+4. 在节点上使用 kubectl 工具执行 __mysql.yaml__ 文件。
 
     ```bash
     kubectl apply -f mysql.yaml
@@ -396,7 +396,7 @@
 
 5. 查看 MySQL Pod 状态。
 
-    执行 `kubectl get pod | grep mysql` 查看 MySQL Pod 状态，等待其状态变为 `running`（大约需要 2 分钟）。
+    执行 __kubectl get pod | grep mysql__ 查看 MySQL Pod 状态，等待其状态变为 __running__ （大约需要 2 分钟）。
 
     预期输出为：
 
@@ -408,15 +408,15 @@
     !!! note
         
         - 如果  MySQL Pod 状态长期处于非 running 状态，通常是因为没有在集群的所有节点上安装 NFS 依赖。
-        - 执行 `kubectl describe pod ${mysql pod 名称}` 查看 Pod 的详细信息。
-        - 如果报错中有 `MountVolume.SetUp failed for volume "pvc-4ad70cc6-df37-4253-b0c9-8cb86518ccf8" : mount failed: exit status 32`
-          之类的信息，请分别执行 `kubectl delete -f nfs.yaml/pvc.yaml/mysql.yaml` 删除之前的资源后，重新从部署 NFS 服务开始。
+        - 执行 __kubectl describe pod ${mysql pod 名称}__ 查看 Pod 的详细信息。
+        - 如果报错中有 __MountVolume.SetUp failed for volume "pvc-4ad70cc6-df37-4253-b0c9-8cb86518ccf8" : mount failed: exit status 32__ 
+          之类的信息，请分别执行 __kubectl delete -f nfs.yaml/pvc.yaml/mysql.yaml__ 删除之前的资源后，重新从部署 NFS 服务开始。
 
 6. 向 MySQL 应用写入数据。
 
     为了便于后期验证迁移数据是否成功，可以使用脚本向 MySQL 应用中写入测试数据。
 
-    1. 使用 `vi insert.sh` 命令在节点上创建名为 `insert.sh` 的脚本，将下面的 YAML 内容复制到该脚本。
+    1. 使用 __vi insert.sh__ 命令在节点上创建名为 __insert.sh__ 的脚本，将下面的 YAML 内容复制到该脚本。
 
         ```shell title="insert.sh"
         #!/bin/bash
@@ -448,7 +448,7 @@
         done
         ```
 
-    2. 为 `insert.sh` 脚本添加权限并运行该脚本。
+    2. 为 __insert.sh__ 脚本添加权限并运行该脚本。
 
         ```bash
         [root@g-master1 ~]# chmod +x insert.sh
@@ -474,7 +474,7 @@
         mysql: [Warning] Using a password on the command line interface can be insecure.
         ```
 
-    3. 在键盘上同时按下 `control` 和 `c` 暂停脚本的执行。
+    3. 在键盘上同时按下 __control__ 和 __c__ 暂停脚本的执行。
 
     4. 前往 MySQL Pod 查看 MySQL 中写入的数据。
 
@@ -511,7 +511,7 @@
 
     需要在 **源集群和目标集群** 上均安装 velero 插件。
 
-参考[安装 velero 插件](../user-guide/backup/install-velero.md)文档和下方的 MinIO 配置，在 `main-cluster` 集群和 `recovery-cluster` 集群上安装 velero 插件。
+参考[安装 velero 插件](../user-guide/backup/install-velero.md)文档和下方的 MinIO 配置，在 __main-cluster__ 集群和 __recovery-cluster__ 集群上安装 velero 插件。
 
 | minio 服务器访问地址     | 存储桶     | 用户名 | 密码      |
 | ------------------------ | ---------- | ------ | --------- |
@@ -523,24 +523,24 @@
 
 ## 备份 MySQL 应用及数据
 
-1. 为 MySQL 应用及 PVC 数据添加独有的标签：`backup=mysql`，便于备份时选择资源。
+1. 为 MySQL 应用及 PVC 数据添加独有的标签： __backup=mysql__ ，便于备份时选择资源。
 
     ```bash
-    kubectl label deploy mysql-deploy backup=mysql # 为 `mysql-deploy` 负载添加标签
+    kubectl label deploy mysql-deploy backup=mysql # 为 __mysql-deploy__ 负载添加标签
     kubectl label pod mysql-deploy-5d6f94cb5c-gkrks backup=mysql # 为 mysql pod 添加标签
     kubectl label pvc mydata backup=mysql # 为 mysql 的 pvc 添加标签
     ```
 
 2. 参考[应用备份](../user-guide/backup/deployment.md#_3)中介绍的步骤，以及下方的参数创建应用备份。
 
-    - 名称：`backup-mysql`（可以自定义）
-    - 源集群： `main-cluster`
+    - 名称： __backup-mysql__ （可以自定义）
+    - 源集群： __main-cluster__
     - 命名空间：default
     - 资源过滤-指定资源标签：backup:mysql
 
     ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/mysql03.png)
 
-3. 创建好备份计划之后页面会自动返回备份计划列表，找到新建的备份计划 `backup-mysq`，在计划点击更多操作按钮 `...` 选择 `立即执行` 执行新建的备份计划。
+3. 创建好备份计划之后页面会自动返回备份计划列表，找到新建的备份计划 __backup-mysq__ ，点击更多操作按钮 __...__ 选择 __立即执行__ 执行新建的备份计划。
 
     ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/mysql05.png)
 
@@ -548,21 +548,21 @@
 
 ## 跨集群恢复 MySQL 应用及数据
 
-1. 登录 DCE 5.0 平台，在左侧导航选择`容器管理` -> `备份恢复` -> `应用备份`。
+1. 登录 DCE 5.0 平台，在左侧导航选择 __容器管理__ -> __备份恢复__ -> __应用备份__ 。
 
     ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/mysql06.png)
 
-2. 在左侧功能栏选择 `恢复`，然后在右侧点击 `恢复备份`。
+2. 在左侧功能栏选择 __恢复__ ，然后在右侧点击 __恢复备份__ 。
 
     ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/mysql07.png)
 
 3. 查看以下说明填写参数：
   
-    - 名称：`restore-mysql`（可以自定义）
-    - 备份源集群：`main-cluster`
-    - 备份计划：`backup-mysql`
+    - 名称： __restore-mysql__ （可以自定义）
+    - 备份源集群： __main-cluster__ 
+    - 备份计划： __backup-mysql__ 
     - 备份点：default
-    - 恢复目标集群：`recovery-cluster`
+    - 恢复目标集群： __recovery-cluster__ 
 
     ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/mysql08.png)
   
@@ -570,7 +570,7 @@
 
 ## 验证数据是否成功恢复
 
-1. 登录 `recovery-cluster` 集群的控制节点，查看 `mysql-deploy` 负载是否已经成功备份到当前集群。
+1. 登录 __recovery-cluster__ 集群的控制节点，查看 __mysql-deploy__ 负载是否已经成功备份到当前集群。
 
     ```bash
     kubectl get pod
@@ -614,4 +614,4 @@
 
     !!! success
     
-        可以看到，Pod 中的数据和 `main-cluster` 集群中 Pod 里面的数据一致。这说明已经成功地将 `main-cluster` 中的 MySQL 应用及其数据跨集群恢复到了 `recovery-cluster` 集群。
+        可以看到，Pod 中的数据和 __main-cluster__ 集群中 Pod 里面的数据一致。这说明已经成功地将 __main-cluster__ 中的 MySQL 应用及其数据跨集群恢复到了 __recovery-cluster__ 集群。

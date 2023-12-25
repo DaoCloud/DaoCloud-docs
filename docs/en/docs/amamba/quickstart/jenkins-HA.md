@@ -17,7 +17,7 @@ The following section will explain how to achieve Jenkins high availability base
 - To install HwameiStor, please refer to <https://hwameistor.io/cn/docs/intro>.
   At least two nodes are required for high availability.
 - Ensure that the system has available and clean disks (disks with no existing data or partition information), as HwameiStor cannot utilize disks that are already in use.
-  You can use the `kubectl get ld` command to view disk information in the system.
+  You can use the __kubectl get ld__ command to view disk information in the system.
 
 ## Installation Steps
 
@@ -130,14 +130,14 @@ The following section will explain how to achieve Jenkins high availability base
 
 5. Modify Jenkins' storageClass
 
-    - For Jenkins installed through the UI, you can set the storageClass (storage class `hwameistor-storage-lvm-hdd-ha`) during installation.
-    - For Jenkins installed using Helm, you can set the `storageClassName` in the Helm `value.yaml` file to `hwameistor-storage-lvm-hdd-ha`.
+    - For Jenkins installed through the UI, you can set the storageClass (storage class __hwameistor-storage-lvm-hdd-ha__) during installation.
+    - For Jenkins installed using Helm, you can set the __storageClassName__ in the Helm __value.yaml__ file to __hwameistor-storage-lvm-hdd-ha__.
 
     !!! note
 
-        - Before installation, ensure that the storageClass exists by running `kubectl get sc`.
-        - Generally, after installing HwameiStor, the `hwameistor-storage-lvm-hdd-ha` storageClass is automatically created. If it does not exist, please contact the administrator.
-        - Depending on the added disk type, it could also be `hwameistor-storage-lvm-ssd-ha`. Just specify a high availability (ha) type storageClass.
+        - Before installation, ensure that the storageClass exists by running __kubectl get sc__.
+        - Generally, after installing HwameiStor, the __hwameistor-storage-lvm-hdd-ha__ storageClass is automatically created. If it does not exist, please contact the administrator.
+        - Depending on the added disk type, it could also be __hwameistor-storage-lvm-ssd-ha__. Just specify a high availability (ha) type storageClass.
 
 Once Jenkins is deployed, Jenkins' high availability functionality will be enabled.
 

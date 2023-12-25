@@ -13,7 +13,7 @@ The following steps explain how to create an edge node group.
 
 3. Fill in the relevant parameters.
 
-    - Group Name: A combination of lowercase letters, numbers, hyphens (-), and dots (.), with no consecutive symbols. It must start and end with a letter or number.
+    - Group Name: A combination of lowercase letters, numbers, hyphens (-), and dots (.), and it should not have consecutive separators. It should start and end with a letter or number. contains a maximum of 253 characters.
     - Description: Description information for the node group.
     - Node Selection Method: Nodes in the edge node group can be specified by selecting multiple nodes or matching with a label selector. Both methods can be used simultaneously.
 

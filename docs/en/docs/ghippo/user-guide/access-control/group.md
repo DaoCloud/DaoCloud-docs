@@ -10,7 +10,7 @@ When the permissions of a group change, you only need to modify the role permiss
 
 ## Create group
 
-Prerequisite: Super Admin or IAM Admin.
+Prerequisite: Admin or IAM Owner.
 
 1. Enters `Access Control`, selects `Groups`, enters the list of groups, and clicks `Create a group` on the upper right.
 

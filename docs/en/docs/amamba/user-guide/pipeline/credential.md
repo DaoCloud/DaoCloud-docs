@@ -26,29 +26,29 @@ Currently, you can create the following three types of credentials in the Workbe
 
 The specific steps to create and manage credentials are as follows:
 
-1. On the left navigation bar, click `Pipelines` -> `Credentials` to go to
-   the Credentials list. Click `Create Credential` in the top right corner.
+1. On the left navigation bar, click __Pipelines__ -> __Credentials__ to go to
+   the Credentials list. Click __Create Credential__ in the top right corner.
 
     ![createcredential](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/cred01.png)
 
-2. In the `Create Credential` page, configure the relevant parameters and click `OK`.
+2. In the __Create Credential__ page, configure the relevant parameters and click __OK__.
 
     ![createcredential](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/cred02.png)
 
-    - Fill in the `Credential Name` and set the ID that can be used in pipelines,
-      for example, `dockerhub-id`. Note: Once set, it cannot be changed.
-    - In the `Type` field, select the type of credential you want to add.
+    - Fill in the __Credential Name__ and set the ID that can be used in pipelines,
+      for example, __dockerhub-id__. Note: Once set, it cannot be changed.
+    - In the __Type__ field, select the type of credential you want to add.
     - Fill in the corresponding fields based on the credential type:
 
-        - Username and Password: Specify the `Username` and `Password` for the credential in the respective fields.
-        - Access Token (Secret text): Copy the encrypted text into the `Token` field.
-        - Kubeconfig: Copy the cluster certificate into the `Kubeconfig` field.
+        - Username and Password: Specify the __Username__ and __Password__ for the credential in the respective fields.
+        - Access Token (Secret text): Copy the encrypted text into the __Token__ field.
+        - Kubeconfig: Copy the cluster certificate into the __Kubeconfig__ field.
 
 3. Upon successful creation, a screen prompt will appear, and the newly created credential
    will be placed at the top by default.
 
 
-4. Click the `︙` on the right side of the list to choose options such as editing or
+4. Click the __︙__ on the right side of the list to choose options such as editing or
    deleting from the pop-up menu.
 
     !!! warning

@@ -10,8 +10,8 @@ hide:
 
 ## 前提条件
 
-- 当前集群已接入容器管理且 Global 集群已经安装 `kolm` 组件（helm 模板搜索 kolm）
-- 当前集群已经安装 `olm` 组件且版本 >= 0.2.4 (helm 模板搜索 olm)
+- 当前集群已接入容器管理且 Global 集群已经安装 __kolm__ 组件（helm 模板搜索 kolm）
+- 当前集群已经安装 __olm__ 组件且版本 >= 0.2.4 (helm 模板搜索 olm)
 - 支持执行 Docker 命令
 - 准备一个镜像仓库
 
@@ -26,7 +26,7 @@ hide:
 
     如何获取上述镜像地址：
 
-    前往`容器管理` -> 选择当前集群 -> `helm 应用` -> 查看 `olm` 组件 -> `插件设置`，找到后续步骤所需 opm，minio，minio bundle，minio operator 的镜像。
+    前往 __容器管理__ -> 选择当前集群 -> __helm 应用__ -> 查看 __olm__ 组件 -> __插件设置__ ，找到后续步骤所需 opm，minio，minio bundle，minio operator 的镜像。
 
     ![olm](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/olm.png)
 
@@ -162,6 +162,6 @@ hide:
 
     ![olm2](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/olm2.png)
 
-9. 更新成功后，Operator Hub 中会出现 `minio-operator` 组件
+9. 更新成功后，Operator Hub 中会出现 __minio-operator__ 组件
 
     ![olm3](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/olm3.png)

@@ -24,7 +24,7 @@ nav:
               - 安装社区版:
                   - 资源规划: install/community/resources.md
                   - 从零部署 Kind 集群到安装 DCE 5.0 社区版: install/community/kind/online.md
-                  - 从零部署 K8s 集群到安装 DCE 5.0 社区版: install/community/kind/k8s-dce-deploy.md
+                  - 从零部署 K8s 集群到安装 DCE 5.0 社区版: install/community/k8s/k8s-dce-deploy.md
                   - 已有 K8s 集群在线安装: install/community/k8s/online.md
                   - 已有 K8s 集群离线安装: install/community/k8s/offline.md
               - 安装商业版:
@@ -107,6 +107,7 @@ nav:
                   - 创建金丝雀发布任务: amamba/user-guide/release/canary.md
                   - 查看金丝雀发布任务: amamba/user-guide/release/check-canary.md
                   - 创建蓝绿发布任务: amamba/user-guide/release/blue-green.md
+                  - 查看蓝绿发布任务: amamba/user-guide/release/check-bluegreen.md
               - 项目研发管理:
                   - 查看缺陷: amamba/user-guide/project-mangement/issue.md
               - 工具链集成:
@@ -367,6 +368,9 @@ nav:
                   - IP 池使用:
                       - 工作负载使用 IP 池: network/modules/spiderpool/usage.md
                       - 第三方工作负载使用 IP 池: network/modules/spiderpool/cutomizedusage.md
+                  - RDMA 使用:
+                      - RDMA 环境准备及安装: network/modules/spiderpool/rdmapara.md
+                      - 工作负载使用 RDMA : network/modules/spiderpool/userdma.md
                   - Multus CR 管理:
                       - 创建 Multus CR: network/config/multus-cr.md
               - 网络性能:
@@ -465,7 +469,9 @@ nav:
                   - 介绍: storage/hwameistor/intro/index.md
                   - 组件:
                       - 本地存储: storage/hwameistor/intro/ls.md
-                      - DRBD 安装器: storage/hwameistor/intro/drbd.md
+                      - DRBD 安装器:
+                          - 介绍: storage/hwameistor/intro/drbd.md
+                          - DRBD 适配的内核版本: storage/hwameistor/intro/drbd-support.md
                       - 调度器: storage/hwameistor/intro/scheduler.md
                       - 准入控制器: storage/hwameistor/intro/admission-controller.md
                   - 资源介绍: storage/hwameistor/intro/resources.md
@@ -520,11 +526,11 @@ nav:
                   - 存储卷: storage/terms/volume.md
                   - LVM: storage/terms/lvm.md
                   - PV 和 PVC: storage/terms/pv_pvc.md
-          - 虚拟机容器:
+          - 虚拟机:
               - 介绍:
                   - 简介: virtnest/intro/index.md
                   - Release Notes: virtnest/intro/release-notes.md
-                  - 安装虚拟机容器: virtnest/intro/install.md
+                  - 安装虚拟机: virtnest/intro/install.md
               - 快速入门:
                   - 在指定集群内安装 virtnest-agent: virtnest/quick-start/index.md
                   - 创建虚拟机: virtnest/quick-start/create-image.md
@@ -628,7 +634,8 @@ nav:
       - 微服务:
           - 微服务引擎:
               - 介绍:
-                  - 功能总览: skoala/intro/index.md
+                  - 索引: skoala/intro/index.md
+                  - 功能总览: skoala/intro/features.md
                   - 使用场景: skoala/intro/scenarios.md
                   - 产品优势: skoala/intro/advantages.md
                   - Release Notes: skoala/intro/release-notes.md
@@ -795,6 +802,9 @@ nav:
                   - 网格空间无法正常解绑: mspider/troubleshoot/mesh-space-cannot-unbind.md
                   - DCE 4.0 接入问题追踪: mspider/troubleshoot/dce4.0-issues.md
                   - 命名空间边车配置与工作负载边车冲突: mspider/troubleshoot/sidecar.md
+                  - 托管网格多云互联异常: mspider/troubleshoot/cluster-interconnect.md
+                  - 边车占用大量内存: mspider/troubleshoot/sidecar-memory-err.md
+                  - 集群列表存在未知集群: mspider/troubleshoot/cluster-already-exist.md
               - 最佳实践:
                   - 使用网格完成定向服务访问限制: mspider/best-practice/use-egress-and-authorized-policy.md
                   - 支持接入自定义工作负载类型: mspider/best-practice/use-custom-workloads.md
@@ -1111,7 +1121,7 @@ nav:
                   - 安全管理: download/modules/dowl.md
                   - 网络模块: download/modules/spidernet.md
                   - 存储模块: download/modules/hwameistor.md
-                  - 虚拟机容器: download/modules/virtnest.md
+                  - 虚拟机: download/modules/virtnest.md
               - 多云编排: download/modules/kairship.md
               - 镜像仓库: download/modules/kangaroo.md
               - 可观测性: download/modules/insight.md
@@ -1136,6 +1146,8 @@ nav:
   - 博客:
       - 博文索引: blogs/index.md
       - 2023 年:
+          - 202312 | Spiderpool 入选 CNCF Sandbox: blogs/231220-spiderpool.md
+          - 202312 | K8s 1.29 发布：宇宙主题雄心勃勃: blogs/231213-k8s-1.29.md
           - 202312 | K8s 裸机 vs 虚机性能对比: blogs/231205-vm-bm-compare.md
           - 202311 | K8s 1.29 前瞻：移除、弃用及重大变更: blogs/231115-k8s-1.29-changes.md
           - 202310 | 上海 K8s 贡献者峰会回顾: blogs/231008-kcs.md
@@ -1215,6 +1227,7 @@ nav:
               - Git 文档流程: native/knowledge/git/index.md
               - 开启两步安全验证: native/knowledge/git/2auth.md
               - Git 常见问题: native/knowledge/git/rebase.md
+              - VSCode 编辑技巧: native/knowledge/git/vscode.md
               - UI 翻译预览: native/knowledge/git/ui-preview.md
               - GitHub 混迹技巧: native/knowledge/git/github.md
           - 其他: native/knowledge/other.md

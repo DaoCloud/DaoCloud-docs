@@ -1,33 +1,76 @@
-# OAM Application Concept
+# Introduction to OAM
 
-The OAM (Open Application Model) application functionality is built on the open-source software [KubeVela](http://kubevela.net/en/docs/v1.2/), which abstracts and integrates Kubernetes resources as the top-level abstraction for application delivery.
+The OAM application functionality is based on the open-source software
+[KubeVela](http://kubevela.net/zh/docs/v1.2/), which uses the Open Application Model (OAM)
+as the top-level abstraction for application delivery. It mainly abstracts and integrates Kubernetes resources.
 
-An OAM application consists of one or more components and various operational actions, enabling standardized and efficient application delivery in a hybrid environment.
+An OAM application consists of four main concepts to achieve standardized and efficient
+application delivery in a hybrid environment:
 
-## Components
+- One or more components
+- Operational actions
+- Application execution policies (Policies)
+- Deployment workflows (Workflows)
 
-Components define the delivery and management form of an artifact or cloud service, and an application can include multiple components. It is recommended to have one main component (core business logic) and supplementary components (middleware with strong dependencies or dedicated operation components) in an application. For component type explanations, refer to the [Component Definition](http://kubevela.net/en/docs/v1.2/platform-engineers/oam/x-definition#component-definition).
+You can refer to the following diagram from the KubeVela official documentation for a visual representation:
 
-Currently, the application dashboard in KubeVela comes with five built-in components: **Cron-Task, Daemon, K8s-Objects, Task, Webservice**. For specific parameter details of each component, refer to the [Built-in Component List](http://kubevela.net/en/docs/end-user/components/references).
+![oam1](../../images/oam001.png)
 
-## Traits
+## Introduction to Core Components
 
-Traits are modular and pluggable operational capabilities that can be bound to deployable components at any time. Examples of operational traits include manual or automatic replica scaling, data persistence, setting gateway policies, and automatic DNS resolution. Users can obtain mature capabilities from the community or define their own traits.
+This section only introduces the core components covered by the Application Dashboard.
 
-Currently, the application dashboard in KubeVela comes with multiple built-in operational traits such as **Affinity, Annotations, Command, Container-Image, Cpuscaler**. For specific parameter details of operational traits, refer to the [Built-in Operational Traits List](http://kubevela.net/en/docs/end-user/traits/references).
+### Components
+
+Components define the form of delivery and management for artifacts or cloud services.
+An application can include multiple components. The recommended practice is to include one
+main component (core business logic) and additional components (middleware with strong dependencies
+or exclusive use, operational components, etc.) in an application. For more information about component
+types, please refer to the [kubevela Component Definition](http://kubevela.net/docs/v1.2/platform-engineers/oam/x-definition) documentation.
+
+Currently, the Application Dashboard includes five built-in components based on the open-source
+[kubevela](https://kubevela.io/zh/docs/) components: __Cron-Task, Daemon, K8s-Objects, Task, Webservice__ .
+For specific parameter introductions for each component, please refer to the
+[Built-in Component List](https://kubevela.io/docs/end-user/components/references) documentation.
+
+### Operational Traits
+
+Operational traits (Traits) are modular and pluggable operational capabilities that can be bound to deployable components at any time. Examples include manual or automatic scaling of replicas, data persistence, setting gateway policies, and automatic DNS resolution. Users can obtain mature capabilities from the community or define their own traits.
+
+Currently, the Application Dashboard includes multiple built-in operational traits based on the open-source
+[kubevela](https://kubevela.io/docs/) components, such as __Affinity, Annotations, Command, Container-Image, Cpuscaler__ .
+For specific parameter introductions for each operational trait, refer to the
+[Built-in Trait List](https://kubevela.io/docs/end-user/traits/references) documentation.
+
+### Application Execution Policies (Policies)
+
+The Application Dashboard does not currently provide a productized capability for application execution
+policies. For detailed information, refer to the [kubevela reference](http://kubevela.net/docs/v1.2/platform-engineers/oam/oam-model) documentation.
+
+### Deployment Workflows
+
+The Application Dashboard does not currently provide a productized capability for defining deployment
+workflows. KubeVela automatically deploys components and operational traits in the order specified
+in the arrays. For detailed information, refer to the [kubevela reference](http://kubevela.net/docs/v1.2/platform-engineers/oam/oam-model) documentation.
 
 ## Customization
 
-KubeVela allows for easy in-place customization and extension based on your requirements.
+KubeVela allows easy customization and extension based on your needs.
 
-### Custom Components
+#### Custom Components
 
-The design goal of component definitions (ComponentDefinition) is to allow platform administrators to package any type of deployable artifact as a deliverable "component". Once defined, these types of components can be referenced, instantiated, and delivered by users in deployment plans (Applications).
+Component Definitions allow platform administrators to package any type of deployable artifact as a deliverable "component". Once defined, components of this type can be referenced, instantiated,
+and delivered in deployment plans (Applications) by users.
 
-For specific operations on custom components, refer to the official documentation: [Getting Started with Custom Components](http://kubevela.net/en/docs/v1.2/platform-engineers/components/custom-component).
+For specific operations on custom components, please refer to the official documentation:
+[Getting Started with Custom Components](http://kubevela.net/docs/v1.2/platform-engineers/components/custom-component).
 
-### Custom Operational Traits
+#### Custom Operational Traits
 
-Trait definitions (TraitDefinition) provide a set of operational actions that can be selectively bound to components. These operational actions are usually provided by platform administrators as operational capabilities, providing a range of operations and strategies for the component, such as adding a load balancing strategy, routing strategy, or performing elastic scaling, blue-green deployment strategies, etc.
+Trait Definitions provide a set of operational actions that can be bound to components as needed.
+These operational actions are usually provided by platform administrators as operational capabilities,
+providing a range of operational operations and policies for a component, such as adding a
+load balancing strategy, routing strategy, or performing elastic scaling, canary release strategies, and more.
 
-For specific operations on custom operational traits, refer to the official documentation: [Customize Operational Traits](http://kubevela.net/en/docs/v1.2/platform-engineers/traits/customize-trait).
+For specific operations on custom operational traits, please refer to the official documentation:
+[Customize Operational Traits](http://kubevela.net/docs/v1.2/platform-engineers/traits/customize-trait).

@@ -22,7 +22,7 @@
 - CRI：containerd（因为新版本 K8s 已经不再直接支持 Docker）
 - CNI：Calico
 - StorageClass：local-path
-- DCE 5.0 社区版：v0.5.0
+- DCE 5.0 社区版：v0.13.0
 
 ## 准备节点
 

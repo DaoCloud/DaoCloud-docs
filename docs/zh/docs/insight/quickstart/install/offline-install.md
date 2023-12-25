@@ -18,19 +18,18 @@
 
         该 YAML 文件中的各项参数均为必填项。您需要一个私有的镜像仓库，并修改相关配置。
 
-    === "已安装 chart repo"
+    === "已安装 HARBOR chart repo"
 
-        若当前环境已安装 chart repo，chart-syncer 也支持将 chart 导出为 tgz 文件。
+        若当前环境已安装 HARBOR chart repo，chart-syncer 也支持将 chart 导出为 tgz 文件。
 
         ```yaml title="load-image.yaml"
         source:
           intermediateBundlesPath: insight-offline # 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
         target:
-          containerRegistry: 10.16.10.111 # 需更改为你的镜像仓库 url
-          containerRepository: release.daocloud.io/insight # 需更改为你的镜像仓库
+          containerPrefixRegistry: 10.16.10.111 # 需更改为你的镜像仓库 url
           repo:
             kind: HARBOR # 也可以是任何其他支持的 Helm Chart 仓库类别
-            url: http://10.16.10.111/chartrepo/release.daocloud.io # 需更改为 chart repo url
+            url: http://10.16.10.111/chartrepo/release.daocloud.io # 需更改为 chart repo project url
             auth:
               username: "admin" # 你的镜像仓库用户名
               password: "Harbor12345" # 你的镜像仓库密码
@@ -38,6 +37,27 @@
             auth:
               username: "admin" # 你的镜像仓库用户名
               password: "Harbor12345" # 你的镜像仓库密码
+        ```
+
+    === "已安装 CHARTMUSEUM chart repo"
+
+        若当前环境已安装 CHARTMUSEUM chart repo，chart-syncer 也支持将 chart 导出为 tgz 文件。
+
+        ```yaml title="load-image.yaml"
+        source:
+          intermediateBundlesPath: insight-offline # 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
+        target:
+          containerPrefixRegistry: 10.16.10.111 # 需更改为你的镜像仓库 url
+          repo:
+            kind: CHARTMUSEUM # 也可以是任何其他支持的 Helm Chart 仓库类别
+            url: http://10.16.10.111 # 需更改为 chart repo url
+            auth:
+              username: "rootuser" # 你的镜像仓库用户名, 如果 chartmuseum 没有开启登录验证，就不需要填写 auth
+              password: "rootpass123" # 你的镜像仓库密码
+          containers:
+            auth:
+              username: "rootuser" # 你的镜像仓库用户名
+              password: "rootpass123" # 你的镜像仓库密码
         ```
 
     === "未安装 chart repo"
@@ -48,23 +68,21 @@
         source:
           intermediateBundlesPath: insight-offline # (1)
         target:
-          containerRegistry: 10.16.10.111 # (2)
-          containerRepository: release.daocloud.io/insight # (3)
+          containerPrefixRegistry: 10.16.10.111 # (2)
           repo:
             kind: LOCAL
-            path: ./local-repo # (4)
+            path: ./local-repo # (3)
           containers:
             auth:
-              username: "admin" # (5)
-              password: "Harbor12345" # (6)
+              username: "admin" # (4)
+              password: "Harbor12345" # (5)
         ```
 
         1. 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
         2. 需更改为你的镜像仓库 url
-        3. 需更改为你的镜像仓库
-        4. chart 本地路径
-        5. 你的镜像仓库用户名
-        6. 你的镜像仓库密码
+        3. chart 本地路径
+        4. 你的镜像仓库用户名
+        5. 你的镜像仓库密码
 
 1. 执行同步镜像命令。
 

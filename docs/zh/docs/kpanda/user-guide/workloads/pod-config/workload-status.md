@@ -14,7 +14,7 @@
 
 Pod 是 Kuberneters 中创建和管理的、最小的计算单元，即一组容器的集合。这些容器共享存储、网络以及管理控制容器运行方式的策略。
 Pod 通常不由用户直接创建，而是通过工作负载资源来创建。
-Pod 遵循一个预定义的生命周期，起始于 `Pending` [阶段](https://kubernetes.io/zh-cn/docs/concepts/workloads/pods/pod-lifecycle/#pod-phase)，如果至少其中有一个主要容器正常启动，则进入 `Running`，之后取决于 Pod 中是否有容器以失败状态结束而进入 `Succeeded` 或者 `Failed` 阶段。
+Pod 遵循一个预定义的生命周期，起始于 __Pending__ [阶段](https://kubernetes.io/zh-cn/docs/concepts/workloads/pods/pod-lifecycle/#pod-phase)，如果至少其中有一个主要容器正常启动，则进入 __Running__ ，之后取决于 Pod 中是否有容器以失败状态结束而进入 __Succeeded__ 或者 __Failed__ 阶段。
 
 ## 工作负载状态
 

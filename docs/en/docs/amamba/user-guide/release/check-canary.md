@@ -6,17 +6,17 @@ This article mainly introduces related operations involved in viewing canary rel
 
 ## View task details
 
-1. Enter the `Workbench` module, click `Grayscale Release` in the left navigation bar, and click the name of the target task.
+1. Enter the __Workbench__ module, click __Grayscale Release__ in the left navigation bar, and click the name of the target task.
 
     <!--![]()screenshots-->
 
 2. View the grayscale publishing task details page.
 
-    - `Basic Information` area: view the name, status, release type, release object and other information of the task.
+    - __Basic Information__ area: view the name, status, release type, release object and other information of the task.
 
-    - `Grayscale progress` area: Display the execution progress of the grayscale publishing task in a visual form, so that you can intuitively understand which step the task is currently executing and the status of the execution.
+    - __Grayscale progress__ area: Display the execution progress of the grayscale publishing task in a visual form, so that you can intuitively understand which step the task is currently executing and the status of the execution.
 
-    - `Version Info` area:
+    - __Version Info__ area:
 
         - Major Version: Shows the current version and canary version information.
         - Historical version: display historical version records.
@@ -27,7 +27,7 @@ This article mainly introduces related operations involved in viewing canary rel
 
 After the updated version of the object is published, the grayscale publishing task will be automatically triggered.
 
-1. Click the name of the target task, then click `Update Version` in the upper right corner.
+1. Click the name of the target task, then click __Update Version__ in the upper right corner.
 
     <!--![]()screenshots-->
 
@@ -43,11 +43,11 @@ After the updated version of the object is published, the grayscale publishing t
 
 By updating the release task, you can modify the traffic scheduling strategy of the grayscale release process.
 
-1. On the `Grayscale Publishing Task` details page, click `ⵗ` in the upper right corner of the page and select `Update Publishing Task`.
+1. On the __Grayscale Publishing Task__ details page, click __ⵗ__ in the upper right corner of the page and select __Update Publishing Task__.
 
     <!--![]()screenshots-->
 
-2. Adjust the publishing rules and click `OK`.
+2. Adjust the publishing rules and click __OK__.
 
     <!--![]()screenshots-->
 
@@ -55,11 +55,11 @@ By updating the release task, you can modify the traffic scheduling strategy of 
 
 It supports viewing historical versions released in the past, and you can roll back to a previous version with one click.
 
-1. On the details page of the `Grayscale Publishing Task`, click the `Historical Version` tab.
+1. On the details page of the __Grayscale Publishing Task__, click the __Historical Version__ tab.
 
     <!--![]()screenshots-->
 
-2. Select the target version and click `Rollback`.
+2. Select the target version and click __Rollback__.
 
     <!--![]()screenshots-->
 

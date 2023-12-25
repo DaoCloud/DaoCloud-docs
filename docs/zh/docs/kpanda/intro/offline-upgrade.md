@@ -4,7 +4,7 @@
 
 !!! info
 
-    下述命令或脚本内出现的 `kpanda` 字样是容器管理模块的内部开发代号。
+    下述命令或脚本内出现的 __kpanda__ 字样是容器管理模块的内部开发代号。
 
 ## 通过命令行方式升级
 
@@ -150,9 +150,9 @@
         ...
         ```
 
-    1. 备份 `--set` 参数。
+    1. 备份 __--set__ 参数。
 
-        在升级容器管理版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
+        在升级容器管理版本之前，建议您执行如下命令，备份老版本的 __--set__ 参数。
 
         ```shell
         helm get values kpanda -n kpanda-system -o yaml > bak.yaml
@@ -165,7 +165,7 @@
         kubectl apply -f kpanda/crds
         ```
 
-    1. 执行 `helm upgrade`。
+    1. 执行 __helm upgrade__ 。
 
         升级前建议您覆盖 bak.yaml 中的 `global.imageRegistry` 字段为当前使用的镜像仓库地址。
 
@@ -183,9 +183,9 @@
 
 === "通过 chart 包升级"
 
-    1. 备份 `--set` 参数。
+    1. 备份 __--set__ 参数。
 
-        在升级容器管理版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
+        在升级容器管理版本之前，建议您执行如下命令，备份老版本的 __--set__ 参数。
 
         ```shell
         helm get values kpanda -n kpanda-system -o yaml > bak.yaml
@@ -197,7 +197,7 @@
         kubectl apply -f ./crds
         ```
 
-    1. 执行 `helm upgrade`。
+    1. 执行 __helm upgrade__ 。
 
         升级前建议您覆盖 bak.yaml 中的 `global.imageRegistry` 为当前使用的镜像仓库地址。
 
@@ -224,10 +224,10 @@
 
 ### 操作步骤
 
-1. 在`集群列表`页面中，搜索找到 kpanda-global-cluster 集群，进入集群详情
+1. 在 __集群列表__ 页面中，搜索找到 kpanda-global-cluster 集群，进入集群详情
 
     ![集群列表](../../images/clusterlist.png)
 
-2. 在左侧导航栏中找到 Helm 应用，搜索 kpanda 找到容器管理模块，展开右侧操作栏，点击`更新`按钮，进行升级。
+2. 在左侧导航栏中找到 Helm 应用，搜索 kpanda 找到容器管理模块，展开右侧操作栏，点击 __更新__ 按钮，进行升级。
 
     ![集群列表](../../images/update-kpanda.png)

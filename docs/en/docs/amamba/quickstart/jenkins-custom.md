@@ -10,7 +10,7 @@ Workbench supports adding a custom toolchain through volume mounting or building
 
 ## Mount via Volume
 
-The first way is to use the `init` container and `volumeMount` to copy tools to the agent container. Modify the default behavior of the container by modifying the configmap of jenkins casc. Taking go as an example, in the following example, the `init` container uses another version of Helm to override the Helm that comes with the agent:
+The first way is to use the __init__ container and __volumeMount__ to copy tools to the agent container. Modify the default behavior of the container by modifying the configmap of jenkins casc. Taking go as an example, in the following example, the __init__ container uses another version of Helm to override the Helm that comes with the agent:
 
 ```yaml
  jenkins.yaml: |

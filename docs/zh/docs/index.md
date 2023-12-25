@@ -40,13 +40,22 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
 
 这些模块就像乐高搭积木一样，糅合社区最优秀的几十种开源技术，经过众多辩证选型、攻坚克难、编码调试、海量测试，“十年磨一剑，一朝试锋芒”，全新搭建的新一代容器化平台能够满足企业上云的各类场景需求。
 
+=== "云原生底座"
+
+    提供云原生计算、网络、存储等能力，兼容各种集群接入，支持集群从部署、版本升级、证书变更、配置变更、回收等全生命周期管理，突破 K8s API 性能瓶颈，实现企业超大规模用户并发使用多集群。
+    针对企业环境，提供场景化的网络方案，实现当前企业网络基础设施复用的最大化，降低企业使用云原生应用门槛。
+
+    **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)
+
+    ![云原生底座](https://docs.daocloud.io/daocloud-docs-images/docs/images/07base.png)
+
 === "多云编排"
 
     支持多云和混合云的统一集中管理，提供跨云资源检索及跨云的应用部署、发布和运维能力，实现多云应用高效管控，提供基于集群资源的应用弹性扩缩，实现全局负载均衡，具备故障恢复能力，有效解决多云应用灾备问题，助力企业构建多云、混合云的数字基础设施。
 
     **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)、信创异构
 
-    ![多云](https://docs.daocloud.io/daocloud-docs-images/docs/images/01multi-cloud.png)
+    ![多云](../images/kairship.png)
 
 === "数据中间件服务"
 
@@ -105,16 +114,15 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
 
     **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)、[云边协同](kant/intro/index.md)
 
-    ![云边协同架构图](https://docs.daocloud.io/daocloud-docs-images/docs/images/09cloud-edge-update.png)
+    ![云边协同架构图](../images/09cloud-edge-update.png)
 
-=== "云原生底座"
+=== "虚拟机"
 
-    提供云原生计算、网络、存储等能力，兼容各种集群接入，支持集群从部署、版本升级、证书变更、配置变更、回收等全生命周期管理，突破 K8s API 性能瓶颈，实现企业超大规模用户并发使用多集群。
-    针对企业环境，提供场景化的网络方案，实现当前企业网络基础设施复用的最大化，降低企业使用云原生应用门槛。
+    基于 KubeVirt 技术将虚拟机作为云原生应用进行管理，与容器无缝地衔接在一起，使用户能够轻松地实现虚拟机本身的全生命周期管理、虚拟机的快照、恢复、克隆、热迁移等能力，享受与容器应用一致的丝滑体验。
 
     **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)
 
-    ![云原生底座](https://docs.daocloud.io/daocloud-docs-images/docs/images/07base.png)
+    ![虚拟机](../images/virtnest.png)
 
 在成功获取[许可证授权](./dce/license0.md)后，首次登录 DCE 5.0 将会呈现一个仪表盘。
 该仪表盘以直观的方式展示了各种信息，包括正在运行的容器和 Pod、CPU 和内存使用情况、集群/节点/Pod 的健康状态、告警信息、资源利用情况以及功能一览等内容。

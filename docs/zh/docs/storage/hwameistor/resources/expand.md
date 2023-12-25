@@ -11,13 +11,16 @@ HwameiStor 支持 `CSI 卷扩容` 。这个功能实现了通过修改 `PVC` 的
 ```shell
 kubectl get pvc data-sts-mysql-local-0
 ```
+
 ```none
 NAME                     STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS                 AGE
 data-sts-mysql-local-0   Bound    pvc-b9fc8651-97b8-414c-8bcf-c8d2708c4ee8   1Gi        RWO            hwameistor-storage-lvm-hdd   85m
 ```
+
 ```shell
 kubectl get pv pvc-b9fc8651-97b8-414c-8bcf-c8d2708c4ee8
 ```
+
 ```none
 NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                            STORAGECLASS                 REASON   AGE
 pvc-b9fc8651-97b8-414c-8bcf-c8d2708c4ee8   1Gi        RWO            Delete           Bound    default/data-sts-mysql-local-0   hwameistor-storage-lvm-hdd            85m
@@ -28,12 +31,15 @@ pvc-b9fc8651-97b8-414c-8bcf-c8d2708c4ee8   1Gi        RWO            Delete     
 ```shell
 kubectl get pvc data-sts-mysql-local-0 -o jsonpath='{.spec.storageClassName}'
 ```
+
 ```none
 hwameistor-storage-lvm-hdd
 ```
+
 ```shell
 kubectl get sc hwameistor-storage-lvm-hdd -o jsonpath='{.allowVolumeExpansion}'
 ```
+
 ```none
 true
 ```
@@ -43,6 +49,7 @@ true
 ```shell
 kubectl get edit pvc data-sts-mysql-local-0
 ```
+
 ```yaml
 ...
 spec:
@@ -59,6 +66,7 @@ spec:
 ```shell
 kubectl describe pvc data-sts-mysql-local-0
 ```
+
 ```none
 Events:
   Type     Reason                      Age                From                                Message
@@ -75,13 +83,16 @@ Events:
 ```shell
 kubectl get pvc data-sts-mysql-local-0
 ```
+
 ```none
 NAME                     STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS                 AGE
 data-sts-mysql-local-0   Bound    pvc-b9fc8651-97b8-414c-8bcf-c8d2708c4ee8   2Gi        RWO            hwameistor-storage-lvm-hdd   96m
 ```
+
 ```shell
 kubectl get pv pvc-b9fc8651-97b8-414c-8bcf-c8d2708c4ee8
 ```
+
 ```none
 NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                            STORAGECLASS                 REASON   AGE
 pvc-b9fc8651-97b8-414c-8bcf-c8d2708c4ee8   2Gi        RWO            Delete           Bound    default/data-sts-mysql-local-0   hwameistor-storage-lvm-hdd            96m

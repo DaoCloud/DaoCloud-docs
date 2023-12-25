@@ -107,7 +107,7 @@ If you already have Docker on the host, and the version is higher than 1.18, you
      kind v0.17.0 go1.19.2 linux/amd64
      ```
 
-1. Create `kind_cluster.yaml` configuration file. Expose port 32088 in the cluster to port 8888 external to kind (can be modified by yourself).
+1. Create __kind_cluster.yaml__ configuration file. Expose port 32088 in the cluster to port 8888 external to kind (can be modified by yourself).
 
      ```bash
      cat > kind_cluster.yaml << EOF
@@ -121,7 +121,7 @@ If you already have Docker on the host, and the version is higher than 1.18, you
      EOF
      ```
 
-1. Create a K8s cluster named `fire-kind-cluster` through kind, taking k8s 1.25.3 as an example.
+1. Create a K8s cluster named __fire-kind-cluster__ through kind, taking k8s 1.25.3 as an example.
 
      ```bash
      kind create cluster --image docker.m.daocloud.io/kindest/node:v1.25.3 --name=fire-kind-cluster --config=kind_cluster.yaml

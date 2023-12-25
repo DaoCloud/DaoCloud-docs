@@ -1,6 +1,6 @@
 # trigger trigger pipeline
 
-Configure a trigger for the pipeline to automatically trigger the execution of the pipeline periodically. Click `Edit Configuration` when editing the pipeline to configure the build trigger.
+Configure a trigger for the pipeline to automatically trigger the execution of the pipeline periodically. Click __Edit Configuration__ when editing the pipeline to configure the build trigger.
 
 <!--![]()screenshots-->
 
@@ -8,12 +8,12 @@ Configure a trigger for the pipeline to automatically trigger the execution of t
 
 | Trigger Type | Description |
 | ------------ | ------------------------------------ ------------------------ |
-| Code Source Trigger | Check the code repository for changes at the specified time. For example, filling in `H/15 * * * *` means that every 15 minutes the system will automatically check whether there are newly submitted changes in the code warehouse, and if there are newly submitted changes, the pipeline will be executed. |
+| Code Source Trigger | Check the code repository for changes at the specified time. For example, filling in __H/15 * * * *__ means that every 15 minutes the system will automatically check whether there are newly submitted changes in the code warehouse, and if there are newly submitted changes, the pipeline will be executed. |
 | Timing trigger | Trigger the pipeline at a specified time. After the timing trigger is turned on, you can directly select the preset rules, or you can choose a custom CRON expression and enter a custom trigger rule. |
 
 ## trigger rules
 
-Trigger rule syntax follows that of CRON (with a slight difference). Specifically, each line consists of 5 tab- or space-separated fields: `MINUTE HOUR DOM MONTH DOW`
+Trigger rule syntax follows that of CRON (with a slight difference). Specifically, each line consists of 5 tab- or space-separated fields: __MINUTE HOUR DOM MONTH DOW__
 
 | field | description | value range |
 | ------ | ---- | -------------------------------------- |
@@ -33,16 +33,16 @@ To specify multiple values ​​for a field, the following operators can be use
 | A,B,...,Z | means match multiple values ​​|
 
 In order for regularly scheduled tasks to create an even load on the system, the symbol H (for "hash") should be used whenever possible.
-For example, using `0 0 * * *` for a dozen daily jobs will result in a large spike at midnight, possibly straining resources.
-In contrast, using `H H * * *` will still run each job once a day, but not all at once, which makes better use of limited resources.
+For example, using __0 0 * * *__ for a dozen daily jobs will result in a large spike at midnight, possibly straining resources.
+In contrast, using __H H * * *__ will still run each job once a day, but not all at once, which makes better use of limited resources.
 
-H can be used with ranges. For example, `H H(0-7) * * *` means some time between 00:00 and 7:59.
+H can be used with ranges. For example, __H H(0-7) * * *__ means some time between 00:00 and 7:59.
 
-Due to the different number of days in different months, when a short period such as `/3` or `H/3` appears in `DOM`, it will not be triggered at the end of most months.
-For example, `*/3` will trigger the task on the 1st, 4th, ..., 31st of each month. If there are 30 days in the next month, the last time the task is triggered is the 28th day.
+Due to the different number of days in different months, when a short period such as __/3__ or __H/3__ appears in __DOM__, it will not be triggered at the end of most months.
+For example, __*/3__ will trigger the task on the 1st, 4th, ..., 31st of each month. If there are 30 days in the next month, the last time the task is triggered is the 28th day.
 
 Also, @yearly, @annually, @monthly, @weekly, @daily, @midnight, and @hourly are convenient aliases.
-These use hashes for automatic matching. For example, @hourly is the same as `H * * * *` and can represent any time within an hour.
+These use hashes for automatic matching. For example, @hourly is the same as __H * * * *__ and can represent any time within an hour.
 @midnight represents a period of time between 0:00 and 2:59 every day.
 
 **Rule Example**

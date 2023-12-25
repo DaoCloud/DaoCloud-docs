@@ -18,7 +18,7 @@ IAM (Identity and Access Management) is an important module of global management
 
 ## Usage Process
 
-1. Log in to the DCE platform using the Super Admin account or an account with administrator privileges.
+1. Log in to the DCE platform using the Admin account or an account with administrator privileges.
 2. Create a user, see [User](user.md).
 3. Grant permissions to the user, see [Permission Management](role.md).
 4. Create a user group, see [User Group](group.md).

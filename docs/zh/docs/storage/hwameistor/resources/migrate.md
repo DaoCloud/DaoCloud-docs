@@ -36,12 +36,12 @@ LocalVolumeMigrate 需要部署在 Kubernetes 系统中，需要部署应用满�
 
     迁移之前请先解除 PVC 挂载，可通过`编辑工作负载`进行解挂载。
 
-    ![unbound01](https://docs.daocloud.io/daocloud-docs-images/docs/storage/images/unboundpvc-01.jpg)
+    ![unbound01](../images/unboundpvc-01.png)
 
 5. 创建迁移任务
 
     进入`对应集群`--> 点击左侧`容器存储`-->`Hwameistor` 进入 `Hwameistor` 界面，选择 已经解绑的本地卷，
-    对应的 PVC 为 `pvc-test01`、`pvc-test02`，点击 `...` 选择`迁移`,选择员`源节点`，`目标节点`。
+    对应的 PVC 为 `pvc-test01`、`pvc-test02`，点击 `...` 选择`迁移`,选择`源节点`，`目标节点`。
 
     `源节点`： 本地卷副本所在的节点。
 
@@ -118,6 +118,7 @@ LocalVolumeMigrate 需要部署在 Kubernetes 系统中，需要部署应用满�
     ```shell
     kubectl get LocalVolumeMigrate  -o yaml
     ```
+
     ```yaml
     apiVersion: v1
     items:
@@ -155,6 +156,7 @@ LocalVolumeMigrate 需要部署在 Kubernetes 系统中，需要部署应用满�
     ```shell
     [root@172-30-45-222 deploy]# kubectl get lvr
     ```
+
     ```none
     NAME                                              CAPACITY     NODE            STATE   SYNCED   DEVICE                                                                  AGE
     pvc-1a0913ac-32b9-46fe-8258-39b4e3b696a4-9cdkkn   1073741824   172-30-45-223   Ready   true     /dev/LocalStorage_PoolHDD-HA/pvc-1a0913ac-32b9-46fe-8258-39b4e3b696a4   77s

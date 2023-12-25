@@ -22,7 +22,7 @@
 skoala-init 是微服务引擎所有的组件 Operator：
 
 - 仅安装到工作集群即可
-- 包含组件有：skoala-agent、nacos、contour、sentinel、seata
+- 包含组件有：skoala-agent、nacos-operator、sentinel-operator、seata-operator、contour-provisioner、gateway-api-adminssion-server
 - 未安装时，创建注册中心和网关时会提示缺少组件
 
 由于 Skoala 涉及的组件较多，我们将这些组件打包到同一个 Chart 内，也就是 skoala-init，
@@ -111,10 +111,13 @@ skoala-agent-54d4df7897-7p4pz                         1/1     Running     0     
 
         需要将 `version`、`nacos-operator.image.tag`、`skoala-agent.image.tag`、`sentinel-operator.image.tag`、`seata-operator.image.tag` 五个参数的值调整为您需要升级到的微服务引擎的版本号。
 
-6. 根据自身需要，手动更新需要升级的 CRD 文件。
+6. 根据自身需要，手动更新需要升级的网关相关 CRD 文件。
 
     ```bash
-    kubectl apply -f xxx.yaml
+    # projectcontour 相关 crd
+    kubectl apply -f skoala-init/charts/contour-provisioner/crds/contour.yaml
+    # gateway-api 相关 crd
+    kubectl apply -f skoala-init/charts/contour-provisioner-prereq/crds/gateway-api.yaml
     ```
 
 ## 离线升级

@@ -5,8 +5,8 @@ This section lists common terms used in Global Management.
 ### IAM
 
 IAM (Identity and Access Management) is the abbreviation for the access control module.
-The administrator of this module is called the IAM Admin, who has the highest authority
-of this module. Users (groups) assigned to the IAM Admin will have all and the
+The administrator of this module is called the IAM Owner, who has the highest authority
+of this module. Users (groups) assigned to the IAM Owner will have all and the
 highest permissions for Access Control.
 
 For more details, see [What is IAM](../user-guide/access-control/iam.md).
@@ -53,7 +53,7 @@ There are two roles in Global Administration:
   global management brings together multiple submodules, each submodule also has a
   corresponding administrator role, for example:
 
-    - IAM Admin: Manage Access Control, that is, manage users/groups and authorization
+    - IAM Owner Manage Access Control, that is, manage users/groups and authorization
 
     - Workspace Admin: Permission to manage levels and workspaces, only this permission can create levels
 
@@ -93,9 +93,9 @@ To meet the branch division of various departments in the enterprise, DCE introd
 each submodule on the DCE platform, which is the specific data to complete the authorization.
 Usually, resources describe one or more operation objects, and each submodule has its resources and corresponding resource definition details, such as clusters, namespaces, gateways, etc.
 
-The owner of the resource is the main account Super Admin. Super Admin has the authority to
+The owner of the resource is the main account Admin. Admin has the authority to
 create/manage/delete resources in each submodule. Ordinary users will not automatically have
-access to resources without authorization, and Super Admin is required to authorize.
+access to resources without authorization, and Admin is required to authorize.
 Workspace supports authorizing users (groups) to access resources across submodules.
 
 ### Credentials

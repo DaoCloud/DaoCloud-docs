@@ -4,17 +4,17 @@ Workbench is based on open source software [Argo CD](https://argo-cd.readthedocs
 
 ## prerequisites
 
-- Need to create a workspace and a user, the user needs to join the workspace and give `workspace edit` role.
+- Need to create a workspace and a user, the user needs to join the workspace and give __workspace edit__ role.
   Refer to [Creating a workspace](../../../ghippo/user-guide/workspace/workspace.md), [Users and roles](../../../ghippo/user-guide/access-control/user.md).
 - Prepare a Git repository.
 
 ## Create the Argo CD application
 
-1. On the `Workbench` -> `Continuous Release` page, click the `Create Application` button.
+1. On the __Workbench__ -> __Continuous Release__ page, click the __Create Application__ button.
 
     <!--![]()screenshots-->
 
-1. On the `Create Application` page, after configuring `Basic Information`, `Deployment Location`, `Code Warehouse Source` and `Sync Policy`, click `OK`.
+1. On the __Create Application__ page, after configuring __Basic Information__, __Deployment Location__, __Code Warehouse Source__ and __Sync Policy__, click __OK__.
 
     - Source of code repository:
         - Code repository: Select an imported code repository or enter a public code repository address. For example: https://github.com/argoproj/argocd-example-apps.git
@@ -48,7 +48,7 @@ Workbench is based on open source software [Argo CD](https://argo-cd.readthedocs
 
     <!--![]()screenshots-->
 
-1. Please refer to [Manual Synchronization Application](./sync-manually.md) for specific parameter descriptions during the synchronization process, and click `OK`.
+1. Please refer to [Manual Synchronization Application](./sync-manually.md) for specific parameter descriptions during the synchronization process, and click __OK__.
 
     <!--![]()screenshots-->
 

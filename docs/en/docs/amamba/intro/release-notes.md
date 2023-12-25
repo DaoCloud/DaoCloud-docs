@@ -225,8 +225,8 @@ the development and feature changes in each version.
 
 - API support for creating pipelines using built-in templates
 - API support for creating, updating, and deleting custom templates
-- `apiserver` and `devopserver` can access Jenkins using the https protocol
-- `event-proxy`component supports Jenkins event persistence
+- __apiserver__ and __devopserver__ can access Jenkins using the https protocol
+- __event-proxy__ component supports Jenkins event persistence
 - Retry and rate limit when accessing Jenkins
 
 #### Improvements
@@ -250,7 +250,7 @@ the development and feature changes in each version.
 
 #### Improvements
 
-- Downloaded artifact reports are no longer fully cached in `apiserver`; they are partly cached through io chunking mode forwarding
+- Downloaded artifact reports are no longer fully cached in __apiserver__; they are partly cached through io chunking mode forwarding
 
 #### Fixes
 
@@ -325,7 +325,7 @@ the development and feature changes in each version.
 #### Fixes
 
 - Admin users fail to authenticate deployment target (cluster/namespace)
-- `Invalida date` error of the creation time, sync start time, and sync end time of gitops applications
+- __Invalida date__ error of the creation time, sync start time, and sync end time of gitops applications
 - Error of getting data about the Nacos registry list
 - Error that occurs when sorting workloads by name
 - Loss of cluster and namespace in the destionation of ArgoCD after unbinding and then re-binding the cluster

@@ -1,6 +1,6 @@
-# 虚拟机容器 Release Notes
+# 虚拟机 Release Notes
 
-本页列出虚拟机容器的 Release Notes，便于您了解各版本的演进路径和特性变化。
+本页列出虚拟机的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
 ## 2023-11-30
 

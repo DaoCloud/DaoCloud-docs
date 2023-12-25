@@ -6,6 +6,8 @@
 
 | 版本  | 架构 | 文件大小 | 安装包  |  校验文件 | 更新日期  |
 |------ | --- | ------- | ------ | ------- | -------- |
+| [v0.22.1](../../amamba/intro/release-notes.md) | AMD 64 | 340.77MB | [:arrow_down: amamba_v0.22.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/amamba_v0.22.1_amd64.tar) | [:arrow_down: amamba_v0.22.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/amamba_v0.22.1_amd64_checksum.sha512sum) | 2023-12-22 |
+| [v0.22.0](../../amamba/intro/release-notes.md) | AMD 64 | 340.76MB | [:arrow_down: amamba_v0.22.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/amamba_v0.22.0_amd64.tar) | [:arrow_down: amamba_v0.22.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/amamba_v0.22.0_amd64_checksum.sha512sum) | 2023-12-19 |
 | [0.19.5](../../amamba/intro/release-notes.md) | AMD 64 | 773.93 MB | [:arrow_down: amamba_0.19.5_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/amamba_0.19.5_amd64.tar) | [:arrow_down: amamba_0.19.5_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/amamba_0.19.5_amd64_checksum.sha512sum) | 2023-08-30 |
 
 ## 校验

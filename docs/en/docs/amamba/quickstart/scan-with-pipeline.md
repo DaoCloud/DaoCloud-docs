@@ -10,7 +10,7 @@ This article will explain how to integrate SonarQube into pipelines to implement
 
 Ensure that you have a SonarQube environment and that it is properly connected to the current network environment.
 
-1. Go to the `Toolchain Integration` page and click the `Add Tool Integration` button.
+1. Go to the __Toolchain Integration__ page and click the __Add Tool Integration__ button.
 
 
 2. Configure the relevant parameters according to the following instructions:
@@ -22,25 +22,25 @@ Ensure that you have a SonarQube environment and that it is properly connected t
 
 
 
-3. Click `OK` to complete the integration and return to the toolchain list page.
+3. Click __OK__ to complete the integration and return to the toolchain list page.
 
 ## Creating a Pipeline
 
-1. On the Pipelines page, click `Create Pipeline`.
+1. On the Pipelines page, click __Create Pipeline__.
 
 
 
-2. Select `Custom Creation`.
+2. Select __Custom Creation__.
 
 
 
-3. Enter a name and use default values for other fields, then click `OK`.
+3. Enter a name and use default values for other fields, then click __OK__.
 
 
 
 ## Editing Pipeline Steps
 
-1. Click a pipeline to enter its details page, and click `Edit Pipeline` in the upper right corner.
+1. Click a pipeline to enter its details page, and click __Edit Pipeline__ in the upper right corner.
 
 
 
@@ -48,11 +48,11 @@ Ensure that you have a SonarQube environment and that it is properly connected t
 
 
 
-3. In the graphical interface, define Stage 1 `git clone` with the following configuration:
+3. In the graphical interface, define Stage 1 __git clone__ with the following configuration:
 
 
 
-4. In the graphical interface, define Stage 2 `SonarQube analysis` with the following configuration:
+4. In the graphical interface, define Stage 2 __SonarQube analysis__ with the following configuration:
 
     - SonarQube Instance: Select the previously integrated SonarQube instance.
     - Code Language: Different code languages correspond to different scanning commands in SonarQube. If it is Java language, select Maven; otherwise, choose other. For this example, we select "other".
@@ -64,9 +64,9 @@ Ensure that you have a SonarQube environment and that it is properly connected t
 
 ## Viewing Code Scanning Results
 
-1. After the pipeline runs successfully, click `Code Quality Check` on the pipeline details page.
+1. After the pipeline runs successfully, click __Code Quality Check__ on the pipeline details page.
 
 
 
-2. View the code scanning results. Click `View More` to go to the SonarQube backend for more scanning information.
+2. View the code scanning results. Click __View More__ to go to the SonarQube backend for more scanning information.
 

@@ -5,16 +5,16 @@ Workbench module supports custom pipeline templates. Users can create pipeline t
 ## prerequisites
 
 - [Create Workspace](../../../../ghippo/user-guide/workspace/workspace.md), [Create User](../../../../ghippo/user-guide/access-control/user.md).
-- Add the user to the workspace with `workspace editor` or higher privileges.
+- Add the user to the workspace with __workspace editor__ or higher privileges.
 - Configure the [pipeline template file] (info.md).
 
 ### Steps
 
-1. On the `Custom Pipeline Template` page, click `Create Template`
+1. On the __Custom Pipeline Template__ page, click __Create Template__
 
     <!--![]()screenshots-->
 
-2. Fill in the basic information with reference to the instructions below, and click `OK`.
+2. Fill in the basic information with reference to the instructions below, and click __OK__.
 
     - Template name: fill in the name of the pipeline template.
     - Description information: The description information of the current pipeline supports Chinese.

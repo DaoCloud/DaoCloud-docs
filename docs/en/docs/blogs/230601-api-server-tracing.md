@@ -140,7 +140,7 @@ go test -run TestAPIServerTracing
 
 Here we take a Kubernetes cluster installed with kubeadm as an example.
 
-Configure the feature gate `APIServerTracing=true` in the kube-apiserver.yaml configuration file (this feature gate is no longer necessary in versions 1.27 and above).
+Configure the feature gate __APIServerTracing=true__ in the kube-apiserver.yaml configuration file (this feature gate is no longer necessary in versions 1.27 and above).
 
 Configure the tracing-config-file file and save it to /etc/kubernetes/apitracing-config.yaml.
 
@@ -181,7 +181,7 @@ Now we can access Jaeger at http://<JaegerIP>:16686/. In the Jaeger interface, w
 
 ![image](./images/trace03.png)
 
-The green line is from the API server, including a service request to `/api/v1/nodes` and a grpc Range RPC sent to ETCD. The yellow line is from ETCD processing the Range RPC.
+The green line is from the API server, including a service request to __/api/v1/nodes__ and a grpc Range RPC sent to ETCD. The yellow line is from ETCD processing the Range RPC.
 
 ## Conclusion
 

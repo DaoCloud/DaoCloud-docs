@@ -93,9 +93,9 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
     that triggers graceful pod termination.
 
     You can request eviction by calling the Eviction API directly, or programmatically using a client of
-    the API server, like the `kubectl drain` command. This creates an `Eviction` object, which causes the API server to terminate the Pod.
+    the API server, like the __kubectl drain__ command. This creates an __Eviction__ object, which causes the API server to terminate the Pod.
 
-    API-initiated evictions respect your configured `PodDisruptionBudgets` and `terminationGracePeriodSeconds`.
+    API-initiated evictions respect your configured __PodDisruptionBudgets__ and __terminationGracePeriodSeconds__ .
 
 - API Group
 
@@ -105,7 +105,7 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
     API Groups can be enabled or disabled by changing the configuration of the API server.
     You can also disable or enable paths to specific resources.
     API groups make it easier to extend the K8s API.
-    The API group is specified at the REST path and in the `apiVersion` field of the serialized object.
+    The API group is specified at the REST path and in the __apiVersion__ field of the serialized object.
 
 - API Gateway
 
@@ -358,7 +358,7 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
 
 - Cloud Controller Manager
 
-    The `cloud-controller-manager` is a Kubernetes control plane component that embeds cloud-specific control logic.
+    The __cloud-controller-manager__ is a Kubernetes control plane component that embeds cloud-specific control logic.
     It allows you to connect your cluster to the API of a cloud provider and separate the components that interact
     with that cloud platform from the components that interact with your cluster.
 
@@ -1050,7 +1050,7 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
 
     Events should be treated as informative, best-effort, supplementary data.
 
-    In Kubernetes, an auditing mechanism generates a different category of Event records (API group `audit.k8s.io`).
+    In Kubernetes, an auditing mechanism generates a different category of Event records (API group __audit.k8s.io__ ).
 
 - Event-Driven Architecture
 
@@ -1108,11 +1108,11 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
 
 - Finalizer
 
-    `Finalizer` is a key with a namespace that tells Kubernetes to completely delete a resource marked for deletion only after specific conditions are met. Finalizers remind controllers to clean up resources owned by the deleted object. When you tell Kubernetes to delete an object with a Finalizer, the Kubernetes API marks the object to be deleted by populating `.metadata.deletionTimestamp` and returns a `202` status code (HTTP "Accepted") to put it in read-only mode. At this point, the control plane or other components take the action defined by the Finalizer, and the target object remains in the Terminating state. After these actions are completed, the controller deletes the Finalizer associated with the target object. When the `metadata.finalizers` field is empty, Kubernetes considers the deletion complete and deletes the object. You can use Finalizer to control the garbage collection of resources. For example, you can define a Finalizer to clean up related resources or infrastructure before deleting the target resource.
+    __Finalizer__ is a key with a namespace that tells Kubernetes to completely delete a resource marked for deletion only after specific conditions are met. Finalizers remind controllers to clean up resources owned by the deleted object. When you tell Kubernetes to delete an object with a Finalizer, the Kubernetes API marks the object to be deleted by populating __.metadata.deletionTimestamp__ and returns a __202__ status code (HTTP "Accepted") to put it in read-only mode. At this point, the control plane or other components take the action defined by the Finalizer, and the target object remains in the Terminating state. After these actions are completed, the controller deletes the Finalizer associated with the target object. When the __metadata.finalizers__ field is empty, Kubernetes considers the deletion complete and deletes the object. You can use Finalizer to control the garbage collection of resources. For example, you can define a Finalizer to clean up related resources or infrastructure before deleting the target resource.
 
 - Folder
 
-    In DCE, `Folder` is a [hierarchical concept](../ghippo/user-guide/workspace/folders.md) that corresponds to different departments, and each level can contain one or more workspaces to meet the branch division of various departments within the enterprise.
+    In DCE, __Folder__ is a [hierarchical concept](../ghippo/user-guide/workspace/folders.md) that corresponds to different departments, and each level can contain one or more workspaces to meet the branch division of various departments within the enterprise.
 
 ### G
 
@@ -1187,11 +1187,11 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
 
 - Histogram
 
-    A histogram samples observation results (usually data such as request duration or response size) and statistically aggregates them into configurable buckets. There are several ways to generate a histogram (assuming the metric is `<basename>`):
+    A histogram samples observation results (usually data such as request duration or response size) and statistically aggregates them into configurable buckets. There are several ways to generate a histogram (assuming the metric is __<basename>__ ):
 
-    - Count by bucket, equivalent to `<basename>_bucket{le="<upper inclusive bound>"}`
-    - Sum of sampled values, equivalent to `<basename>_sum`
-    - Total number of sampled values, equivalent to `<basename>_count`, also equivalent to counting all sampled values in a bucket `<basename>_bucket{le="+Inf"}`
+    - Count by bucket, equivalent to __<basename>_bucket{le="<upper inclusive bound>"}__ 
+    - Sum of sampled values, equivalent to __<basename>_sum__ 
+    - Total number of sampled values, equivalent to __<basename>_count__ , also equivalent to counting all sampled values in a bucket __<basename>_bucket{le="+Inf"}__ 
 
     Histogram can be understood as a bar chart, typically used for observation results such as request duration and response size. It can sample, group, and statistically aggregate observation results.
 
@@ -1258,7 +1258,7 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
 
 - IAM, Identity and access management
 
-    [IAM](../ghippo/user-guide/access-control/iam.md) stands for Identity and Access Management, which is a shorthand for user and access control in global management. An IAM Admin is the administrator with the highest level of permission in this module. Users or groups assigned as IAM Admin will have full and highest permission for user and access control.
+    [IAM](../ghippo/user-guide/access-control/iam.md) stands for Identity and Access Management, which is a shorthand for user and access control in global management. An IAM Owner is the administrator with the highest level of permission in this module. Users or groups assigned as IAM Owner will have full and highest permission for user and access control.
 
 - Image
 
@@ -1522,7 +1522,7 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
 
 - Name
 
-    A string provided by the client that identifies an object in the resource URL, such as `/api/v1/pods/some-name`.
+    A string provided by the client that identifies an object in the resource URL, such as __/api/v1/pods/some-name__ .
     At any given time, only one object of a given type can have a given name. However, if the object is deleted, a new object with the same name can be created.
 
 - [Namespace](../kpanda/user-guide/namespaces/createns.md)
@@ -1637,7 +1637,7 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
     - Failed
     - Unknown
 
-    For a higher-level description of a Pod's phase, please refer to the `phase` field in the [PodStatus](https://kubernetes.io/docs/reference/generated/kubernetes-api/{{< param "version" >}}/#podstatus-v1-core) object.
+    For a higher-level description of a Pod's phase, please refer to the __phase__ field in the [PodStatus](https://kubernetes.io/docs/reference/generated/kubernetes-api/{{< param "version" >}}/#podstatus-v1-core) object.
 
 - Pod Priority
 
@@ -1645,7 +1645,7 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
 
 - Pod Security Policy
 
-    Pod security policy enables fine-grained authorization for creating and updating Pods. It is a cluster-level resource that controls security-sensitive content in Pod specifications. The `PodSecurityPolicy` object defines a set of conditions and default values for related fields that Pods must satisfy at runtime. Pod security policy is implemented as an optional admission controller.
+    Pod security policy enables fine-grained authorization for creating and updating Pods. It is a cluster-level resource that controls security-sensitive content in Pod specifications. The __PodSecurityPolicy__ object defines a set of conditions and default values for related fields that Pods must satisfy at runtime. Pod security policy is implemented as an optional admission controller.
 
     PodSecurityPolicy has been deprecated since Kubernetes v1.21 and removed in v1.25. As an alternative, use [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/) or third-party admission plugins.
 
@@ -1673,7 +1673,7 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
 
     In Multicloud Management, [PropagationPolicy](../kairship/policy/propagation.md) defines the distribution strategy for multicloud resource objects, supporting planning which workloads to deploy to which working clusters using specified clusters or labels. PropagationPolicy is an independent policy API that can define multicluster scheduling methods based on distribution requirements.
 
-    - Supports 1:n `policy:workload`, and users do not need to repeat the scheduling constraints each time they create a multicloud application.
+    - Supports 1:n __policy:workload__ , and users do not need to repeat the scheduling constraints each time they create a multicloud application.
     - When using the default policy, users can interact directly with the Kubernetes API.
 
 - Proxy
@@ -1704,7 +1704,7 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
 
 - Resource
 
-    Resource refers to the specific data that completes authorization on the DCE platform through various sub-modules. Typically, a resource describes one or more objects of operation, and each sub-module has its own resources and corresponding resource definition details, such as clusters, namespaces, gateways, etc. The owner of the resource is the main account Super Admin. Super Admin has the authority to create/manage/delete resources in each sub-module. Ordinary users do not automatically have access to resource access rights without authorization from Super Admin. The workspace supports cross-sub-module authorization of user (group) access to resources.
+    Resource refers to the specific data that completes authorization on the DCE platform through various sub-modules. Typically, a resource describes one or more objects of operation, and each sub-module has its own resources and corresponding resource definition details, such as clusters, namespaces, gateways, etc. The owner of the resource is the main account  Admin. Admin has the authority to create/manage/delete resources in each sub-module. Ordinary users do not automatically have access to resource access rights without authorization from Admin. The workspace supports cross-sub-module authorization of user (group) access to resources.
 
 - Resource limit
 
@@ -1732,7 +1732,7 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
     - predefined roles created by the system that users can only use and cannot modify, and
     - custom roles that users can create, update, and delete themselves.
 
-    The permissions in custom roles are maintained by the users themselves. At the same time, because global management brings together multiple sub-modules, each sub-module also has a corresponding administrator role, such as IAM Admin, which manages user and access control, i.e., managing users/groups and authorizations, Workspace Admin, which manages hierarchy and workspace permissions, and only this permission can create hierarchy, and Audit Admin, which manages audit logs.
+    The permissions in custom roles are maintained by the users themselves. At the same time, because global management brings together multiple sub-modules, each sub-module also has a corresponding administrator role, such as IAM Owner, which manages user and access control, i.e., managing users/groups and authorizations, Workspace Admin, which manages hierarchy and workspace permissions, and only this permission can create hierarchy, and Audit Admin, which manages audit logs.
 
 - Rolling update
 
@@ -1760,11 +1760,11 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
 
 - Security Context
 
-    The `securityContext` field defines privilege and access control settings for a Pod or container, including the runtime UID and GID.
+    The __securityContext__ field defines privilege and access control settings for a Pod or container, including the runtime UID and GID.
 
-    In a `securityContext` field, you can set the user and group to which the process belongs, permission-related settings. You can also set security policies (such as SELinux, AppArmor, seccomp).
+    In a __securityContext__ field, you can set the user and group to which the process belongs, permission-related settings. You can also set security policies (such as SELinux, AppArmor, seccomp).
 
-    The `PodSpec.securityContext` field configuration applies to all containers in a Pod.
+    The __PodSpec.securityContext__ field configuration applies to all containers in a Pod.
 
 - Selector
 
@@ -1882,7 +1882,7 @@ This page lists some terms common to DCE 5.0 in alphabetical order.
 
 - StorageClass
 
-    This is a way for administrators to describe available storage types, with fields for `provisioner`, `parameters`, and `reclaimPolicy`.
+    This is a way for administrators to describe available storage types, with fields for __provisioner__ , __parameters__ , and __reclaimPolicy__ .
 
 - sysctl
 

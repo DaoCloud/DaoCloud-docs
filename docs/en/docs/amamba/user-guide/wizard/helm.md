@@ -4,12 +4,12 @@ Workbench supports building applications in four ways: [Git repository](create-a
 
 ## prerequisites
 
-- Need to create a workspace and a user, the user needs to join the workspace and give `workspace edit` role.
+- Need to create a workspace and a user, the user needs to join the workspace and give __workspace edit__ role.
   Refer to [Creating a workspace](../../../ghippo/user-guide/workspace/workspace.md), [Users and roles](../../../ghippo/user-guide/access-control/user.md).
 
 ## Steps
 
-1. After entering Workbench module, click `Wizard` on the left navigation bar, and then select `Based on Helm chart`.
+1. After entering Workbench module, click __Wizard__ on the left navigation bar, and then select __Based on Helm chart__.
 
     <!--![]()screenshots-->
 
@@ -17,22 +17,22 @@ Workbench supports building applications in four ways: [Git repository](create-a
 
     !!! note
 
-        - Click the list on the right of `Repositories` to filter the Helm repository
-        - Click the list on the right of `Type` to filter the type of Helm Chart
+        - Click the list on the right of __Repositories__ to filter the Helm repository
+        - Click the list on the right of __Type__ to filter the type of Helm Chart
         - You can also directly enter the name of the Chart in the search box on the right to quickly find the Helm application that needs to be deployed
 
     <!--![]()screenshots-->
 
-3. Read the application's installation prerequisites, parameter configuration instructions and other information, select the version to be installed in the upper right corner, and click `Install`.
+3. Read the application's installation prerequisites, parameter configuration instructions and other information, select the version to be installed in the upper right corner, and click __Install__.
 
     <!--![]()screenshots-->
 
-4. Set basic information such as application name and namespace, then configure parameters through the form or YAML below, and finally click `OK` at the bottom of the page.
+4. Set basic information such as application name and namespace, then configure parameters through the form or YAML below, and finally click __OK__ at the bottom of the page.
 
     - Ready Wait: When enabled, it will wait for all associated resources under the application to be in the ready state before marking the application installation as successful.
     - Failed to delete: If the plugin installation fails, delete the associated resources that have already been installed. After it is enabled, the ready wait will be enabled synchronously by default.
     - Detailed log: When enabled, a detailed log of the installation process will be recorded.
-    - Click the `Change` tab under `Parameter Configuration` to view the parameter changes using the comparison view.
+    - Click the __Change__ tab under __Parameter Configuration__ to view the parameter changes using the comparison view.
 
         <!--![]()screenshots-->
 

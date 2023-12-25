@@ -57,6 +57,9 @@
 - **对于 Bond 网卡**:
     - 如果网络管理员已经创建好 **Bond 网卡**，并且使用 **Bond 网卡** 连接 Pod 的 Underlay 网络，那么不需要填写 `VLAN ID` (默认值为 0 即可)，只需要将创建好的 **Bond 网卡名称** 填入到`网卡接口`(Master) 字段。
     - 如果需要自动创建 **Bond 网卡** 而不需要创建 **VLAN 子接口** ，设置 `VLAN ID` 为 `0`，并配置至少 2 个 `网卡接口`(Master)  以组成 `Bond` 的 `Slave` 网卡。Spiderpool 在创建 Pod 时，在主机上动态创建一张 **Bond 网卡**，以用于连接 Pod 的 Underlay 网络。
+- **对于 RDMA 网卡**：
+    - 如果基于 Macvlan/IPVLAN/SRIOV 暴露主机上的 RoCE 网卡给到 Pod 使用时， **VLAN ID** 无需填写，默认为 0 即可。
+
 - **使用 Bond 网卡创建 VLAN 子接口**：
     - 如果需要在创建 **Bond 网卡** 的同时，需要创建 **VLAN 子接口** 来承接 Pod 网络， 需要配置 `VLAN ID`。Spiderpool 在创建 Pod 时，在主机上动态创建一个名为: `<bondName>.<vlanID>` 的 **VLAN 子接口** ，以用于连接 Pod 的 VLAN 网络。
 - 所有通过 Spiderpool 创建的接口，都不会配置 IP，并且这些接口不是持久化的。如果被意外删除或节点重启，这些接口将会被删除，重启 Pod 后会自动重新创建这些接口。如果需要持久化这些接口或者配置 IP 地址，可以考虑使用 [nmcli](https://networkmanager.dev/docs/api/latest/nmcli.html) 工具。

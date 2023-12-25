@@ -10,7 +10,7 @@ Refer to [video tutorials](../../videos/use-cases.md)。
 
 Here are the specific steps:
 
-1. Click the name of the multi-cloud instance, then click `Multicloud Workloads` on the left side and select `Convert Now` for the new feature.
+1. Click the name of the multi-cloud instance, then click __Multicloud Workloads__ on the left side and select __Convert Now__ for the new feature.
 
     ![Workloads](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/promote01.png)
 
@@ -24,7 +24,7 @@ Here are the specific steps:
 
     ![Convert Application](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/promote02.png)
 
-3. Click `OK` in the lower-right corner of the dialog box to complete the conversion.
+3. Click __OK__ in the lower-right corner of the dialog box to complete the conversion.
 
     After the application is converted into a multi-cloud application, it supports editing, updating, and other operations, just like native multi-cloud workloads.
 

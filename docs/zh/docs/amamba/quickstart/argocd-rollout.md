@@ -4,7 +4,7 @@
 
 ## 前提条件
 
-- 示例中的镜像需要访问公网： **argoproj/rollouts-demo:yellow**  和  **argoproj/rollouts-demo:blue** 。
+- 示例中的镜像需要访问公网： __argoproj/rollouts-demo:yellow__ 和 __argoproj/rollouts-demo:blue__ 。
 - 仅适用于通过安装器以 metallb 方式部署出来的 DCE 5.0 平台。
 - 使用灰度发布能力需要所在集群中安装 Istio 和 Argo Rollout 组件。
 
@@ -14,7 +14,7 @@
 
 ### 基于容器镜像构建应用
 
-1. 向导入口选择  **基于容器镜像** 。
+1. 向导入口选择 __基于容器镜像__ 。
 
 2. 填写基本信息：
 
@@ -22,17 +22,17 @@
 
 3. 填写容器配置，示例为：
 
-    - 容器镜像为： **argoproj/rollouts-demo:blue** 
+    - 容器镜像为： __argoproj/rollouts-demo:blue__ 
 
-    - 服务端口：名称为  **http** 、容器端口为  **8082** 、服务端口为  **8082** 。
+    - 服务端口：名称为 __http__ 、容器端口为 __8082__ 、服务端口为 __8082__ 。
 
     ![application02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/application02.png)
 
-4. 填写高级配置，选择开启  **启用网格** 
+4. 填写高级配置，选择开启 __启用网格__ 
 
     ![application03](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/application03.png)
 
-5. 创建完成后会在  **概览** -> **原生应用**  生成一条应用记录。
+5. 创建完成后会在 __概览__ -> __原生应用__ 生成一条应用记录。
 
 ### Istio 相关资源配置
 
@@ -104,7 +104,7 @@
     ```
 
     1. 修改此处，需要新增 gateway，指向上一步创建的 gateway 名称
-    2. 修改此处，原来 host 为 vs 的名称，需要删除后更改为  **‘*’** 
+    2. 修改此处，原来 host 为 vs 的名称，需要删除后更改为 __‘*’__ 
 
 4. 配置 istio-ingressgateway 网关
 
@@ -195,20 +195,20 @@
 
     ![选择应用](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/application04.png)
 
-2. 设置发布规则，选择流量管理类型为  **Istio** ，流量调度类型为  **基于权重** 。
+2. 设置发布规则，选择流量管理类型为 __Istio__ ，流量调度类型为 __基于权重__ 。
 
     ![修改规则](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/application05.png)
 
-3. 点击创建并更新应用，在弹出的对话框中填写镜像地址： **argoproj/rollouts-demo:yellow** 
+3. 点击创建并更新应用，在弹出的对话框中填写镜像地址： __argoproj/rollouts-demo:yellow__ 
 
     ![填写镜像地址](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/argorollout05.png)
 
 ### 验证效果
 
-访问地址： **http://{istio-ingressgateway LB IP}:8082** ，得到如下所示的访问效果。
+访问地址： __http://{istio-ingressgateway LB IP}:8082__ ，得到如下所示的访问效果。
 
-此界面会并发调用  **http://{istio-ingressgateway LB IP}:8082/color** ，将获取到颜色信息填充到方格中。
-在灰度发布对象中，指定的颜色为 **blue、yellow**，会按照定义规则 1:9 的流量比进行展示。
+此界面会并发调用 __http://{istio-ingressgateway LB IP}:8082/color__ ，将获取到颜色信息填充到方格中。
+在灰度发布对象中，指定的颜色为 __blue、yellow__，会按照定义规则 1:9 的流量比进行展示。
 
 ![效果示意](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/argorollout06.png)
 

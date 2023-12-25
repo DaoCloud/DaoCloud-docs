@@ -14,29 +14,29 @@
 
 ## 操作步骤
 
-1. 在左侧导航栏中，点击`多云工作负载`->`无状态负载`，然后在右上角点击 `YAML 创建`。
+1. 在左侧导航栏中，点击 __多云工作负载__ -> __无状态负载__ ，然后在右上角点击 __YAML 创建__ 。
 
     ![yaml创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/deploy13.png)
 
-2. 输入或导入资源的 YAML 文件，支持同时填写工作负载相关联的配置项、密钥信息，然后点击`下一步`。
+2. 输入或导入资源的 YAML 文件，支持同时填写工作负载相关联的配置项、密钥信息，然后点击 __下一步__ 。
 
-    > 点击`下载`可以将当前的 YAML 文件下载并保存到本地，便于后续在其他场景中使用。
+    > 点击 __下载__ 可以将当前的 YAML 文件下载并保存到本地，便于后续在其他场景中使用。
 
     ![资源yaml](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/yaml01.png)
 
-3. 输入或导入部署策略的 YAML 文件，然后点击`下一步`。
+3. 输入或导入部署策略的 YAML 文件，然后点击 __下一步__ 。
 
     ![输入pp](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/yaml02.png)
 
-4. 输入或导入差异化策略的 YAML 文件，然后点击`确定`。
+4. 输入或导入差异化策略的 YAML 文件，然后点击 __确定__ 。
 
     !!! note
 
-        差异化策略为可选配置。如无需差异化配置，则不用在此输入任何内容，直接点击`确定`即可。
+        差异化策略为可选配置。如无需差异化配置，则不用在此输入任何内容，直接点击 __确定__ 即可。
 
     ![op](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/yaml03.png)
 
-页面会自动返回多云工作负载列表，点击列表右侧的 `⋮`，可以编辑修改 YAML，还可以暂停、重启和删除该负载。
+页面会自动返回多云工作负载列表，点击列表右侧的 __⋮__ ，可以编辑修改 YAML，还可以暂停、重启和删除该负载。
 
 ![more actions](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/deploy12.png)
 
@@ -93,7 +93,7 @@ spec:
         - demo-dev
 ```
 
-1. The default namespace is `default`.
+1. The default namespace is __default__ .
 2. If no namespace is specified, the namespace is inherited from the parent object scope.
 
 ### 差异化策略示例

@@ -9,7 +9,7 @@ hide:
 
 - 启用 GPU：需要预先在集群上安装 GPU 卡及对应驱动插件。
 
-    点击目标集群的名称，在左侧导航栏点击`最近操作`->`集群设置`->`Addon 插件`。
+    点击目标集群的名称，在左侧导航栏点击 __最近操作__ -> __集群设置__ -> __Addon 插件__ 。
 
     ![配置gpu](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/settings01.png)
 

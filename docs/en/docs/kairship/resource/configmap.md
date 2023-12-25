@@ -1,23 +1,23 @@
-# Multicloud configuration items
+# Multicloud ConfigMaps
 
-A configuration item (ConfigMap) is an API object used to save non-confidential data into key-value pairs.
+ConfigMap is an API object used to save non-confidential data into key-value pairs.
 When used, Pods can use it as an environment variable, as a command-line argument, or as a configuration file in a storage volume.
 
-Multicloud configuration items can decouple multicloud environment configuration information from container images, making it easy to modify the configuration of multicloud applications.
+Multicloud ConfigMaps can decouple multicloud environment configuration information from container images, making it easy to modify the configuration of multicloud applications.
 
 Two creation methods are currently provided: wizard creation and YAML creation. This article takes wizard creation as an example, and follows the steps below.
 
-1. After entering a multicloud instance, in the left navigation bar, click `Resource Management` -> `Multicloud Configuration Item`, and click the `Create Configuration Item` button in the upper right corner.
+1. After entering a multicloud instance, in the left navigation bar, click __Resource Management__ -> __Multicloud ConfigMaps__ , and click the __Create Multicloud ConfigMaps__ button in the upper right corner.
 
-    <!--screenshot-->
+    ![Create ConfigMap](../images/config01.png)
 
-2. On the `Create Configuration Item` page, enter the name, select the namespace and other information, and click `OK`.
+2. On the __Create Multicloud ConfigMaps__ page, enter the name, select the namespace and other information, and click __OK__ .
 
-    <!--screenshot-->
+    ![Fill ConfigMap](../images/config02.png)
 
-3. Return to the list of multicloud configuration items, and the newly created one will be the first one by default. Click `⋮` on the right side of the list to edit YAML, update, export and delete configuration items.
+3. Return to the list of multicloud configuration items, and the newly created one will be the first one by default. Click __⋮__ on the right side of the list to edit YAML, update, export and delete configuration items.
 
-    <!--screenshot-->
+    ![Update/Delete](../images/config03.png)
 
     !!! note
 

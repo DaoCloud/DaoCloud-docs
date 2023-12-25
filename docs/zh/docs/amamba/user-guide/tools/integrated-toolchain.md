@@ -15,7 +15,7 @@ DevOps 工具链是一组工具，使 DevOps 团队能够在整个产品生命�
 
 ## 操作步骤
 
-1. 进入 **工具链集成**  页面，点击 **工具链集成** 按钮。
+1. 进入 __工具链集成__ 页面，点击 __工具链集成__ 按钮。
 
     ![tool01](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/tool01.png)
 
@@ -28,6 +28,6 @@ DevOps 工具链是一组工具，使 DevOps 团队能够在整个产品生命�
 
     ![tool02](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/tool02.png)
 
-3. 点击 **确定** ，集成成功返回到工具链列表页面。
+3. 点击 __确定__ ，集成成功返回到工具链列表页面。
 
     ![tool03](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/tool03.png)

@@ -12,6 +12,7 @@ nav:
               - Glossary: dce/terms.md
               - DaoCloud is a KCSP: dce/kcsp.md
               - Enterprise Release Notes:
+                  - 20231130 Release: dce/dce-rn/20231130.md
                   - 20231031 Release: dce/dce-rn/20231031.md
                   - 20230831 Release: dce/dce-rn/20230831.md
                   - 20230731 Release: dce/dce-rn/20230731.md
@@ -101,7 +102,9 @@ nav:
                   - Argo CD Application Status: amamba/user-guide/gitops/argo-cd-status.md
               - Canary Release:
                   - Create Canary Release: amamba/user-guide/release/canary.md
-                  - Check Canary Release: amamba/user-guide/release/check-canary.md
+                  - View Canary Release: amamba/user-guide/release/check-canary.md
+                  - Create Blue/Green Job: amamba/user-guide/release/blue-green.md
+                  - View Blue/Green Job: amamba/user-guide/release/check-bluegreen.md
               - Toolchain Integration:
                   - Integrated Toolchain: amamba/user-guide/tools/integrated-toolchain.md
                   - Manage Toolchain Instances: amamba/user-guide/tools/toolchain-instances.md
@@ -544,22 +547,22 @@ nav:
                   - Install insight-agent on Other Distributions:
                       - On DCE 4.0.x: insight/quickstart/other/install-agentindce.md
                       - On OpenShift 4.x: insight/quickstart/other/install-agent-on-ocp.md
-                  - Enable Observability with OTel:
-                      - insight/quickstart/otel/otel.md
-                      - Non-intrusive Enhancement with Operator: insight/quickstart/otel/operator.md
-                      - Enhance GO Apps with OTel SDK: insight/quickstart/otel/golang.md
-                      - Expose Metrics with OTel SDK: insight/quickstart/otel/meter.md
-                      - Enhance Go Apps with OTel Auto-Instrumentation: insight/quickstart/otel/golang-ebpf.md
-                      - Send Trace Data to Insight: insight/quickstart/otel/send_tracing_to_insight.md
-                  - Enable Observability for Java Apps:
-                      - insight/quickstart/jvm-monitor/jvm-catelogy.md
-                      - Use JMX Exporter to Expose JVM Metrics: insight/quickstart/jvm-monitor/jmx-exporter.md
-                      - Use OTel Java Agent to Expose JVM Metrics: insight/quickstart/jvm-monitor/otel-java-agent.md
-                      - How Does a Java App with JVM Metrics Enable Observability: insight/quickstart/jvm-monitor/legacy-jvm.md
                   - Resource Planning:
                       - Prometheus Resource Planning: insight/quickstart/res-plan/prometheus-res.md
                       - vmstorage Disk Planning: insight/quickstart/res-plan/vms-res-plan.md
                       - Adjust vmstorage Disks: insight/quickstart/res-plan/modify-vms-disk.md
+              - Enable Observability with OTel:
+                  - insight/quickstart/otel/otel.md
+                  - Non-intrusive Enhancement with Operator: insight/quickstart/otel/operator.md
+                  - Enhance GO Apps with OTel SDK: insight/quickstart/otel/golang.md
+                  - Expose Metrics with OTel SDK: insight/quickstart/otel/meter.md
+                  - Enhance Go Apps with OTel Auto-Instrumentation: insight/quickstart/otel/golang-ebpf.md
+                  - Send Trace Data to Insight: insight/quickstart/otel/send_tracing_to_insight.md   
+              - Enable Observability for Java Apps:
+                  - insight/quickstart/jvm-monitor/jvm-catelogy.md
+                  - Use JMX Exporter to Expose JVM Metrics: insight/quickstart/jvm-monitor/jmx-exporter.md
+                  - Use OTel Java Agent to Expose JVM Metrics: insight/quickstart/jvm-monitor/otel-java-agent.md
+                  - How Does a Java App with JVM Metrics Enable Observability: insight/quickstart/jvm-monitor/legacy-jvm.md      
               - Dashboard:
                   - Overview: insight/user-guide/dashboard/overview.md
                   - Dashboard: insight/user-guide/dashboard/dashboard.md
@@ -614,7 +617,8 @@ nav:
       - Microservice:
           - Microservices:
               - Intro:
-                  - Features: skoala/intro/index.md
+                  - Index: skoala/intro/index.md
+                  - Features: skoala/intro/features.md
                   - Use Cases: skoala/intro/scenarios.md
                   - Competitiveness: skoala/intro/advantages.md
                   - Microservices Release Notes: skoala/intro/release-notes.md
@@ -682,9 +686,11 @@ nav:
                   - JWT Plugin in Cloud Native Microservice: skoala/best-practice/plugins/jwt.md
                   - Microservice Gateway JWT: skoala/best-practice/jwt.md
                   - Authentication Server for Microservie Gateway: skoala/best-practice/auth-server.md
+                  - Integrate Microservice Gateway with Rate Limit Server: skoala/best-practice/global-ratelimit.md
                   - Gateway API Policies: skoala/best-practice/gateway02.md
                   - Access Microservie via Gateway: skoala/best-practice/gateway01.md
                   - Gateway to Service Mesh: skoala/best-practice/gateway-mesh.md
+                  - Add Custom Attributes to Gateway Request Logs: skoala/best-practice/add-custom-attributes.md
               - Troubleshoot:
                   - skoala-init error about x-kubernets-validations: skoala/troubleshoot/auth-server.md   
               - Performance Tests:
@@ -1108,6 +1114,8 @@ nav:
   - Blogs:
       - Index: blogs/index.md
       - 2023 Blogs:
+          - 202312 | K8s 1.29 Released - Ambious Mandala Theme: blogs/231213-k8s-1.29.md
+          - 202312 | Does K8s Perform Better on Bare Metal vs. VMs?: blogs/231205-vm-bm-compare.md
           - 202311 | Removals, Deprecations, and Changes in K8s 1.29: blogs/231115-k8s-1.29-changes.md
           - 202310 | A Look Back for K8s Contributor Summit in Shanghai: blogs/20231008-kcs.md
           - 202309 | Call for K8s Contributor Summit in Shanghai: blogs/230911-kubecon-contributor.md
