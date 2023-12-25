@@ -5,7 +5,7 @@ Pics: Jeanine-tw
 Date: 2023-01-05
 ---
 
-# Workload uses IP pools
+# Use IP Pool by Workload
 
 This page describes how to configure multiple NICs for workload Pods in combination with Multus and Underlay CNI, and how to allocate and fix IPs of the Underlay network through Spiderpool. Mainly include:
 
@@ -18,17 +18,17 @@ This page describes how to configure multiple NICs for workload Pods in combinat
 
 1. [Install SpiderPool](../../modules/spiderpool/install.md).
 2. [Install Multus with Macvlan/SR-IOV](../../modules/multus-underlay/install.md).
-3. If you use manual selection of IP pool, [create IP subnet and IP pool](../../modules/spiderpool/createpool.md) in advance. If you use automatic creation of a fixed IP pool, [create  IP pool](../../modules/spiderpool/createpool.md) in advance.
+3. If you use manual selection of IP pool, [Create IP Subnet and IP Pool](../../modules/spiderpool/createpool.md) in advance. If you use automatic creation of a fixed IP pool, [Create  IP Pool](../../modules/spiderpool/createpool.md) in advance.
 
 ## Steps
 
 1. Log in to the platform UI, click `Container Management`->`Cluster List` in the left navigation bar, and find the corresponding cluster. Then, select `Deployments` in the left navigation bar and click `Create from an Image`.
 
-    
+    ![Create Image](../../images/useippool01.png)
 
 2. On the `Deployments` page, complete the infor,ation input of `Basic Information`, `Container Settings`, and `Service Settings`. Then, go to `Advanced Settings` and click `Container Network Card` —> `Configuration`.
 
-    
+    ![Container Network Card](../../images/useippool02.png)
 
 3. On `Container Network Card Configuration` page, enter following arguments:
 
@@ -49,19 +49,25 @@ This page describes how to configure multiple NICs for workload Pods in combinat
 
     To manually select an IP pool, you need to create an IP pool in advance. You can select the range of the IP pool as `shared IP pool`, add the current `application affinity IP pool`, and add the current `namespace affinity IP pool`.
 
-    
+    ![Manual Selection](../../images/useippool03.png)
+
+    Note: If the chosen [IP Pool Creation Time](\createpool.md) has added node affinity like: `zone:beijing`, please add the corresponding label `zone:beijing` when creating the workload. For use cases, please refer to: [Instructions for Use of IP Pool](ippoolusage.md)![zone-beijing](../../images/zone-beijing.png)
 
     **Automatically create fixed IP pool**
 
     You only need to select the corresponding subnet to automatically create a fixed IP pool
 
-    
+    ![Auyomatically Create](../../images/useippool04.png)
+
+    **Use the default IP pool**
+    Create an IP pool in advance, and in the Multus CNI configuration, select the network card with the default IP pool to use the default IP pool function. For details, please refer to: [Creating a Multus CR](../../config/multus-cr.md)
+    ![Default IP Pool](../../images/useippool05.png)
 
 4. After creating the workload, you can click the corresponding workload `workload01` to view the IP used by the workload Pod.
 
-    
+    ![Workload IP](../../images/useippool06.png)
 
-    
+    ![Workload IP](../../images/useippool07.png)
 
 ## YAML usage
 
