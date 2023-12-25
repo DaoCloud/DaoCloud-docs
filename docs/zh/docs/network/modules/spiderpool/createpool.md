@@ -17,13 +17,13 @@ hide:
 
 ## 界面操作
 
-1. 登录 DCE UI 后，在左侧导航栏点击 `容器管理` —> `集群列表`，找到对应集群。然后在左侧导航栏点击`容器网络` —> `网络配置`。
+1. 登录 DCE UI 后，在左侧导航栏点击 `容器管理` -> `集群列表`，找到对应集群。然后在左侧导航栏点击`容器网络` -> `网络配置`。
 
     ![网络配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/networkconfig01.png)
 
 2. 进入`网络配置`，确认待使用子网是否已创建。
 
-    - 如待使用子网已默认创建，可直接`创建 IP 池`。
+    - 如待使用子网已默认创建，可直接创建 IP 池。
 
     - 如待使用子网没有默认创建，可进入页面点击`创建子网`。
 
@@ -32,16 +32,16 @@ hide:
     参数说明：
 
     - `IPv4/IPv6 类型`：待创建子网的子网类型。
-- `子网`：已经规划好的子网段。
+    - `子网`：已经规划好的子网段。
     - 如配合 Macvlan/IPVLAN 使用，请提前同网络管理员确认对应网络接口/子接口所对应的网段。
-- `网关`：子网对应网关，请提前同网络同事确认。
+    - `网关`：子网对应网关，请提前同网络同事确认。
     - `VLAN ID`：子网所对应的 VLAN ID。
 
 3. 点击`下一步`进入 `IP 选择`，输入待使用的 IP 段（输入上述子网内 IP）。点击`确定`，完成子网创建。
 
     ![创建子网](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/subnet02.png)
 
-4. 点击待使用的`子网名称`，进入子网详情页面。
+4. 点击待使用的子网名称，进入子网详情页面。
 
     ![子网详情](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/subnet03.png)
 
@@ -56,12 +56,12 @@ hide:
 
     进入创建页面，输入如下参数：
 
-    ![创建 IP 池](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/subnet04.png)
+    ![创建 IP 池](../../images/subnet04.png)
 
     - `网关`：默认继承`子网网关`，可修改。
 
     - `自定义路由`：当用户有特殊路由需求时，可基于 IP 池粒度的进行自定义。
-    
+
     - `Multus 实例`：Multus CNI 中的具体配置实例，可添加多个，添加后 创建的 `IPPool` 和 `Multus 实例`进行关联。[创建应用时选择 Multus 实例仅可使用已关联的 IPPool](usage.md) ，更多信息可参考：[SpiderIPPool Affinity](https://spidernet-io.github.io/spiderpool/v0.8/usage/spider-affinity-zh_CN/#ippool_3 )。
 
     - `工作负载亲和性`：工作负载标签（如 `app: workload01`）。IP 池创建后，仅可被对应的工作负载选择，实现固定 IP 池效果。
@@ -78,7 +78,7 @@ hide:
 
     `获取 IP 规则`：从 `IP 开始地址`依次获取输入对应数量的 IP，IP 段如不是连续的 IP，则跳过中间断档 IP，依次往后获取。
 
-    ![添加 IP](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/subnet05.png)
+    ![添加 IP](../../images/subnet05.png)
 
 7. 创建完成后[工作负载即可使用 IP 池](../../modules/spiderpool/usage.md)。
 
