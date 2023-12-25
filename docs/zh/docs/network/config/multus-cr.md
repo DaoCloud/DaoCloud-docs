@@ -64,14 +64,54 @@
     - 如果需要在创建 **Bond 网卡** 的同时，需要创建 **VLAN 子接口** 来承接 Pod 网络， 需要配置 `VLAN ID`。Spiderpool 在创建 Pod 时，在主机上动态创建一个名为: `<bondName>.<vlanID>` 的 **VLAN 子接口** ，以用于连接 Pod 的 VLAN 网络。
 - 所有通过 Spiderpool 创建的接口，都不会配置 IP，并且这些接口不是持久化的。如果被意外删除或节点重启，这些接口将会被删除，重启 Pod 后会自动重新创建这些接口。如果需要持久化这些接口或者配置 IP 地址，可以考虑使用 [nmcli](https://networkmanager.dev/docs/api/latest/nmcli.html) 工具。
 
-### 创建 sriov 类型的 Multus CR
+### 创建 SRI-OV 类型的 Multus CR
 
 请输入如下参数：
 
 ![创建multus cr](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/networkconfig04.png)
 
-- `名称`、`描述`、`CNI 类型`、`IPv4 默认池`、`IPv6 默认池`、`Vlan ID` 配置同场景一。
-- `SR-IOV 资源`：只用于`sriov`类型, 填写资源名称，不能为空。
+- `名称`、`描述`、
+- `CNI 类型`：选择 SR-IOV
+- `RDMA`:默认不开启，如果需要开启，请满足 [资源使用条件](../modules/spiderpool/rdmapara.md)
+- `IPv4/IPv6 默认池`:默认不设置，设置后，创建 workload 不添加 IP Pool 时，默认使用此 IP Pool。
+- `Vlan ID` : 必需填入 `0`
+- `SR-IOV 资源`：只用于`sriov`类型, 填写资源名称，不能为空。`如何查看 SR-IOV 资源` 请参考：[SR-IOV CNI 配置](../modules/multus-underlay/sriov.md)
+
+ **SR-IOV 资源 配置说明：**
+`SRI-OV resourceName` 为部署`sriovnetworknodepolicies` 时自定义名称。
+
+1. 如果**基于 SRI-OV 搭配 RDMA** 使用，SR-IOV 资源配置查询如下：
+   **命令查询：**
+   如下的`spidernet.io/sriov_netdevice_enp4s0f0np0` 为查询的资源名称。
+
+   ```
+   kubectl get no -o json | jq -r '[.items[] | {name:.metadata.name, allocable:.status.allocatable}]'
+   [
+     {
+       "name": "10-20-1-220",
+       "allocable": {
+         "cpu": "56",
+         "ephemeral-storage": "3971227249029",
+         "hugepages-1Gi": "0",
+         "hugepages-2Mi": "0",
+         "memory": "131779740Ki",
+         "pods": "110",
+         "spidernet.io/hca_shared_devices": "0",
+         "spidernet.io/mellanoxrdma": "0",
+         "spidernet.io/sriov_netdevice": "0",
+         "spidernet.io/sriov_netdevice_enp4s0f0np0": "8", # 查询的 RDMA 设备资源名称及数量
+         ...
+       }
+     }
+   ```
+
+   **界面查询：**
+
+   查询的`resourceName`需要加上 `spidernet.io/`前缀。
+
+   ![networkconfig08.png](../images/networkconfig08.jpg)
+
+   ![networkconfig09](../images/networkconfig09.jpg)
 
 ### 创建自定义类型的 Multus CR
 
