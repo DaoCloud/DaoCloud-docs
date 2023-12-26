@@ -509,6 +509,9 @@ nav:
                       - Rook-Ceph 部署 - 应用商店: storage/solutions/dce-rook-ceph.md
                       - Rook-Ceph 部署 - Helm: storage/solutions/helm-rook-ceph.md
                       - 如何接入 Ceph Dashboard: storage/solutions/ceph-dashboard.md
+                      - 创建 Ceph 文件存储(CephFS) 存储类: storage/solutions/sc-cephfs.md
+                      - 创建 Ceph 块存储(RBD) 存储类: storage/solutions/sc-cephrbd.md
+                      - 创建 Ceph 对象存储(RGW) 存储类: storage/solutions/sc-cephrgw.md
                   - Longhorn:
                       - Longhorn 介绍: storage/solutions/longhorn.md
                       - Longhorn 部署 - 应用商店: storage/solutions/dce-longhorn.md
