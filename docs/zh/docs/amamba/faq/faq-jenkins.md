@@ -136,36 +136,39 @@ __解决方案__：
 
 下面基于此容器是否开启，请分别检查不同的配置项是否正确：
 
-### 开启了event-proxy容器
+### 开启了 event-proxy 容器
+
 1. 前往容器管理模块，找到 Jenkins 组件所在的集群，点击集群名称。
 
 2. 在左侧导航栏依次点击 __配置与密钥__ -> __配置项__ 。
 
 3. 搜索 __jenkins-casc-config__ ，在操作列点击 __编辑 YAML__ 。
 
-4. 在 __data__ -> __jenkins.yaml__ -> 搜索 `eventDispatcher.receiver`, 它的值应该为 `http://localhost:9090/event` 
+4. 在 __data__ -> __jenkins.yaml__ -> 搜索 `eventDispatcher.receiver`，它的值应该为 `http://localhost:9090/event` 
 
-如果Jenkins是部署在工作集群（需要穿透dce5的网关），则还需要检查以下几个配置项：
+    如果 Jenkins 是部署在工作集群（需要穿透 DCE 5.0 的网关），则还需要检查以下几个配置项。
 
-5. 再次查询名为__event-proxy-config__的配置项，查看yaml, 配置项说明：
+5. 再次查询名为 __event-proxy-config__ 的配置项，查看 YAML，配置项说明：
 
-```yaml
-eventProxy:
-  host: amamba-devops-server.amamba-system:80   # 此处为dce5的网关地址，如果为dce5-installer安装的jenkins，此处不需要修改
-  proto: http                                   # 此处为dce5的网关协议（http或者https）
-```
+    ```yaml
+    eventProxy:
+      host: amamba-devops-server.amamba-system:80   # 此处为dce5的网关地址，如果为dce5-installer安装的jenkins，此处不需要修改
+      proto: http                                   # 此处为dce5的网关协议（http或者https）
+    ```
 
-6. 在Jenkins所在集群， __配置与密钥__ -> __配置项__ 中搜索密钥__amamba-jenkins__。
+6. 在 Jenkins 所在集群， __配置与密钥__ -> __配置项__ 中搜索密钥 __amamba-jenkins__ 。
 
-7. 检查密钥中的__event-proxy-token__是否正确。此token用于dc5的网关认证，如果不正确，jenkins将无法发送事件到工作台。如何生成此Token可以查看[访问密钥](../../ghippo/user-guide/personal-center/accesstoken.md)
+7. 检查密钥中的 __event-proxy-token__ 是否正确。此 Token 用于 DCE 5.0 的网关认证。
+   如果不正确，Jenkins 将无法发送事件到工作台。有关如何生成此 Token，可以查看[访问密钥](../../ghippo/user-guide/personal-center/accesstoken.md)。
 
-如果以上配置项都正确，但是jenkins的流水线状态还是无法更新，请先查看Jenkins的`event-proxy`的容器日志。
+如果以上配置项都正确，但是 Jenkins 的流水线状态还是无法更新，请先查看 Jenkins 的 `event-proxy` 的容器日志。
 
-### 未开启event-proxy容器
+### 未开启 event-proxy 容器
+
 1. 前往容器管理模块，找到 Jenkins 组件所在的集群，点击集群名称。
 
 2. 在左侧导航栏依次点击 __配置与密钥__ -> __配置项__ 。
 
 3. 搜索 __jenkins-casc-config__ ，在操作列点击 __编辑 YAML__ 。
 
-4. 在 __data__ -> __jenkins.yaml__ -> 搜索 `eventDispatcher.receiver`, 它的值应该为 `http://amamba-devops-server.amamba-system:80/apis/internel.amamba.io/devops/pipeline/v1alpha1/webhooks/jenkins` 其中`amamba-system`为工作台所部署的命名空间。
+4. 在 __data__ -> __jenkins.yaml__ -> 搜索 `eventDispatcher.receiver`, 它的值应该为 `http://amamba-devops-server.amamba-system:80/apis/internel.amamba.io/devops/pipeline/v1alpha1/webhooks/jenkins` 其中 `amamba-system` 为工作台所部署的命名空间。
