@@ -142,11 +142,11 @@ hide:
 
     [:octicons-arrow-right-24: Learn more](./miragedebug.md)
 
--   :spider:{ .lg .middle } __Spiderpool__  :simple-cncf: Listed in CNCF Landscape
+-   :spider:{ .lg .middle } __Spiderpool__  :simple-cncf: Listed in CNCF Sandbox
 
     ---
 
-    Cloud native network IPAM automation software, recommended as a plug-in for Underlay CNI.
+    An underlay and RDMA network solution for Kubernetes with bare metal, virtual machines, and public clouds.
 
     [:octicons-arrow-right-24: Learn more](./spiderpool.md)
 
@@ -183,7 +183,7 @@ hide:
 <p align="center">
 <img src="https://landscape.cncf.io/images/left-logo.svg" width="150"/>&nbsp;&nbsp;<img src="https://landscape.cncf.io/images/right-logo.svg" width="200"/>
 <br/><br/>
-Clusterpedia, HwameiStor, and Merbridge have been selected for the <a href="https://www.cncf.io/projects/clusterpedia/">CNCF Sandbox</a>.
+Clusterpedia, HwameiStor, Merbridge, and Spiderpool have been selected for the <a href="https://www.cncf.io/projects/clusterpedia/">CNCF Sandbox</a>.
 </p>
 
 [Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
