@@ -142,11 +142,11 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./miragedebug.md)
 
--   :spider:{ .lg .middle } __Spiderpool__  :simple-cncf: 已入选 CNCF Landscape
+-   :spider:{ .lg .middle } __Spiderpool__  :simple-cncf: 已入选 CNCF Sandbox
 
     ---
 
-    云原生网络 IPAM 自动化管理软件，建议作为插件用于 Underlay CNI，已入选 CNCF Landscape
+    云原生网络 Underlay 和 RDMA 网络方案，已入选 CNCF Sandbox
 
     [:octicons-arrow-right-24: 了解更多](./spiderpool.md)
 
@@ -183,7 +183,7 @@ hide:
 <p align="center">
 <img src="https://landscape.cncf.io/images/left-logo.svg" width="150"/>&nbsp;&nbsp;<img src="https://landscape.cncf.io/images/right-logo.svg" width="200"/>
 <br/><br/>
-Clusterpedia、HwameiStor 和 Merbridge 已入选 <a href="https://www.cncf.io/projects/clusterpedia/">CNCF 沙箱</a>。
+Clusterpedia、HwameiStor、Merbridge 和 Spiderpool 均已入选 <a href="https://www.cncf.io/projects/clusterpedia/">CNCF Sandbox</a>。
 </p>
 
 [下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
