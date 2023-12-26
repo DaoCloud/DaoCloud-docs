@@ -78,7 +78,7 @@ DCE 5.0 商业版包含以下模块，按需即插即用满足各类应用场景
 
 | 模块 | 介绍 | 最新动态 |
 | --- | ---- | ------ |
-| 全局管理 | 负责用户访问控制、权限、企业空间、审计日志、个性化外观设置等 | [0.21.0](../../ghippo/intro/release-notes.md#0210) |
+| 全局管理 | 负责用户访问控制、权限、工作空间与层级、审计日志、个性化外观设置等 | [0.21.0](../../ghippo/intro/release-notes.md#0210) |
 | 容器管理 | 管理集群、节点、工作负载、Helm 应用、CRD、命名空间等 K8s 核心功能| [0.22.0](../../kpanda/intro/release-notes.md#0220) |
 | 可观测性 | 提供丰富的仪表盘、场景监控、数据查询、告警等图文信息 | [0.21.1](../../insight/intro/releasenote.md#insight-server-v0210) |
 | 应用工作台 | 基于容器的 DevOps 应用平台，支持 Jenkins, Tekton, GitOps 等流水线作业 | [0.21.0](../../amamba/intro/release-notes.md#0210) |

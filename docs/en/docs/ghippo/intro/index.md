@@ -1,11 +1,11 @@
 # What is Global Management (Ghippo)?
 
 Global Management is a comprehensive, user-centred service that includes access control,
-enterprise workspace, audit logs, platform settings, and other fundamental modules.
+workspaces and folders, audit logs, platform settings, and other fundamental modules.
 
 - [Access Control](../user-guide/access-control/global.md): Enables users to manage resource access by creating, managing, deleting users/groups and configuring their permissions.
 
-- [Enterprise Workspace](../user-guide/workspace/ws-folder.md): provides a hierarchical structure for resource isolation and control over resource access. Users can set up a hierarchical structure depending on the development environment, department structure, etc., and control who has access to which resources.
+- [Workspaces and Folders](../user-guide/workspace/ws-folder.md): provides a hierarchical structure for resource isolation and control over resource access. Users can set up a hierarchical structure depending on the development environment, department structure, etc., and control who has access to which resources.
 
 - [Audit Logs](../user-guide/audit/audit-log.md): offer detailed operation records for security analysis and tracking resource changes.
 
