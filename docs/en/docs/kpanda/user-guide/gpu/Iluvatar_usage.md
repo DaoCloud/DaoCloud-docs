@@ -20,13 +20,12 @@ This section describes how to use Iluvatar virtual GPU on DCE 5.0.
 
 2. Deploy a workload. Click `Cluster` -> `Workloads` and deploy a workload using the image. After selecting the type as `(Iluvatar)`, configure the GPU resources used by the application:
    
-   **Physical Card Count (iluvatar.ai/vcuda-core):** Indicates the number of physical cards that the current pod needs to mount. The input value must be an integer and **less than or equal to** the number of cards on the host machine.
+    - Physical Card Count (iluvatar.ai/vcuda-core): Indicates the number of physical cards that the current pod needs to mount. The input value must be an integer and **less than or equal to** the number of cards on the host machine.
    
-   **Memory Usage (iluvatar.ai/vcuda-memory):** Indicates the amount of GPU memory occupied by each card. The value is in MB, with a minimum value of 1 and a maximum value equal to the entire memory of the card.
+    - Memory Usage (iluvatar.ai/vcuda-memory): Indicates the amount of GPU memory occupied by each card. The value is in MB, with a minimum value of 1 and a maximum value equal to the entire memory of the card.
 
    
-   
-   > If there are any issues with the configuration values, scheduling failures or resource allocation failures may occur.
+    > If there are any issues with the configuration values, scheduling failures or resource allocation failures may occur.
 
 ### Configuration via YAML
 
@@ -53,14 +52,14 @@ spec:
       - image: nginx:perl
         name: container-0
         resources:
-            limits:
-              cpu: 250m
-              iluvatar.ai/vcuda-core: '1'
-              iluvatar.ai/vcuda-memory: '200'
-              memory: 512Mi
-            requests:
-                cpu: 250m
-                memory: 512Mi
+          limits:
+            cpu: 250m
+            iluvatar.ai/vcuda-core: '1'
+            iluvatar.ai/vcuda-memory: '200'
+            memory: 512Mi
+          requests:
+            cpu: 250m
+            memory: 512Mi
       imagePullSecrets:
       - name: default-secret
 ```

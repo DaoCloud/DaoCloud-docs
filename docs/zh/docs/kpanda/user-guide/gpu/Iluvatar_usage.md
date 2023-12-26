@@ -20,14 +20,16 @@
 
 2. 部署工作负载。点击对应 __集群__ -> __工作负载__ ，通过镜像方式部署工作负载，选择类型（Iluvatar）之后，需要配置 App 使用的 GPU 资源：
 
-    **物理卡数量（iluvatar.ai/vcuda-core）**：表示当前 Pod 需要挂载几张物理卡，输入值必须为整数且 **小于等于** 宿主机上的卡数量。
-    **显存使用数量（iluvatar.ai/vcuda-memory）**：表示每张卡占用的 GPU 显存，值单位为 MB，最小值为 1，最大值为整卡的显存值。
+    - 物理卡数量（iluvatar.ai/vcuda-core）：表示当前 Pod 需要挂载几张物理卡，输入值必须为整数且 **小于等于** 宿主机上的卡数量。
+    - 显存使用数量（iluvatar.ai/vcuda-memory）：表示每张卡占用的 GPU 显存，值单位为 MB，最小值为 1，最大值为整卡的显存值。
+
     ![负载使用](./images/workload_iluvatargpu_userguide.jpg)
+
     > 如果上述值配置的有问题则会出现调度失败，资源分配不了的情况。
 
 ### 使用 YAML 配置
 
-创建工作负载申请 GPU 资源，在资源申请和限制配置中增加`iluvatar.ai/vcuda-core: 1` 、 `iluvatar.ai/vcuda-memory: 200` 参数，配置 App 使用物理卡的资源。
+创建工作负载申请 GPU 资源，在资源申请和限制配置中增加`iluvatar.ai/vcuda-core: 1`、`iluvatar.ai/vcuda-memory: 200` 参数，配置 App 使用物理卡的资源。
 
 ```yaml
 apiVersion: apps/v1
@@ -49,14 +51,14 @@ spec:
       - image: nginx:perl
         name: container-0
         resources:
-            limits:
-              cpu: 250m
-              iluvatar.ai/vcuda-core: '1'
-              iluvatar.ai/vcuda-memory: '200'
-              memory: 512Mi
-            requests:
-                cpu: 250m
-                memory: 512Mi
+          limits:
+            cpu: 250m
+            iluvatar.ai/vcuda-core: '1'
+            iluvatar.ai/vcuda-memory: '200'
+            memory: 512Mi
+          requests:
+            cpu: 250m
+            memory: 512Mi
       imagePullSecrets:
       - name: default-secret
 ```
