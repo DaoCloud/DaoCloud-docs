@@ -819,6 +819,7 @@ nav:
           - 中间件:
               - 介绍:
                   - 什么是中间件: middleware/index.md
+                  - 功能介绍: middleware/common/feature.md
                   - 版本适配: middleware/compatibility.md
                   - 权限设计说明: middleware/permission.md
               - 通用配置:
