@@ -2,24 +2,39 @@
 
 ## 使用场景介绍
 
-DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。其它 OS 类型的节点或内核需要用户手动构建离线 yum 源。
+当工作节点的内核版本与 Global 集群的控制节点内核版本或 OS 类型不一致时，需要用户手动构建离线 yum 源。
 
-本文介绍如何构建小内核版本的 CentOS 7.9 离线 yum 源，并在安装 Gpu Operator 时，通过 `RepoConfig.ConfigMapName` 参数来使用。
+本文介绍如何构建离线 yum 源， 并在安装 Gpu Operator 时，通过 `RepoConfig.ConfigMapName` 参数来使用。
 
 ## 前提条件
 
 1. 用户已经在平台上安装了 v0.12.0 及以上版本的 addon 离线包。
-2. 待部署 GPU Operator 的集群节点 OS 必须为 CentOS 7.9，且内核版本完全一致。
-3. 准备一个能够和待部署 GPU Operator 的集群网络能够联通的文件服务器，如 nginx 或 minio。
-4. 准备一个能够访问互联网、待部署 GPU Operator 的集群和文件服务器的节点，且节点上已经完成 [Docker 的安装](../../../../install/community/kind/online.md#安装-docker)。
+2. 准备一个能够和待部署 GPU Operator 的集群网络能够联通的文件服务器，如 nginx 或 minio。
+3. 准备一个能够访问互联网、待部署 GPU Operator 的集群和文件服务器的节点，且节点上已经完成 [Docker 的安装](../../../../install/community/kind/online.md#安装-docker)。
 
 ## 操作步骤
 
-本文以内核版本为 3.10.0-1160.95.1.el7.x86_64 的 CentOS 7.9 节点为例，介绍如何升级预置的 GPU operator 离线包的 yum 源。
+本文以内核版本为 3.10.0-1160.95.1.el7.x86_64 的 CentOS 7.9 节点为例，介绍如何构建 GPU operator 离线包的 yum 源。
 
-### 步骤一：检查集群节点的内核版本
+### 步骤一：检查集群节点的 OS 和内核版本
 
-执行如下命令，查看集群下待部署 GPU Operator 节点的内核版本。
+分别在 Global 集群的控制节点和待部署 GPU Operator 的节点执行如下命令，若两个节点的 OS 和内核版本一致则无需构建 yum 源，可参考[离线安装 GPU Operator](./install_nvidia_driver_of_operator.md) 文档直接安装；若两个节点的 OS 或内核版本不一致，请执行步骤二。
+
+1、执行如下命令，查看集群下待部署 GPU Operator 节点的发行版名称和版本号。
+
+```bash
+cat /etc/redhat-release
+```
+
+预期输出如下：
+
+```
+CentOS Linux release 7.9 (Core)
+```
+
+输出结果为当前节点内核版本 `CentOS 7.9` 。
+
+2、执行如下命令，查看集群下待部署 GPU Operator 节点的内核版本。
 
 ```bash
 uname -a
@@ -32,6 +47,8 @@ Linux localhost.localdomain 3.10.0-1160.95.1.el7.x86_64 #1 SMP Mon Oct 19 16:18:
 ```
 
 输出结果为当前节点内核版本 `3.10.0-1160.el7.x86_64` 。
+
+
 
 ### 步骤二：制作离线 yum 源
 
