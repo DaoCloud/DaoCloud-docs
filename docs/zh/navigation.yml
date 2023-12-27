@@ -385,6 +385,7 @@ nav:
                   - 基于 eBPF 技术实施网络策略场景下的性能测试: network/performance/ebpf-performance.md
                   - Ingress 性能测试: network/performance/ingress-performance.md
                   - Egress 性能测试: network/performance/egress-performance.md
+                  - CoreDNS 性能测试: network/performance/coredns-performance.md
               - 集成 Spiderpool:
                   - Release Notes: network/modules/spiderpool/releasenotes.md
                   - 介绍: network/modules/spiderpool/index.md
