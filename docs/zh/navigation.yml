@@ -28,19 +28,21 @@ nav:
                   - 已有 K8s 集群在线安装: install/community/k8s/online.md
                   - 已有 K8s 集群离线安装: install/community/k8s/offline.md
               - 安装商业版:
-                  - 部署架构: install/commercial/deploy-arch.md
-                  - 部署要求: install/commercial/deploy-requirements.md
-                  - 准备工作: install/commercial/prepare.md
-                  - 离线安装步骤: install/commercial/start-install.md
-                  - 使用场景示例: install/commercial/scenarios.md
-                  - 集群配置文件 clusterConfig.yaml: install/commercial/cluster-config.md
-                  - 产品清单文件 manifest.yaml: install/commercial/manifest.md
-              - 升级/卸载/导入/FAQ:
-                  - 升级 DCE 5.0 组件: install/upgrade.md
-                  - 标准版升级白金版: install/evolve.md
-                  - 卸载: install/uninstall.md
-                  - 导入离线资源: install/import.md
-                  - 安装排障: install/faq.md
+                  - 安装介绍: 
+                      - 部署架构: install/commercial/deploy-arch.md
+                      - 配置文件: 
+                          - 集群配置文件 clusterConfig.yaml: install/commercial/cluster-config.md
+                          - 产品清单文件 manifest.yaml: install/commercial/manifest.md
+                  - 部署要求: 
+                      - 部署要求: install/commercial/deploy-requirements.md
+                      - 前置检查: install/commercial/prepare.md
+                      - 端口要求: install/commercial/port-requirements.md
+                      - 外接组件要求（非必须）: 
+                          - 使用外接服务存储 Binaries 资源: install/commercial/external/external-binary.md)
+                          - 使用外接镜像仓库与 Chart 仓库存储镜像与 Chart 包: install/commercial/external/external-imageandchart.md
+                          - 使用外接中间件服务: install/commercial/external/external-middlewares.md
+                          - 使用外接服务存储 OS Repo 资源: install/commercial/external/external-os.md
+                  - 开始安装: install/commercial/start-install.md
               - 在不同 K8s 发行版上安装:
                   - OpenShift OCP: install/k8s-install/ocp-install-dce5.0.md
                   - 阿里云 ECS: install/k8s-install/ecs-install-dce5.0.md
@@ -49,7 +51,14 @@ nav:
                   - Oracle Linux R9/R8 U1: install/os-install/oracleLinux-install-dce5.0.md
                   - TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
                   - 其他 Linux: install/os-install/otherlinux.md
+              - 升级/卸载/导入/FAQ:
+                  - 升级 DCE 5.0 组件: install/upgrade.md
+                  - 标准版升级白金版: install/evolve.md
+                  - 卸载: install/uninstall.md
+                  - 导入离线资源: install/import.md
+              - 安装排障: install/faq.md
               - 最佳实践:
+                  - 使用场景示例: install/commercial/scenarios.md
                   - 部署 DCE5.0 商业版时，etcd 组件采用 host 模式部署与控制平面分离: install/best-practices/etcd-host-deploy.md
               - 安装器 Release Notes: install/release-notes.md
       - 工作台:
