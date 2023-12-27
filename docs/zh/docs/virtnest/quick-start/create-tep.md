@@ -21,7 +21,7 @@
 
 ### 基本信息
 
-在`创建虚拟机`页面中，根据下表输入信息后，点击`下一步`。
+在创建虚拟机页面中，根据下表输入信息后，点击`下一步`。
 
 ![虚拟机基础信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/create-tep03.png)
 
