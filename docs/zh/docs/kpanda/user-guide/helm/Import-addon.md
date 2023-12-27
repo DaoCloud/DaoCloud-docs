@@ -27,9 +27,9 @@
 
 1. 进入`容器管理` -> `Helm 应用` -> `Helm 仓库`，搜索 addon，获取内置仓库地址和用户名/密码（系统内置仓库默认用户名/密码为 rootuser/rootpass123）。
 
-![helm list](.kpanda/images/helmlist.png)
+![helmlist](../images/helmlist.png)
 
-![helm detail](./images/helmdetail.png)
+![helmdetail](../images/helmdetail.png)
 
 1. 同步 Helm Chart 到容器管理内置仓库 Addon
 
@@ -90,7 +90,7 @@
 3. 待上一步执行完成后，进入`容器管理` -> `Helm 应用` -> `Helm 仓库`，找到对应 Addon，
    在操作栏点击`同步仓库`，回到 Helm 模板就可以看到上传的 Helm 应用
 
-![helm 同步](./images/helmsyn.png)
+![helm同步](./images/helmsyn.png)
 
 ![详情2048](./images/helm2048.png)
 
