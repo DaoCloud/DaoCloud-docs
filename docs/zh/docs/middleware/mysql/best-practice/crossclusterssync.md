@@ -18,7 +18,7 @@ MySQL 自带的复制能力提供了主从、多从、多主、级联等多种�
 
     ````shell
     # 进入源端 Pod
-    kubectl exec -it [Pod名称] -- /bin/bash
+    kubectl exec -it [Pod 名称] -- /bin/bash
     # 锁表，防止数据出现不一致情况
     mysql> FLUSH TABLES WITH READ LOCK;
     # 对目标数据库执行 dump
@@ -53,17 +53,21 @@ MySQL 自带的复制能力提供了主从、多从、多主、级联等多种�
 1. 进入中间件的参数配置页面，确定以下配置参数：
 
     ````configuration
-    server-id = <实例的唯一标识符> #源实例与目标实例的ID必须不同
+    server-id = <实例的唯一标识符> #源实例与目标实例的 ID 必须不同
     log-bin = <二进制日志文件的路径和名称>
     binlog-format = Mixed
     ````
 
     其中 `server-id` 未在参数配置页面提供，修改方法如下：
 
-    1. 进入实例的 CR 文件：容器管理 - 实例所在集群 - 自定义资源 - mysqlclusters.mysql.presslabs.org - 实例CR
+    1. 进入实例的 CR 文件：容器管理 - 实例所在集群 - 自定义资源 - mysqlclusters.mysql.presslabs.org - 实例 CR
     1. 增加字段：spec.serverIDOffset: 200
 
-    ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/mysql/images/sync01.png)
+    ![sync](../images/sync01.png)
+
+    !!! note
+
+        修改参数后会重启数据库，并导致服务终端。请谨慎操作。
 
 2. 创建复制账户
 
@@ -101,17 +105,21 @@ MySQL 自带的复制能力提供了主从、多从、多主、级联等多种�
     server-id = <目标端集群的唯一标识符>
     ````
 
-2. 在目标端的mysql命令行中配置源端信息：
+    !!! note
+
+        修改参数后会重启数据库，并导致服务终端。请谨慎操作。
+
+2. 在目标端的 mysql 命令行中配置源端信息：
 
     ````mysql
     mysql> CHANGE MASTER TO
              MASTER_HOST = '<源集群的 Nodeport 服务 IP 地址>',
-             MASTER_PORT = <源集群的 Nodeport 服务端口号>,
+             MASTER_PORT = <源集群的 Nodeport 节点端口>,
              MASTER_USER = '<用户名>',
              MASTER_PASSWORD = '<密码>',
-             MASTER_LOG_FILE = '<源集群的File值>', # 源端操作中记录的 File 值
-             MASTER_LOG_POS = <源集群的Position值>, # 源端操作中记录的 Position 值
-             MASTER_RETRY_COUNT = <重试连接的次数>;  # 0为无限制
+             MASTER_LOG_FILE = '<源集群的 File 值>', # 源端操作中记录的 File 值
+             MASTER_LOG_POS = <源集群的 Position 值>, # 源端操作中记录的 Position 值
+             MASTER_RETRY_COUNT = <重试连接的次数>;  # 0 为无限制
     ````
 
     其中 File 与 Position 字段可在源端的控制台查看，查看命令如下：
