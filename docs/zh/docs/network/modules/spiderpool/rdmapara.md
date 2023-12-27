@@ -128,24 +128,24 @@
 6. 如下 **SriovNetworkNodePolicy** 配置，使得 SR-IOV operator 能够在宿主机上创建出 VF，并上报资源
    YAML 配置；
     ```
-      apiVersion: sriovnetwork.openshift.io/v1
-      kind: SriovNetworkNodePolicy
-      metadata:
-        name: policyrdma
-        namespace: kube-system
-      spec:
-        nodeSelector:
-          kubernetes.io/os: "linux"
-        resourceName: mellanoxrdma  #自定义 resource 名称，创建应用时需要使用
-        priority: 99
-        numVfs: 8  # 可用的numVFS 数量，不能大于步骤 2 中查询的最大可用数
-        nicSelector:
-            deviceID: "1017" #步骤 3 中查询的设备 ID
-            rootDevices: # 步骤 3 中查询的 rootDevices pfNames
-            - 0000:04:00.0 
-            vendor: "15b3" #步骤 3 中查询的网卡 vendors 
-        deviceType: netdevice
-        isRdma: true  # 需要开启 RDMA
+    apiVersion: sriovnetwork.openshift.io/v1
+    kind: SriovNetworkNodePolicy
+    metadata:
+      name: policyrdma
+      namespace: kube-system
+    spec:
+      nodeSelector:
+        kubernetes.io/os: "linux"
+      resourceName: mellanoxrdma  #自定义 resource 名称，创建应用时需要使用
+      priority: 99
+      numVfs: 8  # 可用的numVFS 数量，不能大于步骤 2 中查询的最大可用数
+      nicSelector:
+          deviceID: "1017" #步骤 3 中查询的设备 ID
+          rootDevices: # 步骤 3 中查询的 rootDevices pfNames
+          - 0000:04:00.0 
+          vendor: "15b3" #步骤 3 中查询的网卡 vendors 
+      deviceType: netdevice
+      isRdma: true  # 需要开启 RDMA
     ```
    界面配置：
    ![sriov05](../../images/sriov05.jpg)
