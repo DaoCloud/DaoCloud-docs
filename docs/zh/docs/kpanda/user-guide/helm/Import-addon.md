@@ -92,6 +92,8 @@
 
     ![helm同步](../../images/helmsyn.png)
 
+    ![详情2048](../../images/helm2048.png)
+
 1. 后续可正常进行安装、升级、卸载
 
     ![安装升级](../../images/Installation-and-upgrade.png)
