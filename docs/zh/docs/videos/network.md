@@ -80,4 +80,12 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/egress-gw.mp4" preload="metadata" poster="images/egress.jpg"></video>
 </div>
 
+## 如何使用 RDMA
+
+参阅[工作负载使用 RDMA](../network/modules/spiderpool/userdma.md)文档页面。
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/rdma.mp4" preload="metadata" poster="images/rdma.jpg"></video>
+</div>
+
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
