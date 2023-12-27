@@ -5,7 +5,7 @@ hide:
 
 # 首次进入中间件
 
-首次使用 DCE 5.0 的 [Elasticsearch 搜索服务](../elasticsearch/intro/index.md)、[Kafka 消息队列](../kafka/intro/index.md)、[MinIO 对象存储](../minio/intro/index.md)、[MySQL 数据](../mysql/intro/index.md)、[RabbitMQ 消息](../rabbitmq/intro/index.md)、[PostgreSQL 数据库](../postgresql/intro/index.md)、[Redis 数据库](../redis/intro/index.md)、[MongoDB 数据库](../mongodb/intro/index.md)等中间件时，需要选择工作空间。
+首次使用 DCE 5.0 的 [Elasticsearch 搜索服务](../elasticsearch/intro/index.md)、[Kafka 消息队列](../kafka/intro/index.md)、[MinIO 对象存储](../minio/intro/index.md)、[MySQL 数据](../mysql/intro/index.md)、[RabbitMQ 消息](../rabbitmq/intro/index.md)、[PostgreSQL 数据库](../postgresql/intro/index.md)、[Redis 数据库](../redis/intro/index.md)、[MongoDB 数据库](../mongodb/intro/index.md)、[RocketMQ 消息队列](../rocketmq/intro/index.md)等中间件时，需要选择工作空间。
 
 有关工作空间的详细介绍，可参考[工作空间与层级](../../ghippo/user-guide/workspace/ws-folder.md)。
 
@@ -20,11 +20,11 @@ hide:
 
 1. 在左侧导航栏中选择`中间件` -> `MinIO 存储`。
 
-    ![选择工作空间](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/first-visit01.png)
+    ![选择工作空间](../common/images/middlewarelist01.png)
 
 2. 在弹窗中选择一个工作空间后，点击`确认`。
 
-    ![选择工作空间](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/login02.png)
+    ![选择工作空间](../common/images/workspace.png)
 
     !!! note
 
