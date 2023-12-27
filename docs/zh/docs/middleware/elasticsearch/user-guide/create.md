@@ -28,7 +28,7 @@ hide:
         - 用于存储数据，执行增删改查、搜索、聚合等数据相关操作。数据节点对资源要求较高，需要配置充足的资源。
         - **如果未启用`专用主节点`，由`数据节点`充当`专用主节点**。
         - 最少 1 副本，最多 50 个副本，默认 3 副本。
-        - 副本数建议为基数，否则存在脑裂风险。
+        - 副本数建议为奇数，否则存在脑裂风险。
 
             ![热数据节点](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/create03-1.png)
 
@@ -63,13 +63,13 @@ hide:
     - 访问类型：Elasticsearch 实例对应的 Service 的类型。有关各种类型的详细说明，可参考[服务类型](https://kubernetes.io/zh-cn/docs/concepts/services-networking/service/#publishing-services-service-types)
     - 访问设置：访问 Elasticsearch 实例的用户名和密码，以及 Kibana 的访问类型。
 
-        [服务设置](../images/create04.png)
+        ![服务设置](../images/create04.png)
 
     - 节点亲和性：启用后，只能/尽量将 Elasticsearch 实例调度到带有特定标签的节点上。
     - 工作负载亲和性：在拓扑域（反亲和性的作用范围）内，根据反亲和性将工作负载下的 Pod 分发到多个节点中，避免多个 Pod 被集中调度到某一个节点，造成节点过载。相关的视频教程可参考[工作负载反亲和性](../../../videos/mcamel.md#_1)
     - 监控采集时间间隔：实例监控的数据采集时间间隔。如果不设置，将采用全局设置。默认为 30s。
 
-        [服务设置](../images/create04-1.png)
+        ![服务设置](../images/create04-1.png)
 
 6. 检查所填信息，确认无误后点击`确认`。如需修改可点击`上一步`返回修改配置。
 
