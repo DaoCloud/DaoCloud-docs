@@ -12,7 +12,7 @@
 
 3. 在创建页面中，配置如下内容：
 
-    ![list](images/cfg03.png)
+    ![list](images/s3config.png)
 
     - **名称**：用户自定义，用于标示配置项；
 
