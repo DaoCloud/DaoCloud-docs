@@ -1,6 +1,11 @@
 # 工作负载使用 RDMA
 
-本章节主要介绍介绍工作负载如何配置并使用 RDMA 资源
+本章节主要介绍介绍工作负载如何配置并使用 RDMA 资源。
+
+!!! note
+
+    本章内容基于 SR-IOV 使用 RoCE 网卡为例。为方便测试 RDMA，配置镜像需使用：
+    docker.io/mellanox/rping-test，且运行 sh 命令，防止操作过程中 Pod 异常退出，详情参考下文。
 
 ## 前提条件
 
@@ -15,25 +20,25 @@
 
     ![镜像创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/useippool01.png)
 
-1. 在`创建无状态负载`页面，镜像使用：`docker.io/mellanox/rping-test`。`Replica` 设置为 `2`，部署一组跨节点 Pod。
+1. 在`创建无状态负载`页面，镜像使用 `docker.io/mellanox/rping-test`。`Replica` 设置为 `2`，部署一组跨节点 Pod。
 
 1. 填写`基本信息`，进入`容器配置`输入如下信息。
    
     ![rdma_sriov](../../images/rdma_sriov01.jpg)
 
     - `网络资源参数`：资源名称为 [RDMA 安装及使用准备](rdmapara.md) 中创建 Spiderpool 时自定义名称，如示例中的
-    `spidernet.io/mellnoxrdma` 为 **基于 SRIOV 使用 RoCE 网卡** 的示例。请求值和限制值目前保持一致，输入值不大于最大可用值。
-    详情参考 [RDMA 安装及使用准备](rdmapara.md)
+      `spidernet.io/mellnoxrdma` 为 **基于 SRIOV 使用 RoCE 网卡** 的示例。请求值和限制值目前保持一致，输入值不大于最大可用值。
+      详情参考 [RDMA 安装及使用准备](rdmapara.md)
 
     - `运行命令`：添加如下内容:
 
-    ```sh
-    - sh
-           - -c
-           - |
-             ls -l /dev/infiniband /sys/class/net
-             sleep 1000000
-    ```
+        ```text
+        - sh
+               - -c
+               - |
+                 ls -l /dev/infiniband /sys/class/net
+                 sleep 1000000
+        ```
 
 1. 完成`容器配置`、`服务配置`页面的信息输入后。然后，进入`高级配置`，点击配置`容器网卡`。
 
