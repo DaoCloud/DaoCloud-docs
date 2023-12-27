@@ -73,7 +73,7 @@
 ![创建multus cr](../images/sriov-rdma.png)
 
 - `CNI 类型`：选择 SR-IOV
-- `RDMA`:默认不开启，如果需要开启，请满足 [RDMA 资源使用条件](../modules/spiderpool/rdmapara.md)
+- `RDMA`：默认不开启。如果需要开启，请满足 [RDMA 资源使用条件](../modules/spiderpool/rdmapara.md)
 - `IPv4/IPv6 默认池`:默认不设置，设置后，创建 workload 不添加 IP Pool 时，默认使用此 IP Pool。
 - `Vlan ID` : 必需填入 `0`
 - `SR-IOV 资源`：只用于`sriov`类型, 填写资源名称，不能为空。`如何查看 SR-IOV 资源` 请参考：[SR-IOV CNI 配置](../modules/multus-underlay/sriov.md)
