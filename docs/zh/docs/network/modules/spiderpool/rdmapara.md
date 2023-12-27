@@ -50,9 +50,8 @@
    | rdmaSharedDevicePlugin.deviceConfig.vendors      | 15b3               | 网卡 Vendors 信息，同上步骤 2 中查询信息一致             |
 
    ![rdma_macvlan01](../../images/rdma_macvlan01.jpg)
-   
    成功部署后，可查看已安装组件。
-   ![resource](../../images/rdma_macvlan02.jpg)
+   ![rdma_macvlan02](../../images/rdma_macvlan02.jpg)
 4. 安装完成后，可登录控制器节点，查看上报的 RDMA 设备资源。
    ```
    ~# kubectl get no -o json | jq -r '[.items[] | {name:.metadata.name, allocable:.status.allocatable}]'
