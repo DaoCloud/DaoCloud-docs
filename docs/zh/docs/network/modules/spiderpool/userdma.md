@@ -4,7 +4,8 @@
 
 !!! note
 
-        注意：本章内容基于 SR-IOV 使用 RoCE 网卡为例。为方便测试 RDMA，配置镜像需使用：docker.io/mellanox/rping-test ，且运行 sh 命令，防止操作过程中 Pod 异常退出，详情参考下文。
+    本章内容基于 SR-IOV 使用 RoCE 网卡为例。为方便测试 RDMA，配置镜像需使用：
+    docker.io/mellanox/rping-test，且运行 sh 命令，防止操作过程中 Pod 异常退出，详情参考下文。
 
 ## 前提条件
 
