@@ -27,7 +27,7 @@
 
 1. 进入`容器管理` -> `Helm 应用` -> `Helm 仓库`，搜索 addon，获取内置仓库地址和用户名/密码（系统内置仓库默认用户名/密码为 rootuser/rootpass123）。
 
-![helmlist](../images/helmlist.png)
+    ![helmlist](../images/helmlist.png)
 
 ![helmdetail](../images/helmdetail.png)
 
