@@ -1,6 +1,10 @@
 # 工作负载使用 RDMA
 
-本章节主要介绍介绍工作负载如何配置并使用 RDMA 资源
+本章节主要介绍介绍工作负载如何配置并使用 RDMA 资源。
+
+!!! note
+
+        注意：本章内容基于 SR-IOV 使用 RoCE 网卡为例。为方便测试 RDMA，配置镜像需使用：docker.io/mellanox/rping-test ，且运行 sh 命令，防止操作过程中 Pod 异常退出，详情参考下文。
 
 ## 前提条件
 
@@ -35,10 +39,10 @@
              sleep 1000000
     ```
 
-1. 完成`容器配置`、`服务配置`页面的信息输入后。然后，进入`高级配置`，点击配置`容器网卡`。
+2. 完成`容器配置`、`服务配置`页面的信息输入后。然后，进入`高级配置`，点击配置`容器网卡`。
 
     ![容器网卡](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/useippool02.png)
 
-1. 选择[已创建的 Multus CR](../../config/multus-cr.md)，关闭创建固定 IP 池功能，选择[已创建 IP Pool](createpool.md)，点击`确定`，完成创建。
+3. 选择[已创建的 Multus CR](../../config/multus-cr.md)，关闭创建固定 IP 池功能，选择[已创建 IP Pool](createpool.md)，点击`确定`，完成创建。
 
     ![rdma_usage01](../../images/rdma_usage01.jpg)

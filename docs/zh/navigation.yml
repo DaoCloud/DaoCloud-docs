@@ -378,8 +378,7 @@ nav:
                   - IP 池使用:
                       - 工作负载使用 IP 池: network/modules/spiderpool/usage.md
                       - 第三方工作负载使用 IP 池: network/modules/spiderpool/cutomizedusage.md
-                  - RDMA 使用:
-                      - RDMA 环境准备及安装: network/modules/spiderpool/rdmapara.md
+                  - RDMA 使用:           
                       - 工作负载使用 RDMA : network/modules/spiderpool/userdma.md
                   - Multus CR 管理:
                       - 创建 Multus CR: network/config/multus-cr.md
@@ -399,6 +398,7 @@ nav:
                   - Release Notes: network/modules/spiderpool/releasenotes.md
                   - 介绍: network/modules/spiderpool/index.md
                   - 安装: network/modules/spiderpool/install.md
+                  - RDMA 环境准备及安装: network/modules/spiderpool/rdmapara.md
                   - 升级: network/modules/spiderpool/upgrade.md
                   - 配置参考: network/modules/spiderpool/config.md
                   - 常用命令: network/modules/spiderpool/command.md
