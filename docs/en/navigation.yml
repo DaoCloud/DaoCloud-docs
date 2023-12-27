@@ -521,6 +521,7 @@ nav:
               - Quick Start:
                   - Install virtnest-agent: virtnest/quick-start/index.md
                   - Create VM: virtnest/quick-start/create-image.md
+                  - Create Secret: virtnest/quick-start/create-secret.md
                   - Create VM by Template: virtnest/quick-start/create-tep.md
                   - VM Template: virtnest/quick-start/tep.md
                   - Connect VM: virtnest/quick-start/access.md
