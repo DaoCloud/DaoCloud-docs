@@ -121,7 +121,7 @@ DCE 5.0 针对实际应用场景，精选了一些经典的中间件来处理数
 
 <div class="grid cards" markdown>
 
-- :simple-rabbitmq:{ .lg .middle } __RocketMQ 消息队列__
+- :simple-apacherocketmq:{ .lg .middle } __RocketMQ 消息队列__
 
     ---
 
