@@ -27,9 +27,9 @@
 
 1. 进入`容器管理` -> `Helm 应用` -> `Helm 仓库`，搜索 addon，获取内置仓库地址和用户名/密码（系统内置仓库默认用户名/密码为 rootuser/rootpass123）。
 
-  ![helmlist](../images/helmlist.png)
+  ![helmlist](../../images/helmlist.png)
   
-  ![helmdetail](../images/helmdetail.png)
+  ![helmdetail](../../images/helmdetail.png)
   
 1. 同步 Helm Chart 到容器管理内置仓库 Addon
 
@@ -87,14 +87,14 @@
         Done moving /var/folders/vm/08vw0t3j68z9z_4lcqyhg8nm0000gn/T/charts-syncer869598676/dao-2048-1.4.1.tgz
         ```
 
-3. 待上一步执行完成后，进入`容器管理` -> `Helm 应用` -> `Helm 仓库`，找到对应 Addon，
+1. 待上一步执行完成后，进入`容器管理` -> `Helm 应用` -> `Helm 仓库`，找到对应 Addon，
    在操作栏点击`同步仓库`，回到 Helm 模板就可以看到上传的 Helm 应用
 
-  ![helm同步](../images/helmsyn.png)
+    ![helm同步](../../images/helmsyn.png)
 
-4. 后续可正常进行安装、升级、卸载
+1. 后续可正常进行安装、升级、卸载
 
-![安装升级](../images/Installation-and-upgrade.png)
+    ![安装升级](../../images/Installation-and-upgrade.png)
 
 ## 在线环境
 
