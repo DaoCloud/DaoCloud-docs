@@ -114,3 +114,25 @@ Error: Failed to download metadata for repo 'appstream': Cannot prepare internal
     sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
     sudo yum update -y
     ```
+
+## 火种节点关机重新开启后，kind 集群无法正常重启
+
+火种节点关机重新开启后，由于部署时在 openEuler 22.03 LTS SP2 操作系统上未设置 kind 集群开机自启动，会导致 kind 集群无法正常开启。
+
+需要执行如下命令开启：
+
+```bash
+podman restart $(podman ps | grep installer-control-plane | awk '{print $1}') 
+```
+
+!!! note
+
+    如果其他环境中发生了上述场景，也可以执行该命令进行重启。
+
+## Ubuntu 20.04 作为火种机器部署时缺失 ip6tables ，需要单独安装
+
+Ubuntu 20.04 作为火种机器部署，由于缺失 ip6tables 会导致部署过程中报错。
+
+其中 podman 已知问题请查看： https://github.com/containers/podman/issues/3655。
+
+临时解决方案：手动安装 iptables ，参考地址： https://orcacore.com/install-use-iptables-ubuntu-22-04/#:~:text=In%20this%20guide%2C%20we%20want%20to%20teach%20you,your%20network%20traffic%20packets%20by%20using%20these%20filters。
