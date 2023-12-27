@@ -8,7 +8,7 @@
 
 #### 新增
 
-- **新增** Mcamel-MangoDB 开启控制台 MongoDB Express
+- **新增** Mcamel-MongoDB 开启控制台 MongoDB Express
 
 ## 2023-10-31
 
