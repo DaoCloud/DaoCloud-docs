@@ -33,3 +33,56 @@ spec:
         insight.opentelemetry.io/metric-path: "/"      # 采集指标的路径
         insight.opentelemetry.io/metric-port: "9464"   # 采集指标的端口
 ```
+
+以下是完整示例：
+
+```yaml
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-boot-actuator-prometheus-metrics-demo
+spec:
+  type: NodePort
+  selector:
+    #app: my-deployment-with-aotu-instrumentation-app
+    app.kubernetes.io/name: spring-boot-actuator-prometheus-metrics-demo
+  ports:
+    - name: http
+      port: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-boot-actuator-prometheus-metrics-demo
+spec:
+  selector:
+    matchLabels:
+      #app: my-deployment-with-aotu-instrumentation-app
+      app.kubernetes.io/name: spring-boot-actuator-prometheus-metrics-demo
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: spring-boot-actuator-prometheus-metrics-demo
+      annotations:
+        insight.opentelemetry.io/metric-scrape: "true" # 是否采集
+        insight.opentelemetry.io/metric-path: "/actuator/prometheus"      # 采集指标的路径
+        insight.opentelemetry.io/metric-port: "8080"   # 采集指标的端口
+    spec:
+      containers:
+        - name: myapp
+          image: docker.m.daocloud.io/wutang/spring-boot-actuator-prometheus-metrics-demo
+          ports:
+            - name: http
+              containerPort: 8080
+          resources:
+            limits:
+              cpu: 500m
+              memory: 800Mi
+            requests:
+              cpu: 200m
+              memory: 400Mi
+```
+
+以上示例中，Insight 会通过 `:8080//actuator/prometheus` 抓取通过 *Spring Boot Actuator* 暴露出来的 Prometheus 指标。
