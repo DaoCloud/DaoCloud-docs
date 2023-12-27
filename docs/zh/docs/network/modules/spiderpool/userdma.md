@@ -4,10 +4,10 @@
 
 ## 前提条件
 
-1. [SpiderPool 已成功部署](../../modules/spiderpool/install.md)。
-2. [完成RDMA 安装及使用前准备](rdmapara.md)。
-3. [已创建 的Multus CR](../../config/multus-cr.md)
-4. [已创建 IP Pool](createpool.md)
+- [已成功部署 SpiderPool](../../modules/spiderpool/install.md)
+- [已完成 RDMA 安装及使用前准备](rdmapara.md)
+- [已创建 Multus CR](../../config/multus-cr.md)
+- [已创建 IP Pool](createpool.md)
 
 ## 界面操作
 
@@ -17,15 +17,15 @@
 
 1. 在`创建无状态负载`页面，镜像使用：`docker.io/mellanox/rping-test`。`Replica` 设置为 `2`，部署一组跨节点 Pod。
 
-1. 完成`基本信息`，进入`容器配置`完成如下信息输入。
+1. 填写`基本信息`，进入`容器配置`输入如下信息。
    
     ![rdma_sriov](../../images/rdma_sriov01.jpg)
 
-    `网络资源参数`：资源名称为 [RDMA 安装及使用准备](rdmapara.md) 中创建 Spiderpool 时自定义名称，如示例中的
+    - `网络资源参数`：资源名称为 [RDMA 安装及使用准备](rdmapara.md) 中创建 Spiderpool 时自定义名称，如示例中的
     `spidernet.io/mellnoxrdma` 为 **基于 SRIOV 使用 RoCE 网卡** 的示例。请求值和限制值目前保持一致，输入值不大于最大可用值。
     详情参考 RDMA 安装及使用准备。
 
-    `运行命令`：添加如下内容:
+    - `运行命令`：添加如下内容:
 
     ```sh
     - sh
@@ -39,11 +39,11 @@
 
     ![容器网卡](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/useippool02.png)
 
-1. 选择 [已创建 的Multus CR](../../config/multus-cr.md)，关闭创建固定 IP 池功能，选择[已创建 IP Pool](createpool.md)，点击确定，完成创建。
-   
+1. 选择[已创建的 Multus CR](../../config/multus-cr.md)，关闭创建固定 IP 池功能，选择[已创建 IP Pool](createpool.md)，点击`确定`，完成创建。
+
     ![rdma_usage01](../../images/rdma_usage01.jpg)
 
-1. 部署完成后，打开Pod Console 可验证Pod 之间的通信能力。
+1. 部署完成后，打开 Pod Console 可验证 Pod 之间的通信能力。
 
     ```console
     ib_read_lat 172.50.0.67
