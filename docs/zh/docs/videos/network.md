@@ -82,7 +82,7 @@
 
 ## 如何使用 RDMA
 
-参阅[工作负载使用 RDMA](../network/modules/spiderpool/userdma.md)文档页面。
+参阅[工作负载使用 RDMA](../network/modules/spiderpool/rdmapara.md)文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/rdma.mp4" preload="metadata" poster="images/rdma.jpg"></video>
