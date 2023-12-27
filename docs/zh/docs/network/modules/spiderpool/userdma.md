@@ -23,7 +23,7 @@
 
     - `网络资源参数`：资源名称为 [RDMA 安装及使用准备](rdmapara.md) 中创建 Spiderpool 时自定义名称，如示例中的
     `spidernet.io/mellnoxrdma` 为 **基于 SRIOV 使用 RoCE 网卡** 的示例。请求值和限制值目前保持一致，输入值不大于最大可用值。
-    详情参考 RDMA 安装及使用准备。
+    详情参考 [RDMA 安装及使用准备](rdmapara.md)
 
     - `运行命令`：添加如下内容:
 
@@ -42,11 +42,3 @@
 1. 选择[已创建的 Multus CR](../../config/multus-cr.md)，关闭创建固定 IP 池功能，选择[已创建 IP Pool](createpool.md)，点击`确定`，完成创建。
 
     ![rdma_usage01](../../images/rdma_usage01.jpg)
-
-1. 部署完成后，打开 Pod Console 可验证 Pod 之间的通信能力。
-
-    ```console
-    ib_read_lat 172.50.0.67
-    ```
-
-    ![rdma_usage](../../images/rdma_usage02.jpg)
