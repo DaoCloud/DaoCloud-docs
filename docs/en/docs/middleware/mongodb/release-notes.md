@@ -8,7 +8,7 @@ This page lists the release notes for MongoDB databases, allowing you to underst
 
 #### New Features
 
-- **Added** Mcamel-MangoDB console MongoDB Express
+- **Added** Mcamel-MongoDB console MongoDB Express
 
 ## 2023-10-31
 
