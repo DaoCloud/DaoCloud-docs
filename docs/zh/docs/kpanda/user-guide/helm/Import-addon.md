@@ -87,7 +87,8 @@
         Done moving /var/folders/vm/08vw0t3j68z9z_4lcqyhg8nm0000gn/T/charts-syncer869598676/dao-2048-1.4.1.tgz
         ```
 
-1. 待上一步执行完成后，进入`容器管理` -> `Helm 应用` -> `Helm 仓库`，找到对应 addon，在操作栏点击`同步仓库`，回到 Helm 模板就可以看到上传的 Helm 应用
+1. 待上一步执行完成后，进入`容器管理` -> `Helm 应用` -> `Helm 仓库`，找到对应 Addon，
+   在操作栏点击`同步仓库`，回到 Helm 模板就可以看到上传的 Helm 应用
 
     ![helm 同步](./images/helmsyn.png)
 
@@ -101,4 +102,4 @@
 
 在线环境的 Helm Repo 地址为 `release.daocloud.io`。
 如果用户无权限添加 Helm Repo，则无法将自定义 Helm 应用导入系统内置 Addon。
-您可以添加自己搭建的 Helm 仓库，然后按照离线环境中同步 Helm Chart 的步骤将您的 Helm 仓库集成到平台使用。 
+您可以添加自己搭建的 Helm 仓库，然后按照离线环境中同步 Helm Chart 的步骤将您的 Helm 仓库集成到平台使用。
