@@ -1,6 +1,7 @@
 # 创建 Multus CR
 
- Multus CR 管理，是 Spiderpool 对 Multus CNI 中配置实例的二次封装。旨在为容器提供更灵活的网络连接和配置选项，以满足不同的网络需求，为用户提供更简单和经济高效的使用体验。本页介绍在创建工作负载使用多网卡配置之前，如何创建 Multus CR。
+Multus CR 管理，是 Spiderpool 对 Multus CNI 中配置实例的二次封装。旨在为容器提供更灵活的网络连接和配置选项，以满足不同的网络需求，
+为用户提供更简单和经济高效的使用体验。本页介绍在创建工作负载使用多网卡配置之前，如何创建 Multus CR。
 如需创建新的 **Multus CR 实例**，可参考此文档。
 
 ## 前提条件
@@ -36,9 +37,9 @@
 - `IPv6 默认池`：CNI 配置文件 IPv6 默认池。
 - `VLAN ID`：当 CNI 类型为 `macvlan`，`ipvlan`，`sriov` 时被允许配置， "0" 和 ""的效果一样。
 - `网卡配置`：网卡配置中包含接口配置信息。
-   - 请确保主网卡存在于主机上。
-   - 如果使用基于 MacVlan/IPVlan 的共享 RDMA 功能，请确保该网卡具备 **RDMA** 能力。
-   - 当网卡接口数量为一个时，则默认网卡配置中只有一个网卡接口。当添加接口数量大于等于两个时，可以做 Bond 相关配置。
+    - 请确保主网卡存在于主机上。
+    - 如果使用基于 MacVlan/IPVlan 的共享 RDMA 功能，请确保该网卡具备 **RDMA** 能力。
+    - 当网卡接口数量为一个时，则默认网卡配置中只有一个网卡接口。当添加接口数量大于等于两个时，可以做 Bond 相关配置。
 - `网卡接口`：只用于 CNI 类型 为 `macvlan`，`ipvlan` ，至少有一个元素。如果有两个及其以上的元素, bond 必须不能为空。
 - `Bond 信息`：名称不能为空，模式必须在范围 [0,6] 内, 分别对应七种模式：
     - balance-rr
@@ -80,13 +81,16 @@
 - `SR-IOV 资源`：只用于`sriov`类型, 填写资源名称，不能为空。`如何查看 SR-IOV 资源` 请参考：[SR-IOV CNI 配置](../modules/multus-underlay/sriov.md)
 
  **SR-IOV 资源配置说明：**
+
 `SR-IOV resourceName` 为部署`sriovnetworknodepolicies` 时自定义名称。
 
- 如果**基于 SR-IOV 搭配 RDMA** 使用，SR-IOV 资源配置查询如下：
-   **命令查询：**
-   如下的`spidernet.io/sriov_netdevice_enp4s0f0np0` 为查询的资源名称。
+如果 **基于 SR-IOV 搭配 RDMA** 使用，SR-IOV 资源配置查询如下：
 
-   ```
+**命令查询：**
+   
+如下的 `spidernet.io/sriov_netdevice_enp4s0f0np0` 为查询的资源名称。
+
+```sh
    kubectl get no -o json | jq -r '[.items[] | {name:.metadata.name, allocable:.status.allocatable}]'
    [
      {
@@ -107,13 +111,13 @@
      }
    ```
 
-   **界面查询：**
+**界面查询：**
 
-   查询的`resourceName`需要加上 `spidernet.io/`前缀。
+查询的`resourceName`需要加上 `spidernet.io/`前缀。
 
-   ![networkconfig08.png](../images/networkconfig08.jpg)
+![networkconfig08.png](../images/networkconfig08.jpg)
 
-   ![networkconfig09](../images/networkconfig09.jpg)
+![networkconfig09](../images/networkconfig09.jpg)
 
 ### 创建自定义类型的 Multus CR
 
