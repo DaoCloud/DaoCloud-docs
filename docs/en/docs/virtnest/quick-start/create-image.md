@@ -7,7 +7,7 @@ hide:
 
 This article will explain how to create a virtual machine using two methods: image and YAML file.
 
-Virtual machine containers, based on KubeVirt technology, manage virtual machines as cloud native applications,
+Virtual machine, based on KubeVirt technology, manage virtual machines as cloud native applications,
 seamlessly integrating with containers. This allows users to easily deploy virtual machine applications and
 enjoy a smooth experience similar to containerized applications.
 
@@ -26,12 +26,13 @@ Before creating a virtual machine, make sure you meet the following prerequisite
 
 Follow the steps below to create a virtual machine using an image.
 
-1. Click `Container Management` on the left navigation bar, then click `Virtual Machine Containers`
-   to enter the `Virtual Machine Management` page.
+1. Click `Container Management` on the left navigation bar, then click `Virtual Machine` to enter the `Virtual Machine Management` page.
 
+    ![VM](../images/createvm01.png)
 
-2. On the virtual machine list page, click `Create Virtual Machine` and select `Create VM from Image`.
+2. On the virtual machine list page, click `Create VMs` and select `Create with Image`.
 
+    ![Create VM from Image](../images/createvm02.png)
 
 3. Fill in the basic information, image configuration, storage and networking, login settings, and click `OK` at the bottom right corner to complete the creation.
 
@@ -40,10 +41,13 @@ Follow the steps below to create a virtual machine using an image.
     clone, update, create snapshots, console access (VNC), and delete virtual machines.
     Cloning and snapshot capabilities depend on the selected StorageClass.
 
+    ![VM Management](../images/createvm03.png)
 
 ### Basic Information
 
-In the `Create Virtual Machine` page, enter the information according to the table below and click `Next`.
+In the `Create VMs` page, enter the information according to the table below and click `Next`.
+
+![Basic Information](../images/createvm04.png)
 
 - Name: Up to 63 characters, can only contain lowercase letters, numbers, and hyphens (`-`),
   and must start and end with a lowercase letter or number. The name must be unique within the
@@ -52,18 +56,20 @@ In the `Create Virtual Machine` page, enter the information according to the tab
 - Cluster: Select the cluster to deploy the newly created virtual machine.
 - Namespace: Select the namespace to deploy the newly created virtual machine.
   If the desired namespace is not found, you can create a new namespace according to the prompts on the page.
-- Labels/Annotations: Select the desired labels/annotations to add to the virtual machine.
+- Label/Annotation: Select the desired labels/annotations to add to the virtual machine.
 
-### Container Configuration
+### Image Settings
 
 After filling in the image-related information according to the table below, click `Next`.
 
+    ![Image Repository](../images/createvm05.png)
+
 - Image Source: Supports three types of sources.
 
-    - Image Repository Type: Images stored in the container image repository, supporting the option
+    - Image Repository: Images stored in the container image repository, supporting the option
       to enable or disable using system-built images. When enabled, you can use the platform's
       built-in images. When disabled, you can select images from the image repository as needed.
-    - HTTP Type: Images stored in a file server using the HTTP protocol, supporting both 
+    - HTTP Type: Images stored in a file server using the HTTP protocol, supporting both
       `HTTPS://` and `HTTP://` prefixes.
     - Object Storage (S3): Virtual machine images obtained through the object storage protocol (S3).
       For non-authenticated object storage files, please use the HTTP source.
@@ -76,10 +82,14 @@ After filling in the image-related information according to the table below, cli
     |      Ubuntu      |     Ubuntu 22.04      | release-ci.daocloud.io/virtnest/system-images/ubuntu-22.04-x86_64:v1 |
     |      Debian      |       Debian 12       | release-ci.daocloud.io/virtnest/system-images/debian-12-x86_64:v1 |
 
+- Image Secret: Only supports the default (Opaque) type of key, for specific operations you can refer to [Create Secret](create-secret.md).
+
 - CPU Quota, Memory Quota: For CPU, it is recommended to use whole numbers.
   If a decimal is entered, it will be rounded up.
 
-### Storage and Networking Configuration
+### Storage and Network
+
+    ![Storage and Network](../images/createvm06.png)
 
 - Storage: By default, a VirtIO-based rootfs system disk is created to store the operating system and data.
   Block storage is used by default. If you need to use cloning and snapshot functions, make sure your
@@ -94,22 +104,24 @@ After filling in the image-related information according to the table below, cli
         - Check the created SnapshotClass and confirm that the provisioner property matches the
           Driver property in the StorageClass.
 
-> Multi-disk support will be added in the future.
+          > Multi-disk support will be added in the future.
 
-- Networking: If no configuration is done, the system will create a VirtIO-based network by default.
+- Network: If no configuration is done, the system will create a VirtIO-based network by default.
 
 ### Login Settings
 
 - Username/Password: Allows login to the virtual machine using a username and password.
 - SSH: When selecting the SSH login method, you can bind an SSH key to the virtual machine for future login.
 
+![Login Settings](../images/createvm07.png)
+
 ## Create by YAML
 
 In addition to creating virtual machines using images, you can also create them more quickly using YAML files.
 
-Go to the virtual machine container list page and click on the `Create via YAML` button.
+Go to the virtual machine container list page and click on the `Create with YAML` button.
 
-![Create via YAML](../images/createvm09.png)
+![Create with YAML](../images/createvm08.png)
 
 ??? note "Click to view an example YAML for creating a virtual machine"
 
