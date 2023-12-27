@@ -119,6 +119,19 @@ DCE 5.0 针对实际应用场景，精选了一些经典的中间件来处理数
 
 </div>
 
+<div class="grid cards" markdown>
+
+- :simple-rabbitmq:{ .lg .middle } __RocketMQ 消息队列__
+
+    ---
+
+    这是基于高级消息队列协议 (AMQP) 构建的消息代理软件（亦称面向消息的中间件），常用于交易数据的传输管道。
+
+    - [什么是 Rocketmq](./rocketmq/intro/index.md)
+    - [创建/更新/删除 Rocketmq 实例](./rocketmq/quick-start/create-rocketmq.md)
+
+</div>
+
 ## 中间件学习路径
 
 !!! info
