@@ -3,22 +3,22 @@ hide:
   - toc
 ---
 
-# update the MySQL instance
+# Update MySQL
 
-If you want to update or modify the resource configuration of MySQL, you can follow the instructions on this page.
+If you want to update or modify the resource settings of MySQL, you can follow the instructions on this page.
 
-1. In the instance list, click the `...` button on the right, and select `Update Instance` from the pop-up menu.
+1. In the instance list, click the `⋮` button on the right, and select `Update Instance` from the pop-up menu.
 
-    <!--screenshot-->
+    ![Update Instance](../images/update01.png)
 
 2. Basic information: Only the description can be modified. Then click `Next`.
 
-    <!--screenshot-->
+    ![Basic information](../images/update02.png)
 
-3. After modifying the specification configuration, click `Next`.
+3. After modifying the specific settings, click `Next`.
 
-    <!--screenshot-->
+    ![Spec Settings](../images/update03.png)
 
 4. After modifying the service settings, click `OK`.
 
-    <!--screenshot-->
+    ![Service Settings](../images/update04.png)
