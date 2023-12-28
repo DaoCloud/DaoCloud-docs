@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# Update MySQL
+# Update a MySQL Instance
 
 If you want to update or modify the resource settings of MySQL, you can follow the instructions on this page.
 

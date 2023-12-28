@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# Delete MySQL
+# Delete a MySQL Instance
 
 If you want to delete a MySQL instance, you can do the following:
 

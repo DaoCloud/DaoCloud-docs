@@ -812,9 +812,9 @@ nav:
                       - Concepts: middleware/mysql/intro/concepts.md
                       - Release Notes: middleware/mysql/release-notes.md
                   - Quick Start:
-                      - Create MySQL: middleware/mysql/user-guide/create.md
-                      - Update MySQL: middleware/mysql/user-guide/update.md
-                      - Delete MySQL: middleware/mysql/user-guide/delete.md
+                      - Create a MySQL Instance: middleware/mysql/user-guide/create.md
+                      - Update a MySQL Instance: middleware/mysql/user-guide/update.md
+                      - Delete a MySQL Instance: middleware/mysql/user-guide/delete.md
                       - View MySQL Logs: middleware/mysql/user-guide/logs.md
                   - Best Practice:
                       - MySQL Cross-Cluster Synchronization: middleware/mysql/best-practice/crossclusterssync.md

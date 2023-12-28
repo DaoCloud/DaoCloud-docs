@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# Create MySQL
+# Create a MySQL Instance
 
 After accessing the MySQL database, follow the steps below to create a MySQL instance.
 
