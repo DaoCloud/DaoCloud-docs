@@ -609,9 +609,10 @@ nav:
                   - Log Collection Troubleshooting: insight/best-practice/debug-log.md
                   - Trace Collection Troubleshooting: insight/best-practice/debug-trace.md
                   - Configure Notification Template: insight/best-practice/notify-helper.md
-                  - Receive SkyWalking Trace Data with Zero Code using OTel: insight/best-practice/sw-to-otel.md
+                  - Receive SkyWalking Trace Data using OTel: insight/best-practice/sw-to-otel.md
                   - Use Insight to find service's problems: insight/best-practice/find_root_cause.md
-                  - Kafka + ES Stream Architecture for Handling Large-Scale Logs: insight/best-practice/insight-kafka.md
+                  - Kafka + ES for Handling Large-Scale Logs: insight/best-practice/insight-kafka.md
+                  - Integrate DeepFlow: insight/best-practice/integration_deepflow.md
               - Compatibility Test:
                   - K8s Compatibility Test: insight/compati-test/k8s-compatibility.md
                   - Rancher Compatibility Test: insight/compati-test/rancher-compatibility.md

@@ -12,7 +12,7 @@ DeepFlow 是一款基于 eBPF 的可观测性产品。它的社区版已经被�
 1. 安装 DeepFlow chart
 
     DeepFlow Server 需要安装在 Global 集群中(它会默认安装 DeepFlow Agent)。进入 kpanda-global-cluster 集群，在左侧导航栏内点击
-    `Helm 应用` -> `Helm 模板`，仓库选择 `community`, 搜索框查询 deepflow:
+    `Helm 应用` -> `Helm 模板`，仓库选择 `community`，搜索框查询 deepflow:
     
     ![img.png](./images/deepflow_chart.png)
     
@@ -20,7 +20,7 @@ DeepFlow 是一款基于 eBPF 的可观测性产品。它的社区版已经被�
     
     ![img.png](./images/deepflow_chart_readme.png)
     
-    点击安装, 进入安装界面：
+    点击安装，进入安装界面：
     
     ![img.png](./images/deepflow_chart_config.png)
     
@@ -46,11 +46,10 @@ DeepFlow 是一款基于 eBPF 的可观测性产品。它的社区版已经被�
 
 ## 安装 DeepFlow Agent
 
-DeepFlow Agent 被安装在子集群中，用于采集子集群的 eBPF 观测数据并上报到 Global 集群中。类似于安装 DeepFlow Server, 
-通过 `Helm 应用` -> `Helm 模板`，仓库选择 `community`, 搜索框查询 deepflow-agent, 按流程进入安装界面，在 `参数配置` 配置部分需要注意：
+DeepFlow Agent 被安装在子集群中，用于采集子集群的 eBPF 观测数据并上报到 Global 集群中。类似于安装 DeepFlow Server，
+通过 `Helm 应用` -> `Helm 模板`，仓库选择 `community`，搜索框查询 deepflow-agent，按流程进入安装界面，在 `参数配置` 配置部分需要注意：
 
 ![img.png](./images/deepflow_agent_chart_config.png)
-
 
 `DeepflowServerNodeIPS` 对应 deepflow server 安装集群的节点地址。配置好后点击确认，完成安装。
 
@@ -62,5 +61,3 @@ DeepFlow Agent 被安装在子集群中，用于采集子集群的 eBPF 观测�
 ![img.png](./images/deepflow_ui_templates.png)
 
 ![img.png](./images/deepflow_ui_template_list.png)
-
-
