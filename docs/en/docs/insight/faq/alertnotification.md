@@ -1,6 +1,6 @@
 # Alert Notification Process Description
 
-When configuring an alert policy in Observable Insight, you have the ability to set different notification sending intervals
+When configuring an alert policy in Insight, you have the ability to set different notification sending intervals
 for alerts triggered at different levels within the same policy. However, due to the presence of two parameters,
 `group_interval` and `repeat_interval`, in the native Alertmanager configuration, the actual intervals for sending
 alert notifications may deviate.
