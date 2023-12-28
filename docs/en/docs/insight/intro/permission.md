@@ -3,9 +3,9 @@ hide:
    - toc
 ---
 
-# Observability permission description
+# Insight permission description
 
-The observability module uses the following roles:
+The Insight uses the following roles:
 
 - Admin / Kpanda Owner
 - [Cluster Admin](../../kpanda/user-guide/permissions/permission-brief.md#cluster-admin)
