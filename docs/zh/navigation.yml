@@ -395,8 +395,9 @@ nav:
               - 集成 Spiderpool:
                   - Release Notes: network/modules/spiderpool/releasenotes.md
                   - 介绍: network/modules/spiderpool/index.md
-                  - 安装: network/modules/spiderpool/install.md
-                  - RDMA 环境准备及安装: network/modules/spiderpool/rdmapara.md
+                  - 安装: 
+                      - Spiderpool 安装: network/modules/spiderpool/install.md
+                      - RDMA 环境准备及安装: network/modules/spiderpool/rdmapara.md
                   - 升级: network/modules/spiderpool/upgrade.md
                   - 配置参考: network/modules/spiderpool/config.md
                   - 常用命令: network/modules/spiderpool/command.md
