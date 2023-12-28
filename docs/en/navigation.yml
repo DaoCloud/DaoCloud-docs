@@ -795,8 +795,9 @@ nav:
       - Data Service:
           - Middleware:
               - Intro:
-                  - What is Middleware Data Service: middleware/index.md
-                  - Supported Kubernetes Versions: middleware/compatibility.md
+                  - What is Middleware: middleware/index.md
+                  - Features: middleware/common/feature.md
+                  - Supported K8s Versions: middleware/compatibility.md
                   - Permissions: middleware/permission.md
               - Common Config:
                   - First-Time Use: middleware/common/index.md
