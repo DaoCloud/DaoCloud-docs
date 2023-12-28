@@ -34,7 +34,7 @@
     - Pod 选择器：设置 Pod 标签。**同一个拓扑域内，只能有一个带有此标签的 Pod**。
     - 有关反亲和性以及各种操作符的详细介绍，可参考[操作符](../../kpanda/user-guide/workloads/pod-config/scheduling-policy.md#_4)
 
-        ![创建](images/anti-affinity02.jpg)
+    ![创建](images/anti-affinity02.jpg)
     
     !!! note
 
