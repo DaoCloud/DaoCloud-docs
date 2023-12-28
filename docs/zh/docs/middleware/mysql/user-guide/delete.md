@@ -7,7 +7,7 @@ hide:
 
 如果想要删除一个 MySQL 实例，可以执行如下操作：
 
-1. 在 MySQL 实例列表中，点击右侧的 `...` 按钮，在弹出菜单中选择`删除实例`。
+1. 在 MySQL 实例列表中，点击右侧的 `⋮` 按钮，在弹出菜单中选择`删除实例`。
 
     ![删除实例](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/mysql/images/delete01.png)
 
