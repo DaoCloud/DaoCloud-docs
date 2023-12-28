@@ -12,9 +12,11 @@
 
 ### 操作步骤
 
-1. 登录到控制台。
-2. 分别在两个 prometheus operator 中启用 `--deny-namespaces` 参数。
-3. 执行以下命令（以下命令仅供参考，实际需替换命令中的 prometheus operator 名称和命名空间）。
+1. 登录 DCE4.0 集群，进入 `「设置」-「空间管理」-「insight-system」-「超卖策略」` 中删除 insight-system 下的超卖策略。
+
+    ![dce4](../../images/dce4-limit-range.png)
+
+2. 登录 DCE4.0 集群的控制台。分别在两个 prometheus operator 中启用 `--deny-namespaces` 参数。执行以下命令（以下命令仅供参考，实际需替换命令中的 prometheus operator 名称和命名空间）。
 
     ```bash
     kubectl edit deploy insight-agent-kube-prometh-operator -n insight-system
@@ -44,6 +46,10 @@
 ## 问题二
 
 Insight Agent 部署成功后，fluentbit 未采集 DCE 4.0 的日志。
+
+!!! note
+
+    该问题已在 Insight Agent v0.22.0 版本修复，安装或升级后即不存在该问题。
 
 ### 解决方案
 
