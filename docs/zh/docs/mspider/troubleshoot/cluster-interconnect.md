@@ -20,7 +20,7 @@
 3. 确定东西网关异常的原因，修复
 4. 在目标规则中，启用离群检测策略：
 
-    ![离群检测](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/troubleshoot/images/cluster-interconnect01.png)
+    ![离群检测](./images/cluster-interconnect01.png)
 
     配置成功后，当出现集群宕机时，会自动摘除宕机集群的实例，不会出现卡顿现象。
 
