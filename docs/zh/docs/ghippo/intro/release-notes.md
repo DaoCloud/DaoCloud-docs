@@ -16,7 +16,7 @@
 
 #### 优化
 
-- 初始化的用户名密码（admin）需要从 ConfigMap 里改存到 Secret 里
+- 初始化的用户名密码（admin/changeme）需要从 ConfigMap 里改存到 Secret 里
 
 #### 修复
 

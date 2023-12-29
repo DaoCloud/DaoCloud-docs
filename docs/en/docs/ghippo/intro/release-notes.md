@@ -1,6 +1,29 @@
 # Global Management Release Notes
 
-This page lists the Release Notes for global management of each version, so that you can understand the evolution path and feature changes of each version.
+This page lists the Release Notes for global management of each version,
+so that you can understand the evolution path and feature changes of each version.
+
+## 2023-12-29
+
+### v0.23.0
+
+#### Features
+
+- Automatically log out the corresponding identity provider page when exiting DCE 5.0
+- Support special characters such as underscores in usernames
+- Abolish the function of prohibiting authorization for usernames with special characters
+- Add user isolation mode between folders
+- Support multiple roles for user authorization in folders/workspaces
+
+#### Improvements
+
+- Store the initial username and password (admin/changeme) in Secret instead of ConfigMap
+
+#### Fixes
+
+- Fix the issue of redirection in the offline environment documentation site
+- Fix the problem of failed upgrade for installer version 0.13
+- Fix the performance issue in large-scale testing of workspaces
 
 ## 2023-12-05
 

@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 重启集群（虚拟机）istio-ingressgateway 无法启动？
 
 报错提示如下图：

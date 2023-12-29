@@ -1055,6 +1055,7 @@ nav:
                   - ingressgateway cannot start: reference/troubleshooting/ghippo01.md
                   - Login Error 401 or 403: reference/troubleshooting/ghippo02.md
                   - keycloak cannot start: reference/troubleshooting/ghippo03.md
+                  - Failed to upgrade Global Management: reference/troubleshooting/ghippo04.md
   - Video Tutorial:
       - Index: videos/index.md
       - Get Started:
