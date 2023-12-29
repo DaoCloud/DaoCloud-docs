@@ -9,15 +9,15 @@ hide:
 
 通过访问每个 PostgreSQL 的实例详情，页面；可以支持查看 PostgreSQL 的日志。
 
-1. 在 PostgreSQL 实例列表中，选择想要查看的日志，点击 `实例名称` 进入到实例详情页面。
+1. 在 PostgreSQL 实例列表中，选择想要查看的日志，点击实例名称进入到实例详情页面。
 
     ![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/postgresql/images/log01.png)
 
-2. 在实例的左侧菜单栏，会发现有一个日志查看的菜单栏选项。
+2. 在实例的左侧菜单栏，会发现有一个`日志查看`的菜单栏选项。
 
     ![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/postgresql/images/log02.png)
 
-3. 点击 `日志查看` 即可进入到日志查看页面（[Insight](../../../insight/intro/index.md) 日志查看）。
+3. 点击`日志查看`即可进入到日志查看页面（[Insight](../../../insight/intro/index.md) 日志查看）。
 
 ## 日志查看说明
 
