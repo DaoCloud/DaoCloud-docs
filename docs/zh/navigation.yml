@@ -368,6 +368,7 @@ nav:
                   - 挑战: network/intro/challenges.md
                   - 网络组件: network/modules/modules.md
                   - 离线升级云原生网络: network/intro/offline.md
+                  - Release Notes: network/modules/spiderpool/releasenotes.md
               - 网络规划:
                   - 网卡规划: network/plans/ethplan.md
                   - 网络规划: network/plans/netplan.md
@@ -393,7 +394,6 @@ nav:
                   - Egress 性能测试: network/performance/egress-performance.md
                   - CoreDNS 性能测试: network/performance/coredns-performance.md
               - 集成 Spiderpool:
-                  - Release Notes: network/modules/spiderpool/releasenotes.md
                   - 介绍: network/modules/spiderpool/index.md
                   - 安装: 
                       - Spiderpool 安装: network/modules/spiderpool/install.md
