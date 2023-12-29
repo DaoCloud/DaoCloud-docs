@@ -1052,10 +1052,10 @@ nav:
                       - Customize DCE 5.0 to Sync IdP: ghippo/oem/custom-idp.md
                       - Customize IdP with Keycloak: ghippo/oem/keycloak-idp.md
               - Troubleshooting:
-                  - ingressgateway cannot start: reference/troubleshooting/ghippo01.md
-                  - Login Error 401 or 403: reference/troubleshooting/ghippo02.md
-                  - keycloak cannot start: reference/troubleshooting/ghippo03.md
-                  - Failed to upgrade Global Management: reference/troubleshooting/ghippo04.md
+                  - ingressgateway cannot start: ghippo/troubleshooting/ghippo01.md
+                  - Login Error 401 or 403: ghippo/troubleshooting/ghippo02.md
+                  - keycloak cannot start: ghippo/troubleshooting/ghippo03.md
+                  - Failed to upgrade Global Management: ghippo/troubleshooting/ghippo04.md
   - Video Tutorial:
       - Index: videos/index.md
       - Get Started:
