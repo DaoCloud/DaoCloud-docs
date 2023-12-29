@@ -1023,7 +1023,6 @@ nav:
                   - 功能总览: ghippo/intro/features.md
                   - 常见术语: ghippo/intro/glossary.md
                   - Release Notes: ghippo/intro/release-notes.md
-                  - 全局管理FAQ: ghippo/intro/faq.md
               - 安装、登录和升级:
                   - 离线升级全局管理: ghippo/install/offline-install.md
                   - 自定义反向代理服务器地址: ghippo/install/reverse-proxy.md
@@ -1098,6 +1097,7 @@ nav:
                   - ingressgateway 无法启动: ghippo/troubleshooting/ghippo01.md
                   - 登录报错 401 或 403: ghippo/troubleshooting/ghippo02.md
                   - keycloak 无法启动: ghippo/troubleshooting/ghippo03.md
+                  - 单独升级全局管理时失败: ghippo/troubleshooting/ghippo04.md
   - 视频教程:
       - 索引: videos/index.md
       - 入门:
