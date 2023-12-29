@@ -32,7 +32,7 @@
 
       - 基于 SRIOV CNI 使用 RDMA 时，资源名称为 `SriovNetworkNodePolicy` 中定义的 `resourceName` 。详情参考 [RDMA 安装及使用准备](rdmapara.md)。
      
-      - 示例中的`spidernet.io/mellnoxrdma` 为 **基于 SRIOV 使用 RoCE 网卡** 的示例。请求值和限制值目前保持一致，输入值不大于最大可用值。
+        示例中的`spidernet.io/mellnoxrdma` 为 **基于 SRIOV 使用 RoCE 网卡** 的示例。请求值和限制值目前保持一致，输入值不大于最大可用值。
         
       
     - `运行命令`：添加如下内容:
