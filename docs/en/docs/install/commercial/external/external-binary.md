@@ -4,7 +4,8 @@ This document describes how to use third-party storage services to store Binarie
 
 ## Steps
 
-### Using S3 Compatible Service
+### Using S3 Compatible Service 00
+
 
 For S3 compatible services, simply configure the [clusterConfig.yaml](../cluster-config.md), no further operations are required.
 
