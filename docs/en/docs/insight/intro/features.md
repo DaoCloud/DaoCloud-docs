@@ -12,7 +12,7 @@ This page lists the features supported by Insight.
 DCE Community provides the following observable features.
 
 | Category | Subcategory | Description |
-| -------- | ----------------------------------------- --------- | ---------------------------------------- --------- |
+| -------- |-------------| ----------- |
 | Resource monitoring | Multicluster monitoring | Provide multicluster business centralized observability<br />The administrator manages multicluster alerts in a unified manner, and satisfies cluster and tenant administrator data isolation<br />Supports persistent cluster metrics and log data |    
 | | Scenario monitoring | Provide a monitoring overview of a single cluster, allowing you to view the running status of the cluster, understand the resource usage of the cluster, and the current alerts that are occurring in the cluster |
 | | Node monitoring | Support to view the running status of the node, etc., and understand the changes in the CPU, memory, network and other resources of the node |
