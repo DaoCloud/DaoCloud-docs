@@ -12,15 +12,17 @@ This page lists the features supported by Insight.
 DCE Community provides the following observable features.
 
 | Category | Subcategory | Description |
-| -------- | ----------------------------------------- --------- | ---------------------------------------- --------- |
-| Resource monitoring | Multicluster monitoring | Provide multicluster business centralized observability<br />The administrator manages multicluster alerts in a unified manner, and satisfies cluster and tenant administrator data isolation<br />Supports persistent cluster metrics and log data. |
-| | Scenario monitoring | Provides a monitoring overview of a single cluster, allowing you to view the running status of the cluster, understand the resource usage of the cluster, and the current alerts that are occurring in the cluster |
+| -------- |-------------| ----------- |
+| Resource monitoring | Multicluster monitoring | Provide multicluster business centralized observability<br />The administrator manages multicluster alerts in a unified manner, and satisfies cluster and tenant administrator data isolation<br />Supports persistent cluster metrics and log data |    
+| | Scenario monitoring | Provide a monitoring overview of a single cluster, allowing you to view the running status of the cluster, understand the resource usage of the cluster, and the current alerts that are occurring in the cluster |
 | | Node monitoring | Support to view the running status of the node, etc., and understand the changes in the CPU, memory, network and other resources of the node |
-| | Container Monitoring | Supports monitoring of resources such as stateless loads, daemon processes, pods, etc., can monitor the running status of the workload, and can view the number of alerts and the trend chart of resource consumption such as CPU and memory |
-| Dashboard | Platform Component Monitoring | Provide open-source selected dashboards through native Grafana, and provide built-in dashboards to support monitoring etcd, APIServer and other components |
-| | Cluster Resource Monitoring | Provides multi-dimensional monitoring of clusters, nodes, and namespaces. The data source used by Grafana supports viewing data from multiple clusters. |
-| Data Query | Index Query | Common Query pre-orders basic metrics, and after selecting query conditions such as cluster, type, node, and metric name, you can query the change trend of resources<br />Support querying metric charts and data details through native PromQL statements |
-| | Log query| You can query the logs of Node, Pod, Depoyment, Statefulset, etc., and you can query the context content of a single log<br />Support searching by keyword<br />Sort by time by default, and you can query the number of logs through the histogram <br />Support querying detailed information and context of a single log |
+| | Namespace monitoring | Support to view the summary of resources running in the namespace, including the total amount of CPU and memory used by the pods in the namespace |  
+| | Container Monitoring | Monitor resources such as stateless loads, daemon processes, pods, etc., as well as the running status of the workload, and support to view the number of alerts and the trend chart of resource consumption such as CPU and memory |
+| Dashboard | Platform Component Monitoring | Provide open-source selected dashboards through native Grafana, and provide built-in dashboards to monitor etcd, APIServer and other components |
+| | Cluster Resource Monitoring | Provide multi-dimensional monitoring of clusters, nodes and namespaces. The data source used by Grafana supports viewing data from multiple clusters |
+| Data Query | Index Query | Common Query pre-orders basic metrics, so after selecting query conditions such as cluster, type, node, and metric name, you can query the change trend of resources<br />Support to query metric charts and data details through native PromQL statements |
+| Log | Log query| Query the logs of Node, Pod, Depoyment, Statefulset, etc., and even the context content of a single log<br />Support searching by keyword<br />Sort by time by default, and query the number of logs through the histogram <br />Support querying  logs using Lucene |   
+| | Log Context | Support to query the context of multi-select logs. The default query is 100 entries, which can be adjusted according to needs |
 | | Log Download | Support to download logs within a period of time according to search criteria<br />Support exporting the content of a single log context |
 | alert Center | Active alert | Provide a histogram to view the change trend of the alert time<br />Support to view all the rules and details that are alerting |
 | | Historical alerts | You can query all alerts after automatic recovery or manual resolution |
