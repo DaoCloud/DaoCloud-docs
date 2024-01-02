@@ -31,20 +31,19 @@
         - 基于 Macvlan/VLAN CNI 使用 RDMA 时，资源名称为 [RDMA 安装及使用准备](rdmapara.md) 中创建 Spiderpool 时自定义名称，详情参考 [基于 Macvlan/IPVLAN 共享 ROCE 网卡](rdmapara.md/#基于-macvlan-ipvlan-共享-roce-网卡)
 
         - 基于 SRIOV CNI 使用 RDMA 时，资源名称为 `SriovNetworkNodePolicy` 中定义的 `resourceName` 。详情参考 [基于 SRI-OV使用 ROCE 网卡 ](rdmapara.md/#基于-sr-iov-使用-roce-网卡)。
-     
+    
         示例中的`spidernet.io/mellnoxrdma` 为 **基于 SRIOV 使用 RoCE 网卡** 的示例。请求值和限制值目前保持一致，输入值不大于最大可用值。
         
-      
-    - `运行命令`：添加如下内容:
+    - `运行命令`：为防止 Pod 启动异常退出， 添加如下运行命令:
     
-        ```text
-               - sh
-              - -c
-              - |
-                ls -l /dev/infiniband /sys/class/net
-                sleep 1000000
+        ```
+        - sh
+        - -c
+        - |
+          ls -l /dev/infiniband /sys/class/net
+          sleep 1000000
        ```
-   
+    
 1. 完成`容器配置`、`服务配置`页面的信息输入后。然后，进入`高级配置`，点击配置`容器网卡`。
 
     ![容器网卡](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/useippool02.png)
