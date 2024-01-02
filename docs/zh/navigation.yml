@@ -1230,6 +1230,14 @@ nav:
           - 商业产品: native/commerce.md
           - 开源项目: native/open.md
       - 知识分享:
+          - Git 文档指南:
+              - Git 文档流程: native/knowledge/git/index.md
+              - 开启两步安全验证: native/knowledge/git/2auth.md
+              - Git 常见问题: native/knowledge/git/rebase.md
+              - VSCode 编辑技巧: native/knowledge/git/vscode.md
+              - UI 翻译预览: native/knowledge/git/ui-preview.md
+              - GitHub 混迹技巧: native/knowledge/git/github.md
+              - 同步中英文档: native/knowledge/git/lsync.md
           - 索引: native/knowledge/knowledge.md
           - 排障方案: native/knowledge/troubleshoot.md
           - 最佳实践: native/knowledge/best-practice.md
@@ -1238,11 +1246,4 @@ nav:
           - 前沿热点: native/knowledge/hot-spots.md
           - 安全漏洞: native/knowledge/bugs.md
           - 电子书: native/knowledge/ebooks.md
-          - Git:
-              - Git 文档流程: native/knowledge/git/index.md
-              - 开启两步安全验证: native/knowledge/git/2auth.md
-              - Git 常见问题: native/knowledge/git/rebase.md
-              - VSCode 编辑技巧: native/knowledge/git/vscode.md
-              - UI 翻译预览: native/knowledge/git/ui-preview.md
-              - GitHub 混迹技巧: native/knowledge/git/github.md
           - 其他: native/knowledge/other.md
