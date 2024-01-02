@@ -3,7 +3,7 @@ hide:
    - toc
 ---
 
-# authorization strategy
+# Authorization Policy
 
 The authorization policy is similar to a four-layer to seven-layer "firewall". It will analyze and match the data flow like a traditional firewall, and then perform corresponding actions.
 The authorization policy applies whether the request is from internal or external.
