@@ -8,7 +8,7 @@
 - `os-pkgs-${disto}-${kubean_version}.tar.gz` Kubean 提供的 osPackage 离线包
 - `offline-${install_version}-${arch}.tar` 安装器全模式离线镜像包：
     - K8S binaries & images
-    - DCE5 各个模块的 images 文件和 charts 包
+    - DCE 5.0 各个模块的 images 文件和 charts 包
 
 ## 使用场景
 

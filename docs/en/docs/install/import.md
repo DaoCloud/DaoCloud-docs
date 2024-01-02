@@ -2,7 +2,7 @@
 
 ## Overview
 
-The DCE5 installer (only supports version v0.9.0 and above) introduces the `import-artifact` command for importing offline resources. Currently, the following offline resources can be imported:
+The DCE 5.0 installer (only supports version v0.9.0 and above) introduces the `import-artifact` command for importing offline resources. Currently, the following offline resources can be imported:
 
 - `*.iso` operating system ISO image files
 
