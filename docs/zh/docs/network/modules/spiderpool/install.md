@@ -25,7 +25,7 @@ hide:
 
 3. 在`版本选择`中选择希望安装的版本，点击`安装`。
 
-4. 在安装界面，填写所需的安装参数。
+4. 在安装界面，填写所需的安装参数。如需要使用RDMA 资源，更多详情可参考 [RDMA 安装及使用准备](rdmapara.md)
 
     ![spiderpool instal1](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/spiderpool-install1.png)
 

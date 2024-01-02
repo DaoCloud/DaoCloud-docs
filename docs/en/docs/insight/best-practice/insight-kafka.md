@@ -101,14 +101,14 @@ logstashPipeline:
   insight-logs.conf: |
     input {
       kafka {
-        topics_pattern => "insight-logs"         # 也可以模糊匹配 如:all-log.*
-        bootstrap_servers => "insight-kafka.insight-system.svc.cluster.local:9092"   # kafka的ip 端口
+        topics_pattern => "insight-logs"         # You can also use a wildcard for matching, like: all-log.*
+        bootstrap_servers => "insight-kafka.insight-system.svc.cluster.local:9092"   # kafka IP Port
         enable_auto_commit => true
-        #codec => json                               # 数据格式
-        consumer_threads => 1                       # 对应partition的数量
+        #codec => json                               # data format
+        consumer_threads => 1                       # The number of corresponding partitions
         decorate_events => true
-        #auto_offset_rest => "latest"               # 默认值就是这个
-        #group_id => "all-logs-group"                # kafka的消费组
+        #auto_offset_rest => "latest"               # The default value
+        #group_id => "all-logs-group"                # Kafka's consumption group
         codec => "plain"
       }
     }
@@ -139,14 +139,14 @@ logstashPipeline:
   insight-event.conf: |
     input {
       kafka {
-        topics_pattern => "insight-event"         # 也可以模糊匹配 如:all-log.*
-        bootstrap_servers => "insight-kafka.insight-system.svc.cluster.local:9092"   # kafka的ip 端口
+        topics_pattern => "insight-event"         # You can also use a wildcard for matching, like: all-log.*
+        bootstrap_servers => "insight-kafka.insight-system.svc.cluster.local:9092"   # kafka ip port
         enable_auto_commit => true
-        #codec => json                               # 数据格式
-        consumer_threads => 1                       # 对应partition的数量
+        #codec => json                               # data format
+        consumer_threads => 1                       # The number of corresponding partitions
         decorate_events => true
-        #auto_offset_rest => "latest"               # 默认值就是这个
-        #group_id => "all-logs-group"                # kafka的消费组
+        #auto_offset_rest => "latest"               # The default value
+        #group_id => "all-logs-group"                # Kafka's consumption group
         codec => "plain"
       }
     }
@@ -177,14 +177,14 @@ logstashPipeline:
   insight-gw-skoala.conf: |
     input {
       kafka {
-        topics_pattern => "insight-gw-skoala"         # 也可以模糊匹配 如:all-log.*
-        bootstrap_servers => "insight-kafka.insight-system.svc.cluster.local:9092"   # kafka的ip 端口
+        topics_pattern => "insight-gw-skoala"         #  You can also use a wildcard for matching, like: all-log.*
+        bootstrap_servers => "insight-kafka.insight-system.svc.cluster.local:9092"   # kafka ip port
         enable_auto_commit => true
-        #codec => json                               # 数据格式
-        consumer_threads => 1                       # 对应partition的数量
+        #codec => json                               # date format
+        consumer_threads => 1                       # the number of corresponding partitions
         decorate_events => true
-        #auto_offset_rest => "latest"               # 默认值就是这个
-        #group_id => "all-logs-group"                # kafka的消费组
+        #auto_offset_rest => "latest"               # The default value
+        #group_id => "all-logs-group"                # Kafka's consumption group
         codec => "plain"
       }
     }

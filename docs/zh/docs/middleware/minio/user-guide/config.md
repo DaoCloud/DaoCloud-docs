@@ -19,4 +19,4 @@ MinIO 内置了参数配置 UI 界面。
 
     ![配置参数](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/view03.png)
 
-4. 点击`保存`，修改内容将立即生效。
+4. 点击`保存`，会导致 MinIO 重启。

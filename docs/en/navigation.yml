@@ -521,6 +521,7 @@ nav:
               - Quick Start:
                   - Install virtnest-agent: virtnest/quick-start/index.md
                   - Create VM: virtnest/quick-start/create-image.md
+                  - Create Secret: virtnest/quick-start/create-secret.md
                   - Create VM by Template: virtnest/quick-start/create-tep.md
                   - VM Template: virtnest/quick-start/tep.md
                   - Connect VM: virtnest/quick-start/access.md
@@ -608,9 +609,10 @@ nav:
                   - Log Collection Troubleshooting: insight/best-practice/debug-log.md
                   - Trace Collection Troubleshooting: insight/best-practice/debug-trace.md
                   - Configure Notification Template: insight/best-practice/notify-helper.md
-                  - Receive SkyWalking Trace Data with Zero Code using OTel: insight/best-practice/sw-to-otel.md
+                  - Receive SkyWalking Trace Data using OTel: insight/best-practice/sw-to-otel.md
                   - Use Insight to find service's problems: insight/best-practice/find_root_cause.md
-                  - Kafka + ES Stream Architecture for Handling Large-Scale Logs: insight/best-practice/insight-kafka.md
+                  - Kafka + ES for Handling Large-Scale Logs: insight/best-practice/insight-kafka.md
+                  - Integrate DeepFlow: insight/best-practice/integration_deepflow.md
               - Compatibility Test:
                   - K8s Compatibility Test: insight/compati-test/k8s-compatibility.md
                   - Rancher Compatibility Test: insight/compati-test/rancher-compatibility.md
@@ -794,8 +796,9 @@ nav:
       - Data Service:
           - Middleware:
               - Intro:
-                  - What is Middleware Data Service: middleware/index.md
-                  - Supported Kubernetes Versions: middleware/compatibility.md
+                  - What is Middleware: middleware/index.md
+                  - Features: middleware/common/feature.md
+                  - Supported K8s Versions: middleware/compatibility.md
                   - Permissions: middleware/permission.md
               - Common Config:
                   - First-Time Use: middleware/common/index.md
@@ -811,9 +814,9 @@ nav:
                       - Concepts: middleware/mysql/intro/concepts.md
                       - Release Notes: middleware/mysql/release-notes.md
                   - Quick Start:
-                      - Create MySQL: middleware/mysql/user-guide/create.md
-                      - Update MySQL: middleware/mysql/user-guide/update.md
-                      - Delete MySQL: middleware/mysql/user-guide/delete.md
+                      - Create a MySQL Instance: middleware/mysql/user-guide/create.md
+                      - Update a MySQL Instance: middleware/mysql/user-guide/update.md
+                      - Delete a MySQL Instance: middleware/mysql/user-guide/delete.md
                       - View MySQL Logs: middleware/mysql/user-guide/logs.md
                   - Best Practice:
                       - MySQL Cross-Cluster Synchronization: middleware/mysql/best-practice/crossclusterssync.md

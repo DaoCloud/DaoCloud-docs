@@ -2,40 +2,56 @@
 
 ## 使用场景介绍
 
-DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。其它 OS 类型的节点或内核需要用户手动构建离线 yum 源。
+当工作节点的内核版本与 Global 集群的控制节点内核版本或 OS 类型不一致时，需要用户手动构建离线 yum 源。
 
-本文介绍如何构建小内核版本的 CentOS 7.9 离线 yum 源，并在安装 Gpu Operator 时，通过 `RepoConfig.ConfigMapName` 参数来使用。
+本文介绍如何构建离线 yum 源， 并在安装 Gpu Operator 时，通过 `RepoConfig.ConfigMapName` 参数来使用。
 
 ## 前提条件
 
 1. 用户已经在平台上安装了 v0.12.0 及以上版本的 addon 离线包。
-2. 待部署 GPU Operator 的集群节点 OS 必须为 CentOS 7.9，且内核版本完全一致。
-3. 准备一个能够和待部署 GPU Operator 的集群网络能够联通的文件服务器，如 nginx 或 minio。
-4. 准备一个能够访问互联网、待部署 GPU Operator 的集群和文件服务器的节点，且节点上已经完成 [Docker 的安装](../../../../install/community/kind/online.md#安装-docker)。
+2. 准备一个能够和待部署 GPU Operator 的集群网络能够联通的文件服务器，如 nginx 或 minio。
+3. 准备一个能够访问互联网、待部署 GPU Operator 的集群和文件服务器的节点，且节点上已经完成 [Docker 的安装](../../../../install/community/kind/online.md#安装-docker)。
 
 ## 操作步骤
 
-本文以内核版本为 3.10.0-1160.95.1.el7.x86_64 的 CentOS 7.9 节点为例，介绍如何升级预置的 GPU operator 离线包的 yum 源。
+本文以内核版本为 `3.10.0-1160.95.1.el7.x86_64` 的 CentOS 7.9 节点为例，介绍如何构建 GPU operator 离线包的 yum 源。
 
-### 步骤一：检查集群节点的内核版本
+### 1. 检查集群节点的 OS 和内核版本
 
-执行如下命令，查看集群下待部署 GPU Operator 节点的内核版本。
+分别在 Global 集群的控制节点和待部署 GPU Operator 的节点执行如下命令，若两个节点的 OS 和内核版本一致则无需构建 yum 源，
+可参考[离线安装 GPU Operator](./install_nvidia_driver_of_operator.md) 文档直接安装；若两个节点的 OS 或内核版本不一致，请执行[下一步](#yum)。
 
-```bash
-uname -a
-```
+1. 执行如下命令，查看集群下待部署 GPU Operator 节点的发行版名称和版本号。
 
-预期输出如下：
+    ```bash
+    cat /etc/redhat-release
+    ```
 
-```
-Linux localhost.localdomain 3.10.0-1160.95.1.el7.x86_64 #1 SMP Mon Oct 19 16:18:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
-```
+    预期输出如下：
 
-输出结果为当前节点内核版本 `3.10.0-1160.el7.x86_64` 。
+    ```
+    CentOS Linux release 7.9 (Core)
+    ```
 
-### 步骤二：制作离线 yum 源
+    输出结果为当前节点内核版本 `CentOS 7.9` 。
 
-本步骤在一个能够访问互联网和文件服务器的节点上进行操作。
+2. 执行如下命令，查看集群下待部署 GPU Operator 节点的内核版本。
+
+    ```bash
+    uname -a
+    ```
+
+    预期输出如下：
+
+    ```
+    Linux localhost.localdomain 3.10.0-1160.95.1.el7.x86_64 #1 SMP Mon Oct 19 16:18:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+    ```
+
+    输出结果为当前节点内核版本 `3.10.0-1160.el7.x86_64` 。
+
+### 2. 制作离线 yum 源
+
+在一个能够访问互联网和文件服务器的节点上进行操作。
 
 1. 在一个能够访问互联网和文件服务器的节点上执行如下命令新建一个名为 __yum.sh__ 的脚本文件。
 
@@ -113,9 +129,10 @@ Linux localhost.localdomain 3.10.0-1160.95.1.el7.x86_64 #1 SMP Mon Oct 19 16:18:
 
 至此，您已经生成了内核为 __3.10.0-1160.95.1.el7.x86_64__ 的离线的 yum 源： __centos-base__ 。
 
-### 步骤三：上传离线 yum 源到文件服务器
+### 3. 上传离线 yum 源到文件服务器
 
-本步骤继续在一个能够访问互联网和文件服务器的节点上进行操作。主要用于将上一步中生成的 yum 源上传到可以被待部署 GPU Operator 的集群进行访问的文件服务器中。
+在一个能够访问互联网和文件服务器的节点上进行操作。主要用于将上一步中生成的 yum
+源上传到可以被待部署 GPU Operator 的集群进行访问的文件服务器中。
 文件服务器可以为 Nginx 、 Minio 或其它支持 Http 协议的文件服务器。
 
 本操作示例采用的是 DCE5 火种节点内置的 Minio 作为文件服务器，Minio 相关信息如下：
@@ -168,9 +185,9 @@ Linux localhost.localdomain 3.10.0-1160.95.1.el7.x86_64 #1 SMP Mon Oct 19 16:18:
     mc cp centos-base minio/centos-base --recursive
     ```
 
-### 步骤四：在集群创建配置项用来保存 yum 源信息
+### 4. 在集群创建配置项用来保存 yum 源信息
 
-本步骤在待部署 GPU Operator 集群的控制节点上进行操作。
+在待部署 GPU Operator 集群的控制节点上进行操作。
 
 1. 执行如下命令创建名为 __CentOS-Base.repo__ 的文件，用来指定 yum 源存储的配置信息。
 

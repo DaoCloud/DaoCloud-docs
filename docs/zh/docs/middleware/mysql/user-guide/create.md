@@ -7,11 +7,11 @@ hide:
 
 接入 MySQL 数据库后，参照以下步骤创建 MySQL 实例。
 
-1. 在实例列表中，点击右上角的 `新建实例`。
+1. 在实例列表中，点击右上角的 `创建主备实例`。
 
     ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/mysql/images/create00.png)
 
-2. 在`创建 MySQL 实例`页面中，配置`基本信息`后，点击`下一步`。
+2. 在创建主备实例页面中，配置`基本信息`后，点击`下一步`。
 
     ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/mysql/images/create01.png)
 

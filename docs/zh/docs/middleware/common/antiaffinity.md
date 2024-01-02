@@ -1,6 +1,6 @@
 # 工作负载反亲和性
 
-创建[Elasticsearch 搜索服务](../elasticsearch/intro/index.md)、[Kafka 消息队列](../kafka/intro/index.md)、[MinIO 对象存储](../minio/intro/index.md)、[MySQL 数据](../mysql/intro/index.md)、[RabbitMQ 消息](../rabbitmq/intro/index.md)、[PostgreSQL 数据库](../postgresql/intro/index.md)、[Redis 数据库](../redis/intro/index.md)、[MongoDB 数据库](../mongodb/intro/index.md)实例时，可以在服务设置页面配置工作负载反亲和性。
+创建[Elasticsearch 搜索服务](../elasticsearch/intro/index.md)、[Kafka 消息队列](../kafka/intro/index.md)、[MinIO 对象存储](../minio/intro/index.md)、[MySQL 数据](../mysql/intro/index.md)、[RabbitMQ 消息](../rabbitmq/intro/index.md)、[PostgreSQL 数据库](../postgresql/intro/index.md)、[Redis 数据库](../redis/intro/index.md)、[MongoDB 数据库](../mongodb/intro/index.md)、[RocketMQ 消息队列](../rocketmq/intro/index.md)实例时，可以在服务设置页面配置工作负载反亲和性。
 
 工作负载反亲和性的作用原理是，在一定的拓扑域（作用域）范围内，如果检测到已经有工作负载带有反亲和性配置中添加的某个标签，则不会将新建的工作负载部署到该拓扑域。这样做的好处是：
 
@@ -34,7 +34,7 @@
     - Pod 选择器：设置 Pod 标签。**同一个拓扑域内，只能有一个带有此标签的 Pod**。
     - 有关反亲和性以及各种操作符的详细介绍，可参考[操作符](../../kpanda/user-guide/workloads/pod-config/scheduling-policy.md#_4)
 
-        ![创建](images/anti-affinity02.jpg)
+    ![创建](images/anti-affinity02.jpg)
     
     !!! note
 

@@ -4,7 +4,7 @@
 
 ## 问题一
 
-由于大多数 DCE 4.0 集群已安装 dx-insight 作为监控系统，若此时安装 insight-agent 会与集群中已有的 prometheus operator 冲突，导致无法顺利安装。
+由于大多数 DCE 4.0 集群已安装 dx-insight 作为监控系统，若此时安装 insight-agent 会与集群中已有的 Prometheus Operator 冲突，导致无法顺利安装。
 
 ### 解决方案
 
@@ -12,9 +12,12 @@
 
 ### 操作步骤
 
-1. 登录到控制台。
-2. 分别在两个 prometheus operator 中启用 `--deny-namespaces` 参数。
-3. 执行以下命令（以下命令仅供参考，实际需替换命令中的 prometheus operator 名称和命名空间）。
+1. 登录 DCE 4.0 集群，进入 `设置` -> `空间管理` -> `insight-system` -> `超卖策略`中删除 insight-system 下的超卖策略。
+
+    ![dce4](../../images/dce4-limit-range.png)
+
+2. 登录 DCE 4.0 集群的控制台。分别在两个 Prometheus Operator 中启用 `--deny-namespaces` 参数。
+   执行以下命令（以下命令仅供参考，实际需替换命令中的 Prometheus Operator 名称和命名空间）。
 
     ```bash
     kubectl edit deploy insight-agent-kube-prometh-operator -n insight-system
@@ -45,9 +48,13 @@
 
 Insight Agent 部署成功后，fluentbit 未采集 DCE 4.0 的日志。
 
+!!! note
+
+    该问题已在 Insight Agent v0.22.0 版本修复，安装或升级后即不存在该问题。
+
 ### 解决方案
 
-DCE4.0 的 docker 存储目录是 `/var/lib/containers` ，与 insigh-agent 的配置中的路径不同，故未采集日志。
+DCE 4.0 的 Docker 存储目录是 `/var/lib/containers` ，与 insigh-agent 的配置中的路径不同，故未采集日志。
 
 ### 操作步骤
 

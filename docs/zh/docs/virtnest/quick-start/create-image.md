@@ -18,26 +18,26 @@
 
 参考以下步骤，使用镜像创建一个虚拟机。
 
-1. 点击左侧导航栏上的`容器管理`，然后点击`虚拟机`，进入`虚拟机管理`页面。
+1. 点击左侧导航栏上的`容器管理`，然后点击`虚拟机`，进入`虚拟机`页面。
 
     ![虚拟机](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/createvm01.png)
 
-2. 在虚拟机列表页面，点击创建虚拟机 - 选择镜像创建虚拟机。
+2. 在虚拟机列表页面，点击`创建虚拟机` -> 选择`通过镜像创建`。
 
-    ![镜像创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/createvm02.png)
+    ![镜像创建](../images/createvm02.png)
 
 3. 进入镜像创建页面，依次填写基本信息、镜像配置、存储与网络、登录设置后，在页面右下角点击`确定`完成创建。
 
     系统将自动返回虚拟机列表。点击列表右侧的 `︙`，可以对虚拟机执行关机/开启、重启、克隆、更新、创建快照、控制台访问（VNC）、删除等操作。
     克隆和快照能力依赖于存储池的选择。
 
-    ![虚拟机操作](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/createvm03.png)
+    ![虚拟机操作](../images/createvm03.png)
 
 ### 基本信息
 
 在`创建虚拟机`页面中，根据下表输入信息后，点击`下一步`。
 
-![基础信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/createvm04.png)
+![基础信息](../images/createvm04.png)
 
 - 名称：最多包含 63 个字符，只能包含小写字母、数字及分隔符（“-”），且必须以小写字母或数字开头及结尾。
   同一命名空间内名称不得重复，而且名称在虚拟机创建好之后不可更改。
@@ -47,13 +47,11 @@
   找不到所需的命名空间时可以根据页面提示去[创建新的命名空间](../../kpanda/user-guide/namespaces/createns.md)。
 - 标签/注解：选择为虚拟机添加所需的标签/注解信息。
 
-### 容器配置
+### 镜像配置
 
 根据下表填写镜像相关信息后，点击`下一步`
 
-![容器配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/createvm05.png)
-
-![使用镜像仓库](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/createvm06.png)
+![使用镜像仓库](../images/createvm05.png)
 
 - 镜像来源：支持三种类型的来源。
 
@@ -74,7 +72,7 @@
 
 ### 存储与网络配置
 
-![存储与网络配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/createvm07.png)
+![存储与网络配置](../images/createvm06.png)
 
 - 存储：系统默认创建一个 VirtIO 类型的 rootfs 系统盘，用于存放操作系统和数据。
   默认使用块存储。如果需要使用克隆和快照功能，请确保您的存储池支持 VolumeSnapshots 功能，
@@ -95,7 +93,7 @@
 - 用户名/密码：可以通过用户名和密码登录至虚拟机。
 - SSH：选择 SSH 登录方式时可为虚拟机绑定 SSH 密钥，用于日后登录虚拟机。
 
-![登录设置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/createvm08.png)
+![登录设置](../images/createvm07.png)
 
 ## YAML 创建
 
@@ -103,7 +101,7 @@
 
 进入虚拟机列表页，点击 `通过 YAML 创建`按钮
 
-![yaml 创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/createvm09.png)
+![yaml 创建](../images/createvm08.png)
 
 ??? note "点击查看创建虚拟机的 YAML 示例"
 

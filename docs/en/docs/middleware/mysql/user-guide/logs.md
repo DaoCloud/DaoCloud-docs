@@ -3,21 +3,21 @@ hide:
   - toc
 ---
 
-# View MySQL logs
+# View MySQL Logs
 
 ## Steps
 
-By accessing the instance details page of each MySQL; it is possible to support viewing MySQL logs.
+By accessing the instance details page of each MySQL, it is possible to support viewing MySQL logs.
 
-1. In the MySQL instance list, select the log you want to view, and click `Instance Name` to enter the instance details page.
+1. In the MySQL instance list, select the log you want to view, and click Instance Name to enter the instance details page.
 
-    <!--screenshot-->
+    ![Instance Name](../images/log01.png)
 
-2. In the left menu bar of the instance, you will find a menu bar option for log viewing.
+2. In the left menu bar of the instance, you will find `Logs` option for log viewing.
 
-    <!--screenshot-->
+    ![Logs](../images/log02.png)
 
-3. Click `Log View` to enter the log view page (Insight log view).
+3. Click `Logs` to enter the log view page (Insight log view).
 
 ## Log View Instructions
 
@@ -29,4 +29,4 @@ On the log viewing page, we can easily view logs. Common operations are describe
 * Support to view the context of the log, click the `context` icon on the right
 * Support export log
 
-<!--screenshot-->
+![Log Details](../images/log03.png)
