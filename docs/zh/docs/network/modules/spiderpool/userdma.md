@@ -28,9 +28,9 @@
 
     - `网络资源参数`：
       
-      - 基于 Macvlan/VLAN CNI 使用 RDMA 时，资源名称为 [RDMA 安装及使用准备](rdmapara.md) 中创建 Spiderpool 时自定义名称，详情参考 [RDMA 安装及使用准备](rdmapara.md)
+        - 基于 Macvlan/VLAN CNI 使用 RDMA 时，资源名称为 [RDMA 安装及使用准备](rdmapara.md) 中创建 Spiderpool 时自定义名称，详情参考 [基于 Macvlan/IPVLAN 共享 ROCE 网卡](rdmapara.md/#基于-macvlan-ipvlan-共享-roce-网卡)
 
-      - 基于 SRIOV CNI 使用 RDMA 时，资源名称为 `SriovNetworkNodePolicy` 中定义的 `resourceName` 。详情参考 [RDMA 安装及使用准备](rdmapara.md)。
+        - 基于 SRIOV CNI 使用 RDMA 时，资源名称为 `SriovNetworkNodePolicy` 中定义的 `resourceName` 。详情参考 [基于 SRI-OV使用 ROCE 网卡 ](rdmapara.md/#基于-sr-iov-使用-roce-网卡)。
      
         示例中的`spidernet.io/mellnoxrdma` 为 **基于 SRIOV 使用 RoCE 网卡** 的示例。请求值和限制值目前保持一致，输入值不大于最大可用值。
         
