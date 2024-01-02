@@ -148,21 +148,58 @@ metadata:
 
     ![argorolllout01](images/argorollout01.png)
 
-    参数说明：
+    **参数说明：**
 
     - 名称：请填写 __argorollout__ ，建议。
     - 版本：默认选择为 __2.32.0__ ，addon 仓库目前仅有该版本。
     - 命名空间：请选择 __argo-rollouts-system__ ，建议。
 
-    !!! note
+    **开启 contour**
 
-        其余参数均使用默认值即可。
+    应用工作台在新版本 v0.24.0 支持了基于 contour 的流量控制的灰度发布策略，如果需要使用该能力，需要执行如下事项：
+
+    - 定义 `value.yaml` 中的 `initContainers` 字段下的参数：
+
+      ```yaml
+      argo-rollouts:
+        controller:
+          initContainers:                                    
+            - name: copy-contour-plugin
+              image: release.daocloud.io/skoala/rollouts-plugin-trafficrouter-contour:v0.3.0 # 离线化时需要在镜像地址前增加离线化镜像仓库地址
+              command: ["/bin/sh", "-c"]                    
+              args:
+                - cp /bin/rollouts-plugin-trafficrouter-contour /plugins
+              volumeMounts:                                  
+                - name: contour-plugin
+                  mountPath: /plugins
+          trafficRouterPlugins:                              
+            trafficRouterPlugins: |-
+              - name: argoproj-labs/contour
+                location: "file:///plugins/rollouts-plugin-trafficrouter-contour" 
+          volumes:                                           
+            - name: contour-plugin
+              emptyDir: {}
+          volumeMounts:                                      
+            - name: contour-plugin
+              mountPath: /plugins
+      ```
+
+    - 在argo-rollouts 安装完成后，还需要执行一下命令去修改clusterRole：
+
+      ```shell
+      # clusterRole的名称需要根据实际的安装情况来修改。
+      kubectl patch clusterrole argo-rollouts --type='json' -p='[{"op": "add", "path": "/rules/-", "value": {"apiGroups":["projectcontour.io"],"resources":["httpproxies"],"verbs":["get","list","watch","update","patch","delete"]}}]'
+      ```
+
+    Rollout 部署成功后，可以创建金丝雀发布界面选择 contour 作为流量控制。
 
 4. 点击右下角确定按钮即可完成安装。可以查看 __argo-rollouts-system__ 命名空间下的相关的负载是否均处于 __运行中__ 状态判断。
 
-5. 部署成功后，即可前往 __应用工作台__ 模块在当前集群使用灰度发布能力。
+5. 部署成功后，即可前往 __应用工作台__ 模块在当前集群使用`基于云原生网关`的灰度发布能力。
+
+    ![contour](images/contour01.png)
 
 !!! note
 
-    argo-rollout 是一个用于 Kubernetes 应用的灰度发布和流量管理的工具，它专注于应用程序的部署和更新过程。
-    在使用过程中，需要在应用的所在集群部署。如果需要在多个集群中使用灰度发布能力，需要在所对应的集群一一部署 argo-rollout 组件。
+    - argo-rollout 是一个用于 Kubernetes 应用的灰度发布和流量管理的工具，它专注于应用程序的部署和更新过程。
+    - 在使用过程中，需要在应用的所在集群部署。如果需要在多个集群中使用灰度发布能力，需要在所对应的集群一一部署 argo-rollout 组件。
