@@ -22,20 +22,21 @@ The corresponding functionalities for each component are as follows:
     of DCE 5.0, you can set the __enable__ keyword in the __manifest.yaml__ file to true or false to
     choose whether to enable them.
 
-## Deploying the argo-cd Component
+## Deploying the argo-cd component
 
 If you chose not to enable it during the deployment of DCE 5.0, follow the instructions below
 to deploy it and use the continuous deployment capability provided by the Workbench.
 
 ### Procedure
 
-1. In the DCE 5.0 product module, go to __Container Management__ -> __Cluster List__ and enter the details page of the __kpanda-global-cluster__.
+1. In the DCE 5.0 product module, go to __Container Management__ -> __Clusters__ and enter the details page of the __kpanda-global-cluster__.
 
 2. In the cluster details page, navigate to the menu on the left side and go to __Helm Apps__ -> __Helm Charts__
    -> select the __All__ repository. Search for __argo-cd__, click on it to enter the details page, and install it.
 
 3. On the installation interface, fill in the required installation parameters.
 
+    ![argocd01](images/argocd01.png)
 
     Parameter descriptions:
 
@@ -49,7 +50,7 @@ to deploy it and use the continuous deployment capability provided by the Workbe
 
 4. Click the OK button at the bottom right to complete the installation. Confirm that the related argo-cd resources in the __argocd__ namespace are all in the __Running__ state.
 
-5. After successfully deploying the resources mentioned above, go to the __Configurations & Secrets__ -> __Configurations__
+5. After successfully deploying the resources mentioned above, go to the __ConfigMaps & Secrets__ -> __ConfigMaps__
    menu on the left side of the current cluster details page. Search for __amamba-config__ and click on __Edit YAML__.
 
 6. Add the following parameters in the __data->amamba-config.yaml__ section:
@@ -60,6 +61,8 @@ to deploy it and use the continuous deployment capability provided by the Workbe
         host: argocd-server.argocd.svc.cluster.local:80  # argocd server address, format: argocd-server service name.namespace.svc.cluster.local:80
         namespace: argocd  # argocd deployment namespace
     ```
+
+    ![argocd02](images/argocd02.png)
 
 7. After making the changes, go to the __Workloads__ -> __Pods__ menu on the left side of the current cluster details
    page and search for __amamba-apiserver__ and __amamba-syncer__. Restart them one by one.
@@ -97,14 +100,14 @@ metadata:
   name: argocd-rbac-cm
 ```
 
-## Deploying the vela-core Component
+## Deploying the vela-core component
 
 If you chose not to enable it during the deployment of DCE 5.0, follow the instructions below
 to deploy and utilize the OAM application capabilities provided by the Workbench.
 
 ### Procedure
 
-1. In the DCE 5.0 product module, go to __Container Management__ -> __Cluster List__ and enter
+1. In the DCE 5.0 product module, go to __Container Management__ -> __Clusters__ and enter
    the details page of the __kpanda-global-cluster__ cluster.
 
 2. In the cluster details page, navigate to the left sidebar menu and select __Helm Apps__ -> __Helm Charts__ -> choose the addon repository. Search for __vela-core__, click on it to enter the details page, and proceed with the installation.
@@ -125,7 +128,7 @@ to deploy and utilize the OAM application capabilities provided by the Workbench
 
 4. Click the __OK__ button on the bottom right corner to complete the installation. You can check if the relevant workloads under the __vela-system__ namespace are all in the __Running__ state.
 
-5. Once you have confirmed the successful deployment of the above workloads, go to the current cluster's details page and navigate to the left sidebar menu and select __Configuration Items & Keys__ -> __Configuration Items__. Search for __amamba-config__ and click on __Edit YAML__.
+5. Once you have confirmed the successful deployment of the above workloads, go to the current cluster's details page and navigate to the left sidebar menu and select __ConfigMaps & Secrets__ -> __ConfigMaps__. Search for __amamba-config__ and click on __Edit YAML__.
 
 6. In the __data->amamba-config.yaml__ section, add the following parameters:
 
@@ -141,13 +144,13 @@ to deploy and utilize the OAM application capabilities provided by the Workbench
 
 8. Once the restart is successful, you can access the __Workbench__ module to utilize the OAM application capabilities.
 
-## Deploying argo-rollouts
+## Deploying the argo-rollouts component
 
 If you chose not to enable it during the deployment of DCE 5.0, follow the instructions below to deploy and utilize the gray release capabilities provided by the Workbench.
 
 ### Procedure
 
-1. In the DCE 5.0 product module, go to __Container Management__ -> __Cluster List__ and enter the details page of the __kpanda-global-cluster__ cluster (the cluster where you want to perform gray releases on applications).
+1. In the DCE 5.0 product module, go to __Container Management__ -> __Clusters__ and enter the details page of the __kpanda-global-cluster__ cluster (the cluster where you want to perform gray releases on applications).
 
 2. In the cluster details page, navigate to the left sidebar menu and select __Helm Apps__ -> __Helm Charts__ -> choose
    the addon repository. Search for __argo-rollouts__, click on it to enter the details page, and proceed with the installation.
