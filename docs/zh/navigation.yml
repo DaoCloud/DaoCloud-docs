@@ -9,7 +9,6 @@ nav:
               - 申请社区免费体验: dce/license0.md
               - 功能和优势: dce/features.md
               - 适用场景: dce/scenario.md
-              - 云原生词汇: dce/terms.md
               - K8s 认证服务商: dce/kcsp.md
               - DCE 5.0 Release Notes:
                   - 20231130 版本发布: dce/dce-rn/20231130.md
@@ -18,6 +17,7 @@ nav:
                   - 20230731 版本发布: dce/dce-rn/20230731.md
                   - 20230630 版本发布: dce/dce-rn/20230630.md
                   - 20230531 版本发布: dce/dce-rn/20230531.md
+              - 云原生词汇: dce/terms.md
           - 安装教程:
               - 安装简介: install/index.md
               - 安装依赖项: install/install-tools.md
@@ -38,7 +38,7 @@ nav:
                       - 前置检查: install/commercial/prepare.md
                       - 端口要求: install/commercial/port-requirements.md
                       - 外接组件要求（非必须）: 
-                          - 使用外接服务存储 Binaries 资源: install/commercial/external/external-binary.md)
+                          - 使用外接服务存储 Binaries 资源: install/commercial/external/external-binary.md
                           - 使用外接镜像仓库与 Chart 仓库存储镜像与 Chart 包: install/commercial/external/external-imageandchart.md
                           - 使用外接中间件服务: install/commercial/external/external-middlewares.md
                           - 使用外接服务存储 OS Repo 资源: install/commercial/external/external-os.md

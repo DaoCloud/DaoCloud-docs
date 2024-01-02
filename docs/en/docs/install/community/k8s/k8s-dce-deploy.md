@@ -359,6 +359,6 @@ chmod +x ./dce5-installer
 
     ![Successful login](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/firstscreen.png)
 
-[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
-[Free Trial](../dce/license0.md){ .md-button .md-button--primary }
+[Download DCE 5.0](../../../download/index.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../../index.md){ .md-button .md-button--primary }
+[Free Trial](../../../dce/license0.md){ .md-button .md-button--primary }

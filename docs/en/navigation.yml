@@ -9,38 +9,40 @@ nav:
               - Free Trial: dce/license0.md
               - Features and Benefits: dce/features.md
               - Use Cases: dce/scenario.md
-              - Glossary: dce/terms.md
               - DaoCloud is a KCSP: dce/kcsp.md
-              - Enterprise Release Notes:
+              - Release Notes:
                   - 20231130 Release: dce/dce-rn/20231130.md
                   - 20231031 Release: dce/dce-rn/20231031.md
                   - 20230831 Release: dce/dce-rn/20230831.md
                   - 20230731 Release: dce/dce-rn/20230731.md
                   - 20230630 Release: dce/dce-rn/20230630.md
                   - 20230531 Release: dce/dce-rn/20230531.md
+              - Glossary: dce/terms.md
           - Installation:
               - Overview: install/index.md
               - Install Dependencies: install/install-tools.md
               - Install DCE Community:
                   - Resource Planning: install/community/resources.md
                   - Install DCE Community on a Kind Cluster: install/community/kind/online.md
-                  - Deploy a K8s Cluster from Scratch to DCE 5.0 Community: install/community/kind/k8s-dce-deploy.md
+                  - Deploy a K8s Cluster from Scratch to DCE 5.0 Community: install/community/k8s/k8s-dce-deploy.md
                   - Online in K8s Cluster: install/community/k8s/online.md
                   - Offline Install in K8s Cluster: install/community/k8s/offline.md
               - Install DCE 5.0 Enterprise:
-                  - Deployment Architecture: install/commercial/deploy-arch.md
-                  - Deployment Requirements: install/commercial/deploy-requirements.md
-                  - Preparation: install/commercial/prepare.md
-                  - Offline Install: install/commercial/start-install.md
-                  - Use Cases: install/commercial/scenarios.md
-                  - Edit clusterConfig.yaml: install/commercial/cluster-config.md
-                  - Edit manifest.yaml: install/commercial/manifest.md
-              - Upgrade/Uninstall/FAQs:
-                  - Upgrade DCE 5.0 Modules: install/upgrade.md
-                  - Upgrade DCE 5.0 Standard to Platinum: install/evolve.md
-                  - Uninstall: install/uninstall.md
-                  - Import Offline Resources: install/import.md
-                  - Troubleshoot: install/faq.md
+                  - Introduction: 
+                      - Deployment Architecture: install/commercial/deploy-arch.md
+                      - Configuration:
+                          - clusterConfig.yaml: install/commercial/cluster-config.md
+                          - manifest.yaml: install/commercial/manifest.md
+                  - Deployment Requirements:
+                      - Overview: install/commercial/deploy-requirements.md
+                      - Preparation: install/commercial/prepare.md
+                      - Ports: install/commercial/port-requirements.md
+                      - External Components (Optional):
+                          - Store Binaries with External Service: install/commercial/external/external-binary.md
+                          - Store Images and Charts with External Registry and Chart Repo: install/commercial/external/external-imageandchart.md
+                          - Use External Middleware: install/commercial/external/external-middlewares.md
+                          - Store OS Repo with External Service: install/commercial/external/external-os.md
+                  - Start Installation: install/commercial/start-install.md
               - Install with Different K8s:
                   - With OpenShift OCP: install/k8s-install/ocp-install-dce5.0.md
                   - With Alibaba Cloud ECS: install/k8s-install/ecs-install-dce5.0.md
@@ -49,8 +51,15 @@ nav:
                   - With Oracle Linux R9/R8 U1: install/os-install/oracleLinux-install-dce5.0.md
                   - With TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
                   - With Other Linux: install/os-install/otherlinux.md
+              - Upgrade/Uninstall/FAQs:
+                  - Upgrade DCE 5.0 Modules: install/upgrade.md
+                  - Upgrade DCE 5.0 Standard to Platinum: install/evolve.md
+                  - Uninstall: install/uninstall.md
+                  - Import Offline Resources: install/import.md
+              - Troubleshoot: install/faq.md
               - Best Practices:
-                  - Etcd Components Deployed in Host Mode and Separated from Control Plane: install/best-practices/etcd-host-deploy.md
+                  - Use Cases: install/commercial/scenarios.md
+                  - etcd Components Deployed in Host Mode and Separated from Control Plane: install/best-practices/etcd-host-deploy.md
               - Installer Release Notes: install/release-notes.md
       - Workbench:
           - Workbench:

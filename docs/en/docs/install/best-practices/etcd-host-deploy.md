@@ -15,8 +15,8 @@ achieving an independent high-availability etcd.
 1. Download the full mode offline package on the seed machine. You can download the
    latest version from the [download center](../../download/index.md).
 
-    | CPU Architecture | Version | Download Link                                                                                               |
-    | ---------------- | ------- | ---------------------------------------------------------------------------------------------------------- |
+    | CPU Architecture | Version | Download Link |
+    | ---------------- | ------- | ------------- |
     | AMD64            | v0.13.0 | <https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.13.0-amd64.tar>       |
     | ARM64            | v0.13.0 | <https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.13.0-arm64.tar>       |
 

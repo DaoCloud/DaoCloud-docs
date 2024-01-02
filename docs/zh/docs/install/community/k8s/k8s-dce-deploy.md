@@ -356,6 +356,6 @@ chmod +x ./dce5-installer
 
     ![成功登录](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/firstscreen.png)
 
-[下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }
-[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
+[下载 DCE 5.0](../../../download/index.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../../index.md){ .md-button .md-button--primary }
+[申请社区免费体验](../../../dce/license0.md){ .md-button .md-button--primary }
