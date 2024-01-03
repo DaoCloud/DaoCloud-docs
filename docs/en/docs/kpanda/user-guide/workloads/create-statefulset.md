@@ -152,7 +152,7 @@ Advanced configuration includes four parts: load network configuration, upgrade 
 
      
     
-     Kubernetes v1.7 and later versions can set Pod management policies through __.spec.podManagementPolicy__ , which supports the following two methods:
+     Kubernetes v1.7 and later versions can set Pod management policies through __ .spec.podManagementPolicy__ , which supports the following two methods:
     
      - __OrderedReady__ : The default Pod management strategy, which means that Pods are deployed in order. Only after the deployment of the previous Pod is successfully completed, the stateful load will start to deploy the next Pod. Pods are deleted in reverse order, with the last created being deleted first.
     

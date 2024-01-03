@@ -9,11 +9,11 @@ Tailing Sidecar is a Kubernetes cluster-level logging proxy that acts as a strea
 
 Insight supports log collection through the Sidecar mode, which involves running a Sidecar container alongside each Pod to output log data to the standard output stream. This enables FluentBit to collect container logs effectively.
 
-The Insight Agent comes with the `tailing-sidecar operator` installed by default. To enable file log collection within a container, you can add annotations to the Pod, which will automatically inject the Tailing Sidecar container. The injected Sidecar container reads the files in the business container and outputs them to the standard output stream.
+The Insight Agent comes with the __tailing-sidecar operator__ installed by default. To enable file log collection within a container, you can add annotations to the Pod, which will automatically inject the Tailing Sidecar container. The injected Sidecar container reads the files in the business container and outputs them to the standard output stream.
 
 Here are the specific steps to follow:
 
-1. Modify the YAML file of the Pod and add the following parameters in the `annotation` field:
+1. Modify the YAML file of the Pod and add the following parameters in the __annotation__ field:
 
     ```yaml
     metadata:
@@ -23,12 +23,12 @@ Here are the specific steps to follow:
 
     Field description:
 
-    - `sidecar-name-0`: Name for the Tailing Sidecar container (optional; a container name will be created automatically if not specified, starting with the prefix "tailing-sidecar").
-    - `volume-name-0`: Name of the storage volume.
-    - `path-to-tail-0`: File path to tail.
+    - __sidecar-name-0__ : Name for the Tailing Sidecar container (optional; a container name will be created automatically if not specified, starting with the prefix "tailing-sidecar").
+    - __volume-name-0__ : Name of the storage volume.
+    - __path-to-tail-0__ : File path to tail.
 
     !!! note
 
-        Each Pod can run multiple sidecar containers, separated by `;`. This allows different sidecar containers to collect multiple files and store them in various volumes.
+        Each Pod can run multiple sidecar containers, separated by __;__ . This allows different sidecar containers to collect multiple files and store them in various volumes.
 
-2. Restart the Pod. Once the Pod's status changes to `Running`, you can use the `Log Query` interface to search for logs within the container of the Pod.
+2. Restart the Pod. Once the Pod's status changes to __Running__ , you can use the __Log Query__ interface to search for logs within the container of the Pod.

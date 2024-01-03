@@ -16,8 +16,8 @@
 
 请按照以下步骤查询链路：
 
-1. 进入`可观测性` 产品模块，
-2. 在左边导航栏选择 `链路追踪` -> `调用链`。
+1. 进入 __可观测性__ 产品模块，
+2. 在左边导航栏选择 __链路追踪__ -> __调用链__ 。
 
     ![jaeger](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/trace00.png)
 
@@ -25,7 +25,7 @@
 
         列表中支持对 Span 数、延时、发生时间进行排序。
 
-3. 点击筛选栏中的 `Trace ID 搜索` 切换使用 TraceID 搜索链路。
+3. 点击筛选栏中的 __Trace ID 搜索__ 切换使用 TraceID 搜索链路。
 
    - 使用 TraceID 搜索请输入完整的 TraceID。
 
@@ -46,8 +46,8 @@
     - 默认查询该链路的持续时间及其结束之后一分钟内的日志数据。
     - 查询的日志内容为日志文本中包含该链路的 TraceID 的日志和链路调用过程中相关的容器日志。
   
-2. 点击 `查看更多` 后可带条件跳转到`日志查询` 的页面。
-3. 支持基于 `容器组` 过滤和关键字模糊搜索。
+2. 点击 __查看更多__ 后可带条件跳转到 __日志查询__ 的页面。
+3. 支持基于 __容器组__ 过滤和关键字模糊搜索。
 
     ![tracelog](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/trace01.png)
 

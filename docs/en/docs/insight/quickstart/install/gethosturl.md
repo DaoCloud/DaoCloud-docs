@@ -1,6 +1,6 @@
 # How to get the address of data upload?
 
-When [installing insight-agent](./install-agent.md), you need to configure the service address to upload the cluster metrics, logs, and trace data to `global service cluster`.
+When [installing insight-agent](./install-agent.md), you need to configure the service address to upload the cluster metrics, logs, and trace data to __global service cluster__ .
 This page outlines the steps on how to obtain the address for data uploads.
 
 ## Parameter Description
@@ -16,9 +16,9 @@ This page outlines the steps on how to obtain the address for data uploads.
 
     If you use an external ElasticSearch cluster, please fill in the address, username and password of the corresponding cluster.
 
-## Install insight-agent in `global service cluster`
+## Install insight-agent in __global service cluster__ 
 
-When installing `Global Service Cluster`, it is recommended to access the cluster through a domain name:
+When installing __Global Service Cluster__ , it is recommended to access the cluster through a domain name:
 
 ```go
 export vminsert_host="vminsert-insight-victoria-metrics-k8s-stack.insight-system.svc.cluster.local" // metrics
@@ -26,15 +26,15 @@ export es_host="insight-es-master.insight-system.svc.cluster.local" // log
 export otel_col_host="insight-opentelemetry-collector.insight-system.svc.cluster.local" // link
 ```
 
-## Install insight-agent on `worker cluster`
+## Install insight-agent on __worker cluster__ 
 
-The `Working Cluster` needs to upload the data of metrics, logs, and traces to the `Global Service Cluster`. Please ensure that the Insight in the `global service cluster` is running and has exposed the address that the working cluster can access.
+The __Working Cluster__ needs to upload the data of metrics, logs, and traces to the __Global Service Cluster__ . Please ensure that the Insight in the __global service cluster__ is running and has exposed the address that the working cluster can access.
 
 ### Obtain insight-agent through the interface
 
 Refer to the following steps to obtain insight-agent through the interface.
 
-1. Log in to the console of `Global Service Cluster` and run the following command:
+1. Log in to the console of __Global Service Cluster__ and run the following command:
 
    ```sh
    export INSIGHT_SERVER_IP=$(kubectl get service insight-server -n insight-system --output=jsonpath={.spec.clusterIP})
@@ -75,26 +75,26 @@ Please confirm that your cluster has installed a load balancer, and follow the s
 
 	in,
 
-- `lb-vminsert-insight-victoria-metrics-k8s-stack`: URL for uploading metrics data
-- `lb-insight-opentelemetry-collector`: trace data upload address
-- `mcamel-es-cluster-masters-es-http`: log data upload address
+- __lb-vminsert-insight-victoria-metrics-k8s-stack__ : URL for uploading metrics data
+- __lb-insight-opentelemetry-collector__ : trace data upload address
+- __mcamel-es-cluster-masters-es-http__ : log data upload address
 
 ### Connect insight-agent via NodePort
 
 #### Obtain NodePort address through UI page
 
-1. Click `Container Management` from the left navigation bar to enter `Cluster List`.
+1. Click __Container Management__ from the left navigation bar to enter __Clusters__ .
 
     
 
-2. Select the cluster `kpanda-global-cluster`, select `Container Application` -> `Service` in the left navigation bar, select `insight-system` namespace, and view the ports exposed by the corresponding service.
+2. Select the cluster __kpanda-global-cluster__ , select __Container Application__ -> __Service__ in the left navigation bar, select __insight-system__ namespace, and view the ports exposed by the corresponding service.
 
     
 
-- `vminsert-insight-victoria-metrics-k8s-stack`: index data upload address, set the NodePort corresponding to port 8480
-- `insight-opentelemetry-collector`: trace data upload address, set the NodePort corresponding to port 8006
-- `insight-opentelemetry-collector`: Audit log data upload address, set the NodePort corresponding to port 4317
-- `mcamel-es-cluster-masters-es-http`: log data upload address, set the NodePort corresponding to port 9200
+- __vminsert-insight-victoria-metrics-k8s-stack__ : index data upload address, set the NodePort corresponding to port 8480
+- __insight-opentelemetry-collector__ : trace data upload address, set the NodePort corresponding to port 8006
+- __insight-opentelemetry-collector__ : Audit log data upload address, set the NodePort corresponding to port 4317
+- __mcamel-es-cluster-masters-es-http__ : log data upload address, set the NodePort corresponding to port 9200
 
 #### Obtain the service address through the console
 

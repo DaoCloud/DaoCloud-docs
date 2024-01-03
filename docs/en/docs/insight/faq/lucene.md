@@ -18,23 +18,23 @@ to combine multiple keywords. Lucene supports the following operators:
 
 1. AND operator
 
-    - Use `AND` or `&&` to represent the logical AND relationship.
-    - Example: `term1 AND term2` or `term1 && term2`
+    - Use __AND__ or __&&__ to represent the logical AND relationship.
+    - Example: __term1 AND term2__ or __term1 && term2__ 
 
 2. OR operator
 
-    - Use `OR` or `||` to represent the logical OR relationship.
-    - Example: `term1 OR term2` or `term1 || term2`
+    - Use __OR__ or __||__ to represent the logical OR relationship.
+    - Example: __term1 OR term2__ or __term1 || term2__ 
 
 3. NOT operator
 
-    - Use `NOT` or `-` to represent the logical NOT relationship.
-    - Example: `term1 NOT term2` or `term1 -term2`
+    - Use __NOT__ or __-__ to represent the logical NOT relationship.
+    - Example: __term1 NOT term2__ or __term1 -term2__ 
 
 4. Quotes
 
     - You can enclose a phrase in quotes for exact matching.
-    - Example: `"exact phrase"`
+    - Example: __"exact phrase"__ 
 
 #### Examples
 
@@ -46,10 +46,10 @@ to combine multiple keywords. Lucene supports the following operators:
 
     Explanation:
 
-    - The query field `field1` must contain the keyword `keyword1`.
-    - Additionally, either the field `field2` must contain the keyword `keyword2` or the field `field3`
-      must contain the keyword `keyword3`.
-    - Finally, the field `field4` must not contain the keyword `keyword4`.
+    - The query field __field1__ must contain the keyword __keyword1__ .
+    - Additionally, either the field __field2__ must contain the keyword __keyword2__ or the field __field3__ 
+      must contain the keyword __keyword3__ .
+    - Finally, the field __field4__ must not contain the keyword __keyword4__ .
 
 2. Not specify fields
 
@@ -59,24 +59,24 @@ to combine multiple keywords. Lucene supports the following operators:
 
     Explanation:
 
-    - The query keyword `keyword1` must exist in any searchable field.
-    - Additionally, either the keyword `keyword2` must exist or the keyword `keyword3` must exist in any searchable field.
-    - Finally, the keyword `keyword4` must not exist in any searchable field.
+    - The query keyword __keyword1__ must exist in any searchable field.
+    - Additionally, either the keyword __keyword2__ must exist or the keyword __keyword3__ must exist in any searchable field.
+    - Finally, the keyword __keyword4__ must not exist in any searchable field.
 
 ### Fuzzy Queries
 
-In Lucene, fuzzy queries can be performed using the tilde (`~`) operator for approximate matching.
+In Lucene, fuzzy queries can be performed using the tilde ( __~__ ) operator for approximate matching.
 You can specify an edit distance to limit the degree of similarity in the matches.
 
 ```lucene
 term~
 ```
 
-In the above example, `term` is the keyword to perform a fuzzy match on.
+In the above example, __term__ is the keyword to perform a fuzzy match on.
 
 Please note the following:
 
-- After the tilde (`~`), you can optionally specify a parameter to control the similarity of the fuzzy query.
+- After the tilde ( __~__ ), you can optionally specify a parameter to control the similarity of the fuzzy query.
 - The parameter value ranges from 0 to 2, where 0 represents an exact match, 1 allows for one edit operation
   (such as adding, deleting, or replacing characters) to match, and 2 allows for two edit operations to match.
 - If no parameter value is specified, the default similarity threshold used is 0.5.
@@ -87,13 +87,13 @@ Please note the following:
 
 Lucene supports the following wildcard queries:
 
-1. `*` wildcard: Used to match zero or more characters.
+1. __*__ wildcard: Used to match zero or more characters.
 
-    For example, `te*t` can match "test", "text", "tempest", etc.
+    For example, __te*t__ can match "test", "text", "tempest", etc.
 
-2. `?` wildcard: Used to match a single character.
+2. __?__ wildcard: Used to match a single character.
 
-    For example, `te?t` can match "test", "text", etc.
+    For example, __te?t__ can match "test", "text", etc.
 
 #### Example
 
@@ -101,40 +101,40 @@ Lucene supports the following wildcard queries:
 te?t
 ```
 
-In the above example, `te?t` represents a word that starts with "te", followed by
+In the above example, __te?t__ represents a word that starts with "te", followed by
 any single character, and ends with "t". This query can match words like "test", "text", "tent", etc.
 
-It is important to note that the question mark (`?`) represents only a single character.
+It is important to note that the question mark ( __?__ ) represents only a single character.
 If you want to match multiple characters or varying lengths of characters, you can use the
-asterisk (`*`) for multi-character wildcard matching. Additionally, the question mark will not match an empty string.
+asterisk ( __*__ ) for multi-character wildcard matching. Additionally, the question mark will not match an empty string.
 
-To summarize, in Lucene syntax, the question mark (`?`) is used as a single-character wildcard
+To summarize, in Lucene syntax, the question mark ( __?__ ) is used as a single-character wildcard
 to match any single character. By using the question mark in your search keywords, you can
 perform more flexible and specific pattern matching.
 
 ### Range Queries
 
-Lucene syntax supports range queries, where you can use square brackets `[ ]` or curly braces `{ }`
+Lucene syntax supports range queries, where you can use square brackets __[ ]__ or curly braces __{ }__ 
 to represent a range. Here are examples of range queries:
 
 1. Inclusive boundary range query:
 
-    - Square brackets `[ ]` indicate a closed interval that includes the boundary values.
-    - Example: `field:[value1 TO value2]` represents the range of values for `field`,
-      including both `value1` and `value2`.
+    - Square brackets __[ ]__ indicate a closed interval that includes the boundary values.
+    - Example: __field:[value1 TO value2]__ represents the range of values for __field__ ,
+      including both __value1__ and __value2__ .
 
 2. Exclusive boundary range query:
 
-   - Curly braces `{ }` indicate an open interval that excludes the boundary values.
-   - Example: `field:{value1 TO value2}` represents the range of values for `field`
-     between `value1` and `value2`, excluding both.
+   - Curly braces __{ }__ indicate an open interval that excludes the boundary values.
+   - Example: __field:{value1 TO value2}__ represents the range of values for __field__ 
+     between __value1__ and __value2__ , excluding both.
 
 3. Omitted boundary range query:
 
    - You can omit one or both boundary values to specify an infinite range.
-   - Example: `field:[value TO ]` represents the range of values for `field` from `value` to
-     positive infinity, and `field:[ TO value]` represents the range of values for `field` from
-     negative infinity to `value`.
+   - Example: __field:[value TO ]__ represents the range of values for __field__ from __value__ to
+     positive infinity, and __field:[ TO value]__ represents the range of values for __field__ from
+     negative infinity to __value__ .
 
    !!! note
 
@@ -142,7 +142,7 @@ to represent a range. Here are examples of range queries:
        such as numeric fields, date fields, etc. Also, ensure that you correctly specify
        the boundary values as the actual value type of the field in your query.
        If you want to perform a range query across the entire index without specifying
-       a specific field, you can use the wildcard query `*` instead of a field name.
+       a specific field, you can use the wildcard query __*__ instead of a field name.
 
 #### Examples
 
@@ -152,7 +152,7 @@ to represent a range. Here are examples of range queries:
    timestamp:[2022-01-01 TO 2022-01-31]
    ```
 
-   This will retrieve data where the `timestamp` field falls within the range from January 1, 2022, to January 31, 2022.
+   This will retrieve data where the __timestamp__ field falls within the range from January 1, 2022, to January 31, 2022.
 
 2. Not specify a field
 
@@ -160,4 +160,4 @@ to represent a range. Here are examples of range queries:
    *:[value1 TO value2]
    ```
 
-   This will search the entire index for documents with values ranging from `value1` to `value2`.
+   This will search the entire index for documents with values ranging from __value1__ to __value2__ .

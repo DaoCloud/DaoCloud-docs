@@ -31,12 +31,12 @@ The specific steps to create and manage credentials are as follows:
 
     ![createcredential](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/cred01.png)
 
-2. In the __Create Credential__ page, configure the relevant parameters and click __OK__.
+2. In the __Create Credential__ page, configure the relevant parameters and click __OK__ .
 
     ![createcredential](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/cred02.png)
 
     - Fill in the __Credential Name__ and set the ID that can be used in pipelines,
-      for example, __dockerhub-id__. Note: Once set, it cannot be changed.
+      for example, __dockerhub-id__ . Note: Once set, it cannot be changed.
     - In the __Type__ field, select the type of credential you want to add.
     - Fill in the corresponding fields based on the credential type:
 

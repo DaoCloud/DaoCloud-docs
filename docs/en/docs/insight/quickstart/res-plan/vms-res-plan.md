@@ -11,9 +11,9 @@ After 14 days of disk observation of vmstorage of clusters of different sizes,
 We found that the disk usage of vmstorage was positively correlated with the
 amount of metrics it stored and the disk usage of individual data points.
 
-1. The amount of metrics stored instantaneously `increase(vm_rows{ type != "indexdb"}[30s])`
+1. The amount of metrics stored instantaneously __increase(vm_rows{ type != "indexdb"}[30s])__ 
     to obtain the increased amount of metrics within 30s
-2. Disk usage of a single data point: `sum(vm_data_size_bytes{type!="indexdb"}) / sum(vm_rows{type != "indexdb"})`
+2. Disk usage of a single data point: __sum(vm_data_size_bytes{type!="indexdb"}) / sum(vm_rows{type != "indexdb"})__ 
 
 ## calculation method
 
@@ -21,8 +21,8 @@ amount of metrics it stored and the disk usage of individual data points.
 
 **Parameter Description:**
 
-1. The unit of disk usage is `Byte`.
-2. `Storage duration (days) x 60 x 24` converts time (days) into minutes to calculate disk usage.
+1. The unit of disk usage is __Byte__ .
+2. __Storage duration (days) x 60 x 24__ converts time (days) into minutes to calculate disk usage.
 3. The default collection time of Prometheus in Insight Agent is 30s, so twice the amount of metrics
     will be generated within 1 minute.
 4. The default storage duration in vmstorage is 1 month, please refer to

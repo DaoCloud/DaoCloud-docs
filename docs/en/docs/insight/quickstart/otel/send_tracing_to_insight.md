@@ -5,11 +5,11 @@ This document describes how customers can send trace data to Insight on their ow
 1. Customer apps report traces to Insight through OTEL Agent/SDK
 2. Forwarding traces to Insight through Opentelemetry Collector (OTEL COL)
 
-In each cluster where Insight Agent is installed, there is an `insight-agent-otel-col` component
+In each cluster where Insight Agent is installed, there is an __insight-agent-otel-col__ component
 that is used to receive trace data from that cluster. Therefore, this component serves as the
 entry point for user access and needs to obtain its address first. You can get the address of
 the Opentelemetry Collector in the cluster through the DCE 5.0 interface, such as
-`insight-agent-opentelemetry-collector.insight-system.svc.cluster.local:4317`:
+ __insight-agent-opentelemetry-collector.insight-system.svc.cluster.local:4317__ :
 
 In addition, there are some slight differences for different reporting methods:
 
@@ -51,7 +51,9 @@ There are two ways to achieve this:
     Ensure that Insight Agent is working properly and after [installing the Instrumentation CR](./operator.md#instrumentation-cr),
     you only need to add the following annotation to the Pod:
 
-    `instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation" `
+    ```console
+    instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
+    ```
 
     For example:
 

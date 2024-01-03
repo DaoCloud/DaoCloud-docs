@@ -43,7 +43,7 @@ The template will be rendered based on the following data.
 
 ### Instructions for Use
 
-1. `.` character
+1. __ .__ character
 
     Render the specified object in the current scope.
 
@@ -53,17 +53,17 @@ The template will be rendered based on the following data.
     {{ . }}
     ```
 
-2. Conditional statement `if / else`
+2. Conditional statement __if / else__ 
 
-    Use `if` to check the data and run `else` if it does not meet.
+    Use __if__ to check the data and run __else__ if it does not meet.
 
     ```go
     {{if .Labels.namespace }}Namespace: {{ .Labels.namespace }} \n{{ end }}
     ```
 
-3. Loop feature `for`
+3. Loop feature __for__ 
 
-    The `for` feature is used to repeat the code content.
+    The __for__ feature is used to repeat the code content.
 
     Example 1: Traverse the labels list to obtain all label content for alerts.
 

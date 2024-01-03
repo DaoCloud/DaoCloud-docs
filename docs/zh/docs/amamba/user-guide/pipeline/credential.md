@@ -11,11 +11,11 @@ hide:
 
 目前，您可以在应用工作台中创建以下 3 种类型的凭证：
 
-- __用户名和密码__：用于存储用户名和密码的认证信息，若第三方网站或应用程序支持用户名/密码的方式访问，则可以选择这种类型，例如 GitHub、GitLab 和 Docker Hub 的帐户。
+- __用户名和密码__ ：用于存储用户名和密码的认证信息，若第三方网站或应用程序支持用户名/密码的方式访问，则可以选择这种类型，例如 GitHub、GitLab 和 Docker Hub 的帐户。
 
-- __访问令牌（Secret text）__：API token 之类的 token (如 GitHub 个人访问 token)。
+- __访问令牌（Secret text）__ ：API token 之类的 token (如 GitHub 个人访问 token)。
 
-- __kubeconfig__：用于配置跨集群认证。
+- __kubeconfig__ ：用于配置跨集群认证。
 
 创建和管理凭证的具体步骤如下：
 

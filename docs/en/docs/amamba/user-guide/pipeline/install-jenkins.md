@@ -4,11 +4,11 @@
 
 - Before installing Jenkins, make sure there is a default storage class in the cluster where Jenkins will be installed.
 - Please ensure that it is installed in the __amamba-system__ namespace.
-- If installing on a global service cluster, make sure to have an instance of __amamba-jenkins__ in the __Container Management__ -> __Helm Applications__, under the __amamba-system__ namespace.
+- If installing on a global service cluster, make sure to have an instance of __amamba-jenkins__ in the __Container Management__ -> __Helm Applications__ , under the __amamba-system__ namespace.
 
 ## Getting Started with Installation
 
-1. Go to the __Container Management__ module and find the cluster where you want to install Jenkins in the __Cluster List__. Click the name of that cluster.
+1. Go to the __Container Management__ module and find the cluster where you want to install Jenkins in the __Clusters__ . Click the name of that cluster.
 
     !!! note
 
@@ -16,11 +16,11 @@
 
     ![Click Cluster Name](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins11.png)
 
-2. In the left navigation bar, select __Helm Applications__ -> __Helm Templates__, and find and click __Jenkins__.
+2. In the left navigation bar, select __Helm Applications__ -> __Helm Templates__ , and find and click __Jenkins__ .
 
     ![jenkins helm](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins12.png)
 
-3. In the __Version Selection__, choose the desired version of Jenkins to install, and click __Install__.
+3. In the __Version Selection__ , choose the desired version of Jenkins to install, and click __Install__ .
 
     ![Install](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins13.png)
 
@@ -66,8 +66,8 @@ Note: Currently, only integration with Jenkins installed via the DCE 5.0 platfor
 
     ![Deployment Completed](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins17.png)
 
-3. Select the toolchain type as __Jenkins__, fill in the integration name, Jenkins address, username, and password.
-   If the Jenkins address is using the HTTPS protocol, provide the certificate. By default, the account/password for Jenkins deployed through Helm is __admin/Admin01__.
+3. Select the toolchain type as __Jenkins__ , fill in the integration name, Jenkins address, username, and password.
+   If the Jenkins address is using the HTTPS protocol, provide the certificate. By default, the account/password for Jenkins deployed through Helm is __admin/Admin01__ .
 
     ![Deployment Completed](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins18.png)
 
@@ -99,13 +99,13 @@ To address these issues, you need to go to the Jenkins backend for relevant conf
 
     !!! note
 
-        To configure the sender's email address, click on the top-right user icon -> Settings, and then scroll down to __Email Address__.
+        To configure the sender's email address, click on the top-right user icon -> Settings, and then scroll down to __Email Address__ .
 
     ![Jenkins Email Config](../../images/install-jenkins06.png)
 
 ### Configuring SonarQube Server Address in the Jenkins Backend for the SonarQube Configuration Step
 
-1. Go to the Jenkins backend, click on Manage Jenkins -> Configure System, and then scroll down to __SonarQube servers__. Click on __Add SonarQube__.
+1. Go to the Jenkins backend, click on Manage Jenkins -> Configure System, and then scroll down to __SonarQube servers__ . Click on __Add SonarQube__ .
 
 2. Fill in the relevant parameters. The parameter descriptions are as follows:
 

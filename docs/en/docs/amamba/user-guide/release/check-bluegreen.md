@@ -41,7 +41,7 @@ For a blue-green release job with the status "Paused", you can perform the opera
 You can view the historical versions that have been released and rollback to a previous version with one click.
 
 1. On the __Progressive Delivery__ details page, click on the __History Versions__ tab.
-2. Select the target version and click __...__ and __Rollback__ .
+2. Select the target version and click __ ...__ and __Rollback__ .
 
     ![Rollback](../../images/blue05.png)
 

@@ -43,11 +43,11 @@ After the updated version of the object is published, the grayscale publishing t
 
 By updating the release task, you can modify the traffic scheduling strategy of the grayscale release process.
 
-1. On the __Grayscale Publishing Task__ details page, click __ⵗ__ in the upper right corner of the page and select __Update Publishing Task__.
+1. On the __Grayscale Publishing Task__ details page, click __ⵗ__ in the upper right corner of the page and select __Update Publishing Task__ .
 
     <!--![]()screenshots-->
 
-2. Adjust the publishing rules and click __OK__.
+2. Adjust the publishing rules and click __OK__ .
 
     <!--![]()screenshots-->
 
@@ -55,11 +55,11 @@ By updating the release task, you can modify the traffic scheduling strategy of 
 
 It supports viewing historical versions released in the past, and you can roll back to a previous version with one click.
 
-1. On the details page of the __Grayscale Publishing Task__, click the __Historical Version__ tab.
+1. On the details page of the __Grayscale Publishing Task__ , click the __Historical Version__ tab.
 
     <!--![]()screenshots-->
 
-2. Select the target version and click __Rollback__.
+2. Select the target version and click __Rollback__ .
 
     <!--![]()screenshots-->
 

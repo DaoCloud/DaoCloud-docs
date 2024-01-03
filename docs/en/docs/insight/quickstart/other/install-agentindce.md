@@ -13,7 +13,7 @@ Enable the parameters of the prometheus operator, retain the prometheus operator
 ### Steps
 
 1. Log in to the console.
-2. Enable the `--deny-namespaces` parameter in the two prometheus operators respectively.
+2. Enable the __--deny-namespaces__ parameter in the two prometheus operators respectively.
 3. Execute the following command (the following command is for reference only, the actual command needs to replace the prometheus operator name and namespace in the command).
 
     ```bash
@@ -24,20 +24,20 @@ Enable the parameters of the prometheus operator, retain the prometheus operator
 
 !!! note
     - As shown in the figure above, the dx-insight component is deployed under the dx-insight tenant, and the insight-agent is deployed under the insight-system tenant.
-      Add `--deny-namespaces=insight-system` in the prometheus operator in dx-insight,
-      Add `--deny-namespaces=dx-insight` in the prometheus operator in insight-agent.
+      Add __--deny-namespaces=insight-system__ in the prometheus operator in dx-insight,
+      Add __--deny-namespaces=dx-insight__ in the prometheus operator in insight-agent.
     - Just add deny namespace, both prometheus operators can continue to scan other namespaces, and the related collection resources under kube-system or customer business namespaces are not affected.
     - Please pay attention to the problem of node exporter port conflict.
 
 ### Supplementary Explanation
 
-The open-source `node-exporter` turns on hostnetwork by default and the default port is 9100.
-If the monitoring system of the cluster has installed `node-exporter`, then installing `insight-agent` at this time will cause node-exporter port conflict and it cannot run normally.
+The open-source __node-exporter__ turns on hostnetwork by default and the default port is 9100.
+If the monitoring system of the cluster has installed __node-exporter__ , then installing __insight-agent__ at this time will cause node-exporter port conflict and it cannot run normally.
 
 !!! note
-    Insight's `node exporter` will enable some features to collect special indicators, so it is recommended to install.
+    Insight's __node exporter__ will enable some features to collect special indicators, so it is recommended to install.
 
-Currently, it does not support modifying the port in the installation command. After `helm install insight-agent`, you need to manually modify the related ports of the insight node-exporter daemonset and svc.
+Currently, it does not support modifying the port in the installation command. After __helm install insight-agent__ , you need to manually modify the related ports of the insight node-exporter daemonset and svc.
 
 ## Issue Two
 
@@ -45,7 +45,7 @@ After Insight Agent is successfully deployed, fluentbit does not collect logs of
 
 ### Solution
 
-The docker storage directory of DCE 4.0 is `/var/lib/containers`, which is different from the path in the configuration of insigh-agent, so the logs are not collected.
+The docker storage directory of DCE 4.0 is __/var/lib/containers__ , which is different from the path in the configuration of insigh-agent, so the logs are not collected.
 
 ### Steps
 

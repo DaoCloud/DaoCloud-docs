@@ -58,11 +58,11 @@ EOF
 
     这类注解只有一个，用于添加 OpenTelemetry 相关的环境变量，比如链路上报地址、容器所在的集群 id、命名空间等：
 
-    ```bash
+    ```console
     instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
     ```
 
-    其中 value 被 `/` 分成两部分，第一个值 `insight-system` 是第二步安装的 CR 的命名空间，第二个值 `insight-opentelemetry-autoinstrumentation` 是这个 CR 的名字。
+    其中 value 被 __/__ 分成两部分，第一个值 __insight-system__ 是第二步安装的 CR 的命名空间，第二个值 __insight-opentelemetry-autoinstrumentation__ 是这个 CR 的名字。
 
 - 添加 golang ebpf 探针容器
 
@@ -132,7 +132,7 @@ EOF
 
     1. 用于添加 OpenTelemetry 相关的环境变量
     2. 假设这是您的 Golang 应用程序
-    3. 注意与上面 `command` 内容`/usr/local/bin/emojivoto-voting-svc` 保持一致
+    3. 注意与上面 __command__ 内容 __/usr/local/bin/emojivoto-voting-svc__ 保持一致
 
 最终生成的 Yaml 内容如下：
 

@@ -26,15 +26,15 @@ Ensure that you have a SonarQube environment and that it is properly connected t
 
 ## Creating a Pipeline
 
-1. On the Pipelines page, click __Create Pipeline__.
+1. On the Pipelines page, click __Create Pipeline__ .
 
 
 
-2. Select __Custom Creation__.
+2. Select __Custom Creation__ .
 
 
 
-3. Enter a name and use default values for other fields, then click __OK__.
+3. Enter a name and use default values for other fields, then click __OK__ .
 
 
 

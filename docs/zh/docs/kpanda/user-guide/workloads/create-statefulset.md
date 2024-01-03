@@ -150,7 +150,7 @@
 
 === "容器管理策略"
     
-    Kubernetes v1.7 及其之后的版本可以通过 __.spec.podManagementPolicy__ 设置 Pod 的管理策略，支持以下两种方式：
+    Kubernetes v1.7 及其之后的版本可以通过 __ .spec.podManagementPolicy__ 设置 Pod 的管理策略，支持以下两种方式：
     
     - __按序策略（OrderedReady）__ ：默认的 Pod 管理策略，表示按顺序部署 Pod，只有前一个 Pod 部署 成功完成后，有状态负载才会开始部署下一个 Pod。删除 Pod 时则采用逆序，最后创建的最先被删除。
     

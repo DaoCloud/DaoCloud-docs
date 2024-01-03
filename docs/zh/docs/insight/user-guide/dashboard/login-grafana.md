@@ -19,6 +19,6 @@ Insight 借助 Grafana 提供了丰富的可视化能力，同时保留了访问
 
     ![登录 grafana](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/grafana02.png){ width=1000px}
 
-3. 点击 `Log in` 完成登录。
+3. 点击 __Log in__ 完成登录。
 
     ![成功登录 grafana](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/grafana03.png){ width=1000px}

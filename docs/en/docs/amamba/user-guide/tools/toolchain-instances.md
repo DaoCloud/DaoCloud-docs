@@ -6,7 +6,7 @@ Manage the integrated tool chain, which is divided into two types: the tool chai
 
 ### Workspace
 
-For toolchain instances of __workspace allocation__, the __disintegrate__ operation is supported:
+For toolchain instances of __workspace allocation__ , the __disintegrate__ operation is supported:
 
 <!--![]()screenshots-->
 
@@ -20,13 +20,13 @@ After unintegrating, the instances assigned to the workspace will also be delete
 
 ### Workspace
 
-For the toolchain instance of __Workspace Assignment__, it is supported to use the projects under the instance of __Binding__ to the current workspace.
+For the toolchain instance of __Workspace Assignment__ , it is supported to use the projects under the instance of __Binding__ to the current workspace.
 
 In addition, bound projects support unbinding.
 
 <!--![]()screenshots-->
 
-For the toolchain instance of __platform distribution__, only viewing is supported, and __binding__ operation is not supported.
+For the toolchain instance of __platform distribution__ , only viewing is supported, and __binding__ operation is not supported.
 
 ### Admin
 

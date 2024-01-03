@@ -179,10 +179,10 @@ precheck pass..
     !!! note
 
         - kind 集群仅支持 NodePort 模式。
-        - 如果是公有云机器，则只能手动指定公网 IP： __./dce5-installer install-app -z -k {公网IP}:8888__ 
+        - 如果是公有云机器，则只能手动指定公网 IP： __ ./dce5-installer install-app -z -k {公网IP}:8888__ 
 
 1. 安装完成后，命令行会提示安装成功。恭喜您！
 
-    现在可以通过屏幕提示的 URL（默认为 __https://${主机 IP}:8888__ ），使用 **默认的账号和密码（admin/changeme）** 探索全新的 DCE 5.0 啦！
+    现在可以通过屏幕提示的 URL（默认为 `https://${主机 IP}:8888__`），使用 **默认的账号和密码（admin/changeme）** 探索全新的 DCE 5.0 啦！
 
     ![安装成功](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)

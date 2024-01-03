@@ -11,7 +11,7 @@ E0113 01:47:27.690555 50 request.go:1058] Unexpected error when reading response
 error: unexpected error when reading response body. Please retry. Original error: net/http: request canceled (Client.Timeout or context cancellation while reading body)
 ```
 
-__解决方案__：
+__解决方案__ ：
 
 在该流水线的 Jenkinsfile 中将部署命令由 `kubectl apply -f` 修改为 `kubectl apply -f . --request-timeout=30m`。
 

@@ -17,17 +17,17 @@ The Services List page displays key metrics such as throughput, error rate, and 
 
 Follow these steps to view service monitoring metrics:
 
-1. Go to the `Insight` product module.
+1. Go to the __Insight__ product module.
 
-2. Select `Traces` > `Services` from the left navigation pane.
+2. Select __Traces__ > __Services__ from the left navigation pane.
 
 
 !!! attention
 
-    1. If the namespace of a service in the list is `_unknown`, it means that the service has not been properly instrumented. We recommend reconfiguring the instrumentation.
-    2. If multiple services have the same name and none of them have the correct `Namespace` environment variable configured, the metrics displayed in the list and service details page will be aggregated for all those services.
+    1. If the namespace of a service in the list is ___unknown__ , it means that the service has not been properly instrumented. We recommend reconfiguring the instrumentation.
+    2. If multiple services have the same name and none of them have the correct __Namespace__ environment variable configured, the metrics displayed in the list and service details page will be aggregated for all those services.
 
-3. Click a service name (e.g., `ghippo-keycloakx`) to view the detailed metrics and operation metrics for that service.
+3. Click a service name (e.g., __ghippo-keycloakx__ ) to view the detailed metrics and operation metrics for that service.
 
    1. In the Traffic Metrics section, you can view the monitoring metrics for all requests to the service within the past hour (including inbound and outbound traffic).
    2. You can use the time selector in the upper right corner to quickly select a time range or specify a custom time range.

@@ -34,15 +34,15 @@ Workbench has designed a graphical pipeline editing view, which is compatible wi
 
      <!--![]()screenshots-->
 
-     - After clicking __+Add Stage__, a serial stage will be generated. After clicking, a new stage will be generated, and pipeline steps can be added to this stage. By selecting the step type, you can quickly create the pipeline steps in the current stage.
+     - After clicking __+Add Stage__ , a serial stage will be generated. After clicking, a new stage will be generated, and pipeline steps can be added to this stage. By selecting the step type, you can quickly create the pipeline steps in the current stage.
 
-     - After clicking __+ Add Parallel Stage__, a parallel stage will be generated. After clicking, a new stage will be generated, and pipeline steps can be added to this stage. By selecting the step type, you can quickly create the pipeline steps in the current stage.
+     - After clicking __+ Add Parallel Stage__ , a parallel stage will be generated. After clicking, a new stage will be generated, and pipeline steps can be added to this stage. By selecting the step type, you can quickly create the pipeline steps in the current stage.
 
-     - After the stage is created, click __Stage__, you can use the stage to configure the stage. Support setting the name, agent, trigger condition and steps of the stage.
+     - After the stage is created, click __Stage__ , you can use the stage to configure the stage. Support setting the name, agent, trigger condition and steps of the stage.
 
 ### Configure global settings
 
-Click __Global Settings__, select node from the __Type__ drop-down list, and select go 16 from the label drop-down list.
+Click __Global Settings__ , select node from the __Type__ drop-down list, and select go 16 from the label drop-down list.
 
 <!--![]()screenshots-->
 
@@ -50,7 +50,7 @@ Click __Global Settings__, select node from the __Type__ drop-down list, and sel
 
 1. Click __Add Stage__ in the canvas. In the stage settings on the right set the name: git clone.
 
-2. Click __Add Step__, select __git clone__ under the step type in the pop-up dialog box, and refer to the table below to configure the relevant parameters.
+2. Click __Add Step__ , select __git clone__ under the step type in the pop-up dialog box, and refer to the table below to configure the relevant parameters.
 
      - Warehouse URL: Enter the warehouse address.
      - Branch: do not fill in, the default is the master branch.
@@ -62,11 +62,11 @@ Click __Global Settings__, select node from the __Type__ drop-down list, and sel
 
 1. Click __Add Stage__ in the canvas. In the stage settings on the right set the name: unit test.
 
-2. In the step module, select to open __specify container__, fill in the container name: go in the pop-up dialog box, and then click __OK__.
+2. In the step module, select to open __specify container__ , fill in the container name: go in the pop-up dialog box, and then click __OK__ .
 
      <!--![]()screenshots-->
 
-3. Click __Add step to unit test the code and generate a test report__, select shell under the step type in the pop-up dialog box, and enter the following command in the command line, and then click __OK__.
+3. Click __Add step to unit test the code and generate a test report__ , select shell under the step type in the pop-up dialog box, and enter the following command in the command line, and then click __OK__ .
 
      ```go
      go test -coverprofile=coverage.out
@@ -78,11 +78,11 @@ Click __Global Settings__, select node from the __Type__ drop-down list, and sel
 
 1. Click __Add Stage__ in the canvas. Set the name in the stage settings on the right: build & push.
 
-2. In the step module, select to open __specify container__, fill in the container name: go in the pop-up dialog box, and then click __OK__.
+2. In the step module, select to open __specify container__ , fill in the container name: go in the pop-up dialog box, and then click __OK__ .
 
      <!--![]()screenshots-->
 
-3. Select to enable __Use Credentials__ in the step module, fill in the relevant parameters in the pop-up dialog box, and then click __OK__.
+3. Select to enable __Use Credentials__ in the step module, fill in the relevant parameters in the pop-up dialog box, and then click __OK__ .
 
      - Credentials: Select the created docker hub credentials to allow users to access the mirror warehouse. Select the created "docker-credential" credential.
      - Password variable: PASS
@@ -90,19 +90,19 @@ Click __Global Settings__, select node from the __Type__ drop-down list, and sel
 
      <!--![]()screenshots-->
 
-4. Click __Add Step__ to build the code, select shell under the step type in the pop-up dialog box, enter the following command in the command line, and click __OK__.
+4. Click __Add Step__ to build the code, select shell under the step type in the pop-up dialog box, enter the following command in the command line, and click __OK__ .
 
      ```go
      go build -o simple-http-server main.go
      ```
 
-5. Click __Add Step__ to build a Docker image according to the Dockerfile in the source code, select shell under the step type in the pop-up dialog box, enter the following command in the command line, and click __OK__.
+5. Click __Add Step__ to build a Docker image according to the Dockerfile in the source code, select shell under the step type in the pop-up dialog box, enter the following command in the command line, and click __OK__ .
 
      ```docker
      docker build -f Dockerfile . -t $REGISTRY/$PROJECT/$NAME:latest
      ```
 
-6. Click __Add Step__ to log in to the mirror warehouse and push the image to the mirror warehouse. In the pop-up dialog box, select shell under the step type, enter the following command in the command line, and click __OK__.
+6. Click __Add Step__ to log in to the mirror warehouse and push the image to the mirror warehouse. In the pop-up dialog box, select shell under the step type, enter the following command in the command line, and click __OK__ .
 
      ```docker
      docker login $REGISTRY -u $USER -p $PASS
@@ -110,7 +110,7 @@ Click __Global Settings__, select node from the __Type__ drop-down list, and sel
 
      <!--![]()screenshots-->
 
-6. Click __Add Step__ to push the image to the mirror warehouse, select shell under the step type in the pop-up dialog box, enter the following command in the command line, and click __OK__.
+6. Click __Add Step__ to push the image to the mirror warehouse, select shell under the step type in the pop-up dialog box, enter the following command in the command line, and click __OK__ .
 
      ```docker
      docker push $REGISTRY/$PROJECT/$NAME:latest
@@ -126,7 +126,7 @@ Click __Global Settings__, select node from the __Type__ drop-down list, and sel
 
 1. Click __Add Stage__ in the canvas. In the stage settings on the right set the name: review.
 
-2. Click __Add Step__, select __Audit__ under the step type in the pop-up dialog box, fill in __@admin__ in the message field, that is, the __admin__ account will be audited when the pipeline runs to this stage, and then Click __OK__.
+2. Click __Add Step__ , select __Audit__ under the step type in the pop-up dialog box, fill in __@admin__ in the message field, that is, the __admin__ account will be audited when the pipeline runs to this stage, and then Click __OK__ .
 
      <!--![]()screenshots-->
 
@@ -134,11 +134,11 @@ Click __Global Settings__, select node from the __Type__ drop-down list, and sel
 
 1. Click __Add Stage__ in the canvas. In the stage settings on the right set the name: deploy.
 
-2. In the step module, select to open __specify container__, fill in the container name: go in the pop-up dialog box, and then click __OK__.
+2. In the step module, select to open __specify container__ , fill in the container name: go in the pop-up dialog box, and then click __OK__ .
 
      <!--![]()screenshots-->
 
-3. Select to enable __Use Credentials__ in the step module, fill in the relevant parameters in the pop-up dialog box, and then click __OK__.
+3. Select to enable __Use Credentials__ in the step module, fill in the relevant parameters in the pop-up dialog box, and then click __OK__ .
 
      - Credentials: Choose a credential of type kubeconfig.
 
@@ -146,7 +146,7 @@ Click __Global Settings__, select node from the __Type__ drop-down list, and sel
 
      <!--![]()screenshots-->
 
-4. Click __Add Step__ to perform the cluster deployment operation, select shell under the step type in the pop-up dialog box, enter the following command in the command line, and then click __OK__.
+4. Click __Add Step__ to perform the cluster deployment operation, select shell under the step type in the pop-up dialog box, enter the following command in the command line, and then click __OK__ .
 
      ```shell
      kubectl apply -f deploy.yaml
@@ -182,6 +182,6 @@ The various stages of the pipeline can be quickly defined through the Jenkinsfil
 
      > You can also click the name of the pipeline and click __Edit Jenkinsfile__ in the upper right corner of the page.
 
-2. Enter or paste the Jenkinsfile prepared in advance, and click __OK__.
+2. Enter or paste the Jenkinsfile prepared in advance, and click __OK__ .
 
      <!--![]()screenshots-->

@@ -19,5 +19,5 @@
 - Open Source
 
     - Compatible with Prometheus and supporting for the native PromQL to query metrics.
-    - Compatible with Prometheus YAML to collect profiles and suitable for customizing the `ServiceMonitor` rule in a Kubernetes cluster.
+    - Compatible with Prometheus YAML to collect profiles and suitable for customizing the __ServiceMonitor__ rule in a Kubernetes cluster.
     - Follow the OpenTelemetry specification and support for data access with the Jaeger's link.

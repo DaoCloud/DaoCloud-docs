@@ -4,15 +4,15 @@ Cluster monitoring can view the basic information of the cluster, the resource c
 
 ## Prerequisites
 
-The cluster has [insight-agent installed](../../quickstart/install/install-agent.md) and the application is in `running` state.
+The cluster has [insight-agent installed](../../quickstart/install/install-agent.md) and the application is in __running__ state.
 
 ## Steps
 
-1. Go to the `Observability` product module.
+1. Go to the __Insight__ product module.
 
-2. Select `Infrastructure > Clusters` from the left navigation pane. On this page, you can view the following information:
+2. Select __Infrastructure > Clusters__ from the left navigation pane. On this page, you can view the following information:
 
-    1. **Cluster List**: Shows a list of clusters with the `insight-agent` installed. Click a specific cluster to view detailed information.
+    1. **Cluster List**: Shows a list of clusters with the __insight-agent__ installed. Click a specific cluster to view detailed information.
     2. **Resource Overview**: Provides statistics on the number of normal and total nodes and workloads across multiple clusters.
     3. **Incidents**: Displays the number of alerts generated in the current cluster.
     4. **Resource Consumption**: Shows the actual usage and total capacity of CPU, memory, and disk for the selected cluster.

@@ -304,7 +304,7 @@ Each service can add one of two types of annotations:
 
     There is only one such annotation, which is used to add otel-related environment variables, such as link reporting address, cluster id where the container is located, namespace, etc. (this annotation is very useful when the application does not support automatic probe language)
 
-    ```bash
+    ```console
     instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
     ```
 
@@ -347,7 +347,7 @@ The OpenTelemetry Operator automatically adds some OTEL-related environment vari
 3. Common environment variables
 4. Instrument specification configuration variables
 
-However, it is important to avoid manually overriding `OTEL_RESOURCE_ATTRIBUTES_NODE_NAME`.
+However, it is important to avoid manually overriding __OTEL_RESOURCE_ATTRIBUTES_NODE_NAME__ .
 This variable serves as an identifier within the operator to determine if a pod has already
 been injected with a probe. Manually adding this variable may prevent the probe from being
 injected successfully.

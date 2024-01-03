@@ -14,15 +14,15 @@ The steps to create a pipeline based on a built-in template are as follows:
 
     <!--![]()screenshots-->
 
-3. Select the appropriate pipeline template and click __Next__.
+3. Select the appropriate pipeline template and click __Next__ .
 
     > All built-in templates are listed under the __Recommended Templates__ heading, and all custom templates created by users are listed under the __Custom Templates__ heading.
 
     <!--![]()screenshots-->
 
-4. Fill in the pipeline configuration by referring to [custom pipeline creation](custom.md), and then click __Next__.
+4. Fill in the pipeline configuration by referring to [custom pipeline creation](custom.md), and then click __Next__ .
 
-5. Fill in the template parameters by referring to the following instructions, and then click __OK__.
+5. Fill in the template parameters by referring to the following instructions, and then click __OK__ .
 
     - Code warehouse address: the address of the remote code warehouse, required
     - Branch: The code of which branch is used to build the pipeline, required

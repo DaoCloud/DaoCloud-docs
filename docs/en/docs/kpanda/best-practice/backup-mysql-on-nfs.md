@@ -557,7 +557,7 @@ Refer to the [Install Velero Plugin](../user-guide/backup/install-velero.md) doc
 
    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/mysql03.png)
 
-3. After creating the backup plan, the page will automatically return to the backup plan list. Find the newly created backup plan __backup-mysq__ and click the more options button __...__ in the plan. Select "Run Now" to execute the newly created backup plan.
+3. After creating the backup plan, the page will automatically return to the backup plan list. Find the newly created backup plan __backup-mysq__ and click the more options button __ ...__ in the plan. Select "Run Now" to execute the newly created backup plan.
 
    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/mysql05.png)
 

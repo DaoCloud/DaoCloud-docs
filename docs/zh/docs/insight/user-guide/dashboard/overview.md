@@ -5,7 +5,7 @@ hide:
 
 # 概览
 
-`概率` 仅统计已安装 `insight-agent` 且其运行状态为正常的集群数据。可在概览中多集群的资源概况：
+ __概率__ 仅统计已安装 __insight-agent__ 且其运行状态为正常的集群数据。可在概览中多集群的资源概况：
 
 - 告警统计：可查看所有集群的正在告警的统计数据。
 - 资源消耗：可按 CPU 使用率、内存使用率和磁盘使用率分别查看近一小时 TOP5 集群、节点的资源变化趋势。
@@ -15,6 +15,6 @@ hide:
 
 ## 操作步骤
 
-1. 在左边导航栏选择`概览`。
+1. 在左边导航栏选择 __概览__ 。
 
     ![概览](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/overview.png){ width="1000"}

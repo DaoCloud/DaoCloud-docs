@@ -23,7 +23,7 @@ Through important event statistics, you can easily understand the number of imag
 
 ## Event List
 
-The event list is presented chronologically based on time. You can sort the events by `Last Occurrend At` and `Type`.
+The event list is presented chronologically based on time. You can sort the events by __Last Occurrend At__ and __Type__ .
 
 By clicking on the ⚙️ icon on the right side, you can customize the displayed columns according to your preferences and needs.
 

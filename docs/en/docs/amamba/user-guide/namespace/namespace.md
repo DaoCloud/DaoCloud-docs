@@ -41,7 +41,7 @@ A namespace is an abstraction used in Kubernetes to isolate resources.
 
     ![namespace-list01](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/create03.png)
 
-5. Click the __︙__ on the right side of the list to perform operations such as __Resource Quotas__, __Update Label__, and __Delete__ from the pop-up menu.
+5. Click the __︙__ on the right side of the list to perform operations such as __Resource Quotas__ , __Update Label__ , and __Delete__ from the pop-up menu.
 
     !!! warning
 
@@ -51,11 +51,11 @@ A namespace is an abstraction used in Kubernetes to isolate resources.
 
 In addition to CPU requests, CPU limits, memory requests, memory limits, total storage requests, and storage volume claims resource quotas required when creating a namespace, other resource quotas can also be set in the namespace quota management. For example, resources such as container groups, stateless loads, stateful loads, ordinary tasks, and scheduled tasks under the namespace.
 
-1. On the namespace list page, select a namespace and click __Resource Quotas__.
+1. On the namespace list page, select a namespace and click __Resource Quotas__ .
 
     ![namespace-quota](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/ns-quota01.png)
 
-2. In the popped-up __Resource Quotas__ dialog box, you can see the current resource quota information for the namespace. Click __Add__ under __Apply Resources__, select a resource, and set the quota. Refer to [Kubernetes Resource Quotas](https://kubernetes.io/docs/concepts/policy/resource-quotas/) for details.
+2. In the popped-up __Resource Quotas__ dialog box, you can see the current resource quota information for the namespace. Click __Add__ under __Apply Resources__ , select a resource, and set the quota. Refer to [Kubernetes Resource Quotas](https://kubernetes.io/docs/concepts/policy/resource-quotas/) for details.
 
     ![namespace-quota01](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/ns-quota02.png)
 

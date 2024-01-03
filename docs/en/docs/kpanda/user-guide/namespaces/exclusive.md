@@ -53,7 +53,7 @@ Go to any Master node in the current cluster to modify the __kube-apiserver.yaml
 Find the __--enable-admission-plugins__ parameter and add (comma-separated) __PodNodeSelector__ and __PodTolerationRestriction__ admission controllers. The reference is as follows:
 
     ```bash
-    # Add __, PodNodeSelector, PodTolerationRestriction__ 
+    # Add __ , PodNodeSelector, PodTolerationRestriction__ 
     - --enable-admission-plugins=NodeRestriction, PodNodeSelector, PodTolerationRestriction
     ```
 

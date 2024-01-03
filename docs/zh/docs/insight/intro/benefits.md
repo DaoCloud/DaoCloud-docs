@@ -22,5 +22,5 @@ hide:
 - 开源兼容
 
     - 兼容标准开源 Prometheus，支持原生的 PromQL 查询指标的数据。
-    - 兼容标准开源 `Prometheus.yaml` 采集规则配置文件、适合自定义 Kubernetes 内监控采集规则 ServiceMonitor。
+    - 兼容标准开源 __Prometheus.yaml__ 采集规则配置文件、适合自定义 Kubernetes 内监控采集规则 ServiceMonitor。
     - 遵循开源 OpenTelemetry 规范，支持 Jaeger 的链路数据接入。

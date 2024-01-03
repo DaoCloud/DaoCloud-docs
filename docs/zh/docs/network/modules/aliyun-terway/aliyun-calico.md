@@ -136,7 +136,7 @@ data:
           "log_file_path": "/var/log/calico/cni/cni.log",
           "datastore_type": "kubernetes",
           "nodename": "__KUBERNETES_NODE_NAME__",
-          "mtu": __CNI_MTU__,
+          "mtu": __CNI_MTU__ ,
           "ipam": {
                   "type": "host-local",
                   "ranges": [[{ "subnet": "usePodCidr" }]]
@@ -211,7 +211,7 @@ test-77877f4755-npcgs   1/1     Running   0          5s    10.244.1.2   cn-cheng
               "log_file_path": "/var/log/calico/cni/cni.log",
               "datastore_type": "kubernetes",
               "nodename": "__KUBERNETES_NODE_NAME__",
-              "mtu": __CNI_MTU__,
+              "mtu": __CNI_MTU__ ,
               "ipam": {
                       "type": "spiderpool"
               },

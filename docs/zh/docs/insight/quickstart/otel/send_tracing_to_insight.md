@@ -5,9 +5,9 @@
 1. 客户应用通过 OTEL Agent/SDK 上报链路给 Insight
 2. 通过 Opentelemtry Collector(简称 OTEL COL) 将链路转发给 Insight
 
-在每个已安装 Insight Agent 的集群中都有 `insight-agent-otel-col` 组件用于统一接收该集群的链路数据。
+在每个已安装 Insight Agent 的集群中都有 __insight-agent-otel-col__ 组件用于统一接收该集群的链路数据。
 因此，该组件作为用户接入侧的入口，需要先获取该地址。可以通过 DCE 5.0 界面获取该集群 Opentelemtry Collector 的地址，
-比如 `insight-agent-opentelemetry-collector.insight-system.svc.cluster.local:4317`：
+比如 __insight-agent-opentelemetry-collector.insight-system.svc.cluster.local:4317__ ：
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/quickstart/images/get_insight_agent_otel_col_svc.png)
 
@@ -49,7 +49,9 @@
     确保 Insight Agent 正常工作并 [安装 Instrumentation CR](./operator.md#instrumentation-cr) 之后，
     只需要为 Pod 添加如下 Annotation 即可：
 
-    `instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation" `
+    ```console
+    instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
+    ```
 
     举例：
 

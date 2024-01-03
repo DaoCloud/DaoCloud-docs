@@ -135,7 +135,7 @@ data:
           "log_file_path": "/var/log/calico/cni/cni.log",
           "datastore_type": "kubernetes",
           "nodename": "__KUBERNETES_NODE_NAME__",
-          "mtu": __CNI_MTU__,
+          "mtu": __CNI_MTU__ ,
           "ipam": {
                   "type": "host-local",
                   "ranges": [[{ "subnet": "usePodCidr" }]]
@@ -210,7 +210,7 @@ The test finds that communication between Pods functions correctly.
               "log_file_path": "/var/log/calico/cni/cni.log",
               "datastore_type": "kubernetes",
               "nodename": "__KUBERNETES_NODE_NAME__",
-              "mtu": __CNI_MTU__,
+              "mtu": __CNI_MTU__ ,
               "ipam": {
                       "type": "spiderpool"
               },

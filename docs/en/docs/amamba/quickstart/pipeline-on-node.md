@@ -12,11 +12,11 @@ This article describes how to run the customer's pipeline tasks on the specified
 
      <!--![]()screenshots-->
 
-3. Search __jenkins-casc-config__, select __Edit YAML__ from the list.
+3. Search __jenkins-casc-config__ , select __Edit YAML__ from the list.
 
      <!--![]()screenshots-->
 
-4. Add __nodeSelector: "ci=base"__ for a specific Agent under __jenkins.cloud.kubernetes.templates__ in the YAML configuration item __jenkins.yaml__, and click __OK__ to save the changes.
+4. Add __nodeSelector: "ci=base"__ for a specific Agent under __jenkins.cloud.kubernetes.templates__ in the YAML configuration item __jenkins.yaml__ , and click __OK__ to save the changes.
 
      <!--![]()screenshots-->
 
@@ -26,7 +26,7 @@ This article describes how to run the customer's pipeline tasks on the specified
 
      <!--![]()screenshots-->
 
-2. Select the target worker node (for example, demo-dev-worker-03), and click __Modify Label__.
+2. Select the target worker node (for example, demo-dev-worker-03), and click __Modify Label__ .
 
      <!--![]()screenshots-->
 
@@ -54,7 +54,7 @@ First of all, it is necessary to expose the access address of Jenkins Dashbord t
 
      <!--![]()screenshots-->
 
-5. Enter the account/password (the default is __admin/Admin01__) to enter the Jenkins Dashboard page.
+5. Enter the account/password (the default is __admin/Admin01__ ) to enter the Jenkins Dashboard page.
 
      <!--![]()screenshots-->
 
@@ -62,17 +62,17 @@ First of all, it is necessary to expose the access address of Jenkins Dashbord t
 
      <!--![]()screenshots-->
 
-7. Click __Configuration as Code__.
+7. Click __Configuration as Code__ .
 
      <!--![]()screenshots-->
 
-8. Click __Reload existing configuration__ in __Configuration as Code__. If there is no prompt on the current page after clicking, it means that the configuration loading takes effect.
+8. Click __Reload existing configuration__ in __Configuration as Code__ . If there is no prompt on the current page after clicking, it means that the configuration loading takes effect.
 
      <!--![]()screenshots-->
 
 ## Run the pipeline and check if it is on the specified node
 
-1. Create a pipeline job in __Workbench__, and edit __Jenkinsfile__ as follows:
+1. Create a pipeline job in __Workbench__ , and edit __Jenkinsfile__ as follows:
 
     ```groovy        
     pipeline {

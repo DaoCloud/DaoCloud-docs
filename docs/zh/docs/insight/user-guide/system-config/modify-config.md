@@ -12,7 +12,7 @@
     kubectl edit vmcluster insight-victoria-metrics-k8s-stack -n insight-system
     ```
 
-2. 在 Yaml 文件中，`retentionPeriod` 的默认值为 `14`，单位为`天`。您可根据需求修改参数。
+2. 在 Yaml 文件中， __retentionPeriod__ 的默认值为 __14__ ，单位为 __天__ 。您可根据需求修改参数。
 
     ```Yaml
     apiVersion: operator.victoriametrics.com/v1beta1
@@ -55,7 +55,7 @@
 
 ### 方法一：修改 Json 文件
 
-1. 修改以下文件中 `rollover` 字段中的 `max_age` 参数，并设置保留期限，默认存储时长为 `7d`。注意需要修改第一行中的 Elastic 用户名和密码、IP 地址和索引。
+1. 修改以下文件中 __rollover__ 字段中的 __max_age__ 参数，并设置保留期限，默认存储时长为 __7d__ 。注意需要修改第一行中的 Elastic 用户名和密码、IP 地址和索引。
 
     ```json
     curl  --insecure --location -u"elastic:amyVt4o826e322TUVi13Ezw6" -X PUT "https://172.30.47.112:30468/_ilm/policy/insight-es-k8s-logs-policy?pretty" -H 'Content-Type: application/json' -d'
@@ -103,19 +103,19 @@
 
 ### 方法二：从 UI 修改
 
-1. 登录 `kibana`，选择左侧导航栏 `Stack Management`。
+1. 登录 __kibana__ ，选择左侧导航栏 __Stack Management__ 。
 
     ![Stack Management](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/logsys01.png)
 
-2. 选择左侧导航 `Index Lifecycle Polices`，并找到索引 `insight-es-k8s-logs-policy`，点击进入详情。
+2. 选择左侧导航 __Index Lifecycle Polices__ ，并找到索引 __insight-es-k8s-logs-policy__ ，点击进入详情。
 
     ![索引](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/logsys02.png)
 
-3. 展开 `Hot phase` 配置面板，修改 `Maximum age` 参数，并设置保留期限，默认存储时长为 `7d`。
+3. 展开 __Hot phase__ 配置面板，修改 __Maximum age__ 参数，并设置保留期限，默认存储时长为 __7d__ 。
 
     ![保留期限](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/logsys03.png)
 
-4. 修改完后，点击页面底部的 `Save policy` 即修改成功。
+4. 修改完后，点击页面底部的 __Save policy__ 即修改成功。
 
     ![保存](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/logsys04.png)
 
@@ -125,7 +125,7 @@
 
 ### 方法一：修改 Json 文件
 
-1. 修改以下文件中 `rollover` 字段中的 `max_age` 参数，并设置保留期限，默认存储时长为 `7d`。注意需要修改第一行中的 Elastic 用户名和密码、IP 地址和索引。
+1. 修改以下文件中 __rollover__ 字段中的 __max_age__ 参数，并设置保留期限，默认存储时长为 __7d__ 。注意需要修改第一行中的 Elastic 用户名和密码、IP 地址和索引。
 
     ```json
     curl --insecure --location -u"elastic:amyVt4o826e322TUVi13Ezw6" -X PUT "https://172.30.47.112:30468/_ilm/policy/jaeger-ilm-policy?pretty" -H 'Content-Type: application/json' -d'
@@ -173,18 +173,18 @@
 
 ### 方法二：从 UI 修改
 
-1. 登录 `kibana`，选择左侧导航栏 `Stack Management`。
+1. 登录 __kibana__ ，选择左侧导航栏 __Stack Management__ 。
 
     ![Stack Management](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/logsys01.png)
 
-2. 选择左侧导航 `Index Lifecycle Polices`，并找到索引 `jaeger-ilm-policy`，点击进入详情。
+2. 选择左侧导航 __Index Lifecycle Polices__ ，并找到索引 __jaeger-ilm-policy__ ，点击进入详情。
 
     ![索引](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/trace02.png)
 
-3. 展开 `Hot phase` 配置面板，修改 `Maximum age` 参数，并设置保留期限，默认存储时长为 `7d`。
+3. 展开 __Hot phase__ 配置面板，修改 __Maximum age__ 参数，并设置保留期限，默认存储时长为 __7d__ 。
 
     ![保留期限](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/trace03.png)
 
-4. 修改完后，点击页面底部的 `Save policy` 即修改成功。
+4. 修改完后，点击页面底部的 __Save policy__ 即修改成功。
 
     ![保存](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/trace04.png)

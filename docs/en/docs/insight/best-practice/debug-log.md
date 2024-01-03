@@ -1,26 +1,26 @@
 # Log Collection Troubleshooting Guide
 
-After installing the `insight-agent` in the cluster, `Fluent Bit` in `insight-agent` will collect logs in the cluster by default, including Kubernetes event logs, node logs, container logs, etc. `Fluent Bit` has already configured various log collection plugins, related filter plugins, and log output plugins. The working status of these plugins determines whether log collection is normal. Below is a dashboard for `Fluent Bit` that monitors the working conditions of each `Fluent Bit` in the cluster and the collection, processing, and export of plugin logs.
+After installing the __insight-agent__ in the cluster, __Fluent Bit__ in __insight-agent__ will collect logs in the cluster by default, including Kubernetes event logs, node logs, container logs, etc. __Fluent Bit__ has already configured various log collection plugins, related filter plugins, and log output plugins. The working status of these plugins determines whether log collection is normal. Below is a dashboard for __Fluent Bit__ that monitors the working conditions of each __Fluent Bit__ in the cluster and the collection, processing, and export of plugin logs.
 
-1. Use DCE 5.0 platform, enter `Observability`, and select the `Dashboard` in the left navigation bar.
+1. Use DCE 5.0 platform, enter __Insight__ , and select the __Dashboard__ in the left navigation bar.
 
     ![nav](../images/insight01.png)
 
-2. Click the dashboard title `Overview`.
+2. Click the dashboard title __Overview__ .
 
     ![dashboard](../images/insight02.png)
 
-3. Switch to the `insight-system` -> `Fluent Bit` dashboard.
+3. Switch to the __insight-system__ -> __Fluent Bit__ dashboard.
 
     ![fluent](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/insight03.png)
 
-4. There are several check boxes above the `Fluent Bit` dashboard to select the input plugin, filter plugin, output plugin, and cluster in which it is located.
+4. There are several check boxes above the __Fluent Bit__ dashboard to select the input plugin, filter plugin, output plugin, and cluster in which it is located.
 
     ![fluent](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/insight04.png)
 
 ## Plugin Description
 
-Here are some plugins for `Fluent Bit`.
+Here are some plugins for __Fluent Bit__ .
 
 **Log Collection Plugin**
 
@@ -51,5 +51,5 @@ Here are some plugins for `Fluent Bit`.
 | Output Plugin          | Plugin Description              |
 | ------------------------ | ---------------------------------- |
 | es.kube.kubeevent.syslog | Write Kubernetes audit logs, event logs, and syslog logs to [ElasticSearch cluster](../../middleware/elasticsearch/intro/index.md) |
-| forward.audit_log | Send Kubernetes audit logs and [global management audit logs](../../ghippo/user-guide/audit/audit-log.md) to `Global Management` |
+| forward.audit_log | Send Kubernetes audit logs and [global management audit logs](../../ghippo/user-guide/audit/audit-log.md) to __Global Management__ |
 | es.skoala | Write [request logs](../../skoala/gateway/logs/reqlog.md) and [instance logs](../../skoala/gateway/logs/inslog.md) of microservice gateway to ElasticSearch cluster

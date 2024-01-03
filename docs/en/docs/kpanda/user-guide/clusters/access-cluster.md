@@ -10,7 +10,7 @@ Clusters integrate into or created in the DCE 5.0 Container Management module ca
 
 ## Access via CloudShell
 
-1. Enter the Container Management module, find your target cluster, click __...__ on the right, and select __Console__ in the drop-down list.
+1. Enter the Container Management module, find your target cluster, click __ ...__ on the right, and select __Console__ in the drop-down list.
 
     ![screen](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/cluster-access01.png)
 
@@ -28,7 +28,7 @@ If you want to access and manage remote clusters from a local node, make sure yo
 
 If everything is in place, follow these steps to access a cluster via kubectl from your local environment.
 
-1. Enter the Container Management module, find your target cluster, click __...__ on the right, and select __Download kubeconfig__ in the drop-down list.
+1. Enter the Container Management module, find your target cluster, click __ ...__ on the right, and select __Download kubeconfig__ in the drop-down list.
 
     ![screen](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/cluster-access02.png)
 

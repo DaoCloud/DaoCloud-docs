@@ -56,7 +56,7 @@ This guide explains how to integrate a Rancher cluster.
       namespace: kube-system
     ```
 
-    Press the __Esc__ key to exit insert mode, then enter __:wq__ to save and exit.
+    Press the __Esc__ key to exit insert mode, then enter __ :wq__ to save and exit.
 
 2. Run the following command in the current directory to create a ServiceAccount named __rancher-rke__ (referred to as __SA__ for short):
 

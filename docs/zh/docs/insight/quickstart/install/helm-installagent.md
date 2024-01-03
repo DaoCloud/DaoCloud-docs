@@ -12,7 +12,7 @@
     helm search repo  insight/insight-agent --versions
     ```
 
-2. 安装 `Insight Agent` 需要确保全局管理集群中的 `Insight Server` 正常运行，执行以下安装命令安装 `Insight Agent` 社区版，该配置不启用 Tracing 功能：
+2. 安装 __Insight Agent__ 需要确保全局管理集群中的 __Insight Server__ 正常运行，执行以下安装命令安装 __Insight Agent__ 社区版，该配置不启用 Tracing 功能：
 
     ```shell
     helm upgrade --install --create-namespace --cleanup-on-fail \
@@ -31,7 +31,7 @@
 
     !!! info
 
-        可参考 `如何获取连接地址`获取地址信息。
+        可参考 __如何获取连接地址__ 获取地址信息。
 
 3. 执行以下命令确认安装状态：
 
@@ -71,10 +71,10 @@ export otel_col_host="insight-opentelemetry-collector.insight-system.svc.cluster
 
     其中：
 
-    - `global.exporters.logging.elasticsearch.host` 是日志服务地址【不需要再设置对应服务的端口，都会使用相应默认值】；
-    - `global.exporters.metric.host` 是指标服务地址；
-    - `global.exporters.trace.host` 是链路服务地址；
-    - `global.exporters.auditLog.host` 是审计日志服务地址 (和链路使用的同一个服务不同端口)；
+    - __global.exporters.logging.elasticsearch.host__ 是日志服务地址【不需要再设置对应服务的端口，都会使用相应默认值】；
+    - __global.exporters.metric.host__ 是指标服务地址；
+    - __global.exporters.trace.host__ 是链路服务地址；
+    - __global.exporters.auditLog.host__ 是审计日志服务地址 (和链路使用的同一个服务不同端口)；
 
 === "登录全局管理集群的控制台操作"
 
@@ -87,9 +87,9 @@ export otel_col_host="insight-opentelemetry-collector.insight-system.svc.cluster
 
     其中：
 
-    - `lb-vminsert-insight-victoria-metrics-k8s-stack` 是指标服务的地址；
-    - `lb-insight-opentelemetry-collector`是链路服务的地址;
-    - `mcamel-common-es-cluster-masters-es-http` 是日志服务的地址;
+    - __lb-vminsert-insight-victoria-metrics-k8s-stack__ 是指标服务的地址；
+    - __lb-insight-opentelemetry-collector__ 是链路服务的地址;
+    - __mcamel-common-es-cluster-masters-es-http__ 是日志服务的地址;
 
 === "全局管理集群使用 Nodeport"
 
@@ -102,13 +102,13 @@ export otel_col_host="insight-opentelemetry-collector.insight-system.svc.cluster
 
     其中：
 
-    - `vminsert-insight-victoria-metrics-k8s-stack` 是指标服务的地址；
-    - `insight-opentelemetry-collector` 是链路服务的地址;
-    - `mcamel-common-es-cluster-masters-es-http` 是日志服务的地址;
+    - __vminsert-insight-victoria-metrics-k8s-stack__ 是指标服务的地址；
+    - __insight-opentelemetry-collector__ 是链路服务的地址;
+    - __mcamel-common-es-cluster-masters-es-http__ 是日志服务的地址;
 
 ## 升级 Insight Agent
 
-1. 登录目标集群的控制台，执行以下命令备份 `--set` 参数。
+1. 登录目标集群的控制台，执行以下命令备份 __--set__ 参数。
 
     ```shell
     helm get values insight-agent -n insight-system -o yaml > insight-agent.yaml

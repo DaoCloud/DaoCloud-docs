@@ -112,7 +112,7 @@ spec:
 
 1. Default setting, means "mysecret" must already exist
 
-If the Pod contains multiple containers, each container needs its own __volumeMounts__ block, but only one __.spec.volumes__ setting is required for each Secret.
+If the Pod contains multiple containers, each container needs its own __volumeMounts__ block, but only one __ .spec.volumes__ setting is required for each Secret.
 
 ## Used as the identity authentication credential for the container registry when the kubelet pulls the container image
 

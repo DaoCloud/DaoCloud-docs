@@ -76,7 +76,7 @@ To demonstrate the entire process, we will use the SkyWalking-showcase Demo. Thi
 
 ![sw2otel-03](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/sw2otel-03.png)
 
-From the architecture diagram of the SkyWalking Showcase, we can observe that the data remains intact even after standardization by OpenTelemetry. In this trace, the request starts from `app/homepage`, then two requests `/rcmd/` and `/songs/top` are initiated simultaneously within the app, distributed to the `recommendation` and `songs` services, and finally reach the database for querying, completing the entire request chain.
+From the architecture diagram of the SkyWalking Showcase, we can observe that the data remains intact even after standardization by OpenTelemetry. In this trace, the request starts from __app/homepage__ , then two requests __/rcmd/__ and __/songs/top__ are initiated simultaneously within the app, distributed to the __recommendation__ and __songs__ services, and finally reach the database for querying, completing the entire request chain.
 
 ![sw2otel-04](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/sw2otel-04.png)
 
