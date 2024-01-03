@@ -73,5 +73,5 @@ spec:
 2. 需要用小写指定 GProduct 名字
 3. 还可支持 exact
 4. 是否需要 istio-gateway 给该条路由 API 作 AuthN Token 认证, false 为跳过认证
-5. UIAssets 建议末尾添加 `/` 表示结束（不然前端可能会出现问题）
+5. UIAssets 建议末尾添加 __/__ 表示结束（不然前端可能会出现问题）
 6. 后写的路由不能是先写的路由的子集, 反之可以

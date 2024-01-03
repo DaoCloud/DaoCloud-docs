@@ -42,16 +42,16 @@ so that you can understand the evolution path and feature changes of each versio
 - Automatically expand the active navigation bar
 - Support for underscores in usernames in the SDK
 - DCE 4.0 to DCE 5.0 migration scheme validation support
-- Added precise search to `Operations Management` list
+- Added precise search to __Operations Management__ list
 
 #### Improvements
 
-- Added Chinese language support to the `About Platform` - `Product Versions` submodule for kcoral, dowl, kcollie, and virtnest
+- Added Chinese language support to the __About__ - __Product Versions__ submodule for kcoral, dowl, kcollie, and virtnest
 
 #### Fixes
 
 - Fixed issue with adding user groups for synchronized LDAP users
-- Fixed issue with incomplete display of workspace reports in `Operations Management`
+- Fixed issue with incomplete display of workspace reports in __Operations Management__ 
 
 ## 2023-11-1
 
@@ -69,13 +69,13 @@ so that you can understand the evolution path and feature changes of each versio
 #### Improvements
 
 - Improved handling of interface error 400 without specific cause
-- Enhanced display of empty data in `Operational Management` reports
-- Improved functionality of jumping from cluster billing list to node billing list in `Operational Management`
+- Enhanced display of empty data in __Operations Management__ reports
+- Improved functionality of jumping from cluster billing list to node billing list in __Operations Management__ 
 
 #### Fixes
 
 - Fixed potential deadlock issue during startup of Ghippo APIServer
-- Fixed calculation error in cluster billing for `Operational Management`
+- Fixed calculation error in cluster billing for __Operations Management__ 
 
 ## 2023-09-04
 
@@ -94,7 +94,7 @@ so that you can understand the evolution path and feature changes of each versio
 - Added support for integrating with WeCom.
 - Passwords now support 8-32 characters.
 - Added support for Cloud-Edge Collaboration Kant integration with a license.
-- `Operations Management` Added support for PostgreSQL/Kingbase databases.
+- __Operations Management__ Added support for PostgreSQL/Kingbase databases.
 
 #### Improvements
 
@@ -178,7 +178,7 @@ so that you can understand the evolution path and feature changes of each versio
 - Access Control： Webhook API (Create/Edit/Delete/List/View)
 - User CRUD/Login/Logout event triggers webhook
 - Access Control provides permission points
-- Username/group name supports `.` and `@`
+- Username/group name supports __.__ and __@__ 
 - The default language of the platform is changed to automatically detect browser preferences.
 - Audit logs can be downloaded in Excel and CSV formats
 - Audit log: Two types of logs (system and user) are displayed separately
@@ -295,9 +295,9 @@ so that you can understand the evolution path and feature changes of each versio
 - Support deploying a national secret gateway in front of DCE 5.0, and use a national secret browser to access DCE 5.0
 - Set the switch in helm values, you can switch the istio sidecar feature with one click
 - Add Workspace and Folder Owner role to Workspace and Folder
-- Only users with `Workspace Admin`, `Folder Admin`, and `Kpanda Owner` permissions can perform resource binding
+- Only users with __Workspace Admin__ , __Folder Admin__ , and __Kpanda Owner__ permissions can perform resource binding
 - Scan the open source license for the library used
-- Added `Status` column to user list
+- Added __Status__ column to user list
 - Provide offline installation documentation internally
 - SDK unit testing up to 65%
 - The interface supports sending test emails and email servers without account passwords
@@ -327,7 +327,7 @@ so that you can understand the evolution path and feature changes of each versio
 
 #### Features
 
-- Change `module` to `source` in resource group
+- Change __module__ to __source__ in resource group
 - SDK provides Workspace and Resource binding change notification
 - Complete docking Insight metrics and otel tracing (join keycloak and db traces)
 - Keycloak changed to Quarkus architecture
@@ -344,7 +344,7 @@ so that you can understand the evolution path and feature changes of each versio
 #### Fixes
 
 - Fixed the issue of strong binding cluster
-- Fixed the issue that the option `Client secret sent as basic auth` in the configuration identity provider interface was not saved to keycloak
+- Fixed the issue that the option __Client secret sent as basic auth__ in the configuration identity provider interface was not saved to keycloak
 
 ## 2022-11-01
 

@@ -113,7 +113,7 @@
 
 !!! note  
 
-    当从 v0.11.x (或更低版本) 升级到 v0.12.0 (或更高版本) 时，需要将 `bak.yaml` 中所有 keycloak key 修改为 `keycloakx`。  
+    当从 v0.11.x (或更低版本) 升级到 v0.12.0 (或更高版本) 时，需要将 __bak.yaml__ 中所有 keycloak key 修改为 __keycloakx__ 。  
 
     这个 key 的修改示例：  
 
@@ -221,9 +221,9 @@
         ...
         ```
 
-    1. 备份 `--set` 参数。
+    1. 备份 __--set__ 参数。
 
-        在升级全局管理版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
+        在升级全局管理版本之前，建议您执行如下命令，备份老版本的 __--set__ 参数。
 
         ```shell
         helm get values ghippo -n ghippo-system -o yaml > bak.yaml
@@ -236,9 +236,9 @@
         kubectl apply -f ghippo/crds
         ```
 
-    1. 执行 `helm upgrade`。
+    1. 执行 __helm upgrade__ 。
 
-        升级前建议您覆盖 bak.yaml 中的 `global.imageRegistry` 字段为当前使用的镜像仓库地址。
+        升级前建议您覆盖 bak.yaml 中的 __global.imageRegistry__ 字段为当前使用的镜像仓库地址。
 
         ```shell
         export imageRegistry={你的镜像仓库}
@@ -254,9 +254,9 @@
 
 === "通过 chart 包升级"
 
-    1. 备份 `--set` 参数。
+    1. 备份 __--set__ 参数。
 
-        在升级全局管理版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
+        在升级全局管理版本之前，建议您执行如下命令，备份老版本的 __--set__ 参数。
 
         ```shell
         helm get values ghippo -n ghippo-system -o yaml > bak.yaml
@@ -268,9 +268,9 @@
         kubectl apply -f ./crds
         ```
 
-    1. 执行 `helm upgrade`。
+    1. 执行 __helm upgrade__ 。
 
-        升级前建议您覆盖 bak.yaml 中的 `global.imageRegistry` 为当前使用的镜像仓库地址。
+        升级前建议您覆盖 bak.yaml 中的 __global.imageRegistry__ 为当前使用的镜像仓库地址。
 
         ```shell
         export imageRegistry={你的镜像仓库}

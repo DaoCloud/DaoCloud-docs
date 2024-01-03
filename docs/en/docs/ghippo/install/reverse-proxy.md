@@ -5,7 +5,7 @@ Follow the steps below to customize the reverse proxy server address for DCE 5.0
 1. Set environment variables for convenience in the following.
 
     ```shell
-    # Your reverse proxy address, for example: `export DCE_PROXY="https://demo-alpha.daocloud.io"`
+    # Your reverse proxy address, for example: `export DCE_PROXY="https://demo-alpha.daocloud.io"` 
     export DCE_PROXY="https://domain:port"
 
     # helm --set parameter backup file
@@ -31,13 +31,13 @@ Follow the steps below to customize the reverse proxy server address for DCE 5.0
 
     !!! note
 
-        - If available, you can use the `yq` command:
+        - If available, you can use the __yq__ command:
 
             ```shell
             yq -i ".global.reverseProxy = \"${DCE_PROXY}\"" ${GHIPPO_VALUES_BAK}
             ```
 
-        - Or you can use the `vim` command to edit and save:
+        - Or you can use the __vim__ command to edit and save:
 
             ```shell
             vim ${GHIPPO_VALUES_BAK}
@@ -49,7 +49,7 @@ Follow the steps below to customize the reverse proxy server address for DCE 5.0
               reverseProxy: ${DCE_PROXY} # only need to modify this line
             ```
 
-5. Execute `helm upgrade` to make the configuration take effect.
+5. Execute __helm upgrade__ to make the configuration take effect.
 
     ```shell
     helm upgrade ghippo ghippo/ghippo \
@@ -58,7 +58,7 @@ Follow the steps below to customize the reverse proxy server address for DCE 5.0
     --version ${GHIPPO_HELM_VERSION}
     ```
 
-6. Use `kubectl` to restart the global management Pod to make the configuration take effect.
+6. Use __kubectl__ to restart the global management Pod to make the configuration take effect.
 
     ```shell
     kubectl rollout restart deploy/ghippo-apiserver -n ghippo-system

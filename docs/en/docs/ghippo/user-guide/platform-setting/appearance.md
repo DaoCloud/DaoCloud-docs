@@ -9,31 +9,31 @@ In DCE 5.0, you have the option to customize the appearance of the login page, t
 
 ## Customizing Login Page and Top Navigation Bar
 
-1. To get started, log in to DCE 5.0 as a user with the `admin` role and navigate to `Global Management` -> `Settings` found at the bottom of the left navigation bar.
+1. To get started, log in to DCE 5.0 as a user with the __admin__ role and navigate to __Global Management__ -> __Settings__ found at the bottom of the left navigation bar.
 
     ![settings](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/appear01.png)
 
-2. Select `Appearance`. On the `Custom your login page` tab, modify the icon and text of the login page as needed, then click `Save`.
+2. Select __Appearance__ . On the __Custom your login page__ tab, modify the icon and text of the login page as needed, then click __Save__ .
 
     ![login](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/appear02.png)
 
-3. On the `Custom top navigation bar` tab, modify the icon and text of the navigation bar as needed, then click `Save`.
+3. On the __Custom top navigation bar__ tab, modify the icon and text of the navigation bar as needed, then click __Save__ .
 
     ![nav](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/appear03.png)
 
-4. On the `Advanced customization` tab, you can modify login page, navigation bar, copyright, and ICP registration with css.
+4. On the __Advanced customization__ tab, you can modify login page, navigation bar, copyright, and ICP registration with css.
 
     ![advanced](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/appear05.png)
 
 !!! note
 
-    If you wish to restore the default settings, simply click `Revert`. This action will discard all customized settings.
+    If you wish to restore the default settings, simply click __Revert__ . This action will discard all customized settings.
 
 ## Advanced Customization
 
 Advanced customization allows you to modify the color, font spacing, font size, etc. of the entire container platform using CSS styles. Please note that familiarity with CSS syntax is required.
 
-To reset any advanced customizations, delete the contents of the black input box or click the `Revert` button.
+To reset any advanced customizations, delete the contents of the black input box or click the __Revert__ button.
 
 **Sample CSS for Login Page Customization:**
 

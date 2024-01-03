@@ -12,14 +12,14 @@ Function description: It is used to fill in the email address and modify the log
 
 The specific operation steps are as follows:
 
-1. Log in to the DCE 5.0 with your username/password. Click `Global Management` at the bottom of the left navigation bar.
+1. Log in to the DCE 5.0 with your username/password. Click __Global Management__ at the bottom of the left navigation bar.
 
     
 
-2. Click the username in the upper right corner and select `Personal Center`.
+2. Click the username in the upper right corner and select __Personal Center__ .
 
     
 
-3. Click the `Security Settings` tab. Fill in your email address or change the login password.
+3. Click the __Security Settings__ tab. Fill in your email address or change the login password.
 
     

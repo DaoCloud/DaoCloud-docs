@@ -27,17 +27,17 @@ Webhook 的工作原理如下：
 
 DCE 5.0 图形化配置 Webhook 的操作步骤如下：
 
-1. 在`全局管理` -> `用户与访问控制` -> `接入管理`，创建一个客户端 ID。
+1. 在 __全局管理__ -> __用户与访问控制__ -> __接入管理__ ，创建一个客户端 ID。
 
     ![oem in](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/webh01.png)
 
-1. 点击某个客户端 ID，进入详情页，点击`创建 Webhook` 按钮。
+1. 点击某个客户端 ID，进入详情页，点击 __创建 Webhook__ 按钮。
 
     ![button](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/webh02.png)
 
-1. 在弹窗中填入字段信息后点击`确定`。
+1. 在弹窗中填入字段信息后点击 __确定__ 。
 
-    - 对象：目前仅支持`用户`对象
+    - 对象：目前仅支持 __用户__ 对象
     - 行为：用户创建/更新/删除/登录/登录时发送 Webhook 消息
     - URL：接收消息的地址
     - Method：视情况选择适用的方法，例如企业微信推荐使用 POST 方法

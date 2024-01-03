@@ -16,7 +16,7 @@ For detailed instructions, refer to the [OEM OUT Best Practices video tutorial](
 
 1. Deploy DCE 5.0 (Assuming the access address after deployment is `https://10.6.8.2:30343/`).
 2. To achieve cross-domain access between the customer system and DCE 5.0, you can use an Nginx reverse proxy.
-   Use the following example configuration in `vi /etc/nginx/conf.d/default.conf`:
+   Use the following example configuration in __vi /etc/nginx/conf.d/default.conf__ :
 
     ```nginx
     server {
@@ -59,7 +59,7 @@ For detailed instructions, refer to the [OEM OUT Best Practices video tutorial](
 Integrate the customer system with DCE 5.0 using protocols like OIDC/OAUTH,
 allowing users to access DCE 5.0 without logging in again after logging into
 the customer system. Fill in the OIDC information of the customer system in
-`Global Management` -> `Access Control` -> `Identity Providers`.
+ __Global Management__ -> __Access Control__ -> __Identity Providers__ .
 
 After integration, the DCE 5.0 login page will display the OIDC (custom) option.
 When accessing DCE 5.0 from the customer system for the first time,
@@ -73,7 +73,7 @@ integration depends on the customer system and needs to be handled based on spec
 
 ## Customizing Appearance
 
-Use `Global Management` -> `Platform Settings` -> `Appearance Customization` to customize
+Use __Global Management__ -> __Settings__ -> __Appearance__ to customize
 the platform's background color, logo, name, etc. For detailed instructions,
 refer to [Appearance Customization](../user-guide/platform-setting/appearance.md).
 

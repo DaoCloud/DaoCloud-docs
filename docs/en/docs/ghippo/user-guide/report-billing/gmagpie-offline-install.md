@@ -16,7 +16,7 @@ as it is more efficient and convenient.
 
 ### Synchronizing Images to Image Repository using chart-syncer
 
-1. Create `load-image.yaml`.
+1. Create __load-image.yaml__ .
 
     !!! note
 
@@ -178,7 +178,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
         ```
 
         1. If the Helm version is too low, it may result in failure. If this happens,
-           please try executing `helm update repo`.
+           please try executing __helm update repo__ .
 
     1. Choose the version of Operations Management that you would like to install
        (it is recommended to install the latest version).
@@ -194,10 +194,10 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
         ...
         ```
 
-    1. Backup the `--set` parameters.
+    1. Backup the __--set__ parameters.
 
         Before upgrading the Operations Management version, it is recommended to
-        run the following command to backup the `--set` parameters of the old version.
+        run the following command to backup the __--set__ parameters of the old version.
 
         ```shell
         helm get values gmagpie -n gmagpie-system -o yaml > bak.yaml
@@ -210,10 +210,10 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
         kubectl apply -f gmagpie/crds
         ```
 
-    1. Run `helm upgrade`.
+    1. Run __helm upgrade__ .
 
-        Before upgrading, it is recommended to replace the `global.imageRegistry` field
-        in the `bak.yaml` file with the address of the image repository you are currently using.
+        Before upgrading, it is recommended to replace the __global.imageRegistry__ field
+        in the __bak.yaml__ file with the address of the image repository you are currently using.
 
         ```shell
         export imageRegistry={your-registry}
@@ -229,10 +229,10 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
 
 === "Upgrade via Chart package"
 
-    1. Backup the `--set` parameters.
+    1. Backup the __--set__ parameters.
 
         Before upgrading the Operations Management version, it is recommended to
-        run the following command to backup the `--set` parameters of the old version.
+        run the following command to backup the __--set__ parameters of the old version.
 
         ```shell
         helm get values gmagpie -n gmagpie-system -o yaml > bak.yaml
@@ -244,9 +244,9 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
         kubectl apply -f ./crds
         ```
 
-    3. Run `helm upgrade`.
+    3. Run __helm upgrade__ .
 
-        It is recommended to replace the `global.imageRegistry` field in the `bak.yaml` file
+        It is recommended to replace the __global.imageRegistry__ field in the __bak.yaml__ file
         with the address of the image repository you are currently using before performing the upgrade.
 
         ```shell

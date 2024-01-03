@@ -1,7 +1,7 @@
 # 资源配额（Quota）
 
 共享资源并非意味着被共享者可以无限制地使用被共享的资源。
-Admin、Kpanda Owner 和 Workspace Admin 可以通过共享资源中的`资源配额`功能限制某个用户的最大使用额度。
+Admin、Kpanda Owner 和 Workspace Admin 可以通过共享资源中的 __资源配额__ 功能限制某个用户的最大使用额度。
 若不限制，则表示可以无限制使用。
 
 - CPU 请求（Core）
@@ -51,7 +51,7 @@ Admin、Kpanda Owner 和 Workspace Admin 可以通过共享资源中的`资源�
     ![创建命名空间](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/quota04.png)
 
     - 若在共享集群中未设置资源配额，则创建命名空间时可不设置资源配额。
-    - 若在共享集群中已设置资源配额（例如 CPU 请求 = 100 core），则创建命名空间时 `CPU 请求 ≤ 100 core`。
+    - 若在共享集群中已设置资源配额（例如 CPU 请求 = 100 core），则创建命名空间时 __CPU 请求 ≤ 100 core__ 。
 
 ## 命名空间绑定到工作空间
 
@@ -64,14 +64,14 @@ Admin、Kpanda Owner 和 Workspace Admin 可以通过共享资源中的`资源�
     ![绑定到工作空间](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/quota05.png)
 
     - 若在共享集群未设置资源配额，则命名空间 ns01 无论是否已设置资源配额，均可成功绑定。
-    - 若在共享集群已设置资源配额 `CPU 请求 = 100 core`，则命名空间 ns01 必须满足 `CPU 请求 ≤ 100 core` 才能绑定成功。
+    - 若在共享集群已设置资源配额 __CPU 请求 = 100 core__ ，则命名空间 ns01 必须满足 __CPU 请求 ≤ 100 core__ 才能绑定成功。
 
 - 在全局管理中，将命名空间 ns01 绑定到 ws01
 
     ![绑定到工作空间](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/quota06.png)
 
     - 若在共享集群未设置资源配额，则命名空间 ns01 无论是否已设置资源配额，均可成功绑定。
-    - 若在共享集群已设置资源配额 `CPU 请求 = 100 core`，则命名空间 ns01 必须满足 `CPU 请求 ≤ 100 core` 才能绑定成功。
+    - 若在共享集群已设置资源配额 __CPU 请求 = 100 core__ ，则命名空间 ns01 必须满足 __CPU 请求 ≤ 100 core__ 才能绑定成功。
 
 ## 从工作空间解绑命名空间
 
@@ -82,11 +82,11 @@ Admin、Kpanda Owner 和 Workspace Admin 可以通过共享资源中的`资源�
     ![绑定到工作空间](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/quota07.png)
 
     - 若在共享集群中未设置资源配额，则命名空间 ns01 无论是否已设置资源配额，解绑后均不会对资源配额产生影响。
-    - 若在共享集群已设置资源配额 `CPU 请求 = 100 core`，命名空间 ns01 也设置了资源配额，则解绑后将释放相应的资源额度。
+    - 若在共享集群已设置资源配额 __CPU 请求 = 100 core__ ，命名空间 ns01 也设置了资源配额，则解绑后将释放相应的资源额度。
 
 - 在全局管理中将命名空间 ns01 从工作空间 ws01 解绑
 
     ![绑定到工作空间](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/quota08.png)
 
     - 若在共享集群未设置资源配额，则命名空间 ns01 无论是否已设置资源配额，解绑后均不会对资源配额产生影响。
-    - 若在共享集群已设置资源配额 `CPU 请求 = 100 core`，命名空间 ns01 也设置了资源配额，则解绑后将释放相应的资源额度。
+    - 若在共享集群已设置资源配额 __CPU 请求 = 100 core__ ，命名空间 ns01 也设置了资源配额，则解绑后将释放相应的资源额度。
