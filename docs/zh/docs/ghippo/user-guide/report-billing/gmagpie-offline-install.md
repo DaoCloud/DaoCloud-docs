@@ -182,9 +182,9 @@
         ...
         ```
 
-    1. 备份 `--set` 参数。
+    1. 备份 __--set__ 参数。
 
-        在升级运营管理版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
+        在升级运营管理版本之前，建议您执行如下命令，备份老版本的 __--set__ 参数。
 
         ```shell
         helm get values gmagpie -n gmagpie-system -o yaml > bak.yaml
@@ -197,9 +197,9 @@
         kubectl apply -f gmagpie/crds
         ```
 
-    1. 执行 `helm upgrade`。
+    1. 执行 __helm upgrade__ 。
 
-        升级前建议您覆盖 bak.yaml 中的 `global.imageRegistry` 字段为当前使用的镜像仓库地址。
+        升级前建议您覆盖 bak.yaml 中的 __global.imageRegistry__ 字段为当前使用的镜像仓库地址。
 
         ```shell
         export imageRegistry={你的镜像仓库}
@@ -215,9 +215,9 @@
 
 === "通过 Chart 包升级"
 
-    1. 备份 `--set` 参数。
+    1. 备份 __--set__ 参数。
 
-        在升级运营管理版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
+        在升级运营管理版本之前，建议您执行如下命令，备份老版本的 __--set__ 参数。
 
         ```shell
         helm get values gmagpie -n gmagpie-system -o yaml > bak.yaml
@@ -229,9 +229,9 @@
         kubectl apply -f ./crds
         ```
 
-    1. 执行 `helm upgrade`。
+    1. 执行 __helm upgrade__ 。
 
-        升级前建议您覆盖 bak.yaml 中的 `global.imageRegistry` 为当前使用的镜像仓库地址。
+        升级前建议您覆盖 bak.yaml 中的 __global.imageRegistry__ 为当前使用的镜像仓库地址。
 
         ```shell
         export imageRegistry={你的镜像仓库}

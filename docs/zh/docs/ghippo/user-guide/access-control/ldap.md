@@ -14,15 +14,15 @@ LDAP 协议的身份提供商功能，而不必在 DCE 5.0 中为每一位组织
 
 在全局管理中，其操作步骤如下：
 
-1. 使用具有 `admin` 角色的用户登录 DCE 5.0。点击左侧导航栏左下角的`全局管理` -> `用户与访问控制`。
+1. 使用具有 __admin__ 角色的用户登录 DCE 5.0。点击左侧导航栏左下角的 __全局管理__ -> __用户与访问控制__ 。
 
     ![global](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/ws01.png)
 
-2. 在左侧导航栏点击`身份提供商`，点击`创建身份提供商`按钮。
+2. 在左侧导航栏点击 __身份提供商__ ，点击 __创建身份提供商__ 按钮。
 
     ![身份提供商](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/ldap00.png)
 
-3. 在 `LDAP` 页签中，填写以下字段后点击`保存`，建立与身份提供商的信任关系及用户的映射关系。
+3. 在 __LDAP__ 页签中，填写以下字段后点击 __保存__ ，建立与身份提供商的信任关系及用户的映射关系。
 
     ![ldap](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/ldap01.png)
 
@@ -49,7 +49,7 @@ LDAP 协议的身份提供商功能，而不必在 DCE 5.0 中为每一位组织
     | RDN 属性       | 是指用于创建 Relative Distinguished Name（RDN）的属性。在 X.500 和 LDAP 目录服务中，RDN 属性通常是唯一的，并且是用于标识目录树（Naming Context）中某个对象的一部分。例如，在“cn=John Doe,ou=People,dc=example,dc=com”中，“cn”就是 RDN 属性之一。RDN 属性定义了该对象在其父级对象下的相对名称，因此它必须唯一。当新对象添加到目录中时，它的 RDN 属性必须与同一层级中其他对象的RDN属性不同，否则将导致命名冲突。 | uid                                 |
     | UUID 属性      | 是指唯一标识符（Universally Unique Identifier）属性。UUID 是由数字、字母和连字符组成的 36 个字符的字符串，用于在计算机系统中标识对象。UUID 可以确保在任何给定时间内，不同计算机上的对象都具有唯一标识符。 | entryUUID                           |
 
-4. 在`同步用户组`页签中，填写以下字段配置用户组的映射关系后，再次点击`保存`。
+4. 在 __同步用户组__ 页签中，填写以下字段配置用户组的映射关系后，再次点击 __保存__ 。
 
     ![身份提供商](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/ldap02.png)
 

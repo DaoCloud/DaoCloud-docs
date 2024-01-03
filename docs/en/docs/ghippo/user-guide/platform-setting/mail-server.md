@@ -10,11 +10,11 @@ In order for DCE 5.0 to be able to send email, you need to provide your mail ser
 
 The specific operation steps are as follows:
 
-1. Log in to DCE 5.0 as a user with `admin` role. Click `Global Management` at the bottom of the left navigation bar.
+1. Log in to DCE 5.0 as a user with __admin__ role. Click __Global Management__ at the bottom of the left navigation bar.
 
     
 
-1. Click `Platform Settings`, select `Mail Server Settings`.
+1. Click __Settings__ , select __Mail Server Settings__ .
 
     
 
@@ -29,7 +29,7 @@ The specific operation steps are as follows:
     | Sender's email address | Sender's email address | test@163.com |
     | Use SSL secure connection | SSL can be used to encrypt emails, thereby improving the security of information transmitted via emails, usually need to configure a certificate for the mail server | Disable |
 
-1. After the configuration is complete, click `Save`, and click `Test Mail Server`.
+1. After the configuration is complete, click __Save__ , and click __Test Mail Server__ .
 
     
 
@@ -41,6 +41,6 @@ The specific operation steps are as follows:
 
 Q: What is the reason why the user still cannot retrieve the password after the mail server is set up?
 
-Answer: The user may not have an email address or set a wrong email address; at this time, users with the admin role can find the user by username in `Global Management` -> `Access Control`, and set it as The user sets a new login password.
+Answer: The user may not have an email address or set a wrong email address; at this time, users with the admin role can find the user by username in __Global Management__ -> __Access Control__ , and set it as The user sets a new login password.
 
 If the mail server is not connected, please check whether the mail server address, username and password are correct.

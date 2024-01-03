@@ -23,13 +23,13 @@ For detailed instructions, please refer to the [OEM IN best practices video tuto
    
    Adjust the operations on the customer system according to your actual situation.
 
-2. Plan the subpath path for the customer system: `http://192.168.1.6:30080/external-anyproduct/`
+2. Plan the subpath path for the customer system: `http://192.168.1.6:30080/external-anyproduct/` 
    (It is highly recommended to use a distinctive name as the subpath, and it should not conflict with the main DCE 5.0 HTTP router!!)
 
 !!! note
 
     1. This article uses HTTP for deploying DCE 5.0. In practical applications, you can use either HTTP or TLS certificates from public sources. Please do not use self-signed TLS certificates.
-    2. In this article, `/external-anyproduct` represents the subpath of the customer system. Replace it with your subpath.
+    2. In this article, __/external-anyproduct__ represents the subpath of the customer system. Replace it with your subpath.
     3. In this article, `http://192.168.1.6:30444` is the access address for DCE 5.0, and `http://192.168.1.6:30080` is the access address for the customer system. Replace them with your DCE 5.0 access address and customer system access address.
 
 ## Unified Domain Name
@@ -177,7 +177,7 @@ For detailed instructions, please refer to the [OEM IN best practices video tuto
 ### 2. Configure the jwksUri discovery address for the customer system in DCE 5.0
 
 1. Log in to the DCE 5.0 server via SSH.
-2. Use the vim command to create the `external-svc-anyproduct.yaml` file.
+2. Use the vim command to create the __external-svc-anyproduct.yaml__ file.
 
     ```bash
     vim external-svc-anyproduct.yaml
@@ -261,13 +261,13 @@ For detailed instructions, please refer to the [OEM IN best practices video tuto
 
 Integrate the customer system with the DCE 5.0 platform using protocols such as OIDC/OAUTH, allowing users to access the customer system without having to log in again after logging into the DCE 5.0 platform.
 
-1. In the scenario of two instances of DCE 5.0, you can create an SSO integration under DCE 5.0 `Global Management` -> `Users and Access Control` -> `Access Management`.
+1. In the scenario of two instances of DCE 5.0, you can create an SSO integration under DCE 5.0 __Global Management__ -> __Users and Access Control__ -> __Access Management__ .
 
     ![Access Management List](./images/oemin-jierulist.png)
 
     ![Access Management List](./images/oem-out01.png)
 
-2. After creation, fill in the client ID, secret key, single sign-on URL, and other details from the Access Management page into the customer system's `Global Management` -> `Users and Access Control` -> `Identity Providers` -> `OIDC`, completing the user integration.
+2. After creation, fill in the client ID, secret key, single sign-on URL, and other details from the Access Management page into the customer system's __Global Management__ -> __Users and Access Control__ -> __Identity Providers__ -> __OIDC__ , completing the user integration.
 
     ![OIDC](./images/oeminoidc.png)
 
@@ -279,7 +279,7 @@ Integrate the customer system with the DCE 5.0 platform using protocols such as 
 
 Refer to the tar package provided in the documentation below to create a blank frontend sub-application. Embed the customer system within this blank application using an iframe.
 
-1. Download the gproduct-demo-main.tar.gz file. Open the App-iframe.vue file located in the src folder and modify the value of the src attribute to the absolute address that users will use to access the customer system, such as: `src="http://192.168.1.6/external-anyproduct"` (DCE 5.0 address + subpath) or a relative address, such as: `src="./external-anyproduct/insight"`
+1. Download the gproduct-demo-main.tar.gz file. Open the App-iframe.vue file located in the src folder and modify the value of the src attribute to the absolute address that users will use to access the customer system, such as: __src="http://192.168.1.6/external-anyproduct"__ (DCE 5.0 address + subpath) or a relative address, such as: __src="./external-anyproduct/insight"__ 
 
    ![src address](./images/src.png)
 
@@ -354,7 +354,7 @@ Once the integration is complete, the "Customer System" will appear in the top-l
 
     DCE 5.0 supports customizing the appearance using CSS. The actual implementation of appearance customization for the customer system may vary depending on the specific requirements.
 
-Login to the customer system and navigate to `Global Management` -> `Platform Settings` -> `Appearance Customization` to customize the platform's background color, logo, name, and more.
+Login to the customer system and navigate to __Global Management__ -> __Settings__ -> __Appearance__ to customize the platform's background color, logo, name, and more.
 For detailed instructions, please refer to [Appearance Customization](../user-guide/platform-setting/appearance.md).
 
 ## Integration of Authorization System (Optional)

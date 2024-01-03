@@ -18,5 +18,5 @@ MySQL is ready without any errors. After installing Global Management, Keycloak 
 
 1. Check if MySQL resource usage has reached the limit.
 2. Check if the number of tables in the Keycloak database in MySQL is 92.
-3. Delete and recreate the Keycloak database, using `CREATE DATABASE IF NOT EXISTS keycloak CHARACTER SET utf8`.
+3. Delete and recreate the Keycloak database, using __CREATE DATABASE IF NOT EXISTS keycloak CHARACTER SET utf8__ .
 4. Restart the Keycloak Pod to resolve the issue.

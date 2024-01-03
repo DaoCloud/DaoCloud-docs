@@ -3,7 +3,7 @@
 文件夹具有权限映射能力，能够将用户/用户组在本文件夹的权限映射到其下的子文件夹、工作空间以及资源上。
 
 若用户/用户组在本文件夹是 Folder Admin 角色，映射到子文件夹仍为 Folder Admin 角色，映射到其下的工作空间则为 Workspace Admin；
-若在`工作空间与层级` -> `资源组`中绑定了 Namespace，则映射后该用户/用户组同时还是 Namespace Admin。
+若在 __工作空间与层级__ -> __资源组__ 中绑定了 Namespace，则映射后该用户/用户组同时还是 Namespace Admin。
 
 !!! note
 

@@ -12,15 +12,15 @@ You can grant permissions to use DCE 5.0 resources to these external user identi
 
 In global management, the operation steps are as follows:
 
-1. Log in to DCE 5.0 as a user with `admin` role. Click `Global Management` -> `Access Control` in the lower left corner of the left navigation bar.
+1. Log in to DCE 5.0 as a user with __admin__ role. Click __Global Management__ -> __Access Control__ in the lower left corner of the left navigation bar.
 
     ![access control](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/ws01.png)
 
-1. Click `Identity Provider` on the left nav bar, click `Create an Identity Provider` button.
+1. Click __Identity Provider__ on the left nav bar, click __Create an Identity Provider__ button.
 
     ![id provider](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/ldap00.png)
 
-1. In the `LDAP` tab, fill in the following fields and click `Save` to establish a trust relationship with the identity provider and a user mapping relationship.
+1. In the __LDAP__ tab, fill in the following fields and click __Save__ to establish a trust relationship with the identity provider and a user mapping relationship.
 
     ![ldap](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/ldap01.png)
 
@@ -47,7 +47,7 @@ In global management, the operation steps are as follows:
     | RDN Attribute   | Refers to the attribute used to create the Relative Distinguished Name (RDN). In X.500 and LDAP directory services, the RDN attribute is usually unique and is used to identify part of an object in the directory tree (Naming Context). For example, in "cn=John Doe,ou=People,dc=example,dc=com", "cn" is one of the RDN attributes. The RDN attribute defines the relative name of the object under its parent object, so it must be unique. When a new object is added to the directory, its RDN attribute must be different from other objects in the same level, otherwise it will cause naming conflicts. | uid     |
     | UUID Attribute  | Refers to the Universally Unique Identifier (UUID) attribute. A UUID is a 36-character string consisting of numbers, letters, and hyphens, used to identify objects in a computer system. UUID ensures that objects on different computers have unique identifiers at any given time. | entryUUID |
 
-1. On the `Synchronize groups` tab, fill in the following fields to configure the mapping relationship of groups, and click `Save` again.
+1. On the __Synchronize groups__ tab, fill in the following fields to configure the mapping relationship of groups, and click __Save__ again.
 
     | Field | Description | Example |
     | ---------------- | -------------------------------- ---------------------------- | --------------------- ------ |

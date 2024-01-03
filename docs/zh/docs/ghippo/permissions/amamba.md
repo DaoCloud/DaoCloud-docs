@@ -14,7 +14,7 @@ hide:
 每种角色具有不同的权限，具体说明如下。
 
 <!--
-有权限使用`&check;`，无权限使用`&cross;`
+有权限使用 `&check;`，无权限使用 `&cross;`
 -->
 
 | 菜单对象 | 操作                               | Workspace Admin | Workspace Editor | Workspace Viewer |

@@ -26,17 +26,17 @@ Common use cases include:
 
 The steps to configure Webhooks in DCE 5.0 are as follows:
 
-1. On the left nav, click `Global Management` -> `Access Control` -> `Docking Portal`, create a client ID.
+1. On the left nav, click __Global Management__ -> __Access Control__ -> __Docking Portal__ , create a client ID.
 
     ![oem in](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/oem/images/webh01.png)
 
-2. Click a client ID to enter the details page, then click the `Create Webhook` button.
+2. Click a client ID to enter the details page, then click the __Create Webhook__ button.
 
     ![button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/oem/images/webh02.png)
 
-3. Fill in the field information in the popup window and click `OK`.
+3. Fill in the field information in the popup window and click __OK__ .
 
-    - Object: Currently only supports the `User` object.
+    - Object: Currently only supports the __User__ object.
     - Action: Send Webhook messages when users are created/updated/deleted/logged in or out.
     - URL: The address to receive the messages.
     - Method: Choose the appropriate method as required, e.g., for enterprise WeChat, POST is recommended.

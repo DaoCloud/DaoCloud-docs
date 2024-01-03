@@ -13,15 +13,15 @@ different users and user groups can be assigned to each workspace.
 Follow the steps below to create a workspace:
 
 1. Log in to DCE 5.0 with a user account having the admin/folder admin role.
-   Click `Global Management` -> `Workspace and Folder` at the bottom of the left navigation bar.
+   Click __Global Management__ -> __Workspace and Folder__ at the bottom of the left navigation bar.
 
     ![Global Management](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/ws01.png)
 
-3. Click the `Create Workspace` button in the top right corner.
+3. Click the __Create Workspace__ button in the top right corner.
 
     ![Create Workspace](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/ws02.png)
 
-4. Fill in the workspace name, folder assignment, and other information, then click `OK` to complete creating the workspace.
+4. Fill in the workspace name, folder assignment, and other information, then click __OK__ to complete creating the workspace.
 
     ![Confirm](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/ws03.png)
 
@@ -33,7 +33,7 @@ Follow the steps below to create a workspace:
 
 !!! note
 
-    To edit or delete a specific workspace or folder, select it and click `...` on the right side.
+    To edit or delete a specific workspace or folder, select it and click __...__ on the right side.
 
     - If there are resources bound to the resource group or shared resources within the workspace, the workspace cannot be deleted. All resources need to be unbound before deleting.
 

@@ -38,19 +38,19 @@ related to the Workbench in all workspaces.
 
 There are three ways to authorize platform roles:
 
-- In the `Global Management` -> `Access Control` -> `Users` section, find the user
-  in the user list, click `...`, select `Authorization`, and grant platform role permissions to the user.
+- In the __Global Management__ -> __Access Control__ -> __Users__ section, find the user
+  in the user list, click __...__ , select __Authorization__ , and grant platform role permissions to the user.
 
     ![Click Authorization](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/newrole03.png)
 
-- In the `Global Management` -> `Access Control` -> `Groups` section, create a group in the group list,
+- In the __Global Management__ -> __Access Control__ -> __Groups__ section, create a group in the group list,
   add the user to the group, and grant authorization to the group
-   (the specific operation is: find the group in the group list, click `...`, select `Add Permissions`, and grant platform roles to the group).
+   (the specific operation is: find the group in the group list, click __...__ , select __Add Permissions__ , and grant platform roles to the group).
 
     ![Add permissions](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/newrole04.png)
 
-- In the `Global Management` -> `Access Control` -> `Roles` section, find the corresponding platform role
-  in the role list, click the role name to access details, click the `Related Members` button, select the user or group, and click `OK`.
+- In the __Global Management__ -> __Access Control__ -> __Roles__ section, find the corresponding platform role
+  in the role list, click the role name to access details, click the __Related Members__ button, select the user or group, and click __OK__ .
 
     ![Related Members Button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/newrole05.png)
 
@@ -80,8 +80,8 @@ Workspace 01, they will have all functional permissions related to the Workbench
 
 ### Workspace Role Authorization Methods
 
-In the `Global Management` -> `Workspace and Folder` list, find the workspace,
-click `Authorization`, and grant workspace role permissions to the user.
+In the __Global Management__ -> __Workspace and Folder__ list, find the workspace,
+click __Authorization__ , and grant workspace role permissions to the user.
 
 ![Authorization Button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/newrole07.png)
 
@@ -117,8 +117,8 @@ to the Workbench in all workspaces within Folder 01.
 
 ### Folder Role Authorization Methods
 
-In the `Global Management` -> `Workspace and Folder` list, find the folder,
-click `Authorization`, and grant folder role permissions to the user.
+In the __Global Management__ -> __Workspace and Folder__ list, find the folder,
+click __Authorization__ , and grant folder role permissions to the user.
 
 ![Authorization Button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/newrole10.png)
 

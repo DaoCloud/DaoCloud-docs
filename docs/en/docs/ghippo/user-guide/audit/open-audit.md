@@ -7,7 +7,7 @@
 
 - For DCE Community installations, the Kubernetes audit log switch was not operated during the management cluster installation process.
 - For DCE 5.0 Enterprise installations, the Kubernetes audit log switch is enabled by default.
-    - To set it to default off, you can modify the installer's `clusterConfigt.yaml` file (set `logPath` to empty "").
+    - To set it to default off, you can modify the installer's __clusterConfigt.yaml__ file (set __logPath__ to empty "").
 - The collection of Kubernetes audit logs switch is disabled by default for the management cluster.
     - Default settings do not support configuration.
 
@@ -17,7 +17,7 @@
 
 #### Confirm Enabling Kubernetes Audit Logs
 
-Run the following command to check if audit logs are generated under the `/var/log/kubernetes/audit` directory. If they exist, it means that Kubernetes audit logs are successfully enabled.
+Run the following command to check if audit logs are generated under the __/var/log/kubernetes/audit__ directory. If they exist, it means that Kubernetes audit logs are successfully enabled.
 
 ```shell
 ls /var/log/kubernetes/audit
@@ -80,7 +80,7 @@ helm upgrade --install --create-namespace --version ${insight_version_code} --cl
 
 #### Confirm Enabling Kubernetes Audit Logs
 
-Run the following command to check if audit logs are generated under the `/var/log/kubernetes/audit` directory. If they exist, it means that Kubernetes audit logs are successfully enabled.
+Run the following command to check if audit logs are generated under the __/var/log/kubernetes/audit__ directory. If they exist, it means that Kubernetes audit logs are successfully enabled.
 
 ```shell
 ls /var/log/kubernetes/audit
@@ -154,7 +154,7 @@ After the cluster creation is successful, the K8s audit logs for that work clust
 
 #### Confirm Enabling K8s Audit Logs
 
-Run the following command to check if audit logs are generated under the `/var/log/kubernetes/audit` directory. If they exist, it means that K8s audit logs are successfully enabled.
+Run the following command to check if audit logs are generated under the __/var/log/kubernetes/audit__ directory. If they exist, it means that K8s audit logs are successfully enabled.
 
 ```shell
 ls /var/log/kubernetes/audit

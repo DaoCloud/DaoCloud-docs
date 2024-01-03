@@ -17,6 +17,6 @@ DCE 5.0 provides security policies based on passwords and access control on the 
 - Account lockout policy: If you fail to log in multiple times within the time limit, your account will be locked.
 - Login/logout policy: Log out while closing the browser.
 
-After entering the global management, click `Platform Settings` -> `Security Policy` in the left navigation bar to set the password policy and access control policy.
+After entering the global management, click __Settings__ -> __Security Policy__ in the left navigation bar to set the password policy and access control policy.
 
 

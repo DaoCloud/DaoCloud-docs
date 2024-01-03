@@ -10,15 +10,15 @@ DCE 5.0 supports the creation of three scopes of custom roles:
 
 A platform role refers to a role that can manipulate features related to a certain module of DCE 5.0 (such as container management, microservice engine, Multicloud Management, service mesh, Container registry, Workbench, and global management, etc.).
 
-1. From the left navigation bar, click `Global Management` -> `Access Control` -> `Roles`, and click `Create Custom Role`.
+1. From the left navigation bar, click __Global Management__ -> __Access Control__ -> __Roles__ , and click __Create Custom Role__ .
 
     ![button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/custom01.png)
 
-1. Enter the name and description, select `Platform Role`, check the role permissions and click `OK`.
+1. Enter the name and description, select __Platform Role__ , check the role permissions and click __OK__ .
 
     ![fill](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/custom02.png)
 
-1. Return to the role list, search for the custom role you just created, and click `⋮` on the right to perform operations such as copying, editing, and deleting.
+1. Return to the role list, search for the custom role you just created, and click __⋮__ on the right to perform operations such as copying, editing, and deleting.
 
     ![other](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/custom03.png)
 
@@ -28,15 +28,15 @@ A platform role refers to a role that can manipulate features related to a certa
 
 A workspace role refers to a role that can manipulate features related to a module (such as container management, microservice engine, Multicloud Management, service mesh, container registry, Workbench, and global management) according to the workspace.
 
-1. From the left navigation bar, click `Global Management` -> `Access Control` -> `Roles`, and click `Create Custom Role`.
+1. From the left navigation bar, click __Global Management__ -> __Access Control__ -> __Roles__ , and click __Create Custom Role__ .
 
     ![button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/custom01.png)
 
-1. Enter the name and description, select `Workspace role`, check the role permissions and click `OK`.
+1. Enter the name and description, select __Workspace role__ , check the role permissions and click __OK__ .
 
     ![workspace](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/custom04.png)
 
-1. Return to the role list, search for the custom role you just created, and click `⋮` on the right to perform operations such as copying, editing, and deleting.
+1. Return to the role list, search for the custom role you just created, and click __⋮__ on the right to perform operations such as copying, editing, and deleting.
 
     ![other](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/custom05.png)
 
@@ -46,15 +46,15 @@ A workspace role refers to a role that can manipulate features related to a modu
 
 The folder role refers to the ability to manipulate the relevant features of a module of DCE 5.0 (such as container management, microservice engine, Multicloud Management, service mesh, container registry, Workbench and global management, etc.) according to folders and subfolders. Role.
 
-1. From the left navigation bar, click `Global Management` -> `Access Control` -> `Roles`, and click `Create Custom Role`.
+1. From the left navigation bar, click __Global Management__ -> __Access Control__ -> __Roles__ , and click __Create Custom Role__ .
 
     ![button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/custom01.png)
 
-1. Enter the name and description, select `Folder Role`, check the role permissions and click `OK`.
+1. Enter the name and description, select __Folder Role__ , check the role permissions and click __OK__ .
 
     ![folder](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/custom06.png)
 
-1. Return to the role list, search for the custom role you just created, and click `⋮` on the right to perform operations such as copying, editing, and deleting.
+1. Return to the role list, search for the custom role you just created, and click __⋮__ on the right to perform operations such as copying, editing, and deleting.
 
     ![other](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/custom07.png)
 

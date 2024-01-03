@@ -12,7 +12,7 @@ Workspace and Folder involves two concepts: workspaces and folders.
 
 ## Workspaces
 
-Workspaces allow the management of resources through `Authorization`, `Resource Group`, and `Shared Resource`,
+Workspaces allow the management of resources through __Authorization__ , __Resource Group__ , and __Shared Resource__ ,
 enabling users (and user groups) to share resources within the workspace.
 
 ![Workspaces](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/wsfd01.png)
@@ -29,7 +29,7 @@ enabling users (and user groups) to share resources within the workspace.
     Workspaces are at the first level, counting from the bottom of the hierarchy, and contain resources.
     All resources except shared resources have one and only one parent. All workspaces also have one and only one parent folder.
 
-    Resources are grouped by workspace, and there are two grouping modes in workspace, namely `Resource Group` and `Shared Resource`.
+    Resources are grouped by workspace, and there are two grouping modes in workspace, namely __Resource Group__ and __Shared Resource__ .
 
 - Resource group
 

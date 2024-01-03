@@ -5,9 +5,9 @@ hide:
 
 # Login loop with error 401 or 403
 
-This issue occurs when the MySQL database connected to ghippo-keycloak encounters a failure, causing the `OIDC Public keys` to be reset.
+This issue occurs when the MySQL database connected to ghippo-keycloak encounters a failure, causing the __OIDC Public keys__ to be reset.
 
-For Global Management version 0.11.1 and above, you can follow these steps to restore normal operation by updating the Global Management configuration file using `helm`.
+For Global Management version 0.11.1 and above, you can follow these steps to restore normal operation by updating the Global Management configuration file using __helm__ .
 
 ```shell
 # Update helm repository

@@ -27,7 +27,7 @@ No resources found in metallbs-system namespace.
 
 该模式安装下，审计日志源 IP 默认是关闭的，开启步骤如下：
 
-1. 设置 `istio-ingressgateway` 的 HPA 的最小副本数为控制面节点数
+1. 设置 __istio-ingressgateway__ 的 HPA 的最小副本数为控制面节点数
 
     ```bash
     count=$(kubectl get nodes --selector=node-role.kubernetes.io/control-plane | wc -l)
@@ -36,7 +36,7 @@ No resources found in metallbs-system namespace.
     kubectl patch hpa istio-ingressgateway -n istio-system -p '{"spec":{"minReplicas":'$count'}}'
     ```
 
-2. 修改 `istio-ingressgateway` 的 service 的 `externalTrafficPolicy` 和 `internalTrafficPolicy` 值为 Local
+2. 修改 __istio-ingressgateway__ 的 service 的 __externalTrafficPolicy__ 和 __internalTrafficPolicy__ 值为 Local
 
     ```bash
     kubectl patch svc istio-ingressgateway -n istio-system -p '{"spec":{"externalTrafficPolicy":"Local","internalTrafficPolicy":"Local"}}'
