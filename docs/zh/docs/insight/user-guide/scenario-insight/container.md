@@ -9,7 +9,7 @@ hide:
 
 ## 前提条件
 
-集群已安装 Insight Agent，且所有的容器组处于`运行中`状态。
+集群已安装 Insight Agent，且所有的容器组处于 __运行中__ 状态。
 
 - 安装 Insight Agent 请参考：[在线安装 insight-agent](../../../insight/quickstart/install/install-agent.md) 或[离线升级 insight-agent](../../../insight/quickstart/install/offline-install.md)。
 
@@ -17,9 +17,9 @@ hide:
 
 请按照以下步骤查看服务监控指标：
 
-1. 进入`可观测性` 产品模块。
+1. 进入 __可观测性__ 产品模块。
   
-2. 在左边导航栏选择 `基础设施` -> `容器`。
+2. 在左边导航栏选择 __基础设施__ -> __容器__ 。
 
 3. 切换顶部 Tab，查看不同类型工作负载的数据。
 

@@ -9,8 +9,8 @@ vmstorage 是负责存储可观测性多集群指标。
 经过 14 天对不同规模的集群的 vmstorage 的磁盘观测，
 我们发现 vmstorage 的磁盘用量与其存储的指标量和单个数据点占用磁盘正相关。
 
-1. 瞬时存储的指标量 `increase(vm_rows{ type != "indexdb"}[30s])` 以获取 30s 内增加的指标量
-2. 单个数据点 (datapoint) 的占用磁盘：`sum(vm_data_size_bytes{type!="indexdb"}) / sum(vm_rows{type != "indexdb"})`
+1. 瞬时存储的指标量 __increase(vm_rows{ type != "indexdb"}[30s])__ 以获取 30s 内增加的指标量
+2. 单个数据点 (datapoint) 的占用磁盘： __sum(vm_data_size_bytes{type!="indexdb"}) / sum(vm_rows{type != "indexdb"})__ 
 
 ## 计算方法
 
@@ -18,8 +18,8 @@ vmstorage 是负责存储可观测性多集群指标。
 
 **参数说明：**
 
-1. 磁盘用量单位为 `Byte`。
-2. `存储时长(天) x 60 x 24` 将时间(天)换算成分钟以便计算磁盘用量。
+1. 磁盘用量单位为 __Byte__ 。
+2. __存储时长(天) x 60 x 24__ 将时间(天)换算成分钟以便计算磁盘用量。
 3. Insight Agent 中 Prometheus 默认采集时间为 30s ，故在 1 分钟内产生两倍的指标量。
 4. vmstorage 中默认存储时长为 1 个月，修改配置请参考[修改系统配置](../../user-guide/system-config/modify-config.md)。
 

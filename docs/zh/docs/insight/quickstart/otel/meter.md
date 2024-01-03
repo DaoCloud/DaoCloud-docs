@@ -235,7 +235,7 @@ OTEL_METRICS_EXPORTER=prometheus
 
 ### 创建 servicemonitor/podmonitor
 
-添加的 servicemonitor/podmonitor 需要打上 `label："operator.insight.io/managed-by": "insight"` 才会被 Operator 识别：
+添加的 servicemonitor/podmonitor 需要打上 __label："operator.insight.io/managed-by": "insight"__ 才会被 Operator 识别：
 
 ```yaml
 apiVersion: monitoring.coreos.com/v1

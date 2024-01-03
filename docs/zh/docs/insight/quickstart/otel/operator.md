@@ -239,9 +239,9 @@
 
 ### 操作步骤如下
 
-1. 登录 DCE5.0，进入`容器管理`后选择进入目标集群，
-2. 点击左侧导航栏选择 `自定义资源`，查找 `instrumentations.opentelemetry.io` 后进入详情页。
-3. 选择 `insight-system` 命名空间后，编辑 `insight-opentelemetry-autoinstrumentation`，在 `spec:env:`下添加以下内容：
+1. 登录 DCE5.0，进入 __容器管理__ 后选择进入目标集群，
+2. 点击左侧导航栏选择 __自定义资源__ ，查找 __instrumentations.opentelemetry.io__ 后进入详情页。
+3. 选择 __insight-system__ 命名空间后，编辑 __insight-opentelemetry-autoinstrumentation__ ，在 __spec:env:__ 下添加以下内容：
 
     ```yaml
         - name: OTEL_SERVICE_NAME

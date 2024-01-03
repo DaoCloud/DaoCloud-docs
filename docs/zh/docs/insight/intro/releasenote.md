@@ -144,8 +144,8 @@
 - **优化** 链路查询支持 Span、延时、发生时间等排序
 - **优化** 告警策略配置通知时下拉框增加搜索
 - **优化** 告警模板支持格式化时区
-- **优化** 升级 `opentelemetry collector` Chart 版本从 `0.50.1` 到 `0.59.3`
-- **优化** 升级 `opentelemetry Operator` Chart 版本从 `0.26.1` 到 `0.30.1`
+- **优化** 升级 __opentelemetry collector__ Chart 版本从 __0.50.1__ 到 __0.59.3__ 
+- **优化** 升级 __opentelemetry Operator__ Chart 版本从 __0.26.1__ 到 __0.30.1__ 
 
 #### 修复
 
@@ -162,7 +162,7 @@
 !!! warning
 
     在 v0.17.x 版本中将 kube-prometheus-stack chart 版本从 41.9.1 升级至 45.28.1, 
-    其中使用的 CRD 也存在一些字段的升级，如 servicemonitor 的 `attachMetadata` 字段，
+    其中使用的 CRD 也存在一些字段的升级，如 servicemonitor 的 __attachMetadata__ 字段，
     升级 insight agent 前，请参考：
     [从 v0.16.x（或更低版本）升级到 v0.17.x](../quickstart/install/upgrade-note.md#v016x-v017x)。
 
@@ -206,7 +206,7 @@
 
 !!! warning
 
-    可观测性 Insight v0.16.0 使用了 vmalertmanagers CRD 的新特性参数 `disableRouteContinueEnforce`, 
+    可观测性 Insight v0.16.0 使用了 vmalertmanagers CRD 的新特性参数 __disableRouteContinueEnforce__ , 
     升级 insight server 前，请参考[从 v0.15.x（或更低版本）升级到 v0.16.x](../quickstart/install/upgrade-note.md)
 
 #### 新增
@@ -300,7 +300,7 @@
 - **优化** 将 Prometheus 的指标保留时间缩短至 2 小时
 - **优化** VMStorage 的 retentionPeriod 默认参数调整为 1 个月
 - **升级** fluentbit 的 helm chart 版本至 0.24.0
-- **更新** `tailing-sidecar/operator` 的镜像
+- **更新** __tailing-sidecar/operator__ 的镜像
 - **更新** 全局采集规则间隔为 60 秒
 
 #### 修复
@@ -312,7 +312,7 @@
 - **修复** 指标高级查询查询后，下拉框的指标联想与图表重合部分无法选中
 - **修复** 修改历史告警存储时长时允许输入小数
 - **修复** 当告警规则生成多个告警时发送多个通知
-- **修复** `vmalert` and `vmalertmanager` 的 `configmap-reload` 镜像错误
+- **修复** __vmalert__ and __vmalertmanager__ 的 __configmap-reload__ 镜像错误
 - **修复** ARM 架构中 Insight Agent 的 fluentbit
 
 ## 2023.01.10
@@ -321,7 +321,7 @@
 
 #### 修复
 
-- **修复** insight-agent 中 `kubernetes-event-exporter` 镜像地址错误的问题
+- **修复** insight-agent 中 __kubernetes-event-exporter__ 镜像地址错误的问题
 - **修复** 通过资源名称过滤告警 API
 
 ## 2023.12.30
@@ -330,8 +330,8 @@
 
 #### 修复
 
-- **修复** 构建离线包增加 `.relok8s-images` 文件
-- **修复** 调整 insight-agent 中组件 `otel-collector` 端口对应的端口名
+- **修复** 构建离线包增加 __.relok8s-images__ 文件
+- **修复** 调整 insight-agent 中组件 __otel-collector__ 端口对应的端口名
 
 ## 2022.12.29
 
@@ -357,7 +357,7 @@
 - **修复** 钉钉机器人以 '-' 结尾的问题
 - **修复** 告警规则中不区分大小写的模糊搜索
 - **修复** 服务指标错误延迟计算不准确
-- **修复** Jaeger 查询出现 `too many open files` 的问题
+- **修复** Jaeger 查询出现 __too many open files__ 的问题
 - **修复** es 索引翻转别名和清理策略未起作用的问题
 
 ## 2022.11.28
@@ -376,7 +376,7 @@
 - **升级** Fluentbit ARM 架构的 helm Chart 版本从
 - **升级** kube-prometheus-stack 的 helm Chart 版本从 v39.6.0 升级至 v41.9.1
 - **更新** 使用的 Bitnami 的镜像，包含 grafana-operator, grafana, kubernetes-event-exporter
-- **更新** prometheus 相关的的 API 代理地址，将 `/prometheus` 修改为 `/apis/insight.io/prometheus`
+- **更新** prometheus 相关的的 API 代理地址，将 __/prometheus__ 修改为 __/apis/insight.io/prometheus__ 
 
 #### 修复
 
@@ -394,24 +394,24 @@
 
 #### 优化
 
-- **增加** 链路排障和对组件 `Jaeger` 监控的仪表盘
+- **增加** 链路排障和对组件 __Jaeger__ 监控的仪表盘
 - **优化** 告警列表、消息模板列表支持排序
-- **优化** 过滤掉未安装 `insight-agent` 的集群
+- **优化** 过滤掉未安装 __insight-agent__ 的集群
 - **优化** 链路查询时默认按 span 开始时间排序
 
 #### 缺陷修复
 
-- **修复** 无数据的 `仪表盘`，包含 OpenTelemetry 相关的仪表盘
+- **修复** 无数据的 __仪表盘__ ，包含 OpenTelemetry 相关的仪表盘
 - **修复** 部分日志路径下无内容的问题
 - **修复** 删除错误的告警规则：KubeletPodStartUpLatencyHigh
 
 #### 其他
 
-- `victoria-metrics-k8s-stack` helm chart 升级至 v0.12.6
-- `opentelemetry-collector` helm chart 从 v0.23.0 升级至 v0.37.2
-- `jaeger` helm chart 从 v0.57.0 升级至 v0.62.1
-- `fluentbit` helm chart 从 v0.20.9 升级至 v1.9.9
-- `kubernetes-event-exporter` helm chart 从 v1.4.21 升级至 v2.0.0
+- __victoria-metrics-k8s-stack__ helm chart 升级至 v0.12.6
+- __opentelemetry-collector__ helm chart 从 v0.23.0 升级至 v0.37.2
+- __jaeger__ helm chart 从 v0.57.0 升级至 v0.62.1
+- __fluentbit__ helm chart 从 v0.20.9 升级至 v1.9.9
+- __kubernetes-event-exporter__ helm chart 从 v1.4.21 升级至 v2.0.0
 
 ## 2022-10-20
 
@@ -520,7 +520,7 @@
 - Add global config api.
 - Disable cache in vmselect component.
 - Dock with ghippo roles.
-- Expose metric `insight_cluster_info` in server.
+- Expose metric __insight_cluster_info__ in server.
 - Add log.SearchLog API for SKoala, accept ES query DSL and return raw ES response.
 - Bump up OTelcol helm chart version to 0.21.1 and update otelcol architecture.
 - support mspider tracing.
