@@ -30,7 +30,7 @@
 
 3. 参考下列要求配置流水线，然后点击 __下一步__ 。
 
-    - 目标镜像名称：为目标镜像命名，需包含目标镜像的存储路径，例如 __release-ci.daocloud.io/test-lfj/fromjar__ 。
+    - 目标镜像地址：为目标镜像命名，需包含目标镜像的存储路径，例如 __release-ci.daocloud.io/test-lfj/fromjar__ 。
     - Tag：为目标镜像打标签，例如版本号 __v1.0__ 。
     - 凭证：选择访问镜像仓库的凭证，例如 __registry-credential__ 。
     - JAVA_OPTS：用来设置 JVM 相关运行参数的变量，例如 __-server -Xms2048m -Xmx2048m -Xss512k__ 。
