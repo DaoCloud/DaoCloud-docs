@@ -278,10 +278,10 @@ tar -vxf skoala_x.y.z_amd64.tar
 
 解压完成后会得到四个压缩包:
 
-  - skoala-x.y.z.tgz
-  - skoala-init-x.y.z.tgz
-  - skoala_x.y.z.bundle.tar
-  - skoala-init_x.y.z.bundle.tar
+- skoala-x.y.z.tgz
+- skoala-init-x.y.z.tgz
+- skoala_x.y.z.bundle.tar
+- skoala-init_x.y.z.bundle.tar
 
 ### 同步镜像
 
