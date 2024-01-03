@@ -268,29 +268,43 @@ skoala-ui-7c9f5b7b67-9rpzc             2/2     Running   0               3h48m
 
 DCE 5.0 的各个模块松散耦合，支持独立安装、升级各个模块。此文档适用于通过离线方式安装微服务引擎之后进行的升级。
 
+### 下载离线包
+
+下载[微服务引擎模块](../../download/modules/skoala.md)离线包并解压。
+
+```shell
+tar -vxf skoala_x.y.z_amd64.tar
+```
+
+解压完成后会得到四个压缩包:
+
+- skoala-x.y.z.tgz
+- skoala-init-x.y.z.tgz
+- skoala_x.y.z.bundle.tar
+- skoala-init_x.y.z.bundle.tar
+
 ### 同步镜像
 
-将镜像下载到本地节点之后，需要通过 [chart-syncer](https://github.com/bitnami-labs/charts-syncer) 或容器运行时将最新版镜像同步到您的镜像仓库。推荐使用 chart-syncer 同步镜像，因为该方法更加高效便捷。
+将镜像下载到本地节点之后，需要通过 [charts-syncer](https://github.com/bitnami-labs/charts-syncer) 或容器运行时将最新版镜像同步到您的镜像仓库。推荐使用 charts-syncer 同步镜像，因为该方法更加高效便捷。
 
-#### chart-syncer 同步镜像
+#### charts-syncer 同步镜像
 
-1. 使用如下内容创建 `load-image.yaml` 作为 chart-syncer 的配置文件
+1. 使用如下内容创建 `load-image.yaml` 作为 charts-syncer 的配置文件
 
-    `load-image.yaml` 文件中的各项参数均为必填项。您需要一个私有的镜像仓库，并参考如下说明修改各项配置。有关 chart-syncer 配置文件的详细解释，可参考其[官方文档](https://github.com/bitnami-labs/charts-syncer)。
+    `load-image.yaml` 文件中的各项参数均为必填项。您需要一个私有的镜像仓库，并参考如下说明修改各项配置。有关 charts-syncer 配置文件的详细解释，可参考其[官方文档](https://github.com/bitnami-labs/charts-syncer)。
 
-    === "已安装 chart repo"
+    === "已安装 HARBOR chart repo"
 
-        若当前环境已安装 chart repo，则可以使用如下配置直接同步镜像。
+        若当前环境已安装 HARBOR chart repo，charts-syncer 也支持将 chart 导出为 tgz 文件。
 
-        ```yaml
+        ```yaml title="load-image.yaml"
         source:
           intermediateBundlesPath: skoala-offline # 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
         target:
-          containerRegistry: 10.16.23.145 # 需更改为你的镜像仓库 url
-          containerRepository: release.daocloud.io/skoala # 需更改为你的镜像仓库
+          containerPrefixRegistry: 10.16.10.111 # 需更改为你的镜像仓库 url
           repo:
             kind: HARBOR # 也可以是任何其他支持的 Helm Chart 仓库类别
-            url: http://10.16.23.145/chartrepo/release.daocloud.io # 需更改为 chart repo url
+            url: http://10.16.10.111/chartrepo/release.daocloud.io # 需更改为 chart repo project url
             auth:
               username: "admin" # 你的镜像仓库用户名
               password: "Harbor12345" # 你的镜像仓库密码
@@ -300,9 +314,30 @@ DCE 5.0 的各个模块松散耦合，支持独立安装、升级各个模块。
               password: "Harbor12345" # 你的镜像仓库密码
         ```
 
+    === "已安装 CHARTMUSEUM chart repo"
+
+        若当前环境已安装 CHARTMUSEUM chart repo，charts-syncer 也支持将 chart 导出为 tgz 文件。
+
+        ```yaml title="load-image.yaml"
+        source:
+          intermediateBundlesPath: skoala-offline # 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
+        target:
+          containerPrefixRegistry: 10.16.10.111 # 需更改为你的镜像仓库 url
+          repo:
+            kind: CHARTMUSEUM # 也可以是任何其他支持的 Helm Chart 仓库类别
+            url: http://10.16.10.111 # 需更改为 chart repo url
+            auth:
+              username: "rootuser" # 你的镜像仓库用户名, 如果 chartmuseum 没有开启登录验证，就不需要填写 auth
+              password: "rootpass123" # 你的镜像仓库密码
+          containers:
+            auth:
+              username: "rootuser" # 你的镜像仓库用户名
+              password: "rootpass123" # 你的镜像仓库密码
+        ```
+
     === "未安装 chart repo"
 
-        若当前环境未安装 chart repo，chart-syncer 也支持将 chart 导出为 `tgz` 文件并存放在指定路径。
+        若当前环境未安装 chart repo，charts-syncer 也支持将 chart 导出为 `tgz` 文件并存放在指定路径。
 
         ```yaml
         source:
@@ -326,18 +361,20 @@ DCE 5.0 的各个模块松散耦合，支持独立安装、升级各个模块。
         5. 你的镜像仓库用户名
         6. 你的镜像仓库密码
 
-2. 执行同步镜像命令。
+2. 将 skoala_x.y.z.bundle.tar 和 skoala-init_x.y.z.bundle.tar 放到 skoala-offline 文件夹下。
+
+3. 执行同步镜像命令。
 
     ```shell
     charts-syncer sync --config load-image.yaml
     ```
 
-#### Docker/containerd 同步镜像
+#### docker/containerd 同步镜像
 
 1. 解压 `tar` 压缩包。
 
     ```shell
-    tar xvf skoala.bundle.tar
+    tar -vxf skoala_x.y.z.bundle.tar
     ```
 
     解压成功后会得到 3 个文件：
@@ -346,7 +383,7 @@ DCE 5.0 的各个模块松散耦合，支持独立安装、升级各个模块。
     - images.tar
     - original-chart
 
-2. 从本地加载镜像到 Docker 或 containerd。
+2. 从本地加载镜像到 Docker 或 Containerd。
 
     === "Docker"
 
@@ -354,7 +391,7 @@ DCE 5.0 的各个模块松散耦合，支持独立安装、升级各个模块。
         docker load -i images.tar
         ```
 
-    === "containerd"
+    === "Containerd"
 
         ```shell
         ctr -n k8s.io image import images.tar
@@ -362,7 +399,7 @@ DCE 5.0 的各个模块松散耦合，支持独立安装、升级各个模块。
 
 !!! note
 
-    - 需要在每个节点上都通过 Docker 或 containerd 加载镜像。
+    - 需要在每个节点上都通过 Docker 或 Containerd 加载镜像。
     - 加载完成后需要 tag 镜像，保持 Registry、Repository 与安装时一致。
 
 ### 开始升级
@@ -405,7 +442,7 @@ DCE 5.0 的各个模块松散耦合，支持独立安装、升级各个模块。
 
         ```text
         NAME                   CHART VERSION  APP VERSION  DESCRIPTION
-        skoala-release/skoala  0.14.0          v0.14.0       A Helm chart for Skoala
+        skoala-release/skoala  0.28.1          v0.28.1       A Helm chart for Skoala
         ...
         ```
 
@@ -429,13 +466,15 @@ DCE 5.0 的各个模块松散耦合，支持独立安装、升级各个模块。
         helm upgrade skoala skoala-release/skoala \
         -n skoala-system \
         -f ./bak.yaml \
-        --set global.imageRegistry=$imageRegistry
-        --version 0.14.0
+        --set global.imageRegistry=$imageRegistry \
+        --version 0.28.1
         ```
 
 === "通过 chart 包升级"
 
-    1. 备份 `--set` 参数。
+    1. 准备好 `original-chart`(解压 skoala_x.y.z.bundle.tar 得到)。
+
+    2. 备份 `--set` 参数。
 
         在升级微服务引擎版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
 
@@ -443,7 +482,7 @@ DCE 5.0 的各个模块松散耦合，支持独立安装、升级各个模块。
         helm get values skoala -n skoala-system -o yaml > bak.yaml
         ```
 
-    2. 执行 `helm upgrade`。
+    3. 执行 `helm upgrade`。
 
         升级前建议您覆盖 bak.yaml 中的 `global.imageRegistry` 为当前使用的镜像仓库地址。
 
@@ -452,7 +491,7 @@ DCE 5.0 的各个模块松散耦合，支持独立安装、升级各个模块。
         ```
 
         ```shell
-        helm upgrade skoala . \
+        helm upgrade skoala original-chart \
         -n skoala-system \
         -f ./bak.yaml \
         --set global.imageRegistry=$imageRegistry
