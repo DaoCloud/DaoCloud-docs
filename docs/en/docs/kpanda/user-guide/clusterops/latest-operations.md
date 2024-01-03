@@ -13,10 +13,10 @@ Set the number of reserved entries for Helm operations:
 
 By default, the system keeps the last 100 Helm operation records. If you keep too many entries, it may cause data redundancy, and if you keep too few entries, you may lose the key operation records you need. A reasonable reserved quantity needs to be set according to the actual situation. Specific steps are as follows:
 
-1. Click the name of the target cluster, and click `Recent Operations`->`Helm Operations`->`Set Number of Retained Items` in the left navigation bar.
+1. Click the name of the target cluster, and click __Recent Operations__ -> __Helm Operations__ -> __Set Number of Retained Items__ in the left navigation bar.
 
     
 
-2. Set how many Helm operation records need to be kept, and click `OK`.
+2. Set how many Helm operation records need to be kept, and click __OK__ .
 
     

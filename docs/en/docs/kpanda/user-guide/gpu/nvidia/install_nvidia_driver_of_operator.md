@@ -6,7 +6,7 @@ DCE 5 provides a GPU Operator offline package with CentOS 7.9 and kernel version
 - GPU vGPU Mode
 - GPU MIG Mode
 
-For more details, please refer to [NVIDIA GPU Card Usage Modes](index.md). This article demonstrates the installation using AMD architecture on CentOS 7.9 (3.10.0-1160). If you want to deploy on RedHat 8.4, please refer to [Uploading RedHat GPU Operator Offline Images to Ignition Nodes](./push_image_to_repo.md) and [Building RedHat 8.4 Offline Yum Repository](./upgrade_yum_source_redhat8_4.md).
+For more details, refer to [NVIDIA GPU Card Usage Modes](index.md). This article demonstrates the installation using AMD architecture on CentOS 7.9 (3.10.0-1160). If you want to deploy on RedHat 8.4, refer to [Uploading RedHat GPU Operator Offline Images to Ignition Nodes](./push_image_to_repo.md) and [Building RedHat 8.4 Offline Yum Repository](./upgrade_yum_source_redhat8_4.md).
 
 ## Prerequisites
 
@@ -17,30 +17,30 @@ For more details, please refer to [NVIDIA GPU Card Usage Modes](index.md). This 
 
 Follow the steps below to install the GPU Operator plugin on the cluster.
 
-1. Log in to the platform and go to `Container Management` --> `Cluster Details` of the cluster where GPU Operator will be installed.
+1. Log in to the platform and go to __Container Management__ --> __Cluster Details__ of the cluster where GPU Operator will be installed.
 
-2. On the `Helm Template` page, select `All Repositories` and search for `gpu-operator`.
+2. On the __Helm Template__ page, select __All Repositories__ and search for __gpu-operator__ .
 
-3. Select `gpu-operator` and click `Install`.
+3. Select __gpu-operator__ and click __Install__ .
 
-4. Configure the installation parameters for `gpu-operator` based on the instructions below to complete the installation.
+4. Configure the installation parameters for __gpu-operator__ based on the instructions below to complete the installation.
 
 ## Parameter Configuration
 
 ### Basic Parameter Configuration
 
-- `Name`: Enter the plugin name.
-- `Namespace`: Select the namespace for installing the plugin.
-- `Version`: Plugin version, for example, `23.6.10`.
-- `Ready-wait`: When enabled, all associated resources must be in a ready state for the application installation to be marked as successful.
-- `Failure-delete`: If the installation fails, delete the already installed associated resources. By enabling this, `Ready-wait` is automatically enabled.
-- `Detail Logs`: When enabled, detailed logs of the installation process will be recorded.
+- __Name__ : Enter the plugin name.
+- __Namespace__ : Select the namespace for installing the plugin.
+- __Version__ : Plugin version, for example, __23.6.10__ .
+- __Ready-wait__ : When enabled, all associated resources must be in a ready state for the application installation to be marked as successful.
+- __Failure-delete__ : If the installation fails, delete the already installed associated resources. By enabling this, __Ready-wait__ is automatically enabled.
+- __Detail Logs__ : When enabled, detailed logs of the installation process will be recorded.
 
 ### Advanced Parameter Configuration
 
 #### DevicePlugin Parameter Configuration
 
-1. `DevicePlugin.enable`: Configure whether to enable the Kubernetes [DevicePlugin](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/) feature. Determine whether to enable it based on your use case.
+1. __DevicePlugin.enable__ : Configure whether to enable the Kubernetes [DevicePlugin](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/) feature. Determine whether to enable it based on your use case.
 
     - Enable it for GPU Full mode.
     - Disable it for GPU vGPU mode.
@@ -49,33 +49,33 @@ Follow the steps below to install the GPU Operator plugin on the cluster.
     !!! note
 
         Note:
-        1. Only one GPU card mode can be used in a cluster, so before deploying the GPU Operator, please confirm the GPU card usage mode to decide whether to enable the `DevicePlugin` feature.
-        2. When using vGPU mode (disabling this parameter), the daemon `nvidia-operator-validator` will remain in the "Waiting" state for a long time. This is normal and does not affect the use of vGPU functionality.
+        1. Only one GPU card mode can be used in a cluster, so before deploying the GPU Operator, please confirm the GPU card usage mode to decide whether to enable the __DevicePlugin__ feature.
+        2. When using vGPU mode (disabling this parameter), the daemon __nvidia-operator-validator__ will remain in the "Waiting" state for a long time. This is normal and does not affect the use of vGPU functionality.
 
 #### Driver Parameter Configuration
 
-2. `Driver.enable`: Configure whether to deploy NVIDIA drivers on the nodes. It is enabled by default. If you have already deployed the NVIDIA driver on the nodes before using the GPU Operator, please disable it.
+2. __Driver.enable__ : Configure whether to deploy NVIDIA drivers on the nodes. It is enabled by default. If you have already deployed the NVIDIA driver on the nodes before using the GPU Operator, please disable it.
 
-3. `Driver.image`: Configure the GPU driver image. The recommended default image is `nvidia/driver`.
+3. __Driver.image__ : Configure the GPU driver image. The recommended default image is __nvidia/driver__ .
 
-4. `Driver.repository`: Configure the repository where the GPU driver image is located. The default repository is nvidia's `nvcr.io`.
+4. __Driver.repository__ : Configure the repository where the GPU driver image is located. The default repository is nvidia's __nvcr.io__ .
 
-5. `Driver.version`: Configure the version of the GPU driver image. For offline deployment, use the default parameters. Only configure this for online installation. The driver image versions for different operating systems have the following differences:
+5. __Driver.version__ : Configure the version of the GPU driver image. For offline deployment, use the default parameters. Only configure this for online installation. The driver image versions for different operating systems have the following differences:
 
-    - For RedHat systems, the naming convention is usually composed of the CUDA version and OS version. For example, if the kernel is `4.18.0-305.el8.x86_64`, the Driver.version value for RedHat 8.4 would be `525.105.17`.
-    - For Ubuntu systems, the naming convention is `<driver-branch>-<linux-kernel-version>-<os-tag>`.
-    For example, `525-5.15.0-69-ubuntu22.04`, where `525` is the CUDA version, `5.15.0-69` is the kernel version, and `ubuntu22.04` is the OS version.
+    - For RedHat systems, the naming convention is usually composed of the CUDA version and OS version. For example, if the kernel is __4.18.0-305.el8.x86_64__ , the Driver.version value for RedHat 8.4 would be __525.105.17__ .
+    - For Ubuntu systems, the naming convention is __<driver-branch>-<linux-kernel-version>-<os-tag>__ .
+    For example, __525-5.15.0-69-ubuntu22.04__ , where __525__ is the CUDA version, __5.15.0-69__ is the kernel version, and __ubuntu22.04__ is the OS version.
     Note: For Ubuntu, the Driver image version must be strongly consistent with the node's kernel version, including minor version numbers.
 
-    - For CentOS systems, the naming convention is usually composed of the CUDA version and the kernel version. For example, if the kernel is `3.10.0-1160`, the Driver.version value for CentOS 7.9 would be `465.19`.
+    - For CentOS systems, the naming convention is usually composed of the CUDA version and the kernel version. For example, if the kernel is __3.10.0-1160__ , the Driver.version value for CentOS 7.9 would be __465.19__ .
 
-6. `Driver.installKernelModule`: Configure whether to install the NVIDIA kernel module. It is enabled by default. If you have already installed the NVIDIA kernel module on the nodes before using the GPU Operator, please disable it.
+6. __Driver.installKernelModule__ : Configure whether to install the NVIDIA kernel module. It is enabled by default. If you have already installed the NVIDIA kernel module on the nodes before using the GPU Operator, please disable it.
 
-6. `Driver.RepoConfig.ConfigMapName`: This parameter is used to record the name of the offline yum source configuration file for GPU Operator. When using the pre-installed offline package, refer to "Using the yum source configuration of any node in the Global cluster".
+6. __Driver.RepoConfig.ConfigMapName__ : This parameter is used to record the name of the offline yum source configuration file for GPU Operator. When using the pre-installed offline package, refer to "Using the yum source configuration of any node in the Global cluster".
 
     ??? note "Using the yum source configuration of any node in the Global cluster"
 
-        1. Use SSH or another method to access any node in the Global cluster and retrieve the platform's offline source configuration file `extension.repo`:
+        1. Use SSH or another method to access any node in the Global cluster and retrieve the platform's offline source configuration file __extension.repo__ :
 
             ```bash
             cat /etc/yum.repos.d/extension.repo # View the contents of extension.repo.
@@ -97,8 +97,8 @@ Follow the steps below to install the GPU Operator plugin on the cluster.
             name = kubean extension 1
             ```
 
-        2. Copy the contents of the `extension.repo` file mentioned above. In the `gpu-operator` namespace of the cluster where GPU Operator will be deployed, create a new config map named `local-repo-config`. Refer to [Creating ConfigMaps](../../configmaps-secrets/create-configmap.md) for creating the config map.
-        **Note: The `key` value must be `CentOS-Base.repo`, and the `value` value should contain the contents of the offline source configuration file `extension.repo`.**
+        2. Copy the contents of the __extension.repo__ file mentioned above. In the __gpu-operator__ namespace of the cluster where GPU Operator will be deployed, create a new config map named __local-repo-config__ . Refer to [Creating ConfigMaps](../../configmaps-secrets/create-configmap.md) for creating the config map.
+        **Note: The __Secret__ value must be __CentOS-Base.repo__ , and the __value__ value should contain the contents of the offline source configuration file __extension.repo__ .**
 
     For other operating systems or kernels, refer to the following links to create the yum source file:
 
@@ -108,18 +108,18 @@ Follow the steps below to install the GPU Operator plugin on the cluster.
 
 7. **MIG Configuration Parameters**
 
-    For detailed configuration, please refer to [Enabling MIG Functionality](mig/create_mig.md).
+    For detailed configuration, refer to [Enabling MIG Functionality](mig/create_mig.md).
 
-    - `MigManager.enabled`: Enable or disable MIG capability feature.
-    - `Mig.strategy`: The strategy for exposing MIG devices on the GPU cards of the nodes. NVIDIA provides two strategies for exposing MIG devices (`single` and `mixed`). For more details, refer to [NVIDIA GPU Card Mode Explanation](index.md).
-    - `MigManager.Config`: Used to configure MIG partitioning parameters and default values.
-        - `default`: The default partitioning configuration used by nodes. It is set to `all-disabled` by default.
-        - `name`: The name of the MIG partitioning configuration file that defines the (GI, CI) partitioning strategy for MIG. It is set to `default-mig-parted-config` by default. For custom parameters, refer to [Enabling MIG Functionality](mig/create_mig.md).
+    - __MigManager.enabled__ : Enable or disable MIG capability feature.
+    - __Mig.strategy__ : The strategy for exposing MIG devices on the GPU cards of the nodes. NVIDIA provides two strategies for exposing MIG devices ( __single__ and __mixed__ ). For more details, refer to [NVIDIA GPU Card Mode Explanation](index.md).
+    - __MigManager.Config__ : Used to configure MIG partitioning parameters and default values.
+        - __default__ : The default partitioning configuration used by nodes. It is set to __all-disabled__ by default.
+        - __name__ : The name of the MIG partitioning configuration file that defines the (GI, CI) partitioning strategy for MIG. It is set to __default-mig-parted-config__ by default. For custom parameters, refer to [Enabling MIG Functionality](mig/create_mig.md).
 
-8. `Node-Feature-Discovery.enableNodeFeatureAPI`: Enable or disable the Node Feature API (Node Feature Discovery API).
+8. __Node-Feature-Discovery.enableNodeFeatureAPI__ : Enable or disable the Node Feature API (Node Feature Discovery API).
 
-     - When set to `true`, the Node Feature API is enabled.
-     - When set to `false` or not set, the Node Feature API is disabled.
+     - When set to __true__ , the Node Feature API is enabled.
+     - When set to __false__ or not set, the Node Feature API is disabled.
 
 ### Next Steps
 

@@ -15,19 +15,19 @@ The container management module supports interface-based management of custom re
 
 - The container management module [connected to the Kubernetes cluster](../clusters/integrate-cluster.md) or [created Kubernetes](../clusters/create-cluster.md), and can access the cluster UI interface
 
-- Completed a [namespace creation](../namespaces/createns.md), [user creation](../../../ghippo/user-guide/access-control/user.md), and authorize the user as [`Cluster Admin`](../permissions/permission-brief.md#cluster-admin) role, for details, please refer to [Namespace Authorization](../permissions/cluster-ns-auth.md)
+- Completed a [namespace creation](../namespaces/createns.md), [user creation](../../../ghippo/user-guide/access-control/user.md), and authorize the user as [`Cluster Admin`](../permissions/permission-brief.md#cluster-admin) role, for details, refer to [Namespace Authorization](../permissions/cluster-ns-auth.md)
 
 ## Create custom resources via YAML
 
-1. Click a cluster name to enter `Cluster Details`.
+1. Click a cluster name to enter __Cluster Details__ .
 
     
 
-2. In the left navigation bar, click `Custom Resource`, and click the `YAML Create` button in the upper right corner.
+2. In the left navigation bar, click __Custom Resource__ , and click the __YAML Create__ button in the upper right corner.
 
     
 
-3. On the `YAML Creation` page, fill in the YAML statement and click `OK`.
+3. On the __Create with YAML__ page, fill in the YAML statement and click __OK__ .
 
     
 
@@ -72,23 +72,23 @@ spec:
 
 ## Create a custom resource example via YAML
 
-1. Click a cluster name to enter `Cluster Details`.
+1. Click a cluster name to enter __Cluster Details__ .
 
     
 
-2. In the left navigation bar, click `Custom Resource`, and click the `YAML Create` button in the upper right corner.
+2. In the left navigation bar, click __Custom Resource__ , and click the __YAML Create__ button in the upper right corner.
 
     
 
-3. Click the custom resource named `crontabs.stable.example.com`, enter the details, and click the `YAML Create` button in the upper right corner.
+3. Click the custom resource named `crontabs.stable.example.com` , enter the details, and click the __YAML Create__ button in the upper right corner.
 
     
 
-4. On the `YAML Creation` page, fill in the YAML statement and click `OK`.
+4. On the __Create with YAML__ page, fill in the YAML statement and click __OK__ .
 
     
 
-5. Return to the details page of `crontabs.stable.example.com`, and you can view the custom resource named `my-new-cron-object` just created.
+5. Return to the details page of `crontabs.stable.example.com` , and you can view the custom resource named __my-new-cron-object__ just created.
 
 **CR Example:**
 

@@ -10,17 +10,17 @@ This section explains how to install the vGPU plugin in the DCE 5.0 platform, wh
 
 ## Procedure
 
-1. Path: `Container Management` -> `Cluster Management` -> Click the target cluster -> `Helm Apps` -> `Helm Repositories` -> Search for "nvidia-vgpu".
+1. Path: __Container Management__ -> __Cluster Management__ -> Click the target cluster -> __Helm Apps__ -> __Helm Repositories__ -> Search for "nvidia-vgpu".
 
     
 
 2. During the installation of vGPU, several basic modification parameters are provided. If you need to modify advanced parameters, click the YAML column to make changes:
 
-    - `deviceMemoryScaling`: NVIDIA device memory scaling factor, the input value must be an integer, with a default value of 1. It can be greater than 1 (enabling virtual memory, experimental feature). For an NVIDIA GPU with a memory size of M, if we configure the `devicePlugin.deviceMemoryScaling` parameter as S, in a Kubernetes cluster where we have deployed our device plugin, the vGPUs assigned from this GPU will have a total memory of `S * M`.
+    - __deviceMemoryScaling__ : NVIDIA device memory scaling factor, the input value must be an integer, with a default value of 1. It can be greater than 1 (enabling virtual memory, experimental feature). For an NVIDIA GPU with a memory size of M, if we configure the __devicePlugin.deviceMemoryScaling__ parameter as S, in a Kubernetes cluster where we have deployed our device plugin, the vGPUs assigned from this GPU will have a total memory of __S * M__ .
 
-    - `deviceSplitCount`: An integer type, with a default value of 10. Number of GPU splits, each GPU cannot be assigned more tasks than its configuration count. If configured as N, each GPU can have up to N tasks simultaneously.
+    - __deviceSplitCount__ : An integer type, with a default value of 10. Number of GPU splits, each GPU cannot be assigned more tasks than its configuration count. If configured as N, each GPU can have up to N tasks simultaneously.
 
-    - `Resources`: Represents the resource usage of the vgpu-device-plugin and vgpu-schedule pods.
+    - __Resources__ : Represents the resource usage of the vgpu-device-plugin and vgpu-schedule pods.
 
     
 

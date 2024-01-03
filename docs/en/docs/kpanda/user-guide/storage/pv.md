@@ -12,11 +12,11 @@ Currently, there are two ways to create data volumes: YAML and form. These two w
 
 ### YAML creation
 
-1. Click the name of the target cluster in the cluster list, and then click `Container Storage`->`Data Volume (PV)`->`YAML Creation` in the left navigation bar.
+1. Click the name of the target cluster in the cluster list, and then click __Container Storage__ -> __Data Volume (PV)__ -> __Create with YAML__ in the left navigation bar.
 
     
 
-2. Enter or paste the prepared YAML file in the pop-up box, and click `OK` at the bottom of the pop-up box.
+2. Enter or paste the prepared YAML file in the pop-up box, and click __OK__ at the bottom of the pop-up box.
 
     > Supports importing YAML files from local or downloading and saving filled files to local.
 
@@ -24,7 +24,7 @@ Currently, there are two ways to create data volumes: YAML and form. These two w
 
 ### Form Creation
 
-1. Click the name of the target cluster in the cluster list, and then click `Container Storage`->`Data Volume (PV)`->`Create Data Volume (PV)` in the left navigation bar.
+1. Click the name of the target cluster in the cluster list, and then click __Container Storage__ -> __Data Volume (PV)__ -> __Create Data Volume (PV)__ in the left navigation bar.
 
     
 
@@ -46,8 +46,8 @@ Currently, there are two ways to create data volumes: YAML and form. These two w
 
     - Recycling strategy:
 
-        - Retain: The PV is not deleted, but its status is only changed to `released`, which needs to be manually recycled by the user. For how to manually reclaim, please refer to [Persistent Volume](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#retain).
-        - Recycle: keep the PV but empty its data, perform a basic wipe (`rm -rf /thevolume/*`).
+        - Retain: The PV is not deleted, but its status is only changed to __released__ , which needs to be manually recycled by the user. For how to manually reclaim, refer to [Persistent Volume](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#retain).
+        - Recycle: keep the PV but empty its data, perform a basic wipe ( __rm -rf /thevolume/*__ ).
         - Delete: When deleting a PV and its data.
 
     - Volume mode:
@@ -61,7 +61,7 @@ Currently, there are two ways to create data volumes: YAML and form. These two w
 
 ## View data volume
 
-Click the name of the target cluster in the cluster list, and then click `Container Storage`->`Data Volume (PV)` in the left navigation bar.
+Click the name of the target cluster in the cluster list, and then click __Container Storage__ -> __Data Volume (PV)__ in the left navigation bar.
 
 - On this page, you can view all data volumes in the current cluster, as well as information such as the status, capacity, and namespace of each data volume.
 
@@ -79,13 +79,13 @@ By cloning a data volume, a new data volume can be recreated based on the config
 
 1. Enter the clone page
 
-    - On the data volume list page, find the data volume to be cloned, and select `Clone` under the operation bar on the right.
+    - On the data volume list page, find the data volume to be cloned, and select __Clone__ under the operation bar on the right.
 
-        > You can also click the name of the data volume, click the operation button in the upper right corner of the details page and select `Clone`.
+        > You can also click the name of the data volume, click the operation button in the upper right corner of the details page and select __Clone__ .
 
         
 
-2. Use the original configuration directly, or modify it as needed, and click `OK` at the bottom of the page.
+2. Use the original configuration directly, or modify it as needed, and click __OK__ at the bottom of the page.
 
 ## Update data volume
 
@@ -95,11 +95,11 @@ There are two ways to update data volumes. Support for updating data volumes via
 
     Only updating the alias, capacity, access mode, reclamation policy, label, and comment of the data volume is supported.
 
-- On the data volume list page, find the data volume that needs to be updated, select `Update` under the operation bar on the right to update through the form, select `Edit YAML` to update through YAML.
+- On the data volume list page, find the data volume that needs to be updated, select __Update__ under the operation bar on the right to update through the form, select __Edit YAML__ to update through YAML.
 
     
 
-- Click the name of the data volume to enter the details page of the data volume, select `Update` in the upper right corner of the page to update through the form, select `Edit YAML` to update through YAML.
+- Click the name of the data volume to enter the details page of the data volume, select __Update__ in the upper right corner of the page to update through the form, select __Edit YAML__ to update through YAML.
 
     
 
@@ -107,5 +107,5 @@ There are two ways to update data volumes. Support for updating data volumes via
 
 On the data volume list page, find the data to be deleted, and select Delete in the operation column on the right.
 
-> You can also click the name of the data volume, click the operation button in the upper right corner of the details page and select `Delete`.
+> You can also click the name of the data volume, click the operation button in the upper right corner of the details page and select __Delete__ .
 

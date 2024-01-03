@@ -7,21 +7,21 @@ hide:
 
 DCE 5.0 Container Management module provides cluster inspection functionality, which supports inspection at the cluster, node, and container group levels.
 
-- Cluster level: Check the running status of system components in the cluster, including cluster status, resource usage, and specific inspection items for control nodes such as `kube-apiserver` and `etcd`.
+- Cluster level: Check the running status of system components in the cluster, including cluster status, resource usage, and specific inspection items for control nodes such as __kube-apiserver__ and __etcd__ .
 - Node level: Includes common inspection items for both control nodes and worker nodes, such as node resource usage, handle count, PID status, and network status.
 - Pod level: Check the CPU and memory usage, running status, PV and PVC status of Pods.
 
 Here's how to create an inspection configuration.
 
-1. Click `Cluster Inspection` in the left navigation bar.
+1. Click __Cluster Inspection__ in the left navigation bar.
 
     ![nav](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/inspect01.png)
 
-2. On the right side of the page, click `Inspection Configuration`.
+2. On the right side of the page, click __Inspection Configuration__ .
 
     ![create](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/inspect02.png)
 
-3. Fill in the inspection configuration based on the following instructions, then click `OK` at the bottom of the page.
+3. Fill in the inspection configuration based on the following instructions, then click __OK__ at the bottom of the page.
 
     - Cluster: Select the clusters that you want to inspect from the dropdown list. **If you select multiple clusters, multiple inspection configurations will be automatically generated (only the inspected clusters are inconsistent, all other configurations are identical).**
     - Scheduled Inspection: When enabled, it allows for regular automatic execution of cluster inspections based on a pre-set inspection frequency.
@@ -33,12 +33,12 @@ Here's how to create an inspection configuration.
 
 After creating the inspection configuration, it will be automatically displayed in the inspection configuration list. Click the more options button on the right of the configuration to immediately perform an inspection or modify the inspection configuration.
 
-- Click `Inspection` to perform an inspection once based on the configuration.
-- Click `Inspection Configuration` to modify the inspection configuration.
+- Click __Inspection__ to perform an inspection once based on the configuration.
+- Click __Inspection Configuration__ to modify the inspection configuration.
 
     ![basic](../../images/inspect06.png)
 
 !!! note
 
-    - After creating the inspection configuration, if the `Scheduled Inspection` configuration is enabled, inspections will be automatically executed at the specified time.
-    - If `Scheduled Inspection` configuration is not enabled, you need to manually [trigger the inspection](inspect.md).
+    - After creating the inspection configuration, if the __Scheduled Inspection__ configuration is enabled, inspections will be automatically executed at the specified time.
+    - If __Scheduled Inspection__ configuration is not enabled, you need to manually [trigger the inspection](inspect.md).

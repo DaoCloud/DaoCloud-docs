@@ -14,7 +14,7 @@ The focus of the scan varies when checking different types of nodes.
 
 - Scan the control plane node (Controller)
 
-    - Focus on the security of system components such as `API Server`, `controller-manager`, `scheduler`, `kubelet`, etc.
+    - Focus on the security of system components such as __API Server__ , __controller-manager__ , __scheduler__ , __kubelet__ , etc.
     - Check the security configuration of the Etcd database.
     - Verify whether the cluster's authentication mechanism, authorization policy, and network security configuration meet security standards.
 
@@ -36,7 +36,7 @@ Specifically, authorization scanning supports the following operations:
 
 - Scans the health status of all nodes in the cluster.
 
-- Scans the running state of components in the cluster, such as `kube-apiserver`, `kube-controller-manager`, `kube-scheduler`, etc.
+- Scans the running state of components in the cluster, such as __kube-apiserver__ , __kube-controller-manager__ , __kube-scheduler__ , etc.
 
 - Scans security configurations: Check Kubernetes' security configuration.
 

@@ -9,12 +9,12 @@ This section explains how to use Ascend GPU on the DCE 5.0 platform.
 
 ## Configuration through the User Interface
 
-1. Confirm whether the cluster has detected the GPU cards. Click `Cluster` -> `Cluster Settings` -> `Addon Plugins` and check if the corresponding GPU type has been automatically enabled and detected.
-   Currently, the cluster will automatically enable `GPU`, and set the GPU type as `Ascend`.
+1. Confirm whether the cluster has detected the GPU cards. Click __Clusters__ -> __Cluster Settings__ -> __Addon Plugins__ and check if the corresponding GPU type has been automatically enabled and detected.
+   Currently, the cluster will automatically enable __GPU__ , and set the GPU type as __Ascend__ .
 
    
 
-2. Deploy the workload by clicking on `Cluster` -> `Workloads`. Deploy the workload using an image, and after selecting the type (Ascend), configure the number of physical cards that the application will use:
+2. Deploy the workload by clicking on __Clusters__ -> __Workloads__ . Deploy the workload using an image, and after selecting the type (Ascend), configure the number of physical cards that the application will use:
 
    **Number of Physical Cards (huawei.com/Ascend910)**: Indicates the number of physical cards that the current Pod needs to mount. The input value must be an integer and **less than or equal to** the number of cards on the host machine.
    

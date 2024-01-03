@@ -25,7 +25,7 @@ Whether using vGPU in a virtualized environment or MIG on a physical GPU, NVIDIA
     - Each GPU can enable or disable MIG individually and freely configure any available mixture of MIG device types.
     - The k8s-device-plugin running on the node will:
         - Expose any GPUs not in MIG mode using the traditional `nvidia.com/gpu` resource type.
-        - Expose individual MIG devices using resource types that follow the pattern `nvidia.com/mig-<slice_count>g.<memory_size>gb`.
+        - Expose individual MIG devices using resource types that follow the pattern `nvidia.com/mig-<slice_count>g.<memory_size>gb` .
 
 For detailed instructions on enabling these configurations, refer to [Offline Installation of GPU Operator](install_nvidia_driver_of_operator.md).
 

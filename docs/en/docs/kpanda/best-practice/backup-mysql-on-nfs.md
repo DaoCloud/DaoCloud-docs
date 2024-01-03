@@ -11,7 +11,7 @@ perform cross-cluster backup migration for a stateful application.
 
 ### Prepare Two Clusters
 
-`main-cluster` will be the source cluster for backup data, and `recovery-cluster` will be the target cluster for data recovery.
+ __main-cluster__ will be the source cluster for backup data, and __recovery-cluster__ will be the target cluster for data recovery.
 
 | Cluster           | IP            | Nodes  |
 | ----------------- | ------------- | ------ |
@@ -53,9 +53,9 @@ perform cross-cluster backup migration for a stateful application.
 
 2. Prepare NFS storage service for the MySQL application.
 
-   Log in to any control node of both `main-cluster` and `recovery-cluster`.
-   Use the command `vi nfs.yaml` to create a file named `nfs.yaml` on the node,
-   and copy the following YAML content into the `nfs.yaml` file.
+   Log in to any control node of both __main-cluster__ and __recovery-cluster__ .
+   Use the command __vi nfs.yaml__ to create a file named __nfs.yaml__ on the node,
+   and copy the following YAML content into the __nfs.yaml__ file.
 
     <details>
     <summary>nfs.yaml</summary>
@@ -261,13 +261,13 @@ perform cross-cluster backup migration for a stateful application.
     ```
     </details>
 
-3. Run the `nfs.yaml` file on the control nodes of both clusters.
+3. Run the __nfs.yaml__ file on the control nodes of both clusters.
 
     ```bash
     kubectl apply -f nfs.yaml
     ```
 
-4. Check the status of the NFS Pod and wait for its status to become `running` (approximately 2 minutes).
+4. Check the status of the NFS Pod and wait for its status to become __running__ (approximately 2 minutes).
 
     ```bash
     kubectl get pod -n nfs-system -owide
@@ -286,8 +286,8 @@ perform cross-cluster backup migration for a stateful application.
 
 1. Prepare a PVC (Persistent Volume Claim) based on NFS storage for the MySQL application to store its data.
 
-    Use the command `vi pvc.yaml` to create a file named `pvc.yaml` on the node,
-    and copy the following YAML content into the `pvc.yaml` file.
+    Use the command __vi pvc.yaml__ to create a file named __pvc.yaml__ on the node,
+    and copy the following YAML content into the __pvc.yaml__ file.
 
     <details>
     <summary>pvc.yaml</summary>
@@ -308,7 +308,7 @@ perform cross-cluster backup migration for a stateful application.
     ```
     </details>
 
-2. Run the `pvc.yaml` file using the kubectl tool on the node.
+2. Run the __pvc.yaml__ file using the kubectl tool on the node.
 
     ```bash
     kubectl apply -f pvc.yaml
@@ -324,8 +324,8 @@ perform cross-cluster backup migration for a stateful application.
 
 3. Deploy the MySQL application.
 
-    Use the command `vi mysql.yaml` to create a file named `mysql.yaml` on the node,
-    and copy the following YAML content into the `mysql.yaml` file.
+    Use the command __vi mysql.yaml__ to create a file named __mysql.yaml__ on the node,
+    and copy the following YAML content into the __mysql.yaml__ file.
 
     <details>
     <summary>mysql.yaml</summary>
@@ -390,7 +390,7 @@ perform cross-cluster backup migration for a stateful application.
     ```
     </details>
 
-4. Run the `mysql.yaml` file using the kubectl tool on the node.
+4. Run the __mysql.yaml__ file using the kubectl tool on the node.
 
     ```bash
     kubectl apply -f mysql.yaml
@@ -406,7 +406,7 @@ perform cross-cluster backup migration for a stateful application.
 
 5. Check the status of the MySQL Pod.
 
-    Execute `kubectl get pod | grep mysql` to view the status of the MySQL Pod and wait for its status to become `running` (approximately 2 minutes).
+    Execute `kubectl get pod | grep mysql` to view the status of the MySQL Pod and wait for its status to become __running__ (approximately 2 minutes).
 
     <details>
     <summary>Expected output</summary>
@@ -419,14 +419,14 @@ perform cross-cluster backup migration for a stateful application.
     !!! note
 
         - If the MySQL Pod remains in a non-running state for a long time, it is usually because NFS dependencies are not installed on all nodes in the cluster.
-        - Execute `kubectl describe pod ${mysql pod name}` to view detailed information about the Pod.
-        - If there is an error message like `MountVolume.SetUp failed for volume "pvc-4ad70cc6-df37-4253-b0c9-8cb86518ccf8" : mount failed: exit status 32`, please delete the previous resources by executing `kubectl delete -f nfs.yaml/pvc.yaml/mysql.yaml` and start from deploying the NFS service again.
+        - Execute __kubectl describe pod ${mysql pod name}__ to view detailed information about the Pod.
+        - If there is an error message like __MountVolume.SetUp failed for volume "pvc-4ad70cc6-df37-4253-b0c9-8cb86518ccf8" : mount failed: exit status 32__ , please delete the previous resources by executing __kubectl delete -f nfs.yaml/pvc.yaml/mysql.yaml__ and start from deploying the NFS service again.
 
 6. Write data to the MySQL application.
 
     To verify the success of the data migration later, you can use a script to write test data to the MySQL application.
 
-    1. Use the command `vi insert.sh` to create a script named `insert.sh` on the node,
+    1. Use the command __vi insert.sh__ to create a script named __insert.sh__ on the node,
        and copy the following content into the script.
 
         <details>
@@ -462,7 +462,7 @@ perform cross-cluster backup migration for a stateful application.
         ```
         </details>
 
-    2. Add permission to `insert.sh` and run this script.
+    2. Add permission to __insert.sh__ and run this script.
 
         ```bash
         [root@g-master1 ~]# chmod +x insert.sh
@@ -489,7 +489,7 @@ perform cross-cluster backup migration for a stateful application.
         ```
         </details>
 
-    3. Press `control` and `c` on the keyboard simultaneously to pause the script execution.
+    3. Press __Ctrl + C__ on the keyboard simultaneously to pause the script execution.
 
     4. Go to the MySQL Pod and check the data written in MySQL.
 
@@ -528,7 +528,7 @@ perform cross-cluster backup migration for a stateful application.
 
     The velero plugin needs to be installed on **both the source and target clusters**.
 
-Refer to the [Install Velero Plugin](../user-guide/backup/install-velero.md) documentation and the MinIO configuration below to install the velero plugin on the `main-cluster` and `recovery-cluster`.
+Refer to the [Install Velero Plugin](../user-guide/backup/install-velero.md) documentation and the MinIO configuration below to install the velero plugin on the __main-cluster__ and __recovery-cluster__ .
 
 | MinIO Server Address     | Bucket      | Username | Password  |
 | ------------------------| ----------- | ---------| ----------|
@@ -540,24 +540,24 @@ Refer to the [Install Velero Plugin](../user-guide/backup/install-velero.md) doc
 
 ## Backup MySQL Application and Data
 
-1. Add a unique label, `backup=mysql`, to the MySQL application and PVC data. This will facilitate resource selection during backup.
+1. Add a unique label, __backup=mysql__ , to the MySQL application and PVC data. This will facilitate resource selection during backup.
 
     ```
-    kubectl label deploy mysql-deploy backup=mysql #为 `mysql-deploy` 负载添加标签
+    kubectl label deploy mysql-deploy backup=mysql #为 __mysql-deploy__ 负载添加标签
     kubectl label pod mysql-deploy-5d6f94cb5c-gkrks backup=mysql #为 mysql pod 添加标签
     kubectl label pvc mydata backup=mysql #为 mysql 的 pvc 添加标签
     ```
 
 2. Refer to the steps described in [Application Backup](../user-guide/backup/deployment.md#_3) and the parameters below to create an application backup.
 
-   - Name: `backup-mysql` (can be customized)
-   - Source Cluster: `main-cluster`
+   - Name: __backup-mysql__ (can be customized)
+   - Source Cluster: __main-cluster__ 
    - Namespace: default
    - Resource Filter - Specify resource label: backup:mysql
 
    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/mysql03.png)
 
-3. After creating the backup plan, the page will automatically return to the backup plan list. Find the newly created backup plan `backup-mysq` and click the more options button `...` in the plan. Select "Run Now" to execute the newly created backup plan.
+3. After creating the backup plan, the page will automatically return to the backup plan list. Find the newly created backup plan __backup-mysq__ and click the more options button __...__ in the plan. Select "Run Now" to execute the newly created backup plan.
 
    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/mysql05.png)
 
@@ -565,21 +565,21 @@ Refer to the [Install Velero Plugin](../user-guide/backup/install-velero.md) doc
 
 ## Cross-Cluster Recovery of MySQL Application and Data
 
-1. Log in to the DCE 5.0 platform and select `Container Management` -> `Backup & Restore` -> `Application Backup` from the left navigation menu.
+1. Log in to the DCE 5.0 platform and select __Container Management__ -> __Backup & Restore__ -> __Application Backup__ from the left navigation menu.
 
    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/mysql06.png)
 
-2. Select `Recovery` in the left-side toolbar, then click `Restore Backup` on the right side.
+2. Select __Recovery__ in the left-side toolbar, then click __Restore Backup__ on the right side.
 
    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/mysql07.png)
 
 3. Fill in the parameters based on the following instructions:
 
-   - Name: `restore-mysql` (can be customized)
-   - Backup Source Cluster: `main-cluster`
-   - Backup Plan: `backup-mysql`
+   - Name: __restore-mysql__ (can be customized)
+   - Backup Source Cluster: __main-cluster__ 
+   - Backup Plan: __backup-mysql__ 
    - Backup Point: default
-   - Recovery Target Cluster: `recovery-cluster`
+   - Recovery Target Cluster: __recovery-cluster__ 
 
    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/mysql08.png)
 
@@ -587,7 +587,7 @@ Refer to the [Install Velero Plugin](../user-guide/backup/install-velero.md) doc
 
 ## 验证数据是否成功恢复
 
-1. 登录 `recovery-cluster` 集群的控制节点，查看 `mysql-deploy` 负载是否已经成功备份到当前集群。
+1. 登录 __recovery-cluster__ 集群的控制节点，查看 __mysql-deploy__ 负载是否已经成功备份到当前集群。
 
     ```bash
     kubectl get pod
@@ -631,6 +631,6 @@ Refer to the [Install Velero Plugin](../user-guide/backup/install-velero.md) doc
 
     !!! success
     
-        As you can see, the data in the Pod is consistent with the data inside the Pods in the `main-cluster`.
-        This indicates that the MySQL application and its data from the `main-cluster` have been successfully
-        recovered to the `recovery-cluster` cluster.
+        As you can see, the data in the Pod is consistent with the data inside the Pods in the __main-cluster__ .
+        This indicates that the MySQL application and its data from the __main-cluster__ have been successfully
+        recovered to the __recovery-cluster__ cluster.

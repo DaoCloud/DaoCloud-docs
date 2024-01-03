@@ -13,12 +13,12 @@ This section describes how to use Iluvatar virtual GPU on DCE 5.0.
 
 ### Configuration via User Interface
 
-1. Check if the GPU card in the cluster has been detected. Click `Cluster` -> `Cluster Settings` -> `Addon Plugins`, and check if the corresponding GPU type has been automatically enabled and detected.
-   Currently, the cluster will automatically enable `GPU` and set the GPU type as `Iluvatar`.
+1. Check if the GPU card in the cluster has been detected. Click __Clusters__ -> __Cluster Settings__ -> __Addon Plugins__ , and check if the corresponding GPU type has been automatically enabled and detected.
+   Currently, the cluster will automatically enable __GPU__ and set the GPU type as __Iluvatar__ .
 
    
 
-2. Deploy a workload. Click `Cluster` -> `Workloads` and deploy a workload using the image. After selecting the type as `(Iluvatar)`, configure the GPU resources used by the application:
+2. Deploy a workload. Click __Clusters__ -> __Workloads__ and deploy a workload using the image. After selecting the type as __(Iluvatar)__ , configure the GPU resources used by the application:
    
     - Physical Card Count (iluvatar.ai/vcuda-core): Indicates the number of physical cards that the current pod needs to mount. The input value must be an integer and **less than or equal to** the number of cards on the host machine.
    
@@ -29,7 +29,7 @@ This section describes how to use Iluvatar virtual GPU on DCE 5.0.
 
 ### Configuration via YAML
 
-To request GPU resources for a workload, add the `iluvatar.ai/vcuda-core: 1` and `iluvatar.ai/vcuda-memory: 200` to the requests and limits.
+To request GPU resources for a workload, add the __iluvatar.ai/vcuda-core: 1__ and __iluvatar.ai/vcuda-memory: 200__ to the requests and limits.
 These parameters configure the application to use the physical card resources.
 
 ```yaml

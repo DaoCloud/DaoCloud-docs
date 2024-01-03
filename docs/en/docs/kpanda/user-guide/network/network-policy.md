@@ -14,15 +14,15 @@ Form-based creation is more intuitive and straightforward. Users can simply fill
 
 ### YAML Creation
 
-1. In the cluster list, click the name of the target cluster, then navigate to `Container Network` -> `Network Policies` -> `YAML Creation` in the left navigation bar.
+1. In the cluster list, click the name of the target cluster, then navigate to __Container Network__ -> __Network Policies__ -> __Create with YAML__ in the left navigation bar.
 
 
-2. In the pop-up dialog, enter or paste the pre-prepared YAML file, then click `OK` at the bottom of the dialog.
+2. In the pop-up dialog, enter or paste the pre-prepared YAML file, then click __OK__ at the bottom of the dialog.
 
 
 ### Form-Based Creation
 
-1. In the cluster list, click the name of the target cluster, then navigate to `Container Network` -> `Network Policies` -> `Create Policy` in the left navigation bar.
+1. In the cluster list, click the name of the target cluster, then navigate to __Container Network__ -> __Network Policies__ -> __Create Policy__ in the left navigation bar.
 
 
 2. Fill in the basic information.
@@ -34,13 +34,13 @@ Form-based creation is more intuitive and straightforward. Users can simply fill
 
     The policy configuration includes ingress and egress policies. To establish a successful connection from a source Pod to a target Pod, both the egress policy of the source Pod and the ingress policy of the target Pod need to allow the connection. If either side does not allow the connection, the connection will fail.
 
-    - Ingress Policy: Click `➕` to begin configuring the policy. Multiple policies can be configured. The effects of multiple network policies are cumulative. Only when all network policies are satisfied simultaneously can a connection be successfully established.
+    - Ingress Policy: Click __➕__ to begin configuring the policy. Multiple policies can be configured. The effects of multiple network policies are cumulative. Only when all network policies are satisfied simultaneously can a connection be successfully established.
 
     - Egress Policy
 
 ## Viewing Network Policies
 
-1. In the cluster list, click the name of the target cluster, then navigate to `Container Network` -> `Network Policies`. Click the name of the network policy.
+1. In the cluster list, click the name of the target cluster, then navigate to __Container Network__ -> __Network Policies__ . Click the name of the network policy.
 
 
 2. View the basic configuration, associated instances, ingress policies, and egress policies of the policy.
@@ -55,16 +55,16 @@ Form-based creation is more intuitive and straightforward. Users can simply fill
 
 There are two ways to update network policies. You can either update them through the form or by using a YAML file.
 
-- On the network policy list page, find the policy you want to update, and choose `Update` in the action column on the right to update it via the form. Choose `Edit YAML` to update it using a YAML file.
+- On the network policy list page, find the policy you want to update, and choose __Update__ in the action column on the right to update it via the form. Choose __Edit YAML__ to update it using a YAML file.
 
 
-- Click the name of the network policy, then choose `Update` in the top right corner of the policy details page to update it via the form. Choose `Edit YAML` to update it using a YAML file.
+- Click the name of the network policy, then choose __Update__ in the top right corner of the policy details page to update it via the form. Choose __Edit YAML__ to update it using a YAML file.
 
 ## Deleting Network Policies
 
 There are two ways to delete network policies. You can delete network policies either through the form or by using a YAML file.
 
-- On the network policy list page, find the policy you want to delete, and choose `Delete` in the action column on the right to delete it via the form. Choose `Edit YAML` to delete it using a YAML file.
+- On the network policy list page, find the policy you want to delete, and choose __Delete__ in the action column on the right to delete it via the form. Choose __Edit YAML__ to delete it using a YAML file.
 
 
-- Click the name of the network policy, then choose `Delete` in the top right corner of the policy details page to delete it via the form. Choose `Edit YAML` to delete it using a YAML file.
+- Click the name of the network policy, then choose __Delete__ in the top right corner of the policy details page to delete it via the form. Choose __Edit YAML__ to delete it using a YAML file.

@@ -15,7 +15,7 @@ This article explains how to add ARM architecture nodes with Kylin v10 sp2 opera
 
 ### Download and Import Offline Packages (Using ARM architecture and Kylin v10 sp2 operating system as examples)
 
-Make sure you are logged into the Spark node! Also, make sure the `clusterConfig.yaml` file used during the DCE 5.0 deployment is available.
+Make sure you are logged into the Spark node! Also, make sure the __clusterConfig.yaml__ file used during the DCE 5.0 deployment is available.
 
 #### Offline Image Package
 
@@ -51,7 +51,7 @@ The [Kubean](https://github.com/kubean-io/kubean) project provides osPackage off
 
 !!! note
 
-    Please check the specific version of the osPackage offline package in the `offline/sample/clusterConfig.yaml` file of the offline image package.
+    Please check the specific version of the osPackage offline package in the __offline/sample/clusterConfig.yaml__ file of the offline image package.
 
 #### Importing Offline Packages to the Spark Node
 
@@ -69,11 +69,11 @@ Execute the import-artifact command:
 
     Parameter Explanation:
 
-    - `-c clusterConfig.yaml` specifies the clusterConfig.yaml file used during the previous DCE 5.0 deployment.
-    - `--target-arch` specifies the architecture, supporting arm64 and amd64.
-    - `--offline-path` specifies the file path of the downloaded offline image package.
-    - `--iso-path` specifies the file path of the downloaded ISO operating system image.
-    - `--os-pkgs-path` specifies the file path of the downloaded osPackage offline package.
+    - __-c clusterConfig.yaml__ specifies the clusterConfig.yaml file used during the previous DCE 5.0 deployment.
+    - __--target-arch__ specifies the architecture, supporting arm64 and amd64.
+    - __--offline-path__ specifies the file path of the downloaded offline image package.
+    - __--iso-path__ specifies the file path of the downloaded ISO operating system image.
+    - __--os-pkgs-path__ specifies the file path of the downloaded osPackage offline package.
 
 After a successful import command execution, the offline package will be uploaded to Minio on the Spark node.
 
@@ -203,12 +203,12 @@ spec:
 
 Note:
 
-- Ensure that the `spec.image` image address matches the image used in the previous deployment job.
-- Set `spec.action` to `scale.yml`.
-- Set `spec.extraArgs` to `--limit=g-worker`.
-- Fill in the correct `repo_list` parameter for the relevant OS in `spec.preHook`'s `enable-repo.yml` script.
+- Ensure that the __spec.image__ image address matches the image used in the previous deployment job.
+- Set __spec.action__ to __scale.yml__ .
+- Set __spec.extraArgs__ to __--limit=g-worker__ .
+- Fill in the correct __repo_list__ parameter for the relevant OS in __spec.preHook__ 's __enable-repo.yml__ script.
 
-To create and deploy `join-node-ops.yaml` according to the above configuration:
+To create and deploy __join-node-ops.yaml__ according to the above configuration:
 
 ```shell
 # Copy the manifest file mentioned above
@@ -226,7 +226,7 @@ To check the progress of the scaling task, you can view the logs of the correspo
 
 ### Verify in the User Interface
 
-1. Go to `Container Management` -> `Clusters` -> `Nodes`.
+1. Go to __Container Management__ -> __Clusters__ -> __Nodes__ .
 
     ![Node Management](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/arm02.png)
 

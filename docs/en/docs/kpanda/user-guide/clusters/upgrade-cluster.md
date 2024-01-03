@@ -16,7 +16,7 @@ In DCE, you can upgrade the Kubernetes cluster with one click through the web UI
 
 !!! note
 
-    - Kubernetes versions are denoted as `x.y.z`, where `x` is the major version, `y` is the minor version, and `z` is the patch version.
+    - Kubernetes versions are denoted as __x.y.z__ , where __x__ is the major version, __y__ is the minor version, and __z__ is the patch version.
     - Cluster upgrades across minor versions are not allowed, e.g. a direct upgrade from 1.23 to 1.25 is not possible.
     - **Access clusters do not support version upgrades. If there is no "cluster upgrade" in the left navigation bar, please check whether the cluster is an access cluster. **
     - The global service cluster can only be upgraded through the terminal.
@@ -26,7 +26,7 @@ In DCE, you can upgrade the Kubernetes cluster with one click through the web UI
 
     
 
-2. Then click `Cluster Operation and Maintenance` -> `Cluster Upgrade` in the left navigation bar, and click `Version Upgrade` in the upper right corner of the page.
+2. Then click __Cluster Operation and Maintenance__ -> __Cluster Upgrade__ in the left navigation bar, and click __Version Upgrade__ in the upper right corner of the page.
 
     
 
@@ -34,10 +34,10 @@ In DCE, you can upgrade the Kubernetes cluster with one click through the web UI
 
       
 
-4. After clicking `OK`, you can see the upgrade progress of the cluster.
+4. After clicking __OK__ , you can see the upgrade progress of the cluster.
 
       
 
-5. The cluster upgrade is expected to take 30 minutes. You can click the `Real-time Log` button to view the detailed log of the cluster upgrade.
+5. The cluster upgrade is expected to take 30 minutes. You can click the __Real-time Log__ button to view the detailed log of the cluster upgrade.
 
     

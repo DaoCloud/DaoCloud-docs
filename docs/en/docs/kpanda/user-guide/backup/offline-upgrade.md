@@ -14,9 +14,9 @@ You can load the images using one of the following two methods. When an image re
 
 Using chart-syncer, you can upload the charts and their dependent image packages from the downloaded package to the image repository and Helm repository used by the installer.
 
-First, find a node that can connect to the image repository and Helm repository (such as the Spark node), and create a `load-image.yaml` configuration file on the node, filling in the configuration information for the image repository and Helm repository.
+First, find a node that can connect to the image repository and Helm repository (such as the Spark node), and create a __load-image.yaml__ configuration file on the node, filling in the configuration information for the image repository and Helm repository.
 
-1. Create `load-image.yaml` file
+1. Create __load-image.yaml__ file
 
     !!! note  
 
@@ -147,9 +147,9 @@ There are two upgrade methods. You can choose the appropriate upgrade method bas
         ...
         ```
 
-    1. Backup the `--set` parameters.
+    1. Backup the __--set__ parameters.
 
-        Before upgrading the backup and restore version, it is recommended to run the following command to back up the `--set` parameters of the old version.
+        Before upgrading the backup and restore version, it is recommended to run the following command to back up the __--set__ parameters of the old version.
 
         ```shell
         helm get values kcoral -n kcoral-system -o yaml > bak.yaml
@@ -162,9 +162,9 @@ There are two upgrade methods. You can choose the appropriate upgrade method bas
         kubectl apply -f kcoral/crds
         ```
 
-    1. Execute `helm upgrade`.
+    1. Execute __helm upgrade__ .
 
-        Before upgrading, it is recommended to replace the `global.imageRegistry` field in the `bak.yaml` file with the image repository address you are currently using.
+        Before upgrading, it is recommended to replace the __global.imageRegistry__ field in the __bak.yaml__ file with the image repository address you are currently using.
 
         ```shell
         export imageRegistry={your image repository}
@@ -180,9 +180,9 @@ There are two upgrade methods. You can choose the appropriate upgrade method bas
 
 === "Upgrade via Chart Package"
 
-    1. Backup the `--set` parameters.
+    1. Backup the __--set__ parameters.
 
-        Before upgrading the backup and restore version, it is recommended to run the following command to back up the `--set` parameters of the old version.
+        Before upgrading the backup and restore version, it is recommended to run the following command to back up the __--set__ parameters of the old version.
 
         ```shell
         helm get values kcoral -n k pan da-system -o yaml > bak.yaml
@@ -194,9 +194,9 @@ There are two upgrade methods. You can choose the appropriate upgrade method bas
         kubectl apply -f ./crds
         ```
 
-    1. Execute `helm upgrade`.
+    1. Execute __helm upgrade__ .
 
-        Before upgrading, it is recommended to replace the `global.imageRegistry` in the `bak.yaml` file with the image repository address you are currently using.
+        Before upgrading, it is recommended to replace the __global.imageRegistry__ in the __bak.yaml__ file with the image repository address you are currently using.
 
         ```shell
         export imageRegistry={your image repository}

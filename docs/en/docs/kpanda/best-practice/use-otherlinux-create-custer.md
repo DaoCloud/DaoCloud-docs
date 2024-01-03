@@ -1,6 +1,6 @@
 # Creating a Cluster on Non-Supported Operating Systems
 
-This document outlines how to create a working cluster on an **unsupported OS** in offline mode. For the range of OS supported by DCE 5.0, please refer to [DCE 5.0 Supported Operating Systems](../../install/commercial/deploy-requirements.md).
+This document outlines how to create a working cluster on an **unsupported OS** in offline mode. For the range of OS supported by DCE 5.0, refer to [DCE 5.0 Supported Operating Systems](../../install/commercial/deploy-requirements.md).
 
 The main process for creating a working cluster on an unsupported OS in offline mode is illustrated in the diagram below:
 
@@ -17,7 +17,7 @@ Next, we will use the openAnolis operating system as an example to demonstrate h
 
 ### Online Node - Building an Offline Package
 
-Find an online environment with the same architecture and OS as the nodes in the target cluster. In this example, we will use [AnolisOS 8.8 GA](https://openanolis.cn/download). Run the following command to generate an offline `os-pkgs` package:
+Find an online environment with the same architecture and OS as the nodes in the target cluster. In this example, we will use [AnolisOS 8.8 GA](https://openanolis.cn/download). Run the following command to generate an offline __os-pkgs__ package:
 
 ```bash
 # Download relevant scripts and build os packages package
@@ -26,7 +26,7 @@ $ curl -Lo ./other_os_pkgs.sh https://raw.githubusercontent.com/kubean-io/kubean
 $ ./other_os_pkgs.sh build # Build the offline package
 ```
 
-After executing the above command, you should have a compressed package named **`os-pkgs-anolis-8.8.tar.gz`** in the current directory. The file structure in the current directory should look like this:
+After executing the above command, you should have a compressed package named __os-pkgs-anolis-8.8.tar.gz__ in the current directory. The file structure in the current directory should look like this:
 
 ```bash
     .
@@ -37,9 +37,9 @@ After executing the above command, you should have a compressed package named **
 
 ### Offline Node - Installing the Offline Package
 
-Copy the three files generated on the online node (`other_os_pkgs.sh`, `pkgs.yml`, and `os-pkgs-anolis-8.8.tar.gz`) to **all** nodes in the target cluster in the offline environment.
+Copy the three files generated on the online node ( __other_os_pkgs.sh__ , __pkgs.yml__ , and __os-pkgs-anolis-8.8.tar.gz__ ) to **all** nodes in the target cluster in the offline environment.
 
-Login to any one of the nodes in the offline environment that is part of the target cluster, and run the following command to install the `os-pkg` package on the node:
+Login to any one of the nodes in the offline environment that is part of the target cluster, and run the following command to install the __os-pkg__ package on the node:
 
 ```bash
 # Configure environment variables
@@ -51,7 +51,7 @@ $ export HOST_IPS='172.30.41.168' # IP address of the current offline node
 $ ./other_os_pkgs.sh install # Install the offline package
 ```
 
-After executing the above command, wait for the interface to prompt: `All packages for node (X.X.X.X) have been installed`, which indicates that the installation is complete.
+After executing the above command, wait for the interface to prompt: __All packages for node (X.X.X.X) have been installed__ , which indicates that the installation is complete.
 
 ### Go to the User Interface to Create Cluster
 

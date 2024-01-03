@@ -6,9 +6,9 @@ In a multi-architecture cluster, it is common to use Helm charts that support mu
 
 ### Single-Architecture Import
 
-Prepare the offline package `addon-offline-full-package-${version}-${arch}.tar.gz`,which can be downloaded from the [Download Center](../../../download/addon/history.md).
+Prepare the offline package __addon-offline-full-package-${version}-${arch}.tar.gz__ ,which can be downloaded from the [Download Center](../../../download/addon/history.md).
 
-Specify the path in the `clusterConfig.yml` configuration file, for example:
+Specify the path in the __clusterConfig.yml__ configuration file, for example:
 
 ```yaml
 addonPackage:
@@ -23,9 +23,9 @@ Then execute the import command:
 
 ### Multi-Architecture Integration
 
-Prepare the offline package `addon-offline-full-package-${version}-${arch}.tar.gz`, which can be downloaded from the [Download Center](../../../download/addon/history.md).
+Prepare the offline package __addon-offline-full-package-${version}-${arch}.tar.gz__ , which can be downloaded from the [Download Center](../../../download/addon/history.md).
 
-Take `addon-offline-full-package-v0.9.0-arm64.tar.gz` as an example and execute the import command:
+Take __addon-offline-full-package-v0.9.0-arm64.tar.gz__ as an example and execute the import command:
 
 ```shell
 ~/dce5-installer import -addon -c /home/dce5/sample/clusterConfig.yaml --addon-path=/home/addon-offline-full-package-v0.9.0-arm64.tar.gz
@@ -35,9 +35,9 @@ Take `addon-offline-full-package-v0.9.0-arm64.tar.gz` as an example and execute 
 
 ### Single-Architecture Upgrade
 
-Prepare the offline package `addon-offline-full-package-${version}-${arch}.tar.gz`, which can be downloaded from the [Download Center](../../../download/addon/history.md).
+Prepare the offline package __addon-offline-full-package-${version}-${arch}.tar.gz__ , which can be downloaded from the [Download Center](../../../download/addon/history.md).
 
-Specify the path in the `clusterConfig.yml` configuration file, for example:
+Specify the path in the __clusterConfig.yml__ configuration file, for example:
 
 ```yaml
 addonPackage:
@@ -52,9 +52,9 @@ Then execute the import command:
 
 ### Multi-Architecture Integration
 
-Prepare the offline package `addon-offline-full-package-${version}-${arch}.tar.gz`, which can be downloaded from the [Download Center](../../../download/addon/history.md).
+Prepare the offline package __addon-offline-full-package-${version}-${arch}.tar.gz__ , which can be downloaded from the [Download Center](../../../download/addon/history.md).
 
-Take `addon-offline-full-package-v0.11.0-arm64.tar.gz` as an example and execute the import command:
+Take __addon-offline-full-package-v0.11.0-arm64.tar.gz__ as an example and execute the import command:
 
 ```shell
 ~/dce5-installer import -addon -c /home/dce5/sample/clusterConfig.yaml --addon-path=/home/addon-offline-full-package-v0.11.0-arm64.tar.gz
@@ -79,7 +79,7 @@ rm -rf addon-offline-target-package
 If the integrated offline package includes image registries that are different from those in the imported offline package, an error may occur during the integration process due to the absence of the image registry:
 
 
-Solution: Create the missing image registry before the integration step to avoid this error. For example, in the above screenshot, the error can be avoided by creating the image registry `localhost` beforehand.
+Solution: Create the missing image registry before the integration step to avoid this error. For example, in the above screenshot, the error can be avoided by creating the image registry __localhost__ beforehand.
 
 ### Architecture Conflict
 
