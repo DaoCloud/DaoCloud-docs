@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Local Storage: hwameistor-operator
 
 This page provides the offline installation package for hwameistor-operator,

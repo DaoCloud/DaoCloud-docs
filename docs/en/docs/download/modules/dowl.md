@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Security Management
 
 This page provides offline packages for different versions of the Dowl security management module.

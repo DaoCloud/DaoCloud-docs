@@ -14,12 +14,12 @@ This page allows you to download the offline package and checksum file of DCE 5.
 ## Download
 
 | Filename | Package |
-| ----------------------------- | ------------------- -------------------------------------------------- -------------------------------------------- |
+| -------- | ------- |
 | offline-community-v0.3.27.tar | [:arrow_down: Download](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.3.27.tar) |
 
 ## Validation
 
-Go to the download directory of the offline package. run the following command to validate the offline package:
+Go to the download directory of the offline package, run the following command to validate the offline package:
 
 ```sh
 echo "7a2f07fd9d09c827347d2994c0b6d4852f55e1f6de149e7b95e29625c4081eba3d415d3dbb261d226d8179c3251ac8e67c2de898d3eb6a58ff218f79fd31d4 2e offline-community-v0.3.27.tar" | sha512sum -c

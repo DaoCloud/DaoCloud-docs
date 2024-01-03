@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Application Backup
 
 This page provides offline packages for different versions of the Application Backup module.

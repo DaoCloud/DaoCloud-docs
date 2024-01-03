@@ -1,4 +1,9 @@
-# Multicloud Management Kairship
+---
+hide:
+  - toc
+---
+
+# Multicloud Management
 
 This page provides offline packages for different versions of the Multicloud Management module.
 

@@ -1,6 +1,11 @@
-# VM Container
+---
+hide:
+  - toc
+---
 
-On this page, you can download the offline packages for different versions of the VM Container module.
+# Virtual Machine
+
+On this page, you can download the offline packages for different versions of the Virtual Machine module.
 
 ## Download
 
@@ -25,7 +30,7 @@ virtnest_v0.2.0_amd64.tar: ok
 
 ## Installation
 
-Refer to the [VM Container](../../virtnest/install/offline-install.md) installation process for installation instructions.
+Refer to the [Virtual Machine](../../virtnest/install/offline-install.md) installation process for installation instructions.
 
 If this is your first installation, please apply for a free trial or contact us for authorization: Email info@daocloud.io or call 400 002 6898.
 If you have any questions related to license keys, please contact the DaoCloud delivery team.
