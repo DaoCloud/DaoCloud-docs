@@ -7,8 +7,8 @@
 #### PodMonitor 采集多份 JVM 指标数据
 
 1. 目前的 __PodMonitor/insight-kubernetes-pod__ 存在缺陷：会错误的创建 Job 去采集标记了
-   __insight.opentelemetry.io/metric-scrape=true__ 的 Pod 的所有 container；其实只需要采集
-   __insight.opentelemetry.io/metric-port__ 对应的 container 的端口。
+   `insight.opentelemetry.io/metric-scrape=true`的 Pod 的所有 container；其实只需要采集
+   `insight.opentelemetry.io/metric-port`对应的 container 的端口。
 
 2. 因为 PodMonitor 声明之后， __PromethuesOperator__ 会预设置一些服务发现配置。
    再考虑到 CRD 的兼容性的问题。因此，放弃通过 PodMonitor 来配置通过 __annotation__ 创建采集任务的机制。

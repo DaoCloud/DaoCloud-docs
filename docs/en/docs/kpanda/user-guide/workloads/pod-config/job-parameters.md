@@ -1,11 +1,11 @@
 # Description of task parameters
 
-According to the settings of __.spec.completions__ and __.spec.Parallelism__ , tasks (Job) can be divided into the following types:
+According to the settings of __ .spec.completions__ and __ .spec.Parallelism__ , tasks (Job) can be divided into the following types:
 
 | Job Type | Description |
 | -------------------------- | ---------------------- ----------------------------------------- |
 | Non-parallel Job | Creates a Pod until its Job completes successfully |
-| Parallel Jobs with deterministic completion counts | A Job is considered complete when the number of successful Pods reaches __.spec.completions__ |
+| Parallel Jobs with deterministic completion counts | A Job is considered complete when the number of successful Pods reaches __ .spec.completions__ |
 | Parallel Job | Creates one or more Pods until one finishes successfully |
 
 **Parameter Description**

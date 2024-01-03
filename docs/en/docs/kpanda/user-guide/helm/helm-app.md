@@ -49,7 +49,7 @@ Follow the steps below to update the Helm application.
 
 2. In the left navigation bar, click __Helm Apps__ to enter the Helm application list page.
 
-     On the Helm application list page, select the Helm application that needs to be updated, click the __...__ operation button on the right side of the list, and select the __Update__ operation in the drop-down selection.
+     On the Helm application list page, select the Helm application that needs to be updated, click the __ ...__ operation button on the right side of the list, and select the __Update__ operation in the drop-down selection.
 
      
 
@@ -91,7 +91,7 @@ Follow the steps below to delete the Helm application.
 
 2. In the left navigation bar, click __Helm Apps__ to enter the Helm application list page.
 
-     On the Helm application list page, select the Helm application you want to delete, click the __...__ operation button on the right side of the list, and select __Delete__ from the drop-down selection.
+     On the Helm application list page, select the Helm application you want to delete, click the __ ...__ operation button on the right side of the list, and select __Delete__ from the drop-down selection.
 
      
 

@@ -5,13 +5,13 @@ hide:
 
 # System Configuration
 
-`System Configuration` displays the default storage time of metrics, logs, traces and the default Apdex threshold.
+ __System Configuration__ displays the default storage time of metrics, logs, traces and the default Apdex threshold.
 
-1. Click the right navigation bar and select `System Configuration`.
+1. Click the right navigation bar and select __System Configuration__ .
 
      
 
-2. Currently only supports modifying the storage duration of historical alerts, click `Edit` to enter the target duration.
+2. Currently only supports modifying the storage duration of historical alerts, click __Edit__ to enter the target duration.
 
      When the storage duration is set to "0", the historical alerts will not be cleared.
 

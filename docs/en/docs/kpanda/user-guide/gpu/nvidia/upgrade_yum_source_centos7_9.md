@@ -95,7 +95,7 @@ Perform the following steps on a node that has internet access and can access th
     tar -xzf centos-base.tar.gz
     ```
 
-    Press the __Esc__ key to exit insert mode, then enter __:wq__ to save and exit.
+    Press the __Esc__ key to exit insert mode, then enter __ :wq__ to save and exit.
 
 2. Run the __yum.sh__ file:
 
@@ -103,7 +103,7 @@ Perform the following steps on a node that has internet access and can access th
     bash -x yum.sh TARGET_KERNEL_VERSION
     ```
 
-    The __TARGET_KERNEL_VERSION__ parameter is used to specify the kernel version of the cluster nodes. Note: You don't need to include the distribution identifier (e.g., __.el7.x86_64__ ).
+    The __TARGET_KERNEL_VERSION__ parameter is used to specify the kernel version of the cluster nodes. Note: You don't need to include the distribution identifier (e.g., __ .el7.x86_64__ ).
 
     For example:
 

@@ -33,7 +33,7 @@
         > 如果使用 Nodejs 模板，则测试命令默认为 `npm test`
         > 如果使用 Maven 模板，则测试命令默认为 `mvn -B test -Dmaven.test.failure.ignore=true`
 
-    - 测试报告位置：测试报告所在的位置，并进行分析生成测试报告，默认是 __./target/***__
+    - 测试报告位置：测试报告所在的位置，并进行分析生成测试报告，默认是 __ ./target/***__
     - Dockerfile 路径：Dockerfile 文件在代码仓库中的绝对路径，默认是 __Dockerfile__
     - 目标镜像地址：输入镜像仓库名称，必填
     - tag：为运行此流水线后新生成的镜像添加 tag，默认是 __latest__

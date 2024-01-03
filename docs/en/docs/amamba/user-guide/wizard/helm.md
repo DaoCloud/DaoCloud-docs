@@ -9,7 +9,7 @@ Workbench supports building applications in four ways: [Git Repo](create-app-git
 
 ## Steps
 
-1. After entering Workbench module, click __Wizard__ on the left navigation bar, and then select __Helm Chart__.
+1. After entering Workbench module, click __Wizard__ on the left navigation bar, and then select __Helm Chart__ .
 
     ![Based on Helm](../../images/helm01.png)
 
@@ -23,7 +23,7 @@ Workbench supports building applications in four ways: [Git Repo](create-app-git
 
     ![Basic Info](../../images/helm02.png)
 
-3. Read the application's installation prerequisites, parameter configuration instructions and other information, select the version to be installed in the upper right corner, and click __Install__.
+3. Read the application's installation prerequisites, parameter configuration instructions and other information, select the version to be installed in the upper right corner, and click __Install__ .
 
     ![Install](../../images/helm03.png)
 

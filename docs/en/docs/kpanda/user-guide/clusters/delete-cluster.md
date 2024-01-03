@@ -22,7 +22,7 @@ In DCE 5.0, the difference between __Delete__ and __Remove__ is:
     - Before deleting a cluster, you should turn off __Cluster Deletion Protection__ in __Cluster Settings__ -> __Advanced Settings__ , otherwise the __Delete Cluster__ option will not be displayed.
     - The __global service cluster__ cannot be deleted or removed.
 
-1. Enter the Container Management module, find your target cluster, click __...__ on the right, and select __Delete cluster__ / __Remove__ in the drop-down list.
+1. Enter the Container Management module, find your target cluster, click __ ...__ on the right, and select __Delete cluster__ / __Remove__ in the drop-down list.
 
     ![screen](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/cluster-delete01.png)
 

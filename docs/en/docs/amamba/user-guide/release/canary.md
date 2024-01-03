@@ -6,7 +6,7 @@ Based on the open source project [Argo Rollout](https://argoproj.github.io/argo-
 
 1. Create a [workspace](../../../ghippo/user-guide/workspace/workspace.md) and a [user](../../../ghippo/user-guide/access-control/user.md), the user needs to join the workspace and have the __Workspace Editor__ role.
 
-- Create an application and enable __Grayscale Release__, refer to [Build microservice application based on Git repository](../wizard/create-app-git.md), [Deploy Java application based on Jar package](../wizard/jar-java-app.md).
+- Create an application and enable __Grayscale Release__ , refer to [Build microservice application based on Git repository](../wizard/create-app-git.md), [Deploy Java application based on Jar package](../wizard/jar-java-app.md).
 
 - Istiod and Argo Rollout have been installed on the cluster where the object is published. For specific installation methods, refer to [Managing Helm Apps](../../../kpanda/user-guide/helm/helm-app.md).
 
@@ -17,7 +17,7 @@ Based on the open source project [Argo Rollout](https://argoproj.github.io/argo-
 
     <!--![]()screenshots-->
 
-2. Fill in the basic information with reference to the following requirements, and then click __Next__.
+2. Fill in the basic information with reference to the following requirements, and then click __Next__ .
 
     - Name: Fill in the name of the publishing task. Maximum 63 characters, can only contain lowercase letters, numbers, and a separator ("-"), and must start and end with a lowercase letter or number
     - Cluster: Select the cluster where the published object resides. You need to make sure that the cluster has Istio and Argo Rollout deployed.
@@ -39,12 +39,12 @@ Based on the open source project [Argo Rollout](https://argoproj.github.io/argo-
 
         <!--![]()screenshots-->
 
-4. Click __Create and update application__ at the bottom of the page, then set the mirror address of the grayscale version in the pop-up box and click __OK__.
+4. Click __Create and update application__ at the bottom of the page, then set the mirror address of the grayscale version in the pop-up box and click __OK__ .
 
     At this point, the number of copies of the original workload will be set to 0.
 
     <!--![]()screenshots-->
 
-5. The system automatically jumps to the task list page of the grayscale release, prompting __updated version successful__.
+5. The system automatically jumps to the task list page of the grayscale release, prompting __updated version successful__ .
 
     <!--![]()screenshots-->

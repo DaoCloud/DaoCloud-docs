@@ -115,13 +115,13 @@ After the __Update app profile__ step is successfully executed, Argo CD detects 
 
     <!--![]()screenshots-->
 
-4. Continue to verify the continuous deployment application and find that the status is __Not synced__. See that Deployment resources are not synchronized and jump to __Container Management__ to confirm the current image version.
+4. Continue to verify the continuous deployment application and find that the status is __Not synced__ . See that Deployment resources are not synchronized and jump to __Container Management__ to confirm the current image version.
 
     <!--![]()screenshots-->
 
     <!--![]()screenshots-->
 
-5. Click __Sync__, wait until the synchronization is successful, view Deployment resources and confirm the current image version.
+5. Click __Sync__ , wait until the synchronization is successful, view Deployment resources and confirm the current image version.
 
     <!--![]()screenshots-->
 

@@ -10,7 +10,7 @@ annatation:
    insight.opentelemetry.io/metric-port: "9464" # port for collecting metrics
 ```
 
-example adding annotations for `my-deployment-app` workload： 
+example adding annotations for __my-deployment-app__ workload： 
 
 ```yaml
 apiVersion: apps/v1

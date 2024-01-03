@@ -9,7 +9,7 @@ Container monitoring is the process of monitoring workloads in cluster managemen
 
 ## Prerequisites
 
-- The cluster has Insight Agent installed, and all container groups are in the `Running` state.
+- The cluster has Insight Agent installed, and all container groups are in the __Running__ state.
 
 - To install Insight Agent, please refer to: [Installing insight-agent online](../../../insight/quickstart/install/install-agent.md) or [Offline upgrade of insight-agent](../../../insight/quickstart/install/offline-install.md).
 
@@ -17,9 +17,9 @@ Container monitoring is the process of monitoring workloads in cluster managemen
 
 Follow these steps to view service monitoring metrics:
 
-1. Go to the `Observability` product module.
+1. Go to the __Insight__ product module.
 
-2. Select `Infrastructure` > `Containers` from the left navigation pane.
+2. Select __Infrastructure__ > __Containers__ from the left navigation pane.
 
 3. Switch between tabs at the top to view data for different types of workloads.
 

@@ -330,7 +330,7 @@
 
 #### 修复
 
-- **修复** 构建离线包增加 __.relok8s-images__ 文件
+- **修复** 构建离线包增加 __ .relok8s-images__ 文件
 - **修复** 调整 insight-agent 中组件 __otel-collector__ 端口对应的端口名
 
 ## 2022.12.29

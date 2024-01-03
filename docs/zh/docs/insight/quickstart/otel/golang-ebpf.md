@@ -58,7 +58,7 @@ EOF
 
     这类注解只有一个，用于添加 OpenTelemetry 相关的环境变量，比如链路上报地址、容器所在的集群 id、命名空间等：
 
-    ```bash
+    ```console
     instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
     ```
 

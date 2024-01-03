@@ -22,7 +22,7 @@ go get go.opentelemetry.io/otel@v1.8.0 \
 
 ### Create an initialization feature using the OpenTelemetry SDK
 
-In order for an application to be able to send data, a feature is required to initialize OpenTelemetry. Add the following code snippet to the `main.go` file:
+In order for an application to be able to send data, a feature is required to initialize OpenTelemetry. Add the following code snippet to the __main.go__ file:
 
 ```golang
 import (
@@ -106,7 +106,7 @@ func handleErr(err error, message string) {
 
 ### Initialize tracker in main.go
 
-Modify the main feature to initialize the tracker in main.go. Also when your service shuts down, you should call `TracerProvider.Shutdown()` to ensure all spans are exported. The service makes the call as a deferred feature in the main function:
+Modify the main feature to initialize the tracker in main.go. Also when your service shuts down, you should call __TracerProvider.Shutdown()__ to ensure all spans are exported. The service makes the call as a deferred feature in the main function:
 
 ```golang
 func main() {
@@ -120,7 +120,7 @@ func main() {
 
 ### Add OpenTelemetry Gin middleware to the application
 
-Configure Gin to use the middleware by adding the following line to `main.go`:
+Configure Gin to use the middleware by adding the following line to __main.go__ :
 
 ```golang
 import (
@@ -142,7 +142,7 @@ func main() {
 
     > Note: This step is only used for local development and debugging. In the production environment, the Operator will automatically complete the injection of the following environment variables.
 
-    The above steps have completed the work of initializing the SDK. Now if you need to develop and debug locally, you need to obtain the address of insight-agent-opentelemerty-collector in the insight-system namespace in advance, assuming: `insight-agent-opentelemetry-collector .insight-system.svc.cluster.local:4317`.
+    The above steps have completed the work of initializing the SDK. Now if you need to develop and debug locally, you need to obtain the address of insight-agent-opentelemerty-collector in the insight-system namespace in advance, assuming: __insight-agent-opentelemetry-collector .insight-system.svc.cluster.local:4317__ .
 
     Therefore, you can add the following environment variables when you start the application locally:
 
@@ -152,9 +152,9 @@ func main() {
 
 - Production environment running
 
-Please refer to the introduction of `Only injecting environment variable annotations` in [Achieving non-intrusive enhancement of applications through Operators](./operator.md) to add annotations to deployment yaml:
+Please refer to the introduction of __Only injecting environment variable annotations__ in [Achieving non-intrusive enhancement of applications through Operators](./operator.md) to add annotations to deployment yaml:
 
-```bash
+```console
 instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
 ```
 
@@ -305,7 +305,7 @@ span.SetAttributes(attribute. String("controller", "books"))
 
 ### Add an Event to the current Span
 
-Adding span events is done using `AddEvent` on the span object.
+Adding span events is done using __AddEvent__ on the span object.
 
 ```golang
 span.AddEvent(msg)

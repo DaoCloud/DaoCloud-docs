@@ -61,7 +61,7 @@
     找到 __--enable-admission-plugins__ 参数，加入（以英文逗号分隔的） __PodNodeSelector__ 和 __PodTolerationRestriction__ 准入控制器。参考如下：
 
     ```bash
-    # 加入 __,PodNodeSelector,PodTolerationRestriction__ 
+    # 加入 __ ,PodNodeSelector,PodTolerationRestriction__ 
     - --enable-admission-plugins=NodeRestriction,PodNodeSelector,PodTolerationRestriction 
     ```
 
@@ -164,7 +164,7 @@
     找到 __--enable-admission-plugins__ 参数，加入（以英文逗号分隔的） __PodNodeSelector__ 和 __PodTolerationRestriction__ 准入控制器。参考如下：
 
     ```bash
-    # 加入 __,PodNodeSelector,PodTolerationRestriction__ 
+    # 加入 __ ,PodNodeSelector,PodTolerationRestriction__ 
     - --enable-admission-plugins=NodeRestriction,PodNodeSelector,PodTolerationRestriction 
     ```
 

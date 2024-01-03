@@ -15,7 +15,7 @@ hide:
 各角色所具备的权限如下：
 
 <!--
-有权限使用 __&check;__ ，无权限使用 __&cross;__ 
+有权限使用 `&check;`，无权限使用 `&cross;`
 -->
 
 | 菜单     | 操作                        | Admin / Kpanda Owner | Cluster Admin | NS Admin / NS Edit | NS View |

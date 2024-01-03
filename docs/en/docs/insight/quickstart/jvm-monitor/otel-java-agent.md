@@ -14,7 +14,7 @@ However, for current version, you still need to manually add the [corresponding 
 
 Opentelemetry Agent also has some built-in middleware monitoring samples, please refer to [Predefined Metrics](https://github.com/open-telemetry/opentelemetry-java-instrumentation/blob/main/instrumentation/jmx-metrics/javaagent /README.md#predefined-metrics).
 
-By default, no type is specified, and it needs to be specified through `-Dotel.jmx.target.system` JVM Options, such as `-Dotel.jmx.target.system=jetty,kafka-broker`.
+By default, no type is specified, and it needs to be specified through __-Dotel.jmx.target.system__ JVM Options, such as __-Dotel.jmx.target.system=jetty,kafka-broker__ .
 
 ## Reference
 

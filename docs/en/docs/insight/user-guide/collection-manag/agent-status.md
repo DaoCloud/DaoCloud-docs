@@ -2,31 +2,31 @@
 
 In DCE 5.0, the observability Insight acts as a multi-cluster observability product.
 To achieve unified data collection across multiple clusters, users need to install
-the Helm application `insight-agent` (installed by default in the `insight-system` namespace).
-Refer to [How to Install `insight-agent`](../../quickstart/install/install-agent.md).
+the Helm application __insight-agent__ (installed by default in the __insight-system__ namespace).
+Refer to [How to Install __insight-agent__ ](../../quickstart/install/install-agent.md).
 
 ## Status Explanation
 
 In the "Observability" -> "Collection Management" section, you can view the installation status
-of `insight-agent` in each cluster.
+of __insight-agent__ in each cluster.
 
-- `Not Installed`: `insight-agent` is not installed in the `insight-system` namespace of the cluster.
-- `Running`: `insight-agent` is successfully installed in the cluster, and all deployed components are running.
-- `Error`: If `insight-agent` is in this state, it indicates that the helm deployment failed or
+- __Not Installed__ : __insight-agent__ is not installed in the __insight-system__ namespace of the cluster.
+- __Running__ : __insight-agent__ is successfully installed in the cluster, and all deployed components are running.
+- __Error__ : If __insight-agent__ is in this state, it indicates that the helm deployment failed or
   there are components deployed that are not in a running state.
 
 You can troubleshoot using the following steps:
 
-1. Run the following command. If the status is `deployed`, proceed to the next step.
-   If it is `failed`, it is recommended to uninstall and reinstall it from
-   `Container Management` -> `Helm Apps` as it may affect application upgrades:
+1. Run the following command. If the status is __deployed__ , proceed to the next step.
+   If it is __failed__ , it is recommended to uninstall and reinstall it from
+   __Container Management__ -> __Helm Apps__ as it may affect application upgrades:
 
     ```bash
     helm list -n insight-system
     ```
 
 2. Run the following command or check the status of the deployed components in
-   `Insight` -> `Data Collection`. If there are container groups not in the `Running` state,
+   __Insight__ -> __Data Collection__ . If there are container groups not in the __Running__ state,
    restart the containers in an abnormal state.
 
     ```bash
@@ -35,7 +35,7 @@ You can troubleshoot using the following steps:
 
 ## Additional Notes
 
-1. The resource consumption of the Prometheus metric collection component in `insight-agent`
+1. The resource consumption of the Prometheus metric collection component in __insight-agent__ 
    is directly proportional to the number of container groups running in the cluster.
    Please adjust the resources for Prometheus according to the cluster size.
    Refer to [Prometheus Resource Planning](../../quickstart/res-plan/prometheus-res.md).

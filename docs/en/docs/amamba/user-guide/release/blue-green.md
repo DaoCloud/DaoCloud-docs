@@ -23,7 +23,7 @@ version, achieving a quick rollback.
 
     ![Go to creation page](../../images/blue-green01.png)
 
-2. Fill in the basic information according to the following requirements, and then click __Create__.
+2. Fill in the basic information according to the following requirements, and then click __Create__ .
 
     - Name: Fill in the name of the release job. It can have a maximum length of 63 characters,
       and can only contain lowercase letters, numbers, and separators ("-"), and must start and

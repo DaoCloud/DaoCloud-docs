@@ -152,27 +152,27 @@ This page lists the Release Notes of the installer, so that you can understand t
 
 #### New Features
 
-- __Added__: The `istio-ingressgateway` now supports high availability mode. When upgrading from v0.8.x or earlier to v0.9.0, the following command must be executed: `./offline/dce5-installer cluster-create -c clusterConfig.yaml -m manifest.yaml --upgrade infrastructure,gproduct`
-- __Added__: Support configuring the exposed bootstrapping kind address and port in the clusterConfig.yaml file.
-- __Added__: The installer now performs a pre-check on each node to verify if lvm2 is installed when using eyebrow storage.
-- __Added__: The installer includes an embedded default upgrade of the k8s version to v1.26.5.
-- __Added__: Support specifying the local file mount path for the bootstrapping kind in the clusterConfig.yaml file.
-- __Added__: Integrated ISO image file import script into the installer binary.
+- __Added__ : The `istio-ingressgateway` now supports high availability mode. When upgrading from v0.8.x or earlier to v0.9.0, the following command must be executed: `./offline/dce5-installer cluster-create -c clusterConfig.yaml -m manifest.yaml --upgrade infrastructure,gproduct`
+- __Added__ : Support configuring the exposed bootstrapping kind address and port in the clusterConfig.yaml file.
+- __Added__ : The installer now performs a pre-check on each node to verify if lvm2 is installed when using eyebrow storage.
+- __Added__ : The installer includes an embedded default upgrade of the k8s version to v1.26.5.
+- __Added__ : Support specifying the local file mount path for the bootstrapping kind in the clusterConfig.yaml file.
+- __Added__ : Integrated ISO image file import script into the installer binary.
 
 #### Improvements
 
-- __Improved__: Optimized download scripts.
-- __Improved__: Optimized logic and functionality of the `import-artifact` command.
-- __Improved__: Made `isoPath` and `osPackagePath` optional fields in clusterConfig.yaml during the upgrade process.
-- __Improved__: Enhanced temporary file cleanup mechanism in the installer.
-- __Improved__: Enhanced reuse functionality of the bootstrapping node.
+- __Improved__ : Optimized download scripts.
+- __Improved__ : Optimized logic and functionality of the `import-artifact` command.
+- __Improved__ : Made `isoPath` and `osPackagePath` optional fields in clusterConfig.yaml during the upgrade process.
+- __Improved__ : Enhanced temporary file cleanup mechanism in the installer.
+- __Improved__ : Enhanced reuse functionality of the bootstrapping node.
 
 #### Fixes
 
-- __Fixed__: Fixed the issue where the ES component could not start in OCP.
-- __Fixed__: Fixed the issue where the UI interface was inaccessible after installing DCE in TencentOS.
-- __Fixed__: Fixed the high probability of failed database creation for middleware databases in arm64 environments.
-- __Fixed__: Fixed shell expansion error in the image upload success check process.
+- __Fixed__ : Fixed the issue where the ES component could not start in OCP.
+- __Fixed__ : Fixed the issue where the UI interface was inaccessible after installing DCE in TencentOS.
+- __Fixed__ : Fixed the high probability of failed database creation for middleware databases in arm64 environments.
+- __Fixed__ : Fixed shell expansion error in the image upload success check process.
 
 #### Known Issues
 

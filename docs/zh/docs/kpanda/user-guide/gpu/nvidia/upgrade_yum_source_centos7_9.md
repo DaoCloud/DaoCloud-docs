@@ -111,7 +111,7 @@
     tar -xzf centos-base.tar.gz
     ```
 
-    按下 __esc__ 键退出插入模式，然后输入 __:wq__ 保存并退出。
+    按下 __esc__ 键退出插入模式，然后输入 __ :wq__ 保存并退出。
 
 2. 运行 __yum.sh__ 文件：
 
@@ -119,7 +119,7 @@
     bash -x yum.sh TARGET_KERNEL_VERSION
     ```
 
-    `TARGET_KERNEL_VERSION` 参数用于指定集群节点的内核版本，注意：发行版标识符（如： __.el7.x86_64 __ ）无需输入。
+    `TARGET_KERNEL_VERSION` 参数用于指定集群节点的内核版本，注意：发行版标识符（如： __ .el7.x86_64 __ ）无需输入。
 
     例如：
 

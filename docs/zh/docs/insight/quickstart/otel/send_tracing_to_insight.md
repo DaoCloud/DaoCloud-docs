@@ -49,7 +49,9 @@
     确保 Insight Agent 正常工作并 [安装 Instrumentation CR](./operator.md#instrumentation-cr) 之后，
     只需要为 Pod 添加如下 Annotation 即可：
 
-    `instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation" `
+    ```console
+    instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
+    ```
 
     举例：
 

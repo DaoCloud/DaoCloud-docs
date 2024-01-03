@@ -12,7 +12,7 @@ remote: Please see https://docs.github.com/en/get-started/getting-started-with-g
 fatal: Authentication failed for 'https://github.com/DaoCloud/dce-installer.git/'
 ```
 
-__解决方案__：
+__解决方案__ ：
 
 使用 SSH 方式导入 __GitHub__ 仓库。
 
@@ -20,6 +20,6 @@ __解决方案__：
 
 目前一个仓库绑定只能到一个工作空间，不能绑定到不同工作空间。如果一个仓库已经绑定到了 A 工作空间，此时尝试在 B 工作空间下将其添加到 GitOps 中就会提示仓库已经存在。
 
-__解决方案__：
+__解决方案__ ：
 
 先将该仓库与其当前绑定的工作空间解绑，然后再重新将其添加到目标的工作空间。

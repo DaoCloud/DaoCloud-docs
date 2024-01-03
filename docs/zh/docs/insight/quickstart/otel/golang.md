@@ -154,7 +154,7 @@ func main() {
 
 请参考[通过 Operator 实现应用程序无侵入增强](./operator.md) 中 __只注入环境变量注解__ 相关介绍，为 deployment yaml 添加注解：
 
-```bash
+```console
 instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
 ```
 
