@@ -13,12 +13,12 @@ This section describes how to allocate the entire NVIDIA GPU card to a single ap
 
 ### Configuring via the User Interface
 
-1. Check if the cluster has detected the GPU cards. Click the corresponding `Cluster` -> `Cluster Settings` -> `Addon Plugins` to see if it has automatically enabled and detected the corresponding GPU types.
-   Currently, the cluster will automatically enable `GPU` and set the `GPU Type` as `Nvidia GPU`.
+1. Check if the cluster has detected the GPU cards. Click the corresponding __Clusters__ -> __Cluster Settings__ -> __Addon Plugins__ to see if it has automatically enabled and detected the corresponding GPU types.
+   Currently, the cluster will automatically enable __GPU__ and set the __GPU Type__ as __Nvidia GPU__ .
 
     
 
-2. Deploy a workload. Click the corresponding `Cluster` -> `Workloads`, and deploy the workload using the image method. After selecting the type (`Nvidia GPU`), configure the number of physical cards used by the application:
+2. Deploy a workload. Click the corresponding __Clusters__ -> __Workloads__ , and deploy the workload using the image method. After selecting the type ( __Nvidia GPU__ ), configure the number of physical cards used by the application:
 
     **Physical Card Count (nvidia.com/gpu)**: Indicates the number of physical cards that the current pod needs to mount. The input value must be an integer and **less than or equal to** the number of cards on the host machine.
 
@@ -28,7 +28,7 @@ This section describes how to allocate the entire NVIDIA GPU card to a single ap
 
 ### Configuring via YAML
 
-To request GPU resources for a workload, add the `nvidia.com/gpu: 1` parameter to the resource request and limit configuration in the YAML file. This parameter configures the number of physical cards used by the application.
+To request GPU resources for a workload, add the __nvidia.com/gpu: 1__ parameter to the resource request and limit configuration in the YAML file. This parameter configures the number of physical cards used by the application.
 
 ```yaml
 apiVersion: apps/v1

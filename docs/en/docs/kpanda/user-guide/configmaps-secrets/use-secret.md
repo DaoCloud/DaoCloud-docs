@@ -20,27 +20,27 @@ You can use the key as the environment variable of the container through the GUI
 
 ### Graphical interface operation
 
-When creating a workload from an image, you can set environment variables for the container by selecting `Key Import` or `Key Key Value Import` on the `Environment Variables` interface.
+When creating a workload from an image, you can set environment variables for the container by selecting __Key Import__ or __Key Key Value Import__ on the __Environment Variables__ interface.
 
 1. Go to the [Image Creation Workload](../workloads/create-deployment.md) page.
 
      
 
-2. Select the `Environment Variables` configuration in `Container Configuration`, and click the `Add Environment Variable` button.
+2. Select the __Environment Variables__ configuration in __Container Configuration__ , and click the __Add Environment Variable__ button.
 
      
 
-3. Select `Key Import` or `Key Key Value Import` in the environment variable type.
+3. Select __Key Import__ or __Key Key Value Import__ in the environment variable type.
 
      
 
-     - When the environment variable type is selected as `Key Import`, enter `Variable Name`, `Prefix`, and `Key` in sequence.
+     - When the environment variable type is selected as __Key Import__ , enter __Variable Name__ , __Prefix__ , and __Secret__ in sequence.
 
-     - When the environment variable type is selected as `key key value import`, enter `variable name`, `key`, `key` name in sequence.
+     - When the environment variable type is selected as __key key value import__ , enter __variable name__ , __Secret__ , __Secret__ name in sequence.
 
 ### Command line operation
 
-As shown in the example below, you can set the secret as an environment variable when creating the workload, using the `valueFrom` parameter to refer to the Key/Value in the Secret.
+As shown in the example below, you can set the secret as an environment variable when creating the workload, using the __valueFrom__ parameter to refer to the Key/Value in the Secret.
 
 ```yaml
 apiVersion: v1
@@ -80,15 +80,15 @@ When creating a workload through an image, you can use the key as the data volum
 
      
 
-2. In the `Container Configuration`, select the `Data Storage` configuration, and click the `Add` button in the `Node Path Mapping` list.
+2. In the __Container Configuration__ , select the __Data Storage__ configuration, and click the __Add__ button in the __Node Path Mapping__ list.
 
      
 
-3. Select `Key` in the storage type, and enter `container path`, `subpath` and other information in sequence.
+3. Select __Secret__ in the storage type, and enter __container path__ , __subpath__ and other information in sequence.
 
 ### Command line operation
 
-The following is an example of a Pod that mounts a Secret named `mysecret` via a data volume:
+The following is an example of a Pod that mounts a Secret named __mysecret__ via a data volume:
 
 ```yaml
 apiVersion: v1
@@ -112,7 +112,7 @@ spec:
 
 1. Default setting, means "mysecret" must already exist
 
-If the Pod contains multiple containers, each container needs its own `volumeMounts` block, but only one `.spec.volumes` setting is required for each Secret.
+If the Pod contains multiple containers, each container needs its own __volumeMounts__ block, but only one __.spec.volumes__ setting is required for each Secret.
 
 ## Used as the identity authentication credential for the container registry when the kubelet pulls the container image
 
@@ -126,7 +126,7 @@ When creating a workload through an image, you can use the key as the data volum
 
      
 
-2. In the second step of `Container Configuration`, select the `Basic Information` configuration, and click the `Select Image` button.
+2. In the second step of __Container Configuration__ , select the __Basic Information__ configuration, and click the __Select Image__ button.
 
      
 
@@ -134,7 +134,7 @@ When creating a workload through an image, you can use the key as the data volum
 
      
 
-4. Enter the image name in the private registry, click `OK` to complete the image selection.
+4. Enter the image name in the private registry, click __OK__ to complete the image selection.
 
 !!! note
 

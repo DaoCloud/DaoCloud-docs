@@ -14,7 +14,7 @@ You can also expand workload resources by setting [Custom Resource CRD](../../cu
 
 Pod is the smallest computing unit created and managed in Kubernetes, that is, a collection of containers. These containers share storage, networking, and management policies that control how the containers run.
 Pods are typically not created directly by users, but through workload resources.
-Pods follow a predefined lifecycle, starting at `Pending` [phase](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-phase), if at least one of the primary containers starts normally, it enters `Running`, and then enters the `Succeeded` or `Failed` stage depending on whether any container in the Pod ends in a failed state.
+Pods follow a predefined lifecycle, starting at __Pending__ [phase](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-phase), if at least one of the primary containers starts normally, it enters __Running__ , and then enters the __Succeeded__ or __Failed__ stage depending on whether any container in the Pod ends in a failed state.
 
 ## Workload Status
 

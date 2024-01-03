@@ -4,11 +4,11 @@
 
 After creating a scan configuration, you can create a scan policy based on the configuration.
 
-1. Under the `Security Management` -> `Compliance Scanning` page, click the `Scan Policy` tab on the right to create a scan policy.
+1. Under the __Security Management__ -> __Compliance Scanning__ page, click the __Scan Policy__ tab on the right to create a scan policy.
 
     
 
-2. Fill in the configuration according to the following instructions and click `OK`.
+2. Fill in the configuration according to the following instructions and click __OK__ .
 
     - Cluster: Select the cluster to be scanned. The optional cluster list comes from the clusters accessed or created in the [Container Management](../../../intro/index.md) module. If the desired cluster is not available, you can access or create a cluster in the Container Management module.
     - Scan Configuration: Select a pre-created scan configuration. The scan configuration determines which specific scan items need to be performed.
@@ -25,15 +25,15 @@ After creating a scan configuration, you can create a scan policy based on the c
 
 After creating a scan policy, you can update or delete it as needed.
 
-Under the `Scan Policy` tab, click the `ⵗ` action button to the right of a configuration:
+Under the __Scan Policy__ tab, click the __ⵗ__ action button to the right of a configuration:
 
 - For periodic scan policies:
 
-    - Select `Execute Immediately` to perform an additional scan outside the regular schedule.
-    - Select `Disable` to interrupt the scanning plan until `Enable` is clicked to resume executing the scan policy according to the scheduling plan.
-    - Select `Edit` to update the configuration. You can update the scan configuration, type, scan cycle, and report retention quantity. The configuration name and the target cluster to be scanned cannot be changed.
-    - Select `Delete` to delete the configuration.
+    - Select __Execute Immediately__ to perform an additional scan outside the regular schedule.
+    - Select __Disable__ to interrupt the scanning plan until __Enable__ is clicked to resume executing the scan policy according to the scheduling plan.
+    - Select __Edit__ to update the configuration. You can update the scan configuration, type, scan cycle, and report retention quantity. The configuration name and the target cluster to be scanned cannot be changed.
+    - Select __Delete__ to delete the configuration.
 
-- For one-time scan policies: Only support the `Delete` operation.
+- For one-time scan policies: Only support the __Delete__ operation.
 
     

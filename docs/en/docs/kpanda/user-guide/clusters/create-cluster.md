@@ -22,7 +22,7 @@ Certain prerequisites must be met before creating a cluster:
 
 ## Steps
 
-1. Enter the Container Management module, click `Create Cluster` on the upper right corner of the `Clusters` page.
+1. Enter the Container Management module, click __Create Cluster__ on the upper right corner of the __Clusters__ page.
 
     ![screen](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/cluster-create01.png)
 
@@ -35,7 +35,7 @@ Certain prerequisites must be met before creating a cluster:
 
         ![screen](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/cluster-create02.png)
 
-3. Fill in the node configuration information and click `Node Check`.
+3. Fill in the node configuration information and click __Node Check__ .
 
     - High Availability: Enable high availability mode for production environments. If enabled, at least three controller nodes are needed. If disabled, only one controller node is needed.
     - Credential Type: Choose to access the nodes by username/password or public/private keys.
@@ -45,34 +45,34 @@ Certain prerequisites must be met before creating a cluster:
 
         ![screen](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/cluster-create03.png)
 
-4. If node check is passed, click `Next`. If the check failed, update `Node Information` and check again.
-5. Fill in the network configuration and click `Next`.<!--补充后续步骤的-->
+4. If node check is passed, click __Next__ . If the check failed, update __Node Information__ and check again.
+5. Fill in the network configuration and click __Next__ .
 
-    - CNI: Provide network services for Pods in the cluster. CNI cannot be changed after the cluster is created. Supports cilium and calico. Set `none` means not installing CNI when creating the cluster. You may install a CNI later.
+    - CNI: Provide network services for Pods in the cluster. CNI cannot be changed after the cluster is created. Supports cilium and calico. Set __none__ means not installing CNI when creating the cluster. You may install a CNI later.
 
         > For CNI configuration details, see [Cilium Installation Parameters](../../../network/modules/cilium/install.md) or [Calico Installation Parameters](../../../network/modules/calico/install.md).
 
     - Container IP Range: Set an IP range for allocating IPs for containers in the cluster. IP range determines the max number of containers allowed in the cluster. Cannot be modified after creation.
     - Service IP Range: Set an IP range for allocating IPs for container Services in the cluster. This range determines the max number of container Services that can be created in the cluster. Cannot be modified after creation.
 
-6. Fill in the plug-in configuration and click `Next`.
+6. Fill in the plug-in configuration and click __Next__ .
 
-7. Fill in advanced settings and click `OK`.
+7. Fill in advanced settings and click __OK__ .
 
-    - `kubelet_max_pods`: Set the maximum number of Pods per node. The default is 110.
-    - `hostname_override`: Reset the hostname (not recommended).
-    - `kubernetes_audit`: Kubernetes audit log, enabled by default.
-    - `auto_renew_certificate`: Automatically renew the certificate of the control plane on the first Monday of each month, enabled by default.
-    - `disable_firewalld&ufw`: Disable the firewall to prevent the node from being inaccessible during installation.
-    - `Insecure_registries`: Set the address of you private container registry. If you use a private container registry, fill in its address can bypass certificate authentication of the container engine and obtain the image.
-    - `yum_repos`: Fill in the Yum source registry address.
+    - __kubelet_max_pods__ : Set the maximum number of Pods per node. The default is 110.
+    - __hostname_override__ : Reset the hostname (not recommended).
+    - __kubernetes_audit__ : Kubernetes audit log, enabled by default.
+    - __auto_renew_certificate__ : Automatically renew the certificate of the control plane on the first Monday of each month, enabled by default.
+    - __disable_firewalld&ufw__ : Disable the firewall to prevent the node from being inaccessible during installation.
+    - __Insecure_registries__ : Set the address of you private container registry. If you use a private container registry, fill in its address can bypass certificate authentication of the container engine and obtain the image.
+    - __yum_repos__ : Fill in the Yum source registry address.
 
 
 !!! success
 
     - After correctly filling in the above information, the page will prompt that the cluster is being created.
-    - Creating a cluster takes a long time, so you need to wait patiently. You can click the `Back to Clusters` button to let it running backend.
-    - To view the current status, click `Real-time Log`.
+    - Creating a cluster takes a long time, so you need to wait patiently. You can click the __Back to Clusters__ button to let it running backend.
+    - To view the current status, click __Real-time Log__ .
 
 !!! note
 

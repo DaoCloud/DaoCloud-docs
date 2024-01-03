@@ -6,20 +6,20 @@ This section will guide you through the process of quickly using the Huawei Asce
 
 1. Install the Ascend NPU driver.
 
-    Make sure you have installed the Ascend NPU driver and can run the `npu-smi info` command,
+    Make sure you have installed the Ascend NPU driver and can run the __npu-smi info__ command,
     which should return NPU information indicating that the driver and firmware are ready.
 
     ![Ascend Information](./images/npu-smi-info.png)
 
 2. Install the Ascend NPU Device Plugin.
 
-    The NPU Device Plugin is installed by default in the `kube-system` namespace. It is a DaemonSet
-    workload that can be verified by running the command `kubectl get pod -n kube-system | grep ascend`,
+    The NPU Device Plugin is installed by default in the __kube-system__ namespace. It is a DaemonSet
+    workload that can be verified by running the command __kubectl get pod -n kube-system | grep ascend__ ,
     which should output the following:
 
     ![Ascend Device Plugin](./images/ascend-device-plugin.png)
 
-    If the driver and Device Plugin are not installed, please refer to the official Ascend documentation
+    If the driver and Device Plugin are not installed, refer to the official Ascend documentation
     for installation instructions:
 
     - For example, for Ascend910, refer to the
@@ -139,11 +139,11 @@ spec:
 
 There are some fields in the above YAML that need to be modified according to your specific situation:
 
-1. `atc ... --soc_version=Ascend910` is using `Ascend910` as an example. Please replace it with
-   the actual model you are using. You can use the `npu-smi info` command to check the model of
+1. __atc ... --soc_version=Ascend910__ is using __Ascend910__ as an example. Please replace it with
+   the actual model you are using. You can use the __npu-smi info__ command to check the model of
    your card and add the Ascend prefix accordingly.
-2. `samples-path` should be replaced with the actual path in your system.
-3. `resources` should be adjusted based on your specific requirements.
+2. __samples-path__ should be replaced with the actual path in your system.
+3. __resources__ should be adjusted based on your specific requirements.
 
 ### Deploy Job and View Results
 
@@ -160,7 +160,7 @@ Check the Pod status:
 Once the Pod is successfully running, view the log results. The key information displayed on the screen
 is as shown in the following image. The label in the prompt represents the category label, conf represents
 the maximum confidence of that category, and class represents the corresponding category. These values may
-vary depending on the version and environment, so please refer to your actual situation.
+vary depending on the version and environment, so refer to your actual situation.
 
 ![Ascend demo execution result](./images/ascend-demo-pod-result.png)
 

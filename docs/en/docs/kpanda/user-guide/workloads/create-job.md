@@ -2,7 +2,7 @@
 
 This page introduces how to create a task (Job) through mirror image and YAML file.
 
-Task (Job) is suitable for performing one-time tasks. A Job creates one or more Pods, and the Job keeps retrying to run Pods until a certain number of Pods are successfully terminated. A Job ends when the specified number of Pods are successfully terminated. When a Job is deleted, all Pods created by the Job will be cleared. When a Job is paused, all active Pods in the Job are deleted until the Job is resumed. For more information about tasks (Job), please refer to [Job](https://kubernetes.io/docs/concepts/workloads/controllers/job/).
+Task (Job) is suitable for performing one-time tasks. A Job creates one or more Pods, and the Job keeps retrying to run Pods until a certain number of Pods are successfully terminated. A Job ends when the specified number of Pods are successfully terminated. When a Job is deleted, all Pods created by the Job will be cleared. When a Job is paused, all active Pods in the Job are deleted until the Job is resumed. For more information about tasks (Job), refer to [Job](https://kubernetes.io/docs/concepts/workloads/controllers/job/).
 
 ## Prerequisites
 
@@ -10,7 +10,7 @@ Task (Job) is suitable for performing one-time tasks. A Job creates one or more 
 
 - Create a [namespace](../namespaces/createns.md) and a [user](../../../ghippo/user-guide/access-control/user.md).
 
-- The current operating user should have [`NS Edit`](../permissions/permission-brief.md#ns-edit) or higher permissions, for details, please refer to [Namespace Authorization](../namespaces/createns.md).
+- The current operating user should have [`NS Edit`](../permissions/permission-brief.md#ns-edit) or higher permissions, for details, refer to [Namespace Authorization](../namespaces/createns.md).
 
 - When there are multiple containers in a single instance, please make sure that the ports used by the containers do not conflict, otherwise the deployment will fail.
 
@@ -18,23 +18,23 @@ Task (Job) is suitable for performing one-time tasks. A Job creates one or more 
 
 Refer to the following steps to create a task using an image.
 
-1. Click `Cluster List` on the left navigation bar, and then click the name of the target cluster to enter the `Cluster Details` page.
+1. Click __Clusters__ on the left navigation bar, and then click the name of the target cluster to enter the __Cluster Details__ page.
 
      
 
-2. On the cluster details page, click `Workload` -> `Task` in the left navigation bar, and then click the `Image creation` button in the upper right corner of the page.
+2. On the cluster details page, click __Workload__ -> __Task__ in the left navigation bar, and then click the __Image creation__ button in the upper right corner of the page.
 
      
 
-3. Fill in [Basic Information](create-job.md#_3), [Container Configuration](create-job.md#_4), [Service Configuration](create-job.md#_5), [Advanced Configuration] in turn (create-job.md#_6), click `OK` in the lower right corner of the page to complete the creation.
+3. Fill in [Basic Information](create-job.md#_3), [Container Configuration](create-job.md#_4), [Service Configuration](create-job.md#_5), [Advanced Configuration] in turn (create-job.md#_6), click __OK__ in the lower right corner of the page to complete the creation.
 
-     The system will automatically return to the `task` list. Click `︙` on the right side of the list to perform operations such as updating, deleting, and restarting the task.
+     The system will automatically return to the __task__ list. Click __︙__ on the right side of the list to perform operations such as updating, deleting, and restarting the task.
 
      
 
 ### Basic Information
 
-On the `Create Task` page, enter the basic information according to the table below, and click `Next`.
+On the __Create Task__ page, enter the basic information according to the table below, and click __Next__ .
 
 
 
@@ -47,50 +47,50 @@ On the `Create Task` page, enter the basic information according to the table be
 
 Container configuration is divided into six parts: basic information, life cycle, health check, environment variables, data storage, and security settings. Click the corresponding tab below to view the configuration requirements of each part.
 
-> Container configuration is only configured for a single container. To add multiple containers to a pod, click `+` on the right to add multiple containers.
+> Container configuration is only configured for a single container. To add multiple containers to a pod, click __+__ on the right to add multiple containers.
 
 === "Basic information (required)"
 
      
 
-     When configuring container-related parameters, you must correctly fill in the container name and image parameters, otherwise you will not be able to proceed to the next step. After filling in the configuration with reference to the following requirements, click `OK`.
+     When configuring container-related parameters, you must correctly fill in the container name and image parameters, otherwise you will not be able to proceed to the next step. After filling in the configuration with reference to the following requirements, click __OK__ .
 
      - Container Name: Up to 63 characters, lowercase letters, numbers and separators ("-") are supported. Must start and end with a lowercase letter or number, eg nginx-01.
-     - Container Image: Enter the address or name of the image. When entering the image name, the image will be pulled from the official [DockerHub](https://hub.docker.com/) by default. After accessing the [container registry](../../../kangaroo/intro/index.md) module of DCE 5.0, you can click `Select Image` on the right to select an image.
-     - Update strategy: After checking `Always pull image`, the image will be pulled from the registry every time the load restarts/upgrades. If it is not checked, only the local mirror will be pulled, and only when the mirror does not exist locally, it will be re-pulled from the container registry. For more details, please refer to [Image Pull Policy](https://kubernetes.io/docs/concepts/containers/images/#image-pull-policy).
+     - Container Image: Enter the address or name of the image. When entering the image name, the image will be pulled from the official [DockerHub](https://hub.docker.com/) by default. After accessing the [container registry](../../../kangaroo/intro/index.md) module of DCE 5.0, you can click __Select Image__ on the right to select an image.
+     - Update strategy: After checking __Always pull image__ , the image will be pulled from the registry every time the load restarts/upgrades. If it is not checked, only the local mirror will be pulled, and only when the mirror does not exist locally, it will be re-pulled from the container registry. For more details, refer to [Image Pull Policy](https://kubernetes.io/docs/concepts/containers/images/#image-pull-policy).
      - Privileged container: By default, the container cannot access any device on the host. After enabling the privileged container, the container can access all devices on the host and enjoy all the permissions of the running process on the host.
      - CPU/Memory Quota: Requested value (minimum resource to be used) and limit value (maximum resource allowed to be used) of CPU/Memory resource. Please configure resources for containers as needed to avoid resource waste and system failures caused by excessive container resources. The default value is shown in the figure.
-     - GPU Exclusive: Configure the GPU usage for the container, only positive integers are supported. The GPU quota setting supports setting exclusive use of the entire GPU card or part of the vGPU for the container. For example, for an 8-core GPU card, enter the number `8` to let the container exclusively use the entire length of the card, and enter the number `1` to configure a 1-core vGPU for the container.
+     - GPU Exclusive: Configure the GPU usage for the container, only positive integers are supported. The GPU quota setting supports setting exclusive use of the entire GPU card or part of the vGPU for the container. For example, for an 8-core GPU card, enter the number __8__ to let the container exclusively use the entire length of the card, and enter the number __1__ to configure a 1-core vGPU for the container.
 
          > Before setting exclusive GPU, the administrator needs to install the GPU card and driver plug-in on the cluster nodes in advance, and enable the GPU feature in [Cluster Settings](../clusterops/cluster-settings.md).
 
 === "Lifecycle (optional)"
 
-     Set the commands that need to be executed when the container starts, after starting, and before stopping. For details, please refer to [Container Lifecycle Configuration](pod-config/lifecycle.md).
+     Set the commands that need to be executed when the container starts, after starting, and before stopping. For details, refer to [Container Lifecycle Configuration](pod-config/lifecycle.md).
 
      
 
 === "Health Check (optional)"
 
-     It is used to judge the health status of containers and applications, which helps to improve the availability of applications. For details, please refer to [Container Health Check Configuration](pod-config/health-check.md).
+     It is used to judge the health status of containers and applications, which helps to improve the availability of applications. For details, refer to [Container Health Check Configuration](pod-config/health-check.md).
 
      
 
 === "Environment variables (optional)"
 
-     Configure container parameters within the Pod, add environment variables or pass configuration to the Pod, etc. For details, please refer to [Container environment variable configuration](pod-config/env-variables.md).
+     Configure container parameters within the Pod, add environment variables or pass configuration to the Pod, etc. For details, refer to [Container environment variable configuration](pod-config/env-variables.md).
 
      
 
 === "Data storage (optional)"
 
-     Configure the settings for container mounting data volumes and data persistence. For details, please refer to [Container Data Storage Configuration](pod-config/env-variables.md).
+     Configure the settings for container mounting data volumes and data persistence. For details, refer to [Container Data Storage Configuration](pod-config/env-variables.md).
 
      
 
 === "Security settings (optional)"
 
-     Containers are securely isolated through Linux's built-in account authority isolation mechanism. You can limit container permissions by using account UIDs (digital identity tokens) with different permissions. For example, enter `0` to use the privileges of the root account.
+     Containers are securely isolated through Linux's built-in account authority isolation mechanism. You can limit container permissions by using account UIDs (digital identity tokens) with different permissions. For example, enter __0__ to use the privileges of the root account.
 
      
 
@@ -98,7 +98,7 @@ Container configuration is divided into six parts: basic information, life cycle
 
 Configure [Service](../network/create-services.md) for the Job so that it can be accessed externally.
 
-1. Click the `Create Service` button.
+1. Click the __Create Service__ button.
 
      
 
@@ -106,7 +106,7 @@ Configure [Service](../network/create-services.md) for the Job so that it can be
 
      
 
-3. Click `OK` and click `Next`.
+3. Click __OK__ and click __Next__ .
 
 ### Advanced configuration
 
@@ -122,7 +122,7 @@ Advanced configuration includes task settings, labels and annotations.
 
 === "Labels and Annotations"
 
-     You can click the `Add` button to add labels and annotations to the workload instance Pod.
+     You can click the __Add__ button to add labels and annotations to the workload instance Pod.
 
      
 
@@ -130,15 +130,15 @@ Advanced configuration includes task settings, labels and annotations.
 
 In addition to mirroring, creation tasks can also be created more quickly through YAML files.
 
-1. Click `Cluster List` on the left navigation bar, and then click the name of the target cluster to enter the `Cluster Details` page.
+1. Click __Clusters__ on the left navigation bar, and then click the name of the target cluster to enter the __Cluster Details__ page.
 
      
 
-2. On the cluster details page, click `Workload` -> `Task` in the left navigation bar, and then click the `YAML Create` button in the upper right corner of the page.
+2. On the cluster details page, click __Workload__ -> __Task__ in the left navigation bar, and then click the __YAML Create__ button in the upper right corner of the page.
 
      
 
-3. Enter or paste the YAML file prepared in advance, click `OK` to complete the creation.
+3. Enter or paste the YAML file prepared in advance, click __OK__ to complete the creation.
 
      
 

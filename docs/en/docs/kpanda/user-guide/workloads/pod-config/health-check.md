@@ -10,7 +10,7 @@ Container health check checks the health status of containers according to user 
 
 ## Liveness and readiness checks
 
-The configuration of LivenessProbe is similar to that of ReadinessProbe, the only difference is to use `readinessProbe` field instead of `livenessProbe` field.
+The configuration of LivenessProbe is similar to that of ReadinessProbe, the only difference is to use __readinessProbe__ field instead of __livenessProbe__ field.
 
 **HTTP GET parameter description:**
 
@@ -53,7 +53,7 @@ spec:
        periodSeconds: 3 #kubelet performs a liveness detection every 3 seconds
 ```
 
-According to the set rules, Kubelet sends an HTTP GET request to the service running in the container (the service is listening on port 8080) to perform the detection. The kubelet considers the container alive if the handler under the `/healthz` path on the server returns a success code. If the handler returns a failure code, the kubelet kills the container and restarts it. Any return code greater than or equal to 200 and less than 400 indicates success, and any other return code indicates failure. The `/healthz` handler returns a 200 status code for the first 10 seconds of the container's lifetime. The handler then returns a status code of 500.
+According to the set rules, Kubelet sends an HTTP GET request to the service running in the container (the service is listening on port 8080) to perform the detection. The kubelet considers the container alive if the handler under the __/healthz__ path on the server returns a success code. If the handler returns a failure code, the kubelet kills the container and restarts it. Any return code greater than or equal to 200 and less than 400 indicates success, and any other return code indicates failure. The __/healthz__ handler returns a 200 status code for the first 10 seconds of the container's lifetime. The handler then returns a status code of 500.
 
 ### Use TCP port check
 
@@ -95,9 +95,9 @@ spec:
 
 ```
 
-This example uses both readiness and liveness probes. The kubelet sends the first readiness probe 5 seconds after the container is started. Attempt to connect to port 8080 of the `goproxy` container. If the probe is successful, the Pod will be marked as ready and the kubelet will continue to run the check every 10 seconds.
+This example uses both readiness and liveness probes. The kubelet sends the first readiness probe 5 seconds after the container is started. Attempt to connect to port 8080 of the __goproxy__ container. If the probe is successful, the Pod will be marked as ready and the kubelet will continue to run the check every 10 seconds.
 
-In addition to the readiness probe, this configuration includes a liveness probe. The kubelet will perform the first liveness probe 15 seconds after the container is started. The readiness probe will attempt to connect to the `goproxy` container on port 8080. If the liveness probe fails, the container will be restarted.
+In addition to the readiness probe, this configuration includes a liveness probe. The kubelet will perform the first liveness probe 15 seconds after the container is started. The readiness probe will attempt to connect to the __goproxy__ container on port 8080. If the liveness probe fails, the container will be restarted.
 
 ### Execute command check
 
@@ -127,11 +127,11 @@ spec:
        periodSeconds: 5 #kubelet performs a liveness detection every 5 seconds
 ```
 
-The `periodSeconds` field specifies that the kubelet performs a liveness probe every 5 seconds, and the `initialDelaySeconds` field specifies that the kubelet waits for 5 seconds before performing the first probe. According to the set rules, the cluster periodically executes the command `cat /tmp/healthy` in the container through the kubelet to detect. If the command executes successfully and the return value is 0, the kubelet considers the container to be healthy and alive. If this command returns a non-zero value, the kubelet will kill the container and restart it.
+The __periodSeconds__ field specifies that the kubelet performs a liveness probe every 5 seconds, and the __initialDelaySeconds__ field specifies that the kubelet waits for 5 seconds before performing the first probe. According to the set rules, the cluster periodically executes the command __cat /tmp/healthy__ in the container through the kubelet to detect. If the command executes successfully and the return value is 0, the kubelet considers the container to be healthy and alive. If this command returns a non-zero value, the kubelet will kill the container and restart it.
 
 ### Protect slow-starting containers with pre-start checks
 
-Some applications require a long initialization time at startup. You need to use the same command to set startup detection. For HTTP or TCP detection, you can set the `failureThreshold * periodSeconds` parameter to a long enough time to cope with the long startup time scene.
+Some applications require a long initialization time at startup. You need to use the same command to set startup detection. For HTTP or TCP detection, you can set the __failureThreshold * periodSeconds__ parameter to a long enough time to cope with the long startup time scene.
 
 **YAML example:**
 
@@ -156,4 +156,4 @@ startupProbe:
    periodSeconds: 10
 ```
 
-With the above settings, the application will have up to 5 minutes (30 * 10 = 300s) to complete the startup process. Once the startup detection is successful, the survival detection task will take over the detection of the container and respond quickly to the container deadlock. If the start probe has been unsuccessful, the container is killed after 300 seconds and further disposition is performed according to the `restartPolicy`.
+With the above settings, the application will have up to 5 minutes (30 * 10 = 300s) to complete the startup process. Once the startup detection is successful, the survival detection task will take over the detection of the container and respond quickly to the container deadlock. If the start probe has been unsuccessful, the container is killed after 300 seconds and further disposition is performed according to the __restartPolicy__ .

@@ -12,11 +12,11 @@ Currently, it supports creating StorageClass through YAML and forms. These two m
 
 ### YAML creation
 
-1. Click the name of the target cluster in the cluster list, and then click `Container Storage`->`StorageClass (SC)`->`YAML Creation` in the left navigation bar.
+1. Click the name of the target cluster in the cluster list, and then click __Container Storage__ -> __StorageClass (SC)__ -> __Create with YAML__ in the left navigation bar.
 
     
 
-2. Enter or paste the prepared YAML file in the pop-up box, and click `OK` at the bottom of the pop-up box.
+2. Enter or paste the prepared YAML file in the pop-up box, and click __OK__ at the bottom of the pop-up box.
 
     > Supports importing YAML files from local or downloading and saving filled files to local.
 
@@ -24,18 +24,18 @@ Currently, it supports creating StorageClass through YAML and forms. These two m
 
 ### Form Creation
 
-1. Click the name of the target cluster in the cluster list, and then click `Container Storage`->`StorageClass (SC)`->`Create StorageClass (SC)` in the left navigation bar.
+1. Click the name of the target cluster in the cluster list, and then click __Container Storage__ -> __StorageClass (SC)__ -> __Create StorageClass (SC)__ in the left navigation bar.
 
     
 
-2. Fill in the basic information and click `OK` at the bottom.
+2. Fill in the basic information and click __OK__ at the bottom.
 
     **CUSTOM STORAGE SYSTEM**
 
     - The StorageClass name, driver, and reclamation policy cannot be modified after creation.
-    - CSI storage driver: A standard Kubernetes-based container storage interface plug-in, which must comply with the format specified by the storage manufacturer, such as `rancher.io/local-path`.
+    - CSI storage driver: A standard Kubernetes-based container storage interface plug-in, which must comply with the format specified by the storage manufacturer, such as __rancher.io/local-path__ .
 
-        - For how to fill in the CSI drivers provided by different vendors, please refer to the official Kubernetes document [Storage Class](https://kubernetes.io/docs/concepts/storage/storage-classes/#provisioner).
+        - For how to fill in the CSI drivers provided by different vendors, refer to the official Kubernetes document [Storage Class](https://kubernetes.io/docs/concepts/storage/storage-classes/#provisioner).
     - Recycling policy: When deleting a data volume, keep the data in the data volume or delete the data in it.
     - Snapshot/Expansion: After it is enabled, the data volume/data volume declaration based on the StorageClass can support the expansion and snapshot features, but **the premise is that the underlying storage driver supports the snapshot and expansion features**.
 
@@ -44,9 +44,9 @@ Currently, it supports creating StorageClass through YAML and forms. These two m
     - The StorageClass name, driver, and reclamation policy cannot be modified after creation.
     - Storage system: Hwameistor storage system.
     - Storage type: support LVM, raw disk type
-      - `LVM type`: Hwameistor recommended usage method, which can use highly available data volumes, and the corresponding CSI storage driver is: `lvm.hwameistor.io`.
-      - `Raw disk data volume`: suitable for high availability cases, without high availability capability, the corresponding CSI driver is: `hdd.hwameistor.io`
-    - High Availability Mode: Before using the high availability capability, please make sure `DRDB component` has been installed. After the high availability mode is turned on, the number of data volume copies can be set to 1 and 2. Convert data volume copy from 1 to 1 if needed
+      - __LVM type__ : Hwameistor recommended usage method, which can use highly available data volumes, and the corresponding CSI storage driver is: __lvm.hwameistor.io__ .
+      - __Raw disk data volume__ : suitable for high availability cases, without high availability capability, the corresponding CSI driver is: __hdd.hwameistor.io__ 
+    - High Availability Mode: Before using the high availability capability, please make sure __DRDB component__ has been installed. After the high availability mode is turned on, the number of data volume copies can be set to 1 and 2. Convert data volume copy from 1 to 1 if needed
     - Recycling policy: When deleting a data volume, keep the data in the data volume or delete the data in it.
     - Snapshot/Expansion: After it is enabled, the data volume/data volume declaration based on the StorageClass can support the expansion and snapshot features, but **the premise is that the underlying storage driver supports the snapshot and expansion features**.
 
@@ -60,7 +60,7 @@ On the StorageClass list page, find the StorageClass that needs to be updated, a
 
 !!! info
 
-    Select `View YAML` to view the YAML file of the StorageClass, but editing is not supported.
+    Select __View YAML__ to view the YAML file of the StorageClass, but editing is not supported.
 
 ## Delete StorageClass (SC)
 

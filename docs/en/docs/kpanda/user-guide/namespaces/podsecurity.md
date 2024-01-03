@@ -4,7 +4,7 @@ Container group security policies in a Kubernetes cluster allow you to control t
 
 !!! note
 
-    Only one security policy can be configured for each security mode. Please be cautious when configuring the `enforce` security mode for namespaces, as any violations will result in Pod creation failure.
+    Only one security policy can be configured for each security mode. Please be cautious when configuring the __enforce__ security mode for namespaces, as any violations will result in Pod creation failure.
 
 This section will explain how to configure container group security policies for namespaces using the container management interface.
 
@@ -12,14 +12,14 @@ This section will explain how to configure container group security policies for
 
 - The container management module has been integrated with a Kubernetes cluster or a Kubernetes cluster has been created. The cluster version needs to be v1.22 or above, and access to the UI interface of the cluster is required.
 
-- A namespace has been created, and a user has been created and granted the `NS Admin` or higher permission level. For more details, refer to [Namespace Authorization](../permissions/cluster-ns-auth.md).
+- A namespace has been created, and a user has been created and granted the __NS Admin__ or higher permission level. For more details, refer to [Namespace Authorization](../permissions/cluster-ns-auth.md).
 
 ## Configuring Container Group Security Policies for a Namespace
 
-1. Select the namespace for which you want to configure the container group security policies and navigate to its details page. Click `Configure Policy` on the `Container Group Security Policies` page to enter the configuration page.
+1. Select the namespace for which you want to configure the container group security policies and navigate to its details page. Click __Configure Policy__ on the __Container Group Security Policies__ page to enter the configuration page.
 
 
-2. On the configuration page, click `Add Policy` to create a new policy. You will need to specify the security level and security mode. The following table provides detailed descriptions of the security levels and security modes.
+2. On the configuration page, click __Add Policy__ to create a new policy. You will need to specify the security level and security mode. The following table provides detailed descriptions of the security levels and security modes.
 
     | Security Level | Description                                                                                                                                                                     |
     | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -35,11 +35,11 @@ This section will explain how to configure container group security policies for
 
     ![Add Policy](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/ps02.png)
 
-3. Different security levels correspond to different checks. If you are unsure how to configure your namespace, you can click `Policy Configuration Explanation` in the upper right corner of the page to view detailed information.
+3. Different security levels correspond to different checks. If you are unsure how to configure your namespace, you can click __Policy Configuration Explanation__ in the upper right corner of the page to view detailed information.
 
 
-4. Click `OK` to save the configuration. If successful, the configured security policy will appear on the page.
+4. Click __OK__ to save the configuration. If successful, the configured security policy will appear on the page.
 
 
-5. By clicking on `Actions`, you can edit or delete the configured security policies.
+5. By clicking on __Actions__ , you can edit or delete the configured security policies.
 
