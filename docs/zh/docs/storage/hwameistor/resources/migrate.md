@@ -98,12 +98,10 @@ LocalVolumeMigrate 需要部署在 Kubernetes 系统中，需要部署应用满�
       namespace: hwameistor
       name: <localVolumeMigrateName>
     spec:
-      targetNodesNames: 
+    sourceNode: <sourceNodeName>
+      targetNodesSuggested: 
       - <targetNodesName1>
       - <targetNodesName2>
-      sourceNodesNames:
-      - <sourceNodesName1>
-      - <sourceNodesName2>
       volumeName: <volName>
       migrateAllVols: <true/false>
     EOF
