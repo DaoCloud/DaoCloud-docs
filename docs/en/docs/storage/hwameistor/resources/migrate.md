@@ -82,17 +82,15 @@ LVG needs to be deployed in the Kubernetes system, and the deployment applicatio
     ```console
     cat > ./migrate_lv.yaml <<- EOF
     apiVersion: hwameistor.io/v1alpha1
-    kind:LocalVolumeMigrate
+    kind: LocalVolumeMigrate
     metadata:
       namespace: hwameistor
       name: <localVolumeMigrateName>
     spec:
-      targetNodesNames:
+    sourceNode: <sourceNodeName>
+      targetNodesSuggested: 
       - <targetNodesName1>
       - <targetNodesName2>
-      sourceNodesNames:
-      - <sourceNodesName1>
-      - <sourceNodesName2>
       volumeName: <volName>
       migrateAllVols: <true/false>
     EOF
