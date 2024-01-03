@@ -42,14 +42,14 @@ Refer to the following steps to dock the GProduct:
     1. Only support one of overview, workbench, container, microservice, data service, and management
     2. The larger the number, the higher it is ranked
 
-    The configuration for the global management navigation bar `category` is stored in a ConfigMap and cannot be added through registration at present. Please contact the global management team to add it.
+    The configuration for the global management navigation bar __category__ is stored in a ConfigMap and cannot be added through registration at present. Please contact the global management team to add it.
 
-2. The `Kpanda` front-end is integrated into the DCE 5.0 parent application `Anakin` as a micro-frontend.
+2. The `kpanda` front-end is integrated into the DCE 5.0 parent application `Anakin` as a micro-frontend.
 
     DCE 5.0 frontend uses [qiankun](https://qiankun.umijs.org) to connect the sub-applications UI.
     See [getting started](https://qiankun.umijs.org/guide/getting-started).
 
-    After registering the GProductNavigator CR, the corresponding registration information will be generated for the front-end parent application. For example, `Kpanda` will generate the following registration information:
+    After registering the GProductNavigator CR, the corresponding registration information will be generated for the front-end parent application. For example, `kpanda` will generate the following registration information:
 
     ```go
     {

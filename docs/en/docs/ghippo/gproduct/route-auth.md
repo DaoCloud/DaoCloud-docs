@@ -69,5 +69,5 @@ spec:
 2. You need to specify the GProduct name in lowercase
 3. Can also support exact
 4. Whether istio-gateway is required to perform AuthN Token authentication for this routing API, false means to skip authentication
-5. UIAssets recommends adding `/` at the end to indicate the end (otherwise there may be problems in the front end)
+5. UIAssets recommends adding __/__ at the end to indicate the end (otherwise there may be problems in the front end)
 6. The route written later cannot be a subset of the route written earlier, and vice versa

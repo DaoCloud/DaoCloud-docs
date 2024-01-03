@@ -17,7 +17,7 @@
 
 #### 确认开启 K8s 审计日志
 
-执行以下命令查看`/var/log/kubernetes/audit` 目录下是否有审计日志生成。
+执行以下命令查看 __/var/log/kubernetes/audit__ 目录下是否有审计日志生成。
 若有，则表示 K8s 审计日志成功开启。
 
 ```shell
@@ -81,7 +81,7 @@ helm upgrade --install --create-namespace --version ${insight_version_code} --cl
 
 #### 确认开启 K8s 审计日志
 
-执行以下命令查看`/var/log/kubernetes/audit` 目录下是否有审计日志生成，若有，则表示 K8s 审计日志成功开启。
+执行以下命令查看 __/var/log/kubernetes/audit__ 目录下是否有审计日志生成，若有，则表示 K8s 审计日志成功开启。
 
 ```shell
 ls /var/log/kubernetes/audit
@@ -156,7 +156,7 @@ helm upgrade --install --create-namespace --version ${insight_version_code} --cl
 
 #### 确认开启 K8s 审计日志
 
-执行以下命令查看`/var/log/kubernetes/audit` 目录下是否有审计日志生成，若有，则表示 K8s 审计日志成功开启。
+执行以下命令查看 __/var/log/kubernetes/audit__ 目录下是否有审计日志生成，若有，则表示 K8s 审计日志成功开启。
 
 ```shell
 ls /var/log/kubernetes/audit

@@ -12,8 +12,8 @@
 
 1. 在火种机上下载全模式离线包，可以在[下载中心](../../download/index.md)下载最新版本。
 
-    | CPU 架构 | 版本   | 下载地址                                                                                          |
-    | -------- | ------ | ------------------------------------------------------------------------------------------------- |
+    | CPU 架构 | 版本   | 下载地址 |
+    | -------- | ----- | ------- |
     | AMD64    | v0.13.0 | <https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.13.0-amd64.tar> |
     | ARM64     | v0.13.0 | <https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.13.0-arm64.tar> |
 

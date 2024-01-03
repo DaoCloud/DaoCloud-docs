@@ -3,46 +3,78 @@ hide:
   - toc
 ---
 
-# Create an Elasticsearch instance
+# Create an Elasticsearch Instance
 
 In the list of Elasticsearch instances, do the following to create a new instance.
 
 1. Click `New Instance` in the upper right corner.
 
-    <!--screenshot-->
+    ![New Instance](../images/create01.png)
 
-2. On the page of creating an Elasticsearch instance, enter the basic information of the instance, and click `Next`.
+2. Fill in the `Basic Information` of the instance. After passing the `Install Environment Check`, click `Next`.
 
-    <!--screenshot-->
+    > If the installation environment check is not passed, the page will give the reason for failure and operation suggestions. The common reason is the lack of related components, you can install the corresponding components according to the page prompts.
 
-3. Select a version, configure the following specifications of the instance, and click `Next`. Data nodes, Kibana nodes, dedicated master nodes, and cold data nodes can be optionally enabled/disabled.
+    ![Basic Information](../images/create02.png)
 
-    <!--screenshot-->
-  
-    - The hot data node is enabled by default to store the daily active data of the Elasticsearch search service. There are 3 copies by default, with a minimum of 1 and a maximum of 50.
+3. Choose the version: Choose which Elasticsearch version to create the instance based on, currently only supports `7.16.3`
 
-        <!--screenshot-->
+    ![Specification Settings](../images/create03.png)
 
-    - By default, the Kibana node is enabled, which is used to store the Elasticsearch visualization data node. The default is 1 Kibana node, which cannot be increased or decreased.
+4. Refer to the following information to fill in the `Spec Settings` of the instance.
 
-        <!--screenshot-->
+    === "Data Node (enabled by default)"
 
-    - Optional dedicated masternode. This is a node set for some special purposes. There are 3 dedicated master nodes by default, which cannot be increased or decreased.
+        - Used for storing data, performing data-related operations such as adding, deleting, modifying, searching, aggregating, etc. Data nodes require high resources and need to configure sufficient resources.
+        - **If the `Dedicated Master Node` is not enabled, the `Data Node` will act as the `Dedicated Master Node**.
+        - At least 1 replica, up to 50 replicas, default 3 replicas.
+        - It is recommended that the number of replicas is an odd number, otherwise there is a risk of brain split.
 
-        <!--screenshot-->
+            ![Hot Data Node](../images/create03-1.png)
 
-    - Optional cold data nodes. This is the node that stores some Elasticsearch historical data. There are 3 cold data nodes by default, with a minimum of 2 and a maximum of 50.
+    === "Kibana Node (enabled by default)"
 
-        <!--screenshot-->
+        - Kibana is a visualization analysis platform for Elasticsearch, which can search, view data stored in indexes and interact with it.
+        - The `Kibana Node` is enabled by default, which is used to store Elasticsearch visualization data nodes.
+        - Default to 1 replica, cannot be modified.
 
-4. After setting the access type (ClusterIP or NodePort), username and password, click `Next`.
+            ![Kibana Node](../images/create03-2.png)
 
-    <!--screenshot-->
+    === "Master Node"
 
-5. After confirming that the above basic information, specification configuration and service settings are correct, click `OK`.
+        - The master node is responsible for lightweight operations within the cluster, such as creating/deleting indexes, monitoring the status of other types of nodes, deciding how to allocate data shards, etc.
+        - **If the `Dedicated Master Node` is not enabled, the data node will act as the master node**. This may result in a situation where the data node and the master node compete for resources, affecting system stability.
+        - After enabling the `Dedicated Master Node`, the master node is separated from the `Data Node`, which is beneficial to ensure the stability of the service.
+        - Default 3 replicas, cannot be modified.
 
-    <!--screenshot-->
+            ![Master Node](../images/create03-3.png)
 
-6. The screen prompts `Instance created successfully`.
+    === "Cold Node"
 
-    <!--screenshot-->
+        - Stores historical data and other data with low query frequency and basically no need for writing.
+        - At least 2 replicas, up to 50 replicas, default 3 replicas.
+        - If there are both "high query frequency/high write pressure" and "low query frequency/basic no write" data in the business, it is recommended to enable the `Cold Data Node` to achieve cold and hot data separation.
+        - After enabling the `Cold Data Node`, the `Dedicated Master Node` will be automatically enabled.
+
+            ![Cold Node](../images/create03-4.png)
+
+5. Refer to the following instructions to fill in `Service Settings`
+
+    - Access Mode: The type of Service corresponding to the Elasticsearch instance. For detailed explanations of various types, you can refer to [Service type](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types)
+    - Access Settings: The username and password for accessing the Elasticsearch instance, and the access type of Kibana.
+
+        ![Service Settings](../images/create04.png)
+
+    - Node Affinity: After enabling, the Elasticsearch instance can only be scheduled to nodes with specific labels.
+    - Workload Anti-Affinity: Distribute the Pods under the workload to multiple nodes within the topological domain (the scope of the anti-affinity effect) according to the anti-affinity, to avoid multiple Pods being centrally scheduled to a certain node, causing node overload. Related video tutorials can refer to [Workload Anti-affinity](../../../videos/mcamel.md#_1)
+    - Collection Interval for Monitoring: The data collection interval for instance monitoring. If not set, the global setting will be used. The default is 30s.
+
+        ![Service Settings](../images/create04-1.png)
+
+6. Check the information filled in, confirm that it is correct and click `OK`. If you need to modify, you can click `Previous` to return to modify the configuration.
+
+    ![Confirmation](../images/create05.png)
+
+After the instance is successfully created, the page will automatically jump to the Elasticsearch instance list, where you can view the basic information and status of all instances.
+
+![Successfully Created](../images/create06.png)

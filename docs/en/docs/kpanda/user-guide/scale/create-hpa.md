@@ -24,19 +24,19 @@ Before configuring the built-in index auto scaling policy for the workload, the 
 
 - Completed a [namespace creation](../namespaces/createns.md), [stateless workload creation](../workloads/create-deployment.md) or [stateful workload creation](../workloads/create-statefulset.md).
 
-- The current operating user should have [`NS Edit`](../permissions/permission-brief.md#ns-edit) or higher permissions, for details, please refer to [Namespace Authorization](../namespaces/createns.md).
+- The current operating user should have [`NS Edit`](../permissions/permission-brief.md#ns-edit) or higher permissions, for details, refer to [Namespace Authorization](../namespaces/createns.md).
 
-- Completed [`metrics-server plugin install`](install-metrics-server.md).
+- Completed [ __metrics-server plugin install__ ](install-metrics-server.md).
 
 ### Steps
 
 Refer to the following steps to configure the built-in index auto scaling policy for the workload.
 
-1. Click `Cluster List` on the left navigation bar to enter the cluster list page. Click a cluster name to enter the `Cluster Details` page.
+1. Click __Clusters__ on the left navigation bar to enter the cluster list page. Click a cluster name to enter the __Cluster Details__ page.
 
      
 
-2. On the cluster details page, click `Workload` in the left navigation bar to enter the workload list, and then click a workload name to enter the `Workload Details` page.
+2. On the cluster details page, click __Workload__ in the left navigation bar to enter the workload list, and then click a workload name to enter the __Workload Details__ page.
 
      
 
@@ -44,7 +44,7 @@ Refer to the following steps to configure the built-in index auto scaling policy
 
      
 
-4. After confirming that the cluster has [installed the `metrics-server` plug-in](install-metrics-server.md), and the plug-in is running normally, you can click the `New Scaling` button.
+4. After confirming that the cluster has [installed the __metrics-server__ plug-in](install-metrics-server.md), and the plug-in is running normally, you can click the __New Scaling__ button.
 
      
 
@@ -59,7 +59,7 @@ Refer to the following steps to configure the built-in index auto scaling policy
      - Target Memory Usage: The memory usage of the Pod under the workload resource. When the actual memory usage is greater/lower than the target value, the system automatically reduces/increases the number of Pod replicas.
      - Replica range: the elastic scaling range of the number of Pod replicas. The default interval is 1 - 10.
 
-6. After completing the parameter configuration, click the `OK` button to automatically return to the elastic scaling details page. Click `⋮` on the right side of the list to edit, delete, and view related events.
+6. After completing the parameter configuration, click the __OK__ button to automatically return to the elastic scaling details page. Click __⋮__ on the right side of the list to edit, delete, and view related events.
 
      
 
@@ -75,9 +75,9 @@ Before configuring a custom index auto scaling policy for a workload, the follow
 
 - Completed a [namespace creation](../namespaces/createns.md), [stateless workload creation](../workloads/create-deployment.md) or [stateful workload creation](../workloads/create-statefulset.md).
 
-- The current operating user should have [`NS Edit`](../permissions/permission-brief.md#ns-edit) or higher permissions, for details, please refer to [Namespace Authorization](../namespaces/createns.md).
+- The current operating user should have [`NS Edit`](../permissions/permission-brief.md#ns-edit) or higher permissions, for details, refer to [Namespace Authorization](../namespaces/createns.md).
 
-- Completed [`metrics-server plugin install`](install-metrics-server.md).
+- Completed [ __metrics-server plugin install__ ](install-metrics-server.md).
 - Installation of the Insight plug-in is complete.
 - The installation of the Prometheus-adapter plugin has been completed.
 
@@ -85,11 +85,11 @@ Before configuring a custom index auto scaling policy for a workload, the follow
 
 Refer to the following steps to configure an index auto-scaling policy for a workload.
 
-1. Click `Cluster List` on the left navigation bar to enter the cluster list page. Click a cluster name to enter the `Cluster Details` page.
+1. Click __Clusters__ on the left navigation bar to enter the cluster list page. Click a cluster name to enter the __Cluster Details__ page.
 
      
 
-2. On the cluster details page, click `Workload` in the left navigation bar to enter the workload list, and then click a workload name to enter the `Workload Details` page.
+2. On the cluster details page, click __Workload__ in the left navigation bar to enter the workload list, and then click a workload name to enter the __Workload Details__ page.
 
      
 
@@ -97,7 +97,7 @@ Refer to the following steps to configure an index auto-scaling policy for a wor
 
      
 
-4. After confirming that the cluster has [`metrics-server`](install-metrics-server.md), Insight, and Prometheus-adapter plug-ins installed and the plug-ins are running normally, click the `New Scaling` button.
+4. After confirming that the cluster has [ __metrics-server__ ](install-metrics-server.md), Insight, and Prometheus-adapter plug-ins installed and the plug-ins are running normally, click the __New Scaling__ button.
 
      !!! note
 

@@ -18,5 +18,5 @@ MySQL 已就绪，无报错。在安装全局管理后 keycloak 无法启动（>
 
 1. 检查 MySQL 资源占用是否到达 limit 限制
 2. 检查 MySQL 中 database keycloak table 的数量是不是 92
-3. 删除 keycloak database 并创建，提示 `CREATE DATABASE IF NOT EXISTS keycloak CHARACTER SET utf8`
+3. 删除 keycloak database 并创建，提示 __CREATE DATABASE IF NOT EXISTS keycloak CHARACTER SET utf8__ 
 4. 重启 keycloak Pod 解决问题

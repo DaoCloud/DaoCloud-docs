@@ -45,4 +45,4 @@ git clone 某个 repo 后，建议通过 **File** -> **Open Folder...** 进入 r
 **$1**
 ```
 
-![search](../images/vscode03.png) { width=400px}
+![search](../images/vscode03.png)

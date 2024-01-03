@@ -4,7 +4,7 @@
 
 ## 获取密钥
 
-登录 DCE 5.0，在右上角的下拉菜单中找到`个人中心`，可以在`访问密钥`页面管理账号的访问密钥。
+登录 DCE 5.0，在右上角的下拉菜单中找到 __个人中心__ ，可以在 __访问密钥__ 页面管理账号的访问密钥。
 
 ![img](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/platform02.png)
 
@@ -14,8 +14,8 @@
 
 ## 使用密钥访问 API
 
-在访问 DCE 5.0 openAPI 时，在请求中加上请求头 `Authorization:Bearer ${token}` 以标识访问者的身份，
-其中 `${token}` 是上一步中获取到的密钥，具体接口信息参见 [OpenAPI 接口文档](https://docs.daocloud.io/openapi/index.html)。
+在访问 DCE 5.0 openAPI 时，在请求中加上请求头 __Authorization:Bearer ${token}__ 以标识访问者的身份，
+其中 __${token}__ 是上一步中获取到的密钥，具体接口信息参见 [OpenAPI 接口文档](https://docs.daocloud.io/openapi/index.html)。
 
 **请求示例**
 

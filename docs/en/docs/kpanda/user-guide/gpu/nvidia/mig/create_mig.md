@@ -17,21 +17,21 @@ For more details, refer to the [NVIDIA GPU Card Usage Modes](../index.md).
 
 1. [Enable MIG Single mode](../install_nvidia_driver_of_operator.md) through the Operator. Configure the following parameters during the installation:
 
-   - Set `DevicePlugin` to `enable`.
-   - Set `MIG strategy` to `single`.
-   - Enable the `Mig Manager` with the `enabled` parameter.
-   - `MigManager Config`: Configure MIG partitioning parameters and default values.
+   - Set __DevicePlugin__ to __enable__ .
+   - Set __MIG strategy__ to __single__ .
+   - Enable the __Mig Manager__ with the __enabled__ parameter.
+   - __MigManager Config__ : Configure MIG partitioning parameters and default values.
 
-     - `default`: The default value is `all-disabled`, which can be replaced with the corresponding specification from the configuration file (`default-mig-parted-config`), such as `all-1g.10gb`:
+     - __default__ : The default value is __all-disabled__ , which can be replaced with the corresponding specification from the configuration file ( __default-mig-parted-config__ ), such as __all-1g.10gb__ :
          - **all-disabled**: MIG is disabled on all nodes by default.
          - **Configuration specification (e.g., all-1g.10gb)**: All nodes use the specified specification for MIG partitioning by default.
-     - `name`: MIG partitioning strategy configuration. The default value is `default-mig-parted-config`.
+     - __name__ : MIG partitioning strategy configuration. The default value is __default-mig-parted-config__ .
 
      
 
 2. If you need to specify a certain partitioning rule, add a label to the corresponding node (the node with the inserted GPU card). If this step is not performed, the default partitioning will be applied.
 
-   **Configuration through the interface**: Find the corresponding node and select "Modify Tags". Add `nvidia.com/mig.config="all-1g.10gb"`.
+   **Configuration through the interface**: Find the corresponding node and select "Modify Tags". Add __nvidia.com/mig.config="all-1g.10gb"__ .
 
    
 
@@ -51,17 +51,17 @@ For more details, refer to the [NVIDIA GPU Card Usage Modes](../index.md).
 
 1. [Enable MIG Mixed mode](../install_nvidia_driver_of_operator.md) through the Operator. Configure the following parameters during the installation:
 
-   - Set `DevicePlugin` to `enable`.
-   - Set `MIG strategy` to `mixed`.
-   - Enable the `Mig Manager` with the `enabled` parameter.
-   - `MigManager Config`: Configure MIG partitioning parameters and default values.
+   - Set __DevicePlugin__ to __enable__ .
+   - Set __MIG strategy__ to __mixed__ .
+   - Enable the __Mig Manager__ with the __enabled__ parameter.
+   - __MigManager Config__ : Configure MIG partitioning parameters and default values.
 
-     - `default`: The default value is `all-disabled`, which can be replaced with the corresponding specification from the configuration file (`default-mig-parted-config`), such as `all-1g.10gb`.
-     - `name`: The default value is `default-mig-parted-config`, which can be customized for the partitioning strategy configuration.
+     - __default__ : The default value is __all-disabled__ , which can be replaced with the corresponding specification from the configuration file ( __default-mig-parted-config__ ), such as __all-1g.10gb__ .
+     - __name__ : The default value is __default-mig-parted-config__ , which can be customized for the partitioning strategy configuration.
 
-     The following YAML provides an example of a custom configuration named `custom-mig-parted-config`. The created file must have a different name than the default (`default-mig-parted-config`).
+     The following YAML provides an example of a custom configuration named __custom-mig-parted-config__ . The created file must have a different name than the default ( __default-mig-parted-config__ ).
 
-     Create a new configuration file named `custom-mig-parted-config` and ensure that the key in the configuration data matches the content in the `config.yaml` file.
+     Create a new configuration file named __custom-mig-parted-config__ and ensure that the key in the configuration data matches the content in the __config.yaml__ file.
 
         ```yaml title="config.yaml"
           ## Custom GI instance
@@ -123,7 +123,7 @@ For more details, refer to the [NVIDIA GPU Card Usage Modes](../index.md).
                 3g.40gb: 2
         ```
 
-        Set `custom-config` in the above `YAML`, and after setting, the `CI` instance will be split according to the specifications.
+        Set __custom-config__ in the above __YAML__ , and after setting, the __CI__ instance will be split according to the specifications.
 
         ```yaml
         custom-config:
@@ -137,7 +137,7 @@ For more details, refer to the [NVIDIA GPU Card Usage Modes](../index.md).
 
 2. If you need to split the instance according to custom rules, you can add the partitioning specification to the corresponding node. If this step is not performed, the default values will be used for partitioning.
 
-   **Configuration through the interface**: Find the corresponding node and select "Modify Tags". Add `nvidia.com/mig.config="custom-config"`.
+   **Configuration through the interface**: Find the corresponding node and select "Modify Tags". Add __nvidia.com/mig.config="custom-config"__ .
 
    
 

@@ -6,11 +6,11 @@ Supports cluster-level and namespace-level permission control, helping users to 
 ## Cluster permissions
 
 Cluster permissions are based on the ClusterRolebinding authorization of Kubernetes RBAC. Cluster permission settings allow users/groups to have cluster-related permissions.
-The current default cluster role is `Cluster Admin` (does not have permission to create and delete clusters).
+The current default cluster role is __Cluster Admin__ (does not have permission to create and delete clusters).
 
-### `Cluster Admin`
+### __Cluster Admin__ 
 
-`Cluster Admin` has the following permissions:
+ __Cluster Admin__ has the following permissions:
 
 1. Can manage, edit and view the corresponding cluster
 
@@ -47,11 +47,11 @@ rules:
 
 ## Namespace permissions
 
-Namespace permissions are based on the authorization of Kubernetes RBAC capabilities, which can enable different users/groups to have different operation permissions on resources under the namespace (including Kubernetes API permissions, for details, please refer to: [Kubernetes RBAC](https://kubernetes .io/docs/reference/access-authn-authz/rbac/). Currently, the default roles for container management are: NS Admin, NS Edit, NS View.
+Namespace permissions are based on the authorization of Kubernetes RBAC capabilities, which can enable different users/groups to have different operation permissions on resources under the namespace (including Kubernetes API permissions, for details, refer to: [Kubernetes RBAC](https://kubernetes .io/docs/reference/access-authn-authz/rbac/). Currently, the default roles for container management are: NS Admin, NS Edit, NS View.
 
-### `NS Admin`
+### __NS Admin__ 
 
-`NS Admin` has the following permissions:
+ __NS Admin__ has the following permissions:
 
 1. You can view the corresponding namespace
 
@@ -86,9 +86,9 @@ rules:
   - '*'
 ```
 
-### `NS Edit`
+### __NS Edit__ 
 
-`NS Edit` has the following permissions:
+ __NS Edit__ has the following permissions:
 
 1. You can view the corresponding namespace with permissions
 
@@ -211,9 +211,9 @@ rules:
       - '*'
     ```
 
-### `NS View`
+### __NS View__ 
 
-`NS View` has the following permissions:
+ __NS View__ has the following permissions:
 
 1. You can view the corresponding namespace
 
@@ -361,6 +361,6 @@ rules:
     Answer: Global permissions are only authorized as coarse-grained permissions, which can manage the creation, editing, and deletion of all clusters; for fine-grained permissions, such as the management permissions of a single cluster, the management, editing, and deletion permissions of a single namespace, they need to be based on Kubernetes. RBAC's container management permissions are implemented.
     Users with general permissions only need to authorize in container management.
 
-2. Currently, only four default roles are supported. Will `RoleBinding` and `ClusterRoleBinding` (Kubernetes fine-grained RBAC) of background custom roles also take effect?
+2. Currently, only four default roles are supported. Will __RoleBinding__ and __ClusterRoleBinding__ (Kubernetes fine-grained RBAC) of background custom roles also take effect?
 
     Answer: At present, custom permissions cannot be managed through the graphical interface, but permission rules created through kubectl can also take effect.

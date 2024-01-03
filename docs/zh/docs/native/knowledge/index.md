@@ -2,6 +2,7 @@
 
 分享一些云原生相关的技术文章，愿大家携手共进。
 
+- [Git 操作指南](./git/index.md)
 - [排障方案](./troubleshoot.md)
 - [最佳实践](./best-practice.md)
 - [工具推荐](./tools.md)

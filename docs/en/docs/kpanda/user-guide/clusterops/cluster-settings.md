@@ -9,7 +9,7 @@ Cluster settings are used to customize advanced feature settings for your cluste
 
 - Enable GPU: GPU cards and corresponding driver plug-ins need to be installed on the cluster in advance.
 
-    Click the name of the target cluster, and click `Recent Operations`->`Cluster Settings`->`Addon Plugins` in the left navigation bar.
+    Click the name of the target cluster, and click __Recent Operations__ -> __Cluster Settings__ -> __Addon Plugins__ in the left navigation bar.
 
     
 

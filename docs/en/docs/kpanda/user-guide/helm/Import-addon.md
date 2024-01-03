@@ -11,7 +11,7 @@ An offline environment refers to an environment that cannot connect to the inter
 - [charts-syncer](https://github.com/DaoCloud/charts-syncer) is available and running.
   If not, you can [click here to download](https://github.com/DaoCloud/charts-syncer/releases).
 - The Helm Chart has been adapted for [charts-syncer](https://github.com/DaoCloud/charts-syncer).
-  This means adding a `.relok8s-images.yaml` file to the Helm Chart. This file should include all the images used in the Chart,
+  This means adding a __.relok8s-images.yaml__ file to the Helm Chart. This file should include all the images used in the Chart,
   including any images that are not directly used in the Chart but are used similar to images used in an Operator.
 
 !!! note
@@ -24,12 +24,12 @@ An offline environment refers to an environment that cannot connect to the inter
 
 ### Sync Helm Chart
 
-1. Go to `Container Management` -> `Helm Apps` -> `Helm Repositories`, search for the addon, and obtain the built-in repository address and username/password (the default username/password for the system's built-in repository is rootuser/rootpass123).
+1. Go to __Container Management__ -> __Helm Apps__ -> __Helm Repositories__ , search for the addon, and obtain the built-in repository address and username/password (the default username/password for the system's built-in repository is rootuser/rootpass123).
 
 
 1. Sync the Helm Chart to the built-in repository addon of the container management system
 
-    * Write the following configuration file, modify it according to your specific configuration, and save it as `sync-dao-2048.yaml`.
+    * Write the following configuration file, modify it according to your specific configuration, and save it as __sync-dao-2048.yaml__ .
 
         ```yaml
         source:  # helm charts source information
@@ -83,8 +83,8 @@ An offline environment refers to an environment that cannot connect to the inter
         Done moving /var/folders/vm/08vw0t3j68z9z_4lcqyhg8nm0000gn/T/charts-syncer869598676/dao-2048-1.4.1.tgz
         ```
 
-1. Once the previous step is completed, go to `Container Management` -> `Helm Apps` -> `Helm Repositories`, find the corresponding addon,
-   click on `Sync Repository` in the action column, and you will see the uploaded Helm apps in the Helm template.
+1. Once the previous step is completed, go to __Container Management__ -> __Helm Apps__ -> __Helm Repositories__ , find the corresponding addon,
+   click on __Sync Repository__ in the action column, and you will see the uploaded Helm apps in the Helm template.
 
 1. You can then proceed with normal installation, upgrade, and uninstallation.
 
@@ -92,6 +92,6 @@ An offline environment refers to an environment that cannot connect to the inter
 
 ## Online Environment
 
-The Helm Repo address for the online environment is `release.daocloud.io`.
+The Helm Repo address for the online environment is __release.daocloud.io__ .
 If the user does not have permission to add Helm Repo, they will not be able to import custom Helm appss into the system's built-in addons.
 You can add your own Helm repository and then integrate your Helm repository into the platform using the same steps as syncing Helm Chart in the offline environment.

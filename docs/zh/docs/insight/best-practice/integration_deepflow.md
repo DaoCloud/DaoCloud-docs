@@ -4,14 +4,15 @@ DeepFlow 是一款基于 eBPF 的可观测性产品。它的社区版已经被�
 
 ## 前提条件
 
-- Global 集群已经安装 Insight
+- 全局服务集群已经安装 Insight
 - Insight 最低版本要求为 v0.23.0
+- [DeepFlow 运行权限及内核要求](https://deepflow.io/docs/zh/ce-install/overview/#%E8%BF%90%E8%A1%8C%E6%9D%83%E9%99%90%E5%8F%8A%E5%86%85%E6%A0%B8%E8%A6%81%E6%B1%82)
 
 ## 安装 DeepFlow Server
 
 1. 安装 DeepFlow chart
 
-    DeepFlow Server 需要安装在 Global 集群中(它会默认安装 DeepFlow Agent)。进入 kpanda-global-cluster 集群，在左侧导航栏内点击
+    DeepFlow Server 需要安装在全局服务集群中(它会默认安装 DeepFlow Agent)。进入 kpanda-global-cluster 集群，在左侧导航栏内点击
     `Helm 应用` -> `Helm 模板`，仓库选择 `community`，搜索框查询 deepflow:
     
     ![img.png](./images/deepflow_chart.png)
@@ -46,7 +47,7 @@ DeepFlow 是一款基于 eBPF 的可观测性产品。它的社区版已经被�
 
 ## 安装 DeepFlow Agent
 
-DeepFlow Agent 被安装在子集群中，用于采集子集群的 eBPF 观测数据并上报到 Global 集群中。类似于安装 DeepFlow Server，
+DeepFlow Agent 被安装在子集群中，用于采集子集群的 eBPF 观测数据并上报到全局服务集群中。类似于安装 DeepFlow Server，
 通过 `Helm 应用` -> `Helm 模板`，仓库选择 `community`，搜索框查询 deepflow-agent，按流程进入安装界面，在 `参数配置` 配置部分需要注意：
 
 ![img.png](./images/deepflow_agent_chart_config.png)

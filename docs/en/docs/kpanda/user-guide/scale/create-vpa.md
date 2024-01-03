@@ -18,27 +18,27 @@ Before configuring a vertical scaling policy for a workload, the following prere
 
 - Create a [namespace](../namespaces/createns.md), [user](../../../ghippo/user-guide/access-control/user.md), [stateless work Workloads](../workloads/create-deployment.md) or [Stateful Workloads](../workloads/create-statefulset.md).
 
-- The current operating user should have [`NS Edit`](../permissions/permission-brief.md#ns-edit) or higher permissions, for details, please refer to [Namespace Authorization](../namespaces/createns.md).
+- The current operating user should have [`NS Edit`](../permissions/permission-brief.md#ns-edit) or higher permissions, for details, refer to [Namespace Authorization](../namespaces/createns.md).
 
-- The current cluster has installed [`metrics-server`](install-metrics-server.md) and [`VPA`](install-vpa.md) plugins.
+- The current cluster has installed [ __metrics-server__ ](install-metrics-server.md) and [ __VPA__ ](install-vpa.md) plugins.
 
 ## Steps
 
 Refer to the following steps to configure the built-in index auto scaling policy for the workload.
 
-1. Find the current cluster in `Cluster List`, and click the name of the target cluster.
+1. Find the current cluster in __Clusters__ , and click the name of the target cluster.
 
     
 
-2. Click `Workloads` in the left navigation bar, find the workload that needs to create a VPA, and click the name of the workload.
+2. Click __Workloads__ in the left navigation bar, find the workload that needs to create a VPA, and click the name of the workload.
 
     
 
-3. Click the `Auto Scaling` tab to view the auto scaling configuration of the current cluster, and confirm that the relevant plug-ins have been installed and are running normally.
+3. Click the __Auto Scaling__ tab to view the auto scaling configuration of the current cluster, and confirm that the relevant plug-ins have been installed and are running normally.
 
     
 
-4. Click the `New Scaling` button and configure the VPA vertical scaling policy parameters.
+4. Click the __New Scaling__ button and configure the VPA vertical scaling policy parameters.
 
     
 
@@ -48,6 +48,6 @@ Refer to the following steps to configure the built-in index auto scaling policy
         - Auto-scaling: The vertical scaling strategy automatically calculates and modifies the resource quota of the application.
     - Target container: Select the container to be scaled vertically.
 
-5. After completing the parameter configuration, click the `OK` button to automatically return to the elastic scaling details page. Click `⋮` on the right side of the list to perform edit and delete operations.
+5. After completing the parameter configuration, click the __OK__ button to automatically return to the elastic scaling details page. Click __⋮__ on the right side of the list to perform edit and delete operations.
 
     

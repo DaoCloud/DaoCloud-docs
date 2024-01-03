@@ -14,7 +14,7 @@ This article explains how to create an Ubuntu work cluster on an existing CentOS
 
 ### Download and Import Ubuntu Offline Packages
 
-Make sure you are logged in to the "bootstrap" node and that you still have the `clusterConfig.yaml` file used during the deployment of DCE 5.0.
+Make sure you are logged in to the "bootstrap" node and that you still have the __clusterConfig.yaml__ file used during the deployment of DCE 5.0.
 
 #### Download Ubuntu Offline Packages
 

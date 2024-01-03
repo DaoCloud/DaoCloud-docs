@@ -58,19 +58,19 @@ click creates "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns-acr
 In order to meet the multi-tenant  use cases, the workspace forms an isolated resource environment based on multiple resources such as clusters, cluster namespaces, meshs, mesh namespaces, multicloud, and multicloud namespaces.
 Workspaces can be mapped to various concepts such as projects, tenants, enterprises, and suppliers.
 
-1. Log in to DCE 5.0 as a user with the admin/folder admin role, and click `Global Management` at the bottom of the left navigation bar.
+1. Log in to DCE 5.0 as a user with the admin/folder admin role, and click __Global Management__ at the bottom of the left navigation bar.
 
     
 
-1. Click `Workspace and Folder` in the left navigation bar, and click the `Create Workspace` button in the upper right corner.
+1. Click __Workspace and Folder__ in the left navigation bar, and click the __Create Workspace__ button in the upper right corner.
 
     
 
-1. After filling in the workspace name, folder and other information, click `OK` to complete the creation of the workspace.
+1. After filling in the workspace name, folder and other information, click __OK__ to complete the creation of the workspace.
 
     
 
-Tip: If the created namespace already exists in the platform, click a workspace, and under the `Resource Group` tab, click `Bind Resource` to directly bind the namespace.
+Tip: If the created namespace already exists in the platform, click a workspace, and under the __Resource Group__ tab, click __Bind Resource__ to directly bind the namespace.
 
 
 
@@ -80,19 +80,19 @@ A namespace is a smaller unit of resource isolation that can be managed and used
 
 Follow the steps below to prepare a namespace that is not yet bound to any workspace.
 
-1. Click `Container Management` at the bottom of the left navigation bar.
+1. Click __Container Management__ at the bottom of the left navigation bar.
 
     
 
-1. Click the name of the target cluster to enter `Cluster Details`.
+1. Click the name of the target cluster to enter __Cluster Details__ .
 
     
 
-1. Click `Namespace` on the left navigation bar to enter the namespace management page, and click the `Create` button on the right side of the page.
+1. Click __Namespace__ on the left navigation bar to enter the namespace management page, and click the __Create__ button on the right side of the page.
 
     
 
-1. Fill in the name of the namespace, configure the workspace and tags (optional settings), and click `OK`.
+1. Fill in the name of the namespace, configure the workspace and tags (optional settings), and click __OK__ .
 
     !!! info
 
@@ -100,28 +100,28 @@ Follow the steps below to prepare a namespace that is not yet bound to any works
 
     
 
-1. Click `OK` to complete the creation of the namespace. On the right side of the namespace list, click `⋮`, and you can select `Bind Workspace` from the pop-up menu.
+1. Click __OK__ to complete the creation of the namespace. On the right side of the namespace list, click __⋮__ , and you can select __Bind Workspace__ from the pop-up menu.
 
     
 
 ## Bind the namespace to the workspace
 
-In addition to binding in the namespace list, you can also return to `global management`, follow the steps below to bind the workspace.
+In addition to binding in the namespace list, you can also return to __global management__ , follow the steps below to bind the workspace.
 
-1. Click `Global Management` -> `Workspace and Folder` -> `Resource Group`, click a workspace name, and click the `Bind Resource` button.
+1. Click __Global Management__ -> __Workspace and Folder__ -> __Resource Group__ , click a workspace name, and click the __Bind Resource__ button.
 
     
 
-1. Select the workspace to be bound (multiple choices are allowed), and click `OK` to complete the binding.
+1. Select the workspace to be bound (multiple choices are allowed), and click __OK__ to complete the binding.
 
     
 
 ## Add members to the workspace and authorize
 
-1. In `Workspace and Folder` -> `Authorization`, click the name of a workspace, and click the `Add Authorization` button.
+1. In __Workspace and Folder__ -> __Authorization__ , click the name of a workspace, and click the __Add Authorization__ button.
 
     
 
-1. After selecting the `User/group` and `Role` to be authorized, click `OK` to complete the authorization.
+1. After selecting the __User/group__ and __Role__ to be authorized, click __OK__ to complete the authorization.
 
     

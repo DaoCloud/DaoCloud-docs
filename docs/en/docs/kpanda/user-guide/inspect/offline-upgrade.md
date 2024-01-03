@@ -4,7 +4,7 @@ This page explains how to install or upgrade the cluster inspection module after
 
 !!! info
 
-    The term `kocllie` mentioned in the following commands or scripts is the internal development codename for the cluster inspection module.
+    The term __kocllie__ mentioned in the following commands or scripts is the internal development codename for the cluster inspection module.
 
 ## Loading Images from the Downloaded Package
 
@@ -14,9 +14,9 @@ You can load the images in one of the following two ways. If there is an image r
 
 Using chart-syncer, you can upload the charts from the downloaded package along with their dependent image packages to the image repository and Helm repository used by the installer.
 
-First, locate a node (such as a spark node) that can connect to both the image repository and the Helm repository. On this node, create a `load-image.yaml` configuration file and fill in the necessary information about the image repository and the Helm repository.
+First, locate a node (such as a spark node) that can connect to both the image repository and the Helm repository. On this node, create a __load-image.yaml__ configuration file and fill in the necessary information about the image repository and the Helm repository.
 
-1. Create `load-image.yaml` file.
+1. Create __load-image.yaml__ file.
 
     !!! note
 
@@ -28,7 +28,7 @@ First, locate a node (such as a spark node) that can connect to both the image r
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: kocllie # Path where the `load-image.yaml` file is executed on the node.
+          intermediateBundlesPath: kocllie # Path where the __load-image.yaml__ file is executed on the node.
         target:
           containerRegistry: 10.16.10.111 # Image repository address
           containerRepository: release.daocloud.io/kocllie # Image repository path
@@ -50,7 +50,7 @@ First, locate a node (such as a spark node) that can connect to both the image r
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: kocllie # Path where the `load-image.yaml` file is executed on the node.
+          intermediateBundlesPath: kocllie # Path where the __load-image.yaml__ file is executed on the node.
         target:
           containerRegistry: 10.16.10.111 # Image repository URL
           containerRepository: release.daocloud.io/kocllie # Image repository path
@@ -147,9 +147,9 @@ There are two upgrade methods. You can choose the corresponding upgrade approach
         ...
         ```
 
-    5. Backup `--set` parameters.
+    5. Backup __--set__ parameters.
 
-        Before upgrading the cluster inspection module, it is recommended to run the following command to backup the `--set` parameters of the previous version.
+        Before upgrading the cluster inspection module, it is recommended to run the following command to backup the __--set__ parameters of the previous version.
 
         ```shell
         helm get values kocllie -n kocllie-system -o yaml > bak.yaml
@@ -162,9 +162,9 @@ There are two upgrade methods. You can choose the corresponding upgrade approach
         kubectl apply -f kocllie/crds
         ```
 
-    7. Execute `helm upgrade`.
+    7. Execute __helm upgrade__ .
 
-        Before the upgrade, it is recommended to modify the `global.imageRegistry` field in the `bak.yaml` file to the current image repository address being used.
+        Before the upgrade, it is recommended to modify the __global.imageRegistry__ field in the __bak.yaml__ file to the current image repository address being used.
 
         ```shell
         export imageRegistry={your image repository}
@@ -180,9 +180,9 @@ There are two upgrade methods. You can choose the corresponding upgrade approach
 
 === "Upgrade via chart package"
 
-    1. Backup `--set` parameters.
+    1. Backup __--set__ parameters.
 
-        Before upgrading the cluster inspection module, it is recommended to run the following command to backup the `--set` parameters of the previous version.
+        Before upgrading the cluster inspection module, it is recommended to run the following command to backup the __--set__ parameters of the previous version.
 
         ```shell
         helm get values kocllie -n kocllie-system -o yaml > bak.yaml
@@ -194,9 +194,9 @@ There are two upgrade methods. You can choose the corresponding upgrade approach
         kubectl apply -f ./crds
         ```
 
-    3. Execute `helm upgrade`.
+    3. Execute __helm upgrade__ .
 
-        Before the upgrade, it is recommended to modify the `global.imageRegistry` field in the `bak.yaml` file to the current image repository address being used.
+        Before the upgrade, it is recommended to modify the __global.imageRegistry__ field in the __bak.yaml__ file to the current image repository address being used.
 
         ```shell
         export imageRegistry={your image repository}

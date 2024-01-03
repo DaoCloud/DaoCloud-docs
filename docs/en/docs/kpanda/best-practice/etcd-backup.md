@@ -25,7 +25,7 @@ Begin with basic information about the target cluster and S3 storage for the res
 
 ### Install the etcdbrctl tool
 
-To implement ETCD data backup and restore, you need to install the etcdbrctl open source tool on any of the above k8s nodes. This tool does not have binary files for the time being and needs to be compiled by itself. Please refer to the compilation mode: <https://github.com/gardener/etcd-backup-restore/blob/master/doc/development/local_setup.md#build>.
+To implement ETCD data backup and restore, you need to install the etcdbrctl open source tool on any of the above k8s nodes. This tool does not have binary files for the time being and needs to be compiled by itself. Refer to the compilation mode: <https://github.com/gardener/etcd-backup-restore/blob/master/doc/development/local_setup.md#build>.
 
 After installation, use the following command to check whether the tool is available:
 
@@ -55,7 +55,7 @@ You need to check the following before restoring:
 
 ### Shut down the cluster
 
-Before backing up, the cluster must be shut down. The default clusters `etcd` and `kube-apiserver` are started as static pods. To close the cluster here means to move the static Pod manifest file out of the `/etc/kubernetes/manifest` directory, and the cluster will remove the corresponding Pod to close the service.
+Before backing up, the cluster must be shut down. The default clusters __etcd__ and __kube-apiserver__ are started as static pods. To close the cluster here means to move the static Pod manifest file out of the __/etc/kubernetes/manifest__ directory, and the cluster will remove the corresponding Pod to close the service.
 
 1. First, delete the previous backup data. Removing the data does not delete the existing etcd data, but refers to modifying the name of the etcd data directory. Wait for the backup to be successfully restored before deleting this directory. The purpose of this is to also try to restore the current cluster if the etcd backup restore fails. This step needs to be performed for each node.
 
@@ -63,7 +63,7 @@ Before backing up, the cluster must be shut down. The default clusters `etcd` an
     rm -rf /var/lib/etcd_bak
     ```
 
-2. The service then needs to be shut down `kube-apiserver` to ensure that there are no new changes to the etcd data. This step needs to be performed for each node.
+2. The service then needs to be shut down __kube-apiserver__ to ensure that there are no new changes to the etcd data. This step needs to be performed for each node.
 
     ```shell
     mv /etc/kubernetes/manifests/kube-apiserver.yaml /tmp/kube-apiserver.yaml
@@ -75,11 +75,11 @@ Before backing up, the cluster must be shut down. The default clusters `etcd` an
     mv /etc/kubernetes/manifests/etcd.yaml /tmp/etcd.yaml
     ```
 
-4. Ensure that all control plane `kube-apiserver` and `etcd` services are turned off.
+4. Ensure that all control plane __kube-apiserver__ and __etcd__ services are turned off.
    
-5. After shutting down all the nodes, use the following command to check `etcd` the cluster status. This command can be executed at any node.
+5. After shutting down all the nodes, use the following command to check __etcd__ the cluster status. This command can be executed at any node.
 
-    > The `endpoints` value of needs to be replaced with the actual node name
+    > The __endpoints__ value of needs to be replaced with the actual node name
 
     ```shell
     etcdctl endpoint status --endpoints=controller-node-1:2379,controller-node-2:2379,controller-node-3:2379 -w table \
@@ -88,7 +88,7 @@ Before backing up, the cluster must be shut down. The default clusters `etcd` an
       --key="/etc/kubernetes/ssl/apiserver-etcd-client.key"
     ```
 
-    The expected output is as follows, indicating that all `etcd` nodes have been destroyed:
+    The expected output is as follows, indicating that all __etcd__ nodes have been destroyed:
 
     ```none
     {"level":"warn","ts":"2023-03-29T17:51:50.817+0800","logger":"etcd-client","caller":"v3@v3.5.6/retry_interceptor.go:62","msg":"retrying of unary invoker failed","target":"etcd-endpoints://0xc0001ba000/controller-node-1:2379","attempt":0,"error":"rpc error: code = DeadlineExceeded desc = latest balancer error: last connection error: connection error: desc = \"transport: Error while dialing dial tcp 10.5.14.31:2379: connect: connection refused\""}
@@ -167,13 +167,13 @@ You only need to restore the data of one node, and the etcd data of other nodes 
 
 3. The following command is executed on node 01 in order to restore the etcd service for node 01.
 
-    First, move the manifest file of etcd static Pod to the `/etc/kubernetes/manifests` directory, and kubelet will restart etcd:
+    First, move the manifest file of etcd static Pod to the __/etc/kubernetes/manifests__ directory, and kubelet will restart etcd:
 
     ```shell
     mv /tmp/etcd.yaml /etc/kubernetes/manifests/etcd.yaml
     ```
 
-    Then wait for the etcd service to finish starting, and check the status of etcd. The default directory of etcd-related certificates is: `/etc/kubernetes/ssl`. If the cluster certificate is stored in another location, specify the corresponding path.
+    Then wait for the etcd service to finish starting, and check the status of etcd. The default directory of etcd-related certificates is: __/etc/kubernetes/ssl__ . If the cluster certificate is stored in another location, specify the corresponding path.
 
     - Check the etcd cluster list:
 

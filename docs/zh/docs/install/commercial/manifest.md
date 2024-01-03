@@ -2,11 +2,11 @@
 
 此 YAML 文件包含了 DCE 5.0 所有模块信息，主要分为基础设施模块、产品功能模块。
 
-升级操作请参考文档 [升级 DCE5.0](../upgrade.md)。
+升级操作请参考文档 [升级 DCE 5.0](../upgrade.md)。
 
-## manifest 示例
+## Manifest 示例
 
-以下是一个 ClusterConfig 文件示例。
+以下是一个 manifest 文件示例。
 
 ```yaml title="manifest.yaml"
 apiVersion: manifest.daocloud.io/v1alpha1

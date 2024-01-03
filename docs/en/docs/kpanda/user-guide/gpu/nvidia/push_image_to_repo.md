@@ -1,6 +1,6 @@
 # Uploading RedHat GPU Operator Offline Image to Bootstrap Repository
 
-This guide explains how to upload an offline image to the bootstrap repository using the `nvcr.io/nvidia/driver:525.105.17-rhel8.4` offline driver image for RedHat 8.4 as an example.
+This guide explains how to upload an offline image to the bootstrap repository using the __nvcr.io/nvidia/driver:525.105.17-rhel8.4__ offline driver image for RedHat 8.4 as an example.
 
 ## Prerequisites
 
@@ -13,19 +13,19 @@ This guide explains how to upload an offline image to the bootstrap repository u
 
 Perform the following steps on the internet-connected node:
 
-1. Pull the `nvcr.io/nvidia/driver:525.105.17-rhel8.4` offline driver image:
+1. Pull the __nvcr.io/nvidia/driver:525.105.17-rhel8.4__ offline driver image:
 
     ```bash
     docker pull nvcr.io/nvidia/driver:525.105.17-rhel8.4
     ```
 
-2. Once the image is pulled, save it as a compressed archive named `nvidia-driver.tar`:
+2. Once the image is pulled, save it as a compressed archive named __nvidia-driver.tar__ :
 
     ```bash
     docker save nvcr.io/nvidia/driver:525.105.17-rhel8.4 > nvidia-driver.tar
     ```
 
-3. Copy the compressed image archive `nvidia-driver.tar` to the bootstrap node:
+3. Copy the compressed image archive __nvidia-driver.tar__ to the bootstrap node:
 
     ```bash
     scp nvidia-driver.tar user@ip:/root
@@ -41,7 +41,7 @@ Perform the following steps on the internet-connected node:
 
 Perform the following steps on the bootstrap node:
 
-1. Log in to the bootstrap node and import the compressed image archive `nvidia-driver.tar`:
+1. Log in to the bootstrap node and import the compressed image archive __nvidia-driver.tar__ :
 
     ```bash
     docker load -i nvidia-driver.tar
@@ -65,7 +65,7 @@ Perform the following steps on the bootstrap node:
     docker tag <image-name> <registry-url>/<repository-name>:<tag>
     ```
 
-    Replace `<image-name>` with the name of the Nvidia image from the previous step, `<registry-url>` with the address of the Registry service on the bootstrap node, `<repository-name>` with the name of the repository you want to push the image to, and `<tag>` with the desired tag for the image.
+    Replace __<image-name>__ with the name of the Nvidia image from the previous step, __<registry-url>__ with the address of the Registry service on the bootstrap node, __<repository-name>__ with the name of the repository you want to push the image to, and __<tag>__ with the desired tag for the image.
 
     For example:
 

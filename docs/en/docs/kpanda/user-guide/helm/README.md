@@ -13,13 +13,13 @@ Helm is a package management tool for Kubernetes, which makes it easy for users 
 
 There are a few key concepts to understand when using Helm:
 
-- Chart: A Helm installation package, which contains the images, dependencies, and resource definitions required to run an application, and may also contain service definitions in the Kubernetes cluster, similar to the formula in Homebrew, dpkg in APT, or rpm files in Yum. **Charts are called `Helm charts`** in DCE 5.0.
+- Chart: A Helm installation package, which contains the images, dependencies, and resource definitions required to run an application, and may also contain service definitions in the Kubernetes cluster, similar to the formula in Homebrew, dpkg in APT, or rpm files in Yum. Charts are called __Helm charts__ in DCE 5.0.
 
-- Release: A Chart instance running on the Kubernetes cluster. A Chart can be installed multiple times in the same cluster, and each installation will create a new Release. **Release is called `Helm Apps`** in DCE 5.0.
+- Release: A Chart instance running on the Kubernetes cluster. A Chart can be installed multiple times in the same cluster, and each installation will create a new Release. Release is called __Helm Apps__ in DCE 5.0.
 
-- Repository: A repository for publishing and storing Charts. **Repository is called `Helm repository`** in DCE 5.0.
+- Repository: A repository for publishing and storing Charts. Repository is called __Helm repository__ in DCE 5.0.
 
-For more details, please go to [Helm official website](https://helm.sh/).
+For more details, refer to [Helm official website](https://helm.sh/).
 
 **Related operations**:
 

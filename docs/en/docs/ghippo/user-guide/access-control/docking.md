@@ -2,21 +2,21 @@
 
 When two or more platforms need to integrate or embed with each other,
 user system integration is usually required. During the process of user system integration,
-the `Docking Portal` mainly provides SSO (Single Sign-On) capability.
+the __Docking Portal__ mainly provides SSO (Single Sign-On) capability.
 If you want to integrate DCE 5.0 as a user source into a client platform,
-you can achieve it by docking a product through `Docking Portal`.
+you can achieve it by docking a product through __Docking Portal__ .
 
 ## Docking a product
 
 Prerequisite: Administrator privileges for the platform or IAM Owner privileges
 for access control.
 
-1. Log in with an admin, navigate to `Access Control`, select `Docking Portal`,
-   enter the Docking Portal list, and click `Dock product` in the upper right corner.
+1. Log in with an admin, navigate to __Access Control__ , select __Docking Portal__ ,
+   enter the Docking Portal list, and click __Dock product__ in the upper right corner.
 
     ![Dock product button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/sso1.png)
 
-2. On the `Dock product` page, fill in the Client ID.
+2. On the __Dock product__ page, fill in the Client ID.
 
     ![Dock product](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/sso2.png)
 
