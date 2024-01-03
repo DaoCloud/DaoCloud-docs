@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Operations Management
 
 This page allows you to download the offline packages for different versions of the Operations Management module.

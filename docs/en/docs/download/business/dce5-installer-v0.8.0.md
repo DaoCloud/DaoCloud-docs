@@ -13,8 +13,8 @@ This page provides offline packages and checksum files for DCE 5.0 Enterprise.
 
 ## Download
 
-| Filename                    | Version | Architecture | File Size | Download Link                                                                               | Update Date |
-| ---------------------------- | ------- | ------------ | --------- | ------------------------------------------------------------------------------------------- | ----------- |
+| Filename | Version | Architecture | File Size | Download | Update Date |
+| -------- | ------- | ------------ | --------- | -------- | ----------- |
 | offline-v0.8.0-amd64.tar | v0.8.0  | AMD64        | 18.43GB   | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.8.0-amd64.tar) | 2023-06-06 |
 | offline-v0.8.0-arm64.tar | v0.8.0  | ARM64        | 16.99GB   | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.8.0-arm64.tar) | 2023-06-06 |
 
@@ -77,8 +77,8 @@ After the offline package is validated,
 
 DCE 5.0 Enterprise includes the following modules, which can be used on demand to meet various use cases:
 
-| Module               | Introduction                                                                 | Latest Release                                              |
-| -------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| Modules | Description | Versions |
+| ------- | ----------- | -------- |
 | Global Management    | Responsible for user access control, permissions, workspaces and folders, audit logs, personalized appearance settings, etc. | [0.17.1](../../ghippo/intro/release-notes.md#0171)         |
 | Container Management | Manage Kubernetes core features such as clusters, nodes, workloads, Helm applications, CRD, namespaces, etc.        | [0.18.1](../../kpanda/intro/release-notes.md#0181)         |
 | Insight        | Provide rich dashboard, scenario monitoring, data query, alarm and other graphical information.                      | [0.17.2](../../insight/intro/releasenote.md#0172)          |

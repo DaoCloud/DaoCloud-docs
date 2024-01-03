@@ -1,4 +1,9 @@
-# Network Spidernet
+---
+hide:
+  - toc
+---
+
+# Network
 
 This page allows you to download the offline packages of various versions of the network Spidernet module.
 

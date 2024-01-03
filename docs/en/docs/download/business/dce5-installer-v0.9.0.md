@@ -13,8 +13,8 @@ This page allows you to download the offline package and checksum files for DCE 
 
 ## Download
 
-| Filename                      | Version | Architecture | File Size | Download                                                                                                                               | Last Updated |
-| ----------------------------- | --------| -------------| ----------| -------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| Filename | Version | Architecture | File Size | Download | Update Date |
+| -------- | ------- | ------------ | --------- | -------- | ----------- |
 | offline-v0.9.0-amd64.tar      | v0.9.0  | AMD64        | 19.01 GB   | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.9.0-amd64.tar)                  | 2023-07-07   |
 | offline-v0.9.0-arm64.tar      | v0.9.0  | ARM64        | 17.37 GB   | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.9.0-arm64.tar)                  | 2023-07-07   |
 
@@ -77,8 +77,8 @@ After the offline package has been successfully validated,
 
 DCE 5.0 Enterprise includes the following modules that can be used on-demand to meet various application scenarios:
 
-| Module                | Description                                                                 | Latest Release                                                |
-| --------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| Modules | Description | Versions |
+| ------- | ----------- | -------- |
 | Global Management     | Responsible for user access control, permissions, enterprise spaces, etc.    | [0.18.1](../../ghippo/intro/release-notes.md#0181)    |
 | Container Management  | Manages clusters, nodes, workloads, Helm applications, CRDs, namespaces, etc.| [0.19.0](../../kpanda/intro/release-notes.md#0190)    |
 | Insight         | Provides rich dashboards, scene monitoring, data queries, alerts, etc.       | [0.18.2](../../insight/intro/releasenote.md#0182)     |

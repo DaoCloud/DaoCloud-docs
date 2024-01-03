@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Container Management
 
 This page provides offline packages for different versions of the Container Management module.

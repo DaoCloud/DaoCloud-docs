@@ -14,7 +14,7 @@ This page allows you to download the offline package and checksum files for DCE 
 ## Download
 
 | Filename | Version | Architecture | File Size | Download | Update Date |
-| ------------------ | ------ | ---- | ------- | ---------- | -------- |
+| -------- | ------- | ------------ | --------- | -------- | ----------- |
 | offline-v0.12.0-amd64.tar | v0.12.0 | AMD64 | 23.30 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.12.0-amd64.tar) | 2023-11-08 |
 | offline-v0.12.0-arm64.tar | v0.12.0 | ARM64 | 20.20 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.12.0-arm64.tar) | 2023-11-08 |
 
@@ -77,8 +77,8 @@ After the offline package has been successfully validated,
 
 DCE 5.0 Enterprise includes the following modules that can be used on-demand to meet various application scenarios:
 
-| Module | Description | Latest Updates |
-| --- | ---- | ------ |
+| Modules | Description | Versions |
+| ------- | ----------- | -------- |
 | Global Management | Responsible for user access control, permissions, workspaces and folders, audit logs, personalized appearance settings, etc. | [0.21.0](../../ghippo/intro/release-notes.md#0210) |
 | Container Management | Manages clusters, nodes, workloads, Helm applications, CRDs, namespaces, and other core Kubernetes functionalities | [0.22.0](../../kpanda/intro/release-notes.md#0220) |
 | Insight | Provides rich dashboards, scenario monitoring, data querying, alerting, and graphical information | [0.21.1](../../insight/intro/releasenote.md#insight-server-v0210) |

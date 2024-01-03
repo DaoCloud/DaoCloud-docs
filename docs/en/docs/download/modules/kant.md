@@ -1,4 +1,9 @@
-# Cloud Edge Collaboration Kant
+---
+hide:
+  - toc
+---
+
+# Cloud Edge Collaboration
 
 This page provides offline packages for different versions of the Cloud Edge Collaboration module.
 

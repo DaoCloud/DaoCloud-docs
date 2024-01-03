@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Cluster Inspection
 
 This page provides offline packages for different versions of the Cluster Inspection module.
