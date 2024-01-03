@@ -1224,12 +1224,14 @@ nav:
       - DaoCloud 开源图标库: community/icons/index.md
   - 云原生研究院:
       - 社区要闻:
+          - 2024 云原生社区要闻: native/news/news-2024.md
           - 2023 云原生社区要闻: native/news/news-2023.md
           - 2022 云原生社区要闻: native/news/news-2022.md
       - 行业洞察:
           - 商业产品: native/commerce.md
           - 开源项目: native/open.md
       - 知识分享:
+          - 索引: native/knowledge/index.md
           - Git 文档指南:
               - Git 文档流程: native/knowledge/git/index.md
               - 开启两步安全验证: native/knowledge/git/2auth.md
@@ -1238,7 +1240,6 @@ nav:
               - UI 翻译预览: native/knowledge/git/ui-preview.md
               - GitHub 混迹技巧: native/knowledge/git/github.md
               - 同步中英文档: native/knowledge/git/lsync.md
-          - 索引: native/knowledge/knowledge.md
           - 排障方案: native/knowledge/troubleshoot.md
           - 最佳实践: native/knowledge/best-practice.md
           - 工具推荐: native/knowledge/tools.md
