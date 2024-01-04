@@ -5,7 +5,7 @@ hide:
 
 # 安装 DRBD（可选）
 
-如需要使用 高可用数据卷，请在部署 Hwameistor 时开启 DRDB，如下提供安装方式：
+如需要使用高可用数据卷，请在部署 HwameiStor 时开启 DRDB，如下提供安装方式：
 
 ## Hwameistor 安装时同步安装
 
@@ -13,7 +13,7 @@ Hwameistor 安装时，可直接启用 DRDB 组件，详情可查看 [Hwameistor
 
 ## 通过 UI 界面
 
-1. 请 进入 `容器管理`-->`Helm 应用`，选择 `drbd-adapter`。
+1. 请 进入 `容器管理`-->`Helm 模板`，选择 `drbd-adapter`。
 
 2. 点击 `drdb-adapter`，点击安装，进入配置页面。
 
