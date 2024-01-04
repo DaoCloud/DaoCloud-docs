@@ -131,7 +131,7 @@
 
 === "通过 helm repo 升级"
 
-    1. 检查全局管理 helm 仓库是否存在。
+    1. 检查 Insight  helm 仓库是否存在。
 
         ```shell
         helm repo list | grep insight
@@ -143,13 +143,13 @@
         Error: no repositories to show
         ```
 
-    1. 添加全局管理的 helm 仓库。
+    1. 添加 Insight的 helm 仓库。
 
         ```shell
         helm repo add insight http://{harbor url}/chartrepo/{project}
         ```
 
-    1. 更新全局管理的 helm 仓库。
+    1. 更新 Insight 的 helm 仓库。
 
         ```shell
         helm repo update insight # (1)
@@ -157,7 +157,7 @@
 
         1. helm 版本过低会导致失败，若失败，请尝试执行 helm update repo
 
-    1. 选择您想安装的全局管理版本（建议安装最新版本）。
+    1. 选择您想安装的 Insight 版本（建议安装最新版本）。
 
         ```shell
         helm search repo insight/insight --versions
@@ -174,7 +174,7 @@
 
     1. 备份 __--set__ 参数。
 
-        在升级全局管理版本之前，建议您执行如下命令，备份老版本的 __--set__ 参数。
+        在升级 Insight 版本之前，建议您执行如下命令，备份老版本的 __--set__ 参数。
 
         ```shell
         helm get values insight -n insight-system -o yaml > insight.yaml
@@ -211,7 +211,7 @@
 
     1. 备份 __--set__ 参数。
 
-        在升级全局管理版本之前，建议您执行如下命令，备份老版本的 __--set__ 参数。
+        在升级 Insight 版本之前，建议您执行如下命令，备份老版本的 __--set__ 参数。
 
         ```shell
         helm get values insight -n insight-system -o yaml > insight.yaml

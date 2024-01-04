@@ -126,7 +126,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
 
 === "upgrade via helm repo"
 
-     1. Check whether the global management helm repository exists.
+     1. Check whether the Insight helm repository exists.
 
          ```shell
          helm repo list | grep insight
@@ -138,7 +138,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
          Error: no repositories to show
          ```
 
-     1. Add the globally managed helm repository.
+     1. Add the Insight helm repository.
 
          ```shell
          helm repo add insight http://{harbor url}/chartrepo/{project}
@@ -150,7 +150,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
          helm repo update insight # If the helm version is too low, it will fail. If it fails, please try to run helm update repo
          ```
 
-     1. Select the version of Global Management you want to install (the latest version is recommended).
+     1. Select the version of Insight you want to install (the latest version is recommended).
 
          ```shell
          helm search repo insight/insight --versions
@@ -167,7 +167,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
 
      1. Back up the __--set__ parameter.
 
-         Before upgrading the global management version, it is recommended that you run the following command to back up the __--set__ parameter of the old version.
+         Before upgrading the Insight version, it is recommended that you run the following command to back up the __--set__ parameter of the old version.
 
          ```shell
          helm get values insight -n insight-system -o yaml > insight.yaml
@@ -204,7 +204,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
 
      1. Back up the __--set__ parameter.
 
-         Before upgrading the global management version, it is recommended that you run the following command to back up the __--set__ parameter of the old version.
+         Before upgrading the Insight version, it is recommended that you run the following command to back up the __--set__ parameter of the old version.
 
          ```shell
          helm get values insight -n insight-system -o yaml > insight.yaml
