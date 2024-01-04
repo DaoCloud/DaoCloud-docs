@@ -39,7 +39,7 @@ Support for integrating three registries:
 
 1. Log in to DCE 5.0 as a user with the Workspace Admin role, and click `Container Registry` -> `Integrated Registry (Workspace)` from the left navigation bar.
 
-    ![Integrated Registry (Workspace)](../images/integrated01.png)
+    ![Integrated Registry (Workspace)](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/integrated01.png)
 
 1. Click the `Integrated Registry` button in the upper right corner.
 

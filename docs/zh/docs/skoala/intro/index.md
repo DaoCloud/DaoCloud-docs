@@ -72,4 +72,4 @@ hide:
 
 </div>
 
-![微服务引擎架构](../images/archi.png)
+![微服务引擎架构](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/archi.png)

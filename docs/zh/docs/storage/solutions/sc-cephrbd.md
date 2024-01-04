@@ -28,8 +28,8 @@
     | imageFormat | 2 | Ceph块存储的映像（image）格式，默认为 2，且是推荐的格式，它支持许多高级特性，如快照、克隆和动态调整大小等。 |
     | pool | ceph-blockpool | 定义 Ceph 集群存储池的名称，将被用于存储数据。 |
 
-    ![block01](../images/block01.png)
+    ![block01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/block01.png)
 
-    ![block02](../images/block02.png)
+    ![block02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/block02.png)
 
 3. 填写完点击 `确定` 即可创建成功。

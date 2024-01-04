@@ -8,7 +8,7 @@
 
 本文基于 DCE 5.0 安装 Ingress-Nginx，所有参数为默认配置，未开启 keepalive 等特性。
 
-![ingress-arch](../../network/images/ingress-nginx-arch.png)
+![ingress-arch](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/ingress-nginx-arch.png)
 
 ### 物理机
 
@@ -29,7 +29,7 @@
 
 #### Ingress-nginx CPU 与 RPS 关系图
 
-![ingress-cpu-rps](../../network/images/ingress-cpu-rps.png)
+![ingress-cpu-rps](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/ingress-cpu-rps.png)
 
 ### 虚拟机
 
@@ -50,4 +50,4 @@
 
 #### 虚拟机 Ingress-nginx CPU 与 RPS 关系图
 
-![vm-ingress-cpu-rps](../../network/images/ingress-vm-cpu-rps.png)
+![vm-ingress-cpu-rps](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/ingress-vm-cpu-rps.png)

@@ -6,7 +6,7 @@
 
 1. 进入 __应用工作台__ 模块，在左侧导航栏点击 __灰度发布__ ，点击目标任务的名称。
 
-    ![点击名称](../../images/blue01.png)
+    ![点击名称](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/blue01.png)
 
 2. 查看蓝绿发布任务详情页面。
 
@@ -15,7 +15,7 @@
         - 主要版本：展示蓝/绿两个版本信息，其中带有 Active、Stable 标签代表当前接收流量的版本。
         - 历史版本：展示历史版本记录。
 
-    ![详情页](../../images/blue02.png)
+    ![详情页](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/blue02.png)
 
 ## 更新版本
 
@@ -23,11 +23,11 @@
 
 2. 设置金丝雀发布的镜像。
 
-    ![镜像地址](../../images/blue03.png)
+    ![镜像地址](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/blue03.png)
 
 3. 应用更新成功后会在主要版本中存在两个版本的信息，并且此时蓝绿发布任务的状态为「暂停中」 。
 
-    ![自动触发](../../images/blue04.png)
+    ![自动触发](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/blue04.png)
 
 ## 发布/终止发布
 
@@ -43,6 +43,6 @@
 1. 在 __灰度发布任务__ 详情页面，点击 __历史版本__ 标签。
 2. 选择目标版本，点击 __ ...__ 和 __回滚__ 。
 
-    ![回滚](../../images/blue05.png)
+    ![回滚](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/blue05.png)
 
 3. 回滚成功后会触发一次新的蓝绿发布过程，并且蓝绿发布任务的状态为「暂停中」。

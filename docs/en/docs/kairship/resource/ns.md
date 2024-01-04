@@ -11,15 +11,15 @@ This article takes wizard creation as an example, and follows the steps below.
 
 1. After entering a multicloud instance, in the left navigation bar, click __Resource Management__ -> __Multicloud Namespace__ , and click the __Create Namespace__ button in the upper right corner.
 
-    ![Create](../images/ns01.png)
+    ![Create](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/ns01.png)
 
 2. On the __Create Multicloud Namespace__ page, enter a name, add a tag, and click __OK__ .
 
-    ![Fill](../images/ns02.png)
+    ![Fill](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/ns02.png)
 
 3. Return to the list of multicloud namespaces, and the newly created one will be the first one by default. Click __⋮__ on the right side of the list to edit the YAML and delete the namespace.
 
-    ![Other operations](../images/ns03.png)
+    ![Other operations](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/ns03.png)
 
     !!! note
 

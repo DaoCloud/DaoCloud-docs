@@ -23,15 +23,15 @@ Please confirm that your cluster has successfully connected to the `Container Ma
 
 2. Select `Helm Releases` -> `Helm Charts` in the left navigation bar, and then find and click `spiderpool`.
 
-    ![spiderpool helm](../../images/spiderpool-helm.png)
+    ![spiderpool helm](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/spiderpool-helm.png)
 
 3. Select the version you want to install in `Version`, and click `Install`.
 
 4. In the installation page, fill in the required parameters.
 
-    ![spiderpool instal1](../../images/spiderpool-install1.png)
+    ![spiderpool instal1](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/spiderpool-install1.png)
 
-    ![spiderpool instal2](../../images/spiderpool-install2.png)  
+    ![spiderpool instal2](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/spiderpool-install2.png)  
 
     The parameters in the above screens are described as follows:
 
@@ -47,7 +47,7 @@ Please confirm that your cluster has successfully connected to the `Container Ma
 
     - `Spiderpool Agent Setting` -> `Spiderpool Agent PrometheusRule` -> `Install`: install the prometheusRule object of Spiderpool Agent, which requires Prometheus to be installed in the cluster, otherwise the creation will fail.
 
-    ![spiderpool instal3](../../images/spiderpool-install3.png)
+    ![spiderpool instal3](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/spiderpool-install3.png)
 
     The parameters in the above screen are described as follows:
   
@@ -63,7 +63,7 @@ Please confirm that your cluster has successfully connected to the `Container Ma
 
     - `Spiderpool Controller Setting` -> `Spiderpool Controller PrometheusRule` -> `Install`: install the prometheusRule object of the Spiderpool Controller, which requires Prometheus to be installed in the cluster, otherwise the creation will fail.
 
-    ![spiderpool instal4](../../images/spiderpool-install4.png)
+    ![spiderpool instal4](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/spiderpool-install4.png)
 
     - `Multus Setting -> MultusCNI -> Install Multus CNI`: Enable Multus installation. If you have already installed Multus, you can set it to false. The default is true.
 
@@ -77,7 +77,7 @@ Please confirm that your cluster has successfully connected to the `Container Ma
     - `IP Family Setting -> enable IPv6`: enable IPv6 support. If enabled, when assigning an IP to the pod, it must try to assign an IPv6 address, otherwise it will cause the Pod to fail to start.
     Therefore, be sure to open the subsequent `Cluster Default Ippool Installation` -> `install IPv6 ippool` to create the default IPv6 pool for the cluster.
 
-    ![spiderpool instal5](../../images/spiderpool-install5.png)
+    ![spiderpool instal5](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/spiderpool-install5.png)
     The parameters in the above figure are described as follows:
 
     - `Cluster Default Ippool Installation` -> `install IPv4 ippool`: install IPv4 IP pool.

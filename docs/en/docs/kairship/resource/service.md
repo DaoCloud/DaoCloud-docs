@@ -13,23 +13,23 @@ Follow the steps below to manage multicloud services.
 
 1. After entering a multicloud instance, in the left navigation bar, click __Resource Management__ -> __Multicloud Service__ , and click the __Create Service__ button in the upper right corner.
 
-    ![Create](../images/service01.png)
+    ![Create](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/service01.png)
 
 2. On the __Create Multicloud Service__ page, after configuring the access type, deployment location, port configuration and other information, click __OK__ . The deployment location is divided into four methods: selecting from multicloud workloads/designating clusters/designating regions/designating labels. For the latter three methods, please refer to the detailed introduction in Workloads. Here, select from workloads is added, that is, inherit the selected workloads. Deployment policy (pp) in .
 
-    ![Deploy](../images/service02.png)
+    ![Deploy](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/service02.png)
 
 3. It supports one-click conversion of sub-cluster services to multicloud services. Click __Convert Now__ on the list page, select the service under the specified working cluster and namespace, and click OK.
 
-    ![Convert](../images/service03.png)
+    ![Convert](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/service03.png)
 
 4. Check the multicloud service list at this time, and find that the sub-cluster service has been upgraded successfully.
 
-    ![Upgrade](../images/service04.png)
+    ![Upgrade](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/service04.png)
 
 5. Click __⋮__ on the right side of the list to update and delete the service.
 
-    ![Update/Delete](../images/service05.png)
+    ![Update/Delete](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/service05.png)
 
     !!! note
 

@@ -30,23 +30,23 @@ Service mesh provides two creation methods: wizard and YAML. The specific steps 
 
 1. Click `Security` -> `Peer Authentication` in the left navigation bar, and click the `Create` button in the upper right corner.
 
-    ![Create Peer Authentication](../images/peer01.png)
+    ![Create Peer Authentication](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/peer01.png)
 
 2. In the `Create Peer Authentication` interface, first perform the basic configuration and then click `Next`.
 
-    ![Basic Info](../images/peer02.png)
+    ![Basic Info](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/peer02.png)
 
 3. After completing the authentication settings according to the screen prompts, click `OK`.
 
-    ![Settings](../images/peer03.png)
+    ![Settings](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/peer03.png)
 
 4. The screen prompts that the creation is successful.
 
-    ![Successfully Created](../images/peer04.png)
+    ![Successfully Created](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/peer04.png)
 
 5. On the right side of the list, click `⋮` in the operation column to perform more operations through the pop-up menu.
 
-    ![Edit/Delete](../images/peer05.png)
+    ![Edit/Delete](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/peer05.png)
 
 !!! note
 

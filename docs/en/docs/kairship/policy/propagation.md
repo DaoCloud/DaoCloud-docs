@@ -11,11 +11,11 @@ Propagation policies define how resources are distributed across multicloud and 
 
 1. After entering a multicloud instance, in the left navigation bar, click __Policy Management__ -> __Propagation Policies__ -> __Namespace Scope__ , and click the __Create from YAML__ button in the upper right corner.
 
-    ![Namespace YAML PP](../images/pp01.png)
+    ![Namespace YAML PP](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/pp01.png)
 
 2. On the __Create from YAML__ page, after entering the correct YAML statement, click __OK__ .
 
-    ![Input YAML](../images/pp02.png)
+    ![Input YAML](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/pp02.png)
 
 3. Return to the propagation policy list, and the newly created one is the first one by default. Click __⋮__ on the right side of the list to edit YAML and perform delete operations.
 
@@ -64,13 +64,13 @@ spec:
     - Resource Quotas: select multicloud resources and target deployment clusters
     - Propagation Policies: Scheduling type, taint tolerance, you can choose whether to enable spread constraints, support filling in priority (propagation policy can also be created at the same time when creating resources, when the propagation policy is also created on this page, you can choose according to the priority level to determine which propagation policy the resource uses)
 
-    ![Create Namespace PP](../images/pp-new01.png)
+    ![Create Namespace PP](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/pp-new01.png)
 
-    ![Fill the Form](../images/pp-new02.png)
+    ![Fill the Form](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/pp-new02.png)
 
 2. The form creates a cluster scope propagation policy without selecting a namespace.
 
-    ![Create Cluster PP](../images/pp-new03.png)
+    ![Create Cluster PP](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/pp-new03.png)
 
     !!! note
 

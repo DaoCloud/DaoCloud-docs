@@ -56,7 +56,7 @@ hide:
 
     进入创建页面，输入如下参数：
 
-    ![创建 IP 池](../../images/subnet04.png)
+    ![创建 IP 池](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/subnet04.png)
 
     - `网关`：默认继承`子网网关`，可修改。
 
@@ -78,7 +78,7 @@ hide:
 
     `获取 IP 规则`：从 `IP 开始地址`依次获取输入对应数量的 IP，IP 段如不是连续的 IP，则跳过中间断档 IP，依次往后获取。
 
-    ![添加 IP](../../images/subnet05.png)
+    ![添加 IP](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/subnet05.png)
 
 7. 创建完成后[工作负载即可使用 IP 池](../../modules/spiderpool/usage.md)。
 

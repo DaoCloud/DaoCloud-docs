@@ -14,7 +14,7 @@
 
 1. 登录 DCE 4.0 集群，进入 __设置__ -> __空间管理__ -> __insight-system__ -> __超卖策略__ 中删除 insight-system 下的超卖策略。
 
-    ![dce4](../../images/dce4-limit-range.png)
+    ![dce4](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/dce4-limit-range.png)
 
 2. 登录 DCE 4.0 集群的控制台。分别在两个 Prometheus Operator 中启用 __--deny-namespaces__ 参数。
    执行以下命令（以下命令仅供参考，实际需替换命令中的 Prometheus Operator 名称和命名空间）。
