@@ -333,7 +333,7 @@ the evolution path and feature changes of each version.
 
 #### Fixes
 
-- **Fixed** Build offline package to add __ .relok8s-images__ file
+- **Fixed** Build offline package to add __.relok8s-images__ file
 - **Fixed** Adjust the port name corresponding to the component __otel-collector__ port in insight-agent
 
 ## 2022.12.29

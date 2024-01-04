@@ -43,7 +43,7 @@ The template will be rendered based on the following data.
 
 ### Instructions for Use
 
-1. __ .__ character
+1. `.` character
 
     Render the specified object in the current scope.
 
@@ -53,7 +53,7 @@ The template will be rendered based on the following data.
     {{ . }}
     ```
 
-2. Conditional statement __if / else__ 
+2. Conditional statement __if / else__
 
     Use __if__ to check the data and run __else__ if it does not meet.
 
