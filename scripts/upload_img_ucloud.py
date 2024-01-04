@@ -11,21 +11,24 @@ E-mail: samzong.lu@gmail.com
 
 import re
 import os
+import sys
 import time
 from ufile import filemanager, config, logger
 
-public_key = 'TOKEN_bc05bd45-4f7e-4a0b-9525-1bcf04ea7074'  # 公钥或 token
-private_key = '42f6d464-136a-4f41-838f-50b549c281a3'  # 私钥或 token
+public_key = os.getenv("U_PUBLIC_KEY")
+private_key = os.getenv("U_PRIVATE_KEY")
+uploadsuffix = os.getenv("U_UPLOADSUFFIX")
 
-config.set_default(uploadsuffix='.cn-sh2.ufileos.com')  # ucloud domain
+config.set_default(uploadsuffix=uploadsuffix)  # ucloud domain
 
 ufile_handler = filemanager.FileManager(public_key, private_key)
-bucket = 'community-github'
-bucket_folder = 'daocloud-docs-images/'
-REMOTE_DOMAIN = 'https://docs.daocloud.io'
 
-locallogname = 'ufile.log'
-logger.set_log_file(locallogname)
+# bucket infomation
+bucket = os.getenv("U_BUCKET")
+bucket_folder = os.getenv("U_BUCKET_FOLDER")
+remote_domain = os.getenv("U_REMOTE_DOMAIN")
+
+logger.set_log_file('ufile.log')
 
 
 def modify_image_url(md_file, image, remote_file_url):
@@ -41,7 +44,7 @@ def modify_image_url(md_file, image, remote_file_url):
 def ufile_upload(bucket: str, remotefile: str, localfile: str, header=None):
     _, resp = ufile_handler.putfile(bucket, remotefile, localfile, header)
     if resp.status_code == 200:
-        return REMOTE_DOMAIN + '/' + remotefile
+        return remote_domain + '/' + remotefile
     else:
         return "failed"
 
@@ -125,4 +128,7 @@ def update_image_path(md_files: list):
 
 
 if __name__ == '__main__':
-    update_image_path(find_md_files('docs'))
+    # defualt find docs folder
+    folder = sys.argv[1] or "docs"
+    print(folder)
+    update_image_path(find_md_files(folder))
