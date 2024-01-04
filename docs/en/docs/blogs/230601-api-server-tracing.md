@@ -30,7 +30,7 @@ Design details: KEP APIServer Tracing #647
 
 ### Overview of Tracing Diagram
 
-![picture](./images/trace02.png)
+![picture](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/blogs/images/trace02.png)
 
 ### Enabling
 
@@ -179,7 +179,7 @@ Save and exit. kubelet will automatically restart etcd.
 
 Now we can access Jaeger at http://<JaegerIP>:16686/. In the Jaeger interface, we can clearly see the trace path of the request.
 
-![image](./images/trace03.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/blogs/images/trace03.png)
 
 The green line is from the API server, including a service request to __/api/v1/nodes__ and a grpc Range RPC sent to ETCD. The yellow line is from ETCD processing the Range RPC.
 

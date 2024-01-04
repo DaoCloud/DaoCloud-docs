@@ -8,34 +8,34 @@ After [created a gateway](../index.md) succeeds, the services in the service sou
 
 1. In the `Gateway List` page click the name of the target gateway, enter the gateway overview page, in the left navigation bar click `Add Service` -> `Service List`.
 
-    ![service list](./images/service-list.png)
+    ![service list](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/service/images/service-list.png)
 
 2. On the `Service List` page click `Auto Add`.
 
-    ![automatic discovery service](./images/auto.png)
+    ![automatic discovery service](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/service/images/auto.png)
 
 ## Configure service policy
 
 1. In the `Service List` -> `Auto Add` page to find the target service, on the right side click  `ⵗ`  choose `Policy Settings`.
 
-    ![policy configuration](./images/policy1.png)
+    ![policy configuration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/service/images/policy1.png)
 
 2. To adjust the service policy configuration as required, click `OK` in the lower right corner of the pop-up box.
 
     - HTTPS certificate verification: After HTTPS is enabled, you must pass certificate verification to access the service successfully.
     - Service circuit breaker: When the maximum number of connections, processing connections, parallel requests, and parallel retries  Any one  reaches the threshold, service calls are automatically cut off to protect the overall system availability. When the metric drops to a set threshold, calls to the service are automatically resumed.
 
-    ![policy configuration](./images/policy2.png)
+    ![policy configuration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/service/images/policy2.png)
 
 ## View service details
 
 1. Locate the target service on the `Service List` -> `Auto Add` page and click the service name.
 
-    ![service details](./images//service-details.png)
+    ![service details](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/service/images//service-details.png)
 
 2. View information such as the service name, source, and associated API. Supports sorting by installing `Last Update`.
 
-    ![service details](./images/service-details1.png)
+    ![service details](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/service/images/service-details1.png)
 
 !!! info
     

@@ -2,7 +2,7 @@
 
 MirageDebug: Local remote debugging for Kubernetes apps, enabling fully authentic environment debugging.
 
-![MirageDebug](./images/flow.d2.svg)
+![MirageDebug](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/community/images/flow.d2.svg)
 
 ## Installation
 

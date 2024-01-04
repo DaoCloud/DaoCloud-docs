@@ -6,7 +6,7 @@ HwameiStor creates a local storage resource pool for centrally managing all disk
 
 HwameiStor is an open source, lightweight, and cost-efficient local storage system that can replace expensive traditional SAN storage. The system architecture of HwameStor is as follows.
 
-![cncf gophers](./images/cncf-gophers.png)
+![cncf gophers](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/community/images/cncf-gophers.png)
 
 **HwameiStor is a [Cloud Native Computing Foundation](https://cncf.io/) sandbox project.**
 

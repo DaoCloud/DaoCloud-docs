@@ -17,7 +17,7 @@ You can directly enable the DRDB component when installing HwameiStor. For detai
 
 2. Click on `drdb-adapter`, click on install, and enter the configuration page.
 
-    ![drbd02](../img/drbd02.png)
+    ![drbd02](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/storage/hwameistor/img/drbd02.png)
 
     - `Namespace`: It is recommended to deploy in the same namespace as HwameiStor. The namespace created in this example is `HwameiStor`.
     - `Version`: Select the latest version by default.

@@ -263,17 +263,17 @@ Integrate the customer system with the DCE 5.0 platform using protocols such as 
 
 1. In the scenario of two instances of DCE 5.0, you can create an SSO integration under DCE 5.0 __Global Management__ -> __Users and Access Control__ -> __Access Management__ .
 
-    ![Access Management List](./images/oemin-jierulist.png)
+    ![Access Management List](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/oem/images/oemin-jierulist.png)
 
-    ![Access Management List](./images/oem-out01.png)
+    ![Access Management List](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/oem/images/oem-out01.png)
 
 2. After creation, fill in the client ID, secret key, single sign-on URL, and other details from the Access Management page into the customer system's __Global Management__ -> __Users and Access Control__ -> __Identity Providers__ -> __OIDC__ , completing the user integration.
 
-    ![OIDC](./images/oeminoidc.png)
+    ![OIDC](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/oem/images/oeminoidc.png)
 
 3. After integration, the customer system login page will display the OIDC (Custom) option. When accessing the customer system from the DCE 5.0 platform for the first time, select OIDC as the login method. Subsequently, users will be directly redirected to the customer system without needing to choose again.
 
-    ![Login Page](./images/oeminlogin.png)
+    ![Login Page](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/oem/images/oeminlogin.png)
 
 ## Docking Navigation Bar
 
@@ -281,7 +281,7 @@ Refer to the tar package provided in the documentation below to create a blank f
 
 1. Download the gproduct-demo-main.tar.gz file. Open the App-iframe.vue file located in the src folder and modify the value of the src attribute to the absolute address that users will use to access the customer system, such as: __src="http://192.168.1.6/external-anyproduct"__ (DCE 5.0 address + subpath) or a relative address, such as: __src="./external-anyproduct/insight"__ 
 
-   ![src address](./images/src.png)
+   ![src address](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/oem/images/src.png)
 
 2. Delete the App.vue and main.ts files from the src folder. Rename the App-iframe.vue file to App.vue and the main-iframe.ts file to main.ts.
 3. Edit the demo.yaml file.
@@ -342,11 +342,11 @@ Refer to the tar package provided in the documentation below to create a blank f
 
 1. Follow the steps in the readme file to build the image (Note: Before executing the last step, replace the image address in demo.yaml with the built image address).
 
-   ![Build Image](./images/oemin-image.png)
+   ![Build Image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/oem/images/oemin-image.png)
 
 Once the integration is complete, the "Customer System" will appear in the top-level navigation bar of DCE 5.0. Clicking on it will take you to the customer system.
 
-![Customer System](./images/oemin-menu.png)
+![Customer System](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/oem/images/oemin-menu.png)
 
 ## Customizing Appearance
 

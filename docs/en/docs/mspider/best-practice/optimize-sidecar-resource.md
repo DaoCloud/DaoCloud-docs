@@ -90,7 +90,7 @@ To alleviate the issue of resource consumption, you can implement the following 
 - Ensure that both services have Sidecars successfully injected
 - Create a Sidecar resource with YAML content as follows:
 
-    ![sidecar](images/sidecar.png)
+    ![sidecar](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/best-practice/images/sidecar.png)
 
     ```yaml
     apiVersion: networking.istio.io/v1beta1
@@ -105,8 +105,8 @@ To alleviate the issue of resource consumption, you can implement the following 
           - webstore-demo/*
     ```
 
-    ![yaml](./images/yaml1.png)
+    ![yaml](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/best-practice/images/yaml1.png)
 
 - Access Result
 
-    ![Access Result](./images/effect.png)
+    ![Access Result](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/best-practice/images/effect.png)

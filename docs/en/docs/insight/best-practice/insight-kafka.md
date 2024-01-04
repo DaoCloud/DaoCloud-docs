@@ -13,7 +13,7 @@ This article will introduce two solutions:
 
 Once we integrate Kafka into the logging system, the data flow diagram looks as follows:
 
-![logging-kafka](./images/logging-kafka.png)
+![logging-kafka](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/best-practice/images/logging-kafka.png)
 
 Both solutions share similarities but differ in the component used to consume Kafka data.
 To ensure compatibility with Insight's data analysis, the format of the data consumed from

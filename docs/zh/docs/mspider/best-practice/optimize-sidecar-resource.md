@@ -85,7 +85,7 @@ class init k8s
 - 确保 2 个服务都成功注入 Sidecar
 - 创建一个 Sidecar 资源，YAML 内容参考如下
 
-    ![sidecar](images/sidecar.png)
+    ![sidecar](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/best-practice/images/sidecar.png)
 
     ```yaml
     apiVersion: networking.istio.io/v1beta1

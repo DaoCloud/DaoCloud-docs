@@ -23,7 +23,7 @@ mvn -f ../pom.xml clean install -DskipTestsuite -DskipExamples -DskipTests
 
 ### Run from IDE
 
-![Run from IDE](./images/idp01.png)
+![Run from IDE](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/oem/images/idp01.png)
 
 ### Add Service Code
 
@@ -33,7 +33,7 @@ Add files under the directory __services/src/main/java/org/keycloak/broker__ :
 
 The file names should be __xxxProvider.java__ and __xxxProviderFactory.java__ .
 
-![java](./images/idp02.png)
+![java](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/oem/images/idp02.png)
 
 **[xxxProviderFactory.java](./examples/xxxProviderFactory.java) example:**
 
@@ -45,13 +45,13 @@ Pay attention to the variable __PROVIDER_ID = "oauth";__ , as it will be used in
 
 Refer to the three files in the image below to write your own code:
 
-![none heritance](./images/idp03.png)
+![none heritance](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/oem/images/idp03.png)
 
 **Add xxxProviderFactory to resource service**
 
 Add xxxProviderFactory to __services/src/main/resources/META-INF/services/org.keycloak.broker.provider.IdentityProviderFactory__ so that the newly added code can work:
 
-![running](./images/idp04.png)
+![running](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/oem/images/idp04.png)
 
 **Add HTML file**
 
@@ -66,7 +66,7 @@ All the necessary files have been added. Now you can start debugging the functio
 
 Create a new Java project and copy the above code into the project, as shown below:
 
-![pom](./images/idp04.png)
+![pom](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/oem/images/idp04.png)
 
 Refer to [pom.xml](./examples/pom.xml).
 
@@ -74,7 +74,7 @@ Run __mvn clean package__ to package the code, resulting in the __xxx-jar-with-d
 
 Download [Keycloak Release 20.0.5](https://github.com/keycloak/keycloak/releases/tag/20.0.5) zip package and extract it.
 
-![release](./images/idp05.png)
+![release](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/oem/images/idp05.png)
 
 Copy the __xxx-jar-with-dependencies.jar__ file to the __keycloak-20.0.5/providers__ directory.
 

@@ -8,11 +8,11 @@ You can update the base configuration, policy configuration, and security config
 
 - In the `API Management` page to find the need to update the API, on the API right click `ⵗ` choose `Update Basic Settings`, `Update Policy Settings`, or `Update Security Settings`.
 
-    ![update-api](./imgs/update-api-1.png)
+    ![update-api](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/api/imgs/update-api-1.png)
 
 - Click the API name to enter the API details page. In the upper right corner of the page, `Update Basic Settings`, `Update Policy Settings` or `Update Security Settings`.
 
-    ![update-api](./imgs/update-api-2.png)
+    ![update-api](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/api/imgs/update-api-2.png)
 
 ## Delete API
 
@@ -29,8 +29,8 @@ You can remove an API in two ways.
 
 - In the `API Management` page to find the need to delete the API, on the API right click `ⵗ` and select `Remove`.
 
-    ![delete-api-1](./imgs/delete-api-1.png)
+    ![delete-api-1](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/api/imgs/delete-api-1.png)
 
 - Click the API names into the API details page, at the upper right corner of the page by clicking on the `ⵗ` hold and select `Remove`.
 
-    ![delete-api-2](./imgs/delete-api-2.png)
+    ![delete-api-2](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/api/imgs/delete-api-2.png)

@@ -9,7 +9,7 @@ This section will guide you through the process of quickly using the Huawei Asce
     Make sure you have installed the Ascend NPU driver and can run the __npu-smi info__ command,
     which should return NPU information indicating that the driver and firmware are ready.
 
-    ![Ascend Information](./images/npu-smi-info.png)
+    ![Ascend Information](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/user-guide/gpu/images/npu-smi-info.png)
 
 2. Install the Ascend NPU Device Plugin.
 
@@ -17,7 +17,7 @@ This section will guide you through the process of quickly using the Huawei Asce
     workload that can be verified by running the command __kubectl get pod -n kube-system | grep ascend__ ,
     which should output the following:
 
-    ![Ascend Device Plugin](./images/ascend-device-plugin.png)
+    ![Ascend Device Plugin](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/user-guide/gpu/images/ascend-device-plugin.png)
 
     If the driver and Device Plugin are not installed, refer to the official Ascend documentation
     for installation instructions:
@@ -155,15 +155,15 @@ kubectl apply -f ascend-demo.yaml
 
 Check the Pod status:
 
-![Ascend Pod Status](./images/ascend-demo-pod-status.png)
+![Ascend Pod Status](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/user-guide/gpu/images/ascend-demo-pod-status.png)
 
 Once the Pod is successfully running, view the log results. The key information displayed on the screen
 is as shown in the following image. The label in the prompt represents the category label, conf represents
 the maximum confidence of that category, and class represents the corresponding category. These values may
 vary depending on the version and environment, so refer to your actual situation.
 
-![Ascend demo execution result](./images/ascend-demo-pod-result.png)
+![Ascend demo execution result](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/user-guide/gpu/images/ascend-demo-pod-result.png)
 
 Result is as follows:
 
-![Ascend demo inference result image](./images/ascend-demo-infer-result.png)
+![Ascend demo inference result image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/user-guide/gpu/images/ascend-demo-infer-result.png)
