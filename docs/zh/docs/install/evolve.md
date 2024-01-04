@@ -75,4 +75,4 @@ skoala:
 
 ### 第 3 步：安装成功提示
 
-![upgrade](./commercial/images/succeed01.png)
+![upgrade](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/commercial/images/succeed01.png)

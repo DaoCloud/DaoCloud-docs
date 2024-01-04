@@ -2,7 +2,7 @@
 
 本文对 Kubernetes 集群在虚机和裸机上在 CPU、内存、存储和网络性能方面的表现进行了详细的比较和分析。
 
-![图片](./images/vm01.png)
+![图片](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/vm01.png)
 
 > 英文原稿为 [Does Kubernetes Really Perform Better on Bare Metal vs. VMs?](https://thenewstack.io/does-kubernetes-really-perform-better-on-bare-metal-vs-vms/)
 >
@@ -18,7 +18,7 @@
 
 当您在虚机上部署 Kubernetes 集群时，与裸机相比，您会得到额外的基础架构层：一个虚机管理程序（hypervisor）和一个虚机操作系统。
 
-![图片](./images/vm02.png)
+![图片](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/vm02.png)
 
 **图 1：裸机和虚机架构的区别**
 
@@ -59,7 +59,7 @@
 
 下表总结了最重要的测试结果:
 
-![图片](./images/vm03.png)
+![图片](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/vm03.png)
 
 显然，在所有情况下，裸机集群的效率都更高。
 
@@ -77,7 +77,7 @@
 
 以下是 CPU 速度比较结果:
 
-![图片](./images/vm04.png)
+![图片](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/vm04.png)
 
 **图 3：裸机集群的 CPU 速度比虚机集群的 CPU 快两倍多**
 
@@ -85,11 +85,11 @@
 
 以下是虚机集群的 CPU 利用率测试结果:
 
-![图片](./images/vm05.png)
+![图片](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/vm05.png)
 
 **图 4：虚机集群的 CPU 平均利用率为 86.81%**
 
-![图片](./images/vm06.png)
+![图片](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/vm06.png)
 
 **图 5：虚机集群 CPU 每个核心的利用率信息**
 
@@ -105,7 +105,7 @@
 
 以下是裸机集群的 CPU 利用率测试结果:
 
-![图片](./images/vm07.png)
+![图片](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/vm07.png)
 
 **图 6：裸机集群的 CPU 平均利用率为 43.75%**
 
@@ -115,7 +115,7 @@
 
 对于 RAM 测试，我们使用了 sysbench 并通过 RAM 传输了 6400 GB 的数据。以下是执行的写操作和读操作的关键结果:
 
-![图片](./images/vm08.png)
+![图片](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/vm08.png)
 
 **图 7：裸机集群的 RAM 速度比虚机集群快约三倍**
 
@@ -131,7 +131,7 @@
 
 以下是实例的配置:
 
-![图片](./images/vm09.png)
+![图片](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/vm09.png)
 
 **图 8：存储测试的裸机和虚机集群配置**
 
@@ -139,7 +139,7 @@
 
 以下是 TPS 比较的平均结果:
 
-![图片](./images/vm10.png)
+![图片](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/vm10.png)
 
 **图 9：裸机集群的存储 TPS 值约为虚机集群的两倍**
 
@@ -150,7 +150,7 @@
 
 以下是延迟测试的平均结果:
 
-![图片](./images/vm11.png)
+![图片](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/vm11.png)
 
 **图 10：裸机在存储延迟方面优于虚机**
 
@@ -172,7 +172,7 @@ Worker 1/Worker 2（在第一个节点上）和 Worker 3（在第二个节点上
 我们可以认为这是所有测试中最具挑战性的条件。图 10 和图 11 显示了此测试的结果。
 图 10 显示了 MSS 值为 1、2、4 和 8 时的网络带宽比较:
 
-![图片](./images/vm12.png)
+![图片](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/vm12.png)
 
 **图 11：裸机集群的网络带宽是虚机集群的 5 倍**
 
@@ -181,7 +181,7 @@ Worker 1/Worker 2（在第一个节点上）和 Worker 3（在第二个节点上
 
 图 12 显示了使用相同 MSS 值的网络延迟比较:
 
-![图片](./images/vm13.png)
+![图片](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/vm13.png)
 
 **图 12：裸机集群的网络延迟最高可降低虚机集群的 6 倍**
 

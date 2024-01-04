@@ -6,7 +6,7 @@
 
 点击目标网关的名称，进入网关概览页面，然后在左侧导航栏点击`日志查看`->`实例日志`。
 
-![查看实例日志的路径](./images/inslog-path.png)
+![查看实例日志的路径](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/logs/images/inslog-path.png)
 <!--更新截图-->
 
 ## 相关操作

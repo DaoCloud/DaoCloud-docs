@@ -14,7 +14,7 @@
 
 在 A、B 两个集群的 NS1 和 NS2 中，都存在若干相同名称的服务（svcA，svcB ...），其他服务都调用 svcA，如下图：
 
-![若干服务](./images/multinet01.png)
+![若干服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/best-practice/images/multinet01.png)
 
 两个集群中相同名称的服务并不是同一业务逻辑，比如：集群 A 中 NS1 中的 svcA 和集群 B 中 NS1 中 svcA，不是同一个业务服务，只是名称和为止对等，业务逻辑不通，其他服务亦然。
 
@@ -22,7 +22,7 @@
 
 如果集群 A 和集群 B 中的服务都注入 Istio Sidecar，如下：
 
-![注入 sidecar](./images/multinet02.png)
+![注入 sidecar](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/best-practice/images/multinet02.png)
 
 在不经过其他特殊配置的情况下，两个集群的流量互通，相关服务互为灾备方案。
 举个例子，集群 A 中的 svcB 可以访问到集群 A 中的 svcA，也可以访问到集群 B 中的 svcA。
@@ -33,12 +33,12 @@
 
 其中一个集群的服务注入 Istio Sidecar，另一个集群的服务不注入 Istio Sidecar，如下：
 
-![不注入 sidecar](./images/multinet03.png)
+![不注入 sidecar](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/best-practice/images/multinet03.png)
 
 这种情况下无需额外配置，两个集群的流量不会互通，比如集群 B 中的 svcB 只会访问到集群 B 中的 svcA，
 但是不会访问到集群 A 中的 svcA，通过 Istio 官方 Demo 的模拟结果也可以证实：
 
-![demo](./images/multinet04.png)
+![demo](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/best-practice/images/multinet04.png)
 
 而集群 A 中的服务没有注入 Sidecar，所以也无法通过 Istio 能力访问到集群 B 中的服务。
 
@@ -52,14 +52,14 @@
 
 首先答案是可行，需要特殊配置路由规则，限制远程集群的流量：
 
-![限制流量](./images/multinet05.png)
+![限制流量](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/best-practice/images/multinet05.png)
 
 规则生效情况下，服务只会访问到本机群的上游服务：
 
-![访问上游服务](./images/multinet06.png)
+![访问上游服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/best-practice/images/multinet06.png)
 
 即使本机群的上游服务不可达，也不会访问到远程集群：
 
-![上游服务不可达](./images/multinet07.png)
+![上游服务不可达](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/best-practice/images/multinet07.png)
 
 **结论：通过 DR 精准限制流量也可以在完全注入 Sidecar 的情况下限制跨级群访问，所以在本案例中也符合业务预期，可以精准控制某些业务流量的跨级群通讯，从而保证业务逻辑正常。**

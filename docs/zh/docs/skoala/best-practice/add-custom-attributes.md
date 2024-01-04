@@ -8,7 +8,7 @@
 
 1. 进入微服务引擎——云原生网关列表，找到需要修改配置的网关所在的集群和命名空间。
 
-    ![添加自定义属性](./images/gwlist.png)
+    ![添加自定义属性](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/best-practice/images/gwlist.png)
 
 2. 在网关所在的集群和命名空间查询自定义 CR ContourConfiguration。
 
@@ -29,11 +29,11 @@
 
     编辑前:
 
-    ![添加自定义属性](./images/before-edit.png)
+    ![添加自定义属性](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/best-practice/images/before-edit.png)
 
     编辑后：
 
-    ![添加自定义属性](./images/after-edit.png)
+    ![添加自定义属性](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/best-practice/images/after-edit.png)
 
 4. 重启 contour 组件（不会对流量造成中断）
 
@@ -46,11 +46,11 @@
 
 5. Pod 启动成功后通过网关 API 访问接口，通过网关日志观察日志记录字段
 
-    ![添加自定义属性](./images/logs.png)
+    ![添加自定义属性](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/best-practice/images/logs.png)
 
     选择某一条日志，查看原文：
 
-    ![添加自定义属性](./images/logs1.png)
+    ![添加自定义属性](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/best-practice/images/logs1.png)
 
     可以看到自定义的响应头已经增加到了日志记录中。
 

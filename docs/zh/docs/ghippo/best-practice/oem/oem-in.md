@@ -269,18 +269,18 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 
 1. 在两套 DCE 5.0 的场景下，可以在 DCE 5.0 中通过 __全局管理__ -> __用户与访问控制__ -> __接入管理__ 创建 SSO 接入。
 
-    ![接入管理列表](./images/oemin-jierulist.png)
+    ![接入管理列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/oemin-jierulist.png)
 
-    ![接入管理列表](./images/oem-out01.png)
+    ![接入管理列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/oem-out01.png)
 
 2. 创建后将详情中的客户端 ID、密钥、单点登录 URL 等填写到客户系统的 __全局管理__ -> __用户与访问控制__ -> __身份提供商__ -> __OIDC__ 中，完成用户对接。
 
-    ![oidc](./images/oeminoidc.png)
+    ![oidc](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/oeminoidc.png)
 
 3. 对接完成后，客户系统登录页面将出现 OIDC（自定义）选项，首次从 DCE 5.0 平台进入客户系统时选择通过 OIDC 登录，
    后续将直接进入客户系统无需再次选择。
 
-    ![登录页](./images/oeminlogin.png)
+    ![登录页](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/oeminlogin.png)
 
 ## 对接导航栏
 
@@ -289,7 +289,7 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 1. 下载 gproduct-demo-main.tar.gz 文件，将 src 文件夹下 App-iframe.vue 中的 src 属性值改为用户进入客户系统的绝对地址，如：
    __src="http://192.168.1.6/external-anyproduct" (DCE 5.0 地址 + subpath)__ 或相对地址，如： __src="./external-anyproduct/insight"__ 
 
-    ![src 地址](./images/src.png)
+    ![src 地址](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/src.png)
 
 1. 删除 src 文件夹下的 App.vue 和 main.ts 文件，同时将：
     - App-iframe.vue 重命名为 App.vue
@@ -352,11 +352,11 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 
 1. 按照 readme 步骤构建镜像（注意：执行最后一步前需要将 __demo.yaml__ 中的镜像地址替换成构建出的镜像地址）
 
-    ![构建镜像](./images/oemin-image.png)
+    ![构建镜像](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/oemin-image.png)
 
 对接完成后，将在 DCE 5.0 的一级导航栏出现 __客户系统__ ，点击可进入客户系统。
 
-![客户系统](./images/oemin-menu.png)
+![客户系统](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/oemin-menu.png)
 
 ## 定制外观
 
