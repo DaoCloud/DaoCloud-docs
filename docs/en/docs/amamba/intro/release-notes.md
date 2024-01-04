@@ -1,7 +1,36 @@
+---
+MTPE: windsonsea
+date: 2024-01-04
+---
+
 # Releases Notes
 
 This page lists the release notes for Workbench to help you understand
 the development and feature changes in each version.
+
+## 2023-12-31
+
+### v0.23.0
+
+#### New Features
+
+- **Added** support for integration with Nexus and related operations
+- **Added** support for integration with Testlink and related operations
+
+#### Improvements
+
+- **Improved** token creation method when creating applications based on Git/Jar
+- **Improved** unification of fields related to cpu and memory in OAM application UI
+
+#### Bug Fixes
+
+- **Fixed** image address for the contour plugin
+- **Fixed** an error when adding a resource type trait to an OAM application
+- **Fixed** incorrect return value when rolling back a native application
+- **Fixed** an issue where an OAM application is not reconciled by the controller after rolling back
+- **Fixed** an error in modifying casc file when removing integration with SonarQube
+- **Fixed** an issue where instances can be queried across different workspaces
+- **Fixed** an issue of incorrect resource count displayed in the native application topology
 
 ## 2023-11-30
 
@@ -27,7 +56,7 @@ the development and feature changes in each version.
 
 - **Fixed** error when exporting application template and creating version for native applications without istio installed in the target cluster
 - **Fixed** failure to fetch git/tag when ArgoCD is installed in a specified namespace
-- **Fixed** issue with content changing after saving pipeline templates.
+- **Fixed** an issue with content changing after saving pipeline templates.
 
 ## 2023-10-31
 
@@ -35,30 +64,30 @@ the development and feature changes in each version.
 
 #### New Features
 
-- **New** Support for creating OLM applications
-- **New** Support for editing OLM application YAML
-- **New** Support for deleting OLM applications
-- **New** Support for request-based feature rollout with Istio
-- **New** Native application version management (create, delete, update, retrieve)
-- **New** Export template for native applications
+- **Added** support for creating OLM applications
+- **Added** support for editing OLM application YAML
+- **Added** support for deleting OLM applications
+- **Added** support for request-based feature rollout with Istio
+- **Added** native application version management (create, delete, update, retrieve)
+- **Added** export template for native applications
 
 #### Improvements
 
-- **Improvement** API now supports returning the installation status of argocd/kubevela components
-- **Improvement** Git remote branches and tags can now be searched
-- **Improvement** Regular expression validation for multi-branch pipelines input
-- **Improvement** Provided an interface to check feature gate status (frontend only displays when enabled)
-- **Improvement** Added an interface to create kube-app-manager
-- **Improvement** Upgraded argo-rollout chart version to v2.32.0
+- **Improved** API now supports returning the installation status of argocd/kubevela components
+- **Improved** git remote branches and tags can now be searched
+- **Improved** regular expression validation for multi-branch pipelines input
+- **Improved** an interface to check feature gate status (frontend only displays when enabled)
+- **Improved** an interface to create kube-app-manager
+- **Improved** Upgraded argo-rollout chart version to v2.32.0
 
 #### Fixes
 
 - **Fixed** bug causing errors in checking project binding relationships for kangaroo
-- **Fixed** Resolved issues related to control plane namespace when creating OAM applications
+- **Fixed** issues related to control plane namespace when creating OAM applications
 - **Fixed** error in form git/jar deployment caused by Kubernetes CD plugin
-- **Fixed** Non-listed users were able to approve pipelines issue
+- **Fixed** an issue where non-listed users were able to approve pipelines issue
 - **Fixed** pipeline configuration errors caused by sync pipelines
-- **Fixed** Resolved issue where type reset occurred during rollout updates
+- **Fixed** an issue where type reset occurred during rollout updates
 
 ## 2023-08-31
 
@@ -66,26 +95,26 @@ the development and feature changes in each version.
 
 #### New Features
 
-- **Added** Integration with GitLab using access token
-- **Added** Status field for native applications
+- **Added** integration with GitLab using access token
+- **Added** status field for native applications
 - **Added** API integration with kolm
 - **Added** CRUD APIs for multi-cloud applications
-- **Added** Ability to add triggers in pipelines, automatically adding webhooks in GitLab, and triggering pipelines based on related events
+- **Added** ability to add triggers in pipelines, automatically adding webhooks in GitLab, and triggering pipelines based on related events
 
 #### Improvements
 
 - **Improved** Retrieval of SonaQube scan results is no longer bound to specific run records, rather it retrieves from the latest run record
-- **Improved** Alignment between recent pipeline records and last run records
-- **Improved** Handling logic for resources bound to the workspace in event listeners
-- **Improved** Error message prompt when unable to connect to KubeVela
+- **Improved** alignment between recent pipeline records and last run records
+- **Improved** handling logic for resources bound to the workspace in event listeners
+- **Improved** error message prompt when unable to connect to KubeVela
 
 #### Bug Fixes
 
-- **Fixed** Creation failure of control plane namespace when resource quotas were set for Global clusters
-- **Fixed** Ability to bind control plane namespace to multiple workspaces
-- **Fixed** Successful creation of control plane namespace even if the namespace is already deleted
-- **Fixed** Issue with incorrect comparison of multi-branch pipeline configurations
-- **Fixed** Issue with missing dbName in link queries
+- **Fixed** creation failure of control plane namespace when resource quotas were set for Global clusters
+- **Fixed** ability to bind control plane namespace to multiple workspaces
+- **Fixed** successful creation of control plane namespace even if the namespace is already deleted
+- **Fixed** an issue with incorrect comparison of multi-branch pipeline configurations
+- **Fixed** an issue with missing dbName in link queries
 
 ## 2023-07-31
 
@@ -93,19 +122,19 @@ the development and feature changes in each version.
 
 #### New Features
 
-- **Added** Support for navigating to Jira to view details in the Issues interface
-- **Added** Status indicators for clusters
-- **Added** Editing YAML, adding components, editing components, editing operational features, and other functionalities for OAM applications
-- **Added** Support for sorting pipelines based on recent run time
-- **Added** Support for Sonarqube configuration and code quality result steps in pipelines
-- **Added** Integration of Sonarqube instances in the toolchain
-- **Added** Default binding of native applications when creating applications based on git, jar, and container images in the wizard
+- **Added** support for navigating to Jira to view details in the Issues interface
+- **Added** status indicators for clusters
+- **Added** editing YAML, adding components, editing components, editing operational features, and other functionalities for OAM applications
+- **Added** support for sorting pipelines based on recent run time
+- **Added** support for Sonarqube configuration and code quality result steps in pipelines
+- **Added** integration of Sonarqube instances in the toolchain
+- **Added** default binding of native applications when creating applications based on git, jar, and container images in the wizard
 
 #### Improvements
 
-- **Optimized** Steps to integrate gitlab with jenkins credentials
-- **Optimized** Display of binding time and added a division for sonarqube instances with bound workspaces in the administrator view
-- **Optimized** Fixed the issue of the cache not expiring in apiserver
+- **Improved** steps to integrate gitlab with jenkins credentials
+- **Improved** display of binding time and added a division for sonarqube instances with bound workspaces in the administrator view
+- **Improved** the issue of the cache not expiring in apiserver
 
 ## 2022-06-30
 
@@ -116,7 +145,7 @@ the development and feature changes in each version.
 - **Added** permission support for running pipelines in the pipeline module.
 - **Added** support for updating and deleting native applications and their subresources.
 - **Added** basic functionality for creating and managing OAM (Open Application Model) applications.
-- **Added** Installed Kubevela open-source components.
+- **Added** installed Kubevela open-source components.
 - **Added** support for automatic and manual synchronization of toolchain resources, along with corresponding metric indicators.
 - **Added** version information to pipeline templates.
 - **Added** support for creating native applications and viewing their resource information.
@@ -130,11 +159,11 @@ the development and feature changes in each version.
 
 #### Improvements
 
-- **Improvement** Optimized API handling for exceptional scenarios in pipelines.
-- **Improvement** Added a status field to display the runtime status of clusters in the API.
-- **Improvement** Optimized hardcoding to support deployment in different namespaces.
-- **Improvement** When integrating with GitLab, returning the GitLab address.
-- **Improvement** Returning toolchainID when integrating GitLab with Jenkinsfile-based pipelines and multi-branch pipelines.
+- **Improved** API handling for exceptional scenarios in pipelines.
+- **Improved** a status field to display the runtime status of clusters in the API.
+- **Improved** hardcoding to support deployment in different namespaces.
+- **Improved** When integrating with GitLab, returning the GitLab address.
+- **Improved** Returning toolchainID when integrating GitLab with Jenkinsfile-based pipelines and multi-branch pipelines.
 
 ## 2023-6-15
 
@@ -142,7 +171,7 @@ the development and feature changes in each version.
 
 #### Fixes
 
-- **Fixed** Resolved an issue with abnormal operations in the canary release tasks.
+- **Fixed** an issue with abnormal operations in the canary release tasks.
 
 ## 2022-05-31
 
@@ -159,16 +188,16 @@ the development and feature changes in each version.
 
 #### Fixes
 
-- **Fixed** Resolved the issue where containers in container images didn't support underscores.
-- **Fixed** Resolved the error with replica numbers in blue-green deployments.
+- **Fixed** the issue where containers in container images didn't support underscores.
+- **Fixed** the error with replica numbers in blue-green deployments.
 - **Fixed** the problem where the orphan strategy for multi-branch pipelines showed as -1 when it was empty.
 
 #### Improvements
 
-- **Improvement** Added retry functionality to the http-client of the jira-provider, improving the handling speed of pipeline events.
-- **Improvement** Improved the handling speed of pipeline events.
-- **Improvement** Refactored pipeline templates for from-git and from-jar.
-- **Improvement** Unified the URL for requesting Jenkins, for both regular pipelines and multi-branch pipelines.
+- **Improved** retry functionality to the http-client of the jira-provider, improving the handling speed of pipeline events.
+- **Improved** the handling speed of pipeline events.
+- **Improved** pipeline templates for from-git and from-jar.
+- **Improved** the URL for requesting Jenkins, for both regular pipelines and multi-branch pipelines.
 
 ## 2022-04-30
 
@@ -250,7 +279,7 @@ the development and feature changes in each version.
 
 #### Improvements
 
-- Downloaded artifact reports are no longer fully cached in __apiserver__; they are partly cached through io chunking mode forwarding
+- Downloaded artifact reports are no longer fully cached in __apiserver__ ; they are partly cached through io chunking mode forwarding
 
 #### Fixes
 
