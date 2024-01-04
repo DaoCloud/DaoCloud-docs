@@ -101,7 +101,7 @@ To address these issues, you need to go to the Jenkins backend for relevant conf
 
         To configure the sender's email address, click on the top-right user icon -> Settings, and then scroll down to __Email Address__ .
 
-    ![Jenkins Email Config](../../images/install-jenkins06.png)
+    ![Jenkins Email Config](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins06.png)
 
 ### Configuring SonarQube Server Address in the Jenkins Backend for the SonarQube Configuration Step
 
@@ -113,11 +113,11 @@ To address these issues, you need to go to the Jenkins backend for relevant conf
     - Server URL: The URL of the SonarQube server.
     - Server authentication token: The authentication token for the SonarQube server. You can generate a token in the SonarQube console.
 
-    ![Jenkins SonarQube Config](../../images/install-jenkins08.png)
+    ![Jenkins SonarQube Config](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins08.png)
 
     !!! note
 
         If a SornarQube instance was already integrated and the Jenkins instance was updated with a new one, in this case, you should make sure the name was set exactly same with the SonarQube name. Which should be noted that Name is not the name entered during integration, instead, it is obtained in the SonarQube configuration step of the pipeline.
 
 
-    ![SonarQube Name](../../images/install-jenkins07.png)
+    ![SonarQube Name](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins07.png)

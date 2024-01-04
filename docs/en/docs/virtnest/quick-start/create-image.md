@@ -28,11 +28,11 @@ Follow the steps below to create a virtual machine using an image.
 
 1. Click `Container Management` on the left navigation bar, then click `Virtual Machine` to enter the `Virtual Machine Management` page.
 
-    ![VM](../images/createvm01.png)
+    ![VM](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/createvm01.png)
 
 2. On the virtual machine list page, click `Create VMs` and select `Create with Image`.
 
-    ![Create VM from Image](../images/createvm02.png)
+    ![Create VM from Image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/createvm02.png)
 
 3. Fill in the basic information, image configuration, storage and networking, login settings, and click `OK` at the bottom right corner to complete the creation.
 
@@ -41,13 +41,13 @@ Follow the steps below to create a virtual machine using an image.
     clone, update, create snapshots, console access (VNC), and delete virtual machines.
     Cloning and snapshot capabilities depend on the selected StorageClass.
 
-    ![VM Management](../images/createvm03.png)
+    ![VM Management](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/createvm03.png)
 
 ### Basic Information
 
 In the `Create VMs` page, enter the information according to the table below and click `Next`.
 
-![Basic Information](../images/createvm04.png)
+![Basic Information](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/createvm04.png)
 
 - Name: Up to 63 characters, can only contain lowercase letters, numbers, and hyphens (`-`),
   and must start and end with a lowercase letter or number. The name must be unique within the
@@ -62,7 +62,7 @@ In the `Create VMs` page, enter the information according to the table below and
 
 After filling in the image-related information according to the table below, click `Next`.
 
-    ![Image Repository](../images/createvm05.png)
+    ![Image Repository](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/createvm05.png)
 
 - Image Source: Supports three types of sources.
 
@@ -89,7 +89,7 @@ After filling in the image-related information according to the table below, cli
 
 ### Storage and Network
 
-    ![Storage and Network](../images/createvm06.png)
+    ![Storage and Network](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/createvm06.png)
 
 - Storage: By default, a VirtIO-based rootfs system disk is created to store the operating system and data.
   Block storage is used by default. If you need to use cloning and snapshot functions, make sure your
@@ -113,7 +113,7 @@ After filling in the image-related information according to the table below, cli
 - Username/Password: Allows login to the virtual machine using a username and password.
 - SSH: When selecting the SSH login method, you can bind an SSH key to the virtual machine for future login.
 
-![Login Settings](../images/createvm07.png)
+![Login Settings](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/createvm07.png)
 
 ## Create by YAML
 
@@ -121,7 +121,7 @@ In addition to creating virtual machines using images, you can also create them 
 
 Go to the virtual machine container list page and click on the `Create with YAML` button.
 
-![Create with YAML](../images/createvm08.png)
+![Create with YAML](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/createvm08.png)
 
 ??? note "Click to view an example YAML for creating a virtual machine"
 

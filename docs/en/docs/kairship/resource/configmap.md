@@ -9,15 +9,15 @@ Two creation methods are currently provided: wizard creation and YAML creation. 
 
 1. After entering a multicloud instance, in the left navigation bar, click __Resource Management__ -> __Multicloud ConfigMaps__ , and click the __Create Multicloud ConfigMaps__ button in the upper right corner.
 
-    ![Create ConfigMap](../images/config01.png)
+    ![Create ConfigMap](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/config01.png)
 
 2. On the __Create Multicloud ConfigMaps__ page, enter the name, select the namespace and other information, and click __OK__ .
 
-    ![Fill ConfigMap](../images/config02.png)
+    ![Fill ConfigMap](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/config02.png)
 
 3. Return to the list of multicloud configuration items, and the newly created one will be the first one by default. Click __⋮__ on the right side of the list to edit YAML, update, export and delete configuration items.
 
-    ![Update/Delete](../images/config03.png)
+    ![Update/Delete](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/config03.png)
 
     !!! note
 

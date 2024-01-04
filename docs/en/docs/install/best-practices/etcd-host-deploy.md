@@ -92,16 +92,16 @@ achieving an independent high-availability etcd.
 
     - There are no etcd-related Pods in the current cluster.
 
-        ![etcd01](../images/etcd01.png)
+        ![etcd01](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/install/images/etcd01.png)
 
     - There are no etcd system services on the current cluster nodes.
 
-        ![etcd02](../images/etcd02.png)
+        ![etcd02](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/install/images/etcd02.png)
 
 6. Run the command `pf -ef | grep etcd` to check if the apiserver is connected to the external etcd address.
 
-    ![etcd03](../images/etcd03.png)
+    ![etcd03](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/install/images/etcd03.png)
 
 7. Run the command `systemctl status etcd` on the etcd nodes to check their running status.
 
-    ![etcd04](../images/etcd04.png)
+    ![etcd04](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/install/images/etcd04.png)
