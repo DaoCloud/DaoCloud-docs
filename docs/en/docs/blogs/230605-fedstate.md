@@ -34,7 +34,7 @@ Currently, FedState has implemented the framework of federation middleware, and 
 
 Here, taking the federation MongoDB as an example, the following architecture diagram introduces the overall capabilities provided by FedState around the MongoDB replica set in multi-cloud/multi-cluster environment.
 
-![image](./images/fedstate02.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/blogs/images/fedstate02.png)
 
 FedState itself contains the following components:
 
@@ -46,7 +46,7 @@ Mongo-Manager: can be understood as the operator of MongoDB data plane, which is
 
 ## Key capabilities
 
-![image](./images/fedstate03.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/blogs/images/fedstate03.png)
 
 1. The external access method of the federation MongoDB instance: Vip0:NodePort0, Vip1:NodePort1...
 2. East-west traffic and service discovery between MongoDB services in each member cluster are used to correspond to the NodePort method corresponding to the VIP+service of the cluster.

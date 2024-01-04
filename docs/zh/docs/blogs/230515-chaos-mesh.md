@@ -1,6 +1,6 @@
 # 云原生混沌工程--Chaos Mesh 实战篇
 
-![chaos mesh](images/chaos01.png)
+![chaos mesh](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos01.png)
 
 通过《[云原生混沌工程 -- Chaos Mesh 总览篇](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659279670&idx=1&sn=67d4d3c542de5e913531ef87731d7a49&scene=21#wechat_redirect)》和《[云原生混沌工程 -- Chaos Mesh 控制器篇](https://mp.weixin.qq.com/s?__biz=MzA5NTUxNzE4MQ==&mid=2659279798&idx=1&sn=646474b92d16c211816205107a6e3c7a&scene=21#wechat_redirect)》这两篇文章的介绍，可以大概了解 Chaos Mesh 在做什么样的事情以及基本的工作原理。接下来，从安装和使用 Chaos Mesh 的角度，来具体介绍一下 Chaos Mesh 的能力。
 
@@ -31,6 +31,7 @@
     ```bash
     cat /etc/fstab
     ```
+
     ```
     /opt/k8s /srv/nfs4/k8s none bind 0 0
     ```
@@ -40,10 +41,12 @@
     ```bash
     cat /etc/exports
     ```
+
     ```
     /srv/nfs4 10.1.3.0/24(rw,sync,no_root_squash,no_subtree_check,crossmnt,fsid=0)
     /srv/nfs4/k8s 10.1.3.0/24(rw,sync,no_root_squash,no_subtree_check)
     ```
+
     ```bash
     sudo exportfs -ra
     ```
@@ -208,11 +211,11 @@ helm install nginx --set service.type=NodePort my-repo/nginx
 
 - 输入令牌登录：
 
-    ![input token](images/chaos02.png)
+    ![input token](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos02.png)
 
 - 点击 link 来打开令牌的辅助生成器：
 
-    ![input token](images/chaos03.png)
+    ![input token](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos03.png)
 
 - 复制授权的 yaml，进行授权，并生成登录的 token，之后使用 ServiceAccount 的 name 和生成的 token 登录：
 
@@ -271,7 +274,7 @@ helm install nginx --set service.type=NodePort my-repo/nginx
 
 ### 仪表盘
 
-![dashboard](images/chaos04.png)
+![dashboard](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos04.png)
 
 ### 实验
 
@@ -297,16 +300,16 @@ helm install nginx --set service.type=NodePort my-repo/nginx
 
 - 列表：
 
-    ![list](images/chaos05.png)
+    ![list](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos05.png)
 
 - 创建：
 
-    ![create](images/chaos06.png)
+    ![create](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos06.png)
 
 - 详情：其中包含元数据，完整的 yaml 定义，以及对应的事件。同时 可以将其进行归档，归档完之后就只能在归档的菜单中可以查看到，
   因为对应的资源对象已经从 Kubernetes 中删除了，只保存在了数据中。
 
-    ![details](images/chaos07.png)
+    ![details](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos07.png)
 
 ### 计划
 
@@ -337,16 +340,16 @@ helm install nginx --set service.type=NodePort my-repo/nginx
 
 - 列表：
 
-    ![list](images/chaos08.png)
+    ![list](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos08.png)
 
 - 创建：
 
-    ![create](images/chaos09.png)
+    ![create](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos09.png)
 
 - 详情：其中包含元数据，完整的 yaml 定义，以及对应的事件。同时 可以将其进行归档，归档完之后就只能在归档的菜单中可以查看到，
   因为对应的资源对象已经从 Kubernetes 中删除了，只保存在了数据中。
 
-    ![details](images/chaos10.png)
+    ![details](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos10.png)
 
 ### 工作流
 
@@ -382,23 +385,23 @@ helm install nginx --set service.type=NodePort my-repo/nginx
 
 - 列表：
 
-    ![list](images/chaos11.png)
+    ![list](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos11.png)
 
 - 创建：
 
-    ![create](images/chaos12.png)
+    ![create](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos12.png)
 
     为了快速创建去看效果，直接通过 kubectl 命令行 apply 的方式创建 Workflow 资源对象，页面操作会慢一点。
 
 - 详情：其中包含工作流运行的拓扑情况，完整的 yaml 定义，以及对应的事件。同时 可以将其进行归档，归档完之后就只能在归档的菜单中可以查看到，因为对应的资源对象已经从 Kubernetes 中删除了，只保存在了数据中。以及在工作流运行完成之后，在过程中创建的 Chaos 类型的资源对象也会被自动删除掉。
 
-    ![details](images/chaos13.png)
+    ![details](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos13.png)
 
 ### 事件
 
 这里汇聚了所有资源对象相关的事件，可以进行查询操作。这些事件数据是从数据库中查出来的，之前的文章提到过数据库中事件数据的来源的原理。同时，支持可以设置事件数据的过期时间，一旦到达过期时间，就会将其从数据库中删除掉。
 
-![details](images/chaos14.png)
+![details](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos14.png)
 
 ### 归档
 
@@ -406,17 +409,17 @@ helm install nginx --set service.type=NodePort my-repo/nginx
 
 - 列表：
 
-    ![list](images/chaos15.png)
+    ![list](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos15.png)
 
 - 详情：已经归档的实验，计划，工作流对象是不能查看详情了，原因是归档的资源对象在 Kubernetes 中已经不存在了。
 
-    ![details](images/chaos16.png)
+    ![details](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos16.png)
 
 ### 设置
 
 主要包含登录/登出，主题色彩，中英文设置，还有一些其它的设置开关。
 
-![setting](images/chaos17.png)
+![setting](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/chaos17.png)
 
 ### StatusCheck
 
@@ -448,6 +451,7 @@ helm install nginx --set service.type=NodePort my-repo/nginx
     ```bash
     kubectl describe StatusCheck status-check-example
     ```
+
     ```yaml
     Name:         status-check-example
     Namespace:    default
@@ -546,6 +550,7 @@ helm install nginx --set service.type=NodePort my-repo/nginx
     ```bash
     kubectl describe StatusCheck status-check-example
     ```
+
     ```yaml
     Name:         status-check-example
     Namespace:    default
@@ -610,6 +615,6 @@ helm install nginx --set service.type=NodePort my-repo/nginx
 经过安装和实践，可以更好地理解使用 Chaos Mesh 的一些方式。这里只是举了一些例子帮助理解，对于其它更多的使用方式可以参考官方的文档。
 
 Chaos Mesh 简介：
-https://chaos-mesh.org/zh/docs/
+<https://chaos-mesh.org/zh/docs/>
 
 作者：熊先生

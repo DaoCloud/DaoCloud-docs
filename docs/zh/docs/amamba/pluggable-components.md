@@ -26,7 +26,7 @@
 
 3. 在安装界面，填写所需要的安装参数
 
-    ![argocd01](images/argocd01.png)
+    ![argocd01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/argocd01.png)
 
     参数说明：
 
@@ -55,7 +55,7 @@
     1. argocd 的服务地址，格式为：argocd-server 的服务名。命名空间.svc.cluster.local:80
     2. argocd 安装的命名空间
 
-    ![argocd02](images/argocd02.png)
+    ![argocd02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/argocd02.png)
 
 7. 修改完成后，在当前集群详情左侧菜单栏的 __工作负载__ -> __容器组__，分别搜索
    __amamba-apiserver__、__amamba-syncer__，并依次进行重启。
@@ -101,7 +101,7 @@ metadata:
 
 3. 在安装界面，填写所需要的安装参数
 
-    ![vela01](images/vela01.png)
+    ![vela01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/vela01.png)
 
     参数说明：
 
@@ -127,7 +127,7 @@ metadata:
         namespace: kubevela-system # kubevela 安装的命名空间
     ```
 
-    ![vela02](images/vela02.png)
+    ![vela02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/vela02.png)
 
 7. 修改完成后，在当前集群详情左侧菜单栏的 __工作负载__ -> __容器__，分别搜索 __amamba-apiserver__、
    __amamba-syncer__，并依次进行重启。
@@ -146,7 +146,7 @@ metadata:
 
 3. 在安装界面，填写所需要的安装参数
 
-    ![argorolllout01](images/argorollout01.png)
+    ![argorolllout01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/argorollout01.png)
 
     参数说明：
 

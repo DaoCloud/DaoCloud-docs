@@ -71,7 +71,7 @@ users:
 
 View the status of the connected cluster in the container management:
 
-![OpenShift Access](./images/os01.png)
+![OpenShift Access](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/test/images/os01.png)
 
 ### Creating a Private Mesh
 
@@ -83,11 +83,11 @@ View the status of the connected cluster in the container management:
 
     > For the control plane cluster, select the openshift4-mspider cluster accessed through container management.
 
-    ![Create Mesh](./images/os03.png)
+    ![Create Mesh](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/test/images/os03.png)
 
 3. OpenShift cluster successfully connects to the mesh.
 
-    ![Successfully Connected to Mesh](./images/os04.png)
+    ![Successfully Connected to Mesh](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/test/images/os04.png)
 
 4. Check the health of each component.
 
@@ -199,7 +199,7 @@ oc adm policy add-scc-to-user privileged -z bookinfo
 
 1. Enable sidecar injection for the namespace.
 
-    ![Enable Namespace Sidecar Injection](./images/os10.png)
+    ![Enable Namespace Sidecar Injection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/test/images/os10.png)
 
 2. Terminal command to view the labels of the `bookinfo` namespace:
 

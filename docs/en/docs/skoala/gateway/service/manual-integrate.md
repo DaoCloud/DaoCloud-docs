@@ -12,7 +12,7 @@ You need to add the corresponding service source in Source management so that yo
 
 1. In the `Gateway List` page click the name of the target gateway, enter the gateway overview page, in the left navigation bar click `Add Service` -> `Service List`.
 
-    ![service list](./images/gw-service03.png)
+    ![service list](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/service/images/gw-service03.png)
 
 2. Select the service source, configure the service connection information and click `OK`.
 
@@ -20,45 +20,45 @@ You need to add the corresponding service source in Source management so that yo
 
         Select the cluster and namespace where the target service resides, and enter the access protocol, address, and port number.
 
-        ![adding a cluster service](./images/gw-service01.png)
+        ![adding a cluster service](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/service/images/gw-service01.png)
 
         For the cluster service access, in the `Container Management` -> `Container Network` -> `Services` click the service name to view:
 
-        ![get the service access address](./images/service-access.png)
+        ![get the service access address](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/service/images/service-access.png)
     
     === "Service Mesh"
         
         Select the cluster and namespace where the target service resides, and enter the access protocol, address, and port number.
 
-        ![adding a mesh service](./images/mesh.png)
+        ![adding a mesh service](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/service/images/mesh.png)
 
     === "Registry Service"
 
         Select the registry where the target service resides, and enter the access protocol, address, and port number.
 
-        ![add registry services](./images/service-04.png)
+        ![add registry services](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/service/images/service-04.png)
     
     === "Hosted Registration Center Service"
         
         Select the registry where the target service resides, and enter the access protocol, address, and port number.
 
-        ![add registry services](./images/gw-service04.png)
+        ![add registry services](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/service/images/gw-service04.png)
 
     === "External service" 
          
         Enter the service name, access protocol, address, and port number.
   
-        ![adding external services](./images/gw-service02.png)
+        ![adding external services](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/service/images/gw-service02.png)
 
 ## Viewing service details
 
 1. On the service list page, click the name of the target service to access the service details page.
 
-    ![service details](./images/gw-service05.png)
+    ![service details](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/service/images/gw-service05.png)
 
 2. View service sources, connection information, and associated apis.
 
-    ![service details](./images/gw-service06.png)
+    ![service details](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/service/images/gw-service06.png)
 
 ## Update service
 
@@ -66,11 +66,11 @@ You need to add the corresponding service source in Source management so that yo
 
 1. In the `Service List` page find need to update the service, in the service of right click  `ⵗ`, choose `Basic Info`.
 
-    ![update service](./images/gw-service07.png)
+    ![update service](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/service/images/gw-service07.png)
 
 2. To update the basic information, click `OK`.
 
-    ![update service](./images/gw-service08.png)
+    ![update service](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/service/images/gw-service08.png)
 
 !!! danger
   
@@ -82,19 +82,19 @@ You need to add the corresponding service source in Source management so that yo
 
 1. In the `Service List` page find need to update the service, in the service of right click `ⵗ`, choose `modifying policy settings`.
 
-    ![update service](./images/gw-service09.png)
+    ![update service](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/service/images/gw-service09.png)
 
 2. To update policy configuration, click `OK`.
 
-    ![update service](./images//update4.png)
+    ![update service](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/service/images//update4.png)
 
 ## Deletion service
 
 In the `Service List` page to find the need to delete the service, in the service of right click `ⵗ`, choose `Delete`.
 
-![delete service](./images/gw-service10.png)
+![delete service](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/service/images/gw-service10.png)
 
 Before deleting a service, you need to make sure that no apis are using the service. If the service is being used by an API,
 click `API Management` to delete the associated API as prompted before deleting the service.
 
-![delete service](./images/delete1.png)
+![delete service](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/service/images/delete1.png)

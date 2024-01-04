@@ -57,7 +57,7 @@ day by day, making things better over time.
 
      **Modules involved**: [Global Management](ghippo/intro/index.md), [Container Management](kpanda/intro/index.md), [Multicloud Management](kairship/intro/index.md), [cloud native network](network/intro/index.md), [cloud native storage](storage/index.md), Heterogeneous architecture
 
-    ![multicloud](./images/01multi-cloud.png)
+    ![multicloud](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/01multi-cloud.png)
 
 === "Middleware"
 
@@ -187,7 +187,7 @@ for the first time, you will be greeted by a user-friendly dashboard. This dashb
 of various information, including the status of running containers and pods, CPU and memory usage, health status
 of clusters/nodes/pods, alerts, resource utilization, and an overview of available functionalities.
 
-![dashboard](./dce/images/ipavo.png)
+![dashboard](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/dce/images/ipavo.png)
 
 [Download DCE 5.0](download/index.md){ .md-button .md-button--primary }
 [Install DCE 5.0](install/index.md){ .md-button .md-button--primary }

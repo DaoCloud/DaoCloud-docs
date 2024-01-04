@@ -2,7 +2,7 @@
 
 Author: [Fish-pro](https://github.com/Fish-pro)
 
-![karmada failover](images/karmada01.png)
+![karmada failover](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/blogs/images/karmada01.png)
 
 In the multicloud era, how to achieve high availability of applications across data centers, availability zones, and clusters has become a new topic we discuss.
 In a single cluster, if the cluster fails, all applications in the cluster will be inaccessible.
@@ -43,7 +43,7 @@ Karmada failback supports two methods:
 
 This article uses __Divided__ as an example:
 
-![Divided](images/karmada02.png)
+![Divided](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/blogs/images/karmada02.png)
 
 1. After downloading the official Karmada v1.4.2 source code, use __hack/local-up-karmada.sh__ to start the local Karmada.
     After startup, three working clusters are automatically managed, among which clusters member1 and member2 use push mode, and member3 uses pull mode.

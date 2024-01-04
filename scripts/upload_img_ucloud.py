@@ -112,7 +112,7 @@ def update_image_path(md_files: list):
                                 if image.startswith('./'):
                                     image = image.replace('./', '')
                                     new_image = os.path.join(filepath, image)
-                                    print(image, 'bad image path, 11111')
+                                    print(md_file, image, 'bad image path, 11111')
 
                                 try:
                                     remote_file_url = ufile_upload(bucket, 'daocloud-docs-images/' + new_image,
@@ -127,10 +127,10 @@ def update_image_path(md_files: list):
                                         os.remove(new_image)
                                 except Exception as e:
                                     print(e)
-                                    print(image, 'bad image path, 22222')
+                                    print(md_file, image, 'bad image path, 22222')
 
                             else:
-                                print(image, 'bad image path')
+                                print(md_file, image, 'bad image path, 33333')
     time.sleep(0.2)
 
 

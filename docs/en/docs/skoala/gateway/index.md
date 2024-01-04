@@ -13,7 +13,7 @@ To create a microservice gateway, perform the following steps:
 
 1. In the left navigation bar, click `Cloud native Gateway`, and in the upper right corner of the `Gateway List` page, click `Create Gateway` to enter the page for creating the micro-service gateway.
 
-    ![go to the create page](./images/gw-create01.png)
+    ![go to the create page](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/gw-create01.png)
 
 2. Follow the instructions below to complete the basic configuration (required).
 
@@ -26,7 +26,7 @@ To create a microservice gateway, perform the following steps:
     - Environment check : After the cluster and namespace are selected, the system automatically detects the installation environment. If the check fails, the system displays the cause and operation suggestions. You can perform operations as prompted.
     - Namespace (jurisdiction) : Sets which namespaces can be governed by the new gateway. Specifies the namespace of the default jurisdiction gateway. Supports managing multiple namespaces at the same time. A namespace cannot be managed by two gateways at the same time.
 
-        ![fill in the basic configuration](./images/gw-create02.png)
+        ![fill in the basic configuration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/gw-create02.png)
 
 3. Enter the configuration information according to the following instructions
 
@@ -34,13 +34,13 @@ To create a microservice gateway, perform the following steps:
 
         - Intra-cluster access: Services can be accessed only within the same cluster
 
-            ![fill in the basic configuration](./images/gw-create03.png)
+            ![fill in the basic configuration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/gw-create03.png)
 
         - Node port: Access services from outside the cluster through the IP address and static port of a node
               
             External traffic policy: 'Cluster' refers to Pods where traffic can be forwarded to other nodes in the cluster; 'Local' indicates that traffic can only be forwarded to the Pod on the local node.
 
-            ![fill in the basic configuration](./images/gw-create04.png)
+            ![fill in the basic configuration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/gw-create04.png)
 
         - Load balancer: Use a cloud service provider"s load balancer to make services publicly accessible
 
@@ -49,20 +49,20 @@ To create a microservice gateway, perform the following steps:
             - MetalLB IP pool: Supports automatic selection or assignment of IP pools
             - Load balancer IP address: You can automatically select or specify an IP address
 
-            ![fill in the basic configuration](./images/gw-create05.png)
+            ![fill in the basic configuration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/gw-create05.png)
 
     === "Resource Settings"
            
         How many control nodes and working nodes are configured for the current gateway. Single copy is unstable, so select it with caution.
 
-        ![fill in the basic configuration](./images/gw-create06.png)
+        ![fill in the basic configuration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/gw-create06.png)
 
     === "Advanced Settings"
 
         - Control node: Sets how many CPU and memory resources to configure for the control node (contour)
         - Working node: Sets how many CPU and memory resources are allocated to the working node (envoy)
             
-        ![fill in the basic configuration](./images/gw-create07.png)
+        ![fill in the basic configuration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/gw-create07.png)
 
 4. Follow the instructions below to complete the advanced configuration (optional).
 
@@ -71,7 +71,7 @@ To create a microservice gateway, perform the following steps:
     - Front-end Proxy: specifies how many proxy endpoints a request must pass through before reaching the gateway from the client. Set this parameter based on actual conditions. For example, 'client-nginx-gateway' has one agent layer because only one Nginx agent endpoint passes through it.
     - Gateway tracing: After this function is enabled, link information can be generated based on requests made through the gateway and sent to the observable module for data collection.
 
-    ![fill in advanced settings](./images/gw-create08.png)
+    ![fill in advanced settings](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/gw-create08.png)
 
 5. Please refer to the following information to fill in the plug-in configuration (optional), and finally click 'confirm' in the lower right corner of the page.
     
@@ -79,13 +79,13 @@ To create a microservice gateway, perform the following steps:
 
     You need to access the plugin in the plugin center in advance, or click the blue text on the current page to jump to the corresponding page to access and create.
 
-    ![fill in advanced settings](./images/gw-create09.png)
+    ![fill in advanced settings](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/gw-create09.png)
 
 !!! note
 
     Click `OK` at the lower right corner of the page to return to the micro-service gateway list page. You can perform the operations [Update Gateway](update-gateway.md) or [Delte Gateway](delete-gateway.md) on the right.
 
-    ![confirm the information](./images/gw-create10.png)
+    ![confirm the information](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/gw-create10.png)
 
 ## View
 
@@ -95,7 +95,7 @@ You can view the gateway details on `Overview`, including the name, deployment l
 
 On the `Gateway List` page, select the name of the target gateway to access the gateway overview page ".
 
-![overview](./images/overview.png)
+![overview](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/overview.png)
 
 Gateway details are divided into basic information, network information, TOP10 popular apis, resource information, resource load, and plug-in information.
 
@@ -127,11 +127,11 @@ There are two ways to update the gateway configuration.
 
 - In the `Gateway List` page choose the gateway instance needs to be updated, at the instance of right click `⋯` and select `Edit`.
 
-    ![update1](./images/update1.png)
+    ![update1](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/update1.png)
 
 - Click the gateway name to access the overview page. In the upper right corner, click `Edit`.
 
-    ![update2](./images/update2.png)
+    ![update2](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/update2.png)
 
 ## Delete
 
@@ -145,8 +145,8 @@ There are also two ways to delete a gateway. To ensure that services are not aff
 
 - In the `Gateway List` page choose the need to remove the gateway instance, at the instance of right click `⋯` and select `Delete`.
 
-    ![delete](./images/delete.png)
+    ![delete](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/delete.png)
 
 - After entering into the overview page, click the gateway name in the upper right corner of the `⋯` and select `Delete`.
 
-    ![delete-gateway](./images/delete-gateway.png)
+    ![delete-gateway](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/delete-gateway.png)

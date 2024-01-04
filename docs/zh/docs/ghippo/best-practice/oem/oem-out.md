@@ -52,19 +52,19 @@ OEM OUT 是指将 DCE 5.0 作为子模块接入其他产品，出现在其他产
    DCE_PROXY 反代设为 `http://10.6.165.50/dce5`。确保能够通过 `http://10.6.165.50/dce5`访问 DCE 5.0。
    客户系统也需要进行反代设置，需要根据不同平台的情况进行处理。
   
-    ![反向代理](images/agent.png)
+    ![反向代理](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/agent.png)
 
 ## 打通用户体系
 
 将客户系统与 DCE 5.0 平台通过 OIDC/OAUTH 等协议对接，使用户登录客户系统后进入 DCE 5.0 时无需再次登录。
 在拿到客户系统的 OIDC 信息后填入 __全局管理__ -> __用户与访问控制__ -> __身份提供商__ 中。
 
-![身份提供商](images/idp.png)
+![身份提供商](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/idp.png)
 
 对接完成后，DCE 5.0 登录页面将出现 OIDC（自定义）选项，首次从客户系统进入 DCE 5.0 时选择通过 OIDC 登录，
 后续将直接进入 DCE 5.0 无需再次选择。
 
-![登录页](images/login.png)
+![登录页](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/login.png)
 
 ## 对接导航栏
 
