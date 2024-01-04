@@ -23,7 +23,7 @@ CloudTTY 意指云原生虚拟控制台，也称为 Cloud Shell（云壳）。
 CloudTTY 提供了这些问题的解决方案，欢迎试用 CloudTTY 🎉！
 CloudTTY 已入选 CNCF 全景图：
 
-![landscape](./images/cloudtty.png)
+![landscape](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/images/cloudtty.png)
 
 ## 适用场景
 

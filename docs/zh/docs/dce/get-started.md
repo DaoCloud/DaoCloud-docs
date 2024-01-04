@@ -247,4 +247,4 @@ DCE 5.0 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的�
 [安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](./license0.md){ .md-button .md-button--primary }
 
-![启航图](./images/sail.jpg)
+![启航图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/dce/images/sail.jpg)

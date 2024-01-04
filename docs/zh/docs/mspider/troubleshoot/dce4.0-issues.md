@@ -66,7 +66,7 @@ kubectl describe limits -n istio-system dce-default-limit-range
 
 需要手动为网格实例的 CR 中 `GlobalMesh` 添加对应的参数： `istio.custom_params.values.global.jwtPolicy: first-party-jwt`。
 
-![params](./images/dce4-01.png)
+![params](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/troubleshoot/images/dce4-01.png)
 
 !!! tip
 

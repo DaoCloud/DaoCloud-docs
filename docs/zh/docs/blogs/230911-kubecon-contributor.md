@@ -1,6 +1,6 @@
 # 欢迎报名参加在上海举行的 Kubernetes 贡献者峰会
 
-![Kubecon](./images/kubecon01.png)
+![Kubecon](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/kubecon01.png)
 
 日期：2023 年 9 月 26 日星期二
 
@@ -53,8 +53,8 @@
 - [KubeCon + CloudNativeCon + Open Source Summit China 2023 日程表](https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/program/schedule/)
 - [贡献者峰会注册页面](https://wj.qq.com/s2/12996651/2260/)
 
-![Kubecon 2](./images/kubecon02.jpeg)
+![Kubecon 2](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/kubecon02.jpeg)
 
-![scan-code](./images/qr-code.jpeg)
+![scan-code](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/qr-code.jpeg)
 
 欢迎扫码注册参会！

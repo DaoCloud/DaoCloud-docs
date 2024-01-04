@@ -100,8 +100,8 @@ class init k8s
           - webstore-demo/*
     ```
 
-    ![yaml](./images/yaml1.png)
+    ![yaml](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/best-practice/images/yaml1.png)
 
 - 访问效果
 
-    ![访问效果](./images/effect.png)
+    ![访问效果](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/best-practice/images/effect.png)

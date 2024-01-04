@@ -10,26 +10,26 @@
 
 | 名称         | 彩色白底       | 彩色黑底       | 黑白白底     | 黑白黑底        |
 | :----------- | :--------------------------- | ----------- | ------ | ----- |
-| CloudTTY     | ![](./open/Cloudtty.svg)     | ![](./open/Cloudtty-on-dark-bg.svg)     | ![](./open/Cloudtty-white.svg)     | ![](./open/Cloudtty-dark.svg)     |
-| Clusterpedia | ![](./open/Clusterpedia.svg) | ![](./open/Clusterpedia-on-dark-bg.svg) | ![](./open/Clusterpedia-white.svg) | ![](./open/Clusterpedia-dark.svg) |
-| HwameiStor   | ![](./open/hwameistor.svg)   | ![](./open/hwameistor-on-dark-bg.svg)   | ![](./open/hwameistor-white.svg)   | ![](./open/hwameistor-dark.svg)   |
-| KLTS         | ![](./open/KLTS-DC.svg)      | ![](./open/KLTS-DC-on-dark-bg.svg)      | ![](./open/KLTS-DC-white.svg)      | ![](./open/KLTS-DC-dark.svg)      |
-| Merbridge    | ![](./open/Merbridge.svg)    | ![](./open/Merbridge-on-dark-bg.svg)    | ![](./open/Merbridge-white.svg)    | ![](./open/Merbridge-dark.svg)    |
-| Spidernet    | ![](./open/Spidernet.svg)    | ![](./open/Spidernet-on-dark-bg.svg)    | ![](./open/Spidernet-white.svg)    | ![](./open/Spidernet-dark.svg)    |
+| CloudTTY     | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/open/Cloudtty.svg)     | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/open/Cloudtty-on-dark-bg.svg)     | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/open/Cloudtty-white.svg)     | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/open/Cloudtty-dark.svg)     |
+| Clusterpedia | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/open/Clusterpedia.svg) | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/open/Clusterpedia-on-dark-bg.svg) | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/open/Clusterpedia-white.svg) | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/open/Clusterpedia-dark.svg) |
+| HwameiStor   | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/open/hwameistor.svg)   | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/open/hwameistor-on-dark-bg.svg)   | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/open/hwameistor-white.svg)   | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/open/hwameistor-dark.svg)   |
+| KLTS         | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/open/KLTS-DC.svg)      | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/open/KLTS-DC-on-dark-bg.svg)      | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/open/KLTS-DC-white.svg)      | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/open/KLTS-DC-dark.svg)      |
+| Merbridge    | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/open/Merbridge.svg)    | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/open/Merbridge-on-dark-bg.svg)    | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/open/Merbridge-white.svg)    | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/open/Merbridge-dark.svg)    |
+| Spidernet    | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/open/Spidernet.svg)    | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/open/Spidernet-on-dark-bg.svg)    | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/open/Spidernet-white.svg)    | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/open/Spidernet-dark.svg)    |
 
 ## DaoCloud 中间件图标
 
 | 名称          | 图标                            |
 | ------------- | --- |
-| Elasticsearch | ![](./mcamel/elasticserach.svg) |
-| Kafka         | ![](./mcamel/kafka.svg)         |
-| MinIO         | ![](./mcamel/minio.svg)         |
-| MongoDB       | ![](./mcamel/MongoDB.svg)       |
-| MySQL         | ![](./mcamel/mysql.svg)         |
-| PostgreSQL    | ![](./mcamel/postgresql.svg)    |
-| RabbitMQ      | ![](./mcamel/rabbitmq.svg)      |
-| Redis         | ![](./mcamel/redis.svg)         |
-| RocketMQ      | ![](./mcamel/rocketmq.svg)      |
+| Elasticsearch | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/mcamel/elasticserach.svg) |
+| Kafka         | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/mcamel/kafka.svg)         |
+| MinIO         | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/mcamel/minio.svg)         |
+| MongoDB       | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/mcamel/MongoDB.svg)       |
+| MySQL         | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/mcamel/mysql.svg)         |
+| PostgreSQL    | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/mcamel/postgresql.svg)    |
+| RabbitMQ      | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/mcamel/rabbitmq.svg)      |
+| Redis         | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/mcamel/redis.svg)         |
+| RocketMQ      | ![](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/mcamel/rocketmq.svg)      |
 
 ## 云厂商和社区项目图标
 

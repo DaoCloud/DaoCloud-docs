@@ -2,7 +2,7 @@
 
 > 作者：[mengjiao-liu](https://github.com/mengjiao-liu)
 
-![图片](./images/trace01.png)
+![图片](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/trace01.png)
 
 **在分布式系统中，很难弄清楚问题在哪里。**
 想象一个场景，这也是 Kubernetes 集群管理员最常遇到的问题，Pod 无法正常启动，这时候作为管理员，
@@ -32,7 +32,7 @@
 
 ### 追踪概览图
 
-![图片](./images/trace02.png)
+![图片](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/trace02.png)
 
 ### 开启
 
@@ -179,7 +179,7 @@ spec:
 
 这时候我们可以访问 Jaeger 了。地址：http://<JaegerIP>:16686/ 在 Jaeger 界面我们可以清晰的看到请求的追踪路径。
 
-![图片](./images/trace03.png)
+![图片](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/trace03.png)
 
 青色行来自 API 服务器，包括对 /api/v1/nodes 的服务请求，并向 ETCD 发出 grpc Range RPC。黄色线来自 ETCD 处理 Range RPC。
 
