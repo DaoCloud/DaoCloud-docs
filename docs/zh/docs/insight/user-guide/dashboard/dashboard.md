@@ -13,7 +13,7 @@ Grafana 是一种开源的数据可视化和监控平台，它提供了丰富的
 
 1. 在左侧导航栏选择 __仪表盘__ 。
 
-    - 在 __Insight 概览__ 仪表盘中，可查看多选集群的资源使用情况，并以命名空间、容器组等多个维度分析了资源使用、网络、存储等情况。
+    - 在 __Insight /概览__ 仪表盘中，可查看多选集群的资源使用情况，并以命名空间、容器组等多个维度分析了资源使用、网络、存储等情况。
 
     - 点击仪表盘左上侧的下拉框可切换集群。
 
@@ -21,7 +21,7 @@ Grafana 是一种开源的数据可视化和监控平台，它提供了丰富的
 
     ![dashboard](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/dashboard00.png){ width="1000"}
 
-2. Insight 精选多个社区推荐仪表盘，可从节点、命名空间、工作负载等多个维度进行监控。点击 __insight-system / Insight 概览__ 区域切换仪表盘。
+2. Insight 精选多个社区推荐仪表盘，可从节点、命名空间、工作负载等多个维度进行监控。点击 __insight-system / Insight /概览__ 区域切换仪表盘。
 
     ![dashboard](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/dashboard01.png){ width="1000"}
 
