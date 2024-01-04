@@ -26,8 +26,8 @@
     | fsName | ceph-filesystem | 定义卷的 CephFS 文件系统名称 |
     | pool | ceph-filesystem-data0 | 定义卷的 Ceph 池名称 |
 
-    ![fs01](../images/fs01.png)
+    ![fs01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/fs01.png)
 
-    ![fs02](../images/fs02.png)
+    ![fs02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/fs02.png)
 
 3. 填写完点击 `确定` 即可创建成功

@@ -62,4 +62,4 @@
 
 可以在 [Git for Windows](https://gitforwindows.org/) 中直接运行上述 diff 命令，无需 `sudo chmod` 赋权操作。
 
-![windows](../images/windows.jpg)
+![windows](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/windows.jpg)

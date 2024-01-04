@@ -22,7 +22,7 @@
 
 5. 在应用详情页面点击 __应用版本__ 页签，可以查看应用的版本信息，对应用的变更操作都会自动生成版本进行记录，并在需要时可以进行版本回滚。
 
-    ![oam-version](../../images/oam-version.png)
+    ![oam-version](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/oam-version.png)
 
 ## 编辑 OAM 应用基本信息
 
@@ -62,10 +62,10 @@
 
 1. 点击 __应用版本__ 页签，选择某一版本（除当前版本外）右侧点击 __ⵗ__ 选择 __回滚__ 。
 
-    ![rollback01](../../images/rollback01.png)
+    ![rollback01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/rollback01.png)
 
 2. 点击 __确认__ 按钮，回滚成功后会返回列表，并提示。
 
-    ![rollback02](../../images/rollback02.png)
+    ![rollback02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/rollback02.png)
 
-    ![rollback03](../../images/rollback03.png)
+    ![rollback03](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/rollback03.png)

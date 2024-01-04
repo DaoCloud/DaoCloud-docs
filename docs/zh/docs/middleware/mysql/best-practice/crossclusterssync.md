@@ -63,7 +63,7 @@ MySQL 自带的复制能力提供了主从、多从、多主、级联等多种�
     1. 进入实例的 CR 文件：容器管理 - 实例所在集群 - 自定义资源 - mysqlclusters.mysql.presslabs.org - 实例 CR
     1. 增加字段：spec.serverIDOffset: 200
 
-    ![sync](../images/sync01.png)
+    ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/mysql/images/sync01.png)
 
     !!! note
 

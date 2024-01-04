@@ -250,7 +250,7 @@
               fieldPath: metadata.labels['app'] 
     ```
 
-    ![otel-mesh](../../images/otel-mesh.png)
+    ![otel-mesh](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/otel-mesh.png)
 
 === "完整示例如下（For Insight v0.21.x）"
 

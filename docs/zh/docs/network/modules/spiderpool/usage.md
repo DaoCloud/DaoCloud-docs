@@ -56,7 +56,7 @@ hide:
 
     ![手动选择](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/useippool03.png)
 
-    注意：如果 所选择的 [IP 池创建时](\createpool.md) 加了节点亲和性如：`zone:beijing`，请在创建工作负载时，加上对应的标签 `zone:beijing`。使用场景请参考：[IP 池的使用说明](ippoolusage.md)![zone-beijing](../../images/zone-beijing.jpg)
+    注意：如果 所选择的 [IP 池创建时](\createpool.md) 加了节点亲和性如：`zone:beijing`，请在创建工作负载时，加上对应的标签 `zone:beijing`。使用场景请参考：[IP 池的使用说明](ippoolusage.md)![zone-beijing](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/zone-beijing.jpg)
 
     **自动创建固定 IP 池**
 

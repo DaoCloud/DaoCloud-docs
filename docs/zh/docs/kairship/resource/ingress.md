@@ -11,7 +11,7 @@ hide:
 
 1. 进入某一个多云实例后，在左侧导航栏中，点击 __资源管理__ -> __多云路由__ ，点击右上角的 __创建多云路由__ 按钮。
 
-    ![路由列表](../images/create-ingress01.png)
+    ![路由列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/create-ingress01.png)
 
 2. 在 __创建多云路由__ 页面中，配置部署位置、设置路由规则、Ingress Class、是否开启会话保持等信息后，点击 __确定__ 。填写详情可参考[创建路由](../../kpanda/user-guide/network/create-ingress.md)
 

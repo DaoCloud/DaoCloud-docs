@@ -24,7 +24,7 @@
 
 1. 填写`基本信息`，进入`容器配置`输入如下信息。
    
-    ![rdma_sriov](../../images/rdma_sriov01.jpg)
+    ![rdma_sriov](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/rdma_sriov01.jpg)
 
     - `网络资源参数`：
       
@@ -50,4 +50,4 @@
 
 1. 选择[已创建的 Multus CR](../../config/multus-cr.md)，关闭创建固定 IP 池功能，选择[已创建 IP Pool](createpool.md)，点击`确定`，完成创建。
 
-    ![rdma_usage01](../../images/rdma_usage01.jpg)
+    ![rdma_usage01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/rdma_usage01.jpg)

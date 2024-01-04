@@ -36,7 +36,7 @@ LocalVolumeMigrate 需要部署在 Kubernetes 系统中，需要部署应用满�
 
     迁移之前请先解除 PVC 挂载，可通过`编辑工作负载`进行解挂载。
 
-    ![unbound01](../images/unboundpvc-01.png)
+    ![unbound01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/hwameistor/images/unboundpvc-01.png)
 
 5. 创建迁移任务
 
