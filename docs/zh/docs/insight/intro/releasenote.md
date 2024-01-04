@@ -2,6 +2,34 @@
 
 本页列出 Insight 可观测性的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2023.12.32
+
+### Insight Server: v0.23.0
+
+#### 新增
+
+- **新增** 集成网络观测 Deepflow 社区版
+- **新增** 告警模版
+
+#### 优化
+
+- **优化** 使用 DSL 作为日志告警的查询语句
+
+#### 修复
+
+- **修复** 拓扑图没有请求延时数据
+- **修复** 当集群状态异常时，Insight Agent 状态未更新
+- **修复** 拨测的配置文件中缺少 `metadata`
+- **修复** 日志告警的预览趋势图查询不准确且告警对象不准确
+- **修复** Insight Server Chart 中 `app.kubernetes.io/name` 字段重复出现
+
+### Insight Agent: v0.23.0
+
+#### 优化
+
+- **优化** 链路追踪的探针注入需要自动注入 `k8s_namespce_name`
+- **优化** 为每个已部署 Insight Agent 的集群自动生成并配置日志索引
+
 ## 2023.11.30
 
 ### Insight Server: v0.22.0
