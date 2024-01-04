@@ -522,11 +522,11 @@ nav:
                   - Volume: storage/terms/volume.md
                   - LVM: storage/terms/lvm.md
                   - PV and PVC: storage/terms/pv_pvc.md
-          - Virtualized Container:
+          - Virtual Machine:
               - Intro:
                   - Intro: virtnest/intro/index.md
                   - Release Notes: virtnest/intro/release-notes.md
-                  - Install VM Container: virtnest/intro/install.md
+                  - Install Virtual Machine: virtnest/intro/install.md
               - Quick Start:
                   - Install virtnest-agent: virtnest/quick-start/index.md
                   - Create VM: virtnest/quick-start/create-image.md
@@ -1103,7 +1103,7 @@ nav:
                   - Security: download/modules/dowl.md
                   - Network: download/modules/spidernet.md
                   - Storage: download/modules/hwameistor.md
-                  - VM Container: download/modules/virtnest.md
+                  - Virtual Machine: download/modules/virtnest.md
               - MultiCloud Management: download/modules/kairship.md
               - Container Registry: download/modules/kangaroo.md
               - Insight: download/modules/insight.md
