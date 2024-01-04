@@ -25,8 +25,6 @@ hide:
 
 **自定义资源示例：**
 
-**CRD example**
-
 ```yaml
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
@@ -66,23 +64,15 @@ spec:
 
     ![创建cr](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/crd05.png)
 
-2. 在 __YAML 创建__ 页面中，先填写 CR 的 YAML 信息，支持下载和导入功能。
+2. 在 __YAML 创建__ 页面中，先填写 CR 的 YAML 信息，支持下载和导入功能。部署策略和差异化策略为选填内容。
 
-    ![yaml创建cr](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/crd06.png)
+    ![yaml创建cr](../images/crd06.png)
 
-3. 再填写部署策略，用来指定想要分发在哪些集群。注意需要将部署策略的 YAML 信息根据需要传播的资源的信息进行填写：
-   __spec__ 的 __resourceSelector__ 中 __apiVersion__ 、 __kind__ 、 __namespace__ 、 __name__ 四个参数需要和所需要传播的资源保持一致。
-   若没有差异化需求，差异化策略可不填。
-
-    ![必填pp](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/crd07.png)
-
-4. 返回 CR 实例列表页，即可查看刚刚创建的名为 __my-new-cron-obiext__ 的 CR 实例。
+3. 返回 CR 实例列表页，即可查看刚刚创建的名为 __my-new-cron-obiext__ 的 CR 实例。
 
     ![创建成功](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/crd08.png)
 
 **CR 示例：**
-
-**CR example**
 
 ```yaml
 apiVersion: "stable.example.com/v1"
