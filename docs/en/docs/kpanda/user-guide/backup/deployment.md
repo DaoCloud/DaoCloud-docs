@@ -40,7 +40,7 @@ Refer to the following steps to back up the stateless workload __dao-2048__ .
 
 4. Refer to the instructions below to set the backup execution frequency, and then click __Next__ .
 
-    - Backup frequency: Set the time period for task execution based on minutes, hours, days, weeks, and months. Support custom Cron expressions with numbers and __*__ , **after inputting the expression, the meaning of the current expression will be prompted**. For detailed expression syntax rules, refer to [Cron Schedule Syntax](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/#cron-schedule-syntax).
+    - Backup frequency: Set the time period for task execution based on minutes, hours, days, weeks, and months. Support custom Cron expressions with numbers and `*` , **after inputting the expression, the meaning of the current expression will be prompted**. For detailed expression syntax rules, refer to [Cron Schedule Syntax](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/#cron-schedule-syntax).
     - Retention period (days): Set the storage time of backup resources, the default is 30 days, and will be deleted after expiration.
     - Backup data volume (PV): Whether to back up the data in the data volume (PV), support direct copy and use CSI snapshot.
         - Direct copy: directly copy the data in the data volume (PV) for backup;

@@ -178,7 +178,7 @@ so that you can understand the evolution path and feature changes of each versio
 - Access Control： Webhook API (Create/Edit/Delete/List/View)
 - User CRUD/Login/Logout event triggers webhook
 - Access Control provides permission points
-- Username/group name supports __.__ and __@__ 
+- Username/group name supports `.` and `@` 
 - The default language of the platform is changed to automatically detect browser preferences.
 - Audit logs can be downloaded in Excel and CSV formats
 - Audit log: Two types of logs (system and user) are displayed separately

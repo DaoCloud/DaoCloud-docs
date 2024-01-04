@@ -87,11 +87,11 @@ Please note the following:
 
 Lucene supports the following wildcard queries:
 
-1. __*__ wildcard: Used to match zero or more characters.
+1. `*` wildcard: Used to match zero or more characters.
 
     For example, __te*t__ can match "test", "text", "tempest", etc.
 
-2. __?__ wildcard: Used to match a single character.
+2. `?` wildcard: Used to match a single character.
 
     For example, __te?t__ can match "test", "text", etc.
 
@@ -104,11 +104,11 @@ te?t
 In the above example, __te?t__ represents a word that starts with "te", followed by
 any single character, and ends with "t". This query can match words like "test", "text", "tent", etc.
 
-It is important to note that the question mark ( __?__ ) represents only a single character.
+It is important to note that the question mark ( `?` ) represents only a single character.
 If you want to match multiple characters or varying lengths of characters, you can use the
-asterisk ( __*__ ) for multi-character wildcard matching. Additionally, the question mark will not match an empty string.
+asterisk ( `*` ) for multi-character wildcard matching. Additionally, the question mark will not match an empty string.
 
-To summarize, in Lucene syntax, the question mark ( __?__ ) is used as a single-character wildcard
+To summarize, in Lucene syntax, the question mark ( `?` ) is used as a single-character wildcard
 to match any single character. By using the question mark in your search keywords, you can
 perform more flexible and specific pattern matching.
 
@@ -142,7 +142,7 @@ to represent a range. Here are examples of range queries:
        such as numeric fields, date fields, etc. Also, ensure that you correctly specify
        the boundary values as the actual value type of the field in your query.
        If you want to perform a range query across the entire index without specifying
-       a specific field, you can use the wildcard query __*__ instead of a field name.
+       a specific field, you can use the wildcard query `*` instead of a field name.
 
 #### Examples
 
