@@ -12,17 +12,16 @@
 - 适配 **Spiderpool v0.9.0**
 - 适配 **Egressgateway v0.4.0**
 
-### v0.12.0
+### v0.12.1
 
 #### 新功能
 
-- **新增** 支持界面配置 SR-IOV Policy，提供在宿主机上创建出 VF 并上报资源能力
+- **新增** 支持使用 IB-SRIOV CNI 和 IPoIB CNI 的 InfiniBand 网卡
 - **新增** 支持查询 spiderpool 或者 egressgateway 的集群列表接口
 - **新增** 支持在 annotation 中有接口名称以支持多个网卡
 - **新增** 支持 multus 能够配置 SR-IOV 配置的带宽
 - **新增** 支持 multus 使用自定义类型的空配置
 - **新增** 支持子网在双栈中的单 IP
-- **新增** 支持使用 IB-SRIOV 和 IPOIB CNI 的 InfiniBand
 
 #### 优化
 
