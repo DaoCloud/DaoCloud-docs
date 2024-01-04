@@ -1,4 +1,4 @@
-# Importing Custom Dashboards
+# Import Custom Dashboards
 
 By using Grafana CRD, you can incorporate the management and deployment of dashboards into the lifecycle management of Kubernetes. This enables version control, automated deployment, and cluster-level management of dashboards. This page describes how to import custom dashboards using CRD and the UI interface.
 
