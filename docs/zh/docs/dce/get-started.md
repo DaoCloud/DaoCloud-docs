@@ -11,6 +11,8 @@ hide:
 DCE 5.0 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的各项生产级功能，使得企业能够轻松构建和管理分布式应用程序。
 借助 DCE 5.0 的云原生天赋，企业可以充分利用云上云下优势，实现资源的最优利用，提高 IT 系统的可靠性和弹性，极大地加速应用程序的交付速度。
 
+*[DCE]: DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台
+
 !!! tip
 
     掌握容器化浪潮，畅享 DaoCloud Enterprise 5.0，从这里启航！
@@ -230,6 +232,10 @@ DCE 5.0 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的�
     - [Merbridge 服务网格加速](../community/merbridge.md)
 
 </div>
+
+*[Clusterpedia]: 内置在 DCE 5.0 中的多集群资源查询插件，捐献给 CNCF 后已入选 Sandbox
+*[HwameiStor]: 内置在 DCE 5.0 中的本地高可用存储方案，捐献给 CNCF 后已入选 Sandbox
+*[Merbridge]: 内置在 DCE 5.0 中基于 eBPF 构建的网格加速插件，捐献给 CNCF 后已入选 Sandbox
 
 !!! success
 

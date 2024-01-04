@@ -7,7 +7,7 @@ hide:
 
 !!! info
 
-    「DaoCloud 道客」开源生态启航!
+    「DaoCloud 道客」开源生态启航！这些是 DCE 5.0 相关的开源项目。
 
 <div class="grid cards" markdown>
 
@@ -126,7 +126,7 @@ hide:
 
     ---
 
-    使用 eBPF 加速您的服务网格，就像利用虫洞在网络世界中穿梭，已入选 CNCF 全景图和 Sandbox
+    使用 eBPF 加速您的服务网格，就像利用虫洞在网络世界中穿梭，已入选 CNCF Landscape 和 Sandbox
 
     [:octicons-arrow-right-24: 了解更多](./merbridge.md)
 
@@ -142,11 +142,11 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./miragedebug.md)
 
--   :spider:{ .lg .middle } __Spiderpool__  :simple-cncf: 已入选 CNCF Sandbox
+-   :spider:{ .lg .middle } __Spiderpool__  :simple-cncf: 已入选 CNCF Sandbox 和 Landscape
 
     ---
 
-    云原生网络 Underlay 和 RDMA 网络方案，已入选 CNCF Sandbox
+    云原生网络 Underlay 和 RDMA 网络方案，已入选 CNCF Sandbox 和 Landscape
 
     [:octicons-arrow-right-24: 了解更多](./spiderpool.md)
 
@@ -171,6 +171,8 @@ hide:
     [:octicons-arrow-right-24: 了解更多](./icons/index.md)
 
 </div>
+
+*[DCE]: DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台
 
 !!! success
 

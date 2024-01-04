@@ -7,6 +7,8 @@ hide:
 
 本页汇总 DCE 5.0 及云原生技术相关的博客和公众号文章，默认按时间排序。
 
+*[DCE]: DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台
+
 ## 2023 年
 
 - [20231220 | 高速网络方案 Spiderpool 入选 CNCF Sandbox](./231220-spiderpool.md)
