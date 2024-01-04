@@ -20,7 +20,7 @@
 
 1. 点击左侧导航栏上的`容器管理`，然后点击`虚拟机`，进入`虚拟机`页面。
 
-    ![虚拟机](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/createvm01.png)
+    ![虚拟机](../images/createvm01.png)
 
 2. 在虚拟机列表页面，点击`创建虚拟机` -> 选择`通过镜像创建`。
 
@@ -74,19 +74,68 @@
 
 ![存储与网络配置](../images/createvm06.png)
 
-- 存储：系统默认创建一个 VirtIO 类型的 rootfs 系统盘，用于存放操作系统和数据。
-  默认使用块存储。如果需要使用克隆和快照功能，请确保您的存储池支持 VolumeSnapshots 功能，
-  并在存储池（SC）中进行创建。请注意，存储池（SC）还有其他一些先决条件需要满足。
+- 存储：
+  
+    - 存储和虚拟机的功能息息相关，主要是通过使用 Kubernetes 的持久卷和存储类，提供了灵活且可扩展的虚拟机存储能力。比如虚拟机镜像存储在 pvc 里，支持和其他数据一起克隆、快照等。
 
-    - 先决条件：
+    - 系统盘：系统默认创建一个 VirtIO 类型的 rootfs 系统盘，用于存放操作系统和数据。
 
-        - KubeVirt 利用 Kubernetes CSI 驱动程序的 VolumeSnapshot 功能来捕获持久化虚拟机状态。
-          因此，您需要确保您的虚拟机使用由支持 VolumeSnapshots 的 StorageClass 并配置了正确的 VolumeSnapshotClass。
-        - 查看已创建的 Snapshotclass，并且确认 provisioner 属性同存储池中的 Driver 属性一致。
+    - 数据盘：数据盘是虚拟机中用于存储用户数据、应用程序数据或其他非操作系统相关文件的存储设备。与系统盘相比，数据盘是非必选的，可以根据需要动态添加或移除。数据盘的容量也可以根据需求进行灵活配置。
+    
+    - 默认使用块存储。如果需要使用克隆和快照功能，请确保您的存储池已经创建了对应的 VolumeSnapshotClass， 可以参考以下示例。如果需要使用实时迁移功能，请确保您的存储支持并选择了 ReadWriteMany 的访问模式 。
 
-        > 后续将支持多块数据盘。
+        - 参考示例：
 
-- 网络：若您不做任何配置，系统将默认创建一个 VirtIO 类型的网络。
+          - 大多数情况下，存储在安装过程中不会自动创建这样的 VolumeSnapshotClass，因此您需要手动创建 VolumeSnapshotClass。
+        
+            以下是一个 HwameiStor 创建 VolumeSnapshotClass 的示例：
+        
+          ```yaml
+          kind: VolumeSnapshotClass
+          apiVersion: snapshot.storage.k8s.io/v1
+          metadata:
+            name: hwameistor-storage-lvm-snapshot
+            annotations:
+              snapshot.storage.kubernetes.io/is-default-class: "true"
+          parameters:
+            snapsize: "1073741824"
+          driver: lvm.hwameistor.io
+          deletionPolicy: Delete
+          ```
+        
+          - 执行以下命令检查 VolumeSnapshotClass 是否创建成功。
+        
+          `kubectl get VolumeSnapshotClass`
+        
+          - 查看已创建的 Snapshotclass ，并且确认 provisioner 属性同存储池中的 Driver 属性一致。
+  
+- 网络：
+
+  - 网络配置可以根据表格信息按需组合，如果需要使用实时迁移功能，需要使用 Masquerade 的网络模式。
+  
+  - | **网络模式**      | **CNI** | **是否安装****spiderpool** | **网卡模式** | **固定** **IP** | **实时迁移** |
+    | ----------------- | ------- | -------------------------- | ------------ | --------------- | ------------ |
+    | Masquerade（NAT） | Calico  | ❌                          | 单网卡       | ❌               | ✅            |
+    |                   | Cilium  | ❌                          | 单网卡       | ❌               | ✅            |
+    |                   | Flannel | ❌                          | 单网卡       | ❌               | ✅            |
+    | Passt（直通）     | macvlan | ✅                          | 单网卡       | ✅               | ❌            |
+    |                   | ipvlan  | ✅                          | 多网卡       | ✅               | ❌            |
+    | Bridge（桥接）    | OVS     | ✅                          | 多网卡       | ✅               | ❌            |
+    
+   ![网络配置](../images/createvm-net01.png)
+  
+  - 网络模式分为 Masquerade（NAT）、Passt（直通）、Bridge（桥接）三种，后两种模式需要安装了 spiderpool 组件后方可使用。
+  
+    - 默认选择 Masquerade（NAT）的网络模式，使用 eth0 默认网卡。
+    - 若集群内安装了 spiderpool 组件，则支持选择 Passt（直通）/Bridge（桥接）模式，Bridge（桥接）模式支持多网卡形式。
+  
+   ![网络模式](../images/createvm-net02.png)
+    
+  - 添加网卡
+    
+    - Passt（直通）/Bridge（桥接）模式下支持手动添加网卡。点击`添加网卡`，进行网卡 IP 池的配置。选择和网络模式匹配的 Multus CR，若没有则需要自行创建。
+    - 若打开`使用默认 IP 池`开关，则使用 multus CR 配置中的默认 IP 池。若关闭开关，则手动选择 IP 池。
+   ![添加网卡](../images/createvm-net03.png)		
 
 ### 登录设置
 
