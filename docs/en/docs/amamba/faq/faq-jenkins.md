@@ -15,24 +15,24 @@ error: unexpected error when reading response body. Please retry. Original error
 **Solution:**
 
 In the pipeline's Jenkinsfile, change the deployment command from __kubectl apply -f__ to
-__kubectl apply -f. --request-timeout=30m__.
+__kubectl apply -f. --request-timeout=30m__ .
 
 ## Update __podTemplate__ image of built-in Labels
 
-The Workbench module declares 7 labels with the podTemplate CRD: __base__, __maven__, __mavenjdk11__,
-__go__, __go16__, __node.js__, and __python__. You can specify an Agent label to use the corresponding
+The Workbench module declares 7 labels with the podTemplate CRD: __base__ , __maven__ , __mavenjdk11__ ,
+__go__ , __go16__ , __node.js__ , and __python__ . You can specify an Agent label to use the corresponding
 podTemplate for your applications. If these build-in images cannot satisfy your need, update or
 add images with the following steps.
 
 1. Go to the __Container Management__ module and click the name of the cluster where the Jenkins component is running.
 
-2. In the left navigation bar, click __ConfigMaps & Secrets__ -> __ConfigMaps__.
+2. In the left navigation bar, click __ConfigMaps & Secrets__ -> __ConfigMaps__ .
 
 3. Search for __jenkins-casc-config__ and click __Edit YAML__ in the Actions column.
 
     ![screen](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/faq01.png)
 
-4. Under __data__ -> __jenkins.yaml__ -> __jenkins.clouds.kubernetes.templates__, select the podTemplate whose image you want to change.
+4. Under __data__ -> __jenkins.yaml__ -> __jenkins.clouds.kubernetes.templates__ , select the podTemplate whose image you want to change.
 
     ![screen](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/faq02.png)
 
@@ -45,7 +45,7 @@ file to change the dependency source. You can follow these steps:
 
 1. Go to the Container Management module and click the name of the cluster where the Jenkins component is running.
 
-2. In the left navigation bar, click __ConfigMaps & Secrets__ -> __ConfigMaps__.
+2. In the left navigation bar, click __ConfigMaps & Secrets__ -> __ConfigMaps__ .
 
 3. Search for __amamba-devops-agent__ and click __Edit YAML__ in the Actions column.
 
@@ -61,7 +61,7 @@ file to change the dependency source. You can follow these steps:
 
 1. Go to the Container Management module and click the name of the cluster where the Jenkins component is running.
 
-2. In the left navigation bar, click __ConfigMaps & Secrets__ -> __ConfigMaps__.
+2. In the left navigation bar, click __ConfigMaps & Secrets__ -> __ConfigMaps__ .
 
 3. Search for __insecure-registries__ and click __Edit YAML__ in the Actions column.
 
@@ -94,7 +94,7 @@ file to change the dependency source. You can follow these steps:
 ### Cluster runtime is Docker
 
 1. Open the Docker configuration file. On most Linux distributions, the configuration file
-   is located at __/etc/docker/daemon.json__. If it doesn't exist, please create this configuration file.
+   is located at __/etc/docker/daemon.json__ . If it doesn't exist, please create this configuration file.
 
 2. Add the repository address to the __insecure-registries__ field.
 

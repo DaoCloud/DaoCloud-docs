@@ -7,7 +7,7 @@
 
 1. 点击目标网关的名称进入网关概览页面，然后在左侧导航栏点击`域名管理`，在页面右上角点击`添加域名`。
 
-    ![添加域名](./images/add-domain-1.png)
+    ![添加域名](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/domain/images/add-domain-1.png)
 
 2. 填写配置信息
 
@@ -18,13 +18,13 @@
 
         > 目前仅支持选取已经存在的证书，自动签发证书和手动上传证书功能正在开发。
 
-        ![https](./images/add-domain-https.png)
+        ![https](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/domain/images/add-domain-https.png)
 
     - 本地限流：参考[本地限流](../api/api-policy.md#_6)
     - 跨域：参考[跨域](domain-policy.md#_2)
     <!-- 缺乏本地限流文档 -->
 
-    ![填写配置](./images/add-domain-2.png)
+    ![填写配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/domain/images/add-domain-2.png)
 
     <!--
     - 仅 HTTPS: 启用后，网关会拒绝此域名的 HTTP 请求
@@ -35,4 +35,4 @@
 
     点击`确定`后，将自动跳转到`域名管理`页面，可以在域名列表中看到刚才新建的域名。
 
-    ![添加成功](./images/domain-bingo.png)
+    ![添加成功](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/domain/images/domain-bingo.png)

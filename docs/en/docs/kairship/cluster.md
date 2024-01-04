@@ -8,23 +8,23 @@ After creating multicloud instances, you need to connect them to work clusters.
 
     If you want to establish network connectivity between work clusters, you need to create a mesh instance and manage work clusters on the Service Mesh page. For detailed steps, refer to [MultiCloud Network Interconnect](../mspider/user-guide/multicluster/cluster-interconnect.md).
 
-    ![Connect Cluster](images/cluster01.png)
+    ![Connect Cluster](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/cluster01.png)
 
 2. Select the work cluster you want to add and click __OK__ .
 
     If the target cluster you want to add is not listed, you can either integrate or create a cluster in the Container Management module. For more details, refer to [Cluster Integration](../kpanda/user-guide/clusters/integrate-cluster.md) or [Create Cluster](../kpanda/user-guide/clusters/create-cluster.md).
 
-    ![Confirm](images/cluster02.png)
+    ![Confirm](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/cluster02.png)
 
 ## Remove a Cluster
 
 1. Click the __⋮__ button on the right side of the cluster, and select __Remove__ from the pop-up menu.
 
-    ![Removal](images/cluster03.png)
+    ![Removal](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/cluster03.png)
 
 2. In the dialog box, enter the name of the cluster, and click __Confirm Removal__ after confirming that it is correct.
 
-    ![Removal](images/cluster04.png)
+    ![Removal](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/cluster04.png)
 
 !!! note
     - After removing a work cluster, the workloads of the cluster will no longer be managed by this multi-cloud instance.
@@ -34,7 +34,7 @@ After creating multicloud instances, you need to connect them to work clusters.
 
 The system will automatically return to the work cluster list. Click the __⋮__ button on the right side of the cluster to perform operations such as __Pause/Resume Schedule__ , __Edit Cluster Labels__ , and __Modify Cluster Taints__ .
 
-![More Operations](images/cluster05.png)
+![More Operations](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/cluster05.png)
 
 ## Pause/Resume Scheduling
 
@@ -59,4 +59,4 @@ The system will automatically return to the work cluster list. Click the __⋮__
     | NoSchedule  | Only nodes with tolerations matching this taint can be assigned to this cluster. |
     | NoExecute   | Define eviction behavior to deal with cluster failures. If the taint effect is defined as NoExecute, when the workload or pod is already running on this cluster, it will be evicted. If it is not running on this cluster, it will not be scheduled to this cluster either. |
 
-   ![Modify Cluster Taint](images/cluster06.png)
+   ![Modify Cluster Taint](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/cluster06.png)

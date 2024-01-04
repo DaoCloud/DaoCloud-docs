@@ -10,7 +10,7 @@ The corresponding GPU driver (NVIDIA GPU, NVIDIA MIG, Days, Ascend) has been dep
 
 Follow these steps to manage GPU quotas in DCE 5.0:
 
-1. Go to Namespaces and click `Quota Management` to configure the GPU resources that can be used by a specific namespace.
+1. Go to Namespaces and click __Quota Management__ to configure the GPU resources that can be used by a specific namespace.
 
     
 

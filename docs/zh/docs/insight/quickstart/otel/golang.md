@@ -12,17 +12,17 @@ OpenTelemetry 也简称为 OTel，是一个开源的可观测性框架，可以�
 切换/进入到应用程序源文件夹后运行以下命令：
 
 ```golang
-go get go.opentelemetry.io/otel@v1.8.0 \
-  go.opentelemetry.io/otel/trace@v1.8.0 \
-  go.opentelemetry.io/otel/sdk@v1.8.0 \
-  go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.33.0 \
-  go.opentelemetry.io/otel/exporters/otlp/otlptrace@v1.7.0 \
-  go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc@v1.4.1
+go get go.opentelemetry.io/otel@v1.19.0 \
+  go.opentelemetry.io/otel/trace@v1.19.0 \
+  go.opentelemetry.io/otel/sdk@v1.19.0 \
+  go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin@v0.46.1 \
+  go.opentelemetry.io/otel/exporters/otlp/otlptrace@v1.19.0 \
+  go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc@v1.19.0
 ```
 
 ### 使用 OTel SDK 创建初始化函数
 
-为了让应用程序能够发送数据，需要一个函数来初始化 OpenTelemetry。在 `main.go` 文件中添加以下代码片段:
+为了让应用程序能够发送数据，需要一个函数来初始化 OpenTelemetry。在 __main.go__ 文件中添加以下代码片段:
 
 ```golang
 import (
@@ -106,7 +106,7 @@ func handleErr(err error, message string) {
 
 ### 在 main.go 中初始化跟踪器
 
-修改 main 函数以在 main.go 中初始化跟踪器。另外当您的服务关闭时，应该调用 `TracerProvider.Shutdown()` 确保导出所有 Span。该服务将该调用作为主函数中的延迟函数：
+修改 main 函数以在 main.go 中初始化跟踪器。另外当您的服务关闭时，应该调用 __TracerProvider.Shutdown()__ 确保导出所有 Span。该服务将该调用作为主函数中的延迟函数：
 
 ```golang
 func main() {
@@ -120,7 +120,7 @@ func main() {
 
 ### 为应用添加 OTel Gin 中间件
 
-通过在 `main.go` 中添加以下行来配置 Gin 以使用中间件:
+通过在 __main.go__ 中添加以下行来配置 Gin 以使用中间件:
 
 ```golang
 import (
@@ -142,7 +142,7 @@ func main() {
 
     > 注意: 此步骤仅用于本地开发调试，生产环境中 Operator 会自动完成以下环境变量的注入。
 
-    以上步骤已经完成了初始化 SDK 的工作，现在如果需要在本地开发进行调试，需要提前获取到 insight-system 命名空间下 insight-agent-opentelemerty-collector 的地址，假设为：`insight-agent-opentelemetry-collector.insight-system.svc.cluster.local:4317`。
+    以上步骤已经完成了初始化 SDK 的工作，现在如果需要在本地开发进行调试，需要提前获取到 insight-system 命名空间下 insight-agent-opentelemerty-collector 的地址，假设为： __insight-agent-opentelemetry-collector.insight-system.svc.cluster.local:4317__ 。
 
     因此，可以在你本地启动应用程序的时候添加如下环境变量：
 
@@ -152,9 +152,9 @@ func main() {
 
 - 生产环境运行
 
-请参考[通过 Operator 实现应用程序无侵入增强](./operator.md) 中`只注入环境变量注解`相关介绍，为 deployment yaml 添加注解：
+请参考[通过 Operator 实现应用程序无侵入增强](./operator.md) 中 __只注入环境变量注解__ 相关介绍，为 deployment yaml 添加注解：
 
-```bash
+```console
 instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
 ```
 
@@ -307,7 +307,7 @@ span.SetAttributes(attribute.String("controller", "books"))
 
 ### 为当前 Span 添加 Event
 
-添加 span 事件是使用 span 对象上的 `AddEvent` 完成的。
+添加 span 事件是使用 span 对象上的 __AddEvent__ 完成的。
 
 ```golang
 span.AddEvent(msg)

@@ -22,7 +22,7 @@ Taking `Redis` as an example, the following steps explain how to configure `work
 
 1. During the process of creating a `Redis` instance, enable `workload anti-affinity` in `Service Settings` -> `Advanced Settings`.
 
-    ![Create](images/anti-affinity01.png)
+    ![Create](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/middleware/common/images/anti-affinity01.png)
 
 2. Fill in the configuration for workload anti-affinity according to the following instructions.
 
@@ -34,7 +34,7 @@ Taking `Redis` as an example, the following steps explain how to configure `work
     - Pod Selector: Set the Pod label. **Within the same topology domain, there can only be one Pod with this label**.
     - For detailed explanations of anti-affinity and various operators, please refer to [Operators](../../kpanda/user-guide/workloads/pod-config/scheduling-policy.md#_4).
 
-    ![Create](images/anti-affinity02.jpg)
+    ![Create](./images/anti-affinity02.jpg)
     
     !!! note
 

@@ -39,7 +39,7 @@
 5. 页面自动跳转到概览页面下的 Helm 应用列表，可查看当前集群下已经安装的 Helm 应用。
 
     > 点击应用名称可以跳转到容器管理模块查看应用详情。
-    
+
     ![高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/helm05.png)
 
 !!! note

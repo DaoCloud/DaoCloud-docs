@@ -10,7 +10,7 @@ hide:
 1. 用户管理
 
     拥有用户帐号，是用户访问 DCE 平台的前提。
-    [用户](../user-guide/access-control/user.md)由平台管理员 Admin 或者用户与访问控制管理员 IAM Owner 在`全局管理` -> `用户与访问控制` -> `用户`页面创建，或者通过 LDAP 对接而来。
+    [用户](../user-guide/access-control/user.md)由平台管理员 Admin 或者用户与访问控制管理员 IAM Owner 在 __全局管理__ -> __用户与访问控制__ -> __用户__ 页面创建，或者通过 LDAP 对接而来。
     每位用户拥有独立的用户名和密码，通过给单个或者一组用户授予不同的权限，让不同的用户拥有不同资源的访问权限。
 
     ```mermaid
@@ -89,7 +89,7 @@ hide:
     [外观定制](../user-guide/platform-setting/appearance.md)、
     [邮件服务器](../user-guide/platform-setting/mail-server.md)等。
     当需要对账号的安全信息、平台 logo、许可证授权、邮件服务器等平台级设置进行管理时，
-    可以通过`平台设置`进行操作，平台设置仅平台管理员具有管理权限。
+    可以通过 __平台设置__ 进行操作，平台设置仅平台管理员具有管理权限。
 
     ```mermaid
     graph LR

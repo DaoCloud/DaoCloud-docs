@@ -1,6 +1,6 @@
 # Welcome to sign up for the K8s Contributor Summit held in Shanghai
 
-![Kubecon](./images/kubecon01.png)
+![Kubecon](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/blogs/images/kubecon01.png)
 
 Date: September 26, 2023 (Tuesday)
 
@@ -50,8 +50,8 @@ For any questions regarding this summit, contact <summit-team@kubernetes.io>
 - [KubeCon + CloudNativeCon + Open Source Summit China 2023 Schedule](https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/program/schedule/)
 - [Contributor Summit Registration Page](https://wj.qq.com/s2/12996651/2260/)
 
-![Kubecon 2](./images/kubecon02.jpeg)
+![Kubecon 2](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/blogs/images/kubecon02.jpeg)
 
-![scan-code](./images/qr-code.jpeg)
+![scan-code](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/blogs/images/qr-code.jpeg)
 
 Scan QR code to join now!

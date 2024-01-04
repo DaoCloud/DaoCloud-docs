@@ -147,8 +147,8 @@ the evolution path and feature changes of each version.
 - **Improved**: Added sorting by span, latency, occurrence time, etc. to link queries.
 - **Improved**: Added search functionality to the dropdown menu for notification configuration in alert policies.
 - **Improved**: Added timezone formatting support to alert templates.
-- **Improved**: Upgraded `opentelemetry collector` Chart version from `0.50.1` to `0.59.3`.
-- **Improved**: Upgraded `opentelemetry Operator` Chart version from `0.26.1` to `0.30.1`.
+- **Improved**: Upgraded __opentelemetry collector__ Chart version from __0.50.1__ to __0.59.3__ .
+- **Improved**: Upgraded __opentelemetry Operator__ Chart version from __0.26.1__ to __0.30.1__ .
 
 #### Fixes
 
@@ -165,7 +165,7 @@ the evolution path and feature changes of each version.
 !!! warning
 
     In version v0.17.x, the kube-prometheus-stack chart version has been upgraded from 41.9.1 to 45.28.1.
-    There are also some field upgrades in the used CRDs, such as the `attachMetadata` field of servicemonitor.
+    There are also some field upgrades in the used CRDs, such as the __attachMetadata__ field of servicemonitor.
     Before upgrading Insight agent, please refer to:
     [Upgrading from v0.16.x (or lower) to v0.17.x](../quickstart/install/upgrade-note.md#v016x-v017x).
 
@@ -209,7 +209,7 @@ the evolution path and feature changes of each version.
 
 !!! warning
 
-     Insight v0.16.0 uses the new feature parameter `disableRouteContinueEnforce` of vmalertmanagers CRD,
+     Insight v0.16.0 uses the new feature parameter __disableRouteContinueEnforce__ of vmalertmanagers CRD,
      before upgrading insight server, please refer to [Upgrade from v0.15.x (or earlier) to v0.16.x](../quickstart/install/upgrade-note.md)
 
 #### New
@@ -303,7 +303,7 @@ the evolution path and feature changes of each version.
 - **Optimized** reduce Prometheus's metrics retention time to 2 hours
 - **Optimized** The default parameter of retentionPeriod of VMStorage is adjusted to 1 month
 - **Upgraded** fluentbit helm chart version to 0.24.0
-- **Updated** `tailing-sidecar/operator` mirror
+- **Updated** __tailing-sidecar/operator__ mirror
 - **Updated** Global collection rule interval is 60 seconds
 
 #### Fixes
@@ -315,7 +315,7 @@ the evolution path and feature changes of each version.
 - **Fixed** After advanced index query query, the overlapping part of the index association and chart in the drop-down box cannot be selected
 - **Fixed** Allow input of decimals when modifying the storage duration of historical alerts
 - **Fixed** Send multiple notifications when an alert rule generates multiple alerts
-- **Fixed** `configmap-reload` mirror error for `vmalert` and `vmalertmanager`
+- **Fixed** __configmap-reload__ mirror error for __vmalert__ and __vmalertmanager__ 
 - **Fixed** fluentbit for Insight Agent on ARM architecture
 
 ## 2023.01.10
@@ -324,7 +324,7 @@ the evolution path and feature changes of each version.
 
 #### Fixes
 
-- **Fixed** the problem that `kubernetes-event-exporter` image address in insight-agent is wrong
+- **Fixed** the problem that __kubernetes-event-exporter__ image address in insight-agent is wrong
 - **Fixed** Filter alerts API by resource name
 
 ## 2023.12.30
@@ -333,8 +333,8 @@ the evolution path and feature changes of each version.
 
 #### Fixes
 
-- **Fixed** Build offline package to add `.relok8s-images` file
-- **Fixed** Adjust the port name corresponding to the component `otel-collector` port in insight-agent
+- **Fixed** Build offline package to add __.relok8s-images__ file
+- **Fixed** Adjust the port name corresponding to the component __otel-collector__ port in insight-agent
 
 ## 2022.12.29
 
@@ -360,7 +360,7 @@ the evolution path and feature changes of each version.
 - **Fixed** DingTalk robot ending with '-'
 - **Fixed** case-insensitive fuzzy search in alert rules
 - **Fixed** service metric error delay calculation is not accurate
-- **Fixed** Jaeger query has `too many open files` problem
+- **Fixed** Jaeger query has __too many open files__ problem
 - **Fixed** es index rollover alias and cleanup strategy not working
 
 ## 2022.11.28
@@ -379,7 +379,7 @@ the evolution path and feature changes of each version.
 - **Upgraded** Fluentbit ARM architecture helm Chart version from
 - **Upgraded** kube-prometheus-stack helm Chart version upgraded from v39.6.0 to v41.9.1
 - **Updated** used Bitnami mirror, including grafana-operator, grafana, kubernetes-event-exporter
-- **Update** prometheus-related API proxy address, change `/prometheus` to `/apis/insight.io/prometheus`
+- **Update** prometheus-related API proxy address, change __/prometheus__ to __/apis/insight.io/prometheus__ 
 
 #### Fixes
 
@@ -397,24 +397,24 @@ the evolution path and feature changes of each version.
 
 #### Optimization
 
-- **Added** link troubleshooting and monitoring dashboard for component `Jaeger`
+- **Added** link troubleshooting and monitoring dashboard for component __Jaeger__ 
 - **Optimized** The alert list and message template list support sorting
-- **optimized** to filter out clusters without `insight-agent` installed
+- **optimized** to filter out clusters without __insight-agent__ installed
 - **Optimized** sort by span start time by default when trace query
 
 #### Bugfixes
 
-- **Fixed** no data `dashboard`, including OpenTelemetry related dashboards
+- **Fixed** no data __dashboard__ , including OpenTelemetry related dashboards
 - **Fixed** the problem that there is no content under some log paths
 - **Fixed** delete wrong alert rule: KubeletPodStartUpLatencyHigh
 
 #### Other
 
-- `victoria-metrics-k8s-stack` helm chart updated to v0.12.6
-- `opentelemetry-collector` helm chart upgraded from v0.23.0 to v0.37.2
-- `jaeger` helm chart upgraded from v0.57.0 to v0.62.1
-- `fluentbit` helm chart upgraded from v0.20.9 to v1.9.9
-- `kubernetes-event-exporter` helm chart upgraded from v1.4.21 to v2.0.0
+- __victoria-metrics-k8s-stack__ helm chart updated to v0.12.6
+- __opentelemetry-collector__ helm chart upgraded from v0.23.0 to v0.37.2
+- __jaeger__ helm chart upgraded from v0.57.0 to v0.62.1
+- __fluentbit__ helm chart upgraded from v0.20.9 to v1.9.9
+- __kubernetes-event-exporter__ helm chart upgraded from v1.4.21 to v2.0.0
 
 ## 2022-10-20
 
@@ -523,7 +523,7 @@ the evolution path and feature changes of each version.
 - Add global config api.
 - Disable cache in vmselect component.
 - Dock with ghippo roles.
-- Expose metric `insight_cluster_info` in server.
+- Expose metric __insight_cluster_info__ in server.
 - Add log.SearchLog API for SKoala, accept ES query DSL and return raw ES response.
 - Bump up OTelcol helm chart version to 0.21.1 and update otelcol architecture.
 - support mspider tracing.

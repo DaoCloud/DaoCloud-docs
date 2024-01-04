@@ -915,7 +915,7 @@
     再完全删除被标记为删除的资源。Finalizer 提醒控制器清理被删除的对象拥有的资源。
 
     当您告诉 Kubernetes 删除一个指定了 Finalizer 的对象时，
-    Kubernetes API 通过填充 __.metadata.deletionTimestamp__ 来标记要删除的对象，
+    Kubernetes API 通过填充 __ .metadata.deletionTimestamp__ 来标记要删除的对象，
     并返回 __202__ 状态码(HTTP "已接受") 使其进入只读状态。
     此时控制平面或其他组件会采取 Finalizer 所定义的行动，
     而目标对象仍然处于终止中（Terminating）的状态。

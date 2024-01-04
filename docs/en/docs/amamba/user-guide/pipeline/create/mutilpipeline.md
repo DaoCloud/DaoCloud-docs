@@ -18,7 +18,7 @@ Workbench pipeline supports the creation of multi-branch pipelines based on code
 
 1. Click __Create Pipeline__ on the pipeline list page.
 
-2. Select __Create multi-branch pipeline__ and click __OK__.
+2. Select __Create multi-branch pipeline__ and click __OK__ .
 
     <!--![]()screenshots-->
 
@@ -34,7 +34,7 @@ Workbench pipeline supports the creation of multi-branch pipelines based on code
 
 4. Refer to the instructions below to fill in branch discovery policy, scan trigger, branch settings, and clone configuration information.
 
-    - Open discovery branch: the default value is __.*__, and the branch is filtered by regular expression.
+    - Open discovery branch: the default value is __ .*__ , and the branch is filtered by regular expression.
     - Turn on multi-branch scanning: After it is turned on, once there is a branch change in the code warehouse, it will be synchronized.
     - Scanning interval: Scan the code warehouse according to the preset interval to check whether it is updated again.
     - Delete old branches: After enabled, old branches and pipelines will be deleted according to the policy

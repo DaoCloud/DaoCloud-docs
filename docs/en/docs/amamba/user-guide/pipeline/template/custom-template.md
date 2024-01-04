@@ -14,7 +14,7 @@ Workbench module supports custom pipeline templates. Users can create pipeline t
 
     <!--![]()screenshots-->
 
-2. Fill in the basic information with reference to the instructions below, and click __OK__.
+2. Fill in the basic information with reference to the instructions below, and click __OK__ .
 
     - Template name: fill in the name of the pipeline template.
     - Description information: The description information of the current pipeline supports Chinese.

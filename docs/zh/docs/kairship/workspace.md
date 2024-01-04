@@ -25,9 +25,9 @@
 2. 点击 __多云实例__ 或 __多云命名空间__ 页签，查看所有多云实例和命名空间当前的绑定状态。
 3. 在目标实例/命名空间的最右侧点击更多操作按钮，选择 __绑定工作空间__ / __解绑工作空间__ 。
 
-    ![管理界面](images/workspace01.png)
+    ![管理界面](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/workspace01.png)
 
 4. 绑定时选择需要将该实例/命名空间和哪个工作空间绑定。解绑时确认操作即可。
 
-    ![绑定/解绑](images/workspace02.png)
-    ![绑定/解绑](images/ws04.png)
+    ![绑定/解绑](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/workspace02.png)
+    ![绑定/解绑](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/ws04.png)

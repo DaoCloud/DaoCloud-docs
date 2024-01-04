@@ -4,13 +4,13 @@ Through node monitoring, you can get an overview of the current health status of
 
 ## Prerequisites
 
-- The cluster has [insight-agent installed](../../quickstart/install/install-agent.md) and the application is in `running` state.
+- The cluster has [insight-agent installed](../../quickstart/install/install-agent.md) and the application is in __running__ state.
 
 ## Steps
 
-1. Go to the `Insight` product module.
+1. Go to the __Insight__ product module.
 
-2. Select `Infrastructure` > `Nodes` from the left navigation pane. On this page, you can view the following information:
+2. Select __Infrastructure__ > __Nodes__ from the left navigation pane. On this page, you can view the following information:
 
     1. **Cluster Switching**: Use the dropdown at the top to switch between clusters.
     2. **Node List**: Shows a list of nodes within the selected cluster. Click a specific node to view detailed information.

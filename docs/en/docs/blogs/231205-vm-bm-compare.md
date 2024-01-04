@@ -4,7 +4,7 @@ A detailed comparison of CPU, RAM, storage and network performance between Kuber
 
 Nov 24th, 2023 6:30am by [Oleg Zinovyev](https://thenewstack.io/author/oleg-zinovyev/)
 
-![vm and bm](./images/vm00.png)
+![vm and bm](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/blogs/images/vm00.png)
 
 Many people presume that a Kubernetes cluster deployed on bare metal performs better than one deployed on virtual machines,
 but until now there hasn’t been any proof of that assumption. At Gcore, we only provide our customers with information grounded
@@ -20,7 +20,7 @@ which focuses only on the performance comparison.
 When you deploy a Kubernetes cluster on VMs, you get additional layers of infrastructure compared to bare metal (BM) —
 a hypervisor and a guest operating system.
 
-![vm and bm](./images/vm01.png)
+![vm and bm](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/blogs/images/vm01.png)
 
 *Figure 1: The difference between bare metal and VM architecture.*
 
@@ -65,7 +65,7 @@ Their configurations were similar. As test workloads, we ran:
 
 Here is the table summarizing the most important test results:
 
-![test results](./images/vm02.png)
+![test results](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/blogs/images/vm02.png)
 
 Evidently, the bare metal cluster was more efficient in all cases.
 
@@ -84,7 +84,7 @@ gives a clear indication of the tested CPU’s performance.
 
 Here are the CPU speed comparison results:
 
-![comparison](./images/vm03.png)
+![comparison](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/blogs/images/vm03.png)
 
 *Figure 3: The bare metal cluster CPU was more than twice as fast as the VM cluster CPU.*
 
@@ -93,11 +93,11 @@ it was 21.46 seconds. So, the bare metal cluster was more than twice as fast.
 
 Here is the CPU utilization test result for the VM cluster:
 
-![cpu test result](./images/vm04.png)
+![cpu test result](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/blogs/images/vm04.png)
 
 *Figure 4: The VM cluster CPU was utilized at 86.81% on average.*
 
-![average cpu](./images/vm05.png)
+![average cpu](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/blogs/images/vm05.png)
 
 *Figure 5: Per core usage information for the VM cluster CPU.*
 
@@ -115,7 +115,7 @@ capacity is being utilized by all VMs running on that host.
 
 Here is the CPU utilization test result for the bare metal cluster:
 
-![cpu for bare metal](./images/vm06.png)
+![cpu for bare metal](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/blogs/images/vm06.png)
 
 *Figure 6: The bare metal cluster’s CPU was utilized at 43.75% on average.*
 
@@ -127,7 +127,7 @@ the test showed that the bare metal cluster was about twice as efficient as the 
 For the RAM test, [we used sysbench](https://github.com/akopytov/sysbench) and transferred 6400 GB of data through RAM.
 Here are the key results for the write and read operations performed:
 
-![ram for bare metal](./images/vm07.png)
+![ram for bare metal](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/blogs/images/vm07.png)
 
 *Figure 7: The bare metal cluster RAM was about three times faster than the VM cluster RAM.*
 
@@ -145,7 +145,7 @@ testing 8 GB and 75 GB databases on the same cluster configurations.
 
 Here are the instances’ configurations:
 
-![storage test](./images/vm08.png)
+![storage test](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/blogs/images/vm08.png)
 
 *Figure 8: The bare metal and VM cluster configurations for the storage test.*
 
@@ -153,7 +153,7 @@ Here are the instances’ configurations:
 
 Here are the average results of the TPS comparison:
 
-![storage tps](./images/vm09.png)
+![storage tps](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/blogs/images/vm09.png)
 
 *Figure 9: The bare metal cluster storage TPS values were around twice as good as those of the VM cluster.*
 
@@ -164,7 +164,7 @@ The performance results for the 75 GB database were 4,636 and 12,029 TPS, respec
 
 Here are the averaged results of the latency tests:
 
-![latency test](./images/vm10.png)
+![latency test](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/blogs/images/vm10.png)
 
 *Figure 10: Bare metal outperforms VM in storage latency.*
 
@@ -190,7 +190,7 @@ went between the first and the second physical nodes. We can think of this as th
 out of all the tests. Figures 10 and 11 show the results of this test.
 Figure 10 shows the network bandwidth comparison with MSS values of 1, 2, 4 and 8:
 
-![network bandwidth](./images/vm11.png)
+![network bandwidth](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/blogs/images/vm11.png)
 
 *Figure 11: The bare metal cluster network bandwidth was five times greater than that of the VM cluster.*
 
@@ -200,7 +200,7 @@ of the bare metal cluster was five times greater than that of the VM cluster.
 
 Figure 12 shows the network latency comparison using the same MSS values:
 
-![network latency](./images/vm12.png)
+![network latency](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/blogs/images/vm12.png)
 
 *Figure 12: The BM cluster network latency is up to six times lower than that of the VM cluster.*
 

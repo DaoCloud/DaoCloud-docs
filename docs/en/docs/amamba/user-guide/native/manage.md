@@ -23,12 +23,12 @@ In the __App Workbench__ - __Overview__ page, click the __Native App__ tab and t
 
 ## Edit Basic Information of a Native Application
 
-1. Click the name of the native application and then click the __ⵈ__ in the upper-right corner of the page and select __Edit Basic Information__.
+1. Click the name of the native application and then click the __ⵈ__ in the upper-right corner of the page and select __Edit Basic Information__ .
 2. Set an alias or provide additional description as needed.
 
 
 ## View YAML of a Native Application
 
-1. Click the name of the native application and then click the __ⵈ__ in the upper-right corner of the page and select __View YAML__.
+1. Click the name of the native application and then click the __ⵈ__ in the upper-right corner of the page and select __View YAML__ .
 2. View the manifest file of the native application.
 

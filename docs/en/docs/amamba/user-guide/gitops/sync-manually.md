@@ -7,7 +7,7 @@ hide:
 
 This page demonstrates how to manually sync a continuously deployed application.
 
-1. On the __Workbench__ -> __continuous delivery__ page, click the name of an application whose synchronization status is __Not Synchronized__.
+1. On the __Workbench__ -> __continuous delivery__ page, click the name of an application whose synchronization status is __Not Synchronized__ .
 
     <!--![]()screenshots-->
 
@@ -29,4 +29,4 @@ This page demonstrates how to manually sync a continuously deployed application.
 
     <!--![]()screenshots-->
 
-1. Click __OK__, wait for the synchronization to be successful, and then check the synchronization result.
+1. Click __OK__ , wait for the synchronization to be successful, and then check the synchronization result.

@@ -91,3 +91,6 @@ zh:
 develop:
   - "scripts/**/*"
   - ".github/**/*"
+
+i18n:
+  - "docs/en/**/*"

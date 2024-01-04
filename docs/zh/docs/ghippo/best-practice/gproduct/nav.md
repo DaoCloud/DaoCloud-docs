@@ -5,7 +5,7 @@ hide:
 
 # 对接导航栏
 
-以容器管理（开发代号 `kpanda`）为例，对接到导航栏。
+以容器管理（开发代号 `kpanda` ）为例，对接到导航栏。
 
 对接后的预期效果如图：
 
@@ -44,15 +44,15 @@ hide:
     1. 当前只支持概览、工作台、容器、微服务、数据服务、管理，六选一
     2. 数字越大排在越上面
 
-    全局管理的导航栏 `category` 配置在 ConfigMap，暂时不能以注册方式增加，需要联系全局管理团队来添加。
+    全局管理的导航栏 __category__ 配置在 ConfigMap，暂时不能以注册方式增加，需要联系全局管理团队来添加。
 
-2. `Kpanda` 前端作为微前端接入到 DCE 5.0 父应用 Anakin 中
+2. `kpanda` 前端作为微前端接入到 DCE 5.0 父应用 Anakin 中
 
     前端使用 [qiankun](https://qiankun.umijs.org/zh) 来接入子应用 UI，
     可以参考[快速上手](https://qiankun.umijs.org/zh/guide/getting-started)。
 
     在注册 GProductNavigator CR 后，接口会生成对应的注册信息，供前端父应用注册使用。
-    例如 `Kpanda` 就会生成以下注册信息：
+    例如 `kpanda` 就会生成以下注册信息：
 
     ```go
     {

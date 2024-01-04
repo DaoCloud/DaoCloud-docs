@@ -4,7 +4,7 @@ This page explains how to install or upgrade the security management module afte
 
 !!! info
 
-    The term `dowl` appearing in the following commands or scripts is the internal development codename for the security management module.
+    The term __dowl__ appearing in the following commands or scripts is the internal development codename for the security management module.
 
 ## Loading Images from the Downloaded Package
 
@@ -14,9 +14,9 @@ You can load the images using one of the following two methods. It is recommende
 
 By using chart-syncer, you can upload the charts from the downloaded package along with their dependent image packages to the image repository and Helm repository used by the installer to deploy DCE.
 
-First, find a node that can connect to both the image repository and the Helm repository (such as the spark node). On this node, create a `load-image.yaml` configuration file and fill in the necessary information like the image repository and Helm repository configurations.
+First, find a node that can connect to both the image repository and the Helm repository (such as the spark node). On this node, create a __load-image.yaml__ configuration file and fill in the necessary information like the image repository and Helm repository configurations.
 
-1. Create `load-image.yaml`
+1. Create __load-image.yaml__ 
 
     !!! note  
 
@@ -134,7 +134,7 @@ There are two methods for upgrading. Choose the corresponding upgrade method bas
         helm repo update dowl
         ```
 
-        1. If the helm version is too low, it may cause a failure. If it fails, try executing `helm update repo`.
+        1. If the helm version is too low, it may cause a failure. If it fails, try executing __helm update repo__ .
 
     4. Select the security management version you want to install (it is recommended to install the latest version).
 
@@ -149,9 +149,9 @@ There are two methods for upgrading. Choose the corresponding upgrade method bas
         ...
         ```
 
-5. Backup the `--set` parameters.
+5. Backup the __--set__ parameters.
 
-    Before upgrading the security management version, it is recommended to run the following command to backup the `--set` parameters of the old version.
+    Before upgrading the security management version, it is recommended to run the following command to backup the __--set__ parameters of the old version.
 
     ```shell
     helm get values dowl -n dowl-system -o yaml > bak.yaml
@@ -164,9 +164,9 @@ There are two methods for upgrading. Choose the corresponding upgrade method bas
     kubectl apply -f dowl/crds
     ```
 
-7. Execute `helm upgrade`.
+7. Execute __helm upgrade__ .
 
-    Before upgrading, it is recommended to replace the `global.imageRegistry` field in `bak.yaml` with the image repository address you are currently using.
+    Before upgrading, it is recommended to replace the __global.imageRegistry__ field in __bak.yaml__ with the image repository address you are currently using.
 
     ```shell
     export imageRegistry={your_image_repository}
@@ -182,9 +182,9 @@ There are two methods for upgrading. Choose the corresponding upgrade method bas
 
 === "Upgrade via chart package"
 
-    1. Backup the `--set` parameters.
+    1. Backup the __--set__ parameters.
 
-        Before upgrading the security management version, it is recommended to run the following command to backup the `--set` parameters of the old version.
+        Before upgrading the security management version, it is recommended to run the following command to backup the __--set__ parameters of the old version.
 
         ```shell
         helm get values dowl -n dowl-system -o yaml > bak.yaml
@@ -196,9 +196,9 @@ There are two methods for upgrading. Choose the corresponding upgrade method bas
         kubectl apply -f ./crds
         ```
 
-    3. Execute `helm upgrade`.
+    3. Execute __helm upgrade__ .
 
-        Before upgrading, it is recommended to replace the `global.imageRegistry` field in `bak.yaml` with the image repository address you are currently using.
+        Before upgrading, it is recommended to replace the __global.imageRegistry__ field in __bak.yaml__ with the image repository address you are currently using.
 
         ```shell
         export imageRegistry={your_image_repository}

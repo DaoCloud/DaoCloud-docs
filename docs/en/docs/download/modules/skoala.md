@@ -1,4 +1,9 @@
-# Microservice Engine Skoala
+---
+hide:
+  - toc
+---
+
+# Microservice Engine
 
 On this page, you can download offline packages for various versions of the microservice engine module, including Helm Chart and images for the Skoala management component, as well as Helm Chart and images for the Skoala-Init cluster initialization component.
 

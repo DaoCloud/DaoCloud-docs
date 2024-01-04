@@ -55,12 +55,12 @@ MIG 允许多个 vGPU（以及虚拟机）在单个 GPU 实例上并行运行，
   GPU 内存切片大约是 GPU 内存资源总量的八分之一，包括容量和带宽。
 * __GPU SM Slice__ ：GPU SM 切片是 GPU 上 SM 的最小计算单位。在 MIG 模式下配置时，
   GPU SM 切片大约是 GPU 中可用 SMS 总数的七分之一。
-* __GPU Slice __ ：GPU 切片是 GPU 中由单个 GPU 内存切片和单个 GPU SM 切片组合在一起的最小部分。
+* __GPU Slice__ ：GPU 切片是 GPU 中由单个 GPU 内存切片和单个 GPU SM 切片组合在一起的最小部分。
 * __GPU Instance__ ：GPU 实例 （GI） 是 GPU 切片和 GPU 引擎（DMA、NVDEC 等）的组合。
   GPU 实例中的任何内容始终共享所有 GPU 内存切片和其他 GPU 引擎，但它的 SM 切片可以进一步细分为计算实例（CI）。
   GPU 实例提供内存 QoS。每个 GPU 切片都包含专用的 GPU 内存资源，这些资源会限制可用容量和带宽，并提供内存 QoS。
   每个 GPU 内存切片获得总 GPU 内存资源的八分之一，每个 GPU SM 切片获得 SM 总数的七分之一。
-* __Compute Instance __ ：GPU 实例的计算切片可以进一步细分为多个计算实例 （CI），其中 CI 共享父
+* __Compute Instance__ ：GPU 实例的计算切片可以进一步细分为多个计算实例 （CI），其中 CI 共享父
   GI 的引擎和内存，但每个 CI 都有专用的 SM 资源。
 
 ### GPU 实例（GI）

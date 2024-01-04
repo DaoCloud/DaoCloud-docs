@@ -2,7 +2,7 @@
 
 MirageDebug：用于 Kubernetes 应用的本地远程调试工具，实现完全真实环境的调试。
 
-![MirageDebug](./images/flow.d2.svg)
+![MirageDebug](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/images/flow.d2.svg)
 
 ## 安装
 

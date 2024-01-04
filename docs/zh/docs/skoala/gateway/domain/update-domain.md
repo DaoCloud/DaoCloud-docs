@@ -9,11 +9,11 @@
 
 - 在 `域名管理`页面找到需要更新的域名，在右侧点击 `ⵗ` 选择`修改基础信息`或`修改策略配置`或`修改安全配置`。
 
-    ![在列表页更新基础信息](./images/update-domain-1.png)
+    ![在列表页更新基础信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/domain/images/update-domain-1.png)
 
 - 点击域名名称进入域名详情页，在页面右上角点击`修改基础配置`更新基本信息，点击`修改策略配置`更新策略，点击`修改安全配置`更新安全配置。
 
-    ![在详情页更新](./images/update-domain-2.png)
+    ![在详情页更新](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/domain/images/update-domain-2.png)
 
 ## 删除域名
 
@@ -34,4 +34,4 @@
 
     如果域名正在被某个 API 使用，需要页面提示点击`查看服务详情`去删除对应的 API。<!--待ui更新后更新描述-->
 
-    ![在详情页删除](./images/delete-domain-3.png)
+    ![在详情页删除](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/domain/images/delete-domain-3.png)

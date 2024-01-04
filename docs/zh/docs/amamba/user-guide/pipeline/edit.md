@@ -32,7 +32,7 @@
 
     ![pipelisetting](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/editpipe02.png)
 
-2. 图形化编辑页面包括两个区域：__画布（左侧）__ 和 __阶段设置（右侧）__。
+2. 图形化编辑页面包括两个区域：__画布（左侧）__ 和 __阶段设置（右侧）__ 。
 
     ![canvasdescribe](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/canvasdescribe.png)
 

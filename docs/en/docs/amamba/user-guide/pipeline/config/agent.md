@@ -1,6 +1,6 @@
 # Pipeline node (Agent)
 
-Agent describes the entire __pipeline__ execution process or the execution environment of a certain __stage__, and must appear at the top of the __description file__ or each __stage__.
+Agent describes the entire __pipeline__ execution process or the execution environment of a certain __stage__ , and must appear at the top of the __description file__ or each __stage__ .
 
 This article describes how to extend the Jenkins Agent running in Kubernetes based on the [Kubernetes plugin for Jenkins](https://plugins.jenkins.io/kubernetes/) plugin.
 
@@ -10,7 +10,7 @@ This Kubernetes plugin will run a special container __jnlp__ in the Jenkins Agen
 
 ## Use the built-in Label
 
-Workbench declares 6 labels through the podTemplate capability: __base__, __maven__, __go__, __go16__, __node.js__ and __python__. You can specify a specific Agent label to use the corresponding podTemplate.
+Workbench declares 6 labels through the podTemplate capability: __base__ , __maven__ , __go__ , __go16__ , __node.js__ and __python__ . You can specify a specific Agent label to use the corresponding podTemplate.
 
 - Can use go podTemplate via __node('go')__ in Jenkinsfile.
 

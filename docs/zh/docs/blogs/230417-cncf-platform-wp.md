@@ -6,9 +6,9 @@
     还有言论说“DevOps 已死，平台工程才是未来“。开发者不愿意和基础设施打交道，企业发展又需要自己的基础设施。
     “平台工程”统一这两个矛盾点，或者说“平台工程”是 DevOps 的下一站。
 
-    ![cncf curve](images/cncf-blog01.png)
+    ![cncf curve](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/cncf-blog01.png)
     
-    ![cncf comments](images/cncf-blog02.png)
+    ![cncf comments](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/cncf-blog02.png)
 
     但关于平台工程的诠释，一直比较模糊。几天前，CNCF 的应用交付技术小组（App-Delivery TAG）（TAG：Technical Advisory Groups）
     发布了[《平台白皮书》](https://tag-app-delivery.cncf.io/whitepapers/platforms/) 让我们一起来看看吧。
@@ -235,7 +235,7 @@
 并在此过程中实施和执行安全、性能、成本治理和一致体验所需的实践。
 下图说明了产品、平台和能力提供者之间的关系。
 
-![platform components](images/platform_components.png)
+![platform components](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/platform_components.png)
 
 我们在本文中重点讨论了如何构建一个好的平台和平台团队；现在，在最后一节中，我们将描述平台实际可能提供的功能。
 此列表旨在指导平台如何建设，并包括云原生应用所需的功能。正如我们一直说的，一个好的平台反映了其用户的需求，

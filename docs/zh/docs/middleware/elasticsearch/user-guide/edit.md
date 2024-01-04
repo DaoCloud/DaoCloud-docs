@@ -7,7 +7,7 @@ hide:
 
 如果想要更新或修改 Elasticsearch 实例的资源配置，可以按照本页说明操作。
 
-1. 在 Elasticsearch 实例列表中，点击右侧的 `...` 按钮，在弹出菜单中选择`更新实例`。
+1. 在 Elasticsearch 实例列表中，点击右侧的 `⋮` 按钮，在弹出菜单中选择`更新实例`。
 
     ![更新实例](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/update01.png)
 

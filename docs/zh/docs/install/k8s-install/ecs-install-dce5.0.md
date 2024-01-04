@@ -9,7 +9,7 @@
 
 ## 开始部署
 
-在阿里云 ECS 部署 DCE5.0 时主要是负载均衡的能力需要特殊处理，由于虚拟机中不会安装 CloudProvider，LoadBalancer类型的 svc 无法被识别，所以要么是手动安装相关 CloudProvider，要么使用用 NodePort 的方式，所以目前提供了以下三种方案：
+在阿里云 ECS 部署 DCE 5.0 时主要是负载均衡的能力需要特殊处理，由于虚拟机中不会安装 CloudProvider，LoadBalancer类型的 svc 无法被识别，所以要么是手动安装相关 CloudProvider，要么使用用 NodePort 的方式，所以目前提供了以下三种方案：
 
 - 方案 1：NodePort + 阿里云 SLB
 - 方案 2：cloudLB + 部署 CCM 组件
@@ -79,7 +79,7 @@
 
     ![slb04](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/6.4.png)
 
-7. 修改 ghippo 反向代理配置，参考文档 https://docs.daocloud.io/ghippo/install/reverse-proxy/#_1，修改后直接通过 SLB 的公网 IP +Port 访问 DCE5.0。如下图：
+7. 修改 ghippo 反向代理配置，参考文档 https://docs.daocloud.io/ghippo/install/reverse-proxy/#_1，修改后直接通过 SLB 的公网 IP +Port 访问 DCE 5.0。如下图：
 
     ![ghippo](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/7.1.png)
 
@@ -148,7 +148,7 @@
 
     ![cc02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/ccm01.png)
 
-5. 继续安装 DCE5.0，将所有产品组件安装
+5. 继续安装 DCE 5.0，将所有产品组件安装
 
     通过 -j 参数指定 7+ 完成剩余步骤的执行。
 
@@ -156,7 +156,7 @@
     ./dce5-installer cluster-create -c sample/clusterConfig.yaml -j 7+
     ```
 
-6. 安装成功后，会默认创建公网的 LB 实例，并且可基于分配的 IP 来访问 DCE5.0。
+6. 安装成功后，会默认创建公网的 LB 实例，并且可基于分配的 IP 来访问 DCE 5.0。
 
     ![dce5.02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/dce501.png)
 

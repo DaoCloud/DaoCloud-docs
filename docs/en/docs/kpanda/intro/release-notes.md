@@ -75,7 +75,7 @@ This page provides the Release Notes for container management to help you unders
 
 #### New Features
 
-- **Added** Connectivity check for `Helm Repo` passwords, with support for skipping TLS certificate authentication.
+- **Added** Connectivity check for __Helm Repo__ passwords, with support for skipping TLS certificate authentication.
 - **Added** Scaling of worker nodes for global service machines.
 
 #### Improvements
@@ -91,7 +91,7 @@ This page provides the Release Notes for container management to help you unders
 - **Fixed** Issue of missing configuration parameters when updating Helm application instances.
 - **Fixed** Display error in associated instances for Networkpolicy.
 - **Fixed** Issue of cluster creation failure due to maximum pod count in cluster configuration.
-- **Fixed** Issue of failed creation of working clusters with `Redhat` type.
+- **Fixed** Issue of failed creation of working clusters with __Redhat__ type.
 - **Fixed** Issue of "no permission" error when namespace-level users view scheduled task details.
 - **Fixed** Issue of users unable to bind to workspaces.
 
@@ -125,7 +125,7 @@ This page provides the Release Notes for container management to help you unders
 - **Fixed** an issue where helm tasks remained in "Installing" or "Uninstalling" state.
 - **Fixed** kernel version detection error when checking node creation.
 - **Fixed** an issue where customizing namespaces was not possible for plugin cluster creation.
-- **Fixed** default addition of `ca.crt` data in key updates.
+- **Fixed** default addition of __ca.crt__ data in key updates.
 
 ## 2023-7-06
 
@@ -138,7 +138,7 @@ This page provides the Release Notes for container management to help you unders
 - **Added** validation rules for environment variable rules when creating workloads.
 - **Added** edge load balancing and services.
 - **Added** dual-stack and system kernel as pre-check items for nodes.
-- **Added** the ability to mount secretKey/configmapKey as configuration items inside containers when creating workloads.
+- **Added** the ability to mount secretKey/configmapKey as ConfigMaps inside containers when creating workloads.
 
 #### Improvements
 
@@ -228,7 +228,7 @@ This page provides the Release Notes for container management to help you unders
 - **Added** ability to query PVC events using the interface.
 - **Added** configuration of parameters such as backofflimit, completions, parallelism, and activeDeadlineSeconds while creating a task
 - **Added** integration of self-developed open source storage component Hwameistor and support for viewing
-  local storage resource overview and other information in the `container storage` module
+  local storage resource overview and other information in the __container storage__ module
 - **Added** cluster patrol feature supporting second-level patrol (Alpha) of the cluster
 - **Added** application backup feature supporting quick backup and recovery (Alpha)
 - **Added** platform backup feature supporting backup and recovery (Alpha) of ETCD data
@@ -269,7 +269,7 @@ This page provides the Release Notes for container management to help you unders
 #### Optimizations
 
 - **Optimized** Cluster details page, experience of cluster switching.
-- **Optimized** Workload status display, add `Stopped` status.
+- **Optimized** Workload status display, add __Stopped__ status.
 - **Optimized** Manual scaling window of workload increased to simplify user's manual scaling process.
 - **Optimized** Accessing DCE 4.X cluster from cluster.
 - **Optimized** Resync Workspace removes unwanted permissions properly.

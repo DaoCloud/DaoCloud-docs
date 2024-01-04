@@ -14,7 +14,7 @@ Opentelemetry Agent 也针对常见的 Java Server 或框架内置了一些监�
 
 Opentelemetry Agent 也内置了一些中间件监控的样例，请参考 [预定义指标](https://github.com/open-telemetry/opentelemetry-java-instrumentation/blob/main/instrumentation/jmx-metrics/javaagent/README.md#predefined-metrics)。
 
-默认没有指定任何类型，需要通过 `-Dotel.jmx.target.system` JVM Options 指定,比如 `-Dotel.jmx.target.system=jetty,kafka-broker`。
+默认没有指定任何类型，需要通过 __-Dotel.jmx.target.system__ JVM Options 指定,比如 __-Dotel.jmx.target.system=jetty,kafka-broker__ 。
 
 ## 参考
 

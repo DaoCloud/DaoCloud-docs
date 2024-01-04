@@ -1,6 +1,6 @@
 ## Pipeline Template File
 
-The pipeline template file mainly contains two parts: __parameterDefinitions__ and __jenkinsfileTemplate__.
+The pipeline template file mainly contains two parts: __parameterDefinitions__ and __jenkinsfileTemplate__ .
 
 - The __parameterDefinitions__ section defines which parameters are exposed in the pipeline template. Multiple parameter types are supported, such as booleans, drop-down lists, credentials, passwords, and text.
 - The __jenkinsfileTemplate__ section defines a __jenkinsfile__ for the Jenkins pipeline and can reference the parameters exposed in __parameterDefinitions__ part.

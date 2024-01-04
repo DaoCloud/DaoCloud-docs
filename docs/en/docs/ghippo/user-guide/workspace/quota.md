@@ -43,11 +43,11 @@ This section demonstrates three scenarios related to resource quotas.
 
 Creating a namespace involves resource quotas.
 
-1. Add a shared cluster to workspace `ws01`.
+1. Add a shared cluster to workspace __ws01__ .
 
     ![Add Shared Cluster](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/quota03.png)
 
-2. Select workspace `ws01` and the shared cluster in the Workbench, and create a namespace `ns01`.
+2. Select workspace __ws01__ and the shared cluster in the Workbench, and create a namespace __ns01__ .
 
     ![Create Namespace](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/quota04.png)
 

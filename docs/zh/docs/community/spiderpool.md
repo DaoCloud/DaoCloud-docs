@@ -18,7 +18,7 @@ Spiderpool 是为 Kubernetes 定制的 Underlay 和 RDMA 网络方案，它增�
 
 Spiderpool 的核心功能如下：
 
-![key features](./images/spider-arch.png)
+![key features](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/images/spider-arch.png)
 
 参阅 [Spiderpool 固定 IP 场景视频](../videos/use-cases.md#ip)和[入选 CNCF Sandbox 的博文](../blogs/231220-spiderpool.md)。
 

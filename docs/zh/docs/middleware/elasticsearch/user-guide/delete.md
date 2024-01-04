@@ -11,7 +11,7 @@ hide:
 
         删除实例后，该实例相关的所有信息也会被全部删除，请谨慎操作。
 
-1. 在 Elasticsearch 实例列表中，点击右侧的 `...` 按钮，在弹出菜单中选择`删除实例`。
+1. 在 Elasticsearch 实例列表中，点击右侧的 `⋮` 按钮，在弹出菜单中选择`删除实例`。
 
     ![删除实例](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/delete01.png)
 

@@ -205,10 +205,10 @@
 
 ### 验证效果
 
-访问地址： __http://{istio-ingressgateway LB IP}:8082__ ，得到如下所示的访问效果。
+访问地址：`http://{istio-ingressgateway LB IP}:8082`，得到如下所示的访问效果。
 
-此界面会并发调用 __http://{istio-ingressgateway LB IP}:8082/color__ ，将获取到颜色信息填充到方格中。
-在灰度发布对象中，指定的颜色为 __blue、yellow__，会按照定义规则 1:9 的流量比进行展示。
+此界面会并发调用 `http://{istio-ingressgateway LB IP}:8082/color`，将获取到颜色信息填充到方格中。
+在灰度发布对象中，指定的颜色为 __blue、yellow__ ，会按照定义规则 1:9 的流量比进行展示。
 
 ![效果示意](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/argorollout06.png)
 

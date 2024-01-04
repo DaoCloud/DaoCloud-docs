@@ -12,7 +12,7 @@ Refer to the following steps to modify the metric data retention period.
     kubectl edit vmcluster insight-victoria-metrics-k8s-stack -n insight-system
     ```
 
-2. In the Yaml file, the default value of `retentionPeriod` is `14`, and the unit is `day`. You can modify the parameters according to your needs.
+2. In the Yaml file, the default value of __retentionPeriod__ is __14__ , and the unit is __day__ . You can modify the parameters according to your needs.
 
     ```Yaml
     apiVersion: operator.victoriametrics.com/v1beta1
@@ -55,7 +55,7 @@ Refer to the following steps to modify the log data retention period:
 
 ### Method 1: Modify the Json file
 
-1. Modify the `max_age` parameter in the `rollover` field in the following files, and set the retention period. The default storage period is `7d`. Change `http://localhost:9200` to the address of `elastic`.
+1. Modify the __max_age__ parameter in the __rollover__ field in the following files, and set the retention period. The default storage period is __7d__ . Change `http://localhost:9200` to the address of __elastic__ .
 
     ```json
     curl -X PUT "http://localhost:9200/_ilm/policy/insight-es-k8s-logs-policy?pretty" -H 'Content-Type: application/json' -d'
@@ -103,19 +103,19 @@ Refer to the following steps to modify the log data retention period:
 
 ### Method 2: Modify from the UI
 
-1. Log in `kibana`, select `Stack Management` in the left navigation bar.
+1. Log in __kibana__ , select __Stack Management__ in the left navigation bar.
 
     
 
-2. Select the left navigation `Index Lifecycle Polices`, and find the index `insight-es-k8s-logs-policy`, click to enter the details.
+2. Select the left navigation __Index Lifecycle Polices__ , and find the index __insight-es-k8s-logs-policy__ , click to enter the details.
 
     
 
-3. Expand the `Hot phase` configuration panel, modify the `Maximum age` parameter, and set the retention period. The default storage period is `7d`.
+3. Expand the __Hot phase__ configuration panel, modify the __Maximum age__ parameter, and set the retention period. The default storage period is __7d__ .
 
     
 
-4. After modification, click `Save policy` at the bottom of the page to complete the modification.
+4. After modification, click __Save policy__ at the bottom of the page to complete the modification.
 
     
 
@@ -125,7 +125,7 @@ Refer to the following steps to modify the trace data retention period:
 
 ### Method 1: Modify the Json file
 
-1. Modify the `max_age` parameter in the `rollover` field in the following files, and set the retention period. The default storage period is `7d`. At the same time, modify `http://localhost:9200` to the access address of `elastic`.
+1. Modify the __max_age__ parameter in the __rollover__ field in the following files, and set the retention period. The default storage period is __7d__ . At the same time, modify `http://localhost:9200` to the access address of __elastic__ .
 
     ```json
     curl -X PUT "http://localhost:9200/_ilm/policy/jaeger-ilm-policy?pretty" -H 'Content-Type: application/json' -d'
@@ -173,18 +173,18 @@ Refer to the following steps to modify the trace data retention period:
 
 ### Method 2: Modify from the UI
 
-1. Log in `kibana`, select `Stack Management` in the left navigation bar.
+1. Log in __kibana__ , select __Stack Management__ in the left navigation bar.
 
     
 
-2. Select the left navigation `Index Lifecycle Polices`, and find the index `jaeger-ilm-policy`, click to enter the details.
+2. Select the left navigation __Index Lifecycle Polices__ , and find the index __jaeger-ilm-policy__ , click to enter the details.
 
     
 
-3. Expand the `Hot phase` configuration panel, modify the `Maximum age` parameter, and set the retention period. The default storage period is `7d`.
+3. Expand the __Hot phase__ configuration panel, modify the __Maximum age__ parameter, and set the retention period. The default storage period is __7d__ .
 
     
 
-4. After modification, click `Save policy` at the bottom of the page to complete the modification.
+4. After modification, click __Save policy__ at the bottom of the page to complete the modification.
 
     

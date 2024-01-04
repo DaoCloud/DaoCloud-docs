@@ -9,7 +9,7 @@ hide:
 
 1. 在实例列表中，点击右侧的 `...` 按钮，在弹出菜单中选择`删除实例`。
 
-    ![选择删除实例](../images/delete01.png)
+    ![选择删除实例](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/minio/images/delete01.png)
 
 2. 在弹窗中输入该实例列表的名称，确认无误后，点击`删除`按钮。
 

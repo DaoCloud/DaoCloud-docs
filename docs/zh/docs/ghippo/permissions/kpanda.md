@@ -17,12 +17,12 @@ hide:
 
     - 有关权限的更多信息，请参阅[容器管理权限体系说明](../../kpanda/user-guide/permissions/permission-brief.md)。
     - 有关角色的创建、管理和删除，请参阅[角色和权限管理](../user-guide/access-control/role.md)。
-    - `Cluster Admin`, `NS Admin`, `NS Editor`, `NS Viewer` 的权限仅在当前的集群或命名空间内生效。
+    - __Cluster Admin__ , __NS Admin__ , __NS Editor__ , __NS Viewer__ 的权限仅在当前的集群或命名空间内生效。
 
 各角色所具备的权限如下：
 
 <!--
-有权限使用`&check;`，无权限使用`&cross;`
+有权限使用 `&check;`，无权限使用 `&cross;`
 -->
 
 | 一级功能 | 二级功能               | 权限点                   | Cluster Admin | Ns Admin | Ns Editor       | NS Viewer      |

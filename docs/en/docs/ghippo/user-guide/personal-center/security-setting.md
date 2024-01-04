@@ -12,14 +12,14 @@ Function description: It is used to fill in the email address and modify the log
 
 The specific operation steps are as follows:
 
-1. Log in to the DCE 5.0 with your username/password. Click `Global Management` at the bottom of the left navigation bar.
+1. Log in to the DCE 5.0 with your username/password. Click __Global Management__ at the bottom of the left navigation bar.
 
-    
+    ![Global Management](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/user-guide/images/gm01.png)
 
-2. Click the username in the upper right corner and select `Personal Center`.
+2. Click the username in the upper right corner and select __Personal Center__ .
 
-    
+    ![Personal Center](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/user-guide/images/lang01.png)
 
-3. Click the `Security Settings` tab. Fill in your email address or change the login password.
+3. Click the __Security Settings__ tab. Fill in your email address or change the login password.
 
-    
+    ![Security Settings](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/user-guide/images/security01.png)

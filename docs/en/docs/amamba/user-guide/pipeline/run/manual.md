@@ -4,11 +4,11 @@ This page describes manual pipeline execution on the GUI, including immediate ex
 
 ## Run the pipeline immediately
 
-1. Select a pipeline on the pipeline list page, click __︙__, and click __Run Now__ in the pop-up menu.
+1. Select a pipeline on the pipeline list page, click __︙__ , and click __Run Now__ in the pop-up menu.
 
    <!--![]()screenshots-->
 
-2. Depending on whether the pipeline is configured with __build parameters__, the following two situations will occur after execution:
+2. Depending on whether the pipeline is configured with __build parameters__ , the following two situations will occur after execution:
 
    - If __Build Parameters__ is configured, a dialog box will appear and display relevant content for parameter configuration.
 
@@ -44,7 +44,7 @@ On the pipeline details page, according to the __execution ID__ in the pipeline 
 
 2. In the __Operation Record__ area, find the __Execution ID__ that needs to be canceled.
 
-3. Click __︙__ on the right, and click __Cancel__ in the pop-up menu (applicable to pipelines whose status is __Executing__).
+3. Click __︙__ on the right, and click __Cancel__ in the pop-up menu (applicable to pipelines whose status is __Executing__ ).
 
    <!--![]()screenshots-->
 

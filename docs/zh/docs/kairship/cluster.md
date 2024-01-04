@@ -20,7 +20,7 @@
 
 1. 在集群右侧点击 __…__ 按钮，在弹出菜单中选择 __移除__ 。
 
-    ![removal](images/cluster01.png)
+    ![removal](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/cluster01.png)
 
 2. 在弹窗中输入集群的名称，确认无误后点击 __删除__ 。
 

@@ -25,19 +25,19 @@ For integrated repositories, images appear on the list. You can manually scan im
 
 1. Go to the registry space, enter the image list, select an instance and registry space, and click an image.
 
-    ![Image List](../images/scan01.png)
+    ![Image List](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/scan01.png)
 
 2. In the image details list, click `⋮` on the right side of the list, and select `Scan` from the pop-up menu.
 
-    ![Scan](../images/scan02.png)
+    ![Scan](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/scan02.png)
 
 3. The system starts to scan the image, usually displaying the status `Queued`, `Scanning`, or `Complete`.
 
-    ![Queued](../images/scan03.png)
+    ![Queued](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/scan03.png)
 
-    ![Scanning](../images/scan04.png)
+    ![Scanning](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/scan04.png)
 
-    ![Complete](../images/scan05.png)
+    ![Complete](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/scan05.png)
 
     Scan status includes:
 
@@ -50,7 +50,7 @@ For integrated repositories, images appear on the list. You can manually scan im
 
 4. After the scan is complete, hover the cursor over the scale bar of the scan to view the scan details.
 
-    ![Details](../images/scan06.png)
+    ![Details](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/scan06.png)
 
 ## Scan Native Harbor Images
 
@@ -60,10 +60,10 @@ The specific steps are:
 
 1. Log in to the container registry as a platform administrator and click `Registry Management` at the bottom left.
 
-    ![Integrated Registry](../images/scan07.png)
+    ![Integrated Registry](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/scan07.png)
 
 2. In the list of integrated registry, hover the cursor over a certain registry and click the `Native Harbor` icon.
 
-    ![Go to NHR](../images/scan08.png)
+    ![Go to NHR](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/scan08.png)
 
 3. Jump to the native Harbor; see [Scanning Harbor images](https://goharbor.io/docs/2.1.0/administration/vulnerability-scanning/scan-individual-artifact/).

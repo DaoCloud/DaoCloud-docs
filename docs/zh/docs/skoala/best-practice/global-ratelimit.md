@@ -268,7 +268,7 @@ kubectl apply -f gateway-rls.yaml -n plugin-ns
 
 3. 域名配置全局限流策略（当然，前提是网关需要开启全局限流插件）。
 
-    ![域名全局限流策略](../images/rls-ip-rule.png)
+    ![域名全局限流策略](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/rls-ip-rule.png)
 
 4. 基于该域名的 API 访问，执行以下命令访问。
 

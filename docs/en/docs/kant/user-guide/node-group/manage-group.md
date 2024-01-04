@@ -12,11 +12,11 @@ Follow these steps:
 
 3. On the node group details page, click the `Edit Node Group` button at the top right corner.
 
-    ![Edit Node Group](../images/manage-group-01.png)
+    ![Edit Node Group](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kant/user-guide/images/manage-group-01.png)
 
 4. On the edit page, modify the node group configuration information.
 
-    ![Modify Node Group](../images/manage-group-02.png)
+    ![Modify Node Group](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kant/user-guide/images/manage-group-02.png)
 
 5. Click `OK` to complete the node group configuration modification. The system will automatically return to the node group details page.
 
@@ -30,4 +30,4 @@ Follow these steps:
 
 3. Click `Confirm` to finish the deletion.
 
-    ![Delete Node Group](../images/manage-group-03.png)
+    ![Delete Node Group](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kant/user-guide/images/manage-group-03.png)

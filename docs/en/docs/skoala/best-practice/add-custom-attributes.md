@@ -6,7 +6,7 @@ The specific steps are as follows:
 
 1. Go to the Microservice Engine - Cloud-Native Gateway List and locate the cluster and namespace where the gateway with the configuration to be modified is located.
 
-    ![Add Custom Attributes](./images/gwlist.png)
+    ![Add Custom Attributes](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/best-practice/images/gwlist.png)
 
 2. In the cluster and namespace where the gateway is located, search for the custom CR (ContourConfiguration).
 
@@ -27,11 +27,11 @@ The specific steps are as follows:
 
     Before editing:
 
-    ![Add Custom Attributes](./images/before-edit.png)
+    ![Add Custom Attributes](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/best-practice/images/before-edit.png)
 
     After editing:
 
-    ![Add Custom Attributes](./images/after-edit.png)
+    ![Add Custom Attributes](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/best-practice/images/after-edit.png)
 
 4. Restart the contour component (this will not cause any interruption to the traffic).
 
@@ -44,11 +44,11 @@ The specific steps are as follows:
 
 5. After the pods have started successfully, access the interface through the gateway API and observe the log fields in the gateway logs.
 
-    ![Add Custom Attributes](./images/logs.png)
+    ![Add Custom Attributes](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/best-practice/images/logs.png)
 
     Select a log entry and view the original text:
 
-    ![Add Custom Attributes](./images/logs1.png)
+    ![Add Custom Attributes](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/best-practice/images/logs1.png)
 
     The custom response header can be seen in the log entry.
 

@@ -28,13 +28,13 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
    
     应用过程中对客户系统的操作请根据实际情况进行调整。
 
-2. 规划客户系统的 subpath 路径：`http://192.168.1.6:30080/external-anyproduct/`
+2. 规划客户系统的 subpath 路径： `http://192.168.1.6:30080/external-anyproduct/` 
   （强烈建议使用辨识度高的名称作为 subpath，不能与主 DCE 5.0 的 HTTP router 发生冲突！！！）
 
 !!! note
 
     1. 本文采用了 HTTP 的方式部署 DCE 5.0，实际应用中可以使用 HTTP，或者使用公网的 TLS 证书。请勿使用自签的 TLS 证书。
-    2. 本文中的 `/external-anyproduct` 是客户系统的 subpath，请将它替换成你的 subpath。
+    2. 本文中的 __/external-anyproduct__ 是客户系统的 subpath，请将它替换成你的 subpath。
     3. 本文中 `http://192.168.1.6:30444` 是 DCE 5.0 的访问地址，
        `http://192.168.1.6:30080` 是客户系统的访问地址，请将它替换成你的 DCE 5.0 访问地址和客户系统访问地址。
 
@@ -43,7 +43,7 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 ### 为客户系统配置 subpath
 
 1. ssh 登录到客户系统服务器。
-1. 使用 vim 命令创建 `subpath-envoyfilter.yaml` 文件
+1. 使用 vim 命令创建 __subpath-envoyfilter.yaml__ 文件
 
     ```bash
     vim subpath-envoyfilter.yaml
@@ -130,7 +130,7 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
     helm get values ghippo -n ghippo-system > dce5-slave-values.yaml
     ```
 
-1. 使用 vim 命令，编辑 `dce5-slave-values.yaml` 文件：
+1. 使用 vim 命令，编辑 __dce5-slave-values.yaml__ 文件：
 
     ```bash
     vim dce5-slave-values.yaml
@@ -167,7 +167,7 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
       replicaCount: 1
     ```
 
-1. 使用 helm 命令，应用 `dce5-slave-values.yaml` 配置（注意：替换版本号）：
+1. 使用 helm 命令，应用 __dce5-slave-values.yaml__ 配置（注意：替换版本号）：
 
     ```bash
     helm upgrade ghippo ghippo/ghippo -n ghippo-system -f dce5-slave-values.yaml --version v0.19.2 --debug
@@ -183,7 +183,7 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 ### 为 DCE 5.0 配置客户系统的 jwksUri 发现地址
 
 1. ssh 登录到 DCE 5.0 服务器。
-1. 使用 vim 命令创建 `external-svc-anyproduct.yaml` 文件
+1. 使用 vim 命令创建 __external-svc-anyproduct.yaml__ 文件
 
     ```bash
     vim external-svc-anyproduct.yaml
@@ -267,29 +267,29 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 
 将客户系统与 DCE 5.0 平台通过 OIDC/OAUTH 等协议对接，使用户登录 DCE 5.0 平台后进入客户系统时无需再次登录。
 
-1. 在两套 DCE 5.0 的场景下，可以在 DCE 5.0 中通过`全局管理` -> `用户与访问控制` -> `接入管理`创建 SSO 接入。
+1. 在两套 DCE 5.0 的场景下，可以在 DCE 5.0 中通过 __全局管理__ -> __用户与访问控制__ -> __接入管理__ 创建 SSO 接入。
 
-    ![接入管理列表](./images/oemin-jierulist.png)
+    ![接入管理列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/oemin-jierulist.png)
 
-    ![接入管理列表](./images/oem-out01.png)
+    ![接入管理列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/oem-out01.png)
 
-2. 创建后将详情中的客户端 ID、密钥、单点登录 URL 等填写到客户系统的`全局管理` -> `用户与访问控制` -> `身份提供商` -> `OIDC` 中，完成用户对接。
+2. 创建后将详情中的客户端 ID、密钥、单点登录 URL 等填写到客户系统的 __全局管理__ -> __用户与访问控制__ -> __身份提供商__ -> __OIDC__ 中，完成用户对接。
 
-    ![oidc](./images/oeminoidc.png)
+    ![oidc](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/oeminoidc.png)
 
 3. 对接完成后，客户系统登录页面将出现 OIDC（自定义）选项，首次从 DCE 5.0 平台进入客户系统时选择通过 OIDC 登录，
    后续将直接进入客户系统无需再次选择。
 
-    ![登录页](./images/oeminlogin.png)
+    ![登录页](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/oeminlogin.png)
 
 ## 对接导航栏
 
 参考文档下方的 tar 包来实现一个空壳的前端子应用，把客户系统以 iframe 的形式放进该空壳应用里。
 
 1. 下载 gproduct-demo-main.tar.gz 文件，将 src 文件夹下 App-iframe.vue 中的 src 属性值改为用户进入客户系统的绝对地址，如：
-   `src="http://192.168.1.6/external-anyproduct" (DCE 5.0 地址 + subpath)` 或相对地址，如：`src="./external-anyproduct/insight"`
+   __src="http://192.168.1.6/external-anyproduct" (DCE 5.0 地址 + subpath)__ 或相对地址，如： __src="./external-anyproduct/insight"__ 
 
-    ![src 地址](./images/src.png)
+    ![src 地址](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/src.png)
 
 1. 删除 src 文件夹下的 App.vue 和 main.ts 文件，同时将：
     - App-iframe.vue 重命名为 App.vue
@@ -350,13 +350,13 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
           authnCheck: false
     ```
 
-1. 按照 readme 步骤构建镜像（注意：执行最后一步前需要将 `demo.yaml` 中的镜像地址替换成构建出的镜像地址）
+1. 按照 readme 步骤构建镜像（注意：执行最后一步前需要将 __demo.yaml__ 中的镜像地址替换成构建出的镜像地址）
 
-    ![构建镜像](./images/oemin-image.png)
+    ![构建镜像](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/oemin-image.png)
 
-对接完成后，将在 DCE 5.0 的一级导航栏出现`客户系统`，点击可进入客户系统。
+对接完成后，将在 DCE 5.0 的一级导航栏出现 __客户系统__ ，点击可进入客户系统。
 
-![客户系统](./images/oemin-menu.png)
+![客户系统](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/oemin-menu.png)
 
 ## 定制外观
 
@@ -364,7 +364,7 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 
     DCE 5.0 支持通过写 CSS 的方式来实现外观定制。实际应用中客户系统如何实现外观定制需要根据实际情况处理。
 
-登录客户系统，通过`全局管理` -> `平台设置` -> `外观定制`可以自定义平台背景颜色、logo、名称等，
+登录客户系统，通过 __全局管理__ -> __平台设置__ -> __外观定制__ 可以自定义平台背景颜色、logo、名称等，
 具体操作请参照[外观定制](../../user-guide/platform-setting/appearance.md)。
 
 ## 打通权限体系（可选）

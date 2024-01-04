@@ -5,11 +5,11 @@
 
 ## 操作步骤
 
-1. 进入`容器管理` 的集群列表，点击进入目标集群的详情；
+1. 进入 __容器管理__ 的集群列表，点击进入目标集群的详情；
 2. 点击左侧导航，选择 配置与密钥 > 配置项；
-3. 找到名为 `insight-agent-prometheus-blackbox-exporter` 的配置项，点击操作中的 `编辑 YAML`；
+3. 找到名为 __insight-agent-prometheus-blackbox-exporter__ 的配置项，点击操作中的 __编辑 YAML__ ；
 
-    - 在`modules`下添加自定义探测方式。此处添加 HTTP 探测方式为例：
+    - 在 __modules__ 下添加自定义探测方式。此处添加 HTTP 探测方式为例：
 
     ```yaml
     module:

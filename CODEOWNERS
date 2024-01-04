@@ -28,8 +28,8 @@ docs/en/docs/download/modules/kangaroo.md @lemontrees123
 docs/zh/docs/download/modules/kangaroo.md @lemontrees123
 docs/en/docs/download/modules/kant.md @zhiyingfang2022
 docs/zh/docs/download/modules/kant.md @zhiyingfang2022
-docs/en/docs/download/modules/kpanda.md @yanrongshi
-docs/zh/docs/download/modules/kpanda.md @yanrongshi
+docs/en/docs/download/modules/kpanda.md @qiupingdai
+docs/zh/docs/download/modules/kpanda.md @qiupingdai
 docs/en/docs/download/modules/mspider.md @samzong
 docs/zh/docs/download/modules/mspider.md @samzong
 docs/en/docs/download/modules/skoala.md @Adityayxt
@@ -48,23 +48,23 @@ docs/zh/docs/insight/* @justedennnnn
 docs/en/docs/install/* @jzhupup
 docs/zh/docs/install/* @jzhupup
 
-docs/en/docs/kairship/*  @wlp1153468871 @windsonsea
-docs/zh/docs/kairship/*  @wlp1153468871 @windsonsea
+docs/en/docs/kairship/*  @wlp1153468871
+docs/zh/docs/kairship/*  @wlp1153468871
 
-docs/en/docs/kangaroo/* @lemontrees123 @windsonsea
-docs/zh/docs/kangaroo/* @lemontrees123 @windsonsea
+docs/en/docs/kangaroo/* @lemontrees123
+docs/zh/docs/kangaroo/* @lemontrees123
 
 docs/en/docs/kant/* @zhiyingfang2022
 docs/zh/docs/kant/* @zhiyingfang2022
 
-docs/en/docs/kpanda/*  @yanrongshi
-docs/zh/docs/kpanda/*  @yanrongshi
+docs/en/docs/kpanda/*  @qiupingdai
+docs/zh/docs/kpanda/*  @qiupingdai
 
 docs/en/docs/middleware/* @justedennnnn
 docs/zh/docs/middleware/* @justedennnnn
 
-docs/en/docs/mspider/* @samzong @kebe7jun
-docs/zh/docs/mspider/* @samzong @kebe7jun
+docs/en/docs/mspider/* @samzong
+docs/zh/docs/mspider/* @samzong
 
 docs/en/docs/native/* @windsonsea
 docs/zh/docs/native/* @windsonsea
@@ -75,14 +75,14 @@ docs/zh/docs/network/* @windsonsea
 docs/en/docs/skoala/*  @Adityayxt
 docs/zh/docs/skoala/*  @Adityayxt
 
-docs/en/docs/storage/* @qiupingdai @windsonsea
-docs/zh/docs/storage/* @qiupingdai @windsonsea
+docs/en/docs/storage/* @qiupingdai
+docs/zh/docs/storage/* @qiupingdai
 
 docs/en/docs/videos/* @windsonsea
 docs/zh/docs/videos/* @windsonsea
 
-docs/en/docs/virtnest/* @wlp1153468871 @windsonsea
-docs/zh/docs/virtnest/* @wlp1153468871 @windsonsea
+docs/en/docs/virtnest/* @wlp1153468871
+docs/zh/docs/virtnest/* @wlp1153468871
 
 # code
 

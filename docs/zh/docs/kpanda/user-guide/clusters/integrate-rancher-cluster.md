@@ -56,7 +56,7 @@
       namespace: kube-system
     ```
 
-    按下 __esc__ 键退出插入模式，然后输入 __:wq__ 保存并退出。
+    按下 __esc__ 键退出插入模式，然后输入 __ :wq__ 保存并退出。
 
 2. 在当前路径下执行如下命令新建名为 __rancher-rke__ 的 ServiceAccount（以下简称为 __SA__ ）：
 

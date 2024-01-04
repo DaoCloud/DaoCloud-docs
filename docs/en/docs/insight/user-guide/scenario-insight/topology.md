@@ -4,15 +4,15 @@ Service topology is a visual representation of the connections, communication, a
 
 ## Prerequisites
 
-1. Insight Agent is [installed](../../quickstart/install/install-agent.md) in the cluster and the applications are in the `Running` state.
+1. Insight Agent is [installed](../../quickstart/install/install-agent.md) in the cluster and the applications are in the __Running__ state.
 2. Services have been instrumented for distributed tracing using
    [Operator](../../quickstart/otel/operator.md) or [OpenTelemetry SDK](../../quickstart/otel/golang.md).
 
 ## Steps
 
-1. Go to the `Observability` product module.
+1. Go to the __Insight__ product module.
 
-2. Select `Distributed Tracing > Service Topology` from the left navigation pane.
+2. Select __Distributed Tracing > Service Topology__ from the left navigation pane.
 
 3. In the topology graph, you can perform the following actions:
 

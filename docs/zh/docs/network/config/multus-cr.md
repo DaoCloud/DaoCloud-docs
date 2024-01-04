@@ -72,7 +72,7 @@ Multus CR 管理，是 Spiderpool 对 Multus CNI 中配置实例的二次封装�
 
 请输入如下参数：
 
-![创建multus cr](../images/sriov-rdma.png)
+![创建multus cr](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/sriov-rdma.png)
 
 - `CNI 类型`：选择 SR-IOV
 - `RDMA`：默认不开启。如果需要开启，请满足 [RDMA 资源使用条件](../modules/spiderpool/rdmapara.md)
@@ -115,9 +115,9 @@ Multus CR 管理，是 Spiderpool 对 Multus CNI 中配置实例的二次封装�
 
 查询的`resourceName`需要加上 `spidernet.io/`前缀。
 
-![networkconfig08.png](../images/networkconfig08.jpg)
+![networkconfig08.png](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/networkconfig08.jpg)
 
-![networkconfig09](../images/networkconfig09.jpg)
+![networkconfig09](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/networkconfig09.jpg)
 
 ### 创建自定义类型的 Multus CR
 

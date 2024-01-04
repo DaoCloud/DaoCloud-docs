@@ -38,7 +38,7 @@ In contrast, using __H H * * *__ will still run each job once a day, but not all
 
 H can be used with ranges. For example, __H H(0-7) * * *__ means some time between 00:00 and 7:59.
 
-Due to the different number of days in different months, when a short period such as __/3__ or __H/3__ appears in __DOM__, it will not be triggered at the end of most months.
+Due to the different number of days in different months, when a short period such as __/3__ or __H/3__ appears in __DOM__ , it will not be triggered at the end of most months.
 For example, __*/3__ will trigger the task on the 1st, 4th, ..., 31st of each month. If there are 30 days in the next month, the last time the task is triggered is the 28th day.
 
 Also, @yearly, @annually, @monthly, @weekly, @daily, @midnight, and @hourly are convenient aliases.

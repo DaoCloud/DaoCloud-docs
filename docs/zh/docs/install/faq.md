@@ -14,7 +14,7 @@
 
 执行结果示例：
 
-![FAQ1](images/faq11.png)
+![FAQ1](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/faq11.png)
 
 ## Kind 容器重启后，kubelet 服务无法启动
 

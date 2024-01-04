@@ -5,9 +5,9 @@ hide:
 
 # 登录无限循环，报错 401 或 403
 
-出现这个问题原因为：ghippo-keycloak 连接的 Mysql 数据库出现故障, 导致 `OIDC Public keys` 被重置
+出现这个问题原因为：ghippo-keycloak 连接的 Mysql 数据库出现故障, 导致 __OIDC Public keys__ 被重置
 
-在全局管理 0.11.1 及以上版本，您可以参照以下步骤，使用 `helm` 更新全局管理配置文件即可恢复正常。
+在全局管理 0.11.1 及以上版本，您可以参照以下步骤，使用 __helm__ 更新全局管理配置文件即可恢复正常。
 
 ```shell
 # 更新 helm 仓库

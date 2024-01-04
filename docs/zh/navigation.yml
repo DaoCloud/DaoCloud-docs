@@ -9,15 +9,16 @@ nav:
               - 申请社区免费体验: dce/license0.md
               - 功能和优势: dce/features.md
               - 适用场景: dce/scenario.md
-              - 云原生词汇: dce/terms.md
               - K8s 认证服务商: dce/kcsp.md
               - DCE 5.0 Release Notes:
+                  - 20231231 版本发布: dce/dce-rn/20231231.md
                   - 20231130 版本发布: dce/dce-rn/20231130.md
                   - 20231031 版本发布: dce/dce-rn/20231031.md
                   - 20230831 版本发布: dce/dce-rn/20230831.md
                   - 20230731 版本发布: dce/dce-rn/20230731.md
                   - 20230630 版本发布: dce/dce-rn/20230630.md
                   - 20230531 版本发布: dce/dce-rn/20230531.md
+              - 云原生词汇: dce/terms.md
           - 安装教程:
               - 安装简介: install/index.md
               - 安装依赖项: install/install-tools.md
@@ -38,7 +39,7 @@ nav:
                       - 前置检查: install/commercial/prepare.md
                       - 端口要求: install/commercial/port-requirements.md
                       - 外接组件要求（非必须）: 
-                          - 使用外接服务存储 Binaries 资源: install/commercial/external/external-binary.md)
+                          - 使用外接服务存储 Binaries 资源: install/commercial/external/external-binary.md
                           - 使用外接镜像仓库与 Chart 仓库存储镜像与 Chart 包: install/commercial/external/external-imageandchart.md
                           - 使用外接中间件服务: install/commercial/external/external-middlewares.md
                           - 使用外接服务存储 OS Repo 资源: install/commercial/external/external-os.md
@@ -368,6 +369,7 @@ nav:
                   - 挑战: network/intro/challenges.md
                   - 网络组件: network/modules/modules.md
                   - 离线升级云原生网络: network/intro/offline.md
+                  - Release Notes: network/modules/spiderpool/releasenotes.md
               - 网络规划:
                   - 网卡规划: network/plans/ethplan.md
                   - 网络规划: network/plans/netplan.md
@@ -393,7 +395,6 @@ nav:
                   - Egress 性能测试: network/performance/egress-performance.md
                   - CoreDNS 性能测试: network/performance/coredns-performance.md
               - 集成 Spiderpool:
-                  - Release Notes: network/modules/spiderpool/releasenotes.md
                   - 介绍: network/modules/spiderpool/index.md
                   - 安装: 
                       - Spiderpool 安装: network/modules/spiderpool/install.md
@@ -1023,7 +1024,6 @@ nav:
                   - 功能总览: ghippo/intro/features.md
                   - 常见术语: ghippo/intro/glossary.md
                   - Release Notes: ghippo/intro/release-notes.md
-                  - 全局管理FAQ: ghippo/intro/faq.md
               - 安装、登录和升级:
                   - 离线升级全局管理: ghippo/install/offline-install.md
                   - 自定义反向代理服务器地址: ghippo/install/reverse-proxy.md
@@ -1098,6 +1098,7 @@ nav:
                   - ingressgateway 无法启动: ghippo/troubleshooting/ghippo01.md
                   - 登录报错 401 或 403: ghippo/troubleshooting/ghippo02.md
                   - keycloak 无法启动: ghippo/troubleshooting/ghippo03.md
+                  - 单独升级全局管理时失败: ghippo/troubleshooting/ghippo04.md
   - 视频教程:
       - 索引: videos/index.md
       - 入门:
@@ -1153,7 +1154,7 @@ nav:
                   - Redis: download/modules/middleware/redis.md
                   - RocketMQ: download/modules/middleware/rocketmq.md
               - 云边协同: download/modules/kant.md
-              - 管理:
+              - 全局&运营管理:
                   - 全局管理: download/modules/ghippo.md
                   - 运营管理: download/modules/gmagpie.md
   - 免费体验:
@@ -1224,13 +1225,22 @@ nav:
       - DaoCloud 开源图标库: community/icons/index.md
   - 云原生研究院:
       - 社区要闻:
+          - 2024 云原生社区要闻: native/news/news-2024.md
           - 2023 云原生社区要闻: native/news/news-2023.md
           - 2022 云原生社区要闻: native/news/news-2022.md
       - 行业洞察:
           - 商业产品: native/commerce.md
           - 开源项目: native/open.md
       - 知识分享:
-          - 索引: native/knowledge/knowledge.md
+          - 索引: native/knowledge/index.md
+          - Git 文档指南:
+              - Git 文档流程: native/knowledge/git/index.md
+              - 开启两步安全验证: native/knowledge/git/2auth.md
+              - Git 常见问题: native/knowledge/git/rebase.md
+              - VSCode 编辑技巧: native/knowledge/git/vscode.md
+              - UI 翻译预览: native/knowledge/git/ui-preview.md
+              - GitHub 混迹技巧: native/knowledge/git/github.md
+              - 同步中英文档: native/knowledge/git/lsync.md
           - 排障方案: native/knowledge/troubleshoot.md
           - 最佳实践: native/knowledge/best-practice.md
           - 工具推荐: native/knowledge/tools.md
@@ -1238,11 +1248,4 @@ nav:
           - 前沿热点: native/knowledge/hot-spots.md
           - 安全漏洞: native/knowledge/bugs.md
           - 电子书: native/knowledge/ebooks.md
-          - Git:
-              - Git 文档流程: native/knowledge/git/index.md
-              - 开启两步安全验证: native/knowledge/git/2auth.md
-              - Git 常见问题: native/knowledge/git/rebase.md
-              - VSCode 编辑技巧: native/knowledge/git/vscode.md
-              - UI 翻译预览: native/knowledge/git/ui-preview.md
-              - GitHub 混迹技巧: native/knowledge/git/github.md
           - 其他: native/knowledge/other.md

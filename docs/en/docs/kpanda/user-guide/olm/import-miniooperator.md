@@ -4,8 +4,8 @@ This guide explains how to import the MinIo Operator offline in an environment w
 
 ## Prerequisites
 
-- The current cluster is connected to the container management and the Global cluster has installed the `kolm` component (search for helm templates for kolm).
-- The current cluster has the `olm` component installed with a version of 0.2.4 or higher (search for helm templates for olm).
+- The current cluster is connected to the container management and the Global cluster has installed the __kolm__ component (search for helm templates for kolm).
+- The current cluster has the __olm__ component installed with a version of 0.2.4 or higher (search for helm templates for olm).
 - Ability to execute Docker commands.
 - Prepare a container registry.
 
@@ -20,7 +20,7 @@ This guide explains how to import the MinIo Operator offline in an environment w
 
     How to get the above image addresses:
 
-    Go to `Container Management` -> Select the current cluster -> `Helm Applications` -> View the `olm` component -> `Plugin Settings`, and find the images needed for the opm, minio, minio bundle, and minio operator in the subsequent steps.
+    Go to __Container Management__ -> Select the current cluster -> __Helm Applications__ -> View the __olm__ component -> __Plugin Settings__ , and find the images needed for the opm, minio, minio bundle, and minio operator in the subsequent steps.
 
 
     ```bash
@@ -66,7 +66,7 @@ This guide explains how to import the MinIo Operator offline in an environment w
     3 directories, 9 files
     ```
 
-3. Replace all image addresses in the `minio-operator/manifests/minio-operator.clusterserviceversion.yaml` file with the image addresses from the offline container registry.
+3. Replace all image addresses in the __minio-operator/manifests/minio-operator.clusterserviceversion.yaml__ file with the image addresses from the offline container registry.
 
     Before replacement:
 
@@ -147,7 +147,7 @@ This guide explains how to import the MinIo Operator offline in an environment w
     $ docker push ${OFFLINE_CATALOG_IMG}
     ```
 
-8. Go to Container Management and update the built-in catsrc image for the helm application `olm` (enter the catalog image specified in the construction of the catalog image, `${catalog-image}`).
+8. Go to Container Management and update the built-in catsrc image for the helm application __olm__ (enter the catalog image specified in the construction of the catalog image, __${catalog-image}__ ).
 
-9. After the update is successful, the `minio-operator` component will appear in the Operator Hub.
+9. After the update is successful, the __minio-operator__ component will appear in the Operator Hub.
 

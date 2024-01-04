@@ -20,7 +20,7 @@ Workbench Pipelines supports creating pipelines using a Jenkinsfile in a reposit
 
     <!--![]()screenshots-->
 
-2. Select __Create a pipeline based on the Jenkinsfile of the code base__ and click __OK__.
+2. Select __Create a pipeline based on the Jenkinsfile of the code base__ and click __OK__ .
 
     <!--![]()screenshots-->
 
@@ -43,14 +43,14 @@ Workbench Pipelines supports creating pipelines using a Jenkinsfile in a reposit
         - The two rules __retention period__ and __maximum number__ are in effect at the same time, as long as one of them is met, the records will be deleted.
 
     - Do not allow concurrent builds: When enabled, only one pipeline build task can be executed at a time.
-    - Build Parameters: Pass in one or more build parameters when starting to run the pipeline. Five parameter types are provided by default: __Boolean__, __string__, __multiline text__, __options__, __password__, __upload file__.
+    - Build Parameters: Pass in one or more build parameters when starting to run the pipeline. Five parameter types are provided by default: __Boolean__ , __string__ , __multiline text__ , __options__ , __password__ , __upload file__ .
     - After adding build parameters, you need to enter the corresponding value for each build parameter when running the pipeline.
 
         <!--![]()screenshots-->
 
 5. Fill in the build trigger by referring to the instructions below.
 
-    - Code source trigger: After it is turned on, the system will periodically scan the specific branch in the warehouse code used to build the pipeline according to the __timed warehouse scan plan__, and re-run the pipeline if there is an update.
+    - Code source trigger: After it is turned on, the system will periodically scan the specific branch in the warehouse code used to build the pipeline according to the __timed warehouse scan plan__ , and re-run the pipeline if there is an update.
     - Scheduled warehouse scan schedule: Enter a CRON expression to define the time period for scanning warehouses. **After entering the expression, the meaning of the current expression will be prompted at the bottom**. For detailed expression syntax rules, please refer to [Cron Schedule Syntax](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/#cron-schedule-syntax).
     - Timing trigger: Timing triggers the construction pipeline, no matter whether the code warehouse is updated or not, the pipeline will be re-run at the specified time.
 

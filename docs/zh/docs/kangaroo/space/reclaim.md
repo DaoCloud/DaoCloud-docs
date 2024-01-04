@@ -31,4 +31,4 @@
 
 1. 返回镜像回收列表，点击右侧的 `⋮`，可以禁用、编辑或删除回收规则。
 
-    ![点击按钮](../images/reclaim03.png)
+    ![点击按钮](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/reclaim03.png)

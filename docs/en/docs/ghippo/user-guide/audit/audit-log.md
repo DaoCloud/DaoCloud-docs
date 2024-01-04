@@ -17,19 +17,19 @@ The audit log feature has the following characteristics:
 
 ## View Audit Logs
 
-1. Log in to DCE 5.0 with a user account that has the `admin` or `Audit Owner` role.
+1. Log in to DCE 5.0 with a user account that has the __admin__ or __Audit Owner__ role.
 
     ![Log in to DCE 5.0](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/lang00.png)
 
-2. At the bottom of the left navigation bar, click `Global Management` -> `Audit Logs`.
+2. At the bottom of the left navigation bar, click __Global Management__ -> __Audit Logs__ .
 
     ![Audit Logs](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/audit01.png)
 
 ## User operations
 
-On the `User Operations` tab, you can search for user operation events by time range, or by using fuzzy or exact search.
+On the __User Operations__ tab, you can search for user operation events by time range, or by using fuzzy or exact search.
 
-Click the `⋮` icon on the right side of an event to view its details.
+Click the __⋮__ icon on the right side of an event to view its details.
 
 ![User audit logs](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/audit02.png)
 
@@ -37,25 +37,25 @@ The event details are shown in the following figure.
 
 ![User event details](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/audit03.png)
 
-Click the `Export` button in the upper right corner to export the user operation logs within the selected time range in CSV or Excel format.
+Click the __Export__ button in the upper right corner to export the user operation logs within the selected time range in CSV or Excel format.
 
 ![Export](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/audit04.png)
 
 ## System operations
 
-On the `System operations` tab, you can search for system operation events by time range, or by using fuzzy or exact search.
+On the __System operations__ tab, you can search for system operation events by time range, or by using fuzzy or exact search.
 
-Similarly, click the `⋮` icon on the right side of an event to view its details.
+Similarly, click the __⋮__ icon on the right side of an event to view its details.
 
 ![System event details](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/audit05.png)
 
-Click the `Export` button in the upper right corner to export the system operation logs within the selected time range in CSV or Excel format.
+Click the __Export__ button in the upper right corner to export the system operation logs within the selected time range in CSV or Excel format.
 
 ![Export](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/audit06.png)
 
 ## Settings
 
-On the `Settings` tab, you can clean up audit logs for user operations and system operations.
+On the __Settings__ tab, you can clean up audit logs for user operations and system operations.
 
 ![Clean up](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/audit07.png)
 

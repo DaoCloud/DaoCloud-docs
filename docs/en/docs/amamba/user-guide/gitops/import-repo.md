@@ -10,25 +10,25 @@ This page shows how to import repositories.
 
 ## import repository
 
-If the code warehouse where the manifest file of the continuous deployment application is located is not public, you need to import the warehouse to Workbench in advance. Workbench currently supports two import methods: __Import repository using HTTPS__ and __Import repository using SSH__.
+If the code warehouse where the manifest file of the continuous deployment application is located is not public, you need to import the warehouse to Workbench in advance. Workbench currently supports two import methods: __Import repository using HTTPS__ and __Import repository using SSH__ .
 
 ### Import repository using HTTPS
 
-1. On __Workbench__ -> __GitOps__ -> __Repository__ page, click the __Import Repository__ button and select __Use HTTPS__.
+1. On __Workbench__ -> __GitOps__ -> __Repository__ page, click the __Import Repository__ button and select __Use HTTPS__ .
 
     <!--![]()screenshots-->
 
-2. On the __Import warehouse using HTTPS__ page, configure the relevant parameters and click __OK__.
+2. On the __Import warehouse using HTTPS__ page, configure the relevant parameters and click __OK__ .
 
     <!--![]()screenshots-->
 
 ### Import repository using SSH
 
-1. On __Workbench__ -> __GitOps__ -> __Repository__ page, click the __Import Repository__ button and select __Use SSH__.
+1. On __Workbench__ -> __GitOps__ -> __Repository__ page, click the __Import Repository__ button and select __Use SSH__ .
 
     <!--![]()screenshots-->
 
-2. On the __Import warehouse using SSH__ page, configure the relevant parameters and click __OK__.
+2. On the __Import warehouse using SSH__ page, configure the relevant parameters and click __OK__ .
 
     <!--![]()screenshots-->
 
@@ -36,7 +36,7 @@ If the code warehouse where the manifest file of the continuous deployment appli
 
 If you no longer use a code repository, you can delete it by following the steps below.
 
-1. Select a warehouse on the warehouse list page, click __︙__, and click __Delete__ in the pop-up menu.
+1. Select a warehouse on the warehouse list page, click __︙__ , and click __Delete__ in the pop-up menu.
 
     <!--![]()screenshots-->
 

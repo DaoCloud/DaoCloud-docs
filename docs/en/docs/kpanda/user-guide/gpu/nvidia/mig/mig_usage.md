@@ -13,7 +13,7 @@ This section explains how applications can use MIG GPU resources.
 
 1. Confirm if the cluster has recognized the GPU card type.
 
-    Go to `Cluster Details` -> `Cluster Settings` -> `Addon Configuration` and check if it has been correctly recognized. The automatic recognition frequency is set to `10 minutes`.
+    Go to __Cluster Details__ -> __Cluster Settings__ -> __Addon Configuration__ and check if it has been correctly recognized. The automatic recognition frequency is set to __10 minutes__ .
 
     
 
@@ -23,7 +23,7 @@ This section explains how applications can use MIG GPU resources.
 
 ## Using MIG through YAML Configuration
 
-**`MIG Single` mode:**
+** __MIG Single__ mode:**
 
 ```yaml
 apiVersion: apps/v1
@@ -52,7 +52,7 @@ spec:
       restartPolicy: Always
 ```
 
-**`MIG  Mixed` mode:**
+** __MIG  Mixed__ mode:**
 
 ```yaml
 apiVersion: apps/v1

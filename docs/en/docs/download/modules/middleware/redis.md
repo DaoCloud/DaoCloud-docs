@@ -1,11 +1,16 @@
+---
+hide:
+  - toc
+---
+
 # Redis
 
 This page provides downloadable offline packages for various versions of Redis.
 
 ## Download
 
-| Version                                                       | Architecture | File Size | Installation Package                                                                                                               | Checksum File | Update Date |
-|---------------------------------------------------------------| ------------ |---------- |-----------------------------------------------------------------------------------------------------------------------------------| ------------- |--------------|
+| Version | Architecture | File Size | Package   | Checksum File | Updated Date |
+| ------ | ------------ | --------- | ---------- | ------------ | ------------ |
 | [v0.13.0](../../../middleware/redis/release-notes.md) | AMD 64 | 534.33 MB | [:arrow_down: redis_0.13.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-redis_0.13.0_amd64.tar) | [:arrow_down: redis_0.13.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-redis_0.13.0_amd64_checksum.sha512sum) | 2023-12-10 |
 | [v0.12.0](../../../middleware/redis/release-notes.md) | AMD 64 | 531.92 MB | [:arrow_down: redis_0.12.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-redis_0.12.0_amd64.tar) | [:arrow_down: redis_0.12.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-redis_0.12.0_amd64_checksum.sha512sum) | 2023-11-08 |
 | [v0.11.1](../../../middleware/redis/release-notes.md) | AMD 64 | 537.81 MB | [:arrow_down: redis_0.11.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-redis_0.11.1_amd64.tar) | [:arrow_down: redis_0.11.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-redis_0.11.1_amd64_checksum.sha512sum) | 2023-10-20 |

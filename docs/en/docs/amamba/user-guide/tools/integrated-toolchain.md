@@ -27,6 +27,6 @@ Workbench supports tool chain integration from two perspectives: workspace integ
 
     <!--![]()screenshots-->
 
-3. Click __OK__, the integration is successful and return to the toolchain list page.
+3. Click __OK__ , the integration is successful and return to the toolchain list page.
 
     <!--![]()screenshots-->

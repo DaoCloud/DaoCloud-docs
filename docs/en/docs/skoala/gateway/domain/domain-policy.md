@@ -33,4 +33,4 @@ Note the following when filling in the configuration:
 - Allowable request headers: Qualifies specific HTTP request header keywords. After the keyword is added, the corresponding keyword must be added to the request header to access the target service.
 - Exposed request header: Controls the exposed request header keyword. Multiple values can be configured.
 
-   ![跨域](./images/cross-domain.png)
+   ![跨域](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/domain/images/cross-domain.png)

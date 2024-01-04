@@ -17,14 +17,14 @@ After [creating an OAM application](create.md), you can view the application det
 
 ## Edit Basic Information of an OAM Application
 
-1. Click the OAM application name, then click the __ⵈ__ icon in the top right corner of the page and select __Edit Basic Information__.
+1. Click the OAM application name, then click the __ⵈ__ icon in the top right corner of the page and select __Edit Basic Information__ .
 2. Set the alias as desired or provide additional description information.
 
 
 
 ## Edit YAML File of an OAM Application
 
-1. Click the OAM application name, then click the __ⵈ__ icon in the top right corner of the page and select __Edit YAML__.
+1. Click the OAM application name, then click the __ⵈ__ icon in the top right corner of the page and select __Edit YAML__ .
 2. Edit the YAML file of the OAM application as necessary.
 
 
@@ -40,7 +40,7 @@ After [creating an OAM application](create.md), you can view the application det
 
 ### Add/Update Traits
 
-1. Click the OAM application name, go to the __Components__ tab, and click the __ⵗ__ icon on the right side of the component to select __Edit Traits__.
+1. Click the OAM application name, go to the __Components__ tab, and click the __ⵗ__ icon on the right side of the component to select __Edit Traits__ .
 
 
 

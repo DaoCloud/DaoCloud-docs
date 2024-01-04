@@ -8,7 +8,7 @@ FedState 对需要部署在多云环境上的中间件、数据库等有状态�
 
 ## 架构
 
-![架构图](./images/structure.png)
+![架构图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/images/structure.png)
 
 组件说明：
 

@@ -8,7 +8,7 @@ This page will introduce how to integrate Harbor in the pipeline and implement i
 
      <!--![]()screenshots-->
 
-2. Select the __Configuration Management__ tab, and check __Automatically scan images__.
+2. Select the __Configuration Management__ tab, and check __Automatically scan images__ .
 
      <!--![]()screenshots-->
 

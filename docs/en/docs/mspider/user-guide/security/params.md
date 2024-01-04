@@ -1,4 +1,4 @@
-# Security governance parameter configuration
+# Security Governance Parameter Configuration
 
 This page introduces parameter configuration related to peer identity authentication, request identity authentication, and authorization policy.
 

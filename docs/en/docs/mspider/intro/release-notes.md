@@ -9,6 +9,26 @@ Date: 2023-10-30
 
 This page lists all the Release Notes for each version of Service Mesh, providing convenience for users to learn about the evolution path and feature changes.
 
+## 2023-12-31
+
+### v0.22.0
+
+#### Features
+
+- **Added** Quota of system component resources for custom mesh instances.
+- **Added** Larger scale: `S2000P8000`, `S5000P20000` mesh instances.
+- **Added** Gateway instance upgrade reminder, support one-click upgrade.
+
+#### Improvements
+
+- **Upgraded** Supported mesh versions are `1.18.6` and `1.19.5`.
+- **Upgraded** The supported mesh version for `1.17` is `1.17.8-fix-20231226`, which fixes the previous memory leak issue.
+
+#### Fixes
+
+- **Fixed** The problem of unable to perform hot upgrade for `Sidecar` under the user `istio-proxy`.
+- **Fixed** Under the dedicated mesh, the version of the mesh is not correctly updated after upgrading the mesh.
+
 ## 2023-11-30
 
 ### v0.21.0

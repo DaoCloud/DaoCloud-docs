@@ -5,7 +5,7 @@ This page explains how to install or upgrade the observability module after
 
 !!! info
 
-     The word `insight` appearing in the following commands or scripts is the internal development codename of the observability module.
+     The word __insight__ appearing in the following commands or scripts is the internal development codename of the observability module.
 
 ## Load the image from the installation package
 
@@ -126,7 +126,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
 
 === "upgrade via helm repo"
 
-     1. Check whether the global management helm repository exists.
+     1. Check whether the Insight helm repository exists.
 
          ```shell
          helm repo list | grep insight
@@ -138,7 +138,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
          Error: no repositories to show
          ```
 
-     1. Add the globally managed helm repository.
+     1. Add the Insight helm repository.
 
          ```shell
          helm repo add insight http://{harbor url}/chartrepo/{project}
@@ -150,7 +150,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
          helm repo update insight # If the helm version is too low, it will fail. If it fails, please try to run helm update repo
          ```
 
-     1. Select the version of Global Management you want to install (the latest version is recommended).
+     1. Select the version of Insight you want to install (the latest version is recommended).
 
          ```shell
          helm search repo insight/insight --versions
@@ -165,18 +165,18 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
          ...
          ```
 
-     1. Back up the `--set` parameter.
+     1. Back up the __--set__ parameter.
 
-         Before upgrading the global management version, it is recommended that you run the following command to back up the `--set` parameter of the old version.
+         Before upgrading the Insight version, it is recommended that you run the following command to back up the __--set__ parameter of the old version.
 
          ```shell
          helm get values insight -n insight-system -o yaml > insight.yaml
          helm get values insight-agent -n insight-system -o yaml > insight-agent.yaml
          ```
 
-     1. Execute `helm upgrade`.
+     1. Execute __helm upgrade__ .
 
-         Before upgrading, it is recommended that you override the `global.imageRegistry` field in insight.yaml and insight-agent.yaml to the address of the currently used container registry.
+         Before upgrading, it is recommended that you override the __global.imageRegistry__ field in insight.yaml and insight-agent.yaml to the address of the currently used container registry.
 
          ```shell
          export imageRegistry={your image registry}
@@ -202,17 +202,17 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
 
 === "upgrade via chart package"
 
-     1. Back up the `--set` parameter.
+     1. Back up the __--set__ parameter.
 
-         Before upgrading the global management version, it is recommended that you run the following command to back up the `--set` parameter of the old version.
+         Before upgrading the Insight version, it is recommended that you run the following command to back up the __--set__ parameter of the old version.
 
          ```shell
          helm get values insight -n insight-system -o yaml > insight.yaml
          ```
 
-     1. Execute `helm upgrade`.
+     1. Execute __helm upgrade__ .
 
-         Before upgrading, it is recommended that you overwrite `global.imageRegistry` in bak.yaml to the address of the current container registry.
+         Before upgrading, it is recommended that you overwrite __global.imageRegistry__ in bak.yaml to the address of the current container registry.
 
          ```shell
          export imageRegistry={your image registry}

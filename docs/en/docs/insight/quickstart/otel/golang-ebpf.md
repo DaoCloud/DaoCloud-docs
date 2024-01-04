@@ -58,11 +58,11 @@ EOF
 
     There is only one such annotation, which is used to add OpenTelemetry-related environment variables, such as link reporting address, cluster id where the container is located, namespace, etc.:
 
-    ```bash
+    ```console
     instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
     ```
 
-    The value is divided into two parts by `/`, the first value `insight-system` is the namespace of the CR installed in the second step, and the second value `insight-opentelemetry-autoinstrumentation` is the name of the CR.
+    The value is divided into two parts by __/__ , the first value __insight-system__ is the namespace of the CR installed in the second step, and the second value __insight-opentelemetry-autoinstrumentation__ is the name of the CR.
 
 - Add golang ebpf probe container
 
@@ -132,8 +132,8 @@ EOF
 
     1. Used to add environment variables related to OpenTelemetry.
     2. Assuming this is your Golang application.
-    3. Note that it should be consistent with the content of the `command` mentioned above:
-       `/usr/local/bin/emojivoto-voting-svc`.
+    3. Note that it should be consistent with the content of the __command__ mentioned above:
+       __/usr/local/bin/emojivoto-voting-svc__ .
 
 The final generated Yaml content is as follows:
 

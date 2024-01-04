@@ -14,7 +14,7 @@ application delivery in a hybrid environment:
 
 You can refer to the following diagram from the KubeVela official documentation for a visual representation:
 
-![oam1](../../images/oam001.png)
+![oam1](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/oam001.png)
 
 ## Introduction to Core Components
 

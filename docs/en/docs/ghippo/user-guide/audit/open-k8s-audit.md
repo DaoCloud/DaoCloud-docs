@@ -174,15 +174,15 @@ Through the following configuration, you can enable the audit log feature of Kub
           - "RequestReceived"
     ```
 
-Put the above audit log file in `/etc/kubernetes/audit-policy/` folder, and name it `apiserver-audit-policy.yaml`.
+Put the above audit log file in __/etc/kubernetes/audit-policy/__ folder, and name it __apiserver-audit-policy.yaml__ .
 
 ## Configure the API server
 
-Open the configuration file kube-apiserver.yaml of the API server, usually in the `/etc/kubernetes/manifests/` folder, and add the following configuration information:
+Open the configuration file kube-apiserver.yaml of the API server, usually in the __/etc/kubernetes/manifests/__ folder, and add the following configuration information:
 
-Please back up kube-apiserver.yaml before this step, and the backup file cannot be placed under `/etc/kubernetes/manifests/`, it is recommended to put it in `/etc/kubernetes/tmp`.
+Please back up kube-apiserver.yaml before this step, and the backup file cannot be placed under __/etc/kubernetes/manifests/__ , it is recommended to put it in __/etc/kubernetes/tmp__ .
 
-1. Add the command under `spec.containers.command`:
+1. Add the command under __spec.containers.command__ :
 
     ```yaml
     --audit-log-maxage=30
@@ -192,7 +192,7 @@ Please back up kube-apiserver.yaml before this step, and the backup file cannot 
     --audit-policy-file=/etc/kubernetes/audit-policy/apiserver-audit-policy.yaml
     ```
 
-2. Add below code under `spec.containers.volumeMounts`:
+2. Add below code under __spec.containers.volumeMounts__ :
 
     ```yaml
     - mountPath: /var/log/audit
@@ -201,7 +201,7 @@ Please back up kube-apiserver.yaml before this step, and the backup file cannot 
       name: audit-policy
     ```
 
-3. Add below under `spec.volumes`:
+3. Add below under __spec.volumes__ :
 
     ```yaml
     - hostPath:
@@ -216,10 +216,10 @@ Please back up kube-apiserver.yaml before this step, and the backup file cannot 
 
 ## Test and verify
 
-After a while, the API server will automatically restart. run the following command to check whether there is an audit log generated in the `/var/log/kubernetes/audit` directory. If so, it means that the k8s audit log is successfully enabled.
+After a while, the API server will automatically restart. run the following command to check whether there is an audit log generated in the __/var/log/kubernetes/audit__ directory. If so, it means that the k8s audit log is successfully enabled.
 
 ```shell
 ls /var/log/kubernetes/audit
 ```
 
-If you want to close it, just remove the relevant commands in `spec.containers.command`.
+If you want to close it, just remove the relevant commands in __spec.containers.command__ .

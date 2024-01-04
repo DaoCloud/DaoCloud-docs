@@ -13,7 +13,7 @@ This article will introduce two solutions:
 
 Once we integrate Kafka into the logging system, the data flow diagram looks as follows:
 
-![logging-kafka](./images/logging-kafka.png)
+![logging-kafka](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/best-practice/images/logging-kafka.png)
 
 Both solutions share similarities but differ in the component used to consume Kafka data.
 To ensure compatibility with Insight's data analysis, the format of the data consumed from
@@ -24,8 +24,8 @@ Let's first see how Fluentbit writes logs to Kafka:
 
 ## Modifying Fluentbit Output Configuration
 
-Once the Kafka cluster is ready, we need to modify the content of the `insihgt-system` namespace's
-`ConfigMap`. We will add three Kafka outputs and comment out the original three Elasticsearch outputs:
+Once the Kafka cluster is ready, we need to modify the content of the __insihgt-system__ namespace's
+ __ConfigMap__ . We will add three Kafka outputs and comment out the original three Elasticsearch outputs:
 
 Assuming the Kafka Brokers address is: `insight-kafka.insight-system.svc.cluster.local:9092`
 
@@ -91,7 +91,7 @@ When deploying Logstash via Helm, you can add the following pipeline:
 # Allows you to add any config files in /usr/share/logstash/config/
 # such as logstash.yml and log4j2.properties
 #
-# Note that when overriding logstash.yml, `http.host: 0.0.0.0` should always be included
+# Note that when overriding logstash.yml, `http.host:0.0.0.0` should always be included
 # to make default probes work.
 logstashConfig:
   logstash.yml: |

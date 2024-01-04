@@ -19,19 +19,19 @@
 
         对于集群服务的访问方式，可在`容器管理`->`容器网络`->`服务`中点击服务名称进行查看：
 
-        ![获取服务访问地址](./images/service-access.png)
+        ![获取服务访问地址](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/service/images/service-access.png)
     
     === "网格服务"
      
         选择目标服务所在的集群和命名空间，填写访问协议、地址以及端口。
 
-        ![添加网格服务](./images/mesh-access.png)
+        ![添加网格服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/service/images/mesh-access.png)
             
     === "接入注册中心服务"
 
         选择目标服务所在的注册中心，填写访问协议、地址和端口。
 
-        ![添加注册中心服务](./images/gw-access-service.png)
+        ![添加注册中心服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/service/images/gw-access-service.png)
     
     === "注册配置中心服务"
          
@@ -67,7 +67,7 @@
 
 2. 更新基本信息，点击`确定`。
 
-    ![更新服务](./images/gw-service08.png)
+    ![更新服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/service/images/gw-service08.png)
 
 !!! danger
 
@@ -82,7 +82,7 @@
 
 2. 更新策略配置，点击`确定`。
 
-    ![更新服务](./images/update4.png)
+    ![更新服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/service/images/update4.png)
 
 ## 删除服务
 
@@ -93,4 +93,4 @@
 删除服务之前，需要确保没有 API 正在使用该服务。如果该服务正在被某个 API 使用，需要先根据页面提示，
 点击 `API 管理`删除关联的 API 之后才能删除该服务。
 
-![删除服务](./images/delete1.png)
+![删除服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/service/images/delete1.png)

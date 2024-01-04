@@ -14,7 +14,7 @@ Run the command:
 
 Example of execution result:
 
-![FAQ1](images/faq11.png)
+![FAQ1](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/install/images/faq11.png)
 
 ## Failure to Start kubelet Service After Kind Container Restart
 

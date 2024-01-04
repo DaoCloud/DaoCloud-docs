@@ -62,11 +62,11 @@
     | rdmaSharedDevicePlugin.deviceConfig.deviceIDs    | 1017 | 设备 ID 号，同上一步查询的信息一致 |
     | rdmaSharedDevicePlugin.deviceConfig.vendors     | 15b3 | 网卡 Vendors 信息，同上一步查询的信息一致 |
 
-    ![rdmamacvlan](../../images/rdma_macvlan01.jpg)
+    ![rdmamacvlan](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/rdma_macvlan01.jpg)
 
     成功部署后，可查看已安装组件。
 
-    ![resource](../../images/rdma_macvlan02.jpg)
+    ![resource](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/rdma_macvlan02.jpg)
 
 1. 安装完成后，可登录控制器节点，查看上报的 RDMA 设备资源。
 
@@ -183,15 +183,15 @@
       </tr>
     </table>
 
-    ![sriov01](../../images/sriov01.jpg)
+    ![sriov01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/sriov01.jpg)
 
-    ![sriov02](../../images/sriov02.jpg)
+    ![sriov02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/sriov02.jpg)
 
-    ![sriov03](../../images/sriov03.jpg)
+    ![sriov03](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/sriov03.jpg)
 
 1. 完成后，安装的组件如下：
 
-    ![sriov04](../../images/sriov04.jpg)
+    ![sriov04](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/sriov04.jpg)
 
 1. 参考如下 **SriovNetworkNodePolicy** 配置，使得 SR-IOV Operator 能够在宿主机上创建出 VF，并上报资源
 
@@ -220,9 +220,9 @@
 
     界面配置：
    
-    ![sriov05](../../images/sriov05.jpg)
+    ![sriov05](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/sriov05.jpg)
 
-    ![sriov06](../../images/sriov06.jpg)
+    ![sriov06](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/sriov06.jpg)
 
 1. 安装完成后查看可用的设备资源：
 

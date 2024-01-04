@@ -5,19 +5,19 @@ This guide explains how to integrate a Rancher cluster.
 ## Prerequisites
 
 - Prepare a Rancher cluster with administrator privileges and ensure network connectivity between the container management cluster and the target cluster.
-- The current user performing the operation should have [`kpanda owner`](../permissions/permission-brief.md) or higher permissions.
+- The current user performing the operation should have [ __kpanda owner__ ](../permissions/permission-brief.md) or higher permissions.
 
 ## Steps
 
 ### Step 1: Create a ServiceAccount user with administrator privileges in the Rancher cluster
 
-1. Log in to the Rancher cluster with a role that has administrator privileges, and create a file named `sa.yaml` using the terminal.
+1. Log in to the Rancher cluster with a role that has administrator privileges, and create a file named __sa.yaml__ using the terminal.
 
     ```bash
     vi sa.yaml
     ```
 
-    Press the `i` key to enter insert mode, and enter the following content:
+    Press the __i__ key to enter insert mode, and enter the following content:
 
     ```yaml title="sa.yaml"
     apiVersion: rbac.authorization.k8s.io/v1
@@ -56,9 +56,9 @@ This guide explains how to integrate a Rancher cluster.
       namespace: kube-system
     ```
 
-    Press the `Esc` key to exit insert mode, then enter `:wq` to save and exit.
+    Press the __Esc__ key to exit insert mode, then enter __ :wq__ to save and exit.
 
-2. Run the following command in the current directory to create a ServiceAccount named `rancher-rke` (referred to as `SA` for short):
+2. Run the following command in the current directory to create a ServiceAccount named __rancher-rke__ (referred to as __SA__ for short):
 
     ```bash
     kubectl apply -f sa.yaml
@@ -72,7 +72,7 @@ This guide explains how to integrate a Rancher cluster.
     serviceaccount/rancher-rke created
     ```
 
-3. Create a secret named `rancher-rke-secret` and bind the secret to the `rancher-rke` SA.
+3. Create a secret named __rancher-rke-secret__ and bind the secret to the __rancher-rke__ SA.
 
     ```bash
     kubectl apply -f - <<EOF
@@ -97,7 +97,7 @@ This guide explains how to integrate a Rancher cluster.
 
         If your cluster version is lower than 1.24, please ignore this step and proceed to the next one.
 
-4. Check secret for `rancher-rke` SA:
+4. Check secret for __rancher-rke__ SA:
 
     ```bash
     kubectl -n kube-system get secret | grep rancher-rke | awk '{print $1}'
@@ -109,7 +109,7 @@ This guide explains how to integrate a Rancher cluster.
     rancher-rke-secret
     ```
 
-    Check the `rancher-rke-secret` secret:
+    Check the __rancher-rke-secret__ secret:
 
     ```bash
     kubectl -n kube-system describe secret rancher-rke-secret
@@ -135,12 +135,12 @@ This guide explains how to integrate a Rancher cluster.
 
 ### Step 2: Update kubeconfig with the rancher-rke SA authentication on your local machine
 
-Perform the following steps on any local node where `kubelet` is installed:
+Perform the following steps on any local node where __kubelet__ is installed:
 
 1. Configure kubelet token.
 
     ```bash
-    kubectl config set-credentials rancher-rke --token=`rancher-rke-secret` 里面的 token 信息
+    kubectl config set-credentials rancher-rke --token= __rancher-rke-secret__ 里面的 token 信息
     ```
 
     For example,
@@ -155,8 +155,8 @@ Perform the following steps on any local node where `kubelet` is installed:
     kubectl config set-cluster {cluster-name} --insecure-skip-tls-verify=true --server={APIServer}
     ```
 
-    - `{cluster-name}`: Refers to the name of your Rancher cluster.
-    - `{APIServer}`: Refers to the access address of the cluster, usually the IP address of the control node + port 6443, such as `https://10.X.X.X:6443`.
+    - __{cluster-name}__ : Refers to the name of your Rancher cluster.
+    - __{APIServer}__ : Refers to the access address of the cluster, usually the IP address of the control node + port 6443, such as `https://10.X.X.X:6443` .
 
     For example,
 
@@ -176,13 +176,13 @@ Perform the following steps on any local node where `kubelet` is installed:
     kubectl config set-context rancher-rke-context --cluster=rancher-rke --user=rancher-rke
     ```
 
-4. Specify the newly created context `rancher-rke-context` in kubelet.
+4. Specify the newly created context __rancher-rke-context__ in kubelet.
 
     ```bash
     kubectl config use-context rancher-rke-context
     ```
 
-5. Retrieve the kubeconfig information for the context `rancher-rke-context`.
+5. Retrieve the kubeconfig information for the context __rancher-rke-context__ .
 
     ```bash
     kubectl config view --minify --flatten --raw

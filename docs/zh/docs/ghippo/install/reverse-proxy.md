@@ -5,7 +5,7 @@
 1.  设置环境变量，方便在下文中使用。
 
     ```shell
-    # 您的反向代理地址，例如：`export DCE_PROXY="https://demo-alpha.daocloud.io"`
+    # 您的反向代理地址，例如： `export DCE_PROXY="https://demo-alpha.daocloud.io"` 
     export DCE_PROXY="https://domain:port"
 
     # helm --set 参数备份文件
@@ -31,13 +31,13 @@
 
     !!! note
 
-        - 如果可以，您可以使用 `yq` 命令：
+        - 如果可以，您可以使用 __yq__ 命令：
 
             ```shell
             yq -i ".global.reverseProxy = \"${DCE_PROXY}\"" ${GHIPPO_VALUES_BAK}
             ```
 
-        - 或者您可以使用 `vim` 命令编辑并保存：
+        - 或者您可以使用 __vim__ 命令编辑并保存：
 
             ```shell
             vim ${GHIPPO_VALUES_BAK}
@@ -49,7 +49,7 @@
               reverseProxy: ${DCE_PROXY} # 只需要修改这一行
             ```
 
-5.  执行 `helm upgrade` 使配置生效。
+5.  执行 __helm upgrade__ 使配置生效。
 
     ```shell
     helm upgrade ghippo ghippo/ghippo \
@@ -58,7 +58,7 @@
       --version ${GHIPPO_HELM_VERSION}
     ```
 
-6.  使用 `kubectl` 重启全局管理 Pod，使配置生效。
+6.  使用 __kubectl__ 重启全局管理 Pod，使配置生效。
 
     ```shell
     kubectl rollout restart deploy/ghippo-apiserver -n ghippo-system

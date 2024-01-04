@@ -46,12 +46,12 @@ This page lists some frequently asked questions that may arise in container mana
 
     Users often ask why they can see or not see a specific cluster. How do we troubleshoot related permission issues? There are three situations:
 
-    - The permissions of the container management module are divided into cluster permissions and namespace permissions. If a user is bound, the user can view the corresponding clusters and resources. For specific permission descriptions, please refer to [Cluster Permission Description](../user-guide/permissions/permission-brief.md).
+    - The permissions of the container management module are divided into cluster permissions and namespace permissions. If a user is bound, the user can view the corresponding clusters and resources. For specific permission descriptions, refer to [Cluster Permission Description](../user-guide/permissions/permission-brief.md).
 
 
-    - Authorization of users in the global management module: Use the admin account to enter `Global Management` -> `User and Access Control` -> `Users` menu, find the corresponding user. In the `Authorized User Groups` tab, if there are roles such as Admin, Kpanda Owner, etc. that have container management permissions, even if the cluster permission or namespace permission is not bound in the container management module, the user can see all clusters. Please refer to [User Authorization Document](../../ghippo/user-guide/access-control/user.md).
+    - Authorization of users in the global management module: Use the admin account to enter __Global Management__ -> __User and Access Control__ -> __Users__ menu, find the corresponding user. In the __Authorized User Groups__ tab, if there are roles such as Admin, Kpanda Owner, etc. that have container management permissions, even if the cluster permission or namespace permission is not bound in the container management module, the user can see all clusters. Refer to [User Authorization Document](../../ghippo/user-guide/access-control/user.md).
 
-    - Workspace binding in the global management module: Use an account to enter `Global Management` -> `Workspace and Folder`, and you can see your authorized workspace. Click the workspace name.
+    - Workspace binding in the global management module: Use an account to enter __Global Management__ -> __Workspace and Folder__ , and you can see your authorized workspace. Click the workspace name.
 
         1. If the workspace is separately authorized to oneself, the user can see their account on the authorization tab. Then check the resource group or shared resource tab. If the resource group is bound with the namespace or the shared resource is bound with the cluster, the user can see the corresponding cluster.
 
@@ -109,7 +109,7 @@ This page lists some frequently asked questions that may arise in container mana
 
     In Kubernetes clusters with versions below v1.18, opening the console will result in csr resource request failure. When opening the console, certificates are requested through csr resources in the target cluster according to the currently logged-in user. If the cluster version is too low or this feature is not enabled in the controller, certificate application will fail and it will be impossible to connect to the target cluster.
 
-    Please refer to the certificate signing request process: https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/
+    Refer to the certificate signing request process: https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/
 
     Solution:
 

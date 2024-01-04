@@ -4,7 +4,7 @@ The message template feature supports customizing the content of message templat
 
 ## Creating a Message Template
 
-1. In the left navigation bar, select `Alert Center` -> `Message Templates`, and click the `New Message Template` button.
+1. In the left navigation bar, select __Alert Center__ -> __Message Templates__ , and click the __New Message Template__ button.
 
     ![Click button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/template01.png)
 
@@ -14,7 +14,7 @@ The message template feature supports customizing the content of message templat
 
 ## Editing or Deleting a Message Template
 
-Click `︙` on the right side of the list and select `Edit` or `Delete` from the pop-up menu to modify or delete the message template.
+Click __︙__ on the right side of the list and select __Edit__ or __Delete__ from the pop-up menu to modify or delete the message template.
 
 !!! warning
 
