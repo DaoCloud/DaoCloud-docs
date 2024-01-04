@@ -30,6 +30,18 @@
 2. 登录 DCE 5.0 容器管理，选择目标集群，选择左侧导航进入`密钥`，输入
    `insight-agent-opentelemetry-operator-controller-manager-service-cert`，选择`删除`。
 
+## v0.22.0
+
+### Insight Agent
+
+#### 升级 Insight Agent 时更新日志收集端，未生效
+
+1. 更新 insight-agent 日志配置从 elasticsearch 改为 kafka 或者从 kafka 改为 elasticsearch，实际上都未生效，还是使用更新前配置。
+
+解决方案：
+
+1. 手动重启集群中的 fluentbit。
+
 ## v0.21.0
 
 ### Insight Agent
