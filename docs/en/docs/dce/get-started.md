@@ -236,6 +236,8 @@ elasticity of IT systems, and significantly accelerating application delivery.
 
 </div>
 
+*[DCE]: An abbreviation for DaoCloud Enterprise, a next-generation AI computing platform
+
 !!! success
 
     ```yaml

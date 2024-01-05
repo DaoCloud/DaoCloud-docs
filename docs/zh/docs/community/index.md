@@ -19,7 +19,7 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./cloudtty.md)
 
--   :simple-wikipedia:{ .lg .middle } __Clusterpedia__ :simple-cncf: 已入选 CNCF Sandbox 和 Landscape
+-   :simple-wikipedia:{ .lg .middle } __Clusterpedia__ :simple-cncf: 已入选 CNCF Landscape 和 Sandbox
 
     ---
 
@@ -74,7 +74,7 @@ hide:
 
 <div class="grid cards" markdown>
 
--   :material-storage-tank:{ .lg .middle } __HwameiStor__ :simple-cncf: 已入选 CNCF Sandbox 和 Landscape
+-   :material-storage-tank:{ .lg .middle } __HwameiStor__ :simple-cncf: 已入选 CNCF Landscape 和 Sandbox
 
     ---
 
@@ -122,7 +122,7 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./kwok.md)
 
--   :fontawesome-solid-bridge:{ .lg .middle } __Merbridge__ :simple-cncf: 已入选 CNCF Sandbox 和 Landscape
+-   :fontawesome-solid-bridge:{ .lg .middle } __Merbridge__ :simple-cncf: 已入选 CNCF Landscape 和 Sandbox
 
     ---
 
@@ -142,11 +142,11 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./miragedebug.md)
 
--   :spider:{ .lg .middle } __Spiderpool__  :simple-cncf: 已入选 CNCF Sandbox 和 Landscape
+-   :spider:{ .lg .middle } __Spiderpool__  :simple-cncf: 已入选 CNCF Landscape 和 Sandbox
 
     ---
 
-    云原生网络 Underlay 和 RDMA 网络方案，已入选 CNCF Sandbox 和 Landscape
+    云原生网络 Underlay 和 RDMA 网络方案，已入选 CNCF Landscape 和 Sandbox
 
     [:octicons-arrow-right-24: 了解更多](./spiderpool.md)
 
@@ -173,6 +173,9 @@ hide:
 </div>
 
 *[DCE]: DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台
+*[CNCF]: Cloud Native Computing Foundation 云原生计算基金会
+*[Landscape]: CNCF 全景图是一个展示云原生技术生态系统中各种项目和工具的综合性图谱
+*[Sandbox]: CNCF 为初创的云原生项目提供的沙箱式孵化平台
 
 !!! success
 

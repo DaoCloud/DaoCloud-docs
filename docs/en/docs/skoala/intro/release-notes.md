@@ -2,6 +2,78 @@
 
 This page lists the release notes of Microservices to help you learn its feature development and bug fixing progress.
 
+## 2024-01-03
+
+### v0.31.2
+
+#### Fixes
+
+- **Fixed** an issue of missing protocol field display in the gateway API
+- **Fixed** an issue of abnormal managed resources due to address changes after cluster reconnection
+- **Fixed** an issue of incorrect statistics for abnormal gateway access
+- **Fixed** an issue of NodePort ports being set to 0 for cluster services
+- **Fixed** an issue of inaccurate status prompts for automatic population of cluster services and mesh services
+- **Fixed** an issue of installation failure for Init Chart when the insight-system namespace does not exist
+
+## 2023-12-26
+
+### v0.31.1
+
+#### Fixes
+
+- **Fixed** an issue of missing log files for gateway management components
+
+## 2023-12-26
+
+### v0.31.0
+
+#### New Features
+
+- **Added** support for managed Nacos version 2.3.0
+- **Added** support for service and API gateway services as traffic entry points
+- **Added** outlier instance detection
+- **Added** details for traffic swimlane topology (traffic direction, versions, etc.)
+- **Added** advanced configuration for heap memory in gateway runtime
+
+#### Fixes
+
+- **Fixed** an issue of missing connection addresses in gateway service lists and service details
+- **Fixed** an issue of missing labels after updating gateway APIs
+- **Fixed** an issue of duplicate gateway API routing rules
+- **Fixed** an issue of empty value for maximum heap memory in gateway runtime
+- **Fixed** an issue of service integration when managing Nacos and mesh services
+- **Fixed** an issue of incorrect Istio sidecar annotations injection in the gateway
+- **Fixed** an issue of abnormal Nacos service query in the gateway
+- **Fixed** an issue of inability to create drainage rules due to long service names in traffic swimlanes
+- **Fixed** an issue of abnormal service port update in the gateway
+- **Fixed** an issue of abnormal resource quota calculation when creating managed resources
+- **Fixed** a logical issue in filtering gateway API lists based on domain names
+- **Fixed** an issue of duplicate ports in cloud-native microservice governance
+- **Fixed** an issue of repeated judgment and duplicate conditions when multiple routes exist for an API
+- **Fixed** an issue of abnormal error in API testing for HTTPS domain names
+- **Fixed** an issue of abnormality when deleting Sentinel functionality
+- **Fixed** an issue of component restart when exporting logs with empty gateway logs
+- **Fixed** an issue of empty console address in the response of managed Nacos resource information API
+- **Fixed** an issue of failed Seata plugin activation when the managed Nacos name has the suffix `-seata`
+- **Fixed** an issue of MySQL viewing permissions in managed Nacos middleware management
+- **Fixed** an issue of labels in gateway interface v1alpha2 version
+
+#### Improvements
+
+- **Improved** Skoala Agent component and added logging functionality
+- **Improved** the gateway control plane (Contour) to v1.27.0 private branch version
+- **Improved** the gateway runtime (Envoy) to v1.28.0 official version
+- **Improved** the gateway dependency on Gateway API custom resources to v1.0 official version
+- **Improved** the gateway log query index (compatible with previous versions)
+
+## 2023-12-11
+
+### v0.30.2
+
+#### Fixes
+
+- **Fixed** an issue of multiple duplicate route records in the gateway API
+
 ## 2023-12-01
 
 ### v0.30.0
@@ -40,7 +112,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ### 2023-11-07
 
-#### V0.28.1
+#### v0.28.1
 
 ##### Fixes
 
@@ -51,28 +123,28 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ## 2023-10-26
 
-### V0.28.0
+### v0.28.0
 
 #### New Features
 
-- **New** Added support for regular expression and exact match for gateway API request headers.
-- **New** Added support for bulk import and export of gateway APIs.
-- **New** Added support for managing multiple versions of Nacos (currently supports versions 2.0.4, 2.1.1, and 2.2.3).
-- **New** Added support for complex password requirements in Sentinel console.
-- **New** Added support for targeted gray release of Nacos configuration files.
-- **New** Added support for distributed transactions (including TCC mode, FMT mode, SAGA mode, XA mode).
-- **New** Added support for importing interfaces using Swagger standard through visual form interface.
+- **Added** support for regular expression and exact match for gateway API request headers.
+- **Added** support for bulk import and export of gateway APIs.
+- **Added** support for managing multiple versions of Nacos (currently supports versions 2.0.4, 2.1.1, and 2.2.3).
+- **Added** support for complex password requirements in Sentinel console.
+- **Added** support for targeted gray release of Nacos configuration files.
+- **Added** support for distributed transactions (including TCC mode, FMT mode, SAGA mode, XA mode).
+- **Added** support for importing interfaces using Swagger standard through visual form interface.
 
 #### Fixes
 
-- **Fixed** the issue of supporting different versions of managed Nacos.
-- **Fixed** the issue of duplicate request methods in the gateway interface list.
+- **Fixed** an issue of supporting different versions of managed Nacos.
+- **Fixed** an issue of duplicate request methods in the gateway interface list.
 - **Fixed** the problem of Zookeeper registry not being able to connect to instances with TLS protocol.
-- **Fixed** the issue of domain deletion and update failure after enabling global authentication in the gateway.
-- **Fixed** the issue of incorrect CPU usage at the namespace level in managed Nacos.
-- **Fixed** the issue of abnormal service change when switching from NodePod mode to ClusterIP mode in managed Nacos.
-- **Fixed** the issue of abnormal Seata interface verification.
-- **Fixed** the issue of abnormal workspace access when switching registry center.
+- **Fixed** an issue of domain deletion and update failure after enabling global authentication in the gateway.
+- **Fixed** an issue of incorrect CPU usage at the namespace level in managed Nacos.
+- **Fixed** an issue of abnormal service change when switching from NodePod mode to ClusterIP mode in managed Nacos.
+- **Fixed** an issue of abnormal Seata interface verification.
+- **Fixed** an issue of abnormal workspace access when switching registry center.
 - **Fixed** the permission issue with related interfaces of managed Nacos.
 - **Fixed** the issue with Grafana monitoring panel for managed Nacos.
 - **Fixed** the issue with Sentinel Grafana monitoring panel.
@@ -124,7 +196,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ## 2023-08-25
 
-### V0.27.0
+### v0.27.0
 
 #### New Features
 
@@ -192,7 +264,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 #### Fixes
 
-- **Fixed** the issue of incorrect version of the Agent component.
+- **Fixed** an issue of incorrect version of the Agent component.
 
 ## 2023-07-25
 
@@ -210,17 +282,17 @@ This page lists the release notes of Microservices to help you learn its feature
 
 #### Fixes
 
-- **Fixed** the issue of Nacos port not being updated.
-- **Fixed** the issue of cluster flow control rules in Sentinel not being saved.
-- **Fixed** the issue of API exception when deleting non-empty services in Nacos.
-- **Fixed** the issue of duplicate data in gateway monitoring data.
+- **Fixed** an issue of Nacos port not being updated.
+- **Fixed** an issue of cluster flow control rules in Sentinel not being saved.
+- **Fixed** an issue of API exception when deleting non-empty services in Nacos.
+- **Fixed** an issue of duplicate data in gateway monitoring data.
 - **Fixed** the issue with the use of plugins in cloud native microservices related APIs.
 - **Fixed** the issues with gateway domain naming rules.
-- **Fixed** the issue of incorrect version in cloud native microservice traffic lanes.
+- **Fixed** an issue of incorrect version in cloud native microservice traffic lanes.
 
-#### Optimizations
+#### Improvements
 
-- **Optimized** the driver name of the People's Congress Golden Warehouse database from "kb_v8r6" to "kingbase".
+- **Improved** the driver name of the People's Congress Golden Warehouse database from "kb_v8r6" to "kingbase".
 
 ## 2023-07-19
 
@@ -237,13 +309,13 @@ This page lists the release notes of Microservices to help you learn its feature
 
 #### Fixes
 
-- **Fixed** the issue of incorrect external image scanning address in the pipeline.
-- **Fixed** the issue of missing directory-level dependency for permissions associated with middleware.
+- **Fixed** an issue of incorrect external image scanning address in the pipeline.
+- **Fixed** an issue of missing directory-level dependency for permissions associated with middleware.
 
-#### Optimizations
+#### Improvements
 
-- **Optimized** the chain validation of gateway and related resource changes.
-- **Optimized** the gateway listening port from cluster IP to container port.
+- **Improved** the chain validation of gateway and related resource changes.
+- **Improved** the gateway listening port from cluster IP to container port.
 
 ## 2023-07-06
 
@@ -255,16 +327,16 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ## 2023-07-05
 
-### V0.24.1
+### v0.24.1
 
 #### Fixes
 
-- **Fixed** the issue of outdated versions in Skoala-init Chart form
+- **Fixed** an issue of outdated versions in Skoala-init Chart form
 - **Fixed** page experience improvements and issues
 
 ## 2023-06-30
 
-### V0.24.0
+### v0.24.0
 
 #### New Features
 
@@ -282,7 +354,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ## 2023-06-26
 
-### V0.23.0
+### v0.23.0
 
 #### New Features
 
@@ -318,7 +390,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ## 2023-05-31
 
-### V0.22.2
+### v0.22.2
 
 #### Fixes
 
@@ -331,20 +403,20 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ## 2023-05-29
 
-### V0.22.1
+### v0.22.1
 
 #### Fixes
 
 - Positions of plugin CRDs are not correc.
 - Issue related to OpenAPI publishing process.
 
-#### Enhancement
+#### Improvements
 
 - Set default values for database of Hive component.
 
 ## 2023-05-26
 
-### V0.22.0
+### v0.22.0
 
 #### New Features
 
@@ -376,7 +448,7 @@ This page lists the release notes of Microservices to help you learn its feature
 - Sentinel Token server resources.
 - ZooKeeper tracing is not closed.
 
-#### Enhancement
+#### Improvements
 
 - Sentinel monitoring panel structure and data logic.
 - Remove virtualhost CR from Gateway domain management.
@@ -386,7 +458,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ## 2023-05-07
 
-### V0.21.2
+### v0.21.2
 
 #### Fixes
 
@@ -396,19 +468,19 @@ This page lists the release notes of Microservices to help you learn its feature
 - Data service instance is not filtered according to the cluster when selecting the hosted registry.
 - Incorrect registry statistics.
 
-#### Enhancement
+#### Improvements
 
 - Update the Gateway component to the latest community test version.
 
 ## 2023-04-26
 
-### V0.21.1
+### v0.21.1
 
 #### Fixes
 
 - Cloud native microservice pagination
 
-#### Enhancement
+#### Improvements
 
 - "disable Istio sidecar injection" for Nacos
 - Insight version to official v0.16.0
@@ -417,7 +489,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ## 2023-04-25
 
-### V0.21.0
+### v0.21.0
 
 #### New Features
 
@@ -440,17 +512,17 @@ This page lists the release notes of Microservices to help you learn its feature
 - Domain format verification
 - Some fields of plugins are named incorrectly
 
-#### Enhancement
+#### Improvements
 
 - Version of Insight integrated to 0.16.0
 - Add a prefix to the module name for template end service
 - Virtualhost crd
 - Httpproxy crd
-- Skoalaplugin crd
+- Skoala plugin crd
 
 ## 2023-04-21
 
-### V0.20.0
+### v0.20.0
 
 #### New Features
 
@@ -468,7 +540,7 @@ This page lists the release notes of Microservices to help you learn its feature
 - User-defined role and API mappings
 - API sort and entry in gateway overview page
 
-#### Enhancement
+#### Improvements
 
 - Plugins related API
 - Configuration file structure
@@ -480,7 +552,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ## 2023-04-10
 
-### V0.19.4
+### v0.19.4
 
 #### Fixes
 
@@ -488,7 +560,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ## 2023-04-10
 
-### V0.19.3
+### v0.19.3
 
 #### Fixes
 
@@ -496,7 +568,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ## 2023-04-04
 
-### V0.19.2
+### v0.19.2
 
 #### Fixes
 
@@ -551,7 +623,7 @@ This page lists the release notes of Microservices to help you learn its feature
 - Nacos GRPC port name affect integrating Istio
 - External mirror security scan in daily builds
 
-#### Enhancement
+#### Improvements
 
 - Streamline CI actions
 - Use retry mechanism to update all resources
@@ -597,7 +669,7 @@ This page lists the release notes of Microservices to help you learn its feature
 #### Fixes
 
 - Error in creating Nacos namespace
-- Error in editing  Nacos persistent storage
+- Error in editing Nacos persistent storage
 - Resource verification of Nacos life cycle management
 - Data display of gateway monitoring panel
 - Ghippo link GRPC address missing
@@ -613,7 +685,7 @@ This page lists the release notes of Microservices to help you learn its feature
 - Base image CVE and upgrade to v3.17.2
 - Error of chat update in release process
 
-#### Enhancement
+#### Improvements
 
 - Gateway-api version to v0.6.0
 - Use client-go instead of clusterpedia to get to-be-updated resources
@@ -631,7 +703,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 - Repetitive builder creation when building an image
 
-#### Enhancement
+#### Improvements
 
 - Details in Sentinel application monitor panel
 
@@ -644,7 +716,7 @@ This page lists the release notes of Microservices to help you learn its feature
 - Error in Sentinel invoking Nacos interface with authentication enabled
 - Error of nacos-operator frequently modifying service resources
 
-#### Enhancement
+#### Improvements
 
 - Add Grafana monitor panel for Sentinel service
 - Insight to the latest version to support querying monitoring data by cluster name
@@ -667,7 +739,7 @@ This page lists the release notes of Microservices to help you learn its feature
 - Error in Nacos controller logic
 - Error in integrating egress with cluster management
 
-#### Enhancement
+#### Improvements
 
 - Error in dashboard of managed Nacos
 - File obtain address for nacos-operator database initialization
@@ -687,7 +759,7 @@ This page lists the release notes of Microservices to help you learn its feature
 - Error in naming values in Skoala Chart
 - Mirroring errors in CI flows
 
-#### Enhancement
+#### Improvements
 
 - Output logs to console by default
 - Nacos-operator to the community version
@@ -716,7 +788,7 @@ This page lists the release notes of Microservices to help you learn its feature
 - Error in updated gateways are not classified
 - Error in database initialization of managed Nacos
 
-#### Enhancement
+#### Improvements
 
 - Registries are listed in descending order by update time
 - Unified field name of gateway JWT
@@ -749,3 +821,5 @@ This page lists the release notes of Microservices to help you learn its feature
 - Error in pre-dependency check interface
 - Logical error of Sentinel matching Nacos default namespace
 - Logic error in handling port connected to the container management module is wrong
+
+*[Skoala]: The development name for the microservices in DaoCloud
