@@ -1,6 +1,8 @@
 # Kafka 消息队列 Release Notes
 
-本页列出 Kafka 消息队列的 Release Notes，便于您了解各版本的演进路径和特性变化。
+本页列出 Kafka 消息队列的 Release Notes，便于您了解各版本的演进路径和特性变化
+
+*[mcamel-kafka]: mcamel 是 DaoCloud 所有中间件的开发代号，kafka 是提供分布式消息队列服务的中间件
 
 ## 2023-12-31
 
@@ -9,7 +11,7 @@
 #### 优化
 
 - **优化** 监控面板支持中文
-- **优化** Kafka 采用 NodePort 模式访问时返回多个 broker 的 NodePort。
+- **优化** Kafka 采用 NodePort 模式访问时返回多个 broker 的 NodePort
 - **修复** Kafka 修复列表展示重复数据的问题
 - **修复** 创建实例时部分输入框填写特殊字符的校验未生效的问题
 
@@ -28,9 +30,9 @@
 
 #### 优化
 
-- **新增** 离线升级。
-- **新增** 实例重启功能。
-- **修复** cloudshell 权限问题。
+- **新增** 离线升级
+- **新增** 实例重启功能
+- **修复** cloudshell 权限问题
 
 ## 2023-08-31
 
@@ -38,12 +40,12 @@
 
 #### 新功能
 
-- **新增** 白名单访问控制。
+- **新增** 白名单访问控制
 
 #### 优化
 
-- **优化** KindBase 语法兼容。
-- **优化** operator 创建过程的页面展示。
+- **优化** KindBase 语法兼容
+- **优化** operator 创建过程的页面展示
 
 ## 2023-07-31
 
@@ -51,7 +53,7 @@
 
 #### 新功能
 
-- **新增** UI 界面的权限访问限制。
+- **新增** UI 界面的权限访问限制
 
 ## 2023-06-30
 
@@ -86,12 +88,12 @@
 
 #### 新功能
 
-- **新增** `mcamel-kafka` 支持中间件链路追踪适配。
-- **新增** 安装 `mcamel-kafka` 根据参数配置启用链路追踪。
+- **新增** `mcamel-kafka` 支持中间件链路追踪适配
+- **新增** 安装 `mcamel-kafka` 根据参数配置启用链路追踪
 
 #### 优化
 
-- **优化** `mcamel-kafka` 优化 Kafka 的默认配置。
+- **优化** `mcamel-kafka` 优化 Kafka 的默认配置
 - **升级** golang.org/x/net 到 v0.7.0
 - **升级** GHippo SDK 到 v0.14.0
 
@@ -101,22 +103,22 @@
 
 #### 新功能
 
-- **新增** `mcamel-kafka` helm-docs 模板文件。
-- **新增** `mcamel-kafka` 应用商店中的 Operator 只能安装在 mcamel-system。
-- **新增** `mcamel-kafka` 支持 cloud shell。
-- **新增** `mcamel-kafka` 支持导航栏单独注册。
-- **新增** `mcamel-kafka` 支持查看日志。
-- **新增** `mcamel-kafka` Operator 对接 chart-syncer。
+- **新增** `mcamel-kafka` helm-docs 模板文件
+- **新增** `mcamel-kafka` 应用商店中的 Operator 只能安装在 mcamel-system
+- **新增** `mcamel-kafka` 支持 cloud shell
+- **新增** `mcamel-kafka` 支持导航栏单独注册
+- **新增** `mcamel-kafka` 支持查看日志
+- **新增** `mcamel-kafka` Operator 对接 chart-syncer
 
 #### 优化
 
-- **优化** `mcamel-kafka` 升级离线镜像检测脚本。  
+- **优化** `mcamel-kafka` 升级离线镜像检测脚本  
 
 #### 修复
 
-- **修复** `mcamel-kafka` 实例名太长导致自定义资源无法创建的问题。
-- **修复** `mcamel-kafka` 工作空间 Editor 用户无法查看实例密码。
-- **新增** 日志查看操作说明，支持自定义查询、导出等功能。
+- **修复** `mcamel-kafka` 实例名太长导致自定义资源无法创建的问题
+- **修复** `mcamel-kafka` 工作空间 Editor 用户无法查看实例密码
+- **新增** 日志查看操作说明，支持自定义查询、导出等功能
 
 ## 2022-12-25
 
@@ -124,13 +126,13 @@
 
 #### 新功能
 
-- **新增** `mcamel-kafka` NodePort 端口冲突提前检测。
-- **新增** `mcamel-kafka` 节点亲和性配置。
+- **新增** `mcamel-kafka` NodePort 端口冲突提前检测
+- **新增** `mcamel-kafka` 节点亲和性配置
 
 #### 优化
 
-- **优化** `mcamel-kafka` manager 去掉 probe，防止 kafka 没准备好不能打开 manager。  
-- **优化** `mcamel-kafka` zooEntrance 重新打包镜像地址为 1.0.0。  
+- **优化** `mcamel-kafka` manager 去掉 probe，防止 kafka 没准备好不能打开 manager  
+- **优化** `mcamel-kafka` zooEntrance 重新打包镜像地址为 1.0.0  
 
 ## 2022-11-28
 
@@ -185,5 +187,5 @@
 - **新增** 支持 kafka-manager 对 kafka 进行管理
 - **新增** 支持 kafka 的指标监控，查看监控图表
 - **新增** 支持 ghippo 权限联动
-- **新增** `mcamel-elasticsearch` 获取用户列表接口
+- **新增** `mcamel-kafka` 获取用户列表接口
 - **优化** 更新 release note 脚本，执行 release-process 规范
