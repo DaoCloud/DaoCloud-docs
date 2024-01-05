@@ -3,26 +3,56 @@
 This page lists the Release Notes of Spidernet, so that you can understand the
 evolution path and feature changes of each version.
 
-Spidernet includes:
+*[Spidernet]: The dev name of general network module in DaoCloud
+*[Spiderpool]: A CNCF sandbox project, an underlay and RDMA network solution of the Kubernetes for bare metal, VM and any public cloud
+*[EgressGateway]: DaoCloud's open-source egress gateway solution built on K8s and available on GitHub
+*[IPAM]: IP Address Management
+*[SR-IOV]: Single Root IO Virtualization
+*[RDMA]: Remote Direct Memory Access, a popular tech to support LLM and GPT
 
-- Spiderpool, an open-source IPAM module developed by DaoCloud. Refer to
-  [Spiderpool Release Notes](https://github.com/spidernet-io/spiderpool/releases).
-- Egressgateway, an open-source egress gateway module developed by DaoCloud. Refer to
-  [Egressgateway Release Notes](https://github.com/spidernet-io/egressgateway/releases).
+## 2023-12-30
+
+### v0.12.1
+
+- Compatible with **Spiderpool v0.9.0**
+- Compatible with **EgressGateway v0.4.0**
+
+#### New Features
+
+- **Added** support for InfiniBand network cards using InfiniBand SR-IOV CNI and IPoIB CNI
+- **Added** support for querying cluster lists of Spiderpool or EgressGateway
+- **Added** support for interface names in annotations to enable multiple network cards
+- **Added** support for Multus to configure bandwidth for SR-IOV
+- **Added** support for Multus to use custom types of empty configurations
+- **Added** support for single IP in dual-stack for subnets
+
+#### Improvements
+
+- **Improved** validation for IPAM IP pool annotations
+
+#### Fixes
+
+- **Fixed** an error in querying IP pool interface based on namespace
+- **Fixed** not updating Multus ConfigMap if Multus is not installed
+- **Fixed** not initializing Multus CR if Multus is disabled
+- **Fixed** coordinator ensuring detection of gateway and IP conflicts in Pod's netns
+- **Fixed** crash of Spiderpool-agent when Kubevirt static IP feature is disabled
+- **Fixed** disabling subnet feature for individual Pods without controllers
+- **Fixed** retrieving serviceCIDR from KubeControllerManager Pod
 
 ## 2023-11-30
 
 ### v0.11.1
 
 - Compatible with **Spiderpool v0.8.1**
-- Compatible with **Egressgateway v0.4.0**
+- Compatible with **EgressGateway v0.4.0**
 
 #### New Features
 
-- **Added** support for querying installation status of Spiderpool and Egressgateway
+- **Added** support for querying installation status of Spiderpool and EgressGateway
 - **Added** support for Multus CR to manage SR-IOV CNI and enable RDMA
 - **Added** support for automatically selecting network resource parameters such as RDMA, SR-IOV, and hugepages when creating a workload
-- **Added** support for Egressgateway to use EIP counting feature
+- **Added** support for EgressGateway to use EIP counting feature
 
 #### Improvements
 
@@ -32,54 +62,54 @@ Spidernet includes:
 
 - **Fixed** issue with matching namespaces when associating IP pool with Multus CR instances
 - **Fixed** issue with not updating Annotations when updating Multus CR
-- **Fixed** issue with incorrect policy reallocation caused by Egressgateway
+- **Fixed** issue with incorrect policy reallocation caused by EgressGateway
 
 ## 2023-10-30
 
 ### v0.10.1
 
 - Compatible with **Spiderpool v0.8.0**
-- Compatible with **Egressgateway v0.3.0**
+- Compatible with **EgressGateway v0.3.0**
 
 #### New Features
 
-- **Added** Support for Egress gateway to select a group of nodes using node selectors as Egress nodes
+- **Added** support for Egress gateway to select a group of nodes using node selectors as Egress nodes
   and forward external traffic through specified nodes.
-- **Added** Support for configuring IP pools for node groups to ensure sufficient available IP addresses
+- **Added** support for configuring IP pools for node groups to ensure sufficient available IP addresses
   for different nodes or node groups in the network.
-- **Added** Support for setting EIP (Egress IP) for namespaces or workloads under Calico, Flannel, Weave,
+- **Added** support for setting EIP (Egress IP) for namespaces or workloads under Calico, Flannel, Weave,
   and Spiderpool network modes. Pods will use this EIP as the outbound address when accessing the external network.
-- **Added** Support for setting a default Egress IP as the cluster or namespace's outbound address.
-- **Added** Support for outbound traffic control through gateway policies, including filtering
+- **Added** support for setting a default Egress IP as the cluster or namespace's outbound address.
+- **Added** support for outbound traffic control through gateway policies, including filtering
   outbound traffic based on destination CIDR.
-- **Added** Support for viewing default EgressIP, EgressIP pools, node lists, and node IP address ranges
+- **Added** support for viewing default EgressIP, EgressIP pools, node lists, and node IP address ranges
   in Egress gateway.
-- **Added** Support for using Pod label selectors or source addresses in gateway policies to select Pods
+- **Added** support for using Pod label selectors or source addresses in gateway policies to select Pods
   that will use Egress and specify Pods that follow specific gateway policies.
-- **Added** Support for network configuration control by viewing selected gateways, EgressIPs or node IPs,
+- **Added** support for network configuration control by viewing selected gateways, EgressIPs or node IPs,
   container group, etc., in gateway policies.
-- **Added** Support for using Egressgateway in lower kernel versions.
+- **Added** support for using EgressGateway in lower kernel versions.
 - **Added** Management interface for Multus CR, supporting the creation of CR instances using different
-  Multus CNI types (including Macvlan, IPvlan, SRIOV, custom).
+  Multus CNI types (including Macvlan, IPvlan, SR-IOV, custom).
 - **Added** RDMA CNI and RDMA device plugin integration in Spiderpool.
 - **Added** Chart configuration information for `sriov network operator`.
-- **Added** Support for assigning static IP addresses to KubeVirt virtual machines.
+- **Added** support for assigning static IP addresses to KubeVirt virtual machines.
 - **Added** Installation of CNI, OVS, and RDMA in the initialization container of SpiderAgent.
 
-#### Optimizations
+#### Improvementss
 
-- **Optimized** Upgrade OpenTelemetry version to 1.19.0.
-- **Optimized** During Spiderpool initialization, if the default SpiderMultusConfig network is not empty,
+- **Improved** Upgrade OpenTelemetry version to 1.19.0.
+- **Improved** During Spiderpool initialization, if the default SpiderMultusConfig network is not empty,
   it will be automatically created.
-- **Optimized** All plugins have built new Docker images.
-- **Optimized** Improved GetTopController method.
-- **Optimized** Corresponding CNI types in Multus CR management for workload network configuration.
+- **Improved** All plugins have built new Docker images.
+- **Improved** Improved GetTopController method.
+- **Improved** Corresponding CNI types in Multus CR management for workload network configuration.
 
 #### Fixes
 
-- **Fixed** Issue with eth0 source IP in packets transmitted by coordinator through veth0.
-- **Fixed** Error caused by empty `spidermultusconfig.spec` in SpiderMultusConfig.
-- **Fixed** Issue with SpiderCoordinator when automatically determining PodCIDR type.
+- **Fixed** an issue with eth0 source IP in packets transmitted by coordinator through veth0.
+- **Fixed** an error caused by empty `spidermultusconfig.spec` in SpiderMultusConfig.
+- **Fixed** an issue with SpiderCoordinator when automatically determining PodCIDR type.
 
 ## 2023-08-30
 
@@ -94,7 +124,7 @@ Compatible with **Spiderpool v0.7.0**
 - **Added** Optimization of IPAM core algorithm, prioritizing IP allocation in affinity pools
 - **Added** Creation of orphan IPPool under SpiderSubnet auto pool functionality
 - **Added** Removal of CNI configuration files in Multus uninstallation hooks
-- **Added** Support for automatic mode (default) in Coordinator, which automatically detects the working mode
+- **Added** support for automatic mode (default) in Coordinator, which automatically detects the working mode
   without the need for manual specification of Underlay or Overlay. The same multus CNI configuration can be
   used as both Underlay and Overlay modes.
 - **Added** Configuration of `ovs-cni` through `spidermultusconfig`
@@ -109,7 +139,7 @@ Compatible with **Spiderpool v0.7.0**
 - **Fixed** Failed route addition in Coordinator
 - **Fixed** Clearing of collected cluster subnet information if `spidercoordinator.status.phase`
   is not Ready and preventing pod creation
-- **Fixed** Clearing of `resourceName` field for `sriov-cni` in `spidermultusconfig`
+- **Fixed** Clearing of `resourceName` field for `SR-IOV-cni` in `spidermultusconfig`
 - **Fixed** Validation of custom CNI configuration file in `spidermultusconfig` to ensure it is a valid JSON format
 - **Fixed** Uniform creation of routes for all nodes and pods in host's `table500` instead of each pod having its own table
 
@@ -130,11 +160,11 @@ Compatible with **Spiderpool v0.6.0**
   Pod gateways. Refer to
   [Coordinator documentation](https://github.com/spidernet-io/spiderpool/blob/main/docs/usage/coordinator.md)
 - **Added** Deep support for IPVlan, suitable for any public cloud environment
-- **Added** Support for multiple default IP pools to simplify usage
+- **Added** support for multiple default IP pools to simplify usage
 - **Added** CNI plugin `Ifacer` for automatic creation of sub-interfaces. Refer to
   [`Ifacer` documentation](https://github.com/spidernet-io/spiderpool/blob/main/docs/usage/ifacer.md)
 - **Added** Ability to specify default route network interfaces through Pod annotations
-- **Added** Support for automatic pool recycling switch to customize whether automatic pools should be deleted
+- **Added** support for automatic pool recycling switch to customize whether automatic pools should be deleted
 - **Improved** Support for elastic IPs in cluster subnets, resolving the issue where new Pods do not
   have available IPs while old Pods are not yet deleted during rolling updates of applications.
 
@@ -149,7 +179,7 @@ Compatible with **Spiderpool v0.5.0**
 - **Added** definition of Multus API in `spidernet`
 - **Improved** stability of `spidernet` e2e
 - **Fixed** `spidernet` `goproduct` Proxy Config
-- **Optimized** default replication to 2 in `spidernet`
+- **Improved** default replication to 2 in `spidernet`
 
 ## 2023-05-28
 
@@ -189,9 +219,9 @@ Compatible with **Spiderpool v0.4.1**
 
 ### v0.5.0
 
-#### Optimization
+#### Improvements
 
-- **Optimized** Spidernet API, adapted to **Spiderpool v0.4.0** new version CRD
+- **Improved** Spidernet API, adapted to **Spiderpool v0.4.0** new version CRD
 
 #### Fixes
 
@@ -206,9 +236,9 @@ Compatible with **Spiderpool v0.4.1**
 
 ### v0.4.4
 
-#### Optimization
+#### Improvements
 
-- **Optimized** Adjust the CPU memory Request value.
+- **Improved** Adjust the CPU memory Request value.
 
 #### Fixes
 
@@ -223,17 +253,17 @@ Compatible with **Spiderpool v0.4.1**
 
 ### v0.4.3
 
-#### Optimization
+#### Improvements
 
-- **Optimized** resource usage, reduce CPU and memory requests.
+- **Improved** resource usage, reduce CPU and memory requests.
 
 ### v0.4.2
 
-#### Optimization
+#### Improvements
 
-- **Optimized** resource usage, reduce CPU and memory requests.
-- **Optimized** Subnet or IPPool cannot be deleted when IP is occupied.
-- **Optimized** pagination issue
+- **Improved** resource usage, reduce CPU and memory requests.
+- **Improved** Subnet or IPPool cannot be deleted when IP is occupied.
+- **Improved** pagination issue
 
 ### v0.4.1
 
@@ -244,6 +274,6 @@ Compatible with **Spiderpool v0.4.1**
 - **Added** The workload uses the multi-NIC feature of the container, and the IP pool can be selected and fixed.
 - **Added** Check the number of available IPs/total IPs in the application fixed IP pool.
 
-#### Optimization
+#### Improvements
 
-- **Optimized** resource usage, reduce CPU and memory requests.
+- **Improved** resource usage, reduce CPU and memory requests.
