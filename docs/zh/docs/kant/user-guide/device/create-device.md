@@ -68,7 +68,7 @@
 
     ![创建设备](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-device-06.png)
 
-6. 信息确认，确认所配置的信息无误，点击`创建`，完成设备创建。
+6. 信息确认，确认所配置的信息无误，点击`确定`，完成设备创建。
 
     ![创建设备](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-device-07.png)
 
