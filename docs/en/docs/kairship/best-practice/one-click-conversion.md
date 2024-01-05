@@ -1,36 +1,42 @@
-# Realize one-click conversion of DCE4 to DCE5 applications
+---
+MTPE: FanLin
+Date: 2024-01-05
+---
 
-This section will take the stateless load nginx as an example to introduce how to implement one-click conversion of DCE4 to DCE5 applications through the Multicloud Management interface.
+# Implement One-Click Migration from DCE 4.0 to DCE 5.0
 
-## prerequisites
+This section provides a walkthrough on how to achieve one-click migrating applications from DCE 4.0 to DCE 5.0 using the deployment nginx as an example, facilitated through the Multicloud Management interface.
 
-- The container management module is connected to the cluster whose cluster manufacturer is DaoCloud DCE, please refer to [Connected to Kubernetes cluster](../cluster.md), and can access the UI interface of the cluster.
-- The workload in the DCE4 cluster can run normally.
+## Prerequisites
 
-## One-click transfer
+- Connect your container management module to a cluster managed by DCE. For instructions on how to do this, please refer to the [Manage Worker Clusters](../cluster.md) guide. After the connection is established, ensure that you can access the UI interface of the cluster.
 
-1. Go to __Multicloud Instance - Workload Management__ , click __Connect to Cluster__ and choose to connect the DCE4 cluster to the multicloud instance.
+- Confirm that the workload in your DCE 4.0 cluster is functioning normally. This tutorial assumes that your DCE 4.0 cluster is in good working condition.
 
-    <!--screenshot-->
+## One-Click Migration
 
-2. Enter __Multicloud Workload - Deployment__ , click Experience Now, select the target application, and its associated service will be automatically selected, and the associated configuration items and keys will also be converted synchronously.
+1. Navigate to the multicloud instance and select __Worker Clusters__. Click on __Integrate Cluster__ and choose to connect the DCE4 cluster to the multicloud instance.
 
-    <!--screenshot-->
+    ![Integrate Cluster](../images/conversion01.png)
 
-    <!--screenshot-->
+2. Proceed to __Multicloud Workloads__ -> __Deployment__. Click on __Convert Now__ and select the target application. The related service will be selected automatically, and the corresponding configmaps and secrets will also undergo synchronous conversion.
 
-3. After the conversion is successful, click Update, select the target deployment cluster, and enable automatic propagation (by default, resources such as ConfigMap and Secret relied on in the multicloud workload configuration will be automatically detected and automatic propagation will be realized).
+    ![Convert Now](../images/conversion02.png)
 
-    <!--screenshot-->
+    ![Sync Convert](../images/conversion03.png)
 
-4. Update the deployment policy of the service, and select the deployment cluster.
+3. Click __Update__ after a successful conversion, select the target deployment cluster, and enable automatic propagation. This will automatically detect and propagate resources such as ConfigMap and Secret used in the multicloud workload configuration.
 
-    <!--screenshot-->
+    ![Update nginx](../images/conversion04.png)
 
-5. Verify that multicloud nginx is running successfully: Pods in both clusters are running successfully and can be accessed normally.
+4. Update the service's propagation policies and select the relevant clusters.
 
-    <!--screenshot-->
+    ![Update PP](../images/conversion05.png)
 
-6. The workload nginx in the DCE4 cluster will not be affected, and the application will continue to be served.
+5. Confirm the successful operation of multicloud nginx: Ensure that Pods in both clusters are running successfully and are accessible.
 
-    <!--screenshot-->
+    ![Confirm Operation](../images/conversion06.png)
+
+6. The nginx workload in the DCE4 cluster will remain unaffected, ensuring the continuous service of the application.
+
+    ![Uninterrupted Service](../images/conversion07.png)
