@@ -212,6 +212,9 @@ for the first time, you will be greeted by a user-friendly dashboard. This dashb
 of various information, including the status of running containers and pods, CPU and memory usage, health status
 of clusters/nodes/pods, alerts, resource utilization, and an overview of available functionalities.
 
+*[DCE]: An abbreviation for DaoCloud Enterprise, a next-generation AI computing platform
+*[AI]: DCE 5.0 has an integrated intelligent computing engine for efficient management of LLM jobs, datasets, GPU, CPU, and memory resources
+
 ![dashboard](./images/ipavo.png)
 
 [Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
