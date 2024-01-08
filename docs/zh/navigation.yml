@@ -53,10 +53,10 @@ nav:
                   - TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
                   - 其他 Linux: install/os-install/otherlinux.md
               - 升级:
-                  - 升级概述: install/upgrade-des.md
+                  - 概述: install/upgrade-des.md
                   - 升级 DCE 5.0 组件: install/upgrade.md
                   - 标准版升级白金版: install/evolve.md
-              - 升级/卸载/导入/FAQ:
+              - 卸载和导入:
                   - 卸载: install/uninstall.md
                   - 导入离线资源: install/import.md
               - 安装排障: install/faq.md
@@ -257,7 +257,7 @@ nav:
                       - GPU Operator 离线安装:
                           - GPU Operator 离线安装: kpanda/user-guide/gpu/nvidia/install_nvidia_driver_of_operator.md
                           - 构建 CentOS 7_9 离线 yum 源: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_centos7_9.md
-                          - 向火种节点仓库上传 RedHat GPU Opreator 离线镜像: kpanda/user-guide/gpu/nvidia/push_image_to_repo.md
+                          - 向火种节点仓库上传RedHat GPU Opreator离线镜像: kpanda/user-guide/gpu/nvidia/push_image_to_repo.md
                           - 构建 RedHat 8_4 离线 yum 源: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_redhat8_4.md
                       - NVIDIA GPU 整卡模式: kpanda/user-guide/gpu/nvidia/full_gpu_userguide.md
                       - NVIDIA vGPU 模式:
@@ -393,7 +393,7 @@ nav:
                       - Cilium 对于 Pod 访问 Service 的加速: network/performance/cilium-performance/cilium-service.md
                       - Cilium 在 Pod 跨节点通信场景下的性能测试: network/performance/cilium-performance/cilium-crossnode.md
                       - Cilium 在 nodePort 场景下的访问加速测试: network/performance/cilium-performance/cilium-nodeport.md
-                      - Cilium 基于 eBPF 技术实施 Pod 带宽管控场景下的性能测试: network/performance/cilium-performance/cilium-bandwidth.md
+                      - Cilium基于eBPF技术实施Pod带宽管控下的性能测试: network/performance/cilium-performance/cilium-bandwidth.md
                   - 基于 eBPF 技术实施网络策略场景下的性能测试: network/performance/ebpf-performance.md
                   - Ingress 性能测试: network/performance/ingress-performance.md
                   - Egress 性能测试: network/performance/egress-performance.md
@@ -524,9 +524,9 @@ nav:
                       - Rook-Ceph 部署 - 应用商店: storage/solutions/dce-rook-ceph.md
                       - Rook-Ceph 部署 - Helm: storage/solutions/helm-rook-ceph.md
                       - 如何接入 Ceph Dashboard: storage/solutions/ceph-dashboard.md
-                      - 创建 Ceph 文件存储(CephFS) 存储类: storage/solutions/sc-cephfs.md
-                      - 创建 Ceph 块存储(RBD) 存储类: storage/solutions/sc-cephrbd.md
-                      - 创建 Ceph 对象存储(RGW) 存储类: storage/solutions/sc-cephrgw.md
+                      - 创建 Ceph 文件存储(CephFS)存储类: storage/solutions/sc-cephfs.md
+                      - 创建 Ceph 块存储(RBD)存储类: storage/solutions/sc-cephrbd.md
+                      - 创建 Ceph 对象存储(RGW)存储类: storage/solutions/sc-cephrgw.md
                   - Longhorn:
                       - Longhorn 介绍: storage/solutions/longhorn.md
                       - Longhorn 部署 - 应用商店: storage/solutions/dce-longhorn.md
@@ -728,7 +728,7 @@ nav:
                   - 网关对接服务网格: skoala/best-practice/gateway-mesh.md
                   - 网关请求日志添加自定义属性: skoala/best-practice/add-custom-attributes.md
               - 故障排查:
-                  - skoala-init的x-kubernets-validations报错问题: skoala/troubleshoot/auth-server.md                
+                  - skoala-init的x-kubernets-validations报错: skoala/troubleshoot/auth-server.md                
               - 性能测试:
                   - 云原生网关吞吐量测试: skoala/tests/gateway-stress-test.md
                   - Nacos 压测报告: skoala/tests/nacos-stress-test.md
