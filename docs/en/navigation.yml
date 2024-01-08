@@ -56,7 +56,7 @@ nav:
                   - Overview: install/upgrade-des.md
                   - Upgrade DCE 5.0 Components: install/upgrade.md
                   - Upgrade from Standard to Platinum: install/evolve.md
-              - Uninstall/Import:
+              - Uninstall and Import:
                   - Uninstall: install/uninstall.md
                   - Import Offline Resources: install/import.md
               - Troubleshoot: install/faq.md
