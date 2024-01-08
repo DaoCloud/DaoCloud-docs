@@ -8,11 +8,11 @@ achieving an independent high-availability etcd.
 
 - Prepare 3 Master nodes (also serving as Worker nodes)
 - Prepare 3 ETCD nodes
-- Prepare a seed machine and complete the deployment of pre-requisite components according to the [installation dependencies](../install-tools.md)
+- Prepare a bootstrap machine and complete the deployment of pre-requisite components according to the [installation dependencies](../install-tools.md)
 
 ## Offline installation
 
-1. Download the full mode offline package on the seed machine. You can download the
+1. Download the full mode offline package on the bootstrap machine. You can download the
    latest version from the [download center](../../download/index.md).
 
     | CPU Architecture | Version | Download Link |

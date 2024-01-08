@@ -133,6 +133,6 @@ podman restart $(podman ps | grep installer-control-plane | awk '{print $1}')
 
 Ubuntu 20.04 作为火种机器部署，由于缺失 ip6tables 会导致部署过程中报错。
 
-其中 podman 已知问题请查看： https://github.com/containers/podman/issues/3655。
+请查看 [Podman 已知问题](https://github.com/containers/podman/issues/3655)。
 
-临时解决方案：手动安装 iptables ，参考地址： https://orcacore.com/install-use-iptables-ubuntu-22-04/#:~:text=In%20this%20guide%2C%20we%20want%20to%20teach%20you,your%20network%20traffic%20packets%20by%20using%20these%20filters。
+临时解决方案：手动安装 iptables，参考 [Install and Use iptables on Ubuntu 22.04](https://orcacore.com/install-use-iptables-ubuntu-22-04/#:~:text=In%20this%20guide%2C%20we%20want%20to%20teach%20you,your%20network%20traffic%20packets%20by%20using%20these%20filters)。
