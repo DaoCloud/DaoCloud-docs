@@ -8,17 +8,17 @@
 2. 点击应用名称可以查看应用详情，包括应用名称、状态、别名、描述信息、创建时间等字段。
 3. 在应用详情页面点击 __组件__ 页签，可以查看当前应用定义的组件数量、类型、运维特征。
 
-    ![component](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/oam07.png)
+    ![component](../../images/oam07.png)
 
 4. 在应用详情页面点击 __应用状态__ 页签，可以查看组件状态和应用资源。
 
     - 组件状态：展示当前应用下的每个组件的健康状态。存在不健康的组件时需要及时排查运维。
 
-        ![status](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/oam08.png)
+        ![status](../../images/oam08.png)
 
     - 应用资源：当前应用下部署的 Kubernetes 资源的信息。
 
-        ![resources](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/oam09.png)
+        ![resources](../../images/oam09.png)
 
 5. 在应用详情页面点击 __应用版本__ 页签，可以查看应用的版本信息，对应用的变更操作都会自动生成版本进行记录，并在需要时可以进行版本回滚。
 
@@ -42,17 +42,17 @@
 
 1. 点击 OAM 应用名称，点击 __组件__ 页签，然后在右侧点击 __添加组件__ 。
 
-    ![add-component](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/oam12.png)
+    ![add-component](../../images/oam12.png)
 
 2. 选择需要添加的组件类型，参考[内置组件列表](https://kubevela.io/zh/docs/end-user/components/references)填写对应的组件参数。
 
-    ![add-component](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/oam13.png)
+    ![add-component](../../images/oam13.png)
 
 ### 添加/更新运维特征
 
 1. 点击 OAM 应用名称，点击 __组件__ 页签，在组件右侧点击 __ⵗ__ 选择 __编辑运维特征__ 。
 
-    ![add-component](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/oam14.png)
+    ![add-component](../../images/oam14.png)
 
 2. 参考[内置运维特征列表](https://kubevela.io/zh/docs/end-user/traits/references)更新运维特征属性。
 
