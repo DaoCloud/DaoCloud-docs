@@ -13,10 +13,39 @@ Kubernetes 社区支持 3 个版本范围，如 1.26、1.27、1.28。当社区�
 
 除此之外， DCE 5.0 中使用界面创建工作集群的版本范围与社区保持高度同步，当社区版本进行递增后，DCE 5.0 中使用界面创建工作集群的版本范围也会同步递增一个版本。
 
-Kubernetes 版本发布说明
+## Kubernetes 版本支持范围
 
-| Kubernetes 社区版本范围 | 自建工作集群版本范围 |自建工作集群推荐版本 | DCE 5.0 版本 | 发布时间   |
-| ----------------------- | -------------------------- | -------------------------- | ---------- | ---------- |
-| 1.26</br>1.26</br>1.28        | 1.26</br>1.27</br>1.28           | **1.27.5**                 | V0.13.0     | 2023.11.30 |
+<table>
+  <thead>
+    <tr>
+      <th>Kubernetes 社区版本范围</th>
+      <th>自建工作集群版本范围</th>
+      <th>自建工作集群推荐版本</th>
+      <th>DCE 5.0 安装器</th>
+      <th>发布时间</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <ul>
+          <li>1.26</li>
+          <li>1.27</li>
+          <li>1.28</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>1.26</li>
+          <li>1.27</li>
+          <li>1.28</li>
+        </ul>
+      </td>
+      <td><strong>1.27.5</strong></td>
+      <td>v0.13.0</td>
+      <td>2023.11.30</td>
+    </tr>
+  </tbody>
+</table>
 
 ![版本支持机制](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/cluster-version.png)
