@@ -173,7 +173,6 @@ hide:
 </div>
 
 *[DCE]: An abbreviation for DaoCloud Enterprise, a next-generation AI computing platform
-*[CNCF]: Cloud Native Computing Foundation
 *[Landscape]: A comprehensive map that showcases various projects and tools in the cloud native ecosystem
 *[Sandbox]: An incubation platform for cloud native projects provided by CNCF
 

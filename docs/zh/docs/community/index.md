@@ -173,9 +173,8 @@ hide:
 </div>
 
 *[DCE]: DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台
-*[CNCF]: Cloud Native Computing Foundation 云原生计算基金会
-*[Landscape]: CNCF 全景图是一个展示云原生技术生态系统中各种项目和工具的综合性图谱
 *[Sandbox]: CNCF 为初创的云原生项目提供的沙箱式孵化平台
+*[Landscape]: CNCF 全景图是一个展示云原生技术生态系统中各种项目和工具的综合性图谱
 
 !!! success
 
