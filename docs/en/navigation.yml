@@ -276,8 +276,10 @@ nav:
                   - Add Heterogeneous Nodes to Worker Cluster: kpanda/best-practice/multi-arch.md
                   - Scale the Worker Nodes of Global Service Cluster: kpanda/best-practice/add-worker-node-on-global.md
                   - Create Ubuntu Worker Cluster with CentOS: kpanda/best-practice/create-ubuntu-on-centos-platform.md
+                  - Create RedHat 9.2 Worker Cluster on CentOS: kpanda/best-practice/create-redhat9.2-on-centos-platform.md
                   - Scale Controller Nodes of Worker Cluster: kpanda/best-practice/add-master-node.md
                   - Create Cluster with Non-supported OS: kpanda/best-practice/use-otherlinux-create-custer.md
+                  - Offline Deploy and Upgrade Legacy Kubean: kpanda/best-practice/kubean-low-version.md
           - Multicloud Management:
               - Intro:
                   - What is Multicloud Management: kairship/intro/index.md
