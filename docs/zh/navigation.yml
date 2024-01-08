@@ -1165,6 +1165,8 @@ nav:
       - 体验社区版: trial/index.md
   - 博客:
       - 博文索引: blogs/index.md
+      - 2024 年:
+          - 202401 | KubeEdge v1.15.0 发布: blogs/240108-kubeedge.md
       - 2023 年:
           - 202312 | Spiderpool 入选 CNCF Sandbox: blogs/231220-spiderpool.md
           - 202312 | K8s 1.29 发布：宇宙主题雄心勃勃: blogs/231213-k8s-1.29.md
