@@ -52,14 +52,17 @@ nav:
                   - Oracle Linux R9/R8 U1: install/os-install/oracleLinux-install-dce5.0.md
                   - TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
                   - 其他 Linux: install/os-install/otherlinux.md
-              - 升级/卸载/导入/FAQ:
+              - 升级:
+                  - 升级概述: install/upgrade-des.md
                   - 升级 DCE 5.0 组件: install/upgrade.md
                   - 标准版升级白金版: install/evolve.md
+              - 升级/卸载/导入/FAQ:
                   - 卸载: install/uninstall.md
                   - 导入离线资源: install/import.md
               - 安装排障: install/faq.md
               - 最佳实践:
                   - 使用场景示例: install/commercial/scenarios.md
+                  - DCE 5.0 一体机部署: install/best-practices/all-in-one-machine.md
                   - 部署 DCE5.0 商业版时，etcd 组件采用 host 模式部署与控制平面分离: install/best-practices/etcd-host-deploy.md
               - 安装器 Release Notes: install/release-notes.md
       - 工作台:

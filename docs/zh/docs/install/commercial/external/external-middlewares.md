@@ -203,14 +203,14 @@
     spec:
       ..............
       externalMiddlewares:
-        DATABASE:
+        database:
           kpanda:
             - dbDriverName: "kingbase"
-              # Please refer https://gorm.io/docs/connecting_to_the_DATABASE.html
+              # Please refer https://gorm.io/docs/connecting_to_the_database.html
               dataSourceName: "host=172.30.41.2 user=kpanda password=password dbname=kpanda port=54321"
               # readwrite(default) or readonly
               accessType: readwrite
-              # The maximum number of open connections to the DATABASE.
+              # The maximum number of open connections to the database.
               #maxOpenConnections: 100
               # The maximum number of connections in the idle connection pool.
               #maxIdleConnections: 10
@@ -314,14 +314,14 @@
     spec:
       ..............
       externalMiddlewares:
-        DATABASE:
+        database:
           kpanda:
             - dbDriverName: "postgres"
-              # Please refer https://gorm.io/docs/connecting_to_the_DATABASE.html
+              # Please refer https://gorm.io/docs/connecting_to_the_database.html
               dataSourceName: "host=172.30.41.2 user=kpanda password=password dbname=kpanda port=5432"
               # readwrite(default) or readonly
               accessType: readwrite
-              # The maximum number of open connections to the DATABASE.
+              # The maximum number of open connections to the database.
               #maxOpenConnections: 100
               # The maximum number of connections in the idle connection pool.
               #maxIdleConnections: 10

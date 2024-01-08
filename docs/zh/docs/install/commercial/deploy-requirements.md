@@ -22,6 +22,18 @@
 
     若非上表中声明的操作系统，请参考文档 [Other Linux 离线部署 DCE 5.0 商业版](../os-install/otherlinux.md)进行安装部署。
 
+## 内核要求
+
+由于一些组件或功能对操作系统的内核版本有要求，部署前请根据实际情况参照下表来选择内核版本：
+
+| 组件/功能            | 内核版本要求 |
+| -------------------- | ------------ |
+| 容器管理 GPU 能力    | ≥ 3.10.1160  |
+| Cilium               | ≥ 5.12       |
+| Hwameistor DRDB 能力 |   [DRBD 适配的内核版本](../../storage/hwameistor/intro/drbd-support.md)           |
+| Kubevirt             | ≥ 4.x        |
+| Merbridge 要求       | ≥ 5.7        |
+
 ## 硬件要求
 
 ### CPU 、内存和硬盘
