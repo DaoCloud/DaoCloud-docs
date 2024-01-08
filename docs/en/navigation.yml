@@ -1128,6 +1128,8 @@ nav:
       - Free Trial: trial/index.md
   - Blogs:
       - Index: blogs/index.md
+      - 2024 Blogs:
+          - KubeEdge v1.15.0 Released: blogs/240108-kubeedge.md
       - 2023 Blogs:
           - 202312 | K8s 1.29 Released - Ambious Mandala Theme: blogs/231213-k8s-1.29.md
           - 202312 | Does K8s Perform Better on Bare Metal vs. VMs?: blogs/231205-vm-bm-compare.md
