@@ -5,7 +5,7 @@ hide:
 
 # Workbench
 
-This page provides downloads for the offline package of different versions of the  Workbench module.
+This page provides downloads for the offline package of different versions of the Workbench module.
 
 ## Downloads
 

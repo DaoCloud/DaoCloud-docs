@@ -71,14 +71,14 @@ After the offline package has been successfully validated,
      ```
 
 - For installation, refer to [DCE 5.0 Community Installation Process](../../install/community/k8s/online.md#_2)
-- After successful installation, please [Free Trial](../../dce/license0.md)
+- After successful installation, [Free Trial](../../dce/license0.md)
 
 ## Modules
 
 DCE 5.0 Community includes the following modules by default:
 
 | Modules | Introduction | What's New |
-| -------- | ----------------------------------------- ------------------------- | ------------------------ ------------------------------------- |
+| -------- | ----------- | ---------- |
 | Global Management | Responsible for user access control, permissions, workspaces and folders, audit logs, personalized appearance settings, etc. | [v0.13.2](../../ghippo/intro/release-notes.md#v0132) |
 | Container Management | Manage K8s core features such as clusters, nodes, workloads, Helm applications, CRDs, and namespaces | [v0.14.0](../../kpanda/intro/release-notes.md#v0140) |
 | Insight | Provide rich graphic information such as dashboards, scene monitoring, data query, and alerts | [v0.13.2](../../insight/intro/releasenote.md#v0132) |

@@ -40,14 +40,14 @@ tar -zxvf offline-community-v0.3.28.tar
 ```
 
 Then refer to [DCE 5.0 Community Installation Process](../../install/index.md#_2) to install.
-If you are installing for the first time or have forgotten your license key, please [apply for a free community experience](../../dce/license0.md).
+If you are installing for the first time or have forgotten your license key, [apply for a free community experience](../../dce/license0.md).
 
 ## Modules
 
 DCE 5.0 Community includes the following modules by default:
 
-| Modules | Introduction | Module Versions |
-| -------- | ----------------------------------------- ------------------------- | ------------------------ ------------------------------------- |
+| Modules | Introduction | What's New |
+| -------- | ----------- | ---------- |
 | Global Management | Responsible for user access control, permissions, workspaces and folders, audit logs, personalized appearance settings, etc. | [v0.11](../../ghippo/intro/release-notes.md#v011) |
 | Container Management | Manage K8s core features such as clusters, nodes, workloads, Helm applications, CRDs, and namespaces | [v0.12](../../kpanda/intro/release-notes.md#v012) |
 | Insight | Provide rich graphic information such as dashboards, scene monitoring, data query, and alerts | [v0.11](../../insight/intro/releasenote.md#v011) |
