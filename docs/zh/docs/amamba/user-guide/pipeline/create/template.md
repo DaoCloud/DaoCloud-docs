@@ -37,7 +37,7 @@
     - Dockerfile 路径：Dockerfile 文件在代码仓库中的绝对路径，默认是 __Dockerfile__
     - 目标镜像地址：输入镜像仓库名称，必填
     - tag：为运行此流水线后新生成的镜像添加 tag，默认是 __latest__
-    - 像仓库凭证：访问镜像仓库的凭证。如果是私有仓库，需要提前[创建凭证](../credential.md)并在此处选择该凭证
+    - 镜像仓库凭证：访问镜像仓库的凭证。如果是私有仓库，需要提前[创建凭证](../credential.md)并在此处选择该凭证
 
         ![golang](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/golang.png)
 
