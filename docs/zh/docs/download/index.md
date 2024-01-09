@@ -11,8 +11,8 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
 | 离线包           | 版本    | 下载  | 更新日期   |
 | --------------- | ------- | ---- | -------- |
-| offline-community-v0.13.0-arm64.tar | v0.13.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.13.0.md) | 2023-12-07 |
-| offline-community-v0.13.0-amd64.tar | v0.13.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.13.0.md) | 2023-12-07 |
+| offline-community-v0.14.0-arm64.tar | v0.14.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.14.0.md) | 2024-01-09 |
+| offline-community-v0.14.0-amd64.tar | v0.14.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.14.0.md) | 2024-01-09 |
 
 [更多历史版本](./free/dce5-installer-history.md)
 
@@ -22,8 +22,8 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
 | 离线包 | 版本    | 下载      | 更新日期   |
 | ----- | ------- | -------- | --------- |
-| offline-v0.13.0-arm64.tar | v0.13.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.13.0.md) | 2023-12-07 |
-| offline-v0.13.0-amd64.tar | v0.13.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.13.0.md) | 2023-12-07 |
+| offline-v0.14.0-arm64.tar | v0.14.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.14.0.md) | 2024-01-09 |
+| offline-v0.14.0-amd64.tar | v0.14.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.14.0.md) | 2024-01-09 |
 
 [更多历史版本](./business/dce5-installer-history.md)
 
