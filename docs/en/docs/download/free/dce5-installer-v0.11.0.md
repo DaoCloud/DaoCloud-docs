@@ -15,8 +15,8 @@ This page provides downloads for the offline package and checksum files of DCE 5
 
 | Filename | Version | Architecture | File Size | Download | Update Date |
 | -------- | ------- | ------------ | --------- | -------- | ----------- |
-| offline-community-v0.11.0-amd64.tar     | v0.11.0  | AMD64        | 6.03 GB    | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.11.0-amd64.tar) | 2023-09-08 |
-| offline-community-v0.11.0-arm64.tar     | v0.11.0  | ARM64        | 5.65 GB    | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.11.0-arm64.tar) | 2023-09-08 |
+| offline-community-v0.11.0-amd64.tar | v0.11.0 | AMD64 | 6.03 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.11.0-amd64.tar) | 2023-09-08 |
+| offline-community-v0.11.0-arm64.tar | v0.11.0 | ARM64 | 5.65 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.11.0-arm64.tar) | 2023-09-08 |
 
 ## Validation
 
@@ -71,14 +71,14 @@ After the offline package has been successfully validated,
     ```
 
 - For installation instructions, refer to [DCE 5.0 Community Installation](../../install/community/k8s/online.md#_2)
-- After successful installation, please apply for a [Free Community Experience](../../dce/license0.md)
+- After successful installation, apply for a [Free Community Experience](../../dce/license0.md)
 
 ## Modules
 
 DCE 5.0 Community includes the following modules by default:
 
-| Module     | Description           | Latest Updates                      |
-| ---------- | --------------------- | ----------------------------------- |
+| Modules | Introduction | What's New |
+| -------- | ----------- | ---------- |
 | Global Management | Responsible for user access control, permissions, enterprise spaces, audit logs, personalized appearance settings, etc. | [0.20.1](../../ghippo/intro/release-notes.md#0201) |
 | Container Management | Manages clusters, nodes, workloads, Helm applications, CRD, namespaces, and other core features of K8s. | [0.21.0](../../kpanda/intro/release-notes.md#0210) |
 | Insight | Provides rich dashboards, scenario monitoring, data queries, alerts, and other graphical information. | [0.20.0](../../insight/intro/releasenote.md#0200) |
