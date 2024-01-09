@@ -15,6 +15,9 @@ DCE 5.0 原生支持 DevOps 开发运维模式，可以实现应用交付的全�
 各个产品模块独立解耦，支持灵活升级，对业务没有影响，并且能够与众多云原生生态产品对接，提供完整的解决方案体系。
 它经过了近千家行业客户的生产场景检验，构建了坚实、可靠的数字底座，帮助企业定义数字边界，释放云原生生产力。
 
+*[DCE]: DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台
+*[AI]: DCE 5.0 内置智能算力引擎，高效管控各类大模型任务、数据集、GPU、CPU、内存等资源
+
 <div class="grid cards" markdown>
 
 - :fontawesome-solid-jet-fighter-up: **安装** [详尽的安装教程](install/index.md)
