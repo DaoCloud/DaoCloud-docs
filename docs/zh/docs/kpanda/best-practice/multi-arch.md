@@ -13,7 +13,9 @@
 
 ## 操作步骤
 
-### 下载并导入离线包（以 ARM 架构、操作系统Kylin v10 sp2 为例）
+### 下载并导入离线包
+
+以 ARM 架构、操作系统Kylin v10 sp2 为例。
 
 请确保已经登录到火种节点！并且之前部署 DCE 5.0 时使用的 clusterConfig.yaml 文件还在。
 
@@ -23,10 +25,10 @@
 
     可以在[下载中心](https://docs.daocloud.io/download/dce5/)下载最新版本。
 
-| CPU 架构 | 版本   | 下载地址                                                     |
-| :------- | :----- | :----------------------------------------------------------- |
-| AMD64    | v0.10.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.10.0-amd64.tar> |
-| ARM64    | v0.10.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.10.0-arm64.tar> |
+| CPU 架构 | 版本 | 下载地址 |
+| :------ | :---- | :-- |
+| AMD64 | v0.10.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.10.0-amd64.tar> |
+| ARM64 | v0.10.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.10.0-arm64.tar> |
 
 下载完毕后解压离线包。此处我们下载 arm64 架构的离线包：
 
@@ -36,16 +38,20 @@ tar -xvf offline-v0.10.0-arm64.tar
 
 #### ISO 离线包（Kylin v10 sp2）
 
-| CPU 架构 | 操作系统版本                                        | 下载地址                                                     |
-| :------- | :-------------------------------------------------- | :----------------------------------------------------------- |
-| ARM64    | Kylin Linux Advanced Server release V10 (Sword) SP2 | 申请地址：<https://www.kylinos.cn/scheme/server/1.html> <br />注意：麒麟操作系统需要提供个人信息才能下载使用，下载时请选择 V10 (Sword) SP2 |
+| CPU 架构 | 操作系统版本 | 下载地址 |
+| :------- | :-------- | :------ |
+| ARM64 | Kylin Linux Advanced Server release V10 (Sword) SP2 | 申请地址：<https://www.kylinos.cn/scheme/server/1.html> |
+
+!!! note
+
+    麒麟操作系统需要提供个人信息才能下载使用，下载时请选择 V10 (Sword) SP2。
 
 #### osPackage 离线包 （Kylin v10 sp2）
 
 其中 [Kubean](https://github.com/kubean-io/kubean) 提供了不同操作系统的osPackage 离线包，可以前往 <https://github.com/kubean-io/kubean/releases> 查看。
 
-| 操作系统版本                                        | 下载地址                                                     |
-| :-------------------------------------------------- | :----------------------------------------------------------- |
+| 操作系统版本 | 下载地址 |
+| :--------- | :------ |
 | Kylin Linux Advanced Server release V10 (Sword) SP2 | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.7.4/os-pkgs-kylinv10-v0.7.4.tar.gz> |
 
 !!! note
@@ -76,7 +82,7 @@ tar -xvf offline-v0.10.0-arm64.tar
 
 ### 添加异构工作节点
 
-请确保已经登录到 DCE5.0 的 Global 集群的管理节点上。
+请确保已经登录到 DCE 5.0 的 Global 集群的管理节点上。
 
 #### 修改主机清单文件
 
@@ -167,7 +173,7 @@ tar -xvf offline-v0.10.0-arm64.tar
 kubectl edit cm ${cluster-name}-hosts-conf -n kubean-system
 ```
 
- __cluster-name__ 为工作集群的名称，通过容器管理创建集群时会默认生成。
+__cluster-name__ 为工作集群的名称，通过容器管理创建集群时会默认生成。
 
 #### 通过 ClusterOperation.yml 新增扩容任务
 
@@ -204,13 +210,13 @@ spec:
     - spec.image 镜像地址要与之前执行部署时的 job 其内镜像保持一致
     - spec.action 设置为 scale.yml
     - spec.extraArgs 设置为 --limit=g-worker
-    - pec.preHook 中的 enable-repo.yml 剧本参数，要填写相关OS的正确的 repo_list 
+    - spec.preHook 中的 enable-repo.yml 剧本参数，要填写相关OS的正确的 repo_list 
 
 按照上述的配置，创建并部署 join-node-ops.yaml：
 
 ```shell
 vi join-node-ops.yaml
-kubectl kubectl apply -f join-node-ops.yaml -n kubean-system
+kubectl apply -f join-node-ops.yaml -n kubean-system
 ```
 
 #### 检查任务执行状态

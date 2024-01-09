@@ -15,42 +15,43 @@
 
 ## 前提条件
 
-- 准备一个 kubean 所在的管理集群，并且当前环境已经部署支持 `podman` 、`skopeo`、`minio client`命令。如果不支持，可通过脚本进行安装依赖组件，[安装前置依赖](../install-tools.md)。
+- 准备一个 kubean 所在的管理集群，并且当前环境已经部署支持 `podman` 、`skopeo`、`minio client`命令。
+  如果不支持，可通过脚本进行安装依赖组件，[安装前置依赖](../install-tools.md)。
 
 - 前往 [kubean](https://github.com/kubean-io/kubean) 查看发布的[制品](https://kubean-io.github.io/kubean/zh/releases/artifacts/)，并根据实际情况选择具体的制品版本。目前支持的制品版本及对应的集群版本范围如下：
 
-    | 制品包版本      | 支持集群范围 | DCE5 支持情况 |
+    | 制品包版本   | 支持集群范围 | DCE 5.0 支持情况 |
     | ----------- | ----------- | ------ |
-    | release-2.21   | v1.23.0 ~ v1.25.6      | v0.14.0 + 已支持 |
-    | release-2.22   |    v1.24.0 ~ v1.26.9    | 预计 v0.15.0 + |
-    | release-2.23   |    v1.25.0 ~ v1.27.7    | 预计 v0.16.0 + |
+    | release-2.21   | v1.23.0 ~ v1.25.6      | 安装器 v0.14.0+ 已支持 |
+    | release-2.22   |    v1.24.0 ~ v1.26.9    | 预计安装器 v0.15.0+ |
+    | release-2.23   |    v1.25.0 ~ v1.27.7    | 预计安装器 v0.16.0+ |
 
-    本文演示离线部署 K8S 集群到 1.23.0 版本及离线升级 K8S 集群从 1.23.0 版本到 1.24.0 版本，所以选择 `release-2.21` 的制品。
+    本文演示离线部署 K8s 集群到 1.23.0 版本及离线升级 K8s 集群从 1.23.0 版本到 1.24.0 版本，所以选择 `release-2.21` 的制品。
 
 ## 操作步骤
 
 ### 准备 Kubespray Release 低版本的相关制品
 
-1. 将 spray-job 镜像导入到离线环境的 registry 当中。
+将 spray-job 镜像导入到离线环境的 registry 当中。
 
-    ```bash
-    # 假设火种集群中的 registry 地址为 172.30.41.200
-    REGISTRY_ADDR="172.30.41.200"
-    
-    # 镜像 spray-job 这里可以采用加速器地址，镜像地址根据选择制品版本来决定
-    SPRAY_IMG_ADDR="ghcr.m.daocloud.io/kubean-io/spray-job:2.21-d6f688f"
-    
-    # skopeo 参数
-    SKOPEO_PARAMS=" --insecure-policy -a --dest-tls-verify=false --retry-times=3 "
-    
-    # 在线环境：导出 release-2.21 版本的 spray-job 镜像，并将其转移到离线环境
-    skopeo copy docker://${SPRAY_IMG_ADDR} docker-archive:spray-job-2.21.tar
-    
-    # 离线环境：导入 release-2.21 版本的 spray-job 镜像到火种 registry
-    skopeo copy ${SKOPEO_PARAMS} docker-archive:spray-job-2.21.tar docker://${REGISTRY_ADDR}/${SPRAY_IMG_ADDR}
-    ```
+```bash
+# 假设火种集群中的 registry 地址为 172.30.41.200
+REGISTRY_ADDR="172.30.41.200"
 
-### 制作低版本 K8S 离线资源
+# 镜像 spray-job 这里可以采用加速器地址，镜像地址根据选择制品版本来决定
+SPRAY_IMG_ADDR="ghcr.m.daocloud.io/kubean-io/spray-job:2.21-d6f688f"
+
+# skopeo 参数
+SKOPEO_PARAMS=" --insecure-policy -a --dest-tls-verify=false --retry-times=3 "
+
+# 在线环境：导出 release-2.21 版本的 spray-job 镜像，并将其转移到离线环境
+skopeo copy docker://${SPRAY_IMG_ADDR} docker-archive:spray-job-2.21.tar
+
+# 离线环境：导入 release-2.21 版本的 spray-job 镜像到火种 registry
+skopeo copy ${SKOPEO_PARAMS} docker-archive:spray-job-2.21.tar docker://${REGISTRY_ADDR}/${SPRAY_IMG_ADDR}
+```
+
+### 制作低版本 K8s 离线资源
 
 1. 准备 manifest.yml 文件。
 
@@ -81,12 +82,12 @@
     ```bash
     # 将上一步 data 目录中的二进制导入二进制包至火种节点的 minio 中
     cd ./data/amd64/files/
-    MINIO_ADDR="http://172.30.41.200:9000" # 替换为实际的仓库地址
+    MINIO_ADDR="http://172.30.41.200:9000" # IP 替换为实际的仓库地址
     MINIO_USER=rootuser MINIO_PASS=rootpass123 ./import_files.sh ${MINIO_ADDR}
     
     # 将上一步 data 目录中的镜像导入二进制包至火种节点的镜像仓库中
     cd ./data/amd64/images/
-    REGISTRY_ADDR="172.30.41.200"  ./import_images.sh # 替换为实际的仓库地址
+    REGISTRY_ADDR="172.30.41.200"  ./import_images.sh # IP 替换为实际的仓库地址
     ```
 
 4. 将 `manifest`、`localartifactset.cr.yaml` 自定义资源部署到 **kubean 所在的管理集群或者 Global 集群** 当中，本例使用的是 Global 集群。
@@ -103,13 +104,13 @@
     kubectl apply -f manifest-2.21-d6f688f.yml
     ```
 
-### 低版本 K8S 集群的部署与升级
+### 低版本 K8s 集群的部署与升级
 
-**部署**
+#### 部署
 
 1. 前往 `容器管理`，在 __集群列表__ 页面中，点击 __创建集群__ 按钮。
 
-2. `被纳管` 参数选择 `manifest`、`localartifactset.cr.yaml` 自定义资源部署的集群，本例使用的是 Global 集群。
+2. `被纳管`参数选择 `manifest`、`localartifactset.cr.yaml` 自定义资源部署的集群，本例使用的是 Global 集群。
 
     ![cluster01](../images/cluster01.png)
 
@@ -117,7 +118,7 @@
 
     ![cluster02](../images/cluster02.png)
 
-**升级**
+#### 升级
 
 1. 选择新创建的集群，进去详情界面。
 
