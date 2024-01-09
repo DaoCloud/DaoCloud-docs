@@ -1,4 +1,6 @@
 ---
+MTPE: windsonsea
+date: 2024-01-09
 hide:
    - toc
 ---
@@ -18,7 +20,7 @@ We have carefully created Step-By-Step scenario videos to meet specific business
 
 === "Insight"
 
-    - [How to quickly locate anomalies and troubleshoot using observability?](../videos/use-cases.md#rapid-troubleshooting-and-issue-resolution)
+    [How to quickly locate anomalies and troubleshoot using observability?](../videos/use-cases.md#rapid-troubleshooting-and-issue-resolution)
 
 === "Traffic Governance"
 
