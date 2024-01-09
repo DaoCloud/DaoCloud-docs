@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+date: 2024-01-09
+---
+
 # Deploy and Upgrade Compatible Versions of Kubean in Offline Scenarios
 
 In order to meet the customer's demand for building Kubernetes (K8s) clusters with lower versions,
@@ -12,8 +17,8 @@ This article will demonstrate how to deploy a K8s cluster with a lower version.
 
     Node environment used in the document:
 
-        - X86 architecture
-        - CentOS 7 Linux distribution
+    - X86 architecture
+    - CentOS 7 Linux distribution
 
 ## Prerequisites
 
@@ -26,11 +31,11 @@ This article will demonstrate how to deploy a K8s cluster with a lower version.
   version based on the actual situation. The currently supported artifact versions and their corresponding
   cluster version ranges are as follows:
 
-    | Artifact Version | Cluster Range | DCE5 Support |
+    | Artifact Version | Cluster Range | DCE 5.0 Support |
     | ----------- | ----------- | ------ |
-    | release-2.21 | v1.23.0 ~ v1.25.6 | Supported since v0.14.0 |
-    | release-2.22 | v1.24.0 ~ v1.26.9 | Expected support from v0.15.0 |
-    | release-2.23 | v1.25.0 ~ v1.27.7 | Expected support from v0.16.0 |
+    | release-2.21 | v1.23.0 ~ v1.25.6 | Supported since installer v0.14.0 |
+    | release-2.22 | v1.24.0 ~ v1.26.9 | Expected to support from installer v0.15.0 |
+    | release-2.23 | v1.25.0 ~ v1.27.7 | Expected to support from installer v0.16.0 |
 
     This article demonstrates the offline deployment of a K8s cluster with version 1.23.0 and the
     offline upgrade of a K8s cluster from version 1.23.0 to 1.24.0, so we choose the artifact `release-2.21`.
@@ -39,24 +44,24 @@ This article will demonstrate how to deploy a K8s cluster with a lower version.
 
 ### Prepare the Relevant Artifacts for the Lower Version of Kubespray Release
 
-1. Import the spray-job image into the registry of the offline environment.
+Import the spray-job image into the registry of the offline environment.
 
-    ```bash
-    # Assuming the registry address in the spark cluster is 172.30.41.200
-    REGISTRY_ADDR="172.30.41.200"
-    
-    # The image spray-job can use the accelerator address here, and the image address is determined based on the selected artifact version
-    SPRAY_IMG_ADDR="ghcr.m.daocloud.io/kubean-io/spray-job:2.21-d6f688f"
-    
-    # skopeo parameters
-    SKOPEO_PARAMS=" --insecure-policy -a --dest-tls-verify=false --retry-times=3 "
-    
-    # Online environment: Export the spray-job image of version release-2.21 and transfer it to the offline environment
-    skopeo copy docker://${SPRAY_IMG_ADDR} docker-archive:spray-job-2.21.tar
-    
-    # Offline environment: Import the spray-job image of version release-2.21 into the spark registry
-    skopeo copy ${SKOPEO_PARAMS} docker-archive:spray-job-2.21.tar docker://${REGISTRY_ADDR}/${SPRAY_IMG_ADDR}
-    ```
+```bash
+# Assuming the registry address in the spark cluster is 172.30.41.200
+REGISTRY_ADDR="172.30.41.200"
+
+# The image spray-job can use the accelerator address here, and the image address is determined based on the selected artifact version
+SPRAY_IMG_ADDR="ghcr.m.daocloud.io/kubean-io/spray-job:2.21-d6f688f"
+
+# skopeo parameters
+SKOPEO_PARAMS=" --insecure-policy -a --dest-tls-verify=false --retry-times=3 "
+
+# Online environment: Export the spray-job image of version release-2.21 and transfer it to the offline environment
+skopeo copy docker://${SPRAY_IMG_ADDR} docker-archive:spray-job-2.21.tar
+
+# Offline environment: Import the spray-job image of version release-2.21 into the spark registry
+skopeo copy ${SKOPEO_PARAMS} docker-archive:spray-job-2.21.tar docker://${REGISTRY_ADDR}/${SPRAY_IMG_ADDR}
+```
 
 ### Create Offline Resources for the Earlier Versions of K8s
 
@@ -75,9 +80,9 @@ This article will demonstrate how to deploy a K8s cluster with a lower version.
 2. Create the offline incremental package.
 
     ```bash
-    ## Create the data directory
+    # Create the data directory
     mkdir data
-    ## Create the offline package
+    # Create the offline package
     SPRAY_IMG_ADDR="ghcr.m.daocloud.io/kubean-io/spray-job:2.21-d6f688f" # (1)
     podman run --rm -v $(pwd)/manifest.yml:/manifest.yml -v $(pwd)/data:/data  -e ZONE=CN -e MODE=FULL ${SPRAY_IMG_ADDR}
     ```
@@ -89,12 +94,12 @@ This article will demonstrate how to deploy a K8s cluster with a lower version.
     ```bash
     # Import the binaries from the data directory to the minio in the spark node
     cd ./data/amd64/files/
-    MINIO_ADDR="http://172.30.41.200:9000" # Replace with the actual repository address
+    MINIO_ADDR="http://172.30.41.200:9000" # Replace IP with the actual repository url
     MINIO_USER=rootuser MINIO_PASS=rootpass123 ./import_files.sh ${MINIO_ADDR}
     
     # Import the images from the data directory to the image repository in the spark node
     cd ./data/amd64/images/
-    REGISTRY_ADDR="172.30.41.200"  ./import_images.sh # Replace with the actual repository address
+    REGISTRY_ADDR="172.30.41.200"  ./import_images.sh # Replace IP with the actual repository url
     ```
 
 4. Deploy the `manifest` and `localartifactset.cr.yaml` custom resources to the **management cluster where kubean resides or the Global cluster**. In this example, we use the Global cluster.
@@ -111,11 +116,11 @@ This article will demonstrate how to deploy a K8s cluster with a lower version.
     kubectl apply -f manifest-2.21-d6f688f.yml
     ```
 
-### Deployment and Upgrade of the Lower Version K8s Cluster
+### Deployment and Upgrade Legacy K8s Cluster
 
-**Deployment**
+#### Deploy
 
-1. Go to "Container Management" and click the "Create Cluster" button on the __Cluster List__ page.
+1. Go to __Container Management__ and click the __Create Cluster__ button on the __Cluster List__ page.
 
 2. Choose the `manifest` and `localartifactset.cr.yaml` custom resources deployed cluster as the `Managed` parameter. In this example, we use the Global cluster.
 
@@ -123,7 +128,7 @@ This article will demonstrate how to deploy a K8s cluster with a lower version.
 3. Refer to [Creating a Cluster](../user-guide/clusters/create-cluster.md) for the remaining parameters.
 
 
-**Upgrade**
+#### Upgrade
 
 1. Select the newly created cluster and go to the details page.
 
