@@ -13,7 +13,7 @@ OAM 应用功能基于开源软件 [KubeVela](http://kubevela.net/zh/docs/v1.2/)
 
 1. 在 __应用工作台__ -> __概览__ 页面中， __OAM 应用__ 页签下点击 __创建应用__ 。
 
-    ![step1](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/oam01.png)
+    ![创建应用](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/oam01.png)
 
 2. 参考以下说明填写基本信息，然后点击 __下一步__ ：
 
@@ -28,20 +28,20 @@ OAM 应用功能基于开源软件 [KubeVela](http://kubevela.net/zh/docs/v1.2/)
         - Webservice：定义一个长期运行的、可伸缩的容器化服务，并且暴露一个服务端点用来接受来自客户的外部流量。
     - 部署位置：选择将应用部署到哪个集群下的哪个命名空间，支持多个集群环境。
 
-        ![step2](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/oam02.png)
+    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/oam02.png)
 
 3. 参考[内置组件列表](https://kubevela.io/zh/docs/end-user/components/references)为所选组件配置参数。
 
-    ![step3](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/oam03.png)
+    ![配置组件](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/oam03.png)
 
 4. 参考[内置运维特征列表](https://kubevela.io/zh/docs/end-user/traits/references)为所选组件配置运维特征属性。
 
-    ![step4](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/oam04.png)
+    ![运维特征](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/oam04.png)
 
 5. 点击 __确定__ 完成创建，创建成功后返回 OAM 应用列表页面。
 
-    ![step5](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/oam05.png)
+    ![创建成功](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/oam05.png)
 
 6. 点击应用名称，进去 OAM 应用详情页面。支持查看 OAM 应用基本信息、包含的组件列表、部署的应用资源状态，以及支持添加组件、添加运维特征等操作。
 
-    ![step6](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/oam06.png)
+    ![详细信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/oam06.png)
