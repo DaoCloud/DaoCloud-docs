@@ -20,7 +20,7 @@ After [Creating an OAM application](create.md), you can view the application det
 
         ![resources](../../images/oam09.png)
 
-5. Click on __App Version__ to view the version information of the application. Any changes made to the application will automatically generate a version for record keeping. When necessary, you can roll back to a previous version.
+5. Click __App Version__ to view the version information of the application. Any changes made to the application will automatically generate a version for record keeping. When necessary, you can roll back to a previous version.
 
     ![oam-version](../../images/oam-version.png)
 
@@ -60,10 +60,10 @@ After [Creating an OAM application](create.md), you can view the application det
 
 ## Application Version Rollback
 
-1. Click on the __Application Version__ tab, select a version (other than the current one) and click on the __ⵗ__ on the right, then select __Rollback__.
+1. Click the __Application Version__ tab, select a version (other than the current one) and click the __ⵗ__ on the right, then select __Rollback__.
 
     ![rollback01](../../images/rollback01.png)
 
-2. Click on the __OK__ button. After the rollback is successful, you will be redirected to the list and receive a notification.
+2. Click the __OK__ button. After the rollback is successful, you will be redirected to the list and receive a notification.
 
     ![rollback02](../..//images/rollback02.png)

@@ -79,30 +79,30 @@ nav:
               - Deploy Pluggable Components: amamba/pluggable-components.md
               - Namespaces: amamba/user-guide/namespace/namespace.md
               - Wizard:
-                  - Build Microservice based on Git Repo: amamba/user-guide/wizard/create-app-git.md
-                  - Build Java Apps based on Jar Packages: amamba/user-guide/wizard/jar-java-app.md
-                  - Deploy Helm Apps based on Helm Charts: amamba/user-guide/wizard/helm.md
-              - Native Applications:
-                  - Manage Native Applications: amamba/user-guide/native/manage.md
+                  - Build Git-based Microservice: amamba/user-guide/wizard/create-app-git.md
+                  - Build Jar-based Java Apps: amamba/user-guide/wizard/jar-java-app.md
+                  - Deploy Helm Apps: amamba/user-guide/wizard/helm.md
+              - Native Apps:
+                  - Manage Native Apps: amamba/user-guide/native/manage.md
                   - Deploy Traditional Microservices with Native Apps: amamba/user-guide/native/native-app.md
-              - OAM Application:
+              - OAM Apps:
                   - OAM Concepts: amamba/user-guide/oam/concept.md
-                  - Create OAM Application: amamba/user-guide/oam/create.md
-                  - Manage OAM Application: amamba/user-guide/oam/manage.md
+                  - Create OAM Apps: amamba/user-guide/oam/create.md
+                  - Manage OAM Apps: amamba/user-guide/oam/manage.md
               - Pipelines:
                   - Install Jenkins: amamba/user-guide/pipeline/install-jenkins.md
                   - Create Pipeline:
-                      - Custom Creation: amamba/user-guide/pipeline/create/custom.md
-                      - Creat based on Jenkinsfile: amamba/user-guide/pipeline/create/jenkins.md
-                      - Create based on Template: amamba/user-guide/pipeline/create/template.md
-                      - Create a Multi-branch Pipeline: amamba/user-guide/pipeline/create/mutilpipeline.md
+                      - Custom Create: amamba/user-guide/pipeline/create/custom.md
+                      - Create by Jenkinsfile: amamba/user-guide/pipeline/create/jenkins.md
+                      - Create by Template: amamba/user-guide/pipeline/create/template.md
+                      - Create Multi-branch Pipeline: amamba/user-guide/pipeline/create/mutilpipeline.md
                   - Edit Pipeline: amamba/user-guide/pipeline/edit.md
                   - Run Pipeline:
                       - Auto Trigger: amamba/user-guide/pipeline/run/trigger.md
                       - Manual Trigger: amamba/user-guide/pipeline/run/manual.md
                   - Pipeline Parameters:
                       - Concepts in Pipeline: amamba/user-guide/pipeline/config/concept.md
-                      - Graphical task template parameters: amamba/user-guide/pipeline/config/step.md
+                      - Graphical Task Template Parameters: amamba/user-guide/pipeline/config/step.md
                       - Pipeline Node (Agent): amamba/user-guide/pipeline/config/agent.md
                   - Pipeline Template:
                       - Custom Template: amamba/user-guide/pipeline/template/custom-template.md
@@ -111,8 +111,8 @@ nav:
               - GitOps:
                   - Manually Sync App: amamba/user-guide/gitops/sync-manually.md
                   - Import Code Repo: amamba/user-guide/gitops/import-repo.md
-                  - Create Argo CD Application: amamba/user-guide/gitops/create-argo-cd.md
-                  - Argo CD Application Status: amamba/user-guide/gitops/argo-cd-status.md
+                  - Create Argo CD App: amamba/user-guide/gitops/create-argo-cd.md
+                  - Argo CD App Status: amamba/user-guide/gitops/argo-cd-status.md
               - Canary Release:
                   - Create Canary Release: amamba/user-guide/release/canary.md
                   - View Canary Release: amamba/user-guide/release/check-canary.md
@@ -126,14 +126,14 @@ nav:
                   - GitOps FAQs: amamba/faq/faq-gitops.md
               - Best Practices:
                   - Quick Start Pipeline: amamba/quickstart/deploy-pipeline.md
-                  - CI/CD based on pipeline + GitOps: amamba/quickstart/argocd-jenkins.md
-                  - Code scanning with pipeline: amamba/quickstart/scan-with-pipeline.md
-                  - Integrate Harbor to scan images: amamba/quickstart/scan-with-harbor.md
-                  - Canary release based on Argo Rollout: amamba/quickstart/argocd-rollout.md
-                  - Run pipelines on specified node: amamba/quickstart/pipeline-on-node.md
-                  - Jenkins scenario configuration: amamba/quickstart/scenarios-config.md
-                  - Using a custom toolchain in Jenkins: amamba/quickstart/jenkins-custom.md
-                  - Jenkins high availability solution: amamba/quickstart/jenkins-HA.md
+                  - CI/CD based on Pipeline + GitOps: amamba/quickstart/argocd-jenkins.md
+                  - Code Scanning with Pipeline: amamba/quickstart/scan-with-pipeline.md
+                  - Integrate Harbor to Scan Images: amamba/quickstart/scan-with-harbor.md
+                  - Canary Release based on Argo Rollout: amamba/quickstart/argocd-rollout.md
+                  - Run Pipelines on Specified Node: amamba/quickstart/pipeline-on-node.md
+                  - Jenkins Scenario Configuration: amamba/quickstart/scenarios-config.md
+                  - Custom Toolchain in Jenkins: amamba/quickstart/jenkins-custom.md
+                  - Jenkins High Availability Solution: amamba/quickstart/jenkins-HA.md
       - Container:
           - Container Management:
               - Intro:

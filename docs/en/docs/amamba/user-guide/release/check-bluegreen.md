@@ -4,9 +4,9 @@ This article mainly introduces how to view a blue-green release job and related 
 
 ## View Job Details
 
-1. Go to the __Workbench__ module, click __Progressive Delivery__ in the left navigation bar, and click on the name of the target job.
+1. Go to the __Workbench__ module, click __Progressive Delivery__ in the left navigation bar, and click the name of the target job.
 
-    ![Click on name](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/blue-green03.png)
+    ![Click name](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/blue-green03.png)
 
 2. View the details of the blue-green release job.
 
@@ -20,7 +20,7 @@ This article mainly introduces how to view a blue-green release job and related 
 
 ## Update Version
 
-1. Click on the name of the target job, and then click __Update Version__ in the upper right corner.
+1. Click the name of the target job, and then click __Update Version__ in the upper right corner.
 2. Set the image for the canary release.
 
     ![Image URL](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/blue03.png)
@@ -40,7 +40,7 @@ For a blue-green release job with the status "Paused", you can perform the opera
 
 You can view the historical versions that have been released and rollback to a previous version with one click.
 
-1. On the __Progressive Delivery__ details page, click on the __History Versions__ tab.
+1. On the __Progressive Delivery__ details page, click the __History Versions__ tab.
 2. Select the target version and click __ ...__ and __Rollback__ .
 
     ![Rollback](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/blue05.png)

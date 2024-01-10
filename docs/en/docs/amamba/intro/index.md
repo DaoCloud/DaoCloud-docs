@@ -24,7 +24,7 @@ Using [Workspace](../../ghippo/user-guide/workspace/ws-folder.md) as the smalles
 
 === "Centered around Cloud-Native Applications"
 
-Supports "polyform" cloud native applications in cloud native scenarios, including Kubernetes native applications, Helm applications, OAM applications, etc.
+Supports "polyform" cloud native applications in cloud native scenarios, including Kubernetes native applications, Helm apps, OAM applications, etc.
 Can integrate microservice applications based on SpingCloud, Dubbo, and ServiceMesh frameworks to achieve microservice governance. Seamlessly integrates with DCE 5.0's [Microservice Engine](../../skoala/intro/index.md) and [Service Mesh](../../mspider/intro/index.md).
 Provides full lifecycle management for cloud native applications, such as scaling, logging, monitoring, and application updates.
 

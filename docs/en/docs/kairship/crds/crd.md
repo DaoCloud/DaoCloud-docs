@@ -7,7 +7,7 @@ Date: 2024-01-04
 
 You can follow the steps below to create a custom resource definition (CRD) for multicloud.
 
-1. Click on __Multicloud CRDs__ in the left navigation bar to access the custom resource page. Then, click the __Create from YAML__ button located in the upper right corner.
+1. Click __Multicloud CRDs__ in the left navigation bar to access the custom resource page. Then, click the __Create from YAML__ button located in the upper right corner.
 
     ![Create CRD](../images/crd01.png)
 
@@ -19,7 +19,7 @@ You can follow the steps below to create a custom resource definition (CRD) for 
 
     ![Successfully Created](../images/crd03.png)
 
-4. You can click on the name to access the custom resource details page, where the YAML information can be edited to update the custom resource.
+4. You can click the name to access the custom resource details page, where the YAML information can be edited to update the custom resource.
 
     ![CRD Details](../images/crd04.png)
 
@@ -60,7 +60,7 @@ spec:
 
 ## Create CR instance via YAML
 
-1. Access the custom resource details and click on the __Create from YAML__ button located on the right side of the CR instance.
+1. Access the custom resource details and click the __Create from YAML__ button located on the right side of the CR instance.
 
     ![Create CR](../images/crd05.png)
 

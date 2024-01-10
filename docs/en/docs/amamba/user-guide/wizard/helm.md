@@ -1,6 +1,6 @@
-# Deploy the Helm Application Based on the Helm Chart
+# Deploy the Helm app Based on the Helm Chart
 
-Workbench supports building applications in four ways: [Git Repo](create-app-git.md), [Jar package](jar-java-app.md), container image, and Helm chart. This article describes how to deploy Helm applications through Helm Charts.
+Workbench supports building applications in four ways: [Git Repo](create-app-git.md), [Jar package](jar-java-app.md), container image, and Helm chart. This article describes how to deploy Helm apps through Helm Charts.
 
 ## prerequisites
 
@@ -19,7 +19,7 @@ Workbench supports building applications in four ways: [Git Repo](create-app-git
 
         - Click the list on the right of __Repositories__ to filter the Helm repository
         - Click the list on the right of __Type__ to filter the type of Helm Chart
-        - You can also directly enter the name of the Chart in the search box on the right to quickly find the Helm application that needs to be deployed
+        - You can also directly enter the name of the Chart in the search box on the right to quickly find the Helm app that needs to be deployed
 
     ![Basic Info](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/helm02.png)
 
@@ -36,7 +36,7 @@ Workbench supports building applications in four ways: [Git Repo](create-app-git
 
         ![Container Settings](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/helm04.png)
 
-5. The page automatically jumps to the Helm application list under the overview page, and you can view the installed Helm applications under the current cluster.
+5. The page automatically jumps to the Helm app list under the overview page, and you can view the installed Helm apps under the current cluster.
 
     > Click the application name to jump to the container management module to view application details.
 
@@ -44,6 +44,6 @@ Workbench supports building applications in four ways: [Git Repo](create-app-git
 
 !!! note
 
-    If you need to update and delete the Helm application, you need to click the application name to jump to the container management module, and perform update and deletion on the application details page and more operations.
+    If you need to update and delete the Helm app, you need to click the application name to jump to the container management module, and perform update and deletion on the application details page and more operations.
 
     ![Update/Delete](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/helm06.png)

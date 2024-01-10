@@ -8,7 +8,7 @@ With internal templates and custom templates, users can easily create new virtua
 
 Follow these steps to create a virtual machine using a template.
 
-1. Click on `Container Management` in the left navigation menu, then click on `Virtual Machine` to access the `Virtual Machine Management` page. On the virtual machine list page, click on `Create Virtual Machine` and select `Create with Template`.
+1. Click `Container Management` in the left navigation menu, then click `Virtual Machine` to access the `Virtual Machine Management` page. On the virtual machine list page, click `Create Virtual Machine` and select `Create with Template`.
 
     ![Create Template](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/create-tep01.png)
 

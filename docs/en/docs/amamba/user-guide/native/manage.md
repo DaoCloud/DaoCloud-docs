@@ -7,7 +7,7 @@ Date: 2024-01-08
 
 After [creating a native application](native-app.md), you can view the application details or update the application configuration as needed.
 
-1. Go to the __Workbench__ -> __Overview__ page, click on the __Application__ tab, and then click on the name of the native application.
+1. Go to the __Workbench__ -> __Overview__ page, click the __Application__ tab, and then click the name of the native application.
 
     ![Application Overview](../../images/native-app01.png)
 
@@ -15,11 +15,11 @@ After [creating a native application](native-app.md), you can view the applicati
 
     ![Basic Info](../../images/native-app02.png)
 
-- Click on the __App Resources__ tab to view the Kubernetes resources associated with the native application, such as workloads, services, routes, etc. You also have the ability to edit and delete various resources.
+- Click the __App Resources__ tab to view the Kubernetes resources associated with the native application, such as workloads, services, routes, etc. You also have the ability to edit and delete various resources.
 
     ![App Resources](../../images/native-app03.png)
 
-- Click on the __Application Topology__ tab to visually see the resources including workloads, containers, storage, configurations, and secrets.
+- Click the __Application Topology__ tab to visually see the resources including workloads, containers, storage, configurations, and secrets.
 
     ![Application Topology](../../images/native-app04.png)
 
@@ -33,7 +33,7 @@ After [creating a native application](native-app.md), you can view the applicati
 
 ## Editing basic information of a native application
 
-1. Click on the name of the native application, and then click on the __ⵈ__ in the upper-right corner of the page, and select __Edit Basic Info__.
+1. Click the name of the native application, and then click the __ⵈ__ in the upper-right corner of the page, and select __Edit Basic Info__.
 
 2. Set an alias or provide additional description as needed.
 
@@ -41,7 +41,7 @@ After [creating a native application](native-app.md), you can view the applicati
 
 ## Viewing YAML of a native application
 
-1. Click on the name of the native application, then click on the __ⵈ__ in the upper-right corner of the page, and select __Check YAML__.
+1. Click the name of the native application, then click the __ⵈ__ in the upper-right corner of the page, and select __Check YAML__.
 
 2. View the manifest file of the native application.
 

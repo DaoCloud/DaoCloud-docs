@@ -16,11 +16,11 @@ For an introduction to OAM concepts, please refer to the [Introduction to OAM](c
 
 ## Procedure
 
-1. Navigate to the __Workbench__ > __Overview__ page, select the __OAM App__ tab and click on __Create Application__.
+1. Navigate to the __Workbench__ > __Overview__ page, select the __OAM App__ tab and click __Create Application__.
 
     ![Create Application](../../images/oam01.png)
 
-2. Provide the basic information as per the guidelines below and click on __Next__:
+2. Provide the basic information as per the guidelines below and click __Next__:
 
     - Name/Alias: Enter the name or alias of the OAM application.
     - Main Component Type: Different component types necessitate different configurations. For a detailed understanding of various component types, please refer to the [Built-in Component List](https://kubevela.io/en/docs/end-user/components/references).
@@ -41,10 +41,10 @@ For an introduction to OAM concepts, please refer to the [Introduction to OAM](c
 
     ![Traits](../../images/oam04.png)
 
-5. Click on __OK__ to finalize the creation. Upon successful creation, you will be redirected to the OAM application list page.
+5. Click __OK__ to finalize the creation. Upon successful creation, you will be redirected to the OAM application list page.
 
     ![Create Successfully](../../images/oam05.png)
 
-6. Click on the application name to access the OAM application details page. Here, you can view the basic information of the OAM application, component, app status, and conduct operations such as adding components and traits.
+6. Click the application name to access the OAM application details page. Here, you can view the basic information of the OAM application, component, app status, and conduct operations such as adding components and traits.
 
     ![Detailed Info](../../images/oam06.png)
