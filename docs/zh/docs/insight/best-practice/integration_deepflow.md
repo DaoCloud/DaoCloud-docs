@@ -13,8 +13,7 @@ DeepFlow 是一款基于 eBPF 的可观测性产品。它的社区版已经被�
 
 安装 DeepFlow 组件需要用到两个 chart `deepflow`,`deepflow-agent`：
 
-- `deepflow`: 包含 `deepflow-app`,`deepflow-server`,`deepflow-clickhouse`，`deepflow-agent` 等组件。一般`deepflow` 会部署在
-- 全局服务集群中，所以它也一并安装了 `deepflow-agent`
+- `deepflow`: 包含 `deepflow-app`,`deepflow-server`,`deepflow-clickhouse`，`deepflow-agent` 等组件。一般`deepflow` 会部署在全局服务集群中，所以它也一并安装了 `deepflow-agent`
 - `deepflow-agent`： 只包含了 `deepflow-agent` 组件，用于采集 eBPF 数据并发送给 `deepflow-server`
 
 1. 安装 DeepFlow
@@ -59,7 +58,17 @@ DeepFlow Agent 通过 `deepflow-agent` chart 安装，它被安装在子集群�
 
 ![img.png](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/best-practice/images/deepflow_agent_chart_config.png)
 
- __DeepflowServerNodeIPS__ 对应 deepflow server 安装集群的节点地址。配置好后点击确认，完成安装。
+参数说明：
+
+- __DeployComponent__ 部署模式，默认为 `daemonset`。
+- __timezone__ 时区，默认为 `Asia/Shanghai`。
+- __DeepflowServerNodeIPS__ 对应 deepflow server 安装集群的节点地址。
+- __deepflowK8sClusterID__  集群 UUID。
+- __agentGroupID__ agent 组 ID。
+- __controllerPort__ deepflow server 的数据上报端口，可以不填，默认为 `30035`。
+- __clusterNAME__ 集群名称。
+
+配置好后点击确认，完成安装。
 
 ## 使用
 
