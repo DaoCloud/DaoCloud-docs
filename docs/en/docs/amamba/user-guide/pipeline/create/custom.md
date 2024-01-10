@@ -16,7 +16,7 @@ The Workbench pipeline supports custom creation, allowing you to visually arrang
 
 Follow these steps to create a custom pipeline:
 
-1. Click on __Create Pipeline__ on the pipeline list page.
+1. Click __Create Pipeline__ on the pipeline list page.
 
     ![Create Pipeline](../../../images/createpipelinbutton.png)
 

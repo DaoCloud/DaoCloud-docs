@@ -68,6 +68,6 @@ With the micro-service governance plug-in enabled, you can create three kinds of
 
 ## API Docs
 
-The interface documentation displays the list of APIs exposed by the service. Click on "Import API Docs" on the right to manually enter the API. There are two ways to import: Address to Import and Manual Import.
+The interface documentation displays the list of APIs exposed by the service. Click "Import API Docs" on the right to manually enter the API. There are two ways to import: Address to Import and Manual Import.
 
 ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/detail11.png)

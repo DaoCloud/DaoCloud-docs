@@ -15,11 +15,11 @@ This section provides a walkthrough on how to achieve one-click migrating applic
 
 ## One-Click Migration
 
-1. Navigate to the multicloud instance and select __Worker Clusters__. Click on __Integrate Cluster__ and choose to connect the DCE4 cluster to the multicloud instance.
+1. Navigate to the multicloud instance and select __Worker Clusters__. Click __Integrate Cluster__ and choose to connect the DCE4 cluster to the multicloud instance.
 
     ![Integrate Cluster](../images/conversion01.png)
 
-2. Proceed to __Multicloud Workloads__ -> __Deployment__. Click on __Convert Now__ and select the target application. The related service will be selected automatically, and the corresponding configmaps and secrets will also undergo synchronous conversion.
+2. Proceed to __Multicloud Workloads__ -> __Deployment__. Click __Convert Now__ and select the target application. The related service will be selected automatically, and the corresponding configmaps and secrets will also undergo synchronous conversion.
 
     ![Convert Now](../images/conversion02.png)
 

@@ -4,7 +4,7 @@
 
 - Before installing Jenkins, make sure there is a default storage class in the cluster where Jenkins will be installed.
 - Please ensure that it is installed in the __amamba-system__ namespace.
-- If installing on a global service cluster, make sure to have an instance of __amamba-jenkins__ in the __Container Management__ -> __Helm Applications__ , under the __amamba-system__ namespace.
+- If installing on a global service cluster, make sure to have an instance of __amamba-jenkins__ in the __Container Management__ -> __Helm Apps__ , under the __amamba-system__ namespace.
 
 ## Getting Started with Installation
 
@@ -16,7 +16,7 @@
 
     ![Click Cluster Name](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins11.png)
 
-2. In the left navigation bar, select __Helm Applications__ -> __Helm Templates__ , and find and click __Jenkins__ .
+2. In the left navigation bar, select __Helm Apps__ -> __Helm Charts__ , and find and click __Jenkins__ .
 
     ![jenkins helm](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins12.png)
 
@@ -50,7 +50,7 @@
     | eventProxy.configMap.eventProxy.webhookUrl | Path to webhook address, `/apis/internel.amamba.io/devops/pipeline/v1alpha1/webhooks/jenkins` by default.  |
     | eventProxy.configMap.eventProxy.token | Token to access DCE, refer [Global Access Key Document](../../../ghippo/user-guide/personal-center/accesstoken.md) for token acquisition<br />Required if enabled=true |
 
-5. Go to Helm Applications to check the deployment result.
+5. Go to Helm Apps to check the deployment result.
 
     ![Deployment Completed](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins15.png)
 
@@ -58,7 +58,7 @@
 
 Note: Currently, only integration with Jenkins installed via the DCE 5.0 platform is supported.
 
-1. Log in to DCE 5.0 with a user who has the role of an Workbench Administrator and go to the Workbench.
+1. Log in to DCE 5.0 with a user who has the role of a Workbench Administrator and go to the Workbench.
 
     ![Deployment Completed](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins16.png)
 
@@ -87,7 +87,7 @@ To address these issues, you need to go to the Jenkins backend for relevant conf
 
 ### Configuring Email Notifications in the Jenkins Backend for the Notification Step
 
-1. Go to the Jenkins backend, click on Manage Jenkins -> Configure System, and then scroll down to the __Email Notification__ section.
+1. Go to the Jenkins backend, click __Manage Jenkins__ -> __Configure System__ , and then scroll down to the __Email Notification__ section.
 
 2. Fill in the relevant parameters. The parameter descriptions are as follows:
 
@@ -99,13 +99,13 @@ To address these issues, you need to go to the Jenkins backend for relevant conf
 
     !!! note
 
-        To configure the sender's email address, click on the top-right user icon -> Settings, and then scroll down to __Email Address__ .
+        To configure the sender's email address, click the top-right user icon -> Settings, and then scroll down to __Email Address__ .
 
     ![Jenkins Email Config](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins06.png)
 
 ### Configuring SonarQube Server Address in the Jenkins Backend for the SonarQube Configuration Step
 
-1. Go to the Jenkins backend, click on Manage Jenkins -> Configure System, and then scroll down to __SonarQube servers__ . Click on __Add SonarQube__ .
+1. Go to the Jenkins backend, click __Manage Jenkins__ -> __Configure System__ , and then scroll down to __SonarQube servers__ . Click __Add SonarQube__ .
 
 2. Fill in the relevant parameters. The parameter descriptions are as follows:
 
@@ -118,6 +118,5 @@ To address these issues, you need to go to the Jenkins backend for relevant conf
     !!! note
 
         If a SornarQube instance was already integrated and the Jenkins instance was updated with a new one, in this case, you should make sure the name was set exactly same with the SonarQube name. Which should be noted that Name is not the name entered during integration, instead, it is obtained in the SonarQube configuration step of the pipeline.
-
 
     ![SonarQube Name](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins07.png)

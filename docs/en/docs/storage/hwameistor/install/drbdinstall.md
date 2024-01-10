@@ -15,7 +15,7 @@ You can directly enable the DRDB component when installing HwameiStor. For detai
 
 1. Please go to `Container Management` -> `Helm Charts`, and select `drbd-adapter`.
 
-2. Click on `drdb-adapter`, click on install, and enter the configuration page.
+2. Click `drdb-adapter`, click install, and enter the configuration page.
 
     ![drbd02](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/storage/hwameistor/img/drbd02.png)
 
