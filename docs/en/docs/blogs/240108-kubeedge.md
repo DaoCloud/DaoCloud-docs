@@ -80,28 +80,28 @@ DaoCloud adheres to the concept of thriving and co-building the community, conti
 
 ### Participated Features
 
-- keadm compatibility with cloudcore, edgecore historical versions CI ([#5289](https://github.com/kubeedge/kubeedge/pull/5289)),
-  keadm compatibility with k8s version CI ([#5006](https://github.com/kubeedge/kubeedge/pull/5006))
-- Added Device CRD admission validation ([#5290](https://github.com/kubeedge/kubeedge/pull/5290)),
-  proposal writing for the new version of device management API based on physical models v1beta1+ ([#4983](https://github.com/kubeedge/kubeedge/pull/4983)),
+- keadm compatibility with cloudcore, edgecore historical versions CI ([PR #5289](https://github.com/kubeedge/kubeedge/pull/5289)),
+  keadm compatibility with k8s version CI ([PR #5006](https://github.com/kubeedge/kubeedge/pull/5006))
+- Added Device CRD admission validation ([PR #5290](https://github.com/kubeedge/kubeedge/pull/5290)),
+  proposal writing for the new version of device management API based on physical models v1beta1+ ([PR #4983](https://github.com/kubeedge/kubeedge/pull/4983)),
   added Mapper-Framework repository ([mapper-framework](https://github.com/kubeedge/mapper-framework)),
-  refactored Mapper-Framework Config module ([#5219](https://github.com/kubeedge/kubeedge/pull/5219)),
-  added lint check to Mapper-Framework ([#5292](https://github.com/kubeedge/kubeedge/pull/5292)),
-  optimized device initialization module of Mapper-Framework ([#5247](https://github.com/kubeedge/kubeedge/pull/5247))
-- Admission installation package support ([#5034](https://github.com/kubeedge/kubeedge/pull/5034)),
-  upgrade of cloudcore on the cloud side ([#5229](https://github.com/kubeedge/kubeedge/pull/5229)),
-  maintenance of mqtt using DaemonSet ([#5235](https://github.com/kubeedge/kubeedge/pull/5235))
-- Provided more differentiated configuration fields for batch workloads (EdgeApplication) ([#5262](https://github.com/kubeedge/kubeedge/pull/5262))
+  refactored Mapper-Framework Config module ([PR #5219](https://github.com/kubeedge/kubeedge/pull/5219)),
+  added lint check to Mapper-Framework ([PR #5292](https://github.com/kubeedge/kubeedge/pull/5292)),
+  optimized device initialization module of Mapper-Framework ([PR #5247](https://github.com/kubeedge/kubeedge/pull/5247))
+- Admission installation package support ([PR #5034](https://github.com/kubeedge/kubeedge/pull/5034)),
+  upgrade of cloudcore on the cloud side ([PR #5229](https://github.com/kubeedge/kubeedge/pull/5229)),
+  maintenance of mqtt using DaemonSet ([PR #5235](https://github.com/kubeedge/kubeedge/pull/5235))
+- Provided more differentiated configuration fields for batch workloads (EdgeApplication) ([PR #5262](https://github.com/kubeedge/kubeedge/pull/5262))
 
 ### Bug Fixes
 
-- Pulling pause image when deleting node access ([#5312](https://github.com/kubeedge/kubeedge/pull/5312)),
-  node upgrade failure in historical versions ([#5085](https://github.com/kubeedge/kubeedge/pull/5085))
-- Fixed sedna helm installation package bug ([#420](https://github.com/kubeedge/sedna/pull/420))
-- Optimized rule admission validation ([#5225](https://github.com/kubeedge/kubeedge/pull/5225))
-- Fixed synchronization issues when delivering and deleting device models ([#5065](https://github.com/kubeedge/kubeedge/pull/5065))
-- Fixed pkg directory and related applications in Mapper-Framework ([#5070](https://github.com/kubeedge/kubeedge/pull/5070))
-- Fixed timing issue with mutex unlock ([#5279](https://github.com/kubeedge/kubeedge/pull/5279))
+- Pulling pause image when deleting node access ([PR #5312](https://github.com/kubeedge/kubeedge/pull/5312)),
+  node upgrade failure in historical versions ([PR #5085](https://github.com/kubeedge/kubeedge/pull/5085))
+- Fixed sedna helm installation package bug ([PR #420](https://github.com/kubeedge/sedna/pull/420))
+- Optimized rule admission validation ([PR #5225](https://github.com/kubeedge/kubeedge/pull/5225))
+- Fixed synchronization issues when delivering and deleting device models ([PR #5065](https://github.com/kubeedge/kubeedge/pull/5065))
+- Fixed pkg directory and related applications in Mapper-Framework ([PR #5070](https://github.com/kubeedge/kubeedge/pull/5070))
+- Fixed timing issue with mutex unlock ([PR #5279](https://github.com/kubeedge/kubeedge/pull/5279))
 
 ### Community Seats
 
@@ -112,16 +112,16 @@ DaoCloud adheres to the concept of thriving and co-building the community, conti
 
 ### Other Matters
 
-- Assisted the community in completing the planning for the second half of 2023 ([#172](https://github.com/kubeedge/community/pull/172))
-- Added DaoCloud as a partner to KubeEdge ([#491](https://github.com/kubeedge/website/pull/491))
-- Shared technical solutions for message routing support modification ([#5129](https://github.com/kubeedge/kubeedge/issues/5129)),
-  message routing support for resumable transmission ([#4995](https://github.com/kubeedge/kubeedge/issues/4995)),
-  optimization of message routing cloud-edge communication blockage ([#5332](https://github.com/kubeedge/kubeedge/issues/5332))
+- Assisted the community in completing the planning for the second half of 2023 ([PR #172](https://github.com/kubeedge/community/pull/172))
+- Added DaoCloud as a partner to KubeEdge ([PR #491](https://github.com/kubeedge/website/pull/491))
+- Shared technical solutions for message routing support modification ([PR #5129](https://github.com/kubeedge/kubeedge/issues/5129)),
+  message routing support for resumable transmission ([PR #4995](https://github.com/kubeedge/kubeedge/issues/4995)),
+  optimization of message routing cloud-edge communication blockage ([PR #5332](https://github.com/kubeedge/kubeedge/issues/5332))
 - Served as the rotating host of SIG-AI for Sedna in October and November
 - Hosted SIG-DeviceIOT community meetings
 - Guided the completion of the "Edge Device Multi-Node Migration Solution Based on KubeEdge Device Management Interface DMI" open-source summer project
 - Participated in the design of EdgeMesh CNI features
-- In Q3, the DaoCloud Edge Team submitted a total of 22 PRs to the KubeEdge community.
+- In Q4, the DaoCloud Edge Team submitted a total of 22 PRs to the KubeEdge community.
   See [Commit Details](https://kubeedge.devstats.cncf.io/d/56/company-commits-table?orgId=1&from=now-90d&to=now&var-repogroups=kubeedge&var-companies=DaoCloud%20Network%20Technology%20Co.%20Ltd.).
 
 ![Contributions](./images/edge02.png)

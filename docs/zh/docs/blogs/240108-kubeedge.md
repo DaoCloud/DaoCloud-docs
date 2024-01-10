@@ -77,28 +77,28 @@ DaoCloud 秉承社区繁荣共建的理念，持续鼓励贡献上游，回馈�
 
 ### 参与的功能
 
-- keadm 兼容 cloudcore、edgecore 历史版本 ci（[#5289](https://github.com/kubeedge/kubeedge/pull/5289)）、
-  keadm 兼容 k8s 版本 ci（[#5006](https://github.com/kubeedge/kubeedge/pull/5006)）
-- 新增 Device CRD Admission 校验([#5290](https://github.com/kubeedge/kubeedge/pull/5290))、
-  开发基于物模型的新版本设备管理 API 新版本 v1beta1+编写 proposal（[#4983](https://github.com/kubeedge/kubeedge/pull/4983)）、
+- keadm 兼容 cloudcore、edgecore 历史版本 ci（[PR #5289](https://github.com/kubeedge/kubeedge/pull/5289)）、
+  keadm 兼容 k8s 版本 ci（[PR #5006](https://github.com/kubeedge/kubeedge/pull/5006)）
+- 新增 Device CRD Admission 校验([PR #5290](https://github.com/kubeedge/kubeedge/pull/5290))、
+  开发基于物模型的新版本设备管理 API 新版本 v1beta1+编写 proposal（[PR #4983](https://github.com/kubeedge/kubeedge/pull/4983)）、
   新增 Mapper-Framework 仓库([mapper-framework](https://github.com/kubeedge/mapper-framework))、
-  Mapper-Framework Config 模块重构（[#5219](https://github.com/kubeedge/kubeedge/pull/5219)）、
-  Mapper-Framework 新增 lint check（[#5292](https://github.com/kubeedge/kubeedge/pull/5292)）、
-  Mapper-Framework 设备初始化模块优化（[#5247](https://github.com/kubeedge/kubeedge/pull/5247)）
-- admission 安装包支持([#5034](https://github.com/kubeedge/kubeedge/pull/5034)) 、
-  云端 cloudcore 的升级（[#5229](https://github.com/kubeedge/kubeedge/pull/5229)）、
-  mqtt 使用 DaemonSet 维护（[#5235](https://github.com/kubeedge/kubeedge/pull/5235)）
-- 批量工作负载(EdgeApplication)提供更多差异化配置字段（[#5262](https://github.com/kubeedge/kubeedge/pull/5262)）
+  Mapper-Framework Config 模块重构（[PR #5219](https://github.com/kubeedge/kubeedge/pull/5219)）、
+  Mapper-Framework 新增 lint check（[PR #5292](https://github.com/kubeedge/kubeedge/pull/5292)）、
+  Mapper-Framework 设备初始化模块优化（[PR #5247](https://github.com/kubeedge/kubeedge/pull/5247)）
+- admission 安装包支持([PR #5034](https://github.com/kubeedge/kubeedge/pull/5034)) 、
+  云端 cloudcore 的升级（[PR #5229](https://github.com/kubeedge/kubeedge/pull/5229)）、
+  mqtt 使用 DaemonSet 维护（[PR #5235](https://github.com/kubeedge/kubeedge/pull/5235)）
+- 批量工作负载(EdgeApplication)提供更多差异化配置字段（[PR #5262](https://github.com/kubeedge/kubeedge/pull/5262)）
 
 ### 修复 bug
 
-- 删除节点接入时拉取 pause 镜像（[#5312](https://github.com/kubeedge/kubeedge/pull/5312)）、
-  历史版本中节点升级失败问题（[#5085](https://github.com/kubeedge/kubeedge/pull/5085) ）
-- sedna helm 安装包 bug([#420](https://github.com/kubeedge/sedna/pull/420))
-- 优化 rule admission 校验（[#5225](https://github.com/kubeedge/kubeedge/pull/5225)）
-- 修复 device model 下发和删除时的同步问题([#5065](https://github.com/kubeedge/kubeedge/pull/5065))
-- 修复 Mapper-Framework 下 pkg 包目录和相关应用([#5070](https://github.com/kubeedge/kubeedge/pull/5070))
-- 修复 mutex 互斥锁 unlock 时机的问题（[#5279](https://github.com/kubeedge/kubeedge/pull/5279)）
+- 删除节点接入时拉取 pause 镜像（[PR #5312](https://github.com/kubeedge/kubeedge/pull/5312)）、
+  历史版本中节点升级失败问题（[PR #5085](https://github.com/kubeedge/kubeedge/pull/5085) ）
+- sedna helm 安装包 bug([PR #420](https://github.com/kubeedge/sedna/pull/420))
+- 优化 rule admission 校验（[PR #5225](https://github.com/kubeedge/kubeedge/pull/5225)）
+- 修复 device model 下发和删除时的同步问题([PR #5065](https://github.com/kubeedge/kubeedge/pull/5065))
+- 修复 Mapper-Framework 下 pkg 包目录和相关应用([PR #5070](https://github.com/kubeedge/kubeedge/pull/5070))
+- 修复 mutex 互斥锁 unlock 时机的问题（[PR #5279](https://github.com/kubeedge/kubeedge/pull/5279)）
 
 ### 社区席位
 
@@ -109,15 +109,15 @@ DaoCloud 秉承社区繁荣共建的理念，持续鼓励贡献上游，回馈�
 
 ### 其它事项
 
-- 协助社区完成 2023 年下半年规划（[#172](https://github.com/kubeedge/community/pull/172)）
-- 将 DaoCloud 添加到 KubeEdge 合作伙伴（[#491](https://github.com/kubeedge/website/pull/491)）
-- 在社区分享了消息路由支持修改([#5129](https://github.com/kubeedge/kubeedge/issues/5129))、
-  消息路由支持断点续传([#4995](https://github.com/kubeedge/kubeedge/issues/4995))、
-  消息路由云边通信阻塞问题优化([#5332](https://github.com/kubeedge/kubeedge/issues/5332))等功能技术方案。
+- 协助社区完成 2023 年下半年规划（[PR #172](https://github.com/kubeedge/community/pull/172)）
+- 将 DaoCloud 添加到 KubeEdge 合作伙伴（[PR #491](https://github.com/kubeedge/website/pull/491)）
+- 在社区分享了消息路由支持修改([PR #5129](https://github.com/kubeedge/kubeedge/issues/5129))、
+  消息路由支持断点续传([PR #4995](https://github.com/kubeedge/kubeedge/issues/4995))、
+  消息路由云边通信阻塞问题优化([PR #5332](https://github.com/kubeedge/kubeedge/issues/5332))等功能技术方案。
 - 在 SIG-AI 担任 sedna 10-11 月份轮值主持人
 - 主持 SIG-DeviceIOT 社区例会
 - 指导完成开源之夏项目《基于 KubeEdge 设备管理接口 DMI 的边缘设备多节点迁移方案》
 - 参与 EdgeMesh CNI 功能设计
-- Q3 DaoCloud 边缘团队总计给 KubeEdge 社区提交 PR [22 个](https://kubeedge.devstats.cncf.io/d/56/company-commits-table?orgId=1&from=now-90d&to=now&var-repogroups=kubeedge&var-companies=DaoCloud%20Network%20Technology%20Co.%20Ltd.)
+- Q4 DaoCloud 边缘团队总计给 KubeEdge 社区提交 PR [22 个](https://kubeedge.devstats.cncf.io/d/56/company-commits-table?orgId=1&from=now-90d&to=now&var-repogroups=kubeedge&var-companies=DaoCloud%20Network%20Technology%20Co.%20Ltd.)
 
 ![贡献](./images/edge02.png)
