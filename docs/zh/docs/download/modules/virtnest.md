@@ -13,16 +13,16 @@
 
 ## 校验
 
-在下载离线安装包和校验文件的目录，以 `v0.3.0_amd64` 为例，执行以下命令校验完整性：
+在下载离线安装包和校验文件的目录，以 `v0.5.0_amd64` 为例，执行以下命令校验完整性：
 
 ```sh
-echo "$(cat virtnest_v0.3.0_amd64_checksum.sha512sum)" | sha512sum -c
+echo "$(cat virtnest_v0.5.0_amd64_checksum.sha512sum)" | sha512sum -c
 ```
 
 校验成功后打印结果类似于：
 
 ```none
-virtnest_v0.3.0_amd64.tar: ok
+virtnest_v0.5.0_amd64.tar: ok
 ```
 
 ## 安装
