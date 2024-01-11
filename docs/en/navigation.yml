@@ -703,7 +703,9 @@ nav:
                   - Sample App in Microservices: skoala/best-practice/use-skoala-01.md
                   - JWT Plugin in Cloud Native Microservice: skoala/best-practice/plugins/jwt.md
                   - Microservice Gateway JWT: skoala/best-practice/jwt.md
-                  - Authentication Server for Microservie Gateway: skoala/best-practice/auth-server.md
+                  - Authentication Server for Microservie Gateway:
+                      - skoala/best-practice/auth-server.md
+                      - Integrate an AK/SK Authentication: skoala/best-practice/ak-sk-demo.md
                   - Integrate Microservice Gateway with Rate Limit Server: skoala/best-practice/global-ratelimit.md
                   - Gateway API Policies: skoala/best-practice/gateway02.md
                   - Access Microservie via Gateway: skoala/best-practice/gateway01.md
