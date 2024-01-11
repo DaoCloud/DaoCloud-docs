@@ -71,17 +71,17 @@ After the offline package has been successfully validated,
     ```
 
 - For installation instructions, refer to the [Community Installation Guide](../../install/community/k8s/online.md#_2).
-- After successful installation, please [apply for a free community experience](../../dce/license0.md).
+- After successful installation, [apply for a free community experience](../../dce/license0.md).
 
 ## Modules
 
 DCE 5.0 Community includes the following modules by default:
 
-| Module   | Description                     | Latest Release      |
-| -------- | ------------------------------- | ------------------- |
-| Global Management | Responsible for user access control, permissions, enterprise spaces, audit logs, personalized appearance settings, etc.      | [0.21.0](../../ghippo/intro/release-notes.md#0210) |
+| Modules | Introduction | What's New |
+| -------- | ----------- | ---------- |
+| Global Management | Responsible for user access control, permissions, enterprise spaces, audit logs, personalized appearance settings, etc. | [0.21.0](../../ghippo/intro/release-notes.md#0210) |
 | Container Management | Manages clusters, nodes, workloads, Helm applications, CRDs, namespaces, and other core Kubernetes features. | [0.22.0](../../kpanda/intro/release-notes.md#0220) |
-| Insight | Provides rich dashboards, scenario monitoring, data querying, alerts, and other graphical and textual information.              | [0.21.1](../../insight/intro/releasenote.md#insight-server-v0210)  |
+| Insight | Provides rich dashboards, scenario monitoring, data querying, alerts, and other graphical and textual information. | [0.21.1](../../insight/intro/releasenote.md#insight-server-v0210) |
 
 ## More
 

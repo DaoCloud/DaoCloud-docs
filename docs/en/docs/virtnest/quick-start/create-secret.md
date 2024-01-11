@@ -4,7 +4,7 @@ When creating a virtual machine using Object Storage (S3) as the image source, s
 
 ## Procedure
 
-1. Click on `Container Management` in the left navigation bar, then click on `Clusters`, enter the details of the cluster where the virtual machine is located, click on `ConfigMaps & Secrets`, select the `Secrets`, and click on `Create Secret`.
+1. Click `Container Management` in the left navigation bar, then click `Clusters`, enter the details of the cluster where the virtual machine is located, click `ConfigMaps & Secrets`, select the `Secrets`, and click `Create Secret`.
 
    ![Create Secret](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/secret01.png)
 

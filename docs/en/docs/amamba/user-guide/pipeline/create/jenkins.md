@@ -1,61 +1,61 @@
 ---
-hide:
-  - toc
+MTPE: FanLin
+Date: 2024-01-09
 ---
 
-# Create pipeline based on Jenkinsfile
+# Create a Pipeline by Jenkinsfile
 
-Workbench Pipelines supports creating pipelines using a Jenkinsfile in a repository.
+Workbench Pipelines allows you to create pipelines by Jenkinsfile stored in a repository.
 
-**Prerequisites**
+## Prerequisites
 
-- [Create Workspace](../../../../ghippo/user-guide/workspace/workspace.md), [Create User](../../../../ghippo/user-guide/access-control/user.md).
-- Add the user to the workspace with __workspace editor__ or higher privileges.
-- Provide a code warehouse, and the source code of the code warehouse has a Jenkinsfile text file.
-- If it is a private warehouse, you need to [create warehouse access credentials](../credential.md) in advance.
+- [Creating a Workspace](../../../../ghippo/user-guide/workspace/workspace.md), [Creating a User](../../../../ghippo/user-guide/access-control/user.md).
+- Add the user to the workspace with __workspace editor__ privileges or higher.
+- Have a code repository that contains a Jenkinsfile.
+- If using a private repository, you'll need to [create repository access credentials](../credential.md) beforehand.
 
-**The specific operation steps are as follows:**
+## Steps
 
 1. Click __Create Pipeline__ on the pipeline list page.
 
-    <!--![]()screenshots-->
+    ![Create Pipeline](../../../images/jenkinpp01.png)
 
-2. Select __Create a pipeline based on the Jenkinsfile of the code base__ and click __OK__ .
+2. Choose __Create a pipeline by Jenkinsfile__ and click __OK__ .
 
-    <!--![]()screenshots-->
+    ![Create by Jenkinsfile](../../../images/jenkinpp02.png)
 
-3. Fill in the basic information and code warehouse information by referring to the instructions below.
+3. Fill in the basic information and repository details as per the instructions below.
 
-    - name: the name of the pipeline. The pipeline name must be unique under the same workspace.
-    - Code warehouse address: fill in the address of the remote code warehouse.
-    - Credentials: For private repositories, you need to [Create Repository Access Credentials](../credential.md) in advance and select the credential here.
-    - Branch: Based on the code of which branch to build the pipeline, the default is the master branch.
-    - Script path: the absolute path of the Jenkinsfile in the code repository.
+    - Name: the name of the pipeline. The pipeline name must be unique within the same workspace.
+    - Repo URL: Provide the URL of the remote code repository.
+    - Credential: For private repositories, you need to [create repository access credentials](../credential.md) in advance and select the credential here.
+    - Branches: The branch of the code that the pipeline will be built from, by default the master branch is selected.
+    - Script Path: The absolute path of the Jenkinsfile within the code repository.
 
-        <!--![]()screenshots-->
+    ![Basic Info](../../../images/jenkinpp03.png)
 
-4. Fill in the build settings and build parameters with reference to the instructions below.
+4. Input the build settings and build parameters as per the instructions below.
 
-    - Delete expired pipeline records: Delete previous build records to save disk space used by Jenkins.
+    - Delete expired pipelines: Remove previous build records to conserve Jenkins disk space.
 
-        - Build record retention period: Up to several days of build records are kept, the default value is 7 days, that is, build records older than seven days will be deleted.
-        -Maximum number of build records: keep a maximum number of build records, the default value is 10, that is, keep a maximum of 10 records. When there are more than 10 records, the oldest records are deleted first.
-        - The two rules __retention period__ and __maximum number__ are in effect at the same time, as long as one of them is met, the records will be deleted.
+        - Retention days for builds: Define how many days of build records are to be kept. The default value is 7 days, meaning that build records older than seven days will be removed.
+        - Maximum builds: Set a maximum limit for the number of build records to be kept. The default value is 10. When there are more than 10 records, the oldest ones get deleted first.
+        - Both __Retention days__ and __Maximum builds__ rules apply simultaneously. Records are deleted as soon as either condition is met.
 
-    - Do not allow concurrent builds: When enabled, only one pipeline build task can be executed at a time.
-    - Build Parameters: Pass in one or more build parameters when starting to run the pipeline. Five parameter types are provided by default: __Boolean__ , __string__ , __multiline text__ , __options__ , __password__ , __upload file__ .
-    - After adding build parameters, you need to enter the corresponding value for each build parameter when running the pipeline.
+    - Disable concurrent builds: When this option is enabled, only one pipeline build task can be executed at a time.
+    - Build Parameters: Input one or more build parameters when initiating the pipeline. Five default parameter types are provided: __Boolean__, __String__, __Multiline String__, __Options__, __Password__, and __Upload files__.
+    - After adding build parameters, you'll need to provide the corresponding value for each parameter when running the pipeline.
 
-        <!--![]()screenshots-->
+    ![Parameters](../../../images/jenkinpp04.png)
 
-5. Fill in the build trigger by referring to the instructions below.
+5. Set up the build trigger as per the instructions below.
 
-    - Code source trigger: After it is turned on, the system will periodically scan the specific branch in the warehouse code used to build the pipeline according to the __timed warehouse scan plan__ , and re-run the pipeline if there is an update.
-    - Scheduled warehouse scan schedule: Enter a CRON expression to define the time period for scanning warehouses. **After entering the expression, the meaning of the current expression will be prompted at the bottom**. For detailed expression syntax rules, please refer to [Cron Schedule Syntax](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/#cron-schedule-syntax).
-    - Timing trigger: Timing triggers the construction pipeline, no matter whether the code warehouse is updated or not, the pipeline will be re-run at the specified time.
+    - Code source triggered: When this option is enabled, the system will periodically scan the specific branch in the code repository used for the pipeline build according to the __Regular Repo Scan__ , and rerun the pipeline if there are any updates.
+    - Scheduled repository scanning: Input a CRON expression to define the time intervals for scanning the repository. **After entering the expression, its meaning will be displayed at the bottom**. For detailed syntax rules of the expression, refer to [Cron Schedule Syntax](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/#cron-schedule-syntax).
+    - Scheduled trigger: This will trigger the pipeline build at the specified time, regardless of whether the code repository has been updated or not.
 
-        <!--![]()screenshots-->
+    ![Build Trigger](../../../images/jenkinpp05.png)
 
-6. Complete the creation. After confirming that all parameters have been entered, click the __OK__ button to complete the creation of the custom pipeline and automatically return to the pipeline list. Click __︙__ to the right of the list to perform various actions.
+6. Complete the creation. After ensuring all parameters are filled in, click the __OK__ button to finalize the creation of the custom pipeline. You'll be automatically redirected to the pipeline list. Click __︙__ to the right of the list to perform various actions.
 
-    <!--![]()screenshots-->
+    ![Edit](../../../images/jenkinpp06.png)

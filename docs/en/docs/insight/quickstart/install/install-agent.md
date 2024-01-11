@@ -18,7 +18,7 @@ Please confirm that your cluster has successfully connected to the __container m
 
     ![Find Cluster](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/quickstart/images/insight-agent01.png)
 
-1. Choose __Install now__ to jump, or click on the cluster and click on __Helm Applications__ -> __Helm Templates__ in the left navigation bar, search for __insight-agent__ in the search box, and click it for details.
+1. Choose __Install now__ to jump, or click the cluster and click __Helm Applications__ -> __Helm Templates__ in the left navigation bar, search for __insight-agent__ in the search box, and click it for details.
 
     ![Search insight-agent](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/quickstart/images/insight-agent02.png)
 

@@ -1,35 +1,47 @@
-# delete mesh gateway
+---
+MTPE: windsonsea
+date: 2024-01-10
+---
 
-If you want to delete a cluster from the gateway list, you can follow the steps below to delete the cluster.
+# Delete Mesh Gateway
 
-## Delete a gateway
+If you want to delete one or more gateways, you can follow the instructions in this article.
 
-This is a recommended operation to prevent accidental deletion.
+## Delete a Gateway
 
-1. Click `mesh Gateway` in the left navigation bar, click the `...` button on the right side of the mesh list, and select `Delete` in the pop-up menu.
+!!! caution
 
-    
+    Before deleting a gateway, please check the corresponding Gateway and VirtualService resources
+    to avoid invalid configurations and abnormal traffic.
 
-2. In the pop-up window, after confirming that the information is correct, click `OK`, and the gateway will be deleted.
+The following steps are recommended to prevent accidental deletion.
 
-    
+1. After entering a specific mesh, click __Mesh Gateway__ in the left navigation bar.
+   Click the __⋮__ button on the right side of the list, and select __Delete__ from the pop-up menu.
 
-!!! warning
+    ![Delete Gateway](../../images/delete-gate01.png)
 
-    After the gateway is deleted, the information related to the gateway will be lost, please operate with caution.
+    Alternatively, you can check the checkbox in front of a gateway and click the __Delete__ button.
 
-## Batch deletion
+2. In the pop-up window, confirm the information is correct and click __OK__ to delete the gateway.
 
-If you really need to delete multiple gateways at once, you can use this operation.
-
-1. After selecting multiple gateways in the gateway list, click the trash can icon in the upper right corner.
-
-    
-
-2. In the pop-up window, after confirming that the information is correct, click `OK`, and all the selected gateways will be deleted.
-
-    
+    ![OK](../../images/delete-gate02.png)
 
 !!! warning
+
+    After deleting a gateway, the related information will be lost. Please proceed with caution.
+
+## Batch Delete
+
+If you need to delete multiple gateways at once, you can use this operation.
+
+1. Check multiple gateways in the gateway list and click the __Delete__ button on the upper right corner.
+
+    ![Batch Delete](../../images/delete-gate03.png)
+
+2. In the pop-up window, confirm the information is correct and click __OK__ to delete the selected gateways.
+
+!!! warning
     
-    Do not use the batch delete feature unless necessary. Deleted gateways cannot be recovered, so please operate with caution.
+    Please do not use the batch deletion feature unless necessary. Deleted gateways
+    cannot be recovered. Please proceed with caution.

@@ -1,7 +1,7 @@
 # Building Microservices Apps from Git Repo
 
 The Workbench supports building applications using four methods:
-Git repo, Jar packages, container images, and Helm templates. This article
+Git repo, Jar packages, container images, and Helm charts. This article
 explains how to build a traditional microservices application from a Git repo
 source code, enabling features such as traffic governance, log viewing, monitoring, and tracing.
 

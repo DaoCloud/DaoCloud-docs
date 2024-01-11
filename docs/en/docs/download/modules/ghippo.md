@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# Global management
+# Global Management
 
 On this page, you can download the offline packages of various versions of the global management module.
 

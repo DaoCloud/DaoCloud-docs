@@ -384,13 +384,9 @@
     !!! note
 
         - 支持 Redis Standalone、Redis Sentinel、Redis Cluster 三种模式
-
         - Standalone URL 格式为：`redis://[[user]:password@]host[:port][/db-number][?option=value]`
-
         - Sentinel URL 格式为：`redis+sentinel://[[user]:password@]host1[:port1][,host2[:port2]]/master-name[/db-number][?option=value]`
-
         - Cluster URL 格式为：`redis://[[user]:password@]host1[:port1]?addr=host2[:port2][&addr=host3:[port3][&option=value]] 或 rediss://[[user]:password@]host1[:port1]?addr=host2[:port2][&addr=host3:[port3][&option=value]]`
-
         - 目前仅有容器管理产品模块使用到了 Redis 组件
 
 2. 完成上述配置后，可以继续执行[部署 DCE 5.0 商业版](../start-install.md)。

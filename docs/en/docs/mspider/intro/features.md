@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+date: 2024-01-10
+---
+
 # Features
 
 This section describes the features supported by the service mesh.
@@ -50,9 +55,9 @@ This section describes the features supported by the service mesh.
 
     Supports configuration of delayed and interrupt faults.
 
-## Safety
+## Security
 
-- Transparent Two-Way Authentication
+- Transparent mTLS Authentication
 
     Supports mutual authentication between interface configuration services.
 

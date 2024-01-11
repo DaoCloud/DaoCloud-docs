@@ -53,17 +53,17 @@ nav:
                   - TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
                   - 其他 Linux: install/os-install/otherlinux.md
               - 升级:
-                  - 升级概述: install/upgrade-des.md
+                  - 概述: install/upgrade-des.md
                   - 升级 DCE 5.0 组件: install/upgrade.md
                   - 标准版升级白金版: install/evolve.md
-              - 升级/卸载/导入/FAQ:
+              - 卸载和导入:
                   - 卸载: install/uninstall.md
                   - 导入离线资源: install/import.md
               - 安装排障: install/faq.md
               - 最佳实践:
                   - 使用场景示例: install/commercial/scenarios.md
                   - DCE 5.0 一体机部署: install/best-practices/all-in-one-machine.md
-                  - 部署 DCE5.0 商业版时，etcd 组件采用 host 模式部署与控制平面分离: install/best-practices/etcd-host-deploy.md
+                  - 部署 DCE 5.0 商业版时 etcd 采用 host 模式与控制面分离: install/best-practices/etcd-host-deploy.md
               - 安装器 Release Notes: install/release-notes.md
       - 工作台:
           - 应用工作台:
@@ -257,7 +257,7 @@ nav:
                       - GPU Operator 离线安装:
                           - GPU Operator 离线安装: kpanda/user-guide/gpu/nvidia/install_nvidia_driver_of_operator.md
                           - 构建 CentOS 7_9 离线 yum 源: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_centos7_9.md
-                          - 向火种节点仓库上传 RedHat GPU Opreator 离线镜像: kpanda/user-guide/gpu/nvidia/push_image_to_repo.md
+                          - 向火种节点仓库上传RedHat GPU Opreator离线镜像: kpanda/user-guide/gpu/nvidia/push_image_to_repo.md
                           - 构建 RedHat 8_4 离线 yum 源: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_redhat8_4.md
                       - NVIDIA GPU 整卡模式: kpanda/user-guide/gpu/nvidia/full_gpu_userguide.md
                       - NVIDIA vGPU 模式:
@@ -285,6 +285,7 @@ nav:
                   - 在 CentOS 管理平台上创建 RedHat 9.2 工作集群: kpanda/best-practice/create-redhat9.2-on-centos-platform.md
                   - 对工作集群的控制节点扩容: kpanda/best-practice/add-master-node.md
                   - 在非主流操作系统上创建集群: kpanda/best-practice/use-otherlinux-create-custer.md
+                  - 离线场景 Kubean 向下兼容版本的部署与升级操作: kpanda/best-practice/kubean-low-version.md
           - 多云编排:
               - 介绍:
                   - 什么是多云编排: kairship/intro/index.md
@@ -392,7 +393,7 @@ nav:
                       - Cilium 对于 Pod 访问 Service 的加速: network/performance/cilium-performance/cilium-service.md
                       - Cilium 在 Pod 跨节点通信场景下的性能测试: network/performance/cilium-performance/cilium-crossnode.md
                       - Cilium 在 nodePort 场景下的访问加速测试: network/performance/cilium-performance/cilium-nodeport.md
-                      - Cilium 基于 eBPF 技术实施 Pod 带宽管控场景下的性能测试: network/performance/cilium-performance/cilium-bandwidth.md
+                      - Cilium基于eBPF技术实施Pod带宽管控下的性能测试: network/performance/cilium-performance/cilium-bandwidth.md
                   - 基于 eBPF 技术实施网络策略场景下的性能测试: network/performance/ebpf-performance.md
                   - Ingress 性能测试: network/performance/ingress-performance.md
                   - Egress 性能测试: network/performance/egress-performance.md
@@ -523,9 +524,9 @@ nav:
                       - Rook-Ceph 部署 - 应用商店: storage/solutions/dce-rook-ceph.md
                       - Rook-Ceph 部署 - Helm: storage/solutions/helm-rook-ceph.md
                       - 如何接入 Ceph Dashboard: storage/solutions/ceph-dashboard.md
-                      - 创建 Ceph 文件存储(CephFS) 存储类: storage/solutions/sc-cephfs.md
-                      - 创建 Ceph 块存储(RBD) 存储类: storage/solutions/sc-cephrbd.md
-                      - 创建 Ceph 对象存储(RGW) 存储类: storage/solutions/sc-cephrgw.md
+                      - 创建 Ceph 文件存储(CephFS)存储类: storage/solutions/sc-cephfs.md
+                      - 创建 Ceph 块存储(RBD)存储类: storage/solutions/sc-cephrbd.md
+                      - 创建 Ceph 对象存储(RGW)存储类: storage/solutions/sc-cephrgw.md
                   - Longhorn:
                       - Longhorn 介绍: storage/solutions/longhorn.md
                       - Longhorn 部署 - 应用商店: storage/solutions/dce-longhorn.md
@@ -720,14 +721,16 @@ nav:
                   - 示例应用体验微服务治理: skoala/best-practice/use-skoala-01.md
                   - 在云原生微服务中使用 JWT 插件: skoala/best-practice/plugins/jwt.md
                   - 微服务网关 JWT 功能: skoala/best-practice/jwt.md
-                  - 微服务网关接入认证服务器: skoala/best-practice/auth-server.md
+                  - 微服务网关接入认证服务器: 
+                      - skoala/best-practice/auth-server.md
+                      - 接入 ak/sk 认证 demo 应用: skoala/best-practice/ak-sk-demo.md
                   - 微服务网关接入限流服务器: skoala/best-practice/global-ratelimit.md
                   - 网关 API 策略: skoala/best-practice/gateway02.md
                   - 通过网关访问微服务: skoala/best-practice/gateway01.md
                   - 网关对接服务网格: skoala/best-practice/gateway-mesh.md
                   - 网关请求日志添加自定义属性: skoala/best-practice/add-custom-attributes.md
               - 故障排查:
-                  - skoala-init的x-kubernets-validations报错问题: skoala/troubleshoot/auth-server.md                
+                  - skoala-init的x-kubernets-validations报错: skoala/troubleshoot/auth-server.md                
               - 性能测试:
                   - 云原生网关吞吐量测试: skoala/tests/gateway-stress-test.md
                   - Nacos 压测报告: skoala/tests/nacos-stress-test.md
@@ -1164,6 +1167,8 @@ nav:
       - 体验社区版: trial/index.md
   - 博客:
       - 博文索引: blogs/index.md
+      - 2024 年:
+          - 202401 | KubeEdge v1.15.0 发布: blogs/240108-kubeedge.md
       - 2023 年:
           - 202312 | Spiderpool 入选 CNCF Sandbox: blogs/231220-spiderpool.md
           - 202312 | K8s 1.29 发布：宇宙主题雄心勃勃: blogs/231213-k8s-1.29.md

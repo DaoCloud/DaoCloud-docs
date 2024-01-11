@@ -119,7 +119,7 @@ After filling in the image-related information according to the table below, cli
 
 In addition to creating virtual machines using images, you can also create them more quickly using YAML files.
 
-Go to the virtual machine container list page and click on the `Create with YAML` button.
+Go to the virtual machine container list page and click the `Create with YAML` button.
 
 ![Create with YAML](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/createvm08.png)
 

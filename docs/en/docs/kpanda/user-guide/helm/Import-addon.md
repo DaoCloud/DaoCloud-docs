@@ -84,7 +84,7 @@ An offline environment refers to an environment that cannot connect to the inter
         ```
 
 1. Once the previous step is completed, go to __Container Management__ -> __Helm Apps__ -> __Helm Repositories__ , find the corresponding addon,
-   click on __Sync Repository__ in the action column, and you will see the uploaded Helm apps in the Helm template.
+   click __Sync Repository__ in the action column, and you will see the uploaded Helm apps in the Helm template.
 
 1. You can then proceed with normal installation, upgrade, and uninstallation.
 

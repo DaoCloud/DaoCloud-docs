@@ -21,6 +21,18 @@ When deploying DCE 5.0, it is necessary to first plan the software, hardware, an
 
     If the operating system is not listed in the table above, please refer to the document [Other Linux Offline Deployment of DCE 5.0 Commercial Edition](../os-install/otherlinux.md) for installation and deployment.
 
+## Kernel Requirements
+
+Due to certain components or functionalities having requirements for the operating system's kernel version, please refer to the table below to choose the appropriate kernel version for deployment:
+
+| Components/Features  | Kernel Version |
+| -------------------- | -------------- |
+| Container GPU Management Capability | ≥ 3.10.1160 |
+| Cilium | ≥ 5.12 |
+| Hwameistor DRDB Capability | [Kernel versions compatible with DRBD](../../storage/hwameistor/intro/drbd-support.md) |
+| Kubevirt | ≥ 4.x |
+| Merbridge Requirement | ≥ 5.7 |
+
 ## Hardware Requirements
 
 ### CPU, Memory, and Disk
@@ -45,7 +57,7 @@ Refer to [4-node Mode Description](./deploy-arch.md#4).
 
 | Quantity | Server Role | Server Usage                                               | Number of CPUs | Memory Capacity | System Disk | Unpartitioned Disk |
 | -------- | ----------- | ---------------------------------------------------------- | -------------- | --------------- | ----------- | ----------------- |
-| 1        | Seed Node   | 1. Execute installation and deployment program<br />2. Run the image repository and chart museum required by the platform | 2              | 4G              | 200G        | -                 |
+| 1        | Bootstrap Node   | 1. Execute installation and deployment program<br />2. Run the image repository and chart museum required by the platform | 2              | 4G              | 200G        | -                 |
 | 3        | Control Plane | 1. Run DCE 5.0 components<br />2. Run kubernetes system components | 8              | 16G             | 100G        | 200G              |
 
 ### Requirements for CPU, Memory, and Disk in 7-node Mode (Recommended for Production Environment)
@@ -54,7 +66,7 @@ Refer to [7-node Mode Description](./deploy-arch.md#7-1-6).
 
 | Quantity | Server Role | Server Usage                                               | Number of CPUs | Memory Capacity | System Disk | Unpartitioned Disk |
 | -------- | ----------- | ---------------------------------------------------------- | -------------- | --------------- | ----------- | ----------------- |
-| 1        | Seed Node   | 1. Execute installation and deployment program<br />2. Run the image repository and chart museum required by the platform | 2              | 4G              | 200G        | -                 |
+| 1        | Bootstrap Node   | 1. Execute installation and deployment program<br />2. Run the image repository and chart museum required by the platform | 2              | 4G              | 200G        | -                 |
 | 3        | Master      | 1. Run DCE 5.0 components<br />2. Run kubernetes system components | 8              | 16G             | 100G        | 200G              |
 | 3        | Worker      | Run log-related components separately                      | 8              | 16G             | 100G        | 200G              |
 

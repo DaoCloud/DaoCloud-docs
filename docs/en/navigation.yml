@@ -48,19 +48,22 @@ nav:
                   - With OpenShift OCP: install/k8s-install/ocp-install-dce5.0.md
                   - With Alibaba Cloud ECS: install/k8s-install/ecs-install-dce5.0.md
               - Install on Different Linux:
-                  - With UOS V20 (1020a): install/os-install/uos-v20-install-dce5.0.md
-                  - With Oracle Linux R9/R8 U1: install/os-install/oracleLinux-install-dce5.0.md
-                  - With TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
-                  - With Other Linux: install/os-install/otherlinux.md
-              - Upgrade/Uninstall/FAQs:
-                  - Upgrade DCE 5.0 Modules: install/upgrade.md
-                  - Upgrade DCE 5.0 Standard to Platinum: install/evolve.md
+                  - On UOS V20 (1020a): install/os-install/uos-v20-install-dce5.0.md
+                  - On Oracle Linux R9/R8 U1: install/os-install/oracleLinux-install-dce5.0.md
+                  - On TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
+                  - On Other Linux: install/os-install/otherlinux.md
+              - Upgrade:
+                  - Overview: install/upgrade-des.md
+                  - Upgrade DCE 5.0 Components: install/upgrade.md
+                  - Upgrade from Standard to Platinum: install/evolve.md
+              - Uninstall and Import:
                   - Uninstall: install/uninstall.md
                   - Import Offline Resources: install/import.md
               - Troubleshoot: install/faq.md
               - Best Practices:
                   - Use Cases: install/commercial/scenarios.md
-                  - etcd Components Deployed in Host Mode and Separated from Control Plane: install/best-practices/etcd-host-deploy.md
+                  - Deploy on DCE 5.0 Appliance: install/best-practices/all-in-one-machine.md
+                  - etcd Deployed in Host Mode and Separated from Control Plane: install/best-practices/etcd-host-deploy.md
               - Installer Release Notes: install/release-notes.md
       - Workbench:
           - Workbench:
@@ -76,30 +79,30 @@ nav:
               - Deploy Pluggable Components: amamba/pluggable-components.md
               - Namespaces: amamba/user-guide/namespace/namespace.md
               - Wizard:
-                  - Build Microservice based on Git Repo: amamba/user-guide/wizard/create-app-git.md
-                  - Build Java Apps based on Jar Packages: amamba/user-guide/wizard/jar-java-app.md
-                  - Deploy Helm Apps based on Helm Charts: amamba/user-guide/wizard/helm.md
-              - Native Applications:
-                  - Manage Native Applications: amamba/user-guide/native/manage.md
+                  - Build Git-based Microservice: amamba/user-guide/wizard/create-app-git.md
+                  - Build Jar-based Java Apps: amamba/user-guide/wizard/jar-java-app.md
+                  - Deploy Helm Apps: amamba/user-guide/wizard/helm.md
+              - Native Apps:
+                  - Manage Native Apps: amamba/user-guide/native/manage.md
                   - Deploy Traditional Microservices with Native Apps: amamba/user-guide/native/native-app.md
-              - OAM Application:
+              - OAM Apps:
                   - OAM Concepts: amamba/user-guide/oam/concept.md
-                  - Create OAM Application: amamba/user-guide/oam/create.md
-                  - Manage OAM Application: amamba/user-guide/oam/manage.md
+                  - Create OAM Apps: amamba/user-guide/oam/create.md
+                  - Manage OAM Apps: amamba/user-guide/oam/manage.md
               - Pipelines:
                   - Install Jenkins: amamba/user-guide/pipeline/install-jenkins.md
                   - Create Pipeline:
-                      - Custom Creation: amamba/user-guide/pipeline/create/custom.md
-                      - Creat based on Jenkinsfile: amamba/user-guide/pipeline/create/jenkins.md
-                      - Create based on Template: amamba/user-guide/pipeline/create/template.md
-                      - Create a Multi-branch Pipeline: amamba/user-guide/pipeline/create/mutilpipeline.md
+                      - Custom Create: amamba/user-guide/pipeline/create/custom.md
+                      - Create by Jenkinsfile: amamba/user-guide/pipeline/create/jenkins.md
+                      - Create by Template: amamba/user-guide/pipeline/create/template.md
+                      - Create Multi-branch Pipeline: amamba/user-guide/pipeline/create/mutilpipeline.md
                   - Edit Pipeline: amamba/user-guide/pipeline/edit.md
                   - Run Pipeline:
                       - Auto Trigger: amamba/user-guide/pipeline/run/trigger.md
                       - Manual Trigger: amamba/user-guide/pipeline/run/manual.md
                   - Pipeline Parameters:
                       - Concepts in Pipeline: amamba/user-guide/pipeline/config/concept.md
-                      - Graphical task template parameters: amamba/user-guide/pipeline/config/step.md
+                      - Graphical Task Template Parameters: amamba/user-guide/pipeline/config/step.md
                       - Pipeline Node (Agent): amamba/user-guide/pipeline/config/agent.md
                   - Pipeline Template:
                       - Custom Template: amamba/user-guide/pipeline/template/custom-template.md
@@ -108,8 +111,8 @@ nav:
               - GitOps:
                   - Manually Sync App: amamba/user-guide/gitops/sync-manually.md
                   - Import Code Repo: amamba/user-guide/gitops/import-repo.md
-                  - Create Argo CD Application: amamba/user-guide/gitops/create-argo-cd.md
-                  - Argo CD Application Status: amamba/user-guide/gitops/argo-cd-status.md
+                  - Create Argo CD App: amamba/user-guide/gitops/create-argo-cd.md
+                  - Argo CD App Status: amamba/user-guide/gitops/argo-cd-status.md
               - Canary Release:
                   - Create Canary Release: amamba/user-guide/release/canary.md
                   - View Canary Release: amamba/user-guide/release/check-canary.md
@@ -123,14 +126,14 @@ nav:
                   - GitOps FAQs: amamba/faq/faq-gitops.md
               - Best Practices:
                   - Quick Start Pipeline: amamba/quickstart/deploy-pipeline.md
-                  - CI/CD based on pipeline + GitOps: amamba/quickstart/argocd-jenkins.md
-                  - Code scanning with pipeline: amamba/quickstart/scan-with-pipeline.md
-                  - Integrate Harbor to scan images: amamba/quickstart/scan-with-harbor.md
-                  - Canary release based on Argo Rollout: amamba/quickstart/argocd-rollout.md
-                  - Run pipelines on specified node: amamba/quickstart/pipeline-on-node.md
-                  - Jenkins scenario configuration: amamba/quickstart/scenarios-config.md
-                  - Using a custom toolchain in Jenkins: amamba/quickstart/jenkins-custom.md
-                  - Jenkins high availability solution: amamba/quickstart/jenkins-HA.md
+                  - CI/CD based on Pipeline + GitOps: amamba/quickstart/argocd-jenkins.md
+                  - Code Scanning with Pipeline: amamba/quickstart/scan-with-pipeline.md
+                  - Integrate Harbor to Scan Images: amamba/quickstart/scan-with-harbor.md
+                  - Canary Release based on Argo Rollout: amamba/quickstart/argocd-rollout.md
+                  - Run Pipelines on Specified Node: amamba/quickstart/pipeline-on-node.md
+                  - Jenkins Scenario Configuration: amamba/quickstart/scenarios-config.md
+                  - Custom Toolchain in Jenkins: amamba/quickstart/jenkins-custom.md
+                  - Jenkins High Availability Solution: amamba/quickstart/jenkins-HA.md
       - Container:
           - Container Management:
               - Intro:
@@ -273,8 +276,10 @@ nav:
                   - Add Heterogeneous Nodes to Worker Cluster: kpanda/best-practice/multi-arch.md
                   - Scale the Worker Nodes of Global Service Cluster: kpanda/best-practice/add-worker-node-on-global.md
                   - Create Ubuntu Worker Cluster with CentOS: kpanda/best-practice/create-ubuntu-on-centos-platform.md
+                  - Create RedHat 9.2 Worker Cluster on CentOS: kpanda/best-practice/create-redhat9.2-on-centos-platform.md
                   - Scale Controller Nodes of Worker Cluster: kpanda/best-practice/add-master-node.md
                   - Create Cluster with Non-supported OS: kpanda/best-practice/use-otherlinux-create-custer.md
+                  - Offline Deploy and Upgrade Legacy Kubean: kpanda/best-practice/kubean-low-version.md
           - Multicloud Management:
               - Intro:
                   - What is Multicloud Management: kairship/intro/index.md
@@ -698,7 +703,9 @@ nav:
                   - Sample App in Microservices: skoala/best-practice/use-skoala-01.md
                   - JWT Plugin in Cloud Native Microservice: skoala/best-practice/plugins/jwt.md
                   - Microservice Gateway JWT: skoala/best-practice/jwt.md
-                  - Authentication Server for Microservie Gateway: skoala/best-practice/auth-server.md
+                  - Authentication Server for Microservie Gateway:
+                      - skoala/best-practice/auth-server.md
+                      - Integrate an AK/SK Authentication: skoala/best-practice/ak-sk-demo.md
                   - Integrate Microservice Gateway with Rate Limit Server: skoala/best-practice/global-ratelimit.md
                   - Gateway API Policies: skoala/best-practice/gateway02.md
                   - Access Microservie via Gateway: skoala/best-practice/gateway01.md
@@ -1128,6 +1135,8 @@ nav:
       - Free Trial: trial/index.md
   - Blogs:
       - Index: blogs/index.md
+      - 2024 Blogs:
+          - KubeEdge v1.15.0 Released: blogs/240108-kubeedge.md
       - 2023 Blogs:
           - 202312 | K8s 1.29 Released - Ambious Mandala Theme: blogs/231213-k8s-1.29.md
           - 202312 | Does K8s Perform Better on Bare Metal vs. VMs?: blogs/231205-vm-bm-compare.md

@@ -9,6 +9,12 @@ hide:
 
 *[DCE]: DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台
 
+## 2024 年
+
+- [20240108 | KubeEdge v1.15.0 发布](./240108-kubeedge.md)
+
+    KubeEdge v1.15.0 新增了 Windows 边缘节点支持、基于物模型的设备管理、DMI 数据面支持等功能。
+
 ## 2023 年
 
 - [20231220 | 高速网络方案 Spiderpool 入选 CNCF Sandbox](./231220-spiderpool.md)
