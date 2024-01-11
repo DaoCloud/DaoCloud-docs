@@ -226,7 +226,10 @@ Before installing DCE 5.0 or upgrading the product module, execute the following
 
 1. On the __Clusters__ page, search for the kpanda-global-cluster and enter its details.
 
+    ![Clusters](../images/clusterlist.png)
 
-2. In the left navigation panel, locate __Helm App__ and search for kpanda to find the
+2. In the left navigation panel, locate __Helm Apps__ and search for kpanda to find the
    Container Management module. Expand the right-hand operation column and click the
    __Update__ button to initiate the upgrade.
+
+    ![Update](../images/update-kpanda.png)
