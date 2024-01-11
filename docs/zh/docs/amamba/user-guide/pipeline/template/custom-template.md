@@ -10,9 +10,9 @@
 
 ### 操作步骤
 
-1. 在 __自定义流水线模板__ 页面点击 __创建模板__ 
+1. 在 __自定义流水线模板__ 页面点击 __创建模板__
 
-    ![click-create](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/template04.png)
+    ![创建模板](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/template04.png)
 
 2. 参考以下说明填写基本信息，然后点击 __确定__ 。
 
@@ -20,8 +20,8 @@
     - 描述信息：对当前流水线的描述信息，支持中文。
     - 模板文件：参考[流水线模板文件](info.md)填写或粘贴事先准备好的参数。
 
-        ![config](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/template05.png)
+    ![配置信息](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/template05.png)
 
 3. 返回流水线模板列表页面，点击模板卡片可以删除或修改模板。
 
-    ![config](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/template06.png)
+    ![修改/删除模板](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/template06.png)
