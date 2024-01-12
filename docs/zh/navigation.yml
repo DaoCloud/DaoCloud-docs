@@ -281,6 +281,7 @@ nav:
                   - 在 CentOS 管理平台上创建 RedHat 9.2 工作集群: kpanda/best-practice/create-redhat9.2-on-centos-platform.md
                   - 对工作集群的控制节点扩容: kpanda/best-practice/add-master-node.md
                   - 在非主流操作系统上创建集群: kpanda/best-practice/use-otherlinux-create-custer.md
+                  - DCE 4.0 -> DCE 5.0 有限场景迁移: kpanda/best-practice/dce4-5-migration.md
           - 多云编排:
               - 介绍:
                   - 什么是多云编排: kairship/intro/index.md

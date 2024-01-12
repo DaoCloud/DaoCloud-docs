@@ -81,7 +81,7 @@ hide:
     - __auto_renew_certificate__ ：在每月第一个星期一自动更新 Kubernetes 控制平面证书，默认开启。
     - __disable_firewalld&ufw__ ：禁用防火墙，避免节点在安装过程中无法被访问。
     - __Insecure_registries__ ：私有镜像仓库配置。使用私有镜像仓库创建集群时，为了避免证书问题导致容器引擎拒绝访问，需要在这里填写私有镜像仓库地址，以绕过容器引擎的证书认证而获取镜像。
-    - __yum_repos__ ：填写 Yum 源仓库地址。
+    - __yum_repos__ ：填写 Yum 源仓库地址。离线环境下，默认给出的地址选项仅供参考，请根据实际情况填写。
 
         ![高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew06.png)
 

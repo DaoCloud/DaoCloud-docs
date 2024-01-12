@@ -163,3 +163,47 @@ hide:
         ![关闭集群保护](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq1101.png)
 
         ![卸载集群](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq1102.png)
+
+12. 接入集群安装插件失败
+
+    离线环境接入的集群，在安装插件之前，需要先配置 CRI 代理仓库，以忽略 TLS 验证(所有节点都需要执行)。
+
+    **docker**
+
+        1. 修改文件 /etc/docker/daemon.json
+
+        2. 加入： "insecure-registries": ["172.30.120.243","temp-registry.daocloud.io"],
+
+            修改之后内容如下:
+        
+            ![修改配置](../images/faq01.png)
+
+        3. 重启 docker 
+
+            ```shell
+            systemctl restart docker
+            systemctl daemon-reload
+            ```
+
+    **containerd**
+
+        1. 修改 /etc/containerd/config.toml
+
+        2. 修改之后内容如下:
+
+            ```shell
+            [plugins."io.containerd.grpc.v1.cri".registry.mirrors."docker.io"]
+            endpoint = ["https://registry-1.docker.io"]
+            [plugins."io.containerd.grpc.v1.cri".registry.mirrors."temp-registry.daocloud.io"]
+            endpoint = ["http://temp-registry.daocloud.io"]
+            [plugins."io.containerd.grpc.v1.cri".registry.configs."http://temp-registry.daocloud.io".tls]
+            insecure_skip_verify = true
+            ```
+            
+            ![修改配置](../images/faq02.png)
+
+        3. 注意空格和换行符，确保配置正确，修改完成之后执行
+
+            ```shell
+            systemctl restart containerd
+            ```

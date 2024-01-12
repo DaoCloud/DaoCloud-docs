@@ -24,7 +24,7 @@
 
     ![集群列表](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/backupd20481.png)
 
-2. 在 __应用备份__ 列表页面，选择已经安装了 velero 和 __dao-2048__ 应用的集群。点击右上角的 __备份计划__ ，新建一个备份集群。
+2. 在 __应用备份__ 列表页面，选择已经安装了 velero 和 __dao-2048__ 应用的集群。点击右上角的 __备份计划__ ，新建一个备份计划。
 
     ![应用备份](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/backupd20482.png)
 
