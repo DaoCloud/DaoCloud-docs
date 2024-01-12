@@ -17,7 +17,7 @@
 1. 在 __创建应用__ 页面中，分配配置 __基本信息__ 、 __部署位置__ 、 __代码仓库来源__ 和 __同步策略__ 后，点击 __确定__ 。
 
     - 代码仓库来源：
-        - 代码仓库：选择已导入的代码仓库或者输入公开的代码仓库地址。例如：https://github.com/argoproj/argocd-example-apps.git
+        - 代码仓库：选择已导入的代码仓库或者输入公开的代码仓库地址。例如：`https://github.com/argoproj/argocd-example-apps.git`
         - 分支/标签：设置代码仓库的分支或标签，默认为HEAD
         - 路径：填写清单文件路径，例如 gustbook
     - 同步策略：
