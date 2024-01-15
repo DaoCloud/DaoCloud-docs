@@ -72,7 +72,7 @@ skopeo copy ${SKOPEO_PARAMS} docker-archive:spray-job-2.21.tar docker://${REGIST
     mkdir data
     # 制作离线包，
     SPRAY_IMG_ADDR="ghcr.m.daocloud.io/kubean-io/spray-job:2.21-d6f688f" # (1)
-    podman run --rm -v $(pwd)/manifest.yml:/manifest.yml -v $(pwd)/data:/data  -e ZONE=CN -e MODE=FULL ${SPRAY_IMG_ADDR}
+    podman run --rm -v $(pwd)/manifest.yml:/manifest.yml -v $(pwd)/data:/data -e ZONE=CN -e MODE=FULL ${SPRAY_IMG_ADDR}
     ```
 
     1. 镜像 spray-job 这里可以采用加速器地址，镜像地址根据选择制品版本来决定
