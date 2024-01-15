@@ -26,15 +26,16 @@
     ```bash
     kubectl get cm -n kubean-system ${ClusterName}-hosts-conf -oyaml
     ```
-    ”${ClusterName}“：为待扩容工作集群的名称。
 
-    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/add-master-node02.png)
+    `${ClusterName}`：为待扩容工作集群的名称。
+
+    ![控制台](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/add-master-node02.png)
 
 3. 参考下方示例修改主机清单文件，新增控制节点信息。
 
     === "修改前"
 
-        ``` yaml
+        ```yaml
         apiVersion: v1
         kind: ConfigMap
         metadata:
@@ -72,7 +73,7 @@
 
     === "修改后"
 
-        ``` yaml
+        ```yaml
         apiVersion: v1
         kind: ConfigMap
         metadata:

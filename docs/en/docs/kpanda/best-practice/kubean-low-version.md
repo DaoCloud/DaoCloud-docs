@@ -47,7 +47,7 @@ This article will demonstrate how to deploy a K8s cluster with a lower version.
 Import the spray-job image into the registry of the offline environment.
 
 ```bash
-# Assuming the registry address in the spark cluster is 172.30.41.200
+# Assuming the registry address in the bootstrap cluster is 172.30.41.200
 REGISTRY_ADDR="172.30.41.200"
 
 # The image spray-job can use the accelerator address here, and the image address is determined based on the selected artifact version
@@ -59,7 +59,7 @@ SKOPEO_PARAMS=" --insecure-policy -a --dest-tls-verify=false --retry-times=3 "
 # Online environment: Export the spray-job image of version release-2.21 and transfer it to the offline environment
 skopeo copy docker://${SPRAY_IMG_ADDR} docker-archive:spray-job-2.21.tar
 
-# Offline environment: Import the spray-job image of version release-2.21 into the spark registry
+# Offline environment: Import the spray-job image of version release-2.21 into the bootstrap registry
 skopeo copy ${SKOPEO_PARAMS} docker-archive:spray-job-2.21.tar docker://${REGISTRY_ADDR}/${SPRAY_IMG_ADDR}
 ```
 
@@ -83,8 +83,8 @@ skopeo copy ${SKOPEO_PARAMS} docker-archive:spray-job-2.21.tar docker://${REGIST
     # Create the data directory
     mkdir data
     # Create the offline package
-    SPRAY_IMG_ADDR="ghcr.m.daocloud.io/kubean-io/spray-job:2.21-d6f688f" # (1)
-    podman run --rm -v $(pwd)/manifest.yml:/manifest.yml -v $(pwd)/data:/data  -e ZONE=CN -e MODE=FULL ${SPRAY_IMG_ADDR}
+    AIRGAP_IMG_ADDR="ghcr.m.daocloud.io/kubean-io/airgap-patch:2.21-d6f688f" # (1)
+    podman run --rm -v $(pwd)/manifest.yml:/manifest.yml -v $(pwd)/data:/data -e ZONE=CN -e MODE=FULL ${AIRGAP_IMG_ADDR}
     ```
 
     1. The image spray-job can use the accelerator address here, and the image address is determined based on the selected artifact version
@@ -92,12 +92,12 @@ skopeo copy ${SKOPEO_PARAMS} docker-archive:spray-job-2.21.tar docker://${REGIST
 3. Import the offline images and binary packages for the corresponding K8s version.
 
     ```bash
-    # Import the binaries from the data directory to the minio in the spark node
+    # Import the binaries from the data directory to the minio in the bootstrap node
     cd ./data/amd64/files/
     MINIO_ADDR="http://172.30.41.200:9000" # Replace IP with the actual repository url
     MINIO_USER=rootuser MINIO_PASS=rootpass123 ./import_files.sh ${MINIO_ADDR}
     
-    # Import the images from the data directory to the image repository in the spark node
+    # Import the images from the data directory to the image repository in the bootstrap node
     cd ./data/amd64/images/
     REGISTRY_ADDR="172.30.41.200"  ./import_images.sh # Replace IP with the actual repository url
     ```

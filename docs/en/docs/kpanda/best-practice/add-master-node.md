@@ -26,15 +26,13 @@ This article provides a step-by-step guide on how to manually scale the control 
     kubectl get cm -n kubean-system ${ClusterName}-hosts-conf -oyaml
     ```
 
-    "${ClusterName}" is the name of the worker cluster to be scaled.
+    `${ClusterName}` is the name of the worker cluster to be scaled.
 
-3. In the host manifest, add the information of the control nodes to be added. Make the necessary modifications and save the file.
+3. Modify the host manifest file based on the example below and add information for the controller nodes.
 
-!!! "Sample Host manifest"
+    === "Before Modification"
 
-    === "Before adding nodes"
-
-        ``` yaml
+        ```yaml
         apiVersion: v1
         kind: ConfigMap
         metadata:
@@ -70,9 +68,9 @@ This article provides a step-by-step guide on how to manually scale the control 
         ......
         ```
 
-    === "After adding nodes"
+    === "After Modification"
 
-        ``` yaml
+        ```yaml
         apiVersion: v1
         kind: ConfigMap
         metadata:
@@ -107,7 +105,7 @@ This article provides a step-by-step guide on how to manually scale the control 
                 kube_control_plane:
                   hosts:
                     node1:
-                    node2: # Add controller node2 
+                    node2: # Add controller node2
                     node3: # Add controller node3
                 kube_node:
                   hosts:
