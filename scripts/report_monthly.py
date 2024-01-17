@@ -40,13 +40,14 @@ params = {
     "per_page": 100,  # 每页的结果数量
 }
 
-# 创建一个DataFrame来存储结果
-df = pd.DataFrame(columns=["Date", "Author", "Title", "Labels", "Label Count", "Changed Files", "Additions", "Deletions", "PR Link"])
-
 def get_pr_details(pr):
     pr_url = pr["url"]
-    pr_response = requests.get(pr_url, headers=headers)
-    pr_data = pr_response.json()
+    try:
+        pr_response = requests.get(pr_url, headers=headers)
+        pr_data = pr_response.json()
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching PR details for {pr_url}: {e}")
+        return None
     
     changed_files = pr_data["changed_files"]
     additions = pr_data["additions"]
@@ -69,18 +70,26 @@ def get_pr_details(pr):
         "PR Link": pr["html_url"]
     }
 
-page = 1
-with ThreadPoolExecutor(max_workers=10) as executor: 
-    while True:
-        params["page"] = page
-        response = requests.get(url, headers=headers, params=params)
-        data = response.json()
-        if not data:
-            break
-        futures = [executor.submit(get_pr_details, pr) for pr in data if pr["created_at"] >= start_date and pr["created_at"] <= end_date]
-        for future in futures:
-            df = df.append(future.result(), ignore_index=True)
-        page += 1
+def fetch_all_prs(url, headers, params, start_date, end_date):
+    df = pd.DataFrame(columns=["Date", "Author", "Title", "Labels", "Label Count", "Changed Files", "Additions", "Deletions", "PR Link"])
+    page = 1
+    with ThreadPoolExecutor(max_workers=10) as executor: 
+        while True:
+            params["page"] = page
+            response = requests.get(url, headers=headers, params=params)
+            data = response.json()
+            if not data:
+                break
+            futures = [executor.submit(get_pr_details, pr) for pr in data if pr["created_at"] >= start_date and pr["created_at"] <= end_date]
+            for future in futures:
+                result = future.result()
+                if result is not None:
+                    df = df.append(result, ignore_index=True)
+            page += 1
+    return df
+
+# 获取所有PRs
+df = fetch_all_prs(url, headers, params, start_date, end_date)
 
 df["Date"] = pd.to_datetime(df["Date"])
 df.set_index("Date", inplace=True)
@@ -90,7 +99,7 @@ label_counts_monthly = df["Labels"].explode().value_counts()
 monthly_user_counts = df.groupby([df.index.year, df.index.month])['Author'].value_counts()
 
 #替换保存路径
-with pd.ExcelWriter('D:\图片\联想截图\\PR_detail_2023_test.xlsx') as writer: 
+with pd.ExcelWriter('PR_detail_2023.xlsx') as writer: 
     df.to_excel(writer, sheet_name='PR Details')
     label_counts_monthly.to_excel(writer, sheet_name='Label Counts')
     monthly_user_counts.to_excel(writer, sheet_name='Monthly User Counts')
