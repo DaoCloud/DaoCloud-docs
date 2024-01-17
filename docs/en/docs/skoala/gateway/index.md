@@ -95,7 +95,7 @@ You can view the gateway details on `Overview`, including the name, deployment l
 
 On the `Gateway List` page, select the name of the target gateway to access the gateway overview page ".
 
-![overview](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/overview.png)
+![overview](./images/overview.png)
 
 Gateway details are divided into basic information, network information, TOP10 popular apis, resource information, resource load, and plug-in information.
 
@@ -115,7 +115,7 @@ Some of the data are described as follows:
 In addition to viewing the gateway details, you can update the gateway configuration and delete the gateway on the gateway details page.
 
 - Update gateway: Click `Edit` at the top of the page to jump to the page for updating gateway configuration. For details, see [Update Gateway Settings](update-gateway.md).
-- Delete gateway: Click `⋯` at the top of the page and select `Delete` to go to the page for deleting gateway. For details, see [Delete Gateway](delete-gateway.md).
+- Delete gateway: Click `...` at the top of the page and select `Delete` to go to the page for deleting gateway. For details, see [Delete Gateway](delete-gateway.md).
 
 ## Update
 
@@ -125,13 +125,13 @@ The micro-service gateway supports the high-availability architecture of multi-t
 
 There are two ways to update the gateway configuration.
 
-- In the `Gateway List` page choose the gateway instance needs to be updated, at the instance of right click `⋯` and select `Edit`.
+- In the `Gateway List` page choose the gateway instance needs to be updated, at the instance of right click `...` and select `Edit`.
 
     ![update1](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/update1.png)
 
 - Click the gateway name to access the overview page. In the upper right corner, click `Edit`.
 
-    ![update2](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/update2.png)
+    ![update2](./images/overview.png)
 
 ## Delete
 
@@ -143,10 +143,10 @@ There are also two ways to delete a gateway. To ensure that services are not aff
 
     Gateway deletion is irreversible, so please proceed with caution.
 
-- In the `Gateway List` page choose the need to remove the gateway instance, at the instance of right click `⋯` and select `Delete`.
+- In the `Gateway List` page choose the need to remove the gateway instance, at the instance of right click `...` and select `Delete`.
 
     ![delete](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/delete.png)
 
-- After entering into the overview page, click the gateway name in the upper right corner of the `⋯` and select `Delete`.
+- After entering into the overview page, click the gateway name in the upper right corner of the `...` and select `Delete`.
 
-    ![delete-gateway](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/delete-gateway.png)
+    ![delete-gateway](./images/delete-gateway.png)

@@ -650,9 +650,9 @@ nav:
                       - Add API: skoala/gateway/api/index.md
                       - Update/Delete API: skoala/gateway/api/update-api.md
                       - API Policies: skoala/gateway/api/api-policy.md
-                  - Service Management:
-                      - Manual Add: skoala/gateway/service/manual-integrate.md
-                      - Auto Add: skoala/gateway/service/auto-manage.md
+                  - Service List:
+                      - Manual Acess: skoala/gateway/service/manual-integrate.md
+                      - Automatic nanotubes: skoala/gateway/service/auto-manage.md
                   - Monitor and Alert: skoala/gateway/alert.md
                   - Logs:
                       - Request Logs: skoala/gateway/logs/reqlog.md

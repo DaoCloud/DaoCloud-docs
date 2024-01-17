@@ -55,7 +55,7 @@
     === "高级配置"
 
         - 控制节点：设置为控制节点（contour）配置多少 CPU 和内存资源
-        - 工作节点：设置为工作节点 （envoy）配置多少 CPU 和内存资源
+        - 工作节点：设置为工作节点（envoy）配置多少 CPU 和内存资源
 
         ![填写高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-create07.png)
 
@@ -90,7 +90,7 @@
 
 在`网关列表`页面，选择目标网关的名称，即可进入网关概览页面`。
 
-![概览页面](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/gateway/imgs/overview.png)
+![概览页面](./images/overview.png)
 
 ### 网关详情
 
@@ -118,7 +118,7 @@
 除了查看网关详情，您还可以通过网关详情页面进行更新网关配置、删除网关等操作。
 
 - 更新网关：在页面顶部点击`编辑`可以跳转到更新网关配置的页面，具体步骤参见[更新网关配置](./api/update-api.md)。
-- 删除网关：在页面顶部点击 `⋯` 后选择`删除`可以跳转到删除网关的页面，具体步骤参见[删除网关](./api/update-api.md#api_2)。
+- 删除网关：在页面顶部点击 `...` 后选择`删除`可以跳转到删除网关的页面，具体步骤参见[删除网关](./api/update-api.md#api_2)。
 <!--- 管理 API：在“网关数据”部分点击“API 数量”可以进入 API 列表，进行增删改查等操作。-->
 
 ## 更新微服务网关
@@ -127,13 +127,13 @@
 
 有两种方式可以更新网关配置。
 
-- 在`微服务网关列表`页选择需要更新的网关实例，在实例右侧点击 `⋯` 并选择`编辑`。
+- 在`微服务网关列表`页选择需要更新的网关实例，在实例右侧点击 `...` 并选择`编辑`。
 
     ![更新网关](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/gateway/imgs/update.png)
 
 - 点击网关名称进入进入概览页面后，在右上角点击`编辑`。
 
-    ![更新网关](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/gateway/imgs/update-gateway.png)
+    ![更新网关](./images/overview.png)
 
 ## 删除微服务网关
 
@@ -145,10 +145,10 @@
 
     网关删除后不可恢复，请谨慎操作。
 
-- 在`微服务网关列表`页选择需要移除的网关实例，在实例右侧点击 `⋯` 并选择`删除`。
+- 在`微服务网关列表`页选择需要移除的网关实例，在实例右侧点击 `...` 并选择`删除`。
 
     ![移除网关](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/gateway/imgs/delete.png)
 
-- 点击网关名称进入进入概览页面后，在右上角 `⋯` 并选择`删除`。
+- 点击网关名称进入进入概览页面后，在右上角 `...` 并选择`删除`。
 
-    ![移除网关](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/gateway/imgs/delete-gateway.png)
+    ![移除网关](./images/delete-gateway.png)
