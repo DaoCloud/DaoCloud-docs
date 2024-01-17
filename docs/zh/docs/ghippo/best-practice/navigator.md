@@ -19,14 +19,14 @@ spec:
   name: Management # 若是用于修改category
   isCustom: true # 该字段必须为true
   localizedName: # 定义分类的中英文名称
-    zh-CN: 管理管理
+    zh-CN: 管理
     en-US: Management
   order: 100 # 排序，数字越大，越靠上
 ```
 
 编写好 yaml文件后，通过执行如下命令后，刷新页面即可看到新增、修改的导航栏分类。
 
-```
+```bash
 kubectl apply -f xxx.yaml
 ```
 

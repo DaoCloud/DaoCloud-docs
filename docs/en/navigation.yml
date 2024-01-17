@@ -998,7 +998,7 @@ nav:
                   - What is Global Management: ghippo/intro/index.md
                   - Features: ghippo/intro/features.md
                   - Glossary: ghippo/intro/glossary.md
-                  - Global Management Release Notes: ghippo/intro/release-notes.md
+                  - Release Notes: ghippo/intro/release-notes.md
               - Install, Login, and Upgrade:
                   - Offline Upgrade: ghippo/install/offline-install.md
                   - Customize Reverse Proxy Address: ghippo/install/reverse-proxy.md
@@ -1027,7 +1027,7 @@ nav:
                   - Folder Permissions: ghippo/user-guide/workspace/folder-permission.md
                   - Resource Quota: ghippo/user-guide/workspace/quota.md
                   - Difference between Resource Groups and Shared Resources: ghippo/user-guide/workspace/res-gp-and-shared-res.md
-              - Audit Log:
+              - Audit Logs:
                   - Enable/Disable Collection of K8s Audit Logs: ghippo/user-guide/audit/open-audit.md
                   - Enable/Disable Output of K8s Audit Logs: ghippo/user-guide/audit/open-k8s-audit.md
                   - Download and Export: ghippo/user-guide/audit/audit-log.md
@@ -1054,20 +1054,21 @@ nav:
                   - Service Mesh Permissions: ghippo/permissions/mspider.md
                   - Middleware Permissions: ghippo/permissions/mcamel.md
               - Best Practices:
-                  - Workspace Practices: ghippo/user-guide/workspace/ws-best-practice.md
-                  - Bind a Workspace to Namespace: ghippo/user-guide/workspace/ws-to-ns.md
-                  - Allocate a Cluster to Workspaces: ghippo/user-guide/workspace/cluster-for-multiws.md
-                  - Folder Practices: ghippo/user-guide/workspace/folder-practice.md
-                  - Normal Authorization Planning: ghippo/user-guide/workspace/authz-plan.md
-                  - Join with GProduct:
-                      - ghippo/gproduct/intro.md
-                      - Join Nav Bar: ghippo/gproduct/nav.md
-                      - Join Ingress and Login Authentication: ghippo/gproduct/route-auth.md
+                  - Workspace Practices: ghippo/best-practice/ws-best-practice.md
+                  - Bind a Workspace to Namespace: ghippo/best-practice/ws-to-ns.md
+                  - Allocate a Cluster to Workspaces: ghippo/best-practice/cluster-for-multiws.md
+                  - Folder Practices: ghippo/best-practice/folder-practice.md
+                  - Normal Authorization Planning: ghippo/best-practice/authz-plan.md
+                  - Docking with GProduct:
+                      - ghippo/best-practice/gproduct/intro.md
+                      - Join Nav Bar: ghippo/best-practice/gproduct/nav.md
+                      - Join Ingress and Login Authentication: ghippo/best-practice/gproduct/route-auth.md
                   - OEM IN and OUT:
-                      - OEM IN: ghippo/oem/oem-in.md
-                      - OEM OUT: ghippo/oem/oem-out.md
-                      - Customize DCE 5.0 to Sync IdP: ghippo/oem/custom-idp.md
-                      - Customize IdP with Keycloak: ghippo/oem/keycloak-idp.md
+                      - OEM IN: ghippo/best-practice/oem/oem-in.md
+                      - OEM OUT: ghippo/best-practice/oem/oem-out.md
+                      - Customize DCE 5.0 to Sync IdP: ghippo/best-practice/oem/custom-idp.md
+                      - Customize IdP with Keycloak: ghippo/best-practice/oem/keycloak-idp.md
+                  - Customize Nav Bar: ghippo/best-practice/navigator.md
               - Troubleshooting:
                   - ingressgateway cannot start: ghippo/troubleshooting/ghippo01.md
                   - Login Error 401 or 403: ghippo/troubleshooting/ghippo02.md
