@@ -73,14 +73,14 @@ so that you can understand the evolution path and feature changes of each versio
 
 - **Added** support for LoadBalancer type in Service.
 - **Added** distribution status display for resources.
-- **Added** multi-cloud audit logs.
+- **Added** multicloud audit logs.
 
 #### Fixes
 
 - **Fixed** the issue of audit log out of range.
-- **Fixed** the duplicate icon issue when adding a working cluster to the multi-cloud instance details page.
-- **Fixed** the error that occurs when modifying the number of instances while creating a multi-cloud workload.
-- **Fixed** the icon style issue with the distribution status of multi-cloud resources.
+- **Fixed** the duplicate icon issue when adding a working cluster to the multicloud instance details page.
+- **Fixed** the error that occurs when modifying the number of instances while creating a multicloud workload.
+- **Fixed** the icon style issue with the distribution status of multicloud resources.
 
 #### Improvements
 

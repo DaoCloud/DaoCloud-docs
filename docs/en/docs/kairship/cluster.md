@@ -27,8 +27,8 @@ After creating multicloud instances, you need to connect them to work clusters.
     ![Removal](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/cluster04.png)
 
 !!! note
-    - After removing a work cluster, the workloads of the cluster will no longer be managed by this multi-cloud instance.
-    - All multi-cloud workloads that have been distributed to this cluster will be automatically migrated to other work clusters managed by this multi-cloud instance.
+    - After removing a work cluster, the workloads of the cluster will no longer be managed by this multicloud instance.
+    - All multicloud workloads that have been distributed to this cluster will be automatically migrated to other work clusters managed by this multicloud instance.
 
 ## More Operations
 
@@ -38,7 +38,7 @@ The system will automatically return to the work cluster list. Click the __⋮__
 
 ## Pause/Resume Scheduling
 
-1. Click __Pause Schedule__ to pause the scheduling of the cluster. This means that new multi-cloud resources will not be distributed to this cluster, but the previously distributed resources to this cluster will not be affected.
+1. Click __Pause Schedule__ to pause the scheduling of the cluster. This means that new multicloud resources will not be distributed to this cluster, but the previously distributed resources to this cluster will not be affected.
 
 2. At this point, click __Modify Cluster Taint__ and you will find that the cluster has been automatically tainted.
 

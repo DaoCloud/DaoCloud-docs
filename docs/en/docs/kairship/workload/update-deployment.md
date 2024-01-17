@@ -5,7 +5,7 @@ hide:
 
 # Update/Delete Multicloud Workloads
 
-You can create a multi-cloud deployment either from an [image](deployment.md) or a [YAML file](yaml.md). Therefore, you can also update it with these two methods.
+You can create a multicloud deployment either from an [image](deployment.md) or a [YAML file](yaml.md). Therefore, you can also update it with these two methods.
 
 1. Click __Multicloud Workloads__ -> __Deployments__ in the left navigation menu. Then, click the __ⵈ__ icon on the far right of the corresponding workload to display more options.
 
