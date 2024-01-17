@@ -4,7 +4,7 @@ Multi-cloud orchestration supports offline upgrades. You need to load the images
 
 !!! info
 
-    The term "kairship" appearing in the following commands or scripts is the internal development codename for the multi-cloud orchestration module.
+    The term "kairship" appearing in the following commands or scripts is the internal development codename for the multicloud orchestration module.
 
 ## Load Images from the Downloaded Installation Package
 
@@ -110,7 +110,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
 
 === "Upgrade via helm repo"
 
-    1. Check if the multi-cloud orchestration Helm repository exists.
+    1. Check if the multicloud orchestration Helm repository exists.
     
         ```shell
         helm repo list | grep kairship
@@ -122,19 +122,19 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
         Error: no repositories to show
         ```
     
-    1. Add the multi-cloud orchestration Helm repository.
+    1. Add the multicloud orchestration Helm repository.
     
         ```shell
         helm repo add kairship http://{harbor url}/chartrepo/{project}
         ```
     
-    1. Update the multi-cloud orchestration Helm repository.
+    1. Update the multicloud orchestration Helm repository.
     
         ```shell
         helm repo update kairship
         ```
     
-    1. Select the version of multi-cloud orchestration you want to install (it is recommended to install the latest version).
+    1. Select the version of multicloud orchestration you want to install (it is recommended to install the latest version).
     
         ```shell
         helm search repo kairship/kairship --versions
@@ -150,7 +150,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
     
     1. Backup the __--set__ parameters.
     
-        Before upgrading the multi-cloud orchestration version, it is recommended to run the following command to backup the __--set__ parameters of the old version.
+        Before upgrading the multicloud orchestration version, it is recommended to run the following command to backup the __--set__ parameters of the old version.
     
         ```shell
         helm get values kairship -n kairship-system -o yaml > bak.yaml
@@ -183,7 +183,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
 
     1. Backup the __--set__ parameters.
     
-        Before upgrading the multi-cloud orchestration version, it is recommended to run the following command to backup the __--set__ parameters of the old version.
+        Before upgrading the multicloud orchestration version, it is recommended to run the following command to backup the __--set__ parameters of the old version.
     
         ```shell
         helm get values kairship -n kairship-system -o yaml > bak.yaml

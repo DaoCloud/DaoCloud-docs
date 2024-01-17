@@ -2,11 +2,11 @@
 
 The management interface of Multi-Cloud Orchestration is primarily responsible for the following functionalities:
 
-- Lifecycle management (LCM) of multi-cloud instances (based on Karmada)
-- Serving as a unified entry point for multi-cloud products (OpenAPI, Kairship UI, internal module GRPC calls)
-- Proxying API requests for multi-cloud instances (in the native Karmada style)
-- Aggregating cluster information (monitoring, management, control) within multi-cloud instances
-- Management and monitoring of multi-cloud workloads and other resources
+- Lifecycle management (LCM) of multicloud instances (based on Karmada)
+- Serving as a unified entry point for multicloud products (OpenAPI, Kairship UI, internal module GRPC calls)
+- Proxying API requests for multicloud instances (in the native Karmada style)
+- Aggregating cluster information (monitoring, management, control) within multicloud instances
+- Management and monitoring of multicloud workloads and other resources
 - Potential future permission operations
 
 ## Core Components
@@ -67,25 +67,25 @@ list-watch mechanism and processes corresponding events. The main controllers in
 
 ![Data Flow Diagram](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/arch_kairship_instance.jpg)
 
-It is important to note that multi-cloud instances are not aware of each other and are isolated from one another.
+It is important to note that multicloud instances are not aware of each other and are isolated from one another.
 
 Multi-Cloud Orchestration Management:
 
 - Retrieves distribution policies and application status information related to Karmada.
 - Retrieves cluster and node statistics, monitoring information, and management and
-  control information for multi-cloud instances.
-- Edits, updates, and deletes information related to multi-cloud applications in Karmada instances
+  control information for multicloud instances.
+- Edits, updates, and deletes information related to multicloud applications in Karmada instances
   (mainly focused on Karmada workloads and PP, OP).
 
-All request data flows directly to the multi-cloud instances located in the Global Services Cluster.
+All request data flows directly to the multicloud instances located in the Global Services Cluster.
 
 Next, all access requests are routed to the corresponding instances after passing through the
 Multi-Cloud Orchestration. All read requests such as get/list access the Container Management Module,
 while write requests access Karmada instances, achieving read-write separation and improving response time.
 
-You may wonder how the Container Management Module retrieves resource information for multi-cloud instances.
+You may wonder how the Container Management Module retrieves resource information for multicloud instances.
 The solution is to add the instance itself as a virtual cluster to the Container Management Module
 (not displayed in the Container Management). This allows for complete utilization of the Container Management
 Module's capabilities (accelerated retrieval of resources, CRDs, etc.). When querying resources
-(Deployments, deployment policies, differentiation policies, etc.) for a specific multi-cloud instance
+(Deployments, deployment policies, differentiation policies, etc.) for a specific multicloud instance
 in the interface, it can be directly retrieved through the Container Management Module.
