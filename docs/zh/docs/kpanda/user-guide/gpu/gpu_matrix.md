@@ -51,11 +51,11 @@ hide:
 | | | KylinV10SP1 操作系统 | | | |
 | | | openEuler操作系统 | | | |
 
-## 天数(Iluvatar) GPU
+## 天数智芯(Iluvatar) GPU
 
 | GPU 厂商及类型 | 支持 的 GPU 型号 | 适配的操作系统(在线) | 推荐内核 | 推荐的操作系统及内核 | 安装文档 |
 | ------------ | --------------- | ----------------- | ------ | ----------------- | -------- |
-| **天数(Iluvatar vGPU)** | BI100;<br />MR100； | CentOS 7 | Kernel 3.10.0-957.el7.x86_64~3.10.0-1160.42.2.el7.x86_64 | 操作系统： CentOS 7.9；<br />内核版本： __3.10.0-1160__ | 补充中 |
+| **天数智芯(Iluvatar vGPU)** | BI100;<br />MR100； | CentOS 7 | Kernel 3.10.0-957.el7.x86_64~3.10.0-1160.42.2.el7.x86_64 | 操作系统： CentOS 7.9；<br />内核版本： __3.10.0-1160__ | 补充中 |
 | | | CentOS 8 | Kernel 4.18.0-80.el8.x86_64~ 4.18.0-305.19.1.el8_4.x86_64 | | |
 | | | Ubuntu 20.04 | Kernel 4.15.0-20-generic ~4.15.0-160-generic<br />Kernel 5.4.0-26-generic ~5.4.0-89-generic<br /> Kernel 5.8.0-23-generic ~5.8.0-63-generic<br /> | | |
 | | | Ubuntu 21.04 | Kernel 4.15.0-20-generic ~4.15.0-160-generic<br />Kernel 5.4.0-26-generic ~5.4.0-89-generic<br /> Kernel 5.8.0-23-generic ~5.8.0-63-generic<br /> | | |
