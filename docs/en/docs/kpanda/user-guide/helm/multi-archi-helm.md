@@ -1,12 +1,17 @@
-# Steps for Importing and Upgrading Helm Applications with Multiple Architectures
+---
+MTPE: windsonsea
+date: 2024-01-17
+---
 
-In a multi-architecture cluster, it is common to use Helm charts that support multiple architectures to address deployment issues caused by architectural differences. This guide will explain how to integrate single-architecture Helm applications into multi-architecture deployments and how to integrate multi-architecture Helm applications.
+# Import and Upgrade Multi-Arch Helm Apps
 
-## Importing
+In a multi-arch cluster, it is common to use Helm charts that support multiple architectures to address deployment issues caused by architectural differences. This guide will explain how to integrate single-arch Helm apps into multi-arch deployments and how to integrate multi-arch Helm apps.
 
-### Single-Architecture Import
+## Import
 
-Prepare the offline package __addon-offline-full-package-${version}-${arch}.tar.gz__ ,which can be downloaded from the [Download Center](../../../download/addon/history.md).
+### Import Single-arch
+
+Prepare the offline package `addon-offline-full-package-${version}-${arch}.tar.gz`, which can be downloaded from the [Download Center](../../../download/addon/history.md).
 
 Specify the path in the __clusterConfig.yml__ configuration file, for example:
 
@@ -15,27 +20,27 @@ addonPackage:
   path: "/home/addon-offline-full-package-v0.9.0-amd64.tar.gz"
 ```
 
-Then execute the import command:
+Then run the import command:
 
 ```shell
 ~/dce5-installer cluster-create -c /home/dce5/sample/clusterConfig.yaml -m /home/dce5/sample/manifest.yaml -d -j13
 ```
 
-### Multi-Architecture Integration
+### Integrate Multi-arch
 
-Prepare the offline package __addon-offline-full-package-${version}-${arch}.tar.gz__ , which can be downloaded from the [Download Center](../../../download/addon/history.md).
+Prepare the offline package `addon-offline-full-package-${version}-${arch}.tar.gz`, which can be downloaded from the [Download Center](../../../download/addon/history.md).
 
-Take __addon-offline-full-package-v0.9.0-arm64.tar.gz__ as an example and execute the import command:
+Take `addon-offline-full-package-v0.9.0-arm64.tar.gz` as an example and run the import command:
 
 ```shell
-~/dce5-installer import -addon -c /home/dce5/sample/clusterConfig.yaml --addon-path=/home/addon-offline-full-package-v0.9.0-arm64.tar.gz
+~/dce5-installer import-addon -c /home/dce5/sample/clusterConfig.yaml --addon-path=/home/addon-offline-full-package-v0.9.0-arm64.tar.gz
 ```
 
-## Upgrading
+## Upgrade
 
-### Single-Architecture Upgrade
+### Upgrade Single-arch
 
-Prepare the offline package __addon-offline-full-package-${version}-${arch}.tar.gz__ , which can be downloaded from the [Download Center](../../../download/addon/history.md).
+Prepare the offline package `addon-offline-full-package-${version}-${arch}.tar.gz`, which can be downloaded from the [Download Center](../../../download/addon/history.md).
 
 Specify the path in the __clusterConfig.yml__ configuration file, for example:
 
@@ -44,43 +49,45 @@ addonPackage:
   path: "/home/addon-offline-full-package-v0.11.0-amd64.tar.gz"
 ```
 
-Then execute the import command:
+Then run the import command:
 
 ```shell
 ~/dce5-installer cluster-create -c /home/dce5/sample/clusterConfig.yaml -m /home/dce5/sample/manifest.yaml -d -j13
 ```
 
-### Multi-Architecture Integration
+### Multi-arch Integration
 
-Prepare the offline package __addon-offline-full-package-${version}-${arch}.tar.gz__ , which can be downloaded from the [Download Center](../../../download/addon/history.md).
+Prepare the offline package `addon-offline-full-package-${version}-${arch}.tar.gz`, which can be downloaded from the [Download Center](../../../download/addon/history.md).
 
-Take __addon-offline-full-package-v0.11.0-arm64.tar.gz__ as an example and execute the import command:
+Take `addon-offline-full-package-v0.11.0-arm64.tar.gz` as an example and run the import command:
 
 ```shell
-~/dce5-installer import -addon -c /home/dce5/sample/clusterConfig.yaml --addon-path=/home/addon-offline-full-package-v0.11.0-arm64.tar.gz
+~/dce5-installer import-addon -c /home/dce5/sample/clusterConfig.yaml --addon-path=/home/addon-offline-full-package-v0.11.0-arm64.tar.gz
 ```
 
-## Considerations
+## Notes
 
 ### Disk Space
 
-The offline package is large, and during the process, it needs to be unpacked and load the images. Make sure you have enough disk space available; otherwise, the process may fail due to "no space left" error.
+The offline package is quite large and requires sufficient space for decompression and loading of images. Otherwise, it may interrupt the process with a "no space left" error.
 
 ### Retry after Failure
 
-If the multi-architecture integration step fails, clean up any remnants before retrying:
+If the multi-arch fusion step fails, you need to clean up the residue before retrying:
 
 ```shell
 rm -rf addon-offline-target-package
 ```
 
-### Image Registry
+### Registry Space
 
-If the integrated offline package includes image registries that are different from those in the imported offline package, an error may occur during the integration process due to the absence of the image registry:
+If the offline package for fusion contains registry spaces that are inconsistent with the imported offline package, an error may occur during the fusion process due to the non-existence of the registry spaces:
 
+![helm](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/multi-arch-helm.png)
 
-Solution: Create the missing image registry before the integration step to avoid this error. For example, in the above screenshot, the error can be avoided by creating the image registry __localhost__ beforehand.
+Solution: Simply create the registry space before the fusion. For example, in the above error, creating the registry space "localhost" in advance can prevent the error.
 
 ### Architecture Conflict
 
-When upgrading to a version lower than 0.12.0 of the addon, the charts-syncer in the target offline package does not check for image existence, resulting in the conversion of a multi-architecture deployment to a single-architecture one during the upgrade process. The conversion back to a multi-architecture deployment will only occur during the subsequent integration.
+When upgrading to a version lower than 0.12.0 of the addon, the charts-syncer in the target offline package does not check the existence of the image before pushing, so it will recombine the multi-arch into a single architecture during the upgrade process.
+For example, if the addon is implemented as a multi-arch in version v0.10, upgrading to version v0.11 will overwrite the multi-arch addon with a single architecture. However, upgrading to version 0.12.0 or above can still maintain the multi-arch.
