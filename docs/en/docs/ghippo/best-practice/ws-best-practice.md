@@ -15,7 +15,7 @@ A workspace consists of three features: authorization, resource groups, and shar
 
     Best practice: When ordinary users want to use Workbench, microservice engine, service mesh, and middleware module features, or need to have permission to use container management and some resources in the service mesh, the administrator needs to grant the workspace permissions (Workspace Admin, Workspace Edit, Workspace View).
     The administrator here can be the Admin role, the Workspace Admin role of the workspace, or the Folder Admin role above the workspace.
-    See [Relationship between Folder and Workspace](ws-folder.md).
+    See [Relationship between Folder and Workspace](../user-guide/workspace/ws-folder.md).
 
 2. Resource group: Resource group and shared resource are two resource management modes of the workspace.
 
@@ -50,7 +50,7 @@ A workspace consists of three features: authorization, resource groups, and shar
 
 ## The effect of the workspace on the DCE module
 
-1. Module name: [Workbench](../../../amamba/intro/index.md), [Microservice Engine](../../../skoala/intro/index.md), [Service Mesh](../../../mspider/intro/index.md), [Middleware](../../../middleware/index.md)
+1. Module name: [Workbench](../../amamba/intro/index.md), [Microservice Engine](../../skoala/intro/index.md), [Service Mesh](../../mspider/intro/index.md), [Middleware](../../middleware/index.md)
 
     The premise of entering the above modules is to have the permission of a certain workspace, so you must have the Admin role or have certain role permissions of a certain workspace before using the module features.
 
@@ -60,7 +60,7 @@ A workspace consists of three features: authorization, resource groups, and shar
 
     In addition, the resources you create in these modules will also be automatically bound to the corresponding workspace without any additional operations.
 
-2. Module name: [Container Management](../../../kpanda/intro/index.md), [Service Mesh](../../../mspider/intro/index.md)
+2. Module name: [Container Management](../../kpanda/intro/index.md), [Service Mesh](../../mspider/intro/index.md)
 
     Due to the particularity of functional modules, resources created in the container management module will not be automatically bound to a certain workspace.
 

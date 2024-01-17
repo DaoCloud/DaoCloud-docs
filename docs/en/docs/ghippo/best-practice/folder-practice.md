@@ -23,7 +23,7 @@ Therefore, with the help of folders, enterprise managers can centrally manage an
 2. User identity management
 
     Folder provides three roles: Folder Admin, Folder Editor, and Folder Viewer.
-    [View role permissions](../access-control/role.md), you can grant different roles to users/groups in the same folder through [Authorization](../access-control/role.md).
+    [View role permissions](../user-guide/access-control/role.md), you can grant different roles to users/groups in the same folder through [Authorization](../user-guide/access-control/role.md).
 
 3. Role and permission mapping
 

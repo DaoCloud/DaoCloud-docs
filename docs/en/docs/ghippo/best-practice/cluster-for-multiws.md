@@ -65,7 +65,7 @@ Follow the steps below to prepare a cluster.
 
     
 
-1. Click __Create Cluster__ [Create a Cluster](../../../kpanda/user-guide/clusters/create-cluster.md), or click __Join Cluster__ [Join a Cluster](../../../kpanda/user-guide/clusters/integrate-cluster.md).
+1. Click __Create Cluster__ [Create a Cluster](../../kpanda/user-guide/clusters/create-cluster.md), or click __Join Cluster__ [Join a Cluster](../../kpanda/user-guide/clusters/integrate-cluster.md).
 
 ## Add a cluster to the workspace
 
@@ -79,4 +79,4 @@ Return to __Global Management__ to add clusters for the workspace.
 
     
 
-Next step: After allocating cluster resources to multiple workspaces, users can go to __Workbench__ under these workspaces [create namespace and deploy application](../../../amamba/user-guide/namespace/namespace.md).
+Next step: After allocating cluster resources to multiple workspaces, users can go to __Workbench__ under these workspaces [create namespace and deploy application](../../amamba/user-guide/namespace/namespace.md).
