@@ -985,6 +985,10 @@ nav:
                       - 实例监控: middleware/minio/user-guide/insight.md
                       - 配置参数: middleware/minio/user-guide/config.md
                       - MinIO 的身份管理: middleware/minio/user-guide/user-management.md
+      - 云原生 AI:
+          - 智能算力:
+              - 介绍:
+                  - 什么是智能算力: baize/intro/index.md
       - 边缘计算:
           - 云边协同:
               - 介绍:
