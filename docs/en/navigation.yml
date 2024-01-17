@@ -192,10 +192,10 @@ nav:
                   - Helm Charts: kpanda/user-guide/helm/README.md
                   - Helm Apps: kpanda/user-guide/helm/helm-app.md
                   - Helm Registries: kpanda/user-guide/helm/helm-repo.md
-                  - Multi-architecture Helm Apps: kpanda/user-guide/helm/multi-archi-helm.md
+                  - Multi-arch Helm Apps: kpanda/user-guide/helm/multi-archi-helm.md
                   - Import Custom Helm App into Addon: kpanda/user-guide/helm/Import-addon.md
               - Operator:
-                  - Import Offline MinIo Operator: kpanda/user-guide/olm/import-miniooperator.md
+                  - Import Offline MinIO Operator: kpanda/user-guide/olm/import-miniooperator.md
               - Container Network:
                   - Create Service: kpanda/user-guide/network/create-services.md
                   - Create Ingress: kpanda/user-guide/network/create-ingress.md
