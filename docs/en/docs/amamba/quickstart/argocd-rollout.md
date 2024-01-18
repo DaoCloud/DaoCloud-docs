@@ -1,36 +1,46 @@
-# Progressive Gray Release with Argo Rollout
+---
+MTPE: FanLin
+Date: 2024-01-18
+---
 
-This article describes how to implement progressive gray release based on open source [Argo Rollout](https://argoproj.github.io/argo-rollouts/).
+# Implement Progressive Delivery with Argo Rollout
+
+This article introduces how to implement progressive delivery based on the open-source [Argo Rollout](https://argoproj.github.io/argo-rollouts/).
 
 ## Prerequisites
 
-- The images in the example need to be accessed over the Internet: __argoproj/rollouts-demo:yellow__ and __argoproj/rollouts-demo:blue__ .
+- The images in the example need to access the public network: __argoproj/rollouts-demo:yellow__ and __argoproj/rollouts-demo:blue__.
 
 - Only applicable to DCE 5.0 platform deployed via installer with metallb.
 
-- Istio and Argo Rollout components need to be installed in the cluster for using gray release capabilities.
+- The use of canary deployment capabilities requires the installation of Istio and Argo Rollout components in the cluster.
 
-## Operating Steps
+## Steps
 
-The whole process is divided into four steps: first, build the application based on the container image, then configure the Istio-related resources, create the gray release task, and finally verify the effect.
+The entire process is divided into four steps: building an application by image, configuring Istio-related resources, creating a canary delivery job, and verifying the effect.
 
-### Building the Application Based on Container Image
+### Building an application by image
 
 1. Select __Container Image__ as the entry point in the wizard.
 
 2. Fill in the basic information:
 
-3. Fill in the container configuration. For example:
+    ![Basic Info](../images/argout01.png)
 
-    - Container image: __argoproj/rollouts-demo:blue__
-    - Service port: Name is __http__ , container port is __8082__ , and service port is __8082__ .
+3. Fill in the container settings. For example:
 
+    - Container Image: __argoproj/rollouts-demo:blue__
+    - Port Settings: Name is __http__ , container port is __8082__ , and service port is __8082__ .
 
-4. Fill in the advanced configuration and enable __Enable Mesh__ .
+    ![Container Settings](../images/argout02.png)
 
-5. After creation, an application record will be generated in __Overview__ -> __Native Apps__ .
+4. Fill in the advanced settings and enable __Enable Mesh__ .
 
-### Configuration of Istio-related Resources
+    ![Advanced Settings](../images/argout03.png)
+
+5. After creation, an application record will be generated in __Overview__ -> __Applications__ .
+
+### Configurating Istio related resource
 
 Create the following resources in the [Service Mesh](../../mspider/intro/index.md) module or console.
 
@@ -102,7 +112,7 @@ Create the following resources in the [Service Mesh](../../mspider/intro/index.m
     1. Modify here, you need to add a new gateway, which points to the name of the gateway created in the previous step.
     2. Modify here, the original host was the name of the virtual service, which needs to be deleted and changed to __‘*’__ .
 
-4. Configure istio-ingressgateway gateway
+4. Configure istio-ingressgateway
 
     ```shell
     kubectl edit svc istio-ingressgateway -n istio-system
@@ -183,28 +193,29 @@ Create the following resources in the [Service Mesh](../../mspider/intro/index.m
         - ip: 10.29.135.48
     ```
 
-### Create Gray Release Task
+### Creating a Canary delivery job
 
-To create a canary release task in the Workbench, follow these steps. For more detailed instructions, you can refer to the [Creating Canary Release Tasks](../user-guide/release/canary.md) guide.
+Create a canary delivery job in the application workbench. For more detailed creation instructions, please refer to [Create a Canary Delivery Job](../user-guide/release/canary.md).
 
-1. Select the application for which you want to enable canary release.
+1. Select the application for which you want to enable canary deployment.
 
+    ![Select Application](../images/argout04.png)
 
-
-2. Set up the release rules. Choose "Istio" as the traffic management type and "Weight Based" as the traffic routing type.
-
+2. Set the release rules, select the traffic management type as __Istio__, and the traffic scheduling type as __Based on Weight__.
 
 3. Click __Create and Update App__ . In the pop-up dialog, enter the image address: __argoproj/rollouts-demo:yellow__ .
 
-### Verify Effect
+    ![Fill Image Address](../images/argout05.png)
+
+### Verifying effects
 
 Access the address: `http://{istio-ingressgateway LB IP}:8082`, and the following access effect will be obtained.
 
-This interface will concurrently call `http://{istio-ingressgateway LB IP}:8082/color` to obtain color information and fill it into the grid.
-In the gray release object, the specified colors are blue, yellow, which will be displayed according to the defined traffic ratio of 1:9.
+This interface will concurrently call `http://{istio-ingressgateway LB IP}:8082/color`, and fill the obtained color information into the grid.
+In the canary deployment object, the specified colors are __blue, yellow__, which will be displayed according to the defined rule 1:9 traffic ratio.
 
-<!--![]()screenshots-->
+![Effect Illustration](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/argorollout06.png)
 
-At this time, you can choose to continue publishing the application in the gray release module of the application console to adjust the traffic ratio until the final successful release.
+At this time, you can adjust the traffic ratio in the canary deployment module of the application workbench and continue to release the application until the final successful release.
 
-<!--![]()screenshots-->
+![Adjust Ratio](../images/argout06.png)
