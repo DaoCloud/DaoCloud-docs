@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Elasticsearch
 
 本页可下载 Elasticsearch 各版本的离线安装包。

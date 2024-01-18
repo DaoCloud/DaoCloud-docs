@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # PostgreSQL
 
 本页可下载 PostgreSQL 各版本的离线安装包。
