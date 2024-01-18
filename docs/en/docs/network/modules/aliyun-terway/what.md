@@ -73,75 +73,76 @@ CRD:
 
 - PodNetworking: custom resources introduced in trunk mode specify the configuration information of a network plane. A network plane can be configured with independent vSwitches, security groups, and other information. Multiple network planes can be configured within a cluster. PodNetworking matches Pods with a label selector and the matched Pods will use trunking mode.
 
-```yaml
-apiVersion: network.alibabacloud.com/v1beta1
-kind: PodNetworking
-metadata:
-  name: test-networking
-spec:
-  allocationType:
-    type: Elastic/Fixed # Fixed: the fixed IP policy only applies to stateful Pods. 
-    releaseStrategy: TTL
-    releaseAfter: "5m0s"
-  selector:
-    podSelector:
-      matchLabels:
-        foo: bar
-    namespaceSelector:
-      matchLabels:
-        foo: bar
-  vSwitchOptions:
-    - vsw-aaa
-  securityGroupIDs:
-    - sg-aaa
-```
+    ```yaml
+    apiVersion: network.alibabacloud.com/v1beta1
+    kind: PodNetworking
+    metadata:
+      name: test-networking
+    spec:
+      allocationType:
+        type: Elastic/Fixed # Fixed: the fixed IP policy only applies to stateful Pods. 
+        releaseStrategy: TTL
+        releaseAfter: "5m0s"
+      selector:
+        podSelector:
+          matchLabels:
+            foo: bar
+        namespaceSelector:
+          matchLabels:
+            foo: bar
+      vSwitchOptions:
+        - vsw-aaa
+      securityGroupIDs:
+        - sg-aaa
+    ```
 
-When a CR instance is created, Terway performs state synchronization. Once the synchronization is complete, the status is set to Ready. Pods can only be used in the Ready state:
+    When a CR instance is created, Terway performs state synchronization. Once the synchronization
+    is complete, the status is set to Ready. Pods can only be used in the Ready state:
 
-```yaml
-apiVersion: network.alibabacloud.com/v1beta1
-kind: PodNetworking
-...
-status:
-  status: Ready   <---- status
-  updateAt: "2023-07-19T10:45:31Z"
-  vSwitches:
-    - id: vsw-bp1s5grzef87ikb5zz1px
-      zone: cn-hangzhou-i
-    - id: vsw-bp1sx0zhxd6bw6vpt0hbl
-      zone: cn-hangzhou-i
-```
+    ```yaml
+    apiVersion: network.alibabacloud.com/v1beta1
+    kind: PodNetworking
+    ...
+    status:
+      status: Ready   <---- status
+      updateAt: "2023-07-19T10:45:31Z"
+      vSwitches:
+        - id: vsw-bp1s5grzef87ikb5zz1px
+          zone: cn-hangzhou-i
+        - id: vsw-bp1sx0zhxd6bw6vpt0hbl
+          zone: cn-hangzhou-i
+    ```
 
 - PodENI: Terway uses PodENI to record the network information for each Pod. In trunk mode, each pod has a corresponding and automatically created resource with the same name that cannot be modified.
 
-```yaml
-apiVersion: network.alibabacloud.com/v1beta1
-kind: PodENI
-...
-spec:
-  allocation:
-    eni:
-      id: eni-bp16h6wuzpa9w2vdm5dn     <--- pod's eni id
-      mac: 00:16:3e:0d:7b:c2
-      zone: cn-hangzhou-i
-    ipType:
-      releaseAfter: 0s
-      type: Elastic                    <--- podIP allocation policies
-    ipv4: 192.168.51.99
-status:
-  instanceID: i-bp1dkga3et5atja91ixt   <--- ecs instance ID
-  podLastSeen: "2021-07-19T11:23:55Z"
-  status: Bind
-  trunkENIID: eni-bp16h6wuzpa9utho0t2o
-```
+    ```yaml
+    apiVersion: network.alibabacloud.com/v1beta1
+    kind: PodENI
+    ...
+    spec:
+      allocation:
+        eni:
+          id: eni-bp16h6wuzpa9w2vdm5dn     <--- pod's eni id
+          mac: 00:16:3e:0d:7b:c2
+          zone: cn-hangzhou-i
+        ipType:
+          releaseAfter: 0s
+          type: Elastic                    <--- podIP allocation policies
+        ipv4: 192.168.51.99
+    status:
+      instanceID: i-bp1dkga3et5atja91ixt   <--- ecs instance ID
+      podLastSeen: "2021-07-19T11:23:55Z"
+      status: Bind
+      trunkENIID: eni-bp16h6wuzpa9utho0t2o
+    ```
 
-Data flow:
+    Data flow:
 
-![eniip-trunking](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/eni_trunking.png)
+    ![eniip-trunking](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/eni_trunking.png)
 
-- Each ECS node is allocated an ENI for trunking, similar to a trunk port on a traditional switch.
-- All external access from Pods is forwarded through the host and then routed to the target ENI via the host's trunking ENI. Terway plugin adds or removes VLAN tags in the trunking ENI's TC hook, and packets are matched to the target ENI based on the VLAN tag.
+    - Each ECS node is allocated an ENI for trunking, similar to a trunk port on a traditional switch.
+    - All external access from Pods is forwarded through the host and then routed to the target ENI via the host's trunking ENI. Terway plugin adds or removes VLAN tags in the trunking ENI's TC hook, and packets are matched to the target ENI based on the VLAN tag.
 
-![eni_trunking_tc](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/eni_trunking_tc.png)
+    ![eni_trunking_tc](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/eni_trunking_tc.png)
 
-> ENIIP-Trunking mode is not supported in self-built clusters.
+    > ENIIP-Trunking mode is not supported in self-built clusters.

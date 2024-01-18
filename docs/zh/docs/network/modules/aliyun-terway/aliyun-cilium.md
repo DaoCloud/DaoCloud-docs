@@ -38,17 +38,17 @@ cilium install
 等待 Cilium 组件 Running，创建测试应用测试通信是否正常:
 
 ```shell
-~# kubectl  get po -o wide
+$ kubectl  get po -o wide
 NAME                    READY   STATUS    RESTARTS   AGE   IP               NODE                  NOMINATED NODE   READINESS GATES
 test-77877f4755-2jz2c   1/1     Running   0          1m   10.244.1.39       cn-chengdu.i-2vcxxr   <none>           <none>
 test-77877f4755-rjlg6   1/1     Running   0          1m   10.244.0.86     cn-chengdu.i-2vcxxs   <none>           <none>
-~# kubectl  get svc
+$ kubectl  get svc
 NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
 kubernetes   ClusterIP   172.21.0.1     <none>        443/TCP        32d
 test         ClusterIP   172.21.0.53    <none>        80/TCP         2m
 
-~# # 跨节点访问 Pod 
-~# kubectl  exec test-77877f4755-2jz2c -- ping -c1 10.244.0.86
+# 跨节点访问 Pod
+$ kubectl  exec test-77877f4755-2jz2c -- ping -c1 10.244.0.86
 PING 10.244.0.86 (10.244.0.86) 56(84) bytes of data.
 64 bytes from 10.244.0.86: icmp_seq=1 ttl=63 time=0.571 ms
 
@@ -56,8 +56,8 @@ PING 10.244.0.86 (10.244.0.86) 56(84) bytes of data.
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 rtt min/avg/max/mdev = 0.571/0.571/0.571/0.000 ms
 
-~# # 访问外部
-~# kubectl exec test-77877f4755-24gqt -- ping -c1 8.8.8.8
+# 访问外部
+$ kubectl exec test-77877f4755-24gqt -- ping -c1 8.8.8.8
 PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 64 bytes from 8.8.8.8: icmp_seq=1 ttl=107 time=63.8 ms
 
@@ -65,15 +65,15 @@ PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 rtt min/avg/max/mdev = 63.758/63.758/63.758/0.000 ms
 
-~# # 访问 ClusterIP
-~# kubectl exec test-77877f4755-24gqt -- curl -i 172.21.0.53
+# 访问 ClusterIP
+$ kubectl exec test-77877f4755-24gqt -- curl -i 172.21.0.53
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0HTTP/1.1 200 OK
 Content-Type: application/json
 Date: Thu, 28 Sep 2023 03:54:28 GMT
 Content-Length: 151
-````
+```
 
 经过测试，Pod 各种连通性正常。
 
@@ -94,21 +94,21 @@ cilium install --set ipam.mode=kubernetes --set routingMode=native --set ipv4Nat
 等待 Cilium Running，创建测试应用，验证连通性:
 
 ```shell
-~# kubectl  get po -o wide
+$ kubectl  get po -o wide
 NAME                    READY   STATUS    RESTARTS   AGE   IP             NODE                                NOMINATED NODE   READINESS GATES
 test-77877f4755-v9mrj   1/1     Running   0          4s    10.244.1.166   cn-chengdu.i-2vc5zub002vrlwursb4s   <none>           <none>
 test-77877f4755-w95wn   1/1     Running   0          4s    10.244.0.98    cn-chengdu.i-2vc5zub002vrlwursb4r   <none>           <none>
-~# kubectl  get svc
+$ kubectl  get svc
 NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
 kubernetes   ClusterIP   172.21.0.1     <none>        443/TCP        31d
 test         ClusterIP   172.21.0.98    <none>        80/TCP         16s
 ```
 
-可以发现 Pod 的 IP 段与节点绑定，测试联通性:
+可以发现 Pod 的 IP 段与节点绑定，测试连通性:
 
 ```shell
 # Pod 跨节点
-~# kubectl  exec test-77877f4755-v9mrj -- ping -c1 10.244.0.98
+$ kubectl  exec test-77877f4755-v9mrj -- ping -c1 10.244.0.98
 PING 10.244.0.98 (10.244.0.98) 56(84) bytes of data.
 64 bytes from 10.244.0.98: icmp_seq=1 ttl=60 time=0.800 ms
 
@@ -117,7 +117,7 @@ PING 10.244.0.98 (10.244.0.98) 56(84) bytes of data.
 rtt min/avg/max/mdev = 0.800/0.800/0.800/0.000 ms
 
 # Pod 访问 Service
-~# kubectl  exec test-77877f4755-v9mrj -- curl -i 172.21.0.98
+$ kubectl  exec test-77877f4755-v9mrj -- curl -i 172.21.0.98
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100   152  100   152    0     0  32871      0 --:--:-- --:--:-- --:--:-- 38000
@@ -127,4 +127,4 @@ Date: Thu, 28 Sep 2023 04:17:33 GMT
 Content-Length: 152
 ```
 
-经过测试， Pod 各种联通性正常。
+经过测试， Pod 各种连通性正常。
