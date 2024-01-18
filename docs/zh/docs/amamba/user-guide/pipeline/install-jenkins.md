@@ -3,8 +3,8 @@
 ## 开始之前
 
 - 安装 Jenkins 之前需要确保将要安装 Jenkins 的集群中存在默认的存储类；
-- 请提前做好资源规划，评估未来最大并发的流水线数，并根据文档 ![Jenkins场景配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/quickstart/scenarios-config.md) 进行配置；
-- 请确认安装的目标集群的容器运行时：只有使用 docker 作为容器运行时才能选择 Agent 的 `ContainerRuntime` 为docker；
+- 请提前做好资源规划，评估未来最大并发的流水线数，并根据 [Jenkins 场景配置文档](../../quickstart/scenarios-config.md)进行配置；
+- 请确认安装的目标集群的容器运行时：只有使用 Docker 作为容器运行时才能选择 Agent 的 `ContainerRuntime` 为 Docker；
 
 ## 开始安装
 

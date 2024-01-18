@@ -15,10 +15,10 @@ hide:
 
 ## 前提条件
 
-1. [SpiderPool 已成功部署](../../modules/spiderpool/install.md)。
-2. 如使用手动选择 IP 池，请提前完成[创建 IP 子网和 IP 池](../../modules/spiderpool/createpool.md)。如使用自动创建固定 IP 池，请提前完成[创建 IP 池](../../modules/spiderpool/createpool.md)。
-3. 如果使用默认 IP 池，请提前完成[创建 IP 子网和 IP 池](../../modules/spiderpool/createpool.md)。并在容器网络 Multus CNI 配置中，配置好带有默认 IP 池的网卡。
-4. 对应使用的[Multus CR 已创建](../../config/multus-cr.md)。
+1. [SpiderPool 已成功部署](install/install.md)。
+2. 如使用手动选择 IP 池，请提前完成[创建 IP 子网和 IP 池](../../config/ippool/createpool.md)。如使用自动创建固定 IP 池，请提前完成[创建 IP 池](../../config/ippool/createpool.md)。
+3. 如果使用默认 IP 池，请提前完成[创建 IP 子网和 IP 池](../../config/ippool/createpool.md)。并在容器网络 Multus CNI 配置中，配置好带有默认 IP 池的网卡。
+4. 对应使用的[Multus CR 已创建](../multus-cr.md)。
 
 ## 界面操作
 
@@ -33,7 +33,7 @@ hide:
 3. 进入`容器网卡配置`页面，完成以下参数的配置：
 
     - `网卡信息`: 若创建的应用容器需要使用多张网卡（如一张东西向通信，一张南北向通信），可以添加多网卡。
-        - eth0（默认网卡）：默认为 Overlay CNI，可选 Calico/Cilium/Macvlan CR，设置前请确认[Multus CR 已创建](../../config/multus-cr.md)。当 eth0（默认网卡）设置为 Underlay CNI，如 Macvlan 时，net1，net2 等新增网卡只能选择 Underlay CNI。
+        - eth0（默认网卡）：默认为 Overlay CNI，可选 Calico/Cilium/Macvlan CR，设置前请确认[Multus CR 已创建](../multus-cr.md)。当 eth0（默认网卡）设置为 Underlay CNI，如 Macvlan 时，net1，net2 等新增网卡只能选择 Underlay CNI。
 
         - net1: 可选择 Underlay CNI 配置，如 Macvlan/SR-IOV ，本文示例为 Macvlan。
 
@@ -48,15 +48,15 @@ hide:
 
         - `使用默认 IP 池`：开启后，会为新增的容器网卡（eth0、net1、net2）全部选择好默认的 IP 池。
 
-    工作负载使用 IP 池有如下两种方式，两种方式的使用场景及流程差异可参考：[IP 池的使用说明](ippoolusage.md)
+    工作负载使用 IP 池有如下两种方式，两种方式的使用场景及流程差异可参考：[IP 池的使用说明](../../config/ippool/ippoolusage.md)
 
     **手动选择已有的 IP 池**
 
-    手动选择 IP 池需要提前创建 IP 池，可选择 IP 池范围为： [已关联所选择 的Multus CNI 配置的 IPPool](createpool.md) ，可以是：`共享 IP 池`，以及添加了`当前应用亲和性`、 `命名空间亲和性`、`节点亲和性`的 IP 池。
+    手动选择 IP 池需要提前创建 IP 池，可选择 IP 池范围为： [已关联所选择 的Multus CNI 配置的 IPPool](../../config/ippool/createpool.md) ，可以是：`共享 IP 池`，以及添加了`当前应用亲和性`、 `命名空间亲和性`、`节点亲和性`的 IP 池。
 
     ![手动选择](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/useippool03.png)
 
-    注意：如果 所选择的 [IP 池创建时](\createpool.md) 加了节点亲和性如：`zone:beijing`，请在创建工作负载时，加上对应的标签 `zone:beijing`。使用场景请参考：[IP 池的使用说明](ippoolusage.md)![zone-beijing](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/zone-beijing.jpg)
+    注意：如果 所选择的 [IP 池创建时](../../config/ippool/createpool.md) 加了节点亲和性如：`zone:beijing`，请在创建工作负载时，加上对应的标签 `zone:beijing`。使../../config/ippool/ippoolusage.md用说明](ippoolusage.md)![zone-beijing](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/zone-beijing.jpg)
 
     **自动创建固定 IP 池**
 
@@ -66,7 +66,7 @@ hide:
 
     **使用默认 IP 池**
 
-    提前创建好 IP 池，并在 Multus CNI 配置中，选择带有默认 IP 池的网卡，即可使用默认 IP 池功能。详情请参考：[创建 Multus CR](../../config/multus-cr.md)
+    提前创建好 IP 池，并在 Multus CNI 配置中，选择带有默认 IP 池的网卡，即可使用默认 IP 池功能。详情请参考：[创建 Multus CR](../multus-cr.md)
     ![默认IP池](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/useippool05.png)
 
 4. 创建完工作负载后，可点击对应工作负载 `test01` 查看工作负载 Pod 使用的 IP。

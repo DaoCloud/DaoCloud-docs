@@ -16,7 +16,7 @@ This page describes how to install Multus-underlay.
 
 Make sure your cluster is successfully connected to the `container management` platform, and then perform the following steps to first install Multus-underlay.
 
-1. Click `Container Management` -> `Cluster List` in the left navigation bar, then find the cluster name where you want to install Multus-underlay. Then, in the left navigation bar, select `Helm Apps` -> `Helm Charts`, find and click `multus-underlay`.
+1. Click `Container Management` -> `Clusters` in the left navigation bar, then find the cluster name where you want to install Multus-underlay. Then, in the left navigation bar, select `Helm Apps` -> `Helm Charts`, find and click `multus-underlay`.
 
     ![helm repo](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/multus-install-1.png)
 

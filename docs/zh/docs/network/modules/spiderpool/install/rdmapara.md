@@ -47,7 +47,7 @@
     此信息在部署 Spiderpool 时需要用到。
 
     ```sh
-    lspci -nn | grep Ethernet
+    $ lspci -nn | grep Ethernet
     af:00.0 Ethernet controller [0200]: Mellanox Technologies MT27800 Family [ConnectX-5] [15b3:1017]
     af:00.1 Ethernet controller [0200]: Mellanox Technologies MT27800 Family [ConnectX-5] [15b3:1017]
     ```
@@ -99,11 +99,11 @@
 
 1. 如果 Spiderpool 已成功部署，并且 Device 资源已成功发现，则请完成如下操作：
 
-    - 完成创建 Multus 实例，详情参考[创建 Multus CR](../../config/multus-cr.md)
-    - 完成创建 IP Pool，详情参考[创建子网及 IP Pool](createpool.md)
+    - 完成创建 Multus 实例，详情参考[创建 Multus CR](../../../config/multus-cr.md)
+    - 完成创建 IP Pool，详情参考[创建子网及 IP Pool](../../../config/ippool/createpool.md)
 
-1. 创建完成后，可使用此资源池创建工作负载，详情请参考[工作负载使用 RDMA](userdma.md)。
-   更多使用方式请参考[工作负载使用 IP 池](usage.md)。
+1. 创建完成后，可使用此资源池创建工作负载，详情请参考[工作负载使用 RDMA](../../../config/userdma.md)。
+   更多使用方式请参考[工作负载使用 IP 池](../../../config/use-ippool/usage.md)。
 
 ## 基于 SR-IOV 使用 RoCE 网卡
 
@@ -247,8 +247,8 @@
 
 1. 如果 Spiderpool 已成功部署，并且 Device 资源已成功发现，则请完成如下操作：
 
-    - 完成创建 Multus 实例，详情参考[创建 Multus CR](../../config/multus-cr.md)
-    - 完成创建 IP Pool，详情参考[创建子网及 IP Pool](createpool.md)
+    - 完成创建 Multus 实例，详情参考[创建 Multus CR](../../../config/multus-cr.md)
+    - 完成创建 IP Pool，详情参考[创建子网及 IP Pool](../../../config/ippool/createpool.md)
 
-    创建完成后，可使用此资源池创建工作负载，详情请参考[工作负载使用 RDMA](userdma.md)。
-    更多使用方式请参考[工作负载使用 IP 池](usage.md)。
+    创建完成后，可使用此资源池创建工作负载，详情请参考[工作负载使用 RDMA](../../../config/userdma.md)。
+    更多使用方式请参考[工作负载使用 IP 池](../../../config/use-ippool/usage.md)。

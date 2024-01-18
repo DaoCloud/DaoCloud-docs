@@ -37,7 +37,7 @@ Please make sure the Linux Kernel version >= 4.9.17 with 5.10+ recommended. To v
 
 ## First method：configure when creating the cluster
 
-1. Click `Container Management` --> `Cluster List`. On the page of `Create Cluster`, enter the cluster's `basic information` and `node configuration`, then go to `Network Configuration` to configure as follows:
+1. Click `Container Management` --> `Clusters`. On the page of `Create Cluster`, enter the cluster's `basic information` and `node configuration`, then go to `Network Configuration` to configure as follows:
 ![cilium-speedup01](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-speedup1.png)
 
     - Select `cilium` for the cluster's CNI plugin
@@ -77,7 +77,7 @@ Please make sure the Linux Kernel version >= 4.9.17 with 5.10+ recommended. To v
 
 If the cluster has been created and you need to enable acceleration parameters, you can modify the `Cilium-Config` file.
 
-Click `Container Management`--> `Cluster List`. Go to the created cluster and click `ConfigMaps & Secrets`. Select `Config Items`, find `Cilium-config`, and then click Edit to enter the following acceleration parameters:
+Click `Container Management`--> `Clusters`. Go to the created cluster and click `ConfigMaps & Secrets`. Select `Config Items`, find `Cilium-config`, and then click Edit to enter the following acceleration parameters:
 
 ![cilium-sppedup02](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/cilium-speedup2.png)
 
