@@ -3,7 +3,7 @@ MTPE: FanLin
 Date: 2024-01-11
 ---
 
-# Create Custom Pipeline Templates
+# Create a Custom Pipeline Template
 
 Workbench supports custom pipeline templates. Users can create pipeline templates based on real business cases, and then quickly create pipelines that meet the requirements based on the custom templates.
 

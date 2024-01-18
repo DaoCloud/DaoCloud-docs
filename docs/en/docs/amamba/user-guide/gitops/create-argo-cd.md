@@ -3,7 +3,7 @@ MTPE: FanLin
 Date: 2024-01-12
 ---
 
-# Creating an Argo CD Application
+# Create an Argo CD Application
 
 The Workbench implements continuous deployment based on the open-source software [Argo CD](https://argo-cd.readthedocs.io/en/stable/). This page demonstrates how to implement continuous deployment of applications.
 
