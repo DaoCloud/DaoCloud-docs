@@ -33,7 +33,7 @@ This page describes how to install Submariner.
 
 Make sure your cluster is successfully connected to the `container management` platform, and then perform the following steps to first install `submariner-k8s-broker`.
 
-1. Click `Container Management` -> `Cluster List` in the left navigation bar, and then find the cluster name where you want to install `submariner-k8s-broker`.
+1. Click `Container Management` -> `Clusters` in the left navigation bar, and then find the cluster name where you want to install `submariner-k8s-broker`.
 
 2. In the left navigation bar, select `Helm Applications` -> `Helm Charts`, find and click `submariner-k8s-broker`.
 

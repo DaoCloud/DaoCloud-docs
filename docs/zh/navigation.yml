@@ -379,12 +379,12 @@ nav:
                   - 网络规划: network/plans/netplan.md
               - 网络配置:
                   - IP 池管理:
-                      - 创建子网及 IP 池: network/modules/spiderpool/createpool.md
-                      - IP 池场景说明: network/modules/spiderpool/ippoolusage.md
+                      - 创建子网及 IP 池: network/config/ippool/createpool.md
+                      - IP 池场景说明: network/config/ippool/ippoolusage.md
                   - 使用 IP 池:
-                      - 工作负载使用 IP 池: network/modules/spiderpool/usage.md
-                      - 第三方工作负载使用 IP 池: network/modules/spiderpool/cutomizedusage.md
-                  - 工作负载使用 RDMA: network/modules/spiderpool/userdma.md
+                      - 工作负载使用 IP 池: network/config/use-ippool/usage.md
+                      - 第三方工作负载使用 IP 池: network/config/use-ippool/cutomizedusage.md
+                  - 工作负载使用 RDMA: network/config/userdma.md
                   - 创建 Multus CR: network/config/multus-cr.md
               - 网络性能:
                   - 网络 CNI 性能测试报告: network/performance/cni-performance.md
@@ -401,14 +401,14 @@ nav:
               - 集成 Spiderpool:
                   - 介绍: network/modules/spiderpool/index.md
                   - 安装: 
-                      - Spiderpool 安装: network/modules/spiderpool/install.md
-                      - RDMA 环境准备及安装: network/modules/spiderpool/rdmapara.md
+                      - Spiderpool 安装: network/modules/spiderpool/install/install.md
+                      - RDMA 环境准备及安装: network/modules/spiderpool/install/rdmapara.md
                   - 升级: network/modules/spiderpool/upgrade.md
                   - 配置参考: network/modules/spiderpool/config.md
                   - 常用命令: network/modules/spiderpool/command.md
                   - 公有云适配:
-                      - 在阿里云环境运行: network/modules/spiderpool/alibabacloud.md
-                      - 在 AWS 环境运行: network/modules/spiderpool/awscloud.md
+                      - 在阿里云环境运行: network/modules/spiderpool/public-cloud/alibabacloud.md
+                      - 在 AWS 环境运行: network/modules/spiderpool/public-cloud/awscloud.md
               - 集成 sriov-network-operator:
                   - 介绍: network/modules/sriov-network-operator/index.md
                   - 安装: network/modules/sriov-network-operator/install.md

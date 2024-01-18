@@ -7,12 +7,12 @@ hide:
 
 本页介绍在创建工作负载使用 IP 池之前，如何创建子网及 IP 池。
 
-- 如部署 SpiderPool 组件时已创建子网及 IP 池，可直接[使用 IP 池](./usage.md)。
+- 如部署 SpiderPool 组件时已创建子网及 IP 池，可直接[使用 IP 池](../use-ippool/usage.md)。
 - 如需要创建新的子网及 IP 池可参考此文档。
 
 ## 前提条件
 
-- [SpiderPool 已成功部署](./install.md)。
+- [SpiderPool 已成功部署](../../modules/spiderpool/install/install.md)。
 - 创建子网及 IP 池前建议做好子网和 IP 规划，并充分了解 [IP 池的使用方式](ippoolusage.md)。
 
 ## 界面操作
@@ -62,7 +62,7 @@ hide:
 
     - `自定义路由`：当用户有特殊路由需求时，可基于 IP 池粒度的进行自定义。
 
-    - `Multus 实例`：Multus CNI 中的具体配置实例，可添加多个，添加后 创建的 `IPPool` 和 `Multus 实例`进行关联。[创建应用时选择 Multus 实例仅可使用已关联的 IPPool](usage.md) ，更多信息可参考：[SpiderIPPool Affinity](https://spidernet-io.github.io/spiderpool/v0.8/usage/spider-affinity-zh_CN/#ippool_3 )。
+    - `Multus 实例`：Multus CNI 中的具体配置实例，可添加多个，添加后 创建的 `IPPool` 和 `Multus 实例`进行关联。[创建应用时选择 Multus 实例仅可使用已关联的 IPPool](../use-ippool/usage.md) ，更多信息可参考：[SpiderIPPool Affinity](https://spidernet-io.github.io/spiderpool/v0.8/usage/spider-affinity-zh_CN/#ippool_3)。
 
     - `工作负载亲和性`：工作负载标签（如 `app: workload01`）。IP 池创建后，仅可被对应的工作负载选择，实现固定 IP 池效果。
 
@@ -80,7 +80,7 @@ hide:
 
     ![添加 IP](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/subnet05.png)
 
-7. 创建完成后[工作负载即可使用 IP 池](../../modules/spiderpool/usage.md)。
+7. 创建完成后[工作负载即可使用 IP 池](../use-ippool/usage.md)。
 
 ## YAML 创建
 
@@ -96,11 +96,12 @@ metadata:
 spec:
   subnet: 172.16.0.0/16
   ips:
-    - 172.16.41.1-172.16.41.200  # 已规划子网 IP，可输入IP 段
-      # 如 72.30.120.126-172.30.120.127 段或单个 IP 如：172.30.120.126
+    - 172.16.41.1-172.16.41.200  # (1)
   subnet: 172.30.120.0/21
   vlan: 0
 ```
+
+1. 已规划子网 IP，可输入IP 段，如 72.30.120.126-172.30.120.127 段或单个 IP 172.30.120.126
 
 ### YAML 创建 IPPool
 
@@ -113,6 +114,8 @@ spec:
   ipVersion: 4
   subnet: 172.30.120.0/21
   ips:
-  - 172.30.120.126-172.30.120.127      # 已添加至子网内的 IP， 可输入IP 段
-         # 如 172.30.120.126-172.30.120.127 段或单个 IP 如：172.30.120.126
+  - 172.30.120.126-172.30.120.127  # (1)
+         # 
 ```
+
+1. 已添加至子网内的 IP， 可输入 IP 段如 172.30.120.126-172.30.120.127 段或单个 IP 172.30.120.126

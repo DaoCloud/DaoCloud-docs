@@ -75,12 +75,12 @@ Multus CR 管理，是 Spiderpool 对 Multus CNI 中配置实例的二次封装�
 ![创建multus cr](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/sriov-rdma.png)
 
 - `CNI 类型`：选择 SR-IOV
-- `RDMA`：默认不开启。如果需要开启，请满足 [RDMA 资源使用条件](../modules/spiderpool/rdmapara.md)
+- `RDMA`：默认不开启。如果需要开启，请满足 [RDMA 资源使用条件](../modules/spiderpool/install/rdmapara.md)
 - `IPv4/IPv6 默认池`:默认不设置，设置后，创建 workload 不添加 IP Pool 时，默认使用此 IP Pool。
 - `Vlan ID` : 必需填入 `0`
 - `SR-IOV 资源`：只用于`sriov`类型, 填写资源名称，不能为空。`如何查看 SR-IOV 资源` 请参考：[SR-IOV CNI 配置](../modules/multus-underlay/sriov.md)
 
- **SR-IOV 资源配置说明：**
+**SR-IOV 资源配置说明：**
 
 `SR-IOV resourceName` 为部署`sriovnetworknodepolicies` 时自定义名称。
 
@@ -109,7 +109,7 @@ Multus CR 管理，是 Spiderpool 对 Multus CNI 中配置实例的二次封装�
          ...
        }
      }
-   ```
+```
 
 **界面查询：**
 
@@ -127,4 +127,4 @@ Multus CR 管理，是 Spiderpool 对 Multus CNI 中配置实例的二次封装�
 
 - `JSON`：自定义类型时，需判断输入一个合法格式的 Json 文件。
 
-创建完成后[工作负载](../modules/spiderpool/usage.md)即可使用 Multus CR 管理。
+创建完成后[工作负载](use-ippool/usage.md)即可使用 Multus CR 管理。

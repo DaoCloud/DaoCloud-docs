@@ -22,7 +22,7 @@ This page describes how to configure multiple NICs for workload Pods in combinat
 
 ## Steps
 
-1. Log in to the platform UI, click `Container Management`->`Cluster List` in the left navigation bar, and find the corresponding cluster. Then, select `Deployments` in the left navigation bar and click `Create from an Image`.
+1. Log in to the platform UI, click `Container Management`->`Clusters` in the left navigation bar, and find the corresponding cluster. Then, select `Deployments` in the left navigation bar and click `Create from an Image`.
 
     ![Create Image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/useippool01.png)
 
