@@ -9,13 +9,13 @@ Date: 2023-01-11
 
 This page describes how to create subnets and IP pools before creating workloads to use IP pools.
 
-- If you have already created subnets and IP pools when deploying SpiderPool components, you can directly [use IP pools](./usage.md).
+- If you have already created subnets and IP pools when deploying SpiderPool components, you can directly [use IP pools](../use-ippool/usage.md).
 
 - If you need to create new subnets and IP pools, refer to this document.
 
 ## Prerequisites
 
-1. [SpiderPool successfully deployed.](../../modules/spiderpool/install.md)
+1. [SpiderPool successfully deployed.](../../modules/spiderpool/install/install.md)
 2. [Multus with Macvlan/SR-IOV has been successfully deployed.](../../modules/multus-underlay/install.md)
 
 ## Interface operation
@@ -78,7 +78,7 @@ This page describes how to create subnets and IP pools before creating workloads
 
     ![Add IP](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/subnet05.png)
 
-7. After the creation is complete, [the workload can use the IP Pool](../../modules/spiderpool/usage.md)
+7. After the creation is complete, [the workload can use the IP Pool](../use-ippool/usage.md)
 
 ## YAML creation
 

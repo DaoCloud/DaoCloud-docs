@@ -4,7 +4,7 @@ This page describes how to install sriov-network-operator.
 
 ## Prerequisites
 
-To use sriov-network-operator within a DCE 5.0 cluster, it is recommended to install `Spiderpool`. Please refer to the [Install Spiderpool](../spiderpool/install.md) guide.
+To use sriov-network-operator within a DCE 5.0 cluster, it is recommended to install `Spiderpool`. Please refer to the [Install Spiderpool](../spiderpool/install/install.md) guide.
 
 ## Installation Steps
 

@@ -6,7 +6,7 @@ This page describes how to install Multus-underlay.
 
 - Default CNI: before installing Multus-underlay, you need to check if there is a default CNI for the current cluster, such as Calico or Cilium, otherwise Multus may not work.
 - Spiderpool: Multus-underlay relies on [Spiderpool](https://github.com/spidernet-io/spiderpool) as `ipam`.
-  To install `Spiderpool`, please refer to [Install Spiderpool](../spiderpool/install.md).
+  To install `Spiderpool`, please refer to [Install Spiderpool](../spiderpool/install/install.md).
 - To install SR-IOV CNI, verify that the node is a physical host and that the node has a physical NIC that supports SR-IOV.
   If the node is a VM or does not have an SR-IOV-capable NIC, then SR-IOV will not work.
   Refer to [sriov-device-plugin](https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin) for details.

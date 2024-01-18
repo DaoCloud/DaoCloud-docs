@@ -11,9 +11,9 @@ This page describes how to install Spiderpool.
 
 ## Prerequisites
 
-1. To use SpiderPool in a DCE 5.0 cluster, you need a combination of [Calico](../calico/index.md)/[Cillium](../cilium/index.md).
+1. To use SpiderPool in a DCE 5.0 cluster, you need a combination of [Calico](../../calico/index.md)/[Cillium](../../cilium/index.md).
 
-2. It is recommended to use Spiderpool version v0.7.0 and above. The new version of Spiderpool supports auto-installation of [Multus](../multus-underlay/install.md) which can work with [Multus CR Management](../../../network/config/multus-cr.md) to use Underlay CNIs including  [Macvlan](../multus-underlay/macvlan.md) or [SR-IOV](../multus-underlay/sriov.md), and confirm the network interface and subnet to be used.
+2. It is recommended to use Spiderpool version v0.7.0 and above. The new version of Spiderpool supports auto-installation of [Multus](../../multus-underlay/install.md) which can work with [Multus CR M../../../config/multus-cr.mdultus-cr.md) to use Underlay CNIs including  [Macvlan](../../multus-underlay/macvlan.md) or [SR-IOV](../../multus-underlay/sriov.md), and confirm the network interface and subnet to be used.
 
 ## How to install Spiderpool
 
@@ -110,7 +110,7 @@ Please confirm that your cluster has successfully connected to the `Container Ma
 
         These IP addresses MUST belong to the `IPv6 ippool subnet`. Ignore this option if `install IPv6 ippool` is not enabled.
 
-5. Click the `OK` button in the lower right corner to complete the installation. When finished, you can refer to the [Usage of SpiderPool](./usage.md) to use the IP Pool.
+5. Click the `OK` button in the lower right corner to complete the installation. When finished, you can refer to the [Usage of SpiderPool](../../config/use-ippool/usage.md) to use the IP Pool.
 
 !!! note
 

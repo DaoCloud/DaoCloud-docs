@@ -455,7 +455,7 @@ nav:
                   - 介绍: network/modules/metallb/index.md
                   - 安装: network/modules/metallb/install.md
                   - IPPool 使用说明: network/modules/metallb/usage.md
-                  - L2和BGP 模式说明: network/modules/metallb/l2-bgp.md
+                  - L2 和 BGP 模式说明: network/modules/metallb/l2-bgp.md
                   - 获取客户端源 IP: network/modules/metallb/source_ip.md
               - 集成 Multus-underlay:
                   - 介绍: network/modules/multus-underlay/index.md
