@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # MongoDB
 
 本页可下载 MongoDB 各版本的离线安装包。

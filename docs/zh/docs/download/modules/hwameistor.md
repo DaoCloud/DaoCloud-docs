@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 本地存储：hwameistor-operator
 
 本页可下载 hwameistor-operator 的离线安装包，然后通过这个 Operator 安装 HwameiStor 本地存储模块。

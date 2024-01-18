@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # RabbitMQ
 
 本页可下载 RabbitMQ 各版本的离线安装包。

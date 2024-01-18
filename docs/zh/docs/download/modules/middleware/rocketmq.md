@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # RocketMQ
 
 本页可下载 RocketMQ 各版本的离线安装包。
