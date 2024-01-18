@@ -3,7 +3,7 @@ MTPE: FanLin
 Date: 2024-01-11
 ---
 
-# Manually Sync App
+# Manually Synchronize Application
 
 This page demonstrates how to manually sync a continuously deployed application.
 

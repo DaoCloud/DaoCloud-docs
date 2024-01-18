@@ -3,7 +3,7 @@ MTPE: FanLin
 Date: 2024-01-09
 ---
 
-# Creating a Multi-branch Pipeline
+# Create a Multi-branch Pipeline
 
 Workbench supports the creation of multi-branch pipelines based on code repositories.
 

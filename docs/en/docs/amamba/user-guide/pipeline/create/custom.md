@@ -3,7 +3,7 @@ MTPE: FanLin
 Date: 2024-01-09
 ---
 
-# Creating a Custom Pipeline
+# Create a Custom Pipeline
 
 The Workbench pipeline supports custom creation, allowing you to visually arrange the pipeline using the created pipeline.
 
