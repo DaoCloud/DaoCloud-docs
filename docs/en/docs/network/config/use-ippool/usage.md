@@ -16,9 +16,9 @@ This page describes how to configure multiple NICs for workload Pods in combinat
 
 ## Prerequisites
 
-1. [Install SpiderPool](../../modules/spiderpool/install.md).
+1. [Install SpiderPool](../../modules/spiderpool/install/install.md).
 2. [Install Multus with Macvlan/SR-IOV](../../modules/multus-underlay/install.md).
-3. If you use manual selection of IP pool, [Create IP Subnet and IP Pool](../../modules/spiderpool/createpool.md) in advance. If you use automatic creation of a fixed IP pool, [Create  IP Pool](../../modules/spiderpool/createpool.md) in advance.
+3. If you use manual selection of IP pool, [Create IP Subnet and IP Pool](../ippool/createpool.md) in advance. If you use automatic creation of a fixed IP pool, [Create  IP Pool](../ippool/createpool.md) in advance.
 
 ## Steps
 
@@ -51,7 +51,7 @@ This page describes how to configure multiple NICs for workload Pods in combinat
 
     ![Manual Selection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/useippool03.png)
 
-    Note: If the chosen [IP Pool Creation Time](\createpool.md) has added node affinity like: `zone:beijing`, please add the corresponding label `zone:beijing` when creating the workload. For use cases, please refer to: [Instructions for Use of IP Pool](ippoolusage.md)![zone-beijing](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/zone-beijing.png)
+    Note: If the chosen [IP Pool Creation Time](../ippool/createpool.md) has added node affinity like: `zone:beijing`, please add the corresponding label `zone:beijing` when creating the workload. For use cases, please refer to: [Instructions f../../config/ippool/ippoolusage.mdool](ippoolusage.md)![zone-beijing](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/zone-beijing.png)
 
     **Automatically create fixed IP pool**
 
@@ -60,7 +60,7 @@ This page describes how to configure multiple NICs for workload Pods in combinat
     ![Auyomatically Create](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/useippool04.png)
 
     **Use the default IP pool**
-    Create an IP pool in advance, and in the Multus CNI configuration, select the network card with the default IP pool to use the default IP pool function. For details, please refer to: [Creating a Multus CR](../../config/multus-cr.md)
+    Create an IP pool in advance, and in the Multus CNI configuration, select the network card with the default IP pool to use the default IP pool function. For details, please refer to: [Creating a Multus CR](../multus-cr.md)
     ![Default IP Pool](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/useippool05.png)
 
 4. After creating the workload, you can click the corresponding workload `workload01` to view the IP used by the workload Pod.

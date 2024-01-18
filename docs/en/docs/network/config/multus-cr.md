@@ -5,7 +5,7 @@ If you need to create a new **Multus CR instance**, you can refer to this docume
 
 ## Prerequisites
 
-[SpiderPool successfully deployed](../modules/spiderpool/install.md), the new version of SpiderPool includes all the features of Multus-underlay.
+[SpiderPool successfully deployed](../modules/spiderpool/install/install.md), the new version of SpiderPool includes all the features of Multus-underlay.
 
 ## UI Interface Operations
 
@@ -114,4 +114,4 @@ The queried `resourceName` needs to be prefixed with `spidernet.io/`.
 
 - `JSON`: for custom types, make sure to input a valid JSON file.
 
-After creating it, you can use the Multus CR to manage [workloads](../modules/spiderpool/usage.md).
+After creating it, you can use the Multus CR to manage [workloads](use-ippool/usage.md).

@@ -7,7 +7,7 @@ Date: 2023-01-29
 
 # Instructions for using the IPPool
 
-This page describes the different cases for using IP pools when using Spiderpool for IP allocation and management. Please make sure that [SpiderPool has been installed correctly](install.md) before using it.
+This page describes the different cases for using IP pools when using Spiderpool for IP allocation and management. Please make sure that [SpiderPool has been installed correctly](../../modules/spiderpool/install.md) before using it.
 
 ## Fixed IP for workloads
 
@@ -15,13 +15,11 @@ Spiderpool provides two ways to use fixed IP for workloads:
 
 - `Manually create a fixed IPPool`, specify the workload affinity of the IPPool to be used, and select the corresponding fixed IPPool when creating the workload.
 
-    **Use cases**: this method is applicable to the scenario of strong IP control. It is necessary to apply for opening the firewall in advance for IP release. After the release, the workload can use the corresponding fixed IP. For the operation method, please refer to: [Create subnet and IPPool](createpool.md) and [Workload use IPPool](usage.md).
+    **Use cases**: this method is applicable to the scenario of strong IP control. It is necessary to apply for opening the firewall in advance for IP release. After the release, the workload can use the corresponding fixed IP. For the operation method, please refer to: [Create subnet and IPPool](createpool.md) and [Workload use IPPool](../use-ippool/usage.md)
 
 - `Automatically create a fixed IPPool`. After creating a subnet and adding an IP to be used, the application administrator will automatically create a fixed IPPool based on the created subnet, and the created IPPool will only be used exclusively by this workload.
 
-    **Use cases**: this method is applicable to IP coarse-grained management. The firewall can be released based on a large range of IP (such as: 10.6.124.10~10.6.124.200). After the release, the workload can automatically obtain an IP based on this IP segment and create a corresponding fixed IPPool. For the operation method, please refer to [Create Subnet and IPPool](createpool.md) and [Workload Uses IPPool](usage.md).
-
-    
+    **Use cases**: this method is applicable to IP coarse-grained management. The firewall can be released based on a large range of IP (such as: 10.6.124.10~10.6.124.200). After the release, the workload can automatically obtain an IP based on this IP segment and create a corresponding fixed IPPool. For the operation method, please refer to [Create Subnet and IPPool](createpool.md) and [Workload Uses IPPool](../use-ippool/usage.md)
 
 ## Node affinity for IPPool
 
@@ -40,13 +38,11 @@ At the same time, when the workload is created:
 
 - Different workloads need to be scheduled on **different nodes** and use **different subnets**, such as: [Mixed use of SR-IOV and Macvlan CNI](../../plans/ethplan.md). The use process is as follows:
 
-    
-
 ## Namespace affinity for IPPools
 
 **Applicable scene**:
 
-If the created IPPool is only assigned to a certain namespace, the IP in this IPPool can be used when the workload in this namespace is created, and the IPPool with namespace affinity is added to be shared by the specified namespace. For the operation method, please refer to [Create subnet and IPPool](createpool.md).
+If the created IPPool is only assigned to a certain namespace, the IP in this IPPool can be used when the workload in this namespace is created, and the IPPool with namespace affinity is added to be shared by the specified namespace. For the operation method, please refer to [Create subnet and IPPool](./createpool.md).
 
 ## FAQs
 

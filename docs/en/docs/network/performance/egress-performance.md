@@ -1,18 +1,18 @@
-# Egress 性能测试报告
+# Egress Performance Test Report
 
-EgressGateway 使用了 vxlan 隧道，经过测试 vxlan 损耗在 10% 左右。如果您发现 EgressGateway 的速度不达标，可以执行如下步骤检查：
+EgressGateway uses a vxlan tunnel, and the test shows that the vxlan overhead is about 10%. If you find that the speed of EgressGateway is not up to standard, you can follow the steps below to check:
 
-1. 确认宿主机节点到节点的速度符合预期；
+1. Make sure that the speed between the host nodes meets expectations.
     
-    vxlan 使用的宿主机的网卡的 offload 设置会对 vxlan 接口的速度产生较小的影响（在 10G 网卡测试中仅会有 0.5 Gbits/sec 的差距），可以执行 `ethtool --offload host-interface-name rx on tx on` 开启 offload。
+    The offload settings of the host's network card used by vxlan will have a small impact on the speed of the vxlan interface (only a difference of 0.5 Gbits/sec in the test of a 10G network card). You can run `ethtool --offload host-interface-name rx on tx on` to enable offload.
 
-2. vxlan 网卡的 offload 设置可以对 vxlan 接口速度产生较大的影响（在 10G 网卡测试中，不开启 2.5 Gbits/sec，开启 8.9 Gbits/sec），你可以运行 `ethtool -k egress.vxlan` 检查 checksum offload 是否关闭，并通过 helm values 的配置 `feature.vxlan.disableChecksumOffload` 为 `false` 开启 offload。
+2. The offload settings of the vxlan network card can have a greater impact on the speed of the vxlan interface (in the test of a 10G network card, 2.5 Gbits/sec without offload and 8.9 Gbits/sec with offload). You can run `ethtool -k egress.vxlan` to check if checksum offload is disabled, and enable offload by setting `feature.vxlan.disableChecksumOffload` to `false` in the helm values.
 
 ## Benchmark
 
-### 物理机
+### Physical Machine
 
-以下是我们使用物理服务器做压测的数据。
+The following data is obtained from load testing on physical servers.
 
 | Name        | CPU                                       | MEM  | Interface    |
 |:------------|:------------------------------------------|:-----|:-------------|
@@ -28,9 +28,9 @@ EgressGateway 使用了 vxlan 隧道，经过测试 vxlan 损耗在 10% 左右�
 
 ![egress-check](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/egressgateway/speed01.svg)
 
-#### 虚拟机
+#### Virtual Machine
 
-以下是使用 VMWare 的虚拟机，限制 Node 规格为 4C8G 压测的数据，
+The following data is obtained from load testing on VMware virtual machines, with the Node restricted to 4C8G.
 
 | Name        | CPU                                         | MEM | Interface |
 |:------------|:--------------------------------------------|:----|:----------|
