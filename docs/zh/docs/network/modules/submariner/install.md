@@ -20,6 +20,7 @@ hide:
     * OVN(要求 OVN NorthBound DB 的版本 > 6.1.0+)
 - Kube-proxy 的模式必须为 `IPtables`，`IPvs` 模式目前尚不支持
 - 集群内部需要允许 `Vxlan` 的流量，集群外部需要放通 udp/4500 端口
+
 > Submariner 现在处于比较早期的阶段, 出现 Bug 比较常见。
 
 ## 安装步骤

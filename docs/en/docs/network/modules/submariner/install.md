@@ -22,6 +22,7 @@ This page describes how to install Submariner.
     * OVN (requires OVN NorthBound DB version > 6.1.0+)
 - Kube-proxy's mode must be `IPtables`, and `IPvs` mode has been not supported yet
 - The cluster needs to allow `Vxlan` traffic and udp/4500 ports outside the cluster
+
 > Submariner is still in its infancy, thus bugs are common.
 
 ## How to install Submariner
@@ -68,7 +69,7 @@ Make sure your cluster is successfully connected to the `container management` p
 
     The above parameters description:
 
-    * ``Broker`` -> ``brokerK8sApiServer``: the address of the Broker Cluster API-Server, which can be obtained by the following command:
+    * `Broker` -> `brokerK8sApiServer`: the address of the Broker Cluster API-Server, which can be obtained by the following command:
 
         ```shell
         # On the cluster where submariner-k8s-broker is installed
@@ -148,7 +149,8 @@ Make sure your cluster is successfully connected to the `container management` p
 
 15. The subcluster master01 join is finished, install submariner in another subcluster in the same way.
 
-## Caution
+## Cautions
 
-- After installation, you need to tag at least one node with "submariner.io/gateway: true". The Gateway component will only be installed if this tag is present.
+- After installation, you need to tag at least one node with "submariner.io/gateway: true".
+  The Gateway component will only be installed if this tag is present.
 - If the cluster CNI is Calico, some additional work is required to resolve compatibility issues with Calico, see [usage](usage.md).
