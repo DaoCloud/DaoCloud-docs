@@ -16,12 +16,12 @@
 
 ## 搭建 Kubernetes 集群
 
-参考 [官方文档](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/), 在控制节点安装 kubeadm、kubectl。
-在控制节点和工作节点安装: kubelet、容器运行时(如 containerd)。
+参考 [官方文档](https://kubernetes.io/zh-cn/docs/setup/production-environment/tools/kubeadm/install-kubeadm/), 在控制节点安装 kubeadm、kubectl。
+在控制节点和工作节点安装：kubelet、容器运行时（如 containerd）。
 
 !!! note
 
-    需要修改每个节点 kubelet 的配置文件: `/usr/lib/systemd/system/kubelet.service.d/10-kubeadm.conf`, 配置 `--provider-id`:
+    需要修改每个节点 kubelet 的配置文件 `/usr/lib/systemd/system/kubelet.service.d/10-kubeadm.conf`，配置 `--provider-id`：
 
     ```shell
     META_EP=http://100.100.100.200/latest/meta-data
@@ -34,8 +34,10 @@
 
 以 containerd 作为容器运行时为例，使用以下配置安装集群:
 
+```shell
+cat cluster.yaml
+```
 ```yaml
-[root@iZ2v]# cat cluster.yaml
 apiVersion: kubeadm.k8s.io/v1beta3
 bootstrapTokens:
   - groups:
@@ -72,7 +74,7 @@ networking:
   dnsDomain: cluster.local
   serviceSubnet: 172.21.0.0/24
   podSubnet: 10.244.0.0/16
-[root@iZ2v]# kubeadm init --config cluster.yaml
+$ kubeadm init --config cluster.yaml
 ```
 
 > 规划 serviceSubnet 和 podSubnet 不冲突
@@ -133,8 +135,8 @@ networking:
     最后点击创建 AccessKey，并保存 `access_secret` 和 `access_key`，这需要在下面安装 Terway 的时候用到。
 
     ```shell 
-    [root@iZ2v]# export ACCESS_KEY_ID=LTAI********************
-    [root@iZ2v]# export ACCESS_KEY_SECRET=HAeS**************************
+    export ACCESS_KEY_ID=LTAI********************
+    export ACCESS_KEY_SECRET=HAeS**************************
     ```
 
 2. 安装 Terway CNI 插件。
@@ -149,9 +151,9 @@ networking:
     执行安装:
 
     ```shell
-    [root@iZ2v]# kubectl apply -f  terway.yaml
-    [root@iZ2v]# kubectl get po -n kube-system -o wide | grep terway
-    [root@iZ2v]# kubectl get po -n kube-system -o wide | grep terway
+    $ kubectl apply -f  terway.yaml
+    $ kubectl get po -n kube-system -o wide | grep terway
+    $ kubectl get po -n kube-system -o wide | grep terway
     terway-rjqbj                                                2/2     Running   0           3m   192.168.200.2   cn-chengdu.i-2vcxxxxx   <none>           <none>
     terway-z5cvh                                                2/2     Running   0           3m   192.168.200.1   cn-chengdu.i-2vcxxxxx   <none>           <none>
     ```
@@ -163,8 +165,8 @@ CCM 组件用于发布 Pod 跨节点访问路由以及 LoadBalancer Service 的�
 1. 安装 ccm 的 configMap: cloud-config。 需要将 access 凭证进行 base64 转码:
 
     ```shell
-    [root@iZ2v]# accessKeyIDBase64=`echo -n "$ACCESS_KEY_ID" |base64 -w 0`
-    [root@iZ2v]# accessKeySecretBase64=`echo -n "$ACCESS_KEY_SECRET"|base64 -w 0`
+    $ accessKeyIDBase64=`echo -n "$ACCESS_KEY_ID" |base64 -w 0`
+    $ accessKeySecretBase64=`echo -n "$ACCESS_KEY_SECRET"|base64 -w 0`
     cat <<EOF | kubectl apply -f -
     apiVersion: v1
     kind: ConfigMap
@@ -189,7 +191,7 @@ CCM 组件用于发布 Pod 跨节点访问路由以及 LoadBalancer Service 的�
     执行安装:
 
     ```shell
-    [root@iZ2v]# kubectl apply -f cloud-controller-manager.yaml
+    kubectl apply -f cloud-controller-manager.yaml
     ```
 
 3. 安装成功后，可在阿里云管理界面查看 VPC 路由已经成功同步:
@@ -234,9 +236,9 @@ spec:
 EOF
 ```
 
-创建完成后，经过测试: 网络联通正常(包括 Pod -> Pod, Pod -> Service, nodePort, LoadBalancer Service)，网络策略等功能正常。
+创建完成后，经过测试发现：网络连通正常（包括 Pod -> Pod，Pod -> Service，nodePort，LoadBalancer Service），网络策略等功能正常。
 
-### 使用ENI模式
+### 使用 ENI 模式
 
 在 VPC 模式下，Pod 的 IP 是来自虚拟子网，并且不会使用任何的弹性网卡。如果你想要 Pod 独占 ENI，在 VPC 模式，你可以过下面的方式实现:
 
@@ -272,10 +274,10 @@ spec:
 EOF
 ```
 
-> 通过在 resources 中声明: aliyun/eni: 1, 使 Pod 独占 ENI 网卡。
+> 通过在 resources 中声明：aliyun/eni: 1，使 Pod 独占 ENI 网卡。
 
 ```shell
-[root@iZ2v vpc]# kubectl get po -o wide | grep eni
+$ kubectl get po -o wide | grep eni
 dao2048-eni-7f85b8dcc4-6v97q   1/1     Running   0              15s   192.168.20.222   cn-chengdu.i-2vcxxxxxxxx   <none>           <none>
 dao2048-eni-7f85b8dcc4-mvjbs   1/1     Running   0              15s   192.168.20.223   cn-chengdu.i-2vcxxxxxxxx   <none>           <none>
 ```
@@ -289,4 +291,5 @@ dao2048-eni-7f85b8dcc4-mvjbs   1/1     Running   0              15s   192.168.20
 ### ENIIP 模式(对自建集群支持不够)
 
 - 自建集群安装 Veth 模式失败，详见 [#Issue 524](https://github.com/AliyunContainerService/terway/issues/524), 所以暂不支持 Veth 模式。
-- 自建集群安装 IPVlan 模式后，有各种通信问题(Node 访问 Pod 及 LoadBalancer Service不通)，详见 [#Discussion 306](https://github.com/AliyunContainerService/terway/discussions/306), 所以暂不推荐使用此模式。
+- 自建集群安装 IPVlan 模式后，有各种通信问题(Node 访问 Pod 及 LoadBalancer Service不通)，
+  详见 [#Discussion 306](https://github.com/AliyunContainerService/terway/discussions/306), 所以暂不推荐使用此模式。

@@ -7,7 +7,7 @@ This page introduce how to install and use [Calico](https://github.com/projectca
 To get started, prepare a self-built Kubernetes cluster on Alibaba Cloud. Alternatively, you can manually set up a cluster by following the instructions about [building a Kubernetes cluster](usage.md#set-up-the-kubernetes-cluster). Once the cluster is ready, download the Calico deployment manifest file:
 
 ```shell
-~# wget https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/calico.yaml
+$ wget https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/calico.yaml
 ```
 
 > To speed up image pulling, we recommend running the following command: `sed -i 's?docker.io?docker.m.daocloud.io?g' calico.yaml`
@@ -19,7 +19,7 @@ Next, let's explore the installation process for both tunnel mode (IPIP) and rou
 Tunneling protocols like VXLAN and IPIP enable network connectivity regardless of the underlying network implementation. They create a large Layer 2 overlay network that can be used in most public cloud environments. In this mode, the [CCM](https://github.com/AliyunContainerService/alicloud-controller-manager) is not required. The default Calico deployment manifest file uses IPIP mode. Install Calico using the following command:
 
 ```shell
-~# kubectl apply -f calico.yaml
+$ kubectl apply -f calico.yaml
 ```
 
 Wait for the installation to complete:
@@ -34,17 +34,17 @@ calico-node-6wzkj                                           1/1     Running     
 Create a test deployment to verify connectivity:
 
 ```shell
-~# kubectl  get po -o wide
+$ kubectl  get po -o wide
 NAME                    READY   STATUS    RESTARTS   AGE   IP               NODE                  NOMINATED NODE   READINESS GATES
 test-77877f4755-24gqt   1/1     Running   0          13m   10.244.236.193   cn-chengdu.i-2vcxxr   <none>           <none>
 test-77877f4755-2d6r8   1/1     Running   0          13m   10.244.140.2     cn-chengdu.i-2vcxxs   <none>           <none>
-~# kubectl  get svc
+$ kubectl  get svc
 NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
 kubernetes   ClusterIP   172.21.0.1     <none>        443/TCP        31d
 test         ClusterIP   172.21.0.83    <none>        80/TCP         2m
 
-~# # Access Pods across nodes 
-~# kubectl exec test-77877f4755-24gqt -- ping -c1 10.244.140.2
+# Access Pods across nodes
+$ kubectl exec test-77877f4755-24gqt -- ping -c1 10.244.140.2
 PING 10.244.140.2 (10.244.140.2) 56(84) bytes of data.
 64 bytes from 10.244.140.2: icmp_seq=1 ttl=62 time=0.471 ms
 
@@ -52,8 +52,8 @@ PING 10.244.140.2 (10.244.140.2) 56(84) bytes of data.
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 rtt min/avg/max/mdev = 0.471/0.471/0.471/0.000 ms
 
-~# # Access external targets
-~# kubectl exec test-77877f4755-24gqt -- ping -c1 8.8.8.8
+# Access external targets
+$ kubectl exec test-77877f4755-24gqt -- ping -c1 8.8.8.8
 PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 64 bytes from 8.8.8.8: icmp_seq=1 ttl=109 time=38.5 ms
 
@@ -61,8 +61,8 @@ PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 rtt min/avg/max/mdev = 38.479/38.479/38.479/0.000 ms
 
-~# # Access ClusterIP
-~# kubectl exec test-77877f4755-24gqt -- curl -i 172.21.0.83
+# Access ClusterIP
+$ kubectl exec test-77877f4755-24gqt -- curl -i 172.21.0.83
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100   153  100   153    0     0  93463      0 --:--:-- --:--:-- --:--:--  149k
@@ -86,7 +86,7 @@ However, the route publication provided by the CCM component is usually based on
 
 Before diving into how to use, make sure to install the [CCM component](https://github.com/AliyunContainerService/alicloud-controller-manager) following the instructions in the [CCM installation](usage.md#install-the-ccm-component-and-publish-vpc-routes). Additionally, switch Calico to non-tunnel mode by modifying specific environment variables to "Never" in the calico-node daemonSet deployment manifest file:
 
-```shell
+```yaml
 # Enable IPIP
 - name: CALICO_IPV4POOL_IPIP
 value: "Never"
@@ -103,7 +103,7 @@ value: "Never"
 
 To switch to `host-local` IPAM, modify the ConfigMap in the Calico installation manifest file as follows:
 
-```shell
+```yaml
 # Source: calico/templates/calico-config.yaml
 # This ConfigMap is used to configure a self-hosted Calico installation.
 kind: ConfigMap
@@ -166,7 +166,7 @@ data:
 After installing and ensuring Calico is ready, create a test application to observe that the Pods' IP addresses belong to the node's PodCIDR (10.244.0.0/24 and 10.244.1.0/24):
 
 ```shell
-~# k get po -o wide
+$ k get po -o wide
 NAME                    READY   STATUS    RESTARTS   AGE   IP           NODE                  NOMINATED NODE   READINESS GATES
 test-77877f4755-58hlc   1/1     Running   0          5s    10.244.0.2   cn-chengdu.i-2vcxxr   <none>           <none>
 test-77877f4755-npcgs   1/1     Running   0          5s    10.244.1.2   cn-chengdu.i-2vcxxs   <none>           <none>
@@ -178,7 +178,7 @@ The test finds that communication between Pods functions correctly.
 
 1. To switch to `spiderpool` IPAM, modify the ConfigMap in the Calico installation manifest file as follows:
 
-    ```shell
+    ```yaml
     # Source: calico/templates/calico-config.yaml
     # This ConfigMap is used to configure a self-hosted Calico installation.
     kind: ConfigMap
@@ -240,7 +240,7 @@ The test finds that communication between Pods functions correctly.
 
         If you encounter any issues where Calico fails to start and reports the following error, try deleting the `/var/lib/cni/networks/k8s-pod-network/` on each node.
 
-        ```shell
+        ```console
         2023-09-27 10:14:42.096 [ERROR][1] ipam_plugin.go 106: failed to migrate ipam, retrying... error=failed to get add IPIP tunnel addr 10.244.1.1: The provided IP address is not in a configured pool
         ```
 
@@ -249,9 +249,9 @@ The test finds that communication between Pods functions correctly.
     Run the following command to install  Spiderpool:
 
     ```shell
-    ~# helm repo add spiderpool https://spidernet-io.github.io/spiderpool
-    ~# helm repo update spiderpool
-    ~# helm install spiderpool spiderpool/spiderpool --namespace kube-system --wait
+    helm repo add spiderpool https://spidernet-io.github.io/spiderpool
+    helm repo update spiderpool
+    helm install spiderpool spiderpool/spiderpool --namespace kube-system --wait
     ```
 
     > Helm binary should be installed in advance
@@ -260,7 +260,7 @@ The test finds that communication between Pods functions correctly.
     After the installation is complete, you need to create a dedicated Spiderpool IP pool for the podCIDR of each node to be used by Pods:
 
     ```shell
-    ~# kubectl  get nodes -o=custom-columns='NAME:.metadata.name,podCIDR:.spec.podCIDR'
+    $ kubectl  get nodes -o=custom-columns='NAME:.metadata.name,podCIDR:.spec.podCIDR'
     NAME                  podCIDR
     cn-chengdu.i-2vcxxr   10.244.0.0/24
     cn-chengdu.i-2vcxxs   10.244.1.0/24
@@ -299,18 +299,18 @@ The test finds that communication between Pods functions correctly.
 3. Create a test application and verify connectivity. 
 
     ```shell
-    ~# kubectl get po -o wide
+    $ kubectl get po -o wide
     NAME                    READY   STATUS    RESTARTS   AGE   IP             NODE                                NOMINATED NODE   READINESS GATES
     test-77877f4755-nhm4f   1/1     Running   0          27s   10.244.0.179   cn-chengdu.i-2vcxxr   <none>           <none>
     test-77877f4755-sgqbx   1/1     Running   0          27s   10.244.1.193   cn-chengdu.i-2vcxxs   <none>           <none>
-    ~# kubectl get svc
+    $ kubectl get svc
     NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
     kubernetes   ClusterIP   172.21.0.1     <none>        443/TCP        31d
     test         ClusterIP   172.21.0.166   <none>        80/TCP         3m43s
     ```
 
     ```shell
-    ~# kubectl exec test-77877f4755-nhm4f -- ping -c1 10.244.1.193
+    $ kubectl exec test-77877f4755-nhm4f -- ping -c1 10.244.1.193
     PING 10.244.1.193 (10.244.1.193) 56(84) bytes of data.
     64 bytes from 10.244.1.193: icmp_seq=1 ttl=62 time=0.434 ms
 
@@ -322,7 +322,7 @@ The test finds that communication between Pods functions correctly.
     Test accessing ClusterIP:
 
     ```shell
-    ~# kubectl  exec test-77877f4755-nhm4f -- curl -i 172.21.0.166
+    $ kubectl  exec test-77877f4755-nhm4f -- curl -i 172.21.0.166
       % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                      Dload  Upload   Total   Spent    Left  Speed
     100   153  100   153    0     0   127k      0 --:--:-- --:--:-- --:--:--  149k
