@@ -989,6 +989,26 @@ nav:
           - 智能算力:
               - 介绍:
                   - 什么是智能算力: baize/intro/index.md
+                  - 安装: baize/intro/install.md
+                  - 第一次使用: baize/intro/first.md
+              - 开发控制台:
+                  - 介绍: baize/developer/index.md
+                  - Notebooks:
+                      - 创建 Notebook: baize/developer/notebooks/create.md
+                      - 启动和暂停 Notebook: baize/developer/notebooks/create.md
+                      - 查看 Notebook 工作负载: baize/developer/notebooks/create.md
+                      - 删除 Notebook: baize/developer/notebooks/create.md
+                  - 任务中心:
+                      - 创建任务: baize/developer/jobs/create.md
+                      - 删除任务: baize/developer/jobs/delete.md
+                  - 数据管理:
+                      - 创建数据集: baize/developer/dataset/create.md
+                      - 删除数据集: baize/developer/dataset/delete.md
+              - 运维管理:
+                  - GPU 资源管理: baize/oam/resource.md
+                  - 队列管理:
+                      - 创建队列: baize/oam/queue/create.md
+                      - 删除队列: baize/oam/queue/delete.md
       - 边缘计算:
           - 云边协同:
               - 介绍:
