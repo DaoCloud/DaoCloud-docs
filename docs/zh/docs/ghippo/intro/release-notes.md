@@ -2,6 +2,21 @@
 
 本页列出全局管理各版本的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2024-1-19
+
+### v0.23.1
+
+#### 优化
+
+- Trigger FoldersAuthz CR 时用 single flight 机制来限流
+- 过滤掉重复授权的情况
+- Workspace 授权信息不存到 FoldersAuthz CR 里
+- ghippo-controller-manager 重启时全量更新一次 FoldersAuthz CR
+
+#### 修复
+
+- 修复大量授权请求导致 FoldersAuthz CR 更新过于频繁把 k8 打爆问题
+
 ## 2023-12-29
 
 ### v0.23.0
