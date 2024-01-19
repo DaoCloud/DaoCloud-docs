@@ -1,7 +1,7 @@
 # Building Microservices Apps from Git Repo
 
 The Workbench supports building applications using four methods:
-Git repo, Jar packages, container images, and Helm templates. This article
+Git repo, Jar packages, container images, and Helm charts. This article
 explains how to build a traditional microservices application from a Git repo
 source code, enabling features such as traffic governance, log viewing, monitoring, and tracing.
 
@@ -29,7 +29,7 @@ Following [Credential Management](../pipeline/credential.md), create two credent
 
 1. In the __Workbench__ -> __Wizard__ page, click __Build With Git Repo__ .
 
-    ![Wizard](../../images/ms01.png)
+    ![Wizard](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/ms01.png)
 
 2. Fill in the basic information as per the instructions and click __Next__ :
 
@@ -42,7 +42,7 @@ Following [Credential Management](../pipeline/credential.md), create two credent
       or create a new one, which by default will have the same name as specified.
     - Instances: Specify the number of instances (Pods).
 
-    ![Basic Information](../../images/git01.png)
+    ![Basic Information](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/git01.png)
 
 3. Fill in the pipeline configuration details based on the instructions and click __Next__ .
 
@@ -67,7 +67,7 @@ Following [Credential Management](../pipeline/credential.md), create two credent
       You can set the upstream artifact download address, upstream image download address as parameters
       and also define custom parameters.
 
-    ![Pipeline Configuration](../../images/git02.png)
+    ![Pipeline Configuration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/git02.png)
 
 4. Fill in the container configuration details based on the instructions and click __Next__ .
 
@@ -99,7 +99,7 @@ Following [Credential Management](../pipeline/credential.md), create two credent
 
     - Data Storage: Configure data volume mounting and data persistence for containers.
 
-    ![Container Configuration](../../images/ms04.png)
+    ![Container Configuration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/ms04.png)
 
 5. On the __Advanced Settings__ page, click __Access MicroServices__ .
    Configure the parameters as per the instructions and click __OK__ .
@@ -113,19 +113,19 @@ Following [Credential Management](../pipeline/credential.md), create two credent
     - Enable Service Governance: The selected registry instance should have
      [Sentinel or Mesh governance plugins enabled](../../../skoala/trad-ms/hosted/plugins/plugin-center.md).
 
-    ![Advanced Configuration](../../images/git03.png)
+    ![Advanced Configuration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/git03.png)
 
 ## Viewing and Accessing Microservices Information
 
 1. On the left navigation bar, click __Overview__ , and within the __Applications__ tab,
    select the native application to view its details.
 
-    ![Native Applications](../../images/git04.png)
+    ![Native Applications](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/git04.png)
 
 2. In the details page, under the __Application Resources__ tab, select the resource with
    the __Service Mesh__ label and click it.
 
-    ![Navigate](../../images/git05.png)
+    ![Navigate](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/git05.png)
 
 3. You will be redirected to the Microservices Engine where you can view the
    [service details](../../../skoala/trad-ms/hosted/services/check-details.md).

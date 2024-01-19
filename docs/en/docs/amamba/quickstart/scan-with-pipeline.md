@@ -1,72 +1,80 @@
-# Implementing Code Scanning with Pipelines
+---
+MTPE: FanLin
+Date: 2024-01-18
+---
 
-The source code in the code repository is the initial and raw form of software, and its security vulnerabilities are a direct root cause of software vulnerabilities. Therefore, analyzing and discovering security vulnerabilities in the source code through code scanning is an important method to reduce potential software vulnerabilities.
+# Implement Code Scanning with Pipelines
 
-For example, SonarQube is an automated code review tool used to detect bugs and improve test coverage in project code. It can be integrated into existing workflows in the project to enable continuous code inspection between project branches and pull requests.
+The source code in the code repository, as the original form of software, its security flaws are the direct root cause of software vulnerabilities. Therefore, discovering security flaws in the source code through code scanning analysis is an important method to reduce potential vulnerabilities in software.
 
-This article will explain how to integrate SonarQube into pipelines to implement code scanning capabilities.
+For example, SonarQube is an automatic code review tool used to detect bugs in project code and improve test coverage, etc. It can be integrated with existing workflows in the project for continuous code checks between project branches and pull requests.
 
-## Integrating SonarQube into Workspaces
+This article will introduce how to integrate SonarQube into the pipeline to implement code scanning capabilities.
 
-Ensure that you have a SonarQube environment and that it is properly connected to the current network environment.
+## Integrate SonarQube by workspace
 
-1. Go to the __Toolchain Integration__ page and click the __Add Tool Integration__ button.
+Please ensure that you have a SonarQube environment and that it is network-connected with the current environment without any problems.
 
+1. Enter the __Toolchain Integration__ page, click the __Toolchain Integration__ button.
 
-2. Configure the relevant parameters according to the following instructions:
+    ![Toolchain Integration](../images/scanp01.png)
 
-    - Tool: Select a toolchain type for integration.
-    - Integration Name: The name of the integrated tool, should not be duplicate.
-    - SonarQube URL: The accessible URL of the toolchain, starting with http:// or https:// followed by a domain name or IP address.
-    - Token: Generate an admin token (Token) in SonarQube. The operation path is: My Account -> Profile -> Security -> Generate -> Copy
+2. Refer to the following instructions to configure the relevant parameters:
 
+    - Tools: Choose a toolchain type for integration.
+    - Integration Name: The name of the integrated tool, must not be duplicated.
+    - SonarQube Address: The address that can access the toolchain, starting with a domain name or IP address that starts with http://, https://.
+    - Token: Generate an administrator token (Token) in SonarQube, the operation path is: __My Account__ -> __Profile__ -> __Security__ -> __Generate__ -> __Copy__
 
+    ![Configure Parameters](../images/scanp02.png)
 
-3. Click __OK__ to complete the integration and return to the toolchain list page.
+3. Click __OK__ to return to the toolchain list page after successful integration.
 
-## Creating a Pipeline
+## Creating a pipeline
 
-1. On the Pipelines page, click __Create Pipeline__ .
+1. On the pipeline page, click __Create Pipeline__.
 
+    ![Create Pipeline](../images/scanp03.png)
 
+2. Choose __Create a custom pipelines__.
 
-2. Select __Custom Creation__ .
+    ![Custom Pipelines](../images/scanp04.png)
 
+3. Enter a name, use the other default values, and click __OK__.
 
+    ![Confirm Creation](../images/scanp05.png)
 
-3. Enter a name and use default values for other fields, then click __OK__ .
-
-
-
-## Editing Pipeline Steps
+## Editing pipeline
 
 1. Click a pipeline to enter its details page, and click __Edit Pipeline__ in the upper right corner.
 
-
+    ![Edit Pipeline](../images/scanp06.png)
 
 2. Configure global settings:
 
+    ![Global Settings](../images/scanp07.png)
 
+3. Define stage one __git clone__ in the graphical interface as follows:
 
-3. In the graphical interface, define Stage 1 __git clone__ with the following configuration:
+    ![Git Clone](../images/scanp08.png)
 
+4. Define stage two __SonarQube analysis__ in the graphical interface as follows:
 
+   - SonarQube Instance: Select the SonaQube instance integrated in the above steps.
+   - Code Language: Since different code languages correspond to different SonaQube scan commands, if the language is Java, please select Maven, otherwise select others. In this example, we choose others.
+   - Project: Define the project to be scanned in SonarQube
+   - Scan Files: The directory address of the file in the code repository that needs to be scanned
 
-4. In the graphical interface, define Stage 2 __SonarQube analysis__ with the following configuration:
+    ![SonarQube Analysis](../images/scanp09.png)
 
-    - SonarQube Instance: Select the previously integrated SonarQube instance.
-    - Code Language: Different code languages correspond to different scanning commands in SonarQube. If it is Java language, select Maven; otherwise, choose other. For this example, we select "other".
-    - Project: Define the project to be scanned in SonarQube.
-    - Scan Files: Specify the directory address of the code repository to be scanned.
+    ![Edit Stage](../images/scanp10.png)
 
+5. Save and immediately run the pipeline, and wait for the pipeline to run successfully.
 
-5. Save the changes and immediately run the pipeline, then wait for the pipeline to run successfully.
-
-## Viewing Code Scanning Results
+## Viewing code scanning results
 
 1. After the pipeline runs successfully, click __Code Quality Check__ on the pipeline details page.
 
+    ![Code Quality Check](../images/scanp11.png)
 
-
-2. View the code scanning results. Click __View More__ to go to the SonarQube backend for more scanning information.
-
+2. View the code scanning results, click __View More__ to go to the SonarQube backend to view more scanning information.

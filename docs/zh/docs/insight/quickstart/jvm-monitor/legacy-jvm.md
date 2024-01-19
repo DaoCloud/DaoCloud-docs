@@ -85,4 +85,4 @@ spec:
               memory: 400Mi
 ```
 
-以上示例中，Insight 会通过 __ :8080//actuator/prometheus__ 抓取通过 *Spring Boot Actuator* 暴露出来的 Prometheus 指标。
+以上示例中，Insight 会通过 __:8080//actuator/prometheus__ 抓取通过 *Spring Boot Actuator* 暴露出来的 Prometheus 指标。

@@ -20,7 +20,7 @@ How can multiple instances be created using CRDs?
 CloudTTY provides solutions to these problems. Give CloudTTY a try 🎉!
 CloudTTY has been selected for inclusion in the CNCF Landscape:
 
-![landscape](./images/cloudtty.png)
+![landscape](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/community/images/cloudtty.png)
 
 ## Use Cases
 

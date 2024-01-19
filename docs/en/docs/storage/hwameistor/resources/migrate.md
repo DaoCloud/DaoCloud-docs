@@ -33,12 +33,12 @@ LVG needs to be deployed in the Kubernetes system, and the deployment applicatio
 
     Before migration, please unbound PVC. You can unbound them by `Editing Workloads`.
 
-    ![unbound01](../img/unboundpvc-01.png)
+    ![unbound01](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/storage/hwameistor/img/unboundpvc-01.png)
 
 5. Create migration task
 
-    Go to the corresponding cluster --> Click on the left `Container Storage` --> `Hwameistor` Enter the `Hwameistor` interface, select the locally unbound volume,
-    The corresponding PVCs are `pvc-test01` and `pvc-test02`. Click on `...` and select `Migrate`, choose the `SourceNode` and `TargetNode`.
+    Go to the corresponding cluster --> Click the left `Container Storage` --> `Hwameistor` Enter the `Hwameistor` interface, select the locally unbound volume,
+    The corresponding PVCs are `pvc-test01` and `pvc-test02`. Click `...` and select `Migrate`, choose the `SourceNode` and `TargetNode`.
 
     `SourceNode`: The node where the local volume replica is located.
 
@@ -46,9 +46,9 @@ LVG needs to be deployed in the Kubernetes system, and the deployment applicatio
 
     If two/multiple local volumes are bounded on the same application, the two volumes will automatically form a local volume group for migration.
 
-    ![migration01](../img/migrationaction-01.png)
+    ![migration01](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/storage/hwameistor/img/migrationaction-01.png)
 
-6. Click on the corresponding local volume to enter the details and check the migration status.
+6. Click the corresponding local volume to enter the details and check the migration status.
 
 ## Oneline trail steps
 

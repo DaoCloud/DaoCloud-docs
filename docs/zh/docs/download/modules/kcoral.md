@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 应用备份 Kcoral
 
 本页可下载应用备份模块各版本的离线安装包。
@@ -6,7 +11,7 @@
 
 | 版本 | 架构 | 文件大小 | 安装包 |  校验文件 | 更新日期 |
 | ---- | --- | ------ | ------ | ------- | ------- |
-| [v0.8.0](../../kcoral/intro/release-notes.md) | AMD 64 | 84.96MB | [:arrow_down: kcoral_v0.8.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.8.0_amd64.tar) | [:arrow_down: kcoral_v0.8.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.8.0_amd64_checksum.sha512sum) | 2024-01-02 |
+| [v0.8.0](../../kpanda/intro/release-notes.md) | AMD 64 | 84.96MB | [:arrow_down: kcoral_v0.8.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.8.0_amd64.tar) | [:arrow_down: kcoral_v0.8.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.8.0_amd64_checksum.sha512sum) | 2024-01-02 |
 | [v0.7.0](../../kpanda/intro/release-notes.md) | AMD 64 | 59.40 MB | [:arrow_down: kcoral_v0.7.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.7.0_amd64.tar) | [:arrow_down: kcoral_v0.7.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.7.0_amd64_checksum.sha512sum) | 2023-12-01 |
 | [v0.6.1](../../kpanda/intro/release-notes.md) | AMD 64 | 59.38 MB | [:arrow_down: kcoral_v0.6.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.6.1_amd64.tar) | [:arrow_down: kcoral_v0.6.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.6.1_amd64_checksum.sha512sum) | 2023-11-07 |
 | [v0.6.0](../../kpanda/intro/release-notes.md) | AMD 64 | 59.38 MB | [:arrow_down: kcoral_v0.6.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.6.0_amd64.tar) | [:arrow_down: kcoral_v0.6.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.6.0_amd64_checksum.sha512sum) | 2023-10-26 |

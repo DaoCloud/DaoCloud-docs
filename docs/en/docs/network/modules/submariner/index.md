@@ -27,19 +27,18 @@ It includes the following **important components**:
 **Important CRD** lists:
 
 ```shell
-
 [root@master1]# kubectl get crd | grep -iE 'submariner|.multicluster'
-brokers.submariner.io 2023-02-22T13:56:30Z
-clusterglobalegressips.submariner.io 2023-02-22T13:56:37Z
-clusters.submariner.io 2023-02-22T13:56:37Z
-endpoints.submariner.io 2023-02-22T13:56:37Z
-gateways.submariner.io 2023-02-22T13:56:37Z
-globalegressips.submariner.io 2023-02-22T13:56:37Z
-globalingressips.submariner.io 2023-02-22T13:56:37Z
-servicediscoveries.submariner.io 2023-02-22T13:56:30Z
-serviceexports.multicluster.x-k8s.io 2023-02-22T11:32:29Z
-serviceimports.multicluster.x-k8s.io 2023-02-22T11:32:29Z
-submariners.submariner.io 2023-02-22T13:56:30Z
+brokers.submariner.io                                 2023-02-22T13:56:30Z
+clusterglobalegressips.submariner.io                  2023-02-22T13:56:37Z
+clusters.submariner.io                                2023-02-22T13:56:37Z
+endpoints.submariner.io                               2023-02-22T13:56:37Z
+gateways.submariner.io                                2023-02-22T13:56:37Z
+globalegressips.submariner.io                         2023-02-22T13:56:37Z
+globalingressips.submariner.io                        2023-02-22T13:56:37Z
+servicediscoveries.submariner.io                      2023-02-22T13:56:30Z
+serviceexports.multicluster.x-k8s.io                  2023-02-22T11:32:29Z
+serviceimports.multicluster.x-k8s.io                  2023-02-22T11:32:29Z
+submariners.submariner.io                             2023-02-22T13:56:30Z
 ```
 
 - submariners.submariner.io: used by the submariner-operator component to create all Submariner components
@@ -49,14 +48,7 @@ submariners.submariner.io 2023-02-22T13:56:30Z
 - serviceimports.multicluster.x-k8s.io: the Lighthouse-agent creates a corresponding serviceimports object for consumption by other clusters
 - clusterglobalegressips.submariner.io: global CIDR to resolve overlapped subcluster subnets when globalnet is enabled
 
-## Installation
+## What's Next
 
-Refer to [Submariner installation](install.md)
-
-## Basic usage
-
-Refer to [Submariner usage](usage.md)
-
-## Debug method
-
-Refer to [Subctl Usage](usage.md)
+- [Submariner installation](install.md)
+- [Submariner usage](usage.md)

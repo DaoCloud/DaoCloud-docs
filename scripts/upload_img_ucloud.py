@@ -11,21 +11,24 @@ E-mail: samzong.lu@gmail.com
 
 import re
 import os
+import sys
 import time
 from ufile import filemanager, config, logger
 
-public_key = 'TOKEN_bc05bd45-4f7e-4a0b-9525-1bcf04ea7074'  # 公钥或 token
-private_key = '42f6d464-136a-4f41-838f-50b549c281a3'  # 私钥或 token
+public_key = os.getenv("U_PUBLIC_KEY")
+private_key = os.getenv("U_PRIVATE_KEY")
+uploadsuffix = os.getenv("U_UPLOADSUFFIX")
 
-config.set_default(uploadsuffix='.cn-sh2.ufileos.com')  # ucloud domain
+config.set_default(uploadsuffix=uploadsuffix)  # ucloud domain
 
 ufile_handler = filemanager.FileManager(public_key, private_key)
-bucket = 'community-github'
-bucket_folder = 'daocloud-docs-images/'
-REMOTE_DOMAIN = 'https://docs.daocloud.io'
 
-locallogname = 'ufile.log'
-logger.set_log_file(locallogname)
+# bucket infomation
+bucket = os.getenv("U_BUCKET")
+bucket_folder = os.getenv("U_BUCKET_FOLDER")
+remote_domain = os.getenv("U_REMOTE_DOMAIN")
+
+logger.set_log_file('ufile.log')
 
 
 def modify_image_url(md_file, image, remote_file_url):
@@ -41,7 +44,7 @@ def modify_image_url(md_file, image, remote_file_url):
 def ufile_upload(bucket: str, remotefile: str, localfile: str, header=None):
     _, resp = ufile_handler.putfile(bucket, remotefile, localfile, header)
     if resp.status_code == 200:
-        return REMOTE_DOMAIN + '/' + remotefile
+        return remote_domain + '/' + remotefile
     else:
         return "failed"
 
@@ -59,7 +62,7 @@ def find_md_files(folder: str):
 
 def update_image_path(md_files: list):
     for md_file in md_files:
-        print('exquisite markdown document address', md_file)
+        # print('exquisite markdown document address: ', md_file)
         filepath, filename = os.path.split(md_file)
         with open(md_file, 'r') as f:
             post = f.read()
@@ -71,20 +74,24 @@ def update_image_path(md_files: list):
             for sub_images in images:
                 for image in sub_images:
                     if image and len(image) > 0:
-                        # determine whether the image is already a remote image, remote images are not automatically uploaded.
+                        # 确定图像是否已经是远程图像，远程图像不会自动上传
                         if not image.startswith('http'):
-                            print('not images startswith http', image)
-                            # if the path of the image contains ../, it means that it is placed in the parent directory of the markdown file.
+                            # 如果图像的路径包含../，这意味着它被放置在 Markdown 文件的上级目录中。
                             if image.startswith('../'):
-                                # Get how many layers of paths are in total.
+                                # 获取总共有多少层路径
                                 depth = image.count('../')
-                                # List of file paths
+                                # 文件路径列表
                                 dir_list = filepath.split('/')
 
-                                # rewrite image paths and automatically concatenate them based on the number of preceding path layers.
-                                new_image = f"{'/'.join(dir_list[:-depth])}/{image.replace('../', '')}"
+                                # 重写图像路径并根据前面路径层的数量自动连接它们
+                                # new_image = f"{'/'.join(dir_list[:-depth])}/{image.replace('../', '')}"
+                                path = '/'.join(dir_list[:-depth])
+                                new_image = (
+                                    f"{path}/"
+                                    f"{image.replace('../', '')}"
+                                )
 
-                                # determine if the image exists.
+                                # 确定图像是否存在
                                 if os.path.exists(new_image):
                                     try:
                                         remote_file_url = ufile_upload(bucket, bucket_folder + new_image,
@@ -95,18 +102,17 @@ def update_image_path(md_files: list):
                                             modify_image_url(
                                                 md_file, image, remote_file_url)
 
-                                            # Delete image
+                                            # 删除图像
                                             os.remove(new_image)
                                     except Exception as e:
                                         print(e)
-                            else:
-                                # if the prefix of the image starts with ./, it means the current directory and this step can be omitted.
+
+                            elif image.startswith('./'):
+                                # 如果图像的前缀以"./"开头，表示当前目录，可以省略此步骤
                                 if image.startswith('./'):
                                     image = image.replace('./', '')
-
-                                # determine if the image exists.
-                                if os.path.exists(image):
                                     new_image = os.path.join(filepath, image)
+                                    print(md_file, image, 'bad image path, 11111')
 
                                 try:
                                     remote_file_url = ufile_upload(bucket, 'daocloud-docs-images/' + new_image,
@@ -115,14 +121,20 @@ def update_image_path(md_files: list):
                                         print('upload failed')
                                     else:
                                         modify_image_url(
-                                            md_file, image, remote_file_url)
+                                            md_file, './' + image, remote_file_url)
 
                                         # delete image
                                         os.remove(new_image)
                                 except Exception as e:
                                     print(e)
+                                    print(md_file, image, 'bad image path, 22222')
+
+                            else:
+                                print(md_file, image, 'bad image path, 33333')
     time.sleep(0.2)
 
 
 if __name__ == '__main__':
-    update_image_path(find_md_files('docs'))
+    # defualt find docs folder
+    folder = sys.argv[1] or "docs"
+    update_image_path(find_md_files(folder))

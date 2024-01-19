@@ -14,7 +14,8 @@ DCE 5.0 原生支持 DevOps 开发运维模式，可以实现应用交付的全�
 各个产品模块独立解耦，支持灵活升级，对业务没有影响，并且能够与众多云原生生态产品对接，提供完整的解决方案体系。
 它经过了近千家行业客户的生产场景检验，构建了坚实、可靠的数字底座，帮助企业定义数字边界，释放云原生生产力。
 
-*[DCE]: DaoCloud Enterprise 云原生操作系统的简称
+*[DCE]: DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台
+*[AI]: DCE 5.0 内置智能算力引擎，高效管控各类大模型任务、数据集、GPU、CPU、内存等资源
 
 <div class="grid cards" markdown>
 
@@ -49,6 +50,8 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
     - **云原生计算内核**：抽象底层基础设施，为上次应用及其它模块提供计算、存储等强大内核能力。
     - **云原生网络内核**：适配 overlay、underlay 等网络环境，支持 Spiderpool、Cillium、Macvlan、Multus 等多种网络模式
     - **云原生安全内核**：融合 RBAC 权限认证体系，为运维安全保驾护航
+
+    *[Spiderpool]: DaoCloud 捐献给 CNCF 的 Underlay 和 RDMA 网络方案，已入选 CNCF Sandbox
 
     **涉及的模块**：[全局管理](../ghippo/intro/index.md)、[容器管理](../kpanda/intro/index.md)、[集群生命周期管理](../community/kubean.md)、
     [云原生网络](../network/intro/index.md)、[云原生存储](../storage/index.md)

@@ -1,3 +1,10 @@
+---
+MTPE: windsonsea
+date: 2024-01-18
+hide:
+  - toc
+---
+
 # Service Mesh
 
 On this page, you can download offline packages for different versions of the service mesh module.

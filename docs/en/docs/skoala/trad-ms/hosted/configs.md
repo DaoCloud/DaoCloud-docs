@@ -94,11 +94,11 @@ The micro-service configuration list records the historical version of the confi
 
 2. Click `Configuration Management` in the left navigation bar, and click `ⵗ` on the right of the target configuration and select `Edit GA Release`.
 
-    ![Edit GA release](../../images/config09.png)
+    ![Edit GA release](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/config09.png)
 
 3. Modify configuration content，and click `GA Release`。
 
-    ![Update GA release](../../images/config10.png)
+    ![Update GA release](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/config10.png)
 
 ## New Beta configuration
 
@@ -108,13 +108,13 @@ The micro-service configuration list records the historical version of the confi
 
 2. Click `Configuration Management` in the left navigation bar, and click `ⵗ` on the right of the target configuration and select `Edit GA Release`.
 
-    ![Edit GA release](../../images/config09.png)
+    ![Edit GA release](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/config09.png)
 
 3. Enable `Beta Release`, select service instance from the `Beta IP` dropdown menu, modify the configuration content, and click `Beta Release`.
    
     - When configuring Beta release, the Data ID of the configuration needs to match the microservice name. Otherwise, it will not be possible to select service instance.
 
-    ![Create beta release](../../images/config11.png)
+    ![Create beta release](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/config11.png)
 
 ## The Beta configuration was updated
 
@@ -124,14 +124,14 @@ The micro-service configuration list records the historical version of the confi
 
 2. Click `Configuration Management` in the left navigation bar, and click `ⵗ` on the right of the target configuration and select `Edit Beta Release`.
 
-    ![Edit beta release](../../images/config12.png)
+    ![Edit beta release](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/config12.png)
 
 3. Modify configuration content，and click button in the lower right corner to delete beta release or publish GA release as required.
 
     - Click `Delete Beta`，then the beta configuration will be deleted.
     - Click `GA Release`,then the beta configuration will be published as GA release，and the original GA release will be deleted and is no longer effective.
 
-    ![Update beta release](../../images/config13.png)
+    ![Update beta release](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/config13.png)
 
 ## The configuration was deleted
 
@@ -141,4 +141,4 @@ The micro-service configuration list records the historical version of the confi
 
 2. Click `Configuration Management` in the left navigation bar, and click `ⵗ` on the right of the target configuration to delete.
 
-    ![Delete configuration](../../images/config09.png)
+    ![Delete configuration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/config09.png)

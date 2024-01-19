@@ -1,4 +1,11 @@
-# Global management
+---
+MTPE: windsonsea
+date: 2024-01-18
+hide:
+  - toc
+---
+
+# Global Management
 
 On this page, you can download the offline packages of various versions of the global management module.
 

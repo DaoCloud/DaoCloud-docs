@@ -153,7 +153,7 @@ Generally, a key objective of platform teams is to align infrastructure and othe
 
 As we’ve described, a platform for cloud native computing offers and composes capabilities and services from many supporting providers. These providers may be other teams within the same enterprise or third parties like cloud service providers. In a nutshell, platforms bridge from underlying *capability providers* to platform users like application developers; and in the process implement and enforce desired practices for security, performance, cost governance and consistent experience. The following graphic illustrates the relationships between products, platforms, and capability providers.
 
-![platform components](images/platform_components.png)
+![platform components](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/blogs/images/platform_components.png)
 
 We’ve focused in this paper on how to construct a good platform and platform team; now in this last section we’ll describe the capabilities a platform may actually offer. This list is intended to guide platform builders and includes capabilities typically required by cloud native applications. As we’ve noted throughout though, a good platform reflects its users’ needs, so ultimately platform teams should choose and prioritize the capabilities their platform offers together with its users.
 

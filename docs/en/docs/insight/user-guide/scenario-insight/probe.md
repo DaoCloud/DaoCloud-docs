@@ -13,7 +13,7 @@ The __insight-agent__ has been successfully deployed in the target cluster and i
 1. Go to the __Insight__ product module.
 2. Select __Infrastructure__ -> __Probes__ in the left navigation pane.
 
-    - Click on the cluster or namespace dropdown in the table to switch between clusters and namespaces.
+    - Click the cluster or namespace dropdown in the table to switch between clusters and namespaces.
     - The list displays the name, probe method, probe target, connectivity status, and creation time of the probes by default.
     - The connectivity status can be:
         - Normal: The probe successfully connects to the target, and the target returns the expected response.
@@ -24,7 +24,7 @@ The __insight-agent__ has been successfully deployed in the target cluster and i
 
 ## Create a Probe
 
-1. Click on __Create Probe__ .
+1. Click __Create Probe__ .
 2. Fill in the basic information and click __Next__ .
 
     - Name: The name can only contain lowercase letters, numbers, and hyphens (-), and must start and end with a lowercase letter or number, with a maximum length of 63 characters.

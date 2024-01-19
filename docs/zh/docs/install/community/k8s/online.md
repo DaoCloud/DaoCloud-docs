@@ -28,10 +28,10 @@
 
 1. 在 K8s 集群控制平面节点（Controller Node）下载 dce5-installer 二进制文件（也可以[通过浏览器下载](../../../download/index.md)）。
 
-    假定 VERSION 为 v0.13.0
+    假定 VERSION 为 v0.14.0
 
     ```shell
-    export VERSION=v0.13.0
+    export VERSION=v0.14.0
 
     ## 如果是 arm 架构请更新 `dce5-installer-$VERSION` 为 `dce5-installer-$VERSION-linux-arm64`
     
@@ -77,7 +77,6 @@
 
     !!! note
 
-        - 参数 `-p` 指定解压离线包的 offline 目录。
         - 有关 clusterConfig.yaml 文件设置，请参考[在线安装第 2 步](online.md#_2)。
         - `-z` 最小化安装
         - `-c` 指定集群配置文件。使用 NodePort 暴露控制台时不需要指定 `-c`。

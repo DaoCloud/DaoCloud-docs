@@ -11,11 +11,11 @@ DCE 5.0 社区版包含的模块为[全局管理](../ghippo/intro/index.md)、[�
 
 1. 点击 [申请许可证密钥](https://qingflow.com/f/58604bf8){ .md-button } ，填写表单后点击 __提交__ 。
 
-    ![license](./images/license011.png)
+    ![license](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/dce/images/license011.png)
 
 2. 按屏幕提示，打开邮箱查看包含许可证密钥的邮件，然后点击 [换取离线授权码](https://license.daocloud.io/dce5-license){ .md-button } 。
 
-    ![get-auth-code](./images/license012.png)
+    ![get-auth-code](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/dce/images/license012.png)
 
 3. 输入上一步的许可证密钥，输入设备独有的 ESN 后，点击 __获取离线授权码__ 。
 
@@ -24,9 +24,12 @@ DCE 5.0 社区版包含的模块为[全局管理](../ghippo/intro/index.md)、[�
     其中 ESN 是集群系统独有的设备编码。
     具体获取方式为：打开 DCE，点击左侧导航栏 __全局管理__ -> __平台设置__ -> __正版授权__ ，点击 __管理许可证__ 按钮，打开 __管理许可证__ 页面，复制 ESN 编码。
 
-    ![esn](./images/license02.png)
+    ![esn](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/dce/images/license02.png)
 
 4. 复制并粘贴上一步换取的离线授权码，点击 __立即激活__ 。恭喜您！现在可以探索全新的 DCE 5.0 啦！
+
+*[ESN]: Electronic Serial Number（电子串行号码）的缩写。它是一种用于识别设备的唯一标识符，通常由八个字符组成。
+*[DCE]: DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台
 
 !!! info "📢 温馨提示"
 
@@ -41,7 +44,7 @@ DCE 5.0 社区版包含的模块为[全局管理](../ghippo/intro/index.md)、[�
 
 1. 首先[清除设备编码](https://qingflow.com/f/58604bf8)，在表单中选择 __清除设备编码（ESN/Cluster ID）__ ，输入[先前的许可证密钥](https://license.daocloud.io/dce5-licenses)，填写完成后点击 __提交__ 。
 
-    ![清除 ESN](./images/esn.png)
+    ![清除 ESN](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/dce/images/esn.png)
 
 2. 参照[上一节](#_1)重新申请许可证。
 
@@ -51,7 +54,7 @@ DCE 5.0 社区版包含的模块为[全局管理](../ghippo/intro/index.md)、[�
 例如 DCE 5.0 社区版包含了容器管理、全局管理、可观测性 3 个模块，每个模块有 1 个许可证。
 这样就需要在[许可证页面](https://qingflow.com/f/58604bf8)，为每个模块选择 __许可证续期__ 。
 
-![延期](./images/extend.png)
+![延期](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/dce/images/extend.png)
 
 ## 参考链接
 

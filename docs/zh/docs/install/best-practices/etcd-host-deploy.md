@@ -86,16 +86,16 @@
 
     - 当前集群没有 etcd 相关的 Pod
 
-        ![etcd01](../images/etcd01.png)
+        ![etcd01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/etcd01.png)
 
     - 当前集群节点没有 etcd 系统服务
 
-        ![etcd02](../images/etcd02.png)
+        ![etcd02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/etcd02.png)
 
 6. 执行命令 `pf -ef | grep etcd` ，查看 apiserver 连接的是外部 etcd 地址。
 
-    ![etcd03](../images/etcd03.png)
+    ![etcd03](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/etcd03.png)
 
 7. 在 etcd 节点上执行命令 `systemctl status etcd` 来判断运行情况。
 
-    ![etcd04](../images/etcd04.png)
+    ![etcd04](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/etcd04.png)

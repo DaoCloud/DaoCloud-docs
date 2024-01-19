@@ -11,7 +11,7 @@ An offline environment refers to an environment that cannot connect to the inter
 - [charts-syncer](https://github.com/DaoCloud/charts-syncer) is available and running.
   If not, you can [click here to download](https://github.com/DaoCloud/charts-syncer/releases).
 - The Helm Chart has been adapted for [charts-syncer](https://github.com/DaoCloud/charts-syncer).
-  This means adding a __ .relok8s-images.yaml__ file to the Helm Chart. This file should include all the images used in the Chart,
+  This means adding a __.relok8s-images.yaml__ file to the Helm Chart. This file should include all the images used in the Chart,
   including any images that are not directly used in the Chart but are used similar to images used in an Operator.
 
 !!! note
@@ -84,7 +84,7 @@ An offline environment refers to an environment that cannot connect to the inter
         ```
 
 1. Once the previous step is completed, go to __Container Management__ -> __Helm Apps__ -> __Helm Repositories__ , find the corresponding addon,
-   click on __Sync Repository__ in the action column, and you will see the uploaded Helm apps in the Helm template.
+   click __Sync Repository__ in the action column, and you will see the uploaded Helm apps in the Helm template.
 
 1. You can then proceed with normal installation, upgrade, and uninstallation.
 

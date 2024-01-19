@@ -11,7 +11,7 @@
 
 当我们在日志系统中引入 Kafka 之后，数据流图如下图所示：
 
-![logging-kafka](./images/logging-kafka.png)
+![logging-kafka](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/best-practice/images/logging-kafka.png)
 
 上面两种方案中有共通的地方，不同之处在于消费 Kafka 数据的组件，同时，为了不影响 Insight 数据分析，
 我们需要在消费 Kafka 数据并写入到 ES 的数据和原来 Fluentbit 直接写入 ES 的数据的格式一致。

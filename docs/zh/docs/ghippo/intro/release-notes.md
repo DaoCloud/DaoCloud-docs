@@ -2,6 +2,21 @@
 
 本页列出全局管理各版本的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2024-1-19
+
+### v0.23.1
+
+#### 优化
+
+- Trigger FoldersAuthz CR 时用 single flight 机制来限流
+- 过滤掉重复授权的情况
+- Workspace 授权信息不存到 FoldersAuthz CR 里
+- ghippo-controller-manager 重启时全量更新一次 FoldersAuthz CR
+
+#### 修复
+
+- 修复大量授权请求导致 FoldersAuthz CR 更新过于频繁把 k8 打爆问题
+
 ## 2023-12-29
 
 ### v0.23.0
@@ -196,7 +211,7 @@
 - 接入管理：Webhook API（创建/编辑/删除/列表/查看）
 - 用户 CRUD/Login/Logout 事件触发 Webhook
 - 接入管理提供权限点
-- 用户名/用户组名支持 __.__ 和 __@__ 
+- 用户名/用户组名支持 `.` 和 `@` 
 - 平台默认语言改成 自动检测浏览器首选项
 - 审计日志支持下载为 Excel 和 CSV 格式
 - 审计日志：两种日志（系统和用户）分开显示

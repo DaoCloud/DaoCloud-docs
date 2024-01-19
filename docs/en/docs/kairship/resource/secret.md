@@ -13,15 +13,15 @@ Two creation methods are currently provided: wizard creation and YAML creation. 
 
 1. After entering a multicloud instance, in the left navigation bar, click __Resource Management__ -> __Multicloud Secrets__ , and click the __Create Secret__ button in the upper right corner.
 
-    ![Create Secret](../images/secret01.png)
+    ![Create Secret](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/secret01.png)
 
 2. On the __Create Secret__ page, enter the name, select the namespace and other information, and click __OK__ .
 
-    ![Fill Info](../images/secret02.png)
+    ![Fill Info](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/secret02.png)
 
 3. Back to the list of multicloud secrets, the newly created one is the first one by default. Click __⋮__ on the right side of the list to edit YAML, update, export and delete Secret.
 
-    ![Update/Delete](../images/secret03.png)
+    ![Update/Delete](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/secret03.png)
 
     !!! note
 

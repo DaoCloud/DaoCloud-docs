@@ -172,6 +172,10 @@ hide:
 
 </div>
 
+*[DCE]: An abbreviation for DaoCloud Enterprise, a next-generation AI computing platform
+*[Landscape]: A comprehensive map that showcases various projects and tools in the cloud native ecosystem
+*[Sandbox]: An incubation platform for cloud native projects provided by CNCF
+
 !!! success
 
     The above projects are just a part of DaoCloud Ecosystem. More projects will come soon to share with you all.

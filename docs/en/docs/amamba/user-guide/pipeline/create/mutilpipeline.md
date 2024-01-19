@@ -1,18 +1,18 @@
 ---
-hide:
-  - toc
+MTPE: FanLin
+Date: 2024-01-09
 ---
 
-# Create a multi-branch pipeline
+# Create a Multi-branch Pipeline
 
-Workbench pipeline supports the creation of multi-branch pipelines based on code repositories.
+Workbench supports the creation of multi-branch pipelines based on code repositories.
 
-## prerequisites
+## Prerequisites
 
-- [Create workspace](../../../../ghippo/user-guide/workspace/workspace/), [Create user](../../../../ghippo/user-guide/access-control/user/).
-- Add the user to the workspace with __workspace editor__ or higher privileges.
-- Provide a code warehouse, and the source code of the code warehouse has multiple branches, and all have Jenkinsfile text files.
-- If it is a private warehouse, you need to [create warehouse access credentials](../credential.md) in advance.
+- [Create a Workspace](../../../../ghippo/user-guide/workspace/workspace.md) and [Create a User](../../../../ghippo/user-guide/access-control/user.md).
+- Add the user to the workspace with __workspace editor__ privileges or higher.
+- Have a code repository with multiple branches, each containing a Jenkinsfile.
+- If using a private repository, you'll need to [create credentials](../credential.md) beforehand.
 
 ## Steps
 
@@ -20,55 +20,55 @@ Workbench pipeline supports the creation of multi-branch pipelines based on code
 
 2. Select __Create multi-branch pipeline__ and click __OK__ .
 
-    <!--![]()screenshots-->
+    ![Create Pipeline](../../../images/mutilpipeline01.png)
 
-3. Fill in the basic information and code warehouse information by referring to the instructions below.
+3. Fill in the basic information and repository details as per the instructions below.
 
-    - name: the name of the pipeline. The pipeline name must be unique under the same workspace.
-    - Description information: The user describes the feature of the current pipeline.
-    - Code warehouse address: fill in the address of the remote code warehouse.
-    - Credentials: For private warehouses, you need to [create repo access credentials](../credential.md) in advance and select the credentials here.
-    - Script path: the absolute path of the Jenkinsfile in the code repository.
+    - Name: the name of the pipeline. The pipeline name must be unique within the same workspace.
+    - Description: A user-defined description of the current pipeline.
+    - Repo URL: Provide the URL of the remote code repository.
+    - Credential: For private repositories, you need to [create repository access credentials](../credential.md) beforehand and select them here.
+    - Script Path: The absolute path of the Jenkinsfile within the code repository.
 
-    <!--![]()screenshots-->
+    ![Basic Info](../../../images/mutilpipeline02.png)
 
-4. Refer to the instructions below to fill in branch discovery policy, scan trigger, branch settings, and clone configuration information.
+4. Set up the branch discovery policy, scan trigger, branch settings, and clone settings as per the instructions below.
 
-    - Open discovery branch: the default value is __ .*__ , and the branch is filtered by regular expression.
-    - Turn on multi-branch scanning: After it is turned on, once there is a branch change in the code warehouse, it will be synchronized.
-    - Scanning interval: Scan the code warehouse according to the preset interval to check whether it is updated again.
-    - Delete old branches: After enabled, old branches and pipelines will be deleted according to the policy
-    - Days to keep: the number of days to keep the old branch and the pipeline of the old branch, and delete it after expiration.
-    - Number of reservations: the number of old branches and pipeline reservations of old branches.
-    - Shallow clone: ​​When enabled, pull the latest version of the code repository. Supports setting the clone depth, generally the default is 1 to speed up the pull.
-    - Clone timeout: The maximum waiting time when pulling code.
+    - Enable Branch Discovery: the default value is __.*__ , and branches are filtered using regular expressions.
+    - Enable Multi-branch Scan: When this option is enabled, any branch changes in the code repository will be synchronized.
+    - Scan Interval: The code repository is scanned at preset intervals to check for updates.
+    - Delete Old Branch: When enabled, old branches and pipelines are deleted as per the policy.
+    - Branch Alive Days: Defines the number of days to keep the old branch and its pipeline, after which they are deleted.
+    - Max Branches: Sets the number of old branches and pipelines to be retained.
+    - Shallow Clone: When enabled, only the latest version of the code repository is pulled. Set the clone depth (default is 1) to speed up the pull process.
+    - Clone Timeout: The maximum wait time when pulling code.
 
-        <!--![]()screenshots-->
+    ![Parameters](../../../images/mutilpipeline03.png)
 
-5. Complete the creation. After confirming that all parameters have been entered, click the __OK__ button to complete the creation of the multi-branch pipeline and automatically return to the pipeline list.
+5. Complete the creation. After ensuring all parameters are filled in, click the __OK__ button to finalize the creation of the multi-branch pipeline. You'll be automatically redirected to the pipeline list.
 
-    <!--![]()screenshots-->
+    ![Successfully Created](../../../images/mutilpipeline04.png)
 
-6. After the creation is complete, the corresponding pipeline that executes the branch that meets the conditions will be automatically triggered.
+6. After creation, the pipelines corresponding to the branches that meet the conditions will be automatically triggered.
 
-    <!--![]()screenshots-->
+    ![Multi-branch Pipeline](../../../images/mutilpipeline05.png)
 
-## Other operations
+## Additional Operations
 
-### Scan warehouse
+### Scan Repository
 
-The purpose of __scan repository__ is to manually trigger the discovery of new branches of the code repository.
+The __Scan Repo__ function is used to manually trigger the discovery of new branches in the code repository.
 
-<!--![]()screenshots-->
+![Scan Repo](../../../images/mutilpipeline06.png)
 
-### View scan log
+### View Scan Log
 
-Displays the log of the branch found during the latest scan of the code repository.
+Displays the log of the branches found during the latest scan of the code repository.
 
-<!--![]()screenshots-->
+![Scan Log](../../../images/mutilpipeline07.png)
 
 ### View Branches
 
-The branch information obtained according to the branch discovery policy, where the branch in the __disabled__ state represents that the latest scan results do not conform to the branch discovery strategy.
+Displays the branch information obtained according to the branch discovery policy. A branch in the __disabled__ state signifies that the latest scan results do not conform to the branch discovery strategy.
 
-<!--![]()screenshots-->
+![View Branches](../../../images/mutilpipeline08.png)

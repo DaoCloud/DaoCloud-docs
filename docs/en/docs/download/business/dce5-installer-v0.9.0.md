@@ -1,4 +1,5 @@
 ---
+MTPE: windsonsea
 date: 2023-07-07
 hide:
   - navigation
@@ -13,8 +14,8 @@ This page allows you to download the offline package and checksum files for DCE 
 
 ## Download
 
-| Filename                      | Version | Architecture | File Size | Download                                                                                                                               | Last Updated |
-| ----------------------------- | --------| -------------| ----------| -------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| Filename | Version | Architecture | File Size | Download | Update Date |
+| -------- | ------- | ------------ | --------- | -------- | ----------- |
 | offline-v0.9.0-amd64.tar      | v0.9.0  | AMD64        | 19.01 GB   | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.9.0-amd64.tar)                  | 2023-07-07   |
 | offline-v0.9.0-arm64.tar      | v0.9.0  | ARM64        | 17.37 GB   | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.9.0-arm64.tar)                  | 2023-07-07   |
 
@@ -77,21 +78,21 @@ After the offline package has been successfully validated,
 
 DCE 5.0 Enterprise includes the following modules that can be used on-demand to meet various application scenarios:
 
-| Module                | Description                                                                 | Latest Release                                                |
-| --------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| Global Management     | Responsible for user access control, permissions, enterprise spaces, etc.    | [0.18.1](../../ghippo/intro/release-notes.md#0181)    |
-| Container Management  | Manages clusters, nodes, workloads, Helm applications, CRDs, namespaces, etc.| [0.19.0](../../kpanda/intro/release-notes.md#0190)    |
-| Insight         | Provides rich dashboards, scene monitoring, data queries, alerts, etc.       | [0.18.2](../../insight/intro/releasenote.md#0182)     |
-| Workbench | Container-based DevOps application platform, supporting Jenkins, Tekton, GitOps, and more pipeline jobs. | [0.18.1](../../amamba/intro/release-notes.md#0181)      |
-| MultiCloud Management | Centralized management of multi-cloud, hybrid cloud, cross-cloud resources for application orchestration, with multi-cloud disaster recovery and fault recovery capabilities. | [0.10.3](../../kairship/intro/release-notes.md#0103)   |
+| Modules | Description | Versions |
+| ------- | ----------- | -------- |
+| Global Management     | Responsible for user access control, permissions, enterprise spaces, etc.    | [0.18.1](../../ghippo/intro/release-notes.md#v0181)    |
+| Container Management  | Manages clusters, nodes, workloads, Helm applications, CRDs, namespaces, etc.| [0.19.0](../../kpanda/intro/release-notes.md#v0190)    |
+| Insight         | Provides rich dashboards, scene monitoring, data queries, alerts, etc.       | [0.18.2](../../insight/intro/releasenote.md#v0182)     |
+| Workbench | Container-based DevOps application platform, supporting Jenkins, Tekton, GitOps, and more pipeline jobs. | [0.18.1](../../amamba/intro/release-notes.md#v0181)      |
+| MultiCloud Management | Centralized management of multi-cloud, hybrid cloud, cross-cloud resources for application orchestration, with multi-cloud disaster recovery and fault recovery capabilities. | [0.10.3](../../kairship/intro/release-notes.md#v0103)   |
 | Microservice Engine   | Provides governance capabilities such as service registration and discovery, service governance, configuration management, and microservice gateway  |
 | Service Mesh          | Next-generation service mesh built on Istio open-source technology for cloud native applications. | [v0.17.0](../../mspider/intro/release-notes.md#v0170)    |
-| Middleware Elasticsearch | Currently the preferred full-text search engine.                                      | [0.9.0](../../middleware/elasticsearch/release-notes.md#090) |
-| Middleware Kafka        | Distributed message queue service based on the open-source software Kafka.            | [0.7.0](../../middleware/kafka/release-notes.md#070)          |
-| Middleware MinIO        | A popular lightweight, open-source object storage solution.                            | [0.7.0](../../middleware/minio/release-notes.md#070)          |
-| Middleware MySQL        | The most widely used open-source relational database.                                  | [0.10.0](../../middleware/mysql/release-notes.md#0100)           |
-| Middleware RabbitMQ     | Open-source message broker software that implements the Advanced Message Queuing Protocol (AMQP). | [0.12.0](../../middleware/rabbitmq/release-notes.md#0120)        |
-| Middleware Redis        | An in-memory database caching service.                                                | [0.9.0](../../middleware/redis/release-notes.md#090)           |
+| Middleware Elasticsearch | Currently the preferred full-text search engine.                                      | [0.9.0](../../middleware/elasticsearch/release-notes.md#v090) |
+| Middleware Kafka        | Distributed message queue service based on the open-source software Kafka.            | [0.7.0](../../middleware/kafka/release-notes.md#v070)          |
+| Middleware MinIO        | A popular lightweight, open-source object storage solution.                            | [0.7.0](../../middleware/minio/release-notes.md#v070)          |
+| Middleware MySQL        | The most widely used open-source relational database.                                  | [0.10.0](../../middleware/mysql/release-notes.md#v0100)           |
+| Middleware RabbitMQ     | Open-source message broker software that implements the Advanced Message Queuing Protocol (AMQP). | [0.12.0](../../middleware/rabbitmq/release-notes.md#v0120)        |
+| Middleware Redis        | An in-memory database caching service.                                                | [0.9.0](../../middleware/redis/release-notes.md#v090)           |
 | Container Registry       | Used to store images for K8s, DevOps, and container application development.            | [0.9.1](../../dce/dce-rn/20230630.md)                            |
 | Network                | Supports various CNI combinations for different Linux kernels.                        | [0.8.0](../../dce/dce-rn/20230630.md)                            |
 | Storage                | Provides unified data storage services, supporting file, object, block, and local storage, easily integrates with storage vendors' solutions. | [v0.10.4](../../dce/dce-rn/20230630.md)                            |

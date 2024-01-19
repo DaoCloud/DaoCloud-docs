@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 全局管理
 
 本页可下载全局管理模块各版本的离线安装包。
@@ -6,6 +11,7 @@
 
 | 版本  | 架构 | 文件大小 | 安装包      | 校验文件 | 更新日期   |
 | ----------- | ----- |-------- | ---------- | ---------- | ---------- |
+| [v0.23.1](../../ghippo/intro/release-notes.md) | AMD 64 | 500.91MB | [:arrow_down: ghippo_v0.23.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.23.1_amd64.tar) | [:arrow_down: ghippo_v0.23.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.23.1_amd64_checksum.sha512sum) | 2024-01-19 |
 | [v0.23.0](../../ghippo/intro/release-notes.md) | AMD 64 | 500.89 MB | [:arrow_down: ghippo_v0.23.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.23.0_amd64.tar) | [:arrow_down: ghippo_v0.23.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.23.0_amd64_checksum.sha512sum) | 2023-12-30 |
 | [v0.22.1](../../ghippo/intro/release-notes.md) | AMD 64 | 500.82 MB | [:arrow_down: ghippo_v0.22.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.22.1_amd64.tar) | [:arrow_down: ghippo_v0.22.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.22.1_amd64_checksum.sha512sum) | 2023-12-05 |
 | [v0.21.0](../../ghippo/intro/release-notes.md) | AMD 64 | 520.10 MB | [:arrow_down: ghippo_v0.21.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.21.0_amd64.tar) | [:arrow_down: ghippo_v0.21.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ghippo_v0.21.0_amd64_checksum.sha512sum) | 2023-11-06 |

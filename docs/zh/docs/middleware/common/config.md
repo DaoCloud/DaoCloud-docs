@@ -4,15 +4,15 @@
 
 1. 点击 __配置管理__， 进入 __配置管理__ 列表；
 
-    ![list](images/cfg01.png)
+    ![list](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/common/images/cfg01.png)
 
 2. 点击 __创建__ 在配置管理页面中创建一个新的配置项；
 
-    ![list](images/cfg02.png)
+    ![list](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/common/images/cfg02.png)
 
 3. 在创建页面中，配置如下内容：
 
-    ![list](images/s3config.png)
+    ![list](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/common/images/s3config.png)
 
     - **名称**：用户自定义，用于标示配置项；
 
@@ -22,20 +22,20 @@
 
         1. 在 MinIO 实例中点击访问地址进入管理界面；
 
-            ![list](images/cfg04.png)
+            ![list](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/common/images/cfg04.png)
 
         2. 点击 __Identity__ -> __Service Account__ ，创建一个新的 __Service Account__ ；
 
-            ![list](images/cfg05.png)
+            ![list](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/common/images/cfg05.png)
 
         3. 把此处创建的 __Access_Key__ 和 __Secret_Key__ 复制到创建配置页面。
 
-            ![list](images/cfg06.png)
+            ![list](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/common/images/cfg06.png)
 
     - **Bucket 名称**：该名称用于定义备份所需的对象存储桶，可在MinIO管理平台中获取，如下图所示：
 
-        ![list](images/cfg07.png)
+        ![list](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/common/images/cfg07.png)
 
 4. 点击 __确定__ 完成创建，该配置将可用于中间件的 __备份/恢复__ 。
 
-    ![list](images/cfg08.png)
+    ![list](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/common/images/cfg08.png)

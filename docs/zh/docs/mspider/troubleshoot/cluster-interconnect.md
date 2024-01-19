@@ -20,7 +20,7 @@
 3. 确定东西网关异常的原因，修复
 4. 在目标规则中，启用离群检测策略：
 
-    ![离群检测](./images/cluster-interconnect01.png)
+    ![离群检测](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/troubleshoot/images/cluster-interconnect01.png)
 
     配置成功后，当出现集群宕机时，会自动摘除宕机集群的实例，不会出现卡顿现象。
 
@@ -44,8 +44,8 @@
 2. 注入边车
 3. 所有测试服务的 svc 配置一致，可通过`服务管理` -> `服务列表`的诊断功能协助观察
    
-    ![服务诊断](./images/service-list-check-01.png)
+    ![服务诊断](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/troubleshoot/images/service-list-check-01.png)
 
 4. 重启所有网关，包括自建以及数据面集群的南北以及东西网关
 
-    ![服务诊断](./images/restart-gateway-01.png)
+    ![服务诊断](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/troubleshoot/images/restart-gateway-01.png)

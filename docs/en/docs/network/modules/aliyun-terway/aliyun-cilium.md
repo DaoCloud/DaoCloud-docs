@@ -37,17 +37,17 @@ cilium install
 Wait for the Cilium components to be running, then create a test application to verify the communication between Pods:
 
 ```shell
-~# kubectl  get po -o wide
+$ kubectl  get po -o wide
 NAME                    READY   STATUS    RESTARTS   AGE   IP               NODE                  NOMINATED NODE   READINESS GATES
 test-77877f4755-2jz2c   1/1     Running   0          1m   10.244.1.39       cn-chengdu.i-2vcxxr   <none>           <none>
 test-77877f4755-rjlg6   1/1     Running   0          1m   10.244.0.86     cn-chengdu.i-2vcxxs   <none>           <none>
-~# kubectl  get svc
+$ kubectl  get svc
 NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
 kubernetes   ClusterIP   172.21.0.1     <none>        443/TCP        32d
 test         ClusterIP   172.21.0.53    <none>        80/TCP         2m
 
-~# # Access Pods across nodes 
-~# kubectl  exec test-77877f4755-2jz2c -- ping -c1 10.244.0.86
+# Access Pods across nodes 
+$ kubectl  exec test-77877f4755-2jz2c -- ping -c1 10.244.0.86
 PING 10.244.0.86 (10.244.0.86) 56(84) bytes of data.
 64 bytes from 10.244.0.86: icmp_seq=1 ttl=63 time=0.571 ms
 
@@ -55,8 +55,8 @@ PING 10.244.0.86 (10.244.0.86) 56(84) bytes of data.
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 rtt min/avg/max/mdev = 0.571/0.571/0.571/0.000 ms
 
-~# # Access external targets
-~# kubectl exec test-77877f4755-24gqt -- ping -c1 8.8.8.8
+# Access external targets
+$ kubectl exec test-77877f4755-24gqt -- ping -c1 8.8.8.8
 PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 64 bytes from 8.8.8.8: icmp_seq=1 ttl=107 time=63.8 ms
 
@@ -64,15 +64,15 @@ PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 rtt min/avg/max/mdev = 63.758/63.758/63.758/0.000 ms
 
-~# # Access ClusterIP
-~# kubectl exec test-77877f4755-24gqt -- curl -i 172.21.0.53
+# Access ClusterIP
+$ kubectl exec test-77877f4755-24gqt -- curl -i 172.21.0.53
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0HTTP/1.1 200 OK
 Content-Type: application/json
 Date: Thu, 28 Sep 2023 03:54:28 GMT
 Content-Length: 151
-````
+```
 
 The test shows that all types of connectivity between Pods work properly.
 
@@ -93,11 +93,11 @@ cilium install --set ipam.mode=kubernetes --set routingMode=native --set ipv4Nat
 Wait for Cilium to be in the Running state, create a test application, and validate connectivity:
 
 ```shell
-~# kubectl  get po -o wide
+$ kubectl  get po -o wide
 NAME                    READY   STATUS    RESTARTS   AGE   IP             NODE                                NOMINATED NODE   READINESS GATES
 test-77877f4755-v9mrj   1/1     Running   0          4s    10.244.1.166   cn-chengdu.i-2vc5zub002vrlwursb4s   <none>           <none>
 test-77877f4755-w95wn   1/1     Running   0          4s    10.244.0.98    cn-chengdu.i-2vc5zub002vrlwursb4r   <none>           <none>
-~# kubectl  get svc
+$ kubectl  get svc
 NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
 kubernetes   ClusterIP   172.21.0.1     <none>        443/TCP        31d
 test         ClusterIP   172.21.0.98    <none>        80/TCP         16s
@@ -107,7 +107,7 @@ You will notice that the Pod IPs are bound to their respective nodes. Test the c
 
 ```shell
 # cross-node Pod communication 
-~# kubectl  exec test-77877f4755-v9mrj -- ping -c1 10.244.0.98
+$ kubectl  exec test-77877f4755-v9mrj -- ping -c1 10.244.0.98
 PING 10.244.0.98 (10.244.0.98) 56(84) bytes of data.
 64 bytes from 10.244.0.98: icmp_seq=1 ttl=60 time=0.800 ms
 
@@ -116,7 +116,7 @@ PING 10.244.0.98 (10.244.0.98) 56(84) bytes of data.
 rtt min/avg/max/mdev = 0.800/0.800/0.800/0.000 ms
 
 # Pod access Service
-~# kubectl  exec test-77877f4755-v9mrj -- curl -i 172.21.0.98
+$ kubectl  exec test-77877f4755-v9mrj -- curl -i 172.21.0.98
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100   152  100   152    0     0  32871      0 --:--:-- --:--:-- --:--:-- 38000

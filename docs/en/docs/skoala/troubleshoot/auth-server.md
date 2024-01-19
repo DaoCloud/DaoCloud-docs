@@ -6,7 +6,7 @@ When upgrading skoala-init from v0.11.0 to v0.12.0, an error occurred that preve
 unknown field "x-kubernets-validations" in io.k8s.apiextensions-apiserver....
 ```
 
-![error](./images/error.jpg)
+![error](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/troubleshoot/images/error.jpg)
 
 ## Troubleshooting Process
 
@@ -33,11 +33,11 @@ unknown field "x-kubernets-validations" in io.k8s.apiextensions-apiserver....
 
 - [Rollout, Upgrade and Rollback Planning](https://github.com/kubernetes/enhancements/blob/master/keps/sig-api-machinery/2876-crd-validation-expression-language/README.md#rollout-upgrade-and-rollback-planning)
 
-    ![Rollout](./images/rollout.jpg)
+    ![Rollout](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/troubleshoot/images/rollout.jpg)
 
 - [KEP-2876: Use Common Expression Language (CEL) for CRD Validation](https://docs.daocloud.io/blogs/230412-k8s-1.27.html#kep-2876cel-crd)
 
-    ![KEP-2876](./images/KEP-287.png)
+    ![KEP-2876](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/troubleshoot/images/KEP-287.png)
 
 - [CRD validation error for x-kubernetes-preserve-unknown-fields: true #88252](https://github.com/kubernetes/kubernetes/issues/88252#issuecomment-587250746)
 

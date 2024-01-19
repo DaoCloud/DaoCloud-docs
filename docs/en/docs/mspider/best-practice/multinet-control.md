@@ -16,7 +16,7 @@
 In namespaces NS1 and NS2 of clusters A and B, there are several services with the same name
 (svcA, svcB ...). Other services call svcA, as shown in the following diagram:
 
-![Multiple Services](./images/multinet01.png)
+![Multiple Services](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/best-practice/images/multinet01.png)
 
 The services with the same name in the two clusters do not have the same business logic.
 For example, svcA in namespace NS1 of cluster A and svcA in namespace NS1 of cluster B
@@ -27,7 +27,7 @@ The same applies to other services.
 
 If the services in clusters A and B both inject Istio Sidecars, as shown below:
 
-![Inject Sidecar](./images/multinet02.png)
+![Inject Sidecar](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/best-practice/images/multinet02.png)
 
 Without any special configurations, the traffic between the two clusters is interconnected,
 and the related services serve as disaster recovery solutions for each other.
@@ -42,13 +42,13 @@ business logics despite having the same names, it will lead to business problems
 Inject Istio Sidecars into the services of one cluster and leave the services of
 the other cluster without Istio Sidecars, as shown below:
 
-![No Sidecar Injection](./images/multinet03.png)
+![No Sidecar Injection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/best-practice/images/multinet03.png)
 
 In this case, without any additional configurations, the traffic between the two clusters will
 not be interconnected. For example, svcB in cluster B can only access svcA in cluster B,
 but not svcA in cluster A. This can also be confirmed by the simulated results of the official Istio demo:
 
-![Demo](./images/multinet04.png)
+![Demo](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/best-practice/images/multinet04.png)
 
 As the services in cluster A are not injected with sidecars, they cannot access the services
 in cluster B using Istio capabilities.
@@ -64,15 +64,15 @@ If the services in clusters A and B both inject Istio Sidecars, but it is requir
 traffic between them should not cross clusters, we need to configure special routing rules
 to restrict the traffic from the remote cluster:
 
-![Restrict Traffic](./images/multinet05.png)
+![Restrict Traffic](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/best-practice/images/multinet05.png)
 
 When the rules take effect, the services will only access upstream services within their own cluster:
 
-![Access Upstream Services](./images/multinet06.png)
+![Access Upstream Services](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/best-practice/images/multinet06.png)
 
 Even if the upstream services within the local cluster are unreachable, the services will not access the remote cluster:
 
-![Upstream Services Unreachable](./images/multinet07.png)
+![Upstream Services Unreachable](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/best-practice/images/multinet07.png)
 
 **Conclusion: By accurately restricting traffic through DR, it is possible to limit
 inter-cluster access even in a fully injected Sidecar scenario. Therefore, in this case,

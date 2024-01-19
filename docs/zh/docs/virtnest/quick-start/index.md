@@ -14,7 +14,7 @@
 
 1. 点击左侧导航栏上的`容器管理`，然后点击`虚拟机`，若未安装 virtnest-agent 组件，则无法正常使用虚拟机能力。将提醒用户在所需集群内进行安装。
 
-    ![安装提示](../images/virtnest001.png)
+    ![安装提示](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/virtnest001.png)
 
 2. 选择所需集群，点击左侧导航栏的 `Helm 应用`，然后点击 `Helm 模板`，查看模板列表。
 

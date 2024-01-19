@@ -42,9 +42,9 @@ click deploy "https://docs.daocloud.io/en/kpanda/user-guide/workloads/create-dep
 
 Expected Result: When all users on the platform deploy applications in the namespace, they can select images in the public registry space for deployment through the image selector.
 
-![selecting images](../images/admin01.png)
+![selecting images](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/admin01.png)
 
-![images selected](../images/admin02.png)
+![images selected](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/admin02.png)
 
 ## Sharing private images
 
@@ -86,9 +86,9 @@ click deploy "https://docs.daocloud.io/en/kpanda/user-guide/workloads/create-dep
 
 Expected Result: Only when deploying applications in namespaces under this workspace, you can use the image selector to select private images under this registry space to deploy applications.
 
-![selecting images](../images/admin03.png)
+![selecting images](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/admin03.png)
 
-![images selected](../images/admin04.png)
+![images selected](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/admin04.png)
 
 !!! tip
 

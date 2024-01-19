@@ -1,3 +1,10 @@
+---
+MTPE: windsonsea
+date: 2024-01-18
+hide:
+  - toc
+---
+
 # Local Storage: hwameistor-operator
 
 This page provides the offline installation package for hwameistor-operator,

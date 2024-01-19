@@ -37,4 +37,4 @@ Daocloud 容器管理平台支持对 GPU、NPU 等异构资源进行统一调度
 
 NVIDIA GPU Operator 架构图：
 
-![NVIDIA GPU Operator 架构图](images/nvidia-gpu-operator-image.jpg)
+![NVIDIA GPU Operator 架构图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/nvidia-gpu-operator-image.jpg)

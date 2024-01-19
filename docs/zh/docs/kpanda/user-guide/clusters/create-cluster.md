@@ -6,21 +6,25 @@ hide:
 
 # 创建工作集群
 
-在 DCE 5.0 容器管理模块中，[集群角色](cluster-role.md)分四类：全局服务集群、管理集群、工作集群、接入集群。其中，接入集群只能从第三方厂商接入，参见[接入集群](./integrate-cluster.md)。
+在 DCE 5.0 容器管理模块中，[集群角色](cluster-role.md)分四类：全局服务集群、管理集群、工作集群、接入集群。
+其中，接入集群只能从第三方厂商接入，参见[接入集群](./integrate-cluster.md)。
 
-本页介绍如何创建工作集群，默认情况下，新建工作集群的工作节点 OS 类型和 CPU 架构需要与全局服务集群保持一致，如需使用区别于全局管理集群 OS 或架构的节点创建集群，参阅[在 centos 管理平台上创建 ubuntu 工作集群](../../best-practice/create-ubuntu-on-centos-platform.md)进行创建。
+本页介绍如何创建工作集群，默认情况下，新建工作集群的工作节点 OS 类型和 CPU 架构需要与全局服务集群保持一致。
+如需使用区别于全局管理集群 OS 或架构的节点创建集群，参阅[在 centos 管理平台上创建 ubuntu 工作集群](../../best-practice/create-ubuntu-on-centos-platform.md)进行创建。
 
-推荐使用 [DCE 5.0 支持的操作系统](../../../install/commercial/deploy-requirements.md)来创建集群，如您本地节点不在上述支持范围，可参考[在非主流操作系统上创建集群](../../best-practice/use-otherlinux-create-custer.md)进行创建。
+推荐使用 [DCE 5.0 支持的操作系统](../../../install/commercial/deploy-requirements.md)来创建集群。
+如您本地节点不在上述支持范围，可参考[在非主流操作系统上创建集群](../../best-practice/use-otherlinux-create-custer.md)进行创建。
 
 ## 前提条件
 
 创建集群之前需要满足一定的前提条件：
 
 - 根据业务需求准备一定数量的节点，且节点 OS 类型和 CPU 架构一致。
-- 推荐 Kubernetes 版本 1.24.7，具体版本范围，参阅 [DCE 5.0 集群版本支持体系](./cluster-version.md)。
+- 推荐 Kubernetes 版本 1.25.7，具体版本范围，参阅 [DCE 5.0 集群版本支持体系](./cluster-version.md)，
+  目前支持自建工作集群版本范围在 `v1.26.0-v1.28`。如需创建低版本的集群，请参考[集群版本支持范围](./cluster-version.md)。
 - 目标主机需要允许 IPv4 转发。如果 Pod 和 Service 使用的是 IPv6，则目标服务器需要允许 IPv6 转发。
 - DCE 暂不提供对防火墙的管理功能，您需要预先自行定义目标主机防火墙规则。为了避免创建集群的过程中出现问题，建议禁用目标主机的防火墙。
-- 参阅[节点可用性检查](../nodes/node-check.md)
+- 参阅[节点可用性检查](../nodes/node-check.md)。
 
 ## 操作步骤
 
@@ -35,7 +39,7 @@ hide:
     - 运行时：选择集群的运行时环境，目前支持 containerd 和 docker，[如何选择容器运行时](runtime.md)。
     - Kubernetes 版本：支持 3 个版本跨度，具体取决于被纳管集群所支持的版本。
 
-        ![填写基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/create002.png)
+    ![填写基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/create002.png)
 
 3. 填写节点配置信息，并点击 __下一步__ 。
 
@@ -52,7 +56,7 @@ hide:
     - 节点信息：填写节点名称和 IP 地址。
     - NTP 时间同步：开启后会自动同步各个节点上的时间，需要提供 NTP 服务器地址。
 
-        ![节点配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/createnew01.png)
+    ![节点配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/createnew01.png)
 
 4. 在页面底部点击节点检查。如果检查通过则继续下一步操作。如果检查未通过，则更新 __节点信息__ 并再次执行检查。
 
@@ -65,9 +69,9 @@ hide:
     - 容器网段：集群下容器使用的网段，决定集群下容器的数量上限。创建后不可修改。
     - 服务网段：同一集群下容器互相访问时使用的 Service 资源的网段，决定 Service 资源的上限。创建后不可修改。
 
-        ![网络配置1](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew03.png)
+    ![网络配置1](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew03.png)
         
-        ![网络配置2](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew04.png)
+    ![网络配置2](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew04.png)
 
 6. 填写插件配置信息，并点击 __下一步__ 。
 
@@ -83,8 +87,7 @@ hide:
     - __Insecure_registries__ ：私有镜像仓库配置。使用私有镜像仓库创建集群时，为了避免证书问题导致容器引擎拒绝访问，需要在这里填写私有镜像仓库地址，以绕过容器引擎的证书认证而获取镜像。
     - __yum_repos__ ：填写 Yum 源仓库地址。
 
-        ![高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew06.png)
-
+    ![高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/creatnew06.png)
 
 !!! success
 

@@ -118,7 +118,7 @@
 
 === "网络配置"
 
-    - 如在集群中部署了 [SpiderPool](../../../network/modules/spiderpool/index.md) 和 [Multus](../../../network/modules/multus-underlay/index.md) 组件，则可以在网络配置中配置容器网卡。详情参考[工作负载使用 IP 池](../../../network/modules/spiderpool/usage.md)。
+    - 如在集群中部署了 [SpiderPool](../../../network/modules/spiderpool/index.md) 和 [Multus](../../../network/modules/multus-underlay/index.md) 组件，则可以在网络配置中配置容器网卡。详情参考[工作负载使用 IP 池](../../../network/config/use-ippool/usage.md)。
     
     - DNS 配置：应用在某些场景下会出现冗余的 DNS 查询。Kubernetes 为应用提供了与 DNS 相关的配置选项，能够在某些场景下有效地减少冗余的 DNS 查询，提升业务并发量。
     
@@ -150,7 +150,7 @@
 
 === "容器管理策略"
     
-    Kubernetes v1.7 及其之后的版本可以通过 __ .spec.podManagementPolicy__ 设置 Pod 的管理策略，支持以下两种方式：
+    Kubernetes v1.7 及其之后的版本可以通过 __.spec.podManagementPolicy__ 设置 Pod 的管理策略，支持以下两种方式：
     
     - __按序策略（OrderedReady）__ ：默认的 Pod 管理策略，表示按顺序部署 Pod，只有前一个 Pod 部署 成功完成后，有状态负载才会开始部署下一个 Pod。删除 Pod 时则采用逆序，最后创建的最先被删除。
     

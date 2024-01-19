@@ -9,17 +9,17 @@
 
 ## 一键转移
 
-1. 进入 __多云实例-工作负载管理__ ，点击 __接入集群__ 选择将 DCE4 集群接入多云实例。
+1. 进入多云实例，选择 __工作负载管理__ ，点击 __接入集群__ 选择将 DCE4 集群接入多云实例。
 
     ![接入集群](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/conversion01.png)
 
-2. 进入 __多云工作负载-无状态负载__ ，点击立即体验，选中目标应用，将会自动勾选其关联的 service，同时相关联的配置项、密钥也会被同步转换。
+2. 进入 __多云工作负载__ -> __无状态负载__ ，点击 __立即转换__，选中目标应用，将会自动勾选其关联的 service，同时相关联的配置项、密钥也会被同步转换。
 
     ![一键转移](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/conversion02.png)
 
     ![同步转换](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/conversion03.png)
 
-3. 转换成功后点击更新，选择目标部署集群，并开启自动传播（将默认自动检测多云工作负载配置中依赖的 ConfigMap 与 Secret 等资源，并实现自动传播）。
+3. 转换成功后点击 __更新__，选择目标部署集群，并开启自动传播（将默认自动检测多云工作负载配置中依赖的 ConfigMap 与 Secret 等资源，并实现自动传播）。
 
     ![更新nginx](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/conversion04.png)
 

@@ -1,66 +1,95 @@
-# What is Service Mesh?
+---
+MTPE: windsonsea
+date: 2024-01-10
+hide:
+  - toc
+---
 
-Service Mesh is a next-generation, cloud native service mesh built on the open-source Istio technology.
-It is a fully managed product with high performance and usability, providing a complete non-intrusive
-microservice governance solution that can uniformly manage multi-cloud and multi-cluster environments.
+# What is a Service Mesh
 
-Service Mesh offers service traffic governance, security governance, and service traffic monitoring to its users.
-It allows access to traditional microservices in the form of infrastructure. The platform is seamlessly connected
-to the DCE Container Management platform, providing an out-of-the-box experience to users. As an infrastructure,
-it provides container microservice governance support for the microservice engine, making it easy for users to
-manage all microservice systems through a single platform.
+A service mesh is the next generation service mesh built on the open-source technology of Istio,
+which is designed for cloud native applications.
 
-Service Mesh is compatible with the native Istio open-source service mesh, providing native Istio access management.
-At a high level, Service Mesh helps reduce the complexity of service governance and decrease pressure on DevOps teams.
-It streamlines microservice governance by providing an all-in-one solution that simplifies multi-cloud and multi-cluster environments.
+A service mesh is a fully managed service mesh product that offers high performance and ease of use.
+It provides a complete non-intrusive microservices governance solution, which enables unified governance
+of complex environments with multiple clouds and clusters. It offers service traffic governance,
+security governance, service traffic monitoring, and integration with traditional microservices
+(such as Spring Cloud and Dubbo).
 
-## Product Benefits
+DCE 5.0's service mesh is compatible with the native Istio open-source service mesh and provides
+native Istio access management capabilities. At a higher level, a service mesh helps reduce the
+complexity of service governance and alleviate the pressure on development and operations teams.
 
-DCE 5.0 Service Mesh offers several advantages compared to other products:
+As a member of the DCE 5.0 product system, the service mesh seamlessly integrates with the
+[container management platform](../../kpanda/intro/index.md), providing users with an
+out-of-the-box experience. It also serves as infrastructure support for the
+[microservice engine](../../skoala/intro/index.md), enabling unified management of various
+microservice systems through a single platform.
 
-- Easy to Use: Users do not need to modify any business code or manually install agents.
-  They can enable Service Mesh feature and experience rich non-intrusive service governance capabilities.
+## Product Advantages
 
-- Strategic Intelligent Routing and Elastic Traffic Management: Supports configuring load balancing, service routing,
-  fault injection, circuit breaking, and other governance rules for services. Combined with a one-stop management
-  system, it provides real-time, visualized micro-service traffic management that supports non-intrusive intelligent
-  traffic management. It can perform dynamic intelligent routing and elastic traffic management without modifying
-  the application. The following are additional features:
+DCE 5.0's service mesh has the following advantages compared to other products:
 
-    - Routing rules such as weight, content, TCP/IP, etc.
-    - HTTP sessions are maintained to meet the demands of business processing continuity.
-    - Current limiting and fusing to achieve stable and reliable traces between services.
-    - Network persistent connection management reduces resource loss and improves network throughput.
-    - Service security certification: certification, authentication, audit, etc., providing the cornerstone of service security.
+- Simple and easy to use
 
-- Graphical Application Panorama Topology and Visualized Traffic Management: Provides visual traffic monitoring,
-  including link information, service abnormal response, and long response delay, and comprehensively displays
-  business operation status through charts and topologies. Service Mesh combines application operation and maintenance
-  management and application performance management services to provide detailed microservice-level traffic monitoring,
-  abnormal response traffic reports, and call chain information, enabling faster and more accurate location of problems.
+    No need to modify any business code or manually install proxies.
+    Just enable the service mesh feature to experience rich non-intrusive service governance capabilities.
 
-- Enhanced Performance and Increased Reliability: The Service Mesh control plane and data plane are
-  more reliable and performance-optimized based on the community version.
+- Policy-based intelligent routing and elastic traffic management
 
-- Multicloud, Multicluster, Multi-infrastructure: Provides an O&M-free hosting control plane and offers multicloud
-  and multicluster global unified service governance, security, and service operation monitoring capabilities.
-  It also provides unified service discovery and management for multiple infrastructures such as containers
-  and virtual machines (VMs).
+    Supports governance rules for services such as load balancing, service routing, fault injection,
+    and outlier detection. Combined with the all-in-one governance system, it provides real-time and
+    visualized microservice traffic management. Supports non-intrusive intelligent traffic governance,
+    enabling dynamic intelligent routing and elastic traffic management without any application modification.
 
-- Protocol Extensions: Extend the support of Dubbo protocol.
+    - Weighted, content, TCP/IP, and other routing rules.
+    - HTTP session persistence to meet the continuous processing needs of businesses.
+    - Rate limiting and outlier detection to achieve stable and reliable service-to-service links.
+    - Network connection management to reduce resource consumption and improve network throughput.
+    - Service security authentication: authentication, authorization, auditing, etc., providing
+      a foundation for service security.
 
-- Legacy SDK Integration: Provides integrated solutions for traditional microservice SDKs such as Spring Cloud
-  and Dubbo. Businesses developed by traditional microservice SDKs can be quickly migrated to cloud native mesh
-  operating environments without extensive code modification.
+- Graphical application panoramic topology and visualized traffic governance
 
-## Learning Path
+    The service mesh provides visualized traffic monitoring, including link information,
+    service abnormal responses, and excessively long response latency. It comprehensively
+    displays the operation of the business through various forms such as charts and topologies.
 
-The learning path for the service mesh is as follows:
+    The service mesh can be combined with application operation and maintenance management and
+    application performance management services to provide detailed microservice-level traffic monitoring,
+    abnormal response traffic reports, and invocation chain information. It enables faster and more
+    accurate problem localization.
+
+- Enhanced performance and reliability
+
+    The service mesh control plane and data plane are based on the community version but with
+    enhanced reliability and performance optimization.
+
+- Multi-cloud, multi-cluster, and multi-infrastructure
+
+    Provides a managed control plane, which offers unified service governance, security, and
+    service operation monitoring capabilities across multiple clouds and clusters. It also
+    provides unified service discovery and management for various infrastructures such as
+    containers and virtual machines (VMs).
+
+- Protocol extension
+
+    Supports the extension of the Dubbo protocol.
+
+- Traditional SDK integration
+
+    Provides integration solutions for traditional microservice SDKs such as Spring Cloud and Dubbo.
+    Applications developed with traditional microservice SDKs can be quickly migrated to cloud native
+    container mesh runtime environments without extensive code modification.
+
+## Learning Journey
+
+The recommended journey for learning the service mesh is as follows:
 
 ```mermaid
 flowchart TD
 
-    install([Installation and Deployment])
+    install([Install and Deploy])
     install --> mesh[Create a Mesh]
         subgraph mesh[Create a Mesh]
             managed[Hosted Mesh]

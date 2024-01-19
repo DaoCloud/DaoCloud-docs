@@ -1,4 +1,5 @@
 ---
+MTPE: windsonsea
 date: 2022-11-23
 hide:
   - navigation
@@ -14,7 +15,7 @@ This page allows you to download the offline package and checksum file of DCE 5.
 ## Download
 
 | Filename | Package |
-| ------------------- | ----------------------------- -------------------------------------------------- --------------------- |
+| -------- | ------- |
 | offline-v0.3.27.tar | [:arrow_down: Download](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.3.27.tar) |
 
 ## Validation
@@ -42,8 +43,8 @@ After successful installation, please contact us for authorization: email info@d
 
 The DCE 5.0 Enterprise includes the following modules, which are plug-and-play to meet various use cases:
 
-| Modules | Introduction | What's New |
-| ---------- | -------------------------------------- ---------------------------------- | --------------- ---------------------------------------------- |
+| Modules | Description | Versions |
+| ------- | ----------- | -------- |
 | Global Management | Responsible for user access control, permissions, workspaces and folders, audit logs, personalized appearance settings, etc. | [Release Notes](../../ghippo/intro/release-notes.md) |
 | Container Management | Manage K8s core features such as clusters, nodes, workloads, Helm applications, CRDs, and namespaces | [v0.12.0](../../kpanda/intro/release-notes.md#v0120) |
 | Insight | Provide rich graphic information such as dashboards, scene monitoring, data query, and alerts | [v0.11.1](../../insight/intro/releasenote.md#v0111) |

@@ -58,7 +58,7 @@ Insight 基于 [Prometheus Blackbox Exporter](https://github.com/prometheus/blac
 
 点击列表右侧的 __⋮__ -> __编辑__ ，完成编辑后点击 __确定__ 。
 
-![probe](../../images/probe04.png){ width=1000px}
+![probe](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/probe04.png){ width=1000px}
 
 ## 查看监控面板
 
@@ -79,7 +79,7 @@ Insight 基于 [Prometheus Blackbox Exporter](https://github.com/prometheus/blac
 
 点击列表右侧的 __⋮__ -> __删除__ ，确认无误后点击 __确定__ 。
 
-![probe](../../images/probe05.png){ width=1000px}
+![probe](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/probe05.png){ width=1000px}
 
 !!! caution
 

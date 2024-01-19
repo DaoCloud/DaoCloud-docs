@@ -1,4 +1,11 @@
-# Network Spidernet
+---
+MTPE: windsonsea
+date: 2024-01-18
+hide:
+  - toc
+---
+
+# Network
 
 This page allows you to download the offline packages of various versions of the network Spidernet module.
 

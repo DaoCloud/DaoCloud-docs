@@ -10,4 +10,4 @@
 
 集群卸载有残留。确定未知集群已不存在，手动删除残留集群信息，登录global集群，执行以下命令
 
-![内存占用查看](./images/mc-delete-01.png)
+![内存占用查看](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/troubleshoot/images/mc-delete-01.png)

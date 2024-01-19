@@ -16,7 +16,7 @@ Follow the steps below to create a folder:
 
 2. Click the __Create Folder__ button in the top right corner.
 
-    ![Create Folder](../images/ws02.png)
+    ![Create Folder](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/user-guide/images/ws02.png)
 
 3. Fill in the folder name, parent folder, and other information, then click __OK__ to complete creating the folder.
 

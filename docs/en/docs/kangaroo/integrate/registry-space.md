@@ -30,7 +30,7 @@ Prerequisite: An external Harbor registry has been created or integrated.
 
 1. Return to the list of registry spaces, showing `Created registry space successfully`.
 
-    ![successful](../images/reg-space03.png)
+    ![successful](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/reg-space03.png)
 
 1. Find the newly created registry space, click `⋮` on the right, you can perform [bind/unbind workspace](./bind-to-ws.md), delete and other operations.
 

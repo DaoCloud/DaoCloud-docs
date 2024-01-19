@@ -1,3 +1,10 @@
+---
+MTPE: windsonsea
+date: 2024-01-18
+hide:
+  - toc
+---
+
 # Security Management
 
 This page provides offline packages for different versions of the Dowl security management module.

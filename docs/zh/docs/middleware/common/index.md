@@ -20,11 +20,11 @@ hide:
 
 1. 在左侧导航栏中选择 __中间件__ -> __MinIO 存储__。
 
-    ![选择工作空间](../common/images/middlewarelist01.png)
+    ![选择工作空间](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/common/images/middlewarelist01.png)
 
 2. 在弹窗中选择一个工作空间后，点击 __确认__。
 
-    ![选择工作空间](../common/images/workspace.png)
+    ![选择工作空间](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/common/images/workspace.png)
 
     !!! note
 

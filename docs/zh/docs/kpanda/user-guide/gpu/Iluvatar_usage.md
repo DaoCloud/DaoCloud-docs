@@ -16,14 +16,14 @@
 1. 确认集群是否已检测 GPU 卡。点击对应 __集群__ -> __集群设置__ -> __Addon 插件__ ，查看是否已自动启用并自动检测对应 GPU 类型。
     目前集群会自动启用 __GPU__ ，并且设置 __GPU__ 类型为 __Iluvatar__ 。
 
-    ![集群设置](./images/cluster-setting-iluvatar-gpu.jpg)
+    ![集群设置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/cluster-setting-iluvatar-gpu.jpg)
 
 2. 部署工作负载。点击对应 __集群__ -> __工作负载__ ，通过镜像方式部署工作负载，选择类型（Iluvatar）之后，需要配置 App 使用的 GPU 资源：
 
     - 物理卡数量（iluvatar.ai/vcuda-core）：表示当前 Pod 需要挂载几张物理卡，输入值必须为整数且 **小于等于** 宿主机上的卡数量。
     - 显存使用数量（iluvatar.ai/vcuda-memory）：表示每张卡占用的 GPU 显存，值单位为 MB，最小值为 1，最大值为整卡的显存值。
 
-    ![负载使用](./images/workload_iluvatargpu_userguide.jpg)
+    ![负载使用](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/workload_iluvatargpu_userguide.jpg)
 
     > 如果上述值配置的有问题则会出现调度失败，资源分配不了的情况。
 

@@ -15,7 +15,7 @@ applications, including storage, middleware, AI, and more.
 
 The key features of Spiderpool are as follows:
 
-![key features](./images/spider-arch.png)
+![key features](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/community/images/spider-arch.png)
 
 Refer to the [Spiderpool Fixed IP Scenario Video](../videos/use-cases.md#ip) and .
 Refer to the [Spiderpool Fixed IP Scenario Video](../videos/use-cases.md#ip) and the blog of [Spiderpool is Onboarding into CNCF Sandbox Projects](../blogs/231220-spiderpool.md).

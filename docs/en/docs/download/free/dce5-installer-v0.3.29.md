@@ -13,8 +13,8 @@ This page allows you to download the offline package and checksum file of DCE 5.
 
 ## Download
 
-| Filename | Version | Architecture | File Size | Downloads | Update Date |
-| ----------------------------- | ------- | -------- | -- ----------------------------------------------- | ----- ----- | -------------------------------- |
+| Filename | Version | Architecture | File Size | Download | Update Date |
+| -------- | ------- | ------------ | --------- | -------- | ----------- |
 | offline-centos7-community-v0.3.29-amd64.tar | v0.3.29 | AMD64 | 9.2 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-community-v0.3.29-amd64.tar) | 2022-12-16 |
 | offline-kylin-v10sp2-community-v0.3.29-arm64.tar | v0.3.29 | ARM64 | 6.9 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-kylin-v10sp2-community-v0.3.29-arm64.tar) | 2022-12-16 |
 
@@ -71,14 +71,14 @@ After the offline package has been successfully validated,
      ```
 
 - For installation, refer to [DCE 5.0 Community Installation Process](../../install/community/k8s/online.md#_2)
-- After successful installation, please [Free Trial](../../dce/license0.md)
+- After successful installation, [Free Trial](../../dce/license0.md)
 
 ## Modules
 
 DCE 5.0 Community includes the following modules by default:
 
 | Modules | Introduction | What's New |
-| -------- | ----------------------------------------- ------------------------- | ------------------------ ------------------------------------- |
+| -------- | ----------- | ---------- |
 | Global Management | Responsible for user access control, permissions, workspaces and folders, audit logs, personalized appearance settings, etc. | [v0.12](../../ghippo/intro/release-notes.md#v012) |
 | Container Management | Manage K8s core features such as clusters, nodes, workloads, Helm applications, CRDs, and namespaces | [v0.13](../../kpanda/intro/release-notes.md#v013) |
 | Insight | Provide rich graphic information such as dashboards, scene monitoring, data query, and alerts | [v0.12](../../insight/intro/releasenote.md#v012) |

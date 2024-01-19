@@ -1,3 +1,10 @@
+---
+MTPE: windsonsea
+date: 2024-01-18
+hide:
+  - toc
+---
+
 # Insight
 
 On this page, you can download the offline packages of each version of the Insight module.

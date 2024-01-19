@@ -15,7 +15,7 @@
 
 - 默认 CNI：安装 Multus-underlay 之前，需要确认当前集群是否存在默认 CNI，比如 Calico 或者 Cilium，否则 Multus 可能会无法工作。
 - Spiderpool：Multus-underlay 依赖 [Spiderpool](https://github.com/spidernet-io/spiderpool) 作为 `ipam`。
-  安装 `Spiderpool` 请参考 [Install Spiderpool](../spiderpool/install.md)。
+  安装 `Spiderpool` 请参考 [Install Spiderpool](../spiderpool/install/install.md)。
 - 如需安装 SRIOV-CNI，需要确认节点是否为物理主机且节点拥有支持 SRIOV 的物理网卡。
   如果节点为 VM 虚拟机或者没有支持 SR-IOV 的网卡，那么 SR-IOV 将无法工作。
   详情参考 [sriov-device-plugin](https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin)。

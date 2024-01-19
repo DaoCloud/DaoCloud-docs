@@ -5,7 +5,7 @@ A namespace is an abstraction used in Kubernetes to isolate resources.
 ## Prerequisites
 
 - The current workspace already has cluster resources. Refer to [Binding Resources](../../../ghippo/user-guide/workspace/quota.md) for more information.
-- The current user is authorized with the __Workspace Admin__ role. Refer to [Workspace Best Practices](../../../ghippo/user-guide/workspace/ws-best-practice.md) for details.
+- The current user is authorized with the __Workspace Admin__ role. Refer to [Workspace Best Practices](../../../ghippo/best-practice/ws-best-practice.md) for details.
 
 ## Create a Namespace
 

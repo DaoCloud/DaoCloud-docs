@@ -43,7 +43,7 @@ For details, refer to the [Service Mesh - Traffic Governance Documentation](../m
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/oem-out.mp4" preload="metadata" poster="images/oem-out.png"></video>
 </div>
 
-For details, refer to the [OEM OUT Documentation](../ghippo/oem/oem-out.md).
+For details, refer to the [OEM OUT Documentation](../ghippo/best-practice/oem/oem-out.md).
 
 ## Integrating Customer Systems into DCE 5.0 (OEM IN)
 
@@ -51,7 +51,7 @@ For details, refer to the [OEM OUT Documentation](../ghippo/oem/oem-out.md).
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/oemin-istio.mp4" preload="metadata" poster="images/oemin-istio.png"></video>
 </div>
 
-For details, refer to the [OEM IN Documentation](../ghippo/oem/oem-in.md).
+For details, refer to the [OEM IN Documentation](../ghippo/best-practice/oem/oem-in.md).
 
 ## Configuring and Using Underlay IP
 

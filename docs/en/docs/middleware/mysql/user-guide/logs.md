@@ -11,11 +11,11 @@ By accessing the instance details page of each MySQL, it is possible to support 
 
 1. In the MySQL instance list, select the log you want to view, and click Instance Name to enter the instance details page.
 
-    ![Instance Name](../images/log01.png)
+    ![Instance Name](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/middleware/mysql/images/log01.png)
 
 2. In the left menu bar of the instance, you will find `Logs` option for log viewing.
 
-    ![Logs](../images/log02.png)
+    ![Logs](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/middleware/mysql/images/log02.png)
 
 3. Click `Logs` to enter the log view page (Insight log view).
 
@@ -29,4 +29,4 @@ On the log viewing page, we can easily view logs. Common operations are describe
 * Support to view the context of the log, click the `context` icon on the right
 * Support export log
 
-![Log Details](../images/log03.png)
+![Log Details](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/middleware/mysql/images/log03.png)

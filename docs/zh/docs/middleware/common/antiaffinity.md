@@ -22,7 +22,7 @@
 
 1. 在创建 __Redis__ 实例过程中，在 __服务设置__ -> __高级设置__ 中启用 __工作负载反亲和性__ 。
 
-    ![创建](images/anti-affinity01.png)
+    ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/common/images/anti-affinity01.png)
 
 2. 参考以下说明填写工作负载反亲和性的配置。
 
@@ -34,7 +34,7 @@
     - Pod 选择器：设置 Pod 标签。**同一个拓扑域内，只能有一个带有此标签的 Pod**。
     - 有关反亲和性以及各种操作符的详细介绍，可参考[操作符](../../kpanda/user-guide/workloads/pod-config/scheduling-policy.md#_4)
 
-    ![创建](images/anti-affinity02.jpg)
+    ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/common/images/anti-affinity02.jpg)
     
     !!! note
 
@@ -46,13 +46,13 @@
 
 配置好工作负载反亲和性并且实例创建成功后，进入[容器管理](../../kpanda/intro/index.md)模块查看 __Pod__ 调度信息。
 
-![查看 Pod](images/anti-affinity04.jpg)
+![查看 Pod](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/common/images/anti-affinity04.jpg)
 
 可见一共 3 个 Pod，两个已经在正常运行并且分布在不同的节点上。
 
 第三个 Pod 处于等待状态，点击 Pod 名称查看详情，发现原因是污点和反亲和性规则导致没有可以部署的节点。
 
-![事件日志](images/anti-affinity03.jpg)
+![事件日志](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/common/images/anti-affinity03.jpg)
 
 !!! success
 

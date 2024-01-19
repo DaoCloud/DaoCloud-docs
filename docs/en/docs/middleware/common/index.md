@@ -20,11 +20,11 @@ The following describes how to select a workspace using MinIO as an example, and
 
 1. In the left navigation bar, select __Middleware__ -> __MinIO Object Storage__ .
 
-    ![MinIO Object Storage](images/middleware01.png)
+    ![MinIO Object Storage](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/middleware/common/images/middleware01.png)
 
 2. In the pop-up window, select a workspace, and then click __OK__ .
 
-    ![Choose Workspace](images/middleware02.png)
+    ![Choose Workspace](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/middleware/common/images/middleware02.png)
 
     !!! note
 
@@ -32,4 +32,4 @@ The following describes how to select a workspace using MinIO as an example, and
 
 3. For the first use, you can click [__Create Now__](../minio/user-guide/create.md) to create a MinIO instance.
 
-    ![Create Now](images/middleware03.png)
+    ![Create Now](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/middleware/common/images/middleware03.png)

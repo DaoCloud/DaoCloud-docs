@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 网络 Spidernet
 
 本页可下载网络 Spidernet 模块各版本的离线安装包。

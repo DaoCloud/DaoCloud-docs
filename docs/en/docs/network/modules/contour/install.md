@@ -4,7 +4,7 @@ This page describes how to install Contour.
 
 Please confirm that your cluster has successfully connected to the `Container Management` platform, and then perform the following steps to install Contour.
 
-1. Click `Container Management`->`Cluster List` in the left navigation bar, and then find the cluster name where you want to install Contour.
+1. Click `Container Management`->`Clusters` in the left navigation bar, and then find the cluster name where you want to install Contour.
 
     ![contour-cluster](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/contour-install-1.png)
 

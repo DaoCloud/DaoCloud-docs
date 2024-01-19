@@ -1,3 +1,10 @@
+---
+MTPE: windsonsea
+date: 2024-01-18
+hide:
+  - toc
+---
+
 # Container Registry
 
 On this page, you can download offline packages for different versions of the container registry module.

@@ -23,7 +23,7 @@ The service topology graph supports operations like panning and zooming.
 
 Click the `Legend` button in the bottom-left corner to see the meaning of the current lines, circles, and colors.
 
-![Legend](../images/topo03.png)
+![Legend](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/topo03.png)
 
 Services are represented by circles, and the color of the circle indicates the health status of the service:
 

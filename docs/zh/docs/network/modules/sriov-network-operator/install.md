@@ -5,7 +5,7 @@
 ## 前提条件
 
 在 DCE 5.0 集群内使用 sriov-network-operator。推荐结合 Spiderpool，安装 `Spiderpool`
-请参考 [Install Spiderpool](../spiderpool/install.md)。
+请参考 [Install Spiderpool](../spiderpool/install/install.md)。
 
 ## 安装步骤
 

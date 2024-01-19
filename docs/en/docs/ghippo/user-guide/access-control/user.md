@@ -36,11 +36,11 @@ Prerequisite: The user already exists.
 
 1. The administrator enters __Access Control__ , selects __Users__ , enters the user list, and clicks __⋮__ -> __Authorization__ .
 
-    ![Menu](../images/authorize01.png)
+    ![Menu](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/user-guide/images/authorize01.png)
 
 2. On the __Authorization__ page, check the required role permissions (multiple choices are allowed).
 
-    ![Interface](../images/authorize02.png)
+    ![Interface](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/user-guide/images/authorize02.png)
 
 3. Click __OK__ to complete the authorization for the user.
 
@@ -52,11 +52,11 @@ Prerequisite: The user already exists.
 
 1. The administrator enters __Access Control__ , selects __Users__ , enters the user list, and clicks __⋮__ -> __Add to Group__ .
 
-    ![Add group menu](../images/joingroup01.png)
+    ![Add group menu](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/user-guide/images/joingroup01.png)
 
 2. On the __Add to Group__ page, check the groups to be joined (multiple choices are allowed). If there is no optional group, click __Create a new group__ to create a group, and then return to this page and click the __Refresh__ button to display the newly created group.
 
-    ![Add group interface](../images/joingroup02.png)
+    ![Add group interface](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/user-guide/images/joingroup02.png)
 
 3. Click __OK__ to add the user to the group.
 
@@ -70,11 +70,11 @@ Once a user is deactivated, that user will no longer be able to access the Platf
 
 1. The administrator enters __Access Control__ , selects __Users__ , enters the user list, and clicks a username to enter user details.
 
-    ![User details](../images/createuser03.png)
+    ![User details](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/user-guide/images/createuser03.png)
 
 2. Click __Edit__ on the upper right, turn off the status button, and make the button gray and inactive.
 
-    ![Edit](../images/enableuser01.png)
+    ![Edit](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/user-guide/images/enableuser01.png)
 
 3. Click __OK__ to finish disabling the user.
 
@@ -84,11 +84,11 @@ Premise: User mailboxes need to be set. There are two ways to set user mailboxes
 
 - On the user details page, the administrator clicks __Edit__ , enters the user's email address in the pop-up box, and clicks __OK__ to complete the email setting.
 
-    ![Edit](../images/enableuser02.png)
+    ![Edit](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/user-guide/images/enableuser02.png)
 
 - Users can also enter the __Personal Center__ and set the email address on the __Security Settings__ page.
 
-    ![User center](../images/mailbox.png)
+    ![User center](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/user-guide/images/mailbox.png)
 
 If the user forgets the password when logging in, please refer to [Reset Password](../password.md).
 
@@ -103,8 +103,8 @@ If the user forgets the password when logging in, please refer to [Reset Passwor
 
 1. The administrator enters __Access Control__ , selects __Users__ , enters the user list, and clicks __⋮__ -> __Delete__ .
 
-    ![Delete user](../images/deleteuser01.png)
+    ![Delete user](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/user-guide/images/deleteuser01.png)
 
 2. Click __Delete__ to finish deleting the user.
 
-    ![Confirm deletion](../images/deleteuser02.png)
+    ![Confirm deletion](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/user-guide/images/deleteuser02.png)

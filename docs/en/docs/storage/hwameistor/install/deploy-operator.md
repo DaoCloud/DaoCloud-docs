@@ -3,7 +3,7 @@ hide:
    - toc
 ---
 
-# Install via Operator
+# Install with Operator
 
 This article introduces how to install Hwameistor through the Hwameistor Operator on the platform interface. After installing the Operator, it will automatically launch the Hwameistor-related components. The HwameiStor Operator is responsible for the following:
 
@@ -36,7 +36,7 @@ This article introduces how to install Hwameistor through the Hwameistor Operato
     Once there are disks in the pool of LocalStorageNode, the Operator will automatically create the StorageClass.
     In other words, if there is no capacity, the StorageClass will not be created automatically.
 
-## Installation Steps
+## Steps
 
 Ensure that your cluster has successfully connected to the container management platform before proceeding with the following steps to install Hwameistor.
 
@@ -44,9 +44,13 @@ Ensure that your cluster has successfully connected to the container management 
 
 2. In the left navigation bar, select `Helm Apps` -> `Helm chart`, find and click `Hwameistor Operator`.
 
+    ![Hwameistor Operator](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/storage/hwameistor/img/operator1.png)
+
 3. Within the `Version Selection` section, choose the version to install, and then click `Install`.
 
 4. On the installation interface, fill in the required installation parameters.
+
+    ![Basic Info](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/storage/hwameistor/img/operator2.png)
 
     The parameters in `Value.yaml` are as follows and can't be modified by default:
 
@@ -133,7 +137,11 @@ Ensure that your cluster has successfully connected to the container management 
 
 5. After confirming that the parameters are correct, click `OK` to complete the installation. After the installation is complete, you can click `Helm Apps` to view the installation status of `Hwameistor Operator`.
 
+    ![Check Status](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/storage/hwameistor/img/operator3.png)
+
 6. After the Operator is installed, the Hwameistor components (Local Storage, Local Disk Manager, etc.) will be installed by default!
     You can click `Workload`-->`Stateless Workload`, select the corresponding namespace, and view the status of the Hwameistor component.
+
+    ![Details](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/storage/hwameistor/img/operator4.png)
 
     To verify the installation effect through the command line, please refer to [Post-installation Check](./post-check.md).

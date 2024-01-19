@@ -23,7 +23,7 @@ Spiderpool 的离线包存放在 addon 中，你可以参考[下载 addon 离线
 
 1. addon 升级后，即可通过如下方式，获取 Chart 包
 
-    - 参考如下方式，通过 DCE 5.0 界面下载 v0.7.0 的 chart 包
+    参考如下方式，通过 DCE 5.0 界面下载 v0.7.0 的 chart 包
 
     ![spiderpool chart](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/spiderpool-chart-version-7.png)
 
@@ -40,23 +40,23 @@ Spiderpool 的离线包存放在 addon 中，你可以参考[下载 addon 离线
     在环境上通过如下 helm 方式，获取 Chart 包。
 
     ```bash
-    ~# helm repo add spiderpool https://spidernet-io.github.io/spiderpool
-    ~# helm repo update spiderpool
-    ~# helm search repo spiderpool/spiderpool --versions
+    $ helm repo add spiderpool https://spidernet-io.github.io/spiderpool
+    $ helm repo update spiderpool
+    $ helm search repo spiderpool/spiderpool --versions
     NAME                   CHART VERSION   APP VERSION  DESCRIPTION
     spiderpool/spiderpool  0.7.0           0.7.0        ipam for kubernetes cni
     ...
-    ~# helm fetch spiderpool/spiderpool --version 0.7.0
-    ~# ls spiderpool-0.7.0.tgz
+    $ helm fetch spiderpool/spiderpool --version 0.7.0
+    $ ls spiderpool-0.7.0.tgz
     spiderpool-0.7.0.tgz
     ```
 
     将 chart 包上传到离线仓库。
 
     ```shell
-    传 charts 包：
-    ~# helm repo add [addon] http://10.5.10.210:8081 # addon 替换为离线仓库名称，以及替换你的镜像仓库 url
-    ~# helm cm-push -u rootuser -p rootpass123 --insecure {chart 目录或 tar 包} # 替换你的镜像仓库用户名与密码。
+    # 传 charts 包
+    helm repo add [addon] http://10.5.10.210:8081 # addon 替换为离线仓库名称，以及替换你的镜像仓库 url
+    helm cm-push -u rootuser -p rootpass123 --insecure {chart 目录或 tar 包} # 替换你的镜像仓库用户名与密码。
     ```
 
 2. 获取离线镜像包
@@ -64,14 +64,14 @@ Spiderpool 的离线包存放在 addon 中，你可以参考[下载 addon 离线
     在任意可通外网的且安装了 docker 的环境上，执行下列命令获取 Spiderpool 的镜像。
 
     ```shell
-    ~# docker pull ghcr.m.daocloud.io/spidernet-io/spiderpool/spiderpool-controller:v0.7.0
-    ~# docker pull ghcr.m.daocloud.io/spidernet-io/spiderpool/spiderpool-agent:v0.7.0
+    docker pull ghcr.m.daocloud.io/spidernet-io/spiderpool/spiderpool-controller:v0.7.0
+    docker pull ghcr.m.daocloud.io/spidernet-io/spiderpool/spiderpool-agent:v0.7.0
     ```
 
     通过 `docker save` 保存为离线镜像 tar 包，并上传到离线环境。
 
     ```shell
-    ~# docker save -o spiderpool-0.7.0.tar ghcr.m.daocloud.io/spidernet-io/spiderpool/spiderpool-controller:v0.7.0 ghcr.m.daocloud.io/spidernet-io/spiderpool/spiderpool-agent:v0.7.0
+    $ docker save -o spiderpool-0.7.0.tar ghcr.m.daocloud.io/spidernet-io/spiderpool/spiderpool-controller:v0.7.0 ghcr.m.daocloud.io/spidernet-io/spiderpool/spiderpool-agent:v0.7.0
     ```
 
 3. 在需升级的环境中加载镜像到 Docker 或 Containerd。

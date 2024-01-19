@@ -8,22 +8,22 @@ With internal templates and custom templates, users can easily create new virtua
 
 Follow these steps to create a virtual machine using a template.
 
-1. Click on `Container Management` in the left navigation menu, then click on `Virtual Machine` to access the `Virtual Machine Management` page. On the virtual machine list page, click on `Create Virtual Machine` and select `Create with Template`.
+1. Click `Container Management` in the left navigation menu, then click `Virtual Machine` to access the `Virtual Machine Management` page. On the virtual machine list page, click `Create Virtual Machine` and select `Create with Template`.
 
-    ![Create Template](../images/create-tep01.png)
+    ![Create Template](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/create-tep01.png)
 
 2. On the template creation page, fill in the required information, including basic information, template configuration, storage and networking, and login settings. Then, click `OK` in the bottom-right corner to complete the creation.
 
     The system will automatically return to the virtual machine list. By clicking on the ellipsis (`︙`) on the right side of the list, you can perform operations such as shutdown/startup, reboot, clone, update, create snapshot, convert to template, console access (VNC), and delete.
     The ability to clone and create snapshots depends on the selected storage pool.
 
-    ![VM Management](../images/create-tep09.png)
+    ![VM Management](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/create-tep09.png)
 
 ### Basic Information
 
 On the Create VMs page, enter the information according to the table below and click `Next`.
 
-![Basic Information](../images/create-tep02.png)
+![Basic Information](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/create-tep02.png)
 
 - Name: Can contain up to 63 characters and can only include lowercase letters, numbers, and hyphens (`-`). The name must start and end with a lowercase letter or number.
   Names must be unique within the same namespace, and the name cannot be changed after the virtual machine is created.
@@ -38,19 +38,19 @@ The template list will appear, and you can choose either an internal template or
 
 - Select an Internal Template: The platform provides three standard templates that cannot be edited or deleted. When selecting an internal template, the image source, operating system, image address, and other information will be based on the template and cannot be modified. Resource quotas will also be based on the template but can be modified.
 
-    ![Template01](../images/create-tep03.png)
+    ![Template01](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/create-tep03.png)
 
-    ![Template02](../images/create-tep04.png)
+    ![Template02](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/create-tep04.png)
 
 - Select a Custom Template: These templates are created from virtual machine configurations and can be edited or deleted. When using a custom template, you can modify the image source and other information based on your specific requirements.
 
-    ![Image Repository01](../images/create-tep05.png)
+    ![Image Repository01](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/create-tep05.png)
 
-    ![Image Repository01](../images/create-tep06.png)
+    ![Image Repository01](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/create-tep06.png)
 
 ### Storage and Network
 
-![Storage and Network](../images/create-tep07.png)
+![Storage and Network](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/create-tep07.png)
 
 - Storage: By default, the system creates a rootfs system disk of VirtIO type for storing the operating system and data. Block storage is used by default. If you need to use clone and snapshot functionality, make sure your storage pool supports the VolumeSnapshots feature and create it in the storage pool (SC). Please note that the storage pool (SC) has additional prerequisites that need to be met.
 
@@ -68,4 +68,4 @@ The template list will appear, and you can choose either an internal template or
 - Username/Password: You can log in to the virtual machine using a username and password.
 - SSH: When selecting SSH login, you can bind an SSH key to the virtual machine for future login purposes.
 
-![Login Settings](../images/create-tep08.png)
+![Login Settings](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/create-tep08.png)

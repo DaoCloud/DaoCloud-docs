@@ -15,6 +15,9 @@ DCE 5.0 原生支持 DevOps 开发运维模式，可以实现应用交付的全�
 各个产品模块独立解耦，支持灵活升级，对业务没有影响，并且能够与众多云原生生态产品对接，提供完整的解决方案体系。
 它经过了近千家行业客户的生产场景检验，构建了坚实、可靠的数字底座，帮助企业定义数字边界，释放云原生生产力。
 
+*[DCE]: DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台
+*[AI]: DCE 5.0 内置智能算力引擎，高效管控各类大模型任务、数据集、GPU、CPU、内存等资源
+
 <div class="grid cards" markdown>
 
 - :fontawesome-solid-jet-fighter-up: **安装** [详尽的安装教程](install/index.md)
@@ -55,7 +58,7 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
 
     **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)、信创异构
 
-    ![多云](../images/kairship.png)
+    ![多云](https://docs.daocloud.io/daocloud-docs-images/docs/zh/images/kairship.png)
 
 === "数据中间件服务"
 
@@ -114,7 +117,7 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
 
     **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)、[云边协同](kant/intro/index.md)
 
-    ![云边协同架构图](../images/09cloud-edge-update.png)
+    ![云边协同架构图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/images/09cloud-edge-update.png)
 
 === "虚拟机"
 
@@ -122,12 +125,12 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
 
     **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)
 
-    ![虚拟机](../images/virtnest.png)
+    ![虚拟机](https://docs.daocloud.io/daocloud-docs-images/docs/zh/images/virtnest.png)
 
 在成功获取[许可证授权](./dce/license0.md)后，首次登录 DCE 5.0 将会呈现一个仪表盘。
 该仪表盘以直观的方式展示了各种信息，包括正在运行的容器和 Pod、CPU 和内存使用情况、集群/节点/Pod 的健康状态、告警信息、资源利用情况以及功能一览等内容。
 
-![dashboard](./dce/images/ipavo.png)
+![dashboard](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/dce/images/ipavo.png)
 
 [下载 DCE 5.0](download/index.md){ .md-button .md-button--primary }
 [安装 DCE 5.0](install/index.md){ .md-button .md-button--primary }

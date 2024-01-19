@@ -2,70 +2,73 @@
 
 本页列出 Spidernet 的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
-其中包含:
-
-- Spiderpool 是 DaoCloud 自研开源的 IPAM 模块，请参考 [Spiderpool Release Notes](https://github.com/spidernet-io/spiderpool/releases)。
-- Egressgateway 是 DaoCloud 自研开源的出口网关模块，请参考 [Egressgateway Release Notes](https://github.com/spidernet-io/egressgateway/releases)。
+*[Spidernet]: DaoCloud 网络模块的内部开发代号
+*[Spiderpool]: 一个基于 K8s 构建的 Underlay 和 RDMA 网络方案，兼容裸金属、虚拟机和公有云等运行环境，目前已入选 CNCF Sandbox
+*[EgressGateway]: DaoCloud 在 GitHub 上开源的、基于 K8s 构建的出口网关方案
+*[IPAM]: IP Address Management 的缩写，即 IP 地址管理
+*[SR-IOV]: Single Root IO Virtualization 的缩写，一种网卡虚拟化的技术
+*[RDMA]: Remote Direct Memory Access 的缩写，即远程直接内存访问，这是一个支撑 LLM 大模型和 GPT 的热门技术
 
 ## 2023-12-30
 
-- 适配 **Spiderpool v0.9.0**
-- 适配 **Egressgateway v0.4.0**
+### v0.12.1
 
-### v0.12.0
+- 适配 **Spiderpool v0.9.0**
+- 适配 **EgressGateway v0.4.0**
 
 #### 新功能
 
-- **新增** 支持界面配置 SR-IOV Policy，提供在宿主机上创建出 VF 并上报资源能力
-- **新增** 支持查询 spiderpool 或者 egressgateway 的集群列表接口
-- **新增** 支持在 annotation 中有接口名称以支持多个网卡
-- **新增** 支持 multus 能够配置 SR-IOV 配置的带宽
-- **新增** 支持 multus 使用自定义类型的空配置
+- **新增** 支持使用 InfiniBand SR-IOV CNI 和 IPoIB CNI 的 InfiniBand 网卡
+- **新增** 支持查询 Spiderpool 或者 EgressGateway 的集群列表接口
+- **新增** 支持在 Annotation 中有接口名称以支持多个网卡
+- **新增** 支持 Multus 能够配置 SR-IOV 配置的带宽
+- **新增** 支持 Multus 使用自定义类型的空配置
 - **新增** 支持子网在双栈中的单 IP
-- **新增** 支持使用 IB-SRIOV 和 IPOIB CNI 的 InfiniBand
 
 #### 优化
 
-- **优化** 为 IPAM IP池 annotation 使用添加验证
+- **优化** 为 IPAM IP 池 Annotation 使用添加验证
 
 #### 修复
 
 - **修复** 根据命名空间查询 IP 池接口错误
-- **修复** 如果 multus 未安装，则不更新 Multus ConfigMap
-- **修复** 如果 multus 被禁用，则不会初始化 Multus CR
+- **修复** 如果 Multus 未安装，则不更新 Multus ConfigMap
+- **修复** 如果 Multus 被禁用，则不会初始化 Multus CR
 - **修复** coordinator 能够确保在 Pod 的 netns 中检测到网关和 IP 冲突
-- **修复** 当 Kubevirt 静态 IP 功能关闭时，spiderpool-agent 崩溃的问题
+- **修复** 当 Kubevirt 静态 IP 功能关闭时，Spiderpool-agent 崩溃的问题
 - **修复** 禁止单个没有控制器的 Pod 使用子网功能
-- **修复** 从 KubeControllerManager pod 获取 serviceCIDR
+- **修复** 从 KubeControllerManager Pod 获取 serviceCIDR
+
+## 2023-11-30
 
 ### v0.11.1
 
 - 适配 **Spiderpool v0.8.1**
-- 适配 **Egressgateway v0.4.0**
+- 适配 **EgressGateway v0.4.0**
 
 #### 新功能
 
-- **新增** 支持查询 spiderpool 与 egressgateway 安装查询接口
+- **新增** 支持查询 Spiderpool 与 EgressGateway 安装查询接口
 - **新增** 支持 Multus CR 管理 SR-IOV CNI 开启 RDMA
 - **新增** 支持创建负载中自动选择 RDMA 、SR-IOV、hugepages 等网络资源参数
-- **新增** 支持 egressgateway 使用 EIP 计数功能
+- **新增** 支持 EgressGateway 使用 EIP 计数功能
 
 #### 优化
 
-- **优化** spiderpool sdk 依赖
+- **优化** Spiderpool SDK 依赖
 
 #### 修复
 
 - **修复** IP 池关联 Multus CR 实例，需要匹配命名空间问题
 - **修复** 更新 Multus CR 时未更新 Annotations 问题
-- **修复** egressgateway 引起的策略重新分配错误问题
+- **修复** EgressGateway 引起的策略重新分配错误问题
 
 ## 2023-10-30
 
 ### v0.10.1
 
 - 适配 **Spiderpool v0.8.0**
-- 适配 **Egressgateway v0.3.0**
+- 适配 **EgressGateway v0.3.0**
 
 #### 新功能
 
@@ -78,8 +81,8 @@
 - **新增** 支持查看出口网关默认 EgressIP、EgressIP 池、节点列表以及节点 IP 地址范围
 - **新增** 支持网关策略使用 Pod 标签选择器或源地址，选择要使用 Egress 的 Pods，指定特定的 Pods 遵循网关策略
 - **新增** 支持查看网关策略中选择的网关、EgressIP 或节点 IP、容器组等进行网络配置管控
-- **新增** 支持 Egressgateway 用于低内核版本
-- **新增** Multus CR 管理界面，支持创建使用不同 Multus CNI（包括 Macvlan、IPvlan、SRIOV、自定义）类型的 CR 实例
+- **新增** 支持 EgressGateway 用于低内核版本
+- **新增** Multus CR 管理界面，支持创建使用不同 Multus CNI（包括 Macvlan、IPvlan、SR-IOV、自定义）类型的 CR 实例
 - **新增** Spiderpool 集成了 RDMA CNI 和 RDMA 设备插件
 - **新增** `sriov network operator` 的 Chart 配置信息
 - **新增** 支持为 KubeVirt 虚拟机分配静态 IP 地址
@@ -113,7 +116,7 @@
 - **新增** SpiderSubnet 自动池功能下，孤儿 IPPool 的创建
 - **新增** Multus 卸载钩子移除 CNI 配置文件
 - **新增** Coordinator 支持自动模式(默认)，这将自动检测 Coordinator 的工作模式，不再需要手动指定 Underlay 或 Overlay。
-  相同的 multus CNI 配置，可以同时被用作 Underlay 或 Overlay 模式。
+  相同的 Multus CNI 配置，可以同时被用作 Underlay 或 Overlay 模式。
 - **新增** 通过 `spidermultusconfig` 配置 `ovs-cni`
 
 #### 修复
@@ -125,7 +128,7 @@
 - **修复** 自动池资源名字长度限制
 - **修复** Coordinator 添加路由失败
 - **修复** 如果 `spidercoordinator.status.phase` 未 Ready， 清理已收集的集群子网信息，并且阻止 Pod 创建
-- **修复** 清理 `spidermultusconfig` 中 `sriov-cni` 的 `resourceName` 字段
+- **修复** 清理 `spidermultusconfig` 中 `SR-IOV-cni` 的 `resourceName` 字段
 - **修复** 验证 `spidermultusconfig` 中自定义 CNI 配置文件是否是合法的 Json 格式
 - **修复** 所有节点与 Pod 的路由都统一的被创建在主机的 `table500` 中，而不是每一个 Pod 独占一个 `table`
 

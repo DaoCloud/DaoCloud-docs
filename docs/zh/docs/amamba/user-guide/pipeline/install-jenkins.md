@@ -3,8 +3,8 @@
 ## 开始之前
 
 - 安装 Jenkins 之前需要确保将要安装 Jenkins 的集群中存在默认的存储类；
-- 请提前做好资源规划，评估未来最大并发的流水线数，并根据文档 ![Jenkins场景配置](../../quickstart/scenarios-config.md) 进行配置；
-- 请确认安装的目标集群的容器运行时：只有使用 docker 作为容器运行时才能选择 Agent 的 `ContainerRuntime` 为docker；
+- 请提前做好资源规划，评估未来最大并发的流水线数，并根据 [Jenkins 场景配置文档](../../quickstart/scenarios-config.md)进行配置；
+- 请确认安装的目标集群的容器运行时：只有使用 Docker 作为容器运行时才能选择 Agent 的 `ContainerRuntime` 为 Docker；
 
 ## 开始安装
 
@@ -102,7 +102,7 @@
 
         配置发件人邮箱地址需要点击 右上角个人头像 -> 设置，然后下拉找到 __邮件地址__ 
 
-    ![Jenkins邮件配置页](../../images/install-jenkins06.png)
+    ![Jenkins邮件配置页](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/install-jenkins06.png)
 
 ### 针对 SonarQube 配置步骤，在 Jenkins 后台配置 SonarQube 服务器地址
 
@@ -114,7 +114,7 @@
     - Server URL：SonarQube 服务器的 URL。
     - Server authentication token：SonarQube 服务器的身份验证令牌。您可以在 SonarQube 控制台中生成一个令牌。
 
-    ![Jenkins Sonarqube配置页](../../images/install-jenkins08.png)
+    ![Jenkins Sonarqube配置页](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/install-jenkins08.png)
 
     !!! note
 
@@ -122,5 +122,5 @@
         需要在流水线的 SonarQube 配置步骤中下拉获取。
 
 
-    ![SonarQube Name](../../images/install-jenkins07.png)
+    ![SonarQube Name](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/install-jenkins07.png)
 

@@ -190,11 +190,11 @@ kubectl apply -f gateway-rls.yaml -n plugin-ns
     - Configuration Retrieval Interface: Address for retrieving rate limit server configuration, corresponding to port 6070, with the HTTP protocol.
     - Timeout: Timeout for the rate limit server response.
 
-    ![RATELIMIT Plugin](../images/rls-plugin.png)
+    ![RATELIMIT Plugin](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/rls-plugin.png)
 
 3. Configure the gateway with the global rate limit plugin.
 
-    ![Configure Global Rate Limit Plugin](../images/gateway-rls.png)
+    ![Configure Global Rate Limit Plugin](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/gateway-rls.png)
 
 4. Create a domain and enable global rate limiting.
 
