@@ -75,19 +75,19 @@ Click [Online Install DCE Community](../../../videos/install.md) to watch a vide
 
      - If Console is exposed via NodePort (recommended only for PoC use cases), set `clusterConfig.yaml` as follows:
 
-        ```yaml title="clusterConfig.yaml"
-        apiVersion: provision.daocloud.io/v1alpha3
-        kind: ClusterConfig
-        spec:
-          loadBalancer:
-            type: NodePort
-          fullPackagePath: absolute-path-of-the-offline-directory # path for decompressed offline package
-          imagesAndCharts: # container registry
-            type: external
-            externalImageRepo: your-external-registry # container registry address, must be http or https
-            # externalImageRepoUsername: admin
-            # externalImageRepoPassword: Harbor123456
-         ```
+    ```yaml title="clusterConfig.yaml"
+    apiVersion: provision.daocloud.io/v1alpha3
+    kind: ClusterConfig
+    spec:
+      loadBalancer:
+        type: NodePort
+      fullPackagePath: absolute-path-of-the-offline-directory # path for decompressed offline package
+      imagesAndCharts: # container registry
+        type: external
+        externalImageRepo: your-external-registry # container registry address, must be http or https
+        # externalImageRepoUsername: admin
+        # externalImageRepoPassword: Harbor123456
+     ```
 
 3. Install DCE 5.0.
 
