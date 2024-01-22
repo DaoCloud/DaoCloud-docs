@@ -1,7 +1,25 @@
 # VirtNest Release Notes
 
-This page provides the release notes for VirtNest (Virtual Machine Containers),
+This page provides the release notes for VirtNest (Virtual Machine),
 allowing you to understand the evolution path and feature changes of each version.
+
+## 2023-12-26
+
+### v0.5.0
+
+#### Features
+
+- **Added** support for richer network configurations for virtual machines, such as multi-NIC capability
+- **Added** monitoring information to virtual machine details
+
+#### Improvements
+
+- **Improved** response speed for virtual machine list
+- **Improved** Sorted the virtual machine template list
+
+#### Fixes
+
+- **Fixed** an issue of possible failure to retrieve kubevirt client
 
 ## 2023-11-30
 

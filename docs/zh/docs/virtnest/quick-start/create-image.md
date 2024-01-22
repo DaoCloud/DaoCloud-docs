@@ -132,15 +132,14 @@
         - 若集群内安装了 spiderpool 组件，则支持选择 Passt（直通）/Bridge（桥接）模式，Bridge（桥接）模式支持多网卡形式。
       
         
-      ![网络模式](../images/createvm-net02.png)
+        ![网络模式](../images/createvm-net02.png)
       
     - 添加网卡
     
         - Passt（直通）/Bridge（桥接）模式下支持手动添加网卡。点击`添加网卡`，进行网卡 IP 池的配置。选择和网络模式匹配的 Multus CR，若没有则需要自行创建。
-       - 若打开`使用默认 IP 池`开关，则使用 multus CR 配置中的默认 IP 池。若关闭开关，则手动选择 IP 池。
-         
+        - 若打开`使用默认 IP 池`开关，则使用 multus CR 配置中的默认 IP 池。若关闭开关，则手动选择 IP 池。
         
-        ![添加网卡](../images/createvm-net03.png)		
+        ![添加网卡](../images/createvm-net03.png)
 
 ### 登录设置
 
