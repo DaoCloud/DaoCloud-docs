@@ -125,4 +125,4 @@ NAME                            DESIRED   CURRENT   READY   UP-TO-DATE   AVAILAB
 daemonset.apps/edgemesh-agent   4         4         4       4            4           <none>          39s   edgemesh-agent   kubeedge/edgemesh-agent:latest   k8s-app=kubeedge,kubeedge=edgemesh-agent
 ```
 
-Next: [Create Services](./server.md)
+Next: [Create Services](service.md)
