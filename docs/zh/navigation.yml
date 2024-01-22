@@ -466,6 +466,9 @@ nav:
                   - 介绍: network/modules/submariner/index.md
                   - 安装: network/modules/submariner/install.md
                   - 使用说明: network/modules/submariner/usage.md
+              - 集成 kdoctor:
+                    - 介绍: network/modules/kdoctor/index.md
+                    - 安装: network/modules/kdoctor/install.md
               - 集成阿里云 Terway:
                   - 介绍: network/modules/aliyun-terway/index.md
                   - Terway 网络模式: network/modules/aliyun-terway/what.md
