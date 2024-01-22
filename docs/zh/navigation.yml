@@ -995,9 +995,9 @@ nav:
                   - 介绍: baize/developer/index.md
                   - Notebooks:
                       - 创建 Notebook: baize/developer/notebooks/create.md
-                      - 启动和暂停 Notebook: baize/developer/notebooks/create.md
-                      - 查看 Notebook 工作负载: baize/developer/notebooks/create.md
-                      - 删除 Notebook: baize/developer/notebooks/create.md
+                      - 启动和暂停 Notebook: baize/developer/notebooks/start-pause.md
+                      - 查看 Notebook 工作负载: baize/developer/notebooks/view.md
+                      - 删除 Notebook: baize/developer/notebooks/delete.md
                   - 任务中心:
                       - 创建任务: baize/developer/jobs/create.md
                       - 删除任务: baize/developer/jobs/delete.md
