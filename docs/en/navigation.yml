@@ -998,6 +998,7 @@ nav:
               - Application Mesh:
                   - Overview: kant/user-guide/edge-network/index.md
                   - Deploy EdgeMesh: kant/user-guide/edge-network/deploy-edgemesh.md
+                  - Service: kant/user-guide/edge-network/service.md
       - Management:
           - Global Management:
               - Intro:
