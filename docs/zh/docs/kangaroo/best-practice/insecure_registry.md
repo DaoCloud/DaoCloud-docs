@@ -19,7 +19,7 @@
 }
 ```
 
-​修改之后重启 `docker` 即可：`systemctl restart docker`
+​修改之后重启 docker 即可，重启命令为：`systemctl restart docker`
 
 ## containerd
 
@@ -66,7 +66,7 @@ server = "http://test.registry.com"
 
 ```
 
-​配置之后需要重启 `containerd`，`system restart containerd`。
+​配置之后需要重启 containerd，重启命令为：`systemctl restart containerd`。
 
 ## CRI-O
 
@@ -76,4 +76,4 @@ server = "http://test.registry.com"
 insecure_registries = ["test.registry.com"]
 ```
 
-​重启 `crio`: `systemctl restart crio`。
+​重启 crio: `systemctl restart crio`。
