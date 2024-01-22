@@ -53,12 +53,12 @@ The numerous modules included in DCE 5.0 can be downloaded separately to upgrade
 | MultiCloud Management | 524.58 MB | [:arrow_right: Go to Download](./modules/kairship.md) | 2023-12-01 |
 | Container Registry | 295.53 MB | [:arrow_right: Go to Download](./modules/kangaroo.md) | 2023-12-29 |
 | Insight | 2.70 GB | [:arrow_right: Go to Download](./modules/insight.md) | 2023-12-19 |
-| Microservice Engine | 1.34 GB | [:arrow_right: Go to Download](./modules/skoala.md) | 2023-12-01 |
+| Microservice Engine | 1.34 GB | [:arrow_right: Go to Download](./modules/skoala.md) | 2024-01-18 |
 | Service Mesh | 906.44 MB | [:arrow_right: Go to Download](./modules/mspider.md) | 2024-01-02 |
-| Cloud Edge Collaboration | 100.37 MB | [:arrow_right: Go to Download](./modules/kant.md) | 2023-12-22 |
+| Cloud Edge Collaboration | 100.37 MB | [:arrow_right: Go to Download](./modules/kant.md) | 2024-01-04 |
 | Global Management | 500.89 MB | [:arrow_right: Go to Download](./modules/ghippo.md) | 2023-12-30 |
 | Operations Management | 95.90 MB | [:arrow_right: Go to Download](./modules/gmagpie.md) | 2023-11-30 |
-| Virtual Machine | 1.43 GB | [:arrow_right: Go to Download](./modules/virtnest.md) | 2023-11-30 |
+| Virtual Machine | 1.43 GB | [:arrow_right: Go to Download](./modules/virtnest.md) | 2024-01-10 |
 
 DCE 5.0 also provides a variety of selected middleware:
 
