@@ -26,7 +26,7 @@ of the evolution path and feature changes in each version.
 
 #### Fixes
 
-- **Fixed** an issue where the default image repository for edge units created in the cloud-edge collaboration installed via the installer was set to "release"
+- **Fixed** an issue where the default image repository for edge units created in the Cloud Edge Collaboration installed via the installer was set to "release"
 - **Fixed** an issue with abnormal edge unit status determination due to the addition of edge components
 
 ## 2023-11-06

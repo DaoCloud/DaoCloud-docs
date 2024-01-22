@@ -90,7 +90,7 @@ Sprig 内置了 70 多种常见的模板函数帮助渲染数据。以下列举�
 
 #### toClusterName
 
- __toClusterName__ 函数根据“集群唯一标示 Id”查询“集群名”；如果查询不到对应的集群，将直接返回传入的集群的唯一标示。
+__toClusterName__ 函数根据“集群唯一标示 Id”查询“集群名”；如果查询不到对应的集群，将直接返回传入的集群的唯一标示。
 
 ```go
 func toClusterName(id string) (string, error)
@@ -105,7 +105,7 @@ func toClusterName(id string) (string, error)
 
 #### toClusterId
 
- __toClusterId__ 函数根据“集群名”查询“集群唯一标示 Id”；如果查询不到对应的集群，将直接返回传入的集群名。
+__toClusterId__ 函数根据“集群名”查询“集群唯一标示 Id”；如果查询不到对应的集群，将直接返回传入的集群名。
 
 ```go
 func toClusterId(name string) (string, error)
@@ -120,7 +120,7 @@ func toClusterId(name string) (string, error)
 
 #### toDateInZone
 
- __toDateInZone__ 根据字符串时间转换成所需的时间，并进行格式化。
+__toDateInZone__ 根据字符串时间转换成所需的时间，并进行格式化。
 
 ```go
 func toDateInZone(fmt string, date interface{}, zone string) string
@@ -142,7 +142,6 @@ func toDateInZone(fmt string, date interface{}, zone string) string
 
 ```go-templates
 {{ toDateInZone "2006-01-02T15:04:05" .StartsAt "Asia/Shanghai" }}
-
 
 ## 阈值模板说明
 

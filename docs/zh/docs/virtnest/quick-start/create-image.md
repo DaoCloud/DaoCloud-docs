@@ -67,7 +67,10 @@
     |  Ubuntu  | Ubuntu 22.04 | release-ci.daocloud.io/virtnest/system-images/ubuntu-22.04-x86_64:v1 |
     |  Debian  |  Debian 12   | release-ci.daocloud.io/virtnest/system-images/debian-12-x86_64:v1    |
 
-- 镜像密钥：仅支持默认（Opaque）类型密钥，具体操作可参考[创建密钥](create-secret.md)。
+- 镜像密钥：仅支持默认（Opaque）类型密钥，具体格式请参考[创建密钥](create-secret.md)。
+
+    - 平台内置镜像存储在点火集群中，而点火集群的镜像仓库未加密，因此当选择内置镜像时，无需选择密钥。
+
 - 资源配置：CPU 建议使用整数，若填写小数则会向上取整。
 
 ### 存储与网络配置
@@ -101,7 +104,7 @@
           ```
         
     - 执行以下命令检查 VolumeSnapshotClass 是否创建成功。
-        
+      
         ```sh
         kubectl get VolumeSnapshotClass
         ```
@@ -111,7 +114,7 @@
 - 网络：
 
     - 网络配置可以根据表格信息按需组合，如果需要使用实时迁移功能，需要使用 Masquerade 的网络模式。
-  
+    
         | 网络模式          | CNI     | 是否安装 Spiderpool | 网卡模式    | 固定 IP         | 实时迁移     |
         | ----------------- | ------- | ------------------- | ------------ | --------------- | ------------ |
         | Masquerade（NAT） | Calico  | ❌                 | 单网卡       | ❌               | ✅            |
@@ -122,20 +125,21 @@
         | Bridge（桥接）    | OVS     | ✅                 | 多网卡       | ✅               | ❌            |
     
         ![网络配置](../images/createvm-net01.png)
-  
+    
     - 网络模式分为 Masquerade（NAT）、Passt（直通）、Bridge（桥接）三种，后两种模式需要安装了 spiderpool 组件后方可使用。
-  
+    
         - 默认选择 Masquerade（NAT）的网络模式，使用 eth0 默认网卡。
         - 若集群内安装了 spiderpool 组件，则支持选择 Passt（直通）/Bridge（桥接）模式，Bridge（桥接）模式支持多网卡形式。
-  
+      
+        
         ![网络模式](../images/createvm-net02.png)
-    
+      
     - 添加网卡
     
         - Passt（直通）/Bridge（桥接）模式下支持手动添加网卡。点击`添加网卡`，进行网卡 IP 池的配置。选择和网络模式匹配的 Multus CR，若没有则需要自行创建。
         - 若打开`使用默认 IP 池`开关，则使用 multus CR 配置中的默认 IP 池。若关闭开关，则手动选择 IP 池。
-   
-        ![添加网卡](../images/createvm-net03.png)		
+        
+        ![添加网卡](../images/createvm-net03.png)
 
 ### 登录设置
 

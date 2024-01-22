@@ -466,6 +466,9 @@ nav:
                   - 介绍: network/modules/submariner/index.md
                   - 安装: network/modules/submariner/install.md
                   - 使用说明: network/modules/submariner/usage.md
+              - 集成 kdoctor:
+                    - 介绍: network/modules/kdoctor/index.md
+                    - 安装: network/modules/kdoctor/install.md
               - 集成阿里云 Terway:
                   - 介绍: network/modules/aliyun-terway/index.md
                   - Terway 网络模式: network/modules/aliyun-terway/what.md
@@ -995,9 +998,9 @@ nav:
                   - 介绍: baize/developer/index.md
                   - Notebooks:
                       - 创建 Notebook: baize/developer/notebooks/create.md
-                      - 启动和暂停 Notebook: baize/developer/notebooks/create.md
-                      - 查看 Notebook 工作负载: baize/developer/notebooks/create.md
-                      - 删除 Notebook: baize/developer/notebooks/create.md
+                      - 启动和暂停 Notebook: baize/developer/notebooks/start-pause.md
+                      - 查看 Notebook 工作负载: baize/developer/notebooks/view.md
+                      - 删除 Notebook: baize/developer/notebooks/delete.md
                   - 任务中心:
                       - 创建任务: baize/developer/jobs/create.md
                       - 删除任务: baize/developer/jobs/delete.md
@@ -1046,7 +1049,7 @@ nav:
               - 应用网格:
                   - 应用网格概述: kant/user-guide/edge-network/index.md
                   - 部署 edgemesh 应用: kant/user-guide/edge-network/deploy-edgemesh.md
-                  - 服务: kant/user-guide/edge-network/server.md
+                  - 服务: kant/user-guide/edge-network/service.md
       - 管理:
           - 全局管理:
               - 介绍:

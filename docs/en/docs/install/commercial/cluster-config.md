@@ -16,11 +16,11 @@ metadata:
 spec:
   clusterName: my-cluster
    
-  # The domain name or IP address of the TinderKind node, by default resolves to the IP of the default gateway on the TinderKind node's network interface. You can manually enter an IP or domain name. If it is a domain name and unable to be resolved, an automatic mapping will be created between this domain name and the default IP of the TinderKind node.
+  # The domain name or IP address of the bootstrap node, by default resolves to the IP of the default gateway on the bootstrap node's network interface. You can manually enter an IP or domain name. If it is a domain name and unable to be resolved, an automatic mapping will be created between this domain name and the default IP of the bootstrap node.
   # bootstrapNode: auto
 
-  # Configuration for TinderKind clusters, with default values below
-  #tinderKind:
+  # Configuration for bootstrap clusters, with default values below
+  #bootstrap:
   #  # Container name for the Kind cluster
   #  instanceName: my-cluster-installer
   #  # Host path where the Kind cluster will be mounted
@@ -259,8 +259,8 @@ For key field descriptions in this YAML file, see the table below.
 | Field             | Description         | Default Value              |
 | ----------------- | --------------- | ---------------- |
 | clusterName       | Name of the Global cluster within Kubean Cluster                      | -    |
-| tinderKind        | Configuration for the TinderKind cluster         | -    |
-| tinderKind.instanceName | Container name for the TinderKind cluster                         | -    |
+| tinderKind        | Configuration for the bootstrap cluster         | -    |
+| tinderKind.instanceName | Container name for the bootstrap cluster                         | -    |
 | tinderKind.resourcesMountPath | Host path where the Kind cluster will be mounted         | /home/kind   |
 | tinderKind.registryPort | Port of the container registry in the Kind cluster    | 443                                                   |
 | tinderKind.minioServerPort | Port of the MinIO Server in the Kind cluster    | 9000                                                  |
@@ -290,11 +290,11 @@ For key field descriptions in this YAML file, see the table below.
 | imagesAndCharts.externalImageRepo | IP or domain name of the external container registry with protocol header specified   | -    |
 | imagesAndCharts.externalImageRepoPassword | Password for the external container registry, used for image push  | -    |
 | imagesAndCharts.externalImageRepoUsername | Username for the external container registry, used for image push  | -    |
-| imagesAndCharts.type | Access mode for images and charts, official-service (online), buitin (TinderKind built-in registry and chartmuseum), external | official-service                                      |
+| imagesAndCharts.type | Access mode for images and charts, official-service (online), buitin (bootstrap built-in registry and chartmuseum), external | official-service                                      |
 | auditConfig       | Audit log configuration for the k8s api-server                        | Disabled by default                                   |
 | binaries          | Executable binary files                                               | -    |
 | binaries.externalRepository | Access address of the external binary executable file repository in URL format | -    |
-| binaries.type     | Access mode for executable binary files, official-service (online), builtin (MinIO built-in in TinderKind nodes) | official-service                                      |
+| binaries.type     | Access mode for executable binary files, official-service (online), builtin (MinIO built-in in bootstrap nodes) | official-service                                      |
 | network.clusterCIDR | Cluster CIDR                                                        | -    |
 | network.cni       | CNI selection, such as Calico, Cilium                                | calico                                                |
 | network.serviceCIDR | Service CIDR                                                        | -    |
@@ -304,7 +304,7 @@ For key field descriptions in this YAML file, see the table below.
 | osRepos.externalRepoURLs | Access addresses of the external software repositories | - |
 | osRepos.isoPath                    | Path to the operating system ISO file, required when type is builtin | -    |
 | osRepos.osPackagePath              | Path to the system package file, required when type is builtin        | -    |
-| osRepos.type                       | Access mode for the operating system software repository, either official-service (online) or builtin (MinIO built-in in TinderKind nodes) | official-service                                      |
+| osRepos.type                       | Access mode for the operating system software repository, either official-service (online) or builtin (MinIO built-in in bootstrap nodes) | official-service                                      |
 | kubeanConfig.ntp_timezone          | Timezone setting for the nodes, if not configured, it will default to the timezone in the nodes | -      |
 | kubeanConfig.node_sysctl_tuning    | Enable to adjust the Systemctl kernel parameters for the Global cluster | false                                                   |
 | kubeanConfig.extra_sysctl          | Set additional Systemctl kernel parameters                          | /usr/local/bin                                          |

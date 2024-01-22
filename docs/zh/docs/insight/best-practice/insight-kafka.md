@@ -130,7 +130,8 @@ logstashPipeline:
           ssl => 'true'
           password => '0OWj4D54GTH3xK06f9Gg01Zk'    # elasticsearch 密码
           ssl_certificate_verification => 'false'
-          index => "insight-es-k8s-event-logs-alias"
+          data_stream_dataset => "insight-es-k8s-logs-alias"
+          data_stream => "true"
         }
       }
     }
@@ -168,7 +169,8 @@ logstashPipeline:
           ssl => 'true'
           password => '0OWj4D54GTH3xK06f9Gg01Zk'
           ssl_certificate_verification => 'false'
-          index => "skoala-gw-alias"
+          data_stream_dataset => "insight-es-k8s-logs-alias"
+          data_stream => "true"
         }
       }
     }
@@ -206,7 +208,8 @@ logstashPipeline:
           ssl => 'true'
           password => '0OWj4D54GTH3xK06f9Gg01Zk'
           ssl_certificate_verification => 'false'
-          index => "insight-es-k8s-logs-alias"
+          data_stream_dataset => "insight-es-k8s-logs-alias"
+          data_stream => "true"
         }
       }
     }

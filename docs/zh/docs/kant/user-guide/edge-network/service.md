@@ -14,7 +14,7 @@
 
 2. 选择左侧菜单`应用网格` -> `服务`，点击服务列表右上角`创建服务`按钮。
 
-  ![创建服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/service-01.png)
+    ![创建服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/service-01.png)
 
 3. 填写相关参数。
 
@@ -30,13 +30,13 @@
     | 标签             | 【类型】选填<br />【含义】为服务添加标签<br />               |           |
     | 注解             | 【类型】选填<br />【含义】为服务添加注解<br />               |           |
 
-  ![创建服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/service-02.png)
+    ![创建服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/service-02.png)
 
 4. 点击`确定`，即创建服务成功，返回到服务列表页面，可以在服务列表中查看服务对应的访问端口。
 
 !!! tip
 
-        也可以通过 `YAML 创建`一个服务。
+    也可以通过 `YAML 创建`一个服务。
 
 ## 更新服务
 
@@ -48,7 +48,7 @@
 
 2. 点击服务名称，进入服务详情页，在页面右上角点击 `⋮` 按钮， 在弹出菜单中选择`更新`，可以对服务别名、标签选择器、端口配置、会话保持等设置进行修改操作。
 
-  ![更新服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/service-03.png)
+    ![更新服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/service-03.png)
 
 ## 查看事件
 
@@ -56,7 +56,7 @@
 
 服务详情页，选择`事件` tab，查看服务事件信息。
 
-  ![查看服务事件](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/service-04.png)
+![查看服务事件](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/service-04.png)
 
 ## 删除服务
 
@@ -64,4 +64,4 @@
 
 2. 点击服务名称，进入服务详情页，在页面右上角点击 `⋮` 按钮， 在弹出菜单中选择`删除`，可以对服务别名、标签选择器、端口配置、会话保持等设置进行修改操作。
 
-  ![删除服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/service-05.png)
+    ![删除服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/service-05.png)
