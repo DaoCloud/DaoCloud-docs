@@ -1,3 +1,8 @@
+---
+MTPE: FanLin
+Date: 2024-01-22
+---
+
 # Connecting and Managing Edge Nodes
 
 Connecting and managing edge nodes refers to the process of installing the EdgeCore software on actual edge nodes based on the installation guide obtained from batch registering edge nodes. This allows the edge nodes to establish a connection with the platform and be managed within it.
@@ -19,55 +24,70 @@ When a new edge node is connected, the latest version of the EdgeCore software i
 
 1. Log in to the edge node with a user account that has sudo privileges.
 
-2. Depending on the runtime environment of the node, execute the corresponding commands to retrieve the installation files from the image repository.
+1. Depending on the runtime environment of the node, execute the corresponding commands to retrieve the installation files from the image repository.
 
-    - Scenario 1: The edge node can directly access the image repository.
+    - Scenario One: The edge node can directly access the image repository. The operation is as follows.
 
-        Copy the image address directly from the installation guide:
+        Copy the image address directly from the installation guide::
 
         ```shell
         release.daocloud.io/kant/kantadm-installation:v0.5.0-dev-7c54ddd4
         ```
 
-        To retrieve the installation file, you can refer to the following example:
+        To obtain the installation file, you can refer to the following example:
 
         ```shell
         docker run --rm release.daocloud.io/kant/kantadm-installation:v0.5.0-dev-7c54ddd4 cat /usr/local/bin/kantadm > /usr/local/bin/kantadm && chmod +x /usr/local/bin/kantadm
         ```
 
-    - Scenario 2: The edge node cannot access the image repository.
+    - Scenario Two: The edge node cannot access the image repository. The operation is as follows.
 
-        1. On the installation guide page, click the `Get Installation Files` button in Step 1 to open the drawer for obtaining installation files.
+        1. On the installation guide interface, click the __Get Installation File__ button in the first step, and the __Get Installation File__ drawer will pop up on the right.
 
-        2. Based on the runtime environment of the node, copy the image installation package file to a specific folder.
-
-        3. Copy the image address directly from the interface:
-
-        ```shell
-        release.daocloud.io/kant/kantadm-installation:v0.5.0-dev-7c54ddd4
-        ```
-
-        Here is an example of the operations:
-
-        1. Execute the command on a machine that can access the image repository to obtain the edge installation resources.
-
-            ```shell
-            docker pull release.daocloud.io/kant/kantadm-installation:v0.5.0-dev-7c54ddd4
+        1. Depending on the runtime environment of the node, copy the following image installation package file to the specified folder.
+            
+            Kant installation package image
+            
+            ```
+            release.daocloud.io/kant/kantadm-installation:v0.5.1
+            ```
+            KubeEdge Mosquitto image 
+              
+            ```
+            docker.m.daocloud.io/kubeedge/eclipse-mosquitto:1.6.15
+            ```
+            KubeEdge container sandbox image 
+            
+            ```
+            kubeedge/pause:3.1
+            ```
+            KubeEdge installation package image 
+            
+            ```
+            docker.m.daocloud.io/kubeedge/installation-package:v1.12.5
             ```
 
-        2. Package the resource image and upload it to the target node.
+            Here is an example of the operations:
 
-            ```shell
-            docker save release.daocloud.io/kant/kantadm-installation:v0.5.0-dev-7c54ddd4 > kantadm-installation.tar
-            ```
+            1. On a machine that can access the image repository, execute the command to get the edge installation resource image.
 
-        3. Log in to the node and load the uploaded resource image package.
+                ```shell
+                docker pull release.daocloud.io/kant/kantadm-installation:v0.5.1
+                ```
 
-            ```shell
-            docker load -i kantadm-installation.tar
-            ```
+            1. Package the resource image and upload it to the target node after completion.
 
-3. Run the following command to connect the edge node.
+                ```shell
+                docker save release.daocloud.io/kant/kantadm-installation:v0.5.0-dev-7c54ddd4 > kantadm-installation.tar
+                ```
+
+            1. Log in to the node and load the uploaded resource image package.
+
+                ```shell
+                docker load -i kantadm-installation.tar
+                ```
+
+1. Run the following command to connect the edge node.
 
     - Register via token.
 
@@ -93,13 +113,13 @@ When a new edge node is connected, the latest version of the EdgeCore software i
             kantadm join --cloudcore-host=10.31.226.14 --websocket-port=30000 --node-prefix=edge --remote-runtime-endpoint= --cgroup-driver=cgroupfs --version=v1.12.2 --batch-name=edge --edge-registry=docker.m.daocloud.io/kubeedge --quic-port=30001 --http-port=30002 --stream-port=30003 --tunnel-port=30004 --labels=test=1,test1=1
             ```
 
-4. Verify if the edge node has been successfully connected.
+1. Verify if the edge node has been successfully connected.
 
-    1. Select `Edge Computing` -> `Cloud Edge Collaboration` from the left navigation pane to access the Edge Unit list page.
+    1. Select __Edge Computing__ -> __Cloud Edge Collaboration__ from the left navigation pane to access the Edge Unit list page.
 
     2. Click the name of an edge unit to view its details.
 
-    3. Select `Edge Resources` -> `Edge Nodes` from the left navigation pane to access the Edge Node list page.
+    3. Select __Edge Resources__ -> __Edge Nodes__ from the left navigation pane to access the Edge Node list page.
 
     4. Check the status of the edge node. If the current status is "Healthy," it indicates a successful connection.
 
