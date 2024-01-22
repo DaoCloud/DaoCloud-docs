@@ -84,6 +84,8 @@ After filling in the image-related information according to the table below, cli
 
 - Image Secret: Only supports the default (Opaque) type of key, for specific operations you can refer to [Create Secret](create-secret.md).
 
+    - The built-in image stored in the bootstrap cluster is not encrypted, so when selecting the built-in image, there is no need to select a secret.
+
 - CPU Quota, Memory Quota: For CPU, it is recommended to use whole numbers.
   If a decimal is entered, it will be rounded up.
 
