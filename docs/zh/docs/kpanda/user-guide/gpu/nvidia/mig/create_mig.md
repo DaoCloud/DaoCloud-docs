@@ -21,14 +21,9 @@
     1. __DevicePlugin__ 设置为 __enable__ 
     2. __MIG strategy__ 设置为 __single__ 
     3. __Mig Manager__ 下的 __enabled__ 参数开启
-    4. __MigManager Config__ ：用于配置 MIG 切分配置参数和默认值
+    4. __MigManager Config__ ：MIG 的切分策略配置，默认为 __default-mig-parted-config__ 。
 
-        - __default__ ：默认为 __all-disbled__ ，可填入配置文件（ __default-mig-parted-config__ ）中对应的规格（如： __all-1g.10gb__ 等）：
-            -  **all-disbled** ：所有节点设备默认禁用 MIG。
-            -  **配置规格（如：all-1g.10gb）**：所有节点设备默认使用输入的规格切分。
-        - __name__ ：MIG 的切分策略配置，默认为 __default-mig-parted-config__ 。
-
-        ![single](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/single01.jpg)
+        ![single](https://huatu.98youxi.com/markdown/work/uploads/upload_42762b559bb1c982586c09029c032722.png)
 
 2. 如需要按照某种规则切分，可以给对应节点(已插入对应 GPU 卡节点)打上 切分规格，如不执行此操作，将按照默认方式切分。
 
@@ -55,9 +50,7 @@
     - __DevicePlugin__ 设置为 __enable__ 
     - __MIG strategy__ 设置为 __mixed__ 
     - __Mig Manager__ 下的 __enabled__ 参数开启
-    - __MigManager Config__ ：MIG 切分配置参数和默认值
-        - __default__ ：默认为 __all-disbled__ ，可填入配置文件中对应的规格（如： __all-1g.10gb__ 等）。
-        - __name__ ：默认为 __default-mig-parted-config__ ，可自定义切分策略配置文件。
+    - __MigManager Config__ ：MIG 的切分策略配置，默认为 __default-mig-parted-config__ ，可自定义切分策略配置文件。
 
         如下 YAML 为示例自定义配置 __custom-mig-parted-config__ 。
         创建的文件名称不能同默认（ __default-mig-parted-config__ ）相同。
@@ -134,7 +127,7 @@
               1c.3g.40gb: 6
         ```
 
-        ![mixed](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/mixed.jpg)
+       ![mixed](https://huatu.98youxi.com/markdown/work/uploads/upload_a97375d8a93620e4f3c9ad234a851761.png)
 
 2. 如需要按照自定义规则切分，可以给对应节点打上切分规格，如不执行此操作，将按照默认值切分。
 
