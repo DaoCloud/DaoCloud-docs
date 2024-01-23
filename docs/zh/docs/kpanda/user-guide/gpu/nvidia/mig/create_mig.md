@@ -23,7 +23,7 @@
     3. __Mig Manager__ 下的 __enabled__ 参数开启
     4. __MigManager Config__ ：MIG 的切分策略配置，默认为 __default-mig-parted-config__ 。
 
-        ![single](https://huatu.98youxi.com/markdown/work/uploads/upload_42762b559bb1c982586c09029c032722.png)
+        ![single](../../images/operator-mig.png)
 
 2. 如需要按照某种规则切分，可以给对应节点(已插入对应 GPU 卡节点)打上 切分规格，如不执行此操作，将按照默认方式切分。
 
