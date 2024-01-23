@@ -16,14 +16,14 @@
 
 ## 开启 GPU MIG Single 模式
 
-1. [通过 Operator 开启](../install_nvidia_driver_of_operator.md) MIG  Single 模式，在安装界面配置如下参数：
+1. [通过 Operator 开启](../install_nvidia_driver_of_operator.md) MIG Single 模式，在安装界面配置参数：
 
-    1. __DevicePlugin__ 设置为 __enable__ 
-    2. __MIG strategy__ 设置为 __single__ 
-    3. __Mig Manager__ 下的 __enabled__ 参数开启
-    4. __MigManager Config__ ：MIG 的切分策略配置，默认为 __default-mig-parted-config__ 。
+    ![single](../../images/operator-mig.png)
 
-        ![single](../../images/operator-mig.png)
+    - __DevicePlugin__ 设置为 __enable__ 
+    - __MIG strategy__ 设置为 __single__ 
+    - __Mig Manager__ 下的 __enabled__ 参数开启
+    - __MigManager Config__ ：MIG 的切分策略配置，默认为 __default-mig-parted-config__
 
 2. 如需要按照某种规则切分，可以给对应节点(已插入对应 GPU 卡节点)打上 切分规格，如不执行此操作，将按照默认方式切分。
 
@@ -47,18 +47,22 @@
 
 1. [通过 Operator 开启](../install_nvidia_driver_of_operator.md) MIG Mixed 模式，在安装界面配置如下参数：
 
+    ![mixed](../../images/mixed.png)
+
     - __DevicePlugin__ 设置为 __enable__ 
     - __MIG strategy__ 设置为 __mixed__ 
     - __Mig Manager__ 下的 __enabled__ 参数开启
     - __MigManager Config__ ：MIG 的切分策略配置，默认为 __default-mig-parted-config__ ，可自定义切分策略配置文件。
 
-        如下 YAML 为示例自定义配置 __custom-mig-parted-config__ 。
-        创建的文件名称不能同默认（ __default-mig-parted-config__ ）相同。
+    ??? note "点击查看详细的 YAML 配置说明"
+
+        如下 YAML 为示例自定义配置 __custom-mig-parted-config__ ，
+        您创建的文件名称不能与默认 __default-mig-parted-config__ 相同。
 
         新建名为 __custom-mig-parted-config__ 的配置文件，配置数据的 __key__ 必须为如下 __config.yaml__ 中内容。
 
         ```yaml title="config.yaml"
-          ## 自定义切分 GI 实例配置
+          # 自定义切分 GI 实例配置
           version: v1
           mig-configs:
             all-disabled:
@@ -289,7 +293,7 @@
                   "2g.24gb": 1
                   "3g.48gb": 1
 
-           # 设置后会按照设置规格切分 CI 实例 
+            # 设置后会按照设置规格切分 CI 实例 
             custom-config:    
               - devices: all
                 mig-enabled: true
@@ -299,7 +303,7 @@
 
         ```
 
-        在上述的 __YAML__ 中设置 __custom-config__ ，设置后会按照规格切分 __CI__ 实例。
+        在上述的 __YAML__ 中设置 `custom-config`，设置后会按照规格切分 __CI__ 实例。
 
         ```yaml
         custom-config:
@@ -308,8 +312,6 @@
             mig-devices:
               1c.3g.40gb: 6
         ```
-
-       ![mixed](https://huatu.98youxi.com/markdown/work/uploads/upload_a97375d8a93620e4f3c9ad234a851761.png)
 
 2. 如需要按照自定义规则切分，可以给对应节点打上切分规格，如不执行此操作，将按照默认值切分。
 
