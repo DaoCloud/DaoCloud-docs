@@ -2,6 +2,35 @@
 
 This page lists the release notes of Microservices to help you learn its feature development and bug fixing progress.
 
+## 2024-01-18
+
+### v0.32.0
+
+#### New Features
+
+- **Added** cloud native microservice monitoring resources
+- **Added** support for connecting to a registry center with authentication mode enabled
+- **Added** ARM architecture offline installation package release process
+
+#### Fixes
+
+- **Fixed** an issuein updating plugin references when updating domain names
+- **Fixed** an issue with incorrect service port in service list query
+- **Fixed** an issue with incorrect display of log protocol fields
+- **Fixed** an issue with unsorted results in service list API of traffic lanes
+- **Fixed** an issue with incorrect number of instances in service list of traffic lanes
+- **Fixed** an issue in refreshing namespace when cloud native gateway is already created
+- **Fixed** an issue with mismatched instance status in connected Kubernetes clusters
+- **Fixed** an issue with incorrect instance list results in connected meshes
+- **Fixed** an issue with incorrect stop address for NodePort services in gateway
+- **Fixed** an issue with abnormal display of Nacos services in non-default groups in registry center
+
+#### Improvements
+
+- **Improved** Routing weight optimization to meet application workspace requirements
+- **Improved** Weight validation logic for services in gateway API
+- **Improved** Handling of resource initial operations caused by changes in cluster access addresses
+
 ## 2024-01-03
 
 ### v0.31.2
@@ -48,7 +77,7 @@ This page lists the release notes of Microservices to help you learn its feature
 - **Fixed** an issue of abnormal service port update in the gateway
 - **Fixed** an issue of abnormal resource quota calculation when creating managed resources
 - **Fixed** a logical issue in filtering gateway API lists based on domain names
-- **Fixed** an issue of duplicate ports in cloud-native microservice governance
+- **Fixed** an issue of duplicate ports in cloud native microservice governance
 - **Fixed** an issue of repeated judgment and duplicate conditions when multiple routes exist for an API
 - **Fixed** an issue of abnormal error in API testing for HTTPS domain names
 - **Fixed** an issue of abnormality when deleting Sentinel functionality
@@ -80,7 +109,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 #### Fixes
 
-- **Fixed** issue with incorrect running status of gateway
+- **Fixed** an issue with incorrect running status of gateway
 - **Fixed** status check issue with Nacos Operator
 - **Fixed** status check issue with edge instance of mesh service
 
@@ -100,7 +129,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 #### Fixes
 
-- **Fixed** logic for grid instance list in grid mode governance
+- **Fixed** logic for mesh instance list in mesh mode governance
 - **Fixed** synchronization issues with managed Nacos controllers
 
 #### Improvements
@@ -154,7 +183,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 - **Improved** the update logic of the gateway, which does not allow disabling HTTPS at the gateway level when the domain has enabled HTTPS.
 - **Improved** the accuracy of audit log events.
-- **Improved** Optimized the logic of cloud-native microservice WebAssembly plugins.
+- **Improved** Optimized the logic of cloud native microservice WebAssembly plugins.
 - **Improved** the gateway health query logic on the overview page (changed from Rate to Increase).
 - **Improved** the Swagger path by removing version information from the URL and supporting multiple versions of APIs.
 - **Improved** Skoala Init Helm Chart to support distributed transaction controller (Seata Operator).
@@ -177,7 +206,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 - **Fixed** Issue of duplicate details in batch deletion response
 - **Fixed** Problem with sorting plugin information in cloud native microservices port list
-- **Fixed** Issue with abnormal display of traffic swimlane list
+- **Fixed** an issue with abnormal display of traffic swimlane list
 - **Fixed** Inconsistent container names for frontend components
 - **Fixed** Some errors in Sentinel business application monitoring reports
 
@@ -219,7 +248,7 @@ This page lists the release notes of Microservices to help you learn its feature
 - **Fixed** Inconsistent permissions between gateway service access and predefined permissions
 - **Fixed** Incorrect representation of service governance status
 - **Fixed** Exceptional return issue in managed Nacos configuration gray release
-- **Fixed** Error in service instance list in managed Nacos
+- **Fixed** an issuein service instance list in managed Nacos
 - **Fixed** Duplicated service versions in traffic swimlane
 - **Fixed** Abnormal service list issue in traffic swimlane
 - **Fixed** Service deletion issue in traffic swimlane
@@ -249,10 +278,10 @@ This page lists the release notes of Microservices to help you learn its feature
 
 #### Fixed
 
-- **Fixed** Issue with detection of `Consul` registry connectivity
-- **Fixed** Issue with gateway restarting due to abnormal application of plugins
-- **Fixed** Issue with abnormal configuration of gateway verification plugins
-- **Fixed** Issue with abnormal editing of cluster flow control rules in `Sentinel`
+- **Fixed** an issue with detection of `Consul` registry connectivity
+- **Fixed** an issue with gateway restarting due to abnormal application of plugins
+- **Fixed** an issue with abnormal configuration of gateway verification plugins
+- **Fixed** an issue with abnormal editing of cluster flow control rules in `Sentinel`
 
 !!! note "Important Note"
 

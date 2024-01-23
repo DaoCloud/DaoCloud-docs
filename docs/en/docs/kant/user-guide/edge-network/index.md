@@ -4,7 +4,7 @@ In edge computing scenarios, the cloud manages a large number of distributed edg
 However, these edge nodes are often located in poor network environments with weak connectivity
 and network fluctuations. The network topology is complex, and edge nodes in different regions
 often have no network connectivity. To address the communication issues between edge services
-in edge scenarios, cloud-edge collaboration provides the capability of application mesh, which
+in edge scenarios, Cloud Edge Collaboration provides the capability of application mesh, which
 supports service discovery and traffic proxying, enabling closed-loop communication for edge services.
 
 The following concepts are involved in application mesh:

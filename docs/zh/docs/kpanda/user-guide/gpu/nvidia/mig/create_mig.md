@@ -66,62 +66,244 @@
 
         ```yaml title="config.yaml"
           ## 自定义切分 GI 实例配置
-          all-disabled:
-            - devices: all
-              mig-enabled: false
-          all-enabled:
-            - devices: all
-              mig-enabled: true
-              mig-devices: {}
-          all-1g.10gb:
-            - devices: all
-              mig-enabled: true
-              mig-devices:
-                1g.5gb: 7
-          all-1g.10gb.me:
-            - devices: all
-              mig-enabled: true
-              mig-devices:
-                1g.10gb+me: 1
-          all-1g.20gb:
-            - devices: all
-              mig-enabled: true
-              mig-devices:
-                1g.20gb: 4
-          all-2g.20gb:
-            - devices: all
-              mig-enabled: true
-              mig-devices:
-                2g.20gb: 3
-          all-3g.40gb:
-            - devices: all
-              mig-enabled: true
-              mig-devices:
-                3g.40gb: 2
-          all-4g.40gb:
-            - devices: all
-              mig-enabled: true
-              mig-devices:
-                4g.40gb: 1
-          all-7g.80gb:
-            - devices: all
-              mig-enabled: true
-              mig-devices:
-                7g.80gb: 1
-          all-balanced:
-            - device-filter: ["0x233110DE", "0x232210DE", "0x20B210DE", "0x20B510DE", "0x20F310DE", "0x20F510DE"]
-              devices: all
-              mig-enabled: true
-              mig-devices:
-                1g.10gb: 2
-                2g.20gb: 1
-                3g.40gb: 1
-         # 设置后会按照设置规格切分 CI 实例 
-          custom-config:    
-            - devices: all
-              mig-enabled: true
-              mig-devices:
-                3g.40gb: 2
+          version: v1
+          mig-configs:
+            all-disabled:
+              - devices: all
+                mig-enabled: false
+
+            # A100-40GB, A800-40GB
+              all-1g.5gb:
+                - devices: all
+                  mig-enabled: true
+                  mig-devices:
+                    "1g.5gb": 7
+
+            all-1g.5gb.me:
+              - devices: all
+                mig-enabled: true
+                mig-devices:
+                  "1g.5gb+me": 1
+
+            all-2g.10gb:
+              - devices: all
+                mig-enabled: true
+                mig-devices:
+                  "2g.10gb": 3
+
+            all-3g.20gb:
+              - devices: all
+                mig-enabled: true
+                mig-devices:
+                  "3g.20gb": 2
+
+            all-4g.20gb:
+              - devices: all
+                mig-enabled: true
+                mig-devices:
+                  "4g.20gb": 1
+
+            all-7g.40gb:
+              - devices: all
+                mig-enabled: true
+                mig-devices:
+                  "7g.40gb": 1
+
+            # H100-80GB, H800-80GB, A100-80GB, A800-80GB, A100-40GB, A800-40GB
+            all-1g.10gb:
+              # H100-80GB, H800-80GB, A100-80GB, A800-80GB
+              - device-filter: ["0x233010DE", "0x233110DE", "0x232210DE", "0x20B210DE", "0x20B510DE", "0x20F310DE", "0x20F510DE"]
+                devices: all
+                mig-enabled: true
+                mig-devices:
+                  "1g.10gb": 7
+
+              # A100-40GB, A800-40GB
+              - device-filter: ["0x20B010DE", "0x20B110DE", "0x20F110DE", "0x20F610DE"]
+                devices: all
+                mig-enabled: true
+                mig-devices:
+                  "1g.10gb": 4
+
+            # H100-80GB, H800-80GB, A100-80GB, A800-80GB
+            all-1g.10gb.me:
+              - devices: all
+                mig-enabled: true
+                mig-devices:
+                  "1g.10gb+me": 1
+
+            # H100-80GB, H800-80GB, A100-80GB, A800-80GB
+            all-1g.20gb:
+              - devices: all
+                mig-enabled: true
+                mig-devices:
+                  "1g.20gb": 4
+
+            all-2g.20gb:
+              - devices: all
+                mig-enabled: true
+                mig-devices:
+                  "2g.20gb": 3
+
+            all-3g.40gb:
+              - devices: all
+                mig-enabled: true
+                mig-devices:
+                  "3g.40gb": 2
+
+            all-4g.40gb:
+              - devices: all
+                mig-enabled: true
+                mig-devices:
+                  "4g.40gb": 1
+
+            all-7g.80gb:
+              - devices: all
+                mig-enabled: true
+                mig-devices:
+                  "7g.80gb": 1
+
+            # A30-24GB
+            all-1g.6gb:
+              - devices: all
+                mig-enabled: true
+                mig-devices:
+                  "1g.6gb": 4
+
+            all-1g.6gb.me:
+              - devices: all
+                mig-enabled: true
+                mig-devices:
+                  "1g.6gb+me": 1
+
+            all-2g.12gb:
+              - devices: all
+                mig-enabled: true
+                mig-devices:
+                  "2g.12gb": 2
+
+            all-2g.12gb.me:
+              - devices: all
+                mig-enabled: true
+                mig-devices:
+                  "2g.12gb+me": 1
+
+            all-4g.24gb:
+              - devices: all
+                mig-enabled: true
+                mig-devices:
+                  "4g.24gb": 1
+
+            # H100 NVL, H800 NVL
+            all-1g.12gb:
+              - devices: all
+                mig-enabled: true
+                mig-devices:
+                  "1g.12gb": 7
+
+            all-1g.12gb.me:
+              - devices: all
+                mig-enabled: true
+                mig-devices:
+                  "1g.12gb+me": 1
+
+            all-2g.24gb:
+              - devices: all
+                mig-enabled: true
+                mig-devices:
+                  "2g.24gb": 3
+
+            all-3g.47gb:
+              - devices: all
+                mig-enabled: true
+                mig-devices:
+                  "3g.47gb": 2
+
+            all-4g.47gb:
+              - devices: all
+                mig-enabled: true
+                mig-devices:
+                  "4g.47gb": 1
+
+            all-7g.94gb:
+              - devices: all
+                mig-enabled: true
+                mig-devices:
+                  "7g.94gb": 1
+
+            # H100-96GB, PG506-96GB
+            all-3g.48gb:
+              - devices: all
+                mig-enabled: true
+                mig-devices:
+                  "3g.48gb": 2
+
+            all-4g.48gb:
+              - devices: all
+                mig-enabled: true
+                mig-devices:
+                  "4g.48gb": 1
+
+            all-7g.96gb:
+              - devices: all
+                mig-enabled: true
+                mig-devices:
+                  "7g.96gb": 1
+
+            # H100-96GB, H100 NVL, H800 NVL, H100-80GB, H800-80GB, A800-40GB, A800-80GB, A100-40GB, A100-80GB, A30-24GB, PG506-96GB
+            all-balanced:
+              # H100 NVL, H800 NVL
+              - device-filter: ["0x232110DE", "0x233A10DE"]
+                devices: all
+                mig-enabled: true
+                mig-devices:
+                  "1g.12gb": 1
+                  "2g.24gb": 1
+                  "3g.47gb": 1
+
+              # H100-80GB, H800-80GB, A100-80GB, A800-80GB
+              - device-filter: ["0x233010DE", "0x233110DE", "0x232210DE", "0x20B210DE", "0x20B510DE", "0x20F310DE", "0x20F510DE"]
+                devices: all
+                mig-enabled: true
+                mig-devices:
+                  "1g.10gb": 2
+                  "2g.20gb": 1
+                  "3g.40gb": 1
+
+              # A100-40GB, A800-40GB
+              - device-filter: ["0x20B010DE", "0x20B110DE", "0x20F110DE", "0x20F610DE"]
+                devices: all
+                mig-enabled: true
+                mig-devices:
+                  "1g.5gb": 2
+                  "2g.10gb": 1
+                  "3g.20gb": 1
+
+              # A30-24GB
+              - device-filter: "0x20B710DE"
+                devices: all
+                mig-enabled: true
+                mig-devices:
+                  "1g.6gb": 2
+                  "2g.12gb": 1
+
+              # H100-96GB, PG506-96GB
+              - device-filter: ["0x233D10DE", "0x20B610DE"]
+                devices: all
+                mig-enabled: true
+                mig-devices:
+                  "1g.12gb": 2
+                  "2g.24gb": 1
+                  "3g.48gb": 1
+
+           # 设置后会按照设置规格切分 CI 实例 
+            custom-config:    
+              - devices: all
+                mig-enabled: true
+                mig-devices:
+                  "1g.10gb": 4
+                  "1g.20gb": 2
+
         ```
 
         在上述的 __YAML__ 中设置 __custom-config__ ，设置后会按照规格切分 __CI__ 实例。

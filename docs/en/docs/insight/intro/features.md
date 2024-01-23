@@ -1,67 +1,41 @@
 ---
-hide:
-  - toc
+MTPE: FanLin
+Date: 2024-01-22
 ---
 
-# Features list
+# Features
 
 This page lists the features supported by Insight.
 
-## DCE Community - Observability
-
-DCE Community provides the following observable features.
-
-| Category | Subcategory | Description |
-| -------- |-------------| ----------- |
-| Resource monitoring | Multicluster monitoring | Provide multicluster business centralized observability<br />The administrator manages multicluster alerts in a unified manner, and satisfies cluster and tenant administrator data isolation<br />Supports persistent cluster metrics and log data |    
-| | Scenario monitoring | Provide a monitoring overview of a single cluster, allowing you to view the running status of the cluster, understand the resource usage of the cluster, and the current alerts that are occurring in the cluster |
-| | Node monitoring | Support to view the running status of the node, etc., and understand the changes in the CPU, memory, network and other resources of the node |
-| | Namespace monitoring | Support to view the summary of resources running in the namespace, including the total amount of CPU and memory used by the pods in the namespace |  
-| | Container Monitoring | Monitor resources such as stateless loads, daemon processes, pods, etc., as well as the running status of the workload, and support to view the number of alerts and the trend chart of resource consumption such as CPU and memory |
-| Dashboard | Platform Component Monitoring | Provide open-source selected dashboards through native Grafana, and provide built-in dashboards to monitor etcd, APIServer and other components |
-| | Cluster Resource Monitoring | Provide multi-dimensional monitoring of clusters, nodes and namespaces. The data source used by Grafana supports viewing data from multiple clusters |
-| Data Query | Index Query | Common Query pre-orders basic metrics, so after selecting query conditions such as cluster, type, node, and metric name, you can query the change trend of resources<br />Support to query metric charts and data details through native PromQL statements |
-| Log | Log query| Query the logs of Node, Pod, Depoyment, Statefulset, etc., and even the context content of a single log<br />Support searching by keyword<br />Sort by time by default, and query the number of logs through the histogram <br />Support querying  logs using Lucene |   
-| | Log Context | Support to query the context of multi-select logs. The default query is 100 entries, which can be adjusted according to needs |
-| | Log Download | Support to download logs within a period of time according to search criteria<br />Support exporting the content of a single log context |
-| alert Center | Active alert | Provide a histogram to view the change trend of the alert time<br />Support to view all the rules and details that are alerting |
-| | Historical alerts | You can query all alerts after automatic recovery or manual resolution |
-| | Alert rules| Built-in 100+ alert rules, providing predefined alert rules for cluster components, container resources, etc.<br />Administrators can create global alert rules to provide unified alerts for clusters that have installed insight-agent<br />Support creating alert rules through predefined metrics<br />Support creating alert rules by writing PromQL statements<br />Support custom thresholds, durations and notification methods<br />You can customize the level of alerts, support emergency, warning, Prompt three levels |
-| | Notification configuration | On the notification configuration page, you can configure to send messages to users through email groups, corporate WeChat, DingTalk, Webhook, etc.<br />Support simultaneous notification to multiple alert objects |
-| | Message template | The message template feature supports customizing the content of the message template, and can notify the specified object in the form of email, corporate WeChat, DingTalk, and Webhook |
-| Log collection and query | Unified log collection | Unified collection of log data of nodes, containers, containers, and k8s events<br />Collect the audit operation of the global management platform, and the collection of k8s audit logs is not enabled by default |
-| | Log persistent storage | Logs can be marked and output to middleware such as Elasticsearch for persistence |
-| Metric collection | Metric data collection | Support to use ServiceMonitor to define the namespace scope of Pod discovery and select the listening Service through matchLabel |
-| System configuration | System configuration | System configuration displays the default storage time of metrics, logs, and traces and the default Apdex threshold<br />Support custom modification of the storage time of metrics, logs, and trace data |
-
-## Enterprise Package - Observability
-
-On the basis of the DCE Community, the Enterprise Package of DCE 5.0 provides more abundant and customizable observable features.
-
-| Category | Subcategory | Description |
-| -------------- | -------------- | ---------------- -------------------------------------------- |
-| Resource monitoring | Multicluster monitoring | Provide multicluster business centralized observability<br />The administrator manages multicluster alerts in a unified manner, and satisfies cluster and tenant administrator data isolation<br />Supports persistent cluster metrics and log data. |
-| | Cluster Monitoring | Provides an overview of the monitoring of a single cluster, allowing you to view the running status of the cluster, understand the resource usage of the cluster, and the alerts that are currently occurring in the cluster |
-| | Node monitoring | Support to view the running status of the node, etc., and understand the changes in the CPU, memory, network and other resources of the node |
-| | Container Monitoring | Supports monitoring of resources such as stateless loads, daemon processes, pods, etc., can monitor the running status of the workload, and can view the number of alerts and the trend chart of resource consumption such as CPU and memory |
-| Scenario Monitoring| Service Monitoring[^1] | You can view key metrics such as real-time throughput, number of requests, request delay and error rate of the service, as well as the trend of change over a period of time<br />You can view the service's real-time performance over a period of time Requests, as well as the trend of real-time throughput, number of requests, request delay and error rate of a single request |
-| | Topology map[^1] | The administrator can view the call relationship and health status between services connected to the observation platform and link collection, and quickly locate faults<br />You can view the traffic direction and key metrics requested between services <br />You can quickly view the real-time throughput, number of requests, request latency and error rate of a single service |
-| Dashboard | Platform Component Monitoring | Provide open-source selected dashboards through native Grafana, and provide built-in dashboards to support monitoring etcd, APIServer and other components |
-| | Cluster Resource Monitoring | Provides multi-dimensional monitoring of clusters, nodes, and namespaces. The data source used by Grafana supports viewing data from multiple clusters. |
-| Data Query | Index Query | Common Query pre-orders basic metrics, and after selecting query conditions such as cluster, type, node, and metric name, you can query the change trend of resources<br />Support querying metric charts and data details through native PromQL statements |
-| | Log query| You can query the logs of Node, Pod, Depoyment, Statefulset, etc., and you can query the context content of a single log<br />Support searching by keyword<br />Sort by time by default, and you can query the number of logs through the histogram <br />Support querying detailed information and context of a single log |
-| | Log Download | Support to download logs within a period of time according to search criteria<br />Support exporting the content of a single log context |
-| | trace query[^1] | Through trace query, you can view all the requests of the service within a certain period of time, support configuring clusters, namespaces, services, operations, tags, and then click Search for precise search<br />Supports viewing a single Requested aggregated link graph for fast fault location |
-| alert Center | Active alert | Provide a histogram to view the change trend of the alert time<br />Support to view all the rules and details that are alerting |
-| | Historical alerts | You can query all alerts after automatic recovery or manual resolution |
-| | Alert rules| Built-in 100+ alert rules, providing predefined alert rules for cluster components, container resources, etc.<br />Administrators can create global alert rules to provide unified alerts for clusters that have installed insight-agent<br />Support creating alert rules through predefined metrics<br />Support creating alert rules by writing PromQL statements<br />Support custom thresholds, durations and notification methods<br />You can customize the level of alerts, support emergency, warning, Prompt three levels |
-| | Notification configuration | On the notification configuration page, you can configure to send messages to users through email groups, corporate WeChat, DingTalk, Webhook, etc.<br />Support simultaneous notification to multiple alert objects |
-| | Message template | The message template feature supports customizing the content of the message template, and can notify the specified object in the form of email, corporate WeChat, DingTalk, and Webhook |
-| Log collection and query | Unified log collection | Unified collection of log data of nodes, containers, containers, and k8s events<br />Collect the audit operation of the global management platform, and the collection of k8s audit logs is not enabled by default |
-| | Persistent storage of logs | Logs can be marked and output to middleware such as Elasticsearch for persistence |
-| Metric collection | Metric data collection | Support to use ServiceMonitor to define the namespace scope of Pod discovery and select the monitored Service through matchLabel |
-| | Component status[^1] | Support to view the status of the pod of the collection component, and jump to the corresponding pod details |
-| Link Collection[^1] | trace data Collection| Support trace data collection by using OTEL SDK in a non-intrusive or less intrusive way<br />Support link collection by injecting Sidecar into mesh applications data |
-| System configuration | System configuration | System configuration displays the default storage time of metrics, logs, and traces and the default Apdex threshold<br />Support custom modification of the storage time of metrics, logs, and trace data |
-
-[^1]: This is a feature only available in the Enterprise Package.
+| Category | Subcategory  | Description | DCE 5.0 Community | DCE 5.0 Enterprise |
+| -------- | ------------ | ----------- | ----------- | ----------- |
+| Dashboard | Platform Components | Provides open source selected dashboards through native Grafana, provides built-in dashboards to support monitoring of etcd, APIServer and other components. | ✓ | ✓ |
+|  | Cluster Resources | Provides monitoring for multiple dimensions such as clusters, nodes, namespaces, etc. The data source used by Grafana supports viewing data from multiple clusters. | ✓ | ✓ |
+| Infrastructure | Multiclusters | Provides centralized insight of multi-cluster business<br />Admins manage multicluster alerts uniformly, and meet the data isolation of cluster and tenant administrators<br />Supports persistent metrics and log data of clusters. | ✓ | ✓ |
+|  | Clusters | Provides an overview of a single cluster's insight, allowing to view the running status of the cluster, understand the resource usage of the cluster, and the current alerts occurring in the cluster. | ✓ | ✓ |
+|  | Nodes | Supports viewing the running status of nodes, and understanding the changes in CPU, memory, network and other resources of the node. | ✓ | ✓ |
+|  | Namespaces | Supports viewing the number of resources running in the namespace, and the total amount of CPU and memory used by the Pods in the namespace. | ✓ | ✓ |
+|  | Workloads | Supports monitoring resources such as stateless loads, daemonsets, Pods, etc. You can monitor the running status of this workload, view the number of alerts in progress, and the trend chart of changes in CPU, memory and other resource consumption. | ✓ | ✓ |
+|  | Events | Supports viewing the collection of Kubernetes events generated in the cluster, and supports querying by event type, object, reason, etc. | ✓ | ✓ |
+|  | Probe | Regularly performs connectivity tests on targets through black box monitoring using methods such as HTTP and TCP, quickly discovering ongoing faults. | ✓ | ✓ |
+| Metrics | General Query | Pre-orders basic metrics. After selecting cluster, type, node, metric name, etc., you can query the changing trend of resources. | ✓ | ✓ |
+|  | Advanced Query | Supports querying metric charts and data details using native PromQL statements. | ✓ | ✓ |
+| Logs | General Query | Can query logs for Node, Pod, Deployment, StatefulSet, etc., and can query the contextual content of a single log<br />Supports searching by keyword<br />Sorted by time by default, log quantity changes can be queried through histograms. | ✓ | ✓ |
+|  | Advanced Query | Supports native lucene syntax for quickly querying target logs. | ✓ | ✓ |
+|  | Log Context | Clicking the icon on the right side of a single log line can view the contextual information of that log line. | ✓ | ✓ |
+|  | Log Download | Supports downloading logs for a period of time<br />Supports exporting the content of a single log context<br />Supports customizing the fields for log download. | ✓ | ✓ |
+| Trace Tracking | Service Map | Administrators can view the call relationship and health status of services that have accessed the observability platform and have enabled distributed tracing, allowing for quick fault location<br />Can view the traffic direction and key metrics of requests between services<br />Can quickly view the real-time throughput, number of requests, request delay, and error rate of a single service. |  | ✓ |
+|  | Services | Can view the list of services currently accessing the tracing data, as well as the throughput rate, error rate, and request delay of the services in the last 15 minutes<br />Clicking a service allows you to view the traffic trend of the selected service in the last 15 minutes and the aggregated metrics for the service's operations. |  | ✓ |
+|  | Traces | By default, queries all requests, request status, delay, span count, etc. for the selected service in the last 15 minutes<br />Clicking the icon on the right side of the list allows you to query the related container logs and trace logs for that trace. |  | ✓ |
+| Alert | Active Alerts | Provides a histogram to view the changing trend of alert time<br />Supports viewing all active rules and details. | ✓ | ✓ |
+|  | Historical Alerts | Can query all alerts that have been automatically recovered or manually resolved. | ✓ | ✓ |
+|  | Alert Policy | Built-in 100+ alert rules provide predefined alert rules for cluster components, container resources, etc.<br />Administrators can create global alert rules for clusters with installed insight agents for unified alert management<br />Supports creating alert rules using predefined metrics<br />Supports creating alert rules using PromQL statements<br />Supports customizing thresholds, duration, and notification methods<br />Can customize the level of alerts, supporting urgent, warning, and informational levels. | ✓ | ✓ |
+|  | Notification Settings | On this page, you can configure sending messages to users through email groups, WeChat Work, DingTalk, Webhook, etc.<br />Supports notifying multiple alert objects simultaneously. | ✓ | ✓ |
+|  | Message Templates | The message template feature supports customizing the content of message templates and can notify specified objects through email, WeChat Work, DingTalk, Webhook, etc. | ✓ | ✓ |
+|  | Alert Silence | By configuring silence rules, you can stop receiving alert notifications during specified time periods. |  | ✓ |
+|  | Alert Suppression | By configuring suppression rules, you can suppress or block other alert notifications related to certain specific alerts. | ✓ | ✓ |
+| Data Collection | Unified Log Collection | Unified collection of log data from nodes, containers, container internals, and k8s events<br />By default, collects audit logs from the global management platform, k8s audit logs are not enabled by default. | ✓ | ✓ |
+|  | Log Persistent Storage | Logs can be labeled and output to middleware such as Elasticsearch for persistent storage. | ✓ | ✓ |
+| Metric Collection | Metric Data Collection | Supports defining the namespace scope for pod discovery and selecting the services to monitor using matchLabels through ServiceMonitor | ✓ | ✓ |
+| System Management | System Settings | System settings display the default storage duration for metrics, logs, and traces, as well as the default Apdex threshold<br />Supports customizing the storage time for metrics, logs, and traces. | ✓ | ✓ |
+|  | System Components | Provides unified monitoring of observable components, real-time detection of the health status of system components. | ✓ | ✓ |

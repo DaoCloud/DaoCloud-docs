@@ -117,4 +117,4 @@ agent:
 
  ![EdgeMesh 部署成功](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/deploy-edgemesh-12.png)
 
-下一步：[创建服务](./server.md)
+下一步：[创建服务](service.md)
