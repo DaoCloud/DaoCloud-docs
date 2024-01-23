@@ -1,4 +1,9 @@
-# Creating Edge Units
+---
+MTPE: FanLin
+Date: 2024-01-23
+---
+
+# Create Edge Units
 
 Edge unit definition: It refers to the collection of computing resources required for container runtime, including the cloud-side Master and edge-side worker Nodes. The concept of an edge unit is similar to a cluster in Kubernetes, but the networking is different. The Master node is deployed in the cloud, and one cloud-side master (with multiple backups) corresponds to one edge cluster.
 
@@ -10,11 +15,13 @@ ControllerManager: KubeEdge CRD extension, currently applied to edge application
 
 The following steps explain how to create an edge unit:
 
-1. Select `Edge Computing` -> `Cloud Edge Collaboration` from the left navigation bar to go to the edge unit list page. Click the `Register Edge Unit` button in the top-right corner of the page.
+1. Select __Cloud Edge Collaboration__ from the left navigation bar to go to the edge unit list page. Click the __Create Edge Unit__ button in the top-right corner of the page.
+
+    ![Create Edge Unit](../images/create-unit-01.png)
 
 2. Fill in the basic information:
 
-    - Edge Unit Name: A combination of lowercase letters, numbers, hyphens (-), and dots (.), and it should not have consecutive separators. It should start and end with a letter or number. contains a maximum of 253 characters.
+    - Name: A combination of lowercase letters, numbers, hyphens (-), and dots (.), and it should not have consecutive separators. It should start and end with a letter or number. contains a maximum of 253 characters.
     - Cluster: The cluster where the edge unit control plane runs.
     - KubeEdge Version: A specific version released by the KubeEdge open-source system, used to extend containerized application orchestration capabilities to edge hosts. It is built on Kubernetes and provides infrastructure support for network applications.
 
@@ -22,13 +29,15 @@ The following steps explain how to create an edge unit:
 
     - Description: Description of the edge unit.
 
-3. Component Repository Settings: KubeEdge and Kant cloud-side component repository settings.
+    ![Basic Info](../images/create-unit-02.png)
 
-    - KubeEdge Image Repository: The KubeEdge cloud-side component image repository, which is the default value for the KubeEdge edge image repository in the batch node module.
+3. Component Repo: KubeEdge and Kant cloud-side component repository settings.
+
+    - KubeEdge Registry: The KubeEdge cloud-side component image repository, which is the default value for the KubeEdge edge image repository in the batch node module.
         - Default: The default image repository address provided by the system.
         - Custom: You can enter the commonly used image repository address for enterprises.
 
-    - KubeEdge Helm Repository: KubeEdge Helm application repository.
+    - KubeEdge Helm Repo: KubeEdge Helm application repository.
         - Default: The default Helm repository address provided by the system.
         - Custom: You can enter the commonly used Helm repository address for enterprises.
 
@@ -36,9 +45,11 @@ The following steps explain how to create an edge unit:
         - Default: The default image repository address provided by the system.
         - Custom: You can enter the commonly used image repository address for enterprises.
 
-4. Access Settings: Access settings for KubeEdge cloud-side components, through which edge nodes establish connections with the cloud.
+    ![Component Repo](../images/create-unit-03.png)
 
-    - Access Address: The access address of the KubeEdge cloud-side component CloudCore, which needs to be accessible by edge nodes.
+4. Network Config: Network Configuration for KubeEdge cloud-side components, through which edge nodes establish connections with the cloud.
+
+    - CloudCore Address: The address of the KubeEdge CloudCore, which needs to be accessible by edge nodes.
 
     - Ports:
         - WebSocketPort: The WebSocket port for the access protocol, with a default value of 30000.
@@ -51,6 +62,8 @@ The following steps explain how to create an edge unit:
 
         Kubernetes opens ports within the range of 3000-32767 by default. If there is a conflict with NodePort ports, please modify them.
 
-5. After completing the configuration, click the `OK` button to create the edge unit. You will be automatically redirected back to the edge unit list.
+    ![Network Config](../images/create-unit-04.png)
+
+5. After completing the configuration, click the __OK__ button to create the edge unit. You will be automatically redirected back to the edge unit list.
 
 Next: [Managing Edge Units](./manage-unit.md)
