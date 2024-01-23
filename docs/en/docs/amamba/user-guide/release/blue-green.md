@@ -21,9 +21,9 @@ version, achieving a quick rollback.
 1. Go to the __Workbench__ module, click __Progressive Delivery__ in the left navigation bar,
    and then click __Create Delivery Job__ -> __Blue/Green__ in the upper right corner of the page.
 
-    ![Go to creation page](../../images/blue-green01.png)
+    ![Go to creation page](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/blue-green01.png)
 
-2. Fill in the basic information according to the following requirements, and then click __Create__.
+2. Fill in the basic information according to the following requirements, and then click __Create__ .
 
     - Name: Fill in the name of the release job. It can have a maximum length of 63 characters,
       and can only contain lowercase letters, numbers, and separators ("-"), and must start and
@@ -35,7 +35,7 @@ version, achieving a quick rollback.
     - Service: Select the service of the release object, which must be associated with the
       release object.
 
-    ![Basic Information](../../images/blue-green02.png)
+    ![Basic Information](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/blue-green02.png)
 
 3. The system automatically redirects to the job list page for gradual release, showing a prompt
    of __Creation Successful__ and generating a record in the list.

@@ -6,8 +6,8 @@ hide:
 # 体验社区版
 
 <div style="text-align: center;">
-  <p style="font-size: 18px;"><img src="./images/hu01.gif" alt="Image" width="80"> 欢迎安装体验！</p>
-  <p style="font-size: 28px; color: green;">DaoCloud Enterprise 社区版 <img src="./images/hu02.gif" alt="Image" width="80"></p>
+  <p style="font-size: 18px;"><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/trial/images/hu01.gif" alt="Image" width="80"> 欢迎安装体验！</p>
+  <p style="font-size: 28px; color: green;">DaoCloud Enterprise 社区版 <img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/trial/images/hu02.gif" alt="Image" width="80"></p>
 </div>
 
 DCE 社区版以云原生底座为核心，自研开源组件加持，提供云原生计算、网络、存储等能力，支持多云、多集群全生命周期统一纳管，
@@ -79,11 +79,11 @@ DCE 社区版以云原生底座为核心，自研开源组件加持，提供云�
 1. 点击[此处免费申请「DCE 社区版」许可证密钥](https://qingflow.com/f/58604bf8)，许可证密钥将发送至您的邮箱
   （很多邮箱可能会拦截许可证密钥的邮件，如长时间未收到，可查看是否归为垃圾邮件）。
 
-    ![check mail](./images/license01.png)
+    ![check mail](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/trial/images/license01.png)
 
 2. 在等待邮件的过程中，按屏幕提示，可先进入社区版登录页面（通过安装成功后获取的链接进入），点击`申请授权码`。
 
-    ![get code](./images/license02.png)
+    ![get code](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/trial/images/license02.png)
 
 3. 根据上图，您需要再获取 ESN（即集群系统独有的设备编码），具体获取方式为：
 
@@ -91,12 +91,12 @@ DCE 社区版以云原生底座为核心，自研开源组件加持，提供云�
     2. 点击左侧导航栏`全局管理` -> `平台设置` -> `正版授权`
     3. 点击`管理许可证`按钮，打开`管理许可证`页面，复制 ESN 编码。
 
-    ![esn](./images/license03.png)
+    ![esn](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/trial/images/license03.png)
 
 4. 收到许可证邮件后，回到[获取离线授权码页面](https://license.daocloud.io/dce5-license)，输入设备独有的 ESN，
    输入许可证密钥后，即可获得离线授权码。
 
-    ![get offline](./images/license04.png)
+    ![get offline](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/trial/images/license04.png)
 
 5. 复制并粘贴上一步换取的离线授权码，再次回到 ESN 编码的获取页面，
    在下方代码块输入离线授权码，点击`立即激活`。恭喜您！现在可以探索全新的 DCE 社区版啦！

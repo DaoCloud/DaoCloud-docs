@@ -22,7 +22,7 @@
 - CRI：containerd（因为新版本 K8s 已经不再直接支持 Docker）
 - CNI：Calico
 - StorageClass：local-path
-- DCE 5.0 社区版：v0.13.0
+- DCE 5.0 社区版：v0.14.0
 
 ## 准备节点
 
@@ -315,7 +315,7 @@ bash install_prerequisite.sh online community
 ### 下载 dce5-installer
 
 ```bash
-export VERSION=v0.13.0
+export VERSION=v0.14.0
 curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
 chmod +x ./dce5-installer 
 ```
@@ -356,6 +356,6 @@ chmod +x ./dce5-installer
 
     ![成功登录](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/firstscreen.png)
 
-[下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }
-[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
+[下载 DCE 5.0](../../../download/index.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../../index.md){ .md-button .md-button--primary }
+[申请社区免费体验](../../../dce/license0.md){ .md-button .md-button--primary }

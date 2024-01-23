@@ -1,4 +1,5 @@
 ---
+MTPE: windsonsea
 date: 2023-12-07
 hide:
   - navigation
@@ -12,10 +13,10 @@ On this page, you can download the offline installation package and verification
 
 ## Download
 
-| File Name | Version | Architecture | File Size | Download | Update Date |
-| --------- | ------- | ------------ | --------- | -------- | ----------- |
-| offline-v0.13.0-amd64.tar | v0.13.0 | AMD64 | 23.41 GB   | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.13.0-amd64.tar) | 2023-12-07  |
-| offline-v0.13.0-arm64.tar | v0.13.0 | ARM64 | 20.15 GB   | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.13.0-arm64.tar) | 2023-12-07  |
+| Filename | Version | Architecture | File Size | Download | Update Date |
+| -------- | ------- | ------------ | --------- | -------- | ----------- |
+| offline-v0.13.0-amd64.tar | v0.13.0 | AMD64 | 23.41 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.13.0-amd64.tar) | 2023-12-07 |
+| offline-v0.13.0-arm64.tar | v0.13.0 | ARM64 | 20.15 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.13.0-arm64.tar) | 2023-12-07 |
 
 ## Verification
 
@@ -76,24 +77,24 @@ After successfully verifying the offline package,
 
 DCE 5.0 Enterprise includes the following modules that can be used on-demand to meet various application scenarios:
 
-| Module             | Description                                                                     | Latest Release                                               |
-| ------------------ | ------------------------------------------------------------------------------- | ------------------------------------------------------------ |
-| Global Management  | Responsible for user access control, permissions, enterprise spaces, audit logs, personalized appearance settings, and more | [0.22.1](../../ghippo/intro/release-notes.md#0221)    |
-| Container Management | Manage clusters, nodes, workloads, Helm applications, CRDs, namespaces, and other core Kubernetes features | [0.23.0](../../kpanda/intro/release-notes.md#0230)    |
-| Observability      | Provides rich dashboards, scenario monitoring, data querying, alerts, and more graphical and textual information | [0.22.0](../../insight/intro/releasenote.md#0220)     |
-| Application Workspace | Container-based DevOps application platform that supports Jenkins, Tekton, GitOps, and other pipeline jobs | [0.22.0](../../amamba/intro/release-notes.md#0220)      |
-| Multi-Cloud Orchestration | Centrally manages multi-cloud, hybrid cloud, and cross-cloud resources for application orchestration, including multi-cloud disaster recovery and fault recovery capabilities | [0.14.0](../../kairship/intro/release-notes.md#0140)         |
-| Microservice Engine | Provides governance capabilities such as service registration and discovery, configuration management, and microservice gateway | [0.30.0](../../skoala/intro/release-notes.md#0300)             |
-| Service Mesh | Next-generation service mesh based on the open-source Istio technology for cloud-native applications | [v0.21.2](../../mspider/intro/release-notes.md#v0212)          |
-| Middleware Elasticsearch | Currently the preferred full-text search engine | [0.12.0](../../middleware/elasticsearch/release-notes.md#0120) |
-| Middleware Kafka | Distributed message queue service based on the open-source software Kafka | [0.10.0](../../middleware/kafka/release-notes.md#0100)          |
-| Middleware MinIO | A popular lightweight, open-source object storage solution | [0.10.0](../../middleware/minio/release-notes.md#0100)          |
-| Middleware MySQL | The most widely used open-source relational database | [0.13.0](../../middleware/mysql/release-notes.md#0130)           |
-| Middleware RabbitMQ | Open-source message broker software that implements the Advanced Message Queuing Protocol (AMQP) | [0.15.0](../../middleware/rabbitmq/release-notes.md#0150)        |
-| Middleware Redis | An in-memory database caching service | [0.13.0](../../middleware/redis/release-notes.md#0130)           |
-| Image Repository | Stores images for K8s, DevOps, and container application development | [0.13.1](../../dce/dce-rn/20231130.md)                            |
-| Networking | Supports various CNI combinations for different Linux kernels | [0.11.1](../../dce/dce-rn/20231130.md)                            |
-| Storage | Provides unified data storage services, supports file, object, block, and local storage, and easily integrates with storage vendor solutions | [v0.13.3](../../dce/dce-rn/20231130.md)                            |
+| Modules | Description | Versions |
+| ------- | ----------- | -------- |
+| Global Management | Responsible for user access control, permissions, enterprise spaces, audit logs, personalized appearance settings, and more | [0.22.1](../../ghippo/intro/release-notes.md#v0221) |
+| Container Management | Manage clusters, nodes, workloads, Helm applications, CRDs, namespaces, and other core Kubernetes features | [0.23.0](../../kpanda/intro/release-notes.md#v0230) |
+| Observability | Provides rich dashboards, scenario monitoring, data querying, alerts, and more graphical and textual information | [0.22.0](../../insight/intro/releasenote.md#v0220) |
+| Workbench | Container-based DevOps application platform that supports Jenkins, Tekton, GitOps, and other pipeline jobs | [0.22.0](../../amamba/intro/release-notes.md#v0220) |
+| Multi-Cloud Orchestration | Centrally manages multi-cloud, hybrid cloud, and cross-cloud resources for application orchestration, including multi-cloud disaster recovery and fault recovery capabilities | [0.14.0](../../kairship/intro/release-notes.md#v0140) |
+| Microservice Engine | Provides governance capabilities such as service registration and discovery, configuration management, and microservice gateway | [0.30.0](../../skoala/intro/release-notes.md#v0300) |
+| Service Mesh | Next-generation service mesh based on the open-source Istio technology for cloud-native applications | [v0.21.2](../../mspider/intro/release-notes.md#v0212) |
+| Middleware Elasticsearch | Currently the preferred full-text search engine | [0.12.0](../../middleware/elasticsearch/release-notes.md#v0120) |
+| Middleware Kafka | Distributed message queue service based on the open-source software Kafka | [0.10.0](../../middleware/kafka/release-notes.md#v0100) |
+| Middleware MinIO | A popular lightweight, open-source object storage solution | [0.10.0](../../middleware/minio/release-notes.md#v0100) |
+| Middleware MySQL | The most widely used open-source relational database | [0.13.0](../../middleware/mysql/release-notes.md#v0130) |
+| Middleware RabbitMQ | Open-source message broker software that implements the Advanced Message Queuing Protocol (AMQP) | [0.15.0](../../middleware/rabbitmq/release-notes.md#v0150) |
+| Middleware Redis | An in-memory database caching service | [0.13.0](../../middleware/redis/release-notes.md#v0130) |
+| Container Registry | Stores images for K8s, DevOps, and container application development | [0.13.1](../../dce/dce-rn/20231130.md) |
+| Networking | Supports various CNI combinations for different Linux kernels | [0.11.1](../../dce/dce-rn/20231130.md) |
+| Storage | Provides unified data storage services, supports file, object, block, and local storage, and easily integrates with storage vendor solutions | [v0.13.3](../../dce/dce-rn/20231130.md) |
 
 ## More
 

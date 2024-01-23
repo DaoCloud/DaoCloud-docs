@@ -1,4 +1,5 @@
 ---
+MTPE: windsonsea
 date: 2022-11-23
 hide:
   - toc
@@ -9,10 +10,12 @@ hide:
 This page lists all the released offline packages for DCE 5.0 Enterprise.
 You can choose and download the one you need.
 
-| Filename | Version | Architecture | File Size | Downloads | Update Date |
-| ------- | --- | ---- | ------ | --- | ------- |
-| offline-v0.13.0-arm64.tar | v0.13.0 | ARM 64 | 20.15 GB | [:arrow_right: 下载页](./dce5-installer-v0.13.0.md) | 2023-12-07 |
-| offline-v0.13.0-amd64.tar | v0.13.0 | AMD 64 | 23.41 GB | [:arrow_right: 下载页](./dce5-installer-v0.13.0.md) | 2023-12-07 |
+| Filename | Version | Architecture | File Size | Download | Update Date |
+| -------- | ------- | ------------ | --------- | -------- | ----------- |
+| offline-v0.14.0-arm64.tar | v0.14.0 | ARM 64 | 24.8 GB | [:arrow_right: Go to Download](./dce5-installer-v0.14.0.md) | 2024-01-09 |
+| offline-v0.14.0-amd64.tar | v0.14.0 | AMD 64 | 21.7 GB | [:arrow_right: Go to Download](./dce5-installer-v0.14.0.md) | 2024-01-09 |
+| offline-v0.13.0-arm64.tar | v0.13.0 | ARM 64 | 20.15 GB | [:arrow_right: Go to Download](./dce5-installer-v0.13.0.md) | 2023-12-07 |
+| offline-v0.13.0-amd64.tar | v0.13.0 | AMD 64 | 23.41 GB | [:arrow_right: Go to Download](./dce5-installer-v0.13.0.md) | 2023-12-07 |
 | offline-v0.12.0-arm64.tar | v0.12.0 | ARM 64 | 20.20 GB | [:arrow_right: Go to Download](./dce5-installer-v0.12.0.md) | 2023-11-08 |
 | offline-v0.12.0-amd64.tar | v0.12.0 | AMD 64 | 23.30 GB | [:arrow_right: Go to Download](./dce5-installer-v0.12.0.md) | 2023-11-08 |
 | offline-v0.11.0-arm64.tar | v0.11.0 | ARM 64 | 17.60 GB | [:arrow_right: Go to Download](./dce5-installer-v0.11.0.md) | 2023-09-08 |

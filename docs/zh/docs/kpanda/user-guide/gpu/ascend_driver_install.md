@@ -23,7 +23,7 @@
 1. 如驱动未安装，请参考昇腾官方文档进行安装：例如 Ascend910，参考：[910 驱动安装文档](https://www.hiascend.com/document/detail/zh/Atlas%20200I%20A2/23.0.RC3/EP/installationguide/Install_87.html)。
 2. 运行 __npu-smi info__ 命令，并且能够正常返回 npu 信息，表示 NPU 驱动与固件已就绪。
 
-    ![昇腾信息](./images/npu-smi-info.png)
+    ![昇腾信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/npu-smi-info.png)
 
 ### 安装 Docker Runtime
 
@@ -146,7 +146,7 @@
 
    5. NPU Device Plugin 默认安装在 __kube-system__ 命名空间下。这是一个 DaemonSet 类型的工作负载，可以通过 __kubectl get pod -n kube-system | grep ascend__ 命令查看，输出如下：
 
-![昇腾 Device Plugin](./images/ascend-device-plugin.png)
+![昇腾 Device Plugin](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/ascend-device-plugin.png)
 
 
 

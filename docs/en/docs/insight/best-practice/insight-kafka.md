@@ -13,7 +13,7 @@ This article will introduce two solutions:
 
 Once we integrate Kafka into the logging system, the data flow diagram looks as follows:
 
-![logging-kafka](./images/logging-kafka.png)
+![logging-kafka](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/best-practice/images/logging-kafka.png)
 
 Both solutions share similarities but differ in the component used to consume Kafka data.
 To ensure compatibility with Insight's data analysis, the format of the data consumed from
@@ -24,8 +24,8 @@ Let's first see how Fluentbit writes logs to Kafka:
 
 ## Modifying Fluentbit Output Configuration
 
-Once the Kafka cluster is ready, we need to modify the content of the `insihgt-system` namespace's
-`ConfigMap`. We will add three Kafka outputs and comment out the original three Elasticsearch outputs:
+Once the Kafka cluster is ready, we need to modify the content of the __insihgt-system__ namespace's
+__ConfigMap__ . We will add three Kafka outputs and comment out the original three Elasticsearch outputs:
 
 Assuming the Kafka Brokers address is: `insight-kafka.insight-system.svc.cluster.local:9092`
 
@@ -85,68 +85,32 @@ Assuming the Elasticsearch address is: `https://mcamel-common-es-cluster-es-http
 
 If you are familiar with the Logstash technology stack, you can continue using this approach.
 
-When deploying Logstash via Helm, you can add the following pipeline:
+When deploying [Logstash](https://github.com/elastic/helm-charts/tree/main/logstash) via Helm,
+you can add the following pipeline in the __logstashPipeline__ section:
 
 ```yaml
-# Allows you to add any config files in /usr/share/logstash/config/
-# such as logstash.yml and log4j2.properties
-#
-# Note that when overriding logstash.yml, `http.host: 0.0.0.0` should always be included
-# to make default probes work.
+replicas: 3
+resources:
+  requests:
+    cpu: 100m
+    memory: 1536Mi
+  limits:
+    cpu: 1000m
+    memory: 1536Mi
 logstashConfig:
   logstash.yml: |
     http.host: 0.0.0.0
     xpack.monitoring.enabled: false
 logstashPipeline:
-  insight-logs.conf: |
-    input {
-      kafka {
-        topics_pattern => "insight-logs"         # 也可以模糊匹配 如:all-log.*
-        bootstrap_servers => "insight-kafka.insight-system.svc.cluster.local:9092"   # kafka的ip 端口
-        enable_auto_commit => true
-        #codec => json                               # 数据格式
-        consumer_threads => 1                       # 对应partition的数量
-        decorate_events => true
-        #auto_offset_rest => "latest"               # 默认值就是这个
-        #group_id => "all-logs-group"                # kafka的消费组
-        codec => "plain"
-      }
-    }
-
-    filter {
-      mutate { gsub => [ "message", "@timestamp", "_@timestamp"] }
-      json {source => "message"}
-      date {
-          match => [ "_@timestamp", "UNIX" ]
-          remove_field => "_@timestamp"
-          remove_tag => "_timestampparsefailure"
-      }
-      mutate {
-          remove_field => ["event", "message"]
-      }
-    }
-    output {
-      elasticsearch {
-        hosts => ["https://mcamel-common-es-cluster-es-http.mcamel-system:9200"]
-        user => 'elastic'
-        ssl => 'true'
-        password => 'XAlJ948ZY0leE320SQ6hfv17'
-        ssl_certificate_verification => 'false'
-        index => "insight-es-k8s-logs-alias"
-      }
-    }
-
   insight-event.conf: |
     input {
       kafka {
-        topics_pattern => "insight-event"         # 也可以模糊匹配 如:all-log.*
-        bootstrap_servers => "insight-kafka.insight-system.svc.cluster.local:9092"   # kafka的ip 端口
+        add_field => {"kafka_topic" => "insight-event"}
+        topics => ["insight-event"]         
+        bootstrap_servers => "172.30.120.189:32082" # kafka的ip 和端口
         enable_auto_commit => true
-        #codec => json                               # 数据格式
-        consumer_threads => 1                       # 对应partition的数量
+        consumer_threads => 1                       # 对应 partition 的数量
         decorate_events => true
-        #auto_offset_rest => "latest"               # 默认值就是这个
-        #group_id => "all-logs-group"                # kafka的消费组
         codec => "plain"
       }
     }
@@ -155,36 +119,37 @@ logstashPipeline:
       mutate { gsub => [ "message", "@timestamp", "_@timestamp"] }
       json {source => "message"}
       date {
-          match => [ "_@timestamp", "UNIX" ]
-          remove_field => "_@timestamp"
-          remove_tag => "_timestampparsefailure"
+        match => [ "_@timestamp", "UNIX" ]
+        remove_field => "_@timestamp"
+        remove_tag => "_timestampparsefailure"
       }
       mutate {
-          remove_field => ["event", "message"]
-      }
-    }
-    output {
-      elasticsearch {
-        hosts => ["https://mcamel-common-es-cluster-es-http.mcamel-system:9200"]
-        user => 'elastic'
-        ssl => 'true'
-        password => 'XAlJ948ZY0leE320SQ6hfv17'
-        ssl_certificate_verification => 'false'
-        index => "insight-es-k8s-event-logs-alias"
+        remove_field => ["event", "message"]
       }
     }
 
+    output {
+      if [kafka_topic] == "insight-event" {
+        elasticsearch {
+          hosts => ["https://172.30.120.201:32427"] # elasticsearch 地址
+          user => 'elastic'                         # elasticsearch 用户名
+          ssl => 'true'
+          password => '0OWj4D54GTH3xK06f9Gg01Zk'    # elasticsearch 密码
+          ssl_certificate_verification => 'false'
+          data_stream_dataset => "insight-es-k8s-logs-alias"
+          data_stream => "true"
+        }
+      }
+    }
   insight-gw-skoala.conf: |
     input {
       kafka {
-        topics_pattern => "insight-gw-skoala"         # 也可以模糊匹配 如:all-log.*
-        bootstrap_servers => "insight-kafka.insight-system.svc.cluster.local:9092"   # kafka的ip 端口
+        add_field => {"kafka_topic" => "insight-gw-skoala"}
+        topics => ["insight-gw-skoala"]         
+        bootstrap_servers => "172.30.120.189:32082"
         enable_auto_commit => true
-        #codec => json                               # 数据格式
-        consumer_threads => 1                       # 对应partition的数量
+        consumer_threads => 1
         decorate_events => true
-        #auto_offset_rest => "latest"               # 默认值就是这个
-        #group_id => "all-logs-group"                # kafka的消费组
         codec => "plain"
       }
     }
@@ -193,22 +158,65 @@ logstashPipeline:
       mutate { gsub => [ "message", "@timestamp", "_@timestamp"] }
       json {source => "message"}
       date {
-          match => [ "_@timestamp", "UNIX" ]
-          remove_field => "_@timestamp"
-          remove_tag => "_timestampparsefailure"
+        match => [ "_@timestamp", "UNIX" ]
+        remove_field => "_@timestamp"
+        remove_tag => "_timestampparsefailure"
       }
       mutate {
-          remove_field => ["event", "message"]
+        remove_field => ["event", "message"]
       }
     }
+
     output {
-      elasticsearch {
-        hosts => ["https://mcamel-common-es-cluster-es-http.mcamel-system:9200"]
-        user => 'elastic'
-        ssl => 'true'
-        password => 'XAlJ948ZY0leE320SQ6hfv17'
-        ssl_certificate_verification => 'false'
-        index => "skoala-gw-alias"
+      if [kafka_topic] == "insight-gw-skoala" {
+        elasticsearch {
+          hosts => ["https://172.30.120.201:32427"]
+          user => 'elastic'
+          ssl => 'true'
+          password => '0OWj4D54GTH3xK06f9Gg01Zk'
+          ssl_certificate_verification => 'false'
+          data_stream_dataset => "insight-es-k8s-logs-alias"
+          data_stream => "true"
+        }
+      }
+    }
+  insight-logs.conf: |
+    input {
+      kafka {
+        add_field => {"kafka_topic" => "insight-logs"}
+        topics => ["insight-logs"]         
+        bootstrap_servers => "172.30.120.189:32082"   
+        enable_auto_commit => true
+        consumer_threads => 1
+        decorate_events => true
+        codec => "plain"
+      }
+    }
+
+    filter {
+      mutate { gsub => [ "message", "@timestamp", "_@timestamp"] }
+      json {source => "message"}
+      date {
+        match => [ "_@timestamp", "UNIX" ]
+        remove_field => "_@timestamp"
+        remove_tag => "_timestampparsefailure"
+      }
+      mutate {
+        remove_field => ["event", "message"]
+      }
+    }
+
+    output {
+      if [kafka_topic] == "insight-logs" {
+        elasticsearch {
+          hosts => ["https://172.30.120.201:32427"]
+          user => 'elastic'
+          ssl => 'true'
+          password => '0OWj4D54GTH3xK06f9Gg01Zk'
+          ssl_certificate_verification => 'false'
+          data_stream_dataset => "insight-es-k8s-logs-alias"
+          data_stream => "true"
+        }
       }
     }
 ```
@@ -328,7 +336,7 @@ in the Insight log query interface or observing an increase in the number of ind
 
 ## References
 
-- [Bitnami Logstash Helm Chart](https://github.com/bitnami/charts/tree/main/bitnami/logstash/#installing-the-chart)
+- [Logstash Helm Chart](https://github.com/elastic/helm-charts/tree/main/logstash)
 - [Vector Helm Chart](https://vector.dev/docs/setup/installation/package-managers/helm/)
-- [Vector Practice](https://wiki.eryajf.net/pages/0322lius/#_0-%E5%89%8D%E8%A8%80) (Chinese)
-- [Vector Performance](https://github.com/vectordotdev/vector/blob/master/README.md)
+- [Vector Practices](https://wiki.eryajf.net/pages/0322lius/#_0-%E5%89%8D%E8%A8%80)
+- [Vector Perfomance](https://github.com/vectordotdev/vector/blob/master/README.md)

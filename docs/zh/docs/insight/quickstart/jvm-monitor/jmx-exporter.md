@@ -69,7 +69,7 @@ RUN set -ex; \
     curl -L -O https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent/0.17.2/jmx_prometheus_javaagent-0.17.2.jar;
 ```
 
-根据上面 Dockerfile 构建镜像：`docker build -t my-jmx-exporter .`
+根据上面 Dockerfile 构建镜像： __docker build -t my-jmx-exporter .__ 
 
 在 Java 应用部署 Yaml 中加入如下 init container：
 

@@ -21,14 +21,14 @@ You can download the latest version from the [Download Center](../../download/in
 
 | CPU Architecture | Version | Download |
 | :--------------- | :------ | :------- |
-| AMD64 | v0.13.0 | [offline-v0.13.0-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.13.0-amd64.tar) |
-| ARM64 | v0.13.0 | [offline-v0.13.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.13.0-arm64.tar) |
+| AMD64 | v0.14.0 | [offline-v0.14.0-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.14.0-amd64.tar) |
+| ARM64 | v0.14.0 | [offline-v0.14.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.14.0-arm64.tar) |
 
 After downloading, extract the offline package.
 Take the amd64 architecture offline package as an example
 
 ```bash
-tar -xvf offline-v0.13.0-amd64.tar
+tar -xvf offline-v0.14.0-amd64.tar
 ```
 
 #### ISO Operating System Image File (Required)
@@ -63,6 +63,19 @@ operating systems, which can be found at <https://github.com/kubean-io/kubean/re
 
 Currently, the installer version requires the osPackage offline package version to match.
 Please download the osPackage offline package based on the corresponding version:
+
+=== "V0.14.0"
+
+    | Operating System  | Download  |
+    | :--------------- | :--------- |
+    | CentOS 7                                            | [os-pkgs-centos7-v0.11.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.11.2/os-pkgs-centos7-v0.11.2.tar.gz) |
+    | Redhat 8                                            | [os-pkgs-redhat8-v0.11.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.11.2/os-pkgs-redhat8-v0.11.2.tar.gz) |
+    | Redhat 7                                            | [os-pkgs-redhat7-v0.11.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.11.0/os-pkgs-redhat7-v0.11.2.tar.gz) |
+    | Redhat 9                                            | [os-pkgs-redhat9-v0.11.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.11.0/os-pkgs-redhat9-v0.11.2.tar.gz) |
+    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.11.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.11.2/os-pkgs-kylinv10-v0.11.2.tar.gz) |
+    | Ubuntu 20.04                                         | [os-pkgs-ubuntu2004-v0.11.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.11.2/os-pkgs-ubuntu2004-v0.11.2.tar.gz) |
+    | openEuler 22.03                                     | [os-pkgs-openeuler22.03-v0.11.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.11.2/os-pkgs-openeuler22.03-v0.11.2.tar.gz) |
+    | Oracle Linux R9 U1                                   | [os-pkgs-oracle9-v0.11.2.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.11.2/os-pkgs-oracle9-v0.11.2.tar.gz) |
 
 === "V0.13.0"
 
@@ -145,8 +158,8 @@ in [clusterConfig.yaml](./cluster-config.md).
 
 | CPU Architecture | Version | Download |
 | :--------------- | :------ | :------- |
-| AMD64    | v0.13.0 | [addon-offline-full-package-v0.13.0-amd64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.13.0-amd64.tar.gz) |
-| ARM64    | v0.13.0 | [addon-offline-full-package-v0.13.0-arm64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.13.0-arm64.tar.gz) |
+| AMD64    | v0.14.0 | [addon-offline-full-package-v0.14.0-amd64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.14.0-amd64.tar.gz) |
+| ARM64    | v0.14.0 | [addon-offline-full-package-v0.14.0-arm64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.14.0-arm64.tar.gz) |
 
 #### One-Click Download of Required Offline Packages
 

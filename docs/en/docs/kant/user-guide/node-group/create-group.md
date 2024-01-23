@@ -10,7 +10,7 @@ The following steps explain how to create an edge node group.
 
 2. Click the `Create Node Group` button at the top right of the node group list.
 
-    ![Create Node Group](../images/create-group-01.png)
+    ![Create Node Group](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kant/user-guide/images/create-group-01.png)
 
 3. Fill in the relevant parameters.
 
@@ -18,7 +18,7 @@ The following steps explain how to create an edge node group.
     - Description: Description information for the node group.
     - Node Selection Method: Nodes in the edge node group can be specified by selecting multiple nodes or matching with a label selector. Both methods can be used simultaneously.
 
-    ![Fill Basic Info](../images/create-group-02.png)
+    ![Fill Basic Info](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kant/user-guide/images/create-group-02.png)
 
 4. Click the `OK` button to successfully create the edge node group and return to the edge node group list.
 

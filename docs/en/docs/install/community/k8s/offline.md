@@ -25,10 +25,10 @@ Click [Online Install DCE Community](../../../videos/install.md) to watch a vide
 
 1. Download and decompress the offline package of DCE Community on the controller node of your kubernetes cluster, or download and decompress the offline package from [Download Center](../../../download/index.md).
 
-    Take VERSION=0.13.0 as an example.
+    Take VERSION=0.14.0 as an example.
 
     ```bash
-    export VERSION=v0.13.0
+    export VERSION=v0.14.0
     wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-$VERSION-amd64.tar
     tar -xvf offline-community-$VERSION-amd64.tar
     ```
@@ -75,19 +75,19 @@ Click [Online Install DCE Community](../../../videos/install.md) to watch a vide
 
      - If Console is exposed via NodePort (recommended only for PoC use cases), set `clusterConfig.yaml` as follows:
 
-        ```yaml title="clusterConfig.yaml"
-        apiVersion: provision.daocloud.io/v1alpha3
-        kind: ClusterConfig
-        spec:
-          loadBalancer:
-            type: NodePort
-          fullPackagePath: absolute-path-of-the-offline-directory # path for decompressed offline package
-          imagesAndCharts: # container registry
-            type: external
-            externalImageRepo: your-external-registry # container registry address, must be http or https
-            # externalImageRepoUsername: admin
-            # externalImageRepoPassword: Harbor123456
-         ```
+    ```yaml title="clusterConfig.yaml"
+    apiVersion: provision.daocloud.io/v1alpha3
+    kind: ClusterConfig
+    spec:
+      loadBalancer:
+        type: NodePort
+      fullPackagePath: absolute-path-of-the-offline-directory # path for decompressed offline package
+      imagesAndCharts: # container registry
+        type: external
+        externalImageRepo: your-external-registry # container registry address, must be http or https
+        # externalImageRepoUsername: admin
+        # externalImageRepoPassword: Harbor123456
+     ```
 
 3. Install DCE 5.0.
 

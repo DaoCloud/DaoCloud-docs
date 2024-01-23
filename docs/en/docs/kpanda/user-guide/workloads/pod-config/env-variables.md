@@ -10,10 +10,10 @@ DCE container management adds a graphical interface to configure environment var
 
 - **Variable/Variable Reference** (Pod Field): Use the Pod field as the value of an environment variable, such as the name of the Pod
 
-- **Configuration item key value import** (ConfigMap key): Import the value of a key in the configuration item as the value of an environment variable
+- **ConfigMap key value import** (ConfigMap key): Import the value of a key in the ConfigMap as the value of an environment variable
 
 - **Key key value import** (Secret Key): use the data from the Secret to define the value of the environment variable
 
 - **Key Import** (Secret): Import all key values ​​in Secret as environment variables
 
-- **Configuration item import** (ConfigMap): import all key values ​​in the configuration item as environment variables
+- **ConfigMap import** (ConfigMap): import all key values ​​in the ConfigMap as environment variables

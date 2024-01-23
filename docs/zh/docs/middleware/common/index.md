@@ -18,18 +18,18 @@ hide:
 
 ## 操作步骤
 
-1. 在左侧导航栏中选择`中间件` -> `MinIO 存储`。
+1. 在左侧导航栏中选择 __中间件__ -> __MinIO 存储__。
 
-    ![选择工作空间](../common/images/middlewarelist01.png)
+    ![选择工作空间](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/common/images/middlewarelist01.png)
 
-2. 在弹窗中选择一个工作空间后，点击`确认`。
+2. 在弹窗中选择一个工作空间后，点击 __确认__。
 
-    ![选择工作空间](../common/images/workspace.png)
+    ![选择工作空间](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/common/images/workspace.png)
 
     !!! note
 
         如果未出现弹窗/想要切换工作空间，可手动点击红框中的切换图标选择新的工作空间。
 
-3. 初次使用时，可以点击[`立即部署`](../minio/user-guide/create.md)来创建 MinIO 实例。
+3. 初次使用时，可以点击[__立即部署__](../minio/user-guide/create.md)来创建 MinIO 实例。
 
     ![立即部署](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/what03.png)

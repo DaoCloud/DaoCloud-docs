@@ -11,11 +11,11 @@ Follow the steps below to create an override policy using YAML.
 
 1. After entering a multicloud instance, in the left navigation bar, click __Policy Management__ -> __Override Policies__ , and click the __Create from YAML__ button.
 
-     ![Namespace Scope](../images/op001.png)
+     ![Namespace Scope](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/op001.png)
 
 2. On the __Create from YAML__ page, after entering the correct YAML statement, click __OK__ .
 
-     ![Create from YAML](../images/op002.png)
+     ![Create from YAML](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/op002.png)
 
 3. Return to the override policy list, and the newly created one is the first one by default. Click __⋮__ on the right side of the list to edit YAML and perform delete operations.
 
@@ -64,7 +64,7 @@ Follow the steps below to create an override policy.
 
      - Override Policy: support for adding Image/Command/Args/Plaintext and other Override configurations.
 
-     ![Create OP](../images/op003.png)
+     ![Create OP](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/op003.png)
 
 3. After completing the filling, click __OK__ to create successfully. It supports YAML update, form update, and delete operations for an override policy.
 
@@ -80,7 +80,7 @@ Next, we will introduce the override policies in detail, which are divided into 
 
          === Specify Clusters: Directly select the specified cluster name
 
-         ![Specify Clusters](../images/op004.png)
+         ![Specify Clusters](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/op004.png)
 
          === Specify Regions: Select clusters by regions, including:
 
@@ -89,11 +89,11 @@ Next, we will introduce the override policies in detail, which are divided into 
          - zone (Availability zone: is the deployment area within the region, such as Shanghai Availability Zone 1, Shanghai Availability Zone 2·······)
          - Also supports excluding a specified cluster from the selected clusters.
 
-         ![Specify Regions](../images/op005.png)
+         ![Specify Regions](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/op005.png)
 
          === Specify Labels: Select clusters by labels, support custom labels, and also support exclusion of specified clusters.
 
-         ![Specify Labels](../images/op006.png)
+         ![Specify Labels](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/op006.png)
 
      2. Override configuration for mirroring the selected clusters
 
@@ -140,7 +140,7 @@ Next, we will introduce the override policies in detail, which are divided into 
 
 5. When LabelsOverrider is selected: Label override configuration.
 
-     ![LabelsOverrider](../images/op007.png)
+     ![LabelsOverrider](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/op007.png)
 
      1. Select a cluster
 
@@ -154,7 +154,7 @@ Next, we will introduce the override policies in detail, which are divided into 
 
 6. When selecting AnnotationsOverrider: Override configuration of annotations.
 
-     ![AnnotationsOverrider](../images/op008.png)
+     ![AnnotationsOverrider](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/op008.png)
 
      1. Select a cluster
 

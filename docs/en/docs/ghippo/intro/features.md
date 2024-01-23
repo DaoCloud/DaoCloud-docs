@@ -10,7 +10,7 @@ This page describes the features of Global Management.
 1. Users
 
     Having a user account is a prerequisite for users to access the DCE platform.
-    [User](../user-guide/access-control/user.md) is created by Admin or IAM Owner in `Global Management` -> `Access Control` -> `Users` page, or connected via LDAP.
+    [User](../user-guide/access-control/user.md) is created by Admin or IAM Owner in __Global Management__ -> __Access Control__ -> __Users__ page, or connected via LDAP.
     Each user has an independent username and password. By granting different permissions to a single or a group of users, users have access to different resources.
 
     ```mermaid
@@ -78,7 +78,7 @@ This page describes the features of Global Management.
 
 6. Platform Settings
 
-    [Platform Settings](../user-guide/platform-setting/about.md) include account security settings, appearance customization, and mail server settings. When it is necessary to manage platform-level settings, such as account security information, platform logos, license authorization, and mail server, Admins can operate through `Platform Settings`. Admins have exclusive management rights for platform settings.
+    [Platform Settings](../user-guide/platform-setting/about.md) include account security settings, appearance customization, and mail server settings. When it is necessary to manage platform-level settings, such as account security information, platform logos, license authorization, and mail server, Admins can operate through __Settings__ . Admins have exclusive management rights for platform settings.
 
     ```mermaid
     graph LR

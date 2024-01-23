@@ -8,15 +8,15 @@ achieving an independent high-availability etcd.
 
 - Prepare 3 Master nodes (also serving as Worker nodes)
 - Prepare 3 ETCD nodes
-- Prepare a seed machine and complete the deployment of pre-requisite components according to the [installation dependencies](../install-tools.md)
+- Prepare a bootstrap machine and complete the deployment of pre-requisite components according to the [installation dependencies](../install-tools.md)
 
 ## Offline installation
 
-1. Download the full mode offline package on the seed machine. You can download the
+1. Download the full mode offline package on the bootstrap machine. You can download the
    latest version from the [download center](../../download/index.md).
 
-    | CPU Architecture | Version | Download Link                                                                                               |
-    | ---------------- | ------- | ---------------------------------------------------------------------------------------------------------- |
+    | CPU Architecture | Version | Download Link |
+    | ---------------- | ------- | ------------- |
     | AMD64            | v0.13.0 | <https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.13.0-amd64.tar>       |
     | ARM64            | v0.13.0 | <https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.13.0-arm64.tar>       |
 
@@ -92,16 +92,16 @@ achieving an independent high-availability etcd.
 
     - There are no etcd-related Pods in the current cluster.
 
-        ![etcd01](../images/etcd01.png)
+        ![etcd01](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/install/images/etcd01.png)
 
     - There are no etcd system services on the current cluster nodes.
 
-        ![etcd02](../images/etcd02.png)
+        ![etcd02](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/install/images/etcd02.png)
 
 6. Run the command `pf -ef | grep etcd` to check if the apiserver is connected to the external etcd address.
 
-    ![etcd03](../images/etcd03.png)
+    ![etcd03](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/install/images/etcd03.png)
 
 7. Run the command `systemctl status etcd` on the etcd nodes to check their running status.
 
-    ![etcd04](../images/etcd04.png)
+    ![etcd04](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/install/images/etcd04.png)

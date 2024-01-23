@@ -1,4 +1,6 @@
 ---
+MTPE: windsonsea
+date: 2024-01-09
 hide:
   - toc
 ---
@@ -236,6 +238,8 @@ elasticity of IT systems, and significantly accelerating application delivery.
 
 </div>
 
+*[DCE]: An abbreviation for DaoCloud Enterprise, a next-generation AI computing platform
+
 !!! success
 
     ```yaml
@@ -253,4 +257,4 @@ elasticity of IT systems, and significantly accelerating application delivery.
 [Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [Free Trial](./license0.md){ .md-button .md-button--primary }
 
-![Sail Image](./images/sail.jpg)
+![Sail Image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/dce/images/sail.jpg)

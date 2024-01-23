@@ -5,7 +5,7 @@ hide:
 
 # 视频教程
 
-我们制作了精良的视频教程，供大家快速上手。
+我们为 DCE 5.0 的各个模块制作了精良的视频教程，供大家快速上手。
 
 <div class="grid cards" markdown>
 
@@ -24,6 +24,8 @@ hide:
 - :fontawesome-solid-user-group: **全局管理** [设置登录、访问权限、外观](ghippo.md)
 
 </div>
+
+*[DCE]: DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台
 
 [下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
 [安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }

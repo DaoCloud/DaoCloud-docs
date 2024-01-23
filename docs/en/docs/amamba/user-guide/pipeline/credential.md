@@ -1,6 +1,6 @@
 ---
-hide:
-  - toc
+MTPE: FanLin
+Date: 2024-01-11
 ---
 
 # Credential Management
@@ -19,7 +19,7 @@ Currently, you can create the following three types of credentials in the Workbe
   through username/password, you can choose this type. Examples include GitHub, GitLab,
   and Docker Hub accounts.
 
-- **Access Token (Secret text)**: This type is used to store tokens like API tokens
+- **Access Token**: This type is used to store tokens like API tokens
   (e.g., GitHub personal access token).
 
 - **Kubeconfig**: This type is used to configure cross-cluster authentication.
@@ -29,14 +29,14 @@ The specific steps to create and manage credentials are as follows:
 1. On the left navigation bar, click __Pipelines__ -> __Credentials__ to go to
    the Credentials list. Click __Create Credential__ in the top right corner.
 
-    ![createcredential](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/cred01.png)
+    ![Create Credential](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/cred01.png)
 
-2. In the __Create Credential__ page, configure the relevant parameters and click __OK__.
+2. In the __Create Credential__ page, configure the relevant parameters and click __OK__ .
 
-    ![createcredential](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/cred02.png)
+    ![Fill Info](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/cred02.png)
 
-    - Fill in the __Credential Name__ and set the ID that can be used in pipelines,
-      for example, __dockerhub-id__. Note: Once set, it cannot be changed.
+    - Fill in the __Name__ and set the ID that can be used in pipelines,
+      for example, __dockerhub-id__ . Note: Once set, it cannot be changed.
     - In the __Type__ field, select the type of credential you want to add.
     - Fill in the corresponding fields based on the credential type:
 
@@ -47,6 +47,7 @@ The specific steps to create and manage credentials are as follows:
 3. Upon successful creation, a screen prompt will appear, and the newly created credential
    will be placed at the top by default.
 
+    ![Successfully Created](../../images/cred03.png)
 
 4. Click the __︙__ on the right side of the list to choose options such as editing or
    deleting from the pop-up menu.

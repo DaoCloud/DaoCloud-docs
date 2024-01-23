@@ -40,7 +40,7 @@
 
 4. 参考下方说明设置备份执行频率，然后点击 __下一步__ 。
 
-    - 备份频率：基于分钟、小时、天、周、月设置任务执行的时间周期。支持用数字和 __*__ 自定义 Cron 表达式，**输入表达式后下方会提示当前表达式的含义**。有关详细的表达式语法规则，可参考 [Cron 时间表语法](https://kubernetes.io/zh-cn/docs/concepts/workloads/controllers/cron-jobs/#cron-schedule-syntax)。
+    - 备份频率：基于分钟、小时、天、周、月设置任务执行的时间周期。支持用数字和 `*` 自定义 Cron 表达式，**输入表达式后下方会提示当前表达式的含义**。有关详细的表达式语法规则，可参考 [Cron 时间表语法](https://kubernetes.io/zh-cn/docs/concepts/workloads/controllers/cron-jobs/#cron-schedule-syntax)。
     - 留存时长（天）：设置备份资源保存的时间，默认为 30 天，过期后将会被删除。
     - 备份数据卷（PV）：是否备份数据卷（PV）中的数据，支持直接复制和使用 CSI 快照两种方式。
         - 直接复制：直接复制数据卷（PV）中的数据用于备份；

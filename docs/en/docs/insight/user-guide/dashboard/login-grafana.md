@@ -3,9 +3,9 @@ hide:
    - toc
 ---
 
-# Access native Grafana
+# Access Native Grafana
 
-Please make sure that the Helm application `Insight` in your global management cluster is in `Running` state.
+Please make sure that the Helm application __Insight__ in your global management cluster is in __Running__ state.
 
 The specific operation steps are as follows:
 
@@ -21,4 +21,4 @@ The specific operation steps are as follows:
 
     - Default password: admin
 
-3. Click `Log in` to complete the login.
+3. Click __Log in__ to complete the login.

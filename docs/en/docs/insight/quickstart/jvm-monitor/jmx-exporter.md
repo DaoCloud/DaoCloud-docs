@@ -69,7 +69,7 @@ RUN set -ex; \
      curl -L -O https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent/0.17.2/jmx_prometheus_javaagent-0.17.2.jar;
 ```
 
-Build the image according to the above Dockerfile: `docker build -t my-jmx-exporter .`
+Build the image according to the above Dockerfile: __docker build -t my-jmx-exporter .__ 
 
 Add the following init container to the Java application deployment Yaml:
 

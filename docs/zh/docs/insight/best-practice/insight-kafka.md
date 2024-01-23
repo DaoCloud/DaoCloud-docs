@@ -11,7 +11,7 @@
 
 当我们在日志系统中引入 Kafka 之后，数据流图如下图所示：
 
-![logging-kafka](./images/logging-kafka.png)
+![logging-kafka](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/best-practice/images/logging-kafka.png)
 
 上面两种方案中有共通的地方，不同之处在于消费 Kafka 数据的组件，同时，为了不影响 Insight 数据分析，
 我们需要在消费 Kafka 数据并写入到 ES 的数据和原来 Fluentbit 直接写入 ES 的数据的格式一致。
@@ -20,7 +20,7 @@
 
 ## 修改 Fluentbit Output 配置
 
-当 Kafka 集群准备就绪之后，我们需要修改 `insihgt-system` 命名空间下 `ConfigMap` 的内容，
+当 Kafka 集群准备就绪之后，我们需要修改 __insihgt-system__ 命名空间下 __ConfigMap__ 的内容，
 新增以下三个 Kafka Output 并注释原来三个 Elasticsearch Output：
 
 假设 Kafka Brokers 地址为： `insight-kafka.insight-system.svc.cluster.local:9092`
@@ -80,7 +80,7 @@
 
 如果你对 Logstash 技术栈比较熟悉，你可以继续使用该方式。
 
-当你通过 Helm 部署 [Logstash](https://github.com/elastic/helm-charts/tree/main/logstash) 的时候，在 `logstashPipeline` 中增加如下 Pipeline 即可：
+当你通过 Helm 部署 [Logstash](https://github.com/elastic/helm-charts/tree/main/logstash) 的时候，在 __logstashPipeline__ 中增加如下 Pipeline 即可：
 
 ```yaml
 replicas: 3
@@ -130,7 +130,8 @@ logstashPipeline:
           ssl => 'true'
           password => '0OWj4D54GTH3xK06f9Gg01Zk'    # elasticsearch 密码
           ssl_certificate_verification => 'false'
-          index => "insight-es-k8s-event-logs-alias"
+          data_stream_dataset => "insight-es-k8s-logs-alias"
+          data_stream => "true"
         }
       }
     }
@@ -168,7 +169,8 @@ logstashPipeline:
           ssl => 'true'
           password => '0OWj4D54GTH3xK06f9Gg01Zk'
           ssl_certificate_verification => 'false'
-          index => "skoala-gw-alias"
+          data_stream_dataset => "insight-es-k8s-logs-alias"
+          data_stream => "true"
         }
       }
     }
@@ -206,7 +208,8 @@ logstashPipeline:
           ssl => 'true'
           password => '0OWj4D54GTH3xK06f9Gg01Zk'
           ssl_certificate_verification => 'false'
-          index => "insight-es-k8s-logs-alias"
+          data_stream_dataset => "insight-es-k8s-logs-alias"
+          data_stream => "true"
         }
       }
     }

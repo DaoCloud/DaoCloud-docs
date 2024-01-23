@@ -5,30 +5,30 @@ hide:
 
 # Install the metrics-server plugin
 
-`metrics-server` is the built-in resource usage metrics collection component of Kubernetes.
+ __metrics-server__ is the built-in resource usage metrics collection component of Kubernetes.
 You can automatically scale Pod copies horizontally for workload resources by configuring HPA policies.
 
-This section describes how to install `metrics-server`.
+This section describes how to install __metrics-server__ .
 
 ## Prerequisites
 
-Before installing the `metrics-server` plugin, the following prerequisites need to be met:
+Before installing the __metrics-server__ plugin, the following prerequisites need to be met:
 
 - The container management module [connected to the Kubernetes cluster](../clusters/integrate-cluster.md) or [created the Kubernetes cluster](../clusters/create-cluster.md), and can access the UI interface of the cluster .
 
 - Completed a [namespace creation](../namespaces/createns.md).
 
-- The current operating user should have [`NS Edit`](../permissions/permission-brief.md#ns-edit) or higher permissions, for details, please refer to [Namespace Authorization](../namespaces/createns.md).
+- The current operating user should have [`NS Edit`](../permissions/permission-brief.md#ns-edit) or higher permissions, for details, refer to [Namespace Authorization](../namespaces/createns.md).
 
 ## Steps
 
-Please perform the following steps to install the `metrics-server` plugin for the cluster.
+Please perform the following steps to install the __metrics-server__ plugin for the cluster.
 
-1. On the Auto Scaling page under workload details, click the `Install` button to enter the `metrics-server` plug-in installation interface.
+1. On the Auto Scaling page under workload details, click the __Install__ button to enter the __metrics-server__ plug-in installation interface.
 
     
 
-2. Read the introduction of the `metrics-server` plugin, select the version and click the `Install` button. This page will use the `3.8.2` version as an example to install, and it is recommended that you install `3.8.2` and later versions.
+2. Read the introduction of the __metrics-server__ plugin, select the version and click the __Install__ button. This page will use the __3.8.2__ version as an example to install, and it is recommended that you install __3.8.2__ and later versions.
 
     
 
@@ -37,23 +37,23 @@ Please perform the following steps to install the `metrics-server` plugin for th
     
 
     - Name: Enter the plugin name, please note that the name can be up to 63 characters, can only contain lowercase letters, numbers and separators ("-"), and must start and end with lowercase letters or numbers, such as metrics-server-01.
-    - Namespace: Select the namespace for plugin installation, here we take `default` as an example.
-    - Version: The version of the plugin, here we take `3.8.2` version as an example.
+    - Namespace: Select the namespace for plugin installation, here we take __default__ as an example.
+    - Version: The version of the plugin, here we take __3.8.2__ version as an example.
     - Ready Wait: When enabled, it will wait for all associated resources under the application to be ready before marking the application installation as successful.
     - Failed to delete: After it is enabled, the synchronization will be enabled by default and ready to wait. If the installation fails, the installation-related resources will be removed.
     - Verbose log: Turn on the verbose output of the installation process log.
 
     !!! note
 
-        After enabling `Ready Wait` and/or `Failed Delete`, it takes a long time for the app to be marked as `Running`.
+        After enabling __Ready Wait__ and/or __Failed Delete__ , it takes a long time for the app to be marked as __Running__ .
 
 4. Advanced parameter configuration
 
-    - If the cluster network cannot access the `k8s.gcr.io` repository, please try to modify the `repositort` parameter to `repository: k8s.m.daocloud.io/metrics-server/metrics-server`.
+    - If the cluster network cannot access the __k8s.gcr.io__ repository, please try to modify the __repositort__ parameter to __repository: k8s.m.daocloud.io/metrics-server/metrics-server__ .
 
-    - An SSL certificate is also required to install the `metrics-server` plugin. To bypass certificate verification, you need to add `- --kubelet-insecure-tls` parameter at `defaultArgs:`.
+    - An SSL certificate is also required to install the __metrics-server__ plugin. To bypass certificate verification, you need to add __- --kubelet-insecure-tls__ parameter at __defaultArgs:__ .
 
-    ??? note "Click to view and use the YAML parameters to replace the default `YAML`"
+    ??? note "Click to view and use the YAML parameters to replace the default __YAML__ "
 
         ```yaml
         image:
@@ -133,8 +133,8 @@ Please perform the following steps to install the `metrics-server` plugin for th
         affinity: {}
         ```
 
-5. Click the `OK` button to complete the installation of the `metrics-server` plug-in, and then the system will automatically jump to the `Helm Apps` list page. After a few minutes, refresh the page and you will see the newly installed Applications.
+5. Click the __OK__ button to complete the installation of the __metrics-server__ plug-in, and then the system will automatically jump to the __Helm Apps__ list page. After a few minutes, refresh the page and you will see the newly installed Applications.
 
 !!! note
 
-    When deleting the `metrics-server` plugin, the plugin can only be completely deleted on the `Helm Applications` list page. If you only delete `metrics-server` on the workload page, this only deletes the workload copy of the application, the application itself is still not deleted, and an error will be prompted when you reinstall the plugin later.
+    When deleting the __metrics-server__ plugin, the plugin can only be completely deleted on the __Helm Applications__ list page. If you only delete __metrics-server__ on the workload page, this only deletes the workload copy of the application, the application itself is still not deleted, and an error will be prompted when you reinstall the plugin later.

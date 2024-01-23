@@ -6,8 +6,8 @@ hide:
 # Freely Try DCE Community
 
 <div style="text-align: center;">
-  <p style="font-size: 18px;"><img src="./images/hu01.gif" alt="Image" width="80"> Welcome to Install and Experience!</p>
-  <p style="font-size: 28px; color: green;">DCE Community <img src="./images/hu02.gif" alt="Image" width="80"></p>
+  <p style="font-size: 18px;"><img src="https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/trial/images/hu01.gif" alt="Image" width="80"> Welcome to Install and Experience!</p>
+  <p style="font-size: 28px; color: green;">DCE Community <img src="https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/trial/images/hu02.gif" alt="Image" width="80"></p>
 </div>
 
 DCE 5.0, with cloud native infrastructure at its core, is supported by self-developed open-source components. It provides cloud native computing, networking, storage, and other capabilities, supporting unified management of multi-cloud and multi-cluster lifecycles. It abstracts the complexity of underlying infrastructure, reduces the threshold for enterprises to use cloud native applications, and improves application development efficiency.
@@ -73,11 +73,11 @@ If you have limited network access, you can choose to perform an offline install
 1. Click [here to apply for a free "DCE Community" license key](https://qingflow.com/f/58604bf8). The license key will be sent to your email.
    (Some email providers may intercept the email containing the license key. If you do not receive it after a long time, please check your spam folder).
 
-    ![check mail](./images/license01.png)
+    ![check mail](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/trial/images/license01.png)
 
 2. While waiting for the email, follow the on-screen instructions to access the Community Edition login page (access it through the link obtained after successful installation) and click `Apply for Authorization Code`.
 
-    ![get code](./images/license02.png)
+    ![get code](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/trial/images/license02.png)
 
 3. As shown above, you also need to obtain the ESN (a unique device code for the cluster system). Here's how to get it:
 
@@ -85,11 +85,11 @@ If you have limited network access, you can choose to perform an offline install
     2. Click `Global Management` -> `Platform Settings` -> `Genuine Authorization` on the left navigation bar.
     3. Click the `Manage License` button to open the `Manage License` page and copy the ESN code.
 
-    ![esn](./images/license03.png)
+    ![esn](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/trial/images/license03.png)
 
 4. After receiving the license email, go back to the [Get Offline Authorization Code](https://license.daocloud.io/dce5-license) page. Enter the unique ESN of your device and the license key to obtain the offline authorization code.
 
-    ![get offline](./images/license04.png)
+    ![get offline](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/trial/images/license04.png)
 
 5. Copy and paste the offline authorization code obtained in the previous step, go back to the ESN code retrieval page, and enter the offline authorization code in the code block at the bottom. Click `Activate Now`. Congratulations! You can now explore the brand new DCE 5.0!
 

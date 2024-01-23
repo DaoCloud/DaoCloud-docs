@@ -11,16 +11,16 @@ If you choose to authenticate the nodes of the cluster-to-be-created using SSH k
     ssh-keygen -t rsa
     ```
 
-2. Run the `ls` command to check if the keys have been successfully created in the management cluster. The correct output should be as follows:
+2. Run the __ls__ command to check if the keys have been successfully created in the management cluster. The correct output should be as follows:
 
     ```shell
     ls
     id_rsa  id_rsa.pub  known_hosts
     ```
 
-    The file named `id_rsa` is the private key, and the file named `id_rsa.pub` is the public key.
+    The file named __id_rsa__ is the private key, and the file named __id_rsa.pub__ is the public key.
 
-3. Run the following command to load the public key file `id_rsa.pub` onto all the nodes of the cluster-to-be-created.
+3. Run the following command to load the public key file __id_rsa.pub__ onto all the nodes of the cluster-to-be-created.
 
     ```shell
     ssh-copy-id -i /root/.ssh/id_rsa.pub root@10.0.0.0
@@ -28,7 +28,7 @@ If you choose to authenticate the nodes of the cluster-to-be-created using SSH k
 
     Replace the user account and node IP in the above command with the username and IP of the nodes in the cluster-to-be-created. **The same operation needs to be performed on every node in the cluster-to-be-created**.
 
-4. Run the following command to view the private key file `id_rsa` created in step 1.
+4. Run the following command to view the private key file __id_rsa__ created in step 1.
 
     ```shell
     cat /root/.ssh/id_rsa

@@ -1,55 +1,55 @@
 # Cluster and Namespace Authorization
 
-Container management implements authorization based on global authority management and global user/group management. If you need to grant users the highest authority for container management (can create, manage, and delete all clusters), please refer to [What are Access Control](../../../ghippo/user-guide/access-control/iam.md).
+Container management implements authorization based on global authority management and global user/group management. If you need to grant users the highest authority for container management (can create, manage, and delete all clusters), refer to [What are Access Control](../../../ghippo/user-guide/access-control/iam.md).
 
 ## Prerequisites
 
 Before authorizing users/groups, complete the following preparations:
 
-- The user/group to be authorized has been created in the global management, please refer to [User](../../../ghippo/user-guide/access-control/user.md).
+- The user/group to be authorized has been created in the global management, refer to [User](../../../ghippo/user-guide/access-control/user.md).
 
-- Only [`Kpanda Owner`](../../../ghippo/user-guide/access-control/global.md) and [`Cluster Admin`](permission-brief.md) of the current cluster have Cluster authorization capability. For details, please refer to [Permission Description](permission-brief.md).
+- Only [ __Kpanda Owner__ ](../../../ghippo/user-guide/access-control/global.md) and [`Cluster Admin`](permission-brief.md) of the current cluster have Cluster authorization capability. For details, refer to [Permission Description](permission-brief.md).
 
-- only [`Kpanda Owner`](../../../ghippo/user-guide/access-control/global.md), [`Cluster Admin`](permission-brief.md) for the current cluster, [`NS Admin`](permission-brief.md) of the current namespace has namespace authorization capability.
+- only [ __Kpanda Owner__ ](../../../ghippo/user-guide/access-control/global.md), [`Cluster Admin`](permission-brief.md) for the current cluster, [`NS Admin`](permission-brief.md) of the current namespace has namespace authorization capability.
 
 ## Cluster Authorization
 
-1. After the user logs in to the platform, click `Privilege Management` under `Container Management` on the left menu bar, which is located on the `Cluster Permissions` tab by default.
+1. After the user logs in to the platform, click __Privilege Management__ under __Container Management__ on the left menu bar, which is located on the __Cluster Permissions__ tab by default.
 
     
 
-2. Click the `Add Authorization` button.
+2. Click the __Add Authorization__ button.
 
     
 
-3. On the `Add Cluster Permission` page, select the target cluster, the user/group to be authorized, and click `OK`.
+3. On the __Add Cluster Permission__ page, select the target cluster, the user/group to be authorized, and click __OK__ .
 
-    Currently, the only cluster role supported is `Cluster Admin`. For details about permissions, please refer to [Permission Description](permission-brief.md). If you need to authorize multiple users/groups at the same time, you can click `Add User Permissions` to add multiple times.
+    Currently, the only cluster role supported is __Cluster Admin__ . For details about permissions, refer to [Permission Description](permission-brief.md). If you need to authorize multiple users/groups at the same time, you can click __Add User Permissions__ to add multiple times.
 
     
 
-4. Return to the cluster permission management page, and a message appears on the screen: `Cluster permission added successfully`.
+4. Return to the cluster permission management page, and a message appears on the screen: __Cluster permission added successfully__ .
 
     
 
 ## Namespace Authorization
 
-1. After the user logs in to the platform, click `Privilege Management` under `Container Management` on the left menu bar, and click the `Namespace Permissions` tab.
+1. After the user logs in to the platform, click __Privilege Management__ under __Container Management__ on the left menu bar, and click the __Namespace Permissions__ tab.
 
     
 
-2. Click the `Add Authorization` button. On the `Add Namespace Permission` page, select the target cluster, target namespace, and user/group to be authorized, and click `OK`.
+2. Click the __Add Authorization__ button. On the __Add Namespace Permission__ page, select the target cluster, target namespace, and user/group to be authorized, and click __OK__ .
 
-    The currently supported namespace roles are NS Admin, NS Edit, and NS View. For details about permissions, please refer to [Permission Description](permission-brief.md). If you need to authorize multiple users/groups at the same time, you can click `Add User Permission` to add multiple times. Click `OK` to complete the permission authorization.
+    The currently supported namespace roles are NS Admin, NS Edit, and NS View. For details about permissions, refer to [Permission Description](permission-brief.md). If you need to authorize multiple users/groups at the same time, you can click __Add User Permission__ to add multiple times. Click __OK__ to complete the permission authorization.
 
     
 
-3. Return to the namespace permission management page, and a message appears on the screen: `Cluster permission added successfully`.
+3. Return to the namespace permission management page, and a message appears on the screen: __Cluster permission added successfully__ .
 
     
 
     !!! tip
 
-        If you need to delete or edit permissions later, you can click `⋮` on the right side of the list and select `Edit` or `Delete`.
+        If you need to delete or edit permissions later, you can click __⋮__ on the right side of the list and select __Edit__ or __Delete__ .
 
         

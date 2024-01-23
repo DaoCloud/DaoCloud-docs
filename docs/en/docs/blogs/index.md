@@ -8,6 +8,18 @@ hide:
 This page summarizes blogs and public account articles related to DCE 5.0 and cloud native
 technology, sorted by date by default.
 
+*[DCE]: Abbreviation for DaoCloud Enterprise, a next-generation AI computing platform
+
+## 2024
+
+- [20240115 | Containerization and AI: Streamlining the Deployment of Machine Learning Models](./240115-news.md)
+
+    This blog will explore the challenges of deploying ML models, the fundamentals of containerization, and the benefits for AI and ML applications.
+
+- [20240108 | KubeEdge v1.15.0 Release](./240108-kubeedge.md)
+
+    KubeEdge v1.15.0 introduces new features such as support for Windows edge nodes, device management based on physical models, and DMI data plane support.
+
 ## 2023
 
 - [20231213 | Kubernetes 1.29 Released with an Ambious Mandala Theme](./231213-k8s-1.29.md)

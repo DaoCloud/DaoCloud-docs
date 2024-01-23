@@ -13,7 +13,7 @@ CI Related Commands:
 
 | Subcommand                                                  | Description                                                         |
 | ------------------------------------------------------- | ------------------------------------------------------------ |
-| nvidia-smi mig -lcip  { -gi {gi Instance ID}}         | View the profile of CI, specifying `-gi` will show the CIs that can be created for a particular GI instance |
+| nvidia-smi mig -lcip  { -gi {gi Instance ID}}         | View the profile of CI, specifying __-gi__ will show the CIs that can be created for a particular GI instance |
 | nvidia-smi mig -lci                                   | View the list of created CI instances                                       |
 | nvidia-smi mig -cci {profile id} -gi {gi instance id} | Create a CI instance with the specified GI                                       |
 | nvidia-smi mig -dci -ci {ci instance id}              | Delete a specific CI instance                                             |

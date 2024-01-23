@@ -6,14 +6,14 @@ Insight uses the Prometheus Blackbox Exporter tool to probe the network using pr
 
 ## Prerequisites
 
-The `insight-agent` has been successfully deployed in the target cluster and is in the `Running` state.
+The __insight-agent__ has been successfully deployed in the target cluster and is in the __Running__ state.
 
 ## View Probes
 
-1. Go to the `Observability` product module.
-2. Select `Infrastructure` -> `Probes` in the left navigation pane.
+1. Go to the __Insight__ product module.
+2. Select __Infrastructure__ -> __Probes__ in the left navigation pane.
 
-    - Click on the cluster or namespace dropdown in the table to switch between clusters and namespaces.
+    - Click the cluster or namespace dropdown in the table to switch between clusters and namespaces.
     - The list displays the name, probe method, probe target, connectivity status, and creation time of the probes by default.
     - The connectivity status can be:
         - Normal: The probe successfully connects to the target, and the target returns the expected response.
@@ -24,8 +24,8 @@ The `insight-agent` has been successfully deployed in the target cluster and is 
 
 ## Create a Probe
 
-1. Click on `Create Probe`.
-2. Fill in the basic information and click `Next`.
+1. Click __Create Probe__ .
+2. Fill in the basic information and click __Next__ .
 
     - Name: The name can only contain lowercase letters, numbers, and hyphens (-), and must start and end with a lowercase letter or number, with a maximum length of 63 characters.
     - Cluster: Select the cluster for the probe task.
@@ -52,7 +52,7 @@ The `insight-agent` has been successfully deployed in the target cluster and is 
 
 ## View Monitoring Dashboards
 
-Click `...` in the operations column and click `View Monitoring Dashboard`.
+Click __ ...__ in the operations column and click __View Monitoring Dashboard__ .
 
 | Metric Name | Description |
 | -- | -- |
@@ -65,9 +65,9 @@ Click `...` in the operations column and click `View Monitoring Dashboard`.
 
 ## Edit a Probe
 
-Click `...` in the operations column and click `Edit`.
+Click __ ...__ in the operations column and click __Edit__ .
 
 
 ## Delete a Probe
 
-Click `...` in the operations column and click `Delete`.
+Click __ ...__ in the operations column and click __Delete__ .

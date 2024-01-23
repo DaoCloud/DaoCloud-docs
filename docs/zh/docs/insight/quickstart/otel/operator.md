@@ -17,7 +17,7 @@
 
     从 Insight v0.22.0 版本开始，不再需要手动安装 Instrumentation CR。
 
-在 insight-system 命名空间下安装, 不同版本之间有一些细小的差别。
+在 insight-system 命名空间下安装，不同版本之间有一些细小的差别。
 
 === "Insight v0.21.x"
 
@@ -235,66 +235,74 @@
 
 ## 与服务网格产品 Mspider 链路串联场景
 
-如果您开启了服务网格的链路追踪能力，你需要在安装 Instrumentation CR 时，额外增加一个环境变量注入的配置：
+如果您开启了服务网格的链路追踪能力，需要额外增加一个环境变量注入的配置：
 
-```yaml
-    - name: OTEL_SERVICE_NAME
-      valueFrom:
-        fieldRef:
-          fieldPath: metadata.labels['app'] 
-```
+### 操作步骤如下
 
-完整示例如下（For Insight v0.21.x）：
+1. 登录 DCE5.0，进入 __容器管理__ 后选择进入目标集群，
+2. 点击左侧导航栏选择 __自定义资源__ ，查找 __instrumentations.opentelemetry.io__ 后进入详情页。
+3. 选择 __insight-system__ 命名空间后，编辑 __insight-opentelemetry-autoinstrumentation__ ，在 __spec:env:__ 下添加以下内容：
 
-```bash
-K8S_CLUSTER_UID=$(kubectl get namespace kube-system -o jsonpath='{.metadata.uid}')
-kubectl apply -f - <<EOF
-apiVersion: opentelemetry.io/v1alpha1
-kind: Instrumentation
-metadata:
-  name: insight-opentelemetry-autoinstrumentation
-  namespace: insight-system
-spec:
-  # https://github.com/open-telemetry/opentelemetry-operator/blob/main/docs/api.md#instrumentationspecresource
-  resource:
-    addK8sUIDAttributes: true
-  env:
-    - name: OTEL_EXPORTER_OTLP_ENDPOINT
-      value: http://insight-agent-opentelemetry-collector.insight-system.svc.cluster.local:4317
-    - name: OTEL_SERVICE_NAME
-      valueFrom:
-        fieldRef:
-          fieldPath: metadata.labels['app'] 
-  sampler:
-    # Enum: always_on, always_off, traceidratio, parentbased_always_on, parentbased_always_off, parentbased_traceidratio, jaeger_remote, xray
-    type: always_on
-  java:
-    image: ghcr.m.daocloud.io/openinsight-proj/autoinstrumentation-java:1.31.0
-    env:
-      - name: OTEL_JAVAAGENT_DEBUG
-        value: "false"
-      - name: OTEL_INSTRUMENTATION_JDBC_ENABLED
-        value: "true"
-      - name: SPLUNK_PROFILER_ENABLED
-        value: "false"
-      - name: OTEL_METRICS_EXPORTER
-        value: "prometheus"
-      - name: OTEL_METRICS_EXPORTER_PORT
-        value: "9464"
-      - name: OTEL_K8S_CLUSTER_UID
-        value: $K8S_CLUSTER_UID
-  nodejs:
-    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs:0.41.1
-  python:
-    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python:0.40b0
-  dotnet:
-    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-dotnet:1.0.0
-  go:
-    # Must set the default value manually for now.
-    # See https://github.com/open-telemetry/opentelemetry-operator/issues/1756 for details.
-    image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-go-instrumentation/autoinstrumentation-go:v0.2.2-alpha
-EOF
-```
+    ```yaml
+        - name: OTEL_SERVICE_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.labels['app'] 
+    ```
+
+    ![otel-mesh](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/otel-mesh.png)
+
+=== "完整示例如下（For Insight v0.21.x）"
+
+    ```bash
+    K8S_CLUSTER_UID=$(kubectl get namespace kube-system -o jsonpath='{.metadata.uid}')
+    kubectl apply -f - <<EOF
+    apiVersion: opentelemetry.io/v1alpha1
+    kind: Instrumentation
+    metadata:
+      name: insight-opentelemetry-autoinstrumentation
+      namespace: insight-system
+    spec:
+      # https://github.com/open-telemetry/opentelemetry-operator/blob/main/docs/api.md#instrumentationspecresource
+      resource:
+        addK8sUIDAttributes: true
+      env:
+        - name: OTEL_EXPORTER_OTLP_ENDPOINT
+          value: http://insight-agent-opentelemetry-collector.insight-system.svc.cluster.local:4317
+        - name: OTEL_SERVICE_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.labels['app'] 
+      sampler:
+        # Enum: always_on, always_off, traceidratio, parentbased_always_on, parentbased_always_off, parentbased_traceidratio, jaeger_remote, xray
+        type: always_on
+      java:
+        image: ghcr.m.daocloud.io/openinsight-proj/autoinstrumentation-java:1.31.0
+        env:
+          - name: OTEL_JAVAAGENT_DEBUG
+            value: "false"
+          - name: OTEL_INSTRUMENTATION_JDBC_ENABLED
+            value: "true"
+          - name: SPLUNK_PROFILER_ENABLED
+            value: "false"
+          - name: OTEL_METRICS_EXPORTER
+            value: "prometheus"
+          - name: OTEL_METRICS_EXPORTER_PORT
+            value: "9464"
+          - name: OTEL_K8S_CLUSTER_UID
+            value: $K8S_CLUSTER_UID
+      nodejs:
+        image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs:0.41.1
+      python:
+        image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python:0.40b0
+      dotnet:
+        image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-operator/autoinstrumentation-dotnet:1.0.0
+      go:
+        # Must set the default value manually for now.
+        # See https://github.com/open-telemetry/opentelemetry-operator/issues/1756 for details.
+        image: ghcr.m.daocloud.io/open-telemetry/opentelemetry-go-instrumentation/autoinstrumentation-go:v0.2.2-alpha
+    EOF
+    ```
 
 ## 添加注解，自动接入链路
 
@@ -305,11 +313,11 @@ EOF
 
     这类注解只有一个，用于添加 otel 相关的环境变量，比如链路上报地址、容器所在的集群 id、命名空间等（这个注解在应用不支持自动探针语言时十分有用）
 
-    ```bash
+    ```console
     instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
     ```
 
-    其中 value 被 / 分成两部分，第一个值(insight-system) 是上一步安装的 CR 的命名空间，第二个值(insight-opentelemetry-autoinstrumentation) 是这个 CR 的名字。
+    其中 value 被 / 分成两部分，第一个值 (insight-system) 是上一步安装的 CR 的命名空间，第二个值 (insight-opentelemetry-autoinstrumentation) 是这个 CR 的名字。
 
 - 自动探针注入以及环境变量注入注解
 

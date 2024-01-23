@@ -75,6 +75,8 @@ EOF
 
 ## 使用
 
+### Subctl
+
 使用 Subctl 工具导出 Service，验证并排查问题。
 
 1. 下载 Subctl
@@ -186,59 +188,61 @@ EOF
 root@controller:~# subctl gather
 ```
 
-- 跨集群的服务发现：
+### 服务发现
 
-    如果你想使用跨集群的服务发现，你需要手动导出 Service 到其他集群，可以参考下面的方式：
+跨集群的服务发现。
 
-    在 ClusterA 导出这个服务：
+如果你想使用跨集群的服务发现，你需要手动导出 Service 到其他集群，可以参考下面的方式：
 
-    ```shell
-    root@controller:~# kubectl get svc
-    NAME                                          TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)        AGE
-    kubernetes                                    ClusterIP      10.233.0.1      <none>         443/TCP        81d                                       ClusterIP      10.233.35.64    <none>         80/TCP         58d
-    test                                          ClusterIP      10.233.21.143   <none>         80/TCP         79d
-    root@controller:~# subctl export service test
-    ```
+在 ClusterA 导出这个服务：
 
-    上面命令将会导出 default 命令空间下一个名为 test 的 Service，导出完成之后查看状态：
+```shell
+root@controller:~# kubectl get svc
+NAME                                          TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)        AGE
+kubernetes                                    ClusterIP      10.233.0.1      <none>         443/TCP        81d                                       ClusterIP      10.233.35.64    <none>         80/TCP         58d
+test                                          ClusterIP      10.233.21.143   <none>         80/TCP         79d
+root@controller:~# subctl export service test
+```
 
-    ```shell
-    root@controller:~# kubectl get serviceexports.multicluster.x-k8s.io
-    NAME   AGE
-    test   2d2h
-    root@controller:~# kubectl get serviceexports.multicluster.x-k8s.io test -o yaml
-    apiVersion: multicluster.x-k8s.io/v1alpha1
-    kind: ServiceExport
-    metadata:
-      creationTimestamp: "2023-02-24T03:58:00Z"
-      generation: 1
-      name: test
-      namespace: default
-      resourceVersion: "20068131"
-      uid: 05fa2aab-e6b1-491b-92bb-4f2561c92a1b
-    status:
-      conditions:
-      - lastTransitionTime: "2023-02-24T03:55:12Z"
-        message: ""
-        reason: ""
-        status: "True"
-        type: Valid
-      - lastTransitionTime: "2023-02-24T03:55:12Z"
-        message: ServiceImport was successfully synced to the broker
-        reason: ""
-        status: "True"
-        type: Synced
-    ```
+上面命令将会导出 default 命令空间下一个名为 test 的 Service，导出完成之后查看状态：
 
-    显示导出成功, 即可在 ClusterB 访问这个 Service：
+```shell
+root@controller:~# kubectl get serviceexports.multicluster.x-k8s.io
+NAME   AGE
+test   2d2h
+root@controller:~# kubectl get serviceexports.multicluster.x-k8s.io test -o yaml
+apiVersion: multicluster.x-k8s.io/v1alpha1
+kind: ServiceExport
+metadata:
+  creationTimestamp: "2023-02-24T03:58:00Z"
+  generation: 1
+  name: test
+  namespace: default
+  resourceVersion: "20068131"
+  uid: 05fa2aab-e6b1-491b-92bb-4f2561c92a1b
+status:
+  conditions:
+  - lastTransitionTime: "2023-02-24T03:55:12Z"
+    message: ""
+    reason: ""
+    status: "True"
+    type: Valid
+  - lastTransitionTime: "2023-02-24T03:55:12Z"
+    message: ServiceImport was successfully synced to the broker
+    reason: ""
+    status: "True"
+    type: Synced
+```
 
-    ```shell
-    root@controller-node-1:~# kubectl  exec -it dao2048-5745d9b5d7-bsjjl sh
-    kubectl exec [POD] [COMMAND] is DEPRECATED and will be removed in a future version. Use kubectl exec [POD] -- [COMMAND] instead.
-    / # nslookup test.default.svc.clusterset.local
-    Server:		10.233.0.3
-    Address:	10.233.0.3:53
+显示导出成功, 即可在 ClusterB 访问这个 Service：
 
-    Name:	test.default.svc.clusterset.local
-    Address: 10.233.21.143
-    ```
+```shell
+root@controller-node-1:~# kubectl  exec -it dao2048-5745d9b5d7-bsjjl sh
+kubectl exec [POD] [COMMAND] is DEPRECATED and will be removed in a future version. Use kubectl exec [POD] -- [COMMAND] instead.
+/ # nslookup test.default.svc.clusterset.local
+Server:		10.233.0.3
+Address:	10.233.0.3:53
+
+Name:	test.default.svc.clusterset.local
+Address: 10.233.21.143
+```

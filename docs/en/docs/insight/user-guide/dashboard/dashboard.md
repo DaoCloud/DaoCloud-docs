@@ -3,7 +3,7 @@ hide:
    - toc
 ---
 
-# dash board
+# Dashboard
 
 Grafana is a cross-platform open source visual analysis tool. Insight uses open source Grafana
 to provide monitoring services, and supports viewing resource consumption from multiple dimensions
@@ -14,20 +14,24 @@ For more information on open source Grafana, see
 
 ## Steps
 
-1. Select `Dashboard` from the left navigation panel.
+1. Select __Dashboard__ from the left navigation panel.
 
-    - In the `Insight Overview` dashboard, you can view the resource usage of multiple clusters and analyze resource usage, network, storage, and more based on dimensions such as namespaces and container groups.
+    - In the __Insight / Overview__ dashboard, you can view the resource usage of multiple clusters and analyze resource usage, network, storage, and more based on dimensions such as namespaces and container groups.
 
     - Click the dropdown menu in the upper-left corner of the dashboard to switch between clusters.
 
     - Click the lower-right corner of the dashboard to switch the time range for queries.
 
+    ![Dashboard](../images/dashboard00.png)
+
 2. Insight provides several recommended dashboards that allow monitoring from different dimensions
    such as nodes, namespaces, workloads, etc. Switch between dashboards by clicking the
-   `insight-system / Insight Overview` section.
+   __insight-system / Insight / Overview__ section.
+
+    ![Overview](../images/dashboard01.png)
 
 !!! note
 
-    1. For accessing Grafana UI, refer to [Logging into Grafana as an Administrator](../../user-guide/dashboard/login-grafana.md).
+    1. For accessing Grafana UI, refer to [Access Native Grafana](../../user-guide/dashboard/login-grafana.md).
 
     2. For importing custom dashboards, refer to [Importing Custom Dashboards](./import-dashboard.md).

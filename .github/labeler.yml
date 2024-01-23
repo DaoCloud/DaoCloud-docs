@@ -91,3 +91,10 @@ zh:
 develop:
   - "scripts/**/*"
   - ".github/**/*"
+
+i18n:
+  - "docs/en/**/*"
+
+baize:
+  - "docs/en/docs/baize/**/*"
+  - "docs/zh/docs/baize/**/*"

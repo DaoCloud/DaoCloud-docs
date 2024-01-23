@@ -42,12 +42,12 @@ policies, and other settings that simplify user operations and ensure a smooth e
 
 1. Log in to the DCE platform using the DCE platform administrator (Admin) or a user with Admin privileges.
 
-2. Go to `Access Control`. [Create users and authorize](../user-guide/access-control/user.md), then [create groups and authorize](../user-guide/access-control/group.md), and eventually, [create an identity provider](../user-guide/access-control/idprovider.md).
+2. Go to __Access Control__ . [Create users and authorize](../user-guide/access-control/user.md), then [create groups and authorize](../user-guide/access-control/group.md), and eventually, [create an identity provider](../user-guide/access-control/idprovider.md).
 
-3. Go to `Workspace`. [Create enterprise hierarchy relationship](../user-guide/workspace/ws-folder.md), then [create a workspace (tenant)](../user-guide/workspace/workspace.md).
+3. Go to __Workspace__ . [Create enterprise hierarchy relationship](../user-guide/workspace/ws-folder.md), then [create a workspace (tenant)](../user-guide/workspace/workspace.md).
 
-4. Go to `Audit Logs`. View and [export audit logs](../user-guide/audit/audit-log.md).
+4. Go to __Audit Logs__ . View and [export audit logs](../user-guide/audit/audit-log.md).
 
-5. Go to `Platform Settings`. Configure security policy, mail server, appearance, and genuine license.
+5. Go to __Settings__ . Configure security policy, mail server, appearance, and genuine license.
 
 [Start Free Trial Now](../../dce/license0.md){ .md-button .md-button--primary }

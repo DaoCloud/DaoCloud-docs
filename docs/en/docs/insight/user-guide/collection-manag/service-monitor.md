@@ -1,15 +1,15 @@
 # Configure service discovery rules
 
-Observable Insight supports the way of creating CRD ServiceMonitor through `container management` to meet your collection requirements for custom service discovery.
-Users can use ServiceMonitor to define the scope of the Namespace discovered by the Pod and select the monitored Service through `matchLabel`.
+Observable Insight supports the way of creating CRD ServiceMonitor through __container management__ to meet your collection requirements for custom service discovery.
+Users can use ServiceMonitor to define the scope of the Namespace discovered by the Pod and select the monitored Service through __matchLabel__ .
 
 ## Prerequisites
 
-The cluster has the Helm application `insight-agent` installed and in the `running` state.
+The cluster has the Helm application __insight-agent__ installed and in the __running__ state.
 
 ## Steps
 
-1. Select `Data Collection` on the left navigation bar to view the status of all cluster collection plug-ins.
+1. Select __Data Collection__ on the left navigation bar to view the status of all cluster collection plug-ins.
 
     ![Data Collection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/collectmanage01.png)
 
@@ -17,7 +17,7 @@ The cluster has the Helm application `insight-agent` installed and in the `runni
 
     ![Data Collection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/collectmanage02.png)
 
-3. Click the link to jump to `Container Management` to create a Service Monitor.
+3. Click the link to jump to __Container Management__ to create a Service Monitor.
 
     ```yaml
     apiVersion: monitoring.coreos.com/v1
@@ -44,24 +44,24 @@ The cluster has the Helm application `insight-agent` installed and in the `runni
     1. Specify the name of the ServiceMonitor.
     2. Specify the namespace of the ServiceMonitor.
     3. This is the service endpoint, which represents the address where Prometheus collects Metrics.
-       `endpoints` is an array, and multiple `endpoints` can be created at the same time.
-       Each `endpoint` contains three fields, and the meaning of each field is as follows:
+       __endpoints__ is an array, and multiple __endpoints__ can be created at the same time.
+       Each __endpoint__ contains three fields, and the meaning of each field is as follows:
 
-        - `interval`: Specifies the collection cycle of Prometheus for the current `endpoint`.
-          The unit is seconds, set to `15s` in this example.
-        - `path`: Specifies the collection path of Prometheus.
-          In this example, it is specified as `/actuator/prometheus`.
-        - `port`: Specifies the port through which the collected data needs to pass.
-          The set port is the `name` set by the port of the Service being collected.
+        - __interval__ : Specifies the collection cycle of Prometheus for the current __endpoint__ .
+          The unit is seconds, set to __15s__ in this example.
+        - __path__ : Specifies the collection path of Prometheus.
+          In this example, it is specified as __/actuator/prometheus__ .
+        - __port__ : Specifies the port through which the collected data needs to pass.
+          The set port is the __name__ set by the port of the Service being collected.
 
     4. This is the scope of the Service that needs to be discovered.
-       `namespaceSelector` contains two mutually exclusive fields, and the meaning of the fields is as follows:
+       __namespaceSelector__ contains two mutually exclusive fields, and the meaning of the fields is as follows:
 
-        - `any`: Only one value `true`, when this field is set, it will listen to changes
+        - __any__ : Only one value __true__ , when this field is set, it will listen to changes
           of all Services that meet the Selector filtering conditions.
-        - `matchNames`: An array value that specifies the scope of `namespace` to be monitored.
+        - __matchNames__ : An array value that specifies the scope of __namespace__ to be monitored.
           For example, if you only want to monitor the Services in two namespaces, default and
-          insight-system, the `matchNames` are set as follows:
+          insight-system, the __matchNames__ are set as follows:
 
             ```yaml
             namespaceSelector:

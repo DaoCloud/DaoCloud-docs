@@ -10,10 +10,10 @@ OpenTelemetry 与 SkyWalking 有一些共同点：都是使用 Trace 来定义�
 
 | - | Skywalking | OpenTelemetry |
 | --- | ------- | ------------ |
-| 数据结构  | `span` -> `Segment` -> `Trace` | `Span` -> `Trace` |
-| 属性信息 | `Tags` | `Attributes`|
-| 应用时间 | `Logs` | `Events` |
-| 引用关系 | `References` | `Links` |
+| 数据结构  | __span__ -> __Segment__ -> __Trace__ | __Span__ -> __Trace__ |
+| 属性信息 | __Tags__ | __Attributes__ |
+| 应用时间 | __Logs__ | __Events__ |
+| 引用关系 | __References__ | __Links__ |
 
 明确了这些差异后，就可以开始实现将 [SkyWalking Trace](https://skywalking.apache.org/docs/main/latest/en/protocols/trace-data-protocol-v3/) 转换为 [OpenTelemetry Trace](https://opentelemetry.io/docs/reference/specification/overview/)。主要工作包括：
 
@@ -76,7 +76,7 @@ receivers:
 service: 
   pipelines: 
     traces:      
-      # add receiver `skywalking`
+      # add receiver __skywalking__ 
       receivers: [skywalking]
       
 # otel-agent service yaml

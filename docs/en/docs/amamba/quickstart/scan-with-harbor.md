@@ -1,31 +1,34 @@
-# Integrate Harbor to scan image security
+---
+MTPE: FanLin
+Date: 2024-01-18
+---
+
+# Integrate Harbor to Scan Image Security
 
 This page will introduce how to integrate Harbor in the pipeline and implement image security scanning.
 
-## Enable automatic scanning of images in Harbor
+## Enable automatic image scanning in Harbor
 
 1. Log in to Harbor and click a specific project.
 
-     <!--![]()screenshots-->
+    ![Choose Project](../images/harbor01.png)
 
-2. Select the __Configuration Management__ tab, and check __Automatically scan images__.
+2. Choose the __Configuration__ tab, and check __Automatically scan images on push__ .
 
-     <!--![]()screenshots-->
+    ![Automatically Scan](../images/harbor02.png)
 
 ## Configure the pipeline in Workbench
 
 1. In Workbench, create a pipeline, refer to [Quickly create a pipeline](deploy-pipeline.md), and click __Run Now__ after the configuration is complete.
 
-     <!--![]()screenshots-->
+    ![Run Now](../images/harbor03.png)
 
 1. In the pop-up dialog box, enter the address of the mirror warehouse in the above Harbor configuration project.
 
-     <!--![]()screenshots-->
-
 1. Wait for the pipeline to run successfully.
 
-## View image security scan information in Harbor
+## View image security scanning in Harbor
 
-Visit __Project__ → __Mirror Warehouse__ in turn in Harbor to view the vulnerability information of the mirror.
+Visit __Project__ -> __Image Repository__ in turn in Harbor to view the vulnerability information of the mirror.
 
-<!--![]()screenshots-->
+![harbor](../images/harbor04.png)

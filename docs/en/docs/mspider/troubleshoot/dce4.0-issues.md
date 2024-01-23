@@ -66,7 +66,7 @@ Symptom 01: 'istio-managed-istio-hosted' fails to start, indicating that the Con
 
 To resolve this issue, manually for grid instance of CR ` GlobalMesh ` add corresponding parameters: `istio.custom_params.values.global.jwtPolicy`.
 
-![params](./images/dce4-01.png)
+![params](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/troubleshoot/images/dce4-01.png)
 
 !!! tip
 

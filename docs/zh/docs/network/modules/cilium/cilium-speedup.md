@@ -156,9 +156,9 @@
 
 4. 集群 cluster01 出现 `connected cluster1 and cluster2!` ，集群 cluster02 出现 `ClusterMesh enabled!` 说明两个集群通了。
 
-    ![联通](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/network-cross-cluster7.png)
+    ![连通](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/network-cross-cluster7.png)
 
-    ![联通](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/network-cross-cluster8.png)
+    ![连通](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/network-cross-cluster8.png)
 
 ## 创建演示应用
 

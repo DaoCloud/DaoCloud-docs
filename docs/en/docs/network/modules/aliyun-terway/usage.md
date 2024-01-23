@@ -33,8 +33,10 @@ Refer to the [official documentation](https://kubernetes.io/docs/setup/productio
 
 Taking containerd as an example for the container runtime, use the following configuration to install the cluster:
 
+```shell
+cat cluster.yaml
+```
 ```yaml
-[root@iZ2v]# cat cluster.yaml
 apiVersion: kubeadm.k8s.io/v1beta3
 bootstrapTokens:
   - groups:
@@ -71,7 +73,7 @@ networking:
   dnsDomain: cluster.local
   serviceSubnet: 172.21.0.0/24
   podSubnet: 10.244.0.0/16
-[root@iZ2v]# kubeadm init --config cluster.yaml
+$ kubeadm init --config cluster.yaml
 ```
 
 > Plan the serviceSubnet and podSubnet to avoid conflicts.
@@ -132,8 +134,8 @@ After creating the cluster, use `kubeadm join` on join the worker node to the cl
     Finally, create an AccessKey and save the `access_secret` and `access_key`, as you will need them during the Terway installation.
 
     ```shell 
-    [root@iZ2v]# export ACCESS_KEY_ID=LTAI********************
-    [root@iZ2v]# export ACCESS_KEY_SECRET=HAeS**************************
+    export ACCESS_KEY_ID=LTAI********************
+    export ACCESS_KEY_SECRET=HAeS**************************
     ```
 
 2. Install Terway CNI Plugin.
@@ -148,9 +150,9 @@ After creating the cluster, use `kubeadm join` on join the worker node to the cl
     Run the installation:
 
     ```shell
-    [root@iZ2v]# kubectl apply -f  terway.yaml
-    [root@iZ2v]# kubectl get po -n kube-system -o wide | grep terway
-    [root@iZ2v]# kubectl get po -n kube-system -o wide | grep terway
+    $ kubectl apply -f  terway.yaml
+    $ kubectl get po -n kube-system -o wide | grep terway
+    $ kubectl get po -n kube-system -o wide | grep terway
     terway-rjqbj                                                2/2     Running   0           3m   192.168.200.2   cn-chengdu.i-2vcxxxxx   <none>           <none>
     terway-z5cvh                                                2/2     Running   0           3m   192.168.200.1   cn-chengdu.i-2vcxxxxx   <none>           <none>
     ```
@@ -162,8 +164,8 @@ The CCM component is used to publish Pod-to-Pod routes across nodes and implemen
 1. Install the configMap cloud-config for CCM. Encode the access credentials using base64:
 
     ```shell
-    [root@iZ2v]# accessKeyIDBase64=`echo -n "$ACCESS_KEY_ID" |base64 -w 0`
-    [root@iZ2v]# accessKeySecretBase64=`echo -n "$ACCESS_KEY_SECRET"|base64 -w 0`
+    $ accessKeyIDBase64=`echo -n "$ACCESS_KEY_ID" |base64 -w 0`
+    $ accessKeySecretBase64=`echo -n "$ACCESS_KEY_SECRET"|base64 -w 0`
     cat <<EOF | kubectl apply -f -
     apiVersion: v1
     kind: ConfigMap
@@ -188,7 +190,7 @@ The CCM component is used to publish Pod-to-Pod routes across nodes and implemen
     Run the installation:
 
     ```shell
-    [root@iZ2v]# kubectl apply -f cloud-controller-manager.yaml
+    kubectl apply -f cloud-controller-manager.yaml
     ```
 
 3. After installation, verify that the VPC routes have synchronized by checking the Alibaba Cloud management console:
@@ -275,7 +277,7 @@ EOF
 > Declare aliyun/eni: 1 in the resources configuration to make the Pod exclusively use the ENI network card.
 
 ```shell
-[root@iZ2v vpc]# kubectl get po -o wide | grep eni
+$ kubectl get po -o wide | grep eni
 dao2048-eni-7f85b8dcc4-6v97q   1/1     Running   0              15s   192.168.20.222   cn-chengdu.i-2vcxxxxxxxx   <none>           <none>
 dao2048-eni-7f85b8dcc4-mvjbs   1/1     Running   0              15s   192.168.20.223   cn-chengdu.i-2vcxxxxxxxx   <none>           <none>
 ```

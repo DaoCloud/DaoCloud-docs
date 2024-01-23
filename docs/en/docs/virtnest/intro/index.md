@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# What is Virtnest (Virtual Machine Container)?
+# What is Virtual Machine (Virtnest)?
 
 Virtnest is a technology based on KubeVirt that allows virtual machines to be managed as
 cloud native applications, seamlessly integrating with containers. This enables users to
@@ -54,4 +54,4 @@ containerization capabilities, providing users with a superior virtual machine m
 
 !!! note
 
-    The VM container, Virtnest, is a feature exclusive to the DCE 5.0 Enterprise Package (Standard, Advanced, and Platinum editions).
+    The Virtual Machine, `Virtnest`, is a feature exclusive to the DCE 5.0 Enterprise Package (Standard, Advanced, and Platinum editions).

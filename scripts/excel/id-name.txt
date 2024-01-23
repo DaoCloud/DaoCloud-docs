@@ -1,0 +1,10 @@
+github id 与 name 的关系，主要源于：
+
+https://github.com/DaoCloud-OpenSource/team-stats/blob/master/.github/workflows/ci.yml
+
+把上述 link 中的以下内容直接覆盖到本文件就行：
+
+env:
+  GH_ID: |
+    Adityayxt:name=Adityayxt@于小童
+    ......

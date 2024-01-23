@@ -1,11 +1,36 @@
 ---
 MTPE: windsonsea
-Date: 2023-12-08
+Date: 2024-01-08
 ---
 
 # Installer Release Notes
 
-This page lists the Release Notes of the installer, so that you can understand the evolution path and feature changes of each version.
+This page lists the Release Notes of the installer, so that you can understand
+the evolution path and feature changes of each version.
+
+*[Amamba]: Dev codename for Workbench in DCE 5.0
+*[Ghippo]: Dev codename for Global Management in DCE 5.0
+*[insight-agent]: Essential component that implements observability capabilities in DCE 5.0. It is installed by default in the insight-system namespace.
+*[Kangaroo]: Dev codename for the Container Registry in DCE 5.0
+*[Kpanda]: Dev codename for Container Management in DCE 5.0
+*[Skoala]: Dev codename for Microservice Engine in DCE 5.0
+
+## 2023-12-31
+
+### v0.14.0
+
+#### Improvements
+
+- **Improved** The installer supports merging images for multiple architectures by calling the upstream function of `kubean`.
+- **Improved** Enable the `localArtifactSet` configuration only in offline mode.
+- **Improved** Add compatibility support for older versions of Kubernetes in the `kubean` component.
+- **Improved** Remove the bootstrap node check in the Community Edition.
+- **Improved** Use `LocalArtifactSet` only in offline scenarios.
+
+#### Bug Fixes
+
+- **Bug Fix** Fix the issue of pod restart on the bootstrap node in the OpenEuler 22.03 environment.
+- **Bug Fix** Update the version of the operator component when upgrading `kubean`.
 
 ## 2023-11-30
 
@@ -13,22 +38,22 @@ This page lists the Release Notes of the installer, so that you can understand t
 
 #### New Features
 
-- **New Feature:** Support separate deployment of etcd nodes.
-- **New Feature:** Support external Kafka component.
+- **Added** Support separate deployment of etcd nodes.
+- **Added** Support external Kafka component.
 
 #### Enhancements
 
-- **Enhancement:** Set the certificate validity period of the built-in image repository in the seed machine to 10 years.
-- **Enhancement:** Update versions of prerequisite software.
+- **Improved** Set the certificate validity period of the built-in Container Registry in the bootstrap machine to 10 years.
+- **Improved** Update versions of prerequisite software.
 
 #### Bug Fixes
 
-- **Bug Fix:** Fix the infinite loop issue in the chart values parsing framework caused by line breaks.
-- **Bug Fix:** Fix the incorrect handling of the Internal Field Separator (IFS) in the concurrent scheduling framework.
+- **Bug Fix** Fix the infinite loop issue in the chart values parsing framework caused by line breaks.
+- **Bug Fix** Fix the incorrect handling of the Internal Field Separator (IFS) in the concurrent scheduling framework.
 
 #### Known Issues
 
-- IPv6 must be enabled in the seed node when using Podman.
+- IPv6 must be enabled in the bootstrap node when using Podman.
 - Global clusters may encounter `etcd NOSPACE` warning risks.
 
 ## 2023-10-31
@@ -43,15 +68,15 @@ This page lists the Release Notes of the installer, so that you can understand t
 
 #### Optimized
 
-- **Optimized** Removed CPU/Memory resource request and limit for Global Management, Container Management, and Observability components in community edition minimal installation with `-z` flag.
-- **Optimized** Improved error handling for installer's `-m` parameter, now it throws an error and exits installation when manifest file is not specified for `-m`.
-- **Optimized** Enhanced logging display for upgrade functionality.
-- **Optimized** Adapted containerd-related parameters from kubean.
-- **Optimized** Repackaged GProduct component and uploaded it to ChartMuseum on Sparkle nodes.
-- **Optimized** Improved log output when uploading addon fails.
-- **Optimized** Adapted helm installation parameters for reusing during GProduct component upgrade.
-- **Optimized** Adjusted maximum pod count per node to 180 for Global cluster.
-- **Optimized** Improved excessive logging during migration of charts.
+- **Improved** Removed CPU/Memory resource request and limit for Global Management, Container Management, and Observability components in community edition minimal installation with `-z` flag.
+- **Improved** Improved error handling for installer's `-m` parameter, now it throws an error and exits installation when manifest file is not specified for `-m`.
+- **Improved** Enhanced logging display for upgrade functionality.
+- **Improved** Adapted containerd-related parameters from kubean.
+- **Improved** Repackaged GProduct component and uploaded it to ChartMuseum on Sparkle nodes.
+- **Improved** Improved log output when uploading addon fails.
+- **Improved** Adapted helm installation parameters for reusing during GProduct component upgrade.
+- **Improved** Adjusted maximum pod count per node to 180 for Global cluster.
+- **Improved** Improved excessive logging during migration of charts.
 
 #### Fixed
 
@@ -126,7 +151,18 @@ This page lists the Release Notes of the installer, so that you can understand t
 #### Known Issues
 
 - Upgrading is not supported through the install-app subcommand, only create-cluster subcommand is supported.
-- After restarting, kubelet service fails to start on Redhat 8.6 operating system with error: `failed to initialize top level QOS containers: root container [kubelet kubepods] doesn't exist`
+- After restarting the seed node with Redhat 8.6 operating system, the kubelet service fails to start and reports the following error:
+
+    ```message
+    failed to initialize top level QOS containers: root container [kubelet kubepods] doesn't exist
+    ```
+
+    A temporary solution is to execute the following command:
+
+    ```sh
+    podman restart [containerid] --time
+    ```
+
 - When installing a cluster based on TencentOS 3.1, the package manager cannot be correctly identified. If TencentOS 3.1 is needed, please use installer version 0.9.0.
 
 ## 2023-6-30
@@ -135,47 +171,51 @@ This page lists the Release Notes of the installer, so that you can understand t
 
 #### New Features
 
-- **Added**: The `istio-ingressgateway` now supports high availability mode. When upgrading from v0.8.x or earlier to v0.9.0, the following command must be executed: `./offline/dce5-installer cluster-create -c clusterConfig.yaml -m manifest.yaml --upgrade infrastructure,gproduct`
-- **Added**: Support configuring the exposed bootstrapping kind address and port in the clusterConfig.yaml file.
-- **Added**: The installer now performs a pre-check on each node to verify if lvm2 is installed when using eyebrow storage.
-- **Added**: The installer includes an embedded default upgrade of the k8s version to v1.26.5.
-- **Added**: Support specifying the local file mount path for the bootstrapping kind in the clusterConfig.yaml file.
-- **Added**: Integrated ISO image file import script into the installer binary.
+- **Added** : The `istio-ingressgateway` now supports high availability mode. When upgrading from v0.8.x or earlier to v0.9.0, the following command must be executed: `./offline/dce5-installer cluster-create -c clusterConfig.yaml -m manifest.yaml --upgrade infrastructure,gproduct`
+- **Added** : Support configuring the exposed bootstrapping kind address and port in the clusterConfig.yaml file.
+- **Added** : The installer now performs a pre-check on each node to verify if lvm2 is installed when using eyebrow storage.
+- **Added** : The installer includes an embedded default upgrade of the k8s version to v1.26.5.
+- **Added** : Support specifying the local file mount path for the bootstrapping kind in the clusterConfig.yaml file.
+- **Added** : Integrated ISO image file import script into the installer binary.
 
 #### Improvements
 
-- **Improved**: Optimized download scripts.
-- **Improved**: Optimized logic and functionality of the `import-artifact` command.
-- **Improved**: Made `isoPath` and `osPackagePath` optional fields in clusterConfig.yaml during the upgrade process.
-- **Improved**: Enhanced temporary file cleanup mechanism in the installer.
-- **Improved**: Enhanced reuse functionality of the bootstrapping node.
+- **Improved** : Optimized download scripts.
+- **Improved** : Optimized logic and functionality of the `import-artifact` command.
+- **Improved** : Made `isoPath` and `osPackagePath` optional fields in clusterConfig.yaml during the upgrade process.
+- **Improved** : Enhanced temporary file cleanup mechanism in the installer.
+- **Improved** : Enhanced reuse functionality of the bootstrapping node.
 
 #### Fixes
 
-- **Fixed**: Fixed the issue where the ES component could not start in OCP.
-- **Fixed**: Fixed the issue where the UI interface was inaccessible after installing DCE in TencentOS.
-- **Fixed**: Fixed the high probability of failed database creation for middleware databases in arm64 environments.
-- **Fixed**: Fixed shell expansion error in the image upload success check process.
+- **Fixed** : Fixed the issue where the ES component could not start in OCP.
+- **Fixed** : Fixed the issue where the UI interface was inaccessible after installing DCE in TencentOS.
+- **Fixed** : Fixed the high probability of failed database creation for middleware databases in arm64 environments.
+- **Fixed** : Fixed shell expansion error in the image upload success check process.
 
 #### Known Issues
 
-- When upgrading from v0.8.x to v0.9.0, the following commands need to be executed for verification:
+When upgrading from v0.8.x to v0.9.0, the following commands need to be executed for verification:
 
-    - Check if the `istio-ingressgateway` port is `80` or `8080`
+- Check if the `istio-ingressgateway` port is `80` or `8080`
 
-        ```bash
-        kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].targetPort}'
-        ```
+    ```bash
+    kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].targetPort}'
+    ```
 
-    - Check if the `istio-ingressgateway` port is `443` or `8443`
+- Check if the `istio-ingressgateway` port is `443` or `8443`
 
-        ```bash
-        kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="https")].targetPort}'
-        ```
-  
-    If the output is `80` or `443`, the upgrade command needs to include the `infrastructure` parameter. Example: `./offline/dce5-installer cluster-create -c clusterConfig.yaml -m manifest.yaml --upgrade infrastructure,gproduct`
+    ```bash
+    kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="https")].targetPort}'
+    ```
 
-    If the output is different from the above cases, please follow the upgrade instructions in the document [Upgrade DCE 5.0 Product Modules](upgrade.md).
+If the output is `80` or `443`, the upgrade command needs to include the `infrastructure` parameter. Example:
+
+```bash
+./offline/dce5-installer cluster-create -c clusterConfig.yaml -m manifest.yaml --upgrade infrastructure,gproduct
+```
+
+If the output is different from the above cases, please follow the upgrade instructions in the document [Upgrade DCE 5.0 Product Modules](upgrade.md).
 
 ## 2023-6-15
 
@@ -214,27 +254,31 @@ This page lists the Release Notes of the installer, so that you can understand t
 
 #### Improvements
 
-- **Optimized** Fixed issue of missing images when deploying Nacos instances
-- **Optimized** Fixed issue of repeated execution of cluster installation task during cluster module upgrade
+- **Improved** Fixed issue of missing images when deploying Nacos instances
+- **Improved** Fixed issue of repeated execution of cluster installation task during cluster module upgrade
 
 #### Known Issues
 
 - Addon offline package does not currently support uploading to external JFrog services
 - The container management platform offline mode currently does not support adding nodes to working clusters
 - When using an external OS Repo repository in an offline scenario, i.e. defining `osRepos.type=external` in clusterConfig.yaml, after successfully deploying DCE5.0, you cannot create working clusters in the container management. A temporary solution is as follows:
-After installing the global cluster, immediately update the configmap kubean-localservice in the kubean-system namespace of the global cluster to replace all double quotes with single quotes in the value of `yumRepos.external`. For example, replace all double quotes in the file with single quotes:
+  After installing the global cluster, immediately update the configmap kubean-localservice in the kubean-system namespace of the global cluster to replace all double quotes with single quotes in the value of `yumRepos.external`. For example, replace all double quotes in the file with single quotes:
 
-  ```yaml
-  yumRepos:
-    external: [ "http://10.5.14.100:8081/centos/\$releasever/os/\$basearch","http://10.5.14.100:8081/centos-iso/\$releasever/os/\$basearch" ]
-  ```
+    ```yaml
+    yumRepos:
+      external: [ "http://10.5.14.100:8081/centos/\$releasever/os/\$basearch","http://10.5.14.100:8081/centos-iso/\$releasever/os/\$basearch" ]
+    ```
 
-  with:
+    replaced with:
 
-  ```yaml
-  yumRepos:
-    external: [ 'http://10.5.14.100:8081/centos/\$releasever/os/\$basearch','http://10.5.14.100:8081/centos-iso/\$releasever/os/\$basearch' ]
-  ```
+    ```yaml
+    yumRepos:
+      external:
+        [
+          'http://10.5.14.100:8081/centos/\$releasever/os/\$basearch',
+          'http://10.5.14.100:8081/centos-iso/\$releasever/os/\$basearch',
+        ]
+    ```
 
 ## 2023-5-30
 
@@ -242,7 +286,7 @@ After installing the global cluster, immediately update the configmap kubean-loc
 
 #### Improvements
 
-- **Optimized** Upgrade of monitoring components version
+- **Improved** Upgrade of monitoring components version
 
 #### Bug Fixes
 
@@ -262,10 +306,10 @@ After installing the global cluster, immediately update the configmap kubean-loc
 
 #### Optimization
 
-- **Optimized** Optimized the pre-verification of tar and other commands
-- **Optimized** Optimized the command line parameters of the upgrade operation
-- **Optimized** closed Kibana's access through NodePort, Insight uses ES's NodePort or VIP access
-- **Optimized** Optimized the display of concurrent logs, terminate tasks using SIGTERM signal instead of SIGKILL
+- **Improved** Optimized the pre-verification of tar and other commands
+- **Improved** Optimized the command line parameters of the upgrade operation
+- **Improved** closed Kibana's access through NodePort, Insight uses ES's NodePort or VIP access
+- **Improved** Optimized the display of concurrent logs, terminate tasks using SIGTERM signal instead of SIGKILL
 
 #### Fixes
 
@@ -276,23 +320,23 @@ After installing the global cluster, immediately update the configmap kubean-loc
 
 - Online installation of the global cluster will fail, and the following configuration needs to be performed in the `kubeanConfig` block of clusterConfig.yaml:
 
-     ```yaml
-     kubeanConfig: |-
-       calico_crds_download_url: "https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/calico-crds-v3.25.1.tar.gz"
-     ```
+    ```yaml
+    kubeanConfig: |-
+      calico_crds_download_url: "https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/calico-crds-v3.25.1.tar.gz"
+    ```
 
-     At the same time, creating a working cluster online through container management also has the same problem. You need to add the above configuration in the custom parameters of the advanced configuration on the cluster creation page. The key is `calico_crds_download_url`, and the value is the value of the above calico_crds_download_url
+    At the same time, creating a working cluster online through container management also has the same problem. You need to add the above configuration in the custom parameters of the advanced configuration on the cluster creation page. The key is `calico_crds_download_url`, and the value is the value of the above calico_crds_download_url
 
 - There is a low probability that Kubean cannot create a spray-job task. Manually delete the corresponding clusteroperations CR resource and run the installation command again
 - After deploying DCE5.0 using an external OS Repo, the working cluster cannot be created offline through container management, which can be solved by manually modifying the configmap kubean-localservice of the kubean-system namespace of the global cluster.
-   Add the following configuration under `yumRepos`, you need to fill in the external OS Repo address configured in clusterConfig.yaml in external:
+  Add the following configuration under `yumRepos`, you need to fill in the external OS Repo address configured in clusterConfig.yaml in external:
 
-     ```yaml
-     yumRepos:
-       external: []
-     ```
+    ```yaml
+    yumRepos:
+      external: []
+    ```
 
-     After the modification is complete, select the new configuration for the yum source of the node configuration on the container management creation cluster page
+    After the modification is complete, select the new configuration for the yum source of the node configuration on the container management creation cluster page
 
 ## 2022-4-11
 
@@ -300,8 +344,8 @@ After installing the global cluster, immediately update the configmap kubean-loc
 
 #### Optimization
 
-- **Optimized** Upgraded Kpanda to v0.16.1
-- **Optimized** Upgraded Skoala to v0.19.4
+- **Improved** Upgraded Kpanda to v0.16.1
+- **Improved** Upgraded Skoala to v0.19.4
 
 ## 2022-4-06
 
@@ -319,12 +363,12 @@ After installing the global cluster, immediately update the configmap kubean-loc
 
 #### Optimization
 
-- **Optimized** Decouple the code for generating offline packages and the code required for the installation process
-- **Optimized** Optimize bootstrapping node inotify parameters
-- **Optimized** Optimize the full-mode online installation experience
-- **Optimized** optimize clusterConfig structure and configuration
-- **Optimized** DCE Community allows not to check clusterConfig format and parameters
-- **Optimized** Optimize installer execution scheduler log output
+- **Improved** Decouple the code for generating offline packages and the code required for the installation process
+- **Improved** Optimize bootstrapping node inotify parameters
+- **Improved** Optimize the full-mode online installation experience
+- **Improved** optimize clusterConfig structure and configuration
+- **Improved** DCE Community allows not to check clusterConfig format and parameters
+- **Improved** Optimize installer execution scheduler log output
 
 #### Fixes
 
@@ -347,7 +391,7 @@ After installing the global cluster, immediately update the configmap kubean-loc
 
 #### Optimization
 
-- **Optimized** Upgraded the version of pre-dependent tools
+- **Improved** Upgraded the version of pre-dependent tools
 
 #### Fixes
 
@@ -360,7 +404,7 @@ After installing the global cluster, immediately update the configmap kubean-loc
 
 - The installer installation fails due to the pre-installed runc on REHL8 with non-minimal installation. Temporary solution: run `rpm -qa | grep runc && yum remove -y runc` on each of the above nodes before installation
 - Illegal kernel parameter settings on REHL8 with non-minimal installation, temporary solution; run on each of the above nodes before installation
-   `eval $(grep -i 'vm.maxmapcount' /etc/sysctl.conf -r /etc/sysctl.d | xargs -L1 | awk -F ':' '{printf("sed -i -r \"s /(%s)/#\\1/\" %s; ", $2, $1)}') && sysctl --system`
+  `eval $(grep -i 'vm.maxmapcount' /etc/sysctl.conf -r /etc/sysctl.d | xargs -L1 | awk -F ':' '{printf("sed -i -r \"s /(%s)/#\\1/\" %s; ", $2, $1)}') && sysctl --system`
 - There are potential risks in the concurrent installation of helm, and the installation cannot continue after failure
 
 ## 2022-12-30
@@ -379,15 +423,15 @@ After installing the global cluster, immediately update the configmap kubean-loc
 
 #### Optimized
 
-- **Optimized** The offline package no longer includes the ISO of the operating system, which needs to be downloaded separately. In the case of pure offline, the absolute path of the ISO needs to be defined in the clusterConfig file
-- **Optimized** Commercial version uses Contour as default ingress-controller
-- **Optimized** MinIO supports using VIP
-- **Optimized** coredns automatically inject registry VIP analysis
-- **Optimized** Optimize the offline package production process and speed up the packaging of Docker images
-- **Optimized** Optimized the offline package size
-- **Optimized** infrastructure support 1.25: upgrade redis-operator, eck-operator, hwameiStor
-- **optimized** upgrade to keycloakX
-- **Optimized** istio version upgrade v1.16.1
+- **Improved** The offline package no longer includes the ISO of the operating system, which needs to be downloaded separately. In the case of pure offline, the absolute path of the ISO needs to be defined in the clusterConfig file
+- **Improved** Commercial version uses Contour as default ingress-controller
+- **Improved** MinIO supports using VIP
+- **Improved** coredns automatically inject registry VIP analysis
+- **Improved** Optimize the offline package production process and speed up the packaging of Docker images
+- **Improved** Optimized the offline package size
+- **Improved** infrastructure support 1.25: upgrade redis-operator, eck-operator, hwameiStor
+- **Improved** upgrade to keycloakX
+- **Improved** istio version upgrade v1.16.1
 
 #### Known Issues
 
@@ -415,11 +459,11 @@ After installing the global cluster, immediately update the configmap kubean-loc
 
 #### Optimized
 
-- **Optimized** Create permanent harbor with operator, enable HTTPS, and use Postgressql operator.
-- **Optimized** Commercial version uses contour as default ingress-controller.
-- **Optimized** MinIO supports using VIP.
-- **Optimized** coredns is automatically injected into registry VIP resolution.
-- **Optimized** Optimize the offline package production process and speed up the packaging of docker images.
+- **Improved** Create permanent harbor with operator, enable HTTPS, and use Postgressql operator.
+- **Improved** Commercial version uses contour as default ingress-controller.
+- **Improved** MinIO supports using VIP.
+- **Improved** coredns is automatically injected into registry VIP resolution.
+- **Improved** Optimize the offline package production process and speed up the packaging of docker images.
 
 #### Fixes
 
@@ -429,7 +473,9 @@ After installing the global cluster, immediately update the configmap kubean-loc
 
 #### Known issues
 
-- Because some operators need to be upgraded to support 1.25, DCE5 does not support 1.20 downwards.
+- Because some operators need to be upgraded to support 1.25, DCE 5.0 does not support 1.20 downwards.
 - The default k8s version of kubean and the offline package are still limited to k8s 1.24 version, which has not been updated to 1.25 (postgres-operator is not supported yet).
 - In the case of Image Load, the istio-ingressgateway imagePullPolicy is always.
-- For the ARM version, step 16 (harbor) cannot be performed, because harbor does not support ARM for the time being. The mainfest.yaml file needs to be modified, the postgressql operator is fasle, and -j 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 should be added when executing the installation command
+- For the ARM version, step 16 (harbor) cannot be performed, because harbor does not support ARM for the time being.
+  The mainfest.yaml file needs to be modified, the postgressql operator is fasle, and
+  -j 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 should be added when executing the installation command

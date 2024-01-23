@@ -4,6 +4,13 @@ This guide explains how to create snapshots for virtual machines and restore the
 
 Users can create snapshots for virtual machines to save the current state of the virtual machine. A snapshot can be restored multiple times, and each time the virtual machine will be reverted to the state when the snapshot was created. Snapshots are commonly used for backup, recovery, rollback, and other scenarios.
 
+## Prerequisites
+
+Before using the snapshot feature, please ensure the following prerequisites are met:
+
+- Only virtual machines in a non-error state can use the snapshot feature.
+- If you need to use the snapshot feature, make sure that your StorageClass has created the proper VolumeSnapshotClass.
+
 ## Create a Snapshot
 
 1. Click `Container Management` in the left navigation menu, then click `Virtual Machines` to access the list page. Click the `︙` on the right side of the list for a virtual machine to perform snapshot operations (only available for non-error state virtual machines).

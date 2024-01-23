@@ -27,7 +27,7 @@ No resources found in metallbs-system namespace.
 In this mode, the source IP in audit logs is disabled by default.
 The steps to enable it are as follows:
 
-1. Set the maximum and minimum replicas of the `istio-ingressgateway` HPA to the number of nodes:
+1. Set the maximum and minimum replicas of the __istio-ingressgateway__ HPA to the number of nodes:
 
     ```bash
     count=$(kubectl get node | wc -l)
@@ -40,7 +40,7 @@ The steps to enable it are as follows:
     fi
     ```
 
-2. Modify the `externalTrafficPolicy` value of the `istio-ingressgateway` service to "Local":
+2. Modify the __externalTrafficPolicy__ value of the __istio-ingressgateway__ service to "Local":
 
     ```bash
     kubectl patch svc istio-ingressgateway -n istio-system -p '{"spec":{"externalTrafficPolicy":"Local"}}'

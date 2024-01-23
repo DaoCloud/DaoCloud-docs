@@ -6,7 +6,7 @@ This page describes how to install Multus-underlay.
 
 - Default CNI: before installing Multus-underlay, you need to check if there is a default CNI for the current cluster, such as Calico or Cilium, otherwise Multus may not work.
 - Spiderpool: Multus-underlay relies on [Spiderpool](https://github.com/spidernet-io/spiderpool) as `ipam`.
-  To install `Spiderpool`, please refer to [Install Spiderpool](../spiderpool/install.md).
+  To install `Spiderpool`, please refer to [Install Spiderpool](../spiderpool/install/install.md).
 - To install SR-IOV CNI, verify that the node is a physical host and that the node has a physical NIC that supports SR-IOV.
   If the node is a VM or does not have an SR-IOV-capable NIC, then SR-IOV will not work.
   Refer to [sriov-device-plugin](https://github.com/k8snetworkplumbingwg/sriov-network-device-plugin) for details.
@@ -16,7 +16,7 @@ This page describes how to install Multus-underlay.
 
 Make sure your cluster is successfully connected to the `container management` platform, and then perform the following steps to first install Multus-underlay.
 
-1. Click `Container Management` -> `Cluster List` in the left navigation bar, then find the cluster name where you want to install Multus-underlay. Then, in the left navigation bar, select `Helm Apps` -> `Helm Charts`, find and click `multus-underlay`.
+1. Click `Container Management` -> `Clusters` in the left navigation bar, then find the cluster name where you want to install Multus-underlay. Then, in the left navigation bar, select `Helm Apps` -> `Helm Charts`, find and click `multus-underlay`.
 
     ![helm repo](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/multus-install-1.png)
 

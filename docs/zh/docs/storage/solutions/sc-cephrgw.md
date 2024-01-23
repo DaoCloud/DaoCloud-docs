@@ -20,6 +20,6 @@
     | objectStoreNamespace | rook-ceph | 指定对象存储实例所在的Kubernetes命名空间 |
     | region | us-east-1 | 通常用于指定对象存储实例的地理区域 |
 
-    ![rgw01](../images/rgw01.png)
+    ![rgw01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/rgw01.png)
 
 3. 填写完点击 `确定` 即可创建成功。

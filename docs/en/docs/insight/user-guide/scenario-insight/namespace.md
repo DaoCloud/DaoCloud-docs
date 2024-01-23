@@ -9,13 +9,13 @@ With namespaces as the dimension, you can quickly query resource consumption and
 
 ## Prerequisites
 
-- Insight Agent is [installed](../../quickstart/install/install-agent.md) in the cluster and the applications are in the `Running` state.
+- Insight Agent is [installed](../../quickstart/install/install-agent.md) in the cluster and the applications are in the __Running__ state.
 
 ## Steps
 
-1. Go to the `Insight` product module.
+1. Go to the __Insight__ product module.
 
-2. Select `Infrastructure` > `Namespaces` from the left navigation pane. On this page, you can view the following information:
+2. Select __Infrastructure__ > __Namespaces__ from the left navigation pane. On this page, you can view the following information:
 
     1. **Switch Namespace**: Switch between clusters or namespaces at the top.
     2. **Resource Overview**: Provides statistics on the number of normal and total workloads within the selected namespace.

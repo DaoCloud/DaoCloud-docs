@@ -236,7 +236,7 @@ The recommended way to expose metrics is via [servicemonitor](https://github.com
 
 ### Create servicemonitor/podmonitor
 
-The added servicemonitor/podmonitor needs to be marked with `label: "operator.insight.io/managed-by": "insight"`
+The added servicemonitor/podmonitor needs to be marked with __label: "operator.insight.io/managed-by": "insight"__ 
 to be recognized by the Operator:
 
 ```yaml

@@ -9,15 +9,16 @@ nav:
               - 申请社区免费体验: dce/license0.md
               - 功能和优势: dce/features.md
               - 适用场景: dce/scenario.md
-              - 云原生词汇: dce/terms.md
               - K8s 认证服务商: dce/kcsp.md
               - DCE 5.0 Release Notes:
+                  - 20231231 版本发布: dce/dce-rn/20231231.md
                   - 20231130 版本发布: dce/dce-rn/20231130.md
                   - 20231031 版本发布: dce/dce-rn/20231031.md
                   - 20230831 版本发布: dce/dce-rn/20230831.md
                   - 20230731 版本发布: dce/dce-rn/20230731.md
                   - 20230630 版本发布: dce/dce-rn/20230630.md
                   - 20230531 版本发布: dce/dce-rn/20230531.md
+              - 云原生词汇: dce/terms.md
           - 安装教程:
               - 安装简介: install/index.md
               - 安装依赖项: install/install-tools.md
@@ -38,7 +39,7 @@ nav:
                       - 前置检查: install/commercial/prepare.md
                       - 端口要求: install/commercial/port-requirements.md
                       - 外接组件要求（非必须）: 
-                          - 使用外接服务存储 Binaries 资源: install/commercial/external/external-binary.md)
+                          - 使用外接服务存储 Binaries 资源: install/commercial/external/external-binary.md
                           - 使用外接镜像仓库与 Chart 仓库存储镜像与 Chart 包: install/commercial/external/external-imageandchart.md
                           - 使用外接中间件服务: install/commercial/external/external-middlewares.md
                           - 使用外接服务存储 OS Repo 资源: install/commercial/external/external-os.md
@@ -51,15 +52,18 @@ nav:
                   - Oracle Linux R9/R8 U1: install/os-install/oracleLinux-install-dce5.0.md
                   - TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
                   - 其他 Linux: install/os-install/otherlinux.md
-              - 升级/卸载/导入/FAQ:
+              - 升级:
+                  - 概述: install/upgrade-des.md
                   - 升级 DCE 5.0 组件: install/upgrade.md
                   - 标准版升级白金版: install/evolve.md
+              - 卸载和导入:
                   - 卸载: install/uninstall.md
                   - 导入离线资源: install/import.md
               - 安装排障: install/faq.md
               - 最佳实践:
                   - 使用场景示例: install/commercial/scenarios.md
-                  - 部署 DCE5.0 商业版时，etcd 组件采用 host 模式部署与控制平面分离: install/best-practices/etcd-host-deploy.md
+                  - DCE 5.0 一体机部署: install/best-practices/all-in-one-machine.md
+                  - 部署 DCE 5.0 商业版时 etcd 采用 host 模式与控制面分离: install/best-practices/etcd-host-deploy.md
               - 安装器 Release Notes: install/release-notes.md
       - 工作台:
           - 应用工作台:
@@ -196,7 +200,7 @@ nav:
                   - 多架构 Helm 应用: kpanda/user-guide/helm/multi-archi-helm.md
                   - 自定义Helm应用导入Addon: kpanda/user-guide/helm/Import-addon.md
               - Operator 应用:
-                  - 导入离线 MinIo Operator: kpanda/user-guide/olm/import-miniooperator.md
+                  - 导入离线 MinIO Operator: kpanda/user-guide/olm/import-miniooperator.md
               - 容器网络:
                   - 创建服务: kpanda/user-guide/network/create-services.md
                   - 创建路由: kpanda/user-guide/network/create-ingress.md
@@ -253,7 +257,7 @@ nav:
                       - GPU Operator 离线安装:
                           - GPU Operator 离线安装: kpanda/user-guide/gpu/nvidia/install_nvidia_driver_of_operator.md
                           - 构建 CentOS 7_9 离线 yum 源: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_centos7_9.md
-                          - 向火种节点仓库上传 RedHat GPU Opreator 离线镜像: kpanda/user-guide/gpu/nvidia/push_image_to_repo.md
+                          - 向火种节点仓库上传RedHat GPU Opreator离线镜像: kpanda/user-guide/gpu/nvidia/push_image_to_repo.md
                           - 构建 RedHat 8_4 离线 yum 源: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_redhat8_4.md
                       - NVIDIA GPU 整卡模式: kpanda/user-guide/gpu/nvidia/full_gpu_userguide.md
                       - NVIDIA vGPU 模式:
@@ -282,6 +286,7 @@ nav:
                   - 对工作集群的控制节点扩容: kpanda/best-practice/add-master-node.md
                   - 在非主流操作系统上创建集群: kpanda/best-practice/use-otherlinux-create-custer.md
                   - DCE 4.0 -> DCE 5.0 有限场景迁移: kpanda/best-practice/dce4-5-migration.md
+                  - 离线场景 Kubean 向下兼容版本的部署与升级操作: kpanda/best-practice/kubean-low-version.md
           - 多云编排:
               - 介绍:
                   - 什么是多云编排: kairship/intro/index.md
@@ -369,21 +374,19 @@ nav:
                   - 挑战: network/intro/challenges.md
                   - 网络组件: network/modules/modules.md
                   - 离线升级云原生网络: network/intro/offline.md
+                  - Release Notes: network/modules/spiderpool/releasenotes.md
               - 网络规划:
                   - 网卡规划: network/plans/ethplan.md
                   - 网络规划: network/plans/netplan.md
               - 网络配置:
                   - IP 池管理:
-                      - 创建子网及 IP 池: network/modules/spiderpool/createpool.md
-                      - IP 池场景说明: network/modules/spiderpool/ippoolusage.md
-                  - IP 池使用:
-                      - 工作负载使用 IP 池: network/modules/spiderpool/usage.md
-                      - 第三方工作负载使用 IP 池: network/modules/spiderpool/cutomizedusage.md
-                  - RDMA 使用:
-                      - RDMA 环境准备及安装: network/modules/spiderpool/rdmapara.md
-                      - 工作负载使用 RDMA : network/modules/spiderpool/userdma.md
-                  - Multus CR 管理:
-                      - 创建 Multus CR: network/config/multus-cr.md
+                      - 创建子网及 IP 池: network/config/ippool/createpool.md
+                      - IP 池场景说明: network/config/ippool/ippoolusage.md
+                  - 使用 IP 池:
+                      - 工作负载使用 IP 池: network/config/use-ippool/usage.md
+                      - 第三方工作负载使用 IP 池: network/config/use-ippool/cutomizedusage.md
+                  - 工作负载使用 RDMA: network/config/userdma.md
+                  - 创建 Multus CR: network/config/multus-cr.md
               - 网络性能:
                   - 网络 CNI 性能测试报告: network/performance/cni-performance.md
                   - Spiderpool 性能测试报告: network/performance/spiderpool-performance.md
@@ -391,21 +394,22 @@ nav:
                       - Cilium 对于 Pod 访问 Service 的加速: network/performance/cilium-performance/cilium-service.md
                       - Cilium 在 Pod 跨节点通信场景下的性能测试: network/performance/cilium-performance/cilium-crossnode.md
                       - Cilium 在 nodePort 场景下的访问加速测试: network/performance/cilium-performance/cilium-nodeport.md
-                      - Cilium 基于 eBPF 技术实施 Pod 带宽管控场景下的性能测试: network/performance/cilium-performance/cilium-bandwidth.md
+                      - Cilium基于eBPF技术实施Pod带宽管控下的性能测试: network/performance/cilium-performance/cilium-bandwidth.md
                   - 基于 eBPF 技术实施网络策略场景下的性能测试: network/performance/ebpf-performance.md
                   - Ingress 性能测试: network/performance/ingress-performance.md
                   - Egress 性能测试: network/performance/egress-performance.md
                   - CoreDNS 性能测试: network/performance/coredns-performance.md
               - 集成 Spiderpool:
-                  - Release Notes: network/modules/spiderpool/releasenotes.md
                   - 介绍: network/modules/spiderpool/index.md
-                  - 安装: network/modules/spiderpool/install.md
+                  - 安装: 
+                      - Spiderpool 安装: network/modules/spiderpool/install/install.md
+                      - RDMA 环境准备及安装: network/modules/spiderpool/install/rdmapara.md
                   - 升级: network/modules/spiderpool/upgrade.md
                   - 配置参考: network/modules/spiderpool/config.md
                   - 常用命令: network/modules/spiderpool/command.md
                   - 公有云适配:
-                      - 在阿里云环境运行: network/modules/spiderpool/alibabacloud.md
-                      - 在 AWS 环境运行: network/modules/spiderpool/awscloud.md
+                      - 在阿里云环境运行: network/modules/spiderpool/public-cloud/alibabacloud.md
+                      - 在 AWS 环境运行: network/modules/spiderpool/public-cloud/awscloud.md
               - 集成 sriov-network-operator:
                   - 介绍: network/modules/sriov-network-operator/index.md
                   - 安装: network/modules/sriov-network-operator/install.md
@@ -452,7 +456,7 @@ nav:
                   - 介绍: network/modules/metallb/index.md
                   - 安装: network/modules/metallb/install.md
                   - IPPool 使用说明: network/modules/metallb/usage.md
-                  - L2和BGP 模式说明: network/modules/metallb/l2-bgp.md
+                  - L2 和 BGP 模式说明: network/modules/metallb/l2-bgp.md
                   - 获取客户端源 IP: network/modules/metallb/source_ip.md
               - 集成 Multus-underlay:
                   - 介绍: network/modules/multus-underlay/index.md
@@ -463,6 +467,9 @@ nav:
                   - 介绍: network/modules/submariner/index.md
                   - 安装: network/modules/submariner/install.md
                   - 使用说明: network/modules/submariner/usage.md
+              - 集成 kdoctor:
+                    - 介绍: network/modules/kdoctor/index.md
+                    - 安装: network/modules/kdoctor/install.md
               - 集成阿里云 Terway:
                   - 介绍: network/modules/aliyun-terway/index.md
                   - Terway 网络模式: network/modules/aliyun-terway/what.md
@@ -521,9 +528,9 @@ nav:
                       - Rook-Ceph 部署 - 应用商店: storage/solutions/dce-rook-ceph.md
                       - Rook-Ceph 部署 - Helm: storage/solutions/helm-rook-ceph.md
                       - 如何接入 Ceph Dashboard: storage/solutions/ceph-dashboard.md
-                      - 创建 Ceph 文件存储(CephFS) 存储类: storage/solutions/sc-cephfs.md
-                      - 创建 Ceph 块存储(RBD) 存储类: storage/solutions/sc-cephrbd.md
-                      - 创建 Ceph 对象存储(RGW) 存储类: storage/solutions/sc-cephrgw.md
+                      - 创建 Ceph 文件存储(CephFS)存储类: storage/solutions/sc-cephfs.md
+                      - 创建 Ceph 块存储(RBD)存储类: storage/solutions/sc-cephrbd.md
+                      - 创建 Ceph 对象存储(RGW)存储类: storage/solutions/sc-cephrgw.md
                   - Longhorn:
                       - Longhorn 介绍: storage/solutions/longhorn.md
                       - Longhorn 部署 - 应用商店: storage/solutions/dce-longhorn.md
@@ -639,9 +646,10 @@ nav:
               - 最佳实践:
                   - 日志采集排障指南: insight/best-practice/debug-log.md
                   - 链路采集排障指南: insight/best-practice/debug-trace.md
-                  - 使用 Insight 定位应用异常根因: insight/best-practice/find_root_cause.md
-                  - 使用 OTel 零代码接收 SkyWalking 链路数据: insight/best-practice/sw-to-otel.md
-                  - Kafka + ES 流式架构应对超大规模日志方案: insight/best-practice/insight-kafka.md
+                  - 使用Insight定位异常根因: insight/best-practice/find_root_cause.md
+                  - 使用OTel接收SkyWalking链路数据: insight/best-practice/sw-to-otel.md
+                  - Kafka+ES流式架构应对超大规模日志: insight/best-practice/insight-kafka.md
+                  - 集成 DeepFlow: insight/best-practice/integration_deepflow.md
               - 兼容性测试:
                   - K8s 兼容性测试: insight/compati-test/k8s-compatibility.md
                   - Rancher 兼容性测试: insight/compati-test/rancher-compatibility.md
@@ -664,9 +672,9 @@ nav:
                       - 添加 API: skoala/gateway/api/index.md
                       - 更新和删除 API: skoala/gateway/api/update-api.md
                       - 配置 API 策略: skoala/gateway/api/api-policy.md
-                  - 服务接入:
-                      - 手动管理: skoala/gateway/service/manual-integrate.md
-                      - 自动管理: skoala/gateway/service/auto-manage.md
+                  - 服务列表:
+                      - 手工接入: skoala/gateway/service/manual-integrate.md
+                      - 自动纳管: skoala/gateway/service/auto-manage.md
                   - 监控告警: skoala/gateway/alert.md
                   - 日志查看:
                       - 请求日志: skoala/gateway/logs/reqlog.md
@@ -717,14 +725,16 @@ nav:
                   - 示例应用体验微服务治理: skoala/best-practice/use-skoala-01.md
                   - 在云原生微服务中使用 JWT 插件: skoala/best-practice/plugins/jwt.md
                   - 微服务网关 JWT 功能: skoala/best-practice/jwt.md
-                  - 微服务网关接入认证服务器: skoala/best-practice/auth-server.md
+                  - 微服务网关接入认证服务器: 
+                      - skoala/best-practice/auth-server.md
+                      - 接入 ak/sk 认证 demo 应用: skoala/best-practice/ak-sk-demo.md
                   - 微服务网关接入限流服务器: skoala/best-practice/global-ratelimit.md
                   - 网关 API 策略: skoala/best-practice/gateway02.md
                   - 通过网关访问微服务: skoala/best-practice/gateway01.md
                   - 网关对接服务网格: skoala/best-practice/gateway-mesh.md
                   - 网关请求日志添加自定义属性: skoala/best-practice/add-custom-attributes.md
               - 故障排查:
-                  - skoala-init的x-kubernets-validations报错问题: skoala/troubleshoot/auth-server.md                
+                  - skoala-init的x-kubernets-validations报错: skoala/troubleshoot/auth-server.md                
               - 性能测试:
                   - 云原生网关吞吐量测试: skoala/tests/gateway-stress-test.md
                   - Nacos 压测报告: skoala/tests/nacos-stress-test.md
@@ -979,6 +989,30 @@ nav:
                       - 实例监控: middleware/minio/user-guide/insight.md
                       - 配置参数: middleware/minio/user-guide/config.md
                       - MinIO 的身份管理: middleware/minio/user-guide/user-management.md
+      - 云原生 AI:
+          - 智能算力:
+              - 介绍:
+                  - 什么是智能算力: baize/intro/index.md
+                  - 安装: baize/intro/install.md
+                  - 第一次使用: baize/intro/first.md
+              - 开发控制台:
+                  - 介绍: baize/developer/index.md
+                  - Notebooks:
+                      - 创建 Notebook: baize/developer/notebooks/create.md
+                      - 启动和暂停 Notebook: baize/developer/notebooks/start-pause.md
+                      - 查看 Notebook 工作负载: baize/developer/notebooks/view.md
+                      - 删除 Notebook: baize/developer/notebooks/delete.md
+                  - 任务中心:
+                      - 创建任务: baize/developer/jobs/create.md
+                      - 删除任务: baize/developer/jobs/delete.md
+                  - 数据管理:
+                      - 创建数据集: baize/developer/dataset/create.md
+                      - 删除数据集: baize/developer/dataset/delete.md
+              - 运维管理:
+                  - GPU 资源管理: baize/oam/resource.md
+                  - 队列管理:
+                      - 创建队列: baize/oam/queue/create.md
+                      - 删除队列: baize/oam/queue/delete.md
       - 边缘计算:
           - 云边协同:
               - 介绍:
@@ -1016,7 +1050,7 @@ nav:
               - 应用网格:
                   - 应用网格概述: kant/user-guide/edge-network/index.md
                   - 部署 edgemesh 应用: kant/user-guide/edge-network/deploy-edgemesh.md
-                  - 服务: kant/user-guide/edge-network/server.md
+                  - 服务: kant/user-guide/edge-network/service.md
       - 管理:
           - 全局管理:
               - 介绍:
@@ -1024,7 +1058,6 @@ nav:
                   - 功能总览: ghippo/intro/features.md
                   - 常见术语: ghippo/intro/glossary.md
                   - Release Notes: ghippo/intro/release-notes.md
-                  - 全局管理FAQ: ghippo/intro/faq.md
               - 安装、登录和升级:
                   - 离线升级全局管理: ghippo/install/offline-install.md
                   - 自定义反向代理服务器地址: ghippo/install/reverse-proxy.md
@@ -1099,6 +1132,7 @@ nav:
                   - ingressgateway 无法启动: ghippo/troubleshooting/ghippo01.md
                   - 登录报错 401 或 403: ghippo/troubleshooting/ghippo02.md
                   - keycloak 无法启动: ghippo/troubleshooting/ghippo03.md
+                  - 单独升级全局管理时失败: ghippo/troubleshooting/ghippo04.md
   - 视频教程:
       - 索引: videos/index.md
       - 入门:
@@ -1154,13 +1188,16 @@ nav:
                   - Redis: download/modules/middleware/redis.md
                   - RocketMQ: download/modules/middleware/rocketmq.md
               - 云边协同: download/modules/kant.md
-              - 管理:
+              - 全局&运营管理:
                   - 全局管理: download/modules/ghippo.md
                   - 运营管理: download/modules/gmagpie.md
   - 免费体验:
       - 体验社区版: trial/index.md
   - 博客:
       - 博文索引: blogs/index.md
+      - 2024 年:
+          - 202401 | 容器化 AI 简化 ML 模型的部署: blogs/240115-news.md
+          - 202401 | KubeEdge v1.15.0 发布: blogs/240108-kubeedge.md
       - 2023 年:
           - 202312 | Spiderpool 入选 CNCF Sandbox: blogs/231220-spiderpool.md
           - 202312 | K8s 1.29 发布：宇宙主题雄心勃勃: blogs/231213-k8s-1.29.md
@@ -1225,13 +1262,22 @@ nav:
       - DaoCloud 开源图标库: community/icons/index.md
   - 云原生研究院:
       - 社区要闻:
+          - 2024 云原生社区要闻: native/news/news-2024.md
           - 2023 云原生社区要闻: native/news/news-2023.md
           - 2022 云原生社区要闻: native/news/news-2022.md
       - 行业洞察:
           - 商业产品: native/commerce.md
           - 开源项目: native/open.md
       - 知识分享:
-          - 索引: native/knowledge/knowledge.md
+          - 索引: native/knowledge/index.md
+          - Git 文档指南:
+              - Git 文档流程: native/knowledge/git/index.md
+              - 开启两步安全验证: native/knowledge/git/2auth.md
+              - Git 常见问题: native/knowledge/git/rebase.md
+              - VSCode 编辑技巧: native/knowledge/git/vscode.md
+              - UI 翻译预览: native/knowledge/git/ui-preview.md
+              - GitHub 混迹技巧: native/knowledge/git/github.md
+              - 同步中英文档: native/knowledge/git/lsync.md
           - 排障方案: native/knowledge/troubleshoot.md
           - 最佳实践: native/knowledge/best-practice.md
           - 工具推荐: native/knowledge/tools.md
@@ -1239,11 +1285,4 @@ nav:
           - 前沿热点: native/knowledge/hot-spots.md
           - 安全漏洞: native/knowledge/bugs.md
           - 电子书: native/knowledge/ebooks.md
-          - Git:
-              - Git 文档流程: native/knowledge/git/index.md
-              - 开启两步安全验证: native/knowledge/git/2auth.md
-              - Git 常见问题: native/knowledge/git/rebase.md
-              - VSCode 编辑技巧: native/knowledge/git/vscode.md
-              - UI 翻译预览: native/knowledge/git/ui-preview.md
-              - GitHub 混迹技巧: native/knowledge/git/github.md
           - 其他: native/knowledge/other.md

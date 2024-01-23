@@ -1,4 +1,5 @@
 ---
+MTPE: windsonsea
 date: 2022-11-23
 hide:
   - navigation
@@ -13,13 +14,13 @@ This page allows you to download the offline package of DCE 5.0 Enterprise.
 
 ## Download
 
-| Version Name | File Size | Installer | Update Date |
-| ------------------- | -------- | -------------------- -------------------------------------------------- ------------------------------ | ---------- |
+| Filename | File Size | Download | Update Date |
+| -------- | -------- | ---------- | ---------- |
 | offline-v0.3.28.tar | 21 GB | [:arrow_down: Download](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.3.28.tar) | 2022- 11-18 |
 
 ## Validation
 
-Go to the download directory of the offline package. run the following command to validate the offline package:
+Go to the download directory of the offline package, run the following command to validate the offline package:
 
 ```sh
 echo "88d89872d04d95ee44073c70460c2eb3ae4785a150fbfce672a5882c6f7d77f0d8f58359c5c8695e80d7e5fce93431c0c5ec6b710c080f4840d8adbb25daeb55 offline-v0.3.28.tar" | sha512sum -c
@@ -47,8 +48,8 @@ If you have any license key related questions, please contact DaoCloud delivery 
 
 The DCE 5.0 Enterprise includes the following modules, which are plug-and-play to meet various use cases:
 
-| Modules | Introduction | Module Versions |
-| -------------------- | ---------------------------- ----------------------------------------------- | ----- -------------------------------------------------- ------ |
+| Modules | Description | Versions |
+| ------- | ----------- | -------- |
 | Global Management | Responsible for user access control, permissions, workspaces and folders, audit logs, personalized appearance settings, etc. | [v0.11](../../ghippo/intro/release-notes.md#v011) |
 | Container Management | Manage K8s core features such as clusters, nodes, workloads, Helm applications, CRDs, and namespaces | [v0.12](../../kpanda/intro/release-notes.md#v012) |
 | Insight | Provide rich graphic information such as dashboards, scene monitoring, data query, and alerts | [v0.11](../../insight/intro/releasenote.md#v011) |

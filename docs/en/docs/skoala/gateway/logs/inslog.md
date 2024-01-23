@@ -6,7 +6,7 @@ The microservice gateway supports viewing request logs and instance logs. This p
 
 Click the name of the target gateway to enter the gateway overview page, and then click `Check Logs` -> `Instance Logs` in the left navigation bar.
 
-![view the path of instance logs](./imgs/inslog-path.png)
+![view the path of instance logs](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/logs/imgs/inslog-path.png)
 
 ## Related operation
 

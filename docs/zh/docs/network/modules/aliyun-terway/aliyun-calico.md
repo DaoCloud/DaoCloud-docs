@@ -7,7 +7,7 @@
 在阿里云上准备好一套自建 Kubernetes 集群，或按照 [搭建 Kubernetes 集群](usage.md#搭建Kubernetes集群) 文档手动搭建一套集群。 集群安装完成之后，下载 Calico 的部署清单文件:
 
 ```shell
-~# wget https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/calico.yaml
+$ wget https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/calico.yaml
 ```
 
 > 推荐使用以下命令加速镜像拉取: `sed -i 's?docker.io?docker.m.daocloud.io?g' calico.yaml`
@@ -16,10 +16,10 @@
 
 ## 隧道模式(IPIP)
 
-Vxlan 和 IPIP 协议不依赖底层网络，通过封装构建一个大二层覆盖网络以实现网络联通，所以能够运行在大多数公有云上，此模式不依赖 [CCM](https://github.com/AliyunContainerService/alicloud-controller-manager)。Calico 部署清单文件默认使用 IPIP 模式，使用以下命令安装:
+Vxlan 和 IPIP 协议不依赖底层网络，通过封装构建一个大二层覆盖网络以实现网络连通，所以能够运行在大多数公有云上，此模式不依赖 [CCM](https://github.com/AliyunContainerService/alicloud-controller-manager)。Calico 部署清单文件默认使用 IPIP 模式，使用以下命令安装:
 
 ```shell
-~# kubectl apply -f calico.yaml
+$ kubectl apply -f calico.yaml
 ```
 
 等待安装完成:
@@ -31,20 +31,20 @@ calico-node-679wb                                           1/1     Running     
 calico-node-6wzkj                                           1/1     Running     0              1m
 ```
 
-创建测试 deployment，验证联通性:
+创建测试 deployment，验证连通性:
 
 ```shell
-~# kubectl  get po -o wide
+$ kubectl  get po -o wide
 NAME                    READY   STATUS    RESTARTS   AGE   IP               NODE                  NOMINATED NODE   READINESS GATES
 test-77877f4755-24gqt   1/1     Running   0          13m   10.244.236.193   cn-chengdu.i-2vcxxr   <none>           <none>
 test-77877f4755-2d6r8   1/1     Running   0          13m   10.244.140.2     cn-chengdu.i-2vcxxs   <none>           <none>
-~# kubectl  get svc
+$ kubectl  get svc
 NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
 kubernetes   ClusterIP   172.21.0.1     <none>        443/TCP        31d
 test         ClusterIP   172.21.0.83    <none>        80/TCP         2m
 
-~# # 跨节点访问 Pod 
-~# kubectl exec test-77877f4755-24gqt -- ping -c1 10.244.140.2
+# 跨节点访问 Pod
+$ kubectl exec test-77877f4755-24gqt -- ping -c1 10.244.140.2
 PING 10.244.140.2 (10.244.140.2) 56(84) bytes of data.
 64 bytes from 10.244.140.2: icmp_seq=1 ttl=62 time=0.471 ms
 
@@ -52,8 +52,8 @@ PING 10.244.140.2 (10.244.140.2) 56(84) bytes of data.
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 rtt min/avg/max/mdev = 0.471/0.471/0.471/0.000 ms
 
-~# # 访问外部
-~# kubectl exec test-77877f4755-24gqt -- ping -c1 8.8.8.8
+# 访问外部
+$ kubectl exec test-77877f4755-24gqt -- ping -c1 8.8.8.8
 PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 64 bytes from 8.8.8.8: icmp_seq=1 ttl=109 time=38.5 ms
 
@@ -61,8 +61,8 @@ PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 rtt min/avg/max/mdev = 38.479/38.479/38.479/0.000 ms
 
-~# # 访问 ClusterIP
-~# kubectl exec test-77877f4755-24gqt -- curl -i 172.21.0.83
+# 访问 ClusterIP
+$ kubectl exec test-77877f4755-24gqt -- curl -i 172.21.0.83
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100   153  100   153    0     0  93463      0 --:--:-- --:--:-- --:--:--  149k
@@ -87,7 +87,7 @@ Content-Length: 153
 
 在介绍如何使用之前，需要先安装 [CCM 组件](https://github.com/AliyunContainerService/alicloud-controller-manager)，参考 [安装 CCM 文档](usage.md#安装CCM组件，发布VPC路由), 并且切换 Calico 为非隧道模式，修改 calico-node daemonSet 部署清单文件中以下几个环境变量为 Never:
 
-```shell
+```yaml
 # Enable IPIP
 - name: CALICO_IPV4POOL_IPIP
 value: "Never"
@@ -104,7 +104,7 @@ value: "Never"
 
 首先切换 IPAM 为 `host-local`，这需要修改 Calico 安装清单文件中 ConfigMap, 如下:
 
-```shell
+```yaml
 # Source: calico/templates/calico-config.yaml
 # This ConfigMap is used to configure a self-hosted Calico installation.
 kind: ConfigMap
@@ -136,7 +136,7 @@ data:
           "log_file_path": "/var/log/calico/cni/cni.log",
           "datastore_type": "kubernetes",
           "nodename": "__KUBERNETES_NODE_NAME__",
-          "mtu": __CNI_MTU__,
+          "mtu": __CNI_MTU__ ,
           "ipam": {
                   "type": "host-local",
                   "ranges": [[{ "subnet": "usePodCidr" }]]
@@ -167,7 +167,7 @@ data:
 安装并等待 Calico 就绪之后，创建测试应用可以发现 Pod 的 IP 属于节点的 PodCIDR(10.244.0.0/24 和 10.244.1.0/24):
 
 ```shell
-~# k get po -o wide
+$ k get po -o wide
 NAME                    READY   STATUS    RESTARTS   AGE   IP           NODE                  NOMINATED NODE   READINESS GATES
 test-77877f4755-58hlc   1/1     Running   0          5s    10.244.0.2   cn-chengdu.i-2vcxxr   <none>           <none>
 test-77877f4755-npcgs   1/1     Running   0          5s    10.244.1.2   cn-chengdu.i-2vcxxs   <none>           <none>
@@ -179,7 +179,7 @@ test-77877f4755-npcgs   1/1     Running   0          5s    10.244.1.2   cn-cheng
 
 1. 首先切换 IPAM 为 `spiderpool`，这需要修改 Calico 安装清单文件中 ConfigMap, 如下:
 
-    ```shell
+    ```yaml
     # Source: calico/templates/calico-config.yaml
     # This ConfigMap is used to configure a self-hosted Calico installation.
     kind: ConfigMap
@@ -211,7 +211,7 @@ test-77877f4755-npcgs   1/1     Running   0          5s    10.244.1.2   cn-cheng
               "log_file_path": "/var/log/calico/cni/cni.log",
               "datastore_type": "kubernetes",
               "nodename": "__KUBERNETES_NODE_NAME__",
-              "mtu": __CNI_MTU__,
+              "mtu": __CNI_MTU__ ,
               "ipam": {
                       "type": "spiderpool"
               },
@@ -235,25 +235,22 @@ test-77877f4755-npcgs   1/1     Running   0          5s    10.244.1.2   cn-cheng
         }
     ```
 
-    切换 IPAM 为 Spiderpool 并等待就绪
+    切换 IPAM 为 Spiderpool 并等待就绪。
 
     !!! note
 
-        如果遇到 Calico 无法启动，并报以下错误，可以尝试删除每个节点 `/var/lib/cni/networks/k8s-pod-network/`
+        如果遇到 Calico 无法启动，并报以下错误，可以尝试删除每个节点的 `/var/lib/cni/networks/k8s-pod-network/`
 
-        ```shell
+        ```console
         2023-09-27 10:14:42.096 [ERROR][1] ipam_plugin.go 106: failed to migrate ipam, retrying... error=failed to get add IPIP tunnel addr 10.244.1.1: The provided IP address is not in a configured pool
         ```
 
-
 2. 安装 Spiderpool
 
-    使用以下命令安装 Spiderpool:
-
     ```shell
-    ~# helm repo add spiderpool https://spidernet-io.github.io/spiderpool
-    ~# helm repo update spiderpool
-    ~# helm install spiderpool spiderpool/spiderpool --namespace kube-system --wait
+    helm repo add spiderpool https://spidernet-io.github.io/spiderpool
+    helm repo update spiderpool
+    helm install spiderpool spiderpool/spiderpool --namespace kube-system --wait
     ```
 
     > 需要提前安装 Helm 二进制
@@ -262,7 +259,7 @@ test-77877f4755-npcgs   1/1     Running   0          5s    10.244.1.2   cn-cheng
     安装完成之后，需要为每个节点的 podCIDR 创建一个对应的 Spiderpool IP 池供 Pod 使用:
 
     ```shell
-    ~# kubectl  get nodes -o=custom-columns='NAME:.metadata.name,podCIDR:.spec.podCIDR'
+    $ kubectl  get nodes -o=custom-columns='NAME:.metadata.name,podCIDR:.spec.podCIDR'
     NAME                  podCIDR
     cn-chengdu.i-2vcxxr   10.244.0.0/24
     cn-chengdu.i-2vcxxs   10.244.1.0/24
@@ -298,21 +295,21 @@ test-77877f4755-npcgs   1/1     Running   0          5s    10.244.1.2   cn-cheng
 
     > 注意 ips 中属于对应 nodeName 节点的 podCIDR 
 
-1. 创建测试应用，并测试联通性
+1. 创建测试应用，并测试连通性
 
     ```shell
-    ~# kubectl get po -o wide
+    $ kubectl get po -o wide
     NAME                    READY   STATUS    RESTARTS   AGE   IP             NODE                                NOMINATED NODE   READINESS GATES
     test-77877f4755-nhm4f   1/1     Running   0          27s   10.244.0.179   cn-chengdu.i-2vcxxr   <none>           <none>
     test-77877f4755-sgqbx   1/1     Running   0          27s   10.244.1.193   cn-chengdu.i-2vcxxs   <none>           <none>
-    ~# kubectl get svc
+    $ kubectl get svc
     NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
     kubernetes   ClusterIP   172.21.0.1     <none>        443/TCP        31d
     test         ClusterIP   172.21.0.166   <none>        80/TCP         3m43s
     ```
 
     ```shell
-    ~# kubectl exec test-77877f4755-nhm4f -- ping -c1 10.244.1.193
+    $ kubectl exec test-77877f4755-nhm4f -- ping -c1 10.244.1.193
     PING 10.244.1.193 (10.244.1.193) 56(84) bytes of data.
     64 bytes from 10.244.1.193: icmp_seq=1 ttl=62 time=0.434 ms
 
@@ -324,7 +321,7 @@ test-77877f4755-npcgs   1/1     Running   0          5s    10.244.1.2   cn-cheng
     测试访问 ClusterIP:
 
     ```shell
-    ~# kubectl  exec test-77877f4755-nhm4f -- curl -i 172.21.0.166
+    $ kubectl  exec test-77877f4755-nhm4f -- curl -i 172.21.0.166
       % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                      Dload  Upload   Total   Spent    Left  Speed
     100   153  100   153    0     0   127k      0 --:--:-- --:--:-- --:--:--  149k
@@ -334,4 +331,4 @@ test-77877f4755-npcgs   1/1     Running   0          5s    10.244.1.2   cn-cheng
     Content-Length: 153
     ```
 
-    经过测试，Pod 各种联通性正常。另外 Calico 创建的 Pod 也可以使用 Spiderpool 的其他高级 IPAM 能力。
+    经过测试，Pod 各种连通性正常。另外 Calico 创建的 Pod 也可以使用 Spiderpool 的其他高级 IPAM 能力。

@@ -22,7 +22,7 @@ export otel_col_host="insight-opentelemetry-collector.insight-system.svc.cluster
 
 !!! note
 
-	请替换命令中的 `${INSIGHT_SERVER_IP}` 参数。
+	请替换命令中的 __${INSIGHT_SERVER_IP}__ 参数。
 
 ```bash
 export INSIGHT_SERVER_IP=$(kubectl get service insight-server -n insight-system --output=jsonpath={.spec.clusterIP})
@@ -37,13 +37,13 @@ curl --location --request POST 'http://'"${INSIGHT_SERVER_IP}"'/apis/insight.io/
 
 **参数说明：**
 
-- `global.exporters.logging.host` 是日志服务地址【不需要再设置对应服务的端口，都会使用相应默认值】；
+- __global.exporters.logging.host__ 是日志服务地址【不需要再设置对应服务的端口，都会使用相应默认值】；
   
-- `global.exporters.metric.host` 是指标服务地址；
+- __global.exporters.metric.host__ 是指标服务地址；
 
-- `global.exporters.trace.host` 是链路服务地址；
+- __global.exporters.trace.host__ 是链路服务地址；
 
-- `global.exporters.auditLog.host` 是审计日志服务地址(和链路使用的同一个服务不同端口)。
+- __global.exporters.auditLog.host__ 是审计日志服务地址(和链路使用的同一个服务不同端口)。
 
 #### 2. 管理集群禁用 LoadBalancer
 
@@ -62,25 +62,25 @@ curl --location --request POST 'http://'"${INSIGHT_SERVER_IP}"'/apis/insight.io/
 
 其中：
 
-- `global.exporters.logging.host` 是日志服务地址；
+- __global.exporters.logging.host__ 是日志服务地址；
 
-- `global.exporters.logging.port` 是日志服务暴露的 nodePort；
+- __global.exporters.logging.port__ 是日志服务暴露的 nodePort；
 
-- `global.exporters.metric.host` 是指标服务地址；
+- __global.exporters.metric.host__ 是指标服务地址；
 
-- `global.exporters.metric.port` 是指标服务暴露的 nodePort；
+- __global.exporters.metric.port__ 是指标服务暴露的 nodePort；
 
-- `global.exporters.trace.host` 是链路服务地址；
+- __global.exporters.trace.host__ 是链路服务地址；
 
-- `global.exporters.trace.port` 是链路服务暴露的 nodePort；
+- __global.exporters.trace.port__ 是链路服务暴露的 nodePort；
 
-- `global.exporters.auditLog.host` 是审计日志服务地址(和链路使用的同一个服务不同端口)；
+- __global.exporters.auditLog.host__ 是审计日志服务地址(和链路使用的同一个服务不同端口)；
 
-- `global.exporters.auditLog.host` 是审计日志服务暴露的 nodePort；
+- __global.exporters.auditLog.host__ 是审计日志服务暴露的 nodePort；
 
 ### 通过 LoadBalancer 连接
 
-上述的[通过 Insight Server 提供的接口获取地址](#通过-insight-server-提供的接口获取地址)是通过查询集群的 LoadBalancer 以获取连接地址。除此之外，你也可以手动执行命令 `kubectl get service -n insight-system | grep lb` 获得相应服务的地址信息。其中：
+上述的[通过 Insight Server 提供的接口获取地址](#通过-insight-server-提供的接口获取地址)是通过查询集群的 LoadBalancer 以获取连接地址。除此之外，你也可以手动执行命令 __kubectl get service -n insight-system | grep lb__ 获得相应服务的地址信息。其中：
 
 ```shell
 [root@localhost ~]# kubectl get service -n insight-system | grep lb
@@ -89,17 +89,17 @@ lb-insight-opentelemetry-collector                               LoadBalancer   
 lb-vminsert-insight-victoria-metrics-k8s-stack                   LoadBalancer   10.233.63.67    <pending>     8480:31629/TCP                                                              24d
 ```
 
-- `lb-insight-es-master` 是日志服务的地址；
+- __lb-insight-es-master__ 是日志服务的地址；
   
-- `lb-vminsert-insight-victoria-metrics-k8s-stack` 是指标服务的地址；
+- __lb-vminsert-insight-victoria-metrics-k8s-stack__ 是指标服务的地址；
   
-- `lb-insight-opentelemetry-collector` 是链路服务的地址；
+- __lb-insight-opentelemetry-collector__ 是链路服务的地址；
 
 ### 通过 NodePort 连接
 
 #### 1. 全局服务集群启用 LB 特性【默认启用】
 
-通过手动执行命令 `kubectl get service -n insight-system | grep lb` 获得相应服务的 NodePort 端口信息，参考[通过 LoadBalancer 连接](#通过-loadbalancer-连接);  
+通过手动执行命令 __kubectl get service -n insight-system | grep lb__ 获得相应服务的 NodePort 端口信息，参考[通过 LoadBalancer 连接](#通过-loadbalancer-连接);  
 
 #### 2.全局服务集群禁用 LB 特性
 

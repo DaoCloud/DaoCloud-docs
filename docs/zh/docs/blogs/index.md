@@ -7,6 +7,18 @@ hide:
 
 本页汇总 DCE 5.0 及云原生技术相关的博客和公众号文章，默认按时间排序。
 
+*[DCE]: DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台
+
+## 2024 年
+
+- [20240115 | 容器化与 AI：机器学习模型的部署流程优化](./240115-news.md)
+
+    探讨部署 ML 模型的挑战、容器化的基础以及 AI 和 ML 应用容器化的优势。
+
+- [20240108 | KubeEdge v1.15.0 发布](./240108-kubeedge.md)
+
+    KubeEdge v1.15.0 新增了 Windows 边缘节点支持、基于物模型的设备管理、DMI 数据面支持等功能。
+
 ## 2023 年
 
 - [20231220 | 高速网络方案 Spiderpool 入选 CNCF Sandbox](./231220-spiderpool.md)

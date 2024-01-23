@@ -16,9 +16,9 @@ You can load the images in one of the following two ways. When an image reposito
 
 Using chart-syncer, you can upload the charts and their dependent image packages from the downloaded package to the image repository and helm repository used by the installer when deploying DCE.
 
-First, find a node (e.g., Spark Node) that can connect to the image repository and helm repository. Create a `load-image.yaml` configuration file on the node and fill in the configuration information for the image repository and helm repository.
+First, find a node (e.g., Spark Node) that can connect to the image repository and helm repository. Create a __load-image.yaml__ configuration file on the node and fill in the configuration information for the image repository and helm repository.
 
-1. Create `load-image.yaml`
+1. Create __load-image.yaml__ 
 
     !!! note
 
@@ -150,9 +150,9 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
     ...
     ```
 
-5. Backup the `--set` parameters.
+5. Backup the __--set__ parameters.
 
-    Before upgrading the container management module, it is recommended to run the following command to backup the `--set` parameters of the old version.
+    Before upgrading the container management module, it is recommended to run the following command to backup the __--set__ parameters of the old version.
 
     ```shell
     helm get values kpanda -n kpanda-system -o yaml > bak.yaml
@@ -165,9 +165,9 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
     kubectl apply -f kpanda/crds
     ```
 
-7. Run `helm upgrade`.
+7. Run __helm upgrade__ .
 
-    Before upgrading, it is recommended to replace the `global.imageRegistry` field in `bak.yaml` with the image repository address you are currently using.
+    Before upgrading, it is recommended to replace the __global.imageRegistry__ field in __bak.yaml__ with the image repository address you are currently using.
 
     ```shell
     export imageRegistry={your_image_repository}
@@ -183,9 +183,9 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
 
 === "Upgrade via chart package"
 
-1. Backup the `--set` parameters.
+1. Backup the __--set__ parameters.
 
-    Before upgrading the container management module, it is recommended to run the following command to backup the `--set` parameters of the old version.
+    Before upgrading the container management module, it is recommended to run the following command to backup the __--set__ parameters of the old version.
 
     ```shell
     helm get values kpanda -n k pan da-system -o yaml > bak.yaml
@@ -197,9 +197,9 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
     kubectl apply -f ./crds
     ```
 
-3. Run `helm upgrade`.
+3. Run __helm upgrade__ .
 
-    Before upgrading, it is recommended to replace the `global.imageRegistry` field in `bak.yaml` with the image repository address you are currently using.
+    Before upgrading, it is recommended to replace the __global.imageRegistry__ field in __bak.yaml__ with the image repository address you are currently using.
 
     ```shell
     export imageRegistry={your_image_repository}
@@ -224,9 +224,12 @@ Before installing DCE 5.0 or upgrading the product module, execute the following
 
 ### Steps
 
-1. On the `Clusters` page, search for the kpanda-global-cluster and enter its details.
+1. On the __Clusters__ page, search for the kpanda-global-cluster and enter its details.
 
+    ![Clusters](../images/clusterlist.png)
 
-2. In the left navigation panel, locate `Helm App` and search for kpanda to find the
+2. In the left navigation panel, locate __Helm Apps__ and search for kpanda to find the
    Container Management module. Expand the right-hand operation column and click the
-   `Update` button to initiate the upgrade.
+   __Update__ button to initiate the upgrade.
+
+    ![Update](../images/update-kpanda.png)

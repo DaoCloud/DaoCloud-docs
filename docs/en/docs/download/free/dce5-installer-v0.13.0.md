@@ -4,16 +4,16 @@ hide:
   - navigation
 ---
 
-# DCE 5.0 Community Edition v0.13.0
+# DCE 5.0 Community v0.13.0
 
-This page provides offline installation packages and verification files for DCE 5.0 Community Edition.
+This page provides offline installation packages and verification files for DCE 5.0 Community.
 
 [Return to Download Guide](../index.md){ .md-button } [More Historical Versions](./dce5-installer-history.md){ .md-button }
 
 ## Download
 
-| File Name                      | Version    | Architecture | File Size | Download                                           | Update Date   |
-| ----------------------------- | ------- | -------- | ---------------------------------------------- | ---------- | ----------------------------- |
+| Filename | Version | Architecture | File Size | Download | Update Date |
+| -------- | ------- | ------------ | --------- | -------- | ----------- |
 | offline-community-v0.13.0-amd64.tar | v0.13.0 | AMD64 | 6.96GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.13.0-amd64.tar) | 2023-12-07 |
 | offline-community-v0.13.0-arm64.tar | v0.13.0 | ARM64 | 6.57GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.13.0-arm64.tar) | 2023-12-07 |
 
@@ -69,18 +69,18 @@ After successfully verifying the offline package,
     tar -zxvf offline-community-v0.13.0-arm64.tar
     ```
 
-- For installation instructions, please refer to [Community Edition Installation Process](../../install/community/k8s/online.md#_2)
-- After successful installation, please [Apply for a Free Community Experience](../../dce/license0.md)
+- For installation instructions, refer to [Community Installation Process](../../install/community/k8s/online.md#_2)
+- After successful installation, [Apply for a Free Community Experience](../../dce/license0.md)
 
 ## Modules
 
-DCE 5.0 Community Edition includes the following modules by default:
+DCE 5.0 Community includes the following modules by default:
 
-| Module     | Description                                                              | Latest Updates                                                   |
-| -------- | ----------------------------------------------------------------- | ---------------------------------------------------------- |
-| Global Management | Responsible for user access control, permissions, workspaces and folders, audit logs, personalized appearance settings, etc.      | [0.22.1](../../ghippo/intro/release-notes.md#0221) |
+| Modules | Introduction | What's New |
+| -------- | ----------- | ---------- |
+| Global Management | Responsible for user access control, permissions, workspaces and folders, audit logs, personalized appearance settings, etc. | [0.22.1](../../ghippo/intro/release-notes.md#0221) |
 | Container Management | Manages clusters, nodes, workloads, Helm applications, CRDs, namespaces, and other core Kubernetes features | [0.23.0](../../kpanda/intro/release-notes.md#0230) |
-| Observability | Provides rich dashboards, scenario monitoring, data queries, alerts, and other graphical and textual information              | [0.22.0](../../insight/intro/releasenote.md#0220)  |
+| Observability | Provides rich dashboards, scenario monitoring, data queries, alerts, and other graphical and textual information | [0.22.0](../../insight/intro/releasenote.md#0220) |
 
 ## More
 

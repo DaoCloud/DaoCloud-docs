@@ -23,7 +23,7 @@ ETCD 备份是以集群数据为核心的备份。在硬件设备损坏，开发
 2. 参考以下说明填写 __基本信息__ 。填写完毕后点击 __下一步__ ，系统将自动校验 ETCD 的联通性，校验通过之后可以进行下一步。
 
     - 备份集群：选择需要备份哪个集群的 ETCD 数据，并在终端登录
-    - ETCD 地址: 格式为 __https://${节点IP}:${端口号}__ 。
+    - ETCD 地址: 格式为 `https://${节点IP}:${端口号}`。
  
         - 在标准 Kubernetes 集群中，ETCD 的默认端口号为 __2379__ 。
         - 在 DCE 4.0 集群中，ETCD 的默认端口号为 __12379__ 。
@@ -31,13 +31,13 @@ ETCD 备份是以集群数据为核心的备份。在硬件设备损坏，开发
 
         ??? note "获取端口号的方式"
 
-            （1）在 __kube-system__ 命名空间下查找 ETCD Pod
+            1. 在 __kube-system__ 命名空间下查找 ETCD Pod
 
                 ```shell
                 kubectl get po -n kube-system | grep etcd
                 ```
 
-            （2）获取 ETCD Pod 的 __listen-client-urls__ 中的端口号
+            2. 获取 ETCD Pod 的 __listen-client-urls__ 中的端口号
 
                 ```shell
                 kubectl get po -n kube-system ${etcd_pod_name} -oyaml | grep listen-client-urls # 将 __etcd_pod_name__ 替换为实际的 Pod 名称

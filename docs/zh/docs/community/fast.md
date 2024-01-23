@@ -7,7 +7,7 @@ Fast 是基于 [eBPF](https://ebpf.io) 实现的 Kubernetes CNI。目前，已�
 
 ## 架构
 
-![fast](images/fast.png)
+![fast](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/images/fast.png)
 
 组件：
 

@@ -16,8 +16,8 @@ On the trace query page, you can query detailed information about a call trace b
 
 Please follow these steps to search for a trace:
 
-1. Go to the `Insight` product module.
-2. Select `Data Query` -> `Trace Query` from the left navigation bar.
+1. Go to the __Insight__ product module.
+2. Select __Data Query__ -> __Trace Query__ from the left navigation bar.
 3. Query the trace by multiple conditions or use the TraceID for an exact search.
 
     !!! note
@@ -38,10 +38,10 @@ Please follow these steps to search for a trace:
     - By default, it queries the log data within the duration of the trace and one minute after its completion.
     - The queried logs include those with the trace's TraceID in their log text and container logs related to the trace invocation process.
   
-2. Click `View More` to jump to the `Log Search` page with conditions.
+2. Click __View More__ to jump to the __Log Search__ page with conditions.
 3. Supports filtering based on pod and fuzzy keyword search.
 
     !!! note
 
         1. If the trace spans across clusters or namespaces and the user does not have sufficient permissions, the associated logs cannot be queried.
-        2. After jumping to `Log Search,` a default search will be performed based on the user's permissions.
+        2. After jumping to __Log Search,__ a default search will be performed based on the user's permissions.

@@ -53,7 +53,7 @@
     {{ . }}
     ```
 
-2. 判断语句 `if / else`
+2. 判断语句 __if / else__ 
 
     使用 if 检查数据，如果不满足可以执行 else。
 
@@ -61,7 +61,7 @@
     {{if .Labels.namespace }}命名空间：{{ .Labels.namespace }} \n{{ end }}
     ```
 
-3. 循环函数 `for`
+3. 循环函数 __for__ 
 
     for 函数用于重复执行代码内容。
 
@@ -90,7 +90,7 @@ Sprig 内置了 70 多种常见的模板函数帮助渲染数据。以下列举�
 
 #### toClusterName
 
-`toClusterName` 函数根据“集群唯一标示 Id”查询“集群名”；如果查询不到对应的集群，将直接返回传入的集群的唯一标示。
+__toClusterName__ 函数根据“集群唯一标示 Id”查询“集群名”；如果查询不到对应的集群，将直接返回传入的集群的唯一标示。
 
 ```go
 func toClusterName(id string) (string, error)
@@ -105,7 +105,7 @@ func toClusterName(id string) (string, error)
 
 #### toClusterId
 
-`toClusterId` 函数根据“集群名”查询“集群唯一标示 Id”；如果查询不到对应的集群，将直接返回传入的集群名。
+__toClusterId__ 函数根据“集群名”查询“集群唯一标示 Id”；如果查询不到对应的集群，将直接返回传入的集群名。
 
 ```go
 func toClusterId(name string) (string, error)
@@ -120,7 +120,7 @@ func toClusterId(name string) (string, error)
 
 #### toDateInZone
 
-`toDateInZone` 根据字符串时间转换成所需的时间，并进行格式化。
+__toDateInZone__ 根据字符串时间转换成所需的时间，并进行格式化。
 
 ```go
 func toDateInZone(fmt string, date interface{}, zone string) string
@@ -132,7 +132,7 @@ func toDateInZone(fmt string, date interface{}, zone string) string
 {{ toDateInZone "2006-01-02T15:04:05" "2022-08-15T05:59:08.064449533Z" "Asia/Shanghai" }}
 ```
 
-将获得返回值 `2022-08-15T13:59:08`。此外，也可以通过 sprig 内置的函数达到 `toDateInZone` 的效果：
+将获得返回值 __2022-08-15T13:59:08__ 。此外，也可以通过 sprig 内置的函数达到 __toDateInZone__ 的效果：
 
 ```go-templates
 {{ dateInZone "2006-01-02T15:04:05" (toDate "2006-01-02T15:04:05Z07:00" .StartsAt) "Asia/Shanghai" }}
@@ -142,7 +142,6 @@ func toDateInZone(fmt string, date interface{}, zone string) string
 
 ```go-templates
 {{ toDateInZone "2006-01-02T15:04:05" .StartsAt "Asia/Shanghai" }}
-
 
 ## 阈值模板说明
 

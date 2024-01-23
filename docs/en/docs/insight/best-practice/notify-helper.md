@@ -53,23 +53,95 @@ The template will be rendered based on the following data.
     {{ . }}
     ```
 
-2. Conditional statement `if / else`
+2. Conditional statement __if / else__
 
-    Use `if` to check the data and run `else` if it does not meet.
+    Use __if__ to check the data and run __else__ if it does not meet.
 
     ```go
     {{if .Labels.namespace }}Namespace: {{ .Labels.namespace }} \n{{ end }}
     ```
 
-3. Loop feature `for`
+3. Loop feature __for__ 
 
-    The `for` feature is used to repeat the code content.
+    The __for__ feature is used to repeat the code content.
 
     Example 1: Traverse the labels list to obtain all label content for alerts.
 
     ```go
     {{ for .Labels}} \n {{end}}
     ```
+
+## FUNCTIONS
+
+Insight's "notification templates" and "SMS templates" support over 70 [sprig](http://masterminds.github.io/sprig/) functions, as well as custom functions.
+
+### Sprig Functions
+
+Sprig provides over 70 built-in template functions to assist in rendering data. The following are some commonly used functions:
+
+* [Date operations](http://masterminds.github.io/sprig/date.html)
+* [String operations](http://masterminds.github.io/sprig/strings.html)
+* [Type conversion operations](http://masterminds.github.io/sprig/conversion.html)
+* [Mathematical calculations with integers](http://masterminds.github.io/sprig/math.html)
+
+For more details, you can refer to the [official documentation](http://masterminds.github.io/sprig/).
+
+### Custom Functions
+
+#### toClusterName
+
+The __toClusterName__ function retrieves the "cluster name" based on the "cluster unique identifier (ID)". If there is no corresponding cluster found, it will directly return the passed-in cluster's unique identifier.
+
+```go
+func toClusterName(id string) (string, error)
+```
+
+**Example:**
+
+```go-templates
+{{ toClusterName "clusterId" }}
+{{ "clusterId" | toClusterName }}
+```
+
+#### toClusterId
+
+The __toClusterId__ function retrieves the "cluster unique identifier (ID)" based on the "cluster name". If there is no corresponding cluster found, it will directly return the passed-in cluster name.
+
+```go
+func toClusterId(name string) (string, error)
+```
+
+**Example:**
+
+```go-templates
+{{ toClusterId "clusterName" }}
+{{ "clusterName" | toClusterId }}
+```
+
+#### toDateInZone
+
+The __toDateInZone__ function converts a string date into the desired time format and applies the specified time zone.
+
+```go
+func toDateInZone(fmt string, date interface{}, zone string) string
+```
+
+**Example 1**:
+
+```go-templates
+{{ toDateInZone "2006-01-02T15:04:05" "2022-08-15T05:59:08.064449533Z" "Asia/Shanghai" }}
+```
+
+This will return __2022-08-15T13:59:08__. Additionally, you can achieve the same effect as __toDateInZone__ using the built-in functions provided by sprig:
+
+```go-templates
+{{ dateInZone "2006-01-02T15:04:05" (toDate "2006-01-02T15:04:05Z07:00" .StartsAt) "Asia/Shanghai" }}
+```
+
+**Example 2**:
+
+```go-templates
+{{ toDateInZone "2006-01-02T15:04:05" .StartsAt "Asia/Shanghai" }}
 
 ## Threshold Template Description
 

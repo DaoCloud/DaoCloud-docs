@@ -22,21 +22,21 @@ mvn -f ../pom.xml clean install -DskipTestsuite -DskipExamples -DskipTests
 
 ### 从 IDE 运行
 
-![从 IDE 运行](./images/idp01.png)
+![从 IDE 运行](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/idp01.png)
 
-### `添加 service 代码`
+### __添加 service 代码__ 
 
 #### 如果可从 keycloak 继承部分功能
 
-在目录 `services/src/main/java/org/keycloak/broker` 下添加文件：
+在目录 __services/src/main/java/org/keycloak/broker__ 下添加文件：
 
-文件名需要是 `xxxProvider.java` 和 `xxxProviderFactory.java`
+文件名需要是 __xxxProvider.java__ 和 __xxxProviderFactory.java__ 
 
-![java](./images/idp02.png)
+![java](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/idp02.png)
 
 **[xxxProviderFactory.java](./examples/xxxProviderFactory.java) 示例：**
 
-留意 `PROVIDER_ID = "oauth";` 这个变量，后面定义 html 会用到。
+留意 __PROVIDER_ID = "oauth";__ 这个变量，后面定义 html 会用到。
 
 **[xxxProvider.java](./examples/xxxProvider.java) 示例**
 
@@ -44,20 +44,20 @@ mvn -f ../pom.xml clean install -DskipTestsuite -DskipExamples -DskipTests
 
 参考下图中的三个文件编写你的代码：
 
-![none heritance](./images/idp03.png)
+![none heritance](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/idp03.png)
 
 **添加 xxxProviderFactory 到 resource service**
 
-在 `services/src/main/resources/META-INF/services/org.keycloak.broker.provider.IdentityProviderFactory`
+在 __services/src/main/resources/META-INF/services/org.keycloak.broker.provider.IdentityProviderFactory__ 
 添加 xxxProviderFactory，这样刚刚编写的能工作了：
 
-![running](./images/idp04.png)
+![running](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/idp04.png)
 
 **添加 html 文件**
 
-复制 `themes/src/main/resources/theme/base/admin/resources/partials/realm-identity-provider-oidc.html`
-文件到（改名为 `realm-identity-provider-oauth.html`，还记得上文中需要留意的变量吗）
-`themes/src/main/resources/theme/base/admin/resources/partials/realm-identity-provider-oauth.html`
+复制 __themes/src/main/resources/theme/base/admin/resources/partials/realm-identity-provider-oidc.html__ 
+文件到（改名为 __realm-identity-provider-oauth.html__ ，还记得上文中需要留意的变量吗）
+ __themes/src/main/resources/theme/base/admin/resources/partials/realm-identity-provider-oauth.html__ 
 
 到此所有的文件都添加完成了，开始调试功能。
 
@@ -65,17 +65,17 @@ mvn -f ../pom.xml clean install -DskipTestsuite -DskipExamples -DskipTests
 
 新建一个 java 项目，并将上面的代码复制到项目中，如下所示：
 
-![pom](./images/idp04.png)
+![pom](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/idp04.png)
 
 参见 [pom.xml](./examples/pom.xml)。
 
-运行 `mvn clean package`，打包完成得到 `xxx-jar-with-dependencies.jar` 文件。
+运行 __mvn clean package__ ，打包完成得到 __xxx-jar-with-dependencies.jar__ 文件。
 
 下载 [keycloak Release 20.0.5](https://github.com/keycloak/keycloak/releases/tag/20.0.5) zip 包并解压。
 
-![release](./images/idp05.png)
+![release](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/idp05.png)
 
-将 `xxx-jar-with-dependencies.jar` 复制到 `keycloak-20.0.5/providers` 目录中。
+将 __xxx-jar-with-dependencies.jar__ 复制到 __keycloak-20.0.5/providers__ 目录中。
 
 运行以下命令查看功能是否完整：
 

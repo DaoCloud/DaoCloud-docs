@@ -1,6 +1,11 @@
-# Integrate the toolchain
+---
+MTPE: FanLin
+Date: 2024-01-15
+---
 
-A DevOps toolchain is a set of tools that enables DevOps teams to collaborate and address key DevOps fundamentals throughout the product lifecycle.
+# Integrate Toolchain
+
+DevOps toolchain is a set of tools that enables DevOps teams to collaborate and address key DevOps fundamentals throughout the product lifecycle.
 
 Workbench supports tool chain integration from two perspectives: workspace integration and administrator integration. Instances integrated by administrators can be assigned to workspaces for use in workspaces.
 
@@ -16,17 +21,17 @@ Workbench supports tool chain integration from two perspectives: workspace integ
 
 1. Enter the __Toolchain Integration__ page and click the __Toolchain Integration__ button.
 
-    <!--![]()screenshots-->
+    ![Toolchain Integration](../../images/tool01.png)
 
 2. Refer to the following instructions to configure related parameters:
 
     - Tools: Select a toolchain type to integrate.
-    - Integration name: the name of the integration tool, which cannot be repeated.
-    - Address: The address where the toolchain can be accessed, the domain name or IP address starting with http://, https://.
+    - Integration Name: the name of the integration tool, which cannot be repeated.
+    - Jira URL: The address where the toolchain can be accessed, the domain name or IP address starting with http://, https://.
     - Username and password: the user and password that can log in to the toolchain,
 
-    <!--![]()screenshots-->
+    ![Configure Parameters](../../images/tool02.png)
 
-3. Click __OK__, the integration is successful and return to the toolchain list page.
+3. Click __OK__ , the integration is successful and return to the toolchain list page.
 
-    <!--![]()screenshots-->
+    ![Successfully Created](../../images/tool03.png)

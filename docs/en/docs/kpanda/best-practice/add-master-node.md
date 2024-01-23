@@ -15,9 +15,9 @@ This article provides a step-by-step guide on how to manually scale the control 
 
     Managed cluster refers to the cluster specified during the creation of the worker cluster, which provides capabilities such as Kubernetes version upgrades, node scaling, uninstallation, and operation records for the current cluster.
 
-## Modifying the Host manifest
+## Modify the Host manifest
 
-1. Log in to the container management platform and go to the overview page of the cluster where you want to scale the control nodes. In the `Basic Information` section, locate the **Managed Cluster** of the current cluster and click its name to enter the overview page.
+1. Log in to the container management platform and go to the overview page of the cluster where you want to scale the control nodes. In the __Basic Information__ section, locate the **Managed Cluster** of the current cluster and click its name to enter the overview page.
 
 
 2. In the overview page of the managed cluster, click **Console** to open the cloud terminal console. Run the following command to find the host manifest of the worker cluster that needs to be scaled.
@@ -25,16 +25,14 @@ This article provides a step-by-step guide on how to manually scale the control 
     ```bash
     kubectl get cm -n kubean-system ${ClusterName}-hosts-conf -oyaml
     ```
-    "${ClusterName}" is the name of the worker cluster to be scaled.
 
+    `${ClusterName}` is the name of the worker cluster to be scaled.
 
-3. In the host manifest, add the information of the control nodes to be added. Make the necessary modifications and save the file.
+3. Modify the host manifest file based on the example below and add information for the controller nodes.
 
-!!! "Sample Host manifest"
+    === "Before Modification"
 
-    === "Before adding nodes"
-
-        ``` yaml
+        ```yaml
         apiVersion: v1
         kind: ConfigMap
         metadata:
@@ -70,9 +68,9 @@ This article provides a step-by-step guide on how to manually scale the control 
         ......
         ```
 
-    === "After adding nodes"
+    === "After Modification"
 
-        ``` yaml
+        ```yaml
         apiVersion: v1
         kind: ConfigMap
         metadata:
@@ -107,7 +105,7 @@ This article provides a step-by-step guide on how to manually scale the control 
                 kube_control_plane:
                   hosts:
                     node1:
-                    node2: # Add controller node2 
+                    node2: # Add controller node2
                     node3: # Add controller node3
                 kube_node:
                   hosts:
@@ -129,15 +127,15 @@ This article provides a step-by-step guide on how to manually scale the control 
 
 **Important Parameters:**
 
->* `all.hosts.node1`: Existing master node in the original cluster
->* `all.hosts.node2`, `all.hosts.node3`: Control nodes to be added during cluster scaling
->* `all.children.kube_control_plane.hosts`: Control plane group in the cluster
->* `all.children.kube_node.hosts`: Worker node group in the cluster
->* `all.children.etcd.hosts`: ETCD node group in the cluster
+* `all.hosts.node1`: Existing master node in the original cluster
+* `all.hosts.node2`, `all.hosts.node3`: Control nodes to be added during cluster scaling
+* `all.children.kube_control_plane.hosts`: Control plane group in the cluster
+* `all.children.kube_node.hosts`: Worker node group in the cluster
+* `all.children.etcd.hosts`: ETCD node group in the cluster
 
-## Adding a Cluster Expansion Task "scale-master-node-ops.yaml" using the ClusterOperation.yml Template
+## Add Expansion Task "scale-master-node-ops.yaml" using the ClusterOperation.yml Template
 
-Use the following ClusterOperation.yml template to add a cluster control node expansion task called "scale-master-node-ops.yaml". 
+Use the following `ClusterOperation.yml` template to add a cluster control node expansion task called "scale-master-node-ops.yaml". 
 
 ```yaml title="ClusterOperation.yml"
 apiVersion: kubean.io/v1alpha1

@@ -1,45 +1,51 @@
-# import repository
+---
+MTPE: FanLin
+Date: 2024-01-12
+---
+
+# Import Repository
 
 This page shows how to import repositories.
 
-## prerequisites
+## Prerequisites
 
-- Need to create a workspace and a user, the user needs to join the workspace and give __workspace edit__ role.
-  Refer to [Creating a workspace](../../../ghippo/user-guide/workspace/workspace.md), [Users and roles](../../../ghippo/user-guide/access-control/user.md).
-- Prepare a Git repository.
+- A workspace and a user are required to be created. The user needs to join the workspace and be assigned the __workspace edit__ role.
+  Please refer to [Creating a Workspace](../../../ghippo/user-guide/workspace/workspace.md) and [Users](../../../ghippo/user-guide/access-control/user.md).
+- A Git repository is prepared.
 
-## import repository
+## Import a repository
 
-If the code warehouse where the manifest file of the continuous deployment application is located is not public, you need to import the warehouse to Workbench in advance. Workbench currently supports two import methods: __Import repository using HTTPS__ and __Import repository using SSH__.
+If the code repository where the manifest files of the continuously deployed application are located is not public, you need to import the repository to the application workbench in advance.
+The application workbench currently supports two import methods: __Importing a repository using HTTPS__ and __Importing a repository using SSH__.
 
-### Import repository using HTTPS
+### Import a repository using HTTPS
 
-1. On __Workbench__ -> __GitOps__ -> __Repository__ page, click the __Import Repository__ button and select __Use HTTPS__.
+1. In the __Workbench__ -> __GitOps__ -> __Repositories__ page, click the __Import Repo__ button and select __Use HTTPS__.
 
-    <!--![]()screenshots-->
+    ![Import with HTTPS](../../images/import01.png)
 
-2. On the __Import warehouse using HTTPS__ page, configure the relevant parameters and click __OK__.
+2. In the __Import repo with HTTPS__ page, configure the relevant parameters and click __OK__.
 
-    <!--![]()screenshots-->
+    ![Comfirm import](../../images/import02.png)
 
-### Import repository using SSH
+### Import a repository using SSH
 
-1. On __Workbench__ -> __GitOps__ -> __Repository__ page, click the __Import Repository__ button and select __Use SSH__.
+1. In the __Workbench__ -> __GitOps__ -> __Repositories__ page, click the __Import Repo__ button and select __Use SSH__.
 
-    <!--![]()screenshots-->
+    ![Import with SSH](../../images/import03.png)
 
-2. On the __Import warehouse using SSH__ page, configure the relevant parameters and click __OK__.
+2. In the __Import repo with SSH__ page, configure the relevant parameters and click __OK__.
 
-    <!--![]()screenshots-->
+    ![Comfirm Import](../../images/import04.png)
 
-## delete repository
+## Delete repository
 
-If you no longer use a code repository, you can delete it by following the steps below.
+If you no longer use a certain code repository, you can delete it following the steps below.
 
-1. Select a warehouse on the warehouse list page, click __︙__, and click __Delete__ in the pop-up menu.
+1. Select a repository in the repository list page, click __︙__, and click __Delete__ in the pop-up menu.
 
-    <!--![]()screenshots-->
+    ![Delete](../../images/import05.png)
 
-2. Click __OK__ in the secondary confirmation pop-up window.
+2. Click __Delete__ in the second confirmation pop-up window.
 
-    <!--![]()screenshots-->
+    ![Delete Confirmation](../../images/import06.png)

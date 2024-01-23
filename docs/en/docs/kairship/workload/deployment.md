@@ -4,27 +4,27 @@ hide:
 ---
 # Create Multicloud Deployment from Image
 
-After [added a worker cluster](../cluster.md#_2) into a multi-cloud instance, you can create multi-cloud workloads or [convert existing workloads into multi-cloud workloads](promote.md).
+After [added a worker cluster](../cluster.md#_2) into a multicloud instance, you can create multicloud workloads or [convert existing workloads into multicloud workloads](promote.md).
 
-This page will introduce how to create a multi-cloud deployment from an image. For the YAML method, see [Create Multicloud Deployment from YAML](yaml.md)
+This page will introduce how to create a multicloud deployment from an image. For the YAML method, see [Create Multicloud Deployment from YAML](yaml.md)
 
 ## Prerequisites
 
-- [Create a multi-cloud instance](../instance/add.md)
-- [Add at least one worker cluster to the multi-cloud instance](../cluster.md#_2)
+- [Create a multicloud instance](../instance/add.md)
+- [Add at least one worker cluster to the multicloud instance](../cluster.md#_2)
 - If you want to deploy workloads to specific clusters based on region, availability zone, or labels, you need to add region, availability zone, and label information to the clusters beforehand.
 
 ## Steps
 
-Follow the steps below to create a multi-cloud deployment from an image.
+Follow the steps below to create a multicloud deployment from an image.
 
-1. Click the name of the multi-cloud instance, then navigate to __MultiCloud Workloads__ in the left navigation pane, and click __Create from Image__ in the top right corner.
+1. Click the name of the multicloud instance, then navigate to __MultiCloud Workloads__ in the left navigation pane, and click __Create from Image__ in the top right corner.
 
     ![Create from Image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/deploy-create04.png)
 
 2. Fill in the basic information as per the instructions provided.
 
-    - Specify Clusters: Select the specific cluster to deploy the multi-cloud workload.
+    - Specify Clusters: Select the specific cluster to deploy the multicloud workload.
     - Specify Regions: Filter clusters based on the provider/region/availability zone. You can enable all three filters simultaneously.
 
         - __Exclude Clusters__ : Exclude a specific cluster from the filtering result. The workload will not be deployed to the excluded cluster.
@@ -41,8 +41,8 @@ Follow the steps below to create a multi-cloud deployment from an image.
 
             ![Specify Labels](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/deploy-create06.png)
 
-    - Auto Propagation: When enabled, it automatically detects ConfigMaps, Secrets, and other resources that the multi-cloud workload depends on, and propagates these resources to each selected deployment cluster.
-    - Pods: Set the number of replicas for the multi-cloud workload.
+    - Auto Propagation: When enabled, it automatically detects ConfigMaps, Secrets, and other resources that the multicloud workload depends on, and propagates these resources to each selected deployment cluster.
+    - Pods: Set the number of replicas for the multicloud workload.
     - Deployment Policies
 
         - __Duplicated__ : Deploy the number of replicas set in the __Pods__ field to each selected cluster. __Total Replicas = Pod number ✖️ Cluster number__ 
@@ -73,6 +73,6 @@ Follow the steps below to create a multi-cloud deployment from an image.
 
         ![Differentiated Configurations](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/deploy-create07.png)
 
-You will be automatically redirected to the list of multi-cloud deployments. By clicking the "More Actions" button on the right side, you can edit the YAML of the workload, update/pause/restart/delete the workload.
+You will be automatically redirected to the list of multicloud deployments. By clicking the "More Actions" button on the right side, you can edit the YAML of the workload, update/pause/restart/delete the workload.
 
 ![More Actions](../images/deploy-update01.png)

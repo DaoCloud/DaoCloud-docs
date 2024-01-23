@@ -9,7 +9,7 @@ After executing a scan policy, a scan report will be generated automatically. Yo
 
 - Download and View
 
-    Under the `Security Management` -> `Compliance Scanning` page, click the `Scan Report` tab, then click the `ⵗ` action button to the right of a report and select `Download`.
+    Under the __Security Management__ -> __Compliance Scanning__ page, click the __Scan Report__ tab, then click the __ⵗ__ action button to the right of a report and select __Download__ .
 
     
 

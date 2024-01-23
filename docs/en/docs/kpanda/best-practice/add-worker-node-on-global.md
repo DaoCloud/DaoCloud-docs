@@ -22,7 +22,7 @@ Please plan your resources before deploying the platform.
     ssh root@seed-node-ip-address
     ```
 
-2. On the Bootstrap Node, run the following command to get the `CONTAINER ID` of the kind cluster:
+2. On the Bootstrap Node, run the following command to get the __CONTAINER ID__ of the kind cluster:
 
     ```bash
     [root@localhost ~]# podman ps
@@ -48,7 +48,7 @@ Please plan your resources before deploying the platform.
 
 ## Create `cluster.kubean.io` resources in the kind cluster on the Bootstrap Node
 
-1. Use the `podman exec -it {CONTAINER ID} bash` command to enter the kind cluster container.
+1. Use the __podman exec -it {CONTAINER ID} bash__ command to enter the kind cluster container.
 
 2. Copy and run the following command to create the `cluster.kubean.io` resources in the kind cluster:
 
@@ -93,13 +93,13 @@ Please plan your resources before deploying the platform.
     ssh root@global-service-cluster-control-node-ip-address
     ```
 
-2. On the control node of the global service cluster, run the following command to copy the containerd configuration file `config.toml` from the control node to the Bootstrap Node:
+2. On the control node of the global service cluster, run the following command to copy the containerd configuration file __config.toml__ from the control node to the Bootstrap Node:
 
     ```bash
     scp /etc/containerd/config.toml root@{seed-node-ip-address}:/root
     ```
 
-3. On the Bootstrap Node, run the following command to copy the `config.toml` configuration file to the kind cluster:
+3. On the Bootstrap Node, run the following command to copy the __config.toml__ configuration file to the kind cluster:
 
     ```bash
     cd /root
@@ -118,32 +118,32 @@ Please plan your resources before deploying the platform.
 
 2. In the access configuration section, enter and edit the kubeconfig configuration of the kind cluster that was copied earlier. The following parameters need to be configured:
 
-    * `Cluster Name`: Enter the name for the accessed cluster, default is `my-cluster`.
-    * `insecure-skip-tls-verify: true`: Used to skip TLS verification, manually add this parameter.
-    * `server`: Replace the IP in the default parameter `https://my-cluster-installer-control-plane:6443` with the IP of the Bootstrap Node. Replace `6443` with the port mapped on the node. You can use the command `podman ps | grep 6443` to check.
+    * __Cluster Name__ : Enter the name for the accessed cluster, default is __my-cluster__ .
+    * __insecure-skip-tls-verify: true__ : Used to skip TLS verification, manually add this parameter.
+    * __server__ : Replace the IP in the default parameter `https://my-cluster-installer-control-plane:6443` with the IP of the Bootstrap Node. Replace __6443__ with the port mapped on the node. You can use the command __podman ps | grep 6443__ to check.
 
 3. Click the "Confirm" button to complete the access of the kind cluster.
 
 ## Add labels to the global service cluster
 
-1. Log in to the DCE management console, go to Container Management, find the `kapnda-glabal-cluster` cluster,
-   and click the `Basic Configuration` operation button on the right side to enter the basic configuration page.
+1. Log in to the DCE management console, go to Container Management, find the __kapnda-glabal-cluster__ cluster,
+   and click the __Basic Configuration__ operation button on the right side to enter the basic configuration page.
 
 2. On the basic configuration page, add the label `kpanda.io/managed-by=my-cluster` to the global service cluster,
    as shown in the following image:
 
 !!! note
 
-    Note: In the label "kpanda.io/managed-by=my-cluster", the value corresponds to the cluster name specified during cluster access, which is `my-cluster` by default. Adjust it according to your actual situation.
+    Note: In the label "kpanda.io/managed-by=my-cluster", the value corresponds to the cluster name specified during cluster access, which is __my-cluster__ by default. Adjust it according to your actual situation.
 
 ## Add nodes to the global service cluster
 
-1. Go to the node list page of the global service cluster, find the `Integrate Node` button
+1. Go to the node list page of the global service cluster, find the __Integrate Node__ button
    on the right side of the node list, and click to enter the node configuration page.
 
 2. Enter the IP and authentication information of the node to be added.
 
-3. Add the following custom parameters in the `Custom Parameters` section:
+3. Add the following custom parameters in the __Custom Parameters__ section:
 
     ```bash
     download_run_once: false
@@ -152,4 +152,4 @@ Please plan your resources before deploying the platform.
     download_localhost: false
     ```
 
-4. Click the `OK` button and wait for the node to be added.
+4. Click the __OK__ button and wait for the node to be added.

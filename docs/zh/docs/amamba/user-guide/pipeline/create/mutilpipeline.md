@@ -34,7 +34,7 @@ hide:
 
 4. 参考下方说明填写分支发现策略、扫描触发器、分支设置、克隆配置信息。
 
-    - 开启发现分支：默认值为 __.*__ ，通过正则表达式来过滤分支。
+    - 开启发现分支：默认值为 __ .*__ ，通过正则表达式来过滤分支。
     - 开启多分支扫描：开启后，一旦代码仓库有分支变动，会进行同步。
     - 扫描间隔：根据预设的间隔来进行扫描代码仓库，来检查是否又更新。
     - 删除旧分支：开启后将根据策略删除旧分支及流水线
@@ -47,11 +47,11 @@ hide:
 
 5. 完成创建。确认所有参数输入完成后，点击 __确定__ 按钮，完成多分枝流水线创建，自动返回流水线列表。
 
-    ![mutilpipeline04](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/mutilpipeline04.png)
+    ![mutilpipeline04](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/mutilpipeline08.png)
 
 6. 创建完成后，会自动触发执行符合条件的分支的对应的流水线。
 
-    ![mutilpipeline05](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/mutilpipeline05.png)
+    ![mutilpipeline05](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/mutilpipeline04.png)
 
 ## 其他操作
 
@@ -59,16 +59,16 @@ hide:
 
  __扫描仓库__ 的目的是通过手动的方式触发发现代码仓库的新分支。
 
-![mutilpipeline06](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/mutilpipeline06.png)
+![mutilpipeline06](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/mutilpipeline05.png)
 
 ### 查看扫描日志
 
 展示最新一次扫描代码仓库时发现分支的日志。
 
-![mutilpipeline07](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/mutilpipeline07.png)
+![mutilpipeline07](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/mutilpipeline06.png)
 
 ### 查看分支
 
-根据分支发现策略获取的分支信息，其中 __禁用__ 状态的分支代表，最新扫描结果中不符合分支发现的策略。
+根据分支发现策略获取的分支信息，其中 __禁用__ 状态的分支代表最新扫描结果中不符合分支发现的策略。
 
-![mutilpipeline08](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/mutilpipeline08.png)
+![mutilpipeline08](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/mutilpipeline07.png)

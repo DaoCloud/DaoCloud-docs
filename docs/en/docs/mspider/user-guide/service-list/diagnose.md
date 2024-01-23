@@ -1,34 +1,34 @@
 ---
-hide:
-  - toc
+MTPE: FanLin
+Date: 2024-01-23
 ---
 
 # One-click Diagnosis and Repair
 
-DCE 5.0 Service Mesh provides built-in one-click diagnosis and repair functionality for managed services, which can be operated through a graphical user interface.
+DCE 5.0 service mesh has built-in one-click diagnosis and repair functions for managed services, which can be operated through a graphical interface.
 
-1. Enter a specific Service Mesh and click `Service Management` -> `Service List`.
-   In the `Diagnosis Config` column, next to services with an `Abnormal` status,
-   the word `Diagnose` will appear. Click `Diagnose`.
+1. Enter a specific Service Mesh and click __Service Management__ -> __Service List__ .
+   In the __Diagnose Config__ column, next to services with an __Abnormal__ status,
+   the word `Diagnose` will appear. Click __Diagnose__.
 
     ![Diagnose](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/diagnose01.png)
 
 2. A diagnosis popup will appear on the right-hand side. Follow the built-in checklist for inspection.
    Green checkmarks indicate that the item has <span style="color:green">Passed</span>, while red crosses indicate items that is <span style="color:red">Not Passed</span> and need to be repaired.
 
-    Check the items that have <span style="color:red">Not Passed</span> and click the `One-Click Repair` button.
-    You can click `Rediagnose` to refresh the checklist, and the repair is usually
+    Check the items that have <span style="color:red">Not Passed</span> and click the __One-Click Repair__ button.
+    You can click __Rediagnose__ to refresh the checklist, and the repair is usually
     completed within a few minutes.
 
     ![Repair](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/diagnose02.png)
 
 3. After successful repair, all items in the checklist will turn gray and display as
-   <span style="color:green">Passed</span>. Click `Next`.
+   <span style="color:green">Passed</span>. Click __Next__.
 
     ![Next](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/diagnose03.png)
 
 4. A list of items that require `Manual Repair` will be displayed.
-   You can click `View Troubleshooting Guide` to read the proper documentation page and manually repair the items.
+   You can click __View Troubleshooting Guide__ to read the proper documentation page and manually repair the items.
 
     ![Manual repair](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/diagnose04.png)
 

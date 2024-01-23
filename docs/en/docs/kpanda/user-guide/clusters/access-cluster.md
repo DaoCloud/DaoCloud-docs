@@ -10,11 +10,11 @@ Clusters integrate into or created in the DCE 5.0 Container Management module ca
 
 ## Access via CloudShell
 
-1. Enter the Container Management module, find your target cluster, click `...` on the right, and select `Console` in the drop-down list.
+1. Enter the Container Management module, find your target cluster, click __ ...__ on the right, and select __Console__ in the drop-down list.
 
     ![screen](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/cluster-access01.png)
 
-2. Run `kubectl get node` command in the Console to verify the connectivity between CloudShell and the cluster. If the console returns node information of the cluster, you can access and manage the cluster through CloudShell.
+2. Run __kubectl get node__ command in the Console to verify the connectivity between CloudShell and the cluster. If the console returns node information of the cluster, you can access and manage the cluster through CloudShell.
 
     <!--![screen](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/cluster-access01.png)-->
 
@@ -28,17 +28,17 @@ If you want to access and manage remote clusters from a local node, make sure yo
 
 If everything is in place, follow these steps to access a cluster via kubectl from your local environment.
 
-1. Enter the Container Management module, find your target cluster, click `...` on the right, and select `Download kubeconfig` in the drop-down list.
+1. Enter the Container Management module, find your target cluster, click __ ...__ on the right, and select __Download kubeconfig__ in the drop-down list.
 
     ![screen](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/cluster-access02.png)
 
-2. Set the certificate validity period and click `Download kubeconfig`.
+2. Set the certificate validity period and click __Download kubeconfig__ .
 
     ![screen](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/cluster-access02.png)
 
-3. Open the downloaded certificate and copy its content to the `config` file of the local node.
+3. Open the downloaded certificate and copy its content to the __config__ file of the local node.
 
-    By default, the kubectl tool will look for a file named `config` in the `$HOME/.kube` directory on the local node. This file stores access credentials of clusters. If found, kubectl can access the cluster with that configuration file.
+    By default, the kubectl tool will look for a file named __config__ in the __$HOME/.kube__ directory on the local node. This file stores access credentials of clusters. If found, kubectl can access the cluster with that configuration file.
 
 4. Run the following command on the local node to verify its connectivity with the cluster:
 

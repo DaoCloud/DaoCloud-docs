@@ -12,7 +12,7 @@ so that they can work normally and provide some advanced operation and maintenan
 
 ## Architecture
 
-![architecture](./images/structure.png)
+![architecture](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/community/images/structure.png)
 
 FedState consists of the following components:
 

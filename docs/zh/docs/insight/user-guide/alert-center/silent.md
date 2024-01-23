@@ -7,7 +7,7 @@
 
 ## 操作步骤
 
-1. 在左侧导航栏中，选择`告警中心` -> `告警静默`,点击`新建静默规则`按钮。
+1. 在左侧导航栏中，选择 __告警中心__ -> __告警静默__ ,点击 __新建静默规则__ 按钮。
 
     ![点击按钮](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/silence00.png)
 
@@ -15,6 +15,6 @@
 
     ![静默规则](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/silence01.png)
 
-3. 返回规则列表，在列表右侧点击 `︙`，可以编辑或删除静默规则。
+3. 返回规则列表，在列表右侧点击 __︙__ ，可以编辑或删除静默规则。
 
 通过告警静默功能，您可以灵活地控制哪些告警需要被忽略，在什么时间段内生效，从而提高运维效率，减少误报的可能性。

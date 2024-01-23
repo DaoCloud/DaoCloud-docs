@@ -18,7 +18,7 @@ In the offline scenario, users can upgrade the kubernetes version of the working
 
 ## Build Offline Packages at Networked Node
 
-Because the offline environment cannot be connected to the Internet, users need to prepare a machine ** Networked nodes ** in advance to build incremental offline packages and start the Docker service on this node. [How to install Docker?](../../blogs/230315-install-on-linux.md)
+Because the offline environment cannot be connected to the Internet, users need to prepare a machine **Networked nodes** in advance to build incremental offline packages and start the Docker service on this node. [How to install Docker?](../../blogs/230315-install-on-linux.md)
 
 1. Check the Docker service running status of the networked nodes
 
@@ -32,13 +32,13 @@ Because the offline environment cannot be connected to the Internet, users need 
     root     13024  0.0  0.0 112824   980 pts/0    S+   23:45   0:00 grep --color=auto docker
     ```
 
-2. Create a file named `manifest.yaml` in the directory of the `/root` networked node with the following command:
+2. Create a file named __manifest.yaml__ in the directory of the __/root__ networked node with the following command:
 
     ```bash
     vi manifest.yaml
     ```
 
-    `manifest.yaml` includes the following contents:
+    __manifest.yaml__ includes the following contents:
 
     ```yaml
     image_arch:
@@ -50,10 +50,10 @@ Because the offline environment cannot be connected to the Internet, users need 
     - "v1.24.5"
     ```
 
-    -  `image_arch` Used to specify the architecture type of the CPU. The available parameters are `amd64` and `arm64`.
-    -  `kube_version` Used to specify the version of the kubernetes offline package that needs to be built. Refer to the offline kubernetes version that supports building above.
+    -  __image_arch__ Used to specify the architecture type of the CPU. The available parameters are __amd64__ and __arm64__ .
+    -  __kube_version__ Used to specify the version of the kubernetes offline package that needs to be built. Refer to the offline kubernetes version that supports building above.
 
-3. Create a new `/data` folder named under the `/root` directory to store the incremental offline package.
+3. Create a new __/data__ folder named under the __/root__ directory to store the incremental offline package.
 
     ```bash
     mkdir data
@@ -67,7 +67,7 @@ Because the offline environment cannot be connected to the Internet, users need 
     docker run --rm -v $(pwd)/manifest.yml:/manifest.yml -v $(pwd)/data:/data ghcr.m.daocloud.io/kubean-io/airgap-patch:v0.4.8
     ```
 
-    After the docker service finishes running, check `/data` the files under the folder. The file directory is as follows:
+    After the docker service finishes running, check __/data__ the files under the folder. The file directory is as follows:
 
     ```bash
     data
@@ -84,7 +84,7 @@ Because the offline environment cannot be connected to the Internet, users need 
 
 ## Import Offline Packages into the Fire Node
 
-1. Copy the files of the `/data` networking node to the directory of the `/root` fire node, and then ** Networking node ** run the following command:
+1. Copy the files of the __/data__ networking node to the directory of the __/root__ fire node, and then **Networking node** run the following command:
 
     ```bash
     scp -r data root@x.x.x.x:/root
@@ -94,7 +94,7 @@ Because the offline environment cannot be connected to the Internet, users need 
 
         `x.x.x.x` is the IP address of bootstrapping node.
 
-2. Copy the image file in the `/data` folder to the docker registry built in the bootstrapping node.
+2. Copy the image file in the __/data__ folder to the docker registry built in the bootstrapping node.
    After logging in the fire node, run the following command:
 
     1. Enter the directory where the image file is located
@@ -118,9 +118,9 @@ Because the offline environment cannot be connected to the Internet, users need 
         ```
         
         `https://x.x.x.x:443` is the address of the external registry.
-        `DEST_USER=${username} DEST_PASS=${password}` includes username and password parameters for the external registry. This parameter can be deleted if the external registry is secret-free.
+        __DEST_USER=${username} DEST_PASS=${password}__ includes username and password parameters for the external registry. This parameter can be deleted if the external registry is secret-free.
 
-3. Copy the binary file in the `/data` file to the built-in Minio service of the fire node on the fire node.
+3. Copy the binary file in the __/data__ file to the built-in Minio service of the fire node on the fire node.
 
     1. Go to the directory where the binary is located
     
@@ -137,12 +137,12 @@ Because the offline environment cannot be connected to the Internet, users need 
 !!! note
 
     The above commands are only applicable to the built-in Minio service of the bootstrapping node. If you use an external Minio, please replace `http://127.0.0.1:9000` with the access address of the external Minio.
-    `rootuser` and `rootpass123` are the default account and password of the built-in Minio service of bootstrapping nodes.
+    __rootuser__ and __rootpass123__ are the default account and password of the built-in Minio service of bootstrapping nodes.
 
 ## Update kubernetes version manifest for Global cluster
 
-1. Copy the inventory configuration file in `kubeanofflineversion.cr.patch` the file of the `/data` networking node
-   to any ** Master node ** `/root` directory in the Global cluster, and ** Networking node ** run the following command:
+1. Copy the inventory configuration file in `kubeanofflineversion.cr.patch` the file of the __/data__ networking node
+   to any Master node __/root__ directory in the Global cluster, and **Networking node** run the following command:
 
     ```bash
     scp -r data/v_offline_patch/kubeanofflineversion.cr.patch.yaml root@x.x.x.x:/root
@@ -152,7 +152,7 @@ Because the offline environment cannot be connected to the Internet, users need 
 
         `x.x.x.x` is the IP address of any Master node in the Global cluster.
 
-2. Log in to any ** Master node ** execution list configuration file in the Global cluster
+2. Log in to any **Master node** execution list configuration file in the Global cluster
    after completing the previous step. The command is as follows:
 
     ```bash

@@ -72,7 +72,7 @@ note the changes in parameters before upgrading the Insight Agent.
 ### Upgrading from v0.16.x (or lower) to v0.17.x
 
 In v0.17.x, the kube-prometheus-stack chart version was upgraded from 41.9.1 to 45.28.1, and
-there were also some field upgrades in the CRD used, such as the `attachMetadata` field of
+there were also some field upgrades in the CRD used, such as the __attachMetadata__ field of
 servicemonitor. Therefore, the following command needs to be executed before upgrading the insight agent:
 
 ```bash
@@ -85,7 +85,7 @@ insight-agent/dependency-crds after extracting the insight-agent offline package
 ### Upgrade from v0.11.x (or earlier) to v0.12.x
 
 v0.12.x upgrades kube-prometheus-stack chart from 39.6.0 to 41.9.1, including prometheus-operator to v0.60.1, prometheus-node-exporter chart to 4.3.0, etc.
-Prometheus-node-exporter uses [Kubernetes recommended label](https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/) after upgrading, so you need to delete `node- exporter`s daemonset.
+Prometheus-node-exporter uses [Kubernetes recommended label](https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/) after upgrading, so you need to delete __node- exporter__ s daemonset.
 prometheus-operator has updated the CRD, so you need to run the following command before upgrading the insight agent:
 
 ```shell linenums="1"

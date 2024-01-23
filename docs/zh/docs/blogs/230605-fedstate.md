@@ -1,6 +1,6 @@
 # 云原生联邦中间件--FedState 正式开源上线
 
-![image](./images/fedstate01.png)
+![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/fedstate01.png)
 
 在云原生的场景下，有状态的服务，也有了很大的发展。有的玩法是基于 Yaml 的包装来手动安装，
 有的基于 Helm Charts 的方式封装，有的是基于 Operator 的方式的来封装的。目前社区的玩法中，
@@ -45,7 +45,7 @@ FedState 的开源仓库地址在：https://github.com/fedstate/fedstate 。
 
 这里，以联邦 MongoDB 为例。以下架构图介绍了 FedState 在多云/多集群环境中，围绕 MongoDB 副本集，提供的整体能力。
 
-![图片](./images/fedstate02.png)
+![图片](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/fedstate02.png)
 
 FedState 自身包含以下组件：
 
@@ -63,7 +63,7 @@ Mongo-Manager：可以理解成 MongoDB 数据面的 Operator，主要负责真�
 
 ## 关键能力
 
-![图片](./images/fedstate03.png)
+![图片](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/fedstate03.png)
 
 1. 联邦 MongoDB 实例的对外访问方式：Vip0:NodePort0, Vip1:NodePort1...
 2. 各个成员集群间 MongoDB 服务的东西向流量以及服务发现，使用来对应集群 VIP+服务所对应的 NodePort 方式

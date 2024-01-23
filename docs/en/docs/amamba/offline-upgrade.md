@@ -65,7 +65,7 @@ charts-syncer to sync the images to the repository, which is more efficient and 
     tar xvf amamba.bundle.tar
     ```
 
-    After successful extraction, you will have three files: __images.tar__, __hints.yaml__, and __original-chart__.
+    After successful extraction, you will have three files: __images.tar__ , __hints.yaml__ , and __original-chart__ .
 
 1. Run the following command to load the images from the local directory into Docker or containerd.
 
@@ -99,7 +99,7 @@ charts-syncer to sync the images to the repository, which is more efficient and 
     ```
 
     Note that a low version of Helm can cause the update to fail.
-    If it fails, try executing __helm update repo__.
+    If it fails, try executing __helm update repo__ .
 
 3. Back up the __--set__ parameters. Before upgrading the global management version,
    it is recommended to back up the __--set__ parameters of the old version using the following command:

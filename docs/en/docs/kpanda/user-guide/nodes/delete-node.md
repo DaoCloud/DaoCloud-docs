@@ -19,16 +19,16 @@ When the peak business period is over, in order to save resource costs, you can 
 
 ## Steps
 
-1. On the `Cluster List` page, click the name of the target cluster.
+1. On the __Clusters__ page, click the name of the target cluster.
 
-    If the `Cluster Role` has the tag `Access Cluster`, it means that the cluster does not support node expansion and contraction.
-
-    
-
-2. Click `Node Management` on the left navigation bar, find the node to be uninstalled, click `ⵗ` and select `Remove Node`.
+    If the __Cluster Role__ has the tag __Access Cluster__ , it means that the cluster does not support node expansion and contraction.
 
     
 
-3. Enter the node name, and click `Delete` to confirm.
+2. Click __Node Management__ on the left navigation bar, find the node to be uninstalled, click __ⵗ__ and select __Remove Node__ .
+
+    
+
+3. Enter the node name, and click __Delete__ to confirm.
 
     

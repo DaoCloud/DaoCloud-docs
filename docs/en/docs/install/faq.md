@@ -14,7 +14,7 @@ Run the command:
 
 Example of execution result:
 
-![FAQ1](images/faq11.png)
+![FAQ1](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/install/images/faq11.png)
 
 ## Failure to Start kubelet Service After Kind Container Restart
 
@@ -123,3 +123,26 @@ You can try the following methods to resolve the issue:
     sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
     sudo yum update -y
     ```
+
+## Unable to Restart kind Cluster Properly After Bootstrap Node Reboot
+
+After rebooting the bootstrap node, the kind cluster may fail to restart properly because the kind cluster
+was not set to start automatically on the openEuler 22.03 LTS SP2 operating system during deployment.
+
+To resolve this issue, execute the following command to restart:
+
+```bash
+podman restart $(podman ps | grep installer-control-plane | awk '{print $1}') 
+```
+
+!!! note
+
+    If the above scenario occurs in other environments, you can also execute the same command for restarting.
+
+## Missing ip6tables When Deploying Ubuntu 20.04 as the Bootstrap Machine
+
+When deploying Ubuntu 20.04 as the bootstrap machine, the absence of ip6tables can cause errors during the deployment process.
+
+Please refer to the [Podman known issue](https://github.com/containers/podman/issues/3655).
+
+Temporary solution: Manually install iptables, refer to [Install and Use iptables on Ubuntu 22.04](https://orcacore.com/install-use-iptables-ubuntu-22-04/#:~:text=In%20this%20guide%2C%20we%20want%20to%20teach%20you,your%20network%20traffic%20packets%20by%20using%20these%20filters).

@@ -173,15 +173,15 @@
           - "RequestReceived"
     ```
 
-将以上审计日志文件放到 `/etc/kubernetes/audit-policy/` 文件夹下，并取名为 `apiserver-audit-policy.yaml`。
+将以上审计日志文件放到 __/etc/kubernetes/audit-policy/__ 文件夹下，并取名为 __apiserver-audit-policy.yaml__ 。
 
 ## 配置 API 服务器
 
-打开 API 服务器的配置文件 kube-apiserver.yaml，一般会在 `/etc/kubernetes/manifests/` 文件夹下，并添加以下配置信息：
+打开 API 服务器的配置文件 kube-apiserver.yaml，一般会在 __/etc/kubernetes/manifests/__ 文件夹下，并添加以下配置信息：
 
-这一步操作前请备份 kube-apiserver.yaml，并且备份的文件不能放在 `/etc/kubernetes/manifests/` 下，建议放在 `/etc/kubernetes/tmp`。
+这一步操作前请备份 kube-apiserver.yaml，并且备份的文件不能放在 __/etc/kubernetes/manifests/__ 下，建议放在 __/etc/kubernetes/tmp__ 。
 
-1. 在 `spec.containers.command` 下添加命令：
+1. 在 __spec.containers.command__ 下添加命令：
 
     ```yaml
     --audit-log-maxage=30
@@ -191,7 +191,7 @@
     --audit-policy-file=/etc/kubernetes/audit-policy/apiserver-audit-policy.yaml
     ```
 
-2. 在 `spec.containers.volumeMounts` 下添加：
+2. 在 __spec.containers.volumeMounts__ 下添加：
 
     ```yaml
     - mountPath: /var/log/audit
@@ -200,7 +200,7 @@
       name: audit-policy
     ```
 
-3. 在 `spec.volumes` 下添加：
+3. 在 __spec.volumes__ 下添加：
 
     ```yaml
     - hostPath:
@@ -215,10 +215,10 @@
 
 ## 测试并验证
 
-稍等一会，API 服务器会自动重启，执行以下命令查看`/var/log/kubernetes/audit` 目录下是否有审计日志生成，若有，则表示 k8s 审计日志成功开启。
+稍等一会，API 服务器会自动重启，执行以下命令查看 __/var/log/kubernetes/audit__ 目录下是否有审计日志生成，若有，则表示 k8s 审计日志成功开启。
 
 ```shell
 ls /var/log/kubernetes/audit
 ```
 
-如果想关闭，去掉 `spec.containers.command` 中的相关命令即可。
+如果想关闭，去掉 __spec.containers.command__ 中的相关命令即可。

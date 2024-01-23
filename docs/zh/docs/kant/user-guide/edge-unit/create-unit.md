@@ -10,9 +10,9 @@ CloudCore：KubeEdge 云端核心组件；
 ControllerManager：KubeEdge CRD 扩展，目前应用于边缘应用和边缘节点组；
 下文说明创建边缘单元的步骤：
 
-1. 选择左侧导航栏的`边缘计算` -> `云边协同`，进入边缘单元列表页面，点击页面右上角的`注册边缘单元`按钮；
+1. 选择左侧导航栏的 __云边协同__ ，进入边缘单元列表页面，点击页面右上角的 __创建边缘单元__ 按钮；
 
-    ![边缘单元列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-unit-01.png)
+    ![创建边缘单元](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-unit-01.png)
 
 2. 填写基础信息；
 
@@ -25,7 +25,7 @@ ControllerManager：KubeEdge CRD 扩展，目前应用于边缘应用和边缘�
 
     - 描述：边缘单元描述信息。
 
-    ![边缘单元列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-unit-02.png)
+    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-unit-02.png)
 
 3. 组件仓库设置。KubeEdge 、Kant 的云端组件仓库设置；
 
@@ -41,9 +41,9 @@ ControllerManager：KubeEdge CRD 扩展，目前应用于边缘应用和边缘�
         - 默认：系统提供的默认镜像仓库地址，存储云边协同模块所需云端组件镜像，像 kant-worker-admission;
         - 自定义：如果用户将系统云端组件镜像存储在自己的镜像仓库，用户可以选择自定义仓库地址。
 
-    ![创建边缘单元](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-unit-03.png)
+    ![组件仓库设置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-unit-03.png)
 
-4. 访问设置。KubeEdge 云端组件的访问设置，边缘节点通过此设置与云端建立连接；
+4. 访问配置。KubeEdge 云端组件的访问设置，边缘节点通过此设置与云端建立连接；
 
     - 访问地址：KubeEdge 云端组件 CloudCore 的访问地址，需要能被边缘节点访问。
 
@@ -58,8 +58,8 @@ ControllerManager：KubeEdge CRD 扩展，目前应用于边缘应用和边缘�
 
         Kubernetes 默认开放端口范围 3000-32767。如果 NodePort 端口有冲突，请修改。
 
-    ![创建边缘单元](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-unit-04.png)
+    ![访问配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-unit-04.png)
 
-5. 完成以上信息配置后，点击`确定`按钮，完成边缘单元创建，自动返回边缘单元列表。
+5. 完成以上信息配置后，点击 __确定__ 按钮，完成边缘单元创建，自动返回边缘单元列表。
 
 下一步：[管理边缘单元](./manage-unit.md)

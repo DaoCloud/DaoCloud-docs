@@ -7,7 +7,7 @@ hide:
 
 !!! info
 
-    「DaoCloud 道客」开源生态启航!
+    「DaoCloud 道客」开源生态启航！这些是 DCE 5.0 相关的开源项目。
 
 <div class="grid cards" markdown>
 
@@ -19,7 +19,7 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./cloudtty.md)
 
--   :simple-wikipedia:{ .lg .middle } __Clusterpedia__ :simple-cncf: 已入选 CNCF Sandbox 和 Landscape
+-   :simple-wikipedia:{ .lg .middle } __Clusterpedia__ :simple-cncf: 已入选 CNCF Landscape 和 Sandbox
 
     ---
 
@@ -74,7 +74,7 @@ hide:
 
 <div class="grid cards" markdown>
 
--   :material-storage-tank:{ .lg .middle } __HwameiStor__ :simple-cncf: 已入选 CNCF Sandbox 和 Landscape
+-   :material-storage-tank:{ .lg .middle } __HwameiStor__ :simple-cncf: 已入选 CNCF Landscape 和 Sandbox
 
     ---
 
@@ -122,11 +122,11 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./kwok.md)
 
--   :fontawesome-solid-bridge:{ .lg .middle } __Merbridge__ :simple-cncf: 已入选 CNCF Sandbox 和 Landscape
+-   :fontawesome-solid-bridge:{ .lg .middle } __Merbridge__ :simple-cncf: 已入选 CNCF Landscape 和 Sandbox
 
     ---
 
-    使用 eBPF 加速您的服务网格，就像利用虫洞在网络世界中穿梭，已入选 CNCF 全景图和 Sandbox
+    使用 eBPF 加速您的服务网格，就像利用虫洞在网络世界中穿梭，已入选 CNCF Landscape 和 Sandbox
 
     [:octicons-arrow-right-24: 了解更多](./merbridge.md)
 
@@ -142,11 +142,11 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./miragedebug.md)
 
--   :spider:{ .lg .middle } __Spiderpool__  :simple-cncf: 已入选 CNCF Sandbox
+-   :spider:{ .lg .middle } __Spiderpool__  :simple-cncf: 已入选 CNCF Landscape 和 Sandbox
 
     ---
 
-    云原生网络 Underlay 和 RDMA 网络方案，已入选 CNCF Sandbox
+    云原生网络 Underlay 和 RDMA 网络方案，已入选 CNCF Landscape 和 Sandbox
 
     [:octicons-arrow-right-24: 了解更多](./spiderpool.md)
 
@@ -171,6 +171,10 @@ hide:
     [:octicons-arrow-right-24: 了解更多](./icons/index.md)
 
 </div>
+
+*[DCE]: DaoCloud Enterprise 云原生操作系统的简称，新一代 AI 智算平台
+*[Sandbox]: CNCF 为初创的云原生项目提供的沙箱式孵化平台
+*[Landscape]: CNCF 全景图是一个展示云原生技术生态系统中各种项目和工具的综合性图谱
 
 !!! success
 

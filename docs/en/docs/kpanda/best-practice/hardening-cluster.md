@@ -46,7 +46,7 @@ Scan Environment:
 
 #### Hardening Configuration to Pass CIS Scan
 
-To address these security scan issues, kubespray has added default values in version v2.22 to solve some of the problems. For more details, please refer to the [kubespray hardening documentation](https://github.com/kubernetes-sigs/kubespray/blob/master/docs/hardening.md).
+To address these security scan issues, kubespray has added default values in version v2.22 to solve some of the problems. For more details, refer to the [kubespray hardening documentation](https://github.com/kubernetes-sigs/kubespray/blob/master/docs/hardening.md).
 
 - Add parameters by modifying the kubean var-config configuration file:
 

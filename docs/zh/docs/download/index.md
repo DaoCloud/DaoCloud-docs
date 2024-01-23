@@ -9,10 +9,10 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
 此版本面向社区，欢迎免费体验。
 
-| 离线包                              | 版本    | 下载                                                     | 更新日期   |
-| ----------------------------------- | ------- | -------------------------------------------------------- | ---------- |
-| offline-community-v0.13.0-arm64.tar | v0.13.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.13.0.md) | 2023-12-07 |
-| offline-community-v0.13.0-amd64.tar | v0.13.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.13.0.md) | 2023-12-07 |
+| 离线包           | 版本    | 下载  | 更新日期   |
+| --------------- | ------- | ---- | -------- |
+| offline-community-v0.14.0-arm64.tar | v0.14.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.14.0.md) | 2024-01-09 |
+| offline-community-v0.14.0-amd64.tar | v0.14.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.14.0.md) | 2024-01-09 |
 
 [更多历史版本](./free/dce5-installer-history.md)
 
@@ -20,10 +20,10 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
 此版本适合搭建私有云、混合云、多云、微服务等场景，可以定制丰富多样的云原生模块。
 
-| 离线包                    | 版本    | 下载                                                         | 更新日期   |
-| ------------------------- | ------- | ------------------------------------------------------------ | ---------- |
-| offline-v0.13.0-arm64.tar | v0.13.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.13.0.md) | 2023-12-07 |
-| offline-v0.13.0-amd64.tar | v0.13.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.13.0.md) | 2023-12-07 |
+| 离线包 | 版本    | 下载      | 更新日期   |
+| ----- | ------- | -------- | --------- |
+| offline-v0.14.0-arm64.tar | v0.14.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.14.0.md) | 2024-01-09 |
+| offline-v0.14.0-amd64.tar | v0.14.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.14.0.md) | 2024-01-09 |
 
 [更多历史版本](./business/dce5-installer-history.md)
 
@@ -31,8 +31,8 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
 DCE 5.0 针对不同的应用场景提供了完善的 Addon，您可以按需下载使用。
 
-| 离线包                                          | 版本    | 下载                                       | 更新日期   |
-| ----------------------------------------------- | ------- | ------------------------------------------ | ---------- |
+| 离线包    | 版本    | 下载 | 更新日期   |
+| -------- | ------- | --- | --------- |
 | addon-offline-full-package-v0.12.0-arm64.tar.gz | v0.12.0 | [:arrow_right: 下载页](./addon/v0.12.0.md) | 2023-11-14 |
 | addon-offline-full-package-v0.12.0-amd64.tar.gz | v0.12.0 | [:arrow_right: 下载页](./addon/v0.12.0.md) | 2023-11-14 |
 
@@ -42,37 +42,38 @@ DCE 5.0 针对不同的应用场景提供了完善的 Addon，您可以按需下
 
 DCE 5.0 包含的众多子模块可以单独下载，按需对每个模块进行升级。
 
-| 模块     | 文件大小  | 下载                                           | 更新日期   |
-| -------- | --------- | ---------------------------------------------- | ---------- |
-| 容器管理 | 615.81 MB  | [:arrow_right: 下载页](./modules/ghippo.md)    | 2023-12-04 |
-| 集群巡检 | 205.11 MB | [:arrow_right: 下载页](./modules/kcollie.md)   | 2023-10-26 |
-| 应用备份 | 59.29 MB  | [:arrow_right: 下载页](./modules/kcoral.md)    | 2023-12-01 |
+| 模块     | 文件大小  | 下载     | 更新日期   |
+| -------- | ------- | ---------------------------------------------- | ---------- |
+| 应用工作台 | 340.77 MB | [:arrow_right: 下载页](./modules/amamba.md)   | 2024-01-03 |
+| 容器管理 | 616.29 MB  | [:arrow_right: 下载页](./modules/kpanda.md)   | 2023-12-04 |
+| 集群巡检 | 174.30 MB | [:arrow_right: 下载页](./modules/kcollie.md)   | 2024-01-02 |
+| 应用备份 | 59.40 MB  | [:arrow_right: 下载页](./modules/kcoral.md)    | 2024-01-02 |
 | 安全管理 | 167.29 MB | [:arrow_right: 下载页](./modules/dowl.md)      | 2023-11-26 |
-| 网络模块 | 55.47 MB  | [:arrow_right: 下载页](./modules/spidernet.md) | 2023-04-26 |
-| 存储模块 | 1.62 GB   | [:arrow_right: 下载页](./modules/hwameistor.md) | 2023-11-06 |
-| 多云编排 | 525.11 MB | [:arrow_right: 下载页](./modules/kairship.md)  | 2023-12-01 |
-| 镜像仓库 | 293.24 MB | [:arrow_right: 下载页](./modules/kangaroo.md)  | 2023-12-01 |
-| 可观测性 | 2.64 GB   | [:arrow_right: 下载页](./modules/insight.md)   | 2023-12-19 |
-| 微服务引擎 | 1.3 GB   | [:arrow_right: 下载页](./modules/skoala.md)   | 2023-12-01 |
-| 服务网格 | 905.15 MB  | [:arrow_right: 下载页](./modules/mspider.md)  | 2023-12-06 |
-| 云边协同 | 94.2 MB   | [:arrow_right: 下载页](./modules/kant.md)      | 2023-09-19 |
-| 全局管理 | 440 MB    | [:arrow_right: 下载页](./modules/ghippo.md)    | 2023-12-05 |
+| 网络模块 | 64.03 MB  | [:arrow_right: 下载页](./modules/spidernet.md) | 2023-12-26 |
+| 存储模块 | 1.62 GB   | [:arrow_right: 下载页](./modules/hwameistor.md)| 2023-11-06 |
+| 多云编排 | 524.58 MB | [:arrow_right: 下载页](./modules/kairship.md)  | 2024-01-02 |
+| 镜像仓库 | 295.53 MB | [:arrow_right: 下载页](./modules/kangaroo.md)  | 2023-12-29 |
+| 可观测性 | 2.70 GB   | [:arrow_right: 下载页](./modules/insight.md)   | 2023-12-19 |
+| 微服务引擎| 1.6 GB  | [:arrow_right: 下载页](./modules/skoala.md)    | 2024-01-18 |
+| 服务网格 | 906.44 MB | [:arrow_right: 下载页](./modules/mspider.md)   | 2024-01-12 |
+| 云边协同 | 100.37 MB | [:arrow_right: 下载页](./modules/kant.md)      | 2024-01-04 |
+| 全局管理 | 500.89 MB | [:arrow_right: 下载页](./modules/ghippo.md)    | 2024-01-19 |
 | 运营管理 | 95.90 MB  | [:arrow_right: 下载页](./modules/gmagpie.md)   | 2023-11-30 |
-| 虚拟机容器 | 36.90 MB | [:arrow_right: 下载页](./modules/virtnest.md) | 2023-10-20 |
+| 虚拟机   | 1.43 GB  | [:arrow_right: 下载页](./modules/virtnest.md)   | 2024-01-10 |
 
 DCE 5.0 还提供了各种精选中间件：
 
-| 中间件         | 文件大小  | 下载                                                        | 更新日期    |
+| 中间件         | 文件大小  | 下载     | 更新日期    |
 |---------------| -------- |------------------------------------------------------------|------------|
-| Elasticsearch |978.37 MB| [:arrow_right: 下载页](./modules/middleware/elasticsearch.md) |2023-12-10|
-| Kafka |964.64 MB| [:arrow_right: 下载页](./modules/middleware/kafka.md) |2023-12-10|
-| MinIO |256.16 MB| [:arrow_right: 下载页](./modules/middleware/minio.md) |2023-12-10|
-| MongoDB |144.09 MB| [:arrow_right: 下载页](./modules/middleware/mongodb.md) |2023-12-10|
-| MySQL |1.17 GB| [:arrow_right: 下载页](./modules/middleware/mysql.md) |2023-12-10|
-| PostgreSQL |1.38 GB| [:arrow_right: 下载页](./modules/middleware/postgresql.md) |2023-12-10|
-| RabbitMQ |165.18 MB| [:arrow_right: 下载页](./modules/middleware/rabbitmq.md) |2023-12-10|
-| Redis |534.33 MB| [:arrow_right: 下载页](./modules/middleware/redis.md) |2023-12-10|
-| RocketMQ |360.39 MB| [:arrow_right: 下载页](./modules/middleware/rocketmq.md) |2023-12-10|
+| Elasticsearch |978.47 MB| [:arrow_right: 下载页](./modules/middleware/elasticsearch.md) |2024-01-04|
+| Kafka |982.30 MB| [:arrow_right: 下载页](./modules/middleware/kafka.md) |2024-01-04|
+| MinIO |218.84 MB| [:arrow_right: 下载页](./modules/middleware/minio.md) |2024-01-04|
+| MongoDB |369.54 MB| [:arrow_right: 下载页](./modules/middleware/mongodb.md) |2024-01-04|
+| MySQL |1.54 GB| [:arrow_right: 下载页](./modules/middleware/mysql.md) |2024-01-04|
+| PostgreSQL |1.38 GB| [:arrow_right: 下载页](./modules/middleware/postgresql.md) |2024-01-04|
+| RabbitMQ |165.23 MB| [:arrow_right: 下载页](./modules/middleware/rabbitmq.md) |2024-01-04|
+| Redis |536.30 MB| [:arrow_right: 下载页](./modules/middleware/redis.md) |2024-01-04|
+| RocketMQ |622.81 MB| [:arrow_right: 下载页](./modules/middleware/rocketmq.md) |2024-01-04|
 
 !!! note
 

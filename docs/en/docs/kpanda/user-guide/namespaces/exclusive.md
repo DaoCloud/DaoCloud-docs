@@ -8,9 +8,9 @@ Namespace exclusive node refers to the exclusive use of CPU, memory and other re
 
 ## Preconditions:
 
-Using the namespace exclusive node feature requires the user to enable the `PodNodeSelector` and `PodTolerationRestriction` two feature admission controllers (Admission Controllers) on the cluster API server. For more information about admission controllers, please refer to [kubernetes Admission Controllers Reference](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/).
+Using the namespace exclusive node feature requires the user to enable the __PodNodeSelector__ and __PodTolerationRestriction__ two feature admission controllers (Admission Controllers) on the cluster API server. For more information about admission controllers, refer to [kubernetes Admission Controllers Reference](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/).
 
-1. Check if the API server of the current cluster has the `PodNodeSelector` and `PodTolerationRestriction` admission controllers enabled. You can go to any Master node in the current cluster to check whether these two features are enabled in the `kube-apiserver.yaml` file, or run the following command on the Master node for a quick check:
+1. Check if the API server of the current cluster has the __PodNodeSelector__ and __PodTolerationRestriction__ admission controllers enabled. You can go to any Master node in the current cluster to check whether these two features are enabled in the __kube-apiserver.yaml__ file, or run the following command on the Master node for a quick check:
 
     ```bash
     [root@g-master1 ~]# cat /etc/kubernetes/manifests/kube-apiserver.yaml | grep enable-admission-plugins
@@ -19,13 +19,13 @@ Using the namespace exclusive node feature requires the user to enable the `PodN
     - --enable-admission-plugins=NodeRestriction, PodNodeSelector, PodTolerationRestriction
     ```
 
-2. Enable the `PodNodeSelector` and `PodTolerationRestriction` features for clusters that do not have `PodNodeSelector` and `PodTolerationRestriction` admission controllers enabled.
+2. Enable the __PodNodeSelector__ and __PodTolerationRestriction__ features for clusters that do not have __PodNodeSelector__ and __PodTolerationRestriction__ admission controllers enabled.
 
 !!! note
 
-    If the result output in the previous step contains two parameters `PodNodeSelector` and `PodTolerationRestriction`, please skip this step and go directly to the user interface to set exclusive nodes for the namespace.
+    If the result output in the previous step contains two parameters __PodNodeSelector__ and __PodTolerationRestriction__ , please skip this step and go directly to the user interface to set exclusive nodes for the namespace.
 
-Go to any Master node in the current cluster to modify the `kube-apiserver.yaml` configuration file, or run the following command on the Master node to configure:
+Go to any Master node in the current cluster to modify the __kube-apiserver.yaml__ configuration file, or run the following command on the Master node to configure:
 
     ```bash
     [root@g-master1 ~]# vi /etc/kubernetes/manifests/kube-apiserver.yaml
@@ -50,30 +50,30 @@ Go to any Master node in the current cluster to modify the `kube-apiserver.yaml`
          …
     ```
 
-Find the `--enable-admission-plugins` parameter and add (comma-separated) `PodNodeSelector` and `PodTolerationRestriction` admission controllers. The reference is as follows:
+Find the __--enable-admission-plugins__ parameter and add (comma-separated) __PodNodeSelector__ and __PodTolerationRestriction__ admission controllers. The reference is as follows:
 
     ```bash
-    # Add `, PodNodeSelector, PodTolerationRestriction`
+    # Add __ , PodNodeSelector, PodTolerationRestriction__ 
     - --enable-admission-plugins=NodeRestriction, PodNodeSelector, PodTolerationRestriction
     ```
 
 ## Use the interface to set exclusive nodes for namespaces
 
-After you confirm that the `PodNodeSelector` and `PodTolerationRestriction` feature admission controllers on the cluster API server have been enabled, please refer to the following steps to use the UI management interface of DCE 5.0 to set exclusive nodes for the namespace.
+After you confirm that the __PodNodeSelector__ and __PodTolerationRestriction__ feature admission controllers on the cluster API server have been enabled, refer to the following steps to use the UI management interface of DCE 5.0 to set exclusive nodes for the namespace.
 
 1. Click the cluster name on the cluster list page, and then click Namespace in the left navigation bar.
 
     
 
-2. Click the namespace name, then click the `Exclusive Node` tab, and click `Add Node` on the bottom right.
+2. Click the namespace name, then click the __Exclusive Node__ tab, and click __Add Node__ on the bottom right.
 
     
 
-3. On the left side of the page, select which nodes are exclusive to this namespace, on the right side you can clear or delete a selected node, and finally click `OK` at the bottom.
+3. On the left side of the page, select which nodes are exclusive to this namespace, on the right side you can clear or delete a selected node, and finally click __OK__ at the bottom.
 
     
 
-4. You can view the existing exclusive nodes of this namespace in the list, and you can select `Cancel Exclusive` on the right side of the node.
+4. You can view the existing exclusive nodes of this namespace in the list, and you can select __Cancel Exclusive__ on the right side of the node.
 
     > After canceling exclusive access, Pods under other namespaces can also be scheduled on this node.
 

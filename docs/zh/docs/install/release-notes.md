@@ -2,6 +2,30 @@
 
 本页列出安装器的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+*[Amamba]: DCE 5.0 应用工作台的开发代号
+*[Ghippo]: DCE 5.0 全局管理的开发代号
+*[insight-agent]: DCE 5.0 实现可观测性 Insight 能力的必需组件，默认安装在 insight-system 命名空间
+*[Kangaroo]: DCE 5.0 镜像仓库的开发代号
+*[Kpanda]: DCE 5.0 容器管理的开发代号
+*[Skoala]: DCE 5.0 微服务引擎的开发代号
+
+## 2023-12-31
+
+### v0.14.0
+
+#### 优化
+
+- **优化** 安装器通过调用 kubean 上游功能实现镜像多架构合并
+- **优化** 仅在离线模式下启用 localArtifactSet 配置
+- **优化** kubean 组件 k8s 老版本兼容支持
+- **优化** 社区版移除火种节点检测
+- **优化** LocalArtifactSet 仅在离线场景下使用
+
+#### 修复
+
+- **修复** OpenEuler22.03 环境下，火种节点 Pod 重启问题
+- **修复** kubean 升级时，operator 组件版本未更新
+
 ## 2023-11-30
 
 ### v0.13.0
@@ -46,7 +70,7 @@
 - **优化** 优化在上传 addon 失败时的日志输出
 - **优化** 适配升级 GProduct 组件时的复用 helm 安装参数
 - **优化** 调整的 Global 集群每个节点 Pod 数量最大为 180
-- **优化** 优化迁移charts过程中日志过多的问题
+- **优化** 优化迁移 charts 过程中日志过多的问题
 
 #### 修复
 
@@ -122,7 +146,17 @@
 
 - 升级不支持通过 install-app 子命令，仅支持 create-cluster 子命令
 
-- Redhat 8.6 操作系统火种 kind 重启后 kubelet 服务无法启动，报错：`failed to initialize top level QOS containers: root container [kubelet kubepods] doesn't exist`，临时解决方案：执行命令`podman restart [containerid] --time`
+- Redhat 8.6 操作系统火种 kind 重启后 kubelet 服务无法启动，报错：
+
+    ```message
+    failed to initialize top level QOS containers: root container [kubelet kubepods] doesn't exist
+    ```
+
+    临时解决方案是执行以下命令：
+
+    ```sh
+    podman restart [containerid] --time
+    ```
 
 - 安装基于 TencentOS 3.1 的集群时，无法正确识别包管理器，如果需要 TencentOS 3.1 请使用安装器 0.9.0 版本
 
@@ -156,23 +190,27 @@
 
 #### 已知问题
 
-- 从 v0.8.x 升级到 v0.9.0 时需要执行如下命令进行检查：
+从 v0.8.x 升级到 v0.9.0 时需要执行如下命令进行检查：
 
-    - 检查 `istio-ingressgateway` 端口是 `80` 还是 `8080`
+- 检查 `istio-ingressgateway` 端口是 `80` 还是 `8080`
 
-        ```bash
-        kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].targetPort}'
-        ```
+    ```bash
+    kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].targetPort}'
+    ```
 
-    - 检查 `istio-ingressgateway` 端口是 `443` 还是 `8443`
+- 检查 `istio-ingressgateway` 端口是 `443` 还是 `8443`
 
-        ```bash
-        kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="https")].targetPort}'
-        ```
-  
-    输出结果为 `80` 或 `443` 时，升级命令需要增加 `infrastructure` 参数，示例：`./offline/dce5-installer cluster-create -c clusterConfig.yaml -m manifest.yaml --upgrade infrastructure,gproduct`
+    ```bash
+    kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="https")].targetPort}'
+    ```
 
-    输出结果非上述情况时，升级操作直接参考文档[升级 DCE 5.0 产品功能模块](upgrade.md)
+输出结果为 `80` 或 `443` 时，升级命令需要增加 `infrastructure` 参数，示例：
+
+```bash
+./offline/dce5-installer cluster-create -c clusterConfig.yaml -m manifest.yaml --upgrade infrastructure,gproduct
+```
+
+输出结果非上述情况时，升级操作直接参考文档[升级 DCE 5.0 产品功能模块](upgrade.md)。
 
 ## 2023-6-15
 
@@ -181,10 +219,10 @@
 #### 优化
 
 - **优化** ipavo 组件升级到 v0.9.3
-- **优化** amamba 组件升级到 v0.17.4
+- **优化** Amamba 组件升级到 v0.17.4
 - **优化** hwameistor-operator 组件升级到 v0.10.4
-- **优化** kangaroo 组件升级到 v0.8.2
-- **优化** insight 组件升级到 v0.17.3
+- **优化** Kangaroo 组件升级到 v0.8.2
+- **优化** Insight 组件升级到 v0.17.3
 
 #### 修复
 
@@ -233,7 +271,11 @@
 
     ```yaml
     yumRepos:
-      external: [ 'http://10.5.14.100:8081/centos/\$releasever/os/\$basearch','http://10.5.14.100:8081/centos-iso/\$releasever/os/\$basearch' ]
+      external:
+        [
+          'http://10.5.14.100:8081/centos/\$releasever/os/\$basearch',
+          'http://10.5.14.100:8081/centos-iso/\$releasever/os/\$basearch',
+        ]
     ```
 
 - 版本升级时，insight-agent 存在问题，请参考 [insight 升级注意事项](../insight/quickstart/install/upgrade-note.md)
@@ -279,14 +321,15 @@
 - 在线安装 global 集群会失败，需在 clusterConfig.yaml 的 `kubeanConfig` 块里进行如下配置：
 
     ```yaml
-    kubeanConfig: |- 
+    kubeanConfig: |-
       calico_crds_download_url: "https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/calico-crds-v3.25.1.tar.gz"
     ```
 
-    同时通过容器管理在线创建工作集群也有相同问题，需在集群创建页面高级配置的自定义参数中添加上述配置，键为 `calico_crds_download_url`，值为上述 calico_crds_download_url 的值
+    同时通过容器管理在线创建工作集群也有相同问题，需在集群创建页面高级配置的自定义参数中添加上述配置，键为
+    `calico_crds_download_url`，值为上述 calico_crds_download_url 的值
 
 - Kubean 存在低概率无法创建 spray-job 任务，通过手动删除对应的 clusteroperations CR 资源再重新执行安装命令
-- 使用外部 OS Repo 部署 DCE 5.0后，无法通过容器管理离线创建工作集群，通过手动修改 global 集群 kubean-system
+- 使用外部 OS Repo 部署 DCE 5.0 后，无法通过容器管理离线创建工作集群，通过手动修改 global 集群 kubean-system
   命名空间的 configmap kubean-localservice 来解决。在 `yumRepos` 下新增如下配置，需要在 external 内填写
   clusterConfig.yaml 中配置的外部 OS Repo 地址：
 
@@ -309,7 +352,11 @@
 #### 已知问题
 
 - 采用 7 节点模式安装时，es 专属节点未占成功，预计下个版本修复
-- 安装器向火种节点 regsitry 导入镜像时报错 `skopeo copy 500 Internal Error -- "NAME_UNKNOWN","message":"repository name not known to registry`
+- 安装器向火种节点 regsitry 导入镜像时报错
+
+    ```console
+    skopeo copy 500 Internal Error -- "NAME_UNKNOWN","message":"repository name not known to registry
+    ```
 
 ## 2023-4-06
 
@@ -341,7 +388,7 @@
 - **修复** 修复 MinIo 不可重入的问题
 - **修复** 修复删除中间件 Redis CR 时继续遗留的 redis pvc
 - **修复** 修复 Amamba 和 Amamba-jenkins 并发安装时先后顺序依赖的问题
-- **修复** 修复安装器命令行-j参数解析失败问题
+- **修复** 修复安装器命令行-j 参数解析失败问题
 
 ## 2023-2-28
 
@@ -409,7 +456,8 @@
 #### 已知问题
 
 - 默认安装模式下暂不支持未分区的 SSD 盘，如果要支持，需要手工干涉。
-- 纯离线环境，默认没有应用商店。请手动将火种节点的 chart-museum 接入到 global 集群，仓库地址：`http://{火种 IP}:8081`, 用户名 rootuser，密码 rootpass123
+- 纯离线环境，默认没有应用商店。请手动将火种节点的 chart-museum 接入到 global 集群，仓库地址：`http://{火种 IP}:8081`，
+  用户名 rootuser，密码 rootpass123
 - metallb 社区有已知问题，在主网卡有 dadfailed 的 IPV6 回环地址，metallb 无法工作，安装之前需要确保主网卡没有 dadfailed
 - insight-api-server 启动中如果机器太卡，在 Liveness 健康检查周期内，无法完成数据库的初始化（migrate）动作，导致需要手动介入
 - clusterConfig 配置文件中里的 iso 路径必须是绝对路径，不支持相对路径

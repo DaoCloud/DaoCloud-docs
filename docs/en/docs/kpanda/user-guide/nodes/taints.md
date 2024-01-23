@@ -7,21 +7,21 @@ For more details about taints, refer to the official Kubernetes documentation [T
 ## Precautions
 
 1. The current operating user should have [`NS Edit`](../permissions/permission-brief.md) role authorization or other higher permissions.
-2. After adding a taint to a node, only Pods that can tolerate the taint can be scheduled to the node. <!--For how to set tolerance for Pod, please refer to -->
+2. After adding a taint to a node, only Pods that can tolerate the taint can be scheduled to the node. <!--For how to set tolerance for Pod, refer to -->
 
 ## Steps
 
-1. Find the target cluster on the `Cluster List` page, and click the cluster name to enter the `Cluster Overview` page.
+1. Find the target cluster on the __Clusters__ page, and click the cluster name to enter the __Cluster Overview__ page.
 
     
 
-2. In the left navigation bar, click `Node Management`, find the node that needs to modify the taint, click the `ⵗ` operation icon on the right and click the `Modify taint` button.
+2. In the left navigation bar, click __Node Management__ , find the node that needs to modify the taint, click the __ⵗ__ operation icon on the right and click the __Modify taint__ button.
 
     
 
-3. Enter the key value information of the stain in the pop-up box, select the stain effect, and click `OK`.
+3. Enter the key value information of the stain in the pop-up box, select the stain effect, and click __OK__ .
 
-    Click `➕ Add` to add multiple stains to the node, and click `X` on the right side of the stain effect to delete the stain.
+    Click __➕ Add__ to add multiple stains to the node, and click __X__ on the right side of the stain effect to delete the stain.
 
     Currently supports three stain effects:
 

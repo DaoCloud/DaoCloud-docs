@@ -12,7 +12,7 @@ hide:
 
 ## 下载
 
-| 文件名                      | 版本    | 架构 | 文件大小 | 下载         | 更新日期   |
+| 文件名                      | 版本    | 架构 | 文件大小 | 下载         | 更新日期  |
 | -------------------------- | ------- | --- | ------- | ---------- | -------- |
 | offline-community-v0.12.0-amd64.tar | v0.12.0 | AMD64 | 6.03 GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.12.0-amd64.tar) | 2023-09-08 |
 | offline-community-v0.12.0-arm64.tar | v0.12.0 | ARM64 | 5.65 GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.12.0-arm64.tar) | 2023-09-08 |
@@ -78,8 +78,8 @@ DCE 5.0 社区版默认包含以下模块：
 
 | 模块     | 介绍            | 最新动态         |
 | -------- | -------------- | --------------- |
-| 全局管理 | 负责用户访问控制、权限、工作空间与层级、审计日志、个性化外观设置等      | [0.21.0](../../ghippo/intro/release-notes.md#0210) |
-| 容器管理 | 管理集群、节点、工作负载、Helm 应用、CRD、命名空间等 K8s 核心功能 | [0.22.0](../../kpanda/intro/release-notes.md#0220) |
+| 全局管理 | 负责用户访问控制、权限、工作空间与层级、审计日志、个性化外观设置等      | [0.21.0](../../ghippo/intro/release-notes.md#v0210) |
+| 容器管理 | 管理集群、节点、工作负载、Helm 应用、CRD、命名空间等 K8s 核心功能 | [0.22.0](../../kpanda/intro/release-notes.md#v0220) |
 | 可观测性 | 提供丰富的仪表盘、场景监控、数据查询、告警等图文信息              | [0.21.1](../../insight/intro/releasenote.md#insight-server-v0210)  |
 
 ## 更多

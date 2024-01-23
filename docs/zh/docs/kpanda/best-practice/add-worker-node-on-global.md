@@ -123,7 +123,7 @@
 
     * __集群名称__ ：接入集群的名称，默认为 __my-cluster__ 。
     * __insecure-skip-tls-verify: true__ ：用以跳过 tls 验证，需要手动添加。
-    * __server__ ：将默认的 __https://my-cluster-installer-control-plane:6443__ 参数中的 IP 替换为火种节点的 IP；
+    * __server__ ：将默认的 `https://my-cluster-installer-control-plane:6443` 参数中的 IP 替换为火种节点的 IP；
        __6443__ 替换为 6443 端口在节点映射的端口。可执行 __podman ps ｜ grep 6443__ 命令查看。
 
     ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/add-global-node01.png)

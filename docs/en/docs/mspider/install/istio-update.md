@@ -36,7 +36,7 @@ After the upgrade is completed, the mesh can be immediately deployed and run onl
 1. **Select Target Version**: Select the desired version to upgrade from the list. After the upgrade,
    rolling back to a lower version will not be possible, so choose carefully.
 
-    ![Target Version](../images/IstioUpdate02.png)
+    ![Target Version](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/IstioUpdate02.png)
 
     > It is not recommended by the official to perform cross-version upgrades for Istio.
     > It is suggested to upgrade in a step-by-step manner, for example, upgrading from `1.15.x` to `1.16.x`.
@@ -44,7 +44,7 @@ After the upgrade is completed, the mesh can be immediately deployed and run onl
 
 2. **Environment Detection**: The system will detect whether the versions of each cluster (k8s) under the mesh meet the upgrade requirements based on the selected target version. If they meet the requirements, the `Next` button will be activated; otherwise, the user needs to address any environment issues.
 
-    ![Environment Detection](../images/IstioUpdate03.png)
+    ![Environment Detection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/IstioUpdate03.png)
 
 	  - If the cluster (k8s) version is too low, you can upgrade the cluster (k8s) version first in the
       container management and then click the `Redetect` button.
@@ -58,11 +58,11 @@ After the upgrade is completed, the mesh can be immediately deployed and run onl
 
 	  - Istio Health Check: Checking the running status of Istio control plane components.
 
-	  ![Perform Upgrade](../images/IstioUpdate04.png)
+	  ![Perform Upgrade](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/IstioUpdate04.png)
 
 After the upgrade is completed, go back to the mesh list page, and you will see that the Istio version of the mesh has been changed.
 
-![Upgrade](../images/IstioUpdate05.png)
+![Upgrade](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/IstioUpdate05.png)
 
 !!! note
 

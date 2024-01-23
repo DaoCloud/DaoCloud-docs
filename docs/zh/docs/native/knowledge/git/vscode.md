@@ -19,14 +19,14 @@
 
 如果你要处理多语言文档，建议分屏操作，例如方便中英对照，底部终端直接敲命令。
 
-![split screen](../images/vscode01.png)
+![split screen](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/vscode01.png)
 
 ## 编辑 Repo
 
 git clone 某个 repo 后，建议通过 **File** -> **Open Folder...** 进入 repo 工作空间。
 随后就能在底部终端的 repo 根目录下运行各种 git 命令了。
 
-![workspace](../images/vscode02.png)
+![workspace](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/vscode02.png)
 
 ## 常用正则表达式
 
@@ -45,4 +45,4 @@ git clone 某个 repo 后，建议通过 **File** -> **Open Folder...** 进入 r
 **$1**
 ```
 
-![search](../images/vscode03.png) { width=400px}
+![search](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/vscode03.png)

@@ -38,7 +38,7 @@
 
     点击 `Files changed` 页签，点击右侧的 `...`，选择 `Edit file`，就能开始编辑修改文件了。
 
-    ![Edit file](../images/local05.png)
+    ![Edit file](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/local05.png)
 
     !!! caution
 

@@ -53,7 +53,7 @@ If you want a storage component to be installed in Layer 7 load balancing mode, 
 
 ## Install F5network in a cluster
 
-1. Prepare a DCE cluster, and login to the Web UI of the global cluster. Go to `Container Management` -> `Cluster List`, login to the cluster where you want to install F5network.
+1. Prepare a DCE cluster, and login to the Web UI of the global cluster. Go to `Container Management` -> `Clusters`, login to the cluster where you want to install F5network.
 
 2. In `Helm Apps` -> `Helm Charts`, find and click install `f5network`.
 

@@ -5,7 +5,7 @@
 
 关于每个组件的对应的功能如下：
 
-|  组件   | 功能模块  |  备注 ｜
+|  组件   | 功能  |  备注 ｜
 |  ----  | ----  | ---- |
 | argo-cd  | 持续部署 | 安装时默认安装 ｜
 | argo-rollouts  | 灰度发布 | 安装时默认不安装 |
@@ -20,19 +20,19 @@
 
 如果部署 DCE 5.0 时选择不启用，则按照下述步骤进行部署，从而使用应用工作台提供的持续部署能力。
 
-1. 在 DCE 5.0 产品模块，进入 __容器管理__ -> __集群列表__ ，进入 __kpanda-global-cluster__ 集群详情页面。
+1. 在 DCE 5.0 产品模块，进入 __容器管理__ -> __集群列表__，进入 __kpanda-global-cluster__ 集群详情页面。
 
-2. 在集群详情中左侧菜单栏的 __Helm 应用__ -> __Helm 模板__ -> 选择全部仓库 。搜索 __argo-cd__ ，点击进入详情页面并安装。
+2. 在集群详情中左侧菜单栏的 __Helm 应用__ -> __Helm 模板__ -> 选择全部仓库。搜索 __argo-cd__，点击进入详情页面并安装。
 
 3. 在安装界面，填写所需要的安装参数
 
-    ![argocd01](images/argocd01.png)
+    ![argocd01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/argocd01.png)
 
     参数说明：
 
-    - 名称：请填写 __argocd__ ，建议。
-    - 版本：默认选择为 __5.34.6__ ，addon 仓库目前仅有该版本。
-    - 命名空间：选择 __argocd__ ，建议。
+    - 名称：请填写 __argocd__，建议。
+    - 版本：默认选择为 __5.34.6__，addon 仓库目前仅有该版本。
+    - 命名空间：选择 __argocd__，建议。
 
     !!! note
 
@@ -41,9 +41,9 @@
 4. 点击右下角确定按钮即可完成安装。可以查看 __argocd__ 命名空间下的 argocd 相关的负载是否均处于 __运行中__ 状态判断。
 
 5. 确认上述的负载成功部署后，在当前集群切换到 __amamba-system__ 命名空间并点击左侧菜单栏的
-   __配置项与密钥__ -> __配置项__ ，搜索 __amamba-config__ ，点击 __编辑 YAML__ 。
+   __配置项与密钥__ -> __配置项__，搜索 __amamba-config__，点击 __编辑 YAML__。
 
-6. 在 __data__ -> __amamba-config.yaml__ 中添加如下参数:
+6. 在 __data__ -> __amamba-config.yaml__ 中添加如下参数：
 
     ```yaml
     generic:
@@ -52,13 +52,13 @@
         namespace: argocd  # (2)
     ```
 
-    1. argocd的服务地址，格式为：argocd-server的服务名.命名空间.svc.cluster.local:80
-    2. argocd安装的命名空间
+    1. argocd 的服务地址，格式为：argocd-server 的服务名。命名空间.svc.cluster.local:80
+    2. argocd 安装的命名空间
 
-    ![argocd02](images/argocd02.png)
+    ![argocd02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/argocd02.png)
 
-7. 修改完成后，在当前集群详情左侧菜单栏的 __工作负载__ -> __容器组__ ，分别搜索
-   __amamba-apiserver__ 、 __amamba-syncer__ ，并依次进行重启。
+7. 修改完成后，在当前集群详情左侧菜单栏的 __工作负载__ -> __容器组__，分别搜索
+   __amamba-apiserver__、__amamba-syncer__，并依次进行重启。
 
 8. 重启成功后，即可前往 __应用工作台__ 模块使用持续部署能力。
 
@@ -95,42 +95,42 @@ metadata:
 
 如果部署 DCE 5.0 时选择不启用，则按照下述步骤进行部署，从而使用应用工作台提供的 OAM 应用能力。
 
-1. 在 DCE 5.0 产品模块，进入 __容器管理__ -> __集群列表__ ，进入 __kpanda-global-cluster__ 集群详情页面。
+1. 在 DCE 5.0 产品模块，进入 __容器管理__ -> __集群列表__，进入 __kpanda-global-cluster__ 集群详情页面。
 
-2. 在集群详情中左侧菜单栏的 __helm应用__ -> __helm模板__ -> 选择 addon 仓库。搜索 __vela-core__ ，点击进入详情页面并安装。
+2. 在集群详情中左侧菜单栏的 __helm 应用__ -> __helm 模板__ -> 选择 addon 仓库。搜索 __vela-core__，点击进入详情页面并安装。
 
 3. 在安装界面，填写所需要的安装参数
 
-    ![vela01](images/vela01.png)
+    ![vela01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/vela01.png)
 
     参数说明：
 
     - 名称：请填写 __kubevela__
-    - 版本：默认选择为 __1.7.7__ ，addon 仓库目前仅有该版本
+    - 版本：默认选择为 __1.7.7__，addon 仓库目前仅有该版本
     - 命名空间：请选择 __vela-system__
 
     !!! note
 
         - 其余参数均使用默认值即可。
-        - 注意： __applicationRevisionLimit__ 这个参数表示 OAM 应用版本的数量限制，默认是 10，可根据选择是否更改。
+        - 注意：__applicationRevisionLimit__ 这个参数表示 OAM 应用版本的数量限制，默认是 10，可根据选择是否更改。
 
 4. 点击右下角确定按钮即可完成安装。可以查看 __vela-system__ 命名空间下的相关的负载是否均处于 __运行中__ 状态判断。
 
-5. 确认上述的负载成功部署后，在当前集群详情左侧菜单栏的 __配置项与密钥__ -> __配置项__ ，
-   搜索 __amamba-config__ ，点击 __编辑 YAML__ 。
+5. 确认上述的负载成功部署后，在当前集群详情左侧菜单栏的 __配置项与密钥__ -> __配置项__，
+   搜索 __amamba-config__，点击 __编辑 YAML__。
 
-6. 在 __data->amamba-config.yaml__ 中添加如下参数:
+6. 在 __data->amamba-config.yaml__ 中添加如下参数：
 
     ```yaml
     generic:
       kubevela:
-        namespace: kubevela-system # kubevela安装的命名空间
+        namespace: kubevela-system # kubevela 安装的命名空间
     ```
 
-    ![vela02](images/vela02.png)
+    ![vela02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/vela02.png)
 
-7. 修改完成后，在当前集群详情左侧菜单栏的 __工作负载__ -> __容器__ ，分别搜索 __amamba-apiserver__ 、
-   __amamba-syncer__ ，并依次进行重启。
+7. 修改完成后，在当前集群详情左侧菜单栏的 __工作负载__ -> __容器__，分别搜索 __amamba-apiserver__、
+   __amamba-syncer__，并依次进行重启。
 
 8. 重启成功后，即可前往 __应用工作台__ 模块使用 OAM 应用能力。
 
@@ -138,21 +138,21 @@ metadata:
 
 如果部署 DCE 5.0 时选择不启用，则按照下述步骤进行部署，从而使用应用工作台提供的灰度发布能力。
 
-1. 在 DCE 5.0 产品模块，进入 __容器管理__ -> __集群列表__ ，进入 __kpanda-global-cluster__
+1. 在 DCE 5.0 产品模块，进入 __容器管理__ -> __集群列表__，进入 __kpanda-global-cluster__
    集群详情页面（选择部署在应用进行灰度发布的集群中）。
 
-2. 在集群详情中左侧菜单栏的 __helm应用__ -> __helm模板__ -> 选择 addon 仓库。
-   搜索 __argo-rollouts__ ，点击进入详情页面并安装。
+2. 在集群详情中左侧菜单栏的 __helm 应用__ -> __helm 模板__ -> 选择 addon 仓库。
+   搜索 __argo-rollouts__，点击进入详情页面并安装。
 
 3. 在安装界面，填写所需要的安装参数
 
-    ![argorolllout01](images/argorollout01.png)
+    ![argorolllout01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/argorollout01.png)
 
     参数说明：
 
-    - 名称：请填写 __argorollout__ ，建议。
-    - 版本：默认选择为 __2.32.0__ ，addon 仓库目前仅有该版本。
-    - 命名空间：请选择 __argo-rollouts-system__ ，建议。
+    - 名称：请填写 __argorollout__，建议。
+    - 版本：默认选择为 __2.32.0__，addon 仓库目前仅有该版本。
+    - 命名空间：请选择 __argo-rollouts-system__，建议。
 
     !!! note
 

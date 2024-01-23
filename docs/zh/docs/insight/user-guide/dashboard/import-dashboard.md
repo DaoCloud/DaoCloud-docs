@@ -4,17 +4,17 @@
 
 ## 操作步骤
 
-1. 登录 DCE 5.0 平台，进入`容器管理`，在集群列表中选择 `kpanda-global-cluster`。
+1. 登录 DCE 5.0 平台，进入 __容器管理__ ，在集群列表中选择 __kpanda-global-cluster__ 。
 
-2. 选择左侧导航栏的`自定义资源`，在列表中查找 `grafanadashboards.integreatly.org` 文件，进入详情。
+2. 选择左侧导航栏的 __自定义资源__ ，在列表中查找 __grafanadashboards.integreatly.org__ 文件，进入详情。
 
     ![导入仪表盘](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/importboard00.png){ width="1000"}
 
-3. 点击 `Yaml 创建`，使用以下模板，在 `Json` 字段中替换仪表盘 JSON。
+3. 点击 __Yaml 创建__ ，使用以下模板，在 __Json__ 字段中替换仪表盘 JSON。
 
-    - `namespace`：填写目标命名空间；
-    - `name`：填写仪表盘的名称。
-    - `label`：必填，`operator.insight.io/managed-by: insight`。
+    - __namespace__ ：填写目标命名空间；
+    - __name__ ：填写仪表盘的名称。
+    - __label__ ：必填， __operator.insight.io/managed-by: insight__ 。
 
     ```yaml
     apiVersion: integreatly.org/v1alpha1
@@ -58,7 +58,7 @@
         }
     ```
 
-4. 点击`确认`后，稍等片刻即可在`仪表盘`中查看刚刚导入的仪表盘。
+4. 点击 __确认__ 后，稍等片刻即可在 __仪表盘__ 中查看刚刚导入的仪表盘。
 
 !!! info
 

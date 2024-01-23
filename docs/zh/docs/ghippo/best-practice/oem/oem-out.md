@@ -16,7 +16,7 @@ OEM OUT 是指将 DCE 5.0 作为子模块接入其他产品，出现在其他产
 1. 部署 DCE 5.0（假设部署完的访问地址为 `https://10.6.8.2:30343/`）
 
 1. 客户系统和 DCE 5.0 前可以放一个 Nginx 反代来实现同域访问，
-   `/` 路由到客户系统，`/dce5 (subpath)` 路由到 DCE 5.0 系统，`vi /etc/nginx/conf.d/default.conf` 示例如下：
+   __/__ 路由到客户系统， __/dce5 (subpath)__ 路由到 DCE 5.0 系统， __vi /etc/nginx/conf.d/default.conf__ 示例如下：
 
     ```nginx
     server {
@@ -49,22 +49,22 @@ OEM OUT 是指将 DCE 5.0 作为子模块接入其他产品，出现在其他产
     ```
 
 1. 假设 Nginx 入口地址为 10.6.165.50，按[自定义 DCE 5.0 反向代理服务器地址](../../install/reverse-proxy.md)把
-   DCE_PROXY 反代设为 `http://10.6.165.50/dce5`。确保能够通过 `http://10.6.165.50/dce5` 访问 DCE 5.0。
+   DCE_PROXY 反代设为 `http://10.6.165.50/dce5`。确保能够通过 `http://10.6.165.50/dce5`访问 DCE 5.0。
    客户系统也需要进行反代设置，需要根据不同平台的情况进行处理。
   
-    ![反向代理](images/agent.png)
+    ![反向代理](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/agent.png)
 
 ## 打通用户体系
 
 将客户系统与 DCE 5.0 平台通过 OIDC/OAUTH 等协议对接，使用户登录客户系统后进入 DCE 5.0 时无需再次登录。
-在拿到客户系统的 OIDC 信息后填入`全局管理` -> `用户与访问控制` -> `身份提供商`中。
+在拿到客户系统的 OIDC 信息后填入 __全局管理__ -> __用户与访问控制__ -> __身份提供商__ 中。
 
-![身份提供商](images/idp.png)
+![身份提供商](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/idp.png)
 
 对接完成后，DCE 5.0 登录页面将出现 OIDC（自定义）选项，首次从客户系统进入 DCE 5.0 时选择通过 OIDC 登录，
 后续将直接进入 DCE 5.0 无需再次选择。
 
-![登录页](images/login.png)
+![登录页](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/login.png)
 
 ## 对接导航栏
 
@@ -73,7 +73,7 @@ OEM OUT 是指将 DCE 5.0 作为子模块接入其他产品，出现在其他产
 
 ## 定制外观
 
-通过`全局管理` -> `平台设置` -> `外观定制`可以自定义平台背景颜色、logo、名称等，
+通过 __全局管理__ -> __平台设置__ -> __外观定制__ 可以自定义平台背景颜色、logo、名称等，
 具体操作请参照[外观定制](../../user-guide/platform-setting/appearance.md)。
 
 ## 打通权限体系（可选）

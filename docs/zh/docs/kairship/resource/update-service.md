@@ -4,7 +4,7 @@
 
 1. 进入某一个多云实例后，在左侧导航栏中，点击 __资源管理__ -> __多云服务__ ，点击 __⋮__ 可以表单更新服务。
 
-    ![服务列表](../images/update-service01.png)
+    ![服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/update-service01.png)
 
 2. 在 __编辑 YAML__ 弹窗中，修改 YAML 信息，点击 __确定__ 则更新了。
 

@@ -12,11 +12,11 @@ Currently, there are two ways to create data volume declarations: YAML and form.
 
 ### YAML creation
 
-1. Click the name of the target cluster in the cluster list, and then click `Container Storage`->`Data Volume Declaration (PVC)`->`YAML Creation` in the left navigation bar.
+1. Click the name of the target cluster in the cluster list, and then click __Container Storage__ -> __Data Volume Declaration (PVC)__ -> __Create with YAML__ in the left navigation bar.
 
     
 
-2. Enter or paste the prepared YAML file in the pop-up box, and click `OK` at the bottom of the pop-up box.
+2. Enter or paste the prepared YAML file in the pop-up box, and click __OK__ at the bottom of the pop-up box.
 
     > Supports importing YAML files from local or downloading and saving filled files to local.
 
@@ -24,7 +24,7 @@ Currently, there are two ways to create data volume declarations: YAML and form.
 
 ### Form Creation
 
-1. Click the name of the target cluster in the cluster list, and then click `Container Storage`->`Data Volume Declaration (PVC)`->`Create Data Volume Declaration (PVC)` in the left navigation bar.
+1. Click the name of the target cluster in the cluster list, and then click __Container Storage__ -> __Data Volume Declaration (PVC)__ -> __Create Data Volume Declaration (PVC)__ in the left navigation bar.
 
     
 
@@ -47,7 +47,7 @@ Currently, there are two ways to create data volume declarations: YAML and form.
 
 ## View data volume statement
 
-Click the name of the target cluster in the cluster list, and then click `Container Storage`->`Data Volume Declaration (PVC)` in the left navigation bar.
+Click the name of the target cluster in the cluster list, and then click __Container Storage__ -> __Data Volume Declaration (PVC)__ in the left navigation bar.
 
 - On this page, you can view all data volume declarations in the current cluster, as well as information such as the status, capacity, and namespace of each data volume declaration.
 
@@ -61,15 +61,15 @@ Click the name of the target cluster in the cluster list, and then click `Contai
 
 ## Expansion data volume statement
 
-1. In the left navigation bar, click `Container Storage`->`Data Volume Declaration (PVC)`, and find the data volume declaration whose capacity you want to adjust.
+1. In the left navigation bar, click __Container Storage__ -> __Data Volume Declaration (PVC)__ , and find the data volume declaration whose capacity you want to adjust.
 
     
 
-2. Click the name of the data volume declaration, and then click the operation button in the upper right corner of the page and select `Expansion`.
+2. Click the name of the data volume declaration, and then click the operation button in the upper right corner of the page and select __Expansion__ .
 
     
 
-3. Enter the target capacity and click `OK`.
+3. Enter the target capacity and click __OK__ .
 
     
 
@@ -79,13 +79,13 @@ By cloning a data volume claim, a new data volume claim can be recreated based o
 
 1. Enter the clone page
 
-    - On the data volume declaration list page, find the data volume declaration that needs to be cloned, and select `Clone` under the operation bar on the right.
+    - On the data volume declaration list page, find the data volume declaration that needs to be cloned, and select __Clone__ under the operation bar on the right.
 
-        > You can also click the name of the data volume declaration, click the operation button in the upper right corner of the details page and select `Clone`.
+        > You can also click the name of the data volume declaration, click the operation button in the upper right corner of the details page and select __Clone__ .
 
         
 
-2. Use the original configuration directly, or modify it as needed, and click `OK` at the bottom of the page.
+2. Use the original configuration directly, or modify it as needed, and click __OK__ at the bottom of the page.
 
     
 
@@ -97,11 +97,11 @@ There are two ways to update data volume claims. Support for updating data volum
 
     Only aliases, labels, and annotations for data volume claims are updated.
 
-- On the data volume list page, find the data volume declaration that needs to be updated, select `Update` in the operation bar on the right to update it through the form, and select `Edit YAML` to update it through YAML.
+- On the data volume list page, find the data volume declaration that needs to be updated, select __Update__ in the operation bar on the right to update it through the form, and select __Edit YAML__ to update it through YAML.
 
     
 
-- Click the name of the data volume declaration, enter the details page of the data volume declaration, select `Update` in the upper right corner of the page to update through the form, select `Edit YAML` to update through YAML.
+- Click the name of the data volume declaration, enter the details page of the data volume declaration, select __Update__ in the upper right corner of the page to update through the form, select __Edit YAML__ to update through YAML.
 
     
 
@@ -109,7 +109,7 @@ There are two ways to update data volume claims. Support for updating data volum
 
 On the data volume declaration list page, find the data to be deleted, and select Delete in the operation column on the right.
 
-> You can also click the name of the data volume statement, click the operation button in the upper right corner of the details page and select `Delete`.
+> You can also click the name of the data volume statement, click the operation button in the upper right corner of the details page and select __Delete__ .
 
 
 

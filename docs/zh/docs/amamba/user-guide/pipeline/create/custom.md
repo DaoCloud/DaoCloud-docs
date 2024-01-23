@@ -18,11 +18,11 @@ hide:
 
 1. 在流水线列表页点击 __创建流水线__ 。
 
-    ![createpipelinbutton](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/createpipelinbutton.png)
+    ![创建流水线](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/createpipelinbutton.png)
 
 2. 在弹出的对话框中，选择 __自定义创建流水线__ ，点击 __确定__ 。
 
-    ![selecttype](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/custom01.png)
+    ![自定义创建流水线](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/custom01.png)
 
 3. 参考下列说明填写 __基本信息__ 、 __构建设置__ 、 __构建参数__ 。
 
@@ -37,19 +37,19 @@ hide:
     - 构建参数：在开始运行流水线时传入一个或多个构建参数。默认提供五种参数类型： __布尔值__ 、 __字符串__ 、 __多行文本__ 、 __选项__ 、 __密码__ 、 __上传文件__ 。
     - 添加构建参数后，运行流水线时需要为每个构建参数输入对应的取值。
 
-        ![构建设置](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/custom02.png)
+    ![构建设置](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/custom02.png)
 
 4. 参考下列说明填写触发器参数。
 
     - 代码源触发：开启后，系统会根据 __定时仓库扫描计划__ 定期扫描仓库代码中用于构建流水线的特定分支，如果有更新内容，则重新运行流水线。
-    - 定时仓库扫描计划：输入 CRON 表达式定义扫描仓库的时间周期。__输入表达式后下方会提示当前表达式的含义__。有关详细的表达式语法规则，可参考 [Cron 时间表语法](https://kubernetes.io/zh-cn/docs/concepts/workloads/controllers/cron-jobs/#cron-schedule-syntax)。
+    - 定时扫描仓库：输入 CRON 表达式定义扫描仓库的时间周期。__输入表达式后下方会提示当前表达式的含义__ 。有关详细的表达式语法规则，可参考 [Cron 时间表语法](https://kubernetes.io/zh-cn/docs/concepts/workloads/controllers/cron-jobs/#cron-schedule-syntax)。
     - 定时触发：定时触发构建流水线，无论代码仓库是否有更新，都会在规定时间重新运行流水线。
 
-        ![pipeline01](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/custom03.png)
+    ![配置触发器](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/custom03.png)
 
 5. 完成创建。确认所有参数输入完成后，点击 __确定__ 按钮，完成自定义流水线创建，自动返回流水线列表。点击列表右侧的 __︙__ 可以执行各项操作。
 
-    ![pipeline05](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipeline05.png)
+    ![完成创建](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipeline05.png)
 
 !!! warning
 

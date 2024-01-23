@@ -27,10 +27,10 @@
 
 1. 进入`容器管理` -> `Helm 应用` -> `Helm 仓库`，搜索 addon，获取内置仓库地址和用户名/密码（系统内置仓库默认用户名/密码为 rootuser/rootpass123）。
 
-    ![helm list](./images/helmlist.png)
-
-    ![helm detail](./images/helmdetail.png)
-
+  ![helmlist](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/helmlist.png)
+  
+  ![helmdetail](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/helmdetail.png)
+  
 1. 同步 Helm Chart 到容器管理内置仓库 Addon
 
     * 编写如下配置文件，可以根据具体配置修改，并保存为 `sync-dao-2048.yaml`。
@@ -90,13 +90,13 @@
 1. 待上一步执行完成后，进入`容器管理` -> `Helm 应用` -> `Helm 仓库`，找到对应 Addon，
    在操作栏点击`同步仓库`，回到 Helm 模板就可以看到上传的 Helm 应用
 
-    ![helm 同步](./images/helmsyn.png)
+    ![helm同步](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/helmsyn.png)
 
-    ![详情2048](./images/helm2048.png)
+    ![详情2048](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/helm2048.png)
 
 1. 后续可正常进行安装、升级、卸载
 
-    ![安装升级](./images/Installation-and-upgrade.png)
+    ![安装升级](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/Installation-and-upgrade.png)
 
 ## 在线环境
 

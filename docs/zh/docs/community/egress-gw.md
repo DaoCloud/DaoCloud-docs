@@ -1,6 +1,6 @@
 # egressgateway
 
-![background](./images/egress01.png)
+![background](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/images/egress01.png)
 
 从 2021 年开始，我们收到了以下反馈。
 
@@ -43,7 +43,7 @@
 
 ## 开发
 
-![develop](./images/egress02.png)
+![develop](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/images/egress02.png)
 
 请参阅[开发指南](https://github.com/spidernet-io/egressgateway/blob/main/docs/develop/dev.md).
 

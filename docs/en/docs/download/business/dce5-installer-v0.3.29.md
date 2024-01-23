@@ -1,4 +1,5 @@
 ---
+MTPE: windsonsea
 date: 2022-11-25
 hide:
   - navigation
@@ -13,8 +14,8 @@ This page allows you to download the offline package and checksum file of DCE 5.
 
 ## Download
 
-| Filename | Version | Architecture | File Size | Downloads | Update Date |
-| ------------------- | ------- | -------- | ------------ ----------------------------------------- | ---------- | ------------------- |
+| Filename | Version | Architecture | File Size | Download | Update Date |
+| -------- | ------- | ------------ | --------- | -------- | ----------- |
 | offline-centos7-v0.3.29-amd64.tar | v0.3.29 | AMD64 | 22.9 GB | [:arrow_down: Download](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-v0.3.29-amd64.tar) | 2022-12-16 |
 | offline-kylin-v10sp2-v0.3.29-arm64.tar | v0.3.29 | ARM64 | 19.9 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-kylin-v10sp2-v0.3.29-arm64.tar) | 2022-12-16 |
 
@@ -77,8 +78,8 @@ After the offline package has been successfully validated,
 
 The DCE 5.0 Enterprise includes the following modules, which are plug-and-play to meet various use cases:
 
-| Modules | Introduction | What's New |
-| -------------------- | ---------------------------- ----------------------------------------------- | ----- -------------------------------------------------- ------ |
+| Modules | Description | Versions |
+| ------- | ----------- | -------- |
 | Global Management | Responsible for user access control, permissions, workspaces and folders, audit logs, personalized appearance settings, etc. | [v0.12](../../ghippo/intro/release-notes.md#v012) |
 | Container Management | Manage K8s core features such as clusters, nodes, workloads, Helm applications, CRDs, and namespaces | [v0.13](../../kpanda/intro/release-notes.md#v013) |
 | Insight | Provide rich graphic information such as dashboards, scene monitoring, data query, and alerts | [v0.12](../../insight/intro/releasenote.md#v012) |

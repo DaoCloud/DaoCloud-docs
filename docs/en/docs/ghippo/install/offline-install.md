@@ -106,7 +106,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
 
 !!! note
 
-    When upgrading from v0.11.x (or lower) to v0.12.0 (or higher), you need to change all keycloak keys in `bak.yaml` to keycloakx.
+    When upgrading from v0.11.x (or lower) to v0.12.0 (or higher), you need to change all keycloak keys in __bak.yaml__ to keycloakx.
 
     Example modification of this key:
 
@@ -215,17 +215,17 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
         ...
         ```
 
-    1. Back up the `--set` parameter.
+    1. Back up the __--set__ parameter.
 
-        Before upgrading the global management version, it is recommended that you run the following command to back up the `--set` parameter of the old version.
+        Before upgrading the global management version, it is recommended that you run the following command to back up the __--set__ parameter of the old version.
 
         ```shell
         helm get values ​​ghippo -n ghippo-system -o yaml > bak.yaml
         ```
 
-    1. Execute `helm upgrade`.
+    1. Execute __helm upgrade__ .
 
-        Before upgrading, it is recommended that you override the `global.imageRegistry` field in bak.yaml to the address of the currently used container registry.
+        Before upgrading, it is recommended that you override the __global.imageRegistry__ field in bak.yaml to the address of the currently used container registry.
 
         ```shell
         export imageRegistry={your image registry}
@@ -241,9 +241,9 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
 
 === "upgrade via chart package"
 
-    1. Back up the `--set` parameter.
+    1. Back up the __--set__ parameter.
 
-        Before upgrading the global management version, it is recommended that you run the following command to back up the `--set` parameter of the old version.
+        Before upgrading the global management version, it is recommended that you run the following command to back up the __--set__ parameter of the old version.
 
         ```shell
         helm get values ​​ghippo -n ghippo-system -o yaml > bak.yaml
@@ -255,9 +255,9 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
         kubectl apply -f ./crds
         ```
 
-    1. Execute `helm upgrade`.
+    1. Execute __helm upgrade__ .
 
-        Before upgrading, it is recommended that you overwrite `global.imageRegistry` in bak.yaml to the address of the current container registry.
+        Before upgrading, it is recommended that you overwrite __global.imageRegistry__ in bak.yaml to the address of the current container registry.
 
         ```shell
         export imageRegistry={your-container-registry}

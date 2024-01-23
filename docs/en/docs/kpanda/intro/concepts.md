@@ -24,15 +24,15 @@ Workloads refer to applications running on Kubernetes. Whether the workload is a
 
 There are several workload resources built into Kubernetes:
 
-- **Stateless service** (Deployment): pods are completely independent and have the same features, with features such as flexible expansion and rolling upgrade. It is often used to deploy stateless applications to achieve rapid scaling. Compared with stateful services, the number of instances can be flexibly scaled. For example, Nginx, WordPress. Please refer to [create deployment](../user-guide/workloads/create-deployment.md).
+- **Stateless service** (Deployment): pods are completely independent and have the same features, with features such as flexible expansion and rolling upgrade. It is often used to deploy stateless applications to achieve rapid scaling. Compared with stateful services, the number of instances can be flexibly scaled. For example, Nginx, WordPress. Refer to [create deployment](../user-guide/workloads/create-deployment.md).
 
-- **Stateful service** (StatefulSet): pods are not completely independent. They have stable persistent storage and network identification, as well as orderly deployment, scaling and deletion. Because the container can be migrated between different hosts, the data is not saved on the host. By mounting the storage volume on the container, the data persistence of stateful set services, such as mysql-HA and etcd, is realized. Please refer to [create statefulset](../user-guide/workloads/create-statefulset.md).
+- **Stateful service** (StatefulSet): pods are not completely independent. They have stable persistent storage and network identification, as well as orderly deployment, scaling and deletion. Because the container can be migrated between different hosts, the data is not saved on the host. By mounting the storage volume on the container, the data persistence of stateful set services, such as mysql-HA and etcd, is realized. Refer to [create statefulset](../user-guide/workloads/create-statefulset.md).
 
-- **Daemon service** (DaemonSet): Complete independence between pods, guaranteeing that background tasks continue to be performed in the assigned nodes without user intervention. The daemon (DaemonSet) service creates a Pod on each node, and you can select a specific node to deploy. Examples of daemons include [Fluentd](https://www.fluentd.org/) log collectors and monitoring services. Please refer to [create daemonset](../user-guide/workloads/create-daemonset.md).
+- **Daemon service** (DaemonSet): Complete independence between pods, guaranteeing that background tasks continue to be performed in the assigned nodes without user intervention. The daemon (DaemonSet) service creates a Pod on each node, and you can select a specific node to deploy. Examples of daemons include [Fluentd](https://www.fluentd.org/) log collectors and monitoring services. Refer to [create daemonset](../user-guide/workloads/create-daemonset.md).
 
-- **Common tasks** (Job): a normal task is a short task that runs once and can be executed after deployment. The usage scenario is to perform a common task to upload the image to the container registry before creating the workload. Please refer to [create job](../user-guide/workloads/create-job.md).
+- **Common tasks** (Job): a normal task is a short task that runs once and can be executed after deployment. The usage scenario is to perform a common task to upload the image to the container registry before creating the workload. Refer to [create job](../user-guide/workloads/create-job.md).
 
-- **Timed task** (CronJob): a timed task is a short task that runs for a specified period of time. The usage scenario is to synchronize the time of all running nodes at a fixed time point. Please refer to [create CronJob](../user-guide/workloads/create-cronjob.md).
+- **Timed task** (CronJob): a timed task is a short task that runs for a specified period of time. The usage scenario is to synchronize the time of all running nodes at a fixed time point. Refer to [create CronJob](../user-guide/workloads/create-cronjob.md).
 
 A service consists of one or more pods. A pod consists of one or more containers, each corresponding to a container image. For stateless workloads, the pods are all identical.
 
@@ -63,7 +63,7 @@ Kubernetes allows you to specify a desired type of Service with specific values 
 
 - ClusterIP: Intracluster access. It exposes the service through the internal IP of the cluster. This value allows the service to be accessed only within the cluster. This is also the default ServiceType.
 
-- Node Port: Node access. It exposes services through an IP and static port (NodePort) on each Node. The NodePort service routes to the ClusterIP service, which is automatically created. A NodePort service can be accessed from outside the cluster through a request `<NodeIP>:<NodePort>`.
+- Node Port: Node access. It exposes services through an IP and static port (NodePort) on each Node. The NodePort service routes to the ClusterIP service, which is automatically created. A NodePort service can be accessed from outside the cluster through a request __<NodeIP>:<NodePort>__ .
 
 - LoadBalancer: Load balancing. It exposes the service externally using the load balancer of the cloud provider. An external load balancer can route to the NodePort service and the Cluster IP service.
 
@@ -115,7 +115,7 @@ Horizontal Pod Autoscaling (HPA for short) is a feature in Kubernetes that enabl
 
 Affinities and anti-affinities extend the types of constraints you can define. Some benefits of using affinity and anti-affinity are:
 
-- The expression ability of affinity and anti-affinity is stronger. Only nodes that have all the specified labels can be `nodeSelector` selected. Affinity and anti-affinity give you more control over the selection logic.
+- The expression ability of affinity and anti-affinity is stronger. Only nodes that have all the specified labels can be __nodeSelector__ selected. Affinity and anti-affinity give you more control over the selection logic.
 
 - You can indicate that a rule is a “soft demand” or a “preference” so that the scheduler can still schedule the Pod if it cannot find a matching node.
 

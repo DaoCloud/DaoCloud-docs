@@ -10,7 +10,7 @@ annatation:
   insight.opentelemetry.io/metric-port: "9464"   # 采集指标的端口
 ```
 
-例如为 `my-deployment-app` 添加注解： 
+例如为 __my-deployment-app__ 添加注解： 
 
 ```yaml
 apiVersion: apps/v1
@@ -85,4 +85,4 @@ spec:
               memory: 400Mi
 ```
 
-以上示例中，Insight 会通过 `:8080//actuator/prometheus` 抓取通过 *Spring Boot Actuator* 暴露出来的 Prometheus 指标。
+以上示例中，Insight 会通过 __:8080//actuator/prometheus__ 抓取通过 *Spring Boot Actuator* 暴露出来的 Prometheus 指标。

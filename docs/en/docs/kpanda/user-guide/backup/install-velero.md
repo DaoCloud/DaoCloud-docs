@@ -1,75 +1,81 @@
-# Install the velero plugin
+---
+MTPE: FanLin
+Date: 2024-01-18
+---
+
+# Install the Velero Plugin
 
 velero is an open source tool for backing up and restoring Kubernetes cluster resources. It can back up resources in a Kubernetes cluster to cloud storage services, local storage, or other locations, and restore those resources to the same or a different cluster when needed.
 
-This section describes how to install the velero plugin.
+This section introduces how to deploy the Velero plugin in DCE 5.0 using the __Helm Apps__.
 
 ## Prerequisites
 
-Before installing the `velero` plugin, the following prerequisites need to be met:
+Before installing the __velero__ plugin, the following prerequisites need to be met:
 
 - The container management module [connected to the Kubernetes cluster](../clusters/integrate-cluster.md) or [created the Kubernetes cluster](../clusters/create-cluster.md), and can access the UI interface of the cluster.
 
-- Completed a `velero` [namespace creation](../namespaces/createns.md).
+- Completed a __velero__ [namespace creation](../namespaces/createns.md).
 
-- The current operating user should have [`NS Edit`](../permissions/permission-brief.md#ns-edit) or higher permissions, for details, please refer to [Namespace Authorization](../namespaces/createns.md).
+- The current operating user should have [`NS Edit`](../permissions/permission-brief.md#ns-edit) or higher permissions, for details, refer to [Namespace Authorization](../namespaces/createns.md).
 
 ## Steps
 
-Please perform the following steps to install the `velero` plugin for your cluster.
+Please perform the following steps to install the __velero__ plugin for your cluster.
 
-1. On the cluster list page, find the target cluster that needs to install the `velero` plugin, click the name of the cluster, click `Helm Apps` -> `Helm chart` in the left navigation bar, and enter `velero` in the search bar to search .
+1. On the cluster list page, find the target cluster that needs to install the __velero__ plugin, click the name of the cluster, click __Helm Apps__ -> __Helm chart__ in the left navigation bar, and enter __velero__ in the search bar to search .
 
-     
+    ![Find velero](../../images/backup1.png)
 
-2. Read the introduction of the `velero` plugin, select the version and click the `Install` button. This page will take `3.0.0` version as an example to install, and it is recommended that you install `3.0.0` and later versions.
+2. Read the introduction of the __velero__ plugin, select the version and click the __Install__ button. This page will take __5.2.0__ version as an example to install, and it is recommended that you install __5.2.0__ and later versions.
 
-     
+    ![Install velero](../../images/backup2.png)
 
-3. Configure basic parameters on the installation configuration interface.
-
-     
+3. Configure __basic info__ .
 
      - Name: Enter the plugin name, please note that the name can be up to 63 characters, can only contain lowercase letters, numbers and separators ("-"), and must start and end with lowercase letters or numbers, such as metrics-server-01.
-     - Namespace: Select the namespace for plugin installation, it must be `velero` namespace.
-     - Version: The version of the plugin, here we take `3.0.0` version as an example.
-     - Ready Wait: When enabled, it will wait for all associated resources under the application to be ready before marking the application installation as successful.
-     - Failed to delete: After it is enabled, the synchronization will be enabled by default and ready to wait. If the installation fails, the installation-related resources will be removed.
-     - Verbose log: Turn on the verbose output of the installation process log.
+     - Namespace: Select the namespace for plugin installation, it must be __velero__ namespace.
+     - Version: The version of the plugin, here we take __5.2.0__ version as an example.
+     - Wait: When enabled, it will wait for all associated resources under the application to be ready before marking the application installation as successful.
+     - Deletion Failed: After it is enabled, the synchronization will be enabled by default and ready to wait. If the installation fails, the installation-related resources will be removed.
+     - Detailed Logs: Turn on the verbose output of the installation process log.
+
+        ![Basic Info](../../images/backup3.png)
 
      !!! note
 
-         After enabling `Ready Wait` and/or `Failed Delete`, it takes a long time for the app to be marked as `Running`.
+         After enabling __Ready Wait__ and/or __Failed Delete__ , it takes a long time for the app to be marked as __Running__ .
 
-4. Installation parameter configuration
+4. Configure Velero chart __Parameter Settings__ according to the following instructions
 
-     - Required parameters
+    - __S3 Credentials__: Configure the authentication information of object storage (minio).
 
-         - `S3url`: object storage access address (currently only Minio has been verified for compatibility).
-         - `Use existing secret`: The name of the secret used to record the username and password of the object storage.
-         After enabling `Ready Wait` and/or `Failed Delete`, it takes a long time for the app to be marked as `Running`.
-         - `Features`: Enabled kubernetes features plugin modules.
+        - __Use secret__: Keep the default configuration __true__.
+        - __Secret name__: Keep the default configuration __velero-s3-credential__.
+        - __SecretContents.aws_access_key_id = <modifiy>__: Configure the username for accessing object storage, replace __<modifiy>__ with the actual parameter.
+        - __SecretContents.aws_secret_access_key = <modifiy>__: Configure the password for accessing object storage, replace __<modifiy>__ with the actual parameter.
 
-     - optional parameter
+    !!! note " __Use existing secret__ parameter example is as follows:"
 
-         - `Backupstoragelocation`: location of velero backup data storage.
-         - `Name`: The name of the BackupStorageLocation object that has been created.
-         - `Bucket`: Bucket name for saving backup data.
-         - `Accessmode`: velero’s access mode to data, you can choose `ReadWrite`: allow velero to read and write backup data; `ReadOnly`: allow velero to read backup data, but cannot modify backup data; `WriteOnly`: only allow velero to write Backup data, backup data cannot be read.
-         - `Region`: The geographical region of the cloud storage. The `us-east-1` parameter is used by default, provided by the system administrator
-         - `S3forcepathstyle`: Turn on or off to use S3 forcepath style access, that is, use the bucket name as part of the URL path.
-         - `Use secret`: Turn on or off to use secret to access object storage.
+        ```yaml
+        [default]
+        aws_access_key_id = minio
+        aws_secret_access_key = minio123
+        ```
 
-     
+    - __BackupStorageLocation__: The location where Velero backs up data.
+        - __S3 bucket__: The name of the storage bucket used to save backup data (must be a real storage bucket that already exists in minio).
+        - __Is default BackupStorage__: Keep the default configuration __true__.
+        - __S3 access mode__: The access mode of Velero to data, which can be selected
+        - __ReadWrite__: Allow Velero to read and write backup data;
+        - __ReadOnly__: Allow Velero to read backup data, but cannot modify backup data;
+        - __WriteOnly__: Only allow Velero to write backup data, and cannot read backup data.
 
-     !!! note "The main content of the secret in the `Use existing secret` parameter includes key and vaule. The key is a fixed `cloud` parameter, and the vaule value is as follows:"
+    - __S3 Configs__: Detailed configuration of S3 storage (minio).
+        - __S3 region__: The geographical region of cloud storage. The default is to use the __us-east-1__ parameter, which is provided by the system administrator.
+        - __S3 force path style__: Keep the default configuration __true__.
+        - __S3 server URL__: The console access address of object storage (minio). Minio generally provides two services, UI access and console access. Please use the console access address here.
 
-         ```yaml
-         [default]
-         aws_access_key_id = minio
-         aws_secret_access_key = minio123
-         ```
+        ![Parameter Settings](../../images/backup4.png)
 
-     
-
-5. Click the `OK` button to complete the installation of the `velero` plug-in, and then the system will automatically jump to the `Helm Apps` list page. After a few minutes, refresh the page to see the application just installed.
+5. Click the __OK__ button to complete the installation of the __Velero__ plugin. The system will automatically jump to the __Helm Apps__ list page. After waiting for a few minutes, refresh the page, and you can see the application just installed.

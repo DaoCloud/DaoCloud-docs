@@ -203,14 +203,14 @@
     spec:
       ..............
       externalMiddlewares:
-        DATABASE:
+        database:
           kpanda:
             - dbDriverName: "kingbase"
-              # Please refer https://gorm.io/docs/connecting_to_the_DATABASE.html
+              # Please refer https://gorm.io/docs/connecting_to_the_database.html
               dataSourceName: "host=172.30.41.2 user=kpanda password=password dbname=kpanda port=54321"
               # readwrite(default) or readonly
               accessType: readwrite
-              # The maximum number of open connections to the DATABASE.
+              # The maximum number of open connections to the database.
               #maxOpenConnections: 100
               # The maximum number of connections in the idle connection pool.
               #maxIdleConnections: 10
@@ -314,14 +314,14 @@
     spec:
       ..............
       externalMiddlewares:
-        DATABASE:
+        database:
           kpanda:
             - dbDriverName: "postgres"
-              # Please refer https://gorm.io/docs/connecting_to_the_DATABASE.html
+              # Please refer https://gorm.io/docs/connecting_to_the_database.html
               dataSourceName: "host=172.30.41.2 user=kpanda password=password dbname=kpanda port=5432"
               # readwrite(default) or readonly
               accessType: readwrite
-              # The maximum number of open connections to the DATABASE.
+              # The maximum number of open connections to the database.
               #maxOpenConnections: 100
               # The maximum number of connections in the idle connection pool.
               #maxIdleConnections: 10
@@ -384,13 +384,9 @@
     !!! note
 
         - 支持 Redis Standalone、Redis Sentinel、Redis Cluster 三种模式
-
         - Standalone URL 格式为：`redis://[[user]:password@]host[:port][/db-number][?option=value]`
-
         - Sentinel URL 格式为：`redis+sentinel://[[user]:password@]host1[:port1][,host2[:port2]]/master-name[/db-number][?option=value]`
-
         - Cluster URL 格式为：`redis://[[user]:password@]host1[:port1]?addr=host2[:port2][&addr=host3:[port3][&option=value]] 或 rediss://[[user]:password@]host1[:port1]?addr=host2[:port2][&addr=host3:[port3][&option=value]]`
-
         - 目前仅有容器管理产品模块使用到了 Redis 组件
 
 2. 完成上述配置后，可以继续执行[部署 DCE 5.0 商业版](../start-install.md)。

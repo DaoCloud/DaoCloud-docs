@@ -11,7 +11,7 @@ Spiderpool 是专为 Kubernetes 环境定制的 Underlay 下层网络和 RDMA �
 这个网络方案可应用在 **裸金属、虚拟机和公有云环境** 中，能够为网络 I/O 密集性、低延时应用带来优秀的网络性能，
 包括 **存储、中间件、AI 等应用** 。
 
-![Spiderpool](./images/spider.png)
+![Spiderpool](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/spider.png)
 
 Spiderpool 提供了健壮的 Underlay 网络解决方案，并且在 InfiniBand、RoCE 场景下提供了 RDMA 通信能力，使 Pod 能够独享或共享 RDMA 设备，
 能为 AI 应用、延时敏感型应用、网络 I/O 密集型应用带来极大的性能提升，其网络性能超过了传统的 Overlay 网络方案。
@@ -41,7 +41,7 @@ Spiderpool 于 2023 年 6 月加入 [CNCF Landscape 中的 Cloud Native Network]
 在为期一周的投票期内，共收获 8 张赞成票，3 张弃权票（笔者猜测弃权的部分原因是受到了圣诞和元旦长假的影响）。
 最终超过了 66% 的阈值，经 TOC 委员会批准进入了 [Onboarding 入职流程](https://github.com/cncf/toc/issues/1225)。
 
-![vote](./images/vote.png)
+![vote](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/vote.png)
 
 ## 项目状况
 
@@ -55,7 +55,7 @@ Spiderpool 源码采用 Go 语言编写，自 2022 年 3 月开源以来：
 [Roadmap](https://github.com/spidernet-io/spiderpool/blob/main/docs/develop/roadmap.md)
 中各项特性的开发和优化：
 
-![roadmap](./images/roadmap.png)
+![roadmap](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/roadmap.png)
 
 目前 Spiderpool 已作为一种 Addon 加入到
 [Kubernetes 网络策略清单](https://kubernetes.io/docs/concepts/cluster-administration/addons/#networking-and-network-policy)中。
@@ -69,4 +69,4 @@ Spiderpool 源码采用 Go 语言编写，自 2022 年 3 月开源以来：
 - [每月 1 日的社区例会](https://us05web.zoom.us/j/84012992082?pwd=gWWIvpvCZOh8uCVeacoHjGpJULfIJW.1)
 - 微信交流群
 
-    ![wechat](./images/wechat.png)
+    ![wechat](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/blogs/images/wechat.png)

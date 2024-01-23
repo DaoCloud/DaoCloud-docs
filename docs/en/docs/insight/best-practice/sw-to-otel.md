@@ -21,21 +21,39 @@ Now, let's discuss the steps involved in converting SkyWalking trace data to Ope
 2. Constructing OpenTelemetry's ParentSpanId
 3. Retaining SkyWalking's original TraceId, SegmentId, and SpanId in OpenTelemetry Spans
 
-First, let's examine how to construct OpenTelemetry's TraceId and SpanId. Although both SkyWalking and OpenTelemetry use TraceId to link distributed service calls and SpanId to identify each Span, there are significant differences in their implementation specifications. You can find the code implementation on GitHub [here](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/skywalkingreceiver/skywalkingproto_to_traces.go#L54).
+First, let's look at how to construct the TraceId and SpanId for OpenTelemetry. Both SkyWalking and OpenTelemetry use TraceId to connect distributed service calls and use SpanId to mark each Span, but there are significant differences in the implementation specifications:
 
-The possible formats for SkyWalking TraceId and SegmentId are illustrated in the image below:
+> Code implementation can be found on GitHub:
+>
+> 1. https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/skywalkingreceiver/skywalkingproto_to_traces.go#L54
+> 2. https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/8107
+> 3. https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/8549
 
-![sw2otel-01](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/sw2otel-01.png)
+Specifically, the possible formats for SkyWalking TraceId and SegmentId are as follows:
 
-In OpenTelemetry, each Span is unique within a Trace. However, in SkyWalking, a Span is only unique within each Segment. Therefore, we need to combine SegmentId and SpanId to uniquely identify Spans in SkyWalking and convert them to OpenTelemetry's SpanId. You can find the code implementation on GitHub [here](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/skywalkingreceiver/skywalkingproto_to_traces.go#L272).
+![sw2otel-01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/sw2otel-01.png)
 
-Next, let's explore how to construct OpenTelemetry's ParentSpanId. In the case of a single Segment, SkyWalking's ParentSpanId field can be used directly to construct OpenTelemetry's ParentSpanId field. However, when a Trace spans multiple Segments, SkyWalking uses association information represented by ParentTraceSegmentId and ParentSpanId in Reference. Therefore, OpenTelemetry's ParentSpanId needs to be constructed using the information from References. You can find the code implementation on GitHub [here](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/skywalkingreceiver/skywalkingproto_to_traces.go#L173).
+In the OpenTelemetry protocol, a Span is unique across all Traces, while in SkyWalking, a Span is only unique within each Segment. This means that to uniquely identify a Span in SkyWalking, it is necessary to combine the SegmentId and SpanId, and convert it to the SpanId in OpenTelemetry.
 
-Lastly, let's discuss how to retain SkyWalking's original TraceId, SegmentId, and SpanId in OpenTelemetry Spans. By carrying this original information, we can associate OpenTelemetry's TraceId and SpanId with SkyWalking's TraceId, SegmentId, and SpanId in application logs, enabling trace and log correlation. To achieve this, we include the original TraceId, SegmentId, and ParentSegmentId of SkyWalking in OpenTelemetry Attributes. You can find the code implementation on GitHub [here](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/skywalkingreceiver/skywalkingproto_to_traces.go#L201).
+> Code implementation can be found on GitHub:
+>
+> 1. https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/skywalkingreceiver/skywalkingproto_to_traces.go#L272
+> 2. https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/11562
 
-Once this conversion process is complete, we have transformed the entire SkyWalking Segment Object into an OpenTelemetry Trace, as shown below:
+Next, let's see how to construct the ParentSpanId for OpenTelemetry. Within a Segment, the ParentSpanId field in SkyWalking can be directly used to construct the ParentSpanId field in OpenTelemetry. However, when a Trace spans multiple Segments, SkyWalking uses the association information represented by ParentTraceSegmentId and ParentSpanId in the Reference. In this case, the ParentSpanId in OpenTelemetry needs to be constructed using the information in the Reference.
 
-![sw2otel-02](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/sw2otel-02.png)
+> Code implementation can be found on GitHub: https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/skywalkingreceiver/skywalkingproto_to_traces.go#L173
+
+Finally, let's see how to preserve the original TraceId, SegmentId, and SpanId from SkyWalking in the OpenTelemetry Span. We carry these original information to associate the OpenTelemetry TraceId and SpanId displayed in the distributed tracing backend with the SkyWalking TraceId, SegmentId, and SpanId in the application logs. We choose to carry the original TraceId, SegmentId, and ParentSegmentId from SkyWalking to the OpenTelemetry Attributes.
+
+> Code implementation can be found on GitHub:
+>
+> 1. https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/receiver/skywalkingreceiver/skywalkingproto_to_traces.go#L201
+> 2. https://github.com/open-telemetry/opentelemetry-collector-contrib/pull/12651
+
+After this series of conversions, we have fully transformed the SkyWalking Segment Object into an OpenTelemetry Trace, as shown in the following diagram:
+
+![sw2otel-02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/sw2otel-02.png)
 
 # Deploying the Demo
 
@@ -76,7 +94,7 @@ To demonstrate the entire process, we will use the SkyWalking-showcase Demo. Thi
 
 ![sw2otel-03](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/sw2otel-03.png)
 
-From the architecture diagram of the SkyWalking Showcase, we can observe that the data remains intact even after standardization by OpenTelemetry. In this trace, the request starts from `app/homepage`, then two requests `/rcmd/` and `/songs/top` are initiated simultaneously within the app, distributed to the `recommendation` and `songs` services, and finally reach the database for querying, completing the entire request chain.
+From the architecture diagram of the SkyWalking Showcase, we can observe that the data remains intact even after standardization by OpenTelemetry. In this trace, the request starts from __app/homepage__ , then two requests __/rcmd/__ and __/songs/top__ are initiated simultaneously within the app, distributed to the __recommendation__ and __songs__ services, and finally reach the database for querying, completing the entire request chain.
 
 ![sw2otel-04](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/sw2otel-04.png)
 

@@ -1,16 +1,16 @@
 # Configure the container lifecycle
 
-Pods follow a predefined lifecycle, starting in the `Pending` phase and entering the `Running` state if at least one container in the Pod starts normally. If any container in the Pod ends in a failed state, the state becomes `Failed`. The following `phase` field values ​​indicate which phase of the lifecycle a Pod is in.
+Pods follow a predefined lifecycle, starting in the __Pending__ phase and entering the __Running__ state if at least one container in the Pod starts normally. If any container in the Pod ends in a failed state, the state becomes __Failed__ . The following __phase__ field values ​​indicate which phase of the lifecycle a Pod is in.
 
 value | description
 :-----|:----------
-`Pending`<br /> | The Pod has been accepted by the system, but one or more containers have not yet been created or run. This phase includes waiting for the pod to be scheduled and downloading the image over the network.
-`Running`<br /> (Running) | The Pod has been bound to a node, and all containers in the Pod have been created. At least one container is still running, or in the process of starting or restarting.
-`Succeeded`<br /> (Success) | All containers in the Pod were successfully terminated and will not be restarted.
-`Failed`<br /> | All containers in the Pod have terminated, and at least one container terminated due to failure. That is, the container exited with a non-zero status or was terminated by the system.
-`Unknown`<br /> (Unknown) | The status of the Pod cannot be obtained for some reason, usually due to a communication failure with the host where the Pod resides.
+ __Pending__ <br /> | The Pod has been accepted by the system, but one or more containers have not yet been created or run. This phase includes waiting for the pod to be scheduled and downloading the image over the network.
+ __Running__ <br /> (Running) | The Pod has been bound to a node, and all containers in the Pod have been created. At least one container is still running, or in the process of starting or restarting.
+ __Succeeded__ <br /> (Success) | All containers in the Pod were successfully terminated and will not be restarted.
+ __Failed__ <br /> | All containers in the Pod have terminated, and at least one container terminated due to failure. That is, the container exited with a non-zero status or was terminated by the system.
+ __Unknown__ <br /> (Unknown) | The status of the Pod cannot be obtained for some reason, usually due to a communication failure with the host where the Pod resides.
 
-When creating a workload in DCE container management, images are usually used to specify the running environment in the container. By default, when building an image, the `Entrypoint` and `CMD` fields can be used to define the commands and parameters to be executed when the container is running. If you need to change the commands and parameters of the container image before starting, after starting, and before stopping, you can override the default commands and parameters in the image by setting the life cycle event commands and parameters of the container.
+When creating a workload in DCE container management, images are usually used to specify the running environment in the container. By default, when building an image, the __Entrypoint__ and __CMD__ fields can be used to define the commands and parameters to be executed when the container is running. If you need to change the commands and parameters of the container image before starting, after starting, and before stopping, you can override the default commands and parameters in the image by setting the life cycle event commands and parameters of the container.
 
 ## Life cycle configuration
 

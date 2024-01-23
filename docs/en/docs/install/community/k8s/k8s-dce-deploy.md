@@ -22,7 +22,7 @@ The components used in this example are:
 - CRI: containerd (as Docker is no longer directly supported in newer versions of Kubernetes)
 - CNI: Calico
 - StorageClass: local-path
-- DCE 5.0 Community: v0.5.0
+- DCE 5.0 Community: v0.14.0
 
 ## Prepare Nodes
 
@@ -316,7 +316,7 @@ bash install_prerequisite.sh online community
 ### Download dce5-installer
 
 ```bash
-export VERSION=v0.13.0
+export VERSION=v0.14.0
 curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
 chmod +x ./dce5-installer
 ```
@@ -359,6 +359,6 @@ chmod +x ./dce5-installer
 
     ![Successful login](https://docs.daocloud.io/daocloud-docs-images/docs/blogs/images/firstscreen.png)
 
-[Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
-[Free Trial](../dce/license0.md){ .md-button .md-button--primary }
+[Download DCE 5.0](../../../download/index.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../../index.md){ .md-button .md-button--primary }
+[Free Trial](../../../dce/license0.md){ .md-button .md-button--primary }
