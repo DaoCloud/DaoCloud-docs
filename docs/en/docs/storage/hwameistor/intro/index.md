@@ -1,3 +1,8 @@
+---
+MTPE: Fan-Lin
+Date: 2024-01-23
+---
+
 # What is HwameiStor
 
 HwameiStor is a Kubernetes-native container attached storage (CAS) solution that creates a local storage resource pool for centrally managing all disks such as HDD, SSD, and NVMe. It uses the CSI architecture to provide distributed services with local volumes and enables data persistence for stateful cloud native workloads or components.
@@ -22,4 +27,7 @@ HwameiStor is a Kubernetes-native container attached storage (CAS) solution that
 
     Dynamically expand clusters according to their sizes and flexibly meet the data persistence requirements of the application.
 
+[HwameiStor Release](https://github.com/hwameistor/hwameistor/releases){ .md-button .md-button--primary }
+[Download DCE 5.0](../../../download/index.md){ .md-button .md-button--primary }
+[Install DCE 5.0](../../../install/index.md){ .md-button .md-button--primary }
 [Free Trial Now](../../../dce/license0.md){ .md-button .md-button--primary }

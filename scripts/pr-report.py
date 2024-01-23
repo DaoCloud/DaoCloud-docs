@@ -1,31 +1,29 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Tue Jan 16 15:17:40 2024
-
-@author: FanLin
-
-"""
-
-'''
-前提条件：安装 request 和 pandas 库
-安装方法：终端输入：pip install requests
-pip install pandas
-需要替换填写的内容：token 和保存路径
-'''
+#
+# Created on Tue Jan 16 15:17:40 2024
+# @author: FanLin
+#
+# 此脚本会导出 repo 下的所有 PR 记录，方便汇总统计
+#
+# 需要安装 request 和 pandas 库：
+# pip install requests
+# pip install pandas
+#
+# 默认导出到 repo 根目录
 
 import requests
 import pandas as pd
 from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor
 
-# 你的GitHub令牌
-token = "替换为你的token"
-# 你要查询的仓库名和所有者名
+# 你的 GitHub 令牌
+token = "替换为你的 token"
+# 要查询的仓库名
 repo = "DaoCloud/DaoCloud-docs"
-# 指定日期范围，这里以2023年1月为例
+# 指定要导出的日期范围
 start_date = "2023-01-01T00:00:00Z"
 end_date = "2023-01-31T23:59:59Z"
-# GitHub的API endpoint
+# GitHub 的 API endpoint
 url = f"https://api.github.com/repos/{repo}/pulls"
 
 headers = {
@@ -88,7 +86,7 @@ def fetch_all_prs(url, headers, params, start_date, end_date):
             page += 1
     return df
 
-# 获取所有PRs
+# 获取所有 PR
 df = fetch_all_prs(url, headers, params, start_date, end_date)
 
 df["Date"] = pd.to_datetime(df["Date"])
@@ -98,7 +96,7 @@ df.set_index("Date", inplace=True)
 label_counts_monthly = df["Labels"].explode().value_counts()
 monthly_user_counts = df.groupby([df.index.year, df.index.month])['Author'].value_counts()
 
-#替换保存路径
+# 替换保存路径
 with pd.ExcelWriter('PR_detail_2023.xlsx') as writer: 
     df.to_excel(writer, sheet_name='PR Details')
     label_counts_monthly.to_excel(writer, sheet_name='Label Counts')
