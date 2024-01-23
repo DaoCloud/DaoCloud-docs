@@ -13,20 +13,8 @@
 
 1. 请确认集群环境中已具备 RDMA 设备。
 
-2. 请确认集群中已对应的 OFED 驱动，本示例中采用具备 RoCE 功能的 mellanox ConnectX 5 网卡，
-   可按照 [NVIDIA 官方指导](https://developer.nvidia.com/networking/ethernet-software)安装最新的 OFED 驱动。
-   使用如下命令，可查询到 RDMA 设备：
-
-    ```sh
-    rdma link show
-    link mlx5_0/1 state ACTIVE physical_state LINK_UP netdev ens6f0np0
-    link mlx5_1/1 state ACTIVE physical_state LINK_UP netdev ens6f1np1
-    ```
-
-    如基于 **SR-IOV CNI 隔离使用 RDMA 网卡** ，请满足如下其一条件：
-
-    - 内核版本要求 5.3.0 或更高版本，并在系统中加载 RDMA 模块。**rdma-core** 软件包提供了在系统启动时自动加载相关模块的功能。
-    - Mellanox OFED 要求 4.7 或更高版本。此时不需要使用 5.3.0 或更新版本的内核。
+2. 请确认集群中节点具备 RoCE 功能的 mellanox 网卡，本示例中采用 mellanox ConnectX 5 型号网卡。并且已安装对应的 OFED 驱动，如未安装, 可
+   参考 [安装 OFED 驱动](./ofed_driver.md) 文档安装驱动。
 
 ## 基于 Macvlan /IPVLAN 共享 RoCE 网卡
 
