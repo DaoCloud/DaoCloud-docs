@@ -1,14 +1,16 @@
-# Creating Batch Deployments
+# Create Batch Deployments
 
 Batch deployments can be created using either an image or a YAML file. This article explains how to create batch deployments using images.
 
-## Create with Image
+## Create by Image
 
 Follow these steps to create a stateless workload using an image.
 
-1. Go to the edge unit details page and select the menu `Edge Apps` -> `Batch Deployments`.
+1. Go to the edge unit details page and select the menu __Edge Application__ -> __Batch Deployments__.
 
-2. Click the `Create with Image` button in the top-right corner of the batch deployment list.
+2. Click the __Create by Image__ button in the top-right corner of the batch deployment list.
+
+    ![Batch Deployments](../images/create-batch-app-01.png)
 
 3. Fill in the basic information.
 
@@ -17,13 +19,15 @@ Follow these steps to create a stateless workload using an image.
       or number (e.g., deployment-01). The workload name must be unique within the same namespace,
       and it cannot be changed after the workload is created.
     - Namespace: Select the namespace where you want to deploy the workload. By default, the
-      `default` namespace is used. If the desired namespace is not available, you can create
+      __default__ namespace is used. If the desired namespace is not available, you can create
       a new one as prompted on the page.
-    - Instance Count: Specify the number of instances for the workload. By default, one instance is
+    - Pods: Specify the number of Pods. By default, one instance is
       created, but you can modify this value.
     - Description: Enter a description for the workload (optional).
 
-4. Fill in the container configuration.
+    ![Basic Info](../images/create-batch-app-02.png)
+
+4. Fill in the container settings.
 
     The container configuration consists of six parts: Basic Information, Lifecycle, Health Check,
     Environment Variables, Data Storage, and Security Settings. Click the respective tabs to
@@ -36,16 +40,16 @@ Follow these steps to create a stateless workload using an image.
 
         When configuring container parameters, make sure to correctly enter the container name
         and image parameters; otherwise, you won't be able to proceed. Follow these requirements
-        and click `OK` after entering the configuration.
+        and click __OK__ after entering the configuration.
 
         - Container Name: Enter a name for the container (up to 63 characters). The name can include
           lowercase letters, numbers, and hyphens ("-"). It must start and end with a lowercase letter
           or number (e.g., nginx-01).
-        - Container Image: Enter the image address or name. If you enter a image name, it will default
+        - Image: Enter the image address or name. If you enter a image name, it will default
           to pulling from the official [DockerHub](https://hub.docker.com/). After integrating with
           the Docker Distribution module in DCE 5.0, you can click the image selection button
           to choose an image from the repository.
-        - Update Policy: By selecting `Always Pull Image`, the workload will pull the image from
+        - Mirror Pull Policy: By selecting __Always pull the image__ , the workload will pull the image from
           the repository every time it restarts/upgrades. If not selected, it will only pull the
           local image, and only pull from the image repository if the local image does not exist.
           For more details, refer to
@@ -58,25 +62,35 @@ Follow these steps to create a stateless workload using an image.
           Configure the resource allocation based on your needs to avoid resource waste and
           potential system failures. The default values are shown in the image.
 
+        ![Container Settings](../images/create-app-03.png)
+
     === "Lifecycle (Optional)"
 
         Set the commands to be executed when the container starts, after it starts, and before it stops.
         For more details, refer to [Container Lifecycle](../../../kpanda/user-guide/workloads/pod-config/lifecycle.md).
+
+        ![Lifecycle](../images/create-app-04.png)
 
     === "Health Check (Optional)"
 
         Configure health checks for the container and application to improve availability.
         For more details, refer to [Container Health Check](../../../kpanda/user-guide/workloads/pod-config/health-check.md).
 
+        ![Health Check](../images/create-app-05.png)
+
     === "Environment Variables (Optional)"
 
         Configure container parameters, add environment variables, or pass configurations to the pod.
         For more details, refer to [Container Environment Variable](../../../kpanda/user-guide/workloads/pod-config/env-variables.md).
 
+        ![Environment Variables](../images/create-app-06.png)
+
     === "Data Storage (Optional)"
 
         Configure data volume mounting and data persistence settings for the container. For more details,
         refer to [Container Data Storage](../../../kpanda/user-guide/workloads/pod-config/env-variables.md).
+
+        ![Data Storage](../images/create-app-07.png)
 
     === "Security Settings (Optional)"
 
@@ -84,21 +98,24 @@ Follow these steps to create a stateless workload using an image.
         limit the container's privileges by specifying a different user ID (UID) with different permissions.
         For example, entering 0 indicates using the root account's privileges.
 
+        ![Security Settings](../images/create-app-08.png)
 
-5. Fill in the advanced configuration.
+5. Fill in the advanced settings.
 
-    The advanced configuration includes Labels & Annotations and Access Configuration.
+    The advanced settings include Labels & Annotations and Network Configuration.
     Click the respective tabs to view the requirements for each part.
 
     === "Labels & Annotations"
 
-        Click the `Add` button to add labels and annotations to the workload and container group.
+        Click the __Add__ button to add labels and annotations to the workload and container group.
 
-    === "Access Configuration"
+        !["Labels/Annotations](../images/create-batch-app-03.png)
 
-        Container access can be configured as Not Accessible, Port Mapping, or Host Network.
+    === "Network Configuration"
 
-        - Not Accessible: The workload is not accessible from outside.
+        Container access can be configured as  Inaccessible, Port Mapping, or Host Network.
+
+        - Inaccessible: The workload is not accessible from outside.
         - Port Mapping: Virtualizes the container network and assigns a separate virtual network
           to each container. Communication between containers and the outside world requires port
           mapping with the host. After configuring port mapping, traffic destined for the host port
@@ -107,23 +124,27 @@ Follow these steps to create a stateless workload using an image.
         - Host Network: Uses the host (edge node) network, meaning there is no network isolation
           between the container and the host. They share the same IP address.
 
-6. Click the `OK` button to complete the creation of the batch deployment.
+        ![Network Configuration](../images/create-batch-app-04.png)
 
-## Create with YAML
+6. Click the __Confirm__ button to complete the creation of the batch deployment.
+
+## Create by YAML
 
 In addition to creating batch deployments using images, you can also create them more quickly using YAML files. Follow these steps:
 
-1. Go to the edge unit details page and select the left menu `Edge Apps` -> `Batch Deployments`.
+1. Go to the edge unit details page and select the left menu __Edge Application__ -> __Batch Deployments__ .
 
-2. Click the `Create with YAML` button in the top-right corner of the batch deployment list.
+2. Click the __Create by YAML__ button in the top-right corner of the batch deployment list.
 
-3. Enter or paste the prepared YAML file and click `OK` to complete the creation.
+    ![Create by YAML](../images/create-batch-app-05.png)
+
+3. Enter or paste the prepared YAML file and click __Confirm__ to complete the creation.
 
 !!! note
 
     When using YAML to create batch deployments, it is recommended to add the following restrictions.
 
-    Labels are used to identify edge applications, and the `workloadScope` field is used to configure differentiation for edge applications deployed to node groups. The current differentiation supports image overriders and replica settings.
+    Labels are used to identify edge applications, and the __workloadScope__ field is used to configure differentiation for edge applications deployed to node groups. The current differentiation supports image overriders and replica settings.
 
     Here is an example:
 
