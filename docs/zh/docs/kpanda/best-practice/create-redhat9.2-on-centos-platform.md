@@ -47,7 +47,7 @@ os package 解压后的文件内容如下：
 
 **导入 OS Package 至火种节点的 MinIO**
 
-执行如下命令, 将 os packages 包到 MinIO 文件服务中:
+执行如下命令，将 os packages 包到 MinIO 文件服务中：
 
 ```bash
 MINIO_USER=rootuser MINIO_PASS=rootpass123 ./import_ospkgs.sh  http://127.0.0.1:9000 os-pkgs-redhat9-v0.9.3.tar.gz

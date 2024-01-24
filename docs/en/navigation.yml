@@ -279,6 +279,7 @@ nav:
                   - Create RedHat 9.2 Worker Cluster on CentOS: kpanda/best-practice/create-redhat9.2-on-centos-platform.md
                   - Scale Controller Nodes of Worker Cluster: kpanda/best-practice/add-master-node.md
                   - Create Cluster with Non-supported OS: kpanda/best-practice/use-otherlinux-create-custer.md
+                  - Migrate DCE 4.0 to DCE 5.0: kpanda/best-practice/dce4-5-migration.md
                   - Offline Deploy and Upgrade Legacy Kubean: kpanda/best-practice/kubean-low-version.md
           - Multicloud Management:
               - Intro:
