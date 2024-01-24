@@ -57,19 +57,19 @@ Please plan your resources before deploying the platform.
     apiVersion: kubean.io/v1alpha1
     kind: Cluster
     metadata:
-        labels:
-            clusterName: kpanda-global-cluster
-    name: kpanda-global-cluster
+      labels:
+        clusterName: kpanda-global-cluster
+      name: kpanda-global-cluster
     spec:
-        hostsConfRef:
-            name: my-cluster-hosts-conf
-            namespace: kubean-system
-        kubeconfRef:
-            name: my-cluster-kubeconf
-            namespace: kubean-system
-        varsConfRef:
-            name: my-cluster-vars-conf
-            namespace: kubean-system
+      hostsConfRef:
+        name: my-cluster-hosts-conf
+        namespace: kubean-system
+      kubeconfRef:
+        name: my-cluster-kubeconf
+        namespace: kubean-system
+      varsConfRef:
+        name: my-cluster-vars-conf
+        namespace: kubean-system
     EOF
     ```
 
