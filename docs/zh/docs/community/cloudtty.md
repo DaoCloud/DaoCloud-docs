@@ -45,8 +45,8 @@ CloudTTY 的网页终端使用效果如下：
 
 [了解 CloudTTY 社区](https://github.com/cloudtty/cloudtty){ .md-button }
 
+![cncf logo](./images/cncf.png)
+
 <p align="center">
-<img src="https://landscape.cncf.io/images/left-logo.svg" width="150"/>&nbsp;&nbsp;<img src="https://landscape.cncf.io/images/right-logo.svg" width="200"/>
-<br/><br/>
 CloudTTY 已入选 <a href="https://landscape.cncf.io/?selected=cloud-tty">CNCF 云原生全景图。</a>
 </p>

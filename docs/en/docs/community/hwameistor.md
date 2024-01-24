@@ -22,8 +22,8 @@ HwameiStor is composed of five components:
 
 [Go to HwameiStor website](https://hwameistor.io/){ .md-button }
 
+![cncf logo](./images/cncf.png)
+
 <p align="center">
-<img src="https://landscape.cncf.io/images/left-logo.svg" width="300"/>&nbsp;&nbsp;<img src="https://landscape.cncf.io/images/right-logo.svg" width="350"/>
-<br/><br/>
-HwameiStor enriches the <a href="https://landscape.cncf.io/?selected=hwamei-stor">CNCF CLOUD NATIVE Landscape.</a>
+HwameiStor is <a href="https://landscape.cncf.io/?selected=hwamei-stor">a CNCF snadbox project</a>.
 </p>
