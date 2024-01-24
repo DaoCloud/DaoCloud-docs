@@ -10,8 +10,8 @@
 
 2. 进入创建页面，填写密钥名称，选择和虚拟机相同的命名空间，注意需要选择`默认（Opaque）`类型。密钥数据需要遵循以下原则
 
-      - accessKeyId: 需要以 Base64 编码方式表示的数据
-      - secretKey: 需要以 Base64 编码方式表示的数据
+    - accessKeyId: 需要以 Base64 编码方式表示的数据
+    - secretKey: 需要以 Base64 编码方式表示的数据
 
     ![密钥要求](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/secret02.png)
 

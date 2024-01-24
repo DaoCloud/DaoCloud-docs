@@ -249,7 +249,7 @@ nav:
                   - NVIDIA GPU Management:
                       - NVIDIA GPU Modes: kpanda/user-guide/gpu/nvidia/index.md
                       - Install GPU Operator:
-                          - Install GPU Operator: kpanda/user-guide/gpu/nvidia/install_nvidia_driver_of_operator.md
+                          - Install GPU Operator Offline: kpanda/user-guide/gpu/nvidia/install_nvidia_driver_of_operator.md
                           - Build Offline yum Source for CentOS 7.9: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_centos7_9.md
                           - Upload RedHat GPU Opreator Image to Bootstrap Registry: kpanda/user-guide/gpu/nvidia/push_image_to_repo.md
                           - Build Offline yum Source for RedHat 8.4: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_redhat8_4.md
@@ -487,10 +487,10 @@ nav:
                   - Installation:
                       - Preparation: storage/hwameistor/install/prereq.md
                       - Resource requirements: storage/hwameistor/install/proresource.md
-                      - Install DRDB: storage/hwameistor/install/drbdinstall.md
                       - Install with Operator: storage/hwameistor/install/deploy-operator.md
-                      - Intall with UI: storage/hwameistor/install/deploy-ui.md
                       - Install with hwameistor-operator: storage/hwameistor/install/deploy-helm.md
+                      - Install DRDB: storage/hwameistor/install/drbdinstall.md
+                      - Install with UI: storage/hwameistor/install/deploy-ui.md
                       - Post-check: storage/hwameistor/install/post-check.md
                       - Storage and network adapter config: storage/hwameistor/install/storage-eth.md
                       - Custom Kubelet root directory: storage/hwameistor/install/customized-kubelet.md
@@ -547,8 +547,8 @@ nav:
                   - VM Template: virtnest/quick-start/tep.md
                   - Connect VM: virtnest/quick-start/access.md
                   - Snapshots: virtnest/quick-start/snapshot.md
+                  - Live Migration: virtnest/quick-start/live-migration.md
                   - Access VM by NodePort: virtnest/quick-start/nodeport.md
-                  - Deploy Rook Ceph: virtnest/quick-start/rook-ceph.md
                   - Offline Upgrade: virtnest/install/offline-install.md
       - Observability:
           - Insight:

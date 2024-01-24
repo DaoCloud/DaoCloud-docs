@@ -152,7 +152,7 @@
 
 除了通过镜像方式外，还可以通过 YAML 文件更快速地创建创建虚拟机。
 
-进入虚拟机列表页，点击 `通过 YAML 创建`按钮
+进入虚拟机列表页，点击 `通过 YAML 创建`按钮。
 
 ![yaml 创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/createvm08.png)
 

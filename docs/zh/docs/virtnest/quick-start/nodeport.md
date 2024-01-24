@@ -1,8 +1,3 @@
----
-hide:
-  - toc
----
-
 # 通过 NodePort 访问虚拟机
 
 本文将介绍如何通过 NodePort 访问虚拟机。
