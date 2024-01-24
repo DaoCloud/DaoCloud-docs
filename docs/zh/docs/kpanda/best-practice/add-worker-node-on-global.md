@@ -56,17 +56,17 @@
     apiVersion: kubean.io/v1alpha1
     kind: Cluster
     metadata:
-    labels:
+      labels:
         clusterName: kpanda-global-cluster
-    name: kpanda-global-cluster
+      name: kpanda-global-cluster
     spec:
-    hostsConfRef:
+      hostsConfRef:
         name: my-cluster-hosts-conf
         namespace: kubean-system
-    kubeconfRef:
+      kubeconfRef:
         name: my-cluster-kubeconf
         namespace: kubean-system
-    varsConfRef:
+      varsConfRef:
         name: my-cluster-vars-conf
         namespace: kubean-system
     EOF
