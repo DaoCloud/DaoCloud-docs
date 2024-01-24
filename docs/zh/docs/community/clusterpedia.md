@@ -29,8 +29,8 @@ Clusterpedia 的能力不仅是搜索和查看，而且还可以简单地控制�
 
 [查阅 Clusterpedia 官网](https://clusterpedia.io/){ .md-button }
 
+![cncf logo](./images/cncf.png)
+
 <p align="center">
-<img src="https://landscape.cncf.io/images/left-logo.svg" width="150"/>&nbsp;&nbsp;<img src="https://landscape.cncf.io/images/right-logo.svg" width="200"/>
-<br/><br/>
-Clusterpedia 已先后入选 <a href="https://landscape.cncf.io/?selected=clusterpedia">CNCF 云原生全景图</a> 和 <a href="https://www.cncf.io/projects/clusterpedia/">CNCF 沙箱孵化</a>。
+Clusterpedia 已入选 <a href="https://landscape.cncf.io/?selected=clusterpedia">CNCF 云原生全景图</a> 和 <a href="https://www.cncf.io/projects/clusterpedia/">CNCF Sandbox</a>。
 </p>

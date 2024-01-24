@@ -184,9 +184,9 @@ hide:
 
     **Think Different, Think Open Source!**
 
+![cncf logo](./images/cncf.png)
+
 <p align="center">
-<img src="https://landscape.cncf.io/images/left-logo.svg" width="150"/>&nbsp;&nbsp;<img src="https://landscape.cncf.io/images/right-logo.svg" width="200"/>
-<br/><br/>
 Clusterpedia、HwameiStor、Merbridge 和 Spiderpool 均已入选 <a href="https://www.cncf.io/projects/clusterpedia/">CNCF Sandbox</a>。
 </p>
 

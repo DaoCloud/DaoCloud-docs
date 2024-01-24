@@ -25,8 +25,8 @@ Kubean 是一个基于 Kubespray 构建的集群生命周期管理工具。
 [Kubean 发行版本](https://github.com/kubean-io/kubean/releases){ .md-button }
 [了解 Kubean 社区](https://github.com/kubean-io/kubean){ .md-button }
 
+![cncf logo](./images/cncf.png)
+
 <p align="center">
-<img src="https://landscape.cncf.io/images/left-logo.svg" width="300"/>&nbsp;&nbsp;<img src="https://landscape.cncf.io/images/right-logo.svg" width="350"/>
-<br/><br/>
-Kubean 位列 <a href="https://landscape.cncf.io/?selected=kubean">CNCF 云原生全景图。</a>
+Kubean 位列 <a href="https://landscape.cncf.io/?selected=kubean">CNCF 云原生全景图</a>。
 </p>

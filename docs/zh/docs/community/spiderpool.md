@@ -25,8 +25,8 @@ Spiderpool 的核心功能如下：
 [了解 Spiderpool 社区](https://github.com/spidernet-io){ .md-button }
 [查阅 Spiderpool 官网](https://spidernet-io.github.io/spiderpool/){ .md-button }
 
+![cncf logo](./images/cncf.png)
+
 <p align="center">
-<img src="https://landscape.cncf.io/images/left-logo.svg" width="150"/>&nbsp;&nbsp;<img src="https://landscape.cncf.io/images/right-logo.svg" width="200"/>
-<br/><br/>
-Spiderpool 是一个 <a href="https://landscape.cncf.io/?selected=spiderpool">CNCF Sandbox</a> 项目。
+Spiderpool 是一个 <a href="https://landscape.cncf.io/?selected=spiderpool">CNCF Sandbox 项目</a>。
 </p>

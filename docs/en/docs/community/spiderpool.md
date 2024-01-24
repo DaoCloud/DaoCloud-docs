@@ -23,8 +23,8 @@ Refer to the [Spiderpool Fixed IP Scenario Video](../videos/use-cases.md#ip) and
 [Go to Spiderpool repo](https://github.com/spidernet-io){ .md-button }
 [Go to Spiderpool website](https://spidernet-io.github.io/spiderpool/){ .md-button }
 
+![cncf logo](./images/cncf.png)
+
 <p align="center">
-<img src="https://landscape.cncf.io/images/left-logo.svg" width="150"/>&nbsp;&nbsp;<img src="https://landscape.cncf.io/images/right-logo.svg" width="200"/>
-<br/><br/>
 Spiderpool is a <a href="https://landscape.cncf.io/?selected=spiderpool">CNCF Sandbox</a> project.
 </p>
