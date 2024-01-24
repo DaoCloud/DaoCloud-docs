@@ -3,6 +3,21 @@
 This page lists the Release Notes for global management of each version,
 so that you can understand the evolution path and feature changes of each version.
 
+## 2024-1-19
+
+### v0.23.1
+
+#### Improvements
+
+- Use single flight mechanism to limit the traffic when triggering FoldersAuthz CR
+- Filter out cases of duplicate authorization
+- Do not store Workspace authorization information in FoldersAuthz CR
+- Perform a full update of FoldersAuthz CR when ghippo-controller-manager restarts
+
+#### Fix
+
+- Fix the issue of frequent updates to FoldersAuthz CR due to a large number of authorization requests causing k8s to crash.
+
 ## 2023-12-29
 
 ### v0.23.0
@@ -51,7 +66,7 @@ so that you can understand the evolution path and feature changes of each versio
 #### Fixes
 
 - Fixed issue with adding user groups for synchronized LDAP users
-- Fixed issue with incomplete display of workspace reports in __Operations Management__ 
+- Fixed issue with incomplete display of workspace reports in __Operations Management__
 
 ## 2023-11-1
 
@@ -70,12 +85,12 @@ so that you can understand the evolution path and feature changes of each versio
 
 - Improved handling of interface error 400 without specific cause
 - Enhanced display of empty data in __Operations Management__ reports
-- Improved functionality of jumping from cluster billing list to node billing list in __Operations Management__ 
+- Improved functionality of jumping from cluster billing list to node billing list in __Operations Management__
 
 #### Fixes
 
 - Fixed potential deadlock issue during startup of Ghippo APIServer
-- Fixed calculation error in cluster billing for __Operations Management__ 
+- Fixed calculation error in cluster billing for __Operations Management__
 
 ## 2023-09-04
 
