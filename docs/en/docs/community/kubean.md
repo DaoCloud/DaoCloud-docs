@@ -25,8 +25,8 @@ See the [Kubean installation video demo](https://asciinema.org/a/511386).
 [Kubean releases](https://github.com/kubean-io/kubean/releases){ .md-button }
 [Explore Kubean community](https://github.com/kubean-io/kubean){ .md-button }
 
+![cncf logo](./images/cncf.png)
+
 <p align="center">
-<img src="https://landscape.cncf.io/images/left-logo.svg" width="300"/>&nbsp;&nbsp;<img src="https://landscape.cncf.io/images/right-logo.svg" width="350"/>
-<br/><br/>
-Kubean is listed in the <a href="https://landscape.cncf.io/?selected=kubean">CNCF Cloud Native Landscape.</a>
+Kubean is listed in the <a href="https://landscape.cncf.io/?selected=kubean">CNCF Cloud Native Landscape</a>.
 </p>

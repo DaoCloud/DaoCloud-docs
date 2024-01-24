@@ -33,8 +33,8 @@ Merbridge 的核心特性包括：
 
 [查阅 Merbridge 官网](https://merbridge.io/){ .md-button }
 
+![cncf logo](./images/cncf.png)
+
 <p align="center">
-<img src="https://landscape.cncf.io/images/left-logo.svg" width="150"/>&nbsp;&nbsp;<img src="https://landscape.cncf.io/images/right-logo.svg" width="200"/>
-<br/><br/>
-Merbridge 已入选 <a href="https://landscape.cncf.io/?selected=merbridge">CNCF 云原生全景图。</a>
+Merbridge 已入选 <a href="https://landscape.cncf.io/?selected=merbridge">CNCF 云原生全景图</a>。
 </p>
