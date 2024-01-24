@@ -2,6 +2,14 @@
 
 This guide explains how to install the virtnest-agent in a cluster.
 
+## Prerequisites
+
+Before installing the virtnest-agent, the following prerequisites must be met:
+
+- The operating system kernel version needs to be 3.15 or above.
+
+## Steps
+
 To utilize the Virtual Machine (VM), the virtnest-agent component needs to be installed in the cluster using Helm.
 
 1. Click `Container Management` in the left navigation menu, then click `Virtual Machines`. If the virtnest-agent component is not installed, you will not be able to use the VM. The interface will display a reminder for you to install within the required cluster.

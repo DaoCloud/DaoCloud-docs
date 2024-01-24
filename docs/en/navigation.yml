@@ -547,8 +547,8 @@ nav:
                   - VM Template: virtnest/quick-start/tep.md
                   - Connect VM: virtnest/quick-start/access.md
                   - Snapshots: virtnest/quick-start/snapshot.md
+                  - Live Migration: virtnest/quick-start/live-migration.md
                   - Access VM by NodePort: virtnest/quick-start/nodeport.md
-                  - Deploy Rook Ceph: virtnest/quick-start/rook-ceph.md
                   - Offline Upgrade: virtnest/install/offline-install.md
       - Observability:
           - Insight:
