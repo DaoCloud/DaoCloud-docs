@@ -1067,6 +1067,7 @@ nav:
                   - Allocate a Cluster to Workspaces: ghippo/best-practice/cluster-for-multiws.md
                   - Folder Practices: ghippo/best-practice/folder-practice.md
                   - Normal Authorization Planning: ghippo/best-practice/authz-plan.md
+                  - Architecture for Large Enterprises: ghippo/best-practice/super-group.md
                   - Docking with GProduct:
                       - ghippo/best-practice/gproduct/intro.md
                       - Join Nav Bar: ghippo/best-practice/gproduct/nav.md
