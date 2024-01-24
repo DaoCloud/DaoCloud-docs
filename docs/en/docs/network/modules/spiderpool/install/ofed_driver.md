@@ -1,10 +1,10 @@
-# 安装 Nvidia OFED 驱动
+# Install Nvidia OFED Driver
 
-本文将介绍如何通过以 Kubernetes 和 手动 的方式在节点安装英伟达 OFED 驱动.
+This article will describe how to install the Nvidia OFED driver on nodes through Kubernetes and manually.
 
-## 环境检查
+## Environment Check
 
-- 请确保主机具备 Mellanox 系列网卡，可通过在主机终端执行以下命令确认:
+- Please ensure that the host has Mellanox series network cards by executing the following command in the host terminal:
 
     ```shell
     $ lspci -nn | grep Eth | grep Mellanox
@@ -12,16 +12,16 @@
     3b:00.1 Ethernet controller [0200]: Mellanox Technologies MT27800 Family [ConnectX-5] [15b3:1017]
     ```
 
-    以上输出表示主机具备两张 Mellanox 系列网卡, 其型号是 ConnectX-5。
+    The above output indicates that the host has two Mellanox series network cards, with the model being ConnectX-5.
 
-- 确认主机是否已经正确安装 OFED 驱动
+- Confirm whether the host has correctly installed the OFED driver
 
     ```shell
     $ ofed_info -s
     MLNX_OFED_LINUX-23.07-0.5.1.2:
     ```
 
-    以上输出说明当前主机已经安装 OFED 驱动，如果提示命令不存在则说明未安装。如果有以上输出进一步检查 RDMA 设备是否正确识别:
+    The above output indicates that the current host has installed the OFED driver. If the command does not exist, it means that it is not installed. If the above output is present, further check whether the RDMA device is correctly recognized:
 
     ```shell
     $ rdma link show
@@ -33,34 +33,31 @@
     mlx5_1 port 1 ==> enp4s0f1np1 (Up)
     ```
 
-    以上输出说明该主机的 RDMA 环境已经就绪。否则先检查网卡的物理状态（比如是否正常接入到交换机等等）。
-    如果物理链路没问题，按照下面的步骤安装 OFED 驱动。
+    The above output indicates that the RDMA environment of the host is ready. Otherwise, check the physical status of the network card (such as whether it is properly connected to the switch, etc.). If there is no problem with the physical link, follow the steps below to install the OFED driver.
 
-## 安装驱动
+## Install Driver
 
-主机的操作系统不同，安装的方式也所不同。为了尽量满足不同的环境安装驱动，下面分别介绍通过 Kubernetes 和 手动两种方式安装 OFED 驱动。
+Different host operating systems require different installation methods. In order to meet the installation of different environments as much as possible, the following two methods, Kubernetes and manual, are introduced to install the OFED driver.
 
-### 通过 Kubernetes DaemonSet 安装
+### Install through Kubernetes DaemonSet
 
-我们可以通过在集群中创建一个 DaemonSet, 由这个 DaemonSet 来帮助安装驱动，但需要注意以下几点事项:
+We can create a DaemonSet in the cluster to help install the driver, but the following points should be noted:
 
-- 目前支持镜像列表只支持 Ubuntu22.04、Ubuntu20.04、Ubuntu18.04 以及 Centos8、RHEL8、RHEL9 系列的操作系统版本。
-  并且只支持 x86 架构。对于其他操作系统和架构，可按照手动安装 OFED 驱动章节。
+- The supported image list currently only supports Ubuntu22.04, Ubuntu20.04, Ubuntu18.04, Centos8, RHEL8, and RHEL9 series operating system versions. And only x86 architecture is supported. For other operating systems and architectures, refer to the manual installation of the OFED driver section.
 
-    | OS            | 内核版本 | 镜像名称                                                            |
-    | ------------- | -------- | ------------------------------------------------------------------- |
-    | ubuntu22.04   | 5.15     | daocloud.io/nvidia/mellanox/mofed:23.10-0.5.5.0-ubuntu22.04-amd64   |
-    | ubuntu20.04   | 5.4      | daocloud.io/nvidia/mellanox/mofed:23.10-0.5.5.0-ubuntu22.04-amd64   |
-    | ubuntu18.04   | 4.15     | daocloud.io/daocloud/mellanox-mofed:23.07-0.5.0.0-ubuntu18.04-amd64 |
-    | RHEL9         | 5.14.0   | daocloud.io/daocloud/mellanox-mofed:23.10-0.5.5.0-rhel9.0-amd64     |
-    | RHEL8/Centos8 | 4.18.0   | daocloud.io/daocloud/mellanox-mofed:23.10-0.5.5.0-rhel8.8-amd64     |
+    | OS            | Kernel Version | Image Name                                                                 |
+    | ------------- | -------------- | -------------------------------------------------------------------------- |
+    | ubuntu22.04   | 5.15           | daocloud.io/nvidia/mellanox/mofed:23.10-0.5.5.0-ubuntu22.04-amd64         |
+    | ubuntu20.04   | 5.4            | daocloud.io/nvidia/mellanox/mofed:23.10-0.5.5.0-ubuntu22.04-amd64         |
+    | ubuntu18.04   | 4.15           | daocloud.io/daocloud/mellanox-mofed:23.07-0.5.0.0-ubuntu18.04-amd64       |
+    | RHEL9         | 5.14.0         | daocloud.io/daocloud/mellanox-mofed:23.10-0.5.5.0-rhel9.0-amd64           |
+    | RHEL8/Centos8 | 4.18.0         | daocloud.io/daocloud/mellanox-mofed:23.10-0.5.5.0-rhel8.8-amd64           |
 
-- 集群不同节点的操作系统或架构可能是不同的，同一个镜像可能无法适用于集群所有节点。这种情况下，
-  我们应该确保 Pod 运行在指定的节点。否则因为节点操作系统和架构的不同而导致安装驱动失败。
+- The operating systems or architectures of different nodes in the cluster may be different, and the same image may not be applicable to all nodes in the cluster. In this case, we should ensure that the pod runs on the specified node. Otherwise, the installation of the driver will fail due to the difference in the node operating system and architecture.
 
-下面是 DaemonSet 的部署清单文件，注意修改 nodeSelector 字段以确保 Pod 调度到需要安装驱动的节点上：
+Below is the deployment manifest file of the DaemonSet. Note that you need to modify the nodeSelector field to ensure that the pod is scheduled to the node that needs to install the driver:
 
-这里以节点的操作系统为 Ubuntu22.04，架构为 x86 为例：
+Here, take the node's operating system as Ubuntu22.04 and the architecture as x86 as an example:
 
 ```yaml
 apiVersion: apps/v1
@@ -131,17 +128,17 @@ spec:
 
 !!! note 
 
-    创建后可通过查看 mofed Pod 的日志查看驱动安装过程
+    After creation, you can view the logs of the mofed pod to view the driver installation process.
 
-    如果安装驱动失败，Pod 会不断重启尝试重新安装驱动。
+    If the driver installation fails, the pod will continuously restart to attempt to reinstall the driver.
 
-    如果安装成功，Pod 将会无限期 Sleep, 可进入到 Pod 执行 `ofed_info` 查看驱动安装情况。
+    If the installation is successful, the pod will sleep indefinitely. You can enter the pod and execute `ofed_info` to view the driver installation status.
 
-### 手动安装
+### Manually Install
 
-对于无法通过 Kubernetes 安装驱动的场景: 比如镜像不支持等。我们可以选择手动方式安装:
+For scenarios where the driver cannot be installed through Kubernetes, such as unsupported images, we can choose manual installation:
 
-- 检查主机操作系统和版本和 CPU 架构
+- Check the host operating system, version, and CPU architecture
 
     ```yaml
     Static hostname: 10-20-1-20
@@ -156,17 +153,17 @@ spec:
     Hardware Model: -_7X06CTO1WW_-
     ```
 
-- 在[英伟达官网](https://network.nvidia.com/products/infiniband-drivers/linux/mlnx_ofed/)下载主机架构、操作系统对应的 OFED 驱动版本：
+- Download the corresponding OFED driver version for the host architecture and operating system on the [Nvidia official website](https://network.nvidia.com/products/infiniband-drivers/linux/mlnx_ofed/):
 
-    ![下载驱动](../../images/nvidia_ofed.png)
+    ![Download Driver](../../images/nvidia_ofed.png)
 
     !!! note
 
-        注意目前需要匹配到主机的发行版、架构以及操作系统版本。
+        Note that the current version needs to match the host's distribution, architecture, and operating system version.
 
-        如果想要下载早期版本，请点击 Archive Version 切换。
+        If you want to download earlier versions, click Archive Version to switch.
 
-- 本文以下载 iso 文件为例，下载文件并上传到主机。挂载到 `/mnt` 路径并执行安装命令。
+- Take downloading the ISO file as an example. Download the file and upload it to the host. Mount it to the `/mnt/` path and execute the installation command.
 
     ```shell
     
@@ -239,11 +236,11 @@ spec:
 
     !!! note
 
-        1. 输入 y 开始安装驱动，大概需要 20 分钟，请耐心等待
-        2. '--with-nvmf' 和 '--with-nfsrdma' 是可选参数，按需配置。可输入 --help 查看详情
+        1. Enter y to start the driver installation, which will take about 20 minutes. Please be patient.
+        2. '--with-nvmf' and '--with-nfsrdma' are optional parameters, configure them as needed. You can enter --help to view details.
 
-- 如果您的网卡固件版本低于当前驱动固件版本，则会自动更新固件。
-  当驱动安装成功后，提示重启驱动 `/etc/init.d/openibd restart`
+- If the firmware version of your network card is lower than the current driver firmware version, the firmware will be automatically updated.
+  After the driver installation is successful, it will prompt to restart the driver `/etc/init.d/openibd restart`
 
     ```shell
     ...
@@ -273,7 +270,7 @@ spec:
     Note: In order to load the new nvme-rdma and nvmet-rdma modules, the nvme module must be reloaded.
     ```
 
-- 重新启动驱动
+- Restart the driver
 
     ```shell
     $ /etc/init.d/openibd restart
@@ -281,9 +278,9 @@ spec:
     Loading HCA driver and Access Layer:                       [  OK  ]
     ```
 
-    如果执行失败，可参考以下错误：
+    If the execution fails, refer to the following errors:
 
-    1. 由于 opensm 仍然在运行导致重启驱动失败。
+    1. Restarting the driver fails due to opensm still running.
 
         ```shell
         $ /etc/init.d/openibd restart
@@ -300,9 +297,9 @@ spec:
         # /etc/init.d/openibd restart
         ```
 
-        手动执行 `systemctl stop opensmd` 可修复这个问题。
+        Manually execute `systemctl stop opensmd` to fix this issue.
 
-    2. 内核 module 正被引用，无法移除导致重启失败
+    2. The kernel module is being referenced and cannot be removed, causing the restart to fail.
 
         ```shell
         $ /etc/init.d/openibd restart
@@ -310,7 +307,7 @@ spec:
         rmmod: ERROR: Module mlx_compat is in use by: nvme_core nvme_fabrics
         ```
 
-        通过 lsmod 查看 module: nvme_core 和 nvme_fabrics 之间相互依赖关系，按顺序依次卸载这些 modules 后，解决这个问题。
+        Use lsmod to view the modules: nvme_core and nvme_fabrics depend on each other. After uninstalling these modules in order, the problem can be solved.
 
         ```shell
         $ rmmod nvme_fabrics
@@ -321,7 +318,7 @@ spec:
         Loading HCA driver and Access Layer:                       [  OK  ]
         ```
 
-- 检查驱动是否安装成功
+- Check whether the driver is installed successfully
 
     ```shell
     $ ofed_info
@@ -503,4 +500,4 @@ spec:
     ii  ucx                                   1.16.0-1.2310119                         amd64        Unified Communication X
     ```
 
-    以上输出列出了安装的 OFED 驱动版本和已经安装的 package，这表明驱动已经被正确的安装。
+    The above output lists the installed OFED driver version and installed packages, indicating that the driver has been installed correctly.
