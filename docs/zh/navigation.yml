@@ -686,7 +686,6 @@ nav:
                       - 更新和删除域名: skoala/gateway/domain/update-domain.md
                       - 配置域名策略: skoala/gateway/domain/domain-policy.md
               - 云原生微服务:
-                  - 导入/移除服务: skoala/cloud-ms/index.md
                   - 服务治理: skoala/cloud-ms/traffic-control.md
               - 传统微服务:
                   - 注册配置中心:
