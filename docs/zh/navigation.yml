@@ -411,6 +411,9 @@ nav:
                   - 公有云适配:
                       - 在阿里云环境运行: network/modules/spiderpool/public-cloud/alibabacloud.md
                       - 在 AWS 环境运行: network/modules/spiderpool/public-cloud/awscloud.md
+              - 集成 egressGateway:
+                  - 介绍: network/modules/egressgateway/index.md
+                  - 使用: network/modules/egressgateway/usage.md
               - 集成 sriov-network-operator:
                   - 介绍: network/modules/sriov-network-operator/index.md
                   - 安装: network/modules/sriov-network-operator/install.md
@@ -450,9 +453,6 @@ nav:
                   - 上传限制: network/modules/ingress-nginx/upload.md
                   - 镜像流量: network/modules/ingress-nginx/mirror.md
                   - 重定向: network/modules/ingress-nginx/redirect.md
-              - 集成 egressGateway:
-                  - 介绍: network/modules/egressgateway/index.md
-                  - 使用: network/modules/egressgateway/usage.md
               - 集成 Metallb:
                   - 介绍: network/modules/metallb/index.md
                   - 安装: network/modules/metallb/install.md
