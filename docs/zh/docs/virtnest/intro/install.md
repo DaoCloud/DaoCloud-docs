@@ -1,6 +1,6 @@
 # 安装虚拟机模块
 
-本页说明如何安装 虚拟机 模块。
+本页说明如何安装虚拟机模块。
 
 !!! info
 
@@ -8,19 +8,17 @@
 
 ## 配置 virtnest helm 仓库
 
-> helm-charts 仓库地址：<https://release.daocloud.io/harbor/projects/10/helm-charts/virtnest/versions>
+helm-charts 仓库地址：<https://release.daocloud.io/harbor/projects/10/helm-charts/virtnest/versions>
 
 ```shell
 helm repo add virtnest-release https://release.daocloud.io/chartrepo/virtnest
-
 helm repo update virtnest-release
 ```
 
-> 如果您想体验最新开发版的 virtnest，那么请添加如下仓库地址（开发版本的 virtnest 极其不稳定）
+如果您想体验最新开发版的 virtnest，那么请添加如下仓库地址（开发版本的 virtnest 极其不稳定）
 
 ```shell
 helm repo add virtnest-release-ci https://release-ci.daocloud.io/chartrepo/virtnest
-
 helm repo update virtnest-release-ci
 ```
 
@@ -29,11 +27,9 @@ helm repo update virtnest-release-ci
 建议安装最新版本。
 
 ```shell
-helm search repo virtnest-release/virtnest --versions
 [root@master ~]# helm search repo virtnest-release/virtnest --versions
 NAME                   CHART VERSION  APP VERSION  DESCRIPTION
 virtnest-release/virtnest  0.9.0          v0.9.0       A Helm chart for virtnest
-...
 ```
 
 ## 创建 namespace

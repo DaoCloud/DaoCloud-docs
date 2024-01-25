@@ -1,11 +1,11 @@
-# Offline Upgrade of the Virtual Machine Container Module
+# Offline Upgrade of the Virtual Machine Module
 
-This page explains how to install or upgrade the Virtual Machine Container module after downloading it from the [Download Center](../../download/index.md).
+This page explains how to install or upgrade the Virtual Machine module after downloading it from the [Download Center](../../download/index.md).
 
 !!! info
 
     The term "virtnest" appearing in the following commands or scripts is
-    the internal development code name for the Virtual Machine Container module.
+    the internal development code name for the Virtual Machine module.
 
 ## Load Images from the Installation Package
 
@@ -127,7 +127,7 @@ There are two upgrade methods available. You can choose the appropriate upgrade 
 
 === "Upgrade via helm repo"
 
-    1. Check if the Virtual Machine Container Helm repository exists.
+    1. Check if the Virtual Machine Helm repository exists.
 
         ```shell
         helm repo list | grep virtnest
@@ -139,13 +139,13 @@ There are two upgrade methods available. You can choose the appropriate upgrade 
         Error: no repositories to show
         ```
 
-    1. Add the Virtual Machine Container Helm repository.
+    1. Add the Virtual Machine Helm repository.
 
         ```shell
         helm repo add virtnest http://{harbor url}/chartrepo/{project}
         ```
 
-    1. Update the Virtual Machine Container Helm repository.
+    1. Update the Virtual Machine Helm repository.
 
         ```shell
         helm repo update virtnest # (1)
@@ -153,7 +153,7 @@ There are two upgrade methods available. You can choose the appropriate upgrade 
 
         1. If the helm version is too low, it may fail. If it fails, try executing `helm update repo`.
 
-    1. Choose the version of the Virtual Machine Container you want to install (it is recommended to install the latest version).
+    1. Choose the version of the Virtual Machine you want to install (it is recommended to install the latest version).
 
         ```shell
         helm search repo virtnest/virtnest --versions
@@ -168,7 +168,7 @@ There are two upgrade methods available. You can choose the appropriate upgrade 
 
     1. Back up the `--set` parameters.
 
-        Before upgrading the Virtual Machine Container version, it is recommended to run the following command to backup the `--set` parameters of the previous version.
+        Before upgrading the Virtual Machine version, it is recommended to run the following command to backup the `--set` parameters of the previous version.
 
         ```shell
         helm get values virtnest -n virtnest-system -o yaml > bak.yaml
@@ -201,7 +201,7 @@ There are two upgrade methods available. You can choose the appropriate upgrade 
 
     1. Back up the `--set` parameters.
 
-        Before upgrading the Virtual Machine Container version, it is recommended to run the following command to backup the `--set` parameters of the previous version.
+        Before upgrading the Virtual Machine version, it is recommended to run the following command to backup the `--set` parameters of the previous version.
 
         ```shell
         helm get values virtnest -n virtnest-system -o yaml > bak.yaml

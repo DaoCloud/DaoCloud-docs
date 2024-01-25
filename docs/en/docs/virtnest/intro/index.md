@@ -13,7 +13,7 @@ containerized applications.
 Here are the general steps to use Virtnest:
 
 1. Install the virtnest-agent component within the cluster.
-2. Build the required virtual machine container images.
+2. Build the required Virtual Machine images.
 3. Push the images to a Docker Registry or other image repositories.
 4. Create virtual machines using the images/YAML.
 5. Access the virtual machines through VNC/console.
