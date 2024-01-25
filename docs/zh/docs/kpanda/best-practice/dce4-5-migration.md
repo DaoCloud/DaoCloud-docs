@@ -28,7 +28,7 @@
     - 被纳管的 DCE 4.0 集群和还原集群中安装的 velero，对象存储配置必须保持一致。
     - 如果您需要进行 Pod 迁移，请将表单参数中的 __Migration Plugin Configuration__ 开关打开（**velero 5.2.0+** 版本支持此配置）。
 
-    ![安装 plugin](../images/4-5-03.png)
+![安装 plugin](../images/4-5-03.png)
 
 ## 可选配置
 
@@ -283,7 +283,7 @@ data:
 #### Calico 网络策略迁移
 
 参考资源和数据迁移流程，将 DCE 4.0 中的 Calico 服务迁移至 DCE 5.0。
-由于 ippool 名称不同，会导致服务异常，请迁移后？手动删除服务 YAML 中的注解，以确保服务正常启动。
+由于 IPPool 名称不同，会导致服务异常，请迁移后？手动删除服务 YAML 中的注解，以确保服务正常启动。
 
 !!! note
 	
@@ -302,11 +302,11 @@ annotations:
 
 ![编辑服务 YAML](../images/4-5-calico-03.png)
 
-#### Parcel underlay 网络策略迁移
+#### Parcel Underlay 网络策略迁移
 
-下文介绍 Parcel underlay 网络策略迁移步骤。
+下文介绍 Parcel Underlay 网络策略迁移步骤。
 
-1. 在 __还原集群__ 中安装 Helm 应用 spiderpool，安装流程参考[安装 spiderpool ](../user-guide/helm/helm-app.md)。
+1. 在 __还原集群__ 中安装 Helm 应用 spiderpool，安装流程参考[安装 spiderpool ](../../network/modules/spiderpool/install.md)。
 
     ![安装 spiderpool](../images/4-5-underlay-01.png)
 
@@ -370,4 +370,4 @@ annotations:
           v1.multus-cni.io/default-network: kube-system/d5multus
         ```
 
-    1. 查看 Pod IP 是否在 配置的 IP 池内。
+    2. 查看 Pod IP 是否在 配置的 IP 池内。
