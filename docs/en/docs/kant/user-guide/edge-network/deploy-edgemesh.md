@@ -1,3 +1,8 @@
+---
+MTPE: FanLin
+date: 2024-01-25
+---
+
 # Deploy EdgeMesh
 
 Before using the application mesh capabilities, you need to deploy EdgeMesh.
@@ -30,23 +35,29 @@ This page describes the specific workflow.
 
 The steps are as follows:
 
-1. Select `Containers` -> `Container Management` in the left navigation bar to enter the cluster list page, and click the `Cluster Name` to enter the cluster details page.
+1. Select __Container Management__ -> __Clusters__ in the left navigation bar to enter the cluster list page, and click the cluster name to enter the cluster details page.
 
-2. Select `Helm Apps` -> `Helm Charts` in the left menu, and find the EdgeMesh plugin under the `addon repository`.
+2. Select __Helm Apps__ -> __Helm Charts__ in the left menu, and find the __edgemesh__ plugin under the addon repository.
 
-3. Click the `edgemesh` entry to enter the template details page.
+    ![Helm Template](../images/deploy-edgemesh-01.png)
+
+3. Click the __edgemesh__ to enter the template details page.
 
 4. Select the EdgeMesh version in the upper right corner of the page,
-   and click the `Install` button to enter the EdgeMesh installation page.
+   and click the __Install__ button to enter the EdgeMesh installation page.
+
+    ![EdgeMesh Installation](../images/deploy-edgemesh-02.png)
 
 5. Fill in the basic configuration for edgemesh.
 
-    - Name: Consists of lowercase letters, numeric characters, or `-`, and must start with a letter and end with a letter or numeric character.
-    - Namespace: The namespace where the EdgeMesh application is located. If the namespace has not been created, you can choose to `Create New Namespace`.
+    - Name: Consists of lowercase letters, numeric characters, or __-__ , and must start with a letter and end with a letter or numeric character.
+    - Namespace: The namespace where the EdgeMesh application is located. If the namespace has not been created, you can choose to __Create New Namespace__ .
     - Version: Select the desired EdgeMesh version based on actual business needs.
-    - On Failure Delete: When enabled, it will synchronize the installation and wait for it to be installed. It will delete the installation when the installation fails.
-    - Ready Wait: When enabled, it will wait for all associated resources of the application to be ready before marking the application installation as successful.
-    - Verbose Log: Enable detailed output of the installation process log.
+    - Deletion Failed: When enabled, it will synchronize the installation and wait for it to be installed. It will delete the installation when the installation fails.
+    - Wait: When enabled, it will wait for all associated resources of the application to be ready before marking the application installation as successful.
+    - Detailed Logs: Enable detailed output of the installation process log.
+
+    ![Basic Info](../images/deploy-edgemesh-03.png)
 
 6. YAML parameter configuration.
 
@@ -124,5 +135,7 @@ pod/edgemesh-agent-xwxlp   1/1     Running   0          39s   192.168.5.187   ke
 NAME                            DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE   CONTAINERS       IMAGES                           SELECTOR
 daemonset.apps/edgemesh-agent   4         4         4       4            4           <none>          39s   edgemesh-agent   kubeedge/edgemesh-agent:latest   k8s-app=kubeedge,kubeedge=edgemesh-agent
 ```
+
+![Successfully Deployed](../images/deploy-edgemesh-04.png)
 
 Next: [Create Services](service.md)
