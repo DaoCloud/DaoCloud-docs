@@ -28,7 +28,7 @@
     - 被纳管的 DCE 4.0 集群和还原集群中安装的 velero，对象存储配置必须保持一致。
     - 如果您需要进行 Pod 迁移，请将表单参数中的 __Migration Plugin Configuration__ 开关打开（**velero 5.2.0+** 版本支持此配置）。
 
-    ![安装 plugin](../images/4-5-03.png)
+![安装 plugin](../images/4-5-03.png)
 
 ## 可选配置
 
@@ -283,9 +283,9 @@ data:
 #### Calico 网络策略迁移
 
 参考资源和数据迁移流程，将 DCE 4.0 中的 Calico 服务迁移至 DCE 5.0。
-由于 ippool 名称不同，会导致服务异常，请迁移后？手动删除服务 YAML 中的注解，以确保服务正常启动。
+由于 IPPool 名称不同，会导致服务异常，请迁移后？手动删除服务 YAML 中的注解，以确保服务正常启动。
 
-!!! note
+ !!! note
 	
     - DCE 4.0 中，名称为 default-ipv4-ippool
     - DCE 5.0 中，名称为 default-pool
@@ -302,11 +302,15 @@ annotations:
 
 ![编辑服务 YAML](../images/4-5-calico-03.png)
 
-#### Parcel underlay 网络策略迁移
+#### Parcel Underlay 网络策略迁移
 
-下文介绍 Parcel underlay 网络策略迁移步骤。
+下文介绍 Parcel Underlay 网络策略迁移步骤。
 
-1. 在 __还原集群__ 中安装 Helm 应用 spiderpool，安装流程参考[安装 spiderpool ](../user-guide/helm/helm-app.md)。
+   !!! note
+	
+    - 迁移时，DCE 5.0 中创建的 IP 地址，应与 DCE 4.0 中使用的 IP 地址保持一致，且创建的副本数量保持一致，建议副本数量小于 5。
+
+1. 在 __还原集群__ 中安装 DCE5.0 的 Helm 应用 spiderpool，安装流程参考[安装 spiderpool ](../../network/modules/spiderpool/install.md)。
 
     ![安装 spiderpool](../images/4-5-underlay-01.png)
 
@@ -314,17 +318,30 @@ annotations:
 
     ![网络配置](../images/4-5-underlay-02.png)
 
-3. 在 __静态 IP 池__ 中创建子网和预留 IP。
+3. 查看 DCE4 中使用的 IP 地址，在 DCE5.0  __静态 IP 池__ 中创建与 DCE4 中相同的子网 IP 地址及 IP 池。子网及 IP 池的使用请参考[创建子网及 IP 池 ](../../network/config/ippool/createpool.md.md)。
 
     ![创建子网](../images/4-5-underlay-03.png)
 
-    ![预留 IP](../images/4-5-underlay-04.png)
+    ![添加 IP](../images/4-5-underlay-04.png)
+创建完子网后，在子网详情页创建 IP 池及添加 IP 开始地址与 IP 数量。
 
-4. 创建 Multus CR 与 IP 一致（默认池选填、端口与实际一致）。
+   ![创建 IP 池](../images/4-5-underlay-05.png)
 
-    ![创建 Multus CR](../images/4-5-underlay-05.png)
+1. 创建 macvlan 类型的 Multus CR 实例，并选择刚才创建好的 IP 池。 具体使用请参考[创建 Multus CR](../../network/config/multus-cr.md)
 
-5. 创建 velero dce plugin configmap。
+    ![创建 Multus CR](../images/4-5-underlay-06.png)
+
+1. 进入**自定义资源**界面，并手动修改`spidermultusconfigs.spiderpool.spidernet.io`的`detectIPConflict`字段为：`true`，此为开启 IP 冲突检测。
+
+  ![IP 检查](../images/4-5-underlay-07.png) 
+
+1. 进入**工作负载** -> **容器网卡配置**，网卡选择刚才创建好的 macvlan 类型的 Multus CR，网卡 IP 池选择创建好的 IP 池，点击确定创建完成。此时容器组为运行中，则代表可以正常访问。
+
+  ![负载](../images/4-5-underlay-08.png) 
+
+  ![选择网卡 IP 池](../images/4-5-underlay-09.png) 
+
+1. 创建 velero dce plugin configmap。
 
     ```yaml
     ---
@@ -360,7 +377,7 @@ annotations:
             v1.multus-cni.io/default-network:  kube-system/d5multus
     ```
 
-6. 验证是否迁移成功。
+1. 验证是否迁移成功。
 
     1. 查看应用 YAML 中是否有 annotation。
 
@@ -370,4 +387,4 @@ annotations:
           v1.multus-cni.io/default-network: kube-system/d5multus
         ```
 
-    1. 查看 Pod IP 是否在 配置的 IP 池内。
+    2. 查看 Pod IP 是否在 配置的 IP 池内。
