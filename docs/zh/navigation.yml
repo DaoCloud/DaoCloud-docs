@@ -492,6 +492,7 @@ nav:
                       - DRBD 安装器:
                           - 介绍: storage/hwameistor/intro/drbd.md
                           - DRBD 适配的内核版本: storage/hwameistor/intro/drbd-support.md
+                          - DRBD 自助编译操作: storage/hwameistor/intro/drdb-kernel-make.md
                       - 调度器: storage/hwameistor/intro/scheduler.md
                       - 准入控制器: storage/hwameistor/intro/admission-controller.md
                   - 资源介绍: storage/hwameistor/intro/resources.md
