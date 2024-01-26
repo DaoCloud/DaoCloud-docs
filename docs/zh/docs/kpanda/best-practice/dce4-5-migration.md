@@ -146,7 +146,7 @@
 
 如果镜像地址发上了变化，可以通过在 Velero 命名空间中创建一个 ConfigMap 来配置映射，完成镜像地址的替换。
 
-次配置适用的迁移资源：pod/deployment/statefulsets/daemonset/replicaset/replicationcontroller/job/cronjob。
+此配置适用的迁移资源：pod/deployment/statefulsets/daemonset/replicaset/replicationcontroller/job/cronjob。
 
 !!! note
 
@@ -283,7 +283,7 @@ data:
 #### Calico 网络策略迁移
 
 参考资源和数据迁移流程，将 DCE 4.0 中的 Calico 服务迁移至 DCE 5.0。
-由于 IPPool 名称不同，会导致服务异常，请迁移后？手动删除服务 YAML 中的注解，以确保服务正常启动。
+由于 IPPool 名称不同，会导致服务异常，请迁移后手动删除服务 YAML 中的注解，以确保服务正常启动。
 
 !!! note
 	
@@ -306,6 +306,9 @@ annotations:
 
 下文介绍 Parcel Underlay 网络策略迁移步骤。
 
+!!! note
+ 迁移时，DCE 5.0 中创建的 IP 地址，应与 DCE 4.0 中使用的 IP 地址保持一致，且创建的副本数量保持一致。
+
 1. 在 __还原集群__ 中安装 Helm 应用 spiderpool，安装流程参考[安装 spiderpool ](../../network/modules/spiderpool/install.md)。
 
     ![安装 spiderpool](../images/4-5-underlay-01.png)
@@ -323,21 +326,21 @@ annotations:
 
    ![创建 IP 池](../images/4-5-underlay-05.png)
 
-1. 创建 macvlan 类型的 Multus CR 实例，并选择刚才创建好的 IP 池。 具体使用请参考[创建 Multus CR](../../network/config/multus-cr.md)
+4. 创建 macvlan 类型的 Multus CR 实例，并选择刚才创建好的 IP 池。 具体使用请参考[创建 Multus CR](../../network/config/multus-cr.md)
 
     ![创建 Multus CR](../images/4-5-underlay-06.png)
 
-1. 进入 **自定义资源** 界面，并手动修改`spidermultusconfigs.spiderpool.spidernet.io`的`detectIPConflict`字段为：`true`，此为开启 IP 冲突检测。
+5. 进入 **自定义资源** 界面，并手动修改`spidermultusconfigs.spiderpool.spidernet.io`的`detectIPConflict`字段为：`true`，此为开启 IP 冲突检测。
 
     ![IP 检查](../images/4-5-underlay-07.png) 
 
-1. 进入 **工作负载** -> **容器网卡配置** ，网卡选择刚才创建好的 macvlan 类型的 Multus CR，网卡 IP 池选择创建好的 IP 池，点击确定创建完成。此时容器组为运行中，则代表可以正常访问。
+6. 进入 **工作负载** -> **容器网卡配置** ，网卡选择刚才创建好的 macvlan 类型的 Multus CR，网卡 IP 池选择创建好的 IP 池，点击确定创建完成。此时容器组为运行中，则代表可以正常访问。
 
     ![负载](../images/4-5-underlay-08.png) 
 
     ![选择网卡 IP 池](../images/4-5-underlay-09.png) 
 
-1. 创建 velero dce plugin configmap。
+7. 创建 velero dce plugin configmap。
 
     ```yaml
     ---
@@ -373,7 +376,7 @@ annotations:
             v1.multus-cni.io/default-network:  kube-system/d5multus
     ```
 
-1. 验证是否迁移成功。
+8. 验证是否迁移成功。
 
     1. 查看应用 YAML 中是否有 annotation。
 
