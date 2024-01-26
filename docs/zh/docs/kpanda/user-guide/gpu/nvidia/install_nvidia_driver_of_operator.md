@@ -52,15 +52,20 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
         1. 一个集群只能使用一种 GPU 卡模式，部署 GPU Operator 前，请确认 GPU 卡的使用模式，以选择是否启用 __DevicePlugin__ 特性。
         2. 当使用 vGPU 模式（关闭这个参数）时，守护进程 __nvidia-operator-validator__ 将长期处于 “等待中”状态，这属于正常现象，不影响 vGPU 功能的使用。
 
+#### Operator 参数配置
+
+1. __InitContainer.image__ ：配置 CUDA 镜像，推荐默认镜像： __nvidia/cuda__ 。
+2. __InitContainer.repository__ ：CUDA 镜像所在的镜像仓库，默认为 __nvcr.m.daocloud.io__ 仓库。
+3. __InitContainer.version__ : CUDA 镜像的版本，请使用默认参数。
+
 #### Driver 参数配置
 
-2. __Driver.enable__ ：配置是否在节点上部署 NVIDIA 驱动，默认开启，如果您在使用 GPU Operator 部署前，已经在节点上部署了 NVIDIA 驱动程序，请关闭。
+1. __Driver.enable__ ：配置是否在节点上部署 NVIDIA 驱动，默认开启，如果您在使用 GPU Operator 部署前，已经在节点上部署了 NVIDIA 驱动程序，请关闭。
 
-3. __Driver.image__ ：配置 GPU 驱动镜像，推荐默认镜像： __nvidia/driver__ 。
+2. __Driver.image__ ：配置 GPU 驱动镜像，推荐默认镜像： __nvidia/driver__ 。
 
-4. __Driver.repository__ ：GPU 驱动镜像所在的镜像仓库，默认为 nvidia 的 __nvcr.io__ 仓库。
-
-5. __Driver.version__ ：GPU 驱动镜像的版本，离线部署请使用默认参数，仅在线安装时需配置，不同类型操作系统的 Driver 镜像的版本存在如下差异：
+3. __Driver.repository__ ：GPU 驱动镜像所在的镜像仓库，默认为 nvidia 的 __nvcr.io__ 仓库。
+4. __Driver.version__ ：GPU 驱动镜像的版本，离线部署请使用默认参数，仅在线安装时需配置，不同类型操作系统的 Driver 镜像的版本存在如下差异：
 
     - RedHat 系统， 命名规则通常为 CUDA 的版本和 OS 版本组成，如内核为 `4.18.0-305.el8.x86_64` 的 RedHat 8.4 的 Driver.version 值为 __525.105.17__ 。
     - Ubuntu 系统，命名规则为： __<driver-branch>-<linux-kernel-version>-<os-tag>__ 。
@@ -69,7 +74,7 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
     - CentOS 系统， 命名规则通常为 CUDA 的版本和 OS 版本组成，如 __535.104.05__ 。
 
-6. __Driver.RepoConfig.ConfigMapName__ ：用来记录 GPU Operator 的离线 yum 源配置文件名称，当使用预置的离线包时，参考 __使用 Global 集群任意节点的 yum 源配置__ 。
+5. __Driver.RepoConfig.ConfigMapName__ ：用来记录 GPU Operator 的离线 yum 源配置文件名称，当使用预置的离线包时，参考 __使用 Global 集群任意节点的 yum 源配置__ 。
 
     ??? note "使用 Global 集群任意节点的 yum 源配置"
 
@@ -102,17 +107,27 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
     - [构建 RedHat 8.4 离线 yum 源](./upgrade_yum_source_redhat8_4.md)
 
-7. **MIG 配置参数**
+#### Toolkit 配置参数
 
-    详细配置方式请参考[开启 MIG 功能](mig/create_mig.md)
+1. __Toolkit.enable__ ：默认开启，主要用于加速并行计算应用程序的开发和优化。
 
-    - __MigManager.enabled__ ：是否启用 MIG 能力特性。
-    - __Mig.strategy__ ：节点上 GPU 卡的 MIG 设备的公开策略。NVIDIA 提供了两种公开 MIG 设备的策略（ __single__ 、 __mixed__ 策略，详情参考：[NVIDIA GPU 卡模式说明](index.md)
-    - __MigManager.Config__ : 用于配置 MIG 切分配置参数和默认值。
-        - __default__ : 节点使用的切分配置默认值，默认为 __all-disabled__ 。
-        - __name__ ：MIG 的切分配置文件名，用于定义 MIG 的（GI ,CI）切分策略。默认为 __default-mig-parted-config__ 。自定义参数参考[开启 MIG 功能](mig/create_mig.md)
+2. __Toolkit.image__ ：配置 Toolkit 镜像，推荐默认镜像： __nvidia/k8s/container-toolkit__ 。
 
-8. __Node-Feature-Discovery.enableNodeFeatureAPI__ ：启用或禁用节点特性 API（Node Feature Discovery API）。
+3. __Toolkit.repository__ ：所在的镜像仓库，默认为 __nvcr.m.daocloud.io__ 仓库。
+
+4. __Toolkit.version__ ：Toolkit 镜像的版本。默认使用 centos 的镜像，如果使用ubuntu，需要手动修改 addon 的yaml，将centos，改成ubuntu。具体型号参考:https://catalog.ngc.nvidia.com/orgs/nvidia/teams/k8s/containers/container-toolkit/tags
+
+#### MIG 配置参数
+
+详细配置方式请参考[开启 MIG 功能](mig/create_mig.md)
+
+1. __MigManager.enabled__ ：是否启用 MIG 能力特性。
+2. - __MigManager.Config.name__ : MIG 的切分配置文件名，用于定义 MIG 的（GI ,CI）切分策略。默认为 __default-mig-parted-config__ 。自定义参数参考[开启 MIG 功能](mig/create_mig.md)
+3. __Mig.strategy__ ：节点上 GPU 卡的 MIG 设备的公开策略。NVIDIA 提供了两种公开 MIG 设备的策略（ __single__ 、 __mixed__ 策略，详情参考：[NVIDIA GPU 卡模式说明](index.md)
+
+#### Node-Feature-Discovery 配置参数
+
+1. __Node-Feature-Discovery.enableNodeFeatureAPI__ ：启用或禁用节点特性 API（Node Feature Discovery API）。
 
      - 当设置为 __true__ 时，启用了节点特性 API。
      - 当设置为 __false__ 或 __未设置__ 时，禁用节点特性 API。
