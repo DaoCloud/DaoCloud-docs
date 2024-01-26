@@ -13,8 +13,7 @@
 
 1. 请确认集群环境中已具备 RDMA 设备。
 
-2. 请确认集群中节点具备 RoCE 功能的 mellanox 网卡，本示例中采用 mellanox ConnectX 5 型号网卡。并且已安装对应的 OFED 驱动，如未安装, 可
-   参考 [安装 OFED 驱动](./ofed_driver.md) 文档安装驱动。
+2. 请确认集群中节点具备 RoCE 功能的 mellanox 网卡，本示例中采用 mellanox ConnectX 5 型号网卡。并且已安装对应的 OFED 驱动，如未安装, 可参考 [安装 OFED 驱动](./ofed_driver.md) 文档安装驱动。
 
 ## 基于 Macvlan /IPVLAN 共享 RoCE 网卡
 

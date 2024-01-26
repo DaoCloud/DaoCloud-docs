@@ -306,11 +306,7 @@ annotations:
 
 下文介绍 Parcel Underlay 网络策略迁移步骤。
 
-   !!! note
-	
-    - 迁移时，DCE 5.0 中创建的 IP 地址，应与 DCE 4.0 中使用的 IP 地址保持一致，且创建的副本数量保持一致，建议副本数量小于 5。
-
-1. 在 __还原集群__ 中安装 DCE5.0 的 Helm 应用 spiderpool，安装流程参考[安装 spiderpool ](../../network/modules/spiderpool/install.md)。
+1. 在 __还原集群__ 中安装 Helm 应用 spiderpool，安装流程参考[安装 spiderpool ](../../network/modules/spiderpool/install.md)。
 
     ![安装 spiderpool](../images/4-5-underlay-01.png)
 
