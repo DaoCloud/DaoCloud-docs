@@ -285,7 +285,7 @@ data:
 参考资源和数据迁移流程，将 DCE 4.0 中的 Calico 服务迁移至 DCE 5.0。
 由于 IPPool 名称不同，会导致服务异常，请迁移后？手动删除服务 YAML 中的注解，以确保服务正常启动。
 
- !!! note
+!!! note
 	
     - DCE 4.0 中，名称为 default-ipv4-ippool
     - DCE 5.0 中，名称为 default-pool
@@ -319,7 +319,7 @@ annotations:
     ![创建子网](../images/4-5-underlay-03.png)
 
     ![添加 IP](../images/4-5-underlay-04.png)
-创建完子网后，在子网详情页创建 IP 池及添加 IP 开始地址与 IP 数量。
+    创建完子网后，在子网详情页创建 IP 池及添加 IP 开始地址与 IP 数量。
 
    ![创建 IP 池](../images/4-5-underlay-05.png)
 
@@ -327,15 +327,15 @@ annotations:
 
     ![创建 Multus CR](../images/4-5-underlay-06.png)
 
-1. 进入**自定义资源**界面，并手动修改`spidermultusconfigs.spiderpool.spidernet.io`的`detectIPConflict`字段为：`true`，此为开启 IP 冲突检测。
+1. 进入 **自定义资源** 界面，并手动修改`spidermultusconfigs.spiderpool.spidernet.io`的`detectIPConflict`字段为：`true`，此为开启 IP 冲突检测。
 
-  ![IP 检查](../images/4-5-underlay-07.png) 
+    ![IP 检查](../images/4-5-underlay-07.png) 
 
-1. 进入**工作负载** -> **容器网卡配置**，网卡选择刚才创建好的 macvlan 类型的 Multus CR，网卡 IP 池选择创建好的 IP 池，点击确定创建完成。此时容器组为运行中，则代表可以正常访问。
+1. 进入 **工作负载** -> **容器网卡配置** ，网卡选择刚才创建好的 macvlan 类型的 Multus CR，网卡 IP 池选择创建好的 IP 池，点击确定创建完成。此时容器组为运行中，则代表可以正常访问。
 
-  ![负载](../images/4-5-underlay-08.png) 
+    ![负载](../images/4-5-underlay-08.png) 
 
-  ![选择网卡 IP 池](../images/4-5-underlay-09.png) 
+    ![选择网卡 IP 池](../images/4-5-underlay-09.png) 
 
 1. 创建 velero dce plugin configmap。
 

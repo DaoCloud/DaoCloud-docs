@@ -78,7 +78,7 @@ hide:
 
    ![spiderpool install5](../../../images/spiderpool-install5.png)
 
-   上图中的各项参数说明：
+    上图中的各项参数说明：
 
     - `Rdma` -> `RdmaSharedDevicePlugin` -> `Install RdmaSharedDevicePlugin`：开启安装 RDMA 共享设备插件。基于 Macvlan 或 IPVLAN 使用，如果您的节点上已经安装了 RDMA 共享设备，并打算使用，则可以将其设置为开启，默认为关闭状态。
 
@@ -92,7 +92,7 @@ hide:
   
    ![spiderpool install6](../../../images/spiderpool-install6.png)
 
-   上图中的各项参数说明：
+    上图中的各项参数说明：
 
    - `CNI-Plugins` -> `Image` -> `repository`：设置镜像名，保持默认即可。
 
@@ -106,17 +106,11 @@ hide:
 
    ![spiderpool install7](../../../images/spiderpool-install7.png)
 
-   上图中的各项参数说明：
+    上图中的各项参数说明：
 
    - `Cluster Default Ippool Installation` -> `install IPv4 ippool`：安装 IPv4 IP 池。
 
    - `Cluster Default Ippool Installation` -> `install IPv6 ippool`：安装 IPv6 IP 池。
-
-   ![spiderpool instal7](../../images/spiderpool%20instal7.png)
-
-   - `Cluster Default Ippool Installation` -> `IPv4 ippool name`：IPv4 ippool 的名字。如果未开启 `install IPv4 ippool`，请忽略本项。
-
-   - `Cluster Default Ippool Installation` -> `IPv6 ippool name`：IPv6 ippool 的名字。如果未开启 `install IPv6 ippool`，请忽略本项。
 
    - `Cluster Default Ippool Installation` -> `IPv4 ippool subnet`：设置默认池中的 IPv4 子网号，请提前规划好可使用的子网及网关，例如 `192.168.0.0/16`。如果未开启 `install IPv4 ippool`，请忽略本项。
 
@@ -127,19 +121,22 @@ hide:
    - `Cluster Default Ippool Installation` -> `IPv6 ippool gateway`：设置 IPv6 网关，例如 `fd00::1`，该 IP 地址应属于 `IPv6 ippool subnet`。如果未开启 `install IPv6 ippool`，请忽略本项。
 
    - `Cluster Default Ippool Installation` -> `IP Ranges for default IPv4 ippool`：设置哪些 IP 地址可分配给 Pod，可设置多个成员，每个成员只支持 2 种输入格式的字符串。
+    
+    !!! note
         1. 一种是一段连续的 IP，如 `192.168.0.10-192.168.0.100`。
         2. 一种是单个 IP 地址，如 `192.168.0.200` 。不支持输入 CIDR 格式。
 
         这些 IP 地址应属于 `IPv4 ippool subnet`。如果未开启 `install IPv4 ippool`，请忽略本项。
 
    - `Cluster Default Ippool Installation` -> `IP Ranges for default IPv6 ippool`：设置哪些 IP 地址可分配给 Pod，可设置多个成员，每个成员只支持 2 种输入格式的字符串。
-
+  
+    !!! note
         1. 一种是一段连续的 IP，如 `fd00::10-fd00::100`。
         2. 一种是单个 IP 地址，如 `fd00::200` 设置。不支持输入 CIDR 格式。
 
         这些 IP 地址应属于 `IPv6 ippool subnet`。如果未开启 `install IPv6 ippool`，请忽略本项。
 
-1. 点击右下角`确定`按钮即可完成安装。完成后，可参考 [SpiderPool 的使用](./usage.md)进行 IP Pool 的使用。
+2. 点击右下角`确定`按钮即可完成安装。完成后，可参考 [SpiderPool 的使用](./usage.md)进行 IP Pool 的使用。
 
 !!! note
 
