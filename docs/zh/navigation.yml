@@ -139,6 +139,7 @@ nav:
                   - Jenkins 场景配置: amamba/quickstart/scenarios-config.md
                   - 在Jenkins中使用自定义工具链: amamba/quickstart/jenkins-custom.md
                   - Jenkins高可用方案: amamba/quickstart/jenkins-HA.md
+                  - 构建多架构镜像: amamba/user-guide/pipeline/podman.md
       - 容器:
           - 容器管理:
               - 介绍:
