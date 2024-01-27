@@ -207,3 +207,21 @@ hide:
             ```shell
             systemctl restart containerd
             ```
+
+13. 创建集群时，高级设置启用“为新建集群内核调优”，集群创建失败。
+
+    1. 检查内核模块 conntrack 是否加载，执行如下命令：
+
+        ```shell
+        lsmod |grep conntrack
+        ```
+
+    2. 如果返回为空，表示没有加载。重新加载，执行如下命令：
+
+        ```shell
+        modprobe ip_conntrack
+        ```
+        
+    !!! note
+
+        如果内核模块进行了升级操作，也会导致集群创建失败。
