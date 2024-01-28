@@ -1,6 +1,6 @@
 # 创建终端设备
 
-终端设备可以连接到边缘节点，支持通过 Modbus 协议接入。终端设备接入后，可以在云端管理平面对设备进行统一管理。
+终端设备可以连接到边缘节点，支持通过 Modbus 协议或自定义协议接入。终端设备接入后，可以在云端管理平面对设备进行统一管理。
 
 本文介绍创建终端设备和终端设备绑定边缘节点的操作步骤。
 
@@ -17,13 +17,15 @@
 3. 填写基础信息。
 
     - 设备名称：小写字母、数字、中划线（-）、点（.）的组合，不能有连续符号；以字母或数字为开头、结尾；最多包含 253 个字符。
-    - 访问协议：当前平台支持 Modbus 协议设备接入。
+    - 访问协议：当前平台支持 Modbus 协议设备接入，如果您的设备非 Modbus 协议，您可以选择 `自定义`，并输入协议名称。
     - 命名空间：设备所在命名空间，命名空间的资源相互隔离。
     - 描述：设备描述信息。
 
-    ![创建设备](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-device-02.png)
+    ![创建设备](../../images/create-device-10.png)
 
 4. 填写设备配置，可以添加设备孪生属性和标签。
+
+    **Modbus 协议**
 
     - 孪生属性：选填，指终端设备的动态数据，包括专有实时数据，例如灯的开、关状态，温湿度传感器的温度、适度等。
     - 标签：选填，通过给设备打上标签，将不同设备进行分类管理。
@@ -43,9 +45,19 @@
     - 属性值区间：对获取的原始数据进行范围限定。
     - 缩放因子：对获取的原始数据进行缩放处理。
 
-    ![创建设备](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-device-04.png)
+    ![创建 Modbus 设备](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-device-04.png)
+
+    **自定义协议**
+
+    - 属性名、属性值、访问方式、采集间隔填写同 Modbus 协议。
+    - 上报间隔：对设备进行指定间隔的数据上报，单位为 ms。
+    - 访问方式：平台连接到设备后，访问设备属性的方式。
+
+    ![创建自定义设备](../../images/create-device-11.png)
 
 5. 填写设备访问配置。
+
+    **Modbus 协议**
 
     Modbus 协议有 RTU 和 TCP 两种传输模式。不同模式下的访问配置有所不同。
 
@@ -67,6 +79,10 @@
     - 端口：终端设备的端口。
 
     ![创建设备](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-device-06.png)
+
+    **自定义协议**
+
+    访问配置参数由用户自定义配置。配置参数值平台连接到设备的访问参数。
 
 6. 信息确认，确认所配置的信息无误，点击`确定`，完成设备创建。
 

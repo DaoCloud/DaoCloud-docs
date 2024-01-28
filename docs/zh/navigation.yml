@@ -1026,7 +1026,8 @@ nav:
                   - Release Notes: kant/intro/release-notes.md
                   - 离线升级云边协同: kant/intro/offline-upgrade.md
               - 边缘单元:
-                  - 创建边缘单元: kant/user-guide/edge-unit/create-unit.md
+                  - 创建专有边缘单元: kant/user-guide/edge-unit/create-internal-unit.md
+                  - 创建外接边缘单元: kant/user-guide/edge-unit/create-external-unit.md
                   - 管理边缘单元: kant/user-guide/edge-unit/manage-unit.md
               - 边缘节点:
                   - 边缘节点概述: kant/user-guide/node/index.md
