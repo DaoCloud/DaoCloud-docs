@@ -55,7 +55,7 @@
     - __DevicePlugin__ 设置为 __enable__ 
     - __MIG strategy__ 设置为 __mixed__ 
     - __Mig Manager__ 下的 __enabled__ 参数开启
-    - __MigManager Config__ ：MIG 的切分策略配置，默认为 __default-mig-parted-config__ ，可自定义切分策略配置文件。
+    - __MigManager Config__ ：MIG 的切分策略配置，默认为 __default-mig-parted-config__ ，可自定义切分策略配置文件，单张卡最多可切分为 7 个实例。
 
     ??? note "点击查看详细的 YAML 配置说明"
 
