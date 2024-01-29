@@ -7,9 +7,9 @@
 
 下文说明创建边缘节点组的步骤。
 
-1. 进入边缘单元详情页，选择左侧菜单`边缘资源` -> `边缘节点组`。
+1. 进入边缘单元详情页，选择左侧菜单 __边缘资源__ -> __边缘节点组__ 。
 
-2. 点击节点组列表右上角`创建边缘节点组`按钮。
+2. 点击节点组列表右上角 __创建边缘节点组__ 按钮。
 
     ![创建边缘节点组](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-group-01.png)
 
@@ -21,6 +21,6 @@
 
     ![创建边缘节点组](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-group-02.png)
 
-4. 点击`确定`按钮，即创建边缘节点组成功，返回到边缘节点组列表。
+4. 点击 __确定__ 按钮，即创建边缘节点组成功，返回到边缘节点组列表。
 
 下一步：[管理边缘节点组](manage-group.md)
