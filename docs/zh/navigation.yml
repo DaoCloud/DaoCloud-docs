@@ -572,8 +572,8 @@ nav:
               - 虚拟机模板:
                   - 通过模板创建虚拟机: virtnest/template/index.md
                   - 虚拟机模板: virtnest/template/tep.md
-              - 虚拟机镜像:
-                  - 构建虚拟机镜像: virtnest/vm-image/index.md
+              - 虚拟机镜像: virtnest/vm-image/index.md
+              - 导入 Ubuntu 系统的虚拟机: virtnest/import/import-ubuntu.md
       - 可观测:
           - 可观测性:
               - 介绍:
