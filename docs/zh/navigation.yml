@@ -414,6 +414,7 @@ nav:
                       - 在 AWS 环境运行: network/modules/spiderpool/public-cloud/awscloud.md
               - 集成 egressGateway:
                   - 介绍: network/modules/egressgateway/index.md
+                  - 安装: network/modules/egressgateway/install.md
                   - 使用: network/modules/egressgateway/usage.md
               - 集成 sriov-network-operator:
                   - 介绍: network/modules/sriov-network-operator/index.md
