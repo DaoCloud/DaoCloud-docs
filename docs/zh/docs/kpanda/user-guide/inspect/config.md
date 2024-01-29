@@ -36,7 +36,7 @@ DCE 5.0 容器管理模块提供集群巡检功能，支持从集群维度、节
 - 点击 __巡检__ 可以根据该配置立即执行一次巡检。
 - 点击 __巡检配置__ 可以修改巡检配置。
 
-    ![basic](../../images/inspect06.png)
+    ![basic](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/inspect06.png)
 
 !!! note
 
