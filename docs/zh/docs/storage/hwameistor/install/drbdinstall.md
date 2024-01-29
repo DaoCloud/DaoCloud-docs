@@ -29,14 +29,14 @@ Hwameistor 安装时，可直接启用 DRDB 组件，详情可查看 [Hwameistor
 
 ## 通过 Helm 安装
 
-如通过 Helm 安装，请使用如下方式进行安装:
+部署以下`DaemonSet`。 它将在每个 kubernetes 工作节点上启动一个 pod 来安装 DRBD 模块和工具：
 
 ```console
-helm repo add hwameistor https://hwameistor.io/hwameistor
+helm repo add drbd-adapter https://hwameistor.io/drbd-adapter/
 
-helm repo update hwameistor
+helm repo update drbd-adapter
 
-helm pull hwameistor/drbd-adapter --untar
+helm pull drbd-adapter/drbd-adapter --untar
 
 helm install drbd-adapter ./drbd-adapter -n hwameistor --create-namespace
 ```
@@ -44,7 +44,7 @@ helm install drbd-adapter ./drbd-adapter -n hwameistor --create-namespace
 国内用户可以使用镜像仓库 `daocloud.io/daocloud` 加速：
 
 ```console
-helm install drbd-adapter ./drbd-adapter \
+$ helm install drbd-adapter ./drbd-adapter \
     -n hwameistor --create-namespace \
     --set imagePullPolicy=Always \
     --set registry=daocloud.io/daocloud
