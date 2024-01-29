@@ -1,26 +1,26 @@
-# DRBD 自助编译操作
+# DRBD Self-Compilation Instructions
 
-当 DRBD 默认适配的内核版本不支持时，建议参考该文档的步骤，来编译对应的离线包并安装到对应环境中来使用 DRBD 的功能。
+When the default kernel version supported by DRBD is not available, it is recommended to follow the steps in this document to compile the corresponding offline package and install it in the corresponding environment to use DRBD's functionality.
 
-## 操作步骤
+## Steps
 
-本文以内核为 `4.9.212-36.el7.x86_64` 为例进行演示。
+This document demonstrates the process using the kernel version `4.9.212-36.el7.x86_64` as an example.
 
-### 编译内核
+### Compile the Kernel
 
-1. 确认内核版本
+1. Confirm the kernel version:
 
     ```bash
     uname -r
     ```
 
-    输出结果为：
+    The output should be:
 
     ```console
     Linux localhost.localdomain 4.9.212-36.el7.x86_64 #1 SMP Thu Feb 6 17:55:02 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
     ```
 
-1. 下载源码
+1. Download the source code:
 
     ```bash
     wget https://pkg.linbit.com//downloads/drbd/9.0/drbd-9.0.32-1.tar.gz
@@ -28,16 +28,16 @@
     tar -xvf drbd-9.0.32-1.tar.gz
     ```
 
-1. 下载安装内核编译模块
+1. Download and install the kernel development module:
 
     ```bash
-    # 下载 rpm 包，其他内核的可参阅 https://linux.cc.iitk.ac.in/mirror/centos/elrepo/kernel/el7/x86_64/RPMS/
+    # Download the rpm package, for other kernels refer to https://linux.cc.iitk.ac.in/mirror/centos/elrepo/kernel/el7/x86_64/RPMS/
     wget https://linux.cc.iitk.ac.in/mirror/centos/7/virt/x86_64/xen-common/Packages/k/kernel-4.9.212-36.el7.x86_64.rpm
-    # 开始安装
+    # Start the installation
     rpm -ivh kernel-devel-4.9.212-36.el7.x86_64.rpm
     ```
 
-    安装完执行检查：
+    After installation, perform a check:
 
     ```bash
     $ ls -lF /lib/modules/`uname -r`/build
@@ -46,15 +46,15 @@
     lrwxrwxrwx. 1 root root 5 Dec  5 13:14 /lib/modules/4.9.212-36.el7.x86_64/source -> build/
     ```
 
-1. 下载安装编译所需依赖
+1. Download and install the necessary dependencies for compilation:
 
-    安装 gcc、make、patch、kmod、cpio、python3 以及 python3-pip 软件包：
+    Install the gcc, make, patch, kmod, cpio, python3, and python3-pip packages:
 
     ```bash
     yum install -y gcc make patch kmod cpio python3 python3-pip
     ```
 
-    安装 coccinelle：
+    Install coccinelle:
 
     ```bash
     git clone https://github.com/coccinelle/coccinelle.git
@@ -64,9 +64,9 @@
     sudo make install
     ```
 
-1. 开始编译
+1. Start the compilation
 
-    1. 进入到 `drbd-9.0.32-1` 目录下执行 `make` 命令，输出结果如下：
+    1. Enter the `drbd-9.0.32-1` directory and execute the `make` command. The output should be as follows:
 
         ```bash
         Calling toplevel makefile of kernel source tree, which I believe is in
@@ -244,12 +244,11 @@
           Memorizing module configuration ... done.
         ```
 
-    1. 创建目录 `/lib/modules/<内核版本>/kernel/drivers/block/drbd/`，内核版本根据实际情况替换
-  
-    1. 把上一步编译后生成的 `/home/drbd-9.0.32-1/drbd/drbd.ko`、`/home/drbd-9.0.32-1/drbd/drbd_transport_tcp.ko`
-       传至  `/lib/modules/<内核版本>/kernel/drivers/block/drbd/`
-  
-    1. 配置conf，创建目录把 `global_common.conf` 放在 `/etc/drbd.d/` 目录下，`drbd.conf` 放在 `/etc` 目录下：
+    1. Create the directory `/lib/modules/<kernel_version>/kernel/drivers/block/drbd/`, replacing `<kernel_version>` with the actual version.
+
+    1. Move the generated `/home/drbd-9.0.32-1/drbd/drbd.ko` and `/home/drbd-9.0.32-1/drbd/drbd_transport_tcp.ko` files to `/lib/modules/<kernel_version>/kernel/drivers/block/drbd/`.
+
+    1. Configure the conf file. Place `global_common.conf` in the `/etc/drbd.d/` directory and `drbd.conf` in the `/etc` directory:
 
         ```bash title="global_common.conf"
         # DRBD is the result of over a decade of development by LINBIT.
@@ -317,21 +316,21 @@
                 }
         }
         ```
-  
+
         ```bash title="drbd.conf"
         # You can find an example in  /usr/share/doc/drbd.../drbd.conf.example
         
         include "drbd.d/global_common.conf";
         include "drbd.d/*.res";  
         ```
-  
-    1. 加载内核
+
+    1. Load the kernel:
 
         ```bash
         insmod drbd.ko drbd_transport_tcp.ko
         ```
 
-### 编译 drbd-tools
+### Compile drbd-tools
 
 ```bash
 git clone -n https://github.com/LINBIT/drbd-utils.git
@@ -342,7 +341,7 @@ cd drbd-headers/
 git checkout c757cf357edef67751b8f45a6ea894d287180087
 cd ..
 
-#安装依赖
+# Install dependencies
 yum install -y build-essential wget flex automake
   
 ./autogen.sh
@@ -351,7 +350,7 @@ make tools
 find ./user -type f -executable -name 'drbd[a-z]*' -exec mv -v {} /usr/local/bin/ \;
 ```
 
-### 进行验证
+### Verification
 
 ```bash
 $ drbdadm -V
