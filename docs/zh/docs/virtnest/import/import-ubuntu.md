@@ -18,7 +18,10 @@
     需要通过 openssl 获取
 
     ```sh
-    ~ openssl s_client -connect 10.64.56.11:443 </dev/null | openssl x509 -in /dev/stdin -fingerprint -sha1 -noout
+    openssl s_client -connect 10.64.56.11:443 </dev/null | openssl x509 -in /dev/stdin -fingerprint -sha1 -noout
+    ```
+    输出类似于：
+    ```output
     Can't use SSL_get_servername
     depth=0 CN = vcsa.daocloud.io
     verify error:num=20:unable to get local issuer certificate
