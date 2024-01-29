@@ -6,7 +6,7 @@
 
 当前公有云厂商众多，如阿里云、华为云、腾讯云、AWS 等，但当前开源社区的主流 CNI 插件难以以 Underlay 网络方式运行其上，
 只能使用每个公有云厂商的专有 CNI 插件，没有统一的公有云 Underlay 解决方案。本文将介绍一种适用于任意的公有云环境中的
-Underlay 网络解决方案：[Spiderpool](../../../README-zh_CN.md) ，尤其是在混合云场景下，统一的 CNI 方案能够便于多云管理。
+Underlay 网络解决方案：[Spiderpool](../index.md) ，尤其是在混合云场景下，统一的 CNI 方案能够便于多云管理。
 
 ## Spiderpool 针对 AWS 存在的局限性提供的解决方案
 
@@ -92,7 +92,7 @@ helm install spiderpool spiderpool/spiderpool --namespace kube-system --set ipam
 
 !!! note
 
-    - 如果您使用的是中国大陆的云厂商服务器，可以指定参数 `--set global.imageRegistryOverride=ghcr.m.daocloud.io` ，以帮助您更快的拉取镜像。
+    - 如果您使用的是中国大陆的云厂商服务器，可以指定参数 `--set global.imageRegistryOverride=ghcr.m.daocloud.io`，以帮助您更快的拉取镜像。
     - Spiderpool 可以为控制器类型为：`Statefulset` 的应用副本固定 IP 地址。在公有云的 Underlay 网络场景中，云主机只能使用限定的 IP 地址，
       当 StatefulSet 类型的应用副本漂移到其他节点，但由于原固定的 IP 在其他节点是非法不可用的，新的 Pod 将出现网络不可用的问题。对此场景，
       将 `ipam.enableStatefulSet` 设置为 `false`，禁用该功能。
@@ -164,11 +164,11 @@ Spiderpool 的 CRD：`SpiderIPPool` 提供了 `nodeName`、`multusName` 与 `ips
   SpiderIPPool 会使用对应的 Multus CR 实例为 Pod 配置网络，若 `multusName` 对应的 Multus CR 不存在，
   那么 Spiderpool 将无法为 Pod 指定 Multus CR。当 `multusName` 为空时，Spiderpool 对 Pod 所使用的 Multus CR 不作限制。
 
-- `spec.ips`：根据上文 AWS  EC2 实例的网卡以及辅助 IP 地址等信息，故该值的范围必须在 `nodeName`
+- `spec.ips`：根据上文 AWS EC2 实例的网卡以及辅助 IP 地址等信息，故该值的范围必须在 `nodeName`
   对应主机的辅助私网 IP 范围内，且对应唯一的一张实例网卡。
 
-结合上文 [AWS 环境](./get-started-aws-zh_CN.md#AWS环境) 每台实例的网卡以及对应的辅助 IP 信息，使用如下的 Yaml，
-为每个节点的每张网卡( ens5、ens6) 分别创建了一个 SpiderIPPool，它们将为不同节点上的 Pod 提供 IP 地址。
+结合上文 [AWS 环境](#aws)，每台实例的网卡以及对应的辅助 IP 信息，使用如下的 YAML，
+为每个节点的每张网卡（ens5、ens6）分别创建了一个 SpiderIPPool，它们将为不同节点上的 Pod 提供 IP 地址。
 
 ```shell
 ~# cat <<EOF | kubectl apply -f -
@@ -295,7 +295,7 @@ nginx-lb-1-55d4c48fc8-jl8b9   1/1     Running   0          5s    180.17.16.14   
 
 #### 集群内的 Pod 流量出口访问
 
-借助上文我们创建的 [AWS NAT 网关](./get-started-aws-zh_CN.md#AWS环境)，我们的 VPC 私网已可实现访问互联网。
+借助上文我们创建的 [AWS NAT 网关](#aws)，我们的 VPC 私网已可实现访问互联网。
 
 ```shell
 kubectl exec -it nginx-lb-1-55d4c48fc8-skrxh -- curl www.baidu.com -I
@@ -320,10 +320,10 @@ Layer4 与 Layer7。 aws-load-balancer-controller 是 AWS 提供的一个用于 
 
 2. 为 AWS EC2 实例所使用的 IAM role 补充 policy
 
-    > 1. 介于 aws-load-balancer-controller 运行在每个节点上且需要访问 AWS 的 NLB/ALB APIs，因此需要 AWS IAM 关于 NLB/ALB 相关请求的授权。
-         又因我们是自建集群，我们需要借用节点自身的 IAM Role 来实现授权，详情可看[aws-load-balancer-controller IAM](https://kubernetes-sigs.github.io/aws-load-balancer-controller/v2.6/)。
-    > 2. 运行 `curl -o iam-policy.json https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.6.0/docs/install/iam_policy.json`
-    > 3. 使用如上获取的 json 内容，在 AWS IAM Dashboard 中创建一个新的policy，并将该 policy 与您当前虚拟机实例的 IAM Role 进行关联。
+    1. 介于 aws-load-balancer-controller 运行在每个节点上且需要访问 AWS 的 NLB/ALB APIs，因此需要 AWS IAM 关于 NLB/ALB 相关请求的授权。
+       又因我们是自建集群，我们需要借用节点自身的 IAM Role 来实现授权，详情可看[aws-load-balancer-controller IAM](https://kubernetes-sigs.github.io/aws-load-balancer-controller/v2.6/)。
+    2. 运行 `curl -o iam-policy.json https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.6.0/docs/install/iam_policy.json`
+    3. 使用如上获取的 json 内容，在 AWS IAM Dashboard 中创建一个新的policy，并将该 policy 与您当前虚拟机实例的 IAM Role 进行关联。
 
     ![aws-iam-policy](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/aws/aws-iam-policy.png)
 
@@ -334,12 +334,12 @@ Layer4 与 Layer7。 aws-load-balancer-controller 是 AWS 提供的一个用于 
     - ALB 的使用需要至少 2 个跨可用区的子网，对于 NLB 的使用需要至少 1 个子网。详情请看
       [子网自动发现](https://kubernetes-sigs.github.io/aws-load-balancer-controller/v2.6/deploy/subnet_discovery/)。
     - 对于公网访问的 LB，您需要为实例所在可用区的 public subnet 打上 tag: `kubernetes.io/role/elb:1`，对于 VPC 间访问的 LB，
-      请创建 private subnet 并打上 tag:`kubernetes.io/role/internal-elb:1`，请结合 [AWS 环境](./get-started-aws-zh_CN.md#AWS环境) 来创建所需的子网：
+      请创建 private subnet 并打上 tag:`kubernetes.io/role/internal-elb:1`，请结合 [AWS 环境](#aws) 来创建所需的子网：
 
-      > - 针对因特网暴露的负载均衡器，创建 public subnet: 在 AWS VPC Dashboard Subnets 栏选择创建子网，并选择与 EC2 相同的可用区。
+        - 针对因特网暴露的负载均衡器，创建 public subnet: 在 AWS VPC Dashboard Subnets 栏选择创建子网，并选择与 EC2 相同的可用区。
           随后在 Route tables 栏选中我们的 Main 路由表并选择子网关联。(注意 Main 路由表的 0.0.0.0/0 路由的下一跳默认为 Internet 网关，若丢失请自行创建该路由规则)。
-      > - 在 AWS VPC Dashboard Route tables 栏创建一个新的路由表并配置 0.0.0.0/0 的路由下一跳为 NAT 网关，::/0 路由下一跳为 Internet 网关。
-      > - 针对 VPC 间访问的负载均衡器，创建 private subnet: 在 AWS VPC Dashboard Subnets 栏选择创建子网，
+        - 在 AWS VPC Dashboard Route tables 栏创建一个新的路由表并配置 0.0.0.0/0 的路由下一跳为 NAT 网关，::/0 路由下一跳为 Internet 网关。
+        - 针对 VPC 间访问的负载均衡器，创建 private subnet: 在 AWS VPC Dashboard Subnets 栏选择创建子网，
           并选择与 EC2 相同的可用区。随后在 Route tables 栏选中上一步创建的路由表并选择子网关联。
 
 4. 使用 helm 安装aws-load-balancer-controller(本例基于 `v2.6` 版本进行安装)
@@ -361,8 +361,8 @@ Layer4 与 Layer7。 aws-load-balancer-controller 是 AWS 提供的一个用于 
 
 ##### 为应用创建 Loadbalancer 负载均衡访问入口
 
-上文中已创建 [应用](./get-started-aws-zh_CN.md#创建应用), 现在我们为它创建一个 kubernetes Service LoadBalancer
-资源(若有双栈需求请放开 `service.beta.kubernetes.io/aws-load-balancer-ip-address-type: dualstack` 注解):
+上文中已创建[应用](#_4)，现在我们为它创建一个 kubernetes Service LoadBalancer
+资源（若有双栈需求请放开 `service.beta.kubernetes.io/aws-load-balancer-ip-address-type: dualstack` 注解）：
 
 ```shell
 cat <<EOF | kubectl create -f -
@@ -392,18 +392,18 @@ EOF
 
 我们可以在 AWS Dashboard EC2 Load Balancing 栏中看到已经有一个 NLB 已被创建出来且可被访问。
 
-> - NLB 还可支持 instance 模式创建 LB，只需修改注解 `service.beta.kubernetes.io/aws-load-balancer-nlb-target-type` 即可，
-    但因配合 `service.spec.externalTraffic=Local` 模式不支持监听节点漂移，因此不推荐使用。
-> - 可通过注解 `service.beta.kubernetes.io/load-balancer-source-ranges` 来限制可访问源 IP。注意，
-    该功能与注解 `service.beta.kubernetes.io/aws-load-balancer-ip-address-type` 关联，若默认 ipv4 则该值默认为 `0.0.0.0/0`, 
-    若是 dualstack 则默认为 `0.0.0.0/0, ::/0`。
-> - 可通过注解 `service.beta.kubernetes.io/aws-load-balancer-scheme` 选择此 NLB 是暴露给公网访问还是留给 VPC 间访问，
-    默认值为 `internal` 供 VPC 间访问。
-> - 注解 `service.beta.kubernetes.io/aws-load-balancer-target-group-attributes: preserve_client_ip.enabled=true` 提供了客户端源 IP 保留功能。
+- NLB 还可支持 instance 模式创建 LB，只需修改注解 `service.beta.kubernetes.io/aws-load-balancer-nlb-target-type` 即可，
+  但因配合 `service.spec.externalTraffic=Local` 模式不支持监听节点漂移，因此不推荐使用。
+- 可通过注解 `service.beta.kubernetes.io/load-balancer-source-ranges` 来限制可访问源 IP。注意，
+  该功能与注解 `service.beta.kubernetes.io/aws-load-balancer-ip-address-type` 关联，若默认 ipv4 则该值默认为 `0.0.0.0/0`，
+  若是 dualstack 则默认为 `0.0.0.0/0, ::/0`。
+- 可通过注解 `service.beta.kubernetes.io/aws-load-balancer-scheme` 选择此 NLB 是暴露给公网访问还是留给 VPC 间访问，
+  默认值为 `internal` 供 VPC 间访问。
+- 注解 `service.beta.kubernetes.io/aws-load-balancer-target-group-attributes: preserve_client_ip.enabled=true` 提供了客户端源 IP 保留功能。
 
 ##### 为应用创建 Ingress 访问入口
 
-接下来我们通过 AWS EC2 中绑定的第二张网卡来创建一个kubernetes Ingress 资源(若有双栈需求请放开 `alb.ingress.kubernetes.io/ip-address-type: dualstack` 注解):
+接下来我们通过 AWS EC2 中绑定的第二张网卡来创建一个 kubernetes Ingress 资源（若有双栈需求请放开 `alb.ingress.kubernetes.io/ip-address-type: dualstack` 注解）：
 
 ```yaml
 apiVersion: apps/v1
@@ -513,15 +513,15 @@ spec:
 
 我们可以在 AWS Dashboard EC2 Load Balancing 栏中看到已经有一个 ALB 已被创建出来且可被访问。
 
-> - ALB 也可支持 instance 模式创建 LB，只需修改注解 `alb.ingress.kubernetes.io/target-type`即可，
-    但因配合 `service.spec.externalTraffic=Local` 模式不支持监听节点漂移，因此不推荐使用。
-> - 使用 ALB 的 instance 模式需要指定 service 为 NodePort 模式。
-> - 可通过注解 `alb.ingress.kubernetes.io/inbound-cidrs` 来限制可访问源IP。
-    (注意，该功能与注解 `alb.ingress.kubernetes.io/ip-address-type` 关联，若默认 ipv4
-    则该值默认为 `0.0.0.0/0`, 若是 dualstack 则默认为 `0.0.0.0/0, ::/0`)。
-> - 可通过注解 `alb.ingress.kubernetes.io/scheme` 选择此 ALB 是暴露给公网访问还是留给 VPC 间访问，
-    默认值为 `internal` 供 VPC 间访问。
-> - 若想整合多个 Ingress 资源共享同一个入口，可配置注解 `alb.ingress.kubernetes.io/group.name` 来显示指定一个名字。
-   （注意，默认不指定该注解的 Ingresses 资源并不属于任何 IngressGroup，系统会将其视为由 Ingress 本身组成的 "隐式 IngressGroup"）
-> - 如果想指定 Ingress 的 host，需要搭配 externalDNS 使用。
-    详情请查看[配置 externalDNS](https://kubernetes-sigs.github.io/aws-load-balancer-controller/v2.6/guide/integrations/external_dns/)。
+- ALB 也可支持 instance 模式创建 LB，只需修改注解 `alb.ingress.kubernetes.io/target-type`即可，
+  但因配合 `service.spec.externalTraffic=Local` 模式不支持监听节点漂移，因此不推荐使用。
+- 使用 ALB 的 instance 模式需要指定 service 为 NodePort 模式。
+- 可通过注解 `alb.ingress.kubernetes.io/inbound-cidrs` 来限制可访问源IP。
+  （注意，该功能与注解 `alb.ingress.kubernetes.io/ip-address-type` 关联，若默认 ipv4
+  则该值默认为 `0.0.0.0/0`, 若是 dualstack 则默认为 `0.0.0.0/0, ::/0`）。
+- 可通过注解 `alb.ingress.kubernetes.io/scheme` 选择此 ALB 是暴露给公网访问还是留给 VPC 间访问，
+  默认值为 `internal` 供 VPC 间访问。
+- 若想整合多个 Ingress 资源共享同一个入口，可配置注解 `alb.ingress.kubernetes.io/group.name` 来显示指定一个名字。
+  （注意，默认不指定该注解的 Ingresses 资源并不属于任何 IngressGroup，系统会将其视为由 Ingress 本身组成的 "隐式 IngressGroup"）
+- 如果想指定 Ingress 的 host，需要搭配 externalDNS 使用。
+  详情请查看[配置 externalDNS](https://kubernetes-sigs.github.io/aws-load-balancer-controller/v2.6/guide/integrations/external_dns/)。
