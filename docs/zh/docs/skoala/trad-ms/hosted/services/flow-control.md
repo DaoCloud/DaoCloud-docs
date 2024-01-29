@@ -15,7 +15,7 @@ hide:
 
     > 注意需要治理的微服务在`是否可以治理`一栏应该显示为`是`，才能进行后续步骤。
 
-    ![微服务列表](../../../images/gov00.png)
+    ![微服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gov00.png)
 
 2. 选择`流控规则`，然后在右侧点击`创建流控规则`。
 
@@ -35,7 +35,7 @@ hide:
     - 流控效果——WARM_UP：在设定的预热时间内逐渐将 QPS 增加到设定的阈值，之后一直维持在该阈值。阈值类型必须需设成 QPS，否则无效。这样可以缓慢增加通过的流量，逐渐预热系统，防止空闲系统突然涌入大量流量而被压垮。
     - 流控效果——排队等待：QPS 超过阈值时后续请求排队等待响应，超过所设定的超时时间（单位：毫秒）后请求失败。阈值类型必须需设成 QPS，否则无效。适用于处理间隔性突发流量，在某一秒有大量请求涌入，而接下来的几秒则处于空闲状态，例如消息队列。
 
-        ![微服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gov02.png)
+    ![微服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gov02.png)
 
 4. 创建完成后可以在流控规则列表中查看新建的规则。在右侧点击更多按钮可以更新规则或者删除该规则。
 

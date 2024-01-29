@@ -743,7 +743,8 @@ nav:
                   - 网关对接服务网格: skoala/best-practice/gateway-mesh.md
                   - 网关请求日志添加自定义属性: skoala/best-practice/add-custom-attributes.md
               - 故障排查:
-                  - skoala-init的x-kubernets-validations报错: skoala/troubleshoot/auth-server.md                
+                  - skoala-init的x-kubernets-validations报错: skoala/troubleshoot/auth-server.md
+                  - Nacos 版本降级: skoala/troubleshoot/nacos.md                
               - 性能测试:
                   - 云原生网关吞吐量测试: skoala/tests/gateway-stress-test.md
                   - Nacos 压测报告: skoala/tests/nacos-stress-test.md
@@ -751,7 +752,6 @@ nav:
                   - 微服务: skoala/reference/microservice.md
                   - 注册中心: skoala/reference/registry.md
                   - 云原生网关: skoala/reference/gateway.md
-                  - Nacos 版本降级: skoala/reference/nacos.md
           - 服务网格:
               - 介绍:
                   - 什么是服务网格: mspider/intro/index.md
