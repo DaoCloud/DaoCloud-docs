@@ -3,17 +3,17 @@ hide:
   - toc
 ---
 
-# DRBD 适配的内核版本
+Kernel versions compatible with DRBD:
 
-Hwameistor 安装后会自动部署 drbd-9.0.32-1，从而方便用户使用高可用性的存储类。
+- DRBD-9.0.32-1: This version of DRBD is automatically deployed after installing Hwameistor, making it convenient for users to utilize high availability storage.
 
-由于`drbd`是作为内核模块进行工作的，故建议使用与版本 drbd-9.0.32-1 对应的内核版本，如下表：
+Since `drbd` operates as a kernel module, it is recommended to use the corresponding kernel version for DRBD-9.0.32-1, as shown in the following table:
 
 !!! note
 
-    如您当前的内核版本未包含在下表中，可以参考文档（todo）来操作
+    If your current kernel version is not included in the table below, you can refer to the documentation (todo) for instructions.
 
-**适配的内核版本：**
+**Compatible Kernel Versions:**
 
 - 5.8.0-1043-azure
 - 5.8.0-1042-azure
