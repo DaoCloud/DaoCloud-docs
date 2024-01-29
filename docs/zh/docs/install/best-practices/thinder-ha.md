@@ -234,10 +234,10 @@
 
 ### 火种节点和备用火种节点关于 clusterConfig.yaml 中的 bootstrapNode、imagesAndCharts.additionalSSLSubjectAltName 配置的说明
 
-| 节点            | SubjectAltName(bootstrapNode)                                | AdditionalSubjectAltName                                     |
-| --------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 原火种节点193   | www.tinder-node-server.com | 172.30.41.193                                                |
-| 备用火种节点194 | 172.30.41.194                                                | www.tinder-node-server.com |
+| 节点 | SubjectAltName(bootstrapNode) | AdditionalSubjectAltName |
+| --- | ------------------------ | ---------------------------- |
+| 原火种节点193   | www.tinder-node-server.com | 172.30.41.193  |
+| 备用火种节点194 | 172.30.41.194 | www.tinder-node-server.com |
 
 ### 升级场景下，备用火种节点如何升级同步
 
