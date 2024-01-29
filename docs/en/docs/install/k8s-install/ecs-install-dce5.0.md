@@ -114,37 +114,43 @@ When deploying DCE 5.0 on Alibaba Cloud ECS, special handling is required for lo
           ansiblePass: "dangerous"
     ```
 
-3. Begin the installation.
+3. Start the installation and deploy the cluster
+
+    Use the -j parameter to specify steps 1, 2, 3, 4, 5, and 6 to complete the deployment of the k8s cluster.
 
     ```shell
-    ./dce5-installer cluster-create -c sample/clusterConfig.yaml
+    ./dce5-installer cluster-create -c sample/clusterConfig.yaml -j 1,2,3,4,5,6
     ```
 
-4. Installation successful.
+    After successful installation, the output result is as shown in the following figure:
 
-    ![success](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/install/images/4.1.png)
+    ![dce5.01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/dce503.png)
 
-5. Check the cloudLB ID and port on which the `istio-ingressgateway` service is exposed.
-   In this example, the cloudLB ID is `lb-bp1kx7b5zjvz8v6vti2j1` and the port is `6443`.
+4. Install Alibaba Cloud CCM
+
+    Refer to the [Alibaba Cloud documentation](https://help.aliyun.com/document_detail/377517.html) for deployment.
+
+    The `nodeSelector` parameter in the `ccm.yaml` file needs to be modified to `node-role.kubernetes.io/control-plane: ""`
+
+    After successful installation, it should appear as shown in the following figures:
+
+    ![cc01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/ccm01.png)
+
+    ![cc02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/ccm01.png)
+
+5. Continue the installation of DCE 5.0 and install all product components
+
+    Use the -j parameter to specify step 7 and above to complete the remaining steps.
 
     ```shell
-    kubectl get svc -A | grep LoadBalancer
+    ./dce5-installer cluster-create -c sample/clusterConfig.yaml -j 7+
     ```
 
+6. After successful installation, a public LB instance will be created by default, and DCE 5.0 can be accessed based on the assigned IP.
 
-6. Create a cloudLB with the following configuration:
+    ![dce5.02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/dce501.png)
 
-    - Protocol: TCP
-    - Backend Server: Add all three ECS hosts and set their port to 6443
-      (corresponding to the port of the `istio-ingressgateway` service).
-
-
-7. Modify the ghippo reverse proxy configuration following the documentation at
-   [Custom Reverse Proxy Server Address](../../ghippo/install/reverse-proxy.md#_1).
-   After modification, you can directly access DCE 5.0 using the cloudLB's public IP address + Port, as shown in the following image:
-
-    ![ghippo](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/install/images/7.1.png)
-
+    ![dce5.03](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/dce502.png)
 
 ### Solution 3: NodePort + CCM Component Deployment
 
