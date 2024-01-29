@@ -8,7 +8,7 @@
 
 ## 前置步骤
 
-1. 在 DCE 4.0 上，安装 CoreDNS 插件，安装步骤参考：[安装 CoreDNS](https://dwiki.daocloud.io/pages/viewpage.action?pageId=36668076)。
+1. 在 DCE 4.0 上，安装 CoreDNS 插件。
 
 1. 将 DCE 4.0 纳管到 DCE 5.0，纳管步骤参考[接入 DCE 4.0](../user-guide/clusters/integrate-cluster.md)，
    被纳管到 DCE 5.0 的 DCE 4.0 集群，以下简称 __备份集群__ 。
@@ -46,27 +46,29 @@
 
         安装 velero 插件时，必须将表单参数中的 __Migration Plugin Configuration__ 开关打开。
 
-    ```yaml
-    apiVersion: v1
-    kind: ConfigMap
-    metadata:
-      # any name can be used; Velero uses the labels (below)
-      # to identify it rather than the name
-      name: velero-plugin-for-migration
-      # must be in the velero namespace
-      namespace: velero
-      # the below labels should be used verbatim in your
-      # ConfigMap.
-      labels:
-        # this value-less label identifies the ConfigMap as
-        # config for a plugin (i.e. the built-in restore item action plugin)
-        velero.io/plugin-config: "velero-plugin-for-migration"
-        # this label identifies the name and kind of plugin
-        # that this ConfigMap is for.
-        velero.io/velero-plugin-for-migration: RestoreItemAction
-    data:
-      velero-plugin-for-migration: '{"resourcesSelector":{"includedNamespaces":["kube-system"],"excludedNamespaces":["default"],"includedResources":["pods","deployments","ingress"],"excludedResources":["secrets"],"skipRestoreKinds":["endpointslice"],"labelSelector":"app:dao-2048"},"resourcesConverter":[{"ingress":{"enabled":true,"apiVersion":"extensions/v1beat1"}}],"resourcesOperation":[{"kinds":["pod"],"domain":"labels","operation":{"add":{"key1":"values","key2":""},"remove":{"key3":"values","key4":""},"replace":{"key5":["source","dest"],"key6":["","dest"],"key7":["source",""]}}},{"kinds":["deployment","daemonset"],"domain":"annotations","scope":"resourceSpec","operation":{"add":{"key1":"values","key2":""},"remove":{"key3":"values","key4":""},"replace":{"key5":["source","dest"],"key6":["","dest"],"key7":["source",""]}}}]}'
-    ```
+    ??? note "点击查看完整的 YAML 示例"
+
+        ```yaml
+        apiVersion: v1
+        kind: ConfigMap
+        metadata:
+          # any name can be used; Velero uses the labels (below)
+          # to identify it rather than the name
+          name: velero-plugin-for-migration
+          # must be in the velero namespace
+          namespace: velero
+          # the below labels should be used verbatim in your
+          # ConfigMap.
+          labels:
+            # this value-less label identifies the ConfigMap as
+            # config for a plugin (i.e. the built-in restore item action plugin)
+            velero.io/plugin-config: "velero-plugin-for-migration"
+            # this label identifies the name and kind of plugin
+            # that this ConfigMap is for.
+            velero.io/velero-plugin-for-migration: RestoreItemAction
+        data:
+          velero-plugin-for-migration: '{"resourcesSelector":{"includedNamespaces":["kube-system"],"excludedNamespaces":["default"],"includedResources":["pods","deployments","ingress"],"excludedResources":["secrets"],"skipRestoreKinds":["endpointslice"],"labelSelector":"app:dao-2048"},"resourcesConverter":[{"ingress":{"enabled":true,"apiVersion":"extensions/v1beat1"}}],"resourcesOperation":[{"kinds":["pod"],"domain":"labels","operation":{"add":{"key1":"values","key2":""},"remove":{"key3":"values","key4":""},"replace":{"key5":["source","dest"],"key6":["","dest"],"key7":["source",""]}}},{"kinds":["deployment","daemonset"],"domain":"annotations","scope":"resourceSpec","operation":{"add":{"key1":"values","key2":""},"remove":{"key3":"values","key4":""},"replace":{"key5":["source","dest"],"key6":["","dest"],"key7":["source",""]}}}]}'
+        ```
 
     !!! note
 
@@ -309,7 +311,7 @@ annotations:
 !!! note
     - 迁移时，DCE 5.0 中创建的 IP 地址，应与 DCE 4.0 中使用的 IP 地址保持一致，且创建的副本数量保持一致。
 
-1. 在 __还原集群__ 中安装 Helm 应用 spiderpool，安装流程参考[安装 spiderpool ](../../network/modules/spiderpool/install.md)。
+1. 在 __还原集群__ 中安装 Helm 应用 spiderpool，安装流程参考[安装 spiderpool ](../../network/modules/spiderpool/install/install.md)。
 
     ![安装 spiderpool](../images/4-5-underlay-01.png)
 
@@ -317,14 +319,15 @@ annotations:
 
     ![网络配置](../images/4-5-underlay-02.png)
 
-3. 查看 DCE4 中使用的 IP 地址，在 DCE5.0  __静态 IP 池__ 中创建与 DCE4 中相同的子网 IP 地址及 IP 池。子网及 IP 池的使用请参考[创建子网及 IP 池 ](../../network/config/ippool/createpool.md.md)。
+3. 查看 DCE4 中使用的 IP 地址，在 DCE5.0  __静态 IP 池__ 中创建与 DCE4 中相同的子网 IP 地址及 IP 池。子网及 IP 池的使用请参考[创建子网及 IP 池 ](../../network/config/ippool/createpool.md)。
 
     ![创建子网](../images/4-5-underlay-03.png)
 
     ![添加 IP](../images/4-5-underlay-04.png)
-创建完子网后，在子网详情页创建 IP 池及添加 IP 开始地址与 IP 数量。
 
-   ![创建 IP 池](../images/4-5-underlay-05.png)
+    创建完子网后，在子网详情页创建 IP 池及添加 IP 开始地址与 IP 数量。
+
+    ![创建 IP 池](../images/4-5-underlay-05.png)
 
 4. 创建 macvlan 类型的 Multus CR 实例，并选择刚才创建好的 IP 池。 具体使用请参考[创建 Multus CR](../../network/config/multus-cr.md)
 

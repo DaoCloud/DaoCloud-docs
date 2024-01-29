@@ -11,7 +11,10 @@
 ## 前提条件
 
 - 待安装 GPU 驱动节点系统要求请参考：[GPU 支持矩阵](../../gpu_matrix.md)
-- 确认集群节点上具有对应型号的 GPU 卡（[NVIDIA H100](https://www.nvidia.com/en-us/data-center/h100/)、 [A100](https://www.nvidia.com/en-us/data-center/a100/) 和 [A30](https://www.nvidia.com/en-us/data-center/products/a30-gpu/) Tensor Core GPU），详情参考：[GPU 支持矩阵](gpu_matrix.md)../../gpu_matrix.md
+- 确认集群节点上具有对应型号的 GPU 卡（[NVIDIA H100](https://www.nvidia.com/en-us/data-center/h100/)、
+  [A100](https://www.nvidia.com/en-us/data-center/a100/) 和
+  [A30](https://www.nvidia.com/en-us/data-center/products/a30-gpu/) Tensor Core GPU），
+  详情参考：[GPU 支持矩阵](../../gpu_matrix.md)
 - 节点上的所有 GPU 必须：属于同一产品线（例如 A100-SXM-40GB）
 
 ## 开启 GPU MIG Single 模式

@@ -232,8 +232,8 @@
 
 1. 在 __集群列表__ 页面中，搜索找到 kpanda-global-cluster 集群，进入集群详情
 
-    ![集群列表](../../images/clusterlist.png)
+    ![集群列表](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/create001.png)
 
 2. 在左侧导航栏中找到 Helm 应用，搜索 kpanda 找到容器管理模块，展开右侧操作栏，点击 __更新__ 按钮，进行升级。
 
-    ![集群列表](../../images/update-kpanda.png)
+    ![集群列表](../images/update-kpanda.png)
