@@ -19,7 +19,7 @@ hide:
 
     > 注意需要治理的微服务在`是否可以治理`一栏应该显示为`是`，才能进行后续步骤。
 
-    ![微服务列表](../../../images/gov00.png)
+    ![微服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gov00.png)
 
 2. 选择`热点规则`，然后在右侧点击`创建热点规则`。
 
@@ -34,7 +34,7 @@ hide:
     - 统计窗口时长：线程数或者 QPS 的统计周期，例如统计窗口时长为 10s 且 QPS 阈值为 5 时，表示 10s 内对每个热点参数的访问不超过 5 次。
     - 参数例外项：当某个参数值单独设置阈值，不受上方`单机限阈`值的限制。
 
-        ![微服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gov12.png)
+    ![微服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gov12.png)
 
 4. 创建完成后可以在热点规则列表中查看新建的规则。在右侧点击更多按钮可以更新规则或者删除该规则。
 
