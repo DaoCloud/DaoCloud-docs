@@ -1,8 +1,9 @@
-3# 创建外接边缘单元
+# 创建外接边缘单元
 
 **外接边缘单元** 指的是将企业系统中已安装的 KubeEdge 接入到 DCE 5.0 云边协同中进行统一管理。
 
 KubeEdge：是一个开源系统，将原生的容器化应用程序编排功能扩展到边缘节点。
+
 - CloudCore：KubeEdge 云端核心组件。
 - ControllerManager：KubeEdge CRD 扩展，目前应用于边缘应用和边缘节点组。
 
@@ -31,7 +32,7 @@ KubeEdge：是一个开源系统，将原生的容器化应用程序编排功能
         - 默认：系统提供的默认镜像仓库地址，存储云边协同模块所需云端组件镜像，像 kant-worker-admission;
         - 自定义：如果用户将系统云端组件镜像存储在自己的镜像仓库，用户可以选择自定义仓库地址。
 
-    - Kant helm 仓库：系统所需云端组件 helm 应用仓库，Kant 代指云边协同模块。如果下拉选项中没有您想要的 helm 仓库，可以点击右侧 `创建仓库` 按钮，创建新的 helm 仓库。
+    - Kant helm 仓库：系统所需云端组件 helm 应用仓库，Kant 代指云边协同模块。如果下拉选项中没有您想要的 helm 仓库，可以点击右侧 __创建仓库__ 按钮，创建新的 helm 仓库。
 
     - KubeEdge 镜像仓库(可选)：KubeEdge 云端组件镜像仓库。
 
@@ -46,11 +47,12 @@ KubeEdge：是一个开源系统，将原生的容器化应用程序编排功能
     - 访问地址：KubeEdge 云端组件 CloudCore 的访问地址，需要能被边缘节点访问。
 
     - 端口：
-        - WebSocketPort ：访问协议 WebSocket 端口，默认10000。
-        - QUICPort：访问协议 QUIC 端口，默认10001。
-        - HTTPServerPort：HTTP 服务端口，默认10002。
-        - CloudStreamPort：云端流处理接口端口，默认10003。
-        - TunnelPort：边缘节点业务数据通道端口，默认10004。
+
+        - WebSocketPort：访问协议 WebSocket 端口，默认 10000
+        - QUICPort：访问协议 QUIC 端口，默认 10001
+        - HTTPServerPort：HTTP 服务端口，默认 10002
+        - CloudStreamPort：云端流处理接口端口，默认 10003
+        - TunnelPort：边缘节点业务数据通道端口，默认 10004
 
     !!! note
 

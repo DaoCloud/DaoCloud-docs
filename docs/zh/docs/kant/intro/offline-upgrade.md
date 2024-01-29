@@ -4,7 +4,7 @@
 
 !!! info
 
-    下述命令或脚本内出现的 `kant` 字样是云边协同模块的内部开发代号。
+    下述命令或脚本内出现的 __kant__ 字样是云边协同模块的内部开发代号。
 
 ## 从下载的安装包中加载镜像
 
@@ -148,9 +148,9 @@
         ...
         ```
 
-    1. 备份 `--set` 参数。
+    1. 备份 __--set__ 参数。
 
-        在升级云边协同版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
+        在升级云边协同版本之前，建议您执行如下命令，备份老版本的 __--set__ 参数。
 
         ```shell
         helm get values kant -n kant-system -o yaml > bak.yaml
@@ -163,9 +163,9 @@
         kubectl apply -f kant/crds
         ```
 
-    1. 执行 `helm upgrade`。
+    1. 执行 __helm upgrade__ 。
 
-        升级前建议您覆盖 bak.yaml 中的 `global.imageRegistry` 字段为当前使用的镜像仓库地址。
+        升级前建议您覆盖 bak.yaml 中的 __global.imageRegistry__ 字段为当前使用的镜像仓库地址。
 
         ```shell
         export imageRegistry={你的镜像仓库}
@@ -181,9 +181,9 @@
 
 === "通过 chart 包升级"
 
-    1. 备份 `--set` 参数。
+    1. 备份 __--set__ 参数。
 
-        在升级云边协同版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
+        在升级云边协同版本之前，建议您执行如下命令，备份老版本的 __--set__ 参数。
 
         ```shell
         helm get values kant -n kant-system -o yaml > bak.yaml
@@ -195,9 +195,9 @@
         kubectl apply -f ./crds
         ```
 
-    1. 执行 `helm upgrade`。
+    1. 执行 __helm upgrade__ 。
 
-        升级前建议您覆盖 bak.yaml 中的 `global.imageRegistry` 为当前使用的镜像仓库地址。
+        升级前建议您覆盖 bak.yaml 中的 __global.imageRegistry__ 为当前使用的镜像仓库地址。
 
         ```shell
         export imageRegistry={你的镜像仓库}
