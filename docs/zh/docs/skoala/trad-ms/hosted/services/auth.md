@@ -13,7 +13,7 @@ hide:
 
     > 注意需要治理的微服务在`是否可以治理`一栏应该显示为`是`，才能进行后续步骤。
 
-    ![微服务列表](../../../images/gov00.png)
+    ![微服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gov00.png)
 
 2. 选择`授权规则`，然后在右侧点击`创建授权规则`。
 

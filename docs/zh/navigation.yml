@@ -139,6 +139,7 @@ nav:
                   - Jenkins 场景配置: amamba/quickstart/scenarios-config.md
                   - 在Jenkins中使用自定义工具链: amamba/quickstart/jenkins-custom.md
                   - Jenkins高可用方案: amamba/quickstart/jenkins-HA.md
+                  - 构建多架构镜像: amamba/user-guide/pipeline/podman.md
       - 容器:
           - 容器管理:
               - 介绍:
@@ -374,7 +375,7 @@ nav:
                   - 挑战: network/intro/challenges.md
                   - 网络组件: network/modules/modules.md
                   - 离线升级云原生网络: network/intro/offline.md
-                  - Release Notes: network/modules/spiderpool/releasenotes.md
+                  - Release Notes: network/intro/releasenotes.md
               - 网络规划:
                   - 网卡规划: network/plans/ethplan.md
                   - 网络规划: network/plans/netplan.md
@@ -492,6 +493,7 @@ nav:
                       - DRBD 安装器:
                           - 介绍: storage/hwameistor/intro/drbd.md
                           - DRBD 适配的内核版本: storage/hwameistor/intro/drbd-support.md
+                          - DRBD 自助编译操作: storage/hwameistor/intro/drdb-kernel-make.md
                       - 调度器: storage/hwameistor/intro/scheduler.md
                       - 准入控制器: storage/hwameistor/intro/admission-controller.md
                   - 资源介绍: storage/hwameistor/intro/resources.md
@@ -554,18 +556,24 @@ nav:
               - 介绍:
                   - 简介: virtnest/intro/index.md
                   - Release Notes: virtnest/intro/release-notes.md
-                  - 安装虚拟机: virtnest/intro/install.md
-              - 快速入门:
-                  - 在指定集群内安装 virtnest-agent: virtnest/quick-start/index.md
-                  - 创建虚拟机: virtnest/quick-start/create-image.md
-                  - 创建密钥: virtnest/quick-start/create-secret.md
-                  - 通过模板创建虚拟机: virtnest/quick-start/create-tep.md
-                  - 虚拟机模板: virtnest/quick-start/tep.md
-                  - 连接虚拟机: virtnest/quick-start/access.md
-                  - 快照管理: virtnest/quick-start/snapshot.md
-                  - 实时迁移: virtnest/quick-start/live-migration.md
-                  - 通过 NodePort 访问虚拟机: virtnest/quick-start/nodeport.md
+              - 安装:   
+                  - 安装虚拟机: virtnest/install/index.md
+                  - 安装虚拟机模块的依赖和前提条件: virtnest/install/install-dependency.md
                   - 离线升级: virtnest/install/offline-install.md
+                  - 在指定集群内安装 virtnest-agent: virtnest/install/virtnest-agent.md
+              - 虚拟机:
+                  - 创建虚拟机: virtnest/vm/index.md
+                  - 创建 Windows 虚拟机: virtnest/vm/vm-windows.md
+                  - 创建密钥: virtnest/vm/create-secret.md
+                  - 连接虚拟机: virtnest/vm/access.md
+                  - 快照管理: virtnest/vm/snapshot.md
+                  - 实时迁移: virtnest/vm/live-migration.md
+                  - 通过 NodePort 访问虚拟机: virtnest/vm/nodeport.md
+              - 虚拟机模板:
+                  - 通过模板创建虚拟机: virtnest/template/index.md
+                  - 虚拟机模板: virtnest/template/tep.md
+              - 虚拟机镜像:
+                  - 构建虚拟机镜像: virtnest/vm-image/index.md
       - 可观测:
           - 可观测性:
               - 介绍:
@@ -735,7 +743,8 @@ nav:
                   - 网关对接服务网格: skoala/best-practice/gateway-mesh.md
                   - 网关请求日志添加自定义属性: skoala/best-practice/add-custom-attributes.md
               - 故障排查:
-                  - skoala-init的x-kubernets-validations报错: skoala/troubleshoot/auth-server.md                
+                  - skoala-init的x-kubernets-validations报错: skoala/troubleshoot/auth-server.md
+                  - Nacos 版本降级: skoala/troubleshoot/nacos.md                
               - 性能测试:
                   - 云原生网关吞吐量测试: skoala/tests/gateway-stress-test.md
                   - Nacos 压测报告: skoala/tests/nacos-stress-test.md
@@ -743,7 +752,6 @@ nav:
                   - 微服务: skoala/reference/microservice.md
                   - 注册中心: skoala/reference/registry.md
                   - 云原生网关: skoala/reference/gateway.md
-                  - Nacos 版本降级: skoala/reference/nacos.md
           - 服务网格:
               - 介绍:
                   - 什么是服务网格: mspider/intro/index.md
@@ -1025,7 +1033,8 @@ nav:
                   - Release Notes: kant/intro/release-notes.md
                   - 离线升级云边协同: kant/intro/offline-upgrade.md
               - 边缘单元:
-                  - 创建边缘单元: kant/user-guide/edge-unit/create-unit.md
+                  - 创建专有边缘单元: kant/user-guide/edge-unit/create-internal-unit.md
+                  - 创建外接边缘单元: kant/user-guide/edge-unit/create-external-unit.md
                   - 管理边缘单元: kant/user-guide/edge-unit/manage-unit.md
               - 边缘节点:
                   - 边缘节点概述: kant/user-guide/node/index.md

@@ -158,7 +158,7 @@ spec:
 
 - 在[英伟达官网](https://network.nvidia.com/products/infiniband-drivers/linux/mlnx_ofed/)下载主机架构、操作系统对应的 OFED 驱动版本：
 
-    ![下载驱动](../../images/nvidia_ofed.png)
+    ![下载驱动](../../../images/nvidia_ofed.png)
 
     !!! note
 
@@ -169,7 +169,6 @@ spec:
 - 本文以下载 iso 文件为例，下载文件并上传到主机。挂载到 `/mnt` 路径并执行安装命令。
 
     ```shell
-    
     root@10-20-1-20:~/install# mount MLNX_OFED_LINUX-23.10-1.1.9.0-ubuntu22.04-x86_64.iso /mnt/
     mount: /mnt: WARNING: source write-protected, mounted read-only.
     root@10-20-1-20:/mnt# ./mlnxofedinstall --with-nvmf --with-nfsrdma --all

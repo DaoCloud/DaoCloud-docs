@@ -228,7 +228,7 @@ broker 标签用于工作负载反亲和（自带标签，不用配置）：
 
 ### 机房 A 
 
-controller 运行于机房 B，基于 Dledger controller 的主从转换机制，可以实现机房 B 的 broker slave>>master 自动升级，无需人工干预。
+controller 运行于机房 B，基于 Dledger controller 的主从转换机制，可以实现机房 B 的 broker slave -> master 自动升级，无需人工干预。
 
 ![mutizone](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/crosszone04.png){ width=700px}
 
@@ -236,13 +236,13 @@ controller 运行于机房 B，基于 Dledger controller 的主从转换机制�
 
 ![mutizone](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/crosszone05.png){ width=700px}
 
-- 负责调度的 controller 离线，将暂时无法 slave>>master 转换，需要手动删除 Pod 漂移至其他节点。
-- controller 重新调度至现存节点，才能继续完成机房 A 的 slave>>master 自动升级。
+- 负责调度的 controller 离线，将暂时无法 slave -> master 转换，需要手动删除 Pod 漂移至其他节点。
+- controller 重新调度至现存节点，才能继续完成机房 A 的 slave -> master 自动升级。
 
 
 ## 一些注意事项：
 
-1. broker 角色升级失败：经实际测试，controller 稳定性不是很好，broker 的 slave>>master 自动升级有一定几率失败，可通过重启 controller 的方式，即可解决该问题。
+1. broker 角色升级失败：经实际测试，controller 稳定性不是很好，broker 的 slave -> master 自动升级有一定几率失败，可通过重启 controller 的方式，即可解决该问题。
 2. 谨慎使用 sts 的`删除`操作：删除重建 broker 会导致配置在实例中的调度策略丢失，但不会丢失配置在 CR 的策略，因此建议谨慎使用`删除`操作。`重启` sts 的操作不会造成以上的丢失情况。
 
     ![mutizone](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/crosszone06.png){ width=700px}

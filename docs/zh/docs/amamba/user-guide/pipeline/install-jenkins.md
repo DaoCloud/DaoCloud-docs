@@ -108,19 +108,25 @@
 
 1. 前往 Jenkins 后台，点击 Manage Jenkins -> Configure System，然后下拉找到 __SonarQube servers__ ，然后点击 __Add SonarQube__ 。
 
+    ![Jenkins Sonarqube配置页](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/install-jenkins08.png)
+
 2. 填写相关参数，参数说明如下：
 
     - Name：给 SonarQube 服务器配置一个名称，在应用工作台流水线的 SonarQube 配置步骤中需要输入相同的名字。
+
     - Server URL：SonarQube 服务器的 URL。
+
     - Server authentication token：SonarQube 服务器的身份验证令牌。您可以在 SonarQube 控制台中生成一个令牌。
 
-    ![Jenkins Sonarqube配置页](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/install-jenkins08.png)
+        - 在 SonarQube 生成管理员令牌（Token），操作路径为：My Account -> Profile -> Security -> Generate -> Copy
+
+        - 添加凭据，类型选择 `Secret test`，Secret 输入 SonarQube 管理员令牌（Token），ID 不填会默认生成
+
+            ![sonarqube](../../images/sonarqube.png)
 
     !!! note
 
         如果想要将工作台已经集成的 SornarQube 更新到新的 Jenkins 的配置中，请务必保证名称一致。需要注意的是，Name不是集成的时候输入的名称，
         需要在流水线的 SonarQube 配置步骤中下拉获取。
 
-
     ![SonarQube Name](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/install-jenkins07.png)
-

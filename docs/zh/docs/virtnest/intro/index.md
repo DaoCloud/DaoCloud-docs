@@ -9,13 +9,12 @@ hide:
 
 以下是使用 Virtnest 的大致步骤：
 
-1. 在集群内安装 virtnest-agent 组件。
-2. 构建所需的虚拟机镜像。
-3. 将镜像推送到 Docker Registry 或其他镜像仓库中。
-4. 使用镜像/YAML 创建虚拟机。
-5. 通过 VNC/console 方式访问虚拟机。
-6. 查看虚拟机列表以及每个虚拟机的详细信息。
-7. 根据需要执行开启/关机、重启、克隆、快照、恢复快照、实时迁移等操作。
+1. 在集群内[安装 virtnest-agent 组件](../install/virtnest-agent.md)。
+2. [构建所需的虚拟机镜像](../vm-image/index.md)，将镜像推送到 Docker Registry 或其他镜像仓库中。
+3. [使用镜像创建虚拟机](../vm/index.md)或[使用 YAML 创建虚拟机](../vm/index.md#yaml)。
+4. 通过 VNC/console 方式[访问虚拟机](../vm/access.md)。
+5. 查看虚拟机列表以及每个虚拟机的详细信息。
+6. 根据需要执行开启/关机、重启、克隆、[快照](../vm/snapshot.md)、恢复快照、[实时迁移](../vm/live-migration.md)等操作。
 
 ## Virtnest 的优势
 

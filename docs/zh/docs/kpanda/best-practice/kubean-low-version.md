@@ -2,7 +2,7 @@
 
 为了满足客户对低版本的 K8s 集群的搭建，Kubean 提供了向下兼容并创建低版本的 K8s 集群能力。
 
-目前支持自建工作集群版本范围在 `1.26.0-v1.28`，可以参阅 [DCE 5.0 集群版本支持体系](./cluster-version.md)。
+目前支持自建工作集群版本范围在 `1.26.0-v1.28`，可以参阅 [DCE 5.0 集群版本支持体系](../user-guide/clusters/cluster-version.md)。
 
 本文将演示如何部署低版本的 K8s 集群。
 
@@ -16,7 +16,7 @@
 ## 前提条件
 
 - 准备一个 kubean 所在的管理集群，并且当前环境已经部署支持 `podman` 、`skopeo`、`minio client`命令。
-  如果不支持，可通过脚本进行安装依赖组件，[安装前置依赖](../install-tools.md)。
+  如果不支持，可通过脚本进行安装依赖组件，[安装前置依赖](../../install/install-tools.md)。
 
 - 前往 [kubean](https://github.com/kubean-io/kubean) 查看发布的[制品](https://kubean-io.github.io/kubean/zh/releases/artifacts/)，并根据实际情况选择具体的制品版本。目前支持的制品版本及对应的集群版本范围如下：
 
@@ -48,7 +48,7 @@ SKOPEO_PARAMS=" --insecure-policy -a --dest-tls-verify=false --retry-times=3 "
 skopeo copy docker://${SPRAY_IMG_ADDR} docker-archive:spray-job-2.21.tar
 
 # 离线环境：导入 release-2.21 版本的 spray-job 镜像到火种 registry
-skopeo copy ${SKOPEO_PARAMS} docker-archive:spray-job-2.21.tar docker://${REGISTRY_ADDR}/${SPRAY_IMG_ADDR}
+skopeo copy ${SKOPEO_PARAMS} docker-archive:spray-job-2.21.tar docker://${REGISTRY_ADDR}/${SPRAY_IMG_ADDR/.m.daocloud/}
 ```
 
 ### 制作低版本 K8s 离线资源

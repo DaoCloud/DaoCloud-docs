@@ -9,7 +9,7 @@ hide:
 
 ## 前提条件
 
-1. [SpiderPool 已成功部署](install/install.md)。
+1. [SpiderPool 已成功部署](../../modules/spiderpool/install/install.md)。
 
 2. 如使用手动选择 IP 池，请提前完成[创建 IP 子网和 IP 池](../../config/ippool/createpool.md)。本示例中需要使用固定 IP 池，请提前完成[创建 固定 IP 池](../../config/ippool/createpool.md)。
 

@@ -15,7 +15,7 @@ hide:
 
 ## 前提条件
 
-1. [SpiderPool 已成功部署](install/install.md)。
+1. [SpiderPool 已成功部署](../../modules/spiderpool/install/install.md)。
 2. 如使用手动选择 IP 池，请提前完成[创建 IP 子网和 IP 池](../../config/ippool/createpool.md)。如使用自动创建固定 IP 池，请提前完成[创建 IP 池](../../config/ippool/createpool.md)。
 3. 如果使用默认 IP 池，请提前完成[创建 IP 子网和 IP 池](../../config/ippool/createpool.md)。并在容器网络 Multus CNI 配置中，配置好带有默认 IP 池的网卡。
 4. 对应使用的[Multus CR 已创建](../multus-cr.md)。

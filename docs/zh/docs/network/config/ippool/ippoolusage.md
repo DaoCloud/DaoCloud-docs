@@ -1,6 +1,6 @@
 # IP 池的使用说明
 
-本页介绍在使用 Spiderpool 进行 IP 分配以及管理时，IP 池的不同使用场景。使用前请确保 [SpiderPool 已正确安装](install/install.md)。
+本页介绍在使用 Spiderpool 进行 IP 分配以及管理时，IP 池的不同使用场景。使用前请确保 [SpiderPool 已正确安装](../../modules/spiderpool/install/install.md)。
 
 ## 工作负载使用固定 IP
 

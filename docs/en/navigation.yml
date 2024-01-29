@@ -482,7 +482,10 @@ nav:
                   - Intro: storage/hwameistor/intro/index.md
                   - Modules:
                       - Local storage: storage/hwameistor/intro/ls.md
-                      - DRBD installer: storage/hwameistor/intro/drbd.md
+                      - DRBD Installer:
+                          - Intro: storage/hwameistor/intro/drbd.md
+                          - Kernel Versions Supported by DRBD: storage/hwameistor/intro/drbd-support.md
+                          - DRBD Self-Compilation Instructions: storage/hwameistor/intro/drdb-kernel-make.md
                       - Scheduler: storage/hwameistor/intro/scheduler.md
                       - Admission controller: storage/hwameistor/intro/admission-controller.md
                   - Resources: storage/hwameistor/intro/resources.md

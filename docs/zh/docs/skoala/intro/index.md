@@ -43,7 +43,7 @@ hide:
 
     ---
 
-    - [导入/移除服务](../cloud-ms/index.md)
+    - [导入/移除服务](../cloud-ms/traffic-control.md)
     - [服务治理](../cloud-ms/traffic-control.md)
     - [Nacos 压力测试报告](../tests/nacos-stress-test.md)
 
