@@ -67,7 +67,7 @@ hide:
 
 1. 开始编译
 
-    a. 进入到 `drbd-9.0.32-1` 目录下执行 `make` 命令，输出结果如下：
+    1. 进入到 `drbd-9.0.32-1` 目录下执行 `make` 命令，输出结果如下：
 
         ```bash
         Calling toplevel makefile of kernel source tree, which I believe is in
@@ -245,15 +245,15 @@ hide:
           Memorizing module configuration ... done.
          ```
 
-  b. 创建目录 `/lib/modules/<内核版本>/kernel/drivers/block/drbd/`，内核版本根据实际情况替换
+    1. 创建目录 `/lib/modules/<内核版本>/kernel/drivers/block/drbd/`，内核版本根据实际情况替换
+  
+    1. 把上一步编译后生成的 `/home/drbd-9.0.32-1/drbd/drbd.ko`、`/home/drbd-9.0.32-1/drbd/drbd_transport_tcp.ko` 传至  `/lib/modules/<内核版本>/kernel/drivers/block/drbd/`
+  
+    1. 配置conf，创建目录把 `global_common.conf` 放在 `/etc/drbd.d/` 目录下，`drbd.conf` 放在 `/etc` 目录下：
 
-  c. 把上一步编译后生成的 `/home/drbd-9.0.32-1/drbd/drbd.ko`、`/home/drbd-9.0.32-1/drbd/drbd_transport_tcp.ko` 传至  `/lib/modules/<内核版本>/kernel/drivers/block/drbd/`
+        global_common.conf 文件
 
-  d. 配置conf，创建目录把 `global_common.conf` 放在 `/etc/drbd.d/` 目录下，`drbd.conf` 放在 `/etc` 目录下：
-
-       global_common.conf 文件
-
-       ```bash
+        ```bash
         # DRBD is the result of over a decade of development by LINBIT.
         # In case you need professional services for DRBD or have
         # feature requests visit http://www.linbit.com
@@ -318,22 +318,22 @@ hide:
                         # use-rle
                 }
         }
-       ```
+        ```
 
-      drbd.conf 文件
+       drbd.conf 文件
   
-      ```bash
+       ```bash
         # You can find an example in  /usr/share/doc/drbd.../drbd.conf.example
         
         include "drbd.d/global_common.conf";
         include "drbd.d/*.res";  
-      ```
+       ```
   
-  d. 加载内核
+    1. 加载内核
 
-      ```bash
+        ```bash
          insmod drbd.ko drbd_transport_tcp.ko
-      ```
+        ```
 
 ### 编译 drbd-tools
 
