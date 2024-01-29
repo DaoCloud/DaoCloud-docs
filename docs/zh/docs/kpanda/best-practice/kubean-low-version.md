@@ -48,7 +48,7 @@ SKOPEO_PARAMS=" --insecure-policy -a --dest-tls-verify=false --retry-times=3 "
 skopeo copy docker://${SPRAY_IMG_ADDR} docker-archive:spray-job-2.21.tar
 
 # 离线环境：导入 release-2.21 版本的 spray-job 镜像到火种 registry
-skopeo copy ${SKOPEO_PARAMS} docker-archive:spray-job-2.21.tar docker://${REGISTRY_ADDR}/${SPRAY_IMG_ADDR}
+skopeo copy ${SKOPEO_PARAMS} docker-archive:spray-job-2.21.tar docker://${REGISTRY_ADDR}/${SPRAY_IMG_ADDR/.m.daocloud/}
 ```
 
 ### 制作低版本 K8s 离线资源
