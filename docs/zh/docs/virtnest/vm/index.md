@@ -10,7 +10,7 @@
 创建虚拟机之前，需要满足以下前提条件：
 
 - 向用户机操作系统公开硬件辅助的虚拟化。
-- 在指定集群[安装 virtnest-agent](index.md)，操作系统内核版本需要在 3.15 以上。
+- 在指定集群[安装 virtnest-agent](../install/index.md)，操作系统内核版本需要在 3.15 以上。
 - 创建一个[命名空间](../../kpanda/user-guide/namespaces/createns.md)和[用户](../../ghippo/user-guide/access-control/user.md)。
 - 提前准备好镜像，平台内置三种镜像 (如下文所示)，如需制作镜像，可参考开源项目[制作镜像](https://github.com/Tedezed/kubevirt-images-generator/tree/master)。
 
