@@ -99,7 +99,7 @@ This section describes the features supported by the service mesh.
 
     Services developed with the Spring Cloud SDK can access the mesh without intrusion and are managed in a unified manner.
 
-- Dubbo
+- Dubbo Protocol
 
     Services developed by the Dubbo SDK can access the mesh non-intrusively and are managed in a unified manner.
 

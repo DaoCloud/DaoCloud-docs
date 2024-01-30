@@ -42,11 +42,11 @@ DCE 5.0's service mesh has the following advantages compared to other products:
     visualized microservice traffic management. Supports non-intrusive intelligent traffic governance,
     enabling dynamic intelligent routing and elastic traffic management without any application modification.
 
-    - Weighted, content, TCP/IP, and other routing rules.
-    - HTTP session persistence to meet the continuous processing needs of businesses.
-    - Rate limiting and outlier detection to achieve stable and reliable service-to-service links.
-    - Network connection management to reduce resource consumption and improve network throughput.
-    - Service security authentication: authentication, authorization, auditing, etc., providing
+  - Weighted, content, TCP/IP, and other routing rules.
+  - HTTP session persistence to meet the continuous processing needs of businesses.
+  - Rate limiting and outlier detection to achieve stable and reliable service-to-service links.
+  - Network connection management to reduce resource consumption and improve network throughput.
+  - Service security authentication: authentication, authorization, auditing, etc., providing
       a foundation for service security.
 
 - Graphical application panoramic topology and visualized traffic governance
@@ -74,7 +74,7 @@ DCE 5.0's service mesh has the following advantages compared to other products:
 
 - Protocol extension
 
-    Supports the extension of the Dubbo protocol.
+    Supports of the Dubbo protocol.
 
 - Traditional SDK integration
 
