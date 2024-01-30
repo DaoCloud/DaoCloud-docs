@@ -52,11 +52,15 @@ hide:
 |          | 创建 promQL 规则            | &check;              | &check;       | &check;            | &cross; |
 |          | 修改 promQL 规则            | &check;              | &check;       | &check;            | &cross; |
 |          | 创建日志规则            | &check;              | &check;       | &check;            | &cross; |
-|          | 创建时间规则            | &check;              | &check;       | &check;            | &cross; |
+|          | 创建事件规则            | &check;              | &check;       | &check;            | &cross; |
 |          | 删除自定义告警规则          | &check;              | &check;       | &check;            | &cross; |
 |          | 查看内置告警规则            | &check;              | &cross;       | &cross;            | &cross; |
 |          | 修改内置告警规则            | &check;              | &cross;       | &cross;            | &cross; |
 |          | YAML 导入告警规则            | &check;              | &check;       | &check;            | &cross; |
+| 告警模版  | 查看告警模版列表              | &check;              | &check;      | &check;          | &check; |
+|          | 创建告警模版             | &check;              | &cross;     | &cross;          | &cross; |
+|          | 编辑告警模版             | &check;              | &cross;      | &cross;           | &cross; |
+|          | 删除告警模版             | &check;              | &cross;    | &cross;           | &cross; |
 | 通知对象 | 查看通知对象                | &check;              | &check;       | &check;            | &check; |
 |          | 添加通知对象                | &check;              | &cross;       | &cross;            | &cross; |
 |          | 修改通知对象                | &check;              | &cross;       | &cross;            | &cross; |
@@ -69,6 +73,10 @@ hide:
 |          | 创建静默规则              | &check;              | &check;      | &check;           | &cross; |
 |          | 编辑静默规则              | &check;              | &check;      | &check;           | &cross; |
 |          | 删除静默规则              | &check;              | &check;      | &check;           | &cross; |
+| 告警抑制  | 查看抑制规则列表              | &check;              | &check;      | &check;          | &check; |
+|          | 创建抑制规则              | &check;              | &check;      | &check;           | &cross; |
+|          | 编辑抑制规则              | &check;              | &check;      | &check;           | &cross; |
+|          | 删除抑制规则              | &check;              | &check;      | &check;           | &cross; |
 | 采集管理 | 查看 Agent 列表             | &check;              | &check;       | &check;            | &check; |
 |          | 安装/卸载 Agent             | &check;              | &check;       | &check;            | &check; |
 |          | 查看 Agent 详情             | &check;              | &check;       | &check;            | &check; |

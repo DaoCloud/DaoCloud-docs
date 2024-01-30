@@ -634,10 +634,12 @@ nav:
               - 告警:
                   - insight/user-guide/alert-center/index.md
                   - 告警策略: insight/user-guide/alert-center/alert-policy.md
+                  - 告警模版: insight/user-guide/alert-center/alert-template.md
                   - 通知配置: insight/user-guide/alert-center/message.md
                   - 配置通知服务器: insight/user-guide/alert-center/sms-provider.md
                   - 消息模板: insight/user-guide/alert-center/msg-template.md
                   - 告警静默: insight/user-guide/alert-center/silent.md
+                  - 告警抑制: insight/user-guide/alert-center/inhibition.md
               - 数据采集:
                   - 采集管理: insight/user-guide/collection-manag/collection-manag.md
                   - 服务监控: insight/user-guide/collection-manag/service-monitor.md
