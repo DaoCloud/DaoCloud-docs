@@ -64,6 +64,7 @@ nav:
                   - 使用场景示例: install/commercial/scenarios.md
                   - DCE 5.0 一体机部署: install/best-practices/all-in-one-machine.md
                   - 部署 DCE 5.0 商业版时 etcd 采用 host 模式与控制面分离: install/best-practices/etcd-host-deploy.md
+                  - 火种节点高可用方案: install/best-practices/thinder-ha.md
               - 安装器 Release Notes: install/release-notes.md
       - 工作台:
           - 应用工作台:
