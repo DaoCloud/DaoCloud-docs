@@ -108,7 +108,7 @@
 
     支持 Spring Cloud SDK 开发的服务无侵入式的接入网格，并统一管理。
 
-- Dubbo
+- Dubbo 协议
 
     支持 Dubbo SDK 开发的服务无侵入式的接入网格，并统一管理。
 
