@@ -86,7 +86,7 @@ Offline installation means that the target host is in an offline state and canno
         ```bash
         export BINARY_TAR=prerequisite_${VERSION}_amd64.tar.gz
         chmod +x install_prerequisite_${VERSION}.sh
-        ./install_prerequisite_${VERSION}.sh offline community
+        ./install_prerequisite_${VERSION}.sh offline full
         ```
 
 You can now proceed to install DCE 5.0 [Community](community/resources.md) or [Enterprise](commercial/deploy-requirements.md).
