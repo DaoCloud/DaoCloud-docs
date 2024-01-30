@@ -214,3 +214,14 @@ npx prettier -w filename
   类似于 Issue 频道，也列出了一些文档站的问题
 - [Material for MkDocs 帮助](https://squidfunk.github.io/mkdocs-material/reference/)：
   这是 DCE 5.0 文档站的编译器帮助手册
+- 查看某个月份 Closed Issue：
+
+    ```
+    https://github.com/DaoCloud/DaoCloud-docs/issues?page=1&q=is%3Aclosed+is%3Aissue+closed%3A2024-01
+    ```
+    
+- 查看某个月份 Merged PR：
+
+    ```
+    https://github.com/DaoCloud/DaoCloud-docs/pulls?q=is%3Apr+label%3Akpanda+is%3Aclosed+merged%3A%3E%3D2024-01
+    ```
