@@ -1000,6 +1000,7 @@ nav:
                       - 实例监控: middleware/minio/user-guide/insight.md
                       - 配置参数: middleware/minio/user-guide/config.md
                       - MinIO 的身份管理: middleware/minio/user-guide/user-management.md
+                  - MinIO 灾备方案: middleware/minio/best-pratice/minio-replication.md
       - 云原生 AI:
           - 智能算力:
               - 介绍:
