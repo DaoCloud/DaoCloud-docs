@@ -86,7 +86,8 @@ Check if the following key information appears in the Pod log:
 [warn] [net] getaddrinfo(host='mcamel-common-es-cluster-masters-es-http.mcamel-system.svc.cluster.local',errt11):Could not contact DNS servers
 ```
 
-If yes, it is a known bug of `fluent-bit` bug`, Refer to: <https://github.com/aws/aws-for-fluent-bit/issues/233>
+If yes, it is a known bug of `fluent-bit` bug.
+Refer to: <https://github.com/aws/aws-for-fluent-bit/issues/233>
 
 ## Error reported during CentOS 7.6 installation
 
