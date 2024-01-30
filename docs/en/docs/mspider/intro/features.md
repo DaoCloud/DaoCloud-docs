@@ -59,7 +59,7 @@ This section describes the features supported by the service mesh.
 
 - Transparent mTLS Authentication
 
-    Supports mutual authentication between interface configuration services.
+    Supports mTLS authentication on GUI, including peer and request authentications.
 
 - Fine-Grained Access Authorization
 
