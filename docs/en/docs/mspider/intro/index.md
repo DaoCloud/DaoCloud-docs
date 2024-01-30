@@ -42,11 +42,11 @@ DCE 5.0's service mesh has the following advantages compared to other products:
     visualized microservice traffic management. Supports non-intrusive intelligent traffic governance,
     enabling dynamic intelligent routing and elastic traffic management without any application modification.
 
-    - Weighted, content, TCP/IP, and other routing rules.
-    - HTTP session persistence to meet the continuous processing needs of businesses.
-    - Rate limiting and outlier detection to achieve stable and reliable service-to-service links.
-    - Network connection management to reduce resource consumption and improve network throughput.
-    - Service security authentication: authentication, authorization, auditing, etc., providing
+  - Weighted, content, TCP/IP, and other routing rules.
+  - HTTP session persistence to meet the continuous processing needs of businesses.
+  - Rate limiting and outlier detection to achieve stable and reliable service-to-service links.
+  - Network connection management to reduce resource consumption and improve network throughput.
+  - Service security authentication: authentication, authorization, auditing, etc., providing
       a foundation for service security.
 
 - Graphical application panoramic topology and visualized traffic governance
@@ -118,15 +118,11 @@ flowchart TD
     
 
     service -.-> entry[Service Entry<br>One-Click Repair]
-    traffic -.-> virtual[Virtual Service<br>Destination Rule<br>Gateway Rule]
+    traffic -.-> virtual[Virtual Service<br>Destination Rule<br>Gateway]
     security -.-> peer[Peer Authentication<br>Request Authentication<br>Authorization Policy]
     sidecar -.-> sidecarm[Namespace Sidecar<br>Workload Sidecar<br>Traffic Passthrough]
     watch -.-> watch2[Traffic Monitor<br>Traffic Topology]
     upgrade -.-> upgrade1[Upgrade Istio<br>Upgrade Sidecar]
-
-    classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
-    classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
-    classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
     class mesh plain
     class install,service,gateway,traffic,watch,upgrade,security,entry,virtual,peer,cluster,sidecar,sidecarm,watch2,managed,private,external,namespace,workload,upgrade1 cluster
