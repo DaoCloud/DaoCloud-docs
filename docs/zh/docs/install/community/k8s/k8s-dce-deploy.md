@@ -172,7 +172,7 @@
     sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
     ```
   
-1. 安装 Kubernetes 组件，版本以 1.25.8 为例（DCE 5.0 对 1.26 暂时不支持）
+1. 安装 Kubernetes 组件，版本以 1.25.8 为例
 
     ```bash
     export K8sVersion=1.25.8
