@@ -94,7 +94,7 @@ Before installation, make some necessary settings for the three nodes.
 
 ### Install container runtime (containerd)
 
-1. If it is CentOS 8.x, you must first uninstall the Podman pre-installed in the system, otherwise there will be a version conflict ([Note]🔥)
+1. If it is CentOS 8.x, you must first uninstall the Podman pre-installed in the system, otherwise there will be a version conflict
 
      ```bash
      yum erase podman buildah -y
