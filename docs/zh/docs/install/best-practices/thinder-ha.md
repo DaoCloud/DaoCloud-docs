@@ -1,7 +1,8 @@
 # 火种节点高可用方案
 
-新增 “备用火种节点” 概念，本质上是一台虚拟机，与火种节点所做的事项一样，但是只有在原火种节点出问题时才会短暂使用，节点修复后需立即切换到原火种节点。
-并且通过前置的 DNS 或 HAProxy+KeepAlived 或 nginx 反向代理来实现火种服务的高可用，本文通过前置的 DNS 方式来操作。
+新增 “备用火种节点” 概念，本质上是一台虚拟机，与火种节点所做的事项一样，但是只有在原火种节点出问题时才会短暂使用，
+节点修复后需立即切换到原火种节点。并且通过前置的 DNS 或 HAProxy+KeepAlived 或 nginx 反向代理来实现火种服务的高可用，
+本文通过前置的 DNS 方式来操作。
 
 整体方案思路架构：
 
@@ -109,7 +110,7 @@
 
 1. 定义好的 clusterConfig 文件参考：
 
-    ```yaml
+    ```yaml title="clusterConfig.yaml"
     apiVersion: provision.daocloud.io/v1alpha3
     kind: ClusterConfig
     metadata:
@@ -171,7 +172,7 @@
 
 1. 定义好的 clusterConfig 文件参考：使用 IP 模式（bootstrapNode 为 auto 或者为火种节点的具体 IP 地址）启动火种节点安装
 
-    ```yaml
+    ```yaml title="clusterConfig.yaml"
     apiVersion: provision.daocloud.io/v1alpha3
     kind: ClusterConfig
     metadata:
