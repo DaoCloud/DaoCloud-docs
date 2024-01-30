@@ -205,6 +205,32 @@ npx prettier -w filename
 
 然后手动修改对应的文件，实现折行。
 
+## PR 和 Issue 筛选
+
+只需修改 URL 就能筛选出不同的内容：
+
+- 查看某个月份 Closed Issue：
+
+    ```
+    https://github.com/DaoCloud/DaoCloud-docs/issues?page=1&q=is%3Aclosed+is%3Aissue+closed%3A2024-01
+    ```
+
+- 查看某个月份创建的 Issue 并增加搜索：
+
+    ```
+    https://github.com/DaoCloud/DaoCloud-docs/issues?q=is%3Aissue+%E6%9C%8D%E5%8A%A1%E7%BD%91%E6%A0%BC+created%3A2024-01+is%3Aopen
+    ```
+
+- 查看某个月份 Merged PR：
+
+    ```
+    https://github.com/DaoCloud/DaoCloud-docs/pulls?q=is%3Apr+label%3Akpanda+is%3Aclosed+merged%3A%3E%3D2024-01
+    ```
+
+!!! tip
+
+    有什么问题，多问问 GPT，会给你很多提示。
+
 ## 参考资料
 
 - [Markdown 语法](https://www.markdownguide.org/cheat-sheet/)
@@ -214,14 +240,3 @@ npx prettier -w filename
   类似于 Issue 频道，也列出了一些文档站的问题
 - [Material for MkDocs 帮助](https://squidfunk.github.io/mkdocs-material/reference/)：
   这是 DCE 5.0 文档站的编译器帮助手册
-- 查看某个月份 Closed Issue：
-
-    ```
-    https://github.com/DaoCloud/DaoCloud-docs/issues?page=1&q=is%3Aclosed+is%3Aissue+closed%3A2024-01
-    ```
-    
-- 查看某个月份 Merged PR：
-
-    ```
-    https://github.com/DaoCloud/DaoCloud-docs/pulls?q=is%3Apr+label%3Akpanda+is%3Aclosed+merged%3A%3E%3D2024-01
-    ```
