@@ -26,10 +26,10 @@
 1. 在 k8s 集群控制平面节点（Controller Node）下载社区版的对应离线包并解压，
    或者从[下载中心](../../../download/index.md)下载离线包并解压。
 
-    假定版本 VERSION=0.14.0
+    假定版本 VERSION=0.15.0
 
     ```bash
-    export VERSION=v0.14.0
+    export VERSION=v0.15.0
     wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-$VERSION-amd64.tar
     tar -xvf offline-community-$VERSION-amd64.tar
     ```

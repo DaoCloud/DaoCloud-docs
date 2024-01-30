@@ -17,13 +17,13 @@
 
 | CPU 架构 | 版本   | 点击下载 |
 | :------- | :----- | :-----|
-| AMD64    | v0.14.0 | [offline-v0.14.0-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.14.0-amd64.tar) |
-| ARM64    | v0.14.0 | [offline-v0.14.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.14.0-arm64.tar) |
+| AMD64    | v0.15.0 | [offline-v0.15.0-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.15.0-amd64.tar) |
+| ARM64    | v0.15.0 | [offline-v0.15.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.15.0-arm64.tar) |
 
 下载完毕后解压离线包。以 amd64 架构离线包为例：
 
 ```bash
-tar -xvf offline-v0.14.0-amd64.tar
+tar -xvf offline-v0.15.0-amd64.tar
 ```
 
 #### ISO 操作系统镜像文件（必需）
@@ -53,6 +53,19 @@ osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源
 可以前往 <https://github.com/kubean-io/kubean/releases> 查看。
 
 目前安装器版本要求 osPackage 离线包的版本与之匹配，请根据对应版本下载 osPackage 离线包：
+
+=== "V0.15.0"
+
+    | 操作系统版本                                        | 点击下载                                                     |
+    | :-------------------------------------------------- | :----------------------------------------------------------- |
+    | CentOS 7                                            | [os-pkgs-centos7-v0.12.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.12.1/os-pkgs-centos7-v0.12.1.tar.gz) |
+    | Redhat 8                                            | [os-pkgs-redhat8-v0.12.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.12.1/os-pkgs-redhat8-v0.12.1.tar.gz) |
+    | Redhat 7                                            | [os-pkgs-redhat7-v0.12.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.12.1/os-pkgs-redhat7-v0.12.1.tar.gz) |
+    | Redhat 9                                            | [os-pkgs-redhat9-v0.12.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.12.1/os-pkgs-redhat9-v0.12.1.tar.gz) |
+    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.12.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.12.1/os-pkgs-kylinv10-v0.12.1.tar.gz) |
+    | Ubuntu 20.04                                         | [os-pkgs-ubuntu2004-v0.12.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.12.1/os-pkgs-ubuntu2004-v0.12.1.tar.gz) |
+    | openEuler 22.03                                     | [os-pkgs-openeuler22.03-v0.12.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.12.1/os-pkgs-openeuler22.03-v0.12.1.tar.gz) |
+    | Oracle Linux R9 U1                                   | [os-pkgs-oracle9-v0.12.1.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.12.1/os-pkgs-oracle9-v0.12.1.tar.gz) |
 
 === "V0.14.0"
 
