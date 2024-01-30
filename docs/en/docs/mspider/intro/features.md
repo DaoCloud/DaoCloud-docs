@@ -7,7 +7,7 @@ date: 2024-01-10
 
 This section describes the features supported by the service mesh.
 
-## Service Governance
+## Service Management
 
 - Service Registration and Discovery
 
