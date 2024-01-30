@@ -25,3 +25,20 @@ drwxr-xr-x   3 samzonglu  staff    96B Jan 21 16:30 resources
 drwxr-xr-x  21 samzonglu  staff   672B Jan 30 09:51 scripts
 -rw-r--r--   1 samzonglu  staff   7.6K Jan 21 16:30 style.md
 -rw-r--r--   1 samzonglu  staff   6.5K Jan 21 16:30 style_zh.md
+total 17
+drwxrwxr-x  126 root  admin   3.9K Jan 28 11:23 Applications
+drwxr-xr-x   73 root  wheel   2.3K Jan 24 12:35 Library
+drwxr-xr-x@  10 root  wheel   320B Jan 12 15:19 System
+drwxr-xr-x    6 root  admin   192B Jan 24 12:34 Users
+drwxr-xr-x    3 root  wheel    96B Jan 29 22:45 Volumes
+drwxr-xr-x@  39 root  wheel   1.2K Jan 12 15:19 bin
+drwxr-xr-x    2 root  wheel    64B Sep 18  2021 cores
+dr-xr-xr-x    4 root  wheel   8.0K Jan 29 22:45 dev
+lrwxr-xr-x@   1 root  wheel    11B Jan 12 15:19 etc -> private/etc
+lrwxr-xr-x    1 root  wheel    25B Jan 29 22:45 home -> /System/Volumes/Data/home
+drwxr-xr-x    5 root  wheel   160B Jan  9 20:50 opt
+drwxr-xr-x    6 root  wheel   192B Jan 29 22:45 private
+drwxr-xr-x@  64 root  wheel   2.0K Jan 12 15:19 sbin
+lrwxr-xr-x@   1 root  wheel    11B Jan 12 15:19 tmp -> private/tmp
+drwxr-xr-x@  11 root  wheel   352B Jan 12 15:19 usr
+lrwxr-xr-x@   1 root  wheel    11B Jan 12 15:19 var -> private/var
