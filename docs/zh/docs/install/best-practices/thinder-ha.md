@@ -9,17 +9,17 @@
 
 ## 环境准备
 
-- 火种节点：操作系统 centos7.9 ，IP xxx.xx.xx.193
-- global单集群： 操作系统 centos7.9，IP xxx.xx.xx.194，CRI containerd
-- 备用火种节点： 操作系统 centos7.9，IP xxx.xx.xx.194，备用火种节点可以与 global 集群的 master 节点在一起。
-- dnsServer：IP xxx.xx.xx.192
-- 域名： www.tinder-node-server.com (初始解析到火种节点 xxx.xx.xx.193)
+- 火种节点：操作系统 centos7.9 ，IP `xxx.xx.xx.193`
+- global单集群： 操作系统 centos7.9，IP `xxx.xx.xx.194`，CRI containerd
+- 备用火种节点： 操作系统 centos7.9，IP `xxx.xx.xx.194`，备用火种节点可以与 global 集群的 master 节点在一起。
+- dnsServer：IP `xxx.xx.xx.192`
+- 域名： <www.tinder-node-server.com> （初始解析到火种节点 `xxx.xx.xx.193`）
 
 ## 操作步骤
 
 ### 模拟 dnsServer，根据实际情况配置
 
-在 xxx.xx.xx.192 机器中设置 dnsServer 信息。以下配置信息仅作演示参考：
+在 `xxx.xx.xx.192` 机器中设置 dnsServer 信息。以下配置信息仅作演示参考：
 
 1. 配置信息 `/etc/named.conf`
 
@@ -167,9 +167,9 @@
 
 1. 确保备用火种节点已经安装前置依赖工具，参考[安装依赖项](../install-tools.md)，
 
-1. 将火种节点的离线包 scp 到 备用火种节点上
+1. 将火种节点的离线包 scp 到备用火种节点上
 
-1. 定义好的 clusterConfig 文件参考：使用ip模式 (bootstrapNode为auto或者为火种节点的具体ip地址) 启动火种节点安装
+1. 定义好的 clusterConfig 文件参考：使用 IP 模式（bootstrapNode 为 auto 或者为火种节点的具体 IP 地址）启动火种节点安装
 
     ```yaml
     apiVersion: provision.daocloud.io/v1alpha3
@@ -203,8 +203,12 @@
 1. 在备用火种机执行特定步骤 `1,2,3,4,5`
 
     ```bash
-    ./dce5-installer cluster-create -c sample/clusterConfig.yaml -m sample/manifest.yaml -j 1,2,3,4,5 ## 这里的-j参数必不可少，只安装到火种节点本身
+    ./dce5-installer cluster-create -c sample/clusterConfig.yaml -m sample/manifest.yaml -j 1,2,3,4,5
     ```
+
+    !!! note
+    
+        这里的 -j 参数必不可少，只安装到火种节点本身。
 
 ### 基于 DNS 解析实现火种节点的高可用验证测试
 
@@ -232,7 +236,9 @@
 
 ## FAQ
 
-### 火种节点和备用火种节点关于 clusterConfig.yaml 中的 bootstrapNode、imagesAndCharts.additionalSSLSubjectAltName 配置的说明
+### bootstrapNode 和 AdditionalSubjectAltName 字段配置
+
+火种节点和备用火种节点关于 clusterConfig.yaml 中的 bootstrapNode、imagesAndCharts.additionalSSLSubjectAltName 配置的说明：
 
 | 节点 | SubjectAltName(bootstrapNode) | AdditionalSubjectAltName |
 | --- | ------------------------ | ---------------------------- |
@@ -243,7 +249,7 @@
 
 前提条件：
 
-- 将 dns 解析恢复到原状，即域名指向原火种节点 xxx.xx.xx.193
+- 将 dns 解析恢复到原状，即域名指向原火种节点 `xxx.xx.xx.193`
 
     !!! note
   
@@ -256,7 +262,9 @@
     1. 在火种节点与备用火种节点分别执行升级火种节点命令，用于升级镜像、minio 文件、charts 版本
     
         ```bash
-        ./dce5-installer cluster-create -c sample/clusterConfig.yaml -m sample/manifest.yaml -u tinder # 修改fullPackagePath指向离线包升级包地址
+        ./dce5-installer cluster-create -c sample/clusterConfig.yaml -m sample/manifest.yaml -u tinder
         ```
+
+        修改 fullPackagePath 指向离线包升级包地址。
     
     1. 升级后需要分别检查火种节点与备用节点的镜像、文件、charts 仓库可以正常下载。
