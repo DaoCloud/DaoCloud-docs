@@ -3,8 +3,6 @@
 This YAML file contains various configuration fields of the cluster, and this file must be configured before installation.
 This file will define key parameters such as deployment mode and cluster node information. By default it is located in the `offline/sample/` directory.
 
-The v0.6.0 version optimizes the structure of the configuration file, making it clearer and easier to read than before.
-
 ## ClusterConfig Example
 
 The following is an example of ClusterConfig.yaml.
