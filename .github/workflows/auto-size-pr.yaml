@@ -1,11 +1,12 @@
 name: Size labeler
 
-on: [pull_request]
+on:
+- pull_request_target
 
 jobs:
   size-labeler:
     permissions:
-      contents: read
+      issues: write
       pull-requests: write
     runs-on: ubuntu-latest
     name: Label the PR size
