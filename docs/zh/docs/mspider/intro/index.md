@@ -99,6 +99,10 @@ flowchart TD
     watch -.-> watch2[流量监控<br>流量拓扑]
     upgrade -.-> upgrade1[Istio 升级<br>边车升级]
 
+    classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
+    classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
+    classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
+
     class mesh plain
     class install,service,gateway,traffic,watch,upgrade,security,entry,virtual,peer,cluster,sidecar,sidecarm,watch2,managed,private,external,namespace,workload,upgrade1 cluster
 
