@@ -745,6 +745,7 @@ nav:
                       - Control Plane Components: mspider/intro/comp-archi-ui/cp-component.md
                       - System Namespaces: mspider/intro/comp-archi-ui/namespaces.md
                       - Features Supported on UI: mspider/intro/comp-archi-ui/features-on-ui.md
+                  - Supported Istio and K8s Versions: mspider/intro/istio-k8s.md
                   - FAQs: mspider/intro/faq.md
                   - Service Mesh Release Notes: mspider/intro/release-notes.md
               - Install, Config, and Upgrade:
