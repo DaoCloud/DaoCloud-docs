@@ -31,7 +31,7 @@
     系统将自动返回虚拟机列表。点击列表右侧的 `︙`，可以对虚拟机执行关机/开启、重启、克隆、更新、创建快照、控制台访问（VNC）、删除等操作。
     克隆和快照能力依赖于存储池的选择。
 
-    ![虚拟机操作](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/createvm03.png)
+    ![虚拟机操作](../images/createvm03.png)
 
 ### 基本信息
 
@@ -75,7 +75,7 @@
 
 ### 存储与网络配置
 
-![存储与网络配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/createvm06.png)
+![存储与网络配置](../images/createvm06.png)
 
 - 存储：
   

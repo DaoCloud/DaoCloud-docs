@@ -44,7 +44,15 @@
     获得 vSphere 的密码信息
 
 5. 需要导入虚拟机的 UUID（需要在 vSphere 的 web 页面获取）
-   
+
+    - 进入 Vsphere 页面中，进入被导入虚拟机的详情页面，点击`编辑配置`，此时打开浏览器的开发者控制台，点击`网络`——>`标头`找到如下图所示的 URL
+    
+    ![找到URL](../images/uuid01.png)
+
+    - 点击`响应`，定位到`vmConfigContext`——>`config`，最终找到目标值`uuid`
+
+    ![找到uuid](../images/uuid02.png)
+
 6. 需要导入虚拟机的 vmdk 文件 path
 
 ## 获取 vSphere 的虚拟机基础信息

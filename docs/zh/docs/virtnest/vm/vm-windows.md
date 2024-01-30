@@ -7,6 +7,7 @@
 1. 创建 Windows 虚拟机之前，需要先参考[安装虚拟机模块的依赖和前提](../install/install-dependency.md)确定您的环境已经准备就绪。
 2. 创建过程建议参考官方文档：[How to install during Windows install](https://kubevirt.io/user-guide/virtual_machines/windows_virtio_drivers/#how-to-install-during-windows-install)
 3. 如果虚拟机没有网络需要手动加载 Windows 网络引擎启动，参考官方文档 [How to install after Windows installation?](https://kubevirt.io/user-guide/virtual_machines/windows_virtio_drivers/#how-to-install-after-windows-install)
+4. Windows 虚拟机建议使用 VNC 的访问方式。
 
 ## 上传 Windows 操作系统的镜像文件
 
@@ -182,3 +183,12 @@
                 image: kubevirt/virtio-container-disk
             name: virtiocontainerdisk
     ```
+## 访问 Windows 虚拟机
+
+1. 创建成功后，进入虚拟机列表页面，发现虚拟机正常运行。
+
+    ![运行成功](../images/window01.png)
+
+2. 点击控制台访问（VNC），可以正常访问。
+
+    ![访问](../images/windows-vnc.png)

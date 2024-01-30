@@ -571,6 +571,7 @@ nav:
                   - 快照管理: virtnest/vm/snapshot.md
                   - 实时迁移: virtnest/vm/live-migration.md
                   - 通过 NodePort 访问虚拟机: virtnest/vm/nodeport.md
+                  - 虚拟机监控: virtnest/vm/monitor.md
               - 虚拟机模板:
                   - 通过模板创建虚拟机: virtnest/template/index.md
                   - 虚拟机模板: virtnest/template/tep.md
