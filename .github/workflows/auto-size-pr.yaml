@@ -15,16 +15,19 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           xs_label: "size/xs"
-          xs_max_size: "10"
+          xs_max_size: "9"
           s_label: "size/s"
-          s_max_size: "100"
+          s_max_size: "29"
           m_label: "size/m"
-          m_max_size: "500"
+          m_max_size: "99"
           l_label: "size/l"
-          l_max_size: "1000"
+          l_max_size: "499"
           xl_label: "size/xl"
-          fail_if_xl: "false"
-          message_if_xl: >
-            This PR exceeds the recommended size of 1000 lines.
+          xl_max_size: "999"
+          xll_label: "size/xll"
+          xll_max_size: "1999"
+          fail_if_xll: "false"
+          message_if_xll: >
+            This PR exceeds the recommended size of 2000 lines.
             Please make sure you are NOT addressing multiple issues with one PR.
             Note this PR might be rejected due to its size.
