@@ -141,6 +141,7 @@ nav:
                   - 在Jenkins中使用自定义工具链: amamba/quickstart/jenkins-custom.md
                   - Jenkins高可用方案: amamba/quickstart/jenkins-HA.md
                   - 构建多架构镜像: amamba/user-guide/pipeline/podman.md
+                  - 基于云原生网关（contour）的灰度发布实践: amamba/quickstart/contour-argorollout.md
       - 容器:
           - 容器管理:
               - 介绍:
