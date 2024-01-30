@@ -9,6 +9,21 @@ Date: 2023-10-30
 
 This page lists all the Release Notes for each version of Service Mesh, providing convenience for users to learn about the evolution path and feature changes.
 
+## 2024-01-30
+
+### v0.23.0
+
+#### Features
+
+- **Added** Service and workload's grafana dashboard, adding upstream and downstream traffic distribution.
+- **Added** Adapt `Istio` version to `1.18.7`, `1.19.6`, and `1.20.2`.
+
+#### Fixes
+
+- **修复** The `Consumer` service of `Dubbo` + `Zookeeper` cannot be recognized as a `Dubbo` service problem.
+- **修复** Get a list of valid `Istio` versions, and filter them based on the cluster version.
+- **修复** `Istio` `1.20` Unable to enable multi-cloud interconnection issue.
+
 ## 2023-12-31
 
 ### v0.22.0
