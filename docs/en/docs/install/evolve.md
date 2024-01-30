@@ -13,7 +13,7 @@ DCE 5.0 supports multiple versions, and all versions except DCE Community are DC
 
 ### Step 1: Edit manifest.yaml
 
-Change the values of `enable` fields in the `manifest.yaml` from `false` to `true`.
+Change all `enable: false` to `enable: true` in the manifest.yaml file.
 
 ```yaml
 skoala:
