@@ -25,7 +25,7 @@ DCE 5.0 服务网格支持 3 种网格：
     - 控制面入口方式：支持负载均衡和自定义。
     - 网格组件仓库：输入包含数据面组件镜像的镜像仓库地址，例如 `release-ci.daocloud.io/mspider`。
   
-        ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/create-mesh02.png)
+    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/create-mesh02.png)
 
 3. 系统设置。配置是否上报链路追踪，设置网格规模，选择存储配置后点击`下一步`。
 
@@ -40,7 +40,7 @@ DCE 5.0 服务网格支持 3 种网格：
 
     ![治理设置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/create-mesh04.png)
 
-5. 边车设置。设置全局边车、边车资源限制、默认边车日志级别点击`确定`。参阅[日志级别说明](./params.md#_2)。
+5. 边车设置。设置全局边车、边车资源限制、默认边车日志级别、边车服务发现限制和边车镜像拉取设置，点击`确定`。参阅[日志级别说明](./params.md#_2)。
 
     ![边车设置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/create-mesh05.png)
 
