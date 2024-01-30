@@ -20,9 +20,9 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 
 #### Fixes
 
-- **修复** The `Consumer` service of `Dubbo` + `Zookeeper` cannot be recognized as a `Dubbo` service problem.
-- **修复** Get a list of valid `Istio` versions, and filter them based on the cluster version.
-- **修复** `Istio` `1.20` Unable to enable multi-cloud interconnection issue.
+- **Fixed** The `Consumer` service of `Dubbo` + `Zookeeper` cannot be recognized as a `Dubbo` service problem.
+- **Fixed** Get a list of valid `Istio` versions, and filter them based on the cluster version.
+- **Fixed** `Istio` `1.20` Unable to enable multi-cloud interconnection issue.
 
 ## 2023-12-31
 
