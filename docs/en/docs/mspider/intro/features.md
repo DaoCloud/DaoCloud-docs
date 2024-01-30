@@ -65,6 +65,20 @@ This section describes the features supported by the service mesh.
 
     Supports configuration of access authorization between services through the interface (the background API can configure Namespace-level authorization, and authorization can be given to a specific interface).
 
+## Sidecar management
+
+- sidecar injection
+
+    Supports the sidecar injection strategy of configuring services through the interface, and supports the multi-dimensional sidecar default injection strategy.
+
+- Sidecar hot upgrade
+
+    It supports sidecar hot upgrade. After the control plane is upgraded, it automatically detects the sidecar version and gives upgrade suggestions. It supports seamless hot upgrade without interrupting the business.
+
+- Sidecar service discovery scope
+
+    Supports custom configuration of sidecar service discovery scope and greatly reduces the pressure on sidecar resource consumption according to different business scenarios.
+
 ## Observability
 
 - Traffic Topology
