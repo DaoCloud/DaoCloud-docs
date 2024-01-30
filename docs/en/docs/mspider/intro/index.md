@@ -118,7 +118,7 @@ flowchart TD
     
 
     service -.-> entry[Service Entry<br>One-Click Repair]
-    traffic -.-> virtual[Virtual Service<br>Destination Rule<br>Gateway Rule]
+    traffic -.-> virtual[Virtual Service<br>Destination Rule<br>Gateway]
     security -.-> peer[Peer Authentication<br>Request Authentication<br>Authorization Policy]
     sidecar -.-> sidecarm[Namespace Sidecar<br>Workload Sidecar<br>Traffic Passthrough]
     watch -.-> watch2[Traffic Monitor<br>Traffic Topology]
