@@ -9,6 +9,16 @@ Note: If the sidecar injection setting for a workload is disabled, the workload 
 In the left navigation menu, click `Mesh Sidecar` -> `Namespace`, to view the sidecar status of all namespaces under the corresponding service mesh.
 
 When there are many namespaces, you can sort them by name and search for them using the search function.
+You can also choose whether to display the following system namespaces:
+
+- default
+- insight-system
+- istio-operator
+- istio-system
+- kpanda-system
+- kube-node-lease
+- kube-public
+- kube-system
 
 ![View Sidecar Injection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/ns-sidecar01.png)
 

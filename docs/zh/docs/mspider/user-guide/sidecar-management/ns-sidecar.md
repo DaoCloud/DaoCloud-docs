@@ -9,6 +9,16 @@
 在左侧导航栏中，点击`边车管理` -> `命名空间边车管理`，可以查看对应网格下所有命名空间的边车状态。
 
 当命名空间较多时，可以按命名空间的名称进行排序，并通过搜索功能进行查找。
+还可以选择是否显示以下系统命名空间：
+
+- default
+- insight-system
+- istio-operator
+- istio-system
+- kpanda-system
+- kube-node-lease
+- kube-public
+- kube-system
 
 ![查看边车注入](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/ns-sidecar01.png)
 
