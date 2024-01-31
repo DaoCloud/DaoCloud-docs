@@ -1216,7 +1216,7 @@ nav:
   - 博客:
       - 博文索引: blogs/index.md
       - 2024 年:
-          - 202402 | 什么是加速计算: blogs/240201-ai-compute.md
+          - 202402 | 加速计算基本定义及工作原理揭秘: blogs/240201-ai-compute.md
           - 202401 | 容器化 AI 简化 ML 模型的部署: blogs/240115-news.md
           - 202401 | KubeEdge v1.15.0 发布: blogs/240108-kubeedge.md
       - 2023 年:
