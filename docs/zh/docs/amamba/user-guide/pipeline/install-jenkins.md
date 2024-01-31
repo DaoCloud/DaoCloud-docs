@@ -130,3 +130,11 @@
         需要在流水线的 SonarQube 配置步骤中下拉获取。
 
     ![SonarQube Name](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/install-jenkins07.png)
+
+3. 前往 SonarQube 后台更新 webhook 地址。依次点击 `Administration` -> `Configuration` -> `Webhooks` ，选择对应的Webhook，点击`update` 。
+
+    ![sonarqube03](../../images/sonarqube03.png)
+
+    其中 URL 更新为 http://{新部署的 Jenkins 的地址}/sonarqube-webhook/
+
+    ![sonarqube03](../../images/sonarqube04.png)
