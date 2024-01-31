@@ -2,6 +2,33 @@
 
 本页列出 Insight 可观测性的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2024.01.31
+
+### Insight Server: v0.24.0
+
+#### 新增
+
+- **新增** 支持告警抑制
+- **新增** 支持告警模版并从模版创建告警策略
+
+#### 优化
+
+- **优化** Grafana 支持增加 JSON API 类型的数据源
+- **优化** Grafana 禁止使用 ECS 键退出全屏模式
+
+#### 修复
+
+- **修复** 创建日志告警预览查询不准确的问题
+- **修复** insight-system 部署过程中的监听 IPv6 问题报错
+- **修复** Grafana 仪表盘没有通过认证允许查看的问题
+- **修复** 强制所有 SMTP 邮件启用 InsecureSkipVerify
+
+### Insight Agent: v0.23.0
+
+#### 优化
+
+- **优化** 升级 OpenTelemetry Collector 相关组件的镜像版本
+
 ## 2023.12.31
 
 ### Insight Server: v0.23.0
