@@ -1152,8 +1152,9 @@ nav:
   - Blogs:
       - Index: blogs/index.md
       - 2024 Blogs:
+          - 202402 | Accelerated Computing: blogs/240201-ai-compute.md
           - 202401 | Containerization AI Streamlines ML Models: blogs/240115-news.md
-          - KubeEdge v1.15.0 Released: blogs/240108-kubeedge.md
+          - 202401 | KubeEdge v1.15.0 Released: blogs/240108-kubeedge.md
       - 2023 Blogs:
           - 202312 | K8s 1.29 Released - Ambious Mandala Theme: blogs/231213-k8s-1.29.md
           - 202312 | Does K8s Perform Better on Bare Metal vs. VMs?: blogs/231205-vm-bm-compare.md
