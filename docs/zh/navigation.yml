@@ -414,7 +414,7 @@ nav:
                   - 公有云适配:
                       - 在阿里云环境运行: network/modules/spiderpool/public-cloud/alibabacloud.md
                       - 在 AWS 环境运行: network/modules/spiderpool/public-cloud/awscloud.md
-              - 集成 egressGateway:
+              - 集成 EgressGateway:
                   - 介绍: network/modules/egressgateway/index.md
                   - 安装: network/modules/egressgateway/install.md
                   - 使用: network/modules/egressgateway/usage.md
