@@ -35,20 +35,20 @@
     | ContainerRuntime                     | 选择运行时，支持 podman、docker。需要根据集群的容器运行时决定。               |
     | AdminUser                            | Jenkins 的用户名                                             |
     | AdminPassword                        | Jenkins 的密码                                               |
-    | Deploy.JenkinsHost                   | Jenkins 的访问链接。如果选择Node Port 方式，访问地址规则为：http://{集群地址:端口} |
+    | Deploy.JenkinsHost                   | Jenkins 的访问链接。如果选择 NodePort 方式，访问地址规则为：`http://{集群地址:端口}` |
     | JavaOpts                             | 指定启动 Jenkins 的 JVM 启动参数                             |
-    | ServiceType                          | 默认为ClusterIP，支持ClusterIP、NodePort、LoadBalancer       |
+    | ServiceType                          | 默认为 ClusterIP，支持 ClusterIP、NodePort、LoadBalancer       |
     | ServicePort                          | 服务访问端口                                                 |
     | NodePort                             | 如果 ServiceType=NodePort 则需要必填，范围为：30000-32767    |
     | resources.requests                   | Jenkins 的资源请求值                                         |
     | resources.limits                     | Jenkins 的资源限制值                                         |
     | image.registry                       | Jenkins 镜像仓库地址                                                 |
-    | eventProxy.enabled                   | EventProxy 是一个旨在为 Jenkins 到 Amamba APIServer提供可靠连接的边车容器，当Jenkins部署的集群和Global集群不在同一个区域的时候，最好开启。 |
+    | eventProxy.enabled                   | EventProxy 是一个旨在为 Jenkins 到 Amamba APIServer 提供可靠连接的边车容器，当 Jenkins 部署的集群和 Global 集群不在同一个区域的时候，最好开启。 |
     | eventProxy.image.registry            | eventProxy 镜像仓库的地址。<br />如果 enabled=true 必须填写                                   |
-    | eventProxy.configMap.eventProxy.host  | Jenkins 事件的接收地址的Host，Jenkins如果部署在Worker集群，需要设置成DCE的入口地址。<br />如果 enabled=true 必须填写。                                   |
-    | eventProxy.configMap.eventProxy.proto | Jenkins 事件的接收地址的Protocol，默认是http。<br />如果 enabled=true 必须填写                                   |
+    | eventProxy.configMap.eventProxy.host  | Jenkins 事件的接收地址的Host，Jenkins 如果部署在 Worker 集群，需要设置成 DCE 的入口地址。<br />如果 enabled=true 必须填写。                                   |
+    | eventProxy.configMap.eventProxy.proto | Jenkins 事件的接收地址的 Protocol，默认是 http。<br />如果 enabled=true 必须填写                                   |
     | eventProxy.configMap.eventProxy.webhookUrl | Jenkins 事件的接收地址的路径，默认是 `/apis/internel.amamba.io/devops/pipeline/v1alpha1/webhooks/jenkins` 。  |
-    | eventProxy.configMap.eventProxy.token | 访问DCE的toekn，获取方式参考[全局管理访问密钥文档](../../../ghippo/user-guide/personal-center/accesstoken.md)<br />如果 enabled=true 必须填写 |
+    | eventProxy.configMap.eventProxy.token | 访问 DCE 的 token，获取方式参考[全局管理访问密钥文档](../../../ghippo/user-guide/personal-center/accesstoken.md)<br />如果 enabled=true 必须填写 |
 
 5. 前往 Helm 应用查看部署结果。
 
@@ -100,13 +100,13 @@
 
     !!! note
 
-        配置发件人邮箱地址需要点击 右上角个人头像 -> 设置，然后下拉找到 __邮件地址__ 
+        配置发件人邮箱地址需要点击 右上角个人头像 -> __设置__ ，然后下拉找到 __邮件地址__
 
     ![Jenkins邮件配置页](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/install-jenkins06.png)
 
 ### 针对 SonarQube 配置步骤，在 Jenkins 后台配置 SonarQube 服务器地址
 
-1. 前往 Jenkins 后台，点击 Manage Jenkins -> Configure System，然后下拉找到 __SonarQube servers__ ，然后点击 __Add SonarQube__ 。
+1. 前往 Jenkins 后台，点击 __Manage Jenkins__ -> __Configure System__ ，然后下拉找到 __SonarQube servers__ ，然后点击 __Add SonarQube__ 。
 
     ![Jenkins Sonarqube配置页](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/install-jenkins08.png)
 
@@ -118,9 +118,9 @@
 
     - Server authentication token：SonarQube 服务器的身份验证令牌。您可以在 SonarQube 控制台中生成一个令牌。
 
-        - 在 SonarQube 生成管理员令牌（Token），操作路径为：My Account -> Profile -> Security -> Generate -> Copy
+        - 在 SonarQube 生成管理员令牌（Token），操作路径为：__My Account__ -> __Profile__ -> __Security__ -> __Generate__ -> __Copy__
 
-        - 添加凭据，类型选择 `Secret test`，Secret 输入 SonarQube 管理员令牌（Token），ID 不填会默认生成
+        - 添加凭据，类型选择 __Secret test__ ，Secret 输入 SonarQube 管理员令牌（Token），ID 不填会默认生成
 
             ![sonarqube](../../images/sonarqube.png)
 
@@ -130,3 +130,11 @@
         需要在流水线的 SonarQube 配置步骤中下拉获取。
 
     ![SonarQube Name](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/install-jenkins07.png)
+
+3. 前往 SonarQube 后台更新 Webhook 地址。依次点击 __Administration__ -> __Configuration__ -> __Webhooks__ ，选择对应的 Webhook，点击 __Update__ 。
+
+    ![sonarqube03](../../images/sonarqube03.png)
+
+    其中 URL 更新为 `http://{新部署的 Jenkins 的地址}/sonarqube-webhook/`
+
+    ![sonarqube03](../../images/sonarqube04.png)

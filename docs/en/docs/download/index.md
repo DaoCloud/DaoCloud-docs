@@ -64,15 +64,15 @@ DCE 5.0 also provides a variety of selected middleware:
 
 | Modules | File Size | Download | Update Date |
 | ------- | --------- | -------- | ------------|
-| Elasticsearch |978.47 MB| [:arrow_right: Go to Download](./modules/middleware/elasticsearch.md) |2024-01-04|
-| Kafka |982.30 MB| [:arrow_right: Go to Download](./modules/middleware/kafka.md) |2024-01-04|
-| MinIO |218.84 MB| [:arrow_right: Go to Download](./modules/middleware/minio.md) |2024-01-04|
-| MongoDB |369.54 MB| [:arrow_right: Go to Download](./modules/middleware/mongodb.md) |2024-01-04|
-| MySQL |1.54 GB| [:arrow_right: Go to Download](./modules/middleware/mysql.md) |2024-01-04|
-| PostgreSQL |1.38 GB| [:arrow_right: Go to Download](./modules/middleware/postgresql.md) |2024-01-04|
-| RabbitMQ |165.23 MB| [:arrow_right: Go to Download](./modules/middleware/rabbitmq.md) |2024-01-04|
-| Redis |536.30 MB| [:arrow_right: Go to Download](./modules/middleware/redis.md) |2024-01-04|
-| RocketMQ |622.81 MB| [:arrow_right: Go to Download](./modules/middleware/rocketmq.md) |2024-01-04|
+| Elasticsearch |978.74 MB| [:arrow_right: Go to Download](./modules/middleware/elasticsearch.md) |2024-02-01|
+| Kafka |982.41 MB| [:arrow_right: Go to Download](./modules/middleware/kafka.md) |2024-02-01|
+| MinIO |218.97 MB| [:arrow_right: Go to Download](./modules/middleware/minio.md) |2024-02-01|
+| MongoDB |369.66 MB| [:arrow_right: Go to Download](./modules/middleware/mongodb.md) |2024-02-01|
+| MySQL |1.54 GB| [:arrow_right: Go to Download](./modules/middleware/mysql.md) |2024-02-01|
+| PostgreSQL |1.38 GB| [:arrow_right: Go to Download](./modules/middleware/postgresql.md) |2024-02-01|
+| RabbitMQ |165.35 MB| [:arrow_right: Go to Download](./modules/middleware/rabbitmq.md) |2024-02-01|
+| Redis |591.93 MB| [:arrow_right: Go to Download](./modules/middleware/redis.md) |2024-02-01|
+| RocketMQ |622.91 MB| [:arrow_right: Go to Download](./modules/middleware/rocketmq.md) |2024-02-01|
 
 !!! note
 

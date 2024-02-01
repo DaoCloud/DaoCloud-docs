@@ -6,21 +6,8 @@
 
 !!! tip
 
-    加速计算利用
-
-    - GPU（Graphics Processing Units，图形处理器）
-    - ASIC（Application-Specific Integrated Circuits，专用集成电路）
-    - TPU（Tensor Processing Units，张量处理单元）
-    - FPGA（Field-Programmable Gate Arrays，现场可编程逻辑门阵列）
-
-    等专用硬件来执行计算，其效率高于传统的 CPU，提升了速度与性能表现。这种计算方法在
-
-    - HPC（High Performance Computing，高性能计算）
-    - DL（Deep Learning，深度学习）
-    - ML（Machine Learning，机器学习）
-    - AI（Artificial Intelligence，人工智能）
-
-    等可以并行处理的任务上展现出了显著优势。
+    加速计算利用 GPU、ASIC、TPU、FPGA 等专用硬件来执行计算，其效率高于传统的 CPU，提升了速度与性能表现。这种计算方法在
+    HPC、深度学习、ML、AI 等可以并行处理的任务上展现出了显著优势。
 
 加速计算领域的纵深广阔，发展迅速，涵盖了 GPU、ASIC、TPU、FPGA、CUDA 以及 OpenCL 等众多软硬件解决方案以及各种网络技术。
 此外，我们还探究了加速计算技术对生成式 AI 和数据中心等人工智能驱动的应用领域的影响。
@@ -28,7 +15,7 @@
 
 ## 加速计算是什么？
 
-加速计算是指利用专用硬件以超越通用中央处理（CPU）常规计算效能的高效计算处理。
+加速计算是指利用专用硬件以超越 CPU 常规计算效能的高效计算处理。
 加速计算能充分发挥 GPU、ASIC、TPU 和 FPGA 等设备的能力，
 能够以更高的速度执行运算，从而加速整个计算过程。
 
@@ -66,21 +53,21 @@
 
 #### 图形处理器（GPU）
 
-GPU 是一种广泛应用于各种计算密集型任务，擅长同时执行大量复杂的计算，因此非常适合用于高性能计算（HPC）以及机器学习中的神经网络训练等任务。
+GPU 是一种广泛应用于各种计算密集型任务，擅长同时执行大量复杂的计算，因此非常适合用于 HPC 以及机器学习中的神经网络训练等任务。
 
 在应用范畴上，术语“通用图形处理器”（GPGPU）常用来描述 GPU 在非图形渲染领域中，用于执行传统上由 CPU 处理的计算任务的情况。
 
 在用于数据中心和诸如机器学习、人工智能等计算密集型任务的 GPU 市场中，NVIDIA 处于领先地位。
 其数据中心场景下的主力 GPU 架构阵容覆盖了最新的 Hopper（H100）架构和先前的 Ampere（A100）架构。
-值得注意的是，H100 系列 GPU 特别适用于加速大型语言模型（LLM）、深度推荐系统、基因组学和复杂数字孪生体等应用的运算。
+值得注意的是，H100 系列 GPU 特别适用于加速 LLM、深度推荐系统、基因组学和复杂数字孪生体等应用的运算。
 
 #### 专用集成电路（ASIC）
 
-ASIC 是一种专为执行特定任务而设计的定制芯片，而非像通用CPU那样旨在应对广泛多样的应用程序需求。
+ASIC 是一种专为执行特定任务而设计的定制芯片，而非像通用 CPU 那样旨在应对广泛多样的应用程序需求。
 由于 ASIC 是针对某一特定功能量身定制的，因此在执行该任务时，其效率相比通用处理器更高。
 ASIC 在速度、能耗以及整体性能上具有明显优势。
 
-神经处理单元（NPU）和深度学习处理器（DLP）这两个术语经常用来指代专用于加速人工智能工作负载的 ASIC 类型。
+NPU 和 DLP 这两个术语经常用来指代专用于加速人工智能工作负载的 ASIC 类型。
 在加速计算领域，TPU 就是一个 ASIC 的例子。TPU 是针对机器学习工作负载的硬件加速器，
 已在谷歌数据中心范围内大规模部署并广泛应用，承担诸如自然语言翻译、Google Assistant 语音识别以及程序化广告排名等任务。
 
@@ -96,7 +83,7 @@ FPGA 在 AI 工作负载应用中的普及进度相对较慢，主要原因在�
 
 ### 软件和 API
 
-加速计算利用诸如 CUDA 和 OpenCL 等应用编程接口（API）和相应的编程模型，实现软硬件加速器的交互。
+加速计算利用诸如 CUDA 和 OpenCL 等 API 和相应的编程模型，实现软硬件加速器的交互。
 这种优化可以改善数据流，从而实现性能显著提升、能耗效率优化、经济效益最大化以及结果精度增强。
 API 和编程模型使开发者能够编写可在 GPU 上运行的代码，并利用软件库来实现高效算法的执行。
 
@@ -110,7 +97,7 @@ CUDA 是由 NVIDIA 公司开发的一款专有并行计算平台和 API 模型�
 
 OpenCL 是一个专为并行计算设计的开源平台。它支持多种类型的计算硬件，涵盖了 CPU、GPU、FPGA 以及其他种类的处理器。
 这种广泛的兼容性使得开发者能够最大限度地调动这些多样化硬件组件的并行计算潜能，从而加速各类计算任务。
-OpenCL的一项标志性特征是其跨平台兼容性，这意味着开发者编写的代码能够在多种不同厂商和架构的硬件上运行，实现计算任务的高效加速和资源灵活调度。
+OpenCL 的一项标志性特征是其跨平台兼容性，这意味着开发者编写的代码能够在多种不同厂商和架构的硬件上运行，实现计算任务的高效加速和资源灵活调度。
 
 ### 网络
 
@@ -118,7 +105,7 @@ OpenCL的一项标志性特征是其跨平台兼容性，这意味着开发者�
 各种网络技术被用来实现这些计算设备与系统其余部分之间的通信，以及网络内部多个设备间的数据共享。
 常见的技术包括：
 
-- PCI Express（PCIe）：是一种高速串行计算机扩展总线标准，提供了一种直接连接计算设备与 CPU/内存的方式。
+- PCIe：是一种高速串行计算机扩展总线标准，提供了一种直接连接计算设备与 CPU 或内存通讯的方式。
   在加速计算领域，PCIe 通常被用来连接 GPU 或其他加速器至主系统。
 
 - NVLink：是 NVIDIA 的专有高带宽、节能型互连技术，提供了远超 PCIe 的高数据传输速率。
@@ -144,8 +131,8 @@ OpenCL的一项标志性特征是其跨平台兼容性，这意味着开发者�
 加速计算是开发和实现先进生成式 AI 模型的关键驱动力。生成式 AI 是指运用一系列复杂的算法机制，
 能够基于训练数据集的统计特性自动生成新的数据样本，在图像、文本和语音等领域已有显著应用实例。
 
-在生成式 AI 领域中，诸如生成对抗网络（Generative Adversarial Networks, GAN）、变分自编码器（Variational Autoencoders, VAE）
-以及 OpenAI 的 ChatGPT 在内的 LLM 等模型被广泛应用。这些模型涉及复杂的数学运算，并在大规模数据集上进行训练，
+在生成式 AI 领域中，GAN、VAE 以及 OpenAI 的 ChatGPT 在内的 LLM 等模型被广泛应用。
+这些模型涉及复杂的数学运算，并在大规模数据集上进行训练，
 需要大量的算力和内存支持。更具体来说，模型规模、单层复杂性、序列长度以及多样化程度等因素都在不断促使对计算需求的增长。
 
 加速计算在解决生成式 AI 所需的计算能力和内存需求方面起着特别重要的作用。
@@ -167,7 +154,7 @@ OpenCL的一项标志性特征是其跨平台兼容性，这意味着开发者�
 3. 支持复杂模型
 
     加速计算带来的计算能力提升使得构建更加复杂且规模更大的模型成为可能，进而能够获得更好的性能表现。
-    例如，像GPT-4这样拥有170万亿个参数的大型 Transformer 模型，其诞生正是得益于加速计算的支持。
+    例如，像 GPT-4 这样拥有 170 万亿个参数的大型 Transformer 模型，其诞生正是得益于加速计算的支持。
 
 4. 实现实时生成
 
@@ -210,3 +197,25 @@ OpenCL的一项标志性特征是其跨平台兼容性，这意味着开发者�
 | 速率 | 在适合的任务中表现出极高的速度（采用并行处理） | 速度快但适用于通用任务（单线程任务） |
 | 成本 | 由于专用硬件，可能会造成成本较高 | 通常比加速版本便宜 |
 | 硬件 | 依赖于特定硬件，例如 GPU、TPU 或 FPGA | 较少依赖硬件；主要使用高性能多核 CPU |
+
+*[AI]: Artificial Intelligence，人工智能
+*[API]: Application Programming Interface，应用程序编程接口
+*[ASIC]: Application-Specific Integrated Circuits，专用集成电路
+*[CXL]: Compute Express Link，一种开放的互连标准
+*[CUDA]: Compute Unified Device Architecture，统一计算架构
+*[CPU]: Central Processing Unit，中央处理器
+*[DLP]: Deep Learning Processor，深度学习处理器
+*[FPGA]: Field-Programmable Gate Arrays，现场可编程逻辑门阵列
+*[GAN]: Generative Adversarial Networks，生成式对抗网络
+*[GPU]: Graphics Processing Units，图形处理器
+*[HLS]: High-Level Synthesis，高级综合设计
+*[HPC]: High Performance Computing，高性能计算
+*[LLM]: Large Language Model，大型语言模型
+*[ML]: Machine Learning，机器学习
+*[NIC]: Network Interface Card，网络接口卡
+*[NPU]: Neural Processing Unit，神经处理单元
+*[OpenCL]: Open Computing Language，开放计算语言
+*[PCIe]: PCI Express，一种高速串行计算机扩展总线标准
+*[TPU]: Tensor Processing Units，张量处理单元
+*[VAE]: Variational Autoencoders，变分自编码器
+*[VHDL]: Very High-Speed Integrated Circuit Hardware Description Language，超高速集成电路硬件描述语言
