@@ -7,9 +7,9 @@ hide:
 
 # K8s Certified Service Provider
 
-DaoCloud is a CNCF-certified Kubernetes service provider, officially known as a Kubernetes Certified Service Provider (KCSP).
-As early as 2017, DaoCloud successfully obtained official certification from Kubernetes, making it the first provider in China
-to gain recognition from CNCF.
+DaoCloud is a [CNCF-certified Kubernetes service provider](https://landscape.cncf.io/?group=certified-partners-and-providers&item=platform--certified-kubernetes-distribution--daocloud-enterprise),
+officially known as a Kubernetes Certified Service Provider (KCSP). As early as 2017, DaoCloud successfully
+obtained official certification from Kubernetes, making it the first provider in China to gain recognition from CNCF.
 
 We actively participate in CNCF-related community contributions throughout the year, leading technological trends in the community.
 Whenever a new version of Kubernetes is released, we are among the first to adapt to and enhance new features, pushing them to
