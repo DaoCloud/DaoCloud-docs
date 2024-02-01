@@ -1216,6 +1216,7 @@ nav:
   - 博客:
       - 博文索引: blogs/index.md
       - 2024 年:
+          - 202402 | 好书推介《Kubernetes 云原生数据管理》: blogs/240203-book.md
           - 202402 | 什么是加速计算: blogs/240201-ai-compute.md
           - 202401 | 容器化 AI 简化 ML 模型的部署: blogs/240115-news.md
           - 202401 | KubeEdge v1.15.0 发布: blogs/240108-kubeedge.md
