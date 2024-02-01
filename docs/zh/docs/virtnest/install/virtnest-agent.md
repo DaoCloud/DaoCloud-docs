@@ -1,4 +1,4 @@
-# 在指定集群内安装 virtnest-agent
+# 安装 virtnest-agent
 
 本文将介绍如何在指定集群内安装 virtnest-agent。
 

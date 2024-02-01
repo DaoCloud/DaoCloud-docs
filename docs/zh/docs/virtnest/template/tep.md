@@ -10,15 +10,17 @@
 
     ![虚拟机模板](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/tep01.png)
 
-2. 点击列表右侧的 `︙`，可以对内置模板执行创建虚拟机和删除操作；对自定义模板支持创建虚拟机操作。
+2. 点击列表右侧的 `︙`，可以对内置模板执行创建虚拟机操作；对自定义模板支持创建虚拟机和删除操作。
 
-    ![虚拟机模板操作](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/tep02.png)
+    ![内置模板操作](../images/tep02.png)
 
-    ![虚拟机模板操作](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/tep03.png)
+    ![自定义模板操作](../images/tep03.png)
 
 ### 内置模板
 
-- 平台内内置三种模板，与内置虚拟机一一对应。
+- 平台内内置两种模板，分别是 CentOS 和 Ubuntu。
+
+    ![内置模板](../images/vm-tep.png)
 
 ### 自定义模板
 
