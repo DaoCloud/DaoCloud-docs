@@ -33,8 +33,8 @@ DCE 5.0 针对不同的应用场景提供了完善的 Addon，您可以按需下
 
 | 离线包    | 版本    | 下载 | 更新日期   |
 | -------- | ------- | --- | --------- |
-| addon-offline-full-package-v0.13.0-arm64.tar.gz | v0.13.0 | [:arrow_right: 下载页](./addon/v0.13.0.md) | 2024-02-02 |
-| addon-offline-full-package-v0.13.0-amd64.tar.gz | v0.13.0 | [:arrow_right: 下载页](./addon/v0.13.0.md) | 2024-02-02 |
+| addon-offline-full-package-v0.14.0-arm64.tar.gz | v0.14.0 | [:arrow_right: 下载页](./addon/v0.14.0.md) | 2024-02-02 |
+| addon-offline-full-package-v0.14.0-amd64.tar.gz | v0.14.0 | [:arrow_right: 下载页](./addon/v0.14.0.md) | 2024-02-02 |
 
 [更多历史版本](./addon/history.md)
 
