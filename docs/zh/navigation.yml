@@ -743,7 +743,7 @@ nav:
                   - 微服务网关接入认证服务器: 
                       - skoala/best-practice/auth-server.md
                       - 接入 AK/SK 认证 : skoala/best-practice/ak-sk-demo.md
-                      - 接入 OIDC 认证 : skoala/best-practice/OIDC认证.md
+                      - 接入 OIDC 认证 : skoala/best-practice/OIDC-auth.md
                   - 微服务网关接入限流服务器: skoala/best-practice/global-ratelimit.md
                   - 网关 API 策略: skoala/best-practice/gateway02.md
                   - 通过网关访问微服务: skoala/best-practice/gateway01.md
