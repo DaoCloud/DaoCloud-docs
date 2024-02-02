@@ -10,6 +10,8 @@ hide:
 
 | 文件名称 | 版本 | 架构 | 文件大小 | 下载 | 更新日期 |
 | ------- | --- | ---- | ------ | --- | ------- |
+| addon-offline-full-package-v0.14.0-arm64.tar.gz | v0.14.0 | ARM 64 | 14.72GB | [:arrow_right: 下载页](./v0.14.0.md) | 2024-02-02 |
+| addon-offline-full-package-v0.14.0-amd64.tar.gz | v0.14.0 | AMD 64 | 27.67GB | [:arrow_right: 下载页](./v0.14.0.md) | 2024-02-02 |
 | addon-offline-full-package-v0.12.0-arm64.tar.gz | v0.12.0 | ARM 64 | 13.08 GB | [:arrow_right: 下载页](./v0.12.0.md) | 2023-11-14 |
 | addon-offline-full-package-v0.12.0-amd64.tar.gz | v0.12.0 | AMD 64 | 24.23 GB | [:arrow_right: 下载页](./v0.12.0.md) | 2023-11-14 |
 | addon-offline-full-package-v0.11.0-arm64.tar.gz | v0.11.0 | ARM 64 | 11.4 GB | [:arrow_right: 下载页](./v0.11.0.md) | 2023-09-22 |
