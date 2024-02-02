@@ -13,6 +13,7 @@
 - 在指定集群[安装 virtnest-agent](../install/index.md)，操作系统内核版本需要在 3.15 以上。
 - 创建一个[命名空间](../../kpanda/user-guide/namespaces/createns.md)和[用户](../../ghippo/user-guide/access-control/user.md)。
 - 提前准备好镜像，平台内置三种镜像 (如下文所示)，如需制作镜像，可参考开源项目[制作镜像](https://github.com/Tedezed/kubevirt-images-generator/tree/master)。
+- 进行网络配置时，若选择使用 Passt 网络模式，则需要升级至 0.4.0 及以上版本。
 
 ## 镜像创建
 
@@ -131,7 +132,6 @@
         - 默认选择 Masquerade（NAT）的网络模式，使用 eth0 默认网卡。
         - 若集群内安装了 spiderpool 组件，则支持选择 Passt（直通）/Bridge（桥接）模式，Bridge（桥接）模式支持多网卡形式。
       
-        
         ![网络模式](../images/createvm-net02.png)
       
     - 添加网卡
