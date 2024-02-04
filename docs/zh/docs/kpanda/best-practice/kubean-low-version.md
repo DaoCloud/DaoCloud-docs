@@ -23,7 +23,7 @@
     | 制品包版本   | 支持集群范围 | DCE 5.0 支持情况 |
     | ----------- | ----------- | ------ |
     | release-2.21   | v1.23.0 ~ v1.25.6      | 安装器 v0.14.0+ 已支持 |
-    | release-2.22   |    v1.24.0 ~ v1.26.9    | 预计安装器 v0.15.0+ |
+    | release-2.22   |    v1.24.0 ~ v1.26.9    | 安装器 v0.15.0+ 已支持 |
     | release-2.23   |    v1.25.0 ~ v1.27.7    | 预计安装器 v0.16.0+ |
 
     本文演示离线部署 K8s 集群到 1.23.0 版本及离线升级 K8s 集群从 1.23.0 版本到 1.24.0 版本，所以选择 `release-2.21` 的制品。
@@ -71,8 +71,8 @@ skopeo copy ${SKOPEO_PARAMS} docker-archive:spray-job-2.21.tar docker://${REGIST
     # 创建 data 目录
     mkdir data
     # 制作离线包，
-    SPRAY_IMG_ADDR="ghcr.m.daocloud.io/kubean-io/spray-job:2.21-d6f688f" # (1)
-    podman run --rm -v $(pwd)/manifest.yml:/manifest.yml -v $(pwd)/data:/data -e ZONE=CN -e MODE=FULL ${SPRAY_IMG_ADDR}
+    AIRGAP_IMG_ADDR="ghcr.m.daocloud.io/kubean-io/airgap-patch:2.21-d6f688f" # (1)
+    podman run --rm -v $(pwd)/manifest.yml:/manifest.yml -v $(pwd)/data:/data -e ZONE=CN -e MODE=FULL ${AIRGAP_IMG_ADDR}
     ```
 
     1. 镜像 spray-job 这里可以采用加速器地址，镜像地址根据选择制品版本来决定
