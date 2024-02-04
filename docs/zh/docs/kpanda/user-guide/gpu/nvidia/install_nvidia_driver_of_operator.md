@@ -65,40 +65,37 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 2. __Driver.image__ ：配置 GPU 驱动镜像，推荐默认镜像： __nvidia/driver__ 。
 
 3. __Driver.repository__ ：GPU 驱动镜像所在的镜像仓库，默认为 nvidia 的 __nvcr.io__ 仓库。
-4. __Driver.version__ ：GPU 驱动镜像的版本，离线部署请使用默认参数，仅在线安装时需配置，不同类型操作系统的 Driver 镜像的版本存在如下差异：
+4. __Driver.version__ ：GPU 驱动镜像的版本，离线部署请使用默认参数，仅在线安装时需配置，不同类型操作系统的 Driver 镜像的版本存在如下差异，详情可参考：[Nvidia GPU Driver 版本](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/driver/tags)，如下不同操作系统的 `Driver Version` 示例：
 
-    - RedHat 系统， 命名规则通常为 CUDA 的版本和 OS 版本组成，如内核为 `4.18.0-305.el8.x86_64` 的 RedHat 8.4 的 Driver.version 值为 __525.105.17__ 。
-    - Ubuntu 系统，命名规则为： __<driver-branch>-<linux-kernel-version>-<os-tag>__ 。
-    如 __525-5.15.0-69-ubuntu22.04__ ， __525__ 为 CUDA 的版本， __5.15.0-69__ 为内核版本， __ubuntu22.04__ 为 OS 版本。
-    注意：对于 Ubuntu ， Driver 镜像版本需和节点内核版本强一致，包括小版本号。
-
-    - CentOS 系统， 命名规则通常为 CUDA 的版本和 OS 版本组成，如 __535.104.05__ 。
-
+    - RedHat 系统 ，示例：`535.104.12-rhel8.9`
+    - Ubuntu 系统，示例：`535-5.15.0-1043-nvidia-ubuntu22.04`
+    - CentOS 系统，示例： `525.147.05-centos7`
+    
 5. __Driver.RepoConfig.ConfigMapName__ ：用来记录 GPU Operator 的离线 yum 源配置文件名称，当使用预置的离线包时，参考 __使用 Global 集群任意节点的 yum 源配置__ 。
 
     ??? note "使用 Global 集群任意节点的 yum 源配置"
 
         1. 使用 ssh 或其它方式进入 Global 集群的任意节点，获取平台离线源配置文件 __extension.repo__ ：
-    
+        
             ```bash
             cat /etc/yum.repos.d/extension.repo #查看 extension.repo 中的内容。
             ```
             # 预期输出如下：
-    
+        
             ```bash
             [extension-0]
             async = 1
             baseurl = http://x.x.x.x:9000/kubean/centos/$releasever/os/$basearch
             gpgcheck = 0
             name = kubean extension 0
-    
+        
             [extension-1]
             async = 1
             baseurl = http://x.x.x.x:9000/kubean/centos-iso/$releasever/os/$basearch
             gpgcheck = 0
             name = kubean extension 1
             ```
-    
+        
         2. 复制上述 __extension.repo__ 文件中的内容，在待部署 GPU Operator 的集群的 __gpu-operator__ 命名空间下，新建名为 __local-repo-config__ 的配置文件，可参考[创建配置项](../../configmaps-secrets/create-configmap.md)进行创建。
         **注意：配置 __key__ 值必须为 __CentOS-Base.repo__ , __value__ 值点离线源配置文件 __extension.repo__ 中的内容**。
 
@@ -122,7 +119,7 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 详细配置方式请参考[开启 MIG 功能](mig/create_mig.md)
 
 1. __MigManager.enabled__ ：是否启用 MIG 能力特性。
-2. - __MigManager.Config.name__ : MIG 的切分配置文件名，用于定义 MIG 的（GI ,CI）切分策略。默认为 __default-mig-parted-config__ 。自定义参数参考[开启 MIG 功能](mig/create_mig.md)
+2. **MigManager.Config.name**: MIG 的切分配置文件名，用于定义 MIG 的（GI ,CI）切分策略。默认为 __default-mig-parted-config__ 。自定义参数参考[开启 MIG 功能](mig/create_mig.md)
 3. __Mig.strategy__ ：节点上 GPU 卡的 MIG 设备的公开策略。NVIDIA 提供了两种公开 MIG 设备的策略（ __single__ 、 __mixed__ 策略，详情参考：[NVIDIA GPU 卡模式说明](index.md)
 
 #### Node-Feature-Discovery 配置参数
