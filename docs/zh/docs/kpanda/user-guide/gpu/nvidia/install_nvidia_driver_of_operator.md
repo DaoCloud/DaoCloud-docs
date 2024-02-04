@@ -69,7 +69,7 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
     - RedHat 系统 ，示例：`535.104.12-rhel8.9`
     - Ubuntu 系统，示例：`535-5.15.0-1043-nvidia-ubuntu22.04`
-    CentOS 系统，示例： `525.147.05-centos7`
+    - CentOS 系统，示例： `525.147.05-centos7`
     
 5. __Driver.RepoConfig.ConfigMapName__ ：用来记录 GPU Operator 的离线 yum 源配置文件名称，当使用预置的离线包时，参考 __使用 Global 集群任意节点的 yum 源配置__ 。
 
@@ -119,7 +119,7 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 详细配置方式请参考[开启 MIG 功能](mig/create_mig.md)
 
 1. __MigManager.enabled__ ：是否启用 MIG 能力特性。
-2. - __MigManager.Config.name__ : MIG 的切分配置文件名，用于定义 MIG 的（GI ,CI）切分策略。默认为 __default-mig-parted-config__ 。自定义参数参考[开启 MIG 功能](mig/create_mig.md)
+2. **MigManager.Config.name**: MIG 的切分配置文件名，用于定义 MIG 的（GI ,CI）切分策略。默认为 __default-mig-parted-config__ 。自定义参数参考[开启 MIG 功能](mig/create_mig.md)
 3. __Mig.strategy__ ：节点上 GPU 卡的 MIG 设备的公开策略。NVIDIA 提供了两种公开 MIG 设备的策略（ __single__ 、 __mixed__ 策略，详情参考：[NVIDIA GPU 卡模式说明](index.md)
 
 #### Node-Feature-Discovery 配置参数
