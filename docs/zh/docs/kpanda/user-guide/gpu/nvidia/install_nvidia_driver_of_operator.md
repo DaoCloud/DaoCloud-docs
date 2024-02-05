@@ -40,17 +40,8 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
 #### DevicePlugin 参数配置
 
-1. __DevicePlugin.enable__ ：配置是否启用 kubernentes [DevicePlugin](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/) 特性。请结合使用场景，确定是否启用。
+1. __DevicePlugin.enable__ ：配置是否启用 kubernentes [DevicePlugin](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/) 特性。默认为 **开启** 状态，**关闭** 后 GPU 整卡/MIG 功能将无法使用。
 
-    - 使用 GPU 整卡模式请 **启用**。
-    - 使用 GPU vGPU 模式请 **关闭**。
-    - 使用 GPU MIG 模式请 **启用**。
-
-    !!! note
-
-        注意：
-        1. 一个集群只能使用一种 GPU 卡模式，部署 GPU Operator 前，请确认 GPU 卡的使用模式，以选择是否启用 __DevicePlugin__ 特性。
-        2. 当使用 vGPU 模式（关闭这个参数）时，守护进程 __nvidia-operator-validator__ 将长期处于 “等待中”状态，这属于正常现象，不影响 vGPU 功能的使用。
 
 #### Operator 参数配置
 
