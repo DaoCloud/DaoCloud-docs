@@ -1098,6 +1098,7 @@ nav:
                   - 接入管理:
                       - ghippo/user-guide/access-control/docking.md
                       - Webhook: ghippo/user-guide/access-control/webhook.md
+                      - OAuth 2.0 之企业微信: ghippo/user-guide/access-control/oauth2.0.md
               - 工作空间与层级:
                   - ghippo/user-guide/workspace/ws-folder.md
                   - 创建和删除工作空间: ghippo/user-guide/workspace/workspace.md
