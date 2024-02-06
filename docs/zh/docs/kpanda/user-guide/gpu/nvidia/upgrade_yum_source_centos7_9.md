@@ -209,7 +209,7 @@
 2. 基于创建的 __CentOS-Base.repo__ 文件，在 gpu-operator 命名空间下，创建名为 __local-repo-config__ 的配置文件：
 
     ```bash
-    kubectl create configmap local-repo-config  -n gpu-operator --from-file=./CentOS-Base.repo 
+    kubectl create configmap local-repo-config  -n gpu-operator --from-file=CentOS-Base.repo=/etc/yum.repos.d/extension.repo
     ```
 
     预期输出如下：
