@@ -58,13 +58,23 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 3. __Driver.repository__ ：GPU 驱动镜像所在的镜像仓库，默认为 nvidia 的 __nvcr.io__ 仓库。
 4. __Driver.version__ ：GPU 驱动镜像的版本，离线部署请使用默认参数，仅在线安装时需配置，不同类型操作系统的 Driver 镜像的版本存在如下差异，详情可参考：[Nvidia GPU Driver 版本](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/driver/tags)，如下不同操作系统的 `Driver Version` 示例：
 
-    - RedHat 系统 ，示例：`535.104.12-rhel8.9`
+??? note "参考 Global 集群任意节点的 yum 源配置"
+
+ 系统默认提供 525.147.05-centos7 的镜像，其他镜像需要参考 [向火种节点仓库上传镜像](./push_image_to_repo.md) 
+
+    - RedHat 系统 ，示例：`525.105.17-rhel8.4`
     - Ubuntu 系统，示例：`535-5.15.0-1043-nvidia-ubuntu22.04`
     - CentOS 系统，示例： `525.147.05-centos7`
-    
-5. __Driver.RepoConfig.ConfigMapName__ ：用来记录 GPU Operator 的离线 yum 源配置文件名称，当使用预置的离线包时，参考 __使用 Global 集群任意节点的 yum 源配置__ 。
 
-    ??? note "使用 Global 集群任意节点的 yum 源配置"
+    
+5. __Driver.RepoConfig.ConfigMapName__ ：用来记录 GPU Operator 的离线 yum 源配置文件名称，当使用预置的离线包时，global 集群可直接执行如下命令，工作集群 __参考 Global 集群任意节点的 yum 源配置__ 。
+    - global 集群配置
+
+        ```sh
+        kubectl create configmap local-repo-config  -n gpu-operator --from-file=CentOS-Base.repo=/etc/yum.repos.d/extension.repo
+        ```
+     - 工作集群配置
+    ??? note "参考 Global 集群任意节点的 yum 源配置"
 
         1. 使用 ssh 或其它方式进入 Global 集群的任意节点，获取平台离线源配置文件 __extension.repo__ ：
         
