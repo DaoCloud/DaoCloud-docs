@@ -199,7 +199,7 @@ nav:
                   - 创建 VPA 策略: kpanda/user-guide/scale/create-vpa.md
               - Helm 应用:
                   - Helm 模板: kpanda/user-guide/helm/README.md
-                  - 上传 Helm 模版: kpanda/user-guide/helm/upload-helm.md
+                  - 上传 Helm 模板: kpanda/user-guide/helm/upload-helm.md
                   - 管理 Helm 应用: kpanda/user-guide/helm/helm-app.md
                   - 管理 Helm 仓库: kpanda/user-guide/helm/helm-repo.md
                   - 多架构 Helm 应用: kpanda/user-guide/helm/multi-archi-helm.md
@@ -638,7 +638,7 @@ nav:
               - 告警:
                   - insight/user-guide/alert-center/index.md
                   - 告警策略: insight/user-guide/alert-center/alert-policy.md
-                  - 告警模版: insight/user-guide/alert-center/alert-template.md
+                  - 告警模板: insight/user-guide/alert-center/alert-template.md
                   - 通知配置: insight/user-guide/alert-center/message.md
                   - 配置通知服务器: insight/user-guide/alert-center/sms-provider.md
                   - 消息模板: insight/user-guide/alert-center/msg-template.md
