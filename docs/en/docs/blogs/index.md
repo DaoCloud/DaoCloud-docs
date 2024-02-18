@@ -12,6 +12,11 @@ technology, sorted by date by default.
 
 ## 2024
 
+- [20240203 | Book Recommendation "Managing Cloud Native Data on Kubernetes"](./240203-book.md)
+
+    International renowned technology book publisher O'Reilly Media has quietly launched a professional book on Kubernetes data storage in collaboration with China Electronics Industry Publishing House:
+    [Managing Cloud Native Data on Kubernetes](https://www.oreilly.com.cn/index.php?func=book&isbn=978-7-121-47005-9).
+
 - [20240201 | Accelerated Computing: What is it? and How Does it Work?](./240201-ai-compute.md)
 
     Accelerated computing, with its unprecedented processing power, has taken a central role in cloud infrastructure,
