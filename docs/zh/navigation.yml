@@ -1300,6 +1300,7 @@ nav:
               - 开启两步安全验证: native/knowledge/git/2auth.md
               - Git 常见问题: native/knowledge/git/rebase.md
               - VSCode 编辑技巧: native/knowledge/git/vscode.md
+              - 常用 Git 命令: native/knowledge/git/cmd.md
               - UI 翻译预览: native/knowledge/git/ui-preview.md
               - GitHub 混迹技巧: native/knowledge/git/github.md
               - 同步中英文档: native/knowledge/git/lsync.md
