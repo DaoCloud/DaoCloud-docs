@@ -1033,6 +1033,7 @@ nav:
                   - Docking Portal:
                       - ghippo/user-guide/access-control/docking.md
                       - Webhook: ghippo/user-guide/access-control/webhook.md
+                      - OAuth 2.0 for WeCom: ghippo/user-guide/access-control/oauth2.0.md
               - Workspaces and Folders:
                   - ghippo/user-guide/workspace/ws-folder.md
                   - Create and Delete Workspace: ghippo/user-guide/workspace/workspace.md
