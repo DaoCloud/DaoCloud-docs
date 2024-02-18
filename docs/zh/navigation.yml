@@ -199,6 +199,7 @@ nav:
                   - 创建 VPA 策略: kpanda/user-guide/scale/create-vpa.md
               - Helm 应用:
                   - Helm 模板: kpanda/user-guide/helm/README.md
+                  - 上传 Helm 模版: kpanda/user-guide/helm/upload-helm.md
                   - 管理 Helm 应用: kpanda/user-guide/helm/helm-app.md
                   - 管理 Helm 仓库: kpanda/user-guide/helm/helm-repo.md
                   - 多架构 Helm 应用: kpanda/user-guide/helm/multi-archi-helm.md

@@ -23,5 +23,6 @@ Helm 是 Kubernetes 的包管理工具，方便用户快速发现、共享和使
 
 **相关操作**：
 
+- [上传 Helm 模版](./upload-helm.md)，介绍上传 Helm 模版操作。
 - [管理 Helm 应用](helm-app.md)，包括安装、更新、卸载 Helm 应用，查看 Helm 操作记录等。
 - [管理 Helm 仓库](helm-repo.md)，包括安装、更新、删除 Helm 仓库等。
