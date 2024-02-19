@@ -5,7 +5,7 @@ This page provides a script to easily download all the offline packages required
 ## Download the Script
 
 ```bash
-export VERSION= v0.8.0
+export VERSION=v0.15.0
 curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/download_packages_${VERSION}.sh
 chmod +x download_packages_${VERSION}.sh
 ```
@@ -13,7 +13,7 @@ chmod +x download_packages_${VERSION}.sh
 ## Run the Script
 
 ```bash
-./download_packages_${VERSION}.sh ${DISTRO} ${INSTALLER_VERSION} ${ARCH}
+./download_packages_${VERSION}.sh ${DISTRO} ${VERSION} ${ARCH}
 ```
 
 Parameter explanation:
@@ -21,7 +21,6 @@ Parameter explanation:
 | Parameter | Default Value | Valid Values |
 | ---- | ---- | ---- |
 | VERSION | Current script version | Only supports v0.8.0 currently |
-| INSTALLER_VERSION | Specify the version of DCE 5.0 to download | Any valid release version of DCE 5.0 |
 | DISTRO | `centos7` | `centos7` `kylinv10` `redhat8` `ubuntu2004` |
 | ARCH | `amd64` | `amd64` `arm64` |
 
