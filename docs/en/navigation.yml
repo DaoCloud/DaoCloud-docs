@@ -971,6 +971,30 @@ nav:
                       - Monitor Instance: middleware/minio/user-guide/insight.md
                       - Config Parameters: middleware/minio/user-guide/config.md
                       - MinIO Identity Management: middleware/minio/user-guide/user-management.md
+      - Cloud Native AI:
+          - Cloud Native AI:
+              - Introduction:
+                  - What is Cloud Native AI: baize/intro/index.md
+                  - Installation: baize/intro/install.md
+                  - First Time Usage: baize/intro/first.md
+              - Development Console:
+                  - Introduction: baize/developer/index.md
+                  - Notebooks:
+                      - Create Notebook: baize/developer/notebooks/create.md
+                      - Start and Pause Notebook: baize/developer/notebooks/start-pause.md
+                      - View Notebook Workload: baize/developer/notebooks/view.md
+                      - Delete Notebook: baize/developer/notebooks/delete.md
+                  - Task Center:
+                      - Create Task: baize/developer/jobs/create.md
+                      - Delete Task: baize/developer/jobs/delete.md
+                  - Data Management:
+                      - Create Dataset: baize/developer/dataset/create.md
+                      - Delete Dataset: baize/developer/dataset/delete.md
+              - OAM Management:
+                  - GPU Resource Management: baize/oam/resource.md
+                  - Queue Management:
+                      - Create Queue: baize/oam/queue/create.md
+                      - Delete Queue: baize/oam/queue/delete.md
       - Edge Computing:
           - Cloud Edge Collaboration:
               - Intro:
