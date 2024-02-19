@@ -41,7 +41,7 @@ nav:
                       - Ports: install/commercial/port-requirements.md
                       - External Components (Optional):
                           - Store Binaries with External Service: install/commercial/external/external-binary.md
-                          - Store Images and Charts with External Registry and Chart Repo: install/commercial/external/external-imageandchart.md
+                          - Store Images and Charts with Registry and Chart Repo: install/commercial/external/external-imageandchart.md
                           - Use External Middleware: install/commercial/external/external-middlewares.md
                           - Store OS Repo with External Service: install/commercial/external/external-os.md
                   - Start Installation: install/commercial/start-install.md
@@ -418,7 +418,7 @@ nav:
                   - ippool: network/modules/calico/ippool.md
                   - Metrics: network/modules/calico/metrics.md
                   - Calico Policies: network/modules/calico/policy.md
-                  - Troubleshooting: network/modules/calico/debug.md
+                  - Troubleshoot: network/modules/calico/debug.md
               - Cilium:
                   - Intro: network/modules/cilium/index.md
                   - Args Config: network/modules/cilium/install.md
@@ -634,8 +634,8 @@ nav:
                   - Lucene Syntax: insight/faq/lucene.md
               - Best Practice:
                   - Collect Container Log with Sidecar: insight/best-practice/tailing-sidecar.md
-                  - Log Collection Troubleshooting: insight/best-practice/debug-log.md
-                  - Trace Collection Troubleshooting: insight/best-practice/debug-trace.md
+                  - Log Collection Troubleshoot: insight/best-practice/debug-log.md
+                  - Trace Collection Troubleshoot: insight/best-practice/debug-trace.md
                   - Configure Notification Template: insight/best-practice/notify-helper.md
                   - Receive SkyWalking Trace Data using OTel: insight/best-practice/sw-to-otel.md
                   - Use Insight to find service's problems: insight/best-practice/find_root_cause.md
@@ -809,7 +809,7 @@ nav:
                   - Multicloud deployment: mspider/user-guide/multicluster/multicluster-install.md
                   - Multicloud principle: mspider/user-guide/multicluster/multi-cluster-net.md
                   - Multicloud grayscale release: mspider/user-guide/multicluster/gray-scale-release.md
-              - Troubleshooting:
+              - Troubleshoot:
                   - Index: mspider/troubleshoot/index.md
                   - Cannot find cluster on mesh creation: mspider/troubleshoot/cannot-find-cluster.md
                   - Always in creating on mesh creation: mspider/troubleshoot/always-in-creating.md
@@ -852,7 +852,7 @@ nav:
                   - Best Practice:
                       - MySQL Cross-Cluster Synchronization: middleware/mysql/best-practice/crossclusterssync.md
                       - MySQL Archiving Solution: middleware/mysql/best-practice/mysql-pt-archiver.md
-                  - Troubleshooting:
+                  - Troubleshoot:
                       - MySQL Health Check: middleware/mysql/faq/quick-check.md
                       - MySQL Pod: middleware/mysql/faq/faq-pod.md
                       - MySQL Operator: middleware/mysql/faq/faq-operator.md
@@ -915,7 +915,7 @@ nav:
                       - Monitor Instance: middleware/elasticsearch/user-guide/monitor.md
                       - View ES Logs: middleware/elasticsearch/user-guide/logs.md
                   - Migrate ES across Nodes: middleware/elasticsearch/user-guide/migrate-es.md
-                  - ES Troubleshooting: middleware/elasticsearch/faq/common-question-es.md
+                  - ES Troubleshoot: middleware/elasticsearch/faq/common-question-es.md
               - Kafka Message Queue:
                   - Intro:
                       - What is Kafka: middleware/kafka/intro/index.md
@@ -1042,7 +1042,7 @@ nav:
                   - Create and Delete Folder: ghippo/user-guide/workspace/folders.md
                   - Folder Permissions: ghippo/user-guide/workspace/folder-permission.md
                   - Resource Quota: ghippo/user-guide/workspace/quota.md
-                  - Difference between Resource Groups and Shared Resources: ghippo/user-guide/workspace/res-gp-and-shared-res.md
+                  - Compare Resource Groups and Shared Resources: ghippo/user-guide/workspace/res-gp-and-shared-res.md
               - Audit Logs:
                   - Enable/Disable Collection of K8s Audit Logs: ghippo/user-guide/audit/open-audit.md
                   - Enable/Disable Output of K8s Audit Logs: ghippo/user-guide/audit/open-k8s-audit.md
@@ -1086,7 +1086,7 @@ nav:
                       - Customize DCE 5.0 to Sync IdP: ghippo/best-practice/oem/custom-idp.md
                       - Customize IdP with Keycloak: ghippo/best-practice/oem/keycloak-idp.md
                   - Customize Nav Bar: ghippo/best-practice/navigator.md
-              - Troubleshooting:
+              - Troubleshoot:
                   - ingressgateway cannot start: ghippo/troubleshooting/ghippo01.md
                   - Login Error 401 or 403: ghippo/troubleshooting/ghippo02.md
                   - keycloak cannot start: ghippo/troubleshooting/ghippo03.md
@@ -1149,12 +1149,10 @@ nav:
               - Management:
                   - Global Management: download/modules/ghippo.md
                   - Operation Management: download/modules/gmagpie.md
-  - Free Trial:
-      - Free Trial: trial/index.md
   - Blogs:
       - Index: blogs/index.md
       - 2024 Blogs:
-          - 202402 | Book Recommendation "Managing Cloud Native Data on Kubernetes: blogs/240203-book.md
+          - 202402 | New Book - Managing Cloud Native Data on Kubernetes: blogs/240203-book.md
           - 202402 | Accelerated Computing: blogs/240201-ai-compute.md
           - 202401 | Containerization AI Streamlines ML Models: blogs/240115-news.md
           - 202401 | KubeEdge v1.15.0 Released: blogs/240108-kubeedge.md
@@ -1226,3 +1224,5 @@ nav:
           - Open Source Projects: native/open.md
       - Knowledge:
           - Knowledge Sharing: native/knowledge.md
+  - Free Trial:
+      - Free Trial: trial/index.md

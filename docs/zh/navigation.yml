@@ -1215,8 +1215,6 @@ nav:
               - 全局&运营管理:
                   - 全局管理: download/modules/ghippo.md
                   - 运营管理: download/modules/gmagpie.md
-  - 免费体验:
-      - 体验社区版: trial/index.md
   - 博客:
       - 博文索引: blogs/index.md
       - 2024 年:
@@ -1314,3 +1312,5 @@ nav:
           - 安全漏洞: native/knowledge/bugs.md
           - 电子书: native/knowledge/ebooks.md
           - 其他: native/knowledge/other.md
+  - 免费体验:
+      - 体验社区版: trial/index.md
