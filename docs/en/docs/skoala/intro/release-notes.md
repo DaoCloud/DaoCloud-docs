@@ -2,6 +2,30 @@
 
 This page lists the release notes of Microservices to help you learn its feature development and bug fixing progress.
 
+## 2024-02-01
+
+### v0.33.2
+
+#### Fixes
+
+- **Fixed** an issue with abnormal restart of gateway service component
+- **Fixed** an issue with abnormal export of gateway logs
+- **Fixed** an issue with incorrect display of status when the replica count of gateway workload is 0
+- **Fixed** an issue with gateway control plane not restarting application configuration when injecting sidecars to gateway
+- **Fixed** an issue with inconsistency between returned sidecar injection status and actual status in gateway list
+
+#### Improvements
+
+- **Improved** the latest SDK in the mesh module to fix logic related to cloud-native microservices interfaces
+
+## 2024-01-30
+
+### v0.33.1
+
+#### Fixes
+
+- **Fixed** a logic related to cascading deletion in Nacos
+
 ## 2024-01-18
 
 ### v0.32.0
@@ -204,7 +228,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 #### Fixes
 
-- **Fixed** Issue of duplicate details in batch deletion response
+- **Fixed** an issue of duplicate details in batch deletion response
 - **Fixed** Problem with sorting plugin information in cloud native microservices port list
 - **Fixed** an issue with abnormal display of traffic swimlane list
 - **Fixed** Inconsistent container names for frontend components
@@ -405,7 +429,7 @@ This page lists the release notes of Microservices to help you learn its feature
 - **Fixed** missing governance status in Nacos instance list
 - **Fixed** cluster flow control name issue in Sentinel
 - **Fixed** query data not being aggregated by workspace in overall overview
-- **Fixed** issue where gateway can enable HTTPS even if it is disabled
+- **Fixed** an issue where gateway can enable HTTPS even if it is disabled
 - **Fixed** default value issue in Skoala-init Chart form data
 
 #### Improvements
@@ -423,8 +447,8 @@ This page lists the release notes of Microservices to help you learn its feature
 
 #### Fixes
 
-- **Fixed** issues with Sentinel cluster flow control API
-- **Fixed** issues with fuzzy query API for Sentinel rules
+- **Fixed** an issues with Sentinel cluster flow control API
+- **Fixed** an issues with fuzzy query API for Sentinel rules
 
 #### Improvements
 
