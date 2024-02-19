@@ -3,6 +3,27 @@
 This page provides the release notes for VirtNest (Virtual Machine),
 allowing you to understand the evolution path and feature changes of each version.
 
+## 2024-01-26
+
+### v0.6.0
+
+#### Features
+
+- **Added** support for importing virtual machines from VMware into the virtual machine module of DCE 5.0
+- **Added** IPv6 pool for virtual machine networks
+- **Added** support for configuring network information when creating virtual machines from templates
+
+#### Improvements
+
+- **Improved** monitoring information in virtual machine details
+- **Improved** prompt message for configuring storage when creating virtual machines
+
+#### Fixes
+
+- **Fixed** an issue where network configuration information was displayed incorrectly when virtual machine was powered off
+- **Fixed** incorrect position for creating Multus CR in network configuration prompt message when creating virtual machines
+- **Fixed** an issue where powered-off virtual machines could not be updated
+
 ## 2023-12-26
 
 ### v0.5.0
