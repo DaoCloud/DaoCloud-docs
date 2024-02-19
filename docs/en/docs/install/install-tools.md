@@ -24,7 +24,7 @@ Before installing DCE 5.0, you need to install some dependencies.
 1. Download the script.
 
     ```bash
-    export VERSION=v0.13.0
+    export VERSION=v0.15.0
     curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
     ```
 
