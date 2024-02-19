@@ -1,12 +1,39 @@
 ---
 MTPE: windsonsea
-date: 2024-01-04
+date: 2024-02-19
 ---
 
 # Insight Release Notes
 
 This page lists the Release Notes of Insight, so that you can understand
 the evolution path and feature changes of each version.
+
+## 2024.01.31
+
+### Insight Server: v0.24.0
+
+#### New Features
+
+- **Added** Support for alarm suppression
+- **Added** Support for alarm templates and creating alarm policies from templates
+
+#### Improvements
+
+- **Improved** Grafana supports adding data sources of JSON API type
+- **Improved** Grafana prevents using the ECS key to exit fullscreen mode
+
+#### Fixes
+
+- **Fixed** Inaccurate preview queries when creating log alarms
+- **Fixed** Error in listening IPv6 during insight-system deployment
+- **Fixed** Issue with Grafana dashboards not being accessible without authentication
+- **Fixed** Enabling InsecureSkipVerify for all SMTP emails
+
+### Insight Agent: v0.23.0
+
+#### Improvements
+
+- **Improved** Upgraded image versions of related components for OpenTelemetry Collector
 
 ## 2023.12.31
 
