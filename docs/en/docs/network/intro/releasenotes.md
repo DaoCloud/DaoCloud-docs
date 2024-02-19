@@ -10,6 +10,25 @@ evolution path and feature changes of each version.
 *[SR-IOV]: Single Root IO Virtualization
 *[RDMA]: Remote Direct Memory Access, a popular tech to support LLM and GPT
 
+## 2023-01-30
+
+### v0.13.0
+
+- Compatibility with Spiderpool v0.9.1
+- Compatibility with EgressGateway v0.4.0
+
+#### New Features
+
+- **Added** support for configuring SR-IOV node policies to simplify management of SR-IOV network resources
+- **Added** support for using RDMA network acceleration technology when creating SR-IOV node policies
+- **Added** support for configuring Ethernet or InfiniBand network types when creating SR-IOV node policies
+
+#### Improvements
+
+- **Improved** Removed restriction on IP pool in container network interface configuration, allowing the use of separate IPv4/IPv6 addresses
+- **Improved** Resolved duplicate selection issue with EIP range in dual-stack mode for egress gateway
+- **Improved** Added usage instructions for VLAN ID when creating Multus CR based on Macvlan type
+
 ## 2023-12-30
 
 ### v0.12.1

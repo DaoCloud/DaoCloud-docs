@@ -370,7 +370,7 @@ nav:
                   - Challenges: network/intro/challenges.md
                   - Components: network/modules/modules.md
                   - Offline Upgrade: network/intro/offline.md
-                  - Release Notes: network/modules/spiderpool/releasenotes.md
+                  - Release Notes: network/intro/releasenotes.md
               - Plan:
                   - Eth card plan: network/plans/ethplan.md
                   - Network plan: network/plans/netplan.md
