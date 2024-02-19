@@ -34,7 +34,7 @@ This article will demonstrate how to deploy a K8s cluster with a lower version.
     | Artifact Version | Cluster Range | DCE 5.0 Support |
     | ----------- | ----------- | ------ |
     | release-2.21 | v1.23.0 ~ v1.25.6 | Supported since installer v0.14.0 |
-    | release-2.22 | v1.24.0 ~ v1.26.9 | Expected to support from installer v0.15.0 |
+    | release-2.22 | v1.24.0 ~ v1.26.9 | Supported since installer v0.15.0 |
     | release-2.23 | v1.25.0 ~ v1.27.7 | Expected to support from installer v0.16.0 |
 
     This article demonstrates the offline deployment of a K8s cluster with version 1.23.0 and the
