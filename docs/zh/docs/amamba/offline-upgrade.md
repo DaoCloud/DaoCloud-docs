@@ -26,20 +26,29 @@ tar -vxf amamba_x.y.z_amd64.tar
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: amamba-offline # 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
+          intermediateBundlesPath: amamba-offline # (1)
         target:
-          containerPrefixRegistry: 10.16.10.111 # 需更改为你的镜像仓库 url
+          containerPrefixRegistry: 10.16.10.111 # (2)
           repo:
-            kind: HARBOR # 也可以是任何其他支持的 Helm Chart 仓库类别
-            url: http://10.16.10.111/chartrepo/release.daocloud.io # 需更改为 chart repo project url
+            kind: HARBOR # (3)
+            url: http://10.16.10.111/chartrepo/release.daocloud.io # (4)
             auth:
-              username: "admin" # 你的镜像仓库用户名
-              password: "Harbor12345" # 你的镜像仓库密码
+              username: "admin" # (5)
+              password: "Harbor12345" # (6)
           containers:
             auth:
-              username: "admin" # 你的镜像仓库用户名
-              password: "Harbor12345" # 你的镜像仓库密码
+              username: "admin" # (7)
+              password: "Harbor12345" # (8) 
         ```
+
+        1. 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
+        2. 需更改为你的镜像仓库 url
+        3. 也可以是任何其他支持的 Helm Chart 仓库类别
+        4. 需更改为 chart repo project url
+        5. 你的镜像仓库用户名
+        6. 你的镜像仓库密码
+        7. 你的镜像仓库用户名
+        8. 你的镜像仓库密码
 
     === "已安装 CHARTMUSEUM chart repo"
 
@@ -47,20 +56,29 @@ tar -vxf amamba_x.y.z_amd64.tar
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: amamba-offline # 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
+          intermediateBundlesPath: amamba-offline # (1)
         target:
-          containerPrefixRegistry: 10.16.10.111 # 需更改为你的镜像仓库 url
+          containerPrefixRegistry: 10.16.10.111 # (2)
           repo:
-            kind: CHARTMUSEUM # 也可以是任何其他支持的 Helm Chart 仓库类别
-            url: http://10.16.10.111 # 需更改为 chart repo url
+            kind: CHARTMUSEUM # (3)
+            url: http://10.16.10.111 # (4)
             auth:
-              username: "rootuser" # 你的镜像仓库用户名, 如果 chartmuseum 没有开启登录验证，就不需要填写 auth
-              password: "rootpass123" # 你的镜像仓库密码
+              username: "rootuser" # (5)
+              password: "rootpass123" # (6)
           containers:
             auth:
-              username: "rootuser" # 你的镜像仓库用户名
-              password: "rootpass123" # 你的镜像仓库密码
+              username: "rootuser" # (7)
+              password: "rootpass123" # (8) 
         ```
+
+        1. 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
+        2. 需更改为你的镜像仓库 url
+        3. 也可以是任何其他支持的 Helm Chart 仓库类别
+        4. 需更改为 chart repo url
+        5. 你的镜像仓库用户名, 如果 chartmuseum 没有开启登录验证，就不需要填写 auth
+        6. 你的镜像仓库密码
+        7. 你的镜像仓库用户名
+        8. 你的镜像仓库密码
 
     === "未安装 chart repo"
 
@@ -110,7 +128,7 @@ tar -vxf amamba_x.y.z_amd64.tar
     - images.tar
     - original-chart
 
-2. 执行如下命令从本地加载镜像到 Docker 或 Containerd。
+2. 执行如下命令从本地加载镜像到 Docker 或 containerd。
 
     === "Docker"
 
@@ -118,7 +136,7 @@ tar -vxf amamba_x.y.z_amd64.tar
         docker load -i images.tar
         ```
 
-    === "Containerd"
+    === "containerd"
 
         ```shell
         ctr -n k8s.io image import images.tar
@@ -126,7 +144,7 @@ tar -vxf amamba_x.y.z_amd64.tar
 
 !!! note
 
-    - 需要在每个节点上都通过 Docker 或 Containerd 加载镜像。
+    - 需要在每个节点上都通过 Docker 或 containerd 加载镜像。
     - 加载完成后需要 tag 镜像，保持 Registry、Repository 与安装时一致。
 
 ## 升级
@@ -157,7 +175,7 @@ tar -vxf amamba_x.y.z_amd64.tar
         helm repo update amamba-release # (1)
         ```
 
-        1. helm 版本过低会导致失败，若失败，请尝试执行 helm update repo
+        1. Helm 版本过低会导致失败，若失败，请尝试执行 helm update repo
 
     4. 选择您想安装的应用工作台版本（建议安装最新版本）。
 
@@ -195,15 +213,15 @@ tar -vxf amamba_x.y.z_amd64.tar
 
         ```shell
         helm upgrade amamba amamba-release/amamba \
-        -n amamba-system \
-        -f ./bak.yaml \
-        --set global.imageRegistry=$imageRegistry \
-        --version 0.24.0
+          -n amamba-system \
+          -f ./bak.yaml \
+          --set global.imageRegistry=$imageRegistry \
+          --version 0.24.0
         ```
 
 === "通过 chart 包升级"
 
-    1. 准备好 `original-chart`(解压 amamba_x.y.z.bundle.tar 得到)。
+    1. 准备好 `original-chart`（通过解压 amamba_x.y.z.bundle.tar 得到）。
 
     2. 备份 `--set` 参数。
 
@@ -223,7 +241,7 @@ tar -vxf amamba_x.y.z_amd64.tar
 
         ```shell
         helm upgrade amamba original-chart \
-        -n amamba-system \
-        -f ./bak.yaml \
-        --set global.imageRegistry=$imageRegistry
+          -n amamba-system \
+          -f ./bak.yaml \
+          --set global.imageRegistry=$imageRegistry
         ```
