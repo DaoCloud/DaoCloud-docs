@@ -1,7 +1,37 @@
+---
+MTPE: windsonsea
+date: 2024-02-19
+---
+
 # Release Notes
 
 This page lists the release notes of Multicloud Management module,
 so that you can understand the evolution path and feature changes of each version.
+
+## 2024-01-25
+
+### v0.16.0
+
+#### Improvements
+
+- **Improved** Added permission control for one-click conversion of multi-cloud resources
+
+#### Fixes
+
+- **Fixed** Issue with cloudtty not working
+
+## 2023-12-26
+
+### v0.15.0
+
+#### New features
+
+- **Added** Audit logs for multi-cloud instances
+
+#### Fixes
+
+- **Fixed** Display optimization for deployment clusters when creating multi-cloud load balancers
+- **Fixed** Issue where container group resources were not visible for multi-cloud task resources
 
 ## 2023-11-30
 
