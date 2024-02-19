@@ -1,6 +1,43 @@
 # Hwameistor Release Notes
 
-This page lists the Release Notes related to Hwameistor, providing an overview of the evolution path and feature changes for each version.
+This page lists the Release Notes related to Hwameistor, providing an overview of
+the evolution path and feature changes for each version.
+
+## 2024-01-31
+
+### v0.14.1
+
+#### Improvements
+
+- **Improved** Skip volumes that have defined storage classes but no storage class instances when ignoring failure policy
+- **Improved** Check for the existence of local disks before use
+- **Improved** snapshot client
+- **Improved** Added snapshot support to Hwameictl command-line tool
+- **Improved** Added cluster support to Hwameictl command-line tool for snapshots
+
+#### Fixes
+
+- **Fixed** an issue with getnode API
+- **Fixed** an issue with ctl disk_list
+- **Fixed** an issue with snapshot control error
+
+## 2023-12-31
+
+### v0.14.0
+
+#### Improvements
+
+- **Improved** Removed the use of meaningless poolType
+- **Improved** Added VolumeSnapshotClass
+- **Improved** Added support for `snapshot` parameter in Hwameictl command-line tool
+
+#### Fixes
+
+- **Fixed** Ensured Volume Group always maintains consistent accessibility with all volumes in the group
+- **Fixed** an issue with pending error when cleaning up replicas in localvolumemigrate
+- **Fixed** Added system exit statement when indexer setting fails
+- **Fixed** an issue with StorageNodePoolDiskGet retrieving localdisk incorrectly
+- **Fixed** volume leakage when users delete PVC but do not create PV
 
 ## 2023-11-30
 
@@ -56,7 +93,7 @@ This page lists the Release Notes related to Hwameistor, providing an overview o
 #### Improvements
 
 - **Fixed** Display issue of NVME disks in LocalStoragePool nodes.
-- **Fixed** Issue with lost replica status during migration operation.
+- **Fixed** an issue with lost replica status during migration operation.
 - **Fixed** Disallow disk allocation when Disk Owner is empty.
 - **Fixed** Issues with Failover functionality in `deploy` and `Makefile`
 
@@ -146,10 +183,10 @@ This page lists the Release Notes related to Hwameistor, providing an overview o
 
 #### Bug Fixes
 
-- **Fixed** issue where LD is bound but has no capacity in LSN
+- **Fixed** an issue where LD is bound but has no capacity in LSN
 - **Fixed** Metrics port listening issue
-- **Fixed** issue that may cause "not found" errors
-- **Fixed** issue with UI tag in Helm
+- **Fixed** an issue that may cause "not found" errors
+- **Fixed** an issue with UI tag in Helm
 
 ### v0.9.3
 
@@ -164,10 +201,10 @@ This page lists the Release Notes related to Hwameistor, providing an overview o
 
 #### Bug Fixes
 
-- **Fixed** issue where LD is bound but has no capacity in LSN
+- **Fixed** an issue where LD is bound but has no capacity in LSN
 - **Fixed** Metrics port listening issue
-- **Fixed** issue that may cause "not found" errors
-- **Fixed** issue with UI tag in Helm
+- **Fixed** an issue that may cause "not found" errors
+- **Fixed** an issue with UI tag in Helm
 
 ## 2023-3-30
 
