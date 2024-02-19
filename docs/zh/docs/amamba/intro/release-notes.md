@@ -16,8 +16,8 @@
 #### 优化
 
 - **优化** 增加了 GitOps 应用健康状态：已暂停、丢失和未知
-- **优化** 提供已经同步的和最新的 git 仓库的 commit、comment 和 author 信息，helm仓 库的 version 信息
-- **优化** 基于 ContourPlugin 的灰度发布，不再依赖指定版本的 Contour SDK。 
+- **优化** 提供已经同步的和最新的 git 仓库的 commit、comment 和 author 信息，helm 仓库的 version 信息
+- **优化** 基于 ContourPlugin 的灰度发布，不再依赖指定版本的 Contour SDK
 
 #### 修复
 
