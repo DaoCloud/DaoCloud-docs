@@ -1,12 +1,33 @@
 ---
 MTPE: windsonsea
-date: 2024-01-04
+date: 2024-02-19
 ---
 
 # Releases Notes
 
 This page lists the release notes for Workbench to help you understand
 the development and feature changes in each version.
+
+## 2024-01-31
+
+### v0.24.0
+
+#### Added
+
+- **Added** Pipeline support for CI Kanban overview
+- **Added** Ability to terminate GitOps application synchronization
+- **Added** Ability to view events for GitOps applications
+- **Added** Support for canary release based on Contour
+
+#### Improved
+
+- **Improved** Added health status for GitOps applications: paused, missing, and unknown
+- **Improved** Provided commit, comment, and author information for synced and latest git repository, and version information for helm repository
+- **Improved** Canary release based on ContourPlugin no longer depends on a specific version of Contour SDK
+
+#### Fixed
+
+- **Fixed** Fixed the issue where creating an application with dryRun option still creates the application
 
 ## 2023-12-31
 
