@@ -10,6 +10,48 @@ understand the evolution path and feature changes from release to release.
 
 *[kpanda]: Internal development codename for DaoCloud container management
 
+## 2024-01-31
+
+### v0.25.0
+
+#### New Features
+
+- **Added** Support for batch deletion/stop of multiple workloads
+- **Added** Support for setting time zone during cluster installation
+- **Added** One-click enablement of Velero plugin during Velero installation
+- **Added** Option to enable or disable kube-vip control plane LB capability during cluster creation
+- **Added** Support for importing heterogeneous Addon packages
+- **Added** Ability to create GPU workloads on specific GPU card models
+
+#### Improvements
+
+- **Improved** Enhanced availability of GPU node switching, reducing switch time to within 2 seconds
+- **Improved** Improved logic for GPU mode switching
+- **Improved** Enhanced documentation for GPU-operator installation failure in Ubuntu environment
+- **Improved** Deep review and optimization of GPU dashboard (including VGPU, MIG, and whole GPU card)
+- **Improved** Optimized functionality related to GPU statistics at node level using custom metrics
+- **Improved** Reduced latency when accessing drop-down menus for creating PVCs, network policies, and routing in cluster details page for large-scale clusters
+- **Improved** Resolved browser freeze issue when switching namespaces after adding forwarding rules in clusters with 1000+ services
+- **Improved** Optimized image selector to prevent page freeze when there are 1000+ image repositories
+- **Improved** Optimized application backup logic
+
+#### Fixes
+
+- **Fixed** Issue where crontab configuration with cron expression caused inability to modify scheduled task configuration
+- **Fixed** Infinite loop issue in installer caused by Redis Sentinel configuration
+- **Fixed** Refresh loop issue in console (cloudshell) reconnection mechanism, affecting command execution
+- **Fixed** Incorrect display of container CIDR after integration with DCE4
+- **Fixed** Incorrect image address in online upgrade of installer for kcoral image
+- **Fixed** Failure to restore Job during backup recovery
+- **Fixed** Issue where enabling both HPA and CronHPA resulted in CronHPA being overwritten
+- **Fixed** Ineffective selection of installing Insight plugin during cluster creation in kpanda
+- **Fixed** Inability to upgrade current global cluster despite the page showing upgrade availability
+- **Fixed** Inability to set multiple lines in calico_node_extra_envs in Advanced Settings during cluster creation
+- **Fixed** Abnormal display of memory usage and other related metrics in cluster inspection report for container groups
+- **Fixed** Failure to filter deleted pod information in NVIDIA GPU Pod dashboard in Pod filtering
+- **Fixed** Display issue where username and password fields still appeared when unified password was disabled during cluster creation
+- **Fixed** Failure to create cluster when enabling kernel tuning for new cluster
+
 ## 2023-12-31
 
 ### v0.24.0
