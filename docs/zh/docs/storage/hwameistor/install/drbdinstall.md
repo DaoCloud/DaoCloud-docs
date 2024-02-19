@@ -5,15 +5,15 @@ hide:
 
 # 安装 DRBD（可选）
 
-如需要使用高可用数据卷，请在部署 HwameiStor 时开启 DRDB，如下提供安装方式：
+如需要使用高可用数据卷，请在部署 HwameiStor 时开启 DRDB。可采用以下几种安装方式。
 
-## Hwameistor 安装时同步安装
+## 安装 Hwameistor 时同步安装 DRBD
 
-Hwameistor 安装时，可直接启用 DRDB 组件，详情可查看 [Hwameistor 安装](deploy-operator.md)
+Hwameistor 安装时，可直接启用 DRDB 组件，详情可查看 [Hwameistor 安装](deploy-operator.md)。
 
 ## 通过 UI 界面
 
-1. 请 进入 `容器管理`-->`Helm 模板`，选择 `drbd-adapter`。
+1. 进入 `容器管理` -> `Helm 模板`，选择 `drbd-adapter`。
 
 2. 点击 `drdb-adapter`，点击安装，进入配置页面。
 
@@ -29,23 +29,22 @@ Hwameistor 安装时，可直接启用 DRDB 组件，详情可查看 [Hwameistor
 
 ## 通过 Helm 安装
 
-部署以下`DaemonSet`。 它将在每个 kubernetes 工作节点上启动一个 pod 来安装 DRBD 模块和工具：
+部署以下 `DaemonSet`。它将在每个 kubernetes 工作节点上启动一个 Pod 来安装 DRBD 模块和工具：
 
-```console
+```bash
 helm repo add drbd-adapter https://hwameistor.io/drbd-adapter/
-
 helm repo update drbd-adapter
-
 helm pull drbd-adapter/drbd-adapter --untar
-
 helm install drbd-adapter ./drbd-adapter -n hwameistor --create-namespace
 ```
 
-国内用户可以使用镜像仓库 `daocloud.io/daocloud` 加速：
+!!! tip
 
-```console
-$ helm install drbd-adapter ./drbd-adapter \
-    -n hwameistor --create-namespace \
-    --set imagePullPolicy=Always \
-    --set registry=daocloud.io/daocloud
-```
+    国内用户可以使用镜像仓库 `daocloud.io/daocloud` 加速：
+
+    ```bash
+    helm install drbd-adapter ./drbd-adapter \
+        -n hwameistor --create-namespace \
+        --set imagePullPolicy=Always \
+        --set registry=daocloud.io/daocloud
+    ```
