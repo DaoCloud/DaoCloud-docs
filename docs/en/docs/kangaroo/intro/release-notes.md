@@ -8,6 +8,13 @@ date: 2024-01-09
 This page lists the release notes of the container registry, so that you can
 understand the evolution path and feature changes of each version.
 
+## 2023-01-31
+
+### v0.15.0
+
+- **Fixed** an error when querying registry space for associated JFrog image repository
+- **Fixed** a failure to generate login command
+
 ## 2023-12-29
 
 ### v0.14.0
@@ -46,7 +53,7 @@ understand the evolution path and feature changes of each version.
 
 ## 2023-08-02
 
-### v0.10
+### v0.10.0
 
 - **Added** a solution for migrating/backing up/restoring container registry,
   which has been verified through the migration of the release-ci repository
@@ -59,7 +66,7 @@ understand the evolution path and feature changes of each version.
 
 ## 2023-07-02
 
-### v0.9
+### v0.9.0
 
 - **Added** support for selecting the middleware `minio` instance when creating managed harbor
 - **Added** support for key auditing functionality in `Ghippo`
@@ -71,7 +78,7 @@ understand the evolution path and feature changes of each version.
 
 ## 2023-06-05
 
-### v0.8
+### v0.8.0
 
 #### New Features
 
@@ -97,7 +104,7 @@ understand the evolution path and feature changes of each version.
 
 ## 2023-05-08
 
-### v0.7
+### v0.7.0
 
 #### New features
 
@@ -136,7 +143,7 @@ understand the evolution path and feature changes of each version.
 
 ## 2023-03-15
 
-### v0.5
+### v0.5.0
 
 #### New features
 
@@ -160,7 +167,7 @@ understand the evolution path and feature changes of each version.
 
 ## 2022-12-30
 
-### v0.4
+### v0.4.0
 
 #### New features
 
