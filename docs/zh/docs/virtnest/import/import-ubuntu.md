@@ -9,11 +9,11 @@
 
 ## 获取 vSphere 的虚拟机基础信息
 
-1. vSphere  url
+1. vSphere URL
 
-    目标平台的 url 地址信息
+    目标平台的 URL 地址信息
 
-2. vSphere  ssl 证书指纹 thumbprint
+2. vSphere SSL 证书指纹 thumbprint
 
     需要通过 openssl 获取
 
@@ -35,23 +35,24 @@
     sha1 Fingerprint=C3:9D:D7:55:6A:43:11:2B:DE:BA:27:EA:3B:C2:13:AF:E4:12:62:4D  # 所需值
     ```
 
-3. vSphere  账号
+3. vSphere 账号
    
     获得 vSphere 的账号信息，注意权限问题
 
-4. vSphere  密码
+4. vSphere 密码
 
     获得 vSphere 的密码信息
 
 5. 需要导入虚拟机的 UUID（需要在 vSphere 的 web 页面获取）
 
-    - 进入 Vsphere 页面中，进入被导入虚拟机的详情页面，点击`编辑配置`，此时打开浏览器的开发者控制台，点击`网络`——>`标头`找到如下图所示的 URL
+    - 进入 Vsphere 页面中，进入被导入虚拟机的详情页面，点击`编辑配置`，此时打开浏览器的开发者控制台，
+      点击`网络` —> `标头`找到如下图所示的 URL。
     
-    ![找到URL](../images/uuid01.png)
+        ![找到URL](../images/uuid01.png)
 
-    - 点击`响应`，定位到`vmConfigContext`——>`config`，最终找到目标值`uuid`
+    - 点击`响应`，定位到 `vmConfigContext` —> `config`，最终找到目标值 `uuid`。
 
-    ![找到uuid](../images/uuid02.png)
+        ![找到uuid](../images/uuid02.png)
 
 6. 需要导入虚拟机的 vmdk 文件 path
 
@@ -61,7 +62,8 @@
 
     - 下载 vddk：需要在 [vmware 网站](https://developer.vmware.com/) 注册账号后下载
    
-        前往 SDKs，在"Compute Virtualization"部分点击，并选择合适版本的"VMware Virtual Disk Development Kit (VDDK)"进行下载。
+        前往 SDKs，在"Compute Virtualization"部分点击，并选择合适版本的
+        "VMware Virtual Disk Development Kit (VDDK)"进行下载。
    
         ![点击 Compute Virtualization](../images/import-ubuntu01.png)
    
@@ -73,8 +75,8 @@
    
         - 解压
        
-            ```
-            $ tar -xzf VMware-vix-disklib-<version>.x86_64.tar.gz
+            ```sh
+            tar -xzf VMware-vix-disklib-<version>.x86_64.tar.gz
             ```
        
         - 创建 Dockerfile 文件
@@ -86,6 +88,7 @@
             ENTRYPOINT ["cp", "-r", "/vmware-vix-disklib-distrib", "/opt"]
             EOF
             ```
+
         - 推送镜像至仓库
 
 ## 获取 vSphere 的账号密码 secret
@@ -94,7 +97,7 @@
 apiVersion: v1
 kind: Secret
 metadata:
-  name: vsphere   # 可改
+  name: vsphere   # 可更改
   labels:
     app: containerized-data-importer  # 请勿更改
     type: Opaque
@@ -107,7 +110,8 @@ metadata:
 
 1. 在将 vSphere 虚拟机导入 KubeVirt 的 CDI 过程中，需要使用 vddk 组件。
    
-2. 请确保 configmap 的命名空间与 CDI 所在的命名空间保持一致（Virtnest Agent 的默认命名空间是 virtnest-system，示例中为 cdi）。
+2. 请确保 configmap 的命名空间与 CDI 所在的命名空间保持一致
+  （Virtnest Agent 的默认命名空间是 virtnest-system，示例中为 cdi）。
 
     ```yaml
     apiVersion: v1
@@ -142,11 +146,11 @@ metadata:
             storageClassName: local-path
             source:
             vddk:
-                backingFile: "[esxi-d02-08-SSD] kubevirt-export-ubuntu-1/kubevirt-export-ubuntu-1.vmdk"     # vsphere 虚拟机基础信息中的磁盘
-                url: "https://10.64.56.11"                                                                  # vsphere url
-                uuid: "4234ea54-9b4b-b8ba-3de0-8612d8600648"                                                # vsphere 虚拟机基础信息中的 uuid
-                thumbprint: "C3:9D:D7:55:6A:43:11:2B:DE:BA:27:EA:3B:C2:13:AF:E4:12:62:4D"                   # vsphere SSL fingerprint
-                secretRef: "vsphere"                                                                        # vsphere 账号密码 secret
+                backingFile: "[esxi-d02-08-SSD] kubevirt-export-ubuntu-1/kubevirt-export-ubuntu-1.vmdk" # vsphere 虚拟机基础信息中的磁盘
+                url: "https://10.64.56.11"   # vsphere url
+                uuid: "4234ea54-9b4b-b8ba-3de0-8612d8600648" # vsphere 虚拟机基础信息中的 uuid
+                thumbprint: "C3:9D:D7:55:6A:43:11:2B:DE:BA:27:EA:3B:C2:13:AF:E4:12:62:4D" # vsphere SSL fingerprint
+                secretRef: "vsphere"  # vsphere 账号密码 secret
     runStrategy: Always
     template:
         metadata:

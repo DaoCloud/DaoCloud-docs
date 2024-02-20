@@ -1,17 +1,17 @@
-# 创建 Windows 虚拟机
+# Creating a Windows Virtual Machine
 
-本文将介绍如何通过命令行创建 Windows 虚拟机。
+This document will explain how to create a Windows virtual machine via the command line.
 
-## 前提条件
+## Prerequisites
 
-1. 创建 Windows 虚拟机之前，需要先参考[安装虚拟机模块的依赖和前提](../install/install-dependency.md)确定您的环境已经准备就绪。
-2. 创建过程建议参考官方文档：[How to install during Windows install](https://kubevirt.io/user-guide/virtual_machines/windows_virtio_drivers/#how-to-install-during-windows-install)
-3. 如果虚拟机没有网络需要手动加载 Windows 网络引擎启动，参考官方文档 [How to install after Windows installation?](https://kubevirt.io/user-guide/virtual_machines/windows_virtio_drivers/#how-to-install-after-windows-install)
-4. Windows 虚拟机建议使用 VNC 的访问方式。
+1. Before creating a Windows virtual machine, ensure that your environment is ready by following the [dependencies and prerequisites for installing the virtual machine module](../install/install-dependency.md).
+2. Follow the official documentation for the installation process: [How to install during Windows install](https://kubevirt.io/user-guide/virtual_machines/windows_virtio_drivers/#how-to-install-during-windows-install).
+3. If the virtual machine does not have network access, manually load the Windows network drivers during boot-up. Refer to the official documentation: [How to install after Windows installation?](https://kubevirt.io/user-guide/virtual_machines/windows_virtio_drivers/#how-to-install-after-windows-install).
+4. It is recommended to access the Windows virtual machine using VNC.
 
-## 上传 Windows 操作系统的镜像文件
+## Uploading the Windows Operating System Image File
 
-1. 先开放 CDI 上传服务
+1. Start the CDI upload service
 
     ```shell
     cat << EOF | kubectl  -n virtnest-system apply  -f -
@@ -33,10 +33,10 @@
     EOF
     ```
 
-2. CDI 证书配置
-   
+2. CDI certificate configuration
+
     ```shell
-    # 10.6.136.25 替换成节点 IP
+    # Replace 10.6.136.25 with the node IP
     echo | openssl s_client -showcerts -connect 10.6.136.25:31001 2>/dev/null \
             | openssl x509 -inform pem -noout -text \
             | sed -n -e '/Subject.*CN/p' -e '/Subject Alternative/{N;p}'
@@ -55,45 +55,45 @@
     sudo update-ca-trust
     ```
 
-3. 安装工具
+3. Install the tools
 
-   ```shell
-   (
-   set -x; cd "$(mktemp -d)" &&
-   OS="$(uname | tr '[:upper:]' '[:lower:]')" &&
-   ARCH="$(uname -m | sed -e 's/x86_64/amd64/' -e 's/\(arm\)\(64\)\?.*/\1\2/' -e 's/aarch64$/arm64/')" &&
-   KREW="krew-${OS}_${ARCH}" &&
-   curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/${KREW}.tar.gz" &&
-   tar zxvf "${KREW}.tar.gz" &&
-   ./"${KREW}" install krew
-   )
-   
-   echo 'export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"' >> ~/.bashrc && bash --login
-   
-   kubectl krew install virt
-   ```
+    ```shell
+    (
+    set -x; cd "$(mktemp -d)" &&
+    OS="$(uname | tr '[:upper:]' '[:lower:]')" &&
+    ARCH="$(uname -m | sed -e 's/x86_64/amd64/' -e 's/\(arm\)\(64\)\?.*/\1\2/' -e 's/aarch64$/arm64/')" &&
+    KREW="krew-${OS}_${ARCH}" &&
+    curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/${KREW}.tar.gz" &&
+    tar zxvf "${KREW}.tar.gz" &&
+    ./"${KREW}" install krew
+    )
+    
+    echo 'export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"' >> ~/.bashrc && bash --login
+    
+    kubectl krew install virt
+    ```
 
-4. 从 [Windows 官网](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2012-r2) 下载 Windows ISO
+4. Download the Windows ISO from the [Windows website](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2012-r2)
 
     ```shell
     wget -O win.iso 'https://go.microsoft.com/fwlink/p/?LinkID=2195443&clcid=0x409&culture=en-us&country=US'
     ```
 
-5. 上传 Windows ISO，并且创建一个引导盘
+5. Upload the Windows ISO and create a boot disk
 
     ```shell
-    kubectl virt image-upload -n virt-demo pvc iso-win \  # kubectl  virt image-upload -n ${NS} pvc ${PVC_NAME}
-    --image-path=/root/win.iso \  # 所处绝对地址
+    kubectl virt image-upload -n virt-demo pvc iso-win \  
+    --image-path=/root/win.iso \  
     --access-mode=ReadWriteOnce \
-    --size=25G \  # 引导盘大小，不能小于 15 GB
-    --uploadproxy-url=https://cdi-uploadproxy:31001 \  # 上传服务端地址
+    --size=25G \  
+    --uploadproxy-url=https://cdi-uploadproxy:31001 \  
     --force-bind \
     --insecure \
     --wait-secs=240 \
-    --storage-class=local-path  # 集群支持的 SC
+    --storage-class=local-path  
     ```
 
-6. 创建数据盘
+6. Create a data disk
 
     ```shell
     kubectl apply -n virt-demo  -f - <<EOF
@@ -112,9 +112,9 @@
     EOF
     ```
 
-## 创建 Windows 虚拟机
+## Creating the Windows Virtual Machine
 
-??? note "点击查看创建 Windows 虚拟机的 YAML 示例"
+??? note "Click to view the YAML example for creating a Windows virtual machine"
 
     ```yaml
     apiVersion: kubevirt.io/v1
@@ -133,7 +133,7 @@
     template:
         metadata:
         creationTimestamp: null
-        labels:  # 自定义 应用 label
+        labels:  
             app: vm-windows
             version: v1
             kubevirt.io/domain: vm-windows
@@ -160,10 +160,10 @@
                 name: virtiocontainerdisk
             interfaces:
                 - name: default
-                passt: {}  # passt 模式
+                passt: {}  
                 ports:
                     - name: http
-                    port: 80  # 应用端口号
+                    port: 80  
             machine:
             type: q35
             resources:
@@ -175,21 +175,21 @@
         volumes:
             - name: cdromiso
             persistentVolumeClaim:
-                claimName: iso-win  # 自定义上传 ISO 的引导盘
+                claimName: iso-win  
             - name: harddrive
             persistentVolumeClaim:
-                claimName: winhd  # 自定义的 数据盘
+                claimName: winhd  
             - containerDisk:
                 image: kubevirt/virtio-container-disk
             name: virtiocontainerdisk
     ```
 
-## 访问 Windows 虚拟机
+## Accessing the Windows Virtual Machine
 
-1. 创建成功后，进入虚拟机列表页面，发现虚拟机正常运行。
+1. Once created successfully, access the virtual machine list page to verify that the virtual machine is running properly.
 
-    ![运行成功](../images/window01.png)
+    <!-- Add image later -->
 
-2. 点击控制台访问（VNC），可以正常访问。
+2. Click VNC to access the virtual machine.
 
-    ![访问](../images/windows-vnc.png)
+    <!-- Add image later -->
