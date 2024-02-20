@@ -1004,7 +1004,8 @@ nav:
                   - Use Cases: kant/intro/use-cases.md
                   - Concepts: kant/intro/concepts.md
               - Edge Unit:
-                  - Create Edge Unit: kant/user-guide/edge-unit/create-unit.md
+                  - Create Internal Edge Unit: kant/user-guide/edge-unit/create-internal-unit.md
+                  - Create External Edge Unit: kant/user-guide/edge-unit/create-external-unit.md
                   - Manage Edge Unit: kant/user-guide/edge-unit/manage-unit.md
               - Edge Node:
                   - Overview: kant/user-guide/node/index.md

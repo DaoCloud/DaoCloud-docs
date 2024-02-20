@@ -3,15 +3,22 @@ MTPE: FanLin
 Date: 2024-01-23
 ---
 
-# Create Edge Units
+# Create Internal Edge Unit
 
 Edge unit definition: It refers to the collection of computing resources required for container runtime, including the cloud-side Master and edge-side worker Nodes. The concept of an edge unit is similar to a cluster in Kubernetes, but the networking is different. The Master node is deployed in the cloud, and one cloud-side master (with multiple backups) corresponds to one edge cluster.
 
-Business of edge units: Install the KubeEdge Cloud Suite (CloudCore, ControllerManager) on the specified worker cluster and manage it throughout its lifecycle.
+Business of edge units: Install the KubeEdge Cloud Suite (CloudCore, ControllerManager) on the specified worker cluster and manage it throughout its lifecycle. KubeEdge: It is an open-source system that extends native containerized application orchestration capabilities to edge nodes.
 
-KubeEdge: It is an open-source system that extends native containerized application orchestration capabilities to edge nodes.
-CloudCore: KubeEdge cloud-side core component.
-ControllerManager: KubeEdge CRD extension, currently applied to edge applications and edge node groups.
+- CloudCore: KubeEdge cloud-side core component.
+- ControllerManager: KubeEdge CRD extension, currently applied to edge applications and edge node groups.
+
+DCE 5.0 Cloud Edge supports two types of edge units:
+
+- **Internal Edge Unit** is to install the KubeEdge cloud suite (CloudCore, ControllerManager) for a specified working cluster and manage it throughout its lifecycle.
+
+- **External Edge Unit** refers to integrating the existing KubeEdge installed in the enterprise system into DCE 5.0 Cloud Edge for unified management. See [Creating External Edge Unit](./create-external-unit.md)
+
+## Steps
 
 The following steps explain how to create an edge unit:
 
