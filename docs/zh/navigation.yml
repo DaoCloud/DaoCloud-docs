@@ -1030,6 +1030,7 @@ nav:
                       - 创建数据集: baize/developer/dataset/create.md
                       - 删除数据集: baize/developer/dataset/delete.md
               - 运维管理:
+                  - 介绍: baize/oam/index.md
                   - GPU 资源管理: baize/oam/resource.md
                   - 队列管理:
                       - 创建队列: baize/oam/queue/create.md

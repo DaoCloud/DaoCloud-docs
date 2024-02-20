@@ -190,8 +190,9 @@ status: {}
         TLS 路由通常应用在 https-、tls- 前缀的平台服务端口，或者经 Gateway 透传的 HTTPS、TLS 协议端口，以及使用 HTTPS 或者 TLS 协议的 ServiceEntry 端口上。
         注意：没有关联 VirtualService 的 https- 或者 tls- 端口流量会被视为透传 TCP 流量。
 
-        Tcp 协议和 tls 的子字段相对简单，仅包含 match 和 route 两部分，并且与 HTTP 相似，不再累述。
+        TCP 协议和 TLS 的子字段相对简单，仅包含 match 和 route 两部分，并且与 HTTP 相似，不再累述。
 
 ## 参考资料
 
-- [什么是虚拟服务？](../../../skoala/reference/virtual-service.md)
+- [什么是虚拟服务？](https://istio.io/latest/docs/concepts/traffic-management/#virtual-services)
+- [Istio 虚拟服务参数配置](https://istio.io/latest/docs/concepts/traffic-management/#virtual-service-example)

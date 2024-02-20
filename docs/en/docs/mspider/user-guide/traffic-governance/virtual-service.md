@@ -200,4 +200,5 @@ status: {}
 
 ## Reference
 
-- [What is a Virtual Service?](../../../reference/basic-knowledge/virtual-service.md)
+- [What is `VirtualService`?](https://istio.io/latest/docs/concepts/traffic-management/#virtual-services)
+- [`VirtualService` Configuration](https://istio.io/latest/docs/concepts/traffic-management/#virtual-service-example)
