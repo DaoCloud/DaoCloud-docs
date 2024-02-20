@@ -4,11 +4,10 @@
 
 **Edge Units Status List:**
 
-- Creating: The edge unit is being created, and the edit and delete buttons are disabled.
-- Running: The edge unit has been successfully created and is running normally.
-- Failed: The edge unit failed to create or encountered an error during runtime. Hover over the icon on the right to view the error information.
-- Updating: The edge unit is being edited and updated, and the edit and delete buttons are disabled.
-- Deleting: The edge unit is being deleted, and the edit and delete buttons are disabled.
+- Executing: The edge unit is being created or the edge unit information is being updated. During this time, the edge unit name cannot be clicked on, and edge unit operations cannot be accessed.
+- Running: The edge unit is running normally.
+- Failed: The edge unit creation has failed or there is an abnormality in the operation. Hover over the icon on the right to view the error information.
+- Deleting: The edge unit is being deleted. During this process, the edge unit name, edit, and delete buttons cannot be clicked.
 
 **Edge Unit Resource Statistics:**
 
