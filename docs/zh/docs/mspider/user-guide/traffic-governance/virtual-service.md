@@ -150,41 +150,41 @@ status: {}
 
     HTTP 主要字段说明：
 
-    - Match
+  - Match
 
         匹配要激活的规则要满足的条件。单个匹配块内的所有条件都具有 AND 语义，而匹配块列表具有 OR 语义。
         如果任何一个匹配块成功，则匹配该规则。
 
-    - Route
+  - Route
 
         HTTP 规则可以重定向或转发（默认）流量。
 
-    - Redirect
+  - Redirect
 
         HTTP 规则可以重定向或转发（默认）流量。
         如果在规则中指定了流量通过选项，则将忽略路由/重定向。
         重定向原语可用于将 HTTP 301 重定向发送到其他 URI 或 Authority。
 
-    - Rewrite
+  - Rewrite
 
         重写 HTTP URI 和 Authority header，重写不能与重定向原语一起使用。
 
-    - Fault
+  - Fault
 
         故障注入策略，适用于客户端的 HTTP 通信。
         如果在客户端启用了故障注入策略，则不会启用超时或重试。
 
-    - Mirror/MirrorPercent
+  - Mirror/MirrorPercent
 
         将 HTTP 流量镜像到另一个目标，并可以设置镜像比例。
 
-    - TCP
+  - TCP
 
         一个针对透传 TCP 流量的有序路由列表。
         TCP 路由对所有 HTTP 和 TLS 之外的端口生效。
         进入流量会使用匹配到的第一条规则。
 
-    - TLS
+  - TLS
 
         一个有序列表，对应的是透传 TLS 和 HTTPS 流量。路由过程通常利用 ClientHello 消息中的 SNI 来完成。
         TLS 路由通常应用在 https-、tls- 前缀的平台服务端口，或者经 Gateway 透传的 HTTPS、TLS 协议端口，以及使用 HTTPS 或者 TLS 协议的 ServiceEntry 端口上。
@@ -194,4 +194,5 @@ status: {}
 
 ## 参考资料
 
-- [什么是虚拟服务？](../../../skoala/reference/virtual-service.md)
+- [什么是虚拟服务？](https://istio.io/latest/docs/concepts/traffic-management/#virtual-services)
+- [Istio 虚拟服务参数配置](https://istio.io/latest/docs/concepts/traffic-management/#virtual-service-example)

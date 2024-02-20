@@ -157,40 +157,40 @@ status: {}
 
     Explanation of main fields in HTTP:
 
-    - Match
+  - Match
 
         The conditions that must be satisfied for a rule to be activated. All conditions within a single match block have AND semantics, while the match blocks have OR semantics.
         If any match block succeeds, the rule is considered a match.
 
-    - Route
+  - Route
 
         HTTP rules can either redirect or forward (default) traffic.
 
-    - Redirect
+  - Redirect
 
         HTTP rules can either redirect or forward (default) traffic.
         If traffic is specified to go through an option in the rule, routing/redirecting will be ignored.
         Redirect primitives can be used to send HTTP 301 redirects to other URIs or authorities.
 
-    - Rewrite
+  - Rewrite
 
         Rewrite the HTTP URI and Authority header. Rewriting cannot be used together with redirect primitives.
 
-    - Fault
+  - Fault
 
         Fault injection policies for client-side HTTP communication.
         Enabling fault injection policies on the client side will disable timeouts or retries.
 
-    - Mirror/MirrorPercent
+  - Mirror/MirrorPercent
 
         Mirror HTTP traffic to another destination, with the ability to set the mirroring percentage.
 
-    - TCP
+  - TCP
 
         An ordered list of routes for passthrough TCP traffic.
         TCP routing applies to all ports except for HTTP and TLS. Incoming traffic will be handled by the first rule that matches.
 
-    - TLS
+  - TLS
 
         An ordered list corresponding to passthrough TLS and HTTPS traffic. The routing process usually relies on the SNI in the ClientHello message.
         TLS routing typically applies to platform service ports with prefixes like https- or tls-, or HTTPS, TLS protocol ports passed through a Gateway, and ServiceEntry ports using HTTPS or TLS protocols.
@@ -200,4 +200,5 @@ status: {}
 
 ## Reference
 
-- [What is a Virtual Service?](../../../reference/basic-knowledge/virtual-service.md)
+- [What is `VirtualService`?](https://istio.io/latest/docs/concepts/traffic-management/#virtual-services)
+- [`VirtualService` Configuration](https://istio.io/latest/docs/concepts/traffic-management/#virtual-service-example)
