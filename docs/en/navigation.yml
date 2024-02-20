@@ -543,20 +543,27 @@ nav:
                   - PV and PVC: storage/terms/pv_pvc.md
           - Virtual Machine:
               - Intro:
-                  - Intro: virtnest/intro/index.md
+                  - What: virtnest/intro/index.md
                   - Release Notes: virtnest/intro/release-notes.md
-                  - Install Virtual Machine: virtnest/intro/install.md
-              - Quick Start:
-                  - Install virtnest-agent: virtnest/quick-start/index.md
-                  - Create VM: virtnest/quick-start/create-image.md
-                  - Create Secret: virtnest/quick-start/create-secret.md
-                  - Create VM by Template: virtnest/quick-start/create-tep.md
-                  - VM Template: virtnest/quick-start/tep.md
-                  - Connect VM: virtnest/quick-start/access.md
-                  - Snapshots: virtnest/quick-start/snapshot.md
-                  - Live Migration: virtnest/quick-start/live-migration.md
-                  - Access VM by NodePort: virtnest/quick-start/nodeport.md
+              - Install:   
+                  - Install Virtual Machine: virtnest/install/index.md
+                  - Install Dependencies: virtnest/install/install-dependency.md
                   - Offline Upgrade: virtnest/install/offline-install.md
+                  - Install virtnest-agent: virtnest/install/virtnest-agent.md
+              - Manage Virtual Machine:
+                  - Create VM: virtnest/vm/index.md
+                  - Create Windows VM: virtnest/vm/vm-windows.md
+                  - Create Secret: virtnest/vm/create-secret.md
+                  - Access VM: virtnest/vm/access.md
+                  - Snapshots: virtnest/vm/snapshot.md
+                  - Live Migration: virtnest/vm/live-migration.md
+                  - Access VM by NodePort: virtnest/vm/nodeport.md
+                  - Monitor VM: virtnest/vm/monitor.md
+              - VM Template:
+                  - Create VM by Template: virtnest/template/index.md
+                  - VM Template: virtnest/template/tep.md
+              - VM Image: virtnest/vm-image/index.md
+              - Import VM from Ubuntu: virtnest/import/import-ubuntu.md
       - Observability:
           - Insight:
               - Intro:

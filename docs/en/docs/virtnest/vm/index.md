@@ -82,7 +82,7 @@ Fill in the image-related information according to the table below, then click _
     |      Ubuntu      |     Ubuntu 22.04      | release-ci.daocloud.io/virtnest/system-images/ubuntu-22.04-x86_64:v1 |
     |      Debian      |       Debian 12       | release-ci.daocloud.io/virtnest/system-images/debian-12-x86_64:v1 |
 
-- Image Secret: Only supports the default (Opaque) type of key, for specific operations you can refer to [Create Secret](create-secret.md).
+- Image Secret: Only supports the default (Opaque) type of key, for specific operations you can refer to [Create Secret](../vm/create-secret.md).
 
 - Resource Config: For CPU, it is recommended to use whole numbers.
   If a decimal is entered, it will be rounded up.
