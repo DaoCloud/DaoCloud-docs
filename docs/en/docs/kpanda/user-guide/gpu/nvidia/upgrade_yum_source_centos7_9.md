@@ -1,39 +1,62 @@
-## Building CentOS 7.9 Offline Yum Source
+## Build CentOS 7.9 Offline Yum Source
 
 ## Use Case Overview
 
-DCE 5 comes with a pre-installed GPU Operator offline package for CentOS 7.9 with kernel version 3.10.0-1160. For other OS types or kernel versions, users need to manually build an offline yum source.
+DCE 5 comes with a pre-installed GPU Operator offline package for CentOS 7.9 with kernel version 3.10.0-1160.
+or other OS types or kernel versions, users need to manually build an offline yum source.
 
 This guide explains how to build an offline yum source for CentOS 7.9 with a specific kernel version and use it when installing the GPU Operator by specifying the __RepoConfig.ConfigMapName__ parameter.
 
 ## Prerequisites
 
 1. The user has already installed the v0.12.0 or later version of the addon offline package on the platform.
-2. The nodes in the cluster where the GPU Operator will be deployed must have CentOS 7.9 installed with the exact same kernel version.
-3. Prepare a file server that is accessible from the cluster network, such as Nginx or MinIO.
-4. Prepare a node that has internet access, can access the cluster where the GPU Operator will be deployed, and can access the file server. Docker should also be installed on this node. You can refer to [Installing Docker](../../../../install/community/kind/online.md#安装-docker) for installation instructions.
+1. Prepare a file server that is accessible from the cluster network, such as Nginx or MinIO.
+1. Prepare a node that has internet access, can access the cluster where the GPU Operator will
+   be deployed, and can access the file server. Docker should also be installed on this node.
+   You can refer to [Installing Docker](../../../../install/community/kind/online.md#install-docker) for installation instructions.
 
 ## Procedure
 
 This guide uses CentOS 7.9 with kernel version 3.10.0-1160.95.1.el7.x86_64 as an example to explain how to upgrade the pre-installed GPU Operator offline package's yum source.
 
-### Step 1: Check the Kernel Version of the Cluster Nodes
+### Check OS and Kernel Versions of Cluster Nodes
 
-Run the following command to check the kernel version of the nodes in the cluster where the GPU Operator will be deployed:
+Run the following commands on both the control node of the Global cluster and the node where
+GPU Operator will be deployed. If the OS and kernel versions of the two nodes are consistent,
+there is no need to build a yum source. You can directly refer to the
+[Offline Installation of GPU Operator](./install_nvidia_driver_of_operator.md) document for
+installation. If the OS or kernel versions of the two nodes are not consistent,
+please proceed to the [next step](#create-the-offline-yum-source).
 
-```bash
-uname -a
-```
+1. Run the following command to view the distribution name and version of the node where GPU Operator will be deployed in the cluster.
 
-The expected output should resemble the following:
+    ```bash
+    cat /etc/redhat-release
+    ```
 
-```
-Linux localhost.localdomain 3.10.0-1160.95.1.el7.x86_64 #1 SMP Mon Oct 19 16:18:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
-```
+    Expected output:
 
-The output shows the current node's kernel version as __3.10.0-1160.el7.x86_64__ .
+    ```
+    CentOS Linux release 7.9 (Core)
+    ```
 
-### Step 2: Create the Offline Yum Source
+    The output shows the current node's OS version as `CentOS 7.9`.
+
+2. Run the following command to view the kernel version of the node where GPU Operator will be deployed in the cluster.
+
+    ```bash
+    uname -a
+    ```
+
+    Expected output:
+
+    ```
+    Linux localhost.localdomain 3.10.0-1160.95.1.el7.x86_64 #1 SMP Mon Oct 19 16:18:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+    ```
+
+    The output shows the current node's kernel version as `3.10.0-1160.el7.x86_64`.
+
+### Create the Offline Yum Source
 
 Perform the following steps on a node that has internet access and can access the file server:
 
@@ -43,7 +66,7 @@ Perform the following steps on a node that has internet access and can access th
     vi yum.sh
     ```
 
-    Then press the "i" key to enter insert mode and enter the following content:
+    Then press the **i** key to enter insert mode and enter the following content:
 
     ```bash
     export TARGET_KERNEL_VERSION=$1
@@ -95,7 +118,7 @@ Perform the following steps on a node that has internet access and can access th
     tar -xzf centos-base.tar.gz
     ```
 
-    Press the __Esc__ key to exit insert mode, then enter __ :wq__ to save and exit.
+    Press the __Esc__ key to exit insert mode, then enter __:wq__ to save and exit.
 
 2. Run the __yum.sh__ file:
 
@@ -103,19 +126,24 @@ Perform the following steps on a node that has internet access and can access th
     bash -x yum.sh TARGET_KERNEL_VERSION
     ```
 
-    The __TARGET_KERNEL_VERSION__ parameter is used to specify the kernel version of the cluster nodes. Note: You don't need to include the distribution identifier (e.g., __ .el7.x86_64__ ).
-
+    The `TARGET_KERNEL_VERSION` parameter is used to specify the kernel version of the cluster nodes.
+    
+    Note: You don't need to include the distribution identifier (e.g., __ .el7.x86_64__ ).
     For example:
 
     ```bash
     bash -x yum.sh 3.10.0-1160.95.1
     ```
 
-Now you have generated an offline yum source, __centos-base__ , for the kernel version __3.10.0-1160.95.1.el7.x86_64__ .
+Now you have generated an offline yum source, __centos-base__ ,
+for the kernel version __3.10.0-1160.95.1.el7.x86_64__ .
 
-### Step 3: Upload the Offline Yum Source to the File Server
+### Upload the Offline Yum Source to the File Server
 
-Perform the following steps on a node that has internet access and can access the file server. This step is used to upload the generated yum source from the previous step to a file server that can be accessed by the cluster where the GPU Operator will be deployed. The file server can be Nginx, MinIO, or any other file server that supports the HTTP protocol.
+Perform the following steps on a node that has internet access and can access the file server.
+This step is used to upload the generated yum source from the previous step to a file server
+that can be accessed by the cluster where the GPU Operator will be deployed. The file server
+can be Nginx, MinIO, or any other file server that supports the HTTP protocol.
 
 In this example, we will use the built-in MinIO in DCE5 as the file server. The MinIO details are as follows:
 
@@ -167,11 +195,11 @@ In this example, we will use the built-in MinIO in DCE5 as the file server. The 
     mc cp centos-base minio/centos-base --recursive
     ```
 
-### Step 4: Create a ConfigMap to Store the Yum Source Information in the Cluster
+### Create a ConfigMap to Store the Yum Source Info in the Cluster
 
 Perform the following steps on the control node of the cluster where the GPU Operator will be deployed.
 
-1. Run the following command to create a file named __CentOS-Base.repo__ that specifies the configuration information for the yum source storage:
+1. Run the following command to create a file named __CentOS-Base.repo__ that specifies the configmap for the yum source storage:
 
     ```bash
     # The file name must be CentOS-Base.repo, otherwise it cannot be recognized during the installation of the GPU Operator
@@ -191,7 +219,7 @@ Perform the following steps on the control node of the cluster where the GPU Ope
 2. Based on the created __CentOS-Base.repo__ file, create a configmap named __local-repo-config__ in the __gpu-operator__ namespace:
 
     ```bash
-    kubectl create configmap local-repo-config -n gpu-operator --from-file=./CentOS-Base.repo
+    kubectl create configmap local-repo-config  -n gpu-operator --from-file=CentOS-Base.repo=/etc/yum.repos.d/extension.repo
     ```
 
     The expected output should resemble the following:
@@ -223,4 +251,6 @@ Perform the following steps on the control node of the cluster where the GPU Ope
     uid: c5f0ebab-046f-442c-b932-f9003e014387
     ```
 
-You have successfully created an offline yum source configuration file for the cluster where the GPU Operator will be deployed. You can use it during the [offline installation of the GPU Operator](./install_nvidia_driver_of_operator.md) by specifying the __RepoConfig.ConfigMapName__ parameter.
+You have successfully created an offline yum source configuration file for the cluster where the
+GPU Operator will be deployed. You can use it during the [offline installation of the GPU Operator](./install_nvidia_driver_of_operator.md)
+by specifying the __RepoConfig.ConfigMapName__ parameter.

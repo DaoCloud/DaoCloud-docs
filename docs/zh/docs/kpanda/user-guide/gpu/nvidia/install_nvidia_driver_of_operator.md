@@ -6,7 +6,7 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 - GPU vGPU 模式
 - GPU MIG 模式
 
-详情请参考：[NVIDIA GPU 卡使用模式](index.md)，本文使用的 AMD 架构的 Centos 7.9 （3.10.0-1160） 进行演示。如需使用 redhat8.4 部署，
+详情请参考：[NVIDIA GPU 卡使用模式](index.md)，本文使用的 AMD 架构的 Centos 7.9 （3.10.0-1160）进行演示。如需使用 redhat8.4 部署，
 请参考[向火种节点仓库上传 RedHat GPU Opreator 离线镜像](./push_image_to_repo.md)和[构建 RedHat 8.4 离线 yum 源](./upgrade_yum_source_redhat8_4.md)。
 
 ## 前提条件
@@ -18,7 +18,7 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
 参考如下步骤为集群安装 GPU Operator 插件。
 
-1. 登录平台，进入 __容器管理__ --> __待安装 GPU Operator 的集群__ -->进入集群详情。
+1. 登录平台，进入 __容器管理__ -> __待安装 GPU Operator 的集群__ -> 进入集群详情。
 
 2. 在 __Helm 模板__ 页面，选择 __全部仓库__ ，搜索 __gpu-operator__ 。
 
@@ -53,22 +53,19 @@ __DevicePlugin.enable__ ：配置是否启用 kubernentes [DevicePlugin](https:/
 #### Driver 参数配置
 
 1. __Driver.enable__ ：配置是否在节点上部署 NVIDIA 驱动，默认开启，如果您在使用 GPU Operator 部署前，已经在节点上部署了 NVIDIA 驱动程序，请关闭。
-
 2. __Driver.image__ ：配置 GPU 驱动镜像，推荐默认镜像： __nvidia/driver__ 。
-
 3. __Driver.repository__ ：GPU 驱动镜像所在的镜像仓库，默认为 nvidia 的 __nvcr.io__ 仓库。
 4. __Driver.version__ ：GPU 驱动镜像的版本，离线部署请使用默认参数，仅在线安装时需配置，不同类型操作系统的 Driver 镜像的版本存在如下差异，
    详情可参考：[Nvidia GPU Driver 版本](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/driver/tags)，如下不同操作系统的 `Driver Version` 示例：
 
-!!! note
+    !!! note
 
-    系统默认提供 525.147.05-centos7 的镜像，其他镜像需要参考 [向火种节点仓库上传镜像](./push_image_to_repo.md) 
+        系统默认提供 525.147.05-centos7 的镜像，其他镜像需要参考 [向火种节点仓库上传镜像](./push_image_to_repo.md) 
 
-    - RedHat 系统 ，示例：`525.105.17-rhel8.4`
-    - Ubuntu 系统，示例：`535-5.15.0-1043-nvidia-ubuntu22.04`
-    - CentOS 系统，示例： `525.147.05-centos7`
+        - RedHat 系统 ，示例：`525.105.17-rhel8.4`
+        - Ubuntu 系统，示例：`535-5.15.0-1043-nvidia-ubuntu22.04`
+        - CentOS 系统，示例： `525.147.05-centos7`
 
-    
 5. __Driver.RepoConfig.ConfigMapName__ ：用来记录 GPU Operator 的离线 yum 源配置文件名称，当使用预置的离线包时，
    global 集群可直接执行如下命令，工作集群 __参考 Global 集群任意节点的 yum 源配置__ 。
     
@@ -78,7 +75,7 @@ __DevicePlugin.enable__ ：配置是否启用 kubernentes [DevicePlugin](https:/
         kubectl create configmap local-repo-config  -n gpu-operator --from-file=CentOS-Base.repo=/etc/yum.repos.d/extension.repo
         ```
    
-     - 工作集群配置
+    - 工作集群配置
        
     ??? note "参考 Global 集群任意节点的 yum 源配置"
 
@@ -108,8 +105,8 @@ __DevicePlugin.enable__ ：配置是否启用 kubernentes [DevicePlugin](https:/
             **注意：配置 __key__ 值必须为 __CentOS-Base.repo__ , __value__ 值点离线源配置文件 __extension.repo__ 中的内容**。
 
     其它操作系统或内核可参考如下链接创建 yum 源文件：
-    - [构建 CentOS 7.9 离线 yum 源](./upgrade_yum_source_centos7_9.md)
 
+    - [构建 CentOS 7.9 离线 yum 源](./upgrade_yum_source_centos7_9.md)
     - [构建 RedHat 8.4 离线 yum 源](./upgrade_yum_source_redhat8_4.md)
 
 #### Toolkit 配置参数
@@ -127,15 +124,17 @@ __DevicePlugin.enable__ ：配置是否启用 kubernentes [DevicePlugin](https:/
 详细配置方式请参考[开启 MIG 功能](mig/create_mig.md)
 
 1. __MigManager.enabled__ ：是否启用 MIG 能力特性。
-2. **MigManager.Config.name**: MIG 的切分配置文件名，用于定义 MIG 的（GI ,CI）切分策略。默认为 __default-mig-parted-config__ 。自定义参数参考[开启 MIG 功能](mig/create_mig.md)
-3. __Mig.strategy__ ：节点上 GPU 卡的 MIG 设备的公开策略。NVIDIA 提供了两种公开 MIG 设备的策略（ __single__ 、 __mixed__ 策略，详情参考：[NVIDIA GPU 卡模式说明](index.md)
+2. **MigManager.Config.name**: MIG 的切分配置文件名，用于定义 MIG 的（GI ,CI）切分策略。
+   默认为 __default-mig-parted-config__ 。自定义参数参考[开启 MIG 功能](mig/create_mig.md)。
+3. __Mig.strategy__ ：节点上 GPU 卡的 MIG 设备的公开策略。NVIDIA 提供了两种公开 MIG 设备的策略：
+   __single__ 、 __mixed__ 策略，详情参考：[NVIDIA GPU 卡模式说明](index.md)。
 
 #### Node-Feature-Discovery 配置参数
 
-1. __Node-Feature-Discovery.enableNodeFeatureAPI__ ：启用或禁用节点特性 API（Node Feature Discovery API）。
+__Node-Feature-Discovery.enableNodeFeatureAPI__ ：启用或禁用节点特性 API（Node Feature Discovery API）。
 
-     - 当设置为 __true__ 时，启用了节点特性 API。
-     - 当设置为 __false__ 或 __未设置__ 时，禁用节点特性 API。
+- 当设置为 __true__ 时，启用了节点特性 API。
+- 当设置为 __false__ 或 __未设置__ 时，禁用节点特性 API。
 
 ### 下一步操作
 
