@@ -25,11 +25,11 @@ This section describes the features supported by the service mesh.
 
 - Layer 7 Connection Pool Management
 
-    Configurable settings include the maximum number of HTTP requests, retries, waiting requests, requests per connection, and idle connection time.
+    Supports configuration of the maximum number of HTTP requests, retries, waiting requests, requests per connection, and idle connection time.
 
 - Layer 4 Connection Pool Management
 
-    Configurable settings include the maximum number of TCP connections, connection timeout, maximum number of unresponsive connections, minimum idle time, and health check interval.
+    Supports configuration of maximum number of TCP connections, connection timeout duration, TCP keep-alive detection (including idle timeout duration, maximum detection count, detection interval duration).
 
 - Outlier Detection
 
@@ -37,7 +37,7 @@ This section describes the features supported by the service mesh.
 
 - Retry
 
-    Configurable settings include the number of HTTP retries, retry timeout, and retry conditions.
+    Supports configuration of the number of HTTP retries, retry timeout, and retry conditions.
 
 - Timeouts
 
