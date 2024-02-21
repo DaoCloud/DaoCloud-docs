@@ -43,38 +43,45 @@ To install the GPU Operator plugin for your cluster, follow these steps:
 
 ### Advanced settings
 
-#### DevicePlugin configuration
+#### DevicePlugin Parameter Configuration
 
-__DevicePlugin.enable__ : Configure whether to enable the Kubernetes [DevicePlugin](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/) feature. Determine whether to enable it based on your use case.
+__DevicePlugin.enable__: Configure whether to enable the [DevicePlugin](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/) feature in Kubernetes.
+By default, it is **enabled**, and when **disabled**, the GPU whole card/MIG functionality will not be available.
 
-    - **Enable** it for GPU Full mode.
-    - **Disable** it for GPU vGPU mode.
-    - **Enable** it for GPU MIG mode.
+#### Operator Parameter Configuration
 
-    !!! note
-
-        Note:
-        1. Only one GPU card mode can be used in a cluster, so before deploying the GPU Operator, please confirm the GPU card usage mode to decide whether to enable the __DevicePlugin__ feature.
-        2. When using vGPU mode (disabling this parameter), the daemon __nvidia-operator-validator__ will remain in the "Waiting" state for a long time. This is normal and does not affect the use of vGPU functionality.
+1. __InitContainer.image__: Configure the CUDA image, recommended default image: __nvidia/cuda__.
+2. __InitContainer.repository__: Repository where the CUDA image is located, default is __nvcr.m.daocloud.io__ repository.
+3. __InitContainer.version__: Version of the CUDA image, please use the default parameters.
 
 #### Driver configuration
 
-1. __Driver.enable__ : Configure whether to deploy NVIDIA drivers on the nodes. It is enabled by default. If you have already deployed the NVIDIA driver on the nodes before using the GPU Operator, please disable it.
-
+1. __Driver.enable__ : Configure whether to deploy NVIDIA drivers on the nodes.
+   It is enabled by default. If you have already deployed the NVIDIA driver on
+   the nodes before using the GPU Operator, please disable it.
 2. __Driver.image__ : Configure the GPU driver image. The recommended default image is __nvidia/driver__ .
-
 3. __Driver.repository__ : Configure the repository where the GPU driver image is located. The default repository is nvidia's __nvcr.io__ .
-
 4. __Driver.version__ : Configure the version of the GPU driver image. For offline deployment, use the default parameters. Only configure this for online installation. The driver image versions for different operating systems have the following differences:
 
-    - For RedHat systems, the naming convention is usually composed of the CUDA version and OS version. For example, if the kernel is __4.18.0-305.el8.x86_64__ , the Driver.version value for RedHat 8.4 would be __525.105.17__ .
-    - For Ubuntu systems, the naming convention is __<driver-branch>-<linux-kernel-version>-<os-tag>__ .
-    For example, __525-5.15.0-69-ubuntu22.04__ , where __525__ is the CUDA version, __5.15.0-69__ is the kernel version, and __ubuntu22.04__ is the OS version.
-    Note: For Ubuntu, the Driver image version must be strongly consistent with the node's kernel version, including minor version numbers.
+    !!! note
 
-    - For the CentOS system, the naming rule is usually composed of the CUDA version and the OS version, such as 535.104.05.
+        The system default provides the image 525.147.05-centos7. For other images, refer to [Pushing Images to the Fire Node Repository](./push_image_to_repo.md)
 
-5. __Driver.RepoConfig.ConfigMapName__ : This parameter is used to record the name of the offline yum source configuration file for GPU Operator. When using the pre-installed offline package, refer to "Using the yum source configuration of any node in the Global cluster".
+        - For RedHat systems, for example: `525.105.17-rhel8.4`
+        - For Ubuntu systems, for example: `535-5.15.0-1043-nvidia-ubuntu22.04`
+        - For CentOS systems, for example: `525.147.05-centos7`
+
+5. __Driver.RepoConfig.ConfigMapName__: Used to record the name of the offline yum source
+   configuration file for the GPU Operator. When using the pre-installed offline package,
+   the global cluster can directly execute the following command, and the working cluster should __refer to the yum source configuration of any node in the Global cluster__.
+
+    - Configuration for the global cluster
+
+        ```sh
+        kubectl create configmap local-repo-config  -n gpu-operator --from-file=CentOS-Base.repo=/etc/yum.repos.d/extension.repo
+        ```
+   
+    - Configuration for the working cluster
 
     ??? note "Using the yum source configuration of any node in the Global cluster"
 
@@ -101,28 +108,42 @@ __DevicePlugin.enable__ : Configure whether to enable the Kubernetes [DevicePlug
             ```
 
         2. Copy the contents of the __extension.repo__ file mentioned above. In the __gpu-operator__ namespace of the cluster where GPU Operator will be deployed, create a new config map named __local-repo-config__ . Refer to [Creating ConfigMaps](../../configmaps-secrets/create-configmap.md) for creating the config map.
-        **Note: The __Secret__ value must be __CentOS-Base.repo__ , and the __value__ value should contain the contents of the offline source configuration file __extension.repo__ .**
+
+            **Note: The __Secret__ value must be __CentOS-Base.repo__ , and the __value__ value should contain the contents of the offline source configuration file __extension.repo__ .**
 
     For other operating systems or kernels, refer to the following links to create the yum source file:
 
     - [Building CentOS 7.9 Offline Yum Source](./Upgrade_yum_source_of_preset_offline_package.md)
-
     - [Building RedHat 8.4 Offline Yum Source](./upgrade_yum_source_redhat_8.4.md)
 
-6. **MIG Configuration Parameters**
+#### Toolkit Configuration Parameters
 
-    For detailed configuration, refer to [Enabling MIG Functionality](mig/create_mig.md).
+1. __Toolkit.enable__: Default is enabled, mainly used for accelerating the development and optimization of parallel computing applications.
 
-    - __MigManager.enabled__ : Enable or disable MIG capability feature.
-    - __Mig.strategy__ : The strategy for exposing MIG devices on the GPU cards of the nodes. NVIDIA provides two strategies for exposing MIG devices ( __single__ and __mixed__ ). For more details, refer to [NVIDIA GPU Card Mode Explanation](index.md).
-    - __MigManager.Config__ : Used to configure MIG partitioning parameters and default values.
-        - __default__ : The default partitioning configuration used by nodes. It is set to __all-disabled__ by default.
-        - __name__ : The name of the MIG partitioning configuration file that defines the (GI, CI) partitioning strategy for MIG. It is set to __default-mig-parted-config__ by default. For custom parameters, refer to [Enabling MIG Functionality](mig/create_mig.md).
+2. __Toolkit.image__: Configure the Toolkit image, recommended default image: __nvidia/k8s/container-toolkit__.
 
-7. __Node-Feature-Discovery.enableNodeFeatureAPI__ : Enable or disable the Node Feature API (Node Feature Discovery API).
+3. __Toolkit.repository__: Repository where the Toolkit image is located, default is __nvcr.m.daocloud.io__ repository.
 
-     - When set to __true__ , the Node Feature API is enabled.
-     - When set to __false__ or __not set__ , the Node Feature API is disabled.
+4. __Toolkit.version__: Version of the Toolkit image. By default, a CentOS image is used. If using Ubuntu, manual modification of the addon's yaml is required to change CentOS to Ubuntu. Specific models can be referenced at: https://catalog.ngc.nvidia.com/orgs/nvidia/teams/k8s/containers/container-toolkit/tags
+
+#### MIG Configuration Parameters
+
+For detailed configuration, please refer to [Enabling MIG Functionality](mig/create_mig.md)
+
+1. __MigManager.enabled__: Whether to enable MIG capability feature.
+2. **MigManager.Config.name**: Name of the MIG partitioning configuration file, used to
+   define the (GI, CI) partitioning strategy for MIG. Default is __default-mig-parted-config__.
+   For custom parameters, refer to [Enabling MIG Functionality](mig/create_mig.md).
+3. __Mig.strategy__: Public strategy for MIG devices on GPU cards on the node. NVIDIA provides
+   two policies for exposing MIG devices: __single__, __mixed__ policies, details can be found
+   in [NVIDIA GPU Card Mode Explanation](index.md).
+
+#### Node-Feature-Discovery Configuration Parameters
+
+__Node-Feature-Discovery.enableNodeFeatureAPI__: Enable or disable the Node Feature API.
+
+- When set to __true__, the Node Feature API is enabled.
+- When set to __false__ or not set, the Node Feature API is disabled.
 
 ### Next steps
 
