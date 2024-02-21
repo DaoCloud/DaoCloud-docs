@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="813px" height="431px" viewBox="0 0 813 431" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>mspider-arch</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="矩形" stroke="#979797" fill="#CFE8D2" x="0.5" y="0.5" width="100" height="430"></rect>
+        <rect id="矩形" stroke="#979797" fill="#FFCCCB" x="712.5" y="0.5" width="100" height="430"></rect>
+        <rect id="矩形" stroke="#979797" fill="#F4F4F4" x="151.5" y="0.5" width="510" height="101"></rect>
+        <g id="编组" transform="translate(238.000000, 42.000000)">
+            <g id="矩形-2" fill="#FFFFFF" stroke="#979797">
+                <rect id="矩形" x="-0.5" y="-0.5" width="94" height="40"></rect>
+            </g>
+            <text id="注入管理" font-family="PingFangSC-Regular, PingFang SC" font-size="15" font-weight="normal" fill="#060606">
+                <tspan x="17" y="25">注入管理</tspan>
+            </text>
+        </g>
+        <rect id="矩形" stroke="#979797" fill="#D7E8FD" x="151.5" y="140.5" width="510" height="101"></rect>
+        <g id="编组" transform="translate(178.000000, 177.000000)">
+            <g id="矩形-2" fill="#FFFFFF" stroke="#979797">
+                <rect id="矩形" x="-0.5" y="-0.5" width="94" height="40"></rect>
+            </g>
+            <text id="多集群管理" font-family="PingFangSC-Regular, PingFang SC" font-size="15" font-weight="normal" fill="#060606">
+                <tspan x="10" y="25">多集群管理</tspan>
+            </text>
+        </g>
+        <g id="编组" transform="translate(294.000000, 177.000000)">
+            <g id="矩形-2" fill="#FFFFFF" stroke="#979797">
+                <rect id="矩形" x="-0.5" y="-0.5" width="94" height="40"></rect>
+            </g>
+            <text id="控制平面" font-family="PingFangSC-Regular, PingFang SC" font-size="15" font-weight="normal" fill="#060606">
+                <tspan x="15" y="25">控制平面</tspan>
+            </text>
+        </g>
+        <g id="编组" transform="translate(403.000000, 177.000000)">
+            <g id="矩形-2" fill="#FFFFFF" stroke="#979797">
+                <rect id="矩形" x="-0.5" y="-0.5" width="94" height="40"></rect>
+            </g>
+            <text id="注册发现" font-family="PingFangSC-Regular, PingFang SC" font-size="15" font-weight="normal" fill="#060606">
+                <tspan x="15" y="25">注册发现</tspan>
+            </text>
+        </g>
+        <rect id="矩形" stroke="#979797" fill="#D7E8FD" x="151.5" y="280.5" width="510" height="150"></rect>
+        <g id="编组" transform="translate(238.000000, 323.000000)">
+            <g id="矩形-2" fill="#FFFFFF" stroke="#979797">
+                <rect id="矩形" x="-0.5" y="-0.5" width="94" height="40"></rect>
+            </g>
+            <text id="认证、授权" font-family="PingFangSC-Regular, PingFang SC" font-size="15" font-weight="normal" fill="#060606">
+                <tspan x="10" y="25">认证、授权</tspan>
+            </text>
+        </g>
+        <g id="编组" transform="translate(361.000000, 374.000000)">
+            <g id="矩形-2" fill="#FFFFFF" stroke="#979797">
+                <rect id="矩形" x="-0.5" y="-0.5" width="94" height="40"></rect>
+            </g>
+            <text id="租户、空间" font-family="PingFangSC-Regular, PingFang SC" font-size="15" font-weight="normal" fill="#060606">
+                <tspan x="10" y="25">租户、空间</tspan>
+            </text>
+        </g>
+        <g id="编组" transform="translate(238.000000, 374.000000)">
+            <g id="矩形-2" fill="#FFFFFF" stroke="#979797">
+                <rect id="矩形" x="-0.5" y="-0.5" width="94" height="40"></rect>
+            </g>
+            <text id="观测展示" font-family="PingFangSC-Regular, PingFang SC" font-size="15" font-weight="normal" fill="#060606">
+                <tspan x="15" y="25">观测展示</tspan>
+            </text>
+        </g>
+        <g id="编组" transform="translate(360.000000, 323.000000)">
+            <g id="矩形-2" fill="#FFFFFF" stroke="#979797">
+                <rect id="矩形" x="-0.5" y="-0.5" width="94" height="40"></rect>
+            </g>
+            <text id="网格管理" font-family="PingFangSC-Regular, PingFang SC" font-size="15" font-weight="normal" fill="#060606">
+                <tspan x="16" y="25">网格管理</tspan>
+            </text>
+        </g>
+        <g id="编组" transform="translate(482.000000, 323.000000)">
+            <g id="矩形-2" fill="#FFFFFF" stroke="#979797">
+                <rect id="矩形" x="-0.5" y="-0.5" width="94" height="40"></rect>
+            </g>
+            <text id="策略控制" font-family="PingFangSC-Regular, PingFang SC" font-size="15" font-weight="normal" fill="#060606">
+                <tspan x="16" y="25">策略控制</tspan>
+            </text>
+        </g>
+        <g id="编组" transform="translate(482.000000, 374.000000)">
+            <g id="矩形-2" fill="#FFFFFF" stroke="#979797">
+                <rect id="矩形" x="-0.5" y="-0.5" width="94" height="40"></rect>
+            </g>
+            <text id="转换适配" font-family="PingFangSC-Regular, PingFang SC" font-size="15" font-weight="normal" fill="#060606">
+                <tspan x="16" y="25">转换适配</tspan>
+            </text>
+        </g>
+        <g id="编组" transform="translate(512.000000, 177.000000)">
+            <g id="矩形-2" fill="#FFFFFF" stroke="#979797">
+                <rect id="矩形" x="-0.5" y="-0.5" width="94" height="40"></rect>
+            </g>
+            <text id="协议适配" font-family="PingFangSC-Regular, PingFang SC" font-size="15" font-weight="normal" fill="#060606">
+                <tspan x="15" y="25">协议适配</tspan>
+            </text>
+        </g>
+        <g id="矩形-2" transform="translate(360.000000, 43.000000)" fill="#FFFFFF" stroke="#979797">
+            <rect id="矩形" x="-0.5" y="-0.5" width="94" height="40"></rect>
+        </g>
+        <g id="矩形-2" transform="translate(482.000000, 43.000000)" fill="#FFFFFF" stroke="#979797">
+            <rect id="矩形" x="-0.5" y="-0.5" width="94" height="40"></rect>
+        </g>
+        <text id="被托管集群网格" font-family="PingFangSC-Regular, PingFang SC" font-size="15" font-weight="normal" fill="#060606">
+            <tspan x="350" y="21">被托管集群网格</tspan>
+        </text>
+        <text id="托管网格" font-family="PingFangSC-Regular, PingFang SC" font-size="15" font-weight="normal" fill="#060606">
+            <tspan x="373" y="164">托管网格</tspan>
+        </text>
+        <text id="全局管理模块" font-family="PingFangSC-Regular, PingFang SC" font-size="15" font-weight="normal" fill="#060606">
+            <tspan x="361" y="306">全局管理模块</tspan>
+        </text>
+        <text id="观测模块" font-family="PingFangSC-Regular, PingFang SC" font-size="15" font-weight="normal" fill="#060606">
+            <tspan x="13" y="221">观测模块</tspan>
+        </text>
+        <text id="微服务平台-/应用工作台" font-family="PingFangSC-Regular, PingFang SC" font-size="15" font-weight="normal" fill="#060606">
+            <tspan x="721" y="216">微服务平台</tspan>
+            <tspan x="721" y="247">/应用工作台</tspan>
+        </text>
+        <text id="xDS-转发" font-family="PingFangSC-Regular, PingFang SC" font-size="15" font-weight="normal" fill="#060606">
+            <tspan x="377" y="68">xDS 转发</tspan>
+        </text>
+        <text id="虚拟机管理" font-family="PingFangSC-Regular, PingFang SC" font-size="15" font-weight="normal" fill="#060606">
+            <tspan x="491" y="68">虚拟机管理</tspan>
+        </text>
+    </g>
+</svg>
