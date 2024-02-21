@@ -13,9 +13,9 @@ that do not require data storage and can be restarted or rolled back at any time
 
 Follow the steps below to create a stateless deployment using an image.
 
-1. Go to the details page of the edge unit and select the `Edge Application` -> `Deployments` menu.
+1. Go to the details page of the edge unit and select the __Edge Application__ -> __Deployments__ menu.
 
-2. Click the `Create by Image` button in the upper-right corner of the deployment list.
+2. Click the __Create by Image__ button in the upper-right corner of the deployment list.
 
     ![Deployment List](../images/create-app-01.png)
 
@@ -115,13 +115,13 @@ Follow the steps below to create a stateless deployment using an image.
 
     === "Node Scheduling"
 
-        Click the `Select Edge Node` button to choose a specific node for deploying the deployment from the popup selection dialog.
+        Click the __Select Edge Node__ button to choose a specific node for deploying the deployment from the popup selection dialog.
 
         ![Node Scheduling](../images/create-app-09.png)
 
     === "Labels and Annotations"
 
-        Click the `Add` button to add labels and annotations to the deployment and container group.
+        Click the __Add__ button to add labels and annotations to the deployment and container group.
 
         ![Labels and Annotations](../images/create-app-11.png)
 
@@ -140,7 +140,7 @@ Follow the steps below to create a stateless deployment using an image.
 
         ![Network Configuration](../images/create-app-12.png)
 
-6. Click the `OK` button to complete the creation of the deployment.
+6. Click the __OK__ button to complete the creation of the deployment.
 
 ## Create with YAML
 
@@ -149,13 +149,13 @@ stateless deployments more quickly using a YAML file.
 
 Here are the steps:
 
-1. Go to the edge unit details page and select the menu `Edge Application` -> `Deployments`.
+1. Go to the edge unit details page and select the menu __Edge Application__ -> __Deployments__ .
 
-2. Click the `Create by YAML` button in the top-right corner of the end device list.
+2. Click the __Create by YAML__ button in the top-right corner of the end device list.
 
     ![Create by YAML](../images/create-app-13.png)
 
-3. Input or paste the prepared YAML file, and click `OK` to complete the creation.
+3. Input or paste the prepared YAML file, and click __OK__ to complete the creation.
 
 !!! note
 

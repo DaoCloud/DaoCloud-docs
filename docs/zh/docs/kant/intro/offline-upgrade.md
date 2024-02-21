@@ -10,11 +10,11 @@
 
 您可以根据下面两种方式之一加载镜像，当环境中存在镜像仓库时，建议选择 chart-syncer 同步镜像到镜像仓库，该方法更加高效便捷。
 
-#### 方式一：使用 chart-syncer 同步镜像
+### 使用 chart-syncer 同步镜像
 
-使用 chart-syncer 可以将您下载的安装包中的 chart 及其依赖的镜像包上传至安装器部署 DCE 时使用的镜像仓库和 helm 仓库。
+使用 chart-syncer 可以将您下载的安装包中的 Chart 及其依赖的镜像包上传至安装器部署 DCE 时使用的镜像仓库和 Helm 仓库。
 
-首先找到一台能够连接镜像仓库和 helm 仓库的节点（如火种节点），在节点上创建 load-image.yaml 配置文件，填入镜像仓库和 helm 仓库等配置信息。
+首先找到一台能够连接镜像仓库和 Helm 仓库的节点（如火种节点），在节点上创建 load-image.yaml 配置文件，填入镜像仓库和 Helm 仓库等配置信息。
 
 1. 创建 load-image.yaml
 
@@ -69,7 +69,7 @@
     charts-syncer sync --config load-image.yaml
     ```
 
-#### 方式二：使用 Docker 或 containerd 加载镜像
+### 使用 Docker 或 containerd 加载镜像
 
 解压并加载镜像文件。
 
@@ -110,7 +110,7 @@
 
 === "通过 helm repo 升级"
 
-    1. 检查云边协同 helm 仓库是否存在。
+    1. 检查云边协同 Helm 仓库是否存在。
 
         ```shell
         helm repo list | grep kant-release
@@ -122,13 +122,13 @@
         Error: no repositories to show
         ```
 
-    1. 添加云边协同的 helm 仓库。
+    1. 添加云边协同的 Helm 仓库。
 
         ```shell
         helm repo add kant-release http://{harbor url}/chartrepo/{project}
         ```
 
-    1. 更新云边协同的 helm 仓库。
+    1. 更新云边协同的 Helm 仓库。
 
         ```shell
         helm repo update kant-release
@@ -148,9 +148,9 @@
         ...
         ```
 
-    1. 备份 __--set__ 参数。
+    1. 备份 `--set` 参数。
 
-        在升级云边协同版本之前，建议您执行如下命令，备份老版本的 __--set__ 参数。
+        在升级云边协同版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
 
         ```shell
         helm get values kant -n kant-system -o yaml > bak.yaml
@@ -163,7 +163,7 @@
         kubectl apply -f kant/crds
         ```
 
-    1. 执行 __helm upgrade__ 。
+    1. 执行 `helm upgrade`。
 
         升级前建议您覆盖 bak.yaml 中的 __global.imageRegistry__ 字段为当前使用的镜像仓库地址。
 
@@ -179,11 +179,11 @@
           --version 0.5.0
         ```
 
-=== "通过 chart 包升级"
+=== "通过 Chart 包升级"
 
-    1. 备份 __--set__ 参数。
+    1. 备份 `--set` 参数。
 
-        在升级云边协同版本之前，建议您执行如下命令，备份老版本的 __--set__ 参数。
+        在升级云边协同版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
 
         ```shell
         helm get values kant -n kant-system -o yaml > bak.yaml
@@ -195,7 +195,7 @@
         kubectl apply -f ./crds
         ```
 
-    1. 执行 __helm upgrade__ 。
+    1. 执行 `helm upgrade`。
 
         升级前建议您覆盖 bak.yaml 中的 __global.imageRegistry__ 为当前使用的镜像仓库地址。
 
