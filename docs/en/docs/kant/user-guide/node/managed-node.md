@@ -97,9 +97,9 @@ When a new edge node is connected, the latest version of the EdgeCore software i
 
     - Register via certificate.
 
-        1. On the installation guide page, click `Certificate Installation` in Step 2 to display the installation prompt information.
+        1. On the installation guide page, click __Certificate Installation__ in Step 2 to display the installation prompt information.
 
-        2. Click the `Download Certificate` button to download the certificate to your local machine.
+        2. Click the __Download Certificate__ button to download the certificate to your local machine.
 
         3. Save the certificate and run the following command:
 

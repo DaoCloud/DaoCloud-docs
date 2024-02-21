@@ -1010,6 +1010,8 @@ nav:
                   - Benefits: kant/intro/benefits.md
                   - Use Cases: kant/intro/use-cases.md
                   - Concepts: kant/intro/concepts.md
+                  - Release Notes: kant/intro/release-notes.md
+                  - Offline Upgrade: kant/intro/offline-upgrade.md
               - Edge Unit:
                   - Create Internal Edge Unit: kant/user-guide/edge-unit/create-internal-unit.md
                   - Create External Edge Unit: kant/user-guide/edge-unit/create-external-unit.md

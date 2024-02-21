@@ -18,13 +18,13 @@
 
 ## Edit Edge Units
 
-On the right side of the edge unit list, click the `⋮` button and select `Edit` from the pop-up menu. This allows you to edit the basic information, component repo and network config of the edge unit.
+On the right side of the edge unit list, click the __⋮__ button and select __Edit__ from the pop-up menu. This allows you to edit the basic information, component repo and network config of the edge unit.
 
 ![Edit Edge Unit](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kant/user-guide/images/manage-unit-02.png)
 
 ## Delete Edge Units
 
-On the right side of the edge unit list, click the `⋮` button and select `Delete` from the pop-up menu.
+On the right side of the edge unit list, click the __⋮__ button and select __Delete__ from the pop-up menu.
 
 !!! note
 

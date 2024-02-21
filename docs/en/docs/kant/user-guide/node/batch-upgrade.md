@@ -17,8 +17,8 @@ The platform periodically releases new versions, and you can upgrade their edge 
 
 ## Steps
 
-1. On the Edge Node List page, click the `Batch Management` button to enter the `Batch Management` page.
-   Select the `Batch Upgrade` tab and click the `Create Upgrade Task` button in the upper right corner.
+1. On the Edge Node List page, click the __Batch Management__ button to enter the __Batch Management__ page.
+   Select the __Batch Upgrade__ tab and click the __Create Upgrade Task__ button in the upper right corner.
 
     ![Batch Upgrade](../../images/batch-register01.png)
 

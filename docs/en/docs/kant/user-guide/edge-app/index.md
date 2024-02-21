@@ -35,6 +35,6 @@ determined by the user. After the resource is created, it can be loaded and used
 
 The process of creating and using configuration items and secrets in the Cloud Edge Collaboration module
 is consistent with the process in the Container Management module. In the details page of the edge unit,
-go to the `Configuration Items and Secrets` menu. Refer to
+go to the __Configuration Items and Secrets__ menu. Refer to
 [Creating Configuration Items](../../../kpanda/user-guide/configmaps-secrets/create-configmap.md)
 for the creation and usage process.
