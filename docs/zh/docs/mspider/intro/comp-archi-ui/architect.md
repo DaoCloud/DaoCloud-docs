@@ -1,7 +1,7 @@
----
+-.--
 hide:
   - toc
----
+-.--
 
 # 系统架构
 
@@ -9,7 +9,7 @@ DCE 5.0 服务网格产品支持多种类型的网格实例管理能力，支持
 
 从整体架构上讲，服务网格产品可分为三个面：网格全局管理面、网格控制面、网格数据面
 
-![系统架构](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/architecture1.png)
+![系统架构](../../images/architecture1.svg)
 
 - 网格全局管理面
 
@@ -44,6 +44,46 @@ DCE 5.0 服务网格产品支持多种类型的网格实例管理能力，支持
 
 ## 功能架构
 
-![服务网格功能](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/features.png)
+```mermaid
+graph LR
+
+    mesh([服务网格]) -.- overview[网格概览]
+    mesh -.- service[服务管理]
+    mesh -.- traffic[流量治理]
+        traffic -.- vs[虚拟服务]
+        traffic -.- dr[目标规则]
+        traffic -.- gw[网关规则]
+    mesh -.- security[安全治理]
+        security -.- peer[对等身份认证]
+        security -.- request[请求身份认证]
+        security -.- authz[认证策略]
+    mesh -.- monitor[流量监控]
+        monitor -.- tp[服务拓扑]
+        monitor -.- list[服务监控列表]
+    mesh -.- sidecar[边车管理]
+        sidecar -.- ns[命名空间边车管理]
+        sidecar -.- workload[工作负载边车管理]
+    mesh -.- cluster[集群纳管]
+    mesh -.- meshgw[网格网关]
+    mesh -.- config[网格配置] -.- istio[Istio 资源管理]
+
+click vs "https://docs.daocloud.io/mspider/user-guide/traffic-governance/virtual-service/"
+click dr "https://docs.daocloud.io/mspider/user-guide/traffic-governance/destination-rules/"
+click gw "https://docs.daocloud.io/mspider/user-guide/traffic-governance/gateway-rules/"
+click peer "https://docs.daocloud.io/mspider/user-guide/security/peer/"
+click request "https://docs.daocloud.io/mspider/user-guide/security/request/"
+click authz "https://docs.daocloud.io/mspider/user-guide/security/authorize/"
+click tp "https://docs.daocloud.io/mspider/user-guide/traffic-monitor/conn-topo/"
+click list "https://docs.daocloud.io/mspider/user-guide/traffic-monitor/monitoring-indicators/"
+click ns "https://docs.daocloud.io/mspider/user-guide/sidecar-management/ns-sidecar/"
+click workload "https://docs.daocloud.io/mspider/user-guide/sidecar-management/workload-sidecar/"
+click istio "https://docs.daocloud.io/mspider/user-guide/mesh-config/istio-resources/"
+
+ classDef plain fill:#ddd,stroke:#fff,stroke-width:4px,color:#000;
+ classDef k8s fill:#326ce5,stroke:#fff,stroke-width:4px,color:#fff;
+ classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
+ class mesh,overview,service,traffic,security,monitor,sidecar,cluster,meshgw,config k8s;
+ class vs,dr,gw,peer,request,authz,tp,list,ns,workload,global,istio cluster;
+```
 
 如上图所示，服务网格提供了 9 个模块 12 个子模块功能，实现了多样化集群接入、多种模式的网格管理的能力。
