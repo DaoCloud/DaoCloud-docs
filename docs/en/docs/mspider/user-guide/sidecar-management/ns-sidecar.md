@@ -20,7 +20,7 @@ You can also choose whether to display the following system namespaces:
 - kube-public
 - kube-system
 
-![View Sidecar Injection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/ns-sidecar01.png)
+![View Sidecar Injection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/ns-sidecar001.png)
 
 ## Enable Sidecar Injection
 
