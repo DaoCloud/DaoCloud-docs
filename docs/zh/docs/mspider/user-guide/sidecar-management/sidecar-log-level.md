@@ -9,7 +9,7 @@ hide:
 
 边车日志，用于记录工作负载的边车的工作情况，通过控制日志级别，可以控制边车日志的输出，从而减少日志的输出，减少日志的存储和传输。
 
-在部署网格实例时，DaoCloud 支持配置全局默认的边车日志级别，默认情况下所有工作负载的边车都会采用此配置。
+在部署网格实例时，DCE 5.0 支持配置全局默认的边车日志级别，默认情况下所有工作负载的边车都会采用此配置。
 
 ## 边车日志级别配置
 
@@ -22,11 +22,11 @@ hide:
 
     全局默认边车日志级别，需由网格管理员进行修改。
 
-1. 登录 DaoCloud 控制台，进入网格实例详情页，点击`边车信息`菜单，进入边车信息修改页面
+1. 登录控制台，进入网格实例详情页，点击 __边车信息__ 菜单，进入边车信息修改页面
 
     ![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/sidecar-log-level-01.png)
 
-2. 在边车信息修改页面，可以修改全局默认边车日志级别，修改完成后，点击`保存`按钮，即可保存修改
+2. 在边车信息修改页面，可以修改全局默认边车日志级别，修改完成后，点击 __保存__ 按钮，即可保存修改
 
     ![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/sidecar-log-level-02.png)
 
@@ -42,13 +42,13 @@ hide:
 kubectl -n <namespace> exec -it <pod-name>  -c istio-proxy -- curl -X POST localhost:15000/logging?level=<log level>
 ```
 
-- `<namespace>`：工作负载所在的命名空间
-- `<pod-name>`：工作负载的 Pod 名称
-- `<log level>`：边车日志级别，可选值为：`trace`、`debug`、`info`、`warning`、`error`、`critical`、`off` 等
-- `istio-proxy`：边车容器名称，不需要修改
-- `localhost:15000`：边车容器的监听地址，不需要修改
+- __<namespace>__ ：工作负载所在的命名空间
+- __<pod-name>__ ：工作负载的 Pod 名称
+- __<log level>__ ：边车日志级别，可选值为：__trace__ 、__debug__ 、__info__ 、__warning__ 、__error__ 、__critical__ 、__off__ 等
+- __istio-proxy__ ：边车容器名称，不需要修改
+- __localhost:15000__ ：边车容器的监听地址，不需要修改
 
-例如，我们需要将 `default` 命名空间下的 `productpage-v1-5b4f8f9b9f-8q9q2` 工作负载的边车日志级别修改为 `debug`，则执行如下命令：
+例如，我们需要将 __default__ 命名空间下的 __productpage-v1-5b4f8f9b9f-8q9q2__ 工作负载的边车日志级别修改为 __debug__ ，则执行如下命令：
 
 ```shell
 kubectl -n default exec -it productpage-v1-5b4f8f9b9f-8q9q2  -c istio-proxy -- curl -X POST localhost:15000/logging?level=debug
