@@ -35,7 +35,7 @@ hide:
 
 | 组件                       | 内存请求 | 内存限制 | CPU 请求 | CPU 限制 |
 | -------------------------- | -------- | -------- | -------- | -------- |
-| mcpc-controller            | 300Mi    | 2000Mi   | 300m     | 1000m    |
+| mcpc-controller            | 300Mi    | 1000Mi   | 300m     | 1000m    |
 | reg-proxy                  | 200Mi    | 1000Mi   | 100m     | 1000m    |
 | ckube-remote               | 400Mi    | 2000Mi   | 200m     | 500m     |
 | hosted-apiserver.etcd      | 300Mi    | 1500Mi   | 100m     | 500m     |
