@@ -9,17 +9,17 @@ This page explains how external applications can access services inside the mesh
 
 **Prerequisites:**
 
-- The service `bookinfo.com` is running in the `default` namespace of the mesh `global-service`.
+- The service __bookinfo.com__ is running in the __default__ namespace of the mesh __global-service__ .
 
-- The mesh provides an `ingressgateway` gateway instance.
+- The mesh provides an __ingressgateway__ gateway instance.
 
-**Objective:** Expose the internal service `bookinfo.com` to the outside.
+**Objective:** Expose the internal service __bookinfo.com__ to the outside.
 
-1. Use URI matching to route external application access to specific pages of the `bookinfo.com` service.
+1. Use URI matching to route external application access to specific pages of the __bookinfo.com__ service.
 
     ![Access Route](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/out-to-in01.png)
 
-2. Click `Traffic Management` -> `Gateway Rules` -> `Create` to create a gateway rule for the Istio gateway and expose the service and ports externally.
+2. Click __Traffic Management__ -> __Gateway__ -> __Create__ to create a gateway rule for the Istio gateway and expose the service and ports externally.
 
     ![Create Rule](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/out-to-in02.png)
 
@@ -42,9 +42,9 @@ This page explains how external applications can access services inside the mesh
         - bookinfo.com
     ```
 
-3. Click `OK` to return to the gateway rule list, where you will see a successful creation message.
+3. Click __OK__ to return to the gateway rule list, where you will see a successful creation message.
 
-4. Click `Traffic Management` -> `Virtual Services` -> `Create` to create a routing rule that routes based on the URI in the request to the specified pages.
+4. Click __Traffic Management__ -> __Virtual Service__ -> __Create__ to create a routing rule that routes based on the URI in the request to the specified pages.
 
     ![Create Routing Rule](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/out-to-in04.png)
 
@@ -77,7 +77,7 @@ This page explains how external applications can access services inside the mesh
               number: 9080
     ```
 
-5. Click `OK` to return to the virtual service list, where you will see a successful creation message.
+5. Click __OK__ to return to the virtual service list, where you will see a successful creation message.
 
 !!! info
 
