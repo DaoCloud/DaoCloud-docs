@@ -10,7 +10,7 @@ In the left navigation menu, click `Mesh Sidecar` -> `Namespace`, to view the si
 
 When there are many namespaces, you can sort them by name and search for them using the search function.
 
-![View Sidecar Injection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/ns-sidecar01.png)
+![View Sidecar Injection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/ns-sidecar001.png)
 
 ## Enable Sidecar Injection
 
