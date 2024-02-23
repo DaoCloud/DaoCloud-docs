@@ -197,6 +197,7 @@ nav:
                   - 安装 VPA 插件: kpanda/user-guide/scale/install-vpa.md
                   - 创建 HPA 策略: kpanda/user-guide/scale/create-hpa.md
                   - 创建 VPA 策略: kpanda/user-guide/scale/create-vpa.md
+                  - HPA 和 CronHPA 兼容规则: kpanda/user-guide/scale/hpa-cronhpa-compatibility-rules.md
               - Helm 应用:
                   - Helm 模板: kpanda/user-guide/helm/README.md
                   - 上传 Helm 模板: kpanda/user-guide/helm/upload-helm.md
