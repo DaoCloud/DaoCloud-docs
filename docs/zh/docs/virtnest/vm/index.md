@@ -160,62 +160,62 @@
 
     ```yaml
     apiVersion: kubevirt.io/v1
-kind: VirtualMachine
-metadata:
-  name: demo
-  namespace: default
-spec:
-  dataVolumeTemplates:
-    - metadata:
-        name: systemdisk-demo
-        namespace: default
-      spec:
-        pvc:
-          accessModes:
-            - ReadWriteOnce
-          resources:
-            requests:
-              storage: 10Gi
-          storageClassName: hwameistor-storage-lvm-hdd
-        source:
-          registry:
-            url: >-
-              docker://release-ci.daocloud.io/virtnest/system-images/ubuntu-22.04-x86_64:v1
-  runStrategy: Always
-  template:
+    kind: VirtualMachine
+    metadata:
+      name: demo
+      namespace: default
     spec:
-      architecture: amd64
-      domain:
-        cpu:
-          cores: 1
-          sockets: 1
-          threads: 1
-        devices:
-          disks:
-            - bootOrder: 1
-              disk:
-                bus: virtio
-              name: systemdisk-demo
-            - disk:
-                bus: virtio
-              name: cloudinitdisk
-          interfaces:
-            - masquerade: {}
-              name: default
-        machine:
-          type: q35
-        resources:
-          requests:
-            memory: 2Gi
-      networks:
-        - name: default
-          pod: {}
-      volumes:
-        - dataVolume:
+      dataVolumeTemplates:
+        - metadata:
             name: systemdisk-demo
-          name: systemdisk-demo
-        - cloudInitNoCloud:
-            userDataBase64: >-
-              I2Nsb3VkLWNvbmZpZwpzc2hfcHdhdXRoOiB0cnVlCmRpc2FibGVfcm9vdDogZmFsc2UKY2hwYXNzd2Q6IHsibGlzdCI6ICJyb290OjEyMzQ1NiIsIGV4cGlyZTogRmFsc2V9CgoKcnVuY21kOgogIC0gc2VkIC1pICIvI1w/UGVybWl0Um9vdExvZ2luL3MvXi4qJC9QZXJtaXRSb290TG9naW4geWVzL2ciIC9ldGMvc3NoL3NzaGRfY29uZmlnCiAgLSBzeXN0ZW1jdGwgcmVzdGFydCBzc2guc2VydmljZQ==
-          name: cloudinitdisk
+            namespace: default
+          spec:
+            pvc:
+              accessModes:
+                - ReadWriteOnce
+              resources:
+                requests:
+                  storage: 10Gi
+              storageClassName: hwameistor-storage-lvm-hdd
+            source:
+              registry:
+                url: >-
+                  docker://release-ci.daocloud.io/virtnest/system-images/ubuntu-22.04-x86_64:v1
+      runStrategy: Always
+      template:
+        spec:
+          architecture: amd64
+          domain:
+            cpu:
+              cores: 1
+              sockets: 1
+              threads: 1
+            devices:
+              disks:
+                - bootOrder: 1
+                  disk:
+                    bus: virtio
+                  name: systemdisk-demo
+                - disk:
+                    bus: virtio
+                  name: cloudinitdisk
+              interfaces:
+                - masquerade: {}
+                  name: default
+            machine:
+              type: q35
+            resources:
+              requests:
+                memory: 2Gi
+          networks:
+            - name: default
+              pod: {}
+          volumes:
+            - dataVolume:
+                name: systemdisk-demo
+              name: systemdisk-demo
+            - cloudInitNoCloud:
+                userDataBase64: >-
+                  I2Nsb3VkLWNvbmZpZwpzc2hfcHdhdXRoOiB0cnVlCmRpc2FibGVfcm9vdDogZmFsc2UKY2hwYXNzd2Q6IHsibGlzdCI6ICJyb290OjEyMzQ1NiIsIGV4cGlyZTogRmFsc2V9CgoKcnVuY21kOgogIC0gc2VkIC1pICIvI1w/UGVybWl0Um9vdExvZ2luL3MvXi4qJC9QZXJtaXRSb290TG9naW4geWVzL2ciIC9ldGMvc3NoL3NzaGRfY29uZmlnCiAgLSBzeXN0ZW1jdGwgcmVzdGFydCBzc2guc2VydmljZQ==
+              name: cloudinitdisk
     ```
