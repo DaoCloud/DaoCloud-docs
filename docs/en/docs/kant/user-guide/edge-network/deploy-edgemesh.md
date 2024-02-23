@@ -1,6 +1,6 @@
 ---
 MTPE: FanLin
-date: 2024-01-25
+date: 2024-02-23
 ---
 
 # Deploy EdgeMesh
@@ -31,7 +31,7 @@ This page describes the specific workflow.
     kubectl label services kubernetes service.edgemesh.kubeedge.io/service-proxy-name=""
     ```
 
-## Install via Helm
+## Install with Helm
 
 The steps are as follows:
 
@@ -66,11 +66,12 @@ The steps are as follows:
     With the default YAML configuration, you need to supplement the authentication password (PSK)
     and relay node information, otherwise the deployment will fail.
 
-**PSK and Relay Node Configuration**
+**PSK and Relay Node configuration**
 
 ```yaml
   # PSK: is an authentication password that ensures that each edgemesh-agent can only establish a connection if it has the same "PSK password". For more information, please refer to
   # [PSK](https://edgemesh.netlify.app/en/guide/security.html). It is recommended to generate it using openssl, or it can be set to a custom random string.
+
   psk: Juis9HP1XBouyO5pWGeZa8LtipDURrf17EJvUHcJGuQ=
 
   # Relay Node: is a node that forwards packets in network communication. It acts as a bridge between the source node and the destination node in communication,
@@ -89,8 +90,11 @@ The steps are as follows:
 **Here is an example:**
 
 ```yaml
+global:
+  imageRegistry: docker.m.daocloud.io
 agent:
-  image: kubeedge/edgemesh-agent:v1.14.0
+  repository: kubeedge/edgemesh-agent
+  tag: v1.14.0
   affinity: {}
   nodeSelector: {}
   tolerations: []
@@ -101,13 +105,12 @@ agent:
     requests:
       cpu: 0.5
       memory: 128Mi
-
-  psk: Juis9HP1XBouyO5pWGeZa8LtipDURrf17EJvUHcJGuQ=
+  psk: JugH9HP1XBouyO5pWGeZa8LtipDURrf17EJvUHcJGuQ=
 
   relayNodes:
-  - nodeName: masternode
+  - nodeName: masternode ## your relay node name
     advertiseAddress:
-    - 10.31.223.12
+    - x.x.x.x ## your relay node ip
 
   modules:
     edgeProxy:
@@ -116,26 +119,16 @@ agent:
       enable: true
 ```
 
-## Verify the Deployment Result
+## Verify the deployment
 
 After the deployment is complete, you can run the following command to check if the EdgeMesh is successfully deployed.
 
-```shell
-$ helm ls -A
-NAME            NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
-edgemesh        kubeedge        1               2022-09-18 12:21:47.097801805 +0800 CST deployed        edgemesh-0.1.0  latest
+1. Select __Container Management__ -> __Clusters__ in the left navigation bar, enter the cluster list page, click on the cluster name to enter the cluster details page.
 
-$ kubectl get all -n kubeedge -o wide
-NAME                       READY   STATUS    RESTARTS   AGE   IP              NODE         NOMINATED NODE   READINESS GATES
-pod/edgemesh-agent-7gf7g   1/1     Running   0          39s   192.168.0.71    k8s-node1    <none>           <none>
-pod/edgemesh-agent-fwf86   1/1     Running   0          39s   192.168.0.229   k8s-master   <none>           <none>
-pod/edgemesh-agent-twm6m   1/1     Running   0          39s   192.168.5.121   ke-edge2     <none>           <none>
-pod/edgemesh-agent-xwxlp   1/1     Running   0          39s   192.168.5.187   ke-edge1     <none>           <none>
+1. Select __Helm Apps__ in the left menu, enter the Helm application list page.
 
-NAME                            DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE   CONTAINERS       IMAGES                           SELECTOR
-daemonset.apps/edgemesh-agent   4         4         4       4            4           <none>          39s   edgemesh-agent   kubeedge/edgemesh-agent:latest   k8s-app=kubeedge,kubeedge=edgemesh-agent
-```
+1. Check the status of the Helm application. The current status is __Deployed__, which means that the EdgeMesh application has been deployed successfully.
 
-![Successfully Deployed](../images/deploy-edgemesh-04.png)
+    ![EdgeMesh Deployment Success](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/deploy-edgemesh-12.png)
 
 Next: [Create Services](service.md)
