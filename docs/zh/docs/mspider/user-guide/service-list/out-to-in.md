@@ -9,17 +9,17 @@ hide:
 
 **前置条件：**
 
-- 服务 `bookinfo.com` 运行于网格 `global-service` 的 `default` 命名空间下
+- 服务 __bookinfo.com__ 运行于网格 __global-service__ 的 __default__ 命名空间下
 
-- 网格提供 `ingressgateway` 网关实例
+- 网格提供 __ingressgateway__ 网关实例
 
-**配置目标：** 实现内部服务 `bookinfo.com` 对外暴露。
+**配置目标：** 实现内部服务 __bookinfo.com__ 对外暴露。
 
-1. 通过 URI 匹配方式，实现外部应用对服务 `bookinfo.com` 的指定页面访问路由。
+1. 通过 URI 匹配方式，实现外部应用对服务 __bookinfo.com__ 的指定页面访问路由。
 
     ![访问路由](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/out-to-in01.png)
 
-2. 点击`流量治理` -> `网关规则` -> `创建`为 istio 网关创建网关规则，对外暴露服务及端口。
+2. 点击 __流量治理__ -> __网关规则__ -> __创建__ 为 istio 网关创建网关规则，对外暴露服务及端口。
 
     ![创建规则](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/out-to-in02.png)
 
@@ -42,9 +42,9 @@ hide:
         - bookinfo.com
     ```
 
-3. 点击`确定`回到网关规则列表，可见创建成功提示。
+3. 点击 __确定__ 回到网关规则列表，可见创建成功提示。
 
-4. 点击`流量治理` ->`虚拟服务` -> `创建`来创建路由规则，基于请求中的 URI 路由到指定页面。
+4. 点击 __流量治理__ -> __虚拟服务__ ->  __创建__ 来创建路由规则，基于请求中的 URI 路由到指定页面。
 
     ![创建路由规则](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/out-to-in04.png)
 
@@ -77,7 +77,7 @@ hide:
               number: 9080
     ```
 
-5. 点击`确定`回到虚拟服务列表，可以看到创建成功的提示。
+5. 点击 __确定__ 回到虚拟服务列表，可以看到创建成功的提示。
 
 !!! info
 

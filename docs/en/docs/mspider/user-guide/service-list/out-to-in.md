@@ -11,7 +11,7 @@ This page explains how external applications can access services inside the mesh
 
 - The service __bookinfo.com__ is running in the __default__ namespace of the mesh __global-service__ .
 
-- The mesh provides an __ingressgateway__ gateway instance.
+- The mesh provides an __ingressgateway__ instance.
 
 **Objective:** Expose the internal service __bookinfo.com__ to the outside.
 
@@ -19,7 +19,7 @@ This page explains how external applications can access services inside the mesh
 
     ![Access Route](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/out-to-in01.png)
 
-2. Click __Traffic Management__ -> __Gateway__ -> __Create__ to create a gateway rule for the Istio gateway and expose the service and ports externally.
+2. Click __Traffic Management__ -> __Gateway__ -> __Create__ to create a gateway for the Istio gateway and expose the service and ports externally.
 
     ![Create Rule](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/out-to-in02.png)
 
@@ -42,7 +42,7 @@ This page explains how external applications can access services inside the mesh
         - bookinfo.com
     ```
 
-3. Click __OK__ to return to the gateway rule list, where you will see a successful creation message.
+3. Click __OK__ to return to the gateway list, where you will see a successful creation message.
 
 4. Click __Traffic Management__ -> __Virtual Service__ -> __Create__ to create a routing rule that routes based on the URI in the request to the specified pages.
 
