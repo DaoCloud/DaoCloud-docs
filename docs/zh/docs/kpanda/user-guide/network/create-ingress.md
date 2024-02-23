@@ -59,14 +59,15 @@ Ingress 是对集群中服务的外部访问进行管理的 API 对象，典型�
   - __基于 Header__ ： 设定 Header 规则后，流量根据设定的 Header 条件进行流量分发。
 - __标签__ ：选填，为路由添加标签。
 - __注解__ ：选填，为路由添加注解。
+
 ### 创建 HTTPS 协议路由
 
-  输入如下参数：
-  ![创建路由](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/ingress04.png)
+输入如下参数：
+![创建路由](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/ingress04.png)
 
-   !!! note
+!!! note
 
-        注意：与 HTTP 协议 __设置路由规则__ 不同，增加密钥选择证书，其他基本一致。
+    注意：与 HTTP 协议 __设置路由规则__ 不同，增加密钥选择证书，其他基本一致。
 
 - __协议__ :必填指授权入站到达集群服务的协议，支持 HTTP （不需要身份认证）或 HTTPS（需需要配置身份认证） 协议。这里选择 HTTPS 协议的路由。
 - __密钥__ ：必填，Https TLS 证书，[创建秘钥](../configmaps-secrets/create-secret.md)。
