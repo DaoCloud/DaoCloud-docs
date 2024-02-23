@@ -979,9 +979,9 @@ nav:
                       - Config Parameters: middleware/minio/user-guide/config.md
                       - MinIO Identity Management: middleware/minio/user-guide/user-management.md
       - Cloud Native AI:
-          - Cloud Native AI:
+          - Baize:
               - Introduction:
-                  - What is Cloud Native AI: baize/intro/index.md
+                  - What is Baize: baize/intro/index.md
                   - Installation: baize/intro/install.md
                   - First Time Usage: baize/intro/first.md
               - Development Console:
