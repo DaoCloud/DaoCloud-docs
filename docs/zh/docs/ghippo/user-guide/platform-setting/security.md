@@ -19,4 +19,4 @@ DCE 5.0 在图形界面上提供了基于密码和访问控制的安全策略。
 
 进入全局管理后，在左侧导航栏点击 __平台设置__ -> __安全策略__ ，即可设置密码策略和访问控制策略。
 
-![安全策略](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/security-policy.png)
+![安全策略](../../images/security-policy.png)
