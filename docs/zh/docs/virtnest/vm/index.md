@@ -162,12 +162,13 @@
     apiVersion: kubevirt.io/v1
     kind: VirtualMachine
     metadata:
-      name: example
+      name: demo
       namespace: default
     spec:
       dataVolumeTemplates:
         - metadata:
-            name: systemdisk-example
+            name: systemdisk-demo
+            namespace: default
           spec:
             pvc:
               accessModes:
@@ -175,22 +176,26 @@
               resources:
                 requests:
                   storage: 10Gi
-              storageClassName: rook-ceph-block
+              storageClassName: hwameistor-storage-lvm-hdd
             source:
               registry:
                 url: >-
-                  docker://release-ci.daocloud.io/virtnest/system-images/centos-7.9-x86_64:v1
+                  docker://release-ci.daocloud.io/virtnest/system-images/ubuntu-22.04-x86_64:v1
       runStrategy: Always
       template:
         spec:
+          architecture: amd64
           domain:
             cpu:
               cores: 1
+              sockets: 1
+              threads: 1
             devices:
               disks:
-                - disk:
+                - bootOrder: 1
+                  disk:
                     bus: virtio
-                  name: systemdisk-example
+                  name: systemdisk-demo
                 - disk:
                     bus: virtio
                   name: cloudinitdisk
@@ -201,12 +206,16 @@
               type: q35
             resources:
               requests:
-                memory: 1Gi
+                memory: 2Gi
           networks:
             - name: default
               pod: {}
           volumes:
             - dataVolume:
-                name: systemdisk-example
-              name: systemdisk-example
+                name: systemdisk-demo
+              name: systemdisk-demo
+            - cloudInitNoCloud:
+                userDataBase64: >-
+                  I2Nsb3VkLWNvbmZpZwpzc2hfcHdhdXRoOiB0cnVlCmRpc2FibGVfcm9vdDogZmFsc2UKY2hwYXNzd2Q6IHsibGlzdCI6ICJyb290OjEyMzQ1NiIsIGV4cGlyZTogRmFsc2V9CgoKcnVuY21kOgogIC0gc2VkIC1pICIvI1w/UGVybWl0Um9vdExvZ2luL3MvXi4qJC9QZXJtaXRSb290TG9naW4geWVzL2ciIC9ldGMvc3NoL3NzaGRfY29uZmlnCiAgLSBzeXN0ZW1jdGwgcmVzdGFydCBzc2guc2VydmljZQ==
+              name: cloudinitdisk
     ```
