@@ -610,19 +610,19 @@ nav:
                   - Log in to Grafana with Admin: insight/user-guide/dashboard/login-grafana.md
                   - Import Custom Dashboard: insight/user-guide/dashboard/import-dashboard.md
               - Infrastructure:
-                  - Clusters: insight/user-guide/scenario-insight/cluster.md
-                  - Nodes: insight/user-guide/scenario-insight/node.md
-                  - Namespaces: insight/user-guide/scenario-insight/namespace.md
-                  - Containers: insight/user-guide/scenario-insight/container.md
-                  - Events: insight/user-guide/data-query/event.md
-                  - Probes: insight/user-guide/scenario-insight/probe.md
+                  - Clusters: insight/user-guide/infra/cluster.md
+                  - Nodes: insight/user-guide/infra/node.md
+                  - Namespaces: insight/user-guide/infra/namespace.md
+                  - Containers: insight/user-guide/infra/container.md
+                  - Events: insight/user-guide/infra/event.md
+                  - Probes: insight/user-guide/infra/probe.md
               - Metrics: insight/user-guide/data-query/metric.md
               - Logging: insight/user-guide/data-query/log.md
               - Traces:
-                  - Service Topology: insight/user-guide/scenario-insight/topology.md
-                  - Topology Helper: insight/user-guide/scenario-insight/topology-helper.md
-                  - Service Monitor: insight/user-guide/scenario-insight/service.md
-                  - Trace Query: insight/user-guide/data-query/trace.md
+                  - Service Topology: insight/user-guide/trace/topology.md
+                  - Topology Helper: insight/user-guide/trace/topology-helper.md
+                  - Service Monitor: insight/user-guide/trace/service.md
+                  - Trace Query: insight/user-guide/trace/trace.md
               - Alert Center:
                   - insight/user-guide/alert-center/index.md
                   - Alert Rules: insight/user-guide/alert-center/alert-policy.md
@@ -630,24 +630,27 @@ nav:
                   - Configure Notification Server: insight/user-guide/alert-center/sms-provider.md
                   - Message Template: insight/user-guide/alert-center/msg-template.md
                   - Alert Silence: insight/user-guide/alert-center/silent.md
+                  - Alert Inhibition: insight/user-guide/alert-center/inhibition.md
               - Data Collection:
                   - Collection Management: insight/user-guide/collection-manag/collection-manag.md
                   - Service Monitor: insight/user-guide/collection-manag/service-monitor.md
                   - Collection Metrics: insight/user-guide/collection-manag/metric-collect.md
                   - insight-agent Status: insight/user-guide/collection-manag/agent-status.md
+                  - Custom Probe: insight/user-guide/collection-manag/probe-module.md
               - System Config:
                   - System Components: insight/user-guide/system-config/system-component.md
                   - System Config: insight/user-guide/system-config/system-config.md
                   - Modify Config: insight/user-guide/system-config/modify-config.md
               - FAQs:
                   - Clock Skew of Trace Data: insight/faq/traceclockskew.md
-                  - Alert Notification Flow: insight/faq/alertnotification.md
-                  - Lucene Syntax: insight/faq/lucene.md
+              - References:
+                  - Alert Notification Flow: insight/reference/alertnotification.md
+                  - Notification Template Instructions: insight/reference/notify-helper.md
+                  - Lucene Syntax: insight/reference/lucene.md
+                  - Collect Logs with Sidecar: insight/reference/tailing-sidecar.md
               - Best Practice:
-                  - Collect Container Log with Sidecar: insight/best-practice/tailing-sidecar.md
                   - Log Collection Troubleshoot: insight/best-practice/debug-log.md
                   - Trace Collection Troubleshoot: insight/best-practice/debug-trace.md
-                  - Configure Notification Template: insight/best-practice/notify-helper.md
                   - Receive SkyWalking Trace Data using OTel: insight/best-practice/sw-to-otel.md
                   - Use Insight to find service's problems: insight/best-practice/find_root_cause.md
                   - Kafka + ES for Handling Large-Scale Logs: insight/best-practice/insight-kafka.md

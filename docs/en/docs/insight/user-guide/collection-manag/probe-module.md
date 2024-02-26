@@ -1,15 +1,15 @@
-# 自定义探测方式
+# Custom Probe Methods
 
-在本文中，我们将介绍如何在已有的 Blackbox ConfigMap 中配置自定义的探测方式。
-我们将以 HTTP 探测方式作为示例，展示如何修改 ConfigMap 以实现自定义的 HTTP 探测。
+In this page, we will explain how to configure custom probe methods in an existing Blackbox ConfigMap.
+We will use the HTTP probe method as an example to demonstrate how to modify the ConfigMap to achieve custom HTTP probing.
 
-## 操作步骤
+## Procedure
 
-1. 进入 __容器管理__ 的集群列表，点击进入目标集群的详情；
-2. 点击左侧导航，选择 配置与密钥 > 配置项；
-3. 找到名为 __insight-agent-prometheus-blackbox-exporter__ 的配置项，点击操作中的 __编辑 YAML__；
-
-    - 在 __modules__ 下添加自定义探测方式。此处添加 HTTP 探测方式为例：
+1. Go to the cluster list in __Container Management__ and enter the details of the target cluster.
+2. Click the left navigation pane and select __ConfigMaps & Secrets__ -> __ConfigMaps__ .
+3. Find the ConfigMap named __insight-agent-prometheus-blackbox-exporter__ and click __Edit YAML__ .
+   
+    Add custom probe methods under __modules__ . Here we use the HTTP probe method as an example:
 
     ```yaml
     module:
@@ -24,13 +24,13 @@
 
 !!! info
 
-    更多探测方式可参考 [blackbox_exporter Configuration](https://github.com/prometheus/blackbox_exporter/blob/master/CONFIGURATION.md)。
+    For more probe methods, refer to [blackbox_exporter Configuration](https://github.com/prometheus/blackbox_exporter/blob/master/CONFIGURATION.md).
 
-## 友情参考
+## Friendly Reference
 
-以下 YAML 文件中包含了 HTTP、TCP、SMTP、ICMP、DNS 等多种探测方式，可根据需求自行修改 `insight-agent-prometheus-blackbox-exporter` 的配置文件。
+The following YAML file contains various probe methods such as HTTP, TCP, SMTP, ICMP, DNS, etc. You can modify the configuration file of `insight-agent-prometheus-blackbox-exporter` according to your needs.
 
-??? note "点击查看完整的 YAML 文件"
+??? note "Click to view the complete YAML file"
 
     ```yaml
     kind: ConfigMap
@@ -86,18 +86,18 @@
               tls: true
               tls_config:
                 insecure_skip_verify: false
-          http_2xx_example:               # http 探测示例
+          http_2xx_example:               # http probe example
             prober: http
-            timeout: 5s                   # 探测的超时时间
+            timeout: 5s                   # probe timeout
             http:
-              valid_http_versions: ["HTTP/1.1", "HTTP/2.0"]                   # 返回信息中的 Version，一般默认即可
-              valid_status_codes: []  # Defaults to 2xx                       # 有效的返回码范围，如果请求的返回码在该范围内，视为探测成功
-              method: GET                 # 请求方法
-              headers:                    # 请求的头部
+              valid_http_versions: ["HTTP/1.1", "HTTP/2.0"]                   # Version in the response, usually default
+              valid_status_codes: []  # Defaults to 2xx                       # Valid range of response codes, probe successful if within this range
+              method: GET                 # request method
+              headers:                    # request headers
                 Host: vhost.example.com
                 Accept-Language: en-US
                 Origin: example.com
-              no_follow_redirects: false  # 是否允许重定向
+              no_follow_redirects: false  # allow redirects
               fail_if_ssl: false   
               fail_if_not_ssl: false
               fail_if_body_matches_regexp:
@@ -111,39 +111,39 @@
               fail_if_header_not_matches:
                 - header: Access-Control-Allow-Origin
                   regexp: '(\*|example\.com)'
-              tls_config:                  # 针对 https 请求的 tls 的配置
+              tls_config:                  # tls configuration for https requests
                 insecure_skip_verify: false
-              preferred_ip_protocol: "ip4" # defaults to "ip6"                 # 首选的 IP 协议版本
+              preferred_ip_protocol: "ip4" # defaults to "ip6"                 # Preferred IP protocol version
               ip_protocol_fallback: false  # no fallback to "ip6"            
-          http_post_2xx:                   # 带 Body 的 http 探测的示例
+          http_post_2xx:                   # http probe example with body
             prober: http
             timeout: 5s
             http:
-              method: POST                 # 探测的请求方法
+              method: POST                 # probe request method
               headers:
                 Content-Type: application/json
-              body: '{"username":"admin","password":"123456"}'                   # 探测时携带的 body
-          http_basic_auth_example:         # 带用户名密码的探测的示例
+              body: '{"username":"admin","password":"123456"}'                   # body carried during probe
+          http_basic_auth_example:         # probe example with username and password
             prober: http
             timeout: 5s
             http:
               method: POST
               headers:
                 Host: "login.example.com"
-              basic_auth:                  # 探测时要加的用户名密码
+              basic_auth:                  # username and password to be added during probe
                 username: "username"
                 password: "mysecret"
           http_custom_ca_example:
             prober: http
             http:
               method: GET
-              tls_config:                  # 指定探测时使用的根证书
+              tls_config:                  # root certificate used during probe
                 ca_file: "/certs/my_cert.crt"
           http_gzip:
             prober: http
             http:
               method: GET
-              compression: gzip            # 探测时使用的压缩方法
+              compression: gzip            # compression method used during probe
           http_gzip_with_accept_encoding:
             prober: http
             http:
@@ -151,15 +151,15 @@
               compression: gzip
               headers:
                 Accept-Encoding: gzip
-          tls_connect:                     # TCP 探测的示例
+          tls_connect:                     # TCP probe example
             prober: tcp
             timeout: 5s
             tcp:
-              tls: true                    # 是否使用 TLS
+              tls: true                    # use TLS
           tcp_connect_example:
             prober: tcp
             timeout: 5s
-          imap_starttls:                   # 探测 IMAP 邮箱服务器的配置示例
+          imap_starttls:                   # IMAP email server probe configuration example
             prober: tcp
             timeout: 5s
             tcp:
@@ -170,7 +170,7 @@
                 - starttls: true
                 - send: ". capability"
                 - expect: "CAPABILITY IMAP4rev1"
-          smtp_starttls:                   # 探测 SMTP 邮箱服务器的配置示例
+          smtp_starttls:                   # SMTP email server probe configuration example
             prober: tcp
             timeout: 5s
             tcp:
@@ -194,18 +194,18 @@
                 - expect: "PING :([^ ]+)"
                   send: "PONG ${1}"
                 - expect: "^:[^ ]+ 001"
-          icmp_example:                    # ICMP 探测配置的示例
+          icmp_example:                    # ICMP probe configuration example
             prober: icmp
             timeout: 5s
             icmp:
               preferred_ip_protocol: "ip4"
               source_ip_address: "127.0.0.1"
-          dns_udp_example:                 # 使用 UDP 进行 DNS 查询的示例
+          dns_udp_example:                 # DNS query example using UDP
             prober: dns
             timeout: 5s
             dns:
-              query_name: "www.prometheus.io"                 # 要解析的域名
-              query_type: "A"              # 该域名对应的类型
+              query_name: "www.prometheus.io"                 # domain name to resolve
+              query_type: "A"              # type corresponding to this domain
               valid_rcodes:
               - NOERROR
               validate_answer_rrs:
@@ -228,7 +228,7 @@
             dns:
               query_name: "prometheus.io"
               query_type: "SOA"
-          dns_tcp_example:               # 使用 TCP 进行 DNS 查询的示例
+          dns_tcp_example:               # DNS query example using TCP
             prober: dns
             dns:
               transport_protocol: "tcp" # defaults to "udp"

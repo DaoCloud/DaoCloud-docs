@@ -21,13 +21,13 @@ helm uninstall insight-agent -n insight-system
 
 综上请手动删除对应的 `secret`，以下两种方式任选一种即可：
 
-1. **通过命令行删除**：登录目标集群的控制台，执行以下命令：
+- **通过命令行删除**：登录目标集群的控制台，执行以下命令：
 
     ```sh
     kubectl -n insight-system delete secret insight-agent-opentelemetry-operator-controller-manager-service-cert
     ```
 
-2. **通过 UI 删除**：登录 DCE 5.0 容器管理，选择目标集群，选择左侧导航进入`密钥`，输入
+- **通过 UI 删除**：登录 DCE 5.0 容器管理，选择目标集群，从左侧导航进入`密钥`，输入
    `insight-agent-opentelemetry-operator-controller-manager-service-cert`，选择`删除`。
 
 ## v0.22.0
@@ -38,7 +38,7 @@ helm uninstall insight-agent -n insight-system
 
 更新 insight-agent 日志配置从 elasticsearch 改为 kafka 或者从 kafka 改为 elasticsearch，实际上都未生效，还是使用更新前配置。
 
-**解决方案**：
+**解决方案** ：
 
 手动重启集群中的 fluentbit。
 

@@ -181,9 +181,9 @@ elasticity of IT systems, and significantly accelerating application delivery.
 
     This provides real-time monitoring of applications and resources, collects metrics, logs, and events to analyze the health status.
 
-    - [Infrastructure Monitoring](../insight/user-guide/scenario-insight/cluster.md)
+    - [Infrastructure](../insight/user-guide/infra/cluster.md)
     - [Log Query](../insight/user-guide/data-query/log.md)
-    - [Tracing](../insight/user-guide/data-query/trace.md)
+    - [Tracing](../insight/user-guide/trace/trace.md)
     - [Alerts](../insight/user-guide/alert-center/index.md)
 
 </div>

@@ -11,7 +11,7 @@ hide:
 
 集群已安装 Insight Agent，且所有的容器组处于 __运行中__ 状态。
 
-- 安装 Insight Agent 请参考：[在线安装 insight-agent](../../../insight/quickstart/install/install-agent.md) 或[离线升级 insight-agent](../../../insight/quickstart/install/offline-install.md)。
+- 安装 Insight Agent 请参考：[在线安装 insight-agent](../../quickstart/install/install-agent.md) 或[离线升级 insight-agent](../../quickstart/install/offline-install.md)。
 
 ## 操作步骤
 

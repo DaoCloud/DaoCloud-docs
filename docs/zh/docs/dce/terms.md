@@ -2090,7 +2090,7 @@
     它还允许客户端应用程序积极地识别他们正在调用的服务器，从而降低客户端与欺诈站点通信的风险。
     这可以确保第三方无法查看和监控使用 TLS 在应用程序之间传输的数据，从而保护敏感隐私的信息，例如信用卡号、密码、位置等。
 
-- [Trace](https://opentelemetry.io/docs/concepts/signals/traces/), [链路](../insight/user-guide/data-query/trace.md)
+- [Trace](https://opentelemetry.io/docs/concepts/signals/traces/), [链路](../insight/user-guide/trace/trace.md)
 
     记录单次请求范围内的处理信息，其中包括服务调用和处理时长等数据。
     一个 Trace 有一个唯一的 Trace ID ，并由多个 Span 组成。

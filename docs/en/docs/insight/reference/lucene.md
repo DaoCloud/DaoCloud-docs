@@ -125,39 +125,39 @@ to represent a range. Here are examples of range queries:
 
 2. Exclusive boundary range query:
 
-   - Curly braces __{ }__ indicate an open interval that excludes the boundary values.
-   - Example: __field:{value1 TO value2}__ represents the range of values for __field__ 
-     between __value1__ and __value2__ , excluding both.
+    - Curly braces __{ }__ indicate an open interval that excludes the boundary values.
+    - Example: __field:{value1 TO value2}__ represents the range of values for __field__ 
+      between __value1__ and __value2__ , excluding both.
 
 3. Omitted boundary range query:
 
-   - You can omit one or both boundary values to specify an infinite range.
-   - Example: __field:[value TO ]__ represents the range of values for __field__ from __value__ to
+    - You can omit one or both boundary values to specify an infinite range.
+    - Example: __field:[value TO ]__ represents the range of values for __field__ from __value__ to
      positive infinity, and __field:[ TO value]__ represents the range of values for __field__ from
      negative infinity to __value__ .
 
-   !!! note
+    !!! note
 
-       Please note that range queries are applicable only to fields that can be sorted,
-       such as numeric fields, date fields, etc. Also, ensure that you correctly specify
-       the boundary values as the actual value type of the field in your query.
-       If you want to perform a range query across the entire index without specifying
-       a specific field, you can use the wildcard query `*` instead of a field name.
+        Please note that range queries are applicable only to fields that can be sorted,
+        such as numeric fields, date fields, etc. Also, ensure that you correctly specify
+        the boundary values as the actual value type of the field in your query.
+        If you want to perform a range query across the entire index without specifying
+        a specific field, you can use the wildcard query `*` instead of a field name.
 
 #### Examples
 
 1. Specify a field
 
-   ```lucene
-   timestamp:[2022-01-01 TO 2022-01-31]
-   ```
+    ```lucene
+    timestamp:[2022-01-01 TO 2022-01-31]
+    ```
 
-   This will retrieve data where the __timestamp__ field falls within the range from January 1, 2022, to January 31, 2022.
+    This will retrieve data where the __timestamp__ field falls within the range from January 1, 2022, to January 31, 2022.
 
 2. Not specify a field
 
-   ```lucene
-   *:[value1 TO value2]
-   ```
+    ```lucene
+    *:[value1 TO value2]
+    ```
 
-   This will search the entire index for documents with values ranging from __value1__ to __value2__ .
+    This will search the entire index for documents with values ranging from __value1__ to __value2__ .
