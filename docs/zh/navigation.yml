@@ -105,6 +105,7 @@ nav:
                   - 查看流水线:
                       - 查看流水线详情: amamba/user-guide/pipeline/view/view-pipeline.md
                       - 查看流水线运行记录详情: amamba/user-guide/pipeline/view/view-run.md
+                  - Jenkins Pipeline 语法: amamba/user-guide/pipeline/pipeline-syntax.md
                   - 流水线配置参数:
                       - 流水线中的概念: amamba/user-guide/pipeline/config/concept.md
                       - 图形化任务模板参数: amamba/user-guide/pipeline/config/step.md
