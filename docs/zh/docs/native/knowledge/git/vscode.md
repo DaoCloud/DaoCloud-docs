@@ -23,7 +23,7 @@
 
 ## 编辑 Repo
 
-git clone 某个 repo 后，建议通过 **File** -> **Open Folder...** 进入 repo 工作空间。
+`git clone` 某个 repo 后，建议通过 **File** -> **Open Folder...** 进入 repo 工作空间。
 随后就能在底部终端的 repo 根目录下运行各种 git 命令了。
 
 ![workspace](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/vscode02.png)
@@ -32,16 +32,16 @@ git clone 某个 repo 后，建议通过 **File** -> **Open Folder...** 进入 r
 
 查找所有图片：
 
-```
+```text
 !\[.*?\]\((?:https?:\/\/)?\S+\.(?:png|jpg|jpeg|gif|bmp)\)
 ```
 
 查找所有前后带 /` 的字符，并替换为粗体：
 
-```
+```text
 `([^`].*?)`
 ```
-```
+```text
 **$1**
 ```
 

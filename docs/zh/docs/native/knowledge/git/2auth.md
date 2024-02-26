@@ -5,11 +5,11 @@
 
 ## 开启两步验证
 
-1. 登录 GitHub，在右上角的头像旁，点击下拉箭头，选择 `Settings`。
+1. 登录 GitHub，在右上角的头像旁，点击下拉箭头，选择 __Settings__ 。
 
     ![设置菜单](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/2auth01.png)
 
-2. 选择 `Password and authentication` -> `Enable two-factor authentication`。
+2. 选择 __Password and authentication__ -> __Enable two-factor authentication__ 。
 
     ![启用开关](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/2auth02.png)
 
@@ -17,7 +17,7 @@
 
     ![sms 短信认证](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/2auth03.png)
 
-4. 找了半天发现没有 China -_! 还好办法总比问题多。例如在 Chrome 中，右键点击当前页面，选择 `检查`-> `Console`，在光标处运行以下命令：
+4. 找了半天发现没有 China -_! 还好办法总比问题多。例如在 Chrome 中，右键点击当前页面，选择 __检查__ -> __Console__ ，在光标处运行以下命令：
 
     ```bash
     var option = new Option("China +86","+86");
@@ -25,13 +25,13 @@
     document.getElementById('countrycode').options.add(option, 0);
     ```
 
-5. 现在出现 +86 了，输入你的手机号，点击 `Send authentication code`，输入手机短信的六位码进行验证，屏幕将显示 16 个 recovery code。
+5. 现在出现 +86 了，输入你的手机号，点击 __Send authentication code__ ，输入手机短信的六位码进行验证，屏幕将显示 16 个 recovery code。
 
     ![recovery code](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/2auth04.png)
 
     > 这个 recovery code 最好打印下来，电子版也要 download 存放好。 
 
-6. 点击 `I have saved my recovery codes`。恭喜你，屏幕出现了天女散花，两步验证设置成功了。
+6. 点击 __I have saved my recovery codes__ 。恭喜你，屏幕出现了天女散花，两步验证设置成功了。
 
 ## 设置 ssh-keygen 或 access token
 
@@ -70,7 +70,7 @@
     
     ![获取 ssh key](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/ssh4.png)
 
-5. 登录 GitHub，依次点击 `Settings` -> `SSH and GPG keys` -> `New SSH key`，随意给个 Title，在 Key 文本框中输入上一步获取的公钥后保存。
+5. 登录 GitHub，依次点击 __Settings__ -> __SSH and GPG keys__ -> __New SSH key__ ，随意给个 Title，在 Key 文本框中输入上一步获取的公钥后保存。
 
     ![获取 ssh key](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/ssh5.png)
 
@@ -87,4 +87,4 @@
     ```
 
 3. 运行 git clone xxx 命令，提示输入 UserName 和 Token。
-   这样就会在用户根目录生成一个名为 `.git-credentials` 的文件，里面保存了你的 UserName 和 Token。
+   这样就会在用户根目录生成一个名为 __.git-credentials__ 的文件，里面保存了你的 UserName 和 Token。

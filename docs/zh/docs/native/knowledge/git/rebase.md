@@ -20,7 +20,7 @@ git commit --amend --no-edit
 
 > 因为类似 kpanda 提倡 1 个 commit 对应 1 个 PR，这条命令将把修改追加到上一个 commit。
 
-然后运行 `git push origin docsite -f` 强制推送到远程仓库。
+然后运行 __git push origin docsite -f__ 强制推送到远程仓库。
 
 ### 方案 2
 
@@ -72,7 +72,7 @@ git rebase 之后把不相干的 commit 全部注释掉。
     git log
     ```
 
-    查看完后，按字母 `q` 退出。
+    查看完后，按字母 __q__ 退出。
 
 2. 发起变基。
 
@@ -80,7 +80,7 @@ git rebase 之后把不相干的 commit 全部注释掉。
     git rebase -i HEAD~3
     ```
     
-    `HEAD~3` 表示从头部开始追溯 3 条记录
+    __HEAD~3__ 表示从头部开始追溯 3 条记录
     
 3. 开始编辑文件。
     
@@ -106,7 +106,7 @@ git rebase 之后把不相干的 commit 全部注释掉。
 
 ## OpenSSL SSL_read 错误
 
-如果运行 `git push origin xxx` 后提示以下错误：
+如果运行 __git push origin xxx__ 后提示以下错误：
 
 ```text
 fatal: unable to access 'https://github.com/windsonsea/website-1.git/': OpenSSL SSL_read: Connection was reset, errno 10054
@@ -120,7 +120,7 @@ git config --global http.sslVerify "false"
 
 > 如果还提示这个错误，可以切换一个 VPN 的入口。
 
-然后重新运行 `git push origin xxx`，必要时可增加 `-f` 标记来强制推送。
+然后重新运行 __git push origin xxx__ ，必要时可增加 __-f__ 标记来强制推送。
 
 ## port 443 超时问题
 

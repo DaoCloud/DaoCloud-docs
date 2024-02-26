@@ -7,7 +7,7 @@
 
 在仓库的根目录中，
 
-1. 赋予 lsync.sh 脚本可执行权限（主要是解决 `permission denied` 问题）
+1. 赋予 lsync.sh 脚本可执行权限（主要是解决 __permission denied__ 问题）
 
     ```sh
     sudo chmod +x ./scripts/lsync.sh
@@ -56,10 +56,10 @@
 
 !!! tip
 
-    上述命令建议在 `main` 分支中运行。
+    上述命令建议在 __main__ 分支中运行。
 
 ## Windows
 
-可以在 [Git for Windows](https://gitforwindows.org/) 中直接运行上述 diff 命令，无需 `sudo chmod` 赋权操作。
+可以在 [Git for Windows](https://gitforwindows.org/) 中直接运行上述 diff 命令，无需 __sudo chmod__ 赋权操作。
 
 ![windows](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/windows.jpg)

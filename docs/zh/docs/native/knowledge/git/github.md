@@ -17,21 +17,21 @@ GitHub 号称有一亿开发者活跃，如何能在目标社区展露头角？
 
     看到一个 PR 或 Issue 时，如果心中有所疑问，或看出了什么问题，要积极留下 comments。
 
-    1. 点击每一行左侧的 `+` 号
+    1. 点击每一行左侧的 __+__ 号
 
         ![comments](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/comments1.png)
     
-    2. 点击 `Add a suggestion` 图标，修改代码后，点击 `Start a review`
+    2. 点击 __Add a suggestion__ 图标，修改代码后，点击 __Start a review__ 
 
         ![comments](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/comments2.png)
 
         !!! warning
 
-            尽量不要点击 `Add single comment`，除非你真的只有一条 comment。
+            尽量不要点击 __Add single comment__ ，除非你真的只有一条 comment。
             这是因为你每一条 comment，都会给这个 PR 的作者、Reviwer、关注者群发一封邮件！
-            如果你连续点击 `Add single comment`，将对这些人的邮箱形成轰炸效果，Spam!!!
+            如果你连续点击 __Add single comment__ ，将对这些人的邮箱形成轰炸效果，Spam!!!
 
-    3. 看完全文，做了所有 comment 之后，点击右上角 `Finish your review`，勾选 `Comment` 后点击 `Submit review`。
+    3. 看完全文，做了所有 comment 之后，点击右上角 __Finish your review__ ，勾选 __Comment__ 后点击 __Submit review__ 。
 
         ![comments](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/comments3.png)
 
