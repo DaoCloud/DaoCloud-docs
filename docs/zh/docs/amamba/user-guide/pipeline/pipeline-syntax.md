@@ -58,7 +58,7 @@ pipeline {
 
 - **node**
 
-    `agent { node { label 'labelName' } }` ，
+    `agent { node { label 'labelName' } }`，有关应用工作台内置的 node 请参考文档[使用内置 lable](../pipeline/config/agent.md)
 
 - **kubernetes**
 
@@ -130,6 +130,16 @@ pipeline {
     }
 }
 ```
+
+#### 在 `environment` 区域中使用凭证
+
+对于 secret text、 username and password 和 secret file 类型的凭据，支持通过使用 `environment` 的方式直接在流水线中使用，其他的凭证使用方式参考[使用凭证](https://www.jenkins.io/doc/book/pipeline/jenkinsfile/#handling-credentials)。
+
+使用方式请参考：
+
+- [通过 `environment` 使用 Secret text 凭证](https://www.jenkins.io/doc/book/pipeline/jenkinsfile/#secret-text)
+- [通过 `environment` 使用 Usernames and passwords 凭证](https://www.jenkins.io/doc/book/pipeline/jenkinsfile/#usernames-and-passwords)
+- [通过 `environment` 使用 Secret files 凭证](https://www.jenkins.io/doc/book/pipeline/jenkinsfile/#secret-files)
 
 ### `parameters`
 
