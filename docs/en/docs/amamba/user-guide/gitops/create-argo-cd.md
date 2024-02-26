@@ -11,7 +11,7 @@ The Workbench implements continuous deployment based on the open-source software
 
 - A workspace and a user are required to be created. The user needs to join the workspace and be assigned the __workspace edit__ role.
   Refer to [Creating a Workspace](../../../ghippo/user-guide/workspace/workspace.md), [Users and Roles](../../../ghippo/user-guide/access-control/user.md).
-- Prepare a Git repository. If the code repository where the manifest files of the continuously deployed application are located is not public, you need to import the repository to the application workbench in advance. Refer to [Import Repository](import-repo.md).
+- Prepare a Git repository. If the code repository where the manifest files of the continuously deployed application are located is not public, you need to import the repository to Workbench in advance. Refer to [Import Repository](import-repo.md).
 
 ## Creating an Argo CD application
 

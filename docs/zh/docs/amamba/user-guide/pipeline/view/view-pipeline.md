@@ -15,7 +15,7 @@
 - 描述：流水线的具体描述
 - 创建时间：流水线的创建时间
 
-    ![detail-pipeline2](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/detail-pipeline2.png)
+![detail-pipeline2](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/detail-pipeline2.png)
 
 查看流水运行记录列表，展示当前流水线运行的记录的列表，支持通过ID 搜索，还支持取消、重新运行操作。
 
