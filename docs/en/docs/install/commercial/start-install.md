@@ -41,13 +41,13 @@ The ISO operating system image file needs to be configured in
 
 | CPU Architecture | Operating System Version | Download |
 | :--------------- | :---------------------- | :-------- |
-| AMD64 | CentOS 7 | [CentOS-7-x86_64-DVD-2009.iso](http://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-DVD-2009.iso ) |
-| | Redhat 7, 8, 9 | [assembly-field-downloads-page-content-61451](https://developers.redhat.com/products/rhel/download#assembly-field-downloads-page-content-61451) <br />Note: Redhat operating system requires a Redhat account to download |
-| | Ubuntu 20.04 | [ubuntu-20.04.6-live-server-amd64.iso](https://releases.ubuntu.com/focal/ubuntu-20.04.6-live-server-amd64.iso) |
-| | UOS V20 (1020a) | [uniontechos-server-20-1020a-amd64.iso](https://cdimage-download.chinauos.com/uniontechos-server-20-1020a-amd64.iso) |
-| | openEuler 22.03 | [openEuler-22.03-LTS-SP1-x86_64-dvd.iso](https://mirrors.nju.edu.cn/openeuler/openEuler-22.03-LTS-SP1/ISO/x86_64/openEuler-22.03-LTS-SP1-x86_64-dvd.iso) |
-| | OracleLinux R9 U1 | [OracleLinux-R9-U1-x86_64-dvd.iso](https://yum.oracle.com/ISOS/OracleLinux/OL9/u1/x86_64/OracleLinux-R9-U1-x86_64-dvd.iso) |
-| ARM64 | Kylin Linux Advanced Server release V10 (Sword) SP2 | [Application Address](https://www.kylinos.cn/scheme/server/1.html) <br />Note: Kylin operating system requires providing personal information to download and use. Please select V10 (Sword) SP2 when downloading |
+| AMD64    | CentOS 7 | [CentOS-7-x86_64-DVD-2009.iso](https://mirrors.tuna.tsinghua.edu.cn/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-DVD-2009.iso ) |
+|                   | Redhat 7, 8, 9 | [assembly-field-downloads-page-content-61451](https://developers.redhat.com/products/rhel/download#assembly-field-downloads-page-content-61451) <br />Note: Redhat operating system requires a Redhat account to download |
+|                   | Ubuntu 20.04 | [ubuntu-20.04.6-live-server-amd64.iso](https://releases.ubuntu.com/focal/ubuntu-20.04.6-live-server-amd64.iso) |
+|                   | UOS V20 (1020a) | [uniontechos-server-20-1020a-amd64.iso](https://cdimage-download.chinauos.com/uniontechos-server-20-1020a-amd64.iso) |
+|                   | openEuler 22.03 | [openEuler-22.03-LTS-SP1-x86_64-dvd.iso](https://mirrors.nju.edu.cn/openeuler/openEuler-22.03-LTS-SP1/ISO/x86_64/openEuler-22.03-LTS-SP1-x86_64-dvd.iso) |
+|                   | OracleLinux R9 U1 | [OracleLinux-R9-U1-x86_64-dvd.iso](https://yum.oracle.com/ISOS/OracleLinux/OL9/u1/x86_64/OracleLinux-R9-U1-x86_64-dvd.iso) |
+| ARM64             | Kylin Linux Advanced Server release V10 (Sword) SP2 | [Application Address](https://www.kylinos.cn/scheme/server/1.html) <br />Note: Kylin operating system requires providing personal information to download and use. Please select V10 (Sword) SP2 when downloading |
 
 #### osPackage Offline Packages (Required)
 
