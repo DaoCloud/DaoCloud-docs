@@ -10,13 +10,14 @@
 
 当你运行以下命令卸载 Insight Agent 时。
 
-    ```sh
-    helm uninstall insight-agent -n insight-system
-    ```
+```sh
+helm uninstall insight-agent -n insight-system
+```
 
-    `otel-oprator` 所使用的 `tls secret` 未被卸载掉。
+`otel-oprator` 所使用的 `tls secret` 未被卸载掉。
 
-`otel-operator` 定义的“重复利用 tls secret”的逻辑中，会去判断 `otel-oprator` 的 `MutationConfiguration` 是否存在并重复利用 MutationConfiguration 中绑定的 CA cert。但是由于 `helm uninstall` 已卸载 `MutationConfiguration`，导致出现空值。
+`otel-operator` 定义的“重复利用 tls secret”的逻辑中，会去判断 `otel-oprator` 的 `MutationConfiguration`
+是否存在并重复利用 MutationConfiguration 中绑定的 CA cert。但是由于 `helm uninstall` 已卸载 `MutationConfiguration`，导致出现空值。
 
 综上请手动删除对应的 `secret`，以下两种方式任选一种即可：
 
@@ -35,11 +36,11 @@
 
 #### 升级 Insight Agent 时更新日志收集端，未生效
 
-1. 更新 insight-agent 日志配置从 elasticsearch 改为 kafka 或者从 kafka 改为 elasticsearch，实际上都未生效，还是使用更新前配置。
+更新 insight-agent 日志配置从 elasticsearch 改为 kafka 或者从 kafka 改为 elasticsearch，实际上都未生效，还是使用更新前配置。
 
-解决方案：
+**解决方案**：
 
-1. 手动重启集群中的 fluentbit。
+手动重启集群中的 fluentbit。
 
 ## v0.21.0
 
