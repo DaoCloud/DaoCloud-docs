@@ -568,7 +568,7 @@ nav:
                   - VM Template: virtnest/template/tep.md
               - VM Image: virtnest/vm-image/index.md
               - Import VM from Ubuntu: virtnest/import/import-ubuntu.md
-      - Observability:
+      - Microservice:
           - Insight:
               - Intro:
                   - What is Insight: insight/intro/index.md
@@ -659,7 +659,6 @@ nav:
                   - K8s Compatibility Test: insight/compati-test/k8s-compatibility.md
                   - Rancher Compatibility Test: insight/compati-test/rancher-compatibility.md
                   - OCP Compatibility Test: insight/compati-test/ocp-compatibility.md
-      - Microservice:
           - Microservices:
               - Intro:
                   - Index: skoala/intro/index.md
@@ -845,7 +844,7 @@ nav:
                   - Features: middleware/common/feature.md
                   - Supported K8s Versions: middleware/compatibility.md
                   - Permissions: middleware/permission.md
-              - Common Config:
+              - Common Config for Middleware:
                   - First-Time Use: middleware/common/index.md
                   - Custom Permissions: middleware/common/permissions.md
                   - Config Management: middleware/common/config.md
@@ -864,7 +863,7 @@ nav:
                       - Delete a MySQL Instance: middleware/mysql/user-guide/delete.md
                       - View MySQL Logs: middleware/mysql/user-guide/logs.md
                   - Best Practice:
-                      - MySQL Cross-Cluster Synchronization: middleware/mysql/best-practice/crossclusterssync.md
+                      - MySQL Cross-Cluster Sync: middleware/mysql/best-practice/crossclusterssync.md
                       - MySQL Archiving Solution: middleware/mysql/best-practice/mysql-pt-archiver.md
                   - Troubleshoot:
                       - MySQL Health Check: middleware/mysql/faq/quick-check.md
@@ -1144,12 +1143,11 @@ nav:
           - Container Management: videos/kpanda.md
           - Multicloud Management: videos/kairship.md
           - Container Registry: videos/kangaroo.md
-          - Network: videos/network.md
-      - Obsevability:
-          - Insight: videos/insight.md
+          - Network: videos/network.md          
       - Microservices:
-          - Service Mesh: videos/mspider.md
+          - Insight: videos/insight.md
           - Microservice Engine: videos/skoala.md
+          - Service Mesh: videos/mspider.md
       - Data Service:
           - Middleware: videos/mcamel.md
       - Edge Computing:
