@@ -176,9 +176,9 @@ DCE 5.0 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的�
 
     这是以应用为中心、开箱即用的新一代可观测平台，实时监控应用及资源，采集各项指标、日志及事件等数据分析应用健康状态。
 
-    - [基础设施监控](../insight/user-guide/scenario-insight/cluster.md)
+    - [基础设施监控](../insight/user-guide/infra/cluster.md)
     - [日志查询](../insight/user-guide/data-query/log.md)
-    - [链路追踪](../insight/user-guide/data-query/trace.md)
+    - [链路追踪](../insight/user-guide/trace/trace.md)
     - [告警](../insight/user-guide/alert-center/index.md)
 
 </div>

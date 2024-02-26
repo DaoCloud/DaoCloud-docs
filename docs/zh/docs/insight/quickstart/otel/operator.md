@@ -531,4 +531,4 @@ spec:
 
 ## 链路查询
 
-如何查询已经接入的服务，参考[链路查询](../../user-guide/data-query/trace.md)。
+如何查询已经接入的服务，参考[链路查询](../../user-guide/trace/trace.md)。

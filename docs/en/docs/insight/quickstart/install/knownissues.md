@@ -1,6 +1,6 @@
 ---
 MTPE: windsonsea
-date: 2024-01-04
+date: 2024-02-26
 ---
 
 # Known Issues
@@ -13,30 +13,41 @@ This page lists some issues related to the installation and uninstallation of In
 
 #### Uninstallation Failure of Insight Agent
 
-1. When you run the following command to uninstall Insight Agent,
+When you run the following command to uninstall Insight Agent,
 
-    ```sh
-    helm uninstall insight agent
-    ```
+```sh
+helm uninstall insight agent
+```
 
-    The `tls secret` used by `otel-operator` is failed to uninstall.
+The `tls secret` used by `otel-operator` is failed to uninstall.
 
-2. Due to the logic of "reusing tls secret" in the following code of `otel-operator`,
-   it checks whether `MutationConfiguration` exists and reuses the CA cert bound in
-   MutationConfiguration. However, since `helm uninstall` has uninstalled `MutationConfiguration`,
-   it results in a null value.
+Due to the logic of "reusing tls secret" in the following code of `otel-operator`,
+it checks whether `MutationConfiguration` exists and reuses the CA cert bound in
+MutationConfiguration. However, since `helm uninstall` has uninstalled `MutationConfiguration`,
+it results in a null value.
 
 Therefore, please manually delete the corresponding `secret` using one of the following methods:
 
-1. Log in to the console of the target cluster and run the following command:
+- **Delete via command line**: Log in to the console of the target cluster and run the following command:
 
     ```sh
     kubectl -n insight-system delete secret insight-agent-opentelemetry-operator-controller-manager-service-cert
     ```
 
-2. Log in to DCE 5.0 Container Management, select the target cluster, navigate to `Secrets`
-   in the left navigation menu, enter `insight-agent-opentelemetry-operator-controller-manager-service-cert`,
-   and select `Delete`.
+- **Delete via UI**: Log in to DCE 5.0 container management, select the target cluster, select **Secret**
+  from the left menu, input `insight-agent-opentelemetry-operator-controller-manager-service-cert`,
+  then select `Delete`.
+
+### Insight Agent
+
+#### Log Collection Endpoint Not Updated When Upgrading Insight Agent
+
+When updating the log configuration of the insight-agent from Elasticsearch to Kafka or from Kafka
+to Elasticsearch, the changes do not take effect and the agent continues to use the previous configuration.
+
+**Solution** :
+
+Manually restart Fluent Bit in the cluster.
 
 ## v0.21.0
 

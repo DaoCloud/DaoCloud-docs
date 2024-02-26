@@ -33,7 +33,7 @@ and the application is in __running__ state.
 2. Use a tilde (~) for fuzzy queries. You can optionally specify a parameter after the "~" to control the similarity of the fuzzy query. If not specified, it defaults to 0.5. For example: error~.
 3. Use wildcards (*, ?) as single-character placeholders to match any character.
 4. Use square brackets [ ] or curly braces { } for range queries. Square brackets [ ] represent a closed interval and include the boundary values. Curly braces { } represent an open interval and exclude the boundary values. Range queries are applicable only to fields that can be sorted, such as numeric fields, date fields, etc. For example: timestamp:[2022-01-01 TO 2022-01-31].
-5. For more information, please refer to the [Lucene Syntax Explanation](../../faq/lucene.md).
+5. For more information, please refer to the [Lucene Syntax Explanation](../../reference/lucene.md).
 
 ## View log context
 

@@ -31,7 +31,7 @@ Refer to the [Container Monitoring](../ghippo/user-guide/workspace/folders.md) d
 
 ## Scenario Monitoring
 
-Refer to the [Installing Insight Agent](../insight/quickstart/install/install-agent.md), [Enhance Applications without Intrusion Using Operator](../insight/quickstart/otel/operator.md), [Distributed Tracing](../insight/user-guide/data-query/trace.md), and other related documents.
+Refer to the [Installing Insight Agent](../insight/quickstart/install/install-agent.md), [Enhance Applications without Intrusion Using Operator](../insight/quickstart/otel/operator.md), [Distributed Tracing](../insight/user-guide/trace/trace.md), and other related documents.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/trace.mp4" preload="metadata" poster="images/insight-trace.png"></video>
@@ -47,7 +47,7 @@ Refer to the [Log Query](../insight/user-guide/data-query/log.md) documentation 
 
 ## Event Query
 
-Refer to the [Event Query](../insight/user-guide/data-query/event.md) documentation page.
+Refer to the [Event Query](../insight/user-guide/infra/event.md) documentation page.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/event-query.mp4" preload="metadata" poster="images/event-query.jpg"></video>

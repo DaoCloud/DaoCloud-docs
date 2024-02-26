@@ -11,7 +11,7 @@ Container monitoring is the process of monitoring workloads in cluster managemen
 
 - The cluster has Insight Agent installed, and all container groups are in the __Running__ state.
 
-- To install Insight Agent, please refer to: [Installing insight-agent online](../../../insight/quickstart/install/install-agent.md) or [Offline upgrade of insight-agent](../../../insight/quickstart/install/offline-install.md).
+- To install Insight Agent, please refer to: [Installing insight-agent online](../../quickstart/install/install-agent.md) or [Offline upgrade of insight-agent](../../quickstart/install/offline-install.md).
 
 ## Steps
 

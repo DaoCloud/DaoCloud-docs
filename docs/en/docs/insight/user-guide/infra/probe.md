@@ -38,7 +38,7 @@ The __insight-agent__ has been successfully deployed in the target cluster and i
     - Probe Method:
         - HTTP: Sends HTTP or HTTPS requests to the target URL to check its connectivity and response time. This can be used to monitor the availability and performance of websites or web applications.
         - TCP: Establishes a TCP connection to the target host and port to check its connectivity and response time. This can be used to monitor TCP-based services such as web servers and database servers.
-        - Other: Supports custom probe methods by configuring ConfigMap. For more information, refer to: [Custom Probe Methods](probe-module.md)
+        - Other: Supports custom probe methods by configuring ConfigMap. For more information, refer to: [Custom Probe Methods](../collection-manag/probe-module.md)
     - Probe Target: The target address of the probe, supports domain names or IP addresses, etc.
     - Labels: Custom labels that will be automatically added to Prometheus' labels.
     - Probe Interval: The interval between probes.

@@ -44,7 +44,7 @@
 
 ## 场景监控
 
-参阅[安装 Insight Agent](../insight/quickstart/install/install-agent.md)、[通过 Operator 实现应用无侵入增强](../insight/quickstart/otel/operator.md)、[链路追踪](../insight/user-guide/data-query/trace.md)等文档。
+参阅[安装 Insight Agent](../insight/quickstart/install/install-agent.md)、[通过 Operator 实现应用无侵入增强](../insight/quickstart/otel/operator.md)、[链路追踪](../insight/user-guide/trace/trace.md)等文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/trace.mp4" preload="metadata" poster="images/insight-trace.png"></video>
@@ -60,7 +60,7 @@
 
 ## 事件查询
 
-参阅[事件查询](../insight/user-guide/data-query/event.md)文档页面。
+参阅[事件查询](../insight/user-guide/infra/event.md)文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/event-query.mp4" preload="metadata" poster="images/event-query.jpg"></video>
@@ -84,7 +84,7 @@
 
 ## 拨测
 
-参阅[拨测](../insight/user-guide/scenario-insight/probe.md)文档页面。
+参阅[拨测](../insight/user-guide/infra/probe.md)文档页面。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/Insight-probe.mp4" preload="metadata" poster="images/insight-probe.png"></video>

@@ -659,7 +659,7 @@
 - 新增文档站术语表
 - 新增文档站基本概念任务和实例、数据模型、查询语言等 4 个页面
 - 新增用户指南 - 场景监控、数据查询、告警中心等文档
-- 文档站新增：[产品优势](../intro/benefits.md)、[指标查询](../user-guide/data-query/metric.md)、[链路查询](../user-guide/data-query/trace.md)、仪表盘、[概述](../user-guide/dashboard/overview.md)
+- 文档站新增：[产品优势](../intro/benefits.md)、[指标查询](../user-guide/data-query/metric.md)、[链路查询](../user-guide/trace/trace.md)、仪表盘、[概述](../user-guide/dashboard/overview.md)
 
 ## 2022-4-22
 

@@ -40,7 +40,7 @@ Insight 基于 [Prometheus Blackbox Exporter](https://github.com/prometheus/blac
     - 探测方式：
         - HTTP：通过发送 HTTP 或 HTTPS 请求到目标 URL，检测其连通性和响应时间，这可以用于监测网站或 Web 应用的可用性和性能
         - TCP：通过建立到目标主机和端口的 TCP 连接，检测其连通性和响应时间。这可以用于监测基于 TCP 的服务，如 Web 服务器、数据库服务器等
-        - 其他：支持通过配置 ConfigMap 自定义探测方式，可参考[自定义拨测方式](probe-module.md)
+        - 其他：支持通过配置 ConfigMap 自定义探测方式，可参考[自定义拨测方式](../collection-manag/probe-module.md)
     - 探测目标：探测的目标地址，支持域名或 IP 地址等
     - 标签：自定义标签，该标签会自动添加到 Prometheus 的 Label 中
     - 探测间隔：探测间隔时间
