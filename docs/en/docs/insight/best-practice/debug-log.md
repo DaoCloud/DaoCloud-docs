@@ -4,11 +4,11 @@ After installing the __insight-agent__ in the cluster, __Fluent Bit__ in __insig
 
 1. Use DCE 5.0 platform, enter __Insight__ , and select the __Dashboard__ in the left navigation bar.
 
-    ![nav](../images/insight01.png)
+    ![nav](./images/insight01.png)
 
 2. Click the dashboard title __Overview__ .
 
-    ![dashboard](../images/insight02.png)
+    ![dashboard](./images/insight02.png)
 
 3. Switch to the __insight-system__ -> __Fluent Bit__ dashboard.
 

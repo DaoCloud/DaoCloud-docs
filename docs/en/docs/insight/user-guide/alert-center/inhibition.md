@@ -26,12 +26,12 @@ Alert Inhibition is mainly a mechanism for temporarily hiding or reducing the pr
 
 ## Edit Inhibition Rule
 
-1. Click **...** next to the target rule, then click **Edit** to enter the editing page for the inhibition rule.
+Click **...** next to the target rule, then click **Edit** to enter the editing page for the inhibition rule.
 
-    <!-- Add image later -->
+<!-- Add image later -->
 
 ## Delete Inhibition Rule
 
-1. Click **...** next to the target rule, then click **Delete**. Enter the name of the inhibition rule in the input box to confirm deletion.
+Click **...** next to the target rule, then click **Delete**. Enter the name of the inhibition rule in the input box to confirm deletion.
 
-    <!-- Add image later -->
+<!-- Add image later -->

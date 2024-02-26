@@ -58,14 +58,14 @@ After installing DeepFlow, you also need to enable the related feature switches 
     
 1. Save the changes and restart insight-server. The Insight main page will display __Network Observability__ :
     
-    ![Save and restart](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/best-practice/images/deepflow_ui.png)
+    <!-- Add image later -->
 
 ## Install DeepFlow Agent
 
 DeepFlow Agent is installed in the sub-cluster using the `deepflow-agent` chart. It is used to collect eBPF observability data from the sub-cluster and report it to the global service cluster.
 Similar to installing `deepflow`, go to __Helm Apps__ -> __Helm Charts__, select __community__ as the repository, and search for `deepflow-agent` in the search box. Follow the process to enter the installation page.
 
-![Parameter configuration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/best-practice/images/deepflow_agent_chart_config.png)
+<!-- Add image later -->
 
 Parameter Explanation:
 
@@ -84,6 +84,6 @@ After configuring, click __OK__ to complete the installation.
 After correctly installing DeepFlow, click __Network Observability__ to enter the DeepFlow Grafana UI. It contains a large number of dashboards for viewing and helping analyze issues.
 Click __DeepFlow Templates__ to browse all available dashboards:
 
-![Network Observability 1](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/best-practice/images/deepflow_ui_templates.png)
+<!-- Add image later -->
 
-![Network Observability 2](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/best-practice/images/deepflow_ui_template_list.png)
+<!-- Add image later -->
