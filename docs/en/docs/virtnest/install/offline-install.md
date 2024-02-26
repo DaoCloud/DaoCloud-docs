@@ -16,7 +16,7 @@ more efficient and convenient.
 
 ### Synchronize Images to the container registry using chart-syncer
 
-1. Create `load-image.yaml` file.
+1. Create __load-image.yaml__ file.
 
     !!! note
 
@@ -183,7 +183,7 @@ There are two upgrade methods available. You can choose the appropriate upgrade 
 
     1. Run `helm upgrade`.
 
-        Before upgrading, it is recommended to replace the `global.imageRegistry` field in `bak.yaml` with the current container registry address.
+        Before upgrading, it is recommended to replace the `global.imageRegistry` field in __bak.yaml__ with the current container registry address.
 
         ```shell
         export imageRegistry={your container registry}
@@ -216,7 +216,7 @@ There are two upgrade methods available. You can choose the appropriate upgrade 
     1. Run `helm upgrade`.
 
         Before upgrading, it is recommended to replace the `global.imageRegistry` field
-        in `bak.yaml` with the current container registry address.
+        in __bak.yaml__ with the current container registry address.
 
         ```shell
         export imageRegistry={your container registry}

@@ -8,11 +8,11 @@ allowing users to manage and utilize resources more flexibly.
 
 ## VM Templates
 
-1. Click `Container Management` in the left navigation menu, then click `VM Template` to access the `VM Template` page.
+1. Click __Container Management__ in the left navigation menu, then click __VM Template__ to access the __VM Template__ page.
 
     ![VM Templates](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/tep01.png)
 
-2. Click the `︙` on the right side of a template in the list. For internal templates, you can perform operations such as creating VMs and deleting the template. For custom templates, you can create VMs based on the template.
+2. Click the __︙__ on the right side of a template in the list. For internal templates, you can perform operations such as creating VMs and deleting the template. For custom templates, you can create VMs based on the template.
 
     ![VM Templates Management01](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/tep02.png)
 
@@ -26,7 +26,7 @@ allowing users to manage and utilize resources more flexibly.
 
 Custom templates are created from VM configurations. The following steps explain how to convert a VM configuration into a template.
 
-1. Click `Container Management` in the left navigation menu, then click `Virtual Machines` to access the list page. Click the `︙` on the right side of a VM in the list to convert the configuration into a template. Only running or stopped VMs can be converted.
+1. Click __Container Management__ in the left navigation menu, then click __Virtual Machines__ to access the list page. Click the __︙__ on the right side of a VM in the list to convert the configuration into a template. Only running or stopped VMs can be converted.
 
     ![Convert to Template](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/tep04.png)
 

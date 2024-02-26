@@ -15,7 +15,7 @@
     - 选择目标访问的虚拟机所在集群页面创建服务（Service）
     - 选择访问类型为节点访问（NodePort）
     - 选择命名空间（虚拟机所在 namespace）
-    - 标签选择器填写 `vm.kubevirt.io/name:you-vm-name`
+    - 标签选择器填写 `vm.kubevirt.io/name: you-vm-name`
     - 端口配置：协议选择 TCP，端口名称自定义，服务端口、容器端口填写 22
 
 2. 创建成功后，就可以通过 `ssh username@nodeip -p port` 来访问虚拟机

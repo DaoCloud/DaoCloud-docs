@@ -565,9 +565,9 @@ nav:
                   - Release Notes: virtnest/intro/release-notes.md
               - 安装:   
                   - 安装虚拟机: virtnest/install/index.md
-                  - 安装虚拟机模块的依赖和前提条件: virtnest/install/install-dependency.md
+                  - 安装依赖及前提条件: virtnest/install/install-dependency.md
                   - 离线升级: virtnest/install/offline-install.md
-                  - 在指定集群内安装 virtnest-agent: virtnest/install/virtnest-agent.md
+                  - 安装 virtnest-agent: virtnest/install/virtnest-agent.md
               - 虚拟机:
                   - 创建虚拟机: virtnest/vm/index.md
                   - 创建 Windows 虚拟机: virtnest/vm/vm-windows.md

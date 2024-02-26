@@ -12,7 +12,7 @@ Before viewing the virtual machine monitoring information, the following prerequ
 
 ## Virtual Machine Monitoring
 
-Navigate to the detailed information of the virtual machine and click on `Overview` to view the monitoring content of the virtual machine. Please note that without the Insight-agent component installed, monitoring information cannot be obtained. Below are the detailed information:
+Navigate to the detailed information of the virtual machine and click on __Overview__ to view the monitoring content of the virtual machine. Please note that without the Insight-agent component installed, monitoring information cannot be obtained. Below are the detailed information:
 
 - Total CPU, CPU usage, total memory, memory usage.
 

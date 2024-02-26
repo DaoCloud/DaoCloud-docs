@@ -44,12 +44,12 @@ This page will detail how to import a virtual machine with Ubuntu operating syst
 
 5. UUID of the virtual machine to be imported (needs to be obtained on the web page of vSphere)
 
-    - Access the Vsphere page, go to the details page of the virtual machine to be imported, click on `Edit Settings`, open the browser's developer console at this point,
-      click on `Network` -> `Headers`, find the URL as shown in the image below.
+    - Access the Vsphere page, go to the details page of the virtual machine to be imported, click on __Edit Settings__ , open the browser's developer console at this point,
+      click on __Network__ -> __Headers__ , find the URL as shown in the image below.
     
         <!-- Add image later -->
 
-    - Click on `Response`, locate `vmConfigContext` -> `config`, and finally find the target value `uuid`.
+    - Click on __Response__ , locate __vmConfigContext__ -> __config__ , and finally find the target value __uuid__ .
 
         <!-- Add image later -->
 

@@ -26,7 +26,7 @@ Before creating a virtual machine, make sure you meet the following prerequisite
 
 Follow the steps below to create a virtual machine using an image.
 
-1. Click __Container Management__ on the left navigation bar, then click __Virtual Machine__ to enter the `VM` page.
+1. Click __Container Management__ on the left navigation bar, then click __Virtual Machine__ to enter the __VM__ page.
 
     ![VM](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/createvm01.png)
 

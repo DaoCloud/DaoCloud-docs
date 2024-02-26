@@ -4,7 +4,7 @@
 
 !!! info
 
-    下述命令或脚本内出现的 `virtnest` 字样是全局管理模块的内部开发代号。
+    下述命令或脚本内出现的 __virtnest__ 字样是全局管理模块的内部开发代号。
 
 ## 配置 virtnest helm 仓库
 
@@ -64,9 +64,9 @@ helm get values virtnest -n virtnest-system -o yaml > bak.yaml
 
 ```shell
 helm upgrade virtnest virtnest-release/virtnest \
--n virtnest-system \
--f ./bak.yaml \
---version 0.6.0
+    -n virtnest-system \
+    -f ./bak.yaml \
+    --version 0.6.0
 ```
 
 ## 卸载

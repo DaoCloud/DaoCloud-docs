@@ -4,7 +4,7 @@ This page explains the dependencies and prerequisites for installing the virtual
 
 !!! info
 
-    The term `virtnest` appearing in the following commands or scripts is the internal development code name for the global management module.
+    The term __virtnest__ appearing in the following commands or scripts is the internal development code name for the global management module.
 
 ## Prerequisites
 
