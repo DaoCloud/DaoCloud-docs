@@ -1032,6 +1032,7 @@ nav:
                   - 边缘节点接入要求: kant/user-guide/node/join-rqmt.md
                   - 批量注册边缘节点: kant/user-guide/node/batch-registration.md
                   - 纳管边缘节点: kant/user-guide/node/managed-node.md
+                  - 运维边缘节点: kant/user-guide/node/manage-node.md
                   - 批量升级边缘节点: kant/user-guide/node/batch-upgrade.md
               - 边缘节点组:
                   - 创建边缘节点组: kant/user-guide/node-group/create-group.md

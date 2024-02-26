@@ -1,4 +1,4 @@
-# Managing Edge Nodes
+# Manage Edge Nodes
 
 After successfully connecting and managing edge nodes, the platform provides the ability to perform scheduling pause and node removal operations on these nodes.
 

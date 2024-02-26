@@ -3,7 +3,7 @@ MTPE: FanLin
 Date: 2024-01-22
 ---
 
-# Connecting and Managing Edge Nodes
+# Connect Edge Nodes
 
 Connecting and managing edge nodes refers to the process of installing the EdgeCore software on actual edge nodes based on the installation guide obtained from batch registering edge nodes. This allows the edge nodes to establish a connection with the platform and be managed within it.
 
