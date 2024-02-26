@@ -18,25 +18,25 @@
 
     !!! tip
 
-        K8s 和 Istio 网站都有类似的按钮，比如 `Edit this page`、`Edit this page on GitHub`。
+        K8s 和 Istio 网站都有类似的按钮，比如 __Edit this page__ 、 __Edit this page on GitHub__ 。
 
     ![点击图标按钮](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/local01.png)
 
-1. 完成编辑操作后，点击右上角的 `Commit changes` 按钮。
+1. 完成编辑操作后，点击右上角的 __Commit changes__ 按钮。
 
     ![commit change](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/local02.png)
 
-1. 修改 `Commit message`，填写 `Extended description` 后，点击 `Propose changes` 按钮。
+1. 修改 __Commit message__ ，填写 __Extended description__ 后，点击 __Propose changes__ 按钮。
 
     ![propose change](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/local03.png)
 
-1. 点击 `Create pull request` 按钮就完成了提交 PR 的操作。
+1. 点击 __Create pull request__ 按钮就完成了提交 PR 的操作。
 
     ![create PR](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/local04.png)
 
 1. 提交 PR 后，Reviewer 会给出一些 comments，你也可以在网页上修改。
 
-    点击 `Files changed` 页签，点击右侧的 `...`，选择 `Edit file`，就能开始编辑修改文件了。
+    点击 __Files changed__ 页签，点击右侧的 __...__ ，选择 __Edit file__ ，就能开始编辑修改文件了。
 
     ![Edit file](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/local05.png)
 
@@ -51,7 +51,7 @@
 如果你修改的文件不止 1 个，那可以试试 Codespace。Codespace 是一个云端的 VSCode 环境。
 这种云端的 VSCode 好处是随时随地，缺点是免费版本只能保留几小时的环境，只有 VIP 才能长期留存数据。
 
-1. 进入你的 Fork，点击 `Code` -> `Codespaces` -> `Create Codespace on main`。
+1. 进入你的 Fork，点击 __Code__ -> __Codespaces__ -> __Create Codespace on main__ 。
 
     ![Create Codespace](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/cloud01.png)
 
@@ -92,13 +92,13 @@
     git checkout -b yourbranch
     ```
 
-1. 在本地完成编辑工作后，推荐在本地运行 `mkdocs serve` 进行预览，以免把错误带到线上。
+1. 在本地完成编辑工作后，推荐在本地运行 __mkdocs serve__ 进行预览，以免把错误带到线上。
    
     ![本地预览](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/make-serve.png)
 
     !!! tip
     
-        - 每天开始前，切到 main 分支，运行 `git pull` 更新本地数据，与服务器的文件保持同步，以免跟别人的修改发生冲突。
+        - 每天开始前，切到 main 分支，运行 __git pull__ 更新本地数据，与服务器的文件保持同步，以免跟别人的修改发生冲突。
         - 每天结束前，要将当天的修改提交上去。Git 是一种小步快走的开发模式，只需保证每一步正确，那天长日久将成就伟业。
 
 1. 本地预览正常后，依次运行以下命令提交修改的内容。
@@ -126,7 +126,7 @@
 
     ![请求 review](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/review1.png)
 
-1. 点击 `Files changed` 查看改了什么内容。
+1. 点击 __Files changed__ 查看改了什么内容。
 
     ![review 列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/review2.png)
 
@@ -134,8 +134,8 @@
 
     ![添加注释](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/review3.png)
 
-    - 建议点击 `Add a suggestion` 图标后进行修改，这样 PR 作者可以清晰看到评审建议。
-    - 写好 comment 后，点击 `Start a review` 按钮，继续看其他字句，全部看完以后统一 `Submit review`
+    - 建议点击 __Add a suggestion__ 图标后进行修改，这样 PR 作者可以清晰看到评审建议。
+    - 写好 comment 后，点击 __Start a review__ 按钮，继续看其他字句，全部看完以后统一 __Submit review__ 
 
 1. PR 作者收到 comment 后，要及时去修复，最后运行以下命令覆盖原来的提交。
 
@@ -166,7 +166,7 @@ make lint-yaml
 
 对于前端 UI 文字翻译，除了 Weblate 翻译外，还可以用 i18n 插件。以 VScode 为例：
 
-1. 安装 `i18n Ally` 插件。
+1. 安装 __i18n Ally__ 插件。
 
     ![安装插件](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/i18n01.png)
 
@@ -176,7 +176,7 @@ make lint-yaml
     npm i
     ```
 
-1. 点击左侧的 `i18n Ally` 页签，找到 `No Translation` 内容，点击 `Open in editor` 图标。
+1. 点击左侧的 __i18n Ally__ 页签，找到 __No Translation__ 内容，点击 __Open in editor__ 图标。
 
     ![开始翻译](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/i18n02.png)
 
