@@ -20,7 +20,7 @@ This page lists the release notes for MongoDB databases, allowing you to underst
 
 ### v0.5.0
 
-- **Added** `Mcamel-MongoDB` console MongoDB Express
+- **Added** __Mcamel-MongoDB__ console MongoDB Express
 
 ## 2023-10-31
 
@@ -41,7 +41,7 @@ This page lists the release notes for MongoDB databases, allowing you to underst
 
 ### v0.2.0
 
-- **Added** configuration capabilities for the `pvc` where the `log` directory is located
+- **Added** configuration capabilities for the __pvc__ where the __log__ directory is located
 - **Improved** anti-affinity default label to the create instance dialog, simplifying the configuration process
 - **Improved** ability to create MongoDB instances in namespaces other than the one where the Operator is located
 - **Improved** display information related to frontend interface permissions
@@ -50,4 +50,4 @@ This page lists the release notes for MongoDB databases, allowing you to underst
 
 ### v0.1.0
 
-- **Added** support for managing MongoDB instances such as creation, viewing, and deletion in `Mcamel-MongoDB`
+- **Added** support for managing MongoDB instances such as creation, viewing, and deletion in __Mcamel-MongoDB__ 

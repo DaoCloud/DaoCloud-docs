@@ -6,14 +6,14 @@ pt-archiver 是用来归档表的工具，可以做到低影响、高性能的�
 
 ## 安装
 
-默认部署 MySQL 时已经安装了 `pt-heartbeat` 工具，通过以下命令检查：
+默认部署 MySQL 时已经安装了 __pt-heartbeat__ 工具，通过以下命令检查：
 
 ```shell
 [root@mysql1012-mysql-2 /]# pt-archiver --version
 pt-archiver 3.4.0
 ```
 
-`pt-heartbeat` 至少需要指定 `--dest`、`--file`、`--purge` 其中的一个，有一些选项是互斥的。
+ __pt-heartbeat__ 至少需要指定 __--dest__ 、 __--file__ 、 __--purge__ 其中的一个，有一些选项是互斥的。
 
 ```console
 Specify at least one of --dest, --file, or --purge.
@@ -40,7 +40,7 @@ pt-archiver \
 
 ### 归档到文件
 
-文件格式：通过 `--output-format` 指定，归档出来的文件有 header：使用 `--header` 选项。
+文件格式：通过 __--output-format__ 指定，归档出来的文件有 header：使用 __--header__ 选项。
 
 - dump: MySQL dump format using tabs as field separator (default)
 - csv: Dump rows using ‘,’ as separator and optionally enclosing fields by ‘”’.
@@ -147,7 +147,7 @@ pt-archiver \
 1. 归档出来的新数据总是少一行，可参考[故障分析 | pt-archiver 归档丢失一条记录](https://opensource.actionsky.com/20220926-mysql/)
 
     ```mysql
-    # 加上--dry-run 查看生成的语句，注意 WHERE (1=1) AND (`id` < '3')
+    # 加上--dry-run 查看生成的语句，注意 WHERE (1=1) AND ( __id__ < '3')
     
     pt-archiver \
     --source h=172.30.47.0,u=root,p='ZoO1l1K%YbG!zlh',P=31898,D=test,t=myTableSimple \
@@ -156,9 +156,9 @@ pt-archiver \
     --no-delete \
     --dry-run
     
-    SELECT /*!40001 SQL_NO_CACHE */ `id`,`name`,`phone`,`email`,`address`,`list`,`country`,`region`,`postalzip`,`text`,`numberrange`,`currency`,`alphanumeric` FROM `test`.`myTableSimple` FORCE INDEX(`PRIMARY`) WHERE (1=1) AND (`id` < '3') ORDER BY `id` LIMIT 1
-    SELECT /*!40001 SQL_NO_CACHE */ `id`,`name`,`phone`,`email`,`address`,`list`,`country`,`region`,`postalzip`,`text`,`numberrange`,`currency`,`alphanumeric` FROM `test`.`myTableSimple` FORCE INDEX(`PRIMARY`) WHERE (1=1) AND (`id` < '3') AND ((`id` > ?)) ORDER BY `id` LIMIT 1
-    INSERT INTO `test`.`myTableSimple`(`id`,`name`,`phone`,`email`,`address`,`list`,`country`,`region`,`postalzip`,`text`,`numberrange`,`currency`,`alphanumeric`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)
+    SELECT /*!40001 SQL_NO_CACHE */ __id__ , __name__ , __phone__ , __email__ , __address__ , __list__ , __country__ , __region__ , __postalzip__ , __text__ , __numberrange__ , __currency__ , __alphanumeric__ FROM __test__ . __myTableSimple__ FORCE INDEX( __PRIMARY__ ) WHERE (1=1) AND ( __id__ < '3') ORDER BY __id__ LIMIT 1
+    SELECT /*!40001 SQL_NO_CACHE */ __id__ , __name__ , __phone__ , __email__ , __address__ , __list__ , __country__ , __region__ , __postalzip__ , __text__ , __numberrange__ , __currency__ , __alphanumeric__ FROM __test__ . __myTableSimple__ FORCE INDEX( __PRIMARY__ ) WHERE (1=1) AND ( __id__ < '3') AND (( __id__ > ?)) ORDER BY __id__ LIMIT 1
+    INSERT INTO __test__ . __myTableSimple__ ( __id__ , __name__ , __phone__ , __email__ , __address__ , __list__ , __country__ , __region__ , __postalzip__ , __text__ , __numberrange__ , __currency__ , __alphanumeric__ ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)
     
     
     SELECT MAX(id) from myTableSimple;
@@ -180,9 +180,9 @@ pt-archiver \
     --nosafe-auto-incremen \
     --dry-run
     
-    SELECT /*!40001 SQL_NO_CACHE */ `id`,`name`,`phone`,`email`,`address`,`list`,`country`,`region`,`postalzip`,`text`,`numberrange`,`currency`,`alphanumeric` FROM `test`.`myTableSimple` FORCE INDEX(`PRIMARY`) WHERE (1=1) ORDER BY `id` LIMIT 1
-    SELECT /*!40001 SQL_NO_CACHE */ `id`,`name`,`phone`,`email`,`address`,`list`,`country`,`region`,`postalzip`,`text`,`numberrange`,`currency`,`alphanumeric` FROM `test`.`myTableSimple` FORCE INDEX(`PRIMARY`) WHERE (1=1) AND ((`id` > ?)) ORDER BY `id` LIMIT 1
-    INSERT INTO `test`.`myTableSimple`(`id`,`name`,`phone`,`email`,`address`,`list`,`country`,`region`,`postalzip`,`text`,`numberrange`,`currency`,`alphanumeric`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)
+    SELECT /*!40001 SQL_NO_CACHE */ __id__ , __name__ , __phone__ , __email__ , __address__ , __list__ , __country__ , __region__ , __postalzip__ , __text__ , __numberrange__ , __currency__ , __alphanumeric__ FROM __test__ . __myTableSimple__ FORCE INDEX( __PRIMARY__ ) WHERE (1=1) ORDER BY __id__ LIMIT 1
+    SELECT /*!40001 SQL_NO_CACHE */ __id__ , __name__ , __phone__ , __email__ , __address__ , __list__ , __country__ , __region__ , __postalzip__ , __text__ , __numberrange__ , __currency__ , __alphanumeric__ FROM __test__ . __myTableSimple__ FORCE INDEX( __PRIMARY__ ) WHERE (1=1) AND (( __id__ > ?)) ORDER BY __id__ LIMIT 1
+    INSERT INTO __test__ . __myTableSimple__ ( __id__ , __name__ , __phone__ , __email__ , __address__ , __list__ , __country__ , __region__ , __postalzip__ , __text__ , __numberrange__ , __currency__ , __alphanumeric__ ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)
     ```
 
     **解决办法二：--no-ascend 和在--source 的 DSN 里通过 i=specified_index 指定索引**
@@ -195,35 +195,35 @@ pt-archiver \
     --no-delete \
     --dry-run
     
-    SELECT /*!40001 SQL_NO_CACHE */ `id`,`name`,`phone`,`email`,`address`,`list`,`country`,`region`,`postalzip`,`text`,`numberrange`,`currency`,`alphanumeric` FROM `test`.`myTableSimple` FORCE INDEX(`name_index`) WHERE (1=1) ORDER BY `name` LIMIT 1
-    SELECT /*!40001 SQL_NO_CACHE */ `id`,`name`,`phone`,`email`,`address`,`list`,`country`,`region`,`postalzip`,`text`,`numberrange`,`currency`,`alphanumeric` FROM `test`.`myTableSimple` FORCE INDEX(`name_index`) WHERE (1=1) AND (((? IS NULL AND `name` IS NOT NULL) OR (`name` > ?))) ORDER BY `name` LIMIT 1
-    INSERT INTO `test`.`myTableSimple`(`id`,`name`,`phone`,`email`,`address`,`list`,`country`,`region`,`postalzip`,`text`,`numberrange`,`currency`,`alphanumeric`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)
+    SELECT /*!40001 SQL_NO_CACHE */ __id__ , __name__ , __phone__ , __email__ , __address__ , __list__ , __country__ , __region__ , __postalzip__ , __text__ , __numberrange__ , __currency__ , __alphanumeric__ FROM __test__ . __myTableSimple__ FORCE INDEX( __name_index__ ) WHERE (1=1) ORDER BY __name__ LIMIT 1
+    SELECT /*!40001 SQL_NO_CACHE */ __id__ , __name__ , __phone__ , __email__ , __address__ , __list__ , __country__ , __region__ , __postalzip__ , __text__ , __numberrange__ , __currency__ , __alphanumeric__ FROM __test__ . __myTableSimple__ FORCE INDEX( __name_index__ ) WHERE (1=1) AND (((? IS NULL AND __name__ IS NOT NULL) OR ( __name__ > ?))) ORDER BY __name__ LIMIT 1
+    INSERT INTO __test__ . __myTableSimple__ ( __id__ , __name__ , __phone__ , __email__ , __address__ , __list__ , __country__ , __region__ , __postalzip__ , __text__ , __numberrange__ , __currency__ , __alphanumeric__ ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)
     ```
 
 1. 没有主键，采用默认参数会归档失败
 
-    - 默认会去找 `ascendable index`，如果没有就会失败。
-    - 可以在 `–source` 的 DSN 指定其他索引：`i=specified_index`
+    - 默认会去找 __ascendable index__ ，如果没有就会失败。
+    - 可以在 __–source__ 的 DSN 指定其他索引： __i=specified_index__ 
 
     ```shell
     show create table myTableNoPrimaryKey\G
     *************************** 1. row ***************************
           Table: myTableNoPrimaryKey
-    Create Table: CREATE TABLE `myTableNoPrimaryKey` (
-      `id` mediumint NOT NULL,
-      `name` varchar(255) DEFAULT NULL,
-      `phone` varchar(100) DEFAULT NULL,
-      `email` varchar(255) DEFAULT NULL,
-      `address` varchar(255) DEFAULT NULL,
-      `list` varchar(255) DEFAULT NULL,
-      `country` varchar(100) DEFAULT NULL,
-      `region` varchar(50) DEFAULT NULL,
-      `postalZip` varchar(10) DEFAULT NULL,
-      `text` text,
-      `numberrange` mediumint DEFAULT NULL,
-      `currency` varchar(100) DEFAULT NULL,
-      `alphanumeric` varchar(255) DEFAULT NULL,
-      KEY `name_index` (`name`)
+    Create Table: CREATE TABLE __myTableNoPrimaryKey__ (
+      __id__ mediumint NOT NULL,
+      __name__ varchar(255) DEFAULT NULL,
+      __phone__ varchar(100) DEFAULT NULL,
+      __email__ varchar(255) DEFAULT NULL,
+      __address__ varchar(255) DEFAULT NULL,
+      __list__ varchar(255) DEFAULT NULL,
+      __country__ varchar(100) DEFAULT NULL,
+      __region__ varchar(50) DEFAULT NULL,
+      __postalZip__ varchar(10) DEFAULT NULL,
+      __text__ text,
+      __numberrange__ mediumint DEFAULT NULL,
+      __currency__ varchar(100) DEFAULT NULL,
+      __alphanumeric__ varchar(255) DEFAULT NULL,
+      KEY __name_index__ ( __name__ )
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
     1 row in set (0.03 sec)
     
@@ -264,7 +264,7 @@ pt-archiver \
         --limit=1000 --no-delete --progress 10 --statistics
         TIME                ELAPSED   COUNT
         2023-10-16T10:37:32       0       0
-        DBD::mysql::st execute failed: Loading local data is disabled; this must be enabled on both the client and server sides [for Statement "LOAD DATA LOCAL INFILE ? INTO TABLE `test`.`myTableSimple`(`id`,`name`,`phone`,`email`,`address`,`list`,`country`,`region`,`postalzip`,`text`,`numberrange`,`currency`,`alphanumeric`)" with ParamValues: 0='/tmp/GPJHnHSRUspt-archiver'] at /usr/bin/pt-archiver line 6876.
+        DBD::mysql::st execute failed: Loading local data is disabled; this must be enabled on both the client and server sides [for Statement "LOAD DATA LOCAL INFILE ? INTO TABLE __test__ . __myTableSimple__ ( __id__ , __name__ , __phone__ , __email__ , __address__ , __list__ , __country__ , __region__ , __postalzip__ , __text__ , __numberrange__ , __currency__ , __alphanumeric__ )" with ParamValues: 0='/tmp/GPJHnHSRUspt-archiver'] at /usr/bin/pt-archiver line 6876.
         ```
 
     - 查看 MySQL 相关变量

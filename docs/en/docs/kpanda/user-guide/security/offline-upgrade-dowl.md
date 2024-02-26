@@ -63,7 +63,7 @@ First, find a node that can connect to both the image repository and the Helm re
               password: "Harbor12345" # Image repository password
         ```
 
-2. Execute the image sync command.
+2. Run the image sync command.
 
     ```shell
     charts-syncer sync --config load-image.yaml
@@ -149,9 +149,9 @@ There are two methods for upgrading. Choose the corresponding upgrade method bas
         ...
         ```
 
-5. Backup the __--set__ parameters.
+5. Back up the `--set` parameters.
 
-    Before upgrading the security management version, it is recommended to run the following command to backup the __--set__ parameters of the old version.
+    Before upgrading the security management version, it is recommended to run the following command to back up the `--set` parameters of the old version.
 
     ```shell
     helm get values dowl -n dowl-system -o yaml > bak.yaml
@@ -164,7 +164,7 @@ There are two methods for upgrading. Choose the corresponding upgrade method bas
     kubectl apply -f dowl/crds
     ```
 
-7. Execute __helm upgrade__ .
+7. Run `helm upgrade` .
 
     Before upgrading, it is recommended to replace the __global.imageRegistry__ field in __bak.yaml__ with the image repository address you are currently using.
 
@@ -182,9 +182,9 @@ There are two methods for upgrading. Choose the corresponding upgrade method bas
 
 === "Upgrade via chart package"
 
-    1. Backup the __--set__ parameters.
+    1. Back up the `--set` parameters.
 
-        Before upgrading the security management version, it is recommended to run the following command to backup the __--set__ parameters of the old version.
+        Before upgrading the security management version, it is recommended to run the following command to back up the `--set` parameters of the old version.
 
         ```shell
         helm get values dowl -n dowl-system -o yaml > bak.yaml
@@ -196,7 +196,7 @@ There are two methods for upgrading. Choose the corresponding upgrade method bas
         kubectl apply -f ./crds
         ```
 
-    3. Execute __helm upgrade__ .
+    3. Run `helm upgrade` .
 
         Before upgrading, it is recommended to replace the __global.imageRegistry__ field in __bak.yaml__ with the image repository address you are currently using.
 

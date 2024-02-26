@@ -194,10 +194,10 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
         ...
         ```
 
-    1. Backup the __--set__ parameters.
+    1. Back up the `--set` parameters.
 
         Before upgrading the Operations Management version, it is recommended to
-        run the following command to backup the __--set__ parameters of the old version.
+        run the following command to back up the `--set` parameters of the old version.
 
         ```shell
         helm get values gmagpie -n gmagpie-system -o yaml > bak.yaml
@@ -210,7 +210,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
         kubectl apply -f gmagpie/crds
         ```
 
-    1. Run __helm upgrade__ .
+    1. Run `helm upgrade` .
 
         Before upgrading, it is recommended to replace the __global.imageRegistry__ field
         in the __bak.yaml__ file with the address of the image repository you are currently using.
@@ -229,10 +229,10 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
 
 === "Upgrade via Chart package"
 
-    1. Backup the __--set__ parameters.
+    1. Back up the `--set` parameters.
 
         Before upgrading the Operations Management version, it is recommended to
-        run the following command to backup the __--set__ parameters of the old version.
+        run the following command to back up the `--set` parameters of the old version.
 
         ```shell
         helm get values gmagpie -n gmagpie-system -o yaml > bak.yaml
@@ -244,7 +244,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
         kubectl apply -f ./crds
         ```
 
-    3. Run __helm upgrade__ .
+    3. Run `helm upgrade` .
 
         It is recommended to replace the __global.imageRegistry__ field in the __bak.yaml__ file
         with the address of the image repository you are currently using before performing the upgrade.

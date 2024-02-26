@@ -56,7 +56,7 @@ With the consistent database structure between the master and slave, you can use
     binlog-format = Mixed
     ````
 
-    The `server-id` parameter is not provided on the parameter configuration page. The modification method is as follows:
+    The __server-id__ parameter is not provided on the parameter configuration page. The modification method is as follows:
 
     1. Go to the CR file of the instance: Container Management - Cluster Where the Instance Resides - Custom Resources - mysqlclusters.mysql.presslabs.org - Instance CR
     2. Add the field: spec.serverIDOffset: 200
@@ -72,12 +72,12 @@ With the consistent database structure between the master and slave, you can use
 
     Parameter explanation:
 
-    - `grant`: Grant
-    - `replication`: Grant replication permission
-    - `*.*`: All databases and tables
-    - `rep`: Authorized user
-    - `%`: All machines can access
-    - `by '123456ab'`: Password for this user
+    - __grant__ : Grant
+    - __replication__ : Grant replication permission
+    - __*.*__ : All databases and tables
+    - __rep__ : Authorized user
+    - __%__ : All machines can access
+    - __by '123456ab'__ : Password for this user
 
 
 3. Service configuration
@@ -134,7 +134,7 @@ With the consistent database structure between the master and slave, you can use
     mysql> start slave;
     ````
 
-4. Check the status, pay special attention to the following two items. If the status is `Yes`, it means that the replication function has started running.
+4. Check the status, pay special attention to the following two items. If the status is __Yes__ , it means that the replication function has started running.
 
     ````mysql
     mysql> SHOW SLAVE STATUS\G

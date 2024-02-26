@@ -4,7 +4,7 @@ This page explains how to install or upgrade the middleware - MySQL module after
 
 !!! info
 
-    The term `mcamel` mentioned in the following commands or scripts is the internal development code name for the middleware module.
+    The term __mcamel__ mentioned in the following commands or scripts is the internal development code name for the middleware module.
 
 ## Load Images from Installation Package
 
@@ -12,7 +12,7 @@ You can load the images using one of the following two methods. When an image re
 
 ### Synchronize Images to Image Repository using chart-syncer
 
-1. Create `load-image.yaml`.
+1. Create __load-image.yaml__ .
 
     !!! note
 
@@ -129,7 +129,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
     1. Update the helm repo.
 
         ```shell
-        helm repo update mcamel/mcamel-mysql # If the helm version is too low, it may fail. In that case, try executing `helm update repo`.
+        helm repo update mcamel/mcamel-mysql # If the helm version is too low, it may fail. In that case, try executing __helm update repo__ .
 
     1. Select the version you want to install (it is recommended to install the latest version).
 
@@ -144,7 +144,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
         ...
         ```
 
-    1. Backup the `--set` parameters.
+    1. Back up the `--set` parameters.
 
         Before upgrading the version, it is recommended to execute the following command to back up the `--set` parameters of the previous version.
 
@@ -152,9 +152,9 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
         helm get values mcamel-mysql -n mcamel-system -o yaml > mcamel-mysql.yaml
         ```
 
-    1. Run `helm upgrade`.
+    1. Run `helm upgrade` .
 
-        Before upgrading, it is recommended to replace the `global.imageRegistry` field in `mcamel-mysql.yaml` with the image repository address currently used.
+        Before upgrading, it is recommended to replace the  `global.imageRegistry` field in __mcamel-mysql.yaml__ with the image repository address currently used.
 
         ```shell
         export imageRegistry={your image repository}
@@ -171,7 +171,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
 
 === "Upgrade via chart package"
 
-    1. Backup the `--set` parameters.
+    1. Back up the `--set` parameters.
 
         Before upgrading the version, it is recommended to execute the following command to back up the `--set` parameters of the previous version.
 
@@ -179,9 +179,9 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
         helm get values mcamel-mysql -n mcamel-system -o yaml > mcamel-mysql.yaml
         ```
 
-    1. Run `helm upgrade`.
+    1. Run `helm upgrade` .
 
-        Before upgrading, it is recommended to replace the `global.imageRegistry` field in `mcamel-mysql.yaml` with the image repository address currently used.
+        Before upgrading, it is recommended to replace the  `global.imageRegistry` field in __mcamel-mysql.yaml__ with the image repository address currently used.
 
         ```shell
         export imageRegistry={your image repository}

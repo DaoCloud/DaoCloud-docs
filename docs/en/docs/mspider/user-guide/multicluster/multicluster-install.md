@@ -492,7 +492,7 @@ kubectl apply  -f sleep.yaml -n sample
 ### Verifying the Demo Cluster Network
 
 ```bash linenums="1"
-# Execute this command on any cluster
+# Run this command on any cluster
 while true; do kubectl exec -n sample -c sleep \
                "$(kubectl get pod -n sample -l app=sleep -o jsonpath='{.items[0].metadata.name}')" \
               -- curl -sS helloworld.sample:5000/hello; done

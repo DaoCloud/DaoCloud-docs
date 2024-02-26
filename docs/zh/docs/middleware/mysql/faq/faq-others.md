@@ -2,7 +2,7 @@
 
 ## CR 创建数据库失败报错
 
-数据库运行正常，使用 CR 创建数据库出现了报错，此类问题的原因有：`mysql root` 密码有特殊字符
+数据库运行正常，使用 CR 创建数据库出现了报错，此类问题的原因有： __mysql root__ 密码有特殊字符
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/mysql/images/faq-mysql-2.png)
 
@@ -12,7 +12,7 @@
     [root@master-01 ~]$ kubectl get secret -n mcamel-system mcamel-common-mysql-cluster-secret -o=jsonpath='{.data.ROOT_PASSWORD}' | base64 -d
     ```
 
-2. 如果密码含有特殊字符 `-`，进入 MySQL 的 Shell 输入原密码出现以下错误
+2. 如果密码含有特殊字符 __-__ ，进入 MySQL 的 Shell 输入原密码出现以下错误
 
     ```console
     bash-4.4# mysql -uroot -p
@@ -49,4 +49,4 @@ The MysQL server is running with the read-only option so it cannot excute this s
 ```
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/mysql/images/faq01.png)
 
-解决方法：前往`容器管理`平台重启所有相关 `replica`。
+解决方法：前往 __容器管理__ 平台重启所有相关 __replica__ 。

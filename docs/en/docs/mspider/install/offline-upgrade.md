@@ -66,7 +66,7 @@ You can load the images in one of the following two ways. When a container regis
         5. Your container registry username
         6. Your container registry password
 
-1. Execute the command to synchronize the images.
+1. Run the command to synchronize the images.
 
     ```bash
     ~ charts-syncer sync --config load-image.yaml

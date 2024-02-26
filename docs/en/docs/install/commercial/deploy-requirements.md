@@ -57,7 +57,7 @@ Refer to [4-node Mode Description](./deploy-arch.md#4).
 
 | Quantity | Server Role | Server Usage                                               | Number of CPUs | Memory Capacity | System Disk | Unpartitioned Disk |
 | -------- | ----------- | ---------------------------------------------------------- | -------------- | --------------- | ----------- | ----------------- |
-| 1        | Bootstrap Node   | 1. Execute installation and deployment program<br />2. Run the image repository and chart museum required by the platform | 2              | 4G              | 200G        | -                 |
+| 1        | Bootstrap Node   | 1. Run installation and deployment program<br />2. Run the image repository and chart museum required by the platform | 2              | 4G              | 200G        | -                 |
 | 3        | Control Plane | 1. Run DCE 5.0 components<br />2. Run kubernetes system components | 8              | 16G             | 100G        | 200G              |
 
 ### Requirements for CPU, Memory, and Disk in 7-node Mode (Recommended for Production Environment)
@@ -66,7 +66,7 @@ Refer to [7-node Mode Description](./deploy-arch.md#7-1-6).
 
 | Quantity | Server Role | Server Usage                                               | Number of CPUs | Memory Capacity | System Disk | Unpartitioned Disk |
 | -------- | ----------- | ---------------------------------------------------------- | -------------- | --------------- | ----------- | ----------------- |
-| 1        | Bootstrap Node   | 1. Execute installation and deployment program<br />2. Run the image repository and chart museum required by the platform | 2              | 4G              | 200G        | -                 |
+| 1        | Bootstrap Node   | 1. Run installation and deployment program<br />2. Run the image repository and chart museum required by the platform | 2              | 4G              | 200G        | -                 |
 | 3        | Master      | 1. Run DCE 5.0 components<br />2. Run kubernetes system components | 8              | 16G             | 100G        | 200G              |
 | 3        | Worker      | Run log-related components separately                      | 8              | 16G             | 100G        | 200G              |
 

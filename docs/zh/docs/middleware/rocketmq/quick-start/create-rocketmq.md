@@ -1,10 +1,10 @@
 # 创建 RocketMQ 实例
 
-1. 点击一级导航栏选择 `中间件 > RocketMQ 消息队列` 。
+1. 点击一级导航栏选择 __中间件 > RocketMQ 消息队列__  。
 
     ![RocketMQ](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/rocketmq00.png){ width=1000px}
 
-2. 进入目标工作空间，点击`新建实例`。
+2. 进入目标工作空间，点击 __新建实例__ 。
 
     - 实例名称：2～40 个字符，只能包含小写字母、数字及分隔符 ("-")，且必须以小写字母开头，字母或数字结尾。
     - 集群 / 命名空间：选择实例部署的位置。

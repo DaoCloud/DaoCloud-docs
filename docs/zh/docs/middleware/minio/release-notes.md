@@ -70,43 +70,43 @@
 
 ### v0.5.1
 
-- **新增** `mcamel-minio` 详情页面展示相关的事件
-- **新增** `mcamel-minio` 支持自定义角色
-- **优化** `mcamel-minio` 调度策略增加滑动按钮
+- **新增** __mcamel-minio__  详情页面展示相关的事件
+- **新增** __mcamel-minio__  支持自定义角色
+- **优化** __mcamel-minio__  调度策略增加滑动按钮
 
 ## 2023-03-28
 
 ### v0.4.1
 
-- **修复** `mcamel-minio` 页面展示 LoadBalancer 地址错误
-- **修复** `mcamel-minio` 删除 MinIO 时不应该校验野生存储配置的问题
-- **修复** `mcamel-minio` 修复 创建 Bucket 偶尔会失败
-- **升级** `mcamel-minio` golang.org/x/net 到 v0.7.0
+- **修复** __mcamel-minio__  页面展示 LoadBalancer 地址错误
+- **修复** __mcamel-minio__  删除 MinIO 时不应该校验野生存储配置的问题
+- **修复** __mcamel-minio__  修复 创建 Bucket 偶尔会失败
+- **升级** __mcamel-minio__  golang.org/x/net 到 v0.7.0
 
 ## 2023-02-23
 
 ### v0.3.0
 
-- **新增** `mcamel-minio` helm-docs 模板文件
-- **新增** `mcamel-minio` 应用商店中的 Operator 只能安装在 mcamel-system
-- **新增** `mcamel-minio` 支持 cloud shell
-- **新增** `mcamel-minio` 支持导航栏单独注册
-- **新增** `mcamel-minio` 支持查看日志
-- **新增** `mcamel-minio` Operator 对接 chart-syncer
-- **修复** `mcamel-minio` 实例名太长导致自定义资源无法创建的问题
-- **修复** `mcamel-minio` 工作空间 Editor 用户无法查看实例密码
-- **升级** `mcamel-minio` 升级离线镜像检测脚本  
+- **新增** __mcamel-minio__  helm-docs 模板文件
+- **新增** __mcamel-minio__  应用商店中的 Operator 只能安装在 mcamel-system
+- **新增** __mcamel-minio__  支持 cloud shell
+- **新增** __mcamel-minio__  支持导航栏单独注册
+- **新增** __mcamel-minio__  支持查看日志
+- **新增** __mcamel-minio__  Operator 对接 chart-syncer
+- **修复** __mcamel-minio__  实例名太长导致自定义资源无法创建的问题
+- **修复** __mcamel-minio__  工作空间 Editor 用户无法查看实例密码
+- **升级** __mcamel-minio__  升级离线镜像检测脚本  
 - **新增** 日志查看操作说明，支持自定义查询、导出等功能
 
 ## 2022-12-25
 
 ### v0.2.0
 
-- **新增** `mcamel-minio` NodePort 端口冲突提前检测
-- **新增** `mcamel-minio` 节点亲和性配置
-- **修复** `mcamel-minio` 修复单实例的时候，状态显示异常的问题
-- **修复** `mcamel-minio` 创建实例时未校验名字
-- **优化** `mcamel-minio` 取消认证信息输入框
+- **新增** __mcamel-minio__  NodePort 端口冲突提前检测
+- **新增** __mcamel-minio__  节点亲和性配置
+- **修复** __mcamel-minio__  修复单实例的时候，状态显示异常的问题
+- **修复** __mcamel-minio__  创建实例时未校验名字
+- **优化** __mcamel-minio__  取消认证信息输入框
 
 ## 2022-11-28
 

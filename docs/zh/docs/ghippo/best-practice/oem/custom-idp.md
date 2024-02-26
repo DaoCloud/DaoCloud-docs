@@ -58,7 +58,7 @@ Ghippo 0.15.0及以上版本。
       reverseProxy: http://192.168.31.10:32628
     ```
 
-1. 升级成功后，手工跑一个安装命令， __--set__ 里设的参数值从上述保存的内容里得到，并且外加几个参数值：
+1. 升级成功后，手工跑一个安装命令， `--set` 里设的参数值从上述保存的内容里得到，并且外加几个参数值：
 
     - global.idpPlugin.enabled：是否启用定制 plugin，默认已关闭
     - global.idpPlugin.image.repository：初始化自定义 plugin 的 initContainer 用的 image 地址

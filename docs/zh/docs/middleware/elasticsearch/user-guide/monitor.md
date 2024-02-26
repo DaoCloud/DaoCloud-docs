@@ -11,6 +11,6 @@ hide:
 
     ![概览](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/elasticsearch/images/list01.png)
 
-2. 在左侧导航栏点击`实例监控`，进入实例监控大屏。
+2. 在左侧导航栏点击 __实例监控__ ，进入实例监控大屏。
 
     ![概览](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/elasticsearch/images/monitor01.png)

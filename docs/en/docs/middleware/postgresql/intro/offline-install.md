@@ -4,7 +4,7 @@ This page explains how to install or upgrade the middleware - Postgresql module 
 
 !!! info
 
-    The term `mcamel` used in the following commands or scripts is the internal development code name for the middleware module.
+    The term __mcamel__ used in the following commands or scripts is the internal development code name for the middleware module.
 
 ## Load Images from Installation Package
 
@@ -12,7 +12,7 @@ You can load the images using either of the two methods described below. It is r
 
 ### Sync Images to Image Repository using chart-syncer
 
-1. Create `load-image.yaml`.
+1. Create __load-image.yaml__ .
 
     !!! note
 
@@ -24,7 +24,7 @@ You can load the images using either of the two methods described below. It is r
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: mcamel-offline # the relative path to where you execute the `charts-syncer` command, not the relative path between this YAML file and the offline package
+          intermediateBundlesPath: mcamel-offline # the relative path to where you execute the __charts-syncer__ command, not the relative path between this YAML file and the offline package
         target:
           containerRegistry: 10.16.10.111 # replace with your image repository url
           containerRepository: release.daocloud.io/mcamel # replace with your image repository
@@ -46,7 +46,7 @@ You can load the images using either of the two methods described below. It is r
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: mcamel-offline # the relative path to where you execute the `charts-syncer` command, not the relative path between this YAML file and the offline package
+          intermediateBundlesPath: mcamel-offline # the relative path to where you execute the __charts-syncer__ command, not the relative path between this YAML file and the offline package
         target:
           containerRegistry: 10.16.10.111 # replace with your image repository url
           containerRepository: release.daocloud.io/mcamel # replace with your image repository
@@ -129,7 +129,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
     1. Update the helm repository.
 
         ```shell
-        helm repo update mcamel/mcamel-postgresql # This may fail if the helm version is too low. In that case, try executing `helm update repo` instead.
+        helm repo update mcamel/mcamel-postgresql # This may fail if the helm version is too low. In that case, try executing __helm update repo__ instead.
         ```
   
     1. Select the version you want to install (we recommend installing the latest version).
@@ -145,17 +145,17 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
         ...
         ```
 
-    1. Backup the `--set` parameters.
+    1. Back up the `--set` parameters.
 
-        Before upgrading the version, it is recommended to execute the following command to backup the `--set` parameters of the old version.
+        Before upgrading the version, it is recommended to execute the following command to back up the `--set` parameters of the old version.
 
         ```shell
         helm get values mcamel-postgresql -n mcamel-system -o yaml > mcamel-postgresql.yaml
         ```
 
-    1. Run `helm upgrade`.
+    1. Run `helm upgrade` .
 
-        Before upgrading, it is recommended to replace the `global.imageRegistry` field in `mcamel-postgresql.yaml` with the address of the image repository you are currently using.
+        Before upgrading, it is recommended to replace the  `global.imageRegistry` field in __mcamel-postgresql.yaml__ with the address of the image repository you are currently using.
 
         ```shell
         export imageRegistry={your image repository}
@@ -171,17 +171,17 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
 
 === "Upgrade via chart package"
 
-    1. Backup the `--set` parameters.
+    1. Back up the `--set` parameters.
 
-        Before upgrading the version, it is recommended to execute the following command to backup the `--set` parameters of the old version.
+        Before upgrading the version, it is recommended to execute the following command to back up the `--set` parameters of the old version.
 
         ```shell
         helm get values mcamel-postgresql -n mcamel-system -o yaml > mcamel-postgresql.yaml
         ```
 
-    1. Run `helm upgrade`.
+    1. Run `helm upgrade` .
 
-        Before upgrading, it is recommended to replace the `global.imageRegistry` field in `mcamel-postgresql.yaml` with the address of the image repository you are currently using.
+        Before upgrading, it is recommended to replace the  `global.imageRegistry` field in __mcamel-postgresql.yaml__ with the address of the image repository you are currently using.
 
         ```shell
         export imageRegistry={your image repository}

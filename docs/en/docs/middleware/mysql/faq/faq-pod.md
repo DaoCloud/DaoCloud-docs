@@ -16,7 +16,7 @@ mcamel-system   mcamel-common-mysql-cluster   False   2          62d
 
 For different replica states, refer to the troubleshooting solutions below.
 
-## Pod running = 0/4, with state `Init:Error`
+## Pod running = 0/4, with state __Init:Error__ 
 
 When encountering this issue, start by checking the logs of the master node (sidecar) for more information.
 
@@ -57,7 +57,7 @@ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep mast
     E0209 05:38:56.223635       1 deleg.go:144] sidecar "msg"="failed waiting for xtrabackup to finish" "error"="exit status 1"
     ```
 
-Log in to the `master` node of MySQL and execute an `ALTER` table command:
+Log in to the __master__ node of MySQL and execute an __ALTER__ table command:
 
 ```bash
 [root@master-01 ~]$ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep master
@@ -98,7 +98,7 @@ mcamel-common-mysql-cluster-mysql-0
 
 ## Pod running = 2/4
 
-This type of issue is likely caused by the disk usage of the MySQL instances reaching 100%. You can run the following command on the `master` node to check the disk usage:
+This type of issue is likely caused by the disk usage of the MySQL instances reaching 100%. You can run the following command on the __master__ node to check the disk usage:
 
 ```bash
 kubectl get pod -n mcamel-system | grep cluster-mysql | awk '{print $1}' | xargs -I {} kubectl exec {} -n mcamel-system -c sidecar -- df -h | grep /var/lib/mysql
@@ -121,12 +121,12 @@ kubectl edit pvc data-mcamel-common-mysql-cluster-mysql-0 -n mcamel-system # Mod
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/mysql/images/faq-mysql-1.png)
 
-When using `kubectl describe` on the Pod highlighted in the image above, you may encounter an error message: `Warning Unhealthy 4m50s (x7194 over 3h58m) kubelet Readiness probe failed:`.
+When using __kubectl describe__ on the Pod highlighted in the image above, you may encounter an error message: __Warning Unhealthy 4m50s (x7194 over 3h58m) kubelet Readiness probe failed:__ .
 
-In this case, manual intervention is required due to a current bug in the open-source `mysql-operator` version. You have two options to fix it:
+In this case, manual intervention is required due to a current bug in the open-source __mysql-operator__ version. You have two options to fix it:
 
-- Restart the `mysql-operator`, or
-- Manually update the configuration status of `sys_operator`.
+- Restart the __mysql-operator__ , or
+- Manually update the configuration status of __sys_operator__ .
 
 ```bash
 kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB -e 'update sys_operator.status set value="1"  WHERE name="configured"'

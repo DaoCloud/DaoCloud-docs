@@ -60,26 +60,26 @@ This page lists the Release Notes of the PostgreSQL database, so that you can un
 
 ### v0.1.2
 
-- **Added** `Mcamel-PostgreSQL` UI module is online, support interface management
-- **Added** ability to install `Mcamel-PostgreSQL` PgAdmin offline mirror version
-- **Added** `Mcamel-PostgreSQL` PgAdmin supports LoadBalancer type
-- **Improved** `Mcamel-PostgreSQL` Exporter does not have permission to connect to PostgreSQL in the case of IPv6
-- **Improved** `Mcamel-PostgreSQL` scheduling strategy adds a sliding button
+- **Added** __Mcamel-PostgreSQL__ UI module is online, support interface management
+- **Added** ability to install __Mcamel-PostgreSQL__ PgAdmin offline mirror version
+- **Added** __Mcamel-PostgreSQL__ PgAdmin supports LoadBalancer type
+- **Improved** __Mcamel-PostgreSQL__ Exporter does not have permission to connect to PostgreSQL in the case of IPv6
+- **Improved** __Mcamel-PostgreSQL__ scheduling strategy adds a sliding button
 
 ## 2023-04-20
 
 ### v0.1.1
 
-- **Added** `Mcamel-PostgreSQL` supports fast start PostgreSQL cluster
-- **Added** `Mcamel-PostgreSQL` supports deployment in ARM environment
-- **Added** `Mcamel-PostgreSQL` supports custom roles
-- **Added** `Mcamel-PostgreSQL` supports PostgreSQL lifecycle management backend interface
-- **Added** `Mcamel-PostgreSQL` support view log
-- **Added** `Mcamel-PostgreSQL` supports PostgreSQL 15
-- **Added** `Mcamel-PostgreSQL` supports PostgreSQL UI management interface
+- **Added** __Mcamel-PostgreSQL__ supports fast start PostgreSQL cluster
+- **Added** __Mcamel-PostgreSQL__ supports deployment in ARM environment
+- **Added** __Mcamel-PostgreSQL__ supports custom roles
+- **Added** __Mcamel-PostgreSQL__ supports PostgreSQL lifecycle management backend interface
+- **Added** __Mcamel-PostgreSQL__ support view log
+- **Added** __Mcamel-PostgreSQL__ supports PostgreSQL 15
+- **Added** __Mcamel-PostgreSQL__ supports PostgreSQL UI management interface
 
 ## 2023-03-29
 
 ### v0.0.2
 
-- **Added** `Mcamel-PostgreSQL` supports PostgreSQL instance creation
+- **Added** __Mcamel-PostgreSQL__ supports PostgreSQL instance creation

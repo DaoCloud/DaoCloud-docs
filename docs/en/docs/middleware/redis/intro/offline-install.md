@@ -4,7 +4,7 @@ This page explains how to install or upgrade the Redis module of the middleware 
 
 !!! info
 
-    The term `mcamel` mentioned in the following commands or scripts is the internal development codename for the middleware module.
+    The term __mcamel__ mentioned in the following commands or scripts is the internal development codename for the middleware module.
 
 ## Load Images from Installation Package
 
@@ -12,7 +12,7 @@ You can load the images from the installation package using one of the following
 
 ### Sync Images to Image Repository using chart-syncer
 
-1. Create `load-image.yaml`.
+1. Create __load-image.yaml__ .
 
     !!! note
 
@@ -129,7 +129,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
     1. Update the helm repository.
 
         ```shell
-        helm repo update mcamel/mcamel-redis # If the helm version is too low, the update may fail. In that case, try executing `helm update repo` instead.
+        helm repo update mcamel/mcamel-redis # If the helm version is too low, the update may fail. In that case, try executing __helm update repo__ instead.
         ```
     
     1. Choose the version you want to install (it is recommended to install the latest version).
@@ -145,7 +145,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
         ...
         ```
 
-    1. Backup the `--set` parameters.
+    1. Back up the `--set` parameters.
 
         Before upgrading the version, it is recommended to execute the following command to back up the `--set` parameters of the old version.
 
@@ -153,9 +153,9 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
         helm get values mcamel-redis -n mcamel-system -o yaml > mcamel-redis.yaml
         ```
 
-    1. Run `helm upgrade`.
+    1. Run `helm upgrade` .
 
-        Before upgrading, it is suggested to replace the `global.imageRegistry` field in `mcamel-redis.yaml` with the image repository address you are currently using.
+        Before upgrading, it is suggested to replace the  `global.imageRegistry` field in __mcamel-redis.yaml__ with the image repository address you are currently using.
 
         ```shell
         export imageRegistry={your image repository}
@@ -172,7 +172,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
 
 === "Upgrade via chart package"
 
-    1. Backup the `--set` parameters.
+    1. Back up the `--set` parameters.
 
         Before upgrading the version, it is recommended to execute the following command to back up the `--set` parameters of the old version.
 
@@ -180,9 +180,9 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
         helm get values mcamel-redis -n mcamel-system -o yaml > mcamel-redis.yaml
         ```
 
-    1. Run `helm upgrade`.
+    1. Run `helm upgrade` .
 
-        Before upgrading, it is suggested to replace the `global.imageRegistry` field in `bak.yaml` with the image repository address you are currently using.
+        Before upgrading, it is suggested to replace the  `global.imageRegistry` field in __bak.yaml__ with the image repository address you are currently using.
 
         ```shell
         export imageRegistry={your image repository}

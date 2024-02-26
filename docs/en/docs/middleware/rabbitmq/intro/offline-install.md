@@ -4,7 +4,7 @@ This page explains how to install or upgrade the Middleware - RabbitMQ module af
 
 !!! info
 
-    The term `mcamel` mentioned in the following commands or scripts is the internal development code name of the middleware module.
+    The term __mcamel__ mentioned in the following commands or scripts is the internal development code name of the middleware module.
 
 ## Load Images from Installation Package
 
@@ -12,7 +12,7 @@ You can load the images in one of the following two ways. When an image reposito
 
 ### Synchronize Images to Image Repository Using chart-syncer
 
-1. Create `load-image.yaml`.
+1. Create __load-image.yaml__ .
 
     !!! note
 
@@ -129,7 +129,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method a
     1. Update the helm repository.
 
         ```shell
-        helm repo update mcamel/mcamel-rabbitmq # If the helm version is too old, it may fail. In that case, try executing `helm update repo`.
+        helm repo update mcamel/mcamel-rabbitmq # If the helm version is too old, it may fail. In that case, try executing __helm update repo__ .
         ```
 
     1. Choose the version you want to install (recommended to install the latest version).
@@ -145,7 +145,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method a
         ...
         ```
 
-    1. Backup the `--set` parameters.
+    1. Back up the `--set` parameters.
 
         Before upgrading the version, it is recommended to execute the following command to back up the `--set` parameters of the old version.
 
@@ -153,9 +153,9 @@ There are two ways to upgrade. You can choose the corresponding upgrade method a
         helm get values mcamel-rabbitmq -n mcamel-system -o yaml > mcamel-rabbitmq.yaml
         ```
 
-    1. Run `helm upgrade`.
+    1. Run `helm upgrade` .
 
-        Before upgrading, it is recommended to replace the `global.imageRegistry` field in mcamel-rabbitmq.yaml with the URL of the image repository you are currently using.
+        Before upgrading, it is recommended to replace the  `global.imageRegistry` field in mcamel-rabbitmq.yaml with the URL of the image repository you are currently using.
 
         ```shell
         export imageRegistry={your image repository}
@@ -171,7 +171,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method a
 
 === "Upgrade via chart package"
 
-    1. Backup the `--set` parameters.
+    1. Back up the `--set` parameters.
 
         Before upgrading the version, it is recommended to execute the following command to back up the `--set` parameters of the old version.
 
@@ -179,9 +179,9 @@ There are two ways to upgrade. You can choose the corresponding upgrade method a
         helm get values mcamel-rabbitmq -n mcamel-system -o yaml > mcamel-rabbitmq.yaml
         ```
 
-    1. Run `helm upgrade`.
+    1. Run `helm upgrade` .
 
-        Before upgrading, it is recommended to replace the `global.imageRegistry` field in mcamel-rabbitmq.yaml with the URL of the image repository you are currently using.
+        Before upgrading, it is recommended to replace the  `global.imageRegistry` field in mcamel-rabbitmq.yaml with the URL of the image repository you are currently using.
 
         ```shell
         export imageRegistry={your image repository}

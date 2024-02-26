@@ -60,13 +60,13 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 
 #### New features
 
-- **Added** anti-affinity configuration for `mcamel-elasticsearch` nodes
-- **Added** monitoring charts for `mcamel-elasticsearch`, removing interfering elements and adding time range selection
+- **Added** anti-affinity configuration for __mcamel-elasticsearch__ nodes
+- **Added** monitoring charts for __mcamel-elasticsearch__ , removing interfering elements and adding time range selection
 
 #### Improvements
 
-- **Improved** closed-loop installation of `mcamel-elasticsearch` ServiceMonitor
-- **Fixed** the monitoring charts for `mcamel-elasticsearch`, removing interfering elements and adding time range selection
+- **Improved** closed-loop installation of __mcamel-elasticsearch__ ServiceMonitor
+- **Fixed** the monitoring charts for __mcamel-elasticsearch__ , removing interfering elements and adding time range selection
 
 ## 2023-05-30
 
@@ -74,9 +74,9 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 
 #### New features
 
-- **Added** integrationg with the global management audit log module for `mcamel-elasticsearch`
-- **Added** configurable instance monitoring data collection interval for `mcamel-elasticsearch`
-- **Fixed** incorrect pagination display in the Pod list for `mcamel-elasticsearch`
+- **Added** integrationg with the global management audit log module for __mcamel-elasticsearch__ 
+- **Added** configurable instance monitoring data collection interval for __mcamel-elasticsearch__ 
+- **Fixed** incorrect pagination display in the Pod list for __mcamel-elasticsearch__ 
 
 ## 2023-04-27
 
@@ -84,13 +84,13 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 
 #### New features
 
-- **Added** `mcamel-elasticsearch` details page displays related events
-- **Added** `mcamel-elasticsearch` supports custom roles
+- **Added** __mcamel-elasticsearch__ details page displays related events
+- **Added** __mcamel-elasticsearch__ supports custom roles
 
 #### Improvements
 
-- **Improved** `mcamel-elasticsearch` scheduling strategy adds a sliding button
-- **Fixed** `mcamel-elasticsearch` may interrupt the retry problem when managing clusters
+- **Improved** __mcamel-elasticsearch__ scheduling strategy adds a sliding button
+- **Fixed** __mcamel-elasticsearch__ may interrupt the retry problem when managing clusters
 
 ## 2023-03-28
 
@@ -98,9 +98,9 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 
 #### New features
 
-- **Added** `mcamel-elasticsearch` supports middleware traces adaptation
-- **Added** Enable traces according to parameter configuration when installing `mcamel-elasticsearch`
-- **Added** `mcamel-elasticsearch` Kibana supports LoadBalancer type
+- **Added** __mcamel-elasticsearch__ supports middleware traces adaptation
+- **Added** Enable traces according to parameter configuration when installing __mcamel-elasticsearch__ 
+- **Added** __mcamel-elasticsearch__ Kibana supports LoadBalancer type
 
 #### Upgrade
 
@@ -113,26 +113,26 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 
 #### New features
 
-- **Added** `mcamel-elasticsearch` helm-docs template file
-- **Added** The Operator in the `mcamel-elasticsearch` app store can only be installed on mcamel-system
-- **Added** `mcamel-elasticsearch` supports cloud shell
-- **Added** `mcamel-elasticsearch` supports separate registration of navigation bar
-- **Added** `mcamel-elasticsearch` supports viewing logs
-- **Added** `mcamel-elasticsearch` Operator docking with chart-syncer
-- **Added** `mcamel-elasticsearch` supports LB
+- **Added** __mcamel-elasticsearch__ helm-docs template file
+- **Added** The Operator in the __mcamel-elasticsearch__ app store can only be installed on mcamel-system
+- **Added** __mcamel-elasticsearch__ supports cloud shell
+- **Added** __mcamel-elasticsearch__ supports separate registration of navigation bar
+- **Added** __mcamel-elasticsearch__ supports viewing logs
+- **Added** __mcamel-elasticsearch__ Operator docking with chart-syncer
+- **Added** __mcamel-elasticsearch__ supports LB
 
 - **Added** log view operation instructions, support custom query, export and other features
 
 #### Upgrade
 
-- **Upgraded** `mcamel-elasticsearch` upgrade offline mirror detection script
+- **Upgraded** __mcamel-elasticsearch__ upgrade offline mirror detection script
 
 #### Fixes
 
-- **Fixed** an issue that `mcamel-elasticsearch` instance name is too long and the custom resource cannot be created.
-- **Fixed** `mcamel-elasticsearch` workspace Editor users cannot see instance password
-- **Fixed** `mcamel-elasticsearch` password cannot use special characters
-- **Fixed** `mcamel-elasticsearch` out of index causing panic issue
+- **Fixed** an issue that __mcamel-elasticsearch__ instance name is too long and the custom resource cannot be created.
+- **Fixed** __mcamel-elasticsearch__ workspace Editor users cannot see instance password
+- **Fixed** __mcamel-elasticsearch__ password cannot use special characters
+- **Fixed** __mcamel-elasticsearch__ out of index causing panic issue
 
 ## 2022-12-25
 
@@ -140,21 +140,21 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 
 #### New features
 
-- **Added** `mcamel-elasticsearch` gets the list of NodePorts allocated by the cluster
-- **Added** `mcamel-elasticsearch` adds status details
-- **Added** `mcamel-elasticsearch` node affinity configuration
+- **Added** __mcamel-elasticsearch__ gets the list of NodePorts allocated by the cluster
+- **Added** __mcamel-elasticsearch__ adds status details
+- **Added** __mcamel-elasticsearch__ node affinity configuration
 
 #### Improvements
 
-- **Improved** `mcamel-elasticsearch` can display public es, which cannot be deleted before being managed
-- **Improved** `mcamel-elasticsearch` increases health status return
+- **Improved** __mcamel-elasticsearch__ can display public es, which cannot be deleted before being managed
+- **Improved** __mcamel-elasticsearch__ increases health status return
 
 #### Fixes
 
-- **Fixed** `mcamel-elasticsearch` fixes the bug that deletion will fail when kb does not exist
-- **Fixed** `mcamel-elasticsearch` fixes exporter offline failure
-- **Fixed** `mcamel-elasticsearch` fixes the bug that port information is not returned after the es is successfully created
-- **Fixed** Kibana's service type does not meet expectations when `mcamel-elasticsearch` queries instance list and details
+- **Fixed** __mcamel-elasticsearch__ fixes the bug that deletion will fail when kb does not exist
+- **Fixed** __mcamel-elasticsearch__ fixes exporter offline failure
+- **Fixed** __mcamel-elasticsearch__ fixes the bug that port information is not returned after the es is successfully created
+- **Fixed** Kibana's service type does not meet expectations when __mcamel-elasticsearch__ queries instance list and details
 
 ## 2022-11-28
 

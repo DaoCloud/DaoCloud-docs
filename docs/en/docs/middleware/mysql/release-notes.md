@@ -53,28 +53,28 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 
 ### v0.10.0
 
-- **Improved** the structure and style display of the backup management page for `mcamel-mysql`
-- **Improved** the monitoring charts for `mcamel-mysql` by removing distracting elements and adding a time range selection
-- **Improved** the source of storage capacity metrics for `mcamel-mysql` by using neutral metrics
-- **Improved** the installation process of `mcamel-mysql` ServiceMonitor
+- **Improved** the structure and style display of the backup management page for __mcamel-mysql__ 
+- **Improved** the monitoring charts for __mcamel-mysql__ by removing distracting elements and adding a time range selection
+- **Improved** the source of storage capacity metrics for __mcamel-mysql__ by using neutral metrics
+- **Improved** the installation process of __mcamel-mysql__ ServiceMonitor
 
 ## 2023-05-30
 
 ### v0.9.0
 
-- **Added** integration with the global management audit log module for `mcamel-mysql`
-- **Added** the ability to configure the interval for collecting monitoring data for `mcamel-mysql` instances
-- **Fixed** an issue where Raft cluster couldn't be established properly when installing MySQL Operator with multiple replicas for `mcamel-mysql`
-- **Fixed** the PodDisruptionBudget version to v1 when upgrading MySQL Operator with multiple replicas for `mcamel-mysql`
+- **Added** integration with the global management audit log module for __mcamel-mysql__ 
+- **Added** the ability to configure the interval for collecting monitoring data for __mcamel-mysql__ instances
+- **Fixed** an issue where Raft cluster couldn't be established properly when installing MySQL Operator with multiple replicas for __mcamel-mysql__ 
+- **Fixed** the PodDisruptionBudget version to v1 when upgrading MySQL Operator with multiple replicas for __mcamel-mysql__ 
 
 ## 2023-04-27
 
 ### v0.8.1
 
-- **Added** `mcamel-mysql` details page displays related events
-- **Added** `mcamel-mysql` openapi list interface supports Cluster and Namespace field filtering
-- **Added** `mcamel-mysql` custom role
-- **Added** `mcamel-mysql` is connected to HwameiStor and supports storage capacity display (you need to manually create HwameiStor exporter ServiceMonitor)
+- **Added** __mcamel-mysql__ details page displays related events
+- **Added** __mcamel-mysql__ openapi list interface supports Cluster and Namespace field filtering
+- **Added** __mcamel-mysql__ custom role
+- **Added** __mcamel-mysql__ is connected to HwameiStor and supports storage capacity display (you need to manually create HwameiStor exporter ServiceMonitor)
 - **Upgraded** Optimize the scheduling strategy to add a sliding button
 
 ## 2023-03-28
@@ -83,16 +83,16 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 
 #### New features
 
-- **Added** `mcamel-mysql` supports middleware traces adaptation
-- **Added** Install `mcamel-mysql` to enable traces according to parameter configuration.
-- **Added** `mcamel-mysql` PhpMyAdmin supports LoadBalancer type
+- **Added** __mcamel-mysql__ supports middleware traces adaptation
+- **Added** Install __mcamel-mysql__ to enable traces according to parameter configuration.
+- **Added** __mcamel-mysql__ PhpMyAdmin supports LoadBalancer type
 
 #### Improvements
 
 - **Upgraded** golang.org/x/net to v0.7.0
 - **Upgraded** GHippo SDK to v0.14.0
-- **Improved** `mcamel-mysql` common-mysql supports multiple instance optimization
-- **Improved** `mcamel-mysql` troubleshooting manual adds more processing methods
+- **Improved** __mcamel-mysql__ common-mysql supports multiple instance optimization
+- **Improved** __mcamel-mysql__ troubleshooting manual adds more processing methods
 
 ## 2023-02-23
 
@@ -100,28 +100,28 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 
 ### New features
 
-- **Added** `mcamel-mysql` helm-docs template file
-- **Added** The Operator in the `mcamel-mysql` app store can only be installed in mcamel-system
-- **Added** `mcamel-mysql` supports cloud shell
-- **Added** `mcamel-mysql` supports separate registration of navigation bar
-- **Added** `mcamel-mysql` supports viewing logs
-- **Added** `mcamel-mysql` updated Operator version
-- **Added** `mcamel-mysql` shows common MySQL in the instance list
-- **Added** `mcamel-mysql` supports MySQL 8.0.29
-- **Added** `mcamel-mysql` supports LB
-- **Added** `mcamel-mysql` supports Operator docking with chart-syncer
-- **Added** `mcamel-mysql` Operator finalizers permission to support openshift
-- **Added** `UI` adds MySQL master-slave replication delay display
-- **Added** `Documentation` adds log viewing operation instructions, supports custom query, export and other features
-- **Upgraded** `mcamel-mysql` upgrade offline mirror detection script
+- **Added** __mcamel-mysql__ helm-docs template file
+- **Added** The Operator in the __mcamel-mysql__ app store can only be installed in mcamel-system
+- **Added** __mcamel-mysql__ supports cloud shell
+- **Added** __mcamel-mysql__ supports separate registration of navigation bar
+- **Added** __mcamel-mysql__ supports viewing logs
+- **Added** __mcamel-mysql__ updated Operator version
+- **Added** __mcamel-mysql__ shows common MySQL in the instance list
+- **Added** __mcamel-mysql__ supports MySQL 8.0.29
+- **Added** __mcamel-mysql__ supports LB
+- **Added** __mcamel-mysql__ supports Operator docking with chart-syncer
+- **Added** __mcamel-mysql__ Operator finalizers permission to support openshift
+- **Added** __UI__ adds MySQL master-slave replication delay display
+- **Added** __Documentation__ adds log viewing operation instructions, supports custom query, export and other features
+- **Upgraded** __mcamel-mysql__ upgrade offline mirror detection script
 
 #### Fixes
 
-- **Fixed** an issue that `mcamel-mysql` instance name is too long and the custom resource cannot be created
-- **Fixed** `mcamel-mysql` workspace Editor user cannot view instance password
-- **Fixed** Duplicate definition of `expire-logs-days` parameter in `mcamel-mysql` configuration file
-- **Fixed** The binlog expiration time in `mcamel-mysql` 8.0 environment is not as expected
-- **Fixed** `mcamel-mysql` backup set listing would show older backup sets for clusters with the same name
+- **Fixed** an issue that __mcamel-mysql__ instance name is too long and the custom resource cannot be created
+- **Fixed** __mcamel-mysql__ workspace Editor user cannot view instance password
+- **Fixed** Duplicate definition of __expire-logs-days__ parameter in __mcamel-mysql__ configuration file
+- **Fixed** The binlog expiration time in __mcamel-mysql__ 8.0 environment is not as expected
+- **Fixed** __mcamel-mysql__ backup set listing would show older backup sets for clusters with the same name
 
 ## 2022-12-25
 
@@ -152,17 +152,17 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 - **Added** backup configuration interface
 - **Added** backup and restore source field in instance list interface
 - **Added** interface to get user list
-- **Added** `mysql-operator` chart parameter to specify the metric exporter image
+- **Added** __mysql-operator__ chart parameter to specify the metric exporter image
 - **Added** support arm64 architecture
 - **Added** arm64 operator image packaging
 - **Added** support for password desensitization
 - **Added** support for service exposure as nodeport
 - **Added** support for mtls
-- **Added** `documentation` first release of documentation website
-- **Added** `documentation` basic concept
-- **Added** `Documentation` Concepts
-- **Added** `documentation` for first time use of MySQL
-- **Added** `documentation` delete MySQL instance
+- **Added** __documentation__ first release of documentation website
+- **Added** __documentation__ basic concept
+- **Added** __Documentation__ Concepts
+- **Added** __documentation__ for first time use of MySQL
+- **Added** __documentation__ delete MySQL instance
 
 #### Improvements
 

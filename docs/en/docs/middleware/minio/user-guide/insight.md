@@ -11,7 +11,7 @@ MinIO has built-in Prometheus and Grafana monitoring modules.
 
     <!--screenshot-->
 
-2. Click `Instance Monitoring` on the left navigation bar.
+2. Click __Instance Monitoring__ on the left navigation bar.
 
     <!--screenshot-->
 

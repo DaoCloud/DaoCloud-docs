@@ -172,16 +172,16 @@
         ...
         ```
 
-    1. 备份 __--set__ 参数。
+    1. 备份 `--set` 参数。
 
-        在升级 Insight 版本之前，建议您执行如下命令，备份老版本的 __--set__ 参数。
+        在升级 Insight 版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
 
         ```shell
         helm get values insight -n insight-system -o yaml > insight.yaml
         helm get values insight-agent -n insight-system -o yaml > insight-agent.yaml
         ```
 
-    1. 执行 __helm upgrade__ 。
+    1. 执行 `helm upgrade` 。
 
         升级前建议您覆盖 insight.yaml 和 insight-agent.yaml 中的 __global.imageRegistry__ 字段为当前使用的镜像仓库地址。
 
@@ -209,15 +209,15 @@
 
 === "通过 chart 包升级"
 
-    1. 备份 __--set__ 参数。
+    1. 备份 `--set` 参数。
 
-        在升级 Insight 版本之前，建议您执行如下命令，备份老版本的 __--set__ 参数。
+        在升级 Insight 版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
 
         ```shell
         helm get values insight -n insight-system -o yaml > insight.yaml
         ```
 
-    1. 执行 __helm upgrade__ 。
+    1. 执行 `helm upgrade` 。
 
         升级前建议您覆盖 bak.yaml 中的 __global.imageRegistry__ 为当前使用的镜像仓库地址。
 

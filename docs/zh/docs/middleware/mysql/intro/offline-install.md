@@ -4,7 +4,7 @@
 
 !!! info
 
-    下述命令或脚本内出现的 `mcamel` 字样是中间件模块的内部开发代号。
+    下述命令或脚本内出现的 __mcamel__ 字样是中间件模块的内部开发代号。
 
 ## 从安装包中加载镜像
 
@@ -152,7 +152,7 @@
         helm get values mcamel-mysql -n mcamel-system -o yaml > mcamel-mysql.yaml
         ```
 
-    1. 执行 `helm upgrade`。
+    1. 执行 `helm upgrade` 。
 
         升级前建议您覆盖 mcamel-mysql.yaml 中的 `global.imageRegistry` 字段为当前使用的镜像仓库地址。
 
@@ -179,7 +179,7 @@
         helm get values mcamel-mysql -n mcamel-system -o yaml > mcamel-mysql.yaml
         ```
 
-    1. 执行 `helm upgrade`。
+    1. 执行 `helm upgrade` 。
 
         升级前建议您覆盖 bak.yaml 中的 `global.imageRegistry` 为当前使用的镜像仓库地址。
 

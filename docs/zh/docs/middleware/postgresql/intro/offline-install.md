@@ -4,7 +4,7 @@
 
 !!! info
 
-    下述命令或脚本内出现的 `mcamel` 字样是中间件模块的内部开发代号。
+    下述命令或脚本内出现的 __mcamel__  字样是中间件模块的内部开发代号。
 
 ## 从安装包中加载镜像
 
@@ -144,17 +144,17 @@
         ...
         ```
 
-    1. 备份 `--set` 参数。
+    1. 备份 `--set`  参数。
 
-        在升级版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
+        在升级版本之前，建议您执行如下命令，备份老版本的 `--set`  参数。
 
         ```shell
         helm get values mcamel-postgresql -n mcamel-system -o yaml > mcamel-postgresql.yaml
         ```
 
-    1. 执行 `helm upgrade`。
+    1. 执行 `helm upgrade` 。
 
-        升级前建议您覆盖 mcamel-postgresql.yaml 中的 `global.imageRegistry` 字段为当前使用的镜像仓库地址。
+        升级前建议您覆盖 mcamel-postgresql.yaml 中的 `global.imageRegistry`  字段为当前使用的镜像仓库地址。
 
         ```shell
         export imageRegistry={你的镜像仓库}
@@ -171,17 +171,17 @@
 
 === "通过 chart 包升级"
 
-    1. 备份 `--set` 参数。
+    1. 备份 `--set`  参数。
 
-        在升级版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
+        在升级版本之前，建议您执行如下命令，备份老版本的 `--set`  参数。
 
         ```shell
         helm get values mcamel-postgresql -n mcamel-system -o yaml > mcamel-postgresql.yaml
         ```
 
-    1. 执行 `helm upgrade`。
+    1. 执行 `helm upgrade` 。
 
-        升级前建议您覆盖 bak.yaml 中的 `global.imageRegistry` 为当前使用的镜像仓库地址。
+        升级前建议您覆盖 bak.yaml 中的 `global.imageRegistry`  为当前使用的镜像仓库地址。
 
         ```shell
         export imageRegistry={你的镜像仓库}

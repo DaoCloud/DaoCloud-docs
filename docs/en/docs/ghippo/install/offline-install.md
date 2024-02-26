@@ -215,15 +215,15 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
         ...
         ```
 
-    1. Back up the __--set__ parameter.
+    1. Back up the `--set` parameter.
 
-        Before upgrading the global management version, it is recommended that you run the following command to back up the __--set__ parameter of the old version.
+        Before upgrading the global management version, it is recommended that you run the following command to back up the `--set` parameter of the old version.
 
         ```shell
         helm get values ​​ghippo -n ghippo-system -o yaml > bak.yaml
         ```
 
-    1. Execute __helm upgrade__ .
+    1. Run `helm upgrade` .
 
         Before upgrading, it is recommended that you override the __global.imageRegistry__ field in bak.yaml to the address of the currently used container registry.
 
@@ -241,9 +241,9 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
 
 === "upgrade via chart package"
 
-    1. Back up the __--set__ parameter.
+    1. Back up the `--set` parameter.
 
-        Before upgrading the global management version, it is recommended that you run the following command to back up the __--set__ parameter of the old version.
+        Before upgrading the global management version, it is recommended that you run the following command to back up the `--set` parameter of the old version.
 
         ```shell
         helm get values ​​ghippo -n ghippo-system -o yaml > bak.yaml
@@ -255,7 +255,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
         kubectl apply -f ./crds
         ```
 
-    1. Execute __helm upgrade__ .
+    1. Run `helm upgrade` .
 
         Before upgrading, it is recommended that you overwrite __global.imageRegistry__ in bak.yaml to the address of the current container registry.
 

@@ -20,4 +20,4 @@ mcamel-mysql-ui-7ffd9dd8db-d5jfm 2/2 Running 0 25m
 mysql-operator-0 2/2 Running 109 (47m ago) 2d21h
 ```
 
-As shown above, if the status of the active and standby nodes (`master` `replica`) is `yes`, it means that MySQL is in a normal state.
+As shown above, if the status of the active and standby nodes ( __master__ __replica__ ) is __yes__ , it means that MySQL is in a normal state.

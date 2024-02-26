@@ -70,12 +70,12 @@
 #### 新功能
 
 - **新增** 对接全局管理审计日志模块
-- **新增** `LoadBalancer` 服务类型
+- **新增** __LoadBalancer__ 服务类型
 
 #### 优化
 
 - **优化** 监控图表，去除干扰元素并新增时间范围选择
-- **优化** `ServiceMonitor` 闭环安装
+- **优化** __ServiceMonitor__ 闭环安装
 
 ## 2023-04-27
 
@@ -83,12 +83,12 @@
 
 #### 新功能
 
-- **新增** `mcamel-kafka` 详情页面展示相关的事件
-- **新增** `mcamel-kafka` 支持自定义角色
+- **新增** __mcamel-kafka__ 详情页面展示相关的事件
+- **新增** __mcamel-kafka__ 支持自定义角色
 
 #### 优化
 
-- **优化** `mcamel-kafka` 调度策略增加滑动按钮
+- **优化** __mcamel-kafka__ 调度策略增加滑动按钮
 
 ## 2023-03-28
 
@@ -96,12 +96,12 @@
 
 #### 新功能
 
-- **新增** `mcamel-kafka` 支持中间件链路追踪适配
-- **新增** 安装 `mcamel-kafka` 根据参数配置启用链路追踪
+- **新增** __mcamel-kafka__ 支持中间件链路追踪适配
+- **新增** 安装 __mcamel-kafka__ 根据参数配置启用链路追踪
 
 #### 优化
 
-- **优化** `mcamel-kafka` 优化 Kafka 的默认配置
+- **优化** __mcamel-kafka__ 优化 Kafka 的默认配置
 - **升级** golang.org/x/net 到 v0.7.0
 - **升级** GHippo SDK 到 v0.14.0
 
@@ -111,21 +111,21 @@
 
 #### 新功能
 
-- **新增** `mcamel-kafka` helm-docs 模板文件
-- **新增** `mcamel-kafka` 应用商店中的 Operator 只能安装在 mcamel-system
-- **新增** `mcamel-kafka` 支持 cloud shell
-- **新增** `mcamel-kafka` 支持导航栏单独注册
-- **新增** `mcamel-kafka` 支持查看日志
-- **新增** `mcamel-kafka` Operator 对接 chart-syncer
+- **新增** __mcamel-kafka__ helm-docs 模板文件
+- **新增** __mcamel-kafka__ 应用商店中的 Operator 只能安装在 mcamel-system
+- **新增** __mcamel-kafka__ 支持 cloud shell
+- **新增** __mcamel-kafka__ 支持导航栏单独注册
+- **新增** __mcamel-kafka__ 支持查看日志
+- **新增** __mcamel-kafka__ Operator 对接 chart-syncer
 
 #### 优化
 
-- **优化** `mcamel-kafka` 升级离线镜像检测脚本  
+- **优化** __mcamel-kafka__ 升级离线镜像检测脚本  
 
 #### 修复
 
-- **修复** `mcamel-kafka` 实例名太长导致自定义资源无法创建的问题
-- **修复** `mcamel-kafka` 工作空间 Editor 用户无法查看实例密码
+- **修复** __mcamel-kafka__ 实例名太长导致自定义资源无法创建的问题
+- **修复** __mcamel-kafka__ 工作空间 Editor 用户无法查看实例密码
 - **新增** 日志查看操作说明，支持自定义查询、导出等功能
 
 ## 2022-12-25
@@ -134,13 +134,13 @@
 
 #### 新功能
 
-- **新增** `mcamel-kafka` NodePort 端口冲突提前检测
-- **新增** `mcamel-kafka` 节点亲和性配置
+- **新增** __mcamel-kafka__ NodePort 端口冲突提前检测
+- **新增** __mcamel-kafka__ 节点亲和性配置
 
 #### 优化
 
-- **优化** `mcamel-kafka` manager 去掉 probe，防止 kafka 没准备好不能打开 manager  
-- **优化** `mcamel-kafka` zooEntrance 重新打包镜像地址为 1.0.0  
+- **优化** __mcamel-kafka__ manager 去掉 probe，防止 kafka 没准备好不能打开 manager  
+- **优化** __mcamel-kafka__ zooEntrance 重新打包镜像地址为 1.0.0  
 
 ## 2022-11-28
 
@@ -195,5 +195,5 @@
 - **新增** 支持 kafka-manager 对 kafka 进行管理
 - **新增** 支持 kafka 的指标监控，查看监控图表
 - **新增** 支持 ghippo 权限联动
-- **新增** `mcamel-kafka` 获取用户列表接口
+- **新增** __mcamel-kafka__ 获取用户列表接口
 - **优化** 更新 release note 脚本，执行 release-process 规范

@@ -66,43 +66,43 @@ This page lists the Release Notes of MinIO object storage, so that you can under
 
 ### v0.5.1
 
-- **Added** `mcamel-minio` details page displays related events
-- **Added** `mcamel-minio` supports custom roles
-- **Improved** `mcamel-minio` scheduling strategy adds a sliding button
+- **Added** __mcamel-minio__ details page displays related events
+- **Added** __mcamel-minio__ supports custom roles
+- **Improved** __mcamel-minio__ scheduling strategy adds a sliding button
 
 ## 2023-03-28
 
 ### v0.4.1
 
-- **Fixed** `mcamel-minio` page showing wrong LoadBalancer address.
-- **Fixed** `mcamel-minio` should not verify wild storage configuration when removing MinIO.
-- **Fixed** `mcamel-minio` fixed to create Bucket occasionally failed.
-- **Upgraded** `mcamel-minio` golang.org/x/net to v0.7.0.
+- **Fixed** __mcamel-minio__ page showing wrong LoadBalancer address.
+- **Fixed** __mcamel-minio__ should not verify wild storage configuration when removing MinIO.
+- **Fixed** __mcamel-minio__ fixed to create Bucket occasionally failed.
+- **Upgraded** __mcamel-minio__ golang.org/x/net to v0.7.0.
 
 ## 2023-02-23
 
 ### v0.3.0
 
-- **Added** `mcamel-minio` helm-docs template file.
-- **Added** Operators from the `mcamel-minio` app store can only be installed on mcamel-system.
-- **Added** `mcamel-minio` supports cloud shell.
-- **Added** `mcamel-minio` supports separate registration of navigation bar.
-- **Added** `mcamel-minio` supports viewing logs.
-- **Added** `mcamel-minio` Operator docking with chart-syncer.
-- **Fixed** an issue that `mcamel-minio` instance name is too long and the custom resource cannot be created.
-- **Fixed** `mcamel-minio` workspace Editor users cannot view instance password.
-- **Upgraded** `mcamel-minio` upgrades the offline mirror detection script.
+- **Added** __mcamel-minio__ helm-docs template file.
+- **Added** Operators from the __mcamel-minio__ app store can only be installed on mcamel-system.
+- **Added** __mcamel-minio__ supports cloud shell.
+- **Added** __mcamel-minio__ supports separate registration of navigation bar.
+- **Added** __mcamel-minio__ supports viewing logs.
+- **Added** __mcamel-minio__ Operator docking with chart-syncer.
+- **Fixed** an issue that __mcamel-minio__ instance name is too long and the custom resource cannot be created.
+- **Fixed** __mcamel-minio__ workspace Editor users cannot view instance password.
+- **Upgraded** __mcamel-minio__ upgrades the offline mirror detection script.
 - **Added** log view operation instructions, support custom query, export and other features.
 
 ## 2022-12-25
 
 ### v0.2.0
 
-- **Added** `mcamel-minio` NodePort port conflict early detection.
-- **Added** `mcamel-minio` node affinity configuration.
-- **Fixed** `mcamel-minio` fixes the problem that the status display is abnormal when a single instance is used.
-- **Fixed** `mcamel-minio` did not verify name when creating instance.
-- **Improved** `mcamel-minio` cancels the authentication information input box.
+- **Added** __mcamel-minio__ NodePort port conflict early detection.
+- **Added** __mcamel-minio__ node affinity configuration.
+- **Fixed** __mcamel-minio__ fixes the problem that the status display is abnormal when a single instance is used.
+- **Fixed** __mcamel-minio__ did not verify name when creating instance.
+- **Improved** __mcamel-minio__ cancels the authentication information input box.
 
 ## 2022-11-28
 

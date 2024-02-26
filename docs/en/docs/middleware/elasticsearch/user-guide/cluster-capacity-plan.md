@@ -23,7 +23,7 @@ To do capacity planning for Elasticsearch, the following factors need to be cons
 
 ### Basic Requirements Planning
 
-At the beginning of storage capacity planning, two ` use cases` and `data requirements` plans need to be confirmed in advance:
+At the beginning of storage capacity planning, two __use cases__ and __data requirements__ plans need to be confirmed in advance:
 
 - scenes to be used
 
@@ -42,11 +42,11 @@ At the beginning of storage capacity planning, two ` use cases` and `data requir
 
 ### ES Other business expenses
 
-In addition to data, there are other overheads in `Elasticsearch`, which are also the main reasons for affecting the storage capacity of `Elasticsearch` service, such as:
+In addition to data, there are other overheads in __Elasticsearch__ , which are also the main reasons for affecting the storage capacity of __Elasticsearch__ service, such as:
 
-- Index overhead: the exact overhead calculation can be calculated using the `_cat/indices?v` API and the `pri.store.size` value, usually 10% larger than the source data (`_all` parameters etc. are not calculated)
+- Index overhead: the exact overhead calculation can be calculated using the ___cat/indices?v__ API and the __pri.store.size__ value, usually 10% larger than the source data ( ___all__ parameters etc. are not calculated)
 - Operating system reserved space: The default operating system will reserve 5% of the file system for you to handle key processes, system recovery, and prevent disk fragmentation issues, etc.
-- `Elasticsearch` internal overhead: 20% is generally reserved for internal operations such as segment merging and logging
+- __Elasticsearch__ internal overhead: 20% is generally reserved for internal operations such as segment merging and logging
 - Number of replicas: Replicas are beneficial to increase data reliability, but at the same time increase storage costs
 - Safety threshold: In order to prevent sudden data growth, please roughly reserve 15% of the capacity space as the safety threshold
 
@@ -58,7 +58,7 @@ Full Formula | Simplified Version |
 | --- | --- |
 | source data * (1 + number of replicas) * ( 1 + index overhead) / (1 - Linux reserved space) / (1 - internal overhead) = minimum storage requirement | source data * (1 + number of replicas) * 1.45 = Minimum Storage Requirements |
 
-If you have `500G` of data storage and need a replica, the minimum storage requirement is closer to `500 * 2 * 1.1 / 0.95 / 0.8 = 1.5T`.
+If you have __500G__ of data storage and need a replica, the minimum storage requirement is closer to __500 * 2 * 1.1 / 0.95 / 0.8 = 1.5T__ .
 
 ### About node disk configuration
 
@@ -91,15 +91,15 @@ Applicable scene:
 - Log type, frequent writing, less query, about 30G for a single shard
 - Search class, less writing, frequent query, no more than 20G for a single shard
 
-Each `Elasticsearch` index is divided into multiple shards, and the data is scattered into different shards according to the hash algorithm. Since the number of index shards affects read and write performance and fault recovery speed, it is recommended to plan ahead.
+Each __Elasticsearch__ index is divided into multiple shards, and the data is scattered into different shards according to the hash algorithm. Since the number of index shards affects read and write performance and fault recovery speed, it is recommended to plan ahead.
 
 ### Shard usage summary
 
-- `Elasticsearch` in version 7.x defaults to `1 primary shard` and `1 replica shard` per index
+- __Elasticsearch__ in version 7.x defaults to __1 primary shard__ and __1 replica shard__ per index
 - On a single node, the maximum number of shards in version 7.x is 1000
-- Try to keep the size of a single fragment between `10-50G` for the best experience, and it is generally recommended to be around `30G`
+- Try to keep the size of a single fragment between __10-50G__ for the best experience, and it is generally recommended to be around __30G__ 
 
-     - Large shards can slow down recovery from failures in `Elasticsearch`
+     - Large shards can slow down recovery from failures in __Elasticsearch__ 
      - A shard that is too small may lead to a lot of shards, because each shard will take up some CPU and memory, resulting in read and write performance and insufficient memory.
   
 - When the number of shards exceeds the number of data nodes, it is recommended that the number of shards be close to an integer multiple of the data nodes, so that the shards can be evenly distributed to the data nodes.
@@ -110,7 +110,7 @@ Each `Elasticsearch` index is divided into multiple shards, and the data is scat
 Each index and each shard requires some memory and CPU resources. In most cases, a small set of large shards uses fewer resources than many small shards.
 
 Segments play an important role in the resource usage of shards. Most shards contain several segments, which store their index data.
-`Elasticsearch` keeps segment metadata in JVM heap memory so that it can be quickly retrieved for searching.
+ __Elasticsearch__ keeps segment metadata in JVM heap memory so that it can be quickly retrieved for searching.
 As a shard grows, its segments are merged into fewer, larger segments. This reduces the number of segments, which means less metadata is kept in heap memory.
 
 In order to reduce the number of indexes and avoid excessively large and unordered mappings, consider storing similarly structured data in the same index instead of dividing data into different indexes based on the data source.
@@ -138,11 +138,11 @@ For more information, please refer to:
 
 (metadata + growth space) * (1 + index overhead) / required shard size = approximate number of primary shards
 
-Assume there is `80GiB` of data. Expect to keep each shard around `30GiB`. So your number of shards should be approximately 80 * 1.1 / 30 = 3
+Assume there is __80GiB__ of data. Expect to keep each shard around __30GiB__ . So your number of shards should be approximately 80 * 1.1 / 30 = 3
 
 ### How to manage shards
 
-Enter Kibana's index management interface and find `Stack Managment`
+Enter Kibana's index management interface and find __Stack Managment__ 
 
 Use index lifecycle management (ILM) to automatically manage indexes, and the management strategy is as follows:
 
@@ -159,7 +159,7 @@ The index life cycle execution policy is executed every 10 minutes by default, a
 <!--screenshot-->
 
 Node introduction:
-     - Data node: `Data Node` is the node used by `Elasticsearch` to store data, responsible for storing data, and is used to store large amounts of data, so the pressure on storage is very high
+     - Data node: __Data Node__ is the node used by __Elasticsearch__ to store data, responsible for storing data, and is used to store large amounts of data, so the pressure on storage is very high
      - Kibana node: Enable the corresponding Kibana console, providing an interface management window for Elasticsearch
      - Dedicated Master Node: Dedicated Node (Dedicated Node) is a configuration option that specifies that the node is only used to perform specific tasks. Unlike Data Nodes, dedicated nodes do not store any data, but are dedicated to performing cluster management or search operations
 

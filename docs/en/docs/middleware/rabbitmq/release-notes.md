@@ -50,59 +50,59 @@ This page lists the Release Notes of the RabbitMQ message queue, so that you can
 
 ### v0.11.0
 
-- **Added** `LoadBalancer` service type
+- **Added** __LoadBalancer__ service type
 - **Improved** the monitoring charts by removing distracting elements and adding a time range selection
 
 ## 2023-04-27
 
 ### v0.10.1
 
-- **Added** `mcamel-rabbitmq` details page displays related events
-- **Added** `mcamel-rabbitmq` supports custom roles
-- **Added** `mcamel-rabbitmq` supports access traces
-- **Improved** `mcamel-rabbitmq` scheduling strategy adds a sliding button
+- **Added** __mcamel-rabbitmq__ details page displays related events
+- **Added** __mcamel-rabbitmq__ supports custom roles
+- **Added** __mcamel-rabbitmq__ supports access traces
+- **Improved** __mcamel-rabbitmq__ scheduling strategy adds a sliding button
 
 ## 2023-03-30
 
 ### v0.9.1
 
-- **Improved** `mcamel-rabbitmq` improves Operator image to speed up addresses.
+- **Improved** __mcamel-rabbitmq__ improves Operator image to speed up addresses.
 
 ## 2023-03-28
 
 ### v0.9.0
 
-- **Added** `mcamel-rabbitmq` supports middleware traces adaptation
-- **Added** Enable traces according to parameter configuration when installing `mcamel-rabbitmq`
+- **Added** __mcamel-rabbitmq__ supports middleware traces adaptation
+- **Added** Enable traces according to parameter configuration when installing __mcamel-rabbitmq__ 
 
 ## 2023-02-23
 
 ### v0.8.0
 
-- **Added** `mcamel-rabbitmq` helm-docs template file
-- **Added** The Operator in the `mcamel-rabbitmq` app store can only be installed in mcamel-system
-- **Added** `mcamel-rabbitmq` supports cloud shell
-- **Added** `mcamel-rabbitmq` supports separate registration of navigation bar
+- **Added** __mcamel-rabbitmq__ helm-docs template file
+- **Added** The Operator in the __mcamel-rabbitmq__ app store can only be installed in mcamel-system
+- **Added** __mcamel-rabbitmq__ supports cloud shell
+- **Added** __mcamel-rabbitmq__ supports separate registration of navigation bar
 - **Added** log view operation instructions, support custom query, export and other features
-- **Upgraded** `mcamel-rabbitmq` upgrade offline mirror detection script
-- **Added** `mcamel-rabbitmq` supports viewing logs
-- **Fixed** an issue that `mcamel-rabbitmq` instance name is too long and the custom resource cannot be created
-- **Fixed** `mcamel-rabbitmq` workspace Editor user cannot view instance password
+- **Upgraded** __mcamel-rabbitmq__ upgrade offline mirror detection script
+- **Added** __mcamel-rabbitmq__ supports viewing logs
+- **Fixed** an issue that __mcamel-rabbitmq__ instance name is too long and the custom resource cannot be created
+- **Fixed** __mcamel-rabbitmq__ workspace Editor user cannot view instance password
 
 ## 2022-12-25
 
 ### v0.7.0
 
-- **Added** `mcamel-rabbitmq` NodePort port conflict detection in advance
-- **Added** `mcamel-rabbitmq` node affinity configuration
-- **Improved** `mcamel-rabbitmq-ui` middleware style walkthrough optimization
+- **Added** __mcamel-rabbitmq__ NodePort port conflict detection in advance
+- **Added** __mcamel-rabbitmq__ node affinity configuration
+- **Improved** __mcamel-rabbitmq-ui__ middleware style walkthrough optimization
 
 ## 2022-11-28
 
 ### v0.6.4
 
 - **Added** interface to get user list
-- **Added** supports multi-architecture images, the configuration method is `depend.arm64-img.rabbitClusterImageFormat: xxxx`
+- **Added** supports multi-architecture images, the configuration method is __depend.arm64-img.rabbitClusterImageFormat: xxxx__ 
 - **Added** supports sc expansion interception, when sc does not support expansion, directly intercept it
 - **Added** public field when returning list or details
 - **Added** return alerts

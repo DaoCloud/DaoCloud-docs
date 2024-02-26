@@ -11,7 +11,7 @@ hide:
 
     ![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/log01.png)
 
-2. 在左侧菜单栏点击`日志查看`。
+2. 在左侧菜单栏点击 __日志查看__ 。
 
     ![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/log02.png)
 
@@ -22,9 +22,9 @@ hide:
 !!! note "常用操作"
 
     * 自定义日志查询时间范围：在日志页面右上角可以切换日志的查询时间范围
-    * 通过关键字检索日志：在左侧`搜索框`下输入关键字即可查询带有特定内容的日志
+    * 通过关键字检索日志：在左侧 __搜索框__ 下输入关键字即可查询带有特定内容的日志
     * 查看日志的时间分布情况：通过柱状图查看在某一时间范围内的日志数量
-    * 查看日志的上下文：在日志最右侧点击 `查看上下文` 即可
-    * 导出日志：在柱状图下方点击`下载`即可
+    * 查看日志的上下文：在日志最右侧点击 __查看上下文__  即可
+    * 导出日志：在柱状图下方点击 __下载__ 即可
 
     ![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/log03.png)

@@ -185,7 +185,7 @@ Follow the steps below to create a tenant.
 
      ![pwd-ls-ls](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/pwd-ls-ls.png)
 
-9. Execute `kubectl apply –k .` to create a new tenant `minio-t2`.
+9. Run `kubectl apply –k .` to create a new tenant `minio-t2`.
 
      ![kubectl-get-all-nminio](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/application/minio/kubectl-get-all-minio.png)
 

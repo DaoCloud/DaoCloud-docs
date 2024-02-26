@@ -4,7 +4,7 @@ This page explains how to install or upgrade the ElasticSearch module of the Mid
 
 !!! info
 
-    The term `mcamel` used in the following commands or scripts is the internal development code name for the Middleware module.
+    The term __mcamel__ used in the following commands or scripts is the internal development code name for the Middleware module.
 
 ## Loading Images from Installation Package
 
@@ -12,7 +12,7 @@ You can load the images using one of the following two methods. It is recommende
 
 ### Syncing Images to Image Repository Using chart-syncer
 
-1. Create `load-image.yaml` file.
+1. Create __load-image.yaml__ file.
 
     !!! note  
 
@@ -129,7 +129,7 @@ There are two methods to upgrade. Choose the corresponding upgrade method based 
     1. Update the Helm repository.
 
         ```shell
-        helm repo update mcamel/mcamel-elasticsearch # If the update fails due to a low helm version, try executing `helm update repo` instead.
+        helm repo update mcamel/mcamel-elasticsearch # If the update fails due to a low helm version, try executing __helm update repo__ instead.
         ```
 
 1. Choose the version you want to install (it is recommended to install the latest version).
@@ -145,17 +145,17 @@ There are two methods to upgrade. Choose the corresponding upgrade method based 
     ...
     ```
 
-1. Backup the `--set` parameters.
+1. Back up the `--set` parameters.
 
-    Before upgrading to a new version, it is recommended to execute the following command to backup the `--set` parameters of the old version.
+    Before upgrading to a new version, it is recommended to execute the following command to back up the `--set` parameters of the old version.
 
     ```shell
     helm get values mcamel-elasticsearch -n mcamel-system -o yaml > mcamel-elasticsearch.yaml
     ```
 
-1. Run `helm upgrade`.
+1. Run `helm upgrade` .
 
-    Before upgrading, it is recommended to replace the `global.imageRegistry` field in `mcamel-elasticsearch.yaml` with the URL of the image repository you are currently using.
+    Before upgrading, it is recommended to replace the `global.imageRegistry` field in __mcamel-elasticsearch.yaml__ with the URL of the image repository you are currently using.
 
     ```shell
     export imageRegistry={your image repository}
@@ -171,17 +171,17 @@ There are two methods to upgrade. Choose the corresponding upgrade method based 
     
 === "Upgrade through chart package"
 
-    1. Backup the `--set` parameters.
+    1. Back up the `--set` parameters.
 
-        Before upgrading to a new version, it is recommended to execute the following command to backup the `--set` parameters of the old version.
+        Before upgrading to a new version, it is recommended to execute the following command to back up the `--set` parameters of the old version.
 
         ```shell
         helm get values mcamel-elasticsearch -n mcamel-system -o yaml > mcamel-elasticsearch.yaml
         ```
 
-    1. Run `helm upgrade`.
+    1. Run `helm upgrade` .
 
-        Before upgrading, it is recommended to replace the `global.imageRegistry` field in `mcamel-elasticsearch.yaml` with the URL of the image repository you are currently using.
+        Before upgrading, it is recommended to replace the `global.imageRegistry` field in __mcamel-elasticsearch.yaml__ with the URL of the image repository you are currently using.
 
         ```shell
         export imageRegistry={your image repository}

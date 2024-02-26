@@ -1,8 +1,8 @@
 # 基于 Hwameistor 的 Elasticsearch 迁移实践
 
-由于 Kubernetes 自身的特性，有状态应用部署完成后是否可以迁移取决于底层 `CSI` 的能力。<!--使用 [Hwameistor](../../../storage/index.md) 作为`CSI` 时，不支持跨节点迁移应用。-->然而当集群出现资源不均等意外情况时，需要跨节点迁移相关的有状态应用。
+由于 Kubernetes 自身的特性，有状态应用部署完成后是否可以迁移取决于底层 __CSI__ 的能力。<!--使用 [Hwameistor](../../../storage/index.md) 作为 __CSI__ 时，不支持跨节点迁移应用。-->然而当集群出现资源不均等意外情况时，需要跨节点迁移相关的有状态应用。
 
-本文以 `Elasticsearch` 为例，参考 [Hwameistor](../../../storage/index.md) 官方提供的迁移指南，演示使用 `Hwameistor` 时如何跨节点迁移数据服务中间件。
+本文以 __Elasticsearch__ 为例，参考 [Hwameistor](../../../storage/index.md) 官方提供的迁移指南，演示使用 __Hwameistor__ 时如何跨节点迁移数据服务中间件。
 
 ## 演示环境
 
@@ -43,13 +43,13 @@
 
 ## 演示目标
 
-将 `prod-worker3` 节点上的 `mcamel-common-es-cluster-masters-es-data-1` （以下简称`演示应用`/`esdata-1`）有状态应用跨节点迁移到 `prod-master3` 节点。
+将 __prod-worker3__ 节点上的 __mcamel-common-es-cluster-masters-es-data-1__ （以下简称 __演示应用__ / __esdata-1__ ）有状态应用跨节点迁移到 __prod-master3__ 节点。
 
 ## 准备工作
 
 ### 确定需要迁移的 PV
 
-使用如下命令查找演示应用 `esdata-1` 对应的 `PV` 磁盘，明确需要迁移哪个 `PV`。
+使用如下命令查找演示应用 __esdata-1__ 对应的 __PV__ 磁盘，明确需要迁移哪个 __PV__ 。
 
 1. 查看演示应用绑定的 PVC
 
@@ -71,14 +71,14 @@
     elasticsearch-data-mcamel-common-es-cluster-masters-es-data-1   Bound    pvc-7d4c45c9-49d6-4684-aca2-8b853d0c335c   35Gi       RWO            hwameistor-storage-lvm-hdd   17h
     ```
 
-3. 确认该 PV 绑定的应用是否为需要迁移的应用，即此文中的演示应用 `esdata-1`
+3. 确认该 PV 绑定的应用是否为需要迁移的应用，即此文中的演示应用 __esdata-1__ 
 
     [root@prod-master1 ~]# kubectl -n mcamel-system get pv pvc-7d4c45c9-49d6-4684-aca2-8b853d0c335c
     NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                                                                         STORAGECLASS                 REASON   AGE
     pvc-7d4c45c9-49d6-4684-aca2-8b853d0c335c   35Gi       RWO            Delete           Bound    mcamel-system/elasticsearch-data-mcamel-common-es-cluster-masters-es-data-1   hwameistor-storage-lvm-hdd            17h
     ```
 
-上述信息证明，需要迁移的 `PV` 为 `pvc-7d4c45c9-49d6-4684-aca2-8b853d0c335c`。
+上述信息证明，需要迁移的 __PV__ 为 __pvc-7d4c45c9-49d6-4684-aca2-8b853d0c335c__ 。
 
 ### 停止运行待迁移应用
 
@@ -129,7 +129,7 @@
 
 ## 开始迁移
 
-有关此过程的详细说明，可参考 `Hwameistor` 官方文档：[迁移数据卷](https://hwameistor.io/docs/quick_start/create_stateful/advanced/migrate)
+有关此过程的详细说明，可参考 __Hwameistor__ 官方文档：[迁移数据卷](https://hwameistor.io/docs/quick_start/create_stateful/advanced/migrate)
 
 1. 建立迁移任务
 
@@ -154,7 +154,7 @@
     [root@prod-master1 ~]# kubectl apply -f migrate.yaml
     ```
 
-    此时会在 `hwameistor` 命名空间创建一个 `pod`，用于执行迁移动作。
+    此时会在 __hwameistor__ 命名空间创建一个 __pod__ ，用于执行迁移动作。
 
 3. 查看迁移状态
 
@@ -234,7 +234,7 @@ java.lang.IllegalStateException: failed to obtain node locks, tried [[/usr/share
     kubectl -n mcamel-system edit elasticsearches.elasticsearch.k8s.elastic.co mcamel-common-es-cluster-masters
     ```
 
-2. 为 ES 的 Pod 添加一个 `initcontainer`，内容如下：
+2. 为 ES 的 Pod 添加一个 __initcontainer__ ，内容如下：
 
     ```yaml
             - command:
@@ -247,7 +247,7 @@ java.lang.IllegalStateException: failed to obtain node locks, tried [[/usr/share
                 privileged: true
     ```
 
-    `initcontainer` 在 CR 中的位置如下：
+    __initcontainer__ 在 CR 中的位置如下：
     
     ```yaml
     spec:

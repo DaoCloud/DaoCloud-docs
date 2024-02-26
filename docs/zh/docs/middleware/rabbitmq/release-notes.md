@@ -53,59 +53,59 @@
 
 ### v0.11.0
 
-- **新增** `LoadBalancer` 服务类型
+- **新增** __LoadBalancer__  服务类型
 - **优化** 监控图表，去除干扰元素并新增时间范围选择
 
 ## 2023-04-27
 
 ### v0.10.1
 
-- **新增** `mcamel-rabbitmq` 详情页面展示相关的事件
-- **新增** `mcamel-rabbitmq` 支持自定义角色
-- **新增** `mcamel-rabbitmq` 支持接入链路追踪
-- **优化** `mcamel-rabbitmq` 调度策略增加滑动按钮
+- **新增** __mcamel-rabbitmq__  详情页面展示相关的事件
+- **新增** __mcamel-rabbitmq__  支持自定义角色
+- **新增** __mcamel-rabbitmq__  支持接入链路追踪
+- **优化** __mcamel-rabbitmq__  调度策略增加滑动按钮
 
 ## 2023-03-30
 
 ### v0.9.1
 
-- **优化** `mcamel-rabbitmq` 改进 Operator 镜像为加速地址
+- **优化** __mcamel-rabbitmq__  改进 Operator 镜像为加速地址
 
 ## 2023-03-28
 
 ### v0.9.0
 
-- **新增** `mcamel-rabbitmq` 支持中间件链路追踪适配
-- **新增** 在安装 `mcamel-rabbitmq` 根据参数配置启用链路追踪
+- **新增** __mcamel-rabbitmq__  支持中间件链路追踪适配
+- **新增** 在安装 __mcamel-rabbitmq__  根据参数配置启用链路追踪
 
 ## 2023-02-23
 
 ### v0.8.0
 
-- **新增** `mcamel-rabbitmq` helm-docs 模板文件
-- **新增** `mcamel-rabbitmq` 应用商店中的 Operator 只能安装在 mcamel-system
-- **新增** `mcamel-rabbitmq` 支持 cloud shell
-- **新增** `mcamel-rabbitmq` 支持导航栏单独注册
+- **新增** __mcamel-rabbitmq__  helm-docs 模板文件
+- **新增** __mcamel-rabbitmq__  应用商店中的 Operator 只能安装在 mcamel-system
+- **新增** __mcamel-rabbitmq__  支持 cloud shell
+- **新增** __mcamel-rabbitmq__  支持导航栏单独注册
 - **新增** 日志查看操作说明，支持自定义查询、导出等功能
-- **升级** `mcamel-rabbitmq` 升级离线镜像检测脚本
-- **新增** `mcamel-rabbitmq` 支持查看日志
-- **修复** `mcamel-rabbitmq` 实例名太长导致自定义资源无法创建的问题
-- **修复** `mcamel-rabbitmq` 工作空间 Editor 用户无法查看实例密码
+- **升级** __mcamel-rabbitmq__  升级离线镜像检测脚本
+- **新增** __mcamel-rabbitmq__  支持查看日志
+- **修复** __mcamel-rabbitmq__  实例名太长导致自定义资源无法创建的问题
+- **修复** __mcamel-rabbitmq__  工作空间 Editor 用户无法查看实例密码
 
 ## 2022-12-25
 
 ### v0.7.0
 
-- **新增** `mcamel-rabbitmq` NodePort 端口冲突提前检测
-- **新增** `mcamel-rabbitmq` 节点亲和性配置
-- **优化** `mcamel-rabbitmq-ui` 中间件样式走查优化  
+- **新增** __mcamel-rabbitmq__  NodePort 端口冲突提前检测
+- **新增** __mcamel-rabbitmq__  节点亲和性配置
+- **优化** __mcamel-rabbitmq-ui__  中间件样式走查优化  
 
 ## 2022-11-28
 
 ### v0.6.4
 
 - **新增** 获取用户列表接口
-- **新增** 支持多架构的镜像，配置方式为 `depend.arm64-img.rabbitClusterImageFormat: xxxx`
+- **新增** 支持多架构的镜像，配置方式为 __depend.arm64-img.rabbitClusterImageFormat: xxxx__ 
 - **新增** 支持 sc 扩容拦截，当 sc 不支持扩容的时候，直接拦截掉
 - **新增** 返回列表或者详情时的公共字段
 - **新增** 返回 alerts

@@ -2,7 +2,7 @@
 
 ## Error Encountered when Creating Database with CR
 
-The database is running normally, but an error occurs when creating a database using CR. This issue can be caused by the presence of special characters in the `mysql root` password.
+The database is running normally, but an error occurs when creating a database using CR. This issue can be caused by the presence of special characters in the __mysql root__ password.
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/mysql/images/faq-mysql-2.png)
 
@@ -12,7 +12,7 @@ The database is running normally, but an error occurs when creating a database u
     [root@master-01 ~]$ kubectl get secret -n mcamel-system mcamel-common-mysql-cluster-secret -o=jsonpath='{.data.ROOT_PASSWORD}' | base64 -d
     ```
 
-2. If the password contains special characters such as `-`, attempting to enter the original password in MySQL Shell will result in the following error:
+2. If the password contains special characters such as __-__ , attempting to enter the original password in MySQL Shell will result in the following error:
 
     ```console
     bash-4.4# mysql -uroot -p

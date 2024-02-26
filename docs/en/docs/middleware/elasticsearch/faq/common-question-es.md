@@ -96,9 +96,9 @@ This page will continue to count and sort out common Elasticsearch abnormal faul
 
 <!--screenshot-->
 
-`*-write` in this figure is an alias, such as `jaeger-span-write`, which needs to be processed
+__*-write__ in this figure is an alias, such as __jaeger-span-write__ , which needs to be processed
 
-View the alias `rollover_alias corresponding value` used in the business index template
+View the alias __rollover_alias corresponding value__ used in the business index template
 
 <!--screenshot-->
 
@@ -128,7 +128,7 @@ curl -XPUT -u elastic:${ES_PASSWORD} -k "$ES_URL/${TEMPLATE_NAME}-000001" -H 'Co
 
 In the real situation, it is necessary to stop the writing of the data source, and then run the above method.
 
-## Error reporting `Error setting GoMAXPROCS for operator`
+## Error reporting __Error setting GoMAXPROCS for operator__ 
 
 **error message**
 
@@ -149,7 +149,7 @@ updated version:
 kind: 1.23.6
 runc version 1.1.0
 ```
-## Error `Terminating due to java.lang.OutOfMemoryError: Java heap space`
+## Error __Terminating due to java.lang.OutOfMemoryError: Java heap space__ 
 
 **The complete error message is as follows:**
 
@@ -179,7 +179,7 @@ kubectl edit elasticsearch mcamel-common-es-cluster-masters -n mcamel-system
 
 <!--screenshot-->
 
-## OCP environment installation `Elasticsearch` reports an error `Operation not permitted`
+## OCP environment installation __Elasticsearch__ reports an error __Operation not permitted__ 
 
 **error message**
 
@@ -201,7 +201,7 @@ kubectl edit elasticsearch mcamel-common-es-cluster-masters -n mcamel-system
 
 If es is on this node, the ES process can be killed and restored.
 
-## Error reporting `status:429, es_rejected_execution_exception` when data is written to `Elasticsearch`
+## Error reporting __status:429, es_rejected_execution_exception__ when data is written to __Elasticsearch__ 
 
 **The complete error message is as follows:**
 
@@ -212,7 +212,7 @@ If es is on this node, the ES process can be killed and restored.
 
 **Solution**
 
-- Method 1: The reason for the 429 error is that the writing concurrency of `Elasticsearch` is too large, and `Elasticsearch` is too late to deal with it. You can properly reduce the writing concurrency and control the amount of writing.
+- Method 1: The reason for the 429 error is that the writing concurrency of __Elasticsearch__ is too large, and __Elasticsearch__ is too late to deal with it. You can properly reduce the writing concurrency and control the amount of writing.
 
 - Method 2: If resources permit, the queue size can be appropriately increased
 

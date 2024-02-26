@@ -16,17 +16,17 @@ MySQL 的主备关系故障相对比较复杂，基于不同现象，会有不�
     mcamel-system   mcamel-common-mysql-cluster   False   2          62d
     ```
 
-2. 关注 `Ready` 字段值为 `False` 的库 (这里为 `True` 的判断是延迟小于 30s 同步)，查看 MySQL 从库的日志
+2. 关注 __Ready__ 字段值为 __False__ 的库 (这里为 __True__ 的判断是延迟小于 30s 同步)，查看 MySQL 从库的日志
 
     ```bash
     kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}' | xargs -I {} kubectl logs {} -n mcamel-system -c mysql | grep ERROR
     ```
 
-当实例状态为 `False` 时，可能存在以下几类故障，可以结合库日志信息排查修复。
+当实例状态为 __False__ 时，可能存在以下几类故障，可以结合库日志信息排查修复。
 
-## 实例状态为 `false` 但日志无报错信息
+## 实例状态为 __false__ 但日志无报错信息
 
-如果从库的日志中没有任何错误 `ERROR` 信息，说明 `False` 只是因为主从同步的延迟过大，可对从库执行以下命令进一步排查：
+如果从库的日志中没有任何错误 __ERROR__ 信息，说明 __False__ 只是因为主从同步的延迟过大，可对从库执行以下命令进一步排查：
 
 1. 寻找到从节点的 Pod
 
@@ -40,7 +40,7 @@ MySQL 的主备关系故障相对比较复杂，基于不同现象，会有不�
     mcamel-common-mysql-cluster-mysql-1
     ```
 
-2. 设置 `binlog` 参数
+2. 设置 __binlog__ 参数
 
     ```bash
     kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB -e 'set global sync_binlog=10086;'
@@ -54,7 +54,7 @@ MySQL 的主备关系故障相对比较复杂，基于不同现象，会有不�
 
 4. 在 MySQL 容器中执行查看命令，获取从库状态。
 
-    `Seconds_Behind_Master` 字段为主从延迟，如果取值在 0~30，可以认为没有延迟；表示主从可以保持同步。
+    __Seconds_Behind_Master__ 字段为主从延迟，如果取值在 0~30，可以认为没有延迟；表示主从可以保持同步。
 
     ??? note "SQL 语句如下"
 
@@ -131,7 +131,7 @@ MySQL 的主备关系故障相对比较复杂，基于不同现象，会有不�
         1 row in set, 1 warning (0.00 sec)
         ```
 
-5. 主从同步后 `Seconds_Behind_Master` 小于 30s，设置 `sync_binlog=1`
+5. 主从同步后 __Seconds_Behind_Master__ 小于 30s，设置 __sync_binlog=1__ 
 
     ```bash
     kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB -e 'set global sync_binlog=1';
@@ -144,15 +144,15 @@ MySQL 的主备关系故障相对比较复杂，基于不同现象，会有不�
     11:18  up 1 day, 17:49, 2 users, load averages: 9.33 7.08 6.28
     ```
 
-    `load averages` 在正常情况下 3 个数值都不应长期超过 10；如果超过 30 以上，请合理调配下该节点的 Pod 和磁盘。
+    __load averages__ 在正常情况下 3 个数值都不应长期超过 10；如果超过 30 以上，请合理调配下该节点的 Pod 和磁盘。
 
-## 从库日志出现`复制错误`
+## 从库日志出现 __复制错误__ 
 
 如果从库 Pod 日志中出现从库复制错误，可能由多种原因引起，下文将针对不同情况介绍判断及修复方法。
 
 ### purged binlog 错误
 
-注意以下示例，如果出现关键字 `purged binlog`，通常需要对从库执行重建处理。
+注意以下示例，如果出现关键字 __purged binlog__ ，通常需要对从库执行重建处理。
 
 ??? note "错误示例"
 
@@ -201,7 +201,7 @@ MySQL 的主备关系故障相对比较复杂，基于不同现象，会有不�
     2023-02-08T18:43:21.991730Z 116 [ERROR] [MY-010557] [Repl] Could notexecute Write_rows event on table dr_brower_db.dr_user_info; Duplicate entry '24' for key 'PRIMARY', Error_code:1062; handler error HA_ERR_FOUND_DUPP_KEY; the event's master logmysql-bin.000010, end_log_pos 5295916
     ```
 
-如果在错误日志中看到：`Duplicate entry '24' for key 'PRIMARY', Error_code:1062; handler error HA_ERR_FOUND_DUPP_KEY;`，
+如果在错误日志中看到： __Duplicate entry '24' for key 'PRIMARY', Error_code:1062; handler error HA_ERR_FOUND_DUPP_KEY;__ ，
 
 说明出现了主键冲突，或者主键不存在的错误。此时，可以以幂等模式恢复或插入空事务的形式跳过错误：
 
@@ -238,7 +238,7 @@ mysql> START SLAVE;
 [root@master-01 ~]$ kubectl exec -it mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf
 ```
 
-执行以下命令，查看从库的主从延迟状态字段 `Seconds_Behind_Master`，如果取值在 0~30，表示已没有主从延迟，主库和从库基本保持同步。
+执行以下命令，查看从库的主从延迟状态字段 __Seconds_Behind_Master__ ，如果取值在 0~30，表示已没有主从延迟，主库和从库基本保持同步。
 
 ```sql
 mysql> show slave status\G;
@@ -252,7 +252,7 @@ mysql> show slave status\G;
 
 ### 主从库复制错误
 
-当从库出现类似 `[Note] Slave: MTS group recovery relay log info based on Worker-Id 0, group_r` 的错误信息，可以执行如下操作：
+当从库出现类似 __[Note] Slave: MTS group recovery relay log info based on Worker-Id 0, group_r__ 的错误信息，可以执行如下操作：
 
 1. 寻找到从节点的 Pod
 
@@ -272,9 +272,9 @@ mysql> show slave status\G;
     1. 这种情况可以以幂等模式执行
     2. 此种类型错误也可以重做从库
 
-## 主备 Pod 均为 `replica`
+## 主备 Pod 均为 __replica__ 
 
-1. 通过以下命令，发现两个 MySQL 的 Pod均为 `replica` 角色，需修正其中一个为 `master`。
+1. 通过以下命令，发现两个 MySQL 的 Pod均为 __replica__ 角色，需修正其中一个为 __master__ 。
 
     ```bash
     [root@aster-01 ~]$ kubectl get pod -n mcamel-system -Lhealthy,role|grep mysql
@@ -289,7 +289,7 @@ mysql> show slave status\G;
     kubectl exec -it mcamel-common-mysql-cluster-mysql-0 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf
     ```
 
-3. 查看 `slave` 的状态信息，查询结果为空的就是原来的 `master`，如下方示例中 `mysql-0` 对应的内容:
+3. 查看 __slave__ 的状态信息，查询结果为空的就是原来的 __master__ ，如下方示例中 __mysql-0__ 对应的内容:
 
     ??? note "状态信息示例“
 
@@ -370,7 +370,7 @@ mysql> show slave status\G;
     mysql > stop slave;reset slave;
     ```
 
-5. 此时再手动编辑 master 的 Pod：`role replica => master ,healthy no => yes`。
+5. 此时再手动编辑 master 的 Pod： __role replica => master ,healthy no => yes__ 。
 
 6. 针对 slave 的 mysql shell 执行：
 
@@ -395,7 +395,7 @@ pt-table-sync --execute --charset=utf8 --ignore-databases=mysql,sys,percona --da
 pt-table-sync --execute --charset=utf8 --ignore-databases=mysql,sys,percona --databases=kpanda dsn=u=root,p=xxx,h=mcamel-common-kpanda-mysql-cluster-mysql-0.mysql.mcamel-system,P=3306 dsn=u=root,p=xxx,h=mcamel-common-kpanda-mysql-cluster-mysql-1.mysql.mcamel-system,P=3306  --print
 ```
 
-使用 pt-table-sync 即可完成数据补充，示例中是 `mysql-0=> mysql-1` 补充数据。
+使用 pt-table-sync 即可完成数据补充，示例中是 __mysql-0=> mysql-1__ 补充数据。
 
 这种场景往往适用于主从切换，发现新从库有多余的已执行的 gtid 在重做之前补充数据。
 

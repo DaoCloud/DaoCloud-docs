@@ -1,7 +1,7 @@
 # 手工设置工作负载反亲和
 
-PostgreSQL 中间件的的反亲和策略由同一集群下的所有实例共用，因此我们默认开启了 `Preferred` 反亲和。
-如需关闭反亲和策略或开启 `Required` 反亲和，需要修改 `Operator` 设置。
+PostgreSQL 中间件的的反亲和策略由同一集群下的所有实例共用，因此我们默认开启了 __Preferred__  反亲和。
+如需关闭反亲和策略或开启 __Required__  反亲和，需要修改 __Operator__  设置。
 
 !!! note
 
@@ -9,17 +9,17 @@ PostgreSQL 中间件的的反亲和策略由同一集群下的所有实例共用
 
 ## 操作步骤
 
-1. 进入`容器管理` -> `集群列表`，选择实例所在集群；
+1. 进入 __容器管理__  -> __集群列表__ ，选择实例所在集群；
 
-1. 点击`自定义资源`，查找资源：`operatorconfigurations.acid.zalan.do`
+1. 点击 __自定义资源__ ，查找资源： __operatorconfigurations.acid.zalan.do__ 
 
     ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/postgresql/images/antiaff01.png)
 
-1. 在该资源下选择正确的`命名空间` -> `CR 实例`
+1. 在该资源下选择正确的 __命名空间__  -> __CR 实例__ 
 
     ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/postgresql/images/antiaff02.png)
 
-1. 点击`编辑 YAML`，根据需求修改以下字段
+1. 点击 __编辑 YAML__ ，根据需求修改以下字段
 
     ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/postgresql/images/antiaff03.png)
 

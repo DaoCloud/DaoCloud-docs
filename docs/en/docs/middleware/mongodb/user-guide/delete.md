@@ -7,11 +7,11 @@ hide:
 
 If you want to delete a MongoDB instance, you can follow these steps:
 
-1. In the MongoDB instance list, click the `...` button on the right side and select `Delete Instance` from the dropdown menu.
+1. In the MongoDB instance list, click the __...__ button on the right side and select __Delete Instance__ from the dropdown menu.
 
 
 
-2. In the pop-up window, enter the name of the instance and click the `Delete` button after confirming it is correct.
+2. In the pop-up window, enter the name of the instance and click the __Delete__ button after confirming it is correct.
 
 
 

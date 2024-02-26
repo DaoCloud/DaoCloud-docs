@@ -58,7 +58,7 @@ MySQL 自带的复制能力提供了主从、多从、多主、级联等多种�
     binlog-format = Mixed
     ````
 
-    其中 `server-id` 未在参数配置页面提供，修改方法如下：
+    其中 __server-id__ 未在参数配置页面提供，修改方法如下：
 
     1. 进入实例的 CR 文件：容器管理 - 实例所在集群 - 自定义资源 - mysqlclusters.mysql.presslabs.org - 实例 CR
     1. 增加字段：spec.serverIDOffset: 200
@@ -79,18 +79,18 @@ MySQL 自带的复制能力提供了主从、多从、多主、级联等多种�
 
     参数解释：
 
-    - `grant`：授权
-    - `replication`：授予复制权限
-    - `*.*`：所有库和所有表
-    - `rep`：授权用户
-    - `%`：所有机器能够访问
-    - `by '123456ab'`：该用户密码
+    - __grant__ ：授权
+    - __replication__ ：授予复制权限
+    - __*.*__ ：所有库和所有表
+    - __rep__ ：授权用户
+    - __%__ ：所有机器能够访问
+    - __by '123456ab'__ ：该用户密码
 
     ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/mysql/images/sync02.png)
 
 3. 服务配置
 
-    进入`容器管理` 模块，为实例配置一个 Nodeport 服务，用于目标端实例的同步访问：
+    进入 __容器管理__ 模块，为实例配置一个 Nodeport 服务，用于目标端实例的同步访问：
 
     ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/mysql/images/sync03.png)
 
@@ -149,7 +149,7 @@ MySQL 自带的复制能力提供了主从、多从、多主、级联等多种�
     mysql> start slave;
     ````
 
-4. 状态检测，重点关注以下两项，状态为`Yes`，表示复制功能已开始运行。
+4. 状态检测，重点关注以下两项，状态为 __Yes__ ，表示复制功能已开始运行。
 
     ````mysql
     mysql> SHOW SLAVE STATUS\G
@@ -159,7 +159,7 @@ MySQL 自带的复制能力提供了主从、多从、多主、级联等多种�
 
     !!! note
 
-        此时目标端处于 slave 状态，在中间件列表中将显示为`未就绪`状态，这是正常的，解除主从关系后可以恢复正常。
+        此时目标端处于 slave 状态，在中间件列表中将显示为 __未就绪__ 状态，这是正常的，解除主从关系后可以恢复正常。
 
         ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/mysql/images/sync06.png)
 
@@ -179,4 +179,4 @@ mysql> service mysql restart
 
 ## 数据恢复
 
-如需数据恢复，可通过 dump 方式实现数据恢复，可参考`全量数据 dump` 这里不再赘述。
+如需数据恢复，可通过 dump 方式实现数据恢复，可参考 __全量数据 dump__ 这里不再赘述。

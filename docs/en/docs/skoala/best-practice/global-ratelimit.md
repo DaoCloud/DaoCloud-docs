@@ -269,7 +269,7 @@ kubectl apply -f gateway-rls.yaml -n plugin-ns
 3. Configure the global rate limit policy for the domain (assuming that the gateway has enabled the global rate limit plugin).
 
 
-4. Access the API based on the domain. Execute the following command:
+4. Access the API based on the domain. Run the following command:
 
     ```
     while true; do curl -w " http_code: %{http_code}"  http://ip.test:30000/; let count+=1; echo " count: ${count}"; done
@@ -333,7 +333,7 @@ kubectl apply -f gateway-rls.yaml -n plugin-ns
 
 3. Configure the global rate limit policy for the domain.
 
-4. Access the API based on the domain. Execute the following command:
+4. Access the API based on the domain. Run the following command:
 
     ```
     while true; do curl -w " http_code: %{http_code}"  http://ip.test:30000/; let count+=1; echo " count: ${count}"; done

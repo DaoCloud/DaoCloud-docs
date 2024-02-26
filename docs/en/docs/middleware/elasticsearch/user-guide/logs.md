@@ -9,7 +9,7 @@ hide:
 
 By visiting the instance details page of each Elasticsearch; it is possible to support viewing Elasticsearch logs.
 
-1. In the Elasticsearch instance list, select the log you want to view, and click `Instance Name` to enter the instance details page.
+1. In the Elasticsearch instance list, select the log you want to view, and click __Instance Name__ to enter the instance details page.
 
     <!--screenshot-->
 
@@ -17,7 +17,7 @@ By visiting the instance details page of each Elasticsearch; it is possible to s
 
     <!--screenshot-->
 
-3. Click `Log View` to enter the log view page (Insight log view).
+3. Click __Log View__ to enter the log view page (Insight log view).
 
 ## Log View Instructions
 
@@ -26,7 +26,7 @@ On the log viewing page, we can easily view logs. Common operations are describe
 * Support custom log time range, in the upper right corner of the log page, you can easily switch the time range to view the log (the viewable log range is subject to the log duration saved in the observable system settings)
 * Support keyword search logs, the search area on the left supports viewing more log information
 * Support log volume distribution viewing, the histogram in the upper middle area, you can view the log volume distribution within the time range
-* Support to view the context of the log, click the `context` icon on the right
+* Support to view the context of the log, click the __context__ icon on the right
 * Support export log
 
 <!--screenshot-->

@@ -11,7 +11,7 @@ Kafka has built-in Prometheus and Grafana monitoring modules.
 
     <!--screenshot-->
 
-2. In the left navigation bar, click `Instance Monitoring` to access the monitoring module.
+2. In the left navigation bar, click __Instance Monitoring__ to access the monitoring module.
 
     <!--screenshot-->
 

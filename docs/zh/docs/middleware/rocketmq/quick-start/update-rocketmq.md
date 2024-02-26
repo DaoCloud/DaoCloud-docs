@@ -1,6 +1,6 @@
 # 更新 RocketMQ 实例
 
-1. 在实例列表中，点击右侧的 `…`，在弹出菜单中选择更新实例。
+1. 在实例列表中，点击右侧的 __…__ ，在弹出菜单中选择更新实例。
 
     ![update](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/update00.png)
 

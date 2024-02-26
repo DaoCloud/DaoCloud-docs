@@ -147,9 +147,9 @@ There are two upgrade methods. You can choose the corresponding upgrade approach
         ...
         ```
 
-    5. Backup __--set__ parameters.
+    5. Backup `--set` parameters.
 
-        Before upgrading the cluster inspection module, it is recommended to run the following command to backup the __--set__ parameters of the previous version.
+        Before upgrading the cluster inspection module, it is recommended to run the following command to back up the `--set` parameters of the previous version.
 
         ```shell
         helm get values kocllie -n kocllie-system -o yaml > bak.yaml
@@ -162,7 +162,7 @@ There are two upgrade methods. You can choose the corresponding upgrade approach
         kubectl apply -f kocllie/crds
         ```
 
-    7. Execute __helm upgrade__ .
+    7. Run `helm upgrade` .
 
         Before the upgrade, it is recommended to modify the __global.imageRegistry__ field in the __bak.yaml__ file to the current image repository address being used.
 
@@ -180,9 +180,9 @@ There are two upgrade methods. You can choose the corresponding upgrade approach
 
 === "Upgrade via chart package"
 
-    1. Backup __--set__ parameters.
+    1. Backup `--set` parameters.
 
-        Before upgrading the cluster inspection module, it is recommended to run the following command to backup the __--set__ parameters of the previous version.
+        Before upgrading the cluster inspection module, it is recommended to run the following command to back up the `--set` parameters of the previous version.
 
         ```shell
         helm get values kocllie -n kocllie-system -o yaml > bak.yaml
@@ -194,7 +194,7 @@ There are two upgrade methods. You can choose the corresponding upgrade approach
         kubectl apply -f ./crds
         ```
 
-    3. Execute __helm upgrade__ .
+    3. Run `helm upgrade` .
 
         Before the upgrade, it is recommended to modify the __global.imageRegistry__ field in the __bak.yaml__ file to the current image repository address being used.
 

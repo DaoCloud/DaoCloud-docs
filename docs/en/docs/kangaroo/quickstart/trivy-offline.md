@@ -74,7 +74,7 @@ trivy:
 3. Locate the `trivy` workload.
 4. Click `Console` to enter the container (if there are multiple replicas, set it for each replica).
 5. Once inside the container, execute `cd /home/scanner/.cache/trivy`.
-6. Execute `mkdir db` to create the directory.
+6. Run `mkdir db` to create the directory.
 
 ### After creating the directory, upload the offline package
 

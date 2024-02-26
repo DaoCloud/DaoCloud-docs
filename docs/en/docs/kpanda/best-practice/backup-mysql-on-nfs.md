@@ -406,7 +406,7 @@ perform cross-cluster backup migration for a stateful application.
 
 5. Check the status of the MySQL Pod.
 
-    Execute `kubectl get pod | grep mysql` to view the status of the MySQL Pod and wait for its status to become __running__ (approximately 2 minutes).
+    Run `kubectl get pod | grep mysql` to view the status of the MySQL Pod and wait for its status to become __running__ (approximately 2 minutes).
 
     <details>
     <summary>Expected output</summary>
@@ -419,7 +419,7 @@ perform cross-cluster backup migration for a stateful application.
     !!! note
 
         - If the MySQL Pod remains in a non-running state for a long time, it is usually because NFS dependencies are not installed on all nodes in the cluster.
-        - Execute __kubectl describe pod ${mysql pod name}__ to view detailed information about the Pod.
+        - Run __kubectl describe pod ${mysql pod name}__ to view detailed information about the Pod.
         - If there is an error message like __MountVolume.SetUp failed for volume "pvc-4ad70cc6-df37-4253-b0c9-8cb86518ccf8" : mount failed: exit status 32__ , please delete the previous resources by executing __kubectl delete -f nfs.yaml/pvc.yaml/mysql.yaml__ and start from deploying the NFS service again.
 
 6. Write data to the MySQL application.

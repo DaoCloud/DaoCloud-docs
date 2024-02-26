@@ -16,17 +16,17 @@ The master-slave relationship in MySQL can be complex when it comes to troublesh
     mcamel-system   mcamel-common-mysql-cluster   False   2          62d
     ```
 
-2. Pay attention to the databases with a `Ready` field value of `False` (here, the judgement of `True` is that the delay is less than 30 seconds), and check the logs of the MySQL slave:
+2. Pay attention to the databases with a __Ready__ field value of __False__ (here, the judgement of __True__ is that the delay is less than 30 seconds), and check the logs of the MySQL slave:
 
     ```bash
     [root@master-01 ~]$ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep replica | awk '{print $1}' | xargs -I {} kubectl logs {} -n mcamel-system -c mysql | grep ERROR
     ```
 
-When the instance status is `False`, there may be several types of failures. You can troubleshoot and fix them based on the information in the database logs.
+When the instance status is __False__ , there may be several types of failures. You can troubleshoot and fix them based on the information in the database logs.
 
-## Instance Status is `False` but No Error Messages in Logs
+## Instance Status is __False__ but No Error Messages in Logs
 
-If there are no `ERROR` messages in the logs of the slave, it means that the `False` status is due to a large delay in master-slave synchronization. You can further investigate the slave by performing the following steps:
+If there are no __ERROR__ messages in the logs of the slave, it means that the __False__ status is due to a large delay in master-slave synchronization. You can further investigate the slave by performing the following steps:
 
 1. Find the Pod of the slave node:
 
@@ -40,7 +40,7 @@ If there are no `ERROR` messages in the logs of the slave, it means that the `Fa
     mcamel-common-mysql-cluster-mysql-1
     ```
 
-2. Set the `binlog` parameter:
+2. Set the __binlog__ parameter:
 
     ```bash
     kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB -e 'set global sync_binlog=10086;'
@@ -54,7 +54,7 @@ If there are no `ERROR` messages in the logs of the slave, it means that the `Fa
 
 4. Run the following command inside the MySQL container to check the slave status.
 
-    The `Seconds_Behind_Master` field indicates the delay between the master and slave. If the value is between 0 and 30, it can be considered as no delay, indicating that the master and slave are in sync.
+    The __Seconds_Behind_Master__ field indicates the delay between the master and slave. If the value is between 0 and 30, it can be considered as no delay, indicating that the master and slave are in sync.
 
     ??? note "SQL statements"
 
@@ -131,7 +131,7 @@ If there are no `ERROR` messages in the logs of the slave, it means that the `Fa
         1 row in set, 1 warning (0.00 sec)
         ```
 
-5. After the master-slave synchronization, if `Seconds_Behind_Master` is less than 30s, set `sync_binlog=1`:
+5. After the master-slave synchronization, if __Seconds_Behind_Master__ is less than 30s, set __sync_binlog=1__ :
 
     ```bash
     kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB -e 'set global sync_binlog=1';
@@ -144,7 +144,7 @@ If there are no `ERROR` messages in the logs of the slave, it means that the `Fa
     11:18  up 1 day, 17:49, 2 users, load averages: 9.33 7.08 6.28
     ```
 
-    In normal circumstances, the `load averages` should not exceed 10 for a prolonged period. If it exceeds 30 or above, consider adjusting the Pod and disk allocation for that node.
+    In normal circumstances, the __load averages__ should not exceed 10 for a prolonged period. If it exceeds 30 or above, consider adjusting the Pod and disk allocation for that node.
 
 ## Replication Error in Slave Logs
 
@@ -152,7 +152,7 @@ If there are replication errors in the logs of the slave Pod, it may be caused b
 
 ### Purged Binlog Error
 
-In case you encounter the keyword `purged binlog` in the logs, it typically indicates the need to rebuild the slave.
+In case you encounter the keyword __purged binlog__ in the logs, it typically indicates the need to rebuild the slave.
 
 ??? note "Erros"
 
@@ -201,7 +201,7 @@ The steps to perform the rebuild operation are as follows:
     2023-02-08T18:43:21.991730Z 116 [ERROR] [MY-010557] [Repl] Could notexecute Write_rows event on table dr_brower_db.dr_user_info; Duplicate entry '24' for key 'PRIMARY', Error_code:1062; handler error HA_ERR_FOUND_DUPP_KEY; the event's master logmysql-bin.000010, end_log_pos 5295916
     ```
 
-If you see the following error in the error log: `Duplicate entry '24' for key 'PRIMARY', Error_code:1062; handler error HA_ERR_FOUND_DUPP_KEY;`, it indicates a primary key conflict or an error where the primary key does not exist. In such cases, you can recover using an idempotent mode or skip the error by inserting an empty transaction:
+If you see the following error in the error log: __Duplicate entry '24' for key 'PRIMARY', Error_code:1062; handler error HA_ERR_FOUND_DUPP_KEY;__ , it indicates a primary key conflict or an error where the primary key does not exist. In such cases, you can recover using an idempotent mode or skip the error by inserting an empty transaction:
 
 **Method 1**: Idempotent Recovery
 
@@ -236,13 +236,13 @@ After completing the above steps, observe the progress of the slave rebuild:
 [root@master-01 ~]$ kubectl exec -it mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf
 ```
 
-Run the following command to check the slave's replication delay status in the field `Seconds_Behind_Master`. If the value is between 0 and 30, it indicates that there is no significant delay, and the master and slave databases are essentially synchronized.
+Run the following command to check the slave's replication delay status in the field __Seconds_Behind_Master__ . If the value is between 0 and 30, it indicates that there is no significant delay, and the master and slave databases are essentially synchronized.
 
 ```sql
 mysql> show slave status\G;
 ```
 
-After confirming the master-slave synchronization (when `Seconds_Behind_Master` is less than 30s), run the following command to set MySQL strict mode:
+After confirming the master-slave synchronization (when __Seconds_Behind_Master__ is less than 30s), run the following command to set MySQL strict mode:
 
 ```bash
 [root@master-01 ~]$ kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB -e 'stop slave;set global slave_exec_mode="STRICT";set global sync_binlog=10086;start slave;
@@ -250,7 +250,7 @@ After confirming the master-slave synchronization (when `Seconds_Behind_Master` 
 
 ### Replication Error in Master-Slave Setup
 
-When the slave database encounters an error message similar to `[Note] Slave: MTS group recovery relay log info based on Worker-Id 0, group_r`, you can perform the following steps:
+When the slave database encounters an error message similar to __[Note] Slave: MTS group recovery relay log info based on Worker-Id 0, group_r__ , you can perform the following steps:
 
 1. Find the Pod of the slave node:
 
@@ -270,10 +270,10 @@ When the slave database encounters an error message similar to `[Note] Slave: MT
     1. This situation can be handled using an idempotent mode.
     2. In such replication errors, redoing the setup on the slave database is also a viable option.
 
-## Both Primary and Replica Pods are Labeled as `replica`
+## Both Primary and Replica Pods are Labeled as __replica__ 
 
 1. By executing the following command, you will discover that both MySQL Pods
-   are labeled as `replica` role. You need to correct one of them to `master`.
+   are labeled as __replica__ role. You need to correct one of them to __master__ .
 
     ```bash
     [root@aster-01 ~]$ kubectl get pod -n mcamel-system -Lhealthy,role|grep mysql
@@ -288,7 +288,7 @@ When the slave database encounters an error message similar to `[Note] Slave: MT
     kubectl exec -it mcamel-common-mysql-cluster-mysql-0 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf
     ```
 
-3. To check the status information of the `slave`, look for the results where the query output is empty. These correspond to the original `master`. In the example below, `mysql-0` corresponds to the relevant content:
+3. To check the status information of the __slave__ , look for the results where the query output is empty. These correspond to the original __master__ . In the example below, __mysql-0__ corresponds to the relevant content:
 
     ??? note "Status examples“
 
@@ -369,7 +369,7 @@ When the slave database encounters an error message similar to `[Note] Slave: MT
     mysql> stop slave; reset slave;
     ```
 
-5. Manually edit the Pod of the master: change its label from `role replica` to `master` and set `healthy no` to `yes`.
+5. Manually edit the Pod of the master: change its label from __role replica__ to __master__ and set __healthy no__ to __yes__ .
 
 6. Run the following command on the MySQL shell of the slave:
 
@@ -394,7 +394,7 @@ pt-table-sync --execute --charset=utf8 --ignore-databases=mysql,sys,percona --da
 pt-table-sync --execute --charset=utf8 --ignore-databases=mysql,sys,percona --databases=kpanda dsn=u=root,p=xxx,h=mcamel-common-kpanda-mysql-cluster-mysql-0.mysql.mcamel-system,P=3306 dsn=u=root,p=xxx,h=mcamel-common-kpanda-mysql-cluster-mysql-1.mysql.mcamel-system,P=3306  --print
 ```
 
-To address this issue and achieve data supplementation, you can use `pt-table-sync`. The following example demonstrates how to supplement data from `mysql-0` to `mysql-1`.
+To address this issue and achieve data supplementation, you can use __pt-table-sync__ . The following example demonstrates how to supplement data from __mysql-0__ to __mysql-1__ .
 
 This scenario is often applicable during master-slave switching, where the new slave has extra executed GTIDs that need to be synchronized before redoing the process.
 

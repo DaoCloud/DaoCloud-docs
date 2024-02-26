@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# instance monitoring
+# Instance monitoring
 
 This page explains how to quickly get information about Elasticsearch from the chart panel, as well as some notes and tips.
 
@@ -11,6 +11,6 @@ This page explains how to quickly get information about Elasticsearch from the c
 
     <!--screenshot-->
 
-2. Click `Instance Monitoring` on the left navigation bar to enter the large screen of instance monitoring.
+2. Click __Instance Monitoring__ on the left navigation bar to enter the large screen of instance monitoring.
 
     <!--screenshot-->

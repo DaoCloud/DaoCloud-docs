@@ -67,12 +67,12 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 #### New features
 
 - **Added** integration with the global management audit log module
-- **Added** support for `LoadBalancer` service type
+- **Added** support for __LoadBalancer__ service type
 
 #### Improvements
 
 - **Improved** interfering elements and added time range selection to monitoring charts
-- **Improved** closed-loop installation of `ServiceMonitor`
+- **Improved** closed-loop installation of __ServiceMonitor__ 
 
 ## 2023-04-27
 
@@ -80,12 +80,12 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 
 #### New features
 
-- **Added** `mcamel-kafka` details page displays related events
-- **Added** `mcamel-kafka` supports custom roles
+- **Added** __mcamel-kafka__ details page displays related events
+- **Added** __mcamel-kafka__ supports custom roles
 
 #### Improvements
 
-- **Improved** `mcamel-kafka` scheduling strategy adds a sliding button
+- **Improved** __mcamel-kafka__ scheduling strategy adds a sliding button
 
 ## 2023-03-28
 
@@ -93,12 +93,12 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 
 #### New features
 
-- **Added** `mcamel-kafka` supports middleware traces adaptation
-- **Added** Install `mcamel-kafka` to enable traces according to parameter configuration
+- **Added** __mcamel-kafka__ supports middleware traces adaptation
+- **Added** Install __mcamel-kafka__ to enable traces according to parameter configuration
 
 #### Improvements
 
-- **Improved** `mcamel-kafka` optimizes Kafka's default configuration.
+- **Improved** __mcamel-kafka__ optimizes Kafka's default configuration.
 - **Upgraded** golang.org/x/net to v0.7.0
 - **Upgraded** GHippo SDK to v0.14.0
 
@@ -108,21 +108,21 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 
 #### New features
 
-- **Added** `mcamel-kafka` helm-docs template file
-- **Added** The Operator in the `mcamel-kafka` app store can only be installed in mcamel-system
-- **Added** `mcamel-kafka` supports cloud shell
-- **Added** `mcamel-kafka` supports separate registration of navigation bar
-- **Added** `mcamel-kafka` supports viewing logs
-- **Added** `mcamel-kafka` Operator docking with chart-syncer
+- **Added** __mcamel-kafka__ helm-docs template file
+- **Added** The Operator in the __mcamel-kafka__ app store can only be installed in mcamel-system
+- **Added** __mcamel-kafka__ supports cloud shell
+- **Added** __mcamel-kafka__ supports separate registration of navigation bar
+- **Added** __mcamel-kafka__ supports viewing logs
+- **Added** __mcamel-kafka__ Operator docking with chart-syncer
 
 #### Improvements
 
-- **Improved** `mcamel-kafka` upgrade offline mirror detection script
+- **Improved** __mcamel-kafka__ upgrade offline mirror detection script
 
 #### fix
 
-- **Fixed** an issue that `mcamel-kafka` instance name is too long and the custom resource cannot be created
-- **Fixed** `mcamel-kafka` workspace Editor user cannot view instance password
+- **Fixed** an issue that __mcamel-kafka__ instance name is too long and the custom resource cannot be created
+- **Fixed** __mcamel-kafka__ workspace Editor user cannot view instance password
 - **Added** log view operation instructions, support custom query, export and other features
 
 ## 2022-12-25
@@ -131,13 +131,13 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 
 #### New features
 
-- **Added** `mcamel-kafka` NodePort port conflict early detection
-- **Added** `mcamel-kafka` node affinity configuration
+- **Added** __mcamel-kafka__ NodePort port conflict early detection
+- **Added** __mcamel-kafka__ node affinity configuration
 
 #### Improvements
 
-- **Improved** `mcamel-kafka` manager removes the probe to prevent kafka from being unable to open the manager when it is not ready
-- **Improved** `mcamel-kafka` zooEntrance repackage mirror address to 1.0.0
+- **Improved** __mcamel-kafka__ manager removes the probe to prevent kafka from being unable to open the manager when it is not ready
+- **Improved** __mcamel-kafka__ zooEntrance repackage mirror address to 1.0.0
 
 ## 2022-11-28
 
@@ -192,5 +192,5 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 - **Added** Support kafka-manager to manage kafka
 - **Added** Support kafka metric monitoring, check the monitoring chart
 - **Added** support for ghippo permission linkage
-- **Added** `mcamel-elasticsearch` interface to get user list
+- **Added** __mcamel-elasticsearch__ interface to get user list
 - **Improved** Update the release note script and run the release-process specification

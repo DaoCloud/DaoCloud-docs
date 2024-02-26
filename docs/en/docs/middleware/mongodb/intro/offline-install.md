@@ -12,7 +12,7 @@ You can load the images using one of the following two methods. It is recommende
 
 ### Synchronize Images to Image Repository using chart-syncer
 
-1. Create `load-image.yaml`.
+1. Create __load-image.yaml__ .
 
     !!! note
 
@@ -129,7 +129,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
     1. Update the helm repository.
 
         ```shell
-        helm repo update mcamel/mcamel-mongodb # If the helm version is too low, this may fail. In that case, try executing `helm update repo` instead.
+        helm repo update mcamel/mcamel-mongodb # If the helm version is too low, this may fail. In that case, try executing __helm update repo__ instead.
         ```
 
     1. Choose the version you want to install (it is recommended to install the latest version).
@@ -145,17 +145,17 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
         ...
         ```
 
-    1. Backup the `--set` parameters.
+    1. Back up the `--set` parameters.
 
-        Before upgrading to a new version, it is recommended to backup the `--set` parameters of the old version by executing the following command:
+        Before upgrading to a new version, it is recommended to back up the `--set` parameters of the old version by executing the following command:
 
         ```shell
         helm get values mcamel-mongodb -n mcamel-system -o yaml > mcamel-mongodb.yaml
         ```
 
-    1. Run `helm upgrade`.
+    1. Run `helm upgrade` .
 
-        Before upgrading, it is recommended to replace the `global.imageRegistry` field in `mcamel-mongodb.yaml` with the image repository address you are currently using.
+        Before upgrading, it is recommended to replace the  `global.imageRegistry` field in __mcamel-mongodb.yaml__ with the image repository address you are currently using.
 
         ```shell
         export imageRegistry={your image repository}
@@ -171,17 +171,17 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
 
 === "Upgrade via chart package"
 
-    1. Backup the `--set` parameters.
+    1. Back up the `--set` parameters.
 
-        Before upgrading to a new version, it is recommended to backup the `--set` parameters of the old version by executing the following command:
+        Before upgrading to a new version, it is recommended to back up the `--set` parameters of the old version by executing the following command:
 
         ```shell
         helm get values mcamel-mongodb -n mcamel-system -o yaml > mcamel-mongodb.yaml
         ```
 
-    1. Run `helm upgrade`.
+    1. Run `helm upgrade` .
 
-        Before upgrading, it is recommended to replace the `global.imageRegistry` field in `mcamel-mongodb.yaml` with the image repository address you are currently using.
+        Before upgrading, it is recommended to replace the  `global.imageRegistry` field in __mcamel-mongodb.yaml__ with the image repository address you are currently using.
 
         ```shell
         export imageRegistry={your image repository}
