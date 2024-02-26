@@ -195,7 +195,7 @@ Create the following resources in the [Service Mesh](../../mspider/intro/index.m
 
 ### Creating a Canary delivery job
 
-Create a canary delivery job in the application workbench. For more detailed creation instructions, please refer to [Create a Canary Delivery Job](../user-guide/release/canary.md).
+Create a canary delivery job in Workbench. For more detailed creation instructions, please refer to [Create a Canary Delivery Job](../user-guide/release/canary.md).
 
 1. Select the application for which you want to enable canary deployment.
 
@@ -216,6 +216,6 @@ In the canary deployment object, the specified colors are __blue, yellow__, whic
 
 ![Effect Illustration](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/argorollout06.png)
 
-At this time, you can adjust the traffic ratio in the canary deployment module of the application workbench and continue to release the application until the final successful release.
+At this time, you can adjust the traffic ratio in the canary deployment module of Workbench and continue to release the application until the final successful release.
 
 ![Adjust Ratio](../images/argout06.png)

@@ -102,6 +102,10 @@ nav:
                   - Run Pipeline:
                       - Auto Trigger Pipelines: amamba/user-guide/pipeline/run/trigger.md
                       - Manual Trigger Pipelines: amamba/user-guide/pipeline/run/manual.md
+                  - Check Pipeline:
+                      - Check Pipeline Details: amamba/user-guide/pipeline/view/view-pipeline.md
+                      - Check Running Records: amamba/user-guide/pipeline/view/view-run.md
+                  - Jenkins Pipeline Syntax: amamba/user-guide/pipeline/pipeline-syntax.md
                   - Pipeline Parameters:
                       - Concepts in Pipeline: amamba/user-guide/pipeline/config/concept.md
                       - Graphical Task Template Parameters: amamba/user-guide/pipeline/config/step.md
