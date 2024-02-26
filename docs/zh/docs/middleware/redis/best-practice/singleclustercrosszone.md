@@ -2,7 +2,7 @@
 
 ## 场景需求
 
-客户机房环境为单一 k8s 集群横跨`机房A`、`机房B`，期望可以部署一套 3 主 3 从集群模式 Redis，实现跨机房高可用，当任一机房整体离线时，Redis 仍可以正常提供服务。
+客户机房环境为单一 k8s 集群横跨 __机房A__ 、 __机房B__ ，期望可以部署一套 3 主 3 从集群模式 Redis，实现跨机房高可用，当任一机房整体离线时，Redis 仍可以正常提供服务。
 
 ![svc](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync26.png)
 
@@ -29,7 +29,7 @@
 
 #### Redis 工作负载标签
 
-本方案需要对 `leader` 副本与 `follower` 副本分别调度，因此用标签划分 redis 副本：
+本方案需要对 __leader__  副本与 __follower__  副本分别调度，因此用标签划分 redis 副本：
 
 | Redis 副本     | 标签                |
 | -------------- | ------------------ |
@@ -57,7 +57,7 @@
     **redis-leader**
 
     ```yaml
-    # redis-leader 在拓扑域 `az1` 内的集群节点（k8s-node-01，k8s-node-02，k8s-node-06）执行工作负载反亲和，确保每个集群节点仅调度一个 leader 副本。
+    # redis-leader 在拓扑域 __az1__  内的集群节点（k8s-node-01，k8s-node-02，k8s-node-06）执行工作负载反亲和，确保每个集群节点仅调度一个 leader 副本。
       affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
@@ -69,7 +69,7 @@
                       - redis-leader
               topologyKey: az1
  
-    # redis-leader 的副本在拓扑域 `az1` 内集群节点（k8s-node-01，k8s-node-02，k8s-node-06）亲和性调度
+    # redis-leader 的副本在拓扑域 __az1__  内集群节点（k8s-node-01，k8s-node-02，k8s-node-06）亲和性调度
         nodeAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
             - weight: 100
@@ -98,7 +98,7 @@
     **redis-follower**
 
     ```yaml
-    # redis-follower 的副本在拓扑域 `az2` 内集群节点（k8s-node-03，k8s-node-04，k8s-node-05）工作负载反亲和
+    # redis-follower 的副本在拓扑域 __az2__  内集群节点（k8s-node-03，k8s-node-04，k8s-node-05）工作负载反亲和
       affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
@@ -110,7 +110,7 @@
                       - redis-follower
               topologyKey: az2
  
-    # redis-follower 的副本在拓扑域 `az2` 内集群节点（k8s-node-03，k8s-node-04，k8s-node-05）亲和性部署
+    # redis-follower 的副本在拓扑域 __az2__  内集群节点（k8s-node-03，k8s-node-04，k8s-node-05）亲和性部署
         nodeAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
             - weight: 100
@@ -137,14 +137,14 @@
     ```
 
 ## 机房离线处理
-### `机房 A` 离线
-`机房 A` 离线将导致两个 `Redis-leader` 副本离线，整个 Redis 将无法提供正常服务，如下图所示：
+### __机房 A__  离线
+ __机房 A__  离线将导致两个 __Redis-leader__  副本离线，整个 Redis 将无法提供正常服务，如下图所示：
 
 ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync28.png)
 
 **解决办法**
 
-通过工具 `redis-cli`  进入 `机房 B` 中的任一 redis-follower 副本，手工转换为 leader 副本。
+通过工具 __redis-cli__   进入 __机房 B__  中的任一 redis-follower 副本，手工转换为 leader 副本。
 
 ```shell
 # 链接至一个 follower 节点
@@ -157,10 +157,10 @@ cluster failover takeover
 role
 ```
 
-完成 `机房 B` 中副本角色转换后，集群可以恢复服务能力。当 `机房 A` 再次上线后，原 redis-leader 副本会以 follower 的角色接入 Redis 实例。
+完成 __机房 B__  中副本角色转换后，集群可以恢复服务能力。当 __机房 A__  再次上线后，原 redis-leader 副本会以 follower 的角色接入 Redis 实例。
 
-### `机房 B` 离线
+### __机房 B__  离线
 
-`机房 B` 离线将仅导致一个 redis-leader 副本离线，Redis 服务不会中断，无需人工干预，如下图。
+ __机房 B__  离线将仅导致一个 redis-leader 副本离线，Redis 服务不会中断，无需人工干预，如下图。
 
 ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/sync29.png)

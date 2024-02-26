@@ -11,7 +11,7 @@ MinIO 内置了 Prometheus 和 Grafana 监控模块。
 
     ![点击某个名称](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/view01.png)
 
-2. 在左侧导航栏点击`实例监控`。
+2. 在左侧导航栏点击 __实例监控__ 。
 
     ![点击实例监控](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/insight01.png)
 

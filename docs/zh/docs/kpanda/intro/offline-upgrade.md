@@ -156,9 +156,9 @@
         ...
         ```
 
-    1. 备份 __--set__ 参数。
+    1. 备份 `--set` 参数。
 
-        在升级容器管理版本之前，建议您执行如下命令，备份老版本的 __--set__ 参数。
+        在升级容器管理版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
 
         ```shell
         helm get values kpanda -n kpanda-system -o yaml > bak.yaml
@@ -171,7 +171,7 @@
         kubectl apply -f kpanda/crds
         ```
 
-    1. 执行 __helm upgrade__ 。
+    1. 执行 `helm upgrade` 。
 
         升级前建议您覆盖 bak.yaml 中的 `global.imageRegistry` 字段为当前使用的镜像仓库地址。
 
@@ -189,9 +189,9 @@
 
 === "通过 chart 包升级"
 
-    1. 备份 __--set__ 参数。
+    1. 备份 `--set` 参数。
 
-        在升级容器管理版本之前，建议您执行如下命令，备份老版本的 __--set__ 参数。
+        在升级容器管理版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
 
         ```shell
         helm get values kpanda -n kpanda-system -o yaml > bak.yaml
@@ -203,7 +203,7 @@
         kubectl apply -f ./crds
         ```
 
-    1. 执行 __helm upgrade__ 。
+    1. 执行 `helm upgrade` 。
 
         升级前建议您覆盖 bak.yaml 中的 `global.imageRegistry` 为当前使用的镜像仓库地址。
 

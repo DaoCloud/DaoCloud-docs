@@ -61,7 +61,7 @@ An offline environment refers to an environment that cannot connect to the inter
         relocateContainerImages: true
         ```
 
-    * Execute the charts-syncer command to sync the Chart and its included images
+    * Run the charts-syncer command to sync the Chart and its included images
 
         ```sh
         charts-syncer sync --config sync-dao-2048.yaml --insecure --auto-create-repository

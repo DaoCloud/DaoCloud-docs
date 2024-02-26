@@ -19,10 +19,10 @@ Site Replication 功能要求 MinIO 部署在分布式模式下，并且每个�
     mc alias set minio2 http://host2:9000 user password
     ```
     
-    - `minio1`:  用户为 MinIO 服务端点设置的别名，
-    - `http://host1:9000`: 是 MinIO 服务的 URL
-    - `user`：这是连接 MinIO 服务所需的用户名。
-    - `password`：这是连接 MinIO 服务所需的密码。
+    - __minio1__ :  用户为 MinIO 服务端点设置的别名，
+    - __http://host1:9000__ : 是 MinIO 服务的 URL
+    - __user__ ：这是连接 MinIO 服务所需的用户名。
+    - __password__ ：这是连接 MinIO 服务所需的密码。
 
 2. 执行以下命令在 minio1 服务上添加一个复制规则，以便自动将数据复制到别名为 minio2 的目标 MinIO 服务。
 

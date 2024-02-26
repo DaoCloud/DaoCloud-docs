@@ -49,7 +49,7 @@ Follow the steps below to customize the reverse proxy server address for DCE 5.0
               reverseProxy: ${DCE_PROXY} # only need to modify this line
             ```
 
-5. Execute __helm upgrade__ to make the configuration take effect.
+5. Run `helm upgrade` to make the configuration take effect.
 
     ```shell
     helm upgrade ghippo ghippo/ghippo \

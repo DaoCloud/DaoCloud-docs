@@ -7,7 +7,7 @@ hide:
 
 本文介绍 Elasticsearch 实例的基本信息。
 
-1. 在 `Elasticsearch 搜索服务`的首页点击实例名称
+1. 在 __Elasticsearch 搜索服务__ 的首页点击实例名称
 
     ![概览](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/elasticsearch/images/list01.png)
 

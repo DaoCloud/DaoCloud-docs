@@ -4,7 +4,7 @@ This page explains how to install or upgrade the middleware - kafka module after
 
 !!! info
 
-    The term `mcamel` used in the following commands or scripts is an internal development codename for the middleware module.
+    The term __mcamel__ used in the following commands or scripts is an internal development codename for the middleware module.
 
 ## Loading Images from the Installation Package
 
@@ -12,7 +12,7 @@ You can load the images using one of the following methods. It is recommended to
 
 ### Syncing Images to Image Repository using chart-syncer
 
-1. Create `load-image.yaml` file.
+1. Create __load-image.yaml__ file.
 
     !!! note  
 
@@ -129,7 +129,7 @@ There are two ways to perform the upgrade. You can choose the corresponding upgr
     1. Update the helm repository.
 
         ```shell
-        helm repo update mcamel/mcamel-kafka # If the helm version is too low and it fails, try executing `helm update repo`
+        helm repo update mcamel/mcamel-kafka # If the helm version is too low and it fails, try executing __helm update repo__ 
         ```
 
     1. Select the version you want to install (recommended to install the latest version).
@@ -145,17 +145,17 @@ There are two ways to perform the upgrade. You can choose the corresponding upgr
         ...
         ```
 
-    1. Backup the `--set` parameters.
+    1. Back up the `--set` parameters.
 
-        Before upgrading to a new version, it is recommended to execute the following command to backup the `--set` parameters of the old version.
+        Before upgrading to a new version, it is recommended to execute the following command to back up the `--set` parameters of the old version.
 
         ```shell
         helm get values mcamel-kafka -n mcamel-system -o yaml > mcamel-kafka.yaml
         ```
 
-    1. Run `helm upgrade`.
+    1. Run `helm upgrade` .
 
-        Before upgrading, it is recommended to update the `global.imageRegistry` field in the `mcamel-kafka.yaml` file with the current image repository address.
+        Before upgrading, it is recommended to update the  `global.imageRegistry` field in the __mcamel-kafka.yaml__ file with the current image repository address.
 
         ```shell
         export imageRegistry={your_image_repository}
@@ -171,17 +171,17 @@ There are two ways to perform the upgrade. You can choose the corresponding upgr
 
 === "Upgrade through chart package"
 
-    1. Backup the `--set` parameters.
+    1. Back up the `--set` parameters.
 
-        Before upgrading to a new version, it is recommended to execute the following command to backup the `--set` parameters of the old version.
+        Before upgrading to a new version, it is recommended to execute the following command to back up the `--set` parameters of the old version.
 
         ```shell
         helm get values mcamel-kafka -n mcamel-system -o yaml > mcamel-kafka.yaml
         ```
 
-    1. Run `helm upgrade`.
+    1. Run `helm upgrade` .
 
-        Before upgrading, it is recommended to update the `bak.yaml` file by replacing `global.imageRegistry` with your current image repository address.
+        Before upgrading, it is recommended to update the __bak.yaml__ file by replacing  `global.imageRegistry` with your current image repository address.
 
         ```shell
         export imageRegistry={your_image_repository}

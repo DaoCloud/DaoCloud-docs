@@ -63,7 +63,7 @@ First, find a node that can connect to the image repository and helm repository 
               password: "Harbor12345" # Image repository password
         ```
 
-1. Execute the command to synchronize the images.
+1. Run the command to synchronize the images.
 
     ```shell
     charts-syncer sync --config load-image.yaml
@@ -148,9 +148,9 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
         ...
         ```
     
-    1. Backup the __--set__ parameters.
+    1. Back up the `--set` parameters.
     
-        Before upgrading the multicloud orchestration version, it is recommended to run the following command to backup the __--set__ parameters of the old version.
+        Before upgrading the multicloud orchestration version, it is recommended to run the following command to back up the `--set` parameters of the old version.
     
         ```shell
         helm get values kairship -n kairship-system -o yaml > bak.yaml
@@ -163,7 +163,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
         kubectl apply -f kairship/crds
         ```
     
-    1. Execute __helm upgrade__ .
+    1. Run `helm upgrade` .
     
         Before upgrading, it is recommended to update the `global.imageRegistry` field in bak.yaml to the image repository address you are currently using.
     
@@ -181,9 +181,9 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
 
 === "Upgrade via chart package"
 
-    1. Backup the __--set__ parameters.
+    1. Back up the `--set` parameters.
     
-        Before upgrading the multicloud orchestration version, it is recommended to run the following command to backup the __--set__ parameters of the old version.
+        Before upgrading the multicloud orchestration version, it is recommended to run the following command to back up the `--set` parameters of the old version.
     
         ```shell
         helm get values kairship -n kairship-system -o yaml > bak.yaml
@@ -195,7 +195,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
         kubectl apply -f ./crds
         ```
     
-    1. Execute __helm upgrade__ .
+    1. Run `helm upgrade` .
     
         Before upgrading, it is recommended to update the `global.imageRegistry` field in bak.yaml to the image repository address you are currently using.
     

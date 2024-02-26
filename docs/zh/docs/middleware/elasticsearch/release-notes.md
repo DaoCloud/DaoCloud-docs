@@ -64,13 +64,13 @@
 
 #### 新功能
 
-- **新增** `mcamel-elasticsearch` 节点反亲和配置
-- **新增** `mcamel-elasticsearch` 监控图表，去除干扰元素并新增时间范围选择
+- **新增** __mcamel-elasticsearch__ 节点反亲和配置
+- **新增** __mcamel-elasticsearch__ 监控图表，去除干扰元素并新增时间范围选择
 
 #### 优化
 
-- **优化** `mcamel-elasticsearch` ServiceMonitor 闭环安装
-- **修复** `mcamel-elasticsearch` 监控图表，去除干扰元素并新增时间范围选择
+- **优化** __mcamel-elasticsearch__ ServiceMonitor 闭环安装
+- **修复** __mcamel-elasticsearch__ 监控图表，去除干扰元素并新增时间范围选择
 
 ## 2023-05-30
 
@@ -78,9 +78,9 @@
 
 #### 新功能
 
-- **新增** `mcamel-elasticsearch` 新增对接全局管理审计日志模块
-- **新增** `mcamel-elasticsearch` 新增可配置实例监控数据采集间隔时间
-- **新增** `mcamel-elasticsearch` 修复 Pod 列表分页展示有误
+- **新增** __mcamel-elasticsearch__ 新增对接全局管理审计日志模块
+- **新增** __mcamel-elasticsearch__ 新增可配置实例监控数据采集间隔时间
+- **新增** __mcamel-elasticsearch__ 修复 Pod 列表分页展示有误
 
 ## 2023-04-27
 
@@ -88,13 +88,13 @@
 
 #### 新功能
 
-- **新增** `mcamel-elasticsearch` 详情页面展示相关的事件
-- **新增** `mcamel-elasticsearch` 支持自定义角色
+- **新增** __mcamel-elasticsearch__ 详情页面展示相关的事件
+- **新增** __mcamel-elasticsearch__ 支持自定义角色
 
 #### 优化
 
-- **优化** `mcamel-elasticsearch` 调度策略增加滑动按钮
-- **修复** `mcamel-elasticsearch` 在纳管集群时可能会中断重试的问题
+- **优化** __mcamel-elasticsearch__ 调度策略增加滑动按钮
+- **修复** __mcamel-elasticsearch__ 在纳管集群时可能会中断重试的问题
 
 ## 2023-03-28
 
@@ -102,9 +102,9 @@
 
 #### 新功能
 
-- **新增** `mcamel-elasticsearch` 支持中间件链路追踪适配
-- **新增** 在安装 `mcamel-elasticsearch` 根据参数配置启用链路追踪
-- **新增** `mcamel-elasticsearch` Kibana 支持 LoadBalancer 类型
+- **新增** __mcamel-elasticsearch__ 支持中间件链路追踪适配
+- **新增** 在安装 __mcamel-elasticsearch__ 根据参数配置启用链路追踪
+- **新增** __mcamel-elasticsearch__ Kibana 支持 LoadBalancer 类型
 
 #### 升级
 
@@ -117,26 +117,26 @@
 
 #### 新功能
 
-- **新增** `mcamel-elasticsearch` helm-docs 模板文件
-- **新增** `mcamel-elasticsearch` 应用商店中的 Operator 只能安装在 mcamel-system
-- **新增** `mcamel-elasticsearch` 支持 Cloud Shell
-- **新增** `mcamel-elasticsearch` 支持导航栏单独注册
-- **新增** `mcamel-elasticsearch` 支持查看日志
-- **新增** `mcamel-elasticsearch` Operator 对接 chart-syncer
-- **新增** `mcamel-elasticsearch` 支持 LB
+- **新增** __mcamel-elasticsearch__ helm-docs 模板文件
+- **新增** __mcamel-elasticsearch__ 应用商店中的 Operator 只能安装在 mcamel-system
+- **新增** __mcamel-elasticsearch__ 支持 Cloud Shell
+- **新增** __mcamel-elasticsearch__ 支持导航栏单独注册
+- **新增** __mcamel-elasticsearch__ 支持查看日志
+- **新增** __mcamel-elasticsearch__ Operator 对接 chart-syncer
+- **新增** __mcamel-elasticsearch__ 支持 LB
 
 - **新增** 日志查看操作说明，支持自定义查询、导出等功能
 
 #### 升级
 
-- **升级** `mcamel-elasticsearch` 升级离线镜像检测脚本  
+- **升级** __mcamel-elasticsearch__ 升级离线镜像检测脚本  
 
 #### 修复
 
-- **修复** `mcamel-elasticsearch` 实例名太长导致自定义资源无法创建的问题
-- **修复** `mcamel-elasticsearch` 工作空间 Editor 用户无法查看实例密码
-- **修复** `mcamel-elasticsearch` 密码不能使用特殊字符的问题
-- **修复** `mcamel-elasticsearch` 超出索引导致 panic 的问题
+- **修复** __mcamel-elasticsearch__ 实例名太长导致自定义资源无法创建的问题
+- **修复** __mcamel-elasticsearch__ 工作空间 Editor 用户无法查看实例密码
+- **修复** __mcamel-elasticsearch__ 密码不能使用特殊字符的问题
+- **修复** __mcamel-elasticsearch__ 超出索引导致 panic 的问题
 
 ## 2022-12-25
 
@@ -144,21 +144,21 @@
 
 #### 新功能
 
-- **新增** `mcamel-elasticsearch` 获取集群已经分配的 NodePort 列表接口
-- **新增** `mcamel-elasticsearch` 增加状态详情
-- **新增** `mcamel-elasticsearch` 节点亲和性配置
+- **新增** __mcamel-elasticsearch__ 获取集群已经分配的 NodePort 列表接口
+- **新增** __mcamel-elasticsearch__ 增加状态详情
+- **新增** __mcamel-elasticsearch__ 节点亲和性配置
 
 #### 优化
 
-- **优化** `mcamel-elasticsearch` 可以展示公共的 es，纳管之前是不可以删除的  
-- **优化** `mcamel-elasticsearch` 增加健康状态返回  
+- **优化** __mcamel-elasticsearch__ 可以展示公共的 es，纳管之前是不可以删除的  
+- **优化** __mcamel-elasticsearch__ 增加健康状态返回  
 
 #### 修复
 
-- **修复** `mcamel-elasticsearch` 修复 kb 不存在时候，删除会失败的 BUG
-- **修复** `mcamel-elasticsearch` 修复 es exporter 离线失效的问题
-- **修复** `mcamel-elasticsearch` 修复 es 创建成功后没有返回 ports 信息的 bug
-- **修复** `mcamel-elasticsearch` 查询实例列表和详情时，Kibana 的服务类型不符合预期
+- **修复** __mcamel-elasticsearch__ 修复 kb 不存在时候，删除会失败的 BUG
+- **修复** __mcamel-elasticsearch__ 修复 es exporter 离线失效的问题
+- **修复** __mcamel-elasticsearch__ 修复 es 创建成功后没有返回 ports 信息的 bug
+- **修复** __mcamel-elasticsearch__ 查询实例列表和详情时，Kibana 的服务类型不符合预期
 
 ## 2022-11-28
 

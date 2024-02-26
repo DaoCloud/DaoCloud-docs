@@ -2,11 +2,11 @@
 
 ## introduce
 
-The characteristics of K8s, after the stateful application is deployed, whether it can be shifted depends on the underlying `CSI` capability. When `Hwameistor` is used as `CSI`, the application does not have the ability to cross Node.
+The characteristics of K8s, after the stateful application is deployed, whether it can be shifted depends on the underlying __CSI__ capability. When __Hwameistor__ is used as __CSI__ , the application does not have the ability to cross Node.
 
 However, when our initial cluster resources may have some unexpected situations such as unevenness, some stateful applications need to be migrated.
 
-This article is about: When using `Hwameistor`, if you want to migrate the data service middleware, this article takes `Elasticsearch` as an example; at the same time, refer to the migration guide officially provided by `Hwameistor` to demonstrate the migration process.
+This article is about: When using __Hwameistor__ , if you want to migrate the data service middleware, this article takes __Elasticsearch__ as an example; at the same time, refer to the migration guide officially provided by __Hwameistor__ to demonstrate the migration process.
 
 ## Experimental scene introduction
 
@@ -47,13 +47,13 @@ elasticsearch-data-mcamel-common-es-cluster-masters-es-data-2 Bound pvc-955bd221
 
 ## Experiment Objectives
 
-Migrate `mcamel-common-es-cluster-masters-es-data-1` (hereafter referred to as `esdata-1`) on `prod-worker3` to `prod-master3`
+Migrate __mcamel-common-es-cluster-masters-es-data-1__ (hereafter referred to as __esdata-1__ ) on __prod-worker3__ to __prod-master3__ 
 
 ## Preparation
 
 ### Confirm that the PV needs to be migrated
 
-Make sure that the `PV` disk corresponding to `esdata-1` is the one
+Make sure that the __PV__ disk corresponding to __esdata-1__ is the one
 
 ```bash
 [root@prod-master1 ~]# kubectl -n mcamel-system get pod mcamel-common-es-cluster-masters-es-data-1 -ojson | jq .spec.volumes[0]
@@ -72,11 +72,11 @@ NAME CAPACITY ACCESS MODES RECLAIM POLICY STATUS CLAIM STORAGE CLASS REASON AGE
 pvc-7d4c45c9-49d6-4684-aca2-8b853d0c335c 35Gi RWO Delete Bound mcamel-system/elasticsearch-data-mcamel-common-es-cluster-masters-es-data-1 hwameistor-storage-lvm-hdd 17h
 ```
 
-According to the above information, it is confirmed that `PV` is `pvc-7d4c45c9-49d6-4684-aca2-8b853d0c335c`
+According to the above information, it is confirmed that __PV__ is __pvc-7d4c45c9-49d6-4684-aca2-8b853d0c335c__ 
 
-### stop common-es
+### Stop common-es
 
-Stopping `common-es` is mainly 2 actions: first stop `operator`, then stop `es`
+Stopping __common-es__ is mainly 2 actions: first stop __operator__ , then stop __es__ 
 
 ```bash
 [root@prod-master1 ~]# kubectl -n mcamel-system get sts
@@ -108,7 +108,7 @@ rfr-mcamel-common-redis-cluster 3/3 20h
 
 ### Create a migration task
 
-For specific documents, please refer to `Hwameistor` official documentation: <https://hwameistor.io/docs/quick_start/create_stateful/advanced/migrate>
+For specific documents, please refer to __Hwameistor__ official documentation: <https://hwameistor.io/docs/quick_start/create_stateful/advanced/migrate>
 
 ```bash
 [root@prod-master1 ~]# cat migrate.yaml
@@ -118,7 +118,7 @@ metadata:
   namespace: hwameistor
   name: migrate-es-pvc # task name
 spec:
-  sourceNode: prod-worker3 # source node, can be obtained through `kubectl get ldn`
+  sourceNode: prod-worker3 # source node, can be obtained through `kubectl get ldn` 
   targetNodesSuggested:
   -prod-master3
   volumeName: pvc-7d4c45c9-49d6-4684-aca2-8b853d0c335c # pvc that needs to be migrated
@@ -127,7 +127,7 @@ spec:
 
 ### Run the migration command
 
-At this point, a `pod` will be created for `hwameistor` in the namespace to perform the migration action:
+At this point, a __pod__ will be created for __hwameistor__ in the namespace to perform the migration action:
 
 ```bash
 [root@prod-master1 ~]# kubectl apply -f migrate.yaml

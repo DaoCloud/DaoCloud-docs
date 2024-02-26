@@ -199,7 +199,7 @@ Overall architecture:
         type: builtin
     ```
 
-1. Execute specific steps `1,2,3,4,5` on the backup bootstrap node
+1. Run specific steps `1,2,3,4,5` on the backup bootstrap node
 
     ```bash
     ./dce5-installer cluster-create -c sample/clusterConfig.yaml -m sample/manifest.yaml -j 1,2,3,4,5
@@ -258,7 +258,7 @@ Prerequisites:
 
 - The bootstrap node and the backup bootstrap node have downloaded the offline upgrade package
 
-    1. Execute the command to upgrade the bootstrap node on both the bootstrap node and the backup bootstrap node, to upgrade the image, minio files, and charts versions
+    1. Run the command to upgrade the bootstrap node on both the bootstrap node and the backup bootstrap node, to upgrade the image, minio files, and charts versions
     
         ```bash
         ./dce5-installer cluster-create -c sample/clusterConfig.yaml -m sample/manifest.yaml -u tinder

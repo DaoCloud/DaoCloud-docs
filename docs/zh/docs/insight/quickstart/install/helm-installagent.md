@@ -108,7 +108,7 @@ export otel_col_host="insight-opentelemetry-collector.insight-system.svc.cluster
 
 ## 升级 Insight Agent
 
-1. 登录目标集群的控制台，执行以下命令备份 __--set__ 参数。
+1. 登录目标集群的控制台，执行以下命令备份 `--set` 参数。
 
     ```shell
     helm get values insight-agent -n insight-system -o yaml > insight-agent.yaml

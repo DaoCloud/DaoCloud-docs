@@ -1,12 +1,12 @@
 # Custom Role Permissions for Middlewares
 
-The Middlewares module allows users to customize role permissions. Users can create [custom roles](../../ghippo/user-guide/access-control/custom-role.md) in the `Global Management` section and specify the permissions for each middleware.
+The Middlewares module allows users to customize role permissions. Users can create [custom roles](../../ghippo/user-guide/access-control/custom-role.md) in the __Global Management__ section and specify the permissions for each middleware.
 
 When creating a custom role, you can assign one of three types of permissions: Create/Edit, View, and Delete.
 
 !!! note
 
-    Some permission options are automatically associated with related dependent permissions. For example, if you select the `Delete` permission, the `View` permission will be automatically selected as well. Please do not deselect dependent permissions to avoid issues with the intended functionality of the target permission.
+    Some permission options are automatically associated with related dependent permissions. For example, if you select the __Delete__ permission, the __View__ permission will be automatically selected as well. Please do not deselect dependent permissions to avoid issues with the intended functionality of the target permission.
 
 The specific operations that these three permissions can perform within the Middlewares module are as follows:
 

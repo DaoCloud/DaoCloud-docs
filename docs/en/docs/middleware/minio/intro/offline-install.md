@@ -4,7 +4,7 @@ This page explains how to install or upgrade the Middleware - MinIO module after
 
 !!! info
 
-    The term `mcamel` appearing in the following commands or scripts refers to the internal development code name of the middleware module.
+    The term __mcamel__ appearing in the following commands or scripts refers to the internal development code name of the middleware module.
 
 ## Load Images from Installation Package
 
@@ -12,7 +12,7 @@ You can load images in one of the following two ways. It is recommended to use c
 
 ### Synchronize Images to Image Repository using chart-syncer
 
-1. Create `load-image.yaml`.
+1. Create __load-image.yaml__ .
 
     !!! note
 
@@ -145,17 +145,17 @@ There are two ways to upgrade. Choose the corresponding upgrade method based on 
         ...
         ```
 
-    1. Backup the `--set` parameters.
+    1. Back up the `--set` parameters.
 
-        Before upgrading the version, we recommend executing the following command to backup the `--set` parameters of the previous version.
+        Before upgrading the version, we recommend executing the following command to back up the `--set` parameters of the previous version.
 
         ```shell
         helm get values mcamel-minio -n mcamel-system -o yaml > mcamel-minio.yaml
         ```
 
-    1. Run `helm upgrade`.
+    1. Run `helm upgrade` .
 
-        Before upgrading, it is recommended to update the `global.imageRegistry` field in mcamel-minio.yaml to the address of the image repository currently in use.
+        Before upgrading, it is recommended to update the  `global.imageRegistry` field in mcamel-minio.yaml to the address of the image repository currently in use.
 
         ```shell
         export imageRegistry={your image repository}
@@ -171,17 +171,17 @@ There are two ways to upgrade. Choose the corresponding upgrade method based on 
 
 === "Upgrade via chart package"
 
-    1. Backup the `--set` parameters.
+    1. Back up the `--set` parameters.
 
-        Before upgrading the version, we recommend executing the following command to backup the `--set` parameters of the previous version.
+        Before upgrading the version, we recommend executing the following command to back up the `--set` parameters of the previous version.
 
         ```shell
         helm get values mcamel-minio -n mcamel-system -o yaml > mcamel-minio.yaml
         ```
 
-    1. Run `helm upgrade`.
+    1. Run `helm upgrade` .
 
-        Before upgrading, it is recommended to update the `bak.yaml` file's `global.imageRegistry` field to the address of the image repository currently in use.
+        Before upgrading, it is recommended to update the __bak.yaml__ file's  `global.imageRegistry` field to the address of the image repository currently in use.
 
         ```shell
         export imageRegistry={your image repository}

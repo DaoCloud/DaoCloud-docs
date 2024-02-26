@@ -8,7 +8,7 @@ DCE 5.0 提供的 MinIO 服务自带网页控制台（Web Console）。了解 Mi
 
 默认情况下，MinIO 使用内置的 IDentity Provider（IDP）来完成身份管理。除了 IDP，还支持第三方 [OIDC](http://docs.minio.org.cn/minio/baremetal/security/openid-external-identity-management/external-authentication-with-openid-identity-provider.html#minio-external-identity-management-openid) 和 [LDAP](http://docs.minio.org.cn/minio/baremetal/security/ad-ldap-external-identity-management/external-authentication-with-ad-ldap-identity-provider.html#minio-external-identity-management-ad-ldap) 的方式。
 
-用户由一对 username 和 password 组成。在 MinIO 的语境中，username 又被称为 `access key`（注意与后面 service account 层级的 access key 区分开来），password 又称为 `secret key`。
+用户由一对 username 和 password 组成。在 MinIO 的语境中，username 又被称为 __access key__ （注意与后面 service account 层级的 access key 区分开来），password 又称为 __secret key__ 。
 
 ### root 用户
 
@@ -41,11 +41,11 @@ root 用户拥有所有资源的所有操作权限。
 
 #### mc 创建
 
-> 需要事先[安装 `mc` 命令](https://min.io/docs/minio/linux/reference/minio-mc.html?ref=docs#install-mc)，并配置连接到 MinIO 实例
+> 需要事先[安装 __mc__  命令](https://min.io/docs/minio/linux/reference/minio-mc.html?ref=docs#install-mc)，并配置连接到 MinIO 实例
 
 创建用户：
 
-> `ALIAS` 指 MinIO 实例的别名
+> __ALIAS__  指 MinIO 实例的别名
 
 ```bash
 mc admin user add ALIAS ACCESSKEY SECRETKEY
@@ -53,7 +53,7 @@ mc admin user add ALIAS ACCESSKEY SECRETKEY
 
 授予权限：
 
-> `USERNAME` 指 MinIO 用户的用户名，即 `ACCESSKEY`
+> __USERNAME__  指 MinIO 用户的用户名，即 __ACCESSKEY__ 
 
 ```bash
 mc admin policy set ALIAS readwrite user=USERNAME
@@ -72,17 +72,17 @@ type TenantSpec struct {
     //
     // An array of https://kubernetes.io/docs/concepts/configuration/secret/[Kubernetes opaque secrets] to use for generating MinIO users during tenant provisioning. +
     //
-    // Each element in the array is an object consisting of a key-value pair `name: <string>`, where the `<string>` references an opaque Kubernetes secret. +
+    // Each element in the array is an object consisting of a key-value pair __name: <string>__ , where the __<string>__  references an opaque Kubernetes secret. +
     //
     // Each referenced Kubernetes secret must include the following fields: +
     //
-    // * `CONSOLE_ACCESS_KEY` - The "Username" for the MinIO user +
+    // * __CONSOLE_ACCESS_KEY__  - The "Username" for the MinIO user +
     //
-    // * `CONSOLE_SECRET_KEY` - The "Password" for the MinIO user +
+    // * __CONSOLE_SECRET_KEY__  - The "Password" for the MinIO user +
     //
-    // The Operator creates each user with the `consoleAdmin` policy by default. You can change the assigned policy after the Tenant starts. +
+    // The Operator creates each user with the __consoleAdmin__  policy by default. You can change the assigned policy after the Tenant starts. +
     // +optional
-    Users []*corev1.LocalObjectReference `json:"users,omitempty"`
+    Users []*corev1.LocalObjectReference __json:"users,omitempty"__ 
     ....
     ....
     ....
@@ -128,7 +128,7 @@ MinIO 使用基于策略的访问控制 (PBAC)来管理用户对哪些资源具�
 
 ### 内置策略
 
-MinIO 内置了四种策略可以直接分配给用户或用户组。为用户/用户组授权时需要使用 `mc admin policy set` 命令，具体可参考 [mc admin policy](http://docs.minio.org.cn/minio/baremetal/reference/minio-cli/minio-mc-admin/mc-admin-policy.html#mc-admin-policy-set)
+MinIO 内置了四种策略可以直接分配给用户或用户组。为用户/用户组授权时需要使用 __mc admin policy set__  命令，具体可参考 [mc admin policy](http://docs.minio.org.cn/minio/baremetal/reference/minio-cli/minio-mc-admin/mc-admin-policy.html#mc-admin-policy-set)
 
 - readonly：对 MinIO 副本中的所有存储桶和存储对象具有 **只读** 权限
 

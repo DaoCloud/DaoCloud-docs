@@ -11,7 +11,7 @@ Let's assume that **instance redis-a** and **instance redis-b** are in different
 
 !!! note
 
-    Data synchronization and data recovery need to be performed by different Redis-shake instances. Therefore, in this example, we need to create two Redis-shake instances: `Redis-shake-sync` and `Redis-shake-recovery`.
+    Data synchronization and data recovery need to be performed by different Redis-shake instances. Therefore, in this example, we need to create two Redis-shake instances: __Redis-shake-sync__ and __Redis-shake-recovery__ .
 
 ## Data Synchronization Deployment
 
@@ -20,14 +20,14 @@ Diagram: Data synchronization **instance redis-a** >> **instance redis-b**
 
 ### Configuring Service for the Source Instance
 
-If the source instance is in a DCE 5.0 cluster, you can enable the solution in `Data Services` - `Redis` - `Cross-Cluster Master-Slave Synchronization`, and the service configuration will be automatically completed.
+If the source instance is in a DCE 5.0 cluster, you can enable the solution in __Data Services__ - __Redis__ - __Cross-Cluster Master-Slave Synchronization__ , and the service configuration will be automatically completed.
 
 
 If the source instance is in a third-party cluster, you need to manually configure the service. The configuration method is described below:
 
-Create a `NodePort` service for the Redis instance to allow data synchronization access from Redis-Shake. In this example, we need to create one service for **instance redis-a**. Here's the process:
+Create a __NodePort__ service for the Redis instance to allow data synchronization access from Redis-Shake. In this example, we need to create one service for **instance redis-a**. Here's the process:
 
-1. Go to `Container Management` - `Cluster where the source instance is located` - `Stateful Workloads`: Select the workload `redis-a` and create a `NodePort` service with the container port and service port set to 6379.
+1. Go to __Container Management__ - __Cluster where the source instance is located__ - __Stateful Workloads__ : Select the workload __redis-a__ and create a __NodePort__ service with the container port and service port set to 6379.
 
 
 2. Verify the service and make sure that the workload selector includes the following labels.
@@ -43,10 +43,10 @@ Create a `NodePort` service for the Redis instance to allow data synchronization
 
 #### Creating Configuration
 
-In `Container Management` - `Cluster where the target instance is located` - `Configuration and Storage` - `Configurations`, create a configuration item `redis-sync` for the Redis-shake instance. Import the file `sync.toml` (file content can be found in the `Appendix`), and make sure to modify the following:
+In __Container Management__ - __Cluster where the target instance is located__ - __Configuration and Storage__ - __Configurations__ , create a configuration item __redis-sync__ for the Redis-shake instance. Import the file __sync.toml__ (file content can be found in the __Appendix__ ), and make sure to modify the following:
 
 
-- source.address: The service address of the source instance `redis-a` created in the previous step:
+- source.address: The service address of the source instance __redis-a__ created in the previous step:
 
     ```toml
     address = "10.233.109.145:31278"
@@ -59,13 +59,13 @@ In `Container Management` - `Cluster where the target instance is located` - `Co
     ```
 
 
-- Address for accessing the target instance. This address can either be the newly created `ClusterIP` service address or the default `Headless` service address `rfr-redis-b` of the instance `redis-b`. In this example, we use the `Headless` service address:
+- Address for accessing the target instance. This address can either be the newly created __ClusterIP__ service address or the default __Headless__ service address __rfr-redis-b__ of the instance __redis-b__ . In this example, we use the __Headless__ service address:
 
     ```toml
     address = "rfr-redis-b:6379"
     ```
 
-    You can find this service information in `Cluster Management` - `Cluster where the target instance is located` - `Workloads` - `Access Method`. Similar to the following screenshot:
+    You can find this service information in __Cluster Management__ - __Cluster where the target instance is located__ - __Workloads__ - __Access Method__ . Similar to the following screenshot:
 
 
 - Access password for the target instance. This can be obtained from the Redis instance's Overview page under the Data Services module:
@@ -77,7 +77,7 @@ In `Container Management` - `Cluster where the target instance is located` - `Co
     Similar to the following location:
 
 
-- Set the target type to `standalone`:
+- Set the target type to __standalone__ :
 
     ```toml
     [target]
@@ -86,7 +86,7 @@ In `Container Management` - `Cluster where the target instance is located` - `Co
 
 #### Creating Redis-shake
 
-1. Open the `App Workbench`, select `Wizard` - `Based on Container Image` and create an application `Redis-shake-sync`:
+1. Open the __App Workbench__ , select __Wizard__ - __Based on Container Image__ and create an application __Redis-shake-sync__ :
 
 
 2. Fill in the application configuration as per the instructions below.
@@ -101,27 +101,27 @@ In `Container Management` - `Cluster where the target instance is located` - `Co
     - The access type for the default service is set to NodePort, with container port and service port both set to 6379.
 
 
-    - `Advanced Settings` - `Lifecycle` - `Startup Command` - Enter the run parameter:
+    - __Advanced Settings__ - __Lifecycle__ - __Startup Command__ - Enter the run parameter:
 
         ```yaml
         /etc/sync/sync.toml
         ```
 
-    - `Advanced Settings` - `Data Storage`: Add configuration item `redis-sync` and set the path to:
+    - __Advanced Settings__ - __Data Storage__ : Add configuration item __redis-sync__ and set the path to:
 
         ```yaml
         /etc/sync
         ```
 
-    - `Advanced Settings` - `Data Storage`: Add a temporary path with the container path set to:
+    - __Advanced Settings__ - __Data Storage__ : Add a temporary path with the container path set to:
 
         ```yaml
         /data
         ```
 
-3. Click `OK` to complete the creation of Redis-shake.
+3. Click __OK__ to complete the creation of Redis-shake.
 
-Once Redis-shake is created, data synchronization between Redis instances will begin. You can verify the synchronization using the `redis-cli` tool, but we won't go into detail here.
+Once Redis-shake is created, data synchronization between Redis instances will begin. You can verify the synchronization using the __redis-cli__ tool, but we won't go into detail here.
 
 ## Data Recovery
 
@@ -131,11 +131,11 @@ When the source instance **instance redis-a** comes back online, we need to reco
 
 !!! note
 
-    Before bringing the source instance online, make sure to stop the `Redis-shake-sync` used for normal synchronization to avoid incorrect synchronization overwriting newly added data.
+    Before bringing the source instance online, make sure to stop the __Redis-shake-sync__ used for normal synchronization to avoid incorrect synchronization overwriting newly added data.
 
 ## Restoring the Master-Slave Relationship
 
-To restore the initial master-slave synchronization relationship **instance redis-a** >> **instance redis-b**, stop the running `Redis-shake-recovery` instance in the cluster where **instance redis-a** is located in the `Container Management`. Then, restart the `Redis-shake-sync` instance in the target cluster, and the initial master-slave relationship will be reestablished.
+To restore the initial master-slave synchronization relationship **instance redis-a** >> **instance redis-b**, stop the running __Redis-shake-recovery__ instance in the cluster where **instance redis-a** is located in the __Container Management__ . Then, restart the __Redis-shake-sync__ instance in the target cluster, and the initial master-slave relationship will be reestablished.
 
 ## Appendix
 
@@ -154,7 +154,7 @@ elasticache_psync = "" # using when source is ElastiCache. ref: https://github.c
 type = "standalone" # "standalone" or "cluster"
 version = 6.0 # redis version, such as 2.8, 4.0, 5.0, 6.0, 6.2, 7.0, ...
 # When the target is a cluster, write the address of one of the nodes.
-# redis-shake will obtain other nodes through the `cluster nodes` command.
+# redis-shake will obtain other nodes through the __cluster nodes__ command.
 address = "10.233.103.2:6379"
 username = "" # keep empty if not using ACL
 password = "Aa123456" # keep empty if no authentication is required

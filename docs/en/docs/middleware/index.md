@@ -16,7 +16,7 @@ Install and enable these middleware components as needed to achieve optimal perf
 
 <div class="grid cards" markdown>
 
-- :simple-elasticsearch:{ .lg .middle } __Elasticsearch Search Service__
+- :simple-elasticsearch:{ .lg .middle } __Elasticsearch Service__
 
     ---
 

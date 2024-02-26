@@ -49,7 +49,7 @@
               reverseProxy: ${DCE_PROXY} # 只需要修改这一行
             ```
 
-5.  执行 __helm upgrade__ 使配置生效。
+5.  执行 `helm upgrade` 使配置生效。
 
     ```shell
     helm upgrade ghippo ghippo/ghippo \

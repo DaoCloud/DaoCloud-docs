@@ -11,12 +11,12 @@ MinIO has a built-in parameter configuration UI interface.
 
     <!--screenshot-->
 
-2. In the left navigation bar, click `Configuration parameters`.
+2. In the left navigation bar, click __Configuration parameters__ .
 
     <!--screenshot-->
 
-3. Open `Edit Configuration` to add, delete, and modify various parameters of MinIO.
+3. Open __Edit Configuration__ to add, delete, and modify various parameters of MinIO.
 
     <!--screenshot-->
 
-4. Click `Save`, the modified content will take effect immediately.
+4. Click __Save__ , the modified content will take effect immediately.

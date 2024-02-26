@@ -66,7 +66,7 @@ helm upgrade --install --create-namespace \
 Update the mesh control plane's workload:
 
 ```shell
-# Execute the update command in kpanda-global-cluster
+# Run the update command in kpanda-global-cluster
 kubectl -n mspider-system rollout restart deployment mspider-api-service mspider-ckube-remote mspider-gsc-controller mspider-ckube mspider-work-api
 ```
 
@@ -145,7 +145,7 @@ helm upgrade --install --create-namespace \
 Updating the workload of the mesh control plane:
 
 ```shell
-# Execute update command in kpanda-global-cluster
+# Run update command in kpanda-global-cluster
 kubectl -n mspider-system rollout restart deployment mspider-api-service mspider-ckube-remote mspider-gsc-controller mspider-ckube mspider-work-api
 ```
 

@@ -99,7 +99,7 @@ This example uses both readiness and liveness probes. The kubelet sends the firs
 
 In addition to the readiness probe, this configuration includes a liveness probe. The kubelet will perform the first liveness probe 15 seconds after the container is started. The readiness probe will attempt to connect to the __goproxy__ container on port 8080. If the liveness probe fails, the container will be restarted.
 
-### Execute command check
+### Run command check
 
 **YAML example:**
 

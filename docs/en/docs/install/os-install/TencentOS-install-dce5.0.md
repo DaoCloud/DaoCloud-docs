@@ -100,7 +100,7 @@ Installer v0.9.0 and higher versions support this deployment method.
         - `-z`: Minimize installation
         - `-c`: Specify the cluster configuration file. Not required when exposing the console using NodePort.
         - `-d`: Enable debug mode
-        - `--serial`: Execute all installation tasks sequentially
+        - `--serial`: Run all installation tasks sequentially
 
 7. After the installation is complete, the command line will prompt a successful installation. Congratulations! :smile: Now you can explore the brand new DCE 5.0 using the default account and password (admin/changeme) provided in the URL shown on the screen.
 

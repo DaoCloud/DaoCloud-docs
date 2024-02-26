@@ -56,28 +56,28 @@
 
 ### v0.10.0
 
-- **优化** `mcamel-mysql` 备份管理页面结构样式展示
-- **优化** `mcamel-mysql` 监控图表，去除干扰元素并新增时间范围选择
-- **优化** `mcamel-mysql` 存储容量指标来源，使用中立指标
-- **优化** `mcamel-mysql` ServiceMonitor 闭环安装
+- **优化** __mcamel-mysql__ 备份管理页面结构样式展示
+- **优化** __mcamel-mysql__ 监控图表，去除干扰元素并新增时间范围选择
+- **优化** __mcamel-mysql__ 存储容量指标来源，使用中立指标
+- **优化** __mcamel-mysql__ ServiceMonitor 闭环安装
 
 ## 2023-05-30
 
 ### v0.9.0
 
-- **新增** `mcamel-mysql` 对接全局管理审计日志模块
-- **新增** `mcamel-mysql` 可配置实例监控数据采集间隔时间
-- **修复** `mcamel-mysql` 安装 MySQL Operator 多副本时，Raft 集群无法正常建立
-- **修复** `mcamel-mysql` 升级 MySQL Operator 多副本时 PodDisruptionBudget 版本到 v1
+- **新增** __mcamel-mysql__ 对接全局管理审计日志模块
+- **新增** __mcamel-mysql__ 可配置实例监控数据采集间隔时间
+- **修复** __mcamel-mysql__ 安装 MySQL Operator 多副本时，Raft 集群无法正常建立
+- **修复** __mcamel-mysql__ 升级 MySQL Operator 多副本时 PodDisruptionBudget 版本到 v1
 
 ## 2023-04-27
 
 ### v0.8.2
 
-- **新增** `mcamel-mysql` 详情页面展示相关的事件
-- **新增** `mcamel-mysql` openapi 列表接口支持 Cluster 与 Namespace 字段过滤
-- **新增** `mcamel-mysql` 自定义角色
-- **新增** `mcamel-mysql` 对接 HwameiStor，支持存储容量展示（需要手动创建 HwameiStor exporter ServiceMonitor）
+- **新增** __mcamel-mysql__ 详情页面展示相关的事件
+- **新增** __mcamel-mysql__ openapi 列表接口支持 Cluster 与 Namespace 字段过滤
+- **新增** __mcamel-mysql__ 自定义角色
+- **新增** __mcamel-mysql__ 对接 HwameiStor，支持存储容量展示（需要手动创建 HwameiStor exporter ServiceMonitor）
 - **升级** 优化 调度策略增加滑动按钮
 
 ## 2023-03-28
@@ -86,16 +86,16 @@
 
 #### 新功能
 
-- **新增** `mcamel-mysql` 支持中间件链路追踪适配
-- **新增** 安装 `mcamel-mysql` 根据参数配置启用链路追踪
-- **新增** `mcamel-mysql` PhpMyAdmin 支持 LoadBalancer 类型
+- **新增** __mcamel-mysql__ 支持中间件链路追踪适配
+- **新增** 安装 __mcamel-mysql__ 根据参数配置启用链路追踪
+- **新增** __mcamel-mysql__ PhpMyAdmin 支持 LoadBalancer 类型
 
 #### 升级
 
 - **升级** golang.org/x/net 到 v0.7.0
 - **升级** GHippo SDK 到 v0.14.0
-- **优化** `mcamel-mysql` common-mysql 支持多个实例优化
-- **优化** `mcamel-mysql` 排障手册增加更多处理方法
+- **优化** __mcamel-mysql__ common-mysql 支持多个实例优化
+- **优化** __mcamel-mysql__ 排障手册增加更多处理方法
 
 ## 2023-02-23
 
@@ -103,31 +103,31 @@
 
 ### 新功能
 
-- **新增** `mcamel-mysql` helm-docs 模板文件
-- **新增** `mcamel-mysql` 应用商店中的 Operator 只能安装在 mcamel-system
-- **新增** `mcamel-mysql` 支持 cloud shell
-- **新增** `mcamel-mysql` 支持导航栏单独注册
-- **新增** `mcamel-mysql` 支持查看日志
-- **新增** `mcamel-mysql` 更新 Operator 版本
-- **新增** `mcamel-mysql` 展示 common MySQL 在实例列表中
-- **新增** `mcamel-mysql` 支持 MySQL8.0.29
-- **新增** `mcamel-mysql` 支持 LB
-- **新增** `mcamel-mysql` 支持 Operator 对接 chart-syncer
-- **新增** `mcamel-mysql` Operator 的 finalizers 权限以支持 openshift
-- **新增** `UI` 增加 MySQL 主从复制延迟情况展示
-- **新增** `文档` 增加 日志查看操作说明，支持自定义查询、导出等功能
+- **新增** __mcamel-mysql__ helm-docs 模板文件
+- **新增** __mcamel-mysql__ 应用商店中的 Operator 只能安装在 mcamel-system
+- **新增** __mcamel-mysql__ 支持 cloud shell
+- **新增** __mcamel-mysql__ 支持导航栏单独注册
+- **新增** __mcamel-mysql__ 支持查看日志
+- **新增** __mcamel-mysql__ 更新 Operator 版本
+- **新增** __mcamel-mysql__ 展示 common MySQL 在实例列表中
+- **新增** __mcamel-mysql__ 支持 MySQL8.0.29
+- **新增** __mcamel-mysql__ 支持 LB
+- **新增** __mcamel-mysql__ 支持 Operator 对接 chart-syncer
+- **新增** __mcamel-mysql__ Operator 的 finalizers 权限以支持 openshift
+- **新增** __UI__ 增加 MySQL 主从复制延迟情况展示
+- **新增** __文档__ 增加 日志查看操作说明，支持自定义查询、导出等功能
 
 #### 优化
 
-- **升级** `mcamel-mysql` 升级离线镜像检测脚本  
+- **升级** __mcamel-mysql__ 升级离线镜像检测脚本  
 
 #### 修复
 
-- **修复** `mcamel-mysql` 实例名太长导致自定义资源无法创建的问题
-- **修复** `mcamel-mysql` 工作空间 Editor 用户无法查看实例密码
-- **修复** `mcamel-mysql` 配置文件里 `expire-logs-days` 参数定义重复
-- **修复** `mcamel-mysql` 8.0 环境下 binlog 过期时间不符合预期
-- **修复** `mcamel-mysql` 备份集列表会展示出同名集群旧的备份集
+- **修复** __mcamel-mysql__ 实例名太长导致自定义资源无法创建的问题
+- **修复** __mcamel-mysql__ 工作空间 Editor 用户无法查看实例密码
+- **修复** __mcamel-mysql__ 配置文件里 __expire-logs-days__ 参数定义重复
+- **修复** __mcamel-mysql__ 8.0 环境下 binlog 过期时间不符合预期
+- **修复** __mcamel-mysql__ 备份集列表会展示出同名集群旧的备份集
 
 ## 2022-12-25
 
@@ -160,17 +160,17 @@
 - **新增** 新增备份配置接口
 - **新增** 实例列表接口新增备份恢复来源字段
 - **新增** 获取用户列表接口
-- **新增** `mysql-operator` chart 参数，来指定 metric exporter 镜像
+- **新增** __mysql-operator__ chart 参数，来指定 metric exporter 镜像
 - **新增** 支持 arm64 架构
 - **新增** 添加 arm64 operator 镜像打包
 - **新增** 支持密码脱敏
 - **新增** 支持服务暴露为 nodeport
 - **新增** 支持 mtls
-- **新增** `文档` 第一次文档网站发布
-- **新增** `文档` 基本概念
-- **新增** `文档` Concepts
-- **新增** `文档` 首次使用 MySQL
-- **新增** `文档` 删除 MySQL 实例
+- **新增** __文档__ 第一次文档网站发布
+- **新增** __文档__ 基本概念
+- **新增** __文档__ Concepts
+- **新增** __文档__ 首次使用 MySQL
+- **新增** __文档__ 删除 MySQL 实例
 
 #### 优化
 

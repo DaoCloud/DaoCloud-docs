@@ -97,9 +97,9 @@
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/faq-es-1.png)
 
-此图中`*-write`为别名，例如`jaeger-span-write`，需要对此别名进行处理
+此图中 __*-write__ 为别名，例如 __jaeger-span-write__ ，需要对此别名进行处理
 
-查看业务索引模板中使用的别名 `rollover_alias 对应值`
+查看业务索引模板中使用的别名 __rollover_alias 对应值__ 
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/faq-es-2.png)
 
@@ -129,7 +129,7 @@ curl -XPUT -u elastic:${ES_PASSWORD} -k "$ES_URL/${TEMPLATE_NAME}-000001" -H 'Co
 
 真实情况需要停止数据源的写入情况，再执行上述方法。
 
-## 报错 `Error setting GoMAXPROCS for operator`
+## 报错 __Error setting GoMAXPROCS for operator__ 
 
 **报错信息**
 
@@ -150,7 +150,7 @@ k8s:1.21.1
 kind：1.23.6
 runc version 1.1.0
 ```
-## 报错 `Terminating due to java.lang.OutOfMemoryError: Java heap space`
+## 报错 __Terminating due to java.lang.OutOfMemoryError: Java heap space__ 
 
 **完整的报错信息如下：**
 
@@ -180,7 +180,7 @@ kubectl edit elasticsearch mcamel-common-es-cluster-masters -n mcamel-system
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/faq-es-4.png)
 
-## OCP 环境安装 `Elasticsearch` 时报错 `Operation not permitted`
+## OCP 环境安装 __Elasticsearch__ 时报错 __Operation not permitted__ 
 
 **报错信息**
 
@@ -202,7 +202,7 @@ kubectl edit elasticsearch mcamel-common-es-cluster-masters -n mcamel-system
 
 如果 es 在此节点，可以将ES进程杀掉恢复。
 
-## 数据写入 `Elasticsearch` 时报错 `status:429, es_rejected_execution_exception`
+## 数据写入 __Elasticsearch__ 时报错 __status:429, es_rejected_execution_exception__ 
 
 **完整的报错信息如下：**
 
@@ -213,7 +213,7 @@ kubectl edit elasticsearch mcamel-common-es-cluster-masters -n mcamel-system
 
 **解决方式**
 
-- 方式 1：产生 429 错误的原因是 `Elasticsearch` 写入并发过大，`Elasticsearch` 来不及处理导致，可以适当降低写入并发并控制写入量。
+- 方式 1：产生 429 错误的原因是 __Elasticsearch__ 写入并发过大， __Elasticsearch__ 来不及处理导致，可以适当降低写入并发并控制写入量。
 
 - 方式 2：在资源允许的情况下，可以适当调大队列大小
 

@@ -53,11 +53,11 @@
 
 ### v0.10.0
 
-- **新增** `mcamel-redis` 访问白名单配置
-- **优化** `mcamel-redis` 创建实例对话框添加默认反亲和标签值，简化配置过程
-- **优化** `mcamel-redis` 数据恢复界面
-- **优化** `mcamel-redis` 前端界面权限展示信息
-- **修复** `mcamel-redis` 关闭节点亲和性失败
+- **新增** __mcamel-redis__  访问白名单配置
+- **优化** __mcamel-redis__  创建实例对话框添加默认反亲和标签值，简化配置过程
+- **优化** __mcamel-redis__  数据恢复界面
+- **优化** __mcamel-redis__  前端界面权限展示信息
+- **修复** __mcamel-redis__  关闭节点亲和性失败
 
 ## 2023-06-30
 
@@ -65,71 +65,71 @@
 
 #### 新功能
 
-- **新增** `mcamel-redis` 不同命名空间下无法创建同名 Redis
-- **新增** `mcamel-redis` 非 MCamel 纳管的 Redis 可能被误操作的问题
+- **新增** __mcamel-redis__  不同命名空间下无法创建同名 Redis
+- **新增** __mcamel-redis__  非 MCamel 纳管的 Redis 可能被误操作的问题
 
 #### 优化
 
-- **优化** `mcamel-redis` 备份管理页面结构样式展示
-- **优化** `mcamel-redis` 备份 Job 中的密码展示问题
-- **优化** `mcamel-redis` 监控图表，去除干扰元素并新增时间范围选择
-- **优化** `mcamel-redis` ServiceMonitor 闭环安装
+- **优化** __mcamel-redis__  备份管理页面结构样式展示
+- **优化** __mcamel-redis__  备份 Job 中的密码展示问题
+- **优化** __mcamel-redis__  监控图表，去除干扰元素并新增时间范围选择
+- **优化** __mcamel-redis__  ServiceMonitor 闭环安装
 
 ## 2023-05-30
 
 ### v0.8.0
 
-- **新增** `mcamel-redis` 可配置实例反亲和性
-- **新增** `mcamel-redis` 对接全局管理审计日志模块
-- **修复** `mcamel-redis` 删除 Redis 后，备份相关内容残留
-- **修复** `mcamel-redis` 哨兵集群的 Service 地址展示错误
+- **新增** __mcamel-redis__  可配置实例反亲和性
+- **新增** __mcamel-redis__  对接全局管理审计日志模块
+- **修复** __mcamel-redis__  删除 Redis 后，备份相关内容残留
+- **修复** __mcamel-redis__  哨兵集群的 Service 地址展示错误
 
 ## 2023-04-27
 
 ### v0.7.1
 
-- **新增** `mcamel-redis` 详情页面展示相关的事件
-- **新增** `mcamel-redis` 列表接口支持 Cluster 与 Namespace 字段过滤
-- **新增** `mcamel-redis` 自定义角色
-- **修复** `mcamel-redis` 优化 调度策略增加滑动按钮
+- **新增** __mcamel-redis__  详情页面展示相关的事件
+- **新增** __mcamel-redis__  列表接口支持 Cluster 与 Namespace 字段过滤
+- **新增** __mcamel-redis__  自定义角色
+- **修复** __mcamel-redis__  优化 调度策略增加滑动按钮
 
 ## 2023-03-29
 
 ### v0.6.2
 
-- **新增** `mcamel-redis` 支持自动化备份恢复
+- **新增** __mcamel-redis__  支持自动化备份恢复
 - **修复** 没有导出备份恢复的离线镜像
-- **修复** `mcamel-redis` 没有导出备份恢复的离线镜像
-- **修复** `mcamel-redis` 修复了若干已知问题，提升了系统稳定性和安全性
+- **修复** __mcamel-redis__  没有导出备份恢复的离线镜像
+- **修复** __mcamel-redis__  修复了若干已知问题，提升了系统稳定性和安全性
 - **新增** 新增备份功能使用文档
 
 ## 2023-02-23
 
 ### v0.5.0
 
-- **新增** `mcamel-redis` helm-docs 模板文件
-- **新增** `mcamel-redis` 应用商店中的 Operator 只能安装在 mcamel-system
-- **新增** `mcamel-redis` 支持 cloud shell
-- **新增** `mcamel-redis` 支持导航栏单独注册
-- **新增** `mcamel-redis` 支持查看日志
-- **新增** `mcamel-redis` 更新单例/集群模式 Operator 的版本
-- **新增** `mcamel-redis` 展示 common Redis 集群
-- **新增** `mcamel-redis` Operator 对接 chart-syncer
-- **修复** `mcamel-redis` 实例名太长导致自定义资源无法创建的问题
-- **修复** `mcamel-redis` 工作空间 Editor 用户无法查看实例密码
-- **修复** `mcamel-redis` 不能解析出正确的 Redis 版本号
-- **修复** `mcamel-redis` 无法修改 Port 的问题
-- **升级** `mcamel-redis` 升级离线镜像检测脚本  
+- **新增** __mcamel-redis__  helm-docs 模板文件
+- **新增** __mcamel-redis__  应用商店中的 Operator 只能安装在 mcamel-system
+- **新增** __mcamel-redis__  支持 cloud shell
+- **新增** __mcamel-redis__  支持导航栏单独注册
+- **新增** __mcamel-redis__  支持查看日志
+- **新增** __mcamel-redis__  更新单例/集群模式 Operator 的版本
+- **新增** __mcamel-redis__  展示 common Redis 集群
+- **新增** __mcamel-redis__  Operator 对接 chart-syncer
+- **修复** __mcamel-redis__  实例名太长导致自定义资源无法创建的问题
+- **修复** __mcamel-redis__  工作空间 Editor 用户无法查看实例密码
+- **修复** __mcamel-redis__  不能解析出正确的 Redis 版本号
+- **修复** __mcamel-redis__  无法修改 Port 的问题
+- **升级** __mcamel-redis__  升级离线镜像检测脚本  
 - **新增** 日志查看操作说明，支持自定义查询、导出等功能
 
 ## 2022-12-25
 
 ### v0.4.0
 
-- **新增** `mcamel-redis` NodePort 端口冲突提前检测
-- **新增** `mcamel-redis` 节点亲和性配置
-- **修复** `mcamel-redis` 单例和集群设置 nodeport 无效的问题
-- **修复** `mcamel-redis` 集群模式下，从节点不可以设置为 0 的问题
+- **新增** __mcamel-redis__  NodePort 端口冲突提前检测
+- **新增** __mcamel-redis__  节点亲和性配置
+- **修复** __mcamel-redis__  单例和集群设置 nodeport 无效的问题
+- **修复** __mcamel-redis__  集群模式下，从节点不可以设置为 0 的问题
 
 ## 2022-11-28
 

@@ -4,15 +4,15 @@ This page explains how to install or upgrade the Middleware - RocketMQ module af
 
 !!! info
 
-    The term `mcamel` mentioned in the following commands or scripts is the internal development code name for the middleware module.
+    The term __mcamel__ mentioned in the following commands or scripts is the internal development code name for the middleware module.
 
 ## Loading Images from Installation Package
 
-You can load the images in one of the following two ways. When a mirror repository exists in the environment, it is recommended to choose the method of using `chart-syncer` to synchronize the images to the mirror repository as it is more efficient and convenient.
+You can load the images in one of the following two ways. When a mirror repository exists in the environment, it is recommended to choose the method of using __chart-syncer__ to synchronize the images to the mirror repository as it is more efficient and convenient.
 
 ### Synchronize Images to Mirror Repository using chart-syncer
 
-1. Create `load-image.yaml`.
+1. Create __load-image.yaml__ .
 
     !!! note  
 
@@ -20,11 +20,11 @@ You can load the images in one of the following two ways. When a mirror reposito
 
     === "Chart Repo Installed"
 
-        If the current environment has a chart repo installed, `chart-syncer` also supports exporting the chart as a tgz file.
+        If the current environment has a chart repo installed, __chart-syncer__ also supports exporting the chart as a tgz file.
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: mcamel-offline # The relative path to execute the `charts-syncer` command, not the relative path between this YAML file and the offline package.
+          intermediateBundlesPath: mcamel-offline # The relative path to execute the __charts-syncer__ command, not the relative path between this YAML file and the offline package.
         target:
           containerRegistry: 10.16.10.111 # Change it to your image repository URL
           containerRepository: release.daocloud.io/mcamel # Change it to your image repository
@@ -42,11 +42,11 @@ You can load the images in one of the following two ways. When a mirror reposito
         
     === "Chart Repo Not Installed"
 
-        If the current environment does not have a chart repo installed, `chart-syncer` also supports exporting the chart as a tgz file and storing it in the specified path.
+        If the current environment does not have a chart repo installed, __chart-syncer__ also supports exporting the chart as a tgz file and storing it in the specified path.
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: mcamel-offline # The relative path to execute the `charts-syncer` command, not the relative path between this YAML file and the offline package.
+          intermediateBundlesPath: mcamel-offline # The relative path to execute the __charts-syncer__ command, not the relative path between this YAML file and the offline package.
         target:
           containerRegistry: 10.16.10.111 # Change it to your image repository URL
           containerRepository: release.daocloud.io/mcamel # Change it to your image repository
@@ -129,7 +129,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
     1. Update the helm repository.
 
         ```shell
-        helm repo update mcamel/mcamel-rocketmq # If the Helm version is too low, it may fail. If it fails, try executing `helm update repo`.
+        helm repo update mcamel/mcamel-rocketmq # If the Helm version is too low, it may fail. If it fails, try executing __helm update repo__ .
         ```
 
     1. Choose the version you want to install (it is recommended to install the latest version).
@@ -145,17 +145,17 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
         ...
         ```
 
-    1. Backup the `--set` parameters.
+    1. Back up the `--set` parameters.
 
-        Before upgrading the version, it is recommended to execute the following command to backup the `--set` parameters of the old version.
+        Before upgrading the version, it is recommended to execute the following command to back up the `--set` parameters of the old version.
 
         ```shell
         helm get values mcamel-rocketmq -n mcamel-system -o yaml > mcamel-rocketmq.yaml
         ```
 
-    1. Run `helm upgrade`.
+    1. Run `helm upgrade` .
 
-        Before upgrading, it is recommended to replace the `global.imageRegistry` field in `mcamel-rocketmq.yaml` with the address of the image repository you are currently using.
+        Before upgrading, it is recommended to replace the `global.imageRegistry` field in __mcamel-rocketmq.yaml__ with the address of the image repository you are currently using.
 
         ```shell
         export imageRegistry={your image repository}
@@ -172,17 +172,17 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
 
 === "Upgrade via Chart Package"
 
-    1. Backup the `--set` parameters.
+    1. Back up the `--set` parameters.
 
-        Before upgrading the version, it is recommended to execute the following command to backup the `--set` parameters of the old version.
+        Before upgrading the version, it is recommended to execute the following command to back up the `--set` parameters of the old version.
 
         ```shell
         helm get values mcamel-rocketmq -n mcamel-system -o yaml > mcamel-rocketmq.yaml
         ```
 
-    1. Run `helm upgrade`.
+    1. Run `helm upgrade` .
 
-        Before upgrading, it is recommended to replace the `global.imageRegistry` field in `mcamel-rocketmq.yaml` with the address of the image repository you are currently using.
+        Before upgrading, it is recommended to replace the `global.imageRegistry` field in __mcamel-rocketmq.yaml__ with the address of the image repository you are currently using.
 
         ```shell
         export imageRegistry={your image repository}

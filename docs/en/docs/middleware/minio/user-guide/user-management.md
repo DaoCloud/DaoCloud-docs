@@ -8,7 +8,7 @@ This article briefly introduces MinIO's identity management rules. For more deta
 
 By default, MinIO uses the built-in IDentity Provider (IDP) for identity management. In addition to IDP, it also supports third-party [OIDC] (http://docs.minio.org.cn/minio/baremetal/security/openid-external-identity-management/external-authentication-with-openid-identity-provider.html #minio-external-identity-management-openid) and [LDAP](http://docs.minio.org.cn/minio/baremetal/security/ad-ldap-external-identity-management/external-authentication-with- ad-ldap-identity-provider.html#minio-external-identity-management-ad-ldap ).
 
-A user consists of a username and password pair. In the context of MinIO, username is also called `access key` (note that it is distinguished from the access key at the service account level later), and password is also called `secret key`.
+A user consists of a username and password pair. In the context of MinIO, username is also called __access key__ (note that it is distinguished from the access key at the service account level later), and password is also called __secret key__ .
 
 ### root user
 
@@ -41,11 +41,11 @@ There are three ways to create normal users:
 
 #### mc create
 
-> Need to [install the `mc` command](https://min.io/docs/minio/linux/reference/minio-mc.html?ref=docs#install-mc) in advance and configure the connection to the MinIO instance
+> Need to [install the __mc__ command](https://min.io/docs/minio/linux/reference/minio-mc.html?ref=docs#install-mc) in advance and configure the connection to the MinIO instance
 
 Create user:
 
-> `ALIAS` refers to the alias name of the MinIO instance
+> __ALIAS__ refers to the alias name of the MinIO instance
 
 ```bash
 mc admin user add ALIAS ACCESSKEY SECRETKEY
@@ -53,7 +53,7 @@ mc admin user add ALIAS ACCESSKEY SECRETKEY
 
 Granted permission:
 
-> `USERNAME` refers to the username of the MinIO user, which is `ACCESSKEY`
+> __USERNAME__ refers to the username of the MinIO user, which is __ACCESSKEY__ 
 
 ```bash
 mc admin policy set ALIAS readwrite user=USERNAME
@@ -72,17 +72,17 @@ type TenantSpec struct {
     //
     // An array of https://kubernetes.io/docs/concepts/configuration/secret/[Kubernetes opaque secrets] to use for generating MinIO users during tenant provisioning. +
     //
-    // Each element in the array is an object consisting of a key-value pair `name: <string>`, where the `<string>` references an opaque Kubernetes secret. +
+    // Each element in the array is an object consisting of a key-value pair __name: <string>__ , where the __<string>__ references an opaque Kubernetes secret. +
     //
     // Each referenced Kubernetes secret must include the following fields: +
     //
-    // * `CONSOLE_ACCESS_KEY` - The "Username" for the MinIO user +
+    // * __CONSOLE_ACCESS_KEY__ - The "Username" for the MinIO user +
     //
-    // * `CONSOLE_SECRET_KEY` - The "Password" for the MinIO user +
+    // * __CONSOLE_SECRET_KEY__ - The "Password" for the MinIO user +
     //
-    // The Operator creates each user with the `consoleAdmin` policy by default. You can change the assigned policy after the Tenant starts. +
+    // The Operator creates each user with the __consoleAdmin__ policy by default. You can change the assigned policy after the Tenant starts. +
     // +optional
-    Users []*corev1.LocalObjectReference `json:"users,omitempty"`
+    Users []*corev1.LocalObjectReference __json:"users,omitempty"__ 
     ....
     ....
     ....
@@ -128,7 +128,7 @@ MinIO uses policy-based access control (PBAC) to manage which permissions users 
 
 ### Built-in Strategies
 
-MinIO has four built-in policies that can be directly assigned to users or groups. When authorizing users/groups, you need to use the `mc admin policy set` command. For details, please refer to [mc admin policy](http://docs.minio.org.cn/minio/baremetal/reference/minio-cli/minio- mc-admin/mc-admin-policy.html#mc-admin-policy-set)
+MinIO has four built-in policies that can be directly assigned to users or groups. When authorizing users/groups, you need to use the __mc admin policy set__ command. For details, please refer to [mc admin policy](http://docs.minio.org.cn/minio/baremetal/reference/minio-cli/minio- mc-admin/mc-admin-policy.html#mc-admin-policy-set)
 
 - readonly: **read-only** permission to all buckets and storage objects in the MinIO replica
 

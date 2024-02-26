@@ -14,7 +14,7 @@ Enable the parameters of the prometheus operator, retain the prometheus operator
 
 1. Log in to the console.
 2. Enable the __--deny-namespaces__ parameter in the two prometheus operators respectively.
-3. Execute the following command (the following command is for reference only, the actual command needs to replace the prometheus operator name and namespace in the command).
+3. Run the following command (the following command is for reference only, the actual command needs to replace the prometheus operator name and namespace in the command).
 
     ```bash
     kubectl edit deploy insight-agent-kube-prometh-operator -n insight-system

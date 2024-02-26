@@ -1,6 +1,6 @@
 # MySQL Pod
 
-可以通过以下命令快速的查看当前集群上所有 `MySQL` 实例的健康状态：
+可以通过以下命令快速的查看当前集群上所有 __MySQL__ 实例的健康状态：
 
 ```bash
 kubectl get mysql -A
@@ -15,9 +15,9 @@ mcamel-system   mcamel-common-mysql-cluster   False   2          62d
 ```
 针对不同的副本状态，排障方案如下文所述。
 
-## Pod running = 0/4，状态为 `Init:Error`
+## Pod running = 0/4，状态为 __Init:Error__ 
 
-遇到此类问题时，首先应该查看 `master` 节点的（sidecar）日志信息。
+遇到此类问题时，首先应该查看 __master__ 节点的（sidecar）日志信息。
 
 ```bash
 kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep master | awk '{print $1}' | xargs -I {} kubectl logs -f {} -n mcamel-system -c sidecar
@@ -56,7 +56,7 @@ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep mast
     E0209 05:38:56.223635       1 deleg.go:144] sidecar "msg"="failed waiting for xtrabackup to finish" "error"="exit status 1"
     ```
 
-登录 `master` 节点的 `MySQL`，执行 `alter` 表结构：
+登录 __master__ 节点的 __MySQL__ ，执行 __alter__ 表结构：
 
 ```bash
 [root@master-01 ~]$ kubectl get pod -n mcamel-system -Lhealthy,role | grep cluster-mysql | grep master
@@ -97,7 +97,7 @@ mcamel-common-mysql-cluster-mysql-0
 
 ## Pod running = 2/4
 
-此类问题很可能是因为 MySQL 实例使用的磁盘用量达到了 100%，可以在 `master` 节点上运行以下命令检测磁盘用量。
+此类问题很可能是因为 MySQL 实例使用的磁盘用量达到了 100%，可以在 __master__ 节点上运行以下命令检测磁盘用量。
 
 ```bash
 kubectl get pod -n mcamel-system | grep cluster-mysql | awk '{print $1}' | xargs -I {} kubectl exec {} -n mcamel-system -c sidecar -- df -h | grep /var/lib/mysql
@@ -120,14 +120,14 @@ kubectl edit pvc data-mcamel-common-mysql-cluster-mysql-0 -n mcamel-system # 修
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/mysql/images/faq-mysql-1.png)
 
-使用 `kubectl describe` 上图中框起来的 Pod，发现异常提示： `Warning Unhealthy 4m50s (x7194 over 3h58m) kubelet Readiness probe failed: `
+使用 __kubectl describe__ 上图中框起来的 Pod，发现异常提示： __Warning Unhealthy 4m50s (x7194 over 3h58m) kubelet Readiness probe failed: __ 
 
-此时需要手工进行修复，这是目前开源 `mysql-operator` 版本的 [Bug](https://github.com/bitpoke/mysql-operator/pull/857)
+此时需要手工进行修复，这是目前开源 __mysql-operator__ 版本的 [Bug](https://github.com/bitpoke/mysql-operator/pull/857)
 
 修复方式有两种：
 
-- 重启 `mysql-operator`，或者
-- 手工更新 `sys_operator` 的配置状态
+- 重启 __mysql-operator__ ，或者
+- 手工更新 __sys_operator__ 的配置状态
 
 ```bash
 kubectl exec mcamel-common-mysql-cluster-mysql-1 -n mcamel-system -c mysql -- mysql --defaults-file=/etc/mysql/client.conf -NB -e 'update sys_operator.status set value="1"  WHERE name="configured"'

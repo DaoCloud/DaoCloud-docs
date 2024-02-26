@@ -150,9 +150,9 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
     ...
     ```
 
-5. Backup the __--set__ parameters.
+5. Back up the `--set` parameters.
 
-    Before upgrading the container management module, it is recommended to run the following command to backup the __--set__ parameters of the old version.
+    Before upgrading the container management module, it is recommended to run the following command to back up the `--set` parameters of the old version.
 
     ```shell
     helm get values kpanda -n kpanda-system -o yaml > bak.yaml
@@ -165,7 +165,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
     kubectl apply -f kpanda/crds
     ```
 
-7. Run __helm upgrade__ .
+7. Run `helm upgrade` .
 
     Before upgrading, it is recommended to replace the __global.imageRegistry__ field in __bak.yaml__ with the image repository address you are currently using.
 
@@ -183,9 +183,9 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
 
 === "Upgrade via chart package"
 
-1. Backup the __--set__ parameters.
+1. Back up the `--set` parameters.
 
-    Before upgrading the container management module, it is recommended to run the following command to backup the __--set__ parameters of the old version.
+    Before upgrading the container management module, it is recommended to run the following command to back up the `--set` parameters of the old version.
 
     ```shell
     helm get values kpanda -n k pan da-system -o yaml > bak.yaml
@@ -197,7 +197,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
     kubectl apply -f ./crds
     ```
 
-3. Run __helm upgrade__ .
+3. Run `helm upgrade` .
 
     Before upgrading, it is recommended to replace the __global.imageRegistry__ field in __bak.yaml__ with the image repository address you are currently using.
 

@@ -5,17 +5,17 @@ hide:
 
 # 创建 MinIO 实例
 
-1. 从左侧导航栏选择 `Minio 存储`。
+1. 从左侧导航栏选择 __Minio 存储__ 。
 
     ![选择 minio 存储](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/create01.png)
 
-2. 可以点击列表右上角的`新建实例`按钮。
+2. 可以点击列表右上角的 __新建实例__ 按钮。
 
-    > 如果是首次使用，需要[先选择工作空间](../../common/index.md)，然后点击`立即部署`创建 MinIO 实例。
+    > 如果是首次使用，需要[先选择工作空间](../../common/index.md)，然后点击 __立即部署__ 创建 MinIO 实例。
 
     ![点击新建实例](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/create02.png)
 
-3. 参考下方信息填写实例基本信息，然后点击`下一步`。
+3. 参考下方信息填写实例基本信息，然后点击 __下一步__ 。
 
     !!! note
 
@@ -25,7 +25,7 @@ hide:
 
     ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/minio/images/create03.png)
 
-4. 参考下方信息填写配置规格，然后点击`下一步`。
+4. 参考下方信息填写配置规格，然后点击 __下一步__ 。
 
     - 部署模式在实例创建之后不可更改
     - 生产模式下建议采用高可用部署模式
@@ -36,11 +36,11 @@ hide:
 
     !!! warning
 
-        __MinIO 实例创建成功后，不支持扩容副本和修改磁盘用量，请谨慎配置资源。__
+       __MinIO 实例创建成功后，不支持扩容副本和修改磁盘用量，请谨慎配置资源。__
 
     ![配置规格](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/create07.png)
 
-5. 参考下方信息填写服务设置，点击`下一步`。
+5. 参考下方信息填写服务设置，点击 __下一步__ 。
 
     - 集群内访问：只能在同一集群内部访问服务
     - 节点端口：通过节点的 IP 和静态端口访问服务，支持从集群外部访问服务
@@ -65,8 +65,8 @@ hide:
         - 调度策略/权重：为满足每条调度策略的节点设置权重，优选使用权重高的策略。取值范围 1 到 100
         - 调度策略/选择器
 
-            - In：节点必须包含所选的标签，并且该标签的取值必须 **属于** 某个取值集合。多个值用 `；` 隔开
-            - NotIn：节点必须包含所选的标签，并且该标签的取值必须 **不属于** 某个取值集合。多个值用 `；` 隔开
+            - In：节点必须包含所选的标签，并且该标签的取值必须 **属于** 某个取值集合。多个值用 __；__  隔开
+            - NotIn：节点必须包含所选的标签，并且该标签的取值必须 **不属于** 某个取值集合。多个值用 __；__  隔开
             - Exists：节点包含某个标签即可，不关注标签的具体取值
             - DoesNotExists：节点不包含某个标签，不关注标签的具体取值
             - Gt：节点必须包含某个标签，并且标签的取值必须大于某个整数
@@ -74,12 +74,12 @@ hide:
 
                 ![访问模式](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/create09.png)
 
-6. 确认实例配置信息无误，点击`确认`完成创建。
+6. 确认实例配置信息无误，点击 __确认__ 完成创建。
 
     ![点击确认](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/minio/images/create05.png)
 
 7. 返回实例列表页查看实例是否创建成功。
 
-    > 创建中的实例状态为`未就绪`，等所有相关容器成功启动之后状态变为`运行中`。
+    > 创建中的实例状态为 __未就绪__ ，等所有相关容器成功启动之后状态变为 __运行中__ 。
 
     ![状态](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/minio/images/create06.png)

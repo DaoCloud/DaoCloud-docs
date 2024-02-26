@@ -4,14 +4,14 @@ pt-archiver is a tool used to archive tables. It can achieve low-impact, high-pe
 
 ## Installation
 
-The `pt-heartbeat` tool is already installed by default when deploying MySQL. You can check it using the following command:
+The __pt-heartbeat__ tool is already installed by default when deploying MySQL. You can check it using the following command:
 
 ```shell
 [root@mysql1012-mysql-2 /]# pt-archiver --version
 pt-archiver 3.4.0
 ```
 
-`pt-heartbeat` requires at least one of the `--dest`, `--file`, or `--purge` options to be specified, and some options are mutually exclusive.
+ __pt-heartbeat__ requires at least one of the __--dest__ , __--file__ , or __--purge__ options to be specified, and some options are mutually exclusive.
 
 ```console
 Specify at least one of --dest, --file, or --purge.
@@ -38,13 +38,13 @@ pt-archiver \
 
 ### Archive to File
 
-File Format: Specify the file format using the `--output-format` option. If you want to include a header in the archived file, use the `--header` option.
+File Format: Specify the file format using the __--output-format__ option. If you want to include a header in the archived file, use the __--header__ option.
 
 - dump: MySQL dump format using tabs as field separator (default)
 - csv: Dump rows using ‘,’ as separator and optionally enclosing fields by ‘”’.
   This format is equivalent to FIELDS TERMINATED BY ‘,’ OPTIONALLY ENCLOSED BY ‘”’.
 
-Recovery: You can use the `LOAD DATA LOCAL INFILE` syntax to restore the archived data.
+Recovery: You can use the __LOAD DATA LOCAL INFILE__ syntax to restore the archived data.
 
 ```shell
 pt-archiver \
@@ -69,7 +69,7 @@ pt-archiver \
 cat /var/log/one_column_csv.txt
 1, "zhangsan"
  
-# Using the `--header` option, the header will only be added if the file specified by `--file` does not exist.
+# Using the __--header__ option, the header will only be added if the file specified by __--file__ does not exist.
 pt-archiver \
 --source h=172.30.47.0,u=root,p='ZoO1l1K%YbG!zlh',P=31898,D=test,t=one_column \
 --file=/var/log/one_column_csv.txt \
@@ -89,7 +89,7 @@ mysql -uroot -p'ZoO1l1K%YbG!zlh' -h172.30.47.0 -P31898 --local-infile=1
 LOAD DATA local INFILE '/var/log/one_column_csv.txt' INTO TABLE one_column;
 ```
 
-### No Operation, Only Print the Executed Queries, using the `--dry-run` option
+### No Operation, Only Print the Executed Queries, using the __--dry-run__ option
 
 ```shell
 pt-archiver \
@@ -109,7 +109,7 @@ pt-archiver \
 --no-delete
 ```
 
-### Specify Columns to Archive, using the `--columns` parameter
+### Specify Columns to Archive, using the __--columns__ parameter
 
 ```shell
 pt-archiver \
@@ -120,7 +120,7 @@ pt-archiver \
 --columns=name,email
 ```
 
-### Archiving with a Replica, Pause Archiving if Replica Lag is Greater than 1s: `--check-slave-lag`
+### Archiving with a Replica, Pause Archiving if Replica Lag is Greater than 1s: __--check-slave-lag__ 
 
 ```shell
 # Run in replica
@@ -146,7 +146,7 @@ pt-archiver \
    [Troubleshooting | Missing One Record in pt-archiver Archive](https://opensource.actionsky.com/20220926-mysql/).
 
     ```mysql
-    # Add --dry-run to view the generated query, pay attention to WHERE (1=1) AND (`id` < '3')
+    # Add --dry-run to view the generated query, pay attention to WHERE (1=1) AND ( __id__ < '3')
     ```
     
     pt-archiver \
@@ -156,9 +156,9 @@ pt-archiver \
     --no-delete \
     --dry-run
     
-    SELECT /*!40001 SQL_NO_CACHE */ `id`,`name`,`phone`,`email`,`address`,`list`,`country`,`region`,`postalzip`,`text`,`numberrange`,`currency`,`alphanumeric` FROM `test`.`myTableSimple` FORCE INDEX(`PRIMARY`) WHERE (1=1) AND (`id` < '3') ORDER BY `id` LIMIT 1
-    SELECT /*!40001 SQL_NO_CACHE */ `id`,`name`,`phone`,`email`,`address`,`list`,`country`,`region`,`postalzip`,`text`,`numberrange`,`currency`,`alphanumeric` FROM `test`.`myTableSimple` FORCE INDEX(`PRIMARY`) WHERE (1=1) AND (`id` < '3') AND ((`id` > ?)) ORDER BY `id` LIMIT 1
-    INSERT INTO `test`.`myTableSimple`(`id`,`name`,`phone`,`email`,`address`,`list`,`country`,`region`,`postalzip`,`text`,`numberrange`,`currency`,`alphanumeric`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)
+    SELECT /*!40001 SQL_NO_CACHE */ __id__ , __name__ , __phone__ , __email__ , __address__ , __list__ , __country__ , __region__ , __postalzip__ , __text__ , __numberrange__ , __currency__ , __alphanumeric__ FROM __test__ . __myTableSimple__ FORCE INDEX( __PRIMARY__ ) WHERE (1=1) AND ( __id__ < '3') ORDER BY __id__ LIMIT 1
+    SELECT /*!40001 SQL_NO_CACHE */ __id__ , __name__ , __phone__ , __email__ , __address__ , __list__ , __country__ , __region__ , __postalzip__ , __text__ , __numberrange__ , __currency__ , __alphanumeric__ FROM __test__ . __myTableSimple__ FORCE INDEX( __PRIMARY__ ) WHERE (1=1) AND ( __id__ < '3') AND (( __id__ > ?)) ORDER BY __id__ LIMIT 1
+    INSERT INTO __test__ . __myTableSimple__ ( __id__ , __name__ , __phone__ , __email__ , __address__ , __list__ , __country__ , __region__ , __postalzip__ , __text__ , __numberrange__ , __currency__ , __alphanumeric__ ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)
     
     
     SELECT MAX(id) from myTableSimple;
@@ -180,12 +180,12 @@ pt-archiver \
     --nosafe-auto-incremen \
     --dry-run
     
-    SELECT /*!40001 SQL_NO_CACHE */ `id`,`name`,`phone`,`email`,`address`,`list`,`country`,`region`,`postalzip`,`text`,`numberrange`,`currency`,`alphanumeric` FROM `test`.`myTableSimple` FORCE INDEX(`PRIMARY`) WHERE (1=1) ORDER BY `id` LIMIT 1
-    SELECT /*!40001 SQL_NO_CACHE */ `id`,`name`,`phone`,`email`,`address`,`list`,`country`,`region`,`postalzip`,`text`,`numberrange`,`currency`,`alphanumeric` FROM `test`.`myTableSimple` FORCE INDEX(`PRIMARY`) WHERE (1=1) AND ((`id` > ?)) ORDER BY `id` LIMIT 1
-    INSERT INTO `test`.`myTableSimple`(`id`,`name`,`phone`,`email`,`address`,`list`,`country`,`region`,`postalzip`,`text`,`numberrange`,`currency`,`alphanumeric`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)
+    SELECT /*!40001 SQL_NO_CACHE */ __id__ , __name__ , __phone__ , __email__ , __address__ , __list__ , __country__ , __region__ , __postalzip__ , __text__ , __numberrange__ , __currency__ , __alphanumeric__ FROM __test__ . __myTableSimple__ FORCE INDEX( __PRIMARY__ ) WHERE (1=1) ORDER BY __id__ LIMIT 1
+    SELECT /*!40001 SQL_NO_CACHE */ __id__ , __name__ , __phone__ , __email__ , __address__ , __list__ , __country__ , __region__ , __postalzip__ , __text__ , __numberrange__ , __currency__ , __alphanumeric__ FROM __test__ . __myTableSimple__ FORCE INDEX( __PRIMARY__ ) WHERE (1=1) AND (( __id__ > ?)) ORDER BY __id__ LIMIT 1
+    INSERT INTO __test__ . __myTableSimple__ ( __id__ , __name__ , __phone__ , __email__ , __address__ , __list__ , __country__ , __region__ , __postalzip__ , __text__ , __numberrange__ , __currency__ , __alphanumeric__ ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)
     ```
 
-    **Solution 2: Use `--no-ascend` and specify the index using `i=specified_index` in the `--source` DSN**
+    **Solution 2: Use __--no-ascend__ and specify the index using __i=specified_index__ in the __--source__ DSN**
 
     ```shell
     pt-archiver \
@@ -195,35 +195,35 @@ pt-archiver \
     --no-delete \
     --dry-run
     
-    SELECT /*!40001 SQL_NO_CACHE */ `id`,`name`,`phone`,`email`,`address`,`list`,`country`,`region`,`postalzip`,`text`,`numberrange`,`currency`,`alphanumeric` FROM `test`.`myTableSimple` FORCE INDEX(`name_index`) WHERE (1=1) ORDER BY `name` LIMIT 1
-    SELECT /*!40001 SQL_NO_CACHE */ `id`,`name`,`phone`,`email`,`address`,`list`,`country`,`region`,`postalzip`,`text`,`numberrange`,`currency`,`alphanumeric` FROM `test`.`myTableSimple` FORCE INDEX(`name_index`) WHERE (1=1) AND (((? IS NULL AND `name` IS NOT NULL) OR (`name` > ?))) ORDER BY `name` LIMIT 1
-    INSERT INTO `test`.`myTableSimple`(`id`,`name`,`phone`,`email`,`address`,`list`,`country`,`region`,`postalzip`,`text`,`numberrange`,`currency`,`alphanumeric`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)
+    SELECT /*!40001 SQL_NO_CACHE */ __id__ , __name__ , __phone__ , __email__ , __address__ , __list__ , __country__ , __region__ , __postalzip__ , __text__ , __numberrange__ , __currency__ , __alphanumeric__ FROM __test__ . __myTableSimple__ FORCE INDEX( __name_index__ ) WHERE (1=1) ORDER BY __name__ LIMIT 1
+    SELECT /*!40001 SQL_NO_CACHE */ __id__ , __name__ , __phone__ , __email__ , __address__ , __list__ , __country__ , __region__ , __postalzip__ , __text__ , __numberrange__ , __currency__ , __alphanumeric__ FROM __test__ . __myTableSimple__ FORCE INDEX( __name_index__ ) WHERE (1=1) AND (((? IS NULL AND __name__ IS NOT NULL) OR ( __name__ > ?))) ORDER BY __name__ LIMIT 1
+    INSERT INTO __test__ . __myTableSimple__ ( __id__ , __name__ , __phone__ , __email__ , __address__ , __list__ , __country__ , __region__ , __postalzip__ , __text__ , __numberrange__ , __currency__ , __alphanumeric__ ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)
     ```
 
 1. If there is no primary key defined on the table, the default parameters may cause the archiving process to fail.
 
-    - By default, `pt-archiver` looks for an "ascendable index". If no such index is found, the archiving process fails.
-    - To resolve this issue, you can specify an alternative index in the `--source` DSN by adding `i=specified_index`. This allows `pt-archiver` to use the specified index for archiving, even if there is no primary key defined on the table.
+    - By default, __pt-archiver__ looks for an "ascendable index". If no such index is found, the archiving process fails.
+    - To resolve this issue, you can specify an alternative index in the __--source__ DSN by adding __i=specified_index__ . This allows __pt-archiver__ to use the specified index for archiving, even if there is no primary key defined on the table.
 
     ```shell
     show create table myTableNoPrimaryKey\G
     *************************** 1. row ***************************
           Table: myTableNoPrimaryKey
-    Create Table: CREATE TABLE `myTableNoPrimaryKey` (
-      `id` mediumint NOT NULL,
-      `name` varchar(255) DEFAULT NULL,
-      `phone` varchar(100) DEFAULT NULL,
-      `email` varchar(255) DEFAULT NULL,
-      `address` varchar(255) DEFAULT NULL,
-      `list` varchar(255) DEFAULT NULL,
-      `country` varchar(100) DEFAULT NULL,
-      `region` varchar(50) DEFAULT NULL,
-      `postalZip` varchar(10) DEFAULT NULL,
-      `text` text,
-      `numberrange` mediumint DEFAULT NULL,
-      `currency` varchar(100) DEFAULT NULL,
-      `alphanumeric` varchar(255) DEFAULT NULL,
-      KEY `name_index` (`name`)
+    Create Table: CREATE TABLE __myTableNoPrimaryKey__ (
+     __id__ mediumint NOT NULL,
+     __name__ varchar(255) DEFAULT NULL,
+     __phone__ varchar(100) DEFAULT NULL,
+     __email__ varchar(255) DEFAULT NULL,
+     __address__ varchar(255) DEFAULT NULL,
+     __list__ varchar(255) DEFAULT NULL,
+     __country__ varchar(100) DEFAULT NULL,
+     __region__ varchar(50) DEFAULT NULL,
+     __postalZip__ varchar(10) DEFAULT NULL,
+     __text__ text,
+     __numberrange__ mediumint DEFAULT NULL,
+     __currency__ varchar(100) DEFAULT NULL,
+     __alphanumeric__ varchar(255) DEFAULT NULL,
+      KEY __name_index__ ( __name__ )
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
     1 row in set (0.03 sec)
     
@@ -241,7 +241,7 @@ pt-archiver \
     --where "1=1"
     ```
 
-    **Solution: Specify another index in the `--source` DSN using `i=other_index`**
+    **Solution: Specify another index in the __--source__ DSN using __i=other_index__ **
 
     ```shell
     pt-archiver \
@@ -252,7 +252,7 @@ pt-archiver \
 
 1. Bulk insert failure
 
-   - When using the `--bulk-insert` option, failures may occur during bulk insertion.
+   - When using the __--bulk-insert__ option, failures may occur during bulk insertion.
 
         ```mysql
         pt-archiver \
@@ -263,7 +263,7 @@ pt-archiver \
         --limit=1000 --no-delete --progress 10 --statistics
         TIME                ELAPSED   COUNT
         2023-10-16T10:37:32       0       0
-        DBD::mysql::st execute failed: Loading local data is disabled; this must be enabled on both the client and server sides [for Statement "LOAD DATA LOCAL INFILE ? INTO TABLE `test`.`myTableSimple`(`id`,`name`,`phone`,`email`,`address`,`list`,`country`,`region`,`postalzip`,`text`,`numberrange`,`currency`,`alphanumeric`)" with ParamValues: 0='/tmp/GPJHnHSRUspt-archiver'] at /usr/bin/pt-archiver line 6876.
+        DBD::mysql::st execute failed: Loading local data is disabled; this must be enabled on both the client and server sides [for Statement "LOAD DATA LOCAL INFILE ? INTO TABLE __test__ . __myTableSimple__ ( __id__ , __name__ , __phone__ , __email__ , __address__ , __list__ , __country__ , __region__ , __postalzip__ , __text__ , __numberrange__ , __currency__ , __alphanumeric__ )" with ParamValues: 0='/tmp/GPJHnHSRUspt-archiver'] at /usr/bin/pt-archiver line 6876.
         ```
 
     - Check relevant variables of MySQL
@@ -278,7 +278,7 @@ pt-archiver \
         1 row in set (0.04 sec)
         ```
 
-    - Ensure that the `local_infile` option is enabled on both the client and server sides. You can do this by setting `local_infile=on` in both the source and destination MySQL instances.
+    - Ensure that the __local_infile__ option is enabled on both the client and server sides. You can do this by setting __local_infile=on__ in both the source and destination MySQL instances.
 
         ```mysql
         # Set local_infile=on on both the source and destination MySQL instances

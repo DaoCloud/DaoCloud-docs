@@ -1,6 +1,6 @@
 # Manually Setting Workload Antiaffinity
 
-The antiaffinity policy of the PostgreSQL middleware is shared across all instances within the same cluster. Therefore, we have enabled the `Preferred` antiaffinity by default. If you need to disable the antiaffinity policy or enable the `Required` antiaffinity, you will need to modify the settings of the operator.
+The antiaffinity policy of the PostgreSQL middleware is shared across all instances within the same cluster. Therefore, we have enabled the __Preferred__ antiaffinity by default. If you need to disable the antiaffinity policy or enable the __Required__ antiaffinity, you will need to modify the settings of the operator.
 
 !!! note
 
@@ -8,15 +8,15 @@ The antiaffinity policy of the PostgreSQL middleware is shared across all instan
 
 ## Steps
 
-1. Go to `Container Management` -> `Cluster List` and select the cluster where the instance resides.
+1. Go to __Container Management__ -> __Cluster List__ and select the cluster where the instance resides.
 
-2. Click `Custom Resources` and search for the resource: `operatorconfigurations.acid.zalan.do`
-
-
-3. Under that resource, select the correct `Namespace` and `CR Instance`.
+2. Click __Custom Resources__ and search for the resource: __operatorconfigurations.acid.zalan.do__ 
 
 
-4. Click `Edit YAML` and modify the following fields according to your needs:
+3. Under that resource, select the correct __Namespace__ and __CR Instance__ .
+
+
+4. Click __Edit YAML__ and modify the following fields according to your needs:
 
 
     | Field                                          | Description                                           |

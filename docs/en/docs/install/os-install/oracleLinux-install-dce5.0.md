@@ -105,7 +105,7 @@ Installer v0.8.0 and higher versions support this deployment method.
         - `-z`: Minimal installation
         - `-c`: Specify the cluster configuration file (not required when exposing the console using NodePort)
         - `-d`: Enable debug mode
-        - `--serial`: Execute all installation tasks in a serial manner
+        - `--serial`: Run all installation tasks in a serial manner
 
 8. After the installation is complete, the command line will prompt for a successful installation.
    Congratulations! 🎉 Now you can explore the brand new DCE 5.0 using the default account and

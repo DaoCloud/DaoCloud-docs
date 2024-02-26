@@ -5,7 +5,7 @@ Date: 2024-01-19
 
 # First Time Use of Middleware
 
-When using DCE 5.0 for the first time, [Elasticsearch Search Service](../elasticsearch/intro/index.md), [Kafka Message Queue](../kafka/intro/index.md), [MinIO Object Storage](../minio/intro/index.md), [MySQL Data](../mysql/intro/index.md), [RabbitMQ Messages](../rabbitmq/intro/index.md), [PostgreSQL Database](../postgresql/intro/index.md), [Redis Database](../redis/intro/index.md), [MongoDB Database](../mongodb/intro/index.md), [RocketMQ Message Queue](../rocketmq/intro/index.md), and other middleware, you need to select a workspace.
+When using DCE 5.0 for the first time, [Elasticsearch Service](../elasticsearch/intro/index.md), [Kafka Message Queue](../kafka/intro/index.md), [MinIO Object Storage](../minio/intro/index.md), [MySQL Data](../mysql/intro/index.md), [RabbitMQ Messages](../rabbitmq/intro/index.md), [PostgreSQL Database](../postgresql/intro/index.md), [Redis Database](../redis/intro/index.md), [MongoDB Database](../mongodb/intro/index.md), [RocketMQ Message Queue](../rocketmq/intro/index.md), and other middleware, you need to select a workspace.
 
 For a detailed introduction to workspaces, you can refer to [Workspace and Folder](../../ghippo/user-guide/workspace/ws-folder.md).
 

@@ -13,11 +13,11 @@ hide:
 
     ![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/postgresql/images/log01.png)
 
-2. 在实例的左侧菜单栏，会发现有一个`日志查看`的菜单栏选项。
+2. 在实例的左侧菜单栏，会发现有一个 __日志查看__ 的菜单栏选项。
 
     ![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/postgresql/images/log02.png)
 
-3. 点击`日志查看`即可进入到日志查看页面（[Insight](../../../insight/intro/index.md) 日志查看）。
+3. 点击 __日志查看__ 即可进入到日志查看页面（[Insight](../../../insight/intro/index.md) 日志查看）。
 
 ## 日志查看说明
 
@@ -26,7 +26,7 @@ hide:
 * 支持 自定义日志时间范围，在日志页面右上角，可以方便地切换查看日志的时间范围（可查看的日志范围以 可观测系统设置内保存的日志时长为准）
 * 支持 关键字检索日志，左侧检索区域支持查看更多的日志信息
 * 支持 日志量分布查看，中上区域柱状图，可以查看在时间范围内的日志数量分布
-* 支持 查看日志的上下文，点击右侧 `上下文` 图标即可
+* 支持 查看日志的上下文，点击右侧 __上下文__  图标即可
 * 支持 导出日志
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/postgresql/images/log03.png)
