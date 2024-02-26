@@ -20,7 +20,7 @@
 
 ## 创建网格
 
-参阅[创建网格](../mspider/user-guide/service-mesh/README.md)文档页面。
+参阅[创建网格](../mspider/user-guide/service-mesh/README.md)文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-mesh.mp4" preload="metadata" poster="images/mspider-create-mesh.png"></video>
@@ -28,7 +28,7 @@
 
 ## 创建网格网关
 
-参阅[网格网关管理](../mspider/user-guide/gateway-instance/create.md)文档页面。
+参阅[网格网关管理](../mspider/user-guide/gateway-instance/create.md)文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-mesh-gateway.mp4" preload="metadata" poster="images/mspider-create-gateway.png"></video>
@@ -36,7 +36,7 @@
 
 ## 通过外部应用访问网格服务
 
-参阅[外部应用对网格内服务访问](../mspider/user-guide/service-list/out-to-in.md)文档页面。
+参阅[外部应用对网格内服务访问](../mspider/user-guide/service-list/out-to-in.md)文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/visit-from-external.mp4" preload="metadata" poster="images/mspider-external.png"></video>
@@ -44,7 +44,7 @@
 
 ## 安全治理
 
-参阅[安全治理](../mspider/user-guide/security/README.md)文档页面。
+参阅[安全治理](../mspider/user-guide/security/README.md)文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/mesh-security.mp4" preload="metadata" poster="images/mspider-safety.png"></video>
@@ -52,7 +52,7 @@
 
 ## Istio 版本升级
 
-参阅 [Istio 版本升级](../mspider/install/istio-update.md)文档页面。
+参阅 [Istio 版本升级](../mspider/install/istio-update.md)文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/istio-upgrade.mp4" preload="metadata" poster="images/mspider-version.png"></video>
@@ -60,7 +60,7 @@
 
 ## 边车升级
 
-参阅[边车升级](../mspider/install/sidecar-update.md)文档页面。
+参阅[边车升级](../mspider/install/sidecar-update.md)文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/sidecarup.mp4" preload="metadata" poster="images/mspider-sidecar.png"></video>
@@ -68,7 +68,7 @@
 
 ## 流量监控指标
 
-参阅[流量监控指标说明](../mspider/user-guide/traffic-monitor/monitoring-indicators.md)文档页面。
+参阅[流量监控指标说明](../mspider/user-guide/traffic-monitor/monitoring-indicators.md)文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/traffic-monitor.mp4" preload="metadata" poster="images/traffic-monitor.jpg"></video>
@@ -76,7 +76,7 @@
 
 ## 流量透传
 
-参阅[流量透传](../mspider/user-guide/sidecar-management/passthrough.md)文档页面。
+参阅[流量透传](../mspider/user-guide/sidecar-management/passthrough.md)文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/passthrough.mp4" preload="metadata" poster="images/mspider-passthrough.png"></video>
@@ -84,7 +84,7 @@
 
 ## 多云网络互联
 
-参阅[多云网络互联](../mspider/user-guide/multicluster/cluster-interconnect.md)文档页面。
+参阅[多云网络互联](../mspider/user-guide/multicluster/cluster-interconnect.md)文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/multi-connect.mp4" preload="metadata" poster="images/mspider-connect.png"></video>
@@ -92,10 +92,12 @@
 
 ## 自定义工作负载类型
 
-参阅[自定义工作负载类型](../mspider/best-practice/use-custom-workloads.md)文档页面。
+参阅[自定义工作负载类型](../mspider/best-practice/use-custom-workloads.md)文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/custom-workload.mp4" preload="metadata" poster="images/custom-workload.jpg"></video>
 </div>
 
+[下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
