@@ -29,7 +29,7 @@ helm repo update virtnest-release-ci
 ```shell
 [root@master ~]# helm search repo virtnest-release/virtnest --versions
 NAME                   CHART VERSION  APP VERSION  DESCRIPTION
-virtnest-release/virtnest  0.9.0          v0.9.0       A Helm chart for virtnest
+virtnest-release/virtnest  0.6.0          v0.6.0       A Helm chart for virtnest
 ```
 
 ## 创建 namespace
@@ -41,7 +41,7 @@ kubectl create namespace virtnest-system
 ## 执行安装步骤
 
 ```shell
-helm install virtnest virtnest-release/virtnest -n virtnest-system --version 0.9.0
+helm install virtnest virtnest-release/virtnest -n virtnest-system --version 0.6.0
 ```
 
 ## 升级
@@ -66,7 +66,7 @@ helm get values virtnest -n virtnest-system -o yaml > bak.yaml
 helm upgrade virtnest virtnest-release/virtnest \
 -n virtnest-system \
 -f ./bak.yaml \
---version 0.9.3
+--version 0.6.0
 ```
 
 ## 卸载
