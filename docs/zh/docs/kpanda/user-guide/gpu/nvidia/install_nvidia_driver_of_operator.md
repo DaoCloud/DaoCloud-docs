@@ -2,6 +2,10 @@
 
 DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。本文介绍如何离线部署 GPU Operator。本章节覆盖 NVIDIA GPU 的多种使用模式的参数配置。
 
+    !!! note
+
+         安装后不支持 MIG 与 整卡/vgpu 模式的切换，请提前规划使用模式（支持 GPU 整卡与 vgpu 模式的一键切换）。
+         
 - GPU 整卡模式
 - GPU vGPU 模式
 - GPU MIG 模式
@@ -38,9 +42,6 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 - __详情日志__ ：开启后，将记录安装过程的详细日志。
 
 ### 高级参数配置
-    !!! note
-
-         安装后不支持 MIG 与 整卡/vgpu 模式的切换，请提前规划使用模式（支持 GPU 整卡与 vgpu 模式的一键切换）。
 
 #### DevicePlugin 参数配置
 
