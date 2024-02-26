@@ -26,7 +26,7 @@ Below are some detailed steps for building virtual machine images:
         ADD --chown=107:107 CentOS-7-x86_64-GenericCloud.qcow2 /disk/
         ```
         
-        The Dockerfile above adds a file named `CentOS-7-x86_64-GenericCloud.qcow2` to the image being built from a scratch base image and places it in the `/disk/` directory within the image. This operation includes the file in the image, allowing it to provide a CentOS 7 x86_64 operating system environment when used to create a virtual machine.
+        The Dockerfile above adds a file named `CentOS-7-x86_64-GenericCloud.qcow2` to the image being built from a scratch base image and places it in the __/disk/__ directory within the image. This operation includes the file in the image, allowing it to provide a CentOS 7 x86_64 operating system environment when used to create a virtual machine.
 
     - Build the Image
 

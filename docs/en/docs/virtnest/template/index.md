@@ -8,24 +8,24 @@ With internal templates and custom templates, users can easily create new virtua
 
 Follow these steps to create a virtual machine using a template.
 
-1. Click `Container Management` in the left navigation menu, then click `Virtual Machine` to access the `Virtual Machine Management` page. On the virtual machine list page, click `Create Virtual Machine` and select `Create with Template`.
+1. Click __Container Management__ in the left navigation menu, then click __Virtual Machine__ to access the __Virtual Machine Management__ page. On the virtual machine list page, click __Create Virtual Machine__ and select __Create with Template__ .
 
     ![Create Template](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/create-tep01.png)
 
-2. On the template creation page, fill in the required information, including basic information, template configuration, storage and networking, and login settings. Then, click `OK` in the bottom-right corner to complete the creation.
+2. On the template creation page, fill in the required information, including basic information, template configuration, storage and networking, and login settings. Then, click __OK__ in the bottom-right corner to complete the creation.
 
-    The system will automatically return to the virtual machine list. By clicking on the ellipsis (`︙`) on the right side of the list, you can perform operations such as shutdown/startup, reboot, clone, update, create snapshot, convert to template, console access (VNC), and delete.
+    The system will automatically return to the virtual machine list. By clicking on the ellipsis ( __︙__ ) on the right side of the list, you can perform operations such as shutdown/startup, reboot, clone, update, create snapshot, convert to template, console access (VNC), and delete.
     The ability to clone and create snapshots depends on the selected storage pool.
 
     ![VM Management](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/create-tep09.png)
 
 ### Basic Information
 
-On the Create VMs page, enter the information according to the table below and click `Next`.
+On the Create VMs page, enter the information according to the table below and click __Next__ .
 
 ![Basic Information](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/create-tep02.png)
 
-- Name: Can contain up to 63 characters and can only include lowercase letters, numbers, and hyphens (`-`). The name must start and end with a lowercase letter or number.
+- Name: Can contain up to 63 characters and can only include lowercase letters, numbers, and hyphens ( __-__ ). The name must start and end with a lowercase letter or number.
   Names must be unique within the same namespace, and the name cannot be changed after the virtual machine is created.
 - Alias: Can include any characters, up to 60 characters in length.
 - Cluster: Select the cluster where the new virtual machine will be deployed.

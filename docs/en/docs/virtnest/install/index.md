@@ -4,7 +4,7 @@ This page explains how to install the virtual machine module.
 
 !!! info
 
-    The term `virtnest` appearing in the following commands or scripts is the internal development code name for the global management module.
+    The term __virtnest__ appearing in the following commands or scripts is the internal development code name for the global management module.
 
 ## Configure Helm Repo
 
@@ -29,7 +29,7 @@ It is recommended to install the latest version.
 ```shell
 [root@master ~]# helm search repo virtnest-release/virtnest --versions
 NAME                   CHART VERSION  APP VERSION  DESCRIPTION
-virtnest-release/virtnest  0.9.0          v0.9.0       A Helm chart for virtnest
+virtnest-release/virtnest  0.6.0          v0.6.0       A Helm chart for virtnest
 ```
 
 ## Create a Namespace
@@ -41,7 +41,7 @@ kubectl create namespace virtnest-system
 ## Perform Installation Steps
 
 ```shell
-helm install virtnest virtnest-release/virtnest -n virtnest-system --version 0.9.0
+helm install virtnest virtnest-release/virtnest -n virtnest-system --version 0.6.0
 ```
 
 ## Upgrade
@@ -64,9 +64,9 @@ helm get values virtnest -n virtnest-system -o yaml > bak.yaml
 
 ```shell
 helm upgrade virtnest virtnest-release/virtnest \
--n virtnest-system \
--f ./bak.yaml \
---version 0.9.3
+    -n virtnest-system \
+    -f ./bak.yaml \
+    --version 0.6.0
 ```
 
 ## Uninstall

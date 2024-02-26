@@ -14,7 +14,7 @@ Before using live migration, the following prerequisites must be met:
 
 ## Live Migration
 
-1. Click `Container Management` on the left navigation bar, then click "Virtual Machines" to enter the list page. Click `︙` on the right side of the list to perform migration actions on running virtual machines. Currently, the virtual machine is on the node `virtnest-rook-ceph-2`.
+1. Click __Container Management__ on the left navigation bar, then click "Virtual Machines" to enter the list page. Click __︙__ on the right side of the list to perform migration actions on running virtual machines. Currently, the virtual machine is on the node __virtnest-rook-ceph-2__ .
 
     <!-- Add image later -->
 
@@ -22,6 +22,6 @@ Before using live migration, the following prerequisites must be met:
 
     <!-- Add image later -->
 
-3. After a successful migration, you can view the node information in the virtual machine list. At this time, the node has been migrated to `virtnest-rook-ceph-1`.
+3. After a successful migration, you can view the node information in the virtual machine list. At this time, the node has been migrated to __virtnest-rook-ceph-1__ .
 
     <!-- Add image later -->
