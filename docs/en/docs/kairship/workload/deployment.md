@@ -27,7 +27,7 @@ Follow the steps below to create a multicloud deployment from an image.
     - Specify Clusters: Select the specific cluster to deploy the multicloud workload.
     - Specify Regions: Filter clusters based on the provider/region/availability zone. You can enable all three filters simultaneously.
 
-        - __Exclude Clusters__ : Exclude a specific cluster from the filtering result. The workload will not be deployed to the excluded cluster.
+        - __Exclude Clusters__ : Exclude a specific cluster from the filtering result. The workload will not be deployed to the excluded cluster. If you do not specify the target cluster, it will be deployed to all clusters by default.
         - __Cluster Taint Tolerance__ : After adding a taint to the cluster in the [Cluster](../cluster.md#_6) page, resources with that taint cannot be scheduled to that cluster. Enabling taint tolerance here allows resources with the corresponding taint to be scheduled to the selected cluster.
         - __Dynamic Regions__ : Dynamically deploy workloads to clusters in different regions to ensure cross-region high availability.
 
