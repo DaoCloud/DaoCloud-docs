@@ -35,7 +35,7 @@ DCE 5.0 微服务引擎支持在云原生微服务中使用 JWT 插件，为服�
 
 ### 在微服务引擎中接入服务
 
-进入微服务引擎模块，将演示应用导入云原生微服务模块，具体步骤可参考[导入服务](../../cloud-ms/index.md)。
+进入微服务引擎模块，将演示应用导入云原生微服务模块，具体步骤可参考[导入服务](../../cloud-ms/traffic-control.md)。
 
 ![add-mesh](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-jwt04.png)
 

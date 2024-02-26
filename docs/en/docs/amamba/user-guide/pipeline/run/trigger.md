@@ -18,7 +18,7 @@ __Currently, the following types of triggers are supported:__
 
 | Trigger Type   | Description                                                         |
 | ------------ | ------------------------------------------------------------ |
-| Code Source Trigger | Choose the code repository integrated with your toolchain and configure corresponding trigger events. The pipeline will be triggered based on these events. Once configured, the application workspace will automatically configure the Webhook address into the integrated code repository. |
+| Code Source Trigger | Choose the code repository integrated with your toolchain and configure corresponding trigger events. The pipeline will be triggered based on these events. Once configured, Workbench will automatically configure the Webhook address into the integrated code repository. |
 |Webhook Trigger|When the Webhook trigger is enabled, you will receive a Webhook address that you can use to trigger the pipeline through other systems.|
 | Regular Repository Scan | Checks the code repository for changes at a specified time. For example, entering __H/15 * * * *__ means that the system will automatically check the code repository every 15 minutes for new changes. If there are new changes, the pipeline will be executed. |
 | Scheduled Trigger   | Triggers the pipeline at a specified time. After enabling the scheduled trigger, you can directly select preset rules or choose to customize CRON expressions and enter custom trigger rules. |
@@ -27,7 +27,7 @@ __Currently, the following types of triggers are supported:__
 
 ### Code Source Trigger
 
-Choose the code repository integrated with your toolchain (currently only integrated code repositories are supported), and configure corresponding trigger events. The pipeline will be triggered based on these events. Once configured, the application workspace will automatically configure the Webhook address into the integrated code repository.
+Choose the code repository integrated with your toolchain (currently only integrated code repositories are supported), and configure corresponding trigger events. The pipeline will be triggered based on these events. Once configured, Workbench will automatically configure the Webhook address into the integrated code repository.
 
 #### Prerequisites
 

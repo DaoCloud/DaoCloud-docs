@@ -5,7 +5,7 @@ Date: 2024-01-12
 
 # Create a Canary Delivery Job
 
-The Application Workbench provides powerful canary delivery capabilities based on the open-source project [Argo Rollout](https://argoproj.github.io/argo-rollouts/). Canary delivery allows the deployment of new application versions without affecting the old versions. According to predefined rules, traffic is progressively switched to the new version. Once the new version runs without issues, all traffic is automatically migrated from the old version to the new version.
+Workbench provides powerful canary delivery capabilities based on the open-source project [Argo Rollout](https://argoproj.github.io/argo-rollouts/). Canary delivery allows the deployment of new application versions without affecting the old versions. According to predefined rules, traffic is progressively switched to the new version. Once the new version runs without issues, all traffic is automatically migrated from the old version to the new version.
 
 ## Prerequisites
 

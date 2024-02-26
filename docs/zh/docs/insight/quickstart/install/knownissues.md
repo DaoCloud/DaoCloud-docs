@@ -8,26 +8,26 @@
 
 #### Insight Agent 卸载失败
 
-1. 当你运行以下命令卸载 Insight Agent 时，
+当你运行以下命令卸载 Insight Agent 时。
 
-    ```sh
-    helm uninstall insight agent
-    ```
+```sh
+helm uninstall insight-agent -n insight-system
+```
 
-    `otel-oprator` 所使用的 `tls secret` 未被卸载掉。
+`otel-oprator` 所使用的 `tls secret` 未被卸载掉。
 
-2. 由于 `otel-operator` 中以下“重复利用 tls secret”的逻辑中，会去判断 `otel-oprator` 的 `MutationConfiguration`
-   是否存在而重复利用 MutationConfiguration 中绑定的 CA cert。但是由于 `helm uninstall` 已卸载 `MutationConfiguration`，导致出现空值。
+`otel-operator` 定义的“重复利用 tls secret”的逻辑中，会去判断 `otel-oprator` 的 `MutationConfiguration`
+是否存在并重复利用 MutationConfiguration 中绑定的 CA cert。但是由于 `helm uninstall` 已卸载 `MutationConfiguration`，导致出现空值。
 
-综上请手动写在对应的 `secret`，以下两种方式任选一种即可：
+综上请手动删除对应的 `secret`，以下两种方式任选一种即可：
 
-1. 登录目标集群的控制台，执行以下命令：
+1. **通过命令行删除**：登录目标集群的控制台，执行以下命令：
 
     ```sh
     kubectl -n insight-system delete secret insight-agent-opentelemetry-operator-controller-manager-service-cert
     ```
 
-2. 登录 DCE 5.0 容器管理，选择目标集群，选择左侧导航进入`密钥`，输入
+2. **通过 UI 删除**：登录 DCE 5.0 容器管理，选择目标集群，选择左侧导航进入`密钥`，输入
    `insight-agent-opentelemetry-operator-controller-manager-service-cert`，选择`删除`。
 
 ## v0.22.0
@@ -36,11 +36,11 @@
 
 #### 升级 Insight Agent 时更新日志收集端，未生效
 
-1. 更新 insight-agent 日志配置从 elasticsearch 改为 kafka 或者从 kafka 改为 elasticsearch，实际上都未生效，还是使用更新前配置。
+更新 insight-agent 日志配置从 elasticsearch 改为 kafka 或者从 kafka 改为 elasticsearch，实际上都未生效，还是使用更新前配置。
 
-解决方案：
+**解决方案**：
 
-1. 手动重启集群中的 fluentbit。
+手动重启集群中的 fluentbit。
 
 ## v0.21.0
 

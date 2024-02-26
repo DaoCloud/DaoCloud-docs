@@ -9,14 +9,14 @@
 ## 前提条件
 
 1. 用户已经在平台上安装了 v0.12.0 及以上版本的 addon 离线包。
-2. 准备一个能够和待部署 GPU Operator 的集群网络能够联通的文件服务器，如 nginx 或 minio。
-3. 准备一个能够访问互联网、待部署 GPU Operator 的集群和文件服务器的节点，且节点上已经完成 [Docker 的安装](../../../../install/community/kind/online.md#安装-docker)。
+1. 准备一个能够和待部署 GPU Operator 的集群网络能够联通的文件服务器，如 nginx 或 minio。
+1. 准备一个能够访问互联网、待部署 GPU Operator 的集群和文件服务器的节点，且节点上已经完成 [Docker 的安装](../../../../install/community/kind/online.md#docker)。
 
 ## 操作步骤
 
 本文以内核版本为 `3.10.0-1160.95.1.el7.x86_64` 的 CentOS 7.9 节点为例，介绍如何构建 GPU operator 离线包的 yum 源。
 
-### 1. 检查集群节点的 OS 和内核版本
+### 检查集群节点的 OS 和内核版本
 
 分别在 Global 集群的控制节点和待部署 GPU Operator 的节点执行如下命令，若两个节点的 OS 和内核版本一致则无需构建 yum 源，
 可参考[离线安装 GPU Operator](./install_nvidia_driver_of_operator.md) 文档直接安装；若两个节点的 OS 或内核版本不一致，请执行[下一步](#yum)。
@@ -49,7 +49,7 @@
 
     输出结果为当前节点内核版本 `3.10.0-1160.el7.x86_64` 。
 
-### 2. 制作离线 yum 源
+### 制作离线 yum 源
 
 在一个能够访问互联网和文件服务器的节点上进行操作。
 
@@ -59,7 +59,7 @@
     vi yum.sh
     ```
 
-    然后按下 i 键进入插入模式，输入以下内容：
+    然后按下 **i** 键进入插入模式，输入以下内容：
 
     ```bash
     export TARGET_KERNEL_VERSION=$1
@@ -119,8 +119,7 @@
     bash -x yum.sh TARGET_KERNEL_VERSION
     ```
 
-    `TARGET_KERNEL_VERSION` 参数用于指定集群节点的内核版本，注意：发行版标识符（如： __ .el7.x86_64 __ ）无需输入。
-
+    `TARGET_KERNEL_VERSION` 参数用于指定集群节点的内核版本，注意：发行版标识符（如 __ .el7.x86_64 __ ）无需输入。
     例如：
 
     ```bash
@@ -129,7 +128,7 @@
 
 至此，您已经生成了内核为 __3.10.0-1160.95.1.el7.x86_64__ 的离线的 yum 源： __centos-base__ 。
 
-### 3. 上传离线 yum 源到文件服务器
+### 上传离线 yum 源到文件服务器
 
 在一个能够访问互联网和文件服务器的节点上进行操作。主要用于将上一步中生成的 yum
 源上传到可以被待部署 GPU Operator 的集群进行访问的文件服务器中。
@@ -156,7 +155,7 @@
     mc 命令行工具是 Minio 文件服务器提供的客户端命令行工具，详情请参考：
     [MinIO Client](https://min.io/docs/minio/linux/reference/minio-mc.html)。
 
-2. 在节点当前路径下，新建一个名为 __centos-base__ 的存储桶(bucket)。
+2. 在节点当前路径下，新建一个名为 __centos-base__ 的存储桶（bucket）。
 
     ```bash
     mc mb -p minio/centos-base
@@ -173,6 +172,7 @@
     ```bash
     mc anonymous set download minio/centos-base
     ```
+
     预期输出如下：
 
     ```bash
@@ -185,7 +185,7 @@
     mc cp centos-base minio/centos-base --recursive
     ```
 
-### 4. 在集群创建配置项用来保存 yum 源信息
+### 在集群创建配置项用来保存 yum 源信息
 
 在待部署 GPU Operator 集群的控制节点上进行操作。
 
@@ -209,7 +209,7 @@
 2. 基于创建的 __CentOS-Base.repo__ 文件，在 gpu-operator 命名空间下，创建名为 __local-repo-config__ 的配置文件：
 
     ```bash
-    kubectl create configmap local-repo-config  -n gpu-operator --from-file=./CentOS-Base.repo 
+    kubectl create configmap local-repo-config  -n gpu-operator --from-file=CentOS-Base.repo=/etc/yum.repos.d/extension.repo
     ```
 
     预期输出如下：

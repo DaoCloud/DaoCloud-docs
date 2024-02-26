@@ -22,7 +22,7 @@ The components used in this example are:
 - CRI: containerd (as Docker is no longer directly supported in newer versions of Kubernetes)
 - CNI: Calico
 - StorageClass: local-path
-- DCE 5.0 Community: v0.14.0
+- DCE 5.0 Community: v0.15.0
 
 ## Prepare Nodes
 
@@ -85,7 +85,7 @@ Perform the following steps on each of the 3 nodes.
 
 ### Install Container Runtime (containerd)
 
-1. If using CentOS 8.x, uninstall the pre-installed Podman to avoid version conflicts. (Note:🔥)
+1. If using CentOS 8.x, uninstall the pre-installed Podman to avoid version conflicts.
 
     ```bash
     yum erase podman buildah -y
@@ -172,7 +172,7 @@ Perform the following steps on all three nodes:
     sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
     ```
 
-3. Install Kubernetes components (use version 1.25.8 as an example; DCE 5.0 does not currently support version 1.26)
+3. Install Kubernetes components (use version 1.25.8 as an example)
 
     ```bash
     export K8sVersion=1.25.8
@@ -316,7 +316,7 @@ bash install_prerequisite.sh online community
 ### Download dce5-installer
 
 ```bash
-export VERSION=v0.14.0
+export VERSION=v0.15.0
 curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
 chmod +x ./dce5-installer
 ```

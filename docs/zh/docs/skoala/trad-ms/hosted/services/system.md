@@ -16,7 +16,7 @@ hide:
 
     > 注意需要治理的微服务在`是否可以治理`一栏应该显示为`是`，才能进行后续步骤。
 
-    ![微服务列表](../../../images/gov00.png)
+    ![微服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gov00.png)
 
 2. 选择`系统规则`，然后在右侧点击`创建系统规则`。
 
@@ -31,7 +31,7 @@ hide:
     - 入口 QPS：当单台机器上所有入口流量的 QPS 达到阈值时，触发系统流控规则。
     - CPU 使用率：当系统 CPU 使用率超过阈值时（取值范围 0.0-1.0），触发系统流控规则。
 
-        ![微服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gov15.png)
+    ![微服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gov15.png)
 
 4. 创建完成后可以在系统规则列表中查看新建的规则。在右侧点击更多按钮可以更新规则或者删除该规则。
 

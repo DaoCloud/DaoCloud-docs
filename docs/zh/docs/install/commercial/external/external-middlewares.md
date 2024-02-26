@@ -393,6 +393,10 @@
 
 ## 使用外接 Elasticsearch
 
+!!! note
+
+    使用外接 Elasticsearch 时需要注意：若外接 Elasticsearch 未开启 TLS ，则需要在 Insight 的 Helm 参数中 `logging:output` 中将 TLS 设置为 `off`。
+
 操作步骤如下：
 
 1. 在 [集群配置文件 clusterConfig.yaml](../cluster-config.md) 中，配置 `externalMiddlewares.elasticsearch` 参数：

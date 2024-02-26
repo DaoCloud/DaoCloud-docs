@@ -94,7 +94,7 @@ Before installation, make some necessary settings for the three nodes.
 
 ### Install container runtime (containerd)
 
-1. If it is CentOS 8.x, you must first uninstall the Podman pre-installed in the system, otherwise there will be a version conflict ([Note]🔥)
+1. If it is CentOS 8.x, you must first uninstall the Podman pre-installed in the system, otherwise there will be a version conflict
 
      ```bash
      yum erase podman buildah -y
@@ -176,7 +176,7 @@ The following operations are required on all three nodes:
      sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
      ```
   
-1. Install Kubernetes components, take version 1.25.8 as an example (DCE 5.0 does not support 1.26 temporarily)
+1. Install Kubernetes components, take version 1.25.8 as an example
 
      ```bash
      export K8sVersion=1.25.8

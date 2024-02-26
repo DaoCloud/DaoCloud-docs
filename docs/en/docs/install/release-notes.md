@@ -15,6 +15,25 @@ the evolution path and feature changes of each version.
 *[Kpanda]: Dev codename for Container Management in DCE 5.0
 *[Skoala]: Dev codename for Microservice Engine in DCE 5.0
 
+## 2024-01-31
+
+### v0.15.0
+
+#### Improvements
+
+- **Improved** the stability of installing mysql-operator
+- **Improved** the process of stopping middleware components' PDB during cluster upgrade
+- **Improved** the process of stopping istiod's PDB during cluster upgrade
+- **Improved** the process of skipping the push of iso and ospkg during gproduct upgrade
+- **Improved** the version of chart-sycner used when importing addon packages with the installer dependencies
+- **Improved** Reduce invalid logs generated during the process of merging chart values during upgrades
+
+#### Bug Fixes
+
+- **Bug Fix** Fix the incorrect rule for extracting external database password when installing container management components
+- **Bug Fix** Fix the issue of ineffective anti-affinity settings for kafak/zookeeper pods
+- **Bug Fix** Fix the issue of ineffective upgrade for some components and eliminate all images generated during the process of merging chart values during upgrades
+
 ## 2023-12-31
 
 ### v0.14.0

@@ -6,9 +6,9 @@ Deploying edge applications to node groups improves operational efficiency for c
 
 The following steps explain how to create an edge node group.
 
-1. Go to the edge unit details page and select the left-side menu `Edge Resources` -> `Node Groups`.
+1. Go to the edge unit details page and select the left-side menu __Edge Resources__ -> __Node Groups__ .
 
-2. Click the `Create Node Group` button at the top right of the node group list.
+2. Click the __Create Node Group__ button at the top right of the node group list.
 
     ![Create Node Group](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kant/user-guide/images/create-group-01.png)
 
@@ -20,6 +20,6 @@ The following steps explain how to create an edge node group.
 
     ![Fill Basic Info](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kant/user-guide/images/create-group-02.png)
 
-4. Click the `OK` button to successfully create the edge node group and return to the edge node group list.
+4. Click the __OK__ button to successfully create the edge node group and return to the edge node group list.
 
 Next step: [Manage Edge Node Groups](manage-group.md)

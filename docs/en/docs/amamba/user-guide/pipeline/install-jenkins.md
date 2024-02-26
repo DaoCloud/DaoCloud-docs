@@ -78,7 +78,7 @@ Note: Currently, only integration with Jenkins installed via the DCE 5.0 platfor
 
 ## Integration Considerations
 
-If Jenkins was integrated without Cluster and Namespace given, it will cause the Application Workbench to be unable to update the configuration of the Jenkins instance, leading to the following two issues:
+If Jenkins was integrated without Cluster and Namespace given, it will cause Workbench to be unable to update the configuration of the Jenkins instance, leading to the following two issues:
 
 - In the pipeline __Notification__ step, when configuring the mail server address in Global Management -> Platform Settings -> Email Server Settings, the configuration cannot be updated in Jenkins.
 - In the pipeline __SonarQube Configuration__ step, after integrating the SonarQube instance into the toolchain and binding it to the current workspace, using that instance will not work.
@@ -109,7 +109,7 @@ To address these issues, you need to go to the Jenkins backend for relevant conf
 
 2. Fill in the relevant parameters. The parameter descriptions are as follows:
 
-    - Name: Assign a name to the SonarQube server configuration. The value will be required in the SonarQube Configuration step of the Application Workbench pipeline.
+    - Name: Assign a name to the SonarQube server configuration. The value will be required in the SonarQube Configuration step of Workbench pipeline.
     - Server URL: The URL of the SonarQube server.
     - Server authentication token: The authentication token for the SonarQube server. You can generate a token in the SonarQube console.
 

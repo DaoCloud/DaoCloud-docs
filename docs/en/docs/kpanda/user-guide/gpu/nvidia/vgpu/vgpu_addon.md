@@ -10,9 +10,9 @@ This section explains how to install the vGPU plugin in the DCE 5.0 platform, wh
 
 ## Procedure
 
-1. Path: __Container Management__ -> __Cluster Management__ -> Click the target cluster -> __Helm Apps__ -> __Helm Repositories__ -> Search for "nvidia-vgpu".
+1. Path: __Container Management__ -> __Cluster Management__ -> Click the target cluster -> __Helm Apps__ -> __Helm Charts__ -> Search for __nvidia-vgpu__ .
 
-    
+    ![Alt text](../../images/vgpu-addon.png)
 
 2. During the installation of vGPU, several basic modification parameters are provided. If you need to modify advanced parameters, click the YAML column to make changes:
 
@@ -22,10 +22,10 @@ This section explains how to install the vGPU plugin in the DCE 5.0 platform, wh
 
     - __Resources__ : Represents the resource usage of the vgpu-device-plugin and vgpu-schedule pods.
 
-    
+    ![Alt text](../../images/vgpu-pararm.png)
 
-3. After a successful installation, you will see two types of pods in the specified namespace, indicating that the NVIDIA GPU plugin has been successfully installed:
+3. After a successful installation, you will see two types of pods in the specified namespace, indicating that the NVIDIA vGPU plugin has been successfully installed:
 
-    
+    ![Alt text](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/vgpu-pod.png)  
 
 After a successful installation, you can [deploy applications using vGPU resources](vgpu_user.md).

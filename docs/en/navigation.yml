@@ -11,6 +11,7 @@ nav:
               - Use Cases: dce/scenario.md
               - DaoCloud is a KCSP: dce/kcsp.md
               - Release Notes:
+                  - 20240130 Release: dce/dce-rn/20240130.md
                   - 20231231 Release: dce/dce-rn/20231231.md
                   - 20231130 Release: dce/dce-rn/20231130.md
                   - 20231031 Release: dce/dce-rn/20231031.md
@@ -40,7 +41,7 @@ nav:
                       - Ports: install/commercial/port-requirements.md
                       - External Components (Optional):
                           - Store Binaries with External Service: install/commercial/external/external-binary.md
-                          - Store Images and Charts with External Registry and Chart Repo: install/commercial/external/external-imageandchart.md
+                          - Store Images and Charts with Registry and Chart Repo: install/commercial/external/external-imageandchart.md
                           - Use External Middleware: install/commercial/external/external-middlewares.md
                           - Store OS Repo with External Service: install/commercial/external/external-os.md
                   - Start Installation: install/commercial/start-install.md
@@ -64,6 +65,7 @@ nav:
                   - Use Cases: install/commercial/scenarios.md
                   - Deploy on DCE 5.0 Appliance: install/best-practices/all-in-one-machine.md
                   - etcd Deployed in Host Mode and Separated from Control Plane: install/best-practices/etcd-host-deploy.md
+                  - HA Bootstrap Nodes: install/best-practices/thinder-ha.md
               - Installer Release Notes: install/release-notes.md
       - Workbench:
           - Workbench:
@@ -100,6 +102,10 @@ nav:
                   - Run Pipeline:
                       - Auto Trigger Pipelines: amamba/user-guide/pipeline/run/trigger.md
                       - Manual Trigger Pipelines: amamba/user-guide/pipeline/run/manual.md
+                  - Check Pipeline:
+                      - Check Pipeline Details: amamba/user-guide/pipeline/view/view-pipeline.md
+                      - Check Running Records: amamba/user-guide/pipeline/view/view-run.md
+                  - Jenkins Pipeline Syntax: amamba/user-guide/pipeline/pipeline-syntax.md
                   - Pipeline Parameters:
                       - Concepts in Pipeline: amamba/user-guide/pipeline/config/concept.md
                       - Graphical Task Template Parameters: amamba/user-guide/pipeline/config/step.md
@@ -368,7 +374,7 @@ nav:
                   - Challenges: network/intro/challenges.md
                   - Components: network/modules/modules.md
                   - Offline Upgrade: network/intro/offline.md
-                  - Release Notes: network/modules/spiderpool/releasenotes.md
+                  - Release Notes: network/intro/releasenotes.md
               - Plan:
                   - Eth card plan: network/plans/ethplan.md
                   - Network plan: network/plans/netplan.md
@@ -416,7 +422,7 @@ nav:
                   - ippool: network/modules/calico/ippool.md
                   - Metrics: network/modules/calico/metrics.md
                   - Calico Policies: network/modules/calico/policy.md
-                  - Troubleshooting: network/modules/calico/debug.md
+                  - Troubleshoot: network/modules/calico/debug.md
               - Cilium:
                   - Intro: network/modules/cilium/index.md
                   - Args Config: network/modules/cilium/install.md
@@ -482,7 +488,10 @@ nav:
                   - Intro: storage/hwameistor/intro/index.md
                   - Modules:
                       - Local storage: storage/hwameistor/intro/ls.md
-                      - DRBD installer: storage/hwameistor/intro/drbd.md
+                      - DRBD Installer:
+                          - Intro: storage/hwameistor/intro/drbd.md
+                          - Kernel Versions Supported by DRBD: storage/hwameistor/intro/drbd-support.md
+                          - DRBD Self-Compilation Instructions: storage/hwameistor/intro/drdb-kernel-make.md
                       - Scheduler: storage/hwameistor/intro/scheduler.md
                       - Admission controller: storage/hwameistor/intro/admission-controller.md
                   - Resources: storage/hwameistor/intro/resources.md
@@ -538,20 +547,27 @@ nav:
                   - PV and PVC: storage/terms/pv_pvc.md
           - Virtual Machine:
               - Intro:
-                  - Intro: virtnest/intro/index.md
+                  - What: virtnest/intro/index.md
                   - Release Notes: virtnest/intro/release-notes.md
-                  - Install Virtual Machine: virtnest/intro/install.md
-              - Quick Start:
-                  - Install virtnest-agent: virtnest/quick-start/index.md
-                  - Create VM: virtnest/quick-start/create-image.md
-                  - Create Secret: virtnest/quick-start/create-secret.md
-                  - Create VM by Template: virtnest/quick-start/create-tep.md
-                  - VM Template: virtnest/quick-start/tep.md
-                  - Connect VM: virtnest/quick-start/access.md
-                  - Snapshots: virtnest/quick-start/snapshot.md
-                  - Live Migration: virtnest/quick-start/live-migration.md
-                  - Access VM by NodePort: virtnest/quick-start/nodeport.md
+              - Install:   
+                  - Install Virtual Machine: virtnest/install/index.md
+                  - Install Dependencies: virtnest/install/install-dependency.md
                   - Offline Upgrade: virtnest/install/offline-install.md
+                  - Install virtnest-agent: virtnest/install/virtnest-agent.md
+              - Manage Virtual Machine:
+                  - Create VM: virtnest/vm/index.md
+                  - Create Windows VM: virtnest/vm/vm-windows.md
+                  - Create Secret: virtnest/vm/create-secret.md
+                  - Access VM: virtnest/vm/access.md
+                  - Snapshots: virtnest/vm/snapshot.md
+                  - Live Migration: virtnest/vm/live-migration.md
+                  - Access VM by NodePort: virtnest/vm/nodeport.md
+                  - Monitor VM: virtnest/vm/monitor.md
+              - VM Template:
+                  - Create VM by Template: virtnest/template/index.md
+                  - VM Template: virtnest/template/tep.md
+              - VM Image: virtnest/vm-image/index.md
+              - Import VM from Ubuntu: virtnest/import/import-ubuntu.md
       - Observability:
           - Insight:
               - Intro:
@@ -629,8 +645,8 @@ nav:
                   - Lucene Syntax: insight/faq/lucene.md
               - Best Practice:
                   - Collect Container Log with Sidecar: insight/best-practice/tailing-sidecar.md
-                  - Log Collection Troubleshooting: insight/best-practice/debug-log.md
-                  - Trace Collection Troubleshooting: insight/best-practice/debug-trace.md
+                  - Log Collection Troubleshoot: insight/best-practice/debug-log.md
+                  - Trace Collection Troubleshoot: insight/best-practice/debug-trace.md
                   - Configure Notification Template: insight/best-practice/notify-helper.md
                   - Receive SkyWalking Trace Data using OTel: insight/best-practice/sw-to-otel.md
                   - Use Insight to find service's problems: insight/best-practice/find_root_cause.md
@@ -741,6 +757,7 @@ nav:
                       - Control Plane Components: mspider/intro/comp-archi-ui/cp-component.md
                       - System Namespaces: mspider/intro/comp-archi-ui/namespaces.md
                       - Features Supported on UI: mspider/intro/comp-archi-ui/features-on-ui.md
+                  - Supported Istio and K8s Versions: mspider/intro/istio-k8s.md
                   - FAQs: mspider/intro/faq.md
                   - Service Mesh Release Notes: mspider/intro/release-notes.md
               - Install, Config, and Upgrade:
@@ -803,7 +820,7 @@ nav:
                   - Multicloud deployment: mspider/user-guide/multicluster/multicluster-install.md
                   - Multicloud principle: mspider/user-guide/multicluster/multi-cluster-net.md
                   - Multicloud grayscale release: mspider/user-guide/multicluster/gray-scale-release.md
-              - Troubleshooting:
+              - Troubleshoot:
                   - Index: mspider/troubleshoot/index.md
                   - Cannot find cluster on mesh creation: mspider/troubleshoot/cannot-find-cluster.md
                   - Always in creating on mesh creation: mspider/troubleshoot/always-in-creating.md
@@ -846,7 +863,7 @@ nav:
                   - Best Practice:
                       - MySQL Cross-Cluster Synchronization: middleware/mysql/best-practice/crossclusterssync.md
                       - MySQL Archiving Solution: middleware/mysql/best-practice/mysql-pt-archiver.md
-                  - Troubleshooting:
+                  - Troubleshoot:
                       - MySQL Health Check: middleware/mysql/faq/quick-check.md
                       - MySQL Pod: middleware/mysql/faq/faq-pod.md
                       - MySQL Operator: middleware/mysql/faq/faq-operator.md
@@ -909,7 +926,7 @@ nav:
                       - Monitor Instance: middleware/elasticsearch/user-guide/monitor.md
                       - View ES Logs: middleware/elasticsearch/user-guide/logs.md
                   - Migrate ES across Nodes: middleware/elasticsearch/user-guide/migrate-es.md
-                  - ES Troubleshooting: middleware/elasticsearch/faq/common-question-es.md
+                  - ES Troubleshoot: middleware/elasticsearch/faq/common-question-es.md
               - Kafka Message Queue:
                   - Intro:
                       - What is Kafka: middleware/kafka/intro/index.md
@@ -965,6 +982,30 @@ nav:
                       - Monitor Instance: middleware/minio/user-guide/insight.md
                       - Config Parameters: middleware/minio/user-guide/config.md
                       - MinIO Identity Management: middleware/minio/user-guide/user-management.md
+      - Cloud Native AI:
+          - Baize:
+              - Introduction:
+                  - What is Baize: baize/intro/index.md
+                  - Installation: baize/intro/install.md
+                  - First Time Usage: baize/intro/first.md
+              - Development Console:
+                  - Introduction: baize/developer/index.md
+                  - Notebooks:
+                      - Create Notebook: baize/developer/notebooks/create.md
+                      - Start and Pause Notebook: baize/developer/notebooks/start-pause.md
+                      - View Notebook Workload: baize/developer/notebooks/view.md
+                      - Delete Notebook: baize/developer/notebooks/delete.md
+                  - Task Center:
+                      - Create Task: baize/developer/jobs/create.md
+                      - Delete Task: baize/developer/jobs/delete.md
+                  - Data Management:
+                      - Create Dataset: baize/developer/dataset/create.md
+                      - Delete Dataset: baize/developer/dataset/delete.md
+              - OAM Management:
+                  - GPU Resource Management: baize/oam/resource.md
+                  - Queue Management:
+                      - Create Queue: baize/oam/queue/create.md
+                      - Delete Queue: baize/oam/queue/delete.md
       - Edge Computing:
           - Cloud Edge Collaboration:
               - Intro:
@@ -973,14 +1014,18 @@ nav:
                   - Benefits: kant/intro/benefits.md
                   - Use Cases: kant/intro/use-cases.md
                   - Concepts: kant/intro/concepts.md
+                  - Release Notes: kant/intro/release-notes.md
+                  - Offline Upgrade: kant/intro/offline-upgrade.md
               - Edge Unit:
-                  - Create Edge Unit: kant/user-guide/edge-unit/create-unit.md
+                  - Create Internal Edge Unit: kant/user-guide/edge-unit/create-internal-unit.md
+                  - Create External Edge Unit: kant/user-guide/edge-unit/create-external-unit.md
                   - Manage Edge Unit: kant/user-guide/edge-unit/manage-unit.md
               - Edge Node:
                   - Overview: kant/user-guide/node/index.md
                   - Requirements to Join Edge Node: kant/user-guide/node/join-rqmt.md
                   - Batch Register Edge Nodes: kant/user-guide/node/batch-registration.md
-                  - Manage Edge Nodes: kant/user-guide/node/managed-node.md
+                  - Connect Edge Nodes: kant/user-guide/node/managed-node.md
+                  - Manage Edge Nodes: kant/user-guide/node/manage-node.md
                   - Batch Upgrade Edge Nodes: kant/user-guide/node/batch-upgrade.md
               - Edge Node Group:
                   - Create Edge Node Group: kant/user-guide/node-group/create-group.md
@@ -1028,6 +1073,7 @@ nav:
                   - Docking Portal:
                       - ghippo/user-guide/access-control/docking.md
                       - Webhook: ghippo/user-guide/access-control/webhook.md
+                      - OAuth 2.0 for WeCom: ghippo/user-guide/access-control/oauth2.0.md
               - Workspaces and Folders:
                   - ghippo/user-guide/workspace/ws-folder.md
                   - Create and Delete Workspace: ghippo/user-guide/workspace/workspace.md
@@ -1035,7 +1081,7 @@ nav:
                   - Create and Delete Folder: ghippo/user-guide/workspace/folders.md
                   - Folder Permissions: ghippo/user-guide/workspace/folder-permission.md
                   - Resource Quota: ghippo/user-guide/workspace/quota.md
-                  - Difference between Resource Groups and Shared Resources: ghippo/user-guide/workspace/res-gp-and-shared-res.md
+                  - Compare Resource Groups and Shared Resources: ghippo/user-guide/workspace/res-gp-and-shared-res.md
               - Audit Logs:
                   - Enable/Disable Collection of K8s Audit Logs: ghippo/user-guide/audit/open-audit.md
                   - Enable/Disable Output of K8s Audit Logs: ghippo/user-guide/audit/open-k8s-audit.md
@@ -1079,7 +1125,7 @@ nav:
                       - Customize DCE 5.0 to Sync IdP: ghippo/best-practice/oem/custom-idp.md
                       - Customize IdP with Keycloak: ghippo/best-practice/oem/keycloak-idp.md
                   - Customize Nav Bar: ghippo/best-practice/navigator.md
-              - Troubleshooting:
+              - Troubleshoot:
                   - ingressgateway cannot start: ghippo/troubleshooting/ghippo01.md
                   - Login Error 401 or 403: ghippo/troubleshooting/ghippo02.md
                   - keycloak cannot start: ghippo/troubleshooting/ghippo03.md
@@ -1142,13 +1188,13 @@ nav:
               - Management:
                   - Global Management: download/modules/ghippo.md
                   - Operation Management: download/modules/gmagpie.md
-  - Free Trial:
-      - Free Trial: trial/index.md
   - Blogs:
       - Index: blogs/index.md
       - 2024 Blogs:
+          - 202402 | New Book - Managing Cloud Native Data on Kubernetes: blogs/240203-book.md
+          - 202402 | Accelerated Computing: blogs/240201-ai-compute.md
           - 202401 | Containerization AI Streamlines ML Models: blogs/240115-news.md
-          - KubeEdge v1.15.0 Released: blogs/240108-kubeedge.md
+          - 202401 | KubeEdge v1.15.0 Released: blogs/240108-kubeedge.md
       - 2023 Blogs:
           - 202312 | K8s 1.29 Released - Ambious Mandala Theme: blogs/231213-k8s-1.29.md
           - 202312 | Does K8s Perform Better on Bare Metal vs. VMs?: blogs/231205-vm-bm-compare.md
@@ -1217,3 +1263,5 @@ nav:
           - Open Source Projects: native/open.md
       - Knowledge:
           - Knowledge Sharing: native/knowledge.md
+  - Free Trial:
+      - Free Trial: trial/index.md

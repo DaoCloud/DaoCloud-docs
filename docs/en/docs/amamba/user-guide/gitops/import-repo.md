@@ -15,8 +15,8 @@ This page shows how to import repositories.
 
 ## Import a repository
 
-If the code repository where the manifest files of the continuously deployed application are located is not public, you need to import the repository to the application workbench in advance.
-The application workbench currently supports two import methods: __Importing a repository using HTTPS__ and __Importing a repository using SSH__.
+If the code repository where the manifest files of the continuously deployed application are located is not public, you need to import the repository to Workbench in advance.
+Workbench currently supports two import methods: __Importing a repository using HTTPS__ and __Importing a repository using SSH__.
 
 ### Import a repository using HTTPS
 

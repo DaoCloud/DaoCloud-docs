@@ -7,7 +7,7 @@ date: 2024-01-10
 
 This section describes the features supported by the service mesh.
 
-## Service Governance
+## Service Management
 
 - Service Registration and Discovery
 
@@ -25,11 +25,11 @@ This section describes the features supported by the service mesh.
 
 - Layer 7 Connection Pool Management
 
-    Configurable settings include the maximum number of HTTP requests, retries, waiting requests, requests per connection, and idle connection time.
+    Supports configuration of the maximum number of HTTP requests, retries, waiting requests, requests per connection, and idle connection time.
 
 - Layer 4 Connection Pool Management
 
-    Configurable settings include the maximum number of TCP connections, connection timeout, maximum number of unresponsive connections, minimum idle time, and health check interval.
+    Supports configuration of maximum number of TCP connections, connection timeout duration, TCP keep-alive detection (including idle timeout duration, maximum detection count, detection interval duration).
 
 - Outlier Detection
 
@@ -37,7 +37,7 @@ This section describes the features supported by the service mesh.
 
 - Retry
 
-    Configurable settings include the number of HTTP retries, retry timeout, and retry conditions.
+    Supports configuration of the number of HTTP retries, retry timeout, and retry conditions.
 
 - Timeouts
 
@@ -59,11 +59,25 @@ This section describes the features supported by the service mesh.
 
 - Transparent mTLS Authentication
 
-    Supports mutual authentication between interface configuration services.
+    Supports mTLS authentication on GUI, including peer and request authentications.
 
 - Fine-Grained Access Authorization
 
     Supports configuration of access authorization between services through the interface (the background API can configure Namespace-level authorization, and authorization can be given to a specific interface).
+
+## Sidecar management
+
+- sidecar injection
+
+    Supports the sidecar injection strategy of configuring services through the interface, and supports the multi-dimensional sidecar default injection strategy.
+
+- Sidecar hot upgrade
+
+    It supports sidecar hot upgrade. After the control plane is upgraded, it automatically detects the sidecar version and gives upgrade suggestions. It supports seamless hot upgrade without interrupting the business.
+
+- Sidecar service discovery scope
+
+    Supports custom configuration of sidecar service discovery scope and greatly reduces the pressure on sidecar resource consumption according to different business scenarios.
 
 ## Observability
 
@@ -99,7 +113,7 @@ This section describes the features supported by the service mesh.
 
     Services developed with the Spring Cloud SDK can access the mesh without intrusion and are managed in a unified manner.
 
-- Dubbo
+- Dubbo Protocol
 
     Services developed by the Dubbo SDK can access the mesh non-intrusively and are managed in a unified manner.
 

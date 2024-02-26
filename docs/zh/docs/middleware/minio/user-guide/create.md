@@ -34,7 +34,11 @@ hide:
     - 存储容量：每个磁盘具有多少容量。**实例创建之后不可调低**
     - 每副本磁盘数：为每个副本提供多少个次盘。**实例创建之后不可调低**
 
-        ![配置规格](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/create07.png)
+    !!! warning
+
+        __MinIO 实例创建成功后，不支持扩容副本和修改磁盘用量，请谨慎配置资源。__
+
+    ![配置规格](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/create07.png)
 
 5. 参考下方信息填写服务设置，点击`下一步`。
 

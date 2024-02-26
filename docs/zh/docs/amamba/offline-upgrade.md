@@ -2,6 +2,12 @@
 
 应用工作台支持离线升级。您需要先从[安装包](../download/modules/amamba.md)中加载镜像，然后执行相应命令进行升级。
 
+```shell
+tar -vxf amamba_x.y.z_amd64.tar
+```
+
+解压完成后会得到一个压缩包: amamba_x.y.z.bundle.tar
+
 ## 从安装包中加载镜像
 
 支持通过两种方式加载镜像。
@@ -10,296 +16,232 @@
 
 如果环境中存在镜像仓库，建议通过 charts-syncer 将镜像同步到镜像仓库，更加高效便捷。
 
-1. 创建 __load-image.yaml__ 文件。
+1. 使用如下内容创建 `load-image.yaml` 作为 charts-syncer 的配置文件
 
-    > 注意：该 YAML 文件中的各项参数均为必填项。您需要一个私有的镜像仓库，并修改相关配置。
+    `load-image.yaml` 文件中的各项参数均为必填项。您需要一个私有的镜像仓库，并参考如下说明修改各项配置。有关 charts-syncer 配置文件的详细解释，可参考其[官方文档](https://github.com/bitnami-labs/charts-syncer)。
 
-    ```yaml title="load-image.yaml"
-    source:
-      intermediateBundlesPath: ghippo-offline # 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
-    target:
-      containerRegistry: 10.16.10.111 # 镜像仓库 url
-      containerRepository: amamba # 镜像仓库的具体项目
-      repo:
-        kind: HARBOR # 也可以是任何其他支持的 Helm Chart 仓库类别，比如 ChartMuseum
-        url: http://10.16.10.111/chartrepo/amamba #  需更改为 chart repo url
-        auth: # 用户名/密码
-          username: "admin"
-          password: "Harbor12345"
-      containers:
-        auth: # 用户名/密码
-          username: "admin"
-          password: "Harbor12345"
-    ```
+    === "已安装 HARBOR chart repo"
 
-    !!! note "若当前环境未安装 chart repo，也可以通过 chart-syncer 将 chart 导出为 __tgz__ 文件，并存放在指定路径。"
+        若当前环境已安装 HARBOR chart repo，charts-syncer 也支持将 chart 导出为 tgz 文件。
 
         ```yaml title="load-image.yaml"
         source:
-            intermediateBundlesPath: amamba-offline #  到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
+          intermediateBundlesPath: amamba-offline # (1)
         target:
-            containerRegistry: 10.16.10.111 # 需更改为你的镜像仓库 url
-            containerRepository: release.daocloud.io/amamba # 需更改为你的镜像仓库
-            repo:
-              kind: LOCAL
-              path: ./local-repo # chart 本地路径
-            containers:
-              auth:
-                username: "admin" # 你的镜像仓库用户名
-                password: "Harbor12345" # 你的镜像仓库密码
+          containerPrefixRegistry: 10.16.10.111 # (2)
+          repo:
+            kind: HARBOR # (3)
+            url: http://10.16.10.111/chartrepo/release.daocloud.io # (4)
+            auth:
+              username: "admin" # (5)
+              password: "Harbor12345" # (6)
+          containers:
+            auth:
+              username: "admin" # (7)
+              password: "Harbor12345" # (8) 
         ```
 
-2. 执行如下命令同步镜像。
+        1. 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
+        2. 需更改为你的镜像仓库 url
+        3. 也可以是任何其他支持的 Helm Chart 仓库类别
+        4. 需更改为 chart repo project url
+        5. 你的镜像仓库用户名
+        6. 你的镜像仓库密码
+        7. 你的镜像仓库用户名
+        8. 你的镜像仓库密码
 
-    ```bash
+    === "已安装 CHARTMUSEUM chart repo"
+
+        若当前环境已安装 CHARTMUSEUM chart repo，charts-syncer 也支持将 chart 导出为 tgz 文件。
+
+        ```yaml title="load-image.yaml"
+        source:
+          intermediateBundlesPath: amamba-offline # (1)
+        target:
+          containerPrefixRegistry: 10.16.10.111 # (2)
+          repo:
+            kind: CHARTMUSEUM # (3)
+            url: http://10.16.10.111 # (4)
+            auth:
+              username: "rootuser" # (5)
+              password: "rootpass123" # (6)
+          containers:
+            auth:
+              username: "rootuser" # (7)
+              password: "rootpass123" # (8) 
+        ```
+
+        1. 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
+        2. 需更改为你的镜像仓库 url
+        3. 也可以是任何其他支持的 Helm Chart 仓库类别
+        4. 需更改为 chart repo url
+        5. 你的镜像仓库用户名, 如果 chartmuseum 没有开启登录验证，就不需要填写 auth
+        6. 你的镜像仓库密码
+        7. 你的镜像仓库用户名
+        8. 你的镜像仓库密码
+
+    === "未安装 chart repo"
+
+        若当前环境未安装 chart repo，charts-syncer 也支持将 chart 导出为 `tgz` 文件并存放在指定路径。
+
+        ```yaml
+        source:
+          intermediateBundlesPath: amamba-offline # (1)
+        target:
+          containerRegistry: 10.16.23.145 # (2)
+          containerRepository: release.daocloud.io/amamba # (3)
+          repo:
+            kind: LOCAL
+            path: ./local-repo # (4)
+          containers:
+            auth:
+              username: "admin" # (5)
+              password: "Harbor12345" # (6)
+        ```
+
+        1. 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
+        2. 需更改为你的镜像仓库 url
+        3. 需更改为你的镜像仓库
+        4. chart 本地路径
+        5. 你的镜像仓库用户名
+        6. 你的镜像仓库密码
+
+2. 将 amamba_x.y.z.bundle.tar 放到 amamba-offline 文件夹下。
+
+3. 执行同步镜像命令。
+
+    ```shell
     charts-syncer sync --config load-image.yaml
     ```
 
-### 通过 Docker 或 containerd 直接加载镜像
+### 通过 docker 或 containerd 直接加载镜像
 
-1. 执行下列命令解压镜像。
-
-    ```shell
-    tar xvf amamba.bundle.tar
-    ```
-
-    解压成功后会得到 3 个文件: __images.tar__ 、 __hints.yaml__ 、 __original-chart__ 。
-
-1. 执行如下命令从本地加载镜像到 Docker 或 containerd。
-
-    > 注意：需要在集群中的 __每个节点__ 上执行如下操作。加载完成后需要为镜像打标签，确保 Registry、Repository 与安装时一致。
+1. 解压 `tar` 压缩包。
 
     ```shell
-    docker load -i images.tar # for Docker
-    ctr -n k8s.io image import images.tar # for containerd
+    tar -vxf amamba_x.y.z.bundle.tar
     ```
+
+    解压成功后会得到 3 个文件：
+
+    - hints.yaml
+    - images.tar
+    - original-chart
+
+2. 执行如下命令从本地加载镜像到 Docker 或 containerd。
+
+    === "Docker"
+
+        ```shell
+        docker load -i images.tar
+        ```
+
+    === "containerd"
+
+        ```shell
+        ctr -n k8s.io image import images.tar
+        ```
+
+!!! note
+
+    - 需要在每个节点上都通过 Docker 或 containerd 加载镜像。
+    - 加载完成后需要 tag 镜像，保持 Registry、Repository 与安装时一致。
 
 ## 升级
 
-1. 检查应用工作台的 Helm 仓库是否存在。
+=== "通过 helm repo 升级"
 
-    ```shell
-    helm repo list | grep amamba
-    ```
+    1. 检查应用工作台 helm 仓库是否存在。
 
-    若返回结果为空或出现 __Error: no repositories to show__ 提示，则执行如下命令添加应用工作台的 Helm 仓库。
-
-    ```shell
-    helm repo add amamba http://{harbor url}/chartrepo/{project}
-    ```
-
-2. 更新应用工作台的 Helm 仓库。
-
-    ```shell
-    helm repo update amamba
-    ```
-
-    Helm 版本过低会导致失败。若失败，请尝试执行 helm update repo
-
-3. 备份 __--set__ 参数。在升级全局管理版本之前，建议执行如下命令备份旧版本的 __--set__ 参数。
-
-    ```shell
-    helm get values ghippo -n ghippo-system -o yaml > amamba.bak.yaml
-    ```
-
-4. 选择想安装的应用工作台版本（建议安装最新版本）。
-
-    ```shell
-    helm search  repo amamba-release-ci --versions |head
-    ```
-
-    输出类似于：
-    
-    ```console
-    NAME                       CHART VERSION   APP VERSION  DESCRIPTION                               
-    amamba-release-ci/amamba   0.14.0  	       0.14.0  	    Amamba is the entrypoint to DCE 5.0, provides de...
-    ```
-
-5. 修改 __amamba.bak.yaml__ 文件里的 __registry__ 和 __tag__ 。
-
-    ??? note "点击查看示例的 YAML 文件"
-
-        ```yaml title="amamba.bak.yaml"
-        amambaSyncer:
-          resources:
-            limits:
-              cpu: 200m
-              memory: 256Mi
-            requests:
-              cpu: 20m
-              memory: 128Mi
-        apiServer:
-          configMap:
-            debug: true
-          fromJar:
-            image:
-              registry: releas-ci.daocloud.io
-              repository: docker/library/openjdk
-              tag: 11.0-jre-slim
-          image:
-            registry: release-ci.daocloud.io
-            repository: amamba/amamba-apiserver
-          resources:
-            limits:
-              cpu: "2"
-              memory: 2Gi
-            requests:
-              cpu: 20m
-              memory: 150Mi
-        argo-cd:
-          applicationSet:
-            enabled: false
-            image:
-              repository: release-ci.daocloud.io/quay/argoproj/argocd
-              tag: v2.4.12
-          controller:
-            image:
-              repository: release-ci.daocloud.io/quay/argoproj/argocd
-              tag: v2.4.12
-            resources:
-              limits:
-                cpu: "2"
-                memory: 2Gi
-              requests:
-                cpu: 100m
-                memory: 256Mi
-          dex:
-            enabeld: true
-            image:
-              repository: release-ci.daocloud.io/ghcr/dexidp/dex
-              tag: v2.32.0
-            initImage:
-              repository: release-ci.daocloud.io/quay/argoproj/argocd
-              tag: v2.4.12
-            resources:
-              limits:
-                cpu: 50m
-                memory: 64Mi
-              requests:
-                cpu: 10m
-                memory: 16Mi
-          enabled: true
-          notifications:
-            enabled: false
-          redis:
-            enabled: true
-            image:
-              repository: release-ci.daocloud.io/docker/library/redis
-              tag: 7.0.4-alpine
-            metrics:
-              enabled: false
-            resources:
-              limits:
-                cpu: 200m
-                memory: 128Mi
-              requests:
-                cpu: 5m
-                memory: 16Mi
-          repoServer:
-            image:
-              repository: release-ci.daocloud.io/quay/argoproj/argocd
-              tag: v2.4.12
-            resources:
-              limits:
-                cpu: 200m
-                memory: 256Mi
-              requests:
-                cpu: 5m
-                memory: 8Mi
-          server:
-            image:
-              repository: release-ci.daocloud.io/quay/argoproj/argocd
-              tag: v2.4.12
-            resources:
-              limits:
-                cpu: 250m
-                memory: 256Mi
-              requests:
-                cpu: 5m
-                memory: 8Mi
-            service:
-              nodePortHttp: 31886
-              nodePortHttps: 31887
-              type: NodePort
-        argo-rollouts:
-          controller:
-            image:
-              registry: release-ci.daocloud.io
-              repository: quay/argoproj/argo-rollouts
-              tag: v1.2.0
-            resources:
-              limits:
-                cpu: 100m
-                memory: 128Mi
-              requests:
-                cpu: 16m
-                memory: 128Mi
-          dashboard:
-            enabled: true
-            image:
-              registry: release-ci.daocloud.io
-              repository: quay/argoproj/kubectl-argo-rollouts
-              tag: v1.2.0
-            resources:
-              limits:
-                cpu: 100m
-                memory: 128Mi
-              requests:
-                cpu: 10m
-                memory: 16Mi
-            service:
-              nodePort: 30070
-              type: NodePort
-          enabled: true
-        devopsServer:
-          enabled: true
-          image:
-            registry: release-ci.daocloud.io
-            repository: amamba/amamba-devops-server
-          resources:
-            limits:
-              cpu: "2"
-              memory: 2Gi
-            requests:
-              cpu: 50m
-              memory: 160Mi
-        global:
-          amamba:
-            imageTag: v0.13-dev-a8ca782a
-          imageRegistry: release-ci.daocloud.io
-        mysql:
-          busybox:
-            repository: docker/busybox
-            tag: 1.35.0
-          image:
-            repository: docker/mysql
-            tag: 5.7.30
-          persistence:
-            size: 20Gi
-          resources:
-            limits:
-              cpu: 500m
-              memory: 512Mi
-            requests:
-              cpu: 20m
-              memory: 256Mi
-        ui:
-          image:
-            tag: v0.15.0-dev-fd64789e
-          resources:
-            limits:
-              cpu: 100m
-              memory: 128Mi
-            requests:
-              cpu: 5m
-              memory: 4Mi
-        
+        ```shell
+        helm repo list | grep amamba
         ```
 
-6. 执行如下命令进行升级
+        若返回结果为空或如下提示，则进行下一步；反之则跳过下一步。
 
-    ```shell
-    helm upgrade amamba . \
-      -n amamba-system \
-      -f ./amamba.bak.yaml
-    ```
+        ```none
+        Error: no repositories to show
+        ```
+
+    2. 添加应用工作台的 helm 仓库。
+
+        ```shell
+        helm repo add amamba-release http://{harbor url}/chartrepo/{project}
+        ```
+
+    3. 更新应用工作台的 helm 仓库。
+
+        ```shell
+        helm repo update amamba-release # (1)
+        ```
+
+        1. Helm 版本过低会导致失败，若失败，请尝试执行 helm update repo
+
+    4. 选择您想安装的应用工作台版本（建议安装最新版本）。
+
+        ```shell
+        helm search repo amamba-release/amamba --versions
+        ```
+
+        ```text
+        NAME                    CHART VERSION  APP VERSION  DESCRIPTION
+        amamba-release/amamba	 0.24.0         0.24.0       Amamba is the entrypoint to DCE5.0, provides de...
+        amamba-release/amamba	 0.23.0         0.23.0       Amamba is the entrypoint to DCE5.0, provides de...
+        amamba-release/amamba	 0.22.1         0.22.1       Amamba is the entrypoint to DCE5.0, provides de...
+        amamba-release/amamba	 0.22.0         0.22.0       Amamba is the entrypoint to DCE5.0, provides de...
+        amamba-release/amamba	 0.21.2         0.21.2       Amamba is the entrypoint to DCE5.0, provides de...
+        amamba-release/amamba	 0.21.1         0.21.1       Amamba is the entrypoint to DCE5.0, provides de...
+        amamba-release/amamba	 0.21.0         0.21.0       Amamba is the entrypoint to DCE5.0, provides de...
+        ...
+        ```
+
+    5. 备份 `--set` 参数。
+
+        在升级应用工作台版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
+
+        ```shell
+        helm get values amamba -n amamba-system -o yaml > bak.yaml
+        ```
+
+    6. 执行 `helm upgrade`。
+
+        升级前建议您覆盖 bak.yaml 中的 `global.imageRegistry` 字段为当前使用的镜像仓库地址。
+
+        ```shell
+        export imageRegistry={你的镜像仓库}
+        ```
+
+        ```shell
+        helm upgrade amamba amamba-release/amamba \
+          -n amamba-system \
+          -f ./bak.yaml \
+          --set global.imageRegistry=$imageRegistry \
+          --version 0.24.0
+        ```
+
+=== "通过 chart 包升级"
+
+    1. 准备好 `original-chart`（通过解压 amamba_x.y.z.bundle.tar 得到）。
+
+    2. 备份 `--set` 参数。
+
+        在升级应用工作台版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
+
+        ```shell
+        helm get values amamba -n amamba-system -o yaml > bak.yaml
+        ```
+
+    3. 执行 `helm upgrade`。
+
+        升级前建议您覆盖 bak.yaml 中的 `global.imageRegistry` 为当前使用的镜像仓库地址。
+
+        ```shell
+        export imageRegistry={你的镜像仓库}
+        ```
+
+        ```shell
+        helm upgrade amamba original-chart \
+          -n amamba-system \
+          -f ./bak.yaml \
+          --set global.imageRegistry=$imageRegistry
+        ```

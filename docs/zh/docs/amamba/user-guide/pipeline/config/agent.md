@@ -87,19 +87,6 @@ __Jenkins Agent Label: go__
 | Kubectl  | v1.22.0                                                      |
 | 内置工具 | unzip、which、make(GNU Make 3.82)、wget、zip、bzip2、git (2.9.5) |
 
-__Jenkins Agent Label: go16__
-
-| 名称     | 类型/版本                                                    |
-| -------- | ------------------------------------------------------------ |
-| 容器名称 | go                                                           |
-| 操作系统 | centos-7 (7.9.2009)                                          |
-| Go       | 1.16.8                                                       |
-| GOPATH   | /home/jenkins/go                                             |
-| GOROOT   | /usr/local/go                                                |
-| podman   | podman version 3.0.1                                         |
-| Kubectl  | v1.22.0                                                      |
-| 内置工具 | unzip、which、make(GNU Make 3.82)、wget、zip、bzip2、git (2.9.5) |
-
 __Jenkins Agent Label: node.js__
 
 | 名称     | 类型/版本                                                    |

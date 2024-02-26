@@ -12,7 +12,7 @@ Kubean 是一个基于 Kubespray 构建的集群生命周期管理工具。
 - 兼容性：支持多架构交付：AMD、ARM；常见的 Linux 发行版；以及基于鲲鹏构建的麒麟操作系统。
 - 可扩展性：允许使用原生 Kubespray 自定义集群。
 
-![cncf gophers](./images/cncf-gophers.png)
+![cncf gophers](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/images/cncf-gophers.png)
 
 **Kubean 是一个 [CNCF](https://cncf.io/) Landscape 项目。**
 

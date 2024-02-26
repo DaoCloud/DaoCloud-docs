@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="813px"
+   height="431px"
+   viewBox="0 0 813 431"
+   version="1.1"
+   id="svg33"
+   sodipodi:docname="architecture1.svg"
+   inkscape:version="1.3 (0e150ed, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs33" />
+  <sodipodi:namedview
+     id="namedview33"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.0951276"
+     inkscape:cx="478.02648"
+     inkscape:cy="203.62924"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g14" />
+  <title
+     id="title1">mspider-arch</title>
+  <g
+     id="页面-1"
+     stroke="none"
+     stroke-width="1"
+     fill="none"
+     fill-rule="evenodd">
+    <rect
+       id="矩形"
+       stroke="#979797"
+       fill="#CFE8D2"
+       x="0.5"
+       y="0.5"
+       width="100"
+       height="430" />
+    <rect
+       id="rect1"
+       stroke="#979797"
+       fill="#FFCCCB"
+       x="712.5"
+       y="0.5"
+       width="100"
+       height="430" />
+    <rect
+       id="rect2"
+       stroke="#979797"
+       fill="#F4F4F4"
+       x="151.5"
+       y="0.5"
+       width="510"
+       height="101" />
+    <g
+       id="编组"
+       transform="translate(238.000000, 42.000000)">
+      <g
+         id="矩形-2"
+         fill="#FFFFFF"
+         stroke="#979797">
+        <rect
+           id="rect3"
+           x="-0.5"
+           y="-0.5"
+           width="94"
+           height="40" />
+      </g>
+      <text
+         id="注入管理"
+         font-family="PingFangSC-Regular, 'PingFang SC'"
+         font-size="15px"
+         font-weight="normal"
+         fill="#060606"><tspan
+           x="17"
+           y="25"
+           id="tspan3">Injection</tspan></text>
+    </g>
+    <rect
+       id="rect4"
+       stroke="#979797"
+       fill="#D7E8FD"
+       x="151.5"
+       y="140.5"
+       width="510"
+       height="101" />
+    <g
+       id="g6"
+       transform="translate(178.000000, 177.000000)">
+      <g
+         id="g5"
+         fill="#FFFFFF"
+         stroke="#979797">
+        <rect
+           id="rect5"
+           x="-0.5"
+           y="-0.5"
+           width="94"
+           height="40" />
+      </g>
+      <text
+         id="多集群管理"
+         font-family="PingFangSC-Regular, 'PingFang SC'"
+         font-size="15px"
+         font-weight="normal"
+         fill="#060606"
+         x="-8.2182207"><tspan
+           x="1.7817796"
+           y="25"
+           id="tspan5">Multi-cluster</tspan></text>
+    </g>
+    <g
+       id="g8"
+       transform="translate(294.000000, 177.000000)">
+      <g
+         id="g7"
+         fill="#FFFFFF"
+         stroke="#979797">
+        <rect
+           id="rect6"
+           x="-0.5"
+           y="-0.5"
+           width="94"
+           height="40" />
+      </g>
+      <text
+         id="控制平面"
+         font-family="PingFangSC-Regular, 'PingFang SC'"
+         font-size="15px"
+         font-weight="normal"
+         fill="#060606"
+         x="-14.496028"
+         y="1.1414195"><tspan
+           x="0.50397241"
+           y="26.14142"
+           id="tspan7">Control Plane</tspan></text>
+    </g>
+    <g
+       id="g10"
+       transform="translate(403.000000, 177.000000)">
+      <g
+         id="g9"
+         fill="#ffffff"
+         stroke="#979797"
+         transform="matrix(1.2706631,0,0,0.99686331,-1.6282058,-0.39540233)">
+        <rect
+           id="rect8"
+           x="-0.5"
+           y="-0.5"
+           width="94"
+           height="40" />
+      </g>
+      <text
+         id="注册发现"
+         font-family="PingFangSC-Regular, 'PingFang SC'"
+         font-size="15px"
+         font-weight="normal"
+         fill="#060606"
+         x="-14.153602"
+         y="-0.2282839"><tspan
+           x="0.84639829"
+           y="24.771715"
+           id="tspan9">Reg &amp; Discovery</tspan></text>
+    </g>
+    <rect
+       id="rect10"
+       stroke="#979797"
+       fill="#D7E8FD"
+       x="151.5"
+       y="280.5"
+       width="510"
+       height="150" />
+    <g
+       id="g12"
+       transform="translate(238.000000, 323.000000)">
+      <g
+         id="g11"
+         fill="#FFFFFF"
+         stroke="#979797">
+        <rect
+           id="rect11"
+           x="-0.5"
+           y="-0.5"
+           width="94"
+           height="40" />
+      </g>
+      <text
+         id="认证、授权"
+         font-family="PingFangSC-Regular, 'PingFang SC'"
+         font-size="15px"
+         font-weight="normal"
+         fill="#060606"
+         x="-5.0222459"
+         y="0.91313559"><tspan
+           x="4.9777541"
+           y="25.913136"
+           id="tspan11">Authz Authn</tspan></text>
+    </g>
+    <g
+       id="g14"
+       transform="translate(361.000000, 374.000000)">
+      <g
+         id="g13"
+         fill="#FFFFFF"
+         stroke="#979797">
+        <rect
+           id="rect12"
+           x="-0.5"
+           y="-0.5"
+           width="94"
+           height="40" />
+      </g>
+      <text
+         id="租户、空间"
+         font-family="PingFangSC-Regular, 'PingFang SC'"
+         font-size="15px"
+         font-weight="normal"
+         fill="#060606"><tspan
+           x="10"
+           y="25"
+           id="tspan13">Workspace</tspan></text>
+    </g>
+    <g
+       id="g16"
+       transform="translate(238.000000, 374.000000)">
+      <g
+         id="g15"
+         fill="#FFFFFF"
+         stroke="#979797">
+        <rect
+           id="rect14"
+           x="-0.5"
+           y="-0.5"
+           width="94"
+           height="40" />
+      </g>
+      <text
+         id="观测展示"
+         font-family="PingFangSC-Regular, 'PingFang SC'"
+         font-size="15px"
+         font-weight="normal"
+         fill="#060606"
+         x="3.8808262"
+         y="-0.45656779"><tspan
+           x="18.880827"
+           y="24.543432"
+           id="tspan15">Insight</tspan></text>
+    </g>
+    <g
+       id="g18"
+       transform="translate(360.000000, 323.000000)">
+      <g
+         id="g17"
+         fill="#FFFFFF"
+         stroke="#979797">
+        <rect
+           id="rect16"
+           x="-0.5"
+           y="-0.5"
+           width="94"
+           height="40" />
+      </g>
+      <text
+         id="网格管理"
+         font-family="PingFangSC-Regular, 'PingFang SC'"
+         font-size="15px"
+         font-weight="normal"
+         fill="#060606"
+         x="11.414195"
+         y="-0.45656779"><tspan
+           x="27.414194"
+           y="24.543432"
+           id="tspan17">Mesh</tspan></text>
+    </g>
+    <g
+       id="g20"
+       transform="translate(482.000000, 323.000000)">
+      <g
+         id="g19"
+         fill="#FFFFFF"
+         stroke="#979797">
+        <rect
+           id="rect18"
+           x="-0.5"
+           y="-0.5"
+           width="94"
+           height="40" />
+      </g>
+      <text
+         id="策略控制"
+         font-family="PingFangSC-Regular, 'PingFang SC'"
+         font-size="15px"
+         font-weight="normal"
+         fill="#060606"
+         x="4.3373942"><tspan
+           x="20.337395"
+           y="25"
+           id="tspan19">Policies</tspan></text>
+    </g>
+    <g
+       id="g22"
+       transform="translate(482.000000, 374.000000)">
+      <g
+         id="g21"
+         fill="#FFFFFF"
+         stroke="#979797">
+        <rect
+           id="rect20"
+           x="-0.5"
+           y="-0.5"
+           width="94"
+           height="40" />
+      </g>
+      <text
+         id="转换适配"
+         font-family="PingFangSC-Regular, 'PingFang SC'"
+         font-size="15px"
+         font-weight="normal"
+         fill="#060606"
+         x="-5.4788136"><tspan
+           x="10.521187"
+           y="25"
+           id="tspan21">Conversion</tspan></text>
+    </g>
+    <g
+       id="g24"
+       transform="translate(532,177)">
+      <g
+         id="g23"
+         fill="#ffffff"
+         stroke="#979797">
+        <rect
+           id="rect22"
+           x="-0.5"
+           y="-0.5"
+           width="94"
+           height="40" />
+      </g>
+      <text
+         id="协议适配"
+         font-family="PingFangSC-Regular, 'PingFang SC'"
+         font-size="15px"
+         font-weight="normal"
+         fill="#060606"><tspan
+           x="15"
+           y="25"
+           id="tspan23">Protocols</tspan></text>
+    </g>
+    <g
+       id="g25"
+       transform="matrix(1.0820057,0,0,0.99900803,360.06084,43.019343)"
+       fill="#ffffff"
+       stroke="#979797">
+      <rect
+         id="rect24"
+         x="-0.5"
+         y="-0.5"
+         width="94"
+         height="40" />
+    </g>
+    <g
+       id="g26"
+       transform="translate(482.000000, 43.000000)"
+       fill="#FFFFFF"
+       stroke="#979797">
+      <rect
+         id="rect25"
+         x="-0.5"
+         y="-0.5"
+         width="94"
+         height="40" />
+    </g>
+    <text
+       id="被托管集群网格"
+       font-family="PingFangSC-Regular, 'PingFang SC'"
+       font-size="15px"
+       font-weight="normal"
+       fill="#060606"><tspan
+         x="350"
+         y="21"
+         id="tspan26">Hosted Cluster Mesh</tspan></text>
+    <text
+       id="托管网格"
+       font-family="PingFangSC-Regular, 'PingFang SC'"
+       font-size="15px"
+       font-weight="normal"
+       fill="#060606"><tspan
+         x="373"
+         y="164"
+         id="tspan27">Hosted Mesh</tspan></text>
+    <text
+       id="全局管理模块"
+       font-family="PingFangSC-Regular, 'PingFang SC'"
+       font-size="15px"
+       font-weight="normal"
+       fill="#060606"><tspan
+         x="361"
+         y="306"
+         id="tspan28">Global Managemen</tspan></text>
+    <text
+       id="观测模块"
+       font-family="PingFangSC-Regular, 'PingFang SC'"
+       font-size="15px"
+       font-weight="normal"
+       fill="#060606"
+       x="-269.46423"
+       y="-167.36266"
+       transform="rotate(-89.10212)"><tspan
+         x="-256.46423"
+         y="53.637329"
+         id="tspan29">Observability</tspan></text>
+    <text
+       id="观测模块-4"
+       font-family="PingFangSC-Regular, 'PingFang SC'"
+       font-size="15px"
+       font-weight="normal"
+       fill="#060606"
+       x="-309.93976"
+       y="552.31635"
+       transform="rotate(-89.10212)"><tspan
+         x="-296.93976"
+         y="773.31635"
+         id="tspan29-3">Microservice and Workbench</tspan></text>
+    <text
+       id="xDS-转发"
+       font-family="PingFangSC-Regular, 'PingFang SC'"
+       font-size="15px"
+       font-weight="normal"
+       fill="#060606"
+       x="-11.622318"
+       y="-0.64568436"><tspan
+         x="365.37769"
+         y="67.354317"
+         id="tspan32">xDS Forward</tspan></text>
+    <text
+       id="虚拟机管理"
+       font-family="PingFangSC-Regular, 'PingFang SC'"
+       font-size="15px"
+       font-weight="normal"
+       fill="#060606"
+       x="26.473059"
+       y="0.64568436"><tspan
+         x="517.47308"
+         y="68.645683"
+         id="tspan33">VM</tspan></text>
+  </g>
+</svg>

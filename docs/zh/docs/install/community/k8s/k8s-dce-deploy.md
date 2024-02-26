@@ -4,7 +4,7 @@
 
 !!! note
 
-    现阶段版本迭代较快，本文的安装方式可能与最新版有所差异，请以产品文档的[安装说明](../install/index.md)为准。
+    现阶段版本迭代较快，本文的安装方式可能与最新版有所差异，请以产品文档的[安装说明](../../index.md)为准。
 
 ## 集群规划
 
@@ -22,7 +22,7 @@
 - CRI：containerd（因为新版本 K8s 已经不再直接支持 Docker）
 - CNI：Calico
 - StorageClass：local-path
-- DCE 5.0 社区版：v0.14.0
+- DCE 5.0 社区版：v0.15.0
 
 ## 准备节点
 
@@ -85,7 +85,7 @@
 
 ### 安装容器运行时（containerd）
 
-1. 如果是 CentOS 8.x，要先卸载系统预装的 Podman，否则会版本冲突（[注意]🔥）
+1. 如果是 CentOS 8.x，要先卸载系统预装的 Podman，否则会版本冲突
 
     ```bash
     yum erase podman buildah -y
@@ -172,7 +172,7 @@
     sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
     ```
   
-1. 安装 Kubernetes 组件，版本以 1.25.8 为例（DCE 5.0 对 1.26 暂时不支持）
+1. 安装 Kubernetes 组件，版本以 1.25.8 为例
 
     ```bash
     export K8sVersion=1.25.8
@@ -315,7 +315,7 @@ bash install_prerequisite.sh online community
 ### 下载 dce5-installer
 
 ```bash
-export VERSION=v0.14.0
+export VERSION=v0.15.0
 curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
 chmod +x ./dce5-installer 
 ```

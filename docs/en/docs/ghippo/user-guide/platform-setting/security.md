@@ -19,4 +19,4 @@ DCE 5.0 provides security policies based on passwords and access control on the 
 
 After entering the global management, click __Settings__ -> __Security Policy__ in the left navigation bar to set the password policy and access control policy.
 
-
+![Security Policy](../../images/security-policy.png)

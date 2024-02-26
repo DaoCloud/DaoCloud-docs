@@ -25,7 +25,7 @@ The following explains the steps to create a Hosted Mesh/Dedicated Mesh:
     - Entry of control plane: Supports load balancer and custom.
     - Mesh component repo: Enter the address of the container registry that contains the data plane components, such as `release-ci.daocloud.io/mspider`.
 
-        ![Basic Information](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/create-mesh02.png)
+    ![Basic Information](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/create-mesh02.png)
 
 3. System settings. Configure whether to enable observability, set the scale of the mesh, select StorageClass, and click `Next`.
 
@@ -40,7 +40,7 @@ The following explains the steps to create a Hosted Mesh/Dedicated Mesh:
 
     ![Governance Settings](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/create-mesh04.png)
 
-5. Sidecar settings. Set global sidecar, sidecar resource limits, default sidecar log level, and click `OK`. See [Log Level Description](./params.md#_2).
+5. Sidecar settings. Set global sidecar, sidecar resource limits, default sidecar log level, Sidecar discovery limit, and sidecar registry setup, and click `OK`. See [Log Level Description](./params.md#parameter-description-for-creating-mesh).
 
     ![Sidecar Settings](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/create-mesh05.png)
 
@@ -48,5 +48,5 @@ The following explains the steps to create a Hosted Mesh/Dedicated Mesh:
 
 !!! info
 
-     After the hosted mesh is created, no hosted cluster has been connected, and the mesh is in the state of `not ready`.
-     Users can [add cluster](../cluster-management/README.md), wait for the cluster joined successfully, and select the cluster that requires service management.
+    After the hosted mesh is created, no hosted cluster has been connected, and the mesh is in the state of `not ready`.
+    Users can [add cluster](../cluster-management/README.md), wait for the cluster joined successfully, and select the cluster that requires service management.

@@ -26,15 +26,13 @@ Multus CR 管理，是 Spiderpool 对 Multus CNI 中配置实例的二次封装�
 
 请输入如下参数：
 
-![创建multus cr](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/networkconfig03.png)
+![创建multus cr](../images/multus01.png)
 
 参数说明:
 
 - `名称`：Multus CNI 配置的实例名称，即 Multus CR 名称。
 - `描述`：实例的描述信息。
 - `CNI 类型`：CNI 的类型，目前界面可选择 `macvlan`，`ipvlan`。
-- `IPv4 默认池`：CNI 配置文件 IPv4 默认池。
-- `IPv6 默认池`：CNI 配置文件 IPv6 默认池。
 - `VLAN ID`：当 CNI 类型为 `macvlan`，`ipvlan`，`sriov` 时被允许配置， "0" 和 ""的效果一样。
 - `网卡配置`：网卡配置中包含接口配置信息。
     - 请确保主网卡存在于主机上。
@@ -50,6 +48,8 @@ Multus CR 管理，是 Spiderpool 对 Multus CNI 中配置实例的二次封装�
     - balance-tlb
     - balance-alb
 
+- `IPv4 默认池`：CNI 配置文件 IPv4 默认池。
+- `IPv6 默认池`：CNI 配置文件 IPv6 默认池。
 参数是可选的, 输入格式为 `k1=v1;k2=v2;k3=v3`，用 `;` 隔开。
 
 #### VLAN 配置说明
@@ -72,13 +72,12 @@ Multus CR 管理，是 Spiderpool 对 Multus CNI 中配置实例的二次封装�
 
 请输入如下参数：
 
-![创建multus cr](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/sriov-rdma.png)
+![创建multus cr](../images/multus02.png)
 
 - `CNI 类型`：选择 SR-IOV
-- `RDMA`：默认不开启。如果需要开启，请满足 [RDMA 资源使用条件](../modules/spiderpool/install/rdmapara.md)
-- `IPv4/IPv6 默认池`:默认不设置，设置后，创建 workload 不添加 IP Pool 时，默认使用此 IP Pool。
 - `Vlan ID` : 必需填入 `0`
-- `SR-IOV 资源`：只用于`sriov`类型, 填写资源名称，不能为空。`如何查看 SR-IOV 资源` 请参考：[SR-IOV CNI 配置](../modules/multus-underlay/sriov.md)
+- `RDMA`：默认关闭。如果需要开启，请满足 [RDMA 资源使用条件](../modules/spiderpool/install/rdmapara.md)
+- `SR-IOV 资源`：只用于`sriov`类型, 选择资源名称。`如何查看 SR-IOV 资源` 请参考：[SR-IOV CNI 配置](../modules/multus-underlay/sriov.md)
 
 **SR-IOV 资源配置说明：**
 

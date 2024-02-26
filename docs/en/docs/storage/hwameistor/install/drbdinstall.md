@@ -1,4 +1,6 @@
 ---
+MTPE: windsonsea
+date: 2024-02-19
 hide:
   - toc
 ---
@@ -7,13 +9,14 @@ hide:
 
 If you need to use high-availability data volumes, enable DRDB when deploying Hwameistor. Here is how to install it:
 
-## Synchronous Installation during HwameiStor Deployment
+## Install DRDB while installing HwameiStor
 
-You can directly enable the DRDB component when installing HwameiStor. For details, please refer to [Install HwameiStor with Operator](deploy-operator.md)
+You can directly enable the DRDB component when installing HwameiStor.
+For details, please refer to [Install HwameiStor with Operator](deploy-operator.md).
 
 ## Install with UI
 
-1. Please go to `Container Management` -> `Helm Charts`, and select `drbd-adapter`.
+1. Go to `Container Management` -> `Helm Charts`, and select `drbd-adapter`.
 
 2. Click `drdb-adapter`, click install, and enter the configuration page.
 
@@ -27,25 +30,24 @@ You can directly enable the DRDB component when installing HwameiStor. For detai
 
 3. Click `OK` to complete the creation.
 
-## Installation Through Helm
+## Install with Helm
 
-If you are installing through Helm, please use the following method to install:
+Deploy the following `DaemonSet`. It will start a Pod on each Kubernetes worker node to install the DRBD module and tools.
 
-```console
-helm repo add hwameistor https://hwameistor.io/hwameistor
-
-helm repo update hwameistor
-
-helm pull hwameistor/drbd-adapter --untar
-
+```bash
+helm repo add drbd-adapter https://hwameistor.io/drbd-adapter/
+helm repo update drbd-adapter
+helm pull drbd-adapter/drbd-adapter --untar
 helm install drbd-adapter ./drbd-adapter -n hwameistor --create-namespace
 ```
 
-Users in Chinese mainland can use the image repository `daocloud.io/daocloud` for acceleration:
+!!! tip
 
-```console
-helm install drbd-adapter ./drbd-adapter \
-    -n hwameistor --create-namespace \
-    --set imagePullPolicy=Always \
-    --set registry=daocloud.io/daocloud
-```
+    Users in Chinese mainland can use the image repository `daocloud.io/daocloud` for acceleration:
+
+    ```bash
+    helm install drbd-adapter ./drbd-adapter \
+        -n hwameistor --create-namespace \
+        --set imagePullPolicy=Always \
+        --set registry=daocloud.io/daocloud
+    ```

@@ -4,6 +4,17 @@
 
 *[mcamel-redis]: mcamel 是 DaoCloud 所有中间件的开发代号，redis 是提供内存数据库缓存服务的中间件
 
+## 2024-01-31
+
+### v0.15.0
+
+#### 优化
+
+- **优化** Redis Operator 升级版本至 6.2.12
+- **优化** 在全局管理中增加 Redis 版本展示
+- **修复** Redis 集群模式扩容不生效问题（需升级 Operator）
+- **修复** Redis 集群模式支持 NodePort 访问（需升级 Operator）。
+
 ## 2023-12-31
 
 ### v0.14.0

@@ -50,6 +50,7 @@
           ip: xx.xx.xx.xx
           ansibleUser: "root"
           ansiblePass: "dangerous"
+    ```
 
 3. 开始安装
 
@@ -99,7 +100,7 @@
 
 2. 配置集群配置文件 `clusterConfig.yaml`。
 
-   参考以下配置，注意设置 `loadBalancer.type = cloudLB`，并填写主机的私网 IP 地址：
+    参考以下配置，注意设置 `loadBalancer.type = cloudLB`，并填写主机的私网 IP 地址：
 
     ```yaml title="clusterConfig.yaml"
     apiVersion: provision.daocloud.io/v1alpha3
@@ -136,11 +137,9 @@
 
 4. 安装阿里云 CCM
 
-    参考阿里云文档进行部署：https://help.aliyun.com/document_detail/377517.html
+    参考[阿里云文档](https://help.aliyun.com/document_detail/377517.html)进行部署。
 
-    注意事项：
-
-    - 文件 `ccm.yaml` 中的 `nodeSelector` 参数需要改动为 `node-role.kubernetes.io/control-plane: ""`
+    文件 `ccm.yaml` 中的 `nodeSelector` 参数需要改动为 `node-role.kubernetes.io/control-plane: ""`
 
     安装成功后如下图：
 
@@ -197,6 +196,7 @@
           ip: xx.xx.xx.xx
           ansibleUser: "root"
           ansiblePass: "dangerous"
+    ```
 
 3. 开始安装
 

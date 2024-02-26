@@ -1,311 +1,252 @@
+---
+MTPE: windsonsea
+date: 2024-02-19
+---
+
 # Offline Upgrade
 
-Workbench supports offline upgrades. You need to load the images from the
-[installation package](../download/modules/amamba.md) and then run the corresponding commands for the upgrade.
+The Workbench supports offline upgrades. You need to first load the image from the [installation package](../download/modules/amamba.md) and then run the corresponding command to upgrade.
 
-## Loading Images from the Installation Package
+```shell
+tar -vxf amamba_x.y.z_amd64.tar
+```
 
-There are two ways to load the images from the installation package.
+After unpacking, you will get a compressed bundle: amamba_x.y.z.bundle.tar
+
+## Load Image from Installation Package
+
+Support loading images in two ways.
 
 ### Sync Images via charts-syncer
 
-If you have an image repository in your environment, it is recommended to use
-charts-syncer to sync the images to the repository, which is more efficient and convenient.
+If there is an image repository in the environment, it is recommended to synchronize the images to the image repository through charts-syncer for more efficient and convenient operation.
 
-1. Create the __load-image.yaml__ file.
+1. Create `load-image.yaml` with the following content as the configuration file for charts-syncer.
 
-    > Note: All parameters in this YAML file are required. You need to have a private image repository and modify the relevant configurations.
+   All parameters in the `load-image.yaml` file are required. You need a private image repository and refer to the following instructions to modify each configuration. For detailed explanation of the charts-syncer configuration file, refer to its [official documentation](https://github.com/bitnami-labs/charts-syncer).
 
-    ```yaml title="load-image.yaml"
-    source:
-      intermediateBundlesPath: ghippo-offline # The relative path to run the charts-syncer command, not the relative path between this YAML file and the offline package.
-    target:
-      containerRegistry: 10.16.10.111 # The URL of the image repository
-      containerRepository: amamba # The specific project in the image repository
-      repo:
-        kind: HARBOR # It can also be any other supported Helm Chart repository type, such as ChartMuseum.
-        url: http://10.16.10.111/chartrepo/amamba # Modify it to the chart repo URL
-        auth: # Username/password
-          username: "admin"
-          password: "Harbor12345"
-      containers:
-        auth: # Username/password
-          username: "admin"
-          password: "Harbor12345"
-    ```
+    === "HARBOR chart repo already installed"
 
-    !!! note "If the chart repo is not installed in the current environment, you can also export the chart as a __tgz__ file using chart-syncer and place it in the specified path."
+        If the HARBOR chart repo is already installed in the environment, charts-syncer also supports exporting the chart as a tgz file.
 
         ```yaml title="load-image.yaml"
         source:
-            intermediateBundlesPath: amamba-offline # The relative path to run the charts-syncer command, not the relative path between this YAML file and the offline package.
+          intermediateBundlesPath: amamba-offline # (1)
         target:
-            containerRegistry: 10.16.10.111 # Modify it to your image repository URL
-            containerRepository: release.daocloud.io/amamba # Modify it to your image repository
-            repo:
-              kind: LOCAL
-              path: ./local-repo # Local path to the chart
-            containers:
-              auth:
-                username: "admin" # Your image repository username
-                password: "Harbor12345" # Your image repository password
+          containerPrefixRegistry: 10.16.10.111 # (2)
+          repo:
+            kind: HARBOR # (3)
+            url: http://10.16.10.111/chartrepo/release.daocloud.io # (4)
+            auth:
+              username: "admin" # (5)
+              password: "Harbor12345" # (6)
+          containers:
+            auth:
+              username: "admin" # (7)
+              password: "Harbor12345" # (8) 
         ```
 
-2. Run the following command to sync the images.
+        1. Relative path to run the charts-syncer command, not the relative path between this YAML file and the offline package
+        2. Change to your image repository url
+        3. Can also be any other supported Helm Chart repository category
+        4. Change to the chart repo project url
+        5. Your image repository username
+        6. Your image repository password
+        7. Your image repository username
+        8. Your image repository password
 
-    ```bash
+    === "CHARTMUSEUM chart repo already installed"
+
+        If the CHARTMUSEUM chart repo is already installed in the environment, charts-syncer also supports exporting the chart as a tgz file.
+
+        ```yaml title="load-image.yaml"
+        source:
+          intermediateBundlesPath: amamba-offline # (1)
+        target:
+          containerPrefixRegistry: 10.16.10.111 # (2)
+          repo:
+            kind: CHARTMUSEUM # (3)
+            url: http://10.16.10.111 # (4)
+            auth:
+              username: "rootuser" # (5)
+              password: "rootpass123" # (6)
+          containers:
+            auth:
+              username: "rootuser" # (7)
+              password: "rootpass123" # (8) 
+        ```
+
+        1. Relative path to run the charts-syncer command, not the relative path between this YAML file and the offline package
+        2. Change to your image repository url
+        3. Can also be any other supported Helm Chart repository category
+        4. Change to chart repo url
+        5. Your image repository username, if chartmuseum does not have login authentication enabled, you do not need to fill in auth
+        6. Your image repository password
+        7. Your image repository username
+        8. Your image repository password
+
+    === "Chart repo not installed"
+
+        If the chart repo is not installed in the current environment, charts-syncer also supports exporting the chart as a `tgz` file and storing it in a specified path.
+
+        ```yaml
+        source:
+          intermediateBundlesPath: amamba-offline # (1)
+        target:
+          containerRegistry: 10.16.23.145 # (2)
+          containerRepository: release.daocloud.io/amamba # (3)
+          repo:
+            kind: LOCAL
+            path: ./local-repo # (4)
+          containers:
+            auth:
+              username: "admin" # (5)
+              password: "Harbor12345" # (6)
+        ```
+
+        1. Relative path to run the charts-syncer command, not the relative path between this YAML file and the offline package
+        2. Change to your image repository url
+        3. Change to your image repository
+        4. Local path of the chart
+        5. Your image repository username
+        6. Your image repository password
+
+2. Place amamba_x.y.z.bundle.tar in the amamba-offline folder.
+
+3. Run the command to sync images.
+
+    ```shell
     charts-syncer sync --config load-image.yaml
     ```
 
 ### Load Images Directly via Docker or containerd
 
-1. Run the following command to extract the images.
+1. Unpack the `tar` compressed bundle.
 
     ```shell
-    tar xvf amamba.bundle.tar
+    tar -vxf amamba_x.y.z.bundle.tar
     ```
 
-    After successful extraction, you will have three files: __images.tar__ , __hints.yaml__ , and __original-chart__ .
+    After successful unpacking, you will get 3 files:
 
-1. Run the following command to load the images from the local directory into Docker or containerd.
+    - hints.yaml
+    - images.tar
+    - original-chart
 
-    > Note: Perform the following steps on **each node** in the cluster. After loading the images,
-    > make sure to tag them to ensure consistency with the Registry and Repository used during installation.
+2. Run the following command to load the images from the local to Docker or containerd.
 
-    ```shell
-    docker load -i images.tar # for Docker
-    ctr -n k8s.io image import images.tar # for containerd
-    ```
+    === "Docker"
+
+        ```shell
+        docker load -i images.tar
+        ```
+
+    === "containerd"
+
+        ```shell
+        ctr -n k8s.io image import images.tar
+        ```
+
+!!! note
+
+    - Images need to be loaded via Docker or containerd on each node.
+    - After loading, the images need to be tagged to match the Registry, Repository, and installation consistency.
 
 ## Upgrade
 
-1. Check if the Helm repository for Workbench exists:
+=== "Upgrade via helm repo"
 
-    ```shell
-    helm repo list | grep amamba
-    ```
+    1. Check if the Workbench helm repository exists.
 
-    If the result is empty or shows an __Error: no repositories to show__ message,
-    run the following command to add the Helm repository for Workbench:
-
-    ```shell
-    helm repo add amamba http://{harbor url}/chartrepo/{project}
-    ```
-
-2. Update the Helm repository for Workbench:
-
-    ```shell
-    helm repo update amamba
-    ```
-
-    Note that a low version of Helm can cause the update to fail.
-    If it fails, try executing __helm update repo__ .
-
-3. Back up the __--set__ parameters. Before upgrading the global management version,
-   it is recommended to back up the __--set__ parameters of the old version using the following command:
-
-    ```shell
-    helm get values ghippo -n ghippo-system -o yaml > amamba.bak.yaml
-    ```
-
-4. Choose the desired version of Workbench to install (it is recommended to install the latest version):
-
-    ```shell
-    helm search repo amamba-release-ci --versions | head
-    ```
-
-    The output will be similar to:
-
-    ```console
-    NAME                       CHART VERSION   APP VERSION  DESCRIPTION                               
-    amamba-release-ci/amamba   0.14.0  	       0.14.0  	    Amamba is the entrypoint to DCE 5.0, provides de...
-    ```
-
-5. Modify the __registry__ and __tag__ in the __amamba.bak.yaml__ file.
-
-    ??? note "Click to view an example YAML file"
-
-        ```yaml title="amamba.bak.yaml"
-        amambaSyncer:
-          resources:
-            limits:
-              cpu: 200m
-              memory: 256Mi
-            requests:
-              cpu: 20m
-              memory: 128Mi
-        apiServer:
-          configMap:
-            debug: true
-          fromJar:
-            image:
-              registry: releas-ci.daocloud.io
-              repository: docker/library/openjdk
-              tag: 11.0-jre-slim
-          image:
-            registry: release-ci.daocloud.io
-            repository: amamba/amamba-apiserver
-          resources:
-            limits:
-              cpu: "2"
-              memory: 2Gi
-            requests:
-              cpu: 20m
-              memory: 150Mi
-        argo-cd:
-          applicationSet:
-            enabled: false
-            image:
-              repository: release-ci.daocloud.io/quay/argoproj/argocd
-              tag: v2.4.12
-          controller:
-            image:
-              repository: release-ci.daocloud.io/quay/argoproj/argocd
-              tag: v2.4.12
-            resources:
-              limits:
-                cpu: "2"
-                memory: 2Gi
-              requests:
-                cpu: 100m
-                memory: 256Mi
-          dex:
-            enabeld: true
-            image:
-              repository: release-ci.daocloud.io/ghcr/dexidp/dex
-              tag: v2.32.0
-            initImage:
-              repository: release-ci.daocloud.io/quay/argoproj/argocd
-              tag: v2.4.12
-            resources:
-              limits:
-                cpu: 50m
-                memory: 64Mi
-              requests:
-                cpu: 10m
-                memory: 16Mi
-          enabled: true
-          notifications:
-            enabled: false
-          redis:
-            enabled: true
-            image:
-              repository: release-ci.daocloud.io/docker/library/redis
-              tag: 7.0.4-alpine
-            metrics:
-              enabled: false
-            resources:
-              limits:
-                cpu: 200m
-                memory: 128Mi
-              requests:
-                cpu: 5m
-                memory: 16Mi
-          repoServer:
-            image:
-              repository: release-ci.daocloud.io/quay/argoproj/argocd
-              tag: v2.4.12
-            resources:
-              limits:
-                cpu: 200m
-                memory: 256Mi
-              requests:
-                cpu: 5m
-                memory: 8Mi
-          server:
-            image:
-              repository: release-ci.daocloud.io/quay/argoproj/argocd
-              tag: v2.4.12
-            resources:
-              limits:
-                cpu: 250m
-                memory: 256Mi
-              requests:
-                cpu: 5m
-                memory: 8Mi
-            service:
-              nodePortHttp: 31886
-              nodePortHttps: 31887
-              type: NodePort
-        argo-rollouts:
-          controller:
-            image:
-              registry: release-ci.daocloud.io
-              repository: quay/argoproj/argo-rollouts
-              tag: v1.2.0
-            resources:
-              limits:
-                cpu: 100m
-                memory: 128Mi
-              requests:
-                cpu: 16m
-                memory: 128Mi
-          dashboard:
-            enabled: true
-            image:
-              registry: release-ci.daocloud.io
-              repository: quay/argoproj/kubectl-argo-rollouts
-              tag: v1.2.0
-            resources:
-              limits:
-                cpu: 100m
-                memory: 128Mi
-              requests:
-                cpu: 10m
-                memory: 16Mi
-            service:
-              nodePort: 30070
-              type: NodePort
-          enabled: true
-        devopsServer:
-          enabled: true
-          image:
-            registry: release-ci.daocloud.io
-            repository: amamba/amamba-devops-server
-          resources:
-            limits:
-              cpu: "2"
-              memory: 2Gi
-            requests:
-              cpu: 50m
-              memory: 160Mi
-        global:
-          amamba:
-            imageTag: v0.13-dev-a8ca782a
-          imageRegistry: release-ci.daocloud.io
-        mysql:
-          busybox:
-            repository: docker/busybox
-            tag: 1.35.0
-          image:
-            repository: docker/mysql
-            tag: 5.7.30
-          persistence:
-            size: 20Gi
-          resources:
-            limits:
-              cpu: 500m
-              memory: 512Mi
-            requests:
-              cpu: 20m
-              memory: 256Mi
-        ui:
-          image:
-            tag: v0.15.0-dev-fd64789e
-          resources:
-            limits:
-              cpu: 100m
-              memory: 128Mi
-            requests:
-              cpu: 5m
-              memory: 4Mi
-        
+        ```shell
+        helm repo list | grep amamba
         ```
 
-6. Run the following commands to upgrade.
+        If the result is empty or shows the following message, proceed to the next step; otherwise, skip the next step.
 
-    ```shell
-    helm upgrade amamba . \
-      -n amamba-system \
-      -f ./amamba.bak.yaml
-    ```
+        ```none
+        Error: no repositories to show
+        ```
+
+    2. Add the helm repository for Workbench.
+
+        ```shell
+        helm repo add amamba-release http://{harbor url}/chartrepo/{project}
+        ```
+
+    3. Update the helm repository for Workbench.
+
+        ```shell
+        helm repo update amamba-release # (1)
+        ```
+
+        1. If the Helm version is too low and the update fails, try executing helm update repo
+
+    4. Choose the version of the Workbench you want to install (recommended to install the latest version).
+
+        ```shell
+        helm search repo amamba-release/amamba --versions
+        ```
+
+        ```text
+        NAME                    CHART VERSION  APP VERSION  DESCRIPTION
+        amamba-release/amamba	 0.24.0         0.24.0       Amamba is the entrypoint to DCE5.0, provides de...
+        amamba-release/amamba	 0.23.0         0.23.0       Amamba is the entrypoint to DCE5.0, provides de...
+        amamba-release/amamba	 0.22.1         0.22.1       Amamba is the entrypoint to DCE5.0, provides de...
+        amamba-release/amamba	 0.22.0         0.22.0       Amamba is the entrypoint to DCE5.0, provides de...
+        amamba-release/amamba	 0.21.2         0.21.2       Amamba is the entrypoint to DCE5.0, provides de...
+        amamba-release/amamba	 0.21.1         0.21.1       Amamba is the entrypoint to DCE5.0, provides de...
+        amamba-release/amamba	 0.21.0         0.21.0       Amamba is the entrypoint to DCE5.0, provides de...
+        ...
+        ```
+
+    5. Back up the `--set` parameters.
+
+        Before upgrading the Workbench version, it is recommended to run the following command to back up the `--set` parameters of the old version.
+
+        ```shell
+        helm get values amamba -n amamba-system -o yaml > bak.yaml
+        ```
+
+    6. Run `helm upgrade`.
+
+        Before upgrading, it is recommended to overwrite the `global.imageRegistry` field in bak.yaml with the current image repository address.
+
+        ```shell
+        export imageRegistry={your image repository}
+        ```
+
+        ```shell
+        helm upgrade amamba amamba-release/amamba \
+          -n amamba-system \
+          -f ./bak.yaml \
+          --set global.imageRegistry=$imageRegistry \
+          --version 0.24.0
+        ```
+
+=== "Upgrade via chart package"
+
+    1. Prepare the `original-chart` (obtained by unpacking amamba_x.y.z.bundle.tar).
+
+    2. Back up the `--set` parameters.
+
+        Before upgrading the Workbench version, it is recommended to run the following command to back up the `--set` parameters of the old version.
+
+        ```shell
+        helm get values amamba -n amamba-system -o yaml > bak.yaml
+        ```
+
+    3. Run `helm upgrade`.
+
+        Before upgrading, it is recommended to overwrite the `global.imageRegistry` field in bak.yaml with the current image repository address.
+
+        ```shell
+        export imageRegistry={your image repository}
+        ```
+
+        ```shell
+        helm upgrade amamba original-chart \
+          -n amamba-system \
+          -f ./bak.yaml \
+          --set global.imageRegistry=$imageRegistry
+        ```

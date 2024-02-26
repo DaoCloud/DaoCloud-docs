@@ -9,7 +9,7 @@ hide:
 
 1. 在 Elasticsearch 实例列表中点击一个实例名称。
 
-    ![概览](../images/list01.png)
+    ![概览](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/elasticsearch/images/list01.png)
 
 2. 在左侧导航栏点击`实例监控`，进入实例监控大屏。
 

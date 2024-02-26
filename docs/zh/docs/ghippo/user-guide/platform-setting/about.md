@@ -15,7 +15,7 @@ hide:
 
 2. 点击 __平台设置__ ，选择 __关于平台__ ，查看产品版本、开源软件声明和技术团队。
 
-    ![关于平台](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/about05.png)
+    ![关于平台](../../images/about05.png)
 
     **License 声明**
 

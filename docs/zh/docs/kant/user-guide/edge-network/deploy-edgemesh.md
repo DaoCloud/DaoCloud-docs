@@ -94,7 +94,7 @@ agent:
   psk: JugH9HP1XBouyO5pWGeZa8LtipDURrf17EJvUHcJGuQ=
 
   relayNodes:
-   - nodeName: masternode ## your relay node name
+  - nodeName: masternode ## your relay node name
     advertiseAddress:
     - x.x.x.x ## your relay node ip
 
@@ -111,10 +111,10 @@ agent:
 
 1. 选择左侧导航栏的 __容器管理__ -> __集群列表__ ，进入集群列表页面，点击 __集群名称__ ，进入集群详情页。
 
-1. 选择左侧菜单 __Helm 应用__ -> __Helm 应用__ ，进入 Helm 应用列表页面。
+1. 选择左侧菜单 __Helm 应用__ ，进入 Helm 应用列表页面。
 
 1. 查看 Helm 应用的状态，当前状态为 __已部署__ 表示 EdgeMesh 应用部署成功。
 
- ![EdgeMesh 部署成功](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/deploy-edgemesh-12.png)
+    ![EdgeMesh 部署成功](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/deploy-edgemesh-12.png)
 
 下一步：[创建服务](service.md)

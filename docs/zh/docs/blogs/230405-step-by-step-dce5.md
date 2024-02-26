@@ -94,7 +94,7 @@ last_updated:
 
 ### 安装容器运行时（containerd）
 
-1. 如果是 CentOS 8.x，要先卸载系统预装的 Podman，否则会版本冲突（[注意]🔥）
+1. 如果是 CentOS 8.x，要先卸载系统预装的 Podman，否则会版本冲突
 
     ```bash
     yum erase podman buildah -y
@@ -176,7 +176,7 @@ last_updated:
     sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
     ```
   
-1. 安装 Kubernetes 组件，版本以 1.25.8 为例（DCE 5.0 对 1.26 暂时不支持）
+1. 安装 Kubernetes 组件，版本以 1.25.8 为例
 
     ```bash
     export K8sVersion=1.25.8
