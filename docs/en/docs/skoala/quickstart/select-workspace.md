@@ -20,4 +20,4 @@ If you need to change the current workspace, click the change icon in the left s
 
 [Download DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../../install/index.md) { .md-button .md-button--primary }
-[Free Try](../../dce/license0.md) { .md-button .md-button--primary }
+[Free Trial](../../dce/license0.md) { .md-button .md-button--primary }

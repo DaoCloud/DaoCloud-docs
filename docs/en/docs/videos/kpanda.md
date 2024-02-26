@@ -86,4 +86,4 @@ Refer to the [HwameiStor Introduction](../storage/hwameistor/intro/index.md) doc
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/hwa.mp4" preload="metadata" poster="images/hwacover.png"></video>
 </div>
 
-[Free Try](../dce/license0.md){ .md-button .md-button--primary }
+[Free Trial](../dce/license0.md){ .md-button .md-button--primary }

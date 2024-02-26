@@ -172,4 +172,4 @@ The installation guide may change. Please bookmark this page and follow the upda
     ![DCE Community Exchange Group](https://docs.daocloud.io/daocloud-docs-images/docs/images/assist.png)
 
 [Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
-[Free Try](../dce/license0.md){ .md-button .md-button--primary }
+[Free Trial](../dce/license0.md){ .md-button .md-button--primary }

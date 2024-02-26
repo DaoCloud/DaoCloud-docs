@@ -582,7 +582,7 @@ nav:
                   - 虚拟机模板: virtnest/template/tep.md
               - 虚拟机镜像: virtnest/vm-image/index.md
               - 导入 Ubuntu 系统的虚拟机: virtnest/import/import-ubuntu.md
-      - 可观测:
+      - 微服务:
           - 可观测性:
               - 介绍:
                   - 可观测性: insight/intro/index.md
@@ -674,7 +674,6 @@ nav:
                   - K8s 兼容性测试: insight/compati-test/k8s-compatibility.md
                   - Rancher 兼容性测试: insight/compati-test/rancher-compatibility.md
                   - Openshift 兼容性测试: insight/compati-test/ocp-compatibility.md
-      - 微服务:
           - 微服务引擎:
               - 介绍:
                   - 索引: skoala/intro/index.md
@@ -863,7 +862,7 @@ nav:
                   - 功能介绍: middleware/common/feature.md
                   - 版本适配: middleware/compatibility.md
                   - 权限设计说明: middleware/permission.md
-              - 通用配置:
+              - 中间件通用配置:
                   - 首次进入: middleware/common/index.md
                   - 自定义角色权限说明: middleware/common/permissions.md
                   - 配置管理: middleware/common/config.md
@@ -1173,9 +1172,8 @@ nav:
           - 多云编排: videos/kairship.md
           - 镜像仓库: videos/kangaroo.md
           - 容器网络: videos/network.md
-      - 可观测:
-          - 可观测性: videos/insight.md
       - 微服务:
+          - 可观测性: videos/insight.md
           - 微服务引擎: videos/skoala.md
           - 服务网格: videos/mspider.md
       - 数据服务:
