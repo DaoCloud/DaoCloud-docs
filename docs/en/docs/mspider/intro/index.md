@@ -114,6 +114,7 @@ flowchart TD
     inject -.-> sidecar[Mesh Sidecar]
     inject -.-> watch[Traffic Monitor]
     inject -.-> gateway[Mesh Gateway]
+    inject -.-> config[Mesh Config]
     inject -.-> upgrade[Upgrade]
     
 
@@ -122,6 +123,7 @@ flowchart TD
     security -.-> peer[Peer Authentication<br>Request Authentication<br>Authorization Policy]
     sidecar -.-> sidecarm[Namespace Sidecar<br>Workload Sidecar<br>Traffic Passthrough]
     watch -.-> watch2[Traffic Monitor<br>Traffic Topology]
+    config -.-> intercon[Network Interconnection<br>Istio Resources<br>TLS Secret]
     upgrade -.-> upgrade1[Upgrade Istio<br>Upgrade Sidecar]
 
     classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
@@ -129,7 +131,7 @@ flowchart TD
     classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
     class mesh plain
-    class install,service,gateway,traffic,watch,upgrade,security,entry,virtual,peer,cluster,sidecar,sidecarm,watch2,managed,private,external,namespace,workload,upgrade1 cluster
+    class install,service,gateway,traffic,watch,upgrade,security,entry,virtual,peer,cluster,sidecar,sidecarm,watch2,managed,private,external,namespace,workload,upgrade1,config,intercon cluster
 
     click install "https://docs.daocloud.io/en/mspider/install/install/"
     click managed "https://docs.daocloud.io/en/mspider/user-guide/service-mesh/"
@@ -151,6 +153,7 @@ flowchart TD
     click sidecar "https://docs.daocloud.io/en/mspider/user-guide/sidecar-management/ns-sidecar/"
     click sidecarm "https://docs.daocloud.io/en/mspider/user-guide/sidecar-management/passthrough/"
     click watch2 "https://docs.daocloud.io/en/mspider/user-guide/traffic-monitor/conn-topo/"
+    click intercon "https://docs.daocloud.io/en/mspider/user-guide/multicluster/cluster-interconnect/"
 ```
 
 [Download DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
