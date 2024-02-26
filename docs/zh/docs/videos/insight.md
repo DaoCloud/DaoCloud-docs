@@ -20,7 +20,7 @@
 
 ## 安装 insight-agent
 
-参阅[安装 insight-agent](../insight/quickstart/install/install-agent.md)文档页面。
+参阅[安装 insight-agent](../insight/quickstart/install/install-agent.md)文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/insight-agent.mp4" preload="metadata" poster="images/insight-agent.png"></video>
@@ -28,7 +28,7 @@
 
 ## 仪表盘
 
-参阅[仪表盘](../insight/user-guide/dashboard/dashboard.md)文档页面。
+参阅[仪表盘](../insight/user-guide/dashboard/dashboard.md)文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/dashboard.mp4" preload="metadata" poster="images/insight-dashboard.png"></video>
@@ -36,7 +36,7 @@
 
 ## 容器监控
 
-参阅[容器监控](../ghippo/user-guide/workspace/folders.md)文档页面。
+参阅[容器监控](../ghippo/user-guide/workspace/folders.md)文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/container-monitor.mp4" preload="metadata" poster="images/insight-container.png"></video>
@@ -52,7 +52,7 @@
 
 ## 日志查询
 
-参阅[日志查询](../insight/user-guide/data-query/log.md)文档页面。
+参阅[日志查询](../insight/user-guide/data-query/log.md)文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/logs.mp4" preload="metadata" poster="images/insight-log.png"></video>
@@ -60,7 +60,7 @@
 
 ## 事件查询
 
-参阅[事件查询](../insight/user-guide/infra/event.md)文档页面。
+参阅[事件查询](../insight/user-guide/infra/event.md)文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/event-query.mp4" preload="metadata" poster="images/event-query.jpg"></video>
@@ -68,7 +68,7 @@
 
 ## 告警中心
 
-参阅[告警中心](../insight/user-guide/alert-center/alert-policy.md)文档页面。
+参阅[告警中心](../insight/user-guide/alert-center/alert-policy.md)文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/alerts.mp4" preload="metadata" poster="images/insight-alert.png"></video>
@@ -76,7 +76,7 @@
 
 ## 系统管理
 
-参阅[修改系统配置](../insight/user-guide/system-config/modify-config.md)文档页面。
+参阅[修改系统配置](../insight/user-guide/system-config/modify-config.md)文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/sys-config.mp4" preload="metadata" poster="images/insight-sysconfig.png"></video>
@@ -84,10 +84,12 @@
 
 ## 拨测
 
-参阅[拨测](../insight/user-guide/infra/probe.md)文档页面。
+参阅[拨测](../insight/user-guide/infra/probe.md)文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/Insight-probe.mp4" preload="metadata" poster="images/insight-probe.png"></video>
 </div>
 
+[下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

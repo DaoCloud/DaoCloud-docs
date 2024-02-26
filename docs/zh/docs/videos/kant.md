@@ -6,8 +6,12 @@
 
 ## 创建边缘单元
 
-参阅[云边协同](../kant/intro/index.md)文档页面。
+参阅[云边协同](../kant/intro/index.md)文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/edge-unit.mp4" preload="metadata" poster="images/edge-unit.jpg"></video>
 </div>
+
+[下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }
+[申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }

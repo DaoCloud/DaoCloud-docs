@@ -20,7 +20,7 @@
 
 ## 创建 Pod 多网卡场景
 
-参阅 [multus-underlay](../network/modules/multus-underlay/index.md) 文档页面。
+参阅 [multus-underlay](../network/modules/multus-underlay/index.md) 文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/pod-cnis.mp4" preload="metadata" poster="images/net-cnis.png"></video>
@@ -28,7 +28,7 @@
 
 ## F5network 的安装与使用
 
-参阅 [F5 安装](../network/modules/f5networks/install.md) 文档页面。
+参阅 [F5 安装](../network/modules/f5networks/install.md) 文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/f5network.mp4" preload="metadata" poster="images/net-f5.png"></video>
@@ -36,7 +36,7 @@
 
 ## SR-IOV 的安装与使用
 
-参阅 [SR-IOV](../network/modules/multus-underlay/sriov.md) 文档页面。
+参阅 [SR-IOV](../network/modules/multus-underlay/sriov.md) 文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/SR-IOV.mp4" preload="metadata" poster="images/net-sriov.png"></video>
@@ -44,7 +44,7 @@
 
 ## Ingress Nginx 的安装与使用
 
-参阅 [Ingress Nginx](../network/modules/ingress-nginx/index.md) 文档页面。
+参阅 [Ingress Nginx](../network/modules/ingress-nginx/index.md) 文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/ingress-nginx.mp4" preload="metadata" poster="images/net-nginx.png"></video>
@@ -52,7 +52,7 @@
 
 ## MetalLB 的安装与使用
 
-参阅 [MetalLB](../network/modules/metallb/index.md) 文档页面。
+参阅 [MetalLB](../network/modules/metallb/index.md) 文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/MetalLB.mp4" preload="metadata" poster="images/net-metallb.png"></video>
@@ -68,7 +68,7 @@
 
 ## 在阿里云环境运行 Spiderpool
 
-参阅 Spiderpool [阿里云环境运行](https://docs.daocloud.io/network/modules/spiderpool/alibabacloud.html)文档页面。
+参阅 Spiderpool [阿里云环境运行](https://docs.daocloud.io/network/modules/spiderpool/alibabacloud.html)文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/alicloud.mp4" preload="metadata" poster="images/net-spiderpool.jpeg"></video>
@@ -76,7 +76,7 @@
 
 ## 自建集群安装 EgressGateway
 
-参阅[自建集群安装 EgressGateway](https://spidernet-io.github.io/egressgateway/dev/zh/usage/Install/#egressgateway_1)文档页面。
+参阅[自建集群安装 EgressGateway](https://spidernet-io.github.io/egressgateway/dev/zh/usage/Install/#egressgateway_1)文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/egress-gw.mp4" preload="metadata" poster="images/egress.jpg"></video>
@@ -90,4 +90,6 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/rdma.mp4" preload="metadata" poster="images/rdma.jpg"></video>
 </div>
 
+[下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
+[安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
