@@ -10,7 +10,7 @@ You can see that some alert rules have been set under it. You can add more rules
 
 ![alertmanager.rules](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/alert-policy02.png)
 
-## Creating Alert Policies
+## Create Alert Policies
 
 1. Select __Alert Center__ -> __Alert Policies__ , and click the __Create Alert Policy__ button.
 
@@ -44,12 +44,11 @@ You can see that some alert rules have been set under it. You can add more rules
 
     The newly created alert policy is in the __Not Triggered__ state. Once the threshold conditions and duration specified in the rules are met, it will change to the __Triggered__ state.
 
-### Creating Log Rules
+### Create Log Rules
 
 After filling in the basic information, click __Add Rule__ and select __Log Rule__ as the rule type.
 
 Creating log rules is supported only when the resource object is selected as a node or workload.
-
 
 **Field Explanation:**
 
@@ -59,7 +58,7 @@ Creating log rules is supported only when the resource object is selected as a n
 - __Threshold Condition__ : Enter the alert threshold value in the input box. When the set threshold is reached, an alert will be triggered. Supported comparison operators are: >, ≥, =, ≤, <.
 - __Alert Level__ : Select the alert level to indicate the severity of the alert.
 
-### Creating Event Rules
+### Create Event Rules
 
 After filling in the basic information, click __Add Rule__ and select __Event Rule__ as the rule type.
 

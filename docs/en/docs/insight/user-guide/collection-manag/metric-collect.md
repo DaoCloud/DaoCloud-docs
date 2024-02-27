@@ -8,7 +8,7 @@ Prometheus primarily uses the Pull approach to retrieve monitoring metrics from 
 
 !!! note
 
-    [ ] indicates optional configuration items.
+    `[ ]` indicates optional configuration items.
 
 ## Native Job Configuration
 

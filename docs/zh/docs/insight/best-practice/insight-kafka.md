@@ -80,7 +80,8 @@
 
 如果你对 Logstash 技术栈比较熟悉，你可以继续使用该方式。
 
-当你通过 Helm 部署 [Logstash](https://github.com/elastic/helm-charts/tree/main/logstash) 的时候，在 __logstashPipeline__ 中增加如下 Pipeline 即可：
+当你通过 Helm 部署 [Logstash](https://github.com/elastic/helm-charts/tree/main/logstash) 的时候，
+在 __logstashPipeline__ 中增加如下 Pipeline 即可：
 
 ```yaml
 replicas: 3

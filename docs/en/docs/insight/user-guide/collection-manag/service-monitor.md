@@ -35,8 +35,8 @@ The cluster has the Helm application __insight-agent__ installed and in the __ru
             port: http
       namespaceSelector: # (4)
         matchNames:
-          - insight-system  # The namespace where the application that needs to expose metrics is located.
-      selector: # (5)
+          - insight-system  # (5)
+      selector: # (6)
         matchLabels:
           micrometer-prometheus-discovery: "true"
     ```
@@ -70,4 +70,5 @@ The cluster has the Helm application __insight-agent__ installed and in the __ru
                 - insight-system
             ```
 
-    5. Used to select the Service.
+    5. The namespace where the application that needs to expose metrics is located
+    5. Used to select the Service
