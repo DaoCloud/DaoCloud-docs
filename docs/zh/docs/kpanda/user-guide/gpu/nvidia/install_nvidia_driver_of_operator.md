@@ -1,14 +1,15 @@
 # GPU Operator 离线安装
 
-DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。本文介绍如何离线部署 GPU Operator。本章节覆盖 NVIDIA GPU 的多种使用模式的参数配置。
+DCE 5.0 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
+本文介绍如何离线部署 GPU Operator，覆盖 NVIDIA GPU 以下几种使用模式的参数配置。
 
-    !!! note
+- 整卡模式
+- vGPU 模式
+- MIG 模式
 
-         安装后不支持 MIG 与 整卡/vgpu 模式的切换，请提前规划使用模式（支持 GPU 整卡与 vgpu 模式的一键切换）。
-         
-- GPU 整卡模式
-- GPU vGPU 模式
-- GPU MIG 模式
+!!! note
+
+    安装后不支持从 MIG 模式切换为整卡模式或 vGPU 模式，仅支持整卡模式与 vGPU 模式的一键切换，请提前规划好您的使用模式。
 
 详情请参考：[NVIDIA GPU 卡使用模式](index.md)，本文使用的 AMD 架构的 Centos 7.9 （3.10.0-1160）进行演示。如需使用 redhat8.4 部署，
 请参考[向火种节点仓库上传 RedHat GPU Opreator 离线镜像](./push_image_to_repo.md)和[构建 RedHat 8.4 离线 yum 源](./upgrade_yum_source_redhat8_4.md)。
