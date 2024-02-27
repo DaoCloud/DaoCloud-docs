@@ -111,7 +111,7 @@ __DevicePlugin.enable__ ：配置是否启用 kubernentes [DevicePlugin](https:/
 
 #### Toolkit 配置参数
 
-1. __Toolkit.enable__ ：默认开启，主要用于加速并行计算应用程序的开发和优化。
+1. __Toolkit.enable__ ：默认开启，该组件让 conatainerd/docker 支持运行需要gpu的容器。
 
 2. __Toolkit.image__ ：配置 Toolkit 镜像，推荐默认镜像： __nvidia/k8s/container-toolkit__ 。
 
