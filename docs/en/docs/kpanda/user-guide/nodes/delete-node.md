@@ -1,4 +1,4 @@
-# Cluster node shrinkage
+# Cluster Node Shrinkage
 
 When the peak business period is over, in order to save resource costs, you can reduce the size of the cluster and unload redundant nodes, that is, node scaling. After a node is uninstalled, applications cannot continue to run on the node.
 
@@ -21,14 +21,14 @@ When the peak business period is over, in order to save resource costs, you can 
 
 1. On the __Clusters__ page, click the name of the target cluster.
 
-    If the __Cluster Role__ has the tag __Access Cluster__ , it means that the cluster does not support node expansion and contraction.
+    If the __Cluster Type__ has the tag __Integrate Cluster__ , it means that the cluster does not support node expansion and contraction.
 
-    
+    ![Clusters](../images/addnode01.png)
 
-2. Click __Node Management__ on the left navigation bar, find the node to be uninstalled, click __ⵗ__ and select __Remove Node__ .
+2. Click __Nodes__ on the left navigation bar, find the node to be uninstalled, click __ⵗ__ and select __Remove__ .
 
-    
+    ![Remove Nodes](../images/deletenode01.png)
 
 3. Enter the node name, and click __Delete__ to confirm.
 
-    
+    ![Delete](../images/deletenode02.png)
