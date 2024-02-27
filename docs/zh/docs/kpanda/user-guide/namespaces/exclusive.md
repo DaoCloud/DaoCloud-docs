@@ -114,17 +114,17 @@
 
     2. 点击命名空间名称，然后点击 __独享节点__ 页签，在下方右侧点击 __添加节点__ 。
 
-        ![命名空间](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/exclusive02.png)
+        ![添加节点](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/exclusive02.png)
 
     3. 在页面左侧选择让该命名空间独享哪些节点，在右侧可以清空或删除某个已选节点，最后在底部点击 __确定__ 。
 
-        ![命名空间](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/exclusive03.png)
+        ![确定](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/exclusive03.png)
 
     4. 可以在列表中查看此命名空间的已有的独享节点，在节点右侧可以选择 __取消独享__ 。
 
         > 取消独享之后，其他命名空间下的 Pod 也可以被调度到该节点上。
 
-        ![命名空间](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/exclusive04.png)
+        ![取消独享](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/exclusive04.png)
 
 ## 在 非 Global 集群上启用命名空间独享节点
 
@@ -178,26 +178,26 @@
 
     2. 点击命名空间名称，然后点击 __独享节点__ 页签，在下方右侧点击 __添加节点__ 。
 
-        ![命名空间](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/exclusive02.png)
+        ![添加节点](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/exclusive02.png)
 
     3. 在页面左侧选择让该命名空间独享哪些节点，在右侧可以清空或删除某个已选节点，最后在底部点击 __确定__ 。
 
-        ![命名空间](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/exclusive03.png)
+        ![确定](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/exclusive03.png)
 
     4. 可以在列表中查看此命名空间的已有的独享节点，在节点右侧可以选择 __取消独享__ 。
 
         > 取消独享之后，其他命名空间下的 Pod 也可以被调度到该节点上。
 
-        ![命名空间](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/exclusive04.png)
+        ![取消独享](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/exclusive04.png)
 
 3. 为需要高可用的组件所在的命名空间添加容忍注解（可选）
 
-    执行如下命令，需要高可用的组件所在的命名空间添加注解：`scheduler.alpha.kubernetes.io/defaultTolerations: '[{"operator": "Exists", "effect": 
+    执行如下命令，需要高可用的组件所在的命名空间添加注解：`scheduler.alpha.kubernetes.io/defaultTolerations: '[{"operator": "Exists", "effect":
     "NoSchedule", "key": "ExclusiveNamespace"}]'`。
 
     ```bash
     kubectl annotate ns <namespace-name> scheduler.alpha.kubernetes.io/defaultTolerations: '[{"operator": "Exists", "effect": 
     "NoSchedule", "key": "ExclusiveNamespace"}]'
     ```
-   
+
     请确保将 `<namespace-name>` 替换为要添加注解的平台命名空间名称。
