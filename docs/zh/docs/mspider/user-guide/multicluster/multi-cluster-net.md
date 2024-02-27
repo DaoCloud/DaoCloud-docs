@@ -131,7 +131,7 @@
 为了获得高可用性，您可以在多个集群、区或地域之间部署多个控制平面实例。
 
 在具有多个共享控制面的多集群场景下，每个控制面都属于某个集群，
-共享控制面接受用户定义的配置（例如 `Service`、`ServiceEntry`、`DestinationRule` 等）来则自身集群的 Kubernetes API Server。
+共享控制面接受用户定义的配置（例如 __Service__ 、 __ServiceEntry__ 、 __DestinationRule__ 等）来则自身集群的 Kubernetes API Server。
 因此每个主控制面集群都拥有独立的配置来源。
 
 因此这里存在一个问题，多个控制面集群如何同步配置？
@@ -172,12 +172,12 @@
 
 这时候我们怎么样才能通过网格实现呢？在 Istio 服务网格下有两种方式：
 
-1. 我们可以不交换集群的 `API Server` 远程密钥，这样的话集群只能进行自身集群内的服务发现。
-  如果需要进行跨集群流量负载，可以通过 `ServiceEntry` 配合外部负载器的方式实现。
+1. 我们可以不交换集群的 __API Server__ 远程密钥，这样的话集群只能进行自身集群内的服务发现。
+  如果需要进行跨集群流量负载，可以通过 __ServiceEntry__ 配合外部负载器的方式实现。
 
     ![多副本恢复](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/multi-dup-discovery.png)
 
-2. 通过配置 `VirtualService` 与 `DestinationRule` 策略，禁用多集群之间的流量负载。
+2. 通过配置 __VirtualService__ 与 __DestinationRule__ 策略，禁用多集群之间的流量负载。
 
 ## 服务网格技术方案
 

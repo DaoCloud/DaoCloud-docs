@@ -1,15 +1,15 @@
 # 边车版本升级
 
-网格的 Istio 版本升级后，将触发边车升级功能。边车升级可分为`热升级`和`重启升级`两种升级方式。
+网格的 Istio 版本升级后，将触发边车升级功能。边车升级可分为 __热升级__ 和 __重启升级__ 两种升级方式。
 
 - 热升级：道客订制版本 Istio 下边车可在不重启用户 Pod 的情况下完成边车升级，实现业务无中断；
 - 重启升级：社区原生Istio 或不满足热升级环境要求的订制版 Istio 下边车升级方式，需重启用户 Pod。
 
-完成 Istio 版本升级后，进入`工作负载边车管理`界面，具备升级条件的工作负载将出现叹号提示信息，选中期望升级的工作负载，将出现`边车升级`按钮。
+完成 Istio 版本升级后，进入 __工作负载边车管理__ 界面，具备升级条件的工作负载将出现叹号提示信息，选中期望升级的工作负载，将出现 __边车升级__ 按钮。
 
 ![边车升级](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/sidecar-update01.png)
 
-点击`边车升级`按钮将进入`边车升级版本`向导，该向导分为`环境检测`、`选择目标版本`、`执行升级`三个步骤，在“热升级”和“重启升级”两种方式下，操作会有一定差别。
+点击 __边车升级__ 按钮将进入 __边车升级版本__ 向导，该向导分为 __环境检测__ 、 __选择目标版本__ 、 __执行升级__ 三个步骤，在“热升级”和“重启升级”两种方式下，操作会有一定差别。
 
 ## 热升级
 
@@ -27,7 +27,7 @@
 
     ![升级版本](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/SidecarUpdate03.png)
 
-3. **执行升级**：升级页面中展示了所选工作负载及相关边车信息，点击`一键升级`将启动升级过程。
+3. **执行升级**：升级页面中展示了所选工作负载及相关边车信息，点击 __一键升级__ 将启动升级过程。
 
     ![执行升级](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/SidecarUpdate04.png)
 
@@ -41,7 +41,7 @@
 
 	![升级版本](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/SidecarUpdate06.png)
 
-3. **执行升级**：升级页面中展示了所选工作负载的基本信息及边车版本信息，点击`一键升级`将立即重启 Pod，请务必谨慎操作。
+3. **执行升级**：升级页面中展示了所选工作负载的基本信息及边车版本信息，点击 __一键升级__ 将立即重启 Pod，请务必谨慎操作。
 
 	![执行升级](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/SidecarUpdate07.png)
 

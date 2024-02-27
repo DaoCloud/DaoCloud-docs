@@ -14,7 +14,7 @@ DCE 5.0 服务网格提供的 Istio 版本中已对此能力进行了增强，�
 
 ## 网格控制面启用自定义工作负载能力
 
-通过标准方式，`helm upgrade` 升级的方式，为网格控制面模块增加对应的特殊工作负载类型。
+通过标准方式， `helm upgrade` 升级的方式，为网格控制面模块增加对应的特殊工作负载类型。
 
 ### 备份参数
 
@@ -25,7 +25,7 @@ helm -n mspider-system get values mspider > mspider.yaml
 
 ### 更新配置
 
-编辑上述备份的 `mspider.yaml`，并追加自定义工作负载类型的配置，如果存在多个配置类型，可以增加多个：
+编辑上述备份的 __mspider.yaml__ ，并追加自定义工作负载类型的配置，如果存在多个配置类型，可以增加多个：
 
 ```yaml
 global:
@@ -50,7 +50,7 @@ global:
   # ...
 ```
 
-使用 Helm 更新 `mspider` ：
+使用 Helm 更新 __mspider__ ：
 
 ```shell
 # 添加 repo，如果不存在的话
@@ -143,7 +143,7 @@ spec:
 
 ## 示例应用
 
-在 OCP 中，支持一个新的工作负载 `DeploymentConfig`，本文以此为例演示如何成功支持纳管此工作负载。
+在 OCP 中，支持一个新的工作负载 __DeploymentConfig__ ，本文以此为例演示如何成功支持纳管此工作负载。
 
 ### DeploymentConfig
 
@@ -171,7 +171,7 @@ spec:
               protocol: TCP
 ```
 
-使用上面的 yaml 创建一个名为 `nginx-deployment-samzong` 的应用，然后创建关联的 svc：
+使用上面的 yaml 创建一个名为 __nginx-deployment-samzong__ 的应用，然后创建关联的 svc：
 
 ```yaml
 # filename dc-nginx-svc.yaml
@@ -188,7 +188,7 @@ spec:
     targetPort: 80
 ```
 
-这是一个标准的 Kubernetes 服务，我们通过 `app: nginx-app-samzong` 来绑定到预先创建的 `DeploymentConfig`。
+这是一个标准的 Kubernetes 服务，我们通过 __app: nginx-app-samzong__ 来绑定到预先创建的 __DeploymentConfig__ 。
 
 ```bash
 kubectl -n NS_NAME apply -f dc-nginx.yaml dc-nginx-svc.yaml
@@ -196,7 +196,7 @@ kubectl -n NS_NAME apply -f dc-nginx.yaml dc-nginx-svc.yaml
 
 ### 效果
 
-在工作负载成功启动之后，可以在`边车管理`中查看工作负载。默认为未注入，我们可以手工注入。
+在工作负载成功启动之后，可以在 __边车管理__ 中查看工作负载。默认为未注入，我们可以手工注入。
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/custom-workloads-01.png)
 

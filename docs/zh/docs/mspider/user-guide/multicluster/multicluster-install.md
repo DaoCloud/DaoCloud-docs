@@ -14,9 +14,9 @@
 
 在 Istio 中，Region、Zone 和 SubZone 是用于维护多集群部署中的服务可用性的概念。具体来说：
 
-- **Region** 表示一个大区域，通常用于表示整个云提供商的数据中心区域；在 Kubernetes 中，标签 [`topology.kubernetes.io/region`](https://kubernetes.io/zh-cn/docs/reference/kubernetes-api/labels-annotations-taints/#topologykubernetesioregion) 确定节点的区域。
-- **Zone** 表示一个小区域，通常用于表示数据中心中的一个子区域；在 Kubernetes 中，标签 [`topology.kubernetes.io/zone`](https://kubernetes.io/zh-cn/docs/reference/kubernetes-api/labels-annotations-taints/#topologykubernetesiozone) 确定节点的区域。
-- **SubZone** 则是一个更小的区域，用于表示 Zone 中的一个更小的部分。Kubernetes 中不存在分区的概念，因此 Istio 引入了自定义节点标签 [`topology.istio.io/subzone`](https://github.com/istio/api/blob/82b9feb5a1c091ad9a28311c62b4f6f07803a9fa/label/labels.yaml#L84) 来定义分区。
+- **Region** 表示一个大区域，通常用于表示整个云提供商的数据中心区域；在 Kubernetes 中，标签 [ `topology.kubernetes.io/region` ](https://kubernetes.io/zh-cn/docs/reference/kubernetes-api/labels-annotations-taints/#topologykubernetesioregion) 确定节点的区域。
+- **Zone** 表示一个小区域，通常用于表示数据中心中的一个子区域；在 Kubernetes 中，标签 [ `topology.kubernetes.io/zone` ](https://kubernetes.io/zh-cn/docs/reference/kubernetes-api/labels-annotations-taints/#topologykubernetesiozone) 确定节点的区域。
+- **SubZone** 则是一个更小的区域，用于表示 Zone 中的一个更小的部分。Kubernetes 中不存在分区的概念，因此 Istio 引入了自定义节点标签 [ __topology.istio.io/subzone__ ](https://github.com/istio/api/blob/82b9feb5a1c091ad9a28311c62b4f6f07803a9fa/label/labels.yaml#L84) 来定义分区。
 
 这些概念的作用主要在于帮助 Istio 管理不同区域间的服务可用性。例如，在多集群部署中，如果一个服务在 Zone A 中出现故障，Istio 可以通过配置自动将服务流量转移到 Zone B，从而保证服务可用性。
 
@@ -113,7 +113,7 @@
 
 容器管理平台创建集群方式创建的集群将默认安装 Insight Agent 组件。
 
-其他方式需要在容器管理界面中，找到本集群中的 `Helm 应用`，选择 `insight-agent` 安装。
+其他方式需要在容器管理界面中，找到本集群中的 __Helm 应用__ ，选择 __insight-agent__ 安装。
 
 ![Helm 应用](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/kpanda-insgiht-agent-check.png)
 
@@ -127,7 +127,7 @@
 
 ### 创建网格
 
-首先在网格管理页面 -> `创建网格`：
+首先在网格管理页面 -> __创建网格__ ：
 
 ![创建网格](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-mesh1.png)
 
@@ -138,21 +138,21 @@
 3. 按照前置条件环境，选择预选的符合要求的网格版本
 4. 选择托管控制面所在的集群
 5. 负载均衡 IP：该参数为暴露控制面的 Istiod 所需要的参数，需要预先准备
-6. 镜像仓库：在私有云中，需要将网格所需的镜像上传仓库，公有云建议填入 `release.daocloud.io/mspider`
+6. 镜像仓库：在私有云中，需要将网格所需的镜像上传仓库，公有云建议填入 `release.daocloud.io/mspider` 
 
 ![上传镜像](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-mesh2.png)
 
-网格处于创建中，需要等待网格创建完成后，状态由 `创建中`转变成`运行中`；
+网格处于创建中，需要等待网格创建完成后，状态由 __创建中__ 转变成 __运行中__ ；
 
 ### 暴露网格托管控制面 Hosted Istiod
 
 #### 确认托管网格控制面服务
 
-确保网格状态正常后，观察控制面集群`mdemo-cluster1`的 `istio-system` 下面的 Service 是否都成功绑定了 LoadBalancer IP。
+确保网格状态正常后，观察控制面集群 __mdemo-cluster1__ 的 __istio-system__ 下面的 Service 是否都成功绑定了 LoadBalancer IP。
 
 ![绑定 lb ip](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/hosted-istiod-lb-check.png)
 
-发现托管网格控制面的服务`istiod-mdemo-cluster-hosted-lb` 的没有分配 LoadBalancer IP 需要额外处理。
+发现托管网格控制面的服务 __istiod-mdemo-cluster-hosted-lb__ 的没有分配 LoadBalancer IP 需要额外处理。
 
 #### 分配 EXTERNAL IP
 
@@ -162,7 +162,7 @@
 
 部署完 metallb 以后，再次[确认托管网格控制面服务](#_17)。
 
-#### 验证托管控制面 Istiod `EXTERNAL IP` 是否通畅
+#### 验证托管控制面 Istiod __EXTERNAL IP__ 是否通畅
 
 在非托管集群环境中验证托管控制面 Istiod，本次实践通过 curl 的方式验证，如果返回 400 错误，基本可以判定网络已经打通：
 
@@ -174,24 +174,24 @@ curl -I "${hosted_istiod_ip}:443"
 
 #### 确认并且配置网格托管控制面 Istiod 参数
 
-1. 获取托管网格控制面服务 `EXTERNAL IP`
+1. 获取托管网格控制面服务 __EXTERNAL IP__ 
 
-    在网格 `mdemo-mesh` 控制面集群 `mdemo-cluster1` 中去确认托管网格控制面服务 `istiod-mdemo-mesh-hosted-lb` 已经分配 LoadBalancer IP 以后，并且记录其 IP，示例如下：
+    在网格 __mdemo-mesh__ 控制面集群 __mdemo-cluster1__ 中去确认托管网格控制面服务 __istiod-mdemo-mesh-hosted-lb__ 已经分配 LoadBalancer IP 以后，并且记录其 IP，示例如下：
 
     ![确认](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/hosted-istiod-lb-ip.png)
 
-    确认托管网格控制面服务 `istiod-mdemo-mesh-hosted-lb` `EXTERNAL-IP` 为 `10.64.30.72`。
+    确认托管网格控制面服务 __istiod-mdemo-mesh-hosted-lb__ `EXTERNAL-IP` 为 __10.64.30.72__ 。
 
 1. 手动配置网格托管控制面 Istiod 参数
 
-    首先，在容器管理平台进入全局控制面集群 `kpanda-global-cluster`（如果无法确认相关集群的位置，可以询问相应负责人或者通过[查询全局服务集群](#_30)）
+    首先，在容器管理平台进入全局控制面集群 __kpanda-global-cluster__ （如果无法确认相关集群的位置，可以询问相应负责人或者通过[查询全局服务集群](#_30)）
 
-    - `自定义资源模块` 搜索资源 `GlobalMesh`
-    - 接下来在`mspider-system` 找到对应的网格`mdemo-mesh`
+    - __自定义资源模块__ 搜索资源 __GlobalMesh__ 
+    - 接下来在 __mspider-system__ 找到对应的网格 __mdemo-mesh__ 
     - 然后编辑 YAML
 
     - 在 YAML 中 `.spec.ownerConfig.controlPlaneParams` 字段增加 `istio.custom_params.values.global.remotePilotAddress` 参数；
-    - 其值为上文中记录的 `istiod-mdemo-mesh-hosted-lb` `EXTERNAL-IP` 地址：`10.64.30.72`。
+    - 其值为上文中记录的 __istiod-mdemo-mesh-hosted-lb__ `EXTERNAL-IP` 地址： __10.64.30.72__ 。
 
     ![增加参数](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/get-gm-crd.png)
 
@@ -203,7 +203,7 @@ curl -I "${hosted_istiod_ip}:443"
 
 在服务网格的图形界面上添加集群。
 
-1. 等待网格控制面创建成功后，选中对应网格，进入网格管理页面 -> `集群纳管` -> `添加集群`：
+1. 等待网格控制面创建成功后，选中对应网格，进入网格管理页面 -> __集群纳管__ -> __添加集群__ ：
 
     ![添加集群](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-cluster1.png)
 
@@ -211,7 +211,7 @@ curl -I "${hosted_istiod_ip}:443"
 
     ![安装组件](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-cluster2.png)
 
-1. 在接入过程中，集群状态会由`接入中`转变成`接入成功`：
+1. 在接入过程中，集群状态会由 __接入中__ 转变成 __接入成功__ ：
 
     ![接入成功](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-cluster3.png)
 
@@ -219,7 +219,7 @@ curl -I "${hosted_istiod_ip}:443"
 
 由于当前工作集群与网格控制面集群 Pod 网络不同，需要通过上文[暴露网格托管控制面 Hosted Istiod](#hosted-istiod)部分将控制面的 Istiod 暴露给公网。
 
-验证工作集群 Istio 相关组件是否能运行正常，需要在工作集群中检查 `istio-system` 命名空间下的 `istio-ingressgateway` 是否能够正常运行：
+验证工作集群 Istio 相关组件是否能运行正常，需要在工作集群中检查 __istio-system__ 命名空间下的 __istio-ingressgateway__ 是否能够正常运行：
 
 ![验证](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/check-work-istiod.png)
 
@@ -227,7 +227,7 @@ curl -I "${hosted_istiod_ip}:443"
 
 在本部分主要分为两个部分：
 
-1. 给所有工作集群配置 `网络 ID`
+1. 给所有工作集群配置 __网络 ID__ 
 2. 在所有网络不互通的集群中安装东西网关
 
 这里先提到一个问题：为什么需要安装东西网关呢？
@@ -235,25 +235,25 @@ curl -I "${hosted_istiod_ip}:443"
 当目标服务位于不同网络时，其流量将会转发到目标集群的东西网关，东西网关将解析请求，将请求转发到真正的目标服务。
 
 由上面对东西网关的原理理解以后，又有一个新的问题，Istio 如何区分服务在什么网络中呢？
-Istio 要求用户每个工作集群安装 Istio 时，显示的定义`网络 ID`，这也是第一步分存在的原因。
+Istio 要求用户每个工作集群安装 Istio 时，显示的定义 __网络 ID__ ，这也是第一步分存在的原因。
 
-### 手动为工作集群配置`网络 ID`
+### 手动为工作集群配置 __网络 ID__ 
 
-由于工作集群网络的不同，需要手动给每个工作集群配置`网络 ID`。
-如果在实际环境中，集群之间 Pod 网络能够相互直达，就可以配置成同一个`网络 ID`。
+由于工作集群网络的不同，需要手动给每个工作集群配置 __网络 ID__ 。
+如果在实际环境中，集群之间 Pod 网络能够相互直达，就可以配置成同一个 __网络 ID__ 。
 
-让我们开始配置`网络 ID` ，其具体流程如下：
+让我们开始配置 __网络 ID__ ，其具体流程如下：
 
-1. 首先进入全局控制面集群 `kpanda-global-cluster`（如果无法确认相关集群的位置，可以询问相应负责人或者通过[查询全局服务集群](#_30)）
-2. 然后在`自定义资源模块` -> 搜索资源 `MeshCluster`
-3. `mspider-system`命名空间下找到加入网格的工作集群，本次案例的工作集群有：`mdemo-cluster2`、`mdemo-cluster3`
-4. 以 `mdemo-cluster2` 为例，编辑 YAML
+1. 首先进入全局控制面集群 __kpanda-global-cluster__ （如果无法确认相关集群的位置，可以询问相应负责人或者通过[查询全局服务集群](#_30)）
+2. 然后在 __自定义资源模块__ -> 搜索资源 __MeshCluster__ 
+3. __mspider-system__ 命名空间下找到加入网格的工作集群，本次案例的工作集群有： __mdemo-cluster2__ 、 __mdemo-cluster3__ 
+4. 以 __mdemo-cluster2__ 为例，编辑 YAML
 
-    - 找到字段 `.spec.meshedParams[].params`， 给其中参数列增加 `网络 ID` 字段
+    - 找到字段 `.spec.meshedParams[].params` ， 给其中参数列增加 __网络 ID__ 字段
     - 参数列的注意事项：
         - 需要确认 `global.meshID: mdemo-mesh` 是否为同一个网格 ID
         - 需要确认集群角色 `global.clusterRole: HOSTED_WORKLOAD_CLUSTER` 是否为工作集群
-    - 添加参数 `istio.custom_params.values.global.network`，其值按照最初的[规划表单](#_8)中的网络 ID：`network-c2`
+    - 添加参数 `istio.custom_params.values.global.network` ，其值按照最初的[规划表单](#_8)中的网络 ID： __network-c2__ 
 
     ![编辑 YAML](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-network-id1.png)
 
@@ -261,16 +261,16 @@ Istio 要求用户每个工作集群安装 Istio 时，显示的定义`网络 ID
 
     ![编辑 YAML](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-network-id3.png)
 
-重复上述步骤，给所有工作集群 (`mdemo-cluster1、mdemo-cluster2、mdemo-cluster3`) 加上`网络 ID`。
+重复上述步骤，给所有工作集群 ( __mdemo-cluster1、mdemo-cluster2、mdemo-cluster3__ ) 加上 __网络 ID__ 。
 
-### 为工作集群的 `istio-system` 标识`网络 ID`
+### 为工作集群的 __istio-system__ 标识 __网络 ID__ 
 
-进入容器管理平台，进入对应的工作集群：`mdemo-cluster1、mdemo-cluster2、mdemo-cluster3` 的命名空间添加网络的标签。
+进入容器管理平台，进入对应的工作集群： __mdemo-cluster1、mdemo-cluster2、mdemo-cluster3__ 的命名空间添加网络的标签。
 
-- 标签 Key：`topology.istio.io/network`
-- 标签 value：`${CLUSTER_NET}`
+- 标签 Key： __topology.istio.io/network__ 
+- 标签 value： __${CLUSTER_NET}__ 
 
-下面以 mdemo-cluster3 为例，找到`命名空间`，选中 `istio-system` -> `修改标签`。
+下面以 mdemo-cluster3 为例，找到 __命名空间__ ，选中 __istio-system__ -> __修改标签__ 。
 
 ![标识网络 ID](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/edit-istio-system-label.png)
 
@@ -286,7 +286,7 @@ Istio 要求用户每个工作集群安装 Istio 时，显示的定义`网络 ID
 
 !!! note
 
-    一定要根据当前集群的 `网络 ID` 修改参数。
+    一定要根据当前集群的 __网络 ID__ 修改参数。
 
 ```bash linenums="1"
 # cluster1
@@ -351,9 +351,9 @@ EOF
 其创建方式为：
 
 1. 在容器管理平台进入相应的工作集群
-2. `自定义资源`模块搜索 `IstioOperator`
-3. 选中 `istio-system` 命名空间
-4. 点击`创建 YAML`
+2. __自定义资源__ 模块搜索 __IstioOperator__ 
+3. 选中 __istio-system__ 命名空间
+4. 点击 __创建 YAML__ 
 
 ![创建网关实例](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-ew.png)
 
@@ -361,7 +361,7 @@ EOF
 
 ### 创建东西网关 Gateway 资源
 
-在网格的`网关规则`中创建规则：
+在网格的 __网关规则__ 中创建规则：
 
 ```yaml
 apiVersion: networking.istio.io/v1beta1
@@ -386,16 +386,16 @@ spec:
 ### 设置网格全局网络配置
 
 在安装完东西网关以及网关的解析规则以后，需要再所有集群中声明网格中的东西网关配置。
-在 容器管理平台进入全局控制面集群 `kpanda-global-cluster`（如果无法确认相关集群的位置，可以询问相应负责人或者通过[查询全局服务集群](#_30)）
+在 容器管理平台进入全局控制面集群 __kpanda-global-cluster__ （如果无法确认相关集群的位置，可以询问相应负责人或者通过[查询全局服务集群](#_30)）
 
--> 在`自定义资源`部分搜索资源 `GlobalMesh`
--> 接下来在 `mspider-system` 找到对应的网格 `mdemo-mesh`
+-> 在 __自定义资源__ 部分搜索资源 __GlobalMesh__ 
+-> 接下来在 __mspider-system__ 找到对应的网格 __mdemo-mesh__ 
 -> 然后编辑 YAML
 
-> 在 YAML 中 `.spec.ownerConfig.controlPlaneParams` 字段增加一系列 `istio.custom_params.values.global.meshNetworks` 参数
+> 在 YAML 中 __.spec.ownerConfig.controlPlaneParams__ 字段增加一系列 `istio.custom_params.values.global.meshNetworks` 参数
 
-```YAML
-# ！！该两行配置缺一不可
+```yaml
+# ！！这两行配置缺一不可
 # 格式：istio.custom_params.values.global.meshNetworks.${CLUSTER_NET_ID}.gateways[0].address
 #      istio.custom_params.values.global.meshNetworks.${CLUSTER_NET_ID}.gateways[0].port
 
@@ -603,7 +603,7 @@ kind create cluster --config kind-cluster2.yaml --name mdemo-kcluster2
 
 #### 容器管理平台 Helm 安装
 
-推荐使用容器管理平台中 `Helm 应用` -> `Helm 模板` -> 找到 metallb -> `安装`。
+推荐使用容器管理平台中 __Helm 应用__ -> __Helm 模板__ -> 找到 metallb -> __安装__ 。
 
 ![安装 metallb](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/install-metallb-from-helm.png)
 
@@ -691,6 +691,6 @@ curl -I 10.6.230.71:8080
 
 ### 查询全局服务集群
 
-通过容器管理的集群列表界面，通过搜索`集群角色：全局服务集群`。
+通过容器管理的集群列表界面，通过搜索 __集群角色：全局服务集群__ 。
 
 ![全局服务集群](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/get-kpanda-global-cluster.png)

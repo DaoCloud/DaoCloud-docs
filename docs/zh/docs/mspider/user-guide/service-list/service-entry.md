@@ -9,11 +9,11 @@
 
 这种创建方式比较简单直观。
 
-1. 进入所选网格后，在左侧导航栏点击`流量治理` -> `服务条目`，点击右上角的`创建`按钮。
+1. 进入所选网格后，在左侧导航栏点击 __流量治理__ -> __服务条目__ ，点击右上角的 __创建__ 按钮。
 
     ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/entry01.png)
 
-1. 在`创建服务条目`页面中，配置各项参数后点击`确定`。具体参数的含义，请参见[参数说明](#_3)。
+1. 在 __创建服务条目__ 页面中，配置各项参数后点击 __确定__ 。具体参数的含义，请参见[参数说明](#_3)。
 
     ![配置参数](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/entry02.png)
 
@@ -21,17 +21,17 @@
 
     ![创建成功](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/entry03.png)
 
-1. 在列表右侧，点击操作一列的 `⋮`，可通过弹出菜单进行更多操作。
+1. 在列表右侧，点击操作一列的 __⋮__ ，可通过弹出菜单进行更多操作。
 
     ![更多操作](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/entry04.png)
 
 ## YAML 创建
 
-1. 进入所选网格后，在左侧导航栏点击`流量治理` -> `服务条目`，点击右上角的 `YAML 创建`按钮。
+1. 进入所选网格后，在左侧导航栏点击 __流量治理__ -> __服务条目__ ，点击右上角的 __YAML 创建__ 按钮。
 
     ![YAML 创建](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/entry05.png)
 
-1. 选择命名空间，选择模板，修改各个字段参数，或者直接导入现有的 YAML 文件，参数确认无误后点击`确定`。
+1. 选择命名空间，选择模板，修改各个字段参数，或者直接导入现有的 YAML 文件，参数确认无误后点击 __确定__ 。
 
     ![YAML 参数配置](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/entry06.png)
 

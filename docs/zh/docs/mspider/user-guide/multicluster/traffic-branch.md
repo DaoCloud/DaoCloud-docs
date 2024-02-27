@@ -4,7 +4,7 @@
 
 前置条件：
 
-- 服务 `helloworld` 运行于网格 `hosted-mesh` 的命名空间 `helloworld` 下
+- 服务 __helloworld__ 运行于网格 __hosted-mesh__ 的命名空间 __helloworld__ 下
 - 开启多云网络互联
 - 网格提供 ingressgatway 网关实例
 
@@ -14,7 +14,7 @@
 
     ![流程](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/branch01.png)
 
-1. 为两个集群的 `helloworld` 工作负载分别添加标签：
+1. 为两个集群的 __helloworld__ 工作负载分别添加标签：
 
     | 所属集群     | 标签    | 值  |
     | ------------ | ------- | --- |
@@ -23,13 +23,13 @@
 
     ![添加标签](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/branch02.png)
 
-1. 在左侧导航栏点击`边车管理` -> `工作负载边车管理`，为两个集群的 helloworld 工作负载注入边车。
+1. 在左侧导航栏点击 __边车管理__ -> __工作负载边车管理__ ，为两个集群的 helloworld 工作负载注入边车。
 
     ![集群01](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/branch03.png)
 
     ![集群02](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/branch04.png)
 
-1. 在左侧导航栏点击`流量治理` -> `目标规则` -> `创建`，创建两个服务版本。
+1. 在左侧导航栏点击 __流量治理__ -> __目标规则__ -> __创建__ ，创建两个服务版本。
 
     ![服务版本](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/branch05.png)
 
@@ -52,7 +52,7 @@
           name: v2
     ```
 
-1. 在左侧导航栏点击`流量治理` -> `网关规则` -> `创建`，创建网关规则。
+1. 在左侧导航栏点击 __流量治理__ -> __网关规则__ -> __创建__ ，创建网关规则。
 
     ![网关规则](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/branch06.png)
 
@@ -76,7 +76,7 @@
     ​        protocol: http
     ```
 
-1. 在左侧导航栏点击`流量治理` -> `虚拟服务` -> `创建`，创建路由规则，基于权重比例把流量分流至两个集群：
+1. 在左侧导航栏点击 __流量治理__ -> __虚拟服务__ -> __创建__ ，创建路由规则，基于权重比例把流量分流至两个集群：
 
     ![虚拟服务](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/branch07.png)
 
@@ -113,7 +113,7 @@
               weight: 70
     ```
 
-1. 在左侧导航栏点击`网格配置` -> `多云网络互联`，开启多云网络互联。
+1. 在左侧导航栏点击 __网格配置__ -> __多云网络互联__ ，开启多云网络互联。
 
     ![多云网络互联](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/branch08.png)
 

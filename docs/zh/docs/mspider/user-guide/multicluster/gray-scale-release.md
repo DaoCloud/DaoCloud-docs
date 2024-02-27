@@ -35,7 +35,7 @@
 
 ![端口配置](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-demo4.png)
 
-为了区分不同版本的工作负载，需要在`容器管理平台`找到对应的工作负载，点击`标签与注解`，给容器组标签添加键值对：
+为了区分不同版本的工作负载，需要在 __容器管理平台__ 找到对应的工作负载，点击 __标签与注解__ ，给容器组标签添加键值对：
 "version"："v1"
 
 ![标签与注解](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-labels.png)
@@ -50,7 +50,7 @@
 
 部署流程与上面一样，其主要区别是：
 
-- 镜像发生了变化：`docker.m.daocloud.io/istio/examples-helloworld-v2`
+- 镜像发生了变化： `docker.m.daocloud.io/istio/examples-helloworld-v2` 
 - 在容器平台给相应 **容器组标签** 加上 label "version"："v2"
 
 ## 部署灰度应用策略
@@ -59,7 +59,7 @@
 
 首先创建 DestinationRule，通过定义 SubSet 定义不同集群的业务版本。
 
-其标签键值对为上文中添加的容器组标签：`version: <VERSION>`。
+其标签键值对为上文中添加的容器组标签： __version: <VERSION>__ 。
 
 策略：必须开启 Istio 双向 TLS
 

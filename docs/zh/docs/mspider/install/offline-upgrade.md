@@ -4,11 +4,11 @@
 
 !!! info
 
-    下述命令或脚本内出现的 `mspider` 字样是服务网格模块的内部开发代号。
+    下述命令或脚本内出现的 __mspider__ 字样是服务网格模块的内部开发代号。
 
 ## 从安装包中加载镜像
 
-您可以根据下面两种方式之一加载镜像，当环境中存在镜像仓库时，建议选择 `chart-syncer` 同步镜像到镜像仓库，该方法更加高效便捷。
+您可以根据下面两种方式之一加载镜像，当环境中存在镜像仓库时，建议选择 __chart-syncer__ 同步镜像到镜像仓库，该方法更加高效便捷。
 
 ### chart-syncer 同步镜像到镜像仓库
 
@@ -24,21 +24,29 @@
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: mspider-offline # 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
+          intermediateBundlesPath: mspider-offline # (1)
         target:
-          containerRegistry: 10.16.10.111 # 需更改为你的镜像仓库 url
-          containerRepository: release.daocloud.io/mspider # 需更改为你的镜像仓库
+          containerRegistry: 10.16.10.111 # (2)
+          containerRepository: release.daocloud.io/mspider # (3)
           repo:
-            kind: HARBOR # 也可以是任何其他支持的 Helm Chart 仓库类别
-            url: http://10.16.10.111/chartrepo/release.daocloud.io # 需更改为 chart repo url
+            kind: HARBOR # (4)
+            url: http://10.16.10.111/chartrepo/release.daocloud.io # (5)
             auth:
-              username: "admin" # 你的镜像仓库用户名
-              password: "Harbor12345" # 你的镜像仓库密码
+              username: "admin" # (6)
+              password: "Harbor12345" # (7)
           containers:
             auth:
-              username: "admin" # 你的镜像仓库用户名
-              password: "Harbor12345" # 你的镜像仓库密码
+              username: "admin" # (6)
+              password: "Harbor12345" # (7)
         ```
+
+        1. 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
+        2. 需更改为你的镜像仓库 url
+        3. 需更改为你的镜像仓库
+        4. 也可以是任何其他支持的 Helm Chart 仓库类别
+        5. 需更改为 chart repo url
+        6. 你的镜像仓库用户名
+        7. 你的镜像仓库密码
 
     === "未安装 chart repo"
 
@@ -169,7 +177,7 @@ mspider-release/mspider   v0.20.1        v0.20.1      Mspider management plane a
 
 ### 执行 `helm upgrade`
 
-升级前建议您覆盖 bak.yaml 中的 `global.imageRegistry` 字段为当前使用的镜像仓库地址。
+升级前建议您覆盖 bak.yaml 中的 __global.imageRegistry__ 字段为当前使用的镜像仓库地址。
 
 ```bash
 ~ export imageRegistry={YOUR_IMAGE_REGISTRY}

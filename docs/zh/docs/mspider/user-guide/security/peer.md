@@ -31,15 +31,15 @@ spec:
 
 服务网格提供了两种创建方式：向导和 YAML。通过向导创建的具体操作步骤如下：
 
-1. 在左侧导航栏点击`安全治理` -> `对等身份认证`，点击右上角的`创建`按钮。
+1. 在左侧导航栏点击 __安全治理__ -> __对等身份认证__ ，点击右上角的 __创建__ 按钮。
 
     ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/peer01.png)
 
-2. 在`创建对等身份认证`界面中，先进行基本配置后点击`下一步`。
+2. 在 __创建对等身份认证__ 界面中，先进行基本配置后点击 __下一步__ 。
 
     ![基本配置](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/peer02.png)
 
-3. 按屏幕提示进行认证设置后，点击`确定`。参阅 [mTLS 模式参数配置](./params.md#-mtls)。
+3. 按屏幕提示进行认证设置后，点击 __确定__ 。参阅 [mTLS 模式参数配置](./params.md#-mtls)。
 
     ![认证设置](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/peer03.png)
 
@@ -47,7 +47,7 @@ spec:
 
     ![成功](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/peer04.png)
 
-5. 在列表右侧，点击操作一列的 `⋮`，可通过弹出菜单进行更多操作。
+5. 在列表右侧，点击操作一列的 __⋮__ ，可通过弹出菜单进行更多操作。
 
     ![更多操作](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/peer05.png)
 

@@ -42,11 +42,11 @@ spec:
 
 服务网格提供了两种创建方式：向导和 YAML。通过向导创建的具体操作步骤如下：
 
-1. 在左侧导航栏点击`流量治理` -> `网关规则`，点击右上角的`创建`按钮。
+1. 在左侧导航栏点击 __流量治理__ -> __网关规则__ ，点击右上角的 __创建__ 按钮。
 
     ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/user-guide/images/gateway01.png)
 
-2. 在`创建网关规则`界面中，配置基本信息，并根据需要添加服务端后点击`确定`。
+2. 在 __创建网关规则__ 界面中，配置基本信息，并根据需要添加服务端后点击 __确定__ 。
 
     ![创建网关规则](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/user-guide/images/gateway02.png)
 
@@ -54,6 +54,6 @@ spec:
 
     ![创建成功](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/user-guide/images/gateway03.png)
 
-4. 在列表右侧，点击操作一列的 `⋮`，可通过弹出菜单进行更多操作。
+4. 在列表右侧，点击操作一列的 __⋮__ ，可通过弹出菜单进行更多操作。
 
     ![更多操作](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/user-guide/images/gateway04.png)
