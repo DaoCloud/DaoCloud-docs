@@ -9,7 +9,7 @@ hide:
 
 在业务场景中，我们需要限制只允许服务来访问某些特定的服务，这里可以组合 Istio 能力来进行统一的管理。
 
-在 Istio 中，我们可以使用 `Egress` 来控制服务对外访问的流量，同时也可以使用 `Service Entry` 来控制网格外服务，结合授权策略 (Authorized Policy) 来控制服务对外访问的权限。本文将介绍如何使用 Egress 和授权策略来控制服务对外访问的流量和权限。
+在 Istio 中，我们可以使用 __Egress__ 来控制服务对外访问的流量，同时也可以使用 __Service Entry__ 来控制网格外服务，结合授权策略 (Authorized Policy) 来控制服务对外访问的权限。本文将介绍如何使用 Egress 和授权策略来控制服务对外访问的流量和权限。
 
 ## 准备工作
 
@@ -17,7 +17,7 @@ hide:
 
 ### 网格启用仅出口流量
 
-配置网格启用仅出口流量，请修改网格的治理信息，查看下方的截图介绍，注意修改了之后，我们的服务对集群外的访问需要配合 `Service Entry` 来使用。
+配置网格启用仅出口流量，请修改网格的治理信息，查看下方的截图介绍，注意修改了之后，我们的服务对集群外的访问需要配合 __Service Entry__ 来使用。
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/egress-and-authorized-03.png)
 
@@ -31,17 +31,17 @@ hide:
 
 ### 准备测试应用
 
-可以使用任意应用进行测试，在后续步骤中，我们会通过 `kubectl exec pod` 进入 pod 内进行网络访问测试，建议至少保证应用内有 `curl` 命令即可。
+可以使用任意应用进行测试，在后续步骤中，我们会通过 __kubectl exec pod__ 进入 pod 内进行网络访问测试，建议至少保证应用内有 __curl__ 命令即可。
 
-> 这里是用了一个简单的 `bookinfo` 来做示例，您也可以使用其他应用。
+> 这里是用了一个简单的 __bookinfo__ 来做示例，您也可以使用其他应用。
 
-另外，需要保证应用的 `Pod` 被成功注入了 `sidecar`，这个可以在网格的界面中查看对应服务的状态。
+另外，需要保证应用的 __Pod__ 被成功注入了 __sidecar__ ，这个可以在网格的界面中查看对应服务的状态。
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/egress-and-authorized-14.png)
 
 ## 规则配置
 
-下方规则均给出示例展示，您可以在服务网格的界面中进行创建，用 `YAML` 的方式展示，方便于理解资源的定义。
+下方规则均给出示例展示，您可以在服务网格的界面中进行创建，用 __YAML__ 的方式展示，方便于理解资源的定义。
 
 ### 创建 Service Entry
 
@@ -57,7 +57,7 @@ hide:
 
 ### 创建 网关规则
 
-注意使用 `ISTIO_MUTAL` ，这样才可以用授权策略
+注意使用 __ISTIO_MUTAL__ ，这样才可以用授权策略
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/egress-and-authorized-10.png)
 

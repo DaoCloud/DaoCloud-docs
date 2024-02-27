@@ -6,13 +6,13 @@ hide:
 
 # 安装服务网格
 
-请确认您的集群已成功接入`容器管理`平台，然后执行以下步骤安装服务网格。
+请确认您的集群已成功接入 __容器管理__ 平台，然后执行以下步骤安装服务网格。
 
-1. 从左侧导航栏点击`容器管理`，进入`集群列表`，点击准备安装服务网格的集群名称。
+1. 从左侧导航栏点击 __容器管理__ ，进入 __集群列表__ ，点击准备安装服务网格的集群名称。
 
     ![安装采集器](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/login01.jpg)
 
-2. 在`集群概览`页面中点击`控制台`。
+2. 在 __集群概览__ 页面中点击 __控制台__ 。
 
     ![安装采集器](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/login02.jpg)
 
@@ -29,9 +29,9 @@ hide:
 
     !!! note
 
-        请将 `0.0.0-xxx` 替换为计划安装的服务网格版本号。
+        请将 __0.0.0-xxx__ 替换为计划安装的服务网格版本号。
 
-4. 查看命名空间 `mspider-system` 下 Pod 信息，看到相关 Pod 已创建并运行，表示服务网格安装成功。
+4. 查看命名空间 __mspider-system__ 下 Pod 信息，看到相关 Pod 已创建并运行，表示服务网格安装成功。
 
     ![安装采集器](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/install02.jpg)
 

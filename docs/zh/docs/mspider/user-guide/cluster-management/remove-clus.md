@@ -7,11 +7,11 @@ hide:
 
 如果想要从托管网格中移除一个集群，可以按照以下步骤移除集群。
 
-1. 在左侧导航栏点击`集群纳管`，在集群列表右侧，点击`移除`按钮。或者在网格列表中，点击最右侧的 `...` 按钮，在弹出菜单中选择`移除`。
+1. 在左侧导航栏点击 __集群纳管__ ，在集群列表右侧，点击 __移除__ 按钮。或者在网格列表中，点击最右侧的 __...__ 按钮，在弹出菜单中选择 __移除__ 。
 
     ![移除集群](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/remo-cluster01.png)
 
-2. 在弹出窗口中，确认信息无误后，点击`确定`。
+2. 在弹出窗口中，确认信息无误后，点击 __确定__ 。
 
     ![移除集群](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/remo-cluster02.png)
 

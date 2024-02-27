@@ -21,20 +21,20 @@ hide:
 
 创建网格网关的操作步骤如下。
 
-1. 在左侧导航栏中点击`网格网关`，进入网关列表，点击右上角的`创建`按钮。
+1. 在左侧导航栏中点击 __网格网关__ ，进入网关列表，点击右上角的 __创建__ 按钮。
 
     ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/create-gateway01.png)
 
-2. 在`创建网格网关`窗口中，按提示配置各项参数后点击`确定`。
+2. 在 __创建网格网关__ 窗口中，按提示配置各项参数后点击 __确定__ 。
 
     ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/user-guide/images/create-gateway02-1.png)
     ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/user-guide/images/create-gateway02-2.png)
 
-3. 返回网格网关列表，屏幕右上角提示创建成功。刚创建的网格网关状态为`创建中`。
+3. 返回网格网关列表，屏幕右上角提示创建成功。刚创建的网格网关状态为 __创建中__ 。
 
     ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/create-gateway03.png)
 
-4. 几秒后刷新页面，状态将变为`运行中`，表示网关成功配置。点击列表右侧的 `...`，可以执行编辑和删除操作。
+4. 几秒后刷新页面，状态将变为 __运行中__ ，表示网关成功配置。点击列表右侧的 __⋮__ ，可以执行编辑和删除操作。
 
     ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/create-gateway04.png)
 

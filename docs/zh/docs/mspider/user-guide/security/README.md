@@ -39,7 +39,7 @@ spec:
         methods: ["GET"]
 ```
 
-在此示例中，我们创建了一个 `AuthorizationPolicy` 资源，允许流量从除 my-namespace 以外的任何命名空间流向 my-service 服务，但仅限于 GET 请求。
+在此示例中，我们创建了一个 __AuthorizationPolicy__ 资源，允许流量从除 my-namespace 以外的任何命名空间流向 my-service 服务，但仅限于 GET 请求。
 另请参见[图形界面的创建方式](./authorize.md)。
 
 ### 请求身份验证
@@ -62,7 +62,7 @@ spec:
     jwksUri: "https://my-auth-server.com/.well-known/jwks.json"
 ```
 
-在此示例中，我们创建了一个 `RequestAuthentication` 资源，用于验证向 my-service 服务发出请求的客户端的身份。
+在此示例中，我们创建了一个 __RequestAuthentication__ 资源，用于验证向 my-service 服务发出请求的客户端的身份。
 我们使用 JSON Web Token（JWT）来验证客户端，指定了发行者和用于验证令牌的公钥的位置。
 另请参见[图形界面的创建方式](./request.md)。
 
@@ -85,7 +85,7 @@ spec:
     mode: STRICT
 ```
 
-在此示例中，我们创建了一个 `PeerAuthentication` 资源，要求 my-service 服务进行双向 TLS 身份验证。
+在此示例中，我们创建了一个 __PeerAuthentication__ 资源，要求 my-service 服务进行双向 TLS 身份验证。
 我们使用 STRICT 模式，该模式要求客户端和服务器都提供有效的证书。
 另请参见[图形界面的创建方式](./peer.md)。
 

@@ -2,7 +2,7 @@
 
 ## 原因分析
 
-主要原因在于所属集群的 `MeshCluster` 状态不是 "CLUSTER_RUNNING"，可登录 global 集群查看所属集群的 MeshCluster CRD 状态。
+主要原因在于所属集群的 __MeshCluster__ 状态不是 "CLUSTER_RUNNING"，可登录 global 集群查看所属集群的 MeshCluster CRD 状态。
 
 ```bash
 kubectl get meshcluster -n mspider-system
@@ -17,7 +17,7 @@ kubectl get meshcluster -n mspider-system
 
 ### 情况 2
 
-针对已创建的网格移除集群，执行上述命令。发现该集群的 `meshcluster` 状态可能处于如下状态之一：
+针对已创建的网格移除集群，执行上述命令。发现该集群的 __meshcluster__ 状态可能处于如下状态之一：
 
 - MANAGED_RECONCILING
 - MANAGED_SUCCEED

@@ -6,7 +6,7 @@
 
 这种方法需要依赖已经安装和部署完成的 Istiod。您可以按照以下步骤执行操作：
 
-首先，创建对应的 `ingress` 或 `egress` 配置文件：
+首先，创建对应的 __ingress__ 或 __egress__ 配置文件：
 
 ```yaml
 apiVersion: install.istio.io/v1alpha1
@@ -31,7 +31,7 @@ spec:
         injectionTemplate: gateway
 ```
 
-然后，使用标准的 `istioctl` 命令进行安装：
+然后，使用标准的 __istioctl__ 命令进行安装：
 
 ```bash
 kubectl create namespace istio-ingress
@@ -89,7 +89,7 @@ spec:
       labels:
         # 为网关设置唯一标签。这是确保 Gateway 可以选择此工作负载所必需的
         istio: ingressgateway
-        # 启用网关注入。如果后续连接到修订版的控制平面，请替换为 `istio.io/rev: revision-name`
+        # 启用网关注入。如果后续连接到修订版的控制平面，请替换为 `istio.io/rev: revision-name` 
         sidecar.istio.io/inject: "true"
     spec:
       # 允许绑定到所有端口（例如 80 和 443）

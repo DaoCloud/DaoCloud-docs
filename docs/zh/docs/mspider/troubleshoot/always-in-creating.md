@@ -2,7 +2,7 @@
 
 ## 问题描述
 
-mcpc-ckube-remote pod 一直 `ContainerCreating`。
+mcpc-ckube-remote pod 一直 __ContainerCreating__ 。
 mcpc-remote-kube-api-server configmap 等待很长时间没有创建。
 
 ![故障截图](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/troubleshoot/images/creating01.png)
@@ -103,7 +103,7 @@ mcpc-remote-kube-api-server configmap 等待很长时间没有创建。
 
 ## 原因分析
 
-1. 情况 1：托管网格由于控制面集群没有提前部署 `StorageClass` 导致无法创建高可用 ETCD。
+1. 情况 1：托管网格由于控制面集群没有提前部署 __StorageClass__ 导致无法创建高可用 ETCD。
 
     xxxxx-etcd-0 一直 pending，etcd pvc 无法绑定 sc 导致 pvc pending，
     进而导致 etcd pod 无法绑定 pvc。可以尝试以下步骤解决问题：

@@ -18,13 +18,13 @@ hide:
 
     1. 禁用命名空间边车自动注入。
 
-        在`容器管理`中，选择该集群 –> `命名空间` –> 修改标签 —> 移除 `istio-injection: enabled` 标签，重启该命名空间下的所有 Pod。
+        在 __容器管理__ 中，选择该集群 –> __命名空间__ –> 修改标签 —> 移除 `istio-injection: enabled` 标签，重启该命名空间下的所有 Pod。
 
         ![移除标签](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/troubleshoot/images/delete01.png)
 
     1. 禁用工作负载边车注入：
 
-        在`容器管理`中，选择该集群 –> `工作负载` —> `无状态负载` —> `标签与注解` —> 移除 `sidecar.istio.io/inject: true` 标签。
+        在 __容器管理__ 中，选择该集群 –> __工作负载__ —> __无状态负载__ —> __标签与注解__ —> 移除 `sidecar.istio.io/inject: true` 标签。
 
         ![禁用边车注入](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/troubleshoot/images/delete02.png)
 
@@ -32,7 +32,7 @@ hide:
 
 1. 移除集群。
 
-    在`容器管理`中，选择 global 集群，自定义资源搜索 `globalmeshes.discovery.mspider.io`。
+    在 __容器管理__ 中，选择 global 集群，自定义资源搜索 `globalmeshes.discovery.mspider.io` 。
     在 mspider-system 命名空间下选择要移除集群的网格，编辑 YAML：
 
     ![编辑yaml](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/troubleshoot/images/delete03.png)

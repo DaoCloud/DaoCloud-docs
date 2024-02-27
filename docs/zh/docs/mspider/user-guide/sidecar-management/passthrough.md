@@ -20,26 +20,26 @@ traffic.sidecar.istio.io/excludeOutboundIPRanges
 
 本节说明如何在 DCE 图形界面上启用/禁用流量透传。
 
-1. 进入某个网格，点击`边车管理` -> `工作负载边车管理`。
+1. 进入某个网格，点击 __边车管理__ -> __工作负载边车管理__ 。
 
     ![工作负载边车管理](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/pn01.png)
 
-1. 点击某个负载右侧的 `⋮`，在弹出菜单中选择`流量透传设置`。
+1. 点击某个负载右侧的 __⋮__ ，在弹出菜单中选择 __流量透传设置__ 。
 
     ![点击菜单项](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/pn02.png)
 
-1. 设置流量透传的参数后，勾选`立即重启工作负载`，点击`确认变更`。
+1. 设置流量透传的参数后，勾选 __立即重启工作负载__ ，点击 __确认变更__ 。
 
     ![流量透传设置](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/pn03.png)
 
     - 入站：仅支持端口，即从外部访问网格内负载的端口
     - 出站：可设置目标的端口或 IP 段
 
-1. 如果设置无误，右上角将出现`流量透传设置成功`的提示消息。您还可以[查验流量透传效果](#_3)。
+1. 如果设置无误，右上角将出现 __流量透传设置成功__ 的提示消息。您还可以[查验流量透传效果](#_3)。
 
     ![成功设置](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/pn04.png)
 
-1. 如果流量透传已启用，上述第 3 步的`流量透传设置`弹窗将显示设置的参数，可点击右侧的 x，勾选`立即重启工作负载`，点击`确认变更`来禁用流量透传。
+1. 如果流量透传已启用，上述第 3 步的 __流量透传设置__ 弹窗将显示设置的参数，可点击右侧的 x，勾选 __立即重启工作负载__ ，点击 __确认变更__ 来禁用流量透传。
 
     ![禁用流量透传](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/pn05.png)
 
@@ -50,7 +50,7 @@ traffic.sidecar.istio.io/excludeOutboundIPRanges
 1. 准备工作
 
     - 准备一个网格集群，例如 10.64.30.130
-    - 在命名空间中，配置工作负载 `helloworld`，并注入边车
+    - 在命名空间中，配置工作负载 __helloworld__ ，并注入边车
     - 启用流量透传，然后比对该负载的流量路由变化
 
     ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/pn06.png)

@@ -75,7 +75,7 @@ users:
 
     ![查看集群接入状态](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/test/images/os02.png)
 
-1. 完成创建网格时的配置后，点击`确定`。
+1. 完成创建网格时的配置后，点击 __确定__ 。
 
     > 对于控制面集群，请选择通过容器管理接入的 openshift4-mspider 集群
 
@@ -93,7 +93,7 @@ users:
 
 #### 接入时遇到的问题
 
-1. 提示错误 `istio-operator RS CreateFailed`
+1. 提示错误 __istio-operator RS CreateFailed__ 
 
     ![RS CreateFailed](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/test/images/os07.png)
 
@@ -109,7 +109,7 @@ users:
 
     重启 istio-operator rs 解决问题。
 
-2. 提示错误 `message: no running Istio pods in "istio-system"`
+2. 提示错误 __message: no running Istio pods in "istio-system"__ 
 
     原因分析：字面提示是 istio-system 命名空间下缺少 istiod/istio-ingressgateway service pod。
     实际是网格全局边车资源限制中的内存资源参数格式错误；正确格式为 500Mi
@@ -124,7 +124,7 @@ users:
 
     ![修改单位](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/test/images/os09.png)
 
-3. 注入边车时提示 `pod Init:CrashLoopBackOff`
+3. 注入边车时提示 __pod Init:CrashLoopBackOff__ 
 
     激活 ocp iptables
 
@@ -182,7 +182,7 @@ users:
     kubectl edit gm -n mspider-system openshift -oyaml
     ```
 
-    添加：`istio.custom_params.components.cni.enabled: "true"`
+    添加： `istio.custom_params.components.cni.enabled: "true"` 
 
 ### 部署 bookinfo 应用测试
 

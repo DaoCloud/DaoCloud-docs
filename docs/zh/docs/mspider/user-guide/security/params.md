@@ -51,7 +51,7 @@
 
 ## 授权策略
 
-采用图形向导模式时，[授权策略](./authorize.md)的创建分为`基本配置`和`策略设置`两步，各参数说明如下。
+采用图形向导模式时，[授权策略](./authorize.md)的创建分为 __基本配置__ 和 __策略设置__ 两步，各参数说明如下。
 
 ### 基本配置
 
@@ -67,8 +67,8 @@
 
 | **可配置项** | **YAML 字段**      | **描述**                                                                                                                                                          |
 | ------------ | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 策略动作     | spec.action        | 可选。包含：<br />- 允许（allow）<br />- 拒绝（deny）<br />- 审计（audit）<br />- 自定义（custom）<br />选择自定义时，增加`provider`输入项。                      |
-| Provider     | spec.provider.name | 必填。仅在`策略动作`选择为`自定义`时，才显示该输入框。                                                                                                            |
+| 策略动作     | spec.action        | 可选。包含：<br />- 允许（allow）<br />- 拒绝（deny）<br />- 审计（audit）<br />- 自定义（custom）<br />选择自定义时，增加 __provider__ 输入项。                      |
+| Provider     | spec.provider.name | 必填。仅在 __策略动作__ 选择为 __自定义__ 时，才显示该输入框。                                                                                                            |
 | 请求策略     | spec.rules         | 可选。包含请求来源、请求操作、策略条件三部分，可添加多条，按顺序执行。                                                                                            |
 | 添加请求来源 | spec.rules.-from   | 可选。请求来源可基于命名空间、IP 段等进行定义，可添加多条。各项参数参见下文 [请求来源 Source](#source)。                                                          |
 | 添加请求操作 | spec.rules.-to     | 可选。请求操作是对筛选出的请求执行的操作，例如发送至指定端口或主机，可添加多个操作。各项参数参见下文[请求操作 Operation](#operation)。                            |
@@ -96,16 +96,16 @@ notIpBlocks: ["1.2.3.4"]
 
 | Key 字段               | 类型       | 描述                                                                                                                                                                                                                                                                                                       |
 | ---------------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `principals`           | `string[]` | 可选。从对等证书衍生的对等身份列表。对等身份的格式为 `"<TRUST_DOMAIN>/ns/<NAMESPACE>/sa/<SERVICE_ACCOUNT>"`，例如 `"cluster.local/ns/default/sa/productpage"`。此字段要求启用 mTLS，且等同于 `source.principal` 属性。如果不设置，则允许所有主体。                                                         |
-| `notPrincipals`        | `string[]` | 可选。对等身份的反向匹配列表。                                                                                                                                                                                                                                                                             |
-| `requestPrincipals`    | `string[]` | 可选。从 JWT 派生的请求身份列表。请求身份的格式为 `"<ISS>/<SUB>"`，例如 `"example.com/sub-1"`。此字段要求启用请求身份验证，且等同于 `request.auth.principal` 属性。如果不设置，则允许所有请求主体。                                                                                                        |
-| `notRequestPrincipals` | `string[]` | 可选。请求身份的反向匹配列表。                                                                                                                                                                                                                                                                             |
-| `namespaces`           | `string[]` | 可选。从对等证书衍生的命名空间。此字段要求启用 mTLS，且等同于 `source.namespace` 属性。如果不设置，则允许所有命名空间。                                                                                                                                                                                    |
-| `notNamespaces`        | `string[]` | 可选。命名空间的反向匹配列表。                                                                                                                                                                                                                                                                             |
-| `ipBlocks`             | `string[]` | 可选。根据 IP 数据包的来源地址进行填充的 IP 段列表。支持单个 IP（例如“1.2.3.4”）和 CIDR（例如“1.2.3.0/24”）。这等同于 `source.ip` 属性。如果不设置，则允许所有 IP。                                                                                                                                        |
-| `notIpBlocks`          | `string[]` | 可选。IP 段的反向匹配列表。                                                                                                                                                                                                                                                                                |
-| `remoteIpBlocks`       | `string[]` | 可选。根据 X-Forwarded-For 标头或代理协议进行填充的 IP 段列表。要使用此字段，您必须在安装 Istio 或在 ingress 网关使用注解时在 meshConfig 下配置 gatewayTopology 的 numTrustedProxies 字段。支持单个 IP（例如“1.2.3.4”）和 CIDR（例如“1.2.3.0/24”）。这等同于 `remote.ip` 属性。如果不设置，则允许所有 IP。 |
-| `notRemoteIpBlocks`    | `string[]` | 可选。远程 IP 段的反向匹配列表。                                                                                                                                                                                                                                                                           |
+| __principals__           | __string[]__ | 可选。从对等证书衍生的对等身份列表。对等身份的格式为 __"<TRUST_DOMAIN>/ns/<NAMESPACE>/sa/<SERVICE_ACCOUNT>"__ ，例如 __"cluster.local/ns/default/sa/productpage"__ 。此字段要求启用 mTLS，且等同于 __source.principal__ 属性。如果不设置，则允许所有主体。                                                         |
+| __notPrincipals__        | __string[]__ | 可选。对等身份的反向匹配列表。                                                                                                                                                                                                                                                                             |
+| __requestPrincipals__    | __string[]__ | 可选。从 JWT 派生的请求身份列表。请求身份的格式为 __"<ISS>/<SUB>"__ ，例如 __"example.com/sub-1"__ 。此字段要求启用请求身份验证，且等同于 __request.auth.principal__ 属性。如果不设置，则允许所有请求主体。                                                                                                        |
+| __notRequestPrincipals__ | __string[]__ | 可选。请求身份的反向匹配列表。                                                                                                                                                                                                                                                                             |
+| __namespaces__           | __string[]__ | 可选。从对等证书衍生的命名空间。此字段要求启用 mTLS，且等同于 __source.namespace__ 属性。如果不设置，则允许所有命名空间。                                                                                                                                                                                    |
+| __notNamespaces__        | __string[]__ | 可选。命名空间的反向匹配列表。                                                                                                                                                                                                                                                                             |
+| __ipBlocks__             | __string[]__ | 可选。根据 IP 数据包的来源地址进行填充的 IP 段列表。支持单个 IP（例如“1.2.3.4”）和 CIDR（例如“1.2.3.0/24”）。这等同于 __source.ip__ 属性。如果不设置，则允许所有 IP。                                                                                                                                        |
+| __notIpBlocks__          | __string[]__ | 可选。IP 段的反向匹配列表。                                                                                                                                                                                                                                                                                |
+| __remoteIpBlocks__       | __string[]__ | 可选。根据 X-Forwarded-For 标头或代理协议进行填充的 IP 段列表。要使用此字段，您必须在安装 Istio 或在 ingress 网关使用注解时在 meshConfig 下配置 gatewayTopology 的 numTrustedProxies 字段。支持单个 IP（例如“1.2.3.4”）和 CIDR（例如“1.2.3.0/24”）。这等同于 __remote.ip__ 属性。如果不设置，则允许所有 IP。 |
+| __notRemoteIpBlocks__    | __string[]__ | 可选。远程 IP 段的反向匹配列表。                                                                                                                                                                                                                                                                           |
 
 #### 请求操作 Operation
 
@@ -125,14 +125,14 @@ notPaths: ["/admin*"]
 
 | Key 字段     | 类型       | 描述                                                                                                                                            |
 | ------------ | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| `hosts`      | `string[]` | 可选。在 HTTP 请求中指定的主机列表。不区分大小写。如果不设置，则允许所有主机。仅适用于 HTTP。                                                   |
-| `notHosts`   | `string[]` | 可选。在 HTTP 请求中指定的主机反向匹配列表。不区分大小写。                                                                                      |
-| `ports`      | `string[]` | 可选。连接中指定的端口列表。如果不设置，则允许所有端口。                                                                                        |
-| `notPorts`   | `string[]` | 可选。连接中所指定端口的反向匹配列表。                                                                                                          |
-| `methods`    | `string[]` | 可选。HTTP 请求中指定的方法列表。对于 gRPC 服务，这将始终是“POST”。如果不设置，则允许所有方法。仅适用于 HTTP。                                  |
-| `notMethods` | `string[]` | 可选。HTTP 请求中所指定方法的反向匹配列表。                                                                                                     |
-| `paths`      | `string[]` | 可选。HTTP 请求中指定的路径列表。对于 gRPC 服务，这将是“/package.service/method”格式的完全限定名称。如果不设置，则允许所有路径。仅适用于 HTTP。 |
-| `notPaths`   | `string[]` | 可选。路径的反向匹配列表。                                                                                                                      |
+| __hosts__      | __string[]__ | 可选。在 HTTP 请求中指定的主机列表。不区分大小写。如果不设置，则允许所有主机。仅适用于 HTTP。                                                   |
+| __notHosts__   | __string[]__ | 可选。在 HTTP 请求中指定的主机反向匹配列表。不区分大小写。                                                                                      |
+| __ports__      | __string[]__ | 可选。连接中指定的端口列表。如果不设置，则允许所有端口。                                                                                        |
+| __notPorts__   | __string[]__ | 可选。连接中所指定端口的反向匹配列表。                                                                                                          |
+| __methods__    | __string[]__ | 可选。HTTP 请求中指定的方法列表。对于 gRPC 服务，这将始终是“POST”。如果不设置，则允许所有方法。仅适用于 HTTP。                                  |
+| __notMethods__ | __string[]__ | 可选。HTTP 请求中所指定方法的反向匹配列表。                                                                                                     |
+| __paths__      | __string[]__ | 可选。HTTP 请求中指定的路径列表。对于 gRPC 服务，这将是“/package.service/method”格式的完全限定名称。如果不设置，则允许所有路径。仅适用于 HTTP。 |
+| __notPaths__   | __string[]__ | 可选。路径的反向匹配列表。                                                                                                                      |
 
 **在实际的操作情况中，另外需要注意添加，一些通用的 key**
 
@@ -140,7 +140,7 @@ notPaths: ["/admin*"]
 - request.auth.claims[iss]
 - experimental.envoy.filters.network.mysql_proxy[db.table]
 
-更多关于 `AuthorizationPolicy` 的配置参数参数说明，请参考<https://istio.io/latest/docs/reference/config/security/conditions/> 的说明。
+更多关于 __AuthorizationPolicy__ 的配置参数参数说明，请参考<https://istio.io/latest/docs/reference/config/security/conditions/> 的说明。
 
 #### 策略条件 Condition
 
@@ -148,21 +148,21 @@ notPaths: ["/admin*"]
 
 | Key 字段                       | 描述                                                                               | 支持的协议   | Value 示例                                    |
 | ------------------------------ | ---------------------------------------------------------------------------------- | ------------ | --------------------------------------------- |
-| `request.headers`              | `HTTP` 请求头，需要用 `[]` 括起来                                                  | HTTP only    | `["Mozilla/*"]`                               |
-| `source.ip`                    | 源 `IP` 地址，支持单个 `IP` 或 `CIDR`                                              | HTTP and TCP | `["10.1.2.3"]`                                |
-| `remote.ip`                    | 由 `X-Forwarded-For` 请求头或代理协议确定的原始客户端 IP 地址，支持单个 IP 或 CIDR | HTTP and TCP | `["10.1.2.3", "10.2.0.0/16"]`                 |
-| `source.namespace`             | 源负载实例命名空间，需启用双向 TLS                                                 | HTTP and TCP | `["default"]`                                 |
-| `source.principal`             | 源负载的标识，需启用双向 TLS                                                       | HTTP and TCP | `["cluster.local/ns/default/sa/productpage"]` |
-| `request.auth.principal`       | 已认证过 `principal` 的请求                                                        | HTTP only    | `["accounts.my-svc.com/104958560606"]`        |
-| `request.auth.audiences`       | 此身份验证信息的目标主体                                                           | HTTP only    | `["my-svc.com"]`                              |
-| `request.auth.presenter`       | 证书的颁发者                                                                       | HTTP only    | `["123456789012.my-svc.com"]`                 |
-| `request.auth.claims`          | `Claims` 来源于 `JWT`。需要用 `[]` 括起来                                          | HTTP only    | `["*@foo.com"]`                               |
-| `destination.ip`               | 目标 `IP` 地址，支持单个 `IP` 或 `CIDR`                                            | HTTP and TCP | `["10.1.2.3", "10.2.0.0/16"]`                 |
-| `destination.port`             | 目标 `IP` 地址上的端口，必须在 `[0，65535]` 范围内                                 | HTTP and TCP | `["80", "443"]`                               |
-| `connection.sni`               | 服务器名称指示，需启用双向 TLS                                                     | HTTP and TCP | `["www.example.com"]`                         |
-| `experimental.envoy.filters.*` | 用于过滤器的实验性元数据匹配，包装的值 `[]` 作为列表匹配                           | HTTP and TCP | `["[update]"]`                                |
+| __request.headers__              | __HTTP__ 请求头，需要用 __[]__ 括起来                                                  | HTTP only    | __["Mozilla/*"]__                               |
+| __source.ip__                    | 源 __IP__ 地址，支持单个 __IP__ 或 __CIDR__                                              | HTTP and TCP | __["10.1.2.3"]__                                |
+| __remote.ip__                    | 由 __X-Forwarded-For__ 请求头或代理协议确定的原始客户端 IP 地址，支持单个 IP 或 CIDR | HTTP and TCP | __["10.1.2.3", "10.2.0.0/16"]__                 |
+| __source.namespace__             | 源负载实例命名空间，需启用双向 TLS                                                 | HTTP and TCP | __["default"]__                                 |
+| __source.principal__             | 源负载的标识，需启用双向 TLS                                                       | HTTP and TCP | __["cluster.local/ns/default/sa/productpage"]__ |
+| __request.auth.principal__       | 已认证过 __principal__ 的请求                                                        | HTTP only    | __["accounts.my-svc.com/104958560606"]__        |
+| __request.auth.audiences__       | 此身份验证信息的目标主体                                                           | HTTP only    | __["my-svc.com"]__                              |
+| __request.auth.presenter__       | 证书的颁发者                                                                       | HTTP only    | __["123456789012.my-svc.com"]__                 |
+| __request.auth.claims__          | __Claims__ 来源于 __JWT__ 。需要用 __[]__ 括起来                                          | HTTP only    | __["*@foo.com"]__                               |
+| __destination.ip__               | 目标 __IP__ 地址，支持单个 __IP__ 或 __CIDR__                                            | HTTP and TCP | __["10.1.2.3", "10.2.0.0/16"]__                 |
+| __destination.port__             | 目标 __IP__ 地址上的端口，必须在 __[0，65535]__ 范围内                                 | HTTP and TCP | __["80", "443"]__                               |
+| __connection.sni__               | 服务器名称指示，需启用双向 TLS                                                     | HTTP and TCP | __["www.example.com"]__                         |
+| __experimental.envoy.filters.*__ | 用于过滤器的实验性元数据匹配，包装的值 __[]__ 作为列表匹配                           | HTTP and TCP | __["[update]"]__                                |
 
 !!! note
 
-    无法保证 `experimental.*` 密钥向后的兼容性，可以随时将它们删除，但须谨慎操作。
+    无法保证 __experimental.*__ 密钥向后的兼容性，可以随时将它们删除，但须谨慎操作。
 

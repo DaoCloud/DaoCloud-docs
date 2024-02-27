@@ -1,6 +1,6 @@
 # Istio 资源管理
 
-`Istio 资源管理`页面按资源类型列出了 Istio 的所有资源，为用户提供了各类资源的展示、创建、编辑、删除等能力。
+ __Istio 资源管理__ 页面按资源类型列出了 Istio 的所有资源，为用户提供了各类资源的展示、创建、编辑、删除等能力。
 
 ![img](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/istio01.png)
 
@@ -8,11 +8,11 @@
 
 用户可以用 YAML 形式对资源进行增删改查操作。此处是一个 telementry 遥测资源的创建/删除示例。
 
-1. 在左侧导航栏中点击`网格配置` -> `Istio 资源管理`，点击右上角的 `YAML 创建`按钮。
+1. 在左侧导航栏中点击 __网格配置__ -> __Istio 资源管理__ ，点击右上角的 __YAML 创建__ 按钮。
 
     ![img](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/istio01.png)
 
-2. 在 YAML 创建页面中，输入正确的 YAML 语句后点击`确定`。
+2. 在 YAML 创建页面中，输入正确的 YAML 语句后点击 __确定__ 。
 
     ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/user-guide/images/istio02.png)
 
@@ -35,7 +35,7 @@
     ​          value: "request.host"
     ```
 
-3. 返回资源列表，点击操作一列的 `⋮` 按钮，可以从弹出菜单中选择编辑和删除等更多操作。
+3. 返回资源列表，点击操作一列的 __⋮__ 按钮，可以从弹出菜单中选择编辑和删除等更多操作。
 
     ![img](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/istio03.png)
 

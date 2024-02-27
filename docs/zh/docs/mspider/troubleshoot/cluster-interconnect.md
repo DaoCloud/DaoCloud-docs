@@ -42,7 +42,7 @@
 
 1. 检查服务异常原因，让服务状态恢复正常
 2. 注入边车
-3. 所有测试服务的 svc 配置一致，可通过`服务管理` -> `服务列表`的诊断功能协助观察
+3. 所有测试服务的 svc 配置一致，可通过 __服务管理__ -> __服务列表__ 的诊断功能协助观察
    
     ![服务诊断](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/troubleshoot/images/service-list-check-01.png)
 

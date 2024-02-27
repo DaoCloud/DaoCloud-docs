@@ -2,7 +2,7 @@
 
 ## 情况分析
 
-当托管网格纳管工作负载集群时，常常会出现 `istio-ingressgateway` 组件不健康。
+当托管网格纳管工作负载集群时，常常会出现 __istio-ingressgateway__ 组件不健康。
 
 如下图：
 
@@ -37,9 +37,9 @@
 2023-04-25T12:21:15.199447Z     warning envoy config    StreamAggregatedResources gRPC config stream to xds-grpc closed since 168s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.233.48.75:15012: i/o timeout"
 ```
 
-上面报错信息显示连接 `10.233.48.75:15012` 即 `istiod-remote` 的 service ip:15012 timeout !!!。
+上面报错信息显示连接 `10.233.48.75:15012` 即 __istiod-remote__ 的 service ip:15012 timeout !!!。
 
-此时我们查看 `istio-system` 命名空间下 `istiod-remote` 的 `endpoint`。
+此时我们查看 __istio-system__ 命名空间下 __istiod-remote__ 的 __endpoint__ 。
 
 ```bash
 kubectl get ep -n istio-system
@@ -52,7 +52,7 @@ istiod                  10.233.97.220:15012,10.233.97.220:15010,10.233.97.220:15
 istiod-remote           10.233.95.141:15012,10.233.95.141:15017                                   10m
 ```
 
-这里可以看出 `istio-remote` 分配的 `endpoint` 地址是 `istiod-remote 10.233.95.141:15012,10.233.95.141:15017`。如下图：
+这里可以看出 __istio-remote__ 分配的 __endpoint__ 地址是 `istiod-remote 10.233.95.141:15012,10.233.95.141:15017` 。如下图：
 
 ![timeout](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/troubleshoot/images/hosted02.png)
 
@@ -64,7 +64,7 @@ istiod-remote           10.233.95.141:15012,10.233.95.141:15017                 
 
 ## 解决方案
 
-更新网格`基本信息`配置中的控制面地址：
+更新网格 __基本信息__ 配置中的控制面地址：
 
 1. 登录控制面集群执行以下命令获取这个地址：
 
@@ -74,7 +74,7 @@ istiod-remote           10.233.95.141:15012,10.233.95.141:15017                 
 
     ![获取地址](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/troubleshoot/images/hosted03.png)
 
-1. 点击右侧菜单，选择`编辑基本信息`。
+1. 点击右侧菜单，选择 __编辑基本信息__ 。
 
     ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/troubleshoot/images/hosted04.png)
 
@@ -82,10 +82,10 @@ istiod-remote           10.233.95.141:15012,10.233.95.141:15017                 
 
     ![填写地址](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/troubleshoot/images/hosted05.png)
 
-1. 再次查看工作负载集群的 `istio-ingressgateway`，发现此时已经正常。
+1. 再次查看工作负载集群的 __istio-ingressgateway__ ，发现此时已经正常。
 
     ![查看集群状态](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/troubleshoot/images/hosted06.png)
 
-1. 查看 `istiod-remote endpoint` 信息也正常。
+1. 查看 __istiod-remote endpoint__ 信息也正常。
 
     ![查看信息](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/troubleshoot/images/hosted07.png)

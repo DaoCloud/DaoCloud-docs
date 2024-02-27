@@ -2,7 +2,7 @@
 
 DCE 5.0 服务网格提供给了动态流转的流量拓扑功能。
 
-在左侧导航栏中，点击`流量监控` -> `流量拓扑`，您可以选择`视图方式`、`命名空间`、采集源、时间来查看服务的拓扑关系。
+在左侧导航栏中，点击 __流量监控__ -> __流量拓扑__ ，您可以选择 __视图方式__ 、 __命名空间__ 、采集源、时间来查看服务的拓扑关系。
 
 ![流量拓扑](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/user-guide/images/topo01.png)
 
@@ -20,7 +20,7 @@ DCE 5.0 服务网格提供给了动态流转的流量拓扑功能。
 
 ## 图例
 
-点击左下角的`图例`按钮，可以查看当前线条、圆圈、颜色所代表的含义。
+点击左下角的 __图例__ 按钮，可以查看当前线条、圆圈、颜色所代表的含义。
 
 ![图例](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/user-guide/images/topo03.png)
 

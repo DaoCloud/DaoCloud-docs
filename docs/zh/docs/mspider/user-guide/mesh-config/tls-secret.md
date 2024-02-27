@@ -68,15 +68,15 @@ WQuRxan+FuKE3RiKHFXkslks=
 
 ## 创建密钥
 
-1. 进入某个网格后，在左侧导航栏点击`网格配置` -> `TLS 密钥管理`，点击`创建`按钮。
+1. 进入某个网格后，在左侧导航栏点击 __网格配置__ -> __TLS 密钥管理__ ，点击 __创建__ 按钮。
 
     ![点击创建](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/mesh-config/images/secret01.png)
 
-1. 填写名称，选择命名空间，填入刚创建的凭证和私钥，根据情况添加标签后，点击`确定`。
+1. 填写名称，选择命名空间，填入刚创建的凭证和私钥，根据情况添加标签后，点击 __确定__ 。
 
     ![填写](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/mesh-config/images/secret02.png)
 
-1. 屏幕提示创建成功，点击右侧的 `⋮` 按钮，可以执行编辑、YAML 编辑以及删除等操作。
+1. 屏幕提示创建成功，点击右侧的 __⋮__ 按钮，可以执行编辑、YAML 编辑以及删除等操作。
 
     ![填写](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/mesh-config/images/secret03.png)
 
@@ -125,14 +125,14 @@ type: kubernetes.io/tls
 
 创建好的 TLS 密钥可用于：
 
-1. `目标规则`。添加策略配置时，启用客户端 TLS 后，可以在以下 2 种模式种选择创建好的密钥：
+1. __目标规则__ 。添加策略配置时，启用客户端 TLS 后，可以在以下 2 种模式种选择创建好的密钥：
 
     - 简单模式
     - 双向模式
 
     ![目标规则](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/mesh-config/images/secret04.png)
 
-1. `网关规则`。启用服务端 TLS 模式后，可以在以下 3 种模式种选择创建好的密钥：
+1. __网关规则__ 。启用服务端 TLS 模式后，可以在以下 3 种模式种选择创建好的密钥：
 
     - 简单模式
     - 双向模式

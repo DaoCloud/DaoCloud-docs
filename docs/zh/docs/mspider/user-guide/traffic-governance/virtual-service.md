@@ -27,25 +27,25 @@
 
 通过图形向导创建的具体操作步骤如下（参阅[虚拟服务参数配置](./vsparams.md)）：
 
-1. 在左侧导航栏点击`流量治理` -> `虚拟服务`，点击右上角的`创建`按钮。
+1. 在左侧导航栏点击 __流量治理__ -> __虚拟服务__ ，点击右上角的 __创建__ 按钮。
 
     ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/virtualserv01.png)
 
-1. 在`创建虚拟服务`界面中，先确认并选择需要将虚拟服务创建到的命名空间、所属服务和应用范围后，点击`下一步`。
+1. 在 __创建虚拟服务__ 界面中，先确认并选择需要将虚拟服务创建到的命名空间、所属服务和应用范围后，点击 __下一步__ 。
 
     ![创建虚拟服务](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/virtualserv02.png)
 
-1. 按屏幕提示分别配置 HTTP 路由、TLS 路由和 TCP 路由后，点击`确定`。
+1. 按屏幕提示分别配置 HTTP 路由、TLS 路由和 TCP 路由后，点击 __确定__ 。
 
     ![路由配置](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/virtualserv03.png)
 
-1. 返回虚拟服务列表，屏幕提示创建成功。在虚拟服务列表右侧，点击操作一列的 `⋮`，可通过弹出菜单进行更多操作。
+1. 返回虚拟服务列表，屏幕提示创建成功。在虚拟服务列表右侧，点击操作一列的 __⋮__ ，可通过弹出菜单进行更多操作。
 
     ![更多操作](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/virtualserv05.png)
 
 ## YAML 创建
 
-通过 YAML 创建的操作相对简单，用户可以点击`YAML 创建`按钮，进入创建页面直接编写 YAML，也可以使用页面内提供的模板简化编辑操作，
+通过 YAML 创建的操作相对简单，用户可以点击 __YAML 创建__ 按钮，进入创建页面直接编写 YAML，也可以使用页面内提供的模板简化编辑操作，
 编辑窗口会提供基本语法检查功能，帮助用户完成编写工作。以下是一个 YAML 示例：
 
 ```yaml
@@ -109,8 +109,8 @@ status: {}
 
     一个主机名只能在一个 VirtualService 中定义。同一个 VirtualService 中可以用于控制多个 HTTP 和 TCP 端口的流量属性。
 
-    需要注意的是，当使用服务的短名称时（例如使用 reviews，而不是 `reviews.default.svc.cluster.local`），服务网格会根据规则所在的命名空间来处理这一名称，而非服务所在的命名空间。
-    假设 `default` 命名空间的一条规则中包含了一个 reviews 的 host 引用，就会被视为 `reviews.default.svc.cluster.local`，而不会考虑 reviews 服务所在的命名空间。
+    需要注意的是，当使用服务的短名称时（例如使用 reviews，而不是 __reviews.default.svc.cluster.local__ ），服务网格会根据规则所在的命名空间来处理这一名称，而非服务所在的命名空间。
+    假设 __default__ 命名空间的一条规则中包含了一个 reviews 的 host 引用，就会被视为 __reviews.default.svc.cluster.local__ ，而不会考虑 reviews 服务所在的命名空间。
 
     为了避免可能的错误配置，建议使用 FQDN 来进行服务引用。
     hosts 字段对 HTTP 和 TCP 服务都是有效的。
@@ -143,7 +143,7 @@ status: {}
 
 - HTTP
 
-    有序规则列表。该字段包含了针对 HTTP 协议的所有路由配置功能，对名称前缀为 `http-`、`http2-`、`grpc-`
+    有序规则列表。该字段包含了针对 HTTP 协议的所有路由配置功能，对名称前缀为 __http-__ 、 __http2-__ 、 __grpc-__ 
     的服务端口，或者协议为 HTTP、HTTP2、GRPC 以及终结的 TLS，
     另外还有使用 HTTP、HTTP2 以及 GRPC 协议的 ServiceEntry 都是有效的。
     流量会使用匹配到的第一条规则。

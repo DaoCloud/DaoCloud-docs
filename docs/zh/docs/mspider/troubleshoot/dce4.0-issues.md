@@ -62,9 +62,9 @@ kubectl describe limits -n istio-system dce-default-limit-range
 
 原因分析：DCE 4.0 所使用的 Kubernetes 版本为 1.18，相对新版服务网格，其版本太低了。
 
-表现形式 01： `istio-managed-istio-hosted` 一直无法启动，提示 `istio-token` 的 Configmap 不存在。
+表现形式 01： __istio-managed-istio-hosted__ 一直无法启动，提示 __istio-token__ 的 Configmap 不存在。
 
-需要手动为网格实例的 CR 中 `GlobalMesh` 添加对应的参数： `istio.custom_params.values.global.jwtPolicy: first-party-jwt`。
+需要手动为网格实例的 CR 中 __GlobalMesh__ 添加对应的参数： `istio.custom_params.values.global.jwtPolicy: first-party-jwt` 。
 
 ![params](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/troubleshoot/images/dce4-01.png)
 
@@ -72,4 +72,4 @@ kubectl describe limits -n istio-system dce-default-limit-range
 
     1. DCE 4.0 在接入新版服务网格之前，需提前部署 coreDNS。
 
-    2. `GlobalMesh` 配置是在 DCE5 的全局管理集群，而不是在接入集群。
+    2. __GlobalMesh__ 配置是在 DCE5 的全局管理集群，而不是在接入集群。

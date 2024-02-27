@@ -172,7 +172,7 @@
 
 1. 情况一：被纳管集群没有安装 metalLB 导致集群网络不通，ingressgateway 无法正常分配 endpoint 一直 CrashLoopBackoff
 
-2. 情况二：istio-remote 组件 endpoint 分配错误，执行 `kubectl get ep -n istio-system` 查看详情
+2. 情况二：istio-remote 组件 endpoint 分配错误，执行 __kubectl get ep -n istio-system__ 查看详情
 
 ## 解决方案
 

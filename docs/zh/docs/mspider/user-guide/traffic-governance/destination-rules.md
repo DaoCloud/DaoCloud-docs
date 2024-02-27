@@ -8,7 +8,7 @@
 
 - Host
 
-    使用 Kubernetes Service 的短名称。含义同 VirtualService 中 `destination` 的 `host` 字段一致。服务一定要存在于对应的服务注册中心中，否则会被忽略。
+    使用 Kubernetes Service 的短名称。含义同 VirtualService 中 __destination__ 的 __host__ 字段一致。服务一定要存在于对应的服务注册中心中，否则会被忽略。
 
 - LoadBalancer
 
@@ -21,10 +21,10 @@
 
 - Subsets
 
-    `subsets` 是服务端点的集合，可以用于 A/B 测试或者分版本路由等场景。
+    __subsets__ 是服务端点的集合，可以用于 A/B 测试或者分版本路由等场景。
     可以将一个服务的流量切分成 N 份供客户端分场景使用。
-    `name` 字段定义后主要供 VirtualService 里 `destination` 使用。
-    每个子集都是在 `host` 对应服务的基础上基于一个或多个 `labels` 定义的，在 Kubernetes 中它是附加到像 Pod 这种对象上的键/值对。
+    __name__ 字段定义后主要供 VirtualService 里 __destination__ 使用。
+    每个子集都是在 __host__ 对应服务的基础上基于一个或多个 __labels__ 定义的，在 Kubernetes 中它是附加到像 Pod 这种对象上的键/值对。
     这些标签应用于 Kubernetes 服务的 Deployment 并作为元数据信息（Metadata）来识别不同的版本。
 
 - OutlierDetection
@@ -51,15 +51,15 @@
 
 服务网格提供了两种创建方式：图形向导创建和 YAML 创建。通过图形向导创建的具体操作步骤如下：
 
-1. 在左侧导航栏点击`流量治理` -> `目标规则`，点击右上角的`创建`按钮。
+1. 在左侧导航栏点击 __流量治理__ -> __目标规则__ ，点击右上角的 __创建__ 按钮。
 
     ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/destirule01.png)
 
-2. 在`创建目标`界面中，先进行基本配置后点击`下一步`。
+2. 在 __创建目标__ 界面中，先进行基本配置后点击 __下一步__ 。
 
     ![创建目标](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/destirule02.png)
 
-3. 按屏幕提示选择策略类型，并配置对应的治理策略后，点击`确定`。
+3. 按屏幕提示选择策略类型，并配置对应的治理策略后，点击 __确定__ 。
 
     ![治理策略](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/destirule03.png)
 
@@ -67,7 +67,7 @@
 
     ![创建成功](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/destirule04.png)
 
-5. 在列表右侧，点击操作一列的 `⋮`，可通过弹出菜单进行更多操作。
+5. 在列表右侧，点击操作一列的 __⋮__ ，可通过弹出菜单进行更多操作。
 
     ![更多操作](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/destirule05.png)
 
@@ -124,10 +124,10 @@ status: {}
 
 注意，地域标签是在网格成员集群的工作节点上的 label，注意检查节点的标签配置：
 
-- 地区：`topology.kubernetes.io/region`
-- 可用区域：`topology.kubernetes.io/zone`
-- 分区：`topology.istio.io/subzone` 分区是 istio 特有的配置，以实现更细粒度划分
+- 地区： `topology.kubernetes.io/region` 
+- 可用区域： `topology.kubernetes.io/zone` 
+- 分区： __topology.istio.io/subzone__ 分区是 istio 特有的配置，以实现更细粒度划分
 
-另外地域是根据分层顺序进行匹配排列的，不同 `region` 的 `zone` 是两个不同的可用区域。
+另外地域是根据分层顺序进行匹配排列的，不同 __region__ 的 __zone__ 是两个不同的可用区域。
 
 详情请参阅 Istio 官方文档： <https://istio.io/latest/zh/docs/tasks/traffic-management/locality-load-balancing/>
