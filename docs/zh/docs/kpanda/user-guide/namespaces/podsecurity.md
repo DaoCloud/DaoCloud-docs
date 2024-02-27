@@ -46,6 +46,6 @@
 
     ![创建成功](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/ps05.png)
 
-5. 点击 __操作__ 还可以编辑或者删除您配置的安全策略。
+5. 点击 __⋮__ 还可以编辑或者删除您配置的安全策略。
 
     ![操作](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/ps06.png)
