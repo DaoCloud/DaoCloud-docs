@@ -35,30 +35,33 @@
 	        port: http
 	  namespaceSelector: # (4)
 	    matchNames:
-	      - insight-system  # 此处匹配的命名空间为需要暴露指标的应用所在的。
-	  selector: # (5)
+	      - insight-system  # (5)
+	  selector: # (6)
 	    matchLabels:
               micrometer-prometheus-discovery: "true"
 	```
 
 	1. 指定 ServiceMonitor 的名称
 	2. 指定 ServiceMonitor 的命名空间
-	3. 这是服务端点，代表 Prometheus 所需的采集 Metrics 的地址。 __endpoints__ 为一个数组，同时可以创建多个 __endpoints__ 。每个 __endpoints__ 包含三个字段，每个字段的含义如下：
+	3. 这是服务端点，代表 Prometheus 所需的采集 Metrics 的地址。 __endpoints__ 为一个数组，
+	   同时可以创建多个 __endpoints__ 。每个 __endpoints__ 包含三个字段，每个字段的含义如下：
 
-	  	- __interval__ ：指定 Prometheus 对当前 __endpoints__ 采集的周期。单位为秒，在本次示例中设定为 __15s__ 。
-	  	- __path__ ：指定 Prometheus 的采集路径。在本次示例中，指定为 __/actuator/prometheus__ 。
-	  	- __port__ ：指定采集数据需要通过的端口，设置的端口为采集的 Service 端口所设置的 __name__ 。
+	    - __interval__ ：指定 Prometheus 对当前 __endpoints__ 采集的周期。单位为秒，在本次示例中设定为 __15s__ 。
+	    - __path__ ：指定 Prometheus 的采集路径。在本次示例中，指定为 __/actuator/prometheus__ 。
+	    - __port__ ：指定采集数据需要通过的端口，设置的端口为采集的 Service 端口所设置的 __name__ 。
 
 	4. 这是需要发现的 Service 的范围。 __namespaceSelector__ 包含两个互斥字段，字段的含义如下：
 
-	  	- __any__ ：有且仅有一个值 __true__ ，当该字段被设置时，将监听所有符合 Selector 过滤条件的 Service 的变动。
-	 	- __matchNames__ ：数组值，指定需要监听的 __namespace__ 的范围。例如，只想监听 default 和 insight-system 两个命名空间中的 Service，那么 __matchNames__ 设置如下：
+	    - __any__ ：有且仅有一个值 __true__ ，当该字段被设置时，将监听所有符合 Selector 过滤条件的 Service 的变动。
+	    - __matchNames__ ：数组值，指定需要监听的 __namespace__ 的范围。例如，只想监听 default 和 insight-system
+		  两个命名空间中的 Service，那么 __matchNames__ 设置如下：
 
-			```yaml
+		    ```yaml
 			namespaceSelector:
 			  matchNames:
 			    - default
 			    - insight-system
 			```
 
-	5. 用于选择 Service。
+	5. 此处匹配的命名空间为需要暴露指标的应用所在的命名空间
+	6. 用于选择 Service

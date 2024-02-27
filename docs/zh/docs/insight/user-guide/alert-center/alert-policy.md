@@ -33,8 +33,7 @@
 
         ![添加规则](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/alert-policy04.png)
 
-
-       在弹窗中创建告警规则，填写各项参数后点击 __确定__。
+        在弹窗中创建告警规则，填写各项参数后点击 __确定__。
 
         ![创建规则](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/policy04.png)
 
@@ -44,9 +43,9 @@
         - 告警级别：包含紧急、警告、信息三种级别。
         - 高级设置：可以自定义标签和注解。
 
-    方式二：可点击 __模板导入__，选择平台管理员已创建好的告警模版批量导入告警规则。
+    - 方式二：可点击 __模板导入__，选择平台管理员已创建好的告警模版批量导入告警规则。
 
-    ![告警模版](../../images/import-template.png){ width=1000px}
+        ![告警模版](../../images/import-template.png){ width=1000px}
 
 3. 点击 __下一步__ 后配置通知。
 
