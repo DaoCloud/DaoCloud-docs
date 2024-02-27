@@ -1,45 +1,54 @@
-# Container Group Security Policies
+---
+MTPE: FanLin
+Date: 2024-02-27
+---
 
-Container group security policies in a Kubernetes cluster allow you to control the behavior of Pods in various security aspects by configuring different levels and modes for specific namespaces. Only Pods that meet certain conditions will be accepted by the system. There are three levels and three modes available, and users can choose the most suitable options based on their needs to set up restriction policies.
+# Pod Security Policy
+
+Pod security policies in a Kubernetes cluster allow you to control the behavior of Pods in various aspects of security by configuring different levels and modes for specific namespaces. Only Pods that meet certain conditions will be accepted by the system. It sets three levels and three modes, allowing users to choose the most suitable scheme to set restriction policies according to their needs.
 
 !!! note
 
-    Only one security policy can be configured for each security mode. Please be cautious when configuring the __enforce__ security mode for namespaces, as any violations will result in Pod creation failure.
+    Only one security policy can be configured for one security mode. Please be careful when configuring the enforce security mode for a namespace, as violations will prevent Pods from being created.
 
-This section will explain how to configure container group security policies for namespaces using the container management interface.
+This section will introduce how to configure Pod security policies for namespaces through the container management interface.
 
 ## Prerequisites
 
-- The container management module has been integrated with a Kubernetes cluster or a Kubernetes cluster has been created. The cluster version needs to be v1.22 or above, and access to the UI interface of the cluster is required.
+- The container management module has [integrated a Kubernetes cluster](../clusters/integrate-cluster.md) or [created a Kubernetes cluster](../clusters/create-cluster.md). The cluster version needs to be v1.22 or above, and you should be able to access the cluster's UI interface.
 
-- A namespace has been created, and a user has been created and granted the __NS Admin__ or higher permission level. For more details, refer to [Namespace Authorization](../permissions/cluster-ns-auth.md).
+- A [namespace has been created](../namespaces/createns.md), a [user has been created](../../../ghippo/user-guide/access-control/user.md), and the user has been granted [NS Admin](../permissions/permission-brief.md) or higher permissions. For details, please refer to [Namespace Authorization](../permissions/cluster-ns-auth.md).
 
-## Configuring Container Group Security Policies for a Namespace
+## Configure Pod Security Policies for Namespace
 
-1. Select the namespace for which you want to configure the container group security policies and navigate to its details page. Click __Configure Policy__ on the __Container Group Security Policies__ page to enter the configuration page.
+1. Select the namespace for which you want to configure Pod security policies and go to the details page. Click __Configure Policy__ on the __Pod Security Policy__ page to go to the configuration page.
 
+    ![Configure Policy List](../images/ps01.png)
 
-2. On the configuration page, click __Add Policy__ to create a new policy. You will need to specify the security level and security mode. The following table provides detailed descriptions of the security levels and security modes.
+2. Click __Add Policy__ on the configuration page, and a policy will appear, including security level and security mode. The following is a detailed introduction to the security level and security policy.
 
-    | Security Level | Description                                                                                                                                                                     |
-    | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | Privileged     | Unrestricted policy that provides the widest range of permissions. This policy allows known privilege escalations.                                                               |
-    | Baseline       | The least restrictive policy that disallows known privilege escalations. It allows the use of default (minimum required) Pod configurations.                                    |
-    | Restricted     | A highly restrictive policy that follows best practices for protecting Pods.                                                                                                   |
+    | Security Level | Description |
+    | ---------- | ------------------------------------------------------------ |
+    | Privileged | An unrestricted policy that provides the maximum possible range of permissions. This policy allows known privilege elevations. |
+    | Baseline   | The least restrictive policy that prohibits known privilege elevations. Allows the use of default (minimum specified) Pod configurations. |
+    | Restricted | A highly restrictive policy that follows current best practices for protecting Pods. |
 
-    | Security Mode | Description                                                                                                             |
-    | ------------- | ----------------------------------------------------------------------------------------------------------------------- |
-    | Audit         | Violations of the specified policy will add new audit events in the audit log, and Pods can be created.                  |
-    | Warn          | Violations of the specified policy will return visible warning messages to users, and Pods can be created.               |
-    | Enforce       | Violations of the specified policy will result in the inability to create Pods.                                          |
+    | Security Mode | Description |
+    | -------- | ------------------------------------------------------------ |
+    | Audit    | Violations of the specified policy will add new audit events in the audit log, and the Pod can be created. |
+    | Warn     | Violations of the specified policy will return user-visible warning information, and the Pod can be created. |
+    | Enforce  | Violations of the specified policy will prevent the Pod from being created. |
 
-    ![Add Policy](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/ps02.png)
+    ![Add Policy](../images/ps02.png)
 
-3. Different security levels correspond to different checks. If you are unsure how to configure your namespace, you can click __Policy Configuration Explanation__ in the upper right corner of the page to view detailed information.
+3. Different security levels correspond to different check items. If you don't know how to configure your namespace, you can __Policy Configuration Item Explanation__ at the top right corner of the page to view detailed information.
 
+    ![Configuration Item Explanation01](../images/ps03.png)
 
-4. Click __OK__ to save the configuration. If successful, the configured security policy will appear on the page.
+4. Click Confirm. If the creation is successful, the security policy you configured will appear on the page.
 
+    ![Creation Success](../images/ps04.png)
 
-5. By clicking on __Actions__ , you can edit or delete the configured security policies.
+5. Click __⋮__ to edit or delete the security policy you configured.
 
+    ![Operation](../images/ps05.png)
