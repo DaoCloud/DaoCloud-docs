@@ -33,7 +33,7 @@ Refer to the following steps to create a job using an image.
 
 3. Fill in [Basic Information](create-job.md#_3), [Container Settings](create-job.md) and [Advanced Settings](create-job.md#_5) in turn, click __OK__ in the lower right corner of the page to complete the creation.
 
-     The system will automatically return to the __job__ list. Click __︙__ on the right side of the list to perform operations such as updating, deleting, and restarting the job.
+    The system will automatically return to the __job__ list. Click __︙__ on the right side of the list to perform operations such as updating, deleting, and restarting the job.
 
     ![Config]](../images/job07.png)
 
@@ -56,7 +56,7 @@ Container setting is divided into six parts: basic information, life cycle, heal
 
 === "Basic information (required)"
 
-![Basic Information](../images/job02-1.png)
+    ![Basic Information](../images/job02-1.png)
 
      When configuring container-related parameters, you must correctly fill in the container name and image parameters, otherwise you will not be able to proceed to the next step. After filling in the settings with reference to the following requirements, click __OK__ .
 
@@ -67,35 +67,35 @@ Container setting is divided into six parts: basic information, life cycle, heal
      - CPU/Memory Quota: Requested value (minimum resource to be used) and limit value (maximum resource allowed to be used) of CPU/Memory resource. Please configure resources for containers as needed to avoid resource waste and system failures caused by excessive container resources. The default value is shown in the figure.
      - GPU Exclusive: Configure the GPU usage for the container, only positive integers are supported. The GPU quota setting supports setting exclusive use of the entire GPU card or part of the vGPU for the container. For example, for an 8-core GPU card, enter the number __8__ to let the container exclusively use the entire length of the card, and enter the number __1__ to configure a 1-core vGPU for the container.
 
-         > Before setting exclusive GPU, the administrator needs to install the GPU card and driver plug-in on the cluster nodes in advance, and enable the GPU feature in [Cluster Settings](../clusterops/cluster-settings.md).
+    > Before setting exclusive GPU, the administrator needs to install the GPU card and driver plug-in on the cluster nodes in advance, and enable the GPU feature in [Cluster Settings](../clusterops/cluster-settings.md).
 
 === "Lifecycle (optional)"
 
      Set the commands that need to be executed when the container starts, after starting, and before stopping. For details, refer to [Container Lifecycle settings](pod-config/lifecycle.md).
 
-         ![Lifecycle](../images/job06.png)
+     ![Lifecycle](../images/job06.png)
 
 === "Health Check (optional)"
 
      It is used to judge the health status of containers and applications, which helps to improve the availability of applications. For details, refer to [Container Health Check settings](pod-config/health-check.md).
 
-    ![Health Check](../images/deploy07.png)  
+     ![Health Check](../images/deploy07.png)  
 
 === "Environment Variables (optional)"
 
-     Configure container parameters within the Pod, add environment variables or pass settings to the Pod, etc. For details, refer to [Container environment variable settings](pod-config/env-variables.md).
+    Configure container parameters within the Pod, add environment variables or pass settings to the Pod, etc. For details, refer to [Container environment variable settings](pod-config/env-variables.md).
 
     ![Environment Variables](../images/deploy08.png)
 
 === "Data Storage (optional)"
 
-     Configure the settings for container mounting data volumes and data persistence. For details, refer to [Container Data Storage settings](pod-config/env-variables.md).
+    Configure the settings for container mounting data volumes and data persistence. For details, refer to [Container Data Storage settings](pod-config/env-variables.md).
 
     ![Data storage](../images/deploy09.png)
 
 === "Security Settings (optional)"
 
-     Containers are securely isolated through Linux's built-in account authority isolation mechanism. You can limit container permissions by using account UIDs (digital identity tokens) with different permissions. For example, enter __0__ to use the privileges of the root account.
+    Containers are securely isolated through Linux's built-in account authority isolation mechanism. You can limit container permissions by using account UIDs (digital identity tokens) with different permissions. For example, enter __0__ to use the privileges of the root account.
 
     ![Security settings](../images/deploy10.png)
 
@@ -105,17 +105,17 @@ Advanced setting includes job settings, labels and annotations.
 
 === "Job Settings"
 
-        ![Job Settings](../images/job03.png)
+    ![Job Settings](../images/job03.png)
 
-     - Parallel Pods: the maximum number of Pods that can be created at the same time during job execution, and the parallel number should not be greater than the total number of Pods. Default is 1.
-     - Timeout: When this time is exceeded, the job will be marked as failed to execute, and all Pods under the job will be deleted. When it is empty, it means that no timeout is set.
-     - Restart Policy: Whether to restart the Pod when the setting fails.
+    - Parallel Pods: the maximum number of Pods that can be created at the same time during job execution, and the parallel number should not be greater than the total number of Pods. Default is 1.
+    - Timeout: When this time is exceeded, the job will be marked as failed to execute, and all Pods under the job will be deleted. When it is empty, it means that no timeout is set.
+    - Restart Policy: Whether to restart the Pod when the setting fails.
 
 === "Labels and Annotations"
 
-     You can click the __Add__ button to add labels and annotations to the workload instance Pod.
+    You can click the __Add__ button to add labels and annotations to the workload instance Pod.
 
-        ![Labels and Annotations](../images/job04.png)
+    ![Labels and Annotations](../images/job04.png)
 
 ## YAML creation
 
@@ -132,7 +132,8 @@ In addition to image, creation jobs can also be created more quickly through YAM
 3. Enter or paste the YAML file prepared in advance, click __OK__ to complete the creation.
 
     ![Confirm](../images/job09.png)
-???note "Click to view the complete YAML"
+   
+??? note "Click to view the complete YAML"
 
     ```yaml
     kind: Job
