@@ -193,8 +193,7 @@ nav:
                       - 健康检查: kpanda/user-guide/workloads/pod-config/health-check.md
                       - 集群调度: kpanda/user-guide/workloads/pod-config/scheduling-policy.md
               - 弹性伸缩:
-                  - Knative:
-                    - 安装 Knative: kpanda/user-guide/scale/knative/install.md
+                  - 安装 Knative: kpanda/user-guide/scale/knative/install.md
                   - 安装 metrics-server 插件: kpanda/user-guide/scale/install-metrics-server.md
                   - 安装 kubernetes-cronhpa-controller 插件: kpanda/user-guide/scale/install-cronhpa.md
                   - 安装 VPA 插件: kpanda/user-guide/scale/install-vpa.md
