@@ -43,9 +43,9 @@ Follow the steps below to create a deployment by image.
 
 ### Basic information
 
-- Payload name: can contain up to 63 characters, can only contain lowercase letters, numbers, and a separator ("-"), and must start and end with a lowercase letter or number, such as deployment-01. The name of the same type of workload in the same namespace cannot be repeated, and the name of the workload cannot be changed after the workload is created.
+- Workload Name: can contain up to 63 characters, can only contain lowercase letters, numbers, and a separator ("-"), and must start and end with a lowercase letter or number, such as deployment-01. The name of the same type of workload in the same namespace cannot be repeated, and the name of the workload cannot be changed after the workload is created.
 - Namespace: Select the namespace where the newly created payload will be deployed. The default namespace is used by default. If you can't find the desired namespace, you can go to [Create a new namespace](../namespaces/createns.md) according to the prompt on the page.
-- Number of instances: Enter the number of Pod instances for the load, and one Pod instance is created by default.
+- Pods: Enter the number of Pod instances for the load, and one Pod instance is created by default.
 - Description: Enter the description information of the payload and customize the content. The number of characters cannot exceed 512.
 
     ![Basic Information](../images/deploy04.png)
@@ -61,8 +61,8 @@ Container setting is divided into six parts: basic information, life cycle, heal
      When configuring container-related parameters, you must correctly fill in the container name and image parameters, otherwise you will not be able to proceed to the next step. After filling in the setting with reference to the following requirements, click __OK__ .
     
      - Container Name: Up to 63 characters, lowercase letters, numbers and separators ("-") are supported. Must start and end with a lowercase letter or number, eg nginx-01.
-     - Container Image: Enter the address or name of the image. When entering the image name, the image will be pulled from the official [DockerHub](https://hub.docker.com/) by default. After accessing the [container registry](../../../kangaroo/intro/index.md) module of DCE 5.0, you can click __Select Image__ on the right to select an image.
-     - Update strategy: After checking __Always pull image__ , the image will be pulled from the registry every time the load restarts/upgrades. If it is not checked, only the local mirror will be pulled, and only when the mirror does not exist locally, it will be re-pulled from the container registry. For more details, refer to [Image Pull Policy](https://kubernetes.io/docs/concepts/containers/images/#image-pull-policy).
+     - Image: Enter the address or name of the image. When entering the image name, the image will be pulled from the official [DockerHub](https://hub.docker.com/) by default. After accessing the [container registry](../../../kangaroo/intro/index.md) module of DCE 5.0, you can click __Select Image__ on the right to select an image.
+     - Image Pull Policy: After checking __Always pull image__ , the image will be pulled from the registry every time the load restarts/upgrades. If it is not checked, only the local mirror will be pulled, and only when the mirror does not exist locally, it will be re-pulled from the container registry. For more details, refer to [Image Pull Policy](https://kubernetes.io/docs/concepts/containers/images/#image-pull-policy).
      - Privileged container: By default, the container cannot access any device on the host. After enabling the privileged container, the container can access all devices on the host and enjoy all the permissions of the running process on the host.
      - CPU/Memory Quota: Requested value (minimum resource to be used) and limit value (maximum resource allowed to be used) of CPU/Memory resource. Please configure resources for containers as needed to avoid resource waste and system failures caused by excessive container resources. The default value is shown in the figure.
      - GPU Exclusive: Configure the GPU usage for the container, only positive integers are supported. The GPU quota setting supports setting exclusive use of the entire GPU card or part of the vGPU for the container. For example, for an 8-core GPU card, enter the number __8__ to let the container exclusively use the entire length of the card, and enter the number __1__ to configure a 1-core vGPU for the container.
@@ -134,26 +134,26 @@ Advanced setting includes four parts: load network setting, upgrade strategy, sc
          - ClusterFirst: application docking with Kube-DNS/CoreDNS.
          - None: New option value introduced in Kubernetes v1.9 (Beta in v1.10). After setting to None, dnsConfig must be set. At this time, the domain name resolution file of the container will be completely generated through the setting of dnsConfig.
     
-     - Domain name server: fill in the address of the domain name server, such as __10.6.175.20__ .
+     - Nameservers: fill in the address of the domain name server, such as __10.6.175.20__ .
      - Search domains: DNS search domain list for domain name query. When specified, the provided search domain list will be merged into the search field of the domain name resolution file generated based on dnsPolicy, and duplicate domain names will be deleted. Kubernetes allows up to 6 search domains.
      - Options: Setting options for DNS, where each object can have a name attribute (required) and a value attribute (optional). The content in this field will be merged into the options field of the domain name resolution file generated based on dnsPolicy. If some options of dnsConfig options conflict with the options of the domain name resolution file generated based on dnsPolicy, they will be overwritten by dnsConfig.
-     - Host alias: the alias set for the host.
+     - Host Alias: the alias set for the host.
 
         ![DNS](../images/deploy17.png)
 
-=== "Upgrade Strategy"
+=== "Upgrade Policy"
 
-     - Upgrade method: __Rolling upgrade__ refers to gradually replacing instances of the old version with instances of the new version. During the upgrade process, business traffic will be load-balanced to the old and new instances at the same time, so the business will not be interrupted. __Rebuild and upgrade__ refers to deleting the load instance of the old version first, and then installing the specified new version. During the upgrade process, the business will be interrupted.
-     - Maximum number of invalid pods: Specify the maximum value or ratio of unavailable pods during the load update process, the default is 25%. If it is equal to the number of instances, there is a risk of service interruption.
+     - Upgrade Mode: __Rolling upgrade__ refers to gradually replacing instances of the old version with instances of the new version. During the upgrade process, business traffic will be load-balanced to the old and new instances at the same time, so the business will not be interrupted. __Rebuild and upgrade__ refers to deleting the load instance of the old version first, and then installing the specified new version. During the upgrade process, the business will be interrupted.
+     - Max Unavailable Pods: Specify the maximum value or ratio of unavailable pods during the load update process, the default is 25%. If it is equal to the number of instances, there is a risk of service interruption.
      - Max Surge: The maximum or ratio of the total number of Pods exceeding the desired replica count of Pods during a Pod update. Default is 25%.
-     - Maximum number of retained versions: Set the number of old versions retained when the version is rolled back. The default is 10.
-     - Minimum Pod availability time: The minimum time for a Pod to be ready. Only after this time is the Pod considered available. The default is 0 seconds.
-     - Upgrade maximum duration: If the deployment is not successful after the set time, the load will be marked as failed. Default is 600 seconds.
-     - Scale-in time window: The execution time window (0-9,999 seconds) of the command before the load stops, the default is 30 seconds.
+     - Revision History Limit: Set the number of old versions retained when the version is rolled back. The default is 10.
+     - Minimum Ready: The minimum time for a Pod to be ready. Only after this time is the Pod considered available. The default is 0 seconds.
+     - Upgrade Max Duration: If the deployment is not successful after the set time, the load will be marked as failed. Default is 600 seconds.
+     - Graceful Time Window: The execution time window (0-9,999 seconds) of the command before the load stops, the default is 30 seconds.
 
         ![Upgrade Strategy](../images/deploy14.png)
 
-=== "Scheduling Policy"
+=== "Scheduling Policies"
 
      - Tolerance time: When the node where the load instance is located is unavailable, the time for rescheduling the load instance to other available nodes, the default is 300 seconds.
      - Node affinity: According to the label on the node, constrain which nodes the Pod can be scheduled on.
@@ -185,7 +185,7 @@ In addition to image, you can also create deployments more quickly through YAML 
 
 3. Enter or paste the YAML file prepared in advance, click __OK__ to complete the creation.
 
-    ![Confirm](../images/deploy03yaml.png)
+    ![Confirm](../images/deploy03Yaml.png)
 
 ??? note "Click to see an example YAML for creating a deployment"
 
