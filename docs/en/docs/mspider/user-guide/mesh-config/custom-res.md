@@ -38,12 +38,12 @@ Take istiod on the working cluster under the hosted mesh as an example, the spec
 1. View the hosted mesh nicole-dsm-mesh access cluster under the service mesh is nicole-dsm-c2, as shown in the figure below.
 
 
-2. Click the cluster name, jump to the cluster page in the `Container Management` module, click to enter the `Workload` -> `Stateless Load` page to find istiod;
+2. Click the cluster name, jump to the cluster page in the __Container Management__ module, click to enter the __Workload__ -> __Stateless Load__ page to find istiod;
 
 
-3. Click the workload name to enter `Container Configuration` -> `Basic Information` tab page;
+3. Click the workload name to enter __Container Configuration__ -> __Basic Information__ tab page;
 
 
-4. Click the Edit button to modify the CPU and memory quotas, click `Next`, `OK`.
+4. Click the Edit button to modify the CPU and memory quotas, click __Next__ , __OK__ .
 
 5. View the Pod resource information under the workload, and it can be seen that it has changed.

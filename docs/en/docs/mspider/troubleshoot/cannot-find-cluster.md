@@ -2,7 +2,7 @@
 
 ## Cause Analysis
 
-The main reason is that the `MeshCluster` status of the cluster to which it belongs is not "CLUSTER_RUNNING". You can log in to the global cluster to view the status of the MeshCluster CRD of the cluster to which it belongs.
+The main reason is that the __MeshCluster__ status of the cluster to which it belongs is not "CLUSTER_RUNNING". You can log in to the global cluster to view the status of the MeshCluster CRD of the cluster to which it belongs.
 
 ```bash
 kubectl get meshcluster -n mspider-system
@@ -17,7 +17,7 @@ Probably because of gsc-controller syncing cluster exception from container mana
 
 ### Case 2
 
-To remove the cluster from the created mesh, run the above command. The state of the `meshcluster` found for this cluster may be in one of the following states:
+To remove the cluster from the created mesh, run the above command. The state of the __meshcluster__ found for this cluster may be in one of the following states:
 
 - MANAGED_RECONCILING
 - MANAGED_SUCCEED

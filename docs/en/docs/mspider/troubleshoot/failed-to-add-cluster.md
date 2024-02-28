@@ -172,12 +172,12 @@
 
 1. Case 1: The managed cluster does not have metalLB installed, resulting in a cluster network failure, ingressgateway cannot normally allocate endpoints and CrashLoopBackoff
 
-2. Case 2: The endpoint allocation of the istio-remote component is wrong, run `kubectl get ep -n istio-system` to view the details
+2. Case 2: The endpoint allocation of the istio-remote component is wrong, run __kubectl get ep -n istio-system__ to view the details
 
 ## Solution
 
 1. Case 1: addon deploys metalLB
 2. Scenario 2: Check
 
-     1. Control plane cluster `istio-remote ep: istio-${meshID}-hosted ${podIP}:15012/15017`
-     2. Workload cluster `istio-remote ep: istiod-hosted-mesh-hosted-lb ${loadBalancerIP}:15012/15017`
+     1. Control plane cluster __istio-remote ep: istio-${meshID}-hosted ${podIP}:15012/15017__ 
+     2. Workload cluster __istio-remote ep: istiod-hosted-mesh-hosted-lb ${loadBalancerIP}:15012/15017__ 

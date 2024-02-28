@@ -2,8 +2,8 @@
 
 DCE 5.0 Service Mesh provides a dynamic flow visualization feature called Traffic Topology.
 
-In the left navigation menu, click `Traffic Monitoring` -> `Traffic Topology`.
-Here, you can choose the `View`, `Namespace`, `Collection source`, and `Time` to view the service topology.
+In the left navigation menu, click __Traffic Monitoring__ -> __Traffic Topology__ .
+Here, you can choose the __View__ , __Namespace__ , __Collection source__ , and __Time__ to view the service topology.
 
 ![Traffic Topology](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/topo01.png)
 
@@ -21,7 +21,7 @@ The service topology graph supports operations like panning and zooming.
 
 ## Legend
 
-Click the `Legend` button in the bottom-left corner to see the meaning of the current lines, circles, and colors.
+Click the __Legend__ button in the bottom-left corner to see the meaning of the current lines, circles, and colors.
 
 ![Legend](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/topo03.png)
 

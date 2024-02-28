@@ -7,13 +7,13 @@ hide:
 
 When users no longer need the mesh governance service, they can use the delete operation.
 Deleting a mesh requires users to complete a series of prerequisite operations
-before activating the `Delete` button in the dialog box.
+before activating the __Delete__ button in the dialog box.
 
 !!! danger
 
     After performing the delete operation, the mesh cannot be recovered. If you want to manage it again, you need to recreate the mesh.
 
-1. On the right side of the Mesh List, click the `...` button, and select `Delete` from the pop-up menu.
+1. On the right side of the Mesh List, click the __...__ button, and select __Delete__ from the pop-up menu.
 
     ![Delete Mesh](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/deletemesh01.png)
 

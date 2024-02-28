@@ -42,11 +42,11 @@ spec:
 
 Service mesh provides two creation methods: wizard and YAML. The specific steps to create through the wizard are as follows:
 
-1. In the left navigation bar, click `Traffic Management` -> `Gateway`, and click the `Create` button in the upper right corner.
+1. In the left navigation bar, click __Traffic Management__ -> __Gateway__ , and click the __Create__ button in the upper right corner.
 
     ![Create Gateway](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/gateway01.png)
 
-2. In the `Create Gateway` interface, configure the basic information, add the server as needed, and click `OK`.
+2. In the __Create Gateway__ interface, configure the basic information, add the server as needed, and click __OK__ .
 
     ![Gateway Information](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/gateway02.png)
 
@@ -54,6 +54,6 @@ Service mesh provides two creation methods: wizard and YAML. The specific steps 
 
     ![Successfully Created](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/gateway03.png)
 
-4. On the right side of the list, click `⋮` in the operation column to perform more operations through the pop-up menu.
+4. On the right side of the list, click __⋮__ in the operation column to perform more operations through the pop-up menu.
 
     ![Edit/Delete](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/gateway04.png)

@@ -2,7 +2,7 @@
 
 ## Situation analysis
 
-It is common to see `istio-ingressgateway` components become unhealthy when hosted meshs host workload clusters.
+It is common to see __istio-ingressgateway__ components become unhealthy when hosted meshs host workload clusters.
 
 As shown below:
 
@@ -37,9 +37,9 @@ First check the istio-ingressgateway log error message:
 2023-04-25T12:21:15.199447Z warning envoy config StreamAggregatedResources gRPC config stream to xds-grpc closed since 168s ago: 14, connection error: desc = "transport: Error while dialing dial tcp 10.233.48.7 5:15012: i/o timeout"
 ```
 
-The above error message shows that the connection to `10.233.48.75:15012` is `istiod-remote`’s service ip:15012 timeout !!!.
+The above error message shows that the connection to __10.233.48.75:15012__ is __istiod-remote__ ’s service ip:15012 timeout !!!.
 
-At this point we look at the `endpoint` of `istiod-remote` under the `istio-system` namespace.
+At this point we look at the __endpoint__ of __istiod-remote__ under the __istio-system__ namespace.
 
 ```bash
 kubectl get ep -n istio-system
@@ -52,7 +52,7 @@ istiod 10.233.97.220:15012,10.233.97.220:15010,10.233.97.220:15017 + 1 more... 1
 istiod-remote 10.233.95.141:15012,10.233.95.141:15017 10m
 ```
 
-It can be seen here that the `endpoint` address assigned by `istio-remote` is `istiod-remote 10.233.95.141:15012,10.233.95.141:15017`. As shown below:
+It can be seen here that the __endpoint__ address assigned by __istio-remote__ is __istiod-remote 10.233.95.141:15012,10.233.95.141:15017__ . As shown below:
 
 ![timeout](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/troubleshoot/images/hosted02.png)
 
@@ -64,7 +64,7 @@ It can be seen here that the `endpoint` address assigned by `istio-remote` is `i
 
 ## Solution
 
-Update the control plane address in the mesh `basic information` configuration:
+Update the control plane address in the mesh __basic information__ configuration:
 
 1. Log in to the control plane cluster and run the following command to obtain this address:
 
@@ -74,7 +74,7 @@ Update the control plane address in the mesh `basic information` configuration:
 
     ![get url](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/troubleshoot/images/hosted03.png)     
 
-1. Click the menu on the right and select `Edit Basic Information`.
+1. Click the menu on the right and select __Edit Basic Information__ .
 
      
 
@@ -82,10 +82,10 @@ Update the control plane address in the mesh `basic information` configuration:
 
      
 
-1. Check the `istio-ingressgateway` of the workload cluster again, and find that it is normal now.
+1. Check the __istio-ingressgateway__ of the workload cluster again, and find that it is normal now.
 
     ![view cluster status](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/troubleshoot/images/hosted06.png)
 
-1. View `istiod-remote endpoint` information is also normal.
+1. View __istiod-remote endpoint__ information is also normal.
 
     ![view info](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/troubleshoot/images/hosted07.png)

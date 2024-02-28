@@ -22,4 +22,4 @@ Therefore, the user needs to manually restart the Pod.
 ## Solution
 
 * To address this issue, it is necessary to manually restart the Pod. Please proceed with caution and plan accordingly based on the specific business requirements.
-* Use the command `kubectl rollout restart deployment <deployment-name> -n <namespace>` to restart the Pod.
+* Use the command __kubectl rollout restart deployment <deployment-name> -n <namespace>__ to restart the Pod.

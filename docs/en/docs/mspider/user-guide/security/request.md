@@ -8,7 +8,7 @@ hide:
 This authentication mode can be used when an external user initiates a request for mesh internal services. In this mode, request encryption is implemented using JSON Web Token (JWT).
 Each request authentication needs to configure an [Authorization Policy](./authorize.md).
 
-All workloads labeled `app: httpbin` require JWT authentication. Examples are as follows:
+All workloads labeled __app: httpbin__ require JWT authentication. Examples are as follows:
 
 ```yaml
 apiVersion: security.istio.io/v1beta1
@@ -27,15 +27,15 @@ spec:
 
 Service Mesh provides two creation methods: wizard wizard and YAML. The specific steps to create through the wizard are as follows:
 
-1. On the left navigation bar, click `Security` -> `Request Authentication`, and click the `Create` button in the upper right corner.
+1. On the left navigation bar, click __Security__ -> __Request Authentication__ , and click the __Create__ button in the upper right corner.
 
     ![Create Request Authentication](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/request01.png)
 
-2. In the `Create Request Authentication` interface, first perform the basic configuration and then click `Next`.
+2. In the __Create Request Authentication__ interface, first perform the basic configuration and then click __Next__ .
 
     ![Basic Info](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/request02.png)
 
-3. After completing the authentication settings according to the screen prompts, click `OK`, and the system will verify the configured information.
+3. After completing the authentication settings according to the screen prompts, click __OK__ , and the system will verify the configured information.
 
     ![Settings](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/request03.png)
 
@@ -43,7 +43,7 @@ Service Mesh provides two creation methods: wizard wizard and YAML. The specific
 
     ![Successfully Created](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/request04.png)
 
-5. On the right side of the list, click `⋮` in the operation column to perform more operations through the pop-up menu.
+5. On the right side of the list, click __⋮__ in the operation column to perform more operations through the pop-up menu.
 
     ![Edit/Delete](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/request05.png)
 

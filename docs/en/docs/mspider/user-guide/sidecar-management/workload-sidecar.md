@@ -5,7 +5,7 @@ disabling, and setting resource quota.
 
 ## View Sidecar Injection Information
 
-In the left navigation menu, click `Mesh Sidecar` -> `Workload` and select a cluster to
+In the left navigation menu, click __Mesh Sidecar__ -> __Workload__ and select a cluster to
 view all workloads, their related namespaces, sidecar injection statuses, and resource quota under that cluster.
 
 ![Workload Sidecar List](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/wl-sidecar01.png)
@@ -27,8 +27,8 @@ When there are many workloads, you can sort them by name and search for them usi
 
 ## View Sidecar Running Status
 
-If one workload has a sidecar injected, click the `⋮` at the end of the row and
-select `Check Sidecar Status` from the pop-up menu.
+If one workload has a sidecar injected, click the __⋮__ at the end of the row and
+select __Check Sidecar Status__ from the pop-up menu.
 
 ![Sidecar Running Status](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/wl-sidecar02.png)
 
@@ -42,22 +42,22 @@ You can enable automatic sidecar injection for one or more workloads and restart
 their corresponding Pods. Please ensure that the Pods can be restarted before
 performing this operation. Follow these steps:
 
-1. Select one or more workloads that have not had sidecars injected, click `Enable Injection` at the top right.
+1. Select one or more workloads that have not had sidecars injected, click __Enable Injection__ at the top right.
 
     ![Select Sidecar Injection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/wl-sidecar03.png)
 
-2. In the pop-up dialog, confirm the selected workload(s) and check the `Restart Now` checkbox. Click `OK`.
+2. In the pop-up dialog, confirm the selected workload(s) and check the __Restart Now__ checkbox. Click __OK__ .
 
     ![Confirm](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/wl-sidecar04.png)
 
-3. Return to the workload list, and you can see the `Status` of the selected workloads
-   has changed, such as from `Uninjected` to `Injected`. After completing the Pod restarts,
+3. Return to the workload list, and you can see the __Status__ of the selected workloads
+   has changed, such as from __Uninjected__ to __Injected__ . After completing the Pod restarts,
    the sidecar injection will be completed, and the relevant injection progress can be
-   viewed in the `Pods Injected` column.
+   viewed in the __Pods Injected__ column.
 
 !!! note
 
-    If the namespace to which the workload belongs has executed the `Injection Enable/Disable`
+    If the namespace to which the workload belongs has executed the __Injection Enable/Disable__ 
     operation but has not restarted the workload, the workload cannot perform new sidecar-related
     operations. You need to restart it before executing the new sidecar operation.
 
@@ -67,23 +67,23 @@ You can disable automatic sidecar injection for one or more workloads and restar
 their corresponding Pods. Please ensure that the Pods can be restarted before performing
 this operation. Follow these steps:
 
-1. Select one or more workloads that have had sidecars injected, click `Injection Disable` at the top right.
+1. Select one or more workloads that have had sidecars injected, click __Injection Disable__ at the top right.
 
     ![Select Sidecar Injection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/sc-disable01.png)
 
-2. In the pop-up dialog, confirm the selected workload(s) and check the `Restart Now` checkbox. Click `OK`.
+2. In the pop-up dialog, confirm the selected workload(s) and check the __Restart Now__ checkbox. Click __OK__ .
 
     ![Confirm](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/sc-disable02.png)
 
-3. Return to the workload list, and you can see that the `Status` of the selected workloads
-   has changed to `Uninjected`. After completing the Pod restarts, the sidecar injection will
-   be disabled, and the relevant uninstall progress can be viewed in the `Pods Injected` column.
+3. Return to the workload list, and you can see that the __Status__ of the selected workloads
+   has changed to __Uninjected__ . After completing the Pod restarts, the sidecar injection will
+   be disabled, and the relevant uninstall progress can be viewed in the __Pods Injected__ column.
 
     ![Successful Sidecar Injection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/sc-disable03.png)
 
 !!! note
 
-    If the namespace to which the workload belongs has executed the `Injection Enable/Disable`
+    If the namespace to which the workload belongs has executed the __Injection Enable/Disable__ 
     operation but has not restarted the workload, the workload cannot perform new sidecar-related
     operations. You need to restart it before executing the new sidecar operation.
 
@@ -91,26 +91,26 @@ this operation. Follow these steps:
 
 You can set CPU and memory limits for one or more workloads that have had sidecars injected. Follow these steps:
 
-1. Select one or more workloads that have had sidecars injected, click `Sidecar Resource Quota` at the top right.
+1. Select one or more workloads that have had sidecars injected, click __Sidecar Resource Quota__ at the top right.
 
     ![Resource quota](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/sc-disable01.png)
 
-2. In the pop-up dialog, set the resource quota for the selected workload(s) and click `OK`.
+2. In the pop-up dialog, set the resource quota for the selected workload(s) and click __OK__ .
 
     ![Set rResource quota](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/wl-sidecar07.png)
 
 3. Return to the workload list, and you can see that the resource quotas of the selected
-   workloads are displayed in the `CPU Request/Limit` and `Memory Request/Limit` columns.
+   workloads are displayed in the __CPU Request/Limit__ and __Memory Request/Limit__ columns.
 
 ## Cleanup Policy
 
 You can clean up the sidecar policy for one or more workloads that have had sidecars injected. Follow these steps:
 
-1. Select one or more workloads that have had sidecars injected, click `Cleanup Policy` at the top right.
+1. Select one or more workloads that have had sidecars injected, click __Cleanup Policy__ at the top right.
 
     ![Cleanup policy](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/sc-disable01.png)
 
-2. In the pop-up dialog, confirm the selected workload(s) and click `OK`.
+2. In the pop-up dialog, confirm the selected workload(s) and click __OK__ .
 
     ![Confirm Selection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/wl-sidecar10.png)
 

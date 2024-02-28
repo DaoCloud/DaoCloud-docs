@@ -6,7 +6,7 @@ This page describes the operation steps for connecting the service mesh to the O
 
 ## SCC Security Policy Settings
 
-In the Openshift cluster, add the `privileged` user permission of the namespace to the service mesh, taking the two namespaces istio-operator and istio-system as examples:
+In the Openshift cluster, add the __privileged__ user permission of the namespace to the service mesh, taking the two namespaces istio-operator and istio-system as examples:
 
 ```shell
 oc adm policy add-scc-to-user privileged system:serviceaccount:istio-operator:istio-operator

@@ -25,11 +25,11 @@ The upgrade process is the same for both types of versions, but mixed upgrades o
 
 DaoCloud will continue to provide adaptation work for new Istio versions. When a new Istio version is detected by the system, the mesh list will prompt for upgradable mesh instances (a card with an exclamation mark icon will appear).
 
-Check the content of the icon and click the `Upgrade Now` button to enter the upgrade wizard.
+Check the content of the icon and click the __Upgrade Now__ button to enter the upgrade wizard.
 
 ![Upgrade Now](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/IstioUpdate01.png)
 
-The Istio upgrade wizard includes three steps: `Select target version`, `Environment detection`, and `Perform upgrade`.
+The Istio upgrade wizard includes three steps: __Select target version__ , __Environment detection__ , and __Perform upgrade__ .
 
 After the upgrade is completed, the mesh can be immediately deployed and run online. The specific steps are as follows:
 
@@ -39,20 +39,20 @@ After the upgrade is completed, the mesh can be immediately deployed and run onl
     ![Target Version](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/IstioUpdate02.png)
 
     > It is not recommended by the official to perform cross-version upgrades for Istio.
-    > It is suggested to upgrade in a step-by-step manner, for example, upgrading from `1.15.x` to `1.16.x`.
-    > It is not recommended to directly upgrade to versions greater than `1.16.x`.
+    > It is suggested to upgrade in a step-by-step manner, for example, upgrading from __1.15.x__ to __1.16.x__ .
+    > It is not recommended to directly upgrade to versions greater than __1.16.x__ .
 
-2. **Environment Detection**: The system will detect whether the versions of each cluster (k8s) under the mesh meet the upgrade requirements based on the selected target version. If they meet the requirements, the `Next` button will be activated; otherwise, the user needs to address any environment issues.
+2. **Environment Detection**: The system will detect whether the versions of each cluster (k8s) under the mesh meet the upgrade requirements based on the selected target version. If they meet the requirements, the __Next__ button will be activated; otherwise, the user needs to address any environment issues.
 
     ![Environment Detection](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/IstioUpdate03.png)
 
 	  - If the cluster (k8s) version is too low, you can upgrade the cluster (k8s) version first in the
-      container management and then click the `Redetect` button.
+      container management and then click the __Redetect__ button.
 
 	  - If the cluster (k8s) version is too high, it is recommended to go back and select a higher version of Istio
       in the "Select target version" step.
 
-3. **Perform Upgrade**: After passing the environment detection, you will enter the upgrade phase, which includes two stages: `Upgrade` and `Health Check`.
+3. **Perform Upgrade**: After passing the environment detection, you will enter the upgrade phase, which includes two stages: __Upgrade__ and __Health Check__ .
 
 	  - Istio Upgrade: Pulling Istio images and upgrading control plane components.
 

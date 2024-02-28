@@ -44,7 +44,7 @@ To alleviate the issue of resource consumption, you can implement the following 
         - namespace3/*
     ```
 
-    The above YAML restricts the services under `namespace1` to only access services in `namespace2` and `namespace3`.
+    The above YAML restricts the services under __namespace1__ to only access services in __namespace2__ and __namespace3__ .
 
     To implement this, you need to add a whitelist of other namespaces that can be accessed by
     the namespace managed by the cluster.
@@ -57,11 +57,11 @@ To alleviate the issue of resource consumption, you can implement the following 
     - Whether a method similar to NS-group (read from workspaces) can automatically
       configure bidirectional Sidecar namespace accessibility (with a global switch)
 
-2. Adding `exportTo` to Istio Resources
+2. Adding __exportTo__ to Istio Resources
 
     By using Sidecar access control under the Namespace, you can still achieve namespace-level
     restrict. If you need to reduce resource consumption, you can add the corresponding
-    `exportTo` configuration to the Istio resources, declaring which namespaces can access these resources.
+    __exportTo__ configuration to the Istio resources, declaring which namespaces can access these resources.
 
     This approach incurs higher configuration costs.
     If implemented, batch configuration capabilities should be considered:
@@ -86,7 +86,7 @@ To alleviate the issue of resource consumption, you can implement the following 
 
 ## Demo
 
-- Prepare two services in different namespaces: `NS-a` and `NS-b`
+- Prepare two services in different namespaces: __NS-a__ and __NS-b__ 
 - Ensure that both services have Sidecars successfully injected
 - Create a Sidecar resource with YAML content as follows:
 

@@ -9,7 +9,7 @@ DCE 5.0 service mesh has built-in one-click diagnosis and repair functions for m
 
 1. Enter a specific Service Mesh and click __Service Management__ -> __Service List__ .
    In the __Diagnose Config__ column, next to services with an __Abnormal__ status,
-   the word `Diagnose` will appear. Click __Diagnose__.
+   the word __Diagnose__ will appear. Click __Diagnose__.
 
     ![Diagnose](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/diagnose01.png)
 
@@ -27,7 +27,7 @@ DCE 5.0 service mesh has built-in one-click diagnosis and repair functions for m
 
     ![Next](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/diagnose03.png)
 
-4. A list of items that require `Manual Repair` will be displayed.
+4. A list of items that require __Manual Repair__ will be displayed.
    You can click __View Troubleshooting Guide__ to read the proper documentation page and manually repair the items.
 
     ![Manual repair](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/diagnose04.png)

@@ -35,7 +35,7 @@ Configure service information:
 
 
 
-In order to distinguish different versions of workloads, you need to find the corresponding workloads in `Container Management Platform`, click `Labels and Annotations`, and add key-value pairs to pod tags:
+In order to distinguish different versions of workloads, you need to find the corresponding workloads in __Container Management Platform__ , click __Labels and Annotations__ , and add key-value pairs to pod tags:
 "version": "v1"
 
 
@@ -50,16 +50,16 @@ First select the above consistent namespace (gray-demo), and enable sidecar inje
 
 The deployment process is the same as above, the main differences are:
 
-- Image changed: `docker.m.daocloud.io/istio/examples-helloworld-v2`
+- Image changed: `docker.m.daocloud.io/istio/examples-helloworld-v2` 
 - Add label "version": "v2" to the corresponding **pod label** on the container platform
 
 ## Deploy grayscale application strategy
 
-### Multicluster target rules
+### Multicluster Destination Rules
 
 First create a DestinationRule, and define the business versions of different clusters by defining SubSet.
 
-Its label key-value pair is the pod label added above: `version: <VERSION>`.
+Its label key-value pair is the pod label added above: __version: <VERSION>__ .
 
 Policy: Istio Mutual TLS must be enabled
 

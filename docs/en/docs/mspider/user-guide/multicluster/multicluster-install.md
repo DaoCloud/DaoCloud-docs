@@ -14,9 +14,9 @@ This page explains how to deploy a service mesh in a multicloud environment.
 
 In Istio, regions, zones, and subzones are concepts used to maintain service availability in a multi-cluster deployment. Specifically:
 
-- **Region** represents a major geographical area, usually referring to a data center region of the cloud provider. In Kubernetes, the label [`topology.kubernetes.io/region`](https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/#topologykubernetesioregion) identifies the region of a node.
-- **Zone** represents a smaller area within a data center, typically representing a sub-region. In Kubernetes, the label [`topology.kubernetes.io/zone`](https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/#topologykubernetesiozone) identifies the zone of a node.
-- **SubZone** is an even smaller area within a zone. Since Kubernetes does not have the concept of partitions, Istio introduces a custom node label [`topology.istio.io/subzone`](https://github.com/istio/api/blob/master/networking/v1alpha3/label/labels.proto#L84) to define a partition.
+- **Region** represents a major geographical area, usually referring to a data center region of the cloud provider. In Kubernetes, the label [ `topology.kubernetes.io/region` ](https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/#topologykubernetesioregion) identifies the region of a node.
+- **Zone** represents a smaller area within a data center, typically representing a sub-region. In Kubernetes, the label [ `topology.kubernetes.io/zone` ](https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/#topologykubernetesiozone) identifies the zone of a node.
+- **SubZone** is an even smaller area within a zone. Since Kubernetes does not have the concept of partitions, Istio introduces a custom node label [ `topology.istio.io/subzone` ](https://github.com/istio/api/blob/master/networking/v1alpha3/label/labels.proto#L84) to define a partition.
 
 These concepts help Istio manage service availability across different regions. For example, in a multi-cluster deployment, if a service fails in Zone A, Istio can automatically reroute the service traffic to Zone B to ensure service availability.
 
@@ -126,7 +126,7 @@ Create a mesh using the service mesh and add the planned clusters to the corresp
 
 ### Create a Mesh
 
-First, go to the mesh management page and click `Create Mesh`:
+First, go to the mesh management page and click __Create Mesh__ :
 
 ![Create Mesh](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-mesh1.png)
 
@@ -137,7 +137,7 @@ The specific parameters for creating a mesh are shown in the image:
 3. Select a pre-selected mesh version that meets the prerequisites.
 4. Choose the cluster where the hosted control plane is located.
 5. Load Balancer IP: This parameter is required for exposing the control plane's Istiod. It needs to be prepared in advance.
-6. Container Registry: In a private cloud environment, you need to upload the required mesh images to a repository. For public clouds, it is recommended to use `release.daocloud.io/mspider`.
+6. Container Registry: In a private cloud environment, you need to upload the required mesh images to a repository. For public clouds, it is recommended to use `release.daocloud.io/mspider` .
 
 ![Upload Images](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-mesh2.png)
 
@@ -147,11 +147,11 @@ The mesh will be in the "Creating" state, and you need to wait for the creation 
 
 #### Confirm the Hosted Mesh Control Plane Services
 
-After ensuring that the mesh is in a normal state, check if the services under the `istio-system` namespace in the control plane cluster `mdemo-cluster1` have successfully bound to LoadBalancer IPs.
+After ensuring that the mesh is in a normal state, check if the services under the __istio-system__ namespace in the control plane cluster __mdemo-cluster1__ have successfully bound to LoadBalancer IPs.
 
 ![Bind LB IP](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/hosted-istiod-lb-check.png)
 
-If the service `istiod-mdemo-cluster-hosted-lb` of the hosted mesh control plane does not have a LoadBalancer IP assigned, additional steps are required.
+If the service __istiod-mdemo-cluster-hosted-lb__ of the hosted mesh control plane does not have a LoadBalancer IP assigned, additional steps are required.
 
 #### Allocate EXTERNAL IP
 
@@ -175,22 +175,22 @@ curl -I "${hosted_istiod_ip}:443"
 
 1. Obtain the EXTERNAL IP of the hosted control plane service
 
-    In the control plane cluster `mdemo-cluster1` of the mesh `mdemo-mesh`, confirm that the hosted control plane service `istiod-mdemo-mesh-hosted-lb` has been assigned a LoadBalancer IP, and record its IP address. An example is shown below:
+    In the control plane cluster __mdemo-cluster1__ of the mesh __mdemo-mesh__ , confirm that the hosted control plane service __istiod-mdemo-mesh-hosted-lb__ has been assigned a LoadBalancer IP, and record its IP address. An example is shown below:
 
     ![Confirmation](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/hosted-istiod-lb-ip.png)
 
-    Confirm that the `EXTERNAL-IP` of the hosted control plane service `istiod-mdemo-mesh-hosted-lb` is `10.64.30.72`.
+    Confirm that the __EXTERNAL-IP__ of the hosted control plane service __istiod-mdemo-mesh-hosted-lb__ is `10.64.30.72` .
 
 2. Manually configure the Istiod parameters for the hosted control plane
 
-    First, access the global control plane cluster `kpanda-global-cluster` in the container management platform (if you're unsure about the location of the relevant cluster, you can ask the responsible person or refer to [Querying the Global Service Cluster](#querying-global-service-clusters)).
+    First, access the global control plane cluster __kpanda-global-cluster__ in the container management platform (if you're unsure about the location of the relevant cluster, you can ask the responsible person or refer to [Querying the Global Service Cluster](#querying-global-service-clusters)).
 
-    - Search for the resource `GlobalMesh` in the `Custom Resources` module.
-    - Find the corresponding mesh `mdemo-mesh` in the `mspider-system` namespace.
+    - Search for the resource __GlobalMesh__ in the __Custom Resources__ module.
+    - Find the corresponding mesh __mdemo-mesh__ in the __mspider-system__ namespace.
     - Edit the YAML file.
 
-    - In the YAML file, add the parameter `istio.custom_params.values.global.remotePilotAddress` under the field `.spec.ownerConfig.controlPlaneParams`.
-    - Set its value to the `EXTERNAL-IP` address of `istiod-mdemo-mesh-hosted-lb` recorded earlier: `10.64.30.72`.
+    - In the YAML file, add the parameter `istio.custom_params.values.global.remotePilotAddress` under the field `.spec.ownerConfig.controlPlaneParams` .
+    - Set its value to the __EXTERNAL-IP__ address of __istiod-mdemo-mesh-hosted-lb__ recorded earlier: `10.64.30.72` .
 
     ![Add Parameter](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/get-gm-crd.png)
 
@@ -202,7 +202,7 @@ curl -I "${hosted_istiod_ip}:443"
 
 Add a cluster to the service mesh through the graphical interface.
 
-1. After the control plane of the mesh is successfully created, select the corresponding mesh and go to the mesh management page -> `Cluster Management` -> `Add Cluster`:
+1. After the control plane of the mesh is successfully created, select the corresponding mesh and go to the mesh management page -> __Cluster Management__ -> __Add Cluster__ :
 
     ![Add Cluster](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-cluster1.png)
 
@@ -218,7 +218,7 @@ Add a cluster to the service mesh through the graphical interface.
 
 Since the current work cluster has a different network than the control plane cluster pods, you need to expose the Istiod of the control plane to the public network as described in the [Expose the Hosted Istiod](#expose-the-hosted-istiod-of-the-mesh-control-plane) section above.
 
-To verify if the Istio-related components in the work cluster are running properly, check if the `istio-ingressgateway` in the `istio-system` namespace of the work cluster is functioning correctly:
+To verify if the Istio-related components in the work cluster are running properly, check if the __istio-ingressgateway__ in the __istio-system__ namespace of the work cluster is functioning correctly:
 
 ![Verification](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/check-work-istiod.png)
 
@@ -241,16 +241,16 @@ Due to the differences in work cluster networks, the "Network ID" needs to be ma
 
 Let's begin configuring the "Network ID" following these steps:
 
-1. First, access the global control plane cluster `kpanda-global-cluster` (if you're unsure about the location of the relevant cluster, you can ask the responsible person or refer to [Querying the Global Service Cluster](#_30)).
-2. In the `Custom Resources` module, search for the resource `MeshCluster`.
-3. Find the work clusters that have been added to the mesh under the `mspider-system` namespace. For this example, the work clusters are: `mdemo-cluster2` and `mdemo-cluster3`.
-4. Take `mdemo-cluster2` as an example and edit the YAML file.
+1. First, access the global control plane cluster __kpanda-global-cluster__ (if you're unsure about the location of the relevant cluster, you can ask the responsible person or refer to [Querying the Global Service Cluster](#_30)).
+2. In the __Custom Resources__ module, search for the resource __MeshCluster__ .
+3. Find the work clusters that have been added to the mesh under the __mspider-system__ namespace. For this example, the work clusters are: __mdemo-cluster2__ and __mdemo-cluster3__ .
+4. Take __mdemo-cluster2__ as an example and edit the YAML file.
 
     - Find the field `.spec.meshedParams[].params` in the YAML and add the "Network ID" field to the parameter list.
     - Notes for the parameter list:
-        - Confirm that `global.meshID: mdemo-mesh` represents the same mesh ID.
+        - Confirm that __global.meshID: mdemo-mesh__ represents the same mesh ID.
         - Confirm that the cluster role `global.clusterRole: HOSTED_WORKLOAD_CLUSTER` represents a work cluster.
-    - Add the parameter `istio.custom_params.values.global.network` with the value of the Network ID from the initial [planning form](#planning-form): `network-c2`
+    - Add the parameter `istio.custom_params.values.global.network` with the value of the Network ID from the initial [planning form](#planning-form): __network-c2__ 
 
     ![Edit YAML](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-network-id1.png)
 
@@ -258,16 +258,16 @@ Let's begin configuring the "Network ID" following these steps:
 
     ![Edit YAML](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-network-id3.png)
 
-Repeat the above steps for all work clusters (`mdemo-cluster1`, `mdemo-cluster2`, `mdemo-cluster3`) by adding the "Network ID".
+Repeat the above steps for all work clusters ( __mdemo-cluster1__ , __mdemo-cluster2__ , __mdemo-cluster3__ ) by adding the "Network ID".
 
-### Identify the "Network ID" for the `istio-system` in Work Clusters
+### Identify the "Network ID" for the __istio-system__ in Work Clusters
 
-In the container management platform, go to the corresponding work cluster namespaces (`mdemo-cluster1`, `mdemo-cluster2`, `mdemo-cluster3`) and add a label to identify the network.
+In the container management platform, go to the corresponding work cluster namespaces ( __mdemo-cluster1__ , __mdemo-cluster2__ , __mdemo-cluster3__ ) and add a label to identify the network.
 
-- Label Key: `topology.istio.io/network`
-- Label Value: `${CLUSTER_NET}`
+- Label Key: `topology.istio.io/network` 
+- Label Value: __${CLUSTER_NET}__ 
 
-Using `mdemo-cluster3` as an example, locate the `Namespace` and select `istio-system` for editing the labels.
+Using __mdemo-cluster3__ as an example, locate the __Namespace__ and select __istio-system__ for editing the labels.
 
 ![Identify Network ID](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/edit-istio-system-label.png)
 
@@ -348,9 +348,9 @@ EOF
 The creation process is as follows:
 
 1. Access the corresponding work cluster in the container management platform.
-2. Search for `IstioOperator` in the `Custom Resources` module.
-3. Select the `istio-system` namespace.
-4. Click `Create YAML`.
+2. Search for __IstioOperator__ in the __Custom Resources__ module.
+3. Select the __istio-system__ namespace.
+4. Click __Create YAML__ .
 
 ![Create Gateway Instance](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-ew.png)
 
@@ -384,11 +384,11 @@ spec:
 
 After installing the East-West Gateway and configuring the gateway resolution rules, you need to declare the East-West Gateway configuration in all clusters.
 
-1. Access the global control plane cluster `kpanda-global-cluster` in the container management platform (if unsure, ask the responsible person or refer to [Querying the Global Service Cluster](#querying-global-service-clusters)).
+1. Access the global control plane cluster __kpanda-global-cluster__ in the container management platform (if unsure, ask the responsible person or refer to [Querying the Global Service Cluster](#querying-global-service-clusters)).
 
-2. In the `Custom Resources` section, search for the resource `GlobalMesh`.
+2. In the __Custom Resources__ section, search for the resource __GlobalMesh__ .
 
-3. Find the corresponding mesh `mdemo-mesh` under the `mspider-system` namespace.
+3. Find the corresponding mesh __mdemo-mesh__ under the __mspider-system__ namespace.
 
 4. Edit the YAML file.
 
@@ -413,7 +413,7 @@ istio.custom_params.values.global.meshNetworks.network-c3.gateways[0].port: '154
 
 ### Deploying the Demo
 
-The main applications are `[helloworld](https://github.com/istio/istio/blob/1.16.0/samples/helloworld/helloworld.yaml)` and `[sleep](https://github.com/istio/istio/blob/1.16.0/samples/sleep/sleep.yaml)` (these two demos are test applications provided by Istio).
+The main applications are __[helloworld](https://github.com/istio/istio/blob/1.16.0/samples/helloworld/helloworld.yaml)__ and __[sleep](https://github.com/istio/istio/blob/1.16.0/samples/sleep/sleep.yaml)__ (these two demos are test applications provided by Istio).
 
 Cluster Deployment Overview:
 
@@ -427,7 +427,7 @@ mdemo-cluster1 | :heart: VERSION=vc3 | :heart:
 
 It is recommended to use the container management platform to create corresponding workloads and applications. Find the corresponding cluster in the container management platform and follow the steps below:
 
-Using `mdemo-cluster1` as an example, deploy `helloworld` with `vc1` version:
+Using __mdemo-cluster1__ as an example, deploy __helloworld__ with __vc1__ version:
 
 Important points for each cluster:
 
@@ -435,11 +435,11 @@ Important points for each cluster:
     - helloworld: docker.m.daocloud.io/istio/examples-helloworld-v1
     - Sleep: curlimages/curl
 
-- Add the following **labels** to the `helloworld` workload:
+- Add the following **labels** to the __helloworld__ workload:
     - app: helloworld
     - version: ${VERSION}
 
-- Add the corresponding version **environment variable** to the `helloworld` workload:
+- Add the corresponding version **environment variable** to the __helloworld__ workload:
     - SERVICE_VERSION: ${VERSION}
 
 ![Deploy Demo](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/create-demo11.png)
@@ -603,7 +603,7 @@ kind create cluster --config kind-cluster2.yaml --name mdemo-kcluster2
 
 #### Helm Installation in Container Management Platform
 
-It is recommended to use the `Helm Apps` -> `Helm Charts` -> find metallb -> `Install` option in the container management platform.
+It is recommended to use the __Helm Apps__ -> __Helm Charts__ -> find metallb -> __Install__ option in the container management platform.
 
 ![Install metallb](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/install-metallb-from-helm.png)
 
@@ -691,6 +691,6 @@ curl -I 10.6.230.71:8080
 
 ### Querying Global Service Clusters
 
-Through the container management platform's cluster list interface, search for `Cluster Role: Global Service Cluster`.
+Through the container management platform's cluster list interface, search for __Cluster Role: Global Service Cluster__ .
 
 ![Global Service Cluster](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/get-kpanda-global-cluster.png)

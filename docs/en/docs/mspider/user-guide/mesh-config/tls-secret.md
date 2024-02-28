@@ -68,15 +68,15 @@ WQuRxan+FuKE3RiKHFXkslks=
 
 ## Create key
 
-1. After entering a mesh, click `mesh Configuration` -> `TLS Key Management` in the left navigation bar, and click the `Create` button.
+1. After entering a mesh, click __Mesh Configuration__ -> __TLS Key Management__ in the left navigation bar, and click the __Create__ button.
 
      
 
-1. Fill in the name, select the namespace, fill in the newly created certificate and private key, add labels according to the situation, and click `OK`.
+1. Fill in the name, select the namespace, fill in the newly created certificate and private key, add labels according to the situation, and click __OK__ .
 
      
 
-1. The screen prompts that the creation is successful. Click the `⋮` button on the right to perform operations such as editing, YAML editing, and deletion.
+1. The screen prompts that the creation is successful. Click the __⋮__ button on the right to perform operations such as editing, YAML editing, and deletion.
 
      
 
@@ -125,14 +125,14 @@ type: kubernetes.io/tls
 
 Created TLS keys can be used to:
 
-1. `Target Rules`. When adding policy configuration, after enabling client TLS, you can choose the created key in the following two modes:
+1. __Destination Rules__ . When adding policy configuration, after enabling client TLS, you can choose the created key in the following two modes:
 
      - Simple mode
      - Bidirectional mode
 
      
 
-1. `Gateway Rules`. After enabling the server-side TLS mode, you can choose the created key in the following 3 modes:
+1. __Gateways__ . After enabling the server-side TLS mode, you can choose the created key in the following 3 modes:
 
      - Simple mode
      - Bidirectional mode

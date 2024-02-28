@@ -11,11 +11,11 @@ Service management displays all the services that have been injected with sideca
 
 The service mesh aggregates services in each cluster. Services with the same name in the same namespace are aggregated into one service. This facilitates unified traffic management for cross-cluster collaborative services.
 
-The `Service Management` performs `Diagnostic Configuration` checks on the status of services in the list. The results and their meanings are as follows:
+The __Service Management__ performs __Diagnostic Configuration__ checks on the status of services in the list. The results and their meanings are as follows:
 
 - Normal: All pods of the service in each cluster have been injected with sidecars, and all settings are identical.
 - Warning: Some pods of the workloads under this service have not been injected with sidecars.
-- Abnormal: The service will be displayed as `Abnormal` if any of the following problems exist:
+- Abnormal: The service will be displayed as __Abnormal__ if any of the following problems exist:
 
     - None of the pods have been injected with sidecars.
 	  - The port settings of the service are inconsistent across clusters.
@@ -30,15 +30,15 @@ The service list also indicates services from other microservice registries.
 
 ![other microservice registries](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/servicelist02.png)
 
-You can click a service name to enter the details page and view specific information such as service addresses and ports in each cluster. You can also modify the communication protocol in the `Address` tab.
+You can click a service name to enter the details page and view specific information such as service addresses and ports in each cluster. You can also modify the communication protocol in the __Address__ tab.
 
 ![Address](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/servicelist03.png)
 
-Pay special attention to the `Diagnostic Configuration` column in the service list. When the diagnostic information is `Abnormal`, hovering over the `ⓘ` will display the reason for the abnormality. Abnormal status will affect grid-related capabilities such as traffic management in the next phase.
+Pay special attention to the __Diagnostic Configuration__ column in the service list. When the diagnostic information is __Abnormal__ , hovering over the __ⓘ__ will display the reason for the abnormality. Abnormal status will affect grid-related capabilities such as traffic management in the next phase.
 
 ![Abnormal Prompt](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/servicelist04.png)
 
-On the right side of the service list, click `⋮` and select the corresponding menu item to navigate to traffic management and security governance.
+On the right side of the service list, click __⋮__ and select the corresponding menu item to navigate to traffic management and security governance.
 
 ![Menu Items](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/servicelist05.png)
 

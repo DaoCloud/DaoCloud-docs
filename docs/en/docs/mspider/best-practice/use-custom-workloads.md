@@ -21,7 +21,7 @@ helm -n mspider-system get values mspider > mspider.yaml
 
 ### Update Configuration
 
-Edit the backup file `mspider.yaml` and append the configuration for the custom workload type(s). If there are multiple configurations, you can add them accordingly:
+Edit the backup file __mspider.yaml__ and append the configuration for the custom workload type(s). If there are multiple configurations, you can add them accordingly:
 
 ```yaml
 global:
@@ -46,7 +46,7 @@ global:
   # ...
 ```
 
-Update `mspider` using Helm:
+Update __mspider__ using Helm:
 
 ```shell
 # Add the repo if it doesn't exist
@@ -125,7 +125,7 @@ spec:
   # ...
 ```
 
-Updating `mspider` using Helm:
+Updating __mspider__ using Helm:
 
 ```shell
 # Add repo if it doesn't exist
@@ -218,7 +218,7 @@ Successful modification of the mesh instance's CR. Note the control plane servic
 
 Example Application
 
-In OCP, there is support for a new workload called `DeploymentConfig`. This example demonstrates how to successfully manage this workload.
+In OCP, there is support for a new workload called __DeploymentConfig__ . This example demonstrates how to successfully manage this workload.
 
 ### DeploymentConfig
 
@@ -246,7 +246,7 @@ spec:
               protocol: TCP
 ```
 
-Create an application named `nginx-deployment-samzong` using the provided YAML, and then create an associated Service (svc):
+Create an application named __nginx-deployment-samzong__ using the provided YAML, and then create an associated Service (svc):
 
 ```yaml
 # filename dc-nginx-svc.yaml
@@ -263,7 +263,7 @@ spec:
     targetPort: 80
 ```
 
-This is a standard Kubernetes service that is bound to a previously created `DeploymentConfig` using the label `app: nginx-app-samzong`.
+This is a standard Kubernetes service that is bound to a previously created __DeploymentConfig__ using the label __app: nginx-app-samzong__ .
 
 ```bash
 kubectl -n NS_NAME apply -f dc-nginx.yaml dc-nginx-svc.yaml

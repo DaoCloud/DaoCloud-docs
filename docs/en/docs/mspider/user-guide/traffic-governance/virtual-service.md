@@ -27,26 +27,26 @@ Virtual Service provides two creation methods: graphical wizard creation and YAM
 
 The specific steps for creating using the graphical wizard are as follows (refer to [Virtual Service Parameters Configuration](./vsparams.md)):
 
-1. Click `Traffic Management` in the left navigation bar, then click `Virtual Service`, and click the `Create` button in the upper right corner.
+1. Click __Traffic Management__ in the left navigation bar, then click __Virtual Service__ , and click the __Create__ button in the upper right corner.
 
     ![Create](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/virtualserv01.png)
 
-2. In the `Create Virtual Service` page, confirm and select the namespace, service,
-   and application scope where the virtual service will be created, then click `Next`.
+2. In the __Create Virtual Service__ page, confirm and select the namespace, service,
+   and application scope where the virtual service will be created, then click __Next__ .
 
     ![Create Virtual Service](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/virtualserv02.png)
 
-3. Configure the HTTP routes, TLS routes, and TCP routes as prompted on the screen, then click `OK`.
+3. Configure the HTTP routes, TLS routes, and TCP routes as prompted on the screen, then click __OK__ .
 
     ![Routing Configuration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/virtualserv03.png)
 
-4. Return to the Virtual Service list, and there will be a prompt indicating successful creation. On the right side of the Virtual Service list, click the `⋮` in the "Actions" column to perform more operations from the pop-up menu.
+4. Return to the Virtual Service list, and there will be a prompt indicating successful creation. On the right side of the Virtual Service list, click the __⋮__ in the "Actions" column to perform more operations from the pop-up menu.
 
     ![More Actions](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/virtualserv04.png)
 
 ## YAML Creation
 
-The operation for creating using YAML is relatively simple. You can click the `Create by YAML` button
+The operation for creating using YAML is relatively simple. You can click the __Create by YAML__ button
 to enter the creation page and directly write YAML. Alternatively, users can use the provided templates
 on the page to simplify the editing process. The editing window provides basic syntax checking functionality
 to assist users in writing. Here is an example YAML:
@@ -113,10 +113,10 @@ status: {}
     A hostname can only be defined in one VirtualService. The same VirtualService can control the traffic properties for multiple HTTP and TCP ports.
 
     It is important to note that when using the short name of a service
-    (e.g., using "reviews" instead of `reviews.default.svc.cluster.local`),
+    (e.g., using "reviews" instead of __reviews.default.svc.cluster.local__ ),
     the service mesh will handle this name based on the namespace of the rule,
-    not the namespace where the service resides. Suppose a rule in the `default` namespace
-    includes a host reference to `reviews`. It will be treated as `reviews.default.svc.cluster.local`,
+    not the namespace where the service resides. Suppose a rule in the __default__ namespace
+    includes a host reference to __reviews__ . It will be treated as __reviews.default.svc.cluster.local__ ,
     regardless of the namespace where the reviews service resides.
 
     To avoid potential misconfigurations, it is recommended to use FQDN for service references.
@@ -151,7 +151,7 @@ status: {}
 - HTTP
 
     An ordered list of rules that contain all the routing configurations for HTTP protocol.
-    It applies to service ports with names prefixed with `http-`, `http2-`, `grpc-`, or protocols
+    It applies to service ports with names prefixed with __http-__ , __http2-__ , __grpc-__ , or protocols
     as HTTP, HTTP2, GRPC, and terminating TLS,
     as well as ServiceEntry using HTTP, HTTP2, and GRPC protocols. Traffic will be handled by the first rule that matches.
 
@@ -200,5 +200,5 @@ status: {}
 
 ## Reference
 
-- [What is `VirtualService`?](https://istio.io/latest/docs/concepts/traffic-management/#virtual-services)
-- [`VirtualService` Configuration](https://istio.io/latest/docs/concepts/traffic-management/#virtual-service-example)
+- [What is __VirtualService__ ?](https://istio.io/latest/docs/concepts/traffic-management/#virtual-services)
+- [ __VirtualService__ Configuration](https://istio.io/latest/docs/concepts/traffic-management/#virtual-service-example)
