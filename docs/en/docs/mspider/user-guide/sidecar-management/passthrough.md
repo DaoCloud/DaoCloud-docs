@@ -20,26 +20,26 @@ traffic.sidecar.istio.io/excludeOutboundIPRanges
 
 This section explains how to enable/disable traffic passthrough on the DCE GUI.
 
-1. Enter a mesh, click `Mesh Sidecar` -> `Workload`.
+1. Enter a mesh, click __Mesh Sidecar__ -> __Workload__ .
 
     
 
-1. Click `⋮` on the right side of a workload, and select `Traffic passthrough Settings` in the pop-up menu.
+1. Click __⋮__ on the right side of a workload, and select __Traffic passthrough Settings__ in the pop-up menu.
 
     
 
-1. After setting the parameters for traffic passthrough, check `Restart now`, and click `Confirm changes`.
+1. After setting the parameters for traffic passthrough, check __Restart now__ , and click __Confirm changes__ .
 
      
 
      - Inbound: Only ports are supported, i.e. ports for external access to workloads within the mesh
      - Outbound: You can set the port or IP range of the target
 
-1. If the settings are correct, there will be a prompt message `Traffic passthrough setup successful` in the upper right corner. You can also [check the traffic passthrough effect](#check-traffic-passthrough-effect).
+1. If the settings are correct, there will be a prompt message __Traffic passthrough setup successful__ in the upper right corner. You can also [check the traffic passthrough effect](#check-traffic-passthrough-effect).
 
      
 
-1. If traffic passthrough is enabled, the pop-up window of `Traffic passthrough settings` in step 3 above will display the set parameters, click the x on the right, check `Restart workload now`, and click `Confirm changes` to Disable traffic passthrough.
+1. If traffic passthrough is enabled, the pop-up window of __Traffic passthrough settings__ in step 3 above will display the set parameters, click the x on the right, check __Restart workload now__ , and click __Confirm changes__ to Disable traffic passthrough.
 
      
 
@@ -50,7 +50,7 @@ In a real mesh cluster, check the effect before and after traffic passthrough.
 1. Preparations
 
      - Prepare a mesh cluster, for example 10.64.30.130
-     - In the namespace, configure the workload `helloworld` and inject sidecars
+     - In the namespace, configure the workload __helloworld__ and inject sidecars
      - Enable traffic passthrough, and then compare the traffic routing changes of the workload
 
      

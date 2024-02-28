@@ -44,15 +44,15 @@ This page lists some common issues encountered when joining DCE 4.0 with service
 
 ### Solution
 
-Manually set the limit range in the `istio-operator` and `istio-system` namespaces to set the overallocation ratio to 0.
+Manually set the limit range in the __istio-operator__ and __istio-system__ namespaces to set the overallocation ratio to 0.
 
-Run the following command to view the limit range in the `istio-operator` namespace:
+Run the following command to view the limit range in the __istio-operator__ namespace:
 
 ```shell
 kubectl describe limits -n istio-operator dce-default-limit-range
 ```
 
-Run the following command to view the limit range in the `istio-system` namespace:
+Run the following command to view the limit range in the __istio-system__ namespace:
 
 ```shell
 kubectl describe limits -n istio-system dce-default-limit-range
@@ -64,11 +64,11 @@ Root cause analysis: DCE 4.0 uses Kubernetes version 1.18, which is relatively o
 
 Symptom 01: 'istio-managed-istio-hosted' fails to start, indicating that the Configmap of 'istio-token' does not exist.
 
-To resolve this issue, manually for grid instance of CR ` GlobalMesh ` add corresponding parameters: `istio.custom_params.values.global.jwtPolicy`.
+To resolve this issue, manually for grid instance of CR __ GlobalMesh __ add corresponding parameters: __istio.custom_params.values.global.jwtPolicy__ .
 
 ![params](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/troubleshoot/images/dce4-01.png)
 
 !!! tip
 
     1. Before integrating with the new version of the service mesh, deploy coreDNS in advance for DCE 4.0.
-    2. The `Global Mesh` configuration is in Global Cluster, not in the access cluster.
+    2. The __Global Mesh__ configuration is in Global Cluster, not in the access cluster.

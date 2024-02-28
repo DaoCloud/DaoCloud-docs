@@ -27,7 +27,7 @@ Multiple HTTP routing rules can be dragged and sorted, any route can be collapse
 
 #### Routing matching rules
 
-required. The YAML field is `spec.http.-name.match`.
+required. The YAML field is __spec.http.-name.match__ .
 
 To match the request through URI path, port, etc., multiple rules can be added, and the order of execution is from top to bottom, and the top matching rule is used first.
 
@@ -39,11 +39,11 @@ To match the request through URI path, port, etc., multiple rules can be added, 
 
 #### Routing target/redirect rule
 
-The features of `routing target` and `redirection` are mutually exclusive features, and only one of them can be selected in a `HTTP routing rule`.
+The features of __routing target__ and __redirection__ are mutually exclusive features, and only one of them can be selected in a __HTTP routing rule__ .
 
 !!! note
 
-     When the user turns on the `Proxy` switch, this item and related content will be grayed out.
+     When the user turns on the __Proxy__ switch, this item and related content will be grayed out.
 
 **routing rules**
 
@@ -51,8 +51,8 @@ The features of `routing target` and `redirection` are mutually exclusive featur
 | -------- | ----------------------------------------- ------ | ------------------------------------------- ----------------- |
 | route destination | spec.http.-name.route.-destination | Optional. Routing targets that have matched the request, multiple routes can be added, and the routing targets with the highest ranking will be executed first. |
 | Service Name | spec.http.-name.route.-destination.host | Required. The name or IP of the route target service. |
-| Version Service | spec.http.-name.route.-destination.subset | Optional. The list comes from the available `Target Rules` for the selected service. |
-| Weight | spec.http.-name.route.weight | Optional. The distribution weight of the traffic occupied by each route in this `route target`. The sum of weights of all `route targets` should be 100. |
+| Version Service | spec.http.-name.route.-destination.subset | Optional. The list comes from the available __Destination Rules__ for the selected service. |
+| Weight | spec.http.-name.route.weight | Optional. The distribution weight of the traffic occupied by each route in this __route target__ . The sum of weights of all __route targets__ should be 100. |
 | port | spec.http.-name.route.-destination.port.number | Optional. The port of the routing target service. |
 
 **redirect**
@@ -61,7 +61,7 @@ The features of `routing target` and `redirection` are mutually exclusive featur
 | ---------- | ---------------------------------------- | -------------------------------------------------- ---------- |
 | redirect | spec.http.-name.redirect | Optional. Redirects are used to forward requests to other paths. |
 | Redirect path | spec.http.-name.redirect.uri | Required. The new access address path (URI). |
-| authority | spec.http.-name.redirect.authority | Optional. The authentication information part in the URI path, usually `//` means the beginning, and `/` means the end. |
+| authority | spec.http.-name.redirect.authority | Optional. The authentication information part in the URI path, usually __//__ means the beginning, and __/__ means the end. |
 | port | spec.http.-name.redirect.port.number | Optional. The port number of the redirection service. |
 | Response Code | spec.http.-name.redirect.redirectCode | Optional. Specify the response code. When the specified error code is returned, the redirection operation will be performed. The default value is 301. |
 
@@ -75,7 +75,7 @@ In addition, 6 optional settings are provided, which you can enable or disable a
 | --------- | ----------------------------------- | ---- -------------------------------------------------- ------ |
 | rewrite | spec.http.-name.rewrite | Optional. Off by default l can reproduce the full path, or just rewrite the http prefix. |
 | Rewrite path | spec.http.-name.rewrite.uri | Required. The new access address path (URI). |
-| authority | spec.http.-name.redirect.authority | Optional. The authentication information part in the URI path, usually `//` means the beginning, and `/` means the end. |
+| authority | spec.http.-name.redirect.authority | Optional. The authentication information part in the URI path, usually __//__ means the beginning, and __/__ means the end. |
 
 **time out**
 
@@ -105,7 +105,7 @@ In addition, 6 optional settings are provided, which you can enable or disable a
 
 **Proxy Virtual Service**
 
-The YAML field is `spec.http.-name.delegate`, which is off by default.
+The YAML field is __spec.http.-name.delegate__ , which is off by default.
 
 - The virtual service proxy feature can split the routing configuration into two virtual services, master and slave. The master virtual service completes the basic settings and matching rules, and the proxy virtual service completes the specific routing rules.
 
@@ -129,7 +129,7 @@ The YAML field is `spec.http.-name.delegate`, which is off by default.
 | traffic image | n | spec.http.-name.image | Optional. Disabled by default. Used to replicate request traffic to other target services. |
 | image to service | y | spec.http.-name.mirror.host | Required. The transfer target service of traffic image. |
 | Traffic image percentage | n | spec.http.-name.mirror.mirrorPercentage:value | Optional. The ratio of the copied request traffic to the original request traffic, the default is 100%. |
-| service version | n | spec.http.-name.mirror.subset | optional. The service version list content comes from the available "target rules" for the current target service. |
+| service version | n | spec.http.-name.mirror.subset | optional. The service version list content comes from the available "Destination Rules" for the current target service. |
 
 ### TLS Routing
 
@@ -141,7 +141,7 @@ The YAML field is `spec.http.-name.delegate`, which is off by default.
 
 #### Routing matching rules
 
-The YAML field is `spec.tls.-name.match`.
+The YAML field is __spec.tls.-name.match__ .
 
 Match requests by port (-port) and SNI (-port.sniHosts) names, and multiple rules can be added. The order of execution is from top to bottom, and the top matching rules are used first.
 
@@ -152,7 +152,7 @@ Match requests by port (-port) and SNI (-port.sniHosts) names, and multiple rule
 | Add Route Target | spec.tls.-name.route | Required. Add routing target information, multiple items can be added, and the order of execution is from top to bottom |
 | Service Name | spec.tls.-name.route.-destination.host | Required. The target service name, the drop-down list contains all services that enable the tls protocol under the current namespace |
 | port | spec.tls.-name.route.-destination.port.number | Optional. target service port |
-| Service Version | spec.tls.-name.route.-destination.subset | Optional. The service version list content comes from the available "target rules" for the current target service. |
+| Service Version | spec.tls.-name.route.-destination.subset | Optional. The service version list content comes from the available "Destination Rules" for the current target service. |
 | Weight | spec.tls.-name.route.-destination.weight | Optional. The distribution weight of each "routing destination" in this "tls routing" rule. The sum of the weights of each rule should be 100. |
 
 ### TCP Routing
@@ -177,5 +177,5 @@ Match requests by port (-port) and SNI (-port.sniHosts) names, and multiple rule
 | Add Route Target |spec.tcp.-name.route | Required. Add routing target information, multiple items can be added, and the execution order is from top to bottom. |
 | Service Name | spec.tcp.-name.route.-destination.host | Required. The target service name, the drop-down list contains all services of the tcp protocol available in the current namespace. |
 | port |spec.tcp.-name.route.-destination.port.number | Optional. Target service port. |
-| Service version |spec.tcp.-name.route.-destination.subset | Optional. The service version list content comes from the available "target rules" for the current target service. |
+| Service version |spec.tcp.-name.route.-destination.subset | Optional. The service version list content comes from the available "Destination Rules" for the current target service. |
 | Weight |spec.tcp.-name.route.-destination.weight | Optional. The distribution weight of each "routing destination" in this "TCP routing" rule. The sum of the weights of each rule should be 100. |

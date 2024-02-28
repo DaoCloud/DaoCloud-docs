@@ -4,24 +4,24 @@ This page describes how to configure different traffic flows for workloads in a 
 
 Preconditions:
 
-- The service `helloworld` runs under the namespace `helloworld` of the mesh `hosted-mesh`
-- Enable multicloud network interconnection
+- The service __helloworld__ runs under the namespace __helloworld__ of the mesh __hosted-mesh__ 
+- Enable Multicloud Network Interconnection
 - Mesh provides ingressgatway gateway instance
 
 Configuration steps:
 
 1. Based on the cluster to which it belongs, the request traffic is divided by weight;
 
-1. Label the `helloworld` workload of both clusters:
+1. Label the __helloworld__ workload of both clusters:
 
      | Belonging cluster | Label | Value |
      | ------------ | ------- | --- |
      | yl-cluster10 | version | v1 |
      | yl-cluster20 | version | v2 |
 
-1. Click `Mesh Sidecar` -> `Workload` in the left navigation bar to inject the sidecar into the helloworld workload of the two clusters.
+1. Click __Mesh Sidecar__ -> __Workload__ in the left navigation bar to inject the sidecar into the helloworld workload of the two clusters.
 
-1. On the left navigation bar, click `Traffic Governance` -> `Target Rules` -> `Create` to create two service versions.
+1. On the left navigation bar, click __Traffic Management__ -> __Destination Rules__ -> __Create__ to create two service versions.
 
      The corresponding YAML is as follows:
 
@@ -42,7 +42,7 @@ Configuration steps:
            name: v2
      ```
 
-1. On the left navigation bar, click `Traffic Governance` -> `Gateway Rules` -> `Create` to create a gateway rule.
+1. On the left navigation bar, click __Traffic Management__ -> __Gateways__ -> __Create__ to create a gateway rule.
 
      The corresponding YAML is as follows:
 
@@ -64,7 +64,7 @@ Configuration steps:
      ​ protocol: http
      ```
 
-1. On the left navigation bar, click `Traffic Governance` -> `Virtual Service` -> `Create`, create routing rules, and divide traffic to two clusters based on the weight ratio:
+1. On the left navigation bar, click __Traffic Management__ -> __Virtual Service__ -> __Create__ , create routing rules, and divide traffic to two clusters based on the weight ratio:
 
      The corresponding YAML is as follows:
 
@@ -99,7 +99,7 @@ Configuration steps:
                weight: 70
      ```
 
-1. On the left navigation bar, click `mesh Configuration` -> `multicloud Network Interconnection` to enable multicloud network interconnection.
+1. On the left navigation bar, click __Mesh Configuration__ -> __Multicloud Network Interconnection__ to enable Multicloud Network Interconnection.
 
 1. Initiate 1000 get requests through JMeter and set the assertion
 

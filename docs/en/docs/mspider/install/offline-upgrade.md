@@ -8,11 +8,11 @@ This page explains how to install or upgrade the service mesh module after [down
 
 ## Loading Images from the Installation Package
 
-You can load the images in one of the following two ways. When a container registry exists in the environment, it is recommended to use `chart-syncer` to synchronize the images to the registry as it is more efficient and convenient.
+You can load the images in one of the following two ways. When a container registry exists in the environment, it is recommended to use __chart-syncer__ to synchronize the images to the registry as it is more efficient and convenient.
 
 ### Synchronizing Images to a Container Registry using chart-syncer
 
-1. Create `load-image.yaml`.
+1. Create __load-image.yaml__ .
 
     !!! note
 
@@ -20,11 +20,11 @@ You can load the images in one of the following two ways. When a container regis
 
     === "Chart Repo Installed"
 
-        If a chart repo is already installed in the current environment, `chart-syncer` also supports exporting the chart as a tgz file.
+        If a chart repo is already installed in the current environment, __chart-syncer__ also supports exporting the chart as a tgz file.
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: mspider-offline # The relative path to the directory where the `charts-syncer` command is executed, not the relative path between this YAML file and the offline package
+          intermediateBundlesPath: mspider-offline # The relative path to the directory where the __charts-syncer__ command is executed, not the relative path between this YAML file and the offline package
         target:
           containerRegistry: 10.16.10.111 # Change this to your container registry URL
           containerRepository: release.daocloud.io/mspider # Change this to your container repository
@@ -42,7 +42,7 @@ You can load the images in one of the following two ways. When a container regis
 
     === "Chart Repo Not Installed"
 
-        If a chart repo is not installed in the current environment, `chart-syncer` also supports exporting the chart as a tgz file and storing it in the specified path.
+        If a chart repo is not installed in the current environment, __chart-syncer__ also supports exporting the chart as a tgz file and storing it in the specified path.
 
         ```yaml title="load-image.yaml"
         source:
@@ -59,7 +59,7 @@ You can load the images in one of the following two ways. When a container regis
               password: "Harbor12345" # (6)
         ```
 
-        1. The relative path to the directory where the `charts-syncer` command is executed, not the relative path between this YAML file and the offline package
+        1. The relative path to the directory where the __charts-syncer__ command is executed, not the relative path between this YAML file and the offline package
         2. Change this to your container registry URL
         3. Change this to your container repository
         4. Chart local path
@@ -166,9 +166,9 @@ Before upgrading the service mesh version, it is advisable to back up the `--set
     -f mspider.yaml
 ```
 
-### Executing `helm upgrade`
+### Executing `helm upgrade` 
 
-Before upgrading, it is recommended to update the `global.imageRegistry` field in `bak.yaml` with the current container registry address.
+Before upgrading, it is recommended to update the __global.imageRegistry__ field in __bak.yaml__ with the current container registry address.
 
 ```bash
 ~ export imageRegistry={YOUR_IMAGE_REGISTRY}

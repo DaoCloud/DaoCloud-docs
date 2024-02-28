@@ -2,7 +2,7 @@
 
 ## Problem Description
 
-The mcpc-ckube-remote pod is always `ContainerCreating`.
+The mcpc-ckube-remote pod is always __ContainerCreating__ .
 The mcpc-remote-kube-api-server configmap waited for a long time without being created.
 
 ![screenshot](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/troubleshoot/images/creating01.png)
@@ -102,22 +102,22 @@ The mcpc-remote-kube-api-server configmap waited for a long time without being c
 
 ## Cause Analysis
 
-1. Case 1: The hosted mesh fails to create a highly available ETCD because the control plane cluster has not deployed `StorageClass` in advance.
+1. Case 1: The hosted mesh fails to create a highly available ETCD because the control plane cluster has not deployed __StorageClass__ in advance.
 
     xxxxx-etcd-0 is always pending, etcd pvc cannot be bound to sc causing pvc pending,
     In turn, the etcd pod cannot be bound to pvc. You can try the following steps to solve the problem:
 
     1. Deploy hwameistor or localPath
     2. Delete the pending pvc under the istio-system namespace
-    3. Restart the `xxx-etcd-0` pod and wait
+    3. Restart the __xxx-etcd-0__ pod and wait
 
     !!! note
 the
         After deploying with hwameistor, there must be an empty disk on each node. You need to create LDC, then check LSN LocalStorage_PoolHDD.
 
-2. Case 2: Hosted mesh `istiod-xxxx-hosted-xxxx component` is abnormal
+2. Case 2: Hosted mesh __istiod-xxxx-hosted-xxxx component__ is abnormal
 
-3. Case 3: The `mspider-mcpc-ckube-remote-xxxx component` is abnormal, and the describe error is reported as follows:
+3. Case 3: The __mspider-mcpc-ckube-remote-xxxx component__ is abnormal, and the describe error is reported as follows:
 
     ```none
      Normal Scheduled 18m default-scheduler Successfully assigned istio-system/mspider-mcpc-ckube-remote-5447c5bcfc-25t7t to yl-cluster20
@@ -141,10 +141,10 @@ the
     istiod-xxxx-hosed-lb failed to allocate endpoint. metalLB can be deployed for this cluster in the addon.
 
 3. Case 3: In the environment where the original hosted mesh is removed and the hosted mesh is created again, it is easy to cause the control plane to be not delivered in time.
-    The `mspider-mcpc-remote-kube-api-server` ConfigMap was not created in time. You can restart the global cluster gsc controller:
+    The __mspider-mcpc-remote-kube-api-server__ ConfigMap was not created in time. You can restart the global cluster gsc controller:
 
     ```bash
     kubectl -n mspider-system delete pod $(kubectl -n mspider-system get pod -l app=mspider-gsc-controller -o 'jsonpath={.items.metadata.name}')
     ```
 
-4. Case 4: Modify `fs.inotify.max_user_instances = 65535`
+4. Case 4: Modify __fs.inotify.max_user_instances = 65535__ 

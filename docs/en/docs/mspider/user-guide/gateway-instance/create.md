@@ -18,19 +18,19 @@ Gateway instances run Envoy, similar to sidecars, but gateways run as separate i
 
 The steps to create a Mesh Gateway are as follows.
 
-1. Click `mesh Gateway` in the left navigation bar to enter the gateway list, and click the `Create` button in the upper right corner.
+1. Click __mesh Gateway__ in the left navigation bar to enter the gateway list, and click the __Create__ button in the upper right corner.
 
     
 
-2. In the `Create mesh Gateway` window, follow the prompts to configure parameters, which are basically required. After checking the configuration information is correct, click `OK`.
+2. In the __Create mesh Gateway__ window, follow the prompts to configure parameters, which are basically required. After checking the configuration information is correct, click __OK__ .
 
     
 
-3. Return to the mesh gateway list, and the upper right corner of the screen will prompt that the creation is successful. The status of the newly created mesh gateway is `creating`.
+3. Return to the mesh gateway list, and the upper right corner of the screen will prompt that the creation is successful. The status of the newly created mesh gateway is __creating__ .
 
     
 
-4. Refresh the page after a few seconds, and the status will change to `Running`, indicating that the gateway is successfully configured. Click `...` on the right side of the list to perform edit and delete operations.
+4. Refresh the page after a few seconds, and the status will change to __Running__ , indicating that the gateway is successfully configured. Click __...__ on the right side of the list to perform edit and delete operations.
 
     
 

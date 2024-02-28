@@ -8,8 +8,8 @@ Here are several important fields:
 
 - Host
 
-    Uses the short name of the Kubernetes Service. It has the same meaning as the `host` field
-    in the `destination` section of VirtualService. The service must exist in the corresponding
+    Uses the short name of the Kubernetes Service. It has the same meaning as the __host__ field
+    in the __destination__ section of VirtualService. The service must exist in the corresponding
     service registry; otherwise, it will be ignored.
 
 - LoadBalancer
@@ -24,10 +24,10 @@ Here are several important fields:
 
 - Subsets
 
-    `subsets` represent a collection of service endpoints, which can be used for A/B testing or
+    __subsets__ represent a collection of service endpoints, which can be used for A/B testing or
     version-based routing, among other scenarios. The traffic of a service can be split into
-    N subsets for different client scenarios. The `name` field is primarily used by `destination`
-    in VirtualService. Each subset is defined based on one or more `labels` attached to objects
+    N subsets for different client scenarios. The __name__ field is primarily used by __destination__ 
+    in VirtualService. Each subset is defined based on one or more __labels__ attached to objects
     like Pods in Kubernetes. These labels are applied to the Deployment of the Kubernetes service
     and serve as metadata to identify different versions.
 
@@ -60,16 +60,16 @@ filter CRDs based on rule names or rule tags. The rule tags include:
 Service Mesh provides two ways to create Destination Rules: using a graphical wizard and using YAML.
 Here are the specific steps for creating a Destination Rule through the graphical wizard:
 
-1. Click `Traffic Management` -> `Destination Rule` in the left navigation bar,
-   then click the `Create` button in the upper right corner.
+1. Click __Traffic Management__ -> __Destination Rule__ in the left navigation bar,
+   then click the __Create__ button in the upper right corner.
 
     ![Create](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/destirule01.png)
 
-2. In the `Create Destination` page, configure the basic settings and click `Next`.
+2. In the __Create Destination__ page, configure the basic settings and click __Next__ .
 
     ![Create Destination](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/destirule02.png)
 
-3. Follow the on-screen prompts to select the policy type and configure the corresponding governance policy, then click `OK`.
+3. Follow the on-screen prompts to select the policy type and configure the corresponding governance policy, then click __OK__ .
 
     ![Governance Policy](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/destirule03.png)
 
@@ -77,7 +77,7 @@ Here are the specific steps for creating a Destination Rule through the graphica
 
     ![Creation Successful](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/destirule04.png)
 
-5. On the right side of the list, click the `⋮` in the operation column to access more options from the popup menu.
+5. On the right side of the list, click the __⋮__ in the operation column to access more options from the popup menu.
 
     ![More Operations](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/destirule05.png)
 
@@ -139,9 +139,9 @@ includes traffic distribution rules (weight distribution) and traffic shifting r
 Note that the geographical labels are the labels on the worker nodes in the mesh member cluster.
 Make sure to check the label configuration of the nodes:
 
-- Region: `topology.kubernetes.io/region`
-- Zone: `topology.kubernetes.io/zone`
-- Subzone: `topology.istio.io/subzone`. Subzone is a specific configuration for Istio to achieve finer-grained partitioning.
+- Region: `topology.kubernetes.io/region` 
+- Zone: `topology.kubernetes.io/zone` 
+- Subzone: `topology.istio.io/subzone` . Subzone is a specific configuration for Istio to achieve finer-grained partitioning.
 
 Furthermore, regions are matched and arranged based on the hierarchical order. Different regions have different zones.
 

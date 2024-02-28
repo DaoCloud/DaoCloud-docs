@@ -6,7 +6,7 @@ The deployment and lifecycle management of the external mesh are the responsibil
 
 This method requires a pre-installed and deployed Istiod. You can perform the following steps:
 
-First, create the corresponding configuration file for `ingress` or `egress`:
+First, create the corresponding configuration file for __ingress__ or __egress__ :
 
 ```yaml
 apiVersion: install.istio.io/v1alpha1
@@ -31,7 +31,7 @@ spec:
         injectionTemplate: gateway
 ```
 
-Then, install using the standard `istioctl` command:
+Then, install using the standard __istioctl__ command:
 
 ```bash
 kubectl create namespace istio-ingress
@@ -50,7 +50,7 @@ Before installing the mesh gateway with Helm, you can review the supported confi
 helm show values istioi/gateway
 ```
 
-Then, use the `helm install` command for installation:
+Then, use the __helm install__ command for installation:
 
 ```bash
 kubectl create namespace istio-ingress
@@ -89,7 +89,7 @@ spec:
       labels:
         # Set a unique label for the gateway. This ensures that the Gateway can select this workload when necessary.
         istio: ingressgateway
-        # Enable gateway injection. If connected to a revised control plane, replace with `istio.io/rev: revision-name`
+        # Enable gateway injection. If connected to a revised control plane, replace with __istio.io/rev: revision-name__ 
         sidecar.istio.io/inject: "true"
     spec:
       # Allow binding to all ports (e.g., 80 and 443)

@@ -32,15 +32,15 @@ spec:
 
 Service mesh provides two creation methods: wizard and YAML. The specific steps to create through the wizard are as follows:
 
-1. In the left navigation bar, click `Security Governance` -> `Authorization Policy`, and click the `Create` button in the upper right corner.
+1. In the left navigation bar, click __Security Governance__ -> __Authorization Policy__ , and click the __Create__ button in the upper right corner.
 
      
 
-2. In the `Create Authorization Policy` interface, first perform the basic configuration and then click `Next`.
+2. In the __Create Authorization Policy__ interface, first perform the basic configuration and then click __Next__ .
 
      
 
-3. After setting the policy according to the screen prompts, click `OK`. See [Policy Setting Parameter Description](./params.md#_10).
+3. After setting the policy according to the screen prompts, click __OK__ . See [Policy Setting Parameter Description](./params.md#_10).
 
      
 
@@ -48,7 +48,7 @@ Service mesh provides two creation methods: wizard and YAML. The specific steps 
 
      
 
-5. On the right side of the list, click `⋮` in the operation column to perform more operations through the pop-up menu.
+5. On the right side of the list, click __⋮__ in the operation column to perform more operations through the pop-up menu.
 
      
 

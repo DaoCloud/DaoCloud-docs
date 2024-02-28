@@ -42,7 +42,7 @@ The DCE service mesh supports three types of meshes: hosted mesh, dedicated mesh
 | Features | Hosted mesh | Dedicated mesh | External mesh |
 | :------------------: | :------: | :------: | :------: |
 | Virtual Service (add, delete, modify, check) | √ | √ | √ |
-| Target Rules (add, delete, modify, check) | √ | √ | √ |
+| Destination Rules (add, delete, modify, check) | √ | √ | √ |
 | Gateway Rules (add, delete, modify, check) | √ | √ | √ |
 
 ## Security Governance

@@ -131,7 +131,7 @@ In this way, the control plane and data plane of the mesh can be physically isol
 For high availability, you can deploy multiple control plane instances across multiple clusters, zones, or regions.
 
 In a multicluster scenario with multiple shared control planes, each control plane belongs to a certain cluster,
-The shared control plane accepts user-defined configuration (such as `Service`, `ServiceEntry`, `DestinationRule`, etc.) from the Kubernetes API Server of its own cluster.
+The shared control plane accepts user-defined configuration (such as __Service__ , __ServiceEntry__ , __DestinationRule__ , etc.) from the Kubernetes API Server of its own cluster.
 So each master control plane cluster has an independent source of configuration.
 
 So there is a problem here, how to configure multiple control plane clusters synchronously?
@@ -172,12 +172,12 @@ These scenes are incidental. The frequency of occurrence is very low, but it is 
 
 How can we achieve this through the mesh? Under the Istio service mesh, there are two ways:
 
-1. We don’t need to exchange the `API Server` remote key of the cluster, so that the cluster can only perform service discovery within its own cluster.
-   If you need to load cross-cluster traffic, you can use `ServiceEntry` to cooperate with an external loader.
+1. We don’t need to exchange the __API Server__ remote key of the cluster, so that the cluster can only perform service discovery within its own cluster.
+   If you need to load cross-cluster traffic, you can use __ServiceEntry__ to cooperate with an external loader.
 
      
 
-2. Disable the traffic load between multiple clusters by configuring the `VirtualService` and `DestinationRule` policies.
+2. Disable the traffic load between multiple clusters by configuring the __VirtualService__ and __DestinationRule__ policies.
 
 ## Service Mesh Technical Solution
 

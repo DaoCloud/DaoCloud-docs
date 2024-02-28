@@ -1,6 +1,6 @@
 # Istio resource management
 
-The `Istio Resource Management` page lists all Istio resources by resource type, providing users with the ability to display, create, edit, and delete various resources.
+The __Istio Resource Management__ page lists all Istio resources by resource type, providing users with the ability to display, create, edit, and delete various resources.
 
 This page provides the following resource types:
 
@@ -42,11 +42,11 @@ This page provides the following resource types:
 
 Users can add, delete, modify and query resources in the form of YAML. Here is an example creation/deletion of a telemetry resource.
 
-1. Click `mesh Configuration` -> `Istio Resource Management` in the left navigation bar, and click the `Create with YAML` button in the upper right corner.
+1. Click __Mesh Configuration__ -> __Istio Resource Management__ in the left navigation bar, and click the __Create with YAML__ button in the upper right corner.
 
      
 
-2. On the Create with YAML page, enter the correct YAML statement and click `OK`.
+2. On the Create with YAML page, enter the correct YAML statement and click __OK__ .
 
      
 
@@ -69,6 +69,6 @@ Users can add, delete, modify and query resources in the form of YAML. Here is a
      ​ value: "request.host"
      ```
 
-3. Return to the resource list, click the `⋮` button in the operation column, and you can select more operations such as edit and delete from the pop-up menu.
+3. Return to the resource list, click the __⋮__ button in the operation column, and you can select more operations such as edit and delete from the pop-up menu.
 
      

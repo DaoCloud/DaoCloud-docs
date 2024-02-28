@@ -7,11 +7,11 @@ hide:
 
 If you want to remove a cluster from the hosting mesh, you can follow the steps below to remove the cluster.
 
-1. Click `Cluster Management` in the left navigation bar, and click the `Remove` button on the right side of the cluster list. Or in the mesh list, click the `...` button on the far right, and select `Remove` in the pop-up menu.
+1. Click __Cluster Management__ in the left navigation bar, and click the __Remove__ button on the right side of the cluster list. Or in the mesh list, click the __...__ button on the far right, and select __Remove__ in the pop-up menu.
 
     
 
-2. In the pop-up window, after confirming that the information is correct, click `OK`.
+2. In the pop-up window, after confirming that the information is correct, click __OK__ .
 
     
 
