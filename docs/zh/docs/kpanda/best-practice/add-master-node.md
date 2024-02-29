@@ -140,6 +140,7 @@
 
 使用基于下面的 __ClusterOperation.yml__ 模板，新增一个集群控制节点扩容任务 __scale-master-node-ops.yaml__ 。
 
+
 ```yaml title="ClusterOperation.yml"
 apiVersion: kubean.io/v1alpha1
 kind: ClusterOperation
@@ -170,8 +171,8 @@ spec:
 !!! note
 
     - spec.image 镜像地址要与之前执行部署时的 job 其内镜像保持一致
-    - spec.action 设置为 scale.yml
-    - spec.extraArgs 设置为 --limit=g-worker
+    - spec.action 设置为 cluster.yml
+    - spec.extraArgs 设置为 --limit=etcd,kube_control_plane -e ignore_assert_errors=yes
     - pec.preHook 中的 enable-repo.yml 剧本参数，要填写相关OS的正确的 repo_list 
     - 如果一次性添加 Master（etcd）节点超过（包含）三个，需追加额外参数 -e etcd_retries=10 以增大 etcd node join重试次数。
 
