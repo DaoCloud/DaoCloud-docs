@@ -16,6 +16,7 @@
     - kubectl
     - yq
     - minio client
+    - charts-syncer
     
     安装过程中如果您的环境存在一些工具且版本低于我们定义的版本，会将对应工具进行强制更新替换。
 
