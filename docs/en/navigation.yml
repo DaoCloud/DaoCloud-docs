@@ -189,7 +189,7 @@ nav:
                       - Health Check: kpanda/user-guide/workloads/pod-config/health-check.md
                       - Cluster Scheduling: kpanda/user-guide/workloads/pod-config/scheduling-policy.md
               - Autoscaling:
-                  - Install knative: kpanda/user-guide/scale/knative/install.md
+                  - Install Knative: kpanda/user-guide/scale/knative/install.md
                   - Install metrics-server: kpanda/user-guide/scale/install-metrics-server.md
                   - Install kubernetes-cronhpa-controller: kpanda/user-guide/scale/install-cronhpa.md
                   - Install VPA Plugin: kpanda/user-guide/scale/install-vpa.md
