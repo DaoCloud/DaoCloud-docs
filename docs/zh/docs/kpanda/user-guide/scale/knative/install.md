@@ -1,5 +1,9 @@
 # 安装
 
+Knative 是一个面向无服务器部署的跨平台解决方案。
+
+## 步骤
+
 1. 登录集群，点击侧边栏 __Helm 应用__ → __Helm 模版__ ，在右侧上方搜索框输入 __knative__ ，然后按回车键搜索。
 
     ![Install-1](../../../images/knative-install-1.png)

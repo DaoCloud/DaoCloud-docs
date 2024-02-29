@@ -5,6 +5,10 @@ Date: 2024-02-29
 
 # Installation
 
+Knative is a platform-agnostic solution for running serverless deployments.
+
+## Steps
+
 1. Log in to the cluster, click on the sidebar __Helm Apps__ → __Helm Charts__ , enter __knative__ in the search box at the top right, and then press the enter key to search.
 
     ![Install-1](../../images/knative-install-1.png)
