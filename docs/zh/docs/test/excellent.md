@@ -55,9 +55,10 @@ hide:
 
 ### 规划和设计
 
-安全是需要设计和规划的，应在构建基于云或本地数据中心的同时，建设安全系统和相关控制措施，建立配套安全管理流程和机制，建立安全意识管理体系等。并将技术控制措施、管理流程、人员组织配套的融入云基础设施的构建、业务开发，应用上线和日常运营当中。
+安全是需要设计和规划的，应在构建基于云或本地数据中心的同时，建设安全系统和相关控制措施，建立配套安全管理流程和机制，建立安全意识管理体系等。
+并将技术控制措施、管理流程、人员组织配套的融入云基础设施的构建、业务开发，应用上线和日常运营当中。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/3756435961/p722830.png)
+![规划和设计](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/3756435961/p722830.png)
 
 整体建议如下：
 
@@ -108,7 +109,7 @@ hide:
 - 资产脆弱性的风险识别和检测：云上的资产可分为工作负载（ECS、Kubernetes、容器、Serverless）、基础网元（EIP、NAT、SLB 等）、应用（PaaS 服务、域名、镜像等），面对资产的脆弱性（包含资产基线和资产漏洞）应该进行事前的风险识别和检测，并进行维护；
 - 合规风险的识别：合规包含了外部合规和内部合规。外部合规指的是面向监管的合规，内部合规指的是面向内部审计、管理的合规。
 
-![(应用上云规划-应用上云实施-图5)  备份 10.jpg](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/3266435961/p722831.jpg)
+![应用上云规划-应用上云实施](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/3266435961/p722831.jpg)
 
 #### 识别基础架构的安全风险
 
@@ -179,7 +180,7 @@ hide:
 
 集团型企业对业务隔离的要求比较严格，不同业务必须按照安全要求或行业监管要求，部署在不同的云账号内，根据道客最佳实践，Landing Zone 推荐企业使用多账号架构来管理云上资源。多账号架构帮助企业实现强隔离、降风险，应对企业多分公司关系，支持多种法律主体、多种结算模式共存，便于结构化管理，让企业的业务更便于拆分和融合。
 
-![LZ.jpg](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/4786435961/p722832.jpg)
+![资源规划](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/4786435961/p722832.jpg)
 
 **账号设计**
 
@@ -194,7 +195,7 @@ hide:
 
 **账号组织结构及业务隔离**
 
-![(应用上云规划-应用上云实施-图5)  备份 4.jpg](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/4786435961/p722833.jpg)
+![应用上云规划-应用上云实施](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/4786435961/p722833.jpg)
 
 说明及建议：
 
@@ -359,7 +360,7 @@ hide:
 
 主要分为线上评估实施、数据分析整理、风险评估报告撰写三个阶段：
 
-![(应用上云规划-应用上云实施-图5)  备份 5.jpg](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/7686435961/p722835.jpg)
+![应用上云规划-应用上云实施](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/7686435961/p722835.jpg)
 
 - 线上评估：本阶段主要完成线上评估工作的实施，即通过资产调查、安全基线扫描、漏洞扫描、渗透测试、人员访谈等方式，了解业务系统的安全现状，为风险分析提供资料。现状评估阶段主要的工作任务包括人员访谈、安全基线扫描、漏洞扫描等。
 - 数据分析：本阶段主要对评估阶段采集的数据进行分析、整理，为风险评估报告的撰写提供依据。
@@ -512,7 +513,7 @@ hide:
 
 网络分层模型可以参考下图：
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/6186435961/p722836.png)
+![网络分层模型](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/6186435961/p722836.png)
 
 下面列举出一些常见的糟糕设计：
 
@@ -822,7 +823,7 @@ hide:
 
 道客按照数据生命周期给出一些通用性建议。具体可参考下图：
 
-![(应用上云规划-应用上云实施-图5)  备份 7.jpg](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/0186435961/p722838.jpg)
+![应用上云规划-应用上云实施](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/0186435961/p722838.jpg)
 
 数据安全保护措施分为技术措施和管理措施。
 
@@ -862,7 +863,7 @@ hide:
 
 下图为使用凭据托管的标准场景和流程：
 
-![(应用上云规划-应用上云实施-图5)  备份 8.jpg](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5576435961/p722839.jpg)
+![应用上云规划-应用上云实施](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5576435961/p722839.jpg)
 
 - 管理员在目标数据库配置 MyApp 访问数据库所需的用户名和密码。
 - 管理员在 KMS 创建一个凭据对象 MyDbCreds，用来加密存储上述用户名和密码。
@@ -876,7 +877,7 @@ hide:
 - 开通 KMS 后，针对[密钥保护的标准步骤](https://help.aliyun.com/zh/kms/user-guide/manage-and-use-generic-secrets)是先创建通用凭据，输入凭据的值（也就是密钥的明文），选择加密凭据的[主密钥](https://help.aliyun.com/zh/kms/user-guide/key-types-and-specifications#task-2292624)（主密钥是由 KMS 生成或客户自行导入的外部密钥，用于在 KMS 内完成数据加密运算），起到密钥加密存储的作用。其次通过集成 KMS 的 SDK 或 API 完成应用程序的调用。
 - 开启 RAM 密钥（AccessKey/SecretKey）的安全保护，在凭据管理中[托管 RAM 凭据](https://help.aliyun.com/zh/kms/user-guide/manage-and-use-ram-secrets)，无需在应用程序中配置 AccessKey，应用程序安装 RAM 凭据插件的方式即可安全的调用托管的密钥，如下图所示。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5576435961/p722841.png)
+![开通 KMS](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5576435961/p722841.png)
 
 **使用凭据轮转提高密钥安全等级**
 
@@ -893,7 +894,7 @@ hide:
 - 使用 KMS 应用接入点实现对应用程序访问和接入[KMS 实例](https://help.aliyun.com/zh/kms/user-guide/create-an-aap)。
 - 通过创建应用接入点，精细化配置哪些凭据可以授权给哪些应用程序，以及访问的网络、和身份认证，提供更精细化的授权策略，KMS 应用访问控制流程如下图所示。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/4576435961/p722842.png)
+![为密钥访问设定访问控制策略](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/4576435961/p722842.png)
 
 **为密钥的使用开启安全审计**
 
@@ -906,8 +907,8 @@ hide:
 道客提供了云产品落盘存储加密服务，并统一使用密钥管理服务（KMS）进行密钥管理。道客的存储加密功能提供了 256 位密钥的存储加密强度（AES256），满足敏感数据的加密存储需求。
 
 1. 可查看支持服务端集成静态数据加密保护的[云服务列表](https://help.aliyun.com/zh/kms/user-guide/alibaba-cloud-services-that-can-be-integrated-with-kms)以及各个云服务执行云产品服务端加密的具体操作方式。
-2. 使用道客提供的免费默认密钥为云产品服务端加密。【什么是[默认密钥](https://help.aliyun.com/zh/kms/user-guide/overview-of-key-management)】
-3. 使用自定义 BYOK 密钥来为云产品服务端提供数据加密。参考[导入对称密钥材料](https://help.aliyun.com/zh/kms/user-guide/import-key-material-into-a-symmetric-key)。
+2. 使用道客提供的免费默认密钥为云产品服务端加密。
+3. 使用自定义 BYOK 密钥来为云产品服务端提供数据加密。
 
 ###### 数据传输加密
 
@@ -1054,7 +1055,7 @@ hide:
 
 道客提供了先知（安全众测）服务，通过加入先知平台，企业可以自主设置高、中、低危漏洞的奖励金额和奖励范围，通过平台众多可靠的白帽子来及时发现应用系统中存在的安全问题，包括业务应用逻辑漏洞、权限问题等安全工具无法有效检测的漏洞，并给出修复方案，帮助企业修复这些漏洞。渗透测试的服务流程如下：
 
-![(应用上云规划-应用上云实施-图5)  备份 11.jpg](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5476435961/p722845.jpg)
+![应用上云规划-应用上云实施](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5476435961/p722845.jpg)
 
 ###### 定期的漏洞检测和评估
 
@@ -1226,7 +1227,7 @@ Web 应用防火墙对网站业务流量进行恶意特征识别和防护过滤�
 
 基于稳定性支柱设计原则，整体稳定性设计方案可参考如下：
 
-![(应用上云规划-应用上云实施-图5)  备份 2 2.jpg](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/9401735961/p722854.jpg)
+![应用上云规划-应用上云实施](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/9401735961/p722854.jpg)
 
 #### 架构设计原则
 
@@ -1439,13 +1440,13 @@ Web 应用防火墙对网站业务流量进行恶意特征识别和防护过滤�
 
 **访问策略：** 访问策略旨在解决根据请求来源和地址池健康情况进行地址池切换的问题。既能做到地址池维度智能解析，又可实现故障自动切换功能。当地址池整体出现故障时，GTM 会根据用户自定义策略进行地址池分钟级切换，并当地址池恢复时切回。
 
-![(应用上云规划-应用上云实施-图5)  备份 5 2.jpg](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/2240059961/p722886.jpg)
+![应用上云规划-应用上云实施](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/2240059961/p722886.jpg)
 
 **异地容灾**
 
 下面以异地双活为例介绍如何借助 GTM 实现快速容灾切换。如下图所示，某服务的用户主要分为海外用户和中国或中国内地用户，后端服务采用一套部署方案。通过 GTM 对不同地区用户请求进行智能调度，将用户访问请求流量路由至不同的接入服务点，即海外用户访问新加坡中心（Singapore），中国或中国内地用户访问杭州中心（CN-Hangzhou）。当某站点发生故障灾难时，各接入站点自建互相备份，最终实现业务的高可用。
 
-![(应用上云规划-应用上云实施-图5)  备份 6 2.jpg](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5401735961/p722888.jpg)
+![应用上云规划-应用上云实施](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5401735961/p722888.jpg)
 
 通过以下 5 个步骤接入 GTM，实现异地容灾：
 
@@ -1457,7 +1458,7 @@ Web 应用防火墙对网站业务流量进行恶意特征识别和防护过滤�
 
 配置完成后，我们将根据健康配置实时探测地址池中地址，当地址发生报警时，则根据下图的流程进行判断，实现容灾切换，以上图中 IP 地址 A 报警为例。由此可见，当默认地址池（Singapore）地址池可用时，则解析列表摘除地址 A，当默认地址池整体不可用时则切换备用地址池（CN-Hangzhou），切换过程自动完成，并缩小时间至分钟级。从而有效保证异地容灾的切换效率。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/2240059961/p736465.png)
+![异地容灾](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/2240059961/p736465.png)
 
 **容灾预案**
 
@@ -1467,7 +1468,7 @@ Web 应用防火墙对网站业务流量进行恶意特征识别和防护过滤�
 
 “应用多活”是“应用容灾”技术的一种高级形态，指在同城或异地机房建立一套与本地生产系统部分或全部对应的生产系统，所有机房内的应用同时对外提供服务。当灾难发生时，多活系统可以分钟级内实现业务流量切换，用户甚至感受不到灾难发生。“同城多活架构”和“异地多活架构”（代号“单元化”）都是典型的应用多活实现技术。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/4401735961/p722917.png)
+![应用容灾](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/4401735961/p722917.png)
 
 ###### 应用多活的优势
 
@@ -1485,7 +1486,7 @@ Web 应用防火墙对网站业务流量进行恶意特征识别和防护过滤�
 - 异地多活（UDA，UltraDistanceActive）：在超远距离（机房间距超过 300 公里）时，业务系统仍具备较好的访问性能。进入容灾态时，RTO、RPO 在分钟级。
 - 混合云多活（HCA，HybridCloudActive）：向上对业务屏蔽容灾细节，提供统一的多活编程范式。 向下对云平台技术保持兼容，支持公有云、私有云、托管私有云、边缘计算节点等不同部署模式的多活场景。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/4401735961/p722918.png)
+![应用多活](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/4401735961/p722918.png)
 
 ###### 应用多活的典型架构
 
@@ -1495,7 +1496,7 @@ Web 应用防火墙对网站业务流量进行恶意特征识别和防护过滤�
 
 为了实现机房间的流量调度，同城应用多活架构下，建立多个服务部署的逻辑区，这个逻辑区称之为“单元格（Cell）”。每个单元格内的业务流量尽可能的在本区域内调用优先。由于同城跨机房 RT 较小，因此多个单元格的云服务采用单集群模式，从而可以避免数据一致性上的复杂度。同城应用多活的架构如下图所示：
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/4401735961/p722919.png)
+![同城场景的应用多活](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/4401735961/p722919.png)
 
 同城应用多活对应用系统的代码侵入较小，基于灵活的流量调度和单元格间的流量路由，能做到故障场景下的业务快速恢复，实现业务恢复与故障恢复的解耦。
 
@@ -1513,7 +1514,7 @@ Web 应用防火墙对网站业务流量进行恶意特征识别和防护过滤�
 - 核心业务：做单元化拆分的业务，在普通单元写，在普通单元读。
 - 共享业务：被核心业务高频依赖的全局业务读服务，在中心单元写，在普通单元读。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/3401735961/p722920.png)
+![异地场景的应用多活](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/3401735961/p722920.png)
 
 **混合云场景的应用多活**
 
@@ -1529,7 +1530,7 @@ Web 应用防火墙对网站业务流量进行恶意特征识别和防护过滤�
 - 数据模型适配，对云的账号、权限、资源、数据进行抽象，屏蔽多云的数据差异。
 - 统一容灾接口，提供标准化的容灾定义和接口，利于异构云异构技术栈的快速接入。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/4401735961/p722922.png)
+![混合云场景的应用多活](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/4401735961/p722922.png)
 
 ###### 应用多活的技术方案
 
@@ -1543,7 +1544,7 @@ Web 应用防火墙对网站业务流量进行恶意特征识别和防护过滤�
 
 云平台是支撑业务应用运行的核心基石，基本构成覆盖单云、单机房、多云、混合云等形态。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/3401735961/p722927.png)
+![应用多活的技术方案](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/3401735961/p722927.png)
 
 ##### 数据容灾
 
@@ -1911,7 +1912,7 @@ Web 应用防火墙对网站业务流量进行恶意特征识别和防护过滤�
 
 ESS 的工作流程如下：
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/2790735961/p722956.png)
+![ESS 的工作流程](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/2790735961/p722956.png)
 
 传统管理应用实例数有固定实例数、HPA 和 CronHPA 三种方法，分别有各自的缺陷和不足点，比如资源浪费，弹性滞后，以及需要根据业务变化调整定时策略，易用性较差的问题。尤其是在时效性上有极致要求的，则需要更加精准和快速启动的能力。这个时候就需要考虑 serverless 以及 AHPA 等更高级能力。
 
@@ -1935,7 +1936,7 @@ Serverless 容器运行方式提供的 ECI （Elastic Container Instance）弹�
 - 规范业务团队的变更操作，沉淀通用变更能力和执行标准；
 - 帮助变更系统建设风控能力，护航业务变更执行。
 
-![(应用上云规划-应用上云实施-图5)  备份 8 2.jpg](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/9690735961/p722960.jpg)
+![应用上云规划-应用上云实施](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/9690735961/p722960.jpg)
 
 标准的变更过程一般可分为：计划、执行、结束三个部分，其中：
 
@@ -1972,13 +1973,13 @@ Serverless 容器运行方式提供的 ECI （Elastic Container Instance）弹�
 
 灰度测试环境的目的是隔离生产流量，减少风险影响，在环境内形成调用闭环，方便测试，具体灰度环境建设如下图所示。灰度环境灰度的时间点位一定要在上线生产之前。可引流内网全部流量和线上 1%流量作为测试覆盖的基础。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/6467635961/p722963.png)
+![灰度环境](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/6467635961/p722963.png)
 
 ##### 灰度分批
 
 这里列举三个常见的分批方式：簇内分批、簇间串行、簇间打散，每个层面中对应的灰度方式如下图所示：
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/6467635961/p722965.png)
+![灰度分批](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/6467635961/p722965.png)
 
 图中的簇指的是可以继续拆分的逻辑组，包含但不限于单元、地域、机房、可用区、VPC、集群、分组、自定义逻辑区域等。
 
@@ -2052,7 +2053,7 @@ Serverless 容器运行方式提供的 ECI （Elastic Container Instance）弹�
 
 为保障故障发现率，故障场景监控覆盖率建议维持在 95%以上。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/1467635961/p722986.png)
+![故障场景监控覆盖](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/1467635961/p722986.png)
 
 ##### 服务组&值班表管理
 
@@ -2067,7 +2068,7 @@ Serverless 容器运行方式提供的 ECI （Elastic Container Instance）弹�
 5. 服务组与工单问题分类的关系：一个服务组可以服务工单多个问题分类
 6. 服务组与组织架构的关系：一个服务组可以服务多个组织架构，一个组织架构可以拆分为多个服务组
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/0467635961/p723011.png)
+![服务组&值班表管理](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/0467635961/p723011.png)
 
 ##### 故障订阅管理
 
@@ -2075,11 +2076,11 @@ Serverless 容器运行方式提供的 ECI （Elastic Container Instance）弹�
 
 #### 故障发现
 
-##### 7*24 监控值班
+##### `7*24` 监控值班
 
 对于有条件的企业，可以设立全球运行指挥中心（Global Operations Center，简称 GOC），实现 7*24 监控值班，时刻关注核心业务线上异常与故障。对于完成监控覆盖的核心业务场景，在异常上报时，通过工具自动检测或值班人员人工判断，及时识别风险或故障，以风险预警和故障通告的形式快速调度应急负责人上线处理，避免业务受损或降低业务受损程度。
 
-之所以设立 7*24 监控值班，是因为报警准确率无法达到 100%。为了保证触达业务研发的电话报警准确度、降低无效打扰，需要人工判断是否真实异常；各业务对故障的重视程度都非常高，误发、漏发故障都会产生较大影响，故障需要人工确认发送保证准确；故障处理过程需要人工组织跟进；故障应急争分夺秒，Oncall 时效难以保障。7*24 监控值班的主要考核指标有：通告及时率、通告准确率、快恢执行率。
+之所以设立 `7*24` 监控值班，是因为报警准确率无法达到 100%。为了保证触达业务研发的电话报警准确度、降低无效打扰，需要人工判断是否真实异常；各业务对故障的重视程度都非常高，误发、漏发故障都会产生较大影响，故障需要人工确认发送保证准确；故障处理过程需要人工组织跟进；故障应急争分夺秒，Oncall 时效难以保障。7*24 监控值班的主要考核指标有：通告及时率、通告准确率、快恢执行率。
 
 ##### 智能基线告警
 
@@ -2103,7 +2104,11 @@ Serverless 容器运行方式提供的 ECI （Elastic Container Instance）弹�
 
 故障发生后，可以基于钉钉的沟通协同能力和 API，自动创建故障处理应急协同场景群。将故障相关成员直接拉进处理群，相关成员包括故障受影响业务的“应急接口人”、可疑原因业务的“应急接口人”，并且系统自动电话通知。进群后的成员，可直接在群内签到。每个故障建议设置单独的故障处理群，群内成员均为故障的相关人，为故障的协同处理提供了天然的协同环境。
 
-故障应急协同群贯穿整个故障处理过程：7*24 故障启动 -> 自动创建应急协同群 -> 自动拉人/通知 -> 定位信息/止损预案推送 -> 一键电话会议 -> 故障直播间 -> 故障恢复应急结束指标汇总。
+故障应急协同群贯穿整个故障处理过程：
+
+```
+7*24 故障启动 -> 自动创建应急协同群 -> 自动拉人/通知 -> 定位信息/止损预案推送 -> 一键电话会议 -> 故障直播间 -> 故障恢复应急结束指标汇总
+```
 
 故障应急过程中的重点角色和职责有：
 
@@ -2187,7 +2192,7 @@ Serverless 容器运行方式提供的 ECI （Elastic Container Instance）弹�
 
 如果有业务监控以监控恢复至正常基线为准，否则以止血时间为准。
 
-_注：故障时长及是否降级/减免如有争议，以安全生产值班长判定为准。_
+**注：故障时长及是否降级/减免如有争议，以安全生产值班长判定为准。**
 
 **收敛比**
 
@@ -2223,7 +2228,7 @@ _注：故障时长及是否降级/减免如有争议，以安全生产值班长
 
 技术型故障分析归纳，大致可以按照 IaaS、PaaS、SaaS 的层次进行归类。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/2367635961/p723005.png)
+![技术型故障分析归纳](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/2367635961/p723005.png)
 
 上面的分类是一个宏观视角，不是一个系统设计的视角。所以可以对故障模型再做一次升级，并得到一些推论：
 
@@ -2232,7 +2237,7 @@ _注：故障时长及是否降级/减免如有争议，以安全生产值班长
 - 对于单机或同机型的故障，以系统为视角，故障可能是当前进程内的故障，比如：如 FullGC，CPU 飙高； 进程外的故障，比如其他进程突然抢占了内存，导致当前系统异常等。对于大多数无损突袭演练的故障模拟，只需要关注故障对当前系统的影响，而不是真的需要外部产生故障。
 - 此外，还有一类故障，可能是人为失误，或流程不当导致，这部分不做重点讨论。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/4416259961/p723006.png)
+![故障模型](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/4416259961/p723006.png)
 
 常见的故障类型都可以映射到这个故障模型中，模拟故障的演练系统及方案也可以基于该模型进行设计。在设计演练方案的过程中，可以考虑在模型中每个环节进行故障注入，验证故障应急方案。
 
@@ -2251,7 +2256,7 @@ _注：故障时长及是否降级/减免如有争议，以安全生产值班长
 
 道客借助混沌工程实现了无损演练和有损演练的常态化执行，缩短建设大规模演练实施的进程、加速演练执行效率，让业务更聚焦在架构/流程风险识别与系统优化/容灾能力建设上，保障混沌工程实验投入产出比最大化。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/2367635961/p723008.png)
+![混沌工程故障演练](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/2367635961/p723008.png)
 
 生产环境做三大类场景的低频演练：
 
@@ -2301,7 +2306,7 @@ FinOps 通过 Inform、Optimize、Operate 三个生命周期阶段实现云成�
 
 道客在 FinOps 核心理念基础上，融合自身实践经验，提出更加细化落地的本土化“云上成本管理实施框架”，供企业客户参考实施。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5813693961/p715643.png)
+![云成本管理与优化框架](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5813693961/p715643.png)
 
 ##### 云上成本管理贯穿上云用云全生命周期
 
@@ -2486,7 +2491,7 @@ FinOps 通过 Inform、Optimize、Operate 三个生命周期阶段实现云成�
 
 企业可以基于对业务的财务管控诉求，选择使用多账号或者共用一个账号来完成道客上的企业财务经营管理全链路。企业也可以根据业务场景，组合使用多种财务管控解决方案灵活的完成财务账号规划，比如多账号场景下，指定财务主账号对其他业务账号（财务子账号）进行管理，部分业务使用财务管理方案，部分业务使用财务托管方案，并结合财务单元分账方案完成成本分摊。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/0813693961/p715644.png)
+![规划账号体系](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/0813693961/p715644.png)
 
 企业用户可以参照合适场景进行账号规划：
 
@@ -2524,7 +2529,7 @@ FinOps 通过 Inform、Optimize、Operate 三个生命周期阶段实现云成�
 
 在财务管理关系下，主子账号之间财务数据和 IT 资源均为账号级别的隔离，子账号拥有自己账号下的所有数据和管理权限，子账号可以独立完成所有的工作，主账号仅在双方成功建立对应管理权限的前提下，且必须通过设置相关信息后，才能完成批量管理子账号的工作。在[财务管理](https://usercenter2.aliyun.com/finance/link-account/list) **关系下，企业可以实现以下子场景：**
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5713693961/p715645.png)
+![跨账号财务管理](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5713693961/p715645.png)
 
 **子场景 1：共享优惠**
 
@@ -2558,9 +2563,9 @@ FinOps 通过 Inform、Optimize、Operate 三个生命周期阶段实现云成�
 
 在财务托管关系下，主子账号之间的 IT 资源为账号级别的隔离，但是子账号下产生的所有财务数据会自动归属给主账号管理和拥有，具体为：托管子下单支付时会自动享受主账号的合同优惠，期间子产生的费用，发票，结算，还款都自动归属主账号，只需要主账号跟道客进行财务相关对接即可，同时通过适当的配置可以实现部分 IT 资源跨多个账号的综合使用量合并计费。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5713693961/p715646.png)
+![跨账号财务托管](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5713693961/p715646.png)
 
-**在**[财务托管](https://help.aliyun.com/zh/user-center/user-guide/trustfinance/) **关系下，企业可以实现以下子场景：**
+在[财务托管](https://help.aliyun.com/zh/user-center/user-guide/trustfinance/) 关系下，企业可以实现以下子场景：
 
 **子场景 7：综合停/复机**
 
@@ -2568,7 +2573,8 @@ FinOps 通过 Inform、Optimize、Operate 三个生命周期阶段实现云成�
 
 **子场景 8：综合使用量**
 
-每个账号下各自产生的业务使用量合并在一个固定账号下，以共享保底折扣、预留实例折扣和节省计划。与单个账号下产生的业务使用量相比，综合使用量可以降低项目、部门或公司的费用。通过[资源共享](https://help.aliyun.com/zh/user-center/user-guide/resource-sharing)，设置共享的账号以及资源信息，可以自动实现跨多个账号的综合使用量合并计费。
+每个账号下各自产生的业务使用量合并在一个固定账号下，以共享保底折扣、预留实例折扣和节省计划。与单个账号下产生的业务使用量相比，综合使用量可以降低项目、部门或公司的费用。
+通过[资源共享](https://help.aliyun.com/zh/user-center/user-guide/resource-sharing)，设置共享的账号以及资源信息，可以自动实现跨多个账号的综合使用量合并计费。
 
 ##### 财务资产规划
 
@@ -2596,7 +2602,7 @@ FinOps 通过 Inform、Optimize、Operate 三个生命周期阶段实现云成�
 
 使用道客提供的多种预算的方式在预算和预测流程中实施基于趋势或基于业务驱动因素的方法，或者两种方法结合应用。比如基于费用预算的预算可以根据设置的预算金额监控费用情况，并在触及自定义的阈值时，发出预警通知，费用预算可以管理不同范围的预算，比如基于账号，财务单元，产品，地域和消费类型等等。按量编制预算支持根据资源用量进行预算金额设置，根据预算金额监控费用情况，并在触及自定义的阈值时，发出预警通知。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5713693961/p715647.png)
+![预算编制及规划](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5713693961/p715647.png)
 
 ##### 计费方式选型和组合模型
 
@@ -2623,7 +2629,7 @@ FinOps 通过 Inform、Optimize、Operate 三个生命周期阶段实现云成�
 - 当前按量付费实例原价为 14.17 元/时。
 - 有 1 小时保护期的抢占式实例价格当前折扣力度为 1 折，即 1.417 元/时。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5713693961/p715648.png)
+![抢占式实例](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5713693961/p715648.png)
 
 ###### 网络计费方式优化-CDT
 
@@ -2944,7 +2950,7 @@ FinOps 通过 Inform、Optimize、Operate 三个生命周期阶段实现云成�
 
 对云上成本进行预算管理是管控云上成本的有效手段，通过预算编制、预警和预测、滚动调整预算、预实分析和优化，建立起基于预算的成本闭环管理链路。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/3513693961/p715649.png)
+![管理预算并预警](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/3513693961/p715649.png)
 
 企业可以使用[预算管理](https://usercenter2.aliyun.com/expense-manage/expense-budget/list)工具进行事前的云上成本规划与预算编制、事中预算监控与预警通知、事后的预实对比分析。比如企业可以：
 
@@ -3272,7 +3278,7 @@ PolarDB-X 提供了冷数据归档的技术，若集群中某些库表的数据�
 
 以容器为代表的云原生技术作为云计算的服务新界面加速云计算普及的同时，也在推动着整个商业世界飞速演进。通过云原生化改造，企业可以充分利用云的强大能力，从云原生架构中获得更高的系统可用性与可扩展能力，利用云提升发布和运维的效率以及组建成本最优的架构。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/1213693961/p715650.png)
+![云原生化改造](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/1213693961/p715650.png)
 
 云原生架构与传统架构的对比
 
@@ -3308,7 +3314,7 @@ MSE 打通容器集群和微服务注册中心，轻松实现服务的自动发�
 
 混部的过程中，对于资源管理员而言需要对资源进行整体管理，洞察各类应用的资源容量、分配量和使用量，提升集群资源利用率，从而达到降低成本的目的。通过混合部署，离线享用在线空闲的计算资源，业务也能够享受到技术的红利。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/4508259961/p715651.png)
+![探索混合部署](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/4508259961/p715651.png)
 
 混部分时复用
 
@@ -3320,9 +3326,9 @@ MSE 打通容器集群和微服务注册中心，轻松实现服务的自动发�
 
 应用需要计算和存储分别可以高效按需扩容且节省成本的面向数据计算和存储场景的管理方式，此时分布式存储架构应运而生，基于此架构的数据管理也随之而来，分布式且共享的存储架构，让数据库的一写多读、多写多读、全球多活容灾、数据一致性等等能力特性有了技术基础。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/3508259961/p715652.png)
+![计算存储分离](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/3508259961/p715652.png)
 
-存储计算分离架构
+**存储计算分离架构**
 
 传统的存储方式，是单台服务器类型的，将计算资源与存储资源绑定在一起。因此一台机器 CPU，内存与存储设备比值都是固定的。这带来的一个问题，就是我们会比较频繁的改变我们的机型，因每年我们的计算资源与存储资源的配比都在变化，业务数据的增长非常快。这也在某种程度上提高了机器的使用成本。
 
@@ -3338,9 +3344,9 @@ MSE 打通容器集群和微服务注册中心，轻松实现服务的自动发�
 
 从架构抽象上看，当业务流量到来、业务事件发生时，云会启动或调度一个已启动的业务进程进行处理，处理完成后云自动会关闭、调度业务进程，等待下一次触发，应用的整个运行时都委托给了云。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/1213693961/p715653.png)
+![拥抱 Serverless](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/1213693961/p715653.png)
 
-Serverless 的增效降本
+**Serverless 的增效降本**
 
 Serverless 在事件驱动的数据计算任务、计算时间短的请求、响应应用、没有复杂相互调用的长周期任务有非常良好的效能表现。同时也需要注意，今天 Serverless 化架构并没有达到任何类型的应用都可以最优适用的地步，因此架构决策者需要关心应用的具体类型来进行架构设计。如应对有状态的应用，调度时如何保障上下文信息和应用的状态同步；又比如应用是否是长时间后台运行的密集型计算任务等，需要根据企业实际情况进行规划。
 
@@ -3457,7 +3463,7 @@ Serverless 在事件驱动的数据计算任务、计算时间短的请求、响
 
 云卓越中心 CCoE 是驱动云转型的最佳实践。企业通常至少有一个云管理团队，或由相关负责人组建一个云卓越中心（Cloud Center of Excellence，简称 CCoE）负责规划和对接上云的整体方案，包括在组织层面确认上云的整体计划、步骤，以及收集组织的具体需求。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/3946813961/p711639.png)
+![CCoE 运营模型](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/3946813961/p711639.png)
 
 云卓越中心运营模型组织通常包括：
 
@@ -3556,7 +3562,7 @@ Serverless 在事件驱动的数据计算任务、计算时间短的请求、响
 
 可观测性设计是指为了更好地监控、分析和管理系统运行状态而进行的设计。在云原生、微服务等技术越发流行的今天，系统的可观测性变得越来越复杂。云上的可观测性主要从监控指标、链路追踪、日志记录、监控看板和事件告警五大方面来进行设计，从而实现云上全方面的可观测性体系能力建设。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/9867813961/p711640.png)
+![可观测性的设计原则](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/9867813961/p711640.png)
 
 ##### 监控指标
 
@@ -3663,7 +3669,7 @@ Serverless 在事件驱动的数据计算任务、计算时间短的请求、响
 
 云服务相比 IDC，最大特点是通过提供大量的 OpenAPI 将底层的计算、网络、存储和应用等能力暴露出来，以更简单的形态提供服务，让云用户通过编程来定义和完成高阶服务能力，从而形成资源管控到应用交付的全生命周期自动化。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/9577813961/p711641.png)
+![自动化](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/9577813961/p711641.png)
 
 通过 OpenAPI 编排能力，可以方便地组合出多种形态的自动化。为了更好的管理资源，企业的系统能够与云平台高度自动化地集成。当前常见的云自动化可以分为下面三类：
 
@@ -3683,7 +3689,7 @@ Serverless 在事件驱动的数据计算任务、计算时间短的请求、响
 
 然而，API 被人读、被机器读并最终被机器执行。 API 是抽象的，但也需要具象的方式才能被人类更高效的集成使用。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/1667813961/p711642.png)
+![OpenAPI 和原生工具集成云服务](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/1667813961/p711642.png)
 
 OpenAPI 用户在不同阶段需要关注的原则和建议主要包括 OpenAPI 规范、API 的质量和稳定性、API 的使用效率、API 的性能和效率、API 版本和变更、API 的安全性和可靠性、错误信息和日志记录等，以便于更好地评估、使用和维护 API，提升使用效率。
 
@@ -3730,7 +3736,7 @@ OpenAPI 用户在不同阶段需要关注的原则和建议主要包括 OpenAPI 
 
 Terraform 是一款流行的基础设施即代码工具，可以编写可复用的代码模块，简化重复性工作。支持多云平台，可在多个云服务商的云平台上部署基础设施。通过 Terraform 语言描述的代码可读性高，易于维护。并在代码化过程中支持模拟环境，可以在本地或者 CI/CD 环境中测试基础设施代码。而且 Terraform 社区活跃，拥有大量的第三方模块和插件。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/1667813961/p711643.png)
+![Terraform](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/1667813961/p711643.png)
 
 但企业同时也要关注其带来的一些诸如配置复杂、学习成本高、大规模部署速度慢等一些限制条件。 在进行技术路径选择的时候需要权衡学习成本和部署速度等因素。 在组织内推广这些方式时，往往会受到一些阻力。基于大量客户实践，推荐从以下几个方面入手：
 
@@ -3778,9 +3784,9 @@ cloud-init 是云平台为 Linux 操作系统的虚拟机做系统初始化配�
 
 应用，是一个可独立交付的对外提供服务的单元，是开发、部署、发布、运维的最小逻辑单元。在研发态，通常对应一个到多个功能模块，关联一个或多个代码库；在运行态，通常对应一个或多个服务。 以电商系统为例，购物车、商品详情、下单系统都是独立应用。众多应用构成了淘宝、天猫、支付宝等业务系统。 开发、 交付、运维工作都是围绕应用展开的，建议每个应用有明确的负责人，对应独立的代码库，上线流程、运维监控、故障定责等工作都以应用维度展开。
 
-以应用为中心的 DevOps 敏捷研发模式
+**以应用为中心的 DevOps 敏捷研发模式**
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/3777813961/p711644.png)
+![DevOps 敏捷研发模式](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/3777813961/p711644.png)
 
 ###### 应用开发
 
@@ -3788,7 +3794,7 @@ cloud-init 是云平台为 Linux 操作系统的虚拟机做系统初始化配�
 
 环境是应用在某个环境级别运行态的载体，是应用维度做部署和运维的操作界面，通常对应着一组资源实例、或者一组主机服务。标准的应用变更流程会涉及到：开发、测试、预发、生产四个阶段，分别对应多套环境。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/8869813961/p711645.png)
+![应用环境](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/8869813961/p711645.png)
 
 **代码管理**
 
@@ -3800,7 +3806,7 @@ cloud-init 是云平台为 Linux 操作系统的虚拟机做系统初始化配�
 
 按照传统测试的定义，软件测试是指在规定的条件下对程序进行操作， 以发现程序错误，衡量软件质量，并对其是否能满足设计要求进行评估的过程。测试场景大体可以分为功能、易用性、性能、兼容性、自动化、可靠性。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/4348813961/p711646.png)
+![测试体系](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/4348813961/p711646.png)
 
 **单元测试**
 
@@ -3850,7 +3856,7 @@ UI 测试有很多场景是需要依赖手工测试来完成的，比如检查�
 
 双引擎自动回归平台（简称双引擎或者 doom）是一个将线上真实流量复制并用于自动回归测试的平台。 通过创新的自动 mock 机制不仅支持读接口的回归验证，同时支持写接口（例如用户下单接口、付款接口）的回归验证。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/4348813961/p711647.png)
+![产品线上回归](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/4348813961/p711647.png)
 
 ###### 应用集成
 
@@ -3883,7 +3889,7 @@ UI 测试有很多场景是需要依赖手工测试来完成的，比如检查�
 
 云效流水线 Flow 是一款企业级、自动化的持续集成和持续交付工具，通过构建自动化、集成自动化、验证自动化、部署自动化，完成从开发到上线的 CI/CD 全流程，帮助企业高质量、高效率的交付业务。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/7448813961/p711648.png)
+![CI/CD 流水线](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/7448813961/p711648.png)
 
 - **部署策略**
 
@@ -3940,7 +3946,7 @@ UI 测试有很多场景是需要依赖手工测试来完成的，比如检查�
 
 在清楚变更各环节的定义后，严格按照此规范进行，可帮助组织/企业规范化操作流程、提升变更效率、降低风险、提高业务连续性。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/9948813961/p711649.png)
+![标准的变更管理流程](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/9948813961/p711649.png)
 
 ###### 标准的变更管理数据库
 
@@ -3969,7 +3975,7 @@ UI 测试有很多场景是需要依赖手工测试来完成的，比如检查�
 
 事件管理是针对事件进行识别、记录、分类、分派、分析、解决和完结的过程。事件管理的目标是及时、准确的接受时间，并进行服务回复。尽可能的减少业务影响。通过事件管理可以实现快速定位问题、提高解决效率、减少重复问题的发生频率、增强业务连续性、提高用户体验、规范企业工作流程。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/0079813961/p711650.png)
+![事件管理](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/0079813961/p711650.png)
 
 事件管理包括以下几点：
 
@@ -4018,7 +4024,7 @@ UI 测试有很多场景是需要依赖手工测试来完成的，比如检查�
 
 此外，考虑到互联网企业的一些特性，如企业存在大量对快速响应要求极高的场景，内部多运用和实践 DevOps/Agile 等快速迭代的开发环境，同时重大故障应急涉及多部门（法务、政务、公关、客服、技术支持）的联动机制等等，本故障管理体系也结合了以上的互联网企业特性做了对应的机制优化。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5969813961/p711651.png)
+![故障管理](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5969813961/p711651.png)
 
 ##### 故障管理的重要性
 
@@ -4092,7 +4098,37 @@ UI 测试有很多场景是需要依赖手工测试来完成的，比如检查�
 
 由此生成一个故障等级定义的模板可以如下所示（实际使用中可适当精简，避免过于冗余）
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/5969813961/p711652.png)
+| 业务量级 | 功能分类 | 影响面 | P1 | P2 | P3 | P4 |
+|----------|----------|--------|----|----|----|----|
+| 大体量   | 核心功能 | 成功量下跌 30% 及以上 | P1 |    |    |    |
+|          |          | 成功量下跌 20%-30%    |    | P2 |    |    |
+|          |          | 成功量下跌 20% 以下   |    |    | P3 |    |
+|          | 次核心功能 | 成功量下跌 30% 及以上 |    | P2 |    |    |
+|          |          | 成功量下跌 20%-30%    |    |    | P3 |    |
+|          |          | 成功量下跌 20% 以下   |    |    |    | P4 |
+|          | 非核心功能 | 成功量下跌 30% 及以上 |    |    | P3 |    |
+|          |          | 成功量下跌 30% 以下   |    |    |    | P4 |
+| 中体量   | 核心功能 | 10分钟内总体成功量下跌45%及以上 | P1 |    |    |    |
+|          |          | 10分钟内总体成功量下跌30%-45% |    | P2 |    |    |
+|          |          | 10分钟内总体成功量下跌30%以下 |    |    | P3 |    |
+|          | 次核心功能 | 10分钟内总体成功量下跌45%及以上 |    | P2 |    |    |
+|          |          | 10分钟内总体成功量下跌30%-45% |    |    | P3 |    |
+|          |          | 10分钟内总体成功量下跌30%以下 |    |    |    | P4 |
+|          | 非核心功能 | 10分钟内总体成功量下跌45%及以上 |    |    | P3 |    |
+|          |          | 10分钟内总体成功量下跌45%及以下 |    |    |    | P4 |
+| 小体量   | 核心功能 | 15/30分钟内总体成功量下跌45%及以上 | P1 |    |    |    |
+|          |          | 15/30分钟内总体成功量下跌30%-45% |    | P2 |    |    |
+|          |          | 15/30分钟内总体成功量下跌30%以下 |    |    | P3 |    |
+|          | 次核心功能 | 15/30分钟内总体成功量下跌45%及以上 |    | P2 |    |    |
+|          |          | 15/30分钟内总体成功量下跌30%-45% |    |    | P3 |    |
+|          |          | 15/30分钟内总体成功量下跌30%以下 |    |    |    | P4 |
+|          | 非核心功能 | 15/30分钟内总体成功量下跌45%及以上 |    |    | P3 |    |
+|          |          | 15/30分钟内总体成功量下跌45%以下 |    |    |    | P4 |
+| 微量     | 核心功能 | 60分钟内总体成功量下跌45%及以上 |    | P2 |    |    |
+|          |          | 60分钟内总体成功量下跌30%-45% |    |    | P3 |    |
+|          |          | 60分钟内总体成功量下跌30%以下 |    |    |    | P4 |
+|          | 核心/非核心功能 | 60分钟内总体成功量下跌45%及以上 |    |    | P3 |    |
+|          |                  | 60分钟内总体成功量下跌30%-45% |    |    |    | P4 |
 
 故障等级定义制定好以后，需要得到技术负责人的审批，以及后续面向技术团队和上下游团队的公示。必要时需要进行宣讲。
 
@@ -4275,7 +4311,7 @@ UI 测试有很多场景是需要依赖手工测试来完成的，比如检查�
 
 两层的弹性组件与能力可以分开使用，也可以结合在一起使用，并且两者之间是通过调度层面的容量状态进行解耦。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/3166813961/p711637.png)
+![容器自动扩缩](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/3166813961/p711637.png)
 
 ###### 适用场景
 
@@ -4302,7 +4338,7 @@ UI 测试有很多场景是需要依赖手工测试来完成的，比如检查�
 
 对于用户来说，云服务和容器的伸缩都需要用户一定程度上参与基础设施层面的资源管理和维护。而 Serverless 技术则无需用户关心基础设施层面的伸缩扩容。Serverless 相关的云产品有弹性快（毫秒级扩容），成本优（按实际使用量付费），开发效率高（不用关心底层云资源）三大特性。截止目前道客 Serverless 架构的核心云产品已经达到 20 余款，具备完整的从 Serverless 计算，到 Serverless 应用开发的服务能力。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/3166813961/p711638.png)
+![Serverless](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/3166813961/p711638.png)
 
 ###### 函数计算
 
@@ -4535,7 +4571,7 @@ Cpu(s): 0.2%us, 0.1%sy, 0.0%ni, 77.5%id, 2.1%wa, 0.0%hi, 0.0%si, 20.0%st
 CPU 使用率 = (1 - 空闲态运行时间/总运行时间) * 100%
 ```
 
-根据经验法则， 生产系统的 CPU 总使用率建议不要超过 70%**。**
+根据经验法则， 生产系统的 CPU 总使用率建议不要超过 70%。
 
 ###### 平均负载
 
@@ -4559,9 +4595,9 @@ load average: 1.09, 1.12, 1.52
 平均负载 = 0.7 * CPU 逻辑核数
 ```
 
-- 当平均负载持续大于 0.7 * CPU 逻辑核数，就需要开始调查原因，防止系统恶化；
-- 当平均负载持续大于 1.0 * CPU 逻辑核数，必须寻找解决办法，降低平均负载；
-- 当平均负载持续大于 5.0 * CPU 逻辑核数，表明系统已出现严重问题，长时间未响应，或者接近死机。
+- 当平均负载持续大于 `0.7 * CPU 逻辑核数`，就需要开始调查原因，防止系统恶化；
+- 当平均负载持续大于 `1.0 * CPU 逻辑核数`，必须寻找解决办法，降低平均负载；
+- 当平均负载持续大于 `5.0 * CPU 逻辑核数`，表明系统已出现严重问题，长时间未响应，或者接近死机。
 
 除了关注平均负载值本身，也应关注平均负载的变化趋势，这包含两层含义。一是 load1、load5、load15 之间的变化趋势；二是历史的变化趋势。
 
@@ -4597,12 +4633,12 @@ CPU 使用率是单位时间内 CPU 繁忙程度的统计。而平均负载不�
 2. **选择监控工具** ：根据监控需求，选择适合的监控工具。常见的监控工具包括 Zabbix、Nagios、Grafana 等。这些工具可以监控服务器、网络、数据库、应用程序等各个方面的性能指标。
 3. **配置监控工具** ：根据监控需求，对所选的监控工具进行配置。这包括添加监控对象、设置监控指标、调整监控频率等。同时，还需要设置告警规则，以便在系统出现异常时及时通知管理员。
 4. **整合监控工具** ：将多个监控工具整合在一起，形成一个统一的监控平台。这可以通过使用开源的监控集成工具，如 Prometheus、Grafana 等来实现。这些工具可以将不同的监控数据整合在一起，形成一个统一的监控视图。
-5. **数据可视化：**将监控数据可视化，以便管理员更直观地了解系统的性能状况。这可以通过使用 Grafana 等工具来实现。Grafana 可以将监控数据以图表、仪表盘等形式展示出来，方便管理员进行分析和决策。
-6. **自动化运维：**将监控平台与自动化运维工具结合起来，实现自动化运维。这可以通过使用 Ansible、SaltStack 等工具来实现。这些工具可以根据监控数据自动化地进行故障排除、性能优化等操作，提高系统的稳定性和性能。
+5. **数据可视化** ：将监控数据可视化，以便管理员更直观地了解系统的性能状况。这可以通过使用 Grafana 等工具来实现。Grafana 可以将监控数据以图表、仪表盘等形式展示出来，方便管理员进行分析和决策。
+6. **自动化运维** ：将监控平台与自动化运维工具结合起来，实现自动化运维。这可以通过使用 Ansible、SaltStack 等工具来实现。这些工具可以根据监控数据自动化地进行故障排除、性能优化等操作，提高系统的稳定性和性能。
 
 建设一体化性能监控平台需要根据监控需求选择合适的监控工具，进行配置和整合，实现数据可视化和自动化运维，以提高系统的稳定性和性能。从 0 到 1 自建一套一体化性能监控平台，需要投入巨大的人力研发、运维和试错成本。道客可观测团队面向海量用户场景，通过多年的自研技术沉淀，探索出了一套符合开源标准、稳定可靠、易扩展的一体化性能监控最佳实践。通过应用实时监控服务 ARMS（Application Real-Time Monitoring Service）构建的第四代可观测产品，以应用为中心，向上连接用户体验，向下连接基础设施与云服务，一站式满足企业在业务连续性、架构稳定性乃至业务增长等核心诉求。
 
-![image.png](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/0756813961/p711616.png)
+![建设一体化性能监控平台](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/0756813961/p711616.png)
 
 ##### 实现端到端全链路追踪
 
