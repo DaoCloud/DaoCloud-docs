@@ -37,7 +37,7 @@ Refer to the following steps to create a job using an image.
 
     ![Config]](../images/job07.png)
 
-### Basic Information
+### Basic information
 
 On the __Create Jobs__ page, enter the basic information according to the table below, and click __Next__ .
 
@@ -117,7 +117,7 @@ Advanced setting includes job settings, labels and annotations.
 
     ![Labels and Annotations](../images/job04.png)
 
-## YAML creation
+## Create from YAML
 
 In addition to image, creation jobs can also be created more quickly through YAML files.
 
@@ -132,7 +132,7 @@ In addition to image, creation jobs can also be created more quickly through YAM
 3. Enter or paste the YAML file prepared in advance, click __OK__ to complete the creation.
 
     ![Confirm](../images/job09.png)
-   
+
 ??? note "Click to view the complete YAML"
 
     ```yaml

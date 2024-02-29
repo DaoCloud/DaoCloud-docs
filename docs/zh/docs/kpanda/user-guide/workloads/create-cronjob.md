@@ -38,7 +38,7 @@
 
 在 __创建定时任务__ 页面中，根据下表输入信息后，点击 __下一步__ 。
 
-![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/cronjob02.png)
+![基本信息](../images/cronjob02.png)
 
 - 负载名称：最多包含 63 个字符，只能包含小写字母、数字及分隔符（“-”），且必须以小写字母或数字开头及结尾。同一命名空间内同一类型工作负载的名称不得重复，而且负载名称在工作负载创建好之后不可更改。
 - 命名空间：选择将新建的定时任务部署在哪个命名空间，默认使用 default 命名空间。找不到所需的命名空间时可以根据页面提示去[创建新的命名空间](../namespaces/createns.md)。
@@ -52,7 +52,7 @@
 
 === "基本信息（必填）"
 
-    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/cronjob03.png)
+    ![基本信息](../images/cronjob03.png)
 
     在配置容器相关参数时，必须正确填写容器的名称、镜像参数，否则将无法进入下一步。参考以下要求填写配置后，点击 __确认__ 。
 
@@ -97,7 +97,7 @@
 
 ### 定时任务配置
 
-![定时任务配置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/cronjob04.png)
+![定时任务配置](../images/cronjob04.png)
 
 - 并发策略：是否允许多个 Job 任务并行执行。
 
@@ -112,6 +112,20 @@
 - 超时时间：超出该时间时，任务就会被标识为执行失败，任务下的所有 Pod 都会被删除。为空时表示不设置超时时间。默认值为 360 s。
 - 重试次数：任务可重试次数，默认值为 6。
 - 重启策略：设置任务失败时是否重启 Pod。
+
+### 服务配置
+
+为有状态负载配置[服务（Service）](../network/create-services.md)，使有状态负载能够被外部访问。
+
+1. 点击 __创建服务__ 按钮。
+
+    ![服务配置](../images/cronjob12.png)
+
+2. 参考[创建服务](../network/create-services.md)，配置服务参数。
+
+    ![创建服务](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy13.png)
+
+3. 点击 __确定__ ，点击 __下一步__ 。
 
 ### 高级配置
 
