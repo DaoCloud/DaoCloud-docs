@@ -1,9 +1,9 @@
 ---
-hide:
-  -toc
+MTPE: FanLin
+Date: 2024-02-29
 ---
 
-# Install the metrics-server plugin
+# Install metrics-server
 
  __metrics-server__ is the built-in resource usage metrics collection component of Kubernetes.
 You can automatically scale Pod copies horizontally for workload resources by configuring HPA policies.
@@ -26,15 +26,15 @@ Please perform the following steps to install the __metrics-server__ plugin for 
 
 1. On the Auto Scaling page under workload details, click the __Install__ button to enter the __metrics-server__ plug-in installation interface.
 
-    
+    ![metrics-server](../images/createScale04.png)
 
 2. Read the introduction of the __metrics-server__ plugin, select the version and click the __Install__ button. This page will use the __3.8.2__ version as an example to install, and it is recommended that you install __3.8.2__ and later versions.
 
-    
+    ![Install](../images/createScale05.png)
 
 3. Configure basic parameters on the installation configuration interface.
 
-    
+    ![Config](../images/createScale06.png)
 
     - Name: Enter the plugin name, please note that the name can be up to 63 characters, can only contain lowercase letters, numbers and separators ("-"), and must start and end with lowercase letters or numbers, such as metrics-server-01.
     - Namespace: Select the namespace for plugin installation, here we take __default__ as an example.
@@ -45,7 +45,7 @@ Please perform the following steps to install the __metrics-server__ plugin for 
 
     !!! note
 
-        After enabling __Ready Wait__ and/or __Failed Delete__ , it takes a long time for the app to be marked as __Running__ .
+        After enabling __Wait__ and/or __Deletion failed__ , it takes a long time for the app to be marked as __Running__ .
 
 4. Advanced parameter configuration
 

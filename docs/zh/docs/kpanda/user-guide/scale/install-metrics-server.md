@@ -52,9 +52,9 @@ hide:
     - 如果集群网络无法访问 __k8s.gcr.io__ 仓库，请尝试修改 __repositort__ 参数为 __repository: k8s.m.daocloud.io/metrics-server/metrics-server__ 。
 
     - 安装 __metrics-server__ 插件还需提供 SSL 证书。如需绕过证书校验，需要在 __defaultArgs:__ 处添加 __- --kubelet-insecure-tls__ 参数。 
-      
+
     ??? note "推荐使用如下参数来替换参数配置内的默认 YAML 内容"
-      
+
         ```yaml
         image:
           repository: k8s.m.daocloud.io/metrics-server/metrics-server # 将仓库源地址修改为 k8s.m.daocloud.io
