@@ -132,4 +132,4 @@
 
     !!! note
 
-    在创建 vgpu 应用时不需要指定调度器名称，vgpu-scheduler 的 webhook 会自动将 scheduler 的名称修改为 scheduler-plugins-scheduler，不用手动指定。
+        在创建 vgpu 应用时不需要指定调度器名称，vgpu-scheduler 的 webhook 会自动将 scheduler 的名称修改为 scheduler-plugins-scheduler，不用手动指定。
