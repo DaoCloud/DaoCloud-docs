@@ -4,7 +4,7 @@
 
 !!! note
 
-    推荐在界面创建工作集群时即开启高可用模式，手动扩容工作集群的控制节点存在一定的操作风险，请谨慎操作
+    推荐在界面创建工作集群时即开启高可用模式，手动扩容工作集群的控制节点存在一定的操作风险，请谨慎操作。
 
 ## 前提条件
 
@@ -17,7 +17,8 @@
 
 ## 修改主机清单文件
 
-1. 登录到容器管理平台，进入需要进行控制节点扩容的集群概览页面，在【基本信息】处，找到当前集群的 **被纳管集群**，点击被纳管集群的名称，进入被纳管集群的概览界面。
+1. 登录到容器管理平台，进入需要进行控制节点扩容的集群概览页面，在 **基本信息** 处，找到当前集群的 **被纳管集群** ，
+   点击被纳管集群的名称，进入被纳管集群的概览界面。
 
     ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/add-master-node01.png)
 
@@ -140,7 +141,6 @@
 
 使用基于下面的 __ClusterOperation.yml__ 模板，新增一个集群控制节点扩容任务 __scale-master-node-ops.yaml__ 。
 
-
 ```yaml title="ClusterOperation.yml"
 apiVersion: kubean.io/v1alpha1
 kind: ClusterOperation
@@ -174,19 +174,19 @@ spec:
 
 !!! note
 
-    - spec.image 镜像地址要与之前执行部署时的 job 其内镜像保持一致
-    - spec.action 设置为 cluster.yml，如果一次性添加 Master（etcd）节点超过（包含）三个，需在 cluster.yaml 追加额外参数 -e etcd_retries=10 以增大 etcd node join 重试次数
-    - spec.extraArgs 设置为 --limit=etcd,kube_control_plane -e ignore_assert_errors=yes
+    - spec.image：镜像地址要与之前执行部署时的 job 其内镜像保持一致
+    - spec.action：设置为 cluster.yml，如果一次性添加 Master（etcd）节点超过（包含）三个，需在 cluster.yaml
+      追加额外参数 `-e etcd_retries=10` 以增大 etcd node join 重试次数
+    - spec.extraArgs：设置为 `--limit=etcd,kube_control_plane -e ignore_assert_errors=yes`
     - 如果是离线环境，spec.preHook 需要添加 enable-repo.yml，并且 extraArgs 参数填写相关 OS 的正确 repo_list 
-    - spec.postHook.action 需要包含 upgrade-cluster.yml，其中 extraArgs 设置为 --limit=etcd,kube_control_plane -e ignore_assert_errors=yes
+    - spec.postHook.action：需要包含 upgrade-cluster.yml，其中 extraArgs 设置为
+      `--limit=etcd,kube_control_plane -e ignore_assert_errors=yes`
 
 按照上述的配置，创建并部署 scale-master-node-ops.yaml。
 
 ```bash
 # 复制上述清单文件
-
 vi cale-master-node-ops.yaml
-
 kubectl apply -f cale-master-node-ops.yaml -n kubean-system
 ```
 
