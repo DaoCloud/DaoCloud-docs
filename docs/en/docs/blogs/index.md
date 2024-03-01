@@ -12,6 +12,10 @@ technology, sorted by date by default.
 
 ## 2024
 
+- [20240301 | Create a Open Source Commercial Ecosystem](./240301-osc-eco.md)
+
+    One way for an open source project to be successful is to have a thriving ecosystem of companies and products built around it. So what exactly is an open source commercial ecosystem and how can organizations help create and support sustainable open source projects? There are concrete ways to create confidence in a project’s long-term viability, encourage companies to create commercial products and services on top of open source projects, and re-invest in them with contributions, content, and other resources. These practices for enabling ecosystem development help set your projects up for success.
+
 - [20240203 | Book Recommendation "Managing Cloud Native Data on Kubernetes"](./240203-book.md)
 
     International renowned technology book publisher O'Reilly Media has quietly launched a professional book on Kubernetes data storage in collaboration with China Electronics Industry Publishing House:
