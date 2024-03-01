@@ -1,10 +1,13 @@
 # 开启 MIG 功能
 
 本章节介绍如何开启 NVIDIA MIG 功能方式，NVIDIA 当前提供两种在 Kubernetes 节点上公开 MIG 设备的策略： 
-> Tips: MIG 模式 Disable 之后需要重新启动物理节点，才能正常的使用整卡模式。
 
 - **Single 模式**，节点仅在其所有 GPU 上公开单一类型的 MIG 设备。
 - **Mixed 模式**，节点在其所有 GPU 上公开混合 MIG 设备类型。
+
+!!! tip
+
+    MIG 模式 Disable 之后需要重新启动物理节点，才能正常的使用整卡模式。
 
 详情参考：[NVIDIA GPU 卡使用模式](../index.md)
 
@@ -26,13 +29,23 @@
     - __DevicePlugin__ 设置为 __enable__ 
     - __MIG strategy__ 设置为 __single__ 
     - __Mig Manager__ 下的 __enabled__ 参数开启
-    - __MigManager Config__ ：MIG 的切分策略配置，默认为 __default-mig-parted-config__
+    - __MigManager Config__ ：MIG 的切分策略配置，默认为 __default-mig-parted-config__ 。
 
-2. 如需要按照某种规则切分，可以给对应节点(已插入对应 GPU 卡节点)打上 切分规格，如不执行此操作，将按照默认方式切分。
+2. 安装完成后需要给对应节点(已插入对应 GPU 卡节点)打上切分规格的label，如不执行此操作，将按照默认不切分。
 
-    **界面配置** ：找到对应节点，选择 __修改标签__ 添加 __nvidia.com/mig.config="all-1g.10gb"__ 
+    !!! tip
 
-    ![single02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/single02.jpg)
+        Single 模式只能按照单一模式进行切分。建议使用默认策略，也可以[自定义切分策略](#_2)。
+
+    **界面配置** ：
+   
+    1. 在 ConfigMap 中搜索 default-mig-parted-config ，进入详情找到 GPU 卡型号对应的切分规格。
+   
+        ![configdetail](../../images/operator-mig.png)
+  
+    2. 找到对应节点，选择 __修改标签__ 添加 __nvidia.com/mig.config="all-1g.10gb"__ 。若选择其他规格，则按照其他规格进行切分。
+
+        ![single02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/single02.jpg)
 
     **命令配置**：
 
@@ -40,11 +53,13 @@
     kubectl label nodes {node} nvidia.com/mig.config="all-1g.10gb" --overwrite
     ```
 
-3. 查看配置结果
+4. 查看配置结果
 
     ```sh
     kubectl get node 10.206.0.17 -o yaml|grep nvidia.com/mig.config
     ```
+​
+设置完成后，在确认部署应用时即可[使用 GPU MIG 资源](mig_usage.md)。
 
 ## 开启 GPU MIG Mixed 模式
 
@@ -55,14 +70,50 @@
     - __DevicePlugin__ 设置为 __enable__ 
     - __MIG strategy__ 设置为 __mixed__ 
     - __Mig Manager__ 下的 __enabled__ 参数开启
-    - __MigManager Config__ ：MIG 的切分策略配置，默认为 __default-mig-parted-config__ ，可自定义切分策略配置文件，单张卡最多可切分为 7 个实例。
+    - __MigManager Config__ ：MIG 的切分策略配置，默认为 __default-mig-parted-config__ .
+
+2. 安装完成后需要给对应节点(已插入对应 GPU 卡节点)打上切分规格的 label，如不执行此操作，将按照默认不切分。
+
+    !!! tip
+
+        建议使用默认策略,也可以[自定义切分策略](#_2)。
+
+    **界面配置** ：
+   
+    1. 在 ConfigMap 中搜索 default-mig-parted-config ，进入详情找到 GPU 卡型号对应的切分规格。
+   
+        ![configdetail](../../images/operator-mig.png)
+  
+    2. 找到对应节点，选择 __修改标签__ 添加 __nvidia.com/mig.config="all-1g.10gb"__ 。若选择其他规格，则按照其他规格进行切分。
+
+        ![single02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/single02.jpg)
+
+    **命令配置** ：
+
+    ```sh
+    kubectl label nodes {node} nvidia.com/mig.config="all-1g.10gb" --overwrite
+    ```
+
+4. 查看配置结果
+
+    ```sh
+    kubectl get node 10.206.0.17 -o yaml|grep nvidia.com/mig.config
+    ```
+
+​设置完成后，在确认部署应用时即可[使用 GPU MIG 资源](mig_usage.md)。
+
+## 自定义切分策略 
+
+可自定义切分策略配置文件，单张卡最多可切分为 7 个实例。需在安装 GPU Operator 前创建，并在安装时指定该 ConfigMap 名称。
+
+1. 在 ConfigMap 中创建自定义切分策略，部署时需要和 GPU operator 部署在同一个命名空间下。
+   同时您创建的文件名称不能与默认 __default-mig-parted-config__ 相同。配置数据可参考如下 yaml。
+
+    ![mixed](../../images/migpolicy.png)
 
     ??? note "点击查看详细的 YAML 配置说明"
 
-        如下 YAML 为示例自定义配置 __custom-mig-parted-config__ ，
-        您创建的文件名称不能与默认 __default-mig-parted-config__ 相同。
-
-        新建名为 __custom-mig-parted-config__ 的配置文件，配置数据的 __key__ 必须为如下 __config.yaml__ 中内容。
+        如下 YAML 为示例自定义配置 __custom-mig-parted-config__ ，配置数据的 __key__ 为如下 __config.yaml__ 中内容，您可以自定义添加其他切分策略。
 
         ```yaml title="config.yaml"
           # 自定义切分 GI 实例配置
@@ -316,22 +367,6 @@
               1c.3g.40gb: 6
         ```
 
-2. 如需要按照自定义规则切分，可以给对应节点打上切分规格，如不执行此操作，将按照默认值切分。
+3. 在安装 GPU Operator 时，指定该 ConfigMap。
 
-    **界面配置** ：找到对应节点，选择 __修改标签__ 添加 __nvidia.com/mig.config="custom-config"__ 
-
-    ![single02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/mixed02.jpg)
-
-    **命令配置**：
-
-    ```sh
-    kubectl label nodes {node} nvidia.com/mig.config="custom-config" --overwrite
-    ```
-
-3. 查看配置结果。
-
-    ```sh
-    kubectl get node 10.206.0.17 -o yaml|grep nvidia.com/mig.config
-    ```
-
-​设置完成后，在确认部署应用时即可[使用 GPU MIG 资源](mig_usage.md)。
+![single](../../images/operator-mig.png)
