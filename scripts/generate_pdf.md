@@ -10,7 +10,7 @@ The following command can be used to batch generate a complete Word file that in
 
 ```bash
 cd /path/to/this/repo
-python3 scripts/md2docx-v2.py docs/zh/docs # Generate Word files
+python3 scripts/md2doc-v2.py docs/zh/docs # Generate Word files
 ```
 
 However, the resulting Word file will contain all the content from docs.daocloud.io, making it difficult to read.
@@ -27,7 +27,7 @@ find ./docs -type f -name "*.docx" ! -name "TiDBonHwameiStor.docx" | xargs rm -f
 
 ```bash
 cd /path/to/this/repo
-python3 scripts/md2docx-v2.py docs/zh/docs/kpanda # Generate Word files
+python3 scripts/md2doc-v2.py docs/zh/docs/kpanda # Generate Word files
 ```
 
 > The above is an example to generate documentation for the `kpanda` folder.

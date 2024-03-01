@@ -10,7 +10,7 @@
 
 ```bash
 cd /path/to/this/repo
-python3 scripts/md2docx-v2.py docs/zh/docs # 生成 Word 文件
+python3 scripts/md2doc-v2.py docs/zh/docs # 生成 Word 文件
 ```
 
 但这样生成的 Word 文件包含了 docs.daocloud.io 所有的内容，不方便阅读。
@@ -27,7 +27,7 @@ find ./docs -type f -name "*.docx" ! -name "TiDBonHwameiStor.docx" | xargs rm -f
 
 ```bash
 cd /path/to/this/repo
-python3 scripts/md2docx-v2.py docs/zh/docs/kpanda # 生成 Word 文件
+python3 scripts/md2doc-v2.py docs/zh/docs/kpanda # 生成 Word 文件
 ```
 
 > 以上为例，这里是生成单个 `kpanda` 目录的文档。
