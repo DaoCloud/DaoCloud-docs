@@ -7,21 +7,21 @@
 
 ## 查看自动纳管的服务
 
-1. 在`微服务网关列表`页面点击目标网关的名称，进入网关概览页后，在左侧导航栏点击`服务接入`-->`服务列表`。
+1. 在 __微服务网关列表__ 页面点击目标网关的名称，进入网关概览页后，在左侧导航栏点击 __服务接入__ --> __服务列表__ 。
 
     ![服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/service/images/service-list.png)
 
-2. 在`服务列表`页面点击`自动纳管`。
+2. 在 __服务列表__ 页面点击 __自动纳管__ 。
 
     ![自动发现服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/service/images/auto.png)
 
 ## 配置服务策略
 
-1. 在`服务列表`->`自动纳管`页面找到目标服务，在右侧点击 `ⵗ` 选择`修改策略配置`。
+1. 在 __服务列表__ -> __自动纳管__ 页面找到目标服务，在右侧点击 __ⵗ__ 选择 __修改策略配置__ 。
 
     ![策略配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/service/images/policy1.png)
 
-2. 按需调整服务策略配置，在弹框右下角点击`确定`。
+2. 按需调整服务策略配置，在弹框右下角点击 __确定__ 。
 
     - HTTPS 证书验证：开启后，必须通过证书校验才能成功访问该服务。
     - 服务熔断：当最大连接数、最大处理连接数、最大并行请求数、最大并行重试数 **任何一个** 指标达到设定的阈值时，自动切断对该服务的调用，保护系统整体的可用性。当指标降到设定的阈值之后，自动恢复对该服务的调用。
@@ -30,7 +30,7 @@
 
 ## 查看服务详情
 
-1. 在`服务列表`->`自动纳管`页面找到目标服务，点击服务名称。
+1. 在 __服务列表__ -> __自动纳管__ 页面找到目标服务，点击服务名称。
 
     ![服务详情](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/service/images/service-details.png)
 

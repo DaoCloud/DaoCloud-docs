@@ -7,11 +7,11 @@
 
 支持
 
-1. 进入`微服务引擎`模块，在左侧点击`云原生微服务`->`服务治理`，然后在右上角点击`手工导入`。
+1. 进入 __微服务引擎__ 模块，在左侧点击 __云原生微服务__ -> __服务治理__ ，然后在右上角点击 __手工导入__ 。
 
     ![手工导入](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/cloudms-import01.png)
 
-2. 筛选目标服务所在的服务网格和命名空间，勾选该服务，然后点击`确定`即可。
+2. 筛选目标服务所在的服务网格和命名空间，勾选该服务，然后点击 __确定__ 即可。
 
     ![确定](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/cloudms-import02.png)
 
@@ -39,6 +39,6 @@
 
     ![治理能力](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/cloudms-traffic02.png)
 
-3. 根据需要在端口上创建规则，最后点击`确定`
+3. 根据需要在端口上创建规则，最后点击 __确定__ 
 
 <!--关于各个策略的具体说明，待后续补充-->

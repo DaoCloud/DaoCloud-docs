@@ -68,7 +68,7 @@ sentinel-operator-6fb9dc98f4-d44k5                    1/1     Running     0     
 skoala-agent-54d4df7897-7p4pz                         1/1     Running     0          2d6h
 ```
 
-除了通过终端安装，也可以在 `容器管理`->`Helm 应用` 内找到 `skoala-init` 进行安装。
+除了通过终端安装，也可以在 `容器管理`-> __Helm 应用__ 内找到 `skoala-init` 进行安装。
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/skoala-init.png)
 

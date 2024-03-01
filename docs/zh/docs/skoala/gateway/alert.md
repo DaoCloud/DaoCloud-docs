@@ -13,7 +13,7 @@ hide:
 
 ## 业务监控看板
 
-在左侧导航栏点击`监控告警`，点击`业务监控看板`页签可查看业务监控信息。
+在左侧导航栏点击 __监控告警__ ，点击 __业务监控看板__ 页签可查看业务监控信息。
 
 ![点击名称](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/alert02.png)
 
@@ -47,7 +47,7 @@ hide:
 
 ## 资源看板
 
-点击`资源看板`页签可查看资源监控信息。
+点击 __资源看板__ 页签可查看资源监控信息。
 
 ![点击名称](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/alert03.png)
 

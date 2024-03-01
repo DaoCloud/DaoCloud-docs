@@ -324,7 +324,7 @@ DCE 5.0 云原生网关支持支持负载均衡、超时重试、黑白名单等
 
     ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw32.png)
 
-3. 在未开启 WebSocket 策略，点击`连接`，会显示访问失败。
+3. 在未开启 WebSocket 策略，点击 __连接__ ，会显示访问失败。
 
     ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw33.png)
 
@@ -332,7 +332,7 @@ DCE 5.0 云原生网关支持支持负载均衡、超时重试、黑白名单等
 
     ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw35.png)
 
-5. 再次点击`连接`，显示访问成功，说明 WebSocket 策略生效。
+5. 再次点击 __连接__ ，显示访问成功，说明 WebSocket 策略生效。
 
     ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw34.png)
 

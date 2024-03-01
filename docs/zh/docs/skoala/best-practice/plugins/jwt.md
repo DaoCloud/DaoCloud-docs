@@ -43,19 +43,19 @@ DCE 5.0 微服务引擎支持在云原生微服务中使用 JWT 插件，为服�
 
 满足上述前提条件之后，接入 JWT 插件并将插件绑定到微服务端口，就可以在微服务中使用该插件。
 
-1. 进入微服务引擎，在左侧导航栏点击`插件中心`，然后在页面右上角点击`接入插件`。
+1. 进入微服务引擎，在左侧导航栏点击 __插件中心__ ，然后在页面右上角点击 __接入插件__ 。
 
     ![add-mesh](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-jwt05.png)
 
-2. 填写插件配置，最后在页面右下角点击`确定`即可。。
+2. 填写插件配置，最后在页面右下角点击 __确定__ 即可。。
 
     ![add-mesh](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-jwt06.png)
 
-3. 在微服务引擎的左侧导航栏点击`云原生微服务`，然后点击目标服务的名称。
+3. 在微服务引擎的左侧导航栏点击 __云原生微服务__ ，然后点击目标服务的名称。
 
     ![add-mesh](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-jwt07.png)
 
-4. 在服务详情中点击`插件能力`页签，然后在右侧点击`插件能力`。
+4. 在服务详情中点击 __插件能力__ 页签，然后在右侧点击 __插件能力__ 。
 
     ![add-mesh](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-jwt08.png)
 

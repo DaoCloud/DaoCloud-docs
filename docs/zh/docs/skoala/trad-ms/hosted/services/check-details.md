@@ -4,7 +4,7 @@
 
 ## 实例列表
 
-首先需要进入目标注册中心，在左侧导航栏点击`微服务列表`，点击目标微服务的名称，进入微服务详情页面后方可执行后续操作。
+首先需要进入目标注册中心，在左侧导航栏点击 __微服务列表__ ，点击目标微服务的名称，进入微服务详情页面后方可执行后续操作。
 
 ![进入微服务列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/detail01.png)
 
@@ -56,7 +56,7 @@
 
 提供多个维度的服务元数据，帮助用户存储自定义的信息。这些信息都是以 Key-Value 的数据结构存储，在控制台上会以 k1=v1,k2=v2 这样的格式展示。
 
-在右侧点击`编辑`可以修改元数据。
+在右侧点击 __编辑__ 可以修改元数据。
 
 ![元数据](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/detail09.png)
 

@@ -5,7 +5,7 @@
 
 添加域名的步骤如下：
 
-1. 点击目标网关的名称进入网关概览页面，然后在左侧导航栏点击`域名管理`，在页面右上角点击`添加域名`。
+1. 点击目标网关的名称进入网关概览页面，然后在左侧导航栏点击 __域名管理__ ，在页面右上角点击 __添加域名__ 。
 
     ![添加域名](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/domain/images/add-domain-1.png)
 
@@ -31,8 +31,8 @@
     - 策略配置：参考[配置域名策略](domain-policy.md)
     -->
 
-3. 在页面右下角点击`确定`
+3. 在页面右下角点击 __确定__ 
 
-    点击`确定`后，将自动跳转到`域名管理`页面，可以在域名列表中看到刚才新建的域名。
+    点击 __确定__ 后，将自动跳转到 __域名管理__ 页面，可以在域名列表中看到刚才新建的域名。
 
     ![添加成功](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/domain/images/domain-bingo.png)
