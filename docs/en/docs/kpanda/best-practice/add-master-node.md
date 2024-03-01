@@ -154,6 +154,12 @@ spec:
       action: ping.yml
     - actionType: playbook
       action: disable-firewalld.yml
+    - actionType: playbook
+      action: enable-repo.yml  # In an offline environment, you need to add this yaml and
+      # set the correct repo-list (for installing operating system packages).
+      # The following parameter values are for reference only.
+      extraArgs: |
+        -e "{repo_list: ['http://172.30.41.0:9000/kubean/centos/\$releasever/os/\$basearch','http://172.30.41.0:9000/kubean/centos-iso/\$releasever/os/\$basearch']}"
   postHook:
     - actionType: playbook
       action: upgrade-cluster.yml
@@ -166,19 +172,21 @@ spec:
 
 !!! note
 
-    - Ensure that the spec.image URL matches the image used in the previous deployment job.
-    - Set spec.action to scale.yml.
-    - Set spec.extraArgs to --limit=g-worker.
-    - In spec.preHook, make sure to provide the correct repo_list parameter for the enable-repo.yml playbook based on the OS.
-    - If adding more than three master (etcd) nodes at once, include the additional parameter -e etcd_retries=10 to increase the number of retries for etcd node join.
+    - spec.image: The image address should be consistent with the image within the job that was previously deployed
+    - spec.action: set to cluster.yml, if adding Master (etcd) nodes exceeds (including) three
+      at once, additional parameter `-e etcd_retries=10` should be added to cluster.yaml to
+      increase etcd node join retry times
+    - spec.extraArgs: set to `--limit=etcd,kube_control_plane -e ignore_assert_errors=yes`
+    - If it is an offline environment, spec.preHook needs to add enable-repo.yml, and the
+      extraArgs parameter should fill in the correct repo_list for the relevant OS
+    - spec.postHook.action: should include upgrade-cluster.yml, where extraArgs is set to
+      `--limit=etcd,kube_control_plane -e ignore_assert_errors=yes`
 
 Create and deploy scale-master-node-ops.yaml based on the above configuration.
 
 ```bash
 # Copy the above manifest
-
 vi cale-master-node-ops.yaml
-
 kubectl apply -f cale-master-node-ops.yaml -n kubean-system
 ```
 
