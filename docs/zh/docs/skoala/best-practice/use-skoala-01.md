@@ -44,7 +44,7 @@
 
 ### 基于 Helm 模板部署
 
-1. 在`应用工作台`->`向导`->`基于 Helm 模板`中，找到 opentelemetry-demo 应用，点击应用卡片进行安装
+1. 在 __应用工作台__ -> __向导__ -> __基于 Helm 模板__ 中，找到 opentelemetry-demo 应用，点击应用卡片进行安装
 
     ![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/helmtemplate.png)
 
@@ -164,7 +164,7 @@
 
 基于 DCE 5.0 的特性，云原生网关可以自动发现所管辖命名空间内的服务，所以无需手动接入服务。
 
-本次演示采用 Nacos 注册中心的服务，很大程度上扩宽了网关可接入的服务数量，可以在`服务接入`中选择接入 Nacos 注册中心的服务。
+本次演示采用 Nacos 注册中心的服务，很大程度上扩宽了网关可接入的服务数量，可以在 __服务接入__ 中选择接入 Nacos 注册中心的服务。
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/gatewayservicelist.png)
 

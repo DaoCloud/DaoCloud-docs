@@ -4,7 +4,7 @@
 
 ## 查看方式
 
-点击目标网关的名称，进入网关概览页面，然后在左侧导航栏点击`日志查看`->`实例日志`。
+点击目标网关的名称，进入网关概览页面，然后在左侧导航栏点击 __日志查看__ -> __实例日志__ 。
 
 ![查看实例日志的路径](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/logs/images/inslog-path.png)
 <!--更新截图-->

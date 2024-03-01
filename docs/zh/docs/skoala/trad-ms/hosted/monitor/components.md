@@ -13,17 +13,17 @@
 
     ![点击名称](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/monitor01.png)
 
-2. 在左侧导航栏点击`监控` -> `组件监控`。
+2. 在左侧导航栏点击 __监控__ -> __组件监控__ 。
 
     ![导航栏](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/monitor02.png)
 
-3. 点击 `Naocs 实例`页签即可查看 Nacos 实例的监控信息。
+3. 点击 __Naocs 实例__ 页签即可查看 Nacos 实例的监控信息。
 
     > 下拉页面可查看请求耗时、请求次数等统计详情。
 
     ![查看信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/monitor03.png)
 
-4. 点击 `Sentinel 实例`页签即可查看 Sentinel 实例的监控信息。
+4. 点击 __Sentinel 实例__ 页签即可查看 Sentinel 实例的监控信息。
 
    > 下拉页面可查看请求耗时、请求次数、负载等统计详情。
 

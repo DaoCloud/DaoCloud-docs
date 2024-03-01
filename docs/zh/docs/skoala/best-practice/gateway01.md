@@ -27,7 +27,7 @@ DCE 5.0 云原生网关支持通过手动接入和自动发现两种方式导入
 4. 参考[添加 API](../gateway/api/index.md)在网关下面创建 API。
    **需要将服务添加为 API 的后端服务** 。
 
-    添加后端服务时，筛选`自动发现`类型的服务，然后勾选目标服务，点击`确定`即可。
+    添加后端服务时，筛选`自动发现`类型的服务，然后勾选目标服务，点击 __确定__ 即可。
 
     ![后端服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw03.png)
 
@@ -44,7 +44,7 @@ DCE 5.0 云原生网关支持通过手动接入和自动发现两种方式导入
 
    **需要将服务添加为 API 的后端服务** 。
 
-    添加后端服务时，筛选`手工接入`类型的服务，然后勾选目标服务，点击`确定`即可。
+    添加后端服务时，筛选`手工接入`类型的服务，然后勾选目标服务，点击 __确定__ 即可。
 
     ![后端服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw05.png)
 
@@ -61,7 +61,7 @@ DCE 5.0 云原生网关支持通过手动接入和自动发现两种方式导入
 
 3. 使用 `kubectl get svc -n $Namespace` 命令查看网关暴露的端口。
 
-    以 `envoy` 开头q且以 `gtw` 结尾的便是网关对应的 Service。在本次演示情形下，网关 Service 的端口为 `30040`。
+    以 `envoy` 开头且以 `gtw` 结尾的便是网关对应的 Service。在本次演示情形下，网关 Service 的端口为 `30040`。
 
     ![nodeport](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw07.png)
 

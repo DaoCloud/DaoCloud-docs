@@ -50,7 +50,7 @@
 
     ![基础配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/jwt09.png)
 
-3. 参考下方说明填写信息，点击 `Generate` 生成 JWKS 内容。
+3. 参考下方说明填写信息，点击 __Generate__ 生成 JWKS 内容。
 
     - KeySize：生成 secret 的大小，输入 256
     - KeyUse：用途，选择签名

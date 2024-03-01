@@ -9,15 +9,15 @@
 
 ## 创建微服务命名空间
 
-1. 进入`微服务引擎` -> `传统微服务` -> `注册配置中心`模块，点击目标注册中心的名称。
+1. 进入 __微服务引擎__ -> __传统微服务__ -> __注册配置中心__ 模块，点击目标注册中心的名称。
 
     ![命名空间](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/ns-1.png)
 
-2. 在左侧导航栏点击`微服务命名空间`，然后在右上角点击`创建`。
+2. 在左侧导航栏点击 __微服务命名空间__ ，然后在右上角点击 __创建__ 。
   
     ![创建命名空间](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/create-ns-1.png)
 
-3. 填写命名空间的 ID，名称，在页面右下角点击`确定`。
+3. 填写命名空间的 ID，名称，在页面右下角点击 __确定__ 。
 
     如果不填写 ID, 系统会自动生成一个 ID。**命名空间 ID 在创建之后不可更改**。
 
@@ -25,17 +25,17 @@
 
 ## 更新微服务命名空间
 
-1. 在对应命名空间的右侧操作栏下点击`编辑`，进入更新页面。
+1. 在对应命名空间的右侧操作栏下点击 __编辑__ ，进入更新页面。
 
     ![更新命名空间](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/update-ns-1.png)
 
-2. 修改命名空间的名称，点击`确定`。
+2. 修改命名空间的名称，点击 __确定__ 。
   
     ![更新命名空间](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/update-ns-2.png)
 
 ## 删除微服务命名空间
 
-在对应命名空间的右侧操作栏下点击`删除`，然后在弹框中点击`立即删除`。
+在对应命名空间的右侧操作栏下点击 __删除__ ，然后在弹框中点击 __立即删除__ 。
 
 !!! note
   

@@ -13,7 +13,7 @@
 
     ![点击名称](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/monitor01.png)
 
-2. 在左侧导航栏点击`监控`->`微服务监控`。
+2. 在左侧导航栏点击 __监控__ -> __微服务监控__ 。
 
     ![导航栏](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/monitor05.png)
 

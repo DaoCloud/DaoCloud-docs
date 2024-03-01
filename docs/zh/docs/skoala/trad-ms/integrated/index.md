@@ -11,11 +11,11 @@
 
 接入注册中心的步骤如下：
 
-1. 在左侧导航栏点击`传统微服务`-->`接入注册中心`，然后在页面右上角点击`接入注册中心`。
+1. 在左侧导航栏点击 __传统微服务__ --> __接入注册中心__ ，然后在页面右上角点击 __接入注册中心__ 。
 
     ![进入接入注册中心页面](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/integrate01.png)
 
-2. 填写配置信息，然后在页面底部点击`确定`。
+2. 填写配置信息，然后在页面底部点击 __确定__ 。
 
     接入不同类型的注册中心需要填写不同的配置信息。
 
@@ -27,7 +27,7 @@
 
             ![接入 Mesh/Kubernetes](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/integrate02.png)
 
-    - Nacos/Zookeeper/Eureka/Consul 注册中心：填写注册中心的名称和地址，点击`确认`。
+    - Nacos/Zookeeper/Eureka/Consul 注册中心：填写注册中心的名称和地址，点击 __确认__ 。
 
         ![接入 Nacos/Zookeeper/Eureka](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/integrate03.png)
 
@@ -35,11 +35,11 @@
 
 微服务引擎目前仅支持更新 Nacos/Zookeeper/Eureka 注册中心的配置。
 
-1. 在`接入注册中心列表`页选择需要更新的注册中心，在右侧点击 `⋯` 并选择`编辑`。
+1. 在 __接入注册中心列表__ 页选择需要更新的注册中心，在右侧点击 __⋯__ 并选择 __编辑__ 。
 
     ![进入更新页面](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/update-1.png)
 
-2. 修改、增加或删除注册中心的地址，然后在页面底部点击`确定`。
+2. 修改、增加或删除注册中心的地址，然后在页面底部点击 __确定__ 。
 
     ![进入更新页面](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/update-2.png)
 
@@ -52,11 +52,11 @@
 
 ## 移除注册中心
 
-1. 在`接入注册中心列表`页选择需要移除的注册中心，在右侧点击 `⋯` 并选择`移除`。
+1. 在 __接入注册中心列表__ 页选择需要移除的注册中心，在右侧点击 __⋯__ 并选择 __移除__ 。
 
     ![进入移除页面](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/delete-1.png)
 
-2. 输入注册中心的名称，点击`移除`。
+2. 输入注册中心的名称，点击 __移除__ 。
 
     ![进入移除页面](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/delete-2.png)
 

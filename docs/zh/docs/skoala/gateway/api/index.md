@@ -9,7 +9,7 @@
 
 创建 API 的步骤如下：
 
-1. 点击网关名称进入网关概览页面，然后在左侧导航栏点击 `API 管理`，在页面右上角点击 `添加 API`。
+1. 点击网关名称进入网关概览页面，然后在左侧导航栏点击 __API 管理__ ，在页面右上角点击 __添加 API__ 。
 
     ![进入添加页面](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/api/images/add-api-01.png)
 
@@ -40,21 +40,21 @@
 
     ![安全配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/api/images/policy02.png)
 
-5. 在页面右下角点击`保存`（不上线）。如果点击`保存并上线`则可以直接上线 API。
+5. 在页面右下角点击 __保存__ （不上线）。如果点击 __保存并上线__ 则可以直接上线 API。
 
-    点击`确定`后，如果所有配置都正常，右上角会弹出`创建网关 API 成功`的提示信息。可以在 `API 管理`页面查看新建的 API。
+    点击 __确定__ 后，如果所有配置都正常，右上角会弹出 __创建网关 API 成功__ 的提示信息。可以在 __API 管理__ 页面查看新建的 API。
 
     ![创建成功](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/api/images/result.png)
 
 6. API 上线
 
-    API 创建成功后，**默认处于下线状态，此时无法访问**。需要将 API 调整为`上线`，才能正常访问。API 上线有两种方式。
+    API 创建成功后，**默认处于下线状态，此时无法访问**。需要将 API 调整为 __上线__ ，才能正常访问。API 上线有两种方式。
 
-    - 在 API在 `API 管理`页面找到需要更新的 API，在该 API 的右侧点击 `ⵗ` 选择 `API 上线`。
+    - 在 API在 __API 管理__ 页面找到需要更新的 API，在该 API 的右侧点击 __ⵗ__ 选择 __API 上线__ 。
 
         ![API 上线](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/api/images/online.png)
 
-    - 点击 API 名称进入 API 详情页，在页面右上角点击 `ⵗ` 并选择 `API 上线`。
+    - 点击 API 名称进入 API 详情页，在页面右上角点击 __ⵗ__ 并选择 __API 上线__ 。
 
         ![API 上线](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/api/images/online1.png)
 
