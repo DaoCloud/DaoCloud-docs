@@ -29,14 +29,20 @@
     - __MigManager Config__ ：MIG 的切分策略配置，默认为 __default-mig-parted-config__ 。
 
 2. 安装完成后需要给对应节点(已插入对应 GPU 卡节点)打上切分规格的label，如不执行此操作，将按照默认不切分。
-> Tips: Single 模式只能按照单一模式进行切分。建议使用默认策略，也可以[自定义切分策略](#自定义切分策略)。
-    **界面配置** ：
-    1、在 ConfigMap 中搜索 default-mig-parted-config ，进入详情找到 GPU 卡型号对应的切分规格。
-      ![configdetail](../../images/operator-mig.png)
-  
-    2、找到对应节点，选择 __修改标签__ 添加 __nvidia.com/mig.config="all-1g.10gb"__ 。若选择其他规格，则按照其他规格进行切分。
 
-    ![single02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/single02.jpg)
+    !!! tip
+
+        Single 模式只能按照单一模式进行切分。建议使用默认策略，也可以[自定义切分策略](#自定义切分策略)。
+
+    **界面配置** ：
+   
+    1. 在 ConfigMap 中搜索 default-mig-parted-config ，进入详情找到 GPU 卡型号对应的切分规格。
+   
+        ![configdetail](../../images/operator-mig.png)
+  
+    2. 找到对应节点，选择 __修改标签__ 添加 __nvidia.com/mig.config="all-1g.10gb"__ 。若选择其他规格，则按照其他规格进行切分。
+
+        ![single02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/single02.jpg)
 
     **命令配置**：
 
@@ -44,12 +50,13 @@
     kubectl label nodes {node} nvidia.com/mig.config="all-1g.10gb" --overwrite
     ```
 
-3. 查看配置结果
+4. 查看配置结果
 
     ```sh
     kubectl get node 10.206.0.17 -o yaml|grep nvidia.com/mig.config
     ```
-​设置完成后，在确认部署应用时即可[使用 GPU MIG 资源](mig_usage.md)。
+​
+设置完成后，在确认部署应用时即可[使用 GPU MIG 资源](mig_usage.md)。
 
 ## 开启 GPU MIG Mixed 模式
 
@@ -62,28 +69,34 @@
     - __Mig Manager__ 下的 __enabled__ 参数开启
     - __MigManager Config__ ：MIG 的切分策略配置，默认为 __default-mig-parted-config__ .
 
-2. 安装完成后需要给对应节点(已插入对应 GPU 卡节点)打上切分规格的label，如不执行此操作，将按照默认不切分。
-> Tips: 建议使用默认策略,也可以[自定义切分策略](#自定义切分策略)。
+2. 安装完成后需要给对应节点(已插入对应 GPU 卡节点)打上切分规格的 label，如不执行此操作，将按照默认不切分。
+
+    !!! tip
+
+        建议使用默认策略,也可以[自定义切分策略](#_2)。
 
     **界面配置** ：
-    1、在 ConfigMap 中搜索 default-mig-parted-config ，进入详情找到 GPU 卡型号对应的切分规格。
-      ![configdetail](../../images/operator-mig.png)
+   
+    1. 在 ConfigMap 中搜索 default-mig-parted-config ，进入详情找到 GPU 卡型号对应的切分规格。
+   
+        ![configdetail](../../images/operator-mig.png)
   
-    2、找到对应节点，选择 __修改标签__ 添加 __nvidia.com/mig.config="all-1g.10gb"__ 。若选择其他规格，则按照其他规格进行切分。
+    2. 找到对应节点，选择 __修改标签__ 添加 __nvidia.com/mig.config="all-1g.10gb"__ 。若选择其他规格，则按照其他规格进行切分。
 
-    ![single02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/single02.jpg)
+        ![single02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/single02.jpg)
 
-    **命令配置**：
+    **命令配置** ：
 
     ```sh
     kubectl label nodes {node} nvidia.com/mig.config="all-1g.10gb" --overwrite
     ```
 
-3. 查看配置结果
+4. 查看配置结果
 
     ```sh
     kubectl get node 10.206.0.17 -o yaml|grep nvidia.com/mig.config
     ```
+
 ​设置完成后，在确认部署应用时即可[使用 GPU MIG 资源](mig_usage.md)。
 
 ## 自定义切分策略 
