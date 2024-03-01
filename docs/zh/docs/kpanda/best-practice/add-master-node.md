@@ -158,6 +158,10 @@ spec:
       action: ping.yml
     - actionType: playbook
       action: disable-firewalld.yml
+    - actionType: playbook
+      action: enable-repo.yml  # 离线环境下需要添加此 yaml，并且设置正确的 repo-list(安装操作系统软件包)，以下参数值仅供参考
+      extraArgs: |
+        -e "{repo_list: ['http://172.30.41.0:9000/kubean/centos/\$releasever/os/\$basearch','http://172.30.41.0:9000/kubean/centos-iso/\$releasever/os/\$basearch']}"
   postHook:
     - actionType: playbook
       action: upgrade-cluster.yml
@@ -171,10 +175,10 @@ spec:
 !!! note
 
     - spec.image 镜像地址要与之前执行部署时的 job 其内镜像保持一致
-    - spec.action 设置为 cluster.yml
+    - spec.action 设置为 cluster.yml，如果一次性添加 Master（etcd）节点超过（包含）三个，需在 cluster.yaml 追加额外参数 -e etcd_retries=10 以增大 etcd node join 重试次数
     - spec.extraArgs 设置为 --limit=etcd,kube_control_plane -e ignore_assert_errors=yes
-    - pec.preHook 中的 enable-repo.yml 剧本参数，要填写相关OS的正确的 repo_list 
-    - 如果一次性添加 Master（etcd）节点超过（包含）三个，需追加额外参数 -e etcd_retries=10 以增大 etcd node join重试次数。
+    - 如果是离线环境，spec.preHook 需要添加 enable-repo.yml，并且 extraArgs 参数填写相关 OS 的正确 repo_list 
+    - spec.postHook.action 需要包含 upgrade-cluster.yml，其中 extraArgs 设置为 --limit=etcd,kube_control_plane -e ignore_assert_errors=yes
 
 按照上述的配置，创建并部署 scale-master-node-ops.yaml。
 
