@@ -75,7 +75,7 @@ This section lists some conventions about a file or folder name for your referen
 | No                                 | Yes              | Why                                      |
 | ---------------------------------- | ---------------- | ---------------------------------------- |
 | ConfigName                         | config-name      | Use small letters and hyphens            |
-| 创建 秘钥                          | create-secret    | No Chinese words and other macro symbols |
+| create secret                      | create-secret    | No spaces in name |
 | quick-start-install-online-install | online-install   | Keep short                               |
 | c-ws                               | create-workspace | Be descriptive                           |
 | update_image                       | update-image     | Connect words with hyphens               |
