@@ -2,13 +2,14 @@
 
 Jenkins supports **Declarative Pipeline** and **Scripted Pipeline**, with the workspace mainly using **Declarative Pipeline syntax**. Therefore, this article will focus on introducing Jenkins Declarative syntax.
 
-## **Overview of Declarative Pipeline Syntax**
+## Overview
 
 Pipeline scripts are based on the Groovy language, but even if you are not familiar with Groovy, you can write basic Pipeline scripts through simple learning. Below is a simplified example of Declarative Pipeline:
 
 ```groovy
 pipeline {
-    agent any // Defines where the Pipeline runs, `any` means it can run on any available agent
+    agent any // Defines where the Pipeline runs,
+              // `any` means it can run on any available agent
 
     parameters {
         // Set build parameters
@@ -39,7 +40,7 @@ pipeline {
 }
 ```
 
-## Introduction to Some Modules
+## Modules
 
 ### Agent
 
@@ -57,7 +58,8 @@ Currently, the workspace interface already supports:
 
 - **node**
 
-    `agent { node { label 'labelName' } }`
+    `agent { node { label 'labelName' } }`, for information about the built-in node in Workbench,
+    refer to the document [Using Built-in Labels](../pipeline/config/agent.md)
 
 - **kubernetes**
 
@@ -112,13 +114,16 @@ pipeline {
     agent any
     environment { 
         CC = 'clang'
-        // The `environment` directive used in the top-level pipeline block will apply to all steps in the pipeline.
+        // The `environment` directive used in the top-level pipeline block will apply
+        // to all steps in the pipeline.
     }
     stages {
         stage('Example') {
-            environment {  // The `environment` directive defined in a stage will only apply the given environment variables to the steps in that stage.
+            environment {  // The `environment` directive defined in a stage will only apply
+                          // the given environment variables to the steps in that stage.
                 AN_ACCESS_KEY = credentials('my-prefined-secret-text') 
-                // The `environment` block has a helper method `credentials()` defined, which can be used in the Jenkins environment to access pre-defined credentials by identifier.
+                // The `environment` block has a helper method `credentials()` defined, which can
+                // be used in the Jenkins environment to access pre-defined credentials by identifier.
             }
             steps {
                 sh 'printenv'
@@ -127,6 +132,18 @@ pipeline {
     }
 }
 ```
+
+#### Using Credentials in the `environment` Section
+
+For credentials of types secret text, username and password, and secret file, you can directly
+use them in the pipeline by utilizing the `environment` section. For other types of credentials,
+refer to [Handling Credentials](https://www.jenkins.io/doc/book/pipeline/jenkinsfile/#handling-credentials).
+
+Usage examples:
+
+- [Using Secret text credentials via `environment`](https://www.jenkins.io/doc/book/pipeline/jenkinsfile/#secret-text)
+- [Using Usernames and passwords credentials via `environment`](https://www.jenkins.io/doc/book/pipeline/jenkinsfile/#usernames-and-passwords)
+- [Using Secret files credentials via `environment`](https://www.jenkins.io/doc/book/pipeline/jenkinsfile/#secret-files)
 
 ### `parameters`
 

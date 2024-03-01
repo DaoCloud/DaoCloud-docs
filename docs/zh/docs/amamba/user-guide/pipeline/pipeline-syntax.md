@@ -2,7 +2,7 @@
 
 Jenkins 支持**声明式 Pipeline** 、**脚本式 Pipeline**，工作台主要采用**声明式 Pipeline 语法**，所以本文将重点介绍 Jenkins 声明式语法。
 
-## **声明式 Pipeline 语法概述**
+## 声明式 Pipeline 语法概述
 
 Pipeline 脚本基于 Groovy 语言，但即便你不熟悉 Groovy，也可以通过简单的学习来编写基础的 Pipeline 脚本，以下是一个精简的声明式 Pipeline 示例：
 
