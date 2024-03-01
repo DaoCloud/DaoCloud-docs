@@ -1,57 +1,94 @@
-# Cluster deployment mode  use cases
+---
+MTPE: windsonsea
+date: 2024-03-01
+---
 
-DCE 5.0 provides [four cluster roles](../../kpanda/user-guide/clusters/cluster-role.md) to meet different cases. Users can freely combine different cluster deployment combinations based on their own business characteristics and infrastructure use cases.
+# Cluster Deployment Mode Usage Scenarios
 
-This page will describe several common use cases.
+DCE 5.0 provides [four cluster roles](../../kpanda/user-guide/clusters/cluster-role.md) to meet
+different usage scenarios. You can freely combine different cluster deployment combinations based
+on your business characteristics and infrastructure scenarios.
 
-## Single data center scenario
+This article will explain several common usage scenarios.
 
-When most of the user's business is concentrated in a single data center in a certain area, there is no need for cross-network, and the requirements for data disaster recovery are low. Simple mode is recommended. That is, only one cluster is needed to run platform-related components (global service cluster + management cluster combined), and multiple clusters are deployed to run business loads (working clusters). The number of nodes in a single cluster depends on specific business cases. It is recommended to use 3 master nodes for each cluster to achieve high availability.
+## Single Data Center Scenario
 
-The specific deployment plan is based on business needs, refer to the following deployment process:
+When most of the business is concentrated in a single data center region, there is no need for cross-networking,
+and the data disaster recovery requirements are low. It is recommended to use the simple mode. That is, only one
+cluster is needed to run platform-related components (global service cluster + management cluster combined),
+and multiple clusters are deployed to run business workloads (worker clusters). The number of nodes in a single
+cluster is determined by the specific business scenario. It is recommended to use 3 master nodes for each cluster
+to achieve high availability.
 
-## Single data center single management cluster
+Specific deployment schemes depend on your business needs, refer to the following deployment process:
 
-Premise: Prepare a node. The operating system and architecture of the node must be consistent with the node to be created in the cluster.
+## Single Data Center Single Management Cluster
 
-1. Deploy the installer on the bootstrapping node, and use the installer to install a cluster that includes the two cluster roles of the global service cluster and the management cluster.
+![Mode Diagram](../images/scenario01.svg)
 
-1. Create one or more working clusters based on the management cluster on the container management module under the platform as needed.
+Prerequisite: Prepare a node, the operating system and architecture of the node should be consistent
+with the nodes to be created in the cluster.
 
-## Single data center multi-management cluster
+1. Deploy the installer on a seed node and use the installer to install a cluster with
+   two cluster roles:, global service cluster, and management cluster.
 
-When the user needs to add a management cluster in the current single data center to manage the lifecycle of the new business cluster, there is no need to use the bootstrapping node to install it again, and only need to install the kubean operator on a working cluster that has already been created The component can endow the cluster with the ability and role to manage the cluster. As shown below:
+1. Based on the management cluster in the platform, create one or more worker clusters as needed.
 
-Prerequisite: The previous step of deploying a single-data center single-management cluster has been completed.
+## Single Data Center Multiple Management Clusters
 
-1. Use the [Helm chart](../../kpanda/user-guide/helm/README.md) to install kubean on a working cluster details interface, and wait for the kubean status to change to running.
+When you need to add a management cluster within the current single data center to manage the lifecycle
+of new business clusters, there is no need to install the seed node again. Just install the kubean Operator
+component on an already created work cluster to give this cluster the ability and role of a management cluster.
+As shown in the figure below:
 
-1. After the kubean is installed in the current working cluster, the cluster role will automatically become the management cluster, and one or more working clusters can be created based on the management cluster on the container management module under the platform as needed.
+![Mode Diagram](../images/scenario02.svg)
 
-## Multi-data center scenario
+Prerequisite: The deployment of a single data center single management cluster has been completed in the previous step.
 
-When a user has multiple data centers, or the networks of different data centers are isolated, such as in disaster recovery Cases such as two locations and three centers, the user has cluster lifecycle management requirements in different regions and different data centers. Classic mode is recommended. At this time, a management cluster can be deployed in different data centers or regions, and all management clusters can be connected to the global service cluster for management, so as to achieve unified management of the lifecycle of clusters in different regions.
+1. Use [helm templates](../../kpanda/user-guide/helm/README.md) to install kubean on a work cluster details page,
+   wait for the kubean status to change to running.
 
-### Multi-data center multi-management cluster
+1. After kubean is installed on the current work cluster, the cluster role will automatically change
+   to a management cluster. Based on the management cluster in the platform, create one or more worker clusters as needed.
 
-Premise: Prepare a node. The operating system and architecture of the node must be consistent with the node to be created in the cluster.
+## Multi Data Center Scenario
+
+When you have multiple data centers, or different data center networks are isolated,
+such as in a disaster recovery scenario with two sites and three centers, you have
+lifecycle management requirements for clusters in different regions and data centers.
+It is recommended to use the classic mode. At this time, a management cluster can be
+deployed in different data centers or regions, and all management clusters can be
+connected to the global service cluster for unified management of the lifecycle of
+clusters within different regions.
+
+### Multi Data Center Multiple Management Clusters
+
+Prerequisite: Prepare a node, the operating system and architecture of the node
+should be consistent with the nodes to be created in the cluster.
+
+![Mode Diagram](../images/scenario03.svg)
 
 #### Shanghai Data Center
 
-1. Deploy the installer on the bootstrapping node, and use the installer to install a management cluster.
+1. Deploy the installer on a seed node and use the installer to install a management cluster.
 
-1. After the management cluster is installed, a global service cluster will be automatically created based on the cluster configuration <!--link to be added-->.
+1. After the management cluster is installed, it will automatically create a global service cluster
+   based on the [clusterConfig file](./cluster-config.md).
 
-1. Create one or more working clusters based on the management cluster on the container management module under the platform as needed.
+1. Based on the management cluster in the platform, create one or more worker clusters as needed.
 
-In cross-region and network isolation use cases, the cluster lifecycle of other data centers needs to be managed in a unified manner. Please refer to the following configuration process.
+In cross-regional and network isolation scenarios, to unify the lifecycle management of
+clusters in other data centers, please refer to the following configuration process.
 
 #### Beijing Data Center
 
-Premise: Prepare a node in the Beijing data center. The operating system and architecture of the node must be consistent with the node to be created in the cluster.
+Prerequisite: Prepare a node in the Beijing data center, the operating system and architecture
+of the node should be consistent with the nodes to be created in the cluster.
 
-1. Deploy the installer on the bootstrapping node, and use the installer to install a management cluster.
+1. Deploy the installer on a seed node in the Beijing data center and use the installer to install a management cluster.
 
-1. The container management module under the platform (running in the Shanghai data center) is connected to the newly installed management cluster in the Beijing data center.
+1. Connect the container management module in the platform (running in the Shanghai data center)
+   to the newly installed management cluster in the Beijing data center.
 
-1. Create one or more working clusters based on the management cluster of the Beijing data center on the container management module of the platform (running in the Shanghai data center) as needed.
+1. Based on the platform (running in the Shanghai data center), create one or more worker clusters
+   based on the Beijing data center management cluster as needed.
