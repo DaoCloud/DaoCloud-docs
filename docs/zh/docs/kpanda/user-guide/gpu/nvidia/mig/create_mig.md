@@ -106,8 +106,10 @@
 
 可自定义切分策略配置文件，单张卡最多可切分为 7 个实例。需在安装 GPU Operator 前创建，并在安装时指定该 ConfigMap 名称。
 
-1. 在 ConfigMap 中创建自定义切分策略，部署时需要和 GPU operator 部署在同一个命名空间下。同时您创建的文件名称不能与默认 __default-mig-parted-config__ 相同。配置数据可参考如下 yaml。
-  ![mixed](../../images/migpolicy.png)
+1. 在 ConfigMap 中创建自定义切分策略，部署时需要和 GPU operator 部署在同一个命名空间下。
+   同时您创建的文件名称不能与默认 __default-mig-parted-config__ 相同。配置数据可参考如下 yaml。
+
+    ![mixed](../../images/migpolicy.png)
 
     ??? note "点击查看详细的 YAML 配置说明"
 
@@ -365,6 +367,6 @@
               1c.3g.40gb: 6
         ```
 
-2. 在安装 GPU Operator 时，指定该 ConfigMap。
+3. 在安装 GPU Operator 时，指定该 ConfigMap。
 
 ![single](../../images/operator-mig.png)
