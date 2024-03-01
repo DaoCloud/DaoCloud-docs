@@ -1,10 +1,13 @@
 # 开启 MIG 功能
 
 本章节介绍如何开启 NVIDIA MIG 功能方式，NVIDIA 当前提供两种在 Kubernetes 节点上公开 MIG 设备的策略： 
-> Tips: MIG 模式 Disable 之后需要重新启动物理节点，才能正常的使用整卡模式。
 
 - **Single 模式**，节点仅在其所有 GPU 上公开单一类型的 MIG 设备。
 - **Mixed 模式**，节点在其所有 GPU 上公开混合 MIG 设备类型。
+
+!!! tip
+
+    MIG 模式 Disable 之后需要重新启动物理节点，才能正常的使用整卡模式。
 
 详情参考：[NVIDIA GPU 卡使用模式](../index.md)
 
