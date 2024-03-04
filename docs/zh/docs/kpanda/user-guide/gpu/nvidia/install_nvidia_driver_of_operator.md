@@ -12,7 +12,7 @@ DCE 5.0 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包�
     安装后不支持从 MIG 模式切换为整卡模式或 vGPU 模式，仅支持整卡模式与 vGPU 模式的一键切换，请提前规划好您的使用模式。
 
 详情请参考：[NVIDIA GPU 卡使用模式](index.md)，本文使用的 AMD 架构的 Centos 7.9 （3.10.0-1160）进行演示。如需使用 redhat8.4 部署，
-请参考[向火种节点仓库上传 RedHat GPU Opreator 离线镜像](./push_image_to_repo.md)和[构建 RedHat 8.4 离线 yum 源](./upgrade_yum_source_redhat8_4.md)。
+请参考[向火种节点仓库上传 Red Hat GPU Opreator 离线镜像](./push_image_to_repo.md)和[构建 Red Hat 8.4 离线 yum 源](./upgrade_yum_source_redhat8_4.md)。
 
 ## 前提条件
 
@@ -67,7 +67,7 @@ __DevicePlugin.enable__ ：配置是否启用 kubernentes [DevicePlugin](https:/
 
         系统默认提供 525.147.05-centos7 的镜像，其他镜像需要参考 [向火种节点仓库上传镜像](./push_image_to_repo.md) 
 
-        - RedHat 系统 ，示例：`525.105.17-rhel8.4`
+        - Red Hat 系统 ，示例：`525.105.17-rhel8.4`
         - Ubuntu 系统，示例：`535-5.15.0-1043-nvidia-ubuntu22.04`
         - CentOS 系统，示例： `525.147.05-centos7`
 
@@ -112,7 +112,7 @@ __DevicePlugin.enable__ ：配置是否启用 kubernentes [DevicePlugin](https:/
     其它操作系统或内核可参考如下链接创建 yum 源文件：
 
     - [构建 CentOS 7.9 离线 yum 源](./upgrade_yum_source_centos7_9.md)
-    - [构建 RedHat 8.4 离线 yum 源](./upgrade_yum_source_redhat8_4.md)
+    - [构建 Red Hat 8.4 离线 yum 源](./upgrade_yum_source_redhat8_4.md)
 
 #### Toolkit 配置参数
 

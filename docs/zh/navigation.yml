@@ -265,9 +265,9 @@ nav:
                       - NVIDIA GPU 模式说明: kpanda/user-guide/gpu/nvidia/index.md
                       - GPU Operator 离线安装:
                           - GPU Operator 离线安装: kpanda/user-guide/gpu/nvidia/install_nvidia_driver_of_operator.md
-                          - 构建 CentOS 7_9 离线 yum 源: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_centos7_9.md
-                          - 向火种节点仓库上传RedHat GPU Opreator离线镜像: kpanda/user-guide/gpu/nvidia/push_image_to_repo.md
-                          - 构建 RedHat 8_4 离线 yum 源: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_redhat8_4.md
+                          - 构建 CentOS 7.9 离线 yum 源: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_centos7_9.md
+                          - 上传 Red Hat GPU Operator 离线镜像: kpanda/user-guide/gpu/nvidia/push_image_to_repo.md
+                          - 构建 Red Hat 8.4 离线 yum 源: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_redhat8_4.md
                       - NVIDIA GPU 整卡模式: kpanda/user-guide/gpu/nvidia/full_gpu_userguide.md
                       - NVIDIA vGPU 模式:
                           - 安装 vGPU Addon: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_addon.md
@@ -291,11 +291,11 @@ nav:
                   - 为工作集群添加异构节点: kpanda/best-practice/multi-arch.md
                   - 为全局服务集群的工作节点扩容: kpanda/best-practice/add-worker-node-on-global.md
                   - 在 CentOS 上创建 Ubuntu 工作集群: kpanda/best-practice/create-ubuntu-on-centos-platform.md
-                  - 在 CentOS 管理平台上创建 RedHat 9.2 工作集群: kpanda/best-practice/create-redhat9.2-on-centos-platform.md
+                  - 在 CentOS 上创建 Red Hat 9.2 工作集群: kpanda/best-practice/create-redhat9.2-on-centos-platform.md
                   - 对工作集群的控制节点扩容: kpanda/best-practice/add-master-node.md
                   - 在非主流操作系统上创建集群: kpanda/best-practice/use-otherlinux-create-custer.md
                   - DCE 4.0 -> DCE 5.0 有限场景迁移: kpanda/best-practice/dce4-5-migration.md
-                  - 离线场景 Kubean 向下兼容版本的部署与升级操作: kpanda/best-practice/kubean-low-version.md
+                  - 离线部署与升级 Kubean 向下兼容版本: kpanda/best-practice/kubean-low-version.md
           - 多云编排:
               - 介绍:
                   - 什么是多云编排: kairship/intro/index.md

@@ -258,14 +258,14 @@ nav:
                       - Install GPU Operator:
                           - Install GPU Operator Offline: kpanda/user-guide/gpu/nvidia/install_nvidia_driver_of_operator.md
                           - Build Offline yum Source for CentOS 7.9: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_centos7_9.md
-                          - Upload RedHat GPU Opreator Image to Bootstrap Registry: kpanda/user-guide/gpu/nvidia/push_image_to_repo.md
-                          - Build Offline yum Source for RedHat 8.4: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_redhat8_4.md
+                          - Upload Red Hat GPU Opreator Image: kpanda/user-guide/gpu/nvidia/push_image_to_repo.md
+                          - Build Offline yum Source for Red Hat 8.4: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_redhat8_4.md
                       - NVIDIA GPU Full Card Mode: kpanda/user-guide/gpu/nvidia/full_gpu_userguide.md
                       - NVIDIA vGPU Mode:
                           - Install vGPU Addon: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_addon.md
                           - Use NVIDIA vGPU: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_user.md
                       - NVIDIA MIG Mode:
-                          - NVIDIA MIG Overview: kpanda/user-guide/gpu/nvidia/mig/index.md
+                          - Overview: kpanda/user-guide/gpu/nvidia/mig/index.md
                           - Enable MIG Features: kpanda/user-guide/gpu/nvidia/mig/create_mig.md
                           - Use NVIDIA MIG: kpanda/user-guide/gpu/nvidia/mig/mig_usage.md
                           - MIG Commands: kpanda/user-guide/gpu/nvidia/mig/mig_command.md
@@ -277,13 +277,13 @@ nav:
                   - GPU Metrics: kpanda/user-guide/gpu/gpu-metrics.md
               - Best Practices:
                   - Backup and Restore ETCD: kpanda/best-practice/etcd-backup.md
-                  - Cross-cluster Backup and Restore of MySQL Apps and Data: kpanda/best-practice/backup-mysql-on-nfs.md
+                  - Cross-cluster Backup and Restore of MySQL Apps: kpanda/best-practice/backup-mysql-on-nfs.md
                   - Strengthen a Self-built Worker Cluster: kpanda/best-practice/hardening-cluster.md
                   - Offline Upgrade Worker Clusters: kpanda/best-practice/update-offline-cluster.md
                   - Add Heterogeneous Nodes to Worker Cluster: kpanda/best-practice/multi-arch.md
-                  - Scale the Worker Nodes of Global Service Cluster: kpanda/best-practice/add-worker-node-on-global.md
+                  - Scale Worker Nodes of Global Service Cluster: kpanda/best-practice/add-worker-node-on-global.md
                   - Create Ubuntu Worker Cluster with CentOS: kpanda/best-practice/create-ubuntu-on-centos-platform.md
-                  - Create RedHat 9.2 Worker Cluster on CentOS: kpanda/best-practice/create-redhat9.2-on-centos-platform.md
+                  - Create Red Hat 9.2 Worker Cluster on CentOS: kpanda/best-practice/create-redhat9.2-on-centos-platform.md
                   - Scale Controller Nodes of Worker Cluster: kpanda/best-practice/add-master-node.md
                   - Create Cluster with Non-supported OS: kpanda/best-practice/use-otherlinux-create-custer.md
                   - Migrate DCE 4.0 to DCE 5.0: kpanda/best-practice/dce4-5-migration.md

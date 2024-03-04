@@ -1,6 +1,6 @@
-# 向火种节点仓库上传 RedHat GPU Opreator 离线镜像
+# 向火种节点仓库上传 Red Hat GPU Opreator 离线镜像
 
-本文以 RedHat 8.4 的 `nvcr.io/nvidia/driver:525.105.17-rhel8.4` 离线驱动镜像为例，介绍如何向火种节点仓库上传离线镜像。
+本文以 Red Hat 8.4 的 `nvcr.io/nvidia/driver:525.105.17-rhel8.4` 离线驱动镜像为例，介绍如何向火种节点仓库上传离线镜像。
 
 ## 前提条件
 
@@ -84,5 +84,5 @@
 
 ## 接下来
 
-参考[构建 RedHat 8.4 离线 yum 源](./upgrade_yum_source_redhat8_4.md)和
+参考[构建 Red Hat 8.4 离线 yum 源](./upgrade_yum_source_redhat8_4.md)和
 [GPU Operator 离线安装](./install_nvidia_driver_of_operator.md)来为集群部署 GPU Operator。

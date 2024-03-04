@@ -1,6 +1,6 @@
-# Uploading RedHat GPU Operator Offline Image to Bootstrap Repository
+# Uploading Red Hat GPU Operator Offline Image to Bootstrap Repository
 
-This guide explains how to upload an offline image to the bootstrap repository using the __nvcr.io/nvidia/driver:525.105.17-rhel8.4__ offline driver image for RedHat 8.4 as an example.
+This guide explains how to upload an offline image to the bootstrap repository using the __nvcr.io/nvidia/driver:525.105.17-rhel8.4__ offline driver image for Red Hat 8.4 as an example.
 
 ## Prerequisites
 
@@ -81,4 +81,4 @@ Perform the following steps on the bootstrap node:
 
 ## What's Next
 
-Refer to [Building RedHat 8.4 Offline Yum Source](./upgrade_yum_source_redhat8_4.md) and [Offline Installation of GPU Operator](./install_nvidia_driver_of_operator.md) to deploy the GPU Operator to your cluster.
+Refer to [Building Red Hat 8.4 Offline Yum Source](./upgrade_yum_source_redhat8_4.md) and [Offline Installation of GPU Operator](./install_nvidia_driver_of_operator.md) to deploy the GPU Operator to your cluster.
