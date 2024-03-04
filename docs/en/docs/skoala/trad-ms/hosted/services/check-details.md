@@ -4,7 +4,7 @@ Click the micro-service name on the service list page to view the service detail
 
 ## Instance list
 
-Log in to the target registry, click `Microservice List` in the left navigation bar, click the name of the target micro-service, and perform subsequent operations before going to the page for details of the micro-service.
+Log in to the target registry, click __Microservice List__ in the left navigation bar, click the name of the target micro-service, and perform subsequent operations before going to the page for details of the micro-service.
 
 ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/detail01.png)
 
@@ -16,7 +16,7 @@ Log in to the target registry, click `Microservice List` in the left navigation 
 
 - Instance up and down
 
-    Provides online and offline operations for service instances. In the operation column of the instance list, click `Online` or `Offline` of the instance. Offline instances are not included in the healthy instances list.
+    Provides online and offline operations for service instances. In the operation column of the instance list, click __Online__ or __Offline__ of the instance. Offline instances are not included in the healthy instances list.
 
     ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/detail03.png)
 
@@ -56,7 +56,7 @@ Service monitoring Displays the running status of a micro-service in a namespace
 
 Provides multiple dimensions of service metadata to help users store customized information. This information is stored as a Key-Value data structure and displayed on the console in the format k1=v1,k2=v2.
 
-Click `Edit` on the right to modify the metadata.
+Click __Edit__ on the right to modify the metadata.
 
 ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/detail09.png)
 

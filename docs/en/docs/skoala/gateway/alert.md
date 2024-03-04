@@ -8,7 +8,7 @@ To view monitoring alert information, perform the following steps:
 
     ![click name](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/alert01.png)
 
-1. On the left navigation bar, click `Monitoring & Alert`, and click the `Data Planel` TAB to view service monitoring information.
+1. On the left navigation bar, click __Monitoring & Alert__ , and click the __Data Planel__ tab to view service monitoring information.
 
     > You can select the monitoring time window and refresh period in the upper right corner of the page.
 
@@ -42,7 +42,7 @@ To view monitoring alert information, perform the following steps:
     | CPS(upstream)       | Used to record the total number of connections made to the upstream cluster, it counts all connections made to the upstream cluster, whether they are active or closed.                                       |
     | RPS(Uplink)      | The number of all requests sent by the agent to the upstream cluster is recorded, which helps to monitor and measure the request traffic to and from the upstream cluster.                                                    |
 
-1. Click the `Resource Planel` TAB to view the resource monitoring information.
+1. Click the __Resource Planel__ tab to view the resource monitoring information.
 
     ![click name](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/alert03.png)
 

@@ -13,11 +13,11 @@ Sentinel is a traffic governance component oriented to distributed and multi-lan
 
    ![](../../../images/ns-1.png)
 
-2. In the left navigation bar, click `Plugins`, and on the `Sentinel` card, click `Enable`.
+2. In the left navigation bar, click __Plugins__ , and on the `Sentinel` card, click __Enable__ .
 
    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/sentinel01.png)
 
-3. Fill in the configuration information and click `OK` at the bottom of the box.
+3. Fill in the configuration information and click __OK__ at the bottom of the box.
 
    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/sentinel02.png)
 

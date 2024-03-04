@@ -50,7 +50,7 @@ If no JWKS application exists in the current environment, follow the following s
 
     <!--![]()screenshots-->
 
-3. Refer to the instructions below to fill in the information, click `Generate` to generate the JWKS content.
+3. Refer to the instructions below to fill in the information, click __Generate__ to generate the JWKS content.
 
     - KeySize: Generates the size of secret. Enter 256
     - KeyUse: Use, select a signature

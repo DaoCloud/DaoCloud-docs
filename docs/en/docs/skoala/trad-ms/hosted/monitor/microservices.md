@@ -12,7 +12,7 @@ To view microservice monitoring, perform the following steps:
 
     ![](../../../images/monitor01.png)
 
-2. In the left navigation bar, click `Monitoring` -> `Microservices`.
+2. In the left navigation bar, click __Monitoring__ -> __Microservices__ .
 
     ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/monitor05.png)
 

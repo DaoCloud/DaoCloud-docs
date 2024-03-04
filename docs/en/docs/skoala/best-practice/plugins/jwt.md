@@ -42,19 +42,19 @@ Go to the Microservice Engine module and import the demo application into the cl
 
 After meeting the above prerequisites, connect the JWT plugin and bind it to the microservice port to use the plugin in the microservice.
 
-1. Go to the Microservice Engine, click `Plugin Center` in the left navigation bar, and then click `Connect Plugin` in the upper right corner of the page.
+1. Go to the Microservice Engine, click __Plugin Center__ in the left navigation bar, and then click __Connect Plugin__ in the upper right corner of the page.
 
 
 
-2. Fill in the plugin configuration and click `Confirm` in the lower right corner of the page.
+2. Fill in the plugin configuration and click __Confirm__ in the lower right corner of the page.
 
 
 
-3. In the left navigation bar of the Microservice Engine, click `Cloud-Native Microservices`, and then click the name of the target service.
+3. In the left navigation bar of the Microservice Engine, click __Cloud-Native Microservices__ , and then click the name of the target service.
 
 
 
-4. In the service details, click the `Plugin Capability` tab, and then click `Plugin Capability` on the right.
+4. In the service details, click the __Plugin Capability__ tab, and then click __Plugin Capability__ on the right.
 
 
 

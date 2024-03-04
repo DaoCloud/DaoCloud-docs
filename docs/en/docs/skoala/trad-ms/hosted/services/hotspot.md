@@ -14,17 +14,17 @@ Hotspot refers to frequently accessed data. Hotspot rules are used to control th
 
 Follow the steps below to create a hotspot rule:
 
-1. Click the name of the target managed registry, then click `Microservices` in the left sidebar and click the `Governance` option on the right side.
+1. Click the name of the target managed registry, then click __Microservices__ in the left sidebar and click the  __Governance__ option on the right side.
 
     > Note that the microservice you want to govern should have the "Can be governed" status set to "Yes" in order to proceed with the following steps.
 
     ![](../../../images/gov00.png)
 
-2. Select `Hotspot Rules`, then click `Create Hotspot Rule` on the right side.
+2. Select `Hotspot Rules`, then click __Create Hotspot Rule__ on the right side.
 
     ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/gov11.png)
 
-3. Fill in the rule configuration based on the instructions below and click `OK` in the bottom right corner.
+3. Fill in the rule configuration based on the instructions below and click __OK__ in the bottom right corner.
 
     - Name: Specify the name of the resource that needs traffic control, such as an API interface, function, variable, etc., within the current service.
     - Parameter Index: The index position of the hotspot parameter, corresponding to the parameter index position in `WithArgs(args ...interface{})`, starting from 0.

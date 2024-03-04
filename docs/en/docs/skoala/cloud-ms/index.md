@@ -4,11 +4,11 @@ Before managing cloud native microservices, you need to import these microservic
 
 ## Import Service
 
-1. Go to the `Microservices` module, click `Cloud Native Microservices`→`Service Governance` on the left, and then click `Manual import` in the upper right corner.
+1. Go to the `Microservices` module, click __Cloud Native Microservices__ -> __Service Governance__ on the left, and then click __Manual import__ in the upper right corner.
 
     ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/cloudms-import01.png)
 
-2. Select the service mesh and namespace where the target microservice is deployed, select it, and then click `OK`.
+2. Select the service mesh and namespace where the target microservice is deployed, select it, and then click __OK__ .
 
     ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/cloudms-import02.png)
 

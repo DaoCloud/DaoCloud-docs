@@ -4,11 +4,11 @@ The micro-service engine supports group management of micro-services based on th
 
 ## New configuration
 
-1. Enter `Microservices` -> `Traditional Microservices` -> `Hosted Registry` module, click the name of the target registry.
+1. Enter `Microservices` -> __Traditional Microservices__ -> __Hosted Registry__ module, click the name of the target registry.
 
     ![Choose hosted registry](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/config01.png)
 
-2. Click `Configuration List` in the left navigation bar, then click `Create` in the upper right corner.
+2. Click __Configuration List__ in the left navigation bar, then click __Create__ in the upper right corner.
 
     ![Choose configuration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/config02.png)
 
@@ -47,15 +47,15 @@ The micro-service engine supports group management of micro-services based on th
 
        ![More configurations](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/config04.png)
 
-4. Click `OK` in the bottom right corner of the page.
+4. Click __OK__ in the bottom right corner of the page.
 
 ## Viewing configuration
 
-1. Enter `Microservices` -> `Traditional Microservices` -> `Hosted Registry` module, click the name of the target registry.
+1. Enter `Microservices` -> __Traditional Microservices__ -> __Hosted Registry__ module, click the name of the target registry.
 
     ![Choose hosted registry](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/config01.png)
 
-2. In the left navigation bar, click `Configuration Management` and click the Data ID of the target configuration.
+2. In the left navigation bar, click __Configuration Management__ and click the Data ID of the target configuration.
 
     ![Choose configuration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/config05.png)
 
@@ -70,47 +70,47 @@ The micro-service engine supports group management of micro-services based on th
 
 The micro-service configuration list records the historical version of the configuration file and supports one-click rollback to a specific historical version. This helps users quickly recover incorrect configurations and reduces configuration availability risks in the micro-service system. Comparison between the current version and the target rollback version is supported during the rollback. This helps you verify the changes and reduce risks caused by error correction.
 
-1. Enter `Microservices` -> `Traditional Microservices` -> `Hosted Registry` module, click the name of the target registry.
+1. Enter `Microservices` -> __Traditional Microservices__ -> __Hosted Registry__ module, click the name of the target registry.
 
     ![Choose hosted registry](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/config01.png)
 
-2. In the left navigation bar, click `Configuration Management` and click the Data ID of the target configuration.
+2. In the left navigation bar, click __Configuration Management__ and click the Data ID of the target configuration.
 
     ![Choose configuration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/config05.png)
 
-3. Click the `History Version` TAB to find the corresponding record. Click `ⵗ` on the right of the record and select `Rollback`.
+3. Click the __History Version__ tab to find the corresponding record. Click __ⵗ__ on the right of the record and select __Rollback__ .
 
     ![View history version](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/config07.png)
 
-4. Compare the version differences and confirm, then click `Rollback` in the lower right corner.
+4. Compare the version differences and confirm, then click __Rollback__ in the lower right corner.
 
     ![Rollback](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/config08.png)
 
 ## The GA configuration was updated
 
-1. Enter `Microservices` -> `Traditional Microservices` -> `Hosted Registry` module, click the name of the target registry.
+1. Enter `Microservices` -> __Traditional Microservices__ -> __Hosted Registry__ module, click the name of the target registry.
 
     ![Choose hosted registry](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/config01.png)
 
-2. Click `Configuration Management` in the left navigation bar, and click `ⵗ` on the right of the target configuration and select `Edit GA Release`.
+2. Click __Configuration Management__ in the left navigation bar, and click __ⵗ__ on the right of the target configuration and select __Edit GA Release__ .
 
     ![Edit GA release](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/config09.png)
 
-3. Modify configuration content，and click `GA Release`。
+3. Modify configuration content，and click __GA Release__ 。
 
     ![Update GA release](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/config10.png)
 
 ## New Beta configuration
 
-1. Enter `Microservices` -> `Traditional Microservices` -> `Hosted Registry` module, click the name of the target registry.
+1. Enter `Microservices` -> __Traditional Microservices__ -> __Hosted Registry__ module, click the name of the target registry.
 
     ![Choose hosted registry](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/config01.png)
 
-2. Click `Configuration Management` in the left navigation bar, and click `ⵗ` on the right of the target configuration and select `Edit GA Release`.
+2. Click __Configuration Management__ in the left navigation bar, and click __ⵗ__ on the right of the target configuration and select __Edit GA Release__ .
 
     ![Edit GA release](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/config09.png)
 
-3. Enable `Beta Release`, select service instance from the `Beta IP` dropdown menu, modify the configuration content, and click `Beta Release`.
+3. Enable  __Beta Release`, select service instance from the `Beta IP__ dropdown menu, modify the configuration content, and click __Beta Release__ .
    
     - When configuring Beta release, the Data ID of the configuration needs to match the microservice name. Otherwise, it will not be possible to select service instance.
 
@@ -118,27 +118,27 @@ The micro-service configuration list records the historical version of the confi
 
 ## The Beta configuration was updated
 
-1. Enter `Microservices` -> `Traditional Microservices` -> `Hosted Registry` module, click the name of the target registry.
+1. Enter `Microservices` -> __Traditional Microservices__ -> __Hosted Registry__ module, click the name of the target registry.
 
     ![Choose hosted registry](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/config01.png)
 
-2. Click `Configuration Management` in the left navigation bar, and click `ⵗ` on the right of the target configuration and select `Edit Beta Release`.
+2. Click __Configuration Management__ in the left navigation bar, and click __ⵗ__ on the right of the target configuration and select __Edit Beta Release__ .
 
     ![Edit beta release](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/config12.png)
 
 3. Modify configuration content，and click button in the lower right corner to delete beta release or publish GA release as required.
 
-    - Click `Delete Beta`，then the beta configuration will be deleted.
-    - Click `GA Release`,then the beta configuration will be published as GA release，and the original GA release will be deleted and is no longer effective.
+    - Click __Delete Beta__ ，then the beta configuration will be deleted.
+    - Click __GA Release__ ,then the beta configuration will be published as GA release，and the original GA release will be deleted and is no longer effective.
 
     ![Update beta release](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/config13.png)
 
 ## The configuration was deleted
 
-1. Enter `Microservices` -> `Traditional Microservices` -> `Hosted Registry` module, click the name of the target registry.
+1. Enter `Microservices` -> __Traditional Microservices__ -> __Hosted Registry__ module, click the name of the target registry.
 
     ![Choose hosted registry](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/config01.png)
 
-2. Click `Configuration Management` in the left navigation bar, and click `ⵗ` on the right of the target configuration to delete.
+2. Click __Configuration Management__ in the left navigation bar, and click __ⵗ__ on the right of the target configuration to delete.
 
     ![Delete configuration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/config09.png)

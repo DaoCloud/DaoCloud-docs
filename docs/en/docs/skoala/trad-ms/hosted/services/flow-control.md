@@ -9,17 +9,17 @@ The principle of the flow control rule is to monitor the QPS metric of applicati
 
 You can create a flow control rule as follows:
 
-1. Click the name of the target hosting registry, then click `Microservice List` in the left navigation bar, and click more buttons on the far right to select `Traffic Governance`.
+1. Click the name of the target hosting registry, then click __Microservice List__ in the left navigation bar, and click more buttons on the far right to select __Traffic Governance__ .
 
     > Notice that the incognito to be controlled should be displayed as `Yes` in the column `Traffic Governance` before you proceed to the subsequent steps.
 
     ![](../../../images/gov00.png)
 
-2. Select `Flow Control Rules` and click `Create Rules` on the right.
+2. Select `Flow Control Rules` and click __Create Rules__ on the right.
 
     ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/gov01.png)
 
-3. Follow the instructions below to fill in the rule configuration and click `OK` in the lower right corner.
+3. Follow the instructions below to fill in the rule configuration and click __OK__ in the lower right corner.
 
     - Name: Specifies the name of the resource. Resource refers to the domain of the rule. That is, the rule is created to govern the traffic of the service. Must be a resource that does exist.
 

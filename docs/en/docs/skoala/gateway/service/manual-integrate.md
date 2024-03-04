@@ -10,11 +10,11 @@ You need to add the corresponding service source in Source management so that yo
 
 ## Access service
 
-1. In the `Gateway List` page click the name of the target gateway, enter the gateway overview page, in the left navigation bar click `Add Service` -> `Service List`.
+1. In the __Gateway List__ page click the name of the target gateway, enter the gateway overview page, in the left navigation bar click __Add Service__ -> __Service List__ .
 
     ![service list](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/service/images/gw-service03.png)
 
-2. Select the service source, configure the service connection information and click `OK`.
+2. Select the service source, configure the service connection information and click __OK__ .
 
     === "Cluster"
 
@@ -22,7 +22,7 @@ You need to add the corresponding service source in Source management so that yo
 
         ![adding a cluster service](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/service/images/gw-service01.png)
 
-        For the cluster service access, in the `Container Management` -> `Container Network` -> `Services` click the service name to view:
+        For the cluster service access, in the `Container Management` -> __Container Network__ -> __Services__ click the service name to view:
 
         ![get the service access address](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/service/images/service-access.png)
     
@@ -64,11 +64,11 @@ You need to add the corresponding service source in Source management so that yo
 
 ### Update basic information
 
-1. In the `Service List` page find need to update the service, in the service of right click  `ⵗ`, choose `Basic Info`.
+1. In the __Service List__ page find need to update the service, in the service of right click __ⵗ__ , choose __Basic Info__ .
 
     ![update service](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/service/images/gw-service07.png)
 
-2. To update the basic information, click `OK`.
+2. To update the basic information, click __OK__ .
 
     ![update service](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/service/images/gw-service08.png)
 
@@ -80,21 +80,21 @@ You need to add the corresponding service source in Source management so that yo
 
 ### Update policy configuration
 
-1. In the `Service List` page find need to update the service, in the service of right click `ⵗ`, choose `modifying policy settings`.
+1. In the __Service List__ page find need to update the service, in the service of right click __ⵗ__ , choose __modifying policy settings__ .
 
     ![update service](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/service/images/gw-service09.png)
 
-2. To update policy configuration, click `OK`.
+2. To update policy configuration, click __OK__ .
 
     ![update service](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/service/images//update4.png)
 
 ## Deletion service
 
-In the `Service List` page to find the need to delete the service, in the service of right click `ⵗ`, choose `Delete`.
+In the __Service List__ page to find the need to delete the service, in the service of right click __ⵗ__ , choose __Delete__ .
 
 ![delete service](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/service/images/gw-service10.png)
 
 Before deleting a service, you need to make sure that no apis are using the service. If the service is being used by an API,
-click `API Management` to delete the associated API as prompted before deleting the service.
+click __API Management__ to delete the associated API as prompted before deleting the service.
 
 ![delete service](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/service/images/delete1.png)

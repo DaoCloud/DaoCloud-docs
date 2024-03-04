@@ -15,11 +15,11 @@ However, compared with hosted registries, integrated registries can only use som
 
 To integrate a registry, follow these steps:
 
-1. Click `Traditional Microservices`-->`Integrated Registry` in the left navigation bar, and then click `Integrate Registry` in the upper right corner of the page.
+1. Click __Traditional Microservices__ --> __Integrated Registry__  in the left navigation bar, and then click __Integrate Registry__ in the upper right corner of the page.
 
     ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/integrate01.png)
 
-2. Complete required information and click `OK` at the bottom of the page.
+2. Complete required information and click __OK__ at the bottom of the page.
 
     Different types of registries requires different information.
 
@@ -31,9 +31,9 @@ To integrate a registry, follow these steps:
 
             ![Integrate Mesh/Kubernetes](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/integrate02.png)
 
-    - Nacos/Zookeeper/Eureka registries: fill in the name and address of the registry, and click `OK` at the bottom of the page.
+    - Nacos/Zookeeper/Eureka registries: fill in the name and address of the registry, and click __OK__ at the bottom of the page.
 
-        Click `+ Add` to enter multiple addresses.
+        Click __+ Add__ to enter multiple addresses.
 
         ![Nacos/Zookeeper/Eureka](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/integrate03.png)
 
@@ -43,21 +43,21 @@ Update Nacos/Zookeeper/Eureka registries with this guide.
 
 If you want to update Kubernetes/Service Mesh registries, you can either remove it and reintegrate another one, or you can [update the Kubernetes cluster](../../../kpanda/user-guide/clusters/upgrade-cluster.md)/[update the mesh](../../../mspider/user-guide/service-mesh/README.md).
 
-1. In the `Registry List` find registry you need to update, on the right side click **`⋯`** and select `Edit`.
+1. In the `Registry List` find registry you need to update, on the right side click __⋮__ and select __Edit__ .
 
     ![Edit](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/integrate-update01.png)
 
-2. Add or remove the registry address, then click `OK` at the bottom of the page.
+2. Add or remove the registry address, then click __OK__ at the bottom of the page.
 
     ![Edit](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/integrate-update02.png)
 
 ## Remove
 
-1. In the `Registry List` find registry you need to remove, on the right side click **`⋯`** and select `Remove`.
+1. In the `Registry List` find registry you need to remove, on the right side click __⋮__ and select __Remove__ .
 
     ![remove](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/integrate-remove01.png)
 
-2. Enter the registry name to confirm that it is the exact one you want to remove, then click `Delete`.
+2. Enter the registry name to confirm that it is the exact one you want to remove, then click __Delete__ .
 
     ![remove](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/integrate-remove02.png)
 

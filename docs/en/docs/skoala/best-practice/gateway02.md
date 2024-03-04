@@ -324,7 +324,7 @@ DCE 5.0 cloud-native gateway supports several API policies, including load balan
 
     ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw32.png)
 
-3. Without enabling the WebSocket policy, click `Connect`, and it will display an access failure.
+3. Without enabling the WebSocket policy, click __Connect__ , and it will display an access failure.
 
     ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw33.png)
 
@@ -332,7 +332,7 @@ DCE 5.0 cloud-native gateway supports several API policies, including load balan
 
     ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw35.png)
 
-5. Click `Connect` again, and it will display a successful connection, indicating that the WebSocket policy is effective.
+5. Click __Connect__ again, and it will display a successful connection, indicating that the WebSocket policy is effective.
 
     ![rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/br-gw34.png)
 

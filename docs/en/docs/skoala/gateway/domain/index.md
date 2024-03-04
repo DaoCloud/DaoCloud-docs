@@ -4,7 +4,7 @@ The microservice gateway supports the full lifecycle management of domain names,
 
 To add a domain name, perform the following steps:
 
-1. Click the name of the target gateway to enter the gateway overview page. Then click `Domain Management` in the left navigation bar and `Add Domain` in the upper right corner of the page.
+1. Click the name of the target gateway to enter the gateway overview page. Then click __Domain Management__ in the left navigation bar and __Add Domain__ in the upper right corner of the page.
 
     ![add domain](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/domain/images/add-domain-1.png)
 
@@ -25,8 +25,8 @@ To add a domain name, perform the following steps:
         ![fill in configuration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/domain/images/add-domain-2.png)
 
 
-3. Click `OK` in the lower right corner of the page
+3. Click __OK__ in the lower right corner of the page
 
-    Click `OK`, and the `Domain Management` page is automatically displayed. You can view the newly created domain name in the domain name list.
+    Click __OK__ , and the __Domain Management__ page is automatically displayed. You can view the newly created domain name in the domain name list.
 
     ![add successfully](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/domain/images/domain-bingo.png)
