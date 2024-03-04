@@ -6,10 +6,13 @@ Date: 2024-01-23
 # Enabling MIG Function
 
 This section describes how to enable NVIDIA MIG function. NVIDIA currently provides two strategies for exposing MIG devices on Kubernetes nodes:
-> Tips: After the MIG mode is disabled, you need to restart the physical node in order to use the whole card mode normally.
 
 - **Single mode** : Nodes expose a single type of MIG device on all their GPUs.
 - **Mixed mode** : Nodes expose a mixture of MIG device types on all their GPUs.
+
+!!! tip
+
+    After disabling MIG mode, the physical node needs to be restarted in order to use the whole card mode properly.
 
 For more details, refer to the [NVIDIA GPU Card Usage Modes](../index.md).
 
@@ -27,19 +30,22 @@ For more details, refer to the [NVIDIA GPU Card Usage Modes](../index.md).
 
 1. [Enable MIG Single mode](../install_nvidia_driver_of_operator.md) through the Operator. Configure the parameters in the installation interface:
 
-      ![Basic Info](../../images/single01.png)
+2. After the installation is complete, it is necessary to label the corresponding node (the node where the GPU card is inserted) with the partitioning specifications. If this step is not executed, it will default to no partitioning.
 
-    - Set __DevicePlugin__ to __enable__
-    - Set __MIG strategy__ to __single__
-    - Enable the __enabled__ parameter under __Mig Manager__
-    - Set __MigManager Config__ to the default MIG partitioning strategy __default-mig-parted-config__
+    !!! tip
 
-    **GUI configuration** : Find the corresponding node, select __Modify Labels__ ,
-    and add __nvidia.com/mig.config="all-1g.10gb"__ .
+        The Single mode can only be partitioned in a single mode. It is recommended to use the default strategy, but you can also [customize the partitioning strategy](#_2).
 
-    ![Edit Labels](../../images/single02.png)
+    **UI Configuration**:
 
-    **Command-line configuration** :
+    1. Search for `default-mig-parted-config` in the ConfigMap, enter the details, and find the partitioning specifications corresponding to the GPU card model.
+
+
+    2. Find the corresponding node, select __Modify Labels__, and add __nvidia.com/mig.config="all-1g.10gb"__. If you choose another specification, then partition according to that specification.
+
+        ![single02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/single02.jpg)
+
+    **CLI Configuration**:
 
     ```sh
     kubectl label nodes {node} nvidia.com/mig.config="all-1g.10gb" --overwrite
@@ -50,6 +56,8 @@ For more details, refer to the [NVIDIA GPU Card Usage Modes](../index.md).
     ```sh
     kubectl get node 10.206.0.17 -o yaml|grep nvidia.com/mig.config
     ```
+
+After the setup is complete, you can confirm the deployment of the application and then [use GPU MIG resources](mig_usage.md).
 
 ## Enable GPU MIG Mixed mode
 
@@ -64,13 +72,44 @@ For more details, refer to the [NVIDIA GPU Card Usage Modes](../index.md).
     - Set __MigManager Config__ to the default MIG partitioning strategy __default-mig-parted-config__ ,
       or customize the partitioning strategy configuration file.
 
+1. After the installation is complete, it is necessary to label the corresponding node (the node where the GPU card is inserted) with the partitioning specifications. If this step is not executed, it will default to no partitioning.
+
+    !!! tip
+
+        It is recommended to use the default strategy, but you can also [customize the partitioning strategy](#_2).
+
+    **UI Configuration**:
+
+    1. Search for default-mig-parted-config in the ConfigMap, enter the details, and find the partitioning specifications corresponding to the GPU card model.
+
+    2. Find the corresponding node, select __Modify Labels__, and add __nvidia.com/mig.config="all-1g.10gb"__. If you choose another specification, then partition according to that specification.
+
+        ![single02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/single02.jpg)
+
+    **CLI Configuration**:
+
+    ```sh
+    kubectl label nodes {node} nvidia.com/mig.config="all-1g.10gb" --overwrite
+    ```
+
+1. Check the configuration result
+
+    ```sh
+    kubectl get node 10.206.0.17 -o yaml|grep nvidia.com/mig.config
+    ```
+
+After the setup is complete, you can confirm the deployment of the application and then [use GPU MIG resources](mig_usage.md).
+
+## Custom Partitioning Strategy
+
+You can customize the partitioning strategy configuration file, with a maximum of 7 instances per card. This needs to be created before installing the GPU Operator and specified during installation with the ConfigMap name.
+
+1. Create a custom partitioning strategy in the ConfigMap, which needs to be in the same namespace as the GPU operator during deployment. The file name you create cannot be the same as the default __default-mig-parted-config__. The configuration data can be referenced in the following YAML.
+
+
     ??? note "Click to view detailed YAML configuration instructions"
 
-        The following YAML is an example of custom configuration __custom-mig-parted-config__ .
-        The name of the file you create cannot be the same as the default __default-mig-parted-config__ .
-
-        Create a configuration file named __custom-mig-parted-config__ and the __key__
-        of the configuration data must be the same as the content in __config.yaml__ below.
+        The following YAML is an example of a custom configuration named __custom-mig-parted-config__. The key in the configuration data is as shown in the content of __config.yaml__ below, and you can customize and add other partitioning strategies.
 
         ```yaml title="config.yaml"
           ## Custom split GI instance configuration
@@ -324,29 +363,5 @@ For more details, refer to the [NVIDIA GPU Card Usage Modes](../index.md).
               1c.3g.40gb: 6
         ```
 
-   ![Configurate Parameters](../../images/mixed.png)
+1. Specify this ConfigMap during the installation of the GPU Operator.
 
-2. If you need to split the instance according to custom rules, you can add the partitioning specification to the corresponding node. If this step is not performed, the default values will be used for partitioning.
-
-    **GUI configuration** : Find the corresponding node, select __Modify Labels__ ,
-    and add __nvidia.com/mig.config="custom-config"__ .
-   
-    ![single02](../../images/mixed02.png)
-
-    **Command-line configuration** :
-
-    ```sh
-    kubectl label nodes {node} nvidia.com/mig.config="custom-config" --overwrite
-    ```
-
-3. Check the configuration result.
-
-    ```sh
-    kubectl get node 10.206.0.17 -o yaml|grep nvidia.com/mig.config
-    ```
-
-   ```sh
-   kubectl get node 10.206.0.17 -o yaml | grep nvidia.com/mig.config
-   ```
-
-Once you have completed these steps, you can [use MIG GPU resources](mig_usage.md) when deploying your applications.
