@@ -74,6 +74,14 @@
 
 ## GPU
 
+### 通过 DCE 5.0 UI 使用 Nvidia vGPU 能力
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/gpu.mp4" preload="metadata" poster="images/gpu.jpg"></video>
+</div>
+
+### Nvidia vGPU 使用教程
+
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/vgpu.mp4" preload="metadata" poster="images/kpanda-vgpu.png"></video>
 </div>
