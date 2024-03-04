@@ -1,22 +1,22 @@
-# 构建 RedHat 8.4 离线 yum 源
+# 构建 Red Hat 8.4 离线 yum 源
 
 ## 使用场景介绍
 
 DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。其它 OS 类型的节点或内核需要用户手动构建离线 yum 源。
 
-本文介绍如何基于 Global 集群任意节点构建 RedHat 8.4 离线 yum 源包，并在安装 Gpu Operator 时，通过 `RepoConfig.ConfigMapName` 参数来使用。
+本文介绍如何基于 Global 集群任意节点构建 Red Hat 8.4 离线 yum 源包，并在安装 Gpu Operator 时，通过 `RepoConfig.ConfigMapName` 参数来使用。
 
 ## 前提条件
 
 1. 用户已经在平台上安装了 v0.12.0 及以上版本的 addon 离线包。
-2. 待部署 GPU Operator 的集群节点 OS 必须为 RedHat 8.4，且内核版本完全一致。
+2. 待部署 GPU Operator 的集群节点 OS 必须为 Red Hat 8.4，且内核版本完全一致。
 3. 准备一个能够和待部署 GPU Operator 的集群网络能够联通的文件服务器，如 nginx 或 minio。
 4. 准备一个能够访问互联网、待部署 GPU Operator 的集群和文件服务器的节点，且节点上已经完成 [Docker 的安装](../../../../install/community/kind/online.md#安装-docker)。
-5. Global 集群的节点必须为 RedHat 8.4 4.18.0-305.el8.x86_64。
+5. Global 集群的节点必须为 Red Hat 8.4 4.18.0-305.el8.x86_64。
 
 ## 操作步骤
 
-本文以 RedHat 8.4 4.18.0-305.el8.x86_64 节点为例，介绍如何基于 Global 集群任意节点构建 RedHat 8.4 离线 yum 源包，并在安装 Gpu Operator 时，通过 `RepoConfig.ConfigMapName` 参数来使用。
+本文以 Red Hat 8.4 4.18.0-305.el8.x86_64 节点为例，介绍如何基于 Global 集群任意节点构建 Red Hat 8.4 离线 yum 源包，并在安装 Gpu Operator 时，通过 `RepoConfig.ConfigMapName` 参数来使用。
 
 ### 步骤一：下载火种节点中的 yum 源
 

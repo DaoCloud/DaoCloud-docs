@@ -11,7 +11,7 @@ DCE 5.0 provides a GPU Operator offline package with CentOS 7.9 and kernel versi
 - GPU vGPU Mode
 - GPU MIG Mode
 
-Please refer to [NVIDIA GPU Card Usage Modes](index.md) for more details. This article demonstrates the installation using AMD architecture on CentOS 7.9 (3.10.0-1160). If you want to deploy on RedHat 8.4, refer to [Uploading RedHat GPU Operator Offline Images to Ignition Nodes](./push_image_to_repo.md) and [Building RedHat 8.4 Offline Yum Repository](./upgrade_yum_source_redhat8_4.md).
+Please refer to [NVIDIA GPU Card Usage Modes](index.md) for more details. This article demonstrates the installation using AMD architecture on CentOS 7.9 (3.10.0-1160). If you want to deploy on Red Hat 8.4, refer to [Uploading Red Hat GPU Operator Offline Images to Bootstrap Nodes](./push_image_to_repo.md) and [Building Red Hat 8.4 Offline Yum Repository](./upgrade_yum_source_redhat8_4.md).
 
 ## Prerequisites
 
@@ -67,7 +67,7 @@ By default, it is **enabled**, and when **disabled**, the GPU whole card/MIG fun
 
         The system default provides the image 525.147.05-centos7. For other images, refer to [Pushing Images to the Fire Node Repository](./push_image_to_repo.md)
 
-        - For RedHat systems, for example: `525.105.17-rhel8.4`
+        - For Red Hat systems, for example: `525.105.17-rhel8.4`
         - For Ubuntu systems, for example: `535-5.15.0-1043-nvidia-ubuntu22.04`
         - For CentOS systems, for example: `525.147.05-centos7`
 
@@ -114,7 +114,7 @@ By default, it is **enabled**, and when **disabled**, the GPU whole card/MIG fun
     For other operating systems or kernels, refer to the following links to create the yum source file:
 
     - [Building CentOS 7.9 Offline Yum Source](./Upgrade_yum_source_of_preset_offline_package.md)
-    - [Building RedHat 8.4 Offline Yum Source](./upgrade_yum_source_redhat_8.4.md)
+    - [Building Red Hat 8.4 Offline Yum Source](./upgrade_yum_source_redhat_8.4.md)
 
 #### Toolkit Configuration Parameters
 
