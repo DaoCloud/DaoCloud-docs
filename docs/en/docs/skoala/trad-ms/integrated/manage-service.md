@@ -11,11 +11,11 @@ After [integrating a registry](index.md), you can manage the microservices in th
 
     An access-based registry center only supports basic management operations. For more complex management scenarios, it is recommended to create a [hosted registry center](../hosted/index.md) to perform more advanced operations.
 
-1. Click the name of the target registry on the `In` page.
+1. Click the name of the target registry on the __In__ page.
 
     ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/service01.png)
 
-2. Click `Microservice Management` in the left navigation bar to view the list of micro-services and basic information.
+2. Click __Microservice Management__ in the left navigation bar to view the list of micro-services and basic information.
 
     On the current page, you can copy the name of the micro-service and view all micro-services in the current registry, as well as the namespace, instance, and request statistics of each micro-service.
 

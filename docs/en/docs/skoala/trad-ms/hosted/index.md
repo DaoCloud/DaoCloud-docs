@@ -16,7 +16,7 @@ The microservices engine supports hosting the Nacos registry, which creates a ne
 
 The steps to create a hosted registry are as follows.
 
-1. Click `Traditional Microservices`-> `Hosted Registry`in the left navigation bar, and then click
+1. Click __Traditional Microservices__ -> __Hosted Registry__ in the left navigation bar, and then click
    `Create Hosted Registry` in the upper right corner of the page to enter the page for creating the hosting registry instance.
 
    ![create hosted registry](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/create01.png)
@@ -35,7 +35,7 @@ The steps to create a hosted registry are as follows.
 
         -  `1Core2G` indicates that the request value and limit value of CPU are 2 cores respectively, the request value and limit value of memory are 2 G respectively, and so on.
 
-        - Click `Recommended Quotas` to see throughput (TPS) for mainstream specifications such as 2 Core 4 GiB, 4 Core 8 GiB, and 8 Core 16 GiB.
+        - Click __Recommended Quotas__ to see throughput (TPS) for mainstream specifications such as 2 Core 4 GiB, 4 Core 8 GiB, and 8 Core 16 GiB.
 
         ![recommended quotas](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/create02.png)
 
@@ -51,9 +51,9 @@ The steps to create a hosted registry are as follows.
 
         ![data persistence](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/create04.png)
 
-3. At the bottom of the page click `OK`.
+3. At the bottom of the page click __OK__ .
 
-    If the operation is correct, a message indicating that the registry is created successfully is displayed in the upper right corner of the page. The `hosted registry List` page displays the new registry instance.
+    If the operation is correct, a message indicating that the registry is created successfully is displayed in the upper right corner of the page. The __hosted registry List__ page displays the new registry instance.
 
     ![click ok](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/create05.png)
 
@@ -64,11 +64,11 @@ The steps to create a hosted registry are as follows.
 
 ## Update
 
-1. In the `Managed Registry List` page choose need to update the registry, on the right side click `⋯` and select `Edit`.
+1. In the __Managed Registry List__ page choose need to update the registry, on the right side click __ⵗ__ and select __Edit__ .
 
    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/update01.png)
 
-2. Update the registry configuration, then click `OK` at the bottom of the page.
+2. Update the registry configuration, then click __OK__ at the bottom of the page.
 
     !!! warning
 
@@ -85,7 +85,7 @@ In basic information page to view the registry `Basic Info`, `Governance Info` (
 
 **Related operation**：
 
-- Restart the registry instance: Click `Restart` in the upper right corner of the page to restart the entire managed registry instance.
+- Restart the registry instance: Click __Restart__ in the upper right corner of the page to restart the entire managed registry instance.
 
     ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/check-1.png)
 
@@ -95,11 +95,11 @@ In basic information page to view the registry `Basic Info`, `Governance Info` (
 
 ## Delete
 
-1. In the `Hosted Registries` page select need to delete the registry, on the right side click `⋯` and select `Delete`.
+1. In the __Hosted Registries__ page select need to delete the registry, on the right side click __ⵗ__ and select __Delete__ .
 
     ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/delete01.png)
 
-2. Enter a name for the registry and click `Delete`.
+2. Enter a name for the registry and click __Delete__ .
 
     ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/delete02.png)
 

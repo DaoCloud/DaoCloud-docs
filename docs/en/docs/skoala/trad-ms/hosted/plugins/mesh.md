@@ -6,11 +6,11 @@
 
    ![](../../../images/ns-1.png)
 
-2. In the left navigation bar, click `Plugins`, and on the `Service Mesh` card, click `Enable`.
+2. In the left navigation bar, click __Plugins__ , and on the `Service Mesh` card, click __Enable__ .
 
    ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/mesh01.png)
 
-3. Select the service mesh you want to bind to and click `OK` at the bottom of the box.
+3. Select the service mesh you want to bind to and click __OK__ at the bottom of the box.
 
     If you can"t find the service mesh you want, go to the service mesh module [Create Service Mesh](../../../../mspider/user-guide/service-mesh/README.md).
 

@@ -8,7 +8,7 @@ To view component monitoring, perform the following steps:
 
     ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/monitor01.png)
 
-2. In the left navigation bar, click `Monitoring` -> `Components`.
+2. In the left navigation bar, click __Monitoring__ -> __Components__ .
 
     ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/monitor02.png)
 

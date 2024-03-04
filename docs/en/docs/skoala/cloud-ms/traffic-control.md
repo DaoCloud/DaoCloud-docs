@@ -12,6 +12,6 @@ After [microservices](index.md) are imported, different east-west traffic polici
 
     ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/cloudms-traffic02.png)
 
-3. Configure the traffic policy as needed, and click `OK` to confirm.
+3. Configure the traffic policy as needed, and click __OK__ to confirm.
 
 <!-- Specific descriptions of each policy will be added later -->

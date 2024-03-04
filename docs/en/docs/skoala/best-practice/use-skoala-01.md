@@ -37,7 +37,7 @@ Before deploying applications, the following conditions must be met:
 
 ### Deployment based on Helm chart
 
-1. Locate the opentelemetry-demo application in `Workbench` -> `Wizard` -> `From Helm chart` and click the application card to install it
+1. Locate the opentelemetry-demo application in `Workbench` -> __Wizard__ -> __From Helm chart__ and click the application card to install it
 
     <!--![]()screenshots-->
 

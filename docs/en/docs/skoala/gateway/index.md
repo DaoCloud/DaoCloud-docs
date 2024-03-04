@@ -11,7 +11,7 @@ The micro-service gateway supports the high-availability architecture of multi-t
 
 To create a microservice gateway, perform the following steps:
 
-1. In the left navigation bar, click `Cloud native Gateway`, and in the upper right corner of the `Gateway List` page, click `Create Gateway` to enter the page for creating the micro-service gateway.
+1. In the left navigation bar, click __Cloud native Gateway__ , and in the upper right corner of the __Gateway List__ page, click __Create Gateway__ to enter the page for creating the micro-service gateway.
 
     ![go to the create page](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/gw-create01.png)
 
@@ -83,7 +83,7 @@ To create a microservice gateway, perform the following steps:
 
 !!! note
 
-    Click `OK` at the lower right corner of the page to return to the micro-service gateway list page. You can perform the operations [Update Gateway](update-gateway.md) or [Delte Gateway](delete-gateway.md) on the right.
+    Click __OK__ at the lower right corner of the page to return to the micro-service gateway list page. You can perform the operations [Update Gateway](update-gateway.md) or [Delte Gateway](delete-gateway.md) on the right.
 
     ![confirm the information](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/gw-create10.png)
 
@@ -93,7 +93,7 @@ You can view the gateway details on `Overview`, including the name, deployment l
 
 ### Gateway details
 
-On the `Gateway List` page, select the name of the target gateway to access the gateway overview page ".
+On the __Gateway List__ page, select the name of the target gateway to access the gateway overview page ".
 
 ![overview](./images/overview.png)
 
@@ -114,8 +114,8 @@ Some of the data are described as follows:
 
 In addition to viewing the gateway details, you can update the gateway configuration and delete the gateway on the gateway details page.
 
-- Update gateway: Click `Edit` at the top of the page to jump to the page for updating gateway configuration. For details, see [Update Gateway Settings](update-gateway.md).
-- Delete gateway: Click `...` at the top of the page and select `Delete` to go to the page for deleting gateway. For details, see [Delete Gateway](delete-gateway.md).
+- Update gateway: Click __Edit__ at the top of the page to jump to the page for updating gateway configuration. For details, see [Update Gateway Settings](update-gateway.md).
+- Delete gateway: Click __...__ at the top of the page and select __Delete__ to go to the page for deleting gateway. For details, see [Delete Gateway](delete-gateway.md).
 
 ## Update
 
@@ -125,11 +125,11 @@ The micro-service gateway supports the high-availability architecture of multi-t
 
 There are two ways to update the gateway configuration.
 
-- In the `Gateway List` page choose the gateway instance needs to be updated, at the instance of right click `...` and select `Edit`.
+- In the __Gateway List__ page choose the gateway instance needs to be updated, at the instance of right click __...__ and select __Edit__ .
 
     ![update1](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/update1.png)
 
-- Click the gateway name to access the overview page. In the upper right corner, click `Edit`.
+- Click the gateway name to access the overview page. In the upper right corner, click __Edit__ .
 
     ![update2](./images/overview.png)
 
@@ -143,10 +143,10 @@ There are also two ways to delete a gateway. To ensure that services are not aff
 
     Gateway deletion is irreversible, so please proceed with caution.
 
-- In the `Gateway List` page choose the need to remove the gateway instance, at the instance of right click `...` and select `Delete`.
+- In the __Gateway List__ page choose the need to remove the gateway instance, at the instance of right click __...__ and select __Delete__ .
 
     ![delete](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/delete.png)
 
-- After entering into the overview page, click the gateway name in the upper right corner of the `...` and select `Delete`.
+- After entering into the overview page, click the gateway name in the upper right corner of the __...__ and select __Delete__ .
 
     ![delete-gateway](./images/delete-gateway.png)

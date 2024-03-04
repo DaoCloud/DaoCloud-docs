@@ -9,17 +9,17 @@ Authorization rules are used to restrict the access of resources based on the so
 
 Follow the steps below to create an authorization rule:
 
-1. Click the name of the target managed registry, then click `Microservices` in the left sidebar and click the `Governance` option on the right side.
+1. Click the name of the target managed registry, then click __Microservices__ in the left sidebar and click the  __Governance__ option on the right side.
 
     > Note that the microservice you want to govern should have the "Can be governed" status set to "Yes" in order to proceed with the following steps.
 
     ![](../../../images/gov00.png)
 
-2. Select `Authorization Rules`, then click `Create Authorization Rule` on the right side.
+2. Select `Authorization Rules`, then click __Create Authorization Rule__ on the right side.
 
     ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/gov08.png)
 
-3. Fill in the rule configuration based on the instructions below and click `OK` in the bottom right corner.
+3. Fill in the rule configuration based on the instructions below and click __OK__ in the bottom right corner.
 
     - Resource Name: Specify the resource for which you want to control the traffic, such as a specific API endpoint, function, or variable within the current service.
     - Flow Control Application: Specify the source(s) of the requests for the resource. Separate multiple sources with commas, e.g., `appA, appB`.

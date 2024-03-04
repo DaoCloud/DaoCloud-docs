@@ -20,7 +20,7 @@ DCE 5.0 Cloud Native Gateway supports two methods for importing services: manual
 3. Refer to [Adding Domain Names](../gateway/domain/index.md) to create a domain name under the gateway, such as `adservice.virtualhost`.
 4. Refer to [Adding APIs](../gateway/api/index.md) to create an API under the gateway. **Add the service as the backend service of the API**.
 
-    When adding a backend service, select the target service from the "auto-discovered" services, and click `OK`.
+    When adding a backend service, select the target service from the "auto-discovered" services, and click __OK__ .
 
 ### Manual Integration of Services
 
@@ -30,7 +30,7 @@ DCE 5.0 Cloud Native Gateway supports two methods for importing services: manual
 3. Refer to [Adding Domain Names](../gateway/domain/index.md) to create a domain name under the gateway, such as `adservice.virtualhost`.
 4. Refer to [Adding APIs](../gateway/api/index.md) to create an API under the gateway. **Add the service as the backend service of the API**.
 
-    When adding a backend service, select the target service from the "manually integrated" services, and click `OK`.
+    When adding a backend service, select the target service from the "manually integrated" services, and click __OK__ .
 
 ## Obtain Gateway Address
 

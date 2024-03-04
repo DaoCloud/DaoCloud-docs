@@ -19,17 +19,17 @@ Cluster flow control mode is designed to solve this problem. In cluster flow con
 
 Follow the steps below to create a cluster flow control rule:
 
-1. Click the name of the target managed registry, then click `Service List` in the left sidebar and click the `Service Governance` option on the right side.
+1. Click the name of the target managed registry, then click __Service List__ in the left sidebar and click the  __Service Governance__ option on the right side.
 
     > Note that the microservice you want to govern should have the "Can be governed" status set to "Yes" in order to proceed with the following steps.
 
     ![](../../../images/gov00.png)
 
-2. Select `Cluster Flow Control`, then click `Create Cluster Flow Control` on the right side.
+2. Select `Cluster Flow Control`, then click __Create Cluster Flow Control__ on the right side.
 
     ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/gov17.png)
 
-3. Fill in the rule configuration based on the instructions below and click `OK` in the bottom right corner.
+3. Fill in the rule configuration based on the instructions below and click __OK__ in the bottom right corner.
 
     - Server Name: The name of the TokenServer.
     - TokenServer IP: The IP address of the TokenServer.

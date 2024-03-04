@@ -9,17 +9,17 @@ Circuit breaking rules can monitor the response time or exception ratio of inter
 
 Follow the steps below to create a circuit breaking rule:
 
-1. Click the name of the target managed registry, then click `Microservices` in the left sidebar and click the `Governance` option on the right side.
+1. Click the name of the target managed registry, then click __Microservices__ in the left sidebar and click the  __Governance__ option on the right side.
 
     > Note that the microservice you want to govern should have the "Can be governed" status set to "Yes" in order to proceed with the following steps.
 
     ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/gov00.png)
    
-2. Select `Fusing rule`, then click `Create Fusing Rule` on the right side.
+2. Select `Fusing rule`, then click __Create Fusing Rule__ on the right side.
 
     ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/gov04.png)
 
-3. Fill in the rule configuration based on the instructions below and click `OK` in the bottom right corner.
+3. Fill in the rule configuration based on the instructions below and click __OK__ in the bottom right corner.
 
     - Resource Name: Specify the resource for which you want to control the traffic, such as a specific API endpoint, function, or variable within the current service.
     - Slow Call Ratio: If the ratio of slow calls within a unit statistical period exceeds the set threshold, the resource will be circuit broken for the remaining time within the circuit breaker's duration.
