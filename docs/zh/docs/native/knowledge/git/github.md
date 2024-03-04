@@ -71,3 +71,10 @@ GitHub 号称有一亿开发者活跃，如何能在目标社区展露头角？
 - [Istio 文档](https://istio.io/)
 - [CNCF 词汇表](https://glossary.cncf.io/)
 - [Prometheus 文档](https://prometheus.io/docs/introduction/overview/)
+
+## 社区工具和心得
+
+- [k8s label 大全](https://prow.k8s.io/command-help?repo=kubernetes%2Fwebsite)
+- [k8s membership 官方说明](https://github.com/kubernetes/community/blob/master/community-membership.md)
+- [PPT 讲解如何成为 k8s member](https://speakerdeck.com/ydfu/how-to-start-contributing-to-kubernetes-projects)
+- Sean 3 个月进阶为 Approver 的 [k8s 贡献心得](https://blog.sean.taipei/2022/08/kubernetes)
