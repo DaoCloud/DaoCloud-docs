@@ -29,9 +29,9 @@
     - __DevicePlugin__ 设置为 __enable__ 
     - __MIG strategy__ 设置为 __single__ 
     - __Mig Manager__ 下的 __enabled__ 参数开启
-    - __MigManager Config__ ：MIG 的切分策略配置，默认为 __default-mig-parted-config__ 。
+    - __MigManager Config__ ：MIG 的切分策略配置，默认为 __default-mig-parted-config__
 
-2. 安装完成后需要给对应节点(已插入对应 GPU 卡节点)打上切分规格的label，如不执行此操作，将按照默认不切分。
+1. 安装完成后需要给对应节点（已插入对应 GPU 卡节点）打上切分规格的 label，如不执行此操作，将按照默认不切分。
 
     !!! tip
 
@@ -39,7 +39,7 @@
 
     **界面配置** ：
    
-    1. 在 ConfigMap 中搜索 default-mig-parted-config ，进入详情找到 GPU 卡型号对应的切分规格。
+    1. 在 ConfigMap 中搜索 `default-mig-parted-config` ，进入详情找到 GPU 卡型号对应的切分规格。
    
         ![configdetail](../../images/operator-mig.png)
   
@@ -53,7 +53,7 @@
     kubectl label nodes {node} nvidia.com/mig.config="all-1g.10gb" --overwrite
     ```
 
-4. 查看配置结果
+1. 查看配置结果
 
     ```sh
     kubectl get node 10.206.0.17 -o yaml|grep nvidia.com/mig.config
@@ -72,7 +72,7 @@
     - __Mig Manager__ 下的 __enabled__ 参数开启
     - __MigManager Config__ ：MIG 的切分策略配置，默认为 __default-mig-parted-config__ .
 
-2. 安装完成后需要给对应节点(已插入对应 GPU 卡节点)打上切分规格的 label，如不执行此操作，将按照默认不切分。
+1. 安装完成后需要给对应节点(已插入对应 GPU 卡节点)打上切分规格的 label，如不执行此操作，将按照默认不切分。
 
     !!! tip
 
@@ -94,7 +94,7 @@
     kubectl label nodes {node} nvidia.com/mig.config="all-1g.10gb" --overwrite
     ```
 
-4. 查看配置结果
+1. 查看配置结果
 
     ```sh
     kubectl get node 10.206.0.17 -o yaml|grep nvidia.com/mig.config
@@ -367,6 +367,6 @@
               1c.3g.40gb: 6
         ```
 
-3. 在安装 GPU Operator 时，指定该 ConfigMap。
+1. 在安装 GPU Operator 时，指定该 ConfigMap。
 
-![single](../../images/operator-mig.png)
+    ![single](../../images/operator-mig.png)
