@@ -969,6 +969,8 @@ nav:
                       - Concepts: middleware/rocketmq/intro/concepts.md
                       - Offline Upgrade RocketMQ: middleware/rocketmq/intro/offline-install.md
                       - Release Notes: middleware/rocketmq/release-notes.md
+                  - Best Practices: 
+                      - HA RocketMQ across Clusters: middleware/rocketmq/best-pratice/singleclustercrosszone.md
               - MinIO Object Storage:
                   - Intro:
                       - What is MinIO: middleware/minio/intro/index.md
