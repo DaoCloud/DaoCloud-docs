@@ -1,20 +1,21 @@
-# 应用使用 NVIDIA vGPU
+# 应用使用 Nvidia vGPU
 
 本节介绍如何在 DCE 5.0 平台使用 vGPU 能力。
 
 ## 前提条件
 
--  集群节点上具有[对应型号的 GPU 卡](../../gpu_matrix.md)
--  已成功安装 vGPU Addon，详情参考 [GPU Addon 安装 ](vgpu_addon.md)
-- 已安装 GPU Operator，并已 **关闭** __Nvidia.DevicePlugin__ 能力，可参考 [GPU Operator 离线安装](../install_nvidia_driver_of_operator.md) 
+- 集群节点上具有[对应型号的 GPU 卡](../../gpu_matrix.md)
+- 已成功安装 vGPU Addon，详情参考 [GPU Addon 安装 ](vgpu_addon.md)
+- 已安装 GPU Operator，并已 __关闭 Nvidia.DevicePlugin__ 能力，可参考 [GPU Operator 离线安装](../install_nvidia_driver_of_operator.md)
 
 ## 操作步骤
 
 ### 界面使用 vGPU
 
-1. 确认集群是否已检测 GPU 卡。点击对应 __集群__ -> __集群设置__ -> __Addon 插件__ ，查看是否已自动启用并自动检测对应 GPU 类型。目前集群会自动启用 __GPU__ ，并且设置 __GPU__ 类型为 __Nvidia vGPU__ 。
+1. 确认集群是否已检测 GPU 卡。点击对应 __集群__ -> __集群设置__ -> __Addon 插件__ ，查看是否已自动启用并自动检测对应 GPU 类型。
+   目前集群会自动启用 __GPU__ ，并且设置 __GPU__ 类型为 __Nvidia vGPU__ 。
    
-    ![Alt text](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/vgpu-cluster.png)
+    ![安装 vgpu](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/vgpu-cluster.png)
 
 2. 部署工作负载，点击对应 __集群__ -> __工作负载__ ，通过镜像方式部署工作负载，选择类型（Nvidia vGPU）之后，会自动出现如下几个参数需要填写：
 
@@ -25,7 +26,7 @@
 
     > 如果上述值配置的有问题则会出现调度失败，资源分配不了的情况。
 
-![Alt text](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/vgpu-deployment.png)
+    ![部署工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/vgpu-deployment.png)
 
 ### YAML 配置使用 vGPU
 
@@ -59,4 +60,3 @@ spec:
           imagePullPolicy: Always
       restartPolicy: Always
 ```
-

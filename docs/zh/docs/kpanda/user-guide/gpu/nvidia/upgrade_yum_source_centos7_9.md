@@ -10,7 +10,8 @@
 
 1. 用户已经在平台上安装了 v0.12.0 及以上版本的 addon 离线包。
 1. 准备一个能够和待部署 GPU Operator 的集群网络能够联通的文件服务器，如 nginx 或 minio。
-1. 准备一个能够访问互联网、待部署 GPU Operator 的集群和文件服务器的节点，且节点上已经完成 [Docker 的安装](../../../../install/community/kind/online.md#docker)。
+1. 准备一个能够访问互联网、待部署 GPU Operator 的集群和文件服务器的节点，
+   且节点上已经完成 [Docker 的安装](../../../../install/community/kind/online.md#docker)。
 
 ## 操作步骤
 
@@ -29,7 +30,7 @@
 
     预期输出如下：
 
-    ```
+    ```console
     CentOS Linux release 7.9 (Core)
     ```
 
@@ -43,11 +44,11 @@
 
     预期输出如下：
 
-    ```
+    ```console
     Linux localhost.localdomain 3.10.0-1160.95.1.el7.x86_64 #1 SMP Mon Oct 19 16:18:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
     ```
 
-    输出结果为当前节点内核版本 `3.10.0-1160.el7.x86_64` 。
+    输出结果为当前节点内核版本 `3.10.0-1160.el7.x86_64`。
 
 ### 制作离线 yum 源
 
@@ -136,7 +137,7 @@
 
 本操作示例采用的是 DCE5 火种节点内置的 Minio 作为文件服务器，Minio 相关信息如下：
 
-- 访问地址： `http://10.5.14.200:9000（一般为{火种节点 IP} + {9000 端口}）` 
+- 访问地址： `http://10.5.14.200:9000（一般为{火种节点 IP} + {9000 端口}）`
 - 登录用户名：rootuser
 - 登录密码：rootpass123
 
@@ -214,7 +215,7 @@
 
     预期输出如下：
 
-    ```
+    ```console
     configmap/local-repo-config created
     ```
 

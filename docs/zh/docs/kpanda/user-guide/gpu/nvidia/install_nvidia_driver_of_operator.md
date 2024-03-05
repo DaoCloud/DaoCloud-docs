@@ -1,7 +1,7 @@
 # GPU Operator 离线安装
 
-DCE 5.0 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
-本文介绍如何离线部署 GPU Operator，覆盖 NVIDIA GPU 以下几种使用模式的参数配置。
+DCE 5.0 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU Operator 离线包。
+本文介绍如何离线部署 GPU Operator，覆盖 NVIDIA GPU 以下几种使用模式的参数配置：
 
 - 整卡模式
 - vGPU 模式
@@ -51,33 +51,36 @@ __DevicePlugin.enable__ ：配置是否启用 kubernentes [DevicePlugin](https:/
 
 #### Operator 参数配置
 
-1. __InitContainer.image__ ：配置 CUDA 镜像，推荐默认镜像： __nvidia/cuda__ 。
-2. __InitContainer.repository__ ：CUDA 镜像所在的镜像仓库，默认为 __nvcr.m.daocloud.io__ 仓库。
-3. __InitContainer.version__ : CUDA 镜像的版本，请使用默认参数。
+1. __InitContainer.image__ ：配置 CUDA 镜像，推荐默认镜像： __nvidia/cuda__
+2. __InitContainer.repository__ ：CUDA 镜像所在的镜像仓库，默认为 __nvcr.m.daocloud.io__ 仓库
+3. __InitContainer.version__ : CUDA 镜像的版本，请使用默认参数
 
 #### Driver 参数配置
 
-1. __Driver.enable__ ：配置是否在节点上部署 NVIDIA 驱动，默认开启，如果您在使用 GPU Operator 部署前，已经在节点上部署了 NVIDIA 驱动程序，请关闭。
+1. __Driver.enable__ ：配置是否在节点上部署 NVIDIA 驱动，默认开启，
+   如果您在使用 GPU Operator 部署前，已经在节点上部署了 NVIDIA 驱动程序，请关闭。
 2. __Driver.image__ ：配置 GPU 驱动镜像，推荐默认镜像： __nvidia/driver__ 。
 3. __Driver.repository__ ：GPU 驱动镜像所在的镜像仓库，默认为 nvidia 的 __nvcr.io__ 仓库。
-4. __Driver.version__ ：GPU 驱动镜像的版本，离线部署请使用默认参数，仅在线安装时需配置，不同类型操作系统的 Driver 镜像的版本存在如下差异，
-   详情可参考：[Nvidia GPU Driver 版本](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/driver/tags)，如下不同操作系统的 `Driver Version` 示例：
+4. __Driver.version__ ：GPU 驱动镜像的版本，离线部署请使用默认参数，仅在线安装时需配置，
+   不同类型操作系统的 Driver 镜像的版本存在如下差异，
+   详情可参考：[Nvidia GPU Driver 版本](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/driver/tags)，
+   如下不同操作系统的 `Driver Version` 示例：
 
     !!! note
 
-        系统默认提供 525.147.05-centos7 的镜像，其他镜像需要参考 [向火种节点仓库上传镜像](./push_image_to_repo.md) 
+        系统默认提供 525.147.05-centos7 的镜像，其他镜像需要参考[向火种节点仓库上传镜像](./push_image_to_repo.md) 
 
-        - Red Hat 系统 ，示例：`525.105.17-rhel8.4`
-        - Ubuntu 系统，示例：`535-5.15.0-1043-nvidia-ubuntu22.04`
-        - CentOS 系统，示例： `525.147.05-centos7`
+        - Red Hat 系统，例如 `525.105.17-rhel8.4`
+        - Ubuntu 系统，例如 `535-5.15.0-1043-nvidia-ubuntu22.04`
+        - CentOS 系统，例如 `525.147.05-centos7`
 
-5. __Driver.RepoConfig.ConfigMapName__ ：用来记录 GPU Operator 的离线 yum 源配置文件名称，当使用预置的离线包时，
-   global 集群可直接执行如下命令，工作集群 __参考 Global 集群任意节点的 yum 源配置__ 。
+5. __Driver.RepoConfig.ConfigMapName__ ：用来记录 GPU Operator 的离线 yum 源配置文件名称，
+   当使用预置的离线包时，global 集群可直接执行如下命令，工作集群 __参考 Global 集群任意节点的 yum 源配置__ 。
     
     - global 集群配置
 
         ```sh
-        kubectl create configmap local-repo-config  -n gpu-operator --from-file=CentOS-Base.repo=/etc/yum.repos.d/extension.repo
+        kubectl create configmap local-repo-config -n gpu-operator --from-file=CentOS-Base.repo=/etc/yum.repos.d/extension.repo
         ```
    
     - 工作集群配置
@@ -105,9 +108,12 @@ __DevicePlugin.enable__ ：配置是否启用 kubernentes [DevicePlugin](https:/
             name = kubean extension 1
             ```
         
-        2. 复制上述 __extension.repo__ 文件中的内容，在待部署 GPU Operator 的集群的 __gpu-operator__ 命名空间下，新建名为 __local-repo-config__ 的配置文件，可参考[创建配置项](../../configmaps-secrets/create-configmap.md)进行创建。
+        2. 复制上述 __extension.repo__ 文件中的内容，在待部署 GPU Operator 的集群的 __gpu-operator__ 命名空间下，
+           新建名为 __local-repo-config__ 的配置文件，可参考[创建配置项](../../configmaps-secrets/create-configmap.md)进行创建。
 
-            **注意：配置 __key__ 值必须为 __CentOS-Base.repo__ , __value__ 值点离线源配置文件 __extension.repo__ 中的内容**。
+            !!! note
+
+                配置 __key__ 值必须为 __CentOS-Base.repo__ , __value__ 值点离线源配置文件 __extension.repo__ 中的内容。
 
     其它操作系统或内核可参考如下链接创建 yum 源文件：
 
@@ -122,17 +128,18 @@ __DevicePlugin.enable__ ：配置是否启用 kubernentes [DevicePlugin](https:/
 
 3. __Toolkit.repository__ ：所在的镜像仓库，默认为 __nvcr.m.daocloud.io__ 仓库。
 
-4. __Toolkit.version__ ：Toolkit 镜像的版本。默认使用 centos 的镜像，如果使用ubuntu，需要手动修改 addon 的yaml，将centos，改成ubuntu。具体型号参考:https://catalog.ngc.nvidia.com/orgs/nvidia/teams/k8s/containers/container-toolkit/tags
+4. __Toolkit.version__ ：Toolkit 镜像的版本。默认使用 centos 的镜像，如果使用ubuntu，需要手动修改 addon 的 yaml，
+   将 centos 改成 ubuntu。具体型号参考 [NVIDIA Container Toolkit](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/k8s/containers/container-toolkit/tags)。
 
 #### MIG 配置参数
 
 详细配置方式请参考[开启 MIG 功能](mig/create_mig.md)
 
 1. __MigManager.enabled__ ：是否启用 MIG 能力特性。
-2. **MigManager.Config.name**: MIG 的切分配置文件名，用于定义 MIG 的（GI ,CI）切分策略。
+2. **MigManager.Config.name**: MIG 的切分配置文件名，用于定义 MIG 的（GI, CI）切分策略。
    默认为 __default-mig-parted-config__ 。自定义参数参考[开启 MIG 功能](mig/create_mig.md)。
 3. __Mig.strategy__ ：节点上 GPU 卡的 MIG 设备的公开策略。NVIDIA 提供了两种公开 MIG 设备的策略：
-   __single__ 、 __mixed__ 策略，详情参考：[NVIDIA GPU 卡模式说明](index.md)。
+   __single__ 、 __mixed__ 策略，详情参考 [NVIDIA GPU 卡模式说明](index.md)。
 
 #### Node-Feature-Discovery 配置参数
 

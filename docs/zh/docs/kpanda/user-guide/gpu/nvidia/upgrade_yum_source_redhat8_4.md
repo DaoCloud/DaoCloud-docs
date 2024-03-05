@@ -11,21 +11,23 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 1. 用户已经在平台上安装了 v0.12.0 及以上版本的 addon 离线包。
 2. 待部署 GPU Operator 的集群节点 OS 必须为 Red Hat 8.4，且内核版本完全一致。
 3. 准备一个能够和待部署 GPU Operator 的集群网络能够联通的文件服务器，如 nginx 或 minio。
-4. 准备一个能够访问互联网、待部署 GPU Operator 的集群和文件服务器的节点，且节点上已经完成 [Docker 的安装](../../../../install/community/kind/online.md#安装-docker)。
+4. 准备一个能够访问互联网、待部署 GPU Operator 的集群和文件服务器的节点，且节点上已经完成
+   [Docker 的安装](../../../../install/community/kind/online.md#安装-docker)。
 5. Global 集群的节点必须为 Red Hat 8.4 4.18.0-305.el8.x86_64。
 
 ## 操作步骤
 
-本文以 Red Hat 8.4 4.18.0-305.el8.x86_64 节点为例，介绍如何基于 Global 集群任意节点构建 Red Hat 8.4 离线 yum 源包，并在安装 Gpu Operator 时，通过 `RepoConfig.ConfigMapName` 参数来使用。
+本文以 Red Hat 8.4 4.18.0-305.el8.x86_64 节点为例，介绍如何基于 Global 集群任意节点构建 Red Hat 8.4 离线 yum 源包，
+并在安装 Gpu Operator 时，通过 `RepoConfig.ConfigMapName` 参数来使用。
 
-### 步骤一：下载火种节点中的 yum 源
+### 下载火种节点中的 yum 源
 
 以下操作在 global 集群的 master 节点上执行。
 
 1. 使用 ssh 或其它方式进入 global 集群内任一节点执行如下命令：
 
     ```bash
-    cat /etc/yum.repos.d/extension.repo #查看 extension.repo 中的内容。
+    cat /etc/yum.repos.d/extension.repo #查看 extension.repo 中的内容
     ```
 
     预期输出如下：
@@ -71,7 +73,7 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
     reposync  -p redhat-base-repo  -n --repoid=extension-2
     ```
 
-### 步骤二：下载 elfutils-libelf-devel-0.187-4.el8.x86_64.rpm 包
+### 下载 elfutils-libelf-devel-0.187-4.el8.x86_64.rpm 包
 
 以下操作在联网节点执行操作，在操作前，您需要保证联网节点和 Global 集群 master 节点间的网络联通性。
 
@@ -93,7 +95,7 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
     scp  elfutils-libelf-devel-0.187-4.el8.x86_64.rpm root@10.6.175.10:~/redhat-base-repo/extension-2/Packages/
     ```
 
-### 步骤三：生成本地 yum repo
+### 生成本地 yum repo
 
 以下操作在步骤一中 global 集群的 master 节点上执行。
 
@@ -113,7 +115,7 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
 至此，您已经生成了内核为 `4.18.0-305.el8.x86_64` 的离线的 yum 源： __redhat-base-repo__ 。
 
-### 步骤四：将本地生成的 yum repo 上传至文件服务器
+### 将本地生成的 yum repo 上传至文件服务器
 
 本操作示例采用的是 DCE5 火种节点内置的 Minio 作为文件服务器，用户可基于自身情况选择文件服务器。Minio 相关信息如下：
 
@@ -135,7 +137,7 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
     预期输出如下：
 
-    ```bash
+    ```console
     Added `minio` successfully.
     ```
 
@@ -150,7 +152,7 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
     预期输出如下：
 
-    ```bash
+    ```console
     Bucket created successfully `minio/redhat-base`.
     ```
 
@@ -162,7 +164,7 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
     预期输出如下：
 
-    ```bash
+    ```console
     Access permission for `minio/redhat-base` is set to `download` 
     ```
 
@@ -172,7 +174,7 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
     mc cp redhat-base-repo minio/redhat-base --recursive
     ```
 
-### 步骤五：在集群创建配置项用来保存 yum 源信息
+### 在集群创建配置项用来保存 yum 源信息
 
 本步骤在待部署 GPU Operator 集群的控制节点上进行操作。
 

@@ -5,11 +5,12 @@
 ## 前提条件
 
 1. 火种节点及其组件状态运行正常。
-1. 准备一个能够访问互联网和火种节点的节点，且节点上已经完成 [Docker 的安装](../../../../install/community/kind/online.md#安装-docker)。
+1. 准备一个能够访问互联网和火种节点的节点，且节点上已经完成
+   [Docker 的安装](../../../../install/community/kind/online.md#安装-docker)。
 
 ## 操作步骤
 
-### 步骤一：在联网节点获取离线镜像
+### 在联网节点获取离线镜像
 
 以下操作在联网节点上进行。
 
@@ -37,7 +38,7 @@
     scp  nvidia-driver.tar root@10.6.175.10:/root
     ```
 
-### 步骤二：推送镜像到火种节点仓库
+### 推送镜像到火种节点仓库
 
 以下操作在火种节点上进行。
 
@@ -65,10 +66,10 @@
     docker tag <image-name> <registry-url>/<repository-name>:<tag>
     ```
 
-    `<image-name>` 是上一步 nvidia 镜像的名称，
-    `<registry-url>` 是火种节点上 Registry 服务的地址，
-    `<repository-name>` 是您要推送到的仓库名称，
-    `<tag>` 是您为镜像指定的标签。
+    - `<image-name>` 是上一步 nvidia 镜像的名称，
+    - `<registry-url>` 是火种节点上 Registry 服务的地址，
+    - `<repository-name>` 是您要推送到的仓库名称，
+    - `<tag>` 是您为镜像指定的标签。
 
     例如：
 
