@@ -9,7 +9,7 @@
 
 > 存储依赖 hwameistor
 
-**报错信息**
+### 报错信息
 
 ```info
 {"type": "server", "timestamp": "2022-12-18T10:47:08,573Z", "level": "ERROR", "component": "o.e.m.f.FsHealthService", "cluster.name": "mcamel-common-es-cluster-masters", "node.name": "mcamel-common-es-cluster-masters-es-masters-0", "message": "health check of [/usr/share/elasticsearch/data/nodes/0] failed", "cluster.uuid": "afIglgTVTXmYO2qPFNvsuA", "node.id": "nZRiBCUZQymQVV1son34pA" ,
@@ -34,7 +34,7 @@
 "at java.lang.Thread.run(Thread.java:833) [?:?]"] }
 ```
 
-**解决方式**
+### 解决方式
 
 1. 扩容 PVC（从 1Gi 修改为 10Gi）
 
@@ -99,7 +99,7 @@
 
 此图中 __*-write__ 为别名，例如 __jaeger-span-write__ ，需要对此别名进行处理
 
-查看业务索引模板中使用的别名 __rollover_alias 对应值__ 
+查看业务索引模板中使用的别名 __rollover_alias 对应值__
 
 ![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/faq-es-2.png)
 
@@ -150,6 +150,7 @@ k8s:1.21.1
 kind：1.23.6
 runc version 1.1.0
 ```
+
 ## 报错 __Terminating due to java.lang.OutOfMemoryError: Java heap space__ 
 
 **完整的报错信息如下：**
@@ -202,7 +203,7 @@ kubectl edit elasticsearch mcamel-common-es-cluster-masters -n mcamel-system
 
 如果 es 在此节点，可以将ES进程杀掉恢复。
 
-## 数据写入 __Elasticsearch__ 时报错 __status:429, es_rejected_execution_exception__ 
+## 数据写入 __Elasticsearch__ 时报错 __status:429__ 
 
 **完整的报错信息如下：**
 

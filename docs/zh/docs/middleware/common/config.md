@@ -14,11 +14,11 @@
 
     ![list](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/common/images/s3config.png)
 
-    - **名称**：用户自定义，用于标示配置项；
+    - **名称** ：用户自定义，用于标示配置项；
 
-    - **备份类型**：该配置具有两个选项，默认为 __托管MinIO__，将在列表中展示所有中间件 MinIO 列表中的实例；选择 __S3__ 可使用外部存储，用户需要自行输入外部存储的地址，地址结构类似：http://172.30.120.201:30456；
+    - **备份类型** ：该配置具有两个选项，默认为 __托管 MinIO__，将在列表中展示所有中间件 MinIO 列表中的实例；选择 __S3__ 可使用外部存储，用户需要自行输入外部存储的地址，地址结构类似：`http://172.30.120.201:30456`
 
-    - **Access_Key、Secret_Key**：该项需要在 MinIO 的管理页面中获取，步骤如下：
+    - **Access_Key、Secret_Key** ：该项需要在 MinIO 的管理页面中获取，步骤如下：
 
         1. 在 MinIO 实例中点击访问地址进入管理界面；
 
@@ -32,7 +32,7 @@
 
             ![list](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/common/images/cfg06.png)
 
-    - **Bucket 名称**：该名称用于定义备份所需的对象存储桶，可在MinIO管理平台中获取，如下图所示：
+    - **Bucket 名称** ：该名称用于定义备份所需的对象存储桶，可在MinIO管理平台中获取，如下图所示：
 
         ![list](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/common/images/cfg07.png)
 
