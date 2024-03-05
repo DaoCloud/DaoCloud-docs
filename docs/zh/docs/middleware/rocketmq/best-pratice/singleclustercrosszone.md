@@ -4,7 +4,7 @@
 
 客户机房环境为单一 k8s 集群横跨 __机房A__ 、 __机房B__ ，期望可以部署一套 3 主 3 从 RocketMQ 实现跨机房服务高可用，当任一机房整体离线时，RocketMQ 仍可以正常提供服务。
 
-![mutizone](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/crosszone01.png){ width=700px}
+![mutizone](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/crosszone01.png){ width=700px }
 
 ## RocketMQ 5.1.4 各组件镜像地址
 
@@ -54,7 +54,11 @@ RocketMQ 5.0 通过 Dledger Controller 实现 broker 高可用自动主从切换
     enableAutoInSyncReplicas=true
     ```
 
+<<<<<<< HEAD
     ![mutizone](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/crosszone03.png){ width=700px }
+=======
+![mutizone](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/crosszone03.png){ width=700px }
+>>>>>>> 737fbb978 (update rocketmq docs)
 
 2. 完成创建后，修改 CR，并 重启 broker sts：
 
@@ -250,6 +254,12 @@ Controller 运行于机房 B，基于 Dledger Controller 的主从转换机制�
 2. 谨慎使用 sts 的 __删除__ 操作：删除重建 broker 会导致配置在实例中的调度策略丢失，但不会丢失配置在 CR 的策略，
    因此建议谨慎使用 __删除__ 操作。 __重启__ sts 的操作不会造成以上的丢失情况。
 
+<<<<<<< HEAD
+=======
+1. broker 角色升级失败：经实际测试，controller 稳定性不是很好，broker 的 slave -> master 自动升级有一定几率失败，可通过重启 controller 的方式，即可解决该问题。
+2. 谨慎使用 sts 的 __删除__ 操作：删除重建 broker 会导致配置在实例中的调度策略丢失，但不会丢失配置在 CR 的策略，因此建议谨慎使用 __删除__ 操作。 __重启__ sts 的操作不会造成以上的丢失情况。
+
+>>>>>>> 737fbb978 (update rocketmq docs)
     ![mutizone](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/crosszone06.png){ width=700px }
 
 3. 机房离线导致 console 无法获取数据：如果采用 2 副本 console，一个机房离线可能导致 console 无法连接 name_srv。
@@ -265,7 +275,11 @@ Controller 运行于机房 B，基于 Dledger Controller 的主从转换机制�
         ./mqadmin clusterList -n 127.0.0.1:9876
         ````
 
+<<<<<<< HEAD
         ![mutizone](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/crosszone07.png){ width=700px }
+=======
+    ![mutizone](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/crosszone07.png){ width=700px }
+>>>>>>> 737fbb978 (update rocketmq docs)
 
         - BID = 0：表示该节点为 Master
         - BID <> 0：表示该节点为 slave

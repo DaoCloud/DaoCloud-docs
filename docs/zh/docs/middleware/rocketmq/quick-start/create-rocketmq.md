@@ -1,8 +1,10 @@
 # 创建 RocketMQ 实例
 
-1. 点击一级导航栏选择 __中间件 > RocketMQ 消息队列__  。
+本页说明创建 RocketMQ 实例的操作步骤。
 
-    ![RocketMQ](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/rocketmq00.png){ width=1000px}
+1. 点击左侧导航栏选择 __中间件__ -> __RocketMQ 消息队列__  。
+
+    ![RocketMQ](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/rocketmq00.png){ width=1000px }
 
 2. 进入目标工作空间，点击 __新建实例__ 。
 
@@ -10,9 +12,10 @@
     - 集群 / 命名空间：选择实例部署的位置。
     - 安装环境检测：如未通过安装环境检测，需要根据提示安装组件之后方可进行下一步。
 
-    ![RocketMQ](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/rocketmq01.png){ width=1000px}
+    ![RocketMQ](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/rocketmq01.png){ width=1000px }
 
-3. 参考下方信息填写配置规格，然后点击下一步。
+3. 参考下方信息填写配置规格，然后点击 __下一步__ 。
+
     - 部署模式在实例创建之后不可更改
     - 生产模式下建议采用高可用部署模式
     - 高可用模式下需要至少 4 个副本
@@ -20,9 +23,9 @@
     - 存储容量：每个磁盘具有多少容量。实例创建之后不可调低
     - 每副本磁盘数：为每个副本提供多少个次盘。实例创建之后不可调低。
 
-    ![RocketMQ](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/rocketmq02.png){ width=1000px}
+    ![RocketMQ](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/rocketmq02.png){ width=1000px }
 
-4. 参考下方信息填写服务设置，点击下一步。
+4. 参考下方信息填写服务设置，点击 __下一步__ 。
 
     - 集群内访问：只能在同一集群内部访问服务
     - 节点端口：通过节点的 IP 和静态端口访问服务，支持从集群外部访问服务
@@ -32,14 +35,14 @@
     - Local：流量只能转发到本节点上的 Pod
     - 控制台账号：访问此新建实例时需要用到的用户名、密码
 
-    ![RocketMQ](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/rocketmq03.png){ width=1000px}
+    ![RocketMQ](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/rocketmq03.png){ width=1000px }
 
-5. 确认实例配置信息无误，点击确认完成创建。
+5. 确认实例配置信息无误，点击 __确定__ 完成创建。
 
-    ![RocketMQ](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/rocketmq04.png){ width=1000px}
+    ![RocketMQ](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/rocketmq04.png){ width=1000px }
 
 6. 返回实例列表页查看实例是否创建成功。
 
-    - 创建中的实例状态为未就绪，等所有相关容器成功启动之后状态变为运行中。
+    创建中的实例状态为 __未就绪__ ，等所有相关容器成功启动之后状态变为 __运行中__ 。
 
-    ![RocketMQ](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/rocketmq05.png){ width=1000px}
+    ![RocketMQ](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/rocketmq05.png){ width=1000px }

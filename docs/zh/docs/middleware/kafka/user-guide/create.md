@@ -33,7 +33,7 @@ hide:
 
 5. 确认实例配置信息无误，点击 __确认__ 完成创建。
 
-    ![点击确认](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/create05.png)
+    ![点击 __确定__ ](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/create05.png)
 
 6. 在实例列表页查看实例是否创建成功。刚创建的实例状态为 __未就绪__ ，等几分钟后该状态变为 __运行中__ 。
 

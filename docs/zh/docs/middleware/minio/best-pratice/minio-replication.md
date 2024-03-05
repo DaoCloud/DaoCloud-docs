@@ -36,8 +36,8 @@ MinIO 的控制台（Console）提供了一个图形化界面，通过它可以�
 
 1. 登录待备份集群的页面控制台，进入左侧导航栏的 Site Replication，点击 **Add Sites**
 
-    ![minio 灾备](../images/minio-rc-01.png){ width=1000px}
+    ![minio 灾备](../images/minio-rc-01.png){ width=1000px }
 
 2. 填写当前 MinIO 集群的地址以及目标 MinIO 集群的地址，完成后点击 **Save**
 
-    ![minio 灾备](../images/minio-rc-02.png){ width=1000px}
+    ![minio 灾备](../images/minio-rc-02.png){ width=1000px }

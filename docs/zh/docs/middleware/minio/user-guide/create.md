@@ -76,7 +76,7 @@ hide:
 
 6. 确认实例配置信息无误，点击 __确认__ 完成创建。
 
-    ![点击确认](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/minio/images/create05.png)
+    ![点击 __确定__ ](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/minio/images/create05.png)
 
 7. 返回实例列表页查看实例是否创建成功。
 
