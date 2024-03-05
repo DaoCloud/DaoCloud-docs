@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # DCE 5.0 服务网格中 Istio 与 K8s 版本对应情况
 
 | Istio 版本 | 支持的 Kubernetes 版本 | 已测试，但还不支持 |
