@@ -1,48 +1,56 @@
-# Upgrading the Offline Service Mesh Module
+# Offline Upgrade Service Mesh Module
 
-This page explains how to install or upgrade the service mesh module after [downloading](../../download/modules/mspider.md) it.
+This page explains how to install or upgrade after [downloading the Service Mesh module](../../download/modules/mspider.md).
 
 !!! info
 
-    The term "mspider" mentioned in the following commands or scripts refers to the internal development code name for the service mesh module.
+    The __mspider__ mentioned in the following commands or scripts is the internal development code name of the Service Mesh module.
 
-## Loading Images from the Installation Package
+## Load Image from Installation Package
 
-You can load the images in one of the following two ways. When a container registry exists in the environment, it is recommended to use __chart-syncer__ to synchronize the images to the registry as it is more efficient and convenient.
+You can load the image in one of the following two ways. When there is a container registry in the environment, it is recommended to use __chart-syncer__ to synchronize the image to the container registry, as this method is more efficient and convenient.
 
-### Synchronizing Images to a Container Registry using chart-syncer
+### Synchronize Image to Container Registry with chart-syncer
 
-1. Create __load-image.yaml__ .
+1. Create load-image.yaml
 
-    !!! note
+    !!! note  
 
-        All parameters in this YAML file are required. You need a private container registry and modify the relevant configurations.
+        All parameters in this YAML file are required. You need a private container registry and modify the relevant configuration.
 
     === "Chart Repo Installed"
 
-        If a chart repo is already installed in the current environment, __chart-syncer__ also supports exporting the chart as a tgz file.
+        If the current environment has installed the chart repo, chart-syncer also supports exporting the chart as a tgz file.
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: mspider-offline # The relative path to the directory where the __charts-syncer__ command is executed, not the relative path between this YAML file and the offline package
+          intermediateBundlesPath: mspider-offline # (1)
         target:
-          containerRegistry: 10.16.10.111 # Change this to your container registry URL
-          containerRepository: release.daocloud.io/mspider # Change this to your container repository
+          containerRegistry: 10.16.10.111 # (2)
+          containerRepository: release.daocloud.io/mspider # (3)
           repo:
-            kind: HARBOR # This can also be any other supported Helm Chart repository type
-            url: http://10.16.10.111/chartrepo/release.daocloud.io # Change this to your chart repo URL
+            kind: HARBOR # (4)
+            url: http://10.16.10.111/chartrepo/release.daocloud.io # (5)
             auth:
-              username: "admin" # Your container registry username
-              password: "Harbor12345" # Your container registry password
+              username: "admin" # (6)
+              password: "Harbor12345" # (7)
           containers:
             auth:
-              username: "admin" # Your container registry username
-              password: "Harbor12345" # Your container registry password
+              username: "admin" # (6)
+              password: "Harbor12345" # (7)
         ```
+
+        1. Relative path to run the charts-syncer command, not the relative path between this YAML file and the offline package
+        2. Change to your container registry url
+        3. Change to your container registry
+        4. Can be any other supported Helm Chart repository category
+        5. Change to chart repo url
+        6. Your container registry username
+        7. Your container registry password
 
     === "Chart Repo Not Installed"
 
-        If a chart repo is not installed in the current environment, __chart-syncer__ also supports exporting the chart as a tgz file and storing it in the specified path.
+        If the current environment does not have a chart repo installed, chart-syncer also supports exporting the chart as a tgz file and storing it in a specified path.
 
         ```yaml title="load-image.yaml"
         source:
@@ -59,106 +67,108 @@ You can load the images in one of the following two ways. When a container regis
               password: "Harbor12345" # (6)
         ```
 
-        1. The relative path to the directory where the __charts-syncer__ command is executed, not the relative path between this YAML file and the offline package
-        2. Change this to your container registry URL
-        3. Change this to your container repository
-        4. Chart local path
+        1. Relative path to run the charts-syncer command, not the relative path between this YAML file and the offline package
+        2. Change to your container registry url
+        3. Change to your container registry
+        4. Local path of the chart
         5. Your container registry username
         6. Your container registry password
 
-1. Run the command to synchronize the images.
+1. Run the command to synchronize the image.
 
     ```bash
-    ~ charts-syncer sync --config load-image.yaml
+    charts-syncer sync --config load-image.yaml
     ```
 
-### Loading Directly into Docker or containerd
+### Directly Load with Docker or containerd
 
-Extract and load the image files.
+Unpack and load the image file.
 
-1. Uncompress the tar archive.
+1. Unpack the tar compressed file.
 
     ```bash
-    ~ tar xvf mspider.bundle.tar
+    tar xvf mspider.bundle.tar
     ```
 
-    After a successful extraction, you will have three files:
+    After successful unpacking, you will get 3 files:
 
     - hints.yaml
     - images.tar
     - original-chart
 
-2. Load the images from the local directory to Docker or containerd.
+2. Load the image from local to Docker or containerd.
 
     === "Docker"
 
         ```bash
-        ~ docker load -i images.tar
+        docker load -i images.tar
         ```
 
     === "containerd"
 
         ```bash
-        ~ ctr -n k8s.io image import images.tar
+        ctr -n k8s.io image import images.tar
         ```
 
 !!! note
 
-    Each node needs to perform Docker or containerd image loading operations. After loading is complete, tag the images to maintain consistency in the registry and repository used during installation.
+    Each node needs to perform the Docker or containerd image loading operation,
+    after loading, you need to tag the image to keep the Registry, Repository consistent with the installation.
 
-## Upgrading
+## Upgrade
 
-Before upgrading, it is important to backup the mesh configuration file, which includes the `--set` parameters, to avoid configuration loss during the upgrade.
+Before upgrading, make sure to back up the grid's configuration file, which is the `--set` parameter, to avoid problems caused by configuration loss during the upgrade.
 
-### Checking the Existence of the mspider-release Repository Locally
+### Check if mspider-release repository exists locally
 
 ```bash
-~ helm repo list | grep mspider-release
+helm repo list | grep mspider-release
 ```
 
-If the result is empty or shows the following prompt, proceed to the next step. Otherwise, skip the next step and proceed with the upgrade directly.
+If the result is empty or shows as follows, proceed to the next step; otherwise, skip the next step and proceed directly to the update.
 
 ```none
 Error: no repositories to show
 ```
 
-### Adding the Helm Repository
+### Add Helm Repo
 
 ```bash
-~ helm repo add mspider-release http://{harbor_url}/chartrepo/{project}
+helm repo add mspider-release http://{harbor_url}/chartrepo/{project}
 ```
 
-Update the helm repository for the service mesh.
+Update the helm repo for the Service Mesh.
 
 ```bash
-~ helm repo update mspider-release
+helm repo update mspider-release
 ```
 
-Choose the version of the service mesh you want to install (it is recommended to install the latest version).
+Choose the version of the Service Mesh you want to install (it is recommended to install the latest version).
 
 ```bash
-# Update the image versions in the mspider-release repository
-~ helm update repo
+# Update the image version in the mspider-release repository
+helm update repo
 
-# Get the latest versions
-~ helm search repo mspider-release/mspider --versions
+# Get the latest version
+helm search repo mspider-release/mspider --versions
 NAME                      CHART VERSION  APP VERSION  DESCRIPTION
 mspider-release/mspider   v0.20.1        v0.20.1      Mspider management plane application, deployed ...
 ...
 ```
 
-### Backing up the `--set` Parameters
+### Back up `--set` Parameters
 
-Before upgrading the service mesh version, it is advisable to back up the `--set` parameters of the older version using the following command.
+Before upgrading the Service Mesh version, it is recommended to run the following command to back up
+the `--set` parameters of the old version.
 
 ```bash
-~ helm get values mspider -n mspider-system -o yaml > bak.yaml
+helm get values mspider -n mspider-system -o yaml > bak.yaml
 ```
 
-### Updating mspider
+### Update mspider
 
 ```bash
-~ helm upgrade --install --create-namespace \
+helm upgrade --install --create-namespace \
     -n mspider-system mspider mspider-release/mspider \
     --cleanup-on-fail \
     --version=v0.20.1 \
@@ -166,16 +176,17 @@ Before upgrading the service mesh version, it is advisable to back up the `--set
     -f mspider.yaml
 ```
 
-### Executing `helm upgrade` 
+### Run `helm upgrade`
 
-Before upgrading, it is recommended to update the __global.imageRegistry__ field in __bak.yaml__ with the current container registry address.
+Before upgrading, it is recommended to update the __global.imageRegistry__ field in bak.yaml
+to the current container registry address.
 
 ```bash
-~ export imageRegistry={YOUR_IMAGE_REGISTRY}
+export imageRegistry={YOUR_IMAGE_REGISTRY}
 ```
 
 ```bash
-~ helm upgrade mspider mspider-release/mspider \
+helm upgrade mspider mspider-release/mspider \
     -n mspider-system \
     -f ./bak.yaml \
     --set global.imageRegistry=$imageRegistry \

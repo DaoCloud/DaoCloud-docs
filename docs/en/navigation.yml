@@ -764,10 +764,10 @@ nav:
                   - FAQs: mspider/intro/faq.md
                   - Service Mesh Release Notes: mspider/intro/release-notes.md
               - Install, Config, and Upgrade:
-                  - Install: mspider/install/install.md
+                  - Install Service Mesh: mspider/install/install.md
                   - Upgrade Istio: mspider/install/istio-update.md
                   - Upgrade Sidecar: mspider/install/sidecar-update.md
-                  - Upgrade: mspider/install/offline-upgrade.md
+                  - Offline Upgrade Service Mesh: mspider/install/offline-upgrade.md
               - Create/Delete Mesh:
                   - Create managed/private mesh: mspider/user-guide/service-mesh/README.md
                   - Create external mesh: mspider/user-guide/service-mesh/external-mesh.md
