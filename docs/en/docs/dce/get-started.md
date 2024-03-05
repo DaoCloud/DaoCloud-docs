@@ -7,16 +7,24 @@ hide:
 
 # Get Started
 
-In the current era, cloud native containerization technology is rapidly evolving and making waves worldwide.
-To seize this market trend and capitalize on significant business opportunities, it is crucial to stay in
-sync with the pulse of the times. Transforming data centers into Kubernetes (K8s) infrastructure undoubtedly
-represents the best pathway to achieving the cloud native landscape.
+In the ever-evolving landscape of technology, the rise of artificial intelligence, machine learning,
+and cloud native solutions has created a wave of innovation and opportunity. To stay ahead in this
+dynamic market, businesses must embrace the latest trends and technologies.
 
-DCE 5.0, built on K8s as its development foundation, offers highly scalable and powerful features for
-production-grade functionality, enabling enterprises to effortlessly build and manage distributed applications.
-Leveraging the inherent cloud native capabilities of DCE 5.0, businesses can fully leverage the advantages of
-both on-premises and cloud environments, optimizing resource utilization, improving the reliability and
-elasticity of IT systems, and significantly accelerating application delivery.
+By transitioning your data center to a Kubernetes foundation, you open the door to a world of possibilities.
+Kubernetes enables businesses to streamline operations, improve scalability, and enhance agility, providing
+a solid framework for future growth and development. Embracing this technology is not just a strategic move,
+but a necessary step towards revolutionizing the way you conduct business.
+
+DCE 5.0, built on the powerful Kubernetes platform, offers a comprehensive set of features designed to
+meet the demands of enterprise operations. This platform empowers organizations to efficiently manage
+and oversee distributed applications, maximizing productivity and performance. By leveraging the
+cloud native capabilities of DCE 5.0, businesses can optimize resource utilization, enhance infrastructure
+resilience, and accelerate application deployment, ultimately driving operational efficiency and success.
+Embrace DCE 5.0 to unlock the full potential of your enterprise and thrive in the AI era.
+
+*[DCE]: An abbreviation for DaoCloud Enterprise, a next-generation AI computing platform
+*[AI]: DCE 5.0 has an integrated intelligent computing engine for efficient management of LLM jobs, datasets, GPU, CPU, and memory resources
 
 !!! tip
 
