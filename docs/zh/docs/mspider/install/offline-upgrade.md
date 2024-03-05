@@ -77,7 +77,7 @@
 1. 执行同步镜像命令。
 
     ```bash
-    ~ charts-syncer sync --config load-image.yaml
+    charts-syncer sync --config load-image.yaml
     ```
 
 ### Docker 或 containerd 直接加载
@@ -87,7 +87,7 @@
 1. 解压 tar 压缩包。
 
     ```bash
-    ~ tar xvf mspider.bundle.tar
+    tar xvf mspider.bundle.tar
     ```
 
     解压成功后会得到 3 个文件：
@@ -101,13 +101,13 @@
     === "Docker"
 
         ```bash
-        ~ docker load -i images.tar
+        docker load -i images.tar
         ```
 
     === "containerd"
 
         ```bash
-        ~ ctr -n k8s.io image import images.tar
+        ctr -n k8s.io image import images.tar
         ```
 
 !!! note
@@ -122,7 +122,7 @@
 ### 检查本地是否存在 mspider-release 仓库
 
 ```bash
-~ helm repo list | grep mspider-release
+helm repo list | grep mspider-release
 ```
 
 若返回结果为空或如下提示，则进行下一步；反之则跳过下一步，直接进行更新即可。
@@ -134,23 +134,23 @@ Error: no repositories to show
 ### 添加 helm 仓库
 
 ```bash
-~ helm repo add mspider-release http://{harbor_url}/chartrepo/{project}
+helm repo add mspider-release http://{harbor_url}/chartrepo/{project}
 ```
 
 更新服务网格的 helm 仓库。
 
 ```bash
-~ helm repo update mspider-release
+helm repo update mspider-release
 ```
 
 选择您想安装的服务网格版本（建议安装最新版本）。
 
 ```bash
 # 更新 mspider-release 仓库内的镜像版本
-~ helm update repo
+helm update repo
 
 # 获取最新的版本
-~ helm search repo mspider-release/mspider --versions
+helm search repo mspider-release/mspider --versions
 NAME                      CHART VERSION  APP VERSION  DESCRIPTION
 mspider-release/mspider   v0.20.1        v0.20.1      Mspider management plane application, deployed ...
 ...
@@ -161,13 +161,13 @@ mspider-release/mspider   v0.20.1        v0.20.1      Mspider management plane a
 在升级服务网格版本之前，建议您执行如下命令，备份老版本的 `--set` 参数。
 
 ```bash
-~ helm get values mspider -n mspider-system -o yaml > bak.yaml
+helm get values mspider -n mspider-system -o yaml > bak.yaml
 ```
 
 ### 更新 mspider
 
 ```bash
-~ helm upgrade --install --create-namespace \
+helm upgrade --install --create-namespace \
     -n mspider-system mspider mspider-release/mspider \
     --cleanup-on-fail \
     --version=v0.20.1 \
@@ -180,11 +180,11 @@ mspider-release/mspider   v0.20.1        v0.20.1      Mspider management plane a
 升级前建议您覆盖 bak.yaml 中的 __global.imageRegistry__ 字段为当前使用的镜像仓库地址。
 
 ```bash
-~ export imageRegistry={YOUR_IMAGE_REGISTRY}
+export imageRegistry={YOUR_IMAGE_REGISTRY}
 ```
 
 ```bash
-~ helm upgrade mspider mspider-release/mspider \
+helm upgrade mspider mspider-release/mspider \
     -n mspider-system \
     -f ./bak.yaml \
     --set global.imageRegistry=$imageRegistry \
