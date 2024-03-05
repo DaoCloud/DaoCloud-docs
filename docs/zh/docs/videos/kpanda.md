@@ -74,16 +74,15 @@
 
 ## GPU
 
-### 通过 DCE 5.0 UI 使用 Nvidia vGPU 能力
+### 使用 Nvidia vGPU 能力
+
+参阅 [GPU Operator 离线安装](../kpanda/user-guide/gpu/nvidia/install_nvidia_driver_of_operator.md)、
+[安装 NVIDIA vGPU](../kpanda/user-guide/gpu/nvidia/vgpu/vgpu_addon.md)、
+[构建 CentOS 7.9 离线 yum 源](../kpanda/user-guide/gpu/nvidia/upgrade_yum_source_centos7_9.md)、
+[构建 Red Hat 8.4 离线 yum 源](../kpanda/user-guide/gpu/nvidia/upgrade_yum_source_redhat8_4.md) 文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/gpu.mp4" preload="metadata" poster="images/gpu.jpg"></video>
-</div>
-
-### Nvidia vGPU 使用教程
-
-<div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/vgpu.mp4" preload="metadata" poster="images/kpanda-vgpu.png"></video>
 </div>
 
 ## HwameiStor 存储
