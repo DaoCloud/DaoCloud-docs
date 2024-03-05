@@ -9,7 +9,7 @@ hide:
 
 1. 在消息队列中，点击右侧的 __...__ 按钮，在弹出菜单中选择 __更新实例__ 。
 
-    ![选择更新实例](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/update01.png)
+    ![选择 __更新实例__ ](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/update01.png)
 
 2. 修改基本信息后，点击 __下一步__ 。
 

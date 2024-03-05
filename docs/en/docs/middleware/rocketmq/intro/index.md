@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # What is RocketMQ
 
 RocketMQ is a low-latency, high-concurrency, highly available, and highly reliable

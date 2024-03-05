@@ -4,7 +4,7 @@
 
 客户机房环境为单一 k8s 集群横跨 __机房A__ 、 __机房B__ ，期望可以部署一套 3 主 3 从 RocketMQ 实现跨机房服务高可用，当任一机房整体离线时，RocketMQ 仍可以正常提供服务。
 
-![mutizone](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/crosszone01.png){ width=700px}
+![mutizone](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/rocketmq/images/crosszone01.png){ width=700px }
 
 ## RocketMQ 5.1.4 各组件镜像地址
 
