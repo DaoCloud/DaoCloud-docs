@@ -27,7 +27,7 @@ containerd 配置非安全仓库有两种方法，一种是从 `1.4` 版本之�
 
 ### 新方法
 
-​编辑 `/etc/containerd/config.toml` 文件中的 `config_path` 配置项，默认值是 `/etc/containerd/certs.d`。
+​编辑 `/etc/containerd/config.toml` 文件中的 __config_path__ 配置项，默认值是 `/etc/containerd/certs.d`。
 
 ```yaml
 [plugins."io.containerd.grpc.v1.cri".registry]

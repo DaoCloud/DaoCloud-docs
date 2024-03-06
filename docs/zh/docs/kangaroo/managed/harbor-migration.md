@@ -8,7 +8,7 @@
 1. 原始 Harbor 环境：使用 Localpath 作为存储方式的 Harbor 容器环境。
 2. 新集群环境：包含新的 PostgreSQL 和 Minio 存储环境。
 3. 合理规划存储等资源
-4. 待迁移 Harbor ：在迁移过程中，**将原始 Harbor 设置为只读模式**，确保数据的一致性和完整性。
+4. 待迁移 Harbor ：在迁移过程中，**将原始 Harbor 设置为只读模式** ，确保数据的一致性和完整性。
 
 ## 步骤 1：迁移 PostgreSQL
 
@@ -49,7 +49,7 @@
 在这一步骤中，我们将迁移原始 Harbor 存储的镜像数据至 Minio 存储系统。请按照以下步骤逐步进行：
 
 1. 在新的集群环境中下载并安装 rclone 工具。rclone 是一个强大的命令行工具，可用于在不同对象存储之间进行数据同步和复制。
-   您可以从 rclone 官方网站（https://rclone.org/）获取安装说明。
+   您可以从 [rclone 官方网站](https://rclone.org/)获取安装说明。
 
 2. 配置 rclone，设置连接信息以连接到 Minio 存储。打开终端或命令提示符，并执行命令 `rclone config`，这将引导您完成配置过程。
    请根据提示，输入配置名称、Minio 存储类型以及访问密钥等信息。确保您已经正确设置了连接信息，并且可以成功连接到 Minio 存储桶。
@@ -62,8 +62,8 @@
       rclone copy <原始Harbor镜像存储目录> <rclone配置名称>:<Minio存储桶名称>/harbor/images/
     ```
 
-5. 请将尖括号中的参数替换为实际的值。例如，如果 rclone 配置名称为`minio`，Minio 存储桶名称为`harbor- images`，
-   原始 Harbor 镜像存储目录为`/data/docker/registry/`，则命令应为：
+5. 请将尖括号中的参数替换为实际的值。例如，如果 rclone 配置名称为 `minio`，
+   Minio 存储桶名称为`harbor- images`，原始 Harbor 镜像存储目录为 `/data/docker/registry/`，则命令应为：
 
     ```
     rclone copy /data/docker/registry/ minio:harbor-images/harbor/images/
@@ -78,7 +78,7 @@
 在这一步中，我们将基于新的 PostgreSQL 和 Minio 环境创建一个全新的 Harbor 实例，并确保 Harbor 在新集群环境中正常运行。
 
 1. 在新的集群环境中，使用新的 PostgreSQL 和 Minio 连接信息创建一个全新的 Harbor 实例。
-   您可以使用镜像仓库组件进行[实例创建](https://docs.daocloud.io/kangaroo/managed/harbor/)，
+   您可以使用镜像仓库组件进行[实例创建](./harbor.md)，
    需要注意的是，创建时填写账号密码需要和原始环境中的保持一致，同时需要选择新环境中的数据库实例以及 minio 存储。
 2. 确保新的 Harbor 实例已成功安装并配置。
 3. 在新的 Harbor 实例中验证镜像数据是否已经成功迁移至 Minio 存储。

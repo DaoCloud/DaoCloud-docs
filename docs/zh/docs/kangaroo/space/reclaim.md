@@ -12,11 +12,11 @@
 您可以为当前镜像空间创建镜像回收规则。
 所有镜像回收规则独立计算并且适用于所有符合条件的镜像，目前 DCE 5.0 镜像仓库最多支持 15 条回收规则。
 
-1. 使用具有 Workspace Admin 角色的用户登录 DCE 5.0，点击左侧导航栏`镜像空间`，点击列表中的某个名称。
+1. 使用具有 Workspace Admin 角色的用户登录 DCE 5.0，点击左侧导航栏 __镜像空间__ ，点击列表中的某个名称。
 
     ![切换实例](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/space01.png)
 
-1. 点击`镜像回收`页签，点击`创建回收规则`按钮。
+1. 点击 __镜像回收__ 页签，点击 __创建回收规则__ 按钮。
 
     ![点击按钮](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/reclaim01.png)
 
@@ -24,11 +24,10 @@
 
         只有 Harbor 仓库才支持镜像回收
 
-
 1. 按提示选择镜像，配置规则。
 
     ![创建规则](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/reclaim02.png)
 
-1. 返回镜像回收列表，点击右侧的 `⋮`，可以禁用、编辑或删除回收规则。
+1. 返回镜像回收列表，点击右侧的 __⋮__ ，可以禁用、编辑或删除回收规则。
 
     ![点击按钮](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/reclaim03.png)

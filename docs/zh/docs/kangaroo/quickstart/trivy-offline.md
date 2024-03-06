@@ -10,7 +10,7 @@ hide:
 ## 下载离线镜像包
 
 `trivy` 有两个版本，目前都需要下载版本`2`，在 `https://github.com/aquasecurity/trivy-db` 项目中已经不提供版本 `2`
-直接下载离线的 `trivy-db` 包了，被打包成了 [`oci` 包](https://github.com/aquasecurity/trivy-db/pkgs/container/trivy-db)。
+直接下载离线的 __trivy-db__ 包了，被打包成了 [`oci` 包](https://github.com/aquasecurity/trivy-db/pkgs/container/trivy-db)。
 
 如下使用 `oras` 工具来下载，先安装 `oras`, 注意区分操作系统版本，如下是下载 `linux` 平台的：
 
@@ -50,8 +50,8 @@ trivy:
 
 ![edit-harborcluster.png](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/edit-harborcluster.png)
 
-1. 从`集群列表`进入某个集群，选择`自定义资源`
-1. 选择 `harborcluster` 的资源
+1. 从 __集群列表__ 进入某个集群，选择 __自定义资源__
+1. 选择 __harborcluster__ 的资源
 1. 进入托管 Harbor 所在 Namespace
 1. 选择 YAML
 1. 选择 v1beta1 版本
@@ -69,7 +69,7 @@ trivy:
 
 ![upload-trivy-db.png](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/upload-trivy-db.png)
 
-1. 从`集群列表`进入某个集群
+1. 从 __集群列表__ 进入某个集群
 2. 进入托管 Harbor 所在 Namespace
 3. 进入 `trivy` 的工作负载
 4. 点击控制台进入容器（如果有多个副本，每个副本都需要设置）
@@ -80,9 +80,9 @@ trivy:
 
 ![upload-trivy-offline-db.png](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/upload-trivy-offline-db.png)
 
-1. 从`集群列表`进入某个集群
+1. 从 __集群列表__ 进入某个集群
 2. 进入托管 Hharbor 所在 Namespace
 3. 进入 `trivy` 的工作负载
 4. 点击上传文件
-5. 在弹窗中写入上传路径 `/home/scanner/.cache/trivy/db`，点击`确认`。
-6. 进入选择文件页面，分别上传 `trivy.db` 和 `metadata.json` 文件。
+5. 在弹窗中写入上传路径 `/home/scanner/.cache/trivy/db`，点击 __确认__
+6. 进入选择文件页面，分别上传 `trivy.db` 和 `metadata.json` 文件

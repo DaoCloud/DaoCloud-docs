@@ -59,7 +59,7 @@ Error response from daemon: Get "https://{ip}/v2/": x509: cannot validate certif
 ## Harbor Operator 安装不成功
 
 `Harbor Operator` 安装不成功需要检查这几点，`cert-manager`是否安装成功，`installCRDs` 是否设置为`true`。
-安装`Harbor operator` 的 `helm` 任务是否成功。
+安装`Harbor operator` 的 __helm__ 任务是否成功。
 
 ## 创建托管 Harbor 可以使用 redis cluster 模式吗
 
@@ -134,7 +134,7 @@ Error response from daemon: Get "https://{ip}/v2/": x509: cannot validate certif
 
 !!! tip
 
-    - 上述 A1、A2 都在托管 Harbor 所在的集群上排查问题，目标集群通过如下页面路径查看：`仓库实例` -> `概览` -> `部署位置`
+    - 上述 A1、A2 都在托管 Harbor 所在的集群上排查问题，目标集群通过如下页面路径查看： __仓库实例__ -> __概览__ -> __部署位置__ 
     - 上述 A3 在 `kpanda-global-cluster` 集群上验证。
 
 ## 创建 `Project` 或上传镜像后发现页面上的镜像空间和可用存储未增加
@@ -190,7 +190,7 @@ status:
 ## 在 `Kpanda` 镜像选择器中选中一个私有 `Project` 镜像但部署时提示镜像拉取失败
 
 - A1：能在镜像选择器中看到私有 `Project` 表明 `Project` 和 `Workspace` 已经进行了绑定，
-  此时需要去镜像部署的目标集群 `namespace` 中确认是否生成名为 `registry-secret` 的 `secret`。
+  此时需要去镜像部署的目标集群 `namespace` 中确认是否生成名为 `registry-secret` 的 __secret__ 。
 
     ```shell
     kubectl -n default get secret registry-secret
@@ -201,7 +201,7 @@ status:
     registry-secret   kubernetes.io/dockerconfigjson   1      78d
     ```
 
-- A2：如果确认已经生成名为 `registry-secret` 的 `secret`，则需要确认 `secret` 中的 `dockerconfigjson` 是否正确。
+- A2：如果确认已经生成名为 `registry-secret` 的 __secret__ ，则需要确认 `secret` 中的 __dockerconfigjson__ 是否正确。
 
     ```shell
     kubectl get secret registry-secret -o jsonpath='{.data.*}'| base64 -d | jq

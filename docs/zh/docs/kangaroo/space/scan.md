@@ -23,15 +23,15 @@
 
 对于关联和集成的仓库，将出现在镜像列表中。您可以按需手动扫描某些镜像。
 
-1. 进入镜像仓库的`镜像列表`中，选择一个实例和镜像空间，点击某一个镜像。
+1. 进入镜像仓库的 __镜像列表__ 中，选择一个实例和镜像空间，点击某一个镜像。
 
     ![镜像列表](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/scan01.jpg)
 
-2. 在镜像详情列表中，点击列表右侧的 `⋮`，在弹出菜单中选择`扫描`。
+2. 在镜像详情列表中，点击列表右侧的 __⋮__ ，在弹出菜单中选择 __扫描__ 。
 
     ![扫描](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/scan02.jpg)
 
-3. 系统开始扫描镜像，通常状态依次为`排队中`、`扫描中`、`扫描完成`。
+3. 系统开始扫描镜像，通常状态依次为 __排队中__ 、 __扫描中__ 、 __扫描完成__ 。
 
     ![排队中](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/scan03.jpg)
 
@@ -45,7 +45,7 @@
     - 不支持：此镜像不支持扫描。
     - 排队中：扫描任务已安排但尚未运行。
     - 扫描中：扫描任务正在进行中，并显示进度条。
-    - 查看日志：扫描任务未能完成。点击`查看日志`以查看相关日志。
+    - 查看日志：扫描任务未能完成。点击 __查看日志__ 以查看相关日志。
     - 扫描完成：扫描任务成功完成。
 
 4. 扫描完成后，将光标悬浮在扫描完成的比例条上，可以查看扫描详情。
@@ -58,11 +58,11 @@
 
 具体操作步骤为：
 
-1. 以平台管理员登录镜像仓库，点击左侧底部的`仓库集成`。
+1. 以平台管理员登录镜像仓库，点击左侧底部的 __仓库集成__ 。
 
     ![仓库集成](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/harbor01.jpg)
 
-2. 在集成的仓库列表中，光标悬浮于某个仓库上，点击`原生 Harbor` 图标。
+2. 在集成的仓库列表中，光标悬浮于某个仓库上，点击 __原生 Harbor__ 图标。
 
     ![仓库集成](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/harbor02.jpg)
 

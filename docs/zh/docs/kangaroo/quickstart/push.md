@@ -17,7 +17,11 @@
     docker login --username=<镜像仓库登录名> <镜像仓库地址>
     ```
 
-    示例：`docker login --username=admin http://test.lrf02.kangaroo.com`
+    示例：
+
+    ```bash
+    docker login --username=admin http://test.lrf02.kangaroo.com
+    ```
 
     在返回结果中输入镜像仓库密码（创建托管 Harbor 时设置的密码）。
 
@@ -29,7 +33,11 @@
     docker tag <镜像仓库名称>:<镜像版本号> <镜像仓库地址>/<镜像空间名称>/<镜像仓库名称>:<镜像版本号>
     ```
 
-    示例：`docker tag nginx:latest test.lrf02.kangaroo.com/library/nginx:latest`
+    示例：
+
+    ```bash
+    docker tag nginx:latest test.lrf02.kangaroo.com/library/nginx:latest
+    ```
 
 1. 推送镜像
 
@@ -39,7 +47,11 @@
     docker push <镜像仓库地址>/<镜像空间名称>/<镜像仓库名称>:<镜像版本号>
     ```
 
-    示例：`docker push test.lrf02.kangaroo.com/library/nginx:latest`
+    示例：
+
+    ```bash
+    docker push test.lrf02.kangaroo.com/library/nginx:latest
+    ```
 
 1. 拉取镜像
 
@@ -49,13 +61,17 @@
     docker pull <镜像仓库地址>/<镜像空间名称>/<镜像仓库名称>:<镜像版本号>
     ```
 
-    示例：`docker pull test.lrf02.kangaroo.com/library/nginx:latest`
+    示例：
+
+    ```bash
+    docker pull test.lrf02.kangaroo.com/library/nginx:latest
+    ```
 
 ## 推送方式二
 
 前提：已创建托管 Harbor 和镜像空间。
 
-1. 在托管 Harbor 列表页面中，点击目标镜像仓库右侧的 `...`，点击`原生 Harbor`，进入原生 Harbor 的登录页。
+1. 在托管 Harbor 列表页面中，点击目标镜像仓库右侧的 __...__ ，点击 __原生 Harbor__ ，进入原生 Harbor 的登录页。
 
     ![原生 Harbor](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/push01.png)
 

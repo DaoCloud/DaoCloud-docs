@@ -6,7 +6,7 @@
 
 您可以参阅以下步骤，查看 Artifacts 的详情。
 
-1. 选择一个 Harbor 实例，进入`镜像空间`页面，点击某个镜像空间的名称。
+1. 选择一个 Harbor 实例，进入 __镜像空间__ 页面，点击某个镜像空间的名称。
 
     ![进入镜像空间](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/desc01.png)
 
@@ -26,11 +26,11 @@
 
 您可以参阅以下步骤，用 Markdown 自定义每个镜像的描述信息。
 
-1. 接着上一节的步骤，点击`描述信息`页签，点击`编辑`按钮。
+1. 接着上一节的步骤，点击 __描述信息__ 页签，点击 __编辑__ 按钮。
 
     ![edit](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/desc05.png)
 
-2. 使用 Markdown 语法编写描述信息后，点击`保存`。
+2. 使用 Markdown 语法编写描述信息后，点击 __保存__ 。
 
     ![save](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/desc06.png)
 
