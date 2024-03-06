@@ -2,9 +2,9 @@
 
 DCE 5.0 组件的升级包含升级 DCE 5.0 产品功能模块、升级 DCE 5.0 基础设施模块
 
-其中 DCE 5.0 由容器管理、全局管理、可观测性等十几个子模块构成，主要指 [mainfest.yaml](commercial/manifest.md) 文件中的 `components` 部分。
+其中 DCE 5.0 由容器管理、全局管理、可观测性等十几个子模块构成，主要指 [manifest.yaml](commercial/manifest.md) 文件中的 `components` 部分。
 
-DCE 5.0 基础设施模块的组件特指 [mainfest.yaml](commercial/manifest.md) 文件中的 `infrastructures` 部分。
+DCE 5.0 基础设施模块的组件特指 [manifest.yaml](commercial/manifest.md) 文件中的 `infrastructures` 部分。
 
 ## 前提条件
 
@@ -36,12 +36,11 @@ tar -xvf offline-v0.9.0-amd64.tar
 !!! note
 
     - 需要确保[集群配置文件](commercial/cluster-config.md) 与安装时使用的参数一致
-
     - 目前仅对 imagesAndCharts 的 builtin 方式进行了测试
 
 文件在解压后的离线包 `offline/sample` 目录下，参考配置文件如下：
 
-```yaml
+```yaml title="clusterConfig.yaml"
 apiVersion: provision.daocloud.io/v1alpha3
 kind: ClusterConfig
 metadata:
@@ -81,16 +80,16 @@ spec:
 
 1. official-service(if omit or empty), builtin or external
 
-### 第 3 步：配置 mainfest.yaml（可选）
+### 第 3 步：配置 manifest.yaml（可选）
 
 文件在解压后的离线包 `offline/sample` 目录下。
 
 #### DCE 5.0 产品功能模块配置
 
-DCE 5.0 产品功能模块的组件特指 [mainfest.yaml](commercial/manifest.md) 文件中的 `components` 部分。
+DCE 5.0 产品功能模块的组件特指 [manifest.yaml](commercial/manifest.md) 文件中的 `components` 部分。
 如果有些产品组件不需要升级，可以在对应组件下选择关闭。如果采用以下配置，更新时将不会对 Kpanda（容器管理）进行升级：
 
-```yaml
+```yaml title="manifest.yaml"
   components:
     kpanda:
       enable: false
@@ -100,9 +99,9 @@ DCE 5.0 产品功能模块的组件特指 [mainfest.yaml](commercial/manifest.md
 
 #### DCE 5.0 基础设施模块配置
 
-DCE 5.0 基础设施模块的组件特指 [mainfest.yaml](commercial/manifest.md) 文件中的 `infrastructures` 部分，如下配置就是基础设施中的 `hwameiStor` 组件：
+DCE 5.0 基础设施模块的组件特指 [manifest.yaml](commercial/manifest.md) 文件中的 `infrastructures` 部分，如下配置就是基础设施中的 `hwameiStor` 组件：
 
-```yaml
+```yaml title="manifest.yaml"
   infrastructures:
     hwameiStor:
       enable: true
@@ -112,7 +111,7 @@ DCE 5.0 基础设施模块的组件特指 [mainfest.yaml](commercial/manifest.md
 
 !!! note
 
-    目前仅支持对当前环境中已经安装的产品组件进行升级，不存在的组件将会跳过升级步骤
+    目前仅支持对当前环境中已经安装的产品组件进行升级，不存在的组件将会跳过升级步骤。
 
 ### 第 4 步：开始升级
 
@@ -168,7 +167,11 @@ Global Flags:
 升级参数说明：
 
 - `install-app` 或 `cluster-create`，代表安装 DCE 5.0 的安装模式类型。如果最初的环境是通过 `cluster-create` 来安装的，则升级时也采用这个命令
-- `--upgrade` 可以简写为 `-u`，目前支持升级 DCE 5.0 产品功能模块（gproduct）与基础设施模块（infrastructure）
+- `--upgrade` 可以简写为 `-u`，目前支持升级：
+    - DCE 5.0 产品功能模块（gproduct）
+    - 基础设施模块（infrastructure）
+    - 本地存储模块（hwameistor）
+    - 中间件模块（middleware）
 - 如果需要一起升级产品功能模块和基础设施模块，则可以指定参数 `--upgrade infrastructure,gproduct`
 - 安装器 v0.12.0 支持了 `--multi-arch` 参数，主要是用户在当前环境存在多架构镜像时，进行升级过程中添加该参数可以避免覆盖原有的多架构镜像。
 

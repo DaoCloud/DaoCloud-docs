@@ -43,7 +43,7 @@ tar -xvf offline-v0.9.0-amd64.tar
 
 The file is located under the `offline/sample` directory after extracting the offline package. Refer to the following sample configuration:
 
-```yaml
+```yaml title="clusterConfig.yaml"
 apiVersion: provision.daocloud.io/v1alpha3
 kind: ClusterConfig
 metadata:
@@ -83,7 +83,7 @@ spec:
 
 1. `official-service` (if omitted or empty), `builtin`, or `external`
 
-### Step 3: Configure mainfest.yaml (Optional)
+### Step 3: Configure manifest.yaml (Optional)
 
 The file is located under the `offline/sample` directory after extracting the offline package.
 
@@ -94,7 +94,7 @@ of the [manifest.yaml](commercial/manifest.md) file. If you don't want to upgrad
 you can disable them. For example, if you want to skip the upgrade for Kpanda (container management),
 use the following configuration:
 
-```yaml
+```yaml title="manifest.yaml"
   components:
     kpanda:
       enable: false
@@ -108,7 +108,7 @@ The components specific to the infrastructure modules of DCE 5.0 are defined in 
 of the [manifest.yaml](commercial/manifest.md) file. For example, the following configuration is for the
 `hwameiStor` component in the infrastructure module:
 
-```yaml
+```yaml title="manifest.yaml"
   infrastructures:
     hwameiStor:
       enable: true
@@ -141,9 +141,15 @@ Run the upgrade command:
 
 Explanation of upgrade parameters:
 
-- `install-app` or `cluster-create`: Represents the installation mode type of DCE 5.0. If the initial environment was installed using `cluster-create`, use this command for the upgrade as well.
-- `--upgrade`, can be abbreviated as `-u`: Currently supports upgrading DCE 5.0 product functionality modules (`gproduct`) and infrastructure modules (`infrastructures`).
-- To upgrade both the product functionality modules and the infrastructure modules together, specify the parameter `--upgrade infrastructures,gproduct`.
+- `install-app` or `cluster-create`: Represents the installation mode type of DCE 5.0.
+  If the initial environment was installed using `cluster-create`, use this command for the upgrade as well.
+- `--upgrade` can be abbreviated as `-u`, currently supporting upgrades for:
+    - DCE 5.0 product modules (gproduct)
+    - Infrastructure modules (infrastructure)
+    - Local storage modules (hwameistor)
+    - Middleware modules (middleware)
+- To upgrade both the product functionality modules and the infrastructure modules together,
+  specify the parameter `--upgrade infrastructures,gproduct`.
 - The installer v0.12.0 introduces support for the `--multi-arch` parameter.
   This parameter is mainly used when there are multiple architecture images in the current environment.
   By adding this parameter during the upgrade process, it prevents overwriting of existing multi-architecture images.
