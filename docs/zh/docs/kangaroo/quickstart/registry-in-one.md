@@ -5,20 +5,20 @@ hide:
 
 # 管理外部镜像仓库
 
-如果您有一个或多个 Harbor 、 Docker 、Jfrog Artifacty 镜像仓库，完全可以用 DCE 5.0 镜像仓库进行统一管理。视操作员的角色权限，可以使用两种方式：
+如果您有一个或多个 Harbor、Docker、Jfrog Artifacty 镜像仓库，完全可以用 DCE 5.0 镜像仓库进行统一管理。视操作员的角色权限，可以使用两种方式：
 
-- 仓库集成（工作空间）：支持 Harbor 、 Docker 、Jfrog Artifacty 三种镜像仓库类型
-- 仓库集成（管理员）：支持 Harbor 、 Docker 两种镜像仓库类型
+- 仓库集成（工作空间）：支持 Harbor、Docker、Jfrog Artifacty 三种镜像仓库类型
+- 仓库集成（管理员）：支持 Harbor、Docker 两种镜像仓库类型
 
 ## 仓库集成（工作空间）
 
-如果是 Workspace Admin，可以通过仓库集成（工作空间）功能，将现有镜像仓库关联到 DCE 平台，供工作空间的成员使用。简单的操作步骤如下：
+如果是 Workspace Admin，可以通过仓库集成（工作空间）功能，将现有镜像仓库关联到 DCE 5.0 平台，供工作空间的成员使用。简单的操作步骤如下：
 
-1. 以 Workspace Admin 角色登录，从左侧导航栏点击`仓库集成(工作空间)`，点击右上角的`仓库集成`按钮。
+1. 以 Workspace Admin 角色登录，从左侧导航栏点击 __仓库集成(工作空间)__ ，点击右上角的 __仓库集成__ 按钮。
 
     ![仓库集成(工作空间)](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/relate02.png)
 
-2. 填写表单信息后点击`确定`。
+2. 填写表单信息后点击 __确定__ 。
 
     ![填写表单](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/relate03.png)
 
@@ -33,15 +33,15 @@ hide:
 仓库集成是集中管理平台镜像仓库的入口，对于 Harbor 镜像仓库平台管理员可以通过将镜像空间与工作空间绑定的方式，
 将某个私有镜像空间分配给一个或者多个工作空间（工作空间下的命名空间）使用。或者将镜像空间设置为公开，供平台所有命名空间使用。
 
-1. 以 Admin 角色登录，在左侧导航栏点击`仓库集成(管理员)`。
+1. 以 Admin 角色登录，在左侧导航栏点击 __仓库集成(管理员)__ 。
 
     ![仓库集成](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/interg01.png)
 
-1. 点击右上角的`仓库集成`按钮。
+1. 点击右上角的 __仓库集成__ 按钮。
 
     ![仓库集成](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/interg02.png)
 
-1. 选择仓库类型，填写集成名称、仓库地址、用户名和密码后点击`确定`。
+1. 选择仓库类型，填写集成名称、仓库地址、用户名和密码后点击 __确定__ 。
 
     ![填写表单](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/interg03.jpg)
 
@@ -55,4 +55,5 @@ hide:
 
     !!! note
 
-        1. Docker Registry 镜像仓库不支持镜像空间与工作空间绑定的能力，若 Docker Registry 未设置密码，则相当于该 Docker Registry 是公开的，平台所有命名空间创建应用时均能拉取其中的全部镜像。
+        Docker Registry 镜像仓库不支持镜像空间与工作空间绑定的能力，若 Docker Registry 未设置密码，
+        则相当于该 Docker Registry 是公开的，平台所有命名空间创建应用时均能拉取其中的全部镜像。

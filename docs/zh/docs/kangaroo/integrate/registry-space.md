@@ -12,7 +12,7 @@ Harbor 提供了基于镜像空间（project）的镜像隔离功能。镜像空
 
 前提条件：已经创建或集成了一个外部 Harbor 仓库。
 
-1. 使用具有 Admin 角色的用户登录 DCE 5.0，从左侧导航栏点击`镜像仓库` -> `仓库集成(管理员)`。
+1. 使用具有 Admin 角色的用户登录 DCE 5.0，从左侧导航栏点击 __镜像仓库__ -> __仓库集成(管理员)__ 。
 
     ![仓库集成](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/integrated01.png)
 
@@ -20,11 +20,11 @@ Harbor 提供了基于镜像空间（project）的镜像隔离功能。镜像空
 
     ![点击某个名称](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/managed01.png)
 
-1. 在左侧导航栏点击`镜像空间`，在右上角点击`创建镜像空间`。
+1. 在左侧导航栏点击 __镜像空间__ ，在右上角点击 __创建镜像空间__ 。
 
     ![创建镜像空间](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/managed02.png)
 
-1. 填写镜像空间名称，勾选类型后点击`确定`。
+1. 填写镜像空间名称，勾选类型后点击 __确定__ 。
 
     ![填写](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/managed03.png)
 
@@ -32,7 +32,7 @@ Harbor 提供了基于镜像空间（project）的镜像隔离功能。镜像空
 
     ![成功](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/managed04.png)
 
-1. 找到刚创建的镜像空间，点击右侧的 `⋮`，可以执行[绑定/解绑工作空间](./bind-to-ws.md)、删除等操作。
+1. 找到刚创建的镜像空间，点击右侧的 __⋮__ ，可以执行[绑定/解绑工作空间](./bind-to-ws.md)、删除等操作。
 
     ![其他操作](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/managed05.png)
 

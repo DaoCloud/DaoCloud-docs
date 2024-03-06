@@ -17,11 +17,11 @@ DCE 5.0 镜像仓库可以让用户创建同步规则，添加目标仓库等。
 
     ![选择一个仓库](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/sync00.png)
 
-1. 在左侧导航栏，依次点击`镜像同步` -> `同步规则`，点击`创建同步规则`按钮。
+1. 在左侧导航栏，依次点击 __镜像同步__ -> __同步规则__ ，点击 __创建同步规则__ 按钮。
 
     ![点击按钮](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/sync01.png)
 
-1. 填写各项参数后点击`确定`。
+1. 填写各项参数后点击 __确定__ 。
 
     ![配置参数](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/sync02.png)
 
@@ -34,7 +34,7 @@ DCE 5.0 镜像仓库可以让用户创建同步规则，添加目标仓库等。
     - Tag：按 tag/version 过滤当前镜像空间下的资源，不填或 `**` 将匹配所有资源。
     目标镜像空间：如果不填写，镜像将被放到与源仓库相同的镜像空间中。
 
-1. 返回同步规则列表，新建的规则默认处于启用状态。点击右侧的 `⋮`，可以执行同步、编辑、禁用、删除等操作。
+1. 返回同步规则列表，新建的规则默认处于启用状态。点击右侧的 __⋮__ ，可以执行同步、编辑、禁用、删除等操作。
 
     ![更多操作](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/sync03.png)
 
@@ -44,7 +44,7 @@ DCE 5.0 镜像仓库可以让用户创建同步规则，添加目标仓库等。
 
     ![选择一个仓库](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/sync00.png)
 
-1. 在左侧导航栏，依次点击`镜像同步` -> `目标仓库`，点击`添加目标仓库`按钮。
+1. 在左侧导航栏，依次点击 __镜像同步__ -> __目标仓库__ ，点击 __添加目标仓库__ 按钮。
 
     ![点击按钮](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/target01.png)
 
@@ -54,4 +54,4 @@ DCE 5.0 镜像仓库可以让用户创建同步规则，添加目标仓库等。
 
     ![自定义](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/target03.png)
 
-1. 返回目标仓库列表，点击右侧的 `⋮`，可以执行编辑、删除等操作。
+1. 返回目标仓库列表，点击右侧的 __⋮__ ，可以执行编辑、删除等操作。
