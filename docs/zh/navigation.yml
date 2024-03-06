@@ -1277,6 +1277,7 @@ nav:
       - 开源项目索引: community/index.md
       - CloudTTY: community/cloudtty.md
       - Clusterpedia: community/clusterpedia.md
+      - DataTunerX: community/dtx.md
       - egressgateway: community/egress-gw.md
       - Fast: community/fast.md
       - FedState: community/fedstate.md
