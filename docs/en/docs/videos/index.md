@@ -5,7 +5,25 @@ hide:
 
 # Video Tutorials
 
-We have created video tutorials to help you quickly get started.
+<span style="background-image: linear-gradient(to right, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080, #ff0000); 
+    background-size: 200%; 
+    color: transparent; 
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shine 5s infinite linear;">
+    This page provides video tutorials to help you quickly get started with DCE 5.0.
+</span>
+
+<style>
+    @keyframes shine {
+        0% {
+            background-position: -200%;
+        }
+        100% {
+            background-position: 200%;
+        }
+    }
+</style>
 
 <div class="grid cards" markdown>
 

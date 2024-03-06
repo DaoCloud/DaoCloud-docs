@@ -5,7 +5,25 @@ hide:
 
 # 视频教程
 
-我们为 DCE 5.0 的各个模块制作了精良的视频教程，供大家快速上手。
+<span style="background-image: linear-gradient(to right, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080, #ff0000); 
+    background-size: 200%; 
+    color: transparent; 
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shine 5s infinite linear;">
+    我们为 DCE 5.0 的各个模块制作了精良的视频教程，供大家快速上手。
+</span>
+
+<style>
+    @keyframes shine {
+        0% {
+            background-position: -200%;
+        }
+        100% {
+            background-position: 200%;
+        }
+    }
+</style>
 
 <div class="grid cards" markdown>
 
