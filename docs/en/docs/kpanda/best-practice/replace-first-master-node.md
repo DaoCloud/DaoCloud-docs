@@ -1,56 +1,60 @@
-# 替换工作集群的首个控制节点
+# Replace the first master node of the worker cluster
 
-本文将以一个高可用三控制节点的工作集群为例。
-当工作集群的首个控制节点故障或异常时，如何替换或重新接入首个控制节点。
+This page will take a highly available three-master-node worker cluster as an example.
+When the first master node of the worker cluster fails or malfunctions,
+how to replace or reintroduce the first master node.
 
-本文的高可用集群有 3 个 Master 节点：
+This page features a highly available cluster with three master nodes.
 
 - node1 (172.30.41.161)
 - node2 (172.30.41.162)
 - node3 (172.30.41.163)
 
-假设 node1 宕机，接下来介绍如何将宕机后恢复的 node1 重新接入工作集群。
+Assuming node1 is down, the following steps will explain how to reintroduce the
+recovered node1 back into the worker cluster.
 
-## 准备工作
+## Preparations
 
-在执行替换操作之前，先获取集群资源基本信息，修改相关配置时会用到。
+Before performing the replacement operation, first obtain basic information about the cluster resources,
+which will be used when modifying related configurations.
 
 !!! note
 
-    以下获取集群资源信息的命令均在管理集群中执行。
+    The following commands to obtain cluster resource information are executed in the management cluster.
 
-1. 获取集群名称
+1. Get the cluster name
 
-    执行如下命令，找到集群对应的 clusters.kubean.io 资源：
+    Execute the following command to find the clusters.kubean.io resource corresponding to the cluster:
 
     ```shell
-    # 比如 clusters.kubean.io 的资源名称为 cluster-mini-1
-    # 则获取集群的名称
+    # For example, if the resource name of clusters.kubean.io is cluster-mini-1
+    # Get the name of the cluster
     CLUSTER_NAME=$(kubectl get clusters.kubean.io cluster-mini-1 -o=jsonpath="{.metadata.name}{'\n'}")
     ```
 
-1. 获取集群的主机清单 configmap
+1. Get the host list configmap of the cluster
 
     ```shell
     kubectl get clusters.kubean.io cluster-mini-1 -o=jsonpath="{.spec.hostsConfRef}{'\n'}"
     {"name":"mini-1-hosts-conf","namespace":"kubean-system"}
     ```
 
-1. 获取集群的配置参数 configmap
+1. Get the configuration parameters configmap of the cluster
 
     ```shell
     kubectl get clusters.kubean.io cluster-mini-1 -o=jsonpath="{.spec.varsConfRef}{'\n'}"
     {"name":"mini-1-vars-conf","namespace":"kubean-system"}
     ```
 
-## 操作步骤
+## Steps
 
-1. 调整控制平面节点顺序
+1. Adjust the order of control plane nodes
 
-    重置 node1 节点使其恢复到安装集群之前的状态（或使用新的节点），保持 node1 节点的网络连通性。
+    Reset the node1 node to restore it to the state before installing the cluster (or use a new node),
+    maintaining the network connectivity of the node1 node.
 
-    调整主机清单中 node1 节点在 kube_control_plane 、kube_node、etcd 中的顺序
-    （node1/node2/node3 -> node2/node3/node1）：
+    Adjust the order of the node1 node in the kube_control_plane, kube_node, and etcd sections in the host list
+    (node1/node2/node3 -> node2/node3/node1):
 
     ```yaml
     function change_control_plane_order() {
@@ -114,21 +118,22 @@
     change_control_plane_order
     ```
 
-1. 移除异常状态的首个 master 节点
+1. Remove the first master node in an abnormal state
 
-    调整主机清单的节点顺序后，移除 K8s 控制平面异常状态的 node1。
+    After adjusting the order of nodes in the host list, remove the node1 in an abnormal state of the K8s control plane.
 
     !!! note
 
-        如果 node1 离线或故障，则 extraArgs 须添加以下配置项，node1 在线时不需要添加。
+        If node1 is offline or malfunctioning, the following configuration items must be added to extraArgs,
+        you need not to add them when node1 is online.
 
         ```toml
-        reset_nodes=false # 跳过重置节点操作
-        allow_ungraceful_removal=true # 允许非优雅的移除操作
+        reset_nodes=false # Skip resetting node operation
+        allow_ungraceful_removal=true # Allow ungraceful removal operation
         ```
 
     ```bash
-    # 镜像 spray-job 这里可以采用加速器地址
+    # Image spray-job can use an accelerator address here
  
     SPRAY_IMG_ADDR="ghcr.m.daocloud.io/kubean-io/spray-job"
     SPRAY_RLS_2_22_TAG="2.22-336b323"
@@ -154,34 +159,36 @@
     EOF
     ```
 
-1. 手动修改集群配置，编辑更新 cluster-info
+1. Manually modify the cluster configuration, edit and update cluster-info
 
     ```bash
-    # 编辑 cluster-info
+    # Edit cluster-info
     kubectl -n kube-public edit cm cluster-info
     
-    # 1. 若 ca.crt 证书更新，则需要更新 certificate-authority-data 字段的内容
-    # 查看 ca 证书的 base64 编码：
+    # 1. If the ca.crt certificate is updated, the content of the certificate-authority-data field needs to be updated
+    # View the base64 encoding of the ca certificate:
     cat /etc/kubernetes/ssl/ca.crt | base64 | tr -d '\n'
     
-    # 2. 需改 server 字段的 IP 地址为新 first master IP, 本文档场景将使用 node2 的 IP 地址 172.30.41.162
+    # 2. Change the IP address in the server field to the new first master IP, this document will use the IP address of node2, 172.30.41.162
     ```
 
-1. 手动修改集群配置，编辑更新 kubeadm-config
+1. Manually modify the cluster configuration, edit and update kubeadm-config
 
     ```bash
-    # 编辑 kubeadm-config
+    # Edit kubeadm-config
     kubectl -n kube-system edit cm kubeadm-config
     
-    # 修改 controlPlaneEndpoint 为新 first master IP, 本文档场景将使用 node2 的 IP 地址 172.30.41.162
+    # Change controlPlaneEndpoint to the new first master IP,
+    # this document will use the IP address of node2, 172.30.41.162
     ```
 
-1. 重新扩容 master 节点并更新集群
+1. Scale up the master node and update the cluster
 
     !!! note
 
-        - 使用 `--limit` 限制更新操作仅作用于 etcd 和 kube_control_plane 节点组。
-        - 如果是离线环境，spec.preHook 需要添加 enable-repo.yml，并且 extraArgs 参数填写相关 OS 的正确 repo_list。
+        - Use `--limit` to limit the update operation to only affect the etcd and kube_control_plane node groups.
+        - If it is an offline environment, spec.preHook needs to add enable-repo.yml,
+          and the extraArgs parameter should fill in the correct repo_list for the related OS.
 
     ```bash
     cat << EOF | kubectl apply -f -
@@ -198,7 +205,9 @@
       extraArgs: --limit=etcd,kube_control_plane -e kube_version=${KUBE_VERSION}
       preHook:
         - actionType: playbook
-          action: enable-repo.yml  # 离线环境下需要添加此 yaml，并且设置正确的 repo-list(安装操作系统软件包)，以下参数值仅供参考
+          action: enable-repo.yml  # This yaml needs to be added in an offline environment,
+                                   # and set the correct repo-list (install operating system packages),
+                                   # the following parameter values are for reference only
           extraArgs: |
             -e "{repo_list: ['http://172.30.41.0:9000/kubean/centos/\$releasever/os/\$basearch','http://172.30.41.0:9000/kubean/centos-iso/\$releasever/os/\$basearch']}"
       postHook:
@@ -207,4 +216,4 @@
     EOF
     ```
 
-至此，完成了首个 Master 节点的替换。
+This completes the replacement of the first Master node.

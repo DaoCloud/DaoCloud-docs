@@ -296,6 +296,7 @@ nav:
                   - 在非主流操作系统上创建集群: kpanda/best-practice/use-otherlinux-create-custer.md
                   - DCE 4.0 -> DCE 5.0 有限场景迁移: kpanda/best-practice/dce4-5-migration.md
                   - 离线部署与升级 Kubean 向下兼容版本: kpanda/best-practice/kubean-low-version.md
+                  - 替换工作集群的首个控制节点: kpanda/best-practice/replace-first-master-node.md
           - 多云编排:
               - 介绍:
                   - 什么是多云编排: kairship/intro/index.md

@@ -276,7 +276,7 @@ nav:
                   - GPU Quota Management: kpanda/user-guide/gpu/vgpu_quota.md
                   - GPU Metrics: kpanda/user-guide/gpu/gpu-metrics.md
               - Best Practices:
-                  - Backup and Restore ETCD: kpanda/best-practice/etcd-backup.md
+                  - Back up and Restore ETCD: kpanda/best-practice/etcd-backup.md
                   - Cross-cluster Backup and Restore of MySQL Apps: kpanda/best-practice/backup-mysql-on-nfs.md
                   - Strengthen a Self-built Worker Cluster: kpanda/best-practice/hardening-cluster.md
                   - Offline Upgrade Worker Clusters: kpanda/best-practice/update-offline-cluster.md
@@ -288,6 +288,7 @@ nav:
                   - Create Cluster with Non-supported OS: kpanda/best-practice/use-otherlinux-create-custer.md
                   - Migrate DCE 4.0 to DCE 5.0: kpanda/best-practice/dce4-5-migration.md
                   - Offline Deploy and Upgrade Legacy Kubean: kpanda/best-practice/kubean-low-version.md
+                  - Replace a Master Node in Worker Cluster: kpanda/best-practice/replace-first-master-node.md
           - Multicloud Management:
               - Intro:
                   - What is Multicloud Management: kairship/intro/index.md

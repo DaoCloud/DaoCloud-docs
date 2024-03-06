@@ -5,7 +5,8 @@
 !!! note
 
     - 推荐在界面创建工作集群时即开启高可用模式，手动扩容工作集群的控制节点存在一定的操作风险，请谨慎操作。
-    - 当工作集群的首个控制节点故障或异常时，如果您想替换或重新接入首个控制节点，请参考 [替换工作集群的首个控制节点](../best-practice/replace-first-master-node.md)
+    - 当工作集群的首个控制节点故障或异常时，如果您想替换或重新接入首个控制节点，
+      请参考[替换工作集群的首个控制节点](../best-practice/replace-first-master-node.md)
 
 ## 前提条件
 
@@ -21,7 +22,7 @@
 1. 登录到容器管理平台，进入需要进行控制节点扩容的集群概览页面，在 **基本信息** 处，找到当前集群的 **被纳管集群** ，
    点击被纳管集群的名称，进入被纳管集群的概览界面。
 
-    ![img](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/add-master-node01.png)
+    ![找到被纳管集群](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/add-master-node01.png)
 
 2. 在被纳管集群的概览界面，点击 **控制台**，打开云终端控制台，并执行如下命令，找到待扩容工作集群的主机清单文件。
 
