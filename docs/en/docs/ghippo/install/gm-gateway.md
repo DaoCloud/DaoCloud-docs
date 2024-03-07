@@ -4,17 +4,26 @@ Follow the steps below to configure the National Secret Gateway for DCE 5.0.
 
 ## Software Introduction
 
-**[Tengine](https://github.com/alibaba/tengine):** Tengine is a web server project initiated by Taobao.com. Based on Nginx, it adds many advanced features and features for the needs of high-traffic websites.
+**[Tengine](https://github.com/alibaba/tengine):** Tengine is a web server project initiated by
+taobao.com. Based on Nginx, it adds many advanced features and features for the needs of high-traffic websites.
 
-**[Tongsuo](https://github.com/Tongsuo-Project/Tongsuo):** Tongsuo/Tongsuo (formerly BabaSSL) is an open source basic cryptographic library that provides modern cryptographic algorithms and secure communication protocols for storage, network, key management, privacy computing and many other business cases provide the basic capabilities of underlying cryptography to realize the privacy, integrity and authenticity of data in the process of transmission, use and storage, and provide privacy protection in the data life cycle. and security protection capabilities.
+**[Tongsuo](https://github.com/Tongsuo-Project/Tongsuo):** Formerly known as BabaSSL,
+Tongsuo is an open-source cryptographic library that offers a range of modern cryptographic algorithms
+and secure communication protocols. It is designed to support a variety of use cases, including
+storage, network security, key management, and privacy computing. By providing foundational
+cryptographic capabilities, Tongsuo ensures the privacy, integrity, and authenticity of data
+during transmission, storage, and usage. It also enhances security throughout the data lifecycle,
+offering robust privacy protection and security features.
 
 ## Preparation
 
-A Linux host with Docker installed and internet access
+A Linux host with Docker installed and internet access.
 
 ## Compile and install Tengine & Tongsuo
 
-> Note: This configuration is for reference only
+!!! note
+
+    This configuration is for reference only.
 
 ```Dockerfile
 FROM docker.m.daocloud.io/debian:11.3
@@ -62,11 +71,16 @@ CMD ["nginx", "-g", "daemon off;"]
 docker build -t tengine:0.0.1 .
 ```
 
-## Generate SSL certificates (SM2 and RSA certificates)
+## Generate SSL certificates
 
-> Note: This certificate is only applicable to the test environment
+Generate SM2 and RSA certificates for SSL.
 
-You can [refer to the official document](https://www.yuque.com/tsdoc/ts/xuxk18ckbtpgvfdi) to use Tongsuo to generate an SSL certificate, or visit <https://www.gmssl.cn/gmssl/index.jsp?go =CA> application.
+!!! note
+
+    This certificate is only applicable to the test environment.
+
+You can refer to [the official documentation of Yuque](https://www.yuque.com/tsdoc/ts/xuxk18ckbtpgvfdi) to use Tongsuo to generate SSL certificates,
+or visit [the GM SSL Lab](https://www.gmssl.cn/gmssl/index.jsp?go=CA) to apply for SM2 certificates.
 
 ### SM2 Credentials
 
@@ -86,9 +100,10 @@ You can [refer to the official document](https://www.yuque.com/tsdoc/ts/xuxk18ck
 
 ## Configure SSL certificate for nginx
 
-Both SM2 and RSA certificates are supported. The advantage of dual certificates is: when the browser does not support the national secret certificate, it will automatically switch to the RSA certificate.
+Both SM2 and RSA certificates are supported. The advantage of dual certificates is:
+when the browser does not support the national secret certificate, it will automatically switch to the RSA certificate.
 
-For more detailed configuration, please refer to [Official Documentation](https://www.yuque.com/tsdoc/ts/eziua1).
+For more detailed configuration, refer to [Yuque Official Documentation](https://www.yuque.com/tsdoc/ts/eziua1).
 
 ```shell
 # Enter the nginx configuration file storage directory

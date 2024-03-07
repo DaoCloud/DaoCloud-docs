@@ -1,6 +1,6 @@
 # 自定义 DCE 5.0 反向代理服务器地址
 
-## 设置步骤
+具体设置步骤如下：
 
 1.  检查全局管理 helm 仓库是否存在。
 
@@ -24,7 +24,7 @@
 3.  设置环境变量，方便在下文中使用。
 
     ```shell
-    # 您的反向代理地址，例如： `export DCE_PROXY="https://demo-alpha.daocloud.io"` 
+    # 您的反向代理地址，例如 `export DCE_PROXY="https://demo-alpha.daocloud.io"` 
     export DCE_PROXY="https://domain:port"
 
     # helm --set 参数备份文件

@@ -4,17 +4,22 @@
 
 ## 软件介绍
 
-**[Tengine](https://github.com/alibaba/tengine):** Tengine 是由淘宝网发起的 Web 服务器项目。它在 Nginx 的基础上，针对大访问量网站的需求，添加了很多高级功能和特性。
+**[Tengine](https://github.com/alibaba/tengine):** Tengine 是由淘宝网发起的 Web 服务器项目。它在 Nginx 的基础上，
+针对大访问量网站的需求，添加了很多高级功能和特性。
 
-**[Tongsuo](https://github.com/Tongsuo-Project/Tongsuo):** 铜锁/Tongsuo（原 BabaSSL）是一个提供现代密码学算法和安全通信协议的开源基础密码库，为存储、网络、密钥管理、隐私计算等诸多业务场景提供底层的密码学基础能力，实现数据在传输、使用、存储等过程中的私密性、完整性和可认证性，为数据生命周期中的隐私和安全提供保护能力。
+**[Tongsuo](https://github.com/Tongsuo-Project/Tongsuo):** 铜锁/Tongsuo（原 BabaSSL）是一个提供现代密码学算法和安全通信协议的开源基础密码库，
+为存储、网络、密钥管理、隐私计算等诸多业务场景提供底层的密码学基础能力，实现数据在传输、使用、存储等过程中的私密性、完整性和可认证性，
+为数据生命周期中的隐私和安全提供保护能力。
 
 ## 准备工作
 
-一台安装了 Docker 的 Linux 主机，并且确保它能访问互联网
+一台安装了 Docker 的 Linux 主机，并且确保它能访问互联网。
 
 ## 编译和安装 Tengine & Tongsuo
 
-> 注：此配置仅供参考
+!!! note
+
+    此配置仅供参考。
 
 ```Dockerfile
 FROM docker.m.daocloud.io/debian:11.3
@@ -64,9 +69,12 @@ docker build -t tengine:0.0.1 .
 
 ## 生成 SSL 证书（SM2 和 RSA 证书）
 
-> 注：此证书仅适用于测试环境
+!!! note
 
-您可以[参考官方文档](https://www.yuque.com/tsdoc/ts/xuxk18ckbtpgvfdi)使用 Tongsuo 生成 SSL 证书，或者访问 <https://www.gmssl.cn/gmssl/index.jsp?go=CA> 申请。
+    此证书仅适用于测试环境。
+
+您可以参考[语雀官方文档](https://www.yuque.com/tsdoc/ts/xuxk18ckbtpgvfdi)使用 Tongsuo 生成 SSL 证书，
+或者访问[国密 SSL 实验室申请 SM2 证书](https://www.gmssl.cn/gmssl/index.jsp?go=CA)。
 
 ### SM2 证书
 
@@ -132,7 +140,9 @@ server {
 }
 ```
 
-## 重新加载 nginx，使其配置生效
+## 重新加载 nginx
+
+重新加载，使其配置生效：
 
 ```shell
 nginx -s reload
