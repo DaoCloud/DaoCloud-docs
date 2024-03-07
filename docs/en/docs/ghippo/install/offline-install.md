@@ -5,7 +5,7 @@ This page explains how to install or upgrade the global management module after
 
 !!! info
 
-    The word `ghippo` appearing in the commands or scripts below is the internally developed code name for the global management module.
+    `ghippo` appearing in the commands or scripts below is the internally developed code name for the global management module.
 
 ## Synchronize image to the container registry
 
@@ -13,52 +13,65 @@ First, synchronize the image to the specified container registry through chart-s
 
 1. Create load-image.yaml
 
-    !!! note
+    !!! note  
 
-        All parameters in this YAML file are required. You need a private container registry and modify related configurations.
+        All parameters in this YAML file are required. You need a private image repository and modify the relevant configurations.
 
-    === "chart repo installed"
+    === "Chart repo installed"
 
-        If the current environment has installed the chart repo, chart-syncer also supports exporting the chart as a tgz file.
+        If the current environment has installed a chart repo, chart-syncer also supports exporting the chart as a tgz file.
 
-        ```yaml
+        ```yaml title="load-image.yaml"
         source:
-        intermediateBundlesPath: ghippo-offline # relative path to charts-syncer
-                                        # But not the relative path between this YAML file and the offline package
+          intermediateBundlesPath: ghippo-offline # (1)
         target:
-        containerRegistry: 10.16.10.111 # need to be changed to your container registry url
-        containerRepository: release.daocloud.io/ghippo # need to be changed to your container registry
-        repo:
-          kind: HARBOR # Can also be any other supported Helm Chart repository class
-          url: http://10.16.10.111/chartrepo/release.daocloud.io # need to change to chart repo url
-          auth:
-            username: "admin" # Your container registry username
-            password: "Harbor12345" # Your container registry password
-        containers:
-          auth:
-            username: "admin" # Your container registry username
-            password: "Harbor12345" # Your container registry password
+          containerRegistry: 10.16.10.111 # (2)
+          containerRepository: release.daocloud.io/ghippo # (3)
+          repo:
+            kind: HARBOR # (4)
+            url: http://10.16.10.111/chartrepo/release.daocloud.io # (5)
+            auth:
+              username: "admin" # (6)
+              password: "Harbor12345" # (7)
+          containers:
+            auth:
+              username: "admin" # (6)
+              password: "Harbor12345" # (7)
         ```
 
-    === "chart repo not installed"
+        1. Path relative to where the charts-syncer command is executed, not relative to this YAML file and the offline package
+        2. Change to your image repository URL
+        3. Change to your image repository
+        4. Can also be any other supported Helm Chart repository type
+        5. Change to the chart repo URL
+        6. Your image repository username
+        7. Your image repository password
 
-        If the chart repo is not installed in the current environment, chart-syncer also supports exporting the chart as a tgz file and storing it in the specified path.
+    === "Chart repo not installed"
 
-        ```yaml
+        If the current environment does not have a chart repo installed, chart-syncer also supports exporting the chart as a tgz file and storing it in a specified path.
+
+        ```yaml title="load-image.yaml"
         source:
-        intermediateBundlesPath: ghippo-offline # relative path to charts-syncer
-                                    # But not the relative path between this YAML file and the offline package
+          intermediateBundlesPath: ghippo-offline # (1)
         target:
-        containerRegistry: 10.16.10.111 # need to be changed to your container registry url
-        containerRepository: release.daocloud.io/ghippo # need to be changed to your container registry
-        repo:
-          kind: LOCAL
-          path: ./local-repo # chart local path
-        containers:
-          auth:
-          username: "admin" # Your container registry username
-          password: "Harbor12345" # Your container registry password
+          containerRegistry: 10.16.10.111 # (2)
+          containerRepository: release.daocloud.io/ghippo # (3)
+          repo:
+            kind: LOCAL
+            path: ./local-repo # (4)
+          containers:
+            auth:
+              username: "admin" # (5)
+              password: "Harbor12345" # (6)
         ```
+
+        1. Path relative to where the charts-syncer command is executed, not relative to this YAML file and the offline package
+        2. Change to your image repository URL
+        3. Change to your image repository
+        4. Local path of the chart
+        5. Your image repository username
+        6. Your image repository password
 
 1. Run the synchronous image command.
 
@@ -108,17 +121,17 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
 
     When upgrading from v0.11.x (or lower) to v0.12.0 (or higher), you need to change all keycloak keys in __bak.yaml__ to keycloakx.
 
-    Example modification of this key:
+    Replace the key:
 
-    ```yaml
+    ```yaml title="bak.yaml"
     USER-SUPPLIED VALUES:
     keycloak:
         ...
     ```
 
-    change into:
+    with:
 
-    ```yaml
+    ```yaml title="bak.yaml"
     USER-SUPPLIED VALUES:
     keycloakx:
         ...
@@ -233,10 +246,10 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
 
         ```shell
         helm upgrade ghippo ghippo/ghippo \
-        -n ghippo-system\
-        -f ./bak.yaml \
-        --set global.imageRegistry=$imageRegistry
-        --version 0.9.0
+          -n ghippo-system \
+          -f ./bak.yaml \
+          --set global.imageRegistry=$imageRegistry \
+          --version 0.9.0
         ```
 
 === "upgrade via chart package"
@@ -264,8 +277,8 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
         ```
 
         ```shell
-        helm upgrade ghippo .\
-        -n ghippo-system\
-        -f ./bak.yaml \
-        --set global.imageRegistry=$imageRegistry
+        helm upgrade ghippo . \
+          -n ghippo-system \
+          -f ./bak.yaml \
+          --set global.imageRegistry=$imageRegistry
         ```

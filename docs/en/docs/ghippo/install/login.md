@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# Log in
+# Login
 
 Before a user uses a new system, there is no data in the system, and the system cannot identify the new user. In order to identify the user identity and bind user data, the user needs an account that can uniquely identify the user identity.
 
@@ -13,7 +13,7 @@ The user logs in through the account/password, and the system verifies whether t
 
 !!! note
 
-     If the user does not perform any operation within 24 hours after logging in, the login status will be automatically logged out. If the logged-in user is always active, the logged-in state will persist.
+    If the user does not perform any operation within 24 hours after logging in, the login status will be automatically logged out. If the logged-in user is always active, the logged-in state will persist.
 
 The simple process of user login is shown in the figure below.
 
@@ -34,5 +34,3 @@ class success,fail k8s
 ```
 
 The user login screen is as shown in the figure below. For the specific login screen, please refer to the actual product.
-
-

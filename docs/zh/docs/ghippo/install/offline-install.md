@@ -24,21 +24,29 @@
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: ghippo-offline # 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
+          intermediateBundlesPath: ghippo-offline # (1)
         target:
-          containerRegistry: 10.16.10.111 # 需更改为你的镜像仓库 url
-          containerRepository: release.daocloud.io/ghippo # 需更改为你的镜像仓库
+          containerRegistry: 10.16.10.111 # (2)
+          containerRepository: release.daocloud.io/ghippo # (3)
           repo:
-            kind: HARBOR # 也可以是任何其他支持的 Helm Chart 仓库类别
-            url: http://10.16.10.111/chartrepo/release.daocloud.io # 需更改为 chart repo url
+            kind: HARBOR # (4)
+            url: http://10.16.10.111/chartrepo/release.daocloud.io # (5)
             auth:
-              username: "admin" # 你的镜像仓库用户名
-              password: "Harbor12345" # 你的镜像仓库密码
+              username: "admin" # (6)
+              password: "Harbor12345" # (7)
           containers:
             auth:
-              username: "admin" # 你的镜像仓库用户名
-              password: "Harbor12345" # 你的镜像仓库密码
+              username: "admin" # (6)
+              password: "Harbor12345" # (7)
         ```
+
+        1. 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
+        2. 需更改为你的镜像仓库 url
+        3. 需更改为你的镜像仓库
+        4. 也可以是任何其他支持的 Helm Chart 仓库类别
+        5. 需更改为 chart repo url
+        6. 你的镜像仓库用户名
+        7. 你的镜像仓库密码
 
     === "未安装 chart repo"
 
