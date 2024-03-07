@@ -11,7 +11,7 @@
 
 **Technology stack** :
 
-*DTX* is built on cloud-native principles, employing a variety of [*Operators*](https://www.redhat.com/en/topics/containers/what-is-a-kubernetes-operator) that consist of distinct *Custom Resource Definitions (CRDs)* and *Controller* logic. Developed primarily in *Go*, the implementation utilizes the [*operator-sdk*](https://github.com/operator-framework/operator-sdk) toolkit. Operating within a [*Kubernetes (K8s)*](https://github.com/kubernetes/kubernetes) environment, *DTX* relies on the operator pattern for *CRD* development and management. Furthermore, *DTX* integrates with [*kuberay*](https://github.com/ray-project/kuberay) to harness distributed execution and inference capabilities.
+*DTX* is built on cloud-native principles, employing a variety of [Operators](https://www.redhat.com/en/topics/containers/what-is-a-kubernetes-operator) that consist of distinct *Custom Resource Definitions (CRDs)* and *Controller* logic. Developed primarily in *Go*, the implementation utilizes the [operator-sdk](https://github.com/operator-framework/operator-sdk) toolkit. Operating within a [Kubernetes (K8s)](https://github.com/kubernetes/kubernetes) environment, *DTX* relies on the operator pattern for *CRD* development and management. Furthermore, *DTX* integrates with [kuberay](https://github.com/ray-project/kuberay) to harness distributed execution and inference capabilities.
 
 **Status** :  
 
@@ -21,17 +21,17 @@
 
 - Demo
 
-<div align="center">
-      <a href="https://www.youtube.com/watch?v=NvOzKj67oRQ">
-         <img src="https://img.youtube.com/vi/NvOzKj67oRQ/maxresdefault.jpg" style="width:50%;">
-      </a>
-</div>
+    <div align="center">
+        <a href="https://www.youtube.com/watch?v=NvOzKj67oRQ">
+            <img src="https://img.youtube.com/vi/NvOzKj67oRQ/maxresdefault.jpg" style="width:50%;">
+        </a>
+    </div>
 
 - [Documentation](https://github.com/DataTunerX/datatunerx-controller) (COMING SOON)
 
-**Screenshot**:
+    **Screenshot**:
 
-![**DTX Screenshot**](https://raw.githubusercontent.com/DataTunerX/datatunerx-controller/main/assets/screenshot/Job_Details.png)
+    ![DTX Screenshot](https://raw.githubusercontent.com/DataTunerX/datatunerx-controller/main/assets/screenshot/Job_Details.png)
 
 ## What DTX can do? 💪
 
@@ -112,9 +112,9 @@ In summary, *DTX* strategically addresses challenges in resource optimization, d
 ## References 🙌
 
 - [DataTunerX Repo on GitHub](https://github.com/DataTunerX/datatunerx)
-- [*Ray Project*](https://ray.io/): An open-source distributed computing framework that makes it easy to scale and parallelize applications.
-- [*KubeRay*](https://github.com/kuberay/kuberay): An integration of Ray with Kubernetes, enabling efficient distributed computing on Kubernetes clusters.
-- [*Operator SDK*](https://sdk.operatorframework.io/): A toolkit for building Kubernetes Operators, which are applications that automate the management of custom resources in a Kubernetes cluster.
-- [*LLaMA-Factory*](https://github.com/hiyouga/LLaMA-Factory): An easy-to-use llm fine-tuning framework.
+- [Ray Project](https://ray.io/): An open-source distributed computing framework that makes it easy to scale and parallelize applications.
+- [KubeRay](https://github.com/kuberay/kuberay): An integration of Ray with Kubernetes, enabling efficient distributed computing on Kubernetes clusters.
+- [Operator SDK](https://sdk.operatorframework.io/): A toolkit for building Kubernetes Operators, which are applications that automate the management of custom resources in a Kubernetes cluster.
+- [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory): An easy-to-use llm fine-tuning framework.
 
 Feel free to explore these projects to deepen your understanding of the technologies and concepts that may have influenced or inspired this project.
