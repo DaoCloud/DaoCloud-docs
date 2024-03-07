@@ -80,7 +80,7 @@
 
 3. 在 [集群配置文件 clusterConfig.yaml](../cluster-config.md) 中，配置 `externalMiddlewares.database` 参数，
    假设数据库访问地址为 localhost:3306；不同的数据库类型有不同的 dataSourceName 配置格式，
-   详见文档 https://gorm.io/docs/connecting_to_the_database.html
+   参阅 GORM 文档[连接到数据库](https://gorm.io/zh_CN/docs/connecting_to_the_database.html)。
 
     ```yaml
     apiVersion: provision.daocloud.io/v1alpha3
@@ -395,7 +395,8 @@
 
 !!! note
 
-    使用外接 Elasticsearch 时需要注意：若外接 Elasticsearch 未开启 TLS ，则需要在 Insight 的 Helm 参数中 `logging:output` 中将 TLS 设置为 `off`。
+    使用外接 Elasticsearch 时需要注意：若外接 Elasticsearch 未开启 TLS，
+    则需要在 Insight 的 Helm 参数中 `logging:output` 中将 TLS 设置为 `off`。
 
 操作步骤如下：
 

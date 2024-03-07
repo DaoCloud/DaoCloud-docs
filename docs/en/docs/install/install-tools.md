@@ -1,9 +1,14 @@
-# Installing Dependencies
+---
+MTPE: windsonsea
+date: 2024-03-07
+---
+
+# Install Dependencies
 
 Before installing DCE 5.0, you need to install some dependencies.
 
 - For DCE Community, install the dependencies on the K8s Master node.
-- For DCE 5.0 Enterprise, install the dependencies on the [Ignition Node](./commercial/deploy-arch.md).
+- For DCE 5.0 Enterprise, install the dependencies on the [Bootstrap Node](./commercial/deploy-arch.md).
 
 !!! note
 
@@ -16,10 +21,11 @@ Before installing DCE 5.0, you need to install some dependencies.
     - kubectl
     - yq
     - minio client
+    - charts-syncer
     
     If there are any existing tools in your environment with versions lower than what we define, they will be forcefully updated and replaced during the installation process.
 
-## Online Dependency Installation
+## Online Install Dependencies
 
 1. Download the script.
 
@@ -48,7 +54,7 @@ Before installing DCE 5.0, you need to install some dependencies.
         bash install_prerequisite_${VERSION}.sh online full
         ```
 
-## Offline Dependency Installation
+## Offline Install Dependencies
 
 Offline installation means that the target host is in an offline state and cannot download the required dependencies. Therefore, you need to create an offline package in an online environment first.
 

@@ -15,6 +15,14 @@ the evolution path and feature changes of each version.
 *[Kpanda]: Dev codename for Container Management in DCE 5.0
 *[Skoala]: Dev codename for Microservice Engine in DCE 5.0
 
+## 2024-02-26
+
+### v0.15.1
+
+#### Improvements
+
+- **Improved** support for Rocky Linux 9.2
+
 ## 2024-01-31
 
 ### v0.15.0
