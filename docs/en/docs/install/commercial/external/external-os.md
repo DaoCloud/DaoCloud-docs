@@ -43,7 +43,7 @@ The following content assumes that CentOS 7.9 x86_64 is used as the cluster node
 
 1. Ensure that an available Nginx service exists with login and file writing permissions on the node where the service is located.
 
-2. Download/copy the ISO operating system image file and osPackage offline package to the node where the Nginx service is located. Also, copy the ISO import script from the ignition node to the node where the Nginx service is located.
+2. Download/copy the ISO operating system image file and osPackage offline package to the node where the Nginx service is located. Also, copy the ISO import script from the bootstrap node to the node where the Nginx service is located.
 
     !!! note
 

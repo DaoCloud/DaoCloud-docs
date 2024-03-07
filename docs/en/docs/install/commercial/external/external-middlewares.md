@@ -1,8 +1,8 @@
-# Using External Middleware Services
+# Use External Middleware Services
 
 This document describes how to use third-party middleware services, including MySQL, Redis, Elasticsearch, and S3Storage.
 
-## Using External Database (MySQL)
+## Use External Database (MySQL)
 
 ### Prerequisites
 
@@ -79,8 +79,8 @@ This document describes how to use third-party middleware services, including My
 
 3. In the [clusterConfig.yaml](../cluster-config.md), configure the
    `externalMiddlewares.database` parameter. Assuming the database access address is localhost:3306,
-   different database types have different dataSourceName configuration formats, see the documentation
-   for details: https://gorm.io/docs/connecting_to_the_database.html
+   different database types have different dataSourceName configuration formats.
+   Refer to GORM documentation [Connecting to a Database](https://gorm.io/docs/connecting_to_the_database.html).
 
     ```yaml
     apiVersion: provision.daocloud.io/v1alpha3
@@ -139,7 +139,7 @@ This document describes how to use third-party middleware services, including My
 
 4. After completing the above configuration, you can proceed with [deploying DCE 5.0 Enterprise](../start-install.md).
 
-## Using External Redis
+## Use External Redis
 
 The steps to configure external Redis are as follows:
 
@@ -167,7 +167,12 @@ The steps to configure external Redis are as follows:
 
 2. After completing the above configuration, you can proceed with [deploying DCE 5.0 Enterprise](../start-install.md).
 
-## Using External Elasticsearch
+## Use External Elasticsearch
+
+!!! note
+
+    When using an external Elasticsearch, please be aware that if the external Elasticsearch does not
+    have TLS enabled, you must set TLS to `off` in the `logging:output` Helm parameter of Insight.
 
 The steps to configure external Elasticsearch are as follows:
 
@@ -192,11 +197,12 @@ The steps to configure external Elasticsearch are as follows:
     !!! note
 
         Currently, only the observability product module uses the Elasticsearch component.
-        If an external middleware is used, it is not recommended to use worker nodes in 7-node mode, as it may consume too many resources.
+        If an external middleware is used, it is not recommended to use worker nodes in 7-node mode,
+        as it may consume too many resources.
 
 2. After completing the above configuration, you can proceed with [deploying DCE 5.0 Enterprise](../start-install.md).
 
-## Using External S3Storage
+## Use External S3Storage
 
 The steps to configure external S3Storage are as follows:
 
@@ -222,11 +228,11 @@ The steps to configure external S3Storage are as follows:
 
 2. After completing the above configuration, you can proceed with [deploying DCE 5.0 Enterprise](../start-install.md).
 
-## Using External Kafka
+## Use External Kafka
 
 Follow the steps below:
 
-1. In the [cluster configuration file clusterConfig.yaml](../cluster-config.md), configure the `externalMiddlewares.kafka` parameter:
+1. In the [clusterConfig.yaml](../cluster-config.md), configure the `externalMiddlewares.kafka` parameter:
 
     ```yaml
     apiVersion: provision.daocloud.io/v1alpha3

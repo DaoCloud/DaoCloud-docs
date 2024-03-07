@@ -37,7 +37,7 @@ The following instructions assume that CentOS 7.9 x86_64 is used as the cluster 
 In theory, other generic HTTP servers can also be supported, but pay attention to the mapping relationship between URL access paths and file paths.
 
 1. Ensure that an available Nginx service exists, and the node where the service resides has login and file writing permissions.
-2. Copy the binaries offline package from the ignition node to the node where the nginx service is located.
+2. Copy the binaries offline package from the bootstrap node to the node where the nginx service is located.
 
     !!! note
 
