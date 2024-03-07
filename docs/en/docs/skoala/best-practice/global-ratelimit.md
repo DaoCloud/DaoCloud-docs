@@ -176,7 +176,7 @@ kubectl apply -f gateway-rls.yaml -n plugin-ns
 
     Rate Limit Server configuration address: http://10.6.222.21:32004
 
-    ```bash
+    ```none
     NAME               TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)                         AGE
     gateway-rls        NodePort   10.233.56.164   <none>        8081:32003/TCP,6070:32004/TCP   1m
     ```
@@ -212,7 +212,7 @@ kubectl apply -f gateway-rls.yaml -n plugin-ns
 
     The access result is as follows: after accessing 10 times, it is rate limited.
 
-    ```
+    ```none
     adservice-springcloud: hello world! http_code: 200 count: 1
     adservice-springcloud: hello world! http_code: 200 count: 2
     adservice-springcloud: hello world! http_code: 200 count: 3
@@ -261,7 +261,7 @@ kubectl apply -f gateway-rls.yaml -n plugin-ns
 
 2. The rate limit server will hot-reload the configuration. Just wait for the configuration to take effect. Alternatively, you can access the configuration interface of the rate limit server and check if the following configuration appears.
 
-    ```
+    ```bash
     $ curl http://10.6.222.21:32004/rlconfig
     gateway-rls.test.remote_address: unit=MINUTE requests_per_unit=5, shadow_mode: false
     ```
@@ -271,13 +271,13 @@ kubectl apply -f gateway-rls.yaml -n plugin-ns
 
 4. Access the API based on the domain. Run the following command:
 
-    ```
+    ```bash
     while true; do curl -w " http_code: %{http_code}"  http://ip.test:30000/; let count+=1; echo " count: ${count}"; done
     ```
 
     The access result is as follows: after accessing 5 times, it is rate limited.
 
-    ```
+    ```none
     adservice-springcloud: hello world! http_code: 200 count: 1
     adservice-springcloud: hello world! http_code: 200 count: 2
     adservice-springcloud: hello world! http_code: 200 count: 3
@@ -324,7 +324,7 @@ kubectl apply -f gateway-rls.yaml -n plugin-ns
 
 2. The rate limit server will hot-reload the configuration. Just wait for the configuration to take effect. Alternatively, you can access the configuration interface of the rate limit server and check if the following configuration appears.
 
-    ```
+    ```bash
     $ curl http://10.6.222.21:32004/rlconfig
     gateway-rls.test.remote_address: unit=MINUTE requests_per_unit=10, shadow_mode: false
     gateway-rls.test.remote_address_10.6.222.90: unit=MINUTE requests_per_unit=5, shadow_mode: false
@@ -335,13 +335,13 @@ kubectl apply -f gateway-rls.yaml -n plugin-ns
 
 4. Access the API based on the domain. Run the following command:
 
-    ```
+    ```bash
     while true; do curl -w " http_code: %{http_code}"  http://ip.test:30000/; let count+=1; echo " count: ${count}"; done
     ```
 
     The access result for executing the command on the local machine is as follows: it is rate limited after accessing 3 times.
 
-    ```
+    ```none
     adservice-springcloud: hello world! http_code: 200 count: 1
     adservice-springcloud: hello world! http_code: 200 count: 2
     adservice-springcloud: hello world! http_code: 200 count: 3
@@ -357,7 +357,7 @@ kubectl apply -f gateway-rls.yaml -n plugin-ns
 
     The access result for executing the command on the host with IP 10.6.222.90 is as follows: it is rate limited after accessing 5 times.
 
-    ```
+    ```none
     adservice-springcloud: hello world! http_code: 200 count: 1
     adservice-springcloud: hello world! http_code: 200 count: 2
     adservice-springcloud: hello world! http_code: 200 count: 3
@@ -375,7 +375,7 @@ kubectl apply -f gateway-rls.yaml -n plugin-ns
 
     The access result for executing the command on other hosts without additional rate limit rules is as follows: it is rate limited after accessing 10 times.
 
-    ```
+    ```none
     adservice-springcloud: hello world! http_code: 200 count: 1
     adservice-springcloud: hello world! http_code: 200 count: 2
     adservice-springcloud: hello world! http_code: 200 count: 3

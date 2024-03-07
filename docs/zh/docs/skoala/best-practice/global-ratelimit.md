@@ -176,7 +176,7 @@ kubectl apply -f gateway-rls.yaml -n plugin-ns
 
     限流服务器配置地址: http://10.6.222.21:32004
 
-    ```bash
+    ```none
     NAME               TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)                         AGE
     gateway-rls        NodePort   10.233.56.164   <none>        8081:32003/TCP,6070:32004/TCP   1m
     ```
@@ -212,7 +212,7 @@ kubectl apply -f gateway-rls.yaml -n plugin-ns
 
     访问结果如下，可以看到访问 10 次后，就被限流了。
 
-    ```
+    ```none
     adservice-springcloud: hello world! http_code: 200 count: 1
     adservice-springcloud: hello world! http_code: 200 count: 2
     adservice-springcloud: hello world! http_code: 200 count: 3
@@ -261,7 +261,7 @@ kubectl apply -f gateway-rls.yaml -n plugin-ns
 
 2. 限流服务器会热加载配置，等待配置生效即可，当然，也可以访问限流服务器的配置接口，出现以下配置即可。
 
-    ```
+    ```bash
     $ curl http://10.6.222.21:32004/rlconfig
     gateway-rls.test.remote_address: unit=MINUTE requests_per_unit=5, shadow_mode: false
     ```
@@ -272,13 +272,13 @@ kubectl apply -f gateway-rls.yaml -n plugin-ns
 
 4. 基于该域名的 API 访问，执行以下命令访问。
 
-    ```
+    ```bash
     while true; do curl -w " http_code: %{http_code}"  http://ip.test:30000/; let count+=1; echo " count: ${count}"; done
     ```
 
     访问结果如下，可以看到访问 5 次后，就被限流了。
 
-    ```
+    ```none
     adservice-springcloud: hello world! http_code: 200 count: 1
     adservice-springcloud: hello world! http_code: 200 count: 2
     adservice-springcloud: hello world! http_code: 200 count: 3
@@ -325,7 +325,7 @@ kubectl apply -f gateway-rls.yaml -n plugin-ns
 
 2. 限流服务器会热加载配置，等待配置生效即可，当然，也可以访问限流服务器的配置接口，出现以下配置即可。
 
-    ```
+    ```bash
     $ curl http://10.6.222.21:32004/rlconfig
     gateway-rls.test.remote_address: unit=MINUTE requests_per_unit=10, shadow_mode: false
     gateway-rls.test.remote_address_10.6.222.90: unit=MINUTE requests_per_unit=5, shadow_mode: false
@@ -342,7 +342,7 @@ kubectl apply -f gateway-rls.yaml -n plugin-ns
 
     在本机执行命令的访问结果如下，访问 3 次被限流。
 
-    ```
+    ```none
     adservice-springcloud: hello world! http_code: 200 count: 1
     adservice-springcloud: hello world! http_code: 200 count: 2
     adservice-springcloud: hello world! http_code: 200 count: 3
@@ -357,7 +357,8 @@ kubectl apply -f gateway-rls.yaml -n plugin-ns
     ```
 
     在 10.6.222.90 主机执行命令的访问结果如下，访问 5 次被限流。
-    ```
+
+    ```none
     adservice-springcloud: hello world! http_code: 200 count: 1
     adservice-springcloud: hello world! http_code: 200 count: 2
     adservice-springcloud: hello world! http_code: 200 count: 3
@@ -374,7 +375,8 @@ kubectl apply -f gateway-rls.yaml -n plugin-ns
     ```
 
     在其他未额外设置限流规则的主机执行命令的访问结果如下，访问 10 次被限流。
-    ```
+
+    ```none
     adservice-springcloud: hello world! http_code: 200 count: 1
     adservice-springcloud: hello world! http_code: 200 count: 2
     adservice-springcloud: hello world! http_code: 200 count: 3

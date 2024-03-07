@@ -1,84 +1,162 @@
-# The microservice gateway accesses the authentication server
+# Microservice Gateway Access to Authentication Server
 
-The microservice gateway supports access to a third-party authentication server.
+The microservice gateway supports integration with third-party authentication servers.
 
-## prerequisite
+## Prerequisites
 
-- [Create a cluster](../../kpanda/user-guide/clusters/create-cluster.md) OR [Integrate a cluster](../../kpanda/user-guide/clusters/integrate-cluster.md)
-- [Create a gateway](../gateway/index.md)
+- [Create a Cluster](../../kpanda/user-guide/clusters/create-cluster.md) or
+  [Integrate a Cluster](../../kpanda/user-guide/clusters/integrate-cluster.md)
+- [Create a Gateway](../gateway/index.md)
 
-## Configuring the authentication Server
+## Select an Authentication Server
 
-### Use the default authentication server
+### Default Authentication Server
 
-1. Clone the code template of the authentication server to a local directory.
+1. Clone the authentication server's code template to your local machine.
 
-    ```
+    ```git
     git clone https://github.com/projectsesame/envoy-authz-java
     ```
-2. Use the default image directly under [ all-in-one-contour.yaml ](https://github.com/projectsesame/envoy-authz-java/blob/main/all-in-one-contour.yaml) and [ all-in-one-contour.yaml ](https://github.com/projectsesame/envoy-authz-java/blob/main/all-in-one-contour.yaml).
 
-    The default image is as follows:
-    - release.daocloud.io/skoala/demo/envoy-authz-java:0.1.0
-    - release-ci.daocloud.io/skoala/demo/envoy-authz-java:0.1.0
+2. Use [envoy-authz-java.yaml](https://github.com/projectsesame/envoy-authz-java/blob/main/envoy-authz-java.yaml) and the default image in the repository.
 
-3. The template is simple path identification. If the access path is `/`, the access is authenticated, and other paths are denied.
-
-### Use a custom authentication server
-
-1. Clone the code template of the authentication server to a local directory.
-
+    ```bash
+    kubectl apply -f envoy-authz-java.yaml
     ```
+
+    The default image is release.daocloud.io/skoala/demo/envoy-authz-java:0.1.0
+
+3. The template performs simple path-based authorization, allowing access only to the `/` path and denying access to other paths.
+
+### Custom Authentication Server
+
+1. Clone the authentication server's code template to your local machine.
+
+    ```git
     git clone https://github.com/projectsesame/envoy-authz-java
     ```
-    
-    The project is divided into two sub-modules:
 
-    - The API module is envoy"s `protobuf` file definition (no changes required)
-    - authz-grpc-server module is the authentication logical processing address of the authentication server (fill in the authentication logic here)
+    This project has two submodules:
+
+    - The API module defines Envoy's `protobuf` files (no need to modify)
+    - The authz-grpc-server module handles the authentication logic of the server (customize the authentication logic here)
     - release.daocloud.io/skoala/demo/envoy-authz-java:0.1.0
 
-2. Compile the API module using the following command to resolve the problem where the class is not found
+2. Compile the API module using the following command to resolve any missing dependencies.
 
-    ```
+    ```bash
     mvn clean package
     ```
 
-3. After successful compilation, write your own authentication logic in the check method.
+3. After successful compilation, write your custom authentication logic in the check method.
 
-    - Check method in envoy – authz – Java/authz – GRPC – server/SRC/main/Java/envoy/projectsesame/IO/authzgrpcserver/AuthzService Java
-    - The template is simple path identification. If the access path is `/`, the access is authenticated, and other paths are denied.
+    - The check method is located in `envoy-authz-java/authz-grpc-server/src/main/java/envoy/projectsesame/io/authzgrpcserver/AuthzService.java`
+    - The template performs simple path-based authorization, allowing access only to the `/` path and denying access to other paths.
 
-4. Once the code is written, package the image using Docker.
+4. After writing the code, package the server into a Docker image.
 
-    The Dockerfile already exists in the code template repository, and you can use this template directly to build the image.
+    The Dockerfile is already available in the code template repository, which can be used to build the image.
 
-5. Fill the image address in the `spec/template/spec/containers/image` field under Deployment in the [ all-in-one-contour.yaml ](https://github.com/projectsesame/envoy-authz-java/blob/main/all-in-one-contour.yaml) file.
+5. Update the image address in the [envoy-authz-java.yaml](https://github.com/projectsesame/envoy-authz-java/blob/main/all-in-one-contour.yaml) file under Deployment in the spec/template/spec/containers/image field.
 
-    <!--![]()screenshots-->-->
+    ![Fill in image url](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/jwt04.png)
 
-## Access authentication server
+## Integrate Authentication Server
 
-1. Create the following resources in the cluster where the gateway resides. You can use the `kubectl apply` command to quickly create the following three resources at once based on the [ all-in-one-contour.yaml ](https://github.com/projectsesame/envoy-authz-java/blob/main/all-in-one-contour.yaml) file.
+1. Create the following resources within the cluster where the gateway is located. Use the `kubectl apply` command to quickly create the following three resources based on the [envoy-authz-java.yaml](https://github.com/projectsesame/envoy-authz-java/blob/main/envoy-authz-java.yaml) file:
 
-    - Deployment of the authentication server
-    - The Service of the authentication server
-    - The ExtensionService of the authentication server
+    - Authentication Server Deployment
+    - Authentication Server Service
+    - Authentication Server ExtensionService
 
-2. Create a domain name under the gateway that uses the `https` protocol and fill in basic information.
+2. Integrate an Auth plugin in the Plugin Center.
 
-    <!--![]()screenshots-->-->
-
-3. Enter the security configuration of this domain name and specify the address of the authentication server. The authentication server address is in `namespace/name` format.
-
-    <!--![]()screenshots-->-->
-
-    !!! note
-
-        The `namespace/name` of the authentication server refers to the values of the `namespace` and `name` fields in the `metadata` section of the ExtensionService under the [all-in-one-contour.yaml](https://github.com/projectsesame/envoy-authz-java/blob/main/all-in-one-contour.yaml) file.
-
-4. Create an API under the gateway, and enter the newly created domain name in the path `/`. Enable `Security Auth`, and take the API online.
+    Fill in the access address with the application deployed in step 1 and ensure that the application uses the GRPC protocol.
 
     <!--![]()screenshots-->
 
-5. You can now access the API through the authentication server.
+## Configure Authentication Server
+
+### Configure Gateway
+
+!!! note
+
+    Both HTTP and HTTPS domains support secure authentication. If using HTTPS domains, ensure that the gateway is configured for HTTPS.
+
+1. Configure the authentication server in the gateway.
+
+    <!--![]()screenshots-->
+
+2. Create an `HTTP` or `HTTPS` domain. For example, when creating an HTTP domain, the domain is automatically configured for secure authentication and cannot be disabled.
+
+    <!--![]()screenshots-->
+
+3. Create an API under the gateway, associate it with the newly created domain, set the path match to `/`, and deploy the API. By default, the API inherits the domain's security authentication configuration, but you can customize the plugin's activation and additional parameters.
+
+    <!--![]()screenshots-->
+
+4. You can now access this API through the authentication server.
+
+    - Access `/`.
+
+        ```bash
+        curl -H 'header: true' http://gateway.test:30000/
+        ```
+
+        The response should indicate successful access.
+
+        ```bash
+        adservice-springcloud: hello world!
+        ```
+
+    - Access `/test1`.
+
+        ```bash
+        curl -H 'header: true' http://gateway.test:30000/test1
+        ```
+
+        The response should indicate access denied.
+
+        ```bash
+        No permission
+        ```
+
+### Configure Domain or API
+
+!!! note
+
+    Only HTTPS domains support secure authentication. Ensure that the gateway is configured for HTTPS.
+
+1. Create an `HTTPS` domain and manually configure secure authentication.
+
+    <!--![]()screenshots-->
+
+2. Create an API under the gateway, associate it with the newly created domain, set the path match to `/`, and deploy the API. By default, the API inherits the domain's security authentication configuration, but you can customize the plugin's activation and additional parameters.
+
+    <!--![]()screenshots-->
+
+3. You can now access this API through the authentication server.
+
+    - Access `/`.
+
+        ```bash
+        curl -k -H 'header: true' https://gateway.test:30001/
+        ```
+
+        The response should indicate successful access.
+
+        ```none
+        adservice-springcloud: hello world!
+        ```
+
+    - Access `/test1`.
+
+        ```bash
+        curl -k -H 'header: true' https://gateway.test:30001/test1
+        ```
+
+        The response should indicate access denied.
+
+        ```none
+        No permission
+        ```
