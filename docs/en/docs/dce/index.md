@@ -45,6 +45,7 @@ of cloud native productivity. Embrace DCE 5.0 to elevate your organization's cap
 - :material-middleware: **Middleware** [ES, Kafka, MinIO, MySQL, etc.](../middleware/index.md)
 - :fontawesome-brands-edge: **Cloud Edge Collaboration** [Containers extend to edge](../kant/intro/index.md)
 - :fontawesome-solid-user-group: **Global Management** [Login/permissions/appearance](../ghippo/intro/index.md)
+- [Free Trial Now :free:](../trial/index.md){ .md-button }
 
 </div>
 

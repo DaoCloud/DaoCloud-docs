@@ -16,7 +16,7 @@ DCE 5.0, with cloud native infrastructure at its core, is supported by self-deve
   <p style="font-size: 24px; color: green;">Unlease DCE Community in 3 Steps</p>
 </div>
 
-## <font color="green"><strong>1st</strong> Installation Tutorials</font>
+## <font color="green"><strong>1st</strong> Installation Tutorials</font>  :door:
 
 !!! tip
 
@@ -68,7 +68,7 @@ If you have limited network access, you can choose to perform an offline install
 
 :material-run: [Start Offline Installation](../install/community/k8s/offline.md)
 
-## <font color="green"><strong>2nd</strong> Apply for a License Key</font>
+## <font color="green"><strong>2nd</strong> Apply for a License Key</font> :key:
 
 1. Click [here to apply for a free "DCE Community" license key](https://qingflow.com/f/58604bf8). The license key will be sent to your email.
    (Some email providers may intercept the email containing the license key. If you do not receive it after a long time, please check your spam folder).
@@ -95,13 +95,13 @@ If you have limited network access, you can choose to perform an offline install
 
     If you selected a short validity period when applying for the license and it has expired, you can click [here for more renewal options](../dce/license0.md#license-renewal).
 
-## <font color="green"><strong>3rd</strong> Embark on the Cloud-Native Journey</font>
+## <font color="green"><strong>3rd</strong> Embark on the Cloud-Native Journey</font> :rice_scene:
 
 - [Cloud-Native Technology Practice Public Course](https://appu8cplrlw7661.h5.xiaoeknow.com): Suitable for beginners or junior cloud native developers to learn about the development background, basic knowledge, and operational practices of cloud native technology.
 - [Video Tutorials](../videos/index.md): Covering the usage demonstrations of the three major functional modules: container management, global management, and observability. There are also tutorials demonstrating Enterprise Package features. Feel free to check them out.
 
-<p style="font-size: 20px; color: green;">Learn more about DCE Community</p>
+<p style="font-size: 20px; color: green;">DCE Community includes three modules:</p>
 
-[What is Container Management](../kpanda/intro/index.md){ .md-button .md-button--primary }
-[What is Global Management](../ghippo/intro/index.md){ .md-button .md-button--primary }
-[What is Observability](../insight/intro/index.md){ .md-button .md-button--primary }
+[Container Management](../kpanda/intro/index.md){ .md-button .md-button--primary }
+[Global Management](../ghippo/intro/index.md){ .md-button .md-button--primary }
+[Insight](../insight/intro/index.md){ .md-button .md-button--primary }
