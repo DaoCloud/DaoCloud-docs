@@ -23,7 +23,7 @@
 
 通过商业版安装微服务引擎管理组件时，需要注意商业版的版本号（[点击查看最新版本](../../download/index.md)）。需要针对不同版本执行不同操作。
 
-商业版的 **版本号 ≥ v0.3.29** 时，默认会安装微服务引擎管理组件，但仍旧建议检查 `mainfest.yaml` 文件进行确认
+商业版的 **版本号 ≥ v0.3.29** 时，默认会安装微服务引擎管理组件，但仍旧建议检查 `manifest.yaml` 文件进行确认
 `components/skoala/enable` 的值是否为 `true`，以及是否指定了 Helm 的版本。
 
 > 商业版中默认安装的是经过测试的最新版本。如无特殊情况，不建议修改默认的 Helm 版本。
@@ -32,7 +32,7 @@
 
     此注释仅适用于商业版 ≤ v0.3.28；大多数情况下您的版本都会大于此版本。
 
-    执行安装命令时，默认不会安装微服务引擎。需要对照下面的配置修改 `mainfest.yaml` 以允许安装微服务引擎。
+    执行安装命令时，默认不会安装微服务引擎。需要对照下面的配置修改 `manifest.yaml` 以允许安装微服务引擎。
 
     修改文件：
 
@@ -42,7 +42,7 @@
 
     修改后的内容：
 
-    ```yaml
+    ```yaml title="manifest.yaml"
     ...
     components:
       skoala:
@@ -299,20 +299,27 @@ tar -vxf skoala_x.y.z_amd64.tar
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: skoala-offline # 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
+          intermediateBundlesPath: skoala-offline # (1)
         target:
-          containerPrefixRegistry: 10.16.10.111 # 需更改为你的镜像仓库 url
+          containerPrefixRegistry: 10.16.10.111 # (2)
           repo:
-            kind: HARBOR # 也可以是任何其他支持的 Helm Chart 仓库类别
-            url: http://10.16.10.111/chartrepo/release.daocloud.io # 需更改为 chart repo project url
+            kind: HARBOR # (3)
+            url: http://10.16.10.111/chartrepo/release.daocloud.io # (4)
             auth:
-              username: "admin" # 你的镜像仓库用户名
-              password: "Harbor12345" # 你的镜像仓库密码
+              username: "admin" # (5)
+              password: "Harbor12345" # (6)
           containers:
             auth:
-              username: "admin" # 你的镜像仓库用户名
-              password: "Harbor12345" # 你的镜像仓库密码
+              username: "admin" # (5)
+              password: "Harbor12345" # (6)
         ```
+
+        1. 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
+        2. 需更改为你的镜像仓库 url
+        3. 也可以是任何其他支持的 Helm Chart 仓库类别
+        4. 需更改为 chart repo project url
+        5. 你的镜像仓库用户名
+        6. 你的镜像仓库密码
 
     === "已安装 CHARTMUSEUM chart repo"
 
@@ -320,26 +327,34 @@ tar -vxf skoala_x.y.z_amd64.tar
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: skoala-offline # 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
+          intermediateBundlesPath: skoala-offline # (1)
         target:
-          containerPrefixRegistry: 10.16.10.111 # 需更改为你的镜像仓库 url
+          containerPrefixRegistry: 10.16.10.111 # (2)
           repo:
-            kind: CHARTMUSEUM # 也可以是任何其他支持的 Helm Chart 仓库类别
-            url: http://10.16.10.111 # 需更改为 chart repo url
+            kind: CHARTMUSEUM # (3)
+            url: http://10.16.10.111 # (4)
             auth:
-              username: "rootuser" # 你的镜像仓库用户名, 如果 chartmuseum 没有开启登录验证，就不需要填写 auth
-              password: "rootpass123" # 你的镜像仓库密码
+              username: "rootuser" # (5)
+              password: "rootpass123" # (6) 
           containers:
             auth:
-              username: "rootuser" # 你的镜像仓库用户名
-              password: "rootpass123" # 你的镜像仓库密码
+              username: "rootuser" # (7)
+              password: "rootpass123" # (6)
         ```
+
+        1. 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
+        2. 需更改为你的镜像仓库 url
+        3. 也可以是任何其他支持的 Helm Chart 仓库类别
+        4. 需更改为 chart repo url
+        5. 你的镜像仓库用户名, 如果 chartmuseum 没有开启登录验证，就不需要填写 auth
+        6. 你的镜像仓库密码
+        7. 你的镜像仓库用户名
 
     === "未安装 chart repo"
 
         若当前环境未安装 chart repo，charts-syncer 也支持将 chart 导出为 `tgz` 文件并存放在指定路径。
 
-        ```yaml
+        ```yaml title="load-image.yaml"
         source:
           intermediateBundlesPath: skoala-offline # (1)
         target:
