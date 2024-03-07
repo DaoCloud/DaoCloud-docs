@@ -8,7 +8,7 @@ The microservice engine gateway supports JWT validation. Here"s how to use this 
 - [Create a gateway](../gateway/index.md)
 - Prepare a Token and the JWKS application used to validate the Token. If you do not already have a JWKS application, see [Create JWKS App](#jwks) to create one.
 
-## Operation procedure
+## Steps
 
 1. Reference [Create Domain](../gateway/domain/index.md) create a protocol for `https` domain, in the domain security policy enabled `JWT Auth`.
 
@@ -20,7 +20,7 @@ The microservice engine gateway supports JWT validation. Here"s how to use this 
     - Token cache duration: Indicates the cache duration of the JWKS memory. The JWKS server address is not requested repeatedly within the cache validity period
     - Authentication timeout duration: Response timeout duration of the JWKS server. Obtaining JWKS fails after the timeout duration
 
-        <!--![]()screenshots-->
+    <!--![]()screenshots-->
 
 2. See [Add API](../gateway/api/index.md) to create the API and enable the JWT authentication security policy.
 
@@ -36,13 +36,13 @@ If no JWKS application exists in the current environment, follow the following s
 
 1. Download the JWKS generator code locally.
 
-    ```
+    ```git
     git clone https://github.com/projectsesame/jwks-generator
     ```
 
 2. Run the JWKS generator locally.
 
-    ```
+    ```bash
     mvn package -DskipTests && java -jar target/ROOT.war
     ```
 
@@ -57,25 +57,25 @@ If no JWKS application exists in the current environment, follow the following s
     - Algorithm: indicates the algorithm. Select HS256
     - KeyID: Optional, matching parameter when JWKS has multiple values
 
-        <!--![]()screenshots-->
+    <!--![]()screenshots-->
 
 4. Copy the value of `k` in the figure above and access <https://jwt.io> to generate a Token.
 
-      - The algorithm selects HS256
-      - Paste the copied k value into secret and check `secret base64 encoded`
+    - The algorithm selects HS256
+    - Paste the copied k value into secret and check `secret base64 encoded`
 
-        <!--![]()screenshots-->
+    <!--![]()screenshots-->
 
 5. Create the YAML file based on [YAML Template](https://github.com/projectsesame/enovy-remote-jwks-go/blob/main/all-in-one.yaml), and then install the JWKS application using the `kubectl apply` command
 
     - Change `namespace` to the namespace where the gateway resides, in this example `envoy-yang`
     - Change `jwks.json` to the JWKS content generated in Step 3 above
 
-        <!--![]()screenshots-->
+    <!--![]()screenshots-->
 
     ??? note "The YAML file configured in this example is shown below"
 
-        ```yaml
+        ```yaml title="all-in-one.yaml"
         apiVersion: apps/v1
         kind: Deployment
         metadata:

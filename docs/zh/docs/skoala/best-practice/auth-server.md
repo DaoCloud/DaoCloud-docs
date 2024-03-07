@@ -13,18 +13,18 @@
 
 1. 将认证服务器的代码模板克隆到本地。
 
-    ```
+    ```git
     git clone https://github.com/projectsesame/envoy-authz-java
     ```
 
 2. 直接使用 [envoy-authz-java.yaml](https://github.com/projectsesame/envoy-authz-java/blob/main/envoy-authz-java.yaml)
    以及文件下的默认镜像。
 
-    ```
+    ```bash
     kubectl apply -f envoy-authz-java.yaml
     ```
 
-    默认镜像是 release.daocloud.io/skoala/demo/envoy-authz-java:0.1.0
+    默认镜像是 `release.daocloud.io/skoala/demo/envoy-authz-java:0.1.0`
 
 3. 模板为简单的路径判断，当访问路径为 `/` 时通过认证，其余路径为拒绝访问。
 
@@ -32,7 +32,7 @@
 
 1. 将认证服务器的代码模板克隆到本地。
 
-    ```
+    ```git
     git clone https://github.com/projectsesame/envoy-authz-java
     ```
 
@@ -148,7 +148,7 @@
 
         访问结果如下，可以看到请求通过了。
 
-        ```bash
+        ```none
         adservice-springcloud: hello world!
         ```
 
@@ -160,6 +160,6 @@
 
         访问结果如下，可以看到请求被拦截了。
 
-        ```bash
+        ```none
         No permission
         ```

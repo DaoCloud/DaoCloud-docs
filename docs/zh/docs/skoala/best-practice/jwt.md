@@ -20,7 +20,7 @@
     - Token缓存时长：JWKS内存的缓存时间，在缓存有效期内不会重复请求 JWKS 服务器地址
     - 验证超时时长：JWKS 服务器的响应超时时间，超过超时时间获取 JWKS 失败
 
-        ![基础配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/jwt06.png)
+    ![基础配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/jwt06.png)
 
 2. 参考[添加 API](../gateway/api/index.md) 创建 API 并启用 JWT 认证安全策略。
 
@@ -36,13 +36,13 @@
 
 1. 将 JWKS 生成器代码下载到本地。
 
-    ```
+    ```git
     git clone https://github.com/projectsesame/jwks-generator
     ```
 
 2. 在本地运行 JWKS 生成器。
 
-    ```
+    ```bash
     mvn package -DskipTests && java -jar target/ROOT.war
     ```
 
@@ -61,10 +61,10 @@
 
 4. 复制上图中 `k` 字段的取值，访问 <https://jwt.io>，生成 Token。
 
-      - 算法选择 HS256
-      - 将复制好的 k 值粘贴到 secret 里面，并勾选 `secret base64 encoded`
+    - 算法选择 HS256
+    - 将复制好的 k 值粘贴到 secret 里面，并勾选 `secret base64 encoded`
 
-        ![基础配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/jwt11.png)
+    ![基础配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/jwt11.png)
 
 5. 基于 [YAML 模板](https://github.com/projectsesame/enovy-remote-jwks-go/blob/main/all-in-one.yaml)创建
    YAML 文件，然后使用 `kubectl apply` 命令安装 JWKS 应用：
