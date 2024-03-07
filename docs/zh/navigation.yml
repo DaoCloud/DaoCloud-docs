@@ -1039,6 +1039,8 @@ nav:
                   - 队列管理:
                       - 创建队列: baize/oam/queue/create.md
                       - 删除队列: baize/oam/queue/delete.md
+              - 最佳实践:
+                  - 部署 NFS 做数据集预热: baize/best-practice/deploy-nfs-in-worker.md
       - 边缘计算:
           - 云边协同:
               - 介绍:
