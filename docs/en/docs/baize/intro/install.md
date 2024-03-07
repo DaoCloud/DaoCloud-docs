@@ -1,148 +1,21 @@
-# Installation
+# Initialize Computing Cluster
 
-Install the Cloud Native AI module on DCE 5.0 Community Edition or Enterprise Edition.
+By default, when installing DCE 5.0 Enterprise, the Baize Module can be installed synchronously. Please contact the delivery support team to obtain the Enterprise installation package.
 
-## Install local-path-storage
+## Baize Module
 
-To meet the storage needs of system components, you can install a local-path-storage:
+Ensure that the Baize components have been installed in the global management cluster.
+You can verify this by checking if the Baize module is available through the DCE 5.0 UI.
 
-??? note "View the complete YAML code"
+!!! info
 
-    ```yaml title="local-path-storage.yaml"
-    apiVersion: v1
-    kind: Namespace
-    metadata:
-      name: local-path-storage
+    There is an entry for `Baize` in the primary navigation bar.
 
-    ---
-    apiVersion: v1
-    kind: ServiceAccount
-    metadata:
-      name: local-path-provisioner-service-account
-      namespace: local-path-storage
+If it is not available, you can install it using the following method.
+Please note that it needs to be installed in the `kpanda-global-cluster` global management cluster:
 
-    ---
-    apiVersion: rbac.authorization.k8s.io/v1
-    kind: ClusterRole
-    metadata:
-      name: local-path-provisioner-role
-    rules:
-      - apiGroups: [ "" ]
-        resources: [ "nodes", "persistentvolumeclaims", "configmaps" ]
-        verbs: [ "get", "list", "watch" ]
-      - apiGroups: [ "" ]
-        resources: [ "endpoints", "persistentvolumes", "pods" ]
-        verbs: [ "*" ]
-      - apiGroups: [ "" ]
-        resources: [ "events" ]
-        verbs: [ "create", "patch" ]
-      - apiGroups: [ "storage.k8s.io" ]
-        resources: [ "storageclasses" ]
-        verbs: [ "get", "list", "watch" ]
-
-    ---
-    apiVersion: rbac.authorization.k8s.io/v1
-    kind: ClusterRoleBinding
-    metadata:
-      name: local-path-provisioner-bind
-    roleRef:
-      apiGroup: rbac.authorization.k8s.io
-      kind: ClusterRole
-      name: local-path-provisioner-role
-    subjects:
-      - kind: ServiceAccount
-        name: local-path-provisioner-service-account
-        namespace: local-path-storage
-
-    ---
-    apiVersion: apps/v1
-    kind: Deployment
-    metadata:
-      name: local-path-provisioner
-      namespace: local-path-storage
-    spec:
-      replicas: 1
-      selector:
-        matchLabels:
-        app: local-path-provisioner
-      template:
-        metadata:
-          labels:
-            app: local-path-provisioner
-        spec:
-          serviceAccountName: local-path-provisioner-service-account
-          containers:
-            - name: local-path-provisioner
-              image: docker.m.daocloud.io/rancher/local-path-provisioner:v0.0.24
-              imagePullPolicy: IfNotPresent
-              command:
-                - local-path-provisioner
-                - --debug
-                - start
-                - --config
-                - /etc/config/config.json
-              volumeMounts:
-                - name: config-volume
-                mountPath: /etc/config/
-              env:
-                - name: POD_NAMESPACE
-                  valueFrom:
-                    fieldRef:
-                    fieldPath: metadata.namespace
-          volumes:
-            - name: config-volume
-              configMap:
-                name: local-path-config
-
-    ---
-    apiVersion: storage.k8s.io/v1
-    kind: StorageClass
-    metadata:
-      name: local-path
-    provisioner: rancher.io/local-path
-    volumeBindingMode: WaitForFirstConsumer
-    reclaimPolicy: Delete
-
-    ---
-    kind: ConfigMap
-    apiVersion: v1
-    metadata:
-      name: local-path-config
-      namespace: local-path-storage
-    data:
-      config.json: |-
-        {
-                "nodePathMap":[
-                {
-                        "node":"DEFAULT_PATH_FOR_NON_LISTED_NODES",
-                        "paths":["/opt/local-path-provisioner"]
-                }
-                ]
-        }
-      setup: |-
-        #!/bin/sh
-        set -eu
-        mkdir -m 0777 -p "$VOL_DIR"
-      teardown: |-
-        #!/bin/sh
-        set -eu
-        rm -rf "$VOL_DIR"
-      helperPod.yaml: |-
-        apiVersion: v1
-        kind: Pod
-        metadata:
-        name: helper-pod
-        spec:
-        containers:
-        - name: helper-pod
-            image: docker.m.daocloud.io/busybox
-            imagePullPolicy: IfNotPresent
-    ```
-
-## Install Cloud Native AI Components
-
-```yaml
-# Baize is the development codename for the Cloud Native AI module
+```bash
+# "baize" is the development codename for the Baize component
 helm repo add baize https://release.daocloud.io/chartrepo/baize
 helm repo update
 export VERSION=v0.1.1
@@ -151,73 +24,43 @@ helm upgrade --install baize baize/baize \
     -n baize-system \
     --set global.imageRegistry=release.daocloud.io \
     --version=${VERSION}
-    
-# Baize-agent, needs to be installed on each working cluster
 ```
 
-## Install NFS Server
+If you are installing in an existing `DCE` environment, you can add the `helm` source to the container management and also use a graphical installation method.
 
-The deployment of the NFS Server is still on the same server for demonstration purposes. Therefore, permissions are open here. If used in production, please ensure proper security measures are in place:
+## Initialize Worker Cluster
 
-### Server Deployment of NFS Server
+In each worker cluster with computing resources, the corresponding basic computing components need to be deployed. The main components include:
 
-```shell
-yum install -y nfs-utils
+- `gpu-operator`: Initializes the GPU resources in the cluster.
+  **The installation method may vary depending on the type of GPU resources.**
+  For details, refer to [GPU Management](../../kpanda/user-guide/gpu/index.md).
+- `insight-agent`: Observability component used to collect infrastructure information
+  in the cluster, including logs, metrics, and events
+- `baize-agent`: Core component of the Baize module, responsible for
+  scheduling, monitoring, Pytorch, Tensorflow, and other computing components
+- `nfs`: Storage service used for dataset preheating
 
-sudo systemctl enable rpcbind
-sudo systemctl enable nfs
+!!! danger
 
-sudo systemctl start rpcbind
-sudo systemctl start nfs
+    **The above components must be installed, otherwise it may cause the functionality to not work properly.**
 
-# Create mount directory, default is 'data', can be modified
-mkdir /data
-vim /etc/exports
-/data *(rw,sync,no_subtree_check,no_root_squash) # Add this line
+After completing the above tasks, you can now perform task training and model development
+in the Baize module. For detailed usage, you can refer to the following:
 
-# Mount test
-mkdir /tmp/data && mount -t nfs 10.64.24.19:/data /tmp/data -o nolock
-# If no errors, the mount was successful
-```
+### Introduction to Preheating Components
 
-### Install NFS-csi
+In the data management provided by the Baize module, the preheating capability of
+datasets relies on a storage service, and it is recommended to use an NFS service:
 
-```helm
-helm repo add csi-driver-nfs https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts
-helm upgrade --install csi-driver-nfs csi-driver-nfs/csi-driver-nfs \
-    --set image.nfs.repository=k8s.m.daocloud.io/sig-storage/nfsplugin \
-    --set image.csiProvisioner.repository=k8s.m.daocloud.io/sig-storage/csi-provisioner \
-    --set image.livenessProbe.repository=k8s.m.daocloud.io/sig-storage/livenessprobe \
-    --set image.nodeDriverRegistrar.repository=k8s.m.daocloud.io/sig-storage/csi-node-driver-registrar \
-    --namespace kube-system \
-    --version v4.5.0
-```
+- Deploy NFS Server
+    - If NFS already exists, you can skip this step
+    - If it does not exist, you can refer to the best practices for
+      [Deploying NFS Service](../../baize/best-practice/deploy-nfs-in-worker.md)
+- Deploy `nfs-driver-csi`
+- Deploy `StorageClass`
 
-Possible Issues:
+## Conclusion
 
-- After installing CSI, there will be 2 workloads, one is a Deployment and the other is a DaemonSet. There may be image pulling issues, especially in China. You can use k8s.m.daocloud.io for image pulling.
-- If you encounter DNS resolution issues, you can modify 2 workloads by changing the value of spec.dnsPolicy to ClusterFirstWithHostNet.
-
-### Create CSI
-
-```yaml
-apiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
-  name: nfs-csi
-provisioner: nfs.csi.k8s.io
-parameters:
-  server: 172.26.97.151
-  share: /data
-  # csi.storage.k8s.io/provisioner-secret is only needed for providing mountOptions in DeleteVolume
-  # csi.storage.k8s.io/provisioner-secret-name: "mount-options"
-  # csi.storage.k8s.io/provisioner-secret-namespace: "default"
-reclaimPolicy: Delete
-volumeBindingMode: Immediate
-mountOptions:
-  - nfsvers=4.1
-```
-
-Possible Issues:
-
-- Configuration issue with the server address in the Storage Class (SC). If deployed within the cluster and using the service (svc) address, be mindful of DNS resolution issues. The DNS on the nodes and the core-dns inside Kubernetes are not interconnected.
+After completing the above tasks, you can now experience all the functionalities of
+Baize in the worker cluster. Enjoy using it!

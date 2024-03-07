@@ -1015,6 +1015,8 @@ nav:
                   - Queue Management:
                       - Create Queue: baize/oam/queue/create.md
                       - Delete Queue: baize/oam/queue/delete.md
+              - Best Practices:
+                  - Deploy NFS to Preheat Dataset: baize/best-practice/deploy-nfs-in-worker.md
       - Edge Computing:
           - Cloud Edge Collaboration:
               - Intro:
