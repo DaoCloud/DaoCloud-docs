@@ -22,7 +22,6 @@ helm upgrade --install baize baize/baize \
     -n baize-system \
     --set global.imageRegistry=release.daocloud.io \
     --version=${VERSION}
-    
 ```
 
 如果是在已有的 `DCE` 环境中安装，可以添加 `helm` 源到容器管理内，采用界面化安装方式亦可。
@@ -31,7 +30,8 @@ helm upgrade --install baize baize/baize \
 
 在每个有算力资源的工作集群内，需要部署对应的算力基础组件，主要组件包含如下：
 
-- `gpu-operator` 初始化集群中的 GPU 资源，**这部分会因 GPU 资源类型安装方式不同**，详情参考：[GPU 管理](../../kpanda/user-guide/gpu/index.md)
+- `gpu-operator` 初始化集群中的 GPU 资源，**这部分会因 GPU 资源类型安装方式不同**，
+  详情参考 [GPU 管理](../../kpanda/user-guide/gpu/index.md)
 - `insight-agent` 可观测组件，用于采集集群的基础设施信息，包含日志、指标、事件
 - `baize-agent` 包含了智能算力的核心组件，调度、监控、Pytorch、Tensorflow 等算力组件
 - `nfs` 存储服务，用于数据集的预热
@@ -47,8 +47,8 @@ helm upgrade --install baize baize/baize \
 智能算力模块提供的数据管理中，数据集的预热能力依赖存储服务，推荐使用 NFS 服务：
 
 - 部署 NFS Server
-  - 如果已存在 NFS 可以跳过此步骤
-  - 如果不存在，可以参考最佳实践中的 [NFS 服务部署](../../baize/best-practice/deploy-nfs-in-worker.md)
+    - 如果已存在 NFS 可以跳过此步骤
+    - 如果不存在，可以参考最佳实践中的 [NFS 服务部署](../../baize/best-practice/deploy-nfs-in-worker.md)
 - 部署 `nfs-driver-csi`
 - 部署 `StorageClass`
 
