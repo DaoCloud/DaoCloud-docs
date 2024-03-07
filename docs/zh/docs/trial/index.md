@@ -17,7 +17,7 @@ DCE 社区版以云原生底座为核心，自研开源组件加持，提供云�
   <p style="font-size: 24px; color: green;">解锁社区版三步曲</p>
 </div>
 
-## <font color="green"><strong>1st</strong> 安装教程传送门</font>
+## <font color="green"><strong>1st</strong> 安装教程传送门</font> :door:
 
 !!! tip
 
@@ -74,7 +74,7 @@ DCE 社区版以云原生底座为核心，自研开源组件加持，提供云�
 
 :material-run: [开始离线安装](../install/community/k8s/offline.md)
 
-## <font color="green"><strong>2nd</strong> 申请许可证密钥</font>
+## <font color="green"><strong>2nd</strong> 申请许可证密钥</font> :key:
 
 1. 点击[此处免费申请「DCE 社区版」许可证密钥](https://qingflow.com/f/58604bf8)，许可证密钥将发送至您的邮箱
   （很多邮箱可能会拦截许可证密钥的邮件，如长时间未收到，可查看是否归为垃圾邮件）。
@@ -106,13 +106,13 @@ DCE 社区版以云原生底座为核心，自研开源组件加持，提供云�
     由于在申请许可证时，选择的有效期过短，有些小伙伴会出现许可证过期的情况，
     这时，可点击[查看更多续期操作](../dce/license0.md#_1)。
 
-## <font color="green"><strong>3rd</strong> 开启云原生之旅</font>
+## <font color="green"><strong>3rd</strong> 开启云原生之旅</font> :rice_scene:
 
 - [云原生技术实践公开课](https://appu8cplrlw7661.h5.xiaoeknow.com)：适合零基础或初级云原生开发者学习，涵盖云原生发展背景、基础知识、操作实践等内容。
 - [视频教程](../videos/index.md)：涵盖容器管理、全局管理、可观测性这三大模块功能的使用演示，更有商业版功能演示教程，欢迎大家参阅。
 
-<p style="font-size: 20px; color: green;">进一步了解 DaoCloud Enterprise 社区版</p>
+<p style="font-size: 20px; color: green;">DaoCloud Enterprise 社区版包括这 3 个组件：</p>
 
-[什么是容器管理](../kpanda/intro/index.md){ .md-button .md-button--primary }
-[什么是全局管理](../ghippo/intro/index.md){ .md-button .md-button--primary }
-[什么是可观测性](../insight/intro/index.md){ .md-button .md-button--primary }
+[容器管理](../kpanda/intro/index.md){ .md-button .md-button--primary }
+[全局管理](../ghippo/intro/index.md){ .md-button .md-button--primary }
+[可观测性](../insight/intro/index.md){ .md-button .md-button--primary }
