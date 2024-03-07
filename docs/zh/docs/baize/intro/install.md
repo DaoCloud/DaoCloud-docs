@@ -1,147 +1,18 @@
-# 安装
+# 算力集群初始化
 
-在 DCE 5.0 社区版或商业版上安装智算能力模块。
+默认情况下，DCE 5.0 商业版安装时可以同步安装智算能力模块，请联系交付支持团队获取商业版安装包。
 
-## 安装 local-path-storage
+## 智能算力模块
 
-为了满足系统组件对存储的需求，可以安装一个 local-path-storage：
+确保全局管理集群内已经安装了智算能力组件，确认方式为通过 DCE 5.0 管理界面查看是否有智算能力模块。
 
-??? note "查看完整的 YAML 代码"
+!!! info
 
-    ```yaml title="local-path-storage.yaml"
-    apiVersion: v1
-    kind: Namespace
-    metadata:
-      name: local-path-storage
+    一级导航栏有 `智能算力` 入口。
 
-    ---
-    apiVersion: v1
-    kind: ServiceAccount
-    metadata:
-      name: local-path-provisioner-service-account
-      namespace: local-path-storage
+如何不存在，可以通过以下方式安装，注意需要在 `kpanda-global-cluster` 全局管理集群内安装：
 
-    ---
-    apiVersion: rbac.authorization.k8s.io/v1
-    kind: ClusterRole
-    metadata:
-      name: local-path-provisioner-role
-    rules:
-      - apiGroups: [ "" ]
-        resources: [ "nodes", "persistentvolumeclaims", "configmaps" ]
-        verbs: [ "get", "list", "watch" ]
-      - apiGroups: [ "" ]
-        resources: [ "endpoints", "persistentvolumes", "pods" ]
-        verbs: [ "*" ]
-      - apiGroups: [ "" ]
-        resources: [ "events" ]
-        verbs: [ "create", "patch" ]
-      - apiGroups: [ "storage.k8s.io" ]
-        resources: [ "storageclasses" ]
-        verbs: [ "get", "list", "watch" ]
-
-    ---
-    apiVersion: rbac.authorization.k8s.io/v1
-    kind: ClusterRoleBinding
-    metadata:
-      name: local-path-provisioner-bind
-    roleRef:
-      apiGroup: rbac.authorization.k8s.io
-      kind: ClusterRole
-      name: local-path-provisioner-role
-    subjects:
-      - kind: ServiceAccount
-        name: local-path-provisioner-service-account
-        namespace: local-path-storage
-
-    ---
-    apiVersion: apps/v1
-    kind: Deployment
-    metadata:
-      name: local-path-provisioner
-      namespace: local-path-storage
-    spec:
-      replicas: 1
-      selector:
-        matchLabels:
-        app: local-path-provisioner
-      template:
-        metadata:
-          labels:
-            app: local-path-provisioner
-        spec:
-          serviceAccountName: local-path-provisioner-service-account
-          containers:
-            - name: local-path-provisioner
-              image: docker.m.daocloud.io/rancher/local-path-provisioner:v0.0.24
-              imagePullPolicy: IfNotPresent
-              command:
-                - local-path-provisioner
-                - --debug
-                - start
-                - --config
-                - /etc/config/config.json
-              volumeMounts:
-                - name: config-volume
-                mountPath: /etc/config/
-              env:
-                - name: POD_NAMESPACE
-                  valueFrom:
-                    fieldRef:
-                    fieldPath: metadata.namespace
-          volumes:
-            - name: config-volume
-              configMap:
-                name: local-path-config
-
-    ---
-    apiVersion: storage.k8s.io/v1
-    kind: StorageClass
-    metadata:
-      name: local-path
-    provisioner: rancher.io/local-path
-    volumeBindingMode: WaitForFirstConsumer
-    reclaimPolicy: Delete
-
-    ---
-    kind: ConfigMap
-    apiVersion: v1
-    metadata:
-      name: local-path-config
-      namespace: local-path-storage
-    data:
-      config.json: |-
-        {
-                "nodePathMap":[
-                {
-                        "node":"DEFAULT_PATH_FOR_NON_LISTED_NODES",
-                        "paths":["/opt/local-path-provisioner"]
-                }
-                ]
-        }
-      setup: |-
-        #!/bin/sh
-        set -eu
-        mkdir -m 0777 -p "$VOL_DIR"
-      teardown: |-
-        #!/bin/sh
-        set -eu
-        rm -rf "$VOL_DIR"
-      helperPod.yaml: |-
-        apiVersion: v1
-        kind: Pod
-        metadata:
-        name: helper-pod
-        spec:
-        containers:
-        - name: helper-pod
-            image: docker.m.daocloud.io/busybox
-            imagePullPolicy: IfNotPresent
-    ```
-
-## 安装智算能力组件
-
-```yaml
+```bash
 # baize 是智算能力组件的开发代号
 helm repo add baize https://release.daocloud.io/chartrepo/baize
 helm repo update
@@ -152,73 +23,35 @@ helm upgrade --install baize baize/baize \
     --set global.imageRegistry=release.daocloud.io \
     --version=${VERSION}
     
-# baize-agent ， 需要安装在每个工作集群中
 ```
 
-## 安装 NFS Server
+如果是在已有的 `DCE` 环境中安装，可以添加 `helm` 源到容器管理内，采用界面化安装方式亦可。
 
-NFS Server 的部署方式仍旧在同一台服务器上，演示环境使用，所以这里权限是放开的，如果生产使用，请做好安全处理：
+## 工作集群初始化
 
-### 服务器部署 nfs-server
+在每个有算力资源的工作集群内，需要部署对应的算力基础组件，主要组件包含如下：
 
-```shell
-yum install -y nfs-utils
+- `gpu-operator` 初始化集群中的 GPU 资源，**这部分会因 GPU 资源类型安装方式不同**，详情参考：[GPU 管理](../../kpanda/user-guide/gpu/index.md)
+- `insight-agent` 可观测组件，用于采集集群的基础设施信息，包含日志、指标、事件
+- `baize-agent` 包含了智能算力的核心组件，调度、监控、Pytorch、Tensorflow 等算力组件
+- `nfs` 存储服务，用于数据集的预热
 
-sudo systemctl enable rpcbind
-sudo systemctl enable nfs
+!!! danger
 
-sudo systemctl start rpcbind
-sudo systemctl start nfs
+    **以上组件必须安装，否则会导致功能使用不正常。**
 
-# 创建挂载目录, 默认用了 data， 可以修改
-mkdir /data
-vim /etc/exports
-/data *(rw,sync,no_subtree_check,no_root_squash) # 添加此行
+以上工作完成后，已经可以在智能算力内，进行任务训练和模型开发，详细使用可以参考如下：
 
-# mount test
-mdkir /tmp/data && mount -t nfs 10.64.24.19:/data /tmp/data -o nolock
-# 不报错就是成功
-```
+### 预热组件介绍
 
-### 安装 NFS-csi
+智能算力模块提供的数据管理中，数据集的预热能力依赖存储服务，推荐使用 NFS 服务：
 
-```helm
-helm repo add csi-driver-nfs https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts
-helm upgrade --install csi-driver-nfs csi-driver-nfs/csi-driver-nfs \
-    --set image.nfs.repository=k8s.m.daocloud.io/sig-storage/nfsplugin \
-    --set image.csiProvisioner.repository=k8s.m.daocloud.io/sig-storage/csi-provisioner \
-    --set image.livenessProbe.repository=k8s.m.daocloud.io/sig-storage/livenessprobe \
-    --set image.nodeDriverRegistrar.repository=k8s.m.daocloud.io/sig-storage/csi-node-driver-registrar \
-    --namespace kube-system \
-    --version v4.5.0
-```
+- 部署 NFS Server
+  - 如果已存在 NFS 可以跳过此步骤
+  - 如果不存在，可以参考最佳实践中的 [NFS 服务部署](../../baize/best-practice/deploy-nfs-in-worker.md)
+- 部署 `nfs-driver-csi`
+- 部署 `StorageClass`
 
-可能遇到的问题：
+## 结语
 
-- 安装完成 csi 后会有 2 个 workload，一个是 Deployment，一个 daemonset，会有镜像拉取的问题，特别是在国内，可以使用 k8s.m.daocloud.io
-- 如果遇到了 dns 解析的问题，可以修改 2 个 workload，将 spec.dnsPolicy 的值改为 ClusterFirstWithHostNet
-
-### 创建 CSI
-
-```yaml
-apiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
-  name: nfs-csi
-provisioner: nfs.csi.k8s.io
-parameters:
-  server: 172.26.97.151
-  share: /data
-  # csi.storage.k8s.io/provisioner-secret is only needed for providing mountOptions in DeleteVolume
-  # csi.storage.k8s.io/provisioner-secret-name: "mount-options"
-  # csi.storage.k8s.io/provisioner-secret-namespace: "default"
-reclaimPolicy: Delete
-volumeBindingMode: Immediate
-mountOptions:
-  - nfsvers=4.1
-```
-
-可能遇到的问题：
-
-- 在 SC 中 server 的地址的配置问题，如果是部署在集群内，使用 svc 地址的话，注意 dns 解析的问题，
-  节点上的 dns 和 k8s 内的 core-dns 是不互通的。
+以上完成后，就可以在工作集群内正常体验智能算力的全部功能了，祝你使用愉快！
