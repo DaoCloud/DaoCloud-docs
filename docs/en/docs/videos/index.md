@@ -5,9 +5,9 @@ hide:
 
 # Video Tutorials
 
-<span style="background-image: linear-gradient(to right, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080, #ff0000); 
-    background-size: 200%; 
-    color: transparent; 
+<span style="background-image: linear-gradient(to right, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080, #ff0000);
+    background-size: 200%;
+    color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
     animation: shine 5s infinite linear;">
@@ -38,6 +38,7 @@ hide:
 - :material-engine: **Microservice Engine** [Microservice governance center and gateway](skoala.md)
 - :material-table-refresh: **Service Mesh** [Non-intrusive service governance](mspider.md)
 - :material-middleware: **Middleware** [ES, Kafka, MinIO, MySQL, etc.](mcamel.md)
+- :material-slot-machine: **Intelligent Engine** [Cloud Native AI - Integrated Training and Inference Platform](baize.md)
 - :fontawesome-brands-edge-legacy: **Cloud Edge Collaboration** [Extend containers to edge](kant.md)
 - :fontawesome-solid-user-group: **Global Management** [Login settings, access permissions, appearance](ghippo.md)
 

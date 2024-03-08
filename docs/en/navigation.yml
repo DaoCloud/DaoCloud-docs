@@ -1160,6 +1160,8 @@ nav:
           - Service Mesh: videos/mspider.md
       - Data Service:
           - Middleware: videos/mcamel.md
+      - Cloud Native AI:
+          - Intelligent Engine: videos/baize.md
       - Edge Computing:
           - Cloud Edge Collaboration: videos/kant.md
       - Management:

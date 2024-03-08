@@ -43,6 +43,7 @@ of cloud native productivity. Embrace DCE 5.0 to elevate your organization's cap
 - :material-engine: **Microservice Engine** [Microservice governance and gateway](../skoala/intro/index.md)
 - :material-table-refresh: **Service Mesh** [Non-intrusive service governance](../mspider/intro/index.md)
 - :material-middleware: **Middleware** [ES, Kafka, MinIO, MySQL, etc.](../middleware/index.md)
+- :material-slot-machine: **Intelligent Engine** [Cloud Native AI - Integrated Training and Inference Platform](../baize/intro/index.md)
 - :fontawesome-brands-edge: **Cloud Edge Collaboration** [Containers extend to edge](../kant/intro/index.md)
 - :fontawesome-solid-user-group: **Global Management** [Login/permissions/appearance](../ghippo/intro/index.md)
 - [Free Trial Now :free:](../trial/index.md){ .md-button }
@@ -218,12 +219,20 @@ day by day, making things better over time.
 
     ![virtual machine](../images/virtnest.png)
 
+=== "Intelligent Engine"
+
+    Cloud-native AI platform seamlessly integrates MLOps with LLMs, offering an end-to-end unified development process for an AI-powered computational platform. It supports a wide range of deep learning frameworks including Pytorch and Tensorflow, and covers comprehensive functions such as dataset management, model development, training, inference, monitoring, and operations. Users can focus solely on the development and application of models, without the need to worry about underlying resource scheduling, management, and monitoring.
+
+    **Modules involved**: [Global Management](../ghippo/intro/index.md), [Container Management]../(kpanda/intro/index.md), [Cloud Native Networking](../network/intro/index.md)
+
+    ![Intelligent Engine](../baize/images/image01.png)
+
 Once you have obtained the [license authorization](./license0.md) and successfully logged into DCE 5.0
 for the first time, you will be greeted by a user-friendly dashboard. This dashboard provides an intuitive display
 of various information, including the status of running containers and pods, CPU and memory usage, health status
 of clusters/nodes/pods, alerts, resource utilization, and an overview of available functionalities.
 
-![dashboard](./images/ipavo.png)
+![dashboard](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/dce/images/ipavo.png)
 
 [Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
