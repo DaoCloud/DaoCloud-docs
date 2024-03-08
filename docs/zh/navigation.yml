@@ -1183,6 +1183,8 @@ nav:
           - 服务网格: videos/mspider.md
       - 数据服务:
           - 中间件: videos/mcamel.md
+      - 云原生 AI:
+          - 智能算力: videos/baize.md
       - 边缘计算:
           - 云边协同: videos/kant.md
       - 管理:

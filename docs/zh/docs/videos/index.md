@@ -5,9 +5,9 @@ hide:
 
 # 视频教程
 
-<span style="background-image: linear-gradient(to right, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080, #ff0000); 
-    background-size: 200%; 
-    color: transparent; 
+<span style="background-image: linear-gradient(to right, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080, #ff0000);
+    background-size: 200%;
+    color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
     animation: shine 5s infinite linear;">
@@ -38,6 +38,7 @@ hide:
 - :material-engine: **微服务引擎** [微服务治理中心和网关](skoala.md)
 - :material-table-refresh: **服务网格** [非侵入式服务治理](mspider.md)
 - :material-middleware: **中间件** [ES, Kafka, MinIO, MySQL 等](mcamel.md)
+- :material-slot-machine: **智能算力** [云原生 AI - 训推一体化平台](baize.md)
 - :fontawesome-brands-edge-legacy: **云边协同** [容器能力延伸至边缘](kant.md)
 - :fontawesome-solid-user-group: **全局管理** [设置登录、访问权限、外观](ghippo.md)
 
