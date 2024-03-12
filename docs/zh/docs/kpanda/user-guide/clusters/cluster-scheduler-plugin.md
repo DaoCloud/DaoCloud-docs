@@ -11,23 +11,26 @@
 - 在特殊的场景，需要新的调度器来完成调度任务而不影响原生调度器的流程
 - 区分不同功能的调度器，通过切换调度器名称来实现不同的调度场景
 
-本文在使用 vgpu 调度器的同时，想结合 scheduler-plugins 的 cosheduling 插件能力的场景为示例，介绍如何安装并使用 scheduler-plugins。
+本文以使用 vgpu 调度器的同时，想结合 scheduler-plugins 的 cosheduling 插件能力的场景为示例，介绍如何安装并使用 scheduler-plugins。
 
 ## 安装 scheduler-plugins
 
-前置条件：
+**前置条件**
 
 - kubean 是在 v0.13.0 版本推出的新功能，选择管理集群时请确保版本是否 >= 此版本。
 - 安装 scheduler-plugins 版本为 v0.27.8，请确保集群版本是否与它兼容。
   参考文档 [Compatibility Matrix](https://github.com/kubernetes-sigs/scheduler-plugins/tree/master?tab=readme-ov-file#compatibility-matrix)。
 
+**安装流程**
+
 1. 在 **创建集群** -> **高级配置** -> **自定义参数** 中添加 scheduler-plugins 参数
 
     ```yaml
-    scheduler_plugins_plugin_config:s
-    - name: Coscheduling
+    scheduler_plugins_enabled:true
+    scheduler_plugins_plugin_config:
+      - name: Coscheduling
         args:
-        permitWaitingTimeSeconds: 10 # default is 60
+          permitWaitingTimeSeconds: 10 # default is 60
     ```
 
     参数说明：
@@ -44,14 +47,19 @@
 
     ![查看插件负载状态](../../images/cluster-scheduler-plugin-02.png)
 
-3. 在 Helm 模版中安装 vgpu，设置 values.yaml 参数。
+## 使用 scheduler-plugins
 
-    - `schedulerName: scheduler-plugins-schedulerName`，这是 kubean 默认安装的 scheduler-plugins 的 scheduler 名称，目前不能修改。
+以下以使用 vgpu 调度器的同时，想结合 scheduler-plugins 的 cosheduling 插件能力场景为示例，介绍如何使用 scheduler-plugins。
+
+1. 在 Helm 模版中安装 vgpu，设置 values.yaml 参数。
+
+    - `schedulerName: scheduler-plugins-scheduler`，这是 kubean 默认安装的 scheduler-plugins 的 scheduler 名称，目前不能修改。
     - `scheduler.kubeScheduler.enabled: false`，不安装 kube-scheduler，将 vgpu-scheduler 作为单独的 extender。
 
     ![安装 vgpu 插件](../../images/cluster-scheduler-plugin-03.png)
+    ![安装 vgpu 插件](../../images/cluster-scheduler-plugin-04.png)
 
-4. 在 scheduler-plugins 上扩展 vgpu-scheduler。
+1. 在 scheduler-plugins 上扩展 vgpu-scheduler。
 
     ```bash
     [root@master01 charts]# kubectl get cm -n scheduler-plugins scheduler-config -ojsonpath="{.data.scheduler-config\.yaml}"
@@ -107,33 +115,44 @@
         name: Coscheduling
     extenders:
     - urlPrefix: "${urlPrefix}"
-    filterVerb: filter
-    bindVerb: bind
-    nodeCacheCapable: true
-    ignorable: true
-    httpTimeout: 30s
-    weight: 1
-    enableHTTPS: true
-    tlsConfig:
+      filterVerb: filter
+      bindVerb: bind
+      nodeCacheCapable: true
+      ignorable: true
+      httpTimeout: 30s
+      weight: 1
+      enableHTTPS: true
+      tlsConfig:
         insecure: true
-    managedResources:
-    - name: nvidia.com/vgpu
+      managedResources:
+      - name: nvidia.com/vgpu
         ignoredByScheduler: true
-    - name: nvidia.com/gpumem
+      - name: nvidia.com/gpumem
         ignoredByScheduler: true
-    - name: nvidia.com/gpucores
+      - name: nvidia.com/gpucores
         ignoredByScheduler: true
-    - name: nvidia.com/gpumem-percentage
+      - name: nvidia.com/gpumem-percentage
         ignoredByScheduler: true
-    - name: nvidia.com/priority
+      - name: nvidia.com/priority
         ignoredByScheduler: true
-    - name: cambricon.com/mlunum
+      - name: cambricon.com/mlunum
         ignoredByScheduler: true
     ```
 
-5. 安装完 vgpu-scheduler 后，会创建 svc，urlPrefix 指定 svc 的 url。
+1. 安装完 vgpu-scheduler 后，系统会自动创建 svc，urlPrefix 指定 svc 的 url。
 
-6. 将 scheduler-plugins 的 Pod 重新加载新的配置文件。
+    !!! note
+
+        - svc 指 pod 服务负载，您可以到安装了 nvidia-vgpu 插件的命名空间下通过以下命令拿到 443 端口对应的外部访问信息。
+
+            ```shell
+            kubectl get svc -n ${namespace} 
+            ```
+
+        - urlprifix 格式为 https://${ip 地址}:${端口}
+
+
+1. 将 scheduler-plugins 的 scheduler Pod 重启，加载新的配置文件。
 
     !!! note
 
