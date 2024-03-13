@@ -12,7 +12,7 @@
 
 1. 在 __应用工作台__ -> __持续发布__ 页面中，点击 __创建应用__ 按钮。
 
-    ![创建应用](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/argo01.png)
+    ![创建应用](../../images/ceate-giops01.png)
 
 1. 在 __创建应用__ 页面中，分配配置 __基本信息__ 、 __部署位置__ 、 __代码仓库来源__ 和 __同步策略__ 后，点击 __确定__ 。
 
@@ -36,20 +36,22 @@
             - 替换资源：是否需要替换已存在的资源
             - 同步重试：对应用同步重试参数化，支持设置重试最大次数、重试持续时间、重试持续最大时间、因子
 
-    ![创建应用](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/argo02.png)
+    ![创建应用](../../images/create-gitops02.png)
 
 ## 查看应用
 
 1. 创建成功后，点击应用名称进入详情页面，可以查看应用详情。
 
-    ![应用详情](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/argo03.png)
+    ![应用详情](../../images/create-gitops03.png)
 
 1. 由于同步方式选择的是 __手动同步__ ，所以我们需要手动进行同步，点击 __同步__ 。
 
-    ![手动同步](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/argo04.png)
+    ![手动同步](../../images/create-gitops04.png)
 
 1. 同步过程中具体参数说明请参考[手动同步应用](./sync-manually.md)，点击 __确定__ 。
 
-    ![手动同步](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/argo05.png)
+    ![手动同步](../../images/create-gitops05.png)
 
 1. 等待同步成功后，查看同步结果。
+
+    ![手动同步](../../images/create-gitops06.png)
