@@ -119,17 +119,11 @@ Other Linux 本质上是由于 DCE 对某些 Linux 没有提供安装系统离�
     tar -xvf offline-v0.6.1-amd64.tar
     ```
 
-2. 下载 Other Linux 操作系统镜像，此处以 `UnionTech OS Server 20 1050d` 为例：
+2. 参考上一步[制作操作系统离线包（OS package）](#os-package)。
 
-    ```bash
-    curl -LO https://cdimage-download.chinauos.com/uniontechos-server-20-1050d-amd64.iso
-    ```
+3. 下载 addon 离线包，可以在[下载中心](../../download/index.md)下载最新版本（可选）
 
-3. 参考上一步`制作操作系统离线包`。
-
-4. 下载 addon 离线包，可以在[下载中心](../../download/index.md)下载最新版本（可选）
-
-5. 设置[集群配置文件 clusterConfig.yaml](../commercial/cluster-config.md)，
+4. 设置[集群配置文件 clusterConfig.yaml](../commercial/cluster-config.md)，
    可以在离线包 `offline/sample` 下获取该文件并按需修改。
 
     === "UnionTech OS Server 20 1050d"
@@ -222,7 +216,7 @@ Other Linux 本质上是由于 DCE 对某些 Linux 没有提供安装系统离�
     }
     ```
 
-6. 开始安装 DCE 5.0。
+5. 开始安装 DCE 5.0。
 
     ```bash
     ./dce5-installer cluster-create -m ./sample/mainfest.yaml -c ./sample/clusterConfig.yaml
@@ -237,7 +231,7 @@ Other Linux 本质上是由于 DCE 对某些 Linux 没有提供安装系统离�
         - `-d` 开启 debug 模式
         - `--serial` 指定后所有安装任务串行执行
 
-7. 安装完成后，命令行会提示安装成功。恭喜您！:smile: 现在可以通过屏幕提示的 URL 使用默认的账户和密码（admin/changeme）探索全新的 DCE 5.0 啦！
+6. 安装完成后，命令行会提示安装成功。恭喜您！:smile: 现在可以通过屏幕提示的 URL 使用默认的账户和密码（admin/changeme）探索全新的 DCE 5.0 啦！
 
     ![success](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/success.png)
 
@@ -245,4 +239,4 @@ Other Linux 本质上是由于 DCE 对某些 Linux 没有提供安装系统离�
 
         请记录好提示的 URL，方便下次访问。
 
-8. 成功安装 DCE 5.0 商业版之后，请联系我们授权：电邮 [info@daocloud.io](mailto:info@daocloud.io) 或致电 400 002 6898。
+7. 成功安装 DCE 5.0 商业版之后，请联系我们授权：电邮 [info@daocloud.io](mailto:info@daocloud.io) 或致电 400 002 6898。
