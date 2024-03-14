@@ -13,255 +13,126 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 
 !!! note
 
-    以下使用两套 DCE 5.0 来做嵌套演示。实际场景需要自己解决客户系统的如下问题：
+    以下使用开源软件 Label Studio 来做嵌套演示。实际场景需要自己解决客户系统的如下问题：
 
-    1. 客户系统需要自己添加一个 subpath，用于区分哪些是 DCE 5.0 的服务，哪些是客户系统的服务。
-    2. 提供客户系统的 jwksUri 发现地址（如果客户系统使用了 HTTP Headers Authorization 字段作为 TOKEN 校验）
-    3. 提供客户系统的 TLS 证书（如果客户系统使用了 TLS，并且 TLS 证书是自签的）
+    1. 客户系统需要自己添加一个 Subpath，用于区分哪些是 DCE 5.0 的服务，哪些是客户系统的服务。
 
 ## 环境准备
 
-1. 部署两套 DCE 5.0 环境：
+1. 部署 DCE 5.0 环境：
  
-    - `http://192.168.1.6:30444` 作为 DCE 5.0
-    - `http://192.168.1.6:30080` 作为客户系统
-   
-    应用过程中对客户系统的操作请根据实际情况进行调整。
+   - `https://10.6.202.177:30443` 作为 DCE 5.0
 
-2. 规划客户系统的 subpath 路径： `http://192.168.1.6:30080/external-anyproduct/` 
-  （强烈建议使用辨识度高的名称作为 subpath，不能与主 DCE 5.0 的 HTTP router 发生冲突！！！）
+     ![DCE 5.0](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/oem-dce5.png)
 
-!!! note
+1. 部署客户系统环境：
 
-    1. 本文采用了 HTTP 的方式部署 DCE 5.0，实际应用中可以使用 HTTP，或者使用公网的 TLS 证书。请勿使用自签的 TLS 证书。
-    2. 本文中的 __/external-anyproduct__ 是客户系统的 subpath，请将它替换成你的 subpath。
-    3. 本文中 `http://192.168.1.6:30444` 是 DCE 5.0 的访问地址，
-       `http://192.168.1.6:30080` 是客户系统的访问地址，请将它替换成你的 DCE 5.0 访问地址和客户系统访问地址。
+   - `http://10.6.202.177:30123` 作为客户系统
 
-## 统一域名
+     应用过程中对客户系统的操作请根据实际情况进行调整。
 
-### 为客户系统配置 subpath
+1. 规划客户系统的 Subpath 路径： `http://10.6.202.177:30123/label-studio`（建议使用辨识度高的名称作为 Subpath，不能与主 DCE 5.0 的 HTTP router 发生冲突）。请确保用户通过 `http://10.6.202.177:30123/label-studio` 能够正常访问客户系统。
 
-1. ssh 登录到客户系统服务器。
-1. 使用 vim 命令创建 __subpath-envoyfilter.yaml__ 文件
+   ![Label Studio](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/oem-label-studio.png)
 
-    ```bash
-    vim subpath-envoyfilter.yaml
-    ```
+## 统一域名和端口
 
-    ```yaml title="subpath-envoyfilter.yaml"
-    apiVersion: networking.istio.io/v1alpha3
-    kind: EnvoyFilter
-    metadata:
-      name: subpath-envoyfilter
-      namespace: istio-system
-    spec:
-      workloadSelector:
-        labels:
-          istio: ingressgateway
-      configPatches:
-        - applyTo: HTTP_FILTER
-          match:
-            context: GATEWAY
-            listener:
-              filterChain:
-                filter:
-                  name: envoy.filters.network.http_connection_manager
-                  subFilter:
-                    name: envoy.filters.http.router
-          patch:
-            operation: INSERT_BEFORE
-            value:
-              name: envoy.lua
-              typed_config:
-                "@type": type.googleapis.com/envoy.extensions.filters.http.lua.v3.Lua
-                inlineCode: |-
-                  function envoy_on_request(request_handle)
-                    local path = request_handle:headers():get(":path")
-                    # 请改为你需要的 subpath 路径
-                    local mysubpath = "/external-anyproduct"
-                    if string.sub(path,1,string.len(mysubpath)) ~= mysubpath then
-                        return
-                    end
-                    local _, _, rest = string.find(path, "/[^/]+/(.*)")
-                    if rest then
-                      request_handle:headers():replace(":path", "/" .. rest)
-                    end
-                  end
-    ---
-    apiVersion: security.istio.io/v1beta1
-    kind: AuthorizationPolicy
-    metadata:
-      # Please edit the object below. Lines beginning with a '#' will be ignored,
-      name: mysubpath
-      namespace: istio-system
-    spec:
-      rules:
-        - to:
-            - operation:
-                paths:
-                  # 请改为你需要的 subpath 路径
-                  # 注意，此配置仅适用开发环境，请勿用于生产环境，因为可能会造成 AuthN 失效！！！
-                  - /external-anyproduct*
-        - from:
-            - source:
-                requestPrincipals:
-                  - "*"
-      selector:
-        matchLabels:
-          app: istio-ingressgateway
-    ```
+1. SSH 登录到 DCE 5.0 服务器。
 
-1. 使用 kubectl 命令应用 subpath-envoyfilter.yaml：
+   ```bash
+   ssh root@10.6.202.177
+   ```
+
+1. 使用 vim 命令创建 __label-studio.yaml__ 文件
 
     ```bash
-    kubectl apply -f subpath-envoyfilter.yaml
+    vim label-studio.yaml
     ```
 
-1. 使用 helm 命令获取 ghippo 版本号：
-
-    ```bash
-    helm get notes ghippo -n ghippo-system | grep "Chart Version" | awk -F ': ' '{ print $2 }'（本文ghippo版本是 0.19.2）
-    ```
-
-1. 使用 helm 命令获取 helm values：
-
-    ```bash
-    helm get values ghippo -n ghippo-system > dce5-slave-values.yaml
-    ```
-
-1. 使用 vim 命令，编辑 __dce5-slave-values.yaml__ 文件：
-
-    ```bash
-    vim dce5-slave-values.yaml
-    ```
-
-    ```yaml title="dce5-slave-values.yaml"
-    USER-SUPPLIED VALUES:
-    USER-SUPPLIED VALUES: null
-    anakin:
-      replicaCount: 1
-    apiserver:
-      replicaCount: 1
-    auditserver:
-      replicaCount: 1
-    controllermanager:
-      replicaCount: 1
-    global:
-      # 改为主 DCE 5.0 的域名（IP）+ subpath</font>
-      reverseProxy: http://192.168.1.6:30444/external-anyproduct
-      storage:
-        audit:
-        - driver: mysql
-          dsn: audit:changeme@tcp(ghippo-mysql.ghippo-system.svc.cluster.local:3306)/audit?charset=utf8mb4&multiStatements=true&parseTime=true
-        builtIn: true
-        ghippo:
-        - driver: mysql
-          dsn: ghippo:changeme@tcp(ghippo-mysql.ghippo-system.svc.cluster.local:3306)/ghippo?charset=utf8mb4&multiStatements=true&parseTime=true
-        keycloak:
-        - driver: mysql
-          dsn: keycloak:changeme@tcp(ghippo-mysql.ghippo-system.svc.cluster.local:3306)/keycloak?charset=utf8mb4
-    keycloakx:
-      replicas: 1
-    ui:
-      replicaCount: 1
-    ```
-
-1. 使用 helm 命令，应用 __dce5-slave-values.yaml__ 配置（注意：替换版本号）：
-
-    ```bash
-    helm upgrade ghippo ghippo/ghippo -n ghippo-system -f dce5-slave-values.yaml --version v0.19.2 --debug
-    ```
-
-1. 使用 kubectl 重启 ghippo Pod，使配置生效：
-
-    ```bash
-    kubectl rollout restart deploy/ghippo-apiserver -n ghippo-system
-    kubectl rollout restart statefulset/ghippo-keycloakx -n ghippo-system
-    ```
-
-### 为 DCE 5.0 配置客户系统的 jwksUri 发现地址
-
-1. ssh 登录到 DCE 5.0 服务器。
-1. 使用 vim 命令创建 __external-svc-anyproduct.yaml__ 文件
-
-    ```bash
-    vim external-svc-anyproduct.yaml
-    ```
-
-    ```yaml title="external-svc-anyproduct.yaml"
+    ```yaml title="label-studio.yaml"
     apiVersion: networking.istio.io/v1beta1
     kind: ServiceEntry
     metadata:
-      name: external-svc-anyproduct
-      namespace: istio-system
+      name: label-studio
+      namespace: ghippo-system
     spec:
       exportTo:
       - "*"
-      addresses:
-      - 172.168.1.6
       hosts:
-      - external.svc.anyproduct
+      - label-studio.svc.external
       ports:
-      # 改为客户系统的端口号
-      - number: 30080
+      # 添加虚拟端口
+      - number: 80
         name: http
         protocol: HTTP
       location: MESH_EXTERNAL
       resolution: STATIC
       endpoints:
       # 改为客户系统的域名（或IP）
-      - address: 192.168.1.6
+      - address: 10.6.202.177
         ports:
           # 改为客户系统的端口号
-          http: 30080
-    ```
-
-1. 使用 kubectl 命令应用  external-svc-anyproduct.yaml：
-
-    ```bash
-    kubectl apply -f external-svc-anyproduct.yaml
-    ```
-
-1. 使用 kubectl 命令，修改 DCE 5.0 RequestAuthentication CR 资源：
-
-    ```bash
-    kubectl edit RequestAuthentication ghippo -n istio-system
-    ```
-
-    ```yaml title="external-svc-anyproduct.yaml"
-    apiVersion: security.istio.io/v1
-    kind: RequestAuthentication
+          http: 30123
+    ---
+    apiVersion: networking.istio.io/v1alpha3
+    kind: VirtualService
     metadata:
-      name: ghippo
+      # 修改为客户系统的名字
+      name: label-studio
+      namespace: ghippo-system
+    spec:
+      exportTo:
+      - "*"
+      hosts:
+      - "*"
+      gateways:
+      - ghippo-gateway
+      http:
+      - match:
+          - uri:
+              exact: /label-studio # 修改为客户系统在 DCE5.0 Web UI 入口中的路由地址
+          - uri:
+              prefix: /label-studio/ # 修改为客户系统在 DCE5.0 Web UI 入口中的路由地址
+        route:
+        - destination:
+            # 修改为上文 ServiceEntry 中的 spec.hosts 的值
+            host: label-studio.svc.external
+            port:
+              # 修改为上文 ServiceEntry 中的 spec.ports 的值
+              number: 80
+    ---
+    apiVersion: security.istio.io/v1beta1
+    kind: AuthorizationPolicy
+    metadata:
+      # 修改为客户系统的名字
+      name: label-studio
       namespace: istio-system
     spec:
-      jwtRules:
-      # 新增规则1
-      - forwardOriginalToken: true
-        # 主 DCE 5.0 的域名（或IP）+ subpath + /auth/realms/ghippo
-        issuer: http://192.168.1.6:30444/external-anyproduct/auth/realms/ghippo
-        # 主 DCE 5.0 的域名（或IP）+ subpath + /auth/realms/ghippo/protocol/openid-connect/certs
-        jwksUri: http://192.168.1.6:30444/external-anyproduct/auth/realms/ghippo/protocol/openid-connect/certs?1692515854
-      # 新增规则2
-      - forwardOriginalToken: true
-        issuer: ghippo.io
-        # 主 DCE 5.0 的域名（或IP）+ subpath + /apis/ghippo.io/v1alpha1/certs
-        jwksUri: http://192.168.1.6:30444/external-anyproduct/apis/ghippo.io/v1alpha1/certs?1692515854
-
-      - forwardOriginalToken: true
-        issuer: http://192.168.1.6:30444/auth/realms/ghippo
-        jwksUri: http://ghippo-keycloakx-http.ghippo-system.svc.cluster.local/auth/realms/ghippo/protocol/openid-connect/certs?1692515854
-      - forwardOriginalToken: true
-        issuer: http://ghippo-keycloakx-http.ghippo-system.svc.cluster.local/auth/realms/ghippo
-        jwksUri: http://ghippo-keycloakx-http.ghippo-system.svc.cluster.local/auth/realms/ghippo/protocol/openid-connect/certs?1692515854
-      - forwardOriginalToken: true
-        issuer: ghippo.io
-        jwksUri: http://ghippo-apiserver.ghippo-system.svc.cluster.local:80/apis/ghippo.io/v1alpha1/certs?1692515854
+      action: ALLOW
       selector:
         matchLabels:
           app: istio-ingressgateway
+      rules:
+      - from:
+        - source:
+            requestPrincipals:
+            - '*'
+      - to:
+        - operation:
+            paths:
+            - /label-studio # 修改为 VirtualService 中的 spec.http.match.uri.prefix 的值
+            - /label-studio/* # 修改为 VirtualService 中的 spec.http.match.uri.prefix 的值（注意，末尾需要添加 "*"）
     ```
+
+1. 使用 kubectl 命令应用 label-studio.yaml：
+
+    ```bash
+    kubectl apply -f label-studio.yaml
+    ```
+
+1. 验证 Label Studio UI 的 IP 和 端口是否一致：
+   
+   ![Label Studio](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/label-studio-2.png)
 
 ## 打通用户体系
 
@@ -287,72 +158,17 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 参考文档下方的 tar 包来实现一个空壳的前端子应用，把客户系统以 iframe 的形式放进该空壳应用里。
 
 1. 下载 gproduct-demo-main.tar.gz 文件，将 src 文件夹下 App-iframe.vue 中的 src 属性值改为用户进入客户系统的绝对地址，如：
-   __src="http://192.168.1.6/external-anyproduct" (DCE 5.0 地址 + subpath)__ 或相对地址，如： __src="./external-anyproduct/insight"__ 
+   __src="https://10.6.202.177:30443/label-studio" (DCE 5.0 地址 + Subpath)__ 或相对地址，如： __src="./external-anyproduct/insight"__ 
 
-    ![src 地址](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/src.png)
+    ![src 地址](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/src-2.png)
 
 1. 删除 src 文件夹下的 App.vue 和 main.ts 文件，同时将：
     - App-iframe.vue 重命名为 App.vue
     - main-iframe.ts 重命名为 main.ts
-1. 编辑 demo.yaml 文件
-
-    ```bash
-    vim demo.yaml
-    ```
-
-    ```yaml title="demo.yaml"
-    kind: Namespace
-    apiVersion: v1
-    metadata:
-      name: gproduct-demo
-    ---
-    apiVersion: apps/v1
-    kind: Deployment
-    metadata:
-      name: gproduct-demo
-      namespace: gproduct-demo
-      labels:
-        app: gproduct-demo
-    spec:
-      ...
-    ---
-    apiVersion: v1
-    kind: Service
-    metadata:
-      name: gproduct-demo
-      namespace: gproduct-demo
-    spec:
-      ...
-    ---
-    apiVersion: ghippo.io/v1alpha1
-    kind: GProductNavigator
-    metadata:
-      name: gproduct-demo
-    spec:
-      ...
-    ---
-    apiVersion: ghippo.io/v1alpha1
-    kind: GProductProxy
-    metadata:
-      name: gproduct-demo
-    spec:
-      gproduct: gproduct-demo
-      proxies:
-        ...
-        # 添加一条规则，'/external-anyproduct' 替换成你的 subpath
-        - match:
-            uri:
-              prefix: /external-anyproduct
-          destination:
-            host: external.svc.anyproduct
-            # 端口号替换成客户系统的端口号（ServiceEntry 定义的端口号）
-            port: 30080
-          authnCheck: false
-    ```
 
 1. 按照 readme 步骤构建镜像（注意：执行最后一步前需要将 __demo.yaml__ 中的镜像地址替换成构建出的镜像地址）
 
-    ![构建镜像](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/oemin-image.png)
+   ![构建镜像](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/oemin-image-2.png)
 
 对接完成后，将在 DCE 5.0 的一级导航栏出现 __客户系统__ ，点击可进入客户系统。
 
