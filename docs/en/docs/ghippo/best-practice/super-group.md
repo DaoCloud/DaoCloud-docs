@@ -8,13 +8,8 @@ The specific steps are as follows:
 
 ### 1. Enable Isolation Mode between Folders/Workspaces
 
-Use a user with Admin permissions to enter the global cluster of **Container Management**.
+Please refer to [Enable Isolation Mode between Folders/Workspaces](../install/user-isolation.md)
 
-In the **Configuration** section, search for ghippo-apiserver-config and click the Edit YAML button in the right operation column to enter the YAML editing page.
-
-In the YAML, change the value of the userIsolationMode field to Folder and click **OK**.
-
-After modifying, restart the ghippo-apiserver. You can go to the stateless load balancing list, search for ghippo-apiserver, and restart it.
 
 ### 2. Plan the Enterprise Architecture According to the Actual Situation
 

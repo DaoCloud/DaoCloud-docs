@@ -11,21 +11,7 @@
 
 ### 1. 开启 Folder/WS 之间的隔离模式
 
-使用 Admin 权限的用户进入 **容器管理** 的 global 集群
-
-![clusterlist](../images/2.png)
-
-在 **配置项** 中搜索 ghippo-apiserver-config，点击右侧操作栏编辑 yaml，进入 yaml 的编辑页面。
-
-![config](../images/3.png)
-
-在 YAML 中将 userIsolationMode 字段的值改为 Folder ，点击 __确定__ 。
-
-![yaml](../images/4.png)
-
-修改后需要重启 ghippo-apiserve ，可前往无状态负载列表，搜索 ghippo-apiserver 并重启。
-
-![deployment](../images/5.png)
+请参考 [开启 Folder/WS 之间的隔离模式](../install/user-isolation.md)
 
 ### 2. 按照实际情况规划企业架构
 
