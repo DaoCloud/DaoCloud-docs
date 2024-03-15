@@ -1068,6 +1068,7 @@ nav:
               - Install, Login, and Upgrade:
                   - Offline Upgrade: ghippo/install/offline-install.md
                   - Customize Reverse Proxy Address: ghippo/install/reverse-proxy.md
+                  - Enable Isolation Mode between Folders/Workspaces: ghippo/install/user-isolation.md
                   - National Secret Gateway: ghippo/install/gm-gateway.md
                   - Login: ghippo/install/login.md
               - Access Control:
