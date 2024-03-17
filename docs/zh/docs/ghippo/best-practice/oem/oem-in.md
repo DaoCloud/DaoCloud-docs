@@ -21,108 +21,108 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 
 1. 部署 DCE 5.0 环境：
  
-   - `https://10.6.202.177:30443` 作为 DCE 5.0
+    `https://10.6.202.177:30443` 作为 DCE 5.0
 
-     ![DCE 5.0](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/oem-dce5.png)
+    ![DCE 5.0](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/oem-dce5.png)
 
 1. 部署客户系统环境：
 
-   - `http://10.6.202.177:30123` 作为客户系统
+    `http://10.6.202.177:30123` 作为客户系统
 
-     应用过程中对客户系统的操作请根据实际情况进行调整。
+    应用过程中对客户系统的操作请根据实际情况进行调整。
 
 1. 规划客户系统的 Subpath 路径： `http://10.6.202.177:30123/label-studio`（建议使用辨识度高的名称作为 Subpath，不能与主 DCE 5.0 的 HTTP router 发生冲突）。请确保用户通过 `http://10.6.202.177:30123/label-studio` 能够正常访问客户系统。
 
-   ![Label Studio](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/oem-label-studio.png)
+    ![Label Studio](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/oem-label-studio.png)
 
 ## 统一域名和端口
 
 1. SSH 登录到 DCE 5.0 服务器。
 
-   ```bash
-   ssh root@10.6.202.177
-   ```
+    ```bash
+    ssh root@10.6.202.177
+    ```
 
 1. 使用 vim 命令创建 __label-studio.yaml__ 文件
 
-    ```bash
-    vim label-studio.yaml
-    ```
+     ```bash
+     vim label-studio.yaml
+     ```
 
-    ```yaml title="label-studio.yaml"
-    apiVersion: networking.istio.io/v1beta1
-    kind: ServiceEntry
-    metadata:
-      name: label-studio
-      namespace: ghippo-system
-    spec:
-      exportTo:
-      - "*"
-      hosts:
-      - label-studio.svc.external
-      ports:
-      # 添加虚拟端口
-      - number: 80
-        name: http
-        protocol: HTTP
-      location: MESH_EXTERNAL
-      resolution: STATIC
-      endpoints:
-      # 改为客户系统的域名（或IP）
-      - address: 10.6.202.177
-        ports:
-          # 改为客户系统的端口号
-          http: 30123
-    ---
-    apiVersion: networking.istio.io/v1alpha3
-    kind: VirtualService
-    metadata:
-      # 修改为客户系统的名字
-      name: label-studio
-      namespace: ghippo-system
-    spec:
-      exportTo:
-      - "*"
-      hosts:
-      - "*"
-      gateways:
-      - ghippo-gateway
-      http:
-      - match:
-          - uri:
-              exact: /label-studio # 修改为客户系统在 DCE5.0 Web UI 入口中的路由地址
-          - uri:
-              prefix: /label-studio/ # 修改为客户系统在 DCE5.0 Web UI 入口中的路由地址
-        route:
-        - destination:
-            # 修改为上文 ServiceEntry 中的 spec.hosts 的值
-            host: label-studio.svc.external
-            port:
-              # 修改为上文 ServiceEntry 中的 spec.ports 的值
-              number: 80
-    ---
-    apiVersion: security.istio.io/v1beta1
-    kind: AuthorizationPolicy
-    metadata:
-      # 修改为客户系统的名字
-      name: label-studio
-      namespace: istio-system
-    spec:
-      action: ALLOW
-      selector:
-        matchLabels:
-          app: istio-ingressgateway
-      rules:
-      - from:
-        - source:
-            requestPrincipals:
-            - '*'
-      - to:
-        - operation:
-            paths:
-            - /label-studio # 修改为 VirtualService 中的 spec.http.match.uri.prefix 的值
-            - /label-studio/* # 修改为 VirtualService 中的 spec.http.match.uri.prefix 的值（注意，末尾需要添加 "*"）
-    ```
+     ```yaml title="label-studio.yaml"
+     apiVersion: networking.istio.io/v1beta1
+     kind: ServiceEntry
+     metadata:
+       name: label-studio
+       namespace: ghippo-system
+     spec:
+       exportTo:
+       - "*"
+       hosts:
+       - label-studio.svc.external
+       ports:
+       # 添加虚拟端口
+       - number: 80
+         name: http
+         protocol: HTTP
+       location: MESH_EXTERNAL
+       resolution: STATIC
+       endpoints:
+       # 改为客户系统的域名（或IP）
+       - address: 10.6.202.177
+         ports:
+           # 改为客户系统的端口号
+           http: 30123
+     ---
+     apiVersion: networking.istio.io/v1alpha3
+     kind: VirtualService
+     metadata:
+       # 修改为客户系统的名字
+       name: label-studio
+       namespace: ghippo-system
+     spec:
+       exportTo:
+       - "*"
+       hosts:
+       - "*"
+       gateways:
+       - ghippo-gateway
+       http:
+       - match:
+           - uri:
+               exact: /label-studio # 修改为客户系统在 DCE5.0 Web UI 入口中的路由地址
+           - uri:
+               prefix: /label-studio/ # 修改为客户系统在 DCE5.0 Web UI 入口中的路由地址
+         route:
+         - destination:
+             # 修改为上文 ServiceEntry 中的 spec.hosts 的值
+             host: label-studio.svc.external
+             port:
+               # 修改为上文 ServiceEntry 中的 spec.ports 的值
+               number: 80
+     ---
+     apiVersion: security.istio.io/v1beta1
+     kind: AuthorizationPolicy
+     metadata:
+       # 修改为客户系统的名字
+       name: label-studio
+       namespace: istio-system
+     spec:
+       action: ALLOW
+       selector:
+         matchLabels:
+           app: istio-ingressgateway
+       rules:
+       - from:
+         - source:
+             requestPrincipals:
+             - '*'
+       - to:
+         - operation:
+             paths:
+             - /label-studio # 修改为 VirtualService 中的 spec.http.match.uri.prefix 的值
+             - /label-studio/* # 修改为 VirtualService 中的 spec.http.match.uri.prefix 的值（注意，末尾需要添加 "*"）
+     ```
 
 1. 使用 kubectl 命令应用 label-studio.yaml：
 
@@ -132,7 +132,7 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 
 1. 验证 Label Studio UI 的 IP 和 端口是否一致：
    
-   ![Label Studio](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/label-studio-2.png)
+    ![Label Studio](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/label-studio-2.png)
 
 ## 打通用户体系
 
@@ -163,6 +163,7 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
     ![src 地址](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/src-2.png)
 
 1. 删除 src 文件夹下的 App.vue 和 main.ts 文件，同时将：
+    
     - App-iframe.vue 重命名为 App.vue
     - main-iframe.ts 重命名为 main.ts
 
