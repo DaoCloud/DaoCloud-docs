@@ -66,6 +66,7 @@ nav:
                   - Deploy on DCE 5.0 Appliance: install/best-practices/all-in-one-machine.md
                   - etcd Deployed in Host Mode and Separated from Control Plane: install/best-practices/etcd-host-deploy.md
                   - HA Bootstrap Nodes: install/best-practices/thinder-ha.md
+                  - Fix CVE-2024-21626: install/best-practices/cve-20240-21626.md
               - Installer Release Notes: install/release-notes.md
       - Workbench:
           - Workbench:

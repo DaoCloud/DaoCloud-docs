@@ -1,6 +1,6 @@
 ---
 MTPE: windsonsea
-Date: 2024-01-08
+Date: 2024-03-17
 ---
 
 # Installer Release Notes
@@ -14,6 +14,21 @@ the evolution path and feature changes of each version.
 *[Kangaroo]: Dev codename for the Container Registry in DCE 5.0
 *[Kpanda]: Dev codename for Container Management in DCE 5.0
 *[Skoala]: Dev codename for Microservice Engine in DCE 5.0
+
+## 2024-03-01
+
+### v0.15.2
+
+#### Fixes
+
+- **Fixed** CVE-2024-21626 security vulnerability by upgrading containerd to v1.7.13 and runc to v1.1.12
+
+#### Notes
+
+1. After upgrading to v0.15.2, the supported cluster have been updated from v1.26.0 ~ v1.29.0 to v1.27.0 ~ v0.29.1.
+   If the lifecycle management does not support the cluster version range, please refer to
+   [Deploying and Upgrading Downward Compatible Versions in Offline Scenarios with Kubean](./best-practices/cve-20240-21626.md)
+2. For more information, refer to [Fix CVE-2024-21626 Vulnerability](./best-practices/cve-20240-21626.md)
 
 ## 2024-02-26
 
@@ -38,9 +53,9 @@ the evolution path and feature changes of each version.
 
 #### Bug Fixes
 
-- **Bug Fix** Fix the incorrect rule for extracting external database password when installing container management components
-- **Bug Fix** Fix the issue of ineffective anti-affinity settings for kafak/zookeeper pods
-- **Bug Fix** Fix the issue of ineffective upgrade for some components and eliminate all images generated during the process of merging chart values during upgrades
+- **Fixed** the incorrect rule for extracting external database password when installing container management components
+- **Fixed** an issue of ineffective anti-affinity settings for kafak/zookeeper pods
+- **Fixed** an issue of ineffective upgrade for some components and eliminate all images generated during the process of merging chart values during upgrades
 
 ## 2023-12-31
 
@@ -56,7 +71,7 @@ the evolution path and feature changes of each version.
 
 #### Bug Fixes
 
-- **Bug Fix** Fix the issue of pod restart on the bootstrap node in the OpenEuler 22.03 environment.
+- **Fixed** an issue of pod restart on the bootstrap node in the OpenEuler 22.03 environment.
 - **Bug Fix** Update the version of the operator component when upgrading `kubean`.
 
 ## 2023-11-30
@@ -75,8 +90,8 @@ the evolution path and feature changes of each version.
 
 #### Bug Fixes
 
-- **Bug Fix** Fix the infinite loop issue in the chart values parsing framework caused by line breaks.
-- **Bug Fix** Fix the incorrect handling of the Internal Field Separator (IFS) in the concurrent scheduling framework.
+- **Fixed** the infinite loop issue in the chart values parsing framework caused by line breaks.
+- **Fixed** the incorrect handling of the Internal Field Separator (IFS) in the concurrent scheduling framework.
 
 #### Known Issues
 
@@ -96,14 +111,14 @@ the evolution path and feature changes of each version.
 #### Optimized
 
 - **Improved** Removed CPU/Memory resource request and limit for Global Management, Container Management, and Observability components in community edition minimal installation with `-z` flag.
-- **Improved** Improved error handling for installer's `-m` parameter, now it throws an error and exits installation when manifest file is not specified for `-m`.
+- **Improved** error handling for installer's `-m` parameter, now it throws an error and exits installation when manifest file is not specified for `-m`.
 - **Improved** Enhanced logging display for upgrade functionality.
 - **Improved** Adapted containerd-related parameters from kubean.
 - **Improved** Repackaged GProduct component and uploaded it to ChartMuseum on Sparkle nodes.
-- **Improved** Improved log output when uploading addon fails.
+- **Improved** log output when uploading addon fails.
 - **Improved** Adapted helm installation parameters for reusing during GProduct component upgrade.
 - **Improved** Adjusted maximum pod count per node to 180 for Global cluster.
-- **Improved** Improved excessive logging during migration of charts.
+- **Improved** excessive logging during migration of charts.
 
 #### Fixed
 
@@ -132,11 +147,11 @@ the evolution path and feature changes of each version.
 - **Added** Support for adding certificate renewal configuration in clusterConfig.yaml, including periodic and one-time updates
 - **Added** Support for offline deployment of Red Hat 9.2 systems
 - **Added** Diagnostic script diag.sh for Global cluster in the offline package
-- **Added** Added `--multi-arch` flag to avoid upgrading issues with overriding multi-architecture images
+- **Added** `--multi-arch` flag to avoid upgrading issues with overriding multi-architecture images
 
 #### Improvements
 
-- **Improved** Optimized installer source code structure modules
+- **Improved** installer source code structure modules
 
 #### Bug Fixes
 
@@ -157,7 +172,7 @@ the evolution path and feature changes of each version.
 
 - **Improved** For environments deployed using the installer through external OS repo, optimized the ability to select external OS repo when creating a cluster in container management
 - **Improved** Refactored and abstracted clusterConfig detection layer
-- **Improved** Improved error messages for pre-requisite dependency installation script
+- **Improved** error messages for pre-requisite dependency installation script
 - **Improved** Allow installation to continue when ES health status is 'yellow' during minimal installation process
 - **Improved** Eliminated redundant image integration steps in import-artifact subcommand
 - **Improved** Expanded default expansion of fullPackagePath property in clusterConfig template for offline resource external or built-in scenarios
@@ -198,27 +213,27 @@ the evolution path and feature changes of each version.
 
 #### New Features
 
-- **Added** : The `istio-ingressgateway` now supports high availability mode. When upgrading from v0.8.x or earlier to v0.9.0, the following command must be executed: `./offline/dce5-installer cluster-create -c clusterConfig.yaml -m manifest.yaml --upgrade infrastructure,gproduct`
-- **Added** : Support configuring the exposed bootstrapping kind address and port in the clusterConfig.yaml file.
-- **Added** : The installer now performs a pre-check on each node to verify if lvm2 is installed when using eyebrow storage.
-- **Added** : The installer includes an embedded default upgrade of the k8s version to v1.26.5.
-- **Added** : Support specifying the local file mount path for the bootstrapping kind in the clusterConfig.yaml file.
-- **Added** : Integrated ISO image file import script into the installer binary.
+- **Added** The `istio-ingressgateway` now supports high availability mode. When upgrading from v0.8.x or earlier to v0.9.0, the following command must be executed: `./offline/dce5-installer cluster-create -c clusterConfig.yaml -m manifest.yaml --upgrade infrastructure,gproduct`
+- **Added** Support configuring the exposed bootstrapping kind address and port in the clusterConfig.yaml file.
+- **Added** The installer now performs a pre-check on each node to verify if lvm2 is installed when using eyebrow storage.
+- **Added** The installer includes an embedded default upgrade of the k8s version to v1.26.5.
+- **Added** Support specifying the local file mount path for the bootstrapping kind in the clusterConfig.yaml file.
+- **Added** Integrated ISO image file import script into the installer binary.
 
 #### Improvements
 
-- **Improved** : Optimized download scripts.
-- **Improved** : Optimized logic and functionality of the `import-artifact` command.
-- **Improved** : Made `isoPath` and `osPackagePath` optional fields in clusterConfig.yaml during the upgrade process.
-- **Improved** : Enhanced temporary file cleanup mechanism in the installer.
-- **Improved** : Enhanced reuse functionality of the bootstrapping node.
+- **Improved** download scripts.
+- **Improved** logic and functionality of the `import-artifact` command.
+- **Improved** Made `isoPath` and `osPackagePath` optional fields in clusterConfig.yaml during the upgrade process.
+- **Improved** temporary file cleanup mechanism in the installer.
+- **Improved** reuse functionality of the bootstrapping node.
 
 #### Fixes
 
-- **Fixed** : Fixed the issue where the ES component could not start in OCP.
-- **Fixed** : Fixed the issue where the UI interface was inaccessible after installing DCE in TencentOS.
-- **Fixed** : Fixed the high probability of failed database creation for middleware databases in arm64 environments.
-- **Fixed** : Fixed shell expansion error in the image upload success check process.
+- **Fixed** an issue where the ES component could not start in OCP.
+- **Fixed** an issue where the UI interface was inaccessible after installing DCE in TencentOS.
+- **Fixed** the high probability of failed database creation for middleware databases in arm64 environments.
+- **Fixed** shell expansion error in the image upload success check process.
 
 #### Known Issues
 
@@ -258,7 +273,7 @@ If the output is different from the above cases, please follow the upgrade instr
 
 #### Fixes
 
-- **Fixed** the issue of failed image synchronization for Harbor repositories using external HTTP.
+- **Fixed** an issue of failed image synchronization for Harbor repositories using external HTTP.
 - **Fixed** indentation error in `clusterConfig.yaml` configuration file.
 - **Fixed** rendering error in localService configuration when using an external yum repo.
 - **Fixed** integration issue with external JFrog charts repository.
@@ -269,15 +284,15 @@ If the output is different from the above cases, please follow the upgrade instr
 
 #### New Features
 
-- **Added** Other Linux mode supports the OpenAnolis 8.8 GA operating system
-- **Added** Supports the OracleLinux R9 U1 operating system
-- **Added** Added node status detection
-- **Added** Added file verification for OS PKGs
-- **Added** Supports cluster installation on non-22 ports
-- **Added** External file service supports k8s binary resources
-- **Added** Supports external JFrog image and charts repositories
-- **Added** Supports mixed architecture deployment solutions
-- **Added** Supports external Redis components
+- **Added** other Linux mode supports the OpenAnolis 8.8 GA operating system
+- **Added** supports the OracleLinux R9 U1 operating system
+- **Added** node status detection
+- **Added** file verification for OS PKGs
+- **Added** supports cluster installation on non-22 ports
+- **Added** external file service supports k8s binary resources
+- **Added** supports external JFrog image and charts repositories
+- **Added** supports mixed architecture deployment solutions
+- **Added** supports external Redis components
 
 #### Improvements
 
@@ -325,23 +340,23 @@ If the output is different from the above cases, please follow the upgrade instr
 
 #### Features
 
-- **Added** Added support for Other Linux to deploy DCE5.0, [Reference Documentation](os-install/otherlinux.md)
-- **Added** Added support for operating system OpenEuler 22.03
+- **Added** support for Other Linux to deploy DCE5.0, [Reference Documentation](os-install/otherlinux.md)
+- **Added** support for operating system OpenEuler 22.03
 - **Added** supports external OS Repos, [refer to cluster configuration file description](commercial/cluster-config.md)
 - **Added** supports kernel parameter tuning, [refer to cluster configuration file description](commercial/cluster-config.md)
 - **Added** support for detecting whether external ChartMuseum and MinIo services are available
 
-#### Optimization
+#### Improvements
 
-- **Improved** Optimized the pre-verification of tar and other commands
-- **Improved** Optimized the command line parameters of the upgrade operation
+- **Improved** the pre-verification of tar and other commands
+- **Improved** the command line parameters of the upgrade operation
 - **Improved** closed Kibana's access through NodePort, Insight uses ES's NodePort or VIP access
-- **Improved** Optimized the display of concurrent logs, terminate tasks using SIGTERM signal instead of SIGKILL
+- **Improved** the display of concurrent logs, terminate tasks using SIGTERM signal instead of SIGKILL
 
 #### Fixes
 
-- **Fixed** Fix the problem that the Kcoral helm chart cannot be found during online installation
-- **Fixed** Fix KubeConfig can't find problem when upgrading
+- **Fixed** an issue that the Kcoral helm chart cannot be found during online installation
+- **Fixed** KubeConfig can't find problem when upgrading
 
 #### Known Issues
 
@@ -369,7 +384,7 @@ If the output is different from the above cases, please follow the upgrade instr
 
 ### v0.6.1
 
-#### Optimization
+#### Improvements
 
 - **Improved** Upgraded Kpanda to v0.16.1
 - **Improved** Upgraded Skoala to v0.19.4
@@ -380,31 +395,31 @@ If the output is different from the above cases, please follow the upgrade instr
 
 #### Features
 
-- **Added** Added support for one-click upgrade of Gproduct components
+- **Added** support for one-click upgrade of Gproduct components
 - **Added** Adapted operating system: UOS V20 1020a / Ubuntu 20.04
 - **Added** Support OCP (OpenShift Container Platform) to install DCE5.0
 - **Added** CLI supports generating clusterConfig templates
-- **Added** All in one mode starts the minimal installation mode by default
-- **Added** Added Kcollie component in Gproduct component
+- **Added** all-in-one mode starts the minimal installation mode by default
+- **Added** Kcollie component in Gproduct component
 - **Added** Support community version to sync image to external repository
 
-#### Optimization
+#### Improvements
 
 - **Improved** Decouple the code for generating offline packages and the code required for the installation process
-- **Improved** Optimize bootstrapping node inotify parameters
-- **Improved** Optimize the full-mode online installation experience
-- **Improved** optimize clusterConfig structure and configuration
+- **Improved** bootstrapping node inotify parameters
+- **Improved** the full-mode online installation experience
+- **Improved** clusterConfig structure and configuration
 - **Improved** DCE Community allows not to check clusterConfig format and parameters
-- **Improved** Optimize installer execution scheduler log output
+- **Improved** installer execution scheduler log output
 
 #### Fixes
 
 - **Fixed** Removed dependency on wget
-- **Fixed** Fix the problem of installation failure after repeated decompression of offline packages
-- **Fixed** Fix MinIo non-reentrant issue
-- **Fixed** Fix redis pvc that continues to be left behind when middleware Redis CR is removed
-- **Fixed** Fix the problem of sequence dependency when Amamba and Amamba-jenkins are installed concurrently
-- **Fixed** Fix the problem that the installer command line -j parameter parsing fails
+- **Fixed** an issue of installation failure after repeated decompression of offline packages
+- **Fixed** MinIo non-reentrant issue
+- **Fixed** redis pvc that continues to be left behind when middleware Redis CR is removed
+- **Fixed** an issue of sequence dependency when Amamba and Amamba-jenkins are installed concurrently
+- **Fixed** an issue that the installer command line -j parameter parsing fails
 
 ## 2022-2-28
 
@@ -416,7 +431,7 @@ If the output is different from the above cases, please follow the upgrade instr
 - **Added** Support addon offline, you need to define `addonOfflinePackagePath` in the cluster configuration file
 - **Added** Offline installation supports operating systems REHL 8.4, REHL 7.9
 
-#### Optimization
+#### Improvements
 
 - **Improved** Upgraded the version of pre-dependent tools
 
@@ -424,7 +439,7 @@ If the output is different from the above cases, please follow the upgrade instr
 
 - **Fixed** installer command line `-j` parameter validity detection problem
 - **Fixed** The installation path problem of pre-dependent tools
-- **Fixed** the problem that the host list password is invalid for pure numbers
+- **Fixed** an issue that the host list password is invalid for pure numbers
 - **Fixed** When the runtime is Docker, the built-in registry image cannot be pulled
 
 #### Known Issues
@@ -443,7 +458,7 @@ If the output is different from the above cases, please follow the upgrade instr
 - **Added** The syntax of clusterConfig has been upgraded from v1alpha1 to v1alpha2, the syntax has incompatible changes, you can check the documentation
 - **Added** No longer install permanent Harbor and permanent MinIO on the global service cluster
 - **Added** bootstrapping nodes need to exist permanently, users install minio, chart museum, registry
-- **Added** Added installation of contour as default ingress-controller for commercial version
+- **Added** installation of contour as default ingress-controller for commercial version
 - **Added** New installation of cert-manager in commercial version
 - **Added** Support cluster deployment in private key mode
 - **Added** supports external container registry for deployment
@@ -454,8 +469,8 @@ If the output is different from the above cases, please follow the upgrade instr
 - **Improved** Commercial version uses Contour as default ingress-controller
 - **Improved** MinIO supports using VIP
 - **Improved** coredns automatically inject registry VIP analysis
-- **Improved** Optimize the offline package production process and speed up the packaging of Docker images
-- **Improved** Optimized the offline package size
+- **Improved** the offline package production process and speed up the packaging of Docker images
+- **Improved** the offline package size
 - **Improved** infrastructure support 1.25: upgrade redis-operator, eck-operator, hwameiStor
 - **Improved** upgrade to keycloakX
 - **Improved** istio version upgrade v1.16.1
@@ -479,9 +494,9 @@ If the output is different from the above cases, please follow the upgrade instr
 #### Features
 
 - **Added** ARM64 support: build arm64 offline packages.
-- **Added** Added support for kylin v10 sp2 offline package.
+- **Added** support for kylin v10 sp2 offline package.
 - **Added** Infrastructure Support 1.25: Upgrade redis-operator, eck-operator, hwameiStor and other components.
-- **Added** Added support for cluster deployment in private key mode.
+- **Added** support for cluster deployment in private key mode.
 - **Added** The workload is elastically scaled based on custom metrics, which is closer to the user's actual business elastic expansion and contraction needs.
 
 #### Optimized
@@ -490,7 +505,7 @@ If the output is different from the above cases, please follow the upgrade instr
 - **Improved** Commercial version uses contour as default ingress-controller.
 - **Improved** MinIO supports using VIP.
 - **Improved** coredns is automatically injected into registry VIP resolution.
-- **Improved** Optimize the offline package production process and speed up the packaging of docker images.
+- **Improved** the offline package production process and speed up the packaging of docker images.
 
 #### Fixes
 
