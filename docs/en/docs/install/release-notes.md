@@ -15,6 +15,20 @@ the evolution path and feature changes of each version.
 *[Kpanda]: Dev codename for Container Management in DCE 5.0
 *[Skoala]: Dev codename for Microservice Engine in DCE 5.0
 
+## 2024-03-01
+
+### v0.15.2
+
+#### Fixes
+
+- **Fixed** CVE-2024-21626 security vulnerability by upgrading containerd version to 1.7.13 and runc version to v1.1.12
+
+#### Notes
+
+1. After upgrading to v0.15.2, the supported cluster versions have been updated from v1.26.0 ~ v1.29.0 to v1.27.0 ~ v0.29.1.
+   If the lifecycle management does not support the cluster version range, please refer to the document [Deploying and Upgrading Downward Compatible Versions in Offline Scenarios with Kubean](./best-practices/cve-20240-21626.md)
+2. For more information, you can refer to the document [Fixing CVE-2024-21626 Vulnerability](./best-practices/cve-20240-21626.md)
+
 ## 2024-02-26
 
 ### v0.15.1
