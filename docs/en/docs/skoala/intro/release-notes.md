@@ -1,6 +1,39 @@
-# Releases Notes
+# Microservice Engine (Skoala) Releases Notes
 
 This page lists the release notes of Microservices to help you learn its feature development and bug fixing progress.
+
+## 2024-03-06
+
+### v0.33.4
+
+#### Fixes
+
+- **Fixed** logic related to native microservices
+- **Fixed** issue where traffic swim lane list does not refresh on initial load
+- **Fixed** incorrect display of Sentinel password
+- **Fixed** integration issues caused by changes in grid module API
+
+## 2024-03-01
+
+### v0.33.3
+
+#### Fixes
+
+- **Fixed** logic related to cloud-native microservices
+- **Fixed** issues caused by changes in grid module API
+
+## 2024-02-02
+
+### v0.34.0
+
+#### New Features
+
+- **Added** namespace information deployed by the gateway in gateway query port based on application workspace requirements
+
+#### Improvements
+
+- **Improved** total number of gateway log pagination queries, limited to a maximum display of 10000 list log data
+- **Improved** error prompts for gateway log queries
 
 ## 2024-02-01
 
