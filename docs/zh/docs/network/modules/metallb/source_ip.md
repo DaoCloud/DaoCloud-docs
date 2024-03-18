@@ -4,9 +4,7 @@
 
 通过 Metallb ARP 模式，用户可以在`全局管理`—>`审计日志`中查看操作者的真实 IP，而不是被 SNAT 后的 IP 地址。主要的关键步骤是设置 Service 的 `spec.externalTrafficPolicy` 为 `Local` 模式。
 
-此方式同样适配 Istio 高可用模式下，获取客户端源 IP 。
-
-但次方案对负载均衡有影响，详情请参考 [L2 和 BGP 模式说明](l2-bgp.md)中的负载均衡性。
+此方式同样适配 Istio 高可用模式下，获取客户端源 IP 。此方案下， VIP 只会漂移到具有 Endpoint 实例的节点上，所以可以保留客户端源 IP。但会影响负载均衡性(流量的只会打到具有 Endpoint 实例的节点)，可参考 [L2 和 BGP 模式说明](l2-bgp.md)中的负载均衡性寻求更多细节。
 
 商业版安装后，默认开启获取客户端源 IP 功能。若期望安装前关闭该功能，
 可[修改安装器 clusterConfigt.yaml](../../../install/commercial/cluster-config.md) 来配置（即 SourceIP 设置为 false）。
@@ -15,7 +13,7 @@
 
 ### 开启获取客户端源 IP 功能
 
-1. 配置 Metallb 宣告上述节点作为 LB IPs 的下一跳。
+1. 确认已经创建 L2Advertisement，如未创建参考以下内容创建。
 
     ```shell
     [root@demo-dev-master-01 ~]# kubectl get l2advertisements.metallb.io -n metallb-system default-l2advertisement -o yaml
@@ -38,14 +36,11 @@
       resourceVersion: "133681854"
       uid: c5301f5b-fb08-40ae-8a22-2b03e129a092
     spec:
-      ipAddressPoolSelectors:
-      - matchLabels:
-          l2.ipaddress-pool.metallb.io: default-pool
       ipAddressPools:
       - default-pool
     ```
 
-    通过配置 `spec.nodeSelectors` 来实现绑定。
+    > ipAddressPools 配置此 L2Advertisement 作用的 IP 池，默认为空表示作用所有 IP 池。
 
 2. 修改名为 `istio-ingressgateway` 的 Service 中的字段 `spec.externalTrafficPolicy` = `Local`，此模式可以保留真实源 IP:
 
