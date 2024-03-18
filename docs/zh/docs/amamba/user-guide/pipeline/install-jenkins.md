@@ -133,6 +133,10 @@
 
 3. 前往 SonarQube 后台更新 Webhook 地址。依次点击 __Administration__ -> __Configuration__ -> __Webhooks__ ，选择对应的 Webhook，点击 __Update__ 。
 
+    !!! note
+
+        应用工作台 v0.25.0 之后的版本无需执行该步骤！
+
     ![sonarqube03](../../images/sonarqube03.png)
 
     其中 URL 更新为 `http://{新部署的 Jenkins 的地址}/sonarqube-webhook/`
