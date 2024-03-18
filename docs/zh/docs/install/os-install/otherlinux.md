@@ -11,6 +11,7 @@ Other Linux 本质上是由于 DCE 对某些 Linux 没有提供安装系统离�
 | ----- | ------------------- | ------------ | ------------- |
 | AMD64 | 统信 UOS V20 (1050d) | Debian | 4.19.0-server-amd64 |
 | AMD64 | AnolisOS 8.8 GA  | Redhat | 5.10.134-13.an8.x86_64 |
+| AMD64 | Ubuntu 22.04.3  | Debian | 5.15.0-78-generic |
 
 !!! note
 
@@ -184,6 +185,36 @@ Other Linux 本质上是由于 DCE 对某些 Linux 没有提供安装系统离�
           allow_unsupported_distribution_setup: true
             redhat_os_family_extensions:
               - "Anolis OS"
+        ```
+
+    === "Ubuntu 22.04.3"
+
+        ```yaml
+        apiVersion: provision.daocloud.io/v1alpha3
+        kind: ClusterConfig
+        metadata:
+        spec:
+          clusterName: test-cluster
+          loadBalancer:
+            type: metallb
+            istioGatewayVip: 172.30.41.XXX/32
+            insightVip: 172.30.41.XXX/32
+          masterNodes:
+            - nodeName: "g-master1"
+              ip: 172.30.41.xxx
+              ansibleUser: "root"
+              ansiblePass: "******"
+          fullPackagePath: "/root/offline"
+          osRepos:
+            type: none
+          imagesAndCharts:
+            type: builtin
+          binaries:
+            type: builtin
+          kubeanConfig: |-
+          allow_unsupported_distribution_setup: true
+            debian_os_family_extensions:
+              - "Debian"
         ```
 
     配置参数说明：
