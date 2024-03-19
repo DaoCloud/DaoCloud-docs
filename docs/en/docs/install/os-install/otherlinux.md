@@ -7,12 +7,15 @@ Other Linux is essentially because DCE does not provide the installation system 
 
 ## Authenticated OS
 
-| Architecture | Release | System Family | Recommended Kernel |
+| Architecture | OS | OS Family | Recommended Kernel |
 | ----- | -------------- | ------------ | ----- |
 | AMD64 | UOS V20 (1050d) | Debian | 4.19.0-server-amd64 |
 | AMD64 | AnolisOS 8.8 GA  | Redhat | 5.10.134-13.an8.x86_64 |
+| AMD64 | Ubuntu 22.04.3  | Debian | 5.15.0-78-generic |
 
-Remarks: If there is no verified operating system, you can try to deploy it through the tutorials in this document.
+!!! note
+
+    For operating systems that have not been verified, you can try deploying them following the instructions in this document.
 
 ## Prerequisites
 
@@ -21,9 +24,9 @@ Remarks: If there is no verified operating system, you can try to deploy it thro
   whether the network, hardware, ports, etc. meet the requirements.
 - Read [Preparation](../commercial/prepare.md) in advance to confirm machine resources and pre-check.
 
-## Make the operating system offline package (OS package)
+## Make the offline OS package
 
-### Production and installation
+### Generate and install
 
 1. Download tools.
 
@@ -96,7 +99,7 @@ Remarks: If there is no verified operating system, you can try to deploy it thro
 2. The package names corresponding to different versions (major version) of the same system family (os family) are different:
 
     | OS family | Version | Package |
-    | -------------------- | ----- | ------------------ |
+    | --------- | ----- | --------- |
     | Debian | < 11 | python-apt |
     | | >= 11 | python3-apt |
     | Redhat Major Version | < 8 | libselinux-python |
@@ -117,17 +120,11 @@ Remarks: If there is no verified operating system, you can try to deploy it thro
     tar -xvf offline-v0.6.1-amd64.tar
     ```
 
-2. Download the image of the Other Linux operating system, here we take `UnionTech OS Server 20 1050d` as an example:
+2. Refer to [Create an offline OS package](#make-the-offline-os-package).
 
-    ```bash
-    curl -LO https://cdimage-download.chinauos.com/uniontechos-server-20-1050d-amd64.iso
-    ```
+3. Download the offline addon package, which can be found in the [download center](../../download/index.md) for the latest version (optional).
 
-3. Refer to the previous step `Making the offline package of the operating system`.
-
-4. Download the addon offline package, you can download the latest version in [Download Center](../../download/index.md) (optional)
-
-5. Edit [clusterConfig.yaml](../commercial/cluster-config.md), which can be obtained under the
+4. Edit [clusterConfig.yaml](../commercial/cluster-config.md), which can be obtained under the
    offline package `offline/sample` and modified as needed.
 
     === "UnionTech OS Server 20 1050d"
@@ -190,10 +187,40 @@ Remarks: If there is no verified operating system, you can try to deploy it thro
               - "Anolis OS"
         ```
 
+    === "Ubuntu 22.04.3"
+
+        ```yaml
+        apiVersion: provision.daocloud.io/v1alpha3
+        kind: ClusterConfig
+        metadata:
+        spec:
+          clusterName: test-cluster
+          loadBalancer:
+            type: metallb
+            istioGatewayVip: 172.30.41.XXX/32
+            insightVip: 172.30.41.XXX/32
+          masterNodes:
+            - nodeName: "g-master1"
+              ip: 172.30.41.xxx
+              ansibleUser: "root"
+              ansiblePass: "******"
+          fullPackagePath: "/root/offline"
+          osRepos:
+            type: none
+          imagesAndCharts:
+            type: builtin
+          binaries:
+            type: builtin
+          kubeanConfig: |-
+          allow_unsupported_distribution_setup: true
+            debian_os_family_extensions:
+              - "Debian"
+        ```
+
     Parameter tips:
 
-    | Parameter                                               | Description                                | Required |
-    | ------------------------------------------------------- | ------------------------------------------ | -------- |
+    | Parameter | Description | Required |
+    | --------- | ----------- | -------- |
     | spec.kubeanConfig.allow_unsupported_distribution_setup | Whether to skip detection of supported OS   | Yes      |
     | spec.kubeanConfig.debian_os_family_extensions           | Can be filled by viewing `ansible_os_family` | Required if the system is Debian |
     | spec.kubeanConfig.redhat_os_family_extensions           | Can be filled by viewing `ansible_os_family` | Required if the system is Redhat |
@@ -220,7 +247,7 @@ Remarks: If there is no verified operating system, you can try to deploy it thro
     }
     ```
 
-6. Start the installation of DCE 5.0.
+5. Start the installation of DCE 5.0.
 
     ```bash
     ./dce5-installer cluster-create -m ./sample/mainfest.yaml -c ./sample/clusterConfig.yaml
@@ -235,7 +262,7 @@ Remarks: If there is no verified operating system, you can try to deploy it thro
         - `-d` enable debug mode
         - `--serial` specifies that all installation tasks are executed serially
 
-7. After the installation is complete, the command line will prompt that the installation is successful.
+6. After the installation is complete, the command line will prompt that the installation is successful.
    congratulations! :smile: Now you can use the default account and password (admin/changeme) to explore
    the new DCE 5.0 through the URL prompted on the screen!
 
@@ -245,5 +272,5 @@ Remarks: If there is no verified operating system, you can try to deploy it thro
 
         Please record the prompted URL for your next visit.
 
-8. After successfully installing DCE 5.0 Enterprise, please contact us for authorization: email
+7. After successfully installing DCE 5.0 Enterprise, please contact us for authorization: email
    [info@daocloud.io](mailto:info@daocloud.io) or call 400 002 6898.

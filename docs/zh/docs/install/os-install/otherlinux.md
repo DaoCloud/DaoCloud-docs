@@ -120,7 +120,7 @@ Other Linux 本质上是由于 DCE 对某些 Linux 没有提供安装系统离�
     tar -xvf offline-v0.6.1-amd64.tar
     ```
 
-2. 参考上一步[制作操作系统离线包（OS package）](#os-package)。
+2. 参考[制作操作系统离线包（OS package）](#os-package)。
 
 3. 下载 addon 离线包，可以在[下载中心](../../download/index.md)下载最新版本（可选）
 
@@ -219,9 +219,9 @@ Other Linux 本质上是由于 DCE 对某些 Linux 没有提供安装系统离�
 
     配置参数说明：
 
-    | 参数                                                   | 说明                               | 是否必填                   |
-    | ------------------------------------------------------ | --------------------------------- | -------------------------- |
-    | spec.kubeanConfig.allow_unsupported_distribution_setup | 是否跳过已支持发行版检测              | 必填                       |
+    | 参数 | 说明 | 是否必填 |
+    | --- | ---- | ------ |
+    | spec.kubeanConfig.allow_unsupported_distribution_setup | 是否跳过已支持发行版检测 | 必填 |
     | spec.kubeanConfig.debian_os_family_extensions          | 可通过查看 `ansible_os_family` 来填写 | 若为 Debian 系统族则需填写 |
     | spec.kubeanConfig.redhat_os_family_extensions          | 可通过查看 `ansible_os_family` 来填写 | 若为 Redhat 系统族则需填写 |
 
