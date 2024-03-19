@@ -17,6 +17,7 @@
 | 时间同步   | 所有集群节点要求时间必须同步           | 这是 Docker 和 Kubernetes 官方要求。否则 kube.conf 会报错 `Unable to connect to the server: x509: certificate has expired or is not yet` |
 | 时区       | 所有服务器时区必须统一                 | 建议设置为 Asia/Shanghai。 <br />参考命令：timedatectl set-timezone Asia/Shanghai |
 | Nameserver | /etc/resolv.conf 至少有一个 Nameserver | CoreDNS 要求，否则会有报错。该 nameserver 在纯离线环境下可以是一个不存在的 IP 地址。Centos8minial 默认没有 /etc/resolv 文件，需要手动创建 |
+| 协议 | 支持 ipv6 | 火种节点使用 podman 时必须开启 ipv6 |
 
 ## 火种机器依赖组件检查
 
