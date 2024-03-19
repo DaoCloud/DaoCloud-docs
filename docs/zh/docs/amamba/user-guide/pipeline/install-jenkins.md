@@ -1,5 +1,7 @@
 # 安装 Jenkins
 
+本页介绍如何安装 Jenkins 以使用流水线（Pipeline）功能。
+
 ## 开始之前
 
 - 安装 Jenkins 之前需要确保将要安装 Jenkins 的集群中存在默认的存储类；
@@ -122,7 +124,7 @@
 
         - 添加凭据，类型选择 __Secret test__ ，Secret 输入 SonarQube 管理员令牌（Token），ID 不填会默认生成
 
-            ![sonarqube](../../images/sonarqube.png)
+        ![sonarqube](../../images/sonarqube.png)
 
     !!! note
 
