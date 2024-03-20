@@ -9,7 +9,10 @@
 使用快照功能之前，需要满足以下前提条件：
 
 - 只有非错误状态下的虚拟机才能使用快照功能。
-- 如果需要使用快照功能，请确保您的存储池已经创建了对应的 VolumeSnapshotClass。
+- 安装 CSI Snapshotter,首先，确保部署了 CSI Snapshotter 组件。snapshot-controller 会监控 VolumeSnapshot 和VolumeSnapshotContent 对象，并触发相关操作。
+- 安装 Snapshot CRDs、Snapshot Controller、CSI Driver。可参考[CSI Snapshotter](https://github.com/kubernetes-csi/external-snapshotter?tab=readme-ov-file#usage)。
+- 等待 csi-snapshotter 和 snapshot-controller 组件准备就绪。
+
 
 ## 创建快照
 
