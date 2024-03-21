@@ -2,17 +2,19 @@
 
 本文将介绍如何为虚拟机创建快照，并从快照中恢复的。
 
-用户可以为虚拟机创建快照，保存虚拟机当下的状态，一个快照可以支持多次恢复，每次恢复时，虚拟机将被还原到快照创建时的状态。通常可以用于备份、恢复、回滚等场景。
+用户可以为虚拟机创建快照，保存虚拟机当下的状态，一个快照可以支持多次恢复，每次恢复时，
+虚拟机将被还原到快照创建时的状态。通常可以用于备份、恢复、回滚等场景。
 
 ## 前提条件
 
 使用快照功能之前，需要满足以下前提条件：
 
 - 只有非错误状态下的虚拟机才能使用快照功能。
-- 安装 CSI Snapshotter,首先，确保部署了 CSI Snapshotter 组件。snapshot-controller 会监控 VolumeSnapshot 和VolumeSnapshotContent 对象，并触发相关操作。
-- 安装 Snapshot CRDs、Snapshot Controller、CSI Driver。可参考[CSI Snapshotter](https://github.com/kubernetes-csi/external-snapshotter?tab=readme-ov-file#usage)。
+- 安装 CSI Snapshotter，首先确保部署了 CSI Snapshotter 组件。
+  snapshot-controller 会监控 VolumeSnapshot 和 VolumeSnapshotContent 对象，并触发相关操作。
+- 安装 Snapshot CRDs、Snapshot Controller、CSI Driver。
+  可参考 [CSI Snapshotter](https://github.com/kubernetes-csi/external-snapshotter?tab=readme-ov-file#usage)。
 - 等待 csi-snapshotter 和 snapshot-controller 组件准备就绪。
-
 
 ## 创建快照
 

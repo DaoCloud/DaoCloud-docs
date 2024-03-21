@@ -100,8 +100,8 @@
     apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
-    name: winhd
-    namespace: virt-demo
+      name: winhd
+      namespace: virt-demo
     spec:
     accessModes:
         - ReadWriteOnce
@@ -120,17 +120,17 @@
     apiVersion: kubevirt.io/v1
     kind: VirtualMachine
     metadata:
-    annotations:
+      annotations:
         kubevirt.io/latest-observed-api-version: v1
         kubevirt.io/storage-observed-api-version: v1
-    labels:
+      labels:
         virtnest.io/os-family: Windows
         virtnest.io/os-version: 2012.r2
-    name: vm-windows
-    namespace: virt-demo
+      name: vm-windows
+      namespace: virt-demo
     spec:
-    running: true
-    template:
+      running: true
+      template:
         metadata:
         creationTimestamp: null
         labels:  # 自定义 应用 label
