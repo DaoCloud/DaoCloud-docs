@@ -18,18 +18,18 @@
     apiVersion: v1
     kind: Service
     metadata:
-    labels:
+      labels:
         cdi.kubevirt.io: cdi-uploadproxy
-    name: cdi-uploadproxy-nodeport
+      name: cdi-uploadproxy-nodeport
     spec:
-    ports:
-    - nodePort: 31001
+      ports:
+      - nodePort: 31001
         port: 443
         protocol: TCP
         targetPort: 8443
-    selector:
+      selector:
         cdi.kubevirt.io: cdi-uploadproxy
-    type: NodePort
+      type: NodePort
     EOF
     ```
 
@@ -57,21 +57,21 @@
 
 3. 安装工具
 
-   ```shell
-   (
-   set -x; cd "$(mktemp -d)" &&
-   OS="$(uname | tr '[:upper:]' '[:lower:]')" &&
-   ARCH="$(uname -m | sed -e 's/x86_64/amd64/' -e 's/\(arm\)\(64\)\?.*/\1\2/' -e 's/aarch64$/arm64/')" &&
-   KREW="krew-${OS}_${ARCH}" &&
-   curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/${KREW}.tar.gz" &&
-   tar zxvf "${KREW}.tar.gz" &&
-   ./"${KREW}" install krew
-   )
+    ```shell
+    (
+    set -x; cd "$(mktemp -d)" &&
+    OS="$(uname | tr '[:upper:]' '[:lower:]')" &&
+    ARCH="$(uname -m | sed -e 's/x86_64/amd64/' -e 's/\(arm\)\(64\)\?.*/\1\2/' -e 's/aarch64$/arm64/')" &&
+    KREW="krew-${OS}_${ARCH}" &&
+    curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/${KREW}.tar.gz" &&
+    tar zxvf "${KREW}.tar.gz" &&
+    ./"${KREW}" install krew
+    )
    
-   echo 'export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"' >> ~/.bashrc && bash --login
+    echo 'export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"' >> ~/.bashrc && bash --login
    
-   kubectl krew install virt
-   ```
+    kubectl krew install virt
+    ```
 
 4. 从 [Windows 官网](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2012-r2) 下载 Windows ISO
 
@@ -134,54 +134,54 @@
         metadata:
         creationTimestamp: null
         labels:  # 自定义 应用 label
-            app: vm-windows
-            version: v1
-            kubevirt.io/domain: vm-windows
+          app: vm-windows
+          version: v1
+          kubevirt.io/domain: vm-windows
         spec:
-        architecture: amd64
-        domain:
+          architecture: amd64
+          domain:
             cpu:
-            cores: 4
-            sockets: 1
-            threads: 1
+              cores: 4
+              sockets: 1
+              threads: 1
             devices:
-            disks:
+              disks:
                 - bootOrder: 1
-                cdrom:
+                  cdrom:
                     bus: sata
-                name: cdromiso
+                  name: cdromiso
                 - bootOrder: 2
-                disk:
+                  disk:
                     bus: virtio
-                name: harddrive
+                  name: harddrive
                 - bootOrder: 3
-                cdrom:
+                  cdrom:
                     bus: sata
-                name: virtiocontainerdisk
+                  name: virtiocontainerdisk
             interfaces:
-                - name: default
+              - name: default
                 passt: {}  # passt 模式
                 ports:
-                    - name: http
+                  - name: http
                     port: 80  # 应用端口号
             machine:
-            type: q35
+              type: q35
             resources:
-            requests:
+              requests:
                 memory: 2G
         networks:
             - name: default
-            pod: {}
+              pod: {}
         volumes:
             - name: cdromiso
-            persistentVolumeClaim:
+              persistentVolumeClaim:
                 claimName: iso-win  # 自定义上传 ISO 的引导盘
             - name: harddrive
-            persistentVolumeClaim:
+              persistentVolumeClaim:
                 claimName: winhd  # 自定义的 数据盘
             - containerDisk:
                 image: kubevirt/virtio-container-disk
-            name: virtiocontainerdisk
+              name: virtiocontainerdisk
     ```
 
 ## 访问 Windows 虚拟机

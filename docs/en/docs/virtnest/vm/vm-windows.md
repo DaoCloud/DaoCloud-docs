@@ -9,7 +9,7 @@ This document will explain how to create a Windows virtual machine via the comma
 3. If the virtual machine does not have network access, manually load the Windows network drivers during boot-up. Refer to the official documentation: [How to install after Windows installation?](https://kubevirt.io/user-guide/virtual_machines/windows_virtio_drivers/#how-to-install-after-windows-install).
 4. It is recommended to access the Windows virtual machine using VNC.
 
-## Uploading the Windows Operating System Image File
+## Uploading the Windows OS Image File
 
 1. Start the CDI upload service
 
@@ -18,18 +18,18 @@ This document will explain how to create a Windows virtual machine via the comma
     apiVersion: v1
     kind: Service
     metadata:
-    labels:
+      labels:
         cdi.kubevirt.io: cdi-uploadproxy
-    name: cdi-uploadproxy-nodeport
+      name: cdi-uploadproxy-nodeport
     spec:
-    ports:
-    - nodePort: 31001
+      ports:
+      - nodePort: 31001
         port: 443
         protocol: TCP
         targetPort: 8443
-    selector:
+      selector:
         cdi.kubevirt.io: cdi-uploadproxy
-    type: NodePort
+      type: NodePort
     EOF
     ```
 
@@ -100,8 +100,8 @@ This document will explain how to create a Windows virtual machine via the comma
     apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
-    name: winhd
-    namespace: virt-demo
+      name: winhd
+      namespace: virt-demo
     spec:
     accessModes:
         - ReadWriteOnce
@@ -112,76 +112,76 @@ This document will explain how to create a Windows virtual machine via the comma
     EOF
     ```
 
-## Creating the Windows Virtual Machine
+## Create Windows Virtual Machine
 
-??? note "Click to view the YAML example for creating a Windows virtual machine"
+??? note "Click to view YAML example for creating Windows Virtual Machine"
 
     ```yaml
     apiVersion: kubevirt.io/v1
     kind: VirtualMachine
     metadata:
-    annotations:
+      annotations:
         kubevirt.io/latest-observed-api-version: v1
         kubevirt.io/storage-observed-api-version: v1
-    labels:
+      labels:
         virtnest.io/os-family: Windows
         virtnest.io/os-version: 2012.r2
-    name: vm-windows
-    namespace: virt-demo
+      name: vm-windows
+      namespace: virt-demo
     spec:
-    running: true
-    template:
+      running: true
+      template:
         metadata:
-        creationTimestamp: null
-        labels:  
+          creationTimestamp: null
+          labels:  # Custom application label
             app: vm-windows
             version: v1
             kubevirt.io/domain: vm-windows
         spec:
-        architecture: amd64
-        domain:
+          architecture: amd64
+          domain:
             cpu:
-            cores: 4
-            sockets: 1
-            threads: 1
+              cores: 4
+              sockets: 1
+              threads: 1
             devices:
-            disks:
+              disks:
                 - bootOrder: 1
-                cdrom:
+                  cdrom:
                     bus: sata
-                name: cdromiso
+                  name: cdromiso
                 - bootOrder: 2
-                disk:
+                  disk:
                     bus: virtio
-                name: harddrive
+                  name: harddrive
                 - bootOrder: 3
-                cdrom:
+                  cdrom:
                     bus: sata
-                name: virtiocontainerdisk
+                  name: virtiocontainerdisk
             interfaces:
-                - name: default
-                passt: {}  
+              - name: default
+                passt: {}  # passt mode
                 ports:
-                    - name: http
-                    port: 80  
+                  - name: http
+                    port: 80  # Application port
             machine:
-            type: q35
+              type: q35
             resources:
-            requests:
+              requests:
                 memory: 2G
         networks:
             - name: default
-            pod: {}
+              pod: {}
         volumes:
             - name: cdromiso
-            persistentVolumeClaim:
-                claimName: iso-win  
+              persistentVolumeClaim:
+                claimName: iso-win  # Custom boot disk for uploading ISO
             - name: harddrive
-            persistentVolumeClaim:
-                claimName: winhd  
+              persistentVolumeClaim:
+                claimName: winhd  # Custom data disk
             - containerDisk:
                 image: kubevirt/virtio-container-disk
-            name: virtiocontainerdisk
+              name: virtiocontainerdisk
     ```
 
 ## Accessing the Windows Virtual Machine
