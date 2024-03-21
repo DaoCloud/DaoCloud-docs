@@ -709,6 +709,7 @@ nav:
                       - 配置域名策略: skoala/gateway/domain/domain-policy.md
               - 云原生微服务:
                   - 服务治理: skoala/cloud-ms/traffic-control.md
+                  - 全链路流量泳道: skoala/cloud-ms/lane.md
               - 传统微服务:
                   - 注册配置中心:
                       - 托管注册中心: skoala/trad-ms/hosted/index.md
