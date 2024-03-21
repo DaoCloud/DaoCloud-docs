@@ -11,8 +11,8 @@ On this page, you can download offline packages for various versions of the micr
 
 ## Download
 
-| Version | Architecture | File Size | Installation Package | Checksum File | Updated Date |
-| ------- | ------------ | --------- | -------------------- | ------------- | ------------ |
+| Version  | Architecture | File Size | Package | Checksum File | Update Date |
+|----------|--------------|-----------|---------|----------|-------------|
 | [v0.34.0](../../skoala/intro/release-notes.md) | <font color="green">ARM 64</font> | 1.57 GB | [:arrow_down: skoala_v0.34.0_arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/skoala_v0.34.0_arm64.tar) | [:arrow_down: skoala_v0.34.0_arm64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/skoala_v0.34.0_arm64_checksum.sha512sum) | 2024-02-02 |
 | [v0.34.0](../../skoala/intro/release-notes.md) | AMD 64 | 1.60 GB | [:arrow_down: skoala_v0.34.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/skoala_v0.34.0_amd64.tar) | [:arrow_down: skoala_v0.34.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/skoala_v0.34.0_amd64_checksum.sha512sum) | 2024-02-02 |
 | [v0.33.4](../../skoala/intro/release-notes.md) | <font color="green">ARM 64</font> | 1.60 GB | [:arrow_down: skoala_v0.33.4_arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/skoala_v0.33.4_arm64.tar) | [:arrow_down: skoala_v0.33.4_arm64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/skoala_v0.33.4_arm64_checksum.sha512sum) | 2024-03-06 |

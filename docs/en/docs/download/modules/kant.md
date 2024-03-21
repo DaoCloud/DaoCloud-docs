@@ -9,6 +9,10 @@ hide:
 
 This page provides offline packages for different versions of the Cloud Edge Collaboration module.
 
+!!! tip
+
+    `kant` is the internal dev code for cloud edge collaboration.
+
 ## Download
 
 | Version | Architecture | File Size | Package | Checksum File | Update Date | Notes |
