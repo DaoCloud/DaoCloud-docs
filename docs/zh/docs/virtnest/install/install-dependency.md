@@ -12,13 +12,17 @@
 
 1. 操作系统内核版本需要在 3.15 以上。
 
-    `uname -a`
+    ```bash
+    uname -a
+    ```
 
     示例输出：
 
-    `Linux master 6.5.3-1.el7.elrepo.x86_64 #1 SMP PREEMPT_DYNAMIC Wed Sep 13 11:46:28 EDT 2023 x86_64 x86_64 x86_64 GNU/Linux`
+    ```output
+    Linux master 6.5.3-1.el7.elrepo.x86_64 #1 SMP PREEMPT_DYNAMIC Wed Sep 13 11:46:28 EDT 2023 x86_64 x86_64 x86_64 GNU/Linux
+    ```
 
-2. CPU 需支持x86-64-v2及以上的指令集。您可以使用以下脚本检查当前节点的 CPU 是否支持：
+2. CPU 需支持 x86-64-v2 及以上的指令集。您可以使用以下脚本检查当前节点的 CPU 是否支持：
 
     ```sh
     cat <<EOF > detect-cpu.sh
@@ -82,12 +86,17 @@
 
 4. 安装 virt-host-validate：
 
-   1. 在 CentOS 上安装：
+    1. 在 CentOS 上安装：
 
-      `yum install -y qemu-kvm libvirt virt-install bridge-utils`
+        ```bash
+        yum install -y qemu-kvm libvirt virt-install bridge-utils
+        ```
 
-   2. 在 Ubuntu 上安装：
+    2. 在 Ubuntu 上安装：
 
-      `apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils`
+        ```bash
+        apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
+        ```
 
-5. 如果集群使用Docker Engine作为容器运行时，则Docker Engine版本需要大于20.10.10。并且为了后续功能做准备，建议开启IOMMU。
+5. 如果集群使用 Docker Engine 作为容器运行时，则 Docker Engine 版本需要大于 20.10.10。
+   并且为了后续功能做准备，建议开启 IOMMU。
