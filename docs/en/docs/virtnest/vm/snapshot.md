@@ -11,10 +11,14 @@ You can create snapshots for virtual machines to save the current state of the v
 
 ## Prerequisites
 
-Before using the snapshot feature, please ensure the following prerequisites are met:
+Before using the snapshots, the following prerequisites need to be met:
 
-- Only virtual machines in a non-error state can use the snapshot feature.
-- If you need to use the snapshot feature, make sure that your StorageClass has created the proper VolumeSnapshotClass.
+- Only virtual machines in a non-error state can use the snapshot function.
+- Install CSI Snapshotter, first ensure that the CSI Snapshotter component is deployed.
+  The snapshot-controller will monitor VolumeSnapshot and VolumeSnapshotContent objects and trigger related operations.
+- Install Snapshot CRDs, Snapshot Controller, CSI Driver.
+  Refer to [CSI Snapshotter](https://github.com/kubernetes-csi/external-snapshotter?tab=readme-ov-file#usage) for more information.
+- Wait for the csi-snapshotter and snapshot-controller components to be ready.
 
 ## Create a Snapshot
 
