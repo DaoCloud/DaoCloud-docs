@@ -1102,6 +1102,15 @@ nav:
                   - Enable/Disable Output of K8s Audit Logs: ghippo/user-guide/audit/open-k8s-audit.md
                   - Download and Export: ghippo/user-guide/audit/audit-log.md
                   - Get Source IP in Audit Logs: ghippo/user-guide/audit/source-ip.md
+                  - Audit Items Summary:
+                      - Workbench Audit Items: ghippo/user-guide/audit/gproduct-audit/amamba.md
+                      - Container Management Audit Items: ghippo/user-guide/audit/gproduct-audit/kpanda.md
+                      - Multicloud Management Audit Items: ghippo/user-guide/audit/gproduct-audit/kairship.md
+                      - Container Registry Audit Items: ghippo/user-guide/audit/gproduct-audit/kangaroo.md
+                      - Insight Audit Items: ghippo/user-guide/audit/gproduct-audit/insight.md
+                      - Microservice Audit Items: ghippo/user-guide/audit/gproduct-audit/skoala.md
+                      - Service Mesh Audit Items: ghippo/user-guide/audit/gproduct-audit/mspider.md
+                      - Middleware Audit Items: ghippo/user-guide/audit/gproduct-audit/mcamel.md
               - Operations Management:
                   - ghippo/user-guide/report-billing/index.md
                   - Reports: ghippo/user-guide/report-billing/report.md
