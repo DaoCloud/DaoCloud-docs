@@ -1,0 +1,24 @@
+---
+hide:
+  - toc
+---
+
+# Audit Items of Container Registry
+
+| Event Name | Resource Type | Note |
+| --- | --- | --- |
+| Delete-Image | Image | |
+| Delete-Artifacts | Artifacts | |
+| Create-ReclaimRule | ReclaimRule | Only one record per interface |
+| Delete-ReclaimRule | ReclaimRule |
+| Scheduled-ReclaimRule | ReclaimRule |
+| Manual-ReclaimRule | ReclaimRule | Record separately |
+| Create-IntegratedRegistryinWorkspace | IntegratedRegistryinWorkspace | |
+| Delete-IntegratedRegistryinWorkspace | IntegratedRegistryinWorkspace | |
+| Update-IntegratedRegistryinWorkspace | IntegratedRegistryinWorkspace | |
+| Create-IntegratedRegistrybyAdmin | IntegratedRegistrybyAdmin | |
+| Delete-IntegratedRegistrybyAdmin | IntegratedRegistrybyAdmin | |
+| Update-IntegratedRegistrybyAdmin | IntegratedRegistrybyAdmin | |
+| Create-Harbor | Harbor | |
+| Delete-Harbor | Harbor | |
+| Update-Harbor | Harbor | |
