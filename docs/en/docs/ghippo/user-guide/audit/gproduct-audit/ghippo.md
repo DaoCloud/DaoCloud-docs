@@ -1,0 +1,55 @@
+# Audit Items of Global Management
+
+| Event Name | Resource Type | Note |
+| ------- | ------- | --- |
+| MailServer-SecurityPolicy | SecurityPolicy | |
+| SetQuota-Workspace | Workspace | |
+| UpdateAccountLockout-SecurityPolicy | SecurityPolicy | |
+| UpdateLogout-SecurityPolicy | SecurityPolicy | |
+| UpdatePassword-User | User | |
+| UpdatePassword-SecurityPolicy | SecurityPolicy | |
+| AutoCleanup-Audit | Audit | |
+| UpdateSessionTimeout-SecurityPolicy | SecurityPolicy | |
+| UnBindResource-Workspace | Workspace | |
+| UpdateRoles-User | User | |
+| UpdateAuthorize-Folder | Folder | |
+| UpdateDeAuthorize-Workspace | Workspace | |
+| BindResourceTo-Workspace | Workspace | |
+| BindShared-Workspace | Workspace | |
+| Login-User | User | |
+| Logout-User | User | |
+| AddUserTo-Group | Group | Uses the same interface as adding users to groups |
+| OfficialAuthz-SecurityPolicy | SecurityPolicy | |
+| UpdateRoles-User | User | |
+| Update-Group | Group | |
+| UpdateRoles-Group | Group | |
+| UpdateAccessKeys-User | User | |
+| Update-User | User | |
+| Update-Folder | Folder | |
+| Update-Workspace | Workspace | |
+| Update-LADP | LADP | |
+| Authorize-Folder | Folder | |
+| ManualCleanup-Audit | Audit | |
+| Authorize-Workspace | Workspace | |
+| Export-Audit | Audit | |
+| CustomAppearance-SecurityPolicy | SecurityPolicy | |
+| Delete-User | User | |
+| Delete-Group | Group | |
+| DeleteAccessKeys-User | User | |
+| Delete-Folder | Folder | |
+| DeAuthorize-Folder | Folder | |
+| DeAuthorize-Workspace | Workspace | |
+| Delete-Workspace | Workspace | |
+| DeleteAccessKeys-Account | Account | |
+| Delete-LADP | LADP | |
+| Create-User | User | |
+| Create-Group | Group | |
+| CreateAccessKeys-User | User | |
+| Create-Folder | Folder | |
+| Create-Workspace | Workspace | |
+| CreateAccessKeys-Account | Account | |
+| Create-LADP | LADP | |
+| UpdatePassword-Account | Account | |
+| UpdateEmail-Account | Account | |
+| UpdateAccessKeys-Account | Account | |
+| RemoveUserFrom-Group | Group | |
