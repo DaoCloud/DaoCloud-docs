@@ -1111,6 +1111,7 @@ nav:
                       - Microservice Audit Items: ghippo/user-guide/audit/gproduct-audit/skoala.md
                       - Service Mesh Audit Items: ghippo/user-guide/audit/gproduct-audit/mspider.md
                       - Middleware Audit Items: ghippo/user-guide/audit/gproduct-audit/mcamel.md
+                      - Ghippo Management Audit Items: ghippo/user-guide/audit/gproduct-audit/ghippo.md
               - Operations Management:
                   - ghippo/user-guide/report-billing/index.md
                   - Reports: ghippo/user-guide/report-billing/report.md
