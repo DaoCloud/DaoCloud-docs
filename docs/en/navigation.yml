@@ -692,8 +692,8 @@ nav:
                       - Update/Delete Domain: skoala/gateway/domain/update-domain.md
                       - Domain Policies: skoala/gateway/domain/domain-policy.md
               - Cloud Native Microservices:
-                  - Import/Remove Service: skoala/cloud-ms/index.md
                   - Traffic Control: skoala/cloud-ms/traffic-control.md
+                  - End-to-end Traffic Lane: skoala/cloud-ms/lane.md
               - Traditional Microservices:
                   - Hosted Nacos:
                       - Hosted Naocs: skoala/trad-ms/hosted/index.md
