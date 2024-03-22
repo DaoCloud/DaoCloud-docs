@@ -1126,6 +1126,15 @@ nav:
                   - K8s审计日志输出开关: ghippo/user-guide/audit/open-k8s-audit.md
                   - 下载和导出审计日志: ghippo/user-guide/audit/audit-log.md
                   - 获取审计日志源IP: ghippo/user-guide/audit/source-ip.md
+                  - 审计项汇总:
+                      - 应用工作台审计项汇总: ghippo/user-guide/audit/gproduct-audit/amamba.md
+                      - 容器管理审计项汇总: ghippo/user-guide/audit/gproduct-audit/kpanda.md
+                      - 多云编排审计项汇总: ghippo/user-guide/audit/gproduct-audit/kairship.md
+                      - 镜像仓库审计项汇总: ghippo/user-guide/audit/gproduct-audit/kangaroo.md
+                      - 可观测性审计项汇总: ghippo/user-guide/audit/gproduct-audit/insight.md
+                      - 微服务审计项汇总: ghippo/user-guide/audit/gproduct-audit/skoala.md
+                      - 服务网格审计项汇总: ghippo/user-guide/audit/gproduct-audit/mspider.md
+                      - 中间件审计项汇总: ghippo/user-guide/audit/gproduct-audit/mcamel.md
               - 运营管理:
                   - ghippo/user-guide/report-billing/index.md
                   - 报表管理: ghippo/user-guide/report-billing/report.md
