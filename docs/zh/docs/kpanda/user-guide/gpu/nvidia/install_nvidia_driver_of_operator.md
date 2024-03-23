@@ -44,11 +44,6 @@ DCE 5.0 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU Operator 离线包�
 
 ### 高级参数配置
 
-#### DevicePlugin 参数配置
-
-__DevicePlugin.enable__ ：配置是否启用 kubernentes [DevicePlugin](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/) 特性。
-默认为 **开启** 状态，**关闭** 后 GPU 整卡/MIG 功能将无法使用。
-
 #### Operator 参数配置
 
 1. __InitContainer.image__ ：配置 CUDA 镜像，推荐默认镜像： __nvidia/cuda__
