@@ -114,16 +114,16 @@
   
 - 网络：
 
-    - 网络配置可以根据表格信息按需组合，如果需要使用实时迁移功能，需要使用 Masquerade 的网络模式。
+    - 网络配置可以根据表格信息按需组合。
     
         | 网络模式          | CNI     | 是否安装 Spiderpool | 网卡模式    | 固定 IP         | 实时迁移     |
         | ----------------- | ------- | ------------------- | ------------ | --------------- | ------------ |
         | Masquerade（NAT） | Calico  | ❌                 | 单网卡       | ❌               | ✅            |
         |                   | Cilium  | ❌                 | 单网卡       | ❌               | ✅            |
         |                   | Flannel | ❌                 | 单网卡       | ❌               | ✅            |
-        | Passt（直通）     | macvlan | ✅                 | 单网卡       | ✅               | ❌            |
-        |                   | ipvlan  | ✅                 | 多网卡       | ✅               | ❌            |
-        | Bridge（桥接）    | OVS     | ✅                 | 多网卡       | ✅               | ❌            |
+        | Passt（直通）     | macvlan | ✅                 | 单网卡       | ✅               | ✅           |
+        |                   | ipvlan  | ✅                 | 多网卡       | ✅               | ✅           |
+        | Bridge（桥接）    | OVS     | ✅                 | 多网卡       | ✅               | ✅           |
     
         ![网络配置](../images/createvm-net01.png)
     
@@ -131,8 +131,9 @@
     
         - 默认选择 Masquerade（NAT）的网络模式，使用 eth0 默认网卡。
         - 若集群内安装了 spiderpool 组件，则支持选择 Passt（直通）/Bridge（桥接）模式，Bridge（桥接）模式支持多网卡形式。
-      
-        ![网络模式](../images/createvm-net02.png)
+        
+        
+      ![网络模式](../images/createvm-net02.png)
       
     - 添加网卡
     
