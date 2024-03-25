@@ -63,7 +63,7 @@ This page describes the steps to create an EgressGateway instance.
     egressgateway-controller-5754f6658-7pn4z   1/1     Running   0          9h
     ```
 
-## Creating EgressGateway Instance
+## Create EgressGateway Instance
 
 1. Go to the corresponding cluster, click the __Cluster Name__ to enter the details, select __Network__ -> __Network Configuration__ -> __Egress Gateway__ , click __Create Egress Gateway__ , and enter the following parameters. Click confirm to complete the creation.
 
