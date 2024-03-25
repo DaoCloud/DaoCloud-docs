@@ -1,6 +1,6 @@
-# Creating Storage for Virtual Machine
+# Storage for Virtual Machine
 
-This article will introduce how to configure storage information when creating a virtual machine.
+This article will introduce how to configure storage when creating a virtual machine.
 
 Storage and virtual machine functionality are closely related, mainly providing flexible and scalable virtual machine storage capabilities through the use of Kubernetes persistent volumes and storage classes.
 For example, virtual machine image storage in PVC supports cloning, snapshotting, and other operations with other data.

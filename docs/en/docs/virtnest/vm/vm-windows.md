@@ -4,117 +4,56 @@ This document will explain how to create a Windows virtual machine via the comma
 
 ## Prerequisites
 
-1. Before creating a Windows virtual machine, ensure that your environment is ready by following the [dependencies and prerequisites for installing the virtual machine module](../install/install-dependency.md).
-2. Follow the official documentation for the installation process: [How to install during Windows install](https://kubevirt.io/user-guide/virtual_machines/windows_virtio_drivers/#how-to-install-during-windows-install).
-3. If the virtual machine does not have network access, manually load the Windows network drivers during boot-up. Refer to the official documentation: [How to install after Windows installation?](https://kubevirt.io/user-guide/virtual_machines/windows_virtio_drivers/#how-to-install-after-windows-install).
-4. It is recommended to access the Windows virtual machine using VNC.
+1. Before creating a Windows virtual machine, it is recommended to first refer to [installing dependencies and prerequisites for the virtual machine module](../install/install-dependency.md) to ensure that your environment is ready.
+2. During the creation process, it is recommended to refer to the official documentation: [Installing Windows documentation](https://kubevirt.io/2022/KubeVirt-installing_Microsoft_Windows_11_from_an_iso.html), [Installing Windows related drivers](https://kubevirt.io/user-guide/virtual_machines/windows_virtio_drivers/#how-to-install-during-windows-install).
+3. It is recommended to access the Windows virtual machine using the VNC method.
 
-## Uploading the Windows OS Image File
+## Import an ISO Image
 
-1. Start the CDI upload service
+Creating a Windows virtual machine requires importing an ISO image primarily to install the Windows operating system. Unlike Linux operating systems, the Windows installation process usually involves booting from an installation disc or ISO image file. Therefore, when creating a Windows virtual machine, it is necessary to first import the installation ISO image of the Windows operating system so that the virtual machine can be installed properly.
 
-    ```shell
-    cat << EOF | kubectl  -n virtnest-system apply  -f -
-    apiVersion: v1
-    kind: Service
-    metadata:
-      labels:
-        cdi.kubevirt.io: cdi-uploadproxy
-      name: cdi-uploadproxy-nodeport
-    spec:
-      ports:
-      - nodePort: 31001
-        port: 443
-        protocol: TCP
-        targetPort: 8443
-      selector:
-        cdi.kubevirt.io: cdi-uploadproxy
-      type: NodePort
-    EOF
+Here are two methods for importing ISO images:
+
+1. (Recommended) Creating a Docker image. It is recommended to refer to [building images](../vm-image/index.md).
+
+2. (Not recommended) Using virtctl to import the image into a Persistent Volume Claim (PVC).
+
+    You can refer to the following command:
+
+    ```sh
+    virtctl image-upload -n <namespace> pvc <PVC name> \
+       --image-path=<ISO file path> \
+       --access-mode=ReadWriteOnce \
+       --size=6G \
+       --uploadproxy-url=<https://cdi-uploadproxy ClusterIP and port> \
+       --force-bind \
+       --insecure \
+       --wait-secs=240 \
+       --storage-class=<SC>
     ```
 
-2. CDI certificate configuration
+    For example:
 
-    ```shell
-    # Replace 10.6.136.25 with the node IP
-    echo | openssl s_client -showcerts -connect 10.6.136.25:31001 2>/dev/null \
-            | openssl x509 -inform pem -noout -text \
-            | sed -n -e '/Subject.*CN/p' -e '/Subject Alternative/{N;p}'
-    echo "10.6.136.25  cdi-uploadproxy" >> /etc/hosts
-    
-    kubectl patch cdi cdi \
-        --type merge \
-        --patch '{"spec":{"config":{"uploadProxyURLOverride":"https://cdi-uploadproxy:31001"}}}'
-    
-    kubectl get secret -n virtnest-system cdi-uploadproxy-server-cert \
-        -o jsonpath="{.data['tls\.crt']}" \
-        | base64 -d > cdi-uploadproxy-server-cert.crt
-    
-    sudo cp cdi-uploadproxy-server-cert.crt /etc/pki/ca-trust/source/anchors
-    
-    sudo update-ca-trust
+    ```sh
+    virtctl image-upload -n <namespace> pvc <PVC name> \
+       --image-path=<ISO file path> \
+       --access-mode=ReadWriteOnce \
+       --size=6G \
+       --uploadproxy-url=<https://cdi-uploadproxy ClusterIP and port> \
+       --force-bind \
+       --insecure \
+       --wait-secs=240 \
+       --storage-class=<SC>
     ```
 
-3. Install the tools
+## Create a Windows Virtual Machine Using YAML
 
-    ```shell
-    (
-    set -x; cd "$(mktemp -d)" &&
-    OS="$(uname | tr '[:upper:]' '[:lower:]')" &&
-    ARCH="$(uname -m | sed -e 's/x86_64/amd64/' -e 's/\(arm\)\(64\)\?.*/\1\2/' -e 's/aarch64$/arm64/')" &&
-    KREW="krew-${OS}_${ARCH}" &&
-    curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/${KREW}.tar.gz" &&
-    tar zxvf "${KREW}.tar.gz" &&
-    ./"${KREW}" install krew
-    )
-    
-    echo 'export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"' >> ~/.bashrc && bash --login
-    
-    kubectl krew install virt
-    ```
+Creating a Windows virtual machine using YAML is more flexible and easier to write and maintain. Below are three reference YAML examples:
 
-4. Download the Windows ISO from the [Windows website](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2012-r2)
+1. (Recommended) Using Virtio drivers + Docker image:
 
-    ```shell
-    wget -O win.iso 'https://go.microsoft.com/fwlink/p/?LinkID=2195443&clcid=0x409&culture=en-us&country=US'
-    ```
-
-5. Upload the Windows ISO and create a boot disk
-
-    ```shell
-    kubectl virt image-upload -n virt-demo pvc iso-win \  
-    --image-path=/root/win.iso \  
-    --access-mode=ReadWriteOnce \
-    --size=25G \  
-    --uploadproxy-url=https://cdi-uploadproxy:31001 \  
-    --force-bind \
-    --insecure \
-    --wait-secs=240 \
-    --storage-class=local-path  
-    ```
-
-6. Create a data disk
-
-    ```shell
-    kubectl apply -n virt-demo  -f - <<EOF
-    apiVersion: v1
-    kind: PersistentVolumeClaim
-    metadata:
-      name: winhd
-      namespace: virt-demo
-    spec:
-    accessModes:
-        - ReadWriteOnce
-    resources:
-        requests:
-        storage: 20Gi
-    storageClassName: local-path
-    EOF
-    ```
-
-## Create Windows Virtual Machine
-
-??? note "Click to view YAML example for creating Windows Virtual Machine"
+    - If you need to use storage capabilities - mount disks, please install [viostor drivers](https://kubevirt.io/user-guide/virtual_machines/windows_virtio_drivers/#how-to-install-during-windows-install).
+    - If you need to use network capabilities, please install [NetKVM drivers](https://kubevirt.io/user-guide/virtual_machines/windows_virtio_drivers/#how-to-install-after-windows-install).
 
     ```yaml
     apiVersion: kubevirt.io/v1
@@ -125,71 +64,302 @@ This document will explain how to create a Windows virtual machine via the comma
         kubevirt.io/storage-observed-api-version: v1
       labels:
         virtnest.io/os-family: Windows
-        virtnest.io/os-version: 2012.r2
-      name: vm-windows
-      namespace: virt-demo
+        virtnest.io/os-version: '10'
+      name: windows10-virtio
+      namespace: default
     spec:
+      dataVolumeTemplates:
+        - metadata:
+            name: win10-system-virtio
+            namespace: default
+          spec:
+            pvc:
+              accessModes:
+                - ReadWriteOnce
+              resources:
+                requests:
+                  storage: 32Gi
+              storageClassName: local-path
+            source:
+              blank: {}
       running: true
       template:
         metadata:
-          creationTimestamp: null
-          labels:  # Custom application label
-            app: vm-windows
+          labels:
+            app: windows10-virtio
             version: v1
-            kubevirt.io/domain: vm-windows
+            kubevirt.io/domain: windows10-virtio
         spec:
           architecture: amd64
           domain:
             cpu:
-              cores: 4
+              cores: 8
               sockets: 1
               threads: 1
             devices:
               disks:
                 - bootOrder: 1
-                  cdrom:
-                    bus: sata
-                  name: cdromiso
-                - bootOrder: 2
                   disk:
-                    bus: virtio
-                  name: harddrive
+                    bus: virtio # Use virtio
+                  name: win10-system-virtio 
+                - bootOrder: 2
+                  cdrom:
+                    bus: sata # Use sata for ISO image
+                  name: iso-win10
                 - bootOrder: 3
                   cdrom:
-                    bus: sata
+                    bus: sata # Use sata for containerdisk
                   name: virtiocontainerdisk
-            interfaces:
-              - name: default
-                passt: {}  # passt mode
-                ports:
-                  - name: http
-                    port: 80  # Application port
+              interfaces:
+                - name: default
+                  masquerade: {}
             machine:
               type: q35
             resources:
               requests:
-                memory: 2G
-        networks:
+                memory: 8G
+          networks:
             - name: default
               pod: {}
-        volumes:
-            - name: cdromiso
+          volumes:
+            - name: iso-win10
               persistentVolumeClaim:
-                claimName: iso-win  # Custom boot disk for uploading ISO
-            - name: harddrive
+                claimName: iso-win10
+            - name: win10-system-virtio
               persistentVolumeClaim:
-                claimName: winhd  # Custom data disk
+                claimName: win10-system-virtio
             - containerDisk:
                 image: kubevirt/virtio-container-disk
               name: virtiocontainerdisk
     ```
 
-## Accessing the Windows Virtual Machine
+2. (Not recommended) Using a combination of Virtio drivers and virtctl tool to import the image into a Persistent Volume Claim (PVC).
 
-1. Once created successfully, access the virtual machine list page to verify that the virtual machine is running properly.
+    ```yaml
+    apiVersion: kubevirt.io/v1
+    kind: VirtualMachine
+    metadata:
+      annotations:
+        kubevirt.io/latest-observed-api-version: v1
+        kubevirt.io/storage-observed-api-version: v1
+      labels:
+        virtnest.io/os-family: Windows
+        virtnest.io/os-version: '10'
+      name: windows10-virtio
+      namespace: default
+    spec:
+      dataVolumeTemplates:
+        - metadata:
+            name: win10-system-virtio
+            namespace: default
+          spec:
+            pvc:
+              accessModes:
+                - ReadWriteOnce
+              resources:
+                requests:
+                  storage: 32Gi
+              storageClassName: local-path
+            source:
+              blank: {}
+      running: true
+      template:
+        metadata:
+          labels:
+            app: windows10-virtio
+            version: v1
+            kubevirt.io/domain: windows10-virtio
+        spec:
+          architecture: amd64
+          domain:
+            cpu:
+              cores: 8
+              sockets: 1
+              threads: 1
+            devices:
+              disks:
+                - bootOrder: 1
+                  # Use virtio
+                  disk:
+                    bus: virtio
+                  name: win10-system-virtio
+                  # Use sata for ISO image
+                - bootOrder: 2
+                  cdrom:
+                    bus: sata
+                  name: iso-win10
+                  # Use sata for containerdisk
+                - bootOrder: 3
+                  cdrom:
+                    bus: sata
+                  name: virtiocontainerdisk
+              interfaces:
+                - name: default
+                  masquerade: {}
+            machine:
+              type: q35
+            resources:
+              requests:
+                memory: 8G
+          networks:
+            - name: default
+              pod: {}
+          volumes:
+            - name: iso-win10
+              persistentVolumeClaim:
+                claimName: iso-win10
+            - name: win10-system-virtio
+              persistentVolumeClaim:
+                claimName: win10-system-virtio
+            - containerDisk:
+                image: kubevirt/virtio-container-disk
+              name: virtiocontainerdisk
+    ```
+
+3. (Not recommended) In a scenario where Virtio drivers are not used, importing the image into a Persistent Volume Claim (PVC) using the virtctl tool. The virtual machine may use other types of drivers or default drivers to operate disk and network devices.
+
+    ```yaml
+    apiVersion: kubevirt.io/v1
+    kind: VirtualMachine
+    metadata:
+      annotations:
+        kubevirt.io/latest-observed-api-version: v1
+        kubevirt.io/storage-observed-api-version: v1
+      labels:
+        virtnest.io/os-family: Windows
+        virtnest.io/os-version: '10'
+      name: windows10
+      namespace: default
+    spec:
+      dataVolumeTemplates:
+        # Create multiple PVC (disks) for system disk
+        - metadata:
+            name: win10-system
+            namespace: default
+          spec:
+            pvc:
+              accessModes:
+                - ReadWriteOnce
+              resources:
+                requests:
+                  storage: 32Gi
+              storageClassName: local-path
+            source:
+              blank: {}
+      running: true
+      template:
+        metadata:
+          labels:
+            app: windows10
+            version: v1
+            kubevirt.io/domain: windows10
+        spec:
+          architecture: amd64
+          domain:
+            cpu:
+              cores: 8
+              sockets: 1
+              threads: 1
+            devices:
+              disks:
+                - bootOrder: 1
+                  # Use sata without virtio driver
+                 cdrom:
+                    bus: sata
+                  name: win10-system
+                  # Use sata for ISO
+                - bootOrder: 2
+                  cdrom:
+                    bus: sata
+                  name: iso-win10
+              interfaces:
+                - name: default
+                  masquerade: {}
+            machine:
+              type: q35
+            resources:
+              requests:
+                memory: 8G
+          networks:
+            - name: default
+              pod: {}
+          volumes:
+            - name: iso-win10
+              persistentVolumeClaim:
+                claimName: iso-win10
+            - name: win10-system
+              persistentVolumeClaim:
+                claimName: win10-system
+    ```
+
+## Cloud Desktop
+
+1. For Windows virtual machines, remote desktop control access is often required. It is recommended to use
+   [Microsoft Remote Desktop](https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-mac#get-the-remote-desktop-client) to control your virtual machine.
+
+2. Please note:
+
+   - Your Windows version must support remote desktop control to use
+     [Microsoft Remote Desktop](https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-mac#get-the-remote-desktop-client).
+   - Disable the Windows firewall.
+
+## Adding Data Disks
+
+Adding a data disk to a Windows virtual machine follows the same process as adding one to a Linux virtual machine. You can refer to the provided YAML example for guidance.
+
+```yaml
+  apiVersion: kubevirt.io/v1
+  kind: VirtualMachine
+  <...>
+  spec:
+    dataVolumeTemplates:
+      # Add a data disk
+      - metadata:
+        name: win10-disk
+        namespace: default
+        spec:
+          pvc:
+            accessModes:
+              - ReadWriteOnce
+            resources:
+              requests:
+                storage: 16Gi
+            storageClassName: hwameistor-storage-lvm-hdd
+          source:
+            blank: {}
+    template:
+      spec:
+        domain:
+          devices:
+            disks:
+              - bootOrder: 1
+                disk:
+                  bus: virtio
+                name: win10-system
+              # Add a data disk
+              - bootOrder: 2
+                disk:
+                  bus: virtio
+                name: win10-disk
+            <....>
+        volumes:
+          <....>
+          # Add a data disk
+          - name: win10-disk
+            persistentVolumeClaim:
+              claimName: win10-disk
+```
+
+## Snapshots, Cloning, Live Migration
+
+These capabilities are consistent with Linux virtual machines and can be configured using the same methods.
+
+## Accessing Windows Virtual Machine
+
+1. After successful creation, access the virtual machine list page to confirm that the virtual machine is running properly.
 
     <!-- Add image later -->
 
-2. Click VNC to access the virtual machine.
+2. Click the console access (VNC) to access it successfully.
 
     <!-- Add image later -->
