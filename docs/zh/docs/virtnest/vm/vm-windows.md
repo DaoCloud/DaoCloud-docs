@@ -25,26 +25,26 @@
 
     ```sh
     virtctl image-upload -n <命名空间> pvc <PVC 名称> \ 
-    --image-path=<IOS 文件路径> \ 
-    --access-mode=ReadWriteOnce \ 
-    --size=6G \ --uploadproxy-url=<https://cdi-uploadproxy ClusterIP 和端口> \ 
-    --force-bind \ 
-    --insecure \ 
-    --wait-secs=240 \ 
-    --storage-class=<SC>
+       --image-path=<IOS 文件路径> \ 
+       --access-mode=ReadWriteOnce \ 
+       --size=6G \ --uploadproxy-url=<https://cdi-uploadproxy ClusterIP 和端口> \ 
+       --force-bind \ 
+       --insecure \ 
+       --wait-secs=240 \ 
+       --storage-class=<SC>
     ```
 
     例如：
 
     ```sh
     virtctl image-upload -n <命名空间> pvc <PVC 名称> \ 
-    --image-path=<IOS 文件路径> \ 
-    --access-mode=ReadWriteOnce \ 
-    --size=6G \ --uploadproxy-url=<https://cdi-uploadproxy ClusterIP 和端口> \ 
-    --force-bind \ 
-    --insecure \ 
-    --wait-secs=240 \ 
-    --storage-class=<SC>
+       --image-path=<IOS 文件路径> \ 
+       --access-mode=ReadWriteOnce \ 
+       --size=6G \ --uploadproxy-url=<https://cdi-uploadproxy ClusterIP 和端口> \ 
+       --force-bind \ 
+       --insecure \ 
+       --wait-secs=240 \ 
+       --storage-class=<SC>
     ```
 
 ## YAML 创建 Windows 虚拟机
@@ -53,8 +53,8 @@
 
 1.（推荐）使用 Virtio 驱动 + Docker 镜像的方式
 
-    - 如果你需要使用存储能力-挂载磁盘，请安装 [viostor 驱动程序](https://kubevirt.io/user-guide/virtual_machines/windows_virtio_drivers/#how-to-install-during-windows-install)。
-    - 如果你需要使用网络能力，请安装 [NetKVM 驱动程序](https://kubevirt.io/user-guide/virtual_machines/windows_virtio_drivers/#how-to-install-after-windows-install)。
+    - 如果你需要使用存储能力-挂载磁盘，请安装 [viostor 驱动程序](https://kubevirt.io/user-guide/virtual_machines/windows_virtio_drivers/#how-to-install-during-windows-install)
+    - 如果你需要使用网络能力，请安装 [NetKVM 驱动程序](https://kubevirt.io/user-guide/virtual_machines/windows_virtio_drivers/#how-to-install-after-windows-install)
 
     ??? note "点击查看完整 YAML"
 
@@ -138,6 +138,7 @@
                     image: kubevirt/virtio-container-disk
                   name: virtiocontainerdisk
         ```
+
 2. （不推荐）使用 Virtio 驱动和 virtctl 工具的组合方式，将镜像导入到 Persistent Volume Claim（PVC）中。
 
     ```yaml
@@ -311,7 +312,7 @@
 
 Windows 虚拟机添加数据盘的方式和 Linux 虚拟机一致。你可以参考下面的 YAML 示例：
 
-```sh
+```yaml
   apiVersion: kubevirt.io/v1
   kind: VirtualMachine
   <...>
