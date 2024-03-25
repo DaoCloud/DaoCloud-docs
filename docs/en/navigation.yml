@@ -565,8 +565,9 @@ nav:
                   - Snapshots: virtnest/vm/snapshot.md
                   - Live Migration: virtnest/vm/live-migration.md
                   - Access VM by NodePort: virtnest/vm/nodeport.md
-                  - Monitor VM: virtnest/vm/monitor.md
-                  - Create Storage for VM: virtnest/vm/vm-sc.md
+                  - VM Monitor: virtnest/vm/monitor.md
+                  - VM Network: virtnest/vm/vm-network.md
+                  - VM Storage: virtnest/vm/vm-sc.md
               - VM Template:
                   - Create VM by Template: virtnest/template/index.md
                   - VM Template: virtnest/template/tep.md

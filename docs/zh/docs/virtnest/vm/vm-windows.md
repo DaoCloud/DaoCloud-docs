@@ -194,7 +194,7 @@
                   cdrom:
                     bus: sata
                   name: iso-win10
-                 # containerdisk 请使用 sata
+                  # containerdisk 请使用 sata
                 - bootOrder: 3
                   cdrom:
                     bus: sata
@@ -354,6 +354,7 @@ Windows 虚拟机添加数据盘的方式和 Linux 虚拟机一致。你可以�
             persistentVolumeClaim:
               claimName: win10-disk
 ```
+
 ## 快照、克隆、实时迁移
 
 这些能力和 Linux 虚拟机一致，可直接参考配置 Linux 虚拟机的方式。

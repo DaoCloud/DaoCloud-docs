@@ -132,7 +132,6 @@
         - 默认选择 Masquerade（NAT）的网络模式，使用 eth0 默认网卡。
         - 若集群内安装了 spiderpool 组件，则支持选择 Passt（直通）/Bridge（桥接）模式，Bridge（桥接）模式支持多网卡形式。
         
-        
         ![网络模式](../images/createvm-net02.png)
       
     - 添加网卡
