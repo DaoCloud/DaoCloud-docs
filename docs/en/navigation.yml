@@ -455,7 +455,9 @@ nav:
                   - Redirect: network/modules/ingress-nginx/redirect.md
               - EgressGateway:
                   - Intro: network/modules/egressgateway/index.md
-                  - Usage: network/modules/egressgateway/usage.md
+                  - Install: network/modules/egressgateway/install.md
+                  - Create EgressGateway Instance: network/modules/egressgateway/create_eg.md
+                  - Create EgressPolicy: network/modules/egressgateway/create-egpolicy.md
               - Metallb:
                   - Intro: network/modules/metallb/index.md
                   - Install: network/modules/metallb/install.md
