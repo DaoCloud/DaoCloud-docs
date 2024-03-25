@@ -55,86 +55,83 @@ Creating a Windows virtual machine using YAML is more flexible and easier to wri
     - If you need to use storage capabilities - mount disks, please install [viostor drivers](https://kubevirt.io/user-guide/virtual_machines/windows_virtio_drivers/#how-to-install-during-windows-install).
     - If you need to use network capabilities, please install [NetKVM drivers](https://kubevirt.io/user-guide/virtual_machines/windows_virtio_drivers/#how-to-install-after-windows-install).
 
-        ```yaml
-        apiVersion: kubevirt.io/v1
-        kind: VirtualMachine
+    ```yaml
+    apiVersion: kubevirt.io/v1
+    kind: VirtualMachine
+    metadata:
+      annotations:
+        kubevirt.io/latest-observed-api-version: v1
+        kubevirt.io/storage-observed-api-version: v1
+      labels:
+        virtnest.io/os-family: Windows
+        virtnest.io/os-version: '10'
+      name: windows10-virtio
+      namespace: default
+    spec:
+      dataVolumeTemplates:
+        - metadata:
+            name: win10-system-virtio
+            namespace: default
+          spec:
+            pvc:
+              accessModes:
+                - ReadWriteOnce
+              resources:
+                requests:
+                  storage: 32Gi
+              storageClassName: local-path
+            source:
+              blank: {}
+      running: true
+      template:
         metadata:
-          annotations:
-            kubevirt.io/latest-observed-api-version: v1
-            kubevirt.io/storage-observed-api-version: v1
           labels:
-            virtnest.io/os-family: Windows
-            virtnest.io/os-version: '10'
-          name: windows10-virtio
-          namespace: default
+            app: windows10-virtio
+            version: v1
+            kubevirt.io/domain: windows10-virtio
         spec:
-          dataVolumeTemplates:
-            - metadata:
-                name: win10-system-virtio
-                namespace: default
-              spec:
-                pvc:
-                  accessModes:
-                    - ReadWriteOnce
-                  resources:
-                    requests:
-                      storage: 32Gi
-                  storageClassName: local-path
-                source:
-                  blank: {}
-          running: true
-          template:
-            metadata:
-              labels:
-                app: windows10-virtio
-                version: v1
-                kubevirt.io/domain: windows10-virtio
-            spec:
-              architecture: amd64
-              domain:
-                cpu:
-                  cores: 8
-                  sockets: 1
-                  threads: 1
-                devices:
-                  disks:
-                    - bootOrder: 1
-                      # Use virtio
-                      disk:
-                        bus: virtio
-                      name: win10-system-virtio
-                      # Use sata for ISO image
-                    - bootOrder: 2
-                      cdrom:
-                        bus: sata
-                      name: iso-win10
-                      # Use sata for containerdisk
-                    - bootOrder: 3
-                      cdrom:
-                        bus: sata
-                      name: virtiocontainerdisk
-                  interfaces:
-                    - name: default
-                      masquerade: {}
-                machine:
-                  type: q35
-                resources:
-                  requests:
-                    memory: 8G
-              networks:
-                - name: default
-                  pod: {}
-              volumes:
-                - name: iso-win10
-                  persistentVolumeClaim:
-                    claimName: iso-win10
-                - name: win10-system-virtio
-                  persistentVolumeClaim:
-                    claimName: win10-system-virtio
-                - containerDisk:
-                    image: kubevirt/virtio-container-disk
+          architecture: amd64
+          domain:
+            cpu:
+              cores: 8
+              sockets: 1
+              threads: 1
+            devices:
+              disks:
+                - bootOrder: 1
+                  disk:
+                    bus: virtio # Use virtio
+                  name: win10-system-virtio 
+                - bootOrder: 2
+                  cdrom:
+                    bus: sata # Use sata for ISO image
+                  name: iso-win10
+                - bootOrder: 3
+                  cdrom:
+                    bus: sata # Use sata for containerdisk
                   name: virtiocontainerdisk
-        ```
+              interfaces:
+                - name: default
+                  masquerade: {}
+            machine:
+              type: q35
+            resources:
+              requests:
+                memory: 8G
+          networks:
+            - name: default
+              pod: {}
+          volumes:
+            - name: iso-win10
+              persistentVolumeClaim:
+                claimName: iso-win10
+            - name: win10-system-virtio
+              persistentVolumeClaim:
+                claimName: win10-system-virtio
+            - containerDisk:
+                image: kubevirt/virtio-container-disk
+              name: virtiocontainerdisk
+    ```
 
 2. (Not recommended) Using a combination of Virtio drivers and virtctl tool to import the image into a Persistent Volume Claim (PVC).
 
