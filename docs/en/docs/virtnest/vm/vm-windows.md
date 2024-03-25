@@ -55,8 +55,6 @@ Creating a Windows virtual machine using YAML is more flexible and easier to wri
     - If you need to use storage capabilities - mount disks, please install [viostor drivers](https://kubevirt.io/user-guide/virtual_machines/windows_virtio_drivers/#how-to-install-during-windows-install).
     - If you need to use network capabilities, please install [NetKVM drivers](https://kubevirt.io/user-guide/virtual_machines/windows_virtio_drivers/#how-to-install-after-windows-install).
 
-    ??? note "Click to view complete YAML"
-
         ```yaml
         apiVersion: kubevirt.io/v1
         kind: VirtualMachine
@@ -110,7 +108,7 @@ Creating a Windows virtual machine using YAML is more flexible and easier to wri
                       cdrom:
                         bus: sata
                       name: iso-win10
-                     # Use sata for containerdisk
+                      # Use sata for containerdisk
                     - bootOrder: 3
                       cdrom:
                         bus: sata

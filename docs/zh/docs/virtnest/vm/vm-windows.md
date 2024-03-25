@@ -51,12 +51,10 @@
 
 使用 yaml 创建 Windows 虚拟机，更加灵活并且更易编写喝维护。以下介绍三种参考的 yaml：
 
-1.（推荐）使用 Virtio 驱动 + Docker 镜像的方式
+1. 推荐使用 Virtio 驱动 + Docker 镜像的方式
 
     - 如果你需要使用存储能力-挂载磁盘，请安装 [viostor 驱动程序](https://kubevirt.io/user-guide/virtual_machines/windows_virtio_drivers/#how-to-install-during-windows-install)
     - 如果你需要使用网络能力，请安装 [NetKVM 驱动程序](https://kubevirt.io/user-guide/virtual_machines/windows_virtio_drivers/#how-to-install-after-windows-install)
-
-    ??? note "点击查看完整 YAML"
 
         ```yaml
         apiVersion: kubevirt.io/v1
