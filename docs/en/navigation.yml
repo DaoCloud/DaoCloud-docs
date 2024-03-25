@@ -1273,13 +1273,15 @@ nav:
       - FedState: community/fedstate.md
       - Ferry: community/ferry.md
       - HwameiStor: community/hwameistor.md
+      - KasmCloud: community/kasmcloud.md
       - Kdoctor: community/kdoctor.md
       - KLTS: community/klts.md
+      - kube-node-tuning: community/kube-node-tuning.md
       - Kubean: community/kubean.md
       - KWOK: community/kwok.md
       - MirageDebug: community/miragedebug.md
       - Merbridge: community/merbridge.md
-      - Mirror Acceleration in China: community/mirror.md
+      - Piraeus: community/piraeus.md
       - Spiderpool: community/spiderpool.md
       - DaoCloud Icon Library: community/icons/index.md
   - Cloud Native Institute:
