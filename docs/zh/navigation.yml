@@ -226,7 +226,7 @@ nav:
                   - 使用配置项: kpanda/user-guide/configmaps-secrets/use-configmap.md
                   - 创建密钥: kpanda/user-guide/configmaps-secrets/create-secret.md
                   - 使用密钥: kpanda/user-guide/configmaps-secrets/use-secret.md
-                  - configmap/secret 热加载: kpanda/user-guide/configmaps-secrets/configmap-hot-loading.md
+                  - Configmap/Secret 热加载: kpanda/user-guide/configmaps-secrets/configmap-hot-loading.md
               - 集群运维:
                   - 最近操作: kpanda/user-guide/clusterops/latest-operations.md
                   - 集群升级: kpanda/user-guide/clusters/upgrade-cluster.md
