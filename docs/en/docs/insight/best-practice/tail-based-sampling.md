@@ -1,20 +1,21 @@
-# 尾部采样方案
+# Tail Sampling Scheme
 
-尾部采样处理器根据一组定义的策略对链路进行采样。但是，链路的所有跨度（span）必须由同一收集器实例接收，以做出有效的采样决策。
+The tail sampling processor samples the links according to a set of defined policies. However,
+all spans of the link must be received by the same collector instance in order to make effective sampling decisions.
 
-因此，需要对 Insight 的 Global Opentelemetry Collector 架构进行调整以实现尾部采样策略。
+Therefore, adjustments need to be made to the Global Opentelemetry Collector architecture of Insight to implement tail sampling policies.
 
-## 具体改动
+## Specific Changes
 
-在 Global Opentelemetry Collector 前面引入具有负载均衡能力的 Otel Col。
+Introducing an Otel Col with LB capability in front of the Global Opentelemetry Collector.
 
-## 改动步骤
+## Steps for Changes
 
-### 部署具有负载均衡能力的 OTEL COL 组件
+### Deploy OTEL COL Component with LB Capability
 
-参照以下 YAML 配置来部署。
+Refer to the following YAML to deploy the component.
 
-??? note "点击查看部署配置"
+??? note "Click to view deployment configuration"
 
     ```yaml
     kind: ClusterRole
@@ -232,39 +233,40 @@
         app.kubernetes.io/name: insight-otel-collector-lb
     ```
 
-### 配置尾部采样规则
+### Configure Tail Sampling Rules
 
 !!! note
 
-    需要在原本 insight-otel-collector-config configmap 配置组中增加尾部采样（tail_sampling processors）的规则。
+    Tail sampling rules need to be added to the existing insight-otel-collector-config configmap configuration group.
 
-1. 在 `processor` 中增加如下内容，具体规则可调整；参考 [OTel 官方示例](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/tailsamplingprocessor/README.md#a-practical-example)。
+1. Add the following content in the `processor` section, and adjust the specific rules as needed; refer to the
+   [OTel official example](https://github.com/open-telemetry/opentelemetry-collector-contrib/blob/main/processor/tailsamplingprocessor/README.md#a-practical-example).
 
     ```yaml
     ........
     tail_sampling:
-      decision_wait: 10s # 等待 10 秒，超过 10 秒后的 traceid 将不再处理
-      num_traces: 1500000  # 内存中保存的 trace 数，假设每秒 1000 条 trace，最小不低于 1000 * decision_wait * 2；
-                           # 设置过大会占用过多的内存资源，过小会导致部分 trace 被 drop 掉
+      decision_wait: 10s # Wait for 10 seconds, traces older than 10 seconds will no longer be processed
+      num_traces: 1500000  # Number of traces saved in memory, assuming 1000 traces per second, should not be less than 1000 * decision_wait * 2;
+                           # Setting it too large may consume too much memory resources, setting it too small may cause some traces to be dropped
       expected_new_traces_per_sec: 10
-      policies: # 上报策略
+      policies: # Reporting policies
         [
             {
               name: latency-policy,
-              type: latency,  # 耗时超过 500ms 上报
+              type: latency,  # Report traces that exceed 500ms
               latency: {threshold_ms: 500}
             },
             {
               name: status_code-policy,
-              type: status_code,  # 状态码为 ERROR 的上报
+              type: status_code,  # Report traces with ERROR status code
               status_code: {status_codes: [ ERROR ]}
             }
         ]
     ......
-    tail_sampling: # 组合采样
-      decision_wait: 10s # 等待 10 秒，超过 10 秒后的 traceid 将不再处理
-      num_traces: 1500000  # 内存中保存的 trace 数，假设每秒 1000 条 trace，最小不低于 1000 * decision_wait * 2；
-                           # 设置过大会占用过多的内存资源，过小会导致部分 trace 被 drop 掉
+    tail_sampling: # Composite sampling
+      decision_wait: 10s # Wait for 10 seconds, traces older than 10 seconds will no longer be processed
+      num_traces: 1500000  # Number of traces saved in memory, assuming 1000 traces per second, should not be less than 1000 * decision_wait * 2;
+                           # Setting it too large may consume too much memory resources, setting it too small may cause some traces to be dropped
       expected_new_traces_per_sec: 10
       policies: [
           {
@@ -296,7 +298,7 @@
         ]
     ```
 
-2. 在 otel col pipeline 中激活该 `processor`：
+2. Activate this `processor` in the otel col pipeline:
 
     ```yaml
     traces:
@@ -311,13 +313,13 @@
         - otlp
     ```
 
-3. 重启 `insight-opentelemetry-collector` 组件。
+3. Restart the `insight-opentelemetry-collector` component.
 
-4. 在部署 Insight-agent 时，将链路数据的上报地址修改为 `otel-col` LB 的 `4317` 端口地址。
+4. When deploying the Insight-agent, modify the reporting address of the link data to the `4317` port address of the `otel-col` LB.
 
     ```yaml
     ....
         exporters:
           otlp/global:
-            endpoint: insight-opentelemetry-collector-lb.insight-system.svc.cluster.local:4317  # 👈 修改为 lb 地址
+            endpoint: insight-opentelemetry-collector-lb.insight-system.svc.cluster.local:4317  # 👈 Modify to lb address
     ```
