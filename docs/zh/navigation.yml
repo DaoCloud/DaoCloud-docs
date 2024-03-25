@@ -425,7 +425,8 @@ nav:
               - 集成 EgressGateway:
                   - 介绍: network/modules/egressgateway/index.md
                   - 安装: network/modules/egressgateway/install.md
-                  - 使用: network/modules/egressgateway/usage.md
+                  - 创建网关实例: network/modules/egressgateway/create_eg.md
+                  - 创建网关策略: network/modules/egressgateway/create-egpolicy.md
               - 集成 sriov-network-operator:
                   - 介绍: network/modules/sriov-network-operator/index.md
                   - 安装: network/modules/sriov-network-operator/install.md
