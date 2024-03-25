@@ -670,6 +670,7 @@ nav:
                   - 使用OTel接收SkyWalking链路数据: insight/best-practice/sw-to-otel.md
                   - Kafka+ES流式架构应对超大规模日志: insight/best-practice/insight-kafka.md
                   - 集成 DeepFlow: insight/best-practice/integration_deepflow.md
+                  - 链路数据尾部采样方案: insight/best-practice/tail-based-sampling.md
               - 兼容性测试:
                   - K8s 兼容性测试: insight/compati-test/k8s-compatibility.md
                   - Rancher 兼容性测试: insight/compati-test/rancher-compatibility.md
