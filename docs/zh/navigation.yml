@@ -269,6 +269,7 @@ nav:
                           - 构建 CentOS 7.9 离线 yum 源: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_centos7_9.md
                           - 上传 Red Hat GPU Operator 离线镜像: kpanda/user-guide/gpu/nvidia/push_image_to_repo.md
                           - 构建 Red Hat 8.4 离线 yum 源: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_redhat8_4.md
+                          - 构建 Red Hat 7.9 离线 yum 源: kpanda/user-guide/gpu/nvidia/yum_source_redhat7_9.md
                       - NVIDIA GPU 整卡模式: kpanda/user-guide/gpu/nvidia/full_gpu_userguide.md
                       - NVIDIA vGPU 模式:
                           - 安装 vGPU Addon: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_addon.md
