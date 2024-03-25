@@ -27,10 +27,6 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./clusterpedia.md)
 
-</div>
-
-<div class="grid cards" markdown>
-
 -   :simple-amazonapigateway:{ .lg .middle } __egressgateway__
 
     ---
@@ -50,10 +46,6 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./fast.md)
 
-</div>
-
-<div class="grid cards" markdown>
-
 -   :fontawesome-brands-trade-federation:{ .lg .middle } __FedState__
 
     ---
@@ -70,10 +62,6 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./ferry.md)
 
-</div>
-
-<div class="grid cards" markdown>
-
 -   :material-storage-tank:{ .lg .middle } __HwameiStor__ :simple-cncf: 已入选 CNCF Landscape 和 Sandbox
 
     ---
@@ -81,6 +69,14 @@ hide:
     高可用的本地存储方案，更快、更强、更可靠，已入选 CNCF 全景图和沙箱孵化
 
     [:octicons-arrow-right-24: 了解更多](./hwameistor.md)
+
+-   :simple-kasasmart:{ .lg .middle } __KasmCloud__
+
+    ---
+
+    在 Kubernetes 中管理和运行 Actor、Provider 和 Link
+
+    [:octicons-arrow-right-24: Learn more](./kasmcloud.md)
 
 -   :material-doctor:{ .lg .middle } __kdoctor__
 
@@ -90,10 +86,6 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./kdoctor.md)
 
-</div>
-
-<div class="grid cards" markdown>
-
 -   :simple-kubernetes:{ .lg .middle } __KLTS__
 
     ---
@@ -102,17 +94,21 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./klts.md)
 
+-   :material-tune:{ .lg .middle } __kube-node-tuning__
+
+    ---
+
+    kube-node-tuning 旨在通过 Kubernetes 调优内核
+
+    [:octicons-arrow-right-24: Learn more](./kubean.md)
+
 -   :peanuts:{ .lg .middle } __Kubean__ :simple-cncf: 已入选 CNCF Landscape
 
     ---
 
-    容器化集群的全生命周期管理工具，正在申请 Sandbox
+    容器化集群的全生命周期管理工具，正在申请 Sandbox。
 
     [:octicons-arrow-right-24: 了解更多](./kubean.md)
-
-</div>
-
-<div class="grid cards" markdown>
 
 -   :material-forest:{ .lg .middle } __KWOK__ :simple-cncf: K8s-sigs 项目之一
 
@@ -130,10 +126,6 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./merbridge.md)
 
-</div>
-
-<div class="grid cards" markdown>
-
 -   :material-debug-step-over:{ .lg .middle } __miragedebug__
 
     ---
@@ -142,6 +134,14 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./miragedebug.md)
 
+-   :material-tape-drive:{ .lg .middle } __Piraeus__
+
+    ---
+
+    一个适用于 Kubernetes 的高性能、高可用、简单、安全且与云无关的存储解决方案
+
+    [:octicons-arrow-right-24: Learn more](./piraeus.md)
+
 -   :spider:{ .lg .middle } __Spiderpool__  :simple-cncf: 已入选 CNCF Landscape 和 Sandbox
 
     ---
@@ -149,10 +149,6 @@ hide:
     云原生网络 Underlay 和 RDMA 网络方案，已入选 CNCF Landscape 和 Sandbox
 
     [:octicons-arrow-right-24: 了解更多](./spiderpool.md)
-
-</div>
-
-<div class="grid cards" markdown>
 
 -   :speedboat:{ .lg .middle } __公开镜像加速__
 

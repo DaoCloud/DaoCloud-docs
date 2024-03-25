@@ -1296,17 +1296,20 @@ nav:
       - CloudTTY: community/cloudtty.md
       - Clusterpedia: community/clusterpedia.md
       - DataTunerX: community/dtx.md
-      - egressgateway: community/egress-gw.md
+      - EgressGateway: community/egress-gw.md
       - Fast: community/fast.md
       - FedState: community/fedstate.md
       - Ferry: community/ferry.md
       - HwameiStor: community/hwameistor.md
-      - kdoctor: community/kdoctor.md
+      - KasmCloud: community/kasmcloud.md
+      - Kdoctor: community/kdoctor.md
       - KLTS: community/klts.md
+      - kube-node-tuning: community/kube-node-tuning.md
       - Kubean: community/kubean.md
       - KWOK: community/kwok.md
       - MirageDebug: community/miragedebug.md
       - Merbridge: community/merbridge.md
+      - Piraeus: community/piraeus.md
       - Spiderpool: community/spiderpool.md
       - 公开镜像加速: community/mirror.md
       - DaoCloud 开源图标库: community/icons/index.md
