@@ -659,6 +659,7 @@ nav:
                   - Use Insight to find service's problems: insight/best-practice/find_root_cause.md
                   - Kafka + ES for Handling Large-Scale Logs: insight/best-practice/insight-kafka.md
                   - Integrate DeepFlow: insight/best-practice/integration_deepflow.md
+                  - Tail Sampling Scheme: insight/best-practice/tail-based-sampling.md
               - Compatibility Test:
                   - K8s Compatibility Test: insight/compati-test/k8s-compatibility.md
                   - Rancher Compatibility Test: insight/compati-test/rancher-compatibility.md
