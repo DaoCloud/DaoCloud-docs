@@ -573,6 +573,7 @@ nav:
                   - Live Migration: virtnest/vm/live-migration.md
                   - Access VM by NodePort: virtnest/vm/nodeport.md
                   - VM Monitor: virtnest/vm/monitor.md
+                  - VM GPU: virtnest/vm/vm-gpu.md
                   - VM Network: virtnest/vm/vm-network.md
                   - VM Storage: virtnest/vm/vm-sc.md
               - VM Template:
