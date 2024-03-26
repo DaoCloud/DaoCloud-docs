@@ -54,6 +54,26 @@ The following steps explain how to create an edge unit:
 
     ![Component Repo](../images/create-unit-03.png)
 
+    !!! note
+
+        If you want to modify the default values of the KubeEdge and Kant image repositories,
+        you can go to the **Global cluster kant-system namespace** , and modify the ConfigMap
+        corresponding to the parameters kubeedgeImageRepo and kantImageRepo.
+
+        - ConfigMap name: dynamic-properties-config
+        - Parameter example as follows:
+
+        ```yaml
+        data:
+          kantAPIServerProperties: |-
+            {
+              ...
+              # Default values for KubeEdge and Kant image repositories
+              "kubeedgeImageRepo": "docker.m.daocloud.io/kubeedge",
+              "kantImageRepo": "release-ci.daocloud.io/kant",
+            }
+        ```
+
 4. Network Config: Network Configuration for KubeEdge cloud-side components, through which edge nodes establish connections with the cloud.
 
     - CloudCore Address: The address of the KubeEdge CloudCore, which needs to be accessible by edge nodes.
