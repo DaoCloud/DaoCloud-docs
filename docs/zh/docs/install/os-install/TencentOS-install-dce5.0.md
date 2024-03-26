@@ -87,7 +87,7 @@
 6. 开始安装 DCE 5.0。
 
     ```bash
-    ./dce5-installer cluster-create -m ./sample/mainfest.yaml -c ./sample/clusterConfig.yaml
+    ./dce5-installer cluster-create -m ./sample/manifest.yaml -c ./sample/clusterConfig.yaml
     ```
 
     !!! note

@@ -88,7 +88,7 @@ Installer v0.6.0 and higher versions support this deployment method.
 7. Start the installation of DCE 5.0.
 
     ```bash
-    ./dce5-installer cluster-create -m ./sample/mainfest.yaml -c ./sample/clusterConfig.yaml
+    ./dce5-installer cluster-create -m ./sample/manifest.yaml -c ./sample/clusterConfig.yaml
     ```
 
     !!! note

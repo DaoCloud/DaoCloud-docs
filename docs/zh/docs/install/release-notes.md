@@ -541,7 +541,7 @@
 - Kubean 默认 K8s 版本和离线包仍然限制在 1.24 版本，还未能更新到 1.25（由于 postgres-operator 暂不支持）
 - Image Load 情况下，istio-ingressgateway imagePullPolicy 为 always
 - ARM 版本，不能执行安装脚本的第 16 步（harbor），因为 harbor 暂时不支持 ARM。
-  需要修改 mainfest.yaml 文件，postgressql operator 为 fasle，执行安装命令时要添加
+  需要修改 manifest.yaml 文件，postgressql operator 为 fasle，执行安装命令时要添加
   `-j 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15`
 - 在容器管理界面上创建新集群，无法对接 HTTPS 的仓库，需要手动修改 kubean job 的 ConfigMap 和 CR
 - 永久 MinIO 的 PVC 的大小默认是 30G，会不够用（承载 kubean 二进制、ISO 以及 Harbor 镜像仓库），需要进行扩容操作
