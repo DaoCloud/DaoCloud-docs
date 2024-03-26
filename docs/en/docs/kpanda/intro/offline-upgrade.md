@@ -30,7 +30,7 @@ First, find a node (e.g., Spark Node) that can connect to the image repository a
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: kpanda # Path where the load-image.yaml file is executed on the node.
+          intermediateBundlesPath: kpanda # The path where the .tar.gz package is located after using chart-syncer
         target:
           containerRegistry: 10.16.10.111 # Image repository address
           containerRepository: release.daocloud.io/kpanda # Image repository path
@@ -52,7 +52,7 @@ First, find a node (e.g., Spark Node) that can connect to the image repository a
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: kpanda # Path where the load-image.yaml file is executed on the node.
+          intermediateBundlesPath: kpanda # The path where the .tar.gz package is located after using chart-syncer
         target:
           containerRegistry: 10.16.10.111 # Image repository url
           containerRepository: release.daocloud.io/kpanda # Image repository path
