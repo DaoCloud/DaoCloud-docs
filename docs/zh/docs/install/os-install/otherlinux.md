@@ -250,7 +250,7 @@ Other Linux 本质上是由于 DCE 对某些 Linux 没有提供安装系统离�
 5. 开始安装 DCE 5.0。
 
     ```bash
-    ./dce5-installer cluster-create -m ./sample/mainfest.yaml -c ./sample/clusterConfig.yaml
+    ./dce5-installer cluster-create -m ./sample/manifest.yaml -c ./sample/clusterConfig.yaml
     ```
 
     !!! note

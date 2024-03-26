@@ -33,7 +33,7 @@ to the version number of the Enterprise Package ([click here to view the latest 
 Different operations need to be performed for different versions.
 
 When the version number of the Enterprise Package is **≥ v0.3.29**, the Microservice Engine management
-components will be installed by default. However, it is still recommended to check the `mainfest.yaml`
+components will be installed by default. However, it is still recommended to check the `manifest.yaml`
 file to confirm that the value of `components/skoala/enable` is set to `true` and that the Helm version
 is specified.
 
@@ -46,7 +46,7 @@ is specified.
     than this version.
 
     By default, the Microservice Engine is not installed when executing the installation command.
-    You need to modify the `mainfest.yaml` file as shown below to allow the installation of the
+    You need to modify the `manifest.yaml` file as shown below to allow the installation of the
     Microservice Engine.
 
     Modified file:
