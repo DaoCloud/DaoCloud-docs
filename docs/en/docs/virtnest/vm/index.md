@@ -84,6 +84,8 @@ Fill in the image-related information according to the table below, then click _
 
 - Image Secret: Only supports the default (Opaque) type of key, for specific operations you can refer to [Create Secret](../vm/create-secret.md).
 
+    The built-in image storage in the bootstrap cluster, and the container registry of the bootstrap cluster is not encrypted, so when selecting the built-in image, there is no need to select a secret.
+
 - Resource Config: For CPU, it is recommended to use whole numbers.
   If a decimal is entered, it will be rounded up.
 
@@ -127,16 +129,16 @@ Fill in the image-related information according to the table below, then click _
   
 - Network:
 
-    - Network setting can be combined as needed according to the table information. If you need to use the live migration function, you need to use the Masquerade network mode.
+    - Network setting can be combined as needed according to the table information. 
   
-        | Network Mode         | CNI     | Install Spiderpool | Network Card Mode | Fixed IP    | Live Migration |
+        | Network Mode         | CNI     | Install Spiderpool | Network Cards | Fixed IP    | Live Migration |
         | -------------------- | ------- | ------------------ | ----------------- | ----------- | -------------- |
-        | Masquerade (NAT)     | Calico  | ❌                | Single Network Card | ❌         | ✅             |
-        |                      | Cilium  | ❌                | Single Network Card | ❌         | ✅             |
-        |                      | Flannel | ❌                | Single Network Card | ❌         | ✅             |
-        | Passthrough       | macvlan | ✅                | Single Network Card | ✅         | ❌             |
-        |                      | ipvlan  | ✅                | Multiple Network Card | ✅       | ❌             |
-        | Bridge     | OVS     | ✅                | Multiple Network Card | ✅       | ❌             |
+        | Masquerade (NAT) | Calico  | ❌                 | Single       | ❌               | ✅            |
+        |                   | Cilium  | ❌                 | Single       | ❌               | ✅            |
+        |                   | Flannel | ❌                 | Single       | ❌               | ✅            |
+        | Passt     | macvlan | ✅                 | Single       | ✅               | ✅           |
+        |                   | ipvlan  | ✅                 | Multiple       | ✅               | ✅           |
+        | Bridge    | OVS     | ✅                 | Multiple       | ✅               | ✅           |
     
         ![Network Configuration](../images/createvm-net01.png)
   

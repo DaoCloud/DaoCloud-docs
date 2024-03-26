@@ -28,7 +28,7 @@
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: kant # 节点上执行 load-image.yaml 文件的路径。
+          intermediateBundlesPath: kant # 使用 chart-syncer 之后 .tar.gz 包所在的路径
         target:
           containerRegistry: 10.16.10.111 # 镜像仓库地址
           containerRepository: release.daocloud.io/kant # 镜像仓库路径
@@ -50,7 +50,7 @@
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: kant # 节点上执行 load-image.yaml 文件的路径。
+          intermediateBundlesPath: kant # 使用 chart-syncer 之后 .tar.gz 包所在的路径
         target:
           containerRegistry: 10.16.10.111 # 镜像仓库 url
           containerRepository: release.daocloud.io/kant # 镜像仓库路径

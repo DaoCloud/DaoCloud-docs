@@ -519,5 +519,5 @@ If the output is different from the above cases, please follow the upgrade instr
 - The default k8s version of kubean and the offline package are still limited to k8s 1.24 version, which has not been updated to 1.25 (postgres-operator is not supported yet).
 - In the case of Image Load, the istio-ingressgateway imagePullPolicy is always.
 - For the ARM version, step 16 (harbor) cannot be performed, because harbor does not support ARM for the time being.
-  The mainfest.yaml file needs to be modified, the postgressql operator is fasle, and
+  The manifest.yaml file needs to be modified, the postgressql operator is fasle, and
   -j 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 should be added when executing the installation command

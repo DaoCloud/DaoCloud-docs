@@ -31,3 +31,8 @@
     ![出现两个 Pod](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/vgpu-pod.png)
 
 安装成功后，[部署应用可使用 vGPU 资源](vgpu_user.md)。
+
+!!! note
+
+    NVIDIA vGPU Addon 不支持从老版本 v2.0.0 直接升级为最新版 v2.0.0+1；
+    如需升级，请卸载老版本后重新安装。

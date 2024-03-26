@@ -261,6 +261,7 @@ nav:
                           - Build Offline yum Source for CentOS 7.9: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_centos7_9.md
                           - Upload Red Hat GPU Opreator Image: kpanda/user-guide/gpu/nvidia/push_image_to_repo.md
                           - Build Offline yum Source for Red Hat 8.4: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_redhat8_4.md
+                          - Build Offline yum Source for Red Hat 7.9: kpanda/user-guide/gpu/nvidia/yum_source_redhat7_9.md
                       - NVIDIA GPU Full Card Mode: kpanda/user-guide/gpu/nvidia/full_gpu_userguide.md
                       - NVIDIA vGPU Mode:
                           - Install vGPU Addon: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_addon.md
@@ -455,7 +456,9 @@ nav:
                   - Redirect: network/modules/ingress-nginx/redirect.md
               - EgressGateway:
                   - Intro: network/modules/egressgateway/index.md
-                  - Usage: network/modules/egressgateway/usage.md
+                  - Install: network/modules/egressgateway/install.md
+                  - Create EgressGateway Instance: network/modules/egressgateway/create_eg.md
+                  - Create EgressPolicy: network/modules/egressgateway/create-egpolicy.md
               - Metallb:
                   - Intro: network/modules/metallb/index.md
                   - Install: network/modules/metallb/install.md
@@ -565,8 +568,9 @@ nav:
                   - Snapshots: virtnest/vm/snapshot.md
                   - Live Migration: virtnest/vm/live-migration.md
                   - Access VM by NodePort: virtnest/vm/nodeport.md
-                  - Monitor VM: virtnest/vm/monitor.md
-                  - Create Storage for VM: virtnest/vm/vm-sc.md
+                  - VM Monitor: virtnest/vm/monitor.md
+                  - VM Network: virtnest/vm/vm-network.md
+                  - VM Storage: virtnest/vm/vm-sc.md
               - VM Template:
                   - Create VM by Template: virtnest/template/index.md
                   - VM Template: virtnest/template/tep.md
@@ -659,6 +663,7 @@ nav:
                   - Use Insight to find service's problems: insight/best-practice/find_root_cause.md
                   - Kafka + ES for Handling Large-Scale Logs: insight/best-practice/insight-kafka.md
                   - Integrate DeepFlow: insight/best-practice/integration_deepflow.md
+                  - Tail Sampling Scheme: insight/best-practice/tail-based-sampling.md
               - Compatibility Test:
                   - K8s Compatibility Test: insight/compati-test/k8s-compatibility.md
                   - Rancher Compatibility Test: insight/compati-test/rancher-compatibility.md
@@ -1273,13 +1278,15 @@ nav:
       - FedState: community/fedstate.md
       - Ferry: community/ferry.md
       - HwameiStor: community/hwameistor.md
+      - KasmCloud: community/kasmcloud.md
       - Kdoctor: community/kdoctor.md
       - KLTS: community/klts.md
+      - kube-node-tuning: community/kube-node-tuning.md
       - Kubean: community/kubean.md
       - KWOK: community/kwok.md
       - MirageDebug: community/miragedebug.md
       - Merbridge: community/merbridge.md
-      - Mirror Acceleration in China: community/mirror.md
+      - Piraeus: community/piraeus.md
       - Spiderpool: community/spiderpool.md
       - DaoCloud Icon Library: community/icons/index.md
   - Cloud Native Institute:

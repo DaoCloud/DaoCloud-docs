@@ -5,116 +5,56 @@
 ## 前提条件
 
 1. 创建 Windows 虚拟机之前，需要先参考[安装虚拟机模块的依赖和前提](../install/install-dependency.md)确定您的环境已经准备就绪。
-2. 创建过程建议参考官方文档：[How to install during Windows install](https://kubevirt.io/user-guide/virtual_machines/windows_virtio_drivers/#how-to-install-during-windows-install)
-3. 如果虚拟机没有网络需要手动加载 Windows 网络引擎启动，参考官方文档 [How to install after Windows installation?](https://kubevirt.io/user-guide/virtual_machines/windows_virtio_drivers/#how-to-install-after-windows-install)
-4. Windows 虚拟机建议使用 VNC 的访问方式。
+2. 创建过程建议参考官方文档：[安装 windows 的文档](https://kubevirt.io/2022/KubeVirt-installing_Microsoft_Windows_11_from_an_iso.html)、
+   [安装 Windows 相关驱动程序](https://kubevirt.io/user-guide/virtual_machines/windows_virtio_drivers/#how-to-install-during-windows-install)。
+3. Windows 虚拟机建议使用 VNC 的访问方式。
 
-## 上传 Windows 操作系统的镜像文件
+## 导入 ISO 镜像
 
-1. 先开放 CDI 上传服务
+​创建 Windows 虚拟机需要导入 ISO 镜像的主要原因是为了安装 Windows 操作系统。
+与 Linux 操作系统不同，Windows 操作系统安装过程通常需要从安装光盘或 ISO 镜像文件中引导。
+因此，在创建 Windows 虚拟机时，需要先导入 Windows 操作系统的安装 ISO 镜像文件，以便虚拟机能够正常安装。
 
-    ```shell
-    cat << EOF | kubectl  -n virtnest-system apply  -f -
-    apiVersion: v1
-    kind: Service
-    metadata:
-      labels:
-        cdi.kubevirt.io: cdi-uploadproxy
-      name: cdi-uploadproxy-nodeport
-    spec:
-      ports:
-      - nodePort: 31001
-        port: 443
-        protocol: TCP
-        targetPort: 8443
-      selector:
-        cdi.kubevirt.io: cdi-uploadproxy
-      type: NodePort
-    EOF
+以下介绍两个导入 ISO 镜像的办法：
+
+1. （推荐）制作 Docker 镜像，建议参考 [构建镜像](../vm-image/index.md)
+
+2. （不推荐）使用 virtctl 将镜像导入到 PVC 中
+
+    可参考如下命令
+
+    ```sh
+    virtctl image-upload -n <命名空间> pvc <PVC 名称> \ 
+       --image-path=<IOS 文件路径> \ 
+       --access-mode=ReadWriteOnce \ 
+       --size=6G \ --uploadproxy-url=<https://cdi-uploadproxy ClusterIP 和端口> \ 
+       --force-bind \ 
+       --insecure \ 
+       --wait-secs=240 \ 
+       --storage-class=<SC>
     ```
 
-2. CDI 证书配置
-   
-    ```shell
-    # 10.6.136.25 替换成节点 IP
-    echo | openssl s_client -showcerts -connect 10.6.136.25:31001 2>/dev/null \
-            | openssl x509 -inform pem -noout -text \
-            | sed -n -e '/Subject.*CN/p' -e '/Subject Alternative/{N;p}'
-    echo "10.6.136.25  cdi-uploadproxy" >> /etc/hosts
-    
-    kubectl patch cdi cdi \
-        --type merge \
-        --patch '{"spec":{"config":{"uploadProxyURLOverride":"https://cdi-uploadproxy:31001"}}}'
-    
-    kubectl get secret -n virtnest-system cdi-uploadproxy-server-cert \
-        -o jsonpath="{.data['tls\.crt']}" \
-        | base64 -d > cdi-uploadproxy-server-cert.crt
-    
-    sudo cp cdi-uploadproxy-server-cert.crt /etc/pki/ca-trust/source/anchors
-    
-    sudo update-ca-trust
+    例如：
+
+    ```sh
+    virtctl image-upload -n <命名空间> pvc <PVC 名称> \ 
+       --image-path=<IOS 文件路径> \ 
+       --access-mode=ReadWriteOnce \ 
+       --size=6G \ --uploadproxy-url=<https://cdi-uploadproxy ClusterIP 和端口> \ 
+       --force-bind \ 
+       --insecure \ 
+       --wait-secs=240 \ 
+       --storage-class=<SC>
     ```
 
-3. 安装工具
+## YAML 创建 Windows 虚拟机
 
-    ```shell
-    (
-    set -x; cd "$(mktemp -d)" &&
-    OS="$(uname | tr '[:upper:]' '[:lower:]')" &&
-    ARCH="$(uname -m | sed -e 's/x86_64/amd64/' -e 's/\(arm\)\(64\)\?.*/\1\2/' -e 's/aarch64$/arm64/')" &&
-    KREW="krew-${OS}_${ARCH}" &&
-    curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/${KREW}.tar.gz" &&
-    tar zxvf "${KREW}.tar.gz" &&
-    ./"${KREW}" install krew
-    )
-   
-    echo 'export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"' >> ~/.bashrc && bash --login
-   
-    kubectl krew install virt
-    ```
+使用 yaml 创建 Windows 虚拟机，更加灵活并且更易编写喝维护。以下介绍三种参考的 yaml：
 
-4. 从 [Windows 官网](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2012-r2) 下载 Windows ISO
+1. 推荐使用 Virtio 驱动 + Docker 镜像的方式
 
-    ```shell
-    wget -O win.iso 'https://go.microsoft.com/fwlink/p/?LinkID=2195443&clcid=0x409&culture=en-us&country=US'
-    ```
-
-5. 上传 Windows ISO，并且创建一个引导盘
-
-    ```shell
-    kubectl virt image-upload -n virt-demo pvc iso-win \  # kubectl  virt image-upload -n ${NS} pvc ${PVC_NAME}
-    --image-path=/root/win.iso \  # 所处绝对地址
-    --access-mode=ReadWriteOnce \
-    --size=25G \  # 引导盘大小，不能小于 15 GB
-    --uploadproxy-url=https://cdi-uploadproxy:31001 \  # 上传服务端地址
-    --force-bind \
-    --insecure \
-    --wait-secs=240 \
-    --storage-class=local-path  # 集群支持的 SC
-    ```
-
-6. 创建数据盘
-
-    ```shell
-    kubectl apply -n virt-demo  -f - <<EOF
-    apiVersion: v1
-    kind: PersistentVolumeClaim
-    metadata:
-      name: winhd
-      namespace: virt-demo
-    spec:
-    accessModes:
-        - ReadWriteOnce
-    resources:
-        requests:
-        storage: 20Gi
-    storageClassName: local-path
-    EOF
-    ```
-
-## 创建 Windows 虚拟机
-
-??? note "点击查看创建 Windows 虚拟机的 YAML 示例"
+    - 如果你需要使用存储能力-挂载磁盘，请安装 [viostor 驱动程序](https://kubevirt.io/user-guide/virtual_machines/windows_virtio_drivers/#how-to-install-during-windows-install)
+    - 如果你需要使用网络能力，请安装 [NetKVM 驱动程序](https://kubevirt.io/user-guide/virtual_machines/windows_virtio_drivers/#how-to-install-after-windows-install)
 
     ```yaml
     apiVersion: kubevirt.io/v1
@@ -125,64 +65,294 @@
         kubevirt.io/storage-observed-api-version: v1
       labels:
         virtnest.io/os-family: Windows
-        virtnest.io/os-version: 2012.r2
-      name: vm-windows
-      namespace: virt-demo
+        virtnest.io/os-version: '10'
+      name: windows10-virtio
+      namespace: default
     spec:
+      dataVolumeTemplates:
+        - metadata:
+            name: win10-system-virtio
+            namespace: default
+          spec:
+            pvc:
+              accessModes:
+                - ReadWriteOnce
+              resources:
+                requests:
+                  storage: 32Gi
+              storageClassName: local-path
+            source:
+              blank: {}
       running: true
       template:
         metadata:
-        creationTimestamp: null
-        labels:  # 自定义 应用 label
-          app: vm-windows
-          version: v1
-          kubevirt.io/domain: vm-windows
+          labels:
+            app: windows10-virtio
+            version: v1
+            kubevirt.io/domain: windows10-virtio
         spec:
           architecture: amd64
           domain:
             cpu:
-              cores: 4
+              cores: 8
               sockets: 1
               threads: 1
             devices:
               disks:
                 - bootOrder: 1
-                  cdrom:
-                    bus: sata
-                  name: cdromiso
-                - bootOrder: 2
                   disk:
-                    bus: virtio
-                  name: harddrive
+                    bus: virtio # 使用 virtio
+                  name: win10-system-virtio
+                - bootOrder: 2
+                  cdrom:
+                    bus: sata # 对于 ISO 镜像，使用 sata
+                  name: iso-win10
                 - bootOrder: 3
                   cdrom:
-                    bus: sata
+                    bus: sata # 对于 containerdisk，使用 sata
                   name: virtiocontainerdisk
-            interfaces:
-              - name: default
-                passt: {}  # passt 模式
-                ports:
-                  - name: http
-                    port: 80  # 应用端口号
+              interfaces:
+                - name: default
+                  masquerade: {}
             machine:
               type: q35
             resources:
               requests:
-                memory: 2G
-        networks:
+                memory: 8G
+          networks:
             - name: default
               pod: {}
-        volumes:
-            - name: cdromiso
+          volumes:
+            - name: iso-win10
               persistentVolumeClaim:
-                claimName: iso-win  # 自定义上传 ISO 的引导盘
-            - name: harddrive
+                claimName: iso-win10
+            - name: win10-system-virtio
               persistentVolumeClaim:
-                claimName: winhd  # 自定义的 数据盘
+                claimName: win10-system-virtio
             - containerDisk:
                 image: kubevirt/virtio-container-disk
               name: virtiocontainerdisk
     ```
+
+2. （不推荐）使用 Virtio 驱动和 virtctl 工具的组合方式，将镜像导入到 Persistent Volume Claim（PVC）中。
+
+    ```yaml
+    apiVersion: kubevirt.io/v1
+    kind: VirtualMachine
+    metadata:
+      annotations:
+        kubevirt.io/latest-observed-api-version: v1
+        kubevirt.io/storage-observed-api-version: v1
+      labels:
+        virtnest.io/os-family: Windows
+        virtnest.io/os-version: '10'
+      name: windows10-virtio
+      namespace: default
+    spec:
+      dataVolumeTemplates:
+        - metadata:
+            name: win10-system-virtio
+            namespace: default
+          spec:
+            pvc:
+              accessModes:
+                - ReadWriteOnce
+              resources:
+                requests:
+                  storage: 32Gi
+              storageClassName: local-path
+            source:
+              blank: {}
+      running: true
+      template:
+        metadata:
+          labels:
+            app: windows10-virtio
+            version: v1
+            kubevirt.io/domain: windows10-virtio
+        spec:
+          architecture: amd64
+          domain:
+            cpu:
+              cores: 8
+              sockets: 1
+              threads: 1
+            devices:
+              disks:
+                - bootOrder: 1
+                  # 请使用 virtio
+                  disk:
+                    bus: virtio
+                  name: win10-system-virtio
+                  # ISO 镜像请使用 sata
+                - bootOrder: 2
+                  cdrom:
+                    bus: sata
+                  name: iso-win10
+                  # containerdisk 请使用 sata
+                - bootOrder: 3
+                  cdrom:
+                    bus: sata
+                  name: virtiocontainerdisk
+              interfaces:
+                - name: default
+                  masquerade: {}
+            machine:
+              type: q35
+            resources:
+              requests:
+                memory: 8G
+          networks:
+            - name: default
+              pod: {}
+          volumes:
+            - name: iso-win10
+              persistentVolumeClaim:
+                claimName: iso-win10
+            - name: win10-system-virtio
+              persistentVolumeClaim:
+                claimName: win10-system-virtio
+            - containerDisk:
+                image: kubevirt/virtio-container-disk
+              name: virtiocontainerdisk
+    ```
+
+3. （不推荐）不使用 Virtio 驱动的情况下，使用 virtctl 工具将镜像导入到 Persistent Volume Claim（PVC）中。虚拟机可能使用其他类型的驱动或默认驱动来操作磁盘和网络设备。
+
+    ```yaml
+    apiVersion: kubevirt.io/v1
+    kind: VirtualMachine
+    metadata:
+      annotations:
+        kubevirt.io/latest-observed-api-version: v1
+        kubevirt.io/storage-observed-api-version: v1
+      labels:
+        virtnest.io/os-family: Windows
+        virtnest.io/os-version: '10'
+      name: windows10
+      namespace: default
+    spec:
+      dataVolumeTemplates:
+        # 创建系统盘，你创建多个 PVC（磁盘）
+        - metadata:
+            name: win10-system
+            namespace: default
+          spec:
+            pvc:
+              accessModes:
+                - ReadWriteOnce
+              resources:
+                requests:
+                  storage: 32Gi
+              storageClassName: local-path
+            source:
+              blank: {}
+      running: true
+      template:
+        metadata:
+          labels:
+            app: windows10
+            version: v1
+            kubevirt.io/domain: windows10
+        spec:
+          architecture: amd64
+          domain:
+            cpu:
+              cores: 8
+              sockets: 1
+              threads: 1
+            devices:
+              disks:
+                - bootOrder: 1
+                  # 无 virtio 驱动，请使用 sata
+                 cdrom:
+                    bus: sata
+                  name: win10-system
+                  # ISO 镜像，请使用 sata
+                - bootOrder: 2
+                  cdrom:
+                    bus: sata
+                  name: iso-win10
+              interfaces:
+                - name: default
+                  masquerade: {}
+            machine:
+              type: q35
+            resources:
+              requests:
+                memory: 8G
+          networks:
+            - name: default
+              pod: {}
+          volumes:
+            - name: iso-win10
+              persistentVolumeClaim:
+                claimName: iso-win10
+            - name: win10-system
+              persistentVolumeClaim:
+                claimName: win10-system
+    ```
+
+## 云桌面
+
+1. Windows 版本的虚拟机大多数情况是需要远程桌面控制访问的，建议使用 [Microsoft Remote Desktop](https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-mac#get-the-remote-desktop-client) 控制您的虚拟机。
+
+2. 请注意：
+
+   -  你的 Windows 版本需支持远程桌面控制，才能使用
+      [Microsoft Remote Desktop](https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-mac#get-the-remote-desktop-client)。
+   -  关闭 Windows 的防火墙。
+
+## 增加数据盘
+
+Windows 虚拟机添加数据盘的方式和 Linux 虚拟机一致。你可以参考下面的 YAML 示例：
+
+```yaml
+  apiVersion: kubevirt.io/v1
+  kind: VirtualMachine
+  <...>
+  spec:
+    dataVolumeTemplates:
+      # 添加一块数据盘
+      - metadata:
+        name: win10-disk
+        namespace: default
+        spec:
+          pvc:
+            accessModes:
+              - ReadWriteOnce
+            resources:
+              requests:
+                storage: 16Gi
+            storageClassName: hwameistor-storage-lvm-hdd
+          source:
+            blank: {}
+    template:
+      spec:
+        domain:
+          devices:
+            disks:
+              - bootOrder: 1
+                disk:
+                  bus: virtio
+                name: win10-system
+              # 添加一块数据盘
+              - bootOrder: 2
+                disk:
+                  bus: virtio
+                name: win10-disk
+            <....>
+        volumes:
+          <....>
+          # 添加一块数据盘
+          - name: win10-disk
+            persistentVolumeClaim:
+              claimName: win10-disk
+```
+
+## 快照、克隆、实时迁移
+
+这些能力和 Linux 虚拟机一致，可直接参考配置 Linux 虚拟机的方式。
 
 ## 访问 Windows 虚拟机
 

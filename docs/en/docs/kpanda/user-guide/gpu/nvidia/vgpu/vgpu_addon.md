@@ -29,3 +29,8 @@ This section explains how to install the vGPU plugin in the DCE 5.0 platform, wh
     ![Alt text](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/vgpu-pod.png)  
 
 After a successful installation, you can [deploy applications using vGPU resources](vgpu_user.md).
+
+!!! note
+
+    NVIDIA vGPU Addon does not support upgrading directly from the older version v2.0.0 to the
+    latest version v2.0.0+1; To upgrade, please uninstall the older version and then reinstall the latest version.

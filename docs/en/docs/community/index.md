@@ -27,10 +27,6 @@ hide:
 
     [:octicons-arrow-right-24: Learn more](./clusterpedia.md)
 
-</div>
-
-<div class="grid cards" markdown>
-
 -   :simple-amazonapigateway:{ .lg .middle } __egressgateway__
 
     ---
@@ -50,10 +46,6 @@ hide:
 
     [:octicons-arrow-right-24: Learn more](./fast.md)
 
-</div>
-
-<div class="grid cards" markdown>
-
 -   :fontawesome-brands-trade-federation:{ .lg .middle } __FedState__
 
     ---
@@ -70,10 +62,6 @@ hide:
 
     [:octicons-arrow-right-24: Learn more](./ferry.md)
 
-</div>
-
-<div class="grid cards" markdown>
-
 -   :material-storage-tank:{ .lg .middle } __HwameiStor__ :simple-cncf: Listed in CNCF Sandbox and Landscape
 
     ---
@@ -81,6 +69,14 @@ hide:
     Highly available local storage solution that is faster, stronger, and more reliable.
 
     [:octicons-arrow-right-24: Learn more](./hwameistor.md)
+
+-   :simple-kasasmart:{ .lg .middle } __KasmCloud__
+
+    ---
+
+    Managing and Running Actors, Providers, and Links in Kubernetes.
+
+    [:octicons-arrow-right-24: Learn more](./kasmcloud.md)
 
 -   :material-doctor:{ .lg .middle } __kdoctor__
 
@@ -90,10 +86,6 @@ hide:
 
     [:octicons-arrow-right-24: Learn more](./kdoctor.md)
 
-</div>
-
-<div class="grid cards" markdown>
-
 -   :simple-kubernetes:{ .lg .middle } __KLTS__
 
     ---
@@ -102,6 +94,14 @@ hide:
 
     [:octicons-arrow-right-24: Learn more](./klts.md)
 
+-   :material-tune:{ .lg .middle } __kube-node-tuning__
+
+    ---
+
+    kube-node-tuning is aimed at kernel tuning by kubernetes.
+
+    [:octicons-arrow-right-24: Learn more](./kubean.md)
+
 -   :peanuts:{ .lg .middle } __Kubean__ :simple-cncf: Listed in CNCF Landscape
 
     ---
@@ -109,10 +109,6 @@ hide:
     A full life cycle management tool for containerized clusters that is applying for Sandbox.
 
     [:octicons-arrow-right-24: Learn more](./kubean.md)
-
-</div>
-
-<div class="grid cards" markdown>
 
 -   :material-forest:{ .lg .middle } __KWOK__ :simple-cncf: One of the K8s-sigs projects
 
@@ -130,10 +126,6 @@ hide:
 
     [:octicons-arrow-right-24: Learn more](./merbridge.md)
 
-</div>
-
-<div class="grid cards" markdown>
-
 -   :material-debug-step-over:{ .lg .middle } __miragedebug__
 
     ---
@@ -142,17 +134,13 @@ hide:
 
     [:octicons-arrow-right-24: Learn more](./miragedebug.md)
 
--   :spider:{ .lg .middle } __Spiderpool__  :simple-cncf: Listed in CNCF Sandbox
+-   :material-tape-drive:{ .lg .middle } __Piraeus__
 
     ---
 
-    An underlay and RDMA network solution for Kubernetes with bare metal, virtual machines, and public clouds.
+    a high performance, highly-available, simple, secure, and cloud agnostic storage solution for Kubernetes.
 
-    [:octicons-arrow-right-24: Learn more](./spiderpool.md)
-
-</div>
-
-<div class="grid cards" markdown>
+    [:octicons-arrow-right-24: Learn more](./piraeus.md)
 
 -   :speedboat:{ .lg .middle } __Public Mirror Acceleration__
 
@@ -161,6 +149,14 @@ hide:
     Many mirrors are overseas, such as gcr. Downloading in China is very slow and requires acceleration.
 
     [:octicons-arrow-right-24: Learn more](./mirror.md)
+
+-   :spider:{ .lg .middle } __Spiderpool__  :simple-cncf: Listed in CNCF Sandbox
+
+    ---
+
+    An underlay and RDMA network solution for Kubernetes with bare metal, virtual machines, and public clouds.
+
+    [:octicons-arrow-right-24: Learn more](./spiderpool.md)
 
 -   :simple-iconify:{ .lg .middle } __DaoCloud Icons Library__
 

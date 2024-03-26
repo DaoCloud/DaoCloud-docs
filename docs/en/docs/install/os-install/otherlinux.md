@@ -250,7 +250,7 @@ Other Linux is essentially because DCE does not provide the installation system 
 5. Start the installation of DCE 5.0.
 
     ```bash
-    ./dce5-installer cluster-create -m ./sample/mainfest.yaml -c ./sample/clusterConfig.yaml
+    ./dce5-installer cluster-create -m ./sample/manifest.yaml -c ./sample/clusterConfig.yaml
     ```
 
     !!! note

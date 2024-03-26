@@ -226,7 +226,7 @@ nav:
                   - 使用配置项: kpanda/user-guide/configmaps-secrets/use-configmap.md
                   - 创建密钥: kpanda/user-guide/configmaps-secrets/create-secret.md
                   - 使用密钥: kpanda/user-guide/configmaps-secrets/use-secret.md
-                  - configmap/secret 热加载: kpanda/user-guide/configmaps-secrets/configmap-hot-loading.md
+                  - Configmap/Secret 热加载: kpanda/user-guide/configmaps-secrets/configmap-hot-loading.md
               - 集群运维:
                   - 最近操作: kpanda/user-guide/clusterops/latest-operations.md
                   - 集群升级: kpanda/user-guide/clusters/upgrade-cluster.md
@@ -269,6 +269,7 @@ nav:
                           - 构建 CentOS 7.9 离线 yum 源: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_centos7_9.md
                           - 上传 Red Hat GPU Operator 离线镜像: kpanda/user-guide/gpu/nvidia/push_image_to_repo.md
                           - 构建 Red Hat 8.4 离线 yum 源: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_redhat8_4.md
+                          - 构建 Red Hat 7.9 离线 yum 源: kpanda/user-guide/gpu/nvidia/yum_source_redhat7_9.md
                       - NVIDIA GPU 整卡模式: kpanda/user-guide/gpu/nvidia/full_gpu_userguide.md
                       - NVIDIA vGPU 模式:
                           - 安装 vGPU Addon: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_addon.md
@@ -425,7 +426,8 @@ nav:
               - 集成 EgressGateway:
                   - 介绍: network/modules/egressgateway/index.md
                   - 安装: network/modules/egressgateway/install.md
-                  - 使用: network/modules/egressgateway/usage.md
+                  - 创建网关实例: network/modules/egressgateway/create_eg.md
+                  - 创建网关策略: network/modules/egressgateway/create-egpolicy.md
               - 集成 sriov-network-operator:
                   - 介绍: network/modules/sriov-network-operator/index.md
                   - 安装: network/modules/sriov-network-operator/install.md
@@ -581,8 +583,9 @@ nav:
                   - 实时迁移: virtnest/vm/live-migration.md
                   - 通过 NodePort 访问虚拟机: virtnest/vm/nodeport.md
                   - 虚拟机监控: virtnest/vm/monitor.md
-                  - 创建虚拟机存储: virtnest/vm/vm-sc.md
                   - 虚拟机配置 GPU: virtnest/vm/vm-gpu.md
+                  - 虚拟机网络: virtnest/vm/vm-network.md
+                  - 虚拟机存储: virtnest/vm/vm-sc.md
               - 虚拟机模板:
                   - 通过模板创建虚拟机: virtnest/template/index.md
                   - 虚拟机模板: virtnest/template/tep.md
@@ -676,6 +679,7 @@ nav:
                   - 使用OTel接收SkyWalking链路数据: insight/best-practice/sw-to-otel.md
                   - Kafka+ES流式架构应对超大规模日志: insight/best-practice/insight-kafka.md
                   - 集成 DeepFlow: insight/best-practice/integration_deepflow.md
+                  - 链路数据尾部采样方案: insight/best-practice/tail-based-sampling.md
               - 兼容性测试:
                   - K8s 兼容性测试: insight/compati-test/k8s-compatibility.md
                   - Rancher 兼容性测试: insight/compati-test/rancher-compatibility.md
@@ -1297,17 +1301,20 @@ nav:
       - CloudTTY: community/cloudtty.md
       - Clusterpedia: community/clusterpedia.md
       - DataTunerX: community/dtx.md
-      - egressgateway: community/egress-gw.md
+      - EgressGateway: community/egress-gw.md
       - Fast: community/fast.md
       - FedState: community/fedstate.md
       - Ferry: community/ferry.md
       - HwameiStor: community/hwameistor.md
-      - kdoctor: community/kdoctor.md
+      - KasmCloud: community/kasmcloud.md
+      - Kdoctor: community/kdoctor.md
       - KLTS: community/klts.md
+      - kube-node-tuning: community/kube-node-tuning.md
       - Kubean: community/kubean.md
       - KWOK: community/kwok.md
       - MirageDebug: community/miragedebug.md
       - Merbridge: community/merbridge.md
+      - Piraeus: community/piraeus.md
       - Spiderpool: community/spiderpool.md
       - 公开镜像加速: community/mirror.md
       - DaoCloud 开源图标库: community/icons/index.md
