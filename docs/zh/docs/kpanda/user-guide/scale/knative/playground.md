@@ -1,4 +1,4 @@
-# 使用实践
+# Knative 使用实践
 
 在本节中，我们将通过几个实践来深入了解学习 Knative。
 
@@ -42,19 +42,18 @@ spec:
   - name: queue-proxy
 ```
 
-    ![knative-request-flow](../../../images/knative-request-flow.png)
-
+![knative-request-flow](../../../images/knative-request-flow.png)
 
 请求流：
 
 1. case1 在低流量或零流量时，流量将路由到 activator
 2. case2 流量大时，流量大于 target-burst-capacity 时才直接路由到 Pod
-   1. 配置为 0，只有从 0 扩容存在
-   2. 配置为 -1，activator 会一直存在请求路径
-   3. 配置为 >0，触发扩缩容之前，系统能够额外处理的并发请求数量。
+    1. 配置为 0，只有从 0 扩容存在
+    2. 配置为 -1，activator 会一直存在请求路径
+    3. 配置为 >0，触发扩缩容之前，系统能够额外处理的并发请求数量。
 3. case3 流量再变小时，流量低于 current_demand + target-burst-capacity > (pods * concurrency-target) 时将再次路由到 activator
-   1. 待处理的请求总数 + 能接受的超过目标并发数的请求数量 > 每个 Pod 的目标并发数 * Pod 数量
-
+    
+    待处理的请求总数 + 能接受的超过目标并发数的请求数量 > 每个 Pod 的目标并发数 * Pod 数量
 
 ## case 2 - 基于并发弹性伸缩
 
@@ -142,5 +141,4 @@ spec:
     percent: 50
   - latestRevision: false
     percent: 50
-    revisionName: hello-00001    
-```
+    revisionName: hello-00001

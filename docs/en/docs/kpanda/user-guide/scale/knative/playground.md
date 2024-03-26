@@ -1,4 +1,4 @@
-# Usage Practices
+# Knative Practices
 
 In this section, we will delve into learning Knative through several practical exercises.
 
@@ -42,18 +42,18 @@ spec:
   - name: queue-proxy
 ```
 
-    ![knative-request-flow](../../../images/knative-request-flow.png)
+![knative-request-flow](../../../images/knative-request-flow.png)
 
 Request Flow:
 
 1. case1 When there is low traffic or no traffic, traffic will be routed to the activator.
 2. case2 When there is high traffic, traffic will be routed directly to the Pod only if it exceeds the target-burst-capacity.
-   1. Configured as 0, expansion from 0 is the only scenario.
-   2. Configured as -1, the activator will always be present in the request path.
-   3. Configured as >0, the number of additional concurrent requests that the system can handle before triggering scaling.
+    1. Configured as 0, expansion from 0 is the only scenario.
+    2. Configured as -1, the activator will always be present in the request path.
+    3. Configured as >0, the number of additional concurrent requests that the system can handle before triggering scaling.
 3. case3 When the traffic decreases again, traffic will be routed back to the activator if the traffic is lower than current_demand + target-burst-capacity > (pods * concurrency-target).
-   1. The total number of pending requests + the number of requests that can exceed the target concurrency > the target concurrency per Pod * number of Pods.    
-
+    
+    The total number of pending requests + the number of requests that can exceed the target concurrency > the target concurrency per Pod * number of Pods.
 
 ## case 2 - Based on Concurrent Elastic Scaling
 
@@ -84,7 +84,7 @@ Execute the following command for testing, and you can observe the scaling of th
 
 ```shell
 wrk -t2 -c4 -d6s http://hello.knative-serving.knative.daocloud.io/
-```   
+```
 
 ## case 3 - Based on concurrent elastic scaling, scale out in advance to reach a specific ratio.
 
@@ -141,5 +141,5 @@ spec:
     percent: 50
   - latestRevision: false
     percent: 50
-    revisionName: hello-00001    
+    revisionName: hello-00001
 ```

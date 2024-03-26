@@ -47,11 +47,10 @@ knative-serving        storage-version-migration-serving-serving-1.12.2-t7zvd   
 | Knative Pod Autoscaler (KPA)    | 是         | 是          | 是      | 否                           |
 | Horizontal Pod Autoscaler (HPA) | 否         | 需安装 Knative Serving 后启用 | 否       | 是               |
 
-
 ## CRD
 
-| 资源类型       | API 名称                          | 描述                                                         |
-| -------------- | --------------------------------- | ------------------------------------------------------------ |
+| 资源类型      | API 名称     | 描述 |
+| ------------ | ----------- | --- |
 | Services       | service.serving.knative.dev       | 自动管理 Workload 的整个生命周期，控制其他对象的创建，确保应用具有 Routes、Configurations 以及每次更新时的新 revision。 |
 | Routes         | route.serving.knative.dev         | 将网络端点映射到一个或多个修订版本，支持流量分配和版本路由。 |
 | Configurations | configuration.serving.knative.dev | 维护部署的期望状态，提供代码和配置之间的分离，遵循 Twelve-Factor 应用程序方法论，修改配置会创建新的 revision。 |
