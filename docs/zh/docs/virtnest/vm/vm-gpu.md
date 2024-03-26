@@ -256,59 +256,59 @@
     spec:
       dataVolumeTemplates:
       - metadata:
-        creationTimestamp: null
-        name: systemdisk-testvm-gpu1
-        namespace: default
+          creationTimestamp: null
+          name: systemdisk-testvm-gpu1
+          namespace: default
         spec:
           pvc:
             accessModes:
             - ReadWriteOnce
             resources:
-            requests:
+              requests:
                 storage: 10Gi
             storageClassName: www
-        source:
+          source:
             registry:
-            url: docker://release-ci.daocloud.io/virtnest/system-images/debian-12-x86_64:v1
+              url: docker://release-ci.daocloud.io/virtnest/system-images/debian-12-x86_64:v1
     runStrategy: Manual
     template:
         metadata:
-        creationTimestamp: null
+          creationTimestamp: null
         spec:
-        domain:
+          domain:
             cpu:
-            cores: 1
-            sockets: 1
-            threads: 1
+              cores: 1
+              sockets: 1
+              threads: 1
             devices:
-            disks:
-            - bootOrder: 1
+              disks:
+              - bootOrder: 1
                 disk:
-                bus: virtio
+                  bus: virtio
                 name: systemdisk-testvm-gpu1
-            - disk:
-                bus: virtio
+              - disk:
+                  bus: virtio
                 name: cloudinitdisk
             gpus:
             - deviceName: nvidia.com/GP104GL_TESLA_P4
                 name: gpu-0-0
             - deviceName: nvidia.com/GP104GL_TESLA_P4
-                name: gpu-0-1
+              name: gpu-0-1
             interfaces:
             - masquerade: {}
-                name: default
-            machine:
+              name: default
+          machine:
             type: q35
-            resources:
+          resources:
             requests:
-                memory: 2Gi
+              memory: 2Gi
         networks:
         - name: default
-            pod: {}
+          pod: {}
         volumes:
         - dataVolume:
             name: systemdisk-testvm-gpu1
-            name: systemdisk-testvm-gpu1
+          name: systemdisk-testvm-gpu1
         - cloudInitNoCloud:
             userDataBase64: I2Nsb3VkLWNvbmZpZwpzc2hfcHdhdXRoOiB0cnVlCmRpc2FibGVfcm9vdDogZmFsc2UKY2hwYXNzd2Q6IHsibGlzdCI6ICJyb290OmRhbmdlcm91cyIsIGV4cGlyZTogRmFsc2V9CgoKcnVuY21kOgogIC0gc2VkIC1pICIvI1w/UGVybWl0Um9vdExvZ2luL3MvXi4qJC9QZXJtaXRSb290TG9naW4geWVzL2ciIC9ldGMvc3NoL3NzaGRfY29uZmlnCiAgLSBzeXN0ZW1jdGwgcmVzdGFydCBzc2guc2VydmljZQ==
             name: cloudinitdisk
