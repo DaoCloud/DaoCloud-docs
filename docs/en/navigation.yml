@@ -1226,6 +1226,7 @@ nav:
   - Blogs:
       - Index: blogs/index.md
       - 2024 Blogs:
+          - 202403 | Innovations at KubeCon Paris: blogs/240326-kubecon-eu.md
           - 202403 | Create a Open Source Commercial Ecosystem: blogs/240301-osc-eco.md
           - 202402 | New Book - Managing Cloud Native Data on Kubernetes: blogs/240203-book.md
           - 202402 | Accelerated Computing: blogs/240201-ai-compute.md
