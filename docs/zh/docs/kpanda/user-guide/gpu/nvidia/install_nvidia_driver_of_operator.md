@@ -64,7 +64,7 @@ DCE 5.0 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU Operator 离线包�
     !!! note
 
         系统默认提供 525.147.05-centos7 的镜像，其他镜像需要参考[向火种节点仓库上传镜像](./push_image_to_repo.md) 。
-        注意：注意版本号后无需填写 ubantu、centos、Red Hat等操作系统名称，若官方镜像含有操作系统后缀，请手动移除
+        注意版本号后无需填写 ubantu、centos、Red Hat等操作系统名称，若官方镜像含有操作系统后缀，请手动移除
 
         - Red Hat 系统，例如 `525.105.17`
         - Ubuntu 系统，例如 `535-5.15.0-1043-nvidia`
