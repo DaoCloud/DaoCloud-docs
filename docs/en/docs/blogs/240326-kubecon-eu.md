@@ -8,6 +8,8 @@ in Paris was all about Kubernetes-based infrastructure for generative artificial
 I attend conferences such as KubeCon to uncover particularly innovative vendors who are pushing the boundaries of their respective technologies.
 Since is my seventh article for SiliconANGLE covering this flagship open-source conference, my goal was to uncover vendors I hadn’t spoken to before.
 
+![Post of KubeCon EU](./images/KubeConEU1.jpg)
+
 Here are six such innovators – plus one former client whose recent acquisition makes them deserving of inclusion on this exclusive list.
 
 ## Next-generation observability with intelligent agents
