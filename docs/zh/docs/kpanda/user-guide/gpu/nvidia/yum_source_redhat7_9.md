@@ -2,27 +2,28 @@
 
 ## 使用场景介绍
 
-DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。其它 OS 类型的节点或内核需要用户手动构建离线 yum 源。
+DCE 5.0 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU Operator 离线包。其它 OS 类型的节点或内核需要用户手动构建离线 yum 源。
 
-本文介绍如何基于 Global 集群任意节点构建 Red Hat 7.9 离线 yum 源包，并在安装 Gpu Operator 时，通过`RepoConfig.ConfigMapName`参数来使用。
+本文介绍如何基于 Global 集群任意节点构建 Red Hat 7.9 离线 yum 源包，并在安装 Gpu Operator 时使用 `RepoConfig.ConfigMapName` 参数。
 
 ## 前提条件
   
-1. 用户已经在平台上安装了 v0.12.0 及以上版本的 addon 离线包。
-2. 待部署 GPU Operator 的集群节点 OS 必须为 Red Hat 7.9，且内核版本完全一致。
-3. 准备一个能够和待部署 GPU Operator 的集群网络能够联通的文件服务器，如 nginx 或 minio。
-4. 准备一个能够访问互联网、待部署 GPU Operator 的集群和文件服务器的节点，且节点上已经完成[Docker 的安装](https://docs.daocloud.io/install/community/kind/online.html#%E5%AE%89%E8%A3%85-docker)。
-5. Global 集群的节点必须为 Red Hat 7.9 
+1. 用户已经在平台上安装了 v0.12.0 及以上版本的 [addon 离线包](../../../../download/addon/history.md)
+2. 待部署 GPU Operator 的集群节点 OS 必须为 Red Hat 7.9，且内核版本完全一致
+3. 准备一个能够与待部署 GPU Operator 的集群网络联通的文件服务器，如 nginx 或 minio
+4. 准备一个能够访问互联网、待部署 GPU Operator 的集群和文件服务器的节点，
+   且节点上已经完成 [Docker 的安装](https://docs.daocloud.io/install/community/kind/online.html#%E5%AE%89%E8%A3%85-docker)
+5. Global 集群的节点必须为 Red Hat 7.9
 
 ## 操作步骤
 
 ### 1. 构建相关内核版本的离线 Yum 源
 
-1. 下载 rhel7.9 ISO：https://developers.redhat.com/products/rhel/download#assembly-field-downloads-page-content-61451
+1. [下载 rhel7.9 ISO](https://developers.redhat.com/products/rhel/download#assembly-field-downloads-page-content-61451)
 
     ![下载 rhel7.9 ISO](../images/rhel7.9.png)
 
-2. 下载与 Kubean 版本对应的的 rhel7.9 ospackage：https://github.com/kubean-io/kubean/releases
+2. 下载与 Kubean 版本对应的的 [rhel7.9 ospackage](https://github.com/kubean-io/kubean/releases)
 
     在 **容器管理** 的 Global 集群中找到 **Helm 应用** ，搜索 kubean，可查看 kubean 的版本号。
 
@@ -34,22 +35,22 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
 
 3. 通过安装器导入离线资源
 
-    参考[导入离线资源文档](https://docs.daocloud.io/install/import/)。
+    参考[导入离线资源文档](../../../../install/import.md)。
 
-### 2. 下载 RedHat 7.9 OS 的离线驱动镜像
+### 2. 下载 Red Hat 7.9 OS 的离线驱动镜像
 
-[点击查看下载地址](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/driver/tags)
+[点击查看下载地址](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/driver/tags)。
 
 ![driveimage](../images/driveimage.png)
 
-### 3. 向火种节点仓库上传 RedHat GPU Opreator 离线镜像
+### 3. 向火种节点仓库上传 Red Hat GPU Opreator 离线镜像
 
-参考文档地址：https://docs.daocloud.io/kpanda/user-guide/gpu/nvidia/push_image_to_repo.html
-注意：参考文档以 rhel8.4 为例，请注意修改成 rhel7.9
+参考[向火种节点仓库上传 Red Hat GPU Opreator 离线镜像](./push_image_to_repo.md)。
+注意：此参考以 rhel8.4 为例，请注意修改成 rhel7.9。
 
 ### 4. 在集群创建配置项用来保存 Yum 源信息
   
-在待部署 GPU Operator 集群的控制节点上进行操作。
+在待部署 GPU Operator 集群的控制节点上进行运行以下命令。
   
 1. 执行如下命令创建名为 __CentOS-Base.repo__ 的文件，用来指定 yum 源存储的配置信息。
   
@@ -106,5 +107,4 @@ DCE 5 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU operator 离线包。
     ```
   
 至此，您已成功为待部署 GPU Operator 的集群创建了离线 yum 源配置文件。
-通过在[离线安装 GPU Operator](./install_nvidia_driver_of_operator.md) 时通过 `RepoConfig.ConfigMapName` 参数来使用。
-
+其中在[离线安装 GPU Operator](./install_nvidia_driver_of_operator.md) 时使用了 `RepoConfig.ConfigMapName` 参数。
