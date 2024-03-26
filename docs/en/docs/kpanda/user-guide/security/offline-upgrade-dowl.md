@@ -28,7 +28,7 @@ First, find a node that can connect to both the image repository and the Helm re
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: dowl # Path where the load-image.yaml file is executed on the node.
+          intermediateBundlesPath: dowl # The path where the .tar.gz package is located after using chart-syncer
         target:
           containerRegistry: 10.16.10.111 # Image repository address
           containerRepository: release.daocloud.io/dowl # Image repository path
@@ -50,7 +50,7 @@ First, find a node that can connect to both the image repository and the Helm re
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: dowl # Path where the load-image.yaml file is executed on the node.
+          intermediateBundlesPath: dowl # The path where the .tar.gz package is located after using chart-syncer
         target:
           containerRegistry: 10.16.10.111 # Image repository url
           containerRepository: release.daocloud.io/dowl # Image repository path
