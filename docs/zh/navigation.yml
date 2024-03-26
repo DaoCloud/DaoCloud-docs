@@ -383,6 +383,7 @@ nav:
                   - 登录非安全镜像仓库: kangaroo/best-practice/insecure_registry.md
                   - Harbor Nginx 配置最佳实践: kangaroo/best-practice/harbor-nginx.md
                   - 镜像仓库容量资源规划: kangaroo/best-practice/capacity-planning.md
+                  - 通过 LoadBalancer 模式部署 Harbor: kangaroo/best-practice/lb.md
           - 云原生网络:
               - 介绍:
                   - 什么是容器网络: network/intro/index.md
