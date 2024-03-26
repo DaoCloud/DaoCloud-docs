@@ -50,7 +50,7 @@ DCE 5.0 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU Operator 离线包�
 
 ### 4. 在集群创建配置项用来保存 Yum 源信息
   
-在待部署 GPU Operator 集群的控制节点上进行运行以下命令。
+在待部署 GPU Operator 集群的控制节点上运行以下命令。
   
 1. 执行如下命令创建名为 __CentOS-Base.repo__ 的文件，用来指定 yum 源存储的配置信息。
   
