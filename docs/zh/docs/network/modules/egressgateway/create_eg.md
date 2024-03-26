@@ -69,15 +69,15 @@
 
     ![egress-create01](../../images/egress-create-1.jpg)
 
-    * __名称__ ：egressgateway 实例名称.
-    * __描述__ ：egressgateway 实例描述信息，可选填。
-    * __节点选择器__ ：基于节点 Label 选定 egressgateway 出口网关节点，选择的多个节点可实现高可用能力，
+    * `名称` ：egressgateway 实例名称。
+    * `描述` ：egressgateway 实例描述信息，可选填。
+    * `节点选择器` ：基于节点 Label 选定 egressgateway 出口网关节点，选择的多个节点可实现高可用能力，
       可提前规划好出口节点，并且给对应节点打上相应 Label，本章节中给 2 个节点打上 Label __egressgateway：true__
-    * __出口 IP 范围__ ： 一组 EgressGateway 出口 IP 范围,需要同网关节点上的出口网卡（一般情况下是默认路由的网卡）的子网相同，否则，极有可能导致 egress 访问不通。设置方式支持 IP 段/IP 地址/CIDR 。
-        * __IP 段__ 示例：172.22.0.100-172.22.0.110,本章节采用此示例。
-        * __IP 地址__ 示例：172.22.0.100
-        * __CIDR__ 示例：172.22.0.0/16
-    * __IPv4 默认 Egress IP__ ：创建后网关的默认出口 IP 地址，从 出口 IP 范围中选择一个 IP 地址作为该组 EgressGateway 的默认 VIP。
+    * `出口 IP 范围`： 一组 EgressGateway 出口 IP 范围,需要同网关节点上的出口网卡（一般情况下是默认路由的网卡）的子网相同，否则，极有可能导致 egress 访问不通。设置方式支持 IP 段/IP 地址/CIDR 。
+        * `IP 段`示例：172.22.0.100-172.22.0.110,本章节采用此示例
+        * `IP 地址`示例：172.22.0.100
+        * `CIDR` 示例：172.22.0.0/16
+    * `IPv4 默认 Egress IP` ：创建后网关的默认出口 IP 地址，从 出口 IP 范围中选择一个 IP 地址作为该组 EgressGateway 的默认 VIP。
       其作用是：当为应用创建 EgressPolicy 对象时，如果未指定 VIP 地址，则默认分配使用该默认 VIP。
 
 2. 创建完成后可在界面查看 EgressGateway 实例状态。
