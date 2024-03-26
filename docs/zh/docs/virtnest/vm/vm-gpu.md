@@ -4,9 +4,9 @@
 
 配置虚拟机的 GPU 的重点是对 GPU Operator 进行配置，以便在工作节点上部署不同的软件组件，具体取决于这些节点上配置运行的 GPU 工作负载。以以下三个节点为例：
 
-- controller-node-1节点配置为运行容器。
-- work-node-1节点配置为运行具有直通 GPU 的虚拟机。
-- work-node-2节点配置为运行具有虚拟 vGPU的虚拟机。
+- controller-node-1 节点配置为运行容器。
+- work-node-1 节点配置为运行具有直通 GPU 的虚拟机。
+- work-node-2 节点配置为运行具有虚拟 vGPU 的虚拟机。
 
 ## 假设、限制和依赖性
 
@@ -31,9 +31,10 @@
 
 1. 从 NVIDIA Licensing Portal 下载 vGPU 软件。
 
-    - 登录 NVIDIA Licensing Portal，转到“Software Downloads”页面。
-    - NVIDIA vGPU 软件位于“Software Downloads”页面的“Driver downloads”选项卡中。
-    - 在筛选条件中选择“VGPU + Linux”，单击下载以获取 Linux KVM 的软件包。请解压下载的文件（NVIDIA-Linux-x86_64-<version>-vgpu-kvm.run）。
+    - 登录 NVIDIA Licensing Portal，转到 **Software Downloads** 页面。
+    - NVIDIA vGPU 软件位于 **Software Downloads** 页面的 **Driver downloads** 选项卡中。
+    - 在筛选条件中选择**VGPU + Linux** ，点击 **下载** 以获取 Linux KVM 的软件包。
+      请解压下载的文件（`NVIDIA-Linux-x86_64-<version>-vgpu-kvm.run`）。
 
     ![下载vGPU软件](../images/gpu-01.png)
 
@@ -57,10 +58,10 @@
 
 5. 设置环境变量
 
-    - PRIVATE_REGISTRY - 专用注册表的名称，用于存储驱动程序映像。
-    - VERSION - NVIDIA vGPU管理器的版本，从NVIDIA软件门户下载。
-    - OS_TAG - 必须与集群节点操作系统版本匹配。
-    - CUDA_VERSION - 用于构建驱动程序映像的CUDA基本映像版本。
+    - PRIVATE_REGISTRY：专用注册表的名称，用于存储驱动程序映像。
+    - VERSION：NVIDIA vGPU管理器的版本，从NVIDIA软件门户下载。
+    - OS_TAG：必须与集群节点操作系统版本匹配。
+    - CUDA_VERSION：用于构建驱动程序映像的CUDA基本映像版本。
 
     ```bash
     export PRIVATE_REGISTRY=my/private/registry VERSION=510.73.06 OS_TAG=ubuntu22.04 CUDA_VERSION=12.2.0
@@ -93,24 +94,24 @@
 
 1. 进入 __容器管理__ ，选取您的工作集群，点击 __Helm 应用__ -> __Helm 模板__ ，选择并安装 gpu-operator。需要修改一些 yaml 中的相关字段。
 
-??? note "点击查看完整 YAML"
+    ??? note "点击查看完整 YAML"
 
-    ```yaml
-    gpu-operator.sandboxWorkloads.enabled=true
-     
-    // 如果你需要 vgpu 才设置下面字段
-    gpu-operator.vgpuManager.enabled=true
-    gpu-operator.vgpuManager.repository=<your-register-url>      // “构建 vGPU Manager 镜像” 步骤中的镜像仓库地址
-    gpu-operator.vgpuManager.image=vgpu-manager
-    gpu-operator.vgpuManager.version=<your-vgpu-manager-version> // “构建 vGPU Manager 镜像” 步骤中的 VERSION
-     
-    // GPU 直通相关
-    gpu-operator.vgpuDeviceManager.enabled=true
-    gpu-operator.vfioManager.enabled=true
-    gpu-operator.sandboxDevicePlugin.enabled=true
-    gpu-operator.sandboxDevicePlugin.version=v1.2.4
-    gpu-operator.toolkit.version=v1.14.3-ubuntu20.04
-    ```
+        ```yaml
+        gpu-operator.sandboxWorkloads.enabled=true
+        
+        // 如果你需要 vgpu 才设置下面字段
+        gpu-operator.vgpuManager.enabled=true
+        gpu-operator.vgpuManager.repository=<your-register-url>      // “构建 vGPU Manager 镜像” 步骤中的镜像仓库地址
+        gpu-operator.vgpuManager.image=vgpu-manager
+        gpu-operator.vgpuManager.version=<your-vgpu-manager-version> // “构建 vGPU Manager 镜像” 步骤中的 VERSION
+        
+        // GPU 直通相关
+        gpu-operator.vgpuDeviceManager.enabled=true
+        gpu-operator.vfioManager.enabled=true
+        gpu-operator.sandboxDevicePlugin.enabled=true
+        gpu-operator.sandboxDevicePlugin.version=v1.2.4
+        gpu-operator.toolkit.version=v1.14.3-ubuntu20.04
+        ```
 
 2. 等待安装成功，如下图所示：
 
@@ -120,7 +121,7 @@
 
 1. 安装 virtnest-agent，参考[安装 virtnest-agent](../install/virtnest-agent.md)。
 
-2. 将vGPU和GPU直通加入Virtnest Kubevirt CR，以下示例是添加 vGPU 和 GPU 直通后的 部分关键 yaml：
+2. 将 vGPU 和 GPU 直通加入 Virtnest Kubevirt CR，以下示例是添加 vGPU 和 GPU 直通后的 部分关键 yaml：
 
     ```yaml
     spec:
@@ -140,7 +141,7 @@
           resourceName: nvidia.com /GP104GL_TESLA_P4
     ```
 
-3. 在 kubevirt CR yaml 中，permittedHostDevices 用于导入 VM 设备，vGPU 需在其中添加 mediatedDevices，具体结构如下：
+3. 在 kubevirt CR yaml 中，`permittedHostDevices` 用于导入 VM 设备，vGPU 需在其中添加 mediatedDevices，具体结构如下：
 
     ```yaml
     mediatedDevices:          
@@ -148,7 +149,7 @@
       resourceName: nvidia.com/GRID_P4-1Q    # GPU Operator 注册到节点的vGPU信息4. 
     ```
 
-4. GPU 直通需要在 permittedHostDevices 下添加 pciHostDevices，具体结构如下：
+4. GPU 直通需要在 `permittedHostDevices` 下添加 pciHostDevices，具体结构如下：
 
     ```yaml
     pciHostDevices:           
@@ -157,7 +158,8 @@
       resourceName: nvidia.com/GP104GL_TESLA_P4 # GPU Operator 注册到节点的GPU信息
     ```
 
-5. 获取vGPU信息示例（仅适用于vGPU）：在标记为nvidia.com/gpu.workload.config=vm-gpu的节点（例如work-node-2）上查看节点信息，Capacity中的“nvidia.com/GRID_P4-1Q: 8”表示可用vGPU，如下所示：
+5. 获取 vGPU 信息示例（仅适用于 vGPU）：在标记为 `nvidia.com/gpu.workload.config=vm-gpu` 的节点（例如 work-node-2）上查看节点信息，
+   Capacity 中的 `nvidia.com/GRID_P4-1Q: 8` 表示可用 vGPU：
 
     ```bash
     # kubectl describe node work-node-2
@@ -185,10 +187,10 @@
       pods:                              	110
     ```
 
-​	那么 mdevNameSelector 应该是 “GRID P4-1Q”，resourceName 应该是“GRID_P4-1Q”
+​	那么 mdevNameSelector 应该是 “GRID P4-1Q”，resourceName 应该是 “GRID_P4-1Q”
 
-6. 获取 GPU 直通信息：在标记 nvidia.com/gpu.workload.config=vm-passthrough 的 node 上（本文档示例 node 为 work-node-1），
-   查看 node 信息, Capacity 中 “nvidia.com/GP104GL_TESLA_P4: 2” 就是可用 vGPU ，如下所示：
+6. 获取 GPU 直通信息：在标记 `nvidia.com/gpu.workload.config=vm-passthrough` 的 node 上（本文档示例 node 为 work-node-1），
+   查看 node 信息，Capacity 中 `nvidia.com/GP104GL_TESLA_P4: 2` 就是可用 vGPU：
 
     ```bash
     # kubectl describe node work-node-1
@@ -216,12 +218,12 @@
       pods:                           110
     ```
 
-    那么resourceName 应该是“GRID_P4-1Q”, 如何获取 pciVendorSelector 呢？通过 ssh 登录到 work-node-1 目标节点，
+    那么 resourceName 应该是 “GRID_P4-1Q”, 如何获取 pciVendorSelector 呢？通过 ssh 登录到 work-node-1 目标节点，
     通过 "lspci -nnk -d 10de:" 命令获取 Nvidia GPU PCI 信息，如下所示：红框所示即是 pciVendorSelector 信息。
 
     ![获取 pciVendorSelector](../images/gpu-04.png)
 
-7. 编辑 kubevirt CR 提示：如果同一型号GPU有多个，只需在CR中写入一个即可，无需列出每个GPU。
+7. 编辑 kubevirt CR 提示：如果同一型号 GPU 有多个，只需在 CR 中写入一个即可，无需列出每个 GPU。
 
     ```bash
     # kubectl -n virtnest-system edit kubevirt kubevirt
@@ -233,14 +235,15 @@
           - DisableMDEVConfiguration
         # 下面是需要填写的信息
         permittedHostDevices:
-          mediatedDevices:                      # vGPU
+          mediatedDevices:                    # vGPU
           - mdevNameSelector: GRID P4-1Q
             resourceName: nvidia.com/GRID_P4-1Q
-        pciHostDevices:                       # GPU 直通，上面的示例中 TEESLA P4 有两个GPU，这里只需要注册一个即可
+        pciHostDevices:                       # GPU 直通，上面的示例中 TEESLA P4 有两个 GPU，这里只需要注册一个即可
           - externalResourceProvider: true
             pciVendorSelector: 10DE:1BB3
             resourceName: nvidia.com/GP104GL_TESLA_P4 
     ```
+
 ## yaml 创建 VM 并使用 GPU 加速
 
 与普通虚拟机唯一的区别是在 devices 中添加 gpu 相关信息。
