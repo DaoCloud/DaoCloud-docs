@@ -20,7 +20,8 @@
 
 ## 启用 IOMMU
 
-为了启用GPU直通功能，集群节点需要开启IOMMU。请参考以下链接了解如何开启IOMMU：[https://www.server-world.info/en/note?os=CentOS_7&p=kvm&f=10](https://www.server-world.info/en/note?os=CentOS_7&p=kvm&f=10)  如果您的集群是在虚拟机上运行，请咨询您的虚拟机平台提供商。
+为了启用GPU直通功能，集群节点需要开启IOMMU。请参考[如何开启IOMMU](https://www.server-world.info/en/note?os=CentOS_7&p=kvm&f=10)。
+如果您的集群是在虚拟机上运行，请咨询您的虚拟机平台提供商。
 
 ## 构建 vGPU Manager 镜像
 
