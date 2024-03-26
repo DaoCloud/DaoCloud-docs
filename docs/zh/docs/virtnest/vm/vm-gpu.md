@@ -160,28 +160,28 @@
 
     ```bash
     # kubectl describe node work-node-2
-   Capacity:
-    cpu:                                 64
-    devices.kubevirt.io/kvm:             1k
-    devices.kubevirt.io/tun:             1k
-    devices.kubevirt.io/vhost-net:       1k
-    ephemeral-storage:                   102626232Ki
-    hugepages-1Gi:                       0
-    hugepages-2Mi:                       0
-    memory:                              264010840Ki
-    nvidia.com/GRID_P4-1Q :              8
-    pods:                                110
-   Allocatable:
-    cpu:                               	64
-    devices.kubevirt.io/kvm:           	1k
-    devices.kubevirt.io/tun:           	1k
-    devices.kubevirt.io/vhost-net:     	1k
-    ephemeral-storage:                 	94580335255
-    hugepages-1Gi:                     	0
-    hugepages-2Mi:                     	0
-    memory:                            	263908440Ki
-    nvidia.com/GRID_P4-1Q:             	8
-    pods:                              	110
+    Capacity:
+      cpu:                                 64
+      devices.kubevirt.io/kvm:             1k
+      devices.kubevirt.io/tun:             1k
+      devices.kubevirt.io/vhost-net:       1k
+      ephemeral-storage:                   102626232Ki
+      hugepages-1Gi:                       0
+      hugepages-2Mi:                       0
+      memory:                              264010840Ki
+      nvidia.com/GRID_P4-1Q :              8
+      pods:                                110
+    Allocatable:
+      cpu:                               	64
+      devices.kubevirt.io/kvm:           	1k
+      devices.kubevirt.io/tun:           	1k
+      devices.kubevirt.io/vhost-net:     	1k
+      ephemeral-storage:                 	94580335255
+      hugepages-1Gi:                     	0
+      hugepages-2Mi:                     	0
+      memory:                            	263908440Ki
+      nvidia.com/GRID_P4-1Q:             	8
+      pods:                              	110
     ```
 
 ​	那么 mdevNameSelector 应该是 “GRID P4-1Q”，resourceName 应该是“GRID_P4-1Q”
@@ -192,27 +192,27 @@
     ```bash
     # kubectl describe node work-node-1
     Capacity:
-    cpu:                            64
-    devices.kubevirt.io/kvm:        1k
-    devices.kubevirt.io/tun:        1k
-    devices.kubevirt.io/vhost-net:  1k
-    ephemeral-storage:              102626232Ki
-    hugepages-1Gi:                  0
-    hugepages-2Mi:                  0
-    memory:                         264010840Ki
-    nvidia.com/GP104GL_TESLA_P4:    2
-    pods:                           110
+      cpu:                            64
+      devices.kubevirt.io/kvm:        1k
+      devices.kubevirt.io/tun:        1k
+      devices.kubevirt.io/vhost-net:  1k
+      ephemeral-storage:              102626232Ki
+      hugepages-1Gi:                  0
+      hugepages-2Mi:                  0
+      memory:                         264010840Ki
+      nvidia.com/GP104GL_TESLA_P4:    2
+      pods:                           110
     Allocatable:
-    cpu:                            64
-    devices.kubevirt.io/kvm:        1k
-    devices.kubevirt.io/tun:        1k
-    devices.kubevirt.io/vhost-net:  1k
-    ephemeral-storage:              94580335255
-    hugepages-1Gi:                  0
-    hugepages-2Mi:                  0
-    memory:                         263908440Ki
-    nvidia.com/GP104GL_TESLA_P4:    2
-    pods:                           110
+      cpu:                            64
+      devices.kubevirt.io/kvm:        1k
+      devices.kubevirt.io/tun:        1k
+      devices.kubevirt.io/vhost-net:  1k
+      ephemeral-storage:              94580335255
+      hugepages-1Gi:                  0
+      hugepages-2Mi:                  0
+      memory:                         263908440Ki
+      nvidia.com/GP104GL_TESLA_P4:    2
+      pods:                           110
     ```
 
     那么resourceName 应该是“GRID_P4-1Q”, 如何获取 pciVendorSelector 呢？通过 ssh 登录到 work-node-1 目标节点，
@@ -225,18 +225,18 @@
     ```bash
     # kubectl -n virtnest-system edit kubevirt kubevirt
     spec:
-    configuration:
+      configuration:
         developerConfiguration:
-        featureGates:
-        - GPU
-        - DisableMDEVConfiguration
+          featureGates:
+          - GPU
+          - DisableMDEVConfiguration
         # 下面是需要填写的信息
         permittedHostDevices:
-        mediatedDevices:                      # vGPU
-        - mdevNameSelector: GRID P4-1Q
+          mediatedDevices:                      # vGPU
+          - mdevNameSelector: GRID P4-1Q
             resourceName: nvidia.com/GRID_P4-1Q
         pciHostDevices:                       # GPU 直通，上面的示例中 TEESLA P4 有两个GPU，这里只需要注册一个即可
-        - externalResourceProvider: true
+          - externalResourceProvider: true
             pciVendorSelector: 10DE:1BB3
             resourceName: nvidia.com/GP104GL_TESLA_P4 
     ```
@@ -253,13 +253,13 @@
       name: testvm-gpu1
       namespace: default
     spec:
-    dataVolumeTemplates:
-    - metadata:
+      dataVolumeTemplates:
+      - metadata:
         creationTimestamp: null
         name: systemdisk-testvm-gpu1
         namespace: default
         spec:
-        pvc:
+          pvc:
             accessModes:
             - ReadWriteOnce
             resources:
