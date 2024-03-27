@@ -198,7 +198,7 @@ nav:
                   - Knative:
                     - Knative 介绍: kpanda/user-guide/scale/knative/knative.md
                     - 安装 Knative: kpanda/user-guide/scale/knative/install.md
-                    - 使用场景: kpanda/user-guide/scale/knative/sense.md
+                    - 使用场景: kpanda/user-guide/scale/knative/scene.md
                     - 使用实践: kpanda/user-guide/scale/knative/playground.md
                   - 安装 metrics-server 插件: kpanda/user-guide/scale/install-metrics-server.md
                   - 安装 kubernetes-cronhpa-controller 插件: kpanda/user-guide/scale/install-cronhpa.md
