@@ -48,9 +48,9 @@
         系统定义了内置标签，若自定义标签与内置标签的`键`值相同，则自定义标签不生效。
         内置标签有：`severity`、`rule_id`，`source`、`cluster_name`、`group_id`、 `target_type` 和 `target`。
 
-    - 方式二：可点击 __模板导入__，选择平台管理员已创建好的告警模版批量导入告警规则。
+    - 方式二：可点击 __模板导入__，选择平台管理员已创建好的告警模板批量导入告警规则。
 
-        ![告警模版](../../images/import-template.png){ width=1000px}
+        ![告警模板](../../images/import-template.png){ width=1000px}
 
 3. 点击 __下一步__ 后配置通知。
 

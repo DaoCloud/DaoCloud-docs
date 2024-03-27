@@ -7,13 +7,13 @@
 
 1. 左侧导航栏中，选择 **告警中心** -> **告警策略**，单击顶部的 **告警模板** 。
 
-    ![告警模版](../../images/template01.png){ width=1000px}
+    ![告警模板](../../images/template01.png){ width=1000px}
 
 2. 点击 **创建告警模板** ，设置告警模板的名称、描述等信息。
 
-    ![告警模版](../../images/template02.png){ width=1000px}
+    ![告警模板](../../images/template02.png){ width=1000px}
 
-    ![告警模版](../../images/template03.png){ width=1000px}
+    ![告警模板](../../images/template03.png){ width=1000px}
 
     | 参数 | 说明 |
     | ---- | ---- |
@@ -28,10 +28,10 @@
 
 点击目标规则后的 **⋮** ，点击 **编辑**，进入抑制规则的编辑页。
 
-![告警模版](../../images/template04.png){ width=1000px}
+![告警模板](../../images/template04.png){ width=1000px}
 
 ## 删除告警模板
 
 点击目标模板后侧的 **⋮** ，点击 **删除**，在输入框中输入告警模板的名称即可删除。
 
-![告警模版](../../images/template05.png){ width=1000px}
+![告警模板](../../images/template05.png){ width=1000px}
