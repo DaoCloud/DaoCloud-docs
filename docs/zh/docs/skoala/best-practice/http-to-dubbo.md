@@ -1,11 +1,13 @@
 # http转dubbo协议动态由
 
-使用Piuxiu<https://cn.dubbo.apache.org/zh-cn/overview/mannual/dubbo-go-pixiu/overview/>可以支持协议转换功能，目前已支持 Http、Dubbo2、Triple、gRPC 协议代理和转换,本文主要介绍如何使用它将http协议转换为dubbo协议。
+使用 [Piuxiu](https://cn.dubbo.apache.org/zh-cn/overview/mannual/dubbo-go-pixiu/overview/)
+可以支持协议转换功能，目前已支持 Http、Dubbo2、Triple、gRPC 协议代理和转换,本文主要介绍如何使用它将http协议转换为dubbo协议。
 
 ## 配置说明
 
 以下内容以及注释仅涉及静态配置文件配置，不涉及配置下发。
 pixiu静态启动配置文件，内容如下，相应字段含义均已注释：
+
 ```yaml
 ---
 static_resources:
@@ -86,24 +88,34 @@ static_resources:
 #            #注册中心的命名空间
 #            namespace: test-namespace
 ```
-完成该配置后，pixiu会自动从adapters中配置的注册中心获取所有服务的可用方法，并自动装配成API，之后只需要按照固定格式请求pixiu，pixiu即可将流量转发到对应的dubbo服务的对应接口的对应方法，下面介绍这种方式下请求pixiu的格式，一定要严格按照格式请求，否则无法匹配到对应的服务.  
+
+完成该配置后，pixiu会自动从adapters中配置的注册中心获取所有服务的可用方法，并自动装配成API，之后只需要按照固定格式请求pixiu，
+pixiu即可将流量转发到对应的dubbo服务的对应接口的对应方法，下面介绍这种方式下请求pixiu的格式，一定要严格按照格式请求，否则无法匹配到对应的服务。
+
 !!! info
 
-    1. 请求方法必须为POST
+    1. 请求方法必须为 POST
     2. 请求路径格式为：
-    ```yaml
+    
+        ```yaml
         IP:Port/服务名/接口名/版本号/方法名
-    ```
-    其中IP和Port均为pixiu对外暴露的ip和端口，服务名，接口名，版本号和方法名均为对应想要请求的方法的属性.  
-    3. 请求体必需为json格式，存在两个键，分别是types和values，其中types为请求方法的参数类型，字符串类型，多个参数类型以逗号分隔，values为对应参数类型的对应值，数组类型，多个参数以逗号分隔。
+        ```
+        其中IP和Port均为pixiu对外暴露的ip和端口，服务名，接口名，版本号和方法名均为对应想要请求的方法的属性.  
+    
+    3. 请求体必需为json格式，存在两个键，分别是types和values，其中types为请求方法的参数类型，字符串类型，
+       多个参数类型以逗号分隔，values为对应参数类型的对应值，数组类型，多个参数以逗号分隔。
 
 ## demo示例
 
 demo示例代码地址：<https://github.com/projectsesame/pixiu-demo-dubbo.git>  
-测试命令(假定本地启动的pixiu，且访问端口为8881)
+
+测试命令如下（假定本地启动的pixiu，且访问端口为8881）：
+
 ```bash
-#127.0.0.1是pixiu部署的ip，8881是pixiu启动的端口，dubbo3x-provider是服务名，io.daocloud.skoala.dubboapi.DubboDemoService是接口名称，0.1.1是版本号，sayHello是方法名称
-#这里sayHello方法存在一个String类型的参数，由于是java语言开发的demo，因此类型的完整名称是java.lang.String，这里参数传值为tt，因此这里传参{\"types\":\"java.lang.String\",\"values\":[\"tt\"]}，下面例子同理
+# 127.0.0.1是pixiu部署的ip，8881是pixiu启动的端口，dubbo3x-provider是服务名
+# io.daocloud.skoala.dubboapi.DubboDemoService是接口名称，0.1.1是版本号，sayHello是方法名称
+# 这里sayHello方法存在一个String类型的参数，由于是java语言开发的demo，因此类型的完整名称是java.lang.String
+# 这里参数传值为tt，因此这里传参{\"types\":\"java.lang.String\",\"values\":[\"tt\"]}，下面例子同理
 
 curl -XPOST http://127.0.0.1:8881/dubbo3x-provider/io.daocloud.skoala.dubboapi.DubboDemoService/0.1.1/sayHello -d "{\"types\":\"java.lang.String\",\"values\":[\"tt\"]}" -H 'Content-Type: application/json'
 
@@ -120,5 +132,4 @@ curl -XPOST http://127.0.0.1:8881/dubbo3x-provider/io.daocloud.skoala.dubboapi.D
 curl -XPOST http://127.0.0.1:8881/dubbo3x-provider/io.daocloud.skoala.dubboapi.DubboDemoService/0.1.1/returnUserInfoAndNameAndIntegerAge -d "{\"types\":\"java.lang.String,io.daocloud.skoala.dubboapi.User,java.lang.Integer\",\"values\":[\"tt\",{\"name\":\"yang\",\"age\":10},20]}" -H 'Content-Type: application/json'
 
 ""method is returnUserInfoAndNameAndIntegerAge,userInfo is User{name='yang', age=10},name is tt, age is 20"
-
 ```
