@@ -295,13 +295,13 @@
 
 ## 云桌面
 
-1. Windows 版本的虚拟机大多数情况是需要远程桌面控制访问的，建议使用 [Microsoft Remote Desktop](https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-mac#get-the-remote-desktop-client) 控制您的虚拟机。
+Windows 版本的虚拟机大多数情况是需要远程桌面控制访问的，建议使用 [Microsoft 远程桌面](https://learn.microsoft.com/zh-cn/windows-server/remote/remote-desktop-services/clients/remote-desktop-mac#get-the-remote-desktop-client)控制您的虚拟机。
 
-2. 请注意：
+!!! note
 
-   -  你的 Windows 版本需支持远程桌面控制，才能使用
-      [Microsoft Remote Desktop](https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-mac#get-the-remote-desktop-client)。
-   -  关闭 Windows 的防火墙。
+    -  你的 Windows 版本需支持远程桌面控制，才能使用
+      [Microsoft 远程桌面](https://learn.microsoft.com/zh-cn/windows-server/remote/remote-desktop-services/clients/remote-desktop-mac#get-the-remote-desktop-client)。
+    -  需要关闭 Windows 的防火墙。
 
 ## 增加数据盘
 

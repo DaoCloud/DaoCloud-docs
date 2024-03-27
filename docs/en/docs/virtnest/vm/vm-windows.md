@@ -1,4 +1,4 @@
-# Creating a Windows Virtual Machine
+# Create a Windows Virtual Machine
 
 This document will explain how to create a Windows virtual machine via the command line.
 
@@ -294,16 +294,16 @@ Creating a Windows virtual machine using YAML is more flexible and easier to wri
 
 ## Cloud Desktop
 
-1. For Windows virtual machines, remote desktop control access is often required. It is recommended to use
-   [Microsoft Remote Desktop](https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-mac#get-the-remote-desktop-client) to control your virtual machine.
+For Windows virtual machines, remote desktop control access is often required. It is recommended to use
+[Microsoft Remote Desktop](https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-mac#get-the-remote-desktop-client) to control your virtual machine.
 
-2. Please note:
+!!! note
 
-   - Your Windows version must support remote desktop control to use
+    - Your Windows version must support remote desktop control to use
      [Microsoft Remote Desktop](https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-mac#get-the-remote-desktop-client).
-   - Disable the Windows firewall.
+    - You need to disable the Windows firewall.
 
-## Adding Data Disks
+## Add Data Disks
 
 Adding a data disk to a Windows virtual machine follows the same process as adding one to a Linux virtual machine. You can refer to the provided YAML example for guidance.
 
@@ -354,7 +354,7 @@ Adding a data disk to a Windows virtual machine follows the same process as addi
 
 These capabilities are consistent with Linux virtual machines and can be configured using the same methods.
 
-## Accessing Windows Virtual Machine
+## Access Your Windows Virtual Machine
 
 1. After successful creation, access the virtual machine list page to confirm that the virtual machine is running properly.
 
