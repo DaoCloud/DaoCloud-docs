@@ -1,6 +1,7 @@
 # Volcano 安装和使用
 
-Volcano 是 CNCF 下首个基于 Kubernetes 的容器批处理计算平台，专注于高性能计算场景。它填补了 Kubernetes 在机器学习、大数据、科学计算等领域缺失的功能，为这些高性能工作负载提供了必要的支持。
+Volcano 是 CNCF 下首个基于 Kubernetes 的容器批处理计算平台，专注于高性能计算场景。
+它填补了 Kubernetes 在机器学习、大数据、科学计算等领域缺失的功能，为这些高性能工作负载提供了必要的支持。
 
 Volcano 与主流计算框架无缝对接，如 Spark、TensorFlow、PyTorch 等，并支持异构设备的混合调度，包括 CPU 和 GPU。
 
@@ -10,12 +11,13 @@ Volcano 与主流计算框架无缝对接，如 Spark、TensorFlow、PyTorch 等
 
 1. 在 **集群详情 -> Helm 应用 -> Helm 模版** 中找到 volcano 并安装。
 
-![volcano helm 模版](../../images/volcano-01.png)
-![安装 volcano](../../images/volcano-02.png)
+    ![volcano helm 模版](../../images/volcano-01.png)
+   
+    ![安装 volcano](../../images/volcano-02.png)
 
 2. 检查并确认 volcano 是否安装完成，即 volcano-admission、volcano-controllers、volcano-scheduler 组件是否正常运行。
 
-![volcano 组件](../../images/volcano-03.png)
+    ![volcano 组件](../../images/volcano-03.png)
 
 ## Volcano 使用场景
 
@@ -218,4 +220,4 @@ spec:
 
 - volcano.sh/job-type 标签设置为 Tensorflow：volcano 原生支持 tensorflow 的调度作业。
 
-如果您想了解 volcano 更多功能特性和使用场景，可以参考：[Volcano 介绍](https://volcano.sh/zh/docs/) 。
+如果您想了解 volcano 更多功能特性和使用场景，可以参考 [Volcano 介绍](https://volcano.sh/zh/docs/)。
