@@ -11,6 +11,11 @@ hide:
 
 ## 2024 年
 
+- [20240326 | 巴黎 KubeCon：平台工程、API 平台和智能代理引领创新](./240326-kubecon-eu.md)
+
+    3.19 - 3.22 在巴黎举行的 [KubeCon + CloudNativeCon Europe](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/)
+    大会最引人关注的热点是基于 Kubernetes 为生成式人工智能构建基础设施。干货更多聚焦在平台层面。
+
 - [20240301 | 创建一个开源商业生态体系](./240301-osc-eco.md)
 
     成功的开源项目通常围绕着一个繁荣的公司和产品生态体系构建。那么，什么是开源商业生态体系，

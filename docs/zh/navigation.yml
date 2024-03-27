@@ -1252,6 +1252,7 @@ nav:
   - 博客:
       - 博文索引: blogs/index.md
       - 2024 年:
+          - 202403 | 巴黎 KubeCon 谁在引领创新: blogs/240326-kubecon-eu.md
           - 202403 | 创建一个开源商业生态体系: blogs/240301-osc-eco.md
           - 202402 | 好书推介《Kubernetes 云原生数据管理》: blogs/240203-book.md
           - 202402 | 加速计算基本定义及工作原理揭秘: blogs/240201-ai-compute.md
