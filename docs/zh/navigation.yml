@@ -475,6 +475,7 @@ nav:
               - 集成 Metallb:
                   - 介绍: network/modules/metallb/index.md
                   - 安装: network/modules/metallb/install.md
+                  - IPPool 修改和创建: network/modules/metallb/ippool-create.md
                   - IPPool 使用说明: network/modules/metallb/usage.md
                   - L2 和 BGP 模式说明: network/modules/metallb/l2-bgp.md
                   - 获取客户端源 IP: network/modules/metallb/source_ip.md
