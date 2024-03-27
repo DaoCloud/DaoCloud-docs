@@ -1065,10 +1065,10 @@ nav:
                   - Create Deployment: kant/user-guide/edge-app/create-app.md
                   - Create Deployment in Batch: kant/user-guide/edge-app/create-batch-app.md
                   - Deploy Deployment in Batch: kant/user-guide/edge-app/deploy.md
-              - Edge to Cloud Message:
+              - Edge-Cloud Message:
                   - Overview: kant/user-guide/route/index.md
                   - Create Message Route: kant/user-guide/route/create-route.md
-              - Application Mesh:
+              - Edge Mesh:
                   - Overview: kant/user-guide/edge-network/index.md
                   - Deploy EdgeMesh: kant/user-guide/edge-network/deploy-edgemesh.md
                   - Service: kant/user-guide/edge-network/service.md

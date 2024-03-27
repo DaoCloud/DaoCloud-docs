@@ -5,7 +5,7 @@ date: 2024-02-23
 
 # Deploy EdgeMesh
 
-Before using the application mesh capabilities, you need to deploy EdgeMesh.
+Before using the edge mesh capabilities, you need to deploy EdgeMesh.
 This page describes the specific workflow.
 
 ## Prerequisites
