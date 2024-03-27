@@ -17,7 +17,7 @@
 请按照以下步骤查询链路：
 
 1. 进入 __可观测性__ 产品模块，
-2. 在左边导航栏选择 __链路追踪__ -> __调用链__ 。
+2. 在左边导航栏选择 __链路追踪__ -> __调用链__。
 
     ![jaeger](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/trace00.png)
 
@@ -47,9 +47,9 @@
     - 查询的日志内容为日志文本中包含该链路的 TraceID 的日志和链路调用过程中相关的容器日志。
   
 2. 点击 __查看更多__ 后可带条件跳转到 __日志查询__ 的页面。
-3. 支持基于 __容器组__ 过滤和关键字模糊搜索。
+3. 默认搜索全部日志，但可下拉根据链路的 TraceID 或链路调用过程中相关的容器日志进行过滤。
 
-    ![tracelog](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/trace01.png)
+    ![tracelog](../../images/tracelog.png)
 
     !!! note
 
