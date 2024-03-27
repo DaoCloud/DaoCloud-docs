@@ -66,7 +66,7 @@ date: 2024-02-23
 
     Defines how messages are delivered from the source message endpoint to the target message endpoint.
 
-- **Application Mesh**
+- **Edge Mesh**
 
     Provides a non-intrusive microservice governance solution, achieving complete lifecycle management
     and traffic governance, supporting various governance capabilities such as load balancing.

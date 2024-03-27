@@ -1,4 +1,4 @@
-# Edge to Cloud Messaging Overview
+# Edge-Cloud Messages
 
 Cloud Edge Collabration provides edge-cloud message routing functionality. You can configure message routes, and the platform will forward messages to the corresponding endpoints according to the message routing configuration. This allows flexible control over data routing and enhances data security.
 
