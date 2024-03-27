@@ -770,6 +770,7 @@ nav:
                   - 网关对接服务网格: skoala/best-practice/gateway-mesh.md
                   - 网关请求日志添加自定义属性: skoala/best-practice/add-custom-attributes.md
                   - http转dubbo协议动态由: skoala/best-practice/http-to-dubbo.md
+                  - 云原生自定义插件示例 caching: skoala/best-practice/envoy-extproc-caching-demo-go.md
               - 故障排查:
                   - skoala-init的x-kubernets-validations报错: skoala/troubleshoot/auth-server.md
                   - Nacos 版本降级: skoala/troubleshoot/nacos.md                
