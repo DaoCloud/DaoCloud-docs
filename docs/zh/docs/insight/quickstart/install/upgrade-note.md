@@ -1,11 +1,8 @@
----
-hide:
-  - toc
----
-
 # 升级注意事项
 
-## insight server
+本页介绍一些升级 Insight Server 和 Agent 的注意事项。
+
+## Insight server
 
 ### 从 v0.19.x（或更低版本）升级到 0.20.x
 
@@ -18,7 +15,7 @@ kubectl -n insight-system delete deployment insight-jaeger-query
 
 ### 从 v0.17.x（或更低版本）升级到 v0.18.x
 
-由于 0.18.x 中更新了 Jaeger 相关部署文件，因此需要在升级 insight server 前手动执行如下命令：
+由于 0.18.x 中更新了 Jaeger 相关部署文件，因此需要在升级 Insight Server  前手动执行如下命令：
 
 ```bash
 kubectl -n insight-system delete deployment insight-jaeger-collector
@@ -47,7 +44,8 @@ kubectl -n insight-system delete deployment insight-jaeger-query
 
 ### 从 v0.15.x（或更低版本）升级到 v0.16.x
 
-由于 0.16.x 中使用了 vmalertmanagers CRD 的新特性参数 disableRouteContinueEnforce, 因此需要在升级 insight server 前手动执行如下命令。
+由于 0.16.x 中使用了 vmalertmanagers CRD 的新特性参数 disableRouteContinueEnforce，
+因此需要在升级 Insight Server 前手动执行如下命令。
 
 ```shell
 kubectl apply --server-side -f https://raw.githubusercontent.com/VictoriaMetrics/operator/v0.33.0/config/crd/bases/operator.victoriametrics.com_vmalertmanagers.yaml --force-conflicts
@@ -55,7 +53,7 @@ kubectl apply --server-side -f https://raw.githubusercontent.com/VictoriaMetrics
 
 !!! note
 
-    如您是离线安装，可以在解压 insight 离线包后，请执行以下命令更新 CRD。
+    如您是离线安装，可以在解压 Insight 离线包后，请执行以下命令更新 CRD。
     
     ```shell
     kubectl apply --server-side -f insight/dependency-crds --force-conflicts 
@@ -65,7 +63,7 @@ kubectl apply --server-side -f https://raw.githubusercontent.com/VictoriaMetrics
 
 ### 从 0.23.x（或更低版本）升级到 v0.24.x
 
-由于 0.24.x 版本中 `OTEL operator chart` 中新增了 CRD，但由于 Helm Upgrade 时并不会更新 CRDs，因此，需要手动执行以下命令：
+由于 0.24.x 版本中 `OTEL operator chart` 中新增了 CRD，但由于 Helm Upgrade 时并不会更新 CRD，因此，需要手动执行以下命令：
 
 ```shell
 kubectl apply -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-helm-charts/main/charts/opentelemetry-operator/crds/crd-opentelemetry.io_opampbridges.yaml
@@ -79,7 +77,8 @@ kubectl apply -f charts/agent/crds/crd-opentelemetry.io_opampbridges.yaml
 
 ### 从 0.19.x（或更低版本）升级到 v0.20.x
 
-由于 0.20.x 中增加了 Kafka 日志导出配置，日志导出配置做了一些调整。升级 __insight-agent__ 之前需要注意参数变化，即原来 logging 的配置已经移到了配置中 logging.elasticsearch：
+由于 0.20.x 中增加了 Kafka 日志导出配置，日志导出配置做了一些调整。升级 __insight-agent__ 之前需要注意参数变化，
+即原来 logging 的配置已经移到了配置中 logging.elasticsearch：
 
 ```diff
 -  --set global.exporters.logging.host \
@@ -90,7 +89,7 @@ kubectl apply -f charts/agent/crds/crd-opentelemetry.io_opampbridges.yaml
 
 ### 从 v0.17.x（或更低版本）升级到 v0.18.x
 
-由于 0.18.x 中更新了 Jaeger 相关部署文件，因此需要在升级 insight agent 前需要注意参数的改动。
+由于 0.18.x 中更新了 Jaeger 相关部署文件，因此需要在升级 insight-agent 前需要注意参数的改动。
 
 ```diff
 +  --set global.exporters.trace.enable=true \
@@ -100,7 +99,7 @@ kubectl apply -f charts/agent/crds/crd-opentelemetry.io_opampbridges.yaml
 
 ### 从 v0.16.x（或更低版本）升级到 v0.17.x
 
-在 v0.17.x 版本中将 kube-prometheus-stack chart 版本从 41.9.1 升级至 45.28.1, 其中使用的 CRD 也存在一些字段的升级，如 servicemonitor 的 __attachMetadata__ 字段，因此需要在升级 insight agent 前执行如下命令：
+在 v0.17.x 版本中将 kube-prometheus-stack chart 版本从 41.9.1 升级至 45.28.1, 其中使用的 CRD 也存在一些字段的升级，如 servicemonitor 的 __attachMetadata__ 字段，因此需要在升级 insight-agent 前执行如下命令：
 
 ```bash
 kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.65.1/example/prometheus-operator-crd/monitoring.coreos.com_servicemonitors.yaml --force-conflicts
@@ -111,8 +110,8 @@ kubectl apply --server-side -f https://raw.githubusercontent.com/prometheus-oper
 ### 从 v0.11.x（或更低版本）升级到 v0.12.x
 
 在 v0.12.x 将 kube-prometheus-stack chart 从 39.6.0 升级到 41.9.1，其中包括 prometheus-operator 升级到 v0.60.1, prometheus-node-exporter chart 升级到 4.3.0 等。
-prometheus-node-exporter 升级后使用了 [Kubernetes 推荐 label](https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/)，因此需要在升级前删除 __node-exporter__ 的 daemonset。
-prometheus-operator 更新了 CRD，因此需要在升级 insight agent 前执行如下命令：
+prometheus-node-exporter 升级后使用了 [Kubernetes 推荐 label](https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/)，因此需要在升级前删除 __node-exporter__ 的 DaemonSet。
+prometheus-operator 更新了 CRD，因此需要在升级 insight-agent 前执行如下命令：
 
 ```shell linenums="1"
 kubectl delete daemonset insight-agent-prometheus-node-exporter -n insight-system
