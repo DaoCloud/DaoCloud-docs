@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Product Advantages
 
 Cloud Edge Collaboration provides six core advantage capabilities to solve different types of scenario business needs for users and more efficiently collaborate cloud-edge computing resources and data.

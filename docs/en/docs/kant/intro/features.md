@@ -5,15 +5,13 @@ widely applicable to industrial Internet, Internet of Things (IoT), smart factor
 
 The functional architecture of the edge computing platform is shown in the following figure:
 
-## Features
-
 Cloud Edge Collaboration supports the following functional features:
 
-### Edge Node Management
+## Edge Node Management
 
 Supports accessing a massive number of edge nodes, automatically generating configuration information for edge nodes in the platform, and supporting two efficient and convenient management methods: online and offline node management. Edge nodes can be managed, monitored, and operated uniformly on the cloud side.
 
-### Edge Application/Model Management
+## Edge Application/Model Management
 
 - The edge computing platform supports deploying edge applications or models quickly to edge nodes in the form of containers.
   Users can package their own edge application programs or models into container images, upload them to the container registry, and then deploy container images to edge nodes for operation through the Cloud Edge Collaboration platform.
@@ -21,20 +19,20 @@ Supports accessing a massive number of edge nodes, automatically generating conf
 - Containers have a more robust ecosystem, helping users' container applications seamlessly transition to other running environments, having better portability,
   and containers have better resource isolation and support CPU scheduling.
 
-### Edge Device Management
+## Edge Device Management
 
 The edge computing platform supports end device connected to edge nodes, and end device support access through Modbus protocol. After the end device is connected, it can be managed uniformly on the cloud side.
 
-### Data Management
+## Data Management
 
 The edge computing platform provides message routing function. Users can configure message routing rules, and the platform forwards edge messages to the corresponding message endpoints according to the configured message routing,
 flexibly controlling data routing and improving data security.
 
-### Permission Management
+## Permission Management
 
 The platform provides three-level permission management for platform/folders/workspaces, ensuring resource sharing and isolation among different roles at multiple levels and fully ensuring resource security.
 
-### Edge Control
+## Edge Control
 
 - Provides resource scheduling and management operation and maintenance functions for edge nodes.
 - Provides full-life-cycle management of applications and models running on edge nodes.

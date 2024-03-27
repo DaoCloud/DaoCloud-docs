@@ -15,7 +15,7 @@ The platform supports editing and modifying the basic information, twin properti
 
 The steps to perform this operation are as follows:
 
-1. Go to the edge unit details page and select the left-side menu __Edge Resources__ -> __End Devices__.
+1. Go to the edge unit details page and select the left-side menu __Edge Resources__ -> __End Devices__ .
 2. Click the device name in the end device list.
 3. On the device details page, click the __Edit__ button in the top right corner.
 4. In the edit dialog box, modify the device description.
