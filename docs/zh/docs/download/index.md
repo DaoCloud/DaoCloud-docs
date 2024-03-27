@@ -57,7 +57,7 @@ DCE 5.0 包含的众多子模块可以单独下载，按需对每个模块进行
 | 微服务引擎| 1.6 GB  | [:arrow_right: 下载页](./modules/skoala.md)    | 2024-01-18 |
 | 服务网格 | 906.44 MB | [:arrow_right: 下载页](./modules/mspider.md)   | 2024-03-20 |
 | 云边协同 | 100.37 MB | [:arrow_right: 下载页](./modules/kant.md)      | 2024-01-04 |
-| 全局管理 | 500.89 MB | [:arrow_right: 下载页](./modules/ghippo.md)    | 2024-02-05 |
+| 全局管理 | 500.89 MB | [:arrow_right: 下载页](./modules/ghippo.md)    | 2024-03-27 |
 | 运营管理 | 95.90 MB  | [:arrow_right: 下载页](./modules/gmagpie.md)   | 2023-11-30 |
 | 虚拟机   | 1.43 GB  | [:arrow_right: 下载页](./modules/virtnest.md)   | 2024-01-10 |
 
