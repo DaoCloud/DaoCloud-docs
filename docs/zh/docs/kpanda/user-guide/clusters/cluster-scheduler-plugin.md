@@ -51,7 +51,7 @@
 
 以下以使用 vgpu 调度器的同时，想结合 scheduler-plugins 的 cosheduling 插件能力场景为示例，介绍如何使用 scheduler-plugins。
 
-1. 在 Helm 模版中安装 vgpu，设置 values.yaml 参数。
+1. 在 Helm 模板中安装 vgpu，设置 values.yaml 参数。
 
     - `schedulerName: scheduler-plugins-scheduler`，这是 kubean 默认安装的 scheduler-plugins 的 scheduler 名称，目前不能修改。
     - `scheduler.kubeScheduler.enabled: false`，不安装 kube-scheduler，将 vgpu-scheduler 作为单独的 extender。

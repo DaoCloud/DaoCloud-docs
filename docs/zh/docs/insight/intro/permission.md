@@ -57,10 +57,10 @@ hide:
 |          | 查看内置告警规则            | &check;              | &cross;       | &cross;            | &cross; |
 |          | 修改内置告警规则            | &check;              | &cross;       | &cross;            | &cross; |
 |          | YAML 导入告警规则            | &check;              | &check;       | &check;            | &cross; |
-| 告警模版  | 查看告警模版列表              | &check;              | &check;      | &check;          | &check; |
-|          | 创建告警模版             | &check;              | &cross;     | &cross;          | &cross; |
-|          | 编辑告警模版             | &check;              | &cross;      | &cross;           | &cross; |
-|          | 删除告警模版             | &check;              | &cross;    | &cross;           | &cross; |
+| 告警模板  | 查看告警模板列表              | &check;              | &check;      | &check;          | &check; |
+|          | 创建告警模板             | &check;              | &cross;     | &cross;          | &cross; |
+|          | 编辑告警模板             | &check;              | &cross;      | &cross;           | &cross; |
+|          | 删除告警模板             | &check;              | &cross;    | &cross;           | &cross; |
 | 通知对象 | 查看通知对象                | &check;              | &check;       | &check;            | &check; |
 |          | 添加通知对象                | &check;              | &cross;       | &cross;            | &cross; |
 |          | 修改通知对象                | &check;              | &cross;       | &cross;            | &cross; |
