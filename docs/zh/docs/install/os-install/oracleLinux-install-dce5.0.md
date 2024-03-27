@@ -15,13 +15,13 @@
 
     | CPU 架构 | 版本   | 下载地址    |
     | -------- | ------ | -------- |
-    | AMD64    | v0.10.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.10.0-amd64.tar> |
+    | AMD64    | v0.16.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.16.0-amd64.tar> |
 
     下载完毕后解压离线包：
 
     ```bash
-    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.10.0-amd64.tar
-    tar -xvf offline-v0.10.0-amd64.tar
+    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.16.0-amd64.tar
+    tar -xvf offline-v0.16.0-amd64.tar
     ```
 
 2. 下载 Oracle Linux R9/R8 U1 镜像文件。
@@ -38,10 +38,10 @@
 
     ```bash
     # Oracle Linux R9 U1
-    curl -LO https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.7.4/os-pkgs-oracle9-v0.7.4.tar.gz
+    curl -LO https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.9/os-pkgs-oracle9-v0.13.9.tar.gz
 
     # Oracle Linux R8 U1
-    curl -LO https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.7.4/os-pkgs-oracle8-v0.7.4.tar.gz
+    curl -LO https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.9/os-pkgs-oracle8-v0.13.9.tar.gz
     ```
 
 4. 下载 addon 离线包，可以在[下载中心](../../download/index.md)下载最新版本（可选）
