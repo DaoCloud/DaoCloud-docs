@@ -85,7 +85,7 @@ An end device can be associated with only one edge node. Once the device is boun
 
 The steps are as follows:
 
-1. Go to the edge unit details page and select the left menu __Edge Resources__ -> __End Devices__.
+1. Go to the edge unit details page and select the left menu __Edge Resources__ -> __End Devices__ .
 
 2. On the right side of the end device list, click the __⋮__ button and select __Bind Node__ from the popup menu.
 

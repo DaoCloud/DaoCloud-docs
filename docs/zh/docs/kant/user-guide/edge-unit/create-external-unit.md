@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 创建外接边缘单元
 
 **外接边缘单元** 指的是将企业系统中已安装的 KubeEdge 接入到 DCE 5.0 云边协同中进行统一管理。
@@ -30,7 +35,7 @@ KubeEdge：是一个开源系统，将原生的容器化应用程序编排功能
 
     ![基本信息](../../images/create-external-edgeunit-01.png)
 
-3. 组件仓库设置。KubeEdge 、Kant 的云端组件仓库设置；
+3. 组件仓库设置。KubeEdge、Kant 的云端组件仓库设置；
 
     - Kant 镜像仓库：系统所需云端组件镜像仓库，Kant 代指云边协同模块。
         - 默认：系统提供的默认镜像仓库地址，存储云边协同模块所需云端组件镜像，像 kant-worker-admission;

@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # What is Cloud Edge Collaboration
 
 In the past two years, there have been expectedly over tens of billions of terminals and sensors globally,

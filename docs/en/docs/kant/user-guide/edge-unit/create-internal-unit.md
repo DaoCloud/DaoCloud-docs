@@ -1,4 +1,6 @@
 ---
+hide:
+  - toc
 MTPE: FanLin
 Date: 2024-01-23
 ---

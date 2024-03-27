@@ -1,4 +1,9 @@
-# Creating External Edge Unit
+---
+hide:
+  - toc
+---
+
+# Create External Edge Unit
 
 **External Edge Unit** refers to integrating the existing KubeEdge installed in the enterprise system into DCE 5.0 Cloud Edge for unified management.
 
@@ -22,6 +27,12 @@ The following explains the steps to create an external edge unit:
     <!--- Edge Component Replicas: The number of replicas of cloud-side edge components to ensure high availability of edge components in case of cloud-side node failures.-->
 
     - Description: Description information of the edge unit.
+
+    !!! note
+
+        If you are working with a single-node cluster, please ensure that the master node supports
+        scheduling by removing the NoSchedule taint. This will prevent failures during the
+        installation of system components.
 
     <!-- Add image soon  -->
 
@@ -61,4 +72,4 @@ The following explains the steps to create an external edge unit:
 
 5. After completing the above information configuration, click the __OK__ button to finish creating the edge unit, and automatically return to the edge unit list.
 
-Next step: [Managing Edge Units](./manage-unit.md)
+Next step: [Manage Edge Units](./manage-unit.md)
