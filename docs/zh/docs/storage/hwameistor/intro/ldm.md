@@ -1,6 +1,5 @@
 # 本地磁盘管理器
 
-
 ![LDM 架构图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/storage/images/ldm.png)
 
 目前 LDM 还处于 `alpha` 阶段。

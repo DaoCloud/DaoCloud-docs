@@ -509,6 +509,7 @@ nav:
               - HwameiStor 本地存储:
                   - 介绍: storage/hwameistor/intro/index.md
                   - 组件:
+                      - 本地磁盘管理器: storage/hwameistor/intro/ldm.md
                       - 本地存储: storage/hwameistor/intro/ls.md
                       - DRBD 安装器:
                           - 介绍: storage/hwameistor/intro/drbd.md
@@ -516,6 +517,8 @@ nav:
                           - DRBD 自助编译操作: storage/hwameistor/intro/drdb-kernel-make.md
                       - 调度器: storage/hwameistor/intro/scheduler.md
                       - 准入控制器: storage/hwameistor/intro/admission-controller.md
+                      - 驱逐器: storage/hwameistor/intro/evictor.md
+                      - 指标采集器: storage/hwameistor/intro/exporter.md
                   - 资源介绍: storage/hwameistor/intro/resources.md
                   - 安装管理:
                       - 准备工作: storage/hwameistor/install/prereq.md
@@ -539,6 +542,7 @@ nav:
                       - 数据卷迁移: storage/hwameistor/resources/migrate.md
                       - 数据卷扩容: storage/hwameistor/resources/expand.md
                       - 数据卷 IO 限速: storage/hwameistor/resources/volume-ProvisionedIO.md
+                      - 数据卷驱逐: storage/hwameistor/resources/volume-eviction.md
                   - 系统审计日志: storage/hwameistor/resources/audit.md
                   - 应用场景:
                       - 应用场景概述: storage/hwameistor/application/overview.md
