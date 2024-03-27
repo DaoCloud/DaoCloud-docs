@@ -375,6 +375,7 @@ nav:
                   - Log in to an Insecure Container Registry: kangaroo/best-practice/insecure_registry.md
                   - Harbor Nginx Configuration Practices: kangaroo/best-practice/harbor-nginx.md
                   - Registry Capacity Resource Planning: kangaroo/best-practice/capacity-planning.md
+                  - Deploy Harbor through LoadBalancer: kangaroo/best-practice/lb.md
           - Cloud Native Network:
               - Intro:
                   - What is Network: network/intro/index.md
