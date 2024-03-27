@@ -53,7 +53,7 @@ Day 1 指的是 Kubernetes 及其所有相关插件的初始部署阶段，
 而 Day 2 经常指的是在混合多云环境中通过多个 Kubernetes 集群搭建完整生产环境的阶段。
 
 除了已在市场中拥有稳固地位的老牌厂商，鲜有其他厂商具备支持 Day-0-1-2 所有阶段的实力。
-而 [DaoCloud Network Technology Co. Ltd.](https://www.daocloud.io/en/) \
+而 [DaoCloud Network Technology Co. Ltd.](https://www.daocloud.io/en/)
 多年深耕云原生事业，已具备这样的专业资质和能力。
 
 DaoCloud 提供了一套分层的企业级 Kubernetes 平台解决方案。
