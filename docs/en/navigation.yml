@@ -921,6 +921,7 @@ nav:
                       - Update Redis Instance: middleware/redis/user-guide/update.md
                       - Delete Redis Instance: middleware/redis/user-guide/delete.md
                       - View Redis Logs: middleware/redis/user-guide/logs.md
+                      - Slow Query: middleware/redis/user-guide/slow-query.md
                   - Cross-Cluster Data Synchronization:
                       - Data Synchronization Intro: middleware/redis/best-practice/index.md
                       - Cluster Mode to Cluster Mode: middleware/redis/best-practice/cluster2cluster.md

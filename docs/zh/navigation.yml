@@ -943,6 +943,7 @@ nav:
                       - 更新 Redis 实例: middleware/redis/user-guide/update.md
                       - 删除 Redis 实例: middleware/redis/user-guide/delete.md
                       - 查看 Redis 日志: middleware/redis/user-guide/logs.md
+                      - 慢查询: middleware/redis/user-guide/slow-query.md
                   - 最佳实践:
                       - 单集群跨机房高可用部署: middleware/redis/best-practice/singleclustercrosszone.md
                       - 跨集群数据同步介绍: middleware/redis/best-practice/index.md
