@@ -142,3 +142,4 @@ spec:
   - latestRevision: false
     percent: 50
     revisionName: hello-00001
+```

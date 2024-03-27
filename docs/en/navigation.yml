@@ -193,7 +193,7 @@ nav:
                   - Knative:
                     - Intro: kpanda/user-guide/scale/knative/knative.md
                     - Install Knative: kpanda/user-guide/scale/knative/install.md
-                    - Use Cases: kpanda/user-guide/scale/knative/sense.md
+                    - Use Cases: kpanda/user-guide/scale/knative/scene.md
                     - Usage Practices: kpanda/user-guide/scale/knative/playground.md   
                   - Install metrics-server: kpanda/user-guide/scale/install-metrics-server.md
                   - Install kubernetes-cronhpa-controller: kpanda/user-guide/scale/install-cronhpa.md
