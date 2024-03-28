@@ -2,4 +2,10 @@
 
 我们为智能算力精心制作了以下视频教程，欢迎任何形式的反馈，谢谢 🙏
 
-> 敬请期待...
+## Notebook 使用 vGPU
+
+参阅[创建 Notebook](../baize/developer/notebooks/create.md)文档。
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/notebook.mp4" preload="metadata" poster="images/notebook.jpg"></video>
+</div>
