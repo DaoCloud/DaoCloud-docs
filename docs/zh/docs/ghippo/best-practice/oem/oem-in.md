@@ -23,7 +23,7 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
  
     `https://10.6.202.177:30443` 作为 DCE 5.0
 
-    ![DCE 5.0](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/oem-dce5.png)
+    ![DCE 5.0](./images/oem-dce5.png)
 
 1. 部署客户系统环境：
 
@@ -33,7 +33,7 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 
 1. 规划客户系统的 Subpath 路径： `http://10.6.202.177:30123/label-studio`（建议使用辨识度高的名称作为 Subpath，不能与主 DCE 5.0 的 HTTP router 发生冲突）。请确保用户通过 `http://10.6.202.177:30123/label-studio` 能够正常访问客户系统。
 
-    ![Label Studio](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/oem-label-studio.png)
+    ![Label Studio](./images/oem-label-studio.png)
 
 ## 统一域名和端口
 
@@ -132,7 +132,7 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 
 1. 验证 Label Studio UI 的 IP 和 端口是否一致：
    
-    ![Label Studio](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/label-studio-2.png)
+    ![Label Studio](./images/label-studio-2.png)
 
 ## 打通用户体系
 
@@ -160,7 +160,7 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 1. 下载 gproduct-demo-main.tar.gz 文件，将 src 文件夹下 App-iframe.vue 中的 src 属性值改为用户进入客户系统的绝对地址，如：
    __src="https://10.6.202.177:30443/label-studio" (DCE 5.0 地址 + Subpath)__ 或相对地址，如： __src="./external-anyproduct/insight"__ 
 
-    ![src 地址](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/src-2.png)
+    ![src 地址](./images/src-2.png)
 
 1. 删除 src 文件夹下的 App.vue 和 main.ts 文件，同时将：
     
@@ -169,7 +169,7 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 
 1. 按照 readme 步骤构建镜像（注意：执行最后一步前需要将 __demo.yaml__ 中的镜像地址替换成构建出的镜像地址）
 
-   ![构建镜像](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/best-practice/oem/images/oemin-image-2.png)
+   ![构建镜像](./images/oemin-image-2.png)
 
 对接完成后，将在 DCE 5.0 的一级导航栏出现 __客户系统__ ，点击可进入客户系统。
 
