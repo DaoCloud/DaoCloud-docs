@@ -993,6 +993,7 @@ nav:
                       - 实例监控: middleware/kafka/user-guide/insight.md
                       - 配置参数: middleware/kafka/user-guide/config.md
                       - 查看 Kafka 日志: middleware/kafka/user-guide/logs.md
+                      - 参数模板: middleware/kafka/user-guide/template.md
               - RabbitMQ 消息队列:
                   - 介绍:
                       - 什么是 RabbitMQ: middleware/rabbitmq/intro/index.md
