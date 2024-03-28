@@ -7,13 +7,19 @@ hide:
 
 在 Kafka 消息队列中，执行以下操作创建 Kafka 实例。
 
-1. 在右上角点击 __新建实例__ 。
+1. 在 Kafka 消息队列页面，点击右上角的 __新建实例__ 按钮。
 
-    ![新建实例](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/create01.png)
+    ![新建实例](../images/create01.png)
+
+    !!! tip
+
+        初次部署时，可以点击 **立即部署** 。
+
+        ![新建实例](../images/create011.png)
 
 2. 在 __创建 Kafka 实例__ 页面中，设置基本信息后，点击 __下一步__ 。
 
-    ![设置基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/create02.png)
+    ![设置基本信息](../images/create02.png)
 
 3. 配置规格后，点击 __下一步__ 。
 
@@ -22,19 +28,26 @@ hide:
     - 资源配额：根据实际情况选择规则。
     - 存储卷：选择 Kafka 实例的存储卷和储存空间总量。
 
-    ![配置规格](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/create03.png)
+    ![配置规格](../images/create03.png)
 
 4. 服务设置后，点击 __下一步__ 。
 
-    - 访问方式：可以选择集群内访问还是 Nodeport 访问。
-    - 服务设置：设置连接 Kafka 实例的用户名、密码。
+    - 服务设置：
+        - 集群内访问（ClusterIP）
+        - 节点端口（Nodeport）
+        - 负载均衡（LoadBalancer）
+    - 访问设置：
+        - 访问账户配置：连接 Kafka 实例的用户名、密码
+        - CMAK 资源配置：副本数、CPU 和内存配额
+        - 访问类型配置：节点端口（Nodeport）、负载均衡（LoadBalancer）
+    - 高级设置：按需配置
 
-    ![服务设置](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/create04.png)
+    ![服务设置](../images/create04.png)
 
 5. 确认实例配置信息无误，点击 __确定__ 完成创建。
 
-    ![点击 __确定__ ](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/create05.png)
+    ![点击确定](../images/create05.png)
 
 6. 在实例列表页查看实例是否创建成功。刚创建的实例状态为 __未就绪__ ，等几分钟后该状态变为 __运行中__ 。
 
-    ![查看状态](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/create06.png)
+    ![查看状态](../images/create06.png)
