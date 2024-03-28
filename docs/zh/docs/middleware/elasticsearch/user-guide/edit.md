@@ -19,7 +19,7 @@ hide:
 
     ![更新实例](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/update03.png)
 
-4. 修改服务设置后，点击 __确认__ 。
+4. 修改服务设置后，点击 __确定__ 。
 
     ![更新实例](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/update04.png)
 

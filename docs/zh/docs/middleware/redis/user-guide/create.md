@@ -23,7 +23,7 @@ hide:
 
     ![服务设置](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/redis/images/create03.png)
 
-5. 确认基本信息、规格配置、服务设置的信息准确无误后，点击 __确认__ 。
+5. 确认基本信息、规格配置、服务设置的信息准确无误后，点击 __确定__ 。
 
     ![确认](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/redis/images/create04.png)
 

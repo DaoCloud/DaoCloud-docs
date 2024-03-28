@@ -19,6 +19,6 @@ hide:
 
     ![规格配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/mongodb/images/update3.jpg)
 
-4. 修改服务设置后点击 __确认__ 。
+4. 修改服务设置后点击 __确定__ 。
 
     ![服务设置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/mongodb/images/update4.jpg)

@@ -74,7 +74,7 @@ hide:
 
                 ![访问模式](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/minio/images/create09.png)
 
-6. 确认实例配置信息无误，点击 __确认__ 完成创建。
+6. 确认实例配置信息无误，点击 __确定__ 完成创建。
 
     ![点击 __确定__ ](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/minio/images/create05.png)
 
