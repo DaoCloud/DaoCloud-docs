@@ -926,6 +926,7 @@ nav:
                       - 更新 MongoDB: middleware/mongodb/user-guide/update.md
                       - 删除 MongoDB: middleware/mongodb/user-guide/delete.md
                       - 查看 MongoDB 日志: middleware/mongodb/user-guide/logs.md
+                      - 备份管理: middleware/mongodb/user-guide/backup.md
               - PostgreSQL 数据库:
                   - 介绍:
                       - 什么是 PostgreSQL: middleware/postgresql/intro/index.md

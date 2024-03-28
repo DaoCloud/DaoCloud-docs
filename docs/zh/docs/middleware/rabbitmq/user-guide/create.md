@@ -31,7 +31,7 @@ hide:
 
     ![服务设置](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/mq06.png)
 
-5. 确认实例信息无误，点击 __确认__ 完成创建。
+5. 确认实例信息无误，点击 __确定__ 完成创建。
 
     ![确认](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/rabbitmq/images/mq07.png)
 

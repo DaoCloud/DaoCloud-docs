@@ -20,16 +20,13 @@ hide:
 
     ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/mongodb/images/create3.jpg)
 
-
 4. 设置用户名和密码等 __服务设置__ ，默认采用 ClusterIP 作为访问方式，用户还可以配置 __亲和性__ 、 __配置参数__ 等多项设置，可在 __通用设置__ 中查看。
 
     ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/mongodb/images/create4.jpg)
 
-
     ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/mongodb/images/create5.jpg)
 
-
-5. 确认基本信息、规格配置、服务设置的信息准确无误后，点击 __确认__ 。
+5. 确认基本信息、规格配置、服务设置的信息准确无误后，点击 __确定__ 。
 
     ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/mongodb/images/create6.jpg)
 
