@@ -1,5 +1,7 @@
 # 如何在集群中部署第二调度器 scheduler-plugins
 
+本文介绍如何在集群中部署第二个调度器 scheduler-plugins。
+
 ## 为什么需要 scheduler-plugins？
 
 通过平台创建的集群中会安装 K8s 原生的调度器，但是原生的调度器存在很多的局限性：
@@ -15,13 +17,13 @@
 
 ## 安装 scheduler-plugins
 
-**前置条件**
+### 前置条件
 
 - kubean 是在 v0.13.0 版本推出的新功能，选择管理集群时请确保版本是否 >= 此版本。
 - 安装 scheduler-plugins 版本为 v0.27.8，请确保集群版本是否与它兼容。
   参考文档 [Compatibility Matrix](https://github.com/kubernetes-sigs/scheduler-plugins/tree/master?tab=readme-ov-file#compatibility-matrix)。
 
-**安装流程**
+### 安装流程
 
 1. 在 **创建集群** -> **高级配置** -> **自定义参数** 中添加 scheduler-plugins 参数
 
@@ -57,86 +59,87 @@
     - `scheduler.kubeScheduler.enabled: false`，不安装 kube-scheduler，将 vgpu-scheduler 作为单独的 extender。
 
     ![安装 vgpu 插件](../../images/cluster-scheduler-plugin-03.png)
-    ![安装 vgpu 插件](../../images/cluster-scheduler-plugin-04.png)
 
 1. 在 scheduler-plugins 上扩展 vgpu-scheduler。
 
     ```bash
     [root@master01 charts]# kubectl get cm -n scheduler-plugins scheduler-config -ojsonpath="{.data.scheduler-config\.yaml}"
     ```
+
     ```yaml
     apiVersion: kubescheduler.config.k8s.io/v1
     kind: KubeSchedulerConfiguration
     leaderElection:
-    leaderElect: false
+      leaderElect: false
     profiles:
-    # Compose all plugins in one profile
-    - schedulerName: scheduler-plugins-scheduler
-    plugins:
-        multiPoint:
-        enabled:
-        - name: Coscheduling
-        - name: CapacityScheduling
-        - name: NodeResourceTopologyMatch
-        - name: NodeResourcesAllocatable
-        disabled:
-        - name: PrioritySort
+      # Compose all plugins in one profile
+      - schedulerName: scheduler-plugins-scheduler
+        plugins:
+          multiPoint:
+            enabled:
+              - name: Coscheduling
+              - name: CapacityScheduling
+              - name: NodeResourceTopologyMatch
+              - name: NodeResourcesAllocatable
+            disabled:
+              - name: PrioritySort
     pluginConfig:
-    - args:
-        permitWaitingTimeSeconds: 10
+      - args:
+          permitWaitingTimeSeconds: 10
         name: Coscheduling
     ```
 
-    修改 scheduler-plugins 的 scheduler-config 的 cofigmap 参数，如下：
+    修改 scheduler-plugins 的 scheduler-config 的 configmap 参数，如下：
 
     ```bash
     [root@master01 charts]# kubectl get cm -n scheduler-plugins scheduler-config -ojsonpath="{.data.scheduler-config\.yaml}"
     ```
+
     ```yaml
     apiVersion: kubescheduler.config.k8s.io/v1
     kind: KubeSchedulerConfiguration
     leaderElection:
-    leaderElect: false
+      leaderElect: false
     profiles:
-    # Compose all plugins in one profile
-    - schedulerName: scheduler-plugins-scheduler
-    plugins:
-        multiPoint:
-        enabled:
-        - name: Coscheduling
-        - name: CapacityScheduling
-        - name: NodeResourceTopologyMatch
-        - name: NodeResourcesAllocatable
-        disabled:
-        - name: PrioritySort
+      # Compose all plugins in one profile
+      - schedulerName: scheduler-plugins-scheduler
+        plugins:
+          multiPoint:
+            enabled:
+              - name: Coscheduling
+              - name: CapacityScheduling
+              - name: NodeResourceTopologyMatch
+              - name: NodeResourcesAllocatable
+            disabled:
+              - name: PrioritySort
     pluginConfig:
-    - args:
-        permitWaitingTimeSeconds: 10
+      - args:
+          permitWaitingTimeSeconds: 10
         name: Coscheduling
     extenders:
-    - urlPrefix: "${urlPrefix}"
-      filterVerb: filter
-      bindVerb: bind
-      nodeCacheCapable: true
-      ignorable: true
-      httpTimeout: 30s
-      weight: 1
-      enableHTTPS: true
-      tlsConfig:
-        insecure: true
-      managedResources:
-      - name: nvidia.com/vgpu
-        ignoredByScheduler: true
-      - name: nvidia.com/gpumem
-        ignoredByScheduler: true
-      - name: nvidia.com/gpucores
-        ignoredByScheduler: true
-      - name: nvidia.com/gpumem-percentage
-        ignoredByScheduler: true
-      - name: nvidia.com/priority
-        ignoredByScheduler: true
-      - name: cambricon.com/mlunum
-        ignoredByScheduler: true
+      - urlPrefix: "${urlPrefix}"
+        filterVerb: filter
+        bindVerb: bind
+        nodeCacheCapable: true
+        ignorable: true
+        httpTimeout: 30s
+        weight: 1
+        enableHTTPS: true
+        tlsConfig:
+          insecure: true
+        managedResources:
+          - name: nvidia.com/vgpu
+            ignoredByScheduler: true
+          - name: nvidia.com/gpumem
+            ignoredByScheduler: true
+          - name: nvidia.com/gpucores
+            ignoredByScheduler: true
+          - name: nvidia.com/gpumem-percentage
+            ignoredByScheduler: true
+          - name: nvidia.com/priority
+            ignoredByScheduler: true
+          - name: cambricon.com/mlunum
+            ignoredByScheduler: true
     ```
 
 1. 安装完 vgpu-scheduler 后，系统会自动创建 svc，urlPrefix 指定 svc 的 url。
@@ -149,7 +152,7 @@
             kubectl get svc -n ${namespace} 
             ```
 
-        - urlprifix 格式为 https://${ip 地址}:${端口}
+        - urlprifix 格式为 `https://${ip 地址}:${端口}`
 
 
 1. 将 scheduler-plugins 的 scheduler Pod 重启，加载新的配置文件。
