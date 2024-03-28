@@ -375,3 +375,6 @@
           otlp/global:
             endpoint: insight-opentelemetry-collector-gateway.insight-system.svc.cluster.local:4317  # 👈 修改为 gateway/lb 地址
     ```
+
+# 参考
+- [sampling](https://opentelemetry.io/docs/concepts/sampling/)
