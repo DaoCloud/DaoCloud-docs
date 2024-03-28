@@ -71,7 +71,7 @@ hide:
 
     ![服务设置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/elasticsearch/images/create04-1.png)
 
-6. 检查所填信息，确认无误后点击 __确认__ 。如需修改可点击 __上一步__ 返回修改配置。
+6. 检查所填信息，确认无误后点击 __确定__ 。如需修改可点击 __上一步__ 返回修改配置。
 
     ![配置确认](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/create05.png)
 

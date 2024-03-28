@@ -31,7 +31,7 @@ hide:
 
     ![服务设置](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/create04.png)
 
-5. 确认实例配置信息无误，点击 __确认__ 完成创建。
+5. 确认实例配置信息无误，点击 __确定__ 完成创建。
 
     ![点击 __确定__ ](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/kafka/images/create05.png)
 
