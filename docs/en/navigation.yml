@@ -163,6 +163,7 @@ nav:
                   - Choose Runtime: kpanda/user-guide/clusters/runtime.md
                   - Cluster Versions: kpanda/user-guide/clusters/cluster-version.md
                   - Integrate Rancher Cluster: kpanda/user-guide/clusters/integrate-rancher-cluster.md
+                  - Deploy 2nd Scheduler in a Cluster: kpanda/user-guide/clusters/cluster-scheduler-plugin.md
               - Namespaces:
                   - Create Namespace: kpanda/user-guide/namespaces/createns.md
                   - Exclusive Node to Namespace: kpanda/user-guide/namespaces/exclusive.md
