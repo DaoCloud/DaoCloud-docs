@@ -939,6 +939,7 @@ nav:
                       - 删除 PostgreSQL: middleware/postgresql/user-guide/delete.md
                       - 查看 PostgreSQL 日志: middleware/postgresql/user-guide/logs.md
                       - 手工设置工作负载反亲和: middleware/postgresql/user-guide/antiaffinity.md
+                      - 备份管理: middleware/postgresql/user-guide/backup.md
               - Redis 缓存服务:
                   - 介绍:
                       - 什么是 Redis: middleware/redis/intro/index.md
