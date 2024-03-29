@@ -16,8 +16,8 @@ This page allows you to download the offline package and checksum file of DCE 5.
 
 | Filename | Version | Architecture | File Size | Download | Update Date |
 | -------- | ------- | ------------ | --------- | -------- | ----------- |
-| offline-centos7-v0.3.30-amd64.tar | v0.3.30 | AMD64 | 16.33 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-v0.3.30-amd64.tar) | 2023-01-03 |
-| offline-kylin-v10sp2-v0.3.30-arm64.tar | v0.3.30 | ARM64 | 14.96 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-kylin-v10sp2-v0.3.30-arm64.tar) | 2023-01-03 |
+| offline-centos7-v0.3.30-amd64.tar | v0.3.30 | AMD 64 | 16.33 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-v0.3.30-amd64.tar) | 2023-01-03 |
+| offline-kylin-v10sp2-v0.3.30-arm64.tar | v0.3.30 | <font color="green">ARM 64</font> | 14.96 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-kylin-v10sp2-v0.3.30-arm64.tar) | 2023-01-03 |
 
 ## Validation
 
