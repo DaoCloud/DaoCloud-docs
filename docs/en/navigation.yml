@@ -141,6 +141,7 @@ nav:
                   - Jenkins Scenario Configuration: amamba/quickstart/scenarios-config.md
                   - Custom Toolchain in Jenkins: amamba/quickstart/jenkins-custom.md
                   - Jenkins High Availability Solution: amamba/quickstart/jenkins-HA.md
+                  - Using Cache in Pipeline: amamba/quickstart/job-cacher.md
       - Container:
           - Container Management:
               - Intro:
