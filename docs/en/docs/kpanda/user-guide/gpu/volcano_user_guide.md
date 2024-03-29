@@ -1,32 +1,32 @@
-# Volcano 安装和使用
+# Volcano Installation and Usage
 
-Volcano 是 CNCF 下首个基于 Kubernetes 的容器批处理计算平台，专注于高性能计算场景。
-它填补了 Kubernetes 在机器学习、大数据、科学计算等领域缺失的功能，为这些高性能工作负载提供了必要的支持。
+Volcano is the first container batch computing platform based on Kubernetes under CNCF, focusing on high-performance computing scenarios.
+It fills the gap in Kubernetes in areas such as machine learning, big data, and scientific computing, providing necessary support for these high-performance workloads.
 
-Volcano 与主流计算框架无缝对接，如 Spark、TensorFlow、PyTorch 等，并支持异构设备的混合调度，包括 CPU 和 GPU。
+Volcano seamlessly integrates with mainstream computing frameworks such as Spark, TensorFlow, and PyTorch, and supports mixed scheduling of heterogeneous devices, including CPU and GPU.
 
-本文介绍如何安装和使用 volcano。
+This article introduces how to install and use Volcano.
 
-## 安装 Volcano
+## Install Volcano
 
-1. 在 **集群详情** -> **Helm 应用** -> **Helm 模板** 中找到 Volcano 并安装。
+1. Find Volcano in **Cluster Details** -> **Helm Apps** -> **Helm Charts** and install it.
 
-    ![volcano helm 模板](../../images/volcano-01.png)
+    <!-- Add screenshot later -->
    
-    ![安装 volcano](../../images/volcano-02.png)
+    <!-- Add screenshot later -->
 
-2. 检查并确认 Volcano 是否安装完成，即 volcano-admission、volcano-controllers、volcano-scheduler 组件是否正常运行。
+2. Check and confirm whether Volcano is installed successfully, that is, whether the components volcano-admission, volcano-controllers, and volcano-scheduler are running properly.
 
-    ![volcano 组件](../../images/volcano-03.png)
+    <!-- Add screenshot later -->
 
-## Volcano 使用场景
+## Volcano Usage Scenarios
 
-### 使用 Volcano 调度 Job 资源
+### Scheduling Job Resources with Volcano
 
-- Volcano 是单独的调度器，在创建工作负载的时候指定调度器的名称（schedulerName: volcano）。
-- volcanoJob 资源是 Volcano 对 Job 的扩展，它将 job 拆分成更小的工作单位 task，task 之间可以相互作用。
+- Volcano is a separate scheduler, and you specify the name of the scheduler (schedulerName: volcano) when creating workloads.
+- The volcanoJob resource is an extension of Job by Volcano, which splits the job into smaller units of work called tasks, which can interact with each other.
 
-使用示例：
+Here is an example:
 
 ```yaml
 apiVersion: batch.volcano.sh/v1alpha1
@@ -53,9 +53,9 @@ spec:
               name: mpiworker
 ```
 
-### 并行计算 mpi
+### Parallel Computing with MPI
 
-使用示例：
+Here is an example:
 
 ```yaml
 apiVersion: batch.volcano.sh/v1alpha1
@@ -63,13 +63,13 @@ kind: Job
 metadata:
   name: lm-mpi-job
   labels:
-    "volcano.sh/job-type": "MPI" # volcano 原生支持 MPI 的调度作业
+    "volcano.sh/job-type": "MPI" # Volcano natively supports scheduling MPI jobs
 spec:
   minAvailable: 4
   schedulerName: volcano
   plugins:
-    ssh: [] # volcano 插件，master 和 worker 之间可以免密登录
-    svc: [] # master 和 worker 之间通过网络访问，自动创建 headless svc 资源
+    ssh: [] # Volcano plugin, allows passwordless login between master and worker
+    svc: [] # Allows network access between master and worker, automatically creates headless svc resources
   policies:
     - event: PodEvicted
       action: RestartJob
@@ -129,9 +129,9 @@ spec:
             - name: default-secret
 ```
 
-### Volcano 支持 TensorFlow
+### Volcano Support for TensorFlow
 
-使用示例：
+Here is an example:
 
 ```yaml
 apiVersion: batch.volcano.sh/v1alpha1
@@ -139,7 +139,7 @@ kind: Job
 metadata:
   name: tensorflow-benchmark
   labels:
-    "volcano.sh/job-type": "Tensorflow" # volcano 原生支持 tensorflow 的调度作业
+    "volcano.sh/job-type": "Tensorflow" # Volcano natively supports scheduling TensorFlow jobs
 spec:
   minAvailable: 3
   schedulerName: volcano
@@ -211,4 +211,5 @@ spec:
           restartPolicy: OnFailure
 ```
 
-如果您想了解 volcano 更多功能特性和使用场景，可以参考 [Volcano 介绍](https://volcano.sh/zh/docs/)。
+If you want to learn more about the features and usage scenarios of Volcano,
+refer to [Volcano Introduction](https://volcano.sh/zh/docs/).
