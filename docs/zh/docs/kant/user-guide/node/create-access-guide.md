@@ -17,8 +17,9 @@
     - 节点前缀：节点名称由“节点前缀-随机码”组成。
     - 驱动方式：控制组（CGroup）的驱动，用于对 Pod 和容器进行资源管理和资源配置，如CPU和内存资源的请求和限制。
     - CRI 服务地址：CRI Client 和 CRI Server 在本地进行通信的 socket 文件或者 TCP 地址，
-      例如 __unix:///run/containerd/containerd.sock__ 
-    - KubeEdge 边端镜像仓库：存储 KubeEdge 组件（Mosquitto、installation-package、pause）镜像仓库地址，如果边端镜像和云端镜像在一个镜像仓库，您可以点击 **引用云端地址** 按钮，快速填写。
+      例如 `unix:///run/containerd/containerd.sock`
+    - KubeEdge 边端镜像仓库：存储 KubeEdge 组件（Mosquitto、installation-package、pause）镜像仓库地址，
+      如果边端镜像和云端镜像在一个镜像仓库，您可以点击 **引用云端地址** 按钮，快速填写。
     - 描述：接入指南描述信息。
     - 标签：接入指南标签信息。
 
@@ -28,4 +29,4 @@
 
 ## 后续操作
 
-完成指南创建后，您可以查看 **接入指南**，并根据接入流程提示，完成对边缘节点的纳管操作，具体请参见[节点接入指南](./access-guide.md)。
+完成指南创建后，您可以查看 **接入指南** ，并根据接入流程提示，完成对边缘节点的纳管操作，具体请参见[节点接入指南](./access-guide.md)。

@@ -10,13 +10,9 @@ To manage edge nodes, the following steps need to be completed:
 1. Prepare and configure the edge nodes. The edge nodes need to meet specific requirements,
    which can be found in the [Edge Node Access Requirements](./join-rqmt.md).
 
-2. Create a batch task for registering the edge nodes in the cloud-edge coordination module to
-   obtain the installation guide. For detailed instructions, refer to
-   [Batch Registration of Edge Nodes](./batch-registration.md).
+2. Create an access guide in the Cloud-Edge Collaboration module to obtain the edge node configuration file and installation program. For details, please refer to [Creating an Access Guide](./create-access-guide.md).
 
-3. Follow the installation guide to obtain the installation tool and configuration files for the edge nodes,
-   and complete the process of connecting and managing the edge nodes. For more details,
-   see [Managing Edge Nodes](./managed-node.md).
+3. Follow the installation guide to complete the onboarding operation for the edge nodes. For details, please refer to [Edge Node Onboarding](./access-guide.md).
 
 The usage workflow is as follows:
 

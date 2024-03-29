@@ -10,8 +10,8 @@
 
 ## 前提条件
 
-- 已经按要求准备好节点，并配置好节点环境，具体请参见[边缘节点接入要求](./join-rqmt.md)。
-- 已经创建好边缘节点接入指南，具体请参见[创建接入指南](./create-access-guide.md)。
+- 已经按要求准备好节点，并配置好节点环境，具体请参见[边缘节点接入要求](./join-rqmt.md)
+- 已经创建好边缘节点接入指南，具体请参见[创建接入指南](./create-access-guide.md)
 
 ![接入指南](../../images/access-guide-03.png)
 
@@ -21,7 +21,7 @@
 
 1. 根据节点环境配置，选择对应的接入指南。
 
-1. 点击 **下载文件** 按钮，跳转到下载中心，在下载列表中选择对应版本和架构的边端安装包，kantadm_{版本}_{架构}.tar.gz。建议选择最新版本。
+1. 点击 **下载文件** 按钮，跳转到下载中心，在下载列表中选择对应版本和架构的边端安装包：`kantadm_{版本}_{架构}.tar.gz`。建议选择最新版本。
 
     ![下载边端安装包](../../images/access-guide-04.png)
 
@@ -35,7 +35,7 @@
 
     !!! note
 
-        将解压后的 kantadm 二进制文件放到 /usr/local/bin 目录下。
+        将解压后的 kantadm 二进制文件放到 `/usr/local/bin` 目录下。
 
 1. 通过 token 或证书方式，执行命令，接入节点。
 
@@ -49,9 +49,9 @@
 
     1. 接入节点，执行如下命令。
 
-    ```shell
-    kantadm join --cloudcore-host=10.31.226.14 --websocket-port=30000 --node-prefix=edge --token=b2d6bb5d9312c39ffac08ecfd5030bed006b8b67d0799d632d381f19fca9e765.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTQ2NTk3NDV9.0sdaWbYSTURmAYmQwDn_zF7P9TwcRTSMhwPw6l87U7E --cgroup-driver=cgroupfs --remote-runtime-endpoint= --version=v1.12.2 --batch-name=edge --edge-registry=docker.m.daocloud.io/kubeedge --quic-port=30001 --http-port=30002 --stream-port=30003  --tunnel-port=30004 --labels=test=1,test1=1
-     ```
+        ```shell
+        kantadm join --cloudcore-host=10.31.226.14 --websocket-port=30000 --node-prefix=edge --token=b2d6bb5d9312c39ffac08ecfd5030bed006b8b67d0799d632d381f19fca9e765.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTQ2NTk3NDV9.0sdaWbYSTURmAYmQwDn_zF7P9TwcRTSMhwPw6l87U7E --cgroup-driver=cgroupfs --remote-runtime-endpoint= --version=v1.12.2 --batch-name=edge --edge-registry=docker.m.daocloud.io/kubeedge --quic-port=30001 --http-port=30002 --stream-port=30003  --tunnel-port=30004 --labels=test=1,test1=1
+        ```
 
     **证书安装**
 
@@ -67,9 +67,9 @@
 
     1. 接入节点，执行如下命令。
 
-            ```shell
-            kantadm join --cloudcore-host=10.2.129.13 --websocket-port=30000 --node-prefix=sh --remote-runtime-endpoint=unix:///run/containerd/containerd.sock --cgroup-driver=cgroupfs --version=v1.12.6 --batch-name=guide-test --edge-registry=docker.m.daocloud.io/kubeedge --quic-port=30001 --http-port=30002 --stream-port=30003 --tunnel-port=30004
-            ```
+        ```shell
+        kantadm join --cloudcore-host=10.2.129.13 --websocket-port=30000 --node-prefix=sh --remote-runtime-endpoint=unix:///run/containerd/containerd.sock --cgroup-driver=cgroupfs --version=v1.12.6 --batch-name=guide-test --edge-registry=docker.m.daocloud.io/kubeedge --quic-port=30001 --http-port=30002 --stream-port=30003 --tunnel-port=30004
+        ```
 
 1. 验证边缘节点是否纳管成功。
 
