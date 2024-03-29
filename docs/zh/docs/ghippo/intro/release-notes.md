@@ -2,9 +2,32 @@
 
 本页列出全局管理各版本的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
-## 2024-1-19
+## 2024-3-31
 
-### v0.23.1
+### v0.25.0
+
+### 功能
+
+- 一级导航栏可配置成根据权限显示
+- Workspace/Folder Editor 不支持修改 Workspace/Folder 名称
+- GHippo 支持 ARM 离线安装包
+- SDK 提供一个根据 Workspace ID 查找 Alias 的方法 GetWorkspaceById()
+- __运营管理__ 报表管理-容器组报表 增加 GPU 统计指标
+- __运营管理__ 计量计费-容器组计费 增加 GPU 计费
+
+### 修复
+
+- 修复全局管理登录前端 css 报错问题
+- 修复了可观测性界面 Refresh Token API 可能无法更新 Token 的 问题
+
+## 2024-1-31
+
+### v0.24.0
+
+#### 功能
+
+- 资源配额支持限制GPU
+- 支持DCE5的登陆用户才能打开 Insight 的 Grafana 等组件的界面
 
 #### 优化
 
