@@ -14,8 +14,8 @@ hide:
 
 | 文件名                      | 版本    | 架构 | 文件大小 | 下载                                           | 更新日期   |
 | ----------------------------- | ------- | -------- | ---------------------------------------------- | ---------- | ----------------------------- |
-| offline-centos7-community-v0.3.29-amd64.tar | v0.3.29 | AMD64 | 9.2 GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-community-v0.3.29-amd64.tar) | 2022-12-16 |
-| offline-kylin-v10sp2-community-v0.3.29-arm64.tar | v0.3.29 | ARM64 | 6.9 GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-kylin-v10sp2-community-v0.3.29-arm64.tar) | 2022-12-16 |
+| offline-centos7-community-v0.3.29-amd64.tar | v0.3.29 | AMD 64 | 9.2 GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-centos7-community-v0.3.29-amd64.tar) | 2022-12-16 |
+| offline-kylin-v10sp2-community-v0.3.29-arm64.tar | v0.3.29 | <font color="green">ARM 64</font> | 6.9 GB | [:arrow_down: 下载](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-kylin-v10sp2-community-v0.3.29-arm64.tar) | 2022-12-16 |
 
 ## 校验
 

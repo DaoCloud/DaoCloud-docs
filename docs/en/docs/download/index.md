@@ -10,8 +10,8 @@ This package is dedicated to the community and is available for free trial.
 
 | Filename | Version | Download | Update Date |
 | -------- | ------- | --------- | ----------- |
-| offline-community-v0.15.1-arm64.tar | v0.15.1 | [:arrow_right: Go to Download](./free/dce5-installer-v0.15.1.md) | 2024-02-26 |
-| offline-community-v0.15.1-amd64.tar | v0.15.1 | [:arrow_right: Go to Download](./free/dce5-installer-v0.15.1.md) | 2024-02-26 |
+| offline-community-v0.15.2-arm64.tar | v0.15.2 | [:arrow_right: Go to Download](./free/dce5-installer-v0.15.2.md) | 2024-03-14 |
+| offline-community-v0.15.2-amd64.tar | v0.15.2 | [:arrow_right: Go to Download](./free/dce5-installer-v0.15.2.md) | 2024-03-14 |
 
 [More Historical Versions](./free/dce5-installer-history.md)
 
@@ -21,8 +21,8 @@ This package is suitable for private cloud, hybrid cloud, multicloud, microservi
 
 | Filename | Version | Download | Update Date |
 | -------- | ------- | -------- | ----------- |
-| offline-v0.15.1-arm64.tar | v0.15.1 | [:arrow_right: Go to Download](./business/dce5-installer-v0.15.1.md) | 2024-02-26 |
-| offline-v0.15.1-amd64.tar | v0.15.1 | [:arrow_right: Go to Download](./business/dce5-installer-v0.15.1.md) | 2024-02-26 |
+| offline-v0.15.2-arm64.tar | v0.15.2 | [:arrow_right: Go to Download](./business/dce5-installer-v0.15.2.md) | 2024-03-14 |
+| offline-v0.15.2-amd64.tar | v0.15.2 | [:arrow_right: Go to Download](./business/dce5-installer-v0.15.2.md) | 2024-03-14 |
 
 [More Historical Versions](./business/dce5-installer-history.md)
 
@@ -53,10 +53,10 @@ The numerous modules included in DCE 5.0 can be downloaded separately to upgrade
 | MultiCloud Management | 524.58 MB | [:arrow_right: Go to Download](./modules/kairship.md) | 2024-01-02 |
 | Container Registry | 295.53 MB | [:arrow_right: Go to Download](./modules/kangaroo.md) | 2024-01-29 |
 | Insight | 2.70 GB | [:arrow_right: Go to Download](./modules/insight.md) | 2024-02-18 |
-| Microservice Engine | 1.34 GB | [:arrow_right: Go to Download](./modules/skoala.md) | 2024-01-18 |
+| Microservice Engine | 1.6 GB | [:arrow_right: Go to Download](./modules/skoala.md) | 2024-03-23 |
 | Service Mesh | 906.44 MB | [:arrow_right: Go to Download](./modules/mspider.md) | 2024-03-20 |
 | Cloud Edge Collaboration | 100.37 MB | [:arrow_right: Go to Download](./modules/kant.md) | 2024-01-04 |
-| Global Management | 500.89 MB | [:arrow_right: Go to Download](./modules/ghippo.md) | 2024-02-05 |
+| Global Management | 500.89 MB | [:arrow_right: Go to Download](./modules/ghippo.md) | 2024-03-27 |
 | Operations Management | 95.90 MB | [:arrow_right: Go to Download](./modules/gmagpie.md) | 2023-11-30 |
 | Virtual Machine | 1.43 GB | [:arrow_right: Go to Download](./modules/virtnest.md) | 2024-01-10 |
 

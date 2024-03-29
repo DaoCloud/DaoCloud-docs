@@ -15,8 +15,8 @@ This page allows you to download the offline package and checksum file of DCE 5.
 
 | Filename | Version | Architecture | File Size | Download | Update Date |
 | -------- | ------- | ------------ | --------- | -------- | ----------- |
-| offline-community-v0.6.1-amd64.tar | v0.6.1 | AMD64 | 5.89 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.6.1-amd64.tar) | 2023-04-12 |
-| offline-community-v0.6.1-arm64.tar | v0.6.1 | ARM64 | 5.52 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.6.1-arm64.tar) | 2023-04-12 |
+| offline-community-v0.6.1-amd64.tar | v0.6.1 | AMD 64 | 5.89 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.6.1-amd64.tar) | 2023-04-12 |
+| offline-community-v0.6.1-arm64.tar | v0.6.1 | <font color="green">ARM 64</font> | 5.52 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.6.1-arm64.tar) | 2023-04-12 |
 
 ## Validation
 

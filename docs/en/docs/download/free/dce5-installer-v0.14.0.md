@@ -14,8 +14,8 @@ This page provides downloads for the offline installation package and verificati
 
 | Filename | Version | Architecture | File Size | Download | Update Date |
 | --------- | ------- | ------------ | --------- | -------- | ----------- |
-| offline-community-v0.14.0-amd64.tar | v0.14.0 | AMD64 | 7.3 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.14.0-amd64.tar) | 2024-01-09 |
-| offline-community-v0.14.0-arm64.tar | v0.14.0 | ARM64 | 6.9 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.14.0-arm64.tar) | 2024-01-09 |
+| offline-community-v0.14.0-amd64.tar | v0.14.0 | AMD 64 | 7.3 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.14.0-amd64.tar) | 2024-01-09 |
+| offline-community-v0.14.0-arm64.tar | v0.14.0 | <font color="green">ARM 64</font> | 6.9 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.14.0-arm64.tar) | 2024-01-09 |
 
 ## Verification
 
