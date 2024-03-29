@@ -962,6 +962,7 @@ nav:
                       - Monitor Instance: middleware/kafka/user-guide/insight.md
                       - Config Parameters: middleware/kafka/user-guide/config.md
                       - View Kafka Logs: middleware/kafka/user-guide/logs.md
+                      - Parameter Template: middleware/kafka/user-guide/template.md
               - RabbitMQ Message Queue:
                   - Intro:
                       - What is RabbitMQ: middleware/rabbitmq/intro/index.md
