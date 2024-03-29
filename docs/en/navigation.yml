@@ -1052,8 +1052,8 @@ nav:
               - Edge Node:
                   - Overview: kant/user-guide/node/index.md
                   - Requirements to Join Edge Node: kant/user-guide/node/join-rqmt.md
-                  - Batch Register Edge Nodes: kant/user-guide/node/batch-registration.md
-                  - Connect Edge Nodes: kant/user-guide/node/managed-node.md
+                  - Create Integration Guide: kant/user-guide/node/create-access-guide.md
+                  - Edge Node Onboarding: kant/user-guide/node/access-guide.md
                   - Manage Edge Nodes: kant/user-guide/node/manage-node.md
                   - Batch Upgrade Edge Nodes: kant/user-guide/node/batch-upgrade.md
               - Edge Node Group:
