@@ -106,4 +106,4 @@ argo-cd:
 
 ### 参考资料
 
-https://argo-cd.readthedocs.io/en/stable/operator-manual/high_availability/
+- [Argo CD 官方的高可用配置步骤](https://argo-cd.readthedocs.io/en/stable/operator-manual/high_availability/)
