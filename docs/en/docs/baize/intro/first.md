@@ -2,9 +2,9 @@
 
 When entering DCE 5.0 Smart Computing Capability for the first time, you need to:
 
-- [Choose a Workspace](#_2)
-- [Select a Cluster](#_3)
-- [Confirm your Role](#_4)
+- [Choose a Workspace](#choose-a-workspace)
+- [Select a Cluster](#select-a-cluster)
+- [Confirm your Role](#roles)
 
 ## Choose a Workspace
 
@@ -30,8 +30,8 @@ You can choose which cluster to deploy and execute intelligent computing-related
 
 DCE 5.0 Smart Computing Capability provides two roles, which can be switched by clicking on the menu item in the lower left corner:
 
-- Administrator - Development Console: Can handle Notebooks, training tasks, datasets, etc.
-- Platform Administrator - Operations Management: Can manage GPU resources, queues, etc.
+- Admin - Development Console: Can handle Notebooks, training tasks, datasets, etc.
+- Platform Admin - Operations Management: Can manage GPU resources, queues, etc.
 
 Each role has an overview page that displays the current data that can be processed through graphical dashboards.
 
