@@ -756,6 +756,8 @@ nav:
                   - Access Microservie via Gateway: skoala/best-practice/gateway01.md
                   - Gateway to Service Mesh: skoala/best-practice/gateway-mesh.md
                   - Add Custom Attributes to Gateway Request Logs: skoala/best-practice/add-custom-attributes.md
+                  - HTTP to Dubbo Protocol Dynamic Routing: skoala/best-practice/http-to-dubbo.md
+                  - Cloud Native Custom Plugin Demo - caching: skoala/best-practice/envoy-extproc-caching-demo-go.md
               - Troubleshoot:
                   - skoala-init error about x-kubernets-validations: skoala/troubleshoot/auth-server.md   
               - Performance Tests:
