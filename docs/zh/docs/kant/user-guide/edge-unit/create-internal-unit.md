@@ -33,12 +33,13 @@ DCE 5.0 云边协同支持两种边缘单元：
     - 集群：运行边缘单元控制面的集群。
     - KubeEdge 版本：KubeEdge 开源系统发布的某一个版本，用于将容器化应用程序编排功能扩展到边缘的主机，
       它基于 kubernetes 构建，并为网络应用程序提供基础架构支持。
+    - MQTT 服务：是否开启边缘节点中默认的 KubeEdge mqtt 服务（mosquitto），主要作用于消息路由和设备 mapper 通信。
 
     <!--- 边缘组件副本数：云端边缘组件的副本数，确保云端节点故障时，边缘组件高可用。-->
 
     - 描述：边缘单元描述信息。
 
-    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/create-unit-02.png)
+    ![基本信息](../../images/create-edgeunit-05.png)
 
 3. 组件仓库设置。KubeEdge 、Kant 的云端组件仓库设置；
 
