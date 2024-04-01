@@ -8,8 +8,7 @@ hide:
 # Free Trial
 
 The modules included in DCE Community are [Global Management](../ghippo/intro/index.md),
-[Container Management](../kpanda/intro/index.md), [Workbench](../amamba/intro/index.md),
-[Insight](../insight/intro/index.md), and more.
+[Container Management](../kpanda/intro/index.md), and [Insight](../insight/intro/index.md).
 
 ```mermaid
 graph LR
@@ -21,6 +20,8 @@ classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
 classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
 class apply,get,activate k8s
+
+click apply "https://docs.daocloud.io/en/dce/license0.html#apply-for-a-license"
 ```
 
 ## Apply for a License
