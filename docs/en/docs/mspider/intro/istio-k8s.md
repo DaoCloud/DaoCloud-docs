@@ -1,4 +1,9 @@
-# DCE 5.0 服务网格中 Istio 与 K8s 版本对应情况
+---
+hide:
+  - toc
+---
+
+# Istio and K8s Versions Supported in DCE 5.0 Service Mesh
 
 | Istio Versions | Supported K8s Versions | Tested but not supported|
 | ------- | ----------------------------- | ------------------- |
