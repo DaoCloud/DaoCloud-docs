@@ -4,23 +4,21 @@
 
 #### argocd-repo-server
 
-argocd-repo-server 负责克隆 Git 存储库、使其保持最新并使用适当的工具生成清单。
+argocd-repo-server 负责克隆 Git 存储库、使其保持最新。
 存储库克隆到 /tmp(或环境变量中指定的路径 TMPDIR )。如果 Pod 具有太多存储库或存储库包含大量文件，则 Pod 可能会耗尽磁盘空间。
 为了避免此问题请安装持久卷。
 
 #### argocd-controller
 
-用于获取生成的清单和 Kubernetes API 服务器来获取实际 argocd-application-controller 的 argocd-repo-server 集群状态。
-每个控制器副本使用两个单独的队列来处理应用程序协调(毫秒)和应用程序同步(秒)。清单生成通常在协调期间花费最多时间。
-清单生成的持续时间受到限制，以确保控制器刷新队列不会溢出。
-Context deadline exceeded 如果清单生成花费太多时间，应用程序协调会失败并出现错误。
-作为一种解决方法，可以增加部署的价值 --repo-server-timeout-seconds 并考虑扩大 argocd-repo-server 部署规模。
-如果控制器管理太多集群并使用太多内存，那么您可以跨多个控制器副本对集群进行分片。要启用分片，请增加环境变量中的副本数 argocd-application-controller StatefulSet 并重复环境变量中的副本数 ARGOCD_CONTROLLER_REPLICAS。
+用于获取生成的 manifest 和请求 Kubernetes API 服务器来获取实际 argocd-application-controller 的 argocd-repo-server 集群状态。  
+每个控制器副本使用两个单独的队列来处理应用程序的协调(毫秒)和应用程序的同步(秒)。
+生成 manifest 时通常在协调期间花费最多时间，如果清单生成花费太多时间，应用程序协调会失败并出现错误，作为一种解决方法，可以增加部署的价值 --repo-server-timeout-seconds 并考虑扩大 argocd-repo-server 部署规模。  
+如果控制器管理太多集群，这将使用太多内存，您可以跨多个控制器副本对集群进行分片。要启用分片，请增加环境变量中的副本数 argocd-application-controller StatefulSet 并重复环境变量中的副本数 ARGOCD_CONTROLLER_REPLICAS。  
 默认情况下，控制器每10秒更新一次集群信息。如果您的集群网络环境存在问题，导致更新时间较长，您可以尝试修改环境变量，ARGO_CD_UPDATE_CLUSTER_INFO_TIMEOUT 增加超时时间（单位为秒）。
 
 #### argocd-server
 
-是无状态的，并且可能最不可能引起问题。为了确保升级期间不会出现停机，请考虑将副本数量增加到3或更多，并在环境变量中重复该数字 ARGOCD_API_SERVER_REPLICAS。
+这是无状态的，并且最不可能引起问题。为了确保升级期间不会出现停机，请考虑将副本数量增加到3或更多，并在环境变量中复制该数字 ARGOCD_API_SERVER_REPLICAS。
 环境 ARGOCD_GRPC_MAX_SIZE_MB 变量允许指定服务器响应消息的最大大小（以兆字节为单位）。默认值为 200。对于管理 3000 多个应用程序的 ArgoCD 实例，您可能需要增加此值。
 
 #### argocd-dex-server
@@ -108,4 +106,4 @@ argo-cd:
 
 ### 参考资料
 
-https://github.com/DaoCloud/DaoCloud-docs/pull/4077
+https://argo-cd.readthedocs.io/en/stable/operator-manual/high_availability/
