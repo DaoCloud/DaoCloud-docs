@@ -932,10 +932,12 @@ nav:
                       - View Redis Logs: middleware/redis/user-guide/logs.md
                       - Slow Query: middleware/redis/user-guide/slow-query.md
                   - Cross-Cluster Data Synchronization:
+                      - HA Deployment Across Data Centers: middleware/redis/best-practice/singleclustercrosszone.md
                       - Data Synchronization Intro: middleware/redis/best-practice/index.md
                       - Cluster Mode to Cluster Mode: middleware/redis/best-practice/cluster2cluster.md
                       - Sentinel Mode to Sentinel Mode: middleware/redis/best-practice/sentinel2sentinel.md
                       - Cluster Mode to Sentinel Mode: middleware/redis/best-practice/cluster2sentinel.md
+                      - External Access Based on Spiderpool: middleware/redis/best-practice/spiderpoolconfig.md
               - Elasticsearch:
                   - Intro:
                       - What is Elasticsearch: middleware/elasticsearch/intro/index.md
