@@ -2,6 +2,28 @@
 
 本页列出服务网格各版本的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2024-04-01
+
+### v0.24.0
+
+#### 功能
+
+- **新增** 集群节点列表接口 `/apis/mspider.io/v3alpha1/clusters/{cluster_name}/nodes`。
+- **新增** 网格网关亲和性字段 `affinity`。
+- **新增** 流量泳道列表接口 `page.search` 支持 `annotations` 字段搜索。
+- **新增** 对 Istio `1.19.8`、`1.20.4` 的支持。
+
+#### 修复
+
+- **修复** `ServiceShadow CRD` 中 `ServicePort` 部分新增 `container_port` 和 `protocol`.
+- **修复** 服务列表 `/apis/mcpc.mspider.io/v3alpha1/meshes/{meshId}/govern/services` 服务状态，新增 未注入 == `STATUS_UNSPECIFIED` 状态后，服务 `FailedReasn` 未做版本兼容问题。
+- **修复** 拓扑无法同时展示上下游能力。
+- **修复** `Telemetry` 中 `metrics` 格式问题。
+- **修复** 服务列表集群信息有误，并且在 `serviceShadow` 模式下没有显示错误信息。
+- **修复** `Istio` 版本小于 `1.20` `EnvoyFilter` 被删除，导致指标没数据问题。
+- **修复** 指标数双倍数据问题和客户端指标不准确问题。
+- **修复** 专有网格 `Istio` 版本小于 `1.20` 时，需要启用 `envoy filter` 来自定义指标监控。
+  
 ## 2024-01-30
 
 ### v0.23.0
@@ -9,13 +31,13 @@
 #### 功能
 
 - **新增** 服务和工作负载监控面板的监控面板，增加上下游流量分布
-- **新增** 适配 __Istio__ 版本至 __1.18.7__ ， __1.19.6__ 和 __1.20.2__
+- **新增** 适配 **Istio** 版本至 **1.18.7**，****19.6********20.2****
 
 #### 修复
 
-- **修复** __Dubbo__ + __Zookeeper__ 的 __Consumer__ 服务无法被识别为 __Dubbo__ 服务问题
-- **修复** 获取有效 __Istio__ 版本列表，应该根据集群版本进行过滤
-- **修复** __Istio__ __1.20__ 无法开启多云互联问题
+- **修复** **Dubbo** + **Zookeeper** 的 **Consumer** 服务无法被识别为 **Dubbo** 服务问题
+- **修复** 获取有效 **Istio** 版本列表，应该根据集群版本进行过滤
+- **修复** **Istio** **1.20** 无法开启多云互联问题
 
 ## 2023-12-31
 
@@ -24,17 +46,17 @@
 #### 功能
 
 - **新增** 自定义网格实例的系统组件资源配额
-- **新增** 更大规模： __S2000P8000__ 、 __S5000P20000__ 的网格实例
+- **新增** 更大规模：_**2000P8000_**__S**00P20000__ **格实例
 - **新增** 网关实例升级提醒，支持一键升级
 
 #### 优化
 
-- **升级** 支持的网格版本至 __1.18.6__ 和 __1.19.5__
-- **升级** __1.17__ 支持的网格版本为 __1.17.8-fix-20231226__ ，修复了之前的内存泄漏问题
+- **升级** 支持的网格版本至 **1.18.6** 和 **1.19.5**
+- **升级** **1.17** 支持的网格版本为 **1.17.8-fix-20231226**，修复了之前的内存泄漏问题
 
 #### 修复
 
-- **修复** __Sidecar__ 热升级无法在 __istio-proxy__ 用户下执行的问题
+- **修复** **Sidecar** 热升级无法在 **istio-proxy** 用户下执行的问题
 - **修复** 专有网格下，升级网格后网格的版本没有正确更新
 
 ## 2023-11-30
@@ -44,23 +66,23 @@
 #### 功能
 
 - **新增** 专有网格支持多云互联功能
-- **新增** 支持选择和升级新版本的 __Istio（1.19.3、1.18.5、1.17.6）__ 进行部署网格实例
-- **新增** __VM Agent__ 支持对 __Istio__ 进程进行健康检测和故障自恢复
-- **新增** __TrafficLane API__ 支持通过 __Annotations__ 进行操作
+- **新增** 支持选择和升级新版本的 **Istio（1.19.3、1.18.5、1.17.6）** 进行部署网格实例
+- **新增** **VM Agent** 支持对 **Istio** 进程进行健康检测和故障自恢复
+- **新增** **TrafficLane API** 支持通过 **Annotations** 进行操作
 
 #### 优化
 
 - **优化** 将服务列表状态与诊断状态使用相同的算法机制，确保诊断结果与状态字段的一致性
-- **优化** 改进托管网格服务的自动发现策略，只要任意集群的服务带有 __mspider.io/managed__ 标签，就展示该服务
+- **优化** 改进托管网格服务的自动发现策略，只要任意集群的服务带有 **mspider.io/managed** 标签，就展示该服务
 
 #### 修复
 
-- **修复** 解决创建网格时的死锁问题，防止在网格资源初始化完成之前提前创建 __Sidecar__ 资源
+- **修复** 解决创建网格时的死锁问题，防止在网格资源初始化完成之前提前创建 **Sidecar** 资源
 - **修复** 修复流量透传的问题，使得出入端口都能够正确放行
-- **修复** 修复网格对 __ETCD__ 的过度检测，解决网格状态显示异常的问题
+- **修复** 修复网格对 **ETCD** 的过度检测，解决网格状态显示异常的问题
 - **修复** 在集群移除时，容器管理现在会同步移除网格集群，确保操作的一致性
-- **修复** 修复了长时间运行 __MCPC Controller__ 后无法感知 __TrafficLane__ 资源变化的问题
-- **修复** 虚拟机停止时，现在会同时停止 __pilot-agent__ 进程，确保资源的正常释放
+- **修复** 修复了长时间运行 **MCPC Controller** 后无法感知 **TrafficLane** 资源变化的问题
+- **修复** 虚拟机停止时，现在会同时停止 **pilot-agent** 进程，确保资源的正常释放
 - **修复** 修复了虚拟机启动时异步执行清理操作和安装操作导致的偶发规则故障
 
 ## 2023-10-30
@@ -69,24 +91,24 @@
 
 #### 功能
 
-- **新增** __VM Agent__ 支持容器运行
+- **新增** **VM Agent** 支持容器运行
 - **新增** 支持删除虚拟机类型工作负载
-- **新增** 网格命名空间边车发现范围自定义，极大缩减 __Sidecar__ 资源消耗压力
-- **新增** 网格网关新增弹性伸缩配置 __auto_scaling__
+- **新增** 网格命名空间边车发现范围自定义，极大缩减 **Sidecar** 资源消耗压力
+- **新增** 网格网关新增弹性伸缩配置 **auto_scaling**
 
 #### 优化
 
-- **优化** 实现流量拓扑 __Graph__ 支持可选隐藏闲置节点能力
-- **优化** __docker__ 模式安装 __vmagent__ 取消检测主机 __glibc__ 版本
+- **优化** 实现流量拓扑 **Graph** 支持可选隐藏闲置节点能力
+- **优化** **docker** 模式安装 **vmagent** 取消检测主机 **glibc** 版本
 
 #### 修复
 
-- **修复** __Graph__ 查询命名空间过长，导致向 __Prometheus__ 服务发起的请求 URL 超出长度限制
+- **修复** **Graph** 查询命名空间过长，导致向 **Prometheus** 服务发起的请求 URL 超出长度限制
 - **修复** 工作负载注入状态有误
 - **修复** 工作空间接口资源绑定显示不准确
-- **修复** 虚拟机监控服务端口冲突 __15090__ ，导致 __istio__ 不可用
+- **修复** 虚拟机监控服务端口冲突 **15090**，导致 _**stio_**不可用
 - **修复** 虚拟机启动，前置清理操作与安装操作异步进行，偶发规则故障，导致流量不通
-- **修复** 因为 __su__ 命令导致 __envoy__ 进程 __ulimit__ 值过小的问题
+- **修复** 因为 **su** 命令导致 **envoy** 进程 **ulimit** 值过小的问题
 
 ## 2023-08-31
 
@@ -94,35 +116,35 @@
 
 #### 升级
 
-- **新增** __userinfo__ 接口，可以获取当前用户的权限信息。**注意 如果进入网格后，需要同时传入 `mesh_id` 参数才可以获取到精确的权限信息**
-- **新增** __Mcpc Controller__ 支持虚拟机（自动创建 __WorkloadShadow__ ）
+- **新增** **userinfo** 接口，可以获取当前用户的权限信息。**注意 如果进入网格后，需要同时传入 `mesh_id` 参数才可以获取到精确的权限信息**
+- **新增** **Mcpc Controller** 支持虚拟机（自动创建 **WorkloadShadow**）
 - **新增** 网格创建虚拟机（VM）服务接口
 - **新增** 虚拟机（VM）离线安装包构建和上传脚本
 - **新增** 虚拟机（VM）绑定服务并生成配置接口
-- **新增** __Grafana__ 路由面板添加 __Reporter__ 参数
-- **新增** __Mspider__ 虚拟机代理控制器（mspider-vm-agent）
-- **新增** __generator__ 包，实现 __ComponentAnalyzer__ ，传入 __MeshCluster__ 或 __GlobalMesh__ ，即可获取对应组件状态
+- **新增** **Grafana** 路由面板添加 **Reporter** 参数
+- **新增** **Mspider** 虚拟机代理控制器（mspider-vm-agent）
+- **新增** **generator** 包，实现 **ComponentAnalyzer**，传入 _**eshCluster_**或 _**lobalMesh_**即可获取对应组件状态
 - **优化** 网格是否可用升级接口，增加对权限的判断
-- **优化** 重写 __gsc-controller__ 下的 mesh-cluster 中 __reconcileComponentsStatus__
-- **升级** 前端版本至 __v0.17.0__
-- **升级** 支持的网格版本至 __1.16.6__ , __1.17.5__ , __1.18.2__
+- **优化** 重写 **gsc-controller** 下的 mesh-cluster 中 **reconcileComponentsStatus**
+- **升级** 前端版本至 **v0.17.0**
+- **升级** 支持的网格版本至 **1.16.6** , **1.17.5** , **1.18.2**
 
 #### 修复
 
-- **修复** 网格外的 __ServiceEntry__ 筛选异常问题
-- **修复** 查询虚拟机工作负载实例时 __workloadId__ 正则不兼容虚拟机工作负载 ID（`{CLUSTER}-vm-{VM_APP}-{VM_IP}-{VM_NETWORK}`）问题
+- **修复** 网格外的 **ServiceEntry** 筛选异常问题
+- **修复** 查询虚拟机工作负载实例时 **workloadId** 正则不兼容虚拟机工作负载 ID（`{CLUSTER}-vm-{VM_APP}-{VM_IP}-{VM_NETWORK}`）问题
 - **修复** 集群创建东西网关会强制覆盖网关系统默认的南北网关配置
-- **修复** 虚拟机服务自动创建了治理策略，并且修改 __label__ 以后无法自动同步到 __WorkloadShadow__ 问题
+- **修复** 虚拟机服务自动创建了治理策略，并且修改 **label** 以后无法自动同步到 **WorkloadShadow** 问题
 - **修复** 多云互联创建网络分组，名称不可为数字开头的问题
 - **修复** 更新网格时导致自定义配置丢失的问题
-- **修复** 移除 __Secret__ 的 __label__ ，导致 __work-api__ 组件空指针问题
+- **修复** 移除 **Secret** 的 **label**，导致 _**ork-api_**组件空指针问题
 - **修复** 删除网格检测时包含系统命名空间导致网格删除失败。（会在删除时被我们卸载）
-- **修复** __customMeshConfig__ 无法对 __Operator__ 生效的问题
-- **修复** __Operator__ 版本与实际安装 __Istio__ 的版本不匹配的问题
-- **修复** __Mspider__ 控制面 __API Server__ 和 __Work API Server__ 因为权限被禁用导致无法采集指标问题
-- **修复** __Mspider__ 控制面和 __MCPC Ckube__ 组件没有采集指标问题
-- **修复** __OTEL__ 上报的 __trace__ 数据中， `k8s.pod.name` 字段为 __unknown__ 的问题
-- **修复** 首次执行虚拟机安装脚本时，存在 __warning__ 告警
+- **修复** **customMeshConfig** 无法对 **Operator** 生效的问题
+- **修复** **Operator** 版本与实际安装 **Istio** 的版本不匹配的问题
+- **修复** **Mspider** 控制面 **API Server** 和 **Work API Server** 因为权限被禁用导致无法采集指标问题
+- **修复** **Mspider** 控制面和 **MCPC Ckube** 组件没有采集指标问题
+- **修复** **OTEL** 上报的 **trace** 数据中， `k8s.pod.name` 字段为 **unknown** 的问题
+- **修复** 首次执行虚拟机安装脚本时，存在 **warning** 告警
 
 ## 2023-07-28
 
@@ -130,51 +152,51 @@
 
 #### 升级
 
-- **新增** __Istio__ 版本列表会包含推荐版本
-- **新增** 是否加入互联网络池检测条件 __CLUSTER_EXIST_NET_POOLS__
+- **新增** **Istio** 版本列表会包含推荐版本
+- **新增** 是否加入互联网络池检测条件 **CLUSTER_EXIST_NET_POOLS**
 - **新增** 获取集群命名空间列表接口
-- **新增** __filter_system_namespaces__ 支持过滤系统命名空间
+- **新增** **filter_system_namespaces** 支持过滤系统命名空间
 - **新增** 获取集群中工作负载边车注入列表接口
-- **新增** 监控拓扑为工作负载视图功能新增字段 __graph_type__ ，当前只支持 __SERVICE_SCOPE__ 与 __WORKLOAD_SCOPE__ ，默认为 __SERVICE_SCOPE__
-- **新增** 删除网络分组检测新增检测条件，是否存在在网络互联池中（ __NET_EXISTS_NET_POOLS__ ）
-- **新增** 边车工作负载列表支持通过 __page.search__ 搜索工作实例标签 __PodLabels__
-- **新增** 查询多集群工作负载列表接口 `/apis/mspider.io/v3alpha1/meshes/{mesh_id}/clusters/-/sidecar-management/workloads` ，同时也支持搜索 __PodLabels__
+- **新增** 监控拓扑为工作负载视图功能新增字段 **graph_type**，当前只支持 _**ERVICE_SCOPE_**与 _**ORKLOAD_SCOPE_**默认为 __**RVICE_SCOPE__**
+- **新增** 删除网络分组检测新增检测条件，是否存在在网络互联池中（_**ET_EXISTS_NET_POOLS_**
+- **新增** 边车工作负载列表支持通过 **page.search** 搜索工作实例标签 **PodLabels**
+- **新增** 查询多集群工作负载列表接口 `/apis/mspider.io/v3alpha1/meshes/{mesh_id}/clusters/-/sidecar-management/workloads` ，同时也支持搜索 **PodLabels**
 - **新增** 服务诊断接口设计
-- **新增** 集群移除网格检测新增是否加入互联网络池检测条件 __CLUSTER_EXIST_NET_POOLS__ 实现
+- **新增** 集群移除网格检测新增是否加入互联网络池检测条件 **CLUSTER_EXIST_NET_POOLS** 实现
 - **新增** 网格网关新建名称有效性检测接口实现
-- **新增** 获取集群命名空间列表新增字段 __filter_system_namespaces__ 实现
-- **新增** 获取集群中工作负载边车注入列表新增字段 __filter_system_namespaces__ 实现
+- **新增** 获取集群命名空间列表新增字段 **filter_system_namespaces** 实现
+- **新增** 获取集群中工作负载边车注入列表新增字段 **filter_system_namespaces** 实现
 - **新增** 监控拓扑支持工作负载纬度
 - **新增** 服务诊断接口实现（可自动修复部分）
 - **新增** 需要手动修复的诊断项检测
 - **新增** 服务修复接口实现
-- **新增** 在 __Trace Tags__ 中，新增 `k8s.pod.name` 标签，用于标记 __Pod__ 的名称
+- **新增** 在 **Trace Tags** 中，新增 `k8s.pod.name` 标签，用于标记 **Pod** 的名称
 - **新增** 平台管理员及工作空间管理员可对工作空间下的网格进行多云网络互联的管理
-- **升级** __Istio api__ 修复 __WasmPlugin__ 无法设置优先级的问题
-- **升级** __ckube__ 到 __v1.3.5__ 解决服务网格列表可能为空的问题
+- **升级** **Istio api** 修复 **WasmPlugin** 无法设置优先级的问题
+- **升级** **ckube** 到 **v1.3.5** 解决服务网格列表可能为空的问题
 
 #### 修复
 
-- **修复** __sidecar__ 和 __sidecarResources__ 不一致的问题
+- **修复** **sidecar** 和 **sidecarResources** 不一致的问题
 - **修复** 工作负载列表排序索引混乱问题
-- **修复** 修复 __ListClusterNamespace__ 接口，支持按集群查询 __namespace__ 信息
+- **修复** 修复 **ListClusterNamespace** 接口，支持按集群查询 **namespace** 信息
 - **修复** 从全局管理绑定网格资源可能无法在网格内部显示的问题
-- **修复** 无法修改 __portName__ 为空的端口协议
-- **修复** __Workload__ 缺少 __Service__ 的诊断项的问题
+- **修复** 无法修改 **portName** 为空的端口协议
+- **修复** **Workload** 缺少 **Service** 的诊断项的问题
 - **修复** 服务配置同步诊断永远失败的问题
 - **修复** 某些批量操作接口的审计日志不准确的问题
-- **修复** 解除接入的集群，仍然被尝试进行 __livez__ 探测
+- **修复** 解除接入的集群，仍然被尝试进行 **livez** 探测
 - **修复** 专有网格模式下，当命名空间注入状态发生变化时，工作负载的状态没有更新为正确的状态
-- **修复** __leaderelection__ 没有成功同步的问题
-- **修复** 修复了在部分情况下，网格 __Pod__ 总数统计出错的问题
-- **修复** 修正报错信息中的错别字，将 __mot__ 改为 __not__
-- **修复** 无法修复某些服务的 __Sidecar__ 注入状态
-- **修复** 非 __admin__ 用户情况下，接口 `/apis/mspider.io/v3alpha1/clusters/{name}/components`
+- **修复** **leaderelection** 没有成功同步的问题
+- **修复** 修复了在部分情况下，网格 **Pod** 总数统计出错的问题
+- **修复** 修正报错信息中的错别字，将 **mot** 改为 **not**
+- **修复** 无法修复某些服务的 **Sidecar** 注入状态
+- **修复** 非 **admin** 用户情况下，接口 `/apis/mspider.io/v3alpha1/clusters/{name}/components`
   和 `/apis/mspider.io/v3alpha1/clusters/{name}` 在 `mesh_id` 不传时将调用失败
-- **修复** __Istio CRD__ 名称校验，统一为所有操作的名称首字母允许为数字
-- **修复** __Graph__ 接口关于 __label_selectors__ 提供的 __reporter__ 注释有误
+- **修复** **Istio CRD** 名称校验，统一为所有操作的名称首字母允许为数字
+- **修复** **Graph** 接口关于 **label_selectors** 提供的 **reporter** 注释有误
 - **修复** 服务诊断修复接口缺少消息体说明
-- **优化** __Istio__ 资源接口中， __namespaces__ 字段的描述
+- **优化** **Istio** 资源接口中，_**amespaces_**字段的描述
 - **优化** 网格控制面检测流程，忽略控制面集群
 - **优化** 不同角色的不同权限，与最新的权限设计保持一致
 - **优化** 权限设计，将多云网络互联权限从网格管理中独立出来
@@ -188,12 +210,12 @@
 #### 升级
 
 - **新增** 新增 `mspider.io/mesh-gateway-name` Label 规范，用于定义网格网关名称
-- **新增** 命名空间新增字段 __injectionStatus__ ，用于列表搜索
-- **新增** 在拓扑查询中，新增字段 __label_selectors__ ，条件查询拓扑结果
-- **新增** 边车工作负载信息新增字段 __Labels__ 和 __PodLabels__
-- **新增** 服务工作负载信息新增字段 __Labels__ 和 __PodLabels__
+- **新增** 命名空间新增字段 **injectionStatus**，用于列表搜索
+- **新增** 在拓扑查询中，新增字段 **label_selectors**，条件查询拓扑结果
+- **新增** 边车工作负载信息新增字段 **Labels** 和 **PodLabels**
+- **新增** 服务工作负载信息新增字段 **Labels** 和 **PodLabels**
 - **新增** 集群信息新增组件信息（components）与 Istio 版本（meshVersion）字段
-- **新增** 集群列表与网格管理集群列表新增 __include_components__ 字段，用于选择是否需要展示集群组件信息，例如 Insight 等外部组件
+- **新增** 集群列表与网格管理集群列表新增 **include_components** 字段，用于选择是否需要展示集群组件信息，例如 Insight 等外部组件
 - **新增** 为所有需要的接口，增加审计信息
 - **新增** 工作负载注入策略清除策略操作
 - **新增** 命名空间列表新增索引搜索实现
@@ -201,20 +223,20 @@
 - **新增** 工作负载注入策略清除能力
 - **新增** 集群列表新增组件状态实现
 - **新增** 新增 `mspider.io/mesh-gateway-name` Label 规范，用于定义网关网关名称
-- **新增** __MCPC Controller__ 实现纳管服务自动注入能力
-- **新增** Ghippo 资源上报功能，按照规范自动创建并且更新 __GProductResource__ 资源
-- **新增** __MCPC Controller__ 新增配置 `global.config.enableAutoInitPolicies`，用于是否开启纳管服务自动初始化治理策略
-- **新增** __MCPC Controller__ 新增配置 `global.config.enableAutoInjectedSidecar`，用于是否开启纳管服务自动注入策略
+- **新增** **MCPC Controller** 实现纳管服务自动注入能力
+- **新增** Ghippo 资源上报功能，按照规范自动创建并且更新 **GProductResource** 资源
+- **新增** **MCPC Controller** 新增配置 `global.config.enableAutoInitPolicies`，用于是否开启纳管服务自动初始化治理策略
+- **新增** **MCPC Controller** 新增配置 `global.config.enableAutoInjectedSidecar`，用于是否开启纳管服务自动注入策略
 - **新增** K8s 各版本兼容性测试
-- **优化** 新增 cache 优化查询集群 __Insight Agent__ 状态接口过慢问题
+- **优化** 新增 cache 优化查询集群 **Insight Agent** 状态接口过慢问题
 - **优化** 网格创建时对托管集群检测加强，避免创建冲突网格
 - **优化** 网格网关更新操作将忽略名称 (Name)、命名空间 (Namespace)、标签 (Label) 更新，避免更新触发异常
 - **优化** Kpanda 集群 kubeconfig 同步方式
-- **优化** __WorkloadShadow controller watcher__ 创建逻辑
+- **优化** **WorkloadShadow controller watcher** 创建逻辑
 - **升级** 支持查询集群与集群组件，允许不传 MeshID，独立获取信息
-- **升级** go package istio.io/istio 到 __v0.0.0-20230131034922-50fb2905d9f5__ 版本
-- **升级** __CloudTTY__ 到 __v0.5.3__ 版本
-- **升级** 前端版本至 __v0.15.0__ 版本
+- **升级** go package istio.io/istio 到 **v0.0.0-20230131034922-50fb2905d9f5** 版本
+- **升级** **CloudTTY** 到 **v0.5.3** 版本
+- **升级** 前端版本至 **v0.15.0** 版本
 
 #### 修复
 
@@ -224,21 +246,21 @@
 - **修复** 监控拓扑无法筛选命名空间
 - **修复** 监控拓扑服务错误率数据不准确问题
 - **修复** 修复网格不存在时应该返回 404 错误
-- **修复** Audit 存在 __nil pointer__ 导致 panic 的问题
+- **修复** Audit 存在 **nil pointer** 导致 panic 的问题
 - **修复** 审计日志中，Enum 类型的资源类型显示为数字的问题
 - **修复** GRPC 请求带用户认证信息时，行为和 HTTP 请求不一致的情况
-- **修复** 创建专有网格时， __Telemetry__ 资源没有被正确创建
-- **修复** __RegProxy watcher__ 不重建
-- **修复** __traffic-lane__ 插件会给流量打上错误的标签，导致流量泳道无法工作
+- **修复** 创建专有网格时，_**elemetry_**资源没有被正确创建
+- **修复** **RegProxy watcher** 不重建
+- **修复** **traffic-lane** 插件会给流量打上错误的标签，导致流量泳道无法工作
 - **修复** 删除网格时，没有正确清理集群配置
-- **修复** __MCPC Controller__ 接入不健康集群，运行不正常的问题
+- **修复** **MCPC Controller** 接入不健康集群，运行不正常的问题
 - **修复** 修复网格删除或者移除集群过程中，无法正常移除组件问题
 - **修复** GlobalMesh 和 MeshCluster 一直处于删除状态，无法强制删除的逻辑
 - **修复** 默认不注入的系统命名空间注入状态不正确的问题
-- **修复** 代理 __HostedAPIServe__ r 的时候，选择到了没就绪的 Pod，导致网格无法就绪
+- **修复** 代理 **HostedAPIServe** r 的时候，选择到了没就绪的 Pod，导致网格无法就绪
 - **修复** 网格删除时，Telemetry 删除失败导致网格删除流程失败的问题。因该资源在卸载 Istio 或移除
-  __Hosted ApiServer__ 时会被清理，所以不需要在删除网格流程中进行删除
-- **修复** __HostedAPIServer__ 因为权限问题无法再 OCP 上安装的问题
+  **Hosted ApiServer** 时会被清理，所以不需要在删除网格流程中进行删除
+- **修复** **HostedAPIServer** 因为权限问题无法再 OCP 上安装的问题
 - **修复** helm chart 中的描述信息
 
 #### 移除
@@ -252,38 +274,38 @@
 #### 升级
 
 - **新增** Ckube 按需加载资源。
-- **新增** IstioResource 字段 __labels__ 与 __annotations__ ，能够更新 Label 与 Annotation
+- **新增** IstioResource 字段 **labels** 与 **annotations**，能够更新 Label 与 Annotation
 - **新增** MeshCluster 中 ClusterProvider 同步实现
-- **新增** __mspider.io/protected__ Label 定义，用于网格保护能力
-- **新增** 边车升级支持多工作负载能力， __SidecarUpgrader__ 中 __workloads__ 同时支持 __workloadshadow.name__ 和 __deployment.name__
+- **新增** **mspider.io/protected** Label 定义，用于网格保护能力
+- **新增** 边车升级支持多工作负载能力，_**idecarUpgrader_**中 _**orkloads_**同时支持 _**orkloadshadow.name_**和 _**eployment.name_**
 - **新增** 工作负载类型改造成 string 实现
-- **新增** 工作负载相关接口新增字段 __localized_name__ ，展示工作负载名称
+- **新增** 工作负载相关接口新增字段 **localized_name**，展示工作负载名称
 - **新增** 工作负载注入策略清除能力
 - **新增** 获取全局配置接口 `/apis/mspider.io/v3alpha1/settings/global-configs`
-- **新增** __clusterPhase__ 字段，用于标记集群的状态（以前在 phase 字段中标记，现在剥离开）
-- **新增** __clusterProvider__ 字段，用于标记集群提供商
+- **新增** **clusterPhase** 字段，用于标记集群的状态（以前在 phase 字段中标记，现在剥离开）
+- **新增** **clusterProvider** 字段，用于标记集群提供商
 - **新增** 流量泳道 CRD 能力实现
 - **新增** 默认启用 Reg-Proxy 组件
 - **新增** 实现 Service 的 selector 字段输出
 - **新增** 通过给 Namespace 加 Network label 解决未注入 Sidecar 跨集群访问问题
 - **新增** 托管网格 hosted-apiserver 自定义参数配置能力。(该参数只有安装时生效，暂时不支持更新)，(更多参数请参考 helm 参数配置)
 - **新增** 网格控制面组件状态
-- **新增** 网格网格查询接口新增 __loadBalancerStatus__ 字段，用于描述实际分配的 LB 地址
+- **新增** 网格网格查询接口新增 **loadBalancerStatus** 字段，用于描述实际分配的 LB 地址
 - **新增** 网格组件进度详情接口 `/apis/mspider.io/v3alpha1/meshes/{mesh_id}/components-progress`
 - **新增** 为控制面组件增加 HPA
-- **新增** 新增获取集群 __StorageClass__ 接口定义
+- **新增** 新增获取集群 **StorageClass** 接口定义
 - **新增** 新增获取集群安装组件接口（目前支持 Insight Agent）
 - **优化** 绑定/解绑工作空间的使用体验
-- **优化** 工作负载相关接口字段 __workload_kind__ 类型从枚举优化为 __string__
+- **优化** 工作负载相关接口字段 **workload_kind** 类型从枚举优化为 **string**
 - **优化** 托管网格情况下，对于集群 k8s 版本检测 除包含工作集群外，也包含对控制面集群的版本检测
-- **升级** 升级 CloudTTY 到 __0.5.3__ 版本
+- **升级** 升级 CloudTTY 到 **0.5.3** 版本
 - **升级** WorkloadShadow controller watcher 创建逻辑
 
 #### 修复
 
-- **修复** __helm chart__ 中的描述信息
+- **修复** **helm chart** 中的描述信息
 - **修复** RegProxy watcher 不重建。
-- **修复** __traffic-lane__ 插件会给流量打上错误的标签，导致流量泳道无法工作。
+- **修复** **traffic-lane** 插件会给流量打上错误的标签，导致流量泳道无法工作。
 - **修复** 修复网格删除或者移除集群过程中，无法正常移除组件问题。
 - **修复** 修复网格不存在时应该返回 404 错误。
 - **修复** CloudShell 权限问题。
@@ -328,11 +350,11 @@
 - **修复** 未兼容 grpcgateway-accept-language（等价与 HTTP 的 Accept-Language）Header，导致无法正确切换中英文模式模式
   当前同时兼容 Accept 与 Accept-Language 两种模式
 - **修复** 同步 OpenAPI 时，由于 shadow clone 代码导致 upstream 无法 push 的问题
-- **修复** 无法更新带 __.__ 的 Istio 资源
+- **修复** 无法更新带 **.** 的 Istio 资源
 - **修复** 在 1.17.1 版本中，istio-proxy 无法正常启动的问题
 - **修复** ingress gateway 缺少 name 导致 merge 失败无法部署的问题
 - **修复** 服务地址无法搜索的问题
-- **修复** 无法更新带 __.__ 的 Istio 资源 的问题
+- **修复** 无法更新带 **.** 的 Istio 资源 的问题
 - **修复** 之前 controller 内存泄漏的问题。
 - **修复** add/delete cluster 有时没有正确触发的逻辑。
 - **修复** 了托管模式下 istio-system 可能被误删的情况。
@@ -363,7 +385,7 @@
 
 #### 修复
 
-- **修复** 无法更新带 __.__ 的 Istio 资源
+- **修复** 无法更新带 **.** 的 Istio 资源
 - **修复** 在 1.17.1 版本中，istio-proxy 无法正常启动的问题
 - **修复** ingress gateway 缺少 name 导致 merge 失败无法部署的问题
 
@@ -464,8 +486,8 @@
 
 #### 新功能
 
-- **新增** __密钥管理__ 相关 API
-- **新增** 在 __虚拟服务__ 、 __目标规则__ 、 __网关规则__ 列表
+- **新增** **密钥管理** 相关 API
+- **新增** 在 **虚拟服务**、****规则****_网关**__ 列**
 - **新增**治理策略标签及相关筛选能力
 - **新增** 网格中集群健康状态检查能力
 - **新增** otel sdk 接入
