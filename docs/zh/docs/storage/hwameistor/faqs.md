@@ -150,7 +150,7 @@ HwameiStor 可以立即将 Pod 调度到其他数据卷所在的可用节点，�
 
 当查看 `LocalStorageNode`出现如下报错：
 
-![faq_04](img/faq04.png)
+![faq_04](../images/faq4.png)
 
 可能的错误原因：
 
