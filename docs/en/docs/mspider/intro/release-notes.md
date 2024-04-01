@@ -9,6 +9,30 @@ Date: 2023-10-30
 
 This page lists all the Release Notes for each version of Service Mesh, providing convenience for users to learn about the evolution path and feature changes.
 
+## 2024-04-01
+
+### v0.24.0
+
+#### Features
+
+- **Added** API endpoint for cluster node list: `/apis/mspider.io/v3alpha1/clusters/{cluster_name}/nodes`
+- **Added** affinity field for mesh gateway
+- **Added** support for searching annotations field in traffic lane list API `page.search`
+- **Added** support for Istio `1.19.8` and `1.20.4`
+
+#### Fixes
+
+- **Fixed** `container_port` and `protocol` in `ServicePort` section of `ServiceShadow CRD`
+- **Fixed** service status in service list API `/apis/mcpc.mspider.io/v3alpha1/meshes/{meshId}/govern/services`.
+  After adding the `STATUS_UNSPECIFIED` state for services that are not injected,
+  there was an issue with compatibility of the `FailedReason` field.
+- **Fixed** inability to display both upstream and downstream capabilities in topology
+- **Fixed** format issue with `metrics` in `Telemetry`
+- **Fixed** incorrect cluster information in service list and no error message displayed in `serviceShadow` mode
+- **Fixed** deletion of `EnvoyFilter` when Istio version is less than `1.20`, causing metric data to be missing
+- **Fixed** duplicate metric data and inaccurate client-side metrics
+- **Fixed** the need to enable `envoy filter` for custom metric monitoring in proprietary mesh when Istio version is less than `1.20`
+
 ## 2024-01-30
 
 ### v0.23.0
