@@ -10,7 +10,7 @@
 
 - 一级导航栏可配置成根据权限显示
 - Workspace/Folder Editor 不支持修改 Workspace/Folder 名称
-- GHippo 支持 ARM 离线安装包
+- Ghippo 支持 ARM 离线安装包
 - SDK 提供一个根据 Workspace ID 查找 Alias 的方法 GetWorkspaceById()
 - __运营管理__ 报表管理-容器组报表 增加 GPU 统计指标
 - __运营管理__ 计量计费-容器组计费 增加 GPU 计费
@@ -166,7 +166,7 @@
 
 - 修复工作空间集群名称可能为空的问题
 - 修复 Folder Admin 角色工作空间授权列表权限问题
-- 修复 GHippo 0.17 升级到 0.18 失败的问题
+- 修复 Ghippo 0.17 升级到 0.18 失败的问题
 - 修复新增共享资源，选择集群类型 options 都相同的问题
 - 修复资源组列表，网格类型资源不能解绑
 
@@ -303,7 +303,7 @@
 - 自定义角色功能(创建/编辑/删除/查看/列表)
 - 支持 GProduct 权限点及自定义角色功能对接
 - 失联集群资源处理
-- GHippo OpenAPI 文档实现
+- Ghippo OpenAPI 文档实现
 - 给 GProduct 提供插入审计日志 SDK
 
 #### 修复
@@ -375,7 +375,7 @@
 #### 优化
 
 - 通过 CI 自动构建纯离线包
-- 优化 GHippo 升级文档
+- 优化 Ghippo 升级文档
 
 ## 2022-11-28
 

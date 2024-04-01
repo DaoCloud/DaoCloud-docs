@@ -3,20 +3,43 @@
 This page lists the Release Notes for global management of each version,
 so that you can understand the evolution path and feature changes of each version.
 
-## 2024-1-19
+## 2024-3-31
 
-### v0.23.1
+### v0.25.0
+
+### Features
+
+- Configurable top navigation bar based on permissions
+- Workspace/Folder Editor does not support modifying Workspace/Folder names
+- Ghippo supports ARM offline installation package
+- SDK provides a method GetWorkspaceById() to find Alias based on Workspace ID
+- __Operations Management__ - Pod Report in Report Management adds GPU statistics metrics
+- __Operations Management__ - Pod Billing in Metering and Billing adds GPU billing
+
+### Fixes
+
+- Fixed frontend CSS error in global management login
+- Fixed an issue where the Refresh Token API in the observability interface may not update the token
+
+## 2024-1-31
+
+### v0.24.0
+
+#### Features
+
+- Resource quotas support limiting GPU
+- Only DCE5 logged-in users can open the interfaces of components such as Grafana in Insight
 
 #### Improvements
 
-- Use single flight mechanism to limit the traffic when triggering FoldersAuthz CR
-- Filter out cases of duplicate authorization
+- Use single flight mechanism to limit the rate when triggering FoldersAuthz CR
+- Filter out duplicate authorizations
 - Do not store Workspace authorization information in FoldersAuthz CR
 - Perform a full update of FoldersAuthz CR when ghippo-controller-manager restarts
 
-#### Fix
+#### Fixes
 
-- Fix the issue of frequent updates to FoldersAuthz CR due to a large number of authorization requests causing k8s to crash.
+- Fixed the issue of excessive updates to FoldersAuthz CR due to a large number of authorization requests causing k8s overload
 
 ## 2023-12-29
 
@@ -144,7 +167,7 @@ so that you can understand the evolution path and feature changes of each versio
 
 - Fixed the issue where workspace cluster names could be empty.
 - Fixed the permission issue with Folder Admin role workspace authorization list.
-- Fixed the upgrade failure from GHippo 0.17 to 0.18.
+- Fixed the upgrade failure from Ghippo 0.17 to 0.18.
 - Fixed the issue where the options for selecting cluster types were the same when adding shared resources.
 - Fixed the issue in the resource group list where grid-type resources could not be unbound.
 
@@ -262,7 +285,7 @@ so that you can understand the evolution path and feature changes of each versio
 - Custom role feature (create/edit/delete/view/list)
 - Support GProduct permission point and custom role feature docking
 - Disconnected cluster resource processing
-- GHippo OpenAPI documentation implementation
+- Ghippo OpenAPI documentation implementation
 - Provide GProduct with insert audit log SDK
 
 #### Fixes
@@ -334,7 +357,7 @@ so that you can understand the evolution path and feature changes of each versio
 #### Optimization
 
 - Automatically build pure offline packages via CI
-- Optimize GHippo upgrade document
+- Optimize Ghippo upgrade document
 
 ## 2022-11-28
 
