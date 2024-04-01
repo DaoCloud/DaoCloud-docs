@@ -10,11 +10,13 @@
 
 **LocalDiskClaim (LDC)**: 这是系统使用磁盘的方式，通过创建 `LDC` 对象来向系统申请磁盘。用户可以添加一些对磁盘的描述来选择磁盘。
 
-> 目前，LDC 支持以下对磁盘的描述选项：
->
-> - NodeName
-> - Capacity
-> - DiskType(e.g. HDD/SSD)
+!!! note
+
+    目前，LDC 支持以下对磁盘的描述选项：
+
+    - NodeName
+    - Capacity
+    - DiskType（例如 HDD/SSD）
 
 ## 用法
 
@@ -39,22 +41,22 @@
 
     1. 创建 LocalDiskClaim。
 
-       ```bash
-       cat << EOF | kubectl apply -f -
-       apiVersion: hwameistor.io/v1alpha1
-       kind: LocalDiskClaim
-       metadata:
-         name: <localDiskClaimName>
-       spec:
-         description:
-           # e.g. HDD,SSD,NVMe
-           diskType: <diskType>
-         # 磁盘所在节点
-         nodeName: <nodeName>
-         # 使用磁盘的系统名称 比如：local-storage,local-disk-manager
-         owner: <ownerName>
-       EOF
-       ```
+        ```bash
+        cat << EOF | kubectl apply -f -
+        apiVersion: hwameistor.io/v1alpha1
+        kind: LocalDiskClaim
+        metadata:
+          name: <localDiskClaimName>
+        spec:
+          description:
+            # e.g. HDD,SSD,NVMe
+            diskType: <diskType>
+          # 磁盘所在节点
+          nodeName: <nodeName>
+          # 使用磁盘的系统名称 比如：local-storage,local-disk-manager
+          owner: <ownerName>
+        EOF
+        ```
 
         该命令用于创建一个磁盘使用的申请请求。在这个 yaml 文件里面，您可以在 description 字段添加对申请磁盘的描述，比如磁盘类型、磁盘的容量等等。
 
