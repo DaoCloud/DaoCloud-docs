@@ -85,125 +85,126 @@
 
 1. 添加一个configmap,用于配置插件
 
-前往 容器管理 -> 集群列表选择 kpanda-global-cluster -> 配置与密钥 -> 通过yaml新建， 内容如下:
-
-```yaml
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: cmp-plugin
-  namespace: argo-cd
-data:
-  avp.yaml: |
-    apiVersion: argoproj.io/v1alpha1
-    kind: ConfigManagementPlugin
+    前往 容器管理 -> 集群列表选择 kpanda-global-cluster -> 配置与密钥 -> 通过yaml新建， 内容如下:
+   
+    ```yaml
+    apiVersion: v1
+    kind: ConfigMap
     metadata:
-      name: argocd-vault-plugin
-    spec:
-      allowConcurrency: true
-      discover:
-        find:
-          command:
-            - sh
-            - "-c"
-            - "find . -name '*.yaml' | xargs -I {} grep \"<path\\|avp\\.kubernetes\\.io\" {} | grep ."
-      generate:
-        command:
-          - argocd-vault-plugin 
-          - generate 
-          - --verbose-sensitive-output=true 
-          - ./
-      lockRepo: false
-  avp-helm.yaml:
-    apiVersion: argoproj.io/v1alpha1
-    kind: ConfigManagementPlugin
-    metadata:
-      name: argocd-vault-plugin-helm
-    spec:
-      allowConcurrency: true
-      discover:
-        find:
-          command:
-            - sh
-            - "-c"
-            - "find . -name 'Chart.yaml' && find . -name 'values.yaml'"
-      generate:
-        command:
-            - sh
-            - "-c"
-            - |
-              helm template $argocd_APP_NAME -n $ARGOCD_APP_NAMESPACE ${argocd_ENV_HELM_ARGS} . |
-              argocd-vault-plugin generate -
-      lockRepo: false 
-```
+      name: cmp-plugin
+      namespace: argo-cd
+    data:
+      avp.yaml: |
+        apiVersion: argoproj.io/v1alpha1
+        kind: ConfigManagementPlugin
+        metadata:
+          name: argocd-vault-plugin
+        spec:
+          allowConcurrency: true
+          discover:
+            find:
+              command:
+                - sh
+                - "-c"
+                - "find . -name '*.yaml' | xargs -I {} grep \"<path\\|avp\\.kubernetes\\.io\" {} | grep ."
+          generate:
+            command:
+              - argocd-vault-plugin 
+              - generate 
+              - --verbose-sensitive-output=true 
+              - ./
+          lockRepo: false
+      avp-helm.yaml:
+        apiVersion: argoproj.io/v1alpha1
+        kind: ConfigManagementPlugin
+        metadata:
+          name: argocd-vault-plugin-helm
+        spec:
+          allowConcurrency: true
+          discover:
+            find:
+              command:
+                - sh
+                - "-c"
+                - "find . -name 'Chart.yaml' && find . -name 'values.yaml'"
+          generate:
+            command:
+                - sh
+                - "-c"
+                - |
+                  helm template $argocd_APP_NAME -n $ARGOCD_APP_NAMESPACE ${argocd_ENV_HELM_ARGS} . |
+                  argocd-vault-plugin generate -
+          lockRepo: false 
+    ```
 
 2. 修改argocd-repo-server的deployment
    前往 容器管理 -> 集群列表选择 kpanda-global-cluster -> 工作负载 -> 无状态负载 -> 选择命名空间 argocd -> 编辑 argocd-repo-server 的yaml，进行如下修改：
 
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: argocd-repo-server
-  namespace: argo-cd
-spec:
-  template:
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: argocd-repo-server
+      namespace: argo-cd
     spec:
-      volumes:                                                             # 添加volumes
-        - name: cmp-plugin 
-          configMap:
-            name: cmp-plugin
-            defaultMode: 420
-        - name: custom-tools
-          emptyDir: {}
-      initContainers:
-        - name: init-vault-plugin                                          # 添加一个新的initContainer
-          image: release.daocloud.io/amamba/argocd-vault-plugin:v1.17.0    # 如果是离线环境需要替换地址
-          command:
-            - sh
-            - '-c'
-          args:
-            - cp /usr/local/bin/argocd-vault-plugin /custom-tools
-          volumeMounts:
+      template:
+        spec:
+          volumes:                                                             # 添加volumes
+            - name: cmp-plugin 
+              configMap:
+                name: cmp-plugin
+                defaultMode: 420
             - name: custom-tools
-              mountPath: /custom-tools
-      containers:
-        - name: avp                                                       # 添加一个sidecar容器
-          image: quay.io/argoproj/argocd:v2.10.4                          # 镜像地址需要与repo-server的相同
-          command:
-            - /var/run/argocd/argocd-cmp-server
-          envFrom:
-            - secretRef:
-                name: argocd-vault-plugin-credentials
-          volumeMounts:
-            - name: var-files
-              mountPath: /var/run/argocd
-            - name: plugins
-              mountPath: /home/argocd/cmp-server/plugins
-            - name: tmp
-              mountPath: /tmp
-            - name: cmp-plugin
-              mountPath: /home/argocd/cmp-server/config/plugin.yaml
-              subPath: avp.yaml
-            - name: custom-tools
-              mountPath: /usr/local/bin/argocd-vault-plugin
-              subPath: argocd-vault-plugin
-        - name: repo-server                                              # 修改原有的repo-server container，添加envFrom和volumeMounts
-          envFrom:
-            - secretRef:
-                name: argocd-vault-plugin-credentials
-          volumeMounts:
-            - name: cmp-plugin
-              mountPath: /home/argocd/cmp-server/config/plugin.yaml
-              subPath: avp.yaml
-            - name: custom-tools
-              mountPath: /usr/local/bin/argocd-vault-plugin
-              subPath: argocd-vault-plugin   
-```
+              emptyDir: {}
+          initContainers:
+            - name: init-vault-plugin                                          # 添加一个新的initContainer
+              image: release.daocloud.io/amamba/argocd-vault-plugin:v1.17.0    # 如果是离线环境需要替换地址
+              command:
+                - sh
+                - '-c'
+              args:
+                - cp /usr/local/bin/argocd-vault-plugin /custom-tools
+              volumeMounts:
+                - name: custom-tools
+                  mountPath: /custom-tools
+          containers:
+            - name: avp                                                       # 添加一个sidecar容器
+              image: quay.io/argoproj/argocd:v2.10.4                          # 镜像地址需要与repo-server的相同
+              command:
+                - /var/run/argocd/argocd-cmp-server
+              envFrom:
+                - secretRef:
+                  name: argocd-vault-plugin-credentials
+              volumeMounts:
+                - name: var-files
+                  mountPath: /var/run/argocd
+                - name: plugins
+                  mountPath: /home/argocd/cmp-server/plugins
+                - name: tmp
+                  mountPath: /tmp
+                - name: cmp-plugin
+                  mountPath: /home/argocd/cmp-server/config/plugin.yaml
+                  subPath: avp.yaml
+                - name: custom-tools
+                  mountPath: /usr/local/bin/argocd-vault-plugin
+                  subPath: argocd-vault-plugin
+            - name: repo-server                                              # 修改原有的repo-server container，添加envFrom和volumeMounts
+              envFrom:
+                - secretRef:
+                    name: argocd-vault-plugin-credentials
+              volumeMounts:
+                - name: cmp-plugin
+                  mountPath: /home/argocd/cmp-server/config/plugin.yaml
+                  subPath: avp.yaml
+                - name: custom-tools
+                  mountPath: /usr/local/bin/argocd-vault-plugin
+                  subPath: argocd-vault-plugin   
+    ```
 
 ##### 单独安装argoCD
 
 在安装时需要修改如下helm values:
+
 ```yaml
 reposerver:                                        # 需要修改repo-server的配置
   volumes:                                         # 添加volumes
@@ -395,7 +396,6 @@ $ > kubectl get secret test-secret-k8s -o yaml | yq eval ".data" -
 !!! note
 
     如果敏感信息发生变更，argocd是**无法感知**到的（即使创建的Application选择自动同步），需要进入argocd的后台页面，点击`hard-refresh`按钮，再点击`sync`按钮才能进行同步。
-
 
 ## 依赖于项目或工具本身的加解密能力
 
