@@ -2,6 +2,26 @@
 
 本页列出 Insight 可观测性的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2024.03.31
+
+### Insight Server: v0.25.0
+
+#### 优化
+
+- **优化** 链路关联日志支持根据 TraceID 和容器组过滤
+- **优化** 支持对通知对象的敏感信息进行加密隐藏
+- **优化** 将 `insight-server` 拆分成 `insight-server` 和 `insight-manager` 两个组件
+- **优化** `opentelemetry-collector` 组件支持高可用
+- **优化** Grafana 和 Jaeger 未登陆不可访问
+- **优化** 支持自定义在安装时是否初始化日志索引的能力
+
+#### 修复
+
+- **修复** 修复告警相关接口的权限问题
+- **修复** 概览查询指标无数据的问题
+- **修复** YAML 导入告警策略时的校验问题
+- **修复**  Grafana 访问速度受限的缺陷
+
 ## 2024.01.31
 
 ### Insight Server: v0.24.0
