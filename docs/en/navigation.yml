@@ -493,61 +493,65 @@ nav:
                   - FAQs: network/modules/aliyun-terway/Q_A.md
           - Cloud Native Storage:
               - Intro:
-                  - What is storage: storage/index.md
+                  - What is Storage: storage/index.md
                   - Background: storage/background.md
                   - Benefits: storage/benefits.md
                   - Features: storage/features.md
                   - Storage Release Notes: storage/hwameistor/releasenotes.md
-              - HwameiStor storage:
+              - HwameiStor Storage:
                   - Intro: storage/hwameistor/intro/index.md
                   - Modules:
-                      - Local storage: storage/hwameistor/intro/ls.md
+                      - Local Disk Manager: storage/hwameistor/intro/ldm.md
+                      - Local Storage: storage/hwameistor/intro/ls.md
                       - DRBD Installer:
                           - Intro: storage/hwameistor/intro/drbd.md
                           - Kernel Versions Supported by DRBD: storage/hwameistor/intro/drbd-support.md
                           - DRBD Self-Compilation Instructions: storage/hwameistor/intro/drdb-kernel-make.md
                       - Scheduler: storage/hwameistor/intro/scheduler.md
-                      - Admission controller: storage/hwameistor/intro/admission-controller.md
+                      - Admission Controller: storage/hwameistor/intro/admission-controller.md
+                      - Evictor: storage/hwameistor/intro/evictor.md
+                      - Metric Exporter: storage/hwameistor/intro/exporter.md
                   - Resources: storage/hwameistor/intro/resources.md
                   - Installation:
                       - Preparation: storage/hwameistor/install/prereq.md
-                      - Resource requirements: storage/hwameistor/install/proresource.md
+                      - Resource Requirements: storage/hwameistor/install/proresource.md
                       - Install with Operator: storage/hwameistor/install/deploy-operator.md
                       - Install with hwameistor-operator: storage/hwameistor/install/deploy-helm.md
                       - Install DRDB: storage/hwameistor/install/drbdinstall.md
                       - Install with UI: storage/hwameistor/install/deploy-ui.md
                       - Post-check: storage/hwameistor/install/post-check.md
-                      - Storage and network adapter config: storage/hwameistor/install/storage-eth.md
-                      - Custom Kubelet root directory: storage/hwameistor/install/customized-kubelet.md
+                      - Storage and Network Adapter config: storage/hwameistor/install/storage-eth.md
+                      - Custom Kubelet Root Directory: storage/hwameistor/install/customized-kubelet.md
                       - Upgrade: storage/hwameistor/install/upgrade.md
                       - Uninstall: storage/hwameistor/install/uninstall.md
                   - Nodes and Disks:
-                      - LVM node expansion: storage/hwameistor/resources/lvm-nodes.md
-                      - Disk node expansion: storage/hwameistor/resources/disk-nodes.md
-                      - Disk expansion: storage/hwameistor/resources/disk-expansion.md
-                      - Disk reservation: storage/hwameistor/resources/reserveddisk.md
+                      - LVM Node Expansion: storage/hwameistor/resources/lvm-nodes.md
+                      - Disk Node Expansion: storage/hwameistor/resources/disk-nodes.md
+                      - Disk Expansion: storage/hwameistor/resources/disk-expansion.md
+                      - Disk Reservation: storage/hwameistor/resources/reserveddisk.md
                   - StorageClass: storage/hwameistor/resources/storagepool.md
                   - Volumes:
-                      - Volume migration: storage/hwameistor/resources/migrate.md
-                      - Volume expansion: storage/hwameistor/resources/expand.md
-                      - Volume IO rate limit: storage/hwameistor/resources/volume-ProvisionedIO.md
+                      - Volume Migration: storage/hwameistor/resources/migrate.md
+                      - Volume Expansion: storage/hwameistor/resources/expand.md
+                      - Volume IO Rate Limit: storage/hwameistor/resources/volume-ProvisionedIO.md
+                      - Volume Eviction: storage/hwameistor/resources/volume-eviction.md
                   - Use Cases:
                       - Overview: storage/hwameistor/application/overview.md
                       - Deploy StatefulSets:
-                          - Deploy via local volume: storage/hwameistor/application/local.md
-                          - Deploy via ha volume: storage/hwameistor/application/ha.md
+                          - Deploy via Local Volume: storage/hwameistor/application/local.md
+                          - Deploy via HA Volume: storage/hwameistor/application/ha.md
                   - FAQs: storage/hwameistor/faqs.md
               - Solutions to Integrate Open Source:
                   - Rook-Ceph:
-                      - Rook-Ceph intro: storage/solutions/rook-ceph.md
-                      - Deploy Rook-Ceph with app store: storage/solutions/dce-rook-ceph.md
+                      - Rook-Ceph Intro: storage/solutions/rook-ceph.md
+                      - Deploy Rook-Ceph with App Store: storage/solutions/dce-rook-ceph.md
                       - Deploy Rook-Ceph with Helm: storage/solutions/helm-rook-ceph.md
-                      - How to connect Ceph Dashboard: storage/solutions/ceph-dashboard.md
+                      - How to Connect Ceph Dashboard: storage/solutions/ceph-dashboard.md
                   - Longhorn:
-                      - Longhorn intro: storage/solutions/longhorn.md
-                      - Deploy Longhorn with app store: storage/solutions/dce-longhorn.md
+                      - Longhorn Intro: storage/solutions/longhorn.md
+                      - Deploy Longhorn with App Store: storage/solutions/dce-longhorn.md
                   - OpenEBS:
-                      - OpenEBS intro: storage/solutions/openebs.md
+                      - OpenEBS Intro: storage/solutions/openebs.md
                       - Deploy OpenEBS with Helm: storage/solutions/openebs-helm.md
                   - TiDB: storage/hwameistor/application/tidb.md
                   - MinIO: storage/hwameistor/application/minio/minio.md
@@ -756,6 +760,8 @@ nav:
                   - Access Microservie via Gateway: skoala/best-practice/gateway01.md
                   - Gateway to Service Mesh: skoala/best-practice/gateway-mesh.md
                   - Add Custom Attributes to Gateway Request Logs: skoala/best-practice/add-custom-attributes.md
+                  - HTTP to Dubbo Protocol Dynamic Routing: skoala/best-practice/http-to-dubbo.md
+                  - Cloud Native Custom Plugin Demo - caching: skoala/best-practice/envoy-extproc-caching-demo-go.md
               - Troubleshoot:
                   - skoala-init error about x-kubernets-validations: skoala/troubleshoot/auth-server.md   
               - Performance Tests:
@@ -926,10 +932,12 @@ nav:
                       - View Redis Logs: middleware/redis/user-guide/logs.md
                       - Slow Query: middleware/redis/user-guide/slow-query.md
                   - Cross-Cluster Data Synchronization:
+                      - HA Deployment Across Data Centers: middleware/redis/best-practice/singleclustercrosszone.md
                       - Data Synchronization Intro: middleware/redis/best-practice/index.md
                       - Cluster Mode to Cluster Mode: middleware/redis/best-practice/cluster2cluster.md
                       - Sentinel Mode to Sentinel Mode: middleware/redis/best-practice/sentinel2sentinel.md
                       - Cluster Mode to Sentinel Mode: middleware/redis/best-practice/cluster2sentinel.md
+                      - External Access Based on Spiderpool: middleware/redis/best-practice/spiderpoolconfig.md
               - Elasticsearch:
                   - Intro:
                       - What is Elasticsearch: middleware/elasticsearch/intro/index.md
@@ -1127,7 +1135,7 @@ nav:
                       - Microservice Audit Items: ghippo/user-guide/audit/gproduct-audit/skoala.md
                       - Service Mesh Audit Items: ghippo/user-guide/audit/gproduct-audit/mspider.md
                       - Middleware Audit Items: ghippo/user-guide/audit/gproduct-audit/mcamel.md
-                      - Ghippo Management Audit Items: ghippo/user-guide/audit/gproduct-audit/ghippo.md
+                      - Global Management Audit Items: ghippo/user-guide/audit/gproduct-audit/ghippo.md
               - Operations Management:
                   - ghippo/user-guide/report-billing/index.md
                   - Reports: ghippo/user-guide/report-billing/report.md

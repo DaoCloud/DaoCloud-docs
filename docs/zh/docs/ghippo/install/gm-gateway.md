@@ -118,7 +118,8 @@ server {
   # 开启国密功能
   enable_ntls         on;
 
-  # 国际 RSA 证书（可选）
+  # RSA 证书（可选）
+  # 如果您的浏览器不支持国密证书，那么您可以开启此选项，Tengine 会自动识别最终用户的浏览器，并使用 RSA 证书进行回退
   ssl_certificate                 /usr/local/nginx/conf/cert/rsa.demo-dev.daocloud.io.crt.pem;
   ssl_certificate_key             /usr/local/nginx/conf/cert/rsa.demo-dev.daocloud.io.key.pem;
 
@@ -135,6 +136,7 @@ server {
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header REMOTE-HOST $remote_addr;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    # 如果 Tengine 不与 Istio 同一集群，那么您需要将这里的地址修改为 Istio 网关的地址
     proxy_pass https://istio-ingressgateway.istio-system.svc.cluster.local;
   }
 }
@@ -151,3 +153,7 @@ nginx -s reload
 ## 下一步
 
 国密网关部署成功之后，[自定义 DCE 5.0 反向代理服务器地址](reverse-proxy.md)。
+
+## 验证
+
+您可以部署一个支持国密证书的 Web 浏览器。例如：[Samarium Browser](https://github.com/guanzhi/SamariumBrowser)，然后通过 Tengine 访问 DCE5 UI 界面，验证国密证书是否生效。

@@ -56,8 +56,7 @@ status:
       usedCapacityBytes: 1073741824
       usedVolumeCount: 1
       volumeCapacityBytesLimit: 17175674880
-      # ** 确保 volumes 为空 ** #
-      volumes:
+      volumes: # 确保 volumes 为空
   state: Ready
 ```
 

@@ -8,6 +8,48 @@ date: 2024-01-09
 This page lists the release notes for Cloud Edge Collaboration, providing an overview
 of the evolution path and feature changes in each version.
 
+## 2024-04-07
+
+### v0.9.0
+
+#### New Features
+
+- **Added** support for users to customize installation of MQTT service
+
+#### Improvements
+
+- **Improved** the edge node access process for a more user-friendly interaction
+
+#### Fixes
+
+- **Fixed** an issue with client displaying time in different time zones
+
+## 2024-02-06
+
+### v0.8.1
+
+#### New Features
+
+- **Added** support for rolling back versions of workloads
+- **Added** display of deployed workload versions
+- **Added** monitoring of edge node status, node resource usage, read/write speeds, receive/send rates, and other metrics
+- **Added** monitoring of workload status, resource usage, read/write speeds, receive/send rates, and other metrics
+- **Added** scheduling of GPU resources such as NVIDIA, Huawei Ascend, and others
+
+## 2024-01-09
+
+### v0.7.1
+
+#### New Features
+
+- **Added** support for integrating with KubeEdge installed in the cluster
+
+#### Improvements
+
+- **Improved** Batch deletion interaction for edge resources
+- **Improved** Edge unit image authentication interaction
+- **Improved** Custom device parameter configuration
+
 ## 2023-12-06
 
 ### v0.6.1
