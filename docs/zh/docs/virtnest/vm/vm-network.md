@@ -12,11 +12,14 @@
 在使用虚拟机网络功能之前，需要根据网络模式的不同配置不同的信息：
 
 1. 选择 Passt 网络模式
-   - 创建 macvlan 或 ipvlan 类型的 Multus CR，参考[创建 Multus CR](../../network/config/multus-cr.md)
-   - 创建子网及 IP 池，参考[创建子网和 IP 池](../../network/config/ippool/createpool.md)
-2. 选择 Bridge 网络模式
-   -  创建 ovs 类型的 Multus CR，可参考[创建 Multus CR](https://spidernet-io.github.io/spiderpool/v0.9/usage/install/underlay/get-started-ovs-zh_CN/)
-   -  创建子网及 IP 池，参考[创建子网和 IP 池](../../network/config/ippool/createpool.md)，
+
+    - 创建 macvlan 或 ipvlan 类型的 Multus CR，参考[创建 Multus CR](../../network/config/multus-cr.md)
+    - 创建子网及 IP 池，参考[创建子网和 IP 池](../../network/config/ippool/createpool.md)
+
+1. 选择 Bridge 网络模式
+
+    -  创建 ovs 类型的 Multus CR，可参考[创建 Multus CR](https://spidernet-io.github.io/spiderpool/v0.9/usage/install/underlay/get-started-ovs-zh_CN/)
+    -  创建子网及 IP 池，参考[创建子网和 IP 池](../../network/config/ippool/createpool.md)，
 
 ## 网络配置
 
@@ -42,11 +45,11 @@
         ![网络模式](../images/createvm-net02.png)
         
         -  选择 Passt 模式时，需要有一些前提条件。
-           - 创建 macvlan 或 ipvlan 类型的 Multus CR。可参考[创建 macvlan 或 ipvlan 类型的 Multus CR](../../network/config/multus-cr.md)
-           - 创建子网及 IP 池。可参考[创建子网及 IP 池](../../network/config/ippool/createpool.md)
+            - 创建 macvlan 或 ipvlan 类型的 Multus CR。可参考[创建 macvlan 或 ipvlan 类型的 Multus CR](../../network/config/multus-cr.md)
+            - 创建子网及 IP 池。可参考[创建子网及 IP 池](../../network/config/ippool/createpool.md)
         -  选择 Bridge 模式时，需要有一些前提条件。
-           - 创建 ovs 类型的 Multus CR，目前页面上无法创建，可参考[创建 ovs 类型的 Multus CR](https://spidernet-io.github.io/spiderpool/v0.9/usage/install/underlay/get-started-ovs-zh_CN/)
-           - 创建子网及 IP 池与 passt 模式步骤一致。
+            - 创建 ovs 类型的 Multus CR，目前页面上无法创建，可参考[创建 ovs 类型的 Multus CR](https://spidernet-io.github.io/spiderpool/v0.9/usage/install/underlay/get-started-ovs-zh_CN/)
+            - 创建子网及 IP 池与 passt 模式步骤一致。
 
 3. 添加网卡
    
