@@ -147,6 +147,7 @@ nav:
                   - 基于云原生网关（contour）的灰度发布实践: amamba/quickstart/contour-argorollout.md
                   - Argo-CD高可用部署: amamba/quickstart/argo-cd-HA.md
                   - 在流水线中使用缓存: amamba/quickstart/job-cacher.md
+                  - 在GitOps中启用凭证加密功能: amamba/user-guide/gitops/gitops-secret.md
       - 容器:
           - 容器管理:
               - 介绍:
