@@ -10,7 +10,7 @@
 
 - **优化** 链路关联日志支持根据 TraceID 和容器组过滤
 - **优化** 支持对通知对象的敏感信息进行加密隐藏
-- **优化** 将 `insight-server` 拆分成 `insight-apiserver` 和 `insight-controller` 两个组件
+- **优化** 将 `insight-server` 拆分成 `insight-server` 和 `insight-manager` 两个组件
 - **优化** `opentelemetry-collector` 组件支持高可用
 - **优化** Grafana 和 Jaeger 未登陆不可访问
 - **优化** 支持自定义在安装时是否初始化日志索引的能力
