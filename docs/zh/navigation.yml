@@ -1048,6 +1048,7 @@ nav:
                   - 什么是智能算力: baize/intro/index.md
                   - 安装: baize/intro/install.md
                   - 第一次使用: baize/intro/first.md
+                  - Release Notes: baize/intro/release-notes.md
               - 开发控制台:
                   - 介绍: baize/developer/index.md
                   - Notebooks:
