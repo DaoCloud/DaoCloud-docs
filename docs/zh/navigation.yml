@@ -1148,8 +1148,8 @@ nav:
                   - 资源配额: ghippo/user-guide/workspace/quota.md
                   - 资源组与共享资源的区别: ghippo/user-guide/workspace/res-gp-and-shared-res.md
               - 审计日志:
-                  - K8s审计日志采集开关: ghippo/user-guide/audit/open-audit.md
-                  - K8s审计日志输出开关: ghippo/user-guide/audit/open-k8s-audit.md
+                  - 采集 K8s 审计日志: ghippo/user-guide/audit/open-audit.md
+                  - 生成 K8s 审计日志: ghippo/user-guide/audit/open-k8s-audit.md
                   - 下载和导出审计日志: ghippo/user-guide/audit/audit-log.md
                   - 获取审计日志源IP: ghippo/user-guide/audit/source-ip.md
                   - 审计项汇总:
