@@ -1,6 +1,6 @@
-# 开启/关闭 K8s 审计日志的输出
+# 生成 K8s 审计日志
 
-默认 Kubernetes 集群不会输出审计日志信息。通过以下配置，可以开启 Kubernetes 的审计日志功能。
+默认 Kubernetes 集群不会生成审计日志信息。通过以下配置，可以开启 Kubernetes 的审计日志功能。
 
 !!! note
 
