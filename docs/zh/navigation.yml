@@ -1157,6 +1157,7 @@ nav:
                       - 容器管理审计项汇总: ghippo/user-guide/audit/gproduct-audit/kpanda.md
                       - 多云编排审计项汇总: ghippo/user-guide/audit/gproduct-audit/kairship.md
                       - 镜像仓库审计项汇总: ghippo/user-guide/audit/gproduct-audit/kangaroo.md
+                      - 虚拟机审计项汇总: ghippo/user-guide/audit/gproduct-audit/virtnest.md
                       - 可观测性审计项汇总: ghippo/user-guide/audit/gproduct-audit/insight.md
                       - 微服务审计项汇总: ghippo/user-guide/audit/gproduct-audit/skoala.md
                       - 服务网格审计项汇总: ghippo/user-guide/audit/gproduct-audit/mspider.md
