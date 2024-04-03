@@ -8,22 +8,21 @@
 
 #### 功能
 
-- **新增** 集群节点列表接口 `/apis/mspider.io/v3alpha1/clusters/{cluster_name}/nodes`
-- **新增** 网格网关亲和性字段 `affinity`
-- **新增** 流量泳道列表接口 `page.search` 支持 `annotations` 字段搜索
-- **新增** 对 Istio `1.19.8`、`1.20.4` 的支持
+- **新增** 集群节点列表 API `/apis/mspider.io/v3alpha1/clusters/{cluster_name}/nodes`。
+- **新增** 网格网关亲和性字段 `affinity`。
+- **新增** 流量泳道列表 API `page.search` 支持 `annotations` 字段搜索。
+- **新增** 适配 `Istio` 版本至 `v1.19.8`,`v1.20.4`。
 
 #### 修复
 
-- **修复** `ServiceShadow CRD` 中 `ServicePort` 部分新增 `container_port` 和 `protocol`
-- **修复** 服务列表 `/apis/mcpc.mspider.io/v3alpha1/meshes/{meshId}/govern/services` 服务状态，
-  新增未注入 == `STATUS_UNSPECIFIED` 状态后，服务 `FailedReasn` 未做版本兼容问题
-- **修复** 拓扑无法同时展示上下游能力
-- **修复** `Telemetry` 中 `metrics` 格式问题
-- **修复** 服务列表集群信息有误，并且在 `serviceShadow` 模式下没有显示错误信息
-- **修复** `Istio` 版本小于 `1.20` `EnvoyFilter` 被删除，导致指标没数据问题
-- **修复** 指标数双倍数据问题和客户端指标不准确问题
-- **修复** 专有网格 `Istio` 版本小于 `1.20` 时，需要启用 `envoy filter` 来自定义指标监控
+- **修复** `ServiceShadow CRD` 中 `ServicePort` 部分新增 `container_port` 和 `protocol`。
+- **修复** `/apis/mcpc.mspider.io/v3alpha1/meshes/{meshId}/govern/services`接口的服务状态 `STATUS_UNSPECIFIED`， `FailedReasn` 未做版本兼容问题。
+- **修复** 拓扑无法同时展示上下游能力。
+- **修复** `Telemetry` 中 `metrics` 格式问题。
+- **修复** 服务列表集群信息有误，并且在 `serviceShadow` 模式下没有显示错误信息。
+- **修复** `Istio` 版本小于 `1.20` `EnvoyFilter` 被删除，导致指标没数据问题。
+- **修复** 指标数双倍数据问题和客户端指标不准确问题。
+- **修复** 专有网格 `Istio` 版本小于 `1.20` 时，需要启用 `envoy filter` 来自定义指标监控。
   
 ## 2024-01-30
 
@@ -31,14 +30,14 @@
 
 #### 功能
 
-- **新增** 服务和工作负载监控面板的监控面板，增加上下游流量分布
-- **新增** 适配 **Istio** 版本至 **1.18.7**，****19.6********20.2****
+- **新增** 服务和工作负载监控面板的监控面板，增加上下游流量分布。
+- **新增** 适配 `Istio` 版本至 `v1.18.7`,`v1.19.6`,`v1.20.2`。
 
 #### 修复
 
-- **修复** **Dubbo** + **Zookeeper** 的 **Consumer** 服务无法被识别为 **Dubbo** 服务问题
-- **修复** 获取有效 **Istio** 版本列表，应该根据集群版本进行过滤
-- **修复** **Istio** **1.20** 无法开启多云互联问题
+- **修复** 同时使用`Dubbo` 和 `Zookeeper` 时， `Consumer` 服务无法被识别为 `Dubbo` 服务问题。
+- **修复** 获取有效 `Istio` 版本列表，未根据集群版本进行过滤。
+- **修复** `Istio` `v1.20` 无法开启多云互联问题。
 
 ## 2023-12-31
 
