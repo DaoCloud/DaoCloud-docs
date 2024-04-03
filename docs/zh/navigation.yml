@@ -1162,6 +1162,7 @@ nav:
                       - 服务网格审计项汇总: ghippo/user-guide/audit/gproduct-audit/mspider.md
                       - 中间件审计项汇总: ghippo/user-guide/audit/gproduct-audit/mcamel.md
                       - 全局管理审计项汇总: ghippo/user-guide/audit/gproduct-audit/ghippo.md
+                      - 虚拟机审计项汇总: ghippo/user-guide/audit/gproduct-audit/virtnest.md
               - 运营管理:
                   - ghippo/user-guide/report-billing/index.md
                   - 报表管理: ghippo/user-guide/report-billing/report.md
