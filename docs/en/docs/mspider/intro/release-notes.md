@@ -9,9 +9,9 @@ Date: 2023-10-30
 
 This page lists all the Release Notes for each version of Service Mesh, providing convenience for users to learn about the evolution path and feature changes.
 
-### 2024-04-01
+## 2024-04-01
 
-#### v0.24.0
+### v0.24.0
 
 #### Features
 
