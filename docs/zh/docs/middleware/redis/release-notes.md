@@ -4,6 +4,19 @@
 
 *[mcamel-redis]: mcamel 是 DaoCloud 所有中间件的开发代号，redis 是提供内存数据库缓存服务的中间件
 
+## 2024-03-31
+
+### v0.16.0
+
+- **新增** Redis 慢查询
+- **优化** Redis 哨兵模式支持开启 hostnetwork
+- **优化** 当用户权限不足时无法读取 redis 的密码
+- **优化** 升级 Redis 哨兵模式的 Operator
+- **修复** Redis 哨兵模式无法创建副本数大于 3 的问题（需升级 Operator）
+- **修复** Redis 哨兵模式宕机 Master 后用户侧有概率不可用的问题（需升级 Operator）
+- **修复** 备份路径默认为name.rdb
+- **修复** Redis 哨兵模式监控面板内存使用率有误的问题
+
 ## 2024-01-31
 
 ### v0.15.0
