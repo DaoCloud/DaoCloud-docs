@@ -1244,54 +1244,54 @@ nav:
                   - Operation Management: download/modules/gmagpie.md
   - Blogs:
       - Index: blogs/index.md
-      - 2024 Blogs:
-          - 202403 | Innovations at KubeCon Paris: blogs/240326-kubecon-eu.md
-          - 202403 | Create a Open Source Commercial Ecosystem: blogs/240301-osc-eco.md
-          - 202402 | New Book - Managing Cloud Native Data on Kubernetes: blogs/240203-book.md
-          - 202402 | Accelerated Computing: blogs/240201-ai-compute.md
-          - 202401 | Containerization AI Streamlines ML Models: blogs/240115-news.md
-          - 202401 | KubeEdge v1.15.0 Released: blogs/240108-kubeedge.md
-      - 2023 Blogs:
-          - 202312 | K8s 1.29 Released - Ambious Mandala Theme: blogs/231213-k8s-1.29.md
-          - 202312 | Does K8s Perform Better on Bare Metal vs. VMs?: blogs/231205-vm-bm-compare.md
-          - 202311 | Removals, Deprecations, and Changes in K8s 1.29: blogs/231115-k8s-1.29-changes.md
-          - 202310 | A Look Back for K8s Contributor Summit in Shanghai: blogs/20231008-kcs.md
-          - 202309 | Call for K8s Contributor Summit in Shanghai: blogs/230911-kubecon-contributor.md
-          - 202308 | K8s 1.28 Released: blogs/230815-k8s1.28.md
-          - 202308 | Unlease K8sGPT: blogs/230808-k8sgpt.md
-          - 202306 | Explore Ray Core (II): blogs/230615-ray.md
-          - 202306 | Explore Ray Core (I): blogs/230612-ray.md
-          - 202306 | Istio 1.18 Released: blogs/230609-istio118.md
-          - 202306 | Federation Middleware FedState: blogs/230605-fedstate.md
-          - 202306 | API Server Tracing to Beta: blogs/230601-api-server-tracing.md
-          - 202305 | Seccomp on Edge: blogs/230518-seccom.md
-          - 202305 | Install K8s (KLTS): blogs/230509-k8s-install.md
-          - 202305 | Accelerate Socket by Cilium: blogs/230508-cilium.md
-          - 202305 | K8s 1.27 Pod Startup: blogs/230428-pod-startup.md
-          - 202304 | Basics of VictoriaMetrics: blogs/230427-victoriametrics.md
-          - 202304 | Karmada Failover: blogs/230418-karmada-failover.md
-          - 202304 | CNCF Platform Engineering Whitepaper: blogs/230417-cncf-platform-wp.md
-          - 202304 | K8s 1.27 Released: blogs/230412-k8s-1.27.md
-          - 202304 | New Choice of Fixed IP: blogs/230411-spiderpool.md
-          - 202304 | Step-By-Step Install DCE Community: blogs/230405-step-by-step-dce5.md
-          - 202303 | Edge-Native App Principle: blogs/230317-edge-app-wp.md
-          - 202303 | Install DCE Community on Linux: blogs/230315-install-on-linux.md
-          - 202303 | Install DCE Community on macOS: blogs/230315-install-on-macos.md
-          - 202303 | Introduction to KWOK: blogs/230301-kwok.md
-          - 202302 | Open Source Projects in DCE Community: blogs/230214-open-projects.md
-          - 202302 | DaoCloud and K8s: blogs/230214-daocloud_k8s.md
-          - 202302 | DCE 5.0 Dev Quotations: blogs/230201-peter.md
-          - 202301 | 2023 Cloud Native Forecast: blogs/230201-forecast.md
-          - 202301 | Leverage Your Idle Computing Power: blogs/230110-res-usage.md
-      - 2022 Blogs:
-          - 202212 | K8s 1.26 Released: blogs/221209-k8s-1.26.md
-          - 202211 | DaoCloud is a KCSP: blogs/221116-kcsp.md
-          - 202210 | What is Container Management: blogs/221026-kpanda.md
-          - 202210 | What is Resource Management: blogs/221018-resource.md
-          - 202209 | What is Workbench: blogs/220925-amamba.md
-          - 202208 | What is Multicloud Management: blogs/220808-kairship.md
-          - 202207 | What is Service Mesh: blogs/220708-mspider.md
-          - 202206 | DCE 5.0 Dev Background: blogs/221008-dce-bg.md
+      - 2024:
+          - Innovations at KubeCon Paris: blogs/240326-kubecon-eu.md
+          - Create a Open Source Commercial Ecosystem: blogs/240301-osc-eco.md
+          - Book - Managing Cloud Native Data on Kubernetes: blogs/240203-book.md
+          - Accelerated Computing: blogs/240201-ai-compute.md
+          - Containerization AI Streamlines ML Models: blogs/240115-news.md
+          - KubeEdge v1.15.0 Released: blogs/240108-kubeedge.md
+      - 2023:
+          - K8s 1.29 Released - Ambious Mandala Theme: blogs/231213-k8s-1.29.md
+          - Does K8s Perform Better on Bare Metal vs. VMs?: blogs/231205-vm-bm-compare.md
+          - Removals, Deprecations, and Changes in K8s 1.29: blogs/231115-k8s-1.29-changes.md
+          - A Look Back for K8s Contributor Summit in Shanghai: blogs/20231008-kcs.md
+          - Call for K8s Contributor Summit in Shanghai: blogs/230911-kubecon-contributor.md
+          - K8s 1.28 Released: blogs/230815-k8s1.28.md
+          - Unlease K8sGPT: blogs/230808-k8sgpt.md
+          - Explore Ray Core (II): blogs/230615-ray.md
+          - Explore Ray Core (I): blogs/230612-ray.md
+          - Istio 1.18 Released: blogs/230609-istio118.md
+          - Federation Middleware FedState: blogs/230605-fedstate.md
+          - API Server Tracing to Beta: blogs/230601-api-server-tracing.md
+          - Seccomp on Edge: blogs/230518-seccom.md
+          - Install K8s (KLTS): blogs/230509-k8s-install.md
+          - Accelerate Socket by Cilium: blogs/230508-cilium.md
+          - K8s 1.27 Pod Startup: blogs/230428-pod-startup.md
+          - Basics of VictoriaMetrics: blogs/230427-victoriametrics.md
+          - Karmada Failover: blogs/230418-karmada-failover.md
+          - CNCF Platform Engineering Whitepaper: blogs/230417-cncf-platform-wp.md
+          - K8s 1.27 Released: blogs/230412-k8s-1.27.md
+          - New Choice of Fixed IP: blogs/230411-spiderpool.md
+          - Step-By-Step Install DCE Community: blogs/230405-step-by-step-dce5.md
+          - Edge-Native App Principle: blogs/230317-edge-app-wp.md
+          - Install DCE Community on Linux: blogs/230315-install-on-linux.md
+          - Install DCE Community on macOS: blogs/230315-install-on-macos.md
+          - Introduction to KWOK: blogs/230301-kwok.md
+          - Open Source Projects in DCE Community: blogs/230214-open-projects.md
+          - DaoCloud and K8s: blogs/230214-daocloud_k8s.md
+          - DCE 5.0 Dev Quotations: blogs/230201-peter.md
+          - 2023 Cloud Native Forecast: blogs/230201-forecast.md
+          - Leverage Your Idle Computing Power: blogs/230110-res-usage.md
+      - 2022:
+          - K8s 1.26 Released: blogs/221209-k8s-1.26.md
+          - DaoCloud is a KCSP: blogs/221116-kcsp.md
+          - What is Container Management: blogs/221026-kpanda.md
+          - What is Resource Management: blogs/221018-resource.md
+          - What is Workbench: blogs/220925-amamba.md
+          - What is Multicloud Management: blogs/220808-kairship.md
+          - What is Service Mesh: blogs/220708-mspider.md
+          - DCE 5.0 Dev Background: blogs/221008-dce-bg.md
   - DaoCloud Ecosystem:
       - Index: community/index.md
       - CloudTTY: community/cloudtty.md
