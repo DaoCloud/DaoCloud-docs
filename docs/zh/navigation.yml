@@ -1270,58 +1270,57 @@ nav:
                   - 运营管理: download/modules/gmagpie.md
   - 博客:
       - 博文索引: blogs/index.md
-      - 2024 年:
-          - 202403 | 巴黎 KubeCon 谁在引领创新: blogs/240326-kubecon-eu.md
-          - 202403 | 创建一个开源商业生态体系: blogs/240301-osc-eco.md
-          - 202402 | 好书推介《Kubernetes 云原生数据管理》: blogs/240203-book.md
-          - 202402 | 加速计算基本定义及工作原理揭秘: blogs/240201-ai-compute.md
-          - 202402 | 什么是加速计算: blogs/240201-ai-compute.md
-          - 202401 | 容器化 AI 简化 ML 模型的部署: blogs/240115-news.md
-          - 202401 | KubeEdge v1.15.0 发布: blogs/240108-kubeedge.md
-      - 2023 年:
-          - 202312 | Spiderpool 入选 CNCF Sandbox: blogs/231220-spiderpool.md
-          - 202312 | K8s 1.29 发布：宇宙主题雄心勃勃: blogs/231213-k8s-1.29.md
-          - 202312 | K8s 裸机 vs 虚机性能对比: blogs/231205-vm-bm-compare.md
-          - 202311 | K8s 1.29 前瞻：移除、弃用及重大变更: blogs/231115-k8s-1.29-changes.md
-          - 202310 | 上海 K8s 贡献者峰会回顾: blogs/231008-kcs.md
-          - 202309 | 上海 K8s 贡献者峰会召集令: blogs/230911-kubecon-contributor.md
-          - 202308 | K8s 本地开发工具比较: blogs/230824-tools.md
-          - 202308 | K8s 1.28 震撼发布: blogs/230815-k8s1.28.md
-          - 202308 | K8sGPT 赋能 K8s: blogs/230808-k8sgpt.md
-          - 202306 | AIGC 利器 Ray 探索下篇: blogs/230615-ray.md
-          - 202306 | AIGC 利器 Ray 探索上篇: blogs/230612-ray.md
-          - 202306 | Istio 1.18 正式发布: blogs/230609-istio118.md
-          - 202306 | 联邦中间件FedState: blogs/230605-fedstate.md
-          - 202306 | API Server Tracing进阶: blogs/230601-api-server-tracing.md
-          - 202305 | 边缘场景玩转seccomp: blogs/230518-seccom.md
-          - 202305 | 混沌工程Chaos Mesh: blogs/230515-chaos-mesh.md
-          - 202305 | K8s 安装教程(KLTS版): blogs/230509-k8s-install.md
-          - 202305 | Cilium实现socket加速: blogs/230508-cilium.md
-          - 202305 | K8s 1.27加快Pod启动: blogs/230428-pod-startup.md
-          - 202304 | 云原生监控之基础篇: blogs/230427-victoriametrics.md
-          - 202304 | Karmada Failover详解: blogs/230418-karmada-failover.md
-          - 202304 | CNCF 平台工程白皮书: blogs/230417-cncf-platform-wp.md
-          - 202304 | K8s 1.27 正式发布: blogs/230412-k8s-1.27.md
-          - 202304 | 固定应用 IP 的新选择: blogs/230411-spiderpool.md
-          - 202304 | 保姆式安装社区版: blogs/230405-step-by-step-dce5.md
-          - 202303 | 边缘原生应用准则: blogs/230317-edge-app-wp.md
-          - 202303 | Linux 单机安装社区版: blogs/230315-install-on-linux.md
-          - 202303 | macOS 单机安装社区版: blogs/230315-install-on-macos.md
-          - 202303 | KWOK 介绍: blogs/230301-kwok.md
-          - 202302 | 社区版涉及的开源项目: blogs/230214-open-projects.md
-          - 202302 | DaoCloud 与 K8s: blogs/230214-daocloud_k8s.md
-          - 202302 | DCE 5.0 攻坚语录集: blogs/230201-peter.md
-          - 202301 | 2023 年云原生预测: blogs/230201-forecast.md
-          - 202301 | 让闲置算力跑起来: blogs/230110-res-usage.md
-      - 2022 年:
-          - 202212 | K8s 1.26 正式发布: blogs/221209-k8s-1.26.md
-          - 202211 | K8s 资深认证服务商: blogs/221116-kcsp.md
-          - 202210 | 容器管理能力介绍: blogs/221026-kpanda.md
-          - 202210 | 资源管理能力介绍: blogs/221018-resource.md
-          - 202209 | 应用工作台能力介绍: blogs/220925-amamba.md
-          - 202208 | 多云编排能力介绍: blogs/220808-kairship.md
-          - 202207 | 服务网格能力介绍: blogs/220708-mspider.md
-          - 202206 | DCE 开发背景: blogs/221008-dce-bg.md
+      - 2024:
+          - 巴黎 KubeCon 谁在引领创新: blogs/240326-kubecon-eu.md
+          - 创建一个开源商业生态体系: blogs/240301-osc-eco.md
+          - 好书推介《K8s 云原生数据管理》: blogs/240203-book.md
+          - 加速计算基本定义及工作原理: blogs/240201-ai-compute.md
+          - 容器化 AI 简化 ML 模型的部署: blogs/240115-news.md
+          - KubeEdge v1.15.0 发布: blogs/240108-kubeedge.md
+      - 2023:
+          - Spiderpool 入选 CNCF Sandbox: blogs/231220-spiderpool.md
+          - K8s 1.29发布：宇宙主题雄心勃勃: blogs/231213-k8s-1.29.md
+          - K8s 裸机 vs 虚机性能对比: blogs/231205-vm-bm-compare.md
+          - K8s 1.29前瞻：移除、弃用及变更: blogs/231115-k8s-1.29-changes.md
+          - 上海 K8s 贡献者峰会回顾: blogs/231008-kcs.md
+          - 上海 K8s 贡献者峰会召集令: blogs/230911-kubecon-contributor.md
+          - K8s 本地开发工具比较: blogs/230824-tools.md
+          - K8s 1.28 震撼发布: blogs/230815-k8s1.28.md
+          - K8sGPT 赋能 K8s: blogs/230808-k8sgpt.md
+          - AIGC 利器 Ray 探索下篇: blogs/230615-ray.md
+          - AIGC 利器 Ray 探索上篇: blogs/230612-ray.md
+          - Istio 1.18 正式发布: blogs/230609-istio118.md
+          - 联邦中间件FedState: blogs/230605-fedstate.md
+          - API Server Tracing进阶: blogs/230601-api-server-tracing.md
+          - 边缘场景玩转seccomp: blogs/230518-seccom.md
+          - 混沌工程 Chaos Mesh: blogs/230515-chaos-mesh.md
+          - K8s 安装教程(KLTS版): blogs/230509-k8s-install.md
+          - Cilium 实现 socket 加速: blogs/230508-cilium.md
+          - K8s 1.27 加快 Pod 启动: blogs/230428-pod-startup.md
+          - 云原生监控之基础篇: blogs/230427-victoriametrics.md
+          - Karmada Failover 详解: blogs/230418-karmada-failover.md
+          - CNCF 平台工程白皮书: blogs/230417-cncf-platform-wp.md
+          - K8s 1.27 正式发布: blogs/230412-k8s-1.27.md
+          - 固定应用 IP 的新选择: blogs/230411-spiderpool.md
+          - 保姆式安装社区版: blogs/230405-step-by-step-dce5.md
+          - 边缘原生应用准则: blogs/230317-edge-app-wp.md
+          - Linux 单机安装社区版: blogs/230315-install-on-linux.md
+          - macOS 单机安装社区版: blogs/230315-install-on-macos.md
+          - KWOK 介绍: blogs/230301-kwok.md
+          - 社区版涉及的开源项目: blogs/230214-open-projects.md
+          - DaoCloud 与 K8s: blogs/230214-daocloud_k8s.md
+          - DCE 5.0 攻坚语录集: blogs/230201-peter.md
+          - 2023 年云原生预测: blogs/230201-forecast.md
+          - 让闲置算力跑起来: blogs/230110-res-usage.md
+      - 2022:
+          - K8s 1.26 正式发布: blogs/221209-k8s-1.26.md
+          - K8s 资深认证服务商: blogs/221116-kcsp.md
+          - 容器管理能力介绍: blogs/221026-kpanda.md
+          - 资源管理能力介绍: blogs/221018-resource.md
+          - 应用工作台能力介绍: blogs/220925-amamba.md
+          - 多云编排能力介绍: blogs/220808-kairship.md
+          - 服务网格能力介绍: blogs/220708-mspider.md
+          - DCE 开发背景: blogs/221008-dce-bg.md
   - DaoCloud 开源生态:
       - 开源项目索引: community/index.md
       - CloudTTY: community/cloudtty.md
