@@ -23,7 +23,7 @@ This page allows you to download the offline package and checksum files for DCE 
 
 Navigate to the directory where the offline package is downloaded.
 
-=== "AMD64"
+=== "AMD 64"
 
     Run the following command to validate the package:
 
@@ -37,7 +37,7 @@ Navigate to the directory where the offline package is downloaded.
     offline-v0.9.0-amd64.tar: OK
     ```
 
-=== "ARM64"
+=== "<font color="green">ARM 64</font>"
 
     Run the following command to validate the package:
 
@@ -55,7 +55,7 @@ Navigate to the directory where the offline package is downloaded.
 
 After the offline package has been successfully validated,
 
-=== "AMD64"
+=== "AMD 64"
 
     Run the following command to extract the tar file:
 
@@ -63,7 +63,7 @@ After the offline package has been successfully validated,
     tar -zxvf offline-v0.9.0-amd64.tar
     ```
 
-=== "ARM64"
+=== "<font color="green">ARM 64</font>"
 
     Run the following command to extract the tar file:
 

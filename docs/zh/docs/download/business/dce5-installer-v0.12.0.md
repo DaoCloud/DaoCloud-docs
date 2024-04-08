@@ -21,7 +21,7 @@ hide:
 
 进入离线安装包下载目录。
 
-=== "AMD64"
+=== "AMD 64"
 
     执行以下命令校验安装包：
 
@@ -35,7 +35,7 @@ hide:
     offline-v0.12.0-amd64.tar: OK
     ```
 
-=== "ARM64"
+=== "<font color="green">ARM 64</font>"
 
     执行以下命令校验安装包：
 
@@ -53,7 +53,7 @@ hide:
 
 成功校验离线包之后，
 
-=== "AMD64"
+=== "AMD 64"
 
     执行以下命令解压缩 tar 包：
 
@@ -61,7 +61,7 @@ hide:
     tar -zxvf offline-v0.12.0-amd64.tar
     ```
 
-=== "ARM64"
+=== "<font color="green">ARM 64</font>"
 
     执行以下命令解压缩 tar 包：
 

@@ -5,7 +5,7 @@ hide:
   - navigation
 ---
 
-# DCE 5.0 Enterprise v0.12.0
+# DCE 5.0 Enterprise with Installer v0.12.0
 
 This page allows you to download the offline package and checksum files for DCE 5.0 Enterprise.
 
@@ -23,7 +23,7 @@ This page allows you to download the offline package and checksum files for DCE 
 
 Navigate to the directory where the offline package was downloaded.
 
-=== "AMD64"
+=== "AMD 64"
 
     Run the following command to validate the offline package:
 
@@ -37,7 +37,7 @@ Navigate to the directory where the offline package was downloaded.
     offline-v0.12.0-amd64.tar: OK
     ```
 
-=== "ARM64"
+=== "<font color="green">ARM 64</font>"
 
     Run the following command to validate the offline package:
 
@@ -55,7 +55,7 @@ Navigate to the directory where the offline package was downloaded.
 
 After the offline package has been successfully validated,
 
-=== "AMD64"
+=== "AMD 64"
 
     Run the following command to extract the tar package:
 
@@ -63,7 +63,7 @@ After the offline package has been successfully validated,
     tar -zxvf offline-v0.12.0-amd64.tar
     ```
 
-=== "ARM64"
+=== "<font color="green">ARM 64</font>"
 
     Run the following command to extract the tar package:
 

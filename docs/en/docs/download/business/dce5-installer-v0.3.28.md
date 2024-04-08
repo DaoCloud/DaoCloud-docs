@@ -5,7 +5,7 @@ hide:
   - navigation
 ---
 
-# DCE 5.0 Enterprise v0.3.28
+# DCE 5.0 Enterprise with Installer v0.3.28
 
 This page allows you to download the offline package of DCE 5.0 Enterprise.
 
