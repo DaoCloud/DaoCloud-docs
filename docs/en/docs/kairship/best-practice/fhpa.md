@@ -3,20 +3,20 @@ MTPE: FanLin
 Date: 2024-01-05
 ---
 
-# Cross-Cluster Federsted HPA
+# Cross-Cluster Federated HPA
 
 Federated Horizontal Pod Autoscaler (FederatedHPA) offers a mechanism to scale the replicas of workloads across multiple clusters, either up or down, based on demand.
 
-This article explains how to implement cross-cluster Federsted HPA.
+This article explains how to implement cross-cluster Federated HPA.
 
 ## Prerequisites
 
 - Ensure the Federated HPA feature is enabled in the advanced settings. This will trigger the automatic installation of the karmada-metrics-adapter plugin on the control plane cluster, which provides the metrics API.
 - Install the metrics-server plugin in the member clusters to enable the provision of the metrics API.
 
-## Enabling Federsted HPA
+## Enabling Federated HPA
 
-![Enable FederstedHPA](../images/fhpa01.png)
+![Enable FederatedHPA](../images/fhpa01.png)
 
 ## Creating Multicloud Workload
 
@@ -34,9 +34,9 @@ Refer to [Create Stateless Workload](../workload/deployment.md) to create a mult
 
     ![Workload](../images/fhpa02.png)
 
-2. Click __Federsted HPA__ and check if the metrics-server plugin is installed in each working cluster. The plugin runs as a __Deployments__ in the __amamba-system__ namespace. It should be installed and running correctly in all member clusters.
+2. Click __Federated HPA__ and check if the metrics-server plugin is installed in each working cluster. The plugin runs as a __Deployments__ in the __amamba-system__ namespace. It should be installed and running correctly in all member clusters.
 
-    ![FederstedHPA List](../images/fhpa03.png)
+    ![FederatedHPA List](../images/fhpa03.png)
 
 3. Create a new Federated HPA policy and configure it according to your requirements.
 
@@ -44,7 +44,7 @@ Refer to [Create Stateless Workload](../workload/deployment.md) to create a mult
     - Cooldown Period: Define the interval between scaling operations.
     - System Metrics: Define the triggering conditions for scaling operations.
 
-    ![Config FederstedHPA](../images/fhpa04.png)
+    ![Config FederatedHPA](../images/fhpa04.png)
 
 4. After creating the rule, refresh the page to view the specific values of the current replicas. Since the service has not been called yet, the actual CPU usage is 0, which is less than the target value. In order to reduce resource waste, a downscaling operation will be performed. The replicas will be reduced from 3 to 1, based on the replica range defined by the user.
 
