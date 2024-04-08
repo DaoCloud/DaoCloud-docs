@@ -1,22 +1,56 @@
 ---
+MTPE: windsonsea
 hide:
   - toc
 ---
 
-# Billing and accounting
+# Accounting and Billing
 
-First, you can use billing config to set the unit prices for CPU, memory, storage, inbound/outbound traffic, and currency types. Currently, two currencies are supported: CNY and USD.
+Accounting and billing further process the usage data of resources based on reports.
+You can manually set the unit price and currency unit for CPU, memory, and storage.
+After setting, the system will automatically calculate the expenses of clusters, nodes, pods,
+namespaces, and workspaces over a period. You can adjust the period freely and export
+billing reports in Excel or Csv format after filtering by week, month, quarter, or year.
 
-Currently, billing and accounting are supported for clusters, nodes, Pods, namespaces, and workspaces. After enabling a certain type of billing, the billing data will start collecting and displaying within 20 minutes. After disabling, data collection for the billing will stop within the same time frame. The previous collected data will still be displayed normally.
+## Billing Rules and Effective Time
 
-The table below shows the display content and searchable items for each type of billing. It also provides the feature of exporting/downloading data, and supports custom time ranges and gear icon setting features for administrators to customize the columns to display according to their actual needs.
+- Billing Rules: Default billing is based on the maximum value of request and usage.
+- Effective Time: Effective the next day, the fees incurred on that day are calculated
+  based on the unit price and quantity obtained at midnight the next day.
 
-| Billing and accounting | Display Content                                            | Searchable Items                                     | Export/Download | Enable/Disable | Customizable Time Range | Gear Icon Setting |
-| -------------------- | ---------------------------------------------------------- | ---------------------------------------------------- | --------------- | -------------- | ---------------------- | ----------------- |
-| Cluster Billing      | Cluster Name, Number of Nodes, Resource Billing Information | Cluster Name                                         | Yes             | Yes            | Yes                    | Yes               |
-| Node Billing         | Node IP, Type, Cluster, Resource Billing Information        | Node Name, Cluster, IP Address                       | Yes             | Yes            | Yes                    | Yes               |
-| Pod Billing          | Pod Name, Namespace, Cluster, Workspace, Resource Billing Information | Pod Name, Namespace, Cluster, Workspace | Yes             | Yes            | Yes                    | Yes               |
-| Workspace Billing    | Workspace Name, Number of Namespaces, pod Quantity, Resource Billing Information | Workspace | Yes             | Yes            | Yes                    | Yes               |
-| Namespace Billing    | Namespace Name, Number of Pods, Cluster, Workspace, Resource Billing Information | Namespace, Cluster, Workspace | Yes             | Yes            | Yes                    | Yes               |
+## Features
 
-From the table above, it can be seen that each type of billing has its specific display content and searchable items. In addition, each type of billing can be exported or downloaded for administrators to view. The enable/disable feature and customizable time range are available for all types of billing. All other types of billing except namespace billing provide a gear ⚙️ icon setting feature so that administrators can customize the columns to display according to their actual needs.
+- Support customizing the billing unit for CPU, memory, and storage, as well as the currency unit.
+- Support custom querying of billing data within a year, automatically calculating the
+  billing situation for the selected time period.
+- Support exporting billing reports in CSV and Excel formats.
+- Support enabling/disabling individual billing reports. After enabling/disabling, the platform will
+  start/stop collecting data within 20 minutes, and past collected data will still be displayed normally.
+- Support selective display of billing data for CPU, total memory, storage, and total.
+
+## Report Dimensions
+
+Currently, the following reports are supported:
+
+- Cluster Billing Report: Displays the CPU billing, memory billing, storage billing, and overall
+  billing situation for all clusters within a certain period, as well as the number of nodes in
+  that cluster. By clicking the number of nodes, you can quickly enter the node billing report and view the billing situation of nodes in that cluster during that time period.
+- Node Billing Report: Displays the CPU billing, memory billing, storage billing, and overall billing situation for all nodes within a certain period, as well as the IP, type, and belonging cluster of nodes.
+- Pod Report: Displays the CPU billing, memory billing, storage billing, and overall billing situation for all pods within a certain period, as well as the namespace, cluster, and workspace to which the pod belongs.
+- Workspace Billing Report: Displays the CPU billing, memory billing, storage billing, and overall
+  billing situation for all workspaces within a certain period, as well as the number of namespaces
+  and pods. By clicking the number of namespaces, you can quickly enter the namespace billing report
+  and view the billing situation of namespaces in that workspace during that time period; the same
+  method can be used to view the billing situation of pods in that workspace during that time period.
+- Namespace Billing Report: Displays the CPU billing, memory billing, storage billing, and overall
+  billing situation for all namespaces within a certain period, as well as the number of pods,
+  the belonging cluster, and workspace. By clicking the number of pods, you can quickly enter
+  the pod billing report and view the billing situation of pods in that namespace during that time period.
+
+## Operating Steps
+
+1. Log in to DCE 5.0 as a user with the __admin__ role. Click on __Global Management__ -> __Operation Management__ at the bottom of the left navigation bar.
+
+    ![Report Management](../../images/gmagpiereport.png)
+
+2. After entering the **Operational Management** , switch to different menus to view billing reports for clusters, nodes, pods, etc.
