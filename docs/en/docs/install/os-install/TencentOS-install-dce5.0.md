@@ -14,15 +14,15 @@ Installer v0.9.0 and higher versions support this deployment method.
 1. Download the full mode offline package. You can download the latest version
    from the [Download Center](../../download/index.md).
 
-    | CPU Architecture | Version | Download Link                                                                                 |
-    | ---------------- | ------- | --------------------------------------------------------------------------------------------- |
-    | AMD64            | v0.9.0  | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.9.0-amd64.tar> |
+    | CPU Architecture | Version | Download Link  |
+    | ---------------- | ------- | -------------- |
+    | AMD64            | v0.16.0  | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.16.0-amd64.tar> |
 
     After downloading, extract the offline package:
 
     ```bash
-    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.9.0-amd64.tar
-    tar -xvf offline-v0.9.0-amd64.tar
+    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.16.0-amd64.tar
+    tar -xvf offline-v0.16.0-amd64.tar
     ```
 
 2. Download the TencentOS Server 3.1 image file.

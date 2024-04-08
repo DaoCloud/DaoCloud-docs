@@ -4,8 +4,8 @@ This page explains the preparations required for deploying DCE 5.0.
 
 !!! note
 
-    Currently, the installer script only performs pre-deployment checks on the bootstrap machine,
-    including whether the prerequisites have been installed and whether the CPU of the bootstrap machine
+    Currently, the installer script only performs pre-deployment checks on the bootstrap node,
+    including whether the prerequisites have been installed and whether the CPU of the bootstrap node
     is greater than 10 cores, the memory is greater than 12GB, and the disk space is greater than 100GB.
 
 ## Machine Checks
@@ -19,8 +19,9 @@ This page explains the preparations required for deploying DCE 5.0.
 | Time Sync      | All cluster nodes must have synchronized time | This is a requirement from Docker and Kubernetes. Otherwise, the kube.conf will report an error `Unable to connect to the server: x509: certificate has expired or is not yet` |
 | Timezone       | All servers must have the same timezone | It is recommended to set it to Asia/Shanghai.<br />Refer to the command: timedatectl set-timezone Asia/Shanghai |
 | Nameserver     | /etc/resolv.conf must have at least one nameserver | Required by CoreDNS, otherwise there will be errors. In a pure offline environment, this nameserver can be a non-existent IP address. The default CentOS 8 minimal does not have the /etc/resolv file, so you need to create it manually. |
+| Protocol | IPv6 Support | IPv6 must be enabled for bootstrap nodes using Podman |
 
-## Dependency Component Checks on the bootstrap machine
+## Dependency Component Checks on the Bootstrap Node
 
 | **Check Item** | **Version Requirement** | **Description** |
 | -------------- | ---------------------- | --------------- |
@@ -35,7 +36,7 @@ This page explains the preparations required for deploying DCE 5.0.
 If the dependency components do not exist, install the dependency components using the script [Installing Prerequisites](../install-tools.md).
 
 ```bash
-export VERSION=v0.13.0
+export VERSION=v0.16.0
 # Download the script
 curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
 
