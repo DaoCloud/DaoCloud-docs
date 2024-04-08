@@ -4,9 +4,10 @@
 
 ## 2024.03.31
 
-!!! Warning
+!!! warning
 
-    由于 Insight v0.25 版本中存在破坏性改动，当升级 Insight Server 至 v0.25.x 时，需同时升级 Insight Agent 版本至 v0.25.x  !!!
+    由于 Insight v0.25 版本中存在破坏性改动，当升级 Insight Server 至 v0.25.x 时，
+    需同时升级 Insight Agent 版本至 v0.25.x ！！！
 
 ### Insight Server: v0.25.0
 
@@ -16,7 +17,7 @@
 - **优化** 支持对通知对象的敏感信息进行加密隐藏
 - **优化** 将 `insight-server` 拆分成 `insight-server` 和 `insight-manager` 两个组件
 - **优化** `opentelemetry-collector` 组件支持高可用
-- **优化** Grafana 和 Jaeger 未登陆不可访问
+- **优化** Grafana 和 Jaeger 未登录不可访问
 - **优化** 支持自定义在安装时是否初始化日志索引的能力
 
 #### 修复
@@ -24,7 +25,7 @@
 - **修复** 修复告警相关接口的权限问题
 - **修复** 概览查询指标无数据的问题
 - **修复** YAML 导入告警策略时的校验问题
-- **修复**  Grafana 访问速度受限的缺陷
+- **修复** Grafana 访问速度受限的缺陷
 
 ## 2024.01.31
 
