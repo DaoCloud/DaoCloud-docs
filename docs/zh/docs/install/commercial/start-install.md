@@ -69,7 +69,7 @@ osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源
     | Oracle Linux R9 U1                                   | [os-pkgs-oracle9-v0.13.9.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.9/os-pkgs-oracle9-v0.13.9.tar.gz) |
     | Rocky Linux 9.2                                    | [os-pkgs-rocky9-v0.13.9.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.13.9/os-pkgs-rocky9-v0.13.9.tar.gz) |
 
-=== "V0.16.0"
+=== "V0.15.0"
 
     | 操作系统版本                                        | 点击下载                                                     |
     | :-------------------------------------------------- | :----------------------------------------------------------- |
@@ -172,8 +172,8 @@ addon 离线包包含一些常用组件的 Helm Chart 离线包，具体清单�
 
 | CPU 架构 | 版本   | 点击下载 |
 | :------- | :----- | :----- |
-| AMD64    | v0.16.0 | [addon-offline-full-package-v0.16.0-amd64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.16.0-amd64.tar.gz) |
-| ARM64    | v0.16.0 | [addon-offline-full-package-v0.16.0-arm64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.16.0-arm64.tar.gz) |
+| AMD64    | v0.15.0 | [addon-offline-full-package-v0.15.0-amd64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.15.0-amd64.tar.gz) |
+| ARM64    | v0.15.0 | [addon-offline-full-package-v0.15.0-arm64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.15.0-arm64.tar.gz) |
 
 #### 一键下载所需离线包
 
