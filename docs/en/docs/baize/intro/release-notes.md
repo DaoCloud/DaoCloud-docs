@@ -9,7 +9,10 @@ so that you can understand the evolution path and feature changes of each versio
 
 #### Features
 
-- **New Release** Intelligent Engine - Model Development Tools module, supporting development tools like `Jupyter Notebook`.
-- **New Release** Intelligent Engine - Power - Model Task Management module, supporting the training of tasks with various mainstream development frameworks such as `Pytorch`, `Tensorflow`, `Paddle`.
-- **New Release** Intelligent Engine - Model Inference Management module, supporting rapid deployment of `Model Serving`, compatible with any model algorithm and large language models.
-- **New Release** Intelligent Engine - Model Data Management module, supporting the integration of mainstream data sources such as `S3`, `NFS`, `HTTP`, and `Git`, with support for automatic data preheating.
+- **Added** the Notebooks module, supporting development tools like `Jupyter Notebook`.
+- **Added** the Job Center module, supporting the training of jobs with various
+  mainstream development frameworks such as `Pytorch`, `Tensorflow`, and `Paddle`.
+- **Added** the Model Inference module, supporting rapid deployment of `Model Serving`,
+  compatible with any model algorithm and large language models.
+- **Added** the Data Management module, supporting the integration of mainstream data sources
+  such as `S3`, `NFS`, `HTTP`, and `Git`, with support for automatic data preheating.
