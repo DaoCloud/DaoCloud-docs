@@ -5,7 +5,7 @@ hide:
   - navigation
 ---
 
-# DCE 5.0 Enterprise v0.15.1
+# DCE 5.0 Enterprise with Installer v0.15.1
 
 This page provides downloads for the offline installation package and verification files for DCE 5.0 Enterprise.
 
@@ -22,7 +22,7 @@ This page provides downloads for the offline installation package and verificati
 
 Go to the offline installation package download directory.
 
-=== "AMD64"
+=== "AMD 64"
 
     Run the following command to verify the installation package:
 
@@ -36,7 +36,7 @@ Go to the offline installation package download directory.
     offline-v0.15.1-amd64.tar: OK
     ```
 
-=== "ARM64"
+=== "<font color="green">ARM 64</font>"
 
     Run the following command to verify the installation package:
 
@@ -54,7 +54,7 @@ Go to the offline installation package download directory.
 
 After successfully verifying the offline package,
 
-=== "AMD64"
+=== "AMD 64"
 
     Run the following command to decompress the tar package:
 
@@ -62,7 +62,7 @@ After successfully verifying the offline package,
     tar -zxvf offline-v0.15.1-amd64.tar
     ```
 
-=== "ARM64"
+=== "<font color="green">ARM 64</font>"
 
     Run the following command to decompress the tar package:
 

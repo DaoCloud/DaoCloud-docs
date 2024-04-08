@@ -1,10 +1,11 @@
 ---
+MTPE: windsonsea
 date: 2022-11-23
 hide:
   - navigation
 ---
 
-# DCE 5.0 Community v0.3.27
+# DCE 5.0 Community with Installer v0.3.27
 
 This page allows you to download the offline package and checksum file of DCE 5.0 Community.
 

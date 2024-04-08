@@ -10,8 +10,8 @@ This package is dedicated to the community and is available for free trial.
 
 | Filename | Version | Download | Update Date |
 | -------- | ------- | --------- | ----------- |
-| offline-community-v0.15.2-arm64.tar | v0.15.2 | [:arrow_right: Go to Download](./free/dce5-installer-v0.15.2.md) | 2024-03-14 |
-| offline-community-v0.15.2-amd64.tar | v0.15.2 | [:arrow_right: Go to Download](./free/dce5-installer-v0.15.2.md) | 2024-03-14 |
+| offline-community-v0.16.0-arm64.tar | v0.16.0 | [:arrow_right: Go to Download](./free/dce5-installer-v0.16.0.md) | 2024-04-08 |
+| offline-community-v0.16.0-amd64.tar | v0.16.0 | [:arrow_right: Go to Download](./free/dce5-installer-v0.16.0.md) | 2024-04-08 |
 
 [More Historical Versions](./free/dce5-installer-history.md)
 
@@ -21,8 +21,8 @@ This package is suitable for private cloud, hybrid cloud, multicloud, microservi
 
 | Filename | Version | Download | Update Date |
 | -------- | ------- | -------- | ----------- |
-| offline-v0.15.2-arm64.tar | v0.15.2 | [:arrow_right: Go to Download](./business/dce5-installer-v0.15.2.md) | 2024-03-14 |
-| offline-v0.15.2-amd64.tar | v0.15.2 | [:arrow_right: Go to Download](./business/dce5-installer-v0.15.2.md) | 2024-03-14 |
+| offline-v0.16.0-arm64.tar | v0.16.0 | [:arrow_right: Go to Download](./business/dce5-installer-v0.16.0.md) | 2024-04-08 |
+| offline-v0.16.0-amd64.tar | v0.16.0 | [:arrow_right: Go to Download](./business/dce5-installer-v0.16.0.md) | 2024-04-08 |
 
 [More Historical Versions](./business/dce5-installer-history.md)
 
@@ -43,7 +43,7 @@ The numerous modules included in DCE 5.0 can be downloaded separately to upgrade
 
 | Modules | File Size | Download | Update Date |
 | ------- | --------- | -------- | ----------- |
-| Workbench | 340.77 MB | [:arrow_right: Go to Download](./modules/amamba.md) | 2024-02-01 |
+| Workbench | 340.77 MB | [:arrow_right: Go to Download](./modules/amamba.md) | 2024-04-02 |
 | Container Management | 616.29 MB | [:arrow_right: Go to Download](./modules/kpanda.md) | 2024-02-02 |
 | Cluster Inspection | 174.30 MB | [:arrow_right: Go to Download](./modules/kcollie.md) | 2024-01-02 |
 | Application Backup | 59.40 MB | [:arrow_right: Go to Download](./modules/kcoral.md) | 2024-01-02 |

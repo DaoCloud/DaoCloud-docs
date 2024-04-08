@@ -1,10 +1,11 @@
 ---
+MTPE: windsonsea
 date: 2023-09-08
 hide:
   - navigation
 ---
 
-# DCE 5.0 Community v0.11.0
+# DCE 5.0 Community with Installer v0.11.0
 
 This page provides downloads for the offline package and checksum files of DCE 5.0 Community.
 
@@ -22,7 +23,7 @@ This page provides downloads for the offline package and checksum files of DCE 5
 
 Navigate to the download directory of the offline package.
 
-=== "AMD64"
+=== "AMD 64"
 
     Run the following command to validate the offline package:
 
@@ -36,7 +37,7 @@ Navigate to the download directory of the offline package.
     offline-community-v0.11.0-amd64.tar: OK
     ```
 
-=== "ARM64"
+=== "<font color="green">ARM 64</font>"
 
     Run the following command to validate the offline package:
 
@@ -54,7 +55,7 @@ Navigate to the download directory of the offline package.
 
 After the offline package has been successfully validated,
 
-=== "AMD64"
+=== "AMD 64"
 
     Run the following command to extract the tar package:
 
@@ -62,7 +63,7 @@ After the offline package has been successfully validated,
     tar -zxvf offline-community-v0.11.0-amd64.tar
     ```
 
-=== "ARM64"
+=== "<font color="green">ARM 64</font>"
 
     Run the following command to extract the tar package:
 

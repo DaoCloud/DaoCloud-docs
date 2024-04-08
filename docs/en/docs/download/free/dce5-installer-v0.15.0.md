@@ -1,10 +1,11 @@
 ---
+MTPE: windsonsea
 date: 2024-02-19
 hide:
   - navigation
 ---
 
-# DCE 5.0 Community v0.15.0
+# DCE 5.0 Community with Installer v0.15.0
 
 This page provides downloads for the offline installation package and verification files for DCE 5.0 Community.
 
@@ -21,7 +22,7 @@ This page provides downloads for the offline installation package and verificati
 
 Go to the offline installation package download directory.
 
-=== "AMD64"
+=== "AMD 64"
 
     Run the following command to verify the installation package:
 
@@ -35,7 +36,7 @@ Go to the offline installation package download directory.
     offline-community-v0.15.0-amd64.tar: OK
     ```
 
-=== "ARM64"
+=== "<font color="green">ARM 64</font>"
 
     Run the following command to verify the installation package:
 
@@ -53,7 +54,7 @@ Go to the offline installation package download directory.
 
 After successfully verifying the offline package,
 
-=== "AMD64"
+=== "AMD 64"
 
     Run the following command to decompress the tar package:
 
@@ -61,7 +62,7 @@ After successfully verifying the offline package,
     tar -zxvf offline-community-v0.15.0-amd64.tar
     ```
 
-=== "ARM64"
+=== "<font color="green">ARM 64</font>"
 
     Run the following command to decompress the tar package:
 

@@ -5,7 +5,7 @@ hide:
   - navigation
 ---
 
-# DCE 5.0 Enterprise v0.3.27
+# DCE 5.0 Enterprise with Installer v0.3.27
 
 This page allows you to download the offline package and checksum file of DCE 5.0 Enterprise.
 
