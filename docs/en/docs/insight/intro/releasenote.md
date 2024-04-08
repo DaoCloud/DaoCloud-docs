@@ -8,6 +8,31 @@ date: 2024-02-19
 This page lists the Release Notes of Insight, so that you can understand
 the evolution path and feature changes of each version.
 
+## 2024.03.31
+
+!!! warning
+
+    Due to breaking changes in Insight v0.25 version, when upgrading Insight Server to v0.25.x,
+    Insight Agent version must also be upgraded to v0.25.x!!!
+
+### Insight Server: v0.25.0
+
+#### Improvements
+
+- **Improved** Log correlation support for filtering based on TraceID and container groups
+- **Improved** Support for encrypting sensitive information of notification objects
+- **Improved** Split `insight-server` into `insight-server` and `insight-manager` components
+- **Improved** High availability support for `opentelemetry-collector` component
+- **Improved** Grafana and Jaeger are not accessible without login
+- **Improved** Support for customizing whether to initialize log indexes during installation
+
+#### Bug Fixes
+
+- **Fixed** permission issues with alarm-related APIs
+- **Fixed** issue with no data in overview query metrics
+- **Fixed** validation issue when importing YAML for alarm policies
+- **Fixed** limitation issue with Grafana access speed
+
 ## 2024.01.31
 
 ### Insight Server: v0.24.0
