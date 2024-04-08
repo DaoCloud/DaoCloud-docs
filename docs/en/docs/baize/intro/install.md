@@ -2,7 +2,7 @@
 
 By default, when installing DCE 5.0 Enterprise, the Intelligent Engine Module can be installed synchronously. Please contact the delivery support team to obtain the Enterprise installation package.
 
-## Intelligent Engine Module
+## Install Intelligent Engine
 
 Ensure that the Intelligent Engine components have been installed in the global management cluster.
 You can verify this by checking if the Intelligent Engine module is available through the DCE 5.0 UI.
