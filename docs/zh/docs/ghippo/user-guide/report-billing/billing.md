@@ -35,7 +35,5 @@ hide:
 1. 使用具有 __admin__ 角色的用户登录 DCE 5.0。点击左侧导航栏底部的 __全局管理__ -> __运营管理__ 。
 
     ![报表管理](../../images/gmagpiereport.png)
-   
-2. 进入运营管理后切换不同菜单可查看集群、节点、容器组等计费报表。
 
-    ![计费报表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/billing.png)
+2. 进入运营管理后切换不同菜单可查看集群、节点、容器组等计费报表。

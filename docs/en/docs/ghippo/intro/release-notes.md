@@ -3,6 +3,14 @@
 This page lists the Release Notes for global management of each version,
 so that you can understand the evolution path and feature changes of each version.
 
+## 2024-4-1
+
+### v0.25.1
+
+### Fixes
+
+- Fixed an issue with resource quota check while workspace resource group is binding to a namespace
+
 ## 2024-3-31
 
 ### v0.25.0
