@@ -41,7 +41,11 @@ ISO 操作系统镜像文件需要在[集群配置文件 clusterConfig.yaml](./c
 |          | openEuler 22.03 | [openEuler-22.03-LTS-SP1-x86_64-dvd.iso](https://mirrors.nju.edu.cn/openeuler/openEuler-22.03-LTS-SP1/ISO/x86_64/openEuler-22.03-LTS-SP1-x86_64-dvd.iso) |
 |          | Oracle Linux R9 U1 | [OracleLinux-R9-U1-x86_64-dvd.iso](https://yum.oracle.com/ISOS/OracleLinux/OL9/u1/x86_64/OracleLinux-R9-U1-x86_64-dvd.iso) |
 | | Rocky Linux 9.2 | [Rocky-9.2-x86_64-dvd.iso](https://dl.rockylinux.org/vault/rocky/9.2/isos/x86_64/Rocky-9.2-x86_64-dvd.iso) |
-| ARM64    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [查看申请地址](https://www.kylinos.cn/scheme/server/1.html) <br />注意：麒麟操作系统需要提供个人信息才能下载使用，下载时请选择 V10 (Sword) SP2 |
+| ARM64    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [查看申请地址](https://www.kylinos.cn/scheme/server/1.html) |
+
+!!! note
+
+    麒麟操作系统需要提供个人信息才能下载使用，下载时请选择 V10 (Sword) SP2。
 
 #### osPackage 离线包（必需）
 
@@ -161,11 +165,11 @@ osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源
 
 统信 UOS V20（1020a）osPackage 部署请参考 [UOS V20 (1020a) 操作系统上部署 DCE 5.0](../os-install/uos-v20-install-dce5.0.md)。
 
-#### addon 离线包 （可选）
+#### Addon 离线包 （可选）
 
-addon 离线包包含一些常用组件的 Helm Chart 离线包，具体清单请参考[addon](../../download/addon/history.md)。
+Addon 离线包包含一些常用组件的 Helm Chart 离线包，具体清单请参考 [Addon](../../download/addon/history.md)。
 
-安装器从 v0.5.0 版本，支持了 addon 的离线包导入能力，如果需要支持 addon 中所有的 helm chart 离线化。
+安装器从 v0.5.0 版本，支持了 Addon 的离线包导入能力，如果需要支持 Addon 中所有的 Helm Chart 离线化。
 可以在[下载中心](../../download/index.md)下载最新版本。
 
 首先需要事先下载好离线包，并在[集群配置文件 clusterConfig.yaml](./cluster-config.md)中定义 `addonOfflinePackagePath`。

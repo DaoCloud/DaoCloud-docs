@@ -15,6 +15,26 @@ the evolution path and feature changes of each version.
 *[Kpanda]: Dev codename for Container Management in DCE 5.0
 *[Skoala]: Dev codename for Microservice Engine in DCE 5.0
 
+## 2024-03-31
+
+### v0.16.0
+
+#### Improvements
+
+- **Improved** Support for deploying on Rocky Linux 9.2 x86 with containerd
+- **Improved** Optimized maximum number of user instances for Rocky Linux
+- **Improved** Simplified extension usage of custom actions on the installer side
+- **Improved** Added manual trimming tool script for offline package
+- **Improved** persistence and reloadability of Firestarter data
+- **Improved** Allow skipping Docker runtime installation when deploying clusters
+- **Improved** Allow specifying configuration for Firestarter apiserver port
+
+#### Bug Fixes
+
+- **Fixed** issue where OCI_PATH was not effective when importing heterogeneous images
+- **Fixed** manifest disorder issue with kubean custom actions
+- **Fixed** issue where the timezone of the Firestarter cluster was inconsistent with the host machine
+
 ## 2024-03-01
 
 ### v0.15.2

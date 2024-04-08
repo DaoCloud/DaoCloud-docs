@@ -25,14 +25,14 @@ Installer v0.6.0 and higher versions support this deployment method.
 2. Download the full mode offline package, you can download the latest version in [Download Center](../../download/index.md).
 
     | CPU Architecture | Version | Download URL |
-    | -------- | ------ | ------------------------------ -------------------------------------------------- -------------- |
-    | AMD64 | v0.6.1 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.1-amd64.tar> |
+    | -------- | ------ | --------------------- |
+    | AMD64 | v0.16.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.16.0-amd64.tar> |
 
     Unzip the offline package after downloading:
 
     ```bash
-    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.1-amd64.tar
-    tar -xvf offline-v0.6.1-amd64.tar
+    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.16.0-amd64.tar
+    tar -xvf offline-v0.16.0-amd64.tar
     ```
 
 3. Download the UnionTech Server V20 1020a ISO image.

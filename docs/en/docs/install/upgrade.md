@@ -26,7 +26,7 @@ You can download the latest version from the [Download Center](../download/index
 | CPU Architecture | Version | Download Link                                                 |
 | :--------------- | :------ | :----------------------------------------------------------- |
 | AMD64            | v0.9.0  | [Download Link](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.9.0-amd64.tar) |
-| ARM64            | v0.9.0  | [Download Link](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.9.0-arm64.tar) |
+| <font color="green">ARM64</font>           | v0.9.0  | [Download Link](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.9.0-arm64.tar) |
 
 After downloading, extract the offline package. For example, for the AMD64 architecture:
 

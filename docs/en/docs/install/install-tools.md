@@ -23,7 +23,8 @@ Before installing DCE 5.0, you need to install some dependencies.
     - minio client
     - charts-syncer
     
-    If there are any existing tools in your environment with versions lower than what we define, they will be forcefully updated and replaced during the installation process.
+    If there are any existing tools in your environment with versions lower than what we define,
+    they will be forcefully updated and replaced during the installation process.
 
 ## Online Install Dependencies
 
@@ -61,20 +62,21 @@ Offline installation means that the target host is in an offline state and canno
 1. Download the script.
 
     ```bash
-    export VERSION=v0.13.0
+    export VERSION=v0.16.0
     curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
     ```
 
 2. Download the offline package for prerequisites.
 
     ```bash
-    export VERSION=v0.13.0
+    export VERSION=v0.16.0
     curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_${VERSION}_amd64.tar.gz
     ```
 
     !!! note
 
-        - For arm architecture, the download link is: <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_${VERSION}_arm64.tar.gz>
+        - For arm architecture, use the download link for arm:
+          <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_${VERSION}_arm64.tar.gz>
         - Make sure the offline package and the script are in the same directory level.
 
 3. Perform the offline installation.
@@ -95,4 +97,5 @@ Offline installation means that the target host is in an offline state and canno
         ./install_prerequisite_${VERSION}.sh offline full
         ```
 
-You can now proceed to install DCE 5.0 [Community](community/resources.md) or [Enterprise](commercial/deploy-requirements.md).
+You can now proceed to install DCE 5.0 [Community](community/resources.md) or
+[Enterprise](commercial/deploy-requirements.md).

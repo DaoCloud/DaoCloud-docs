@@ -69,7 +69,8 @@
 
     !!! note
 
-        - 如果是 arm 架构，下载地址为：https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_${VERSION}_arm64.tar.gz
+        - 如果是 arm 架构，请使用下载地址：
+          <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/prerequisite_${VERSION}_arm64.tar.gz>
         - 确保离线包与脚本在同一个目录层级
 
 3. 执行离线安装。

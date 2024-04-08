@@ -18,12 +18,12 @@ achieving an independent high-availability etcd.
     | CPU Architecture | Version | Download Link |
     | ---------------- | ------- | ------------- |
     | AMD64            | v0.13.0 | <https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.13.0-amd64.tar>       |
-    | ARM64            | v0.13.0 | <https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.13.0-arm64.tar>       |
+    | <font color="green">ARM64</font>            | v0.13.0 | <https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.13.0-arm64.tar>       |
 
     After downloading, extract the offline package:
 
     ```bash
-    ## Taking the amd64 architecture offline package as an example
+    # Taking the amd64 architecture offline package as an example
     tar -xvf offline-v0.13.0-amd64.tar
     ```
 
