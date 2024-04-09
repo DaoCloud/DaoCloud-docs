@@ -1,4 +1,5 @@
 ---
+MTPE: windsonsea
 hide:
   - toc
 ---
@@ -19,7 +20,7 @@ hide:
 
     [:octicons-arrow-right-24: Learn more](./cloudtty.md)
 
--   :simple-wikipedia:{ .lg .middle } __Clusterpedia__ :simple-cncf: Listed in CNCF Sandbox and Landscape
+-   :simple-wikipedia:{ .lg .middle } __Clusterpedia__ :simple-cncf: Listed in CNCF Sandbox
 
     ---
 
@@ -62,7 +63,7 @@ hide:
 
     [:octicons-arrow-right-24: Learn more](./ferry.md)
 
--   :material-storage-tank:{ .lg .middle } __HwameiStor__ :simple-cncf: Listed in CNCF Sandbox and Landscape
+-   :material-storage-tank:{ .lg .middle } __HwameiStor__ :simple-cncf: Listed in CNCF Sandbox
 
     ---
 
@@ -100,7 +101,7 @@ hide:
 
     kube-node-tuning is aimed at kernel tuning by kubernetes.
 
-    [:octicons-arrow-right-24: Learn more](./kubean.md)
+    [:octicons-arrow-right-24: Learn more](./kube-node-tuning.md)
 
 -   :peanuts:{ .lg .middle } __Kubean__ :simple-cncf: Listed in CNCF Landscape
 
@@ -118,7 +119,7 @@ hide:
 
     [:octicons-arrow-right-24: Learn more](./kwok.md)
 
--   :fontawesome-solid-bridge:{ .lg .middle } __Merbridge__ :simple-cncf: Listed in CNCF Sandbox and Landscape
+-   :fontawesome-solid-bridge:{ .lg .middle } __Merbridge__ :simple-cncf: Listed in CNCF Sandbox
 
     ---
 
@@ -134,7 +135,7 @@ hide:
 
     [:octicons-arrow-right-24: Learn more](./miragedebug.md)
 
--   :material-tape-drive:{ .lg .middle } __Piraeus__
+-   :material-tape-drive:{ .lg .middle } __Piraeus__ :simple-cncf: Listed in CNCF Sandbox
 
     ---
 

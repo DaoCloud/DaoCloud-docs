@@ -100,7 +100,7 @@ hide:
 
     kube-node-tuning 旨在通过 Kubernetes 调优内核
 
-    [:octicons-arrow-right-24: Learn more](./kubean.md)
+    [:octicons-arrow-right-24: 了解更多](./kube-node-tuning.md)
 
 -   :peanuts:{ .lg .middle } __Kubean__ :simple-cncf: 已入选 CNCF Landscape
 
@@ -134,7 +134,7 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./miragedebug.md)
 
--   :material-tape-drive:{ .lg .middle } __Piraeus__
+-   :material-tape-drive:{ .lg .middle } __Piraeus__ :simple-cncf: 已入选 CNCF Landscape 和 Sandbox
 
     ---
 
