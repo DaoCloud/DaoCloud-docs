@@ -1,6 +1,6 @@
 ---
 MTPE: windsonsea
-date: 2024-01-05
+date: 2024-04-09
 ---
 
 # Container Management Release Notes
@@ -10,40 +10,89 @@ understand the evolution path and feature changes from release to release.
 
 *[kpanda]: Internal development codename for DaoCloud container management
 
+## 2024-03-28
+
+### v0.26.0
+
+#### Features
+
+- **Added** cloudtty provides SSH proxy functionality
+- **Added** support for connecting to master nodes
+- **Added** application backup plans can now be created via YAML
+- **Added** capability to select backup objects based on resource type for application backup
+- **Added** support for deleting cluster inspection templates
+- **Added** deployment of NPU monitoring panel through npu-exportor
+- **Added** display of available GPU resources when creating workloads
+- **Added** capability to set task priority when creating workloads
+- **Added** support for oversubscription of vGPU computing power
+- **Added** scenario-based video for vGPU
+- **Added** the capability to set the time zone when creating a cluster
+
+#### Improvements
+
+- **Improved** Adaptation for the productization of ZTE Kirin v7u6 version
+- **Improved** Display of resource utilization percentage
+- **Improved** External mode in offline environment, improved cluster creation,
+  and manual selection of yum repo information
+- **Improved** Productization guidance and documentation for Helm charts upload
+- **Improved** Guidance for deploying GPU operator and Nvidia vGPU when GPU switch is enabled
+- **Improved** Logic for GPU switching
+- **Improved** Validation of whether the node switch card is assigned
+- **Improved** Display of oversubscription resources in vGPU mode in node details
+
+#### Fixes
+
+- **Fixed** kube-vip issue when creating a cluster
+- **Fixed** Failure to create a cluster when selecting "Enable kernel tuning for new cluster"
+- **Fixed** Failure to reinstall Helm after failed installation
+- **Fixed** Failure to retrieve values during Helm application update after reconnection of machines
+- **Fixed** Default rendering error for image address in offline installation of submariner
+- **Fixed** Duplicate concatenation of image addresses during Kpanda upgrade
+- **Fixed** Continuous "In Progress" status after backup restoration
+- **Fixed** Failure to start inspection after reaching inspection frequency when scheduled inspection is enabled.
+- **Fixed** Display of removed nodes in dashboard filtering after removing nodes from a cluster.
+- **Fixed** GPU memory allocation rate not updating on node details page after stopping GPU-enabled applications (open-source issue)
+- **Fixed** Ambiguity in computing power and memory monitoring metrics for Pods in vGPU mode
+- **Fixed** Inaccurate allocation count in MIG single mode
+- **Fixed** Occasional inaccuracy in GPU count in MIG mode
+- **Fixed** Inability to distinguish information from multiple nodes with GPUs in the cluster dashboard without node filtering
+- **Fixed** Unclear prompt for vGPU usage duration, leading to incorrect usage
+- **Fixed** a display issue with GPU mode switching status
+
 ## 2024-01-31
 
 ### v0.25.0
 
 #### New Features
 
-- **Added** Support for batch deletion/stop of multiple workloads
-- **Added** Support for setting time zone during cluster installation
-- **Added** One-click enablement of Velero plugin during Velero installation
-- **Added** Option to enable or disable kube-vip control plane LB capability during cluster creation
-- **Added** Support for importing heterogeneous Addon packages
-- **Added** Ability to create GPU workloads on specific GPU card models
+- **Added** support for batch deletion/stop of multiple workloads
+- **Added** support for setting time zone during cluster installation
+- **Added** one-click enablement of Velero plugin during Velero installation
+- **Added** option to enable or disable kube-vip control plane LB capability during cluster creation
+- **Added** support for importing heterogeneous Addon packages
+- **Added** capability to create GPU workloads on specific GPU card models
 
 #### Improvements
 
-- **Improved** Enhanced availability of GPU node switching, reducing switch time to within 2 seconds
-- **Improved** Improved logic for GPU mode switching
-- **Improved** Enhanced documentation for GPU-operator installation failure in Ubuntu environment
+- **Improved** availability of GPU node switching, reducing switch time to within 2 seconds
+- **Improved** logic for GPU mode switching
+- **Improved** documentation for GPU-operator installation failure in Ubuntu environment
 - **Improved** Deep review and optimization of GPU dashboard (including VGPU, MIG, and whole GPU card)
-- **Improved** Optimized functionality related to GPU statistics at node level using custom metrics
-- **Improved** Reduced latency when accessing drop-down menus for creating PVCs, network policies, and routing in cluster details page for large-scale clusters
-- **Improved** Resolved browser freeze issue when switching namespaces after adding forwarding rules in clusters with 1000+ services
-- **Improved** Optimized image selector to prevent page freeze when there are 1000+ image repositories
-- **Improved** Optimized application backup logic
+- **Improved** functionality related to GPU statistics at node level using custom metrics
+- **Improved** latency when accessing drop-down menus for creating PVCs, network policies, and routing in cluster details page for large-scale clusters
+- **Improved** browser freeze issue when switching namespaces after adding forwarding rules in clusters with 1000+ services
+- **Improved** image selector to prevent page freeze when there are 1000+ image repositories
+- **Improved** application backup logic
 
 #### Fixes
 
-- **Fixed** Issue where crontab configuration with cron expression caused inability to modify scheduled task configuration
+- **Fixed** an issue where crontab configuration with cron expression caused inability to modify scheduled task configuration
 - **Fixed** Infinite loop issue in installer caused by Redis Sentinel configuration
 - **Fixed** Refresh loop issue in console (cloudshell) reconnection mechanism, affecting command execution
 - **Fixed** Incorrect display of container CIDR after integration with DCE4
 - **Fixed** Incorrect image address in online upgrade of installer for kcoral image
 - **Fixed** Failure to restore Job during backup recovery
-- **Fixed** Issue where enabling both HPA and CronHPA resulted in CronHPA being overwritten
+- **Fixed** an issue where enabling both HPA and CronHPA resulted in CronHPA being overwritten
 - **Fixed** Ineffective selection of installing Insight plugin during cluster creation in kpanda
 - **Fixed** Inability to upgrade current global cluster despite the page showing upgrade availability
 - **Fixed** Inability to set multiple lines in calico_node_extra_envs in Advanced Settings during cluster creation
@@ -248,7 +297,7 @@ understand the evolution path and feature changes from release to release.
   creating a cluster in an offline environment.
 - **Fixed** an issue where upgrading a cluster with version 1.26 or above failed due to changes
   in the Kubernetes container registry.
-- **Fixed** issues related to namespace-level users not being able to use StorageClasses to create PVs.
+- **Fixed** an issues related to namespace-level users not being able to use StorageClasses to create PVs.
 - **Fixed** an issue where specifying a namespace when creating a route did not take effect.
 - **Fixed** an issue where the date returned incorrectly after upgrading the cluster.
 
@@ -286,7 +335,7 @@ understand the evolution path and feature changes from release to release.
 
 #### New Features
 
-- **Added** ability to download patrol report
+- **Added** capability to download patrol report
 - **Added** view of ETCD Backup Low
 - **Added** support for enabling Flannel and Kube-ovn network plug-ins while creating a cluster
 - **Added** support for Cilium dual-stack networking while creating a cluster
@@ -308,7 +357,7 @@ understand the evolution path and feature changes from release to release.
 #### Fixes
 
 - **Fixed** helm app configuration missing issue
-- **Fixed** issues with creation failure due to ns inconsistency while creating multiple types of resources using yaml
+- **Fixed** an issues with creation failure due to ns inconsistency while creating multiple types of resources using yaml
 - **Fixed** the failure to select Docker 19.03 runtime using Kirin operating system
 - **Fixed** incorrect translation of English interface
 
@@ -318,7 +367,7 @@ understand the evolution path and feature changes from release to release.
 
 #### New Features
 
-- **Added** ability to query PVC events using the interface.
+- **Added** capability to query PVC events using the interface.
 - **Added** configuration of parameters such as backofflimit, completions, parallelism,
   and activeDeadlineSeconds while creating a task
 - **Added** integration of self-developed open source storage component Hwameistor and support for viewing
@@ -356,10 +405,10 @@ understand the evolution path and feature changes from release to release.
 
 - **Added** Productization support for Persistent Volumes (PVs), which supports selecting existing data volumes
   while creating PVCs.
-- **Added** Ability to create clusters using Kubernetes networkless CNI.
+- **Added** capability to create clusters using Kubernetes networkless CNI.
 - **Added** support for the Chinese names of resources such as load, configuration, and service.
 - **Added** creation of multiple types of resources simultaneously while creating workload via YAML.
-- **Added** ability to pause and start workloads.
+- **Added** capability to pause and start workloads.
 
 #### Optimizations
 
@@ -415,7 +464,7 @@ understand the evolution path and feature changes from release to release.
 
 #### Fixes
 
-- **Fixed** Issues with not being able to add new nodes with a password.
+- **Fixed** an issues with not being able to add new nodes with a password.
 - **Fixed** Error in obtaining the cluster kubeconfig accessed in Token mode.
 - **Fixed** Cannot get full users and groups when granting permissions.
 - **Fixed** an issue unbinding the workspace original permissions when the Bindingsync component is abnormal.
@@ -501,4 +550,4 @@ understand the evolution path and feature changes from release to release.
 
 #### Fixes
 
-- **Fixed** Issues with selected namespaces being automatically converted to all namespaces on resource switch.
+- **Fixed** an issues with selected namespaces being automatically converted to all namespaces on resource switch.
