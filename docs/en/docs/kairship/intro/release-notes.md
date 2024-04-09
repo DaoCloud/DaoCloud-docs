@@ -1,6 +1,6 @@
 ---
 MTPE: windsonsea
-date: 2024-02-19
+date: 2024-04-09
 ---
 
 # Release Notes
@@ -8,13 +8,30 @@ date: 2024-02-19
 This page lists the release notes of Multicloud Management module,
 so that you can understand the evolution path and feature changes of each version.
 
+## 2024-03-25
+
+### v0.17.0
+
+#### Features
+
+- **Deleted** protection capability for multicloud resources.
+
+#### Upgraded
+
+- **Upgraded** Karmada version to v1.8.0.
+
+#### Fixed
+
+- **Fixed** an issue where entering abnormal symbols while searching for instances caused an error.
+- **Fixed** an issue where the available zone was not displayed in the connected working cluster list.
+
 ## 2024-01-25
 
 ### v0.16.0
 
 #### Improvements
 
-- **Improved** Added permission control for one-click conversion of multi-cloud resources
+- **Improved** Added permission control for one-click conversion of multicloud resources
 
 #### Fixes
 
@@ -24,14 +41,14 @@ so that you can understand the evolution path and feature changes of each versio
 
 ### v0.15.0
 
-#### New features
+#### Features
 
-- **Added** Audit logs for multi-cloud instances
+- **Added** Audit logs for multicloud instances
 
 #### Fixes
 
-- **Fixed** Display optimization for deployment clusters when creating multi-cloud load balancers
-- **Fixed** Issue where container group resources were not visible for multi-cloud task resources
+- **Fixed** Display optimization for deployment clusters when creating multicloud load balancers
+- **Fixed** an issue where container group resources were not visible for multicloud task resources
 
 ## 2023-11-30
 
@@ -56,50 +73,50 @@ so that you can understand the evolution path and feature changes of each versio
 
 #### Bug Fixes
 
-- **Fixed** the issue where corresponding Pods cannot be viewed when viewing svc.
-- **Fixed** the issue of being unable to delete member clusters after enabling metricAdaptor.
+- **Fixed** an issue where corresponding Pods cannot be viewed when viewing svc.
+- **Fixed** an issue of being unable to delete member clusters after enabling metricAdaptor.
 
 ## 2023-08-31
 
 ### v0.12
 
-#### New Features
+#### Features
 
-- **Added** Support for [Cross-Cluster Horizontal Pod Autoscaling (FHPA)](../best-practice/fhpa.md).
+- **Added** support for [Cross-Cluster Horizontal Pod Autoscaling (FHPA)](../best-practice/fhpa.md).
 
 #### Bug Fixes
 
-- **Fixed** the issue of continuous restart of kairship-apiserver.
+- **Fixed** an issue of continuous restart of kairship-apiserver.
 
 ## 2023-08-31
 
 ### v0.12
 
-#### New Features
+#### Features
 
-- **Added** Support for cross-cluster horizontal pod autoscaling (FHPA)
+- **Added** support for cross-cluster horizontal pod autoscaling (FHPA)
 
 #### Bug Fixes
 
-- **Fixed** the issue of continuous restarts of kairship-apiserver
+- **Fixed** an issue of continuous restarts of kairship-apiserver
 
 ## 2023-07-31
 
 ### v0.11
 
-#### New Features
+#### Features
 
 - **Added** support for viewing event information in resource details.
 
-#### Optimizations
+#### Improvements
 
-- **Optimized** the Karmada Operator project for the community edition of the cluster.
+- **Improved** the Karmada Operator project for the community edition of the cluster.
 
 ## 2023-06-30
 
 ### v0.10.3
 
-#### New Features
+#### Features
 
 - **Added** support for LoadBalancer type in Service.
 - **Added** distribution status display for resources.
@@ -107,20 +124,20 @@ so that you can understand the evolution path and feature changes of each versio
 
 #### Fixes
 
-- **Fixed** the issue of audit log out of range.
+- **Fixed** an issue of audit log out of range.
 - **Fixed** the duplicate icon issue when adding a working cluster to the multicloud instance details page.
 - **Fixed** the error that occurs when modifying the number of instances while creating a multicloud workload.
 - **Fixed** the icon style issue with the distribution status of multicloud resources.
 
 #### Improvements
 
-- **Improved**: Optimized the data source for excluding clusters in deployment strategies.
+- **Improved** the data source for excluding clusters in deployment strategies.
 
 ## 2023-05-29
 
 ### v0.9.1
 
-#### New Features
+#### Features
 
 - Edit Service tags, annotations in Web UI.
 
@@ -144,7 +161,7 @@ so that you can understand the evolution path and feature changes of each versio
 
 ### v0.8.0
 
-#### New Features
+#### Features
 
 - Cluster scheduling group
 - Image selector selection
@@ -164,7 +181,7 @@ so that you can understand the evolution path and feature changes of each versio
 
 ### v0.7.4
 
-#### New Features
+#### Features
 
 - Custom cluster management
 - Data storage for workloads
@@ -173,7 +190,7 @@ so that you can understand the evolution path and feature changes of each versio
 - Cluster-level deployment policies and override policies
 - Custom permissions of roles
 
-#### Improvement
+#### Improvements
 
 - Choice to hide annotations prefixed with 'kairship.io/'
 - Guide users to select cluster when setting override policies
@@ -190,12 +207,12 @@ so that you can understand the evolution path and feature changes of each versio
 
 ### v0.6.3
 
-#### New Features
+#### Features
 
 - Management of multicloud custom resources, supporting CRUD and deployment actions
 - Management of multicloud Services, supporting CRUD and deployment actions
 
-#### Improvement
+#### Improvements
 
 - Auto-propagation fields when creating a multicloud workload
 - Specify the deployment position of multicloud Services
@@ -214,7 +231,7 @@ so that you can understand the evolution path and feature changes of each versio
 
 ### v0.5
 
-#### New Features
+#### Features
 
 - Add APIs for CronJob CRUD actions
 - Add APIs for Job CRUD actions
@@ -229,7 +246,7 @@ so that you can understand the evolution path and feature changes of each versio
 - Create and update propagation policies with graphical forms
 - Display eviction status of worker clusters
 
-#### Improvement
+#### Improvements
 
 - Add Enable/Disenable slider for propagation constraints when creating propagation policies
 - Upgrade the version of karmada-operator to v0.1.9, solving the problem of pod anti-affinity of multiple instances of etcd
@@ -248,7 +265,7 @@ so that you can understand the evolution path and feature changes of each versio
 
 ### v0.4
 
-#### New Features
+#### Features
 
 - Prometheus metrics and Opentelemetry traces
 - Filter clusters if the users specified a region when creating a deployment
@@ -264,7 +281,7 @@ so that you can understand the evolution path and feature changes of each versio
 
 ### v0.3
 
-#### New Features
+#### Features
 
 - Enable permission verification
 - list instance API that can display data according to permissions
@@ -274,7 +291,7 @@ so that you can understand the evolution path and feature changes of each versio
 - Query the namespace and deployment resources of the member cluster
 - Added prompts for creating multicloud resources
 
-#### Improvement
+#### Improvements
 
 - The protobuf data structure of karmada PropagationPolicy and OverridePolicy
 
@@ -288,7 +305,7 @@ so that you can understand the evolution path and feature changes of each versio
 
 ### v0.2
 
-#### New Features
+#### Features
 
 - API to query scheduling time
 - API to manage configmaps of multicloud services
@@ -305,7 +322,7 @@ so that you can understand the evolution path and feature changes of each versio
 
 ### v0.1
 
-#### New Features
+#### Features
 
 - Cloudshell API to manage Karmada clusters through cloudshell
 - API to manage multicloud namespaces
@@ -315,6 +332,6 @@ so that you can understand the evolution path and feature changes of each versio
 - API to download kubeconfig of for Karmada instances
 - API to update instance's alias and labels
 
-#### Improvement
+#### Improvements
 
 - Enhance instance API and collect resource statistics of Karmada instances
