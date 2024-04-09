@@ -15,11 +15,11 @@
 1. 打开终端。
 2. 输入命令：
 
-```bash
-ssh-keygen -t rsa -b 4096
-```
+    ```bash
+    ssh-keygen -t rsa -b 4096
+    ```
 
-3. 当系统提示您“Enter a file in which to save the key”，您可以直接敲击`Enter`键使用默认路径，或者指定一个新的路径。
+3. 当系统提示您 “Enter a file in which to save the key”，您可以直接敲击 Enter 键使用默认路径，或者指定一个新的路径。
 4. 接下来，系统会提示您输入密码（可选），这将增加一个额外的安全层。如果选择输入密码，请记住这个密码，因为每次使用密钥时都会需要它。
 
 #### Windows
@@ -28,9 +28,9 @@ ssh-keygen -t rsa -b 4096
 2. 打开 Git Bash。
 3. 输入命令：
 
-```bash
-ssh-keygen -t rsa -b 4096
-```
+    ```bash
+    ssh-keygen -t rsa -b 4096
+    ```
 
 4. 同 Mac/Linux 步骤。
 
@@ -65,31 +65,33 @@ ssh username@mockhost -p 2222
 
 推荐使用 PuTTY 或 Git Bash 进行 SSH 连接。
 
-- **PuTTY**:
-  1. 打开 PuTTY。
-  2. 在“Host Name (or IP address)”栏输入`mockhost`（实际的主机名）。
-  3. 输入端口号`2222`（实际的端口号）。
-  4. 点击“Open”开始连接。
-  5. 第一次连接时，可能会提示验证服务器的身份，点击“Yes”。
+- **PuTTY** ：
+  
+    1. 打开 PuTTY。
+    2. 在“Host Name (or IP address)”栏输入`mockhost`（实际的主机名）。
+    3. 输入端口号`2222`（实际的端口号）。
+    4. 点击“Open”开始连接。
+    5. 第一次连接时，可能会提示验证服务器的身份，点击“Yes”。
 
-- **Git Bash**:
-  1. 打开 Git Bash。
-  2. 输入访问命令：
+- **Git Bash** ：
+  
+    1. 打开 Git Bash。
+    2. 输入访问命令：
 
-```bash
-ssh username@mockhost -p 2222
-```
+        ```bash
+        ssh username@mockhost -p 2222
+        ```
 
-  3. 按`Enter`键。
+    3. 按 Enter 键。
 
 ### Mac/Linux
 
 1. 打开终端。
 2. 输入访问命令：
 
-```bash
-ssh username@mockhost -p 2222
-```
+    ```bash
+    ssh username@mockhost -p 2222
+    ```
 
 3. 如果系统提示您接受主机的身份，请输入`yes`。
 
@@ -113,7 +115,7 @@ VSCode 通过 Remote - SSH 扩展支持 SSH 远程连接，允许您直接在本
     ssh username@mockhost -p 2222
     ```
 
-- 点击“Enter”。请将 username、mockhost 和 2222 替换为实际的用户名、主机名和端口号。
+- 敲击 Enter 键。请将 username、mockhost 和 2222 替换为实际的用户名、主机名和端口号。
 - 选择一个配置文件来保存此 SSH 主机，通常选择默认即可。
 
 完成后，您的 SSH 主机将添加到 SSH 目标列表中。点击您的主机进行连接。
@@ -130,9 +132,9 @@ PyCharm Professional 版支持通过 SSH 连接到远程服务器，并在本地
 - 选择“File” > “Settings”（在 Mac 上是“PyCharm” > “Preferences”）。
 - 在设置窗口中，导航到“Project: YourProjectName” > “Python Interpreter”。
 - 点击右上角的齿轮图标，选择“Add...”。
-  - 在弹出的窗口中，选择“SSH Interpreter”。
-  - 输入远程主机的信息：主机名（mockhost）、端口号（2222）、用户名（username）。请使用您的实际信息替换这些占位符。
-  - 点击“Next”，PyCharm 将尝试连接到远程服务器。如果连接成功，您将被要求输入密码或选择私钥文件。
+    - 在弹出的窗口中，选择“SSH Interpreter”。
+    - 输入远程主机的信息：主机名（mockhost）、端口号（2222）、用户名（username）。请使用您的实际信息替换这些占位符。
+    - 点击“Next”，PyCharm 将尝试连接到远程服务器。如果连接成功，您将被要求输入密码或选择私钥文件。
 
 配置完成后，点击“Finish”。现在，您的 PyCharm 将使用远程服务器上的 Python 解释器。
 
@@ -140,7 +142,8 @@ PyCharm Professional 版支持通过 SSH 连接到远程服务器，并在本地
 
 ## 安全限制
 
-在同一个 Workspace 内，任意用户都可以通过自己的 SSH 访问凭证来登录到启用了 SSH 的 Notebook。这意味着，只要用户配置了自己的 SSH 公钥到个人中心，并且 Notebook 启用了 SSH 访问，就可以使用 SSH 进行安全连接。
+在同一个 Workspace 内，任意用户都可以通过自己的 SSH 访问凭证来登录到启用了 SSH 的 Notebook。
+这意味着，只要用户配置了自己的 SSH 公钥到个人中心，并且 Notebook 启用了 SSH 访问，就可以使用 SSH 进行安全连接。
 
 请注意，不同用户的访问权限可能会根据 Workspace 的配置而有所不同。确保您了解并遵守您所在组织的安全和访问策略。
 
