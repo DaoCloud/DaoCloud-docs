@@ -8,6 +8,21 @@ date: 2024-01-09
 This page lists the release notes of the container registry, so that you can
 understand the evolution path and feature changes of each version.
 
+*[Kangaroo]: Internal dev codename for the image repository
+*[Kpanda]: Internal dev codename for container management
+*[Harbor]: An open-source image repository tool and a CNCF graduated project
+
+## 2023-03-29
+
+### v0.16.0
+
+- **Added** best practice documentation for deploying Harbor via LoadBalancer mode.
+- **Added** support for upgrading Kangaroo through Kpanda Helm application updates.
+- **Fixed** issue of failed image deletion in Docker Registry.
+- **Fixed** issue of failed creation of image recycling rules for regular tenants (with wsadmin permissions).
+- **Fixed** dependency issue in creating and deleting Harbor with custom role management.
+- **Fixed** error that occurred when creating an image repository with Chinese characters in the description.
+
 ## 2023-01-31
 
 ### v0.15.0
