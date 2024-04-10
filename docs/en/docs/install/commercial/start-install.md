@@ -21,14 +21,14 @@ You can download the latest version from the [Download Center](../../download/in
 
 | CPU Architecture | Version | Download |
 | :--------------- | :------ | :------- |
-| AMD64 | v0.16.0 | [offline-v0.16.0-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.16.0-amd64.tar) |
-| <font color="green">ARM64</font> | v0.16.0 | [offline-v0.16.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.16.0-arm64.tar) |
+| AMD64 | v0.16.1 | [offline-v0.16.1-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.16.1-amd64.tar) |
+| <font color="green">ARM64</font> | v0.16.1 | [offline-v0.16.1-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.16.1-arm64.tar) |
 
 After downloading, extract the offline package.
 Take the amd64 architecture offline package as an example
 
 ```bash
-tar -xvf offline-v0.16.0-amd64.tar
+tar -xvf offline-v0.16.1-amd64.tar
 ```
 
 #### ISO Operating System Image File (Required)
@@ -48,7 +48,7 @@ The ISO operating system image file needs to be configured in
 |   | openEuler 22.03 | [openEuler-22.03-LTS-SP1-x86_64-dvd.iso](https://mirrors.nju.edu.cn/openeuler/openEuler-22.03-LTS-SP1/ISO/x86_64/openEuler-22.03-LTS-SP1-x86_64-dvd.iso) |
 |   | OracleLinux R9 U1 | [OracleLinux-R9-U1-x86_64-dvd.iso](https://yum.oracle.com/ISOS/OracleLinux/OL9/u1/x86_64/OracleLinux-R9-U1-x86_64-dvd.iso) |
 |   | Rocky Linux 9.2 | [Rocky-9.2-x86_64-dvd.iso](https://dl.rockylinux.org/vault/rocky/9.2/isos/x86_64/Rocky-9.2-x86_64-dvd.iso) |
-| <font color="green">ARM64</font>     | Kylin Linux Advanced Server release V10 (Sword) SP2 | [Request Address](https://www.kylinos.cn/scheme/server/1.html) |
+| <font color="green">ARM64</font>     | Kylin Linux Advanced Server release V10 (Sword) SP2 | [Request Address](https://www.kylinos.cn/support/trial.html) |
 
 !!! note
 
@@ -70,9 +70,10 @@ operating systems, which can be found at <https://github.com/kubean-io/kubean/re
 Currently, the installer version requires the osPackage offline package version to match.
 Please download the osPackage offline package based on the corresponding version:
 
-=== "V0.16.0"
+=== "V0.16.1"
 
     | Operating System | Download |
+    | :--------------- | :--------- |
     | CentOS 7 | [os-pkgs-centos7-v0.13.9.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.9/os-pkgs-centos7-v0.13.9.tar.gz) |
     | Redhat 8 | [os-pkgs-redhat8-v0.13.9.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.9/os-pkgs-redhat8-v0.13.9.tar.gz) |
     | Redhat 7 | [os-pkgs-redhat7-v0.13.9.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.9/os-pkgs-redhat7-v0.13.9.tar.gz) |
@@ -190,8 +191,8 @@ in [clusterConfig.yaml](./cluster-config.md).
 
 | CPU Architecture | Version | Download |
 | :--------------- | :------ | :------- |
-| AMD64    | v0.15.0 | [addon-offline-full-package-v0.15.0-amd64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.15.0-amd64.tar.gz) |
-| <font color="green">ARM64</font>    | v0.15.0 | [addon-offline-full-package-v0.15.0-arm64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.15.0-arm64.tar.gz) |
+| AMD64    | v0.16.0 | [addon-offline-full-package-v0.16.0-amd64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.16.0-amd64.tar.gz) |
+| <font color="green">ARM64</font>    | v0.16.0 | [addon-offline-full-package-v0.16.0-arm64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.16.0-arm64.tar.gz) |
 
 #### One-Click Download of Required Offline Packages
 

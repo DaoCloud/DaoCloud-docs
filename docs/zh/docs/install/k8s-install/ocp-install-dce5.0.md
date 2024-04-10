@@ -15,15 +15,15 @@
 
 2. 下载全模式离线包，可以在[下载中心](../../download/index.md)下载最新版本。
 
-    | CPU 架构 | 版本   | 下载地址                                                                                          |
-    | -------- | ------ | ------------------------------------------------------------------------------------------------- |
+    | CPU 架构 | 版本   | 下载地址 |
+    | -------- | ------ | ----- |
     | AMD64    | v0.16.1 | <https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.16.1-amd64.tar> |
     | ARM64     | v0.16.1 | <https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.16.1-arm64.tar> |
 
     下载完毕后解压离线包：
 
     ```bash
-    ## 以 amd64 架构离线包为例
+    # 以 amd64 架构离线包为例
     tar -xvf offline-v0.16.1-amd64.tar
     ```
 
