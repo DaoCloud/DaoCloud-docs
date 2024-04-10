@@ -10,8 +10,8 @@ This package is dedicated to the community and is available for free trial.
 
 | Filename | Version | Download | Update Date |
 | -------- | ------- | --------- | ----------- |
-| offline-community-v0.16.0-arm64.tar | v0.16.0 | [:arrow_right: Go to Download](./free/dce5-installer-v0.16.0.md) | 2024-04-08 |
-| offline-community-v0.16.0-amd64.tar | v0.16.0 | [:arrow_right: Go to Download](./free/dce5-installer-v0.16.0.md) | 2024-04-08 |
+| offline-community-v0.16.1-arm64.tar | v0.16.1 | [:arrow_right: Go to Download](./free/dce5-installer-v0.16.1.md) | 2024-04-08 |
+| offline-community-v0.16.1-amd64.tar | v0.16.1 | [:arrow_right: Go to Download](./free/dce5-installer-v0.16.1.md) | 2024-04-08 |
 
 [More Historical Versions](./free/dce5-installer-history.md)
 
@@ -21,8 +21,8 @@ This package is suitable for private cloud, hybrid cloud, multicloud, microservi
 
 | Filename | Version | Download | Update Date |
 | -------- | ------- | -------- | ----------- |
-| offline-v0.16.0-arm64.tar | v0.16.0 | [:arrow_right: Go to Download](./business/dce5-installer-v0.16.0.md) | 2024-04-08 |
-| offline-v0.16.0-amd64.tar | v0.16.0 | [:arrow_right: Go to Download](./business/dce5-installer-v0.16.0.md) | 2024-04-08 |
+| offline-v0.16.1-arm64.tar | v0.16.1 | [:arrow_right: Go to Download](./business/dce5-installer-v0.16.1.md) | 2024-04-08 |
+| offline-v0.16.1-amd64.tar | v0.16.1 | [:arrow_right: Go to Download](./business/dce5-installer-v0.16.1.md) | 2024-04-08 |
 
 [More Historical Versions](./business/dce5-installer-history.md)
 
@@ -32,8 +32,8 @@ DCE 5.0 provides comprehensive Addons for different use cases, which can be down
 
 | Filename | Version | Download | Update Date |
 | -------- | ------- | -------- | ----------- |
-| addon-offline-full-package-v0.15.0-arm64.tar.gz | v0.15.0 | [:arrow_right: Go to Download](./addon/v0.15.0.md) | 2024-02-05 |
-| addon-offline-full-package-v0.15.0-amd64.tar.gz | v0.15.0 | [:arrow_right: Go to Download](./addon/v0.15.0.md) | 2024-02-05 |
+| addon-offline-full-package-v0.16.0-arm64.tar.gz | v0.16.0 | [:arrow_right: Go to Download](./addon/v0.16.0.md) | 2024-04-08 |
+| addon-offline-full-package-v0.16.0-amd64.tar.gz | v0.16.0 | [:arrow_right: Go to Download](./addon/v0.16.0.md) | 2024-04-08 |
 
 [More Historical Versions](./addon/history.md)
 

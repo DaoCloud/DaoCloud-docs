@@ -1,11 +1,11 @@
 ---
 MTPE: windsonsea
-date: 2024-04-08
+date: 2024-04-10
 hide:
   - navigation
 ---
 
-# DCE 5.0 Community with Installer v0.16.0
+# DCE 5.0 Community with Installer v0.16.1
 
 This page provides downloads for the offline installation package and verification files for DCE 5.0 Community.
 
@@ -15,8 +15,8 @@ This page provides downloads for the offline installation package and verificati
 
 | Filename | Version | Architecture | File Size | Download | Update Date |
 | --------- | ------- | ------------ | --------- | -------- | ----------- |
-| offline-community-v0.16.0-amd64.tar | v0.16.0 | AMD 64 | 7.50 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.16.0-amd64.tar) | 2024-03-14 |
-| offline-community-v0.16.0-arm64.tar | v0.16.0 | <font color="green">ARM 64</font> | 7.05 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.16.0-arm64.tar) | 2024-03-14 |
+| offline-community-v0.16.1-amd64.tar | v0.16.1 | AMD 64 | 7.50 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.16.1-amd64.tar) | 2024-04-09 |
+| offline-community-v0.16.1-arm64.tar | v0.16.1 | <font color="green">ARM 64</font> | 7.05 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.16.1-arm64.tar) | 2024-04-09 |
 
 ## Verification
 
@@ -27,13 +27,13 @@ Go to the offline installation package download directory.
     Run the following command to verify the installation package:
 
     ```sh
-    echo "3d26f2068f0341fe3e3418158b9d9a5244eb1c0cc443909592903040a8929736a1944ff5ae196404fa6362e60515014d50dc6128ef65714597ff1b1cca42620b  offline-community-v0.16.0-amd64.tar" | sha512sum -c
+    echo "e21ba57969b765b0d34645150af38b4870939edd49e49426842703bb34b6459526ba9e472242a0604a8d882f5c341cd5a725268ced9c9941f8aaad7d187dfe8c  offline-community-v0.16.1-amd64.tar" | sha512sum -c
     ```
 
     If the verification is successful, the following will be printed:
 
     ```none
-    offline-community-v0.16.0-amd64.tar: OK
+    offline-community-v0.16.1-amd64.tar: OK
     ```
 
 === "<font color="green">ARM 64</font>"
@@ -41,13 +41,13 @@ Go to the offline installation package download directory.
     Run the following command to verify the installation package:
 
     ```sh
-    echo "a01cc80ae0405e858cfa56b2ffd7a8dd8267744edc2ab31c60e8e3ba46de5afe87880d909d2157f47c2ba062380faab965d761cc7216b9031dd3e33dea7de4eb  offline-community-v0.16.0-arm64.tar" | sha512sum -c
+    echo "46a1252dd68194699ce27ac821f939c57eccc9ff8979be30b8b65554b4a1ac169960e6493bfebf5f523d059622d7ce4a5388763295383cc7fde36113ee76b87b  offline-community-v0.16.1-arm64.tar" | sha512sum -c
     ```
 
     If the verification is successful, the following will be printed:
 
     ```none
-    offline-community-v0.16.0-arm64.tar: OK
+    offline-community-v0.16.1-arm64.tar: OK
     ```
 
 ## Installation
@@ -59,7 +59,7 @@ After successfully verifying the offline package,
     Run the following command to decompress the tar package:
 
     ```sh
-    tar -zxvf offline-community-v0.16.0-amd64.tar
+    tar -zxvf offline-community-v0.16.1-amd64.tar
     ```
 
 === "<font color="green">ARM 64</font>"
@@ -67,7 +67,7 @@ After successfully verifying the offline package,
     Run the following command to decompress the tar package:
 
     ```sh
-    tar -zxvf offline-community-v0.16.0-arm64.tar
+    tar -zxvf offline-community-v0.16.1-arm64.tar
     ```
 
 - For installation instructions, refer to [Community Installation Process](../../install/community/k8s/online.md#_2)

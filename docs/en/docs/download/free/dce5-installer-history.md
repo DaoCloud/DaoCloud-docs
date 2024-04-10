@@ -12,6 +12,8 @@ You can choose and download the one you need.
 
 | Filename | Version | Architecture | File Size | Download | Update Date |
 | -------- | ------- | ------------ | --------- | -------- | ----------- |
+| offline-community-v0.16.1-arm64.tar | v0.16.1 | <font color="green">ARM 64</font> | 7.45 GB | [:arrow_right: Go to Download](./dce5-installer-v0.16.1.md) | 2024-04-09 |
+| offline-community-v0.16.1-amd64.tar | v0.16.1 | AMD 64 | 7.86 GB | [:arrow_right: Go to Download](./dce5-installer-v0.16.1.md) | 2024-04-09 |
 | offline-community-v0.16.0-arm64.tar | v0.16.0 | <font color="green">ARM 64</font> | 7.45 GB | [:arrow_right: Go to Download](./dce5-installer-v0.16.0.md) | 2024-04-08 |
 | offline-community-v0.16.0-amd64.tar | v0.16.0 | AMD 64 | 7.86 GB | [:arrow_right: Go to Download](./dce5-installer-v0.16.0.md) | 2024-04-08 |
 | offline-community-v0.15.2-arm64.tar | v0.15.2 | <font color="green">ARM 64</font> | 7.05 GB | [:arrow_right: Go to Download](./dce5-installer-v0.15.2.md) | 2024-03-14 |
