@@ -11,6 +11,10 @@ hide:
 
 ## 2024 年
 
+- [20240410 | 云原生人工智能白皮书](./240410-cnai-wp.md)
+
+    这本云原生人工智能白皮书首先概述了当前 AI/ML 技术的发展现状，接着介绍了云原生技术所提供的支持，分析了目前面临的挑战和不足，并探讨了正在不断发展中的解决方案。
+
 - [20240326 | 巴黎 KubeCon：平台工程、API 平台和智能代理引领创新](./240326-kubecon-eu.md)
 
     3.19 - 3.22 在巴黎举行的 [KubeCon + CloudNativeCon Europe](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/)
