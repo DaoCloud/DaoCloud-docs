@@ -17,8 +17,12 @@
       - name: "maven" # 该自定义 Jenkins Agent 所继承的现有容器组模板中指定的容器名称。
         image: "my-maven-image" # 使用自定义的镜像。
     ```
-    > 您也可以在containers中添加其他与podTemplate相关的配置项，jenkins采用yaml merge的方式，未填字段则继承自父模板。
-4. 保存配置项，等待约一分钟后，jenkins会自动重新加载配置。
+
+    !!! note
+
+        您也可以在containers中添加其他与podTemplate相关的配置项，jenkins采用yaml merge的方式，未填字段则继承自父模板。
+
+5. 保存配置项，等待约一分钟后，jenkins会自动重新加载配置。
 
 ## 使用
 
@@ -28,7 +32,7 @@
 
 2. 通过JenkinsFile编排流水线
 
-    在JenkinsFile的agent片段中引用自定义的标签，如
+    在JenkinsFile的agent片段中引用自定义的标签：
 
     ```groovy
     pipeline {
