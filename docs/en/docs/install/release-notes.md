@@ -15,6 +15,12 @@ the evolution path and feature changes of each version.
 *[Kpanda]: Dev codename for Container Management in DCE 5.0
 *[Skoala]: Dev codename for Microservice Engine in DCE 5.0
 
+### v0.16.1
+
+#### Fixes
+
+- **Fixed** an issue where upgrading from a lower version of gproduct to v0.16.0 would fail due to a bug in the insight component script.
+
 ## 2024-03-31
 
 ### v0.16.0
@@ -34,6 +40,12 @@ the evolution path and feature changes of each version.
 - **Fixed** issue where OCI_PATH was not effective when importing heterogeneous images
 - **Fixed** manifest disorder issue with kubean custom actions
 - **Fixed** issue where the timezone of the Firestarter cluster was inconsistent with the host machine
+
+#### Known Issues
+
+- When upgrading from a lower version of gproduct to v0.16.0, there is a known issue where upgrading may
+  fail due to a bug in the insight component script. A workaround is to temporarily disable the insight
+  component in the mainfest.yaml file during the upgrade process.
 
 ## 2024-03-01
 
