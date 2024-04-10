@@ -410,7 +410,9 @@ nav:
                   - 使用 IP 池:
                       - 工作负载使用 IP 池: network/config/use-ippool/usage.md
                       - 第三方工作负载使用 IP 池: network/config/use-ippool/cutomizedusage.md
-                  - 工作负载使用 RDMA: network/config/userdma.md
+                  - 工作负载使用 RDMA:
+                      - 工作负载使用 RDMA: network/config/userdma.md
+                      - RDMA 使用方式对比: network/config/rdmatype.md
                   - 创建 Multus CR: network/config/multus-cr.md
               - 网络性能:
                   - 网络 CNI 性能测试报告: network/performance/cni-performance.md
