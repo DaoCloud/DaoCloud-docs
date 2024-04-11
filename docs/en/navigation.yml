@@ -1245,6 +1245,7 @@ nav:
   - Blogs:
       - Index: blogs/index.md
       - 2024:
+          - Cloud Native AI Whitepapaer: blogs/240410-cnai-wp.md
           - Innovations at KubeCon Paris: blogs/240326-kubecon-eu.md
           - Create a Open Source Commercial Ecosystem: blogs/240301-osc-eco.md
           - Book - Managing Cloud Native Data on Kubernetes: blogs/240203-book.md

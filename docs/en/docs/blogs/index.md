@@ -12,6 +12,10 @@ technology, sorted by date by default.
 
 ## 2024
 
+- [20240410 | Cloud Native AI Whitepapaer](./240410-cnai-wp.md)
+
+    This paper presents a brief overview of the state-of-the-art AI/ML techniques, followed by what CN technologies offer, covering the next challenges and gaps before discussing evolving solutions.
+
 - [20240326 | Platform engineering, API platforms and intelligent agents dominate innovation at KubeCon Paris](./240326-kubecon-eu.md)
 
     The sizzle at this past week’s [KubeCon + CloudNativeCon Europe](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/)
