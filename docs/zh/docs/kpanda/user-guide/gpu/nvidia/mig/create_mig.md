@@ -124,11 +124,11 @@
                 mig-enabled: false
 
             # A100-40GB, A800-40GB
-              all-1g.5gb:
-                - devices: all
-                  mig-enabled: true
-                  mig-devices:
-                    "1g.5gb": 7
+            all-1g.5gb:
+              - devices: all
+                mig-enabled: true
+                mig-devices:
+                  "1g.5gb": 7
 
             all-1g.5gb.me:
               - devices: all
