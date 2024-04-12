@@ -18,7 +18,8 @@
 
 !!! note
 
-    重要：0.35.x 版本中更新了 Gateway API 相关自定义资源（CRD），由于 Chart 更新不会自动应用 CRD 变更，请升级后手动应用该位置的 CRD：skoala-init/charts/contour-provisioner-prereq/crds/gateway-api.yaml
+    重要：0.35.x 版本中更新了 Gateway API 相关自定义资源（CRD），由于 Chart 更新不会自动应用 CRD 变更，
+    请升级后手动应用该位置的 CRD：skoala-init/charts/contour-provisioner-prereq/crds/gateway-api.yaml
 
 ## 2024-04-03
 
@@ -36,7 +37,8 @@
 
 !!! note
 
-    重要：0.35.x 版本中更新了 Gateway API 相关自定义资源（CRD），由于 Chart 更新不会自动应用 CRD 变更，请升级后手动应用该位置的 CRD：skoala-init/charts/contour-provisioner-prereq/crds/gateway-api.yaml
+    重要：0.35.x 版本中更新了 Gateway API 相关自定义资源（CRD），由于 Chart 更新不会自动应用 CRD 变更，
+    请升级后手动应用该位置的 CRD：skoala-init/charts/contour-provisioner-prereq/crds/gateway-api.yaml
 
 ## 2024-03-23
 

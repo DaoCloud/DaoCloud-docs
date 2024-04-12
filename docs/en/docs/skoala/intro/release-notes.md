@@ -2,6 +2,72 @@
 
 This page lists the release notes of Microservices to help you learn its feature development and bug fixing progress.
 
+## 2024-04-11
+
+### v0.35.2
+
+#### Fixes
+
+- **Fixed** the issue of inaccurate permissions in the microservice engine module in the global management
+- **Fixed** abnormal saving of global rate limiting in the gateway
+- **Fixed** abnormal memory configuration when creating a gateway
+- **Fixed** abnormal maximum heap memory configuration at runtime in the gateway
+- **Fixed** abnormal time display in relation to Eureka in the registration center
+- **Fixed** abnormal creation of Seata with custom password in Nacos
+- **Fixed** database initialization exception in Seata
+
+!!! note
+
+    Important: In version 0.35.x, Gateway API related custom resources (CRD) have been updated. Since the chart update does not automatically apply CRD changes,
+    please manually apply the CRD: skoala-init/charts/contour-provisioner-prereq/crds/gateway-api.yaml
+
+## 2024-04-03
+
+### v0.35.1
+
+#### Fixes
+
+- **Fixed** error when creating a domain in the gateway
+- **Fixed** mismatch in managed Nacos resource checks
+- **Fixed** abnormal API status after enabling health check port for domain in the gateway and adding health check configuration in API
+- **Fixed** incorrect API statistics overview in the gateway
+- **Fixed** abnormal registration center status
+- **Fixed** abnormal resource annotations when creating traffic lanes
+- **Fixed** gateway custom plugin functionality issues
+
+!!! note
+
+    Important: In version 0.35.x, Gateway API related custom resources (CRD) have been updated. Since the chart update does not automatically apply CRD changes,
+    please manually apply the CRD: skoala-init/charts/contour-provisioner-prereq/crds/gateway-api.yaml
+
+## 2024-03-23
+
+### v0.35.0
+
+#### New Features
+
+- **Added** ability for cloud-native gateway API to match routes based on request parameters
+- **Added** ability for distributed transaction Seata to use custom passwords
+- **Added** time filtering capability for Grafana panels in distributed transactions
+- **Added** ability to filter cloud-native microservice traffic lanes by namespace
+
+#### Fixes
+
+- **Fixed** issues related to registration center types
+- **Fixed** inaccurate prompt when gateway instance count is zero
+- **Fixed** logic related to cloud-native microservices
+- **Fixed** issue of traffic lanes list not refreshing on initial load
+- **Fixed** incorrect display of Sentinel password
+- **Fixed** NullPointerException when creating new API with Envoy as xdsServer
+- **Fixed** pagination issue when mesh instance has no services
+- **Fixed** issues resulting from changes in the service mesh module API
+
+#### Improvements
+
+- **Improved** compatibility with distributed transaction Seata 2.0
+- **Improved** default version to Nacos 2.3.0 for managed registration center
+- **Improved** gateway API statistics chart algorithm to incremental statistics mode
+
 ## 2024-03-06
 
 ### v0.33.4
