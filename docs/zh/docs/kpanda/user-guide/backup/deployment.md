@@ -55,3 +55,6 @@
 6. 此时集群的 __上一次执行状态__ 将转变为 __备份中__ 。等待备份完成后可以点击备份计划的名称，查看备份计划详情。
 
     ![操作菜单](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/backupd20486.png)
+
+!!! note
+    - Job 类型的工作负载，如果为 **执行完成** 状态，不支持备份。
