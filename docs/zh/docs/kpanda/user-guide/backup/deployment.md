@@ -57,4 +57,5 @@
     ![操作菜单](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/backupd20486.png)
 
 !!! note
-    - Job 类型的工作负载，如果为 **执行完成** 状态，不支持备份。
+
+    如果 Job 类型的工作负载状态为 **执行完成** ，则不支持备份。
