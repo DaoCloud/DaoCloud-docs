@@ -1,18 +1,22 @@
 # 创建数据集
 
-数据集是将各类数据源统一封装成可通过 Kubernetes 高效访问的文件或对象集合，以支持在开发训练时快速使用数据。
+智能算力提供模型开发、训练以及推理过程所有需要的数据集管理功能。目前支持将多种数据源统一接入能力。
+
+通过简单配置即可将数据源接入到智能算力中，实现数据的统一纳管、预热、数据集管理等功能。
+
+## 创建数据集
 
 1. 在左侧导航栏中点击 **数据管理** -> **数据集列表** ，点击右侧的 **创建** 按钮。
 
     ![点击创建](../../images/dataset01.png)
 
-1. 系统会预先填充要部署的集群、命名空间，添加名称、标签、注解等基本信息后点击 **下一步** 。
+2. 选择数据集归属的工作集群、命名空间 **下一步** 。
 
     ![填写参数](../../images/dataset02.png)
 
-1. 选择一种数据源类型后，点击 **确定** 。
+3. 配置目标数据的数据源类型，然后点击 **确定** 。
 
-    ![任务资源配置](../../images/job03.png)
+    ![任务资源配置](../../images/dataset03.png)
 
     目前支持这几种数据源：
 
@@ -22,75 +26,37 @@
     - PVC：支持预先创建的 Kubernetes PersistentVolumeClaim
     - NFS：支持 NFS 共享存储
 
-1. 数据集创建成功将返回数据集列表。
+4. 数据集创建成功将返回数据集列表。
+
+      ![数据集列表](../../images/dataset04.png)
 
 !!! info
 
     系统自动会在数据集创建成功后，立即进行一次性的数据预加载；在预加载完成之前，数据集不可以使用。
 
-## 示例
+## 数据集使用
 
-**训练用代码**
+数据集创建成功后，可以在模型训练、推理等任务中使用。
 
-```yaml
-apiVersion: "kubeflow.org/v1"
-kind: PyTorchJob
-metadata:
-  name: pytorch-distributed-sample-v1 # update job name
-  namespace: luchuanjia-p4 # update namespace
-  annotations:
-    baize.io/description: ""
-  labels:
-    jobs.baize.io/training-mode: DISTRIBUTED
-    kueue.x-k8s.io/queue-name: p4-gpu # update queue name
-spec:
-  pytorchReplicaSpecs:
-    Master:
-      replicas: 1
-      restartPolicy: OnFailure
-      template:
-        spec:
-          containers:
-            - name: pytorch
-              image: dockerproxy.com/kubeflowkatib/pytorch-mnist:v1beta1-45c5727
-              imagePullPolicy: Always
-              command:
-                - "python3"
-                - "/opt/pytorch-mnist/mnist.py"
-                - "--epochs=1"
-              resources:
-                limits:
-                  cpu: "1"
-                  memory: 2Gi
-                  nvidia.com/gpu: '1' # use gpu
-                requests:
-                  cpu: "1"
-                  memory: 2Gi
-                  nvidia.com/gpu: '1'
-          priorityClassName: baize-medium-priority
-    Worker:
-      replicas: 1
-      restartPolicy: OnFailure
-      template:
-        spec:
-          containers:
-            - name: pytorch
-              image: dockerproxy.com/kubeflowkatib/pytorch-mnist:v1beta1-45c5727
-              imagePullPolicy: Always
-              command:
-                - "python3"
-                - "/opt/pytorch-mnist/mnist.py"
-                - "--epochs=1"
-              resources:
-                limits:
-                  cpu: "1"
-                  memory: 2Gi
-                  nvidia.com/gpu: '1'
-                requests:
-                  cpu: "1"
-                  memory: 2Gi
-                  nvidia.com/gpu: '1'
-          priorityClassName: baize-medium-priority
-```
+### 在 Notebook 中使用
 
-**训练用数据** ： <https://github.com/zalandoresearch/fashion-mnist>
+在创建 Notebook 中，可以直接使用数据集；使用方式如下：
+
+- 使用数据集做训练数据挂载
+- 使用数据集做代码挂载
+
+![数据集列表](../../images/dataset05.png)
+
+### 在 训练任务 中使用
+
+- 使用数据集指定任务输出
+- 使用数据集指定任务输入
+- 使用数据集指定 TensorBoard 输出
+
+![任务管理](../../images/dataset06.png)
+
+### 在推理服务 中使用
+
+- 使用数据集挂载模型
+
+![推理服务](../../images/dataset07.png)
