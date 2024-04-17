@@ -28,7 +28,7 @@
 
     - __ServiceMonitor__ ：默认不开启，开启后可前往可观测性模块查看 vGPU 相关监控。如需开启，请确保 insight-agent 已安装并处于运行状态，否则将导致 NVIDIA vGPU Addon 安装失败。
 
-    ![修改参数](/docs/en/docs/kpanda/user-guide/gpu/images/vgpu-addon.png)
+    ![修改参数](../images/vgpu-addon.png)
 
 3. 安装成功之后会在指定 __Namespace__ 下出现如下两个类型的 Pod，即表示 NVIDIA vGPU 插件已安装成功：
 
