@@ -7,19 +7,33 @@ This page explains how to install or upgrade the observability module after
 
      The word __insight__ appearing in the following commands or scripts is the internal development codename of the observability module.
 
+## Decompression
+```shell
+  tar -xvf insight_v0.25.3_amd64.tar
+```
+
+After decompression, two bundle packages can be obtained, namely insight and insight agent.
+
+```shell
+  # ll insight_v0.25.3_amd64
+  总用量 2899996
+  -rw-r--r-- 1 root root 2367463936 4月   2 18:36 insight_0.25.3.bundle.tar
+  -rw-r--r-- 1 root root  602125824 4月   2 18:35 insight-agent_0.25.3.bundle.tar
+```
+
 ## Load the image from the installation package
 
-You can load the image in one of the following two ways. When there is a container registry in the environment, it is recommended to select chart-syncer to synchronize the image to the container registry. This method is more efficient and convenient.
+You can load the image in one of the following two ways. When there is a container registry in the environment, it is recommended to select chart-syncer to synchronize the image to the container registry. This method is more efficient and convenient. Please note that the version of charts-syncer should be greater than or equal to [0.0.22](https://github.com/DaoCloud/charts-syncer/releases/tag/v0.0.22).
 
 ### chart-syncer synchronously images to the container registry
 
 1. Create load-image.yaml
 
-     !!! note
+    !!! note
 
          All parameters in this YAML file are required. You need a private container registry and modify related configurations.
 
-     === "chart HARBOR repo installed"
+    === "chart HARBOR repo installed"
 
          If the current environment has installed the HARBOR chart repo, chart-syncer also supports exporting the chart as a tgz file.
 
@@ -28,6 +42,7 @@ You can load the image in one of the following two ways. When there is a contain
            intermediateBundlesPath: insight-offline # The relative path to run the charts-syncer command, not the relative path between this YAML file and the offline bundle
          target:
            containerPrefixRegistry: 10.16.10.111 # need to be changed to your container registry url
+           appendOriginRegistry: true
            repo:
              kind: HARBOR # Can also be any other supported Helm Chart repository class
              url: http://10.16.10.111/chartrepo/release.daocloud.io # need to change to chart repo project url
@@ -40,7 +55,7 @@ You can load the image in one of the following two ways. When there is a contain
                password: "Harbor12345" # Your container registry password
          ```
 
-     === "chart CHARTMUSEUM repo installed"
+    === "chart CHARTMUSEUM repo installed"
 
          If the current environment has installed the CHARTMUSEUM chart repo, chart-syncer also supports exporting the chart as a tgz file.
 
@@ -49,6 +64,7 @@ You can load the image in one of the following two ways. When there is a contain
            intermediateBundlesPath: insight-offline # The relative path to run the charts-syncer command, not the relative path between this YAML file and the offline bundle
          target:
            containerPrefixRegistry: 10.16.10.111 # need to be changed to your container registry url
+           appendOriginRegistry: true
            repo:
              kind: CHARTMUSEUM # Can also be any other supported Helm Chart repository class
              url: http://10.16.10.111 # need to change to chart repo url
@@ -61,7 +77,7 @@ You can load the image in one of the following two ways. When there is a contain
                password: "rootpass123" # Your container registry password
          ```
 
-     === "chart repo not installed"
+    === "chart repo not installed"
 
          If the chart repo is not installed in the current environment, chart-syncer also supports exporting the chart as a tgz file and storing it in the specified path.
 
@@ -82,7 +98,7 @@ You can load the image in one of the following two ways. When there is a contain
 1. Run the synchronous imageing command.
 
      ```shell
-     charts-syncer sync --config load-image.yaml
+     charts-syncer sync --config load-image.yaml --insecure
      ```
 
 ### Docker or containerd direct loading
@@ -92,24 +108,24 @@ Unzip and load the image file.
 1. Unzip the tar archive.
 
      ```shell
-     tar xvf insight.bundle.tar
+     tar -xvf insight_0.25.3.bundle.tar
      ```
 
-     After successful decompression, you will get 3 files:
+    After successful decompression, you will get 3 files:
 
-     - hints.yaml
-     - images.tar
-     - original-chart
+    - hints.yaml
+    - images.tar
+    - original-chart
 
 2. Load the image locally to Docker or containerd.
 
-     === "Docker"
+    === "Docker"
 
          ```shell
          docker load -i images.tar
          ```
 
-     === "containerd"
+    === "containerd"
 
          ```shell
          ctr -n k8s.io image import images.tar
@@ -122,7 +138,7 @@ Unzip and load the image file.
 
 ## upgrade
 
-There are two ways to upgrade. You can choose the corresponding upgrade plan according to the pre-operations:
+There are two ways to upgrade. You can choose the corresponding upgrade plan according to the pre-operations. Before upgrading, please pay attention to the "Upgrade-note"
 
 === "upgrade via helm repo"
 
@@ -141,7 +157,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
      1. Add the Insight helm repository.
 
          ```shell
-         helm repo add insight http://{harbor url}/chartrepo/{project}
+         helm repo add insight http://{harbor url}/chartrepo/{project} --insecure-skip-tls-verify
          ```
 
      1. Update the globally managed helm repository.
@@ -159,9 +175,9 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
 
          ```none
          [root@master ~]# helm search repo insight/insight --versions
-         NAME CHART VERSION APP VERSION DESCRIPTION
-         insight/insight 0.13.1 v0.13.1 A Helm chart for Insight
-         insight/insight-agent 0.13.1 v0.13.1 A Helm chart for Insight Agent
+         NAME                   CHART VERSION  APP VERSION  DESCRIPTION
+         insight/insight        0.25.3          0.25.3       A Helm chart for Insight
+         insight/insight-agent  0.25.3          0.25.3       A Helm chart for Insight Agent
          ...
          ```
 
@@ -176,18 +192,11 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
 
      1. Run `helm upgrade` .
 
-         Before upgrading, it is recommended that you override the __global.imageRegistry__ field in insight.yaml and insight-agent.yaml to the address of the currently used container registry.
-
-         ```shell
-         export imageRegistry={your image registry}
-         ```
-
          ```shell
          helm upgrade insight insight/insight \
            -n insight-system \
            -f ./insight.yaml \
-           --set global.imageRegistry=$imageRegistry \
-           --version 0.13.1
+           --version 0.25.3
          ```
 
          as well as
@@ -196,8 +205,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade plan acc
          helm upgrade insight-agent insight/insight-agent \
            -n insight-system \
            -f ./insight-agent.yaml \
-           --set global.imageRegistry=$imageRegistry \
-           --version 0.13.1
+           --version 0.25.3
          ```
 
 === "upgrade via chart package"
