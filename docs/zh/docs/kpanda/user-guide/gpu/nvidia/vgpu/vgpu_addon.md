@@ -15,16 +15,20 @@
 
 2. 在安装 vGPU 的过程中提供了几个基本修改的参数，如果需要修改高级参数点击 YAML 列进行修改：
 
-    - __deviceMemoryScaling__ ：NVIDIA 装置显存使用比例，输入内容必须为整数，预设值是 1。可以大于 1（启用虚拟显存，实验功能）。
+    - __deviceCoreScaling__ ：NVIDIA 装置算力使用比例，预设值是 1。可以大于 1（启用虚拟算力，实验功能）。如果我们配置 __devicePlugin.deviceCoreScaling__ 参数为 S，在部署了我们装置插件的 Kubernetes 集群中，这张 GPU 分出的 vGPU 将总共包含 __S * 100%__ 算力。
+
+    - __deviceMemoryScaling__ ：NVIDIA 装置显存使用比例，预设值是 1。可以大于 1（启用虚拟显存，实验功能）。
       对于有 M 显存大小的 NVIDIA GPU，如果我们配置 __devicePlugin.deviceMemoryScaling__ 参数为 S，
-      在部署了我们装置插件的 Kubernetes 集群中，这张 GPU 分出的 vGPU 将总共包含 __S * M__ 显存。
+      在部署了我们装置插件的 Kubernetes 集群中，这张 GPU 分出的 vGPU 将总共包含 __S * M__ 显存。     
 
     - __deviceSplitCount__ ：整数类型，预设值是 10。GPU 的分割数，每一张 GPU 都不能分配超过其配置数目的任务。
       若其配置为 N 的话，每个 GPU 上最多可以同时存在 N 个任务。
 
     - __Resources__ ：就是对应 vgpu-device-plugin 和 vgpu-schedule pod 的资源使用量。
 
-    ![修改参数](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/vgpu-pararm.png)
+    - __ServiceMonitor__ ：默认不开启，开启后可前往可观测性模块查看 vGPU 相关监控。如需开启，请确保 insight-agent 已安装并处于运行状态，否则将导致 NVIDIA vGPU Addon 安装失败。
+
+    ![修改参数](../images/vgpu-addon.png)
 
 3. 安装成功之后会在指定 __Namespace__ 下出现如下两个类型的 Pod，即表示 NVIDIA vGPU 插件已安装成功：
 
