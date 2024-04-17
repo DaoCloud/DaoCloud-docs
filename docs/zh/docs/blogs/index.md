@@ -11,7 +11,7 @@ hide:
 
 ## 2024 年
 
-- [20240416 | 一个绿色豆荚入选 CNCF Sandbox 的故事](./240416-kubean.md)
+- [20240416 | 一颗绿色豆荚入选 CNCF Sandbox](./240416-kubean.md)
 
     2024 年 4 月 15 日，一个绿色的豆荚 Kubean 经过 [CNCF TAG 委员会 11 人投票](https://github.com/cncf/sandbox/issues/49)，
     成功入选了 CNCF Sandbox 沙箱。
