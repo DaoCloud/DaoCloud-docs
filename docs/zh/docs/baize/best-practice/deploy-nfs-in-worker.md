@@ -39,7 +39,7 @@ kubectl create namespace nfs
 
     注意检查 `image:`，根据集群所在位置情况，可能需要修改为国内镜像。
 
-```yaml
+```yaml title="nfs-server.yaml"
 kind: Service
 apiVersion: v1
 metadata:
