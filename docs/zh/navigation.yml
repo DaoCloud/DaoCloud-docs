@@ -606,6 +606,9 @@ nav:
                   - 虚拟机配置 GPU: virtnest/vm/vm-gpu.md
                   - 虚拟机网络: virtnest/vm/vm-network.md
                   - 虚拟机存储: virtnest/vm/vm-sc.md
+              - 虚拟机 GPU:
+                  - 虚拟机 GPU: virtnest/gpu/vm-gpu.md
+                  - 虚拟机 vGPU: virtnest/gpu/vm-vgpu.md
               - 虚拟机模板:
                   - 通过模板创建虚拟机: virtnest/template/index.md
                   - 虚拟机模板: virtnest/template/tep.md

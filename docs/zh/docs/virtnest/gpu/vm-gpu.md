@@ -1,8 +1,8 @@
-# 虚拟机配置 GPU（Nvidia）
+# 虚拟机配置 GPU（直通模式）
 
 本文将介绍如何在创建虚拟机时，配置 GPU 的前提条件。
 
-配置虚拟机的 GPU 的重点是对 GPU Operator 进行配置，以便在工作节点上部署不同的软件组件，具体取决于这些节点上配置运行的 GPU 工作负载。以以下三个节点为例：
+配置虚拟机的 GPU 的重点是对 GPU Operator 进行配置，以便在工作节点上部署不同的软件组件，具体取决于这些节点上配置运行的 GPU 工作负载。以下三个节点为例：
 
 - controller-node-1 节点配置为运行容器。
 - work-node-1 节点配置为运行具有直通 GPU 的虚拟机。
@@ -12,75 +12,15 @@
 
 工作节点可以运行 GPU 加速容器，也可以运行具有 GPU 直通的 GPU 加速 VM，或者具有 vGPU 的 GPU 加速 VM，但不能运行其中任何一个的组合。
 
-1. 工作节点可以单独运行 GPU 加速容器、具有 GPU 直通的 GPU 加速 VM，或者具有 vGPU 的 GPU 加速 VM，不支持任何组合形式。
-2. 集群管理员或开发人员需要提前了解集群情况，并正确标记节点以指示它们将运行的 GPU 工作负载类型。
-3. 运行具有 GPU 直通或vGPU的 GPU 加速 VM的工作节点被假定为裸机，如果工作节点是虚拟机，则需要在虚拟机平台上启用GPU直通功能，请向虚拟机平台提供商咨询。
-4. 不支持 Nvidia MIG 的 vGPU。
-5. GPU Operator 不会自动在 VM 中安装 GPU 驱动程序。
+1. 集群管理员或开发人员需要提前了解集群情况，并正确标记节点以指示它们将运行的 GPU 工作负载类型。
+2. 运行具有 GPU 直通或vGPU的 GPU 加速 VM的工作节点被假定为裸机，如果工作节点是虚拟机，则需要在虚拟机平台上启用 GPU 直通功能，请向虚拟机平台提供商咨询。
+3. 不支持 Nvidia MIG 的 vGPU。
+4. GPU Operator 不会自动在 VM 中安装 GPU 驱动程序。
 
 ## 启用 IOMMU
 
 为了启用GPU直通功能，集群节点需要开启IOMMU。请参考[如何开启IOMMU](https://www.server-world.info/en/note?os=CentOS_7&p=kvm&f=10)。
 如果您的集群是在虚拟机上运行，请咨询您的虚拟机平台提供商。
-
-## 构建 vGPU Manager 镜像
-
-注意：仅当使用 NVIDIA vGPU 时才需要构建 vGPU Manager 镜像。如果您计划仅使用 GPU 直通，请跳过此部分。
-
-以下是构建 vGPU Manager 镜像并将其推送到镜像仓库中的步骤：
-
-1. 从 NVIDIA Licensing Portal 下载 vGPU 软件。
-
-    - 登录 NVIDIA Licensing Portal，转到 **Software Downloads** 页面。
-    - NVIDIA vGPU 软件位于 **Software Downloads** 页面的 **Driver downloads** 选项卡中。
-    - 在筛选条件中选择**VGPU + Linux** ，点击 **下载** 以获取 Linux KVM 的软件包。
-      请解压下载的文件（`NVIDIA-Linux-x86_64-<version>-vgpu-kvm.run`）。
-
-    ![下载vGPU软件](../images/gpu-01.png)
-
-2. 打开终端克隆 container-images/driver 仓库
-
-    ```bash
-    git clone https://gitlab.com/nvidia/container-images/driver cd driver
-    ```
-
-3. 切换到您的操作系统对应 vgpu-manager 目录
-
-    ```bash
-    cd vgpu-manager/<your-os>
-    ```
-
-4. 将步骤 1 中提取的 .run 文件 copy 到当前目录
-
-    ```bash
-    cp <local-driver-download-directory>/*-vgpu-kvm.run ./
-    ```
-
-5. 设置环境变量
-
-    - PRIVATE_REGISTRY：专用注册表的名称，用于存储驱动程序映像。
-    - VERSION：NVIDIA vGPU管理器的版本，从NVIDIA软件门户下载。
-    - OS_TAG：必须与集群节点操作系统版本匹配。
-    - CUDA_VERSION：用于构建驱动程序映像的CUDA基本映像版本。
-
-    ```bash
-    export PRIVATE_REGISTRY=my/private/registry VERSION=510.73.06 OS_TAG=ubuntu22.04 CUDA_VERSION=12.2.0
-    ```
-
-6. 构建 NVIDIA vGPU Manager Image
-
-    ```bash
-    docker build \
-      --build-arg DRIVER_VERSION=${VERSION} \
-      --build-arg CUDA_VERSION=${CUDA_VERSION} \
-      -t ${PRIVATE_REGISTRY}``/vgpu-manager``:${VERSION}-${OS_TAG} .
-    ```
-
-7. 将 NVIDIA vGPU Manager 映像推送到您的镜像仓库
-
-    ```bash
-    docker push ${PRIVATE_REGISTRY}/vgpu-manager:${VERSION}-${OS_TAG}
-    ```
 
 ## 标记集群节点
 
