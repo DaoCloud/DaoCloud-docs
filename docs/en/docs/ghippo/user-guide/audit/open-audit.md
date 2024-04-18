@@ -7,7 +7,7 @@
 
 - For DCE Community installations, the Kubernetes audit log switch was not operated during the management cluster installation process.
 - For DCE 5.0 Enterprise installations, the Kubernetes audit log switch is enabled by default.
-    - To set it to default off, you can modify the installer's __clusterConfigt.yaml__ file (set __logPath__ to empty "").
+    - To set it to default off, you can modify the installer's __clusterConfig.yaml__ file (set __logPath__ to empty "").
 - The collection of Kubernetes audit logs switch is disabled by default for the management cluster.
     - Default settings do not support configuration.
 

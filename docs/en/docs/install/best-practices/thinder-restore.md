@@ -27,7 +27,7 @@ Installer v0.16.0 supports backup and restore of the kind cluster in the bootstr
 
     !!! note
 
-        The mount directory can be defined in clusterconfig.yaml with
+        The mount directory can be defined in clusterConfig.yaml with
         `spec.tinderKind.resourcesMountPath`, and the default is `/home/kind`.
 
 ## Restore

@@ -7,7 +7,7 @@
 此方式同样适配 Istio 高可用模式下，获取客户端源 IP 。此方案下， VIP 只会漂移到具有 Endpoint 实例的节点上，所以可以保留客户端源 IP。但会影响负载均衡性(流量的只会打到具有 Endpoint 实例的节点)，可参考 [L2 和 BGP 模式说明](l2-bgp.md)中的负载均衡性寻求更多细节。
 
 商业版安装后，默认开启获取客户端源 IP 功能。若期望安装前关闭该功能，
-可[修改安装器 clusterConfigt.yaml](../../../install/commercial/cluster-config.md) 来配置（即 SourceIP 设置为 false）。
+可[修改安装器 clusterConfig.yaml](../../../install/commercial/cluster-config.md) 来配置（即 SourceIP 设置为 false）。
 
 ## 操作步骤
 

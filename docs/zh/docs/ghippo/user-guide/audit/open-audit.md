@@ -7,7 +7,7 @@
 
 - 社区版安装管理集群过程中未操作 K8s 审计日志开关
 - 商业版管理集群的 K8s 审计日志开关默认开启
-    - 如需设置成默认关闭，可[修改安装器 clusterConfigt.yaml](../../../install/commercial/cluster-config.md) 来配置（logPath 设置为空 ”“）
+    - 如需设置成默认关闭，可[修改安装器 clusterConfig.yaml](../../../install/commercial/cluster-config.md) 来配置（logPath 设置为空 ”“）
 - 管理集群的采集 K8s 审计日志开关默认关闭
     - 默认设置不支持配置
 
