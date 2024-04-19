@@ -1069,6 +1069,7 @@ nav:
                   - 任务中心:
                       - 创建任务: baize/developer/jobs/create.md
                       - 删除任务: baize/developer/jobs/delete.md
+                      - 查看任务负载: baize/developer/jobs/view.md
                   - 数据管理:
                       - 创建数据集: baize/developer/dataset/create.md
                       - 删除数据集: baize/developer/dataset/delete.md
