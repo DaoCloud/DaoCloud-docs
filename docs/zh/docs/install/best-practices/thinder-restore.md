@@ -24,7 +24,7 @@
 
     !!! note
 
-        其中挂载目录可以在 clusterconfig.yaml 中的 `spec.tinderKind.resourcesMountPath` 定义，默认是 `/home/kind`。
+        其中挂载目录可以在 clusterConfig.yaml 中的 `spec.tinderKind.resourcesMountPath` 定义，默认是 `/home/kind`。
 
 ## 还原
 

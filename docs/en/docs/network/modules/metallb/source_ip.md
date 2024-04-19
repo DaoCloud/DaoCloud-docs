@@ -9,7 +9,7 @@ This method is also suitable for Istio high availability mode to get the source 
 However, this option has an impact on load balancing, please refer to Load Balancing in [L2 and BGP Mode](l2-bgp.md) for details.
 
 After the commercial version is installed, the function of obtaining client source IP is enabled by default. If you want to disable this feature before installation
-You can [modify the installer clusterConfigt.yaml](../../../install/commercial/cluster-config.md) to configure it (i.e. set SourceIP to false).
+You can [modify the installer clusterConfig.yaml](../../../install/commercial/cluster-config.md) to configure it (i.e. set SourceIP to false).
 
 ## Steps
 
