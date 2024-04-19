@@ -1,14 +1,12 @@
 # 终端设备管理
 
-## 编辑终端设备
-
-平台支持对终端设备的基本信息、孪生属性、标签、访问配置进行编辑修改操作。
+DCE 5.0 云边协同支持对终端设备的基本信息、孪生属性、标签、访问配置进行编辑修改操作。
 
 !!1 note
 
     仅在终端设备和边缘节点解除绑定状态下，才能对终端设备进行编辑操作。
 
-### 编辑基本信息
+## 编辑基本信息
 
 操作步骤如下：
 
@@ -20,7 +18,7 @@
 
 ![编辑基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/manage-device-01.png)
 
-### 编辑孪生属性
+## 编辑孪生属性
 
 操作步骤如下：
 
@@ -32,7 +30,7 @@
 
 ![编辑孪生属性](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/manage-device-03.png)
 
-### 修改标签
+## 修改标签
 
 操作步骤如下：
 
@@ -43,7 +41,7 @@
 
 ![修改标签](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/manage-device-04.png)
 
-### 编辑访问配置
+## 编辑访问配置
 
 操作步骤如下：
 
@@ -54,7 +52,7 @@
 
 ![编辑访问配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/manage-device-05.png)
 
-### 删除终端设备
+## 删除终端设备
 
 在终端设备列表的右侧，点击三个点 __⋮__ ，在弹出菜单中选择 __删除__ 。
 
