@@ -19,16 +19,16 @@ The usage workflow is as follows:
 ```mermaid
 graph TB
 
-start1([Start]) --> config[Configure Edge Node]
-config --> register[Register Batch Task for Node] --> join[Join Node<br/>by Following Guide] --> end1([End])
+start1([Start]) --> require[Requirements to Join Edge Node] --> config[Configure Edge Node] -->oam[Manage Edge Nodes] --> end1([End])
 
 classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
 classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
 classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
 class start1,end1 k8s;
-class config,register,join cluster
+class require,config,oam cluster
 
-click register "https://docs.daocloud.io/en/kant/user-guide/node/batch-registration.html"
-click join "https://docs.daocloud.io/en/kant/user-guide/node/managed-node.html"
+click require "https://docs.daocloud.io/en/kant/user-guide/node/join-rqmt.html"
+click config "https://docs.daocloud.io/en/kant/user-guide/node/access-guide.html"
+click oam "https://docs.daocloud.io/en/kant/user-guide/node/manage-node.html"
 ```
