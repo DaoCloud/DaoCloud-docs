@@ -202,17 +202,17 @@ nav:
                       - 健康检查: kpanda/user-guide/workloads/pod-config/health-check.md
                       - 集群调度: kpanda/user-guide/workloads/pod-config/scheduling-policy.md
               - 弹性伸缩:
-                  - Knative:
-                    - Knative 介绍: kpanda/user-guide/scale/knative/knative.md
-                    - 安装 Knative: kpanda/user-guide/scale/knative/install.md
-                    - 使用场景: kpanda/user-guide/scale/knative/scene.md
-                    - 使用实践: kpanda/user-guide/scale/knative/playground.md
                   - 安装 metrics-server 插件: kpanda/user-guide/scale/install-metrics-server.md
                   - 安装 kubernetes-cronhpa-controller 插件: kpanda/user-guide/scale/install-cronhpa.md
                   - 安装 VPA 插件: kpanda/user-guide/scale/install-vpa.md
                   - 创建 HPA 策略: kpanda/user-guide/scale/create-hpa.md
                   - 创建 VPA 策略: kpanda/user-guide/scale/create-vpa.md
                   - HPA 和 CronHPA 兼容规则: kpanda/user-guide/scale/hpa-cronhpa-compatibility-rules.md
+                  - 其他方案:
+                    - Knative 介绍: kpanda/user-guide/scale/knative/knative.md
+                    - 安装 Knative: kpanda/user-guide/scale/knative/install.md
+                    - Kantive 场景: kpanda/user-guide/scale/knative/scene.md
+                    - Knative 实践: kpanda/user-guide/scale/knative/playground.md
               - Helm 应用:
                   - Helm 模板: kpanda/user-guide/helm/README.md
                   - 上传 Helm 模板: kpanda/user-guide/helm/upload-helm.md
