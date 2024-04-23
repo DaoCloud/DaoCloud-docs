@@ -34,13 +34,13 @@
 
 1. 进入 __容器管理__ ，选取您的工作集群，点击 __Helm 应用__ -> __Helm 模板__ ，选择并安装 gpu-operator。需要修改一些 yaml 中的相关字段。
 
-        ```yaml
-        gpu-operator.sandboxWorkloads.enabled=true
-        gpu-operator.vfioManager.enabled=true
-        gpu-operator.sandboxDevicePlugin.enabled=true
-        gpu-operator.sandboxDevicePlugin.version=v1.2.4   // version 需要 >= v1.2.4
-        gpu-operator.toolkit.version=v1.14.3-ubuntu20.04
-        ```
+    ```yaml
+    gpu-operator.sandboxWorkloads.enabled=true
+    gpu-operator.vfioManager.enabled=true
+    gpu-operator.sandboxDevicePlugin.enabled=true
+    gpu-operator.sandboxDevicePlugin.version=v1.2.4   // version 需要 >= v1.2.4
+    gpu-operator.toolkit.version=v1.14.3-ubuntu20.04
+    ```
 
 2. 等待安装成功，如下图所示：
 
