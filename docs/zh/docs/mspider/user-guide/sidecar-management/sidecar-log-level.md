@@ -32,23 +32,21 @@ hide:
 
 ### 临时修改工作负载边车日志级别
 
-通常情况下我们在临时分析问题时，需要修改某个工作负载的边车日志级别，所以，我们支持通过到工作负载的边车容器内临时修改。
+通常在临时分析问题时，需要修改某个工作负载的边车日志级别，所以 DCE 5.0 服务网格支持到工作负载的边车容器内临时修改边车的日志级别。
 
-![image](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/sidecar-log-level-03.png)
-
-这里需要使用 Kubectl 来进行容器边车的配置更新，您需要访问集群控制台，并打开终端，执行如下命令：
+这里需要使用 kubectl 来进行容器边车的配置更新，您需要访问集群控制台，并打开终端，执行如下命令：
 
 ```shell
 kubectl -n <namespace> exec -it <pod-name>  -c istio-proxy -- curl -X POST localhost:15000/logging?level=<log level>
 ```
 
-- __<namespace>__ ：工作负载所在的命名空间
-- __<pod-name>__ ：工作负载的 Pod 名称
-- __<log level>__ ：边车日志级别，可选值为：__trace__ 、__debug__ 、__info__ 、__warning__ 、__error__ 、__critical__ 、__off__ 等
-- __istio-proxy__ ：边车容器名称，不需要修改
-- __localhost:15000__ ：边车容器的监听地址，不需要修改
+- `<namespace>` ：工作负载所在的命名空间
+- `<pod-name>` ：工作负载的 Pod 名称
+- `<log level>` ：边车日志级别，可选值为：`trace` 、`debug` 、`info` 、`warning` 、`error` 、`critical` 、`off` 等
+- `istio-proxy` ：边车容器名称，不需要修改
+- `localhost:15000` ：边车容器的监听地址，不需要修改
 
-例如，我们需要将 __default__ 命名空间下的 __productpage-v1-5b4f8f9b9f-8q9q2__ 工作负载的边车日志级别修改为 __debug__ ，则执行如下命令：
+如果需要将 __default__ 命名空间下的 __productpage-v1-5b4f8f9b9f-8q9q2__ 工作负载的边车日志级别修改为 __debug__ ，则执行如下命令：
 
 ```shell
 kubectl -n default exec -it productpage-v1-5b4f8f9b9f-8q9q2  -c istio-proxy -- curl -X POST localhost:15000/logging?level=debug
