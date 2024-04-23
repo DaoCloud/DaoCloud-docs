@@ -1,34 +1,43 @@
 ---
+MTPE: windsonsea
+Date: 2024-04-23
 hide:
   - toc
 ---
 
 # Report Management
 
-The report management module integrates the administrator's job execution status and the cluster's hardware resource configuration, and provides statistics from the dimensions of the cluster, node, Pod, workspace, and namespace. It intuitively presents the utilization of computing resources to users, helping them better partition and schedule computing resources.
+Report management visually displays statistical data across clusters, nodes, pods, workspaces, namespaces, audits, and alarms. This data provides a reliable foundation for platform billing and utilization optimization.
 
-After enabling a certain type of report, the cluster report data will start collecting and displaying within 20 minutes. After disabling, data collection for the report will stop within the same time frame. The data that has been collected before will still be displayed normally.
+## Features
 
-Currently, the following types of reports are provided:
+- Supports custom queries for statistical data within a year
+- Allows exporting reports in CSV and Excel formats
+- Supports enabling/disabling individual reports; once toggled, the platform will start/stop data collection within 20 minutes, but previously collected data will still be displayed.
+- Displays maximum, minimum, and average values for CPU utilization, memory utilization, storage utilization, and GPU memory utilization
 
-- Cluster report: shows all cluster names, including the number of nodes (clicking on the number can jump to the node report) and resource utilization rates. Searchable by cluster name.
-- Node report: shows the IP address, type, and the cluster it belongs to, as well as the resource utilization rate. Customizable time range for the report, searchable by node name, cluster, and IP address.
-- Pod report: shows the name, namespace, cluster, workspace, and resource utilization rate of each Pod. Customizable time range for the report, searchable by Pod name, namespace, cluster, and workspace.
-- Workspace report: shows the workspace name, number of namespaces contained (clicking on the number can jump to the namespace report), pod quantity (clicking on the number can jump to the Pod report), and resource utilization rate. Customizable time range for the report, searchable by workspace.
-- Namespace report: shows the namespace name, number of Pods (clicking on the number can jump to the Pod report), the cluster and workspace it belongs to, and the resource utilization rate. Customizable time range for the report, searchable by namespace, cluster, and workspace.
-- Audit report: provides statistics on user operations and operations performed on resources to help administrators control resource usage and track user operation traces. Searchable by username, resource type/event name, workspace, namespace, and cluster.
-- Alert report: suitable for generating cluster inspection reports. Customizable time range for the report, searchable by node name and cluster.
+## Report Dimensions
 
-The statistical information for each report is shown in the table below:
+Currently, the following reports are supported:
 
-| Report Type  | Display Content                                            | Searchable Items                                     | Export/Download | Enable/Disable | Customizable Time Range | Gear Icon Setting |
-| ------------ | ---------------------------------------------------------- | ---------------------------------------------------- | --------------- | -------------- | ---------------------- | ----------------- |
-| Cluster      | Cluster Name, Number of Nodes, Resource Utilization Rate    | Cluster Name                                         | Yes             | Yes            | Yes                    | Yes               |
-| Node         | Node IP, Type, Cluster, Resource Utilization Rate          | Node Name, Cluster, IP Address                       | Yes             | Yes            | Yes                    | Yes               |
-| Pod          | Pod Name, Namespace, Cluster, Workspace, Resource Utilization Rate | Pod Name, Namespace, Cluster, Workspace | Yes             | Yes            | Yes                    | Yes               |
-| Workspace    | Workspace Name, Number of Namespaces, pod Quantity, Resource Utilization Rate | Workspace | Yes             | Yes            | Yes                    | Yes               |
-| Namespace    | Namespace Name, Number of Pods, Cluster, Workspace, Resource Utilization Rate | Namespace, Cluster, Workspace | Yes             | Yes            | Yes                    | Yes               |
-| Audit        | User and resource operation statistics                     | Username, Resource Type/Event Name, Workspace, Namespace, Cluster | Yes             | Yes            | Yes                    | No                |
-| Alert        | Cluster inspection report                                   | Node Name, Cluster                                   | Yes             | Yes            | Yes                    | No                |
+- **Cluster Report**: Displays the maximum, minimum, and average values of CPU utilization, memory utilization, storage utilization, and GPU memory utilization for all clusters during a specific time period, as well as the number of nodes under the cluster.
+  You can quickly access the node report by clicking on the node count and view the utilization of nodes under the cluster during that period.
+- **Node Report**: Displays the maximum, minimum, and average values of CPU utilization, memory utilization, storage utilization, and GPU memory utilization for all nodes during a specific time period, along with the node's IP, type, and affiliated cluster.
+- **Pod Report**: Shows the maximum, minimum, and average values of CPU utilization, memory utilization, storage utilization, and GPU memory utilization for all pods during a specific time period, as well as the pod's namespace, affiliated cluster, and workspace.
+- **Workspace Report**: Displays the maximum, minimum, and average values of CPU utilization, memory utilization, storage utilization, and GPU memory utilization for all workspaces during a specific time period, along with the number of namespaces and pods.
+  You can quickly access the namespace report by clicking on the namespace count and view the utilization of namespaces under the workspace during that period; similarly, you can view the utilization of pods under the workspace.
+- **Namespace Report**: Displays the maximum, minimum, and average values of CPU utilization, memory utilization, storage utilization, and GPU memory utilization for all namespaces during a specific time period, as well as the number of pods, affiliated clusters, and workspaces.
+  You can quickly access the pod report by clicking on the pod count and view the utilization of pods within the namespace during that period.
+- **Audit Report**: Divided into user actions and resource operations. The user action report mainly counts the number of operations by a single user during a period, including successful and failed attempts;
+  The resource operation report mainly counts the number of operations on a type of resource by all users.
+- **Alarm Report**: Displays the number of alarms for all nodes during a specific period, including the occurrences of fatal, severe, and warning alarms.
 
-From the table above, it can be seen that each report has its specific display content and searchable items. In addition, each report can be exported or downloaded for administrators to view. The enable/disable feature and customizable time range are available for all reports. Except for the audit report and alert report, all other reports provide a gear ⚙️ icon setting feature so that administrators can customize the columns to display according to their actual needs.
+## Steps
+
+1. Log in to DCE 5.0 as a user with the __Admin__ role. Click __Global Management__ -> __Operations Management__ at the bottom of the left sidebar.
+
+    ![Report Management](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/gmagpiereport.png)
+   
+2. After entering Operations Management, switch between different menus to view reports on clusters, nodes, pods, etc.
+
+    ![Report](../../images/report01.png)
