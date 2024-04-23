@@ -788,6 +788,7 @@ nav:
                   - 网关请求日志添加自定义属性: skoala/best-practice/add-custom-attributes.md
                   - HTTP 转 Dubbo 协议动态路由: skoala/best-practice/http-to-dubbo.md
                   - 云原生自定义插件示例 caching: skoala/best-practice/envoy-extproc-caching-demo-go.md
+                  - 云原生自定义插件示例 anti: skoala/best-practice/envoy-extproc-anti-demo-go.md
               - 故障排查:
                   - skoala-init的x-kubernets-validations报错: skoala/troubleshoot/auth-server.md
                   - Nacos 版本降级: skoala/troubleshoot/nacos.md                
