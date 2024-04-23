@@ -5,7 +5,7 @@
 ## 前提条件
 
 1. 在 DCE 5.0 集群内使用 SpiderPool，需要结合 [Calico](../../calico/index.md)/[Cillium](../../cilium/index.md)。
-1. 建议使用 v0.9.0 及其以上的 Spiderpool 版本，新版 Spiderpool 支持自动安装 [Multus](../../multus-underlay/install.md)，
+2. 建议使用 v0.9.0 及其以上的 Spiderpool 版本，新版 Spiderpool 支持自动安装 [Multus](../../multus-underlay/install.md)，
    安装后可结合 [Multus CR 管理](../../../config/multus-cr.md)使用 Underlay CNI
    （[Macvlan](../../multus-underlay/macvlan.md) 或 [SR-IOV](../../multus-underlay/sriov.md)，并确认待使用的网卡接口和子网。
 
@@ -15,13 +15,13 @@
 
 1. 在左侧导航栏点击 `容器管理` —> `集群列表`，然后找到准备安装 Spiderpool 的集群名称。
 
-1. 在左侧导航栏中选择 `Helm 应用` -> `Helm 模板`，找到并点击 `spiderpool`。
+2. 在左侧导航栏中选择 `Helm 应用` -> `Helm 模板`，找到并点击 `spiderpool`。
 
     ![找到 spiderpool](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/spiderpool-helm.png)
 
-1. 在`版本选择`中选择希望安装的版本，点击`安装`。
+3. 在`版本选择`中选择希望安装的版本，点击`安装`。
 
-1. 在安装界面，填写所需的安装参数。如需要使用 RDMA 资源，更多详情可参考 [RDMA 安装及使用准备](rdmapara.md)
+4. 在安装界面，填写所需的安装参数。如需要使用 RDMA 资源，更多详情可参考 [RDMA 安装及使用准备](rdmapara.md)
 
     ![填写参数 1](../../../images/spiderpool-install1.png)
 
@@ -117,7 +117,7 @@
 
         这些 IP 地址应属于 `IPv6 ippool subnet`。如果未开启 `install IPv6 ippool`，请忽略本项。
 
-1. 点击右下角`确定`按钮即可完成安装。完成后，可参考
+5. 点击右下角`确定`按钮即可完成安装。完成后，可参考
    [SpiderPool 的使用](https://spidernet-io.github.io/spiderpool/v0.9/usage/install/get-started-kind/)进行 IP Pool 的使用。
 
 !!! note
