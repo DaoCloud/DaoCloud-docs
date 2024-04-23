@@ -29,9 +29,10 @@ hide:
 
             字段说明：
 
-            - charts-dir：Helm Chart 的目录，这里也可以直接推送打包好的 Chart（即 .tgz 文件）。
-            - HELM_REPO_URL：Helm 仓库的 URL。
-            - username/password：有推送权限的 Helm 仓库用户名和密码。
+            - `charts-dir`：Helm Chart 的目录，这里也可以直接推送打包好的 Chart（即 .tgz 文件）。
+            - `HELM_REPO_URL`：Helm 仓库的 URL。
+            - `username`/`password`：有推送权限的 Helm 仓库用户名和密码。
+            - 如果采用 https 访问，需要参加参数 `--insecure`
 
     === "页面上传"
 
@@ -41,7 +42,7 @@ hide:
 
         1. 登录网页 Harbor 仓库，请确保登录用户有推送权限；
 
-        2. 进入到对应项目，选择 __Helm Charts__ tab，点击页面 __上传__ 按钮，完成 Helm Chart 上传。
+        2. 进入到对应项目，选择 __Helm Charts__ 页签，点击页面 __上传__ 按钮，完成 Helm Chart 上传。
 
             ![上传 Helm Chart](../../images/upload-helm-01.png)
 
