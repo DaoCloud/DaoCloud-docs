@@ -7,16 +7,7 @@ Date: 2023-01-04
 
 # What is Spiderpool
 
-Spiderpool is an IP Address Management (IPAM) CNI plugin that assigns IP addresses for container cloud platforms.
-While most overlay CNIs have a good implementation of IPAM, SpiderPool is primarily designed to work with Underlay CNIs
-（such as [MacVLAN CNI](https://github.com/containernetworking/plugins/tree/main/plugins/main/macvlan), [VLAN CNI](https://github.com/containernetworking/plugins/tree/main/plugins/main/vlan), [IPVLAN CNI](https://github.com/containernetworking/plugins/tree/main/plugins/main/ipvlan)）for fine-grained IP management.
-
-Spiderpool works with any CNI plug-in that can interface with third-party IPAMs, especially those without the support of IPAMs,
-including [SR-IOV](https://github.com/k8snetworkplumbingwg/sriov-cni),
-[MacVLAN](https://github.com/containernetworking/plugins/tree/main/plugins/main/macvlan),
-[IPVLAN](https://github.com/containernetworking/plugins/tree/main/plugins/main/ipvlan),
-[OVS-CNI](https://github.com/k8snetworkplumbingwg/ovs-cni), etc.
-Some overlay CNIs come with their own IPAM, so Spiderpool is not intentionally designed for these cases, but still can be integrated with them.
+Spiderpool is an underlay and RDMA network solution for the Kubernetes. It enhances the capabilities of [MacVLAN CNI](https://github.com/containernetworking/plugins/tree/main/plugins/main/macvlan), [IPVLAN CNI](https://github.com/containernetworking/plugins/tree/main/plugins/main/ipvlan), [SR-IOV CNI](https://github.com/k8snetworkplumbingwg/sriov-cni), fulfills various networking needs, and supports to run on bare metal, virtual machine, and public cloud environments. Spiderpool delivers exceptional network performance, particularly benefiting network I/O-intensive and low-latency applications like storage, middleware, and AI. It could refer to [website](https://spidernet-io.github.io/spiderpool/latest/) for more details.
 
 The features provided by SpiderPool are as follows.
 
