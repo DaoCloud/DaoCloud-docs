@@ -207,6 +207,7 @@ nav:
                   - Create VPA Policy: kpanda/user-guide/scale/create-vpa.md
               - Helm Apps:
                   - Helm Charts: kpanda/user-guide/helm/README.md
+                  - Upload Helm Charts: kpanda/user-guide/helm/upload-helm.md
                   - Helm Apps: kpanda/user-guide/helm/helm-app.md
                   - Helm Registries: kpanda/user-guide/helm/helm-repo.md
                   - Multi-arch Helm Apps: kpanda/user-guide/helm/multi-archi-helm.md
