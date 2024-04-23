@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+date: 2024-04-23
+---
+
 # DaoCloud Enterprise 5.0
 
 DaoCloud Enterprise 5.0 has two versions for Community and Enterprise.
@@ -43,7 +48,7 @@ The numerous modules included in DCE 5.0 can be downloaded separately to upgrade
 
 | Modules | File Size | Download | Update Date |
 | ------- | --------- | -------- | ----------- |
-| Workbench | 340.77 MB | [:arrow_right: Go to Download](./modules/amamba.md) | 2024-04-02 |
+| Workbench | 340.77 MB | [:arrow_right: Go to Download](./modules/amamba.md) | 2024-04-17 |
 | Container Management | 616.29 MB | [:arrow_right: Go to Download](./modules/kpanda.md) | 2024-02-02 |
 | Cluster Inspection | 174.30 MB | [:arrow_right: Go to Download](./modules/kcollie.md) | 2024-01-02 |
 | Application Backup | 59.40 MB | [:arrow_right: Go to Download](./modules/kcoral.md) | 2024-01-02 |
@@ -52,11 +57,11 @@ The numerous modules included in DCE 5.0 can be downloaded separately to upgrade
 | Storage | 1.62 GB | [:arrow_right: Go to Download](./modules/hwameistor.md)| 2023-11-06 |
 | MultiCloud Management | 524.58 MB | [:arrow_right: Go to Download](./modules/kairship.md) | 2024-01-02 |
 | Container Registry | 295.53 MB | [:arrow_right: Go to Download](./modules/kangaroo.md) | 2024-01-29 |
-| Insight | 2.70 GB | [:arrow_right: Go to Download](./modules/insight.md) | 2024-02-18 |
+| Insight | 2.70 GB | [:arrow_right: Go to Download](./modules/insight.md) | 2024-04-02 |
 | Microservice Engine | 1.6 GB | [:arrow_right: Go to Download](./modules/skoala.md) | 2024-03-23 |
-| Service Mesh | 906.44 MB | [:arrow_right: Go to Download](./modules/mspider.md) | 2024-03-20 |
+| Service Mesh | 906.44 MB | [:arrow_right: Go to Download](./modules/mspider.md) | 2024-04-17|
 | Cloud Edge Collaboration | 100.37 MB | [:arrow_right: Go to Download](./modules/kant.md) | 2024-01-04 |
-| Global Management | 500.89 MB | [:arrow_right: Go to Download](./modules/ghippo.md) | 2024-03-27 |
+| Global Management | 500.89 MB | [:arrow_right: Go to Download](./modules/ghippo.md) | 2024-04-11 |
 | Operations Management | 95.90 MB | [:arrow_right: Go to Download](./modules/gmagpie.md) | 2023-11-30 |
 | Virtual Machine | 1.43 GB | [:arrow_right: Go to Download](./modules/virtnest.md) | 2024-01-10 |
 
