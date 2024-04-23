@@ -27,7 +27,7 @@ Please confirm that your cluster has successfully connected to the `Container Ma
 
 3. Select the version you want to install in `Version`, and click `Install`.
 
-4. In the installation page, fill in the required parameters.
+4. In the installation page, fill in the required parameters, if you need to use RDMA resources, please refer to [RDMA installation and usage preparation](rdmapara.md) for more details.
 
     ![spiderpool instal1](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/spiderpool-install1.png)
 
