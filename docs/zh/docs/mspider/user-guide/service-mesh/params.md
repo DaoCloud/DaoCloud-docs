@@ -1,4 +1,6 @@
-# 创建网格的参数说明
+# 部分参数说明
+
+在使用服务网格时，会出现一些报错信息，本文列出一些报错参数的详细含义供参考。
 
 ## 最大重试次数 Max retries
 
@@ -7,37 +9,37 @@
 
 ### HTTP
 
-- __5xx__ 
+- __5xx__
 
     如果上游服务器响应任何 5xx 响应代码，或者根本不响应（断开连接/重置/读取超时），将尝试重试
     （包括 connect-failure 和 refused-stream）。
 
-- __connect-failure__ 
+- __connect-failure__
 
     如果由于与上游服务器的连接失败（连接超时等）导致请求失败，将尝试重试（包含在 5xx 中）。
 
-- __envoy-ratelimited__ 
+- __envoy-ratelimited__
 
     如果标头 x-envoy-ratelimited 存在，Envoy 将重试。
 
-- __gateway-error__ 
+- __gateway-error__
 
     此策略类似于 5xx 策略，但只会重试导致 502、503 或 504 的请求。
 
-- __http3-post-connect-failure__ 
+- __http3-post-connect-failure__
 
     如果通过 HTTP/3 向上游服务器发送请求并在连接后失败，将尝试重试。
 
-- __refused-stream__ 
+- __refused-stream__
 
     如果上游服务器使用 REFUSED_STREAM 错误代码重置流，将尝试重试。
     此重置类型表示请求可以安全重试（包含在 5xx 中）。
 
-- __reset__ 
+- __reset__
 
     如果上游服务器根本没有响应（断开/重置/读取超时），将尝试重试。
 
-- __retriable-4xx__ 
+- __retriable-4xx__
 
     如果上游服务器使用可重试的 4xx 响应代码进行响应，将尝试重试。
     目前，该类别中唯一的响应代码是 409。
@@ -45,76 +47,76 @@
     注意：小心打开此重试类型。在某些情况下，409 可能表示需要更新乐观锁定修订版。
     因此，调用者不应重试，需要读取然后再尝试写入。如果在这种情况下发生重试，它总是会失败并返回另一个 409。
 
-- __retriable-headers__ 
+- __retriable-headers__
 
     如果上游服务器响应包含任何与重试策略或 x-envoy-retriable-header-names 标头匹配的标头，将尝试重试。
 
-- __retriable-status-codes__ 
+- __retriable-status-codes__
 
     如果上游服务器响应任何与重试策略或 x-envoy-retriable-status-codes 标头中定义的响应代码匹配的响应代码，将尝试重试。
 
 ### gRPC
 
-- __cancelled__ 
+- __cancelled__
 
     如果响应头中的 gRPC 状态码是 “cancelled”，将尝试重试。
 
-- __deadline-exceeded__ 
+- __deadline-exceeded__
 
     如果响应头中的 gRPC 状态码是 “deadline-exceeded”，将尝试重试。
 
-- __internal__ 
+- __internal__
 
     如果响应头中的 gRPC 状态码是 “internal”，将尝试重试。
 
-- __resource-exhausted__ 
+- __resource-exhausted__
 
     如果响应头中的 gRPC 状态码是 “resource-exhausted”，将尝试重试。
 
-- __unavailable__ 
+- __unavailable__
 
     如果响应头中的 gRPC 状态码是 “unavailable”，将尝试重试。
 
 ## 边车日志级别
 
-- __critical__ 
+- __critical__
 
     任何强制关闭服务或应用程序以防止数据丢失（或进一步丢失数据）的错误。
     您只为最令人发指的错误和保证数据损坏或丢失的情况保留这些。
 
-- __debug__ 
+- __debug__
 
     使用 __debug__ ，您将以详细的方式提供诊断信息。
     它很冗长，包含的信息比您在使用该应用程序时所需的信息还要多。
     __debug__ 日志记录级别用于获取诊断、故障排除或测试应用程序所需的信息。 这确保了应用程序的平稳运行。
 
-- __error__ 
+- __error__
 
     与 __critical__ 日志记录级别不同，错误并不意味着您的应用程序正在中止。
     相反，只是无法访问服务或文件。此 __error__ 表明您的应用程序中的某些重要内容失败。
     当严重问题导致应用程序内的功能无法有效运行时，将使用此日志级别。
     大多数时候，应用程序会继续运行，但最终需要解决这个问题。
 
-- __info__ 
+- __info__
 
     要记录的通用信息（服务启动/停止、配置假设等）。
     您希望始终可用但在正常情况下通常不关心的信息。
     这是开箱即用的配置级别。
 
-- __off__ 
+- __off__
 
     此日志级别不记录任何内容。
     此 __off__ 级别用于关闭日志记录并且是最大可能级别。
     使用此日志级别，根本不会记录任何内容。
 
-- __trace__ 
+- __trace__
 
     __trace__ 日志级别捕获有关应用程序行为的所有详细信息。
     它主要是诊断性的，比 __debug__ 日志级别更细粒度。
     此日志级别用于您需要查看应用程序中发生的事情或使用的第三方库中发生的事情的情况。
     您可以使用 __trace__ 日志级别来查询代码中的参数或解释算法的步骤。
 
-- __warning__ 
+- __warning__
 
     当您检测到意外的应用程序问题时，将使用 __warning__ 日志级别。
     这意味着您不太确定问题是否会再次发生或仍然存在。 此时您可能不会注意到对您的应用程序有任何损害。
