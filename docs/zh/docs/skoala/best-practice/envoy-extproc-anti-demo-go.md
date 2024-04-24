@@ -95,4 +95,4 @@ go build . -o extproc
 
 4. processing_mode 配置项中的 **request_body_mode** 必须配置为 **下图** 红框中的选项：
 
-![添加自定义属性](../images/envoy-extproc-anti-replay-demo-go.png)
+    ![添加自定义属性](../images/envoy-extproc-anti-replay-demo-go.png)
