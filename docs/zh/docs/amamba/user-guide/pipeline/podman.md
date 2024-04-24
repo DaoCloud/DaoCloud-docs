@@ -1,16 +1,17 @@
-## 通过流水线构建多架构镜像
+# 通过流水线构建多架构镜像
 
-在jenkins中，我们采用Podman来代替Docker作为构建镜像的工具，主要是因为Podman不需要挂载docker.sock，同时Podman支持rootless模式，可以在不需要root权限的情况下使用,安全性更高。
+在 Jenkins 中，采用 Podman 来代替 Docker 作为构建镜像的工具，主要是因为 Podman 不需要挂载 docker.sock，
+同时 Podman 支持 rootless 模式，可以在不需要 root 权限的情况下使用，安全性更高。
 
-在JenkinsFile中，可以直接使用Docker命令或者Podman命令，他们大部分情况下是相同的。目前我们已经使用Podman代替了Docker（alias docker=podman），执行Docker命令时，实际上是调用Podman来执行的。
+在 Jenkinsfile 中，可以直接使用 Docker 命令或者 Podman 命令，大部分情况下是相同的。
+目前已经使用 Podman 代替了 Docker（alias docker=podman），执行 Docker 命令时，实际上是调用 Podman 来执行的。
 
-### 构建镜像
+## 构建镜像的前提
 
-### 前提
+与 Docker 类似，Docker 支持多平台构建的前提是需要宿主机支持多平台构建，利用 QEMU 来模拟其他平台的环境，
+因此如果需要构建多平台镜像，则 Jenkins 所在的主机需要安装 QEMU。
 
-与docker类似，docker支持多平台构建的前提是需要宿主机就支持多平台构建，利用QEMU来模拟其他平台的环境，因此如果需要构建多平台镜像，则jenkins所在的主机需要安装QEMU。
-
-如果jenkins所在的主机是macos或者windows，则需要先启动虚拟机才可以使用podman:
+如果 Jenkins 所在的主机是 macOS 或者 Windows，则需要先启动虚拟机才可以使用 Podman:
 
 ```shell
 podman machine init
@@ -19,62 +20,67 @@ podman machine start
 
 ## 构建多平台镜像
 
-Podman兼容Dockerfile的语法，但是实际上并不支持Dockerfile中的--platform参数(不支持交叉编译)，采用的依旧是QEMU模拟其他平台的环境（仿真），因此构建速度也会比Docker慢。
+Podman 兼容 Dockerfile 的语法，但是实际上并不支持 Dockerfile 中的 `--platform` 参数（即不支持交叉编译），
+采用的依旧是 QEMU 模拟其他平台的环境（仿真），因此构建速度也会比 Docker 慢。
 
-podman 不支持直接通过 `--platform` 一次性打出多个平台的镜像, 需要打出多个平台的镜像后使用podman的`manifest`命令进行合并，不过支持在build命令中添加manifest参数便捷的添加镜像到manifest中，步骤如下：
+Podman 不支持直接通过 `--platform` 一次性打出多个平台的镜像，需要打出多个平台的镜像后使用 Podman 的 `manifest` 命令进行合并，
+不过支持在 build 命令中添加 manifest 参数便捷地添加镜像到 manifest 中。
 
-以构建Dao-2048镜像为例，Dockerfile如下：
+以构建 Dao-2048 镜像为例，Dockerfile 如下：
+
 ```dockerfile
 FROM nginx # 如果需要构建多平台镜像，需要保证基础镜像支持多平台
-
 COPY . /usr/share/nginx/html
-
 EXPOSE 80
-
 CMD sed -i "s/ContainerID: /ContainerID: "$(hostname)"/g" /usr/share/nginx/html/index.html && nginx -g "daemon off;"
 ```
 
-##### 在构建镜像时指定manifest参数
+### 在构建镜像时指定 manifest 参数
 
 步骤如下
+
 ```shell
-> target=release.daocloud.io/demo/dao-2048:v1  # 最终镜像的名称
-> platform=linux/amd64,linux/arm64 # 需要构建的平台
-> docker build -f Dockerfile --platform=$platform  --manifest release.daocloud.io/demo/dao-2048:v1 . # 构建多架构镜像
-> docker login xxx # 登录镜像仓库
-> docker manifest push --all $target # 推送
+target=release.daocloud.io/demo/dao-2048:v1  # 最终镜像的名称
+platform=linux/amd64,linux/arm64 # 需要构建的平台
+docker build -f Dockerfile --platform=$platform  --manifest release.daocloud.io/demo/dao-2048:v1 . # 构建多架构镜像
+docker login xxx # 登录镜像仓库
+docker manifest push --all $target # 推送
 ```
 
-最终构建出的镜像如下，包含了amd64和arm64两个平台的镜像:
-![](../../images/podman-build-mutil-arch.png)
+最终构建出的镜像如下，包含了 amd64 和 arm64 两个平台的镜像：
 
-当然，如果直接在JenkinsFile中使用docker命令，不支持manifest参数，可以通过单独构建镜像的方式来实现,最终效果也是相同的，步骤如下：
+![双平台镜像](../../images/podman-build-mutil-arch.png)
+
+当然，如果直接在 Jenkinsfile 中使用 Docker 命令，不支持 manifest 参数，可以通过单独构建镜像的方式来实现，最终效果也是相同的，步骤如下：
 
 1. 打出不同平台的镜像
-```shell
-docker build -t release.daocloud.io/demo/dao-2048-amd -f Dockerfile . --platform=linux/amd64
 
-docker build -t release.daocloud.io/demo/dao-2048-arm -f Dockerfile . --platform=linux/arm64
-```
+    ```shell
+    docker build -t release.daocloud.io/demo/dao-2048-amd -f Dockerfile . --platform=linux/amd64
+    docker build -t release.daocloud.io/demo/dao-2048-arm -f Dockerfile . --platform=linux/arm64
+    ```
 
-2. 使用podman manifest create创建manifest镜像
-```shell
-docker manifest create release.daocloud.io/demo/dao-2048:v1
-```
+2. 使用 podman manifest create 创建 manifest 镜像
 
-3. 使用podman manifest add将不同平台的镜像添加到manifest镜像中
-```shell
-docker manifest add release.daocloud.io/demo/dao-2048:v1 release.daocloud.io/demo/dao-2048-amd
+    ```shell
+    docker manifest create release.daocloud.io/demo/dao-2048:v1
+    ```
 
-docker manifest add release.daocloud.io/demo/dao-2048:v1 release.daocloud.io/demo/dao-2048-arm
-```
+3. 使用 podman manifest add 将不同平台的镜像添加到 manifest 镜像中
 
-4. 使用podman manifest push将manifest镜像推送到镜像仓库
-```shell
-podman manifest push --all release.daocloud.io/demo/dao-2048:v1 
-```
+    ```shell
+    docker manifest add release.daocloud.io/demo/dao-2048:v1 release.daocloud.io/demo/dao-2048-amd
+    docker manifest add release.daocloud.io/demo/dao-2048:v1 release.daocloud.io/demo/dao-2048-arm
+    ```
 
-### JenkinsFile示例
+4. 使用 podman manifest push 将 manifest 镜像推送到镜像仓库
+
+    ```shell
+    podman manifest push --all release.daocloud.io/demo/dao-2048:v1
+    ```
+
+## Jenkinsfile 示例
+
 ```groovy
 pipeline {
   agent {
