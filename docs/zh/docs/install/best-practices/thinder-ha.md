@@ -179,7 +179,7 @@
       creationTimestamp: null
     spec:
       clusterName: my-cluster
-      bootstrapNode: 172.30.41.194 ## 基于 IP 模式
+      bootstrapNode: 172.30.41.194 # 基于 IP 模式
     
       masterNodes:
         - nodeName: "g-master1"
@@ -195,7 +195,7 @@
     
       imagesAndCharts:
         type: builtin
-        additionalSSLSubjectAltName: "www.tinder-node-server.com" ## dns 服务所解析的域名
+        additionalSSLSubjectAltName: "www.tinder-node-server.com" # dns 服务所解析的域名
       addonPackage:
       binaries:
         type: builtin

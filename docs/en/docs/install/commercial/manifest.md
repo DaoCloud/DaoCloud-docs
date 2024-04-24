@@ -2,11 +2,11 @@
 
 This YAML file contains information about all modules of DCE 5.0, which are mainly divided into the base configuration module and product feature modules.
 
-For upgrading instructions, please refer to the [Upgrade DCE 5.0](../upgrade.md) documentation.
+For upgrading instructions, refer to [Upgrade DCE 5.0](../upgrade.md).
 
 ## Manifest Example
 
-Here is an example of a ClusterConfig file.
+Here is an example of a manifest file.
 
 ```yaml title="manifest.yaml"
 apiVersion: manifest.daocloud.io/v1alpha1

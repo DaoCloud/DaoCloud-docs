@@ -6,7 +6,7 @@
 
 ## Manifest 示例
 
-以下是一个 manifest 文件示例。
+以下是一个 Manifest 文件示例。
 
 ```yaml title="manifest.yaml"
 apiVersion: manifest.daocloud.io/v1alpha1
