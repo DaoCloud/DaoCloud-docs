@@ -1,6 +1,6 @@
 # 昇腾 NPU 组件安装
 
-本章节提供 昇腾 NPU 驱动和 Device Plugin 的安装指导。
+本章节提供昇腾 NPU 驱动、Device Plugin、NPU-Exporter 等组件的安装指导。
 
 ## 前提条件
 
@@ -115,48 +115,47 @@ chown root:root /var/log/mindx-dl/devicePlugin
     请分别为所需组件创建对应的日志目录，当前案例中只需要 Device Plugin 组件。
     如果有其他组件需求请参考[官方文档](https://www.hiascend.com/document/detail/zh/mindx-dl/50rc3/clusterscheduling/clusterschedulingig/dlug_installation_016.html)
 
-### 安装 Device Plugin
 
-1. 如驱动与 Device Plugin 未安装，请参考昇腾官方文档进行安装，参考[昇腾 NPU Device Plugin](https://www.hiascend.com/document/detail/zh/mindx-dl/50rc3/clusterscheduling/clusterschedulingig/dlug_installation_001.html)。
+### 创建节点 label
 
-2. 镜像拉取可参考镜像拉取地址：[harbor.daocloud.cn/library/ascend-k8sdeviceplugin:v5.0.RC2](http://harbor.daocloud.cn/library/ascend-k8sdeviceplugin:v5.0.RC2)
-   
-   !!! note
-   
-       昇腾镜像仓库中拉取的MindX DL镜像与组件启动yaml中的名字不一致，需要重命名拉取的镜像后才能启动。
-       根据以下步骤将2中获取的镜像重新命名，同时建议删除原始名字的镜像。具体操作如下。
+参考下述命令在对应节点上创建label
 
-   ```bash
-   ctr -n k8s.io i tag harbor.daocloud.cn/library/ascend-k8sdeviceplugin:v5.0.RC2 ascend-k8sdeviceplugin:v5.0.RC2
-   ```
+```
+// 在安装了驱动的计算节点创建此标签
+kubectl label node {nodename} huawei.com.ascend/Driver=installed
+kubectl label node {nodename} node-role.kubernetes.io/worker=worker
+kubectl label node {nodename} workerselector=dls-worker-node
+kubectl label node {nodename} host-arch=huawei-arm //或者host-arch=huawei-x86 ，根据实际情况选择
+kubectl label node {nodename} accelerator=huawei-Ascend910 //根据实际情况进行选择
+// 在控制节点创建此标签
+kubectl label node {nodename} masterselector=dls-master-node
+```
 
-3. 获取 __device-plugin-910-v5.0.RC2.yaml__ 文件，请参考[下载地址](https://mindx.obs.cn-south-1.myhuaweicloud.com/OpenSource/MindX/MindX%205.0.RC2/MindX%20DL%205.0.RC2/Ascend-mindxdl-device-plugin_5.0.RC2_linux-x86_64.zip)
+### 安装 Device Plugin 和 NpuExporter
+  
+1. 功能模块路径： __容器管理__ -> __集群管理__ ，点击目标集群的名称，从左侧导航栏点击 __Helm 应用__ -> __Helm 模板__ -> 搜索 __ascend-mindxdl__ 。
 
-4. 执行 Kube Apply：
+![找到 ascend-mindxdl](../images/ascend-mindxdl.png)
 
-   ```bash
-   # 根据环境实际情况选择使用的 yaml 文件，这里环境中使用的是 910 芯片。
-   # 需要给 node 打上 accelerator=huawei-Ascend910 的label，才能被调度启动 pod。 
-   kubectl label nodes {node-name} accelerator=huawei-Ascend910
-   # 提交 device-plugin yaml
-   kubectl apply -f device-plugin-910-v5.0.RC2.yaml 
-   ```
+![ascend-mindxdl详情](../images/detail-ascend.png)
 
-   注意： __device-plugin-910-v5.0.RC2.yaml__ 中的镜像地址是 __ascend-k8sdeviceplugin:v5.0.RC2__
+-  __DevicePlugin__ ：通过提供通用设备插件机制和标准的设备API接口，供Kubernetes使用设备。建议使用默认的镜像及版本。
+-  __NpuExporter__ ：基于Prometheus/Telegraf生态，该组件提供接口，帮助用户能够关注到昇腾系列AI处理器以及容器级分配状态。建议使用默认的镜像及版本。
+-   __ServiceMonitor__ ：默认不开启，开启后可前往可观测性模块查看 NPU 相关监控。如需开启，请确保 insight-agent 已安装并处于运行状态，否则将导致 ascend-mindxdl 安装失败。
+-   __isVirtualMachine__ ：默认不开启，如果 npu 节点为虚拟机场景，请开启 isVirtualMachine 参数。
 
-   构建 __ascend-k8sdeviceplugin__ 镜像：从下载的代码包中有 __Dockerfile__ 文件
-   （详情参考：[软件包说明](https://www.hiascend.com/document/detail/zh/mindx-dl/300/dluserguide/clusterscheduling/dlug_installation_02_000035.html)），执行构建命令：
+安装成功后，对应命名空间下会出现两个组件，如下图展示：
 
-   ```bash
-   # 910 卡构建使用Dockerfile 
-   docker build --no-cache -t  ascend-k8sdeviceplugin:v5.0.RC2 .  
-   ```
+![ascend-mindxdl列表](../images/list-ascend-mindxdl.png)
 
-   | Dockerfile            | Ascend Device Plugin 镜像构建文本文件                        |
-   | --------------------- | ------------------------------------------------------------ |
-   | Dockerfile-310P-1usoc | Atlas 200I Soc A1 核心版上Ascend Device Plugin镜像构建文本文件。 |
+同时节点信息上也会出现对应 npu 的信息：
 
-5. NPU Device Plugin 默认安装在 __kube-system__ 命名空间下。这是一个 DaemonSet 类型的工作负载，
-   可以通过 __kubectl get pod -n kube-system | grep ascend__ 命令查看，输出如下：
+![节点标签](../images/label-ascend-mindxdl.png)
 
-![昇腾 Device Plugin](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/ascend-device-plugin.png)
+一切就绪后，我们通过页面创建工作负载时，就能够选择到对应的 npu 设备，如下图展示：
+![使用 NPU](../images/use-ascend-mindxdl.png)
+
+ > 详细使用步骤，请参照[应用使用昇腾（Ascend）NPU](https://docs.daocloud.io/kpanda/user-guide/gpu/Ascend_usage/)
+
+
+
