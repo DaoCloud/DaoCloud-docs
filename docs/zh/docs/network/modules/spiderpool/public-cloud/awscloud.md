@@ -1,6 +1,6 @@
 # AWS 环境运行
 
-本页主要介绍如何使用 Spiderpool 在 AWS 环境运行，并如何实现一套完整的 Underlay 解决方案
+本页主要介绍如何使用 Spiderpool 在 AWS 环境运行，并如何实现一套完整的 Underlay 解决方案。
 
 ## 背景
 
@@ -30,7 +30,7 @@ Spiderpool 能基于 ipvlan Underlay CNI 运行在公有云环境上，并实现
 
 3. 了解 [AWS VPC 公有 & 私有子网](https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html) 基础知识。
 
-    在 AWS VPC 下创建的子网，如果设置了出口路由 0.0.0.0/0, ::/0 的下一跳为 Internet Gateway，则该子网就隶属于 *公有子网* ，否则就是 *私有子网* 。
+    在 AWS VPC 下创建的子网，如果设置了出口路由 0.0.0.0/0, ::/0 的下一跳为 Internet Gateway，则该子网就隶属于 **公有子网** ，否则就是 **私有子网** 。
 
     ![aws-subnet-concept](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/aws/aws-subnet-concept.png)
 
@@ -40,10 +40,10 @@ Spiderpool 能基于 ipvlan Underlay CNI 运行在公有云环境上，并实现
 
 1. 在 VPC 下创建公有子网以及私有子网，并在私有子网下创建虚拟机，如图：
 
+    ![aws-subnet-1](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/aws/aws-subnet-1.png)
+
     > 本例会在同一个 VPC 下先创建 1 个公有子网以及 2 个私有子网(请将子网部署在不同的可用区)，接着会在公有子网下创建一个 AWS EC2
     > 实例作为跳板机，然后会在两个不同的私有子网下创建对应的 AWS EC2 实例用于部署 Kubernetes 集群。
-
-    ![aws-subnet-1](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/aws/aws-subnet-1.png)
 
 2. 额外创建两个私有子网用于给实例补充第二张网卡(请将子网部署在与实例相同的可用区)，如图：
 
@@ -53,10 +53,11 @@ Spiderpool 能基于 ipvlan Underlay CNI 运行在公有云环境上，并实现
 
 3. 给实例们的每张网卡均分配一些辅助私网 IP，如图:
 
+    ![aws-web-network](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/aws/aws-secondary-nic.png)
+
+
     > 因为根据 [AWS EC2 实例规格](https://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/using-eni.html)，
     > 实例的网卡数量以及每张网卡对应可绑定的辅助 IP 有限制，为了能够尽可能的充分利用实例资源来部署应用，我们因此选择给实例绑定2张网卡以及对应的辅助 IP。
-
-    ![aws-web-network](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/aws/aws-secondary-nic.png)
 
     ```console
     | Node    | ens5 primary IP | ens5 secondary IPs        | ens6 primary IP | ens6 secondary IPs        |  
@@ -66,15 +67,15 @@ Spiderpool 能基于 ipvlan Underlay CNI 运行在公有云环境上，并实现
     ```
 
 4. 创建 AWS NAT 网关，AWS 的 NAT 网关能实现为 VPC 私有子网中的实例连接到 VPC 外部的服务。
-   通过 NAT 网关，实现集群的流量出口访问。参考 [NAT 网关文档](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html)
-   创建 NAT 网关，如图：
-
-    > 在上述的公有子网 `public-172-31-0-0` 下创建 NAT 网关，并为私有子网的路由表配置 0.0.0.0/0 出口路由的下一跳为该 NAT 网关。
-    > (注意 IPv6 是由 AWS 分配的全局唯一的地址，可直接借助 Internet Gateway 访问互联网)
+   通过 NAT 网关，实现集群的流量出口访问。
+   参考 [NAT 网关文档](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html)创建 NAT 网关。
 
     ![aws-nat-gateway](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/aws/aws-nat-gateway.png)
 
     ![aws-nat-route](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/aws/aws-nat-route.png)
+
+    > 在上述的公有子网 `public-172-31-0-0` 下创建 NAT 网关，并为私有子网的路由表配置 0.0.0.0/0 出口路由的下一跳为该 NAT 网关。
+    > (注意 IPv6 是由 AWS 分配的全局唯一的地址，可直接借助 Internet Gateway 访问互联网)
 
 5. 使用上述配置的虚拟机，搭建一套 Kubernetes 集群，节点的的可用 IP 及集群网络拓扑图如下：
 
@@ -82,7 +83,7 @@ Spiderpool 能基于 ipvlan Underlay CNI 运行在公有云环境上，并实现
 
 ### 安装 Spiderpool
 
-通过 helm 安装 Spiderpool。
+通过 Helm 安装 Spiderpool。
 
 ```shell
 helm repo add spiderpool https://spidernet-io.github.io/spiderpool
@@ -141,12 +142,12 @@ EOF
 Multus NetworkAttachmentDefinition CR，它们分别对应了宿主机的 `eth5` 与 `eth6` 网卡。
 
 ```bash
-~# kubectl get spidermultusconfigs.spiderpool.spidernet.io -A
+$ kubectl get spidermultusconfigs.spiderpool.spidernet.io -A
 NAMESPACE     NAME                AGE
 default       ipvlan-ens5   8d
 default       ipvlan-ens6   8d
 
-~# kubectl get network-attachment-definitions.k8s.cni.cncf.io -A
+$ kubectl get network-attachment-definitions.k8s.cni.cncf.io -A
 NAMESPACE     NAME                AGE
 default       ipvlan-ens5   8d
 default       ipvlan-ens6   8d
@@ -171,7 +172,7 @@ Spiderpool 的 CRD：`SpiderIPPool` 提供了 `nodeName`、`multusName` 与 `ips
 为每个节点的每张网卡（ens5、ens6）分别创建了一个 SpiderIPPool，它们将为不同节点上的 Pod 提供 IP 地址。
 
 ```shell
-~# cat <<EOF | kubectl apply -f -
+$ cat <<EOF | kubectl apply -f -
 apiVersion: spiderpool.spidernet.io/v2beta1
 kind: SpiderIPPool
 metadata:
@@ -262,7 +263,7 @@ EOF
 查看 Pod 的运行状态我们可以发现，我们两个节点上都运行了 1 个 Pod 且使用的 IP 都对应宿主机的第一张网卡的辅助 IP:
 
 ```shell
-~# kubectl get po -owide
+$ kubectl get po -owide
 NAME                          READY   STATUS    RESTARTS   AGE   IP             NODE      NOMINATED NODE   READINESS GATES
 nginx-lb-1-55d4c48fc8-skrxh   1/1     Running   0          5s    172.31.16.5    master    <none>           <none>
 nginx-lb-1-55d4c48fc8-jl8b9   1/1     Running   0          5s    180.17.16.14   worker1   <none>           <none>
@@ -273,10 +274,10 @@ nginx-lb-1-55d4c48fc8-jl8b9   1/1     Running   0          5s    180.17.16.14   
 - 测试 Pod 与宿主机的通讯情况：
 
     ```bash
-    ~# export NODE_MASTER_IP=172.31.22.228  
-    ~# export NODE_WORKER1_IP= 180.17.16.17  
-    ~# kubectl exec -it nginx-lb-1-55d4c48fc8-skrxh -- ping ${NODE_MASTER_IP} -c 1 
-    ~# kubectl exec -it nginx-lb-1-55d4c48fc8-jl8b9 -- ping ${NODE_WORKER1_IP} -c 1  
+    export NODE_MASTER_IP=172.31.22.228  
+    export NODE_WORKER1_IP= 180.17.16.17  
+    kubectl exec -it nginx-lb-1-55d4c48fc8-skrxh -- ping ${NODE_MASTER_IP} -c 1 
+    kubectl exec -it nginx-lb-1-55d4c48fc8-jl8b9 -- ping ${NODE_WORKER1_IP} -c 1  
     ```
 
 - 测试 Pod 与跨节点、跨子网 Pod 的通讯情况
@@ -353,7 +354,7 @@ Layer4 与 Layer7。 aws-load-balancer-controller 是 AWS 提供的一个用于 
 5. 检查 aws-load-balancer-controller 安装完成
 
     ```shell
-    kubectl get po -n kube-system | grep aws-load-balancer-controller
+    $ kubectl get po -n kube-system | grep aws-load-balancer-controller
     NAME                                            READY   STATUS    RESTARTS       AGE
     aws-load-balancer-controller-5984487f57-q6qcq   1/1     Running   0              30s
     aws-load-balancer-controller-5984487f57-wdkxl   1/1     Running   0              30s
