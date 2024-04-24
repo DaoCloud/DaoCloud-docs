@@ -14,7 +14,7 @@ understand the evolution path and feature changes of each version.
 
 ## 2023-03-29
 
-### v0.16.0
+### v0.16.1
 
 - **Added** best practice documentation for deploying Harbor via LoadBalancer mode.
 - **Added** support for upgrading Kangaroo through Kpanda Helm application updates.

@@ -12,7 +12,7 @@ understand the evolution path and feature changes from release to release.
 
 ## 2024-03-28
 
-### v0.26.0
+### v0.26.1
 
 #### Features
 
