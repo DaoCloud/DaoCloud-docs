@@ -1,6 +1,6 @@
 # 阿里云环境运行
 
-本页主要介绍如何使用 Spiderpool 在阿里云环境运行，并如何实现一套完整的 Underlay 解决方案
+本页主要介绍如何使用 Spiderpool 在阿里云环境运行，并如何实现一套完整的 Underlay 解决方案。
 
 ## 背景
 
@@ -18,9 +18,9 @@ Spiderpool 能基于 IPVlan Underlay CNI 在阿里云环境上运行，并保证
 
 ## 实施要求
 
-- 使用 IPVlan 做集群 CNI 时，系统内核版本必须大于 4.2。
+- 使用 IPVlan 做集群 CNI 时，系统内核版本必须大于 4.2
 
-- 已安装 [Helm](https://helm.sh/docs/intro/install/)。
+- 已安装 [Helm](https://helm.sh/docs/intro/install/)
 
 ## 实施步骤
 
@@ -107,12 +107,12 @@ EOF
 在本文示例中，使用如上配置，创建如下的两个 IPvlan SpiderMultusConfig，将基于它们自动生成的 Multus NetworkAttachmentDefinition CR，它们分别对应了宿主机的 `eth0` 与 `eth1` 网卡。
 
 ```bash
-~# kubectl get spidermultusconfigs.spiderpool.spidernet.io -n kube-system
+$ kubectl get spidermultusconfigs.spiderpool.spidernet.io -n kube-system
 NAME          AGE
 ipvlan-eth0   10m
 ipvlan-eth1   10m
 
-~# kubectl get network-attachment-definitions.k8s.cni.cncf.io -n kube-system
+$ kubectl get network-attachment-definitions.k8s.cni.cncf.io -n kube-system
 NAME          AGE
 ipvlan-eth0   10m
 ipvlan-eth1   10m
@@ -128,10 +128,10 @@ Spiderpool 的 CRD：`SpiderIPPool` 提供了 `nodeName`、`multusName` 与 `ips
 
 - `spec.ips`：该字段的值必须设置。由于阿里云限制了节点可使用的 IP 地址，故该值的范围必须在 `nodeName` 对应主机的辅助私网 IP 范围内，您可以从阿里云的弹性网卡界面获取。
 
-依据如上所述，使用如下的 Yaml，为每个节点的每张网卡( eth0、eth1 )分别创建了一个 SpiderIPPool，它们将为不同节点上的 Pod 提供 IP 地址。
+依据如上所述，使用如下的 Yaml，为每个节点的每张网卡（eth0、eth1）分别创建了一个 SpiderIPPool，它们将为不同节点上的 Pod 提供 IP 地址。
 
 ```shell
-~# cat <<EOF | kubectl apply -f -
+$ cat <<EOF | kubectl apply -f -
 apiVersion: spiderpool.spidernet.io/v2beta1
 kind: SpiderIPPool
 metadata:
@@ -196,9 +196,9 @@ EOF
 
 ### 创建应用
 
-以下的示例 Yaml 中，会创建 2 组 DaemonSet 应用和 1 个 `type` 为 ClusterIP 的 service ，其中：
+以下的示例 Yaml 中，会创建 2 组 DaemonSet 应用和 1 个 `type` 为 ClusterIP 的 service。
 
-- `v1.multus-cni.io/default-network`：用于指定应用所使用的子网，示例中的应用分别使用了不同的子网。
+其中 `v1.multus-cni.io/default-network` 用于指定应用所使用的子网，示例中的应用分别使用了不同的子网。
 
 ```shell
 cat <<EOF | kubectl create -f -
@@ -276,7 +276,7 @@ EOF
 查看 Pod 运行状态：
 
 ```bash
-~# kubectl get po -owide
+$ kubectl get po -owide
 NAME                          READY   STATUS    RESTARTS   AGE   IP               NODE      NOMINATED NODE   READINESS GATES
 test-app-1-b7765b8d8-422sb    1/1     Running   0          16s   172.31.199.187   master    <none>           <none>
 test-app-1-b7765b8d8-qjgpj    1/1     Running   0          16s   172.31.199.193   worker    <none>           <none>
@@ -287,7 +287,7 @@ test-app-2-7c56876fc6-zlxxt   1/1     Running   0          12s   192.168.0.161  
 Spiderpool 自动为应用分配 IP 地址，应用的 IP 均在期望的 IP 池内：
 
 ```bash
-~# kubectl get spiderippool
+$ kubectl get spiderippool
 NAME         VERSION   SUBNET            ALLOCATED-IP-COUNT   TOTAL-IP-COUNT   DEFAULT
 master-172   4         172.31.192.0/20   1                    5                true
 master-192   4         192.168.0.0/24    1                    5                true
@@ -300,12 +300,12 @@ worker-192   4         192.168.0.0/24    1                    5                t
 - 测试 Pod 与宿主机的通讯情况：
 
     ```bash
-    ~# kubectl get nodes -owide
+    $ kubectl get nodes -owide
     NAME     STATUS   ROLES           AGE     VERSION   INTERNAL-IP      EXTERNAL-IP   OS-IMAGE                KERNEL-VERSION              CONTAINER-RUNTIME
     master   Ready    control-plane   2d12h   v1.27.3   172.31.199.183   <none>        CentOS Linux 7 (Core)   6.4.0-1.el7.elrepo.x86_64   containerd://1.7.1
     worker   Ready    <none>          2d12h   v1.27.3   172.31.199.184   <none>        CentOS Linux 7 (Core)   6.4.0-1.el7.elrepo.x86_64   containerd://1.7.1
 
-    ~# kubectl exec -ti test-app-1-b7765b8d8-422sb -- ping 172.31.199.183 -c 2
+    $ kubectl exec -ti test-app-1-b7765b8d8-422sb -- ping 172.31.199.183 -c 2
     PING 172.31.199.183 (172.31.199.183): 56 data bytes
     64 bytes from 172.31.199.183: seq=0 ttl=64 time=0.088 ms
     64 bytes from 172.31.199.183: seq=1 ttl=64 time=0.054 ms
@@ -318,7 +318,7 @@ worker-192   4         192.168.0.0/24    1                    5                t
 - 测试 Pod 与跨节点、跨子网 Pod 的通讯情况
 
     ```shell
-    ~# kubectl exec -ti test-app-1-b7765b8d8-422sb -- ping 172.31.199.193 -c 2
+    $ kubectl exec -ti test-app-1-b7765b8d8-422sb -- ping 172.31.199.193 -c 2
     PING 172.31.199.193 (172.31.199.193): 56 data bytes
     64 bytes from 172.31.199.193: seq=0 ttl=64 time=0.460 ms
     64 bytes from 172.31.199.193: seq=1 ttl=64 time=0.210 ms
@@ -327,7 +327,7 @@ worker-192   4         192.168.0.0/24    1                    5                t
     2 packets transmitted, 2 packets received, 0% packet loss
     round-trip min/avg/max = 0.210/0.335/0.460 ms
 
-    ~# kubectl exec -ti test-app-1-b7765b8d8-422sb -- ping 192.168.0.161 -c 2
+    $ kubectl exec -ti test-app-1-b7765b8d8-422sb -- ping 192.168.0.161 -c 2
     PING 192.168.0.161 (192.168.0.161): 56 data bytes
     64 bytes from 192.168.0.161: seq=0 ttl=64 time=0.408 ms
     64 bytes from 192.168.0.161: seq=1 ttl=64 time=0.194 ms
@@ -340,11 +340,11 @@ worker-192   4         192.168.0.0/24    1                    5                t
 - 测试 Pod 与 ClusterIP 的通讯情况：
 
     ```bash
-    ~# kubectl get svc test-svc
+    $ kubectl get svc test-svc
     NAME       TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
     test-svc   ClusterIP   10.233.23.194   <none>        80/TCP    26s
 
-    ~# kubectl exec -ti test-app-2-7c56876fc6-7brhf -- curl 10.233.23.194 -I
+    $ kubectl exec -ti test-app-2-7c56876fc6-7brhf -- curl 10.233.23.194 -I
     HTTP/1.1 200 OK
     Server: nginx/1.10.1
     Date: Fri, 21 Jul 2023 06:45:56 GMT
@@ -367,7 +367,7 @@ worker-192   4         192.168.0.0/24    1                    5                t
 - 测试集群内 Pod 的流量出口访问
 
     ```bash
-    ~# kubectl exec -ti test-app-2-7c56876fc6-7brhf -- curl www.baidu.com -I
+    $ kubectl exec -ti test-app-2-7c56876fc6-7brhf -- curl www.baidu.com -I
     HTTP/1.1 200 OK
     Accept-Ranges: bytes
     Cache-Control: private, no-cache, no-store, proxy-revalidate, no-transform
@@ -388,7 +388,7 @@ worker-192   4         192.168.0.0/24    1                    5                t
     测试 IPv6 访问如下：
 
     ```bash
-    ~# kubectl exec -ti test-app-2-qbhwx -- ping -6 aliyun.com -c 2
+    $ kubectl exec -ti test-app-2-qbhwx -- ping -6 aliyun.com -c 2
     PING aliyun.com (2401:b180:1:60::6): 56 data bytes
     64 bytes from 2401:b180:1:60::6: seq=0 ttl=96 time=6.058 ms
     64 bytes from 2401:b180:1:60::6: seq=1 ttl=96 time=6.079 ms
@@ -409,17 +409,18 @@ CCM（Cloud Controller Manager）是阿里云提供的一个用于 Kubernetes �
     务必在集群中的每个节点上，分别执行如下命令，从而获取每个节点各自的 `providerID`。<http://100.100.100.200/latest/meta-data> 是阿里云 CLI 提供获取实例元数据的 API 入口，在下列示例中无需修改它。更多用法可参考[实例元数据](https://help.aliyun.com/document_detail/49150.html?spm=a2c4g.170249.0.0.3ffc59d7JhEqHl)
 
     ```bash
-    ~# META_EP=http://100.100.100.200/latest/meta-data
-    ~# provider_id=`curl -s $META_EP/region-id`.`curl -s $META_EP/instance-id`
-    ~# echo $provider_id
+    $ META_EP=http://100.100.100.200/latest/meta-data
+    $ provider_id=`curl -s $META_EP/region-id`.`curl -s $META_EP/instance-id`
+    $ echo $provider_id
     cn-hangzhou.i-bp17345hor9*******
     ```
 
     在集群的 `master` 节点通过 `kubectl patch` 命令为集群中的 `每个节点` 补充各自的 `providerID`，该步骤必须被执行，否则对应节点的 CCM Pod 将无法运行。
 
     ```bash
-    ~# kubectl get nodes
-    ~# kubectl patch node <NODE_NAME> -p '{"spec":{"providerID": "<provider_id>"}}' # 将 <NODE_NAME> 与 <provider_id> 替换为对应值。
+    kubectl get nodes
+    # 将 <NODE_NAME> 与 <provider_id> 替换为对应值
+    kubectl patch node <NODE_NAME> -p '{"spec":{"providerID": "<provider_id>"}}'
     ```
 
 2. 创建阿里云的 RAM 用户，并授权。
@@ -437,8 +438,8 @@ CCM（Cloud Controller Manager）是阿里云提供的一个用于 Kubernetes �
     将步骤 3 获取的 AccessKey & AccessKeySecret，参考下列方式写入环境变量。
 
     ```bash
-    ~# export ACCESS_KEY_ID=LTAI********************
-    ~# export ACCESS_KEY_SECRET=HAeS**************************
+    export ACCESS_KEY_ID=LTAI********************
+    export ACCESS_KEY_SECRET=HAeS**************************
     ```
 
     执行如下命令，完成创建 cloud-config。
@@ -466,17 +467,17 @@ CCM（Cloud Controller Manager）是阿里云提供的一个用于 Kubernetes �
 
 5. 获取 Yaml ，并通过 `kubectl apply -f cloud-controller-manager.yaml` 方式安装 CCM，本文中安装的版本为 v2.5.0
 
-    - 使用如下命令，获取 cloud-controller-manager.yaml，并替换其中 `<<cluster_cidr>>` 为您真实集群的 cluster cidr 。
+    使用如下命令，获取 cloud-controller-manager.yaml，并替换其中 `<<cluster_cidr>>` 为您真实集群的 cluster cidr。
 
     ```bash
-    ~# wget https://raw.githubusercontent.com/spidernet-io/spiderpool/main/docs/example/alicloud/cloud-controller-manager.yaml
-    ~# kubectl apply -f cloud-controller-manager.yaml
+    wget https://raw.githubusercontent.com/spidernet-io/spiderpool/main/docs/example/alicloud/cloud-controller-manager.yaml
+    kubectl apply -f cloud-controller-manager.yaml
     ```
 
 6. 检查 CCM 安装完成。
 
     ```bash
-    ~# kubectl get po -n kube-system | grep cloud-controller-manager
+    $ kubectl get po -n kube-system | grep cloud-controller-manager
     NAME                                     READY   STATUS      RESTARTS        AGE
     cloud-controller-manager-72vzr           1/1     Running     0               27s
     cloud-controller-manager-k7jpn           1/1     Running     0               27s
@@ -491,7 +492,7 @@ CCM（Cloud Controller Manager）是阿里云提供的一个用于 Kubernetes �
 - `.spec.externalTrafficPolicy`：表示此 Service 是否希望将外部流量路由到节点本地或集群范围的端点。它有两个可用选项：Cluster（默认）和 Local。将`.spec.externalTrafficPolicy` 设置为 `Local`，可以保留客户端源 IP，但公有云自建集群在这种模式下使用平台的 Loadbalancer 组件进行 nodePort 转发时，会出现访问不通。针对该问题 Spiderpool 提供了 coordinator 插件，该插件通过 iptables 在数据包中打标记，确认从 veth0 进入的数据的回复包仍从 veth0 转发，进而解决在该模式下 nodeport 访问不通的问题。
 
 ```bash
-~# cat <<EOF | kubectl apply -f -
+$ cat <<EOF | kubectl apply -f -
 apiVersion: v1
 kind: Service
 metadata:
@@ -530,7 +531,7 @@ EOF
 创建完成后，您可以查看到如下内容：
 
 ```bash
-~# kubectl get svc |grep service
+$ kubectl get svc |grep service
 NAME           TYPE           CLUSTER-IP      EXTERNAL-IP      PORT(S)         AGE
 http-service   LoadBalancer   10.233.1.108    121.41.165.119   80:30698/TCP    11s
 tcp-service    LoadBalancer   10.233.4.245    47.98.137.75     999:32635/TCP   15s
@@ -572,7 +573,7 @@ Accept-Ranges: bytes
 > 阿里云的 CCM 实现负载均衡流量的入口访问时，其不支持后端 `service` 的 `spec.ipFamilies` 设置为 IPv6 。
 
 ```bash
-~# kubectl describe svc lb-ipv6
+$ kubectl describe svc lb-ipv6
 ...
 Events:
   Type     Reason                  Age                   From            Message
