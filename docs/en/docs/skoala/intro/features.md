@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+Date: 2024-04-24
+---
+
 # Feature Overview
 
 DCE 5.0 Microservice Engine has the following feature capabilities:
@@ -12,18 +17,28 @@ Unified management of traditional microservices and cloud-native microservices, 
 
 ## Microservice Traffic Governance
 
-In terms of traffic governance, online traffic governance solutions are used to quickly integrate with mainstream open-source microservice frameworks. Sentinel and Mesh are used to address pain points in different production scenarios.
+In terms of traffic governance, we adopt online traffic governance solutions, which can be quickly integrated with
+mainstream open-source microservice frameworks to address pain points in different production scenarios using Sentinel and Mesh.
 
-- Supports using Sentinel to govern traditional microservices' east-west traffic with flow control, circuit breaking, degradation, hotspots, system protection, authorization, and cluster flow control rules.
-- Supports using Service Mesh to govern microservice traffic within the mesh with virtual services, destination rules, and gateway rules.
+- Supports the use of Sentinel to govern east-west traffic in traditional microservices through traffic shaping,
+  circuit breaking, degradation, hotspots, system protection, authorization, and cluster flow control rules.
+- Supports the use of service mesh capabilities to govern microservice traffic within the mesh through
+  virtual services, destination rules, and gateway rules.
+- Supports the use of Istio to govern east-west traffic for service ports through load balancing,
+  circuit breaking, outlier detection, rewriting, fault injection, retries, timeouts, and global rate limiting rules.
+- Supports cloud-native microservice governance by extending capabilities through the creation and configuration of Wasm plugins.
+- Supports traffic management in traffic lane mode.
 
 ## Microservice Configuration Center
 
-The Nacos-managed registration center can serve as a configuration manager for microservices. It can extract common configurations from different projects and centrally manage them, or apply different configurations to the same project for differentiated management.
+The Nacos-managed registration center can serve as a configuration manager for microservices.
+It can extract common configurations from different projects and centrally manage them,
+or apply different configurations to the same project for differentiated management.
 
 - Isolates configuration files based on microservice namespaces and groups.
 - Supports dynamic configuration updates with the `@RefreshScope` annotation.
-- Manages historical versions of configuration files, supports version diff comparison, and provides one-click rollback to specific versions.
+- Manages historical versions of configuration files, supports version diff comparison,
+  and provides one-click rollback to specific versions.
 - Supports querying the current configuration's listeners and MD5 checksum.
 - Provides sample code for easy consumption of the configuration by novice users, reducing the learning curve.
 
@@ -33,5 +48,16 @@ The microservice gateway plays a vital role in managing and controlling the nort
 
 - Multi-gateway management: Native support for managing multiple cluster and namespace gateway instances in the [Container Management](../../kpanda/intro/index.md) module, supporting full lifecycle management of gateway instances.
 - API policy management: Graphical interface for API CRUD operations and configuration of API policies, such as load balancing, path rewriting, timeout configuration, retry mechanism, request/response header rewriting, WebSocket, local rate limiting, health checks, etc., while ensuring that the capabilities of native APIs are not affected.
-- Plugin management: Provides a rich set of plugin functions, supporting security, traffic control, caching, and other plugins, with one-click enable/disable capability.
 - Monitoring and alerting: The microservice gateway is automatically configured with monitoring, alerting, and other functions during deployment. Each gateway comes with comprehensive resource monitoring and gateway business monitoring capabilities.
+
+## Plugin Center
+
+We provide a wide range of feature-rich plugins, including security hardening, traffic management, and data caching,
+to enhance your user experience. In addition, we support custom plugins, allowing you to configure them according to
+your specific needs. All plugins can be easily enabled or disabled with a simple one-click operation,
+ensuring convenience and efficiency.
+
+- Supports plugins for JWT authentication, security authentication, global rate limiting, etc.,
+  allowing you to customize multiple gateway API authentication strategies and quickly integrate
+  them into your gateway instances.
+- Supports user-defined creation of Wasm plugins.

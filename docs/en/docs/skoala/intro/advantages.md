@@ -1,4 +1,6 @@
 ---
+MTPE: windsonsea
+Date: 2024-04-24
 hide:
   - toc
 ---
@@ -20,6 +22,15 @@ DME has the following advantages over its counterparts:
 - Easy Transition
 
     DME can manage both traditional and cloud native microservices. You can integrate traditional registries (Zookeeper, Eureka, Nacos, Consul) and cloud native registries (Kubernetes, Service Mesh) into DME. You can also create a Nacos registry in DME and enable Mesh plugin to change traditional microservices to cloud native ones, no need to change service codes.
+
+- Open and Compatible
+
+    The microservice engine supports both traditional and cloud native service registries.
+    It also supports popular open-source microservice frameworks such as Spring Cloud and Dubbo,
+    as well as open-source gateway components like Envoy and Contour.
+    In addition, it can be combined with other modules in [DCE 5.0](../../dce/index.md)
+    such as multicloud management, middleware, service mesh, and workbench to achieve
+    more customization and fine-grained functionality.
 
 - Visualization
 
