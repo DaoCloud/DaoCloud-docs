@@ -9,12 +9,12 @@
 
 ## 前提条件
 
-- 请在 `argo-rollouts` 添加 `contour-plugin` 配置，参考文档部署[argo-rollouts](../pluggable-components.md)。
-- 当前平台部署了`微服务引擎`产品模块
+- 请在 `argo-rollouts` 添加 `contour-plugin` 配置，参考文档部署[argo-rollouts](../pluggable-components.md)
+- 当前平台部署了`微服务引擎`模块
 
 ## 创建应用资源
 
-在`应用工作台`的向导选择`基于容器镜像`在目标集群/命名空间创建应用 `rollouts-demo`。
+登录 DCE 5.0 之后，在左侧导航栏依次点击 **应用工作台** -> **向导** -> **基于容器镜像** ，在目标集群/命名空间中创建应用 `rollouts-demo`。
 
 **注意事项：**
 
@@ -27,7 +27,7 @@
 
 ### 创建网关
 
-参考[创建网关文档](../../skoala/gateway/index.md)
+参考[创建网关文档](../../skoala/gateway/index.md)。
 
 **注意事项:**
 
@@ -37,7 +37,7 @@
 
 ### 创建域名
 
-进入网关详情界面，在`域名管理`参考[创建域名文档](../../skoala/gateway/domain/index.md)。
+进入网关详情界面，在`域名管理`中[创建域名](../../skoala/gateway/domain/index.md)。
 
 **注意事项：**
 
@@ -47,7 +47,7 @@
 
 ### 创建 API
 
-进入网关详情界面，在 `API管理`参考[创建 API 文档](../../skoala/gateway/api/index.md)。
+进入网关详情界面，在 `API 管理`中[创建 API](../../skoala/gateway/api/index.md)。
 
 **注意事项:**
 
@@ -67,7 +67,7 @@ $ cat /etc/hosts | grep gateway.canary
 10.6.222.21 gateway.canary
 ```
 
-在浏览器中输入 <http://gateway.canary:30000/> ，可以看到如下界面（流量都是指向 red）
+在浏览器中输入 <http://gateway.canary:30000/> ，可以看到如下界面（流量都是指向 red）：
 
 - 需要关闭网络代理，否则访问可能会 502 报错
 - 30000 端口是网关的 HTTP 端口，使用的是 HTTP 域名，所以使用 HTTP 端口
@@ -94,7 +94,8 @@ $ cat /etc/hosts | grep gateway.canary
 
 ## 更新发布任务，观察发布情况
 
-需要在发布界面中更新版本，镜像替换为：argoproj/rollouts-demo:blue，版本更新后，在浏览器中访问 http://gateway.canary:30000/ ，然后观察流量统计：
+需要在发布界面中更新版本，镜像替换为：argoproj/rollouts-demo:blue。
+版本更新后，在浏览器中访问 <http://gateway.canary:30000/> ，然后观察流量统计：
 
 ![contour-rollout](../images/contour-rollout01.png)
 
