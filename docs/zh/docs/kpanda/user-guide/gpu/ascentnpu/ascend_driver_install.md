@@ -4,8 +4,8 @@
 
 ## 前提条件
 
-1. 安装前请确认支持的 NPU 型号，详情请参考：[昇腾 NPU 矩阵](gpu_matrix.md)
-2. 请确认 对应 NPU 型号所要求的内核版本是否匹配，详情请参考：[昇腾 NPU 矩阵](gpu_matrix.md)
+1. 安装前请确认支持的 NPU 型号，详情请参考[昇腾 NPU 矩阵](../gpu_matrix.md)
+2. 请确认 对应 NPU 型号所要求的内核版本是否匹配，详情请参考[昇腾 NPU 矩阵](../gpu_matrix.md)
 3. 准备 Kubernetes 基础环境
 
 ## 安装步骤
@@ -23,7 +23,7 @@
 1. 如驱动未安装，请参考昇腾官方文档进行安装：例如 Ascend910，参考：[910 驱动安装文档](https://www.hiascend.com/document/detail/zh/Atlas%20200I%20A2/23.0.RC3/EP/installationguide/Install_87.html)。
 2. 运行 __npu-smi info__ 命令，并且能够正常返回 npu 信息，表示 NPU 驱动与固件已就绪。
 
-    ![昇腾信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/npu-smi-info.png)
+![昇腾信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/user-guide/gpu/images/npu-smi-info.png)
 
 ### 安装 Docker Runtime
 
@@ -120,20 +120,20 @@ chown root:root /var/log/mindx-dl/devicePlugin
 
 参考下述命令在对应节点上创建label
 
-```
-// 在安装了驱动的计算节点创建此标签
+```shell
+# 在安装了驱动的计算节点创建此标签
 kubectl label node {nodename} huawei.com.ascend/Driver=installed
 kubectl label node {nodename} node-role.kubernetes.io/worker=worker
 kubectl label node {nodename} workerselector=dls-worker-node
 kubectl label node {nodename} host-arch=huawei-arm //或者host-arch=huawei-x86 ，根据实际情况选择
 kubectl label node {nodename} accelerator=huawei-Ascend910 //根据实际情况进行选择
-// 在控制节点创建此标签
+# 在控制节点创建此标签
 kubectl label node {nodename} masterselector=dls-master-node
 ```
 
 ### 安装 Device Plugin 和 NpuExporter
   
-1. 功能模块路径： __容器管理__ -> __集群管理__ ，点击目标集群的名称，从左侧导航栏点击 __Helm 应用__ -> __Helm 模板__ -> 搜索 __ascend-mindxdl__ 。
+功能模块路径： __容器管理__ -> __集群管理__ ，点击目标集群的名称，从左侧导航栏点击 __Helm 应用__ -> __Helm 模板__ -> 搜索 __ascend-mindxdl__ 。
 
 ![找到 ascend-mindxdl](../images/ascend-mindxdl.png)
 
@@ -144,7 +144,7 @@ kubectl label node {nodename} masterselector=dls-master-node
 -   __ServiceMonitor__ ：默认不开启，开启后可前往可观测性模块查看 NPU 相关监控。如需开启，请确保 insight-agent 已安装并处于运行状态，否则将导致 ascend-mindxdl 安装失败。
 -   __isVirtualMachine__ ：默认不开启，如果 npu 节点为虚拟机场景，请开启 isVirtualMachine 参数。
 
-安装成功后，对应命名空间下会出现两个组件，如下图展示：
+安装成功后，对应命名空间下会出现两个组件，如下图：
 
 ![ascend-mindxdl列表](../images/list-ascend-mindxdl.png)
 
@@ -152,10 +152,10 @@ kubectl label node {nodename} masterselector=dls-master-node
 
 ![节点标签](../images/label-ascend-mindxdl.png)
 
-一切就绪后，我们通过页面创建工作负载时，就能够选择到对应的 npu 设备，如下图展示：
+一切就绪后，我们通过页面创建工作负载时，就能够选择到对应的 npu 设备，如下图：
+
 ![使用 NPU](../images/use-ascend-mindxdl.png)
 
- > 详细使用步骤，请参照[应用使用昇腾（Ascend）NPU](https://docs.daocloud.io/kpanda/user-guide/gpu/Ascend_usage/)
+!!! note
 
-
-
+    有关详细使用步骤，请参照[应用使用昇腾（Ascend）NPU](https://docs.daocloud.io/kpanda/user-guide/gpu/Ascend_usage/)。
