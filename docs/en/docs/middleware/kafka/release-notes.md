@@ -9,6 +9,23 @@ This page lists the Release Notes of Kafka message queue, so that you can unders
 
 *[mcamel-kafka]: "mcamel" is the dev name for DaoCloud's middlewares, and "kafka" is the middleware that provides distributed messaging queue services
 
+## 2024-03-31
+
+### v0.13.0
+
+- **Added** support for parameter template management
+- **Added** capability to create Kafka instances via templates
+- **Improved** support for configuring storage for Zookeeper
+- **Improved** Prevent reading Kafka password when user permissions are insufficient
+
+## 2024-01-31
+
+### v0.12.0
+
+#### Improvements
+
+- **Improved** Added display of Kafka version in global management
+
 ## 2023-12-31
 
 ### v0.11.0

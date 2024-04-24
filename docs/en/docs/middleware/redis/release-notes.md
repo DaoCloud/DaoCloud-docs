@@ -9,6 +9,30 @@ This page lists the release notes for the Redis Cache service, providing you wit
 
 *[mcamel-redis]: "mcamel" is the dev name for DaoCloud's middlewares, and "redis" is the middleware that provides memory cache services
 
+## 2024-03-31
+
+### v0.16.0
+
+- **Added** Redis slow query analysis
+- **Improved** support for enabling hostnetwork in Redis Sentinel mode
+- **Improved** prevention of reading Redis password when user permissions are insufficient
+- **Improved** Redis Sentinel mode Operator upgrade
+- **Fixed** issue with creating more than 3 replicas in Redis Sentinel mode (requires Operator upgrade)
+- **Fixed** potential unavailability issues after a Redis Sentinel mode master crash (requires Operator upgrade)
+- **Fixed** default backup path set to `name.rdb`
+- **Fixed** incorrect memory usage rate in Redis Sentinel mode monitoring dashboard
+
+## 2024-01-31
+
+### v0.15.0
+
+#### Improvements
+
+- **Improved** Redis Operator version upgrade to 6.2.12
+- **Improved** addition of Redis version display in global management
+- **Fixed** Redis cluster mode scaling not taking effect (requires Operator upgrade)
+- **Fixed** support for NodePort access in Redis cluster mode (requires Operator upgrade)
+
 ## 2023-12-31
 
 ### v0.14.0

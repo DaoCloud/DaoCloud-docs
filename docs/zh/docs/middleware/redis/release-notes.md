@@ -26,7 +26,7 @@
 - **优化** Redis Operator 升级版本至 6.2.12
 - **优化** 在全局管理中增加 Redis 版本展示
 - **修复** Redis 集群模式扩容不生效问题（需升级 Operator）
-- **修复** Redis 集群模式支持 NodePort 访问（需升级 Operator）。
+- **修复** Redis 集群模式支持 NodePort 访问（需升级 Operator）
 
 ## 2023-12-31
 

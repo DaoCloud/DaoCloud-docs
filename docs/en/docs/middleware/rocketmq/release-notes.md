@@ -7,13 +7,19 @@ date: 2024-01-05
 
 This page provides the Release Notes for RocketMQ Message Queue, allowing you to understand the evolution and feature changes of each version.
 
+## 2024-03-31
+
+### v0.18.0
+
+- **Improved** support for Chinese monitoring dashboard in Chinese mode
+
 ## 2024-01-31
 
 ### v0.4.0
 
 #### Optimization
 
-- **Optimization** Added RocketMQ version display in global management.
+- **Improved** RocketMQ version display in global management.
 
 ## 2023-12-31
 
