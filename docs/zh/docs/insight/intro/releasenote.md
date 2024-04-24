@@ -9,7 +9,9 @@
     由于 Insight v0.25 版本中存在破坏性改动，当升级 Insight Server 至 v0.25.x 时，
     需同时升级 Insight Agent 版本至 v0.25.x ！！！
 
-### Insight Server: v0.25.0
+### v0.25.0
+
+以下这些变更针对 Insight Server。
 
 #### 优化
 

@@ -11,7 +11,7 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 
 ## 2024-04-01
 
-### v0.24.0
+### v0.24.1
 
 #### Features
 

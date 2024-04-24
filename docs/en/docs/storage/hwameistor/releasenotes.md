@@ -3,6 +3,15 @@
 This page lists the Release Notes related to Hwameistor, providing an overview of
 the evolution path and feature changes for each version.
 
+## 2024-03-31
+
+### v0.14.4
+
+#### Improvements
+
+- **Improved** Delete local mount path when unmounting data volumes
+- **Improved** Added PoolHDD FreeCap to the print column
+
 ## 2024-01-31
 
 ### v0.14.1

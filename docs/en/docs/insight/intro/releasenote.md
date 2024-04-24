@@ -15,7 +15,9 @@ the evolution path and feature changes of each version.
     Due to breaking changes in Insight v0.25 version, when upgrading Insight Server to v0.25.x,
     Insight Agent version must also be upgraded to v0.25.x!!!
 
-### Insight Server: v0.25.0
+### v0.25.0
+
+These changes are for Insight Server.
 
 #### Improvements
 

@@ -8,7 +8,7 @@
 
 ## 2023-03-29
 
-### v0.16.0
+### v0.16.1
 
 - **新增** 提供通过 LoadBalancer 模式部署 Harbor 的最佳实践文档
 - **新增** 支持在 Kpanda Helm 应用更新升级 Kangaroo
