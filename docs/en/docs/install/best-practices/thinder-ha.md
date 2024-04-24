@@ -1,22 +1,28 @@
 # High Availability Solution for Bootstrap Nodes
 
-Introduce the concept of "backup bootstrap node", which is essentially a virtual machine that performs the same tasks as the bootstrap node, but is only used temporarily when the original bootstrap node encounters a problem. Once the node is repaired, it should immediately switch back to the original bootstrap node. The high availability of the bootstrap service can be achieved through pre-set DNS or HAProxy+KeepAlived or nginx reverse proxy. This article focuses on the pre-set DNS method.
+This page explains the concept of a "backup bootstrap node." Essentially,
+this node is a virtual machine designed to perform all the duties of the primary bootstrap node
+but is activated only when the original node experiences issues. Once the primary node is restored,
+operations should promptly revert to it. To ensure the high availability of the bootstrap service,
+policies such as pre-configured DNS, HAProxy + KeepAlived, or an nginx reverse proxy can be employed.
+This article will specifically focus on the pre-configured DNS approach.
 
-Overall solution architecture:
+Overall solution architecture is as folllows:
 
 ![arch](../images/arch01.png)
 
-## Environment Preparation
+## Prepare Environment
 
 - Bootstrap node: Operating system centos7.9, IP `xxx.xx.xx.193`
 - Global single cluster: Operating system centos7.9, IP `xxx.xx.xx.194`, CRI containerd
-- Backup bootstrap node: Operating system centos7.9, IP `xxx.xx.xx.194`, the backup bootstrap node can be colocated with the master node of the global cluster.
+- Backup bootstrap node: Operating system centos7.9, IP `xxx.xx.xx.194`,
+  the backup bootstrap node can be colocated with the master node of the global cluster.
 - dnsServer: IP `xxx.xx.xx.192`
 - Domain name: <www.tinder-node-server.com> (Initially resolved to the bootstrap node `xxx.xx.xx.193`)
 
 ## Steps
 
-### Simulating dnsServer and Configuring According to the Actual Situation
+### Simulate dnsServer and Configure According to Your Actual Situation
 
 Set up dnsServer information on the machine `xxx.xx.xx.192`. The following configuration information is for demonstration purposes only:
 
@@ -98,7 +104,7 @@ Set up dnsServer information on the machine `xxx.xx.xx.192`. The following confi
     - If an external DNS service is used to resolve the domain name, make sure that the /etc/hosts file of each node, including the bootstrap node, does not contain the domain name configuration.
     - You can use the nslookup command to check the domain name resolution status. Make sure that each node, including the bootstrap node, can use nslookup to check the resolution status.
 
-### Installing DCE 5.0 Based on External Domain Name Mode
+### Install DCE 5.0 Based on External Domain Name Mode
 
 Overall architecture:
 
@@ -115,7 +121,7 @@ Overall architecture:
       creationTimestamp: null
     spec:
       clusterName: my-cluster
-      bootstrapNode: www.tinder-node-server.com ## Based on external domain name mode
+      bootstrapNode: www.tinder-node-server.com # Based on external domain name mode
     
       masterNodes:
         - nodeName: "g-master1"
@@ -131,7 +137,7 @@ Overall architecture:
     
       imagesAndCharts:
         type: builtin
-        additionalSSLSubjectAltName: "xxx.xx.xx.193" ## Domain name resolved by the dns service
+        additionalSSLSubjectAltName: "xxx.xx.xx.193" # Domain name resolved by the dns service
     
       addonPackage:
       binaries:
@@ -162,7 +168,7 @@ Overall architecture:
   
     ![coredns](../images/coredns.png)
 
-### Simulating the Activation of the Backup Bootstrap Node
+### Simulate the Activation of the Backup Bootstrap Node
 
 1. Ensure that the backup bootstrap node has installed the necessary dependencies, refer to [Install Tools](../install-tools.md),
 
@@ -177,7 +183,7 @@ Overall architecture:
       creationTimestamp: null
     spec:
       clusterName: my-cluster
-      bootstrapNode: 172.30.41.194 ## IP-based mode
+      bootstrapNode: 172.30.41.194 # IP-based mode
     
       masterNodes:
         - nodeName: "g-master1"
@@ -193,7 +199,7 @@ Overall architecture:
     
       imagesAndCharts:
         type: builtin
-        additionalSSLSubjectAltName: "www.tinder-node-server.com" ## Domain name resolved by the dns service
+        additionalSSLSubjectAltName: "www.tinder-node-server.com" # Domain name resolved by the dns service
       addonPackage:
       binaries:
         type: builtin
@@ -209,9 +215,9 @@ Overall architecture:
     
         The -j parameter is necessary here, it only installs on the bootstrap node itself.
 
-### Testing the High Availability of the Bootstrap Node Based on DNS Resolution
+### Test the High Availability of the Bootstrap Node Based on DNS Resolution
 
-Prerequisite: Update dnsServer to switch DNS resolution to the backup bootstrap node and perform verification after the switch
+Prerequisite: Update dnsServer to switch DNS resolution to the backup bootstrap node and perform verification after the switch.
 
 ![arch02](../images/arch02.png)
 
@@ -235,7 +241,7 @@ Prerequisite: Update dnsServer to switch DNS resolution to the backup bootstrap 
 
 ## FAQs
 
-### Configuration of bootstrapNode and AdditionalSubjectAltName Fields
+### Configure bootstrapNode and AdditionalSubjectAltName Fields
 
 Explanation of the configuration of bootstrapNode and imagesAndCharts.additionalSSLSubjectAltName in clusterConfig.yaml for the bootstrap node and the backup bootstrap node:
 
@@ -244,7 +250,7 @@ Explanation of the configuration of bootstrapNode and imagesAndCharts.additional
 | Original bootstrap node 193   | www.tinder-node-server.com | 172.30.41.193  |
 | Backup bootstrap node 194 | 172.30.41.194 | www.tinder-node-server.com |
 
-### How to Synchronize the Upgrade of the Backup Bootstrap Node in an Upgrade Scenario
+### Synchronize the Upgrade of the Backup Bootstrap Node in an Upgrade Scenario
 
 Prerequisites:
 
@@ -252,13 +258,16 @@ Prerequisites:
 
     !!! note
   
-        Why restore the resolution to its original state? Because without modifying the clusterConfig, when starting or updating the bootstrap node in domain name mode, there is a code check logic:
-        Check if the given domain name is resolved to the IP address of the current node. If it is, do nothing; if not, update the hosts file of the bootstrap node to support the domain name mode.
+        Why restore the resolution to its original state? Because without modifying the clusterConfig,
+        when starting or updating the bootstrap node in domain name mode, there is a code check logic:
+        Check if the given domain name is resolved to the IP address of the current node.
+        If it is, do nothing; if not, update the hosts file of the bootstrap node to support the domain name mode.
         So if the resolution is not restored to its original state, the hosts file of the bootstrap node will be modified unnecessarily.
 
 - The bootstrap node and the backup bootstrap node have downloaded the offline upgrade package
 
-    1. Run the command to upgrade the bootstrap node on both the bootstrap node and the backup bootstrap node, to upgrade the image, minio files, and charts versions
+    1. Run the following command to upgrade the bootstrap node on both the bootstrap node and the backup bootstrap node,
+       to upgrade the image, minio files, and charts versions.
     
         ```bash
         ./dce5-installer cluster-create -c sample/clusterConfig.yaml -m sample/manifest.yaml -u tinder
@@ -266,4 +275,5 @@ Prerequisites:
 
         Modify the fullPackagePath to point to the offline upgrade package address.
     
-    1. After the upgrade, check if the images, files, and charts repositories of the bootstrap node and the backup node can be downloaded normally.
+    1. After the upgrade, check if the images, files, and charts repositories of the bootstrap node
+       and the backup node can be downloaded normally.
