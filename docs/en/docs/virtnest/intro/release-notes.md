@@ -1,7 +1,39 @@
+---
+MTPE: windsonsea
+Date: 2024-04-24
+---
+
 # VirtNest Release Notes
 
 This page provides the release notes for VirtNest (Virtual Machine),
 allowing you to understand the evolution path and feature changes of each version.
+
+## 2024-4-2
+
+### v0.7.1
+
+#### Features
+
+- **Added** i18n for the virtual machine page
+
+## 2024-3-26
+
+### v0.7.0
+
+#### Features
+
+- **Added** GPU configuration support for virtual machines
+- **Added** OpenAPI documentation to the documentation site
+- **Added** integration with audit logs
+
+#### Improvements
+
+- **Improved** inheritance of network and storage information from the template
+  when creating virtual machines through a VM template
+
+#### Fixes
+
+- **Fixed** inaccurate memory usage rate in virtual machine monitoring
 
 ## 2024-01-26
 

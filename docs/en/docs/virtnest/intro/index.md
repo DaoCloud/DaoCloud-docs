@@ -1,4 +1,6 @@
 ---
+MTPE: windsonsea
+Date: 2024-04-24
 hide:
   - toc
 ---
@@ -12,14 +14,14 @@ containerized applications.
 
 Here are the general steps to use Virtnest:
 
-1. Install the virtnest-agent component within the cluster.
-2. Build the required Virtual Machine images.
-3. Push the images to a Docker Registry or other image repositories.
-4. Create virtual machines using the images/YAML.
-5. Access the virtual machines through VNC/console.
-6. View the list of virtual machines and their details.
-7. Perform operations such as power on/off, restart, clone, snapshot, restore snapshot,
-   and live migration as needed.
+1. [Install the virtnest-agent component](../install/virtnest-agent.md) within the cluster.
+2. [Build the required virtual machine images](../vm-image/index.md) and push them to
+    Docker Registry or another image repository.
+3. [Create virtual machines using the images](../vm/index.md) or [create virtual machines using YAML](../vm/index.md#yaml).
+4. [Access the virtual machines](../vm/access.md) via VNC/console.
+5. View the list of virtual machines and detailed information about each one.
+6. Perform necessary operations such as start/stop, restart, clone, [snapshot](../vm/snapshot.md),
+   restore from snapshot, and [live migration](../vm/live-migration.md) as needed.
 
 ## Advantages of Virtnest
 
