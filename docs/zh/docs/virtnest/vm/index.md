@@ -74,7 +74,8 @@
 
 4. 资源配置：CPU 建议使用整数，若填写小数则会向上取整。
 
-5. GPU 配置：启用 GPU 功能需要需要满足前提条件，具体可参考 [虚拟机配置 GPU（Nvidia)](../vm/vm-gpu.md)。虚拟机支持 Nvidia—GPU 和 Nvidia—vGPU 两种类型，选择所需类型后，需要选择对应的 GPU 型号和卡的数量。
+5. GPU 配置：启用 GPU 功能需要需要满足前提条件，具体可参考 [虚拟机配置 GPU（Nvidia)](../gpu/vm-gpu.md)。
+   虚拟机支持 Nvidia—GPU 和 Nvidia—vGPU 两种类型，选择所需类型后，需要选择对应的 GPU 型号和卡的数量。
    
    ![配置gpu](../images/gpu01.png)
    

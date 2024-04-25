@@ -291,8 +291,8 @@ nav:
                           - 应用使用 NVIDIA MIG: kpanda/user-guide/gpu/nvidia/mig/mig_usage.md
                           - MIG 相关命令: kpanda/user-guide/gpu/nvidia/mig/mig_command.md
                   - 昇腾 GPU 管理:
-                      - 昇腾 NPU 组件安装: kpanda/user-guide/gpu/ascentnpu/ascend_driver_install.md
-                      - 应用使用昇腾 GPU: kpanda/user-guide/gpu/ascentnpu/Ascend_usage.md
+                      - 昇腾 NPU 组件安装: kpanda/user-guide/gpu/ascend/ascend_driver_install.md
+                      - 应用使用昇腾 GPU: kpanda/user-guide/gpu/ascend/ascend_usage.md
                   - 天数 GPU 管理: kpanda/user-guide/gpu/Iluvatar_usage.md
                   - GPU 配额管理: kpanda/user-guide/gpu/vgpu_quota.md
                   - GPU 监控指标: kpanda/user-guide/gpu/gpu-metrics.md
@@ -603,7 +603,6 @@ nav:
                   - 实时迁移: virtnest/vm/live-migration.md
                   - 通过 NodePort 访问虚拟机: virtnest/vm/nodeport.md
                   - 虚拟机监控: virtnest/vm/monitor.md
-                  - 虚拟机配置 GPU: virtnest/vm/vm-gpu.md
                   - 虚拟机网络: virtnest/vm/vm-network.md
                   - 虚拟机存储: virtnest/vm/vm-sc.md
               - 虚拟机 GPU:
