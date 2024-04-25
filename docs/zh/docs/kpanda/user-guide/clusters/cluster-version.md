@@ -36,9 +36,9 @@ Kubernetes 社区支持 3 个版本范围，如 1.26、1.27、1.28。当社区�
       </td>
       <td>
         <ul>
+          <li>1.25</li>
           <li>1.26</li>
           <li>1.27</li>
-          <li>1.28</li>
         </ul>
       </td>
       <td><strong>1.27.5</strong></td>
