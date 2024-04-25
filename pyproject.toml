@@ -33,7 +33,7 @@ mkdocs-swagger-ui-tag = "^0.6.1"
 mkdocs-rss-plugin = "^1.6.0"
 mkdocs-macros-plugin = "^0.7.0"
 anybadge = "^1.14.0"
-pydantic = "^1.10.6"
+pydantic = "^1.10.13"
 lxml = "^4.9.3"
 
 [tool.poetry.dev-dependencies]
