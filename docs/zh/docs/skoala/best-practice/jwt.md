@@ -10,23 +10,33 @@
 
 ## 操作步骤
 
-1. 参考[创建域名](../gateway/domain/index.md)创建协议为 `https` 的域名，在域名的安全策略中启用 `JWT 认证`。
+1. 在插件中心接入一个 JWT 插件
 
-    - JWKS 名称：唯一的 JWKS 的名称，用于标识具体的 JWT 策略，必填
-    - JWKS 服务器地址：返回 JWKS 内容的 JWT 服务的完整 FQDN 地址，必填
-    - Token 透传：是否将 JWT 的 Token 信息发送到后端服务
-    - Issuer：Token 颁发者认证，不填则不进行校验
-    - Audiences：Token 的受众，不填则不进行校验
-    - Token缓存时长：JWKS内存的缓存时间，在缓存有效期内不会重复请求 JWKS 服务器地址
-    - 验证超时时长：JWKS 服务器的响应超时时间，超过超时时间获取 JWKS 失败
+   - 插件名称：唯一的 JWKS 的名称，用于标识具体的 JWT 策略，必填
+   - 插件类型：选择 JWT
+   - JWKS 缓存时间：JWKS 在内存中的缓存时间，在缓存有效期内不会重复请求 JWKS 服务器地址
+   - Token 透传：是否将 JWT 的 Token 信息发送到后端服务
+   - JWKS 缓存时间：返回 JWKS 内容的 JWT 服务的完整 FQDN 地址，必填
+   - Issuer：Token 颁发者认证，不填则不进行校验  
+   - Audiences：Token 的受众，不填则不进行校验
+   - 接入地址：返回 JWKS 内容的 JWT 服务的完整 FQDN 地址，必填
+   - 超时时间：JWKS 服务器的响应超时时间，超过超时时间获取 JWKS 失败
+   - 描述：插件的描述信息
+    
+   ![JWT 插件](../images/jwt-plugin-create.png)
+   
 
-    ![基础配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/jwt06.png)
+2. 参考[创建域名](../gateway/domain/index.md)创建协议为 `https` 的域名，在域名的安全策略中启用 `JWT 认证`, 并选择上一步创建的 JWT 插件。下方会回显出选择的 JWT 插件的配置信息。
 
-2. 参考[添加 API](../gateway/api/index.md) 创建 API 并启用 JWT 认证安全策略。
+    ![域名选择插件](../images/virtualhost-jwt-plugin.png)
 
-    ![基础配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/jwt07.png)
+2. 参考[添加 API](../gateway/api/index.md) 创建 API 并选择刚刚使用了 JWT 插件的域名。默认情况下如果 API 使用的域名使用了 JWT 插件，API也会启用 JWT 认证，但是在 API 级别可以禁用当前 API的 JWT 认证；如果 API 使用的域名未使用 JWT 插件，API 级别不可以开启 JWT 的认证。
 
-3. 带上 Token 访问验证，如果访问成功说明 JWT 策略配置成功
+    ![API选择插件 域名启用](../images/api-jwt-plugin-1.png)
+
+    ![API选择插件 域名未启用启用](../images/api-jwt-plugin-2.png)
+
+4. 带上 Token 访问验证，如果访问成功说明 JWT 策略配置成功
 
     ![基础配置](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/images/jwt08.png)
 
