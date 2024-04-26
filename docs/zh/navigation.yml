@@ -1375,6 +1375,7 @@ nav:
               - UI 翻译预览: native/knowledge/git/ui-preview.md
               - GitHub 混迹技巧: native/knowledge/git/github.md
               - 同步中英文档: native/knowledge/git/lsync.md
+              - 文档站工作说明: native/knowledge/git/works.md
           - 排障方案: native/knowledge/troubleshoot.md
           - 最佳实践: native/knowledge/best-practice.md
           - 工具推荐: native/knowledge/tools.md
