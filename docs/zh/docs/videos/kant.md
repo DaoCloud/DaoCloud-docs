@@ -4,6 +4,14 @@
 
 > 若视频显示有问题，请刷新页面，或尝试清除浏览器缓存。
 
+## 终端设备 Demo
+
+参阅[终端设备概述](../kant/intro/index.md)文档。
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/edge-device.mp4" preload="metadata" poster="images/edge-device.jpg"></video>
+</div>
+
 ## 创建边缘单元
 
 参阅[云边协同](../kant/intro/index.md)文档。
