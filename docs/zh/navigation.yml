@@ -1085,7 +1085,7 @@ nav:
                       - 创建数据集: baize/developer/dataset/create.md
                       - 删除数据集: baize/developer/dataset/delete.md
                   - 推理服务:
-                      - 创建推理服务: baize/developer/interface/create.md
+                      - 创建推理服务: baize/developer/inference/create.md
               - 运维管理:
                   - 介绍: baize/oam/index.md
                   - GPU 资源管理: baize/oam/resource.md
