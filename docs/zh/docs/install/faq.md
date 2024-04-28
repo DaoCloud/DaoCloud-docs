@@ -136,3 +136,9 @@ Ubuntu 20.04 作为火种机器部署，由于缺失 ip6tables 会导致部署�
 请查看 [Podman 已知问题](https://github.com/containers/podman/issues/3655)。
 
 临时解决方案：手动安装 iptables，参考 [Install and Use iptables on Ubuntu 22.04](https://orcacore.com/install-use-iptables-ubuntu-22-04/#:~:text=In%20this%20guide%2C%20we%20want%20to%20teach%20you,your%20network%20traffic%20packets%20by%20using%20these%20filters)。
+
+## 如何卸载火种节点的数据
+
+商业版部署后，如果进行卸载，除了本身的集群借点外，还需要对火种节点进行重置，重置步骤如下：
+
+需要使用 `sudo rm -rf` 删除这三个目录 `/tmp`、`/var/lib/dce5/`、`/home/kind/etcd` 。
