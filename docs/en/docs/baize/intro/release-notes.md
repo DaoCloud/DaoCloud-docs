@@ -3,6 +3,27 @@
 This page lists the Release Notes for Intelligent Engine of each version,
 so that you can understand the evolution path and feature changes of each version.
 
+## 2024-04-30
+
+### v0.4.0
+
+#### Features
+
+- **Added** **`Notebook` now supports local SSH access, compatible with various development tools such as `Pycharm`, `VS Code`, etc.** 🔥🔥🔥
+- **Added** **Upgrade `Notebook` image to support the built-in `CLI` tool `baizectl`, for command-line task submission and management.** 🔥🔥🔥
+- **Added** `Notebook` adds affinity scheduling strategy configuration.
+- **Added** Distributed training tasks can now configure `SHM size` through the UI.
+- **Added** One-click restart function for training tasks.
+- **Added** **Model training tasks support custom cluster scheduler specification.** 🔥🔥🔥
+- **Added** **Training task analysis tool `Tensorboard` support, can be launched with one click in `Notebook` and training tasks.** 🔥🔥🔥
+- **Added** When editing queue quotas, hints are provided for the shared resource configuration of the current workspace.
+- **Added** Upgrade and adapt Kueue version `v0.6.2`.
+
+#### Fixes
+
+- **Fixed** Occasional sync anomaly issue with `Notebook` `CRD`.
+- **Fixed** The query interface for `Notebook` affinity configuration parameters did not return.
+
 ## 2024-04-01
 
 ### v0.3.0
