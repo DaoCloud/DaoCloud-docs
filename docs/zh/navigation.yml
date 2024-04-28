@@ -1101,8 +1101,8 @@ nav:
               - 边缘节点:
                   - 边缘节点概述: kant/user-guide/node/index.md
                   - 边缘节点接入要求: kant/user-guide/node/join-rqmt.md
-                  - 创建接入指南: kant/user-guide/node/create-access-guide.md
-                  - 纳管边缘节点: kant/user-guide/node/access-guide.md
+                  - 创建接入配置: kant/user-guide/node/create-access-guide.md
+                  - 接入边缘节点: kant/user-guide/node/access-guide.md
                   - 运维边缘节点: kant/user-guide/node/manage-node.md
                   - 批量升级边缘节点: kant/user-guide/node/batch-upgrade.md
               - 边缘节点组:
@@ -1124,6 +1124,8 @@ nav:
                   - 应用网格概述: kant/user-guide/edge-network/index.md
                   - 部署 edgemesh 应用: kant/user-guide/edge-network/deploy-edgemesh.md
                   - 服务: kant/user-guide/edge-network/service.md
+              - 最佳实践:
+                  - 如何开发设备驱动应用 mapper: kant/best-practice/develop-device-mapper.md
       - 管理:
           - 全局管理:
               - 介绍:
