@@ -1193,6 +1193,7 @@ nav:
               - 个人中心:
                   - 安全设置: ghippo/user-guide/personal-center/security-setting.md
                   - 访问密钥: ghippo/user-guide/personal-center/accesstoken.md
+                  - SSH 公钥: ghippo/user-guide/personal-center/ssh-key.md
                   - 语言设置: ghippo/user-guide/personal-center/language.md
               - 各模块权限说明:
                   - 容器管理权限说明: ghippo/permissions/kpanda.md
