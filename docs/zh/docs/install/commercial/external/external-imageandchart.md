@@ -19,12 +19,13 @@
         externalImageRepoUsername: admin
         externalImageRepoPassword: Harbor12345
 
-        # 支持 chartmuseum, harbor, jfrog
-        externalChartRepoType: chartmuseum
+        externalChartRepoType: chartmuseum # (1)!
         externalChartRepo: https://external-charts.daocloud.io:8081
         externalChartRepoPassword: rootpass123
       ..........
     ```
+
+    1. 支持 chartmuseum, harbor, jfrog
 
     !!! note
 

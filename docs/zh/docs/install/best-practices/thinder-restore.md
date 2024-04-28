@@ -12,6 +12,8 @@
 
     ```shell
     root@my-cluster-installer-control-plane:/# kubectl get -n default cm
+    ```
+    ```output
     NAME                       DATA   AGE
     clusterconfig-1710711049   1      4h46m
     kube-root-ca.crt           1      4h46m

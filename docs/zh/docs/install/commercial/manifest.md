@@ -172,7 +172,7 @@ components:
 | components.jenkins              | 应用工作台的流水线引擎组件        |
 | components.skoala               | 微服务引擎                        |
 | components.mspider              | 服务网格                          |
-| components.mcamel-*             | 中间件，包含了ES、Kafka、MinIO 等 |
+| components.mcamel-*             | 中间件，包含了 ES、Kafka、MinIO 等 |
 | components.kangaroo             | 镜像仓库                          |
 | components.gmagpie              | 报表                              |
 | components.dowl                 | 集群安全                          |

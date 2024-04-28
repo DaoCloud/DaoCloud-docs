@@ -24,7 +24,7 @@
 
 1. 配置信息 `/etc/named.conf`
 
-    ```shell
+    ```config
     zone "tinder-node-server.com" IN {
         type master;
         file "tinder-node-server.com.zone";
@@ -40,7 +40,7 @@
 
 1. 配置信息 `/var/named/tinder-node-server.com.zone`
 
-    ```shell
+    ```config
     $TTL 1D
     @   IN SOA  tinder-node-server.com. rname.invalid. (
                         0   ; serial
@@ -59,7 +59,7 @@
 
 1. 配置信息 `/var/named/tinder-node-server.com.local`
 
-    ```shell
+    ```config
     $TTL 1D
     @   IN SOA  tinder-node-server.com. rname.invalid. (
                         0   ; serial
@@ -117,7 +117,7 @@
       creationTimestamp: null
     spec:
       clusterName: my-cluster
-      bootstrapNode: www.tinder-node-server.com # 基于外部域名模式
+      bootstrapNode: www.tinder-node-server.com # (1)!
     
       masterNodes:
         - nodeName: "g-master1"
@@ -133,12 +133,15 @@
     
       imagesAndCharts:
         type: builtin
-        additionalSSLSubjectAltName: "xxx.xx.xx.193" # dns 服务所解析的域名
+        additionalSSLSubjectAltName: "xxx.xx.xx.193" # (2)!
     
       addonPackage:
       binaries:
         type: builtin
     ```
+
+    1. 基于外部域名模式
+    2. dns 服务所解析的域名
 
 1. 开始安装
 
@@ -179,7 +182,7 @@
       creationTimestamp: null
     spec:
       clusterName: my-cluster
-      bootstrapNode: 172.30.41.194 # 基于 IP 模式
+      bootstrapNode: 172.30.41.194 # (1)!
     
       masterNodes:
         - nodeName: "g-master1"
@@ -195,11 +198,14 @@
     
       imagesAndCharts:
         type: builtin
-        additionalSSLSubjectAltName: "www.tinder-node-server.com" # dns 服务所解析的域名
+        additionalSSLSubjectAltName: "www.tinder-node-server.com" # (2)!
       addonPackage:
       binaries:
         type: builtin
     ```
+
+    1. 基于 IP 模式
+    2. dns 服务所解析的域名
 
 1. 在备用火种机执行特定步骤 `1,2,3,4,5`
 
