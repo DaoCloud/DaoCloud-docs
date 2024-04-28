@@ -70,6 +70,8 @@ nav:
                   - 火种节点高可用方案: install/best-practices/thinder-ha.md
                   - 火种节点备份与还原: install/best-practices/thinder-restore.md
                   - 修复 CVE-2024-21626 漏洞: install/best-practices/cve-20240-21626.md
+                  - K8s 集群基于 docker 运行时的容器磁盘容量限制: install/best-practices/docker-storage.md
+                  - 大规模集群参数说明: install/best-practices/large-deployments-par.md
               - 安装器 Release Notes: install/release-notes.md
       - 工作台:
           - 应用工作台:
