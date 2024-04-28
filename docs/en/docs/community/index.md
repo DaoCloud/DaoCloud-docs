@@ -103,11 +103,11 @@ hide:
 
     [:octicons-arrow-right-24: Learn more](./kube-node-tuning.md)
 
--   :peanuts:{ .lg .middle } __Kubean__ :simple-cncf: Listed in CNCF Landscape
+-   :peanuts:{ .lg .middle } __Kubean__ :simple-cncf: Listed in CNCF Sandbox
 
     ---
 
-    A full life cycle management tool for containerized clusters that is applying for Sandbox.
+    A full life cycle management tool for containerized clusters.
 
     [:octicons-arrow-right-24: Learn more](./kubean.md)
 
@@ -184,7 +184,7 @@ hide:
 ![cncf logo](./images/cncf.png)
 
 <p align="center">
-Clusterpedia, HwameiStor, Merbridge, and Spiderpool have been selected for the <a href="https://www.cncf.io/projects/clusterpedia/">CNCF Sandbox</a>.
+Clusterpedia, HwameiStor, Merbridge, Spiderpool, and Kubean have been selected for the <a href="https://www.cncf.io/sandbox-projects/">CNCF Sandbox</a>.
 </p>
 
 [Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
