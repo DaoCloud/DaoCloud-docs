@@ -54,6 +54,7 @@ hide:
     - 使用统一的密码：开启后集群中所有节点的访问密码都相同，需要在下方输入访问所有节点的统一密码。如果关闭，则可以为每个节点设置单独的用户名和密码。
 
     - 节点信息：填写节点名称和 IP 地址。
+    - 自定义参数：设置变量控制 Ansible 与远程主机交互。可设置变量参考[连接到主机：行为清单参数](https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html#connecting-to-hosts-behavioral-inventory-parameters)
     - NTP 时间同步：开启后会自动同步各个节点上的时间，需要提供 NTP 服务器地址。
 
     ![节点配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/createnew01.png)
