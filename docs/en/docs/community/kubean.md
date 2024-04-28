@@ -14,7 +14,7 @@ Kubean is a cluster lifecycle management tool built on top of Kubespray.
 
 ![cncf gophers](./images/cncf-gophers.png)
 
-**Kubean is part of the [CNCF](https://cncf.io/) Landscape projects.**
+**Kubean is part of the [CNCF](https://cncf.io/) Sandbox projects.**
 
 Installation demo:
 

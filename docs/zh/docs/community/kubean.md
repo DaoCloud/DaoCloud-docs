@@ -14,7 +14,7 @@ Kubean 是一个基于 Kubespray 构建的集群生命周期管理工具。
 
 ![cncf gophers](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/images/cncf-gophers.png)
 
-**Kubean 是一个 [CNCF](https://cncf.io/) Landscape 项目。**
+**Kubean 是一个 [CNCF](https://cncf.io/) Sandbox 项目。**
 
 安装演示如下图：
 

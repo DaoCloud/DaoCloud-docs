@@ -102,11 +102,11 @@ hide:
 
     [:octicons-arrow-right-24: 了解更多](./kube-node-tuning.md)
 
--   :peanuts:{ .lg .middle } __Kubean__ :simple-cncf: 已入选 CNCF Landscape
+-   :peanuts:{ .lg .middle } __Kubean__ :simple-cncf: 已入选 CNCF Sandbox
 
     ---
 
-    容器化集群的全生命周期管理工具，正在申请 Sandbox。
+    容器化集群的全生命周期管理工具，只要你有一个点火集群，就可以一生二，二生三，三生万物，成就无数集群。
 
     [:octicons-arrow-right-24: 了解更多](./kubean.md)
 
@@ -183,7 +183,7 @@ hide:
 ![cncf logo](./images/cncf.png)
 
 <p align="center">
-Clusterpedia、HwameiStor、Merbridge 和 Spiderpool 均已入选 <a href="https://www.cncf.io/projects/clusterpedia/">CNCF Sandbox</a>。
+Clusterpedia、HwameiStor、Merbridge、Spiderpool 和 Kubean 均已入选 <a href="https://www.cncf.io/sandbox-projects/">CNCF Sandbox</a>。
 </p>
 
 [下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
