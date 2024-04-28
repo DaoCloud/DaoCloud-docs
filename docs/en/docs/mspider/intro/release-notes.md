@@ -9,6 +9,22 @@ Date: 2023-10-30
 
 This page lists all the Release Notes for each version of Service Mesh, providing convenience for users to learn about the evolution path and feature changes.
 
+## 2024-04-30
+
+### v0.25.0
+
+#### Features
+
+- **Added** Built-in mesh alert rules are observable, and the internal alarm configuration can be used directly.
+- **Added** compatibility with `Istio` versions `v1.19.9`,`v1.20.5`, `v1.21.1`.
+- **Added** `OpenAPI` has added a new field `.status.replicas` to `WorkloadShadow`, used to record the total number of `Pods` at runtime.
+
+#### Fixes
+
+- **Fixed** Upgrade the `cloudtty` image version to `v0.7.1` to fix security issues with the low version of `xz`.
+- **Fixed** In `Ambient` mode, changes to `Pod` did not trigger workload status changes.
+- **Fixed** Fix the issue of incorrect display of topology nodes due to lack of permissions.
+
 ## 2024-04-01
 
 ### v0.24.1
