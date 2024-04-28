@@ -57,13 +57,13 @@ spec:
           secretKeyRef:
             name: mysecret
             key: username
-            optional: false # (1)
+            optional: false # (1)!
       - name: SECRET_PASSWORD
         valueFrom:
           secretKeyRef:
             name: mysecret
             key: password
-            optional: false # (2)
+            optional: false # (2)!
 
 ```
 
@@ -107,7 +107,7 @@ spec:
   - name: foo
     secret:
       secretName: mysecret
-      optional: false # (1)
+      optional: false # (1)!
 ```
 
 1. 默认设置，意味着 "mysecret" 必须已经存在

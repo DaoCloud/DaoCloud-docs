@@ -39,11 +39,16 @@ os package 解压后的文件内容如下：
 
 ```text
     os-pkgs
-    ├── import_ospkgs.sh       # 该脚本用于导入 os packages 到 minio 文件服务
-    ├── os-pkgs-amd64.tar.gz   # amd64 架构的 os packages 包
-    ├── os-pkgs-arm64.tar.gz   # arm64 架构的 os packages 包
-    └── os-pkgs.sha256sum.txt  # os packages 包的 sha256sum 效验文件
+    ├── import_ospkgs.sh       # (1)
+    ├── os-pkgs-amd64.tar.gz   # (2)
+    ├── os-pkgs-arm64.tar.gz   # (3)
+    └── os-pkgs.sha256sum.txt  # (4)
 ```
+
+1. 该脚本用于导入 os packages 到 minio 文件服务
+2. amd64 架构的 os packages 包
+3. arm64 架构的 os packages 包
+4. os packages 包的 sha256sum 效验文件
 
 **导入 OS Package 至火种节点的 minio**
 

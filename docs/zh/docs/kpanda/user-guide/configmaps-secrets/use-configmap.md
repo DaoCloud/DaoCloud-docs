@@ -56,10 +56,10 @@ spec:
       command: [ "/bin/sh", "-c", "env" ]
       env:
         - name: SPECIAL_LEVEL_KEY
-          valueFrom:                  # (1)
+          valueFrom:                  # (1)!
             configMapKeyRef:
-              name: kpanda-configmap  # (2)
-              key: SPECIAL_LEVEL      # (3)
+              name: kpanda-configmap  # (2)!
+              key: SPECIAL_LEVEL      # (3)!
   restartPolicy: Never
 ```
 

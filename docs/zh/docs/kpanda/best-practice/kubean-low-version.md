@@ -71,7 +71,7 @@ skopeo copy ${SKOPEO_PARAMS} docker-archive:spray-job-2.21.tar docker://${REGIST
     # 创建 data 目录
     mkdir data
     # 制作离线包，
-    AIRGAP_IMG_ADDR="ghcr.m.daocloud.io/kubean-io/airgap-patch:2.21-d6f688f" # (1)
+    AIRGAP_IMG_ADDR="ghcr.m.daocloud.io/kubean-io/airgap-patch:2.21-d6f688f" # (1)!
     podman run --rm -v $(pwd)/manifest.yml:/manifest.yml -v $(pwd)/data:/data -e ZONE=CN -e MODE=FULL ${AIRGAP_IMG_ADDR}
     ```
 
@@ -82,13 +82,16 @@ skopeo copy ${SKOPEO_PARAMS} docker-archive:spray-job-2.21.tar docker://${REGIST
     ```bash
     # 将上一步 data 目录中的二进制导入二进制包至火种节点的 minio 中
     cd ./data/amd64/files/
-    MINIO_ADDR="http://172.30.41.200:9000" # IP 替换为实际的仓库地址
+    MINIO_ADDR="http://172.30.41.200:9000" # (1)!
     MINIO_USER=rootuser MINIO_PASS=rootpass123 ./import_files.sh ${MINIO_ADDR}
     
     # 将上一步 data 目录中的镜像导入二进制包至火种节点的镜像仓库中
     cd ./data/amd64/images/
-    REGISTRY_ADDR="172.30.41.200"  ./import_images.sh # IP 替换为实际的仓库地址
+    REGISTRY_ADDR="172.30.41.200"  ./import_images.sh # (2)!
     ```
+
+    1. IP 替换为实际的仓库地址
+    2. IP 替换为实际的仓库地址
 
 4. 将 `manifest`、`localartifactset.cr.yaml` 自定义资源部署到 **kubean 所在的管理集群或者 Global 集群** 当中，本例使用的是 Global 集群。
 
