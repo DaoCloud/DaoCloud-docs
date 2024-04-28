@@ -1158,6 +1158,7 @@ nav:
               - Personal Center:
                   - Security Settings: ghippo/user-guide/personal-center/security-setting.md
                   - Access Key: ghippo/user-guide/personal-center/accesstoken.md
+                  - SSH Public Key: ghippo/user-guide/personal-center/ssh-key.md
                   - Language Settings: ghippo/user-guide/personal-center/language.md
               - Permissions:
                   - Container Management Permissions: ghippo/permissions/kpanda.md
