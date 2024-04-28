@@ -54,23 +54,20 @@
         apiVersion: v1
         kind: ConfigMap
         metadata:
-          # any name can be used; Velero uses the labels (below)
-          # to identify it rather than the name
-          name: velero-plugin-for-migration
-          # must be in the velero namespace
-          namespace: velero
-          # the below labels should be used verbatim in your
-          # ConfigMap.
-          labels:
-            # this value-less label identifies the ConfigMap as
-            # config for a plugin (i.e. the built-in restore item action plugin)
-            velero.io/plugin-config: "velero-plugin-for-migration"
-            # this label identifies the name and kind of plugin
-            # that this ConfigMap is for.
-            velero.io/velero-plugin-for-migration: RestoreItemAction
+          name: velero-plugin-for-migration # (1)!
+          namespace: velero # (2)!
+          labels: # (3)!
+            velero.io/plugin-config: "velero-plugin-for-migration" # (4)!
+            velero.io/velero-plugin-for-migration: RestoreItemAction # (5)!
         data:
           velero-plugin-for-migration: '{"resourcesSelector":{"includedNamespaces":["kube-system"],"excludedNamespaces":["default"],"includedResources":["pods","deployments","ingress"],"excludedResources":["secrets"],"skipRestoreKinds":["endpointslice"],"labelSelector":"app:dao-2048"},"resourcesConverter":[{"ingress":{"enabled":true,"apiVersion":"extensions/v1beat1"}}],"resourcesOperation":[{"kinds":["pod"],"domain":"labels","operation":{"add":{"key1":"values","key2":""},"remove":{"key3":"values","key4":""},"replace":{"key5":["source","dest"],"key6":["","dest"],"key7":["source",""]}}},{"kinds":["deployment","daemonset"],"domain":"annotations","scope":"resourceSpec","operation":{"add":{"key1":"values","key2":""},"remove":{"key3":"values","key4":""},"replace":{"key5":["source","dest"],"key6":["","dest"],"key7":["source",""]}}}]}'
         ```
+
+        1. any name can be used; Velero uses the labels (below) to identify it rather than the name
+        2. must be in the velero namespace
+        3. the below labels should be used verbatim in your ConfigMap
+        4. this value-less label identifies the ConfigMap as config for a plugin (i.e. the built-in restore item action plugin)
+        5. this label identifies the name and kind of plugin that this ConfigMap is for.
 
     !!! note
 
@@ -82,67 +79,91 @@
     如何配置 __velero-plugin-for-migration__ 可参考以下 yaml 和注释
 
     ```yaml
-    resourcesSelector: # plugin 需要处理或者忽略的资源
-      includedNamespaces: # plugin 排除 backup 包含的 namespace
+    resourcesSelector: # (1)!
+      includedNamespaces: # (2)!
         - kube-system
-      excludedNamespaces: # plugin 不处理 backup 包含的 namespace
+      excludedNamespaces: # (3)!
         - default
-      includedResources:  # plugin 处理 backup 包含的资源
+      includedResources:  # (4)!
         - pods
         - deployments
         - ingress
-      excludedResources:  # plugin 不处理 backup 包含的资源
+      excludedResources:  # (5)!
         - secrets
       skipRestoreKinds:
-        - endpointslice  # restore plugin 跳过 backup 内包含的资源，即不执行 restore 操作，
-                         # 该资源需要包含在 includedResources 中，才会被 plugin 捕捉到，
-                         # 该字段需填写资源 kind，不区分大小写
+        - endpointslice  # (6)!
       labelSelector: 'app:dao-2048'
-    resourcesConverter: # restore plugin 需要转换的资源，不支持配置具体资源字段转换
+    resourcesConverter: # (7)!
       - ingress:
           enabled: true
           apiVersion: extensions/v1beat1
-    resourcesOperation: # restore plugin 修改 resource/template 的 annotations/labels 
-      - kinds: ['pod'] # 填写 backup 包含资源 kind，不区分大小写
-        domain: labels   # 处理 resources labels
+    resourcesOperation: # (8)!
+      - kinds: ['pod'] # (9)!
+        domain: labels # (10)!
         operation:
           add:
-            key1: values # 添加 labels key1:values
+            key1: values # (11)!
             key2: ''
           remove:
-            key3: values # 删除 lables key3:values,匹配 key,values
-            key4: ''     # 删除 lables key4,只匹配key,不匹配 values
+            key3: values # (12)!
+            key4: ''     # (13)!
           replace:
-            key5:   # 替换 lables key5:source -> key5:dest
+            key5:   # (14)!
               - source
               - dest
-            key6:   # 替换 lables key6: -> key6:dest, 不匹配 key6 values
+            key6:   # (15)!
               - ""
               - dest
-            key7:   # 替换 lables key7:source -> key7:""
+            key7:   # (16)!
               - source
               - ""
-      - kinds: ['deployment', 'daemonset'] # 填写 backup 包含资源 kind，不区分大小写
-        domain: annotations  # 处理 resources template annotations
-        scope: resourceSpec  # 处理 resources template spec 的 annotations 或者 labels，取决于 domain 配置
+      - kinds: ['deployment', 'daemonset'] # (17)!
+        domain: annotations  # (18)!
+        scope: resourceSpec  # (19)!
         operation:
           add:
-            key1: values # 添加 annotations key1:values
+            key1: values # (20)!
             key2: ''
           remove:
-            key3: values # 删除 annotations key3:values,匹配 key,values
-            key4: ''     # 删除 annotations key4,只匹配key,不匹配 values
+            key3: values # (21)!
+            key4: ''     # (22)!
           replace:
-            key5:   # 替换 annotations key5:source -> key5:dest
+            key5:   # (23)!
               - source
               - dest
-            key6:   # 替换 annotations key6: -> key6:dest, 不匹配 key6 values
+            key6:   # (24)!
               - ""
               - dest
-            key7:   # 替换 annotations key7:source -> key7:""
+            key7:   # (25)!
               - source
               - ""
     ```
+
+    1. plugin 需要处理或者忽略的资源
+    2. plugin 排除 backup 包含的 namespace
+    3. plugin 不处理 backup 包含的 namespace
+    4. plugin 处理 backup 包含的资源
+    5. plugin 不处理 backup 包含的资源
+    6. restore plugin 跳过 backup 内包含的资源，即不执行 restore 操作，该资源需要包含在 includedResources 中，才会被 plugin 捕捉到，该字段需填写资源 kind，不区分大小写
+    7. restore plugin 需要转换的资源，不支持配置具体资源字段转换
+    8. restore plugin 修改 resource/template 的 annotations/labels
+    9. 填写 backup 包含资源 kind，不区分大小写
+    10. 处理 resources labels
+    11. 添加 labels key1:values
+    12. 删除 lables key3:values，匹配 key,values
+    13. 删除 lables key4，只匹配 key，不匹配 values
+    14. 替换 lables key5:source -> key5:dest
+    15. 替换 lables key6: -> key6:dest，不匹配 key6 values
+    16. 替换 lables key7:source -> key7:""
+    17. 填写 backup 包含资源 kind，不区分大小写
+    18. 处理 resources template annotations
+    19. 处理 resources template spec 的 annotations 或者 labels，取决于 domain 配置
+    20. 添加 annotations key1:values
+    21. 删除 annotations key3:values，匹配 key,values
+    22. 删除 annotations key4，只匹配 key，不匹配 values
+    23. 替换 annotations key5:source -> key5:dest
+    24. 替换 annotations key6: -> key6:dest，不匹配 key6 values
+    25. 替换 annotations key7:source -> key7:""
 
 2. velero-plugin-for-dce plugin 获取以上配置后，根据配置对资源做链式操作，例如 ingress 经过 resourcesConverter 处理之后还会经过 resourcesOperation 处理。
 
@@ -162,42 +183,32 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  # any name can be used; Velero uses the labels (below)
-  # to identify it rather than the name
-  name: change-image-name-config
-  # must be in the velero namespace
-  namespace: velero
-  # the below labels should be used verbatim in your
-  # ConfigMap.
-  labels:
-    # this value-less label identifies the ConfigMap as
-    # config for a plugin (i.e. the built-in restore item action plugin)
-    velero.io/plugin-config: ""
-    # this label identifies the name and kind of plugin
-    # that this ConfigMap is for.
-    velero.io/change-image-name: RestoreItemAction
+  name: change-image-name-config # (1)!
+  namespace: velero # (2)!
+  labels: # (3)!
+    velero.io/plugin-config: "" # (4)!
+    velero.io/change-image-name: RestoreItemAction # (5)!
 data:
-  # add 1+ key-value pairs here, where the key can be any
-  # words that ConfigMap accepts. 
-  # the value should be：
-  # "<old_image_name_sub_part><delimiter><new_image_name_sub_part>"
-  # for current implementation the <delimiter> can only be ","
-  # e.x: in case your old image name is 1.1.1.1:5000/abc:test
-  "case1":"1.1.1.1:5000,2.2.2.2:3000"
+  "case1":"1.1.1.1:5000,2.2.2.2:3000" # (6)!
   "case2":"5000,3000"
   "case3":"abc:test,edf:test"
   "case5":"test,latest"
   "case4":"1.1.1.1:5000/abc:test,2.2.2.2:3000/edf:test"
-  # Please note that image name may contain more than one part that
-  # matching the replacing words.
-  # e.x:in case your old image names are:
-  # dev/image1:dev and dev/image2:dev
-  # you want change to:
-  # test/image1:dev and test/image2:dev
-  # the suggested replacing rule is:
-  "case5":"dev/,test/"
-  # this will avoid unexpected replacement to the second "dev".
+  "case5":"dev/,test/" # (7)!
 ```
+
+1. any name can be used; Velero uses the labels (below) to identify it rather than the name
+2. must be in the velero namespace
+3. the below labels should be used verbatim in your ConfigMap
+4. this value-less label identifies the ConfigMap as config for a plugin (i.e. the built-in restore item action plugin)
+5. this label identifies the name and kind of plugin that this ConfigMap is for.
+6. add 1+ key-value pairs here, where the key can be any words that ConfigMap accepts.
+   the value should be `<old_image_name_sub_part><delimiter><new_image_name_sub_part>`
+   for current implementation the `<delimiter>` can only be "," eg: in case your old image name is 1.1.1.1:5000/abc:test
+7. Please note that image name may contain more than one part that matching the replacing words.
+   eg: in case your old image names are `dev/image1:dev` and `dev/image2:dev`,
+   you want change to `test/image1:dev` and `test/image2:dev` the suggested replacing rule is:
+   this will avoid unexpected replacement to the second "dev".
 
 ## 迁移场景
 
@@ -255,7 +266,7 @@ data:
             - 多服务场景：Helm 应用 + Redis
         - namespace 资源 和 cluster 资源如果配置了 RBAC，那对应类别的资源迁移成功后对应的 RBAC 也会一并迁移到 DCE 5.0
 
-### **镜像仓库镜像迁移**
+### 镜像仓库镜像迁移
 
 下文介绍镜像仓库镜像迁移步骤。
 

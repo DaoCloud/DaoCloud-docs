@@ -119,9 +119,9 @@ INFO[0000] Go OS/Arch: linux/amd64
     使用 etcdbrctl 还原数据之前，执行如下命令将连接 S3 的认证信息设置为环境变量：
 
     ```shell
-    export ECS_ENDPOINT=http://10.6.212.13:9000 # (1)
-    export ECS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE # (2)
-    export ECS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY # (3)
+    export ECS_ENDPOINT=http://10.6.212.13:9000 # (1)!
+    export ECS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE # (2)!
+    export ECS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY # (3)!
     ```
 
     1. S3 存储的访问点
@@ -155,7 +155,6 @@ INFO[0000] Go OS/Arch: linux/amd64
     {"level":"info","ts":1680011221.2511616,"caller":"mvcc/kvstore.go:380","msg":"restored last compact revision","meta-bucket-name":"meta","meta-bucket-name-key":"finishedCompactRev","restored-compact-revision":110327}
     {"level":"info","ts":1680011221.3045986,"caller":"membership/cluster.go:392","msg":"added member","cluster-id":"66638454b9dd7b8a","local-member-id":"0","added-peer-id":"123c2503a378fc46","added-peer-peer-urls":["https://10.6.212.10:2380"]}
     INFO[0001] Starting embedded etcd server...              actor=restorer
-
     ....
 
     {"level":"info","ts":"2023-03-28T13:47:02.922Z","caller":"embed/etcd.go:565","msg":"stopped serving peer traffic","address":"127.0.0.1:37161"}

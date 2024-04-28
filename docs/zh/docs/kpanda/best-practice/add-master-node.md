@@ -86,21 +86,21 @@
           hosts.yml: |
             all:
               hosts:
-                node1:
+                node1: # 原集群中已存在的主节点
                   ip: 10.6.175.10
                   access_ip: 10.6.175.10 
                   ansible_host: 10.6.175.10
                   ansible_connection: ssh
                   ansible_user: root
                   ansible_password: password01
-                node2: # 新增控制节点 node2 内容 
+                node2: # 集群扩容待新增的控制节点
                   ip: 10.6.175.20
                   access_ip: 10.6.175.20
                   ansible_host: 10.6.175.20
                   ansible_connection: ssh
                   ansible_user: root
                   ansible_password: password01
-                node3:
+                node3: # 集群扩容待新增的控制节点
                   ip: 10.6.175.30 
                   access_ip: 10.6.175.30
                   ansible_host: 10.6.175.30 
@@ -109,17 +109,17 @@
                   ansible_password: password01
               children:
                 kube_control_plane:
-                  hosts:
+                  hosts: # 集群中的控制节点组
                     node1:
                     node2: # 新增控制节点 node2 内容 
                     node3: # 新增控制节点 node3 内容 
                 kube_node:
-                  hosts:
+                  hosts: # 集群中的工作节点组
                     node1:
                     node2: # 新增控制节点 node2 内容 
                     node3: # 新增控制节点 node3 内容 
                 etcd:
-                  hosts:
+                  hosts: # 集群中的 ETCD 节点组
                     node1:
                     node2: # 新增控制节点 node2 内容 
                     node3: # 新增控制节点 node3 内容 
@@ -131,14 +131,6 @@
                   hosts: {}
         ```
 
-**重要参数：**
-
-* __all.hosts.node1__ ：原集群中已存在的主节点
-* __all.hosts.node2__ 、 __all.hosts.node3__ ：集群扩容待新增的控制节点
-* __all.children.kube_control_plane.hosts__ ：集群中的控制节点组
-* __all.children.kube_node.hosts__ ：集群中的工作节点组
-* __all.children.etcd.hosts__ ：集群中的 ETCD 节点组
-
 ## 新增 ClusterOperation.yml 扩容任务
 
 使用基于下面的 __ClusterOperation.yml__ 模板，新增一个集群控制节点扩容任务 __scale-master-node-ops.yaml__ 。
@@ -149,11 +141,11 @@ kind: ClusterOperation
 metadata:
   name: cluster1-online-install-ops
 spec:
-  cluster: ${cluster-name} # 指定 cluster name
-  image: ghcr.m.daocloud.io/kubean-io/spray-job:v0.4.6 # 指定 kubean 任务运行的镜像
+  cluster: ${cluster-name} # (1)!
+  image: ghcr.m.daocloud.io/kubean-io/spray-job:v0.4.6 # (2)!
   backoffLimit: 0
   actionType: playbook
-  action: cluster.yml
+  action: cluster.yml # (3)!
   extraArgs: --limit=etcd,kube_control_plane -e ignore_assert_errors=yes
   preHook:
     - actionType: playbook
@@ -161,8 +153,8 @@ spec:
     - actionType: playbook
       action: disable-firewalld.yml
     - actionType: playbook
-      action: enable-repo.yml  # 离线环境下需要添加此 yaml，并且设置正确的 repo-list(安装操作系统软件包)，以下参数值仅供参考
-      extraArgs: |
+      action: enable-repo.yml  # (4)!
+      extraArgs: | # 如果是离线环境，需要添加 enable-repo.yml，并且 extraArgs 参数填写相关 OS 的正确 repo_list
         -e "{repo_list: ['http://172.30.41.0:9000/kubean/centos/\$releasever/os/\$basearch','http://172.30.41.0:9000/kubean/centos-iso/\$releasever/os/\$basearch']}"
   postHook:
     - actionType: playbook
@@ -174,20 +166,14 @@ spec:
       action: cluster-info.yml
 ```
 
-!!! note
+1. 指定 cluster name
+2. 指定 kubean 任务运行的镜像，镜像地址要与之前执行部署时的 job 其内镜像保持一致
+3. 如果一次性添加 Master（etcd）节点超过（包含）三个，需在 cluster.yaml 追加额外参数 `-e etcd_retries=10` 以增大 etcd node join 重试次数
+4. 离线环境下需要添加此 yaml，并且设置正确的 repo-list（安装操作系统软件包），以下参数值仅供参考
 
-    - spec.image：镜像地址要与之前执行部署时的 job 其内镜像保持一致
-    - spec.action：设置为 cluster.yml，如果一次性添加 Master（etcd）节点超过（包含）三个，需在 cluster.yaml
-      追加额外参数 `-e etcd_retries=10` 以增大 etcd node join 重试次数
-    - spec.extraArgs：设置为 `--limit=etcd,kube_control_plane -e ignore_assert_errors=yes`
-    - 如果是离线环境，spec.preHook 需要添加 enable-repo.yml，并且 extraArgs 参数填写相关 OS 的正确 repo_list 
-    - spec.postHook.action：需要包含 upgrade-cluster.yml，其中 extraArgs 设置为
-      `--limit=etcd,kube_control_plane -e ignore_assert_errors=yes`
-
-按照上述的配置，创建并部署 scale-master-node-ops.yaml。
+然后创建并部署 scale-master-node-ops.yaml。
 
 ```bash
-# 复制上述清单文件
 vi cale-master-node-ops.yaml
 kubectl apply -f cale-master-node-ops.yaml -n kubean-system
 ```
