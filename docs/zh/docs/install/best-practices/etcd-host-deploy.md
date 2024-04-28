@@ -34,8 +34,7 @@
     metadata:
     spec:
       clusterName: my-cluster
-      # 配置 etcd 节点信息
-      etcdNodes:
+      etcdNodes: # (1)!
         - nodeName: "k8s-master"
           ip: 10.6.112.50      
           ansibleUser: "root"
@@ -64,10 +63,11 @@
       workerNodes: []
       .....
       
-      # 配置 etcd 的部署模式为 host
       kubeanConfig: |-
-        etcd_deployment_type: host
+        etcd_deployment_type: host # 配置 etcd 的部署模式为 host
     ```
+
+    1. 配置 etcd 节点信息
 
     !!! note
 

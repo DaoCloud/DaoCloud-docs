@@ -98,13 +98,13 @@
               # readwrite(default) or readonly
               accessType: readwrite
               # The maximum number of open connections to the database.
-              #maxOpenConnections: 100
+              # maxOpenConnections: 100
               # The maximum number of connections in the idle connection pool.
-              #maxIdleConnections: 10
+              # maxIdleConnections: 10
               # The maximum amount of time a connection may be reused.
-              #connectionMaxLifetimeSeconds: 3600
+              # connectionMaxLifetimeSeconds: 3600
               # The maximum amount of time a connection may be idle.
-              #connectionMaxIdleSeconds: 1800
+              # connectionMaxIdleSeconds: 1800
           ghippoApiserver:
             - dbDriverName: "mysql"
               dataSourceName: "ghippo:password@tcp(localhost:3306)/ghippo"
@@ -211,13 +211,13 @@
               # readwrite(default) or readonly
               accessType: readwrite
               # The maximum number of open connections to the database.
-              #maxOpenConnections: 100
+              # maxOpenConnections: 100
               # The maximum number of connections in the idle connection pool.
-              #maxIdleConnections: 10
+              # maxIdleConnections: 10
               # The maximum amount of time a connection may be reused.
               #connectionMaxLifetimeSeconds: 3600
               # The maximum amount of time a connection may be idle.
-              #connectionMaxIdleSeconds: 1800
+              # connectionMaxIdleSeconds: 1800
           ghippoApiserver:
             - dbDriverName: "kingbase"
               dataSourceName: "host=172.30.41.2 user=ghippo password=password dbname=ghippo port=54321"
@@ -322,13 +322,13 @@
               # readwrite(default) or readonly
               accessType: readwrite
               # The maximum number of open connections to the database.
-              #maxOpenConnections: 100
+              # maxOpenConnections: 100
               # The maximum number of connections in the idle connection pool.
-              #maxIdleConnections: 10
+              # maxIdleConnections: 10
               # The maximum amount of time a connection may be reused.
-              #connectionMaxLifetimeSeconds: 3600
+              # connectionMaxLifetimeSeconds: 3600
               # The maximum amount of time a connection may be idle.
-              #connectionMaxIdleSeconds: 1800
+              # connectionMaxIdleSeconds: 1800
           ghippoApiserver:
             - dbDriverName: "postgres"
               dataSourceName: "host=172.30.41.2 user=ghippo password=password dbname=ghippo port=5432"

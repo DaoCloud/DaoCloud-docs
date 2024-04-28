@@ -95,23 +95,24 @@
 - 在三台物理机中选择一台物理机作为火种机执行 DCE 5.0 的部署。其中集群配置文件 `ClusterConfig.yaml`
   中的 bootstrapNode 参数可以指定火种机器的 IP。
 
-    ```yaml
+    ```yaml title="ClusterConfig.yaml"
     apiVersion: provision.daocloud.io/v1alpha3
     kind: ClusterConfig
     metadata:
     spec:
-      clusterName: my-cluster
-    
-      # 火种节点的域名或 IP，默认解析为火种节点默认网关所在网卡的 IP；
-      # 可手动填入 IP 或域名，若为域名，如果检测到无法解析，将自动建立此域名和火种节点默认 IP 的映射
-      # bootstrapNode: auto  ## 默认自动解析
+      clusterName: my-cluster # (1)!
+      bootstrapNode: auto  # (2)!
       ...
     ...
     ```
 
+    1. 火种节点的域名或 IP，默认解析为火种节点默认网关所在网卡的 IP；
+       可手动填入 IP 或域名，若为域名，如果检测到无法解析，将自动建立此域名和火种节点默认 IP 的映射
+    2. 默认自动解析
+
 - 集群配置文件 ClusterConfig.yaml 中，将 3 台物理机的信息配置在 masterNodes 中即可。
 
-    ```yaml
+    ```yaml title="ClusterConfig.yaml"
     ...
     apiVersion: provision.daocloud.io/v1alpha3
     kind: ClusterConfig
@@ -119,24 +120,26 @@
     spec:
       ...
       masterNodes:
-        - nodeName: "g-master1" # 物理机 1 角色为集群的控制面节点 + 火种机节点
+        - nodeName: "g-master1" # (1)!
           ip: xx.xx.xx.xx
           ansibleUser: "root"
           ansiblePass: "dangerous"
-          #ansibleSSHPort: "22"
-          #ansibleExtraArgs: "" 
+          # ansibleSSHPort: "22"
+          # ansibleExtraArgs: "" 
         - nodeName: "g-master2"
           ip: xx.xx.xx.xx
           ansibleUser: "root"
           ansiblePass: "dangerous"
-          #ansibleSSHPort: "22"
-          #ansibleExtraArgs: ""
+          # ansibleSSHPort: "22"
+          # ansibleExtraArgs: ""
         - nodeName: "g-master3"
           ip: xx.xx.xx.xx
           ansibleUser: "root"
           ansiblePass: "dangerous"
-          #ansibleSSHPort: "22"
-          #ansibleExtraArgs: ""
+          # ansibleSSHPort: "22"
+          # ansibleExtraArgs: ""
         ...
     ...
     ```
+
+    1. 物理机 1 角色为集群的控制面节点 + 火种机节点
