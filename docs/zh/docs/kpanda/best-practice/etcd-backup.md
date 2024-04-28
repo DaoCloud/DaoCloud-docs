@@ -128,9 +128,42 @@ INFO[0000] Go OS/Arch: linux/amd64
     2. S3 存储的用户名
     3. S3 存储的密码
 
+    ```shell
+    export ECS_ENDPOINT=http://10.6.212.13:9000 (1)
+    export ECS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE (2)
+    export ECS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY (3)
+    ```
+
+    1. S3 存储的访问点
+    2. S3 存储的用户名
+    3. S3 存储的密码
+
+    ```shell
+    export ECS_ENDPOINT=http://10.6.212.13:9000 # (1)!
+    export ECS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE # (2)!
+    export ECS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY # (3)!
+    ```
+
+    1. S3 存储的访问点
+    2. S3 存储的用户名
+    3. S3 存储的密码
+
+    ```shell
+    export ECS_ENDPOINT=http://10.6.212.13:9000 # (1)!
+    export ECS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE # (2)!
+    export ECS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY # (3)!
+    ```
+
+    1. S3 存储的访问点
+    2. S3 存储的用户名
+    3. S3 存储的密码
+
 2. 执行还原操作
 
-    执行 etcdbrctl 命令行工具执行还原，这是最关键的一步。
+    执行 etcdbrctl 命令行工具执行还原 (1)，这是最关键的一步。
+    { .annotate }
+
+    1. 这是一个测试
 
     ```shell
     etcdbrctl restore --data-dir /var/lib/etcd/ --store-container="etcd-backup" \ 
