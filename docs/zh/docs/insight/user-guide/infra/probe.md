@@ -12,7 +12,7 @@ Insight 基于 [Prometheus Blackbox Exporter](https://github.com/prometheus/blac
 ## 查看拨测任务
 
 1. 进入 __可观测性__ 产品模块；
-2. 在左边导航栏选择 __基础设施__ -> __拨测__ 。
+2. 在左边导航栏选择 __基础设施__ -> __拨测__。
 
     - 点击表格中的集群或命名空间下拉框，可切换集群和命名空间
     - 你可以点击右侧的 ⚙️ 修改显示的列，默认为拨测名称、探测方式、探测目标、连通状态、创建时间
@@ -26,7 +26,7 @@ Insight 基于 [Prometheus Blackbox Exporter](https://github.com/prometheus/blac
 
 ## 创建拨测任务
 
-1. 点击 __创建拨测任务__ 。
+1. 点击 __创建拨测任务__。
 2. 填写基本信息后点击 __下一步__ 
 
     - 集群：选择需要拨测的集群
@@ -56,15 +56,15 @@ Insight 基于 [Prometheus Blackbox Exporter](https://github.com/prometheus/blac
 
 ## 编辑拨测任务
 
-点击列表右侧的 __⋮__ -> __编辑__ ，完成编辑后点击 __确定__ 。
+点击列表右侧的 __⋮__ -> __编辑__，完成编辑后点击 __确定__。
 
 ![probe](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/probe04.png){ width=1000px}
 
 ## 查看监控面板
 
-点击列表右侧的 __⋮__ -> __查看监控面板__ ，跳转到 Grafana 拨测任务概览页面，以图表方式显示针对网络状况的探测结果。
+点击`拨测名称` 查看拨测任务中每个目标的监控状态，以图表方式显示针对网络状况的探测结果。
 
-![probe](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/probe03.png){ width=1000px}
+![probe](../../images/probe03.png){ width=1000px}
 
 | 指标名称 | 描述 |
 | -- | -- |
@@ -77,7 +77,7 @@ Insight 基于 [Prometheus Blackbox Exporter](https://github.com/prometheus/blac
 
 ## 删除拨测任务
 
-点击列表右侧的 __⋮__ -> __删除__ ，确认无误后点击 __确定__ 。
+点击列表右侧的 __⋮__ -> __删除__，确认无误后点击 __确定__。
 
 ![probe](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/probe05.png){ width=1000px}
 
