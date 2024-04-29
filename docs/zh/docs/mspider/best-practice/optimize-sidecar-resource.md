@@ -92,13 +92,15 @@ class init k8s
     kind: Sidecar
     metadata:
       name: restrict-access-sidecar
-      namespace: default # current namespace
+      namespace: default # (1)!
     spec:
       egress:
         - hosts:
-          # allow current namespace request this namespace service
-          - webstore-demo/*
+          - webstore-demo/* # (2)!
     ```
+
+    1. current namespace
+    2. allow current namespace request this namespace service
 
     ![yaml](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/best-practice/images/yaml1.png)
 

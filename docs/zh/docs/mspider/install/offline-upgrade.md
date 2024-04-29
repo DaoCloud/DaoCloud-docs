@@ -24,20 +24,20 @@
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: mspider-offline # (1)
+          intermediateBundlesPath: mspider-offline # (1)!
         target:
-          containerRegistry: 10.16.10.111 # (2)
-          containerRepository: release.daocloud.io/mspider # (3)
+          containerRegistry: 10.16.10.111 # (2)!
+          containerRepository: release.daocloud.io/mspider # (3)1
           repo:
-            kind: HARBOR # (4)
-            url: http://10.16.10.111/chartrepo/release.daocloud.io # (5)
+            kind: HARBOR # (4)!
+            url: http://10.16.10.111/chartrepo/release.daocloud.io # (5)!
             auth:
-              username: "admin" # (6)
-              password: "Harbor12345" # (7)
+              username: "admin" # (6)!
+              password: "Harbor12345" # (7)!
           containers:
             auth:
-              username: "admin" # (6)
-              password: "Harbor12345" # (7)
+              username: "admin" # (8)!
+              password: "Harbor12345" # (9)!
         ```
 
         1. 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
@@ -47,6 +47,8 @@
         5. 需更改为 chart repo url
         6. 你的镜像仓库用户名
         7. 你的镜像仓库密码
+        8. 你的镜像仓库用户名
+        9. 你的镜像仓库密码
 
     === "未安装 chart repo"
 
@@ -54,17 +56,17 @@
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: mspider-offline # (1)
+          intermediateBundlesPath: mspider-offline # (1)!
         target:
-          containerRegistry: 10.16.10.111 # (2)
-          containerRepository: release.daocloud.io/mspider # (3)
+          containerRegistry: 10.16.10.111 # (2)!
+          containerRepository: release.daocloud.io/mspider # (3)!
           repo:
             kind: LOCAL
-            path: ./local-repo # (4)
+            path: ./local-repo # (4)!
           containers:
             auth:
-              username: "admin" # (5)
-              password: "Harbor12345" # (6)
+              username: "admin" # (5)!
+              password: "Harbor12345" # (6)!
         ```
 
         1. 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
@@ -151,6 +153,8 @@ helm update repo
 
 # 获取最新的版本
 helm search repo mspider-release/mspider --versions
+```
+```output
 NAME                      CHART VERSION  APP VERSION  DESCRIPTION
 mspider-release/mspider   v0.20.1        v0.20.1      Mspider management plane application, deployed ...
 ...

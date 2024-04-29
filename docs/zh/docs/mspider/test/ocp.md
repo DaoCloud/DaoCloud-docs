@@ -66,7 +66,7 @@ spec:
           iptables -t nat -A OUTPUT -m tcp -p tcp -m owner ! --gid-owner 1337 -j REDIRECT --to-ports 15006
           iptables -t nat -D OUTPUT -m tcp -p tcp -m owner ! --gid-owner 1337 -j REDIRECT --to-ports 15006
           while true; do sleep 100d; done
-        image: release.daocloud.io/mspider/proxyv2:1.15.0    # 修改proxy的镜像地址
+        image: release.daocloud.io/mspider/proxyv2:1.15.0 # (1)!
         name: dsm-init
         resources:
           requests:
@@ -86,6 +86,8 @@ spec:
       serviceAccount: sdn
       serviceAccountName: sdn
 ```
+
+1. 修改proxy的镜像地址
 
 ### 添加参数
 

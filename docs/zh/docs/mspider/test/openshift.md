@@ -124,9 +124,9 @@ users:
 
     ![修改单位](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/test/images/os09.png)
 
-3. 注入边车时提示 __pod Init:CrashLoopBackOff__ 
+3. 注入边车时提示 __pod Init:CrashLoopBackOff__
 
-    激活 ocp iptables
+    激活 ocp iptables：
 
     ```yaml
     apiVersion: apps/v1

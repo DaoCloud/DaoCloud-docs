@@ -76,11 +76,13 @@ traffic.sidecar.istio.io/excludeOutboundIPRanges
     === "启用流量透传前"
 
         ```bash
-        $ curl -sSI 10.211.201.221:5000/hello
+        curl -sSI 10.211.201.221:5000/hello
+        ```
+        ```none
         HTTP/1.1 200 OK
         content-type: text/html; charset=utf-8
         content-length: 65
-        server: istio-envoy # (1)
+        server: istio-envoy # (1)!
         date: Tue, 07 Feb 2023 03:08:33 GMT
         x-envoy-upstream-service-time: 100
         x-envoy-decorator-operation: helloworld.default.svc.cluster.local:5000/*
@@ -91,7 +93,9 @@ traffic.sidecar.istio.io/excludeOutboundIPRanges
     === "启用流量透传后"
 
         ```bash
-        $ curl -sSI 10.211.201.221:5000/hello
+        curl -sSI 10.211.201.221:5000/hello
+        ```
+        ```none
         HTTP/1.0 200 OK
         Content-Type: text/html; charset=utf-8
         Content-Length: 65

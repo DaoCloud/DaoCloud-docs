@@ -32,7 +32,7 @@ hide:
       name: bookinfo-gateway
     spec:
       selector:
-        istio: ingressgateway # 使用默认控制器
+        istio: ingressgateway # (1)!
       servers:
       - port:
           number: 80
@@ -41,6 +41,8 @@ hide:
         hosts:
         - bookinfo.com
     ```
+
+    1. 使用默认控制器
 
 3. 点击 __确定__ 回到网关规则列表，可见创建成功提示。
 
