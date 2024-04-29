@@ -15,7 +15,7 @@ root123!
 
 通过 MySQL 命令行查看：mysqlsh -uroot -pPassword -- cluster status 
 
-```shell
+```sql
 sh-4.4$ mysqlsh -uroot -pPassword  -- cluster status
 {
     "clusterName": "kpanda_mgr", 
