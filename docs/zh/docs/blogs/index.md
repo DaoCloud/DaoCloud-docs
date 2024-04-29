@@ -11,6 +11,10 @@ hide:
 
 ## 2024 年
 
+- [2024 年大规模 AI 基础设施形势调研](./0429-ai-survey.md)
+
+    ClearML 发布了与 FuriosaAI 和人工智能基础设施联盟（AIIA）进行的一项全球 AI 调研结果。
+
 - [20240416 | 一颗绿色豆荚入选 CNCF Sandbox](./240416-kubean.md)
 
     2024 年 4 月 15 日，一个绿色的豆荚 Kubean 经过 [CNCF TAG 委员会 11 人投票](https://github.com/cncf/sandbox/issues/49)，
