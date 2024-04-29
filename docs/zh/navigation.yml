@@ -627,31 +627,38 @@ nav:
                   - Release Notes: insight/intro/releasenote.md
               - 快速入门:
                   - 部署资源规划:
+                      - insight/quickstart/res-plan/index.md
                       - Prometheus 资源规划: insight/quickstart/res-plan/prometheus-res.md
                       - vmstorage 磁盘规划: insight/quickstart/res-plan/vms-res-plan.md
                       - 调整 vmstorage 磁盘: insight/quickstart/res-plan/modify-vms-disk.md
-                  - 安装部署:
+                  - 安装与升级:
                       - insight/quickstart/install/index.md
                       - 在线安装 insight-agent: insight/quickstart/install/install-agent.md
                       - 离线升级 insight-agent: insight/quickstart/install/offline-install.md
                       - 获取数据上传地址: insight/quickstart/install/gethosturl.md
                       - 升级注意事项: insight/quickstart/install/upgrade-note.md
                       - 已知问题: insight/quickstart/install/knownissues.md
-                  - 在其他发行版安装 insight-agent:
-                      - 在 DCE 4.0.x 上: insight/quickstart/other/install-agentindce.md
-                      - 在 OpenShift 4.x 上: insight/quickstart/other/install-agent-on-ocp.md
-                  - 开始采集链路数据:
+                      - 大规模日志部署调整: insight/best-practice/insight-kafka.md
+                  - 其他发行版安装 insight-agent:
+                      - DCE 4: insight/quickstart/other/install-agentindce.md
+                      - OpenShift 4.x: insight/quickstart/other/install-agent-on-ocp.md
+              - 开始观测:
+                  - OpenTelemetry 观测:
                       - insight/quickstart/otel/otel.md
                       - Operator 无侵入增强应用: insight/quickstart/otel/operator.md
-                      - OTel SDK 增强 Go 应用: insight/quickstart/otel/golang.md
-                      - OTel SDK 为应用暴露指标: insight/quickstart/otel/meter.md
-                      - OTel 自动探针增强 Go 应用: insight/quickstart/otel/golang-ebpf.md
+                      - OTel SDK 暴露指标: insight/quickstart/otel/meter.md
                       - 向 Insight 发送链路数据: insight/quickstart/otel/send_tracing_to_insight.md
-              - 开始监控 Java 应用:
-                  - insight/quickstart/jvm-monitor/jvm-catelogy.md
-                  - 使用 JMX Exporter 暴露 JVM 监控指标: insight/quickstart/jvm-monitor/jmx-exporter.md
-                  - 使用 OTel Java Agent 暴露 JVM 监控指标: insight/quickstart/jvm-monitor/otel-java-agent.md
-                  - 已有 JVM 指标的 Java 应用对接可观测性: insight/quickstart/jvm-monitor/legacy-jvm.md
+                      - 链路数据尾部采样方案: insight/best-practice/tail-based-sampling.md
+                  - Java 应用观测:
+                      - insight/quickstart/jvm-monitor/jvm-catelogy.md
+                      - 使用 JMX Exporter 暴露 JVM 监控指标: insight/quickstart/jvm-monitor/jmx-exporter.md
+                      - 使用 OTel Java Agent 暴露 JVM 监控指标: insight/quickstart/jvm-monitor/otel-java-agent.md
+                      - 已有 JVM 指标的 Java 应用对接可观测性: insight/quickstart/jvm-monitor/legacy-jvm.md
+                  - Golang 应用观测:
+                      - OTel SDK 增强 Go 应用: insight/quickstart/otel/golang.md
+                      - OTel 自动探针增强 Go 应用: insight/quickstart/otel/golang-ebpf.md
+                  - 其他观测技术集成:
+                      - 使用OTel接收SkyWalking链路数据: insight/best-practice/sw-to-otel.md
               - 仪表盘:
                   - 概览: insight/user-guide/dashboard/overview.md
                   - 仪表盘: insight/user-guide/dashboard/dashboard.md
@@ -688,8 +695,8 @@ nav:
                   - 系统组件: insight/user-guide/system-config/system-component.md
                   - 系统配置: insight/user-guide/system-config/system-config.md
                   - 修改配置: insight/user-guide/system-config/modify-config.md
-              - 常见问题:
-                  - 链路数据的时钟偏移: insight/faq/traceclockskew.md
+              - 网络监控:
+                  - 集成 DeepFlow: insight/best-practice/integration_deepflow.md
               - 参考文档:
                   - 告警通知流程说明: insight/reference/alertnotification.md
                   - 通知模板使用说明: insight/reference/notify-helper.md
@@ -697,18 +704,15 @@ nav:
                   - 通过 Sidecar 采集容器日志: insight/reference/tailing-sidecar.md
                   - 自定义探测方式: insight/user-guide/collection-manag/probe-module.md
                   - 指标抓取说明: insight/user-guide/collection-manag/metric-collect.md
-              - 最佳实践:
-                  - 日志采集排障指南: insight/best-practice/debug-log.md
-                  - 链路采集排障指南: insight/best-practice/debug-trace.md
-                  - 使用Insight定位异常根因: insight/best-practice/find_root_cause.md
-                  - 使用OTel接收SkyWalking链路数据: insight/best-practice/sw-to-otel.md
-                  - Kafka+ES流式架构应对超大规模日志: insight/best-practice/insight-kafka.md
-                  - 集成 DeepFlow: insight/best-practice/integration_deepflow.md
-                  - 链路数据尾部采样方案: insight/best-practice/tail-based-sampling.md
               - 兼容性测试:
-                  - K8s 兼容性测试: insight/compati-test/k8s-compatibility.md
+                  - Kubernetes 兼容性测试: insight/compati-test/k8s-compatibility.md
                   - Rancher 兼容性测试: insight/compati-test/rancher-compatibility.md
                   - Openshift 兼容性测试: insight/compati-test/ocp-compatibility.md
+              - 常见问题:
+                  - 链路数据的时钟偏移: insight/faq/traceclockskew.md
+                  - 日志采集排障指南: insight/best-practice/debug-log.md
+                  - 链路采集排障指南: insight/best-practice/debug-trace.md
+                  - 使用Insight定位异常: insight/best-practice/find_root_cause.md
           - 微服务引擎:
               - 介绍:
                   - 索引: skoala/intro/index.md

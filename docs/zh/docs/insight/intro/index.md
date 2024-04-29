@@ -26,6 +26,36 @@ hide:
 - 提供邮箱、企业微信、钉钉、Webhook 等多种通知方式
 - 持久化存储指标、日志、链路数据
 
+## 模块指引
+
+<div class="grid cards" markdown>
+
+- :material-server:{ .lg .middle } __安装与升级__
+
+    ---
+
+    可观测性模块包含 Insight 和 Insight Agent，后者需要部署在被观测的 Kubernetes 上。
+
+    - 部署[资源规划](../quickstart/res-plan/index.md)
+    - Insight Agent [安装](../quickstart/install/install-agent.md) 与 [升级](../quickstart/install/offline-install.md)
+    - Insihgt Agent 安装在 [DCE 4](../quickstart/other/install-agentindce.md) 或 [OpenShift](../quickstart/other/install-agent-on-ocp.md)
+    - [大规模日志部署调整](../best-practice/insight-kafka.md)
+    - 升级[注意事项](../quickstart/install/upgrade-note.md)
+
+- ::material-auto-fix:{ .lg .middle } __开始观测__
+
+    ---
+
+    使用 OpenTelemetry 技术对您的应用程序进行观测。
+
+    - 了解 [OpenTelemetry](../quickstart/otel/otel.md)，向 Insight [发送观测数据](../quickstart/otel/send_tracing_to_insight.md)
+    - 使用[无侵入](../quickstart/otel/operator.md)方式增强应用
+    - 针对[Java 应用观测](../quickstart/jvm-monitor/jvm-catelogy.md)
+    - 针对[Golang 应用观测](../insight/quickstart/otel/golang.md)
+    - [其他观测技术集成](../best-practice/sw-to-otel.md)
+
+</div>
+
 ## 基本概念
 
 可观测性 (Insight) 有关的基本概念如下。
