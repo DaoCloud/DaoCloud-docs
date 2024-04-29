@@ -27,28 +27,35 @@ helm -n mspider-system get values mspider > mspider.yaml
 
 编辑上述备份的 __mspider.yaml__ ，并追加自定义工作负载类型的配置，如果存在多个配置类型，可以增加多个：
 
-```yaml
+```yaml title="mspider.yaml"
 global:
   # 以 DeploymentConfig 为例
   # --- add start ---
   custom_workloads:
-    - localized_name: # 中英文必须要写
+    - localized_name: # (1)!
         en-US: DeploymentConfig
         zh-CN: 自定义工作负载类型
       name: deploymentconfigs
       path:
-        pod_template: .spec.template # 定义工作负载 Pod 内容
-        replicas: .spec.replicas # 定义工作负载副本数
-        status_ready_replicas: .status.availableReplicas # 定义健康的副本数
+        pod_template: .spec.template # (2)!
+        replicas: .spec.replicas # (3)!
+        status_ready_replicas: .status.availableReplicas # (4)!
       resource_schema:
-        group: apps.openshift.io # 自定义工作负载的 CRD 的属组
+        group: apps.openshift.io # (5)!
         kind: DeploymentConfig
         resource: deploymentconfigs
-        version: v1 # 自定义工作负载的 CRD 的版本
+        version: v1 # (6)!
   # --- add end ---
   debug: true
   # ...
 ```
+
+1. 中英文必须要写
+2. 定义工作负载 Pod 内容
+3. 定义工作负载副本数
+4. 定义健康的副本数
+5. 自定义工作负载的 CRD 的属组
+6. 自定义工作负载的 CRD 的版本
 
 使用 Helm 更新 __mspider__ ：
 
@@ -85,9 +92,10 @@ NAME      MODE       OWNERCLUSTER            DEPLOYNAMESPACE   PHASE       MESHV
 local     EXTERNAL   kpanda-global-cluster   istio-system      SUCCEEDED   1.16.1
 test-ce   HOSTED     dsm01                   istio-system      SUCCEEDED   1.17.1-mspider
 
-# 编辑 需要启用的网格实例的 CR 配置
+# 编辑需要启用的网格实例的 CR 配置
 [root@ globalcluster]# kubectl -n mspider-system edit globalmesh test-ce
-
+```
+```yaml
 apiVersion: discovery.mspider.io/v3alpha1
 kind: GlobalMesh
 metadata:
@@ -107,7 +115,7 @@ spec:
       global.high_available: "true"
       global.istio_version: 1.17.1-mspider
       ...
-    controlPlaneParamsStruct:  # <<< 注意找到这一行
+    controlPlaneParamsStruct:  # (1)!
       # --- add start ---
       global:
         custom_workloads:
@@ -134,6 +142,8 @@ spec:
     deployNamespace: istio-system
 ```
 
+1. 注意找到这一行
+
 网格实例的 CR 修改成功，注意网格控制面所在集群的控制面服务
 
 ```shell
@@ -147,8 +157,7 @@ spec:
 
 ### DeploymentConfig
 
-```yaml
-# filename dc-nginx.yaml
+```yaml title="dc-nginx.yaml"
 apiVersion: apps.openshift.io/v1
 kind: DeploymentConfig
 metadata:
@@ -173,8 +182,7 @@ spec:
 
 使用上面的 yaml 创建一个名为 __nginx-deployment-samzong__ 的应用，然后创建关联的 svc：
 
-```yaml
-# filename dc-nginx-svc.yaml
+```yaml title="dc-nginx-svc.yaml"
 apiVersion: v1
 kind: Service
 metadata:

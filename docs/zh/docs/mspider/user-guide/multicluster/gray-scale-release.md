@@ -115,7 +115,7 @@ metadata:
   namespace: gray-demo
 spec:
   selector:
-    istio: ingressgateway # use istio default controller
+    istio: ingressgateway # (1)!
   servers:
     - port:
         number: 80
@@ -124,6 +124,8 @@ spec:
       hosts:
         - "*"
 ```
+
+1. use istio default controller
 
 然后配置访问服务所需的虚拟服务规则。
 

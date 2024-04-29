@@ -8,28 +8,29 @@
 
 首先，创建对应的 __ingress__ 或 __egress__ 配置文件：
 
-```yaml
+```yaml title="ingress.yaml"
 apiVersion: install.istio.io/v1alpha1
 kind: IstioOperator
 metadata:
   name: ingress
 spec:
-  profile: empty # 不安装 CRD 或控制平面
+  profile: empty # (1)!
   components:
     ingressGateways:
     - name: istio-ingressgateway
       namespace: istio-ingress
       enabled: true
       label:
-        # 为网关设置唯一标签。
-        # 这是确保 Gateway 可以选择此工作负载所必需的。
-        istio: ingressgateway
+        istio: ingressgateway # (2)!
   values:
     gateways:
       istio-ingressgateway:
-        # 启用网关注入
-        injectionTemplate: gateway
+        injectionTemplate: gateway # (3)!
 ```
+
+1. 不安装 CRD 或控制平面
+2. 为网关设置唯一标签。这是确保 Gateway 可以选择此工作负载所必需的。
+3. 启用网关注入
 
 然后，使用标准的 __istioctl__ 命令进行安装：
 
@@ -84,30 +85,32 @@ spec:
   template:
     metadata:
       annotations:
-        # 选择网关注入模板（而不是默认的 Sidecar 模板）
-        inject.istio.io/templates: gateway
+        inject.istio.io/templates: gateway # (1)!
       labels:
-        # 为网关设置唯一标签。这是确保 Gateway 可以选择此工作负载所必需的
-        istio: ingressgateway
-        # 启用网关注入。如果后续连接到修订版的控制平面，请替换为 `istio.io/rev: revision-name` 
-        sidecar.istio.io/inject: "true"
+        istio: ingressgateway # (2)!
+        sidecar.istio.io/inject: "true" # (3)!
     spec:
-      # 允许绑定到所有端口（例如 80 和 443）
-      securityContext:
+      securityContext: # (4)!
         sysctls:
         - name: net.ipv4.ip_unprivileged_port_start
           value: "0"
       containers:
       - name: istio-proxy
-        image: auto # 每次 Pod 启动时，该镜像都会自动更新。
-        # 放弃所有 privilege 特权，允许以非 root 身份运行
-        securityContext:
+        image: auto # (5)!
+        securityContext: # (6)!
           capabilities:
             drop:
             - ALL
           runAsUser: 1337
           runAsGroup: 1337
 ```
+
+1. 选择网关注入模板（而不是默认的 Sidecar 模板）
+2. 为网关设置唯一标签。这是确保 Gateway 可以选择此工作负载所必需的
+3. 启用网关注入。如果后续连接到修订版的控制平面，请替换为 `istio.io/rev: revision-name`
+4. 允许绑定到所有端口（例如 80 和 443）
+5. 每次 Pod 启动时，该镜像都会自动更新。
+6. 放弃所有 privilege 特权，允许以非 root 身份运行
 
 ### 添加相应权限
 

@@ -288,9 +288,9 @@ spec:
     app: example-app
 ```
 
-#### __请求身份认证__ 
+#### __请求身份认证__
 
- __请求身份认证__ 策略指定验证 JSON Web Token（JWT）所需的值。这些值包括：
+__请求身份认证__ 策略指定验证 JSON Web Token（JWT）所需的值。这些值包括：
 
 - token 在请求中的位置
 - 请求的 issuer

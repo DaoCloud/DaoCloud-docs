@@ -399,13 +399,20 @@ spec:
 # 格式：istio.custom_params.values.global.meshNetworks.${CLUSTER_NET_ID}.gateways[0].address
 #      istio.custom_params.values.global.meshNetworks.${CLUSTER_NET_ID}.gateways[0].port
 
-istio.custom_params.values.global.meshNetworks.network-c1.gateways[0].address: 10.64.30.73  # cluster1
-istio.custom_params.values.global.meshNetworks.network-c1.gateways[0].port: '15443'  # cluster3 东西网关端口
-istio.custom_params.values.global.meshNetworks.network-c2.gateways[0].address: 10.6.136.29  # cluster2
-istio.custom_params.values.global.meshNetworks.network-c2.gateways[0].port: '15443'  # cluster2  东西网格端口
-istio.custom_params.values.global.meshNetworks.network-c3.gateways[0].address: 10.64.30.77  # cluster3
-istio.custom_params.values.global.meshNetworks.network-c3.gateways[0].port: '15443'  # cluster3 东西网关端口
+istio.custom_params.values.global.meshNetworks.network-c1.gateways[0].address: 10.64.30.73 # (1)!
+istio.custom_params.values.global.meshNetworks.network-c1.gateways[0].port: '15443'  # (2)!
+istio.custom_params.values.global.meshNetworks.network-c2.gateways[0].address: 10.6.136.29  # (3)!
+istio.custom_params.values.global.meshNetworks.network-c2.gateways[0].port: '15443'  # (4)!
+istio.custom_params.values.global.meshNetworks.network-c3.gateways[0].address: 10.64.30.77  # (5)!
+istio.custom_params.values.global.meshNetworks.network-c3.gateways[0].port: '15443'  # (6)!
 ```
+
+1. cluster1
+2. cluster3 东西网关端口
+3. cluster2
+4. cluster2  东西网格端口
+5. cluster3
+6. cluster3 东西网关端口
 
 ![增加参数](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/add-gm-meshnetowork0.png)
 
