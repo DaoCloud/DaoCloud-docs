@@ -920,6 +920,7 @@ nav:
                       - 更新 MySQL: middleware/mysql/user-guide/update.md
                       - 删除 MySQL: middleware/mysql/user-guide/delete.md
                       - 查看 MySQL 日志: middleware/mysql/user-guide/logs.md
+                      - 实例拓扑: middleware/mysql/user-guide/instancemap.md
                   - 最佳实践:
                       - MySQL 跨集群同步: middleware/mysql/best-practice/crossclusterssync.md
                       - MySQL 归档方案: middleware/mysql/best-practice/mysql-pt-archiver.md
