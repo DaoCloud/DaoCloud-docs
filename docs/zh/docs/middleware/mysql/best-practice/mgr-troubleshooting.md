@@ -69,9 +69,9 @@ sh-4.4$ mysqlsh -uroot -pPassword  -- cluster status
     - 所有的节点的status都为ONLINE状态。
     - 有一个节点的memberRole为PRIMARY，其他节点都为SECONDARY。
 
-2. 用 SQL 语句查看：SELECT * FROM performance_schema.replication_group_members\G
+用 SQL 语句查看：`SELECT * FROM performance_schema.replication_group_members\G`
 
-```shell
+```sql
 mysql> SELECT * FROM performance_schema.replication_group_members\G
 *************************** 1. row ***************************
               CHANNEL_NAME: group_replication_applier
@@ -105,9 +105,9 @@ MEMBER_COMMUNICATION_STACK: MySQL
 
 ### 查看成员状态
 
-查看成员状态：SELECT * FROM performance_schema.replication_group_member_stats\G
+查看成员状态：`SELECT * FROM performance_schema.replication_group_member_stats\G`
 
-```shell
+```sql
 mysql> SELECT * FROM performance_schema.replication_group_member_stats\G
 *************************** 1. row ***************************
                               CHANNEL_NAME: group_replication_applier
@@ -167,23 +167,23 @@ COUNT_TRANSACTIONS_REMOTE_IN_APPLIER_QUEUE: 0
 
 1. 将某个节点指定为 PRIMARY。
 
-```shell
-select group_replication_set_as_primary('4697c302-3e52-11ed-8e61-0050568a658a');
-```
+    ```shell
+    select group_replication_set_as_primary('4697c302-3e52-11ed-8e61-0050568a658a');
+    ```
 
 2. `mysqlsh` 语法
 
-```shell
-JS > var c=dba.getCluster()
-JS > c.status()
-JS > c.setPrimaryInstance('172.30.71.128:3306')
-```
+    ```shell
+    JS > var c=dba.getCluster()
+    JS > c.status()
+    JS > c.setPrimaryInstance('172.30.71.128:3306')
+    ```
 
 ## 常见故障场景
 
 ### 某个 SECONDARY 节点为非 ONLINE 状态
 
-```shell
+```json
 {
     "clusterName": "mgr0117",
     "defaultReplicaSet": {
@@ -235,7 +235,7 @@ JS > c.setPrimaryInstance('172.30.71.128:3306')
 
 这里看到对应的 address 字段是 mgr0117-0.mgr0117-instances.m0103.svc.cluster.local:3306，进入 mgr0117-0 这个 pod，执行
 
-```shell
+```sql
 mysql> start group_replication;
 Query OK, 0 rows affected (5.82 sec)
 ```
@@ -273,4 +273,3 @@ set global group_replication_bootstrap_group=off;
 !!! Warning
 
     对于其他节点，依次执行上面的命令。
-
