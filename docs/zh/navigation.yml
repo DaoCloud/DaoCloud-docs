@@ -1294,8 +1294,8 @@ nav:
   - 博客:
       - 博文索引: blogs/index.md
       - 2024:
-          - 全球大规模AI基础设施形势调研: news/0429-ai-survey.md
-          - 一颗绿色豆荚入选 CNCF Sandbox: blogs/240416-kubean.md
+          - 全球大规模AI基础设施形势调研: blogs/0429-ai-survey.md
+          - 一颗豆荚入选CNCF Sandbox: blogs/240416-kubean.md
           - 云原生人工智能白皮书: blogs/240410-cnai-wp.md
           - 巴黎 KubeCon 谁在引领创新: blogs/240326-kubecon-eu.md
           - 创建一个开源商业生态体系: blogs/240301-osc-eco.md
