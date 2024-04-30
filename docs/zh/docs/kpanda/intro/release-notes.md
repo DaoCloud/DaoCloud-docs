@@ -4,6 +4,51 @@
 
 *[kpanda]: DaoCloud 容器管理的内部开发代号
 
+## 2024-04-30
+
+### v0.27.0
+
+#### 新增
+
+- **新增** 支持通过配置CRD的方式自定义NS admin/editor/viewer权限
+- **新增** 支持通过 ssh 的方式连接 cloudtty
+- **新增** 支持控制台进入运行中的容器
+- **新增** 支持通过 Helm 应用 scend-mindxdl 安装昇腾组件 Device Plugin 和 NpuExporter，并通过insight查看昇腾GPU卡的相关指标
+
+#### 优化
+
+- **优化** 增加在kpanda界面ns绑定/解绑workspace的审计日志
+- **优化** 支持在本地容器内运行make命令
+- **优化** ns quota 配置提示优化
+- **优化** 优化 helm 应用并发更新
+- **优化** GPU 监控面板增加更多监控指标
+
+#### 修复
+
+- **修复** 修复无法从Deployment的页面找到所挂载的PVC卷问题
+- **修复** 修复etcd备份策略，无法选择 s3 region问题
+- **修复** kpanda openapi proxies 访问路线支持 token 权限认证
+- **修复** liststorageclasses 接口返回结果不分页
+- **修复** 修复版本发布流水线 cd_to_prod_site 任务执行失败，需要更新 CI/CD 脚本问题
+- **修复** 修复多次上传文件到目标容器会出现上传失败的情况
+- **修复** 修复kairship的 e2e在线环境, kpanda-binding-syncer长时间运行后出现负载升高集群不稳定
+- **修复** 修复接入节点，运行时为docker时，docker_rh_repo表单为空问题
+- **修复** 修复创建集群失败之后，重试时的回显问题
+- **修复** 修复管理集群解除接入后，子集群仍然显示被该集群纳管问题
+- **修复** 修复RedHat8-OS创建集群，使用密钥认证节点检查失败
+- **修复** 修复创建集群时勾选insight-agent安装，fluent-bit无法正常启动问题
+- **修复** 修复创建集群失败之后重试，由于 kubelet 有软链接，kubespray 执行 reset.yml 时失败
+- **修复** 修复insight server 升级时找不到helm repo的问题
+- **修复** 修复创建metallb 时开启就绪检查，但是编辑进来开关显示为关闭问题
+- **修复** 修复charts-syncer 同步 chart 时，relocateContainerImages 设置为 false 会导致 同步出来的 chart 包 中 镜像地址有问题
+- **修复** 修复sts+pvc 恢复备份成功后，修改pvc的信息再次恢复备份，无法恢复修改pvc的数据问题
+- **修复** 修复创建备份策略未开启备份数据卷，但是备份资源中包含 pv，导致备份失败问题
+- **修复** 修复VGPU模式下GPU可用资源一直返回0问题
+- **修复** 修复mig mixed模式下节点详情页的GPU类型展示了MIG Mixed MIG Single问题
+- **修复** 修复ascend监控仪表盘ai处理器数目一直展示的总值
+- **修复** 修复节点上的标签和节点详情页的gpu类型展示不一致
+- **修复** 修复GPU Pod Dashboard PCIE 数据错误问题
+
 ## 2024-03-28
 
 ### v0.26.1
