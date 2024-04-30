@@ -819,6 +819,7 @@ nav:
                       - 系统命名空间: mspider/intro/comp-archi-ui/namespaces.md
                       - UI 支持的特性: mspider/intro/comp-archi-ui/features-on-ui.md
                   - Istio 与 K8s 版本对应情况: mspider/intro/istio-k8s.md
+                  - 网格漏洞修复标准与计划: mspider/intro/sla.md
                   - 常见问题: mspider/intro/faq.md
                   - Release Notes: mspider/intro/release-notes.md
               - 安装、配置和升级:
