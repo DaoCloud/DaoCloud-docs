@@ -4,12 +4,12 @@
 
 ## 扫描方案
 
-在 DCE 5 中默认使用，`trivy` 作为镜像漏洞扫描工具，所有模块在发版时都会进行进行扫描。
+在 DCE 5.0 中默认使用 `trivy` 作为镜像漏洞扫描工具，所有模块在发版时都会进行进行扫描。
 
 - 什么是 trivy？参阅 <https://trivy.dev/>
 - 为什么选择 trivy？
     - 全面的漏洞数据库：Trivy 使用广泛的漏洞数据库，包括 NVD（National Vulnerability Database）、Red Hat Security Advisory、Alpine SecDB 等，能够覆盖大量的已知漏洞。
-    - 应用程序依赖关系的扫描：除了操作系统层面的漏洞，Trivy 还能扫描各种语言和框架的应用程序依赖关系，例如 Ruby, Python, JavaScript 等。
+    - 应用程序依赖关系的扫描：除了操作系统层面的漏洞，Trivy 还能扫描各种语言和框架的应用程序依赖关系，例如 Ruby、Python、JavaScript 等。
     - 实时更新：Trivy 定期更新其漏洞数据库，确保能够检测到最新公开的安全漏洞。
     - Trivy 在容器安全领域中被广泛使用
 
@@ -58,7 +58,7 @@ done
 
 1. **明确无法修复的漏洞** :
     
-    特定模块（如 DCE5）中明确标记为无法修复的漏洞不会被处理。详细列表请参见 最后一个章节。
+    特定模块（如 DCE5）中明确标记为无法修复的漏洞不会被处理。详细列表请参见[漏洞修复政策](#_3)。
 
 1. **低风险漏洞** :
 
@@ -149,7 +149,6 @@ CVE-2022-37434
 
 ## docker.m.daocloud.io/grafana/grafana:9.3.14
 CVE-2023-49569
-
 
 # mcamel ignore list:
 CVE-2023-46233
