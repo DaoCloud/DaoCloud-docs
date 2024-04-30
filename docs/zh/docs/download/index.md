@@ -51,14 +51,14 @@ DCE 5.0 包含的众多子模块可以单独下载，按需对每个模块进行
 | 安全管理 | 167.29 MB | [:arrow_right: 下载页](./modules/dowl.md)      | 2023-11-26 |
 | 网络模块 | 64.03 MB  | [:arrow_right: 下载页](./modules/spidernet.md) | 2023-12-26 |
 | 存储模块 | 1.62 GB   | [:arrow_right: 下载页](./modules/hwameistor.md)| 2023-11-06 |
-| 多云编排 | 524.58 MB | [:arrow_right: 下载页](./modules/kairship.md)  | 2024-04-24 |
-| 镜像仓库 | 295.53 MB | [:arrow_right: 下载页](./modules/kangaroo.md)  | 2024-04-26 |
+| 多云编排 | 583.51 MB | [:arrow_right: 下载页](./modules/kairship.md)  | 2024-04-24 |
+| 镜像仓库 | 304.16 MB | [:arrow_right: 下载页](./modules/kangaroo.md)  | 2024-04-26 |
 | 可观测性 | 2.70 GB   | [:arrow_right: 下载页](./modules/insight.md)   | 2024-04-02 |
 | 微服务引擎| 1.6 GB  | [:arrow_right: 下载页](./modules/skoala.md)     | 2024-03-23 |
 | 服务网格 | 933.72 MB | [:arrow_right: 下载页](./modules/mspider.md)   | 2024-04-17 |
 | 云边协同 | 100.37 MB | [:arrow_right: 下载页](./modules/kant.md)      | 2024-01-04 |
 | 全局管理 | 500.89 MB | [:arrow_right: 下载页](./modules/ghippo.md)    | 2024-04-11 |
-| 运营管理 | 95.90 MB  | [:arrow_right: 下载页](./modules/gmagpie.md)   | 2023-11-30 |
+| 运营管理 | 91.00 MB  | [:arrow_right: 下载页](./modules/gmagpie.md)   | 2024-04-30 |
 | 虚拟机   | 1.43 GB  | [:arrow_right: 下载页](./modules/virtnest.md)   | 2024-01-10 |
 
 DCE 5.0 还提供了各种精选中间件：
