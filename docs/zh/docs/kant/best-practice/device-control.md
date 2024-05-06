@@ -31,6 +31,7 @@
     - 访问方式必须和 mapper 定义的键值数据保持一致。
 
     ![添加孪生属性](../images/device-control-02.png)
+    
     ![设备配置](../images/device-control-03.png)
 
 1. 填写设备访问配置。
