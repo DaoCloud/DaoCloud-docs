@@ -1135,7 +1135,7 @@ nav:
                   - 部署 edgemesh 应用: kant/user-guide/edge-network/deploy-edgemesh.md
                   - 服务: kant/user-guide/edge-network/service.md
               - 最佳实践:
-                  - 智能设备控制: kant/best-practice/develop-device-mapper.md
+                  - 智能设备控制: kant/best-practice/device-control.md
                   - 如何开发设备驱动应用 mapper: kant/best-practice/develop-device-mapper.md
       - 管理:
           - 全局管理:
