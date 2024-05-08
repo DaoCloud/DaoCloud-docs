@@ -7,6 +7,9 @@ hide:
 
 | Events | Resource Type | Note |
 | --- | --- | --- |
+| Create-ProbeJob | ProbeJob | |
+| Update-ProbeJob | ProbeJob | |
+| Delete-ProbeJob | ProbeJob | |
 | Create-AlertPolicy | AlertPolicy | |
 | Update-AlertPolicy | AlertPolicy | |
 | Delete-AlertPolicy | AlertPolicy | |
@@ -15,6 +18,9 @@ hide:
 | DeleteRuleFrom-AlertPolicy | AlertPolicy | |
 | UpdateDescriptionFrom-AlertPolicy | AlertPolicy | |
 | UpdateNotificationFrom-AlertPolicy | AlertPolicy | |
+| Create-RuleTemplate | RuleTemplate | |
+| Update-RuleTemplate | RuleTemplate | |
+| Delete-RuleTemplate | RuleTemplate | |
 | Create-EmailGroup | EmailGroup | |
 | Update-EmailGroup | EmailGroup | |
 | Delete-EmailGroup | EmailGroup | |
@@ -39,4 +45,7 @@ hide:
 | Create-AlertSilence | AlertSilence | |
 | Update-AlertSilence | AlertSilence | |
 | Delete-AlertSilence | AlertSilence | |
+| Create-AlertInhibition | AlertInhibition | |
+| Update-AlertInhibition | AlertInhibition | |
+| Delete-AlertInhibition | AlertInhibition | |
 | Update-HistoricalAlertData | HistoricalAlertData | |
