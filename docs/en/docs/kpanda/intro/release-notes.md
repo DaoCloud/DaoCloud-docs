@@ -10,6 +10,51 @@ understand the evolution path and feature changes from release to release.
 
 *[kpanda]: Internal development codename for DaoCloud container management
 
+## 2024-04-30
+
+### v0.27.0
+
+#### New Features
+
+- **Added** support customizing NS admin/editor/viewer permissions through CRD configuration
+- **Added** support connecting to cloudtty via SSH
+- **Added** support accessing running containers through the console
+- **Added** Install Ascend components Device Plugin and NpuExporter through Helm app scend-mindxdl, and view relevant metrics of Ascend GPU cards through Insight
+
+#### Improvements
+
+- **Improved** Add audit logs for binding/unbinding workspace to ns in the kpanda interface
+- **Improved** Support running make commands in local containers
+- **Improved** Improve ns quota configuration prompts
+- **Improved** Optimize concurrent updates of Helm apps
+- **Improved** Add more monitoring metrics to GPU monitoring dashboard
+
+#### Bug Fixes
+
+- **Fixed** issue with not being able to find mounted PVC volumes from the Deployment page
+- **Fixed** issue with inability to select S3 region in etcd backup strategy
+- **Bug Fix** Support token authentication for kpanda openapi proxies
+- **Fixed** unpaginated results in liststorageclasses interface
+- **Fixed** issue with failed execution of cd_to_prod_site task in version release pipeline, requiring CI/CD script update
+- **Fixed** issue with upload failure when uploading files to target containers multiple times
+- **Fixed** instability of cluster after long-running kpanda-binding-syncer in kairship e2e online environment
+- **Fixed** issue with empty docker_rh_repo form when running with docker as the runtime for access nodes
+- **Fixed** echo issue when retrying after cluster creation failure
+- **Fixed** issue with child clusters still being displayed as managed by the parent cluster after removing cluster integration
+- **Fixed** failure in node authentication check when creating cluster with RedHat8-OS and key authentication
+- **Fixed** issue with fluent-bit failing to start when selecting insight-agent installation during cluster creation
+- **Fixed** failure in reset.yml execution by kubespray due to symbolic links in kubelet after retrying cluster creation
+- **Fixed** issue with helm repo not found during Insight Server upgrade
+- **Fixed** issue with ready check showing as disabled when creating metallb with ready check enabled but showing as disabled when editing
+- **Fixed** issue with incorrect image addresses in synchronized chart packages when relocateContainerImages is set to false in charts-syncer
+- **Fixed** issue with inability to restore modified PVC data after successful restore of sts+pvc backup
+- **Fixed** backup failure when creating backup strategy without backing up data volumes, but including PVs in backup resources
+- **Fixed** issue with always returning 0 available resources in VGPU mode
+- **Fixed** issue with GPU type displayed as MIG Mixed MIG Single in node details page under mig mixed mode
+- **Fixed** issue with AI processor count always showing total value in ascend monitoring dashboard
+- **Fixed** inconsistency between labels on nodes and GPU types displayed in node details page
+- **Fixed** incorrect PCIE data in GPU Pod Dashboard
+
 ## 2024-03-28
 
 ### v0.26.1
@@ -45,7 +90,7 @@ understand the evolution path and feature changes from release to release.
 - **Fixed** kube-vip issue when creating a cluster
 - **Fixed** Failure to create a cluster when selecting "Enable kernel tuning for new cluster"
 - **Fixed** Failure to reinstall Helm after failed installation
-- **Fixed** Failure to retrieve values during Helm application update after reconnection of machines
+- **Fixed** Failure to retrieve values during Helm app update after reconnection of machines
 - **Fixed** Default rendering error for image address in offline installation of submariner
 - **Fixed** Duplicate concatenation of image addresses during Kpanda upgrade
 - **Fixed** Continuous "In Progress" status after backup restoration
