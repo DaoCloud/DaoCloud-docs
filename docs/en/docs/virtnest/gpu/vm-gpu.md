@@ -1,61 +1,58 @@
-# 虚拟机配置 GPU（直通模式）
+# Configure GPU Passthrough for Virtual Machines
 
-本文将介绍如何在创建虚拟机时，配置 GPU 的前提条件。
+This page will explain the prerequisites for configuring GPU when creating a virtual machine.
 
-配置虚拟机的 GPU 的重点是对 GPU Operator 进行配置，以便在工作节点上部署不同的软件组件，
-具体取决于这些节点上配置运行的 GPU 工作负载。以下三个节点为例：
+The key to configuring GPU for virtual machines is to configure the GPU Operator to deploy different
+software components on the worker nodes, depending on the GPU workload configuration. Here are three example nodes:
 
-- controller-node-1 节点配置为运行容器。
-- work-node-1 节点配置为运行具有直通 GPU 的虚拟机。
-- work-node-2 节点配置为运行具有虚拟 vGPU 的虚拟机。
+- The controller-node-1 node is configured to run containers.
+- The work-node-1 node is configured to run virtual machines with GPU passthrough.
+- The work-node-2 node is configured to run virtual machines with virtual vGPU.
 
-## 假设、限制和依赖性
+## Assumptions, Limitations, and Dependencies
 
-工作节点可以运行 GPU 加速容器，也可以运行具有 GPU 直通的 GPU 加速 VM，或者具有 vGPU 的 GPU 加速 VM，但不能运行其中任何一个的组合。
+The worker nodes can run GPU-accelerated containers, virtual machines with GPU passthrough, or virtual machines with vGPU. However, a combination of any of these is not supported.
 
-1. 集群管理员或开发人员需要提前了解集群情况，并正确标记节点以指示它们将运行的 GPU 工作负载类型。
-2. 运行具有 GPU 直通或 vGPU 的 GPU 加速 VM 的工作节点被假定为裸机，如果工作节点是虚拟机，
-   则需要在虚拟机平台上启用 GPU 直通功能，请向虚拟机平台提供商咨询。
-3. 不支持 Nvidia MIG 的 vGPU。
-4. GPU Operator 不会自动在 VM 中安装 GPU 驱动程序。
+1. The cluster administrator or developer needs to have prior knowledge of the cluster and correctly label the nodes to indicate the type of GPU workload they will run.
+2. The worker node that runs a GPU-accelerated virtual machine with GPU passthrough or vGPU is assumed to
+   be a bare metal machine. If the worker node is a virtual machine, the GPU passthrough feature needs to
+   be enabled on the virtual machine platform. Please consult your virtual machine platform provider for guidance.
+3. Nvidia MIG is not supported for vGPU.
+4. The GPU Operator does not automatically install GPU drivers in the virtual machine.
 
-## 启用 IOMMU
+## Enable IOMMU
 
-为了启用GPU直通功能，集群节点需要开启IOMMU。请参考[如何开启 IOMMU](https://www.server-world.info/en/note?os=CentOS_7&p=kvm&f=10)。
-如果您的集群是在虚拟机上运行，请咨询您的虚拟机平台提供商。
+To enable GPU passthrough, the cluster nodes need to have IOMMU enabled. Refer to
+[How to Enable IOMMU](https://www.server-world.info/en/note?os=CentOS_7&p=kvm&f=10).
+If your cluster is running on a virtual machine, please consult your virtual machine platform provider.
 
-## 标记集群节点
+## Label the Cluster Nodes
 
-进入 __容器管理__ ，选取您的工作集群，点击 __节点管理__ 的操作栏 __修改标签__ ，为节点添加标签，每个节点只能有一种标签。
+Go to __Container Management__, select your working cluster, click __Node Management__, and then click __Modify Labels__ in the action bar to add labels to the nodes. Each node can only have one label.
 
-您可以为标签分配以下值：container、vm-passthrough 和 vm-vgpu。
+You can assign the following values to the labels: container, vm-passthrough, and vm-vgpu.
 
-![标记标签](../images/gpu-02.png)
+## Install Nvidia Operator
 
-## 安装 Nvidia Operator
-
-1. 进入 __容器管理__ ，选取您的工作集群，点击 __Helm 应用__ -> __Helm 模板__ ，选择并安装 gpu-operator。
-   需要修改一些 yaml 中的相关字段。
+1. Go to __Container Management__, select your working cluster, click __Helm Apps__ -> __Helm Chart__ ,
+   and choose and install gpu-operator. Modify the relevant fields in the yaml.
 
     ```yaml
     gpu-operator.sandboxWorkloads.enabled=true
     gpu-operator.vfioManager.enabled=true
     gpu-operator.sandboxDevicePlugin.enabled=true
-    gpu-operator.sandboxDevicePlugin.version=v1.2.4   # (1)!
+    gpu-operator.sandboxDevicePlugin.version=v1.2.4   // version should be >= v1.2.4
     gpu-operator.toolkit.version=v1.14.3-ubuntu20.04
     ```
 
-    1. version 需要 >= v1.2.4
+2. Wait for the installation to succeed, as shown in the following image:
 
-2. 等待安装成功，如下图所示：
+## Install virtnest-agent and Configure CR
 
-    ![安装成功](../images/gpu-03.png)
+1. Install virtnest-agent, refer to [Install virtnest-agent](../install/virtnest-agent.md).
 
-## 安装 virtnest-agent 并配置 CR
-
-1. 安装 virtnest-agent，参考[安装 virtnest-agent](../install/virtnest-agent.md)。
-
-2. 将 vGPU 和 GPU 直通加入 Virtnest Kubevirt CR，以下示例是添加 vGPU 和 GPU 直通后的 部分关键 yaml：
+2. Add vGPU and GPU passthrough to the Virtnest Kubevirt CR.
+   The following example shows the relevant yaml after adding vGPU and GPU passthrough:
 
     ```yaml
     spec:
@@ -74,11 +71,12 @@
           resourceName: nvidia.com /GP104GL_TESLA_P4
     ```
 
-    1. 下面是需要填写的信息
+    1. The following information needs to be filled in
     2. vGPU
-    3. GPU 直通
+    3. GPU passthrough
 
-3. 在 kubevirt CR yaml 中，`permittedHostDevices` 用于导入 VM 设备，vGPU 需在其中添加 mediatedDevices，具体结构如下：
+3. In the kubevirt CR yaml, `permittedHostDevices` is used to import VM devices.
+   For vGPU, mediatedDevices needs to be added, with the following structure:
 
     ```yaml
     mediatedDevices:          
@@ -86,10 +84,11 @@
       resourceName: nvidia.com/GRID_P4-1Q   # (2)!
     ```
 
-    1. 设备名称
-    2. GPU Operator 注册到节点的 vGPU 信息
+    1. Device name
+    2. vGPU information registered by GPU Operator on the node
 
-4. GPU 直通需要在 `permittedHostDevices` 下添加 pciHostDevices，具体结构如下：
+4. For GPU passthrough, pciHostDevices needs to be added under `permittedHostDevices`,
+   with the following structure:
 
     ```yaml
     pciHostDevices:           
@@ -98,12 +97,13 @@
       resourceName: nvidia.com/GP104GL_TESLA_P4 # (3)!
     ```
 
-    1. 默认不要更改
-    2. 当前 pci 设备的 vednor id
-    3. GPU Operator 注册到节点的 GPU 信息
+    1. Do not change this by default
+    2. Vendor ID of the current PCI device
+    3. GPU information registered by GPU Operator on the node
 
-5. 获取 vGPU 信息示例（仅适用于 vGPU）：在标记为 `nvidia.com/gpu.workload.config=vm-gpu` 的节点（例如 `work-node-2`）上查看节点信息，
-   Capacity 中的 `nvidia.com/GRID_P4-1Q: 8` 表示可用 vGPU：
+5. Example of obtaining vGPU information (only applicable to vGPU):
+   View the node information on the node marked as `nvidia.com/gpu.workload.config=vm-gpu`,
+   such as `work-node-2`, in the Capacity section, `nvidia.com/GRID_P4-1Q: 8` indicates the available vGPU:
 
     ```bash
     kubectl describe node work-node-2
@@ -133,10 +133,11 @@
       pods:                              	110
     ```
 
-    那么 mdevNameSelector 应该是 “GRID P4-1Q”，resourceName 应该是 “GRID_P4-1Q”
+    In this case, the mdevNameSelector should be "GRID P4-1Q" and the resourceName should be "GRID_P4-1Q".
 
-6. 获取 GPU 直通信息：在标记 `nvidia.com/gpu.workload.config=vm-passthrough` 的 node 上（本文档示例 node 为 work-node-1），
-   查看 node 信息，Capacity 中 `nvidia.com/GP104GL_TESLA_P4: 2` 就是可用 vGPU：
+6. Get GPU passthrough information: On the node marked as `nvidia.com/gpu.workload.config=vm-passthrough`
+   (work-node-1 in this example), view the node information.
+   In the Capacity section, `nvidia.com/GP104GL_TESLA_P4: 2` represents the available vGPU:
 
     ```bash
     kubectl describe node work-node-1
@@ -166,12 +167,13 @@
       pods:                           110
     ```
 
-    那么 resourceName 应该是 “GRID_P4-1Q”, 如何获取 pciVendorSelector 呢？通过 ssh 登录到 work-node-1 目标节点，
-    通过 `lspci -nnk -d 10de:` 命令获取 Nvidia GPU PCI 信息，如下所示：红框所示即是 pciVendorSelector 信息。
+    The resourceName should be "GRID_P4-1Q". How to obtain the pciVendorSelector?
+    Use SSH to log in to the target node work-node-1 and use the `lspci -nnk -d 10de:` command
+    to obtain the Nvidia GPU PCI information, as shown below: The red box indicates the pciVendorSelector information.
 
-    ![获取 pciVendorSelector](../images/gpu-04.png)
 
-7. 编辑 kubevirt CR 提示：如果同一型号 GPU 有多个，只需在 CR 中写入一个即可，无需列出每个 GPU。
+7. Edit the kubevirt CR note: If there are multiple GPUs of the same model,
+   you only need to write one in the CR, there is no need to list every GPU.
 
     ```bash
     kubectl -n virtnest-system edit kubevirt kubevirt
@@ -193,15 +195,15 @@
             resourceName: nvidia.com/GP104GL_TESLA_P4 
     ```
 
-    1. 下面是需要填写的信息
+    1. The following information needs to be filled in
     2. vGPU
-    3. GPU 直通，上面的示例中 TEESLA P4 有两个 GPU，这里只需要注册一个即可
+    3. GPU passthrough; in the example above, there are two GPUs for TEESLA P4, so only one needs to be registered here
 
-## 通过 YAML 创建 VM 并使用 GPU 加速
+## Create VM Using YAML and Enable GPU Acceleration
 
-与普通虚拟机唯一的区别是在 devices 中添加 GPU 相关信息。
+The only difference from a regular virtual machine is adding GPU-related information in the devices section.
 
-??? note "点击查看完整 YAML"
+??? note "Click to view the complete YAML"
 
     ```yaml
     apiVersion: kubevirt.io/v1
