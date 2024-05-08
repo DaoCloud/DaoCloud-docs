@@ -5,7 +5,7 @@ hide:
 
 # Service Mesh Audit Items
 
-| Event Name | Resource Type | Note |
+| Events | Resource Type | Note |
 | --- | --- | --- |
 | create-MeshInstance | MeshInstance | |
 | delete-MeshInstance | MeshInstance | |

@@ -5,7 +5,7 @@ hide:
 
 # Insight Audit Items
 
-| Event Name | Resource Type | Note |
+| Events | Resource Type | Note |
 | --- | --- | --- |
 | Create-AlertPolicy | AlertPolicy | |
 | Update-AlertPolicy | AlertPolicy | |

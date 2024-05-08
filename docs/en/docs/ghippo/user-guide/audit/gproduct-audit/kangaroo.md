@@ -5,7 +5,7 @@ hide:
 
 # Audit Items of Container Registry
 
-| Event Name | Resource Type | Note |
+| Events | Resource Type | Note |
 | --- | --- | --- |
 | Delete-Image | Image | |
 | Delete-Artifacts | Artifacts | |
