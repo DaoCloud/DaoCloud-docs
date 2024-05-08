@@ -1092,6 +1092,9 @@ nav:
                   - Overview: kant/user-guide/edge-network/index.md
                   - Deploy EdgeMesh: kant/user-guide/edge-network/deploy-edgemesh.md
                   - Service: kant/user-guide/edge-network/service.md
+              - Best Practices:
+                  - Smart Device Control: kant/best-practice/device-control.md
+                  - Develop Device Driver - Mapper: kant/best-practice/develop-device-mapper.md
       - Management:
           - Global Management:
               - Intro:
