@@ -5,8 +5,8 @@ hide:
 
 # 可观测性审计项汇总
 
-| 事件名称 | 资源类型 | 备注 |
-|--------|---------|-----|
+|  事件名称 | 资源类型 | 备注 |
+| --- | --- | --- |
 | 创建拨测任务：Create-ProbeJob | ProbeJob | |
 | 编辑拨测任务：Update-ProbeJob | ProbeJob | |
 | 删除拨测任务：Delete-ProbeJob | ProbeJob | |
