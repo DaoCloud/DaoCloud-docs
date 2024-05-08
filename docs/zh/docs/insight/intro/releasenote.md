@@ -4,7 +4,7 @@
 
 ## 2024-04-30
 
-### Insight Server v0.26.0
+### v0.26.0
 
 以下这些变更针对 Insight Server。
 
@@ -51,7 +51,9 @@
 
 ## 2024.01.31
 
-### Insight Server: v0.24.0
+### v0.24.0
+
+以下这些变更针对 Insight Server。
 
 #### 新增
 
@@ -70,7 +72,7 @@
 - **修复** Grafana 仪表盘没有通过认证允许查看的问题
 - **修复** 强制所有 SMTP 邮件启用 InsecureSkipVerify
 
-### Insight Agent: v0.23.0
+### Insight Agent v0.23.0
 
 #### 优化
 
@@ -78,7 +80,7 @@
 
 ## 2023.12.31
 
-### Insight Server: v0.23.0
+### Insight Server v0.23.0
 
 #### 新增
 
@@ -97,7 +99,7 @@
 - **修复** 日志告警的预览趋势图查询不准确且告警对象不准确
 - **修复** Insight Server Chart 中 `app.kubernetes.io/name` 字段重复出现
 
-### Insight Agent: v0.23.0
+### Insight Agent v0.23.0
 
 #### 优化
 
@@ -106,7 +108,7 @@
 
 ## 2023.11.30
 
-### Insight Server: v0.22.0
+### Insight Server v0.22.0
 
 #### 新增
 
@@ -122,7 +124,7 @@
 
 - **修复** Elasticsearch 索引初始化失败的问题
 
-### Insight Agent: v0.22.0
+### Insight Agent v0.22.0
 
 - **修复** Fluentbit 采集目录不兼容 DCE 4.0 的问题
 
@@ -133,7 +135,7 @@
     Insight Agent v0.21.0 修复了 PodMonitor 配置后会重复集多份 JVM 指标数据的问题，建议升级至该版本进行修复。
     详情可查看[已知问题](../../insight/quickstart/install/knownissues.md)。
 
-### Insight Server: v0.21.0
+### Insight Server v0.21.0
 
 #### 新增
 
@@ -149,7 +151,7 @@
 - **修复** 无法查看到容器日志的上下文
 - **修复** 初始化事件索引出错
 
-### Insight Agent: v0.21.0
+### Insight Agent v0.21.0
 
 #### 修复
 
@@ -158,7 +160,7 @@
 
 ## 2023.08.31
 
-### Insight Server: v0.20.0
+### Insight Server v0.20.0
 
 #### 新增
 
@@ -185,7 +187,7 @@
 - **修复** 拓扑图取消集群、命名空间边界时所有的节点变成外部节点问题
 - **修复** 消息模板中要是任一通知类型的模板内容出错，就会导致告警无法通知
 
-### Insight Agent: v0.20.0
+### Insight Agent v0.20.0
 
 #### 优化
 
