@@ -9,7 +9,7 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 1. [定制外观](#_5)
 1. [打通权限体系（可选）](#_6)
 
-具体操作演示请参见：[OEM IN 最佳实践视频教程](../../../videos/use-cases.md#dce-50_3)。
+具体操作演示请参见 [OEM IN 最佳实践视频教程](../../../videos/use-cases.md#dce-50_3)。
 
 !!! note
 
@@ -45,83 +45,83 @@ OEM IN 是指合作伙伴的平台作为子模块嵌入 DCE 5.0，出现在 DCE 
 
 1. 使用 vim 命令创建 __label-studio.yaml__ 文件
 
-     ```bash
-     vim label-studio.yaml
-     ```
+    ```bash
+    vim label-studio.yaml
+    ```
 
-     ```yaml title="label-studio.yaml"
-     apiVersion: networking.istio.io/v1beta1
-     kind: ServiceEntry
-     metadata:
-       name: label-studio
-       namespace: ghippo-system
-     spec:
-       exportTo:
-       - "*"
-       hosts:
-       - label-studio.svc.external
-       ports:
-       # 添加虚拟端口
-       - number: 80
-         name: http
-         protocol: HTTP
-       location: MESH_EXTERNAL
-       resolution: STATIC
-       endpoints:
-       # 改为客户系统的域名（或IP）
-       - address: 10.6.202.177
-         ports:
-           # 改为客户系统的端口号
-           http: 30123
-     ---
-     apiVersion: networking.istio.io/v1alpha3
-     kind: VirtualService
-     metadata:
-       # 修改为客户系统的名字
-       name: label-studio
-       namespace: ghippo-system
-     spec:
-       exportTo:
-       - "*"
-       hosts:
-       - "*"
-       gateways:
-       - ghippo-gateway
-       http:
-       - match:
-           - uri:
-               exact: /label-studio # 修改为客户系统在 DCE5.0 Web UI 入口中的路由地址
-           - uri:
-               prefix: /label-studio/ # 修改为客户系统在 DCE5.0 Web UI 入口中的路由地址
-         route:
-         - destination:
-             # 修改为上文 ServiceEntry 中的 spec.hosts 的值
-             host: label-studio.svc.external
-             port:
-               # 修改为上文 ServiceEntry 中的 spec.ports 的值
-               number: 80
-     ---
-     apiVersion: security.istio.io/v1beta1
-     kind: AuthorizationPolicy
-     metadata:
-       # 修改为客户系统的名字
-       name: label-studio
-       namespace: istio-system
-     spec:
-       action: ALLOW
-       selector:
-         matchLabels:
-           app: istio-ingressgateway
-       rules:
-       - from:
-         - source:
-             requestPrincipals:
-             - '*'
-       - to:
-         - operation:
-             paths:
-             - /label-studio # 修改为 VirtualService 中的 spec.http.match.uri.prefix 的值
-             - /label-studio/* # 修改为 VirtualService 中的 spec.http.match.uri.prefix 的值（注意，末尾需要添加 "*"）
+    ```yaml title="label-studio.yaml"
+    apiVersion: networking.istio.io/v1beta1
+    kind: ServiceEntry
+    metadata:
+      name: label-studio
+      namespace: ghippo-system
+    spec:
+      exportTo:
+      - "*"
+      hosts:
+      - label-studio.svc.external
+      ports:
+      # 添加虚拟端口
+      - number: 80
+        name: http
+        protocol: HTTP
+      location: MESH_EXTERNAL
+      resolution: STATIC
+      endpoints:
+      # 改为客户系统的域名（或IP）
+      - address: 10.6.202.177
+        ports:
+          # 改为客户系统的端口号
+          http: 30123
+    ---
+    apiVersion: networking.istio.io/v1alpha3
+    kind: VirtualService
+    metadata:
+      # 修改为客户系统的名字
+      name: label-studio
+      namespace: ghippo-system
+    spec:
+      exportTo:
+      - "*"
+      hosts:
+      - "*"
+      gateways:
+      - ghippo-gateway
+      http:
+      - match:
+          - uri:
+              exact: /label-studio # 修改为客户系统在 DCE5.0 Web UI 入口中的路由地址
+          - uri:
+              prefix: /label-studio/ # 修改为客户系统在 DCE5.0 Web UI 入口中的路由地址
+        route:
+        - destination:
+            # 修改为上文 ServiceEntry 中的 spec.hosts 的值
+            host: label-studio.svc.external
+            port:
+              # 修改为上文 ServiceEntry 中的 spec.ports 的值
+              number: 80
+    ---
+    apiVersion: security.istio.io/v1beta1
+    kind: AuthorizationPolicy
+    metadata:
+      # 修改为客户系统的名字
+      name: label-studio
+      namespace: istio-system
+    spec:
+      action: ALLOW
+      selector:
+        matchLabels:
+          app: istio-ingressgateway
+      rules:
+      - from:
+        - source:
+            requestPrincipals:
+            - '*'
+      - to:
+        - operation:
+            paths:
+            - /label-studio # 修改为 VirtualService 中的 spec.http.match.uri.prefix 的值
+            - /label-studio/* # 修改为 VirtualService 中的 spec.http.match.uri.prefix 的值（注意，末尾需要添加 "*"）
      ```
 
 1. 使用 kubectl 命令应用 label-studio.yaml：
