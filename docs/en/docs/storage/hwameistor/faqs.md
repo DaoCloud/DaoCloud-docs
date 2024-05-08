@@ -17,17 +17,17 @@ When an application (Deployment or StatefulSet) is created, the Pods of the appl
 
 HwameiStor recommends using StatefulSet for applications with multiple replicas.
 
-For stateful applications, StatefulSet deploys the replicated replicas to the same worker node, but creates a corresponding PV volume for each Pod replica. If you need to deploy replicas to different nodes to distribute the workload, you need to manually configure pod affinity.
+StatefulSet deploys the replicated replicas to the same worker node, but creates a corresponding PV volume for each Pod replica. If you need to deploy replicas to different nodes to distribute the workload, you need to manually configure pod affinity.
 
 ![img](https://docs.daocloud.io/daocloud-docs-images/docs/storage/hwameistor/img/clip_image004.png)
 
-For stateless applications, Deployment cannot share block volumes, so it is recommended to use a single replica.
+Deployment cannot share block volumes, so it is recommended to use a single replica.
 
 For traditional shared storage:
 
-For stateful applications, StatefulSet deploys the replicated replicas to different nodes to distribute the workload, but creates a corresponding PV volume for each Pod replica. Only when the number of replicas exceeds the number of worker nodes will multiple replicas be on the same node.
+StatefulSet deploys the replicated replicas to different nodes to distribute the workload, but creates a corresponding PV volume for each Pod replica. Only when the number of replicas exceeds the number of worker nodes will multiple replicas be on the same node.
 
-For stateless applications, Deployment deploys the replicated replicas to different nodes to distribute the workload, and all Pods share one PV volume (currently only NFS is supported). Only when the number of replicas exceeds the number of worker nodes will multiple replicas be on the same node. For block storage, since the volume cannot be shared, it is recommended to use a single replica.
+Deployment deploys the replicated replicas to different nodes to distribute the workload, and all Pods share one PV volume (currently only NFS is supported). Only when the number of replicas exceeds the number of worker nodes will multiple replicas be on the same node. For block storage, since the volume cannot be shared, it is recommended to use a single replica.
 
 **Question 3: How do I maintain a Kubernetes node?**
 
@@ -81,9 +81,11 @@ To ensure the continuous operation of Pods and the availability of HwameiStor lo
           usedCapacityBytes: 1073741824
           usedVolumeCount: 1
           volumeCapacityBytesLimit: 17175674880
-         volumes:  # Ensure that the volumes field is empty
+         volumes:  # (1)!
       state: Ready
     ```
+
+    1. Ensure that the volumes field is empty
 
     At the same time, HwameiStor will automatically reschedule the evicted Pods and schedule them to nodes with available volumes, ensuring that the Pods run normally.
 
@@ -128,9 +130,9 @@ If you want to keep the volumes on the node and still be able to access them aft
 
 **For traditional shared storage**
 
-For stateful applications, StatefulSet deploys the replicated replicas to different nodes to distribute the workload, but creates a corresponding PV volume for each Pod replica. Only when the number of replicas exceeds the number of worker nodes will multiple replicas be on the same node.
+StatefulSet deploys the replicated replicas to different nodes to distribute the workload, but creates a corresponding PV volume for each Pod replica. Only when the number of replicas exceeds the number of worker nodes will multiple replicas be on the same node.
 
-For stateless applications, Deployment deploys the replicated replicas to different nodes to distribute the workload, and all Pods share one PV volume (currently only NFS is supported). Only when the number of replicas exceeds the number of worker nodes will multiple replicas be on the same node. For block storage, since the volumes cannot be shared, it is recommended to use a single replica.
+Deployment deploys the replicated replicas to different nodes to distribute the workload, and all Pods share one PV volume (currently only NFS is supported). Only when the number of replicas exceeds the number of worker nodes will multiple replicas be on the same node. For block storage, since the volumes cannot be shared, it is recommended to use a single replica.
 
 **Question 4: How to handle the error when viewing LocalStorageNode?**
 
@@ -143,16 +145,22 @@ Possible causes of the error:
 1. The LVM2 package is not installed on the node. You can install it with the following command:
 
     ```bash
-    rpm -qa | grep lvm2  # Check if LVM2 is installed
-    yum install lvm2    # Install LVM2 on each node
+    rpm -qa | grep lvm2 # (1)!
+    yum install lvm2    # (2)!
     ```
+
+    1. Check if LVM2 is installed
+    2. Install LVM2 on each node
 
 2. Check if the corresponding disk has GPT partition:
 
     ```bash
-    blkid /dev/sd*     # Check if the disk has clean partitions
-    wipefs -a /dev/sd* # Clean the disk
+    blkid /dev/sd*     # (1)!
+    wipefs -a /dev/sd* # (2)!
     ```
+
+    1. Check if the disk has clean partitions
+    2. Clean the disk
 
 **Question 5: Why were no StorageClasses automatically created after installing Hwameistor-operator?**
 
@@ -161,15 +169,21 @@ Possible reasons:
 1. There are no remaining bare disks on the nodes that can be automatically managed. You can check with the following command:
 
     ```bash
-    kubectl get ld # Check the disks
-    kubectl get lsn <node-name> -o yaml # Check if the disks are properly managed
+    kubectl get ld # (1)!
+    kubectl get lsn <node-name> -o yaml # (2)!
     ```
+
+    1. Check the disks
+    2. Check if the disks are properly managed
 
 2. The Hwameistor-related components (excluding drbd-adapter) are not working properly. You can check with the following command:
 
     > The drbd-adapter component only takes effect when HA is enabled. If it is not enabled, you can ignore the related errors.
 
     ```bash
-    kubectl get pod -n hwameistor # Check if the pods are running properly
-    kubectl get hmcluster -o yaml # Check the health field
+    kubectl get pod -n hwameistor # (1)!
+    kubectl get hmcluster -o yaml # (2)!
     ```
+
+    1. Check if the pods are running properly
+    2. Check the health field

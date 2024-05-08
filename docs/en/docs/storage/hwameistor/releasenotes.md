@@ -3,6 +3,15 @@
 This page lists the Release Notes related to Hwameistor, providing an overview of
 the evolution path and feature changes for each version.
 
+## 2024-04-30
+
+### v0.14.6
+
+#### Improvements
+
+- **Improved** Resolve the issue where LVR does not respect pod affinity
+- **Improved** Add an option to enable data validation during migration
+
 ## 2024-03-31
 
 ### v0.14.4
