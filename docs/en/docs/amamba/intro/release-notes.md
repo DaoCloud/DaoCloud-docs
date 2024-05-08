@@ -1,12 +1,57 @@
 ---
 MTPE: windsonsea
-date: 2024-02-19
+date: 2024-05-08
 ---
 
 # Releases Notes
 
 This page lists the release notes for Workbench to help you understand
 the development and feature changes in each version.
+
+## 2024-04-30
+
+### v0.26.0
+
+#### New Features
+
+- **Added** support management of integrated code repositories
+- **Added** support cloning code repositories
+- **Added** support creating branches/tags
+
+#### Improvements
+
+- **Improved** Support searching across all namespaces for helm, olm, native applications, and canary release applications
+- **Improved** Add running status to workload list and when retrieving resources for workload types
+- **Improved** Support installation status of kube-app-manager
+- **Improved** Remove credentials when creating applications from Git/Jar
+
+#### Bug Fixes
+
+- **Fixed** failure to retrieve multi-branch pipeline logs
+- **Fixed** incorrect start time for pipeline runs
+- **Fixed** error in fuzzy search for namespaces
+- **Fixed** incomplete pipeline logs
+- **Fixed** creation of native applications after failed creation from Git/Jar
+
+## 2024-03-30
+
+### v0.25.0
+
+#### New Features
+
+- **Added** the creation interface and logic for native applications, support creating workload resources separately
+
+#### Improvements
+
+- **Improved** webhook callback logic for SonarQube
+- **Improved** Automatically fill in container names when enabling specific container steps after defining labels for pipelines
+
+#### Bug Fixes
+
+- **Fixed** rendering of pipeline DAG failed for built-in pipeline templates
+- **Fixed** empty configuration in casc when removing SonarQube integration
+- **Fixed** casc configuration not being updated when integrating SonarQube in workspace
+- **Fixed** loss of credentials, SonarQube configurations, email configurations, etc. after switching Jenkins instances
 
 ## 2024-01-31
 
@@ -19,7 +64,7 @@ the development and feature changes in each version.
 - **Added** Ability to view events for GitOps applications
 - **Added** Support for canary release based on Contour
 
-#### Improved
+#### Improvements
 
 - **Improved** Added health status for GitOps applications: paused, missing, and unknown
 - **Improved** Provided commit, comment, and author information for synced and latest git repository, and version information for helm repository

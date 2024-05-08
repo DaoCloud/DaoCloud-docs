@@ -37,13 +37,13 @@
 
 #### 优化
 
-- **优化** SonarQube的 webhook 回调逻辑
+- **优化** SonarQube 的 Webhook 回调逻辑
 - **优化** 当流水线定义 label 后，开启指定容器步骤后将自动填充容器名称
 
 #### 修复
 
 - **修复** 修复内置的流水线模版渲染流水线 DAG 失败的问题
-- **修复** 修复解除集成 SonarQube 时casc 留有空配置问题
+- **修复** 修复解除集成 SonarQube 时 casc 留有空配置问题
 - **修复** 修复在工作空间集成 SonarQube 时没有更新 casc 配置问题
 - **修复** 修复切换 Jenkins 实例之后，凭证、SonarQube，邮件等配置丢失的问题
 
