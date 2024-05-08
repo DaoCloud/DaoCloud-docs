@@ -573,6 +573,7 @@ nav:
               - Intro:
                   - What: virtnest/intro/index.md
                   - Release Notes: virtnest/intro/release-notes.md
+                  - FAQs: virtnest/intro/faq.md
               - Install:   
                   - Install Virtual Machine: virtnest/install/index.md
                   - Install Dependencies: virtnest/install/install-dependency.md
@@ -590,6 +591,9 @@ nav:
                   - VM GPU: virtnest/vm/vm-gpu.md
                   - VM Network: virtnest/vm/vm-network.md
                   - VM Storage: virtnest/vm/vm-sc.md
+              - VM GPU:
+                  - VM GPU: virtnest/gpu/vm-gpu.md
+                  - VM vGPU: virtnest/gpu/vm-vgpu.md
               - VM Template:
                   - Create VM by Template: virtnest/template/index.md
                   - VM Template: virtnest/template/tep.md
