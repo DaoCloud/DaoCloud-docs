@@ -1,11 +1,46 @@
 ---
 MTPE: windsonsea
-Date: 2024-04-24
+Date: 2024-05-08
 ---
 
-# Microservice Engine (Skoala) Releases Notes
+# Microservice Engine Releases Notes
 
 This page lists the release notes of Microservices to help you learn its feature development and bug fixing progress.
+
+*[skoala]: Internal development codename for DaoCloud Microservice Engine
+
+## 2024-04-30
+
+### v0.36.1
+
+#### Bug Fixes
+
+- **Fixed** missing permissions for cloud-native microservice traffic swimlane drainage rules
+- **Fixed** abnormal link information reporting after injecting gateway into the mesh sidecar
+
+## 2024-04-26
+
+### v0.36.0
+
+#### New Features
+
+- **Added** Log query functionality for gateway API testing
+- **Added** Support for multiple instances of external services for the gateway
+- **Added** API latency statistics for the gateway
+- **Added** Exception information for distributed transaction component in the overview
+
+#### Bug Fixes
+
+- **Fixed** abnormal Nacos and database configurations for distributed transactions
+- **Fixed** inaccurate display of memory resource configuration for the gateway
+- **Fixed** inaccurate exception information for Nacos and distributed transaction components
+- **Fixed** abnormal saving of gateway API with certificates
+- **Fixed** occasional abnormality in gateway log query
+
+#### Improvements
+
+- **Improved** Replace Nacos with version 2.3.1 instead of 2.3.0
+- **Improved** prompt for unavailable ClusterIP in gateway API testing
 
 ## 2024-04-11
 
