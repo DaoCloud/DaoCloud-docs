@@ -8,6 +8,26 @@ date: 2024-02-19
 This page lists the Release Notes of Insight, so that you can understand
 the evolution path and feature changes of each version.
 
+## 2024-04-30
+
+### v0.26.0
+
+The following changes are specific to Insight Server.
+
+#### Features and Improvements
+
+- **Added** Built-in monitoring dashboard for Vector when using Vector to transmit logs
+- **Improved** Support configuring multiple log upload addresses
+- **Improved** Clicking on a probe name displays the status of the probe task
+- **Improved** Support high availability of opentelemetry-collector component
+
+#### Bug Fixes
+
+- **Fixed** issue with built-in rules not taking effect
+- **Fixed** Clear historical data on dashboard after updating probe task
+- **Fixed** issue with failure to create alert policy when alert description is empty in YAML
+- **Fixed** issue with data not being cleared after service disengages from distributed tracing
+
 ## 2024.03.31
 
 !!! warning
@@ -37,7 +57,7 @@ These changes are for Insight Server.
 
 ## 2024.01.31
 
-### Insight Server: v0.24.0
+### Insight Server v0.24.0
 
 #### New Features
 
@@ -56,7 +76,7 @@ These changes are for Insight Server.
 - **Fixed** Issue with Grafana dashboards not being accessible without authentication
 - **Fixed** Enabling InsecureSkipVerify for all SMTP emails
 
-### Insight Agent: v0.23.0
+### Insight Agent v0.23.0
 
 #### Improvements
 
@@ -64,7 +84,7 @@ These changes are for Insight Server.
 
 ## 2023.12.31
 
-### Insight Server: v0.23.0
+### Insight Server v0.23.0
 
 #### New Features
 
@@ -83,7 +103,7 @@ These changes are for Insight Server.
 - **Fixed** inaccurate query and incorrect alert objects in the preview trend chart of log alerts
 - **Fixed** duplicate occurrence of `app.kubernetes.io/name` field in Insight Server Chart
 
-### Insight Agent: v0.23.0
+### Insight Agent v0.23.0
 
 #### Improvements
 
@@ -92,7 +112,7 @@ These changes are for Insight Server.
 
 ## 2023.11.30
 
-### Insight Server: v0.22.0
+### Insight Server v0.22.0
 
 #### New Features
 
@@ -108,7 +128,7 @@ These changes are for Insight Server.
 
 - **Fixed** an issue with Elasticsearch index initialization failure
 
-### Insight Agent: v0.22.0
+### Insight Agent v0.22.0
 
 - **Fixed** compatibility issue with Fluentbit directory collection and DCE 4.0
 
@@ -120,7 +140,7 @@ These changes are for Insight Server.
     configuring PodMonitor. It is recommended to upgrade to this version for the fix.
     For more details, refer to [Known Issues](../../insight/quickstart/install/knownissues.md).
 
-### Insight Server: v0.21.0
+### Insight Server v0.21.0
 
 #### New Features
 
@@ -136,7 +156,7 @@ These changes are for Insight Server.
 - **Fixed** an issue of unable to view container log context.
 - **Fixed** an error when initializing event index.
 
-### Insight Agent: v0.21.0
+### Insight Agent v0.21.0
 
 #### Bug Fixes
 
@@ -146,7 +166,7 @@ These changes are for Insight Server.
 
 ## 2023.08.31
 
-### Insight Server: v0.20.0
+### Insight Server v0.20.0
 
 #### New Features
 
@@ -173,7 +193,7 @@ These changes are for Insight Server.
 - **Fixed** an issue where all nodes became external nodes in the topology diagram when canceling cluster and namespace boundaries.
 - **Fixed** failure to send alerts if there is an error in the content of any notification type in the message template.
 
-### Insight Agent: v0.20.0
+### Insight Agent v0.20.0
 
 #### Improvements
 
