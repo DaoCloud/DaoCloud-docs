@@ -79,7 +79,7 @@ docker build -t tengine:0.0.1 .
 
     此证书仅适用于测试环境。
 
-您可以参考[Tongsuo 官方文档](https://www.yuque.com/tsdoc/ts)使用 [OpenSSL 生成 SM2 证书](https://www.yuque.com/tsdoc/ts/pb5vqr)，
+您可以参考 [Tongsuo 官方文档](https://www.yuque.com/tsdoc/ts)使用 [OpenSSL 生成 SM2 证书](https://www.yuque.com/tsdoc/ts/pb5vqr)，
 或者访问[国密 SSL 实验室申请 SM2 证书](https://www.gmssl.cn/gmssl/index.jsp?go=CA)。
 
 最终我们会得到以下文件：
@@ -165,4 +165,6 @@ nginx -s reload
 
 ## 验证
 
-您可以部署一个支持国密证书的 Web 浏览器。例如：[Samarium Browser](https://github.com/guanzhi/SamariumBrowser)，然后通过 Tengine 访问 DCE5 UI 界面，验证国密证书是否生效。
+您可以部署一个支持国密证书的 Web 浏览器。
+例如 [Samarium Browser](https://github.com/guanzhi/SamariumBrowser)，
+然后通过 Tengine 访问 DCE5 UI 界面，验证国密证书是否生效。
