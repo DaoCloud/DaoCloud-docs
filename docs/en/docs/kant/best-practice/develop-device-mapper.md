@@ -3,24 +3,24 @@ hide:
   - toc
 ---
 
-# 如何开发设备驱动应用 mapper
+# How to Develop Device Driver Mapper
 
-本文介绍设备驱动应用 mapper 的开发和部署流程。
+This page introduces the development and deployment process of the device driver mapper.
 
-1. 进入到 KubeEdge 仓库的 **kubeedge/staging/src/github.com/kubeedge/mapper-framework** 目录下执行 `make generate` 命令：
+1. Go to the **kubeedge/staging/src/github.com/kubeedge/mapper-framework** directory in the KubeEdge repository and execute the `make generate` command:
 
     ```shell
     make generate
-    Please input the mapper name (like 'Bluetooth', 'BLE'): foo    # 这里的协议是后续需要再创建 deviceModel 的时候填写的
+    Please input the mapper name (like 'Bluetooth', 'BLE'): foo    # The protocol here needs to be filled in when creating deviceModel later
     ```
 
-    - 执行完成后，会在 mapper-framework 的同级目录生成与协议名同名的 mapper 代码目录。
+    - After execution, a mapper code directory with the same name as the protocol will be generated in the same level directory of mapper-framework.
     
-        ![mapper 目录](../images/mapper-01.png)
+        ![mapper directory](../images/mapper-01.png)
 
-    - 可以将该目录复制出来进行 mapper 开发，主要需要关注的地方是 driver 目录下的代码：
+    - You can copy this directory for mapper development, focusing mainly on the code under the driver directory:
 
-        该文件对应 mapper 对设备的操作实现，主要实现 InitDevice(初始化设备), GetDeviceData(获取设备数据), SetDeviceData(给设备赋值), StopDevice(停止设备)
+        This file corresponds to the operations of the mapper on devices, mainly implementing InitDevice (initialize device), GetDeviceData (get device data), SetDeviceData (assign value to device), StopDevice (stop device).
 
         ```go
         package driver
@@ -52,17 +52,17 @@ hide:
         func (c *CustomizedClient) GetDeviceData(visitor *VisitorConfig) (interface{}, error) {
           // TODO: add the code to get device's data
           // you can use c.ProtocolConfig and visitor
-          // 打开串口设备
-          // 打开串口设备
+          // Open serial port device
+          // Open serial port device
           return "ok", nil
         }
         ​
         func (c *CustomizedClient) SetDeviceData(data interface{}, visitor *VisitorConfig) error {
           // TODO: set device's data
           // you can use c.ProtocolConfig and visitor
-          // 打开串口设备
+          // Open serial port device
           config := &serial.Config{
-            Name: "/dev/ttyACM0", // 替换为您的串口名称，例如 "/dev/ttyUSB0"（Linux）或 "COM1"（Windows）
+            Name: "/dev/ttyACM0", // Replace with your serial port name, such as "/dev/ttyUSB0" (Linux) or "COM1" (Windows)
             Baud: 9600,
         }
         port, err := serial.OpenPort(config)
@@ -71,7 +71,7 @@ hide:
         }
         defer port.Close()
         ​
-        // 监听操作系统的中断信号，以便在程序终止前关闭串口连接
+        // Listen for operating system interrupt signals to close the serial port connection before the program terminates
         signalCh := make(chan os.Signal, 1)
         signal.Notify(signalCh, os.Interrupt, syscall.SIGTERM)
         go func() {
@@ -94,7 +94,7 @@ hide:
         }
         ```
 
-    - 调试需要修改 config.yaml 中的 protocol 字段，填前面定义的协议名称
+    - To debug, modify the protocol field in the config.yaml file to the protocol name defined earlier
 
         ```yaml
         grpc_server:
@@ -108,36 +108,36 @@ hide:
           edgecore_sock: /etc/kubeedge/dmi.sock
         ```
 
-2. 部署 mapper 应用
+2. Deploy the mapper application
 
-    **二进制部署**
+    **Binary Deployment**
 
-    1. 在项目的主目录使用 go build ./cmd/main.go 编译出对应架构的二进制文件，比如编译 linux 环境下的可执行文件
+    1. In the project's main directory, use `go build ./cmd/main.go` to compile the binary file for the corresponding architecture, such as compiling the executable file in a Linux environment
 
         ```shell
-        GOOS=linux GOARCH=amd64 go build ./cmd/main.go -o {输出的文件名称}     # (1)!
+        GOOS=linux GOARCH=amd64 go build ./cmd/main.go -o {output filename}     # (1)!
         ```
 
-        1. -o 参数可以不填
+        1. The -o parameter can be omitted
 
-    2. 将二进制文件上传到设备绑定的节点，注意需要在可执行文件所在目录将 config.yaml 文件放在这里，否则会报文件找不到的错误
+    2. Upload the binary file to the node bound to the device, making sure to place the config.yaml file in the same directory as the executable file, otherwise it will result in a file not found error
 
         ```shell
-        # 目录中应该包含以下两个文件，其中 main 是可执行文件，config.yaml 是配置文件
+        # The directory should contain the following two files, where main is the executable file and config.yaml is the configuration file
         root@nx:~/device-test# ls
         config.yaml  main
-        # 接下来在该目录执行 ./main 即可
+        # Next, execute ./main in this directory
         ```
 
-    **容器化部署**
+    **Containerized Deployment**
 
-    1. 使用提供的 Dockerfile 文件进行编译
+    1. Use the provided Dockerfile for compilation
     
-    2. 编译完成后，使用 resource 目录下的 configmap 和 deployment 资源进行部署
+    2. After compilation, deploy using the configmap and deployment resources in the resource directory
 
         !!! note
 
-            修改 deployment 的镜像为实际编译出的镜像名称，configmap 也需要修改 protocol 字段。
+            Modify the image in the deployment to the actual compiled image name, and also modify the protocol field in the configmap.
     
         ```yaml
         apiVersion: v1
@@ -157,4 +157,4 @@ hide:
               edgecore_sock: /etc/kubeedge/dmi.sock
         ```
 
-以上，完成设备驱动应用 mapper 的开发。
+The development of the device driver mapper is now complete.
