@@ -5,7 +5,7 @@ hide:
 
 # Middleware Audit Items
 
-| Event Name | Resource Type | Note |
+| Events | Resource Type | Note |
 | --- | --- | --- |
 | create-ElasticsearchInstance | ElasticsearchInstance | |
 | create-KafkaInstance | KafkaInstance | |

@@ -5,7 +5,7 @@ hide:
 
 # Audit Items of MultiCloud Management
 
-| Event Name | Resource Type | Note |
+| Events | Resource Type | Note |
 | --- | --- | --- |
 | Create-Instance | Instance | |
 | Delete-Instance | Instance | |

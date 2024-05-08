@@ -1,0 +1,22 @@
+---
+hide:
+  - toc
+---
+
+# Audit Items of Virtual Machine
+
+|  Events | Resource Type | Remarks |
+| --- | --- | --- |
+| Restart-VMs | VM | |
+| ConvertToTemplate-VMs | VM | |
+| Edit-VMs | VM | |
+| Update-VMs | VM | |
+| Restore-VMs | VM | |
+| Power on-VMs | VM | |
+| LiveMigrate-VMs | VM | |
+| Delete-VMs | VM | |
+| Delete-VM Template | VM Template | |
+| Create-VMs | VM | |
+| CreateSnapshot-VMs | VM | |
+| Power off-VMs | VM | |
+| Clone-VMs | VM | |

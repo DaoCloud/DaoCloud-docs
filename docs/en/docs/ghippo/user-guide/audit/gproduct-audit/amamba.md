@@ -5,7 +5,7 @@ hide:
 
 # Workbench Audit Items
 
-| Event Name | Resource Type | Note |
+| Events | Resource Type | Note |
 | --- | --- | --- |
 | Create-Application | Application | |
 | Update-Application | Application | Edit YAML, create snapshots, rollback |

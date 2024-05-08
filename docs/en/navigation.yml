@@ -1142,6 +1142,7 @@ nav:
                       - Container Management Audit Items: ghippo/user-guide/audit/gproduct-audit/kpanda.md
                       - Multicloud Management Audit Items: ghippo/user-guide/audit/gproduct-audit/kairship.md
                       - Container Registry Audit Items: ghippo/user-guide/audit/gproduct-audit/kangaroo.md
+                      - Virtual Machine Audit Items: ghippo/user-guide/audit/gproduct-audit/virtnest.md
                       - Insight Audit Items: ghippo/user-guide/audit/gproduct-audit/insight.md
                       - Microservice Audit Items: ghippo/user-guide/audit/gproduct-audit/skoala.md
                       - Service Mesh Audit Items: ghippo/user-guide/audit/gproduct-audit/mspider.md

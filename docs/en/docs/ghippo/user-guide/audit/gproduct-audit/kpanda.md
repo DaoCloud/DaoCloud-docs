@@ -5,7 +5,7 @@ hide:
 
 # Audit Items of Container Management
 
-| Event Name | Resource Type | Note |
+| Events | Resource Type | Note |
 | --- | --- | --- |
 | Create-Cluster | Cluster | |
 | Delete-Cluster | Cluster | |

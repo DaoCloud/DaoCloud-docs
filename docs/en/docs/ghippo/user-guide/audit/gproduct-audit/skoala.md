@@ -5,7 +5,7 @@ hide:
 
 # Microservice Audit Items
 
-| Event Name | Resource Type | Note |
+| Events | Resource Type | Note |
 | --- | --- | --- |
 | UpdateAPIStatus-GatewayAPI | GatewayAPI | |
 | DeleteServiceIstioPluginRLSRules-Mesh | Mesh | |
