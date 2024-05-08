@@ -3,6 +3,26 @@
 This page lists the Release Notes for global management of each version,
 so that you can understand the evolution path and feature changes of each version.
 
+## 2024-4-30
+
+### v0.26.0
+
+### Features
+
+- Support GPU-based licensing for licenses
+- Add summary links to audit logs
+
+### Improvements
+
+- Add unit test for audit log SDK
+
+### Bug Fixes
+
+- Fix incorrect user-agent field in audit logs
+- Fix issue with audit logs showing alternating success and failure login records
+- __Operations Management__ Fix issue with validation prompt not being removed after cancelling when modifying billing configuration
+- __Operations Management__ Fix issue with incorrect calculation of GPU billing duration in container group reports
+
 ## 2024-4-1
 
 ### v0.25.1
