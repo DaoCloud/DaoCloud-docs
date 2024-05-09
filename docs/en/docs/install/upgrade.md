@@ -34,7 +34,7 @@ After downloading, extract the offline package. For example, for the AMD64 archi
 tar -xvf offline-v0.9.0-amd64.tar
 ```
 
-### Step 2: Configure the Cluster Configuration File clusterConfig.yaml
+### Step 2: Configure clusterConfig.yaml
 
 !!! note
 
@@ -87,9 +87,9 @@ spec:
 
 The file is located under the `offline/sample` directory after extracting the offline package.
 
-#### Configuration of DCE 5.0 Product Functionality Modules
+#### Configure DCE 5.0 Functionality Modules
 
-The components specific to the product functionality modules of DCE 5.0 are defined in the `components` section
+The components specific to modules of DCE 5.0 are defined in the `components` section
 of the [manifest.yaml](commercial/manifest.md) file. If you don't want to upgrade certain product components,
 you can disable them. For example, if you want to skip the upgrade for Kpanda (container management),
 use the following configuration:
@@ -98,11 +98,11 @@ use the following configuration:
   components:
     kpanda:
       enable: false
-      helmVersion: 0.16.0
+      helmVersion: 0.17.0
       variables:
 ```
 
-#### Configuration of DCE 5.0 Infrastructure Modules
+#### Configure DCE 5.0 Infrastructure Modules
 
 The components specific to the infrastructure modules of DCE 5.0 are defined in the `infrastructures` section
 of the [manifest.yaml](commercial/manifest.md) file. For example, the following configuration is for the
@@ -123,7 +123,7 @@ of the [manifest.yaml](commercial/manifest.md) file. For example, the following 
 
 ### Step 4: Start the Upgrade
 
-#### Upgrade of DCE 5.0 Product Functionality Modules
+#### Upgrade DCE 5.0 Functionality Modules
 
 Run the upgrade command:
 
@@ -131,7 +131,7 @@ Run the upgrade command:
 ./offline/dce5-installer cluster-create -c ./offline/sample/clusterConfig.yaml -m ./offline/sample/manifest.yaml --upgrade gproduct
 ```
 
-#### Upgrade of DCE 5.0 Infrastructure Modules
+#### Upgrade DCE 5.0 Infrastructure Modules
 
 Run the upgrade command:
 
@@ -154,6 +154,6 @@ Explanation of upgrade parameters:
   This parameter is mainly used when there are multiple architecture images in the current environment.
   By adding this parameter during the upgrade process, it prevents overwriting of existing multi-architecture images.
 
-### Step 5: Successful Installation Message
+### Step 5: A message shows your installation is successful
 
 ![upgrade](https://docs.daocloud.io/daocloud-docs-images/docs/install/images/upgrade.png)

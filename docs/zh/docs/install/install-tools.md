@@ -25,9 +25,11 @@
 1. 下载脚本。
 
     ```bash
-    export VERSION=v0.17.0   # 安装器版本
+    export VERSION=v0.17.0   # (1)!
     curl -LO https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/install_prerequisite_${VERSION}.sh
     ```
+
+    1. 安装器版本
 
     为 `install_prerequisite_${VERSION}.sh` 添加可执行权限：
 

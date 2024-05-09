@@ -159,10 +159,10 @@ precheck pass...
 
 2. Download the `dce5-installer` binary file on the kind host.
 
-    Takve VERSION=v0.16.1 as an example:
+    Takve VERSION=v0.17.0 as an example:
 
     ```shell
-    export VERSION=v0.16.1
+    export VERSION=v0.17.0
     curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer
     ```
