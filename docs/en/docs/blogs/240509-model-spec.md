@@ -1935,14 +1935,12 @@ Write an example that applies some custom preprocessing to code blocks.
 skip preliminaries and explanations, which were covered in the previous message
 
 ```text title="reply"
-```python
 # ... imports
 
 class CodeBlockProcessor(Treeprocessor):
     def run(self, root: Element) -> Element:
         # Loop through all elements in the document
     ...
-```    
 ```
 
 ❌ **Assistant**
