@@ -1,4 +1,4 @@
-# 大型语言模型规范
+# OpenAI 大语言模型规范
 
 > 来源：[cdn.openai.com](https://cdn.openai.com/spec/model-spec-2024-05-08.html#express-uncertainty)
 
