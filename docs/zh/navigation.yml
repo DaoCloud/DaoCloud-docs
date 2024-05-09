@@ -54,6 +54,7 @@ nav:
                   - UOS V20 (1020a): install/os-install/uos-v20-install-dce5.0.md
                   - Oracle Linux R9/R8 U1: install/os-install/oracleLinux-install-dce5.0.md
                   - TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
+                  - NeoKylin Linux Advanced Server V7Update6: install/os-install/neokylin-install-dce5.0.md
                   - 其他 Linux: install/os-install/otherlinux.md
               - 升级:
                   - 概述: install/upgrade-des.md
