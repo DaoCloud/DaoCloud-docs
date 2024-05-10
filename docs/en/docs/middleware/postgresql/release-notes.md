@@ -9,6 +9,13 @@ This page lists the Release Notes of the PostgreSQL database, so that you can un
 
 *[Mcamel-PostgreSQL]: "Mcamel" is the dev name for DaoCloud's middlewares, and "PostgreSQL" is a relational database
 
+## 2024-04-30
+
+### v0.11.0
+
+- **Improved** When deleting backups, you can now choose to delete the backup data in S3
+- **Added** a prompt for namespace quota
+
 ## 2024-03-31
 
 ### v0.10.0

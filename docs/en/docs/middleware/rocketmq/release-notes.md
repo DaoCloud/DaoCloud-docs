@@ -7,6 +7,13 @@ date: 2024-01-05
 
 This page provides the Release Notes for RocketMQ Message Queue, allowing you to understand the evolution and feature changes of each version.
 
+## 2024-04-30
+
+### v0.6.0
+
+- **Improved** JVM parameters for starting Broker nodes
+- **Added** a prompt for namespace quota
+
 ## 2024-03-31
 
 ### v0.18.0

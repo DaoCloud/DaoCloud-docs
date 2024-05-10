@@ -5,86 +5,105 @@ hide:
 
 # Permissions
 
-Data services are designed to be deployed in a [workspace](../ghippo/user-guide/workspace/ws-permission.md). Users with different workspace permissions can perform different actions in data services.
+Data services are designed to be deployed in a [workspace](../ghippo/user-guide/workspace/ws-permission.md).
+Users with different workspace permissions can perform different actions in data services.
 
-| | | | | | |
-| ------------- | ---------------------- | ------------ -------- | --------------- | ---------------- | -------- -------- |
-| Data Service | Objects | Actions | Workspace Admin | Workspace Editor | Workspace Viewer |
-| MySQL | MySQL Instance List | View list | ✅ | ✅ | ✅ |
-| | | Search instance name | ✅ | ✅ | ✅ |
-| | | Create instance | ✅ | ✅ | ❌ |
-| | | Update instance | ✅ | ✅ | ❌ |
-| | | Delete instance | ✅ | ❌ | ❌ |
-| | MySQL Instance Details | Instance overview | ✅ | ✅ | ✅ |
-| | | Instance monitoring | ✅ | ✅ | ✅ |
-| | | View instance parameters | ✅ | ✅ | ✅ |
-| | | Modify instance parameters | ✅ | ✅ | ❌ |
-| | | View instance access password | ✅ | ✅ | ❌ |
-| | | View instance backup list | ✅ | ✅ | ✅ |
-| | | Backup instance | ✅ | ✅ | ❌ |
-| | | Change instance auto backup job | ✅ | ✅ | ❌ |
-| | | Create instance from backup | ✅ | ✅ | ❌ |
-| | Backup Management | Backup configuration list | ✅ | ❌ | ❌ |
-| | | Create Backup configuration | ✅ | ❌ | ❌ |
-| | | Modify backup configuration | ✅ | ❌ | ❌ |
-| | | Delete backup configuration | ✅ | ❌ | ❌ |
-| RabbitMQ | RabbitMQ Instance List | View List | ✅ | ✅ | ✅ |
-| | | Search instance name | ✅ | ✅ | ✅ |
-| | | Create instance | ✅ | ✅ | ❌ |
-| | | Update instance | ✅ | ✅ | ❌ |
-| | | Delete instance | ✅ | ❌ | ❌ |
-| | RabbitMQ Instance Details | Instance overview | ✅ | ✅ | ✅ |
-| | | Instance monitoring | ✅ | ✅ | ✅ |
-| | | View instance parameters | ✅ | ✅ | ✅ |
-| | | Modify instance parameters | ✅ | ✅ | ❌ |
-| | | View instance access password | ✅ | ✅ | ❌ |
-| Elasticsearch | Elasticsearch Instance List | View list | ✅ | ✅ | ✅ |
-| | | Search instance name | ✅ | ✅ | ✅ |
-| | | Create instance | ✅ | ✅ | ❌ |
-| | | Update instance | ✅ | ✅ | ❌ |
-| | | Delete instance | ✅ | ❌ | ❌ |
-| | Elasticsearch Instance Details | Instance overview | ✅ | ✅ | ✅ |
-| | | Instance monitoring | ✅ | ✅ | ✅ |
-| | | View instance parameters | ✅ | ✅ | ✅ |
-| | | Modify instance parameters | ✅ | ✅ | ❌ |
-| | | View instance access password | ✅ | ✅ | ❌ |
-| Redis | Redis Instance List | View List | ✅ | ✅ | ✅ |
-| | | Search instance name | ✅ | ✅ | ✅ |
-|| | Create instance | ✅ | ✅ | ❌ |
-| | | Update instance | ✅ | ✅ | ❌ |
-| | | Delete instance | ✅ | ❌ | ❌ |
-| | Redis Instance Details | Instance overview | ✅ | ✅ | ✅ |
-| | | Instance monitoring | ✅ | ✅ | ✅ |
-| | | View instance parameters | ✅ | ✅ | ✅ |
-| | | Modify instance parameters | ✅ | ✅ | ❌ |
-| | | View instance access password | ✅ | ✅ | ❌ |
-| Kafka | Kafka Instance List | View list | ✅ | ✅ | ✅ |
-| | | Search instance name | ✅ | ✅ | ✅ |
-| | | Create instance | ✅ | ✅ | ❌ |
-| | | Update instance | ✅ | ✅ | ❌ |
-| | | Delete instance | ✅ | ❌ | ❌ |
-| | Kafka Instance Details | Instance overview | ✅ | ✅ | ✅ |
-| | | Instance monitoring | ✅ | ✅ | ✅ |
-| | | View instance parameters | ✅ | ✅ | ✅ |
-| | | Modify instance parameters | ✅ | ✅ | ❌ |
-| | | View instance access password | ✅ | ✅ | ❌ |
-| MinIO | MinIO Instance List | View list | ✅ | ✅ | ✅ |
-| | | Search instance name | ✅ | ✅ | ✅ |
-| | | Create instance | ✅ | ✅ | ❌ |
-| | | Update instance| ✅ | ✅ | ❌ |
-| | | Delete instance | ✅ | ❌ | ❌ |
-| | MinIO Instance Details | Instance overview | ✅ | ✅ | ✅ |
-| | | Instance monitoring | ✅ | ✅ | ✅ |
-| | | View instance parameters | ✅ | ✅ | ✅ |
-| | | Modify instance parameters | ✅ | ✅ | ❌ |
-| | | View instance access password | ✅ | ✅ | ❌ |
-| PostgreSQL | PostgreSQL Instance List | View list | ✅ | ✅ | ✅ |
-| | | Search instance name | ✅ | ✅ | ✅ |
-| | | Create instance | ✅ | ✅ | ❌ |
-| | | Update instance | ✅ | ✅ | ❌ |
-| | | Delete instance | ✅ | ❌ | ❌ |
-| | PostgreSQL Instance Details | Instance overview | ✅ | ✅ | ✅ |
-| | | Instance monitoring | ✅ | ✅ | ✅ |
-| | | View instance parameters | ✅ | ✅ | ✅ |
-| | | Modify instance parameters | ✅ | ✅ | ❌ |
-| | | View instance access password| ✅ | ✅ | ❌ |
+| Service | Object | Action | Workspace Admin | Workspace Editor | Workspace Viewer |
+| ------- | ------ | ---------- | --------------- | ---------------- | ---------------- |
+| Configuration | Configuration List | View List  | ✅ | ✅  | ✅  |
+| | | Search by Name | ✅ | ✅  | ✅  |
+| | | Create Configuration | ✅ | ✅  | ❌  |
+| | | Update Configuration | ✅ | ✅  | ❌  |
+| | | Delete Configuration | ✅ | ❌  | ❌  |
+| MySQL | MySQL Instance List  | View List  | ✅ | ✅  | ✅  |
+| | | Search by Name | ✅ | ✅  | ✅  |
+| | | Create Instance | ✅ | ✅  | ❌  |
+| | | Update Instance Configuration | ✅ | ✅  | ❌  |
+| | | Delete Instance | ✅ | ❌  | ❌  |
+| | MySQL Instance Details | Instance Overview | ✅ | ✅  | ✅  |
+| | | Instance Monitoring | ✅ | ✅  | ✅  |
+| | | View Instance Parameters | ✅ | ✅  | ✅  |
+| | | Modify Instance Parameters | ✅ | ✅  | ❌  |
+| | | View Instance Access Password | ✅ | ✅  | ❌  |
+| | | View Instance Backup List | ✅ | ✅  | ✅  |
+| | | Create Instance Backup | ✅ | ✅  | ❌  |
+| | | Modify Instance Auto-Backup Task | ✅ | ✅  | ❌  |
+| | | Create New Instance from Backup | ✅ | ✅  | ❌  |
+| | Backup Configuration Management | Backup Configuration List | ✅ | ✅  | ✅  |
+| | | Create Backup Configuration | ✅ | ✅  | ❌  |
+| | | Modify Backup Configuration | ✅ | ✅  | ❌  |
+| | | Delete Backup Configuration | ✅ | ❌  | ❌  |
+| | Parameters | View Parameters | ✅ | ✅  | ✅  |
+| | | Modify Parameters | ✅ | ✅  | ❌  |
+| RabbitMQ | RabbitMQ Instance List | View List  | ✅ | ✅  | ✅  |
+| | | Search by Name | ✅ | ✅  | ✅  |
+| | | Create Instance | ✅ | ✅  | ❌  |
+| | | Update Instance Configuration | ✅ | ✅  | ❌  |
+| | | Delete Instance | ✅ | ❌  | ❌  |
+| | RabbitMQ Instance Details | Instance Overview | ✅ | ✅  | ✅  |
+| | | Instance Monitoring | ✅ | ✅  | ✅  |
+| | | View Instance Parameters | ✅ | ✅  | ✅  |
+| | | Modify Instance Parameters | ✅ | ✅  | ❌  |
+| | | View Instance Access Password | ✅ | ✅  | ❌  |
+| Elasticsearch | Elasticsearch Instance List | View List  | ✅ | ✅  | ✅  |
+| | | Search by Name | ✅ | ✅  | ✅  |
+| | | Create Instance | ✅ | ✅  | ❌  |
+| | | Update Instance Configuration | ✅ | ✅  | ❌  |
+| | | Delete Instance | ✅ | ❌  | ❌  |
+| | Elasticsearch Instance Details | Instance Overview | ✅ | ✅  | ✅  |
+| | | Instance Monitoring | ✅ | ✅  | ✅  |
+| | | View Instance Parameters | ✅ | ✅  | ✅  |
+| | | Modify Instance Parameters | ✅ | ✅  | ❌  |
+| | | View Instance Access Password | ✅ | ✅  | ❌  |
+| Redis | Redis Instance List | View List  | ✅ | ✅  | ✅  |
+| | | Search by Name | ✅ | ✅  | ✅  |
+| | | Create Instance | ✅ | ✅  | ❌  |
+| | | Update Instance Configuration | ✅ | ✅  | ❌  |
+| | | Delete Instance | ✅ | ❌  | ❌  |
+| | Redis Instance Details | Instance Overview | ✅ | ✅  | ✅  |
+| | | Instance Monitoring | ✅ | ✅  | ✅  |
+| | | View Instance Parameters | ✅ | ✅  | ✅  |
+| | | Modify Instance Parameters | ✅ | ✅  | ❌  |
+| | | View Instance Access Password | ✅ | ✅  | ❌  |
+| | Backup Configuration Management | Backup Configuration List | ✅ | ✅  | ✅  |
+| | | Create Backup Configuration | ✅ | ✅  | ❌  |
+| | | Modify Backup Configuration | ✅ | ✅  | ❌  |
+| | | Delete Backup Configuration | ✅ | ❌  | ❌  |
+| | Parameters | View Parameters | ✅ | ✅  | ✅  |
+| | | Modify Parameters | ✅ | ✅  | ❌  |
+| Kafka | Kafka Instance List | View List  | ✅ | ✅  | ✅  |
+| | | Search by Name | ✅ | ✅  | ✅  |
+| | | Create Instance | ✅ | ✅  | ❌  |
+| | | Update Instance Configuration | ✅ | ✅  | ❌  |
+| | | Delete Instance | ✅ | ❌  | ❌  |
+| | Kafka Instance Details | Instance Overview | ✅ | ✅  | ✅  |
+| | | Instance Monitoring | ✅ | ✅  | ✅  |
+| | | View Instance Parameters | ✅ | ✅  | ✅  |
+| | | Modify Instance Parameters | ✅ | ✅  | ❌  |
+| | | View Instance Access Password | ✅ | ✅  | ❌  |
+| | Parameters | View Parameters | ✅ | ✅  | ✅  |
+| | | Modify Parameters | ✅ | ✅  | ❌  |
+| MinIO | MinIO Instance List | View List  | ✅ | ✅  | ✅  |
+| | | Search by Name | ✅ | ✅  | ✅  |
+| | | Create Instance | ✅ | ✅  | ❌  |
+| | | Update Instance Configuration | ✅ | ✅  | ❌  |
+| | | Delete Instance | ✅ | ❌  | ❌  |
+| | MinIO Instance Details | Instance Overview | ✅ | ✅  | ✅  |
+| | | Instance Monitoring | ✅ | ✅  | ✅  |
+| | | View Instance Parameters | ✅ | ✅  | ✅  |
+| | | Modify Instance Parameters | ✅ | ✅  | ❌  |
+| | | View Instance Access Password | ✅ | ✅  | ❌  |
+| | Parameters | View Parameters | ✅ | ✅  | ✅  |
+| | | Modify Parameters | ✅ | ✅  | ❌  |
+| PostgreSQL  | PostgreSQL Instance List | View List  | ✅ | ✅  | ✅  |
+| | | Search by Name | ✅ | ✅  | ✅  |
+| | | Create Instance | ✅ | ✅  | ❌  |
+| | | Update Instance Configuration | ✅ | ✅  | ❌  |
+| | | Delete Instance | ✅ | ❌  | ❌  |
+| | PostgreSQL Instance Details | Instance Overview | ✅ | ✅  | ✅  |
+| | | Instance Monitoring | ✅ | ✅  | ✅  |
+| | | View Instance Parameters | ✅ | ✅  | ✅  |
+| | | Modify Instance Parameters | ✅ | ✅  | ❌  |
+| | | View Instance Access Password | ✅ | ✅  | ❌  |
+| | Parameters | View Parameters | ✅ | ✅  | ✅  |
+| | | Modify Parameters | ✅ | ✅  | ❌  |

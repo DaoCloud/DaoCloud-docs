@@ -9,6 +9,17 @@ This page lists the Release Notes of the MySQL database, so that you can underst
 
 *[mcamel-mysql]: "mcamel" is the dev name for DaoCloud's middlewares, and "mysql" is a popular relational database
 
+## 2024-04-30
+
+### v0.17.0
+
+- **Added** MySQL instance topology.
+- **Added** a prompt for namespace quota.
+- **Upgraded** MGR operator to v8.3.0-2.1.2.
+- **Fixed** the issue where the default deployed MGR instance details page could not display passwords and configuration parameters.
+- **Fixed** the issue where MGR instances did not have delay metrics.
+- **Fixed** the issue where the master-slave delay was not selected by default in the instance monitoring dashboard.
+
 ## 2024-03-31
 
 ### v0.16.0
