@@ -25,13 +25,13 @@
 
     | CPU 架构 | 版本   | 下载地址   |
     | -------- | ----- | -------- |
-    | AMD64    | v0.16.1 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.16.1-amd64.tar> |
+    | AMD64    | v0.17.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.17.0-amd64.tar> |
 
     下载完毕后解压离线包：
 
     ```bash
-    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.16.1-amd64.tar
-    tar -xvf offline-v0.16.1-amd64.tar
+    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.17.0-amd64.tar
+    tar -xvf offline-v0.17.0-amd64.tar
     ```
 
 3. 下载 UnionTech Server V20 1020a ISO 镜像文件。

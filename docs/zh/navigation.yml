@@ -11,6 +11,7 @@ nav:
               - 适用场景: dce/scenario.md
               - K8s 认证服务商: dce/kcsp.md
               - DCE 5.0 Release Notes:
+                  - 20240430 版本发布: dce/dce-rn/20240430.md
                   - 20240330 版本发布: dce/dce-rn/20240330.md
                   - 20240130 版本发布: dce/dce-rn/20240130.md
                   - 20231231 版本发布: dce/dce-rn/20231231.md
@@ -53,6 +54,7 @@ nav:
                   - UOS V20 (1020a): install/os-install/uos-v20-install-dce5.0.md
                   - Oracle Linux R9/R8 U1: install/os-install/oracleLinux-install-dce5.0.md
                   - TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
+                  - NeoKylin Linux Advanced Server V7Update6: install/os-install/neokylin-install-dce5.0.md
                   - 其他 Linux: install/os-install/otherlinux.md
               - 升级:
                   - 概述: install/upgrade-des.md
@@ -1296,6 +1298,7 @@ nav:
   - 博客:
       - 博文索引: blogs/index.md
       - 2024:
+          - OpenAI 大语言模型规范: blogs/240509-model-spec.md
           - 全球大规模AI基础设施形势调研: blogs/0429-ai-survey.md
           - 一颗豆荚入选CNCF Sandbox: blogs/240416-kubean.md
           - 云原生人工智能白皮书: blogs/240410-cnai-wp.md

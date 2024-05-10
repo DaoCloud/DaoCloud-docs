@@ -12,6 +12,10 @@ technology, sorted by date by default.
 
 ## 2024
 
+- [20240509 | Large Language Model Spec](./240509-model-spec.md)
+
+    This is the first draft of LLM Spec, a document that specifies desired behavior for our models in the OpenAI API and ChatGPT. It includes a set of core objectives, as well as guidance on how to deal with conflicting objectives or instructions.
+
 - [20240410 | Cloud Native AI Whitepapaer](./240410-cnai-wp.md)
 
     This paper presents a brief overview of the state-of-the-art AI/ML techniques, followed by what CN technologies offer, covering the next challenges and gaps before discussing evolving solutions.

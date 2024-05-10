@@ -162,10 +162,10 @@ precheck pass..
 
 1. 在 kind 主机下载 dce5-installer 二进制文件。
 
-    假定 VERSION 为 v0.16.1
+    假定 VERSION 为 v0.17.0
 
     ```shell
-    export VERSION=v0.16.1
+    export VERSION=v0.17.0
     curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer
     ```

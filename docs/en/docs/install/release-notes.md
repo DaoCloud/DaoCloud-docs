@@ -15,6 +15,28 @@ the evolution path and feature changes of each version.
 *[Kpanda]: Dev codename for Container Management in DCE 5.0
 *[Skoala]: Dev codename for Microservice Engine in DCE 5.0
 
+## 2024-04-30
+
+### v0.17.0
+
+#### Improvements
+
+- **Improved** Support downloading binaries and pulling images from the source site without going through the proxy acceleration site
+- **Improved** Refactor Kubean Config, splitting and decoupling templates
+- **Improved** Support disk limitations for docker single-container
+- **Improved** Support setting kpanda's mysql to mgr mode, default mode remains master-slave
+- **Improved** Support multiple architectures for ubuntu ospkg and iso
+- **Improved** Improve error message display for yq
+
+#### Fixes
+
+- **Fixed** the issue where the kubean version cannot be displayed in the prompt message
+- **Fixed** Resolve the problem of merging multi-architecture images
+- **Fixed** Address the issue of outputting scripts through dry-run
+- **Fixed** Resolve the problem of installation process timeout and inability to capture timeout steps
+- **Fixed** insight-agent installation issue
+- **Fixed** Disable the firewall on the host machine before igniting the fire
+
 ## 2024-04-09
 
 ### v0.16.1
