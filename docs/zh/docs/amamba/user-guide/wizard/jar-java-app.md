@@ -34,9 +34,9 @@
     - Tag：为目标镜像打标签，例如版本号 __v1.0__ 。
     - 凭证：选择访问镜像仓库的凭证，例如 __registry-credential__ 。
     - JAVA_OPTS：用来设置 JVM 相关运行参数的变量，例如 __-server -Xms2048m -Xmx2048m -Xss512k__ 。
-    - 构建参数：构建参数会以 __--build-arg__ 的形式传递到 build 命令中，支持将上游制品下载地址、上游镜像下载地址设置为参数，也支持自定义任意参数。
+    - 构建参数：传递 docker build 命令的参数，例如 `--add-host`。
 
-        ![流水线构建](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/jar03.png)
+        ![流水线构建](../../images/jar03.png)
 
 4. 参考下列要求填写容器配置，然后点击 __下一步__ 。
 
