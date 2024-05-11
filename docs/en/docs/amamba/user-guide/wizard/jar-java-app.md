@@ -1,8 +1,13 @@
+---
+MTPE: windsonsesa
+date: 2024-05-11
+---
+
 # Deploy Java Applications Based on Jar Packages
 
 Workbench supports building applications in four ways: [Git Repo](create-app-git.md), Jar package, container image, and Helm chart. This article describes how to deploy a Java application via a Jar file.
 
-## prerequisites
+## Prerequisites
 
 1. [Create a workspace](../../../ghippo/user-guide/workspace/workspace.md) and a [User](../../../ghippo/user-guide/access-control/user.md). The user needs to join this workspace and have the __Workspace Editor__ role.
 
@@ -26,17 +31,17 @@ Workbench supports building applications in four ways: [Git Repo](create-app-git
     - Application: Select the group to which the application belongs. Empty means do not group this app.
     - Replicas: Set the number of Pods for the application.
 
-        ![Basic Info](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/jar02.png)
+    ![Basic Info](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/jar02.png)
 
 3. Refer to the following requirements to configure the pipeline, and then click __Next__ .
 
-    - Target Image Address: Name the target image, including the storage path of the target image, for example __release-ci.daocloud.io/test-lfj/fromjar__ .
-    - Tag: Tag the target image, such as the version number __v1.0__ .
-    - Credential: Select the credential to access the registry, such as __registry-credential__ .
-    - JAVA_OPTS: Variables used to set JVM-related operating parameters, such as __-server -Xms2048m -Xmx2048m -Xss512k__ .
-    - Build Parameters: Build parameters will be passed to the build command in the form of __--build-arg__ , which supports setting the upstream product download address and upstream mirror download address as parameters, and also supports custom arbitrary parameters.
+    - Target Image Address: Name the target image, including the storage path of the target image, for example __release-ci.daocloud.io/test-lfj/fromjar__
+    - Tag: Tag the target image, such as the version number __v1.0__
+    - Credential: Select the credential to access the registry, such as __registry-credential__
+    - JAVA_OPTS: Variables used to set JVM-related operating parameters, such as __-server -Xms2048m -Xmx2048m -Xss512k__
+    - **Build Parameters** : Pass parameters to the `docker build` command, such as `--add-host`
 
-        ![Build Pipiline](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/jar03.png)
+    ![Build Pipiline](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/jar03.png)
 
 4. Fill in the container configuration with reference to the following requirements, and click __Next__ .
 
@@ -55,16 +60,18 @@ Workbench supports building applications in four ways: [Git Repo](create-app-git
 
     - Data Storage: Configure the settings for container mounted data volumes and data persistence.
 
-        ![Container Settings](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/jar04.png)
+    ![Container Settings](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/jar04.png)
 
 5. Refer to the following instructions to choose whether to enable advanced features, and then click __Create and Upload Jar Package__ .
 
     - Service Mesh: Choose whether to enable the [Service Mesh for DCE 5.0](../../../mspider/intro/index.md) module to govern microservice traffic.
     - Microservice Engine: Whether to connect the newly created application to the [DCE 5.0 Microservice Engine](../../../skoala/intro/index.md) module.
+        
         > For the configuration of the microservice engine, please refer to [Build Microservice Application Based on Git Repository](create-app-git.md).
+    
     - Observable: Select whether to enable grayscale publishing. For more information about canary release, please refer to [Canary Release](../release/canary.md).
 
-        ![Advanced Settings](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/jar05.png)
+    ![Advanced Settings](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/jar05.png)
 
 6. Select the file to be uploaded and click __OK__ .
 
