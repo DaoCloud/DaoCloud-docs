@@ -20,6 +20,10 @@ technology, sorted by date by default.
 
     This paper presents a brief overview of the state-of-the-art AI/ML techniques, followed by what CN technologies offer, covering the next challenges and gaps before discussing evolving solutions.
 
+- [20240416 | Kubean Enters CNCF Sandbox](./240416-kubean.md)
+
+    On April 15, 2024, after [an 11-member CNCF TAG committee vote](https://github.com/cncf/sandbox/issues/49), with 8 in favor and 3 not voting, the results exceeded the 66% threshold, successfully entering the well-known Sandbox for further incubation.
+
 - [20240326 | Platform engineering, API platforms and intelligent agents dominate innovation at KubeCon Paris](./240326-kubecon-eu.md)
 
     The sizzle at this past week’s [KubeCon + CloudNativeCon Europe](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/)
