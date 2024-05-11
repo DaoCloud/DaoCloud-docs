@@ -48,8 +48,8 @@
     ```yaml
     generic:
       argocd:
-        host: argocd-server.argocd.svc.cluster.local:80  # (1)
-        namespace: argocd  # (2)
+        host: argocd-server.argocd.svc.cluster.local:80  # (1)!
+        namespace: argocd  # (2)!
     ```
 
     1. argocd 的服务地址，格式为：argocd-server 的服务名。命名空间.svc.cluster.local:80
@@ -71,6 +71,8 @@
 
 ```shell
 [root@demo-dev-master1 ~]# kubectl get cm -n argocd argocd-cm -o yaml
+```
+```yaml
 apiVersion: v1
 data:
   accounts.amamba: apiKey
@@ -124,8 +126,10 @@ metadata:
     ```yaml
     generic:
       kubevela:
-        namespace: kubevela-system # kubevela 安装的命名空间
+        namespace: kubevela-system # (1)!
     ```
+
+    1. kubevela 安装的命名空间
 
     ![vela02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/vela02.png)
 
@@ -160,36 +164,38 @@ metadata:
 
     - 定义 `value.yaml` 中的 `initContainers` 字段下的参数：
 
-      ```yaml
-      argo-rollouts:
-        controller:
-          initContainers:                                    
-            - name: copy-contour-plugin
-              image: release.daocloud.io/skoala/rollouts-plugin-trafficrouter-contour:v0.3.0 # 离线化时需要在镜像地址前增加离线化镜像仓库地址
-              command: ["/bin/sh", "-c"]                    
-              args:
-                - cp /bin/rollouts-plugin-trafficrouter-contour /plugins
-              volumeMounts:                                  
-                - name: contour-plugin
-                  mountPath: /plugins
-          trafficRouterPlugins:                              
-            trafficRouterPlugins: |-
-              - name: argoproj-labs/contour
-                location: "file:///plugins/rollouts-plugin-trafficrouter-contour" 
-          volumes:                                           
-            - name: contour-plugin
-              emptyDir: {}
-          volumeMounts:                                      
-            - name: contour-plugin
-              mountPath: /plugins
-      ```
+        ```yaml
+        argo-rollouts:
+          controller:
+            initContainers:                                    
+              - name: copy-contour-plugin
+                image: release.daocloud.io/skoala/rollouts-plugin-trafficrouter-contour:v0.3.0 # (1)!
+                command: ["/bin/sh", "-c"]                    
+                args:
+                  - cp /bin/rollouts-plugin-trafficrouter-contour /plugins
+                volumeMounts:                                  
+                  - name: contour-plugin
+                    mountPath: /plugins
+            trafficRouterPlugins:                              
+              trafficRouterPlugins: |-
+                - name: argoproj-labs/contour
+                  location: "file:///plugins/rollouts-plugin-trafficrouter-contour" 
+            volumes:                                           
+              - name: contour-plugin
+                emptyDir: {}
+            volumeMounts:                                      
+              - name: contour-plugin
+                mountPath: /plugins
+        ```
+
+        1. 离线化时需要在镜像地址前增加离线化镜像仓库地址
 
     - 在argo-rollouts 安装完成后，还需要执行一下命令去修改clusterRole：
 
-      ```shell
-      # clusterRole的名称需要根据实际的安装情况来修改。
-      kubectl patch clusterrole argo-rollouts --type='json' -p='[{"op": "add", "path": "/rules/-", "value": {"apiGroups":["projectcontour.io"],"resources":["httpproxies"],"verbs":["get","list","watch","update","patch","delete"]}}]'
-      ```
+        ```shell
+        # clusterRole的名称需要根据实际的安装情况来修改。
+        kubectl patch clusterrole argo-rollouts --type='json' -p='[{"op": "add", "path": "/rules/-", "value": {"apiGroups":["projectcontour.io"],"resources":["httpproxies"],"verbs":["get","list","watch","update","patch","delete"]}}]'
+        ```
 
     Rollout 部署成功后，可以创建金丝雀发布界面选择 contour 作为流量控制。
 

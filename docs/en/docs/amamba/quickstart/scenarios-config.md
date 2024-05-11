@@ -1,45 +1,50 @@
-# Jenkins scene configuration
+---
+MTPE: windsonsesa
+date: 2024-05-11
+---
 
-Jenkins is divided into master and agent. The master is mainly used for storing configuration, plug-ins and coordination, and the agent and the master communicate through the jnlp container in the Pod of the agent. The work of the pipeline is all on the agent, which is a big resource consumer.
+# Jenkins Configuration Scenarios
 
-The configuration recommended in this article is based on the fact that all pipelines run in parallel by the customer will not cause the entire cluster resource to crash, especially the jenkins master will not experience abnormal situations such as being evicted. How many pipelines can be parallelized mainly depends on the resource consumption of the actual agent and the size of the K8s cluster resources.
+Jenkins is divided into master and agent components. The master primarily handles configuration storage, plugin management, and coordination, while agents communicate with the master through the jnlp container inside the agent pod. Pipeline tasks are executed on agents, which are significant resource consumers.
 
-## Scenario 1: 50 pipelines in parallel
+The configurations recommended here are designed to prevent cluster resource crashes during concurrent execution of all pipelines, especially to avoid issues like eviction of the Jenkins master. The number of pipelines that can run in parallel largely depends on the resource consumption of the actual agents and the capacity of the Kubernetes cluster.
 
-### master configuration
+## Scenario 1: Running 50 Concurrent Pipelines
+
+### Master Configuration
 
 ```yaml
 resources:
   requests:
-    cpu: "1"
+    cpu: "2"
     memory: "2Gi"
   limits:
     cpu: "2"
-    memory: "4Gi"
+    memory: "2Gi"
   JavaOpts: |-
-    -XX:MaxRAMPercentage=70.0 
-    -XX:MaxRAM=3g
-    -Dhudson.slaves.NodeProvisioner.initialDelay=20
-    -Dhudson.slaves.NodeProvisioner.MARGIN=50
-    -Dhudson.slaves.NodeProvisioner.MARGIN0=0.85
-    -Dhudson.model.LoadStatistics.clock=5000
-    -Dhudson.model.LoadStatistics.decay=0.2
-    -Dhudson.slaves.NodeProvisioner.recurrencePeriod=5000
-    -Dhudson.security.csrf.DefaultCrumbIssuer.EXCLUDE_SESSION_ID=true
-    -Dio.jenkins.plugins.casc.ConfigurationAsCode.initialDelay=10000
-    -Djenkins.install.runSetupWizard=false
-    -XX:+UseG1GC
-    -XX:+UseStringDeduplication
-    -XX:+ParallelRefProcEnabled
-    -XX:+DisableExplicitGC
-    -XX:+UnlockDiagnosticVMOptions
-    -XX:+UnlockExperimentalVMOptions
-    -javaagent:/otel-auto-instrumentation/javaagent.jar
+        -XX:+PrintFlagsFinal -XX:MaxRAMPercentage=70.0
+        -XX:MinHeapFreeRatio=8 -XX:MaxHeapFreeRatio=15
+        -XX:MinRAMPercentage=20.0 -XX:-UseAdaptiveSizePolicy
+        -XX:-ShrinkHeapInSteps
+        -Dhudson.slaves.NodeProvisioner.initialDelay=20
+        -Dhudson.slaves.NodeProvisioner.MARGIN=50
+        -Dhudson.slaves.NodeProvisioner.MARGIN0=0.85
+        -Dhudson.model.LoadStatistics.clock=5000
+        -Dhudson.model.LoadStatistics.decay=0.2
+        -Dhudson.slaves.NodeProvisioner.recurrencePeriod=5000
+        -Dhudson.security.csrf.DefaultCrumbIssuer.EXCLUDE_SESSION_ID=true
+        -Dio.jenkins.plugins.casc.ConfigurationAsCode.initialDelay=10000
+        -Djenkins.install.runSetupWizard=false  
+        -XX:+UseConcMarkSweepGC
+        -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled
+        -XX:+DisableExplicitGC -XX:+UnlockDiagnosticVMOptions
+        -XX:+UnlockExperimentalVMOptions
+        -javaagent:/otel-auto-instrumentation/javaagent.jar
 ```
 
-### agent configuration
+### Agent Configuration
 
-> Please refer to the actual pipeline consumption resource settings, because the main resource consumption comes from the agent.
+Adjust based on the actual resource consumption of the pipelines, as the primary resource usage comes from the agents.
 
 ```yaml
 resources:
@@ -51,21 +56,23 @@ resources:
     memory: "128Mi"
 ```
 
-## Scenario 2: Parallel 100 pipelines
+## Scenario 2: Running 100 Concurrent Pipelines
 
-### master configuration
+### Master Configuration
 
 ```yaml
 resources:
   requests:
     cpu: "2"
-    memory: "4Gi"
+    memory: "3Gi"
   limits:
     cpu: "2"
-    memory: "8Gi"
+    memory: "3Gi"
   JavaOpts: |-
-    -XX:MaxRAMPercentage=70.0 
-    -XX:MaxRAM=6g
+    -XX:+PrintFlagsFinal -XX:MaxRAMPercentage=70.0
+    -XX:MinHeapFreeRatio=8 -XX:MaxHeapFreeRatio=15
+    -XX:MinRAMPercentage=20.0 -XX:-UseAdaptiveSizePolicy
+    -XX:-ShrinkHeapInSteps
     -Dhudson.slaves.NodeProvisioner.initialDelay=20
     -Dhudson.slaves.NodeProvisioner.MARGIN=50
     -Dhudson.slaves.NodeProvisioner.MARGIN0=0.85
@@ -74,35 +81,35 @@ resources:
     -Dhudson.slaves.NodeProvisioner.recurrencePeriod=5000
     -Dhudson.security.csrf.DefaultCrumbIssuer.EXCLUDE_SESSION_ID=true
     -Dio.jenkins.plugins.casc.ConfigurationAsCode.initialDelay=10000
-    -Djenkins.install.runSetupWizard=false
-    -XX:+UseG1GC
-    -XX:+UseStringDeduplication
-    -XX:+ParallelRefProcEnabled
-    -XX:+DisableExplicitGC
-    -XX:+UnlockDiagnosticVMOptions
+    -Djenkins.install.runSetupWizard=false  
+    -XX:+UseConcMarkSweepGC
+    -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled
+    -XX:+DisableExplicitGC -XX:+UnlockDiagnosticVMOptions
     -XX:+UnlockExperimentalVMOptions
     -javaagent:/otel-auto-instrumentation/javaagent.jar
 ```
 
-### agent configuration
+### Agent Configuration
 
-> Refer to the agent configuration of Scenario 1
+Refer to the agent configuration in [Scenario 1](#agent).
 
-## Scenario 3: Parallel 200 pipelines
+## Scenario 3: Running 200 Concurrent Pipelines
 
-### master configuration
+### Master Configuration
 
 ```yaml
 resources:
   requests:
-    cpu: "4"
-    memory: "8Gi"
+    cpu: "2"
+    memory: "3Gi"
   limits:
-    cpu: "8"
-    memory: "12Gi"
+    cpu: "2"
+    memory: "3Gi"
   JavaOpts: |-
-    -XX:MaxRAMPercentage=70.0 
-    -XX:MaxRAM=10g
+    -XX:+PrintFlagsFinal -XX:MaxRAMPercentage=70.0
+    -XX:MinHeapFreeRatio=8 -XX:MaxHeapFreeRatio=15
+    -XX:MinRAMPercentage:20.0 -XX:-UseAdaptiveSizePolicy
+    -XX:-ShrinkHeapInSteps
     -Dhudson.slaves.NodeProvisioner.initialDelay=20
     -Dhudson.slaves.NodeProvisioner.MARGIN=50
     -Dhudson.slaves.NodeProvisioner.MARGIN0=0.85
@@ -111,16 +118,22 @@ resources:
     -Dhudson.slaves.NodeProvisioner.recurrencePeriod=5000
     -Dhudson.security.csrf.DefaultCrumbIssuer.EXCLUDE_SESSION_ID=true
     -Dio.jenkins.plugins.casc.ConfigurationAsCode.initialDelay=10000
-    -Djenkins.install.runSetupWizard=false
-    -XX:+UseG1GC
-    -XX:+UseStringDeduplication
-    -XX:+ParallelRefProcEnabled
-    -XX:+DisableExplicitGC
-    -XX:+UnlockDiagnosticVMOptions
+    -Djenkins.install.runSetupWizard=false  
+    -XX:+UseConcMarkSweepGC
+    -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled
+    -XX:+DisableExplicitGC -XX:+UnlockDiagnosticVMOptions
     -XX:+UnlockExperimentalVMOptions
     -javaagent:/otel-auto-instrumentation/javaagent.jar
 ```
 
-### agent configuration
+### Agent Configuration
 
-> Refer to the agent configuration of Scenario 1
+Refer to the agent configuration in [Scenario 1](#agent).
+
+!!! note 
+
+    - When the Jenkins Pod restarts due to OOM, consider increasing the master's memory.
+      To ensure QoS, it's recommended that the master's memory and CPU requests and limits remain consistent.
+    - If there are timeouts in pipeline module interface calls, consider increasing the master's CPU
+    - When the master's memory configuration exceeds __4G__,
+      it is advisable to change __JavaOpts__ from __-XX:+UseConcMarkSweepGC__ to __-XX:+UseG1GC__

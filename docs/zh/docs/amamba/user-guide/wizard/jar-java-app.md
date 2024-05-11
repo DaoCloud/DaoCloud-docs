@@ -26,17 +26,17 @@
     - 所属应用：原生应用名称，支持从已有的原生应用列表中选择，也可以新建，默认与名称一致。
     - 实例数：填写实例的数量，Pod 的数量。
 
-        ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/git01.png)
+    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/git01.png)
 
 3. 参考下列要求配置流水线，然后点击 __下一步__ 。
 
-    - 目标镜像地址：为目标镜像命名，需包含目标镜像的存储路径，例如 __release-ci.daocloud.io/test-lfj/fromjar__ 。
-    - Tag：为目标镜像打标签，例如版本号 __v1.0__ 。
-    - 凭证：选择访问镜像仓库的凭证，例如 __registry-credential__ 。
-    - JAVA_OPTS：用来设置 JVM 相关运行参数的变量，例如 __-server -Xms2048m -Xmx2048m -Xss512k__ 。
-    - 构建参数：传递 docker build 命令的参数，例如 `--add-host`。
+    - 目标镜像地址：为目标镜像命名，需包含目标镜像的存储路径，例如 __release-ci.daocloud.io/test-lfj/fromjar__
+    - Tag：为目标镜像打标签，例如版本号 __v1.0__
+    - 凭证：选择访问镜像仓库的凭证，例如 __registry-credential__
+    - JAVA_OPTS：用来设置 JVM 相关运行参数的变量，例如 __-server -Xms2048m -Xmx2048m -Xss512k__
+    - 构建参数：传递 docker build 命令的参数，例如 `--add-host`
 
-        ![流水线构建](../../images/jar03.png)
+    ![流水线构建](../../images/jar03.png)
 
 4. 参考下列要求填写容器配置，然后点击 __下一步__ 。
 
@@ -55,16 +55,18 @@
 
     - 数据存储：配置容器挂载数据卷和数据持久化的设置。
 
-        ![容器配置](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/jar04.png)
+    ![容器配置](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/jar04.png)
 
 5. 参考下列说明选择是否开启高级功能，然后点击 __创建并上传 Jar 包__ 。
 
     - 服务网格：选择是否启用 [DCE 5.0 的服务网格](../../../mspider/intro/index.md)模块来治理微服务流量。
     - 微服务引擎：是否将新创建的应用接入 [DCE 5.0 的微服务引擎](../../../skoala/intro/index.md)模块。
+
         > 有关微服务引擎的配置，可参考[基于 Git 仓构建微服务应用](create-app-git.md)。
+        
     - 可观测性：支持开启指标监控、链路追踪、JVM 监控。
 
-        ![高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/jar01.png)
+    ![高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/jar01.png)
 
 6. 选择需要上传的文件，点击 __确定__ 。
 
