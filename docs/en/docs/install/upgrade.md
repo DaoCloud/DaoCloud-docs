@@ -1,4 +1,9 @@
-# Upgrading DCE 5.0 Modules
+---
+MTPE: windsonsea
+date: 2024-05-11
+---
+
+# Upgrade DCE 5.0 Modules
 
 The upgrade of DCE 5.0 modules involves upgrading the product functionality modules and the infrastructure modules of DCE 5.0.
 
@@ -78,7 +83,7 @@ spec:
  
   addonPackage:
   binaries:
-    type: builtin  # (1)
+    type: builtin  # (1)!
 ```
 
 1. `official-service` (if omitted or empty), `builtin`, or `external`

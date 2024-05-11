@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+date: 2024-05-11
+---
+
 # Deploy a K8s Cluster from Scratch to DCE 5.0 Community
 
 This article covers the installation of DCE 5.0 Community from scratch in a 3-node cluster, including details on Kubernetes cluster, dependencies, networking, storage, and more considerations.

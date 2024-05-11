@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+date: 2024-05-11
+---
+
 # manifest.yaml
 
 This YAML file contains information about all modules of DCE 5.0, which are mainly divided into the base configuration module and product feature modules.

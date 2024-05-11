@@ -1,4 +1,9 @@
-# Using External Container Registry and Chart Repository to Store Images and Chart Packages
+---
+MTPE: windsonsea
+date: 2024-05-11
+---
+
+# Use External Container Registry and Chart Repository to Store Images and Chart Packages
 
 This document describes how to use third-party image repositories and chart repositories.
 

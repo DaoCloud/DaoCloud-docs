@@ -1,6 +1,11 @@
-# Install DCE Community on a Kind Cluster
+---
+MTPE: windsonsea
+date: 2024-05-11
+---
 
-This page explains how to install DCE Community package on a kind cluster online.
+# Install DCE Community in a Kind Cluster
+
+This page explains how to install DCE Community package in a kind cluster online.
 
 !!! note
 

@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+date: 2024-05-11
+---
+
 # Installation Troubleshooting
 
 This page summarizes common issues with the installer and provides troubleshooting solutions to help users quickly resolve problems encountered during installation and operation.
@@ -144,6 +149,6 @@ podman restart $(podman ps | grep installer-control-plane | awk '{print $1}')
 
 When deploying Ubuntu 20.04 as the bootstrap machine, the absence of ip6tables can cause errors during the deployment process.
 
-Please refer to the [Podman known issue](https://github.com/containers/podman/issues/3655).
+Refer to the [Podman known issue](https://github.com/containers/podman/issues/3655).
 
 Temporary solution: Manually install iptables, refer to [Install and Use iptables on Ubuntu 22.04](https://orcacore.com/install-use-iptables-ubuntu-22-04/#:~:text=In%20this%20guide%2C%20we%20want%20to%20teach%20you,your%20network%20traffic%20packets%20by%20using%20these%20filters).

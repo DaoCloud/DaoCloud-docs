@@ -1,16 +1,21 @@
+---
+MTPE: windsonsea
+date: 2024-05-11
+---
+
 # Install DCE 5.0 Enterprise offline
 
-Please ensure that you have read and understood the [deployment requirements](deploy-requirements.md),
+Ensure that you have read and understood the [deployment requirements](deploy-requirements.md),
 [deployment architecture](deploy-arch.md), and [preparation](prepare.md) before installation.
 
-Please refer to the [release notes](../release-notes.md) to avoid known issues with the
+Refer to the [release notes](../release-notes.md) to avoid known issues with the
 installed version and to check for new features.
 
 ## Offline Installation Steps
 
 ### Step 1: Download the Offline Package
 
-Please download the corresponding offline package based on your business environment.
+Download the corresponding offline package based on your business environment.
 
 #### Offline Image Package (Required)
 
@@ -37,7 +42,7 @@ The ISO format operating system image file should be downloaded based on the
 different operating systems during the installation process.
 
 The ISO operating system image file needs to be configured in
-[clusterConfig.yaml](./cluster-config.md), so please download according to the operating system.
+[clusterConfig.yaml](./cluster-config.md), so download for your operating system.
 
 | CPU Architecture | Operating System Version | Download |
 | :--------------- | :---------------------- | :-------- |
@@ -53,7 +58,7 @@ The ISO operating system image file needs to be configured in
 !!! note
 
     Kylin operating system requires providing personal information to download and use.
-    Please select V10 (Sword) SP2 when downloading.
+    Select V10 (Sword) SP2 when downloading.
 
 #### osPackage Offline Packages (Required)
 
@@ -68,7 +73,7 @@ operating system and defines `osPackagePath` in [clusterConfig.yaml](./cluster-c
 operating systems, which can be found at <https://github.com/kubean-io/kubean/releases>.
 
 Currently, the installer version requires the osPackage offline package version to match.
-Please download the osPackage offline package based on the corresponding version:
+Download the osPackage offline package based on the corresponding version:
 
 === "V0.17.0"
 
@@ -263,5 +268,5 @@ For detailed parameter introduction, refer to [clusterConfig.yaml](cluster-confi
 
         Please record the provided URL for future access.
 
-1. After successfully installing DCE 5.0 Enterprise Edition, please contact us for
+1. After successfully installing DCE 5.0 Enterprise, contact us for
    authorization: email info@daocloud.io or call 400 002 6898.

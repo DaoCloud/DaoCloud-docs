@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+date: 2024-05-11
+---
+
 # Deployment Architecture
 
 DCE 5.0 offers three deployment architectures: [beginner mode](#beginner-mode), [4-nodes](#4-node-mode), and [7-nodes](#7-node-mode-1--6).
