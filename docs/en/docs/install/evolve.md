@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+date: 2024-05-11
+---
+
 # Upgrade DCE 5.0 Standard to Platinum
 
 DCE 5.0 supports multiple versions, and all versions except DCE Community are DCE 5.0 Enterprise. This page demonstrates how to upgrade from DCE 5.0 Standard to DCE 5.0 Platinum.

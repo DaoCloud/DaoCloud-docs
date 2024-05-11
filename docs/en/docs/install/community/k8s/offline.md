@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+date: 2024-05-11
+---
+
 # Offline Install in a Standard Kubernetes Cluster
 
 This page will guide you to install DCE Community package offline in a standard Kubernetes cluster, which is recommended in the production environment.

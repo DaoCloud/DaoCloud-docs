@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+date: 2024-05-11
+---
+
 # DCE 5.0 All-in-One Deployment
 
 This document explains how to deploy DCE 5.0 on an all-in-one machine.
