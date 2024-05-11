@@ -1,3 +1,8 @@
+---
+MTPE: windsonsesa
+date: 2024-05-11
+---
+
 # Spidernet Release Notes
 
 This page lists the Release Notes of Spidernet, so that you can understand the
@@ -10,12 +15,25 @@ evolution path and feature changes of each version.
 *[SR-IOV]: Single Root IO Virtualization
 *[RDMA]: Remote Direct Memory Access, a popular tech to support LLM and GPT
 
+## 2023-04-30
+
+### v0.14.0
+
+- Compatibile with Spiderpool v0.9.1
+- Compatibile with EgressGateway v0.5.1
+
+#### Improvements
+
+- **Improved** workload network configuration, supports seamless Multus CR, allowing applications to directly select IPpool
+- **Fixed** an issue where the namespace in multusName was empty, now automatically concatenating the namespace where Spiderpool resides
+- **Added** support for creating SR-IOV node policies, configuring either Ethernet or InfiniBand network types
+
 ## 2023-01-30
 
 ### v0.13.0
 
-- Compatibility with Spiderpool v0.9.1
-- Compatibility with EgressGateway v0.4.0
+- Compatibile with Spiderpool v0.9.1
+- Compatibile with EgressGateway v0.4.0
 
 #### New Features
 
