@@ -1262,6 +1262,7 @@ nav:
       - 2024:
           - Large Language Model Spec: blogs/240509-model-spec.md
           - Cloud Native AI Whitepapaer: blogs/240410-cnai-wp.md
+          - Kubean Enters CNCF Sandbox: blogs/240416-kubean.md
           - Innovations at KubeCon Paris: blogs/240326-kubecon-eu.md
           - Create a Open Source Commercial Ecosystem: blogs/240301-osc-eco.md
           - Book - Managing Cloud Native Data on Kubernetes: blogs/240203-book.md
