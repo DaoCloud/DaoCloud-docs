@@ -64,7 +64,7 @@ DCE 5.0 包含的众多子模块可以单独下载，按需对每个模块进行
 DCE 5.0 还提供了各种精选中间件：
 
 | 中间件         | 文件大小  | 下载     | 更新日期    |
-|---------------| -------- |------------------------------------------------------------|------------|
+|---------------| -------- |---------|------------|
 | Elasticsearch |979.12 MB| [:arrow_right: 下载页](./modules/middleware/elasticsearch.md) |2024-05-08|
 | Kafka |984.04 MB| [:arrow_right: 下载页](./modules/middleware/kafka.md) |2024-05-08|
 | MinIO |220.65 MB| [:arrow_right: 下载页](./modules/middleware/minio.md) |2024-05-08|
