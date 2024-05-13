@@ -40,7 +40,7 @@
 
 2. 点击 __添加授权__ 按钮。在 __添加命名空间权限__ 页面中，选择目标集群、目标命名空间，以及待授权的用户/用户组后，点击 __确定__ 。
 
-    目前支持的命名空间角色为 NS Admin、NS Edit、NS View，详情权限可参考[权限说明](permission-brief.md)。如需给多个用户/用户组同时进行授权，可点击 __添加用户权限__ 进行多次添加。点击 __确定__ 完成权限授权。
+    目前支持的命名空间角色为 NS Admin、NS Editor、NS Viewer，详情权限可参考[权限说明](permission-brief.md)。如需给多个用户/用户组同时进行授权，可点击 __添加用户权限__ 进行多次添加。点击 __确定__ 完成权限授权。
 
     ![添加命名空间权限](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/perm06.png)
 

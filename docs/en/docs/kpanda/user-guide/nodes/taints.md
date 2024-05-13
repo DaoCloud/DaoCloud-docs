@@ -11,7 +11,7 @@ For more details about taints, refer to the official Kubernetes documentation [T
 
 ## Precautions
 
-1. The current operating user should have [__NS Edit__](../permissions/permission-brief.md) role authorization or other higher permissions.
+1. The current operating user should have [__NS Editor__](../permissions/permission-brief.md) role authorization or other higher permissions.
 2. After adding a taint to a node, only Pods that can tolerate the taint can be scheduled to the node. <!--For how to set tolerance for Pod, refer to -->
 
 ## Steps

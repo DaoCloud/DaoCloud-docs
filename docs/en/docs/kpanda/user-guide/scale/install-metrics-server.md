@@ -18,7 +18,7 @@ Before installing the __metrics-server__ plugin, the following prerequisites nee
 
 - Completed a [namespace creation](../namespaces/createns.md).
 
-- The current operating user should have [`NS Edit`](../permissions/permission-brief.md#ns-edit) or higher permissions, for details, refer to [Namespace Authorization](../namespaces/createns.md).
+- The current operating user should have [NS Editor](../permissions/permission-brief.md#ns-editor) or higher permissions, for details, refer to [Namespace Authorization](../namespaces/createns.md).
 
 ## Steps
 

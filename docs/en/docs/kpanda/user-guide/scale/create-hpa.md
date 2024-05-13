@@ -24,7 +24,7 @@ Before configuring the built-in index auto scaling policy for the workload, the 
 
 - Completed a [namespace creation](../namespaces/createns.md), [stateless workload creation](../workloads/create-deployment.md) or [stateful workload creation](../workloads/create-statefulset.md).
 
-- The current operating user should have [`NS Edit`](../permissions/permission-brief.md#ns-edit) or higher permissions, for details, refer to [Namespace Authorization](../namespaces/createns.md).
+- The current operating user should have [NS Editor](../permissions/permission-brief.md#ns-editor) or higher permissions, for details, refer to [Namespace Authorization](../namespaces/createns.md).
 
 - Completed [ __metrics-server plugin install__ ](install-metrics-server.md).
 
@@ -75,7 +75,7 @@ Before configuring a custom index auto scaling policy for a workload, the follow
 
 - Completed a [namespace creation](../namespaces/createns.md), [stateless workload creation](../workloads/create-deployment.md) or [stateful workload creation](../workloads/create-statefulset.md).
 
-- The current operating user should have [`NS Edit`](../permissions/permission-brief.md#ns-edit) or higher permissions, for details, refer to [Namespace Authorization](../namespaces/createns.md).
+- The current operating user should have [NS Editor](../permissions/permission-brief.md#ns-editor) or higher permissions, for details, refer to [Namespace Authorization](../namespaces/createns.md).
 
 - Completed [ __metrics-server plugin install__ ](install-metrics-server.md).
 - Installation of the Insight plug-in is complete.
