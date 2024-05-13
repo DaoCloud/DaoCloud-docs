@@ -142,3 +142,20 @@ Lucene 语法支持范围查询，您可以使用方括号 __[ ]__ 或花括号 
     ```
 
     这将在整个索引中搜索取值范围从 __value1__ 到 __value2__ 的文档。
+
+## Insight 常用关键字
+
+## 容器日志
+
+- kubernetes.container_image: 容器镜像名称
+- kubernetes.container_name: 容器名称
+- kubernetes.namespace_name: 命名空间名称
+- kubernetes.pod_name: Pod 名称
+- log: 日志内容
+- time: 日志时间戳
+
+## 主机日志
+
+- syslog.file: 日志文件路径
+- syslog.host: 主机名称
+- log: 日志内容

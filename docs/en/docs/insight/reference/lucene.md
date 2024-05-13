@@ -161,3 +161,20 @@ to represent a range. Here are examples of range queries:
     ```
 
     This will search the entire index for documents with values ranging from __value1__ to __value2__ .
+
+## Insight Common Keywords
+
+## Container Logs
+
+- kubernetes.container_image: Container image name
+- kubernetes.container_name: Container name
+- kubernetes.namespace_name: Namespace name
+- kubernetes.pod_name: Pod name
+- log: Log content
+- time: Log timestamp
+
+## Host Logs
+
+- syslog.file: Log file name
+- syslog.host: Host name
+- log: Log content
