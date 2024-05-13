@@ -14,7 +14,7 @@ Agent 描述了整个 __流水线__ 执行过程或者某个 __阶段__ 的执�
 
 - 可以在 Jenkinsfile 中通过 __node('go')__ 使用 go 的 podTemplate。
 
-    ```json
+    ```Groovy
     pipeline {
       agent {
         node {
