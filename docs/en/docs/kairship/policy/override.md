@@ -8,7 +8,6 @@ Multicloud Management supports Override Policy, supports viewing the list of ove
 
 Follow the steps below to create an override policy using YAML.
 
-
 1. After entering a multicloud instance, in the left navigation bar, click __Policy Management__ -> __Override Policies__ , and click the __Create from YAML__ button.
 
      ![Namespace Scope](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/op001.png)
@@ -78,27 +77,33 @@ Next, we will introduce the override policies in detail, which are divided into 
 
          Support Specify Clustes, Specify Regions, and Specify Labels to select the cluster.
 
-         === Specify Clusters: Directly select the specified cluster name
+         === "ClusterNames"
+         
+             Directly select the specified cluster name
 
-         ![Specify Clusters](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/op004.png)
+             ![Specify Clusters](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/op004.png)
 
-         === Specify Regions: Select clusters by regions, including:
+         === "FieldSelector"
+         
+             Select clusters by regions, including:
 
-         - provider (a service provider that provides cluster infrastructure)
-         - region (area: a collection of availability zones, referring to a specific geographic location where resources can be hosted, such as Beijing, Shanghai, Shenzhen, Chengdu, etc.)
-         - zone (Availability zone: is the deployment area within the region, such as Shanghai Availability Zone 1, Shanghai Availability Zone 2·······)
-         - Also supports excluding a specified cluster from the selected clusters.
+             - provider (a service provider that provides cluster infrastructure)
+             - region (area: a collection of availability zones, referring to a specific geographic location where resources can be hosted, such as Beijing, Shanghai, Shenzhen, Chengdu, etc.)
+             - zone (Availability zone: is the deployment area within the region, such as Shanghai Availability Zone 1, Shanghai Availability Zone 2...)
+             - Also supports excluding a specified cluster from the selected clusters.
 
-         ![Specify Regions](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/op005.png)
+             ![Specify Regions](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/op005.png)
 
-         === Specify Labels: Select clusters by labels, support custom labels, and also support exclusion of specified clusters.
+         === "LabelSelector"
+         
+             Select clusters by labels, support custom labels, and also support exclusion of specified clusters.
 
-         ![Specify Labels](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/op006.png)
+             ![Specify Labels](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/op006.png)
 
      2. Override configuration for mirroring the selected clusters
 
          | Field | Required | Description | Example |
-         | :-------- | :--- | :--------------------------------- -------------------------- | :---------------------- -- |
+         | :-------- | :--- | :--------------- | :---------- |
          | Component | is | Image component | Registry, Repository, Tag |
          | Operator | is | the operation on the image | add, remove, replace |
          | Value | No | When the Operator is __add__ or __replace__ , it cannot be empty, and it is empty by default; when the operator is __remove__ , leave it blank. | |
@@ -110,7 +115,7 @@ Next, we will introduce the override policies in detail, which are divided into 
      2. Override configuration of args for the selected clusters
 
          | Field | Required | Description | Example |
-         | :------------ | :--- | :---------------------------- ------------------------------ | :---------- |
+         | :------------ | :--- | :-------------- | :---------- |
          | ContainerName | is | container name | |
          | Operator | is | the operation to apply on args | add, remove |
          | Value | No | The value to apply to args. When the operator is __add__ , the value is appended to args; when the operator is __remove__ , the value is removed from args; if the value is empty, args remains as it is. | |
@@ -122,7 +127,7 @@ Next, we will introduce the override policies in detail, which are divided into 
      2. Perform override configuration of running commands on selected clusters
 
          | Field | Required | Description | Example |
-         | :------------ | :--- | :---------------------------- ------------------------------ | :------------------ ------------------ |
+         | :------------ | :--- | :--------------- | :------------------ |
          | ContainerName | is | container name | |
          | Operator | is | the operation applied to the command | add, remove |
          | Value | No | The value applied to the command. When the operator is __add__ , the value is appended to the command; when the operator is __remove__ , the value is removed from the command; if the value is empty, the command remains as it is. | You can add single or multiple values, use __;__ to divide multiple values |
@@ -134,7 +139,7 @@ Next, we will introduce the override policies in detail, which are divided into 
      2. Perform override configuration of running commands on selected clusters
 
          | Field | Required | Description | Example |
-         | :------- | :--- | :---------------------------------- ------------------------- | :------------------- |
+         | :------- | :--- | :----------------- | :--------------- |
          | Path | is | the path to the target field | |
          | Operator | is | the type of operation on the target field | add, remove, replace || Value | No | The value to apply to the target field, when Operator is __remove__ , this field must be empty | |
 
@@ -146,11 +151,11 @@ Next, we will introduce the override policies in detail, which are divided into 
 
      2. Perform override configuration of running labels for the selected clusters
 
-        | Field | Required | Description | Example |
-        | :------- | :--- | :----------------- | :--------------- ---- |
-        | Key | is | the key of the label | |
-        | Operator | is | the type of operation on the target field | add, remove, replace |
-        | Value | No | The value of the tag | |
+         | Field | Required | Description | Example |
+         | :------- | :--- | :----------------- | :--------------- ---- |
+         | Key | is | the key of the label | |
+         | Operator | is | the type of operation on the target field | add, remove, replace |
+         | Value | No | The value of the tag | |
 
 6. When selecting AnnotationsOverrider: Override configuration of annotations.
 
@@ -160,8 +165,8 @@ Next, we will introduce the override policies in detail, which are divided into 
 
      2. Override configuration of running annotations for selected clusters
 
-        | Field | Required | Description | Example |
-        | :------- | :--- | :----------------- | :--------------- ---- |
-        | Key | is | the key of the annotation | |
-        | Operator | is | the type of operation on the target field | add, remove, replace |
-        | Value | No | The value of the annotation | |
+         | Field | Required | Description | Example |
+         | :------- | :--- | :----------------- | :--------------- ---- |
+         | Key | is | the key of the annotation | |
+         | Operator | is | the type of operation on the target field | add, remove, replace |
+         | Value | No | The value of the annotation | |
