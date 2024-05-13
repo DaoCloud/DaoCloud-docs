@@ -37,7 +37,7 @@ hide:
     可观测性模块包含 Insight 和 Insight Agent，后者需要部署在被观测的 Kubernetes 上。
 
     - 部署[资源规划](../quickstart/res-plan/index.md)
-    - Insight Agent [安装](../quickstart/install/install-agent.md) 与 [升级](../quickstart/install/offline-install.md)
+    - Insight Agent [安装](../quickstart/install/install-agent.md) 与[升级](../quickstart/install/offline-install.md)
     - Insihgt Agent 安装在 [DCE 4](../quickstart/other/install-agentindce.md) 或 [OpenShift](../quickstart/other/install-agent-on-ocp.md)
     - [大规模日志部署调整](../best-practice/insight-kafka.md)
     - 升级[注意事项](../quickstart/install/upgrade-note.md)
@@ -51,7 +51,7 @@ hide:
     - 了解 [OpenTelemetry](../quickstart/otel/otel.md)，向 Insight [发送观测数据](../quickstart/otel/send_tracing_to_insight.md)
     - 使用[无侵入](../quickstart/otel/operator.md)方式增强应用
     - 针对[Java 应用观测](../quickstart/jvm-monitor/jvm-catelogy.md)
-    - 针对[Golang 应用观测](../insight/quickstart/otel/golang.md)
+    - 针对[Golang 应用观测](../quickstart/otel/golang.md)
     - [其他观测技术集成](../best-practice/sw-to-otel.md)
 
 </div>

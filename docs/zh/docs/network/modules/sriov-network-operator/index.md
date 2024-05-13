@@ -1,5 +1,4 @@
 ---
-MTPE: Jeanine-tw
 Revised: Jeanine-tw
 Pics: NA
 Date: 2023-01-04
@@ -7,10 +6,10 @@ Date: 2023-01-04
 
 # 什么是 Sriov-network-operator
 
-目前使用 sriov 的方式比较复杂繁琐，需要管理员完全手动配置,  如手动确认网卡是否支持SRIOV、配置PF 和 VF等，参考
-[sriov](../multus-underlay/sriov.md)。 社区开源 [Sriov-network-operator](https://github.com/k8snetworkplumbingwg/sriov-network-operator)，
+目前使用 sriov 的方式比较复杂繁琐，需要管理员完全手动配置，如手动确认网卡是否支持 SRIOV、配置 PF 和 VF 等，参考
+[sriov](../multus-underlay/sriov.md)。社区开源 [Sriov-network-operator](https://github.com/k8snetworkplumbingwg/sriov-network-operator)，
 旨在降低使用 sriov-cni 的难度。sriov-operator 整合 sriov-cni 和 sriov-device-plugin 两个项目，
-完全使用 CRD 的方式统一使用和配置 sriov，包括组件本身和节点上的必要配置，极大的降低了使用难度。
+完全使用 CRD 的方式统一使用和配置 sriov，包括组件本身和节点上的必要配置，极大地降低了使用难度。
 
 ## 组件
 
@@ -32,6 +31,9 @@ sriov-network-operator-6955b75d8c-gmpcc                           1/1     Runnin
 
 ```shell
 [root@controller1 ~]# kubectl get SriovNetworkNodeState -n sriov-network-operator worker1 -o yaml
+```
+
+```yaml
 apiVersion: sriovnetwork.openshift.io/v1
 kind: SriovNetworkNodeState
 metadata:
@@ -40,38 +42,38 @@ metadata:
   name: worker1
   namespace: sriov-network-operator
   ownerReferences:
-  - apiVersion: sriovnetwork.openshift.io/v1
-    blockOwnerDeletion: true
-    controller: true
-    kind: SriovNetworkNodePolicy
-    name: default
-    uid: 111e692f-cc3c-40da-aa28-de3a7f8f7c0e
+    - apiVersion: sriovnetwork.openshift.io/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: SriovNetworkNodePolicy
+      name: default
+      uid: 111e692f-cc3c-40da-aa28-de3a7f8f7c0e
   resourceVersion: "11353566"
   uid: d1bef95a-82c5-4a5c-8eb1-0ff7744eff0f
 spec:
   dpConfigVersion: "11351926"
 status:
   interfaces:
-  - deviceID: "1017"
-    driver: mlx5_core
-    linkSpeed: 10000 Mb/s
-    linkType: ETH
-    mac: 04:3f:72:d0:d2:86
-    mtu: 1500
-    name: enp4s0f0np0
-    pciAddress: "0000:04:00.0"
-    totalvfs: 8
-    vendor: 15b3
-  - deviceID: "1017"
-    driver: mlx5_core
-    linkSpeed: 10000 Mb/s
-    linkType: ETH
-    mac: 04:3f:72:d0:d2:87
-    mtu: 1500
-    name: enp4s0f1np1
-    pciAddress: "0000:04:00.1"
-    totalvfs: 8
-    vendor: 15b3
+    - deviceID: "1017"
+      driver: mlx5_core
+      linkSpeed: 10000 Mb/s
+      linkType: ETH
+      mac: 04:3f:72:d0:d2:86
+      mtu: 1500
+      name: enp4s0f0np0
+      pciAddress: "0000:04:00.0"
+      totalvfs: 8
+      vendor: 15b3
+    - deviceID: "1017"
+      driver: mlx5_core
+      linkSpeed: 10000 Mb/s
+      linkType: ETH
+      mac: 04:3f:72:d0:d2:87
+      mtu: 1500
+      name: enp4s0f1np1
+      pciAddress: "0000:04:00.1"
+      totalvfs: 8
+      vendor: 15b3
   syncStatus: Succeeded
 ```
 
@@ -80,8 +82,10 @@ status:
 **SriovNetworkNodePolicy：** 用于配置 VFs 的数量和安装 sriov-device-plugin 组件
 
 ```shell
-
 [root@controller1 ~]# kubectl get sriovnetworknodepolicies.sriovnetwork.openshift.io -n sriov-network-operator policy1 -o yaml
+```
+
+```yaml
 apiVersion: sriovnetwork.openshift.io/v1
 kind: SriovNetworkNodePolicy
 metadata:
@@ -97,13 +101,15 @@ metadata:
 spec:
   deviceType: netdevice
   nicSelector:
-    pfNames:
-    - enp4s0f0np0
-  nodeSelector:
-    kubernetes.io/hostname: 10-20-1-240  # 只作用于 10-20-1-240 这个节点
-  numVfs: 4 # 渴望的 VFs 数量
+    pfNames: # (1)!
+      - enp4s0f0np0
+  nodeSelector: # (2)!
+    kubernetes.io/hostname: 10-20-1-240 # (3)!
+  numVfs: 4 # (4)!
   resourceName: sriov_netdevice
 ```
 
-- **spce.nicSelector.pfNames** ：PF 的列表，创建 CR 后将基于列表中的 PF 创建指定数量的 VFs
-- **spec.nodeSelector** ：此 Policy 在哪些节点生效。注：会安装 sriov-device-plugin 组件到指定节点
+1. PF 的列表，创建 CR 后将基于列表中的 PF 创建指定数量的 VFs
+2. 此 Policy 在哪些节点生效。注：会安装 sriov-device-plugin 组件到指定节点
+3. 只作用于 10-20-1-240 这个节点
+4. 渴望的 VFs 数量

@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+date: 2024-05-13
+---
+
 # What is Insight？
 
 Insight is a next-generation, cloud native observability platform that focuses on application analysis.
@@ -37,6 +42,36 @@ The main features as following:
 - Multiple notification channels, such as email, WeChat, nail and Webhook.
 - Persistence of metics, logs, and tracing data.
 
+## Module Guide
+
+<div class="grid cards" markdown>
+
+- :material-server:{ .lg .middle } __Installation and Upgrades__
+
+    ---
+
+    The observability module includes Insight and Insight Agent, the latter of which needs to be deployed on the Kubernetes being observed.
+
+    - Deployment [Resource Planning](../quickstart/res-plan/index.md)
+    - Insight Agent [Installation](../quickstart/install/install-agent.md) and [Upgrade](../quickstart/install/offline-install.md)
+    - Insight Agent installed on [DCE 4](../quickstart/other/install-agentindce.md) or [OpenShift](../quickstart/other/install-agent-on-ocp.md)
+    - [Large-scale Log Deployment Adjustments](../best-practice/insight-kafka.md)
+    - Upgrade [Considerations](../quickstart/install/upgrade-note.md)
+
+- ::material-auto-fix:{ .lg .middle } __Start Observing__
+
+    ---
+
+    Use OpenTelemetry technology to observe your applications.
+
+    - Understand [OpenTelemetry](../quickstart/otel/otel.md), send observability data to Insight [Sending Observability Data](../quickstart/otel/send_tracing_to_insight.md)
+    - Enhance applications in a [non-intrusive](../quickstart/otel/operator.md) manner
+    - Observability for [Java Applications](../quickstart/jvm-monitor/jvm-catelogy.md)
+    - Observability for [Golang Applications](../quickstart/otel/golang.md)
+    - [Integrating Other Observability Technologies](../best-practice/sw-to-otel.md)
+
+</div>
+
 ## Basic concepts
 
 The basic concepts related to observability (Insight) are as follows.
@@ -50,7 +85,7 @@ The basic concepts related to observability (Insight) are as follows.
 | 6 | Service Discovery | A service discovery configuration for Kubernetes environment, used to batch and automatically access monitoring points on Kubernetes |
 | 7 | Exporter | A service that can provide metrics, often understood as a monitoring object |
 | 8 | Rule | A PromQL expression whose return value is a Boolean value, which describes whether the metric or custom metric is within the threshold range, and if not, an alert event will be generated |
-| 9 | Event | The record information when the alert rule is triggered, which records the alert rule, trigger time, and current system status; at the same time, it will trigger the corresponding action, such as sending an email |
+| 9 | Alert | The record information when the alert rule is triggered, which records the alert rule, trigger time, and current system status; at the same time, it will trigger the corresponding action, such as sending an email |
 | 10 | Notification | The alert event information sent by the system to the user through e-mail or other channels |
 | 11 | PromQL | Query statements supported by the Prometheus system |
 

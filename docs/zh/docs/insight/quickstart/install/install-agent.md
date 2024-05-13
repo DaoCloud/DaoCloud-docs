@@ -41,4 +41,4 @@ hide:
 !!! note
 
     - 点击最右侧的 __⋮__ ，您可以在弹出菜单中执行更多操作，如 __更新__ 、 __查看 YAML__ 和 __删除__ 。
-    - 对于实际的安装演示，观看 [insight-agent 安装视频演示](../../../videos/insight.md#install-insight-agent)。
+    - 对于实际的安装演示，观看 [insight-agent 安装视频演示](../../../videos/insight.md#insight-agent)。

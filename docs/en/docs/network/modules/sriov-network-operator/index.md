@@ -1,6 +1,11 @@
-# Sriov-network-operator
+---
+MTPE: windsonsea
+Date: 2023-05-13
+---
 
-[Sriov-network-operator](https://github.com/k8snetworkplumbingwg/sriov-network-operator) is an open-source project that aims to simplify the usage of SR-IOV technology by integrating the sriov-cni and sriov-device-plugin projects. It uses Custom Resource Definitions (CRDs) to configure and manage SR-IOV, making it easier for administrators to use.
+# What is Sriov-network-operator
+
+Currently, using SRIOV is complex and cumbersome, requiring administrators to manually configure everything, such as verifying if the network card supports SRIOV, configuring PFs and VFs, etc., as referenced in [sriov](../multus-underlay/sriov.md). The community open-source [Sriov-network-operator](https://github.com/k8snetworkplumbingwg/sriov-network-operator) aims to reduce the complexity of using sriov-cni. The sriov-operator integrates sriov-cni and sriov-device-plugin projects, utilizing CRDs to uniformly manage and configure SRIOV, including the components themselves and the necessary configurations on the nodes, significantly simplifying usage.
 
 ## Components
 
@@ -12,19 +17,17 @@ sriov-network-config-daemon-nhmws                                 3/3     Runnin
 sriov-network-operator-6955b75d8c-gmpcc                           1/1     Running     0          67s    10.233.73.233    controller1   <none>           <none>
 ```
 
-The Sriov-network-operator consists of the following components:
+- **sriov-operator**: A control layer component that listens for changes in CRs and installs/configures sriov-cni and sriov-device-plugin components.
+- **sriov-network-config-daemon**: Interacts with nodes to enable the SR-IOV functionality of node network cards and configure VFs. It embeds sriov-cni and copies the sriov-cni binary files to the `/opt/cni/bin` directory on the host.
+- **sriov-device-plugin**: Discovers VFs on the host and announces them to kubelet.
 
-- **sriov-operator**: This controller monitors changes in CRs and installs/configures the sriov-cni and sriov-device-plugin components.
-- **sriov-network-config-daemon**: This component interacts with the nodes to enable SR-IOV on the network interfaces and configure Virtual Functions (VFs). It contains the sriov-cni binary and copies it to the `/opt/cni/bin` directory on the host.
-- **sriov-device-plugin**: This component discovers the VFs available on the host and exposes them to the kubelet.
+## CRD
 
-## Custom Resource Definitions (CRDs)
+**SriovNetworkNodeState:** Discovers network cards on the host that support SR-IOV functionality and writes them into the status.
 
-The Sriov-network-operator introduces two CRDs:
-
-**SriovNetworkNodeState**: This CRD discovers network interfaces on the host that support SR-IOV and writes them into the status field.
-
-Example:
+```shell
+[root@controller1 ~]# kubectl get SriovNetworkNodeState -n sriov-network-operator worker1 -o yaml
+```
 
 ```yaml
 apiVersion: sriovnetwork.openshift.io/v1
@@ -35,46 +38,48 @@ metadata:
   name: worker1
   namespace: sriov-network-operator
   ownerReferences:
-  - apiVersion: sriovnetwork.openshift.io/v1
-    blockOwnerDeletion: true
-    controller: true
-    kind: SriovNetworkNodePolicy
-    name: default
-    uid: 111e692f-cc3c-40da-aa28-de3a7f8f7c0e
+    - apiVersion: sriovnetwork.openshift.io/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: SriovNetworkNodePolicy
+      name: default
+      uid: 111e692f-cc3c-40da-aa28-de3a7f8f7c0e
   resourceVersion: "11353566"
   uid: d1bef95a-82c5-4a5c-8eb1-0ff7744eff0f
 spec:
   dpConfigVersion: "11351926"
 status:
   interfaces:
-  - deviceID: "1017"
-    driver: mlx5_core
-    linkSpeed: 10000 Mb/s
-    linkType: ETH
-    mac: 04:3f:72:d0:d2:86
-    mtu: 1500
-    name: enp4s0f0np0
-    pciAddress: "0000:04:00.0"
-    totalvfs: 8
-    vendor: 15b3
-  - deviceID: "1017"
-    driver: mlx5_core
-    linkSpeed: 10000 Mb/s
-    linkType: ETH
-    mac: 04:3f:72:d0:d2:87
-    mtu: 1500
-    name: enp4s0f1np1
-    pciAddress: "0000:04:00.1"
-    totalvfs: 8
-    vendor: 15b3
+    - deviceID: "1017"
+      driver: mlx5_core
+      linkSpeed: 10000 Mb/s
+      linkType: ETH
+      mac: 04:3f:72:d0:d2:86
+      mtu: 1500
+      name: enp4s0f0np0
+      pciAddress: "0000:04:00.0"
+      totalvfs: 8
+      vendor: 15b3
+    - deviceID: "1017"
+      driver: mlx5_core
+      linkSpeed: 10000 Mb/s
+      linkType: ETH
+      mac: 04:3f:72:d0:d2:87
+      mtu: 1500
+      name: enp4s0f1np1
+      pciAddress: "0000:04:00.1"
+      totalvfs: 8
+      vendor: 15b3
   syncStatus: Succeeded
 ```
 
-The above example shows that the interfaces `enp4s0f0np0` and `enp4s0f1np1` on worker1 have SR-IOV capability and can be used to configure VFs for Pods.
+The information above indicates that the interfaces `enp4s0f0np0` and `enp4s0f1np1` on the `worker1` node have SR-IOV capabilities, and we can configure VFs based on them for use by Pods.
 
-**SriovNetworkNodePolicy**: This CRD is used to configure the number of VFs and install the sriov-device-plugin component.
+**SriovNetworkNodePolicy:** Used to configure the number of VFs and install the sriov-device-plugin component.
 
-Example:
+```shell
+[root@controller1 ~]# kubectl get sriovnetworknodepolicies.sriovnetwork.openshift.io -n sriov-network-operator policy1 -o yaml
+```
 
 ```yaml
 apiVersion: sriovnetwork.openshift.io/v1
@@ -92,13 +97,15 @@ metadata:
 spec:
   deviceType: netdevice
   nicSelector:
-    pfNames:
-    - enp4s0f0np0
-  nodeSelector:
-    kubernetes.io/hostname: 10-20-1-240  # Only effect to the node 10-20-1-240
-  numVfs: 4 # Desired VFs quantity
+    pfNames: # (1)!
+      - enp4s0f0np0
+  nodeSelector: # (2)!
+    kubernetes.io/hostname: 10-20-1-240 # (3)!
+  numVfs: 4 # (4)!
   resourceName: sriov_netdevice
 ```
 
-- **spec.nicSelector.pfNames**: The list of PFs where the specified number of VFs will be created.
-- **spec.nodeSelector**: Specifies the nodes where this policy should be applied. Note: The sriov-device-plugin component will be installed on the specified nodes.
+1. List of PFs, VFs will be created based on the specified number in the list after creating the CR.
+2. Nodes where this Policy will be effective. Note: sriov-device-plugin component will be installed on specified nodes.
+3. Only applicable to node 10-20-1-240.
+4. Desired number of VFs.
