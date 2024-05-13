@@ -58,9 +58,7 @@ spec:
 2. 进入表单创建页面，创建一个完整的差异化策略需要配置基础配置、资源配置、差异化策略三部分。
 
     - 基本配置：包括名称、多云命名空间、标签和注解。其中名称和多云命名空间为必填项。
-
     - 资源配置：支持选取所选多云命名空间下的多云资源进行差异化配置，多云资源也支持多选。
-
     - 差异化策略：支持添加镜像/运行参数/运行命令/自定义等的差异化配置。
 
     ![表单创建](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/op003.png)
@@ -77,30 +75,36 @@ spec:
 
         支持 ClusterNames（集群名称）、FieldSelector（区域）、LabelSelector（标签）三种方式选择部署集群。
 
-        === ClusterNames：直接选择指定的集群名称
+        === "ClusterNames"
+        
+            直接选择指定的集群名称
 
-        ![指定集群名称](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/op004.png)
+            ![指定集群名称](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/op004.png)
 
-        === FieldSelector：通过字段来选择集群，包括：
+        === "FieldSelector"
+        
+            通过字段来选择集群，包括：
 
-        - provider（提供集群基础设施的服务商）
-        - region（区域：是可用区的集合，指可以在其中托管资源的特定地理位置，例如北京、上海、深圳、成都等。）
-        - zone（可用区：是区域内的部署区域，例如上海可用区1、上海可用区2······）
-        - 还支持从已选集群中排除某指定集群。
+            - provider（提供集群基础设施的服务商）
+            - region（区域：是可用区的集合，指可以在其中托管资源的特定地理位置，例如北京、上海、深圳、成都等。）
+            - zone（可用区：是区域内的部署区域，例如上海可用区1、上海可用区2······）
+            - 还支持从已选集群中排除某指定集群。
 
-        ![从已选集群排除](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/op005.png)
+            ![从已选集群排除](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/op005.png)
 
-        === LabelSelector：通过标签来选择集群，支持自定义标签，同时也支持排除指定集群。
+        === "LabelSelector"
+        
+            通过标签来选择集群，支持自定义标签，同时也支持排除指定集群。
 
-        ![标签](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/op006.png)
+            ![标签](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/op006.png)
 
     2. 对选中集群进行镜像的差异化配置
 
-        | 字段      | 必填 | 描述                                                         | 示例                      |
-        | :-------- | :--- | :----------------------------------------------------------- | :------------------------ |
-        | Component | 是   | 镜像组成成分                                                 | Registry、Repository、Tag |
-        | Operator  | 是   | 对镜像进行的操作                                             | add、remove、replace      |
-        | Value     | 否   | 当 Operator 为 __add__ 或 __replace__ 时不能为空，默认为空；当 operator 为 __remove__ 时不填。 |                           |
+        | 字段      | 必填 | 描述 | 示例 |
+        | :-------- | :--- | :----- | :---- |
+        | Component | 是   | 镜像组成成分 | Registry、Repository、Tag |
+        | Operator  | 是   | 对镜像进行的操作 | add、remove、replace |
+        | Value     | 否   | 当 Operator 为 __add__ 或 __replace__ 时不能为空，默认为空；当 operator 为 __remove__ 时不填。 |  |
 
 2. 当选择 ArgsOverrider：运行参数的差异化配置。
 
@@ -108,11 +112,11 @@ spec:
 
     2. 对选中集群进行运行参数的差异化配置
 
-        | 字段          | 必填 | 描述                                                         | 示例        |
-        | :------------ | :--- | :----------------------------------------------------------- | :---------- |
-        | ContainerName | 是   | 容器名                                                       |             |
-        | Operator      | 是   | 应用在 args 上的操作                                         | add、remove |
-        | Value         | 否   | 应用在 args 上的值，当 operator 为 __add__ 时该值 append 到 args；当 operator 为 __remove__ 时，该值从 args 移除；如果该值为空，args 维持原状。 |             |
+        | 字段 | 必填 | 描述 | 示例 |
+        | :-- | :--- | :---- | :--- |
+        | ContainerName | 是   | 容器名 | |
+        | Operator      | 是   | 应用在 args 上的操作 | add、remove |
+        | Value | 否   | 应用在 args 上的值，当 operator 为 __add__ 时该值 append 到 args；当 operator 为 __remove__ 时，该值从 args 移除；如果该值为空，args 维持原状。 | |
 
 3. 当选择 CommandOverrider：运行命令的差异化配置。
 
@@ -120,8 +124,8 @@ spec:
 
     2. 对选中集群进行运行命令的差异化配置
 
-        | 字段          | 必填 | 描述                                                         | 示例                                  |
-        | :------------ | :--- | :----------------------------------------------------------- | :------------------------------------ |
+        | 字段          | 必填 | 描述 | 示例 |
+        | :------------ | :--- | :----- | :------------------------------------ |
         | ContainerName | 是   | 容器名                                                       |                                       |
         | Operator      | 是   | 应用在 command 上的操作                                      | add、remove                           |
         | Value         | 否   | 应用在 command 上的值，当 operator 为 __add__ 时该值 append 到 command；当 operator 为 __remove__ 时，该值从 command 移除；如果该值为空，command 维持原状。 | 可以添加单个或多个值，多值使用 __;__ 划分 |
@@ -146,11 +150,11 @@ spec:
 
     2. 对选中集群进行运行标签的差异化配置
 
-       | 字段     | 必填 | 描述               | 示例                 |
-       | :------- | :--- | :----------------- | :------------------- |
-       | Key      | 是   | 标签的键           |                      |
-       | Operator | 是   | 对目标字段操作类型 | add、remove、replace |
-       | Value    | 否   | 标签的值           |                      |
+        | 字段     | 必填 | 描述               | 示例                 |
+        | :------- | :--- | :----------------- | :------------------- |
+        | Key      | 是   | 标签的键           |                      |
+        | Operator | 是   | 对目标字段操作类型 | add、remove、replace |
+        | Value    | 否   | 标签的值           |                      |
 
 6. 当选择 AnnotationsOverrider：注解的差异化配置。
 
@@ -160,8 +164,8 @@ spec:
 
     2. 对选中集群进行运行注解的差异化配置
 
-       | 字段     | 必填 | 描述               | 示例                 |
-       | :------- | :--- | :----------------- | :------------------- |
-       | Key      | 是   | 注解的键           |                      |
-       | Operator | 是   | 对目标字段操作类型 | add、remove、replace |
-       | Value    | 否   | 注解的值           |                      |
+        | 字段     | 必填 | 描述               | 示例                 |
+        | :------- | :--- | :----------------- | :------------------- |
+        | Key      | 是   | 注解的键           |                      |
+        | Operator | 是   | 对目标字段操作类型 | add、remove、replace |
+        | Value    | 否   | 注解的值           |                      |
