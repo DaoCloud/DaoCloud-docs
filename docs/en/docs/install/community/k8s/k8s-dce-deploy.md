@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+date: 2024-05-11
+---
+
 # Deploy a K8s Cluster from Scratch to DCE 5.0 Community
 
 This article covers the installation of DCE 5.0 Community from scratch in a 3-node cluster, including details on Kubernetes cluster, dependencies, networking, storage, and more considerations.
@@ -22,7 +27,7 @@ The components used in this example are:
 - CRI: containerd (as Docker is no longer directly supported in newer versions of Kubernetes)
 - CNI: Calico
 - StorageClass: local-path
-- DCE 5.0 Community: v0.16.0
+- DCE 5.0 Community: v0.17.0
 
 ## Prepare Nodes
 
@@ -316,7 +321,7 @@ bash install_prerequisite.sh online community
 ### Download dce5-installer
 
 ```bash
-export VERSION=v0.16.0
+export VERSION=v0.17.0
 curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
 chmod +x ./dce5-installer
 ```

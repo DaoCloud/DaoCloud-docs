@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+date: 2024-05-11
+---
+
 # Backup and Restore of Bootstrap Node
 
 This article describes the backup and restore of the kind cluster in the bootstrap node.

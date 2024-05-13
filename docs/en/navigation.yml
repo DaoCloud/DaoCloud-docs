@@ -11,6 +11,7 @@ nav:
               - Use Cases: dce/scenario.md
               - DaoCloud is a KCSP: dce/kcsp.md
               - Release Notes:
+                  - 20240430 Release: dce/dce-rn/20240430.md
                   - 20240330 Release: dce/dce-rn/20240330.md
                   - 20240130 Release: dce/dce-rn/20240130.md
                   - 20231231 Release: dce/dce-rn/20231231.md
@@ -53,6 +54,7 @@ nav:
                   - On UOS V20 (1020a): install/os-install/uos-v20-install-dce5.0.md
                   - On Oracle Linux R9/R8 U1: install/os-install/oracleLinux-install-dce5.0.md
                   - On TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
+                  - On NeoKylin Linux Advanced Server V7Update6: install/os-install/neokylin-install-dce5.0.md
                   - On Other Linux: install/os-install/otherlinux.md
               - Upgrade:
                   - Overview: install/upgrade-des.md
@@ -1258,7 +1260,9 @@ nav:
   - Blogs:
       - Index: blogs/index.md
       - 2024:
+          - Large Language Model Spec: blogs/240509-model-spec.md
           - Cloud Native AI Whitepapaer: blogs/240410-cnai-wp.md
+          - Kubean Enters CNCF Sandbox: blogs/240416-kubean.md
           - Innovations at KubeCon Paris: blogs/240326-kubecon-eu.md
           - Create a Open Source Commercial Ecosystem: blogs/240301-osc-eco.md
           - Book - Managing Cloud Native Data on Kubernetes: blogs/240203-book.md
