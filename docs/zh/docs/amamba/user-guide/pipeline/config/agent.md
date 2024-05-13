@@ -14,7 +14,7 @@ Agent 描述了整个 __流水线__ 执行过程或者某个 __阶段__ 的执�
 
 - 可以在 Jenkinsfile 中通过 __node('go')__ 使用 go 的 podTemplate。
 
-    ```bash
+    ```Groovy
     pipeline {
       agent {
         node {
@@ -120,24 +120,25 @@ __Jenkins Agent Label: python__
 
 2. 点击 __YAML 编辑器__ ，在对话框中填写 YAML 语句，请参考以下示例：
 
-    ```bash
+    ```yaml
     apiVersion: v1
     kind: Pod
     spec:
       containers:
-      - name: maven
-        image: maven:3.8.1-jdk-8
-        command:
-        - sleep
+      - name: jnlp
+        image: docker.m.daocloud.io/jenkins/inbound-agent:4.10-2  # (1)!
         args:
-        - 99d
+        - ^${computer.jnlpmac} ^${computer.name}
       - name: golang
-        image: golang:1.16.5
+        image: golang:1.16.5   # (2)!
         command:
         - sleep
         args:
         - 99d
-      ```
+    ```
+
+    1. 需要提供 jnlp 镜像的地址，否则会使用默认的"jenkins/inbound-agent"
+    2. 填你自定义的镜像
 
 3. 在 Container 中输入 __golang__ 作为流水线运行的默认容器。
 
