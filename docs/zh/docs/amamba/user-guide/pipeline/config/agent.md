@@ -126,16 +126,19 @@ __Jenkins Agent Label: python__
     spec:
       containers:
       - name: jnlp
-        image: docker.m.daocloud.io/jenkins/inbound-agent:4.10-2  // jnlp镜像，用来与jenkins controller通信，必须提供
+        image: docker.m.daocloud.io/jenkins/inbound-agent:4.10-2  # (1)!
         args:
         - ^${computer.jnlpmac} ^${computer.name}
       - name: golang
-        image: golang:1.16.5    // 填你自定义的镜像
+        image: golang:1.16.5   # (2!)
         command:
         - sleep
         args:
         - 99d
     ```
+
+    1. 需要提供 jnlp 镜像的地址，否则会使用默认的"jenkins/inbound-agent"
+    2. 填你自定义的镜像
 
 3. 在 Container 中输入 __golang__ 作为流水线运行的默认容器。
 
