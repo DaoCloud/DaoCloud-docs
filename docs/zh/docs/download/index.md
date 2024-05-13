@@ -11,8 +11,8 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
 | 离线包           | 版本    | 下载  | 更新日期   |
 | --------------- | ------- | ---- | -------- |
-| offline-community-v0.16.1-arm64.tar | v0.16.1 | [:arrow_right: 下载页](./free/dce5-installer-v0.16.1.md) | 2024-04-09 |
-| offline-community-v0.16.1-amd64.tar | v0.16.1 | [:arrow_right: 下载页](./free/dce5-installer-v0.16.1.md) | 2024-04-09 |
+| offline-community-v0.17.0-arm64.tar | v0.17.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.17.0.md) | 2024-05-09 |
+| offline-community-v0.17.0-amd64.tar | v0.17.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.17.0.md) | 2024-05-09 |
 
 [更多历史版本](./free/dce5-installer-history.md)
 
@@ -22,8 +22,8 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 
 | 离线包 | 版本    | 下载      | 更新日期   |
 | ----- | ------- | -------- | --------- |
-| offline-v0.16.1-arm64.tar | v0.16.1 | [:arrow_right: 下载页](./business/dce5-installer-v0.16.1.md) | 2024-04-09 |
-| offline-v0.16.1-amd64.tar | v0.16.1 | [:arrow_right: 下载页](./business/dce5-installer-v0.16.1.md) | 2024-04-09 |
+| offline-v0.17.0-arm64.tar | v0.17.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.17.0.md) | 2024-05-09 |
+| offline-v0.17.0-amd64.tar | v0.17.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.17.0.md) | 2024-05-09 |
 
 [更多历史版本](./business/dce5-installer-history.md)
 
@@ -33,8 +33,8 @@ DCE 5.0 针对不同的应用场景提供了完善的 Addon，您可以按需下
 
 | 离线包    | 版本    | 下载 | 更新日期   |
 | -------- | ------- | --- | --------- |
-| addon-offline-full-package-v0.16.0-arm64.tar.gz | v0.16.0 | [:arrow_right: 下载页](./addon/v0.16.0.md) | 2024-04-08 |
-| addon-offline-full-package-v0.16.0-amd64.tar.gz | v0.16.0 | [:arrow_right: 下载页](./addon/v0.16.0.md) | 2024-04-08 |
+| addon-offline-full-package-v0.17.0-arm64.tar.gz | v0.17.0 | [:arrow_right: 下载页](./addon/v0.17.0.md) | 2024-05-09 |
+| addon-offline-full-package-v0.17.0-amd64.tar.gz | v0.17.0 | [:arrow_right: 下载页](./addon/v0.17.0.md) | 2024-05-09 |
 
 [更多历史版本](./addon/history.md)
 
@@ -57,23 +57,23 @@ DCE 5.0 包含的众多子模块可以单独下载，按需对每个模块进行
 | 微服务引擎| 1.66 GB  | [:arrow_right: 下载页](./modules/skoala.md)     | 2024-05-01 |
 | 服务网格 | 1.03 GB | [:arrow_right: 下载页](./modules/mspider.md)   | 2024-04-30 |
 | 云边协同 | 100.37 MB | [:arrow_right: 下载页](./modules/kant.md)      | 2024-01-04 |
-| 全局管理 | 507.40 MB | [:arrow_right: 下载页](./modules/ghippo.md)    | 2024-04-11 |
+| 全局管理 | 507.40 MB | [:arrow_right: 下载页](./modules/ghippo.md)    | 2024-05-09 |
 | 运营管理 | 91.00 MB  | [:arrow_right: 下载页](./modules/gmagpie.md)   | 2024-04-30 |
 | 虚拟机   | 1.43 GB  | [:arrow_right: 下载页](./modules/virtnest.md)   | 2024-04-30 |
 
 DCE 5.0 还提供了各种精选中间件：
 
 | 中间件         | 文件大小  | 下载     | 更新日期    |
-|---------------| -------- |------------------------------------------------------------|------------|
-| Elasticsearch |979.01 MB| [:arrow_right: 下载页](./modules/middleware/elasticsearch.md) |2024-04-03|
-| Kafka |983.95 MB| [:arrow_right: 下载页](./modules/middleware/kafka.md) |2024-04-03|
-| MinIO |220.56 MB| [:arrow_right: 下载页](./modules/middleware/minio.md) |2024-04-03|
-| MongoDB |389.09 MB| [:arrow_right: 下载页](./modules/middleware/mongodb.md) |2024-04-03|
-| MySQL |1.55 GB| [:arrow_right: 下载页](./modules/middleware/mysql.md) |2024-04-03|
-| PostgreSQL |1.46 GB| [:arrow_right: 下载页](./modules/middleware/postgresql.md) |2024-04-03|
-| RabbitMQ |165.67 MB| [:arrow_right: 下载页](./modules/middleware/rabbitmq.md) |2024-04-03|
-| Redis |600.86 MB| [:arrow_right: 下载页](./modules/middleware/redis.md) |2024-04-03|
-| RocketMQ |624.48 MB| [:arrow_right: 下载页](./modules/middleware/rocketmq.md) |2024-04-03|
+|---------------| -------- |---------|------------|
+| Elasticsearch |979.12 MB| [:arrow_right: 下载页](./modules/middleware/elasticsearch.md) |2024-05-08|
+| Kafka |984.04 MB| [:arrow_right: 下载页](./modules/middleware/kafka.md) |2024-05-08|
+| MinIO |220.65 MB| [:arrow_right: 下载页](./modules/middleware/minio.md) |2024-05-08|
+| MongoDB |369.76 MB| [:arrow_right: 下载页](./modules/middleware/mongodb.md) |2024-05-08|
+| MySQL |1.63 GB| [:arrow_right: 下载页](./modules/middleware/mysql.md) |2024-05-08|
+| PostgreSQL |1.46 GB| [:arrow_right: 下载页](./modules/middleware/postgresql.md) |2024-05-08|
+| RabbitMQ |165.82 MB| [:arrow_right: 下载页](./modules/middleware/rabbitmq.md) |2024-05-08|
+| Redis |603.14 MB| [:arrow_right: 下载页](./modules/middleware/redis.md) |2024-05-08|
+| RocketMQ |593.18 MB| [:arrow_right: 下载页](./modules/middleware/rocketmq.md) |2024-05-08|
 
 !!! note
 

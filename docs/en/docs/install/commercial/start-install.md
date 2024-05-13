@@ -1,16 +1,21 @@
+---
+MTPE: windsonsea
+date: 2024-05-11
+---
+
 # Install DCE 5.0 Enterprise offline
 
-Please ensure that you have read and understood the [deployment requirements](deploy-requirements.md),
+Ensure that you have read and understood the [deployment requirements](deploy-requirements.md),
 [deployment architecture](deploy-arch.md), and [preparation](prepare.md) before installation.
 
-Please refer to the [release notes](../release-notes.md) to avoid known issues with the
+Refer to the [release notes](../release-notes.md) to avoid known issues with the
 installed version and to check for new features.
 
 ## Offline Installation Steps
 
 ### Step 1: Download the Offline Package
 
-Please download the corresponding offline package based on your business environment.
+Download the corresponding offline package based on your business environment.
 
 #### Offline Image Package (Required)
 
@@ -21,14 +26,14 @@ You can download the latest version from the [Download Center](../../download/in
 
 | CPU Architecture | Version | Download |
 | :--------------- | :------ | :------- |
-| AMD64 | v0.16.1 | [offline-v0.16.1-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.16.1-amd64.tar) |
-| <font color="green">ARM64</font> | v0.16.1 | [offline-v0.16.1-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.16.1-arm64.tar) |
+| AMD64 | v0.17.0 | [offline-v0.17.0-amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.17.0-amd64.tar) |
+| <font color="green">ARM64</font> | v0.17.0 | [offline-v0.17.0-arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.17.0-arm64.tar) |
 
 After downloading, extract the offline package.
 Take the amd64 architecture offline package as an example
 
 ```bash
-tar -xvf offline-v0.16.1-amd64.tar
+tar -xvf offline-v0.17.0-amd64.tar
 ```
 
 #### ISO Operating System Image File (Required)
@@ -37,7 +42,7 @@ The ISO format operating system image file should be downloaded based on the
 different operating systems during the installation process.
 
 The ISO operating system image file needs to be configured in
-[clusterConfig.yaml](./cluster-config.md), so please download according to the operating system.
+[clusterConfig.yaml](./cluster-config.md), so download for your operating system.
 
 | CPU Architecture | Operating System Version | Download |
 | :--------------- | :---------------------- | :-------- |
@@ -53,7 +58,7 @@ The ISO operating system image file needs to be configured in
 !!! note
 
     Kylin operating system requires providing personal information to download and use.
-    Please select V10 (Sword) SP2 when downloading.
+    Select V10 (Sword) SP2 when downloading.
 
 #### osPackage Offline Packages (Required)
 
@@ -68,7 +73,21 @@ operating system and defines `osPackagePath` in [clusterConfig.yaml](./cluster-c
 operating systems, which can be found at <https://github.com/kubean-io/kubean/releases>.
 
 Currently, the installer version requires the osPackage offline package version to match.
-Please download the osPackage offline package based on the corresponding version:
+Download the osPackage offline package based on the corresponding version:
+
+=== "V0.17.0"
+
+    | Operating System | Download |
+    | :--------------- | :--------- |
+    | CentOS 7 | [os-pkgs-centos7-v0.13.11.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.11/os-pkgs-centos7-v0.13.11.tar.gz) |
+    | Redhat 8 | [os-pkgs-redhat8-v0.13.11.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.11/os-pkgs-redhat8-v0.13.11.tar.gz) |
+    | Redhat 7 | [os-pkgs-redhat7-v0.13.11.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.11/os-pkgs-redhat7-v0.13.11.tar.gz) |
+    | Redhat 9 | [os-pkgs-redhat9-v0.13.11.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.11/os-pkgs-redhat9-v0.13.11.tar.gz) |
+    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [os-pkgs-kylinv10-v0.13.11.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.11/os-pkgs-kylinv10-v0.13.11.tar.gz) |
+    | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.13.11.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.11/os-pkgs-ubuntu2004-v0.13.11.tar.gz) |
+    | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.13.11.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.11/os-pkgs-openeuler22.03-v0.13.11.tar.gz) |
+    | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.13.11.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.13.11/os-pkgs-oracle9-v0.13.11.tar.gz) |
+    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.13.11.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.13.11/os-pkgs-rocky9-v0.13.11.tar.gz) |
 
 === "V0.16.1"
 
@@ -249,5 +268,5 @@ For detailed parameter introduction, refer to [clusterConfig.yaml](cluster-confi
 
         Please record the provided URL for future access.
 
-1. After successfully installing DCE 5.0 Enterprise Edition, please contact us for
+1. After successfully installing DCE 5.0 Enterprise, contact us for
    authorization: email info@daocloud.io or call 400 002 6898.

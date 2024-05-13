@@ -93,7 +93,7 @@ DCE 5.0 产品功能模块的组件特指 [manifest.yaml](commercial/manifest.md
   components:
     kpanda:
       enable: false
-      helmVersion: 0.16.0
+      helmVersion: 0.17.0
       variables:
 ```
 

@@ -41,7 +41,7 @@ resources:
 
 ### agent 配置
 
-> 请参照实际的流水线消耗资源设置，因为主要的资源消耗都是来自 agent。
+请参照实际的流水线消耗资源设置，因为主要的资源消耗都是来自 agent。
 
 ```yaml
 resources:
@@ -88,7 +88,7 @@ resources:
 
 ### agent 配置
 
-> 参照[场景 1](#agent) 的 agent 配置
+参照[场景 1](#agent) 的 agent 配置
 
 ## 场景 3：并行 200 条流水线
 
@@ -125,11 +125,11 @@ resources:
 
 ### agent 配置
 
-> 参照[场景 1](#agent) 的 agent 配置
+参照[场景 1](#agent) 的 agent 配置。
 
-### 注意事项
+!!! note
 
-- 当 Jenkins Pod 因为 OOM 重启时，建议加大 Master 的内存。
-  为了保证 QoS，建议 Master 的内存和 cpu 的 request 和 limit 保持一致。
-- 当流水线模块接口调用存在超时情况时，建议加大 Master 的CPU。
-- 当 Master 内存配置超过 __4G__ 时，建议修改 __JavaOpts__ 中的 __-XX:+UseConcMarkSweepGC__ 为 __-XX:+UseG1GC__ 。
+    - 当 Jenkins Pod 因为 OOM 重启时，建议加大 Master 的内存
+      为了保证 QoS，建议 Master 的内存和 cpu 的 request 和 limit 保持一致
+    - 当流水线模块接口调用存在超时情况时，建议加大 Master 的 CPU
+    - 当 Master 内存配置超过 __4G__ 时，建议修改 __JavaOpts__ 中的 __-XX:+UseConcMarkSweepGC__ 为 __-XX:+UseG1GC__

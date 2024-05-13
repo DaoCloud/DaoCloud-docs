@@ -1,4 +1,9 @@
-# Using External Service to Store OS Repo Resources
+---
+MTPE: windsonsea
+date: 2024-05-11
+---
+
+# Use External Service to Store OS Repo Resources
 
 This document describes how to use a third-party storage service for OS repo resources and specify it during the installer installation. There are two supported types: S3-compatible services (such as MinIO) and non-S3-compatible services (such as Nginx).
 

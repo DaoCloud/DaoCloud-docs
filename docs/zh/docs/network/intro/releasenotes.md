@@ -9,7 +9,20 @@
 *[SR-IOV]: Single Root IO Virtualization 的缩写，一种网卡虚拟化的技术
 *[RDMA]: Remote Direct Memory Access 的缩写，即远程直接内存访问，这是一个支撑 LLM 大模型和 GPT 的热门技术
 
-## 2023-01-30
+## 2024-04-30
+
+### v0.14.0
+
+- 适配 **Spiderpool v0.9.1**
+- 适配 **EgressGateway v0.5.1**
+
+#### 优化
+
+- **优化** 优化工作负载网络配置，支持 Multus CR 无感知，应用直接选择 IPpool
+- **优化** 修复 multusName 中的命名空间为空，自动为其拼接 spiderpool 的所在 Namespace
+- **优化** 支持创建 SR-IOV 节点策略时，配置以太网或 InfiniBand 网络类型
+
+## 2024-01-30
 
 ### v0.13.0
 

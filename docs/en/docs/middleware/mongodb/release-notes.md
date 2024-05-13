@@ -9,14 +9,23 @@ This page lists the release notes for MongoDB databases, allowing you to underst
 
 *[Mcamel-MongoDB]: "mcamel" is the dev name for DaoCloud's middlewares, and "MongoDB" is a database middleware that provides services for documentation
 
+## 2024-04-30
+
+### v0.9.0
+
+- **Added** a prompt for namespace quota.
+- **Improved** When deleting backups, you can now choose to delete the backup data in S3.
+- **Fixed** the issue of mongodb-agent readinessProbe timing out in certain scenarios.
+- **Fixed** incorrect search results for instance configuration parameters.
+
 ## 2024-03-31
 
 ### v0.8.0
 
-- **Added** Support for backup and restoration of MongoDB instances
-- **Added** Support for parameter templates
+- **Added** support for backup and restoration of MongoDB instances
+- **Added** support for parameter templates
 - **Added** Ability to create MongoDB instances via templates
-- **Fixed** Issue when the MongoDB backup source cluster does not exist
+- **Fixed** issue when the MongoDB backup source cluster does not exist
 
 ## 2024-01-31
 
@@ -24,7 +33,7 @@ This page lists the release notes for MongoDB databases, allowing you to underst
 
 #### Improvements
 
-- **Improved** Added display of MongoDB version in global management
+- **Added** display of MongoDB version in global management
 
 ## 2023-12-31
 

@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+date: 2024-05-11
+---
+
 # Using External Service to Store Binaries Resources
 
 This document describes how to use third-party storage services to store Binaries resources and specify them during the installation process. There are two types of supported services: S3 compatible services (such as Minio) and non-S3 compatible services (such as Nginx).

@@ -15,8 +15,8 @@ This package is dedicated to the community and is available for free trial.
 
 | Filename | Version | Download | Update Date |
 | -------- | ------- | --------- | ----------- |
-| offline-community-v0.16.1-arm64.tar | v0.16.1 | [:arrow_right: Go to Download](./free/dce5-installer-v0.16.1.md) | 2024-04-08 |
-| offline-community-v0.16.1-amd64.tar | v0.16.1 | [:arrow_right: Go to Download](./free/dce5-installer-v0.16.1.md) | 2024-04-08 |
+| offline-community-v0.17.0-arm64.tar | v0.17.0 | [:arrow_right: Go to Download](./free/dce5-installer-v0.17.0.md) | 2024-05-09 |
+| offline-community-v0.17.0-amd64.tar | v0.17.0 | [:arrow_right: Go to Download](./free/dce5-installer-v0.17.0.md) | 2024-05-09 |
 
 [More Historical Versions](./free/dce5-installer-history.md)
 
@@ -26,8 +26,8 @@ This package is suitable for private cloud, hybrid cloud, multicloud, microservi
 
 | Filename | Version | Download | Update Date |
 | -------- | ------- | -------- | ----------- |
-| offline-v0.16.1-arm64.tar | v0.16.1 | [:arrow_right: Go to Download](./business/dce5-installer-v0.16.1.md) | 2024-04-08 |
-| offline-v0.16.1-amd64.tar | v0.16.1 | [:arrow_right: Go to Download](./business/dce5-installer-v0.16.1.md) | 2024-04-08 |
+| offline-v0.17.0-arm64.tar | v0.17.0 | [:arrow_right: Go to Download](./business/dce5-installer-v0.17.0.md) | 2024-05-09 |
+| offline-v0.17.0-amd64.tar | v0.17.0 | [:arrow_right: Go to Download](./business/dce5-installer-v0.17.0.md) | 2024-05-09 |
 
 [More Historical Versions](./business/dce5-installer-history.md)
 
@@ -37,8 +37,8 @@ DCE 5.0 provides comprehensive Addons for different use cases, which can be down
 
 | Filename | Version | Download | Update Date |
 | -------- | ------- | -------- | ----------- |
-| addon-offline-full-package-v0.16.0-arm64.tar.gz | v0.16.0 | [:arrow_right: Go to Download](./addon/v0.16.0.md) | 2024-04-08 |
-| addon-offline-full-package-v0.16.0-amd64.tar.gz | v0.16.0 | [:arrow_right: Go to Download](./addon/v0.16.0.md) | 2024-04-08 |
+| addon-offline-full-package-v0.17.0-arm64.tar.gz | v0.17.0 | [:arrow_right: Go to Download](./addon/v0.17.0.md) | 2024-05-09 |
+| addon-offline-full-package-v0.17.0-amd64.tar.gz | v0.17.0 | [:arrow_right: Go to Download](./addon/v0.17.0.md) | 2024-05-09 |
 
 [More Historical Versions](./addon/history.md)
 
@@ -69,15 +69,15 @@ DCE 5.0 also provides a variety of selected middleware:
 
 | Modules | File Size | Download | Update Date |
 | ------- | --------- | -------- | ------------|
-| Elasticsearch |979.01 MB| [:arrow_right: Go to Download](./modules/middleware/elasticsearch.md) |2024-04-03|
-| Kafka |983.95 MB| [:arrow_right: Go to Download](./modules/middleware/kafka.md) |2024-04-03|
-| MinIO |220.56 MB| [:arrow_right: Go to Download](./modules/middleware/minio.md) |2024-04-03|
-| MongoDB |389.09 MB| [:arrow_right: Go to Download](./modules/middleware/mongodb.md) |2024-04-03|
-| MySQL |1.55 GB| [:arrow_right: Go to Download](./modules/middleware/mysql.md) |2024-04-03|
-| PostgreSQL |1.46 GB| [:arrow_right: Go to Download](./modules/middleware/postgresql.md) |2024-04-03|
-| RabbitMQ |165.67 MB| [:arrow_right: Go to Download](./modules/middleware/rabbitmq.md) |2024-04-03|
-| Redis |600.86 MB| [:arrow_right: Go to Download](./modules/middleware/redis.md) |2024-04-03|
-| RocketMQ |624.48 MB| [:arrow_right: Go to Download](./modules/middleware/rocketmq.md) |2024-04-03|
+| Elasticsearch |979.12 MB| [:arrow_right: Go to Download](./modules/middleware/elasticsearch.md) |2024-05-08|
+| Kafka |984.04 MB| [:arrow_right: Go to Download](./modules/middleware/kafka.md) |2024-05-08|
+| MinIO |220.65 MB| [:arrow_right: Go to Download](./modules/middleware/minio.md) |2024-05-08|
+| MongoDB |369.76 MB| [:arrow_right: Go to Download](./modules/middleware/mongodb.md) |2024-05-08|
+| MySQL |1.63 GB| [:arrow_right: Go to Download](./modules/middleware/mysql.md) |2024-05-08|
+| PostgreSQL |1.46 GB| [:arrow_right: Go to Download](./modules/middleware/postgresql.md) |2024-05-08|
+| RabbitMQ |165.82 MB| [:arrow_right: Go to Download](./modules/middleware/rabbitmq.md) |2024-05-08|
+| Redis |603.14 MB| [:arrow_right: Go to Download](./modules/middleware/redis.md) |2024-05-08|
+| RocketMQ |593.18 MB| [:arrow_right: Go to Download](./modules/middleware/rocketmq.md) |2024-05-08|
 
 !!! note
 

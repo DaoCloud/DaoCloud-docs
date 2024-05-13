@@ -1,3 +1,8 @@
+---
+MTPE: windsonsesa
+date: 2024-05-11
+---
+
 # Offline Upgrade of Cloud Native Network
 
 The modules in DCE 5.0 are loosely coupled, allowing for independent installation and upgrading of each module. This document provides instructions for offline upgrading of the cloud native network module Spidernet.
@@ -26,21 +31,31 @@ First, find a node (e.g., Spark Node) that can connect to the image repository a
   
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: spidernet-offline # Path where the load-image.yaml file is executed on the node
+          intermediateBundlesPath: spidernet-offline # (1)!
         target:
-          containerRegistry: 10.16.23.145 # Image repository address
-          containerRepository: release.daocloud.io/spidernet # Image repository path
+          containerRegistry: 10.16.23.145 # (2)!
+          containerRepository: release.daocloud.io/spidernet # (3)!
           repo:
-            kind: HARBOR # Helm Chart repository type
-            url: http://10.16.23.145/chartrepo/release.daocloud.io # Helm repository address
+            kind: HARBOR # (4)!
+            url: http://10.16.23.145/chartrepo/release.daocloud.io # (5)!
             auth:
-              username: "admin" # Image repository username
-              password: "Harbor12345" # Image repository password
+              username: "admin" # (6)!
+              password: "Harbor12345" # (7)!
           containers:
             auth:
-              username: "admin" # Helm repository username
-              password: "Harbor12345" # Helm repository password
+              username: "admin" # (8)!
+              password: "Harbor12345" # (9)!
         ```
+
+        1. Path where the load-image.yaml file is executed on the node
+        2. Image repository address
+        3. Image repository path
+        4. Helm Chart repository type
+        5. Helm repository address
+        6. Image repository username
+        7. Image repository password
+        8. Helm repository username
+        9. Helm repository password
 
     === "Helm Repo Not Added"
 
@@ -48,17 +63,17 @@ First, find a node (e.g., Spark Node) that can connect to the image repository a
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: spidernet-offline # (1)
+          intermediateBundlesPath: spidernet-offline # (1)!
         target:
-          containerRegistry: 10.16.23.145 # (2)
-          containerRepository: release.daocloud.io/spidernet # (3)
+          containerRegistry: 10.16.23.145 # (2)!
+          containerRepository: release.daocloud.io/spidernet # (3)!
           repo:
             kind: LOCAL
-            path: ./local-repo # (4)
+            path: ./local-repo # (4)!
           containers:
             auth:
-              username: "admin" # (5)
-              password: "Harbor12345" # (6)
+              username: "admin" # (5)!
+              password: "Harbor12345" # (6)!
         ```
   
         1. Path where the load-image.yaml file is executed on the node
@@ -135,7 +150,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
     3. Update the network engine's helm repository.
 
         ```shell
-        helm repo update spidernet-release # (1)
+        helm repo update spidernet-release
         ```
 
     4. In case of a failure during the upgrade process due to an outdated Helm version, please attempt to resolve the issue by executing the command of helm update repo. 

@@ -9,6 +9,14 @@ This page lists the release notes for the Redis Cache service, providing you wit
 
 *[mcamel-redis]: "mcamel" is the dev name for DaoCloud's middlewares, and "redis" is the middleware that provides memory cache services
 
+## 2024-04-30
+
+### v0.17.0
+
+- **Added** Redis instance topology
+- **Added** a prompt for namespace quota
+- **Improved** When deleting backups, you can now choose to delete the backup data in S3
+
 ## 2024-03-31
 
 ### v0.16.0

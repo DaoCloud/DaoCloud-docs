@@ -1,3 +1,8 @@
+---
+MTPE: windsonsesa
+date: 2024-05-11
+---
+
 # Network Portfolio Solutions
 
 Based on open source projects, DCE 5.0 Cloud Native Networking provides not only single CNI network support, but also multiple CNI portfolio solutions.
@@ -19,8 +24,6 @@ Different IP pools meets various use cases of application communication. The mai
 4. The external access IP provided through Ipvlan CNI / MacVLAN CNI / SR-IOV CNI enables Pod Layer 2 external communication. Complemented by Calico dynamic virtual network, it reduces chores of network operation and maintenance and also saves IP resources.
    If there is no external access requirement in the application scenario, you do not need to install Underlay CNI.
 
-
-
 ## Solution 2：Calico + Macvlan/Ipvlan/SRIOV + SpiderPool + Multus
 
 This solution is suitable for low kernel versions of Linux OS, and applicable for cross-cluster connectivity, multiple CNIs and other diversified use cases.
@@ -32,8 +35,6 @@ This solution is suitable for low kernel versions of Linux OS, and applicable fo
 3. The external access IP provided through Ipvlan CNI / MacVLAN CNI / SR-IOV CNI enables Pod Layer 2 external communication. Complemented by Calico dynamic virtual network, it reduces chores of network operation and maintenance and also saves IP resources.
    Calico is a must-have network CNI in this portfolio. If there is no external access requirement in the application scenario, you do not need to install Underlay CNI.
 4. The Submariner component provides cross-cluster Pod communication.Both Submariner and Core DNS service discovery makes cross-cluster service discovery possible. Submariner can be installed according to your demand.
-
-
 
 ## Network components
 

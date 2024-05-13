@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+date: 2024-05-11
+---
+
 # Port Requirements
 
 To ensure proper operation, certain ports need to be opened. If firewall rules are configured on the network, it is necessary to ensure that the infrastructure components can communicate with each other through specific ports.

@@ -111,13 +111,13 @@ Other Linux is essentially because DCE does not provide the installation system 
 
     | CPU Architecture | Version | Download URL |
     | -------- | ------ | ------------------------------ -------------------------------------------------- -------------- |
-    | AMD64 | v0.6.1 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.1-amd64.tar> |
+    | AMD64 | v0.17.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.17.0-amd64.tar> |
 
     Unzip the offline package after downloading:
 
     ```bash
-    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.6.1-amd64.tar
-    tar -xvf offline-v0.6.1-amd64.tar
+    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.17.0-amd64.tar
+    tar -xvf offline-v0.17.0-amd64.tar
     ```
 
 2. Refer to [Create an offline OS package](#make-the-offline-os-package).
