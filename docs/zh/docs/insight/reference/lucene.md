@@ -159,3 +159,18 @@ Lucene 语法支持范围查询，您可以使用方括号 __[ ]__ 或花括号 
 - syslog.file: 日志文件路径
 - syslog.host: 主机名称
 - log: 日志内容
+
+如果你想要精确匹配某个特定的值，可以在关键字后加入 `.keyword` 后缀，例如 `kubernetes.container_name.keyword`。
+
+## 示例
+
+1. 查询指定 Pod 中指定容器的日志
+
+    ```lucene
+    kubernetes.pod_name.keyword:nginx-pod AND kubernetes.container_name.keyword:nginx
+    ```
+2. 查询 Pod 名称中包含 `nginx-pod` 的容器日志
+
+    ```lucene
+    kubernetes.pod_name:nginx-pod
+    ```
