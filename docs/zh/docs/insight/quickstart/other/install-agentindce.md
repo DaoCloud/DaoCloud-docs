@@ -1,6 +1,6 @@
 # DCE 4.0 中安装 Insight Agent
 
-在 DCE 5.0 中，可以将以前的 DCE 4.0 可作为子集群接入。本文提供在 DCE4.0 集群中安装 insight-agent 时可能遇到的问题以及解决方案。
+在 DCE 5.0 中，可以将以前的 DCE 4.0 作为子集群接入。本文提供在 DCE4.0 集群中安装 insight-agent 时可能遇到的问题以及解决方案。
 
 ## 问题一
 

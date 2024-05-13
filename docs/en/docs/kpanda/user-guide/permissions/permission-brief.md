@@ -1,24 +1,25 @@
-# Description of container management permissions
+---
+MTPE: windsonsea
+date: 2024-05-13
+---
 
-Container management permissions are based on a multi-dimensional permission management system created by global permission management and Kubernetes RBAC permission management.
-Supports cluster-level and namespace-level permission control, helping users to conveniently and flexibly set different operation permissions for IAM users and groups (a collection of users) under a tenant.
+# Container Management Permissions
 
-## Cluster permissions
+Container management permissions are based on a multi-dimensional permission management system created by global permission management and Kubernetes RBAC permission management. It supports cluster-level and namespace-level permission control, helping users to conveniently and flexibly set different operation permissions for IAM users and user groups (collections of users) under a tenant.
 
-Cluster permissions are based on the ClusterRolebinding authorization of Kubernetes RBAC. Cluster permission settings allow users/groups to have cluster-related permissions.
-The current default cluster role is __Cluster Admin__ (does not have permission to create and delete clusters).
+## Cluster Permissions
 
-### __Cluster Admin__ 
+Cluster permissions are authorized based on Kubernetes RBAC's ClusterRoleBinding, allowing users/user groups to have cluster-related permissions. The current default cluster role is __Cluster Admin__ (does not have the permission to create or delete clusters).
 
- __Cluster Admin__ has the following permissions:
+### __Cluster Admin__
 
-1. Can manage, edit and view the corresponding cluster
+__Cluster Admin__ has the following permissions:
 
-2. Manage, edit, and view all workloads under the namespace and all resources in the cluster
+- Can manage, edit, and view the corresponding cluster
+- Manage, edit, and view all workloads and all resources within the namespace
+- Can authorize users for roles within the cluster (Cluster Admin, NS Admin, NS Editor, NS Viewer)
 
-3. Users can be authorized as roles in the cluster (Cluster Admin, NS Admin, NS Edit, NS View)
-
-An example YAML for this cluster role is as follows:
+The YAML example for this cluster role is as follows:
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -45,21 +46,19 @@ rules:
   - '*'
 ```
 
-## Namespace permissions
+## Namespace Permissions
 
-Namespace permissions are based on the authorization of Kubernetes RBAC capabilities, which can enable different users/groups to have different operation permissions on resources under the namespace (including Kubernetes API permissions, for details, refer to: [Kubernetes RBAC](https://kubernetes .io/docs/reference/access-authn-authz/rbac/). Currently, the default roles for container management are: NS Admin, NS Edit, NS View.
+Namespace permissions are authorized based on Kubernetes RBAC capabilities, allowing different users/user groups to have different operation permissions on resources under a namespace (including Kubernetes API permissions). For details, refer to: [Kubernetes RBAC](https://kubernetes.io/docs/reference/access-authn-authz/rbac/). Currently, the default roles for container management are: NS Admin, NS Editor, NS Viewer.
 
 ### __NS Admin__ 
 
- __NS Admin__ has the following permissions:
+__NS Admin__ has the following permissions:
 
-1. You can view the corresponding namespace
+- Can view the corresponding namespace
+- Manage, edit, and view all workloads and custom resources within the namespace
+- Can authorize users for corresponding namespace roles (NS Editor, NS Viewer)
 
-2. Manage, edit, and view all workloads and custom resources under the namespace
-
-3. The user can be authorized as the corresponding namespace role (NS Edit, NS View)
-
-An example YAML for this cluster role is as follows:
+The YAML example for this cluster role is as follows:
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -83,16 +82,15 @@ rules:
 - nonResourceURLs:
   - '*'
   verbs:
-  - '*'
+  - '*'    
 ```
 
-### __NS Edit__ 
+### __NS Editor__
 
- __NS Edit__ has the following permissions:
+__NS Editor__ has the following permissions:
 
-1. You can view the corresponding namespace with permissions
-
-2. Manage, edit, and view all workloads under the namespace
+- Can view corresponding namespaces where permissions are granted
+- Manage, edit, and view all workloads within the namespace
 
 ??? note "Click to view the YAML example of the cluster role"
 
@@ -114,11 +112,11 @@ rules:
       resources:
       - configmaps
       - endpoints
-      - persistent volume claims
-      - persistent volume claims/status
+      - persistentvolumeclaims
+      - persistentvolumeclaims/status
       - pods
-      -replicationcontrollers
-      -replicationcontrollers/scale
+      - replicationcontrollers
+      - replicationcontrollers/scale
       - serviceaccounts
       - services
       - services/status
@@ -127,15 +125,15 @@ rules:
     - apiGroups:
       - ""
       resources:
-      -bindings
-      -events
-      - limit ranges
+      - bindings
+      - events
+      - limitranges
       - namespaces/status
       - pods/log
       - pods/status
-      -replicationcontrollers/status
-      -resourcequotas
-      -resourcequotas/status
+      - replicationcontrollers/status
+      - resourcequotas
+      - resourcequotas/status
       verbs:
       - '*'
     - apiGroups:
@@ -145,27 +143,27 @@ rules:
       verbs:
       - '*'
     - apiGroups:
-      -apps
+      - apps
       resources:
-      - controller revisions
-      -daemonsets
+      - controllerrevisions
+      - daemonsets
       - daemonsets/status
       - deployments
-      - deployments/scales
+      - deployments/scale
       - deployments/status
-      -replicasets
-      -replicasets/scale
+      - replicasets
+      - replicasets/scale
       - replicasets/status
-      -statefulsets
-      -statefulsets/scale
+      - statefulsets
+      - statefulsets/scale
       - statefulsets/status
       verbs:
       - '*'
     - apiGroups:
       - autoscaling
       resources:
-      -horizontal pod autoscalers
-      -horizontal pod autoscalers/status
+      - horizontalpodautoscalers
+      - horizontalpodautoscalers/status
       verbs:
       - '*'
     - apiGroups:
@@ -180,24 +178,24 @@ rules:
     - apiGroups:
       - extensions
       resources:
-      -daemonsets
+      - daemonsets
       - daemonsets/status
       - deployments
-      - deployments/scales
+      - deployments/scale
       - deployments/status
       - ingresses
       - ingresses/status
       - networkpolicies
-      -replicasets
-      -replicasets/scale
+      - replicasets
+      - replicasets/scale
       - replicasets/status
-      -replicationcontrollers/scale
+      - replicationcontrollers/scale
       verbs:
       - '*'
     - apiGroups:
       - policy
       resources:
-      -pod disruption budgets
+      - poddisruptionbudgets
       - poddisruptionbudgets/status
       verbs:
       - '*'
@@ -208,16 +206,15 @@ rules:
       - ingresses/status
       - networkpolicies
       verbs:
-      - '*'
+      - '*'      
     ```
 
-### __NS View__ 
+### __NS Viewer__
 
- __NS View__ has the following permissions:
+__NS Viewer__ has the following permissions:
 
-1. You can view the corresponding namespace
-
-2. You can view all workloads and custom resources under the corresponding namespace
+- Can view the corresponding namespace
+- Can view all workloads and custom resources within the corresponding namespace
 
 ??? note "Click to view the YAML example of the cluster role"
 
@@ -239,11 +236,11 @@ rules:
       resources:
       - configmaps
       - endpoints
-      - persistent volume claims
-      - persistent volume claims/status
+      - persistentvolumeclaims
+      - persistentvolumeclaims/status
       - pods
-      -replicationcontrollers
-      -replicationcontrollers/scale
+      - replicationcontrollers
+      - replicationcontrollers/scale
       - serviceaccounts
       - services
       - services/status
@@ -254,15 +251,15 @@ rules:
     - apiGroups:
       - ""
       resources:
-      -bindings
-      -events
-      - limit ranges
+      - bindings
+      - events
+      - limitranges
       - namespaces/status
       - pods/log
       - pods/status
-      -replicationcontrollers/status
-      -resourcequotas
-      -resourcequotas/status
+      - replicationcontrollers/status
+      - resourcequotas
+      - resourcequotas/status
       verbs:
       - get
       - list
@@ -276,19 +273,19 @@ rules:
       - list
       - watch
     - apiGroups:
-      -apps
+      - apps
       resources:
-      - controller revisions
-      -daemonsets
+      - controllerrevisions
+      - daemonsets
       - daemonsets/status
       - deployments
-      - deployments/scales
+      - deployments/scale
       - deployments/status
-      -replicasets
-      -replicasets/scale
+      - replicasets
+      - replicasets/scale
       - replicasets/status
-      -statefulsets
-      -statefulsets/scale
+      - statefulsets
+      - statefulsets/scale
       - statefulsets/status
       verbs:
       - get
@@ -297,8 +294,8 @@ rules:
     - apiGroups:
       - autoscaling
       resources:
-      -horizontal pod autoscalers
-      -horizontal pod autoscalers/status
+      - horizontalpodautoscalers
+      - horizontalpodautoscalers/status
       verbs:
       - get
       - list
@@ -317,18 +314,18 @@ rules:
     - apiGroups:
       - extensions
       resources:
-      -daemonsets
+      - daemonsets
       - daemonsets/status
       - deployments
-      - deployments/scales
+      - deployments/scale
       - deployments/status
       - ingresses
       - ingresses/status
       - networkpolicies
-      -replicasets
-      -replicasets/scale
+      - replicasets
+      - replicasets/scale
       - replicasets/status
-      -replicationcontrollers/scale
+      - replicationcontrollers/scale
       verbs:
       - get
       - list
@@ -336,7 +333,7 @@ rules:
     - apiGroups:
       - policy
       resources:
-      -pod disruption budgets
+      - poddisruptionbudgets
       - poddisruptionbudgets/status
       verbs:
       - get
@@ -351,16 +348,15 @@ rules:
       verbs:
       - get
       - list
-      - watch
+      - watch 
     ```
 
 ## Permissions FAQ
 
 1. What is the relationship between global permissions and container management permissions?
 
-    Answer: Global permissions are only authorized as coarse-grained permissions, which can manage the creation, editing, and deletion of all clusters; for fine-grained permissions, such as the management permissions of a single cluster, the management, editing, and deletion permissions of a single namespace, they need to be based on Kubernetes. RBAC's container management permissions are implemented.
-    Users with general permissions only need to authorize in container management.
+    Answer: Global permissions only authorize coarse-grained permissions, which can manage the creation, editing, and deletion of all clusters; while for fine-grained permissions, such as the management permissions of a single cluster, the management, editing, and deletion permissions of a single namespace, they need to be implemented based on Kubernetes RBAC container management permissions. Generally, users only need to be authorized in container management.
 
-2. Currently, only four default roles are supported. Will __RoleBinding__ and __ClusterRoleBinding__ (Kubernetes fine-grained RBAC) of background custom roles also take effect?
+2. Currently, only four default roles are supported. Can the __RoleBinding__ and __ClusterRoleBinding__ (Kubernetes fine-grained RBAC) for custom roles also take effect?
 
-    Answer: At present, custom permissions cannot be managed through the graphical interface, but permission rules created through kubectl can also take effect.
+    Answer: Currently, custom permissions cannot be managed through the graphical interface, but the permission rules created using kubectl can still take effect.

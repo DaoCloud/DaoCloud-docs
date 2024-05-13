@@ -9,8 +9,8 @@ The Insight uses the following roles:
 
 - Admin / Kpanda Owner
 - [Cluster Admin](../../kpanda/user-guide/permissions/permission-brief.md#cluster-admin)
-- [NS Admin](../../kpanda/user-guide/permissions/permission-brief.md#ns-admin) / [NS Edit](../../kpanda/user-guide/permissions/permission-brief.md#ns-edit)
-- [NS View](../../kpanda/user-guide/permissions/permission-brief.md#ns-view)
+- [NS Admin](../../kpanda/user-guide/permissions/permission-brief.md#ns-admin) / [NS Edit](../../kpanda/user-guide/permissions/permission-brief.md#ns-editor)
+- [NS View](../../kpanda/user-guide/permissions/permission-brief.md#ns-viewer)
 
 The permissions of each role are as follows:
 
