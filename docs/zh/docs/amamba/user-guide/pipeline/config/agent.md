@@ -130,7 +130,7 @@ __Jenkins Agent Label: python__
         args:
         - ^${computer.jnlpmac} ^${computer.name}
       - name: golang
-        image: golang:1.16.5   # (2!)
+        image: golang:1.16.5   # (2)!
         command:
         - sleep
         args:
