@@ -6,6 +6,131 @@
 
     有些图标为白色背景，正常不可见，可以点击本页顶部的 ⚙️ 图标切换为 Dark 模式。
 
+## 云厂商和社区项目图标
+
+<table>
+  <tr>
+    <th>名称</th>
+    <th>图标</th>
+    <th>名称</th>
+    <th>图标</th>
+    <th>名称</th>
+    <th>图标</th>
+    <th>名称</th>
+    <th>图标</th>
+  </tr>
+  <tr>
+    <td>Android</td>
+    <td><img src="../icons/providers/android.svg" width="80"></td>
+    <td>Argo</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/argo.svg" width="80"></td>
+    <td>ARM</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/arm.svg" width="80"></td>
+    <td>AWS</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/aws.svg" width="80"></td>
+  </tr>
+  <tr>
+    <td>Azure</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/azure.svg" width="80"></td>
+    <td>CentOS</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/centos.svg" width="80"></td>
+    <td>Cilium</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/cilium.svg" width="80"></td>
+    <td>Consul</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/consul.svg" width="80"></td>
+  </tr>
+  <tr>
+    <td>containerd</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/containerd.svg" width="80"></td>
+    <td>Contour</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/contour.svg" width="80"></td>
+    <td>DaoCloud</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/daocloud.svg" width="80"></td>
+    <td>DCE</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/dce.svg" width="80"></td>
+  </tr>
+  <tr>
+    <td>Debian</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/debian.svg" width="80"></td>
+    <td>Docker</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/docker.svg" width="80"></td>
+    <td>Dubbo</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/dubbo.svg" width="80"></td>
+    <td>Envoy</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/envoy.svg" width="80"></td>
+  </tr>
+  <tr>
+    <td>Eureka</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/eureka.svg" width="80"></td>
+    <td>FluentBit</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/fluentbit.svg" width="80"></td>
+    <td>GCP</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/google-cloud.svg" width="80"></td>
+    <td>Git</td>
+    <td><img src="../icons/providers/git.svg" width="80"></td>
+  </tr>
+  <tr>
+    <td>GitLab</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/gitlab.svg" width="80"></td>
+    <td>Grafana</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/grafana.svg" width="80"></td>
+    <td>Harbor</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/harbor.svg" width="80"></td>
+    <td>Helm</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/helm.svg" width="80"></td>
+  </tr>
+  <tr>
+    <td>华为</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/huawei.svg" width="80"></td>
+    <td>Insight-agent</td>
+    <td><img src="../icons/providers/insight-agent-green.svg" width="80"></td>
+    <td>Istio</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/istio.svg" width="80"></td>
+    <td>Jaeger</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/jaeger.svg" width="80"></td>
+  </tr>
+  <tr>
+    <td>Jenkins</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/jenkins.svg" width="80"></td>
+    <td>Jfrog</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/jfrog.svg" width="80"></td>
+    <td>Jira</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/jira.svg" width="80"></td>
+    <td>K8s</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/kubernetes.svg" width="80"></td>
+  </tr>
+  <tr>
+    <td>K8s-2</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/kubernetes-2.svg" width="80"></td>
+    <td>Karmada</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/karmada.svg" width="80"></td>
+    <td>Kdoctor</td>
+    <td><img src="../icons/providers/kdoctor.svg" width="80"></td>
+    <td>Kiali</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/kiali.svg" width="80"></td>
+  </tr>
+  <tr>
+    <td>KLTS</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/klts.svg" width="80"></td>
+    <td>KubeEdge</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/kubeedge.svg" width="80"></td>
+    <td>Kubevela</td>
+    <td><img src="../icons/providers/kubevela.svg" width="80"></td>
+    <td>Kubespray</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/kubespray.svg" width="80"></td>
+  </tr>
+  <tr>
+    <td>Kylin</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/kylin.svg" width="80"></td>
+    <td>Kylin mini</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/kylin-mini.svg" width="80"></td>
+    <td>灵雀</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/lingque.svg" width="80"></td>
+    <td>MetalLB</td>
+    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/metal-lb.svg" width="80"></td>
+  </tr>
+</table>
+
 ## DaoCloud 开源项目图标
 
 <table>
@@ -97,177 +222,47 @@
   </tr>
 </table>
 
-## 云厂商和社区项目图标
+## DaoCloud Logo
 
 <table>
   <tr>
-    <th>1</th>
-    <th>2</th>
-    <th>3</th>
-    <th>4</th>
-    <th>5</th>
-    <th>6</th>
-    <th>7</th>
-    <th>8</th>
+    <th>名称</th>
+    <th>图标</th>
+    <th>名称</th>
+    <th>图标</th>
+    <th>名称</th>
+    <th>图标</th>
+    <th>名称</th>
+    <th>图标</th>
   </tr>
   <tr>
-    <td>Airship</td>
-    <td>阿里云</td>
-    <td>Argo</td>
-    <td>ARM</td>
-    <td>AWS</td>
-    <td>Azure</td>
-    <td>CentOS</td>
-    <td>Cilium</td>
+    <td>横向彩黑</td>
+    <td><img src="../icons/open/daocloud_horizon-color_dark.svg" alt="横向彩黑图标"></a></td>
+    <td>横向彩白</td>
+    <td><img src="../icons/open/daocloud_horizon-color_light.svg" alt="横向彩白图标"></a></td>
+    <td>横向黑</td>
+    <td><img src="../icons/open/daocloud_horizon-dark.svg" alt="横向黑图标"></a></td>
+    <td>横向白</td>
+    <td><img src="../icons/open/daocloud_horizon-light.svg" alt="横向白图标"></a></td>
   </tr>
   <tr>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/airship.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/aliyun.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/argo.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/arm.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/aws.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/azure.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/centos.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/cilium.svg" width="80"></td>
+    <td>纵向彩黑</td>
+    <td><img src="../icons/open/daocloud_vertical-color_dark.svg" alt="纵向彩黑图标"></a></td>
+    <td>纵向彩白</td>
+    <td><img src="../icons/open/daocloud_vertical-color_light.svg" alt="纵向彩白图标"></a></td>
+    <td>纵向黑</td>
+    <td><img src="../icons/open/daocloud_vertical-dark.svg" alt="纵向黑图标"></a></td>
+    <td>纵向白</td>
+    <td><img src="../icons/open/daocloud_vertical-light.svg" alt="纵向白图标"></a></td>
   </tr>
   <tr>
-    <td>Consul</td>
-    <td>containerd</td>
-    <td>Contour</td>
-    <td>DaoCloud</td>
-    <td>DCE</td>
-    <td>Debian</td>
-    <td>Docker</td>
-    <td>Dubbo</td>
-  </tr>
-  <tr>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/consul.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/containerd.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/contour.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/daocloud.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/dce.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/debian.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/docker.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/dubbo.svg" width="80"></td>
-  </tr>
-  <tr>
-    <td>Envoy</td>
-    <td>Eureka</td>
-    <td>FluentBit</td>
-    <td>GitLab</td>
-    <td>GCP</td>
-    <td>Grafana</td>
-    <td>Harbor</td>
-    <td>Helm</td>
-  </tr>
-  <tr>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/envoy.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/eureka.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/fluentbit.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/gitlab.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/google-cloud.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/grafana.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/harbor.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/helm.svg" width="80"></td>
-  </tr>
-  <tr>
-    <td>华为</td>
-    <td>Insight-agent</td>
-    <td>Istio</td>
-    <td>Jaeger</td>
-    <td>Jenkins</td>
-    <td>Jfrog</td>
-    <td>Jira</td>
-    <td>Karmada</td>
-  </tr>
-  <tr>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/huawei.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/insight-agent-green.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/istio.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/jaeger.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/jenkins.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/jfrog.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/jira.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/karmada.svg" width="80"></td>
-  </tr>
-  <tr>
-    <td>Kiali</td>
-    <td>KLTS</td>
-    <td>KubeEdge</td>
-    <td>Kubernetes</td>
-    <td>Kubernetes-2</td>
-    <td>Kubespray</td>
-    <td>Kylin mini</td>
-    <td>Kylin</td>
-  </tr>
-  <tr>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/kiali.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/klts.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/kubeedge.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/kubernetes-2.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/kubernetes.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/kubespray.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/kylin-mini.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/kylin.svg" width="80"></td>
-  </tr>
-  <tr>
-    <td>灵雀</td>
-    <td>MetalLB</td>
-    <td>Metric Server</td>
-    <td>Multus</td>
-    <td>Nacos</td>
-    <td>Nginx</td>
-    <td>OTel</td>
-    <td>Openshift</td>
-  </tr>
-  <tr>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/lingque.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/metal-lb.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/victoria-metrics.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/multus.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/nacos.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/nginx.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/open-telemetry.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/openshift.svg" width="80"></td>
-  </tr>
-  <tr>
-    <td>Prometheus</td>
-    <td>Pulsar</td>
-    <td>Rancher</td>
-    <td>RedHat</td>
-    <td>Sentinel</td>
-    <td>Spring Cloud</td>
-    <td>Submariner</td>
-    <td>Tanzu</td>
-  </tr>
-  <tr>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/prometheus.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/pulsar.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/rancher.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/redhat.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/sentinel.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/spring-cloud.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/submariner.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/tanzu.svg" width="80"></td>
-  </tr>
-  <tr>
-    <td>Tekton</td>
-    <td>腾讯云</td>
-    <td>TiDB</td>
-    <td>Ubuntu</td>
-    <td>Velero</td>
-    <td>Victoria metrics</td>
-    <td>Zookeeper</td>
+    <td>彩色</td>
+    <td><img src="../icons/open/daocloud_cube-color.svg" alt="彩色图标"></a></td>
+    <td>黑色</td>
+    <td><img src="../icons/open/daocloud_cube-dark.svg" alt="黑色图标"></a></td>
+    <td>白色</td>
+    <td><img src="../icons/open/daocloud_cube-light.svg" alt="白色图标"></a></td>
     <td></td>
-  </tr>
-  <tr>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/tekton.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/tencent-cloud.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/tidb.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/ubuntu.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/velero.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/victoria-metrics.svg" width="80"></td>
-    <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/zookeeper.svg" width="80"></td>
     <td></td>
   </tr>
 </table>
