@@ -14,7 +14,7 @@ Workbench declares 6 labels through the podTemplate capability: __base__ , __mav
 
 - Can use go podTemplate via __node('go')__ in Jenkinsfile.
 
-    ```bash
+    ```groovy
     pipeline {
       agent {
         node {
@@ -38,78 +38,79 @@ Workbench declares 6 labels through the podTemplate capability: __base__ , __mav
 
     <!--![]()screenshots-->
 
-### Built-in Label environment description
+### Built-in Labels
 
-**Jenkins Agent Label: base**
+The built-in Jenkins Agent Labels have the following options:
 
-| name | type/version |
-| -------- | ----------------------------------------- -------------------- |
-| container name | base |
-| OS | centos-7 (7.9.2009) |
-| podman | podman version 3.0.1 |
-| Kubectl | v1.22.0 |
-| Built-in tools | unzip, which, make (GNU Make 3.82), wget, zip, bzip2, git (2.9.5) |
+=== "base"
 
-**Jenkins Agent Label: maven**
+    | Name        | Type/Version                        |
+    | ----------- | ----------------------------------- |
+    | Container   | base                                |
+    | Operating System | centos-7 (7.9.2009)             |
+    | Podman      | podman version 3.0.1                |
+    | Kubectl     | v1.22.0                             |
+    | Built-in Tools | unzip, which, make (GNU Make 3.82), wget, zip, bzip2, git (2.9.5) |
 
-| name | type/version |
-| -------- | ----------------------------------------- -------------------- |
-| container name | maven |
-| OS | centos-7 (7.9.2009) |
-| Jdk | openjdk-1.8.0_322 |
-| Maven | 3.5.3 |
-| podman | podman version 3.0.1 |
-| Kubectl | v1.22.0 |
-| Built-in tools | unzip, which, make (GNU Make 3.82), wget, zip, bzip2, git (2.9.5) |
+=== "maven"
 
-**Jenkins Agent Label: go**
+    | Name        | Type/Version                        |
+    | ----------- | ----------------------------------- |
+    | Container   | maven                               |
+    | Operating System | centos-7 (7.9.2009)             |
+    | Jdk         | openjdk-1.8.0_322                   |
+    | Maven       | 3.5.3                               |
+    | Podman      | podman version 3.0.1                |
+    | Kubectl     | v1.22.0                             |
+    | Built-in Tools | unzip, which, make (GNU Make 3.82), wget, zip, bzip2, git (2.9.5) |
 
-| name | type/version |
-| -------- | ----------------------------------------- -------------------- |
-| container name | go |
-| OS | centos-7 (7.9.2009) |
-| Go | 1.12.10 |
-| GOPATH | /home/jenkins/go |
-| GOROOT | /usr/local/go |
-| podman | podman version 3.0.1 |
-| Kubectl | v1.22.0 |
-| Built-in tools | unzip, which, make (GNU Make 3.82), wget, zip, bzip2, git (2.9.5) |
+=== "mavenjdk11"
 
-**Jenkins Agent Label: go16**
+    | Name        | Type/Version                        |
+    | ----------- | ----------------------------------- |
+    | Container   | maven                               |
+    | Operating System | centos-7 (7.9.2009)             |
+    | Jdk         | openjdk-11.0.19                      |
+    | Maven       | 3.5.3                               |
+    | Podman      | podman version 3.0.1                |
+    | Kubectl     | v1.22.0                             |
+    | Built-in Tools | unzip, which, make (GNU Make 3.82), wget, zip, bzip2, git (2.9.5) |
 
-| name | type/version |
-| -------- | ----------------------------------------- -------------------- |
-| container name | go |
-| OS | centos-7 (7.9.2009) |
-| Go | 1.16.8 |
-| GOPATH | /home/jenkins/go |
-| GOROOT | /usr/local/go |
-| podman | podman version 3.0.1 |
-| Kubectl | v1.22.0 |
-| Built-in tools | unzip, which, make (GNU Make 3.82), wget, zip, bzip2, git (2.9.5) |
+=== "go"
 
-**Jenkins Agent Label: node.js**
+    | Name        | Type/Version                        |
+    | ----------- | ----------------------------------- |
+    | Container   | go                                  |
+    | Operating System | centos-7 (7.9.2009)             |
+    | Go          | 1.12.10                             |
+    | GOPATH      | /home/jenkins/go                    |
+    | GOROOT      | /usr/local/go                       |
+    | Podman      | podman version 3.0.1                |
+    | Kubectl     | v1.22.0                             |
+    | Built-in Tools | unzip, which, make (GNU Make 3.82), wget, zip, bzip2, git (2.9.5) |
 
-| name | type/version |
-| -------- | ----------------------------------------- -------------------- |
-| container name | nodejs |
-| OS | centos-7 (7.9.2009) |
-| Node | v10.16.3 |
-| Yarn | 1.16.0 |
-| podman | podman version 3.0.1 |
-| Kubectl | v1.22.0 |
-| Built-in tools | unzip, which, make (GNU Make 3.82), wget, zip, bzip2, git (2.9.5) |
+=== "node.js"
 
-**Jenkins Agent Label: python**
+    | Name        | Type/Version                        |
+    | ----------- | ----------------------------------- |
+    | Container   | nodejs                             |
+    | Operating System | centos-7 (7.9.2009)             |
+    | Node        | v10.16.3                            |
+    | Yarn        | 1.16.0                              |
+    | Podman      | podman version 3.0.1                |
+    | Kubectl     | v1.22.0                             |
+    | Built-in Tools | unzip, which, make (GNU Make 3.82), wget, zip, bzip2, git (2.9.5) |
 
-| name | type/version |
-| -------- | ----------------------------------------- -------------------- |
-| container name | python |
-| OS | centos-7 (7.9.2009) |
-| Python | 3.7.11 |
-| podman | podman version 3.0.1 |
-| Kubectl | v1.22.0 |
-| Built-in tools | unzip, which, make (GNU Make 3.82), wget, zip, bzip2, git (2.9.5) |
+=== "python"
+
+    | Name        | Type/Version                        |
+    | ----------- | ----------------------------------- |
+    | Container   | python                             |
+    | Operating System | centos-7 (7.9.2009)             |
+    | Python      | 3.7.11                              |
+    | Podman      | podman version 3.0.1                |
+    | Kubectl     | v1.22.0                             |
+    | Built-in Tools | unzip, which, make (GNU Make 3.82), wget, zip, bzip2, git (2.9.5) |
 
 ## Customize podTemplate using YAML
 
@@ -121,24 +122,26 @@ If you need to run the Jenkins Agent in a specific environment, you can customiz
 
 2. Click __YAML Editor__ and fill in the YAML statement in the dialog box, please refer to the following example:
 
-    ```bash
+    ```yaml
     apiVersion: v1
     kind: Pod
     spec:
       containers:
-      -name: maven
-        image: maven:3.8.1-jdk-8
+      - name: jnlp
+        image: docker.m.daocloud.io/jenkins/inbound-agent:4.10-2  # (1)!
+        args:
+        - ^${computer.jnlpmac} ^${computer.name}
+      - name: golang
+        image: golang:1.16.5   # (2)!
         command:
         - sleep
         args:
-        -99d
-      -name: golang
-        image: golang:1.16.5
-        command:
-        - sleep
-        args:
-        -99d
-      ```
+        - 99d
+    ```
+
+    1. You need to provide the address of the JNLP image,
+       otherwise, the default "jenkins/inbound-agent" will be used.
+    2. Fill in your custom image.
 
 3. Enter __golang__ in Container as the default container for pipeline operation.
 
