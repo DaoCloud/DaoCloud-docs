@@ -274,6 +274,7 @@ nav:
               - 权限管理:
                   - 权限体系介绍: kpanda/user-guide/permissions/permission-brief.md
                   - 集群和命名空间授权: kpanda/user-guide/permissions/cluster-ns-auth.md
+                  - 增加容器管理内置权限点: kpanda/user-guide/permissions/custom-kpanda-role.md
               - GPU 管理:
                   - GPU 管理概述: kpanda/user-guide/gpu/index.md
                   - GPU 支持矩阵: kpanda/user-guide/gpu/gpu_matrix.md
