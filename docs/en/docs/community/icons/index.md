@@ -96,11 +96,11 @@ This page lists the icons of DaoCloud's self-developed open source projects, as 
     <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/jfrog.svg" width="80"></td>
     <td style="vertical-align: middle;">Jira</td>
     <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/jira.svg" width="80"></td>
-    <td style="vertical-align: middle;">Kubernetes</td>
+    <td style="vertical-align: middle;">KubeSphere</td>
     <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/kubernetes.svg" width="80"></td>
   </tr>
   <tr>
-    <td style="vertical-align: middle;">KubeSphere</td>
+    <td style="vertical-align: middle;">Kubernetes</td>
     <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/kubernetes-2.svg" width="80"></td>
     <td style="vertical-align: middle;">Karmada</td>
     <td><img src="https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/community/icons/providers/karmada.svg" width="80"></td>
