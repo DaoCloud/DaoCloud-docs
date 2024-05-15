@@ -8,14 +8,6 @@ Date: 2024-04-24
 This page provides the release notes for VirtNest (Virtual Machine),
 allowing you to understand the evolution path and feature changes of each version.
 
-## 2024-4-2
-
-### v0.7.1
-
-#### Features
-
-- **Added** i18n for the virtual machine page
-
 ## 2024-3-26
 
 ### v0.7.0
