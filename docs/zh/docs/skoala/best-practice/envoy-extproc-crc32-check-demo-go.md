@@ -10,12 +10,13 @@
 - 安装 Go (Verson >= v1.21)，如果只是运行，可跳过这一步
 - 支持 HTTP Method:POST 的目标服务（以下简称 Upstream），且假设其支持以下 route：
 
-    - `/*`
+    - `/*`
+
     - `/no-extproc`
 
 ## 编译
 
-进入项目根目录(如果只是运行,可跳过此步).
+进入项目根目录（如果只是运行，可跳过这一步）。
 
 ```bash
 go build . -o extproc
