@@ -10,8 +10,8 @@
 - 安装 Go (Verson >= v1.21)，如果只是运行，可跳过这一步
 - 支持 HTTP Method:POST 的目标服务（以下简称 Upstream），且假设其支持以下 route：
 
-    - /\*
-    - /no-extproc
+    - `/*`
+    - `/no-extproc`
 
 ## 编译
 
@@ -67,11 +67,12 @@ go build . -o extproc
 
 ## 注意事项
 
-1.  此命令行参数中的前 4 个为全局配置参数,即所有基于[envoy-extproc-sdk-go](https://github.com/wrossmorrow/envoy-extproc-sdk-go)实现的插件都会默认支持它们;而**poly 0x82f63b78**为插件(envoy-extproc-crc32-check-demo-go)特定之参数,由此插件解析与使用.
+1.  此命令行参数中的前 4 个为全局配置参数,即所有基于[envoy-extproc-sdk-go](https://github.com/wrossmorrow/envoy-extproc-sdk-go)实现的插件都会默认支持它们；
+    而 **poly 0x82f63b78** 为插件(envoy-extproc-crc32-check-demo-go)特定之参数,由此插件解析与使用.
 
-2.  在此示例中使用 md5 作为"签名"算法,仅是为了演示方便,在正式产品中请使用 SHA256WithRSA 等算法.
+3.  在此示例中使用 md5 作为"签名"算法,仅是为了演示方便,在正式产品中请使用 SHA256WithRSA 等算法.
 
-3.  以下几个字段为每个请求**必填**字段：
+4.  以下几个字段为每个请求 **必填** 字段：
 
     - **data** : 用以生成 crc32 的原始数据
     - **crc32**: 校验和，客户端计算时使用的 **多项式** ，必须与插件中的参数相同且其他配置参数**必须**为以下值，如下[图 1](#__tabbed_1_1)所示
@@ -85,7 +86,7 @@ go build . -o extproc
         + **Polynomial Formula (HEX)**: 0x82F63B78
         ```
 
-4.  processing_mode 的配置项中的 **request_body_mode** 必须配置为下[图 2](#__tabbed_1_2)红框中的选项：
+5.  processing_mode 的配置项中的 **request_body_mode** 必须配置为下[图 2](#__tabbed_1_2)红框中的选项：
 
 === "图 1"
 
