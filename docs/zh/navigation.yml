@@ -800,6 +800,7 @@ nav:
                   - 云原生自定义插件示例 caching: skoala/best-practice/envoy-extproc-caching-demo-go.md
                   - 云原生自定义插件示例 anti: skoala/best-practice/envoy-extproc-anti-demo-go.md
                   - 云原生自定义插件示例 crc32: skoala/best-practice/envoy-extproc-crc32-check-demo-go.md
+                  - 云原生自定义插件示例 conv: skoala/best-practice/envoy-extproc-method-conv-demo-go.md
               - 故障排查:
                   - skoala-init的x-kubernets-validations报错: skoala/troubleshoot/auth-server.md
                   - Nacos 版本降级: skoala/troubleshoot/nacos.md                
