@@ -61,7 +61,7 @@ day by day, making things better over time.
      environment, it provides scenario-based network solutions to maximize the reuse of
      the current enterprise network infrastructure and lower the threshold for enterprises
      to use cloud native applications.
-    
+
      **Related modules**: [Global Management](ghippo/intro/index.md), [Container Management](kpanda/intro/index.md),
      [Cluster Lifecycle Management](community/kubean.md), [cloud native network](network/intro/index.md),
      [cloud native storage](storage/index.md)
