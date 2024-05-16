@@ -1,6 +1,6 @@
 ### 增加 kpanda 内置角色权限点
 
-背景： kpanda 内置角色是的权限点（rbac rules）都是提前预定义好的且用户无法修改，因为修改内置角色是的权限点之后也被 kpanda 控制器还原成预定义权限点。为了支持更加灵活的权限配置，满足对系统角色的自定义需求， kpanda 支持为内置系统角色（cluster admin，cluster view，ns admin，ns edit，ns view）修改权限点。以下示例演示如何新增 ns-view 权限点，增加可以删除工作负载 deployment 的权限。其他权限点操作类似。
+背景： kpanda 内置角色是的权限点（rbac rules）都是提前预定义好的且用户无法修改，因为修改内置角色是的权限点之后也被 kpanda 控制器还原成预定义权限点。为了支持更加灵活的权限配置，满足对系统角色的自定义需求， kpanda 支持为内置系统角色（cluster admin，ns admin，ns edit，ns view）修改权限点。以下示例演示如何新增 ns-view 权限点，增加可以删除工作负载 deployment 的权限。其他权限点操作类似。
 
 ### 前提条件
 
