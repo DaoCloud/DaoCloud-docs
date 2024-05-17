@@ -11,14 +11,16 @@
 - 安装 Envoy (Version >= v1.29).
 - 安装 Go (Verson >= v1.21) 如果只是运行,可跳过此步.
 - 支持 HTTP Method:GET/POST 的目标服务(以下简称 Upstream),且假设其支持以下 route:
-    - /\*
-  - /no-extproc
+
+    - `/*`
+      
+    - `/no-extproc`
 
 ## 编译
 
 进入项目根目录(如果只是运行,可跳过此步).
 
-```go
+```bash
 go build . -o extproc
 ```
 
@@ -26,35 +28,35 @@ go build . -o extproc
 
 - Envoy:
 
-  ```go
-  envoy -c ./envoy.yaml # 此文件位于项目根目录.
-  ```
+    ```bash
+    envoy -c ./envoy.yaml # 此文件位于项目根目录.
+    ```
 
 - Caching:
 
-  - 裸金属:
+    - 裸金属:
 
-  ```go
-  ./extproc method-conv --log-stream --log-phases
-  ```
+        ```bash
+        ./extproc method-conv --log-stream --log-phases
+        ```
 
-  - k8s:
+    - k8s:
 
-  ````go
-  kubectl apply -f ./deployment.yaml # 此文件位于项目根目录.
-     ```
-  ````
+        ```bash
+        kubectl apply -f ./deployment.yaml # 此文件位于项目根目录.
+        ```
 
 - Curl
 
-  ````go
-  curl 127.0.0.1:8000/no-extproc  # Method-conv不会作用于此route,每次请求都会原样路由到Upstream.
+    ```bash
+    curl 127.0.0.1:8000/no-extproc  # (1)!
+    curl 127.0.0.1:8000/foo  # (2)!
+    curl -XPOST 127.0.0.1:8000/bar  # (3)!
+    ```
 
-  curl 127.0.0.1:8000/foo  # 此GET请求将被Method-conv转换成POST后再路由到Upstream
-
-  curl -XPOST 127.0.0.1:8000/bar  # 此POST请求将被Method-conv转换成GET后再路由到Upstream
-    ```
-  ````
+    1. Method-conv不会作用于此route,每次请求都会原样路由到Upstream.
+    2. 此GET请求将被Method-conv转换成POST后再路由到Upstream
+    3. 此POST请求将被Method-conv转换成GET后再路由到Upstream
 
 ## 参数说明:
 
@@ -71,4 +73,4 @@ go build . -o extproc
 
 2. mutation_rules 的配置项中的**allow_all_routing**必须被设置为**true**,如**下图**红框中所示:
 
-![添加自定义属性](../images/mutation_rules.png)
+    ![添加自定义属性](../images/mutation_rules.png)
