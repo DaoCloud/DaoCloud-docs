@@ -784,7 +784,6 @@ nav:
                   - Microservice: reference/basic-knowledge/microservice.md
                   - Registry: reference/basic-knowledge/registry.md
                   - Cloud Native Gateway: reference/basic-knowledge/gateway.md
-                  - Nacos Version Downgrade: skoala/reference/nacos.md
           - Service Mesh:
               - Intro:
                   - What is Service Mesh: mspider/intro/index.md
