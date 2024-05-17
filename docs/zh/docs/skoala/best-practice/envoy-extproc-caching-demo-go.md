@@ -15,47 +15,52 @@
 - 安装 Go (Verson >= v1.21) 如果只是运行，可跳过此步
 - 支持 HTTP Method:GET 的目标服务(以下简称 Upstream)，且假设其支持以下 route：
 
-    ```console
-    /*
-    /no-extproc
-    ```
+    - `/*`
+    - `/no-extproc`
 
 ## 编译
 
 进入项目根目录（如果只是运行，可跳过此步）。
 
-```go
+```bash
 go build . -o extproc
 ```
 
 ## 运行
 
-Envoy：
-
-```bash
-envoy -c ./envoy.yaml # 此文件位于项目根目录.
-```
-
-Caching：
-
-- 裸金属
+- Envoy：
 
     ```bash
-    ./extproc caching --log-stream --log-phases
+    envoy -c ./envoy.yaml # (1)!
     ```
 
-- K8s
+    1. 此文件位于项目根目录
+
+- Caching：
+
+    - 裸金属
+
+        ```bash
+        ./extproc caching --log-stream --log-phases
+        ```
+
+    - K8s
+
+        ```bash
+        kubectl apply -f ./deployment.yaml # (1)!
+        ```
+
+        1. 此文件位于项目根目录
+
+- Curl：
 
     ```bash
-    kubectl apply -f ./deployment.yaml # 此文件位于项目根目录.
+    curl 127.0.0.1:8000/no-extproc  # (1)!
+    curl 127.0.0.1:8000/abc  # (2)!
     ```
 
-Curl：
-
-```bash
-curl 127.0.0.1:8000/no-extproc  # Caching 不会作用于此 route，每次请求都将由 Upstream 应答
-curl 127.0.0.1:8000/abc  # 第一次请求将由 Upstream 应答，并被 Caching 缓存，后续针对 /abc 的请求将会由 Caching 直接应答
-```
+    1. Caching 不会作用于此 route，每次请求都将由 Upstream 应答
+    2. 第一次请求将由 Upstream 应答，并被 Caching 缓存，后续针对 /abc 的请求将会由 Caching 直接应答
 
 ## 参数说明
 
@@ -64,7 +69,7 @@ curl 127.0.0.1:8000/abc  # 第一次请求将由 Upstream 应答，并被 Cachin
 - update-extproc-header：是否在响应头中添加此插件的名字
 - update-duration-header：在结束流时，响应头中添加总处理时间
 
-**以上参数默认均为 false.**
+**以上参数默认均为 false**
 
 - payload-limit 32：请求体最大允许长度为 32 字节
 

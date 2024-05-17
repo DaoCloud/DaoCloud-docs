@@ -4,7 +4,7 @@ The underlying gateway used in the microservice engine is contour, which is resp
 
 The specific steps are as follows:
 
-1. Go to the Microservice Engine - Cloud-Native Gateway List and locate the cluster and namespace where the gateway with the configuration to be modified is located.
+1. Go to the Microservice Engine - Cloud Native Gateway List and locate the cluster and namespace where the gateway with the configuration to be modified is located.
 
     ![Add Custom Attributes](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/best-practice/images/gwlist.png)
 

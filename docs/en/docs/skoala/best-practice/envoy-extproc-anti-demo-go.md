@@ -40,8 +40,10 @@ go build . -o extproc
 - Envoy:
 
     ```bash
-    envoy -c ./envoy.yaml # This file is located in the root directory of the project.
+    envoy -c ./envoy.yaml # (1)!
     ```
+
+    1. This file is located in the root directory of the project
 
 - Caching:
 
@@ -54,8 +56,10 @@ go build . -o extproc
     - Kubernetes:
 
         ```bash
-        kubectl apply -f ./deployment.yaml # This file is located in the root directory of the project.
+        kubectl apply -f ./deployment.yaml # (1)!
         ```
+
+        1. This file is located in the root directory of the project
 
 - Curl
 
