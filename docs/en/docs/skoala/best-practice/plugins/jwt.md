@@ -1,4 +1,4 @@
-# Using JWT Plugin in Cloud-Native Microservices
+# Using JWT Plugin in Cloud Native Microservices
 
 DCE 5.0 Microservice Engine supports the use of the JWT plugin in cloud-native microservices to add security authentication to services.
 
@@ -50,7 +50,7 @@ After meeting the above prerequisites, connect the JWT plugin and bind it to the
 
 
 
-3. In the left navigation bar of the Microservice Engine, click __Cloud-Native Microservices__ , and then click the name of the target service.
+3. In the left navigation bar of the Microservice Engine, click __Cloud Native Microservices__ , and then click the name of the target service.
 
 
 

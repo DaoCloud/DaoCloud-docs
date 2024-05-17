@@ -773,8 +773,10 @@ nav:
                   - Gateway to Service Mesh: skoala/best-practice/gateway-mesh.md
                   - Add Custom Attributes to Gateway Request Logs: skoala/best-practice/add-custom-attributes.md
                   - HTTP to Dubbo Protocol Dynamic Routing: skoala/best-practice/http-to-dubbo.md
-                  - Cloud Native Custom Plugin Demo - caching: skoala/best-practice/envoy-extproc-caching-demo-go.md
-                  - Cloud Native Custom Plugin Demo - anti: skoala/best-practice/envoy-extproc-anti-demo-go.md
+                  - Custom Plugin Demo - caching: skoala/best-practice/envoy-extproc-caching-demo-go.md
+                  - Custom Plugin Demo - anti: skoala/best-practice/envoy-extproc-anti-demo-go.md
+                  - Custom Plugin Demo - crc32: skoala/best-practice/envoy-extproc-crc32-check-demo-go.md
+                  - Custom Plugin Demo - conv: skoala/best-practice/envoy-extproc-method-conv-demo-go.md
               - Troubleshoot:
                   - skoala-init error about x-kubernets-validations: skoala/troubleshoot/auth-server.md   
               - Performance Tests:
