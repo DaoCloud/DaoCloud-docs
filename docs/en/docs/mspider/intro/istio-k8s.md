@@ -1,11 +1,13 @@
 ---
+MTPE: windsonsea
+date: 2024-05-17
 hide:
   - toc
 ---
 
 # Istio and K8s Versions Supported in DCE 5.0 Service Mesh
 
-| Istio Versions | Supported K8s Versions | Tested but not supported|
+| Istio Versions | Supported K8s Versions | K8s Versions Tested but not supported|
 | ------- | ----------------------------- | ------------------- |
 | 1.20 | 1.25, 1.26, 1.27, 1.28, 1.29 | 1.23, 1.24 |
 | 1.19 | 1.25, 1.26, 1.27, 1.28 | 1.21, 1.22, 1.23, 1.24 |
