@@ -124,9 +124,9 @@ to directly expose their services to the outside world as this will prevent cert
 In the current version, two ways can be used to expose services to the outside world:
 
 1. Use the __Mesh Gateway__ to expose services to the outside world.
-2. Use the __Cloud-Native Gateway__ of the __Microservice Engine__ to expose services to the outside world.
+2. Use the __Cloud Native Gateway__ of the __Microservice Engine__ to expose services to the outside world.
 
-Refer to the relevant documentation for instructions on using the __Cloud-Native Gateway__ of the __Microservice Engine__ .
+Refer to the relevant documentation for instructions on using the __Cloud Native Gateway__ of the __Microservice Engine__ .
 For instructions on using the __Mesh Gateway__ , also refer to the relevant documentation. Separating the VirtualService
 that needs to provide services to the outside world from other VirtualServices (such as VirtualService with the same name
 as Service) is recommended for better management purposes.

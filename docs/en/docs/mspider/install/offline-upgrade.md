@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+date: 2024-05-17
+---
+
 # Offline Upgrade Service Mesh Module
 
 This page explains how to install or upgrade after [downloading the Service Mesh module](../../download/modules/mspider.md).
@@ -24,20 +29,20 @@ You can load the image in one of the following two ways. When there is a contain
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: mspider-offline # (1)
+          intermediateBundlesPath: mspider-offline # (1)!
         target:
-          containerRegistry: 10.16.10.111 # (2)
-          containerRepository: release.daocloud.io/mspider # (3)
+          containerRegistry: 10.16.10.111 # (2)!
+          containerRepository: release.daocloud.io/mspider # (3)1
           repo:
-            kind: HARBOR # (4)
-            url: http://10.16.10.111/chartrepo/release.daocloud.io # (5)
+            kind: HARBOR # (4)!
+            url: http://10.16.10.111/chartrepo/release.daocloud.io # (5)!
             auth:
-              username: "admin" # (6)
-              password: "Harbor12345" # (7)
+              username: "admin" # (6)!
+              password: "Harbor12345" # (7)!
           containers:
             auth:
-              username: "admin" # (6)
-              password: "Harbor12345" # (7)
+              username: "admin" # (8)!
+              password: "Harbor12345" # (9)!
         ```
 
         1. Relative path to run the charts-syncer command, not the relative path between this YAML file and the offline package
@@ -47,6 +52,8 @@ You can load the image in one of the following two ways. When there is a contain
         5. Change to chart repo url
         6. Your container registry username
         7. Your container registry password
+        8. Your container registry username
+        9. Your container registry password
 
     === "Chart Repo Not Installed"
 
@@ -54,17 +61,17 @@ You can load the image in one of the following two ways. When there is a contain
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: mspider-offline # (1)
+          intermediateBundlesPath: mspider-offline # (1)!
         target:
-          containerRegistry: 10.16.10.111 # (2)
-          containerRepository: release.daocloud.io/mspider # (3)
+          containerRegistry: 10.16.10.111 # (2)!
+          containerRepository: release.daocloud.io/mspider # (3)!
           repo:
             kind: LOCAL
-            path: ./local-repo # (4)
+            path: ./local-repo # (4)!
           containers:
             auth:
-              username: "admin" # (5)
-              password: "Harbor12345" # (6)
+              username: "admin" # (5)!
+              password: "Harbor12345" # (6)!
         ```
 
         1. Relative path to run the charts-syncer command, not the relative path between this YAML file and the offline package
@@ -113,11 +120,13 @@ Unpack and load the image file.
 !!! note
 
     Each node needs to perform the Docker or containerd image loading operation,
-    after loading, you need to tag the image to keep the Registry, Repository consistent with the installation.
+    after loading, you need to tag the image to keep the registry and repository
+    consistent with that used when installing.
 
 ## Upgrade
 
-Before upgrading, make sure to back up the grid's configuration file, which is the `--set` parameter, to avoid problems caused by configuration loss during the upgrade.
+Before upgrading, make sure to back up the configuration file of service mesh,
+which is the `--set` parameter, to avoid problems caused by configuration loss during the upgrade.
 
 ### Check if mspider-release repository exists locally
 
@@ -151,6 +160,8 @@ helm update repo
 
 # Get the latest version
 helm search repo mspider-release/mspider --versions
+```
+```output
 NAME                      CHART VERSION  APP VERSION  DESCRIPTION
 mspider-release/mspider   v0.20.1        v0.20.1      Mspider management plane application, deployed ...
 ...
