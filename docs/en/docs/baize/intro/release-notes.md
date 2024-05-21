@@ -1,7 +1,12 @@
+---
+MTPE: windsonsea
+date: 2024-05-21
+---
+
 # Intelligent Engine Release Notes
 
-This page lists the Release Notes for Intelligent Engine of each version,
-so that you can understand the evolution path and feature changes of each version.
+This page lists the Release Notes for Intelligent Engine,
+so that you can learn its evolution path and feature changes.
 
 ## 2024-04-30
 
