@@ -61,11 +61,11 @@ spec:
 
 1. 进入容器：`kubectl exec -it <pod-name> -- /bin/bash`
 2. 执行以下命令来设置显存限制：
-```bash
-export CUDA_DEVICE_MEMORY_LIMIT_0=300m
-export CUDA_DEVICE_MEMORY_SHARED_CACHE=/usr/local/vgpu/d.cache
-```
-**注意**：每次修改显存大小时，`d.cache` 这个文件名字都需要修改，比如改为 `a.cache`, `1.cache` 等，以避免缓存冲突。
+    ```bash
+    export CUDA_DEVICE_MEMORY_LIMIT_0=300m
+    export CUDA_DEVICE_MEMORY_SHARED_CACHE=/usr/local/vgpu/d.cache
+    ```
+    **注意**：每次修改显存大小时，`d.cache` 这个文件名字都需要修改，比如改为 `a.cache`, `1.cache` 等，以避免缓存冲突。
 3. 在当前终端直接运行：`./gpu_burn 60` 程序即可生效。同样地，不能退出当前 bash 终端。
 
 通过这些步骤，您可以在不重启 vGPU Pod 的情况下动态地调整其算力和显存资源，从而更灵活地满足业务需求并优化资源利用。
