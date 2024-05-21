@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+date: 2024-05-21
+---
+
 # Initialize Computing Cluster
 
 By default, when installing DCE 5.0 Enterprise, the Intelligent Engine Module can be installed synchronously. Please contact the delivery support team to obtain the Enterprise installation package.
