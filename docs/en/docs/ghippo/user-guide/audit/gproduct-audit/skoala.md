@@ -1,11 +1,13 @@
 ---
+MTPE: windsonsea
+date: 2024-05-22
 hide:
   - toc
 ---
 
 # Microservice Audit Items
 
-| Events | Resource Type | Note |
+| Events | Resource Type | Notes |
 | --- | --- | --- |
 | UpdateAPIStatus-GatewayAPI | GatewayAPI | |
 | DeleteServiceIstioPluginRLSRules-Mesh | Mesh | |

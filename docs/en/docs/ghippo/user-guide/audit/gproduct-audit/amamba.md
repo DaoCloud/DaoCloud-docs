@@ -1,11 +1,13 @@
 ---
+MTPE: windsonsea
+date: 2024-05-22
 hide:
   - toc
 ---
 
 # Workbench Audit Items
 
-| Events | Resource Type | Note |
+| Events | Resource Type | Notes |
 | --- | --- | --- |
 | Create-Application | Application | |
 | Update-Application | Application | Edit YAML, create snapshots, rollback |

@@ -1,11 +1,13 @@
 ---
+MTPE: windsonsea
+date: 2024-05-22
 hide:
   - toc
 ---
 
 # Service Mesh Audit Items
 
-| Events | Resource Type | Note |
+| Events | Resource Type | Notes |
 | --- | --- | --- |
 | create-MeshInstance | MeshInstance | |
 | delete-MeshInstance | MeshInstance | |

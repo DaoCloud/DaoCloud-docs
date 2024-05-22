@@ -13,7 +13,7 @@ hide:
 | 创建告警策略：Create-AlertPolicy | AlertPolicy | |
 | 编辑告警策略：Update-AlertPolicy | AlertPolicy | |
 | 删除告警策略：Delete-AlertPolicy | AlertPolicy | |
-| 导入告警策略：Create-AlertPolicy | AlertPolicy | |
+| 导入告警策略：Import-AlertPolicy | AlertPolicy | |
 | 在告警策略中添加规则：Create-AlertRule | AlertRule | |
 | 在告警策略中编辑规则：Update-AlertRule | AlertRule | |
 | 在告警策略中删除规则：Delete-AlertRule | AlertRule | |

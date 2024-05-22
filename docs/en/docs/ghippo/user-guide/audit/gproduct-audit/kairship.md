@@ -1,11 +1,13 @@
 ---
+MTPE: windsonsea
+date: 2024-05-22
 hide:
   - toc
 ---
 
 # Audit Items of MultiCloud Management
 
-| Events | Resource Type | Note |
+| Events | Resource Type | Notes |
 | --- | --- | --- |
 | Create-Instance | Instance | |
 | Delete-Instance | Instance | |

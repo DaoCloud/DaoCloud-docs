@@ -1,11 +1,13 @@
 ---
+MTPE: windsonsea
+date: 2024-05-22
 hide:
   - toc
 ---
 
 # Audit Items of Global Management
 
-| Events | Resource Type | Remarks |
+| Events | Resource Type | Notes |
 | --- | --- | --- |
 | UpdateEmail-Account | Account | |
 | UpdatePassword-Account | Account | |

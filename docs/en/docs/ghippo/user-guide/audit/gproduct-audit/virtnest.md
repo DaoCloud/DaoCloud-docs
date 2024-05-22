@@ -1,11 +1,13 @@
 ---
+MTPE: windsonsea
+date: 2024-05-22
 hide:
   - toc
 ---
 
 # Audit Items of Virtual Machine
 
-|  Events | Resource Type | Remarks |
+| Events | Resource Type | Notes |
 | --- | --- | --- |
 | Restart-VMs | VM | |
 | ConvertToTemplate-VMs | VM | |
