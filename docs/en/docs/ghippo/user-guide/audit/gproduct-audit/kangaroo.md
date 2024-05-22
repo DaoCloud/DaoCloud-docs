@@ -1,11 +1,13 @@
 ---
+MTPE: windsonsea
+date: 2024-05-22
 hide:
   - toc
 ---
 
 # Audit Items of Container Registry
 
-| Events | Resource Type | Note |
+| Events | Resource Type | Notes |
 | --- | --- | --- |
 | Delete-Image | Image | |
 | Delete-Artifacts | Artifacts | |

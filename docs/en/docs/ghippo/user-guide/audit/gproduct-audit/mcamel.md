@@ -1,11 +1,13 @@
 ---
+MTPE: windsonsea
+date: 2024-05-22
 hide:
   - toc
 ---
 
 # Middleware Audit Items
 
-| Events | Resource Type | Note |
+| Events | Resource Type | Notes |
 | --- | --- | --- |
 | create-ElasticsearchInstance | ElasticsearchInstance | |
 | create-KafkaInstance | KafkaInstance | |

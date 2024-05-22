@@ -1,11 +1,13 @@
 ---
+MTPE: windsonsea
+date: 2024-05-22
 hide:
   - toc
 ---
 
 # Insight Audit Items
 
-| Events | Resource Type | Note |
+| Events | Resource Type | Notes |
 | --- | --- | --- |
 | Create-ProbeJob | ProbeJob | |
 | Update-ProbeJob | ProbeJob | |
@@ -13,6 +15,7 @@ hide:
 | Create-AlertPolicy | AlertPolicy | |
 | Update-AlertPolicy | AlertPolicy | |
 | Delete-AlertPolicy | AlertPolicy | |
+| Import-AlertPolicy | AlertPolicy | |
 | Create-AlertRule | AlertRule | |
 | Update-AlertRule | AlertRule | |
 | Delete-AlertRule | AlertRule | |
@@ -34,8 +37,8 @@ hide:
 | Create-sms | sms | |
 | Update-sms | sms | |
 | Delete-Receiver | Receiver | |
-| Create-aliyun(tencent，custom) | aliyun, tencent, custom | |
-| Update-aliyun(tencent，custom) | aliyun, tencent, custom | |
+| Create-aliyun(tencent,custom) | aliyun, tencent, custom | |
+| Update-aliyun(tencent,custom) | aliyun, tencent, custom | |
 | Delete-SMSserver | SMSserver | |
 | Create-MessageTemplate | MessageTemplate | |
 | Update-MessageTemplate | MessageTemplate | |
