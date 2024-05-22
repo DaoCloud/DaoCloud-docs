@@ -1046,6 +1046,7 @@ nav:
                       - Start and Pause Notebook: baize/developer/notebooks/start-pause.md
                       - View Notebook Workload: baize/developer/notebooks/view.md
                       - Delete Notebook: baize/developer/notebooks/delete.md
+                      - Notebook SSH Guide: baize/developer/notebooks/notebook-with-ssh.md
                   - Task Center:
                       - Create Task: baize/developer/jobs/create.md
                       - Delete Task: baize/developer/jobs/delete.md
