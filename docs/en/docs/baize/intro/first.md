@@ -7,8 +7,8 @@ date: 2024-05-21
 
 When entering DCE 5.0 Intelligent Engine for the first time, you need to:
 
-[Choose a Workspace](#select-a-workspace)
-[Select a Cluster](#select-cluster)
+- [Choose a Workspace](#select-a-workspace)
+- [Select a Cluster](#select-cluster)
 - [Confirm your Role](#roles)
 
 ## Select a Workspace
@@ -60,8 +60,6 @@ DCE 5.0 Intelligent Computing provides two roles. You can switch between the two
 Each role has an overview page that displays the current data that can be processed through graphical dashboards.
 
 ![Operations Overview](../images/oam-overview.png)
-
-<!-- add image later -->
 
 [Download DCE 5.0](../../download/index.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../../install/index.md){ .md-button .md-button--primary }
