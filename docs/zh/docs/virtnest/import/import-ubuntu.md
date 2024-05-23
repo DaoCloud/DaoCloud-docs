@@ -1,11 +1,12 @@
-# 导入外部平台的 Ubuntu 操作系统的虚拟机
+# 如何从 VMware 导入传统虚拟机到 DCE5.0
 
-本文将详细介绍如何通过命令行将外部平台上的 Ubuntu 操作系统的虚拟机导入到 DCE 5.0的虚拟机中。
+本文将详细介绍如何通过命令行将外部平台 VMware 上的虚拟机导入到 DCE 5.0的虚拟机中。
 
 !!! info
 
     本文档外部虚拟平台是 VMware vSphere Client，后续简写为 vSphere。
     技术上是依靠 kubevirt cdi 来实现的。操作前，vSphere 上被导入的虚拟机需要关机。
+    以 Ubuntu 操作系统的虚拟机为例。
 
 ## 获取 vSphere 的虚拟机基础信息
 
