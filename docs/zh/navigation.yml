@@ -620,7 +620,7 @@ nav:
                   - 通过模板创建虚拟机: virtnest/template/index.md
                   - 虚拟机模板: virtnest/template/tep.md
               - 虚拟机镜像: virtnest/vm-image/index.md
-              - 如何从 VMware 导入传统虚拟机到 DCE5.0: virtnest/import/import-ubuntu.md
+              - 从VMware导入传统虚拟机到DCE 5.0: virtnest/import/import-ubuntu.md
       - 微服务:
           - 可观测性:
               - 介绍:
