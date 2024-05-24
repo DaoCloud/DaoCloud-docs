@@ -6,14 +6,14 @@ DevOps 工具链是一组工具，使 DevOps 团队能够在整个产品生命�
 
 ## 支持集成的工具链
 
-| 工具链名称 | 描述                                                         | 认证                                                         | 备注                                                         |
-| ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| GitLab     | 集成 GitLab 仓库后，可在流水线中使用                         | Personal Access Token，获取路径：右上角头像 > Settings > Access Tokens > Create personal access token | 创建 personal access token 时必须勾选 `api `，并且是用户的个人令牌。 |
-| Jira       | 通过在应用工作台中集成 Jira，从而支持对Jira->Issue的追踪。   | 用户名/密码                                                  | -                                                            |
-| Jenkins    | 集成Jenkins 后，所有的工作空间均将获得流水线能力进行构建。   | 用户名/密码                                                  | 仅支持管理员集成，且全平台仅能集成一次 Jenkins               |
-| SonarQube  | 集成 SonarQube 后，可以在流水线中定义代码质量扫描            | User-Token，获取路径：My Account -> Profile -> Security -> Generate Token （注意 Token 的类型选择 User-Token） | -                                                            |
-| Nexus      | Nexus 是软件仓库管理工具                                     | 用户名/密码                                                  | -                                                            |
-| TestLink   | TestLink 是测试用例管理工具，提供了一个协作平台，用于测试用例的创建、管理以及执行，并且支持缺陷管理的整合 | Token                                                        | -                                                            |
+| 工具链名称 | 描述 | 认证 | 备注 |
+| -------- | ---- | --- | --- |
+| GitLab | 集成 GitLab 仓库后，可在流水线中使用 | Personal Access Token，获取路径：右上角头像 -> **Settings** -> **Access Tokens** -> **Create personal access token** | 创建 personal access token 时必须勾选 `api`，并且是用户的个人令牌。 |
+| Jira | 通过在应用工作台中集成 Jira，从而支持对 Jira -> Issue 的追踪 | 用户名/密码  | - |
+| Jenkins | 集成 Jenkins 后，所有的工作空间均将获得流水线能力进行构建 | 用户名/密码  | 仅支持管理员集成，且全平台仅能集成一次 Jenkins |
+| SonarQube  | 集成 SonarQube 后，可以在流水线中定义代码质量扫描 | User-Token，获取路径： **My Account** -> **Profile** -> **Security** -> **Generate Token** （注意 Token 的类型选择 User-Token） | - |
+| Nexus  | Nexus 是软件仓库管理工具  | 用户名/密码  | - |
+| TestLink | TestLink 是测试用例管理工具，提供了一个协作平台，用于测试用例的创建、管理以及执行，并且支持缺陷管理的整合 | Token | - |
 
 ## 操作步骤
 

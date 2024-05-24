@@ -11,11 +11,14 @@ Workbench supports tool chain integration from two perspectives: workspace integ
 
 ## Support for integrated toolchains
 
-| Toolchain Name | Description | Remarks |
-| ---------- | -------------------------------------- -------------------- | ----------------------------- ----------------- |
-| GitLab | Can be used in Pipeline after integrating GitLab repository | - |
-| Jira | Support Jira->Issue tracking by integrating Jira in Workbench. | - |
-| Jenkins | After integrating Jenkins, all workspaces will gain pipeline capability for building. | Only administrator integration is supported, and Jenkins can only be integrated once for all platforms |
+| Toolchain Name | Description | Authentication | Remarks |
+| --------------- | ----------- | -------------- | -------- |
+| GitLab | After integrating the GitLab repository, it can be used in the pipeline | Personal Access Token, path to obtain: Top right avatar -> **Settings** -> **Access Tokens** -> **Create personal access token** | When creating a personal access token, you must select `api`, and it must be the user's personal token. |
+| Jira | By integrating Jira in the application workbench, it supports tracking of Jira -> Issue | Username/Password | - |
+| Jenkins | After integrating Jenkins, all workspaces will have the pipeline capability for building | Username/Password | Only administrators can integrate, and the entire platform can only integrate Jenkins once. |
+| SonarQube | After integrating SonarQube, code quality scans can be defined in the pipeline | User-Token, path to obtain: **My Account** -> **Profile** -> **Security** -> **Generate Token** (Note: Select User-Token type) | - |
+| Nexus | Nexus is a software repository management tool | Username/Password | - |
+| TestLink | TestLink is a test case management tool that provides a collaborative platform for creating, managing, and executing test cases, and supports defect management integration | Token | - |
 
 ## Steps
 
