@@ -16,7 +16,7 @@ kubeadm certs check-expiration
 
 输出类似于以下内容：
 
-```shell
+```output
 CERTIFICATE                EXPIRES                  RESIDUAL TIME   CERTIFICATE AUTHORITY   EXTERNALLY MANAGED
 admin.conf                 Dec 14, 2024 07:26 UTC   204d                                    no      
 apiserver                  Dec 14, 2024 07:26 UTC   204d            ca                      no      
@@ -44,18 +44,24 @@ front-proxy-ca          Dec 12, 2033 07:26 UTC   9y              no
 ```shell
 kubeadm certs renew
 ```
-更新全部证书
+
+更新全部证书：
 
 ```shell
 kubeadm certs renew all
 ```
 
-更新后的证书可以在 **/etc/kubernetes/pki** 目录下查看，有效期延续1年。对应的 /etc/kubernetes/admin.conf、/etc/kubernetes/controller-manager.conf、/etc/kubernetes/scheduler.conf 也会同步进行更新。
+更新后的证书可以在 `/etc/kubernetes/pki` 目录下查看，有效期延续 1 年。
+以下对应的几个配置文件也会同步更新：
+
+- /etc/kubernetes/admin.conf
+- /etc/kubernetes/controller-manager.conf
+- /etc/kubernetes/scheduler.conf
 
 !!! note
 
-        - 如果您部署的是一个高可用集群，这个命令需要在所有控制节点上执行。
-        - 此命令用 CA（或者 front-proxy-CA ）证书和存储在 /etc/kubernetes/pki 中的密钥执行更新。
+    - 如果您部署的是一个高可用集群，这个命令需要在所有控制节点上执行。
+    - 此命令用 CA（或者 front-proxy-CA ）证书和存储在 `/etc/kubernetes/pki` 中的密钥执行更新。
 
 ## 重启服务
 
@@ -63,9 +69,11 @@ kubeadm certs renew all
 
 静态 Pod 是被本地 kubelet 而不是 API 服务器管理，所以 kubectl 不能用来删除或重启他们。
 
-要重启静态 Pod 你可以临时将清单文件从 /etc/kubernetes/manifests/ 移除并等待 20 秒 （参考[KubeletConfiguration 结构](https://kubernetes.io/zh-cn/docs/reference/config-api/kubelet-config.v1beta1/) 中的 fileCheckFrequency 值）。
+要重启静态 Pod，你可以临时将清单文件从 `/etc/kubernetes/manifests/` 移除并等待 20 秒。
+参考 [KubeletConfiguration 结构](https://kubernetes.io/zh-cn/docs/reference/config-api/kubelet-config.v1beta1/)中的 fileCheckFrequency 值。
 
-如果 Pod 不在清单目录里，kubelet 将会终止它。 在另一个 fileCheckFrequency 周期之后你可以将文件移回去，kubelet 可以完成 Pod 的重建，而组件的证书更新操作也得以完成。
+如果 Pod 不在清单目录里，kubelet 将会终止它。
+在另一个 fileCheckFrequency 周期之后你可以将文件移回去，kubelet 可以完成 Pod 的重建，而组件的证书更新操作也得以完成。
 
 ```shell
 mv ./manifests/* ./temp/
@@ -74,11 +82,11 @@ mv ./temp/* ./manifests/
 
 !!! note
 
-        - 如果容器服务使用的是 Docker，为了让证书生效，可以使用以下命令对涉及到证书使用的几个服务进行重启：
-        
-        ```shell
-        docker ps | grep -E 'k8s_kube-apiserver|k8s_kube-controller-manager|k8s_kube-scheduler|k8s_etcd_etcd' | awk -F ' ' '{print $1}' | xargs docker restart
-        ```
+    如果容器服务使用的是 Docker，为了让证书生效，可以使用以下命令对涉及到证书使用的几个服务进行重启：
+    
+    ```shell
+    docker ps | grep -E 'k8s_kube-apiserver|k8s_kube-controller-manager|k8s_kube-scheduler|k8s_etcd_etcd' | awk -F ' ' '{print $1}' | xargs docker restart
+    ```
 
 ## 更新 KubeConfig
 
@@ -97,16 +105,18 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 !!! note
 
-        - 此特性适用于 Kubernetes 1.8.0 或更高的版本。
+    此特性适用于 Kubernetes 1.8.0 或更高的版本。
 
 启用客户端证书轮换，配置参数如下：
 
 - kubelet 进程接收 --rotate-certificates 参数，该参数决定 kubelet 在当前使用的 证书即将到期时，是否会自动申请新的证书。
 
-- kube-controller-manager 进程接收 --cluster-signing-duration 参数 （在 1.19 版本之前为 --experimental-cluster-signing-duration），用来 控制签发证书的有效期限。
+- kube-controller-manager 进程接收 --cluster-signing-duration 参数
+  （在 1.19 版本之前为 --experimental-cluster-signing-duration），用来控制签发证书的有效期限。
 
-更多详情参考[为 kubelet 配置证书轮换](https://kubernetes.io/zh-cn/docs/tasks/tls/certificate-rotation/)
+更多详情参考[为 kubelet 配置证书轮换](https://kubernetes.io/zh-cn/docs/tasks/tls/certificate-rotation/)。
 
 ## 自动更新证书
 
-为了更高效便捷处理已过期或者即将过期的 kubernetes 集群证书，可参考 [k8s 版本集群证书更新](https://github.com/yuyicai/update-kube-cert/blob/master/README-zh_CN.md)。
+为了更高效便捷处理已过期或者即将过期的 kubernetes 集群证书，可参考
+[k8s 版本集群证书更新](https://github.com/yuyicai/update-kube-cert/blob/master/README-zh_CN.md)。
