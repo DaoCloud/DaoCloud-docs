@@ -2,131 +2,113 @@
 
 In HwameiStor, it allows users to specify the maximum IOPS and throughput for volumes on a Kubernetes cluster.
 
-Please follow the steps below to create a volume with maximum IOPS and throughput and create a workload to use it.
+Follow these steps to create a volume with maximum IOPS and throughput and create a workload to use it.
 
-## Create a New StorageClass with Maximum IOPS and Throughput Parameters
+## Prerequisites
 
-By default, HwameiStor does not automatically create such a StorageClass during installation, so you need to create the StorageClass manually.
+- The cluster has already [installed HwameiStor](../install/deploy-ui.md)
 
-An example StorageClass is as follows:
+- cgroup v2 requirements:
 
-```yaml
-allowVolumeExpansion: true
-apiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
-  name: hwameistor-storage-lvm-hdd-sample
-parameters:
-  convertible: "false"
-  csi.storage.k8s.io/fstype: xfs
-  poolClass: HDD
-  poolType: REGULAR
-  provision-iops-on-creation: "100"
-  provision-throughput-on-creation: 1Mi
-  replicaNumber: "1"
-  striped: "true"
-  volumeKind: LVM
-provisioner: lvm.hwameistor.io
-reclaimPolicy: Delete
-volumeBindingMode: WaitForFirstConsumer
-```
+    - The operating system distribution enables cgroup v2
+    - Linux kernel is 5.8 or higher
 
-Compared to the regular StorageClass created by the HwameiStor installer, the following parameters have been added:
+For more information, see [Kubernetes official documentation](https://kubernetes.io/zh-cn/docs/concepts/architecture/cgroups/).
 
-- provision-iops-on-creation: Specifies the maximum IOPS for the volume at creation time.
-- provision-throughput-on-creation: Specifies the maximum throughput for the volume at creation time.
+## Create a New StorageClass with IOPS and Throughput Parameters
 
-After creating the StorageClass, you can use it to create PVC (PersistentVolumeClaim).
+1. Go to the **Container Management** module, find the cluster with HwameiStor installed in the cluster list, and click the cluster name.
 
-## Create PVC using StorageClass
+2. In the left navigation bar, select **Container Storage** -> **Storage Pools (SC)**, and click the **Create Storage Pool (SC)** button in the upper left corner.
 
-An example PVC is as follows:
+    <!-- Add screenshot later -->
 
-```yaml
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: pvc-sample
-spec:
-  accessModes:
-  - ReadWriteOnce
-  resources:
-    requests:
-      storage: 10Gi
-  storageClassName: hwameistor-storage-lvm-hdd-sample
-```
+3. Enter the create storage pool interface, paying special attention to filling in the following parameters. Other parameters can refer to [form creation](../../../kpanda/user-guide/storage/sc.md).
 
-After creating the PVC, you can create a Deployment to use the PVC.
+    - Name: For this example, enter `hwameistor-storage-lvm-hdd-sample`.
+    - Storage System: Select **HwameiStor**.
+    - Storage Type: Supports **LVM Type** and **Bare Metal Type**. In this example, select **LVM Type**.
+    - Disk Type: Supports **HDD** and **SSD**. In this example, select **HDD**.
+    - Custom Parameters: Fill in the following four parameters,
+
+        - `poolType: REGULAR`: Specify the storage pool type, currently only `REGULAR` is supported.
+        - `csi.storage.k8s.io/fstype: xfs`: Specify the required file system type, if not defined, the default is `ext4`.
+        - `provision-iops-on-creation: "100"`: Specify the maximum IOPS of the volume at creation.
+        - `provision-throughput-on-creation: 1Mi`: Specify the maximum throughput of the volume at creation.
+  
+    <!-- Add screenshot later -->
+
+    <!-- Add screenshot later -->
+
+4. Click **OK** . After the creation is successful, return to the SC list interface.
+
+## Create a PVC Using the StorageClass
+
+1. In the left navigation bar, select **Container Storage** -> **Persistent Volume Claims (PVC)**, and click the **Create Persistent Volume Claim (PVC)** button in the upper left corner.
+
+    <!-- Add screenshot later -->
+
+2. Enter the create persistent volume claim interface, and fill in the following parameters.
+
+    - Name: For this example, enter `pvc-hwameistor-sample`.
+    - Storage Pool: Select the SC created above, named `hwameistor-storage-lvm-hdd-sample`.
+    - Capacity: For this example, enter `10`.
+    - Access Mode: The default is `ReadWriteMany`.
+
+    <!-- Add screenshot later -->
+
+3. Click **Confirm**. After the creation is successful, return to the SC list interface. After completion, you can create a Deployment to use the PVC.
 
 ## Create a Deployment with PVC
 
-An example Deployment is as follows:
+1. In the left navigation bar, select **Workloads** -> **Stateless Workloads**, and click the **Create from Image** button in the upper left corner.
 
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  creationTimestamp: null
-  labels:
-    app: pod-sample
-  name: pod-sample
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: pod-sample
-  strategy: {}
-  template:
-    metadata:
-      creationTimestamp: null
-      labels:
-        app: pod-sample
-    spec:
-      volumes:
-      - name: data
-        persistentVolumeClaim:
-          claimName: pvc-sample
-      containers:
-      - command:
-        - sleep
-        - "100000"
-        image: busybox
-        name: busybox
-        resources: {}
-        volumeMounts:
-        - name: data
-          mountPath: /data
-status: {}
-```
+    <!-- Add screenshot later -->
 
-After creating the Deployment, you can use the following command to test the IOPS and throughput of the volume:
+2. Pay attention to the following parameters:
 
-```bash
-kubectl exec -it pod-sample-5f5f8f6f6f-5q4q5 -- /bin/sh
-dd if=/dev/zero of=/data/test bs=4k count=1000000 oflag=direct
-```
+    - Image: For this example, enter `daocloud.io/daocloud/testtools:latest`.
+    - Data Storage:
 
-**Note**: Due to cgroupv1 limitations, the settings for maximum IOPS and throughput may not take effect on non-direct IO.
+        - Type: Select `Persistent Volume Claim (PVC)`.
+        - Persistent Volume Claim (PVC): Select `pvc-hwameistor-sample`.
+        - Container Path (mountPath): Enter `/data`.
 
-## How to Change the Maximum IOPS and Throughput of a Data Volume
+    Other parameters have no special requirements.
 
-The maximum IOPS and throughput are specified in the parameters of the StorageClass, and you cannot directly change them as they are now immutable.
+    <!-- Add screenshot later -->
 
-Unlike other storage vendors, HwameiStor is a Kubernetes-based storage solution that defines a set of operational primitives based on Kubernetes CRDs. This means you can modify the relevant CRD to change the actual maximum IOPS and throughput of a volume.
+3. After creating the Deployment, click **Console** in the details interface, and execute the following command to test the IOPS and throughput of the volume:
 
-The following steps show how to change the maximum IOPS and throughput of a data volume.
+    ```bash
+    fio -direct=1  -iodepth=128 -rw=randwrite -ioengine=libaio -bs=4K -size=50M -numjobs=1 -runtime=600 -group_reporting -filename=/data/file.txt -name=Rand_Write_IOPS_Test
+    ```
 
-### Find the LocalVolume CR for the Specified PVC
+    It is expected to output the following:
+
+    <!-- Add screenshot later -->
+
+!!! note
+
+    Due to cgroupv1 limitations, the maximum IOPS and throughput settings may not take effect for non-direct IO.
+
+## Change the Maximum IOPS and Throughput of a Volume
+
+The maximum IOPS and throughput are specified in the StorageClass parameters, and you cannot change it directly as it is currently immutable.
+
+Unlike other storage vendors, HwameiStor is a Kubernetes-based storage solution that defines a set of operational primitives based on Kubernetes CRD. This means you can modify the relevant CRD to change the actual maximum IOPS and throughput of the volume.
+
+The following steps show how to change the maximum IOPS and throughput of a volume.
+
+### Find the LocalVolume CR Corresponding to the Given PVC
 
 ```console
 $ kubectl get pvc pvc-sample
-
 NAME             STATUS    VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS                        AGE
 demo             Bound     pvc-c354a56a-5cf4-4ff6-9472-4e24c7371e10   10Gi       RWO            hwameistor-storage-lvm-hdd          5d23h
 pvc-sample       Bound     pvc-cac82087-6f6c-493a-afcd-09480de712ed   10Gi       RWO            hwameistor-storage-lvm-hdd-sample   5d23h
 
 $ kubectl get localvolume
-
 NAME                                       POOL                   REPLICAS   CAPACITY      USED       STATE   RESOURCE   PUBLISHED   FSTYPE   AGE
 pvc-c354a56a-5cf4-4ff6-9472-4e24c7371e10   LocalStorage_PoolHDD   1          10737418240   33783808   Ready   -1         master      xfs      5d23h
 pvc-cac82087-6f6c-493a-afcd-09480de712ed   LocalStorage_PoolHDD   1          10737418240   33783808   Ready   -1         master      xfs      5d23h
@@ -134,23 +116,25 @@ pvc-cac82087-6f6c-493a-afcd-09480de712ed   LocalStorage_PoolHDD   1          107
 
 According to the printed output, the LocalVolume CR for the PVC is `pvc-cac82087-6f6c-493a-afcd-09480de712ed`.
 
-### Modify LocalVolume CR
+### Modify the LocalVolume CR
 
 ```bash
 kubectl edit localvolume pvc-cac82087-6f6c-493a-afcd-09480de712ed
 ```
 
-In the editor, locate the `spec.volumeQoS` section and modify the `iops` and `throughput` fields. Note that a blank value indicates no limit.
+In the editor, find the `spec.volumeQoS` section and modify the `iops` and `throughput` fields. By the way, empty values mean no limit.
 
-Finally, save the changes and exit the editor. The settings will take effect within a few seconds.
+Finally, save the changes and exit the editor. The settings will take effect in a few seconds.
 
-**Note**: In the future, once Kubernetes supports it ([link](https://github.com/kubernetes/enhancements/tree/master/keps/sig-storage/3751-volume-attributes-class#motivation)), we will allow users to directly modify the maximum IOPS and throughput of volumes.
+!!! note
 
-## How to Check the Actual IOPS and Throughput of a Data Volume
+    In the future, once Kubernetes supports [this feature](https://github.com/kubernetes/enhancements/tree/master/keps/sig-storage/3751-volume-attributes-class#motivation), we will allow users to directly modify the maximum IOPS and throughput of the volume.
 
-HwameiStor uses [cgroupv1](https://www.kernel.org/doc/Documentation/cgroup-v1/blkio-controller.txt) to limit the IOPS and throughput of data volumes. Therefore, you can use the following command to check the actual IOPS and throughput of a data volume.
+### Check the Actual IOPS and Throughput of a Volume
 
-```
+HwameiStor uses [cgroupv1](https://www.kernel.org/doc/Documentation/cgroup-v1/blkio-controller.txt) to limit the IOPS and throughput of the volume, so you can use the following command to check the actual IOPS and throughput of the volume.
+
+```console
 $ lsblk
 NAME            MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
 sda               8:0    0   160G  0 disk

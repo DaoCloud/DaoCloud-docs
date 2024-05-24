@@ -23,7 +23,7 @@ You can use two methods to configure it:
 
 1. On the left navigation bar, click `Container Management` —> `Cluster List`, find the `Cluster whose NIC configuration needs to be modified`, and enter the cluster details.
 
-2. Select `Custom Resources` in the left navigation bar, find `localdisknodes.hwameistor.io`, and click to enter the details.
+2. Select `Custom Resources` in the left navigation bar, find `localstoragenodes.hwameistor.io`, and click to enter the details.
 
 
 3. Find the `node to be modified` and click `Edit YAML` to modify `storage-ipv4=172.30.40.12` parameter in `spec`,
