@@ -1047,9 +1047,10 @@ nav:
                       - View Notebook Workload: baize/developer/notebooks/view.md
                       - Delete Notebook: baize/developer/notebooks/delete.md
                       - Notebook SSH Guide: baize/developer/notebooks/notebook-with-ssh.md
-                  - Task Center:
-                      - Create Task: baize/developer/jobs/create.md
-                      - Delete Task: baize/developer/jobs/delete.md
+                  - Jobs:
+                      - Create Job: baize/developer/jobs/create.md
+                      - Delete Job: baize/developer/jobs/delete.md
+                      - View Job Load: baize/developer/jobs/view.md
                   - Data Management:
                       - Create Dataset: baize/developer/dataset/create.md
                       - Delete Dataset: baize/developer/dataset/delete.md
