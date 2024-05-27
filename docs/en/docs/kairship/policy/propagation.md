@@ -1,15 +1,27 @@
+---
+MTPE: windsonsea
+date: 2024-05-27
+---
+
 # Propagation Policies
 
-Multicloud Management supports viewing the propagation policy list of the current instance and its associated multicloud resources on the interface, supports creating and editing propagation policy information in the form of YAML and forms, and only provides a delete button for idle propagation policies.
+Multicloud Management supports viewing the propagation policy list of the current instance and its associated
+multicloud resources on the interface, supports creating and editing propagation policy information
+in the form of YAML and wizard. When deleting a propagation policy, if the policy is currently in use, a prompt will be given.
 
-Propagation policies define how resources are distributed across multicloud and clusters. Propagation Policy is divided into Namespace Scope and Cluster Scope.
+Propagation policies define how resources are distributed across multicloud and clusters.
+Propagation Policy is divided into Namespace Scope and Cluster Scope.
 
-- Namespace Propagation Policy represents a policy that propagates a set of resources to one or more member clusters, and can only propagate resources in its own namespace.
-- Cluster Propagation Policy represents a cluster-wide policy for propagating a set of resources to one or more member clusters, capable of propagating cluster-level resources and resources in any namespace other than the system-reserved namespace.
+- Namespace Propagation Policy represents a policy that propagates a set of resources to
+  one or more member clusters, and can only propagate resources in its own namespace.
+- Cluster Propagation Policy represents a cluster-wide policy for propagating a set of resources
+  to one or more member clusters, capable of propagating cluster-level resources and resources
+  in any namespace other than the system-reserved namespace.
 
 ## Create from YAML
 
-1. After entering a multicloud instance, in the left navigation bar, click __Policy Management__ -> __Propagation Policies__ -> __Namespace Scope__ , and click the __Create from YAML__ button in the upper right corner.
+1. After entering a multicloud instance, in the left navigation bar, click __Policy Management__ ->
+   __Propagation Policies__ -> __Namespace Scope__ , and click the __Create from YAML__ button in the upper right corner.
 
     ![Namespace YAML PP](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/pp01.png)
 
@@ -17,7 +29,8 @@ Propagation policies define how resources are distributed across multicloud and 
 
     ![Input YAML](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/pp02.png)
 
-3. Return to the propagation policy list, and the newly created one is the first one by default. Click __⋮__ on the right side of the list to edit YAML and perform delete operations.
+3. Return to the propagation policy list, and the newly created one is the first one by default.
+   Click __⋮__ on the right side of the list to edit YAML and perform delete operations.
 
 ## YAML example
 
@@ -62,7 +75,10 @@ spec:
 
     - Basic Settings: fill in the name, select the multicloud namespace, and add label annotations
     - Resource Quotas: select multicloud resources and target deployment clusters
-    - Propagation Policies: Scheduling type, taint tolerance, you can choose whether to enable spread constraints, support filling in priority (propagation policy can also be created at the same time when creating resources, when the propagation policy is also created on this page, you can choose according to the priority level to determine which propagation policy the resource uses)
+    - Propagation Policies: Scheduling type, taint tolerance, you can choose whether to enable spread constraints,
+      support filling in priority (propagation policy can also be created at the same time when creating resources,
+      when the propagation policy is also created on this page, you can choose according to the priority level to
+      determine which propagation policy the resource uses)
 
     ![Create Namespace PP](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/pp-new01.png)
 
@@ -74,4 +90,5 @@ spec:
 
     !!! note
 
-        If you want to delete a propagation policy, you need to remove the workload related to the policy first. After the deletion, all the information related to the policy will be deleted. Please operate with caution.
+        If you want to delete a propagation policy, you need to remove the workload related to the policy first.
+        After the deletion, all the information related to the policy will be deleted. Please operate with caution.
