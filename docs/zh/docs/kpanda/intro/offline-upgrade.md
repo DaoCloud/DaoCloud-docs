@@ -237,3 +237,356 @@
 2. 在左侧导航栏中找到 Helm 应用，搜索 kpanda 找到容器管理模块，展开右侧操作栏，点击 __更新__ 按钮，进行升级。
 
     ![集群列表](../images/update-kpanda.png)
+
+
+### 页面升级已知问题
+
+问题描述：通过页面方式将 kpanda 低版本升级到 v0.25.1 或更高版本时，可能存在镜像地址拼接问题，导致升级失败,报错提示如下：
+![镜像地址报错](../images/imagequest.png)
+
+解决办法：
+
+在 Helm 应用中更新 kpanda 时，修改 yaml 文件，将 repository 地址修改成 repository: xxx/xxx 形式。
+
+```
+ ??? note "点击查看详细的 YAML 示例"
+ 
+global:
+  imageRegistry: 10.6.135.222/release.daocloud.io
+  imagePullSecrets: []
+  storageClass: ''
+  kpanda:
+    imageTag: v0.25.1
+    enableGhippoRoutes: true
+    enableSidecar: true
+  db:
+    builtIn: false
+    redis:
+      url: >-
+        redis+sentinel://rfs-mcamel-common-redis-cluster.mcamel-system.svc.cluster.local:26379/mymaster?master_password=XFDYqKEyJU
+      image:
+        registry: release.daocloud.io
+        repository: kpanda/redis
+        tag: 7.0.5-alpine
+        pullPolicy: IfNotPresent
+  telemetry:
+    tracing:
+      enabled: true
+      addr: >-
+        insight-agent-opentelemetry-collector.insight-system.svc.cluster.local:4317
+    metrics:
+      enabled: true
+      path: /metrics
+      port: 81
+  busybox:
+    image:
+      registry: release.daocloud.io
+      repository: library/busybox
+      tag: 1.34.1
+      pullPolicy: IfNotPresent
+  shell:
+    image:
+      registry: release.daocloud.io
+      repository: kpanda/kpanda-shell
+      tag: v0.0.9
+      pullPolicy: IfNotPresent
+controllerManager:
+  labels:
+    app: kpanda-controller-manager
+  replicaCount: 2
+  podAnnotations: {}
+  podLabels:
+    app: kpanda-controller-manager
+  image:
+    registry: release.daocloud.io
+    repository: kpanda/kpanda-controller-manager
+    tag: ''
+    pullPolicy: IfNotPresent
+    pullSecrets: []
+  livenessProbe:
+    enabled: true
+    initialDelaySeconds: 30
+    timeoutSeconds: 5
+    periodSeconds: 30
+    successThreshold: 1
+    failureThreshold: 3
+    scheme: HTTP
+  readinessProbe:
+    enabled: true
+    initialDelaySeconds: 30
+    timeoutSeconds: 5
+    periodSeconds: 30
+    successThreshold: 1
+    failureThreshold: 3
+    scheme: HTTP
+  resources:
+    requests:
+      cpu: 200m
+      memory: 200Mi
+  nodeSelector: {}
+  affinity:
+    podAntiAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 60
+          podAffinityTerm:
+            labelSelector:
+              matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                    - kpanda-controller-manager
+            topologyKey: kubernetes.io/hostname
+  tolerations: []
+apiServer:
+  createDefaultOrderIndex: true
+  insightAgentRegistryOverride: true
+  labels:
+    app: kpanda-apiserver
+  replicaCount: 2
+  podAnnotations: {}
+  podLabels: {}
+  image:
+    registry: release.daocloud.io
+    repository: kpanda/kpanda-apiserver
+    tag: ''
+    pullPolicy: IfNotPresent
+    pullSecrets: []
+  livenessProbe:
+    enabled: true
+    initialDelaySeconds: 30
+    timeoutSeconds: 5
+    periodSeconds: 30
+    successThreshold: 1
+    failureThreshold: 3
+    scheme: HTTP
+  readinessProbe:
+    enabled: true
+    initialDelaySeconds: 30
+    timeoutSeconds: 5
+    periodSeconds: 30
+    successThreshold: 1
+    failureThreshold: 3
+    scheme: HTTP
+  resources:
+    requests:
+      cpu: 200m
+      memory: 200Mi
+  hostNetwork: false
+  nodeSelector: {}
+  affinity: {}
+  tolerations: []
+  serviceType: ClusterIP
+  nodePort: null
+  configMap:
+    addon:
+      repo:
+        - URL: http://10.6.135.222:8081
+          name: addon
+          password: rootpass123
+          username: rootuser
+kpanda-proxy:
+  enabled: true
+  proxyIngress:
+    replicaCount: 2
+    podAnnotations: {}
+    podLabels: {}
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+    nodeSelector: {}
+    affinity: {}
+    tolerations: []
+  proxyEgress:
+    replicaCount: 2
+    podAnnotations: {}
+    podLabels: {}
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+    nodeSelector: {}
+    affinity: {}
+    tolerations: []
+clusterpedia:
+  enabled: true
+  podLabels:
+    sidecar.istio.io/inject: 'true'
+  mysql:
+    enabled: false
+    image:
+      registry: release.daocloud.io
+      repository: kpanda/mysql
+      tag: 8.0.29
+    primary:
+      persistence:
+        enabled: false
+      resources:
+        limits:
+          cpu: 1
+          memory: 1Gi
+        requests:
+          cpu: 100m
+          memory: 128Mi
+  postgresql:
+    enabled: false
+    image:
+      registry: release.daocloud.io
+      repository: kpanda/postgresql
+      tag: 15.3.0-debian-11-r7
+    primary:
+      persistence:
+        enabled: false
+      resources:
+        limits:
+          cpu: 1
+          memory: 1Gi
+        requests:
+          cpu: 100m
+          memory: 128Mi
+  storageInstallMode: external
+  externalStorage:
+    type: mysql
+    dsn: >-
+      kpanda:@tcp(mcamel-common-kpanda-mysql-cluster-mysql-master.mcamel-system.svc.cluster.local:3306)/kpanda?charset=utf8mb4&multiStatements=true&parseTime=true
+    host: ''
+    port: null
+    user: ''
+    password: ihKhByQ2Af
+    database: ''
+    accessType: readwrite
+    connMaxIdleSeconds: 1800
+    connMaxLifetimeSeconds: 3600
+    maxIdleConns: 10
+    maxOpenConns: 100
+  installCRDs: true
+  persistenceMatchNode: None
+  apiserver:
+    replicaCount: 2
+    podAnnotations: {}
+    podLabels:
+      sidecar.istio.io/inject: 'true'
+    image:
+      registry: release.daocloud.io
+      repository: clusterpedia/apiserver
+      tag: v0.7.1-rc.0
+      pullPolicy: IfNotPresent
+      pullSecrets: []
+    featureGates:
+      RemainingItemCount: false
+      AllowRawSQLQuery: true
+    resources: {}
+    tolerations: []
+  clustersynchroManager:
+    replicaCount: 2
+    podAnnotations: {}
+    podLabels:
+      sidecar.istio.io/inject: 'true'
+      app: kpanda-clusterpedia-clustersynchro-manager
+    image:
+      registry: release.daocloud.io
+      repository: clusterpedia/clustersynchro-manager
+      tag: v0.7.1-rc.0
+      pullPolicy: IfNotPresent
+      pullSecrets: []
+    featureGates:
+      PruneManagedFields: true
+      PruneLastAppliedConfiguration: true
+      AllowSyncAllCustomResources: true
+      AllowSyncAllResources: true
+      HealthCheckerWithStandaloneTCP: true
+    resources: {}
+    nodeSelector: {}
+    affinity:
+      podAntiAffinity:
+        preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 60
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                  - key: app
+                    operator: In
+                    values:
+                      - kpanda-clusterpedia-clustersynchro-manager
+              topologyKey: kubernetes.io/hostname
+    tolerations: []
+    leaderElect:
+      leaseDuration: 60s
+      renewDeadline: 50s
+      retryPeriod: 5s
+      resourceLock: leases
+  controllerManager:
+    labels: {}
+    replicaCount: 1
+    podAnnotations: {}
+    podLabels:
+      sidecar.istio.io/inject: 'true'
+    image:
+      registry: release.daocloud.io
+      repository: clusterpedia/controller-manager
+      tag: v0.7.1-rc.0
+      pullPolicy: IfNotPresent
+      pullSecrets: []
+  hookJob:
+    image:
+      registry: release.daocloud.io
+      repository: kpanda/kpanda-shell
+      tag: v0.0.9
+      pullPolicy: IfNotPresent
+ui:
+  enabled: true
+  replicaCount: 2
+  podAnnotations: {}
+  podLabels: {}
+  image:
+    registry: release.daocloud.io
+    repository: kpanda/kpanda-ui
+    tag: v0.24.1
+    pullPolicy: IfNotPresent
+    pullSecrets: []
+  resources: {}
+  nodeSelector: {}
+  affinity: {}
+  tolerations: []
+cloudtty:
+  enabled: true
+  labels: {}
+  replicaCount: 1
+  podAnnotations: {}
+  podLabels:
+    sidecar.istio.io/inject: 'true'
+  image:
+    registry: release.daocloud.io
+    repository: cloudtty/cloudshell-operator
+    tag: v0.6.3
+    pullPolicy: IfNotPresent
+    pullSecrets: []
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+  nodeSelector: {}
+  affinity: {}
+  tolerations: []
+  cloudshellImage:
+    registry: release.daocloud.io
+    # 将 repository 地址修改成 repository: xxx/xxx 形式，如 repository: cloudtty/cloudshell
+    repository: cloudtty/cloudshell
+    tag: v0.6.3
+hookJob:
+  image:
+    registry: release.daocloud.io
+    repository: kpanda/kpanda-shell
+    tag: v0.0.9
+    pullPolicy: IfNotPresent
+helmJobImageOverride:
+  enabled: true
+  registry: release.daocloud.io
+  repository: kpanda/kpanda-shell
+  tag: v0.0.9
+etcdBackupRestore:
+  image:
+    registry: release.daocloud.io
+    repository: kpanda/etcdbrctl
+    tag: v0.22.0
+```
