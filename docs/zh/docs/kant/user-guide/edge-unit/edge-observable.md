@@ -6,7 +6,7 @@
 
 !!! note
 
-        请先安装 Insight agent 监控组件，边缘监控组件依赖 Insight 相关插件。
+    请先安装 Insight agent 监控组件，边缘监控组件依赖 Insight 相关插件。
 
 ## 检查是否安装监控组件
 
@@ -25,12 +25,13 @@ insight-agent 是集群观测数据采集的插件，支持对指标、链路、
 
 ```yaml
 nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-              - matchExpressions:
-                  - key: node-role.kubernetes.io/edge
-                    operator: DoesNotExist
+  requiredDuringSchedulingIgnoredDuringExecution:
+    nodeSelectorTerms:
+      - matchExpressions:
+        - key: node-role.kubernetes.io/edge
+          operator: DoesNotExist
 ```
+
 ![insight daemonset 组件](../../images/edge-observable-09.png)
 
 ## 安装边缘监控组件
@@ -53,31 +54,31 @@ nodeAffinity:
 
     - 在 **边缘工作集群** 获取 prometheus 服务地址和端口，目前仅支持 NodePort 访问方式，故地址对应的是工作集群控制节点地址
 
-    在 insight-system 命名空间下，输入如下命令，找到 9090 端口映射的服务端口
+        在 insight-system 命名空间下，输入如下命令，找到 9090 端口映射的服务端口
 
-    ```shell
-    kubectl get service -n mcamel-system | grep es
-    ```
+        ```shell
+        kubectl get service -n mcamel-system | grep es
+        ```
 
-    ![获取 prometheus 服务端口](../../images/edge-observable-07.png)
+        ![获取 prometheus 服务端口](../../images/edge-observable-07.png)
 
     - 在 **全局服务集群** 获取 elasticsearch 服务地址和端口，目前仅支持 NodePort 访问方式，故地址对应的是集群控制节点地址
 
-    在 insight-system 或 mcamel-system 命名空间下，输入如下命令，找到 9200 端口映射的服务端口
+        在 insight-system 或 mcamel-system 命名空间下，输入如下命令，找到 9200 端口映射的服务端口
 
-    ```shell
-    kubectl get svc -n insight-system | grep prometheus
-    ```    
+        ```shell
+        kubectl get svc -n insight-system | grep prometheus
+        ```    
 
-    ![获取 elasticsearch 服务端口](../../images/edge-observable-06.png)
+        ![获取 elasticsearch 服务端口](../../images/edge-observable-06.png)
 
-    !!! note
+        !!! note
 
-        其他参数默认不用修改。
+            其他参数默认不用修改。
 
-    ![安装 insight-edge-agent](../../images/edge-observable-05.png)
+        ![安装 insight-edge-agent](../../images/edge-observable-05.png)
 
-5. 系统将自动返回  Helm 应用 列表，当应用 **insight-edge-agent** 的状态从  **未就绪** 变为 **已部署** ，且所有的组件状态为 **运行中** 时，则安装成功。
+5. 系统将自动返回 Helm 应用列表，当应用 **insight-edge-agent** 的状态从 **未就绪** 变为 **已部署** ，且所有的组件状态为 **运行中** 时，则安装成功。
 
 ## 查看边缘监控数据
 
