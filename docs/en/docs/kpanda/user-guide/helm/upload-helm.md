@@ -19,7 +19,8 @@ This article explains how to upload Helm charts. See the steps below.
 
             This method is suitable for Harbor, ChartMuseum, JFrog type repositories.
 
-        1. Log in to a node that can access the Helm repository, upload the Helm binary to the node, and install the cm-push plugin (VPN is needed and Git should be installed in advance [Git](https://git-scm.com/downloads)).
+        1. Log in to a node that can access the Helm repository, upload the Helm binary to the node,
+           and install the cm-push plugin (VPN is needed and [Git](https://git-scm.com/downloads) should be installed in advance).
 
             Refer to the [plugin installation process](https://github.com/chartmuseum/helm-push).
 
