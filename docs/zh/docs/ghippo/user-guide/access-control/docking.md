@@ -19,7 +19,7 @@ hide:
 
 2. 在 __创建 SSO 接入__ 页面填写客户端 ID。
 
-    ![创建 SSO 接入](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/sso2.png)
+    ![创建 SSO 接入](../../images/sso2.png)
   
 3. 创建 SSO 接入成功后，在 __接入管理__ 管理列表，点击刚创建的客户端 ID 进入详情，
    复制客户端 ID、密钥和单点登录 URL 信息，填写至客户系统完成用户体系打通。
