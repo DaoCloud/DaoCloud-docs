@@ -6,7 +6,7 @@
 
 - x86_64 架构
 
-    Ubuntu LTS (Xenial Xerus)、Ubuntu LTS (Bionic Beaver) 、CentOS、EulerOS、RHEL、银河麒麟、中兴新支点、中标麒麟、openEuler
+    Ubuntu LTS (Xenial Xerus)、Ubuntu LTS (Bionic Beaver) 、CentOS、EulerOS、RHEL、银河麒麟、中兴新支点、中标麒麟、openEuler、Rocky Linux
 
 <!-- - armv7i（arm32）架构
 
@@ -14,7 +14,7 @@
 
 - aarch64（arm64）架构
 
-    Ubuntu LTS (Bionic Beaver)、CentOS、EulerOS、openEuler
+    Ubuntu LTS (Bionic Beaver)、CentOS、EulerOS、openEuler、Rocky Linux
 
 ## 内存
 
