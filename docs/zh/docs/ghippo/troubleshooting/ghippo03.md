@@ -1,6 +1,9 @@
-# keycloak 无法启动
+# Keycloak 无法启动
+
+*[Ghippo]: DCE 5.0 全局管理的开发代号
 
 ## 常见故障
+
 ### 故障表现
 
 MySQL 已就绪，无报错。在安装全局管理后 keycloak 无法启动（> 10 次）。
@@ -10,7 +13,6 @@ MySQL 已就绪，无报错。在安装全局管理后 keycloak 无法启动（>
 ### 检查项
 
 - 如果数据库是 MySQL，检查 keycloak database 编码是否是 UTF8。
-
 - 检查从 keycloak 到数据库的网络，检查数据库资源是否充足，包括但不限于资源限制、存储空间、物理机资源。
 
 ### 解决步骤
@@ -19,19 +21,21 @@ MySQL 已就绪，无报错。在安装全局管理后 keycloak 无法启动（>
 
 1. 检查 MySQL 资源占用是否到达 limit 限制
 2. 检查 MySQL 中 database keycloak table 的数量是不是 92
-3. 删除 keycloak database 并创建，提示 __CREATE DATABASE IF NOT EXISTS keycloak CHARACTER SET utf8__ 
+3. 删除 keycloak database 并创建，提示 **CREATE DATABASE IF NOT EXISTS keycloak CHARACTER SET utf8**
 4. 重启 keycloak Pod 解决问题
 
-
 ## CPU does not support ×86-64-v2
+
 ### 故障表现
 
-keycloak 无法正常启动，keycloak pod 运行状态为 `CrashLoopBackOff` 并且keycloak 的 log 信息出现
+keycloak 无法正常启动，keycloak pod 运行状态为 `CrashLoopBackOff` 并且 keycloak 的 log 信息出现
 
 ![img.png](../images/14.png)
 
 ### 检查项
+
 运行下面的检查脚本，cpu 支持的类型
+
 ```bash
 cat <<EOF > detect-cpu.sh
 #!/bin/sh -eu
@@ -53,5 +57,5 @@ sh detect-cpu.sh
 
 ### 解决方法
 
-1. 由于该问题是 keycloak 升级引起的（ghippo v0.27.0），将 ghippo 回滚到上一版本即可（ghippo < v0.27.0）。
-2. 需要升级你的虚拟机或物理机 cpu 类型以支持 x86-64-v3 及以上，如何升级需要你咨询虚拟机平台提供商或着物理机提供商。
+1. 由于该问题是 Keycloak 升级引起的（Ghippo v0.27.0），将 Ghippo 回滚到上一版本即可（Ghippo < v0.27.0）。
+2. 需要升级您的虚拟机或物理机 CPU 类型以支持 x86-64-v3 及以上，如何升级需要您咨询虚拟机平台提供商或物理机提供商。
