@@ -422,7 +422,7 @@ nav:
               - Spiderpool:
                   - Intro: network/modules/spiderpool/index.md
                   - Install: 
-                      - Install Spiderpool: network/modules/spiderpool/install.md
+                      - Install Spiderpool: network/modules/spiderpool/install/install.md
                       - Prepare and install RDMA: network/modules/spiderpool/install/rdmapara.md
                       - Install Nvidia OFED Driver: network/modules/spiderpool/install/ofed_driver.md
                   - Upgrade: network/modules/spiderpool/upgrade.md
