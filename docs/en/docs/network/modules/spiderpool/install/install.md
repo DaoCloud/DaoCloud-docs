@@ -110,8 +110,8 @@ Please confirm that your cluster has successfully connected to the `Container Ma
 
         These IP addresses MUST belong to the `IPv6 ippool subnet`. Ignore this option if `install IPv6 ippool` is not enabled.
 
-5. Click the `OK` button in the lower right corner to complete the installation. When finished, you can refer to the [Usage of SpiderPool](../../config/use-ippool/usage.md) to use the IP Pool.
+5. Click the `OK` button in the lower right corner to complete the installation. When finished, you can refer to the [Usage of SpiderPool](../../../config/ippool/ippoolusage.md) to use the IP Pool.
 
 !!! note
 
-    During the installation process, a single subnet and ippool can be created; after the installation is complete, more subnets and ippools can be created in the user interface.
+    During the installation process, a default subnet and ippool can be created; after the installation is complete, more subnets and ippools can be created in the user interface.
