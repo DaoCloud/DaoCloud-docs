@@ -1,6 +1,6 @@
 ---
-MTPE: windsonsea
-Date: 2024-04-23
+MTPE: ModetaNiu
+Date: 2024-05-27
 hide:
   - toc
 ---
@@ -19,7 +19,7 @@ This article explains how to upload Helm charts. See the steps below.
 
             This method is suitable for Harbor, ChartMuseum, JFrog type repositories.
 
-        1. Log in to a node that can access the Helm repository, upload the Helm binary to the node, and install the cm-push plugin.
+        1. Log in to a node that can access the Helm repository, upload the Helm binary to the node, and install the cm-push plugin (VPN is needed and Git should be installed in advance [Git](https://git-scm.com/downloads)).
 
             Refer to the [plugin installation process](https://github.com/chartmuseum/helm-push).
 
@@ -46,10 +46,13 @@ This article explains how to upload Helm charts. See the steps below.
 
         2. Go to the relevant project, select the __Helm Charts__ tab, click the __Upload__ button on the page to upload the Helm Chart.
 
+           ![upload Helm Chart](../../images/upload-helm-01.png)
+
 3. Synchronize remote repository data
 
     If the cluster settings do not enable __Automatic Helm Repository Refresh__ , manual synchronization is required. The general steps are:
 
-    Go to __Helm Apps__ -> __Helm Charts__ , click the __Sync Repository__
+    Go to __Helm Apps__ -> __Helm Repositories__ , click the __Sync Repository__
     action button on the right side of the corresponding repository list to complete the repository data synchronization.
 
+    ![upload Helm Chart](../../images/upload-helm-02.png)
