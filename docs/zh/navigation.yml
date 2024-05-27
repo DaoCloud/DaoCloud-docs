@@ -1116,6 +1116,7 @@ nav:
                   - 创建专有边缘单元: kant/user-guide/edge-unit/create-internal-unit.md
                   - 创建外接边缘单元: kant/user-guide/edge-unit/create-external-unit.md
                   - 管理边缘单元: kant/user-guide/edge-unit/manage-unit.md
+                  - 边缘资源监控: kant/user-guide/edge-unit/edge-observable.md
               - 边缘节点:
                   - 边缘节点概述: kant/user-guide/node/index.md
                   - 边缘节点接入要求: kant/user-guide/node/join-rqmt.md
