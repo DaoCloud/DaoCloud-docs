@@ -1,13 +1,14 @@
 # 增加 kpanda 内置角色权限点
 
 *[kpanda]: 容器管理的开发代号
-
+   
 kpanda 内置角色的权限点（rbac rules）都是提前预定义好的且用户无法修改，因为修改内置角色的权限点之后也被 kpanda 控制器还原成预定义权限点。
 为了支持更加灵活的权限配置，满足对系统角色的自定义需求，kpanda 支持为内置系统角色（cluster admin、ns admin、ns edit、ns view）修改权限点。
 以下示例演示如何新增 ns-view 权限点，增加可以删除工作负载 deployment 的权限。其他权限点操作类似。
 
 ## 前提条件
 
+- 版本要求：此能力适用于容器管理 v0.27.0 及以上版本。
 - 容器管理模块[已接入 Kubernetes 集群](https://docs.daocloud.io/kpanda/user-guide/clusters/integrate-cluster.html)或者[已创建 Kubernetes 集群](https://docs.daocloud.io/kpanda/user-guide/clusters/create-cluster.html)，且能够访问集群的 UI 界面。
 - 已完成一个[命名空间的创建](https://docs.daocloud.io/kpanda/user-guide/namespaces/createns.html)、[用户的创建](https://docs.daocloud.io/ghippo/user-guide/access-control/user.html)，并为用户授予 [NS View](https://docs.daocloud.io/kpanda/user-guide/permissions/permission-brief.html#ns-admin) ，详情可参考[命名空间授权](https://docs.daocloud.io/kpanda/user-guide/permissions/cluster-ns-auth.html)。
 
