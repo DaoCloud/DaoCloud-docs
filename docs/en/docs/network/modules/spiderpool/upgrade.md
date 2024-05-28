@@ -147,6 +147,8 @@ installation. As shown in the image below, click **update** and wait for the upd
 
 ![disable multus](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/spiderpool-disable-multus.png)
 
+- `Multus Setting` -> `MultusCNI` -> `Default CNI Name`: Cluster default CNI name.  When updating, this value should be consistent with the one filled in during installation. If the value is empty during installation, Spiderpool will automatically obtain the default CNI based on the existing CNI conf file in /etc/cni/net.d/. At this time Update Spiderpool. Fill in the value corresponding to the field in the /etc/cni/net.d/00-multus.config file: `clusterNetwork`, such as calico.
+
 ## Verification
 
 After the upgrade, check that the version is correct.
