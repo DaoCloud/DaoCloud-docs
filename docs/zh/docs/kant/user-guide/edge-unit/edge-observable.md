@@ -57,8 +57,12 @@ nodeAffinity:
         在 insight-system 命名空间下，输入如下命令，找到 9090 端口映射的服务端口
 
         ```shell
-        kubectl get service -n mcamel-system | grep es
+        kubectl get svc -n insight-system | grep prometheus
         ```
+
+        !!! note
+
+                如果 prometheus 服务默认访问方式为 ClusterIP，请修改为 NodePort 访问方式。
 
         ![获取 prometheus 服务端口](../../images/edge-observable-07.png)
 
@@ -67,7 +71,7 @@ nodeAffinity:
         在 insight-system 或 mcamel-system 命名空间下，输入如下命令，找到 9200 端口映射的服务端口
 
         ```shell
-        kubectl get svc -n insight-system | grep prometheus
+        kubectl get service -n mcamel-system | grep es
         ```    
 
         ![获取 elasticsearch 服务端口](../../images/edge-observable-06.png)
