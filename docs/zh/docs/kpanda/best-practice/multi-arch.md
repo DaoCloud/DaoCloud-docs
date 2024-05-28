@@ -40,7 +40,7 @@ tar -xvf offline-v0.10.0-arm64.tar
 
 | CPU 架构 | 操作系统版本 | 下载地址 |
 | :------- | :-------- | :------ |
-| ARM64 | Kylin Linux Advanced Server release V10 (Sword) SP2 | 申请地址：<https://www.kylinos.cn/scheme/server/1.html> |
+| ARM64 | Kylin Linux Advanced Server release V10 (Sword) SP2 | 申请地址：<https://www.kylinos.cn/support/trial.html> |
 
 !!! note
 
