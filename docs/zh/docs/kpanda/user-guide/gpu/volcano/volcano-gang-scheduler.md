@@ -1,43 +1,58 @@
-# volcano 的 gang scheduler 使用
+# 使用 Volcano 的 Gang Scheduler
 
-Gang 调度策略是 volcano-scheduler 的核心调度算法之一，它满足了调度过程中的 “All or nothing” 的调度需求，避免 Pod 的任意调度导致集群资源的浪费。具体算法是，观察 Job 下的 Pod 已调度数量是否满足了最小运行数量，当 Job 的最小运行数量得到满足时，为 Job 下的所有 Pod 执行调度动作，否则，不执行。
-
+Gang 调度策略是 volcano-scheduler 的核心调度算法之一，它满足了调度过程中的 “All or nothing” 的调度需求，
+避免 Pod 的任意调度导致集群资源的浪费。具体算法是，观察 Job 下的 Pod 已调度数量是否满足了最小运行数量，
+当 Job 的最小运行数量得到满足时，为 Job 下的所有 Pod 执行调度动作，否则，不执行。
 
 ## 使用场景
 
-基于容器组概念的Gang调度算法十分适合需要多进程协作的场景。AI场景往往包含复杂的流程，Data Ingestion、Data Analysts、Data Splitting、Trainer、Serving、Logging等，需要一组容器进行协同工作，就很适合基于容器组的Gang调度策略。MPI计算框架下的多线程并行计算通信场景，由于需要主从进程协同工作，也非常适合使用Gang调度策略。容器组下的容器高度相关也可能存在资源争抢，整体调度分配，能够有效解决死锁。
+基于容器组概念的 Gang 调度算法十分适合需要多进程协作的场景。AI 场景往往包含复杂的流程，
+Data Ingestion、Data Analysts、Data Splitting、Trainer、Serving、Logging 等，
+需要一组容器进行协同工作，就很适合基于容器组的 Gang 调度策略。
+MPI 计算框架下的多线程并行计算通信场景，由于需要主从进程协同工作，也非常适合使用 Gang 调度策略。
+容器组下的容器高度相关也可能存在资源争抢，整体调度分配，能够有效解决死锁。
 
-在集群资源不足的场景下，gang的调度策略对于集群资源的利用率的提升是非常明显的。比如集群现在只能容纳 2 个 Pod，现在要求最小调度的 Pod 数为 3。那现在这个 job 的所有的 Pod 都会 pending，直到集群能够容纳 3 个 Pod，Pod 才会被调度。有效防止调度部分 Pod，不满足要求又占用了资源，使其他 job 无法运行的情况。
+在集群资源不足的场景下，gang 的调度策略对于集群资源的利用率的提升是非常明显的。
+比如集群现在只能容纳 2 个 Pod，现在要求最小调度的 Pod 数为 3。
+那现在这个 Job 的所有的 Pod 都会 pending，直到集群能够容纳 3 个 Pod，Pod 才会被调度。
+有效防止调度部分 Pod，不满足要求又占用了资源，使其他 Job 无法运行的情况。
 
 ## 概念说明
-Gang scheduler 是 volcano 的核心的调度插件，安装 volcano 后默认就开启了。在创建工作负载时只需要指定调度器的名称为 volcano 即可。
 
-volcano 是以 PodGroup 为单位进行调度的，在创建工作负载时，并不需要手动创建 PodGroup 资源，volcano 会根据工作负载的信息自动创建。下面是一个 PodGroup 的案例：
+Gang Scheduler 是 Volcano 的核心的调度插件，安装 Volcano 后默认就开启了。
+在创建工作负载时只需要指定调度器的名称为 Volcano 即可。
 
-```
-piVersion: scheduling.volcano.sh/v1beta1
+Volcano 是以 PodGroup 为单位进行调度的，在创建工作负载时，并不需要手动创建 PodGroup 资源，
+Volcano 会根据工作负载的信息自动创建。下面是一个 PodGroup 的示例：
+
+```yaml
+apiVersion: scheduling.volcano.sh/v1beta1
 kind: PodGroup
 metadata:
   name: test
   namespace: default
 spec:
-  minMember: 1
-  minResources:priorityClassName
+  minMember: 1  # (1)!
+  minResources: priorityClassName # (2)!
     cpu: "3"
     memory: "2048Mi"
-  priorityClassName: high-prority
-  queue: default
+  priorityClassName: high-prority # (3)!
+  queue: default # (4)!
 ```
- **minMember**：表示该podgroup下**最少**需要运行的pod或任务数量。如果集群资源不满足miniMember数量任务的运行需求，调度器将不会调度任何一个该podgroup 内的任务。
-**queue**：表示该podgroup所属的queue。queue必须提前已创建且状态为open。
-**priorityClassName**：表示该podgroup的优先级，用于调度器为该queue中所有podgroup进行调度时进行排序。**system-node-critical**和**system-cluster-critical**是2个预留的值，表示最高优先级。不特别指定时，默认使用default优先级或zero优先级。
-**minResources**：表示运行该podgroup所需要的最少资源。当集群可分配资源不满足minResources时，调度器将不会调度任何一个该podgroup内的任务。
+
+1. 表示该 PodGroup 下 **最少** 需要运行的 Pod 或任务数量。
+   如果集群资源不满足 miniMember 数量任务的运行需求，调度器将不会调度任何一个该 PodGroup 内的任务。
+2. 表示运行该 PodGroup 所需要的最少资源。当集群可分配资源不满足 minResources 时，调度器将不会调度任何一个该 PodGroup 内的任务。
+3. 表示该 PodGroup 的优先级，用于调度器为该 queue 中所有 PodGroup 进行调度时进行排序。
+   **system-node-critical** 和 **system-cluster-critical** 是 2 个预留的值，表示最高优先级。不特别指定时，默认使用 default 优先级或 zero 优先级。
+4. 表示该 PodGroup 所属的 queue。queue 必须提前已创建且状态为 open。
 
 ## 使用案例
 
-在 MPI 计算框架下的多线程并行计算通信场景中，我们要确保所有的 pod 都能调度成功才能保证任务正常完成。设置 minAvailable 为 4，表示要求 1 个 mpimaster 和 3 个 mpiworker 能运行。
+在 MPI 计算框架下的多线程并行计算通信场景中，我们要确保所有的 Pod 都能调度成功才能保证任务正常完成。
+设置 minAvailable 为 4，表示要求 1 个 mpimaster 和 3 个 mpiworker 能运行。
 
-```
+```yaml
 apiVersion: batch.volcano.sh/v1alpha1
 kind: Job
 metadata:
@@ -109,11 +124,9 @@ spec:
             - name: default-secret
 ```
 
-
-
 生成 PodGroup 的资源：
 
-```
+```yaml
 apiVersion: scheduling.volcano.sh/v1beta1
 kind: PodGroup
 metadata:
@@ -162,5 +175,5 @@ status:
   phase: Pending
   succeeded: 1
 ```
-从 PodGroup 可以看出，通过 ownerReferences 关联到工作负载，并设置最小运行的 pod 数为 4。
 
+从 PodGroup 可以看出，通过 ownerReferences 关联到工作负载，并设置最小运行的 Pod 数为 4。

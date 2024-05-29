@@ -272,10 +272,10 @@ nav:
                       - NVIDIA GPU Modes: kpanda/user-guide/gpu/nvidia/index.md
                       - Install GPU Operator:
                           - Install GPU Operator Offline: kpanda/user-guide/gpu/nvidia/install_nvidia_driver_of_operator.md
-                          - Build Offline yum Source for CentOS 7.9: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_centos7_9.md
+                          - Build Offline yum for CentOS 7.9: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_centos7_9.md
                           - Upload Red Hat GPU Opreator Image: kpanda/user-guide/gpu/nvidia/push_image_to_repo.md
-                          - Build Offline yum Source for Red Hat 8.4: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_redhat8_4.md
-                          - Build Offline yum Source for Red Hat 7.9: kpanda/user-guide/gpu/nvidia/yum_source_redhat7_9.md
+                          - Build Offline yum for Red Hat 8.4: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_redhat8_4.md
+                          - Build Offline yum for Red Hat 7.9: kpanda/user-guide/gpu/nvidia/yum_source_redhat7_9.md
                       - NVIDIA GPU Full Card Mode: kpanda/user-guide/gpu/nvidia/full_gpu_userguide.md
                       - NVIDIA vGPU Mode:
                           - Install vGPU Addon: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_addon.md
@@ -286,12 +286,15 @@ nav:
                           - Use NVIDIA MIG: kpanda/user-guide/gpu/nvidia/mig/mig_usage.md
                           - MIG Commands: kpanda/user-guide/gpu/nvidia/mig/mig_command.md
                   - Ascend GPU:
-                      - Use Ascend GPU: kpanda/user-guide/gpu/Ascend_usage.md
-                      - Huawei Ascend NPU Quick Start Guide: kpanda/user-guide/gpu/ascend_quickstart.md
+                      - Install NPU Components: kpanda/user-guide/gpu/ascend/ascend_driver_install.md
+                      - Use GPU: kpanda/user-guide/gpu/ascend/ascend_usage.md
                   - Iluvatar GPU: kpanda/user-guide/gpu/Iluvatar_usage.md
-                  - GPU Quota Management: kpanda/user-guide/gpu/vgpu_quota.md
+                  - GPU Quotas: kpanda/user-guide/gpu/vgpu_quota.md
+                  - GPU DRA: kpanda/user-guide/gpu/dynamic-regulation.md
                   - GPU Metrics: kpanda/user-guide/gpu/gpu-metrics.md
-                  - Install and Use Volcano: kpanda/user-guide/gpu/volcano_user_guide.md
+                  - Use Volcano:
+                    - Install and Use Volcano: kpanda/user-guide/gpu/volcano/volcano_user_guide.md
+                    - Use Volcano Gang Scheduler: kpanda/user-guide/gpu/volcano/volcano-gang-schedulder.md  
               - Best Practices:
                   - Back up and Restore ETCD: kpanda/best-practice/etcd-backup.md
                   - Cross-cluster Backup and Restore of MySQL Apps: kpanda/best-practice/backup-mysql-on-nfs.md
