@@ -6,13 +6,13 @@
 
 ## 前提条件
 
-- 创建一个[工作空间](../../../ghippo/user-guide/workspace/workspace.md)和一个[用户](../../../ghippo/user-guide/access-control/user.md)，该用户需加入该工作空间并具备  __Workspace Editor__  角色。
+- 创建一个[工作空间](../../../ghippo/user-guide/workspace/workspace.md)和一个[用户](../../../ghippo/user-guide/access-control/user.md)，该用户需加入该工作空间并具备 __Workspace Editor__  角色。
 
 - 发布对象所在的集群已经安装了 Argo Rollout 组件。有关具体的安装方式，可参考[管理 Helm 应用](../../../kpanda/user-guide/helm/helm-app.md)。
 
 ## 操作步骤
 
-1. 进入 __应用工作台__ 模块，在左侧导航栏点击  __灰度发布__ ，然后在页面右上角点击 __创建发布任务__ -> __蓝绿发布__ 。
+1. 进入 __应用工作台__ 模块，在左侧导航栏点击 __灰度发布__ ，然后在页面右上角点击 __创建发布任务__ -> __蓝绿发布__ 。
 
     ![进入创建页面](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/blue-green01.png)
 

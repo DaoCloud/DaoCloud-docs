@@ -22,7 +22,7 @@ __解决方案__ ：
 
 如果内置 podTemplate 中的镜像不满足您的需求，可以通过以下方式替换容器镜像或者添加容器镜像。
 
-1. 前往容器管理模块，找到 Jenkins 组件所在的集群，点击集群名称。
+1. 点击左上角的 **≡** 打开导航栏，前往容器管理模块，找到 Jenkins 组件所在的集群，点击集群名称。
 
     ![faq-ci2](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/faq-ci2.png)
 
@@ -42,7 +42,7 @@ __解决方案__ ：
 
 当流水线构建环境为 maven 时，大多数客户需要修改 __settings.xml__ 以更换依赖源。可参考以下步骤：
 
-1. 前往容器管理模块，在 __集群列表__ 界面选择 Jenkins 组件所在的集群，点击集群名称。
+1. 点击左上角的 **≡** 打开导航栏，前往容器管理模块，在 __集群列表__ 界面选择 Jenkins 组件所在的集群，点击集群名称。
 
     ![faq-ci2](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/faq-ci2.png)
 
@@ -62,7 +62,7 @@ __解决方案__ ：
 
 ### 集群运行时为 Podman
 
-1. 在容器管理模块的 __集群列表__ 界面找到 Jenkins 组件所在的集群，点击集群名称。
+1. 点击左上角的 **≡** 打开导航栏，前往容器管理模块，在 __集群列表__ 界面找到 Jenkins 组件所在的集群，点击集群名称。
 
 2. 在左侧导航栏依次点击 __配置与密钥__ -> __配置项__ 。
 
@@ -79,7 +79,7 @@ __解决方案__ ：
         __registries__ 关键字的值应该是完整的镜像仓库域名或 IP 地址，无需增加 __http__ 或 __https__ 前缀。
         如果镜像仓库使用非标准端口号，可以在地址后面加上冒号 __:__ 和端口号。
 
-        ```
+        ```config
         [[registry]]
         location = "registry.example.com:5000"
         insecure = true
@@ -118,7 +118,7 @@ __解决方案__ ：
 
 目前 DCE 5.0 部署出来后 Jenkins 流水线并发执行数量为 2，下述将描述如何更改并发执行数量：
 
-1. 前往容器管理模块，找到 Jenkins 组件所在的集群，点击集群名称。
+1. 点击左上角的 **≡** 打开导航栏，前往容器管理模块，找到 Jenkins 组件所在的集群，点击集群名称。
 
 2. 在左侧导航栏依次点击 __配置与密钥__ -> __配置项__ 。
 
@@ -132,13 +132,15 @@ __解决方案__ ：
 
 ## 流水线运行状态更新不及时？
 
-在Jenkins的pod中，会存在一个名为`event-proxy`的sidecar容器，通过此容器将jenkins的事件发送到工作台中。目前通过dce5-installer安装的jenkins会默认开启此容器，当然，你也可以选择在容器管理平台的Addon模块中自己创建Jenkins（这通常用于Jenkins部署在工作集群）, 在创建时也可以选择是否开启此容器。
+在 Jenkins 的 Pod 中，会存在一个名为 `event-proxy` 的 Sidecar 容器，通过此容器将 Jenkins 的事件发送到工作台中。
+目前通过 dce5-installer 安装的 Jenkins 会默认开启此容器。当然，
+你也可以选择在容器管理的 Addon 模块中自己创建 Jenkins（这通常用于 Jenkins 部署在工作集群），在创建时也可以选择是否开启此容器。
 
 下面基于此容器是否开启，请分别检查不同的配置项是否正确：
 
 ### 开启了 event-proxy 容器
 
-1. 前往容器管理模块，找到 Jenkins 组件所在的集群，点击集群名称。
+1. 点击左上角的 **≡** 打开导航栏，前往容器管理模块，找到 Jenkins 组件所在的集群，点击集群名称。
 
 2. 在左侧导航栏依次点击 __配置与密钥__ -> __配置项__ 。
 
@@ -152,23 +154,29 @@ __解决方案__ ：
 
     ```yaml
     eventProxy:
-      host: amamba-devops-server.amamba-system:80   # 此处为dce5的网关地址，如果为dce5-installer安装的jenkins，此处不需要修改
-      proto: http                                   # 此处为dce5的网关协议（http或者https）
+      host: amamba-devops-server.amamba-system:80   # (1)!
+      proto: http                                   # (2)!
     ```
+
+    1. 此处为 DCE 5.0 的网关地址，如果为 dce5-installer 安装的 Jenkins，此处不需要修改
+    2. 此处为 DCE 5.0 的网关协议（http 或者 https）
 
 6. 在 Jenkins 所在集群， __配置与密钥__ -> __配置项__ 中搜索密钥 __amamba-jenkins__ 。
 
 7. 检查密钥中的 __event-proxy-token__ 是否正确。此 Token 用于 DCE 5.0 的网关认证。
-   如果不正确，Jenkins 将无法发送事件到工作台。有关如何生成此 Token，可以查看[访问密钥](../../ghippo/user-guide/personal-center/accesstoken.md)。
+   如果不正确，Jenkins 将无法发送事件到工作台。有关如何生成此 Token，
+   可以查看[访问密钥](../../ghippo/user-guide/personal-center/accesstoken.md)。
 
 如果以上配置项都正确，但是 Jenkins 的流水线状态还是无法更新，请先查看 Jenkins 的 `event-proxy` 的容器日志。
 
 ### 未开启 event-proxy 容器
 
-1. 前往容器管理模块，找到 Jenkins 组件所在的集群，点击集群名称。
+1. 点击左上角的 **≡** 打开导航栏，前往容器管理模块，找到 Jenkins 组件所在的集群，点击集群名称。
 
 2. 在左侧导航栏依次点击 __配置与密钥__ -> __配置项__ 。
 
 3. 搜索 __jenkins-casc-config__ ，在操作列点击 __编辑 YAML__ 。
 
-4. 在 __data__ -> __jenkins.yaml__ -> 搜索 `eventDispatcher.receiver`, 它的值应该为 `http://amamba-devops-server.amamba-system:80/apis/internel.amamba.io/devops/pipeline/v1alpha1/webhooks/jenkins` 其中 `amamba-system` 为工作台所部署的命名空间。
+4. 在 __data__ -> __jenkins.yaml__ -> 搜索 `eventDispatcher.receiver`，它的值应该为
+   `http://amamba-devops-server.amamba-system:80/apis/internel.amamba.io/devops/pipeline/v1alpha1/webhooks/jenkins`。
+   其中 `amamba-system` 为工作台所部署的命名空间。
