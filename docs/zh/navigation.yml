@@ -179,7 +179,6 @@ nav:
                   - 集群版本支持范围: kpanda/user-guide/clusters/cluster-version.md
                   - 接入 rancher 集群: kpanda/user-guide/clusters/integrate-rancher-cluster.md
                   - 在集群中部署第二调度器: kpanda/user-guide/clusters/cluster-scheduler-plugin.md
-                  - 集群动态资源超卖: kpanda/user-guide/clusters/cluster-oversold.md
                   - 集群证书更新: kpanda/user-guide/clusters/k8s-cert.md
               - 命名空间:
                   - 创建命名空间: kpanda/user-guide/namespaces/createns.md
@@ -248,6 +247,7 @@ nav:
                   - 最近操作: kpanda/user-guide/clusterops/latest-operations.md
                   - 集群升级: kpanda/user-guide/clusters/upgrade-cluster.md
                   - 集群设置: kpanda/user-guide/clusterops/cluster-settings.md
+                  - 集群动态资源超卖: kpanda/user-guide/clusterops/cluster-oversold.md
               - 集群巡检:
                   - 介绍: kpanda/user-guide/inspect/index.md
                   - 创建巡检配置: kpanda/user-guide/inspect/config.md

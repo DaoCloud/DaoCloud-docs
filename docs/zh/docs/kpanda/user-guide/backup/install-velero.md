@@ -71,6 +71,10 @@ velero 是一个备份和恢复 Kubernetes 集群资源的开源工具。它可�
         - __S3 force path style__ ：保持默认配置 __true__ 。
         - __S3 server URL__ ：对象存储（minio）的控制台访问地址，minio 一般提供了 UI 访问和控制台访问两个服务，此处请使用控制台访问的地址。
 
+    !!! note
+
+        请确保 s3 存储服务时间跟备份还原集群时间差在10分钟以内，最好是时间保持同步，否则将无法执行备份操作。
+
         ![备份恢复](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/backup4.png)
 
 5. 点击 __确定__ 按钮，完成 __velero__ 插件的安装，之后系统将自动跳转至 __Helm 应用__ 列表页面，稍等几分钟后，为页面执行刷新操作，即可看到刚刚安装的应用。
