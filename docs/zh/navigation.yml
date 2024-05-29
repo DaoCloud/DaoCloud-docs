@@ -42,10 +42,10 @@ nav:
                       - 前置检查: install/commercial/prepare.md
                       - 端口要求: install/commercial/port-requirements.md
                       - 外接组件要求（非必须）: 
-                          - 使用外接服务存储 Binaries 资源: install/commercial/external/external-binary.md
-                          - 使用外接镜像仓库与 Chart 仓库存储镜像与 Chart 包: install/commercial/external/external-imageandchart.md
+                          - 使用外接服务存储Binaries资源: install/commercial/external/external-binary.md
+                          - 使用外接镜像仓库与 Chart 仓库: install/commercial/external/external-imageandchart.md
                           - 使用外接中间件服务: install/commercial/external/external-middlewares.md
-                          - 使用外接服务存储 OS Repo 资源: install/commercial/external/external-os.md
+                          - 使用外接服务存储OS Repo资源: install/commercial/external/external-os.md
                   - 开始安装: install/commercial/start-install.md
               - 在不同 K8s 发行版上安装:
                   - OpenShift OCP: install/k8s-install/ocp-install-dce5.0.md
@@ -258,7 +258,7 @@ nav:
                   - 介绍: kpanda/user-guide/backup/index.md
                   - 安装 Velero 插件: kpanda/user-guide/backup/install-velero.md
                   - 应用备份: kpanda/user-guide/backup/deployment.md
-                  - ETCD 备份: kpanda/user-guide/backup/etcd-backup.md
+                  - etcd 备份: kpanda/user-guide/backup/etcd-backup.md
                   - 离线升级备份恢复模块: kpanda/user-guide/backup/offline-upgrade.md
               - 安全管理:
                   - 安全扫描类型: kpanda/user-guide/security/index.md
@@ -309,19 +309,19 @@ nav:
                     - 使用 Volcano 的 Gang Scheduler: kpanda/user-guide/gpu/volcano/volcano-gang-schedulder.md  
               - 最佳实践:
                   - 对 etcd 进行备份还原: kpanda/best-practice/etcd-backup.md
-                  - 跨集群备份恢复 MySQL 应用及数据: kpanda/best-practice/backup-mysql-on-nfs.md
+                  - 跨集群备份恢复MySQL: kpanda/best-practice/backup-mysql-on-nfs.md
                   - 加固自建工作集群: kpanda/best-practice/hardening-cluster.md
                   - 工作集群离线升级指南: kpanda/best-practice/update-offline-cluster.md
                   - 为工作集群添加异构节点: kpanda/best-practice/multi-arch.md
-                  - 为全局服务集群的工作节点扩容: kpanda/best-practice/add-worker-node-on-global.md
-                  - 在 CentOS 上创建 Ubuntu 工作集群: kpanda/best-practice/create-ubuntu-on-centos-platform.md
-                  - 在 CentOS 上创建 Red Hat 9.2 工作集群: kpanda/best-practice/create-redhat9.2-on-centos-platform.md
-                  - 对工作集群的控制节点扩容: kpanda/best-practice/add-master-node.md
+                  - 全局服务集群的工作节点扩容: kpanda/best-practice/add-worker-node-on-global.md
+                  - 在CentOS上创建Ubuntu工作集群: kpanda/best-practice/create-ubuntu-on-centos-platform.md
+                  - 在CentOS上创建Red Hat 9.2工作集群: kpanda/best-practice/create-redhat9.2-on-centos-platform.md
+                  - 工作集群的控制节点扩容: kpanda/best-practice/add-master-node.md
                   - 在非主流操作系统上创建集群: kpanda/best-practice/use-otherlinux-create-custer.md
-                  - DCE 4.0 -> DCE 5.0 有限场景迁移: kpanda/best-practice/dce4-5-migration.md
-                  - 离线部署与升级 Kubean 向下兼容版本: kpanda/best-practice/kubean-low-version.md
+                  - DCE 4.0到5.0有限场景迁移: kpanda/best-practice/dce4-5-migration.md
+                  - 离线部署与升级Kubean向下兼容版本: kpanda/best-practice/kubean-low-version.md
                   - 替换工作集群的首个控制节点: kpanda/best-practice/replace-first-master-node.md
-                  - 限制 docker 单容器可占用的磁盘空间: kpanda/best-practice/limit-disk-usage-docker.md
+                  - 限制Docker单容器可占用磁盘空间: kpanda/best-practice/limit-disk-usage-docker.md
           - 多云编排:
               - 介绍:
                   - 什么是多云编排: kairship/intro/index.md
@@ -363,7 +363,7 @@ nav:
                   - 故障转移功能介绍: kairship/failover/failover.md
                   - 优化故障转移延迟灵敏度: kairship/failover/optimization-failover.md
               - 最佳实践:
-                  - 一键转换 DCE 4.0 到 5.0 应用: kairship/best-practice/one-click-conversion.md
+                  - 一键转换DCE 4.0到5.0应用: kairship/best-practice/one-click-conversion.md
                   - 跨集群弹性伸缩: kairship/best-practice/fhpa.md
           - 镜像仓库:
               - 介绍:
@@ -375,7 +375,7 @@ nav:
                   - 管理外部镜像仓库: kangaroo/quickstart/registry-in-one.md
                   - 推送镜像: kangaroo/quickstart/push.md
                   - Admin 上手指南: kangaroo/quickstart/admin-registry.md
-                  - Workspace Admin 上手指南: kangaroo/quickstart/ws-admin-registry.md
+                  - Workspace Admin上手指南: kangaroo/quickstart/ws-admin-registry.md
                   - 离线环境开启镜像安全扫描: kangaroo/quickstart/trivy-offline.md
               - 镜像空间:
                   - 镜像空间: kangaroo/space/index.md
@@ -429,11 +429,11 @@ nav:
                   - 网络 CNI 性能测试报告: network/performance/cni-performance.md
                   - Spiderpool 性能测试报告: network/performance/spiderpool-performance.md
                   - Cilium 性能测试报告:
-                      - Cilium 对于 Pod 访问 Service 的加速: network/performance/cilium-performance/cilium-service.md
-                      - Cilium 在 Pod 跨节点通信场景下的性能测试: network/performance/cilium-performance/cilium-crossnode.md
-                      - Cilium 在 nodePort 场景下的访问加速测试: network/performance/cilium-performance/cilium-nodeport.md
-                      - Cilium基于eBPF技术实施Pod带宽管控下的性能测试: network/performance/cilium-performance/cilium-bandwidth.md
-                  - 基于 eBPF 技术实施网络策略场景下的性能测试: network/performance/ebpf-performance.md
+                      - 加速 Pod 访问 Service: network/performance/cilium-performance/cilium-service.md
+                      - Pod 跨节点通信的性能测试: network/performance/cilium-performance/cilium-crossnode.md
+                      - nodePort 场景的访问加速测试: network/performance/cilium-performance/cilium-nodeport.md
+                      - 基于eBPF实施Pod带宽管控下的性能测试: network/performance/cilium-performance/cilium-bandwidth.md
+                  - 基于eBPF实施网络策略场景下的性能测试: network/performance/ebpf-performance.md
                   - Ingress 性能测试: network/performance/ingress-performance.md
                   - Egress 性能测试: network/performance/egress-performance.md
                   - CoreDNS 性能测试: network/performance/coredns-performance.md
@@ -509,7 +509,7 @@ nav:
                   - 介绍: network/modules/submariner/index.md
                   - 安装: network/modules/submariner/install.md
                   - 使用说明: network/modules/submariner/usage.md
-              - 集成 kdoctor:
+              - 集成 Kdoctor:
                     - 介绍: network/modules/kdoctor/index.md
                     - 安装: network/modules/kdoctor/install.md
               - 集成阿里云 Terway:
@@ -660,9 +660,9 @@ nav:
                       - 链路数据尾部采样方案: insight/best-practice/tail-based-sampling.md
                   - Java 应用观测:
                       - insight/quickstart/jvm-monitor/jvm-catelogy.md
-                      - 使用 JMX Exporter 暴露 JVM 监控指标: insight/quickstart/jvm-monitor/jmx-exporter.md
-                      - 使用 OTel Java Agent 暴露 JVM 监控指标: insight/quickstart/jvm-monitor/otel-java-agent.md
-                      - 已有 JVM 指标的 Java 应用对接可观测性: insight/quickstart/jvm-monitor/legacy-jvm.md
+                      - 使用JMX Exporter暴露JVM监控指标: insight/quickstart/jvm-monitor/jmx-exporter.md
+                      - 使用OTel Java Agent暴露JVM监控指标: insight/quickstart/jvm-monitor/otel-java-agent.md
+                      - 已有JVM指标的Java应用对接可观测性: insight/quickstart/jvm-monitor/legacy-jvm.md
                   - Golang 应用观测:
                       - OTel SDK 增强 Go 应用: insight/quickstart/otel/golang.md
                       - OTel 自动探针增强 Go 应用: insight/quickstart/otel/golang-ebpf.md
@@ -790,8 +790,8 @@ nav:
                   - 接入 Sentinel 集群流控能力: skoala/standard/flow-control.md
               - 最佳实践:
                   - 示例应用体验微服务治理: skoala/best-practice/use-skoala-01.md
-                  - 在云原生微服务中使用 JWT 插件: skoala/best-practice/plugins/jwt.md
-                  - 微服务网关 JWT 功能: skoala/best-practice/jwt.md
+                  - 在云原生微服务中使用JWT插件: skoala/best-practice/plugins/jwt.md
+                  - 微服务网关JWT功能: skoala/best-practice/jwt.md
                   - 微服务网关接入认证服务器: 
                       - skoala/best-practice/auth-server.md
                       - 接入 AK/SK 认证 : skoala/best-practice/ak-sk-demo.md

@@ -43,7 +43,7 @@ nav:
                       - Ports: install/commercial/port-requirements.md
                       - External Components (Optional):
                           - Store Binaries with External Service: install/commercial/external/external-binary.md
-                          - Store Images and Charts with Registry and Chart Repo: install/commercial/external/external-imageandchart.md
+                          - Use External Registry and Chart Repo: install/commercial/external/external-imageandchart.md
                           - Use External Middleware: install/commercial/external/external-middlewares.md
                           - Store OS Repo with External Service: install/commercial/external/external-os.md
                   - Start Installation: install/commercial/start-install.md
@@ -68,7 +68,7 @@ nav:
                   - Offline Clipper Script User Manual: install/best-practices/offline-clipper.md
                   - Use Cases: install/commercial/scenarios.md
                   - Deploy on DCE 5.0 Appliance: install/best-practices/all-in-one-machine.md
-                  - etcd Deployed in Host Mode and Separated from Control Plane: install/best-practices/etcd-host-deploy.md
+                  - etcd Deployed in Host and Separated from Control Plane: install/best-practices/etcd-host-deploy.md
                   - HA Bootstrap Nodes: install/best-practices/thinder-ha.md
                   - Backup and Restore of Bootstrap Node: install/best-practices/thinder-restore.md
                   - Fix CVE-2024-21626: install/best-practices/cve-20240-21626.md
@@ -296,7 +296,7 @@ nav:
                     - Install and Use Volcano: kpanda/user-guide/gpu/volcano/volcano_user_guide.md
                     - Use Volcano Gang Scheduler: kpanda/user-guide/gpu/volcano/volcano-gang-schedulder.md  
               - Best Practices:
-                  - Back up and Restore ETCD: kpanda/best-practice/etcd-backup.md
+                  - Back up and Restore etcd: kpanda/best-practice/etcd-backup.md
                   - Cross-cluster Backup and Restore of MySQL Apps: kpanda/best-practice/backup-mysql-on-nfs.md
                   - Strengthen a Self-built Worker Cluster: kpanda/best-practice/hardening-cluster.md
                   - Offline Upgrade Worker Clusters: kpanda/best-practice/update-offline-cluster.md
