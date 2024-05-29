@@ -91,7 +91,7 @@ components:
     variables:
   mspider:
     enable: true
-    helmVersion: v0.17.0-rc2
+    helmVersion: v0.18.0-rc2
     variables:
   mcamel-rabbitmq:
     enable: true

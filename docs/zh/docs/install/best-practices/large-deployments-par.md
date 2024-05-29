@@ -161,7 +161,7 @@ data:
 |                                        | system_master_cpu_reserved                              | -                  |                                                              |
 |                                        | system_master_memory_reserved                           | -                  |                                                              |
 |                                        | kubelet_config_extra_args                               | 子元素             | kubeAPIQPS：默认为50，与kub-apiserver通信时使用的QPS<br />kubeAPIBurst：默认为100，与kube-apiserver信时允许的burst<br />serializeImagePulls：默认为true，一次只拉取一个镜像<br />maxParallelImagePulls：默认为nil，最大并行拉取数，仅在 serializeImagePulls 为 false 时生效<br />volumeStatsAggPeriod：默认为1m，对于volume 比较多且磁盘压力大的情况，建议调大 |
-| Kubeproxy                              | kube_proxy_mode                                         | -                  | 建议使用`IPVS` 模式，处理大规模集群流量的高性能解决方案      |
+| Kubeproxy                              | kube_proxy_mode                                         | -                  | 在 service 等变化频繁场景下 `ipvs` 性能比 `iptables` 好，设置 kube proxy 底座为 ipvs 时需要Linux 内核版本大于等于5.9，另外 Kube-Proxy IPVS 目前也存在一些问题     |
 | 集群网络相关参数                       | kube_pods_subnet                                        | 10.233.64.0/18     | 增大 Pod 所能分配的网络                                      |
 |                                        | kube_network_node_prefix                                | 24                 | 增大每个节点上 Pod 所能获得的子网范围                        |
 |                                        | kube_network_node_prefix_ipv6                           | 120                | 增大每个节点上 Pod 所能获得的子网范围                        |
