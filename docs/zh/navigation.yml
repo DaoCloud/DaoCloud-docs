@@ -304,7 +304,9 @@ nav:
                   - GPU 配额管理: kpanda/user-guide/gpu/vgpu_quota.md
                   - GPU 资源动态调节: kpanda/user-guide/gpu/dynamic-regulation.md
                   - GPU 监控指标: kpanda/user-guide/gpu/gpu-metrics.md
-                  - 安装和使用 Volcano: kpanda/user-guide/gpu/volcano_user_guide.md
+                  - Volcano 的使用:
+                    - 安装和使用 Volcano: kpanda/user-guide/gpu/volcano_user_guide.md
+                    - volcano 的 gang scheduler 使用: kpanda/user-guide/gpu/volcano-gang-schedulder.md  
               - 最佳实践:
                   - 对 etcd 进行备份还原: kpanda/best-practice/etcd-backup.md
                   - 跨集群备份恢复 MySQL 应用及数据: kpanda/best-practice/backup-mysql-on-nfs.md
