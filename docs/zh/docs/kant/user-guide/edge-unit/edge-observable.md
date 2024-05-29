@@ -21,7 +21,7 @@
 
 insight-agent 是集群观测数据采集的插件，支持对指标、链路、日志数据的统一观测，安装流程参考 [在线安装 insight-agent](../../../insight/quickstart/install/install-agent.md)。
 
-为避免 insight daemonset 组件被调度到边缘节点，需要给 **全局服务集群** 的 **insight-system** 命名空间下各 daemonset 组件加上以下亲和性设置。
+为避免 insight daemonset 组件被调度到边缘节点，需要给 **全局服务集群** 的 **insight-system** 命名空间下各 DaemonSet 组件加上以下亲和性设置。
 
 ```yaml
 nodeAffinity:
@@ -36,7 +36,7 @@ nodeAffinity:
 
 ## 安装边缘监控组件
 
-1. 选择左侧导航栏的 **容器管理** -> **集群列表** ，进入集群列表页面，点击 **集群名称** ，进入集群详情页。
+1. 选择左侧导航栏的 **容器管理** -> **集群列表** ，进入集群列表页面，点击集群名称，进入集群详情页。
 
     ![集群列表](../../images/edge-observable-02.png)
 
@@ -62,19 +62,19 @@ nodeAffinity:
 
         !!! note
 
-            如果 prometheus 服务默认访问方式为 ClusterIP，请修改为 NodePort 访问方式。
+            如果 Prometheus 服务默认访问方式为 ClusterIP，请修改为 NodePort 访问方式。
 
-        ![获取 prometheus 服务端口](../../images/edge-observable-07.png)
+        ![获取 Prometheus 服务端口](../../images/edge-observable-07.png)
 
-    - 在 **全局服务集群** 获取 elasticsearch 服务地址和端口，目前仅支持 NodePort 访问方式，故地址对应的是集群控制节点地址
+    - 在 **全局服务集群** 获取 ElasticSearch 服务地址和端口，目前仅支持 NodePort 访问方式，故地址对应的是集群控制节点地址。
 
-        在 insight-system 或 mcamel-system 命名空间下，输入如下命令，找到 9200 端口映射的服务端口
+        在 insight-system 或 mcamel-system 命名空间下，输入如下命令，找到 9200 端口映射的服务端口：
 
         ```shell
         kubectl get service -n mcamel-system | grep es
-        ```    
+        ```
 
-        ![获取 elasticsearch 服务端口](../../images/edge-observable-06.png)
+        ![获取 ElasticSearch 服务端口](../../images/edge-observable-06.png)
 
         !!! note
 
@@ -82,10 +82,10 @@ nodeAffinity:
 
         ![安装 insight-edge-agent](../../images/edge-observable-05.png)
 
-5. 系统将自动返回 Helm 应用列表，当应用 **insight-edge-agent** 的状态从 **未就绪** 变为 **已部署** ，且所有的组件状态为 **运行中** 时，则安装成功。
+5. 系统将自动返回 Helm 应用列表，当应用 **insight-edge-agent** 的状态从 **未就绪** 变为 **已部署** ，且所有的组件状态为 **运行中** 时，则表示安装成功。
 
 ## 查看边缘监控数据
 
-边缘组件安装部署成功后，等待一段时间，可在 **可观测性** 模块查看边缘资源的数据。
+边缘组件安装部署成功后，等待一段时间，可从左侧导航栏进入 **可观测性** 模块，查看边缘资源的数据。
 
 ![查看边缘资源监控数据](../../images/edge-observable-08.png)

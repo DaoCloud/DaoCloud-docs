@@ -1075,6 +1075,7 @@ nav:
                   - Create Internal Edge Unit: kant/user-guide/edge-unit/create-internal-unit.md
                   - Create External Edge Unit: kant/user-guide/edge-unit/create-external-unit.md
                   - Manage Edge Unit: kant/user-guide/edge-unit/manage-unit.md
+                  - Monitor Edge Resources: kant/user-guide/edge-unit/edge-observable.md
               - Edge Node:
                   - Overview: kant/user-guide/node/index.md
                   - Requirements to Join Edge Node: kant/user-guide/node/join-rqmt.md
