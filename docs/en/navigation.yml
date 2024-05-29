@@ -265,6 +265,7 @@ nav:
               - Permissions:
                   - Permission Brief: kpanda/user-guide/permissions/permission-brief.md
                   - Cluster and Namespace Authorization: kpanda/user-guide/permissions/cluster-ns-auth.md
+                  - Increase Built-in-role Rbac Rules: kpanda/user-guide/permissions/custom-kpanda-role.md 
               - GPU Management:
                   - Intro: kpanda/user-guide/gpu/index.md
                   - GPU Matrix: kpanda/user-guide/gpu/gpu_matrix.md
