@@ -33,7 +33,7 @@ hide:
 |          | 删除拨测任务            | &check;              | &check;       | &check;            | &cross; |
 | 指标     | 查询节点指标         | &check;              | &check;       | &cross;            | &cross; |
 |          | 查询工作负载指标     | &check;              | &check;       | &check;            | &check; |
-|          | 高级查询            | &check;              | &check;       | &check;            | &check; |
+|          | 高级查询            | &check;              | &cross;       | &cross;          | &cross; |
 | 日志     | 查询节点日志                | &check;              | &check;       | &cross;            | &cross; |
 |          | 查询容器日志                | &check;              | &check;       | &check;            | &check; |
 |          | Lucene 语法查询节点日志     | &check;              | &check;       | &cross;            | &cross; |
