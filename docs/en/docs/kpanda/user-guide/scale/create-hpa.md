@@ -14,7 +14,7 @@ This page describes how to configure auto scaling based on built-in metrics and 
      2. If you create an HPA policy based on CPU utilization, you must set the configuration limit (Limit) for the workload in advance, otherwise the CPU utilization cannot be calculated.
      3. If built-in metrics and multiple custom metrics are used at the same time, HPA will calculate the number of scaling copies required based on multiple metrics, and take the larger value (but not exceed the maximum number of copies configured when setting the HPA policy) for elastic scaling .
 
-## Built-in metric elastic scaling strategy
+## Built-in metric elastic scaling policy
 
 The system has two built-in elastic scaling metrics of CPU and memory to meet users' basic business cases.
 
@@ -22,13 +22,17 @@ The system has two built-in elastic scaling metrics of CPU and memory to meet us
 
 Before configuring the built-in index auto scaling policy for the workload, the following prerequisites need to be met:
 
-- The container management module [connected to the Kubernetes cluster](../clusters/integrate-cluster.md) or [created the Kubernetes cluster](../clusters/create-cluster.md), and can access the UI interface of the cluster .
+- [Integrated the Kubernetes cluster](../clusters/integrate-cluster.md) or
+  [created the Kubernetes cluster](../clusters/create-cluster.md),
+  and you can access the UI interface of the cluster.
 
-- Completed a [namespace creation](../namespaces/createns.md), [stateless workload creation](../workloads/create-deployment.md) or [stateful workload creation](../workloads/create-statefulset.md).
+- Created a [namespace](../namespaces/createns.md), [deployment](../workloads/create-deployment.md)
+  or [statefulset](../workloads/create-statefulset.md).
 
-- The current operating user should have [NS Editor](../permissions/permission-brief.md#ns-editor) or higher permissions, for details, refer to [Namespace Authorization](../namespaces/createns.md).
+- You should have permissions not lower than [NS Editor](../permissions/permission-brief.md#ns-editor).
+  For details, refer to [Namespace Authorization](../namespaces/createns.md).
 
-- Completed [ __metrics-server plugin install__ ](install-metrics-server.md).
+- Installed [metrics-server plugin install](install-metrics-server.md).
 
 ### Steps
 
