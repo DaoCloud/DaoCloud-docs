@@ -13,11 +13,13 @@ This section introduces how to deploy the Velero plugin in DCE 5.0 using the __H
 
 Before installing the __velero__ plugin, the following prerequisites need to be met:
 
-- The container management module [connected to the Kubernetes cluster](../clusters/integrate-cluster.md) or [created the Kubernetes cluster](../clusters/create-cluster.md), and can access the UI interface of the cluster.
-
-- Completed a __velero__ [namespace creation](../namespaces/createns.md).
-
-- The current operating user should have [NS Editor](../permissions/permission-brief.md#ns-editor) or higher permissions, for details, refer to [Namespace Authorization](../namespaces/createns.md).
+- [Integrated the Kubernetes cluster](../clusters/integrate-cluster.md) or
+  [created the Kubernetes cluster](../clusters/create-cluster.md),
+  and you can access the UI interface of the cluster.
+- Created a __velero__ [namespace](../namespaces/createns.md).
+- You should have permissions not lower than
+  [NS Editor](../permissions/permission-brief.md#ns-editor).
+  For details, refer to [Namespace Authorization](../namespaces/createns.md).
 
 ## Steps
 
@@ -57,7 +59,7 @@ Please perform the following steps to install the __velero__ plugin for your clu
 
     !!! note " __Use existing secret__ parameter example is as follows:"
 
-        ```yaml
+        ```config
         [default]
         aws_access_key_id = minio
         aws_secret_access_key = minio123

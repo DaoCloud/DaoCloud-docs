@@ -5,7 +5,7 @@ This guide explains how to integrate a Rancher cluster.
 ## Prerequisites
 
 - Prepare a Rancher cluster with administrator privileges and ensure network connectivity between the container management cluster and the target cluster.
-- The current user performing the operation should have [ __kpanda owner__ ](../permissions/permission-brief.md) or higher permissions.
+- You should have permissions not lower than [kpanda owner](../permissions/permission-brief.md).
 
 ## Steps
 

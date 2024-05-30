@@ -18,17 +18,22 @@ In addition to the above preset repositories, you can also add third-party Helm 
 
 ## Prerequisites
 
-- The container management module [connected to the Kubernetes cluster](../clusters/integrate-cluster.md) or [created the Kubernetes cluster](../clusters/create-cluster.md), and can access the UI interface of the cluster
+- [Integrated the Kubernetes cluster](../clusters/integrate-cluster.md) or
+  [created the Kubernetes cluster](../clusters/create-cluster.md),
+  and you can access the UI interface of the cluster.
 
-- Completed a [namespace creation](../namespaces/createns.md), [user creation](../../../ghippo/user-guide/access-control/user.md), and grant [`NS Admin`](../permissions/permission-brief.md#ns-admin) or higher permissions to the user. For details, refer to [Namespace Authorization](../permissions/cluster-ns-auth.md).
+- Created a [namespace](../namespaces/createns.md),
+  [user](../../../ghippo/user-guide/access-control/user.md),
+  and granted [`NS Admin`](../permissions/permission-brief.md#ns-admin) or higher permissions to the user.
+  For details, refer to [Namespace Authorization](../permissions/cluster-ns-auth.md).
 
-- If using a private repository, the current operating user should have read and write permissions to the private repository.
+- If using a private repository, you should have read and write permissions to the repository.
 
 ## Introduce third-party Helm repository
 
 The following takes the public container repository of Kubevela as an example to introduce and manage the helm repo.
 
-1. Find the cluster that needs to be imported into the third-party helm repo, click the cluster name, and enter cluster details .
+1. Find the cluster that needs to be imported into the third-party helm repo, click the cluster name, and enter cluster details.
 
     ![Clusters](../images/crd01.png)
 
