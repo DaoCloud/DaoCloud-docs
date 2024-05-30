@@ -5,26 +5,26 @@ Volcano 是 CNCF 下首个基于 Kubernetes 的容器批处理计算平台，专
 
 Volcano 与主流计算框架无缝对接，如 Spark、TensorFlow、PyTorch 等，并支持异构设备的混合调度，包括 CPU 和 GPU。
 
-本文介绍如何安装和使用 volcano。
+本文介绍如何安装和使用 Volcano。
 
 ## 安装 Volcano
 
 1. 在 **集群详情** -> **Helm 应用** -> **Helm 模板** 中找到 Volcano 并安装。
 
-    ![volcano helm 模板](../../images/volcano-01.png)
+    ![Volcano helm 模板](../../images/volcano-01.png)
    
-    ![安装 volcano](../../images/volcano-02.png)
+    ![安装 Volcano](../../images/volcano-02.png)
 
 2. 检查并确认 Volcano 是否安装完成，即 volcano-admission、volcano-controllers、volcano-scheduler 组件是否正常运行。
 
-    ![volcano 组件](../../images/volcano-03.png)
+    ![Volcano 组件](../../images/volcano-03.png)
 
 ## Volcano 使用场景
 
 ### 使用 Volcano 调度 Job 资源
 
 - Volcano 是单独的调度器，在创建工作负载的时候指定调度器的名称（schedulerName: volcano）。
-- volcanoJob 资源是 Volcano 对 Job 的扩展，它将 job 拆分成更小的工作单位 task，task 之间可以相互作用。
+- volcanoJob 资源是 Volcano 对 Job 的扩展，它将 job 拆分成更小的工作单位 task，这些 task 之间可以相互作用。
 
 使用示例：
 
@@ -63,13 +63,13 @@ kind: Job
 metadata:
   name: lm-mpi-job
   labels:
-    "volcano.sh/job-type": "MPI" # volcano 原生支持 MPI 的调度作业
+    "volcano.sh/job-type": "MPI" # (1)!
 spec:
   minAvailable: 4
   schedulerName: volcano
   plugins:
-    ssh: [] # volcano 插件，master 和 worker 之间可以免密登录
-    svc: [] # master 和 worker 之间通过网络访问，自动创建 headless svc 资源
+    ssh: [] # (2)!
+    svc: [] # (3)!
   policies:
     - event: PodEvicted
       action: RestartJob
@@ -129,6 +129,10 @@ spec:
             - name: default-secret
 ```
 
+1. Volcano 原生支持 MPI 的调度作业
+2. Volcano 插件，master 和 worker 之间可以免密登录
+3. master 和 worker 之间通过网络访问，自动创建 headless svc 资源
+
 ### Volcano 支持 TensorFlow
 
 使用示例：
@@ -139,7 +143,7 @@ kind: Job
 metadata:
   name: tensorflow-benchmark
   labels:
-    "volcano.sh/job-type": "Tensorflow" # volcano 原生支持 tensorflow 的调度作业
+    "volcano.sh/job-type": "Tensorflow" # (1)!
 spec:
   minAvailable: 3
   schedulerName: volcano
@@ -211,4 +215,6 @@ spec:
           restartPolicy: OnFailure
 ```
 
-如果您想了解 volcano 更多功能特性和使用场景，可以参考 [Volcano 介绍](https://volcano.sh/zh/docs/)。
+1. Volcano 原生支持 tensorflow 的调度作业
+
+如果您想了解 Volcano 更多功能特性和使用场景，可以参考 [Volcano 介绍](https://volcano.sh/zh/docs/)。
