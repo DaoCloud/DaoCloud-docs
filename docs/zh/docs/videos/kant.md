@@ -4,12 +4,12 @@
 
 > 若视频显示有问题，请刷新页面，或尝试清除浏览器缓存。
 
-## 终端设备 Demo
+## 终端设备 Demo - AI 手势控制
 
 参阅[终端设备概述](../kant/intro/index.md)文档。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/edge-device.mp4" preload="metadata" poster="images/edge-device.jpg"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/ai-gest.mp4" preload="metadata" poster="images/ai-gesture.jpg"></video>
 </div>
 
 ## 创建边缘单元
