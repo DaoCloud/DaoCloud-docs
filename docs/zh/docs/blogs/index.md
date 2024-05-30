@@ -274,7 +274,6 @@ hide:
 
     DaoCloud 早在 2017 年就首次顺利通过了 Kubernetes 认证，是国内最早涉足并得到 CNCF 官方认可的服务商，
     同时也是国内最早获得 Kubernetes Training Partner (KTP) 认证的厂商。
-    目前经 CNCF 官方认证可支持的 K8s 版本包括：v1.25, v1.24, v1.23, v1.20, v1.18, v1.15, v1.13, v1.9, v1.7
 
 - [20221105 | 原生思维看金融数字化转型](https://mp.weixin.qq.com/s/9BggFRr0aoEzzmemXplRWg)
 

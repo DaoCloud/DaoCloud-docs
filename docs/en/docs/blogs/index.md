@@ -221,7 +221,7 @@ technology, sorted by date by default.
 
 - [20221105 | DaoCloud is a Senior Certified Service Provider for K8s](221116-kcsp.md)
 
-    As early as 2017, DaoCloud successfully passed Kubernetes certification, becoming the earliest service provider in China to enter and be recognized by CNCF. It is also the earliest vendor in China to obtain Kubernetes Training Partner (KTP) certification. Currently, K8s versions that have been officially certified by CNCF include: v1.25, v1.24, v1.23, v1.20, v1.18, v1.15, v1.13, v1.9, and v1.7.
+    As early as 2017, DaoCloud successfully passed Kubernetes certification, becoming the earliest service provider in China to enter and be recognized by CNCF. It is also the earliest vendor in China to obtain Kubernetes Training Partner (KTP) certification.
 
 - [20221105 | Financial Digital Transformation from a Native Thinking Perspective](https://mp.weixin.qq.com/s/9BggFRr0aoEzzmemXplRWg)
 
