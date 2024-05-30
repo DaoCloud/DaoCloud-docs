@@ -294,7 +294,7 @@ nav:
                   - GPU Metrics: kpanda/user-guide/gpu/gpu-metrics.md
                   - Use Volcano:
                     - Install and Use Volcano: kpanda/user-guide/gpu/volcano/volcano_user_guide.md
-                    - Use Volcano Gang Scheduler: kpanda/user-guide/gpu/volcano/volcano-gang-schedulder.md  
+                    - Use Volcano Gang Scheduler: kpanda/user-guide/gpu/volcano/volcano-gang-scheduler.md
               - Best Practices:
                   - Back up and Restore etcd: kpanda/best-practice/etcd-backup.md
                   - Cross-cluster Backup and Restore of MySQL Apps: kpanda/best-practice/backup-mysql-on-nfs.md
