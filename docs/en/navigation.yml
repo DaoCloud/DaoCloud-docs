@@ -208,7 +208,9 @@ nav:
                   - Install kubernetes-cronhpa-controller: kpanda/user-guide/scale/install-cronhpa.md
                   - Install VPA Plugin: kpanda/user-guide/scale/install-vpa.md
                   - Create HPA Policy: kpanda/user-guide/scale/create-hpa.md
+                  - Create HPA based on Custom Metrics: kpanda/user-guide/scale/custom-hpa.md
                   - Create VPA Policy: kpanda/user-guide/scale/create-vpa.md
+                  - HPA and CronHPA Compatibility Rules: kpanda/user-guide/scale/hpa-cronhpa-compatibility-rules.md
               - Helm Apps:
                   - Helm Charts: kpanda/user-guide/helm/README.md
                   - Upload Helm Charts: kpanda/user-guide/helm/upload-helm.md

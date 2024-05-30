@@ -2,7 +2,9 @@
 
 DaoCloud Enterprise 5.0 supports elastic scaling of Pod resources based on metrics (Horizontal Pod Autoscaling, HPA).
 Users can dynamically adjust the number of copies of Pod resources by setting CPU utilization, memory usage, and custom metrics.
-For example, after setting an auto scaling policy based on the CPU utilization metric for the workload, when the CPU utilization of the Pod exceeds/belows the metric threshold you set, the workload controller will automatically increase/decrease the number of Pod replicas.
+For example, after setting an auto scaling policy based on the CPU utilization metric for the workload,
+when the CPU utilization of the Pod exceeds/belows the metric threshold you set, the workload controller
+will automatically increase/decrease the number of Pod replicas.
 
 This page describes how to configure auto scaling based on built-in metrics and custom metrics for workloads.
 
@@ -64,60 +66,3 @@ Refer to the following steps to configure the built-in index auto scaling policy
      - Replica range: the elastic scaling range of the number of Pod replicas. The default interval is 1 - 10.
 
 6. After completing the parameter configuration, click the __OK__ button to automatically return to the elastic scaling details page. Click __⋮__ on the right side of the list to edit, delete, and view related events.
-
-     
-
-## Custom metric elastic scaling policy
-
-When the built-in CPU and memory metrics of the system cannot meet the actual needs of your business, you can configure ServiceMonitoring to add custom metrics, and achieve elastic scaling based on the custom metrics.
-
-### Prerequisites
-
-Before configuring a custom index auto scaling policy for a workload, the following prerequisites must be met:
-
-- [Integrated the Kubernetes cluster](../clusters/integrate-cluster.md) or
-  [created the Kubernetes cluster](../clusters/create-cluster.md),
-  and you can access the UI interface of the cluster.
-- Created a [namespace](../namespaces/createns.md), [deployment](../workloads/create-deployment.md)
-  or [statefulset](../workloads/create-statefulset.md).
-- You should have permissions not lower than [NS Editor](../permissions/permission-brief.md#ns-editor).
-  For details, refer to [Namespace Authorization](../namespaces/createns.md).
-- Installed [metrics-server plugin install](install-metrics-server.md).
-- Installed [metrics-server plugin install](install-metrics-server.md).
-- Insight-related plug-ins have been installed.
-- The Prometheus-adapter plugin has been installed.
-
-### Steps
-
-Refer to the following steps to configure an index auto-scaling policy for a workload.
-
-1. Click __Clusters__ on the left navigation bar to enter the cluster list page. Click a cluster name to enter the __Cluster Details__ page.
-
-     
-
-2. On the cluster details page, click __Workload__ in the left navigation bar to enter the workload list, and then click a workload name to enter the __Workload Details__ page.
-
-     
-
-3. Click the Auto Scaling tab to view the auto scaling configuration of the current cluster.
-
-     
-
-4. After confirming that the cluster has [ __metrics-server__ ](install-metrics-server.md), Insight, and Prometheus-adapter plug-ins installed and the plug-ins are running normally, click the __New Scaling__ button.
-
-     !!! note
-
-         If the relevant plug-in is not installed or the plug-in is in an abnormal state, you will not be able to see the creation of custom metrics auto scaling entry on the page.
-
-     
-
-5. Create custom metric auto scaling policy parameters.
-
-     
-
-     - Policy name: Enter the name of the auto scaling policy. Please note that the name can contain up to 63 characters, and can only contain lowercase letters, numbers, and separators ("-"), and must start and end with lowercase letters or numbers, such as hpa- my-dep.
-     - Namespace: The namespace where the payload resides.
-     - Workload: The workload object that performs auto scaling.
-     - Resource type: A custom metric type for monitoring, including Pod and Service.
-     - Metrics: custom metric names created using ServiceMonitoring or custom metric names built into the system.
-     - Data type: the method used to calculate the metric value, including target value and target average value. When the resource type is Pod, only the target average value is supported.
