@@ -14,7 +14,7 @@ Agent 描述了整个 __流水线__ 执行过程或者某个 __阶段__ 的执�
 
 - 可以在 Jenkinsfile 中通过 __node('go')__ 使用 go 的 podTemplate。
 
-    ```bash
+    ```groovy
     pipeline {
       agent {
         node {
@@ -40,75 +40,77 @@ Agent 描述了整个 __流水线__ 执行过程或者某个 __阶段__ 的执�
 
 ### 内置 Label 环境说明
 
-__Jenkins Agent Label: base__
+内置的 Jenkins Agent Label 有以下几种：
 
-| 名称     | 类型/版本                                                    |
-| -------- | ------------------------------------------------------------ |
-| 容器名称 | base                                                         |
-| 操作系统 | centos-7 (7.9.2009)                                          |
-| podman   | podman version 3.0.1                                         |
-| Kubectl  | v1.22.0                                                      |
-| 内置工具 | unzip、which、make(GNU Make 3.82)、wget、zip、bzip2、git (2.9.5) |
+=== "base"
 
-__Jenkins Agent Label: maven__
+    | 名称     | 类型/版本                                                    |
+    | -------- | ------------------------------------------------------------ |
+    | 容器名称 | base                                                         |
+    | 操作系统 | centos-7 (7.9.2009)                                          |
+    | podman   | podman version 3.0.1                                         |
+    | Kubectl  | v1.22.0                                                      |
+    | 内置工具 | unzip、which、make(GNU Make 3.82)、wget、zip、bzip2、git (2.9.5) |
 
-| 名称     | 类型/版本                                                    |
-| -------- | ------------------------------------------------------------ |
-| 容器名称 | maven                                                        |
-| 操作系统 | centos-7 (7.9.2009)                                          |
-| Jdk      | openjdk-1.8.0_322                                            |
-| Maven    | 3.5.3                                                        |
-| podman   | podman version 3.0.1                                         |
-| Kubectl  | v1.22.0                                                      |
-| 内置工具 | unzip、which、make(GNU Make 3.82)、wget、zip、bzip2、git (2.9.5) |
+=== "maven"
 
-__Jenkins Agent Label: mavenjdk11__
+    | 名称     | 类型/版本                                                    |
+    | -------- | ------------------------------------------------------------ |
+    | 容器名称 | maven                                                        |
+    | 操作系统 | centos-7 (7.9.2009)                                          |
+    | Jdk      | openjdk-1.8.0_322                                            |
+    | Maven    | 3.5.3                                                        |
+    | podman   | podman version 3.0.1                                         |
+    | Kubectl  | v1.22.0                                                      |
+    | 内置工具 | unzip、which、make(GNU Make 3.82)、wget、zip、bzip2、git (2.9.5) |
 
-| 名称     | 类型/版本                                                    |
-| -------- | ------------------------------------------------------------ |
-| 容器名称 | maven                                                        |
-| 操作系统 | centos-7 (7.9.2009)                                          |
-| Jdk      | openjdk-11.0.19                                            |
-| Maven    | 3.5.3                                                     |
-| podman   | podman version 3.0.1                                         |
-| Kubectl  | v1.22.0                                                      |
-| 内置工具 | unzip、which、make(GNU Make 3.82)、wget、zip、bzip2、git (2.9.5) |
+=== "mavenjdk11"
 
-__Jenkins Agent Label: go__
+    | 名称     | 类型/版本                                                    |
+    | -------- | ------------------------------------------------------------ |
+    | 容器名称 | maven                                                        |
+    | 操作系统 | centos-7 (7.9.2009)                                          |
+    | Jdk      | openjdk-11.0.19                                            |
+    | Maven    | 3.5.3                                                     |
+    | podman   | podman version 3.0.1                                         |
+    | Kubectl  | v1.22.0                                                      |
+    | 内置工具 | unzip、which、make(GNU Make 3.82)、wget、zip、bzip2、git (2.9.5) |
 
-| 名称     | 类型/版本                                                    |
-| -------- | ------------------------------------------------------------ |
-| 容器名称 | go                                                           |
-| 操作系统 | centos-7 (7.9.2009)                                          |
-| Go       | 1.12.10                                                      |
-| GOPATH   | /home/jenkins/go                                             |
-| GOROOT   | /usr/local/go                                                |
-| podman   | podman version 3.0.1                                         |
-| Kubectl  | v1.22.0                                                      |
-| 内置工具 | unzip、which、make(GNU Make 3.82)、wget、zip、bzip2、git (2.9.5) |
+=== "go"
 
-__Jenkins Agent Label: node.js__
+    | 名称     | 类型/版本                                                    |
+    | -------- | ------------------------------------------------------------ |
+    | 容器名称 | go                                                           |
+    | 操作系统 | centos-7 (7.9.2009)                                          |
+    | Go       | 1.12.10                                                      |
+    | GOPATH   | /home/jenkins/go                                             |
+    | GOROOT   | /usr/local/go                                                |
+    | podman   | podman version 3.0.1                                         |
+    | Kubectl  | v1.22.0                                                      |
+    | 内置工具 | unzip、which、make(GNU Make 3.82)、wget、zip、bzip2、git (2.9.5) |
 
-| 名称     | 类型/版本                                                    |
-| -------- | ------------------------------------------------------------ |
-| 容器名称 | nodejs                                                       |
-| 操作系统 | centos-7 (7.9.2009)                                          |
-| Node     | v10.16.3                                                     |
-| Yarn     | 1.16.0                                                       |
-| podman   | podman version 3.0.1                                         |
-| Kubectl  | v1.22.0                                                      |
-| 内置工具 | unzip、which、make(GNU Make 3.82)、wget、zip、bzip2、git (2.9.5) |
+=== "node.js"
 
-__Jenkins Agent Label: python__
+    | 名称     | 类型/版本                                                    |
+    | -------- | ------------------------------------------------------------ |
+    | 容器名称 | nodejs                                                       |
+    | 操作系统 | centos-7 (7.9.2009)                                          |
+    | Node     | v10.16.3                                                     |
+    | Yarn     | 1.16.0                                                       |
+    | podman   | podman version 3.0.1                                         |
+    | Kubectl  | v1.22.0                                                      |
+    | 内置工具 | unzip、which、make(GNU Make 3.82)、wget、zip、bzip2、git (2.9.5) |
 
-| 名称     | 类型/版本                                                    |
-| -------- | ------------------------------------------------------------ |
-| 容器名称 | python                                                       |
-| 操作系统 | centos-7 (7.9.2009)                                          |
-| Python   | 3.7.11                                                       |
-| podman   | podman version 3.0.1                                         |
-| Kubectl  | v1.22.0                                                      |
-| 内置工具 | unzip、which、make(GNU Make 3.82)、wget、zip、bzip2、git (2.9.5) |
+=== "python"
+
+    | 名称     | 类型/版本                                                    |
+    | -------- | ------------------------------------------------------------ |
+    | 容器名称 | python                                                       |
+    | 操作系统 | centos-7 (7.9.2009)                                          |
+    | Python   | 3.7.11                                                       |
+    | podman   | podman version 3.0.1                                         |
+    | Kubectl  | v1.22.0                                                      |
+    | 内置工具 | unzip、which、make(GNU Make 3.82)、wget、zip、bzip2、git (2.9.5) |
 
 ## 使用 YAML 自定义 podTemplate
 
@@ -120,24 +122,25 @@ __Jenkins Agent Label: python__
 
 2. 点击 __YAML 编辑器__ ，在对话框中填写 YAML 语句，请参考以下示例：
 
-    ```bash
+    ```yaml
     apiVersion: v1
     kind: Pod
     spec:
       containers:
-      - name: maven
-        image: maven:3.8.1-jdk-8
-        command:
-        - sleep
+      - name: jnlp
+        image: docker.m.daocloud.io/jenkins/inbound-agent:4.10-2  # (1)!
         args:
-        - 99d
+        - ^${computer.jnlpmac} ^${computer.name}
       - name: golang
-        image: golang:1.16.5
+        image: golang:1.16.5   # (2)!
         command:
         - sleep
         args:
         - 99d
-      ```
+    ```
+
+    1. 需要提供 jnlp 镜像的地址，否则会使用默认的"jenkins/inbound-agent"
+    2. 填你自定义的镜像
 
 3. 在 Container 中输入 __golang__ 作为流水线运行的默认容器。
 

@@ -26,9 +26,9 @@
     - PVC：支持预先创建的 Kubernetes PersistentVolumeClaim
     - NFS：支持 NFS 共享存储
 
-4. 数据集创建成功将返回数据集列表。
+4. 数据集创建成功将返回数据集列表。你可以通过右侧的 **⋮** 执行更多操作。
 
-      ![数据集列表](../../images/dataset04.png)
+    ![数据集列表](../../images/dataset04.png)
 
 !!! info
 

@@ -37,7 +37,7 @@ hide:
     可观测性模块包含 Insight 和 Insight Agent，后者需要部署在被观测的 Kubernetes 上。
 
     - 部署[资源规划](../quickstart/res-plan/index.md)
-    - Insight Agent [安装](../quickstart/install/install-agent.md) 与 [升级](../quickstart/install/offline-install.md)
+    - Insight Agent [安装](../quickstart/install/install-agent.md) 与[升级](../quickstart/install/offline-install.md)
     - Insihgt Agent 安装在 [DCE 4](../quickstart/other/install-agentindce.md) 或 [OpenShift](../quickstart/other/install-agent-on-ocp.md)
     - [大规模日志部署调整](../best-practice/insight-kafka.md)
     - 升级[注意事项](../quickstart/install/upgrade-note.md)
@@ -51,7 +51,7 @@ hide:
     - 了解 [OpenTelemetry](../quickstart/otel/otel.md)，向 Insight [发送观测数据](../quickstart/otel/send_tracing_to_insight.md)
     - 使用[无侵入](../quickstart/otel/operator.md)方式增强应用
     - 针对[Java 应用观测](../quickstart/jvm-monitor/jvm-catelogy.md)
-    - 针对[Golang 应用观测](../insight/quickstart/otel/golang.md)
+    - 针对[Golang 应用观测](../quickstart/otel/golang.md)
     - [其他观测技术集成](../best-practice/sw-to-otel.md)
 
 </div>
@@ -69,7 +69,7 @@ hide:
 | 6    | 服务发现   | Service Discovery | 一个用于 Kubernetes 环境的服务发现配置，用于批量且自动地接入 Kubernetes 上的监控点 |
 | 7    | Exporter   | Exporter          | 一个能够提供指标的服务，往往被理解为监控对象                 |
 | 8    | 告警规则   | Rule              | 一个返回值是布尔值的 PromQL 表达式，它描述了指标或自定义指标是否处于阈值范围中，如果不满足将产生一条告警事件 |
-| 9    | 告警消息   | Event             | 告警规则被触发时的记录信息，记录了告警规则、触发时间、当前系统状态；同时将触发相应的动作，例如发送邮件 |
+| 9    | 告警消息   | Alert             | 告警规则被触发时的记录信息，记录了告警规则、触发时间、当前系统状态；同时将触发相应的动作，例如发送邮件 |
 | 10   | 通知       | Notification      | 由系统通过邮件等渠道发送给用户的告警事件信息                 |
 | 11   | PromQL     | PromQL            | Prometheus 系统所支持的查询语句                              |
 

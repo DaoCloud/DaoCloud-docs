@@ -118,8 +118,8 @@
         这些 IP 地址应属于 `IPv6 ippool subnet`。如果未开启 `install IPv6 ippool`，请忽略本项。
 
 5. 点击右下角`确定`按钮即可完成安装。完成后，可参考
-   [SpiderPool 的使用](https://spidernet-io.github.io/spiderpool/v0.9/usage/install/get-started-kind/)进行 IP Pool 的使用。
+   [SpiderPool 的使用](../../../config/ippool/ippoolusage.md)进行 IP Pool 的使用。
 
 !!! note
 
-    在安装过程中，可创建单个 subnet 和 ippool；在安装完成后，在使用界面可创建更多的 subnet 和 ippool。
+    在安装过程中，可创建默认的 subnet 和 ippool；在安装完成后，在使用界面可创建更多的 subnet 和 ippool。

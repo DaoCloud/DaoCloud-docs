@@ -18,7 +18,7 @@ DCE 5.0 支持通过容器垂直扩缩容策略（Vertical Pod Autoscaler, VPA�
 
 - 创建一个[命名空间](../namespaces/createns.md)、[用户](../../../ghippo/user-guide/access-control/user.md)、[无状态工作负载](../workloads/create-deployment.md)或[有状态工作负载](../workloads/create-statefulset.md)。
 
-- 当前操作用户应具有 [NS Edit](../permissions/permission-brief.md#ns-edit) 或更高权限，详情可参考[命名空间授权](../namespaces/createns.md)。
+- 当前操作用户应具有 [NS Editor](../permissions/permission-brief.md#ns-editor) 或更高权限，详情可参考[命名空间授权](../namespaces/createns.md)。
 
 - 当前集群已经安装 [ __metrics-server__ ](install-metrics-server.md) 和 [ __VPA__ ](install-vpa.md) 插件。
 

@@ -11,6 +11,11 @@ hide:
 
 ## 2024 年
 
+- [20240516 | SIG Docs从敲代码到抒发文笔](./240516-sig-docs.md)
+
+    这是一次冒险的召唤，一份超越代码领域的邀请，指引你踏入文档创作与社区协作的未知境地。
+    在这里，你将为全球用户和贡献者组成的社区赋能，点亮他们前行的道路。
+
 - [20240509 | OpenAI 大语言模型规范](./240509-model-spec.md)
 
     这是 OpenAI 最新发布的模型规范，它是一个指定 OpenAI API 和 ChatGPT 中模型期望行为的文件，
@@ -269,7 +274,6 @@ hide:
 
     DaoCloud 早在 2017 年就首次顺利通过了 Kubernetes 认证，是国内最早涉足并得到 CNCF 官方认可的服务商，
     同时也是国内最早获得 Kubernetes Training Partner (KTP) 认证的厂商。
-    目前经 CNCF 官方认证可支持的 K8s 版本包括：v1.25, v1.24, v1.23, v1.20, v1.18, v1.15, v1.13, v1.9, v1.7
 
 - [20221105 | 原生思维看金融数字化转型](https://mp.weixin.qq.com/s/9BggFRr0aoEzzmemXplRWg)
 

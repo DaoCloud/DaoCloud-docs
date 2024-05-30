@@ -34,7 +34,7 @@ You can click a service name to enter the details page and view specific informa
 
 ![Address](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/servicelist03.png)
 
-Pay special attention to the __Diagnostic Configuration__ column in the service list. When the diagnostic information is __Abnormal__ , hovering over the __ⓘ__ will display the reason for the abnormality. Abnormal status will affect grid-related capabilities such as traffic management in the next phase.
+Pay special attention to the __Diagnostic Configuration__ column in the service list. When the diagnostic information is __Abnormal__ , hovering over the __ⓘ__ will display the reason for the abnormality. Abnormal status will affect mesh-related capabilities such as traffic management in the next phase.
 
 ![Abnormal Prompt](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/servicelist04.png)
 

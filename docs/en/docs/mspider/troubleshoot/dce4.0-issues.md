@@ -64,7 +64,7 @@ Root cause analysis: DCE 4.0 uses Kubernetes version 1.18, which is relatively o
 
 Symptom 01: 'istio-managed-istio-hosted' fails to start, indicating that the Configmap of 'istio-token' does not exist.
 
-To resolve this issue, manually for grid instance of CR __ GlobalMesh __ add corresponding parameters: __istio.custom_params.values.global.jwtPolicy__ .
+To resolve this issue, manually for mesh instance of CR __ GlobalMesh __ add corresponding parameters: __istio.custom_params.values.global.jwtPolicy__ .
 
 ![params](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/troubleshoot/images/dce4-01.png)
 

@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+date: 2024-05-11
+---
+
 # High Availability Solution for Bootstrap Nodes
 
 This page explains the concept of a "backup bootstrap node." Essentially,

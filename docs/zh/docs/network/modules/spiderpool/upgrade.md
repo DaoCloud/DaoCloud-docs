@@ -137,6 +137,8 @@ customresourcedefinition.apiextensions.k8s.io/spidersubnets.spiderpool.spidernet
 
 ![disable multus](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/spiderpool-disable-multus.png)
 
+- `Multus Setting` -> `MultusCNI` -> `Default CNI Name`：集群默认 CNI 名称。 在更新时，该值应该与安装所填的保持一致，如果安装时该值为空，那 Spiderpool 是根据/etc/cni/net.d/ 中已有的 CNI conf 文件自动获取默认 CNI，此时更新 Spiderpool 该值填入 /etc/cni/net.d/00-multus.config 文件中字段：`clusterNetwork` 对应的值，如 calico。
+
 ## 验证
 
 升级后检查版本正常。

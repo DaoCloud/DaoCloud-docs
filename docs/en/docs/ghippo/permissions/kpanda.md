@@ -338,8 +338,8 @@ Use `&check;`for permissions granted and `&cross;`for permissions not granted.
 |  |  | Delete   | &check;       | &cross;   | &cross;       | &cross;   |
 |  | NS permissions   | View list             | &check;       | &check;   | &cross;       | &cross;   |
 |  |  | Grant to ns admin     | &check;       | &check;   | &cross;       | &cross;   |
-|  |  | Grant to ns edit      | &check;       | &check;   | &cross;       | &cross;   |
-|  |  | Grant to ns view      | &check;       | &check;   | &cross;       | &cross;   |
+|  |  | Grant to ns editor      | &check;       | &check;   | &cross;       | &cross;   |
+|  |  | Grant to ns viewer      | &check;       | &check;   | &cross;       | &cross;   |
 |  |  | Edit permissions      | &check;       | &check;   | &cross;       | &cross;   |
 |  |  | Delete   | &check;       | &check;   | &cross;       | &cross;   |
 | Security      | Compliance scanning           | View scanning report  | &check;       | &cross;   | &cross;       | &cross;   |

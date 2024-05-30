@@ -1,21 +1,18 @@
-# 导入外部平台的 Ubuntu 操作系统的虚拟机
+# 如何从 VMWare 导入传统虚拟机到云原生虚拟机平台
 
-本文将详细介绍如何通过命令行将外部平台上的 Ubuntu 操作系统的虚拟机导入到 DCE 5.0的虚拟机中。
+本文将详细介绍如何通过命令行将外部平台 VMware 上的虚拟机导入到 DCE 5.0 的虚拟机中。
 
 !!! info
 
     本文档外部虚拟平台是 VMware vSphere Client，后续简写为 vSphere。
     技术上是依靠 kubevirt cdi 来实现的。操作前，vSphere 上被导入的虚拟机需要关机。
+    以 Ubuntu 操作系统的虚拟机为例。
 
 ## 获取 vSphere 的虚拟机基础信息
 
-1. vSphere URL
+1. vSphere URL：目标平台的 URL 地址信息
 
-    目标平台的 URL 地址信息
-
-2. vSphere SSL 证书指纹 thumbprint
-
-    需要通过 openssl 获取
+2. vSphere SSL 证书指纹 thumbprint：需要通过 openssl 获取
 
     ```sh
     openssl s_client -connect 10.64.56.11:443 </dev/null | openssl x509 -in /dev/stdin -fingerprint -sha1 -noout
@@ -35,24 +32,20 @@
     sha1 Fingerprint=C3:9D:D7:55:6A:43:11:2B:DE:BA:27:EA:3B:C2:13:AF:E4:12:62:4D  # 所需值
     ```
 
-3. vSphere 账号
-   
-    获得 vSphere 的账号信息，注意权限问题
+3. vSphere 账号：获取 vSphere 的账号信息，注意权限问题
 
-4. vSphere 密码
-
-    获得 vSphere 的密码信息
+4. vSphere 密码：获取 vSphere 的密码信息
 
 5. 需要导入虚拟机的 UUID（需要在 vSphere 的 web 页面获取）
 
     - 进入 Vsphere 页面中，进入被导入虚拟机的详情页面，点击 __编辑配置__ ，此时打开浏览器的开发者控制台，
       点击 __网络__ —> __标头__ 找到如下图所示的 URL。
     
-        ![找到URL](../images/uuid01.png)
+        ![找到 URL](../images/uuid01.png)
 
     - 点击 __响应__ ，定位到 __vmConfigContext__ —> __config__ ，最终找到目标值 __uuid__ 。
 
-        ![找到uuid](../images/uuid02.png)
+        ![找到 uuid](../images/uuid02.png)
 
 6. 需要导入虚拟机的 vmdk 文件 path
 
@@ -62,8 +55,8 @@
 
     - 下载 vddk：需要在 [vmware 网站](https://developer.vmware.com/) 注册账号后下载
    
-        前往 SDKs，在"Compute Virtualization"部分点击，并选择合适版本的
-        "VMware Virtual Disk Development Kit (VDDK)"进行下载。
+        前往 SDKs，点击 __Compute Virtualization__ ，选择并下载合适版本的
+        __VMware Virtual Disk Development Kit (VDDK)__ 。
    
         ![点击 Compute Virtualization](../images/import-ubuntu01.png)
    

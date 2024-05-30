@@ -15,6 +15,28 @@ the evolution path and feature changes of each version.
 *[Kpanda]: Dev codename for Container Management in DCE 5.0
 *[Skoala]: Dev codename for Microservice Engine in DCE 5.0
 
+## 2024-04-30
+
+### v0.17.0
+
+#### Improvements
+
+- **Improved** Support downloading binaries and pulling images from the source site without going through the proxy acceleration site
+- **Improved** Refactor Kubean Config, splitting and decoupling templates
+- **Improved** Support disk limitations for docker single-container
+- **Improved** Support setting kpanda's mysql to mgr mode, default mode remains master-slave
+- **Improved** Support multiple architectures for ubuntu ospkg and iso
+- **Improved** Improve error message display for yq
+
+#### Fixes
+
+- **Fixed** the issue where the kubean version cannot be displayed in the prompt message
+- **Fixed** Resolve the problem of merging multi-architecture images
+- **Fixed** Address the issue of outputting scripts through dry-run
+- **Fixed** Resolve the problem of installation process timeout and inability to capture timeout steps
+- **Fixed** insight-agent installation issue
+- **Fixed** Disable the firewall on the host machine before igniting the fire
+
 ## 2024-04-09
 
 ### v0.16.1
@@ -337,7 +359,7 @@ If the output is different from the above cases, please follow the upgrade instr
 
 - Addon offline package does not currently support uploading to external JFrog services
 - The container management platform offline mode currently does not support adding nodes to working clusters
-- When using an external OS Repo repository in an offline scenario, i.e. defining `osRepos.type=external` in clusterConfig.yaml, after successfully deploying DCE5.0, you cannot create working clusters in the container management. A temporary solution is as follows:
+- When using an external OS Repo repository in an offline scenario, i.e. defining `osRepos.type=external` in clusterConfig.yaml, after successfully deploying DCE 5.0, you cannot create working clusters in the container management. A temporary solution is as follows:
   After installing the global cluster, immediately update the configmap kubean-localservice in the kubean-system namespace of the global cluster to replace all double quotes with single quotes in the value of `yumRepos.external`. For example, replace all double quotes in the file with single quotes:
 
     ```yaml
@@ -374,7 +396,7 @@ If the output is different from the above cases, please follow the upgrade instr
 
 #### Features
 
-- **Added** support for Other Linux to deploy DCE5.0, [Reference Documentation](os-install/otherlinux.md)
+- **Added** support for Other Linux to deploy DCE 5.0, [Reference Documentation](os-install/otherlinux.md)
 - **Added** support for operating system OpenEuler 22.03
 - **Added** supports external OS Repos, [refer to cluster configuration file description](commercial/cluster-config.md)
 - **Added** supports kernel parameter tuning, [refer to cluster configuration file description](commercial/cluster-config.md)
@@ -404,7 +426,7 @@ If the output is different from the above cases, please follow the upgrade instr
     At the same time, creating a working cluster online through container management also has the same problem. You need to add the above configuration in the custom parameters of the advanced configuration on the cluster creation page. The key is `calico_crds_download_url`, and the value is the value of the above calico_crds_download_url
 
 - There is a low probability that Kubean cannot create a spray-job task. Manually delete the corresponding clusteroperations CR resource and run the installation command again
-- After deploying DCE5.0 using an external OS Repo, the working cluster cannot be created offline through container management, which can be solved by manually modifying the configmap kubean-localservice of the kubean-system namespace of the global cluster.
+- After deploying DCE 5.0 using an external OS Repo, the working cluster cannot be created offline through container management, which can be solved by manually modifying the configmap kubean-localservice of the kubean-system namespace of the global cluster.
   Add the following configuration under `yumRepos`, you need to fill in the external OS Repo address configured in clusterConfig.yaml in external:
 
     ```yaml
@@ -431,7 +453,7 @@ If the output is different from the above cases, please follow the upgrade instr
 
 - **Added** support for one-click upgrade of Gproduct components
 - **Added** Adapted operating system: UOS V20 1020a / Ubuntu 20.04
-- **Added** Support OCP (OpenShift Container Platform) to install DCE5.0
+- **Added** Support OCP (OpenShift Container Platform) to install DCE 5.0
 - **Added** CLI supports generating clusterConfig templates
 - **Added** all-in-one mode starts the minimal installation mode by default
 - **Added** Kcollie component in Gproduct component

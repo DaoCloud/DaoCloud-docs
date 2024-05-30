@@ -5,28 +5,20 @@
 ## 前提条件
 
 - 请提前阅读[部署架构](../commercial/deploy-arch.md)，确认本次部署模式。
-
 - 请提前阅读[部署要求](../commercial/deploy-requirements.md)，确认网络、硬件、端口等是否符合需求。
-
 - 请提前阅读[准备工作](../commercial/prepare.md)，确认机器资源及前置检查。
-
 - 需提前在节点上安装好 `iptables`、`iproute`。
 
-  ```bash
-  # 安装iptables
-   
-  wget https://rpmfind.net/linux/centos/7.9.2009/os/x86_64/Packages/iptables-1.4.21-35.el7.x86_64.rpm
-   
-  rpm -ivh iptables-1.4.21-35.el7.x86_64.rpm
-   
-  iptables --version
-   
-  # 安装iproute
-   
-  wget https://rpmfind.net/linux/centos/7.9.2009/os/x86_64/Packages/iproute-4.11.0-30.el7.x86_64.rpm
-   
-  rpm -ivh iproute-4.11.0-30.el7.x86_64.rpm
-  ```
+    ```bash
+    # 安装 iptables
+    wget https://rpmfind.net/linux/centos/7.9.2009/os/x86_64/Packages/iptables-1.4.21-35.el7.x86_64.rpm
+    rpm -ivh iptables-1.4.21-35.el7.x86_64.rpm
+    iptables --version
+    
+    # 安装 iproute
+    wget https://rpmfind.net/linux/centos/7.9.2009/os/x86_64/Packages/iproute-4.11.0-30.el7.x86_64.rpm
+    rpm -ivh iproute-4.11.0-30.el7.x86_64.rpm
+    ```
 
 ## 离线安装
 
@@ -56,21 +48,22 @@
 
     - 检查`libselinux-python`是否存在，如不存在，可参考下面的安装依赖包方式进行安装。
 
-      ```bash
-      rpm -q libselinux-python
-      ```
+        ```bash
+        rpm -q libselinux-python
+        ```
 
-    - 安装依赖包 `device-mapper-libs`、`conntrack`、`sshpass`，依赖包的下载地址：https://rpmfind.net/linux/rpm2html/search.php?query=sshpass&submit=Search+，安装命令如下：
+    - 安装依赖包 `device-mapper-libs`、`conntrack`、`sshpass`，
+      查看[依赖包的下载地址](https://rpmfind.net/linux/rpm2html/search.php?query=sshpass&submit=Search+)。安装命令如下：
 
-      ```bash
-      rpm -ivh <package name>
-      ```
+        ```bash
+        rpm -ivh <package name>
+        ```
 
     - 手动修改 os-release 文件中的 `VERSION_ID="7"`
 
-      ```
-      vi /etc/os-release
-      ```
+        ```bash
+        vi /etc/os-release
+        ```
 
     **参考[制作 OS Package 离线包](../os-install/otherlinux.md#os-package)，开始制作离线包。**
 
@@ -93,7 +86,7 @@
           ansiblePass: "dangerous@2024"
       workerNodes: []
       osRepos:
-        type: none #需要修改成none
+        type: none # (1)!
       imagesAndCharts:
         type: builtin
       binaries:
@@ -101,8 +94,9 @@
       loadBalancer:
         type: NodePort
       fullPackagePath: /home/offline
-    
     ```
+
+    1. 需要修改成none
 
 6. 开始安装 DCE 5.0。
 

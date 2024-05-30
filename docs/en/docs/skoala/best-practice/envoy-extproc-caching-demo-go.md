@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+date: 2024-05-17
+---
+
 # Cloud Native Custom Plugin Example: envoy-extproc-caching-demo-go
 
 [Envoy-extproc-method-conv-demo-go](https://github.com/projectsesame/envoy-extproc-method-conv-demo-go) is an example that demonstrates how to use the [ext_proc](https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/ext_proc_filter) feature provided by Envoy in Go language, based on [envoy-extproc-sdk-go](https://github.com/wrossmorrow/envoy-extproc-sdk-go).
@@ -12,47 +17,52 @@ The main functionality is to use a non-persistent storage to cache the responses
 - Install Go (Version >= v1.21) (Skip this step if only running)
 - Target service (referred to as Upstream) that supports HTTP Method: GET and assumes that it supports the following routes:
 
-    ```console
-    /*
-    /no-extproc
-    ```
+    - `/*`
+    - `/no-extproc`
 
 ## Compilation
 
 Go to the root directory of the project (Skip this step if only running).
 
-```go
+```bash
 go build . -o extproc
 ```
 
 ## Running
 
-Envoy:
-
-```bash
-envoy -c ./envoy.yaml # This file is located in the root directory of the project.
-```
-
-Caching:
-
-- Bare Metal
+- Envoy:
 
     ```bash
-    ./extproc caching --log-stream --log-phases
+    envoy -c ./envoy.yaml # (1)!
     ```
 
-- Kubernetes
+    1. This file is located in the root directory of the project
+
+- Caching:
+
+    - Bare Metal
+
+        ```bash
+        ./extproc caching --log-stream --log-phases
+        ```
+
+    - Kubernetes
+
+        ```bash
+        kubectl apply -f ./deployment.yaml # (1)!
+        ```
+
+        1. This file is located in the root directory of the project
+
+- Curl:
 
     ```bash
-    kubectl apply -f ./deployment.yaml # This file is located in the root directory of the project.
+    curl 127.0.0.1:8000/no-extproc  # (1)!
+    curl 127.0.0.1:8000/abc  # (2)!
     ```
 
-Curl:
-
-```bash
-curl 127.0.0.1:8000/no-extproc  # Caching will not be applied to this route, each request will be responded by the Upstream
-curl 127.0.0.1:8000/abc  # The first request will be responded by the Upstream and cached by the Caching. Subsequent requests for /abc will be directly responded by the Caching.
-```
+    1. Caching will not be applied to this route, each request will be responded by the Upstream
+    2. The first request will be responded by the Upstream and cached by the Caching. Subsequent requests for /abc will be directly responded by the Caching.
 
 ## Parameter Explanation
 
@@ -69,6 +79,6 @@ curl 127.0.0.1:8000/abc  # The first request will be responded by the Upstream a
 
 1. This example only supports HTTP Method: GET.
 
-2. The configuration options in the processing_mode, including request_header_mode and response_body_mode, must be configured as the options highlighted in the red box in the **figure below**.
+2. The options in the processing_mode, including request_header_mode and response_body_mode, must be configured as the options highlighted in the red box in the **figure below**.
 
     ![Add Custom Attributes](../images/envoy-extproc-caching-demo-go.png)

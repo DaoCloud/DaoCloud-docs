@@ -5,7 +5,7 @@ Date: 2024-02-29
 
 # Install metrics-server
 
- __metrics-server__ is the built-in resource usage metrics collection component of Kubernetes.
+__metrics-server__ is the built-in resource usage metrics collection component of Kubernetes.
 You can automatically scale Pod copies horizontally for workload resources by configuring HPA policies.
 
 This section describes how to install __metrics-server__ .
@@ -14,11 +14,14 @@ This section describes how to install __metrics-server__ .
 
 Before installing the __metrics-server__ plugin, the following prerequisites need to be met:
 
-- The container management module [connected to the Kubernetes cluster](../clusters/integrate-cluster.md) or [created the Kubernetes cluster](../clusters/create-cluster.md), and can access the UI interface of the cluster .
+- [Integrated the Kubernetes cluster](../clusters/integrate-cluster.md) or
+  [created the Kubernetes cluster](../clusters/create-cluster.md),
+  and you can access the UI interface of the cluster.
 
-- Completed a [namespace creation](../namespaces/createns.md).
+- Created a [namespace](../namespaces/createns.md).
 
-- The current operating user should have [`NS Edit`](../permissions/permission-brief.md#ns-edit) or higher permissions, for details, refer to [Namespace Authorization](../namespaces/createns.md).
+- You should have permissions not lower than [NS Editor](../permissions/permission-brief.md#ns-editor).
+  For details, refer to [Namespace Authorization](../namespaces/createns.md).
 
 ## Steps
 

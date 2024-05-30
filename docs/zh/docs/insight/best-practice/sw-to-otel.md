@@ -20,7 +20,7 @@ OpenTelemetry 与 SkyWalking 有一些共同点：都是使用 Trace 来定义�
 | 应用时间 | __Logs__ | __Events__ |
 | 引用关系 | __References__ | __Links__ |
 
-明确了这些差异后，就可以开始实现将 [SkyWalking Trace](https://skywalking.apache.org/docs/main/latest/en/protocols/trace-data-protocol-v3/)
+明确了这些差异后，就可以开始实现将 [SkyWalking Trace](https://github.com/apache/skywalking-data-collect-protocol/blob/master/language-agent/Tracing.proto)
 转换为 [OpenTelemetry Trace](https://opentelemetry.io/docs/reference/specification/overview/)。主要工作包括：
 
 1. 如何构造 OpenTelemetry 的 TraceId 和 SpanId

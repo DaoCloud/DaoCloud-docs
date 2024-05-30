@@ -32,8 +32,10 @@ go build . -o extproc
 - Envoy：
 
     ```bash
-    envoy -c ./envoy.yaml # 此文件位于项目根目录.
+    envoy -c ./envoy.yaml # (1)!
     ```
+
+    1. 此文件位于项目根目录
 
 - Caching：
 
@@ -46,8 +48,10 @@ go build . -o extproc
     - k8s：
 
         ```bash
-        kubectl apply -f ./deployment.yaml # 此文件位于项目根目录.
+        kubectl apply -f ./deployment.yaml # (1)!
         ```
+
+        1. 此文件位于项目根目录
 
 - Curl
 

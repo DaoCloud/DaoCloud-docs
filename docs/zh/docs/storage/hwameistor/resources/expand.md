@@ -4,13 +4,13 @@ HwameiStor 支持 `CSI 卷扩容` 。这个功能实现了通过修改 `PVC` 的
 
 ## 手动扩容数据卷
 
-1. 进入对应`集群`，选择`存储` → `Hwameistor`
+1. 进入对应集群，选择 **存储** -> **Hwameistor**
 
-2. 点击`本地卷`，在本地卷列表界面，选择一条本地卷进行`扩容`操作
+2. 点击 **本地卷** ，在本地卷列表界面，选择一条本地卷进行`扩容`操作
 
     ![expand01](../../images/expand01.png)
 
-3. 在`扩容`对话框中填写扩容后的大小，本例从 `1G` 扩容至 `10G`，点击`确定`
+3. 在 **扩容** 对话框中填写扩容后的大小，本例从 `1G` 扩容至 `10G`，点击 **确定**
 
     ![expand02](../../images/expand02.png)
 
@@ -20,11 +20,12 @@ HwameiStor 支持 `CSI 卷扩容` 。这个功能实现了通过修改 `PVC` 的
 
 ## 自动扩容数据卷
 
-组件 hwameistor-pvc-autoresizer 提供了 PVC 自动扩容的能力。扩容行为是通过 `ResizePolicy` 这个 CRD 来控制的。
+组件 hwameistor-pvc-autoresizer 提供了 PVC 自动扩容的能力。
+扩容行为是通过 `ResizePolicy` 这个 CRD 来控制的。
 
 ### ResizePolicy
 
-下面是一个示例 CR:
+下面是一个示例 CR：
 
 ```yaml
 apiVersion: hwameistor.io/v1alpha1
@@ -80,7 +81,7 @@ spec:
 
 ## FAQ
 
-### 如何观察扩容过程？
+### 如何观察扩容过程
 
 增加的容量越多，扩容所需时间越长。可以在 `PVC` 的事件日志中观察整个扩容的过程.
 
@@ -99,7 +100,7 @@ Events:
   Normal   FileSystemResizeSuccessful  11s                kubelet                             MountVolume.NodeExpandVolume succeeded for volume "pvc-b9fc8651-97b8-414c-8bcf-c8d2708c4ee8" k8s-worker-3
 ```
 
-### 如何观察扩容完成后的 `PVC/PV`？
+### 如何观察扩容完成后的 `PVC/PV`
 
 ```shell
 kubectl get pvc data-sts-mysql-local-0

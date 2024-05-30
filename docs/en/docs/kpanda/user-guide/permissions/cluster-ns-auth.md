@@ -34,13 +34,13 @@ Before authorizing users/groups, complete the following preparations:
 
 ## Namespace Authorization
 
-1. After the user logs in to the platform, click __Privilege Management__ under __Container Management__ on the left menu bar, and click the __Namespace Permissions__ tab.
+1. After the user logs in to the platform, click __Permissions__ under __Container Management__ on the left menu bar, and click the __Namespace Permissions__ tab.
 
     
 
 2. Click the __Add Authorization__ button. On the __Add Namespace Permission__ page, select the target cluster, target namespace, and user/group to be authorized, and click __OK__ .
 
-    The currently supported namespace roles are NS Admin, NS Edit, and NS View. For details about permissions, refer to [Permission Description](permission-brief.md). If you need to authorize multiple users/groups at the same time, you can click __Add User Permission__ to add multiple times. Click __OK__ to complete the permission authorization.
+    The currently supported namespace roles are NS Admin, NS Editor, and NS Viewer. For details about permissions, refer to [Permission Description](permission-brief.md). If you need to authorize multiple users/groups at the same time, you can click __Add User Permission__ to add multiple times. Click __OK__ to complete the permission authorization.
 
     
 

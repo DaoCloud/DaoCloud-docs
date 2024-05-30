@@ -6,7 +6,7 @@
 
 ## 注意事项
 
-1. 当前操作用户应具备 [NS Edit](../permissions/permission-brief.md) 角色授权或其他更高权限。
+1. 当前操作用户应具备 [NS Editor](../permissions/permission-brief.md#ns-editor) 角色授权或其他更高权限。
 2. 为节点添加污点之后，只有能容忍该污点的 Pod 才能被调度到该节点。<!--有关如何为 Pod 设置容忍度，可参考-->
 
 ## 操作步骤

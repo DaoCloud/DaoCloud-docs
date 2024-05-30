@@ -20,6 +20,10 @@ technology, sorted by date by default.
 
     This paper presents a brief overview of the state-of-the-art AI/ML techniques, followed by what CN technologies offer, covering the next challenges and gaps before discussing evolving solutions.
 
+- [20240416 | Kubean Enters CNCF Sandbox](./240416-kubean.md)
+
+    On April 15, 2024, after [an 11-member CNCF TAG committee vote](https://github.com/cncf/sandbox/issues/49), with 8 in favor and 3 not voting, the results exceeded the 66% threshold, successfully entering the well-known Sandbox for further incubation.
+
 - [20240326 | Platform engineering, API platforms and intelligent agents dominate innovation at KubeCon Paris](./240326-kubecon-eu.md)
 
     The sizzle at this past week’s [KubeCon + CloudNativeCon Europe](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/)
@@ -217,7 +221,7 @@ technology, sorted by date by default.
 
 - [20221105 | DaoCloud is a Senior Certified Service Provider for K8s](221116-kcsp.md)
 
-    As early as 2017, DaoCloud successfully passed Kubernetes certification, becoming the earliest service provider in China to enter and be recognized by CNCF. It is also the earliest vendor in China to obtain Kubernetes Training Partner (KTP) certification. Currently, K8s versions that have been officially certified by CNCF include: v1.25, v1.24, v1.23, v1.20, v1.18, v1.15, v1.13, v1.9, and v1.7.
+    As early as 2017, DaoCloud successfully passed Kubernetes certification, becoming the earliest service provider in China to enter and be recognized by CNCF. It is also the earliest vendor in China to obtain Kubernetes Training Partner (KTP) certification.
 
 - [20221105 | Financial Digital Transformation from a Native Thinking Perspective](https://mp.weixin.qq.com/s/9BggFRr0aoEzzmemXplRWg)
 

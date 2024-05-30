@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon / Logo 20*20 / Windows</title>
+    <g id="Icon-/-Logo-20*20-/-Windows" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Frame" x="0" y="0" width="20" height="20"></rect>
+        <g id="Windows" transform="translate(2, 2)">
+            <rect id="矩形" fill="#FF4104" x="0" y="0" width="7.68" height="7.68"></rect>
+            <rect id="矩形备份-2" fill="#02A7F7" x="0" y="8.32" width="7.68" height="7.68"></rect>
+            <rect id="矩形备份" fill="#6EBF03" x="8.32" y="0" width="7.68" height="7.68"></rect>
+            <rect id="矩形备份-3" fill="#FAB300" x="8.32" y="8.32" width="7.68" height="7.68"></rect>
+        </g>
+    </g>
+</svg>

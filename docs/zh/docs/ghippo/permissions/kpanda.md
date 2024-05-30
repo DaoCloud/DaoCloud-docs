@@ -338,8 +338,8 @@ hide:
 |          |                        | 删除                     | &check;                               | &cross;                           | &cross;                           | &cross;                           |
 |          | 命名空间权限           | 查看列表                 | &check;                               | &check;                          | &cross;                           | &cross;                           |
 |          |                        | 授权用户为 ns admin      | &check;                               | &check;                          | &cross;                           | &cross;                           |
-|          |                        | 授权用户为 ns edit       | &check;                               | &check;                          | &cross;                           | &cross;                           |
-|          |                        | 授权用户为 ns view       | &check;                               | &check;                          | &cross;                           | &cross;                           |
+|          |                        | 授权用户为 ns editor       | &check;                               | &check;                          | &cross;                           | &cross;                           |
+|          |                        | 授权用户为 ns viewer       | &check;                               | &check;                          | &cross;                           | &cross;                           |
 |          |                        | 编辑权限                 | &check;                               | &check;                          | &cross;                           | &cross;                           |
 |          |                        | 删除                     | &check;                               | &check;                          | &cross;                           | &cross;                           |
 | 安全管理 | 合规性扫描             | 查看扫描报告列表         | &check;                               | &cross;                           | &cross;                           | &cross;                           |

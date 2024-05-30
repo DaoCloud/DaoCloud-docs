@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+date: 2024-05-21
+---
+
 # Initialize Computing Cluster
 
 By default, when installing DCE 5.0 Enterprise, the Intelligent Engine Module can be installed synchronously. Please contact the delivery support team to obtain the Enterprise installation package.
@@ -46,9 +51,9 @@ In each worker cluster with computing resources, the corresponding basic computi
     **The above components must be installed, otherwise it may cause the functionality to not work properly.**
 
 After completing the above tasks, you can now perform task training and model development
-in the Intelligent Engine module. For detailed usage, you can refer to the following:
+in the Intelligent Engine module.
 
-### Introduction to Preheating Components
+### Components for preheating
 
 In the data management provided by the Intelligent Engine module, the preheating capability of
 datasets relies on a storage service, and it is recommended to use an NFS service:
@@ -62,5 +67,5 @@ datasets relies on a storage service, and it is recommended to use an NFS servic
 
 ## Conclusion
 
-After completing the above tasks, you can now experience all the functionalities of
+After completing the above steps, you can now experience all the functionalities of
 Intelligent Engine in the worker cluster. Enjoy using it!

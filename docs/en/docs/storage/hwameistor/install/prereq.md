@@ -9,17 +9,17 @@ hide:
 
 - Kubernetes compatibility:
 
-    | kubernetes     | v0.4.3 | >=v0.5.0 | >= 0.13.0 |
-    | -------------- | ------ | -------- | --------- |
-    | >=1.18&&<=1.20 | Yes    | No       | No        |
-    | 1.21           | Yes    | Yes      | No        |
-    | 1.22           | Yes    | Yes      | No        |
-    | 1.23           | Yes    | Yes      | No        |
-    | 1.24           | Yes    | Yes      | Yes       |
-    | 1.25           | No     | Yes      | Yes       |
-    | 1.26           | No     | Yes      | Yes       |
-    | 1.27           | No     | No       | Yes       |
-    | 1.28           | No     | No       | Yes       |
+    | Kubernetes     | Hwameistor V0.4.3 | Hwameistor >=v0.5.0 | Hwameistor >= 0.13.0 |
+    | -------------- | ----------------- | ------------------- | -------------------- |
+    | >=1.18&&<=1.20 | Yes                | No                  | No                   |
+    | 1.21           | Yes                | Yes                  | No                   |
+    | 1.22           | Yes                | Yes                  | No                   |
+    | 1.23           | Yes                | Yes                  | No                   |
+    | 1.24           | Yes                | Yes                  | Yes                   |
+    | 1.25           | No                | Yes                  | Yes                   |
+    | 1.26           | No                | Yes                  | Yes                   |
+    | 1.27           | No                | No                  | Yes                   |
+    | 1.28           | No                | No                  | Yes                   |
 
 - CoreDNS must be deployed
 

@@ -11,6 +11,7 @@ nav:
               - Use Cases: dce/scenario.md
               - DaoCloud is a KCSP: dce/kcsp.md
               - Release Notes:
+                  - 20240430 Release: dce/dce-rn/20240430.md
                   - 20240330 Release: dce/dce-rn/20240330.md
                   - 20240130 Release: dce/dce-rn/20240130.md
                   - 20231231 Release: dce/dce-rn/20231231.md
@@ -42,7 +43,7 @@ nav:
                       - Ports: install/commercial/port-requirements.md
                       - External Components (Optional):
                           - Store Binaries with External Service: install/commercial/external/external-binary.md
-                          - Store Images and Charts with Registry and Chart Repo: install/commercial/external/external-imageandchart.md
+                          - Use External Registry and Chart Repo: install/commercial/external/external-imageandchart.md
                           - Use External Middleware: install/commercial/external/external-middlewares.md
                           - Store OS Repo with External Service: install/commercial/external/external-os.md
                   - Start Installation: install/commercial/start-install.md
@@ -53,6 +54,7 @@ nav:
                   - On UOS V20 (1020a): install/os-install/uos-v20-install-dce5.0.md
                   - On Oracle Linux R9/R8 U1: install/os-install/oracleLinux-install-dce5.0.md
                   - On TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
+                  - On NeoKylin Linux Advanced Server V7Update6: install/os-install/neokylin-install-dce5.0.md
                   - On Other Linux: install/os-install/otherlinux.md
               - Upgrade:
                   - Overview: install/upgrade-des.md
@@ -66,7 +68,7 @@ nav:
                   - Offline Clipper Script User Manual: install/best-practices/offline-clipper.md
                   - Use Cases: install/commercial/scenarios.md
                   - Deploy on DCE 5.0 Appliance: install/best-practices/all-in-one-machine.md
-                  - etcd Deployed in Host Mode and Separated from Control Plane: install/best-practices/etcd-host-deploy.md
+                  - etcd Deployed in Host and Separated from Control Plane: install/best-practices/etcd-host-deploy.md
                   - HA Bootstrap Nodes: install/best-practices/thinder-ha.md
                   - Backup and Restore of Bootstrap Node: install/best-practices/thinder-restore.md
                   - Fix CVE-2024-21626: install/best-practices/cve-20240-21626.md
@@ -206,7 +208,9 @@ nav:
                   - Install kubernetes-cronhpa-controller: kpanda/user-guide/scale/install-cronhpa.md
                   - Install VPA Plugin: kpanda/user-guide/scale/install-vpa.md
                   - Create HPA Policy: kpanda/user-guide/scale/create-hpa.md
+                  - Create HPA based on Custom Metrics: kpanda/user-guide/scale/custom-hpa.md
                   - Create VPA Policy: kpanda/user-guide/scale/create-vpa.md
+                  - HPA and CronHPA Compatibility Rules: kpanda/user-guide/scale/hpa-cronhpa-compatibility-rules.md
               - Helm Apps:
                   - Helm Charts: kpanda/user-guide/helm/README.md
                   - Upload Helm Charts: kpanda/user-guide/helm/upload-helm.md
@@ -270,10 +274,10 @@ nav:
                       - NVIDIA GPU Modes: kpanda/user-guide/gpu/nvidia/index.md
                       - Install GPU Operator:
                           - Install GPU Operator Offline: kpanda/user-guide/gpu/nvidia/install_nvidia_driver_of_operator.md
-                          - Build Offline yum Source for CentOS 7.9: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_centos7_9.md
+                          - Build Offline yum for CentOS 7.9: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_centos7_9.md
                           - Upload Red Hat GPU Opreator Image: kpanda/user-guide/gpu/nvidia/push_image_to_repo.md
-                          - Build Offline yum Source for Red Hat 8.4: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_redhat8_4.md
-                          - Build Offline yum Source for Red Hat 7.9: kpanda/user-guide/gpu/nvidia/yum_source_redhat7_9.md
+                          - Build Offline yum for Red Hat 8.4: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_redhat8_4.md
+                          - Build Offline yum for Red Hat 7.9: kpanda/user-guide/gpu/nvidia/yum_source_redhat7_9.md
                       - NVIDIA GPU Full Card Mode: kpanda/user-guide/gpu/nvidia/full_gpu_userguide.md
                       - NVIDIA vGPU Mode:
                           - Install vGPU Addon: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_addon.md
@@ -284,14 +288,17 @@ nav:
                           - Use NVIDIA MIG: kpanda/user-guide/gpu/nvidia/mig/mig_usage.md
                           - MIG Commands: kpanda/user-guide/gpu/nvidia/mig/mig_command.md
                   - Ascend GPU:
-                      - Use Ascend GPU: kpanda/user-guide/gpu/Ascend_usage.md
-                      - Huawei Ascend NPU Quick Start Guide: kpanda/user-guide/gpu/ascend_quickstart.md
+                      - Install NPU Components: kpanda/user-guide/gpu/ascend/ascend_driver_install.md
+                      - Use GPU: kpanda/user-guide/gpu/ascend/ascend_usage.md
                   - Iluvatar GPU: kpanda/user-guide/gpu/Iluvatar_usage.md
-                  - GPU Quota Management: kpanda/user-guide/gpu/vgpu_quota.md
+                  - GPU Quotas: kpanda/user-guide/gpu/vgpu_quota.md
+                  - GPU DRA: kpanda/user-guide/gpu/dynamic-regulation.md
                   - GPU Metrics: kpanda/user-guide/gpu/gpu-metrics.md
-                  - Install and Use Volcano: kpanda/user-guide/gpu/volcano_user_guide.md
+                  - Use Volcano:
+                    - Install and Use Volcano: kpanda/user-guide/gpu/volcano/volcano_user_guide.md
+                    - Use Volcano Gang Scheduler: kpanda/user-guide/gpu/volcano/volcano-gang-scheduler.md
               - Best Practices:
-                  - Back up and Restore ETCD: kpanda/best-practice/etcd-backup.md
+                  - Back up and Restore etcd: kpanda/best-practice/etcd-backup.md
                   - Cross-cluster Backup and Restore of MySQL Apps: kpanda/best-practice/backup-mysql-on-nfs.md
                   - Strengthen a Self-built Worker Cluster: kpanda/best-practice/hardening-cluster.md
                   - Offline Upgrade Worker Clusters: kpanda/best-practice/update-offline-cluster.md
@@ -420,7 +427,7 @@ nav:
               - Spiderpool:
                   - Intro: network/modules/spiderpool/index.md
                   - Install: 
-                      - Install Spiderpool: network/modules/spiderpool/install.md
+                      - Install Spiderpool: network/modules/spiderpool/install/install.md
                       - Prepare and install RDMA: network/modules/spiderpool/install/rdmapara.md
                       - Install Nvidia OFED Driver: network/modules/spiderpool/install/ofed_driver.md
                   - Upgrade: network/modules/spiderpool/upgrade.md
@@ -771,8 +778,10 @@ nav:
                   - Gateway to Service Mesh: skoala/best-practice/gateway-mesh.md
                   - Add Custom Attributes to Gateway Request Logs: skoala/best-practice/add-custom-attributes.md
                   - HTTP to Dubbo Protocol Dynamic Routing: skoala/best-practice/http-to-dubbo.md
-                  - Cloud Native Custom Plugin Demo - caching: skoala/best-practice/envoy-extproc-caching-demo-go.md
-                  - Cloud Native Custom Plugin Demo - anti: skoala/best-practice/envoy-extproc-anti-demo-go.md
+                  - Custom Plugin Demo - caching: skoala/best-practice/envoy-extproc-caching-demo-go.md
+                  - Custom Plugin Demo - anti: skoala/best-practice/envoy-extproc-anti-demo-go.md
+                  - Custom Plugin Demo - crc32: skoala/best-practice/envoy-extproc-crc32-check-demo-go.md
+                  - Custom Plugin Demo - conv: skoala/best-practice/envoy-extproc-method-conv-demo-go.md
               - Troubleshoot:
                   - skoala-init error about x-kubernets-validations: skoala/troubleshoot/auth-server.md   
               - Performance Tests:
@@ -782,7 +791,6 @@ nav:
                   - Microservice: reference/basic-knowledge/microservice.md
                   - Registry: reference/basic-knowledge/registry.md
                   - Cloud Native Gateway: reference/basic-knowledge/gateway.md
-                  - Nacos Version Downgrade: skoala/reference/nacos.md
           - Service Mesh:
               - Intro:
                   - What is Service Mesh: mspider/intro/index.md
@@ -1043,9 +1051,11 @@ nav:
                       - Start and Pause Notebook: baize/developer/notebooks/start-pause.md
                       - View Notebook Workload: baize/developer/notebooks/view.md
                       - Delete Notebook: baize/developer/notebooks/delete.md
-                  - Task Center:
-                      - Create Task: baize/developer/jobs/create.md
-                      - Delete Task: baize/developer/jobs/delete.md
+                      - Notebook SSH Guide: baize/developer/notebooks/notebook-with-ssh.md
+                  - Jobs:
+                      - Create Job: baize/developer/jobs/create.md
+                      - Delete Job: baize/developer/jobs/delete.md
+                      - View Job Load: baize/developer/jobs/view.md
                   - Data Management:
                       - Create Dataset: baize/developer/dataset/create.md
                       - Delete Dataset: baize/developer/dataset/delete.md
@@ -1070,6 +1080,7 @@ nav:
                   - Create Internal Edge Unit: kant/user-guide/edge-unit/create-internal-unit.md
                   - Create External Edge Unit: kant/user-guide/edge-unit/create-external-unit.md
                   - Manage Edge Unit: kant/user-guide/edge-unit/manage-unit.md
+                  - Monitor Edge Resources: kant/user-guide/edge-unit/edge-observable.md
               - Edge Node:
                   - Overview: kant/user-guide/node/index.md
                   - Requirements to Join Edge Node: kant/user-guide/node/join-rqmt.md
@@ -1260,6 +1271,7 @@ nav:
       - 2024:
           - Large Language Model Spec: blogs/240509-model-spec.md
           - Cloud Native AI Whitepapaer: blogs/240410-cnai-wp.md
+          - Kubean Enters CNCF Sandbox: blogs/240416-kubean.md
           - Innovations at KubeCon Paris: blogs/240326-kubecon-eu.md
           - Create a Open Source Commercial Ecosystem: blogs/240301-osc-eco.md
           - Book - Managing Cloud Native Data on Kubernetes: blogs/240203-book.md

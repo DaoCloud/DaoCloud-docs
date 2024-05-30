@@ -73,6 +73,13 @@ day by day, making things better over time.
     the current enterprise network infrastructure and lower the threshold for enterprises
     to use cloud native applications.
 
+    - **About Cloud Native Computing**: Abstracts underlying infrastructure to support upper-layer 
+    applications and other modules, including computing and storage.
+    - **About Cloud Native Networking**: Adapts to various overlay and underlay network environments, 
+    supporting multiple network modes like Spiderpool, Cillium, Macvlan, and Multus.
+    - **About Cloud Native Security**: Integrates RBAC permission authentication systems to safeguard 
+    operational security.
+
     **Related modules**: [Global Management](../ghippo/intro/index.md), [Container Management](../kpanda/intro/index.md),
     [Cluster Lifecycle Management](../community/kubean.md), [cloud native network](../network/intro/index.md),
     [cloud native storage](../storage/index.md)

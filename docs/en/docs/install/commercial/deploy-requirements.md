@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+date: 2024-05-11
+---
+
 # Deployment Requirements
 
 When deploying DCE 5.0, it is necessary to first plan the software, hardware, and network.

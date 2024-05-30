@@ -1,23 +1,28 @@
-# Benefits of Insight
+---
+MTPE: windsonsea
+date: 2024-05-13
+hide:
+  - toc
+---
 
-- Multicluster Management
+# Advantages of Insight
 
-    Through the unified storage of metrics, logs and traces data in the Global clusters, the monitoring of multicluster can be realized and users can aggregate query of multicluster data.
+- Multi-cluster Management
+
+    By using a global service cluster to uniformly store metrics, logs, and trace data, unified monitoring of multiple clusters is achieved. Users can query data across multiple clusters.
 
 - Out-of-the-box
 
-    - Dashboard: Insight provides a variety of out-of-the-box prefabricated monitoring dashboards. You can comprehensively monitor clusters, nodes, workloads and other components through the built-in dashboards.
-
-    - Alert rules: Insight provides built-in alert rules that enable you to monitor cluster resources, system components, and other basic metrics out of the box without configuration.
+    - Open Source Curated Dashboards: Insight provides a variety of ready-to-use pre-built monitoring dashboards, allowing comprehensive monitoring of clusters, nodes, workloads, and other components through built-in dashboards.
+    - Built-in Alert Rules: Insight offers built-in alert rules, enabling out-of-the-box monitoring of basic metrics for cluster resources and system components without any configuration.
 
 - High Availability
 
-    - Lightweight agent, which supports for one-click installation with Helm.
+    - Lightweight Agent, supports one-click installation via Helm.
+    - Data storage components support multiple replicas to ensure high availability of data.
 
-    - The data storage component supports multiple replicas to guarantee the high availability of your data.
+- Open Source Compatibility
 
-- Open Source
-
-    - Compatible with Prometheus and supporting for the native PromQL to query metrics.
-    - Compatible with Prometheus YAML to collect profiles and suitable for customizing the __ServiceMonitor__ rule in a Kubernetes cluster.
-    - Follow the OpenTelemetry specification and support for data access with the Jaeger's link.
+    - Compatible with standard open-source Prometheus, supports native PromQL queries for metric data.
+    - Compatible with standard open-source __Prometheus.yaml__ collection rule configuration files, suitable for customizing monitoring collection rules within Kubernetes via ServiceMonitor.
+    - Adheres to the open-source OpenTelemetry specification, supporting the integration of Jaeger trace data.

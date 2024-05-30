@@ -17,6 +17,12 @@ hide:
 
 - __kubeconfig__ ：用于配置跨集群认证。
 
+- __SSH__ ：SSH 公钥/私钥对。
+
+    !!! note
+
+        SSH 类型的凭证在使用时（比如git clone）需要验证主机的身份，目前直接执行会报错。需要前往 Jenkins 后台在 'Manage Jenkins' -> 'Configure Global Security' -> 'Git Host Key Verification Configuration' 这个配置项里修改选项为：'No verification'
+
 创建和管理凭证的具体步骤如下：
 
 1. 在左侧导航栏中点击 __流水线__ -> __凭证__ ，进入凭证列表，点击右上角的 __新建凭证__ 。
@@ -34,6 +40,7 @@ hide:
         - 用户名和密码：在对应字段指定凭证的 __用户名__ 和 __密码__ 。
         - 访问令牌（Secret text）：复制加密文本到 __令牌__ 字段中。
         - Kubeconfig：复制集群证书到 __Kubeconfig__ 字段中。
+        - SSH：定义：__用户名__（是用于登录远程服务器的账户名）和 __SSH Key 对应的私钥__（用于身份验证的SSH私钥）和 __密码短语__（如果私钥被密码短语保护，需要提供这个密码短语才能使用私钥）
 
 3. 屏幕提示创建成功，新创建的凭证默认位于第一个。
 

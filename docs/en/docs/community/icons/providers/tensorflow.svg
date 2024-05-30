@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon / Logo 20*20 / TensorFlow</title>
+    <defs>
+        <polygon id="path-1" points="8.60145142 4.87956591 0 0 0 20 3.43631517 18.0201165 3.43631517 12.3928004 6.03154621 13.8843303 6.01688389 10.0344097 3.43631517 8.57067231 3.43631517 6.33536263 8.61344787 9.30518793"></polygon>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-3">
+            <stop stop-color="#FF6F00" offset="0%"></stop>
+            <stop stop-color="#FFA800" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-4" points="0.0119964455 4.87956591 8.61344787 0 8.61344787 20 5.1771327 18.0201165 5.1771327 6.33536263 0 9.30518793"></polygon>
+    </defs>
+    <g id="Icon-/-Logo-20*20-/-TensorFlow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="TensorFlow_logo" transform="translate(1, 0)">
+            <g id="Clipped" transform="translate(9.3866, 0)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Path"></g>
+                <rect id="Rectangle" fill="url(#linearGradient-3)" fill-rule="nonzero" mask="url(#mask-2)" x="-10.168987" y="-0.0727898359" width="21.1230746" height="20.0979354"></rect>
+            </g>
+            <g id="Clipped">
+                <mask id="mask-5" fill="white">
+                    <use xlink:href="#path-4"></use>
+                </mask>
+                <g id="Path"></g>
+                <rect id="Rectangle" fill="url(#linearGradient-3)" fill-rule="nonzero" mask="url(#mask-5)" x="-0.925059242" y="-0.0727898359" width="21.1230746" height="20.0979354"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

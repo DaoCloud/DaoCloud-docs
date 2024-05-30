@@ -9,8 +9,8 @@ The Insight uses the following roles:
 
 - Admin / Kpanda Owner
 - [Cluster Admin](../../kpanda/user-guide/permissions/permission-brief.md#cluster-admin)
-- [NS Admin](../../kpanda/user-guide/permissions/permission-brief.md#ns-admin) / [NS Edit](../../kpanda/user-guide/permissions/permission-brief.md#ns-edit)
-- [NS View](../../kpanda/user-guide/permissions/permission-brief.md#ns-view)
+- [NS Admin](../../kpanda/user-guide/permissions/permission-brief.md#ns-admin) / [NS Editor](../../kpanda/user-guide/permissions/permission-brief.md#ns-editor)
+- [NS Viewer](../../kpanda/user-guide/permissions/permission-brief.md#ns-viewer)
 
 The permissions of each role are as follows:
 
@@ -18,8 +18,8 @@ The permissions of each role are as follows:
 You have permission to use `&check;`, but you don't have permission to use `&cross;`
 -->
 
-| Menu | Operation | Admin / Kpanda Owner | Cluster Admin | NS Admin / NS Edit | NS View |
-| -------- | --------------------------- | -------------------- | ------------- | ------------------ | ------- |
+| Menu | Operation | Admin / Kpanda Owner | Cluster Admin | NS Admin / NS Editor | NS Viewer |
+| ---- | --------- | -------------------- | ------------- | ------------------ | ------- |
 | Overview | View Overview | &check; | &cross; | &cross; | &cross; |
 | Dashboard | View Dashboard | &check; | &cross; | &cross; | &cross; |
 | Infrastructure | View Cluster Insight | &check; | &check; | &cross; | &cross; |

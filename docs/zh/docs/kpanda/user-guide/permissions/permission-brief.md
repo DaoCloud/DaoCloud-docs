@@ -8,9 +8,9 @@
 集群权限基于 Kubernetes RBAC 的 ClusterRolebinding 授权，集群权限设置可让用户/用户组具备集群相关权限。
 目前的默认集群角色为 __Cluster Admin__ （不具备集群的创建、删除权限）。
 
-### __Cluster Admin__ 
+### __Cluster Admin__
 
- __Cluster Admin__ 具有以下权限：
+__Cluster Admin__ 具有以下权限：
 
 - 可管理、编辑、查看对应集群
 
@@ -49,14 +49,12 @@ rules:
 
 命名空间权限是基于 Kubernetes RBAC 能力的授权，可以实现不同的用户/用户组对命名空间下的资源具有不同的操作权限(包括 Kubernetes API 权限)，详情可参考：[Kubernetes RBAC](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)。目前容器管理的默认角色为：NS Admin、NS Editor、NS Viewer。
 
-### __NS Admin__ 
+### __NS Admin__
 
- __NS Admin__ 具有以下权限：
+__NS Admin__ 具有以下权限：
 
 - 可查看对应命名空间
-
 - 管理、编辑、查看 命名空间下的所有工作负载，及自定义资源
-
 - 可授权用户为对应命名空间角色 (NS Editor、NS Viewer)
 
 该集群角色的 YAML 示例如下：
@@ -86,12 +84,11 @@ rules:
   - '*'    
 ```
 
-### __NS Editor__ 
+### __NS Editor__
 
- __NS Editor__ 具有以下权限：
+__NS Editor__ 具有以下权限：
 
 - 可查看对应有权限的命名空间
-
 - 管理、编辑、查看 命名空间下的所有工作负载
 
 ??? note "点击查看集群角色的 YAML 示例"
@@ -211,12 +208,11 @@ rules:
       - '*'      
     ```
 
-### __NS Viewer__ 
+### __NS Viewer__
 
- __NS Viewer__ 具有以下权限：
+__NS Viewer__ 具有以下权限：
 
 - 可查看对应命名空间
-
 - 可查看对应命名空间下的所有工作负载，及自定义资源
 
 ??? note "点击查看集群角色的 YAML 示例"

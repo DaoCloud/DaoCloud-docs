@@ -1,20 +1,17 @@
 # Import a Virtual Machine with Ubuntu from an External Platform
 
-This page will detail how to import a virtual machine with Ubuntu operating system from an external platform into the virtual machine of DCE 5.0 using the command line.
+This page provides a detailed introduction on how to import virtual machines from the external platform VMware into the virtual machines of DCE 5.0 through the command line.
 
 !!! info
 
     The external virtual platform in this document is VMware vSphere Client, abbreviated as vSphere. Technically, it relies on kubevirt cdi for implementation. Before proceeding, the virtual machine imported on vSphere needs to be shut down.
+    Take a virtual machine of the Ubuntu operating system as an example.
 
-## Obtain Basic Information of vSphere Virtual Machine
+## Fetch Basic Information of vSphere Virtual Machine
 
-1. vSphere URL
+1. vSphere URL: Fetch information on the URL of the target platform
 
-    Information on the URL of the target platform
-
-2. vSphere SSL Certificate Thumbprint
-
-    Needs to be obtained using openssl
+2. vSphere SSL Certificate Thumbprint: Need to be fetched using openssl
 
     ```sh
     openssl s_client -connect 10.64.56.11:443 </dev/null | openssl x509 -in /dev/stdin -fingerprint -sha1 -noout
@@ -34,15 +31,11 @@ This page will detail how to import a virtual machine with Ubuntu operating syst
     sha1 Fingerprint=C3:9D:D7:55:6A:43:11:2B:DE:BA:27:EA:3B:C2:13:AF:E4:12:62:4D  # Value needed
     ```
 
-3. vSphere Account
-   
-    Obtain account information for vSphere, pay attention to permissions
+3. vSphere Account: Fetch account information for vSphere, and pay attention to permissions
 
-4. vSphere Password
+4. vSphere Password: Fetch password information for vSphere
 
-    Obtain password information for vSphere
-
-5. UUID of the virtual machine to be imported (needs to be obtained on the web page of vSphere)
+5. UUID of the virtual machine to be imported: Need to be fetched on the web page of vSphere
 
     - Access the Vsphere page, go to the details page of the virtual machine to be imported, click on __Edit Settings__ , open the browser's developer console at this point,
       click on __Network__ -> __Headers__ , find the URL as shown in the image below.
@@ -55,20 +48,20 @@ This page will detail how to import a virtual machine with Ubuntu operating syst
 
 6. Path of the vmdk file of the virtual machine to be imported
 
-## Obtain Basic Information of vSphere Virtual Machine
+## Fetch Basic Information of vSphere Virtual Machine
 
 1. Prepare vddk Image
 
     - Download vddk: Need to register an account on the [VMware website](https://developer.vmware.com/) to download
    
-        Go to SDKs, click on "Compute Virtualization" in the section, and select the appropriate version of
-        "VMware Virtual Disk Development Kit (VDDK)" for downloading.
+        Go to SDKs, click on "_Compute Virtualization_" in the section, and select the appropriate version of
+        "_VMware Virtual Disk Development Kit (VDDK)_" for downloading.
    
-        <!-- Add image later -->
+         ![Click Compute Virtualization](../images/import-ubuntu01.png)
    
-        <!-- Add image later -->
+        ![Select Version](../images/import-ubuntu02.png)
    
-        <!-- Add image later -->
+        ![Download](../images/import-ubuntu03.png)
    
     - Unpack and build into an image:
    
@@ -90,7 +83,7 @@ This page will detail how to import a virtual machine with Ubuntu operating syst
 
         - Push the image to the repository
 
-## Obtain vSphere Account Password Secret
+## Fetch vSphere Account Password Secret
 
 ```yaml
 apiVersion: v1
@@ -192,13 +185,13 @@ metadata:
 
     When the actual import is completed, the configuration shown in the image below has been completed. However, it should be noted that the enp1s0 interface does not contain the inet field, so it cannot connect to the external network.
        
-    <!-- Add image later -->
+    ![check network configuration](../images/import-ubuntu04.png)
 
 1. Configure netplan
 
     In the configuration shown in the image above, change the objects in ethernets to enp1s0 and obtain an IP address using DHCP.
         
-    <!-- Add image later -->
+    ![configure netplan](../images/import-ubuntu05.png)
 
 1. Apply the netplan configuration to the system network configuration
 
@@ -208,8 +201,8 @@ metadata:
  
 1. Perform a ping test on the external network
 
-    <!-- Add image later -->
+    ![ping network](../images/import-ubuntu06.png)
 
 1. Access the virtual machine on the node via SSH.
 
-    <!-- Add image later -->
+    ![access the virtual machine](../images/import-ubuntu07.png)

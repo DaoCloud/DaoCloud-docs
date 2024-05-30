@@ -15,7 +15,7 @@ Before backing up a deployment, the following prerequisites must be met:
 
 - Create a [Namespace](../namespaces/createns.md) and a [User](../../../ghippo/user-guide/access-control/user.md).
 
-- The current operating user should have [NS Edit](../permissions/permission-brief.md#ns-edit) or higher permissions, for details, please refer to [Namespace Authorization](../namespaces/createns.md).
+- The current operating user should have [NS Editor](../permissions/permission-brief.md#ns-editor) or higher permissions, for details, please refer to [Namespace Authorization](../namespaces/createns.md).
 
 - [Install the velero component](install-velero.md), and ensure the velero component is running properly.
 

@@ -23,7 +23,7 @@ Before configuring a vertical scaling policy for deployment, the following prere
 
 - Create a [namespace](../namespaces/createns.md), [user](../../../ghippo/user-guide/access-control/user.md), [Deployments](../workloads/create-deployment.md) or [Statefulsets](../workloads/create-statefulset.md).
 
-- The current operating user should have [`NS Edit`](../permissions/permission-brief.md#ns-edit) or higher permissions, for details, refer to [Namespace Authorization](../namespaces/createns.md).
+- The current operating user should have [NS Editor](../permissions/permission-brief.md#ns-editor) or higher permissions, for details, refer to [Namespace Authorization](../namespaces/createns.md).
 
 - The current cluster has installed [ __metrics-server__ ](install-metrics-server.md) and [ __VPA__ ](install-vpa.md) plugins.
 

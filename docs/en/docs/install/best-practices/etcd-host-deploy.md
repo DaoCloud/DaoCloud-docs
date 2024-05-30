@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+date: 2024-05-11
+---
+
 # etcd components deployed in host mode and separated from the control plane
 
 When deploying DCE 5.0 using the installer version 0.13.0 or later, it supports the

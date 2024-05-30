@@ -12,6 +12,32 @@ Underlay network solution, called [Spiderpool](../../../README.md), suitable for
 environment, especially in hybrid cloud scenarios where a unified CNI solution facilitates
 multi-cloud management.
 
+## Why Spiderpool
+
+- Spiderpool is an underlay and RDMA network solution for the Kubernetes. It enhances the capabilities of Macvlan CNI, IPvlan CNI, SR-IOV CNI fulfills various networking needs, and supports to run on **bare metal, virtual machine, and public cloud environments**. Spiderpool delivers exceptional network performance.
+
+- [aws-vpc-cni](https://github.com/aws/amazon-vpc-cni-k8s) Networking plugin for pod networking in Kubernetes using Elastic Network Interfaces on AWS.
+
+aws-vpc-cni is an underlay network solution provided by AWS for public cloud, but it cannot meet complex network requirements. The following is a comparison of some functions between spiderpool and aws-cni. The related functions of Spiderpool will be demonstrated in subsequent chapters：
+
+| Feature comparison                          | aws-vpc-cni                                                                      |         Spiderpool + IPvlan                      |
+|------------------------------------------- | ------------------------------------------------------------------------------ | ------------------------------------------------ |
+| Multiple Underlay NICs                     | ❌                                                                             | ✅ (Multiple Underlay NICs across subnets)       |
+| Custom routing                             | ❌                                                                             | ✅ [route](https://github.com/spidernet-io/spiderpool/blob/main/docs/usage/route.md)                       |
+| Dual CNI collaboration                     | Supports multiple CNI NIC but does not support routing coordination            | ✅ support [rdma](https://github.com/spidernet-io/spiderpool/blob/main/docs/usage/rdma-roce.md)            |
+| network policy                             | ✅ [aws-network-policy-agent](https://github.com/aws/aws-network-policy-agent) | ✅ [cilium-chaining](https://github.com/spidernet-io/spiderpool/blob/main/docs/usage/cilium-chaining.md)   |
+| clusterIP                                  | ✅ (kube-proxy)                                                                | ✅ (kube-proxy and ebpf two methods)             |
+| Bandwidth                                  | ❌                                                                             | ✅ [Bandwidth management](https://github.com/spidernet-io/spiderpool/blob/main/docs/usage/ipvlan_bandwidth.md)  |
+| metrics                                    | ✅                                                                             | ✅                                               |
+| Dual stack                                 | IPv4 only, IPv6 only, dual stack is not supported                              | IPv4 only, IPv6 only, dual stack                 |
+| Observability                              | ❌                                                                             | ✅(with cilium hubble, kernel>=4.19.57)          |
+| Multi-cluster                              | ❌                                                                             | ✅ [Submariner](https://github.com/spidernet-io/spiderpool/blob/main/docs/usage/submariner.md)             |
+| Paired with AWS layer 4/7 load balancing   | ✅                                                                             | ✅                                               |
+| Kernel limit                               | None                                                                           | >= 4.2 (IPvlan kernel limit)                     |
+| Forwarding principle                       | underlay pure routing layer 3 forwarding                                       | IPvlan layer 2                                   |
+| multicast                                  | ❌                                                                             | ✅                                               |
+| Cross vpc access                           | ✅                                                                             | ✅                                               |
+
 ## Solutions Provided by Spiderpool for Limitations in AWS
 
 Spiderpool can run on public cloud environments based on the ipvlan Underlay CNI and provide features
@@ -34,6 +60,7 @@ such as node topology and MAC address validity. Its implementation principle is 
    [ipvlan](https://www.cni.dev/plugins/current/main/ipvlan/) CNI. ipvlan operates at Layer 3, eliminating the need
    for Layer 2 broadcast and avoiding the generation of new MAC addresses. It keeps the MAC addresses consistent
    with the parent interface. Therefore, ipvlan can solve the issue of MAC address validity in public clouds.
+
 
 ## Implementation Requirements
 

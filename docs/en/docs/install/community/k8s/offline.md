@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+date: 2024-05-11
+---
+
 # Offline Install in a Standard Kubernetes Cluster
 
 This page will guide you to install DCE Community package offline in a standard Kubernetes cluster, which is recommended in the production environment.
@@ -25,10 +30,10 @@ Click [Online Install DCE Community](../../../videos/install.md) to watch a vide
 
 1. Download and decompress the offline package of DCE Community on the controller node of your kubernetes cluster, or download and decompress the offline package from [Download Center](../../../download/index.md).
 
-    Take VERSION=v0.16.0 as an example.
+    Take VERSION=v0.17.0 as an example.
 
     ```bash
-    export VERSION=v0.16.0
+    export VERSION=v0.17.0
     wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-$VERSION-amd64.tar
     tar -xvf offline-community-$VERSION-amd64.tar
     ```

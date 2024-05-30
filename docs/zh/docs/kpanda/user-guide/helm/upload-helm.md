@@ -17,7 +17,7 @@ hide:
 
             此方式适用于 Harbor、ChartMuseum、JFrog 类型仓库。
 
-        1. 登录一个可以访问到 Helm 仓库的节点，将 Helm 二进制文件上传到节点，并安装 cm-push 插件。
+        1. 登录一个可以访问到 Helm 仓库的节点，将 Helm 二进制文件上传到节点，并安装 cm-push 插件（需要连通外网并提前安装 [Git](https://git-scm.com/downloads)）。
 
             安装插件流程参考[安装 cm-push 插件](https://github.com/chartmuseum/helm-push)。
 
