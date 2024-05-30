@@ -9,6 +9,21 @@ Date: 2023-10-30
 
 This page lists all the Release Notes for each version of Service Mesh, providing convenience for users to learn about the evolution path and feature changes.
 
+## 2024-05-30
+
+### v0.26.0
+
+#### Features
+
+- **Added** a feature of Istio Analyze.
+- **Added** controller for synchronizing Istio resources across work clusters.
+
+#### Fixes
+
+- **Fixed** the absence of default sorting issue in network grouping list.
+- **Fixed** stop() exception in Istio resource synchronization.
+- **Fixed** the issue of `Istio analyze` not being able to resolve when all are valid.
+
 ## 2024-04-30
 
 ### v0.25.0
@@ -21,9 +36,9 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 
 #### Fixes
 
-- **Fixed** Upgrade the `cloudtty` image version to `v0.7.1` to fix security issues with the low version of `xz`.
-- **Fixed** In `Ambient` mode, changes to `Pod` did not trigger workload status changes.
-- **Fixed** Fix the issue of incorrect display of topology nodes due to lack of permissions.
+- **Fixed** upgrade the `cloudtty` image version to `v0.7.1` to fix security issues with the low version of `xz`.
+- **Fixed** in `Ambient` mode, changes to `Pod` did not trigger workload status changes.
+- **Fixed** the issue of incorrect display of topology nodes due to lack of permissions.
 
 ## 2024-04-01
 
@@ -40,7 +55,7 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 
 - **Fixed** `ServiceShadow CRD` where `ServicePort` section now includes `container_port` and `protocol`.
 - **Fixed** service status `STATUS_UNSPECIFIED` and `FailedReasn` not being version-compatible in the API `/apis/mcpc.mspider.io/v3alpha1/meshes/{meshId}/govern/services`.
-- **Fixed** issue with topology not displaying upstream and downstream capabilities simultaneously.
+- **Fixed** the issue with topology not displaying upstream and downstream capabilities simultaneously.
 - **Fixed** `Telemetry` metrics format issues.
 - **Fixed** service list cluster information being incorrect and error messages not displayed in `serviceShadow` mode.
 - **Fixed** `EnvoyFilter` being deleted in `Istio` versions lower than `1.20`, causing no data for metrics.
@@ -163,7 +178,7 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 - **Fixed** automatic creation of governance policies for virtual machine services and inability to synchronize changes in labels to **WorkloadShadow** .
 - **Fixed** issue where network groups in multi-cloud interconnection couldn't have names starting with a digit.
 - **Fixed** loss of custom configuration when updating the mesh.
-- **Fixed** null pointer issue in **work-api** component due to removal of **label** from **Secret** .
+- **Fixed** null pointer issue in `work` component due to removal of **label** from **Secret** .
 - **Fixed** failure to delete mesh when system namespaces were included (they are uninstalled during deletion).
 - **Fixed** issue where **customMeshConfig** didn't take effect on **Operator** .
 - **Fixed** mismatch between **Operator** version and actual installed version of **Istio** .
