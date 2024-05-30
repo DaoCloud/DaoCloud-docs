@@ -939,6 +939,7 @@ nav:
                       - MySQL 主备关系: middleware/mysql/faq/faq-master-slave.md
                       - MySQL 其他故障: middleware/mysql/faq/faq-others.md
                       - MySQL MGR 排障: middleware/mysql/best-practice/mgr-troubleshooting.md
+                      - MySQL 主从模式应对网络闪断: middleware/mysql/faq/faq-mtsql-net.md
               - MongoDB 数据库:
                   - 介绍:
                       - 什么是 MongoDB: middleware/mongodb/intro/index.md
@@ -1000,8 +1001,10 @@ nav:
                       - 实例概览: middleware/elasticsearch/user-guide/basic.md
                       - 实例监控: middleware/elasticsearch/user-guide/monitor.md
                       - 查看 ES 日志: middleware/elasticsearch/user-guide/logs.md
-                  - 跨节点迁移 ES: middleware/elasticsearch/user-guide/migrate-es.md
                   - ES 故障排查: middleware/elasticsearch/faq/common-question-es.md
+                  - 最佳实践:
+                      - 双机房部署 Elasticsearch: middleware/elasticsearch/bestpractice/esin2IDC.md 
+                      - 跨节点迁移 ES: middleware/elasticsearch/user-guide/migrate-es.md
               - Kafka 消息队列:
                   - 介绍:
                       - 什么是 Kafka: middleware/kafka/intro/index.md
@@ -1018,6 +1021,8 @@ nav:
                       - 配置参数: middleware/kafka/user-guide/config.md
                       - 查看 Kafka 日志: middleware/kafka/user-guide/logs.md
                       - 参数模板: middleware/kafka/user-guide/template.md
+                  - 最佳实践:
+                      - Kafka 双机房部署灾备方案: middleware/kafka/bestpractice/kafkain2IDC.md
               - RabbitMQ 消息队列:
                   - 介绍:
                       - 什么是 RabbitMQ: middleware/rabbitmq/intro/index.md
