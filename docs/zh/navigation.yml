@@ -211,7 +211,8 @@ nav:
                   - 安装 metrics-server 插件: kpanda/user-guide/scale/install-metrics-server.md
                   - 安装 kubernetes-cronhpa-controller 插件: kpanda/user-guide/scale/install-cronhpa.md
                   - 安装 VPA 插件: kpanda/user-guide/scale/install-vpa.md
-                  - 创建 HPA 策略: kpanda/user-guide/scale/create-hpa.md
+                  - 基于内置指标创建 HPA: kpanda/user-guide/scale/create-hpa.md
+                  - 基于自定义指标创建 HPA: kpanda/user-guide/scale/custom-hpa.md
                   - 创建 VPA 策略: kpanda/user-guide/scale/create-vpa.md
                   - HPA 和 CronHPA 兼容规则: kpanda/user-guide/scale/hpa-cronhpa-compatibility-rules.md
                   - 其他方案:
