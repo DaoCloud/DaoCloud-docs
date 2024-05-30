@@ -56,12 +56,12 @@ The numerous modules included in DCE 5.0 can be downloaded separately to upgrade
 | Network | 64.03 MB | [:arrow_right: Go to Download](./modules/spidernet.md) | 2023-12-26 |
 | Storage | 1.62 GB | [:arrow_right: Go to Download](./modules/hwameistor.md)| 2023-11-06 |
 | MultiCloud Management | 583.51 MB | [:arrow_right: Go to Download](./modules/kairship.md) | 2024-04-24 |
-| Container Registry | 304.16 MB | [:arrow_right: Go to Download](./modules/kangaroo.md) | 2024-04-26 |
+| Container Registry | 304.16 MB | [:arrow_right: Go to Download](./modules/kangaroo.md) | 2024-05-29 |
 | Insight | 2.44 GB | [:arrow_right: Go to Download](./modules/insight.md) | 2024-05-06 |
-| Microservice Engine | 1.66 GB | [:arrow_right: Go to Download](./modules/skoala.md) | 2024-05-01 |
+| Microservice Engine | 1.66 GB | [:arrow_right: Go to Download](./modules/skoala.md) | 2024-05-27 |
 | Service Mesh | 1.03 GB | [:arrow_right: Go to Download](./modules/mspider.md) | 2024-04-30 |
 | Cloud Edge Collaboration | 100.37 MB | [:arrow_right: Go to Download](./modules/kant.md) | 2024-01-04 |
-| Global Management | 507.40 MB | [:arrow_right: Go to Download](./modules/ghippo.md) | 2024-04-11 |
+| Global Management | 507.40 MB | [:arrow_right: Go to Download](./modules/ghippo.md) | 2024-05-09 |
 | Operations Management | 91.00 MB | [:arrow_right: Go to Download](./modules/gmagpie.md) | 2024-04-30 |
 | Virtual Machine | 1.43 GB | [:arrow_right: Go to Download](./modules/virtnest.md) | 2024-04-30 |
 
