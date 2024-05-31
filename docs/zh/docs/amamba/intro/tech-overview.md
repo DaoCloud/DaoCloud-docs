@@ -1,5 +1,8 @@
 # 应用工作台技术概览
 
+*[Amamba]: DCE 5.0 应用工作台开发代号
+*[Mspider]: DCE 5.0 服务网格开发代号
+
 ## 目标
 
 - 对应用工作台架构有个整体认识
@@ -158,12 +161,12 @@ Amamba 基于 Argo Rollouts 提供渐进式发布的能力，相比于原生的 
 
 1. 更加易于使用，提供了 Step By Step 的界面来将当前集群中的工作负载转换成`Rollout` 开始灰度发布；
 2. 支持跨集群创建和管理；
-3. 与 mspider（使用 istio 作为流量控制工具时）和 skoala（使用 contour 时）有更好的集成；
+3. 与 Mspider（使用 istio 作为流量控制工具时）和 skoala（使用 contour 时）有更好的集成；
 
 问题：
 
-1. 现在 mspider 的托管网格模式下，子集群部署的虚拟服务（VirtualService）和目标规则（DesinationRule）不会生效，
-   这导致无法再这种场景下使用基于 Istio 的 Rollout，mspider 已经在优化，预计在 v0.26 版本里支持；
+1. 现在 Mspider 的托管网格模式下，子集群部署的虚拟服务（VirtualService）和目标规则（DesinationRule）不会生效，
+   这导致无法再这种场景下使用基于 Istio 的 Rollout，Mspider 已经在优化，预计在 v0.26 版本里支持；
 2. 基于 Deployment 创建 Rollout 会导致暂时的访问失败，社区已经在着手修复这个问题
    [argoproj/argo-rollouts #3111](https://github.com/argoproj/argo-rollouts/issues/3111)，预计将在 v1.7 版本里解决；
 
