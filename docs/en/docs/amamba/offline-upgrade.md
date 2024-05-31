@@ -5,7 +5,8 @@ date: 2024-02-19
 
 # Offline Upgrade
 
-The Workbench supports offline upgrades. You need to first load the image from the [installation package](../download/modules/amamba.md) and then run the corresponding command to upgrade.
+The Workbench supports offline upgrades. You need to first load the image from the
+[installation package](../download/modules/amamba.md) and then run the corresponding command to upgrade.
 
 ```shell
 tar -vxf amamba_x.y.z_amd64.tar
@@ -23,7 +24,9 @@ If there is an image repository in the environment, it is recommended to synchro
 
 1. Create `load-image.yaml` with the following content as the configuration file for charts-syncer.
 
-   All parameters in the `load-image.yaml` file are required. You need a private image repository and refer to the following instructions to modify each configuration. For detailed explanation of the charts-syncer configuration file, refer to its [official documentation](https://github.com/bitnami-labs/charts-syncer).
+    All parameters in the `load-image.yaml` file are required. You need a private image repository and refer to
+    the following instructions to modify each configuration. For detailed explanation of the charts-syncer
+    configuration file, refer to its [official documentation](https://github.com/bitnami-labs/charts-syncer).
 
     === "HARBOR chart repo already installed"
 
@@ -31,19 +34,19 @@ If there is an image repository in the environment, it is recommended to synchro
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: amamba-offline # (1)
+          intermediateBundlesPath: amamba-offline # (1)!
         target:
-          containerPrefixRegistry: 10.16.10.111 # (2)
+          containerPrefixRegistry: 10.16.10.111 # (2)!
           repo:
-            kind: HARBOR # (3)
-            url: http://10.16.10.111/chartrepo/release.daocloud.io # (4)
+            kind: HARBOR # (3)!
+            url: http://10.16.10.111/chartrepo/release.daocloud.io # (4)!
             auth:
-              username: "admin" # (5)
-              password: "Harbor12345" # (6)
+              username: "admin" # (5)!
+              password: "Harbor12345" # (6)!
           containers:
             auth:
-              username: "admin" # (7)
-              password: "Harbor12345" # (8) 
+              username: "admin" # (7)!
+              password: "Harbor12345" # (8)!
         ```
 
         1. Relative path to run the charts-syncer command, not the relative path between this YAML file and the offline package
@@ -61,19 +64,19 @@ If there is an image repository in the environment, it is recommended to synchro
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: amamba-offline # (1)
+          intermediateBundlesPath: amamba-offline # (1)!
         target:
-          containerPrefixRegistry: 10.16.10.111 # (2)
+          containerPrefixRegistry: 10.16.10.111 # (2)!
           repo:
-            kind: CHARTMUSEUM # (3)
-            url: http://10.16.10.111 # (4)
+            kind: CHARTMUSEUM # (3)!
+            url: http://10.16.10.111 # (4)!
             auth:
-              username: "rootuser" # (5)
-              password: "rootpass123" # (6)
+              username: "rootuser" # (5)!
+              password: "rootpass123" # (6)!
           containers:
             auth:
-              username: "rootuser" # (7)
-              password: "rootpass123" # (8) 
+              username: "rootuser" # (7)!
+              password: "rootpass123" # (8)!
         ```
 
         1. Relative path to run the charts-syncer command, not the relative path between this YAML file and the offline package
@@ -87,21 +90,22 @@ If there is an image repository in the environment, it is recommended to synchro
 
     === "Chart repo not installed"
 
-        If the chart repo is not installed in the current environment, charts-syncer also supports exporting the chart as a `tgz` file and storing it in a specified path.
+        If the chart repo is not installed in the current environment, charts-syncer also supports
+        exporting the chart as a `tgz` file and storing it in a specified path.
 
         ```yaml
         source:
-          intermediateBundlesPath: amamba-offline # (1)
+          intermediateBundlesPath: amamba-offline # (1)!
         target:
-          containerRegistry: 10.16.23.145 # (2)
-          containerRepository: release.daocloud.io/amamba # (3)
+          containerRegistry: 10.16.23.145 # (2)!
+          containerRepository: release.daocloud.io/amamba # (3)!
           repo:
             kind: LOCAL
-            path: ./local-repo # (4)
+            path: ./local-repo # (4)!
           containers:
             auth:
-              username: "admin" # (5)
-              password: "Harbor12345" # (6)
+              username: "admin" # (5)!
+              password: "Harbor12345" # (6)!
         ```
 
         1. Relative path to run the charts-syncer command, not the relative path between this YAML file and the offline package
@@ -177,7 +181,7 @@ If there is an image repository in the environment, it is recommended to synchro
     3. Update the helm repository for Workbench.
 
         ```shell
-        helm repo update amamba-release # (1)
+        helm repo update amamba-release # (1)!
         ```
 
         1. If the Helm version is too low and the update fails, try executing helm update repo

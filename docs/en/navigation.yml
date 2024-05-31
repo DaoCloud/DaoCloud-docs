@@ -83,9 +83,15 @@ nav:
                   - Use Cases: amamba/intro/scenarios.md
                   - Concepts: amamba/intro/concepts.md
                   - Permissions: amamba/intro/permission.md
+                  - Install and Upgrade:
+                      - Offline Upgrade: amamba/offline-upgrade.md
+                      - Deploy Pluggable Components: amamba/pluggable-components.md
+                      - Install and Configure Jenkins: 
+                        - Install Jenkins: amamba/user-guide/pipeline/install-jenkins.md
+                        - Jenkins HA Solution: amamba/quickstart/jenkins-HA.md
+                        - Jenkins Scenarios: amamba/quickstart/scenarios-config.md
+                      - Argo CD HA Deployment: amamba/quickstart/argo-cd-HA.md
                   - Workbench Release Notes: amamba/intro/release-notes.md
-              - Offline Upgrade: amamba/offline-upgrade.md
-              - Deploy Pluggable Components: amamba/pluggable-components.md
               - Namespaces: amamba/user-guide/namespace/namespace.md
               - Wizard:
                   - Build Git-based Microservice: amamba/user-guide/wizard/create-app-git.md
@@ -99,34 +105,44 @@ nav:
                   - Create OAM Apps: amamba/user-guide/oam/create.md
                   - Manage OAM Apps: amamba/user-guide/oam/manage.md
               - Pipelines:
-                  - Install Jenkins: amamba/user-guide/pipeline/install-jenkins.md
+                  - Quickly Create Pipeline: amamba/quickstart/deploy-pipeline.md
                   - Create Pipeline:
                       - Create a Custom Pipeline: amamba/user-guide/pipeline/create/custom.md
                       - Create a Pipeline by Jenkinsfile: amamba/user-guide/pipeline/create/jenkins.md
                       - Create a Pipeline from Template: amamba/user-guide/pipeline/create/template.md
                       - Create a Multi-branch Pipeline: amamba/user-guide/pipeline/create/mutilpipeline.md
-                  - Edit Pipeline: amamba/user-guide/pipeline/edit.md
-                  - Run Pipeline:
-                      - Auto Trigger Pipelines: amamba/user-guide/pipeline/run/trigger.md
-                      - Manual Trigger Pipelines: amamba/user-guide/pipeline/run/manual.md
-                  - Check Pipeline:
-                      - Check Pipeline Details: amamba/user-guide/pipeline/view/view-pipeline.md
-                      - Check Running Records: amamba/user-guide/pipeline/view/view-run.md
-                  - Jenkins Pipeline Syntax: amamba/user-guide/pipeline/pipeline-syntax.md
-                  - Pipeline Parameters:
-                      - Concepts in Pipeline: amamba/user-guide/pipeline/config/concept.md
-                      - Graphical Task Template Parameters: amamba/user-guide/pipeline/config/step.md
-                      - Pipeline Node (Agent): amamba/user-guide/pipeline/config/agent.md
-                  - Pipeline Template:
-                      - Create a Custom Pipeline Template: amamba/user-guide/pipeline/template/custom-template.md
-                      - Template File: amamba/user-guide/pipeline/template/info.md
-                  - Credential Management: amamba/user-guide/pipeline/credential.md
+                  - Use Pipeline:
+                      - Concepts:
+                          - Pipeline Concepts: amamba/user-guide/pipeline/config/concept.md
+                          - Pipeline Agent: amamba/user-guide/pipeline/config/agent.md
+                      - Edit Pipeline: 
+                          - Edit with UI: amamba/user-guide/pipeline/edit.md
+                          - Edit Jenkinsfile: amamba/user-guide/pipeline/pipeline-syntax.md
+                          - GUI Template Parameters: amamba/user-guide/pipeline/config/step.md
+                          - Credentials: amamba/user-guide/pipeline/credential.md
+                      - Run Pipeline:
+                          - Trigger: amamba/user-guide/pipeline/run/trigger.md
+                          - Manually Run: amamba/user-guide/pipeline/run/manual.md
+                      - View Pipeline:
+                          - View Pipeline Details: amamba/user-guide/pipeline/view/view-pipeline.md
+                          - View Pipeline Log: amamba/user-guide/pipeline/view/view-run.md
+                      - Pipeline Template:
+                          - Custom Template: amamba/user-guide/pipeline/template/custom-template.md
+                          - Template Details: amamba/user-guide/pipeline/template/info.md
+                  - More Skills:
+                      - Custom Image for Jenkins Agent: amamba/user-guide/pipeline/jenkins-agent.md
+                      - Custom Toolchain in Jenkins: amamba/quickstart/jenkins-custom.md
+                      - Run on a Specific Node: amamba/quickstart/pipeline-on-node.md                    
+                      - Build Multi-Arch Image: amamba/user-guide/pipeline/podman.md
+                      - Use Cacher in Pipeline: amamba/quickstart/job-cacher.md  
               - GitOps:
                   - Manually Sync App: amamba/user-guide/gitops/sync-manually.md
                   - Import Repository: amamba/user-guide/gitops/import-repo.md
                   - Create Argo CD App: amamba/user-guide/gitops/create-argo-cd.md
                   - Argo CD App Status: amamba/user-guide/gitops/argo-cd-status.md
+                  - Eanble Credential in GitOps: amamba/user-guide/gitops/gitops-secret.md
               - Canary Release:
+                  - Grayscale based on Argo Rollout: amamba/quickstart/argocd-rollout.md
                   - Create a Canary Delivery Job: amamba/user-guide/release/canary.md
                   - View a Canary Delivery Job: amamba/user-guide/release/check-canary.md
                   - Create Blue/Green Job: amamba/user-guide/release/blue-green.md
@@ -134,22 +150,16 @@ nav:
               - Toolchain Integration:
                   - Integrate Toolchain: amamba/user-guide/tools/integrated-toolchain.md
                   - Manage Toolchain Instances: amamba/user-guide/tools/toolchain-instances.md
+                  - R&D Project Management:
+                      - Check Issues: amamba/user-guide/project-mangement/issue.md
               - FAQs:
                   - Pipeline FAQs: amamba/faq/faq-jenkins.md
                   - GitOps FAQs: amamba/faq/faq-gitops.md
               - Best Practices:
-                  - Create a Pipeline: amamba/quickstart/deploy-pipeline.md
                   - CI/CD based on Pipeline + GitOps: amamba/quickstart/argocd-jenkins.md
                   - Implement Code Scanning with Pipelines: amamba/quickstart/scan-with-pipeline.md
                   - Integrate Harbor to Scan Image Security: amamba/quickstart/scan-with-harbor.md
-                  - Implement Progressive Delivery with Argo Rollout: amamba/quickstart/argocd-rollout.md
-                  - Run Pipelines on Specified Nodes: amamba/quickstart/pipeline-on-node.md
-                  - Jenkins Scenario Configuration: amamba/quickstart/scenarios-config.md
-                  - Custom Toolchain in Jenkins: amamba/quickstart/jenkins-custom.md
-                  - Jenkins High Availability Solution: amamba/quickstart/jenkins-HA.md
-                  - Contour-based Canary Release: amamba/quickstart/contour-argorollout.md
-                  - ArgoCD High Availability Solution: amamba/quickstart/argo-cd-HA.md
-                  - Using Cache in Pipeline: amamba/quickstart/job-cacher.md
+                  - Contour-based Grayscale Release: amamba/quickstart/contour-argorollout.md
       - Container:
           - Container Management:
               - Intro:
