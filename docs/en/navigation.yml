@@ -78,6 +78,7 @@ nav:
               - Intro:
                   - What is Workbench?: amamba/intro/index.md
                   - Features: amamba/intro/features.md
+                  - Technical Overview of Workbench: amamba/intro/tech-overview.md
                   - Competitiveness: amamba/intro/benefits.md
                   - Use Cases: amamba/intro/scenarios.md
                   - Concepts: amamba/intro/concepts.md
