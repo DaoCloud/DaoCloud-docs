@@ -3,6 +3,25 @@
 This page lists the Release Notes for global management of each version,
 so that you can understand the evolution path and feature changes of each version.
 
+## 2024-5-31
+
+### v0.27.0
+
+### Features
+
+- Platform Settings - Toggle for background video on the login page
+- Personal Center - View/Add/Update/Delete SSH certificate information
+- Create User and Change Password - Support encryption for username and password parameters when passed to API
+- Support for MySQL MGR mode
+
+### Optimizations
+
+- Upgraded Keycloak component to version 22.0.4
+
+### Fixes
+
+- Fixed an issue with GPU count statistics after licensing by GPU
+
 ## 2024-4-30
 
 ### v0.26.0
@@ -16,7 +35,7 @@ so that you can understand the evolution path and feature changes of each versio
 
 - Add unit test for audit log SDK
 
-### Bug Fixes
+### Fixes
 
 - Fix incorrect user-agent field in audit logs
 - Fix issue with audit logs showing alternating success and failure login records
@@ -67,7 +86,8 @@ so that you can understand the evolution path and feature changes of each versio
 
 #### Fixes
 
-- Fixed the issue of excessive updates to FoldersAuthz CR due to a large number of authorization requests causing k8s overload
+- Fixed the issue of excessive updates to FoldersAuthz CR due to a large number of authorization requests
+ causing k8s overload
 
 ## 2023-12-29
 
@@ -112,7 +132,8 @@ so that you can understand the evolution path and feature changes of each versio
 
 #### Improvements
 
-- Added Chinese language support to the __About__ - __Product Versions__ submodule for kcoral, dowl, kcollie, and virtnest
+- Added Chinese language support to the __About__ - __Product Versions__ submodule for kcoral, dowl, kcollie, 
+and virtnest
 
 #### Fixes
 
@@ -252,7 +273,8 @@ so that you can understand the evolution path and feature changes of each versio
 - Workspace authorization displays the details of the role's permissions
 - Unit test coverage can only rise, not fall.
 - OpenAPI supports versions, and OpenAPI documents support deprecation (other GProduct modules must be updated synchronously to the corresponding version in installer v0.8.0)
-- Operations Management: GMagpie uses database configuration specifications (Helm parameters, DSN) to dock with the installer.
+- Operations Management: GMagpie uses database configuration specifications (Helm parameters, DSN) to dock with 
+the installer.
 - Operations Management: Reports can be downloaded in Excel and CSV formats.
 - Operations Management: Supports Workspace reports.
 - Operations Management: Supports Workspace billing reports.
@@ -327,9 +349,11 @@ so that you can understand the evolution path and feature changes of each versio
 
 #### Features
 
-- Platform Settings->Appearance Customization->Advanced Customization->Login Page Customization and Post-Login Page Customization
+- Platform Settings->Appearance Customization->Advanced Customization->Login Page Customization and Post-Login 
+Page Customization
 - Support the keycloak quarkus architecture to run in a dual-stack environment
-- A job is added to the CI process to detect whether there are non-compliant images in the helm chart package and whether the installation parameters are correct
+- A job is added to the CI process to detect whether there are non-compliant images in the helm chart package 
+and whether the installation parameters are correct
 - Set the switch in helm values, you can switch audit related features with one click
 - Audit log supports recording kpanda page operations
 
@@ -459,7 +483,8 @@ Release date: 2022-10-21
 - **Added** Added support for ARM64 architecture
 - **Added** support https
 - **Added** Login -> background theme supports animation
-- **Added** Authorization Authentication -> Provide the front-end with the permission list of the currently logged-in user
+- **Added** Authorization Authentication -> Provide the front-end with the permission list of the currently 
+logged-in user
 - **Added** Added About -> Software Version -> Module Support Chinese Name
 - **Optimized** authorization authentication -> provide a job to ensure the synchronization of db and cr
 - **Optimized** LDAP -> configuration error checking
