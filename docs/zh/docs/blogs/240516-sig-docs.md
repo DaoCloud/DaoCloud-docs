@@ -1,7 +1,5 @@
 # 从敲代码到抒发文笔：与 SIG Docs 一起踏上传奇的 K8s 探险之旅
 
-> 转载自 [k8s.io/blog/](https://kubernetes.io/blog/2024/05/16/contribute-as-sig-docs-reviewer/)
-
 ![执笔写作](./images/writing.jpeg)
 
 你可能在论坛中听过或在开源社区的数字墙上见过这么一句格言：“做贡献不仅仅是写代码”。
