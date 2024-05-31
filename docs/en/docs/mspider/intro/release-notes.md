@@ -1,8 +1,8 @@
 ---
-MTPE: windsonsea
+MTPE: ModetaNiu
 Revised: done
 Pics: NA
-Date: 2023-10-30
+Date: 2024-05-31
 ---
 
 # Service Mesh Release Notes
@@ -541,7 +541,7 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 #### Fixes
 
 - **Fixed** an issue where the Istiod pod may fail to start due to a timing issue.
--**Fixed** an issue where the **workloadLabels** field in Istio resources is not properly handled by the controller.
+- **Fixed** an issue where the **workloadLabels** field in Istio resources is not properly handled by the controller.
 - **Fixed** an issue where the **istioctl** command fails to connect to the Istio API server when running in a containerized environment.
 
 ## 2022-11-30
