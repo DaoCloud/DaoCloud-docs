@@ -80,6 +80,7 @@ nav:
               - 介绍:
                   - 什么是应用工作台？: amamba/intro/index.md
                   - 功能总览: amamba/intro/features.md
+                  - 应用工作台技术概览: amamba/intro/tech-overview.md
                   - 产品优势: amamba/intro/benefits.md
                   - 适用场景: amamba/intro/scenarios.md
                   - 基本概念: amamba/intro/concepts.md
