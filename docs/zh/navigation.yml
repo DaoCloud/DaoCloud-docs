@@ -85,9 +85,15 @@ nav:
                   - 适用场景: amamba/intro/scenarios.md
                   - 基本概念: amamba/intro/concepts.md
                   - 权限说明: amamba/intro/permission.md
+                  - 安装和升级:
+                      - 离线升级: amamba/offline-upgrade.md
+                      - 部署工作台可插拔组件: amamba/pluggable-components.md
+                      - Jenkins安装和配置: 
+                        - 安装: amamba/user-guide/pipeline/install-jenkins.md
+                        - Jenkins高可用方案: amamba/quickstart/jenkins-HA.md
+                        - Jenkins 场景配置: amamba/quickstart/scenarios-config.md
+                      - Argo CD高可用部署: amamba/quickstart/argo-cd-HA.md
                   - Release Notes: amamba/intro/release-notes.md
-              - 离线升级: amamba/offline-upgrade.md
-              - 部署工作台可插拔组件: amamba/pluggable-components.md
               - 命名空间管理: amamba/user-guide/namespace/namespace.md
               - 向导:
                   - 基于 Git 仓构建微服务应用: amamba/user-guide/wizard/create-app-git.md
@@ -101,62 +107,61 @@ nav:
                   - 创建 OAM 应用: amamba/user-guide/oam/create.md
                   - 管理 OAM 应用: amamba/user-guide/oam/manage.md
               - 流水线:
-                  - 安装 Jenkins: amamba/user-guide/pipeline/install-jenkins.md
+                  - 快速创建流水线: amamba/quickstart/deploy-pipeline.md
                   - 创建流水线:
                       - 自定义创建: amamba/user-guide/pipeline/create/custom.md
                       - 基于 Jenkinsfile 创建: amamba/user-guide/pipeline/create/jenkins.md
                       - 基于模板创建: amamba/user-guide/pipeline/create/template.md
                       - 创建多分支流水线: amamba/user-guide/pipeline/create/mutilpipeline.md
-                  - 编辑流水线: amamba/user-guide/pipeline/edit.md
-                  - 运行流水线:
-                      - 触发器触发: amamba/user-guide/pipeline/run/trigger.md
-                      - 手动执行: amamba/user-guide/pipeline/run/manual.md
-                  - 查看流水线:
-                      - 查看流水线详情: amamba/user-guide/pipeline/view/view-pipeline.md
-                      - 查看流水线运行记录详情: amamba/user-guide/pipeline/view/view-run.md
-                  - Jenkins Pipeline 语法: amamba/user-guide/pipeline/pipeline-syntax.md
-                  - 流水线配置参数:
-                      - 流水线中的概念: amamba/user-guide/pipeline/config/concept.md
-                      - 图形化任务模板参数: amamba/user-guide/pipeline/config/step.md
-                      - 流水线节点(Agent): amamba/user-guide/pipeline/config/agent.md
-                  - 流水线模板:
-                      - 自定义模板: amamba/user-guide/pipeline/template/custom-template.md
-                      - 模板说明: amamba/user-guide/pipeline/template/info.md
-                  - 凭证管理: amamba/user-guide/pipeline/credential.md
+                  - 使用流水线:
+                      - 基本概念:
+                          - 流水线中的概念: amamba/user-guide/pipeline/config/concept.md
+                          - 流水线节点(Agent): amamba/user-guide/pipeline/config/agent.md
+                      - 编辑流水线: 
+                          - 使用界面编辑: amamba/user-guide/pipeline/edit.md
+                          - 编写Jenkinsfile: amamba/user-guide/pipeline/pipeline-syntax.md
+                          - 图形化任务模板参数: amamba/user-guide/pipeline/config/step.md
+                          - 凭证管理: amamba/user-guide/pipeline/credential.md
+                      - 运行流水线:
+                          - 触发器触发: amamba/user-guide/pipeline/run/trigger.md
+                          - 手动执行: amamba/user-guide/pipeline/run/manual.md
+                      - 查看流水线:
+                          - 查看流水线详情: amamba/user-guide/pipeline/view/view-pipeline.md
+                          - 查看流水线运行记录详情: amamba/user-guide/pipeline/view/view-run.md
+                      - 流水线模板:
+                          - 自定义模板: amamba/user-guide/pipeline/template/custom-template.md
+                          - 模板说明: amamba/user-guide/pipeline/template/info.md
+                  - 更多技巧:
+                      - 自定义Jenkins Agent镜像: amamba/user-guide/pipeline/jenkins-agent.md
+                      - 在Jenkins中使用自定义工具链: amamba/quickstart/jenkins-custom.md
+                      - 在指定的节点上运行: amamba/quickstart/pipeline-on-node.md                    
+                      - 构建多架构镜像: amamba/user-guide/pipeline/podman.md
+                      - 在流水线中使用缓存: amamba/quickstart/job-cacher.md                  
               - GitOps:
                   - 手动同步应用: amamba/user-guide/gitops/sync-manually.md
                   - 导入代码仓库: amamba/user-guide/gitops/import-repo.md
                   - 创建 Argo CD 应用: amamba/user-guide/gitops/create-argo-cd.md
                   - Argo CD 应用状态说明: amamba/user-guide/gitops/argo-cd-status.md
+                  - 在GitOps中启用凭证加密功能: amamba/user-guide/gitops/gitops-secret.md
               - 灰度发布:
+                  - 基于Argo Rollout实现灰度发布: amamba/quickstart/argocd-rollout.md
                   - 创建金丝雀发布任务: amamba/user-guide/release/canary.md
                   - 查看金丝雀发布任务: amamba/user-guide/release/check-canary.md
                   - 创建蓝绿发布任务: amamba/user-guide/release/blue-green.md
                   - 查看蓝绿发布任务: amamba/user-guide/release/check-bluegreen.md
-              - 项目研发管理:
-                  - 查看缺陷: amamba/user-guide/project-mangement/issue.md
               - 工具链集成:
                   - 集成工具链: amamba/user-guide/tools/integrated-toolchain.md
                   - 管理工具链实例: amamba/user-guide/tools/toolchain-instances.md
+                  - 项目研发管理:
+                    - 查看缺陷: amamba/user-guide/project-mangement/issue.md
               - 常见问题:
                   - 流水线相关问题: amamba/faq/faq-jenkins.md
                   - GitOps 相关问题: amamba/faq/faq-gitops.md
               - 最佳实践:
-                  - 快速创建流水线: amamba/quickstart/deploy-pipeline.md
                   - 流水线+GitOps实现CI/CD: amamba/quickstart/argocd-jenkins.md
                   - 使用流水线实现代码扫描: amamba/quickstart/scan-with-pipeline.md
                   - 集成Harbor实现镜像安全扫描: amamba/quickstart/scan-with-harbor.md
-                  - 基于Argo Rollout实现灰度发布: amamba/quickstart/argocd-rollout.md
-                  - 在指定的节点上运行流水线: amamba/quickstart/pipeline-on-node.md
-                  - Jenkins 场景配置: amamba/quickstart/scenarios-config.md
-                  - 在Jenkins中使用自定义工具链: amamba/quickstart/jenkins-custom.md
-                  - Jenkins高可用方案: amamba/quickstart/jenkins-HA.md
-                  - 构建多架构镜像: amamba/user-guide/pipeline/podman.md
                   - 基于Contour的灰度发布: amamba/quickstart/contour-argorollout.md
-                  - Argo-CD高可用部署: amamba/quickstart/argo-cd-HA.md
-                  - 在流水线中使用缓存: amamba/quickstart/job-cacher.md
-                  - 在GitOps中启用凭证加密功能: amamba/user-guide/gitops/gitops-secret.md
-                  - 自定义Jenkins Agent镜像: amamba/user-guide/pipeline/jenkins-agent.md
       - 容器:
           - 容器管理:
               - 介绍:
