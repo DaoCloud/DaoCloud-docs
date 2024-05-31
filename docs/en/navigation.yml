@@ -1271,6 +1271,7 @@ nav:
   - Blogs:
       - Index: blogs/index.md
       - 2024:
+          - A Legendary K8s Quest with SIG Docs: blogs/240516-sig-docs.md
           - Large Language Model Spec: blogs/240509-model-spec.md
           - Cloud Native AI Whitepapaer: blogs/240410-cnai-wp.md
           - Kubean Enters CNCF Sandbox: blogs/240416-kubean.md
