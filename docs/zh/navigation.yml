@@ -153,7 +153,7 @@ nav:
                   - 集成工具链: amamba/user-guide/tools/integrated-toolchain.md
                   - 管理工具链实例: amamba/user-guide/tools/toolchain-instances.md
                   - 项目研发管理:
-                    - 查看缺陷: amamba/user-guide/project-mangement/issue.md
+                      - 查看缺陷: amamba/user-guide/project-mangement/issue.md
               - 常见问题:
                   - 流水线相关问题: amamba/faq/faq-jenkins.md
                   - GitOps 相关问题: amamba/faq/faq-gitops.md
