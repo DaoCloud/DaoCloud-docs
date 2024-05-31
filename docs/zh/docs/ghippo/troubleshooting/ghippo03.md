@@ -28,14 +28,12 @@ MySQL 已就绪，无报错。在安装全局管理后 keycloak 无法启动（>
 
 ### 故障表现
 
-keycloak 无法正常启动，keycloak pod 运行状态为 `CrashLoopBackOff` 并且 keycloak 的 log 信息出现
+keycloak 无法正常启动，keycloak pod 运行状态为 `CrashLoopBackOff` 并且 keycloak 的 log 出现如下图所示的信息
 
 ![img.png](../images/14.png)
 
 ### 检查项
-
-运行下面的检查脚本，cpu 支持的类型
-
+运行下面的检查脚本，查询当前节点 cpu 的 x86-64架构的特征级别
 ```bash
 cat <<EOF > detect-cpu.sh
 #!/bin/sh -eu
@@ -55,7 +53,12 @@ chmod +x detect-cpu.sh
 sh detect-cpu.sh
 ```
 
-### 解决方法
+执行下面命令查看当前 cpu 的特性，如果输出中包含 sse4_2，则表示你的处理器支持SSE 4.2。
+```bash 
+lscpu | grep sse4_2
+```
 
-1. 由于该问题是 Keycloak 升级引起的（Ghippo v0.27.0），将 Ghippo 回滚到上一版本即可（Ghippo < v0.27.0）。
-2. 需要升级您的虚拟机或物理机 CPU 类型以支持 x86-64-v3 及以上，如何升级需要您咨询虚拟机平台提供商或物理机提供商。
+### 解决方法
+需要升级你的虚拟机或物理机 cpu 以支持 x86-64-v2 及以上，确保x86 cpu 指令集支持 sse4.2，如何升级需要你咨询虚拟机平台提供商或着物理机提供商。
+
+详见：https://github.com/keycloak/keycloak/issues/17290
