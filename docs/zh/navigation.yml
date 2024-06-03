@@ -27,27 +27,27 @@ nav:
               - 安装依赖项: install/install-tools.md
               - 安装社区版:
                   - 资源规划: install/community/resources.md
-                  - 从零部署 Kind 集群到安装 DCE 5.0 社区版: install/community/kind/online.md
-                  - 从零部署 K8s 集群到安装 DCE 5.0 社区版: install/community/k8s/k8s-dce-deploy.md
-                  - 已有 K8s 集群在线安装: install/community/k8s/online.md
-                  - 已有 K8s 集群离线安装: install/community/k8s/offline.md
+                  - 从零部署 Kind 集群: install/community/kind/online.md
+                  - 从零部署 K8s 集群: install/community/k8s/k8s-dce-deploy.md
+                  - 已有K8s集群上在线安装: install/community/k8s/online.md
+                  - 已有K8s集群上离线安装: install/community/k8s/offline.md
               - 安装商业版:
                   - 安装介绍: 
                       - 部署架构: install/commercial/deploy-arch.md
-                      - 配置文件: 
-                          - 集群配置文件 clusterConfig.yaml: install/commercial/cluster-config.md
-                          - 产品清单文件 manifest.yaml: install/commercial/manifest.md
+                      - 编辑配置文件: 
+                          - clusterConfig.yaml: install/commercial/cluster-config.md
+                          - manifest.yaml: install/commercial/manifest.md
                   - 部署要求: 
                       - 部署要求: install/commercial/deploy-requirements.md
                       - 前置检查: install/commercial/prepare.md
                       - 端口要求: install/commercial/port-requirements.md
-                      - 外接组件要求（非必须）: 
-                          - 使用外接服务存储Binaries资源: install/commercial/external/external-binary.md
-                          - 使用外接镜像仓库与 Chart 仓库: install/commercial/external/external-imageandchart.md
-                          - 使用外接中间件服务: install/commercial/external/external-middlewares.md
-                          - 使用外接服务存储OS Repo资源: install/commercial/external/external-os.md
+                      - 外接组件要求(非必须): 
+                          - 外接服务存储Binaries资源: install/commercial/external/external-binary.md
+                          - 外接镜像仓库与Chart仓库: install/commercial/external/external-imageandchart.md
+                          - 外接中间件服务: install/commercial/external/external-middlewares.md
+                          - 外接服务存储OS Repo资源: install/commercial/external/external-os.md
                   - 开始安装: install/commercial/start-install.md
-              - 在不同 K8s 发行版上安装:
+              - 在不同K8s发行版上安装:
                   - OpenShift OCP: install/k8s-install/ocp-install-dce5.0.md
                   - 阿里云 ECS: install/k8s-install/ecs-install-dce5.0.md
               - 在不同操作系统上安装:
@@ -65,14 +65,14 @@ nav:
                   - 导入离线资源: install/import.md
               - 安装排障: install/faq.md
               - 最佳实践:
-                  - 安装器离线包裁剪脚本使用手册: install/best-practices/offline-clipper.md
-                  - 使用场景示例: install/commercial/scenarios.md
+                  - 离线包裁剪脚本使用手册: install/best-practices/offline-clipper.md
+                  - 集群部署模式使用场景: install/commercial/scenarios.md
                   - DCE 5.0 一体机部署: install/best-practices/all-in-one-machine.md
-                  - 部署商业版时 etcd 采用 host 模式与控制面分离: install/best-practices/etcd-host-deploy.md
+                  - 部署商业版时etcd采用host模式与控制面分离: install/best-practices/etcd-host-deploy.md
                   - 火种节点高可用方案: install/best-practices/thinder-ha.md
                   - 火种节点备份与还原: install/best-practices/thinder-restore.md
-                  - 修复 CVE-2024-21626 漏洞: install/best-practices/cve-20240-21626.md
-                  - K8s 集群基于 docker 运行时的容器磁盘容量限制: install/best-practices/docker-storage.md
+                  - 修复CVE-2024-21626漏洞: install/best-practices/cve-20240-21626.md
+                  - K8s集群基于Docker的磁盘限制: install/best-practices/docker-storage.md
                   - 大规模集群参数说明: install/best-practices/large-deployments-par.md
               - 安装器 Release Notes: install/release-notes.md
       - 工作台:

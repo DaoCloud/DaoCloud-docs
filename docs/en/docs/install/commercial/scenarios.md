@@ -3,7 +3,7 @@ MTPE: windsonsea
 date: 2024-03-01
 ---
 
-# Cluster Deployment Mode Usage Scenarios
+# Cluster Deployment Scenarios
 
 DCE 5.0 provides [four cluster roles](../../kpanda/user-guide/clusters/cluster-role.md) to meet
 different usage scenarios. You can freely combine different cluster deployment combinations based
