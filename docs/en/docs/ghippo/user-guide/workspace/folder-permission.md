@@ -21,15 +21,15 @@ Folders have hierarchical capabilities, so when folders are mapped to department
 | --------------------------- | -------- | ------------ | ------------- | ------------- |
 | on the folder itself | view | &check; | &check; | &check; |
 | | Authorization | &check; | &cross; | &cross; |
-| | Modify Alias ​​| &check; | &check; | &cross; |
+| | Modify Alias ​​| &check; | &cross; | &cross; |
 | To Subfolder | Create | &check; | &cross; | &cross; |
 | | View | &check; | &check; | &check; |
 | | Authorization | &check; | &cross; | &cross; |
-| | Modify Alias ​​| &check; | &check; | &cross; |
+| | Modify Alias ​​| &check; | &cross; | &cross; |
 | workspace under it | create | &check; | &cross; | &cross; |
 | | View | &check; | &check; | &check; |
 | | Authorization | &check; | &cross; | &cross; |
-| | Modify Alias ​​| &check; | &check; | &cross; |
+| | Modify Alias ​​| &check; | &cross; | &cross; |
 | Workspace under it - Resource Group | View | &check; | &check; | &check; |
 | | resource binding | &check; | &cross; | &cross; |
 | | unbind | &check; | &cross; | &cross; |
