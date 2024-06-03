@@ -27,9 +27,9 @@ nav:
               - Install Dependencies: install/install-tools.md
               - Install DCE Community:
                   - Resource Planning: install/community/resources.md
-                  - Install DCE Community on a Kind Cluster: install/community/kind/online.md
-                  - Deploy a K8s Cluster from Scratch to DCE 5.0 Community: install/community/k8s/k8s-dce-deploy.md
-                  - Online in K8s Cluster: install/community/k8s/online.md
+                  - Deploy a Kind Cluster from Scratch: install/community/kind/online.md
+                  - Deploy a K8s Cluster from Scratch: install/community/k8s/k8s-dce-deploy.md
+                  - Online Install in K8s Cluster: install/community/k8s/online.md
                   - Offline Install in K8s Cluster: install/community/k8s/offline.md
               - Install DCE 5.0 Enterprise:
                   - Introduction: 
@@ -66,12 +66,14 @@ nav:
               - Troubleshoot: install/faq.md
               - Best Practices:
                   - Offline Clipper Script User Manual: install/best-practices/offline-clipper.md
-                  - Use Cases: install/commercial/scenarios.md
+                  - Cluster Deployment Scenarios: install/commercial/scenarios.md
                   - Deploy on DCE 5.0 Appliance: install/best-practices/all-in-one-machine.md
                   - etcd Deployed in Host and Separated from Control Plane: install/best-practices/etcd-host-deploy.md
                   - HA Bootstrap Nodes: install/best-practices/thinder-ha.md
                   - Backup and Restore of Bootstrap Node: install/best-practices/thinder-restore.md
                   - Fix CVE-2024-21626: install/best-practices/cve-20240-21626.md
+                  - Disk Limit in Docker-based K8s Cluster: install/best-practices/docker-storage.md
+                  - Cluster Parameters at Scale: install/best-practices/large-deployments-par.md
               - Installer Release Notes: install/release-notes.md
       - Workbench:
           - Workbench:
