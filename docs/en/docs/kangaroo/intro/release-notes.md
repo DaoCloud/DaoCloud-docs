@@ -1,6 +1,6 @@
 ---
 MTPE: windsonsea
-date: 2024-01-09
+date: 2024-06-03
 ---
 
 # Container Registry Release Notes
@@ -8,35 +8,50 @@ date: 2024-01-09
 This page lists the release notes of the container registry, so that you can
 understand the evolution path and feature changes of each version.
 
-*[Kangaroo]: Internal dev codename for the image repository
+*[Kangaroo]: Internal dev codename for the container registry
 *[Kpanda]: Internal dev codename for container management
-*[Harbor]: An open-source image repository tool and a CNCF graduated project
+*[Harbor]: An open-source container registry tool and a CNCF graduated project
+
+## 2023-05-31
+
+### v0.18.1
+
+- **Optimized** the accuracy of login command prompts after integrating Harbor administrator into the container registry
+- **Fixed** pagination issue in the image selector interface on the application workbench
+
+## 2023-04-30
+
+### v0.17.0
+
+- **Optimized** deletion prompts for Docker/Jfrog registry
+- **Optimized** image download counts
+- **Optimized** the registry space list view for Docker/Jfrog registry from the administrator's perspective
 
 ## 2023-03-29
 
 ### v0.16.1
 
-- **Added** best practice documentation for deploying Harbor via LoadBalancer mode.
-- **Added** support for upgrading Kangaroo through Kpanda Helm application updates.
-- **Fixed** issue of failed image deletion in Docker Registry.
-- **Fixed** issue of failed creation of image recycling rules for regular tenants (with wsadmin permissions).
-- **Fixed** dependency issue in creating and deleting Harbor with custom role management.
-- **Fixed** error that occurred when creating an image repository with Chinese characters in the description.
+- **Added** best practice documentation for deploying Harbor via LoadBalancer mode
+- **Added** support for upgrading Kangaroo through Kpanda Helm application updates
+- **Fixed** an issue with failed image deletion in Docker Registry
+- **Fixed** an issue with failed creation of image recycling rules for regular tenants (with wsadmin permissions)
+- **Fixed** dependency issue in creating and deleting Harbor with custom role management
+- **Fixed** an error occurred when creating a container registry with Chinese characters in the description
 
 ## 2023-01-31
 
 ### v0.15.0
 
-- **Fixed** an error when querying registry space for associated JFrog image repository
+- **Fixed** an error when querying registry space for associated JFrog container registry
 - **Fixed** a failure to generate login command
 
 ## 2023-12-29
 
 ### v0.14.0
 
-- **Improved** compatibility for supporting illegal k8s usernames
-- **Fixed** an issue of consuming excessive bandwidth during large-scale image synchronization
-- **Fixed** an issue of high latency in querying large-scale images in a single registry space
+- **Optimized** compatibility for supporting illegal k8s usernames
+- **Fixed** an issue with consuming excessive bandwidth during large-scale image synchronization
+- **Fixed** an issue with high latency in querying large-scale images in a single registry space
 
 ## 2023-11-30
 
@@ -52,8 +67,8 @@ understand the evolution path and feature changes of each version.
 - **Added** support for quick deployment of middleware when creating a managed Harbor in non-platinum versions
 - **Added** best practices for publishing Harbor Nginx configuration
 - **Added** best practices for resource planning when releasing container registries
-- **Improved** resource validation when creating a managed Harbor
-- **Improved** prompt for installing cert manager as a dependency for Harbor operator
+- **Optimized** resource validation when creating a managed Harbor
+- **Optimized** prompt for installing cert manager as a dependency for Harbor operator
 
 ## 2023-09-06
 
@@ -63,8 +78,8 @@ understand the evolution path and feature changes of each version.
 - **Added** deployment to download station
 - **Added** best practices for Nginx proxy, resource capacity planning
 - **Fixed** an issue preventing updates to managed Harbor description
-- **Improved** display of truncated registry space in bootstrap container registry
-- **Improved** a frontend error for WS admin when creating recycle rules
+- **Optimized** display of truncated registry space in bootstrap container registry
+- **Optimized** a frontend error for WS admin when creating recycle rules
 
 ## 2023-08-02
 
@@ -75,9 +90,9 @@ understand the evolution path and feature changes of each version.
 - **Added** best practices for logging into non-secure container registry
 - **Added** support for using the internal middleware MINIO when creating managed Harbor
 - **Added** support for the PG mode of Renmin Jincang
-- **Improved** the format validation for PG and Redis addresses when creating managed Harbor
-- **Improved** grayed-out and prompt optimization for unauthorized access
-- **Improved** handling of special cases after unbinding clusters
+- **Optimized** the format validation for PG and Redis addresses when creating managed Harbor
+- **Optimized** grayed-out and prompt optimization for unauthorized access
+- **Optimized** handling of special cases after unbinding clusters
 
 ## 2023-07-02
 
@@ -85,8 +100,8 @@ understand the evolution path and feature changes of each version.
 
 - **Added** support for selecting the middleware `minio` instance when creating managed harbor
 - **Added** support for key auditing functionality in `Ghippo`
-- **Improved** Validated container registry resources under a workspace (WS) when deleting the workspace
-- **Improved** Handled abnormal states of managed harbor after unbinding clusters
+- **Optimized** validation for container registry resources under a workspace (WS) when deleting the workspace
+- **Optimized** state info of managed harbor after unbinding clusters
 - **Fixed** an issue where `Ghippo workspace` resources could not be unbound
 - **Fixed** an issue with `Sidecar` injection
 - **Fixed** an issue where images could not be pushed when selecting `minio` during harbor creation
@@ -110,12 +125,12 @@ understand the evolution path and feature changes of each version.
 - **Fixed** search issue in the docker registry type `repository`
 - **Fixed** existing account problem when creating robot accounts
 
-#### Improvements
+#### Optimization
 
 - **Added** job cleanup logic
 - **Removed** the `project` field from the interface for obtaining temporary login instructions
-- **Improved** login instructions
-- **Improved** logic for image scanning judgment
+- **Optimized** login instructions
+- **Optimized** logic for image scanning judgment
 
 ## 2023-05-08
 
@@ -124,7 +139,7 @@ understand the evolution path and feature changes of each version.
 #### New features
 
 - **Added** support page configuration image synchronization between multiple instances
-- **Added** support for associating `jfrog` type repositories in workspaces
+- **Added** support for associating `jfrog` registry in workspaces
 - **Added** support for creating managed harbor in offline `ARM` environment
 
 #### Fixes
@@ -132,9 +147,9 @@ understand the evolution path and feature changes of each version.
 - **Fixed** the problem that the registry integration URL could not be updated after modification
 - **Fixed** logical incompatibilities after `Project` was deleted from the native harbor page
 
-#### Improvements
+#### Optimization
 
-- **Improved** the performance of docking `jfrog` interface to within `2s`
+- **Optimized** the performance of docking `jfrog` interface to within `2s`
 
 ## 2023-04-07
 
@@ -152,9 +167,9 @@ understand the evolution path and feature changes of each version.
 
 - **Fixed** an issue that the installation byte of harbor-operator helm is too large
 
-#### Improvements
+#### Optimization
 
-- **Improved** the performance of the image list feature page, and propose a separate `Project` list page
+- **Optimized** the performance of the image list feature page, and propose a separate `Project` list page
 
 ## 2023-03-15
 
