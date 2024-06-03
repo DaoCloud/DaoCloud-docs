@@ -1,4 +1,4 @@
-# 限制 docker 单容器可占用的磁盘空间
+# 限制 Docker 单容器可占用的磁盘空间
 
 Docker 在 17.07.0-ce 版本中引入 overlay2.zize，本文介绍如何使用 overlay2.zize 来限制 docker 单容器可占用的磁盘空间。
 
