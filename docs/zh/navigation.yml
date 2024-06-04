@@ -656,15 +656,15 @@ nav:
                       - 升级注意事项: insight/quickstart/install/upgrade-note.md
                       - 已知问题: insight/quickstart/install/knownissues.md
                       - 大规模日志部署调整: insight/best-practice/insight-kafka.md
-                  - 其他发行版安装 insight-agent:
-                      - DCE 4: insight/quickstart/other/install-agentindce.md
+                  - 其他发行版安装insight-agent:
+                      - DCE 4.0: insight/quickstart/other/install-agentindce.md
                       - OpenShift 4.x: insight/quickstart/other/install-agent-on-ocp.md
               - 开始观测:
                   - OpenTelemetry 观测:
-                      - insight/quickstart/otel/otel.md
-                      - Operator 无侵入增强应用: insight/quickstart/otel/operator.md
-                      - OTel SDK 暴露指标: insight/quickstart/otel/meter.md
-                      - 向 Insight 发送链路数据: insight/quickstart/otel/send_tracing_to_insight.md
+                      - 使用OTel赋予应用可观测: insight/quickstart/otel/otel.md
+                      - Operator无侵入增强应用: insight/quickstart/otel/operator.md
+                      - OTel SDK暴露指标: insight/quickstart/otel/meter.md
+                      - 向Insight发送链路数据: insight/quickstart/otel/send_tracing_to_insight.md
                       - 链路数据尾部采样方案: insight/best-practice/tail-based-sampling.md
                   - Java 应用观测:
                       - insight/quickstart/jvm-monitor/jvm-catelogy.md
@@ -672,8 +672,8 @@ nav:
                       - 使用OTel Java Agent暴露JVM监控指标: insight/quickstart/jvm-monitor/otel-java-agent.md
                       - 已有JVM指标的Java应用对接可观测性: insight/quickstart/jvm-monitor/legacy-jvm.md
                   - Golang 应用观测:
-                      - OTel SDK 增强 Go 应用: insight/quickstart/otel/golang.md
-                      - OTel 自动探针增强 Go 应用: insight/quickstart/otel/golang-ebpf.md
+                      - OTel SDK增强Go应用: insight/quickstart/otel/golang.md
+                      - OTel自动探针增强Go应用: insight/quickstart/otel/golang-ebpf.md
                   - 其他观测技术集成:
                       - 使用OTel接收SkyWalking链路数据: insight/best-practice/sw-to-otel.md
               - 仪表盘:
