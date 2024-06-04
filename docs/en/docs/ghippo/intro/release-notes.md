@@ -11,7 +11,8 @@ so that you can understand the evolution path and feature changes of each versio
 
 - **Added** an option in Settings to show/hide the background video on the login page
 - **Added** features to view/add/update/delete SSH certificate information in Personal Center
-- **Added** features of creating user and changing password:  encryption for username and password parameters when passed to API
+- **Added** features of creating user and changing password:
+  encryption for username and password parameters when passed to API
 - **Added** MySQL MGR mode
 
 ### Optimization
@@ -39,8 +40,8 @@ so that you can understand the evolution path and feature changes of each versio
 
 - **Fixed** an issue with the user-agent field in Audit Logs
 - **Fixed** an issue where Audit Logs login records often show one failure followed by one success
-- **Fixed** an issue in __Operations Management__ where validation prompts were not removed after clicking cancel on 
-  billing configuration changes
+- **Fixed** an issue in __Operations Management__ where validation prompts were not removed
+  after clicking cancel on billing configuration changes
 - **Fixed** an issue in __Operations Management__ with GPU billing duration calculation in pod reports
 
 ## 2024-4-1
@@ -132,8 +133,8 @@ so that you can understand the evolution path and feature changes of each versio
 
 #### Optimization
 
-- **Optimized** Chinese language support to the __About__ - __Product Versions__ submodule for kcoral, dowl, kcollie, 
-and virtnest
+- **Optimized** Chinese language support to the __About__ - __Product Versions__ submodule
+  for kcoral, dowl, kcollie, and virtnest
 
 #### Fixes
 
@@ -198,7 +199,7 @@ and virtnest
 - **Added** resource group binding to mesh / mesh-namespace
 - **Added** tips for custom role permission points
 - **Added** Settings -> Security Policies -> limiting multiple concurrent sessions for a single user
-- **Added** Settings -> Security Policies -> limiting the maximum number of concurrent session connections 
+- **Added** Settings -> Security Policies -> limiting the maximum number of concurrent session connections
   for the system
 
 #### Optimization
