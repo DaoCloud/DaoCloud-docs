@@ -6,8 +6,8 @@ hide:
 # Container Management
 
 Container management is a containerization management module for cloud native applications
-built on Kubernetes. It is the core of DCE 5.0 and is based on a native multi-cluster architecture,
-decoupling the underlying infrastructure to achieve unified management across multiple clouds and clusters.
+built on Kubernetes. It is the core of DCE 5.0. Based on a native multi-cluster architecture,
+it decouples the underlying infrastructure to achieve unified management across multiple clouds and clusters.
 This greatly simplifies the process of migrating enterprise applications to the cloud and reduces
 operational and manpower costs. With container management, you can easily create Kubernetes clusters
 and quickly build an enterprise-grade container cloud management platform.
@@ -53,9 +53,9 @@ and quickly build an enterprise-grade container cloud management platform.
     Namespaces provide a way to build virtual space to isolate physical resources and only
     affect objects with namespaces.
 
-    - [Create/Delete Namespace](../user-guide/namespaces/createns.md)
+    - [Create/Delete Namespaces](../user-guide/namespaces/createns.md)
     - [Namespace-exclusive Nodes](../user-guide/namespaces/exclusive.md)
-    - [Configure Pod Security Policies for Namespace](../user-guide/namespaces/podsecurity.md)
+    - [Configure Pod Security Policies for Namespaces](../user-guide/namespaces/podsecurity.md)
 
 - :octicons-tasklist-16:{ .lg .middle } __Workloads__
 
