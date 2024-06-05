@@ -1,6 +1,7 @@
 # Offline Upgrade Backup and Restore Module
 
-This page explains how to install or upgrade the backup and restore module after [downloading it from the Download Center](../../../download/modules/kcoral.md).
+This page explains how to install or upgrade the backup and restore module after
+[downloading it from the Download Center](../../../download/modules/kcoral.md).
 
 !!! info
 
@@ -8,13 +9,13 @@ This page explains how to install or upgrade the backup and restore module after
 
 ## Load Images from Downloaded Package
 
-You can load the images using one of the following two methods. When an image repository exists in the environment, it is recommended to use chart-syncer to synchronize the images to the image repository, as it is more efficient and convenient.
+You can load the images using one of the following two methods. When the container registry exists in the environment, it is recommended to use chart-syncer to synchronize the images to the container registry, as it is more efficient and convenient.
 
-#### Method 1: Use chart-syncer to Synchronize Images
+### Method 1: Use chart-syncer to Synchronize Images
 
-Using chart-syncer, you can upload the charts and their dependent image packages from the downloaded package to the image repository and Helm repository used by the installer.
+Using chart-syncer, you can upload the charts and their dependent image packages from the downloaded package to the container registry and Helm repository used by the installer.
 
-First, find a node that can connect to the image repository and Helm repository (such as the Spark node), and create a __load-image.yaml__ configuration file on the node, filling in the configuration information for the image repository and Helm repository.
+First, find a node that can connect to the container registry and Helm repository (such as the Spark node), and create a __load-image.yaml__ configuration file on the node, filling in the configuration information for the container registry and Helm repository.
 
 1. Create __load-image.yaml__ file
 
@@ -28,21 +29,31 @@ First, find a node that can connect to the image repository and Helm repository 
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: kcoral # The path where the .tar.gz package is located after using chart-syncer
+          intermediateBundlesPath: kcoral # (1)!
         target:
-          containerRegistry: 10.16.10.111 # Image repository address
-          containerRepository: release.daocloud.io/kcoral # Image repository path
+          containerRegistry: 10.16.10.111 # (2)!
+          containerRepository: release.daocloud.io/kcoral # (3)!
           repo:
-            kind: HARBOR # Helm Chart repository type
-            url: http://10.16.10.111/chartrepo/release.daocloud.io # Helm repository address
+            kind: HARBOR # (4)!
+            url: http://10.16.10.111/chartrepo/release.daocloud.io # (5)!
             auth:
-              username: "admin" # Image repository username
-              password: "Harbor12345" # Image repository password
+              username: "admin" # (6)!
+              password: "Harbor12345" # (7)!
           containers:
             auth:
-              username: "admin" # Helm repository username
-              password: "Harbor12345" # Helm repository password
+              username: "admin" # (8)!
+              password: "Harbor12345" # (9)!
         ```
+
+        1. The path where the .tar.gz package is located after using chart-syncer
+        2. Container registry address
+        3. Container registry path
+        4. Helm Chart repository type
+        5. Helm repository address
+        6. Container registry username
+        7. Container registry password
+        8. Helm repository username
+        9. Helm repository password
 
     === "Helm repo not added"
 
@@ -50,18 +61,25 @@ First, find a node that can connect to the image repository and Helm repository 
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: kcoral # The path where the .tar.gz package is located after using chart-syncer
+          intermediateBundlesPath: kcoral # (1)!
         target:
-          containerRegistry: 10.16.10.111 # Image repository URL
-          containerRepository: release.daocloud.io/kcoral # Image repository path
+          containerRegistry: 10.16.10.111 # (2)!
+          containerRepository: release.daocloud.io/kcoral # (3)!
           repo:
             kind: LOCAL
-            path: ./local-repo # Local path to the chart
+            path: ./local-repo # (4)!
           containers:
             auth:
-              username: "admin" # Image repository username
-              password: "Harbor12345" # Image repository password
+              username: "admin" # (5)!
+              password: "Harbor12345" # (6)!
         ```
+
+        1. The path where the .tar.gz package is located after using chart-syncer
+        2. Container registry URL
+        3. Container registry path
+        4. Local path to the chart
+        5. Container registry username
+        6. Container registry password
 
 1. Run the command to synchronize the images.
 
@@ -69,7 +87,7 @@ First, find a node that can connect to the image repository and Helm repository 
     charts-syncer sync --config load-image.yaml
     ```
 
-#### Method 2: Load Images using Docker or containerd
+### Method 2: Load Images using Docker or containerd
 
 Unpack and load the image files.
 
@@ -81,9 +99,7 @@ Unpack and load the image files.
 
     After successful extraction, you will get three files:
 
-    - hints.yaml
-    - images.tar
-    - original-chart
+    - kcoral.bundle.tar
 
 2. Load the images into Docker or containerd from the local directory.
 
@@ -155,19 +171,12 @@ There are two upgrade methods. You can choose the appropriate upgrade method bas
         helm get values kcoral -n kcoral-system -o yaml > bak.yaml
         ```
 
-    1. Update kcoral crds
-
-        ```shell
-        helm pull kcoral/kcoral --version 0.5.0 && tar -zxf kcoral-0.5.0.tgz
-        kubectl apply -f kcoral/crds
-        ```
-
     1. Run `helm upgrade` .
 
-        Before upgrading, it is recommended to replace the __global.imageRegistry__ field in the __bak.yaml__ file with the image repository address you are currently using.
+        Before upgrading, it is recommended to replace the __global.imageRegistry__ field in the __bak.yaml__ file with the container registry address you are currently using.
 
         ```shell
-        export imageRegistry={your image repository}
+        export imageRegistry={your container registry}
         ```
 
         ```shell
@@ -188,18 +197,12 @@ There are two upgrade methods. You can choose the appropriate upgrade method bas
         helm get values kcoral -n k pan da-system -o yaml > bak.yaml
         ```
 
-    1. Update kcoral crds
-
-        ```shell
-        kubectl apply -f ./crds
-        ```
-
     1. Run `helm upgrade` .
 
-        Before upgrading, it is recommended to replace the __global.imageRegistry__ in the __bak.yaml__ file with the image repository address you are currently using.
+        Before upgrading, it is recommended to replace the __global.imageRegistry__ in the __bak.yaml__ file with the container registry address you are currently using.
 
         ```shell
-        export imageRegistry={your image repository}
+        export imageRegistry={your container registry}
         ```
 
         ```shell
