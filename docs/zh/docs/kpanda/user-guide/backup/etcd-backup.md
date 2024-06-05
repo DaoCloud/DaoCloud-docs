@@ -40,8 +40,10 @@ ETCD 备份是以集群数据为核心的备份。在硬件设备损坏，开发
             2. 获取 ETCD Pod 的 __listen-client-urls__ 中的端口号
 
                 ```shell
-                kubectl get po -n kube-system ${etcd_pod_name} -oyaml | grep listen-client-urls # 将 __etcd_pod_name__ 替换为实际的 Pod 名称
+                kubectl get po -n kube-system ${etcd_pod_name} -oyaml | grep listen-client-urls # (1)!
                 ```
+
+                1. 将 __etcd_pod_name__ 替换为实际的 Pod 名称
             
                 预期输出结果如下，节点 IP 后的数字即为端口号:
 
@@ -107,7 +109,7 @@ ETCD 备份是以集群数据为核心的备份。在硬件设备损坏，开发
     - 备份链长度：最多保留多少条备份数据。默认为 30 条。
     - 备份频率：支持小时、日、周、月级别和自定义方式。
 
-        ![定时备份](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/etcd04.png)
+    ![定时备份](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/etcd04.png)
 
 4. 参考以下信息填写 __存储位置__ 。
    
@@ -117,7 +119,7 @@ ETCD 备份是以集群数据为核心的备份。在硬件设备损坏，开发
     - 用户名：MinIO 的登录用户名
     - 密码：MinIO 的登录密码
 
-        ![存储位置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/etcd05.png)
+    ![存储位置](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/etcd05.png)
 
 5. 点击 __确定__ 后页面自动跳转到备份策略列表，可以查看目前创建好的所有策略。
 
@@ -125,7 +127,7 @@ ETCD 备份是以集群数据为核心的备份。在硬件设备损坏，开发
     - 当备份方式为手动时，可以点击 __立即执行__ 进行备份。
     - 当备份方式为定时备份时，则会根据配置的时间进行备份。
 
-        ![成功创建](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/etcd07.png)
+    ![成功创建](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/etcd07.png)
 
 ## 查看备份策略日志
 

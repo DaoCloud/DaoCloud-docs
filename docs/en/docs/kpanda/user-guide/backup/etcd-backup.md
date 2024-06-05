@@ -30,8 +30,7 @@ Follow the steps below to create an etcd backup.
 1. Enter  __Container Management__ -> __Backup Recovery__ -> __ETCD Backup__ page, you can see all the current 
    backup policies. Click __Create Backup Policy__ on the right.
 
-![Backup policy list](../images/etcd01.png)
-    
+    ![Backup policy list](../images/etcd01.png)
 
 2. Fill in the __Basic Information__. Then, click __Next__ to automatically verify the connectivity of ETCD. If
    the verification passes, proceed to the next step.
@@ -57,18 +56,21 @@ Follow the steps below to create an etcd backup.
             2. Get the port number from the __listen-client-urls__ of the ETCD Pod
 
                 ```shell
-                kubectl get po -n kube-system ${etcd_pod_name} -oyaml | grep listen-client-urls # Replace __etcd_pod_name__ with the actual Pod name
-    ```
+                kubectl get po -n kube-system ${etcd_pod_name} -oyaml | grep listen-client-urls # (1)!
+                ```
+
+                1. Replace __etcd_pod_name__ with the actual Pod name
 
                 The expected output is as follows, where the number after the node IP is the port number:
 
                 ```shell
                 - --listen-client-urls=https://127.0.0.1:2379,https://10.6.229.191:2379
                 ```
-               
-    - Fill in the CA certificate, you can use the following command to view the certificate content. Then, copy and paste it to the corresponding location:
 
-        === "Standard Kubernetes Cluster" 
+    - Fill in the CA certificate, you can use the following command to view the certificate content.
+      Then, copy and paste it to the proper location:
+
+        === "Standard Kubernetes Cluster"
 
             ```shell
             cat /etc/kubernetes/ssl/etcd/ca.crt
@@ -80,7 +82,7 @@ Follow the steps below to create an etcd backup.
             cat /etc/daocloud/dce/certs/ca.crt
             ```
 
-    - Fill in the Cert certificate, you can use the following command to view the content of the certificate. Then, copy and paste it to the corresponding location:
+    - Fill in the Cert certificate, you can use the following command to view the content of the certificate. Then, copy and paste it to the proper location:
 
         === "Standard Kubernetes Cluster"
         
@@ -94,16 +96,16 @@ Follow the steps below to create an etcd backup.
             cat /etc/daocloud/dce/certs/etcd/server.crt
             ```
 
-    - Fill in the Key, you can use the following command to view the content of the certificate and copy and paste it to the corresponding location:
+    - Fill in the Key, you can use the following command to view the content of the certificate and copy and paste it to the proper location:
 
         === "Standard Kubernetes Cluster"
-        
+
             ```shell
             cat /etc/kubernetes/ssl/apiserver-etcd-client.key
             ```
 
         === "DCE 4.0 Cluster"
-        
+
             ```shell
             cat /etc/daocloud/dce/certs/etcd/server.key
             ```
@@ -112,15 +114,15 @@ Follow the steps below to create an etcd backup.
 
     !!! note
 
-        Click __How to get__ below the input box to see how to obtain the corresponding information on the UI page.        
+        Click __How to get__ below the input box to see how to obtain the proper information on the UI page.        
 
 3. Refer to the following information to fill in the __Backup Policy__.
 
     - Backup Method: Choose either manual backup or scheduled backup
-    
+
         - Manual Backup: Immediately perform a full backup of ETCD data based on the backup configuration.
         - Scheduled Backup: Periodically perform full backups of ETCD data according to the set backup frequency.
-    
+
     - Backup Chain Length: the maximum number of backup data to retain. The default is 30.
     - Backup Frequency: it can be per hour, per day, per week or per month, and can also be customized.
 
@@ -132,7 +134,7 @@ Follow the steps below to create an etcd backup.
     - Username: The login username for MinIO
     - Password: The login password for MinIO
 
-5. After clicking __Confirm__, the page will automatically redirect to the backup policy list, where you can 
+5. After clicking __OK__ , the page will automatically redirect to the backup policy list, where you can 
    view all the currently created ones.
 
     - Click the __ⵗ__ action button on the right side of the policy to view logs, view YAML, update the policy, stop the policy, or execute the policy immediately.
@@ -154,5 +156,3 @@ Go to __Container Management__ -> __Backup Recovery__ -> __ETCD Backup__, click 
 
     Each time a backup is executed, a corresponding recovery point is generated, which can be used to quickly restore
     the application from a successful recovery point.
-
-
