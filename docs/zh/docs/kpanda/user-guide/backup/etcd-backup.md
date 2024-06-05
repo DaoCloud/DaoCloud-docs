@@ -43,7 +43,7 @@ ETCD 备份是以集群数据为核心的备份。在硬件设备损坏，开发
                 kubectl get po -n kube-system ${etcd_pod_name} -oyaml | grep listen-client-urls # 将 __etcd_pod_name__ 替换为实际的 Pod 名称
                 ```
             
-            预期输出结果如下，节点 IP 后的数字即为端口号:
+                预期输出结果如下，节点 IP 后的数字即为端口号:
 
                 ```shell
                 - --listen-client-urls=https://127.0.0.1:2379,https://10.6.229.191:2379
