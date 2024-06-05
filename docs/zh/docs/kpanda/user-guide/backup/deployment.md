@@ -36,7 +36,7 @@
     - 命名空间：需要进行备份的命名空间，支持多选。
     - 高级配置：根据资源标签对命名空间内的特定资源进行备份如某个应用，或者备份时根据资源标签对命名空间内的特定资源不进行备份。
 
-        ![操作菜单](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/backupd20483.png)
+    ![操作菜单](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/backupd20483.png)
 
 4. 参考下方说明设置备份执行频率，然后点击 __下一步__ 。
 
@@ -46,7 +46,7 @@
         - 直接复制：直接复制数据卷（PV）中的数据用于备份；
         - 使用 CSI 快照：使用 CSI 快照来备份数据卷（PV）。需要集群中有可用于备份的 CSI 快照类型。
 
-            ![操作菜单](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/backupd20484.png)
+        ![操作菜单](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/backupd20484.png)
 
 5. 点击 __确定__ ，页面会自动返回应用备份计划列表，找到新建的 __dao-2048__ 备份计划，执行 __立即备份__ 操作。
 

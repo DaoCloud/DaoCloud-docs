@@ -35,7 +35,7 @@ velero 是一个备份和恢复 Kubernetes 集群资源的开源工具。它可�
     - 失败删除：可选参数，开启后，将默认同步开启就绪等待。如果安装失败，将删除安装相关资源。
     - 详情日志：可选参数，开启后将输出安装过程的详细日志。
 
-        ![备份恢复](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/backup3.png)
+    ![备份恢复](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/backup3.png)
 
     !!! note
 
@@ -52,7 +52,7 @@ velero 是一个备份和恢复 Kubernetes 集群资源的开源工具。它可�
 
     !!! note " __Use existing secret__ 参数示例如下："
 
-        ```yaml
+        ```config
         [default]
         aws_access_key_id = minio
         aws_secret_access_key = minio123

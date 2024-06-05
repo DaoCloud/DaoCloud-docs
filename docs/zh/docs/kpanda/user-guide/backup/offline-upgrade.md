@@ -10,7 +10,7 @@
 
 您可以根据下面两种方式之一加载镜像，当环境中存在镜像仓库时，建议选择 chart-syncer 同步镜像到镜像仓库，该方法更加高效便捷。
 
-#### 方式一：使用 chart-syncer 同步镜像
+### 方式一：使用 chart-syncer 同步镜像
 
 使用 chart-syncer 可以将您下载的安装包中的 chart 及其依赖的镜像包上传至安装器部署 DCE 时使用的镜像仓库和 helm 仓库。
 
@@ -28,21 +28,31 @@
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: kcoral # 使用 chart-syncer 之后 .tar.gz 包所在的路径
+          intermediateBundlesPath: kcoral # (1)!
         target:
-          containerRegistry: 10.16.10.111 # 镜像仓库地址
-          containerRepository: release.daocloud.io/kcoral # 镜像仓库路径
+          containerRegistry: 10.16.10.111 # (2)!
+          containerRepository: release.daocloud.io/kcoral # (3)!
           repo:
-            kind: HARBOR # Helm Chart 仓库类别
-            url: http://10.16.10.111/chartrepo/release.daocloud.io # Helm 仓库地址
+            kind: HARBOR # (4)!
+            url: http://10.16.10.111/chartrepo/release.daocloud.io # (5)!
             auth:
-              username: "admin" # 镜像仓库用户名
-              password: "Harbor12345" # 镜像仓库密码
+              username: "admin" # (6)!
+              password: "Harbor12345" # (7)!
           containers:
             auth:
-              username: "admin" # Helm 仓库用户名
-              password: "Harbor12345" # Helm 仓库密码
+              username: "admin" # (8)!
+              password: "Harbor12345" # (9)!
         ```
+
+        1. 使用 chart-syncer 之后 .tar.gz 包所在的路径
+        2. 镜像仓库地址
+        3. 镜像仓库路径
+        4. Helm Chart 仓库类别
+        5. Helm 仓库地址
+        6. 镜像仓库用户名
+        7. 镜像仓库密码
+        8. Helm 仓库用户名
+        9. Helm 仓库密码
 
     === "未添加 Helm repo"
 
@@ -50,18 +60,25 @@
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: kcoral # 使用 chart-syncer 之后 .tar.gz 包所在的路径
+          intermediateBundlesPath: kcoral # (1)!
         target:
-          containerRegistry: 10.16.10.111 # 镜像仓库 url
-          containerRepository: release.daocloud.io/kcoral # 镜像仓库路径
+          containerRegistry: 10.16.10.111 # (2)!
+          containerRepository: release.daocloud.io/kcoral # (3)!
           repo:
             kind: LOCAL
-            path: ./local-repo # chart 本地路径
+            path: ./local-repo # (4)!
           containers:
             auth:
-              username: "admin" # 镜像仓库用户名
-              password: "Harbor12345" # 镜像仓库密码
+              username: "admin" # (5)!
+              password: "Harbor12345" # (6)!
         ```
+
+        1. 使用 chart-syncer 之后 .tar.gz 包所在的路径
+        2. 镜像仓库 url
+        3. 镜像仓库路径
+        4. chart 本地路径
+        5. 镜像仓库用户名
+        6. 镜像仓库密码
 
 1. 执行同步镜像命令。
 
@@ -69,7 +86,7 @@
     charts-syncer sync --config load-image.yaml
     ```
 
-#### 方式二：使用 Docker 或 containerd 加载镜像
+### 方式二：使用 Docker 或 containerd 加载镜像
 
 解压并加载镜像文件。
 

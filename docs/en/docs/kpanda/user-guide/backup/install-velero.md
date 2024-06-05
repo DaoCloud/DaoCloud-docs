@@ -42,7 +42,7 @@ Please perform the following steps to install the __velero__ plugin for your clu
      - Deletion Failed: After it is enabled, the synchronization will be enabled by default and ready to wait. If the installation fails, the installation-related resources will be removed.
      - Detailed Logs: Turn on the verbose output of the installation process log.
 
-        ![Basic Info](../../images/backup3.png)
+    ![Basic Info](../../images/backup3.png)
 
      !!! note
 
