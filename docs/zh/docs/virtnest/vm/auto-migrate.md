@@ -1,6 +1,7 @@
 # 虚拟机自动漂移
 
-本文将介绍当集群内某个节点因为断电或网络故障，导致该节点上的虚拟机无法访问时，如何将正在运行的虚拟机无缝迁移到其他的节点上，同时可以保证业务的连续性和数据的安全性。
+本文将介绍当集群内某个节点因为断电或网络故障，导致该节点上的虚拟机无法访问时，
+如何将正在运行的虚拟机无缝迁移到其他的节点上，同时保证业务的连续性和数据的安全性。
 
 与自动漂移相比，实时迁移需要您在界面中主动操作，而不是系统自动触发迁移过程。
 
@@ -20,7 +21,7 @@
     ```sh
     kubectl get pod
     ```
-    
+
     查看 launcher pod 是否处于 Terminating 状态。
 
 2. 强制删除 launcher pod：
@@ -30,28 +31,31 @@
     ```sh
     kubectl delete <launcher pod> --force
     ```
-    替换<launcher pod>为你的 launcher pod 名称。
+
+    替换 `<launcher pod>` 为你的 launcher pod 名称。
 
 3. 等待重新创建并检查状态：
 
-    删除后，系统将自动重新创建 launcher pod。等待其状态变为 running，然后刷新虚拟机列表，观察虚拟机是否成功迁移到新节点。
+    删除后，系统将自动重新创建 launcher pod。
+    等待其状态变为 running，然后刷新虚拟机列表，观察虚拟机是否成功迁移到新节点。
 
 ## 注意事项
 
-1. 如果使用 rook-ceph 作为存储，需要配置为 ReadWriteOnce 模式：
+如果使用 rook-ceph 作为存储，需要配置为 ReadWriteOnce 模式：
 
-    - 强制删除pod后，需要等待大约六分钟以让 launcher pod 启动，或者，可以通过以下命令立即启动 pod：
+1. 强制删除 pod 后，需要等待大约六分钟以让 launcher pod 启动，或者可以通过以下命令立即启动 pod：
 
     ```sh
     kubectl get pv | grep <vm name>
     kubectl get VolumeAttachment | grep <pv name>
     ```
-    替换<vm name>和<pv name>为你的虚拟机名称和持久卷名称。
 
-    - 然后执行以下命令删除对应的 VolumeAttachment：
+    替换 `<vm name>` 和 `<pv name>` 为你的虚拟机名称和持久卷名称。
+
+2. 然后执行以下命令删除对应的 VolumeAttachment：
 
     ```sh
     kubectl delete VolumeAttachment <vm>
     ```
-    替换<vm>为你的虚拟机名称。
 
+    替换 <vm> 为你的虚拟机名称。
