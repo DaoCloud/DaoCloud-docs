@@ -612,6 +612,7 @@ nav:
                   - VM GPU: virtnest/vm/vm-gpu.md
                   - VM Network: virtnest/vm/vm-network.md
                   - VM Storage: virtnest/vm/vm-sc.md
+                  - VM Drift: virtnest/vm/auto-migrate.md
               - VM GPU:
                   - VM GPU: virtnest/gpu/vm-gpu.md
                   - VM vGPU: virtnest/gpu/vm-vgpu.md
