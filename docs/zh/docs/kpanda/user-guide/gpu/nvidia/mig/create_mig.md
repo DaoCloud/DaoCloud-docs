@@ -26,7 +26,7 @@
 
     ![single](../../images/operator-mig.png)
 
-    - __DevicePlugin__ 设置为 __enable__ 
+    - 下拉页面至 __表单__ 配置
     - __MIG strategy__ 设置为 __single__ 
     - __Mig Manager__ 下的 __enabled__ 参数开启
     - __MigManager Config__ ：MIG 的切分策略配置，默认为 __default-mig-parted-config__
