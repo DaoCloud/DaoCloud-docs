@@ -46,13 +46,17 @@
             type: metallb
             istioGatewayVip: 10.6.229.10/32
             insightVip: 10.6.229.11/32      
-          fullPackagePath: absolute-path-of-the-offline-directory # 解压离线包后的路径
-          imagesAndCharts:        # 镜像仓库
+          fullPackagePath: absolute-path-of-the-offline-directory # (1)!
+          imagesAndCharts:        # (2)!
             type: external 
-            externalImageRepo: your-external-registry # 镜像仓库地址，必须是 http 或者 https
+            externalImageRepo: your-external-registry # (3)!
             # externalImageRepoUsername: admin
             # externalImageRepoPassword: Harbor123456
         ```
+
+        1. 解压离线包后的路径
+        2. 镜像仓库
+        3. 镜像仓库地址，必须是 http 或者 https
 
     - 如果是公有云环境，并通过预先准备好的 Cloud Controller Manager 的机制提供了公有云的 k8s 负载均衡能力, 配置文件范例如下:
 
@@ -62,13 +66,17 @@
         spec:
           loadBalancer:
             type: cloudLB
-          fullPackagePath: absolute-path-of-the-offline-directory # 解压离线包后的路径
-          imagesAndCharts:        # 镜像仓库
+          fullPackagePath: absolute-path-of-the-offline-directory # (1)!
+          imagesAndCharts:        # (2)!
             type: external 
-            externalImageRepo: your-external-registry # 镜像仓库地址，必须是 http 或者 https
+            externalImageRepo: your-external-registry # (3)!
             # externalImageRepoUsername: admin
             # externalImageRepoPassword: Harbor123456
         ```
+
+        1. 解压离线包后的路径
+        2. 镜像仓库
+        3. 镜像仓库地址，必须是 http 或者 https
 
     - 如果使用 NodePort 暴露控制台（仅推荐 PoC 使用），配置文件范例如下:
 
@@ -78,13 +86,17 @@
         spec:
           loadBalancer:
             type: NodePort
-          fullPackagePath: absolute-path-of-the-offline-directory # 解压离线包后的路径
-          imagesAndCharts:        # 镜像仓库
+          fullPackagePath: absolute-path-of-the-offline-directory # (1)!
+          imagesAndCharts:        # (2)!
             type: external 
-            externalImageRepo: your-external-registry # 镜像仓库地址，必须是 http 或者 https
+            externalImageRepo: your-external-registry # (3)!
             # externalImageRepoUsername: admin
             # externalImageRepoPassword: Harbor123456
         ```
+
+        1. 解压离线包后的路径
+        2. 镜像仓库
+        3. 镜像仓库地址，必须是 http 或者 https
 
 1. 安装 DCE 5.0。
 

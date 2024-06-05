@@ -5,11 +5,14 @@ date: 2024-05-11
 
 # Deploy a K8s Cluster from Scratch to DCE 5.0 Community
 
-This article covers the installation of DCE 5.0 Community from scratch in a 3-node cluster, including details on Kubernetes cluster, dependencies, networking, storage, and more considerations.
+This article covers the installation of DCE 5.0 Community from scratch in a 3-node cluster,
+including details on Kubernetes cluster, dependencies, networking, storage, and more considerations.
 
 !!! note
 
-    The installation methods described in this article may differ from the latest version due to rapid version iterations. Please refer to the installation instructions in the product documentation for the most up-to-date information.
+    The installation methods described in this article may differ from the latest version due to
+    rapid version iterations. Please refer to the installation instructions in the product documentation
+    for the most up-to-date information.
 
 ## Cluster Planning
 
@@ -113,8 +116,10 @@ Perform the following steps on each of the 3 nodes.
     sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
     sudo yum makecache
     yum install containerd.io -y
-    ctr -v  # Verify the installed version, e.g., ctr containerd.io 1.6.20
+    ctr -v  # (1)!
     ```
+
+    1. Verify the installed version, e.g., ctr containerd.io 1.6.20
 
 4. Modify the containerd configuration file
 
@@ -147,8 +152,10 @@ Perform the following steps on each of the 3 nodes.
     curl -LO https://github.com/containerd/nerdctl/releases/download/v1.2.1/nerdctl-1.2.1-linux-amd64.tar.gz
     tar xzvf nerdctl-1.2.1-linux-amd64.tar.gz
     mv nerdctl /usr/local/bin
-    nerdctl -n k8s.io ps # View containers
+    nerdctl -n k8s.io ps # (1)!
     ```
+
+    1. View containers
 
 ## Install Kubernetes Cluster
 
@@ -234,8 +241,10 @@ Perform the following steps on all three nodes:
     mkdir -p $HOME/.kube
     sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
     sudo chown $(id -u):$(id -g) $HOME/.kube/config
-    kubectl get no # You will see the first node, but it will still be NotReady
+    kubectl get no # (1)!
     ```
+
+    1. You will see the first node, but it will still be NotReady
 
 4. Install CNI, using Calico as an example
 
@@ -262,9 +271,12 @@ Perform the following steps on all three nodes:
     4. Wait for the deployment to succeed:
 
         ```bash
-        kubectl get po -n calico-system -w # Wait for all Pods to be Running
-        kubectl get no # You will see the first node become ready
+        kubectl get po -n calico-system -w # (1)!
+        kubectl get no # (2)!
         ```
+
+        1. Wait for all Pods to be Running
+        2. You will see the first node become ready
 
 ### Add Additional Worker Nodes
 
@@ -297,15 +309,19 @@ kubectl get no -w
 ```bash
 # Reference: https://github.com/rancher/local-path-provisioner
 wget https://raw.githubusercontent.com/rancher/local-path-provisioner/v0.0.24/deploy/local-path-storage.yaml
-sed -i "s/image: rancher/image: docker.m.daocloud.io\/rancher/g" local-path-storage.yaml # Replace docker.io with the actual image
+sed -i "s/image: rancher/image: docker.m.daocloud.io\/rancher/g" local-path-storage.yaml # (1)!
 sed -i "s/image: busybox/image: docker.m.daocloud.io\/busybox/g" local-path-storage.yaml
 kubectl apply -f local-path-storage.yaml
-kubectl get po -n local-path-storage -w # Wait for all Pods to be running
+kubectl get po -n local-path-storage -w # (2)!
 
 # Set local-path as the default StorageClass
 kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
-kubectl get sc # You will see something like: local-path (default)
+kubectl get sc # (3)!
 ```
+
+1. Replace docker.io with the actual image
+2. Wait for all Pods to be running
+3. You will see something like: local-path (default)
 
 ## Install DCE 5.0 Community
 
@@ -346,8 +362,9 @@ chmod +x ./dce5-installer
     ./dce5-installer install-app -z
     ```
 
-2. If the IP address of the master node is internal (e.g., in the case of public cloud instances
-   in this example), make sure the external IP and firewall configuration mentioned above are
+2. If the IP address of the master node is internal
+   (e.g., in the case of public cloud instances in this example),
+   make sure the external IP and firewall configuration mentioned above are
    ready, and then execute the following command:
 
     ```bash

@@ -54,15 +54,19 @@ Click [Online Install DCE Community](../../../videos/install.md) to watch a vide
             type: metallb
             istioGatewayVip: 10.6.229.10/32
             insightVip: 10.6.229.11/32
-          fullPackagePath: absolute-path-of-the-offline-directory # path for decompressed offline package
-          imagesAndCharts: # container registry
+          fullPackagePath: absolute-path-of-the-offline-directory # (1)!
+          imagesAndCharts: # (2)!
             type: external
-            externalImageRepo: your-external-registry # container registry address, must be http or https
+            externalImageRepo: your-external-registry # (3)!
             # externalImageRepoUsername: admin
             # externalImageRepoPassword: Harbor123456
          ```
 
-     - If it is a public cloud environment that already has a Kubernetes load balancer, set `clusterConfig.yaml` as follows:
+         1. path for decompressed offline package
+         2. container registry
+         3. container registry address, must be http or https
+
+    - If it is a public cloud environment that already has a Kubernetes load balancer, set `clusterConfig.yaml` as follows:
 
         ```yaml title="clusterConfig.yaml"
         apiVersion: provision.daocloud.io/v1alpha3
@@ -70,29 +74,37 @@ Click [Online Install DCE Community](../../../videos/install.md) to watch a vide
         spec:
           loadBalancer:
             type: cloudLB
-          fullPackagePath: absolute-path-of-the-offline-directory # path for decompressed offline package
-          imagesAndCharts: # container registry
+          fullPackagePath: absolute-path-of-the-offline-directory # (1)!
+          imagesAndCharts: # (2)!
             type: external
-            externalImageRepo: your-external-registry # container registry address, must be http or https
+            externalImageRepo: your-external-registry # (3)!
             # externalImageRepoUsername: admin
             # externalImageRepoPassword: Harbor123456
         ```
 
-     - If Console is exposed via NodePort (recommended only for PoC use cases), set `clusterConfig.yaml` as follows:
+        1. path for decompressed offline package
+        2. container registry
+        3. container registry address, must be http or https
 
-    ```yaml title="clusterConfig.yaml"
-    apiVersion: provision.daocloud.io/v1alpha3
-    kind: ClusterConfig
-    spec:
-      loadBalancer:
-        type: NodePort
-      fullPackagePath: absolute-path-of-the-offline-directory # path for decompressed offline package
-      imagesAndCharts: # container registry
-        type: external
-        externalImageRepo: your-external-registry # container registry address, must be http or https
-        # externalImageRepoUsername: admin
-        # externalImageRepoPassword: Harbor123456
-     ```
+    - If Console is exposed via NodePort (recommended only for PoC use cases), set `clusterConfig.yaml` as follows:
+
+        ```yaml title="clusterConfig.yaml"
+        apiVersion: provision.daocloud.io/v1alpha3
+        kind: ClusterConfig
+        spec:
+          loadBalancer:
+            type: NodePort
+          fullPackagePath: absolute-path-of-the-offline-directory # (1)!
+          imagesAndCharts: # (2)!
+            type: external
+            externalImageRepo: your-external-registry # (3)!
+            # externalImageRepoUsername: admin
+            # externalImageRepoPassword: Harbor123456
+        ```
+
+        1. path for decompressed offline package
+        2. container registry
+        3. container registry address, must be http or https
 
 3. Install DCE 5.0.
 
@@ -120,4 +132,5 @@ Click [Online Install DCE Community](../../../videos/install.md) to watch a vide
         It's recommended to write down the prompted URL for your next visit.
 
 5. Before fully explore the features of DCE 5.0, you need to apply for a license.
-   The Community package is provided for free. All you need to do is to [apply for a free license](../../../dce/license0.md).
+   The Community package is provided for free. All you need to do is to
+   [apply for a free license](../../../dce/license0.md).
