@@ -625,6 +625,7 @@ nav:
                   - 虚拟机监控: virtnest/vm/monitor.md
                   - 虚拟机网络: virtnest/vm/vm-network.md
                   - 虚拟机存储: virtnest/vm/vm-sc.md
+                  - 虚拟机漂移: virtnest/vm/auto-migrate.md
               - 虚拟机 GPU:
                   - 虚拟机 GPU: virtnest/gpu/vm-gpu.md
                   - 虚拟机 vGPU: virtnest/gpu/vm-vgpu.md
