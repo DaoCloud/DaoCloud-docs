@@ -9,6 +9,42 @@ This page lists the release notes of Microservices to help you learn its feature
 
 *[skoala]: Internal development codename for DaoCloud Microservice Engine
 
+## 2024-05-27
+
+### v0.37.0
+
+#### New Features
+
+- **Added** support for displaying exception information of distributed transaction components in the overview.
+- **Added** status code filtering support in gateway logs.
+- **Added** configurability for Nacos JVM implementation.
+- **Added** new log query functionality related to gateway API testing.
+- **Added** support for multiple instances of external services in the gateway.
+- **Added** customizable passwords for Nacos associated with Seata.
+
+#### Fixes
+
+- **Fixed** an issue with abnormal display on the gateway API details page.
+- **Fixed** an issue with local rate-limiting strategy in the gateway not functioning properly.
+- **Fixed** an issue with domain-level authentication plugin not disabling correctly.
+- **Fixed** an issue with filtering and checking the gateway's root namespace.
+- **Fixed** an issue with Chinese appearing in the English version of the Sentinel monitoring dashboard.
+
+#### Optimizations
+
+- **Optimized** managed Nacos version to 2.3.2, replacing version 2.3.1.
+- **Optimized** API and added workspace isolation capabilities.
+- **Optimized** gateway plugins and custom plugin logic.
+- **Optimized** service mesh integration logic.
+- **Optimized** gateway control plane component versions and related custom resources.
+- **Optimized** gateway API export function to skip traffic lane-related APIs.
+
+!!! note
+
+    Important: Version 0.37.x has updated related Custom Resource Definitions (CRDs). Since custom resources in the Chart crds directory are not automatically updated during installation,
+    please manually apply the relevant CRDs to the working cluster after upgrading. The file is located at:
+    skoala-init/charts/contour-provisioner/crds/contour.yaml
+
 ## 2024-04-30
 
 ### v0.36.1

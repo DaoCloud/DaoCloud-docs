@@ -36,7 +36,9 @@
 
 !!! note
 
-    重要：0.37.x 版本中更新了相关自定义资源（CRD），由于在 Chart crds 目录中的自定义资源不会自动随安装被更新，请升级后手动应用相关 CRD，工作集群更新（skoala-init Chart 中）：skoala-init/charts/contour-provisioner/crds/contour.yaml
+    重要：0.37.x 版本中更新了相关自定义资源（CRD），由于在 Chart crds 目录中的自定义资源不会自动随安装被更新，
+    请升级后手动应用相关 CRD 到工作集群，该文件位于：
+    skoala-init/charts/contour-provisioner/crds/contour.yaml
 
 ## 2024-04-30
 
