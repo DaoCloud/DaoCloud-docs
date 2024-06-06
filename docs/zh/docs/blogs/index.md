@@ -11,6 +11,12 @@ hide:
 
 ## 2024 年
 
+- [20240606 | Kubernetes 十周年](./0606-k8s-birth.md)
+
+    十年前，也就是 2014 年 6 月 6 日，Kubernetes
+    的[第一次提交](https://github.com/kubernetes/kubernetes/commit/2c4b3a562ce34cddc3f8218a2c4d11c7310e6d56)被推送到 GitHub。
+    第一次提交包含 250 个文件和 47,501 行的 Go、Bash 和 Markdown 代码，开启了我们今天所见的 K8s 项目。
+
 - [20240516 | SIG Docs从敲代码到抒发文笔](./240516-sig-docs.md)
 
     这是一次冒险的召唤，一份超越代码领域的邀请，指引你踏入文档创作与社区协作的未知境地。

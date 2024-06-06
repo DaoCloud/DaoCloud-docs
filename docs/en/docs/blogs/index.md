@@ -12,6 +12,13 @@ technology, sorted by date by default.
 
 ## 2024
 
+- [20240606 | 10 Years of Kubernetes](./0606-k8s-birth.md)
+
+    Ten (10) years ago, on June 6th, 2014, the
+    [first commit](https://github.com/kubernetes/kubernetes/commit/2c4b3a562ce34cddc3f8218a2c4d11c7310e6d56)
+    of Kubernetes was pushed to GitHub. That first commit with 250 files and 47,501 lines of go, bash
+    and markdown kicked off the project we have today.
+
 - [20240516 | Embark on a Legendary K8s Quest with SIG Docs](./240509-model-spec.md)
 
     You've likely heard the adage, "Contributing isn't just about writing code",
