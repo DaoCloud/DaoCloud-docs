@@ -2,7 +2,7 @@
 
 > Source: [k8s.io](https://kubernetes.io/blog/2024/06/06/10-years-of-kubernetes/)
 
-![KCSEU 2024 group photo](kcseu2024.jpg)
+![KCSEU 2024 group photo](./images/kcseu2024.jpg)
 
 Ten (10) years ago, on June 6th, 2014, the
 [first commit](https://github.com/kubernetes/kubernetes/commit/2c4b3a562ce34cddc3f8218a2c4d11c7310e6d56)

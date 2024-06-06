@@ -2,11 +2,11 @@
 
 > 英文原版来自 [k8s 社区](https://kubernetes.io/blog/2024/06/06/10-years-of-kubernetes/)
 
-![KCSEU 2024 团体照片](kcseu2024.jpg)
+![KCSEU 2024 团体照片](./images/kcseu2024.jpg)
 
 十年前，也就是 2014 年 6 月 6 日，Kubernetes
 的[第一次提交](https://github.com/kubernetes/kubernetes/commit/2c4b3a562ce34cddc3f8218a2c4d11c7310e6d56)被推送到 GitHub。
-第一次提交包含了 250 个文件和 47,501 行的 Go、Bash 和 Markdown 代码，开启了大众今天所瞩目的 Kubernetes 社区之始。
+第一次提交包含了 250 个文件和 47,501 行的 Go、Bash 和 Markdown 代码，标志着大众今天所瞩目的 Kubernetes 社区之始。
 当时又谁能预见到十年后，Kubernetes 会成长为迄今为止全球最大的开源项目之一，迄今拥有
 [88,000 多名贡献者](https://k8s.devstats.cncf.io/d/24/overall-project-statistics?orgId=1)，
 这些贡献者来自 44 个国家的 [8,000 多家公司](https://www.cncf.io/reports/kubernetes-project-journey-report/)。
@@ -15,17 +15,22 @@
 
 !!! tip "陈奕迅 十年改版"
 
+    ```yaml
     十年之前
     我不认识你 你不属于我
     我们还是一样
-    挣扎在一个个 bug 泥坑
+    挣扎在一个个泥潭
     
     十年之后
     我认识了你 你属于了我
     我们已不再一样
-    用熟悉的 git 流
-    轻松应对千万倍的消息和负载
-    ...
+    有了熟悉的工作流
+    
+    轻松应对千万倍的负载
+    庞大社区支持左右
+    共同成长追逐时代洪流
+    迎接 AI 未来挑战
+    ```
 
 十年生日这是一个重要的里程碑，这个里程碑不仅属于 Kubernetes 项目，也属于由它孕育出的 CNCF 云原生生态社区。
 目前 CNCF 有近 [200 个项目](https://all.devstats.cncf.io/d/18/overall-project-statistics-table?orgId=1)，
