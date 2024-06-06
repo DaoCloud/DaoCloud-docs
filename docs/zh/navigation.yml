@@ -1321,6 +1321,7 @@ nav:
   - 博客:
       - 博文索引: blogs/index.md
       - 2024:
+          - Kubernetes 十周年: blogs/0606-k8s-birth.md
           - K8s 从敲代码到抒发文笔: blogs/240516-sig-docs.md
           - OpenAI 大语言模型规范: blogs/240509-model-spec.md
           - 全球大规模AI基础设施形势调研: blogs/0429-ai-survey.md
