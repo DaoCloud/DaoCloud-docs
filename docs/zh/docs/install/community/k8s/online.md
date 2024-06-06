@@ -33,7 +33,7 @@
     ```shell
     export VERSION=v0.17.0
 
-    ## 如果是 arm 架构请更新 `dce5-installer-$VERSION` 为 `dce5-installer-$VERSION-linux-arm64`
+    # 如果是 ARM 架构请更新 `dce5-installer-$VERSION` 为 `dce5-installer-$VERSION-linux-arm64`
     
     curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
 
@@ -52,8 +52,8 @@
         spec:
           loadBalancer:
             type: metallb
-            istioGatewayVip: 10.6.229.10/32 # (1)
-            insightVip: 10.6.229.11/32      # (2)
+            istioGatewayVip: 10.6.229.10/32 # (1)!
+            insightVip: 10.6.229.11/32      # (2)!
         ```
 
         1. 这是 Istio gateway 的 VIP，也是 DCE 5.0 控制台的浏览器访问 IP

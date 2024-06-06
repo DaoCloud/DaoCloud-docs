@@ -39,7 +39,7 @@ This page will guide you to install DCE Community package online in a standard K
     ```shell
     export VERSION=v0.17.0
 
-    ## For ARM CPU, change `dce5-installer-$VERSION` to `dce5-installer-$VERSION-linux-arm64`
+    # For ARM, replace `dce5-installer-$VERSION` with `dce5-installer-$VERSION-linux-arm64`
 
     curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer
@@ -59,8 +59,8 @@ This page will guide you to install DCE Community package online in a standard K
         spec:
           loadBalancer:
             type: metallb
-            istioGatewayVip: 10.6.229.10/32 # (1)
-            insightVip: 10.6.229.11/32 # (2)
+            istioGatewayVip: 10.6.229.10/32 # (1)!
+            insightVip: 10.6.229.11/32 # (2)!
         ```
 
         1. This is the VIP of the Istio gateway and also the browser URL of the DCE 5.0
