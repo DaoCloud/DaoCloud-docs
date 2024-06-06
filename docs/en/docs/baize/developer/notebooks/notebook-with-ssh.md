@@ -40,7 +40,7 @@ First, you need to generate an SSH public and private key pair on your computer.
 
     4. Follow the same steps as Mac/Linux.
 
-### Add SSH Public Key to Personal Center
+### Add SSH Public Key to Personal Center (Optional)
 
 1. Open the generated public key file, usually located at `~/.ssh/id_rsa.pub` (if you did not change the default path).
 2. Copy the public key content.

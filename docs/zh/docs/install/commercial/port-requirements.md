@@ -24,6 +24,7 @@
 |----- |--------| ------------    |
 | TCP  | 2379   | etcd client port|
 | TCP  | 2380   | etcd peer port  |
+| TCP  | 2381   | etcd metric port|
 | TCP  | 6443   | kubernetes api  |
 | TCP  | 10250  | kubelet api     |
 | TCP  | 10257  | kube-scheduler  |
