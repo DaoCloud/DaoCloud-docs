@@ -1,8 +1,10 @@
-# Kubernetes 十周年
+# Kubernetes 十周年，DaoCloud 风雨同行
 
 > 英文原版来自 [k8s 社区](https://kubernetes.io/blog/2024/06/06/10-years-of-kubernetes/)
 
-![KCSEU 2024 团体照片](./images/kcseu2024.jpg)
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/10birth.mov" preload="metadata" poster="images/10birth.jpg"></video>
+</div>
 
 十年前，也就是 2014 年 6 月 6 日，Kubernetes
 的[第一次提交](https://github.com/kubernetes/kubernetes/commit/2c4b3a562ce34cddc3f8218a2c4d11c7310e6d56)被推送到 GitHub。
@@ -11,7 +13,10 @@
 [88,000 多名贡献者](https://k8s.devstats.cncf.io/d/24/overall-project-statistics?orgId=1)，
 这些贡献者来自 44 个国家的 [8,000 多家公司](https://www.cncf.io/reports/kubernetes-project-journey-report/)。
 
-![kcscn2019](./images/kcscn2019.jpg)
+![company contributions](./images/company.png)
+
+巧合的是，2014 年不仅是容器化浪潮初露锋芒的一年，也是 DaoCloud 的诞生之年。Roby、Kay 及几位业内志同道合的人士敏锐地捕捉到了这一趋势，
+并在上海杨浦浓厚的学术氛围中，创立了道客网络科技有限公司，即云原生社区知名的 DaoCloud 群体。
 
 !!! tip "陈奕迅 十年改版"
 
@@ -37,6 +42,10 @@
 [240,000 多名个人贡献者](https://all.devstats.cncf.io/d/18/overall-project-statistics-table?orgId=1)。
 如果没有 [700 多万开发者](https://www.cncf.io/blog/2022/05/18/slashdata-cloud-native-continues-to-grow-with-more-than-7-million-developers-worldwide/)开发着的参与，
 Kubernetes 就不可能达到今天的成就。
+
+在过去的十年里，中国贡献者的力量同样不容小觑：
+
+![中国贡献](./images/contri-list.png)
 
 ## Kubernetes 源于技术的融合
 
@@ -130,6 +139,26 @@ Kubernetes 在这十年所提供的扩展特性很难数得清。最初设计时
 - **158,530** 个 Issue
 - **311,787** 个 PR
 
+## DaoCloud 社区贡献
+
+这十年来，DaoCloud 深度参与 Kubernetes 和 containerd 社区建设：
+
+- 有 100 多人参与过 Kubernetes 社区贡献
+
+    ![focus](./images/focus.png)
+
+    ![100 contributors](./images/100.png)
+
+- 10 多个维护者和 Approver 席位
+
+    ![seat](./images/seat.png)
+
+- 每年都有多位员工获得 Kubernetes Contributor Award 奖项
+
+    ![award](./images/award.png)
+
+- 捐献的项目中有 [6 个已加入 CNCF Sandbox](https://docs.daocloud.io/community/)
+
 ## 今天的 Kubernetes
 
 ![欢迎来到 KubeCon NA 2023](./images/welcome.jpg)
@@ -165,8 +194,8 @@ Kubernetes 的下一个十年将由其用户和生态社区引导，但最重要
 来看看你、你认识的大咖、知名人物对社区所做的贡献吧：
 [contribcard.clotributor.dev](https://contribcard.clotributor.dev/)
 
-![windsonsea](./images/kube10.png)
+![card](./images/kube10.png)
 
 我们期待与你一起构建 Kubernetes 的未来！
 
-![KCS NA 2023](./images/kcsna2023.jpg)
+![daocloud 10](./images/daocloud10.jpg)
