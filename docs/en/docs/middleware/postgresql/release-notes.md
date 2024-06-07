@@ -9,6 +9,16 @@ This page lists the Release Notes of the PostgreSQL database, so that you can un
 
 *[Mcamel-PostgreSQL]: "Mcamel" is the dev name for DaoCloud's middlewares, and "PostgreSQL" is a relational database
 
+## 2024-05-31
+
+### v0.11.0
+
+- **Added** option to retain remote backups when deleting tasks
+- **Added** parameter template import and export features
+- **Improved** option to delete backup data in S3 when deleting backups
+- **Improved** support for batch modification of instance parameters
+- **Improved** support for configuring the number of replica nodes
+
 ## 2024-04-30
 
 ### v0.11.0
