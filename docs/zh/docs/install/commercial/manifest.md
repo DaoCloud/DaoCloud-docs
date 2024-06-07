@@ -176,3 +176,7 @@ components:
 | components.kangaroo             | 镜像仓库                          |
 | components.gmagpie              | 报表                              |
 | components.dowl                 | 集群安全                          |
+| components.kant                 | 边缘计算                          |
+| components.virtnest             | 虚拟机                            |
+| components.kolm                 | olm 管理                          |
+| components.baize                | 智能算力                          |
