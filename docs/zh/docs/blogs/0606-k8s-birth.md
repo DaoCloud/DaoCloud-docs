@@ -40,7 +40,7 @@
 十年生日这是一个重要的里程碑，这个里程碑不仅属于 Kubernetes 项目，也属于由它孕育出的 CNCF 云原生生态社区。
 目前 CNCF 有近 [200 个项目](https://all.devstats.cncf.io/d/18/overall-project-statistics-table?orgId=1)，
 [240,000 多名个人贡献者](https://all.devstats.cncf.io/d/18/overall-project-statistics-table?orgId=1)。
-如果没有 [700 多万开发者](https://www.cncf.io/blog/2022/05/18/slashdata-cloud-native-continues-to-grow-with-more-than-7-million-developers-worldwide/)开发着的参与，
+如果没有 [700 多万开发者](https://www.cncf.io/blog/2022/05/18/slashdata-cloud-native-continues-to-grow-with-more-than-7-million-developers-worldwide/)的参与和使用，
 Kubernetes 就不可能达到今天的成就。
 
 在过去的十年里，中国贡献者的力量同样不容小觑：
@@ -143,21 +143,21 @@ Kubernetes 在这十年所提供的扩展特性很难数得清。最初设计时
 
 这十年来，DaoCloud 深度参与 Kubernetes 和 containerd 社区建设：
 
-- 有 100 多人参与过 Kubernetes 社区贡献
+- DaoCloud 有 100 多人参与过 Kubernetes 社区贡献
 
     ![focus](./images/focus.png)
 
     ![100 contributors](./images/100.png)
 
-- 10 多个维护者和 Approver 席位
+- DaoCloud 有 10 多个维护者和 Approver 席位
 
     ![seat](./images/seat.png)
 
-- 每年都有多位员工获得 Kubernetes Contributor Award 奖项
+- DaoCloud 每年都有多位员工获得 Kubernetes Contributor Award 奖项
 
     ![award](./images/award.png)
 
-- 捐献的项目中有 [6 个已加入 CNCF Sandbox](https://docs.daocloud.io/community/)
+- DaoCloud 捐献的项目中有 [6 个已加入 CNCF Sandbox](https://docs.daocloud.io/community/)
 
 ## 今天的 Kubernetes
 
