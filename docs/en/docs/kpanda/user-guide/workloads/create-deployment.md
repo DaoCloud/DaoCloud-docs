@@ -56,20 +56,41 @@ Container setting is divided into six parts: basic information, life cycle, heal
 
 > Container setting is only configured for a single container. To add multiple containers to a pod, click __+__ on the right to add multiple containers.
 
-=== "Basic information (required)"
+=== "Basic Information (Required)"
 
-     When configuring container-related parameters, you must correctly fill in the container name and image parameters, otherwise you will not be able to proceed to the next step. After filling in the setting with reference to the following requirements, click __OK__ .
+    When configuring container-related parameters, it is essential to correctly fill in the container name and image parameters; 
+    otherwise, you will not be able to proceed to the next step. 
+    After filling in the configuration according to the following requirements, click __OK__.
+
+    ![Basic Info](../images/deploy05.png)
     
-     - Container Name: Up to 63 characters, lowercase letters, numbers and separators ("-") are supported. Must start and end with a lowercase letter or number, eg nginx-01.
-     - Image: Enter the address or name of the image. When entering the image name, the image will be pulled from the official [DockerHub](https://hub.docker.com/) by default. After accessing the [container registry](../../../kangaroo/intro/index.md) module of DCE 5.0, you can click __Select Image__ on the right to select an image.
-     - Image Pull Policy: After checking __Always pull image__ , the image will be pulled from the registry every time the load restarts/upgrades. If it is not checked, only the local mirror will be pulled, and only when the mirror does not exist locally, it will be re-pulled from the container registry. For more details, refer to [Image Pull Policy](https://kubernetes.io/docs/concepts/containers/images/#image-pull-policy).
-     - Privileged container: By default, the container cannot access any device on the host. After enabling the privileged container, the container can access all devices on the host and enjoy all the permissions of the running process on the host.
-     - CPU/Memory Quota: Requested value (minimum resource to be used) and limit value (maximum resource allowed to be used) of CPU/Memory resource. Please configure resources for containers as needed to avoid resource waste and system failures caused by excessive container resources. The default value is shown in the figure.
-     - GPU Exclusive: Configure the GPU usage for the container, only positive integers are supported. The GPU quota setting supports setting exclusive use of the entire GPU card or part of the vGPU for the container. For example, for an 8-core GPU card, enter the number __8__ to let the container exclusively use the entire length of the card, and enter the number __1__ to configure a 1-core vGPU for the container.
+    - Container Type: The default is `Work Container`. For information on init containers, see the [K8s Official Documentation]
+      (https://kubernetes.io/docs/concepts/workloads/pods/init-containers/).
+    - Container Name: No more than 63 characters, supporting lowercase letters, numbers, and separators ("-"). 
+      It must start and end with a lowercase letter or number, for example, nginx-01.
+    - Image:
+        - Image: Select an appropriate image from the list. When entering the image name, the default is to pull the image 
+          from the official [DockerHub](https://hub.docker.com/).
+          After integrating the [Image Repository](../../../kangaroo/intro/index.md) module of DCE 5.0, 
+          you can click the __Choose an image__ button on the right to choose an image.
+        - Image Version: Select an appropriate version from the dropdown list.
+        - Image Pull Policy: By checking __Always pull the image__, the image will be pulled from the repository each time 
+          the workload restarts/upgrades.
+          If unchecked, it will only pull the local image, and will pull from the repository only if the image does not exist locally.
+          For more details, refer to [Image Pull Policy](https://kubernetes.io/docs/concepts/containers/images/#image-pull-policy).
+        - Registry Secret: Optional. If the target repository requires a Secret to access, you need to [create secret](../configmaps-secrets/create-secret.md) first.
+    - Privileged Container: By default, the container cannot access any device on the host. After enabling the privileged container, 
+      the container can access all devices on the host and has all the privileges of running processes on the host.
+    - CPU/Memory Request: The request value (the minimum resource needed) and the limit value (the maximum resource allowed) 
+      for CPU/memory resources. Configure resources for the container as needed to avoid resource waste and system failures 
+      caused by container resource overages. Default values are shown in the figure.
+    - GPU Configuration: Configure GPU usage for the container, supporting only positive integers. 
+      The GPU quota setting supports configuring the container to exclusively use an entire GPU card or part of a vGPU.
+      For example, for a GPU card with 8 cores, entering the number __8__ means the container exclusively uses the entire card, 
+      and entering the number __1__ means configuring 1 core of the vGPU for the container.
     
-         > Before setting exclusive GPU, the administrator needs to install the GPU card and driver plug-in on the cluster nodes in advance, and enable the GPU feature in [Cluster Settings](../clusterops/cluster-settings.md).
-    
-        ![Basic Info](../images/deploy05.png)
+    > Before setting the GPU, the administrator needs to pre-install the GPU card and driver plugin on the cluster node 
+      and enable the GPU feature in the [Cluster Settings](../clusterops/cluster-settings.md).
 
 === "Lifecycle (optional)"
 
@@ -117,7 +138,7 @@ Configure [Service](../network/create-services.md) for the deployment, so that t
 
 ### Advanced settings
 
-Advanced setting includes four parts: load network setting, upgrade strategy, scheduling strategy, label and annotation. You can click the tabs below to view the setting requirements of each part.
+Advanced setting includes four parts: Network Settings, Upgrade Policy, Scheduling Policies, Labels and Annotations. You can click the tabs below to view the setting requirements of each part.
 
 === "Network Settings"
 
@@ -144,7 +165,7 @@ Advanced setting includes four parts: load network setting, upgrade strategy, sc
 === "Upgrade Policy"
 
      - Upgrade Mode: __Rolling upgrade__ refers to gradually replacing instances of the old version with instances of the new version. During the upgrade process, business traffic will be load-balanced to the old and new instances at the same time, so the business will not be interrupted. __Rebuild and upgrade__ refers to deleting the load instance of the old version first, and then installing the specified new version. During the upgrade process, the business will be interrupted.
-     - Max Unavailable Pods: Specify the maximum value or ratio of unavailable pods during the load update process, the default is 25%. If it is equal to the number of instances, there is a risk of service interruption.
+     - Max Unavailable: Specify the maximum value or ratio of unavailable pods during the load update process, the default is 25%. If it is equal to the number of instances, there is a risk of service interruption.
      - Max Surge: The maximum or ratio of the total number of Pods exceeding the desired replica count of Pods during a Pod update. Default is 25%.
      - Revision History Limit: Set the number of old versions retained when the version is rolled back. The default is 10.
      - Minimum Ready: The minimum time for a Pod to be ready. Only after this time is the Pod considered available. The default is 0 seconds.
@@ -155,15 +176,14 @@ Advanced setting includes four parts: load network setting, upgrade strategy, sc
 
 === "Scheduling Policies"
 
-     - Tolerance time: When the node where the load instance is located is unavailable, the time for rescheduling the load instance to other available nodes, the default is 300 seconds.
-     - Node affinity: According to the label on the node, constrain which nodes the Pod can be scheduled on.
+     - Toleration time: When the node where the load instance is located is unavailable, the time for rescheduling the load instance to other available nodes, the default is 300 seconds.
+     - Node Affinity: According to the label on the node, constrain which nodes the Pod can be scheduled on.
      - Workload Affinity: Constrains which nodes a Pod can be scheduled to based on the labels of the Pods already running on the node.
-     - Workload anti-affinity: Constrains which nodes a Pod cannot be scheduled to based on the labels of Pods already running on the node.
-     - Topology domain: namely topologyKey, used to specify a group of nodes that can be scheduled. For example, __kubernetes.io/os__ indicates that as long as the node of an operating system meets the conditions of labelSelector, it can be scheduled to the node.
+     - Workload Anti-affinity: Constrains which nodes a Pod cannot be scheduled to based on the labels of Pods already running on the node.
     
      > For details, refer to [Scheduling Policy](pod-config/scheduling-policy.md).
 
-        ![Scheduling Policy](../images/deploy15.png)
+     ![Scheduling Policy](../images/deploy15.png)
 
 === "Labels and Annotations"
 
