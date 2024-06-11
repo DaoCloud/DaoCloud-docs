@@ -631,32 +631,39 @@ nav:
                   - Permissions: insight/intro/permission.md
                   - Insight Release Notes: insight/intro/releasenote.md
               - Quick Start:
-                  - Enable Observability:
+                  - Plan to Deploy:
+                      - insight/quickstart/res-plan/index.md
+                      - Prometheus Resource Plan: insight/quickstart/res-plan/prometheus-res.md
+                      - vmstorage Disk Plan: insight/quickstart/res-plan/vms-res-plan.md
+                      - Adjust vmstorage: insight/quickstart/res-plan/modify-vms-disk.md
+                  - Install and Upgrade:
                       - insight/quickstart/install/index.md
                       - Online Install insight-agent: insight/quickstart/install/install-agent.md
-                      - Offline Install insight-agent: insight/quickstart/install/offline-install.md
+                      - Offline Upgrade insight-agent: insight/quickstart/install/offline-install.md
                       - Get URL to Upload Data: insight/quickstart/install/gethosturl.md
                       - Upgrade Notes: insight/quickstart/install/upgrade-note.md
                       - Known Issues: insight/quickstart/install/knownissues.md
+                      - Kafka + ES for Handling Large-Scale Logs: insight/best-practice/insight-kafka.md
                   - Install insight-agent on Other Distributions:
-                      - On DCE 4.0.x: insight/quickstart/other/install-agentindce.md
-                      - On OpenShift 4.x: insight/quickstart/other/install-agent-on-ocp.md
-                  - Resource Planning:
-                      - Prometheus Resource Planning: insight/quickstart/res-plan/prometheus-res.md
-                      - vmstorage Disk Planning: insight/quickstart/res-plan/vms-res-plan.md
-                      - Adjust vmstorage Disks: insight/quickstart/res-plan/modify-vms-disk.md
-              - Enable Observability with OTel:
-                  - insight/quickstart/otel/otel.md
-                  - Non-intrusive Enhancement with Operator: insight/quickstart/otel/operator.md
-                  - Enhance GO Apps with OTel SDK: insight/quickstart/otel/golang.md
-                  - Expose Metrics with OTel SDK: insight/quickstart/otel/meter.md
-                  - Enhance Go Apps with OTel Auto-Instrumentation: insight/quickstart/otel/golang-ebpf.md
-                  - Send Trace Data to Insight: insight/quickstart/otel/send_tracing_to_insight.md   
-              - Enable Observability for Java Apps:
-                  - insight/quickstart/jvm-monitor/jvm-catelogy.md
-                  - Use JMX Exporter to Expose JVM Metrics: insight/quickstart/jvm-monitor/jmx-exporter.md
-                  - Use OTel Java Agent to Expose JVM Metrics: insight/quickstart/jvm-monitor/otel-java-agent.md
-                  - How Does a Java App with JVM Metrics Enable Observability: insight/quickstart/jvm-monitor/legacy-jvm.md      
+                      - DCE 4.0: insight/quickstart/other/install-agentindce.md
+                      - OpenShift 4.x: insight/quickstart/other/install-agent-on-ocp.md
+              - Get Started with Insight:
+                  - Use OpenTelemetry:
+                      - Observe App with OTel: insight/quickstart/otel/otel.md
+                      - Non-intrusive Enhancement with Operator: insight/quickstart/otel/operator.md
+                      - Expose Metrics with OTel SDK: insight/quickstart/otel/meter.md
+                      - Send Trace Data to Insight: insight/quickstart/otel/send_tracing_to_insight.md
+                      - Tail-based Sampling Scheme: insight/best-practice/tail-based-sampling.md
+                  - Java Insight:
+                      - Insight Java Apps: insight/quickstart/jvm-monitor/jvm-catelogy.md
+                      - Use JMX Exporter to Expose JVM Metrics: insight/quickstart/jvm-monitor/jmx-exporter.md
+                      - Use OTel Java Agent to Expose JVM Metrics: insight/quickstart/jvm-monitor/otel-java-agent.md
+                      - Java App with JVM Metrics Enables Insight: insight/quickstart/jvm-monitor/legacy-jvm.md
+                  - Golang App Insight:
+                      - Enhance GO Apps with OTel SDK: insight/quickstart/otel/golang.md
+                      - Enhance Go Apps with OTel Auto-Probe: insight/quickstart/otel/golang-ebpf.md
+                  - Other Integrations:
+                      - Use OTel to Receive SkyWalking Traces: insight/best-practice/sw-to-otel.md  
               - Dashboard:
                   - Overview: insight/user-guide/dashboard/overview.md
                   - Dashboard: insight/user-guide/dashboard/dashboard.md
@@ -694,25 +701,22 @@ nav:
                   - System Components: insight/user-guide/system-config/system-component.md
                   - System Config: insight/user-guide/system-config/system-config.md
                   - Modify Config: insight/user-guide/system-config/modify-config.md
-              - FAQs:
-                  - Clock Skew of Trace Data: insight/faq/traceclockskew.md
+              - Network Insight:
+                  - Integrate DeepFlow: insight/best-practice/integration_deepflow.md
               - References:
                   - Alert Notification Flow: insight/reference/alertnotification.md
                   - Notification Template Instructions: insight/reference/notify-helper.md
                   - Lucene Syntax: insight/reference/lucene.md
                   - Collect Logs with Sidecar: insight/reference/tailing-sidecar.md
-              - Best Practice:
-                  - Log Collection Troubleshoot: insight/best-practice/debug-log.md
-                  - Trace Collection Troubleshoot: insight/best-practice/debug-trace.md
-                  - Receive SkyWalking Trace Data using OTel: insight/best-practice/sw-to-otel.md
-                  - Use Insight to find service's problems: insight/best-practice/find_root_cause.md
-                  - Kafka + ES for Handling Large-Scale Logs: insight/best-practice/insight-kafka.md
-                  - Integrate DeepFlow: insight/best-practice/integration_deepflow.md
-                  - Tail Sampling Scheme: insight/best-practice/tail-based-sampling.md
               - Compatibility Test:
                   - K8s Compatibility Test: insight/compati-test/k8s-compatibility.md
                   - Rancher Compatibility Test: insight/compati-test/rancher-compatibility.md
                   - OCP Compatibility Test: insight/compati-test/ocp-compatibility.md
+              - FAQs:
+                  - Clock Skew of Trace Data: insight/faq/traceclockskew.md
+                  - Log Collection Troubleshoot: insight/best-practice/debug-log.md
+                  - Trace Collection Troubleshoot: insight/best-practice/debug-trace.md
+                  - Locate Issues with Insight: insight/best-practice/find_root_cause.md
           - Microservices:
               - Intro:
                   - Index: skoala/intro/index.md
