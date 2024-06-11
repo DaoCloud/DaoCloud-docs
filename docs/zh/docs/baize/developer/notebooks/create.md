@@ -23,3 +23,11 @@ Notebook 提供了一个在线的 Web 交互式编程环境，方便开发者快
     ![创建成功](../../images/notebook02.png)
 
 1. 点击右侧的 **⋮** ，可以执行更多操作：更新参数、启动/暂停、查看工作负载详情和删除。
+
+!!! note
+
+    如果选择纯 CPU 资源后，发现挂载了节点上的所有 GPU 卡，可以尝试添加 container env 来解决此问题：
+
+    ```config
+    NVIDIA_VISIBLE_DEVICES=""
+    ```
