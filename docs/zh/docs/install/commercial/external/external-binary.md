@@ -38,7 +38,7 @@ S3 兼容的服务只需要在 [集群配置文件 clusterConfig.yaml](../cluste
 理论上其他通用 http server 也能支持，需要注意 URL 访问路径和文件路径的映射关系。
 
 1. 确保有一个可用的 nginx 服务，及服务所在节点的登录和文件写入权限；
-2. 将 binaries 离线包从火种节点拷贝至 nginx 服务所在节点；
+2. 将 binaries 离线包从火种节点（<解压后离线包路径>/offline/kubespray-binary/offline-files.tar.gz, <解压后离线包路径>/offline/component-tools.tar.gz）拷贝至 nginx 服务所在节点；
 
     !!! note
 
@@ -74,10 +74,13 @@ S3 兼容的服务只需要在 [集群配置文件 clusterConfig.yaml](../cluste
     cat > import.sh << "EOF"
     [ ! -d "${MAPPING_PATH}" ] && echo "mapping path ${MAPPING_PATH} not found" && exit 1
     [ ! -f "${BINARIRES_PKG_PATH}" ] && echo "binaries package path ${BINARIRES_PKG_PATH} not found" && exit 1
+    [ ! -f "${COMPONENT_TOOLS_PATH}" ] && echo "comonent-tools package path ${COMPONENT_TOOLS_PATH} not found" && exit 1
     tar -xzvf ${BINARIRES_PKG_PATH} --strip-components=1 -C ${MAPPING_PATH}
+    tar -xzvf ${COMPONENT_TOOLS_PATH} --strip-components=1 -C ${MAPPING_PATH}
     EOF
     export MAPPING_PATH="/usr/share/nginx/html"
     export BINARIRES_PKG_PATH="./offline-files.tar.gz"
+    export COMPONENT_TOOLS_PATH="./component-tools.tar.gz"
     bash ./import.sh
     ```
 

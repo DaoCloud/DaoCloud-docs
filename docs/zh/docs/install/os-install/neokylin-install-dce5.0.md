@@ -26,13 +26,13 @@
 
     | CPU 架构 | 版本   | 下载地址    |
     | -------- | ------ | -------- |
-    | AMD64    | v0.17.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.17.0-amd64.tar> |
+    | AMD64    | v0.18.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.18.0-amd64.tar> |
 
     下载完毕后解压离线包：
 
     ```bash
-    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.17.0-amd64.tar
-    tar -xvf offline-v0.17.0-amd64.tar
+    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.18.0-amd64.tar
+    tar -xvf offline-v0.18.0-amd64.tar
     ```
 
 2. 下载 NeoKylin Linux Advanced Server V7Update6 镜像文件。
