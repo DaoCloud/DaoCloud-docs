@@ -4,15 +4,15 @@
 
 ## 安装智能算力管理模块 (UI 方式安装)
 
-> 管理模块仅在全局管理集群安装即可
+> 此管理模块仅在全局管理集群安装即可
 
-使用下方链接，打开全局管理集群，然后在 `Helm 应用` 的 `Helm 模板` 搜寻到 `baize` 执行安装即可。
+使用下方链接，打开全局管理集群，然后在 `Helm 应用` 的 `Helm 模板` 搜寻到 `baize` 执行安装步骤。
 
-注意事项：
+!!! note "注意事项"
 
-* 命名空间 Namespace 为 `baize-system`
-* 替换环境地址后打开 `<YOUR_DCE_HOST>/kpanda/clusters/kpanda-global-cluster/helm/charts/addon/baize`
-* 注意 `kpanda-global-cluster` 全局管理集群
+    * 命名空间 Namespace 为 `baize-system`
+    * 替换环境地址后打开 `<YOUR_DCE_HOST>/kpanda/clusters/kpanda-global-cluster/helm/charts/addon/baize`
+    * 注意 `kpanda-global-cluster` 全局管理集群
 
 ## 安装智能算力管理模块 (CLI 方式安装)
 
@@ -24,7 +24,7 @@
 
     一级导航栏有 `智能算力` 入口。
 
-如何不存在，可以通过以下方式安装，注意需要在 `kpanda-global-cluster` 全局管理集群内安装：
+    如何不存在，可以通过以下方式安装，注意需要在 `kpanda-global-cluster` 全局管理集群内安装：
 
     ```bash
     # baize 是智算能力组件的开发代号
@@ -41,7 +41,7 @@
 
 ## 工作集群初始化
 
-> 注意：在每个有算力资源的工作集群内，需要部署对应的算力基础组件，主要组件包含如下：
+注意：在每个有算力资源的工作集群内，需要部署对应的算力基础组件，主要组件包含：
 
 * `gpu-operator` 初始化集群中的 GPU 资源，**这部分会因 GPU 资源类型安装方式不同**，
   详情参考 [GPU 管理](../../kpanda/user-guide/gpu/index.md)
@@ -60,8 +60,8 @@
 智能算力模块提供的数据管理中，数据集的预热能力依赖存储服务，推荐使用 NFS 服务：
 
 * 部署 NFS Server
-  * 如果已存在 NFS 可以跳过此步骤
-  * 如果不存在，可以参考最佳实践中的 [NFS 服务部署](../../baize/best-practice/deploy-nfs-in-worker.md)
+    * 如果已存在 NFS 可以跳过此步骤
+    * 如果不存在，可以参考最佳实践中的 [NFS 服务部署](../../baize/best-practice/deploy-nfs-in-worker.md)
 * 部署 `nfs-driver-csi`
 * 部署 `StorageClass`
 
