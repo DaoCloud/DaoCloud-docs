@@ -150,15 +150,15 @@ func main() {
     OTEL_SERVICE_NAME=my-golang-app OTEL_EXPORTER_OTLP_ENDPOINT=http://insight-agent-opentelemetry-collector.insight-system.svc.cluster.local:4317 go run main.go...
     ```
 
-- Production environment running
+- Running in a production environment 
 
-Please refer to the introduction of __Only injecting environment variable annotations__ in [Achieving non-intrusive enhancement of applications through Operators](./operator.md) to add annotations to deployment yaml:
+    Please refer to the introduction of __Only injecting environment variable annotations__ in [Achieving non-intrusive enhancement of applications through Operators](./operator.md) to add annotations to deployment yaml:
 
-```console
-instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
-```
+    ```console
+    instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
+    ```
 
-If you cannot use annotations, you can manually add the following environment variables to the deployment yaml:
+    If you cannot use annotations, you can manually add the following environment variables to the deployment yaml:
 
 ```yaml
 ······
@@ -264,7 +264,31 @@ Everywhere you pass http.Handler to ServeMux you will wrap the handler function.
 
 In this way, you can ensure that each feature wrapped with othttp will automatically collect its metadata and start the corresponding trace.
 
-## Custom Span
+## database enhancements
+
+### Golang Gorm
+
+The OpenTelemetry community has also developed middleware for database access libraries, such as Gorm:
+```golang
+import (
+    "github.com/uptrace/opentelemetry-go-extra/otelgorm"
+    "gorm.io/driver/sqlite"
+    "gorm.io/gorm"
+)
+
+db, err := gorm.Open(sqlite.Open("file::memory:?cache=shared"), &gorm.Config{})
+if err != nil {
+    panic(err)
+}
+
+otelPlugin := otelgorm.NewPlugin(otelgorm.WithDBName("mydb"), # Missing this can lead to incomplete display of database related topology
+    otelgorm.WithAttributes(semconv.ServerAddress("memory"))) # Missing this can lead to incomplete display of database related topology
+if err := db.Use(otelPlugin); err != nil {
+    panic(err)
+}
+```
+
+### Custom Span
 
 In many cases, the middleware provided by OpenTelemetry cannot help us record more internally called features, and we need to customize Span to record
 
@@ -277,7 +301,7 @@ In many cases, the middleware provided by OpenTelemetry cannot help us record mo
   ······
 ```
 
-## Add custom properties and custom events to span
+### Add custom properties and custom events to span
 
 It is also possible to set a custom attribute or tag as a span. To add custom properties and events, follow these steps:
 
