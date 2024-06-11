@@ -731,6 +731,7 @@ nav:
                   - 日志采集排障指南: insight/best-practice/debug-log.md
                   - 链路采集排障指南: insight/best-practice/debug-trace.md
                   - 使用Insight定位异常: insight/best-practice/find_root_cause.md
+                  - ES 数据塞满时如何操作: insight/best-practice/expand-once-es-full.md
           - 微服务引擎:
               - 介绍:
                   - 索引: skoala/intro/index.md
