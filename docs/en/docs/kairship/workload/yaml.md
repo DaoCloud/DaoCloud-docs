@@ -2,10 +2,13 @@
 
 You can create multicloud deployments either from an image or a YAML file.
 
-- Image creation involves filling out a form with various configuration options. It is user-friendly and easy-to-perform, but it requires more steps.
-- YAML creation involves configuring the necessary information in a YAML file. It requires fewer steps and is more efficient, but it assumes some backend technical knowledge.
+- Image creation involves filling out a form with various configuration options. It is user-friendly and easy-to-perform, 
+  but it requires more steps.
+- YAML creation involves configuring the necessary information in a YAML file. It requires fewer steps and is more efficient, 
+  but it assumes some backend technical knowledge.
 
-This guide explains how to create a multicloud deployment using a YAML file. If you want to learn about the image creation method, refer to [Create Multicloud Deployment from Image](deployment.md).
+This guide explains how to create a multicloud deployment using a YAML file. If you want to learn about the image creation method, 
+refer to [Create Multicloud Deployment from Image](deployment.md).
 
 ## Prerequisites
 
@@ -32,9 +35,11 @@ This guide explains how to create a multicloud deployment using a YAML file. If 
 
     !!! note
 
-        The override policy is an optional configuration. If you don't need any override configurations, just leave this field empty and click __OK__ .
+        The override policy is an optional configuration. If you don't need any override configurations, 
+        just leave this field empty and click __OK__ .
 
-Then you will be automatically directed to the multicloud deployment list. You can click the __⋮__ icon on the right of the list to edit the YAML, pause, restart, or delete the workload.
+Then you will be automatically directed to the multicloud deployment list. You can click the __⋮__ icon on the right of the list 
+to edit the YAML, pause, restart, or delete the workload.
 
 ![more actions](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/deploy-update01.png)
 
@@ -77,15 +82,14 @@ apiVersion: policy.karmada.io/v1alpha1
 kind: PropagationPolicy
 metadata:
   name: demo-nginx-pp
-  namespace: default    # (1)
+  namespace: default    # (1)!
 spec:
   resourceSelectors:
     - apiVersion: apps/v1
       kind: Deployment
-      name: demo-nginx # (2)
-   placement:
-    clusterAffinities:
-      affinityName: default
+      name: demo-nginx # (2)!
+  placement:
+    clusterAffinity:
       clusterNames:
         - demo-stage
         - demo-dev
