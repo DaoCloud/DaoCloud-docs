@@ -79,15 +79,14 @@ apiVersion: policy.karmada.io/v1alpha1
 kind: PropagationPolicy
 metadata:
   name: demo-nginx-pp
-  namespace: default    # (1)
+  namespace: default    # (1)!
 spec:
   resourceSelectors:
     - apiVersion: apps/v1
       kind: Deployment
-      name: demo-nginx # (2)
+      name: demo-nginx # (2)!
   placement:
-    clusterAffinities:
-      affinityName: default
+    clusterAffinity:
       clusterNames:
         - demo-stage
         - demo-dev
