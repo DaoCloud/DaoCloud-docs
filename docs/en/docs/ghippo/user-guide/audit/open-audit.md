@@ -1,13 +1,18 @@
 # Enable/Disable collection of audit logs
 
-- Kubernetes Audit Logs: Kubernetes itself generates audit logs. When this feature is enabled, audit log files for Kubernetes will be created in the specified directory.
-- Collecting Kubernetes Audit Logs: The log files mentioned above are collected using the Insight Agent. The prerequisite for collecting Kubernetes audit logs is that the cluster has enabled Kubernetes audit logs.
+- Kubernetes Audit Logs: Kubernetes itself generates audit logs. When this feature is enabled, audit log files for
+  Kubernetes will be created in the specified directory.
+- Collecting Kubernetes Audit Logs: The log files mentioned above are collected using the Insight Agent. The 
+  prerequisite for collecting Kubernetes audit logs are that the cluster has enabled Kubernetes audit logs,  the 
+  export of audit logs has been allowed, and the collection of audit logs has been opened.
 
 ## DCE 5.0 Installation Status
 
-- For DCE Community installations, the Kubernetes audit log switch was not operated during the management cluster installation process.
+- For DCE Community installations, the Kubernetes audit log switch was not operated during the management cluster
+  installation process.
 - For DCE 5.0 Enterprise installations, the Kubernetes audit log switch is enabled by default.
-    - To set it to default off, you can modify the installer's __clusterConfig.yaml__ file (set __logPath__ to empty "").
+    - To set it to default off, you can modify the installer's __clusterConfig.yaml__ file 
+      (set __logPath__ to empty "").
 - The collection of Kubernetes audit logs switch is disabled by default for the management cluster.
     - Default settings do not support configuration.
 
@@ -17,7 +22,8 @@
 
 #### Confirm Enabling Kubernetes Audit Logs
 
-Run the following command to check if audit logs are generated under the __/var/log/kubernetes/audit__ directory. If they exist, it means that Kubernetes audit logs are successfully enabled.
+Run the following command to check if audit logs are generated under the __/var/log/kubernetes/audit__ directory. 
+If they exist, it means that Kubernetes audit logs are successfully enabled.
 
 ```shell
 ls /var/log/kubernetes/audit
@@ -37,7 +43,8 @@ If they are not enabled, please refer to the [documentation on enabling/disablin
 
     !!! note
 
-        If using a self-built Harbor repository, please modify the chart repo URL in the first step to the insight-agent chart URL of the self-built repository.
+        If using a self-built Harbor repository, please modify the chart repo URL in the first step to the 
+        insight-agent chart URL of the self-built repository.
 
 2. Save the current Insight Agent helm values.
 
@@ -66,7 +73,8 @@ If they are not enabled, please refer to the [documentation on enabling/disablin
 
 #### Disable Collection of Kubernetes Audit Logs
 
-The remaining steps are the same as enabling the collection of Kubernetes audit logs, with only a modification in the previous section's step 4: updating the helm value configuration.
+The remaining steps are the same as enabling the collection of Kubernetes audit logs, with only a modification 
+in the previous section's step 4: updating the helm value configuration.
 
 ```shell
 helm upgrade --install --create-namespace --version ${insight_version_code} --cleanup-on-fail insight-agent chartmuseum/insight-agent -n insight-system -f insight-agent-values-bak.yaml --set global.exporters.auditLog.kubeAudit.enabled=false
@@ -80,7 +88,8 @@ helm upgrade --install --create-namespace --version ${insight_version_code} --cl
 
 #### Confirm Enabling Kubernetes Audit Logs
 
-Run the following command to check if audit logs are generated under the __/var/log/kubernetes/audit__ directory. If they exist, it means that Kubernetes audit logs are successfully enabled.
+Run the following command to check if audit logs are generated under the __/var/log/kubernetes/audit__ directory. 
+If they exist, it means that Kubernetes audit logs are successfully enabled.
 
 ```shell
 ls /var/log/kubernetes/audit
@@ -124,7 +133,8 @@ If they are not enabled, please refer to the [documentation on enabling/disablin
 
 #### Disable Collection of Kubernetes Audit Logs
 
-The remaining steps are the same as enabling the collection of Kubernetes audit logs, with only a modification in the previous section's step 3: updating the helm value configuration.
+The remaining steps are the same as enabling the collection of Kubernetes audit logs, with only a modification 
+in the previous section's step 3: updating the helm value configuration.
 
 ```shell
 helm upgrade --install --create-namespace --version ${insight_version_code} --cleanup-on-fail insight-agent insight-release/insight-agent -n insight-system -f insight-agent-values-bak.yaml --set global.exporters.auditLog.kubeAudit.enabled=false
@@ -144,7 +154,8 @@ By default, the collection of K8s audit logs is turned off. If you need to enabl
 
 Set the switch to the enabled state to enable the collection of K8s audit logs.
 
-When creating a work cluster via DCE 5.0, ensure that the K8s audit log option for the cluster is set to 'true' so that the created work cluster will have audit logs enabled.
+When creating a work cluster via DCE 5.0, ensure that the K8s audit log option for the cluster is set to 'true' so
+that the created work cluster will have audit logs enabled.
 
 ![Audit Logs Enabled](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/worker03.png)
 
@@ -154,7 +165,8 @@ After the cluster creation is successful, the K8s audit logs for that work clust
 
 #### Confirm Enabling K8s Audit Logs
 
-Run the following command to check if audit logs are generated under the __/var/log/kubernetes/audit__ directory. If they exist, it means that K8s audit logs are successfully enabled.
+Run the following command to check if audit logs are generated under the __/var/log/kubernetes/audit__ directory. 
+If they exist, it means that K8s audit logs are successfully enabled.
 
 ```shell
 ls /var/log/kubernetes/audit
@@ -170,7 +182,8 @@ The collection of K8s audit logs is disabled by default. To enable it, follow th
 
     ![Select Cluster](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/worker04.png)
 
-2. Go to the Helm application management page and update the insight-agent configuration (if insight-agent is not installed, you can [install it](../../../insight/quickstart/install/install-agent.md)).
+2. Go to the Helm application management page and update the insight-agent configuration (if insight-agent is not installed, 
+   you can [install it](../../../insight/quickstart/install/install-agent.md)).
 
     ![Go to Helm Applications](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/images/worker05.png)
 

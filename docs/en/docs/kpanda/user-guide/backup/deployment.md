@@ -41,7 +41,7 @@ Follow the steps below to backup the deployment __dao-2048__ .
     - Namespace: The namespaces that need to be backed up, multiple selections are supported.
     - Advanced Configuration: Back up specific resources in the namespace based on resource labels, such as an application, or do not back up specific resources in the namespace based on resource labels during backup.
 
-        ![Backup Resource](../../images/backupd20483.png)
+    ![Backup Resource](../../images/backupd20483.png)
 
 4. Refer to the instructions below to set the backup execution frequency, and then click __Next__ .
 
@@ -51,7 +51,7 @@ Follow the steps below to backup the deployment __dao-2048__ .
         - Direct Replication: directly copy the data in the data volume (PV) for backup;
         - Use CSI snapshots: Use CSI snapshots to back up data volumes (PVs). Requires a CSI snapshot type available for backup in the cluster.
 
-            ![Backup Policy](../../images/backupd20484.png)
+        ![Backup Policy](../../images/backupd20484.png)
 
 5. Click __OK__ , the page will automatically return to the application backup plan list, find the newly created __dao-2048__ backup plan, and perform the __Immediate Execution__ operation.
 

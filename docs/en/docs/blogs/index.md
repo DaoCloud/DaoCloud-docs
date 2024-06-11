@@ -12,6 +12,20 @@ technology, sorted by date by default.
 
 ## 2024
 
+- [20240606 | 10 Years of Kubernetes](./0606-k8s-birth.md)
+
+    Ten (10) years ago, on June 6th, 2014, the
+    [first commit](https://github.com/kubernetes/kubernetes/commit/2c4b3a562ce34cddc3f8218a2c4d11c7310e6d56)
+    of Kubernetes was pushed to GitHub. That first commit with 250 files and 47,501 lines of go, bash
+    and markdown kicked off the project we have today.
+
+- [20240516 | Embark on a Legendary K8s Quest with SIG Docs](./240509-model-spec.md)
+
+    You've likely heard the adage, "Contributing isn't just about writing code",
+    whispered in forums or seen etched into the digital walls of open source communities.
+    But what depth of truth lies within this ancient wisdom, especially in the vast,
+    evolving world of Kubernetes?
+
 - [20240509 | Large Language Model Spec](./240509-model-spec.md)
 
     This is the first draft of LLM Spec, a document that specifies desired behavior for our models in the OpenAI API and ChatGPT. It includes a set of core objectives, as well as guidance on how to deal with conflicting objectives or instructions.
@@ -221,7 +235,7 @@ technology, sorted by date by default.
 
 - [20221105 | DaoCloud is a Senior Certified Service Provider for K8s](221116-kcsp.md)
 
-    As early as 2017, DaoCloud successfully passed Kubernetes certification, becoming the earliest service provider in China to enter and be recognized by CNCF. It is also the earliest vendor in China to obtain Kubernetes Training Partner (KTP) certification. Currently, K8s versions that have been officially certified by CNCF include: v1.25, v1.24, v1.23, v1.20, v1.18, v1.15, v1.13, v1.9, and v1.7.
+    As early as 2017, DaoCloud successfully passed Kubernetes certification, becoming the earliest service provider in China to enter and be recognized by CNCF. It is also the earliest vendor in China to obtain Kubernetes Training Partner (KTP) certification.
 
 - [20221105 | Financial Digital Transformation from a Native Thinking Perspective](https://mp.weixin.qq.com/s/9BggFRr0aoEzzmemXplRWg)
 

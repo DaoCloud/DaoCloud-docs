@@ -2,7 +2,7 @@
 
 对于大规模部署，请考虑以下配置参数信息介绍。
 
-## Kubean集群配置参数文件示例
+## Kubean 集群配置参数文件示例
 
 ```yaml
 apiVersion: v1
@@ -107,7 +107,7 @@ data:
     kube_network_node_prefix_ipv6: 120
     kube_service_addresses: 10.233.0.0/18
 
-    ## 应用稳定
+    ## 应用网络
 
     dns_replicas: 3
     dns_cpu_limit: 300m
@@ -178,20 +178,17 @@ data:
 
 ## 部分参数针对不同情况的一些建议
 
-### 快速更新和快速反应（Fast Update and Fast Reaction ）
+### 快速更新和快速反应
 
 **参数设置：**
 
-- `kubelet_status_update_frequency` 设置为4s
-
--  `kube_controller_node_monitor_period` 设置为2s（默认5s）
-
-- `kube_controller_node_monitor_period` 设置为20s（默认40s）。
-
+- `kubelet_status_update_frequency` 设置为 4s
+-  `kube_controller_node_monitor_period` 设置为 2s（默认 5s）
+- `kube_controller_node_monitor_period` 设置为 20s（默认 40s）。
 - `kube_apiserver_pod_eviction_unreachable_timeout_seconds` 设置为 30（默认为 300 秒）。
 
-
-在这种情况下，Pod 将在 50 秒内被驱逐，因为节点在 20 秒后将被视为已关闭，并且 `kube_apiserver_pod_eviction_not_ready_timeout_seconds` 或 `kube_apiserver_pod_eviction_unreachable_timeout_seconds` 会在 30 秒后发生。然而，这种情况会在 etcd 上产生开销，因为每个节点都会尝试每 2 秒更新一次其状态。
+在这种情况下，Pod 将在 50 秒内被驱逐，因为节点在 20 秒后将被视为已关闭，并且 `kube_apiserver_pod_eviction_not_ready_timeout_seconds` 或 `kube_apiserver_pod_eviction_unreachable_timeout_seconds` 会在 30 秒后发生。
+然而，这种情况会在 etcd 上产生开销，因为每个节点都会尝试每 2 秒更新一次其状态。
 
 **如果环境有 1000 个节点，则每分钟将有 15000 个节点更新，这可能需要大型 etcd 容器甚至 etcd 专用节点。**
 
@@ -200,20 +197,18 @@ data:
 **参数设置：**
 
 - `kubelet_status_update_frequency` 设置为 20s
-
 - `kube_controller_node_monitor_grace_period` 设置为 2m
-
 - `kube_apiserver_pod_eviction_not_ready_timeout_seconds` 和 `kube_apiserver_pod_eviction_unreachable_timeout_seconds` 设置为 60。
 
-
-在这种情况下，Kubelet 将尝试每隔20秒。因此，Kubernetes 控制器管理器需要 6 * 5= 30 次尝试才会考虑节点的不健康状态。 1m 后它将驱逐所有 pod。驱逐过程之前的总时间为 3 分钟。
+在这种情况下，Kubelet 将尝试每隔 20 秒。因此，Kubernetes 控制器管理器需要 6 * 5= 30 次尝试才会考虑节点的不健康状态。
+1m 后它将驱逐所有 Pod。驱逐过程之前的总时间为 3 分钟。
 
 **这种场景适用于中等环境，因为 1000 个节点每分钟需要 3000 etcd 更新。**
 
-
 ## 其他注意事项
 
-- 当部署 calico 或 canal 时，可以在kubean 的主机清单文件中添加 `calico_rr` 节点，通过 calico_rr 可以快速从主机/网络中断恢复。并需配置 cluster_id (格式为ipv4地址)。
+当部署 Calico 或 Canal 时，可以在 kubean 的主机清单文件中添加 `calico_rr` 节点，
+通过 calico_rr 可以快速从主机/网络中断恢复。并需配置 cluster_id (格式为 ipv4 地址)。
 
 **主机清单文件示例：**
 
@@ -281,6 +276,7 @@ ata:
            node3:
 ```
 
-- ansible 配置文件的属性设置，可以在kubean 的 ClusterOperation 文件中配置并发数、连接超时时间
-  - 并发数：`forks: 50`
-  - 连接超时时间: `timeout: 600`
+- ansible 配置文件的属性设置，可以在 kubean 的 ClusterOperation 文件中配置并发数、连接超时时间
+
+    - 并发数：`forks: 50`
+    - 连接超时时间: `timeout: 600`

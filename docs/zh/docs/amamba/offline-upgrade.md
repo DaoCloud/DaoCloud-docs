@@ -26,19 +26,19 @@ tar -vxf amamba_x.y.z_amd64.tar
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: amamba-offline # (1)
+          intermediateBundlesPath: amamba-offline # (1)!
         target:
-          containerPrefixRegistry: 10.16.10.111 # (2)
+          containerPrefixRegistry: 10.16.10.111 # (2)!
           repo:
-            kind: HARBOR # (3)
-            url: http://10.16.10.111/chartrepo/release.daocloud.io # (4)
+            kind: HARBOR # (3)!
+            url: http://10.16.10.111/chartrepo/release.daocloud.io # (4)!
             auth:
-              username: "admin" # (5)
-              password: "Harbor12345" # (6)
+              username: "admin" # (5)!
+              password: "Harbor12345" # (6)!
           containers:
             auth:
-              username: "admin" # (7)
-              password: "Harbor12345" # (8) 
+              username: "admin" # (7)!
+              password: "Harbor12345" # (8)!
         ```
 
         1. 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
@@ -56,19 +56,19 @@ tar -vxf amamba_x.y.z_amd64.tar
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: amamba-offline # (1)
+          intermediateBundlesPath: amamba-offline # (1)!
         target:
-          containerPrefixRegistry: 10.16.10.111 # (2)
+          containerPrefixRegistry: 10.16.10.111 # (2)!
           repo:
-            kind: CHARTMUSEUM # (3)
-            url: http://10.16.10.111 # (4)
+            kind: CHARTMUSEUM # (3)!
+            url: http://10.16.10.111 # (4)!
             auth:
-              username: "rootuser" # (5)
-              password: "rootpass123" # (6)
+              username: "rootuser" # (5)!
+              password: "rootpass123" # (6)!
           containers:
             auth:
-              username: "rootuser" # (7)
-              password: "rootpass123" # (8) 
+              username: "rootuser" # (7)!
+              password: "rootpass123" # (8)!
         ```
 
         1. 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
@@ -86,17 +86,17 @@ tar -vxf amamba_x.y.z_amd64.tar
 
         ```yaml
         source:
-          intermediateBundlesPath: amamba-offline # (1)
+          intermediateBundlesPath: amamba-offline # (1)!
         target:
-          containerRegistry: 10.16.23.145 # (2)
-          containerRepository: release.daocloud.io/amamba # (3)
+          containerRegistry: 10.16.23.145 # (2)!
+          containerRepository: release.daocloud.io/amamba # (3)!
           repo:
             kind: LOCAL
-            path: ./local-repo # (4)
+            path: ./local-repo # (4)!
           containers:
             auth:
-              username: "admin" # (5)
-              password: "Harbor12345" # (6)
+              username: "admin" # (5)!
+              password: "Harbor12345" # (6)!
         ```
 
         1. 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
@@ -172,7 +172,7 @@ tar -vxf amamba_x.y.z_amd64.tar
     3. 更新应用工作台的 helm 仓库。
 
         ```shell
-        helm repo update amamba-release # (1)
+        helm repo update amamba-release # (1)!
         ```
 
         1. Helm 版本过低会导致失败，若失败，请尝试执行 helm update repo

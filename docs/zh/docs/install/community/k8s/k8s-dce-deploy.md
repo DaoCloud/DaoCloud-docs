@@ -108,8 +108,10 @@
     sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
     sudo yum makecache
     yum install containerd.io -y
-    ctr -v  # 显示安装的版本，例如 ctr containerd.io 1.6.20
+    ctr -v  # (1)!
     ```
+
+    1. 显示安装的版本，例如 ctr containerd.io 1.6.20
   
 1. 修改 containerd 的配置文件
 
@@ -122,12 +124,14 @@
 
     # 更新配置文件内容: 使用 systemd 作为 cgroup 驱动，并且替代 pause 镜像地址
     sed -i 's/SystemdCgroup\ =\ false/SystemdCgroup\ =\ true/' /etc/containerd/config.toml
-    sed -i 's/k8s.gcr.io\/pause/k8s-gcr.m.daocloud.io\/pause/g' /etc/containerd/config.toml # 老的 pause 地址
+    sed -i 's/k8s.gcr.io\/pause/k8s-gcr.m.daocloud.io\/pause/g' /etc/containerd/config.toml # (1)!
     sed -i 's/registry.k8s.io\/pause/k8s-gcr.m.daocloud.io\/pause/g' /etc/containerd/config.toml
     sudo systemctl daemon-reload
     sudo systemctl restart containerd
     sudo systemctl enable containerd
     ```
+
+    1. 老的 pause 地址
 
 1. 安装 CNI（可选）
 
@@ -142,8 +146,10 @@
     curl -LO https://github.com/containerd/nerdctl/releases/download/v1.2.1/nerdctl-1.2.1-linux-amd64.tar.gz
     tar xzvf nerdctl-1.2.1-linux-amd64.tar.gz
     mv nerdctl /usr/local/bin
-    nerdctl -n k8s.io ps # 查看容器
+    nerdctl -n k8s.io ps # (1)!
     ```
+
+    1. 查看容器
 
 ## 安装 k8s 集群
 
@@ -195,7 +201,7 @@
 
     !!! note
 
-        如下 Pod CIDR 不能与宿主机物理网络的网段重合（该 CIDR 未来还需要跟 Calico 的配置一致)。
+        如下 Pod CIDR 不能与宿主机物理网络的网段重合（该 CIDR 未来还需要跟 Calico 的配置一致）。
 
     ```bash
     sudo kubeadm init --kubernetes-version=v1.25.8 --image-repository=k8s-gcr.m.daocloud.io --pod-network-cidr=192.168.0.0/16
@@ -229,8 +235,10 @@
     mkdir -p $HOME/.kube
     sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
     sudo chown $(id -u):$(id -g) $HOME/.kube/config
-    kubectl get no # 你能看到第一个节点，但是仍然 NotReady
+    kubectl get no # (1)!
     ```
+
+    1. 你能看到第一个节点，但是仍然 NotReady
 
 1. 安装 CNI，以 Calico 为例
 
@@ -257,9 +265,12 @@
     1. 等待部署成功
 
         ```bash
-        kubectl get po -n calico-system -w # 等待 Pod 都 Running
-        kubectl get no # 可以看到第一个节点变为 ready 状态了
+        kubectl get po -n calico-system -w # (1)!
+        kubectl get no # (2)!
         ```
+
+        1. 等待 Pod 都 Running
+        2. 可以看到第一个节点变为 ready 状态了
 
 ### 接入其他 worker 工作节点
 
@@ -291,15 +302,19 @@ kubectl get no -w
 ```bash
 # 参考： https://github.com/rancher/local-path-provisioner
 wget https://raw.githubusercontent.com/rancher/local-path-provisioner/v0.0.24/deploy/local-path-storage.yaml
-sed -i "s/image: rancher/image: docker.m.daocloud.io\/rancher/g" local-path-storage.yaml # 替换 docker.io 为实际镜像
+sed -i "s/image: rancher/image: docker.m.daocloud.io\/rancher/g" local-path-storage.yaml # (1)!
 sed -i "s/image: busybox/image: docker.m.daocloud.io\/busybox/g" local-path-storage.yaml
 kubectl apply -f local-path-storage.yaml
-kubectl get po -n local-path-storage -w # 等待 Pod 都 running
+kubectl get po -n local-path-storage -w # (2)!
 
 # 把 local-path 设置为默认 SC
 kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
-kubectl get sc # 可以看到形如: local-path (default)
+kubectl get sc # (3)!
 ```
+
+1. 替换 docker.io 为实际镜像
+2. 等待 Pod 都 running
+3. 可以看到形如: local-path (default)
 
 ## 安装 DCE 5.0 社区版
 

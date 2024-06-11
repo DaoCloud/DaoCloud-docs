@@ -1,83 +1,158 @@
+---
+MTPE: ModetaNiu
+Date: 2024-06-05
+---
+
 # etcd backup
 
-ETCD backup is based on cluster data as the core backup. In Cases such as hardware device damage, development and test configuration errors, etc., the backup cluster data can be restored.
+ETCD backup is based on cluster data as the core backup. In cases such as hardware device damage, development and test configuration errors, etc., the backup cluster data can be restored through etcd backup.
 
-This section will introduce how to realize the etcd backup of the cluster through the container management interface.
+This section will introduce how to realize the etcd backup for clusters.
 
 ## Prerequisites
 
-- The container management module [connected to the Kubernetes cluster](../clusters/integrate-cluster.md) or [created the Kubernetes cluster](../clusters/create-cluster.md), and can access the UI interface of the cluster .
+- [Integrated the Kubernetes cluster](../clusters/integrate-cluster.md) or
+  [created the Kubernetes cluster](../clusters/create-cluster.md),
+  and you can access the UI interface of the cluster.
 
-- Completed a [namespace creation](../namespaces/createns.md), [user creation](../../../ghippo/user-guide/access-control/user.md), and grant [`NS Admin`](../permissions/permission-brief.md#ns-admin) or higher permissions to the user. For details, refer to [Namespace Authorization](../permissions/cluster-ns-auth.md).
+- Created a [namespace](../namespaces/createns.md),
+  [user](../../../ghippo/user-guide/access-control/user.md),
+  and granted [`NS Admin`](../permissions/permission-brief.md#ns-admin) or higher permissions to the user.
+  For details, refer to [Namespace Authorization](../permissions/cluster-ns-auth.md).
 
-- Prepare a MinIO instance. It is recommended to create it through DCE 5.0's MinIO middleware. For specific steps, refer to [MinIO Object Storage](../../../middleware/minio/user-guide/create.md).
+- Prepared a MinIO instance. It is recommended to create it through DCE 5.0's MinIO middleware.
+  For specific steps, refer to [MinIO Object Storage](../../../middleware/minio/user-guide/create.md).
 
 ## Create etcd backup
 
 Follow the steps below to create an etcd backup.
 
-1. On the __Backup and Recovery__ - __ETCD Backup__ page, you can see all the current backup strategies. Click __Create Backup Strategy__ on the right to create an ETCD backup strategy for the target cluster.
+1. Enter  __Container Management__ -> __Backup Recovery__ -> __ETCD Backup__ page, you can see all the current 
+   backup policies. Click __Create Backup Policy__ on the right.
 
-    
+    ![Backup policy list](../images/etcd01.png)
 
-2. Fill in the basic information. After filling in, click Next to automatically verify the connectivity of ETCD. If the verification passes, proceed to the next step.
+2. Fill in the __Basic Information__. Then, click __Next__ to automatically verify the connectivity of ETCD. If
+   the verification passes, proceed to the next step.
    
     - First select the backup cluster and log in to the terminal
-    - Fill in the ETCD address, most standard K8s clusters are: `https://node number:2379` 
-    - Fill in the CA certificate, you can use the following command to view the content of the certificate and copy and paste it to the corresponding location:
+    - Enter ETCD, and the format is `https://${NodeIP}:${Port}`.
 
-        ```shell
-        cat /etc/kubernetes/ssl/etcd/ca.crt
-        ```
+        - In a standard Kubernetes cluster, the default port for ETCD is __2379__.
+        - In a DCE 4.0 cluster, the default port for ETCD is __12379__.
+        - In a public cloud managed cluster, you need to contact the relevant developers to obtain the ETCD port number.
+          This is because the control plane components of public cloud clusters are maintained and managed by 
+          the cloud service provider. Users cannot directly access or view these components, nor can they obtain 
+          control plane port information through regular commands (such as kubectl).
 
-    - Fill in the Cert certificate, you can use the following command to view the content of the certificate and copy and paste it to the corresponding location:
+        ??? note "Ways to obtain port number"  
 
-        ```shell
-        cat /etc/kubernetes/ssl/apiserver-etcd-client.crt
-        ```
+            1. Find the ETCD Pod in the __kube-system__ namespace
 
-    - Fill in the Key, you can use the following command to view the content of the certificate and copy and paste it to the corresponding location:
+                ```shell
+                kubectl get po -n kube-system | grep etcd
+                ```
 
-        ```shell
-        cat /etc/kubernetes/ssl/apiserver-etcd-client.key
-        ```
+            2. Get the port number from the __listen-client-urls__ of the ETCD Pod
 
+                ```shell
+                kubectl get po -n kube-system ${etcd_pod_name} -oyaml | grep listen-client-urls # (1)!
+                ```
+
+                1. Replace __etcd_pod_name__ with the actual Pod name
+
+                The expected output is as follows, where the number after the node IP is the port number:
+
+                ```shell
+                - --listen-client-urls=https://127.0.0.1:2379,https://10.6.229.191:2379
+                ```
+
+    - Fill in the CA certificate, you can use the following command to view the certificate content.
+      Then, copy and paste it to the proper location:
+
+        === "Standard Kubernetes Cluster"
+
+            ```shell
+            cat /etc/kubernetes/ssl/etcd/ca.crt
+            ```
+
+        === "DCE 4.0 Cluster"
+
+            ```shell
+            cat /etc/daocloud/dce/certs/ca.crt
+            ```
+
+    - Fill in the Cert certificate, you can use the following command to view the content of the certificate. Then, copy and paste it to the proper location:
+
+        === "Standard Kubernetes Cluster"
         
+            ```shell
+            cat /etc/kubernetes/ssl/apiserver-etcd-client.crt
+            ```
 
-3. Select the backup method, which is divided into manual backup and scheduled backup.
-   
-    - Manual backup: Perform a backup of ETCD full data immediately based on the backup configuration. Backup chain length: The longest length of backup data to keep, the default is 30.
-  
+        === "DCE 4.0 Cluster"
         
+            ```shell
+            cat /etc/daocloud/dce/certs/etcd/server.crt
+            ```
 
-    - Timing backup: Perform periodic full backup of ETCD data according to the set backup frequency. Choose backup frequency: support hourly, daily, weekly, monthly levels and custom methods.
+    - Fill in the Key, you can use the following command to view the content of the certificate and copy and paste it to the proper location:
 
-        
+        === "Standard Kubernetes Cluster"
 
-4. Storage location
-   
-    - Storage provider: S3 storage is selected by default
-    - Object storage access address: MinIO access address
-    - Bucket: Create a Bucket in MinIO and fill in the name
-    - Username: MinIO login username
-    - Password: MinIO login password
-   
-        
+            ```shell
+            cat /etc/kubernetes/ssl/apiserver-etcd-client.key
+            ```
 
-5. After the creation is successful, a piece of data will be generated in the backup policy list. __Operations__ include log, view YAML, update policy, stop, run now. When the backup method is manual, you can click __Immediately__ to back up. When the backup method is scheduled backup, the backup will be performed according to the configured time.
+        === "DCE 4.0 Cluster"
 
-    
+            ```shell
+            cat /etc/daocloud/dce/certs/etcd/server.key
+            ```
 
-6. Click __View Log__ to display the log content. By default, 100 lines are displayed. If you want to view more log information or download logs, go to [Observability](https://demo-dev.daocloud.io/insight/logs?filterType=workload&cluster=chenwen-test&namespace=kpanda-system&workloadKind=deployment&workload=chenwen-test-etcd-backup&pod=chenwen-test-etcd-backup-5cf6d6bdfc-xstkx&container=backup-restore)
+        ![Create Basic Information](../images/etcd-get01.png)
 
-    
+    !!! note
 
-## Backup policy details
+        Click __How to get__ below the input box to see how to obtain the proper information on the UI page.        
 
-1. Click to enter the details of the backup strategy, including basic information and backup records.
+3. Refer to the following information to fill in the __Backup Policy__.
 
-    
+    - Backup Method: Choose either manual backup or scheduled backup
 
-2. Check the backup point. After selecting a cluster, you can view all the backup information under the cluster. Every time a backup is performed, a backup point is correspondingly generated, and the application can be quickly restored through the backup point in the successful state.
-   
-    
+        - Manual Backup: Immediately perform a full backup of ETCD data based on the backup configuration.
+        - Scheduled Backup: Periodically perform full backups of ETCD data according to the set backup frequency.
+
+    - Backup Chain Length: the maximum number of backup data to retain. The default is 30.
+    - Backup Frequency: it can be per hour, per day, per week or per month, and can also be customized.
+
+4. Refer to the following information to fill in the __Storage Path__.
+
+    - Storage Provider: Default is S3 storage
+    - Object Storage Access Address: The access address of MinIO
+    - Bucket: Create a Bucket in MinIO and fill in the Bucket name
+    - Username: The login username for MinIO
+    - Password: The login password for MinIO
+
+5. After clicking __OK__ , the page will automatically redirect to the backup policy list, where you can 
+   view all the currently created ones.
+
+    - Click the __ⵗ__ action button on the right side of the policy to view logs, view YAML, update the policy, stop the policy, or execute the policy immediately.
+    - When the backup method is manual, you can click __Execute Now__ to perform the backup.
+    - When the backup method is scheduled, the backup will be performed according to the configured time.
+
+## View Backup Policy Logs
+
+Click __Logs__ to view the log content. By default, 100 lines are displayed. If you want to see more log information or download the logs, you can follow the prompts above the logs to go to the observability module.
+
+## View Backup POlicy Details
+
+Go to __Container Management__ -> __Backup Recovery__ -> __ETCD Backup__, click on the __Backup Policy__ tab, and then click the policy to view the details.
+
+## View Recovery Point
+
+1. Go to __Container Management__ -> __Backup Recovery__ -> __ETCD Backup__, and click on the __Recovery Point__ tab.
+2. After selecting the target cluster, you can view all the backup information under that cluster.
+
+    Each time a backup is executed, a corresponding recovery point is generated, which can be used to quickly restore
+    the application from a successful recovery point.

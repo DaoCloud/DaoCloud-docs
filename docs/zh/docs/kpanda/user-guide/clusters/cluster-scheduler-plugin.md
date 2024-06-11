@@ -9,17 +9,17 @@
 - 原生的调度器无法满足调度需求，你可以选择使用
   [CoScheduling](https://github.com/kubernetes-sigs/scheduler-plugins/tree/master/pkg/coscheduling)、
   [CapacityScheduling](https://github.com/kubernetes-sigs/scheduler-plugins/tree/master/pkg/capacityscheduling)
-  等 scheduler-plugins 插件
-- 在特殊的场景，需要新的调度器来完成调度任务而不影响原生调度器的流程
-- 区分不同功能的调度器，通过切换调度器名称来实现不同的调度场景
+  等 scheduler-plugins 插件。
+- 在特殊的场景，需要新的调度器来完成调度任务而不影响原生调度器的流程。
+- 区分不同功能的调度器，通过切换调度器名称来实现不同的调度场景。
 
-本文以使用 vgpu 调度器的同时，想结合 scheduler-plugins 的 cosheduling 插件能力的场景为示例，介绍如何安装并使用 scheduler-plugins。
+本文以使用 vgpu 调度器的同时，想结合 scheduler-plugins 的 coscheduling 插件能力的场景为示例，介绍如何安装并使用 scheduler-plugins。
 
 ## 安装 scheduler-plugins
 
 ### 前置条件
 
-- kubean 是在 v0.13.0 版本推出的新功能，选择管理集群时请确保版本是否 >= 此版本。
+- kubean 是在 v0.13.0 版本推出的新功能，选择管理集群时请确保版本不低于此版本。
 - 安装 scheduler-plugins 版本为 v0.27.8，请确保集群版本是否与它兼容。
   参考文档 [Compatibility Matrix](https://github.com/kubernetes-sigs/scheduler-plugins/tree/master?tab=readme-ov-file#compatibility-matrix)。
 
@@ -51,7 +51,7 @@
 
 ## 使用 scheduler-plugins
 
-以下以使用 vgpu 调度器的同时，想结合 scheduler-plugins 的 cosheduling 插件能力场景为示例，介绍如何使用 scheduler-plugins。
+以下以使用 vgpu 调度器的同时，想结合 scheduler-plugins 的 coscheduling 插件能力场景为示例，介绍如何使用 scheduler-plugins。
 
 1. 在 Helm 模板中安装 vgpu，设置 values.yaml 参数。
 
@@ -142,7 +142,7 @@
             ignoredByScheduler: true
     ```
 
-1. 安装完 vgpu-scheduler 后，系统会自动创建 svc，urlPrefix 指定 svc 的 url。
+1. 安装完 vgpu-scheduler 后，系统会自动创建 svc，urlPrefix 指定 svc 的 URL。
 
     !!! note
 

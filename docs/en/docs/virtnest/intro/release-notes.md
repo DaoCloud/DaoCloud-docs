@@ -8,6 +8,37 @@ Date: 2024-04-24
 This page provides the release notes for VirtNest (Virtual Machine),
 allowing you to understand the evolution path and feature changes of each version.
 
+## 2024-05-30
+
+### v0.9.0
+
+#### Features
+
+- **Added** Support for directly updating versions in the Helm application interface
+  for the virtual machine module.
+
+#### Fixes
+
+- **Fixed** an issue where creating a virtual machine via YAML configuration would fail
+  due to user information parsing errors.
+- **Fixed** abnormal calculations in virtual machine resource monitoring.
+
+## 2024-04-30
+
+### v0.8.1
+
+#### Features
+
+- **Added** GPU information in the details of virtual machines and virtual machine templates.
+
+#### Improvements
+
+- **Improved** the performance of the virtual machine list.
+
+#### Fixes
+
+- **Fixed** issues with using the bridge network mode for virtual machines.
+
 ## 2024-3-26
 
 ### v0.7.0
@@ -45,7 +76,8 @@ allowing you to understand the evolution path and feature changes of each versio
 #### Fixes
 
 - **Fixed** an issue where network configuration information was displayed incorrectly when virtual machine was powered off
-- **Fixed** incorrect position for creating Multus CR in network configuration prompt message when creating virtual machines
+- **Fixed** incorrect position for creating Multus CR in network configuration prompt message
+  when creating virtual machines
 - **Fixed** an issue where powered-off virtual machines could not be updated
 
 ## 2023-12-26
@@ -60,7 +92,7 @@ allowing you to understand the evolution path and feature changes of each versio
 #### Improvements
 
 - **Improved** response speed for virtual machine list
-- **Improved** Sorted the virtual machine template list
+- **Improved** the sorting of the virtual machine template list
 
 #### Fixes
 
@@ -104,7 +136,7 @@ allowing you to understand the evolution path and feature changes of each versio
 
 #### Fixes
 
-- **Fixed** issue with VNC access not working
+- **Fixed** an issue with VNC access not working
 
 ## 2023-8-31
 

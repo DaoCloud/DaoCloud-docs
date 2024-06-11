@@ -1,23 +1,33 @@
 # Create ConfigMaps
 
-ConfigMaps (ConfigMap) store non-confidential data in the form of key-value pairs to achieve the effect of mutual decoupling of configuration data and application code. ConfigMaps can be used as environment variables for containers, command-line parameters, or configuration files in storage volumes.
+ConfigMaps store non-confidential data in the form of key-value pairs to achieve the effect of
+mutual decoupling of configuration data and application code. ConfigMaps can be used as
+environment variables for containers, command-line parameters, or configuration files in storage volumes.
 
 !!! note
 
-     - The data saved in ConfigMaps cannot exceed 1 MiB. If you need to store larger volumes of data, it is recommended to mount a storage volume or use an independent database or file service.
+     - The data saved in ConfigMaps cannot exceed 1 MiB. If you need to store larger volumes of data,
+       it is recommended to mount a storage volume or use an independent database or file service.
 
-     - ConfigMaps do not provide confidentiality or encryption. If you want to store encrypted data, it is recommended to use [key](use-secret.md), or other third-party tools to ensure the privacy of data.
+     - ConfigMaps do not provide confidentiality or encryption. If you want to store encrypted data,
+       it is recommended to use [secret](use-secret.md), or other third-party tools to ensure the
+       privacy of data.
 
-Two creation methods are supported:
+You can create ConfigMaps with two methods:
 
 - Graphical form creation
 - YAML creation
 
 ## Prerequisites
 
-- The container management module [connected to the Kubernetes cluster](../clusters/integrate-cluster.md) or [created the Kubernetes cluster](../clusters/create-cluster.md), and can access the UI interface of the cluster
+- [Integrated the Kubernetes cluster](../clusters/integrate-cluster.md) or
+  [created the Kubernetes cluster](../clusters/create-cluster.md),
+  and you can access the UI interface of the cluster.
 
-- Completed a [namespace creation](../namespaces/createns.md), [user creation](../../../ghippo/user-guide/access-control/user.md), and authorize the user as [NS Editor](../permissions/permission-brief.md#ns-editor) role, for details, refer to [Namespace Authorization](../permissions/cluster-ns-auth.md).
+- Created a [namespace](../namespaces/createns.md),
+  [user](../../../ghippo/user-guide/access-control/user.md),
+  and authorized the user as [NS Editor](../permissions/permission-brief.md#ns-editor).
+  For details, refer to [Namespace Authorization](../permissions/cluster-ns-auth.md).
 
 ## Graphical form creation
 

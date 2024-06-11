@@ -30,10 +30,10 @@ Currently, authorized and compliant Kubernetes versions of DaoCloud include but 
 
 The currently maintained versions by K8s community:
 
-[![1.25](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/1.25.png)](https://github.com/cncf/k8s-conformance/pull/2240)
 [![1.26](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/1.26.png)](https://github.com/cncf/k8s-conformance/pull/2451)
 [![1.27](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/1.27.png)](https://github.com/cncf/k8s-conformance/pull/2666)
 [![1.28](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/1.28.png)](https://github.com/cncf/k8s-conformance/pull/2835)
+[![1.29](../images/1.29.png)](https://github.com/cncf/k8s-conformance/pull/3203)
 
 Historical versions that are no longer maintained by the Kubernetes community, but are being continuously maintained by DaoCloud [KLTS](https://klts.io/):
 
@@ -45,6 +45,7 @@ Historical versions that are no longer maintained by the Kubernetes community, b
 [![1.20](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/1.20.png)](https://github.com/cncf/k8s-conformance/pull/1463)
 [![1.23](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/1.23.png)](https://github.com/cncf/k8s-conformance/pull/2072)
 [![1.24](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/1.24.png)](https://github.com/cncf/k8s-conformance/pull/2239)
+[![1.25](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/1.25.png)](https://github.com/cncf/k8s-conformance/pull/2240)
 
 <!--
 Source: https://github.com/cncf/artwork/tree/master/projects/kubernetes/certified-kubernetes

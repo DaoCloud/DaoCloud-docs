@@ -49,7 +49,13 @@
 
 1. 使用 __podman exec -it {CONTAINER ID} bash__ 命令进入 kind 集群容器内。
 
-2. 复制并执行如下命令，在 kind 集群内执行，以创建 __cluster.kubean.io__ 资源：
+1. 在 kind 集群容器内，执行如下命令，获取 **kind 集群名称** ：
+
+    ```bash
+    kubectl get clusters
+    ```
+
+1. 复制并执行如下命令，在 kind 集群内执行，以创建 __cluster.kubean.io__ 资源：
 
     ```bash
     kubectl apply -f - <<EOF
@@ -72,10 +78,14 @@
     EOF
     ```
 
-3. 在 kind 集群内执行如下命令，检验 cluster.kubean.io` 资源是否正常创建：
+    !!! note
+
+        注意：spec.hostsConfRef.name、spec.kubeconfRef.name、spec.varsConfRef.name 中集群名称默认为 my-cluster，需替换成上一步骤中获取的 **kind 集群名称** 。
+
+1. 在 kind 集群内执行如下命令，检验 cluster.kubean.io` 资源是否正常创建：
 
     ```bash
-    root@my-cluster-installer-control-plane:/# kubectl get clusters
+    kubectl get clusters
     ```
 
     预期输出如下：
@@ -100,16 +110,46 @@
     scp /etc/containerd/config.toml root@{火种节点 IP}:/root
     ```
 
-3. 在火种节点上执行如下命令，将 __config.toml__ 配置文件复制到 kind 集群内：
+3. 在火种节点上，从控制节点拷贝过来的 containerd 配置文件 __config.toml__ 中选取 **非安全镜像registry 的部分** 加入到 **kind 集群内 config.toml**
+
+    非安全镜像registry 部分示例如下：
 
     ```bash
-    cd /root
-    podman cp config.toml {CONTAINER ID}:/etc/containerd
+    [plugins."io.containerd.grpc.v1.cri".registry]
+      [plugins."io.containerd.grpc.v1.cri".registry.mirrors]
+        [plugins."io.containerd.grpc.v1.cri".registry.mirrors."10.6.202.20"]
+          endpoint = ["https://10.6.202.20"]
+        [plugins."io.containerd.grpc.v1.cri".registry.configs."10.6.202.20".tls]
+          insecure_skip_verify = true
     ```
 
-    __{CONTAINER ID}__ 替换为您真实的容器 ID
+    !!! note
 
-4. 在 kind 集群内执行如下命令，重启 containerd 服务
+        由于 kind 集群内不能直接修改 config.toml 文件，故可以先复制一份文件出来修改，再拷贝到 kind 集群，步骤如下：
+
+        a. 在火种节点上执行以下命令，将文件拷贝出来
+
+        ```bash
+        podman cp {CONTAINER ID}:/etc/containerd/config.toml ./config.toml.kind
+        ```
+
+        b. 执行如下命令编辑 config.toml 文件
+
+        ```bash
+        vim ./config.toml.kind
+        ```
+
+        c. 将修改好的文件再复制到 kind 集群，执行如下命令
+
+        ```bash
+        podman cp ./config.toml.kind {CONTAINER ID}:/etc/containerd/config.toml
+        ```
+
+        **{CONTAINER ID}** 替换为您真实的容器 ID
+
+    <!-- ![img](../images/) -->
+
+1. 在 kind 集群内执行如下命令，重启 containerd 服务
 
     ```bash
     systemctl restart containerd

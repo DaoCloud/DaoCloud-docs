@@ -48,3 +48,33 @@ kubectl -n your-namespace describe vm your-vm
 
 当详细信息涉及存储信息，如 PVC、PV、SC 等，应检查 SC 状态。
 问题未解决时，应[咨询开发人员](../../install/index.md#_4)。
+
+### VNC 可以启动但网络无法访问
+
+按照下面流程进行排查，将相关信息记录下来，反馈给[开发人员](../../install/index.md#_4)。
+在 VM 所在集群中执行以下操作：
+
+1. 获取 VM 的 Pod IP
+
+    ```bash
+    kubectl -n your-namespace get vmi your-vm -o wide
+    ```
+
+2. 在节点上执行 ssh 登录你的 VM
+
+    ```bash
+    ssh your-vm-username@xx.xx.xx.xx
+    ```
+
+    如果无法访问，请[咨询开发人员](../../install/index.md#_4)。
+
+3. 检查 VM 使用的网络模式
+
+    如果是默认网络模式（masquerade），[咨询开发人员](../../install/index.md#_4)。
+
+    如果是 bridge + ovs，需要确认以下信息。
+
+    - 检查 Spiderpool 是否安装成功，并且确保安装在 `kube-system` 命名空间下。
+    - ovs 安装成功，并且 ovs bridge 配置成功。
+
+    若以上信息确认无误，请[咨询开发人员](../../install/index.md#_4)。

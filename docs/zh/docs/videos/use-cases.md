@@ -47,7 +47,7 @@
 参阅 [OEM IN 文档](../ghippo/best-practice/oem/oem-in.md)。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/oemin-istio.mp4" preload="metadata" poster="images/oemin-istio.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/oemin-istio.mp4" preload="metadata" poster="images/oem-in.png"></video>
 </div>
 
 ## 配置并使用 Underlay IP

@@ -28,6 +28,7 @@ In addition to the standard K8s ports, ports need to be opened for CNI and some 
 |----- |--------| ------------    |
 | TCP  | 2379   | etcd client port|
 | TCP  | 2380   | etcd peer port  |
+| TCP  | 2381   | etcd metric port|
 | TCP  | 6443   | kubernetes api  |
 | TCP  | 10250  | kubelet api     |
 | TCP  | 10257  | kube-scheduler  |

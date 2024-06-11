@@ -2,6 +2,28 @@
 
 本页列出 Insight 可观测性的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2024-05-31
+
+### Insight Server v0.27.0
+
+#### 新增和优化
+
+- **新增** 服务详情中增加服务上下游拓扑
+- **优化** 开发仪表盘给应用管理员
+- **优化** 拓扑图增加数据库、消息队列类型的类型节点
+- **优化** 增加 vector 监控面板
+
+#### 修复
+
+- **修复** 命名空间权限的用户，无法查看 insight-agent 详情
+
+### Insight Agent v0.27.0
+
+#### 优化
+
+- **优化** 支持链路数据上报至 Kafka
+- **优化** 升级 fluentbit chart 到 0.46.7
+
 ## 2024-04-30
 
 ### v0.26.0
@@ -311,7 +333,7 @@
 !!! warning
 
     可观测性 Insight v0.16.0 使用了 vmalertmanagers CRD 的新特性参数 __disableRouteContinueEnforce__ ,
-    升级 insight server 前，请参考[从 v0.15.x（或更低版本）升级到 v0.16.x](../quickstart/install/upgrade-note.md#v015x-v016x)
+    升级 insight server 前，请参考[从 v0.15.x（或更低版本）升级到 v0.16.x](../quickstart/install/upgrade-note.md)
 
 #### 新增
 

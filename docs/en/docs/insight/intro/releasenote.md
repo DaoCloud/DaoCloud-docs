@@ -8,6 +8,28 @@ date: 2024-02-19
 This page lists the Release Notes of Insight, so that you can understand
 the evolution path and feature changes of each version.
 
+## 2024-05-31
+
+### Insight Server v0.27.0
+
+#### New Features and Improvements
+
+- **Add** upstream and downstream topology to service details.
+- **Improved** development dashboard for application administrators.
+- **Improved** database and message queue type nodes in the topology graph.
+- **Improved** vector monitoring panel.
+
+#### Fixes
+
+- **Fix** an issue where users with namespace permissions are unable to view insight-agent details.
+
+### Insight Agent v0.27.0
+
+#### Improvements
+
+- **Improved** reporting trace data to Kafka.
+- **Improved** Fluentbit chart upgraded to version 0.46.7.
+
 ## 2024-04-30
 
 ### v0.26.0
@@ -16,17 +38,17 @@ The following changes are specific to Insight Server.
 
 #### Features and Improvements
 
-- **Added** Built-in monitoring dashboard for Vector when using Vector to transmit logs
-- **Improved** Support configuring multiple log upload addresses
+- **Added** built-in monitoring dashboard for Vector when using Vector to transmit logs
+- **Improved** support configuring multiple log upload addresses
 - **Improved** Clicking on a probe name displays the status of the probe task
-- **Improved** Support high availability of opentelemetry-collector component
+- **Improved** support high availability of opentelemetry-collector component
 
 #### Bug Fixes
 
-- **Fixed** issue with built-in rules not taking effect
-- **Fixed** Clear historical data on dashboard after updating probe task
-- **Fixed** issue with failure to create alert policy when alert description is empty in YAML
-- **Fixed** issue with data not being cleared after service disengages from distributed tracing
+- **Fixed** an issue with built-in rules not taking effect
+- **Fixed** clear historical data on dashboard after updating probe task
+- **Fixed** an issue with failure to create alert policy when alert description is empty in YAML
+- **Fixed** an issue with data not being cleared after service disengages from distributed tracing
 
 ## 2024.03.31
 
@@ -42,16 +64,16 @@ These changes are for Insight Server.
 #### Improvements
 
 - **Improved** Log correlation support for filtering based on TraceID and container groups
-- **Improved** Support for encrypting sensitive information of notification objects
-- **Improved** Split `insight-server` into `insight-server` and `insight-manager` components
-- **Improved** High availability support for `opentelemetry-collector` component
+- **Improved** support for encrypting sensitive information of notification objects
+- **Improved** split `insight-server` into `insight-server` and `insight-manager` components
+- **Improved** high availability support for `opentelemetry-collector` component
 - **Improved** Grafana and Jaeger are not accessible without login
-- **Improved** Support for customizing whether to initialize log indexes during installation
+- **Improved** support for customizing whether to initialize log indexes during installation
 
 #### Bug Fixes
 
 - **Fixed** permission issues with alarm-related APIs
-- **Fixed** issue with no data in overview query metrics
+- **Fixed** an issue with no data in overview query metrics
 - **Fixed** validation issue when importing YAML for alarm policies
 - **Fixed** limitation issue with Grafana access speed
 
@@ -61,8 +83,8 @@ These changes are for Insight Server.
 
 #### New Features
 
-- **Added** Support for alarm suppression
-- **Added** Support for alarm templates and creating alarm policies from templates
+- **Added** support for alarm suppression
+- **Added** support for alarm templates and creating alarm policies from templates
 
 #### Improvements
 
@@ -71,9 +93,9 @@ These changes are for Insight Server.
 
 #### Fixes
 
-- **Fixed** Inaccurate preview queries when creating log alarms
-- **Fixed** Error in listening IPv6 during insight-system deployment
-- **Fixed** Issue with Grafana dashboards not being accessible without authentication
+- **Fixed** inaccurate preview queries when creating log alarms
+- **Fixed** an error in listening IPv6 during insight-system deployment
+- **Fixed** an issue with Grafana dashboards not being accessible without authentication
 - **Fixed** Enabling InsecureSkipVerify for all SMTP emails
 
 ### Insight Agent v0.23.0
@@ -204,7 +226,7 @@ These changes are for Insight Server.
 - **Fixed** compatibility issues with Openshift clusters
 - **Fixed** compatibility issues with Kubernetes v0.18.20
 - **Fixed** compatibility issues with DCE 4.0
-- **Fixed** issue with abnormal metric calculations
+- **Fixed** an issue with abnormal metric calculations
 
 ## 2023.07.30
 

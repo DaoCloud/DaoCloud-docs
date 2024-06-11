@@ -21,15 +21,15 @@
 | --------------------------- | -------- | ------------ | ------------- | ------------- |
 | 对文件夹本身                | 查看     | &check;            | &check;             | &check;             |
 |                             | 授权     | &check;            | &cross;             | &cross;             |
-|                             | 修改别名 | &check;            | &check;             | &cross;             |
+|                             | 修改别名 | &check;            | &cross;             | &cross;             |
 | 对子文件夹                  | 创建     | &check;            | &cross;             | &cross;             |
 |                             | 查看     | &check;            | &check;             | &check;             |
 |                             | 授权     | &check;            | &cross;             | &cross;             |
-|                             | 修改别名 | &check;            | &check;             | &cross;             |
+|                             | 修改别名 | &check;            | &cross;             | &cross;             |
 | 对其下的工作空间            | 创建     | &check;            | &cross;             | &cross;             |
 |                             | 查看     | &check;            | &check;             | &check;             |
 |                             | 授权     | &check;            | &cross;             | &cross;             |
-|                             | 修改别名 | &check;            | &check;             | &cross;             |
+|                             | 修改别名 | &check;            | &cross;             | &cross;             |
 | 对其下的工作空间 - 资源组   | 查看     | &check;            | &check;             | &check;             |
 |                             | 资源绑定 | &check;            | &cross;             | &cross;             |
 |                             | 解除绑定 | &check;            | &cross;             | &cross;             |
