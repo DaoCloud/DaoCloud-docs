@@ -266,6 +266,32 @@ import (
 
 通过这种方式，您可以确保使用 othttp 包装的每个函数都会自动收集其元数据并启动相应的跟踪。
 
+## 数据库访问增强
+
+## Golang Gorm
+
+OpenTelemetry 社区也开发了数据库访问库的中间件，比如 Gorm:
+```golang
+import (
+	"github.com/uptrace/opentelemetry-go-extra/otelgorm"
+	"gorm.io/driver/sqlite"
+	"gorm.io/gorm"
+)
+
+db, err := gorm.Open(sqlite.Open("file::memory:?cache=shared"), &gorm.Config{})
+if err != nil {
+	panic(err)
+}
+
+otelPlugin := otelgorm.NewPlugin(otelgorm.WithDBName("mydb"), # 缺失会导致数据库相关拓扑展示不完整
+	otelgorm.WithAttributes(semconv.ServerAddress("memory"))) # 缺失会导致数据库相关拓扑展示不完整
+if err := db.Use(otelPlugin); err != nil {
+    panic(err)
+}
+```
+
+
+
 ## 自定义 Span
 
 很多时候，OpenTelemetry 提供的中间件不能帮助我们记录更多内部调用的函数，需要我们自定义 Span 来记录

@@ -264,6 +264,30 @@ Everywhere you pass http.Handler to ServeMux you will wrap the handler function.
 
 In this way, you can ensure that each feature wrapped with othttp will automatically collect its metadata and start the corresponding trace.
 
+## database enhancements
+
+## Golang Gorm
+
+The OpenTelemetry community has also developed middleware for database access libraries, such as Gorm:
+```golang
+import (
+    "github.com/uptrace/opentelemetry-go-extra/otelgorm"
+    "gorm.io/driver/sqlite"
+    "gorm.io/gorm"
+)
+
+db, err := gorm.Open(sqlite.Open("file::memory:?cache=shared"), &gorm.Config{})
+if err != nil {
+    panic(err)
+}
+
+otelPlugin := otelgorm.NewPlugin(otelgorm.WithDBName("mydb"), # Missing this can lead to incomplete display of database related topology
+    otelgorm.WithAttributes(semconv.ServerAddress("memory"))) # Missing this can lead to incomplete display of database related topology
+if err := db.Use(otelPlugin); err != nil {
+    panic(err)
+}
+```
+
 ## Custom Span
 
 In many cases, the middleware provided by OpenTelemetry cannot help us record more internally called features, and we need to customize Span to record
