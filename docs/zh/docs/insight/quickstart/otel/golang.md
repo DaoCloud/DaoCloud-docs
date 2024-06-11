@@ -152,13 +152,13 @@ func main() {
 
 - 生产环境运行
 
-请参考[通过 Operator 实现应用程序无侵入增强](./operator.md) 中 __只注入环境变量注解__ 相关介绍，为 deployment yaml 添加注解：
+    请参考[通过 Operator 实现应用程序无侵入增强](./operator.md) 中 __只注入环境变量注解__ 相关介绍，为 deployment yaml 添加注解：
 
-```console
-instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
-```
+    ```console
+    instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
+    ```
 
-如果无法使用注解的方式，您可以手动在 deployment yaml 添加如下环境变量：
+    如果无法使用注解的方式，您可以手动在 deployment yaml 添加如下环境变量：
 
 ```yaml
 ······
@@ -166,7 +166,7 @@ env:
   - name: OTEL_EXPORTER_OTLP_ENDPOINT
     value: 'http://insight-agent-opentelemetry-collector.insight-system.svc.cluster.local:4317'
   - name: OTEL_SERVICE_NAME
-    value: "your depolyment name" # (1)
+    value: "your depolyment name" # (1)!
   - name: OTEL_K8S_NAMESPACE
     valueFrom:
       fieldRef:
@@ -268,7 +268,7 @@ import (
 
 ## 数据库访问增强
 
-## Golang Gorm
+### Golang Gorm
 
 OpenTelemetry 社区也开发了数据库访问库的中间件，比如 Gorm:
 ```golang
@@ -290,9 +290,7 @@ if err := db.Use(otelPlugin); err != nil {
 }
 ```
 
-
-
-## 自定义 Span
+### 自定义 Span
 
 很多时候，OpenTelemetry 提供的中间件不能帮助我们记录更多内部调用的函数，需要我们自定义 Span 来记录
 
@@ -305,7 +303,7 @@ if err := db.Use(otelPlugin); err != nil {
   ······
 ```
 
-## 向 span 添加自定义属性和事件
+### 向 span 添加自定义属性和事件
 
 也可以将自定义属性或标签设置为 Span。要添加自定义属性和事件，请按照以下步骤操作：
 
