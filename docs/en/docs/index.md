@@ -80,7 +80,7 @@ day by day, making things better over time.
 
      **Modules involved**: [Global Management](ghippo/intro/index.md), [Container Management](kpanda/intro/index.md), [Multicloud Management](kairship/intro/index.md), [cloud native network](network/intro/index.md), [cloud native storage](storage/index.md), Heterogeneous architecture
 
-    ![multicloud](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/kairship-en.png)
+    ![multicloud](./images/01multi-cloud.png)
 
 === "Middleware"
 
