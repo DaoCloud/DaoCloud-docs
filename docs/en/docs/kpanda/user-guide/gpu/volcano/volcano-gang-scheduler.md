@@ -41,7 +41,7 @@ metadata:
   namespace: default
 spec:
   minMember: 1  # (1)!
-  minResources: priorityClassName # (2)!
+  minResources:  # (2)!
     cpu: "3"
     memory: "2048Mi"
   priorityClassName: high-prority # (3)!
