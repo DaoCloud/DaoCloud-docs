@@ -49,15 +49,23 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
     提供云原生计算、网络、存储等能力，兼容各种集群接入，支持集群从部署、版本升级、证书变更、配置变更、回收等全生命周期管理，突破 K8s API 性能瓶颈，实现企业超大规模用户并发使用多集群。
     针对企业环境，提供场景化的网络方案，实现当前企业网络基础设施复用的最大化，降低企业使用云原生应用门槛。
 
+    - **云原生计算内核**：抽象底层基础设施，为上层应用及其它模块提供计算、存储等强大内核能力。
+    - **云原生网络内核**：适配 overlay、underlay 等网络环境，支持 Spiderpool、Cillium、Macvlan、Multus 等多种网络模式
+    - **云原生安全内核**：融合 RBAC 权限认证体系，为运维安全保驾护航
+
+    *[Spiderpool]: DaoCloud 捐献给 CNCF 的 Underlay 和 RDMA 网络方案，已入选 CNCF Sandbox
+
     **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)
 
-    ![云原生底座](https://docs.daocloud.io/daocloud-docs-images/docs/images/07base.png)
+    ![云原生底座](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/07base.png)
 
 === "多云编排"
 
     支持多云和混合云的统一集中管理，提供跨云资源检索及跨云的应用部署、发布和运维能力，实现多云应用高效管控，提供基于集群资源的应用弹性扩缩，实现全局负载均衡，具备故障恢复能力，有效解决多云应用灾备问题，助力企业构建多云、混合云的数字基础设施。
 
     **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)、信创异构
+
+    多云应用的跨区域/集群分发机制如下：
 
     ![多云](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/01multi-cloud.png)
 
@@ -68,7 +76,7 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
 
     **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)、[精选中间件](middleware/index.md)
 
-    ![数据](https://docs.daocloud.io/daocloud-docs-images/docs/images/02data.png)
+    ![数据](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/02data.png)
 
 === "微服务治理"
 
@@ -77,16 +85,18 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
 
     **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[微服务治理](skoala/intro/index.md)、[服务网格](mspider/intro/index.md)、[可观测性](insight/intro/index.md)、[应用工作台](amamba/intro/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)
 
-    ![微服务](https://docs.daocloud.io/daocloud-docs-images/docs/images/03msgov.png)
+    ![微服务](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/03msgov.png)
 
 === "可观测性"
 
     基于日志、链路、指标、eBPF 等技术手段，全面采集服务数据，深入获取请求链路信息，动态观测、多维度掌控集群、节点、应用和服务的实时变化，
     通过统一控制面实现所有集群及负载观测数据的查询，引入拓扑分析技术可视化掌握应用健康状态，实现秒级故障定位。
 
+    *[eBPF]: Extended Berkeley Packet Filter，这是 Linux 内核自带的组件，可以在内核中运行沙盒程序
+
     **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[可观测性](insight/intro/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)
 
-    ![观测](https://docs.daocloud.io/daocloud-docs-images/docs/images/04insight.png)
+    ![观测](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/04insight.png)
 
 === "应用商店"
 
@@ -101,7 +111,7 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
 
     **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[应用工作台](amamba/intro/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)、[镜像仓库](kangaroo/intro/index.md)
 
-    ![应用交付](https://docs.daocloud.io/daocloud-docs-images/docs/images/06appdeliv.png)
+    ![应用交付](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/06appdeliv.png)
 
 === "信创异构"
 
@@ -110,15 +120,15 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
 
     **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[集群生命周期管理](community/kubean.md)、[信创中间件](middleware/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)
 
-    ![信创](https://docs.daocloud.io/daocloud-docs-images/docs/images/08xinchuan.png)
+    ![信创](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/08xinchuan.png)
 
 === "云边协同"
 
     将云原生能力延伸至边缘，采用边缘集群、边缘节点模式，将数据中心算力下移，端设备算力上移，统一管控和调度离散、异构的计算资源，解决在海量边、端设备上统一完成大规模应用交付、运维、管控的诉求，实现云边的真正一体化。
 
-    **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)、[云边协同](kant/intro/index.md)
+    **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)、[云边协同](kant/intro/index.md)、弱网集群
 
-    ![云边协同架构图](https://docs.daocloud.io/daocloud-docs-images/docs/zh/images/09cloud-edge-update.png)
+    ![云边](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/images/09cloud-edge.png)
 
 === "虚拟机"
 
@@ -126,13 +136,13 @@ DCE 5.0 云原生操作系统提供了 9 大能力，自由搭配各种模块，
 
     **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[云原生网络](network/intro/index.md)、[云原生存储](storage/index.md)
 
-    ![虚拟机](https://docs.daocloud.io/daocloud-docs-images/docs/zh/images/virtnest.png)
+    ![虚拟机](./images/virtnest.png)
 
 === "智能算力"
 
-    云原生 AI 平台将 MLOps 与 LLMs 无缝集成，提供了一个从头到尾完整的训推一体化智算平台研发流程。该平台支持包括 Pytorch、Tensorflow 在内的众多深度学习框架，并覆盖数据集管理、模型开发、训练、推理、监控和运营等全方位功能。用户只需专注于模型的开发和应用，无需耗费精力于底层资源的调度、管理和监控。
+    将 MLOps 与 LLMs 全面融合到云原生平台，实现 AI 智算平台的训推一体化的全生命周期研发流程，支持Pytorch、Tensorflow 等多种深度学习框架，支持数据集、模型开发、训练、推理、监控、运营等功能；用户只需提供关注模型的开发及使用，无需关心底层的资源调度、管理、监控等问题。
 
-    **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[云原生网络](network/intro/index.md)
+    **涉及的模块**：[全局管理](ghippo/intro/index.md)、[容器管理](kpanda/intro/index.md)、[云原生网络](network/intro/index.md)、[智能算力](./baize/intro/index.md)
 
     ![智能算力](baize/images/image01.png)
 
