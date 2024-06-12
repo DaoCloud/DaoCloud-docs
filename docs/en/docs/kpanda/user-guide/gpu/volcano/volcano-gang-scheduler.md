@@ -1,20 +1,37 @@
 # Using Volcano's Gang Scheduler
 
-The Gang scheduling strategy is one of the core scheduling algorithms of the volcano-scheduler. It satisfies the "All or nothing" scheduling requirement during the scheduling process, preventing arbitrary scheduling of Pods that could waste cluster resources. The specific algorithm observes whether the number of scheduled Pods under a Job meets the minimum running quantity. When the Job's minimum running quantity is satisfied, scheduling actions are performed for all Pods under the Job; otherwise, no actions are taken.
+The Gang scheduling strategy is one of the core scheduling algorithms of the volcano-scheduler. 
+It satisfies the "All or nothing" scheduling requirement during the scheduling process, preventing 
+arbitrary scheduling of Pods that could waste cluster resources. The specific algorithm observes 
+whether the number of scheduled Pods under a Job meets the minimum running quantity. 
+When the Job's minimum running quantity is satisfied, scheduling actions are performed for all Pods under the Job; 
+otherwise, no actions are taken.
 
 ## Use Cases
 
-The Gang scheduling algorithm, based on the concept of a Pod group, is particularly suitable for scenarios that require multi-process collaboration. AI scenarios often involve complex workflows, such as Data Ingestion, Data Analysis, Data Splitting, Training, Serving, and Logging, which require a group of containers to work together. This makes the Gang scheduling strategy based on container groups very appropriate. 
+The Gang scheduling algorithm, based on the concept of a Pod group, is particularly suitable for scenarios 
+that require multi-process collaboration. AI scenarios often involve complex workflows, such as Data Ingestion, 
+Data Analysis, Data Splitting, Training, Serving, and Logging, which require a group of containers to work together. 
+This makes the Gang scheduling strategy based on container groups very appropriate. 
 
-In multi-threaded parallel computing communication scenarios under the MPI computation framework, Gang scheduling is also very suitable because it requires master and slave processes to work together. High relevance among containers in a container group may lead to resource contention, and overall scheduling allocation can effectively resolve deadlocks.
+In multi-threaded parallel computing communication scenarios under the MPI computation framework, 
+Gang scheduling is also very suitable because it requires master and slave processes to work together. 
+High relevance among containers in a container group may lead to resource contention, and overall scheduling allocation 
+can effectively resolve deadlocks.
 
-In scenarios with insufficient cluster resources, the gang scheduling strategy significantly improves the utilization of cluster resources. For example, if the cluster can currently accommodate only 2 Pods, but the minimum number of Pods required for scheduling is 3, then all Pods of this Job will remain pending until the cluster can accommodate 3 Pods, at which point the Pods will be scheduled. This effectively prevents the partial scheduling of Pods, which would not meet the requirements and would occupy resources, making other Jobs unable to run.
+In scenarios with insufficient cluster resources, the Gang scheduling strategy significantly improves 
+the utilization of cluster resources. For example, if the cluster can currently accommodate only 2 Pods, 
+but the minimum number of Pods required for scheduling is 3, then all Pods of this Job will remain pending until 
+the cluster can accommodate 3 Pods, at which point the Pods will be scheduled. This effectively prevents the 
+partial scheduling of Pods, which would not meet the requirements and would occupy resources, making other Jobs unable to run.
 
 ## Concept Explanation
 
-The Gang Scheduler is the core scheduling plugin of Volcano, and it is enabled by default upon installing Volcano. When creating a workload, you only need to specify the scheduler name as Volcano.
+The Gang Scheduler is the core scheduling plugin of Volcano, and it is enabled by default upon installing Volcano. 
+When creating a workload, you only need to specify the scheduler name as Volcano.
 
-Volcano schedules based on PodGroups. When creating a workload, there is no need to manually create PodGroup resources; Volcano will automatically create them based on the workload information. Below is an example of a PodGroup:
+Volcano schedules based on PodGroups. When creating a workload, there is no need to manually create PodGroup resources; 
+Volcano will automatically create them based on the workload information. Below is an example of a PodGroup:
 
 ```yaml
 apiVersion: scheduling.volcano.sh/v1beta1
@@ -31,14 +48,21 @@ spec:
   queue: default # (4)!
 ```
 
-1. Represents the **minimum** number of Pods or tasks that need to run under this PodGroup. If the cluster resources do not meet the requirements to run the number of tasks specified by miniMember, the scheduler will not schedule any tasks within this PodGroup.
-2. Represents the minimum resources required to run this PodGroup. If the allocatable resources of the cluster do not meet the minResources, the scheduler will not schedule any tasks within this PodGroup.
-3. Represents the priority of this PodGroup, used by the scheduler to sort all PodGroups within the queue during scheduling. **system-node-critical** and **system-cluster-critical** are two reserved values indicating the highest priority. If not specifically designated, the default priority or zero priority is used.
+1. Represents the **minimum** number of Pods or tasks that need to run under this PodGroup. If the cluster resources 
+  do not meet the requirements to run the number of tasks specified by miniMember, the scheduler will not 
+  schedule any tasks within this PodGroup.
+2. Represents the minimum resources required to run this PodGroup. If the allocatable resources of the cluster
+   do not meet the minResources, the scheduler will not schedule any tasks within this PodGroup.
+3. Represents the priority of this PodGroup, used by the scheduler to sort all PodGroups within the queue during scheduling. 
+  **system-node-critical** and **system-cluster-critical** are two reserved values indicating the highest priority. 
+  If not specifically designated, the default priority or zero priority is used.
 4. Represents the queue to which this PodGroup belongs. The queue must be pre-created and in the open state.
 
 ## Use Case
 
-In a multi-threaded parallel computing communication scenario under the MPI computation framework, we need to ensure that all Pods can be successfully scheduled to ensure the task is completed correctly. Setting minAvailable to 4 means that 1 mpimaster and 3 mpiworkers are required to run.
+In a multi-threaded parallel computing communication scenario under the MPI computation framework, we need to ensure 
+that all Pods can be successfully scheduled to ensure the task is completed correctly. Setting minAvailable to 4 
+means that 1 mpimaster and 3 mpiworkers are required to run.
 
 ```yaml
 apiVersion: batch.volcano.sh/v1alpha1
@@ -164,4 +188,5 @@ status:
   succeeded: 1
 ```
 
-From the PodGroup, it can be seen that it is associated with the workload through ownerReferences and sets the minimum number of running Pods to 4.
+From the PodGroup, it can be seen that it is associated with the workload through ownerReferences and 
+sets the minimum number of running Pods to 4.
