@@ -40,7 +40,7 @@ Following [Credential Management](../pipeline/credential.md), create two credent
       [created a registry](../../../skoala/trad-ms/hosted/index.md) in the current workspace.
     - Application: Specify the name of the native application. You can select from an existing list
       or create a new one, which by default will have the same name as specified.
-    - Instances: Specify the number of instances (Pods).
+    - Replicas: Set the number of Pods for the application.
 
     ![Basic Information](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/git01.png)
 
