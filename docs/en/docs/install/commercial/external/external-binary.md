@@ -42,7 +42,9 @@ The following instructions assume that CentOS 7.9 x86_64 is used as the cluster 
 In theory, other generic HTTP servers can also be supported, but pay attention to the mapping relationship between URL access paths and file paths.
 
 1. Ensure that an available Nginx service exists, and the node where the service resides has login and file writing permissions.
-2. Copy the binaries offline package from the bootstrap node to the node where the nginx service is located.
+2. Copy the binaries offline package from the seed node
+   (<path to the decompressed offline package>/offline/kubespray-binary/offline-files.tar.gz, <path to the decompressed offline package>/offline/component-tools.tar.gz)
+   to the node where the nginx service is located.
 
     !!! note
 
@@ -52,7 +54,7 @@ In theory, other generic HTTP servers can also be supported, but pay attention t
 
     1. Check the mapping relationship between the file path and the URL path on the Nginx service node through `nginx.conf`. The following example can be used as a reference:
 
-        ```bash
+        ```http
         http {
             server {
                 listen       8080;
@@ -76,11 +78,14 @@ In theory, other generic HTTP servers can also be supported, but pay attention t
     ```bash
     cat > import.sh << "EOF"
     [ ! -d "${MAPPING_PATH}" ] && echo "mapping path ${MAPPING_PATH} not found" && exit 1
-    [ ! -f "${BINARIES_PKG_PATH}" ] && echo "binaries package path ${BINARIES_PKG_PATH} not found" && exit 1
-    tar -xzvf ${BINARIES_PKG_PATH} --strip-components=1 -C ${MAPPING_PATH}
+    [ ! -f "${BINARIRES_PKG_PATH}" ] && echo "binaries package path ${BINARIRES_PKG_PATH} not found" && exit 1
+    [ ! -f "${COMPONENT_TOOLS_PATH}" ] && echo "comonent-tools package path ${COMPONENT_TOOLS_PATH} not found" && exit 1
+    tar -xzvf ${BINARIRES_PKG_PATH} --strip-components=1 -C ${MAPPING_PATH}
+    tar -xzvf ${COMPONENT_TOOLS_PATH} --strip-components=1 -C ${MAPPING_PATH}
     EOF
     export MAPPING_PATH="/usr/share/nginx/html"
-    export BINARIES_PKG_PATH="./offline-files.tar.gz"
+    export BINARIRES_PKG_PATH="./offline-files.tar.gz"
+    export COMPONENT_TOOLS_PATH="./component-tools.tar.gz"
     bash ./import.sh
     ```
 

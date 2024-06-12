@@ -30,7 +30,7 @@ The components used in this example are:
 - CRI: containerd (as Docker is no longer directly supported in newer versions of Kubernetes)
 - CNI: Calico
 - StorageClass: local-path
-- DCE 5.0 Community: v0.17.0
+- DCE 5.0 Community: v0.18.1
 
 ## Prepare Nodes
 
@@ -341,7 +341,7 @@ bash install_prerequisite.sh online community
 ### Download dce5-installer
 
 ```bash
-export VERSION=v0.17.0
+export VERSION=v0.18.1
 curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
 chmod +x ./dce5-installer
 ```

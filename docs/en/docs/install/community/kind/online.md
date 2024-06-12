@@ -87,7 +87,7 @@ precheck pass...
 1. Download the binary package of kind.
 
     ```shell
-    curl -Lo ./kind https://qiniu-download-public.daocloud.io/kind/v0.17.0/kind-linux-amd64
+    curl -Lo ./kind https://qiniu-download-public.daocloud.io/kind/v0.18.0/kind-linux-amd64
     chmod +x ./kind
     old_kind=$(which kind)
     if [ -f "$old_kind" ]; then mv ./kind $old_kind; else mv ./kind /usr/bin/kind ; fi
@@ -102,7 +102,7 @@ precheck pass...
     The expected output is like:
 
     ```console
-    kind v0.17.0 go1.19.2 linux/amd64
+    kind v0.18.0 go1.19.2 linux/amd64
     ```
 
 2. Modify the `kind_cluster.yaml` to make it applicable in your environment.
@@ -164,10 +164,10 @@ precheck pass...
 
 2. Download the `dce5-installer` binary file on the kind host.
 
-    Takve VERSION=v0.17.0 as an example:
+    Takve VERSION=v0.18.0 as an example:
 
     ```shell
-    export VERSION=v0.17.0
+    export VERSION=v0.18.0
     curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer
     ```

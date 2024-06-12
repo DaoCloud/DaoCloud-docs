@@ -48,7 +48,7 @@ S3 兼容的服务只需要在 [集群配置文件 clusterConfig.yaml](../cluste
 
     1. 通过 `nginx.conf` 检测 nginx 服务所在节点的文件路径和 URL 路径的映射关系，下方示例供参考：
 
-        ```bash
+        ```http
         http {
             server {
                 listen       8080;
