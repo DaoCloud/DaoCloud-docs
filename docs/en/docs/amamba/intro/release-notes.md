@@ -8,6 +8,27 @@ date: 2024-05-08
 This page lists the release notes for Workbench to help you understand
 the development and feature changes in each version.
 
+## 2024-05-30
+
+### v0.27.0
+
+#### New Features
+
+- **Added** support for creating SSH credentials.
+
+#### Improvements
+
+- **Improved** error messages for namespace creation.
+- **Improved** information returned by the Sonarqube code scan results API.
+- **Improved** support for operations related to rollouts created natively.
+- **Improved** the API to now support rerunning pipelines from a specified stage.
+- **Improved** support for enabling both pipeline webhooks and code source triggers simultaneously.
+
+#### Fixes
+
+- **Fixed** an error when updating SSH credentials.
+- **Fixed** an issue with incorrect pagination offset calculation.
+
 ## 2024-04-30
 
 ### v0.26.0
