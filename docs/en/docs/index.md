@@ -46,21 +46,20 @@ and develop a cloud native operating system with customizable and scalable modul
 that facilitate business digitalization. Each module can be used as a LEGO brick,
 allowing for zero downtime while upgrading any module. DCE 5.0 is also easy to
 integrate with hundreds of cloud native ecological plugins, making it simple to
-customize solutions for different use cases. This modular style allows for growth
-day by day, making things better over time.
+customize solutions for various use cases. This modular style allows for continuous growth, improving over time.
 
 === "Cloud Native Base"
 
      DCE 5.0 provides cloud native computing, networking, storage, and other capabilities,
      compatible with various cluster access. It supports the entire lifecycle of the cluster
-     from deployment, version upgrade, certificate change, configuration change, and recycling,
+     from deployment, version upgrades, certificate changes, configuration changes, and recycling,
      enabling lifecycle management. 
 
      This capability breaks through K8s API performance bottlenecks, allowing large-scale
      enterprise users to use multiple clusters concurrently. Additionally, for the enterprise
      environment, it provides scenario-based network solutions to maximize the reuse of
-     the current enterprise network infrastructure and lower the threshold for enterprises
-     to use cloud native applications.
+     current enterprise network infrastructure and lower the threshold for enterprises
+     to adopt cloud native applications.
 
      **Related modules**: [Global Management](ghippo/intro/index.md), [Container Management](kpanda/intro/index.md),
      [Cluster Lifecycle Management](community/kubean.md), [cloud native network](network/intro/index.md),
@@ -75,8 +74,8 @@ day by day, making things better over time.
      and global load balancing.
      
      Furthermore, DCE 5.0 offers fault recovery capabilities that
-     can effectively solve the problem of multicloud application disaster recovery, helping
-     enterprises build multicloud and hybrid cloud digital infrastructure.
+     effectively solve the problem of multicloud application disaster recovery, helping
+     enterprises build robust multicloud and hybrid cloud digital infrastructure.
 
      **Modules involved**: [Global Management](ghippo/intro/index.md), [Container Management](kpanda/intro/index.md), [Multicloud Management](kairship/intro/index.md), [cloud native network](network/intro/index.md), [cloud native storage](storage/index.md), Heterogeneous architecture
 
@@ -90,7 +89,7 @@ day by day, making things better over time.
      of multi-tenancy, deployment, observation, backup, operation, and maintenance operations, among others.
 
      This capability supports various middleware such as databases, distributed messages, log retrieval,
-     etc., enabling self-service application, elastic expansion, high concurrent processing, and high
+     enabling self-service application, elastic expansion, high concurrent processing, and high
      stability and availability of data services.
 
      **Related modules**: [Global Management](ghippo/intro/index.md), [Container Management](kpanda/intro/index.md), [Cloud Native Network](network/intro/index.md), [cloud native storage](storage/index.md), [selected middleware](middleware/index.md)
@@ -101,7 +100,7 @@ day by day, making things better over time.
 
      DCE 5.0 provides non-intrusive traffic management features, supporting non-sensing access to
      traditional microservices, cloud native microservices, and open-source microservice frameworks.
-     It achieves integrated management of existing microservice systems and old and new microservice systems of enterprises.
+     It achieves integrated management of existing microservice systems and new and legacy microservice systems of enterprises.
 
      This capability supports the full lifecycle management of microservices from development, deployment,
      access, observation, operation, and maintenance. It also provides high-performance cloud native
@@ -115,11 +114,11 @@ day by day, making things better over time.
 === "Observability"
 
      DCE 5.0 comprehensively collects service data based on logs, traces, metrics,
-     eBPF, and other technical means. It deeply acquires request link information
+     eBPF, and other technical means. It acquires detailed request link information 
      and dynamically observes and multi-dimensionally controls real-time changes
      in clusters, nodes, applications, and services.
      
-     This capability enables the query of all clusters and load observation data
+     This capability enables the querying of all clusters and observation of load data
      through a unified control plane. Additionally, it introduces topology analysis
      technology to visualize the application health status and achieves second-level fault location.
 
@@ -161,9 +160,9 @@ day by day, making things better over time.
 
      DCE 5.0 adopts a heterogeneous cloud native technology architecture, compatible
      with domestic chips and servers. It supports a heterogeneous operating system and
-     heterogeneous application ecosystem, shielding the complexity of underlying
+     application ecosystem, shielding the complexity of underlying
      heterogeneous infrastructure, and liberating traditional operating systems
-     from software ecological compatibility that requires long-term accumulation.
+     from the need for long-term software ecological compatibility.
 
      This capability realizes the flexible scheduling of mixed heterogeneous clusters,
      ensuring the stability and reliability of the heterogeneous application operating
@@ -179,7 +178,7 @@ day by day, making things better over time.
 
      DCE 5.0 extends cloud native capabilities to the edge by adopting the edge cluster
      and edge node mode. It moves the computing power of the data center down, while
-     moving up the computing power of the end device. This unifies control and scheduling
+     elvate the computing power of the end device. This unifies control and scheduling
      of discrete and heterogeneous computing resources, solving the problem of massive edge and end devices.
 
      This capability unifies the requirements of large-scale app delivery, operation
