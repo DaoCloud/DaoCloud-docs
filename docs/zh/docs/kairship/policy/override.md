@@ -73,30 +73,30 @@ spec:
 
     1. 选择部署集群
 
-        支持 ClusterNames（集群名称）、FieldSelector（区域）、LabelSelector（标签）三种方式选择部署集群。
+        支持指定集群、指定地域、指定标签三种方式选取部署集群。
 
-        === "ClusterNames"
+        === "指定集群"
         
             直接选择指定的集群名称
 
-            ![指定集群名称](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/op004.png)
+            ![指定集群名称](../images/op004.png)
 
-        === "FieldSelector"
+        === "指定地域"
         
             通过字段来选择集群，包括：
 
-            - provider（提供集群基础设施的服务商）
-            - region（区域：是可用区的集合，指可以在其中托管资源的特定地理位置，例如北京、上海、深圳、成都等。）
-            - zone（可用区：是区域内的部署区域，例如上海可用区1、上海可用区2······）
+            - 厂商（提供集群基础设施的服务商）
+            - 地域（是可用区的集合，指可以在其中托管资源的特定地理位置，例如北京、上海、深圳、成都等。）
+            - 可用区（是区域内的部署区域，例如上海可用区1、上海可用区2······）
             - 还支持从已选集群中排除某指定集群。
 
-            ![从已选集群排除](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/op005.png)
+            ![从已选集群排除](../images/op005.png)
 
         === "LabelSelector"
         
             通过标签来选择集群，支持自定义标签，同时也支持排除指定集群。
 
-            ![标签](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/op006.png)
+            ![标签](../images/op006.png)
 
     2. 对选中集群进行镜像的差异化配置
 

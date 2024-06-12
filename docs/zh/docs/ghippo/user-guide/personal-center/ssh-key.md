@@ -36,13 +36,13 @@ Linux、Mac 请直接使用以下命令查看已存在的公钥，Windows 用户
     - 基于 `ED25519` 算法，生成密钥对命令如下：
     
         ```bash
-        ssh -keygen -t ed25519 -C "<注释内容>"
+        ssh-keygen -t ed25519 -C "<注释内容>"
         ```
     
     - 基于 `RSA` 算法，生成密钥对命令如下：
     
         ```bash
-        ssh -keygen -t rsa -C "<注释内容>"
+        ssh-keygen -t rsa -C "<注释内容>"
         ```
 
 3. 点击回车，选择 SSH 密钥生成路径。
