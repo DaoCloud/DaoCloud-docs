@@ -26,7 +26,7 @@ Workbench supports building applications in four ways: [Git Repo](create-app-git
 2. Fill in the basic information with reference to the following requirements, and then click __Next__ .
 
     - Name: Maximum 63 characters, can only contain lowercase letters, numbers, and a separator ("-"), and must start and end with a lowercase letter or number.
-    - Resource Type: Select whether the application to be created is a stateless load or a stateful load.
+    - Resource Type: Currently, only deployments are supported.
     - Deployment Location: Select which namespace under which cluster to deploy the application. Only clusters that exist in the current workspace can be selected.
     - Application: Select the group to which the application belongs. Empty means do not group this app.
     - Replicas: Set the number of Pods for the application.

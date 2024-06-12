@@ -49,13 +49,13 @@ spec:
 ```
 
 1. Represents the **minimum** number of Pods or tasks that need to run under this PodGroup. If the cluster resources 
-  do not meet the requirements to run the number of tasks specified by miniMember, the scheduler will not 
-  schedule any tasks within this PodGroup.
+   do not meet the requirements to run the number of tasks specified by miniMember, the scheduler will not 
+   schedule any tasks within this PodGroup.
 2. Represents the minimum resources required to run this PodGroup. If the allocatable resources of the cluster
    do not meet the minResources, the scheduler will not schedule any tasks within this PodGroup.
 3. Represents the priority of this PodGroup, used by the scheduler to sort all PodGroups within the queue during scheduling. 
-  **system-node-critical** and **system-cluster-critical** are two reserved values indicating the highest priority. 
-  If not specifically designated, the default priority or zero priority is used.
+   **system-node-critical** and **system-cluster-critical** are two reserved values indicating the highest priority. 
+   If not specifically designated, the default priority or zero priority is used.
 4. Represents the queue to which this PodGroup belongs. The queue must be pre-created and in the open state.
 
 ## Use Case
