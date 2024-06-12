@@ -129,52 +129,52 @@ data:
 
 ## 大规模部署相关参数说明
 
-| 一级                                   | 参数                                                    | 值                 | 说明                                                         |
-| -------------------------------------- | ------------------------------------------------------- | ------------------ | ------------------------------------------------------------ |
-| 资源分发                               | foo_image_repo                                          | url                | 设置指向内网地址或镜像站                                     |
-|                                        | foo_download_url                                        | url                | 设置指向内网地址或镜像站                                     |
-|                                        | download_run_once                                       | true/false         | 设置为`download_localhost: true` 使仅下载一次，后续从anisble 控制节点分发至各目标节点 |
-|                                        | download_localhost                                      | true/false         | 设置为`download_localhost: true` 使仅下载一次，后续从anisble 控制节点分发至各目标节点 |
-|                                        | download_container                                      | true/false         | 设置为`download_container: false` ，避免大规模镜像在不同节点上同步 |
-| 集群核心组件 - etcd                    | etcd_events_cluster_setup                               | true/false         | 设置为 true 后存储事件将到单独的专用 etcd 实例               |
-|                                        | etcd_heartbeat_interval                                 | 默认250，单位毫秒  | leader 通知 followers 的频率。                               |
-|                                        | etcd_election_timeout                                   | 默认5000，单位毫秒 | 调整 followers 节点在试图成为 leader 之前没有听到心跳的时间  |
-| 集群核心组件 - kube-controller-manager | kube_controller_node_monitor_grace_period               | 默认 40 s          | 代表在将Node标记为不健康状态之前，允许运行Node无响应的时间；注意必须是`kubelet_status_update_frequency` 的N倍 |
-|                                        | kube_controller_node_monitor_period                     | 默认 5 s           | 代表同步 NodeStatus 的周期                                   |
-|                                        | kube_kubeadm_controller_extra_args                      | 子元素             | kube-api-qps：默认为 20，与kub-apiserver通信时使用的QPS<br />kube-api-burst：默认为 30，与kube-apiserver信时允许的burst<br />concurrent-deployment-syncs：默认为 5，允许并发同步的deployment对象的数量。其他基础资源具有类似参数<br />pvclaimbinder-sync-period：默认为 15s，同步PV和PVC的周期 |
-| 集群核心组件 - kube-scheduler          | kube_scheduler_config_extra_opts                        | 子元素             | percentageOfNodesToScore: 如果集群大小为 500 个节点，而该值为 30，那么调度程序在找到 150 个可行节点后，就会停止寻找更多可行节点。当值为 0 时，默认百分比（根据集群大小为 5%-50%）的节点将被计分。<br />只有当你更倾向于在可调度节点中任意选择一个节点来运行这个 Pod 时， 才使用很低的参数设置。 |
-| 集群核心组件 -kube-apiserver           | kube_apiserver_pod_eviction_not_ready_timeout_seconds   | 默认 300           | 表示 notReady:NoExecute 容错的容错秒数，默认情况下，该容错秒数被添加到每个还没有容错的 pod 中。 |
-|                                        | kube_apiserver_pod_eviction_unreachable_timeout_seconds | 默认 300           | 表示 unreachable:NoExecute 容忍度的容错秒数，默认情况下，该容忍度被添加到每个没有这种容忍度的pod中。 |
-|                                        | kube_apiserver_request_timeout                          | 默认 1m0s          | 有时候可以限制住一些 巨大的请求 比如全命名空间的某些资源     |
-|                                        | kube_kubeadm_apiserver_extra_args                       | 子元素             | max-requests-inflight：默认为400，限制正在运行的non-mutating请求的最大数量 |
-| 集群核心组件 -kubelet                  | kubelet_status_update_frequency                         | 默认10s            | 上报 pod 状态至 apiserver 的频率，在集群node数量很大的时候，建议调大 |
-|                                        | kubelet_max_pods                                        | 默认110            | 增大每个节点上能够创建的最大 pod 数                          |
-|                                        | kubelet_pod_pids_limit                                  | -                  | 防止或允许 pod 使用较多的 pid，取值范围：[-1, 2的63次方-1]   |
-|                                        | kubelet_cpu_manager_policy                              | -                  | 设置 CPU 管理器策略                                          |
-|                                        | kubelet_cpu_manager_policy_options                      | -                  | 设置 CPU 管理器策略选型                                      |
-|                                        | kubelet_topology_manager_policy                         | -                  | 设置拓扑管理器策略                                           |
-|                                        | kubelet_topology_manager_scope                          | -                  | 设置拓扑管理器策略应用范围                                   |
-|                                        | kube_reserved                                           | true/false         | 设置`kube_reserved: true`代表设置为非Kubernetes 组件配置资源 |
-|                                        | kube_master_cpu_reserved                                | -                  |                                                              |
-|                                        | kube_master_memory_reserved                             | -                  |                                                              |
-|                                        | system_reserved                                         | true/false         | 设置`system_reserve: true`代表为 Kubernetes 组件配置资源     |
-|                                        | system_master_cpu_reserved                              | -                  |                                                              |
-|                                        | system_master_memory_reserved                           | -                  |                                                              |
-|                                        | kubelet_config_extra_args                               | 子元素             | kubeAPIQPS：默认为50，与kub-apiserver通信时使用的QPS<br />kubeAPIBurst：默认为100，与kube-apiserver信时允许的burst<br />serializeImagePulls：默认为true，一次只拉取一个镜像<br />maxParallelImagePulls：默认为nil，最大并行拉取数，仅在 serializeImagePulls 为 false 时生效<br />volumeStatsAggPeriod：默认为1m，对于volume 比较多且磁盘压力大的情况，建议调大 |
-| Kubeproxy                              | kube_proxy_mode                                         | -                  | 在 service 等变化频繁场景下 `ipvs` 性能比 `iptables` 好，设置 kube proxy 底座为 ipvs 时需要Linux 内核版本大于等于5.9，另外 Kube-Proxy IPVS 目前也存在一些问题     |
-| 集群网络相关参数                       | kube_pods_subnet                                        | 10.233.64.0/18     | 增大 Pod 所能分配的网络                                      |
-|                                        | kube_network_node_prefix                                | 24                 | 增大每个节点上 Pod 所能获得的子网范围                        |
-|                                        | kube_network_node_prefix_ipv6                           | 120                | 增大每个节点上 Pod 所能获得的子网范围                        |
-|                                        | kube_service_addresses                                  | 10.233.0.0/18      | 增大 K8s service ClusterIP 所能分配的网络                    |
-| 应用稳定性                             | dns_replicas                                            | -                  | 指定 DNS 服务的副本数                                        |
-|                                        | dns_cpu_limit                                           | -                  | 每个 DNS 服务 Pod 可以使用的最大 CPU 资源量                  |
-|                                        | dns_cpu_requests                                        | -                  | 每个 DNS 服务 Pod 可以使用的最小 CPU 资源量                  |
-|                                        | dns_memory_limit                                        | -                  | 每个 DNS 服务 Pod 可以使用的最大 Memory 资源量               |
-|                                        | dns_memory_requests                                     | -                  | 每个 DNS 服务 Pod 可以使用的最小 Memory 资源量               |
-|                                        | enable_nodelocaldns                                     | -                  | 设置 `enable_nodelocaldns: true`, 使 pod 与运行在同一节点上的 dns（core-dns）缓存代理建立联系，从而避免使用 iptables DNAT 规则和连接跟踪 |
-|                                        | kube_vip_enabled                                        | -                  | 设置 `kube_vip_enabled: true` ，为集群提供虚拟IP和负载均衡器，用于控制平面(用于构建高可用性集群)和类型为LoadBalancer的Kubernetes服务。 |
-|                                        | metrics_server_enabled                                  | -                  | 设置 `metrics_server_enabled: true` ，HPA 启动的必备条件     |
-| 其他                                   | retry_stagger                                           | -                  | 增大任务失败重试次数                                         |
+| 一级 | 参数 | 值 | 说明 |
+| --- | ---- | -- | --- |
+| 资源分发 | foo_image_repo | url | 设置指向内网地址或镜像站 |
+| | foo_download_url | url | 设置指向内网地址或镜像站 |
+| | download_run_once | true/false | 设置为 `download_localhost: true` 使仅下载一次，后续从 anisble 控制节点分发至各目标节点 |
+| | download_localhost | true/false | 设置为 `download_localhost: true` 使仅下载一次，后续从 anisble 控制节点分发至各目标节点 |
+| | download_container | true/false | 设置为 `download_container: false` ，避免大规模镜像在不同节点上同步 |
+| 集群核心组件 - etcd | etcd_events_cluster_setup | true/false | 设置为 true 后存储事件将到单独的专用 etcd 实例 |
+| | etcd_heartbeat_interval | 默认250，单位毫秒 | leader 通知 followers 的频率。 |
+| | etcd_election_timeout | 默认5000，单位毫秒 | 调整 followers 节点在试图成为 leader 之前没有听到心跳的时间 |
+| 集群核心组件 - kube-controller-manager | kube_controller_node_monitor_grace_period | 默认 40s | 代表在将Node标记为不健康状态之前，允许运行Node无响应的时间；注意必须是 `kubelet_status_update_frequency` 的N倍 |
+| | kube_controller_node_monitor_period | 默认 5 s | 代表同步 NodeStatus 的周期 |
+| | kube_kubeadm_controller_extra_args | 子元素 | kube-api-qps：默认为 20，与kub-apiserver通信时使用的QPS<br />kube-api-burst：默认为 30，与kube-apiserver信时允许的burst<br />concurrent-deployment-syncs：默认为 5，允许并发同步的deployment对象的数量。其他基础资源具有类似参数<br />pvclaimbinder-sync-period：默认为 15s，同步PV和PVC的周期 |
+| 集群核心组件 - kube-scheduler | kube_scheduler_config_extra_opts | 子元素 | percentageOfNodesToScore: 如果集群大小为 500 个节点，而该值为 30，那么调度程序在找到 150 个可行节点后，就会停止寻找更多可行节点。当值为 0 时，默认百分比（根据集群大小为 5%-50%）的节点将被计分。<br />只有当你更倾向于在可调度节点中任意选择一个节点来运行这个 Pod 时， 才使用很低的参数设置。 |
+| 集群核心组件 -kube-apiserver | kube_apiserver_pod_eviction_not_ready_timeout_seconds | 默认 300 | 表示 notReady:NoExecute 容错的容错秒数，默认情况下，该容错秒数被添加到每个还没有容错的 pod 中。 |
+| | kube_apiserver_pod_eviction_unreachable_timeout_seconds | 默认 300 | 表示 unreachable:NoExecute 容忍度的容错秒数，默认情况下，该容忍度被添加到每个没有这种容忍度的pod中。 |
+| | kube_apiserver_request_timeout | 默认 1m0s | 有时候可以限制住一些 巨大的请求 比如全命名空间的某些资源 |
+| | kube_kubeadm_apiserver_extra_args | 子元素 | max-requests-inflight：默认为400，限制正在运行的non-mutating请求的最大数量 |
+| 集群核心组件 -kubelet | kubelet_status_update_frequency | 默认10s | 上报 pod 状态至 apiserver 的频率，在集群node数量很大的时候，建议调大 |
+| | kubelet_max_pods | 默认110 | 增大每个节点上能够创建的最大 pod 数 |
+| | kubelet_pod_pids_limit | - | 防止或允许 pod 使用较多的 pid，取值范围：[-1, 2的63次方-1] |
+| | kubelet_cpu_manager_policy | - | 设置 CPU 管理器策略 |
+| | kubelet_cpu_manager_policy_options | - | 设置 CPU 管理器策略选型 |
+| | kubelet_topology_manager_policy | - | 设置拓扑管理器策略 |
+| | kubelet_topology_manager_scope | - | 设置拓扑管理器策略应用范围 |
+| | kube_reserved | true/false | 设置`kube_reserved: true`代表设置为非Kubernetes 组件配置资源 |
+| | kube_master_cpu_reserved | - | |
+| | kube_master_memory_reserved | - | |
+| | system_reserved | true/false | 设置`system_reserve: true`代表为 Kubernetes 组件配置资源 |
+| | system_master_cpu_reserved | - | |
+| | system_master_memory_reserved | - | |
+| | kubelet_config_extra_args | 子元素 | kubeAPIQPS：默认为50，与kub-apiserver通信时使用的QPS<br />kubeAPIBurst：默认为100，与kube-apiserver信时允许的burst<br />serializeImagePulls：默认为true，一次只拉取一个镜像<br />maxParallelImagePulls：默认为nil，最大并行拉取数，仅在 serializeImagePulls 为 false 时生效<br />volumeStatsAggPeriod：默认为1m，对于volume 比较多且磁盘压力大的情况，建议调大 |
+| Kubeproxy | kube_proxy_mode | - | 在 service 等变化频繁场景下 `ipvs` 性能比 `iptables` 好，设置 kube proxy 底座为 ipvs 时需要Linux 内核版本大于等于5.9，另外 Kube-Proxy IPVS 目前也存在一些问题 |
+| 集群网络相关参数 | kube_pods_subnet | 10.233.64.0/18 | 增大 Pod 所能分配的网络 |
+| | kube_network_node_prefix | 24 | 增大每个节点上 Pod 所能获得的子网范围 |
+| | kube_network_node_prefix_ipv6 | 120 | 增大每个节点上 Pod 所能获得的子网范围 |
+| | kube_service_addresses | 10.233.0.0/18 | 增大 K8s service ClusterIP 所能分配的网络 |
+| 应用稳定性 | dns_replicas | - | 指定 DNS 服务的副本数 |
+| | dns_cpu_limit | - | 每个 DNS 服务 Pod 可以使用的最大 CPU 资源量 |
+| | dns_cpu_requests | - | 每个 DNS 服务 Pod 可以使用的最小 CPU 资源量 |
+| | dns_memory_limit | - | 每个 DNS 服务 Pod 可以使用的最大 Memory 资源量 |
+| | dns_memory_requests | - | 每个 DNS 服务 Pod 可以使用的最小 Memory 资源量 |
+| | enable_nodelocaldns | - | 设置 `enable_nodelocaldns: true`, 使 pod 与运行在同一节点上的 dns（core-dns）缓存代理建立联系，从而避免使用 iptables DNAT 规则和连接跟踪 |
+| | kube_vip_enabled | - | 设置 `kube_vip_enabled: true` ，为集群提供虚拟IP和负载均衡器，用于控制平面(用于构建高可用性集群)和类型为LoadBalancer的Kubernetes服务。 |
+| | metrics_server_enabled | - | 设置 `metrics_server_enabled: true` ，HPA 启动的必备条件 |
+| 其他 | retry_stagger | - | 增大任务失败重试次数 |
 
 ## 部分参数针对不同情况的一些建议
 

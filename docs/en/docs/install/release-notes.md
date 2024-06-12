@@ -15,27 +15,49 @@ the evolution path and feature changes of each version.
 *[Kpanda]: Dev codename for Container Management in DCE 5.0
 *[Skoala]: Dev codename for Microservice Engine in DCE 5.0
 
+## 2024-05-30
+
+### v0.18.0
+
+#### Improvements
+
+- **Improved** the default Kubernetes version has been updated to v1.28.9.
+- **Improved** support for Ubuntu 22.04 has been added.
+- **Improved** support for product components to integrate their command-line tools has been added.
+- **Improved** the isolation between the seed cluster and the global management cluster in All-In-One mode has been enhanced.
+- **Improved** the format of the Kubean download URL has been optimized.
+- **Improved** the parameter list of the merge_values_xxx function has been extended to support obtaining the original values parameters assembled by the installer.
+- **Improved** minimal version detection for pre-required components has been added.
+- **Improved** the version correspondence check between the installer and the offline package has been improved.
+- **Improved** the method of obtaining the installer version during the precheck process has been optimized.
+- **Improved** the versions of pre-required components have been upgraded.
+
+#### Bug Fixes
+
+- **Fixed** the vulnerability in the seed cluster apiserver port has been fixed.
+- **Fixed** the issue of errors when re-executing after a multi-architecture merge failure has been fixed.
+
 ## 2024-04-30
 
 ### v0.17.0
 
 #### Improvements
 
-- **Improved** Support downloading binaries and pulling images from the source site without going through the proxy acceleration site
-- **Improved** Refactor Kubean Config, splitting and decoupling templates
-- **Improved** Support disk limitations for docker single-container
-- **Improved** Support setting kpanda's mysql to mgr mode, default mode remains master-slave
-- **Improved** Support multiple architectures for ubuntu ospkg and iso
-- **Improved** Improve error message display for yq
+- **Improved** support for downloading binaries and pulling images from the source site without going through the proxy acceleration site has been added.
+- **Improved** the Kubean Config has been refactored, splitting and decoupling templates.
+- **Improved** support for disk limitations for Docker single-container has been added.
+- **Improved** the ability to set kpanda's MySQL to MGR mode has been added; the default mode remains master-slave.
+- **Improved** support for multiple architectures for Ubuntu OSPKG and ISO has been added.
+- **Improved** the error message display for yq has been improved.
 
 #### Fixes
 
-- **Fixed** the issue where the kubean version cannot be displayed in the prompt message
-- **Fixed** Resolve the problem of merging multi-architecture images
-- **Fixed** Address the issue of outputting scripts through dry-run
-- **Fixed** Resolve the problem of installation process timeout and inability to capture timeout steps
-- **Fixed** insight-agent installation issue
-- **Fixed** Disable the firewall on the host machine before igniting the fire
+- **Fixed** the issue where the Kubean version could not be displayed in the prompt message.
+- **Fixed** the problem of merging multi-architecture images.
+- **Fixed** the issue of outputting scripts through dry-run.
+- **Fixed** the problem of installation process timeout and inability to capture timeout steps.
+- **Fixed** the insight-agent installation issue.
+- **Fixed** the issue where the firewall on the host machine was not disabled before igniting the fire.
 
 ## 2024-04-09
 
@@ -51,25 +73,25 @@ the evolution path and feature changes of each version.
 
 #### Improvements
 
-- **Improved** Support for deploying on Rocky Linux 9.2 x86 with containerd
-- **Improved** Optimized maximum number of user instances for Rocky Linux
-- **Improved** Simplified extension usage of custom actions on the installer side
-- **Improved** Added manual trimming tool script for offline package
-- **Improved** persistence and reloadability of Firestarter data
-- **Improved** Allow skipping Docker runtime installation when deploying clusters
-- **Improved** Allow specifying configuration for Firestarter apiserver port
+- **Improved** support for deploying on Rocky Linux 9.2 x86 with containerd has been added.
+- **Improved** the maximum number of user instances for Rocky Linux has been optimized.
+- **Improved** the extension usage of custom actions on the installer side has been simplified.
+- **Improved** a manual trimming tool script for the offline package has been added.
+- **Improved** the persistence and reloadability of Firestarter data have been improved.
+- **Improved** the option to skip Docker runtime installation when deploying clusters has been added.
+- **Improved** the ability to specify configuration for the Firestarter apiserver port has been added.
 
 #### Bug Fixes
 
-- **Fixed** issue where OCI_PATH was not effective when importing heterogeneous images
-- **Fixed** manifest disorder issue with kubean custom actions
-- **Fixed** issue where the timezone of the Firestarter cluster was inconsistent with the host machine
+- **Fixed** the issue where OCI_PATH was not effective when importing heterogeneous images.
+- **Fixed** the manifest disorder issue with Kubean custom actions.
+- **Fixed** the issue where the timezone of the Firestarter cluster was inconsistent with the host machine.
 
 #### Known Issues
 
-- When upgrading from a lower version of gproduct to v0.16.0, there is a known issue where upgrading may
-  fail due to a bug in the insight component script. A workaround is to temporarily disable the insight
-  component in the mainfest.yaml file during the upgrade process.
+When upgrading from a lower version of gproduct to v0.16.0, there is a known issue where upgrading may
+fail due to a bug in the insight component script. A workaround is to temporarily disable the insight
+component in the mainfest.yaml file during the upgrade process.
 
 ## 2024-03-01
 
@@ -128,7 +150,7 @@ the evolution path and feature changes of each version.
 #### Bug Fixes
 
 - **Fixed** an issue of pod restart on the bootstrap node in the OpenEuler 22.03 environment.
-- **Bug Fix** Update the version of the operator component when upgrading `kubean`.
+- **Fixed** Update the version of the operator component when upgrading `kubean`.
 
 ## 2023-11-30
 

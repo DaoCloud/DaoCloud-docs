@@ -1,6 +1,6 @@
 # Large-Scale Cluster Parameter Description
 
-For large-scale deployments, please consider the following configuration parameter information.
+For large-scale deployments, refer to the following parameter configuration.
 
 ## Kubean Cluster Parameters
 
@@ -130,51 +130,51 @@ data:
 ## Large-Scale Deployment Parameters
 
 | Category | Parameter | Value | Description |
-| --- | -------- | ----- | ----------- |
-| Resource Distribution | foo_image_repo | URL | Set to point to an internal network address or mirror site |
-| | foo_download_url | URL | Set to point to an internal network address or mirror site |
-| | download_run_once | true/false | Set to `download_localhost: true` to download only once and then distribute from the Ansible control node to each target node |
-| | download_localhost | true/false | Set to `download_localhost: true` to download only once and then distribute from the Ansible control node to each target node |
-| | download_container | true/false | Set to `download_container: false` to avoid large-scale image synchronization on different nodes |
-| Core Cluster Components - etcd | etcd_events_cluster_setup | true/false | When set to true, event storage will be directed to a dedicated etcd instance |
-| | etcd_heartbeat_interval | Default 250, in milliseconds | Frequency at which the leader notifies followers |
-| | etcd_election_timeout | Default 5000, in milliseconds | Adjusts the time followers wait without hearing a heartbeat before trying to become the leader |
-| Core Cluster Components - kube-controller-manager | kube_controller_node_monitor_grace_period | Default 40 s | Time allowed for a node to be unresponsive before marking it as unhealthy; must be an N multiple of `kubelet_status_update_frequency` |
-| | kube_controller_node_monitor_period | Default 5 s | Period for synchronizing NodeStatus |
-| | kube_kubeadm_controller_extra_args | Sub-elements | kube-api-qps: Default 20, QPS for communication with kube-apiserver<br />kube-api-burst: Default 30, burst allowed for communication with kube-apiserver<br />concurrent-deployment-syncs: Default 5, number of concurrent deployment objects allowed to sync. Other basic resources have similar parameters<br />pvclaimbinder-sync-period: Default 15s, period for synchronizing PV and PVC |
-| Core Cluster Components - kube-scheduler | kube_scheduler_config_extra_opts | Sub-elements | percentageOfNodesToScore: If the cluster size is 500 nodes and this value is 30, the scheduler will stop looking for more feasible nodes after finding 150 feasible nodes. When the value is 0, the default percentage (5%-50% based on cluster size) of nodes will be scored.<br />Use very low parameter settings only if you prefer to randomly select any node from the schedulable nodes to run the Pod. |
-| Core Cluster Components - kube-apiserver | kube_apiserver_pod_eviction_not_ready_timeout_seconds | Default 300 | Toleration seconds for notReady:NoExecute, added to each Pod without this toleration by default |
-| | kube_apiserver_pod_eviction_unreachable_timeout_seconds | Default 300 | Toleration seconds for unreachable:NoExecute, added to each Pod without this toleration by default |
-| | kube_apiserver_request_timeout | Default 1m0s | Sometimes can limit large requests, such as certain resources across all namespaces |
-| | kube_kubeadm_apiserver_extra_args | Sub-elements | max-requests-inflight: Default 400, limits the maximum number of non-mutating requests in flight |
-| Core Cluster Components - kubelet | kubelet_status_update_frequency | Default 10s | Frequency for reporting Pod status to the apiserver; recommended to increase for large clusters |
-| | kubelet_max_pods | Default 110 | Increase the maximum number of Pods that can be created on each node |
-| | kubelet_pod_pids_limit | - | Prevent or allow Pods from using a large number of pids, range: [-1, 2^63 -1] |
-| | kubelet_cpu_manager_policy | - | Set the CPU manager policy |
-| | kubelet_cpu_manager_policy_options | - | Set the CPU manager policy options |
-| | kubelet_topology_manager_policy | - | Set the topology manager policy |
-| | kubelet_topology_manager_scope | - | Set the scope of the topology manager policy |
-| | kube_reserved | true/false | Set `kube_reserved: true` to allocate resources for non-Kubernetes components |
+| --- | ---- | -- | --- |
+| Resource Distribution | foo_image_repo | url | Set to point to an intranet address or mirror site |
+| | foo_download_url | url | Set to point to an intranet address or mirror site |
+| | download_run_once | true/false | Set to `download_localhost: true` to download only once, then distribute from the Ansible control node to each target node |
+| | download_localhost | true/false | Set to `download_localhost: true` to download only once, then distribute from the Ansible control node to each target node |
+| | download_container | true/false | Set to `download_container: false` to avoid synchronizing large-scale images on different nodes |
+| Core Cluster Components - etcd | etcd_events_cluster_setup | true/false | Set to true to store events in a separate dedicated etcd instance |
+| | etcd_heartbeat_interval | Default 250, in milliseconds | Frequency at which the leader notifies the followers |
+| | etcd_election_timeout | Default 5000, in milliseconds | Time a follower node waits before attempting to become the leader if it hasn't heard a heartbeat |
+| Core Cluster Components - kube-controller-manager | kube_controller_node_monitor_grace_period | Default 40s | Time allowed for a node to be unresponsive before being marked as unhealthy; must be a multiple of `kubelet_status_update_frequency` |
+| | kube_controller_node_monitor_period | Default 5s | Interval for synchronizing NodeStatus |
+| | kube_kubeadm_controller_extra_args | Sub-elements | kube-api-qps: Default 20, QPS used for communication with kube-apiserver<br />kube-api-burst: Default 30, burst allowed when communicating with kube-apiserver<br />concurrent-deployment-syncs: Default 5, number of deployment objects allowed to sync concurrently. Other basic resources have similar parameters<br />pvclaimbinder-sync-period: Default 15s, interval for synchronizing PV and PVC |
+| Core Cluster Components - kube-scheduler | kube_scheduler_config_extra_opts | Sub-elements | percentageOfNodesToScore: If the cluster size is 500 nodes and this value is 30, the scheduler stops looking for more feasible nodes after finding 150. When set to 0, a default percentage (5%-50% based on cluster size) of nodes will be scored. Use a low setting only if you prefer to select any schedulable node to run the Pod. |
+| Core Cluster Components - kube-apiserver | kube_apiserver_pod_eviction_not_ready_timeout_seconds | Default 300 | Toleration seconds for notReady:NoExecute; by default, this time is added to each pod without this toleration |
+| | kube_apiserver_pod_eviction_unreachable_timeout_seconds | Default 300 | Toleration seconds for unreachable:NoExecute; by default, this time is added to each pod without this toleration |
+| | kube_apiserver_request_timeout | Default 1m0s | Can limit some large requests, such as certain resources in all namespaces |
+| | kube_kubeadm_apiserver_extra_args | Sub-elements | max-requests-inflight: Default 400, limits the maximum number of ongoing non-mutating requests |
+| Core Cluster Components - kubelet | kubelet_status_update_frequency | Default 10s | Frequency of reporting pod status to the apiserver; it is recommended to increase this value in large clusters |
+| | kubelet_max_pods | Default 110 | Increases the maximum number of pods that can be created on each node |
+| | kubelet_pod_pids_limit | - | Prevents or allows pods to use a large number of PIDs, range: [-1, 2^63-1] |
+| | kubelet_cpu_manager_policy | - | Sets the CPU manager policy |
+| | kubelet_cpu_manager_policy_options | - | Sets options for the CPU manager policy |
+| | kubelet_topology_manager_policy | - | Sets the topology manager policy |
+| | kubelet_topology_manager_scope | - | Sets the scope of the topology manager policy |
+| | kube_reserved | true/false | Setting `kube_reserved: true` means allocating resources for non-Kubernetes components |
 | | kube_master_cpu_reserved | - | |
 | | kube_master_memory_reserved | - | |
-| | system_reserved | true/false | Set `system_reserved: true` to allocate resources for Kubernetes components |
+| | system_reserved | true/false | Setting `system_reserved: true` means allocating resources for Kubernetes components |
 | | system_master_cpu_reserved | - | |
 | | system_master_memory_reserved | - | |
-| | kubelet_config_extra_args | Sub-elements | kubeAPIQPS: Default 50, QPS for communication with kube-apiserver<br />kubeAPIBurst: Default 100, burst allowed for communication with kube-apiserver<br />serializeImagePulls: Default true, pull one image at a time<br />maxParallelImagePulls: Default nil, maximum parallel pulls, effective only when serializeImagePulls is false<br />volumeStatsAggPeriod: Default 1m, recommended to increase for large volumes and high disk pressure |
-| Kubeproxy | kube_proxy_mode | - | Recommended to use `IPVS` mode for a high-performance solution handling large-scale cluster traffic |
-| Cluster Network Parameters | kube_pods_subnet | 10.233.64.0/18 | Increase the network Pod can allocate |
-| | kube_network_node_prefix | 24 | Increase the subnet range each node can allocate for Pods |
-| | kube_network_node_prefix_ipv6 | 120 | Increase the subnet range each node can allocate for Pods |
-| | kube_service_addresses | 10.233.0.0/18 | Increase the network K8s service ClusterIP can allocate |
-| Application Stability | dns_replicas | - | Specify the number of replicas for DNS services |
-| | dns_cpu_limit | - | Maximum CPU resources each DNS service Pod can use |
-| | dns_cpu_requests | - | Minimum CPU resources each DNS service Pod can use |
-| | dns_memory_limit | - | Maximum Memory resources each DNS service Pod can use |
-| | dns_memory_requests | - | Minimum Memory resources each DNS service Pod can use |
-| | enable_nodelocaldns | - | Set `enable_nodelocaldns: true` to enable Pods to contact the DNS (core-dns) cache proxy running on the same node, avoiding the use of iptables DNAT rules and connection tracking |
-| | kube_vip_enabled | - | Set `kube_vip_enabled: true` to provide a virtual IP and load balancer for the cluster, used for control plane (for building highly available clusters) and Kubernetes services of type LoadBalancer. |
-| | metrics_server_enabled | - | Set `metrics_server_enabled: true`, a prerequisite for HPA |
-| Other | retry_stagger | - | Increase the number of retry attempts for failed tasks |
+| | kubelet_config_extra_args | Sub-elements | kubeAPIQPS: Default 50, QPS used for communication with kube-apiserver<br />kubeAPIBurst: Default 100, burst allowed when communicating with kube-apiserver<br />serializeImagePulls: Default true, pulls only one image at a time<br />maxParallelImagePulls: Default nil, maximum number of parallel pulls; effective only when serializeImagePulls is false<br />volumeStatsAggPeriod: Default 1m, recommended to increase in cases of many volumes and high disk pressure |
+| Kubeproxy | kube_proxy_mode | - | In scenarios with frequent service changes, `ipvs` performs better than `iptables`. Setting kube proxy mode to ipvs requires a Linux kernel version of 5.9 or higher. Note that Kube-Proxy IPVS also has some issues |
+| Cluster Network Parameters | kube_pods_subnet | 10.233.64.0/18 | Increases the network allocation for pods |
+| | kube_network_node_prefix | 24 | Increases the subnet range that each node can allocate to pods |
+| | kube_network_node_prefix_ipv6 | 120 | Increases the subnet range that each node can allocate to pods |
+| | kube_service_addresses | 10.233.0.0/18 | Increases the network allocation for K8s service ClusterIP |
+| Application Stability | dns_replicas | - | Specifies the number of DNS service replicas |
+| | dns_cpu_limit | - | Maximum CPU resources that each DNS service pod can use |
+| | dns_cpu_requests | - | Minimum CPU resources that each DNS service pod can use |
+| | dns_memory_limit | - | Maximum memory resources that each DNS service pod can use |
+| | dns_memory_requests | - | Minimum memory resources that each DNS service pod can use |
+| | enable_nodelocaldns | - | Setting `enable_nodelocaldns: true` allows pods to connect to a DNS (core-dns) cache agent running on the same node, avoiding the use of iptables DNAT rules and connection tracking |
+| | kube_vip_enabled | - | Setting `kube_vip_enabled: true` provides a virtual IP and load balancer for the cluster, used for the control plane (to build a highly available cluster) and Kubernetes services of type LoadBalancer |
+| | metrics_server_enabled | - | Setting `metrics_server_enabled: true` is a prerequisite for starting HPA |
+| Others | retry_stagger | - | Increases the number of retry attempts for failed tasks |
 
 ## Recommendations for Different Scenarios
 
