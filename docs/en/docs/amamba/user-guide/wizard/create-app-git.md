@@ -34,7 +34,7 @@ Following [Credential Management](../pipeline/credential.md), create two credent
 2. Fill in the basic information as per the instructions and click __Next__ :
 
     - Name: Specify the name of the resource workload.
-    - Resource Type: Select Stateless Workload, which is currently the only supported option.
+    - Resource Type: Currently, only deployments are supported.
     - Deployment Location: Choose the cluster and namespace where the application will be deployed.
       If you want to integrate with microservices, make sure you have
       [created a registry](../../../skoala/trad-ms/hosted/index.md) in the current workspace.
