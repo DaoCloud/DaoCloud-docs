@@ -178,7 +178,7 @@ customize solutions for various use cases. This modular style allows for continu
 
      DCE 5.0 extends cloud native capabilities to the edge by adopting the edge cluster
      and edge node mode. It moves the computing power of the data center down, while
-     elvate the computing power of the end device. This unifies control and scheduling
+     elevate the computing power of the end device. This unifies control and scheduling
      of discrete and heterogeneous computing resources, solving the problem of massive edge and end devices.
 
      This capability unifies the requirements of large-scale app delivery, operation
