@@ -272,6 +272,10 @@
         1. 等待 Pod 都 Running
         2. 可以看到第一个节点变为 ready 状态了
 
+    !!! note
+
+        在安装 Calico 前，请先创建 `calico-system` 命名空间。可参考[创建命名空间](../../../kpanda/user-guide/namespaces/createns.md)。
+
 ### 接入其他 worker 工作节点
 
 最后在其他 worker 节点执行 join 命令。

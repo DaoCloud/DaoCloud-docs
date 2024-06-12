@@ -278,6 +278,10 @@ Perform the following steps on all three nodes:
         1. Wait for all Pods to be Running
         2. You will see the first node become ready
 
+    !!! note
+
+        Before you install Calico, create a `calico-system` namespace in advance. Please refer to [Create Namespace](../../../kpanda/user-guide/namespaces/createns.md).
+
 ### Add Additional Worker Nodes
 
 Finally, execute the join command on the other worker nodes. When executing `kubeadm init`
