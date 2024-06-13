@@ -75,6 +75,7 @@ nav:
                   - Disk Limit in Docker-based K8s Cluster: install/best-practices/docker-storage.md
                   - Cluster Parameters at Scale: install/best-practices/large-deployments-par.md
               - Installer Release Notes: install/release-notes.md
+          - Best Practices Portal: dce/bphome.md
       - Workbench:
           - Workbench:
               - Intro:

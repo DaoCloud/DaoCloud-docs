@@ -11,8 +11,8 @@ hide:
 
 !!! tip "有人说"
 
-    :man_factory_worker: 遵循最佳实践，确保卓越性能。
-    <span style="color: green;">Practice makes you perfect.</span>
+    :man_factory_worker: 遵循最佳实践，确保卓越性能 
+    <span style="color: green;">Practice Makes You Perfect.</span>
 
 ## 安装与工作台
 
