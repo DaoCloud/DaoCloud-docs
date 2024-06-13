@@ -148,7 +148,7 @@ DCE 5.0 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的�
 
     ---
 
-    DCE 5.0 针对实际应用场景，选用经典的中间件来处理数据。
+    中间件涵盖的范围从内存缓存到各类消息队列，您可以按需部署。
 
     - [MongoDB 数据库](../middleware/mongodb/intro/index.md)
     - [Redis 缓存服务](../middleware/redis/intro/index.md)
@@ -195,7 +195,7 @@ DCE 5.0 以 K8s 作为开发底座，提供了高度可扩展、强大灵活的�
     - [性能测试报告](../network/performance/cni-performance.md)
     - [如何集成不同的 CNI](../network/modules/calico/install.md)
 
-- :floppy_disk:{ .lg .middle } __云原生存储__
+- :simple-googlecloudstorage:{ .lg .middle } __云原生存储__
     
     ---
 
