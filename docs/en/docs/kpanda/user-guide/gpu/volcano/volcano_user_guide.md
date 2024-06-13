@@ -1,30 +1,40 @@
+---
+MTPE: ModetaNiu
+date: 2024-06-12
+---
+
 # Volcano Installation and Usage
 
-Volcano is the first container batch computing platform based on Kubernetes under CNCF, focusing on high-performance computing scenarios.
-It fills the gap in Kubernetes in areas such as machine learning, big data, and scientific computing, providing necessary support for these high-performance workloads.
+Volcano is the first container batch computing platform based on Kubernetes under CNCF, focusing on 
+high-performance computing scenarios.
+It adds features related to machine learning, big data, and scientific computing that Kubernetes is not equipped with. 
+providing necessary support for these high-performance workloads.
 
-Volcano seamlessly integrates with mainstream computing frameworks such as Spark, TensorFlow, and PyTorch, and supports mixed scheduling of heterogeneous devices, including CPU and GPU.
+Volcano seamlessly integrates with mainstream computing frameworks such as Spark, TensorFlow, and PyTorch, 
+and supports mixed scheduling of heterogeneous devices, including CPU and GPU.
 
-This article introduces how to install and use Volcano.
+This page introduces how to install and use Volcano.
 
 ## Install Volcano
 
 1. Find Volcano in **Cluster Details** -> **Helm Apps** -> **Helm Charts** and install it.
 
-    <!-- Add screenshot later -->
+    ![Volcano helm chart](../../images/volcano-01.png)
    
-    <!-- Add screenshot later -->
+    ![Install Volcano](../../images/volcano-02.png)
 
-2. Check and confirm whether Volcano is installed successfully, that is, whether the components volcano-admission, volcano-controllers, and volcano-scheduler are running properly.
+2. Check and confirm whether Volcano is installed successfully, that is, whether the components volcano-admission, 
+   volcano-controllers, and volcano-scheduler are running properly.
 
-    <!-- Add screenshot later -->
+    ![Volcano components](../../images/volcano-03.png)
 
 ## Volcano Usage Scenarios
 
 ### Scheduling Job Resources with Volcano
 
 - Volcano is a separate scheduler, and you specify the name of the scheduler (schedulerName: volcano) when creating workloads.
-- The volcanoJob resource is an extension of Job by Volcano, which splits the job into smaller units of work called tasks, which can interact with each other.
+- The volcanoJob resource is an extension of Job by Volcano, which splits the job into smaller units of work called tasks, 
+  which can interact with each other.
 
 Here is an example:
 
@@ -212,4 +222,4 @@ spec:
 ```
 
 If you want to learn more about the features and usage scenarios of Volcano,
-refer to [Volcano Introduction](https://volcano.sh/zh/docs/).
+refer to [Volcano Introduction](https://volcano.sh/en/docs/).

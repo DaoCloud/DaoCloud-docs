@@ -1,3 +1,8 @@
+---
+MTPE: ModetaNiu
+date: 2024-06-12
+---
+
 # Using Volcano's Gang Scheduler
 
 The Gang scheduling strategy is one of the core scheduling algorithms of the volcano-scheduler. 
