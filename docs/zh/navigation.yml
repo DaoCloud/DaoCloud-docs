@@ -137,7 +137,8 @@ nav:
                       - 在Jenkins中使用自定义工具链: amamba/quickstart/jenkins-custom.md
                       - 在指定的节点上运行: amamba/quickstart/pipeline-on-node.md                    
                       - 构建多架构镜像: amamba/user-guide/pipeline/podman.md
-                      - 在流水线中使用缓存: amamba/quickstart/job-cacher.md                  
+                      - 在流水线中使用缓存: amamba/quickstart/job-cacher.md
+                      - 使用自定义插件: amamba/user-guide/pipeline/custom-plugin.md
               - GitOps:
                   - 手动同步应用: amamba/user-guide/gitops/sync-manually.md
                   - 导入代码仓库: amamba/user-guide/gitops/import-repo.md
