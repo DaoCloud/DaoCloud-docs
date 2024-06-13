@@ -2,8 +2,7 @@
 nav:
   - DaoCloud Website: https://www.daocloud.io/en/
   - Documentation:
-      - Home: dce/index.md
-      - Get Started: dce/get-started.md
+      - Get Started: dce/index.md
       - Learn and Install:
           - DCE Profile:
               - Free Trial: dce/license0.md
