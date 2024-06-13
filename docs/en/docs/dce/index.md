@@ -11,17 +11,8 @@ In the ever-evolving landscape of technology, the rise of artificial intelligenc
 and cloud native solutions has created a wave of innovation and opportunity. To stay ahead in this
 dynamic market, businesses must embrace the latest trends and technologies.
 
-By transitioning your data center to a Kubernetes foundation, you open the door to a world of possibilities.
-Kubernetes enables businesses to streamline operations, improve scalability, and enhance agility, providing
-a solid framework for future growth and development. Embracing this technology is not just a strategic move,
-but a necessary step towards revolutionizing the way you conduct business.
-
-DCE 5.0, built on the powerful Kubernetes platform, offers a comprehensive set of features designed to
-meet the demands of enterprise operations. This platform empowers organizations to efficiently manage
-and oversee distributed applications, maximizing productivity and performance. By leveraging the
-cloud native capabilities of DCE 5.0, businesses can optimize resource utilization, enhance infrastructure
-resilience, and accelerate application deployment, ultimately driving operational efficiency and success.
-Embrace DCE 5.0 to unlock the full potential of your enterprise and thrive in the AI era.
+This page provides convenient access to a range of documents for DCE 5.0 components.
+We hope you find the information helpful and enjoy exploring!
 
 *[DCE]: An abbreviation for DaoCloud Enterprise, a next-generation AI computing platform
 *[AI]: DCE 5.0 has an integrated intelligent computing engine for efficient management of LLM jobs, datasets, GPU, CPU, and memory resources
