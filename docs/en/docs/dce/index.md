@@ -5,242 +5,264 @@ hide:
   - toc
 ---
 
-# DaoCloud Enterprise 5.0
+# Get Started
 
-DaoCloud Enterprise 5.0 (DCE 5.0) is an advanced and highly scalable cloud native operating system designed to provide
-a consistent and dependable experience across diverse infrastructures and environments. With its support for heterogeneous
-clouds, edge clouds, and multicloud management, DCE 5.0 offers unparalleled flexibility.
+In the ever-evolving landscape of technology, the rise of artificial intelligence, machine learning,
+and cloud native solutions has created a wave of innovation and opportunity. To stay ahead in this
+dynamic market, businesses must embrace the latest trends and technologies.
 
-By seamlessly integrating state-of-the-art service mesh and microservice technologies, DCE 5.0 enables comprehensive tracking
-of the entire traffic lifecycle. Users can gain valuable insights into detailed metrics related to clusters, nodes, applications,
-and services. Visualizing the health status of applications through dynamic dashboards and topology maps empowers users with
-actionable information to optimize performance.
+By transitioning your data center to a Kubernetes foundation, you open the door to a world of possibilities.
+Kubernetes enables businesses to streamline operations, improve scalability, and enhance agility, providing
+a solid framework for future growth and development. Embracing this technology is not just a strategic move,
+but a necessary step towards revolutionizing the way you conduct business.
 
-A major advantage of DCE 5.0 is its native support for the DevOps development and operation mode, facilitating standardization
-and automation throughout the application delivery process. Additionally, DCE 5.0 effortlessly integrates a range of carefully
-selected databases and middleware, enhancing operational efficiency and governance. Each product module operates independently,
-ensuring flexible upgrades without disrupting critical business operations. Furthermore, DCE 5.0 seamlessly integrates with
-various cloud native ecosystem products, forming a comprehensive and robust solution system.
-
-With extensive testing from thousands of industry customers in real production cases, DCE 5.0 has established itself as a solid
-and trustworthy digital foundation. It assists enterprises in defining their digital boundaries and unleashing the full potential
-of cloud native productivity. Embrace DCE 5.0 to elevate your organization's capabilities in the cloud native landscape.
+DCE 5.0, built on the powerful Kubernetes platform, offers a comprehensive set of features designed to
+meet the demands of enterprise operations. This platform empowers organizations to efficiently manage
+and oversee distributed applications, maximizing productivity and performance. By leveraging the
+cloud native capabilities of DCE 5.0, businesses can optimize resource utilization, enhance infrastructure
+resilience, and accelerate application deployment, ultimately driving operational efficiency and success.
+Embrace DCE 5.0 to unlock the full potential of your enterprise and thrive in the AI era.
 
 *[DCE]: An abbreviation for DaoCloud Enterprise, a next-generation AI computing platform
 *[AI]: DCE 5.0 has an integrated intelligent computing engine for efficient management of LLM jobs, datasets, GPU, CPU, and memory resources
 
+!!! tip
+
+    Embrace the wave of containerization and embark on an exploratory journey with DaoCloud Enterprise 5.0!
+
+## Installation and Tutorials
+
 <div class="grid cards" markdown>
 
-- :fontawesome-solid-jet-fighter-up: **Install** [Installation instructions](../install/index.md)
-- :material-microsoft-azure-devops: **Workbench** [CI/CD pipeline](../amamba/intro/index.md)
-- :octicons-container-16: **Container Management** [Cluster/node/workloads](../kpanda/intro/index.md)
-- :material-cloud-check: **Multicloud Management** [Multicloud instance/workload/policy](../kairship/intro/index.md)
-- :material-warehouse: **Container Registry** [Integrate and host registries](../kangaroo/intro/index.md)
-- :material-dot-net: **Network** [Multi-CNI fusion solution](../network/intro/index.md)
-- :floppy_disk: **Storage** [Containerized storage](../storage/index.md)
-- :material-train-car-container: **VM** [Containerized virtual machine](../virtnest/intro/index.md)
-- :material-monitor-dashboard: **Insight** [One-stop graphical dashboard](../insight/intro/index.md)
-- :material-engine: **Microservice Engine** [Microservice governance and gateway](../skoala/intro/index.md)
-- :material-table-refresh: **Service Mesh** [Non-intrusive service governance](../mspider/intro/index.md)
-- :material-middleware: **Middleware** [ES, Kafka, MinIO, MySQL, etc.](../middleware/index.md)
-- :material-slot-machine: **Intelligent Engine** [Cloud Native AI - Integrated Training and Inference Platform](../baize/intro/index.md)
-- :fontawesome-brands-edge: **Cloud Edge Collaboration** [Containers extend to edge](../kant/intro/index.md)
-- :fontawesome-solid-user-group: **Global Management** [Login/permissions/appearance](../ghippo/intro/index.md)
-- [Free Trial Now :free:](../trial/index.md){ .md-button }
+- :fontawesome-solid-jet-fighter-up:{ .lg .middle } __Installation__
+
+    ---
+
+    DCE 5.0 supports both offline and online installation methods, and can be installed on various Linux distributions.
+
+    - [Install Dependencies](../install/install-tools.md)
+    - [Install Community Package](../install/community/resources.md)
+    - [Install Enterprise Package](../install/commercial/deploy-requirements.md)
+    - [Install on Different Linux Distributions](../install/os-install/uos-v20-install-dce5.0.md)
+    - [Install on Different K8s Versions](../install/k8s-install/ocp-install-dce5.0.md)
+
+- :material-microsoft-azure-devops:{ .lg .middle } __Video Tutorials__
+
+    ---
+
+    We have created many video tutorials for different modules and scenarios of DCE 5.0.
+
+    - [Scenario-based Videos](../videos/use-cases.md)
+    - [Workbench Videos](../videos/amamba.md)
+    - [Container Management Videos](../videos/kpanda.md)
+    - [Microservices Videos](../videos/skoala.md)
+    - [Middleware Videos](../videos/mcamel.md)
+    - [Global Management Videos](../videos/ghippo.md)
 
 </div>
 
-![modules](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/dce-modules04.jpg)
+## Product Modules
 
-Over the past ten years, DaoCloud has made significant investments to explore
-and develop a cloud native operating system with customizable and scalable modules
-that facilitate business digitalization. Each module can be used as a LEGO brick,
-allowing for zero downtime while upgrading any module. DCE 5.0 is also easy to
-integrate with hundreds of cloud native ecological plugins, making it simple to
-customize solutions for different use cases. This modular style allows for growth
-day by day, making things better over time.
+<div class="grid cards" markdown>
 
-=== "Cloud Native Base"
+- :material-microsoft-azure-devops:{ .lg .middle } __Workbench__
 
-    DCE 5.0 provides cloud native computing, networking, storage, and other capabilities,
-    compatible with various cluster access. It supports the entire lifecycle of the cluster
-    from deployment, version upgrade, certificate change, configuration change, and recycling,
-    enabling lifecycle management. 
+    ---
 
-    This capability breaks through K8s API performance bottlenecks, allowing large-scale
-    enterprise users to use multiple clusters concurrently. Additionally, for the enterprise
-    environment, it provides scenario-based network solutions to maximize the reuse of
-    the current enterprise network infrastructure and lower the threshold for enterprises
-    to use cloud native applications.
+    This is a container-based DevOps cloud native application platform, serving as the unified entry point for creating applications in DCE 5.0.
 
-    - **About Cloud Native Computing**: Abstracts underlying infrastructure to support upper-layer 
-    applications and other modules, including computing and storage.
-    - **About Cloud Native Networking**: Adapts to various overlay and underlay network environments, 
-    supporting multiple network modes like Spiderpool, Cillium, Macvlan, and Multus.
-    - **About Cloud Native Security**: Integrates RBAC permission authentication systems to safeguard 
-    operational security.
+    - [Creating Applications with Wizard](../amamba/user-guide/wizard/create-app-git.md)
+    - [Pipelines](../amamba/user-guide/pipeline/create/custom.md)
+    - [GitOps](../amamba/user-guide/gitops/create-argo-cd.md)
+    - [Canary Release](../amamba/user-guide/release/canary.md)
+    - [Integrated Toolchain](../amamba/user-guide/tools/integrated-toolchain.md)
 
-    **Related modules**: [Global Management](../ghippo/intro/index.md), [Container Management](../kpanda/intro/index.md),
-    [Cluster Lifecycle Management](../community/kubean.md), [cloud native network](../network/intro/index.md),
-    [cloud native storage](../storage/index.md)
+- :octicons-container-16:{ .lg .middle } __Container Management__
 
-=== "Multicloud"
+    ---
 
-    DCE 5.0 supports unified and centralized management of multicloud and hybrid clouds,
-    providing cross-cloud resource retrieval and application deployment, release, and
-    operation and maintenance capabilities. This enables efficient management and control
-    of multicloud applications, elastic scaling of applications based on cluster resources,
-    and global load balancing.
+    This containerization management module is built on Kubernetes (K8s) and designed for cloud native applications, serving as the core of DCE 5.0.
+
+    - [Cluster Management](../kpanda/user-guide/clusters/create-cluster.md)
+    - [Node Management](../kpanda/user-guide/nodes/add-node.md)
+    - [Namespace Management](../kpanda/user-guide/namespaces/createns.md)
+    - [Workloads: Deployment, StatefulSet, DaemonSet, Job, CronJob](../kpanda/user-guide/workloads/create-deployment.md)
+    - [Helm Applications](../kpanda/user-guide/helm/helm-app.md)
+
+</div>
+
+<div class="grid cards" markdown>
+
+- :material-cloud-check:{ .lg .middle } __MultiCloud Orchestration__
+
+    ---
+
+    This is a user-centric, out-of-the-box multicloud application orchestration platform that provides centralized management for multicloud and hybrid cloud environments.
+
+    - [MultiCloud Working Clusters](../kairship/cluster.md)
+    - [MultiCloud Workloads](../kairship/workload/deployment.md)
+    - [MultiCloud Custom Resources](../kairship/crds/crd.md)
+    - [Resource Management: Service, Routing, Namespace, etc.](../kairship/resource/service.md)
+    - [Policy Management](../kairship/policy/propagation.md)
+
+- :material-warehouse:{ .lg .middle } __Container Registry__
+
+    ---
+
+    This is a cloud native image hosting service that supports the management of multiple instances and integrates with container registries like Harbor and Docker.
+
+    - [Registry Spaces](../kangaroo/space/index.md)
+    - [Registry Integration (Workspace)](../kangaroo/integrate/integrate-ws.md)
+    - [Registry Integration (Admin)](../kangaroo/integrate/integrate-admin.md)
+    - [Managed Harbor](../kangaroo/managed/intro.md)
+
+</div>
+
+<div class="grid cards" markdown>
+
+- :material-engine:{ .lg .middle } __Microservice Engine__
+
+    ---
+
+    This is a comprehensive microservice management platform tailored for mainstream microservice ecosystems.
+
+    - [Cloud Native Gateway](../skoala/gateway/index.md)
+    - [Cloud Native Microservices](../skoala/cloud-ms/index.md)
+    - [Traditional Microservices](../skoala/trad-ms/hosted/index.md)
+    - [Plugin Center](../skoala/plugins/intro.md)
+
+- :material-table-refresh:{ .lg .middle } __Service Mesh__
+
+    ---
+
+    This next-generation service mesh is built on Istio and designed for cloud native applications.
+
+    - [Traffic Governance](../mspider/user-guide/traffic-governance/README.md)
+    - [Security Governance](../mspider/user-guide/security/README.md)
+    - [Sidecar Management](../mspider/user-guide/sidecar-management/workload-sidecar.md)
+    - [Traffic Monitoring](../mspider/user-guide/traffic-monitor/README.md)
+
+</div>
+
+<div class="grid cards" markdown>
+
+- :material-middleware:{ .lg .middle } __Middleware 1__
+
+    ---
+
+    DCE 5.0 selects classic middleware to process data for practical application scenarios.
+
+    - [Elasticsearch Search Service](../middleware/elasticsearch/intro/index.md)
+    - [MinIO Object Storage](../middleware/minio/intro/index.md)
+    - [MySQL Database](../middleware/mysql/intro/index.md)
+    - [PostgreSQL Database](../middleware/postgresql/intro/index.md)
+
+- :material-middleware:{ .lg .middle } __Middleware 2__
+
+    ---
+
+    DCE 5.0 selects classic middleware to process data for practical application scenarios.
+
+    - [MongoDB Database](../middleware/mongodb/intro/index.md)
+    - [Redis Cache Service](../middleware/redis/intro/index.md)
+    - [RabbitMQ Message Queue](../middleware/rabbitmq/intro/index.md)
+    - [Kafka Message Queue](../middleware/kafka/intro/index.md)
+
+</div>
+
+<div class="grid cards" markdown>
+
+- :fontawesome-solid-user-group:{ .lg .middle } __Global Management__
+
+    ---
+
+    It focuses on user-centric services, including access control, workspaces, audit logs, platform settings.
+
+    - [Access Control](../ghippo/user-guide/access-control/user.md)
+    - [Workspaces and Folders](../ghippo/user-guide/workspace/workspace.md)
+    - [Audit Logs](../ghippo/user-guide/audit/open-audit.md)
+    - [Operations Management and System Settings](../ghippo/user-guide/platform-setting/appearance.md)
+
+- :material-monitor-dashboard:{ .lg .middle } __Insight__
+
+    ---
+
+    This provides real-time monitoring of applications and resources, collects metrics, logs, and events to analyze the health status.
+
+    - [Infrastructure](../insight/user-guide/infra/cluster.md)
+    - [Log Query](../insight/user-guide/data-query/log.md)
+    - [Tracing](../insight/user-guide/trace/trace.md)
+    - [Alerts](../insight/user-guide/alert-center/index.md)
+
+</div>
+
+<div class="grid cards" markdown>
+
+- :material-dot-net:{ .lg .middle } __Cloud Native Networking__
     
-    Furthermore, DCE 5.0 offers fault recovery capabilities that
-    can effectively solve the problem of multicloud application disaster recovery, helping
-    enterprises build multicloud and hybrid cloud digital infrastructure.
+    ---
 
-    **Modules involved**: [Global Management](../ghippo/intro/index.md), [Container Management](../kpanda/intro/index.md),
-    [Multicloud Management](../kairship/intro/index.md), [cloud native network](../network/intro/index.md),
-    [cloud native storage](../storage/index.md), Heterogeneous architecture
+    It provides support for both single CNI networks and combinations of multiple CNI networks.
 
-    ![multicloud](../images/01multi-cloud.png)
+    - [Network Interface and Planning](../network/plans/ethplan.md)
+    - [Performance Testing Report](../network/performance/cni-performance.md)
+    - [Integrating Different CNIs](../network/modules/calico/install.md)
 
-=== "Middleware"
-
-    The cloud native local storage capability, specially designed for stateful applications, meets
-    the high I/O storage requirements of middleware and improves the efficiency of operation and
-    maintenance management. It offers middleware management capabilities for the entire lifecycle
-    of multi-tenancy, deployment, observation, backup, operation, and maintenance operations, among others.
-
-    This capability supports various middleware such as databases, distributed messages, log retrieval,
-    etc., enabling self-service application, elastic expansion, high concurrent processing, and high
-    stability and availability of data services.
-
-    **Related modules**: [Global Management](../ghippo/intro/index.md), [Container Management](../kpanda/intro/index.md),
-    [Cloud Native Network](../network/intro/index.md), [cloud native storage](../storage/index.md), [selected middleware](../middleware/index.md)
-
-    ![data](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/02data.jpg)
-
-=== "Microservice"
-
-    DCE 5.0 provides non-intrusive traffic management features, supporting non-sensing access to
-    traditional microservices, cloud native microservices, and open-source microservice frameworks.
-    It achieves integrated management of existing microservice systems and old and new microservice systems of enterprises.
-
-    This capability supports the full lifecycle management of microservices from development, deployment,
-    access, observation, operation, and maintenance. It also provides high-performance cloud native
-    microservice gateways, ensuring continuous availability of microservice applications. Additionally,
-    DCE 5.0 introduces independent open-source eBPF mesh acceleration technology to comprehensively improve traffic forwarding efficiency.
-
-    **Related modules**: [Global Management](../ghippo/intro/index.md), [Container Management](../kpanda/intro/index.md),
-    [Microservice Engine](../skoala/intro/index.md), [Service Mesh](../mspider/intro/index.md), [Insight](../insight/intro/index.md),
-    [Workbench](../amamba/intro/index.md), [Cloud Native Network](../network/intro/index.md), [Cloud Native Storage](../storage/index.md)
-
-    ![microservie engine](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/03msgov.jpg)
-
-=== "Observability"
-
-    DCE 5.0 comprehensively collects service data based on logs, traces, metrics,
-    eBPF, and other technical means. It deeply acquires request link information
-    and dynamically observes and multi-dimensionally controls real-time changes
-    in clusters, nodes, applications, and services.
+- :floppy_disk:{ .lg .middle } __Cloud Native Storage__
     
-    This capability enables the query of all clusters and load observation data
-    through a unified control plane. Additionally, it introduces topology analysis
-    technology to visualize the application health status and achieves second-level fault location.
+    ---
 
-    *[eBPF]: Extended Berkeley Packet Filter, which is a component of the Linux kernel that can run sandboxed programs in the kernel
+    It is based on the K8s CSI standard and can integrate with different storage solutions based on different SLA requirements and user cases.
 
-    **Modules involved**: [Global Management](../ghippo/intro/index.md), [Container Management](../kpanda/intro/index.md),
-    [Insight](../insight/intro/index.md), [cloud native network](../network/intro/index.md), [cloud native storage](../storage/index.md)
+    - [Introduction to DCE 5.0 Cloud Native Storage](../storage/index.md)
+    - [HwameiStor Local Storage](../storage/hwameistor/intro/index.md)
+    - [Integrating Open-Source Storage Solutions](../storage/solutions/rook-ceph.md)
 
-    ![Insight](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/04insight.jpg)
+</div>
 
-=== "App Store"
+## Download and Ecosystem
 
-    DCE 5.0 includes software products from ecological partners in ten major fields,
-    such as big data and AI, middleware, etc. This enables the integration of ecological
-    technology, products, operation services, and other capabilities. Additionally, it
-    provides out-of-the-box ecological application software, creating a complete solution system.
+<div class="grid cards" markdown>
 
-    **Related modules**: [Global Management](../ghippo/intro/index.md), [Container Management](../kpanda/intro/index.md),
-    [Cloud Native Network](../network/intro/index.md), [cloud native storage](../storage/index.md), app store, product ecology
+- :material-download:{ .lg .middle } __Download Center__
 
-=== "App Delivery"
+    ---
 
-    DCE 5.0 realizes self-service migration to the cloud through a consistent and
-    scalable app delivery process. It supports flexible tenant systems, dynamically
-    adapting to user organizational structure planning and real-time resource allocation.
+    It contains offline installation packages for the DCE 5.0 Community Package, Enterprise Package, and sub-modules.
 
-    This capability is based on cloud native CI/CD pipelines, integrating rich toolchains,
-    and supporting efficient concurrent execution flow. Additionally, it automates the
-    construction and deployment of applications, innovatively introducing GitOps and
-    progressive delivery capability systems, achieving more refined management and operation of applications.
+    - [Download Community Package](../download/free/dce5-installer-history.md)
+    - [Download Enterprise Package](../download/business/dce5-installer-history.md)
+    - [Download Sub-Modules](../download/index.md#download-modules)
 
-    **Modules involved**: [Global Management](../ghippo/intro/index.md), [Container Management](../kpanda/intro/index.md),
-    [Workbench](../amamba/intro/index.md), [container registry](../kangaroo/intro/index.md), [cloud native network](../network/intro/index.md),
-    [cloud native storage](../storage/index.md)
+- :simple-opensourceinitiative:{ .lg .middle } __DaoCloud Open Source Ecosystem__
 
-    ![app delivery](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/06appdeliv.jpg)
+    ---
 
-=== "Heterogeneous Architecture"
+    DaoCloud adheres to an open source enterprise culture, with multiple open source technologies included in the CNCF Sandbox.
 
-    DCE 5.0 adopts a heterogeneous cloud native technology architecture, compatible
-    with domestic chips and servers. It supports a heterogeneous operating system and
-    heterogeneous application ecosystem, shielding the complexity of underlying
-    heterogeneous infrastructure, and liberating traditional operating systems
-    from software ecological compatibility that requires long-term accumulation.
+    - [Clusterpedia: Multi-Cluster Encyclopedia](../community/clusterpedia.md)
+    - [HwameiStor: Local Storage](../community/hwameistor.md)
+    - [Merbridge: Service Mesh Acceleration](../community/merbridge.md)
 
-    This capability realizes the flexible scheduling of mixed heterogeneous clusters,
-    ensuring the stability and reliability of the heterogeneous application operating
-    environment. Furthermore, it helps speed up the heterogeneous process.
+</div>
 
-    **Related modules**: [Global Management](../ghippo/intro/index.md), [Container Management](../kpanda/intro/index.md),
-    [Cluster Lifecycle Management](../community/kubean.md), [Middleware](../middleware/index.md),
-    [Cloud Native Network](../network/intro/index.md), [Cloud Native Storage](../storage/index.md)
+*[DCE]: An abbreviation for DaoCloud Enterprise, a next-generation AI computing platform
 
-    ![Heterogeneous](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/08xinchuan.jpg)
+!!! success
 
-=== "Cloud Edge Collaboration"
+    ```yaml
+    What leads to a company's success?
+      It's the shared dream, a unified vision,
+        The joy of open source, collaborative decision.
+          Thriving on the thrill, working day and night,
+            Building magical things that shine so bright.
 
-    DCE 5.0 extends cloud native capabilities to the edge by adopting the edge cluster
-    and edge node mode. It moves the computing power of the data center down, while
-    moving up the computing power of the end device. This unifies control and scheduling
-    of discrete and heterogeneous computing resources, solving the problem of massive edge and end devices.
-
-    This capability unifies the requirements of large-scale app delivery, operation
-    and maintenance, management, and control on the Internet. Additionally, it realizes
-    true integration of cloud and edge by bringing cloud native capabilities to the edge.
-
-    **Related modules**: [Global Management](../ghippo/intro/index.md), [Container Management](../kpanda/intro/index.md),
-    [Cluster Lifecycle Management](../community/kubean.md), [cloud native network](../network/intro/index.md),
-    [cloud native storage](../storage/index.md), weak network cluster
-
-    ![Cloud edge collaboration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/images/09cloud-edge.png)
-
-=== "Virtual Machine"
-
-    Based on KubeVirt technology, virtual machines are managed as cloud-native applications, seamlessly integrated with containers.
-    This allows users to easily manage the entire lifecycle of virtual machines, including capabilities such as snapshotting,
-    recovery, cloning, and live migration. Users can enjoy a smooth experience similar to container applications.
-
-    **Related Modules**: [Global Management](../ghippo/intro/index.md), [Container Management](../kpanda/intro/index.md),
-    [Cloud Native Network](../network/intro/index.md), [Cloud Native Storage](../storage/index.md), [Virtual Machine](../virtnest/intro/index.md)
-
-    ![virtual machine](../images/virtnest.png)
-
-=== "Intelligent Engine"
-
-    Cloud-native AI platform seamlessly integrates MLOps with LLMs, offering an end-to-end unified development process for an AI-powered computational platform. It supports a wide range of deep learning frameworks including Pytorch and Tensorflow, and covers comprehensive functions such as dataset management, model development, training, inference, monitoring, and operations. Users can focus solely on the development and application of models, without the need to worry about underlying resource scheduling, management, and monitoring.
-
-    **Modules involved**: [Global Management](../ghippo/intro/index.md), [Container Management]../(kpanda/intro/index.md), [Cloud Native Networking](../network/intro/index.md)
-
-    ![Intelligent Engine](../baize/images/image01.png)
-
-Once you have obtained the [license authorization](./license0.md) and successfully logged into DCE 5.0
-for the first time, you will be greeted by a user-friendly dashboard. This dashboard provides an intuitive display
-of various information, including the status of running containers and pods, CPU and memory usage, health status
-of clusters/nodes/pods, alerts, resource utilization, and an overview of available functionalities.
-
-![dashboard](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/dce/images/ipavo.png)
+    Together, let us now unite,
+      Honoring efforts past, present, future with delight.
+    ```
 
 [Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }
 [Install DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [Free Trial](./license0.md){ .md-button .md-button--primary }
+
+![Sail Image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/dce/images/sail.jpg)
