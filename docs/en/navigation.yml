@@ -717,6 +717,7 @@ nav:
                   - Log Collection Troubleshoot: insight/best-practice/debug-log.md
                   - Trace Collection Troubleshoot: insight/best-practice/debug-trace.md
                   - Locate Issues with Insight: insight/best-practice/find_root_cause.md
+                  - What if ElasticSearch is Full: insight/faq/expand-once-es-full.md
           - Microservices:
               - Intro:
                   - Index: skoala/intro/index.md

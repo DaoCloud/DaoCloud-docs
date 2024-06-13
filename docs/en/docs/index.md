@@ -27,7 +27,7 @@ With extensive testing from thousands of industry customers in real production c
 - :material-cloud-check: **Multicloud Management** [Multicloud instance/workload/policy](kairship/intro/index.md)
 - :material-warehouse: **Container Registry** [Integrate and host registries](kangaroo/intro/index.md)
 - :material-dot-net: **Network** [Multi-CNI fusion solution](network/intro/index.md)
-- :floppy_disk: **Storage** [Containerized storage](storage/index.md)
+- :simple-googlecloudstorage: **Storage** [Containerized storage](storage/index.md)
 - :material-train-car-container: **Virtual Machine** [Containerized virtual machine](virtnest/intro/index.md)
 - :material-monitor-dashboard: **Insight** [One-stop graphical dashboard](insight/intro/index.md)
 - :material-engine: **Microservice Engine** [Microservice governance and gateway](skoala/intro/index.md)
