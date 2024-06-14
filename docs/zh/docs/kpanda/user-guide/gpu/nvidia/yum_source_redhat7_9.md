@@ -12,7 +12,7 @@ DCE 5.0 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU Operator 离线包�
 2. 待部署 GPU Operator 的集群节点 OS 必须为 Red Hat 7.9，且内核版本完全一致
 3. 准备一个能够与待部署 GPU Operator 的集群网络联通的文件服务器，如 nginx 或 minio
 4. 准备一个能够访问互联网、待部署 GPU Operator 的集群和文件服务器的节点，
-   且节点上已经完成 [Docker 的安装](https://docs.daocloud.io/install/community/kind/online.html#%E5%AE%89%E8%A3%85-docker)
+   且节点上已经完成 [Docker 的安装](../../../../install/community/kind/online.md#docker)
 5. Global 集群的节点必须为 Red Hat 7.9
 
 ## 操作步骤
@@ -29,7 +29,7 @@ DCE 5.0 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU Operator 离线包�
 
     ![kubean](../images/kubean.png)
 
-    在 [kubean的代码仓库](https://https://github.com/kubean-io/kubean/releases) 中下载该版本的 rhel7.9 ospackage。
+    在 [kubean的代码仓库](https://github.com/kubean-io/kubean/releases) 中下载该版本的 rhel7.9 ospackage。
 
     ![kubean 的代码仓库](../images/redhat0.12.2.png)
 
@@ -46,7 +46,10 @@ DCE 5.0 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU Operator 离线包�
 ### 3. 向火种节点仓库上传 Red Hat GPU Opreator 离线镜像
 
 参考[向火种节点仓库上传 Red Hat GPU Opreator 离线镜像](./push_image_to_repo.md)。
-注意：此参考以 rhel8.4 为例，请注意修改成 rhel7.9。
+
+!!! note
+
+    此参考以 rhel8.4 为例，请注意修改成 rhel7.9。
 
 ### 4. 在集群创建配置项用来保存 Yum 源信息
   
@@ -58,12 +61,12 @@ DCE 5.0 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU Operator 离线包�
     # 文件名称必须为 CentOS-Base.repo，否则安装 gpu-operator 时无法被识别
     cat > CentOS-Base.repo <<  EOF
     [extension-0]
-    baseurl = http://10.5.14.200:9000/centos-base/centos-base #火种节点的的文件服务器地址，一般为{火种节点 IP} + {9000 端口}
+    baseurl = http://10.5.14.200:9000/centos-base/centos-base # 火种节点的的文件服务器地址，一般为{火种节点 IP} + {9000 端口}
     gpgcheck = 0
     name = kubean extension 0
     
     [extension-1]
-    baseurl = http://10.5.14.200:9000/centos-base/centos-base #火种节点的的文件服务器地址，一般为{火种节点 IP} + {9000 端口}
+    baseurl = http://10.5.14.200:9000/centos-base/centos-base # 火种节点的的文件服务器地址，一般为{火种节点 IP} + {9000 端口}
     gpgcheck = 0
     name = kubean extension 1
     EOF
@@ -91,7 +94,7 @@ DCE 5.0 预置了 CentOS 7.9，内核为 3.10.0-1160 的 GPU Operator 离线包�
       
     预期输出如下：
       
-    ```yaml
+    ```yaml title="local-repo-config.yaml"
     apiVersion: v1
     data:
       CentOS-Base.repo: "[extension-0]\nbaseurl = http://10.6.232.5:32618/centos-base # 步骤 2 中，放置 yum 源的文件服务器路径 \ngpgcheck = 0\nname = kubean extension 0\n  \n[extension-1]\nbaseurl
