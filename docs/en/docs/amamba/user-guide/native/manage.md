@@ -5,7 +5,7 @@ Date: 2024-01-08
 
 # Manage Native Applications
 
-After [creating a native application](native-app.md), you can view the application details or update the application configuration as needed.
+After [creating a native application](native-app.md#create-a-native-application), you can view the application details or update the application configuration as needed.
 
 1. Go to the __Workbench__ -> __Overview__ page, click the __Applications__ tab, and then click the name of the native application.
 
@@ -33,9 +33,9 @@ After [creating a native application](native-app.md), you can view the applicati
 
 - Click the __Version Snapshot__ tab to view version, version name, description, and creation time. 
 
-    ![Snapshot](../../images/native-app09.png)    
+    ![Snapshot](../../images/native-app09.png)
 
-## Editing basic information of a native application
+## Edit basic information of a native application
 
 1. Click the name of the native application, and then click the __ⵈ__ in the upper-right corner of the page, and select __Edit Basic Info__.
 
@@ -43,7 +43,7 @@ After [creating a native application](native-app.md), you can view the applicati
 
     ![Alias Info](../../images/native-app07.png)
 
-## Viewing YAML of a native application
+## View YAML of a native application
 
 1. Click the name of the native application, then click the __ⵈ__ in the upper-right corner of the page, and select __Check YAML__.
 
