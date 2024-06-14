@@ -75,7 +75,7 @@ nav:
                   - K8s集群基于Docker的磁盘限制: install/best-practices/docker-storage.md
                   - 大规模集群参数说明: install/best-practices/large-deployments-par.md
               - 安装器 Release Notes: install/release-notes.md
-          - 最佳实践入口: dce/bphome.md
+          - 最佳实践: dce/bphome.md
       - 工作台:
           - 应用工作台:
               - 介绍:
