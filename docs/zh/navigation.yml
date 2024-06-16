@@ -1120,6 +1120,7 @@ nav:
                       - 删除队列: baize/oam/queue/delete.md
               - 最佳实践:
                   - 部署 NFS 做数据集预热: baize/best-practice/deploy-nfs-in-worker.md
+                  - 更新 Notebook 内置镜像: baize/best-practice/change-notebook-image.md
       - 边缘计算:
           - 云边协同:
               - 介绍:
@@ -1251,8 +1252,8 @@ nav:
                       - 接入导航栏: ghippo/best-practice/gproduct/nav.md
                       - 接入路由和登录认证: ghippo/best-practice/gproduct/route-auth.md
                   - 集成与被集成(OEM IN/OUT):
-                      - OEM IN:客户系统集成到DCE 5.0: ghippo/best-practice/oem/oem-in.md
-                      - OEM OUT:DCE 5.0集成到客户系统: ghippo/best-practice/oem/oem-out.md
+                      - OEM IN:客户系统集成到 DCE 5.0: ghippo/best-practice/oem/oem-in.md
+                      - OEM OUT:DCE 5.0 集成到客户系统：ghippo/best-practice/oem/oem-out.md
                       - 定制 DCE 5.0 对接 IdP: ghippo/best-practice/oem/custom-idp.md
                       - Keycloak 自定义 IdP: ghippo/best-practice/oem/keycloak-idp.md
                   - 导航栏定制: ghippo/best-practice/navigator.md
@@ -1337,7 +1338,7 @@ nav:
           - KubeEdge v1.15.0 发布: blogs/240108-kubeedge.md
       - 2023:
           - Spiderpool入选CNCF Sandbox: blogs/231220-spiderpool.md
-          - K8s 1.29发布:宇宙主题雄心勃勃: blogs/231213-k8s-1.29.md
+          - K8s 1.29发布:宇宙主题雄心勃勃：blogs/231213-k8s-1.29.md
           - K8s 裸机 vs 虚机性能对比: blogs/231205-vm-bm-compare.md
           - K8s 1.29前瞻：移除、弃用及变更: blogs/231115-k8s-1.29-changes.md
           - 上海 K8s 贡献者峰会回顾: blogs/231008-kcs.md
