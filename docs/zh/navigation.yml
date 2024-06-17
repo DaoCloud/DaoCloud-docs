@@ -1111,6 +1111,7 @@ nav:
                   - 数据管理:
                       - 创建数据集: baize/developer/dataset/create.md
                       - 删除数据集: baize/developer/dataset/delete.md
+                      - 环境管理: baize/developer/dataset/conda.md
                   - 推理服务:
                       - 创建推理服务: baize/developer/inference/create.md
               - 运维管理:
@@ -1253,8 +1254,8 @@ nav:
                       - 接入导航栏: ghippo/best-practice/gproduct/nav.md
                       - 接入路由和登录认证: ghippo/best-practice/gproduct/route-auth.md
                   - 集成与被集成(OEM IN/OUT):
-                      - OEM IN:客户系统集成到 DCE 5.0: ghippo/best-practice/oem/oem-in.md
-                      - OEM OUT:DCE 5.0 集成到客户系统：ghippo/best-practice/oem/oem-out.md
+                      - OEM IN(客户系统集成到 DCE 5.0): ghippo/best-practice/oem/oem-in.md
+                      - OEM OUT(DCE 5.0 集成到客户系统): ghippo/best-practice/oem/oem-out.md
                       - 定制 DCE 5.0 对接 IdP: ghippo/best-practice/oem/custom-idp.md
                       - Keycloak 自定义 IdP: ghippo/best-practice/oem/keycloak-idp.md
                   - 导航栏定制: ghippo/best-practice/navigator.md
