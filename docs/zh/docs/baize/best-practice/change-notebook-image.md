@@ -5,9 +5,9 @@ hide:
 
 # 更新 Notebook 内置镜像
 
-![image-20240616110541271](../images/notebook-images.png)
-
 在 Notebook 中，默认提供了多个可用的基础镜像，供开发者选择；大部分情况下，这会满足开发者的使用。
+
+![image-20240616110541271](../images/notebook-images.png)
 
 DaoCloud 提供了一个默认的 Notebook 镜像，包含了所需的任何开发工具和资料。
 
