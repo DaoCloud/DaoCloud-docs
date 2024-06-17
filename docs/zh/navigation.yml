@@ -21,6 +21,7 @@ nav:
                   - 20230731 版本发布: dce/dce-rn/20230731.md
                   - 20230630 版本发布: dce/dce-rn/20230630.md
                   - 20230531 版本发布: dce/dce-rn/20230531.md
+              - DaoCloud 产品支持政策: dce/support.md
               - 云原生词汇: dce/terms.md
           - 安装教程:
               - 安装简介: install/index.md
