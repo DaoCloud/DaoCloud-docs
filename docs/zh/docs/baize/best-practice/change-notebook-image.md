@@ -5,7 +5,7 @@ hide:
 
 # 更新 Notebook 内置镜像
 
-![image-20240616110541271](./images/notebook-images.png)
+![image-20240616110541271](../images/notebook-images.png)
 
 在 Notebook 中，默认提供了多个可用的基础镜像，供开发者选择；大部分情况下，这会满足开发者的使用。
 
@@ -183,7 +183,7 @@ USER ${NB_UID}
 
 在 kpan-global-cluster 全局管理集群的 `Helm 应用`列表，找到 baize，进入更新页面，在 `YAML` 参数中修改，Notebook 镜像即可：
 
-![Update Baize](./images/update-baize.png)
+![Update Baize](../images/update-baize.png)
 
 注意参数修改的路径如下 `global.config.notebook_images` :
 
