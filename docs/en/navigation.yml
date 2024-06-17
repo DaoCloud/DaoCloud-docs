@@ -1080,6 +1080,7 @@ nav:
                   - Data Management:
                       - Create Dataset: baize/developer/dataset/create.md
                       - Delete Dataset: baize/developer/dataset/delete.md
+                      - Manage Runtime Env: baize/developer/dataset/conda.md
               - OAM Management:
                   - GPU Resource Management: baize/oam/resource.md
                   - Queue Management:
