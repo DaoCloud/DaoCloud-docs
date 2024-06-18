@@ -421,6 +421,7 @@ nav:
                   - 网络组件: network/modules/modules.md
                   - 离线升级云原生网络: network/intro/offline.md
                   - Release Notes: network/intro/releasenotes.md
+                  - 网络组件已知问题与内核兼容性相关汇总: network/intro/issues.md
               - 网络规划:
                   - 网卡规划: network/plans/ethplan.md
                   - 网络规划: network/plans/netplan.md
