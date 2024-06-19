@@ -1,4 +1,9 @@
-# egressgateway
+---
+MTPE: windsonsea
+date: 2024-06-19
+---
+
+# Egressgateway
 
 ![background](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/community/images/egress01.png)
 

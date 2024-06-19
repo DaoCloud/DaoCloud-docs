@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+date: 2024-06-19
+---
+
 # Clusterpedia, The Encyclopedia of Kubernetes Clusters
 
 This name Clusterpedia is inspired by Wikipedia. It is an encyclopedia of clusters to synchronize, search for, and easily control multicluster resources.
@@ -13,7 +18,6 @@ It helps you effectively get any multicluster resource that you are looking for 
 ## Clusterpedia listed in the CNCF landscape
 
 In the latest CNCF Cloud Native Landscape, Clusterpedia is listed in the Scheduling & Orchestration section of Orchestration & Management block.
-
 
 See [CNCF Landscape](https://landscape.cncf.io/card-mode?category=scheduling-orchestration&grouping=category&selected=clusterpedia)。
 
