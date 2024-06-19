@@ -88,6 +88,7 @@ Download the osPackage offline package based on the corresponding version:
     | Ubuntu 20.04 | [os-pkgs-ubuntu2004-v0.15.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.15.3/os-pkgs-ubuntu2004-v0.15.3.tar.gz) |
     | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.15.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.15.3/os-pkgs-openeuler22.03-v0.15.3.tar.gz) |
     | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.15.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.15.3/os-pkgs-oracle9-v0.15.3.tar.gz) |
+    | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.15.3.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.15.3/os-pkgs-rocky9-v0.15.3.tar.gz) |
 
 === "V0.17.0"
 
@@ -221,11 +222,6 @@ from the [Download Center](../../download/index.md).
 
 First, make sure to download the offline package in advance and define `addonOfflinePackagePath`
 in [clusterConfig.yaml](./cluster-config.md).
-
-| CPU Architecture | Version | Download |
-| :--------------- | :------ | :------- |
-| AMD64    | v0.16.0 | [addon-offline-full-package-v0.16.0-amd64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.16.0-amd64.tar.gz) |
-| <font color="green">ARM64</font>    | v0.16.0 | [addon-offline-full-package-v0.16.0-arm64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.16.0-arm64.tar.gz) |
 
 #### One-Click Download of Required Offline Packages
 
