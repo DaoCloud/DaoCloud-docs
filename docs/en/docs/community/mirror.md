@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+date: 2024-06-19
+---
+
 # Mirror acceleration station
 
 Many mirrors are located overseas, such as gcr. Downloading from these mirrors from within China can be very slow and requires acceleration.
