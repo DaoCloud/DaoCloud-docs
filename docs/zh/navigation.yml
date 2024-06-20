@@ -612,6 +612,7 @@ nav:
                   - 简介: virtnest/intro/index.md
                   - Release Notes: virtnest/intro/release-notes.md
                   - 常见问题: virtnest/intro/faq.md
+                  - 虚拟机功能: virtnest/intro/features.md
               - 安装:   
                   - 安装虚拟机: virtnest/install/index.md
                   - 安装依赖及前提条件: virtnest/install/install-dependency.md
