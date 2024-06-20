@@ -140,10 +140,10 @@ nav:
                       - Build Multi-Arch Image: amamba/user-guide/pipeline/podman.md
                       - Use Cacher in Pipeline: amamba/quickstart/job-cacher.md  
               - GitOps:
-                  - Manually Sync App: amamba/user-guide/gitops/sync-manually.md
                   - Import Repository: amamba/user-guide/gitops/import-repo.md
                   - Create Argo CD App: amamba/user-guide/gitops/create-argo-cd.md
                   - Argo CD App Status: amamba/user-guide/gitops/argo-cd-status.md
+                  - Manually Sync App: amamba/user-guide/gitops/sync-manually.md
                   - Eanble Credential in GitOps: amamba/user-guide/gitops/gitops-secret.md
               - Canary Release:
                   - Grayscale based on Argo Rollout: amamba/quickstart/argocd-rollout.md
@@ -173,7 +173,7 @@ nav:
                   - Use Cases: kpanda/intro/scenarios.md
                   - Concepts: kpanda/intro/concepts.md
                   - Release Notes: kpanda/intro/release-notes.md
-                  - Offline Upgrade Procedure: kpanda/intro/offline-upgrade.md
+                  - Offline Upgrade: kpanda/intro/offline-upgrade.md
                   - FAQs: kpanda/intro/faq.md
               - Clusters:
                   - Create Cluster: kpanda/user-guide/clusters/create-cluster.md
