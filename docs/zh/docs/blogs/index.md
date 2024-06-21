@@ -11,6 +11,11 @@ hide:
 
 ## 2024 年
 
+- [20240619 | Nvidia 征服最新的 AI 测试](./20240619-nvidiaai.md)
+
+    多年来，Nvidia 一直主导着许多机器学习基准测试，如今又在其腰带上增加了两个新的徽章：
+    [MLPerf](https://mlcommons.org/benchmarks/training/) 和[图神经网络](https://spectrum.ieee.org/machine-learning-in-physics)。
+
 - [20240606 | Kubernetes 十周年](./0606-k8s-birth.md)
 
     十年前，也就是 2014 年 6 月 6 日，Kubernetes
