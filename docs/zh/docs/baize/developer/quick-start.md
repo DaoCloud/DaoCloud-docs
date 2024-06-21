@@ -5,7 +5,7 @@ hide:
 
 # 快速入门
 
-本文提供了简单的操作手册以便用户使用 d.run 算法开发进行数据集、Notebook、任务训练的整个开发、训练流程。
+本文提供了简单的操作手册以便用户使用 `DCE` 智能算力进行数据集、Notebook、任务训练的整个开发、训练流程。
 
 1. 点击导航栏的 **数据管理** -> **数据集列表** ，点击 **创建** 。创建三个数据集，分别为：
     - 代码： [https://github.com/d-run/drun-samples](https://github.com/d-run/drun-samples/tree/main/tensorflow/tf-fashion-mnist-sample)
