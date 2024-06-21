@@ -1100,6 +1100,7 @@ nav:
                   - Release Notes: baize/intro/release-notes.md
               - 开发控制台:
                   - 介绍: baize/developer/index.md
+                  - 快速上手: baize/developer/quick-start.md
                   - Notebooks:
                       - 创建 Notebook: baize/developer/notebooks/create.md
                       - 启动和暂停 Notebook: baize/developer/notebooks/start-pause.md
