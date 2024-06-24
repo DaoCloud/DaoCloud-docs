@@ -1112,6 +1112,7 @@ nav:
                       - 创建任务: baize/developer/jobs/create.md
                       - 删除任务: baize/developer/jobs/delete.md
                       - 查看任务负载: baize/developer/jobs/view.md
+                      - 任务分析: baize/developer/jobs/tensorboard.md
                   - 数据管理:
                       - 创建数据集: baize/developer/dataset/create.md
                       - 删除数据集: baize/developer/dataset/delete.md
@@ -1131,6 +1132,7 @@ nav:
                   - 故障排查速查: baize/troubleshoot/index.md
                   - Notebook 不受队列配额控制: baize/troubleshoot/notebook-not-controlled-by-quotas.md
                   - 队列初始化失败: baize/troubleshoot/local-queue-initialization-failed.md
+                  - Checkpoint 机制及使用介绍: baize/best-practice/checkpoint.md
       - 边缘计算:
           - 云边协同:
               - 介绍:
