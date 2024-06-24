@@ -1090,6 +1090,12 @@ nav:
                       - Delete Queue: baize/oam/queue/delete.md
               - Best Practices:
                   - Deploy NFS to Preheat Dataset: baize/best-practice/deploy-nfs-in-worker.md
+                  - Update Notebook Built-in Images: baize/best-practice/change-notebook-image.md
+                  - Checkpoint Mechanism and Usage: baize/best-practice/checkpoint.md
+              - Troubleshoot:
+                  - index: baize/troubleshoot/index.md
+                  - Notebook Not Controlled by Queue Quotas: baize/troubleshoot/notebook-not-controlled-by-quotas.md
+                  - Queue Initialization Failed: baize/troubleshoot/local-queue-initialization-failed.md
       - Edge Computing:
           - Cloud Edge Collaboration:
               - Intro:

@@ -4,7 +4,7 @@
 
 在智能算力中，用户在创建 Notebook 时，发现选择的队列即使资源不足，Notebook 依然可以创建成功。
 
-## 问题分析 01:  Kubernetes 版本不支持
+## 问题 01: Kubernetes 版本不支持
 
 智能算力中的队列管理能力有 `Kueue` 提供，`Notebook` 服务是通过 `JupyterHub` 提供的。
 `JupyterHub` 对 `Kubernetes` 的版本要求较高，对于低于 `v1.27` 的版本，即使在 `DCE` 中设置了队列配额，
@@ -20,7 +20,7 @@
 
 - [Jupyter Notebook Documentation](https://jupyter-notebook.readthedocs.io/en/latest/)
 
-## 问题分析 02:  配置未启用
+## 问题 02: 配置未启用
 
 > 当 Kubernetes 集群版本 大于 v1.27 时， `Notebook` 仍无法受到队列配额的限制。
 
