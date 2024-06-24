@@ -2,6 +2,14 @@
 
 我们为智能算力精心制作了以下视频教程，欢迎任何形式的反馈，谢谢 🙏
 
+## 创建和使用数据集
+
+参阅[创建 Notebook](../baize/developer/dataset/create.md)文档。
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/dataset.mp4" preload="metadata" poster="images/dataset.jpg"></video>
+</div>
+
 ## 创建分布式训练任务
 
 参阅[创建 Notebook](../baize/developer/jobs/create.md)文档。
