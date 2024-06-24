@@ -34,4 +34,4 @@
 
 ### 相关信息
 
-- [https://kueue.sigs.k8s.io/docs/tasks/run/plain_pods/](https://kueue.sigs.k8s.io/docs/tasks/run/plain_pods/)
+- [Run Plain Pods as a Kueue-Managed Job](https://kueue.sigs.k8s.io/docs/tasks/run/plain_pods/)
