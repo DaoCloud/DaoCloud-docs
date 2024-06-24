@@ -66,8 +66,6 @@ loss = checkpoint['loss']
 # 继续训练或推理...
 ```
 
-### 常用参数介绍
-
 - `model_state_dict`: 模型参数
 - `optimizer_state_dict`: 优化器状态
 - `epoch`: 当前训练轮数
@@ -104,7 +102,7 @@ checkpoint.save(file_prefix=checkpoint_prefix)
 
 !!!note
 
-    使用 DCE 智能算力的用户，可以直接将高性能存储挂载为 Checkpoint 目录，以提高 Checkpoint 保存和恢复的速度。
+    使用 DCE 5.0 智能算力的用户，可以直接将高性能存储挂载为 Checkpoint 目录，以提高 Checkpoint 保存和恢复的速度。
 
 ### TensorFlow 恢复 Checkpoint
 
@@ -174,8 +172,10 @@ TensorFlow 在分布式训练中管理 Checkpoint 的主要方法如下：
 
     ```python
     status = checkpoint.restore(manager.latest_checkpoint)
-    status.assert_consumed()  # 确保所有变量都被恢复
+    status.assert_consumed()  # (1)!
     ```
+
+    1. 确保所有变量都被恢复
 
 - 性能优化
 

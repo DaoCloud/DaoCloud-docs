@@ -1,44 +1,46 @@
-# 更新 Notebook 内置镜像
+# Update Built-in Notebook Images
 
-在 Notebook 中，默认提供了多个可用的基础镜像，供开发者选择；大部分情况下，这会满足开发者的使用。
+In the Notebook, multiple available base images are provided by default for developers to choose from.
+In most cases, this will meet the developers' needs.
 
-![创建 notebook 界面](../images/notebook-images.png)
+![Creating notebook interface](../images/notebook-images.png)
 
-DaoCloud 提供了一个默认的 Notebook 镜像，包含了所需的任何开发工具和资料。
+DaoCloud provides a default Notebook image that contains all necessary development tools and resources.
 
 ```markdown
 baize/baize-notebook
 ```
 
-这个 Notebook 里面包含了基础的开发工具，以 `baize-notebook:v0.5.0` （2024 年 5 月 30 日）为例，相关依赖及版本如下：
+This Notebook includes basic development tools. Taking `baize-notebook:v0.5.0` (May 30, 2024) as an example, the relevant dependencies and versions are as follows:
 
-| 依赖         | 版本编号 | 介绍                                                         |
-| ------------ | -------- | ------------------------------------------------------------ |
-| Ubuntu       | 22.04.3  | 默认 OS                                                      |
-| Python       | 3.11.6   | 默认 Python 版本                                             |
-| pip          | 23.3.1   |                                                              |
-| conda(mamba) | 23.3.1   |                                                              |
-| jupyterlab   | 3.6.6    | JupyterLab 镜像，提供完整的 Notebook 开发体验                |
-| codeserver   | v4.89.1  | 主流 Code 开发工具，方便用户使用熟悉的工具进行开发体验       |
-| *baizectl    | v0.5.0   | DaoCloud 内置 CLI 任务管理工具                               |
-| *SSH         | -        | 支持本地 SSH 直接访问到 Notebook 容器内                      |
-| *kubectl     | v1.27    | Kubernetes CLI，可以使用 kubectl 在 Notebook 内 管理容器资源 |
-
-!!! note
-
-    随着版本发展，DCE 5.0 会主动维护并在每次版本迭代时更新。
-
-但有时用户可能需要自定义镜像，本文介绍了如何更新镜像，并增加到 Notebook 创建界面中进行选择。
-
-## 构建自定义镜像（仅供参考）
+| Dependency    | Version  | Description                                               |
+| ------------- | -------- | --------------------------------------------------------- |
+| Ubuntu        | 22.04.3  | Default OS                                                |
+| Python        | 3.11.6   | Default Python version                                    |
+| pip           | 23.3.1   |                                                           |
+| conda(mamba)  | 23.3.1   |                                                           |
+| jupyterlab    | 3.6.6    | JupyterLab image, providing a complete Notebook experience |
+| codeserver    | v4.89.1  | Mainstream Code development tool for a familiar experience |
+| *baizectl     | v0.5.0   | DaoCloud built-in CLI task management tool                |
+| *SSH          | -        | Supports local SSH direct access to the Notebook container |
+| *kubectl      | v1.27    | Kubernetes CLI for managing container resources within Notebook |
 
 !!! note
 
-    注意，构建新镜像 **需要以 `baize-notebook` 作为基础镜像**，以保证 Notebook 的正常运行。
+    With each version iteration, DCE 5.0 will proactively maintain and update.
 
-在构建自定义镜像时，建议先了解 baize-notebook 镜像的 Dockerfile，以便更好地理解如何构建自定义镜像。
+However, sometimes users may need custom images. This page explains how to update images and add them to the Notebook creation interface for selection.
 
-### baize-noteboook 的 Dockerfile
+## Build Custom Images (For Reference Only)
+
+!!! note
+
+    Building a new image **requires using `baize-notebook` as the base image** to ensure the Notebook runs properly.
+
+When building a custom image, it is recommended to first understand the Dockerfile of
+the baize-notebook image to better understand how to build a custom image.
+
+### Dockerfile for baize-notebook
 
 ```dockerfile
 ARG BASE_IMG=docker.m.daocloud.io/kubeflownotebookswg/jupyter:v1.8.0
@@ -153,7 +155,7 @@ RUN chmod +x /usr/local/bin/baizectl /usr/local/bin/data-loader && \
 USER ${NB_UID}
 ```
 
-### 构建你的镜像
+### Build Your Image
 
 ```dockerfile
 ARG BASE_IMG=release.daocloud.io/baize/baize-notebook:v0.5.0
@@ -169,19 +171,20 @@ RUN mamba install -n baize-base -y pytorch torchvision torchaudio cpuonly -c pyt
 USER ${NB_UID}
 ```
 
-## 增加到 Notebook 镜像列表（Helm）
+## Add to the Notebook Image List (Helm)
 
 !!! warning
 
-    注意，必须由平台管理员操作，谨慎变更。
+    Note that this must be done by the platform administrator. Be cautious with changes.
 
-目前，镜像选择器需要通过更新 `baize` 的 `Helm` 参数来修改，具体步骤如下：
+Currently, the image selector needs to be modified by updating the `Helm` parameters of `baize`. The specific steps are as follows:
 
-在 kpanda-global-cluster 全局管理集群的 `Helm 应用`列表，找到 baize，进入更新页面，在 `YAML` 参数中修改 Notebook 镜像：
+In the `Helm Applications` list of the kpanda-global-cluster global management cluster,
+find baize, enter the update page, and modify the Notebook image in the `YAML` parameters:
 
 ![Update Baize](../images/update-baize.png)
 
-注意参数修改的路径如下 `global.config.notebook_images`：
+Note the parameter modification path `global.config.notebook_images`:
 
 ```yaml
 ...
@@ -191,7 +194,8 @@ global:
     notebook_images:
       ...
       names: release.daocloud.io/baize/baize-notebook:v0.5.0
-      # 在这里增加你的镜像信息
+      # Add your image information here
 ```
 
-更新完成之后，待 Helm 应用重启成功之后，可以在 Notebook 创建界面中的选择镜像看到新的镜像。
+After the update is completed and the Helm application restarts successfully,
+you can see the new image in the Notebook creation interface image selection.
