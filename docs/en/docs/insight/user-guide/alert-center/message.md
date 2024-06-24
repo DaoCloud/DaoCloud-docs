@@ -10,7 +10,7 @@ On the __Notification Settings__ page, you can configure how to send messages to
 
     ![WeCom](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/notify02.png)
 
-3. After the configuration is complete, the notification list will automatically return. Click __︙__ on the right side of the list to edit or delete the email group.
+3. After the configuration is complete, the notification list will automatically return. Click __┇__ on the right side of the list to edit or delete the email group.
 
 ## WeCom
 
@@ -18,7 +18,7 @@ On the __Notification Settings__ page, you can configure how to send messages to
 
     For the URL of the WeCom group robot, please refer to the [official document of WeCom: How to use group robots](https://developers.weixin.qq.com/doc/offiaccount/Getting_Started/Overview.html).
 
-2. After the configuration is complete, the notification list will automatically return. Click __︙__ on the right side of the list, select __Send Test Information__ , and you can also edit or delete the group robot.
+2. After the configuration is complete, the notification list will automatically return. Click __┇__ on the right side of the list, select __Send Test Information__ , and you can also edit or delete the group robot.
 
 ## DingTalk
 
@@ -26,7 +26,7 @@ On the __Notification Settings__ page, you can configure how to send messages to
 
     For the URL of the DingTalk group robot, please refer to the [official document of DingTalk: Custom Robot Access](https://developers.dingtalk.com/document/robots/custom-robot-access).
 
-2. After the configuration is complete, the notification list will automatically return. Click __︙__ on the right side of the list, select __Send Test Information__ , and you can also edit or delete the group robot.
+2. After the configuration is complete, the notification list will automatically return. Click __┇__ on the right side of the list, select __Send Test Information__ , and you can also edit or delete the group robot.
 
 ## Webhook
 
@@ -34,7 +34,7 @@ On the __Notification Settings__ page, you can configure how to send messages to
 
     For the Webhook URL and more configuration methods, please refer to the [webhook document](https://github.com/webhooksite/webhook.site).
 
-2. After the configuration is complete, the notification list will automatically return. Click __︙__ on the right side of the list, select __Send Test Information__ , and you can also edit or delete the Webhook.
+2. After the configuration is complete, the notification list will automatically return. Click __┇__ on the right side of the list, select __Send Test Information__ , and you can also edit or delete the Webhook.
 
 ## SMS Group
 
@@ -44,4 +44,4 @@ On the __Notification Settings__ page, you can configure how to send messages to
 
     The notification server needs to be created in advance under __Notification Settings__ -> __Notification Server__ . Currently, two cloud servers, Alibaba Cloud and Tencent Cloud, are supported. Please refer to your own cloud server information for the specific configuration parameters.
 
-3. After the SMS group is successfully added, the notification list will automatically return. Click __︙__ on the right side of the list to edit or delete the SMS group.
+3. After the SMS group is successfully added, the notification list will automatically return. Click __┇__ on the right side of the list to edit or delete the SMS group.

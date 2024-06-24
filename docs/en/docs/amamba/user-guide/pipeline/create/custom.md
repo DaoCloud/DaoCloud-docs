@@ -47,7 +47,7 @@ Follow these steps to create a custom pipeline:
 
     ![Build Trigger](../../../images/custom03.png)
 
-5. Complete the creation. After confirming that all parameters are correctly entered, click the __OK__ button to finish creating the custom pipeline. You will then be automatically redirected to the pipeline list. Click __︙__ to the right of the list to perform various actions.
+5. Complete the creation. After confirming that all parameters are correctly entered, click the __OK__ button to finish creating the custom pipeline. You will then be automatically redirected to the pipeline list. Click __┇__ to the right of the list to perform various actions.
 
     ![Successfully Created](../../../images/pipeline05.png)
 

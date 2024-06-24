@@ -56,6 +56,6 @@ __具体操作步骤如下：__
 
         ![pipeline04](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipeline04.png)
 
-6. 完成创建。确认所有参数输入完成后，点击 __确定__ 按钮，完成自定义流水线创建，自动返回流水线列表。点击列表右侧的 __︙__ 可以执行各项操作。
+6. 完成创建。确认所有参数输入完成后，点击 __确定__ 按钮，完成自定义流水线创建，自动返回流水线列表。点击列表右侧的 __┇__ 可以执行各项操作。
 
     ![pipeline05](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/pipeline05.png)

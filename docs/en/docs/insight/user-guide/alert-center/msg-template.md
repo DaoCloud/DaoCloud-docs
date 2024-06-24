@@ -14,7 +14,7 @@ The message template feature supports customizing the content of message templat
 
 ## Editing or Deleting a Message Template
 
-Click __︙__ on the right side of the list and select __Edit__ or __Delete__ from the pop-up menu to modify or delete the message template.
+Click __┇__ on the right side of the list and select __Edit__ or __Delete__ from the pop-up menu to modify or delete the message template.
 
 !!! warning
 

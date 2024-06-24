@@ -12,7 +12,7 @@
 
     ![添加邮箱组](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/email01.png)
 
-3. 配置完成后自动返回通知列表，点击列表右侧的 __︙__ ，可以编辑或删除邮箱组。
+3. 配置完成后自动返回通知列表，点击列表右侧的 __┇__ ，可以编辑或删除邮箱组。
 
 ## 企业微信
 
@@ -26,7 +26,7 @@
 
     ![企业微信](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/wechatbot01.png)
 
-3. 配置完成后自动返回通知列表，点击列表右侧的 __︙__ ，选择 __发送测试信息__ ，还可以编辑或删除群机器人。
+3. 配置完成后自动返回通知列表，点击列表右侧的 __┇__ ，选择 __发送测试信息__ ，还可以编辑或删除群机器人。
 
 ## 钉钉
 
@@ -36,7 +36,7 @@
 
     有关钉钉群机器人的 URL，请参阅[钉钉官方文档：自定义机器人接入](https://open.dingtalk.com/document/robots/custom-robot-access)。
 
-2. 配置完成后自动返回通知列表，点击列表右侧的 __︙__ ，选择 __发送测试信息__ ，还可以编辑或删除群机器人。
+2. 配置完成后自动返回通知列表，点击列表右侧的 __┇__ ，选择 __发送测试信息__ ，还可以编辑或删除群机器人。
 
 ## Webhook
 
@@ -52,7 +52,7 @@
 
     有关 Webhook URL 及更多配置方式，请参阅 [webhook 文档](https://github.com/webhooksite/webhook.site)。
 
-3. 配置完成后自动返回通知列表，点击列表右侧的 __︙__ ，选择 __发送测试信息__ ，还可以编辑或删除 Webhook。
+3. 配置完成后自动返回通知列表，点击列表右侧的 __┇__ ，选择 __发送测试信息__ ，还可以编辑或删除 Webhook。
 
 ## 短信组
 
@@ -68,4 +68,4 @@
 
     ![cloud-notify](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/notify08.png)
 
-3. 短信组添加成功后，自动返回通知列表，点击列表右侧的 __︙__ ，可以编辑或删除短信组。
+3. 短信组添加成功后，自动返回通知列表，点击列表右侧的 __┇__ ，可以编辑或删除短信组。

@@ -22,7 +22,7 @@ Before using the snapshots, the following prerequisites need to be met:
 
 ## Create a Snapshot
 
-1. Click __Container Management__ in the left navigation menu, then click __Virtual Machines__ to access the list page. Click the __︙__ on the right side of the list for a virtual machine to perform snapshot operations (only available for non-error state virtual machines).
+1. Click __Container Management__ in the left navigation menu, then click __Virtual Machines__ to access the list page. Click the __┇__ on the right side of the list for a virtual machine to perform snapshot operations (only available for non-error state virtual machines).
 
     ![Create Snapshot](../images/snapshot01.png)
 

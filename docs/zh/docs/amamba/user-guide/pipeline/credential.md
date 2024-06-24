@@ -46,7 +46,7 @@ hide:
 
     ![创建成功](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cred03.png)
 
-4. 点击列表右侧的 __︙__ ，可以在弹出菜单中选择编辑或删除等操作。
+4. 点击列表右侧的 __┇__ ，可以在弹出菜单中选择编辑或删除等操作。
 
     !!! warning
 

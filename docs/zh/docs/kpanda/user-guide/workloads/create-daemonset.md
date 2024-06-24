@@ -40,7 +40,7 @@
 
 3. 依次填写[基本信息](create-daemonset.md#_3)、[容器配置](create-daemonset.md#_4)、[服务配置](create-daemonset.md#_5)、[高级配置](create-daemonset.md#_6)后，在页面右下角点击 __确定__ 完成创建。
 
-    系统将自动返回 __守护进程__ 列表。点击列表右侧的 __︙__ ，可以对守护进程执行执行更新、删除、重启等操作。
+    系统将自动返回 __守护进程__ 列表。点击列表右侧的 __┇__ ，可以对守护进程执行执行更新、删除、重启等操作。
 
     ![操作菜单](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/daemon05.png)
 

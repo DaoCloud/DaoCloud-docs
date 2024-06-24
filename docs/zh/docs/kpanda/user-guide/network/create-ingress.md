@@ -85,6 +85,6 @@ Ingress 是对集群中服务的外部访问进行管理的 API 对象，典型�
 
 ### 完成路由创建
 
-配置完所有参数后，点击 __确定__ 按钮，自动返回路由列表。在列表右侧，点击 __︙__ ，可以修改或删除所选路由。
+配置完所有参数后，点击 __确定__ 按钮，自动返回路由列表。在列表右侧，点击 __┇__ ，可以修改或删除所选路由。
 
 ![路由列表](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/ingress05.png)

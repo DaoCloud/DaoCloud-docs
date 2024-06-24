@@ -41,7 +41,7 @@ A namespace is an abstraction used in Kubernetes to isolate resources.
 
     ![namespace-list01](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/create03.png)
 
-5. Click the __︙__ on the right side of the list to perform operations such as __Resource Quotas__ , __Update Label__ , and __Delete__ from the pop-up menu.
+5. Click the __┇__ on the right side of the list to perform operations such as __Resource Quotas__ , __Update Label__ , and __Delete__ from the pop-up menu.
 
     !!! warning
 

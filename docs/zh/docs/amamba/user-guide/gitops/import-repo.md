@@ -37,7 +37,7 @@
 
 如果不再使用某个代码仓库，可参照以下步骤删除。
 
-1. 在仓库列表页选择某一个仓库，点击  __︙__  ，在弹出的菜单中点击 __删除__  。
+1. 在仓库列表页选择某一个仓库，点击  __┇__  ，在弹出的菜单中点击 __删除__  。
 
     ![删除](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/import04.png)
 
