@@ -19,13 +19,13 @@
 
 ### 解决方案
 
-1. 检查 `Kueue` 是否正常运行，如果 `kueue-controller-manager` 未运行，可以通过以下命令查看。
+检查 `Kueue` 是否正常运行，如果 `kueue-controller-manager` 未运行，可以通过以下命令查看。
 
-    ```bash
-    kubectl get deploy kueue-controller-manager -n baize-sysatem 
-    ```
+```bash
+kubectl get deploy kueue-controller-manager -n baize-sysatem 
+```
 
-  如果 `kueue-controller-manager` 未正常运行，请先修复 `Kueue`。
+如果 `kueue-controller-manager` 未正常运行，请先修复 `Kueue`。
 
 ### 相关信息
 
