@@ -21,6 +21,7 @@ nav:
                   - 20230731 Release: dce/dce-rn/20230731.md
                   - 20230630 Release: dce/dce-rn/20230630.md
                   - 20230531 Release: dce/dce-rn/20230531.md
+              - DaoCloud Product Support Policy: dce/support.md
               - Glossary: dce/terms.md
           - Installation:
               - Overview: install/index.md
@@ -139,10 +140,10 @@ nav:
                       - Build Multi-Arch Image: amamba/user-guide/pipeline/podman.md
                       - Use Cacher in Pipeline: amamba/quickstart/job-cacher.md  
               - GitOps:
-                  - Manually Sync App: amamba/user-guide/gitops/sync-manually.md
                   - Import Repository: amamba/user-guide/gitops/import-repo.md
                   - Create Argo CD App: amamba/user-guide/gitops/create-argo-cd.md
                   - Argo CD App Status: amamba/user-guide/gitops/argo-cd-status.md
+                  - Manually Sync App: amamba/user-guide/gitops/sync-manually.md
                   - Eanble Credential in GitOps: amamba/user-guide/gitops/gitops-secret.md
               - Canary Release:
                   - Grayscale based on Argo Rollout: amamba/quickstart/argocd-rollout.md
@@ -172,7 +173,7 @@ nav:
                   - Use Cases: kpanda/intro/scenarios.md
                   - Concepts: kpanda/intro/concepts.md
                   - Release Notes: kpanda/intro/release-notes.md
-                  - Offline Upgrade Procedure: kpanda/intro/offline-upgrade.md
+                  - Offline Upgrade: kpanda/intro/offline-upgrade.md
                   - FAQs: kpanda/intro/faq.md
               - Clusters:
                   - Create Cluster: kpanda/user-guide/clusters/create-cluster.md
@@ -415,6 +416,7 @@ nav:
                   - Components: network/modules/modules.md
                   - Offline Upgrade: network/intro/offline.md
                   - Release Notes: network/intro/releasenotes.md
+                  - Known Issues: network/intro/issues.md
               - Plan:
                   - Eth card plan: network/plans/ethplan.md
                   - Network plan: network/plans/netplan.md
@@ -1080,6 +1082,7 @@ nav:
                   - Data Management:
                       - Create Dataset: baize/developer/dataset/create.md
                       - Delete Dataset: baize/developer/dataset/delete.md
+                      - Manage Runtime Env: baize/developer/dataset/conda.md
               - OAM Management:
                   - GPU Resource Management: baize/oam/resource.md
                   - Queue Management:
@@ -1087,6 +1090,12 @@ nav:
                       - Delete Queue: baize/oam/queue/delete.md
               - Best Practices:
                   - Deploy NFS to Preheat Dataset: baize/best-practice/deploy-nfs-in-worker.md
+                  - Update Notebook Built-in Images: baize/best-practice/change-notebook-image.md
+                  - Checkpoint Mechanism and Usage: baize/best-practice/checkpoint.md
+              - Troubleshoot:
+                  - index: baize/troubleshoot/index.md
+                  - Notebook Not Controlled by Queue Quotas: baize/troubleshoot/notebook-not-controlled-by-quotas.md
+                  - Queue Initialization Failed: baize/troubleshoot/local-queue-initialization-failed.md
       - Edge Computing:
           - Cloud Edge Collaboration:
               - Intro:
@@ -1290,6 +1299,7 @@ nav:
   - Blogs:
       - Index: blogs/index.md
       - 2024:
+          - Nvidia Conquers Latest AI Tests: blogs/20240619-nvidiaai.md
           - 10 Years of Kubernetes: blogs/0606-k8s-birth.md
           - A Legendary K8s Quest with SIG Docs: blogs/240516-sig-docs.md
           - Large Language Model Spec: blogs/240509-model-spec.md

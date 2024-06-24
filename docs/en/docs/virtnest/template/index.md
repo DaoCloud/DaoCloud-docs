@@ -14,7 +14,7 @@ Follow these steps to create a virtual machine using a template.
 
 2. On the template creation page, fill in the required information, including basic information, template configuration, storage and networking, and login settings. Then, click __OK__ in the bottom-right corner to complete the creation.
 
-    The system will automatically return to the virtual machine list. By clicking on the ellipsis ( __︙__ ) on the right side of the list, you can perform operations such as shutdown/startup, reboot, clone, update, create snapshot, convert to template, console access (VNC), and delete.
+    The system will automatically return to the virtual machine list. By clicking on the ellipsis ( __┇__ ) on the right side of the list, you can perform operations such as shutdown/startup, reboot, clone, update, create snapshot, convert to template, console access (VNC), and delete.
     The ability to clone and create snapshots depends on the selected storage pool.
 
     ![VM Management](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/create-tep09.png)

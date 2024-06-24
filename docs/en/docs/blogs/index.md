@@ -12,6 +12,11 @@ technology, sorted by date by default.
 
 ## 2024
 
+- [20240619 | Nvidia Conquers Latest AI Tests](./20240619-nvidiaai.md)
+
+    For years, Nvidia has dominated many machine learning benchmarks, and now there are two more notches in its belt：
+    [MLPerf](https://mlcommons.org/benchmarks/training/) and [graph neural networks](https://spectrum.ieee.org/machine-learning-in-physics).
+
 - [20240606 | 10 Years of Kubernetes](./0606-k8s-birth.md)
 
     Ten (10) years ago, on June 6th, 2014, the

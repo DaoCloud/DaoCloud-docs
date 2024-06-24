@@ -13,12 +13,13 @@
 在为工作负载配置自定义指标弹性伸缩策略之前，需要满足以下前提条件：
 
 - [已接入 Kubernetes 集群](../clusters/integrate-cluster.md)或者[已创建 Kubernetes 集群](../clusters/create-cluster.md)，
-  且能够访问集群的 UI 界面。
-- 已完成一个[命名空间的创建](../namespaces/createns.md)、[无状态工作负载的创建](../workloads/create-deployment.md)或[有状态工作负载的创建](../workloads/create-statefulset.md)。
-- 当前操作用户应具有 [NS Editor](../permissions/permission-brief.md#ns-editor) 或更高权限，详情可参考[命名空间授权](../namespaces/createns.md)。
-- 已完成[metrics-server 插件安装](install-metrics-server.md)。
-- 已完成 Insight 插件的安装。
-- 已完成 Prometheus-adapter 插件的安装。
+  且能够访问集群的 UI 界面
+- 已完成一个[命名空间的创建](../namespaces/createns.md)、[无状态工作负载的创建](../workloads/create-deployment.md)或[有状态工作负载的创建](../workloads/create-statefulset.md)
+- 当前操作用户应具有 [NS Editor](../permissions/permission-brief.md#ns-editor) 或更高权限，
+  详情可参考[命名空间授权](../namespaces/createns.md)
+- 已安装 [metrics-server 插件](install-metrics-server.md)
+- 已安装 [insight-agent 插件](../../../insight/quickstart/install/install-agent.md)
+- 已安装 Prometheus-adapter 插件
 
 ## 操作步骤
 

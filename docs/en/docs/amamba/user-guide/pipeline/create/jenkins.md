@@ -56,6 +56,6 @@ Workbench Pipelines allows you to create pipelines by Jenkinsfile stored in a re
 
     ![Build Trigger](../../../images/jenkinpp05.png)
 
-6. Complete the creation. After ensuring all parameters are filled in, click the __OK__ button to finalize the creation of the custom pipeline. You'll be automatically redirected to the pipeline list. Click __︙__ to the right of the list to perform various actions.
+6. Complete the creation. After ensuring all parameters are filled in, click the __OK__ button to finalize the creation of the custom pipeline. You'll be automatically redirected to the pipeline list. Click __┇__ to the right of the list to perform various actions.
 
     ![Edit](../../../images/jenkinpp06.png)

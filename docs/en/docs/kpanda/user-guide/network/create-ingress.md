@@ -65,6 +65,6 @@ Ingress is an API object that manages external access to services in the cluster
 
 ### Create ingress successfully
 
-After configuring all the parameters, click the __OK__ button to return to the ingress list automatically. On the right side of the list, click __︙__ to modify or delete the selected ingress.
+After configuring all the parameters, click the __OK__ button to return to the ingress list automatically. On the right side of the list, click __┇__ to modify or delete the selected ingress.
 
 ![Ingress List](../../images/ingress03.png)

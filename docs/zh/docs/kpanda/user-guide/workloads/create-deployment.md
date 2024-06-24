@@ -32,7 +32,7 @@
 
 3. 依次填写[基本信息](create-deployment.md#_3)、[容器配置](create-deployment.md#_4)、[服务配置](create-deployment.md#_5)、[高级配置](create-deployment.md#_6)后，在页面右下角点击 __确定__ 完成创建。
 
-    系统将自动返回 __无状态负载__ 列表。点击列表右侧的 __︙__ ，可以对负载执行执行更新、删除、弹性扩缩、重启、版本回退等操作。如果负载状态出现异常，请查看具体异常信息，可参考[工作负载状态](../workloads/pod-config/workload-status.md)。
+    系统将自动返回 __无状态负载__ 列表。点击列表右侧的 __┇__ ，可以对负载执行执行更新、删除、弹性扩缩、重启、版本回退等操作。如果负载状态出现异常，请查看具体异常信息，可参考[工作负载状态](../workloads/pod-config/workload-status.md)。
 
     ![操作菜单](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/deploy18.png)
 

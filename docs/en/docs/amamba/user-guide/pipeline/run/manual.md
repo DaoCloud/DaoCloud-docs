@@ -9,7 +9,7 @@ This page describes manual pipeline execution on the GUI, including immediate ru
 
 ## Run the pipeline immediately
 
-1. Select a pipeline on the pipeline list page, click __︙__ , and click __Run Now__ in the pop-up menu.
+1. Select a pipeline on the pipeline list page, click __┇__ , and click __Run Now__ in the pop-up menu.
 
    ![Run Now](../../../images/mantriger01.png)
 
@@ -31,7 +31,7 @@ On the pipeline details page, you can __Rerun__ a pipeline that has been execute
 
 2. In the __Running Records__ area, find the __Job ID__ that needs to be rerun.
 
-3. Click __︙__ on the right, and click __Rerun__ in the pop-up menu.
+3. Click __┇__ on the right, and click __Rerun__ in the pop-up menu.
 
    ![Rerun](../../../images/mantriger03.png)
 
@@ -47,7 +47,7 @@ On the pipeline details page, according to the __Job ID__ in the pipeline runnin
 
 2. In the __Running Records__ area, find the __Job ID__ that needs to be canceled.
 
-3. Click __︙__ on the right, and click __Cancel__ in the pop-up menu (applicable to pipelines whose status is __Running__ ).
+3. Click __┇__ on the right, and click __Cancel__ in the pop-up menu (applicable to pipelines whose status is __Running__ ).
 
    ![Cancel Running](../../../images/mantriger05.png)
 

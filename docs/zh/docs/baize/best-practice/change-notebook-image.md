@@ -1,13 +1,8 @@
----
-hide:
-  - toc
----
-
 # 更新 Notebook 内置镜像
 
-![image-20240616110541271](./images/notebook-images.png)
-
 在 Notebook 中，默认提供了多个可用的基础镜像，供开发者选择；大部分情况下，这会满足开发者的使用。
+
+![创建 notebook 界面](../images/notebook-images.png)
 
 DaoCloud 提供了一个默认的 Notebook 镜像，包含了所需的任何开发工具和资料。
 
@@ -29,17 +24,19 @@ baize/baize-notebook
 | *SSH         | -        | 支持本地 SSH 直接访问到 Notebook 容器内                      |
 | *kubectl     | v1.27    | Kubernetes CLI，可以使用 kubectl 在 Notebook 内 管理容器资源 |
 
-> 随着版本发展，DCE 会主动维护并在每次版本迭代时更新。
+!!! note
 
-但有时用户可能需要自定义镜像，本文介绍了如何更新镜像，并增加到 Notebook 创建界面中选择。
+    随着版本发展，DCE 5.0 会主动维护并在每次版本迭代时更新。
+
+但有时用户可能需要自定义镜像，本文介绍了如何更新镜像，并增加到 Notebook 创建界面中进行选择。
 
 ## 构建自定义镜像（仅供参考）
 
 !!! note
 
-    注意，构建新镜像 **需要以 `baize-notebook` 作为基础镜像**，以保证 Notebook 的正常运行
+    注意，构建新镜像 **需要以 `baize-notebook` 作为基础镜像**，以保证 Notebook 的正常运行。
 
-在构建自定义镜像时，建议先了解 baize-notebook 镜像的 Dockerfile，以便更好的理解如何构建自定义镜像。
+在构建自定义镜像时，建议先了解 baize-notebook 镜像的 Dockerfile，以便更好地理解如何构建自定义镜像。
 
 ### baize-noteboook 的 Dockerfile
 
@@ -170,22 +167,21 @@ RUN mamba install -n baize-base -y pytorch torchvision torchaudio cpuonly -c pyt
  && mamba clean --all -y
 
 USER ${NB_UID}
-
 ```
 
 ## 增加到 Notebook 镜像列表（Helm）
 
 !!! warning
 
-    注意，必须由平台管理员操作，谨慎变更
+    注意，必须由平台管理员操作，谨慎变更。
 
 目前，镜像选择器需要通过更新 `baize` 的 `Helm` 参数来修改，具体步骤如下：
 
-在 kpan-global-cluster 全局管理集群的 `Helm 应用`列表，找到 baize，进入更新页面，在 `YAML` 参数中修改，Notebook 镜像即可：
+在 kpanda-global-cluster 全局管理集群的 `Helm 应用`列表，找到 baize，进入更新页面，在 `YAML` 参数中修改 Notebook 镜像：
 
-![Update Baize](./images/update-baize.png)
+![Update Baize](../images/update-baize.png)
 
-注意参数修改的路径如下 `global.config.notebook_images` :
+注意参数修改的路径如下 `global.config.notebook_images`：
 
 ```yaml
 ...
@@ -198,4 +194,4 @@ global:
       # 在这里增加你的镜像信息
 ```
 
-更新完成之后，待 Helm 应用重启成功之后，即可在 Notebook 创建界面中的选择镜像看到新的镜像。
+更新完成之后，待 Helm 应用重启成功之后，可以在 Notebook 创建界面中的选择镜像看到新的镜像。

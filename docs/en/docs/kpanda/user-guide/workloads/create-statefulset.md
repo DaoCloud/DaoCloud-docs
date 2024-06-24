@@ -39,7 +39,7 @@ Follow the steps below to create a statefulSet using image.
 
      The system will automatically return to the list of __StatefulSets__ , and wait for the status of the workload to become __running__ . If the workload status is abnormal, refer to [Workload Status](../workloads/pod-config/workload-status.md) for specific exception information.
 
-     Click __︙__ on the right side of the New Workload column to perform operations such as update, delete, elastic scaling, restart, and version rollback on the workload.
+     Click __┇__ on the right side of the New Workload column to perform operations such as update, delete, elastic scaling, restart, and version rollback on the workload.
 
     ![Status](../images/state10.png)
 

@@ -4,7 +4,7 @@
 
 ## 立即执行流水线
 
-1. 在流水线列表页选择某一个流水线，点击 __︙__ ，在弹出的菜单中点击 __立即执行__ 。
+1. 在流水线列表页选择某一个流水线，点击 __┇__ ，在弹出的菜单中点击 __立即执行__ 。
 
    ![handrun01](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/handrun01.jpeg)
 
@@ -28,7 +28,7 @@
 
 2. 在 __运行记录__ 区域，找到需要重新运行的 __执行 ID__ 。
 
-3. 点击右侧的 __︙__ ，在弹出的菜单中点击 __重新运行__ 。
+3. 点击右侧的 __┇__ ，在弹出的菜单中点击 __重新运行__ 。
 
    ![handrun04](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/handrun04.jpeg)
 
@@ -44,7 +44,7 @@
 
 2. 在 __运行记录__ 区域，找到需要取消的 __执行 ID__ 。
 
-3. 点击右侧的 __︙__ ，在弹出的菜单中点击 __取消__ （适用于状态为 __执行中__ 的流水线）。
+3. 点击右侧的 __┇__ ，在弹出的菜单中点击 __取消__ （适用于状态为 __执行中__ 的流水线）。
 
    ![handrun06](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/handrun06.jpeg)
 

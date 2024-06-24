@@ -15,7 +15,7 @@
 
 ## 实时迁移
 
-1. 点击左侧导航栏上的 __容器管理__ ，然后点击 __虚拟机__ ，进入列表页面，点击列表右侧的 __︙__ ，可以对运行状态下的虚拟机进行迁移动作。目前虚拟机所在节点为 __virtnest-rook-ceph-2__ 。
+1. 点击左侧导航栏上的 __容器管理__ ，然后点击 __虚拟机__ ，进入列表页面，点击列表右侧的 __┇__ ，可以对运行状态下的虚拟机进行迁移动作。目前虚拟机所在节点为 __virtnest-rook-ceph-2__ 。
 
     ![实时迁移](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/live01.png)
 

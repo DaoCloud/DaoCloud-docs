@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+date: 2024-06-20
+---
+
 # Features
 
 MultiCloud Management module has the following features:
@@ -9,7 +14,8 @@ MultiCloud Management module has the following features:
 - **MultiCloud Application Deployment**: Flexible deployment policies and override policies for multicloud applications.
 - **Application Failover**: Built-in capability to enable application failover across multiple clouds.
 - **One-Click Application Conversion**: Achieve seamless conversion of applications from DCE4 to DCE5 with just one click.
-- **Cross-Cluster Elastic Scaling**: Dynamically adjust resources across different clusters based on application workload demands.
+- **Cross-Cluster Elastic Scaling**: Dynamically adjust resources across different clusters
+  based on application workload demands.
 - **Observability**: Rich audit rules and metrics to improve observability.
 - **Practical Permissions**: Manage user access based on [workspaces](../../ghippo/user-guide/workspace/workspace.md).
 
@@ -19,9 +25,11 @@ MultiCloud Management module has the following features:
 
 - **Check the instance list and search by instance name**.
 
-    You can view all multicloud instances visible to the current user account, including CPU and memory usage, cluster status, versions, creation time, etc.
+    You can view all multicloud instances visible to the current user account,
+    including CPU and memory usage, cluster status, versions, creation time, etc.
 
-- **Safe Delete**: MultiCloud instances cannot be deleted when there are still some clusters in it. This is to avoid unintentional delete and ensure data security.
+- **Safe Delete**: MultiCloud instances cannot be deleted when there are still some clusters in it.
+  This is to avoid unintentional delete and ensure data security.
 
 ## Cluster Management
 
@@ -42,6 +50,8 @@ MultiCloud Management module has the following features:
 - **kubectl CLI**
 
     You can use kubectl commands in the cloud shell to get the __kubeconfig__ information so that users can manage the multicloud instance locally.
+
+    Support the management of multicloud instances through the web-based terminal, CloudShell.
 
 ## MultiCloud Workloads
 
@@ -67,7 +77,7 @@ MultiCloud Management module has the following features:
 - **Delete MultiCloud Workload**
 
     - Visualized Deletion: Delete multicloud workloads as well as resources therein through the graphical interface.
-    - You can also delete it in cloudshell and terminals.
+    - You can also delete multicloud workloads in cloudshell and terminals.
     - Deletion Confirmation: Remind users to perform a secondary confirmation before proceeding with the deletion.
 
 ## Resource Management

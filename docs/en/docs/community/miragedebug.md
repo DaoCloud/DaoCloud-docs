@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+date: 2024-06-19
+---
+
 # MirageDebug
 
 MirageDebug: Local remote debugging for Kubernetes apps, enabling fully authentic environment debugging.

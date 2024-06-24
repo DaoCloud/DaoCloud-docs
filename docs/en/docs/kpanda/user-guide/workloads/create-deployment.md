@@ -37,7 +37,7 @@ Follow the steps below to create a deployment by image.
 
 3. Fill in [Basic Information](create-deployment.md#_3), [Container Setting](create-deployment.md#_4), [Service Setting](create-deployment.md#_5), [Advanced Setting] in turn (create-deployment.md#_6), click __OK__ in the lower right corner of the page to complete the creation.
 
-     The system will automatically return the list of __Deployments__ . Click __︙__ on the right side of the list to perform operations such as update, delete, elastic scaling, restart, and version rollback on the load. If the load status is abnormal, please check the specific abnormal information, refer to [Workload Status](../workloads/pod-config/workload-status.md).
+     The system will automatically return the list of __Deployments__ . Click __┇__ on the right side of the list to perform operations such as update, delete, elastic scaling, restart, and version rollback on the load. If the load status is abnormal, please check the specific abnormal information, refer to [Workload Status](../workloads/pod-config/workload-status.md).
 
     ![Menu](../images/deploy18.png)
 

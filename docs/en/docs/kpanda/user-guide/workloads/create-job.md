@@ -33,7 +33,7 @@ Refer to the following steps to create a job using an image.
 
 3. Fill in [Basic Information](create-job.md#_3), [Container Settings](create-job.md) and [Advanced Settings](create-job.md#_5) in turn, click __OK__ in the lower right corner of the page to complete the creation.
 
-    The system will automatically return to the __job__ list. Click __︙__ on the right side of the list to perform operations such as updating, deleting, and restarting the job.
+    The system will automatically return to the __job__ list. Click __┇__ on the right side of the list to perform operations such as updating, deleting, and restarting the job.
 
     ![Config]](../images/job07.png)
 

@@ -205,11 +205,6 @@ Addon 离线包包含一些常用组件的 Helm Chart 离线包，具体清单�
 
 首先需要事先下载好离线包，并在[集群配置文件 clusterConfig.yaml](./cluster-config.md)中定义 `addonOfflinePackagePath`。
 
-| CPU 架构 | 版本   | 点击下载 |
-| :------- | :----- | :----- |
-| AMD64    | v0.16.0 | [addon-offline-full-package-v0.16.0-amd64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.16.0-amd64.tar.gz) |
-| ARM64    | v0.16.0 | [addon-offline-full-package-v0.16.0-arm64.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_DigitalX_Addon/addon-offline-full-package-v0.16.0-arm64.tar.gz) |
-
 #### 一键下载所需离线包
 
 我们提供了脚本来[一键下载安装 DCE 5.0 所需的离线包](../air-tag-download.md)。

@@ -23,7 +23,7 @@ Before configuring the custom metrics auto-scaling policy for workloads, the fol
 - The current user should have permissions higher than [NS Editor](../permissions/permission-brief.md#ns-editor).
   For details, refer to [namespace authorization](../namespaces/createns.md).
 - [metrics-server plugin](install-metrics-server.md) has been installed.
-- Insight-related plugins have been installed.
+- [insight-agent plugin](../../../insight/quickstart/install/install-agent.md) has been installed.
 - Prometheus-adapter plugin has been installed.
 
 ## Steps

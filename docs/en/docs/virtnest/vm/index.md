@@ -36,7 +36,7 @@ Follow the steps below to create a virtual machine using an image.
 
 3. Fill the basic information, image settings, storage and network, login settings, and click __OK__ at the bottom right corner to complete the creation.
 
-    The system will automatically return to the virtual machine list. By clicking the __︙__ button
+    The system will automatically return to the virtual machine list. By clicking the __┇__ button
     on the right side of the list, you can perform operations such as power on/off, restart,
     clone, update, create snapshots, console access (VNC), and delete virtual machines.
     Cloning and snapshot capabilities depend on the selected StorageClass.

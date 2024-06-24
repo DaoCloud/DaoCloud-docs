@@ -161,7 +161,7 @@ Flags:
       --pytorch                                       Pytorch Job, has higher priority than --job-type
       --queue string                                  The queue to used
       --requests-resources stringArray                Similar to resources, but sets the resources of requests
-      --resources stringArray                         The resources of the job, it is a string in the format of cpu=1 memory=1Gi nvidia.com/gpu=1, it will be set to the limits and requests of the container.
+      --resources stringArray                         The resources of the job, it is a string in the format of cpu=1,memory=1Gi,nvidia.com/gpu=1, it will be set to the limits and requests of the container.
       --restart-policy string                         The job restart policy (default "on-failure")
       --runtime-envs baizectl data ls --runtime-env   The runtime environment to use for the job, you can use baizectl data ls --runtime-env to get the runtime environment
       --shm-size int32                                The shared memory size of the job, default is 0, which means no shared memory, if set to more than 0, the job will use the shared memory, the unit is MiB
@@ -178,7 +178,7 @@ Flags:
     --name: 任务名称，如果为空，则会自动生成
     --image: 镜像名称，必须指定
     --priority: 任务优先级，支持 高=`baize-high-priority`、中=`baize-medium-priority`、低=`baize-low-priority`
-    --resources: 任务资源，格式为 `cpu=1 memory=1Gi nvidia.com/gpu=1`
+    --resources: 任务资源，格式为 `cpu=1 memory=1Gi,nvidia.com/gpu=1`
     --workers: 任务工作节点数，默认为 1，当设置大于 1 时，任务将会分布式运行
     --queue: 任务队列，需要提前创建队列资源
     --working-dir: 工作目录，如果在 Notebook 模式下，会默认使用当前文件目录
@@ -198,7 +198,7 @@ Flags:
 baizectl job submit --name demojob-v2 -t PYTORCH \
     --image release.daocloud.io/baize/baize-notebook:v0.5.0 \
     --priority baize-high-priority \
-    --resources cpu=1 memory=1Gi \
+    --resources cpu=1,memory=1Gi \
     --workers 1 \
     --queue default \
     --working-dir /data \
@@ -218,7 +218,7 @@ baizectl job submit --name demojob-v2 -t PYTORCH \
 baizectl job submit --name demojob-v2 -t PYTORCH \
     --image release.daocloud.io/baize/baize-notebook:v0.5.0 \
     --priority baize-high-priority \
-    --resources cpu=1 memory=1Gi \
+    --resources cpu=1,memory=1Gi \
     --workers 2 \   # 多任务副本会自动创建分布式任务
     --shm-size 1024 \
     --queue default \
