@@ -1,12 +1,12 @@
 # 使用 Volcano 轻松完成 AI 计算
 
-# 使用场景
+## 使用场景
 
 Kubernetes已经成为云原生应用编排、管理的事实标准， 越来越多的应用选择向K8s迁移。人工智能和机器学习领域天然的包含大量的计算密集型任务，开发者非常愿意基于Kubernetes构建AI平台，充分利用Kubernetes提供的资源管理、应用编排、运维监控能力。而Kubernetes 默认调度器最初主要是为长服务设计的，对于AI、大数据等批量和弹性调度方面还有很多的不足。比如资源争抢问题：
 
 以 TensorFlow 的作业场景为例，TensorFlow 的作业包含 PS 和 Worker 两种不同的角色，这两种角色的 Pod要配合起来完成整个作业，如果只是运行一种角色 Pod，整个作业是无法正常执行的，而默认调度器对于 Pod调度是一个一个进行的，对于 Kubeflow 作业 TFJob 的 PS 和 Worker 是不感知的。在集群高负载（资源不足）的情况下，会出现多个作业各自分配到部分资源运行一部分 Pod，而又无法正执行完成的状况，从而造成资源浪费。如集群有4块 GPU卡，TFJob1 和 TFJob2 作业各自有4个 Worker，TFJob1 和TFJob2 各自分配到 2个GPU。但是 TFJob1 和 TFJob2 均需要4块 GPU 卡才能运行起来。这样 TFJob1 和 TFJob2 处于互相等待对方释放资源，这种死锁情况造成了 GPU 资源的浪费。
 
-# Volcano 批量调度系统
+## Volcano 批量调度系统
 
 Volcano 是 CNCF 下首个基于 Kubernetes 的容器批处理计算平台，专注于高性能计算场景。 它填补了 Kubernetes 在机器学习、大数据、科学计算等领域缺失的功能，为这些高性能工作负载提供了必要的支持。同时，Volcano 与主流计算框架无缝对接，如 Spark、TensorFlow、PyTorch 等，并支持异构设备的混合调度，包括 CPU 和 GPU，能够有效解决上述场景中出现的死锁问题。
 
