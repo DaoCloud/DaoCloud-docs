@@ -124,63 +124,64 @@ TensorFlow 在分布式训练中管理 Checkpoint 的主要方法如下：
 
 - 使用 `tf.train.Checkpoint` 和 `tf.train.CheckpointManager`
 
-```python
-checkpoint = tf.train.Checkpoint(model=model, optimizer=optimizer)
-manager = tf.train.CheckpointManager(checkpoint, directory='/tmp/model', max_to_keep=3)
-```
+    ```python
+    checkpoint = tf.train.Checkpoint(model=model, optimizer=optimizer)
+    manager = tf.train.CheckpointManager(checkpoint, directory='/tmp/model', max_to_keep=3)
+    ```
 
 - 在分布式策略中保存 Checkpoint
 
-```python
-strategy = tf.distribute.MirroredStrategy()
-with strategy.scope():
-    checkpoint = tf.train.Checkpoint(model=model, optimizer=optimizer)
-    manager = tf.train.CheckpointManager(checkpoint, directory='/tmp/model', max_to_keep=3)
-```
+    ```python
+    strategy = tf.distribute.MirroredStrategy()
+    with strategy.scope():
+        checkpoint = tf.train.Checkpoint(model=model, optimizer=optimizer)
+        manager = tf.train.CheckpointManager(checkpoint, directory='/tmp/model', max_to_keep=3)
+    ```
 
 - 只在主节点 (chief worker) 保存 Checkpoint
 
-```python
-if strategy.cluster_resolver.task_type == 'chief':
-    manager.save()
-```
+    ```python
+    if strategy.cluster_resolver.task_type == 'chief':
+        manager.save()
+    ```
 
 - 使用 MultiWorkerMirroredStrategy 时的特殊处理
 
-```python
-strategy = tf.distribute.MultiWorkerMirroredStrategy()
-with strategy.scope():
-    # 模型定义
-    ...
-    checkpoint = tf.train.Checkpoint(model=model, optimizer=optimizer)
-    manager = tf.train.CheckpointManager(checkpoint, '/tmp/model', max_to_keep=3)
-
-def _chief_worker(task_type, task_id):
-    return task_type is None or task_type == 'chief' or (task_type == 'worker' and task_id == 0)
-
-if _chief_worker(strategy.cluster_resolver.task_type, strategy.cluster_resolver.task_id):
-    manager.save()
-```
+    ```python
+    strategy = tf.distribute.MultiWorkerMirroredStrategy()
+    with strategy.scope():
+        # 模型定义
+        ...
+        checkpoint = tf.train.Checkpoint(model=model, optimizer=optimizer)
+        manager = tf.train.CheckpointManager(checkpoint, '/tmp/model', max_to_keep=3)
+    
+    def _chief_worker(task_type, task_id):
+        return task_type is None or task_type == 'chief' or (task_type == 'worker' and task_id == 0)
+    
+    if _chief_worker(strategy.cluster_resolver.task_type, strategy.cluster_resolver.task_id):
+        manager.save()
+    ```
 
 - 使用分布式文件系统
 
-确保所有工作节点都能访问到同一个 Checkpoint 目录，通常使用分布式文件系统如 HDFS 或 GCS。
+    确保所有工作节点都能访问到同一个 Checkpoint 目录，通常使用分布式文件系统如 HDFS 或 GCS。
 
 - 异步保存
 
-使用 `tf.keras.callbacks.ModelCheckpoint` 并设置 `save_freq` 参数可以在训练过程中异步保存 Checkpoint。
+    使用 `tf.keras.callbacks.ModelCheckpoint` 并设置 `save_freq` 参数可以在训练过程中异步保存 Checkpoint。
 
 - Checkpoint 恢复
 
-```python
-status = checkpoint.restore(manager.latest_checkpoint)
-status.assert_consumed()  # 确保所有变量都被恢复
-```
+    ```python
+    status = checkpoint.restore(manager.latest_checkpoint)
+    status.assert_consumed()  # 确保所有变量都被恢复
+    ```
 
 - 性能优化
-  - 使用 `tf.train.experimental.enable_mixed_precision_graph_rewrite()` 启用混合精度训练
-  - 调整保存频率，避免过于频繁的 I/O 操作
-  - 考虑使用 `tf.saved_model.save()` 保存整个模型，而不仅仅是权重
+
+    - 使用 `tf.train.experimental.enable_mixed_precision_graph_rewrite()` 启用混合精度训练
+    - 调整保存频率，避免过于频繁的 I/O 操作
+    - 考虑使用 `tf.saved_model.save()` 保存整个模型，而不仅仅是权重
 
 ## 注意事项
 
