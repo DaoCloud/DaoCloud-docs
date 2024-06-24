@@ -201,6 +201,8 @@ and maintain containerized applications more efficiently and stably.
     **Cloud Edge Collaboration** extends container capabilities to the edge.
 
     - [Deploy NFS for Data Preheating](../baize/best-practice/deploy-nfs-in-worker.md)
+    - [Update Notebook Built-in Images](../baize/best-practice/change-notebook-image.md)
+    - [Checkpoint Mechanism and Usage](../baize/best-practice/checkpoint.md)
     - [Intelligent Device Control](../kant/best-practice/device-control.md)
     - [Develop Device Driver Applications Mapper](../kant/best-practice/develop-device-mapper.md)
 
