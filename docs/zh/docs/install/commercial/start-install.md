@@ -41,6 +41,7 @@ ISO 操作系统镜像文件需要在[集群配置文件 clusterConfig.yaml](./c
 | | 统信 UOS V20（1020a）| [uniontechos-server-20-1020a-amd64.iso](https://cdimage-download.chinauos.com/uniontechos-server-20-1020a-amd64.iso) |
 | | openEuler 22.03 | [openEuler-22.03-LTS-SP1-x86_64-dvd.iso](https://mirrors.nju.edu.cn/openeuler/openEuler-22.03-LTS-SP1/ISO/x86_64/openEuler-22.03-LTS-SP1-x86_64-dvd.iso) |
 | | Oracle Linux R9 U1 | [OracleLinux-R9-U1-x86_64-dvd.iso](https://yum.oracle.com/ISOS/OracleLinux/OL9/u1/x86_64/OracleLinux-R9-U1-x86_64-dvd.iso) |
+| | Oracle Linux R8 U7 | [OracleLinux-R8-U7-x86_64-dvd.iso](https://yum.oracle.com/ISOS/OracleLinux/OL8/u7/x86_64/OracleLinux-R8-U7-x86_64-dvd.iso) |
 | | Rocky Linux 9.2 | [Rocky-9.2-x86_64-dvd.iso](https://dl.rockylinux.org/vault/rocky/9.2/isos/x86_64/Rocky-9.2-x86_64-dvd.iso) |
 | ARM64    | Kylin Linux Advanced Server release V10 (Sword) SP2 | [查看申请地址](https://www.kylinos.cn/support/trial.html) |
 
@@ -72,6 +73,7 @@ osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源
     | Ubuntu 20.04  | [os-pkgs-ubuntu2004-v0.15.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.15.3/os-pkgs-ubuntu2004-v0.15.3.tar.gz) |
     | openEuler 22.03 | [os-pkgs-openeuler22.03-v0.15.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.15.3/os-pkgs-openeuler22.03-v0.15.3.tar.gz) |
     | Oracle Linux R9 U1 | [os-pkgs-oracle9-v0.15.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.15.3/os-pkgs-oracle9-v0.15.3.tar.gz) |
+    | Oracle Linux R8 U7 | [os-pkgs-oracle8-v0.15.3.tar.gz](https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.15.3/os-pkgs-oracle8-v0.15.3.tar.gz) |
     | Rocky Linux 9.2 | [os-pkgs-rocky9-v0.15.3.tar.gz](https://github.com/kubean-io/kubean/releases/download/v0.15.3/os-pkgs-rocky9-v0.15.3.tar.gz) |
 
 === "V0.17.0"

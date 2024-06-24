@@ -66,15 +66,19 @@ nav:
                   - 导入离线资源: install/import.md
               - 安装排障: install/faq.md
               - 最佳实践:
-                  - 离线包裁剪脚本使用手册: install/best-practices/offline-clipper.md
                   - 集群部署模式使用场景: install/commercial/scenarios.md
-                  - DCE 5.0 一体机部署: install/best-practices/all-in-one-machine.md
-                  - 部署商业版时etcd采用host模式与控制面分离: install/best-practices/etcd-host-deploy.md
-                  - 火种节点高可用方案: install/best-practices/thinder-ha.md
-                  - 火种节点备份与还原: install/best-practices/thinder-restore.md
+                  - Global 集群实践:
+                    - DCE 5.0 etcd 采用 host 模式与控制面分离: install/best-practices/etcd-host-deploy.md
+                    - DCE 5.0 一体机部署: install/best-practices/all-in-one-machine.md
+                  - 火种节点实践:
+                    - 火种节点高可用方案: install/best-practices/thinder-ha.md
+                    - 火种节点备份与还原: install/best-practices/thinder-restore.md
+                  - 可扩展性实践:
+                    - K8s 集群基于 Docker 的磁盘限制: install/best-practices/docker-storage.md
+                    - 大规模集群参数说明: install/best-practices/large-deployments-par.md
+                    - 部署集群时如何配置扩展参数？: install/best-practices/extend-params.md
+                  - 离线包裁剪脚本使用手册: install/best-practices/offline-clipper.md
                   - 修复CVE-2024-21626漏洞: install/best-practices/cve-20240-21626.md
-                  - K8s集群基于Docker的磁盘限制: install/best-practices/docker-storage.md
-                  - 大规模集群参数说明: install/best-practices/large-deployments-par.md
               - 安装器 Release Notes: install/release-notes.md
           - 最佳实践: dce/bphome.md
       - 工作台:

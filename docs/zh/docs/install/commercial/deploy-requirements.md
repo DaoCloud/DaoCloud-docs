@@ -7,9 +7,9 @@
 
 | **架构** | **操作系统** | **推荐内核版本** | 备注（安装指导文档） |
 | -------- | ----------- | ----------- | ----------------- |
-| AMD 64 | CentOS 7.X | Kernel 3.10.0-1127.el7.x86_64 on an x86_64 | 推荐 CentOS 7.9<br />[离线安装 DCE 5.0 商业版](start-install.md) |
-| | Redhat 8.X | 4.18.0-305.el8.x86_64 | 推荐 Redhat 8.4<br />参考[离线安装 DCE 5.0 商业版](start-install.md) |
-| | Redhat 7.X | 3.10.0-1160.e17.x86 | 推荐 Redhat 7.9<br />参考[离线安装 DCE 5.0 商业版](start-install.md) |
+| AMD 64 | CentOS 7.X | Kernel 3.10.0-1127.el7.x86_64 on an x86_64 | CentOS 7.9<br />[离线安装 DCE 5.0 商业版](start-install.md)<br />注意：CentOS 7在2024年6月30日结束支持 |
+| | Redhat 8.X | 4.18.0-305.el8.x86_64 | Redhat 8.4<br />参考[离线安装 DCE 5.0 商业版](start-install.md) |
+| | Redhat 7.X | 3.10.0-1160.e17.x86 | Redhat 7.9<br />参考[离线安装 DCE 5.0 商业版](start-install.md) |
 | | Redhat 9.X | 5.14.0-284.11.1.e9_2.x86_64 | 推荐 Redhat 9.2<br />参考[离线安装 DCE 5.0 商业版](start-install.md) |
 | | Ubuntu 20.04 | 5.10.104 | 参考[离线安装 DCE 5.0 商业版](start-install.md) |
 | | Ubuntu 22.04 | 5.15.0-78-generic | 参考[离线安装 DCE 5.0 商业版](start-install.md) |
