@@ -35,7 +35,7 @@ Refer to the following steps to create a CronJob using the image.
 
 3. Fill in [Basic Information](create-cronjob.md#_3), [Container Configuration](create-cronjob.md#_4), [Timed Task Configuration](create-cronjob.md#_5), [Advanced Configuration] in turn ](create-cronjob.md#_6), click __OK__ in the lower right corner of the page to complete the creation.
 
-     The system will automatically return to the __CronJobs__ list. Click __︙__ on the right side of the list to perform operations such as updating, deleting, and restarting the CronJob.
+     The system will automatically return to the __CronJobs__ list. Click __┇__ on the right side of the list to perform operations such as updating, deleting, and restarting the CronJob.
 
     ![Config](../images/cronjob06.png)
 

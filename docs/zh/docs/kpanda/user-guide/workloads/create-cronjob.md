@@ -30,7 +30,7 @@
 
 3. 依次填写[基本信息](create-cronjob.md#_3)、[容器配置](create-cronjob.md#_4)、[定时任务配置](create-cronjob.md#_5)、[高级配置](create-cronjob.md#_6)后，在页面右下角点击 __确定__ 完成创建。
 
-    系统将自动返回 __定时任务__ 列表。点击列表右侧的 __︙__ ，可以对定时任务执行执行更新、删除、重启等操作。
+    系统将自动返回 __定时任务__ 列表。点击列表右侧的 __┇__ ，可以对定时任务执行执行更新、删除、重启等操作。
 
     ![操作菜单](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/cronjob06.png)
 

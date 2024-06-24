@@ -45,7 +45,7 @@ Refer to the following steps to create a daemon using the image.
 
 3. Fill in [Basic Information](create-daemonset.md#_3), [Container Configuration](create-daemonset.md#_4), [Service Configuration](create-daemonset.md#_5), [Advanced Configuration] in turn (create-daemonset.md#_6), click __OK__ in the lower right corner of the page to complete the creation.
 
-     The system will automatically return the list of __daemons__ . Click __︙__ on the right side of the list to perform operations such as updating, deleting, and restarting the daemonset.
+     The system will automatically return the list of __daemons__ . Click __┇__ on the right side of the list to perform operations such as updating, deleting, and restarting the daemonset.
 
     ![Daemons](../images/daemon05.png)
 

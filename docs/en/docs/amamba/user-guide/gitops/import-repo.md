@@ -42,7 +42,7 @@ Workbench currently supports two import methods: __Importing a repository using 
 
 If you no longer use a certain code repository, you can delete it following the steps below.
 
-1. Select a repository in the repository list page, click __︙__, and click __Delete__ in the pop-up menu.
+1. Select a repository in the repository list page, click __┇__, and click __Delete__ in the pop-up menu.
 
     ![Delete](../../images/import05.png)
 

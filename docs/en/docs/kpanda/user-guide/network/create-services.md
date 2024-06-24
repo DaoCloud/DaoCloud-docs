@@ -79,5 +79,5 @@ Click __Load Balancer__ , which refers to using the cloud provider's load balanc
 
 ### Complete service creation
 
-After configuring all parameters, click the __OK__ button to return to the service list automatically. On the right side of the list, click __︙__ to modify or delete the selected service.
+After configuring all parameters, click the __OK__ button to return to the service list automatically. On the right side of the list, click __┇__ to modify or delete the selected service.
 

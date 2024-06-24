@@ -14,6 +14,6 @@ On the Alert Silence page, users can see two tabs: Active Rules and Expired Rule
 
     ![silent rule](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/silent02.png)
 
-3. Return to the rule list, and on the right side of the list, click __︙__ to edit or delete a silent rule.
+3. Return to the rule list, and on the right side of the list, click __┇__ to edit or delete a silent rule.
 
 Through the Alert Silence feature, you can flexibly control which alerts should be ignored and when they should be effective, thereby improving operational efficiency and reducing the possibility of false alerts.

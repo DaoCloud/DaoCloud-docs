@@ -49,7 +49,7 @@ The specific steps to create and manage credentials are as follows:
 
     ![Successfully Created](../../images/cred03.png)
 
-4. Click the __︙__ on the right side of the list to choose options such as editing or
+4. Click the __┇__ on the right side of the list to choose options such as editing or
    deleting from the pop-up menu.
 
     !!! warning
