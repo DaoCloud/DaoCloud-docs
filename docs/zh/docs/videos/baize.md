@@ -4,7 +4,7 @@
 
 ## 创建分布式训练任务
 
-参阅[创建 Notebook](../baize/developer/jobs/create.md)文档。
+参阅[创建训练任务](../baize/developer/jobs/create.md)文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-job.mp4" preload="metadata" poster="images/create-distributed-job.png"></video>

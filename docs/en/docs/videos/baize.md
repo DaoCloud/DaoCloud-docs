@@ -1,10 +1,19 @@
 # Intelligent Engine Video Tutorial
 
-We have carefully created the following video tutorials for intelligent computing power. We welcome any form of feedback. Thank you 🙏
+DaoCloud has created the following video tutorials for intelligent engine.
+We welcome any form of feedback. Thank you 🙏
+
+## Create a distributed job
+
+See also the document to [create a job](../baize/developer/jobs/create.md).
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-job.mp4" preload="metadata" poster="images/create-distributed-job.png"></video>
+</div>
 
 ## Notebook using vGPU
 
-Refer to the [Create Notebook](../baize/developer/notebooks/create.md) document.
+See also the [Create Notebook](../baize/developer/notebooks/create.md) document.
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/notebook.mp4" preload="metadata" poster="images/notebook.jpg"></video>
