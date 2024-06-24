@@ -1128,6 +1128,7 @@ nav:
               - 最佳实践:
                   - 部署 NFS 做数据集预热: baize/best-practice/deploy-nfs-in-worker.md
                   - 更新 Notebook 内置镜像: baize/best-practice/change-notebook-image.md
+                  - Checkpoint 机制及使用介绍: baize/best-practice/checkpoint.md
       - 边缘计算:
           - 云边协同:
               - 介绍:
