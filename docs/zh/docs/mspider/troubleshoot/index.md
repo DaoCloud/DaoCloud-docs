@@ -26,3 +26,4 @@
 - [托管网格多云互联异常](./cluster-interconnect.md)
 - [边车占用大量内存](./sidecar-memory-err.md)
 - [创建网格时，集群列表存在未知集群](./cluster-already-exist.md)
+- [托管网格 APIServer 证书过期处理办法](./hosted-apiserver-cert-expiration.md)
