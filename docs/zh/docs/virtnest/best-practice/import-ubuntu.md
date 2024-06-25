@@ -10,14 +10,16 @@
 
 ## 获取 vSphere 的虚拟机基础信息
 
-1. vSphere URL：目标平台的 URL 地址信息
+- vSphere URL：目标平台的 URL 地址信息
 
-2. vSphere SSL 证书指纹 thumbprint：需要通过 openssl 获取
+- vSphere SSL 证书指纹 thumbprint：需要通过 openssl 获取
 
     ```sh
     openssl s_client -connect 10.64.56.11:443 </dev/null | openssl x509 -in /dev/stdin -fingerprint -sha1 -noout
     ```
+    
     输出类似于：
+   
     ```output
     Can't use SSL_get_servername
     depth=0 CN = vcsa.daocloud.io
@@ -32,11 +34,11 @@
     sha1 Fingerprint=C3:9D:D7:55:6A:43:11:2B:DE:BA:27:EA:3B:C2:13:AF:E4:12:62:4D  # 所需值
     ```
 
-3. vSphere 账号：获取 vSphere 的账号信息，注意权限问题
+- vSphere 账号：获取 vSphere 的账号信息，注意权限问题
 
-4. vSphere 密码：获取 vSphere 的密码信息
+- vSphere 密码：获取 vSphere 的密码信息
 
-5. 需要导入虚拟机的 UUID（需要在 vSphere 的 web 页面获取）
+- 需要导入虚拟机的 UUID（需要在 vSphere 的 web 页面获取）
 
     - 进入 Vsphere 页面中，进入被导入虚拟机的详情页面，点击 __编辑配置__ ，此时打开浏览器的开发者控制台，
       点击 __网络__ —> __标头__ 找到如下图所示的 URL。
@@ -47,13 +49,13 @@
 
         ![找到 uuid](../images/uuid02.png)
 
-6. 需要导入虚拟机的 vmdk 文件 path
+- 需要导入虚拟机的 vmdk 文件 path
 
 ## 获取 vSphere 的虚拟机基础信息
 
 1. 准备 vddk 镜像
 
-    - 下载 vddk：需要在 [vmware 网站](https://developer.vmware.com/) 注册账号后下载
+    - 下载 vddk：需要在 [vmware 网站](https://developer.vmware.com/)注册账号后下载
 
         前往 SDKs，点击 __Compute Virtualization__ ，选择并下载合适版本的
         __VMware Virtual Disk Development Kit (VDDK)__ 。
@@ -88,8 +90,8 @@
 
 需要根据网络模式的不同配置不同的信息，若有固定 IP 的需求，需要选择 Bridge 网络模式
 
-    -  创建 ovs 类型的 Multus CR，可参考[创建 Multus CR](https://spidernet-io.github.io/spiderpool/v0.9/usage/install/underlay/get-started-ovs-zh_CN/)
-    -  创建子网及 IP 池，参考[创建子网和 IP 池](../../network/config/ippool/createpool.md)
+-  创建 ovs 类型的 Multus CR，可参考[创建 Multus CR](https://spidernet-io.github.io/spiderpool/v0.9/usage/install/underlay/get-started-ovs-zh_CN/)
+-  创建子网及 IP 池，参考[创建子网和 IP 池](../../network/config/ippool/createpool.md)
 
     ```yaml
     apiVersion: spiderpool.spidernet.io/v2beta1
