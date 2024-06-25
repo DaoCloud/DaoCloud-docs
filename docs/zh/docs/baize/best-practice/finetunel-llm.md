@@ -62,7 +62,7 @@ DCE 5.0 智能算力提供了环境管理的能力，将 Python 环境依赖包�
 !!! warning
 
     1. ChatGLM 仓库内有 `requirements.txt` 文件，里面包含了 ChatGLM3 微调所需的环境依赖
-    2. 本次微调没有泳道 `deepspeed` 和 `mpi4py` 包，建议从 `requirements.txt` 文件中将其注释掉，否则可能出现包编译不通过的情况
+    2. 本次微调没有用到 `deepspeed` 和 `mpi4py` 包，建议从 `requirements.txt` 文件中将其注释掉，否则可能出现包编译不通过的情况
 
 ![创建环境](./images/fine-tunel-chatglm3-05.png)
 
@@ -82,7 +82,7 @@ DCE 5.0 智能算力提供了 Notebook 作为 IDE 的功能，可以让用户在
 
 ### 创建 JupyterLab Notebook
 
-![创建 notebook](./images/fine-tunel-chatglm3-07.png)
+![创建 Notebook](./images/fine-tunel-chatglm3-07.png)
 
 在 Notebook 列表中，可以根据页面操作指引，创建一个 Notebook。注意您需要根据前文提到的资源要求来配置对应的 Notebook 资源参数，
 避免后续因为资源问题，影响微调过程。
@@ -189,6 +189,7 @@ convert_adgen('data/AdvertiseGen', 'data/AdvertiseGen_fix')
 ```
 
 在这条命令中，
+
 - `finetune_hf.py` 是 ChatGLM3 代码中的微调脚本
 - `data/AdvertiseGen_fix` 是您预处理后的数据集
 - `./chatglm3-6b` 是您预训练模型的路径
