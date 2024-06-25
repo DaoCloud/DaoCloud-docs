@@ -19,7 +19,7 @@
 1. 选择 Bridge 网络模式
 
     -  创建 ovs 类型的 Multus CR，可参考[创建 Multus CR](https://spidernet-io.github.io/spiderpool/v0.9/usage/install/underlay/get-started-ovs-zh_CN/)
-    -  创建子网及 IP 池，参考[创建子网和 IP 池](../../network/config/ippool/createpool.md)，
+    -  创建子网及 IP 池，参考[创建子网和 IP 池](../../network/config/ippool/createpool.md)
 
 ## 网络配置
 
