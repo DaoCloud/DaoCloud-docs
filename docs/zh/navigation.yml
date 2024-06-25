@@ -917,10 +917,11 @@ nav:
                   - 创建的网格异常但无法删除: mspider/troubleshoot/failed-to-delete.md
                   - 托管网格纳管集群失败: mspider/troubleshoot/failed-to-add-cluster.md
                   - 托管网格纳管集群istio-ingressgateway异常: mspider/troubleshoot/hosted-mesh-errors.md
+                  - 托管网格APIServer证书过期: mspider/troubleshoot/hosted-apiserver-cert-expiration.md
+                  - 托管网格多云互联异常: mspider/troubleshoot/cluster-interconnect.md
                   - 网格空间无法正常解绑: mspider/troubleshoot/mesh-space-cannot-unbind.md
                   - DCE 4.0 接入问题追踪: mspider/troubleshoot/dce4.0-issues.md
                   - 命名空间边车配置与工作负载边车冲突: mspider/troubleshoot/sidecar.md
-                  - 托管网格多云互联异常: mspider/troubleshoot/cluster-interconnect.md
                   - 边车占用大量内存: mspider/troubleshoot/sidecar-memory-err.md
                   - 集群列表存在未知集群: mspider/troubleshoot/cluster-already-exist.md
               - 最佳实践:
