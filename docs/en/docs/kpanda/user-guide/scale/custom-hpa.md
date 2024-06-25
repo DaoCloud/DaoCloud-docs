@@ -166,10 +166,10 @@ rules:
     - metricsQuery: sum(rate(<<.Series>>{<<.LabelMatchers>>}[1m])) by (<<.GroupBy>>)
       name:
         as: httpserver_requests_qps
-      matches: httpserver_requests_total
-resources:
-  seriesQuery: httpserver_requests_total
-  template: <<.Resource>>
+        matches: httpserver_requests_total
+      resources:
+        template: <<.Resource>>
+      seriesQuery: httpserver_requests_total
 ```
 
 <!-- add images later -->
