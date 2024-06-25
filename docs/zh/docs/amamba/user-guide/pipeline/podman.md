@@ -8,15 +8,29 @@
 
 ## 构建镜像的前提
 
-与 Docker 类似，Docker 支持多平台构建的前提是需要宿主机支持多平台构建，利用 QEMU 来模拟其他平台的环境，
-因此如果需要构建多平台镜像，则 Jenkins 所在的主机需要安装 QEMU。
+与 Docker 类似，Docker 支持多平台构建的前提是需要宿主机支持多平台构建，利用 QEMU 来模拟其他平台的环境。目前工作台内置的基础镜像(`base`,`go`,`nodejs`,`python`) 中已经包含了qemu的二进制文件，
+如果您的 Agent 镜像不是上述的基础镜像，您可以通过以下两种方式添加qemu的二进制文件：
 
-如果 Jenkins 所在的主机是 macOS 或者 Windows，则需要先启动虚拟机才可以使用 Podman:
+1. 在 Dockerfile 中添加 qemu 的安装命令
+    ```dockerfile
+    # 添加下面的命令到 Dockerfile 中，需要根据您的目标平台选择对应的 qemu 二进制文件, 以目标镜像为arm64为例
+    FROM --platform=linux/amd64 multiarch/qemu-user-static:aarch64 as qemu
+    COPY --from=qemu /usr/bin/qemu-aarch64-static /usr/bin
+    ```
+2. 在基础镜像中通过如下脚本直接添加qemu的二进制文件
 
-```shell
-podman machine init
-podman machine start
-```
+    ```shell
+    arch="aarch64"
+    version="v7.2.0-1"
+    wget -O qemu-${arch}-static https://github.com/multiarch/qemu-user-static/releases/download/${version}/qemu-${arch}-static && chmod +x qemu-${arch}-static && mv qemu-${arch}-static /usr/bin 
+    ```
+
+配置`binfmt_misc`模块(**必须**)，`binfmt_misc`是Linux内核的一个模块，可以在内核中注册一个二进制格式，使得内核能够识别并执行这种格式的二进制文件。因为`binfmt_misc`模块权限较高，需要**root权限**才能操作，所以需要**手动在所有运行 Agent 的宿主机上执行**以下操作：
+
+   ```shell
+   find /proc/sys/fs/binfmt_misc -type f -name 'qemu-*' -exec sh -c 'echo -1 > {}'
+   wget -O qemu-binfmt-conf.sh https://raw.githubusercontent.com/qemu/qemu/master/scripts/qemu-binfmt-conf.sh && chmod +x qemu-binfmt-conf.sh && ./qemu-binfmt-conf.sh --qemu-suffix "-static" --qemu-path ${qemu_bin_dir}
+   ```
 
 ## 构建多平台镜像
 
