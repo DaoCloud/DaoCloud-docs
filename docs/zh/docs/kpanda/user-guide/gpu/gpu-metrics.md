@@ -32,15 +32,16 @@
 
 **根据 XID 状态排查 GPU 相关问题**
 
-XID 消息是 NVIDIA 驱动程序向操作系统的内核日志或事件日志打印的错误报告。XID 消息用于标识 GPU 错误事件，提供GPU硬件、NVIDIA软件或您应用程序中的错误类型、错误位置、错误代码等信息。如检查项 GPU 节点上的XID异常为空，表明无XID消息；如有，您可按照下表自助排查并解决问题，或查看[更多 XID 消息](https://docs.nvidia.com/deploy/xid-errors/index.html#topic_4)。
-
-好的，以下是修改后中英文之间留有空格的表格：
+XID 消息是 NVIDIA 驱动程序向操作系统的内核日志或事件日志打印的错误报告。XID 消息用于标识 GPU 错误事件，
+提供 GPU 硬件、NVIDIA 软件或应用中的错误类型、错误位置、错误代码等信息。
+如检查项 GPU 节点上的 XID 异常为空，表明无 XID 消息；如有，您可按照下表自助排查并解决问题，
+或查看[更多 XID 消息](https://docs.nvidia.com/deploy/xid-errors/index.html#topic_4)。
 
 | XID | 消息 | 说明 |
 | --- | --- | --- |
 | 13 | Graphics Engine Exception. | 通常是数组越界、指令错误，小概率是硬件问题。 |
 | 31 | GPU memory page fault. | 通常是应用程序的非法地址访问，极小概率是驱动或者硬件问题。 |
-| 32 | Invalid or corrupted push buffer stream. | 事件由PCIE总线上管理 NVIDIA 驱动和 GPU 之间通信的 DMA 控制器上报，通常是 PCI 质量问题导致，而非您的程序产生。 |
+| 32 | Invalid or corrupted push buffer stream. | 事件由 PCIE 总线上管理 NVIDIA 驱动和 GPU 之间通信的 DMA 控制器上报，通常是 PCI 质量问题导致，而非您的程序产生。 |
 | 38 | Driver firmware error. | 通常是驱动固件错误而非硬件问题。 |
 | 43 | GPU stopped processing. | 通常是您应用自身错误，而非硬件问题。 |
 | 45 | Preemptive cleanup, due to previous errors -- Most likely to see when running multiple cuda applications and hitting a DBE. | 通常是您手动退出或者其他故障（硬件、资源限制等）导致的 GPU 应用退出，XID 45 只提供一个结果，具体原因通常需要进一步分析日志。 |
