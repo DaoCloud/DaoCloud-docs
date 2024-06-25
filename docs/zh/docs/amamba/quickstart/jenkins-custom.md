@@ -93,6 +93,10 @@ pipeline {
             some-label: some-label-value
         spec:
           containers:
+          - name: jnlp
+            image: docker.m.daocloud.io/jenkins/inbound-agent:4.10-2  # (1)!
+            args:
+            - ^${computer.jnlpmac} ^${computer.name}
           - name: maven
             image: your-custom-tooling-image
             command:
