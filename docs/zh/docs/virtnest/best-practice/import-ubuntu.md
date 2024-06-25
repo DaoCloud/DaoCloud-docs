@@ -40,7 +40,7 @@
 
     - 进入 Vsphere 页面中，进入被导入虚拟机的详情页面，点击 __编辑配置__ ，此时打开浏览器的开发者控制台，
       点击 __网络__ —> __标头__ 找到如下图所示的 URL。
-    
+
         ![找到 URL](../images/uuid01.png)
 
     - 点击 __响应__ ，定位到 __vmConfigContext__ —> __config__ ，最终找到目标值 __uuid__ 。
@@ -54,26 +54,26 @@
 1. 准备 vddk 镜像
 
     - 下载 vddk：需要在 [vmware 网站](https://developer.vmware.com/) 注册账号后下载
-     
+
         前往 SDKs，点击 __Compute Virtualization__ ，选择并下载合适版本的
         __VMware Virtual Disk Development Kit (VDDK)__ 。
-      
+
         ![点击 Compute Virtualization](../images/import-ubuntu01.png)
-      
+
         ![选择版本](../images/import-ubuntu02.png)
-      
+
         ![下载](../images/import-ubuntu03.png)
-      
+
     -  解压并构建成镜像：
-      
+
         - 解压
-         
+
             ```sh
             tar -xzf VMware-vix-disklib-<version>.x86_64.tar.gz
             ```
-          
+
         - 创建 Dockerfile 文件
-         
+
             ```sh
             FROM busybox:latest
             COPY vmware-vix-disklib-distrib /vmware-vix-disklib-distrib
@@ -86,7 +86,7 @@
 
 ## 网络配置
 
-1. 需要根据网络模式的不同配置不同的信息，若有固定 IP 的需求，需要选择 Bridge 网络模式
+需要根据网络模式的不同配置不同的信息，若有固定 IP 的需求，需要选择 Bridge 网络模式
 
     -  创建 ovs 类型的 Multus CR，可参考[创建 Multus CR](https://spidernet-io.github.io/spiderpool/v0.9/usage/install/underlay/get-started-ovs-zh_CN/)
     -  创建子网及 IP 池，参考[创建子网和 IP 池](../../network/config/ippool/createpool.md)
@@ -95,40 +95,40 @@
     apiVersion: spiderpool.spidernet.io/v2beta1
     kind: SpiderIPPool
     metadata:
-    name: test2
+      name: test2
     spec:
-    ips:
-    - 10.20.3.90
-    subnet: 10.20.0.0/16
-    gateway: 10.20.0.1
+      ips:
+      - 10.20.3.90
+      subnet: 10.20.0.0/16
+      gateway: 10.20.0.1
     
     ---
     apiVersion: spiderpool.spidernet.io/v2beta1
     kind: SpiderIPPool
     metadata:
-    name: test3
+      name: test3
     spec:
-    ips:
-    - 10.20.240.1
-    subnet: 10.20.0.0/16
-    gateway: 10.20.0.1
+      ips:
+      - 10.20.240.1
+      subnet: 10.20.0.0/16
+      gateway: 10.20.0.1
     
     ---
     apiVersion: spiderpool.spidernet.io/v2beta1
     kind: SpiderMultusConfig
     metadata:
-    name: test1
-    namespace: kube-system
+      name: test1
+      namespace: kube-system
     spec:
-    cniType: ovs
-    coordinator:
+      cniType: ovs
+      coordinator:
         detectGateway: false
         detectIPConflict: false
         mode: auto
         tunePodRoutes: true
-    disableIPAM: false
-    enableCoordinator: true
-    ovs:
+      disableIPAM: false
+      enableCoordinator: true
+      ovs:
         bridge: br-1
         ippools:
         ipv4:
