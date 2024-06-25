@@ -54,26 +54,26 @@
 1. 准备 vddk 镜像
 
     - 下载 vddk：需要在 [vmware 网站](https://developer.vmware.com/) 注册账号后下载
-   
+     
         前往 SDKs，点击 __Compute Virtualization__ ，选择并下载合适版本的
         __VMware Virtual Disk Development Kit (VDDK)__ 。
-   
+      
         ![点击 Compute Virtualization](../images/import-ubuntu01.png)
-   
+      
         ![选择版本](../images/import-ubuntu02.png)
-   
+      
         ![下载](../images/import-ubuntu03.png)
-   
+      
     -  解压并构建成镜像：
-   
+      
         - 解压
-       
+         
             ```sh
             tar -xzf VMware-vix-disklib-<version>.x86_64.tar.gz
             ```
-       
+          
         - 创建 Dockerfile 文件
-       
+         
             ```sh
             FROM busybox:latest
             COPY vmware-vix-disklib-distrib /vmware-vix-disklib-distrib
@@ -83,6 +83,58 @@
             ```
 
         - 推送镜像至仓库
+
+## 网络配置
+
+1. 需要根据网络模式的不同配置不同的信息，若有固定 IP 的需求，需要选择 Bridge 网络模式
+
+    -  创建 ovs 类型的 Multus CR，可参考[创建 Multus CR](https://spidernet-io.github.io/spiderpool/v0.9/usage/install/underlay/get-started-ovs-zh_CN/)
+    -  创建子网及 IP 池，参考[创建子网和 IP 池](../../network/config/ippool/createpool.md)
+
+    ```yaml
+    apiVersion: spiderpool.spidernet.io/v2beta1
+    kind: SpiderIPPool
+    metadata:
+    name: test2
+    spec:
+    ips:
+    - 10.20.3.90
+    subnet: 10.20.0.0/16
+    gateway: 10.20.0.1
+    
+    ---
+    apiVersion: spiderpool.spidernet.io/v2beta1
+    kind: SpiderIPPool
+    metadata:
+    name: test3
+    spec:
+    ips:
+    - 10.20.240.1
+    subnet: 10.20.0.0/16
+    gateway: 10.20.0.1
+    
+    ---
+    apiVersion: spiderpool.spidernet.io/v2beta1
+    kind: SpiderMultusConfig
+    metadata:
+    name: test1
+    namespace: kube-system
+    spec:
+    cniType: ovs
+    coordinator:
+        detectGateway: false
+        detectIPConflict: false
+        mode: auto
+        tunePodRoutes: true
+    disableIPAM: false
+    enableCoordinator: true
+    ovs:
+        bridge: br-1
+        ippools:
+        ipv4:
+        - test1
+        - test2
+    ```
 
 ## 获取 vSphere 的账号密码 secret
 
@@ -104,7 +156,7 @@ metadata:
 1. 在将 vSphere 虚拟机导入 KubeVirt 的 CDI 过程中，需要使用 vddk 组件。
    
 2. 请确保 configmap 的命名空间与 CDI 所在的命名空间保持一致
-  （Virtnest Agent 的默认命名空间是 virtnest-system，示例中为 cdi）。
+    （Virtnest Agent 的默认命名空间是 virtnest-system，示例中为 cdi）。
 
     ```yaml
     apiVersion: v1
@@ -118,64 +170,81 @@ metadata:
 
 ## 编写 kubevirt vm yaml 创建 vm
 
+!!! tip
+
+    若有固定IP需求，则该 yaml 与使用默认网络的 yaml 有一些区别，已标注。
+
 ```yaml
-    apiVersion: kubevirt.io/v1
-    kind: VirtualMachine
-    metadata:
-      name: export-ubuntu-vddk
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  annotations:
+    kubevirt.io/latest-observed-api-version: v1
+    kubevirt.io/storage-observed-api-version: v1
+    virtnest.io/alias-name: ""
+    virtnest.io/image-secret: ""
+  creationTimestamp: "2024-05-23T06:46:28Z"
+  finalizers:
+  - kubevirt.io/virtualMachineControllerFinalize
+  generation: 1
+  labels:
+    virtnest.io/os-family: Ubuntu
+    virtnest.io/os-version: "22.04"
+  name: export-ubuntu
+  namespace: default
+spec:
+  dataVolumeTemplates:
+  - metadata:
+      creationTimestamp: null
+      name: export-ubuntu-rootdisk
       namespace: default
     spec:
-    dataVolumeTemplates:
-        - metadata:
-            name: systemdisk-export-ubuntu-vddk
-            namespace: default
-        spec:
-            pvc:
-            accessModes:
-                - ReadWriteOnce
-            resources:
-                requests:
-                storage: 20Gi
-            storageClassName: local-path
-            source:
-            vddk:
-                backingFile: "[esxi-d02-08-SSD] kubevirt-export-ubuntu-1/kubevirt-export-ubuntu-1.vmdk" # vsphere 虚拟机基础信息中的磁盘
-                url: "https://10.64.56.11"   # vsphere url
-                uuid: "4234ea54-9b4b-b8ba-3de0-8612d8600648" # vsphere 虚拟机基础信息中的 uuid
-                thumbprint: "C3:9D:D7:55:6A:43:11:2B:DE:BA:27:EA:3B:C2:13:AF:E4:12:62:4D" # vsphere SSL fingerprint
-                secretRef: "vsphere"  # vsphere 账号密码 secret
-    runStrategy: Always
-    template:
-        metadata:
-        creationTimestamp: null
-        spec:
-        architecture: amd64
-        domain:
-            devices:
-            disks:
-                - disk:
-                    bus: virtio
-                bootOrder: 1
-                name: systemdisk-export
-            interfaces:
-                - masquerade: {}
-                name: default
-            machine:
-            type: q35
-            resources:
-            limits:
-                cpu: "1"
-                memory: 2Gi
-            requests:
-                cpu: "1"
-                memory: 1Gi
-        networks:
-            - name: default
-            pod: {}
-        volumes:
-            - dataVolume:
-                name: systemdisk-export-ubuntu-vddk
-            name: systemdisk-export
+      pvc:
+        accessModes:
+        - ReadWriteOnce
+        resources:
+          requests:
+            storage: 10Gi
+        storageClassName: local-path
+      source:
+        vddk:
+          backingFile: "[A05-09-ShangPu-Local-DataStore] virtnest-export-ubuntu/virtnest-export-ubuntu.vmdk"  
+          url: "https://10.64.56.21"                                                       
+          uuid: "421d6135-4edb-df80-ee54-8c5b10cc4e78"                                     
+          thumbprint: "D7:C4:22:E3:6F:69:DA:72:50:81:12:FA:42:18:3F:29:5C:7F:41:CA"            
+          secretRef: "vsphere"
+  runStrategy: Manual
+  template:
+    metadata:
+      annotations:
+        ipam.spidernet.io/ippools: '[{"cleangateway":false,"ipv4":["test2"]}]'  // 这里添加 spiderpool 网络
+      creationTimestamp: null
+    spec:
+      architecture: amd64
+      domain:
+        devices:
+          disks:
+          - bootOrder: 1
+            disk:
+              bus: virtio
+            name: rootdisk
+          interfaces:                                                          // 修改这里的网络配置
+          - bridge: {}
+            name: ovs-bridge0
+        machine:
+          type: q35
+        resources:
+          requests:
+            memory: 4Gi
+      networks:                                                                // 修改这里的网络配置
+      - multus:
+          default: true
+          networkName: kube-system/test1
+        name: ovs-bridge0
+      volumes:
+      - dataVolume:
+          name: export-ubuntu-rootdisk
+        name: rootdisk
 ```
 
 ## 进入 VNC 检查是否成功运行
@@ -185,7 +254,7 @@ metadata:
 1. 查看当前网络
 
     在实际导入完成时，如下图所示的配置已经完成。然而，需要注意的是，enp1s0接口并没有包含inet字段，因此无法连接到外部网络。
-       
+    
     ![查看网络配置](../images/import-ubuntu04.png)
 
 1. 配置 netplan
@@ -199,7 +268,7 @@ metadata:
     ```sh
     sudo netplan apply
     ```
- 
+
 1. 对外部网络进行 ping 测试
 
     ![ping网络](../images/import-ubuntu06.png)

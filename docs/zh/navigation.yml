@@ -621,15 +621,14 @@ nav:
                   - 安装虚拟机: virtnest/install/index.md
                   - 安装依赖及前提条件: virtnest/install/install-dependency.md
                   - 离线升级: virtnest/install/offline-install.md
-                  - 安装virtnest-agent: virtnest/install/virtnest-agent.md
+                  - 安装 virtnest-agent: virtnest/install/virtnest-agent.md
               - 虚拟机:
                   - 创建虚拟机: virtnest/vm/index.md
-                  - 创建 Windows 虚拟机: virtnest/vm/vm-windows.md
                   - 创建密钥: virtnest/vm/create-secret.md
                   - 连接虚拟机: virtnest/vm/access.md
                   - 快照管理: virtnest/vm/snapshot.md
                   - 实时迁移: virtnest/vm/live-migration.md
-                  - 通过NodePort访问虚拟机: virtnest/vm/nodeport.md
+                  - 通过 NodePort 访问虚拟机: virtnest/vm/nodeport.md
                   - 虚拟机监控: virtnest/vm/monitor.md
                   - 虚拟机网络: virtnest/vm/vm-network.md
                   - 虚拟机存储: virtnest/vm/vm-sc.md
@@ -641,7 +640,9 @@ nav:
                   - 通过模板创建虚拟机: virtnest/template/index.md
                   - 虚拟机模板: virtnest/template/tep.md
               - 虚拟机镜像: virtnest/vm-image/index.md
-              - 从VMware导入传统虚拟机: virtnest/import/import-ubuntu.md
+              - 最佳实践:
+                  - 从 VMware 导入传统虚拟机: virtnest/best-practice/import-ubuntu.md
+                  - 创建 Windows 虚拟机: virtnest/best-practice/vm-windows.md
       - 微服务:
           - 可观测性:
               - 介绍:
