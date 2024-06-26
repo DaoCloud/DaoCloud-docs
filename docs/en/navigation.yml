@@ -895,9 +895,10 @@ nav:
                   - Cannot Find Cluster on Mesh Creation: mspider/troubleshoot/cannot-find-cluster.md
                   - Always in Creating on Mesh Creation: mspider/troubleshoot/always-in-creating.md
                   - Created Mesh is Abnormal But Cannot be Deleted: mspider/troubleshoot/failed-to-delete.md
-                  - Failed to Add Cluster for Managed Mesh: mspider/troubleshoot/failed-to-add-cluster.md
+                  - Failed to Add Cluster for Hosted Mesh: mspider/troubleshoot/failed-to-add-cluster.md
                   - istio-ingressgateway Abnormal: mspider/troubleshoot/hosted-mesh-errors.md
-                  - Expired Cert for Managed Mesh APIServer: mspider/troubleshoot/hosted-apiserver-cert-expiration.md
+                  - Expired Cert for Hosted Mesh APIServer: mspider/troubleshoot/hosted-apiserver-cert-expiration.md
+                  - Cross-Cluster Interconnect Issues: mspider/troubleshoot/cluster-interconnect.md
                   - Unable to Unbind Mesh Space: mspider/troubleshoot/mesh-space-cannot-unbind.md
                   - Issues on Joining DCE 4.0: mspider/troubleshoot/dce4.0-issues.md
                   - Issue with Sidecar Configuration Activation: mspider/troubleshoot/sidecar.md
