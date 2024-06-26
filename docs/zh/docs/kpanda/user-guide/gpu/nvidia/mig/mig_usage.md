@@ -13,13 +13,13 @@
 
 1. 确认集群是否已识别 GPU 卡类型
 
-    进入 __集群详情__ -> __集群设置__ -> __Addon 设置__ ，查看是否已正确识别，自动识别频率为 __10 分钟__ 。
+    进入 __集群详情__ -> __节点管理__ ，查看是否已正确识别为 MIG 模式。
 
-    ![gpu](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/gpu_mig01.jpg)
+    ![gpu](../../images/node-mig.png)
 
 1. 通过镜像部署应用可选择并使用 NVIDIA MIG 资源。
 
-    ![mig02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/gpu_mig02.jpg)
+    ![mig02](../../images/pod-mig.png)
 
 ## YAML 配置使用 MIG
 
