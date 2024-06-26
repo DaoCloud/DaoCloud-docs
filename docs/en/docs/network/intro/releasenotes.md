@@ -15,6 +15,18 @@ evolution path and feature changes of each version.
 *[SR-IOV]: Single Root IO Virtualization
 *[RDMA]: Remote Direct Memory Access, a popular tech to support LLM and GPT
 
+## 2024-05-30
+
+### v0.15.0
+
+- Compatibile with Spiderpool v0.9.3
+
+#### Improvements
+
+- **Fixed** ListAllSubnetsAndIPPoolsAndMultus API fails to filter pools by namespace affinity
+- **Fixed** ListMultusCniConfig API pointer value comparison judgment error, and fix the problem of sriov being written as ipvlan in the judgment
+- **Added** Support interface to create ovs-cni type multus CR
+
 ## 2023-04-30
 
 ### v0.14.0
