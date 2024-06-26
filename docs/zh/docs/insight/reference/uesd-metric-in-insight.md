@@ -1,6 +1,8 @@
 # 可观性参考指标说明
 
-本文中的指标是基于社区的 kube-prometheus 的基础之上整理而成。目前涵盖了 Cluster，Node，Namespace，Workload 等多个层面的指标，本文旨在枚举常用的指标名，中文描述和单位，以便索引。
+本文中的指标是基于社区的 kube-prometheus 的基础之上整理而成。
+目前涵盖了 Cluster、Node、Namespace、Workload 等多个层面的指标。
+本文枚举了一些常用的指标名、中文描述和单位，以便索引。
 
 ## 集群（Cluster）
 
@@ -45,7 +47,9 @@
 | cluster_job_normal_count           | 集群正常运行 Job 个数         | 个     |
 | cluster_job_abnormal_count         | 集群异常运行 Job 个数         | 个     |
 
-1. 使用率一般是（0,1] 区间的数字。（例如：0.21，而不是 21%）
+!!! tip
+
+    使用率一般是（0,1] 区间的数字（例如：0.21，而不是 21%）
 
 ## 节点（Node）
 
@@ -74,7 +78,7 @@
 
 ## 工作负载（Workload）
 
-目前支持的工作负载类型包括：Deployment，StatefulSet，DaemonSet，Job 和 CronJob。
+目前支持的工作负载类型包括：Deployment、StatefulSet、DaemonSet、Job 和 CronJob。
 
 | 指标名                         | 中文描述                       | 单位   |
 | ------------------------------ | ------------------------------ | ------ |
@@ -92,9 +96,9 @@
 | workload_disk_read_throughput  | 工作负载磁盘每秒读取数据量     | Byte/s |
 | workload_disk_write_throughput | 工作负载磁盘每秒写入数据量     | Byte/s |
 
-1. 此处计算 workload 总量；
-2. 通过 `workload_cpu_usage{workload_type="deployment", workload="prometheus"}` 的方式获取指标；
-3. `workload_pod_utilization` 计算规则： `workload_pod_usage / workload_pod_request` ；
+1. 此处计算 workload 总量
+2. 通过 `workload_cpu_usage{workload_type="deployment", workload="prometheus"}` 的方式获取指标
+3. `workload_pod_utilization` 计算规则： `workload_pod_usage / workload_pod_request`
 
 ## 容器组（Pod）
 
@@ -114,7 +118,7 @@
 | pod_disk_read_throughput  | 容器组磁盘每秒读取数据量     | Byte/s |
 | pod_disk_write_throughput | 容器组磁盘每秒写入数据量     | Byte/s |
 
-1. 通过 `pod_cpu_usage{workload_type="deployment", workload="prometheus"}` 获取名为 prometheus 的 Deployment 所拥有的所有 pod 的 cpu 使用率；
+通过 `pod_cpu_usage{workload_type="deployment", workload="prometheus"}` 获取名为 prometheus 的 Deployment 所拥有的所有 Pod 的 CPU 使用率。
 
 ## Span 指标
 
