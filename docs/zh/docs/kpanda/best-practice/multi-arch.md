@@ -15,7 +15,7 @@
 
 ### 下载并导入离线包
 
-以 ARM 架构、操作系统Kylin v10 sp2 为例。
+以 ARM 架构、操作系统 Kylin v10 sp2 为例。
 
 请确保已经登录到火种节点！并且之前部署 DCE 5.0 时使用的 clusterConfig.yaml 文件还在。
 
@@ -27,13 +27,13 @@
 
 | CPU 架构 | 版本 | 下载地址 |
 | :------ | :---- | :-- |
-| AMD64 | v0.10.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.10.0-amd64.tar> |
-| ARM64 | v0.10.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.10.0-arm64.tar> |
+| AMD64 | v0.18.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.18.0-amd64.tar> |
+| ARM64 | v0.18.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.18.0-arm64.tar> |
 
 下载完毕后解压离线包。此处我们下载 arm64 架构的离线包：
 
 ```bash
-tar -xvf offline-v0.10.0-arm64.tar
+tar -xvf offline-v0.18.0-arm64.tar
 ```
 
 #### ISO 离线包（Kylin v10 sp2）
@@ -52,7 +52,7 @@ tar -xvf offline-v0.10.0-arm64.tar
 
 | 操作系统版本 | 下载地址 |
 | :--------- | :------ |
-| Kylin Linux Advanced Server release V10 (Sword) SP2 | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.7.4/os-pkgs-kylinv10-v0.7.4.tar.gz> |
+| Kylin Linux Advanced Server release V10 (Sword) SP2 | <https://github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-kylinv10-v0.16.3.tar.gz> |
 
 !!! note
 
@@ -229,7 +229,7 @@ kubectl -n kubean-system get pod | grep add-worker-node
 
 ### 前往界面验证
 
-1. 前往 __容器管理__ -> __集群__ -> __节点管理__ 
+1. 前往 __容器管理__ -> __集群__ -> __节点管理__
 
     ![节点管理](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/arm02.png)
 

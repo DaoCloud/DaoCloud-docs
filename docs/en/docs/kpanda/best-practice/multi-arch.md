@@ -1,10 +1,10 @@
 # How to Add Heterogeneous Nodes to a Working Cluster
 
-This article explains how to add ARM architecture nodes with Kylin v10 sp2 operating system to an AMD architecture working cluster with CentOS 7.9 operating system.
+This page explains how to add ARM architecture nodes with Kylin v10 sp2 operating system to an AMD architecture working cluster with CentOS 7.9 operating system.
 
 !!! note
 
-    This article is only applicable to adding heterogeneous nodes to a working cluster created
+    This page is only applicable to adding heterogeneous nodes to a working cluster created
     using the DCE 5.0 platform in offline mode, excluding connected clusters.
 
 ## Prerequisites
@@ -28,13 +28,13 @@ Make sure you are logged into the bootstrap node! Also, make sure the __clusterC
 
 | CPU Architecture | Version | Download Link |
 | :--------------- | :------ | :------------ |
-| AMD64 | v0.10.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.10.0-amd64.tar> |
-| ARM64 | v0.10.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.10.0-arm64.tar> |
+| AMD64 | v0.18.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.18.0-amd64.tar> |
+| ARM64 | v0.18.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.18.0-arm64.tar> |
 
 After downloading, extract the offline package:
 
 ```bash
-tar -xvf offline-v0.10.0-arm64.tar
+tar -xvf offline-v0.18.0-arm64.tar
 ```
 
 #### ISO Offline Package (Kylin v10 sp2)
@@ -53,15 +53,15 @@ The [Kubean](https://github.com/kubean-io/kubean) project provides osPackage off
 
 | Operating System Version | Download Link |
 | :----------------------- | :------------ |
-| Kylin Linux Advanced Server release V10 (Sword) SP2 | <https://files.m.daocloud.io/github.com/kubean-io/kubean/releases/download/v0.5.2/os-pkgs-kylinv10-v0.5.2.tar.gz> |
+| Kylin Linux Advanced Server release V10 (Sword) SP2 | <https://github.com/kubean-io/kubean/releases/download/v0.16.3/os-pkgs-kylinv10-v0.16.3.tar.gz> |
 
 !!! note
 
     Check the specific version of the osPackage offline package in the __offline/sample/clusterConfig.yaml__ file of the offline image package.
 
-#### Importing Offline Packages to the Bootstrap Node
+#### Import Offline Packages to the Bootstrap Node
 
-Execute the import-artifact command:
+Run the import-artifact command:
 
 ```bash
 ./offline/dce5-installer import-artifact -c clusterConfig.yaml \
@@ -81,7 +81,7 @@ Execute the import-artifact command:
 
 After a successful import command execution, the offline package will be uploaded to Minio on the bootstrap node.
 
-### Adding Heterogeneous Worker Nodes
+### Add Heterogeneous Worker Nodes
 
 Make sure you are logged into the management node of the Global cluster in DCE 5.0.
 
@@ -232,4 +232,3 @@ To check the progress of the scaling task, you can view the logs of the correspo
 
 
 2. Click the newly added node to view details.
-
