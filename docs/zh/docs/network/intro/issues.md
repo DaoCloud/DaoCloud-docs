@@ -46,7 +46,6 @@
 
 https://github.com/kubernetes/kubernetes/pull/121919
 
-
 ### Service 的 endpoint 更新时，新 endpoint 的规则等到很久以后才生效
 
 **影响：**
@@ -60,7 +59,6 @@ https://github.com/kubernetes/kubernetes/pull/121919
 https://github.com/kubernetes/kubernetes/pull/122204
 
 ### nftables 模式下 LoadBalancerSourceRanges 无法正常工作的问题
-
 
 **建议：** 升级到 1.30.0
 
@@ -110,7 +108,7 @@ https://github.com/kubernetes-sigs/iptables-wrappers/tree/master
 | <v3.28.0    | 不处理                                             | 路由表未更新为使用新的父网卡，即使重新启动 felix 后，也无法清理旧的路由。 |
 | >=v3.28.0   | 当父设备发生更改时，VXLAN 管理器会重新创建路由表。 | 无                                                           |
 
-**建议：** 
+**建议：**
 
 更新到 v3.28 版本。
 
@@ -120,7 +118,7 @@ https://github.com/projectcalico/calico/pull/8279
 
 ### 集群 calico-kube-controllers 的缓存不同步，导致内存泄漏
 
-**建议：** 
+**建议：**
 
 更新到 v3.26.0 版本。
 
@@ -133,7 +131,7 @@ https://github.com/projectcalico/calico/pull/8279
 | <v3.28.0    | 不处理                   | 由于 `iptables --random-fully` 和 checksum 校验和计算不兼容，在内核 < 5.7，Pod 跨节点网络可能不通。 |
 | >=v3.28.0   | 默认禁用 checksum 计算。 | 无                                                           |
 
-**建议：** 
+**建议：**
 
 更新到 v3.28.0+ 的版本，较低版本可以使用 `ethtool -K tunl0 tx off`  命令手动关闭。
 
@@ -150,7 +148,7 @@ https://github.com/projectcalico/calico/pull/8031
 | <v3.26.0    | 仅支持需要手动指定，自动计算存在一定逻辑问题。 | 由于 iptables 模式选择错误，可能会导致 Service 网络异常。 |
 | >=v3.26.0   | 自动计算。                                     | 无                                                        |
 
-**建议：** 
+**建议：**
 
 更新到 v3.26.0+ 的版本，较低版本需要手动指定 `FELIX_IPTABLESBACKEND` 变量，可选值 NFT 或者 LEGACY。
 
@@ -252,15 +250,15 @@ https://github.com/spidernet-io/spiderpool/pull/3011
 
 #### statefulset 类型的 Pod 重启后，获取 IP 分配时，提示 IP 冲突
 
-由于 StatefulSet pod 重新启动，此时 GC scanAll 会释放之前的 IP 地址，因为系统认为 Pod UID 与 IPPool 记录的 IP 地址不同，从而提示冲突。
+由于 StatefulSet Pod 重新启动，此时 GC scanAll 会释放之前的 IP 地址，因为系统认为 Pod UID 与 IPPool 记录的 IP 地址不同，从而提示冲突。
 
 **参考：**
 
 https://github.com/spidernet-io/spiderpool/pull/2538
 
-#### 第三方控制器，如：RedisCluster 。Spiderpool 将无法识别他们，它们控制的 StatefulSet 其 Pod 无法固定 IP
+#### 第三方控制器，如：RedisCluster 。Spiderpool 无法识别他们，被它们控制的 StatefulSet 的 Pod 无法固定 IP
 
-RedisCluster -> StatefulSet -> Pod, 如果 Spiderpool 为其设置 SpiderSubnet 自动池注释，Pod 将无法成功启动。
+对于第三方控制器：RedisCluster -> StatefulSet -> Pod, 如果 Spiderpool 为其设置 SpiderSubnet 自动池注释，Pod 将无法成功启动。
 
 **参考：**
 
@@ -268,7 +266,7 @@ https://github.com/spidernet-io/spiderpool/pull/2370
 
 #### 空的 spidermultusconfig.spec, 将导致 spiderpool-controller Pod crash
 
-使用空的 spidermultusconfig.spec 创建 CR，webhook 校验成功，但没有相关的 network-attachment-definitions 生成，并且查看到 spiderpool-controller 出现了 panic。
+使用空的 spidermultusconfig.spec 创建 CR，webhook 校验成功，但没有相关的 network-attachment-definitions 生成，并且查看到 spiderpool-controller 出现了 panic 。
 
 **参考：**
 
@@ -292,15 +290,15 @@ https://github.com/spidernet-io/spiderpool/pull/2518
 
 #### 禁用 IP GC 功能，spiderpool-controller 组件将由于 readiness 健康检查失败而无法正确启动
 
-禁用 IP GC 功能，spiderpool-controller 组件将由于 readiness 健康检查失败而无法正确启动
+禁用 IP GC 功能，spiderpool-controller 组件将由于 readiness 健康检查失败而无法正确启动。
 
 **参考：**
 
 https://github.com/spidernet-io/spiderpool/pull/2532
 
-#### IPPool.Spec.MultusName 指定了 namespace ，与预期的 multusName 将亲和失败
+#### IPPool.Spec.MultusName 指定 namespace/multusName ，但由于对 namespace 的错误解析，导致亲和失败，无法找到与之关联的 multusName
 
-指定了 pod Annotation: `v1.multus-cni.io/default-network: kube-system/ipvlan-eth0` 它与 multusName 亲和失败了。但如果你指定 pod Annotation `v1.multus-cni.io/default-network: ipvlan-eth0` 它可以工作，但这并不符合预期。
+指定了 Pod Annotation: `v1.multus-cni.io/default-network: kube-system/ipvlan-eth0` ，由于 Spiderpool 对 namespace 的错误解析，导致查询 network-attachment-definitions 时使用了错误的 namespace ，导致找不到对应的 network-attachment-definitions ，从而无法成功创建 Pod 。
 
 **参考：**
 
