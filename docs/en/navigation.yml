@@ -878,27 +878,28 @@ nav:
                   - Delete Mesh Gateway: mspider/user-guide/gateway-instance/delete.md
                   - Gateway Management for External Mesh: mspider/user-guide/gateway-instance/gateway-in-external-mesh.md
               - Mesh Config:
-                  - Multicloud interconnection: mspider/user-guide/multicluster/cluster-interconnect.md
-                  - Multicloud config: mspider/user-guide/multicluster/traffic-branch.md
-                  - Istio resource management: mspider/user-guide/mesh-config/istio-resources.md
-                  - TLS key management: mspider/user-guide/mesh-config/tls-secret.md
-                  - Custom component resource: mspider/user-guide/mesh-config/custom-res.md
-                  - Component resoruce HPA: mspider/user-guide/mesh-config/component-hpa.md
+                  - Multicloud Interconnection: mspider/user-guide/multicluster/cluster-interconnect.md
+                  - Multicloud Config: mspider/user-guide/multicluster/traffic-branch.md
+                  - Istio Resource Management: mspider/user-guide/mesh-config/istio-resources.md
+                  - TLS Key Management: mspider/user-guide/mesh-config/tls-secret.md
+                  - Custom Component Resource: mspider/user-guide/mesh-config/custom-res.md
+                  - Component Resoruce HPA: mspider/user-guide/mesh-config/component-hpa.md
               - Test:
-                  - Join OCP to mesh: mspider/test/ocp.md
-                  - Openshift and mesh compatibility test: mspider/test/openshift.md
-                  - Multicloud deployment: mspider/user-guide/multicluster/multicluster-install.md
-                  - Multicloud principle: mspider/user-guide/multicluster/multi-cluster-net.md
-                  - Multicloud grayscale release: mspider/user-guide/multicluster/gray-scale-release.md
+                  - Join OCP to Mesh: mspider/test/ocp.md
+                  - Openshift and Mesh Compatibility Test: mspider/test/openshift.md
+                  - Multicloud Deployment: mspider/user-guide/multicluster/multicluster-install.md
+                  - Multicloud Principle: mspider/user-guide/multicluster/multi-cluster-net.md
+                  - Multicloud Grayscale Release: mspider/user-guide/multicluster/gray-scale-release.md
               - Troubleshoot:
                   - Index: mspider/troubleshoot/index.md
-                  - Cannot find cluster on mesh creation: mspider/troubleshoot/cannot-find-cluster.md
-                  - Always in creating on mesh creation: mspider/troubleshoot/always-in-creating.md
-                  - Created mesh is abnormal but cannot be deleted: mspider/troubleshoot/failed-to-delete.md
-                  - Failed to add cluster for managed mesh: mspider/troubleshoot/failed-to-add-cluster.md
-                  - istio-ingressgateway abnormal: mspider/troubleshoot/hosted-mesh-errors.md
-                  - Unable to unbind mesh space: mspider/troubleshoot/mesh-space-cannot-unbind.md
-                  - Issues on joining DCE 4.0: mspider/troubleshoot/dce4.0-issues.md
+                  - Cannot Find Cluster on Mesh Creation: mspider/troubleshoot/cannot-find-cluster.md
+                  - Always in Creating on Mesh Creation: mspider/troubleshoot/always-in-creating.md
+                  - Created Mesh is Abnormal But Cannot be Deleted: mspider/troubleshoot/failed-to-delete.md
+                  - Failed to Add Cluster for Managed Mesh: mspider/troubleshoot/failed-to-add-cluster.md
+                  - istio-ingressgateway Abnormal: mspider/troubleshoot/hosted-mesh-errors.md
+                  - Expired Cert for Managed Mesh APIServer: mspider/troubleshoot/hosted-apiserver-cert-expiration.md
+                  - Unable to Unbind Mesh Space: mspider/troubleshoot/mesh-space-cannot-unbind.md
+                  - Issues on Joining DCE 4.0: mspider/troubleshoot/dce4.0-issues.md
                   - Issue with Sidecar Configuration Activation: mspider/troubleshoot/sidecar.md
               - Best Practice:
                   - Restrict Service Access with Mesh: mspider/best-practice/use-egress-and-authorized-policy.md

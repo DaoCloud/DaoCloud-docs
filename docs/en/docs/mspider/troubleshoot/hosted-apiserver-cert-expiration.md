@@ -1,27 +1,27 @@
-# 托管网格 APIServer 证书过期处理办法
+# Handling Expired Certificates for Hosted Mesh APIServer
 
-## 问题现象
+## Problem Description
 
-为了安全起见，托管网格的证书的有效期仅为一年，我们需要定期重新生成证书以确保集群服务正常。
+For security reasons, the certificates for the hosted mesh are valid for only one year. We need to periodically regenerate these certificates to ensure that the cluster services operate normally.
 
-如果在界面发现网格状态异常，且查看控制面集群的 hosted-apiserver 日志，发现类似以下的信息：
+If you notice an abnormal mesh status on the interface and see logs in the hosted-apiserver of the control plane cluster with messages similar to the following:
 
 ```info
-x509：certificate has expired or is not yet valid
+x509: certificate has expired or is not yet valid
 MspiderHostedKubeAPICertExpiration
 ```
 
-则表示证书已过期或即将过期，需要更换。
+It indicates that the certificate has expired or is about to expire and needs to be replaced.
 
-## 影响范围
+## Impact Scope
 
-证书过期不会影响业务正常运行，但是会影响策略下发、应用新建或重启等操作，需要及时更换。
+Certificate expiration will not affect normal business operations but will impact policy issuance, application creation, or restart operations. Therefore, timely replacement is necessary.
 
-## 修复方案
+## Solution
 
-对于已经安装的网格，我们需要手动处理证书更新的过程。
+For an already installed mesh, we need to manually handle the certificate update process.
 
-首先，根据下面的 yaml，替换其中所有的 `MESH_ID` 为网格 ID（界面上的名字，如 hosted-demo）。
+First, replace all instances of `MESH_ID` in the following YAML with the mesh ID (the name on the interface, such as hosted-demo).
 
 ```yaml
 apiVersion: batch/v1
@@ -100,12 +100,13 @@ spec:
             kubectl patch secrets ${KUBECONFIG_SECRET} --type merge --patch-file /tmp/secret-patch.json
 ```
 
-其次，在托管网格控制面集群（可在网格列表中查看）中，创建这个 Job，等待执行成功。
-成功后需要重启 istio-system 命名空间下的 istiod、hosted-apiserver、etcd、ckube-remote 组件。
+Next, in the control plane cluster of the hosted mesh (which can be viewed in the mesh list),
+create this Job and wait for it to execute successfully. After successful execution,
+you need to restart the istiod, hosted-apiserver, etcd, and ckube-remote components in the istio-system namespace.
 
-**重启这些组件不会影响业务正常服务。**
+**Restarting these components will not affect normal business services.**
 
-## 验证
+## Verification
 
-- 界面网格状态
-- 删除创建网格相关资源能够正常工作
+- Check the mesh status on the interface.
+- Ensure that deleting and creating mesh-related resources work properly.
