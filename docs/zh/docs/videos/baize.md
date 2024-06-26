@@ -4,7 +4,7 @@
 
 ## 创建和使用数据集
 
-参阅[创建 Notebook](../baize/developer/dataset/create.md)文档。
+参阅[创建数据集](../baize/developer/dataset/create.md)文档。
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/dataset.mp4" preload="metadata" poster="images/dataset.jpg"></video>
