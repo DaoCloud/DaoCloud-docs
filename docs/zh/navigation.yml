@@ -321,6 +321,7 @@ nav:
                   - 使用 Volcano:
                     - 安装和使用 Volcano: kpanda/user-guide/gpu/volcano/volcano_user_guide.md
                     - 使用Volcano Gang Scheduler: kpanda/user-guide/gpu/volcano/volcano-gang-scheduler.md 
+                  - GPU 调度配置: kpanda/user-guide/gpu/gpu_scheduler_config.md
               - 最佳实践:
                   - 对 etcd 进行备份还原: kpanda/best-practice/etcd-backup.md
                   - 跨集群备份恢复MySQL: kpanda/best-practice/backup-mysql-on-nfs.md
