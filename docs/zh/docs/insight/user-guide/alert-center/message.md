@@ -30,13 +30,18 @@
 
 ## 钉钉
 
-1. 在左侧导航栏中点击 __告警中心__ -> __通知配置__ -> __钉钉__ ，点击 __添加群机器人__ ，添加一个或多个群机器人。
+1. 在左侧导航栏中点击 __告警中心__ -> __通知配置__ -> __钉钉__，点击 __添加群机器人__ ，添加一个或多个群机器人。
 
-    ![钉钉](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/notify04.png)
+    ![钉钉](../../images/dingding.png)
 
     有关钉钉群机器人的 URL，请参阅[钉钉官方文档：自定义机器人接入](https://open.dingtalk.com/document/robots/custom-robot-access)。
 
-2. 配置完成后自动返回通知列表，点击列表右侧的 __┇__ ，选择 __发送测试信息__ ，还可以编辑或删除群机器人。
+    !!! note
+
+        加签的方式是钉钉机器人与开发者双向进行安全认证，若在创建钉钉机器人时开启了加签，则需要在此处输入钉钉生成的密钥。
+        可参考[钉钉自定义机器人安全设置](https://open.dingtalk.com/document/robots/customize-robot-security-settings)。
+
+1. 配置完成后自动返回通知列表，点击列表右侧的 __┇__ ，选择 __发送测试信息__ ，还可以编辑或删除群机器人。
 
 ## Webhook
 
@@ -46,11 +51,15 @@
 
     有关 Webhook URL 及更多配置方式，请参阅 [webhook 文档](https://github.com/webhooksite/webhook.site)。
 
-2. 点击 __新建 Webhook__ ，添加一个或多个 Webhook。
+2. 点击 __新建 Webhook__，添加一个或多个 Webhook。
 
-    ![webhook](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/webhook01.png)
+    ![alt text](../../images/webhook.png)
 
-    有关 Webhook URL 及更多配置方式，请参阅 [webhook 文档](https://github.com/webhooksite/webhook.site)。
+    `HTTP Headers`：非必填，设置请求头。可以添加多个 Headers。
+
+    !!! note
+
+        有关 Webhook URL 及更多配置方式，请参阅 [webhook 文档](https://github.com/webhooksite/webhook.site)。
 
 3. 配置完成后自动返回通知列表，点击列表右侧的 __┇__ ，选择 __发送测试信息__ ，还可以编辑或删除 Webhook。
 

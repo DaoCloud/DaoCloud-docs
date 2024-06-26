@@ -4,6 +4,10 @@
 
 ## Insight server
 
+### 从 v0.26.x（或更低版本）升级到 v0.27.x 或更高版本
+
+在 v0.27.x 版本中将 vector 组件的开关单独抽出。故原有环境开启了 vector，那在升级 Insight Server 时，需要指定 `--set vector.enabled=true` 。
+
 ### 从 v0.19.x（或更低版本）升级到 0.20.x
 
 在升级 __Insight__ 之前，您需要执行以下命令手动删除 __jaeger-collector__ 和 __jaeger-query__ 部署：
