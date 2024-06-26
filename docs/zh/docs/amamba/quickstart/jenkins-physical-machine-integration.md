@@ -37,14 +37,13 @@
 kubectl get svc amamba-devops-server -n amamba-system
 
 NAME                   TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)            AGE
-amamba-devops-server   ClusterIP   10.233.45.104   <none>        80/TCP，15090/TCP   230d
-
-# 如果类型为ClusterIP 根据情况修改svc的类型(这个步骤是要确保jenkins可以正常和amamba-devops-server通信)
-# 如果jenkins没有部署在Global集群中则可能需要使用ghippo的gateway
+amamba-devops-server   ClusterIP   10.233.45.104   <none>        80/TCP,15090/TCP   230d
 ```
+要确保jenkins可以正常和amamba-devops-server通信，通过NodePort或LB暴露出来，然后host填对应ip。**(但这是不安全的，这个服务不适合直接暴露出去)**。
+
 把amamba-devops-server的地址填入到jenkins系统管理配置的Event Receiver输入框中可参考以下格式。
 ```text
-http://10.233.45.104:80/apis/internel.amamba.io/devops/pipeline/v1alpha1/webhooks/jenkins
+http://<hostIP:Port>/apis/internel.amamba.io/devops/pipeline/v1alpha1/webhooks/jenkins
 ```
 
 ### SonarQube
