@@ -10,8 +10,8 @@
 
 ## 操作步骤
 
-1. 进入 __可观测性__ 产品模块，
-2. 在左边导航栏选择 __链路追踪 -> 服务拓扑__。
+1. 进入 __可观测性__ 模块
+2. 在左边导航栏选择 __链路追踪 -> 服务拓扑__
 3. 在拓扑图中，您可按需执行以下操作：
 
     - 单击 __节点__，从右侧划出服务的详情，可查看服务的请求延时、吞吐率、错误率的指标。点击服务名称可跳转至对应服务的详情页。
@@ -32,12 +32,12 @@
 
 2. 当服务请求到 MySQL、PostgreSQL、Oracle Database 这三种数据库时，在拓扑图中可以看到请求的详细数据库类型。
 
-   ![alt text](../../images/service-map.png)
+   ![数据库细节](../../images/service-map.png)
 
 #### 开启虚拟节点
 
-1. . 更新 insight-server  chart 的 values，找到下图参数，将 `false` 改为 `true` 。
+1. 更新 insight-server chart 的 values，找到下图所示参数，将 `false` 改为 `true`。
 
-   ![map](../../images/servicemap.png)
+   ![拓扑图](../../images/servicemap.png)
 
 2. 在服务拓扑的显示设置中勾选 `虚拟服务` 即可。
