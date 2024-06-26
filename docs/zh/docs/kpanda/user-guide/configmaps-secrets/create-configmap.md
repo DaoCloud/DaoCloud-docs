@@ -58,7 +58,7 @@
         - 点击 __导入__ 可以从本地导入已有的文件，快速创建配置项。
         - 填写数据之后点击 __下载__ 可以将配置文件保存在本地。
 
-    ![创建配置项](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/configmap05.png)
+    ![创建配置项](../images/create-configmap.png)
 
 4. 创建完成后在配置项右侧点击更多可以，可以编辑 YAML、更新、导出、删除等操作。
 
