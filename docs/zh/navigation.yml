@@ -172,9 +172,9 @@ nav:
                     - 使用流水线实现代码扫描: amamba/quickstart/scan-with-pipeline.md
                     - 集成 Harbor 实现镜像安全扫描: amamba/quickstart/scan-with-harbor.md
                     - Jenkins 发布应用至虚拟机: amamba/user-guide/pipeline/cicd_vm.md
+                    - 集成部署在物理机/虚拟机上的 Jenkins: amamba/quickstart/jenkins-physical-machine-integration.md
                   - 灰度发布实践:
                     - 基于 Contour 的灰度发布: amamba/quickstart/contour-argorollout.md
-                 
       - 容器:
           - 容器管理:
               - 介绍:
@@ -327,6 +327,7 @@ nav:
                   - 使用 Volcano:
                     - 安装和使用 Volcano: kpanda/user-guide/gpu/volcano/volcano_user_guide.md
                     - 使用Volcano Gang Scheduler: kpanda/user-guide/gpu/volcano/volcano-gang-scheduler.md 
+                  - GPU 调度配置: kpanda/user-guide/gpu/gpu_scheduler_config.md
               - 最佳实践:
                   - 对 etcd 进行备份还原: kpanda/best-practice/etcd-backup.md
                   - 跨集群备份恢复MySQL: kpanda/best-practice/backup-mysql-on-nfs.md
@@ -832,6 +833,7 @@ nav:
                   - 自定义插件示例 anti: skoala/best-practice/envoy-extproc-anti-demo-go.md
                   - 自定义插件示例 crc32: skoala/best-practice/envoy-extproc-crc32-check-demo-go.md
                   - 自定义插件示例 conv: skoala/best-practice/envoy-extproc-method-conv-demo-go.md
+                  - 自定义插件示例 payloadlimit: skoala/best-practice/envoy-extproc-payloadlimit-demo-go.md
               - 故障排查:
                   - skoala-init的x-kubernets-validations报错: skoala/troubleshoot/auth-server.md
                   - Nacos 版本降级: skoala/troubleshoot/nacos.md                

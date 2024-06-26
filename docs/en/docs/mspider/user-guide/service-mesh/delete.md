@@ -27,6 +27,6 @@ before activating the __Delete__ button in the dialog box.
 
         ![Dedicated Mesh](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/deletemesh03.png)
 
-    - Delete Managed Mesh. Follow the prompts to disable mesh deletion protection, uninstall injected sidecars, clean up gateways, remove clusters under the mesh, and then confirm the deletion operation by entering the mesh name.
+    - Delete Hosted Mesh. Follow the prompts to disable mesh deletion protection, uninstall injected sidecars, clean up gateways, remove clusters under the mesh, and then confirm the deletion operation by entering the mesh name.
 
         ![Hosted Mesh](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/deletemesh04.png)

@@ -23,7 +23,7 @@ When performing an inspection, you can choose to inspect multiple clusters in ba
 
     1. Click __Cluster Inspection__ in the top-level navigation bar of the Container Management module, then click __Inspection__ on the right side of the page.
 
-        ![start](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/inspect04.png)
+        ![start](../images/inspection-start.png)
 
     2. Select the clusters you want to inspect, then click __OK__ at the bottom of the page.
 
@@ -37,4 +37,4 @@ When performing an inspection, you can choose to inspect multiple clusters in ba
     1. Go to the Cluster Inspection page.
     2. Click the more options button ( __ⵗ__ ) on the right of the corresponding inspection configuration, then select __Inspection__ from the popup menu.
 
-        ![basic](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/inspect06.png)
+        ![basic](../images/inspection-start-alone.png)

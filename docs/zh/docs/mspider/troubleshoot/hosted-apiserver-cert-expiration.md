@@ -4,7 +4,14 @@
 
 为了安全起见，托管网格的证书的有效期仅为一年，我们需要定期重新生成证书以确保集群服务正常。
 
-如果在界面发现网格状态异常，且查看控制面集群的 hosted-apiserver 日志，有类似 `x509：certificate has expired or is not yet valid` ，或者收到 `MspiderHostedKubeAPICertExpiration` 的告警，表示证书已过期或即将过期，需要更换。
+如果在界面发现网格状态异常，且查看控制面集群的 hosted-apiserver 日志，发现类似以下的信息：
+
+```info
+x509：certificate has expired or is not yet valid
+MspiderHostedKubeAPICertExpiration
+```
+
+则表示证书已过期或即将过期，需要更换。
 
 ## 影响范围
 
@@ -14,7 +21,7 @@
 
 对于已经安装的网格，我们需要手动处理证书更新的过程。
 
-首先，根据下面的 yaml，替换其中所有的 `MESH_ID` 为网格 ID（界面上的名字，如 hosted-demo）
+首先，根据下面的 yaml，替换其中所有的 `MESH_ID` 为网格 ID（界面上的名字，如 hosted-demo）。
 
 ```yaml
 apiVersion: batch/v1
@@ -94,11 +101,11 @@ spec:
 ```
 
 其次，在托管网格控制面集群（可在网格列表中查看）中，创建这个 Job，等待执行成功。
-成功后需要重启 istio-system 命名空间下的 istiod, hosted-apiserver, etcd, ckube-remote 组件。
+成功后需要重启 istio-system 命名空间下的 istiod、hosted-apiserver、etcd、ckube-remote 组件。
 
 **重启这些组件不会影响业务正常服务。**
 
 ## 验证
 
-- 界面网格状态。
-- 删除创建网格相关资源能够正常工作。
+- 界面网格状态
+- 删除创建网格相关资源能够正常工作
