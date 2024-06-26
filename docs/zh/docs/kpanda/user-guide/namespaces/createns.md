@@ -36,21 +36,3 @@
 4. 点击 __确定__ ，完成命名空间的创建。在命名空间列表右侧，点击 __⋮__ ，可以从弹出菜单中选择更新、绑定/解绑工作空间、配额管理、删除等更多操作。
 
     ![更多操作](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/ns03.png)
-
-### YAML 创建
-
-1. 在 __集群列表__ 页面点击目标集群的名称。
-
-    ![集群详情](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/crd01.png)
-
-2. 在左侧导航栏点击 __命名空间__ ，然后点击页面右侧的 __YAML 创建__ 按钮。
-
-    ![点击创建](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/ns00.png)
-
-3. 输入或粘贴事先准备好的 YAML 内容，或者从本地直接导入已有的 YAML 文件。
-
-    > 输入 YAML 内容后，点击 __下载__ 可以将该 YAML 文件保存到本地。
-
-    ![点击创建](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/ns04.png)
-
-4. 最后在弹框右下角点击 __确定__ 即可。

@@ -36,21 +36,3 @@ Supports easy creation of namespaces through forms, and quick creation of namesp
 4. Click __OK__ to complete the creation of the namespace. On the right side of the namespace list, click __⋮__ to select update, bind/unbind workspace, quota management, delete, and more from the pop-up menu.
 
     ![More Operations](../images/ns03.png)
-
-### Create from YAML
-
-1. On the __Cluster List__ page, click the name of the target cluster.
-
-    ![Cluster Details](../images/crd01.png)
-
-2. Click __Namespace__ in the left navigation bar, then click the __YAML Create__ button on the right side of the page.
-
-    ![Click to Create](../images/ns00.png)
-
-3. Enter or paste the prepared YAML content, or directly import an existing YAML file locally.
-
-    > After entering the YAML content, click __Download__ to save the YAML file locally.
-
-    ![Click to Create](../images/ns04.png)
-
-4. Finally, click __OK__ in the lower right corner of the pop-up box.
