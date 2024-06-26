@@ -153,3 +153,151 @@ Upgrade to version v3.26.0+. For lower versions, manually specify the `FELIX_IPT
 **Reference:**
 
 https://github.com/projectcalico/calico/pull/7111
+
+## Spiderpool
+
+**Recommendations:**
+
+If you encounter the following problems, please try to update Spiderpool to a higher version to solve them.
+
+### Known issues in version 0.9
+
+#### The spidercoordinator status is not as expected
+
+If the cluster CIDR information failed to be obtained, we should update its status to NotReady, which will prevent the normal creation of Pods. Otherwise, Pods will run with incorrect CIDRs, which will cause network connectivity problems.
+
+**References:**
+
+https://github.com/spidernet-io/spiderpool/pull/2929
+
+#### values.multus.multusCNI.uninstall function does not take effect
+
+After Values.multus.multusCNI.uninstall is set to true, after uninstalling Spiderpool, it is found that multus related resources still exist and they are not deleted as expected.
+
+**Reference:**
+
+https://github.com/spidernet-io/spiderpool/pull/2974
+
+#### When kubeadm-config is missing, serviceCIDR cannot be obtained from kubeControllerManager Pod
+
+In some scenarios, kubeadm is not used to create a cluster, and there may be no kubeadm-config configMap. It will try to obtain it from kubeControllerManager. However, due to a bug, serviceCIDR cannot be obtained from kubeControllerManager Pod, resulting in the failure of Spidercoordinator status update.
+
+**Reference:**
+
+https://github.com/spidernet-io/spiderpool/pull/3020
+
+#### SpiderCoordinator CRD adds a new property TxQueueLen, which will cause panic when upgrading
+
+Spiderpool v0.9.0 adds a new property `TxQueueLen` to the SpiderCoordinator CRD, but it does not have a default value during the upgrade operation, which will cause panic. You need to use it and treat it as a default value of 0.
+
+**Reference:**
+
+https://github.com/spidernet-io/spiderpool/pull/3118
+
+#### spidercoordinator returns empty serviceCIDR
+
+Due to different cluster deployment methods, there are two types of CIDRs recorded in the cluster kube-controller-manager Pod: `Spec.Containers[0].Command` and `Spec.Containers[0].Args`. For example, the RKE2 cluster is `Spec.Containers[0].Args` instead of `Spec.Containers[0].Command`, and `Spec.Containers[0].Command` is hardcoded in the original logic, resulting in abnormal judgment, returning an empty serviceCIDR, and failing to create a Pod.
+
+**References:**
+
+https://github.com/spidernet-io/spiderpool/pull/3211
+
+### Known Issues in 0.8
+
+#### ifacer cannot create bond using vlan 0
+
+When using vlan 0, creating a bond via ifacer will fail.
+
+**References:**
+
+https://github.com/spidernet-io/spiderpool/pull/2639
+
+#### Disable multus feature, still create multus CR resource
+
+When installing, multus feature is disabled, still create multus CR resource, which is not as expected.
+
+**Reference:**
+
+https://github.com/spidernet-io/spiderpool/pull/2756
+
+#### spidercoordinator cannot detect gateway connections in Pod's netns
+
+Currently spidercoordinator uses plugins to use errgroup to concurrently check gateway reachability and IP conflicts to improve detection speed. Since each operating system thread can have a different network namespace and Go's thread scheduling is highly variable, the caller cannot guarantee to set any specific namespace, but when starting a goroutine in netns.Do, the Go runtime cannot guarantee that the code will be executed in the specified network namespace, so it is necessary to modify Go's errgroup method: manually switch to the target network namespace when starting the goroutine, and return to the original network namespace after execution, so as to ensure that gateway reachability and IP conflicts can be checked.
+
+**Reference:**
+
+https://github.com/spidernet-io/spiderpool/pull/2738
+
+#### When kubevirt fixed IP function is turned off, spiderpool-agent Pod crashes
+
+When kubevirt fixed IP function is turned off, spiderpool-agent Pod will crash and fail to run, affecting the overall IPAM function.
+
+**Reference:**
+
+https://github.com/spidernet-io/spiderpool/pull/2971
+
+#### SpiderIPPool resource does not inherit the gateway and route attributes of SpiderSubnet
+
+If you create a SpiderSubnet resource first, and then create a SpiderIPPool resource for the corresponding subnet, SpiderIPPool will inherit the gateway and routes of SpiderSubnet. However, if you first create an isolated SpiderIPPool and then create the corresponding SpiderSubnet resource; then the SpiderIPPool resource will not inherit the SpiderSubnet attributes.
+
+**Reference:**
+
+https://github.com/spidernet-io/spiderpool/pull/3011
+
+### Known issues in version 0.7
+
+#### Statefulset Pod cannot be restarted due to IP conflict
+
+Since the StatefulSet Pod is restarted, GC scanAll will release the previous IP address at this time, because the system believes that the Pod UID is different from the IP address recorded by IPPool, thus prompting a conflict.
+
+**Reference:**
+
+https://github.com/spidernet-io/spiderpool/pull/2538
+
+#### Third-party controller support issues
+
+For third-party controllers: RedisCluster -> StatefulSet -> Pod, if Spiderpool sets the SpiderSubnet automatic pool annotation for it, the Pod will not be able to start successfully.
+
+**Reference:**
+
+https://github.com/spidernet-io/spiderpool/pull/2370
+
+#### Empty spidermultusconfig.spec will cause spiderpool-controller Pod crash
+
+Use empty spidermultusconfig.spec to create CR, webhook verification is successful, but no related network-attachment-definitions are generated, and spiderpool-controller panics.
+
+**Reference:**
+
+https://github.com/spidernet-io/spiderpool/pull/2444
+
+#### Wrong overlayPodCIDR is obtained in cilium mode
+
+Spidercoordinator auto mode obtains the wrong `podCIDRType` type, and the update of spidercoordinator status does not meet expectations; creating Pods may cause network problems.
+
+**Reference:**
+
+https://github.com/spidernet-io/spiderpool/pull/2434
+
+#### IPAM allocation is blocked, affecting the performance of IP allocation
+
+An IPPool with 1,000 IP addresses is created, and a Deployment with 1,000 replicas is created. After a certain number of IP addresses are allocated, it is observed that the allocation performance has dropped significantly, and even IP addresses cannot be allocated anymore. A Pod cannot start normally without an IP address. The Pod has been recorded in the actual IPPool resource and its IP has been allocated, but the Pod corresponding to the SpiderEndpoint does not exist.
+
+**Reference:**
+
+https://github.com/spidernet-io/spiderpool/pull/2518
+
+#### Disabling IP GC function, spiderpool-controller cannot start correctly
+
+Disable IP GC function, spiderpool-controller component will not start correctly due to readiness health check failure.
+
+**Reference:**
+
+https://github.com/spidernet-io/spiderpool/pull/2532
+
+#### IPPool.Spec.MultusName does not resolve the namespace correctly
+
+Specified Pod Annotation: `v1.multus-cni.io/default-network: kube-system/ipvlan-eth0`, due to Spiderpool's incorrect parsing of namespace, the wrong namespace is used when querying network-attachment-definitions, resulting in the failure to find the corresponding network-attachment-definitions, and thus the Pod cannot be successfully created.
+
+**Reference:**
+
+https://github.com/spidernet-io/spiderpool/pull/2514
