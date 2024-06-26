@@ -54,3 +54,7 @@ Insight 默认采集节点日志、容器日志以及 kubernetes 审计日志。
 - 支持将日志查询结果导出为 **.txt** 或 **.csv** 格式。
 
 ![log](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/logexport.png){ width="500"}
+
+!!! note
+
+    若需指定不采集某一些容器组的日志，可参考：[容器日志黑名单](../../faq/ignore-pod-log-collect.md)。

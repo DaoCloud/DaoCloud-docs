@@ -732,6 +732,7 @@ nav:
                   - 通过Sidecar采集容器日志: insight/reference/tailing-sidecar.md
                   - 自定义探测方式: insight/user-guide/collection-manag/probe-module.md
                   - 指标抓取说明: insight/user-guide/collection-manag/metric-collect.md
+                  - 可观性参考指标说明: insight/reference/uesd-metric-in-insight.md
               - 兼容性测试:
                   - Kubernetes 兼容性测试: insight/compati-test/k8s-compatibility.md
                   - Rancher 兼容性测试: insight/compati-test/rancher-compatibility.md
@@ -742,6 +743,7 @@ nav:
                   - 链路采集排障指南: insight/best-practice/debug-trace.md
                   - 使用Insight定位异常: insight/best-practice/find_root_cause.md
                   - ES 数据塞满时如何操作: insight/faq/expand-once-es-full.md
+                  - 容器日志黑名单: insight/faq/ignore-pod-log-collect.md
           - 微服务引擎:
               - 介绍:
                   - 索引: skoala/intro/index.md
