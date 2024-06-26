@@ -132,7 +132,7 @@ First, go to the mesh management page and click __Create Mesh__ :
 
 The specific parameters for creating a mesh are shown in the image:
 
-1. Select "Managed Mesh" as the mesh mode. In a multicloud environment, only managed mesh mode can manage multiple clusters.
+1. Select "Hosted Mesh" as the mesh mode. In a multicloud environment, only hosted mesh mode can manage multiple clusters.
 2. Enter a unique mesh name.
 3. Select a pre-selected mesh version that meets the prerequisites.
 4. Choose the cluster where the hosted control plane is located.

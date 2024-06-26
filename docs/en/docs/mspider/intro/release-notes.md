@@ -111,7 +111,7 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 #### Optimization
 
 - **Optimized** the algorithm mechanism for the service list state and diagnostic state to ensure consistency between diagnostic results and status fields.
-- **Optimized** the automatic discovery strategy for managed mesh services to display any service from any cluster with the `mspider.io/managed` label.
+- **Optimized** the automatic discovery strategy for hosted mesh services to display any service from any cluster with the `mspider.io/managed` label.
 
 #### Fixes
 
@@ -306,7 +306,7 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 
 #### Removals
 
-- **Removed** 443 port from service **istiod-[meshID]-hosted-lb** in managed mesh mode.
+- **Removed** 443 port from service **istiod-[meshID]-hosted-lb** in hosted mesh mode.
 
 ## 2023-05-31
 
@@ -463,7 +463,7 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 - **Fixed** an issue where binding a Mesh to a workspace service would fail (displaying success in the UI).
 - **Fixed** an issue where detached namespaces existed in the virtual cluster due to anomalies, adding self-check and cleanup behavior on mcpc-controller startup.
 - **Fixed** an issue where updating the mesh via the controller caused the API to fail to deliver mesh configurations.
-- **Fixed** an issue where the TargetPort of ServicePort was not set correctly when creating a managed mesh.
+- **Fixed** an issue where the TargetPort of ServicePort was not set correctly when creating a hosted mesh.
 - **Fixed** an issue with `GlobalMesh.Status.MeshVersion` being incorrectly overwritten.
 - **Fixed** an issue where mcpc-controller could not enable debug mode.
 - **Fixed** an issue where mcpc-controller could not trigger cluster deletion events.
