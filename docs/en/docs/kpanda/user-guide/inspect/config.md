@@ -19,7 +19,7 @@ Here's how to create an inspection configuration.
 
 2. On the right side of the page, click __Inspection Configuration__ .
 
-    ![create](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/inspect02.png)
+    ![create](../images/inspection-home.png)
 
 3. Fill in the inspection configuration based on the following instructions, then click __OK__ at the bottom of the page.
 
@@ -29,14 +29,15 @@ Here's how to create an inspection configuration.
     - Number of Inspection Records to Retain: Specifies the maximum number of inspection records to be retained, including all inspection records for each cluster.
     - Parameter Configuration: The parameter configuration is divided into three parts: cluster level, node level, and container group level. You can enable or disable specific inspection items based on your requirements.
 
-        ![basic](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/inspect03.png)
+    ![basic](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kpanda/images/inspect03.png)
 
-After creating the inspection configuration, it will be automatically displayed in the inspection configuration list. Click the more options button on the right of the configuration to immediately perform an inspection or modify the inspection configuration.
+After creating the inspection configuration, it will be automatically displayed in the inspection configuration list. Click the more options button on the right of the configuration to immediately perform an inspection, modify the inspection configuration or delete the inspection configuration and reports.
 
 - Click __Inspection__ to perform an inspection once based on the configuration.
 - Click __Inspection Configuration__ to modify the inspection configuration.
+- Click __Delete__ to delete the inspection configuration and reports.
 
-    ![basic](../../images/inspect06.png)
+    ![basic](../images/inspection-list-more.png)
 
 !!! note
 
