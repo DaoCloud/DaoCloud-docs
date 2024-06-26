@@ -38,7 +38,8 @@
 
     !!! note
 
-        加签的方式是钉钉机器人与开发者双向进行安全认证，若在创建钉钉机器人时开启了加签，则需要在此处输入钉钉生成的密钥。可参考：[钉钉自定义机器人安全设置](https://open.dingtalk.com/document/robots/customize-robot-security-settings)
+        加签的方式是钉钉机器人与开发者双向进行安全认证，若在创建钉钉机器人时开启了加签，则需要在此处输入钉钉生成的密钥。
+        可参考[钉钉自定义机器人安全设置](https://open.dingtalk.com/document/robots/customize-robot-security-settings)。
 
 1. 配置完成后自动返回通知列表，点击列表右侧的 __┇__ ，选择 __发送测试信息__ ，还可以编辑或删除群机器人。
 
@@ -54,13 +55,13 @@
 
     ![alt text](../../images/webhook.png)
 
-    - `HTTP Headers`: 非必填，设置请求头。可以添加多个 Headers。
+    `HTTP Headers`：非必填，设置请求头。可以添加多个 Headers。
 
     !!! note
 
         有关 Webhook URL 及更多配置方式，请参阅 [webhook 文档](https://github.com/webhooksite/webhook.site)。
 
-3. 配置完成后自动返回通知列表，点击列表右侧的 __┇__ ，选择 __发送测试信息_ ，还可以编辑或删除 Webhook。
+3. 配置完成后自动返回通知列表，点击列表右侧的 __┇__ ，选择 __发送测试信息__ ，还可以编辑或删除 Webhook。
 
 ## 短信组
 
