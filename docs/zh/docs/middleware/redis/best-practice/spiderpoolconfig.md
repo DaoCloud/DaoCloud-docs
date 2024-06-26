@@ -7,15 +7,13 @@
 
 ## 前提
 
-DCE 5.0 集群内已部署 __multus-underlay__  和 __spiderpool__ 。
+DCE 5.0 集群内已部署 __multus-underlay__  和 __spiderpool__。
 
 ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/spiderpool09.png)
 
-## 步骤
+## 环境准备
 
-### 环境准备
-
-1. 确认macvlan部署情况。执行命令，查看部署状态，可见类似如下图中的返回信息
+1. 确认 macvlan 部署情况。执行命令，查看部署状态，可见类似如下图中的返回信息
 
     ```shell
     kubectl get network-attachment-definitions -A
@@ -37,11 +35,11 @@ DCE 5.0 集群内已部署 __multus-underlay__  和 __spiderpool__ 。
 
         Redis 仅可以使用现有子网及 IP 池，请务必先执行手工创建操作。
 
-### Redis 实例配置
+## Redis 实例配置
 
-#### 集群模式
+### 集群模式
 
-1. 修改 redis 实例的 __CR__ （rediscluster），在 metadata 字段下添加以下内容：
+1. 修改 redis 实例的 __CR__（rediscluster），在 metadata 字段下添加以下内容：
 
     ```yaml
     annotations:
@@ -59,9 +57,9 @@ DCE 5.0 集群内已部署 __multus-underlay__  和 __spiderpool__ 。
 
     ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/spiderpool05.png)
 
-#### 哨兵模式
+### 哨兵模式
 
-1. 更新 redis 实例 __CR__ （redisfailover），分别在 __spec.redis__  和 __spec.sentinel__  字段添加以下内容：
+1. 更新 redis 实例 __CR__（redisfailover），分别在 __spec.redis__  和 __spec.sentinel__  字段添加以下内容：
 
     ```yaml
     podAnnotations:
@@ -71,7 +69,7 @@ DCE 5.0 集群内已部署 __multus-underlay__  和 __spiderpool__ 。
 
     !!! note
 
-        cilium：需要为 __redis-operator__  的 __deployment__  添加 __annotations__ ，
+        cilium：需要为 __redis-operator__  的 __deployment__  添加 __annotations__，
         字段位置为 __spec.template.metadata.annotations__
 
         calico：无需更新 __redis-operator__
@@ -85,3 +83,12 @@ DCE 5.0 集群内已部署 __multus-underlay__  和 __spiderpool__ 。
 3. 完成配置后可从集群外部访问节点验证配置有效性，能成功访问。
 
     ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/spiderpool08.png)
+
+!!! note "注意事项"
+
+    Reids 哨兵模式中的工作负载 `updateStrategy` 为 `OnDelete` 时，
+    更新 CR 之后不会立即删除旧版本的 Pod，需要手动去重启 Pod，重启 Pod 即可生效。
+
+- 下图为更新 CR 后未更新的数据截图：
+
+    ![cr-pod](../images/ippool-pod-not-restart.png)
