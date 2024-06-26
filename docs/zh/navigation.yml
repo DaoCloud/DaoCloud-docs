@@ -164,11 +164,17 @@ nav:
                   - 流水线相关问题: amamba/faq/faq-jenkins.md
                   - GitOps 相关问题: amamba/faq/faq-gitops.md
               - 最佳实践:
-                  - 流水线+ GitOps 实现 CI/CD: amamba/quickstart/argocd-jenkins.md
-                  - 使用流水线实现代码扫描: amamba/quickstart/scan-with-pipeline.md
-                  - 集成 Harbor 实现镜像安全扫描: amamba/quickstart/scan-with-harbor.md
-                  - 基于 Contour 的灰度发布: amamba/quickstart/contour-argorollout.md
-                  - Jenkins 发布应用至虚拟机: amamba/user-guide/pipeline/cicd_vm.md
+                  - GitOps 实践:
+                    - 流水线+ GitOps 实现 CI/CD: amamba/quickstart/argocd-jenkins.md
+                    - 基于 GitOps 在托管网格下的工作集群中部署 istio 相关资源: amamba/quickstart/istio_argocd.md
+                    - 基于 GitOps 在托管网格下的工作集群中进行灰度发布: amamba/quickstart/istio_argocd_rollout.md
+                  - CI 实践:
+                    - 使用流水线实现代码扫描: amamba/quickstart/scan-with-pipeline.md
+                    - 集成 Harbor 实现镜像安全扫描: amamba/quickstart/scan-with-harbor.md
+                    - Jenkins 发布应用至虚拟机: amamba/user-guide/pipeline/cicd_vm.md
+                  - 灰度发布实践:
+                    - 基于 Contour 的灰度发布: amamba/quickstart/contour-argorollout.md
+                 
       - 容器:
           - 容器管理:
               - 介绍:
