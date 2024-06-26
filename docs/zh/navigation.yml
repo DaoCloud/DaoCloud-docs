@@ -955,12 +955,17 @@ nav:
                       - 基本概念: middleware/mysql/intro/concepts.md
                       - Release Notes: middleware/mysql/release-notes.md
                   - 快速入门:
-                      - 创建 MySQL: middleware/mysql/user-guide/create.md
-                      - 创建 MySQL MGR 实例: middleware/mysql/user-guide/create-mgr.md
-                      - 更新 MySQL: middleware/mysql/user-guide/update.md
-                      - 删除 MySQL: middleware/mysql/user-guide/delete.md
+                      - 实例生命周期:
+                          - 创建 MySQL: middleware/mysql/user-guide/create.md
+                          - 创建 MySQL MGR 实例: middleware/mysql/user-guide/create-mgr.md
+                          - 更新 MySQL: middleware/mysql/user-guide/update.md
+                          - 删除 MySQL: middleware/mysql/user-guide/delete.md
                       - 查看 MySQL 日志: middleware/mysql/user-guide/logs.md
                       - 实例拓扑: middleware/mysql/user-guide/instancemap.md
+                      - 数据备份:
+                          - 备份配置管理: middleware/mysql/user-guide/backup-restore/backup-config.md
+                          - 自动备份: middleware/mysql/user-guide/backup-restore/auto-backup.md
+                          - 手动备份: middleware/mysql/user-guide/backup-restore/manual-backup.md
                   - 最佳实践:
                       - MySQL 跨集群同步: middleware/mysql/best-practice/crossclusterssync.md
                       - MySQL 归档方案: middleware/mysql/best-practice/mysql-pt-archiver.md
