@@ -901,6 +901,8 @@ nav:
                   - Unable to Unbind Mesh Space: mspider/troubleshoot/mesh-space-cannot-unbind.md
                   - Issues on Joining DCE 4.0: mspider/troubleshoot/dce4.0-issues.md
                   - Issue with Sidecar Configuration Activation: mspider/troubleshoot/sidecar.md
+                  - Sidecar Uses a Large Amount of Memory: mspider/troubleshoot/sidecar-memory-err.md
+                  - Unknown Cluster Exists in List: mspider/troubleshoot/cluster-already-exist.md
               - Best Practice:
                   - Restrict Service Access with Mesh: mspider/best-practice/use-egress-and-authorized-policy.md
                   - Support for Custom Workload Types: mspider/best-practice/use-custom-workloads.md
