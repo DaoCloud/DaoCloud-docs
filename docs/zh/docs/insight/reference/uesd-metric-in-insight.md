@@ -1,4 +1,4 @@
-# 可观性参考指标说明
+# Insight 参考指标说明
 
 本文中的指标是基于社区的 kube-prometheus 的基础之上整理而成。
 目前涵盖了 Cluster、Node、Namespace、Workload 等多个层面的指标。
