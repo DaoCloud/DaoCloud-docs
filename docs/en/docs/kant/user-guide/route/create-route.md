@@ -65,6 +65,6 @@ Follow these steps:
 
 2. Click the __Remove__ button on the right side of the specific message route.
 
-3. Click __Confirm__ to delete it successfully and return to the message route list page.
+3. Click __OK__ to delete it successfully and return to the message route list page.
 
     ![Delete Routes](../images/create-route-05.png)

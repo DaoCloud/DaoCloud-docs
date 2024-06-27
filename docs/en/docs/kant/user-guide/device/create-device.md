@@ -75,7 +75,7 @@ Follow these steps to create an end device:
 
     ![TCP](../images/create-device-06.png)
 
-6. Confirm the information and click __Confirm__ if the configured information is correct to complete the device creation.
+6. Confirm the information and click __OK__ if the configured information is correct to complete the device creation.
 
     ![Confirm Creation](../images/create-device-07.png)
 
