@@ -61,7 +61,7 @@
 
 ### 使用 reindex 迁移单个索引
 
-    - 在 DCE5.0 es 执行以下命令：
+- 在 DCE5.0 es 执行以下命令：
 
     ```bash
     POST _reindex
@@ -81,7 +81,7 @@
     }
     ```
 
-    - 迁移完成后，在 DCE5.0 es 中查询迁移的索引数据。
+- 迁移完成后，在 DCE5.0 es 中查询迁移的索引数据。
 
     ```shell
     GET _cat/indices/test_data1
@@ -91,24 +91,24 @@
 
 ### 使用 reindex 迁移多个索引
 
-    ```shell
-    #!/bin/bash
-    for index in 2 3 4; do
-      curl -H "Content-Type: application/json" -k -u elastic:'m5!586LM33Hz0qf' -XPOST "https://10.6.178.179:30486/_reindex?pretty" -d '{
-        "source": {
-          "remote": {
-            "host": "http://172.30.120.85:9200",
-            "username": "elastic",
-            "password": "root123!"
-          },
-          "index": "test_data'"$index"'"
-        },
-        "dest": {
-          "index": "test_data'"$index"'"
-        }
-      }'
-    done
-    ```
+```shell
+#!/bin/bash
+for index in 2 3 4; do
+  curl -H "Content-Type: application/json" -k -u elastic:'m5!586LM33Hz0qf' -XPOST "https://10.6.178.179:30486/_reindex?pretty" -d '{
+    "source": {
+      "remote": {
+        "host": "http://172.30.120.85:9200",
+        "username": "elastic",
+        "password": "root123!"
+      },
+      "index": "test_data'"$index"'"
+    },
+    "dest": {
+      "index": "test_data'"$index"'"
+    }
+  }'
+done
+```
 
 ### 使用异步 reindex 迁移数据
 
@@ -135,7 +135,7 @@
 
 2. 执行完成后，命令行中会返回以下数据：
   
-    ```shell
+    ```json
     {
       "task" : "GxbeiC6NT3apWh6potbpkA:38152"
     }
