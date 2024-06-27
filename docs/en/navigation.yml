@@ -75,6 +75,7 @@ nav:
                   - Fix CVE-2024-21626: install/best-practices/cve-20240-21626.md
                   - Disk Limit in Docker-based K8s Cluster: install/best-practices/docker-storage.md
                   - Cluster Parameters at Scale: install/best-practices/large-deployments-par.md
+                  - Configure Extended Parameters: install/best-practices/extend-params.md
               - Installer Release Notes: install/release-notes.md
           - Best Practices: dce/bphome.md
       - Workbench:
