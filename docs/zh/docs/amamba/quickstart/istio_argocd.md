@@ -11,9 +11,9 @@
 
 ### 操作步骤
 
-1. 前往`服务网格`，参考[创建托管网格](../../mspider/user-guide/service-mesh/README.md)
+1. 前往 **服务网格** ，参考[创建托管网格](../../mspider/user-guide/service-mesh/README.md)
 
-2. 控制面入口方式选择 `负载均衡`，其余默认
+2. 控制面入口方式选择 **负载均衡** ，其余默认
 
     ![image5](../images/istio1.png)
 
@@ -48,15 +48,14 @@
             kind: Gateway
             resource: gateways
             version: v1alpha3   
-
     ```
 
 2. 如果当前的`服务网格`版本为 v0.26.0，需要再进行一些手动操作，才可以正常同步 `gateway` 资源。
 
-    a.  在全局管理（Global）集群，在命名空间 `mspider-system` 下的 comfigmap 编辑名称为 `mspider-mcpc` 的 YAML：
+    - 在全局管理（Global）集群，在命名空间 `mspider-system` 下的 ConfiMap 编辑名称为 `mspider-mcpc` 的 YAML：
 
     ```yaml
-        # 添加如下信息
+    # 添加如下信息
     sync_istio_resources:
     - group: networking.istio.io
       kind: VirtualService
@@ -72,7 +71,7 @@
       version: v1alpha3
     ```
 
-     b.  在全局管理（Global）集群，在命名空间 `mspider-system` 下的 comfigmap 编辑名称为 `mspider-mcpc-ckube-remote` 的 YAML：
+    -  在全局管理（Global）集群，在命名空间 `mspider-system` 下的 ConfigMap 编辑名称为 `mspider-mcpc-ckube-remote` 的 YAML：
 
     ```yaml
     # 添加如下信息        
@@ -94,9 +93,9 @@
 
     !!! note
 
-        服务网格低于 v0.26.0 不支持该能力，大于 v0.26.0 无需操作此步骤
+        服务网格低于 v0.26.0 不支持该能力，大于 v0.26.0 无需操作此步骤。
 
-3. 前往托管网格的 host 集群，在命名空间 `istio-system` -> `无状态工作负载` 下选择重启资源 `mspider-mcpc-mcpc-controller`：
+3. 前往托管网格的 host 集群，在命名空间 `istio-system` -> **无状态工作负载** 下选择重启资源 **mspider-mcpc-mcpc-controller** ：
 
     ![image3](../images/istio·.png)
 
@@ -106,21 +105,22 @@
 
 本演示示例仓库地址：https://github.com/amamba-io/rollout-examples
 
-其中 `dubbo3-consumer` 和 `dubbo3-provider`两个服务有关联关系，访问 dubbo3-consumer 的 /hello 接口，dubbo3-consumer 会将请求转发给 dubbo3-provider。
+其中 `dubbo3-consumer` 和 `dubbo3-provider` 两个服务有关联关系，访问 dubbo3-consumer 的 /hello 接口，dubbo3-consumer 会将请求转发给 dubbo3-provider。
 
 ### 操作步骤
 
-1. 在 `GitOps`，[创建 gitops 应用](../user-guide/gitops/create-argo-cd.md)，其中仓库地址：`https://github.com/amamba-io/rollout-examples`，路径设置为 `rollouts/v1`，集群/命名空间选择工作集群下的命名空间即可。
+1. 在 `GitOps`，[创建 gitops 应用](../user-guide/gitops/create-argo-cd.md)，
+   其中仓库地址：`https://github.com/amamba-io/rollout-examples`，路径设置为 `rollouts/v1`，集群/命名空间选择工作集群下的命名空间。
 
-2. 创建成功后，手动`同步`应用资源
+3. 创建成功后，手动 **同步** 应用资源
 
-3. 前往服务网格，在托管网格查看工作集群中同步的 vs、dr、gateway 资源，如果未查找到，请检测章节**创建托管网格并纳管工作集群** 中的注意事项是否配置正确
+4. 前往服务网格，在托管网格查看工作集群中同步的 vs、dr、gateway 资源，如果未查找到，请检测章节**创建托管网格并纳管工作集群** 中的注意事项是否配置正确
 
-4. 默认情况下工作集群的负载均衡暴露的是 `80` 端口，所需要在工作集群中修改服务的 gatway 端口为 80 以便能访问到服务
+5. 默认情况下工作集群的负载均衡暴露的是 `80` 端口，所需要在工作集群中修改服务的 gatway 端口为 80 以便能访问到服务
 
     ![image2](../images/istio4.png)
 
-5. 在浏览器访问 http://<工作集群节点IP>/hello?name=test-v1，访问成功即代表 istio 相关资源生效。
+6. 在浏览器访问 `http://<工作集群节点IP>/hello?name=test-v1`，访问成功即代表 Istio 相关资源生效。
 
     ![image1](../images/isito2.png)
 
