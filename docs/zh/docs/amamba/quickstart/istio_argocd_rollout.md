@@ -13,23 +13,23 @@
 
 1. 创建成功后，手动 **同步** 应用资源
 
-1. 前往服务网格，在托管网格查看工作集群中同步的 vs、dr、gateway 资源，如果未查找到，请检测章节 **创建托管网格并纳管工作集群** 中的注意事项是否配置正确
+1. 前往服务网格，在托管网格查看工作集群中同步的 vs、dr、gateway 资源，如果未查找到，请检测章节 **[创建托管网格并纳管工作集群](../../mspider/user-guide/service-mesh/README.md)** 中的注意事项是否配置正确
 
 1. 默认情况下工作集群的负载均衡暴露的是 `80` 端口，所需要在工作集群中修改服务的 gatway 端口为 80 以便能访问到服务
 
-    ![image2](../images/istio4.png)
+    ![修改端口](../images/istio4.png)
 
 1. 在浏览器访问 `http://<工作集群节点IP>/hello?name=test-v1`
 
-    ![image1](../images/isito2.png)
+    ![工作集群节点](../images/isito2.png)
    
 1. 前往应用工作台，在 **灰度发布** 列表，选择 `dubbo3-provider` 进行 yaml 编辑，修改 `version: v1` 为 `version: v2`
 
-    ![header4](../images/header4.png)
+    ![编辑yaml](../images/header4.png)
 
 1. 修改成功后，`dubbo3-provider` 开始进入灰度过程
 
-    ![header5](../images/header5.png)
+    ![修改成功](../images/header5.png)
 
     如上图：可以根据 workload 的标签 rollouts-pod-template-hash 和 version 来进行区分
 
@@ -68,15 +68,15 @@
 
     - 新版本权重为 5% ，v1 Pod 和 v2 Pod 的流量分配如下：
 
-        ![weight1](../images/weight1.png)
+        ![权重5%](../images/weight1.png)
 
     - 新版本权重为 50% ，v1 Pod 和 v2 Pod 的流量分配如下：
 
-        ![weight2](../images/weight2.png)
+        ![权重50%](../images/weight2.png)
 
     - 发布成功后，全是 v2 Pod 的流量
 
-        ![weight3](../images/weight3.png)
+        ![发布成功](../images/weight3.png)
 
 ## 基于 GitOps 实现基于请求特征的灰度发布
 
@@ -94,23 +94,23 @@ dubbo3-consumer 会将请求转发给 dubbo3-provider，发布过程会对 dubbo
 
 1. 创建成功后，手动 **同步** 应用资源
 
-1. 前往服务网格，在托管网格查看工作集群中同步的 vs、dr、gateway 资源，如果未查找到，请检测章节 **创建托管网格并纳管工作集群** 中的注意事项是否配置正确
+1. 前往服务网格，在托管网格查看工作集群中同步的 vs、dr、gateway 资源，如果未查找到，请检测章节 **[创建托管网格并纳管工作集群](../../mspider/user-guide/service-mesh/README.md)** 中的注意事项是否配置正确
 
 1. 默认情况下工作集群的负载均衡暴露的是 `80` 端口，所需要在工作集群中修改服务的 gatway 端口为 80 以便能访问到服务
 
-    ![image2](../images/istio4.png)
+    ![修改端口](../images/istio4.png)
 
 1. 在浏览器访问 `http://<工作集群节点IP>/hello?name=test-v1`
 
-    ![image1](../images/isito2.png)
+    ![工作集群节点](../images/isito2.png)
 
 1. 前往应用工作台，在 **灰度发布** 列表，选择 `dubbo3-provider` 进行 yaml 编辑，修改 `version: v1` 为 `version: v2`
 
-    ![header3](../images/header3.png)
+    ![编辑yaml](../images/header3.png)
 
 1. 修改成功后，`dubbo3-provider` 开始进入灰度过程
 
-    ![header2](../images/header2.png)
+    ![修改成功](../images/header2.png)
 
     如上图：可以根据 workload 的标签 rollouts-pod-template-hash 和 version 来进行区分
 
@@ -150,7 +150,7 @@ dubbo3-consumer 会将请求转发给 dubbo3-provider，发布过程会对 dubbo
 
 1. 终端模拟访问结果如下：
 
-    ![header](../images/header1.png)
+    ![访问结果](../images/header1.png)
 
 ## FAQ
 
