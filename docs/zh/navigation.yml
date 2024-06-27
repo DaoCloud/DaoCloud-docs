@@ -68,15 +68,15 @@ nav:
               - 最佳实践:
                   - 集群部署模式使用场景: install/commercial/scenarios.md
                   - Global 集群实践:
-                    - DCE 5.0 etcd 采用 host 模式与控制面分离: install/best-practices/etcd-host-deploy.md
-                    - DCE 5.0 一体机部署: install/best-practices/all-in-one-machine.md
+                      - DCE 5.0 etcd 采用 host 模式与控制面分离: install/best-practices/etcd-host-deploy.md
+                      - DCE 5.0 一体机部署: install/best-practices/all-in-one-machine.md
                   - 火种节点实践:
-                    - 火种节点高可用方案: install/best-practices/thinder-ha.md
-                    - 火种节点备份与还原: install/best-practices/thinder-restore.md
+                      - 火种节点高可用方案: install/best-practices/thinder-ha.md
+                      - 火种节点备份与还原: install/best-practices/thinder-restore.md
                   - 可扩展性实践:
-                    - K8s 集群基于 Docker 的磁盘限制: install/best-practices/docker-storage.md
-                    - 大规模集群参数说明: install/best-practices/large-deployments-par.md
-                    - 部署集群时如何配置扩展参数？: install/best-practices/extend-params.md
+                      - K8s 集群基于 Docker 的磁盘限制: install/best-practices/docker-storage.md
+                      - 大规模集群参数说明: install/best-practices/large-deployments-par.md
+                      - 部署集群时如何配置扩展参数？: install/best-practices/extend-params.md
                   - 离线包裁剪脚本使用手册: install/best-practices/offline-clipper.md
                   - 修复CVE-2024-21626漏洞: install/best-practices/cve-20240-21626.md
               - 安装器 Release Notes: install/release-notes.md
@@ -165,16 +165,16 @@ nav:
                   - GitOps 相关问题: amamba/faq/faq-gitops.md
               - 最佳实践:
                   - GitOps 实践:
-                    - 流水线+ GitOps 实现 CI/CD: amamba/quickstart/argocd-jenkins.md
-                    - 基于 GitOps 在托管网格下的工作集群中部署 istio 相关资源: amamba/quickstart/istio_argocd.md
-                    - 基于 GitOps 在托管网格下的工作集群中进行灰度发布: amamba/quickstart/istio_argocd_rollout.md
+                      - 流水线 + GitOps实现CI/CD: amamba/quickstart/argocd-jenkins.md
+                      - 在托管网格中使用GitOps: amamba/quickstart/istio_argocd.md
+                      - 在托管网格中灰度发布: amamba/quickstart/istio_argocd_rollout.md
                   - CI 实践:
-                    - 使用流水线实现代码扫描: amamba/quickstart/scan-with-pipeline.md
-                    - 集成 Harbor 实现镜像安全扫描: amamba/quickstart/scan-with-harbor.md
-                    - Jenkins 发布应用至虚拟机: amamba/user-guide/pipeline/cicd_vm.md
-                    - 集成部署在物理机/虚拟机上的 Jenkins: amamba/quickstart/jenkins-physical-machine-integration.md
+                      - 使用流水线实现代码扫描: amamba/quickstart/scan-with-pipeline.md
+                      - 集成 Harbor 实现镜像安全扫描: amamba/quickstart/scan-with-harbor.md
+                      - Jenkins 发布应用至虚拟机: amamba/user-guide/pipeline/cicd_vm.md
+                      - 集成部署在物理机/虚拟机上的 Jenkins: amamba/quickstart/jenkins-physical-machine-integration.md
                   - 灰度发布实践:
-                    - 基于 Contour 的灰度发布: amamba/quickstart/contour-argorollout.md
+                      - 基于 Contour 的灰度发布: amamba/quickstart/contour-argorollout.md
       - 容器:
           - 容器管理:
               - 介绍:
