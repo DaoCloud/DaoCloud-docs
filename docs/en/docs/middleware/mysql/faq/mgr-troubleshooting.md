@@ -1,19 +1,30 @@
-# MySQL MGR 排障手册
+# MySQL MGR Troubleshooting Manual
 
-## 常用命令
+## Common Commands
 
-### 获取 root 密码
+### Retrieve Root Password
 
-在 MySQL MGR 集群的命名空间下，查找以"-mgr-secret"结尾的 secret 资源，这里以获取"kpanda-mgr"这个集群的 secret 为例：
+To find the secret resource ending with "-mgr-secret" in the namespace of the MySQL MGR cluster, here is an example to retrieve the secret for the "kpanda-mgr" cluster:
 
 ```shell
 kubectl get secrets/kpanda-mgr-mgr-secret -n mcamel-system --template={{.data.rootPassword}} | base64 -d
+```
+
+The command will output the root password, for example:
+
+```
 root123!
 ```
 
-### 查看集群状态
+### Check Cluster Status
 
-通过 MySQL 命令行查看：mysqlsh -uroot -pPassword -- cluster status 
+You can check the cluster status using the MySQL command line:
+
+```shell
+mysqlsh -uroot -pPassword -- cluster status
+```
+
+Replace `Password` with the actual root password retrieved in the previous step.
 
 ```sql
 sh-4.4$ mysqlsh -uroot -pPassword  -- cluster status
@@ -65,11 +76,12 @@ sh-4.4$ mysqlsh -uroot -pPassword  -- cluster status
 
 !!! note
 
-    集群在正常情况下：
-    - 所有的节点的status都为ONLINE状态。
-    - 有一个节点的memberRole为PRIMARY，其他节点都为SECONDARY。
+    Under normal circumstances in the cluster:
 
-用 SQL 语句查看：`SELECT * FROM performance_schema.replication_group_members\G`
+    - The status of all nodes should be ONLINE.
+    - One node should have the memberRole of PRIMARY, while the other nodes should have the memberRole of SECONDARY.
+
+To check using an SQL statement: `SELECT * FROM performance_schema.replication_group_members\G`
 
 ```sql
 mysql> SELECT * FROM performance_schema.replication_group_members\G
@@ -103,9 +115,9 @@ MEMBER_COMMUNICATION_STACK: MySQL
 3 rows in set (0.00 sec)
 ```
 
-### 查看成员状态
+### View Member Status
 
-查看成员状态：`SELECT * FROM performance_schema.replication_group_member_stats\G`
+View member status: `SELECT * FROM performance_schema.replication_group_member_stats\G`
 
 ```sql
 mysql> SELECT * FROM performance_schema.replication_group_member_stats\G
@@ -163,15 +175,15 @@ COUNT_TRANSACTIONS_REMOTE_IN_APPLIER_QUEUE: 0
 3 rows in set (0.00 sec)
 ```
 
-### 指定成员角色
+### Assign Member Role
 
-1. 将某个节点指定为 PRIMARY。
+1. Assign a node as PRIMARY.
 
     ```shell
     select group_replication_set_as_primary('4697c302-3e52-11ed-8e61-0050568a658a');
     ```
 
-2. `mysqlsh` 语法
+2. `mysqlsh` syntax
 
     ```shell
     JS > var c=dba.getCluster()
@@ -179,9 +191,9 @@ COUNT_TRANSACTIONS_REMOTE_IN_APPLIER_QUEUE: 0
     JS > c.setPrimaryInstance('172.30.71.128:3306')
     ```
 
-## 常见故障场景
+## Common Failure Scenarios
 
-### 某个 SECONDARY 节点为非 ONLINE 状态
+### A SECONDARY node is not in ONLINE status
 
 ```json
 {
@@ -233,20 +245,20 @@ COUNT_TRANSACTIONS_REMOTE_IN_APPLIER_QUEUE: 0
 }
 ```
 
-这里看到对应的 address 字段是 mgr0117-0.mgr0117-instances.m0103.svc.cluster.local:3306，进入 mgr0117-0 这个 pod，执行
+Here, we see the proper address field is mgr0117-0.mgr0117-instances.m0103.svc.cluster.local:3306. Enter the mgr0117-0 pod and execute:
 
 ```sql
 mysql> start group_replication;
 Query OK, 0 rows affected (5.82 sec)
 ```
 
-这里如果数据量比较大，该节点会处于比较长时间的 RECOVERING 状态。
+If the data volume is large, this node will remain in the RECOVERING state for a relatively long time.
 
-### 没有 PRIMARY 节点
+### No PRIMARY Node
 
-### 各个节点都显示 OFFLINE
+### All Nodes Show OFFLINE
 
-```shell
+```mysql
 mysql> SELECT * FROM performance_schema.replication_group_members;
 +---------------------------+-----------+-------------+-------------+--------------+-------------+----------------+----------------------------+
 | CHANNEL_NAME              | MEMBER_ID | MEMBER_HOST | MEMBER_PORT | MEMBER_STATE | MEMBER_ROLE | MEMBER_VERSION | MEMBER_COMMUNICATION_STACK |
@@ -256,13 +268,13 @@ mysql> SELECT * FROM performance_schema.replication_group_members;
 1 row in set (0.00 sec)
 ```
 
-此时可尝试从 mysql shell 重启集群：
+At this point, you can attempt to restart the cluster from the MySQL shell:
 
 ```shell
-dba.rebootClusterFromCompleteOutage().
+dba.rebootClusterFromCompleteOutage();
 ```
 
-若依然不能解决，则使用 cmd 方式登录之前的 PRIMARY 的节点，然后启动该节点的 group replication：
+If the issue persists, log in to the previous PRIMARY node using the command line and start the group replication on that node:
 
 ```shell
 set global group_replication_bootstrap_group=on;
@@ -270,6 +282,6 @@ start group_replication;
 set global group_replication_bootstrap_group=off;
 ```
 
-!!! Warning
+!!! warning
 
-    对于其他节点，依次执行上面的命令。
+    For the other nodes, run the above commands sequentially.
