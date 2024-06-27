@@ -19,12 +19,12 @@
 
 1. 填写基础信息。
 
+     ![创建设备](../images/device-control-01.png)
+
     !!! note
 
         访问协议必须和 mapper 定义的协议名称一致。
 
-     ![创建设备](../images/device-control-01.png)
-    
 1. 填写设备配置，添加设备孪生属性和标签。
 
     - 属性值为设备期望值。

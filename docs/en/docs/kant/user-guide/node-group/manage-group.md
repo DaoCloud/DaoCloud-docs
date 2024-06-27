@@ -28,6 +28,6 @@ Follow these steps:
 
 2. On the right side of the node group list, click the __⋮__ button and select __Delete__ from the popup menu.
 
-3. Click __Confirm__ to finish the deletion.
+3. Click __OK__ to finish the deletion.
 
     ![Delete Node Group](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kant/user-guide/images/manage-group-03.png)
