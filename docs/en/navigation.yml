@@ -931,10 +931,17 @@ nav:
                       - Concepts: middleware/mysql/intro/concepts.md
                       - Release Notes: middleware/mysql/release-notes.md
                   - Quick Start:
-                      - Create a MySQL Instance: middleware/mysql/user-guide/create.md
-                      - Update a MySQL Instance: middleware/mysql/user-guide/update.md
-                      - Delete a MySQL Instance: middleware/mysql/user-guide/delete.md
+                      - Instance Lifecycle:
+                          - Create MySQL: middleware/mysql/user-guide/create.md
+                          - Create MySQL MGR: middleware/mysql/user-guide/create-mgr.md
+                          - Update MySQL: middleware/mysql/user-guide/update.md
+                          - Delete MySQL: middleware/mysql/user-guide/delete.md
                       - View MySQL Logs: middleware/mysql/user-guide/logs.md
+                      - Instance Topology: middleware/mysql/user-guide/instancemap.md
+                      - Data Backup:
+                          - Manage Backup: middleware/mysql/user-guide/backup-restore/backup-config.md
+                          - Auto Backup: middleware/mysql/user-guide/backup-restore/auto-backup.md
+                          - Manual Backup: middleware/mysql/user-guide/backup-restore/manual-backup.md                  
                   - Best Practice:
                       - MySQL Cross-Cluster Sync: middleware/mysql/best-practice/crossclusterssync.md
                       - MySQL Archiving Solution: middleware/mysql/best-practice/mysql-pt-archiver.md
