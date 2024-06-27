@@ -163,6 +163,7 @@ nav:
                   - GitOps Practices:
                       - CI/CD based on Pipeline + GitOps: amamba/quickstart/argocd-jenkins.md
                       - Use GitOps in a Hosted Mesh: amamba/quickstart/istio_argocd.md
+                      - Progressive Delivery in a Hosted Mesh: amamba/quickstart/istio_argocd_rollout.md
                   - CI Practices:
                       - Implement Code Scanning with Pipelines: amamba/quickstart/scan-with-pipeline.md
                       - Integrate Harbor to Scan Image Security: amamba/quickstart/scan-with-harbor.md
