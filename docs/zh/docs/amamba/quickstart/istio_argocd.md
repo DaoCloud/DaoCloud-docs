@@ -15,11 +15,11 @@
 
 2. 控制面入口方式选择 **负载均衡** ，其余默认
 
-    ![image5](../images/istio1.png)
+    ![选择负载均衡](../images/istio1.png)
 
 3. 创建托管网格完成后，将工作集群纳管至托管网格，参考[添加集群](../../mspider/user-guide/cluster-management/join-clus.md)
 
-    ![image4](../images/isito2.png)
+    ![添加集群](../images/isito2.png)
 
 ### 注意事项
 
@@ -97,7 +97,7 @@
 
 3. 前往托管网格的 host 集群，在命名空间 `istio-system` -> **无状态工作负载** 下选择重启资源 **mspider-mcpc-mcpc-controller** ：
 
-    ![image3](../images/istio·.png)
+    ![重启资源](../images/istio·.png)
 
 ## 基于 GitOps 部署应用资源并验证
 
@@ -114,13 +114,13 @@
 
 3. 创建成功后，手动 **同步** 应用资源
 
-4. 前往服务网格，在托管网格查看工作集群中同步的 vs、dr、gateway 资源，如果未查找到，请检测章节**创建托管网格并纳管工作集群** 中的注意事项是否配置正确
+4. 前往服务网格，在托管网格查看工作集群中同步的 vs、dr、gateway 资源，如果未查找到，请检测章节 **[创建托管网格并纳管工作集群](../../mspider/user-guide/service-mesh/README.md)** 中的注意事项是否配置正确
 
 5. 默认情况下工作集群的负载均衡暴露的是 `80` 端口，所需要在工作集群中修改服务的 gatway 端口为 80 以便能访问到服务
 
-    ![image2](../images/istio4.png)
+    ![修改端口](../images/istio4.png)
 
 6. 在浏览器访问 `http://<工作集群节点IP>/hello?name=test-v1`，访问成功即代表 Istio 相关资源生效。
 
-    ![image1](../images/isito2.png)
+    ![访问成功](../images/isito2.png)
 
