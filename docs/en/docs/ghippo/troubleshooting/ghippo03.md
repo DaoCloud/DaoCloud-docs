@@ -39,7 +39,7 @@ Keycloak cannot start normally, the Keycloak pod is in the `CrashLoopBackOff` st
 Run the following script to check the supported CPU types:
 
 ```bash
-cat <<EOF > detect-cpu.sh
+cat <<"EOF" > detect-cpu.sh
 #!/bin/sh -eu
 
 flags=$(cat /proc/cpuinfo | grep flags | head -n 1 | cut -d: -f2)
