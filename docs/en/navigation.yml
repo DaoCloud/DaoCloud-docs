@@ -444,6 +444,7 @@ nav:
                   - CoreDNS Performance Test: network/performance/coredns-performance.md
               - Spiderpool:
                   - Intro: network/modules/spiderpool/index.md
+                  - Release Notes: network/modules/spiderpool/releasenotes.md
                   - Install: 
                       - Install Spiderpool: network/modules/spiderpool/install/install.md
                       - Prepare and install RDMA: network/modules/spiderpool/install/rdmapara.md
