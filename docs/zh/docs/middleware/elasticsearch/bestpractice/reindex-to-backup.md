@@ -2,7 +2,8 @@
 
 ## 背景
 
-使用 Elasticsearch 的 `reindex` 功能实现跨集群之间的数据迁移，同时保证 source 集群业务不中断。为了完全同步 source 集群的数据，在某个时刻还是需要停止 source 集群的写入操作。
+使用 Elasticsearch 的 `reindex` 功能实现跨集群之间的数据迁移，同时保证 source 集群业务不中断。
+为了完全同步 source 集群的数据，在某个时刻还是需要停止 source 集群的写入操作。
 
 ![move-data-to-new-es](../images/move-data-to-new-es.png)
 
@@ -17,18 +18,18 @@
 ### 虚拟机部署 Elasticsearch
 
 - 版本：7.15.2
-- 访问地址：172.30.120.85:9200
+- 访问地址：`172.30.120.85:9200`
 - 用户名/密码：elastic/root123!
 
-### DCE5.0 部署 Elasticsearch 实例
+### DCE 5.0 部署 Elasticsearch 实例
 
 - 版本：7.16.3
-- es 访问地址：https://10.6.178.179:30486
+- ES 访问地址：`https://10.6.178.179:30486`
 - 用户名/密码：elastic/m5!586LM33Hz0qf
 
 ## 操作步骤
 
-1. 修改 DCE5.0 es 的 CR 内容，将虚拟机 es 的访问地址添加到白名单，如下图所示。
+1. 修改 DCE 5.0 ES 的 CR 内容，将虚拟机 ES 的访问地址添加到白名单，如下图所示。
 
     ```yaml
     nodeSets:
@@ -45,10 +46,10 @@
           - data_warm
           - remote_cluster_client
           - transform
-          reindex.remote.whitelist: 172.30.120.85:9200, localhost:*  /添加虚拟机 es 访问地址
+          reindex.remote.whitelist: 172.30.120.85:9200, localhost:*  /添加虚拟机 ES 访问地址
     ```
 
-2. 查看虚拟机 es 中的索引数据。
+2. 查看虚拟机 ES 中的索引数据。
 
     ```shell
     GET cat/indices/test_data*
@@ -61,7 +62,7 @@
 
 ### 使用 reindex 迁移单个索引
 
-- 在 DCE5.0 es 执行以下命令：
+- 在 DCE 5.0 ES 执行以下命令：
 
     ```bash
     POST _reindex
@@ -81,7 +82,7 @@
     }
     ```
 
-- 迁移完成后，在 DCE5.0 es 中查询迁移的索引数据。
+- 迁移完成后，在 DCE 5.0 ES 中查询迁移的索引数据。
 
     ```shell
     GET _cat/indices/test_data1
