@@ -11,16 +11,18 @@ hide:
 
     ```shell
     make generate
-    Please input the mapper name (like 'Bluetooth', 'BLE'): foo    # 这里的协议是后续需要再创建 deviceModel 的时候填写的
+    Please input the mapper name (like 'Bluetooth', 'BLE'): foo # (1)!
     ```
 
-    - 执行完成后，会在 mapper-framework 的同级目录生成与协议名同名的 mapper 代码目录。
+    1. 这里的协议是后续需要再创建 deviceModel 的时候填写的
+
+    - 执行完成后，会在 mapper-framework 的同级目录生成与协议同名的 mapper 代码目录。
     
         ![mapper 目录](../images/mapper-01.png)
 
-    - 可以将该目录复制出来进行 mapper 开发，主要需要关注的地方是 driver 目录下的代码：
+    - 可以将该目录复制出来进行 mapper 开发，需要关注的地方是 driver 目录下的代码：
 
-        该文件对应 mapper 对设备的操作实现，主要实现 InitDevice(初始化设备), GetDeviceData(获取设备数据), SetDeviceData(给设备赋值), StopDevice(停止设备)
+        该文件对应 mapper 对设备的操作实现，主要实现 InitDevice(初始化设备)、GetDeviceData(获取设备数据)、SetDeviceData(给设备赋值)、StopDevice(停止设备)
 
         ```go
         package driver
@@ -52,7 +54,6 @@ hide:
         func (c *CustomizedClient) GetDeviceData(visitor *VisitorConfig) (interface{}, error) {
           // TODO: add the code to get device's data
           // you can use c.ProtocolConfig and visitor
-          // 打开串口设备
           // 打开串口设备
           return "ok", nil
         }
@@ -94,25 +95,27 @@ hide:
         }
         ```
 
-    - 调试需要修改 config.yaml 中的 protocol 字段，填前面定义的协议名称
+    - 修改 config.yaml 中的 `protocol` 字段，填写前文定义的协议名称
 
-        ```yaml
+        ```yaml title="config.yaml"
         grpc_server:
           socket_path: /etc/kubeedge/arduino.sock
         common:
           name: arduino-mapper
           version: v1.13.0
           api_version: v1.0.0
-          protocol: arduino # TODO add your protocol name
+          protocol: arduino # (1)!
           address: 127.0.0.1
           edgecore_sock: /etc/kubeedge/dmi.sock
         ```
+
+        1. 改为你的协议名称
 
 2. 部署 mapper 应用
 
     **二进制部署**
 
-    1. 在项目的主目录使用 go build ./cmd/main.go 编译出对应架构的二进制文件，比如编译 linux 环境下的可执行文件
+    1. 在项目的主目录使用 `go build ./cmd/main.go` 编译出对应架构的二进制文件，比如编译 linux 环境下的可执行文件
 
         ```shell
         GOOS=linux GOARCH=amd64 go build ./cmd/main.go -o {输出的文件名称}     # (1)!
@@ -152,9 +155,11 @@ hide:
               name: arduino-mapper
               version: v1.13.0
               api_version: v1.0.0
-              protocol: arduino # TODO add your protocol name
+              protocol: arduino # (1)!
               address: 127.0.0.1
               edgecore_sock: /etc/kubeedge/dmi.sock
         ```
 
-以上，完成设备驱动应用 mapper 的开发。
+        1. 改为你的协议名称
+
+以上，这就完成了设备驱动应用 mapper 的开发。
