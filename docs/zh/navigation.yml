@@ -1049,6 +1049,7 @@ nav:
                   - 最佳实践:
                       - 双机房部署 ES: middleware/elasticsearch/bestpractice/esin2IDC.md 
                       - 跨节点迁移 ES: middleware/elasticsearch/user-guide/migrate-es.md
+                      - 使用 reindex 迁移 Elasticsearch 数据: middleware/elasticsearch/bestpractice/reindex-to-backup.md
               - Kafka 消息队列:
                   - 介绍:
                       - 什么是 Kafka: middleware/kafka/intro/index.md
