@@ -35,7 +35,7 @@ keycloak 无法正常启动，keycloak pod 运行状态为 `CrashLoopBackOff` �
 ### 检查项
 运行下面的检查脚本，查询当前节点 cpu 的 x86-64架构的特征级别
 ```bash
-cat <<EOF > detect-cpu.sh
+cat <<"EOF" > detect-cpu.sh
 #!/bin/sh -eu
 
 flags=$(cat /proc/cpuinfo | grep flags | head -n 1 | cut -d: -f2)
