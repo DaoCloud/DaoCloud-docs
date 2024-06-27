@@ -982,7 +982,7 @@ nav:
                       - MySQL Operator: middleware/mysql/faq/faq-operator.md
                       - MySQL 主备关系: middleware/mysql/faq/faq-master-slave.md
                       - MySQL 其他故障: middleware/mysql/faq/faq-others.md
-                      - MySQL MGR 排障: middleware/mysql/best-practice/mgr-troubleshooting.md
+                      - MySQL MGR 排障: middleware/mysql/faq/mgr-troubleshooting.md
                       - MySQL 主从模式应对网络闪断: middleware/mysql/faq/faq-mtsql-net.md
               - MongoDB 数据库:
                   - 介绍:
