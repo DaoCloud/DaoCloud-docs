@@ -5,23 +5,25 @@
 
 ## 操作系统要求
 
-| **架构** | **操作系统** | **推荐内核版本** | 备注（安装指导文档） |
-| -------- | ----------- | ----------- | ----------------- |
-| AMD 64 | CentOS 7.X | Kernel 3.10.0-1127.el7.x86_64 on an x86_64 | CentOS 7.9<br />[离线安装 DCE 5.0 商业版](start-install.md)<br />注意：CentOS 7在2024年6月30日结束支持 |
-| | Redhat 8.X | 4.18.0-305.el8.x86_64 | Redhat 8.4<br />参考[离线安装 DCE 5.0 商业版](start-install.md) |
-| | Redhat 7.X | 3.10.0-1160.e17.x86 | Redhat 7.9<br />参考[离线安装 DCE 5.0 商业版](start-install.md) |
-| | Redhat 9.X | 5.14.0-284.11.1.e9_2.x86_64 | 推荐 Redhat 9.2<br />参考[离线安装 DCE 5.0 商业版](start-install.md) |
-| | Ubuntu 20.04 | 5.10.104 | 参考[离线安装 DCE 5.0 商业版](start-install.md) |
-| | Ubuntu 22.04 | 5.15.0-78-generic | 参考[离线安装 DCE 5.0 商业版](start-install.md) |
-| | 统信 UOS V20 （1020a） | 5.4.0-125-generic | 参考 [UOS V20 (1020a) 上部署 DCE 5.0 商业版](../os-install/uos-v20-install-dce5.0.md) |
-| | openEuler 22.03 | 5.10.0-60.18.0.50.oe2203.x86_64 | 参考[离线安装 DCE 5.0 商业版](start-install.md) |
-| | Oracle Linux R9/R8 U1 | 5.15.0-3.60.5.1.el9uek.x86_64 | 参考 [Oracle Linux R9 U1 上部署 DCE 5.0 商业版](../os-install/oracleLinux-install-dce5.0.md) |
-| | TencentOS Server 3.1 | 5.4.119-19.0009.14 | 参考 [TencentOS Server 3.1 上部署 DCE 5.0 商业版](../os-install/TencentOS-install-dce5.0.md) |
-| ARM 64 | 银河麒麟 OS V10 SP2 | 4.19.90-24.4.v2101.ky10.aarch64 | 参考[离线安装 DCE 5.0 商业版](start-install.md) |
+| **架构** | **操作系统** | **测试 OS、Kernel 信息** | 备注（安装指导文档） |
+| -------- | ----------- | ----------------- | ----------------- |
+| AMD 64 | CentOS 7.X | CentOS 7.9<br />3.10.0-1127.el7.x86_64 on an x86_64 | [离线安装 DCE 5.0 商业版](start-install.md)<br />注意：CentOS 7在2024年6月30日结束支持 |
+| | Redhat 8.X | Redhat 8.4<br />4.18.0-305.el8.x86_64 | [离线安装 DCE 5.0 商业版](start-install.md) |
+| | Redhat 7.X | Redhat 7.9<br />3.10.0-1160.e17.x86 | [离线安装 DCE 5.0 商业版](start-install.md) |
+| | Redhat 9.X | Redhat 9.2<br />5.14.0-284.11.1.e9_2.x86_64 | [离线安装 DCE 5.0 商业版](start-install.md) |
+| | Ubuntu 20.04 | 5.10.104 | [离线安装 DCE 5.0 商业版](start-install.md) |
+| | Ubuntu 22.04 | 5.15.0-78-generic | [离线安装 DCE 5.0 商业版](start-install.md) |
+| | 统信 UOS V20 （1020a） | 5.4.0-125-generic | [UOS V20 (1020a) 上部署 DCE 5.0 商业版](../os-install/uos-v20-install-dce5.0.md) |
+| | openEuler 22.03 | 5.10.0-60.18.0.50.oe2203.x86_64 | [离线安装 DCE 5.0 商业版](start-install.md) |
+| | Oracle Linux R9/R8 U1 | 5.15.0-3.60.5.1.el9uek.x86_64 | [Oracle Linux R9 U1 上部署 DCE 5.0 商业版](../os-install/oracleLinux-install-dce5.0.md) |
+| | TencentOS Server 3.1 | 5.4.119-19.0009.14 | [TencentOS Server 3.1 上部署 DCE 5.0 商业版](../os-install/TencentOS-install-dce5.0.md) |
+| ARM 64 | 银河麒麟 OS V10 SP2 | 4.19.90-24.4.v2101.ky10.aarch64 | [离线安装 DCE 5.0 商业版](start-install.md) |
 
 !!! note
 
-    若非上表中声明的操作系统，请参考文档 [Other Linux 离线部署 DCE 5.0 商业版](../os-install/otherlinux.md)进行安装部署。
+    - CentOS 7 将在 2024 年 6 月 30 日结束支持，企业需根据自身情况进行替换操作系统
+    - 上述的操作系统、内核均为测试人员使用的版本
+    - 若非上表中声明的操作系统，请参考文档 [Other Linux 离线部署 DCE 5.0 商业版](../os-install/otherlinux.md)进行安装部署。
 
 ## 内核要求
 
@@ -29,11 +31,21 @@
 
 | 组件/功能 | 内核版本要求 |
 | -------- | ---------- |
-| 容器管理 GPU 能力 | ≥ 3.10.1160 |
+| 容器管理 GPU 能力 | ≥ 5.15|
 | Cilium | ≥ 5.12 |
 | Hwameistor DRDB 能力 | [DRBD 适配的内核版本](../../storage/hwameistor/intro/drbd-support.md) |
-| Kubevirt | ≥ 4.x |
+| Kubevirt | > 3.15 |
 | Merbridge 要求 | ≥ 5.7 |
+
+### ⚠️ 内核注意事项
+
+1. 内核版本小于 5.9 时，`kube-proxy` 使用 `ipvs` 模式会造成通过 Service 方式访问集群内部服务，偶现 1 秒延时或者后端业务升级后访问 Service 失败的情况，详见社区[ISSUE] (https://github.com/kubernetes/kubernetes/issues/81775)，可以采用以下方式绕行：
+
+    - 升级内核至 5.9 及以上
+    - 切换 `kube-proxy` 模式为 `iptables`
+    - 内核参数更新：`net.ipv4.vs.conntrack=1` + `net.ipv4.vs.conn_reuse_mode=0` + `net.ipv4.vs.expire_nodest_conn=1`
+
+2. Ubuntu 内核自动更新升级，可能导致系统在不经意间被重启，若使用的软件依赖于特定版本的内核，那么当系统自动更新到新的内核版本时，可能会出现[兼容性问题](https://askubuntu.com/a/1176041)
 
 ## 硬件要求
 
@@ -71,6 +83,16 @@
 | 1 | 火种节点 | 1. 执行安装部署程序<br />2. 运行平台所需的镜像仓库和 chart museum | 2 | 4G | 200G | - |
 | 3 | master | 1. 运行 DCE 5.0 组件<br /> 2. 运行 kubernetes 系统组件 | 8 | 16G | 100G | 200G |
 | 3 | worker | 单独运行日志相关组件 | 8 | 16G | 100G | 200G |
+
+### etcd 磁盘建议
+
+由于 etcd 将数据写入磁盘并在磁盘上持久化，所以其性能取决于磁盘性能。并且 etcd 对磁盘的写延迟非常敏感，所以一些延迟问题可能会导致 etcd 丢失心跳。
+
+**建议：**
+
+- 尽量在低延迟和高吞吐量的 SSD 或 NVMe 磁盘支持的机器上运行 etcd
+
+- 使用固态硬盘作为最低选择。在生产环境中首选 NVMe 驱动器。
 
 ## 网络要求
 
