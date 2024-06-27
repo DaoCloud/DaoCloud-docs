@@ -172,7 +172,7 @@ nav:
                       - 使用流水线实现代码扫描: amamba/quickstart/scan-with-pipeline.md
                       - 集成 Harbor 实现镜像安全扫描: amamba/quickstart/scan-with-harbor.md
                       - Jenkins 发布应用至虚拟机: amamba/user-guide/pipeline/cicd_vm.md
-                      - 集成部署在物理机/虚拟机上的 Jenkins: amamba/quickstart/jenkins-physical-machine-integration.md
+                      - 物理机/虚拟机集成Jenkins: amamba/quickstart/jenkins-integration.md
                   - 灰度发布实践:
                       - 基于 Contour 的灰度发布: amamba/quickstart/contour-argorollout.md
       - 容器:

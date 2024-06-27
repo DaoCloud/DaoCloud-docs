@@ -164,6 +164,7 @@ nav:
                   - Implement Code Scanning with Pipelines: amamba/quickstart/scan-with-pipeline.md
                   - Integrate Harbor to Scan Image Security: amamba/quickstart/scan-with-harbor.md
                   - Contour-based Grayscale Release: amamba/quickstart/contour-argorollout.md
+                  - Integrate Jenkins on Physical/Virtual Machine: amamba/quickstart/jenkins-integration.md
       - Container:
           - Container Management:
               - Intro:
