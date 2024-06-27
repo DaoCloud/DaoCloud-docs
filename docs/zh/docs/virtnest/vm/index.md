@@ -72,9 +72,13 @@
 
     平台内置镜像存储在点火集群中，而点火集群的镜像仓库未加密，因此当选择内置镜像时，无需选择密钥。
 
-4. 资源配置：CPU 建议使用整数，若填写小数则会向上取整。
+!!! note
 
-5. GPU 配置：启用 GPU 功能需要需要满足前提条件，具体可参考 [虚拟机配置 GPU（Nvidia)](../gpu/vm-gpu.md)。
+    CPU 和内存的热加载配置要求：virtnest 的版本不低于 v0.10.0，并且 virtnest-agent 版本不低于 v0.7.0。
+
+1. 资源配置：CPU 建议使用整数，若填写小数则会向上取整。支持 CPU、内存的热加载，
+
+2. GPU 配置：启用 GPU 功能需要需要满足前提条件，具体可参考 [虚拟机配置 GPU（Nvidia)](../gpu/vm-gpu.md)。
    虚拟机支持 Nvidia—GPU 和 Nvidia—vGPU 两种类型，选择所需类型后，需要选择对应的 GPU 型号和卡的数量。
    
    ![配置gpu](../images/gpu01.png)
@@ -128,10 +132,8 @@
         | Masquerade（NAT） | Calico  | ❌                 | 单网卡       | ❌               | ✅            |
         |                   | Cilium  | ❌                 | 单网卡       | ❌               | ✅            |
         |                   | Flannel | ❌                 | 单网卡       | ❌               | ✅            |
-        | Passt（直通）     | macvlan | ✅                 | 单网卡       | ✅               | ✅           |
-        |                   | ipvlan  | ✅                 | 多网卡       | ✅               | ✅           |
         | Bridge（桥接）    | OVS     | ✅                 | 多网卡       | ✅               | ✅           |
-    
+        
         ![网络配置](../images/createvm-net01.png)
     
     - 网络模式分为 Masquerade（NAT）、Passt（直通）、Bridge（桥接）三种，后两种模式需要安装了 spiderpool 组件后方可使用。
