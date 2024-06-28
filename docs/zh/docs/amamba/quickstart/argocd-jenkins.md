@@ -21,7 +21,7 @@
 
 2. 准备一个 Harbor 镜像仓库
 
-3. 准备访问上述三个仓库的凭证。此教程中使用的三个凭证分别命为 git-credentials、git-app-credentials、harbor-credentials
+3. 准备访问上述三个仓库的凭证。此教程中使用的三个凭证分别命为 git-credentials、git-app-credentials、harbor-credentials 
 
 ## 创建流水线
 
@@ -222,3 +222,18 @@ stages{
 
     ![cd:ci11](../images/pipeline-gitops-9.png)
 
+6. 通过 `port-forward` 映射本地端口到 guestbook-ui 的服务，并在本地访问：
+
+    ```console
+    kubectl port-forward svc/guestbook-ui -n demo-gitops 8080:80
+    ```
+
+    ![cd:ci10](../images/pipeline-gitops-10.png)
+
+## 其他
+
+在以上流程的基础上，也可以使用 [Argo Rollouts](https://argo-rollouts.readthedocs.io/en/stable/) 替换 Deployment 实现灰度发布和蓝绿发布。我们在示例代码中提供了样例，可以做为**流水线 - GitOps - 灰度/蓝绿发布** 的参考:
+
+- [基于副本数的灰度发布](https://github.com/amamba-io/amamba-examples/tree/main/replicas-rollouts) 和 [流水线](https://github.com/amamba-io/amamba-examples/blob/main/pipelines/replicas-rollouts.jenkinsfile)
+- [基于Istio的灰度发布](https://github.com/amamba-io/amamba-examples/tree/main/istio-rollouts) 和 [流水线](https://github.com/amamba-io/amamba-examples/blob/main/pipelines/istio-rollouts.jenkinsfile)
+- [蓝绿发布](https://github.com/amamba-io/amamba-examples/tree/main/blue-green) 和 [流水线](https://github.com/amamba-io/amamba-examples/blob/main/pipelines/blue-green.jenkinsfile)
