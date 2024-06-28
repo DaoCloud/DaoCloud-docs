@@ -1,6 +1,6 @@
 ---
-MTPE: windsonsea
-date: 2024-05-11
+MTPE: ModetaNiu
+date: 2024-06-28
 ---
 
 # Deployment Requirements
@@ -9,11 +9,11 @@ When deploying DCE 5.0, it is necessary to first plan the software, hardware, an
 
 ## Operating System Requirements
 
-| Architecture | Operating System | Recommended Kernel Version | Remarks (Installation Guide) |
+| **Architecture** | **Operating System** | **Recommended Kernel Version** | Remarks (Installation Guide) |
 | ------------ | ---------------- | ------------------------- | --------------------------- |
-| AMD 64 | CentOS 7.X | Kernel 3.10.0-1127.el7.x86_64 on an x86_64 | Recommended CentOS 7.9<br />[Offline Installation of DCE 5.0 Enterprise](start-install.md) |
-| | Redhat 8.X | 4.18.0-305.el8.x86_64 | Recommended Redhat 8.4<br />Refer to [Offline Installation of DCE 5.0 Enterprise](start-install.md) |
-| | Redhat 7.X | 3.10.0-1160.e17.x86 | Recommended Redhat 7.9<br />Refer to [Offline Installation of DCE 5.0 Enterprise](start-install.md) |
+| AMD 64 | CentOS 7.X | Kernel 3.10.0-1127.el7.x86_64 on an x86_64 | CentOS 7.9<br />[Offline Installation of DCE 5.0 Enterprise](start-install.md)<br />notice：CentOS 7 is no longer supported after 30th June, 2024 |
+| | Redhat 8.X | 4.18.0-305.el8.x86_64 |  Redhat 8.4<br />Refer to [Offline Installation of DCE 5.0 Enterprise](start-install.md) |
+| | Redhat 7.X | 3.10.0-1160.e17.x86 |  Redhat 7.9<br />Refer to [Offline Installation of DCE 5.0 Enterprise](start-install.md) |
 | | Redhat 9.X | 5.14.0-284.11.1.e9_2.x86_64 | Recommended Redhat 9.2<br />Refer to [Offline Installation of DCE 5.0 Enterprise](start-install.md)<br /> |
 | | Ubuntu 20.04 | 5.10.104 | Refer to [Offline Installation of DCE 5.0 Enterprise](start-install.md) |
 | | Ubuntu 22.04 | 5.15.0-78-generic | Refer to [Offline Installation of DCE 5.0 Enterprise](start-install.md) |
