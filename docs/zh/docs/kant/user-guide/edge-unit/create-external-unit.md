@@ -63,14 +63,14 @@ KubeEdge：是一个开源系统，将原生的容器化应用程序编排功能
 
     - 通讯协议：云边信令通道通信协议，云边网络经常不稳定时，推荐使用 QUIC 协议。
     - 访问地址：KubeEdge 云端组件 CloudCore 的访问地址，需要能被边缘节点访问，边缘节点通过该地址与云端建立连接。
-    - 端口：云端 CloudCore 默认给边端开放 NodePort 端口，如有冲突，请修改。。
-        - WebSocketPort ：访问协议 WebSocket 端口，默认30000。
-        - QUICPort：访问协议 QUIC 端口，默认30001。
-        - HTTPServerPort：HTTP 服务端口，默认30002。
-        - CloudStreamPort：云端流处理接口端口，默认30003。
-        - TunnelPort：边缘节点业务数据通道端口，默认30004。
+    - 端口：云端 CloudCore 默认给边端开放 NodePort 端口，如有冲突，请修改。
+        - WebSocketPort ：访问协议 WebSocket 端口，默认10000。
+        - QUICPort：访问协议 QUIC 端口，默认10001。
+        - HTTPServerPort：HTTP 服务端口，默认10002。
+        - CloudStreamPort：云端流处理接口端口，默认10003。
+        - TunnelPort：边缘节点业务数据通道端口，默认10004。
 
-    ![访问配置](../../images/create-edgeunit-06.png)
+    ![访问配置](../../images/create-edgeunit-00.png)
 
 1. 完成以上信息配置后，点击 __确定__ 按钮，完成边缘单元创建，自动返回边缘单元列表。
 
