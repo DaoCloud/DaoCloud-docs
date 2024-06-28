@@ -59,7 +59,7 @@ DCE 5.0 集群内已部署 __multus-underlay__  和 __spiderpool__。
 
 ### 哨兵模式
 
-1. 更新 redis 实例 __CR__（redisfailover），分别在 __spec.redis__  和 __spec.sentinel__  字段添加以下内容：
+1. 更新 Redis 实例 __CR__（redisfailover），分别在 __spec.redis__  和 __spec.sentinel__  字段添加以下内容：
 
     ```yaml
     podAnnotations:
@@ -89,6 +89,6 @@ DCE 5.0 集群内已部署 __multus-underlay__  和 __spiderpool__。
     Reids 哨兵模式中的工作负载 `updateStrategy` 为 `OnDelete` 时，
     更新 CR 之后不会立即删除旧版本的 Pod，需要手动去重启 Pod，重启 Pod 即可生效。
 
-- 下图为更新 CR 后未更新的数据截图：
+下图为更新 CR 后未更新的数据截图：
 
-    ![cr-pod](../images/ippool-pod-not-restart.png)
+![cr-pod](../images/ippool-pod-not-restart.png)
