@@ -30,8 +30,8 @@ nav:
                   - 资源规划: install/community/resources.md
                   - 从零部署 Kind 集群: install/community/kind/online.md
                   - 从零部署 K8s 集群: install/community/k8s/k8s-dce-deploy.md
-                  - 已有K8s集群上在线安装: install/community/k8s/online.md
-                  - 已有K8s集群上离线安装: install/community/k8s/offline.md
+                  - 在线安装到 K8s 集群: install/community/k8s/online.md
+                  - 离线安装到 K8s 集群: install/community/k8s/offline.md
               - 安装商业版:
                   - 安装介绍: 
                       - 部署架构: install/commercial/deploy-arch.md
@@ -68,7 +68,7 @@ nav:
               - 最佳实践:
                   - 集群部署模式使用场景: install/commercial/scenarios.md
                   - Global 集群实践:
-                      - DCE 5.0 etcd 采用 host 模式与控制面分离: install/best-practices/etcd-host-deploy.md
+                      - etcd 采用host模式与控制面分离: install/best-practices/etcd-host-deploy.md
                       - DCE 5.0 一体机部署: install/best-practices/all-in-one-machine.md
                   - 火种节点实践:
                       - 火种节点高可用方案: install/best-practices/thinder-ha.md
@@ -116,7 +116,7 @@ nav:
                   - 快速创建流水线: amamba/quickstart/deploy-pipeline.md
                   - 创建流水线:
                       - 自定义创建: amamba/user-guide/pipeline/create/custom.md
-                      - 基于 Jenkinsfile 创建: amamba/user-guide/pipeline/create/jenkins.md
+                      - 基于Jenkinsfile创建: amamba/user-guide/pipeline/create/jenkins.md
                       - 基于模板创建: amamba/user-guide/pipeline/create/template.md
                       - 创建多分支流水线: amamba/user-guide/pipeline/create/mutilpipeline.md
                   - 使用流水线:
@@ -133,13 +133,13 @@ nav:
                           - 手动执行: amamba/user-guide/pipeline/run/manual.md
                       - 查看流水线:
                           - 查看流水线详情: amamba/user-guide/pipeline/view/view-pipeline.md
-                          - 查看流水线运行记录详情: amamba/user-guide/pipeline/view/view-run.md
+                          - 查看流水线运行详情: amamba/user-guide/pipeline/view/view-run.md
                       - 流水线模板:
                           - 自定义模板: amamba/user-guide/pipeline/template/custom-template.md
                           - 模板说明: amamba/user-guide/pipeline/template/info.md
                   - 更多技巧:
                       - 自定义Jenkins Agent镜像: amamba/user-guide/pipeline/jenkins-agent.md
-                      - 在Jenkins中使用自定义工具链: amamba/quickstart/jenkins-custom.md
+                      - Jenkins自定义工具链: amamba/quickstart/jenkins-custom.md
                       - 在指定的节点上运行: amamba/quickstart/pipeline-on-node.md                    
                       - 构建多架构镜像: amamba/user-guide/pipeline/podman.md
                       - 在流水线中使用缓存: amamba/quickstart/job-cacher.md                  
@@ -150,7 +150,7 @@ nav:
                   - 手动同步应用: amamba/user-guide/gitops/sync-manually.md
                   - 在GitOps中启用凭证加密功能: amamba/user-guide/gitops/gitops-secret.md
               - 灰度发布:
-                  - 基于Argo Rollout实现灰度发布: amamba/quickstart/argocd-rollout.md
+                  - Argo Rollout灰度发布: amamba/quickstart/argocd-rollout.md
                   - 创建金丝雀发布任务: amamba/user-guide/release/canary.md
                   - 查看金丝雀发布任务: amamba/user-guide/release/check-canary.md
                   - 创建蓝绿发布任务: amamba/user-guide/release/blue-green.md
@@ -170,7 +170,7 @@ nav:
                       - 在托管网格中灰度发布: amamba/quickstart/istio_argocd_rollout.md
                   - CI 实践:
                       - 使用流水线实现代码扫描: amamba/quickstart/scan-with-pipeline.md
-                      - 集成 Harbor 实现镜像安全扫描: amamba/quickstart/scan-with-harbor.md
+                      - 集成 Harbor 镜像安全扫描: amamba/quickstart/scan-with-harbor.md
                       - Jenkins 发布应用至虚拟机: amamba/user-guide/pipeline/cicd_vm.md
                       - 物理机/虚拟机集成Jenkins: amamba/quickstart/jenkins-integration.md
                   - 灰度发布实践:
@@ -227,7 +227,7 @@ nav:
                       - 集群调度: kpanda/user-guide/workloads/pod-config/scheduling-policy.md
               - 弹性伸缩:
                   - 安装 metrics-server 插件: kpanda/user-guide/scale/install-metrics-server.md
-                  - 安装 kubernetes-cronhpa-controller 插件: kpanda/user-guide/scale/install-cronhpa.md
+                  - 安装 kubernetes-cronhpa-controller: kpanda/user-guide/scale/install-cronhpa.md
                   - 安装 VPA 插件: kpanda/user-guide/scale/install-vpa.md
                   - 基于内置指标创建 HPA: kpanda/user-guide/scale/create-hpa.md
                   - 基于自定义指标创建 HPA: kpanda/user-guide/scale/custom-hpa.md
