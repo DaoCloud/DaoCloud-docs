@@ -5,9 +5,9 @@ date: 2024-05-11
 
 # etcd components deployed in host mode and separated from the control plane
 
-When deploying DCE 5.0 using the installer version 0.13.0 or later, it supports the
-host mode deployment of etcd, which allows for decoupling from the control plane and
-achieving an independent high-availability etcd.
+Starting from version v0.13.0, the installer supports deploying DCE 5.0 in host mode for etcd
+(i.e., separating the etcd node from the master node). This allows for decoupling from the
+control plane, thereby achieving an independent high-availability etcd.
 
 ## Prerequisites
 
@@ -22,8 +22,8 @@ achieving an independent high-availability etcd.
 
     | CPU Architecture | Version | Download Link |
     | ---------------- | ------- | ------------- |
-    | AMD64            | v0.13.0 | <https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.13.0-amd64.tar>       |
-    | <font color="green">ARM64</font>            | v0.13.0 | <https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.13.0-arm64.tar>       |
+    | AMD64            | v0.13.0 | <https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.13.0-amd64.tar> |
+    | <font color="green">ARM64</font> | v0.13.0 | <https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.13.0-arm64.tar> |
 
     After downloading, extract the offline package:
 
@@ -44,40 +44,40 @@ achieving an independent high-availability etcd.
     metadata:
     spec:
       clusterName: my-cluster
-      # Configure etcd node information
-      etcdNodes:
+      etcdNodes: # (1)!
         - nodeName: "k8s-master"
-          ip: 10.6.112.50      
+          ip: 172.30.41.**
           ansibleUser: "root"
-          ansiblePass: "dangerous"
+          ansiblePass:  ******
         - nodeName: "k8s-node1"
-          ip: 10.6.112.51
+          ip: 172.30.41.**  
           ansibleUser: "root"
-          ansiblePass: "dangerous"
+          ansiblePass:  ******
         - nodeName: "k8s-node2"
-          ip: 10.6.112.52
+          ip: 172.30.41.**  
           ansibleUser: "root"
-          ansiblePass: "dangerous"
+          ansiblePass:  ******
       masterNodes:
-        - nodeName: poc-master1
-          ip: 10.5.14.31
+        - nodeName: gmaster1
+          ip: 172.30.41.**  
           ansibleUser: root
-          ansiblePass: dangerous@2022
-        - nodeName: poc-master2
-          ip: 10.5.14.32
+          ansiblePass:  ******
+        - nodeName: gmaster2
+          ip: 172.30.41.**  
           ansibleUser: root
-          ansiblePass: dangerous@2022
-        - nodeName: poc-master3
-          ip: 10.5.14.33
+          ansiblePass:  ******
+        - nodeName: gmaster3
+          ip: 172.30.41.**  
           ansibleUser: root
-          ansiblePass: dangerous@2022
+          ansiblePass: ******
       workerNodes: []
       .....
       
-      # Configure the deployment mode of etcd as host
       kubeanConfig: |-
-        etcd_deployment_type: host
+        etcd_deployment_type: host # Set deployment type of etcd to host
     ```
+
+    1. Set the etcd node
 
     !!! note
 
@@ -93,15 +93,19 @@ achieving an independent high-availability etcd.
     ./offline/dce5-installer cluster-create -c ./offline/sample/clusterConfig.yaml -m ./offline/sample/manifest.yaml 
     ```
 
-5. After the installation is complete, check if the cluster has deployed etcd.
+5. After the installation is complete, check whether etcd has been deployed on the
+   current cluster and control plane nodes.
 
-    - There are no etcd-related Pods in the current cluster.
+    - no etcd-related Pods in the current cluster.
 
         ![etcd01](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/install/images/etcd01.png)
 
-    - There are no etcd system services on the current cluster nodes.
+    - no etcd system services on the current cluster nodes.
 
         ![etcd02](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/install/images/etcd02.png)
+
+    In summary, etcd was not detected, indicating that there is no etcd
+    service on the current cluster and control plane nodes. Proceed to the next step.
 
 6. Run the command `pf -ef | grep etcd` to check if the apiserver is connected to the external etcd address.
 

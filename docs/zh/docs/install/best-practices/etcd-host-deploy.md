@@ -36,7 +36,7 @@
       clusterName: my-cluster
       etcdNodes: # (1)!
         - nodeName: "k8s-master"
-          ip: 172.30.41.**      
+          ip: 172.30.41.**
           ansibleUser: "root"
           ansiblePass:  ******
         - nodeName: "k8s-node1"
@@ -92,7 +92,7 @@
 
         ![etcd02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/etcd02.png)
 
-   综上 etcd 均未被检测到，说明当前集群及控制面节点无 etcd 服务，执行下一步。
+    综上 etcd 均未被检测到，说明当前集群及控制面节点无 etcd 服务，执行下一步。
 
 6. 执行命令 `pf -ef | grep etcd` ，查看 apiserver 连接的是外部 etcd 地址，如下图，连接正常。
 
