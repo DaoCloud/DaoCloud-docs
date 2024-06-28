@@ -1,4 +1,9 @@
 ---
+MTPE: ModetaNiu
+date: 2024-06-28
+---
+
+---
 hide:
   - toc
 ---
@@ -14,11 +19,11 @@ KubeEdge: An open-source system that extends native containerized application or
 
 The following explains the steps to create an external edge unit:
 
-1. Select __Cloud Edge__ from the left navigation bar to enter the edge unit list page. Click the __Create Edge Unit__ button at the top right of the page, and select __Create External Edge Unit__ from the dropdown list;
+1. Select __Cloud Edge Collaboration__ from the left navigation bar to enter the edge unit list page. Click the __Create Edge Unit__ button at the top right of the page, and select __External Edge Unit__ from the dropdown list;
 
-    <!-- Add image soon -->
+    ![Create External Edge Unit](../../images/create-edgeunit-01.png)
 
-2. Fill in the basic information;
+1. Fill in the basic information;
 
     - Edge Unit Name: A combination of lowercase letters, numbers, hyphens (-), and dots (.), with no consecutive symbols; must start and end with a letter or number; can contain up to 253 characters.
     - Cluster: The cluster running the edge unit control plane.
@@ -34,9 +39,9 @@ The following explains the steps to create an external edge unit:
         scheduling by removing the NoSchedule taint. This will prevent failures during the
         installation of system components.
 
-    <!-- Add image soon  -->
+    ![Basic Information](../../images/create-external-edgeunit-01.png)
 
-3. Component repository settings. Settings for KubeEdge and Kant cloud-side component repositories;
+<!-- 3. Component repository settings. Settings for KubeEdge and Kant cloud-side component repositories;
 
     - Kant Image Repository: The image repository required by the system for cloud-side components, where Kant refers to the Cloud Edge module.
         - Default: The default image repository address provided by the system, storing the images of cloud-side components required by the Cloud Edge module, such as kant-worker-admission;
@@ -48,28 +53,30 @@ The following explains the steps to create an external edge unit:
 
     !!! note
 
-        When edge nodes are accessed, the KubeEdge edge-side image repository can reference the cloud-side address, which is recommended to be filled in.
+        When edge nodes are accessed, the KubeEdge edge-side image repository can use the cloud-side address as a reference, which is recommended. -->
 
-    <!-- Add image soon -->
-
-4. Access configuration. Settings for accessing KubeEdge cloud-side components, allowing edge nodes to establish connections with the cloud side;
-
-    - Access Address: The access address of the CloudCore component of KubeEdge on the cloud side, which needs to be accessible by edge nodes.
-
-    - Ports:
-
-        - WebSocketPort: WebSocket protocol port for access, default is 10000.
-        - QUICPort: QUIC protocol port for access, default is 10001.
-        - HTTPServerPort: HTTP service port, default is 10002.
-        - CloudStreamPort: Port for cloud-side streaming interface, default is 10003.
-        - TunnelPort: Port for edge node business data channel, default is 10004.
+1. Fill in Advanced Settings
 
     !!! note
 
-        If there is a conflict with the NodePort port, please modify it.
+        If you use the online installation method, you only need to complete the access configuration. 
+        If you use the offline one, you also need to provide the component repository information.
 
-    <!-- Add image soon -->
+    **Access Settings**
 
-5. After completing the above information configuration, click the __OK__ button to finish creating the edge unit, and automatically return to the edge unit list.
+    It refers to the access settings for KubeEdge cloud components. Edge nodes use these settings to establish a connection with the cloud.
+
+    - Communication Protocol: the communication protocol for the cloud-edge signaling channel. When the cloud-edge network is frequently unstable, it is recommended to use the QUIC protocol.
+    - Access Address: the access address for the KubeEdge cloud component CloudCore, which needs to be accessible by edge nodes. Edge nodes use this address to establish a connection with the cloud.
+    - Ports: CloudCore on the cloud side opens NodePort ports to the edge by default. If there is a conflict, please modify them.
+        - WebSocketPort: the port for the WebSocket access protocol, default is 10000.
+        - QUICPort: the port for the QUIC access protocol, default is 10001.
+        - HTTPServerPort: the HTTP service port, default is 10002.
+        - CloudStreamPort: the cloud stream processing interface port, default is 10003.
+        - TunnelPort: the data channel port for edge node business data, default is 10004.
+
+    ![Network Config](../../images/create-edgeunit-00.png)
+
+1. After completing the above information configuration, click the __OK__ button to finish creating the edge unit, and automatically return to the edge unit list.
 
 Next step: [Manage Edge Units](./manage-unit.md)
