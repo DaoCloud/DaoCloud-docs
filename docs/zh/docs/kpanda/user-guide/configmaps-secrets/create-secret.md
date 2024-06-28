@@ -17,7 +17,7 @@
 
 - 容器管理模块[已接入 Kubernetes 集群](../clusters/integrate-cluster.md)或者[已创建 Kubernetes 集群](../clusters/create-cluster.md)，且能够访问集群的 UI 界面
 
-- 已完成一个[命名空间的创建](../namespaces/createns.md)、[用户的创建](../../../ghippo/user-guide/access-control/user.md)，并将用户授权为 [NS Editor](../permissions/permission-brief.md#ns-editor) 角色 ，详情可参考[命名空间授权](../permissions/cluster-ns-auth.md)。
+- 已完成一个[命名空间的创建](../namespaces/createns.md)、[用户的创建](../../../ghippo/user-guide/access-control/user.md)，并将用户授权为 [NS Editor](../permissions/permission-brief.md#ns-editor) ，详情可参考[集群和命名空间授权](../permissions/cluster-ns-auth.md)。
 
 ## 图形化表单创建
 
