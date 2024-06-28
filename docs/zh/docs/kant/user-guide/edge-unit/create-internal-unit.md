@@ -87,7 +87,7 @@ DCE 5.0 云边协同支持两种边缘单元：
 
     - 通讯协议：云边信令通道通信协议，云边网络经常不稳定时，推荐使用 QUIC 协议。
     - 访问地址：KubeEdge 云端组件 CloudCore 的访问地址，需要能被边缘节点访问，边缘节点通过该地址与云端建立连接。
-    - 端口：云端 CloudCore 默认给边端开放 NodePort 端口，如有冲突，请修改。。
+    - 端口：云端 CloudCore 默认给边端开放 NodePort 端口，如有冲突，请修改。
         - WebSocketPort ：访问协议 WebSocket 端口，默认30000。
         - QUICPort：访问协议 QUIC 端口，默认30001。
         - HTTPServerPort：HTTP 服务端口，默认30002。
