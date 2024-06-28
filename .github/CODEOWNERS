@@ -129,11 +129,9 @@ docs/en/docs/native/* @windsonsea
 docs/zh/docs/native/* @windsonsea
 docs/en/docs/dce/* @windsonsea @qiupingdai @samzong
 docs/zh/docs/dce/* @windsonsea @qiupingdai @samzong
-docs/en/docs/network/* @windsonsea @qiupingdai
-docs/zh/docs/network/* @windsonsea @qiupingdai
 
 # code
-docs/zh/themes/* @samzong
-docs/en/themes/* @samzong
-scripts/* @samzong
-.github/* @samzong
+docs/zh/themes/* @samzong @windsonsea
+docs/en/themes/* @samzong @windsonsea
+scripts/* @samzong @windsonsea
+.github/* @samzong @windsonsea

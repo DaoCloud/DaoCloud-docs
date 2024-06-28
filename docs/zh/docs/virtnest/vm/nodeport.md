@@ -43,10 +43,10 @@
       type: NodePort
     ```
 
-1. 执行以下命令
+2. 执行以下命令
 
     ```sh
     kubectl apply -f you-svc.yaml
     ```
 
-1. 创建成功后，就可以通过 `ssh username@nodeip -p 32090` 来访问虚拟机
+3. 创建成功后，就可以通过 `ssh username@nodeip -p 32090` 来访问虚拟机

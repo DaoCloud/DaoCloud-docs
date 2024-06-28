@@ -18,7 +18,7 @@ KubeEdge：是一个开源系统，将原生的容器化应用程序编排功能
 
     ![创建专有边缘单元](../../images/create-edgeunit-01.png)
 
-2. 填写基础信息；
+1. 填写基础信息；
 
     - 边缘单元名称：小写字母、数字、中划线（-）、点（.）的组合，不能有连续符号；以字母或数字为开头、结尾；最多包含 253 个字符。
     - 集群：运行边缘单元控制面的集群。
@@ -35,7 +35,7 @@ KubeEdge：是一个开源系统，将原生的容器化应用程序编排功能
 
     ![基本信息](../../images/create-external-edgeunit-01.png)
 
-3. 组件仓库设置。KubeEdge、Kant 的云端组件仓库设置；
+<!-- 3. 组件仓库设置。KubeEdge、Kant 的云端组件仓库设置；
 
     - Kant 镜像仓库：系统所需云端组件镜像仓库，Kant 代指云边协同模块。
         - 默认：系统提供的默认镜像仓库地址，存储云边协同模块所需云端组件镜像，像 kant-worker-admission;
@@ -49,26 +49,29 @@ KubeEdge：是一个开源系统，将原生的容器化应用程序编排功能
 
         在边缘节点接入时，KubeEdge 边端镜像仓库可以引用云端地址，建议填写。
 
-    ![组件仓库设置](../../images/create-external-edgeunit-02.png)
+    ![组件仓库设置](../../images/create-external-edgeunit-02.png) -->
 
-4. 访问配置。KubeEdge 云端组件的访问设置，边缘节点通过此设置与云端建立连接；
-
-    - 访问地址：KubeEdge 云端组件 CloudCore 的访问地址，需要能被边缘节点访问。
-
-    - 端口：
-
-        - WebSocketPort：访问协议 WebSocket 端口，默认 10000
-        - QUICPort：访问协议 QUIC 端口，默认 10001
-        - HTTPServerPort：HTTP 服务端口，默认 10002
-        - CloudStreamPort：云端流处理接口端口，默认 10003
-        - TunnelPort：边缘节点业务数据通道端口，默认 10004
+1. 填写高级设置
 
     !!! note
 
-        如果 NodePort 端口有冲突，请修改。
+        如果您是使用在线安装方式，则只需要填写访问配置，如果使用的是离线安装，则还需设置组件仓库信息。
 
-    ![访问配置](../../images/create-external-edgeunit-03.png)
+    **访问设置**
+    
+    KubeEdge 云端组件的访问设置，边缘节点通过此设置与云端建立连接。
 
-5. 完成以上信息配置后，点击 __确定__ 按钮，完成边缘单元创建，自动返回边缘单元列表。
+    - 通讯协议：云边信令通道通信协议，云边网络经常不稳定时，推荐使用 QUIC 协议。
+    - 访问地址：KubeEdge 云端组件 CloudCore 的访问地址，需要能被边缘节点访问，边缘节点通过该地址与云端建立连接。
+    - 端口：云端 CloudCore 默认给边端开放 NodePort 端口，如有冲突，请修改。。
+        - WebSocketPort ：访问协议 WebSocket 端口，默认30000。
+        - QUICPort：访问协议 QUIC 端口，默认30001。
+        - HTTPServerPort：HTTP 服务端口，默认30002。
+        - CloudStreamPort：云端流处理接口端口，默认30003。
+        - TunnelPort：边缘节点业务数据通道端口，默认30004。
+
+    ![访问配置](../../images/create-edgeunit-06.png)
+
+1. 完成以上信息配置后，点击 __确定__ 按钮，完成边缘单元创建，自动返回边缘单元列表。
 
 下一步：[管理边缘单元](./manage-unit.md)

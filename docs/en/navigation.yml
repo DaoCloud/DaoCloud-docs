@@ -66,15 +66,19 @@ nav:
                   - Import Offline Resources: install/import.md
               - Troubleshoot: install/faq.md
               - Best Practices:
-                  - Offline Clipper Script User Manual: install/best-practices/offline-clipper.md
                   - Cluster Deployment Scenarios: install/commercial/scenarios.md
-                  - Deploy on DCE 5.0 Appliance: install/best-practices/all-in-one-machine.md
-                  - etcd Deployed in Host and Separated from Control Plane: install/best-practices/etcd-host-deploy.md
-                  - HA Bootstrap Nodes: install/best-practices/thinder-ha.md
-                  - Backup and Restore of Bootstrap Node: install/best-practices/thinder-restore.md
-                  - Fix CVE-2024-21626: install/best-practices/cve-20240-21626.md
-                  - Disk Limit in Docker-based K8s Cluster: install/best-practices/docker-storage.md
-                  - Cluster Parameters at Scale: install/best-practices/large-deployments-par.md
+                  - Global Cluster Practices:
+                      - etcd Deployed in Host and Separated from Control Plane: install/best-practices/etcd-host-deploy.md
+                      - Deploying on DCE 5.0 Appliance: install/best-practices/all-in-one-machine.md
+                  - Thinder Practices:
+                      - HA Bootstrap Nodes: install/best-practices/thinder-ha.md
+                      - Backup and Restore of Bootstrap Node: install/best-practices/thinder-restore.md
+                  - Extend Practices:
+                      - Disk Limit in Docker-based K8s Cluster: install/best-practices/docker-storage.md
+                      - Cluster Parameters at Scale: install/best-practices/large-deployments-par.md
+                      - Configure Extended Parameters: install/best-practices/extend-params.md
+                  - Offline-Clipper Guidelines: install/best-practices/offline-clipper.md
+                  - Fixing CVE-2024-21626 bugs: install/best-practices/cve-20240-21626.md
               - Installer Release Notes: install/release-notes.md
           - Best Practices: dce/bphome.md
       - Workbench:
