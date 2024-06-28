@@ -47,12 +47,14 @@ spec:
           image: chrstnhntschl/gpu_burn
           resources:
             limits:
-              nvidia.com/gpu: 2 # 申请 MIG GPU 的数量
+              nvidia.com/gpu: 2 # (1)!
           imagePullPolicy: Always
       restartPolicy: Always
 ```
 
-** __MIG  Mixed__ 模式：**
+1. 申请 MIG GPU 的数量
+
+__MIG  Mixed__ 模式：
 
 ```yaml
 apiVersion: apps/v1
@@ -76,10 +78,12 @@ spec:
           image: chrstnhntschl/gpu_burn
           resources:
             limits:
-              nvidia.com/mig-4g.20gb: 1 # 通过 nvidia.com/mig-g.gb 的资源类型公开各个 MIG 设备
+              nvidia.com/mig-4g.20gb: 1 # (1)!
           imagePullPolicy: Always
       restartPolicy: Always
 ```
+
+1. 通过 nvidia.com/mig-g.gb 的资源类型公开各个 MIG 设备
 
 进入容器后可以查看只使用了一个 MIG 设备。
 

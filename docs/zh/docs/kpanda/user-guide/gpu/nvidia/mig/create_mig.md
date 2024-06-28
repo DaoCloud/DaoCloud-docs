@@ -13,14 +13,15 @@
 - 确认集群节点上具有对应型号的 GPU 卡（[NVIDIA H100](https://www.nvidia.com/en-us/data-center/h100/)、
   [A100](https://www.nvidia.com/en-us/data-center/a100/) 和
   [A30](https://www.nvidia.com/en-us/data-center/products/a30-gpu/) Tensor Core GPU），
-  详情参考：[GPU 支持矩阵](../../gpu_matrix.md)
+  详情参考 [GPU 支持矩阵](../../gpu_matrix.md)。
 - 节点上的所有 GPU 必须：属于同一产品线（例如 A100-SXM-40GB）
 
 ## 安装 GPU Operator Addon
 
 ### 参数配置
 
-[安装 Operator ](../install_nvidia_driver_of_operator.md) 时需要对应设置 MigManager Config 参数，默认为 **default-mig-parted-config**，同时也可以自定义切分策略配置文件：
+[安装 Operator](../install_nvidia_driver_of_operator.md) 时需要对应设置 MigManager Config 参数，
+默认为 **default-mig-parted-config** ，同时也可以自定义切分策略配置文件：
 
 ![single](../../images/gpu-operator-mig.png)
 
@@ -78,8 +79,8 @@
         1g.10gb: 2
         2g.20gb: 1
         3g.40gb: 1
- # 设置后会按照设置规格切分 CI 实例 
-  custom-config:    
+  # 设置后会按照设置规格切分 CI 实例
+  custom-config:
     - devices: all
       mig-enabled: true
       mig-devices:
@@ -104,7 +105,7 @@ custom-config:
 
 ![mixed](../../images/node-gpu.png)
 
-我们需要点击节点旁的按钮，选择 GPU 模式切换，然后选择对应的MIG模式，以及切分的策略，这里以 MIXED 模式为例：
+点击节点列表右侧的 __┇__ ，选择 **GPU 模式切换** ，然后选择对应的 MIG 模式以及切分的策略，这里以 MIXED 模式为例：
 
 ![mig](../../images/mig-select.png)
 
@@ -115,4 +116,4 @@ custom-config:
 
 点击确认按钮后，等待约一分钟左右刷新页面，MIG 模式切换成：
 
-![](../../images/node-mig.png)
+![切换 mig](../../images/node-mig.png)
