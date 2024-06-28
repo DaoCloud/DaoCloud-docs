@@ -35,72 +35,72 @@
 
     ??? note "点击查看流水线 Jenkinsfile 样例文件"
 
-    ```groovy
-    pipeline {
-      agent {
-        node {
-          label 'base'
-        }
-      }
-      environment {
-        SOURCE_REPO          = '<https://github.com/amamba-io/amamba-examples.git>'
-        SOURCE_CREDENTIAL_ID = '<source-credential-id>'
-        DEPLOY_REPO          = 'github.com/amamba-io/amamba-examples.git'
-        DEPLOY_CREDENTIAL_ID = '<deploy-credential-id>'
-        DEPLOY_PATH          = 'plain-yaml'
-        DOCKERFILE_ROOT      = 'guestbook-go'
-        DOCKER_REPO          = 'docker.io/amambadev/guestbook'
-        DOCKER_CREDENTIAL_ID = '<docker-credential-id>'
-      }
-      stages {
-        stage('git clone') {
-          steps {
-            git(branch: 'main', credentialsId: "${SOURCE_CREDENTIAL_ID}", url: "${SOURCE_REPO}")
-            script {
-                env.COMMIT_ID = sh(script: 'git rev-parse --short=8 HEAD',
-                                    returnStdout: true).trim()
-                echo "commit id: ${COMMIT_ID}"
+        ```groovy
+        pipeline {
+          agent {
+            node {
+              label 'base'
             }
           }
-        }
-        stage('build & push') {
-          steps {
-            container('base') {
-              withCredentials([usernamePassword(passwordVariable:'PASS',usernameVariable:'USER',credentialsId:"${DOCKER_CREDENTIAL_ID}")]) {
-                sh 'docker login ${DOCKER_REPO} -u $USER -p $PASS'
-                sh 'docker build -f Dockerfile -t ${DOCKER_REPO}:${COMMIT_ID} ${DOCKERFILE_ROOT}'
-                sh 'docker push ${DOCKER_REPO}:${COMMIT_ID}'
-              }
-            }
-          }
-        }
-        stage('update manifest') {
           environment {
-            DOCKER_TAG = "${COMMIT_ID}"
+            SOURCE_REPO          = '<https://github.com/amamba-io/amamba-examples.git>'
+            SOURCE_CREDENTIAL_ID = '<source-credential-id>'
+            DEPLOY_REPO          = 'github.com/amamba-io/amamba-examples.git'
+            DEPLOY_CREDENTIAL_ID = '<deploy-credential-id>'
+            DEPLOY_PATH          = 'plain-yaml'
+            DOCKERFILE_ROOT      = 'guestbook-go'
+            DOCKER_REPO          = 'docker.io/amambadev/guestbook'
+            DOCKER_CREDENTIAL_ID = '<docker-credential-id>'
           }
-          steps {
-            container('base'){
-              dir('deploy') {
-                git(branch: "main", url: "https://${DEPLOY_REPO}", credentialsId: "${DEPLOY_CREDENTIAL_ID}")
-                sh 'yum install -y gettext'
-                sh 'envsubst < pipelines/templates/guestbook-ui-deployment.yaml.tmpl > plain-yaml/guestbook-ui-deployment.yaml'
-                withCredentials([usernamePassword(passwordVariable:'PASS', usernameVariable:'USER', credentialsId:"${DEPLOY_CREDENTIAL_ID}")]) {
-                    sh '''
-                        git config user.name "robot"
-                        git config user.email "<robot@amamba.io>"
+          stages {
+            stage('git clone') {
+              steps {
+                git(branch: 'main', credentialsId: "${SOURCE_CREDENTIAL_ID}", url: "${SOURCE_REPO}")
+                script {
+                    env.COMMIT_ID = sh(script: 'git rev-parse --short=8 HEAD',
+                                        returnStdout: true).trim()
+                    echo "commit id: ${COMMIT_ID}"
+                }
+              }
+            }
+            stage('build & push') {
+              steps {
+                container('base') {
+                  withCredentials([usernamePassword(passwordVariable:'PASS',usernameVariable:'USER',credentialsId:"${DOCKER_CREDENTIAL_ID}")]) {
+                    sh 'docker login ${DOCKER_REPO} -u $USER -p $PASS'
+                    sh 'docker build -f Dockerfile -t ${DOCKER_REPO}:${COMMIT_ID} ${DOCKERFILE_ROOT}'
+                    sh 'docker push ${DOCKER_REPO}:${COMMIT_ID}'
+                  }
+                }
+              }
+            }
+            stage('update manifest') {
+              environment {
+                DOCKER_TAG = "${COMMIT_ID}"
+              }
+              steps {
+                container('base'){
+                  dir('deploy') {
+                    git(branch: "main", url: "https://${DEPLOY_REPO}", credentialsId: "${DEPLOY_CREDENTIAL_ID}")
+                    sh 'yum install -y gettext'
+                    sh 'envsubst < pipelines/templates/guestbook-ui-deployment.yaml.tmpl > plain-yaml/guestbook-ui-deployment.yaml'
+                    withCredentials([usernamePassword(passwordVariable:'PASS', usernameVariable:'USER', credentialsId:"${DEPLOY_CREDENTIAL_ID}")]) {
+                        sh '''
+                            git config user.name "robot"
+                            git config user.email "<robot@amamba.io>"
 
-                        git add .
-                        git commit -m "Bump image with ${DOCKER_REPO}:${DOCKER_TAG}"
-                        git push "https://${USER}:${PASS}@${DEPLOY_REPO}"
-                    '''
-                    }
+                            git add .
+                            git commit -m "Bump image with ${DOCKER_REPO}:${DOCKER_TAG}"
+                            git push "https://${USER}:${PASS}@${DEPLOY_REPO}"
+                        '''
+                        }
+                  }
+                }
               }
             }
           }
         }
-      }
-    }
-    ```
+        ```
 
 ### 基于 Kustomize 持续发布
 
