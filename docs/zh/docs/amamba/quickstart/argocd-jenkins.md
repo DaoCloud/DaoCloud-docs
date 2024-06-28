@@ -10,13 +10,13 @@
 
 基于整体流程，我们需要准备如下信息：
 
-1. 准备两个代码仓库，其中一个作为存业务代码的仓库，一个作为应用的配置文件（yaml）仓库。
+1. 准备两个代码仓库，其中一个作为存业务代码的仓库，一个作为应用的配置文件（yaml）仓库。在这个例子中为了方便我们放在同一个仓库中不同目录下：
 
     ```console
     可以参考 GitHub 中的配置：
    
-    业务代码：<https://github.com/jzhupup/dao-2048.git>
-    应用配置：<https://github.com/jzhupup/argocd-example-apps.git>
+    业务代码：https://github.com/amamba-io/amamba-examples/tree/main/guestbook-go
+    应用配置：https://github.com/amamba-io/amamba-examples/tree/main/plain-yaml
     ```
 
 2. 准备一个 Harbor 镜像仓库
@@ -33,96 +33,192 @@
 
 2. 创建成功后，选择该流水线操作： __编辑 Jenkinsfile__ 
 
-    ??? note "点击查看流水线 Jenkinsfile 文件，可根据实际需要参数"
+    ??? note "点击查看流水线 Jenkinsfile 样例文件"
 
-        ```groovy
-        pipeline {
-          agent {
-            node {
-              label 'maven'
+    ```groovy
+    pipeline {
+      agent {
+        node {
+          label 'base'
+        }
+      }
+      environment {
+        SOURCE_REPO          = '<https://github.com/amamba-io/amamba-examples.git>'
+        SOURCE_CREDENTIAL_ID = '<source-credential-id>'
+        DEPLOY_REPO          = 'github.com/amamba-io/amamba-examples.git'
+        DEPLOY_CREDENTIAL_ID = '<deploy-credential-id>'
+        DEPLOY_PATH          = 'plain-yaml'
+        DOCKERFILE_ROOT      = 'guestbook-go'
+        DOCKER_REPO          = 'docker.io/amambadev/guestbook'
+        DOCKER_CREDENTIAL_ID = '<docker-credential-id>'
+      }
+      stages {
+        stage('git clone') {
+          steps {
+            git(branch: 'main', credentialsId: "${SOURCE_CREDENTIAL_ID}", url: "${SOURCE_REPO}")
+            script {
+                env.COMMIT_ID = sh(script: 'git rev-parse --short=8 HEAD',
+                                    returnStdout: true).trim()
+                echo "commit id: ${COMMIT_ID}"
             }
           }
-          parameters {
-            string(name: 'DOCKER_REPO', defaultValue: 'release-ci.daocloud.io/test-jzh/dao-2048', description: '镜像名称')
-            string(name: 'DOCKER_IMAGE_VERSION', defaultValue: 'v2.0', description: '镜像版本')
-          }
-          stages {
-            stage('git clone') {
-              agent none
-              steps {
-                git(branch: 'main', credentialsId: ' git-credentials', url: '<http://172.30.40.32:9980/gitlab-instance-facdd89d/dao-2048.git>')
-              }
-            }
-            stage('docker build & push') {
-              agent none
-              steps {
-                container('maven') {
-                  withCredentials([usernamePassword(passwordVariable:'PASS',usernameVariable:'USER',credentialsId:'harbor-credentials')]) {
-                    sh 'docker login ${DOCKER_REPO} -u $USER -p $PASS'
-                    sh 'docker build -f Dockerfile -t ${DOCKER_REPO}:${DOCKER_IMAGE_VERSION} .'
-                    sh 'docker push ${DOCKER_REPO}:${DOCKER_IMAGE_VERSION}'
-                  }
-                }
-              }
-            }
-            stage('update config') {
-              agent none
-              steps {
-                withCredentials([usernamePassword(passwordVariable:'password',usernameVariable:'username',credentialsId:'git-app-credentials')]) {
-                  sh """
-                    git config --global user.name "root"
-                    git config --global user.email "test@gmail.com"
-                    git clone <http://${username}:${password}@172.30.40.32:9980/gitlab-instance-facdd89d/argocd-example-apps.git>                                         
-                    cd  ./argocd-example-apps
-                    sed -i "s#${DOCKER_REPO}.*#${DOCKER_REPO}:${DOCKER_IMAGE_VERSION}#g" guestbook/dao-2048.yaml
-                    git add . && git commit -m "update image"
-                    git push <http://${username}:${password}@172.30.40.32:9980/gitlab-instance-facdd89d/argocd-example-apps.git>
-                    """
-                }
+        }
+        stage('build & push') {
+          steps {
+            container('base') {
+              withCredentials([usernamePassword(passwordVariable:'PASS',usernameVariable:'USER',credentialsId:"${DOCKER_CREDENTIAL_ID}")]) {
+                sh 'docker login ${DOCKER_REPO} -u $USER -p $PASS'
+                sh 'docker build -f Dockerfile -t ${DOCKER_REPO}:${COMMIT_ID} ${DOCKERFILE_ROOT}'
+                sh 'docker push ${DOCKER_REPO}:${COMMIT_ID}'
               }
             }
           }
         }
-        ```
+        stage('update manifest') {
+          environment {
+            DOCKER_TAG = "${COMMIT_ID}"
+          }
+          steps {
+            container('base'){
+              dir('deploy') {
+                git(branch: "main", url: "https://${DEPLOY_REPO}", credentialsId: "${DEPLOY_CREDENTIAL_ID}")
+                sh 'yum install -y gettext'
+                sh 'envsubst < pipelines/templates/guestbook-ui-deployment.yaml.tmpl > plain-yaml/guestbook-ui-deployment.yaml'
+                withCredentials([usernamePassword(passwordVariable:'PASS', usernameVariable:'USER', credentialsId:"${DEPLOY_CREDENTIAL_ID}")]) {
+                    sh '''
+                        git config user.name "robot"
+                        git config user.email "<robot@amamba.io>"
+
+                        git add .
+                        git commit -m "Bump image with ${DOCKER_REPO}:${DOCKER_TAG}"
+                        git push "https://${USER}:${PASS}@${DEPLOY_REPO}"
+                    '''
+                    }
+              }
+            }
+          }
+        }
+      }
+    }
+    ```
+
+### 基于 Kustomize 持续发布
+
+如果部署文件使用 Kustomize 管理，我们可以更新流水线`update manifest`步骤以适配这种情况：
+
+```groovy
+environment {
+  ...
+  DEPLOY_PATH          = 'kustomize-guestbook/'
+}
+stages{
+  ...
+  stage('update manifest') {
+    environment {
+      DOCKER_TAG = "${COMMIT_ID}"
+    }
+    steps {
+      container('base'){
+        dir('deploy') {
+          git(branch: "main", url: "https://${DEPLOY_REPO}", credentialsId: "${DEPLOY_CREDENTIAL_ID}")
+          sh '''
+              cd ${DEPLOY_PATH}
+              # install kustomize
+              curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
+              ./kustomize edit set image ${DOCKER_REPO}:latest=${DOCKER_REPO}:${DOCKER_TAG}
+          '''
+          withCredentials([usernamePassword(passwordVariable:'PASS', usernameVariable:'USER', credentialsId:"${DEPLOY_CREDENTIAL_ID}")]) {
+          sh '''
+              git config user.name "robot"
+              git config user.email "robot@amamba.io"
+
+              git add .
+              git commit -m "Bump image with ${DOCKER_REPO}:${DOCKER_TAG}"
+              git push "https://${USER}:${PASS}@${DEPLOY_REPO}"
+          '''
+          }
+        }
+      }
+    }
+  }
+}
+
+```
+
+### 基于 Helm 持续发布
+
+如果部署文件使用 Helm Chart 管理，我们可以更新流水线`update manifest`步骤以适配这种情况：
+
+```groovy
+environment {
+  ...
+  DEPLOY_PATH          = 'helm-guestbook/values-production.yaml'
+}
+stages{
+  ...
+  stage('update manifest') {
+    environment {
+      DOCKER_TAG = "${COMMIT_ID}"
+    }
+    steps {
+      container('base'){
+        dir('deploy') {
+          git(branch: "main", url: "https://${DEPLOY_REPO}", credentialsId: "${DEPLOY_CREDENTIAL_ID}")
+          sh '''
+              yum install -y yq
+              yq -i ".image.tag=${DOCKER_TAG}" ${DEPLOY_PATH}
+          '''
+          withCredentials([usernamePassword(passwordVariable:'PASS', usernameVariable:'USER', credentialsId:"${DEPLOY_CREDENTIAL_ID}")]) {
+          sh '''
+              git config user.name "robot"
+              git config user.email "robot@amamba.io"
+
+              git add .
+              git commit -m "Bump image with ${DOCKER_REPO}:${DOCKER_TAG}"
+              git push "https://${USER}:${PASS}@${DEPLOY_REPO}"
+          '''
+          }
+        }
+      }
+    }
+  }
+}
+```
 
 ## 创建持续部署应用
 
-1. 用 Https 方式导入 argocd-example-apps 仓库，[参考步骤](../user-guide/gitops/import-repo.md)。
+1. 用 Https 方式导入 amamba-examples 仓库，[参考步骤](../user-guide/gitops/import-repo.md)。
 
 2. 创建一个 GitOps 应用。
 
-    ![cd:ci02](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci02.png)
+    ![cd:ci02](../images/pipeline-gitops-2.png)
 
 3. 创建完成后，会自动生成一条记录，同步状态显示 __未同步__ 。
 
-    ![cd:ci03](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci03.png)
+    ![cd:ci03](../images/pipeline-gitops-3.png)
 
 4. 点击 __同步__ ，完成应用部署。
 
-    ![cd:ci04](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci04.png)
+    ![cd:ci04](../images/pipeline-gitops-4.png)
 
 ## 运行流水线触发 CI/CD
 
 1. 选择上述创建的流水线，点击 __立即运行__ 。
 
-    ![cd:ci05](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci05.png)
-
 2. 查看运行日志。
 
-    ![cd:ci06](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci06.png)
+    ![cd:ci05](../images/pipeline-gitops-5.png)
 
-3. 流水线运行成功后，验证镜像是否上传到 Harbor，Jenkinsfile 中定义的 tag 为 v2.0。
+3. 流水线运行成功后，验证镜像是否上传到 Harbor，Jenkinsfile 中定义的 tag 为当前的`Commit ID`，同时注意到部署仓库的内容也更新了。
 
-    ![cd:ci07](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci07.png)
+    ![cd:ci06](../images/pipeline-gitops-6.png)
+    ![ci:cd07](../images/pipeline-gitops-7.png)
 
-4. 继续验证持续部署应用，发现处于 __未同步__ 状态。看到 Deployment 资源未同步，并跳转到 __容器管理__ 模块确认目前镜像版本。
+4. 继续验证持续部署应用，发现处于 __未同步__ 状态。看到 Deployment 资源未同步。
 
-    ![cd:ci08](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci08.png)
-
-    ![cd:ci09](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci09.png)
+    ![cd:ci08](../images/pipeline-gitops-8.png)
 
 5. 点击 __同步__ ，等待同步成功后，查看 Deployment 资源，确认目前的镜像版本。
 
-    ![cd:ci11](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci11.png)
+    ![cd:ci11](../images/pipeline-gitops-9.png)
 
-    ![cd:ci10](https://docs.daocloud.io/daocloud-docs-images/docs/amamba/images/cd:ci10.png)
