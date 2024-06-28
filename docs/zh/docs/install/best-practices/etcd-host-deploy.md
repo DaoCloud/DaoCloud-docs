@@ -1,6 +1,6 @@
 # 部署 DCE 5.0 商业版时，etcd 组件采用 host 模式部署与控制平面分离
 
-安装器在 v0.13.0 版本之后进行部署 DCE 5.0 时，能够支持 host 模式部署 etcd，以便与控制平面分离解耦，实现独立的高可用 etcd。
+安装器在 v0.13.0 版本之后进行部署 DCE 5.0 时，能够支持 host 模式部署 etcd（即 etcd 所在节点 和 master 节点之间分离），以便与控制平面分离解耦，实现独立的高可用 etcd。
 
 ## 前提条件
 
@@ -36,30 +36,30 @@
       clusterName: my-cluster
       etcdNodes: # (1)!
         - nodeName: "k8s-master"
-          ip: 10.6.112.50      
+          ip: 172.30.41.**      
           ansibleUser: "root"
-          ansiblePass: "dangerous"
+          ansiblePass:  ******
         - nodeName: "k8s-node1"
-          ip: 10.6.112.51
+          ip: 172.30.41.**  
           ansibleUser: "root"
-          ansiblePass: "dangerous"
+          ansiblePass:  ******
         - nodeName: "k8s-node2"
-          ip: 10.6.112.52
+          ip: 172.30.41.**  
           ansibleUser: "root"
-          ansiblePass: "dangerous"
+          ansiblePass:  ******
       masterNodes:
-        - nodeName: poc-master1
-          ip: 10.5.14.31
+        - nodeName: gmaster1
+          ip: 172.30.41.**  
           ansibleUser: root
-          ansiblePass: dangerous@2022
-        - nodeName: poc-master2
-          ip: 10.5.14.32
+          ansiblePass:  ******
+        - nodeName: gmaster2
+          ip: 172.30.41.**  
           ansibleUser: root
-          ansiblePass: dangerous@2022
-        - nodeName: poc-master3
-          ip: 10.5.14.33
+          ansiblePass:  ******
+        - nodeName: gmaster3
+          ip: 172.30.41.**  
           ansibleUser: root
-          ansiblePass: dangerous@2022
+          ansiblePass: ******
       workerNodes: []
       .....
       
@@ -82,20 +82,22 @@
     ./offline/dce5-installer cluster-create -c ./offline/sample/clusterConfig.yaml -m ./offline/sample/manifest.yaml 
     ```
 
-5. 安装完成后，查看验证集群是否部署了 etcd。
+5. 安装完成后，查看验证当前集群及控制面节点是否部署了 etcd？
 
     - 当前集群没有 etcd 相关的 Pod
 
         ![etcd01](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/etcd01.png)
 
-    - 当前集群节点没有 etcd 系统服务
+    - 当前集群控制面节点没有 etcd 系统服务
 
         ![etcd02](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/etcd02.png)
 
-6. 执行命令 `pf -ef | grep etcd` ，查看 apiserver 连接的是外部 etcd 地址。
+   综上 etcd 均未被检测到，说明当前集群及控制面节点无 etcd 服务，执行下一步。
+
+6. 执行命令 `pf -ef | grep etcd` ，查看 apiserver 连接的是外部 etcd 地址，如下图，连接正常。
 
     ![etcd03](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/etcd03.png)
 
-7. 在 etcd 节点上执行命令 `systemctl status etcd` 来判断运行情况。
+7. 在 etcd 节点上执行命令 `systemctl status etcd` 来判断运行情况，如下图，etcd 运行正常。
 
     ![etcd04](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/install/images/etcd04.png)
