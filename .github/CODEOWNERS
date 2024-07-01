@@ -2,141 +2,142 @@
 
 ## <https://help.github.com/articles/about-codeowners/>
 
-# amamba
-docs/en/docs/amamba/* @jzhupup @zengchongliner @qiupingdai @windsonsea
-docs/zh/docs/amamba/* @jzhupup @zengchongliner @qiupingdai @windsonsea
-docs/en/docs/download/modules/amamba.md @jzhupup @zengchongliner @qiupingdai @windsonsea
-docs/zh/docs/download/modules/amamba.md @jzhupup @zengchongliner @qiupingdai @windsonsea
-docs/en/docs/videos/amamba.md @jzhupup @zengchongliner @qiupingdai @windsonsea
-docs/zh/docs/videos/amamba.md @jzhupup @zengchongliner @qiupingdai @windsonsea
-
-# baize
-docs/en/docs/baize/* @samzong @git-jxj @Rei1010 @windsonsea @kebe7jun
-docs/zh/docs/baize/* @samzong @git-jxj @Rei1010 @windsonsea @kebe7jun
-docs/en/docs/download/modules/baize.md @samzong @git-jxj @Rei1010 @windsonsea @kebe7jun
-docs/zh/docs/download/modules/baize.md @samzong @git-jxj @Rei1010 @windsonsea @kebe7jun
-docs/en/docs/videos/baize.md @samzong @git-jxj @Rei1010 @windsonsea @kebe7jun
-docs/zh/docs/videos/baize.md @samzong @git-jxj @Rei1010 @windsonsea @kebe7jun
-
-# ghippo
-docs/en/docs/ghippo/* @yitingdc @lemontrees123 @bzsuni @qiupingdai @windsonsea
-docs/zh/docs/ghippo/* @yitingdc @lemontrees123 @bzsuni @qiupingdai @windsonsea
-docs/en/docs/download/modules/ghippo.md @yitingdc @lemontrees123 @bzsuni @qiupingdai @windsonsea
-docs/zh/docs/download/modules/ghippo.md @yitingdc @lemontrees123 @bzsuni @qiupingdai @windsonsea
-docs/en/docs/videos/ghippo.md @yitingdc @lemontrees123 @bzsuni @qiupingdai @windsonsea
-docs/zh/docs/videos/ghippo.md @yitingdc @lemontrees123 @bzsuni @qiupingdai @windsonsea
-
-# insight
-docs/en/docs/insight/* @justedennnnn @Penguin-zlh @tukwila @samzong @windsonsea @FKAJerry
-docs/zh/docs/insight/* @justedennnnn @Penguin-zlh @tukwila @samzong @windsonsea @FKAJerry
-docs/en/docs/download/modules/insight.md @justedennnnn @Penguin-zlh @tukwila @samzong @windsonsea @FKAJerry
-docs/zh/docs/download/modules/insight.md @justedennnnn @Penguin-zlh @tukwila @samzong @windsonsea @FKAJerry
-docs/en/docs/videos/insight.md @justedennnnn @Penguin-zlh @tukwila @samzong @windsonsea @FKAJerry
-docs/zh/docs/videos/insight.md @justedennnnn @Penguin-zlh @tukwila @samzong @windsonsea @FKAJerry
-
-# kairship
-docs/en/docs/kairship/* @wlp1153468871 @yt-huang @samzong @windsonsea
-docs/zh/docs/kairship/* @wlp1153468871 @yt-huang @samzong @windsonsea
-docs/en/docs/download/modules/kairship.md @wlp1153468871 @yt-huang @samzong @windsonsea
-docs/zh/docs/download/modules/kairship.md @wlp1153468871 @yt-huang @samzong @windsonsea
-docs/en/docs/videos/kairship.md @wlp1153468871 @yt-huang @samzong @windsonsea
-docs/zh/docs/videos/kairship.md @wlp1153468871 @yt-huang @samzong @windsonsea
-
-# kangaroo
-docs/en/docs/kangaroo/* @lemontrees123 @yt-huang @yitingdc @qiupingdai @windsonsea
-docs/zh/docs/kangaroo/* @lemontrees123 @yt-huang @yitingdc @qiupingdai @windsonsea
-docs/en/docs/download/modules/kangaroo.md @lemontrees123 @yt-huang @yitingdc @qiupingdai @windsonsea
-docs/zh/docs/download/modules/kangaroo.md @lemontrees123 @yt-huang @yitingdc @qiupingdai @windsonsea
-docs/en/docs/videos/kangaroo.md @lemontrees123 @yt-huang @yitingdc @qiupingdai @windsonsea
-docs/zh/docs/videos/kangaroo.md @lemontrees123 @yt-huang @yitingdc @qiupingdai @windsonsea
-
-# kant
-docs/en/docs/kant/* @zhiyingfang2022 @git-jxj @qiupingdai @windsonsea
-docs/zh/docs/kant/* @zhiyingfang2022 @git-jxj @qiupingdai @windsonsea
-docs/en/docs/download/modules/kant.md @zhiyingfang2022 @git-jxj @qiupingdai @windsonsea
-docs/zh/docs/download/modules/kant.md @zhiyingfang2022 @git-jxj @qiupingdai @windsonsea
-docs/en/docs/videos/kant.md @zhiyingfang2022 @git-jxj @qiupingdai @windsonsea
-docs/zh/docs/videos/kant.md @zhiyingfang2022 @git-jxj @qiupingdai @windsonsea
-
-# install
-docs/en/docs/install/* @jzhupup @FloatXD @Rei1010 @qiupingdai @windsonsea
-docs/zh/docs/install/* @jzhupup @FloatXD @Rei1010 @qiupingdai @windsonsea
-docs/en/docs/videos/install.md @jzhupup @FloatXD @Rei1010 @qiupingdai @windsonsea
-docs/zh/docs/videos/install.md @jzhupup @FloatXD @Rei1010 @qiupingdai @windsonsea
-
-# kpanda
-docs/en/docs/kpanda/* @lemontrees123 @shijinye @Rei1010 @yt-huang @qiupingdai @windsonsea
-docs/zh/docs/kpanda/* @lemontrees123 @shijinye @Rei1010 @yt-huang @qiupingdai @windsonsea
-docs/en/docs/download/modules/kpanda.md @lemontrees123 @shijinye @Rei1010 @yt-huang @qiupingdai @windsonsea
-docs/zh/docs/download/modules/kpanda.md @lemontrees123 @shijinye @Rei1010 @yt-huang @qiupingdai @windsonsea
-docs/en/docs/download/modules/addon/* @lemontrees123 @shijinye @Rei1010 @yt-huang @qiupingdai @windsonsea
-docs/zh/docs/download/modules/addon/* @lemontrees123 @shijinye @Rei1010 @yt-huang @qiupingdai @windsonsea
-docs/en/docs/videos/kpanda.md @lemontrees123 @shijinye @Rei1010 @yt-huang @qiupingdai @windsonsea
-docs/zh/docs/videos/kpanda.md @lemontrees123 @shijinye @Rei1010 @yt-huang @qiupingdai @windsonsea
-
-# mspider
-docs/en/docs/mspider/* @Adityayxt @samzong @Cynthia-yun @windsonsea @kebe7jun
-docs/zh/docs/mspider/* @Adityayxt @samzong @Cynthia-yun @windsonsea @kebe7jun
-docs/en/docs/download/modules/mspider.md @Adityayxt @samzong @Cynthia-yun @windsonsea @kebe7jun
-docs/zh/docs/download/modules/mspider.md @Adityayxt @samzong @Cynthia-yun @windsonsea @kebe7jun
-docs/en/docs/videos/mspider.md @Adityayxt @samzong @Cynthia-yun @windsonsea @kebe7jun
-docs/zh/docs/videos/mspider.md @Adityayxt @samzong @Cynthia-yun @windsonsea @kebe7jun
-
-# skoala
-docs/en/docs/skoala/* @Adityayxt @samzong @tukwila @Cynthia-yun @windsonsea @wilsonwu
-docs/zh/docs/skoala/* @Adityayxt @samzong @tukwila @Cynthia-yun @windsonsea @wilsonwu
-docs/en/docs/download/modules/skoala.md @Adityayxt @tukwila @Cynthia-yun @windsonsea @wilsonwu
-docs/zh/docs/download/modules/skoala.md @Adityayxt @tukwila @Cynthia-yun @windsonsea @wilsonwu
-docs/en/docs/videos/skoala.md @Adityayxt @samzong @tukwila @Cynthia-yun @windsonsea @wilsonwu
-docs/zh/docs/videos/skoala.md @Adityayxt @samzong @tukwila @Cynthia-yun @windsonsea @wilsonwu
-
-# spidernet
-docs/en/docs/network/* @qiupingdai @ty-dc @windsonsea
-docs/zh/docs/network/* @qiupingdai @ty-dc @windsonsea
-docs/en/docs/download/modules/spidernet.md @qiupingdai @ty-dc @windsonsea
-docs/zh/docs/download/modules/spidernet.md @qiupingdai @ty-dc @windsonsea
-docs/en/docs/videos/spidernet.md @qiupingdai @ty-dc @windsonsea
-docs/zh/docs/videos/spidernet.md @qiupingdai @ty-dc @windsonsea
-
-# virtnest
-docs/en/docs/virtnest/* @wlp1153468871 @bzsuni @qiupingdai @windsonsea @yitingdc
-docs/zh/docs/virtnest/* @wlp1153468871 @bzsuni @qiupingdai @windsonsea @yitingdc
-docs/en/docs/download/modules/virtnest.md @wlp1153468871 @bzsuni @qiupingdai @windsonsea @yitingdc
-docs/zh/docs/download/modules/virtnest.md @wlp1153468871 @bzsuni @qiupingdai @windsonsea @yitingdc
-docs/en/docs/videos/virtnest.md @wlp1153468871 @bzsuni @qiupingdai @windsonsea @yitingdc
-docs/zh/docs/videos/virtnest.md @wlp1153468871 @bzsuni @qiupingdai @windsonsea @yitingdc
-
-# middleware
-docs/en/docs/middleware/* @justedennnnn @fangbin9527 @samzong @windsonsea @drivebyer
-docs/zh/docs/middleware/* @justedennnnn @fangbin9527 @samzong @windsonsea @drivebyer
-docs/en/docs/download/modules/middleware/* @justedennnnn @fangbin9527 @samzong @windsonsea @drivebyer
-docs/zh/docs/download/modules/middleware/* @justedennnnn @fangbin9527 @samzong @windsonsea @drivebyer
-docs/en/docs/videos/middleware.md @justedennnnn @fangbin9527 @samzong @windsonsea @drivebyer
-docs/zh/docs/videos/middleware.md @justedennnnn @fangbin9527 @samzong @windsonsea @drivebyer
-
-# hwameistor
-docs/en/docs/storage/* @jzhupup @FloatXD @qiupingdai @windsonsea
-docs/zh/docs/storage/* @jzhupup @FloatXD @qiupingdai @windsonsea
-docs/en/docs/download/modules/hwameistor.md @jzhupup @FloatXD @qiupingdai @windsonsea
-docs/zh/docs/download/modules/hwameistor.md @jzhupup @FloatXD @qiupingdai @windsonsea
-
 # General
 *.md @windsonsea
-docs/en/docs/blogs/* @windsonsea
-docs/zh/docs/blogs/* @windsonsea
-docs/en/docs/community/* @windsonsea
-docs/zh/docs/community/* @windsonsea
-docs/en/docs/native/* @windsonsea
-docs/zh/docs/native/* @windsonsea
-docs/en/docs/dce/* @windsonsea @qiupingdai @samzong
-docs/zh/docs/dce/* @windsonsea @qiupingdai @samzong
+/docs/en/docs/blogs/ @windsonsea
+/docs/zh/docs/blogs/ @windsonsea
+/docs/en/docs/community/ @windsonsea
+/docs/zh/docs/community/ @windsonsea
+/docs/en/docs/native/ @windsonsea
+/docs/zh/docs/native/ @windsonsea
+/docs/en/docs/dce/ @windsonsea @qiupingdai @samzong
+/docs/zh/docs/dce/ @windsonsea @qiupingdai @samzong
 
 # code
 *.py @samzong @windsonsea
 *.yaml @samzong @windsonsea
 *.yml @samzong @windsonsea
 *.json @samzong @windsonsea
-scripts/* @samzong @windsonsea
-.github/* @samzong @windsonsea
-docs/zh/themes/* @samzong @windsonsea
-docs/en/themes/* @samzong @windsonsea
+/scripts/ @samzong @windsonsea
+/.github/ @samzong @windsonsea
+/docs/zh/themes/ @samzong @windsonsea
+/docs/en/themes/ @samzong @windsonsea
+
+
+# amamba
+/docs/en/docs/amamba/ @jzhupup @zengchongliner @qiupingdai @windsonsea
+/docs/zh/docs/amamba/ @jzhupup @zengchongliner @qiupingdai @windsonsea
+/docs/en/docs/download/modules/amamba.md @jzhupup @zengchongliner @qiupingdai @windsonsea
+/docs/zh/docs/download/modules/amamba.md @jzhupup @zengchongliner @qiupingdai @windsonsea
+/docs/en/docs/videos/amamba.md @jzhupup @zengchongliner @qiupingdai @windsonsea
+/docs/zh/docs/videos/amamba.md @jzhupup @zengchongliner @qiupingdai @windsonsea
+
+# baize
+/docs/en/docs/baize/ @samzong @git-jxj @Rei1010 @windsonsea @kebe7jun
+/docs/zh/docs/baize/ @samzong @git-jxj @Rei1010 @windsonsea @kebe7jun
+/docs/en/docs/download/modules/baize.md @samzong @git-jxj @Rei1010 @windsonsea @kebe7jun
+/docs/zh/docs/download/modules/baize.md @samzong @git-jxj @Rei1010 @windsonsea @kebe7jun
+/docs/en/docs/videos/baize.md @samzong @git-jxj @Rei1010 @windsonsea @kebe7jun
+/docs/zh/docs/videos/baize.md @samzong @git-jxj @Rei1010 @windsonsea @kebe7jun
+
+# ghippo
+/docs/en/docs/ghippo/ @yitingdc @lemontrees123 @bzsuni @qiupingdai @windsonsea
+/docs/zh/docs/ghippo/ @yitingdc @lemontrees123 @bzsuni @qiupingdai @windsonsea
+/docs/en/docs/download/modules/ghippo.md @yitingdc @lemontrees123 @bzsuni @qiupingdai @windsonsea
+/docs/zh/docs/download/modules/ghippo.md @yitingdc @lemontrees123 @bzsuni @qiupingdai @windsonsea
+/docs/en/docs/videos/ghippo.md @yitingdc @lemontrees123 @bzsuni @qiupingdai @windsonsea
+/docs/zh/docs/videos/ghippo.md @yitingdc @lemontrees123 @bzsuni @qiupingdai @windsonsea
+
+# insight
+/docs/en/docs/insight/ @justedennnnn @Penguin-zlh @tukwila @samzong @windsonsea @FKAJerry
+/docs/zh/docs/insight/ @justedennnnn @Penguin-zlh @tukwila @samzong @windsonsea @FKAJerry
+/docs/en/docs/download/modules/insight.md @justedennnnn @Penguin-zlh @tukwila @samzong @windsonsea @FKAJerry
+/docs/zh/docs/download/modules/insight.md @justedennnnn @Penguin-zlh @tukwila @samzong @windsonsea @FKAJerry
+/docs/en/docs/videos/insight.md @justedennnnn @Penguin-zlh @tukwila @samzong @windsonsea @FKAJerry
+/docs/zh/docs/videos/insight.md @justedennnnn @Penguin-zlh @tukwila @samzong @windsonsea @FKAJerry
+
+# kairship
+/docs/en/docs/kairship/ @wlp1153468871 @yt-huang @samzong @windsonsea
+/docs/zh/docs/kairship/ @wlp1153468871 @yt-huang @samzong @windsonsea
+/docs/en/docs/download/modules/kairship.md @wlp1153468871 @yt-huang @samzong @windsonsea
+/docs/zh/docs/download/modules/kairship.md @wlp1153468871 @yt-huang @samzong @windsonsea
+/docs/en/docs/videos/kairship.md @wlp1153468871 @yt-huang @samzong @windsonsea
+/docs/zh/docs/videos/kairship.md @wlp1153468871 @yt-huang @samzong @windsonsea
+
+# kangaroo
+/docs/en/docs/kangaroo/ @lemontrees123 @yt-huang @yitingdc @qiupingdai @windsonsea
+/docs/zh/docs/kangaroo/ @lemontrees123 @yt-huang @yitingdc @qiupingdai @windsonsea
+/docs/en/docs/download/modules/kangaroo.md @lemontrees123 @yt-huang @yitingdc @qiupingdai @windsonsea
+/docs/zh/docs/download/modules/kangaroo.md @lemontrees123 @yt-huang @yitingdc @qiupingdai @windsonsea
+/docs/en/docs/videos/kangaroo.md @lemontrees123 @yt-huang @yitingdc @qiupingdai @windsonsea
+/docs/zh/docs/videos/kangaroo.md @lemontrees123 @yt-huang @yitingdc @qiupingdai @windsonsea
+
+# kant
+/docs/en/docs/kant/ @zhiyingfang2022 @git-jxj @qiupingdai @windsonsea
+/docs/zh/docs/kant/ @zhiyingfang2022 @git-jxj @qiupingdai @windsonsea
+/docs/en/docs/download/modules/kant.md @zhiyingfang2022 @git-jxj @qiupingdai @windsonsea
+/docs/zh/docs/download/modules/kant.md @zhiyingfang2022 @git-jxj @qiupingdai @windsonsea
+/docs/en/docs/videos/kant.md @zhiyingfang2022 @git-jxj @qiupingdai @windsonsea
+/docs/zh/docs/videos/kant.md @zhiyingfang2022 @git-jxj @qiupingdai @windsonsea
+
+# install
+/docs/en/docs/install/ @jzhupup @FloatXD @Rei1010 @qiupingdai @windsonsea
+/docs/zh/docs/install/ @jzhupup @FloatXD @Rei1010 @qiupingdai @windsonsea
+/docs/en/docs/videos/install.md @jzhupup @FloatXD @Rei1010 @qiupingdai @windsonsea
+/docs/zh/docs/videos/install.md @jzhupup @FloatXD @Rei1010 @qiupingdai @windsonsea
+
+# kpanda
+/docs/en/docs/kpanda/ @lemontrees123 @shijinye @Rei1010 @yt-huang @qiupingdai @windsonsea
+/docs/zh/docs/kpanda/ @lemontrees123 @shijinye @Rei1010 @yt-huang @qiupingdai @windsonsea
+/docs/en/docs/download/modules/kpanda.md @lemontrees123 @shijinye @Rei1010 @yt-huang @qiupingdai @windsonsea
+/docs/zh/docs/download/modules/kpanda.md @lemontrees123 @shijinye @Rei1010 @yt-huang @qiupingdai @windsonsea
+/docs/en/docs/download/modules/addon/ @lemontrees123 @shijinye @Rei1010 @yt-huang @qiupingdai @windsonsea
+/docs/zh/docs/download/modules/addon/ @lemontrees123 @shijinye @Rei1010 @yt-huang @qiupingdai @windsonsea
+/docs/en/docs/videos/kpanda.md @lemontrees123 @shijinye @Rei1010 @yt-huang @qiupingdai @windsonsea
+/docs/zh/docs/videos/kpanda.md @lemontrees123 @shijinye @Rei1010 @yt-huang @qiupingdai @windsonsea
+
+# mspider
+/docs/en/docs/mspider/ @Adityayxt @samzong @Cynthia-yun @windsonsea @kebe7jun
+/docs/zh/docs/mspider/ @Adityayxt @samzong @Cynthia-yun @windsonsea @kebe7jun
+/docs/en/docs/download/modules/mspider.md @Adityayxt @samzong @Cynthia-yun @windsonsea @kebe7jun
+/docs/zh/docs/download/modules/mspider.md @Adityayxt @samzong @Cynthia-yun @windsonsea @kebe7jun
+/docs/en/docs/videos/mspider.md @Adityayxt @samzong @Cynthia-yun @windsonsea @kebe7jun
+/docs/zh/docs/videos/mspider.md @Adityayxt @samzong @Cynthia-yun @windsonsea @kebe7jun
+
+# skoala
+/docs/en/docs/skoala/ @Adityayxt @samzong @tukwila @Cynthia-yun @windsonsea @wilsonwu
+/docs/zh/docs/skoala/ @Adityayxt @samzong @tukwila @Cynthia-yun @windsonsea @wilsonwu
+/docs/en/docs/download/modules/skoala.md @Adityayxt @tukwila @Cynthia-yun @windsonsea @wilsonwu
+/docs/zh/docs/download/modules/skoala.md @Adityayxt @tukwila @Cynthia-yun @windsonsea @wilsonwu
+/docs/en/docs/videos/skoala.md @Adityayxt @samzong @tukwila @Cynthia-yun @windsonsea @wilsonwu
+/docs/zh/docs/videos/skoala.md @Adityayxt @samzong @tukwila @Cynthia-yun @windsonsea @wilsonwu
+
+# spidernet
+/docs/en/docs/network/ @qiupingdai @ty-dc @windsonsea
+/docs/zh/docs/network/ @qiupingdai @ty-dc @windsonsea
+/docs/en/docs/download/modules/spidernet.md @qiupingdai @ty-dc @windsonsea
+/docs/zh/docs/download/modules/spidernet.md @qiupingdai @ty-dc @windsonsea
+/docs/en/docs/videos/spidernet.md @qiupingdai @ty-dc @windsonsea
+/docs/zh/docs/videos/spidernet.md @qiupingdai @ty-dc @windsonsea
+
+# virtnest
+/docs/en/docs/virtnest/ @wlp1153468871 @bzsuni @qiupingdai @windsonsea @yitingdc
+/docs/zh/docs/virtnest/ @wlp1153468871 @bzsuni @qiupingdai @windsonsea @yitingdc
+/docs/en/docs/download/modules/virtnest.md @wlp1153468871 @bzsuni @qiupingdai @windsonsea @yitingdc
+/docs/zh/docs/download/modules/virtnest.md @wlp1153468871 @bzsuni @qiupingdai @windsonsea @yitingdc
+/docs/en/docs/videos/virtnest.md @wlp1153468871 @bzsuni @qiupingdai @windsonsea @yitingdc
+/docs/zh/docs/videos/virtnest.md @wlp1153468871 @bzsuni @qiupingdai @windsonsea @yitingdc
+
+# middleware
+/docs/en/docs/middleware/ @justedennnnn @fangbin9527 @samzong @windsonsea @drivebyer
+/docs/zh/docs/middleware/ @justedennnnn @fangbin9527 @samzong @windsonsea @drivebyer
+/docs/en/docs/download/modules/middleware/ @justedennnnn @fangbin9527 @samzong @windsonsea @drivebyer
+/docs/zh/docs/download/modules/middleware/ @justedennnnn @fangbin9527 @samzong @windsonsea @drivebyer
+/docs/en/docs/videos/middleware.md @justedennnnn @fangbin9527 @samzong @windsonsea @drivebyer
+/docs/zh/docs/videos/middleware.md @justedennnnn @fangbin9527 @samzong @windsonsea @drivebyer
+
+# hwameistor
+/docs/en/docs/storage/ @jzhupup @FloatXD @qiupingdai @windsonsea
+/docs/zh/docs/storage/ @jzhupup @FloatXD @qiupingdai @windsonsea
+/docs/en/docs/download/modules/hwameistor.md @jzhupup @FloatXD @qiupingdai @windsonsea
+/docs/zh/docs/download/modules/hwameistor.md @jzhupup @FloatXD @qiupingdai @windsonsea
