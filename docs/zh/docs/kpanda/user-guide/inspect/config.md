@@ -13,6 +13,13 @@ DCE 5.0 容器管理模块提供集群巡检功能，支持从集群维度、节
 
 下面介绍如何创建巡检配置。
 
+## 前提条件
+
+- 在容器管理模块中[接入](../clusters/integrate-cluster.md)或[创建集群](../clusters/create-cluster.md)
+- 所选集群处于 __运行中__ 状态且已经在集群中[安装了 insight 组件](../../../insight/quickstart/install/install-agent.md)
+
+## 操作步骤
+
 1. 在左侧导航栏点击 __集群巡检__ 。
 
     ![nav](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/inspect01.png)
