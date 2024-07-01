@@ -54,7 +54,7 @@ so that you can learn its evolution path and feature changes.
 - **Added** `Notebook` adds affinity scheduling strategy configuration.
 - **Added** Distributed training tasks can now configure `SHM size` through the UI.
 - **Added** One-click restart function for training tasks.
-- **Added** Model training tasks support custom cluster scheduler specification.**
+- **Added** Model training tasks support custom cluster scheduler specification.
 - **Added** Training task analysis tool `Tensorboard` support, can be launched with one click in `Notebook` and training tasks.
 - **Added** When editing queue quotas, hints are provided for the shared resource configuration of the current workspace.
 - **Added** Upgrade and adapt Kueue version `v0.6.2`.
