@@ -14,7 +14,7 @@ so that you can learn its evolution path and feature changes.
 
 #### Features
 
-- **New**: Support for creating `Code Server` type `Notebook`, providing a native `VS Code` development experience.
+- **New**: Support for creating `Code` type `Notebook`, providing a native `VS Code` development experience.
 - **New**: Support for quickly copying `Notebook`.
 - **New**: When selecting a work cluster, display the cluster's status information, making it unselectable if it is disconnected or offline.
 - **New**: When creating inference services, support using `vLLM` as the inference engine, exposing native `vLLM` capabilities.
