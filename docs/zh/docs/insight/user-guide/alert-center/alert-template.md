@@ -11,9 +11,9 @@
 
 2. 点击 **创建告警模板** ，设置告警模板的名称、描述等信息。
 
-    ![告警模板](../../images/template02.png){ width=1000px}
+    ![设置名称](../../images/template02.png){ width=1000px}
 
-    ![告警模板](../../images/template03.png){ width=1000px}
+    ![添加规则](../../images/template03.png){ width=1000px}
 
     | 参数 | 说明 |
     | ---- | ---- |
