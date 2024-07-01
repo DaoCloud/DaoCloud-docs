@@ -8,6 +8,24 @@ date: 2024-05-21
 This page lists the Release Notes for Intelligent Engine,
 so that you can learn its evolution path and feature changes.
 
+## 2024-06-30
+
+### v0.6.0
+
+#### Features
+
+- **New**: Support for creating `Code Server` type `Notebook`, providing a native `VS Code` development experience.
+- **New**: Support for quickly copying `Notebook`.
+- **New**: When selecting a work cluster, display the cluster's status information, making it unselectable if it is disconnected or offline.
+- **New**: When creating inference services, support using `vLLM` as the inference engine, exposing native `vLLM` capabilities.
+- **New**: When creating inference services, `vLLM` supports configuring `Lora` inference parameters.
+- **Optimization**: When creating a `Notebook`, the default queue priority is adjusted to `High`.
+
+#### Fixes
+
+- **Fixed**: Minimum resource limits for `Tensorboard` to prevent startup failures due to insufficient resources.
+- **Fixed**: Optimized the Chinese descriptions of task statuses to avoid misunderstandings caused by unclear status descriptions.
+
 ## 2024-05-30
 
 ### v0.5.0
@@ -22,8 +40,8 @@ so that you can learn its evolution path and feature changes.
 
 #### Fixes
 
-- **Fix** the issue where `Python` version prompts permission problems in certain cases within environment management.
-- **Fix** the issue where the inference service does not support stopping during exceptions.
+- **Fixed** the issue where `Python` version prompts permission problems in certain cases within environment management.
+- **Fixed** the issue where the inference service does not support stopping during exceptions.
 
 ## 2024-04-30
 
@@ -31,13 +49,13 @@ so that you can learn its evolution path and feature changes.
 
 #### Features
 
-- **Added** **`Notebook` now supports local SSH access, compatible with various development tools such as `Pycharm`, `VS Code`, etc.**
-- **Added** **Upgrade `Notebook` image to support the built-in `CLI` tool `baizectl`, for command-line task submission and management.**
+- **Added** `Notebook` now supports local SSH access, compatible with various development tools such as `Pycharm`, `VS Code`, etc.
+- **Added** Upgrade `Notebook` image to support the built-in `CLI` tool `baizectl`, for command-line task submission and management.
 - **Added** `Notebook` adds affinity scheduling strategy configuration.
 - **Added** Distributed training tasks can now configure `SHM size` through the UI.
 - **Added** One-click restart function for training tasks.
-- **Added** **Model training tasks support custom cluster scheduler specification.**
-- **Added** **Training task analysis tool `Tensorboard` support, can be launched with one click in `Notebook` and training tasks.**
+- **Added** Model training tasks support custom cluster scheduler specification.**
+- **Added** Training task analysis tool `Tensorboard` support, can be launched with one click in `Notebook` and training tasks.
 - **Added** When editing queue quotas, hints are provided for the shared resource configuration of the current workspace.
 - **Added** Upgrade and adapt Kueue version `v0.6.2`.
 
