@@ -62,7 +62,7 @@
 
     > 支持从本地导入 YAML 文件或将填写好的文件下载保存到本地。
 
-    ![YAML 创建](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/secret04.png)
+    ![YAML 创建](../images/secret04.png)
 
 ## 密钥 YAML 示例
 
