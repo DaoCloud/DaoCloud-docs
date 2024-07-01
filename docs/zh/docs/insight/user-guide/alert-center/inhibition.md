@@ -10,7 +10,7 @@
 
 2. 点击 **新建抑制规则** ，设置抑制规则的名称、规则等。
 
-    ![告警抑制](../../images/inhibition02.png){ width=1000px}
+    ![新建规则](../../images/inhibition02.png){ width=1000px}
 
     | 参数时间 | 说明 |
     | ---- | ---- |
@@ -28,10 +28,10 @@
 
 点击目标规则后侧的 **⋮** ，点击 **编辑**，进入抑制规则的编辑页。
 
-![告警抑制](../../images/inhibition03.png){ width=1000px}
+![编辑抑制规则](../../images/inhibition03.png){ width=1000px}
 
 ## 删除抑制规则
 
 点击目标规则后侧的 **⋮** ，点击 **删除**，在输入框中输入抑制规则的名称即可删除。
 
-![告警抑制](../../images/inhibition04.png){ width=1000px}
+![删除抑制规则](../../images/inhibition04.png){ width=1000px}
