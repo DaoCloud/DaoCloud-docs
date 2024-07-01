@@ -2,6 +2,29 @@
 
 ## <https://help.github.com/articles/about-codeowners/>
 
+# General
+*.md @windsonsea
+
+docs/en/docs/blogs/* @windsonsea
+docs/zh/docs/blogs/* @windsonsea
+docs/en/docs/community/* @windsonsea
+docs/zh/docs/community/* @windsonsea
+docs/en/docs/native/* @windsonsea
+docs/zh/docs/native/* @windsonsea
+docs/en/docs/dce/* @windsonsea @qiupingdai @samzong
+docs/zh/docs/dce/* @windsonsea @qiupingdai @samzong
+
+# code
+scripts/* @samzong @windsonsea
+.github/* @samzong @windsonsea
+*.py @samzong @windsonsea
+*.yaml @samzong @windsonsea
+*.yml @samzong @windsonsea
+*.json @samzong @windsonsea
+docs/zh/themes/* @samzong @windsonsea
+docs/en/themes/* @samzong @windsonsea
+
+
 # amamba
 docs/en/docs/amamba/* @jzhupup @zengchongliner @qiupingdai @windsonsea
 docs/zh/docs/amamba/* @jzhupup @zengchongliner @qiupingdai @windsonsea
@@ -27,12 +50,12 @@ docs/en/docs/videos/ghippo.md @yitingdc @lemontrees123 @bzsuni @qiupingdai @wind
 docs/zh/docs/videos/ghippo.md @yitingdc @lemontrees123 @bzsuni @qiupingdai @windsonsea
 
 # insight
-docs/en/docs/insight/* @justedennnnn @Penguin-zlh @tukwila @samzong @windsonsea
-docs/zh/docs/insight/* @justedennnnn @Penguin-zlh @tukwila @samzong @windsonsea
-docs/en/docs/download/modules/insight.md @justedennnnn @Penguin-zlh @tukwila @samzong @windsonsea
-docs/zh/docs/download/modules/insight.md @justedennnnn @Penguin-zlh @tukwila @samzong @windsonsea
-docs/en/docs/videos/insight.md @justedennnnn @Penguin-zlh @tukwila @samzong @windsonsea
-docs/zh/docs/videos/insight.md @justedennnnn @Penguin-zlh @tukwila @samzong @windsonsea
+docs/en/docs/insight/* @justedennnnn @Penguin-zlh @tukwila @samzong @windsonsea @FKAJerry
+docs/zh/docs/insight/* @justedennnnn @Penguin-zlh @tukwila @samzong @windsonsea @FKAJerry
+docs/en/docs/download/modules/insight.md @justedennnnn @Penguin-zlh @tukwila @samzong @windsonsea @FKAJerry
+docs/zh/docs/download/modules/insight.md @justedennnnn @Penguin-zlh @tukwila @samzong @windsonsea @FKAJerry
+docs/en/docs/videos/insight.md @justedennnnn @Penguin-zlh @tukwila @samzong @windsonsea @FKAJerry
+docs/zh/docs/videos/insight.md @justedennnnn @Penguin-zlh @tukwila @samzong @windsonsea @FKAJerry
 
 # kairship
 docs/en/docs/kairship/* @wlp1153468871 @yt-huang @samzong @windsonsea
@@ -99,15 +122,15 @@ docs/en/docs/videos/spidernet.md @qiupingdai @ty-dc @windsonsea
 docs/zh/docs/videos/spidernet.md @qiupingdai @ty-dc @windsonsea
 
 # virtnest
-docs/en/docs/virtnest/* @wlp1153468871 @bzsuni @qiupingdai @windsonsea
-docs/zh/docs/virtnest/* @wlp1153468871 @bzsuni @qiupingdai @windsonsea
-docs/en/docs/download/modules/virtnest.md @wlp1153468871 @bzsuni @qiupingdai @windsonsea
-docs/zh/docs/download/modules/virtnest.md @wlp1153468871 @bzsuni @qiupingdai @windsonsea
-docs/en/docs/videos/virtnest.md @wlp1153468871 @bzsuni @qiupingdai @windsonsea
-docs/zh/docs/videos/virtnest.md @wlp1153468871 @bzsuni @qiupingdai @windsonsea
+docs/en/docs/virtnest/* @wlp1153468871 @bzsuni @qiupingdai @windsonsea @yitingdc
+docs/zh/docs/virtnest/* @wlp1153468871 @bzsuni @qiupingdai @windsonsea @yitingdc
+docs/en/docs/download/modules/virtnest.md @wlp1153468871 @bzsuni @qiupingdai @windsonsea @yitingdc
+docs/zh/docs/download/modules/virtnest.md @wlp1153468871 @bzsuni @qiupingdai @windsonsea @yitingdc
+docs/en/docs/videos/virtnest.md @wlp1153468871 @bzsuni @qiupingdai @windsonsea @yitingdc
+docs/zh/docs/videos/virtnest.md @wlp1153468871 @bzsuni @qiupingdai @windsonsea @yitingdc
 
 # middleware
-docs/en/docs/middleware/* @justedennnnn @fangbin9527 @samzong @windsonsea
+docs/en/docs/middleware/* @justedennnnn @fangbin9527 @samzong @windsonsea 
 docs/zh/docs/middleware/* @justedennnnn @fangbin9527 @samzong @windsonsea
 docs/en/docs/download/modules/middleware/* @justedennnnn @fangbin9527 @samzong @windsonsea
 docs/zh/docs/download/modules/middleware/* @justedennnnn @fangbin9527 @samzong @windsonsea
@@ -119,19 +142,3 @@ docs/en/docs/storage/* @jzhupup @FloatXD @qiupingdai @windsonsea
 docs/zh/docs/storage/* @jzhupup @FloatXD @qiupingdai @windsonsea
 docs/en/docs/download/modules/hwameistor.md @jzhupup @FloatXD @qiupingdai @windsonsea
 docs/zh/docs/download/modules/hwameistor.md @jzhupup @FloatXD @qiupingdai @windsonsea
-
-# general
-docs/en/docs/blogs/* @windsonsea
-docs/zh/docs/blogs/* @windsonsea
-docs/en/docs/community/* @windsonsea
-docs/zh/docs/community/* @windsonsea
-docs/en/docs/native/* @windsonsea
-docs/zh/docs/native/* @windsonsea
-docs/en/docs/dce/* @windsonsea @qiupingdai @samzong
-docs/zh/docs/dce/* @windsonsea @qiupingdai @samzong
-
-# code
-docs/zh/themes/* @samzong @windsonsea
-docs/en/themes/* @samzong @windsonsea
-scripts/* @samzong @windsonsea
-.github/* @samzong @windsonsea
