@@ -82,7 +82,7 @@ spec:
 
 2. 在 __容器配置__ 选择 __数据存储__ 配置，在 __节点路径映射__ 列表点击 __添加__ 按钮。
 
-    ![创建deployment](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/secret08.png)
+    ![创建deployment](../images/secret08.png)
 
 3. 在存储类型处选择 __密钥__ ，并依次输入 __容器路径__ 、 __子路径__ 等信息。
 
