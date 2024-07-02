@@ -1,3 +1,8 @@
+---
+MTPE: ModetaNiu
+Date: 2024-07-02
+---
+
 # Installation of Ascend NPU Components
 
 This chapter provides installation guidance for Ascend NPU drivers, Device Plugin, NPU-Exporter, and other components.
@@ -5,25 +10,31 @@ This chapter provides installation guidance for Ascend NPU drivers, Device Plugi
 ## Prerequisites
 
 1. Before installation, confirm the supported NPU models. For details, please refer to the [Ascend NPU Matrix](../gpu_matrix.md).
-2. Ensure that the kernel version required for the corresponding NPU model is compatible. For more details, refer to the [Ascend NPU Matrix](../gpu_matrix.md).
+2. Ensure that the kernel version required for the corresponding NPU model is compatible. For more details, 
+   refer to the [Ascend NPU Matrix](../gpu_matrix.md).
 3. Prepare the basic Kubernetes environment.
 
 ## Installation Steps
 
-Before using NPU resources, you need to complete the firmware installation, NPU driver installation, Docker Runtime installation, user creation, log directory creation, and NPU Device Plugin installation. Refer to the following steps for details.
+Before using NPU resources, you need to complete the firmware installation, NPU driver installation, 
+Docker Runtime installation, user creation, log directory creation, and NPU Device Plugin installation. 
+Refer to the following steps for details.
 
 ### Install Firmware
 
-1. Confirm that the kernel version is within the range corresponding to the "binary installation" method, and then you can directly install the NPU driver firmware.
+1. Confirm that the kernel version is within the range corresponding to the "binary installation" method, 
+   and then you can directly install the NPU driver firmware.
 2. For firmware and driver downloads, refer to: [Firmware Download Link](https://www.hiascend.com/zh/hardware/firmware-drivers/community?product=2&model=15&cann=6.3.RC2.alpha005&driver=1.0.20.alpha)
 3. For firmware installation, refer to: [Install NPU Driver Firmware](https://www.hiascend.com/document/detail/zh/quick-installation/23.0.RC2/quickinstg/800_3000/quickinstg_800_3000_0001.html)
 
 ### Install NPU Driver
 
-1. If the driver is not installed, refer to the official Ascend documentation for installation. For example, for Ascend910, refer to: [910 Driver Installation Document](https://www.hiascend.com/document/detail/zh/Atlas%20200I%20A2/23.0.RC3/EP/installationguide/Install_87.html).
-2. Run the command `npu-smi info`, and if it returns NPU information normally, it indicates that the NPU driver and firmware are ready.
+1. If the driver is not installed, refer to the official Ascend documentation for installation. For example, 
+   for Ascend910, refer to: [910 Driver Installation Document](https://www.hiascend.com/document/detail/zh/Atlas%20200I%20A2/23.0.RC3/EP/installationguide/Install_87.html).
+2. Run the command `npu-smi info`, and if the NPU information is returned normally, it indicates that the NPU driver 
+   and firmware are ready.
 
-<!-- add screenshot later -->
+![Ascend-mindxdl Information](../images/npu-smi-info.png)
 
 ### Install Docker Runtime
 
@@ -81,7 +92,7 @@ Before using NPU resources, you need to complete the firmware installation, NPU 
     systemctl restart containerd
     ```
 
-### User Creation
+### Create a User 
 
 Execute the following commands on the node where the components are installed to create a user.
 
@@ -94,9 +105,11 @@ useradd -d /home/hwMindX -u 9000 -m -s /sbin/nologin hwMindX
 usermod -a -G HwHiAiUser hwMindX
 ```
 
-### Log Directory Creation
+### Create Log Directory
 
-Create the parent directory for component logs and the log directories for each component on the corresponding node, and set the appropriate owner and permissions for the directories. Execute the following command to create the parent directory for component logs.
+Create the parent directory for component logs and the log directories for each component on the corresponding node, 
+and set the appropriate owner and permissions for the directories. Execute the following command to create 
+the parent directory for component logs.
 
 ```bash
 mkdir -m 755 /var/log/mindx-dl
@@ -132,11 +145,11 @@ kubectl label node {nodename} masterselector=dls-master-node
 
 ### Install Device Plugin and NpuExporter
 
-Functional module path: __Container Management__ -> __Cluster Management__, click the name of the target cluster, then click __Helm Applications__ -> __Helm Templates__ from the left navigation bar, and search for __ascend-mindxdl__.
+Functional module path: __Container Management__ -> __Cluster__, click the name of the target cluster, then click __Helm Apps__ -> __Helm Charts__ from the left navigation bar, and search for __ascend-mindxdl__.
 
-<!-- add screenshot later -->
+![Find ascend-mindxdl](../images/ascend-mindxdl.png)
 
-<!-- add screenshot later -->
+![Ascend-mindxdl](../images/detail-ascend.png)
 
 -  __DevicePlugin__: Provides a general device plugin mechanism and standard device API interface for Kubernetes to use devices. It is recommended to use the default image and version.
 -  __NpuExporter__: Based on the Prometheus/Telegraf ecosystem, this component provides interfaces to help users monitor the Ascend series AI processors and container-level allocation status. It is recommended to use the default image and version.
@@ -145,11 +158,11 @@ Functional module path: __Container Management__ -> __Cluster Management__, clic
 
 After a successful installation, two components will appear under the corresponding namespace, as shown below:
 
-<!-- add screenshot later -->
+![List of ascend-mindxdl](../images/list-ascend-mindxdl.png)
 
 At the same time, the corresponding NPU information will also appear on the node information:
 
-<!-- add screenshot later -->
+![Node labels](../images/label-ascend-mindxdl.png)
 
 Once everything is ready, you can select the corresponding NPU device when creating a workload through the page, as shown below:
 
@@ -157,4 +170,4 @@ Once everything is ready, you can select the corresponding NPU device when creat
 
 !!! note
 
-    For detailed usage steps, please refer to [Using Ascend (Ascend) NPU](https://docs.daocloud.io/kpanda/user-guide/gpu/Ascend_usage/).
+    For detailed information of how to use, please refer to [Using Ascend (Ascend) NPU](https://docs.daocloud.io/kpanda/user-guide/gpu/Ascend_usage/).
