@@ -5,7 +5,7 @@ hide:
 
 # DaoCloud 产品支持政策
 
-[阅读和下载 PDF](./support.pdf)
+[阅读和下载 PDF](./support.pdf){ .md-button }
 
 除非另有说明，本文所述的这些政策适用于 DaoCloud Enterprise（简称 DCE）软件及其所含模块的维护与支持。
 
@@ -179,6 +179,8 @@ DaoCloud 将为受支持的操作系统、DaoCloud 软件和工具提供诊断�
     | GA           | 全面上市       | General Availability    | 产品发布于 2018 年 7 月 15 日 |
     | EOFS         | 停止标准支持服务 | End of Standard Support | 产品发布后将在 2021 年 7 月 30 日后停止补丁版本开发并停止全面支持 |
     | EOSL         | 停止所有支持服务 | End of Support Life     | 产品发布后将在 2023 年 7 月 30 日后停止服务 |
+
+[endoflife.date 上 DCE 生命周期公示](https://endoflife.date/dce){ .md-button }
 
 ## 受支持的软件版本
 
