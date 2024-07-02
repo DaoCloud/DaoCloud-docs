@@ -12,6 +12,12 @@ technology, sorted by date by default.
 
 ## 2024
 
+- [20240702 | Why Kubernetes is THE platform for GenAI](./240702-why-k8s-for-genai.md)
+
+    Kubernetes is no longer just a tool for running workloads, like web applications and microservices;
+    it's _the_ ideal platform for supporting the end-to-end lifecycle of large artificial intelligence (AI)
+    and machine learning (ML) workloads, like LLMs.
+
 - [20240619 | Nvidia Conquers Latest AI Tests](./20240619-nvidiaai.md)
 
     For years, Nvidia has dominated many machine learning benchmarks, and now there are two more notches in its belt：

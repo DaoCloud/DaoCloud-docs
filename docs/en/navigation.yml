@@ -1325,6 +1325,7 @@ nav:
   - Blogs:
       - Index: blogs/index.md
       - 2024:
+          - Why Kubernetes is THE platform for GenAI: blogs/240702-why-k8s-for-genai.md
           - Nvidia Conquers Latest AI Tests: blogs/20240619-nvidiaai.md
           - 10 Years of Kubernetes: blogs/0606-k8s-birth.md
           - A Legendary K8s Quest with SIG Docs: blogs/240516-sig-docs.md
