@@ -1060,12 +1060,9 @@ nav:
                       - Release Notes: middleware/kafka/release-notes.md
                   - 快速入门:
                       - 创建 Kafka 实例: middleware/kafka/user-guide/create.md
-                      - 更新 Kafka 实例: middleware/kafka/user-guide/update.md
-                      - 删除 Kafka 实例: middleware/kafka/user-guide/delete.md
-                      - 查看实例详情: middleware/kafka/user-guide/view.md
-                      - 实例监控: middleware/kafka/user-guide/insight.md
+                      - 查看/更新/删除 Kafka 实例: middleware/kafka/user-guide/view-update-delete.md
+                      - 实例监控及日志: middleware/kafka/user-guide/insight-log.md
                       - 配置参数: middleware/kafka/user-guide/config.md
-                      - 查看 Kafka 日志: middleware/kafka/user-guide/logs.md
                       - 参数模板: middleware/kafka/user-guide/template.md
                   - 最佳实践:
                       - Kafka双机房部署灾备方案: middleware/kafka/bestpractice/kafkain2IDC.md
