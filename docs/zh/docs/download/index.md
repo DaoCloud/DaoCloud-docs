@@ -45,7 +45,7 @@ DCE 5.0 包含的众多子模块可以单独下载，按需对每个模块进行
 | 模块     | 文件大小  | 下载     | 更新日期   |
 | -------- | ------- | ---------------------------------------------- | ---------- |
 | 应用工作台 | 400.49 MB | [:arrow_right: 下载页](./modules/amamba.md)   | 2024-07-01 |
-| 容器管理 | 675.40 MB  | [:arrow_right: 下载页](./modules/kpanda.md)   | 2024-06-05 |
+| 容器管理 | 759.13 MB  | [:arrow_right: 下载页](./modules/kpanda.md)   | 2024-07-03 |
 | 集群巡检 | 174.30 MB | [:arrow_right: 下载页](./modules/kcollie.md)   | 2024-01-02 |
 | 应用备份 | 85.06 MB  | [:arrow_right: 下载页](./modules/kcoral.md)    | 2024-06-07 |
 | 安全管理 | 167.29 MB | [:arrow_right: 下载页](./modules/dowl.md)      | 2023-11-26 |
