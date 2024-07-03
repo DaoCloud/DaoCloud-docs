@@ -45,4 +45,11 @@
 **$1**
 ```
 
+查找带 `<p></p>` 标记的段落，将其替换为 Markdown 中的绿色隐藏文字：
+
+```text
+<p>(.*?)<\/p>
+<p>\n<!--\n$1\n-->\n\n</p>
+```
+
 ![search](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/native/knowledge/images/vscode03.png)
