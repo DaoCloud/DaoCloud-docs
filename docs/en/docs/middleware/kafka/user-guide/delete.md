@@ -3,17 +3,22 @@ hide:
   - toc
 ---
 
-# delete Kafka
+---
+MTPE: ModetaNiu
+Date: 2024-07-03
+---
 
-If you want to delete a message queue, you can do the following:
+# Delete Kafka
 
-1. In the message queue, click the __...__ button on the right, and select __Delete Instance__ from the pop-up menu.
+If you want to delete a message queue, please conduct the following steps:
 
-    <!--screenshot-->
+1. Select the message queue and click the __...__ button on the right, and click __Delete Instance__ from the pop-up menu.
 
-2. Enter the name of the message queue in the pop-up window, and click the __Delete__ button after confirming that it is correct.
+    ![Click the botton](../images/delete01.png)
 
-    <!--screenshot-->
+2. Enter the name of the message queue in the pop-up window, and click the __Delete__ button to confirm deletion.
+
+    ![Delete](../images/delete02.png)
 
     !!! warning
 
