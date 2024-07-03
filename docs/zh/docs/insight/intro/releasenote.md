@@ -2,6 +2,21 @@
 
 本页列出 Insight 可观测性的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2024-06-30
+
+### Insight Server v0.28.0
+
+- **优化** 钉钉支持加签认证
+- **优化** Webhook 支持配置 HTTP Headers
+- **优化** 服务拓扑图中支持展示调用 MySQL、PostgreSQL 数据库
+- **修复** 日志上报到 Kafka 缓存时，Elasticsearch 生成的索引没有 `clusterid`
+
+### Insight Agent v0.28.0
+
+- **优化** 支持日志上报到 Elasticsearch 8.0 版本
+- **优化** 删除 ReplicaSet 级别指标
+- **修复** fluent-bit  serviceMonitor 指标暴露的路径错误
+
 ## 2024-05-31
 
 ### Insight Server v0.27.0
