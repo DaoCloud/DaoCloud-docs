@@ -3,13 +3,18 @@ hide:
   - toc
 ---
 
-# Create Kafka
+---
+MTPE: ModetaNiu
+Date: 2024-07-02
+---
+
+# Create Kafka Instance
 
 In the Kafka message queue, follow these steps to create a Kafka instance.
 
-1. On the Kafka message queue page, click the __Create Instance__ button in the top right corner.
+1. On the Kafka message queue page, click the __Create Kafka Instance__ button in the top right corner.
 
-    <!--add screenshot later-->
+    ![Create an instance](../images/instances01.png)
 
     !!! tip
 
@@ -19,38 +24,39 @@ In the Kafka message queue, follow these steps to create a Kafka instance.
 
 2. On the __Create Kafka Instance__ page, after setting the basic information, click __Next__.
 
-    <!--add screenshot later-->
+    ![Spec settings](../images/create02.png)
 
 3. After configuring the specifications, click __Next__.
 
     - Version: The version of Kafka, currently only supports Kafka 3.1.0.
     - Replicas: Supports 1, 3, 5, 7 replicas.
     - Resource Quota: Choose rules according to the actual situation.
-    - Storage Volumes: Select the storage volume and total storage space for the Kafka instance.
+    - Storage Capacity: Select the storage volume and total storage space for the Kafka instance.
 
-    <!--add screenshot later-->
+    ![Spec Settings](../images/create03.png)
 
 4. After service settings, click __Next__.
 
     - Service Settings:
-        - Cluster Internal Access (ClusterIP)
-        - Node Port (Nodeport)
-        - Load Balancer (LoadBalancer)
+        - ClusterIP
+        - Nodeport
+        - LoadBalancer
     - Access Settings:
-        - Access Account Configuration: Username and password to connect to the Kafka instance.
-        - CMAK Resource Configuration: Replicas, CPU, and memory quotas.
-        - Access Type Configuration: Node Port (Nodeport), Load Balancer (LoadBalancer)
+        - CMAK Account set-up: Username and password to connect to the Kafka instance.
+        - CMAK Resources: Replicas, CPU quota, and memory quotas.
+        - CMAK Service Configuration: Nodeport, LoadBalancer
     - Advanced Settings: Configure as needed.
 
-    <!--add screenshot later-->
+    ![Service Settings](../images/create04.png)
 
-5. Confirm that the instance configuration information is correct, click __Confirm__ to complete the creation.
+5. Confirm that the instance configuration information is correct, click __OK__ to complete the creation.
 
-    <!--add screenshot later-->
+    ![Settings Confirm](../images/create05.png)
 
-6. Check the instance list page to see if the instance has been created successfully. The status of the newly created instance will be __Not Ready__, and after a few minutes, this status will change to __Running__.
+6. Check the instance list page to see if the instance has been created successfully. The status of the 
+   newly created instance will be __Not Ready__, and after a few minutes, this status will change to __Running__.
 
-    <!--add screenshot later-->
+    ![Service Settings](../images/create06.png)
 
 !!! note
 
