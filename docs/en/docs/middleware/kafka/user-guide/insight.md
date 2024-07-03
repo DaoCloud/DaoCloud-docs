@@ -3,16 +3,21 @@ hide:
   - toc
 ---
 
-# instance monitoring
+---
+MTPE: ModetaNiu
+Date: 2024-07-03
+---
 
-Kafka has built-in Prometheus and Grafana monitoring modules.
+# Instance Insight
 
-1. On the Message Queue page, click a name.
+Kafka has built-in Prometheus and Grafana modules to enhance observability.
 
-    <!--screenshot-->
+1. On the Message Queue page, click an instance name.
 
-2. In the left navigation bar, click __Instance Monitoring__ to access the monitoring module.
+    ![Click a queue](../images/insight.png)
 
-    <!--screenshot-->
+2. In the navigation bar on the left, click __Instance Insight__ to access the insight module.
+
+    ![Instance insight](../images/insight01.png)
 
 <!-- The specific meaning of each monitoring metric will be added later (@justedennnnn). -->
