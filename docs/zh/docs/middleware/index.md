@@ -112,9 +112,9 @@ DCE 5.0 针对实际应用场景，精选了一些经典的中间件来处理数
     这是支持流式数据处理等多种特性的分布式消息流处理中间件，常用于消息传输的数据管道。
 
     - [什么是 Kafka](./kafka/intro/index.md)
-    - [创建/更新/删除 Kafka 实例](./kafka/user-guide/create.md)
-    - [查看 Kafka 日志](./kafka/user-guide/logs.md)
-    - [Kafka 实例监控](./kafka/user-guide/insight.md)
+    - [创建 Kafka 实例](./kafka/user-guide/create.md)
+    - [查看/更新/删除 Kafka](./kafka/user-guide/view-update-delete.md)
+    - [Kafka 日志及实例监控](./kafka/user-guide/insight-log.md)
     - [Kafka 参数配置](./kafka/user-guide/config.md)
 
 </div>
