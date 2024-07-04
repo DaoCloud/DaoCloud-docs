@@ -3,15 +3,18 @@ MTPE: windsonsea
 date: 2024-05-21
 ---
 
-# Create and Use Datasets
+# Create, Use and Delete Datasets
 
-Intelligent Engine provides comprehensive dataset management functions needed for model development, training, and inference processes. Currently, it supports unified access to various data sources.
+Intelligent Engine provides comprehensive dataset management functions needed for model development, 
+training, and inference processes. Currently, it supports unified access to various data sources.
 
-With simple configurations, you can connect data sources to Intelligent Engine, achieving unified data management, preloading, dataset management, and other functionalities.
+With simple configurations, you can connect data sources to Intelligent Engine, achieving unified data management, 
+preloading, dataset management, and other functionalities.
 
 ## Create a Dataset
 
-1. In the left navigation bar, click **Data Management** -> **Datasets**, and then click the **Create** button on the right.
+1. In the left navigation bar, click **Data Management** -> **Dataset List**, and then click the **Create** button 
+   on the right.
 
     ![Click Create](../../images/dataset01.png)
 
@@ -40,7 +43,7 @@ With simple configurations, you can connect data sources to Intelligent Engine, 
 
     The system will automatically perform a one-time data preloading after the dataset is successfully created; the dataset cannot be used until the preloading is complete.
 
-## Use Dataset
+## Use a Dataset
 
 Once the dataset is successfully created, it can be used in tasks such as model training and inference.
 
@@ -66,3 +69,21 @@ In creating a Notebook, you can directly use the dataset; the usage is as follow
 - Use the dataset to mount a model
 
 ![Inference Service](../../images/dataset07.png)
+
+## Delete a Dataset
+
+If you find a dataset to be redundant, expired, or no longer needed, you can delete it from the dataset list.
+
+1. Click the **⋮** on the right side of the dataset list, then choose **Delete** from the dropdown menu.
+
+    ![Delete](../../images/ds-delete01.png)
+
+2. In the pop-up window, confirm the dataset you want to delete, enter the dataset name, and then click **Delete**.
+
+    ![Confirm](../../images/ds-delete02.png)
+
+3. A confirmation message will appear indicating successful deletion, and the dataset will disappear from the list.
+
+!!! caution
+
+    Once a dataset is deleted, it cannot be recovered, so please proceed with caution.

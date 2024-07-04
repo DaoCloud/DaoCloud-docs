@@ -1135,8 +1135,7 @@ nav:
                       - 查看任务负载: baize/developer/jobs/view.md
                       - 任务分析: baize/developer/jobs/tensorboard.md
                   - 数据管理:
-                      - 创建数据集: baize/developer/dataset/create.md
-                      - 删除数据集: baize/developer/dataset/delete.md
+                      - 创建/使用/删除数据集: baize/developer/dataset/create-use-delete.md
                       - 环境管理: baize/developer/dataset/conda.md
                   - 推理服务:
                       - 创建推理服务: baize/developer/inference/create.md
