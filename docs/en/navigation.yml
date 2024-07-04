@@ -1078,10 +1078,8 @@ nav:
                       - Create MinIO Instance: middleware/minio/user-guide/create.md
                       - Update MinIO Instance: middleware/minio/user-guide/update.md
                       - Delete MinIO Instance: middleware/minio/user-guide/delete.md
-                      - View MinIO Logs: middleware/minio/user-guide/logs.md
+                      - Instance Insight/Logs/Parameter Configuration: middleware/minio/user-guide/insight-log-config.md
                       - View Instance Details: middleware/minio/user-guide/view.md
-                      - Monitor Instance: middleware/minio/user-guide/insight.md
-                      - Config Parameters: middleware/minio/user-guide/config.md
                       - MinIO Identity Management: middleware/minio/user-guide/user-management.md
       - Cloud Native AI:
           - Intelligent Engine:
