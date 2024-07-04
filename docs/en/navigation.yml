@@ -1034,12 +1034,9 @@ nav:
                       - Release Notes: middleware/kafka/release-notes.md
                   - Quick Start:
                       - Create Kafka Instance: middleware/kafka/user-guide/create.md
-                      - Update Kafka Instance: middleware/kafka/user-guide/update.md
-                      - Delete Kafka Instance: middleware/kafka/user-guide/delete.md
-                      - View Instance Details: middleware/kafka/user-guide/view.md
-                      - Monitor Instance: middleware/kafka/user-guide/insight.md
+                      - View/Update/Delete Kafka: middleware/kafka/user-guide/view-update-delete.md
+                      - Instance Insight/Logs: middleware/kafka/user-guide/insight-log.md
                       - Config Parameters: middleware/kafka/user-guide/config.md
-                      - View Kafka Logs: middleware/kafka/user-guide/logs.md
                       - Parameter Template: middleware/kafka/user-guide/template.md
               - RabbitMQ Message Queue:
                   - Intro:
