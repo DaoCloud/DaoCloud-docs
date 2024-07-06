@@ -1,5 +1,6 @@
 {
   "zh/docs/dce": "探索和安装",
+  "zh/docs/install": "探索和安装",
   "zh/docs/amamba": "应用工作台",
   "zh/docs/kpanda/": "容器管理",
   "zh/docs/kairship": "多云编排",
@@ -20,6 +21,7 @@
   "zh/docs/community": "DaoCloud 开源生态",
   "zh/docs/native": "云原生研究院",
   "en/docs/dce": "Learn and Install",
+  "en/docs/install": "Learn and Install",
   "en/docs/amamba": "Workbench",
   "en/docs/kpanda/": "Container Management",
   "en/docs/kairship": "Multicloud Management",
