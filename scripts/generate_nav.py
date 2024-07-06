@@ -11,7 +11,7 @@ E-mail: samzong.lu@gmail.com
 
 import json
 import os
-from typing import Dict, Any, List
+from typing import TypedDict, Any, Union, List
 
 import yaml
 
@@ -20,9 +20,12 @@ with open('scripts/dce_models.json', 'r') as f:
     MODULES = json.load(f)
 
 
-# Extract the content of the specified module from the YAML file.
-def extract_module_from_yaml(yaml_file_path: str, module_name: str) -> str:
-    def search(item: Dict[str, Any], path: list) -> Dict[str, Any] | None:
+class ModuleDict(TypedDict):
+    module_name: Any
+
+
+def extract_module_from_yaml(yaml_file_path: str, module_name: str) -> Union[ModuleDict, None]:
+    def search(item: ModuleDict, path: List[str]) -> Union[ModuleDict, None]:
         for key, value in item.items():
             if key == module_name:
                 return {key: value}
@@ -67,7 +70,28 @@ def get_module_names(input_str):
     return result
 
 
-def deep_merge(dict1: Dict[str, Any], dict2: Dict[str, Any]) -> Dict[str, Any]:
+class MergedDict(TypedDict):
+    pass
+
+
+def merge_lists(list1: List[Union[MergedDict, Any]], list2: List[Union[MergedDict, Any]]) -> List[
+    Union[MergedDict, Any]]:
+    # Merge two lists, recursively merge if the list items are dictionaries
+    result = list1.copy()
+    for item in list2:
+        if isinstance(item, dict):
+            for existing_item in result:
+                if isinstance(existing_item, dict) and set(existing_item.keys()) == set(item.keys()):
+                    existing_item = deep_merge(existing_item, item)
+                    break
+            else:
+                result.append(item)
+        elif item not in result:
+            result.append(item)
+    return result
+
+
+def deep_merge(dict1: MergedDict, dict2: MergedDict) -> Union[MergedDict, None]:
     # Recursively merge two dictionaries
     result = dict1.copy()
     for key, value in dict2.items():
@@ -80,22 +104,6 @@ def deep_merge(dict1: Dict[str, Any], dict2: Dict[str, Any]) -> Dict[str, Any]:
                 result[key] = value
         else:
             result[key] = value
-    return result
-
-
-def merge_lists(list1: List[Dict[str, Any]], list2: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    # Merge two lists, recursively merge if the list items are dictionaries
-    result = list1.copy()
-    for item in list2:
-        if isinstance(item, dict):
-            for existing_item in result:
-                if isinstance(existing_item, dict) and set(existing_item.keys()) == set(item.keys()):
-                    existing_item.update(deep_merge(existing_item, item))
-                    break
-            else:
-                result.append(item)
-        elif item not in result:
-            result.append(item)
     return result
 
 
