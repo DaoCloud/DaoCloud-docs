@@ -14,11 +14,15 @@ so that you can learn its evolution path and feature changes.
 
 #### Features
 
-- **New**: Support for creating `Code` type `Notebook`, providing a native `VS Code` development experience.
-- **New**: Support for quickly copying `Notebook`.
-- **New**: When selecting a work cluster, display the cluster's status information, making it unselectable if it is disconnected or offline.
+- **Added**: Support for creating `Code` type `Notebook`, providing a native `VS Code` development experience.
+- **Added**: Support for quickly copying `Notebook`.
+- **Added**: When selecting a work cluster, display the cluster's status information, making it unselectable if it is
+  disconnected or offline.
 - **Added** support using `vLLM` as the inference engine, exposing native `vLLM` capabilities when creating inference services.
 - **Added** `vLLM` supports configuring `Lora` inference parameters when creating inference services.
+
+#### Optimization
+
 - **Optimized** the default queue priority `High` when creating a `Notebook`.
 
 #### Fixes
