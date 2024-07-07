@@ -31,7 +31,7 @@ DCE 5.0 大体分为两个版本：社区版和商业版。
     </tr>
     <tr>
       <td>商业版</td>
-      <td><p>社区版基础上增加了：</p>
+      <td><p>社区版上增加了：</p>
         <ul>
           <li><a href="https://docs.daocloud.io/amamba/intro/index.html"><span style="white-space: nowrap;">应用工作台</span></a></li>
           <li><a href="https://docs.daocloud.io/kairship/intro/index.html">多云编排</a></li>
@@ -169,3 +169,4 @@ DCE 5.0 的安装流程可能会有变更。请收藏此页，关注更新动态
 
 [下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
+[安装常见问题](./faq.md){ .md-button .md-button--primary }
