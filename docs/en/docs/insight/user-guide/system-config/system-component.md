@@ -1,11 +1,9 @@
 # System Components
 
-On the system component page, you can quickly view the running status of the system components in the observability module. When a system component fails, some features in the observability module will be unavailable.
+On the system component page, you can quickly view the running status of the system components in Insight. When a system component fails, some features in Insight will be unavailable.
 
 1. Go to __Insight__ product module,
 2. In the left navigation bar, select __System Management -> System Components__ .
-  
-     
 
 ## Component description
 

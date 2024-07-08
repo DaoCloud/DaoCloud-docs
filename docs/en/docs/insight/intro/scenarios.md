@@ -10,7 +10,7 @@
 **Solution** 
 
 - Supports one-click installation of Helm, supports graphical configuration management, does not limit the release version of Kubernetes, and realizes Insight on Any Kubernetes.
-- Observability has one-stop collection and storage of logs, metrics, distributed traces, and event logs. Full-stack data observation realizes the integration of data collection, storage, analysis, visualization and alert.
+- Insight has one-stop collection and storage of logs, metrics, distributed traces, and event logs. Full-stack data observation realizes the integration of data collection, storage, analysis, visualization and alert.
 - Real-time monitoring of resources in various dimensions, including cluster monitoring, node monitoring, workload monitoring, service monitoring, etc.
 
 
