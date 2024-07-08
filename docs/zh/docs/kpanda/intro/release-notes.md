@@ -45,6 +45,8 @@
 - **修复** 修复创建工作负载mig模式配置多类型gpu规格问题
 - **修复** 修复 MIG Mixed模式下，Deployment配置多个不同类型 GPU规格配置，配置与实际不符问题
 
+[v0.29.0 及以上版本升级注意事项](https://docs.daocloud.io/kpanda/intro/offline-upgrade/#_8)
+
 ## 2024-05-31
 
 ### v0.28.0
