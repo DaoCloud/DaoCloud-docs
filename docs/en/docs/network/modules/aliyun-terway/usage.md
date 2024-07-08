@@ -1,10 +1,15 @@
+---
+MTPE: WANG0608GitHub
+date: 2024-07-08
+---
+
 # Usage
 
-This page demonstrate how to install a Kubernetes Cluster with `kubeadm` on Alibaba Cloud and also have Terway as the cluster's CNI plugin.
+This page demonstrate how to install a Kubernetes cluster with `kubeadm` on Alibaba Cloud and also have Terway as the cluster's CNI plugin.
 
 ## Create ECS Instances
 
-For detailed instructions, please refer to the Alibaba Cloud documentation. However, keep in mind the following points:
+For detailed instructions, please refer to the Alibaba Cloud documentation, and keep in mind the following points:
 
 - Choose a region closer to your location to reduce network latency and improve access speed.
 - If no VPC exists, create a VPC and select an available zone. This VPC will be used for node and Pod communication.
@@ -12,7 +17,9 @@ For detailed instructions, please refer to the Alibaba Cloud documentation. Howe
 
 ![create-ecs](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/ECS-Create.png)
 
-> Installing a Kubernetes cluster requires each machine to have a minimum of 2 CPUs and 2 GB of memory.
+!!! note
+
+    When installing a Kubernetes cluster, each node is required to have a minimum of 2 CPUs and 2 GB of memory.
 
 ## Set up the Kubernetes Cluster
 
@@ -20,7 +27,7 @@ Refer to the [official documentation](https://kubernetes.io/docs/setup/productio
 
 !!! note
 
-    Modify the kubelet configuration file (`/usr/lib/systemd/system/kubelet.service.d/10-kubeadm.conf`) on each node and configure `--provider-id`:
+    Modify the kubelet configuration file (`/usr/lib/systemd/system/kubelet.service.d/10-kubeadm.conf`) and configure `--provider-id` on each node:
 
     ```shell
     META_EP=http://100.100.100.200/latest/meta-data
@@ -76,9 +83,11 @@ networking:
 $ kubeadm init --config cluster.yaml
 ```
 
-> Plan the serviceSubnet and podSubnet to avoid conflicts.
->
-> You can use `k8s.m.daocloud.io` as a mirror acceleration site.
+!!! note
+
+    Plan the serviceSubnet and podSubnet to avoid conflicts.
+
+    You can use `k8s.m.daocloud.io` as a mirror acceleration site.
 
 After creating the cluster, use `kubeadm join` on join the worker node to the cluster.
 
@@ -123,7 +132,9 @@ After creating the cluster, use `kubeadm join` on join the worker node to the cl
     }
     ```
 
-    > To ensure that the RAM user used in the subsequent steps has sufficient permissions, grant the RAM user the AdministratorAccess and AliyunSLBFullAccess permissions.
+    !!! note
+
+        To ensure that the RAM user used in the subsequent steps has sufficient permissions, grant the RAM user the AdministratorAccess and AliyunSLBFullAccess permissions.
 
     ![edit-ram](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/network/images/custom-ram.png)
 
@@ -185,7 +196,9 @@ The CCM component is used to publish Pod-to-Pod routes across nodes and implemen
 
 2. Install the CCM component with the manifests provided in [cloud-controller-manager.yaml](../../yamls/cloud-controller-manager.yaml).
 
-    > It requires to modify `cluster_cidr` to match your actual podSubnet(10.244.0.0/16).
+    !!! note
+
+        It requires to modify `cluster_cidr` to match your actual podSubnet(10.244.0.0/16).
 
     Run the installation:
 
@@ -203,7 +216,7 @@ The CCM component is used to publish Pod-to-Pod routes across nodes and implemen
 
 ### VPC Mode
 
-To verify the installation, create a test application:
+To verify the installation by creating a test application:
 
 ```shell
 cat << EOF | kubectl apply -f -
@@ -240,7 +253,7 @@ and network policies and other features are working as expected.
 
 ### ENI Mode
 
-In VPC mode, Pods obtain their IP addresses from the virtual subnet without using any ENIs. If you want a Pod to exclusively use an ENI in VPC mode, you can achieve this with the following way:
+In VPC mode, Pods obtain their IP addresses from the virtual subnet without using any ENIs. If you want a Pod to exclusively use an ENI, you can achieve this with the following way in VPC mode:
 
 ```shell
 cat << EOF | kubectl apply -f -
@@ -274,7 +287,9 @@ spec:
 EOF
 ```
 
-> Declare aliyun/eni: 1 in the resources configuration to make the Pod exclusively use the ENI network card.
+!!! note
+
+    Declare `aliyun/eni: 1` in the resources configuration to make the Pod exclusively use the ENI network card.
 
 ```shell
 $ kubectl get po -o wide | grep eni
