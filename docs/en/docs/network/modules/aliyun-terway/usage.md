@@ -129,7 +129,7 @@ After creating the cluster, use `kubeadm join` on join the worker node to the cl
 
     Once created, bind the custom permission policy to the user or user group:
 
-    ![bind_ram](../../images/bind_ram.png)
+    ![bind_ram](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/bind_ram.png)
 
     Finally, create an AccessKey and save the `access_secret` and `access_key`, as you will need them during the Terway installation.
 
