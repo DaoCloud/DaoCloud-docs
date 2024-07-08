@@ -7,7 +7,8 @@ OAM 应用功能基于开源软件 [KubeVela](http://kubevela.net/zh/docs/v1.2/)
 ## 前提条件
 
 - [创建工作空间](../../../ghippo/user-guide/workspace/workspace.md)、[创建用户](../../../ghippo/user-guide/access-control/user.md)。
-- 将该用户添加至该工作空间，并赋予  __Workspace Editor__  或更高权限。
+- 将该用户添加至该工作空间，并赋予 __Workspace Editor__ 或更高权限。
+- [vela-core](../../pluggable-components.md#vela-core) 和 [argo-cd](../../pluggable-components.md#argo-cd) 组件均已安装。
 
 ## 操作步骤
 
