@@ -4,9 +4,10 @@
 
 ## 前提条件
 
-- 需创建一个工作空间和一个用户，该用户需加入该工作空间并赋予  __workspace edit__  角色。
+- 需创建一个工作空间和一个用户，该用户需加入该工作空间并赋予 __workspace edit__ 角色。
   参考[创建工作空间](../../../ghippo/user-guide/workspace/workspace.md)、[用户和角色](../../../ghippo/user-guide/access-control/user.md)。
 - 准备一个 Git 仓库，如果持续部署应用的清单文件所在的代码仓库不是公开的，则需要事先将仓库导入至应用工作台，参考[导入仓库](import-repo.md)。
+- [vela-core](../../pluggable-components.md#vela-core) 和 [argo-cd](../../pluggable-components.md#argo-cd) 组件均已安装。
 
 ## 创建 Argo CD 应用
 
