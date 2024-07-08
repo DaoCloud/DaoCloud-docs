@@ -13,6 +13,7 @@ For an introduction to OAM concepts, please refer to the [Introduction to OAM](c
 
 - Make sure to [Create a Workspace](../../../ghippo/user-guide/workspace/workspace.md) and [Create a User](../../../ghippo/user-guide/access-control/user.md/).
 - Add the user to the workspace and assign 'Workspace Editor' or higher permissions.
+- Both the [vela-core](../../pluggable-components.md#deploying-the-vela-core-component) and [argo-cd](../../pluggable-components.md#deploying-the-argo-cd-component) components have been installed.
 
 ## Procedure
 
