@@ -75,7 +75,7 @@ Refer to [Beginner Mode Description](./deploy-arch.md#_2).
 
 | Quantity | Server Role | Server Usage | Number of CPUs | Memory Capacity | System Disk | Unpartitioned Disk |
 | -------- | ---------- | ------------- | -------------- | --------------- | ----------- | ----------------- |
-| 1 | all in one | Image repository, chart museum, and global cluster itself | 16 cores | 32G | 200G | 400G |
+| 1 | all in one | Image repository, chart museum, and global cluster itself | 16 cores | 32 GB | 200 GB | 400 GB |
 
 ### Requirements for CPU, Memory, and Disk in 4-node Mode
 
@@ -83,8 +83,8 @@ Refer to [4-node Mode Description](./deploy-arch.md#4).
 
 | Quantity | Server Role | Server Usage | Number of CPUs | Memory Capacity | System Disk | Unpartitioned Disk |
 | -------- | ----------- | ------------ | -------------- | --------------- | ----------- | ----------------- |
-| 1 | Bootstrap Node | 1. Run installation and deployment program<br />2. Run the image repository and chart museum required by the platform | 2 | 4G | 200G | - |
-| 3 | Control Plane | 1. Run DCE 5.0 components<br />2. Run kubernetes system components | 8 | 16G | 100G | 200G |
+| 1 | Bootstrap Node | 1. Run installation and deployment program<br />2. Run the image repository and chart museum required by the platform | 2 cores | 4 GB | 200 GB | - |
+| 3 | Control Plane | 1. Run DCE 5.0 components<br />2. Run kubernetes system components | 8 cores | 16 GB | 100 GB | 200 GB |
 
 ### Requirements for CPU, Memory, and Disk in 7-node Mode (Recommended for Production Environment)
 
@@ -92,9 +92,9 @@ Refer to [7-node Mode Description](./deploy-arch.md#7-1-6).
 
 | Quantity | Server Role | Server Usage | Number of CPUs | Memory Capacity | System Disk | Unpartitioned Disk |
 | -------- | ----------- | ------------ | -------------- | --------------- | ----------- | ----------------- |
-| 1 | Bootstrap Node | 1. Run installation and deployment program<br />2. Run the image repository and chart museum required by the platform | 2 | 4G | 200G | - |
-| 3 | Master | 1. Run DCE 5.0 components<br />2. Run kubernetes system components | 8 | 16G | 100G | 200G |
-| 3 | Worker | Run log-related components separately | 8 | 16G | 100G | 200G |
+| 1 | Bootstrap Node | 1. Run installation and deployment program<br />2. Run the image repository and chart museum required by the platform | 2 cores | 4 GB | 200 GB | - |
+| 3 | Master | 1. Run DCE 5.0 components<br />2. Run kubernetes system components | 8 cores | 16 GB | 100 GB | 200 GB |
+| 3 | Worker | Run log-related components separately | 8 cores | 16 GB | 100 GB | 200 GB |
 
 ### etcd Disk Recommendations
 
