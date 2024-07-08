@@ -9,16 +9,16 @@
 ## 解压下载的包得到bundle包
 
 ```shell
-  tar -xvf insight_v0.25.3_amd64.tar
+tar -xvf insight_v0.25.3_amd64.tar
 ```
 
-解压后可得到insight和insight-agent对应2个bundle.tar包
+解压后可得到 insight 和 insight-agent 对应 2 个 bundle.tar 包
 
 ```shell
-  # ll insight_v0.25.3_amd64
-  总用量 2899996
-  -rw-r--r-- 1 root root 2367463936 4月   2 18:36 insight_0.25.3.bundle.tar
-  -rw-r--r-- 1 root root  602125824 4月   2 18:35 insight-agent_0.25.3.bundle.tar
+$ ll insight_v0.25.3_amd64
+总用量 2899996
+-rw-r--r-- 1 root root 2367463936 4月   2 18:36 insight_0.25.3.bundle.tar
+-rw-r--r-- 1 root root  602125824 4月   2 18:35 insight-agent_0.25.3.bundle.tar
 ```
 
 ## 从安装包中加载镜像
@@ -39,21 +39,30 @@
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: insight-offline # 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线bundle包之间的相对路径
+          intermediateBundlesPath: insight-offline # (1)!
         target:
-          containerPrefixRegistry: 10.16.10.111 # 需更改为你的镜像仓库 url
+          containerPrefixRegistry: 10.16.10.111 # (2)!
           appendOriginRegistry: true
           repo:
-            kind: HARBOR # 也可以是任何其他支持的 Helm Chart 仓库类别
-            url: http://10.16.10.111/chartrepo/release.daocloud.io # 需更改为 chart repo project url
+            kind: HARBOR # (3)!
+            url: http://10.16.10.111/chartrepo/release.daocloud.io # (4)!
             auth:
-              username: "admin" # 你的镜像仓库用户名
-              password: "Harbor12345" # 你的镜像仓库密码
+              username: "admin" # (5)!
+              password: "Harbor12345" # (6)!
           containers:
             auth:
-              username: "admin" # 你的镜像仓库用户名
-              password: "Harbor12345" # 你的镜像仓库密码
+              username: "admin" # (7)!
+              password: "Harbor12345" # (8)!
         ```
+
+        1. 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线bundle包之间的相对路径
+        2. 需更改为你的镜像仓库 url
+        3. 也可以是任何其他支持的 Helm Chart 仓库类别
+        4. 需更改为 chart repo project url
+        5. 你的镜像仓库用户名
+        6. 你的镜像仓库密码
+        7. 你的镜像仓库用户名
+        8. 你的镜像仓库密码
 
     === "已安装 CHARTMUSEUM chart repo"
 
@@ -61,21 +70,30 @@
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: insight-offline # 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线bundle包之间的相对路径
+          intermediateBundlesPath: insight-offline # (1)!
         target:
-          containerPrefixRegistry: 10.16.10.111 # 需更改为你的镜像仓库 url
+          containerPrefixRegistry: 10.16.10.111 # (2)!
           appendOriginRegistry: true
           repo:
-            kind: CHARTMUSEUM # 也可以是任何其他支持的 Helm Chart 仓库类别
-            url: http://10.16.10.111 # 需更改为 chart repo url
+            kind: CHARTMUSEUM # (3)!
+            url: http://10.16.10.111 # (4)!
             auth:
-              username: "rootuser" # 你的镜像仓库用户名, 如果 chartmuseum 没有开启登录验证，就不需要填写 auth
-              password: "rootpass123" # 你的镜像仓库密码
+              username: "rootuser" # (5)!
+              password: "rootpass123" # (6)!
           containers:
             auth:
-              username: "rootuser" # 你的镜像仓库用户名
-              password: "rootpass123" # 你的镜像仓库密码
+              username: "rootuser" # (7)!
+              password: "rootpass123" # (8)!
         ```
+
+        1. 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线 bundle 包之间的相对路径
+        2. 需更改为你的镜像仓库 url
+        3. 也可以是任何其他支持的 Helm Chart 仓库类别
+        4. 需更改为 chart repo url
+        5. 你的镜像仓库用户名, 如果 chartmuseum 没有开启登录验证，就不需要填写 auth
+        6. 你的镜像仓库密码
+        7. 你的镜像仓库用户名
+        8. 你的镜像仓库密码
 
     === "未安装 chart repo"
 
@@ -83,16 +101,16 @@
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: insight-offline # (1)
+          intermediateBundlesPath: insight-offline # (1)!
         target:
-          containerPrefixRegistry: 10.16.10.111 # (2)
+          containerPrefixRegistry: 10.16.10.111 # (2)!
           repo:
             kind: LOCAL
-            path: ./local-repo # (3)
+            path: ./local-repo # (3)!
           containers:
             auth:
-              username: "admin" # (4)
-              password: "Harbor12345" # (5)
+              username: "admin" # (4)!
+              password: "Harbor12345" # (5)!
         ```
 
         1. 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
@@ -148,7 +166,7 @@
 
 === "通过 helm repo 升级"
 
-    1. 检查 Insight  helm 仓库是否存在。
+    1. 检查 Insight helm 仓库是否存在。
 
         ```shell
         helm repo list | grep insight
@@ -169,7 +187,7 @@
     1. 更新 Insight 的 helm 仓库。
 
         ```shell
-        helm repo update insight # (1)
+        helm repo update insight # (1)!
         ```
 
         1. helm 版本过低会导致失败，若失败，请尝试执行 helm update repo
@@ -226,7 +244,7 @@
         helm get values insight -n insight-system -o yaml > insight.yaml
         ```
 
-    1. 执行 `helm upgrade` 。
+    1. 执行 `helm upgrade`。
 
         升级前建议您覆盖 bak.yaml 中的 __global.imageRegistry__ 为当前使用的镜像仓库地址。
 
