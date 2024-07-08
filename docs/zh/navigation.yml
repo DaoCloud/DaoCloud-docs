@@ -1105,8 +1105,7 @@ nav:
                       - Release Notes: middleware/minio/release-notes.md
                   - 快速入门:
                       - 创建 MinIO 实例: middleware/minio/user-guide/create.md
-                      - 更新 MinIO 实例: middleware/minio/user-guide/update.md
-                      - 删除 MinIO 实例: middleware/minio/user-guide/delete.md
+                      - 更新/删除 MinIO 实例: middleware/minio/user-guide/update-delete.md
                       - 实例监控/日志查看/配置参数: middleware/minio/user-guide/insight-log-config.md
                       - 查看实例详情: middleware/minio/user-guide/view.md
                       - MinIO 的身份管理: middleware/minio/user-guide/user-management.md
