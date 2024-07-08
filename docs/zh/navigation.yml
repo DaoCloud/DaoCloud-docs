@@ -1107,10 +1107,8 @@ nav:
                       - 创建 MinIO 实例: middleware/minio/user-guide/create.md
                       - 更新 MinIO 实例: middleware/minio/user-guide/update.md
                       - 删除 MinIO 实例: middleware/minio/user-guide/delete.md
-                      - 查看 MinIO 日志: middleware/minio/user-guide/logs.md
+                      - 实例监控/日志查看/配置参数: middleware/minio/user-guide/insight-log-config.md
                       - 查看实例详情: middleware/minio/user-guide/view.md
-                      - 实例监控: middleware/minio/user-guide/insight.md
-                      - 配置参数: middleware/minio/user-guide/config.md
                       - MinIO 的身份管理: middleware/minio/user-guide/user-management.md
                   - MinIO 灾备方案: middleware/minio/best-pratice/minio-replication.md
       - 云原生 AI:
