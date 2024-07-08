@@ -1077,8 +1077,7 @@ nav:
                       - Release Notes: middleware/minio/release-notes.md
                   - Quick Start:
                       - Create MinIO Instance: middleware/minio/user-guide/create.md
-                      - Update MinIO Instance: middleware/minio/user-guide/update.md
-                      - Delete MinIO Instance: middleware/minio/user-guide/delete.md
+                      - Update/Delete MinIO Instance: middleware/minio/user-guide/update-delete.md
                       - Instance Insight/Logs/Parameter Configuration: middleware/minio/user-guide/insight-log-config.md
                       - View Instance Details: middleware/minio/user-guide/view.md
                       - MinIO Identity Management: middleware/minio/user-guide/user-management.md
