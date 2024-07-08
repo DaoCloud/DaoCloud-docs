@@ -13,13 +13,13 @@ hide:
 
     ![点击创建按钮](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/ns01.png)
 
-2. 在 __创建多云命名空间__ 页面中，输入名称，添加标签后，点击 __确定__ 。
+2. 在 __创建多云命名空间__ 页面中，输入名称，添加标签与注解后，点击 __确定__ 。
 
-    ![填写表单](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/ns02.png)
+    ![填写表单](../images/ns02.png)
 
-3. 返回多云命名空间列表，新创建的默认位于第一个。点击列表右侧的 __⋮__ ，可以编辑 YAML 和删除该命名空间。
+3. 返回多云命名空间列表，新创建的默认位于第一个。点击列表右侧的 __⋮__ ，可以执行编辑 YAML、查看事件、更新和删除命名空间等操作。
 
-    ![其他操作](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/ns03.png)
+    ![其他操作](../images/ns03.png)
 
     !!! note
 
