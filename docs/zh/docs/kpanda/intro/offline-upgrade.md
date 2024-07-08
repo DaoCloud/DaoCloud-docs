@@ -258,7 +258,7 @@
 
 ### 升级已知问题
 
-#### 1、升级到 v0.25.1 或更高版本
+#### 升级到 v0.25.1 但 < v0.29.0
 
 问题描述：通过页面方式将 kpanda 低版本升级到 v0.25.1 或更高版本时，
 可能存在镜像地址拼接问题，导致升级失败，报错提示如下：
@@ -611,16 +611,19 @@
         repository: kpanda/etcdbrctl
         tag: v0.22.0
     ```
-#### 2、升级到 v0.29.0 或更高版本
+#### 升级到 v0.29.0 或更高版本
 
-问题描述：将 kpanda 低版本升级到 v0.29.0 或更高版本时，节点如果是 GPU MIG 模式，系统会将原来的 GPU MIG 模式强制切换成 GPU 整卡模式，影响业务运行，执行如下操作可避免此问题。
+问题描述：将 Kpanda 低版本升级到 v0.29.0 或更高版本时，节点如果是 GPU MIG 模式，系统会将原来的 GPU MIG 模式强制切换成
+GPU 整卡模式，这会影响业务运行。您可以执行如下操作可避免此问题。
 
 业务中断式升级（使用场景：已开启 GPU MIG 模式，但实际未使用）：
-1. 停止所有GPU应用
+
+1. 停止所有 GPU 应用
 2. 并且卸载 gpu-operator 以及 nvidia-vgpu
-3. 升级完成后重新安装 gpu-operator，并且保证 gpu-operator 版本大于v23.9.0+1
+3. 升级完成后重新安装 gpu-operator，并且保证 gpu-operator 版本大于 v23.9.0+1
 
 业务连续式升级（使用场景：已开启 GPU MIG 模式，并且有实际业务正在使用 MIG 模式）：
-1. 手动 修改node标签 gpu.node.kpanda.io/nvidia-gpu-mode: mig 
-2. 升级kpanda版本
-3. 升级gpu-operator 版本 >= v23.9.0+1
+
+1. 手动修改 node 标签 `gpu.node.kpanda.io/nvidia-gpu-mode: mig`
+2. 升级 Kpanda 版本
+3. 升级 gpu-operator 版本 >= v23.9.0+1
