@@ -1,9 +1,9 @@
 # Start Observing
 
 DCE 5.0 platform enables the management and creation of multi-cloud and multi-cluster environments.
-Building upon this capability, Observability Insight serves as a unified observability solution for
+Building upon this capability, Insight serves as a unified observability solution for
 multiple clusters. It collects observability data from multiple clusters by deploying the insight-agent
-plugin and allows querying of metrics, logs, and trace data through the DCE 5.0 observability products.
+plugin and allows querying of metrics, logs, and trace data through the DCE 5.0 Insight.
 
  __insight-agent__ is a tool that facilitates the collection of observability data from multiple clusters.
 Once installed without any modifications, it automatically collects metrics, logs, and trace data.
@@ -13,7 +13,7 @@ this guide specifically provides instructions on enabling observability for conn
 
 - [Install insight-agent online](install-agent.md)
 
-As a unified observability platform for multiple clusters, Observability Insight's resource consumption
+As a unified observability platform for multiple clusters, Insight's resource consumption
 of certain components is closely related to cluster creation and the number of connected clusters.
 When installing insight-agent, it is necessary to adjust the resources of the corresponding components based on the cluster size.
 
