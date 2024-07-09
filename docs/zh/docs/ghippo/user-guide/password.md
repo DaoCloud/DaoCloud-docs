@@ -18,7 +18,7 @@
 
 1. 在邮箱中找到密码重置邮件，点击下方链接进行密码重置，链接时效 5 分钟。
 
-    ![点击重置链接](../images/password03zh&en.png)
+    ![点击重置链接](../images/password03zh-en.png)
 
 1. 在手机等终端设备安装支持 2FA 动态口令生成的应用（如 Google Authenticator），按照页面提示配置动态口令以激活账户，点击 __提交__ 。
 
