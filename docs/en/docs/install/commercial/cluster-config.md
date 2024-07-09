@@ -207,52 +207,59 @@ spec:
   #      secretKey: "YOUR-SECRET-KEY-HERE"
   
   # Examples as below. More refer to kubespray options setting documentations.
-  # kubeanConfig: |-
+  #kubeanConfig: |-
   #  this config will set the timezone of nodes , and it won't change timezone if this config is commented out.
   #  ntp_timezone: Asia/Shanghai
   #  # Enable recommended node sysctl settings
   #  node_sysctl_tuning: true
   #  # Extra node sysctl settings while node_sysctl_tuning is enabled
   #  extra_sysctl: [{ name: net.ipv4.tcp_keepalive_time, value: 700 }]
-  # bin_dir: /usr/local/bin
-  # http_proxy: ""
-  # https_proxy: ""
-  # upstream_dns_servers:
-  #   - 8.8.8.8
-  #   - 8.8.4.4
+  #  bin_dir: /usr/local/bin
+  #  http_proxy: ""
+  #  https_proxy: ""
+  #  upstream_dns_servers:
+  #    - 8.8.8.8
+  #    - 8.8.4.4
+  #  docker_mount_device: /dev/sdc
+  #  docker_storage_options: "-s overlay2 --storage-opt overlay2.size=1G"
+
  
   # k8sVersion only take effect in online mode, don't set it in offline mode.
   # Unless to install a non-latest k8s version with offline pkg in place.
-  # k8sVersion: v1.25.4
-  # auditConfig:
+  #k8sVersion: v1.29.5
+  #auditConfig:
   #  logPath: /var/log/audit/kube-apiserver-audit.log
   #  logHostPath: /var/log/kubernetes/audit
-  #  policyFile: /etc/kubernetes/audit-policy/apiserver-audit-policy.yaml
-  #  logMaxAge: 30
-  #  logMaxBackups: 10
-  #  logMaxSize: 100
-  #  policyCustomRules: >
-  #    - level: None
-  #      users: []
-  #      verbs: []
-  #      resources: []
-  # network:
+  #  #policyFile: /etc/kubernetes/audit-policy/apiserver-audit-policy.yaml
+  #  #logMaxAge: 30
+  #  #logMaxBackups: 10
+  #  #logMaxSize: 100
+  #  #policyCustomRules: >
+  #  #  - level: None
+  #  #    users: []
+  #  #    verbs: []
+  #  #    resources: []
+  #network:
   #  cni: calico
   #  clusterCIDR: 10.233.64.0/18
   #  serviceCIDR: 10.233.0.0/18
-  # cri:
+  #cri:
   #  criProvider: containerd
-  #  criVersion only take effect in online mode, don't set it in offline mode
-  #  criVersion: 1.6.8
-  # renewCerts: Certificate renewal for the cluster
-  #  # There are only 2 modes of renewing certificates: `onetime` or `cyclical`, with the default value `cyclical`.
-  #  # 1. When mode is set to `cyclical`, certificate renewal will be performed on a timer in a cyclical manner.
-  #  mode: cyclical
+  #  # criVersion only take effect in online mode, don't set it in offline mode
+  #  #criVersion: 1.7.0
+  #  # skip provision of CRI, default false. Currently only works with docker.
+  #  #skipProvision: false
 
+  #renewCerts:
+  #  # there are only 2 modes of renew certs: `onetime` or `cyclical`, default value is `cyclical`.
+  #  #mode: cyclical
+  #  # 1. When mode is set to `cyclical`, certificate renewal will be performed on a timer in a cyclical manner.
+  #  #mode: cyclical
   #  # 2. When mode is set to `onetime`, certificate renewal will be completed at once, and you can set the validity days of the certificate.
-  #  mode: onetime
-  #  # Valid days can be set when in `onetime` mode, with the default valid days being 3650.
-  #  oneTimeValidDays: 3650
+  #  #mode: onetime
+  #  # valid days can be set when in `onetime` mode, default valid days is 3650.
+  #  #oneTimeValidDays: 3650
+
 ```
 
 ## Key fields
@@ -353,28 +360,30 @@ metadata:
 spec:
    clusterName: my-cluster
    masterNodes:
-     # nodeName will override hostName, should conform to RFC1123 standard
-     - nodeName: "g-master1"
+     - nodeName: "g-master1" # (1)!
        ip: xx.xx.xx.xx
        ansibleUser: "root"
        ansiblePass: "dangerous"
    workerNodes:
    fullPackagePath: "/root/offline"
    osRepos:
-     # official-service(if omit or empty), builtin or external
-     type: builtin
+     type: builtin # (2)!
      isoPath: "/root/CentOS-7-x86_64-DVD-2009.iso"
      osPackagePath: "/root/os-pkgs-centos7-v0.4.4.tar.gz"
    imagesAndCharts:
-     # official-service(if omit or empty), builtin or external
-     # External S3 is not yet supported  … FIXME
-     type: builtin
+     type: builtin # (3)!
    addonPackage:
-     path: "/root/addon-offline-full-package-v0.4.8-amd64.tar.gz"
+    #path:
+    #  - "/root/standard-addon-offline-package-v0.18.0-amd64.tar.gz"
+    #  - "/root/gpu-addon-offline-package-v0.18.0-amd64.tar.gz"
    binaries:
-     # official-service(if omit or empty), builtin or external
-     type: builtin
+     type: builtin # (4)!
 ```
+
+1. nodeName will override hostName and should comply with RFC1123 standards.
+2. official-service (if omit or empty), builtin, or external.
+3. official-service (if omit or empty), builtin, or external. Currently, External S3 is not supported... FIXME.
+4. official-service (if omitted or empty), builtin, or external.
 
 **Installation in `external` mode in offline mode**
 

@@ -8,6 +8,32 @@ date: 2024-05-08
 This page lists the release notes for Workbench to help you understand
 the development and feature changes in each version.
 
+## 2024-06-30
+
+### v0.28.0
+
+#### New Features
+
+- **Added** a feature of running pipelines from a specified stage.
+
+#### Improvements
+
+- **Improved** pipeline DAG, allowing for switching between old and new versions. Note: Saving pipelines across 
+  different versions is prohibited as it may cause compatibility issues.
+- **Improved** auto-completion in the Jenkinsfile editor.
+- **Improved** support for integrating with older versions of SonarQube.
+- **Improved** the API to support embedding ArgoCD UI in the GitOps details page.
+- **Improved** the API to support creating, deleting, updating, and retrieving custom pipeline steps.
+
+#### Fixes
+
+- **Fixed** incorrect audit log names.
+
+#### Known Issues
+
+- In v0.28.2, once pipeline webhooks are enabled, they cannot be disabled. An upgrade to v0.28.3 
+  is required to resolve this issue.
+
 ## 2024-05-30
 
 ### v0.27.0

@@ -3,6 +3,15 @@
 This page lists the Release Notes related to Hwameistor, providing an overview of
 the evolution path and feature changes for each version.
 
+## 2024-06-30
+
+### v0.14.7
+
+#### Improvements
+
+- **Resolved** affinity issues and added an option to skip affinity.
+- **Improved** and cleaned up the dataset manager code.
+
 ## 2024-04-30
 
 ### v0.14.6
