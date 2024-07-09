@@ -36,14 +36,11 @@ helm template ./hwameistor \
 
 ## 验证 `LocalDiskClaim` 对象
 
-运行以下命令：
+`LocalDiskClaim` 对象在挂载（bound）后会被自动删除，你可以运行以下命令查看其是否已被删除：
 
 ```console
 $ kubectl get ldc
-NAME           NODEMATCH      PHASE
-k8s-worker-1   k8s-worker-1   Bound
-k8s-worker-2   k8s-worker-2   Bound
-k8s-worker-3   k8s-worker-3   Bound
+No resources found
 ```
 
 ## 验证 `StorageClass`

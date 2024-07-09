@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+date: 2024-07-09
+---
+
 # Create StorageClass
 
 The following example is from a 4-node Kubernetes cluster:
@@ -34,16 +39,14 @@ helm template ./hwameistor \
   | kubectl apply -f -
 ```
 
-## Validate `LocalDiskClaim` object
+## Verify `LocalDiskClaim` object
 
-Run the following command:
+The `LocalDiskClaim` object will be automatically deleted after it is bound.
+You can run the following command to check if it has been deleted:
 
 ```console
 $ kubectl get ldc
-NAME NODEMATCH PHASE
-k8s-worker-1 k8s-worker-1 Bound
-k8s-worker-2 k8s-worker-2 Bound
-k8s-worker-3 k8s-worker-3 Bound
+No resources found
 ```
 
 ## Verify `StorageClass`
