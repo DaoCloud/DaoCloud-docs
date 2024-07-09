@@ -53,7 +53,7 @@ pass[Forgot password] --> usern[Enter username]
         judge2 -.A mail has been bounded.-> send[Send a reset mail]
         judge2 -.No any mail bounded.-> tip2[No any mail bounded<br>Contact admin to reset password]
         
-send --> click[Click the mail link] --> config[Config dynamic password]--> reset[Reset password]
+send --> click[Click the mail link] --> config[Config dynamic password] --> reset[Reset password]
 --> success[Successfully reset]
 
 classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
