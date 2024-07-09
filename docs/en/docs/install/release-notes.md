@@ -15,6 +15,32 @@ the evolution path and feature changes of each version.
 *[Kpanda]: Dev codename for Container Management in DCE 5.0
 *[Skoala]: Dev codename for Microservice Engine in DCE 5.0
 
+## 2024-06-30
+
+### v0.19.0
+
+#### Improvements
+
+- **Improved** the default K8s version to v1.29.5.
+- **Improved** support for configuring `ubuntu_kernel_unattended_upgrades_disabled: true` under the `kubeanConfig` 
+  parameter in `clusterconfig.yaml` to disable automatic kernel updates on Ubuntu.
+- **Improved** the function of uploading multiple files for offline addon packages.
+- **Improved** dependency version of charts-syncer to v0.0.23.
+- **Improved** by hiding unnecessary detail logs in the task scheduler.
+
+#### Fixes
+
+- **Fixed** an issue with cleaning the skopeo installation directory.
+- **Fixed** an issue where multi-architecture image import fails with the `import-artifact` command.
+- **Fixed** an issue where image check failures were being ignored.
+- **Fixed** an issue with constant Pod restarts on OpenEuler 22.03 SP3 bootstrap nodes.
+- **Fixed** a bug caused by empty lines in the image list.
+
+#### Known Issues
+
+- When deploying the community version of a kind cluster with v1.29.4 on an ARM-based kylinv10 operating system, 
+  the component `mcamel-common-mysql-cluster` might fail to install.
+
 ## 2024-05-30
 
 ### v0.18.0
