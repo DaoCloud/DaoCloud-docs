@@ -15,6 +15,6 @@ hide:
 
 ## 操作步骤
 
-1. 在左边导航栏选择 __概览__ 。
+在左边导航栏选择 __概览__ 。
 
-    ![概览](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/overview.png){ width="1000"}
+![概览](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/insight/images/overview.png){ width="1000"}
