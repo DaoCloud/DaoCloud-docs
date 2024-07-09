@@ -13,4 +13,9 @@ hide:
 - Resource Trends: Shows the trends in the number of nodes over the past 15 days and the running trend of pods in the last hour.
 - Service Requests Ranking: Displays the top 5 services with the highest request latency and error rates, along with their respective clusters and namespaces in the multi-cluster environment.
 
+## Operation procedure
+
 Select __Overview__ in the left navigation bar to enter the details page.
+
+![overview](../../images/overview.png){ width="1000"}
+
