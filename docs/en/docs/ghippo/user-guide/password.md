@@ -1,35 +1,41 @@
+---
+MTPE: ModetaNiu
+Date: 2023-07-09
+---
+
 # Reset Password
 
 If you forget your password, you can reset it by following the instructions on this page.
 
-## Reset password steps
+## Steps to Reset Password
 
-When an administrator initially creates a user, it sets a username and password for it.
+When an administrator initially creates a user, it sets a username and password for him.
 After the user logs in, fill in the email address and change the password in __Personal Center__ .
 If the user has not set an email address, he can only contact the administrator to reset the password.
 
-1. If you have forgotten your password, you can click __Forgot password?__ on the login screen.
+1. If you forget your password, you can click __Forgot your password?__ on the login interface.
 
-    
+    ![Login Interface](../images/password01en.png)  
 
-1. Enter your username and click __Submit__ .
+1. Enter your login email and click __Submit__ .
 
-    To prevent spam, after clicking 'Submit', the button will be grayed out and a 1-minute countdown will be displayed.
-    If you haven't received the email after 1 minute, please click this button again.
+    ![Forgot your password](../images/password02en.png)  
 
-    
+1. Find the password reset email in the mailbox, and click the link in your email. The link is effective for 5 minutes.
 
-1. Find the password reset email in the mailbox, and click the link in your email.
+    ![Click the link](../images/password03en.png)     
 
-    
+1. Install applications that support 2FA dynamic password generation (such as Google Authenticator) on mobile phone 
+   or other devices. Set up a dynamic password to activate your account, and click __Submit__ .
 
-1. Follow the screen prompts to set a new password and click __Submit__ . The requirements for setting a new password are consistent with the password rules when creating a user.
+    ![Config dynamic password](../images/password04en.png)    
 
-    
+1. Set a new password and click __Submit__ . The requirements for setting a new password are consistent with 
+   the password rules when creating an account.
 
-1. The screen prompts that the password has been changed successfully or directly log in to the DCE main screen.
+    ![Update password](../images/password04.png)   
 
-    
+1. The password is successfully reset, and you enter the home page directly.  
 
 ## Reset password process
 
@@ -47,13 +53,13 @@ pass[Forgot password] --> usern[Enter username]
         judge2 -.A mail has been bounded.-> send[Send a reset mail]
         judge2 -.No any mail bounded.-> tip2[No any mail bounded<br>Contact admin to reset password]
         
-send --> click[Click the mail link] --> reset[Reset password]
+send --> click[Click the mail link] --> config[Config dynamic password]--> reset[Reset password]
 --> success[Successfully reset]
 
 classDef plain fill:#ddd,stroke:#fff,stroke-width:1px,color:#000;
 classDef k8s fill:#326ce5,stroke:#fff,stroke-width:1px,color:#fff;
 classDef cluster fill:#fff,stroke:#bbb,stroke-width:1px,color:#326ce5;
 
-class pass,usern,button,tip1,send,tip2,send,click,reset,success plain;
+class pass,usern,button,tip1,send,tip2,send,click,config,reset,success plain;
 class judge1,judge2 k8s
 ```
