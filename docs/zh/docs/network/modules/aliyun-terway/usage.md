@@ -12,7 +12,9 @@
 
 ![create-ecs](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/ECS-Create.png)
 
-> 安装 Kubernetes 集群要求每台机器的 CPU >= 2, 内存 >= 2 GB.
+!!! note
+
+    安装 Kubernetes 集群时，要求每个节点的 CPU 不小于 2 核, 内存不小于 2 GB。
 
 ## 搭建 Kubernetes 集群
 
@@ -77,9 +79,11 @@ networking:
 $ kubeadm init --config cluster.yaml
 ```
 
-> 规划 serviceSubnet 和 podSubnet 不冲突
-> 
-> 可使用 `k8s.m.daocloud.io` 作为镜像加速站
+!!! note
+
+    规划 serviceSubnet 和 podSubnet 不冲突。
+
+    你可以使用 `k8s.m.daocloud.io` 作为镜像加速站。
 
 创建集群之后，在工作节点使用 `kubeadm join` 加入工作节点到集群。
 
@@ -124,7 +128,9 @@ $ kubeadm init --config cluster.yaml
     }
     ```
 
-    > 注: 为确保后续步骤中所使用的 RAM 用户具备足够的权限，请与本文保持一致，给予 RAM 用户 AdministratorAccess 和 AliyunSLBFullAccess 权限
+    !!! note
+    
+        为确保后续步骤中所使用的 RAM 用户具备足够的权限，请给予 RAM 用户AdministratorAccess 和 AliyunSLBFullAccess 权限。
 
     ![edit-ram](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/network/images/custom-ram.png)
 
@@ -240,7 +246,7 @@ EOF
 
 ### 使用 ENI 模式
 
-在 VPC 模式下，Pod 的 IP 是来自虚拟子网，并且不会使用任何的弹性网卡。如果你想要 Pod 独占 ENI，在 VPC 模式，你可以过下面的方式实现:
+在 VPC 模式下，Pod 的 IP 是来自虚拟子网，并且不会使用任何的弹性网卡。如果你想要 Pod 独占 ENI，在 VPC 模式，你可以通过下面的方式实现:
 
 ```shell
 cat << EOF | kubectl apply -f -
@@ -274,7 +280,9 @@ spec:
 EOF
 ```
 
-> 通过在 resources 中声明：aliyun/eni: 1，使 Pod 独占 ENI 网卡。
+!!! note
+
+    通过在 resources 中声明：`aliyun/eni: 1`，使 Pod 独占 ENI 网卡。
 
 ```shell
 $ kubectl get po -o wide | grep eni
