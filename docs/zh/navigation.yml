@@ -582,7 +582,7 @@ nav:
                       - 磁盘节点扩展: storage/hwameistor/resources/disk-nodes.md
                       - 磁盘扩展: storage/hwameistor/resources/disk-expansion.md
                       - 磁盘预留: storage/hwameistor/resources/reserveddisk.md
-                  - 存储池: storage/hwameistor/resources/storagepool.md
+                  - 存储池: storage/hwameistor/resources/storageclass.md
                   - 数据卷:
                       - 数据卷迁移: storage/hwameistor/resources/migrate.md
                       - 数据卷扩容: storage/hwameistor/resources/expand.md

@@ -572,7 +572,7 @@ nav:
                       - Disk Node Expansion: storage/hwameistor/resources/disk-nodes.md
                       - Disk Expansion: storage/hwameistor/resources/disk-expansion.md
                       - Disk Reservation: storage/hwameistor/resources/reserveddisk.md
-                  - StorageClass: storage/hwameistor/resources/storagepool.md
+                  - StorageClass: storage/hwameistor/resources/storageclass.md
                   - Volumes:
                       - Volume Migration: storage/hwameistor/resources/migrate.md
                       - Volume Expansion: storage/hwameistor/resources/expand.md
