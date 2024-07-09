@@ -1,6 +1,6 @@
 ---
 MTPE: windsonsea
-date: 2024-02-19
+date: 2024-07-09
 hide:
   - toc
 ---
@@ -12,6 +12,9 @@ You can choose and download the one you need.
 
 | Filename | Version | Architecture | File Size | Download | Update Date |
 | -------- | ------- | ------------ | --------- | -------- | ----------- |
+| gpu-addon-offline-package-v0.19.0-amd64.tar.gz | v0.19.0 | AMD 64 | 4.17 GB | [:arrow_right: Go to Download](./v0.19.0.md) | 2024-07-09 |
+| standard-addon-offline-package-v0.19.0-arm64.tar.gz | v0.19.0 | <font color="green">ARM 64</font>| 15.71 GB | [:arrow_right: Go to Download](./v0.19.0.md) | 2024-07-09 |
+| standard-addon-offline-package-v0.19.0-amd64.tar.gz | v0.19.0 | AMD 64 | 24.83 GB | [:arrow_right: Go to Download](./v0.19.0.md) | 2024-07-09 |
 | standard-addon-offline-package-v0.18.0-arm64.tar.gz | v0.18.0 | <font color="green">ARM 64</font> | 15.5 GB | [:arrow_right: Go to Download](./v0.18.0.md) | 2024-06-11 |
 | standard-addon-offline-package-v0.18.0-amd64.tar.gz | v0.18.0 | AMD 64 | 24.5 GB | [:arrow_right: Go to Download](./v0.18.0.md) | 2024-06-11 |
 | gpu-addon-offline-package-v0.18.0-amd64.tar.gz | v0.18.0 | AMD 64 | 4.2 GB | [:arrow_right: Go to Download](./v0.18.0.md) | 2024-06-11 |
