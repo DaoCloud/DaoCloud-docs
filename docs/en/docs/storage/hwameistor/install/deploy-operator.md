@@ -57,72 +57,221 @@ Ensure that your cluster has successfully connected to the container management 
     ```yaml
     global:
       targetNamespace: hwameistor
-      hwameistorImageRegistry: ghcr.io
-      k8sImageRegistry: registry.k8s.io
-      hwameistorVersion: v0.9.2
+      notClaimDisk: false
+      hwameistorImageRegistry: ghcr.m.daocloud.io
+      k8sImageRegistry: k8s.m.daocloud.io
+      hwameistorVersion: v0.14.3
     operator:
       replicas: 1
       imageRepository: hwameistor/operator
-      tag: ''
+      tag: v0.14.6
     localDiskManager:
       tolerationOnMaster: true
       kubeletRootDir: /var/lib/kubelet
       manager:
         imageRepository: hwameistor/local-disk-manager
-        tag: ''
+        tag: v0.14.3
       csi:
         registrar:
           imageRepository: sig-storage/csi-node-driver-registrar
           tag: v2.5.0
+          resources:
+            limits:
+              cpu: 500m
+              memory: 500Mi
+            requests:
+              cpu: 1m
+              memory: 20Mi
+        controller:
+          replicas: 1
         provisioner:
           imageRepository: sig-storage/csi-provisioner
           tag: v2.0.3
+          resources:
+            limits:
+              cpu: 500m
+              memory: 500Mi
+            requests:
+              cpu: 1m
+              memory: 20Mi
         attacher:
           imageRepository: sig-storage/csi-attacher
           tag: v3.0.1
+          resources:
+            limits:
+              cpu: 500m
+              memory: 500Mi
+            requests:
+              cpu: 1m
+              memory: 20Mi
     localStorage:
+      disable: false
       tolerationOnMaster: true
       kubeletRootDir: /var/lib/kubelet
       member:
         imageRepository: hwameistor/local-storage
-        tag: ''
+        tag: v0.14.3
+        hostPathSSHDir: /root/.ssh
+        hostPathDRBDDir: /etc/drbd.d
       csi:
         registrar:
           imageRepository: sig-storage/csi-node-driver-registrar
           tag: v2.5.0
+          resources:
+            limits:
+              cpu: 500m
+              memory: 500Mi
+            requests:
+              cpu: 1m
+              memory: 20Mi
+        controller:
+          replicas: 1
         provisioner:
           imageRepository: sig-storage/csi-provisioner
-          tag: v2.0.3
+          tag: v3.5.0
+          resources:
+            limits:
+              cpu: 500m
+              memory: 500Mi
+            requests:
+              cpu: 1m
+              memory: 20Mi
         attacher:
           imageRepository: sig-storage/csi-attacher
           tag: v3.0.1
+          resources:
+            limits:
+              cpu: 500m
+              memory: 500Mi
+            requests:
+              cpu: 1m
+              memory: 20Mi
         resizer:
           imageRepository: sig-storage/csi-resizer
           tag: v1.0.1
+          resources:
+            limits:
+              cpu: 500m
+              memory: 500Mi
+            requests:
+              cpu: 1m
+              memory: 20Mi
         monitor:
           imageRepository: sig-storage/csi-external-health-monitor-controller
           tag: v0.8.0
+          resources:
+            limits:
+              cpu: 500m
+              memory: 500Mi
+            requests:
+              cpu: 1m
+              memory: 20Mi
+        snapshotController:
+          imageRepository: sig-storage/snapshot-controller
+          tag: v6.0.0
+          resources:
+            limits:
+              cpu: 500m
+              memory: 500Mi
+            requests:
+              cpu: 1m
+              memory: 20Mi
+        snapshotter:
+          imageRepository: sig-storage/csi-snapshotter
+          tag: v6.0.0
+          resources:
+            limits:
+              cpu: 500m
+              memory: 500Mi
+            requests:
+              cpu: 1m
+              memory: 20Mi
+      migrate:
+        rclone:
+          imageRepository: rclone/rclone
+          tag: 1.53.2
+        juicesync:
+          imageRepository: hwameistor/hwameistor-juicesync
+          tag: v1.0.4-01
+      snapshot:
+        disable: false
     scheduler:
+      disable: false
+      replicas: 1
       imageRepository: hwameistor/scheduler
-      tag: ''
+      tag: v0.14.3
     admission:
+      disable: false
+      replicas: 1
       imageRepository: hwameistor/admission
-      tag: ''
+      tag: v0.14.3
+      failurePolicy: Ignore
     evictor:
+      disable: true
+      replicas: 0
       imageRepository: hwameistor/evictor
-      tag: ''
+      tag: v0.14.3
     apiserver:
+      disable: false
+      replicas: 1
       imageRepository: hwameistor/apiserver
-      tag: ''
+      tag: v0.14.3
+      authentication:
+        enable: false
+        accessId: admin
+        secretKey: admin
     exporter:
+      disable: false
+      replicas: 1
       imageRepository: hwameistor/exporter
-      tag: ''
+      tag: v0.14.3
+    auditor:
+      disable: false
+      replicas: 1
+      imageRepository: hwameistor/auditor
+      tag: v0.14.3
+    failoverAssistant:
+      disable: false
+      replicas: 1
+      imageRepository: hwameistor/failover-assistant
+      tag: v0.14.3
+    pvcAutoResizer:
+      disable: false
+      replicas: 1
+      imageRepository: hwameistor/pvc-autoresizer
+      tag: v0.14.3
+    localDiskActionController:
+      disable: false
+      replicas: 1
+      imageRepository: hwameistor/local-disk-action-controller
+      tag: v0.14.3
     ui:
+      disable: false
+      replicas: 1
       imageRepository: hwameistor/hwameistor-ui
-      tag: ''
+      tag: v0.16.0
     ha:
+      disable: false
       module: drbd
       deployOnMaster: 'yes'
+      imageRepository: hwameistor/drbd9-shipper
+      drbdVersion: v9.0.32-1
+      shipperChar: v0.4.1
+    drbdRhel7:
+      imageRepository: hwameistor/drbd9-rhel7
+    drbdRhel8:
+      imageRepository: hwameistor/drbd9-rhel8
+    drbdRhel9:
+      imageRepository: hwameistor/drbd9-rhel9
+    drbdKylin10:
+      imageRepository: hwameistor/drbd9-kylin10
+    drbdBionic:
+      imageRepository: hwameistor/drbd9-bionic
+    drbdFocal:
+      imageRepository: hwameistor/drbd9-focal
+    preHookJob:
+      imageRepository: dtzar/helm-kubectl
+      tag: 3.9
     ```
 
     - `hwameistorImageRegistry`:
