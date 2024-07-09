@@ -11,16 +11,16 @@ after [downloading it from the Download Center](../../../download/modules/gmagpi
 ## Loading Image from the Installation Package
 
 You can load the image using either of the following methods. It is recommended to choose
-the chart-syncer method when an image repository already exists in the environment,
+the chart-syncer method when an registry already exists in the environment,
 as it is more efficient and convenient.
 
-### Synchronizing Images to Image Repository using chart-syncer
+### Synchronize Images to Registry using chart-syncer
 
 1. Create __load-image.yaml__ .
 
     !!! note
 
-        All parameters in this YAML file are mandatory. You need a private image repository
+        All parameters in this YAML file are mandatory. You need a private registry
         and modify the relevant configurations accordingly.
 
     === "Installed chart repo"
@@ -30,21 +30,31 @@ as it is more efficient and convenient.
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: gmagpie-offline # Use the relative path to run the `charts-syncer` command, not the relative path
+          intermediateBundlesPath: gmagpie-offline # (1)!
         target:
-          containerRegistry: 10.16.10.111 # Modify it to your image repository URL.
-          containerRepository: release.daocloud.io/gmagpie # Modify it to your image repository.
+          containerRegistry: 10.16.10.111 # (2)!
+          containerRepository: release.daocloud.io/gmagpie # (3)!
           repo:
-            kind: HARBOR # It can also be any other supported Helm Chart repository category.
-            url: http://10.16.10.111/chartrepo/release.daocloud.io # Modify it to the chart repo URL.
+            kind: HARBOR # (4)!
+            url: http://10.16.10.111/chartrepo/release.daocloud.io # (5)!
             auth:
-              username: "admin" # Your image repository username.
-              password: "Harbor12345" # Your image repository password.
+              username: "admin" # (6)!
+              password: "Harbor12345" # (7)! 
           containers:
             auth:
-              username: "admin" # Your image repository username.
-              password: "Harbor12345" # Your image repository password.
+              username: "admin" # (8)!
+              password: "Harbor12345" # (9)!
         ```
+
+        1. Use the relative path to run the `charts-syncer` command, not the relative path
+        2. Modify it to your registry URL.
+        3. Modify it to your registry.
+        4. It can also be any other supported Helm Chart repository category.
+        5. Need to be changed to chart repo url
+        6. Your registry username.
+        7. Your registry password.
+        8. Your registry username.
+        9. Your registry password.
 
     === "Chart Repo Not Installed"
 
@@ -53,26 +63,25 @@ as it is more efficient and convenient.
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: gmagpie-offline # (1)
+          intermediateBundlesPath: gmagpie-offline # (1)!
         target:
-          containerRegistry: 10.16.10.111 # (2)
-          containerRepository: release.daocloud.io/gmagpie # (3)
+          containerRegistry: 10.16.10.111 # (2)!
+          containerRepository: release.daocloud.io/gmagpie # (3)!
           repo:
             kind: LOCAL
-            path: ./local-repo # (4)
+            path: ./local-repo # (4)!
           containers:
             auth:
-              username: "admin" # (5)
-              password: "Harbor12345" # (6)
+              username: "admin" # (5)!
+              password: "Harbor12345" # (6)!
         ```
 
-        1. Use the relative path to run the `charts-syncer` command, not the relative path
-           between this YAML file and the offline package.
-        2. Modify it to your image repository URL.
-        3. Modify it to your image repository.
+        1. Use the relative path to run the `charts-syncer` command, not the relative path between this YAML file and the offline package.
+        2. Modify it to your registry URL.
+        3. Modify it to your registry.
         4. Local path of the chart.
-        5. Your image repository username.
-        6. Your image repository password.
+        5. Your registry username.
+        6. Your registry password.
 
 1. Run the command to synchronize images.
 
@@ -135,7 +144,6 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
         dbname: gmagpie
         password: passowrd
         user: gmagpie
-
     ```
 
     Modified to:
@@ -174,7 +182,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
     1. Update the Operations Management Helm repository.
 
         ```shell
-        helm repo update gmagpie # (1)
+        helm repo update gmagpie # (1)!
         ```
 
         1. If the Helm version is too low, it may result in failure. If this happens,
@@ -213,7 +221,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
     1. Run `helm upgrade` .
 
         Before upgrading, it is recommended to replace the __global.imageRegistry__ field
-        in the __bak.yaml__ file with the address of the image repository you are currently using.
+        in the __bak.yaml__ file with the address of the registry you are currently using.
 
         ```shell
         export imageRegistry={your-registry}
@@ -247,10 +255,10 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
     3. Run `helm upgrade` .
 
         It is recommended to replace the __global.imageRegistry__ field in the __bak.yaml__ file
-        with the address of the image repository you are currently using before performing the upgrade.
+        with the address of the registry you are currently using before performing the upgrade.
 
         ```shell
-        export imageRegistry={你的镜像仓库}
+        export imageRegistry={your-registry}
         ```
 
         ```shell
