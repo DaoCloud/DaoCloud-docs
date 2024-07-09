@@ -26,13 +26,13 @@ This article will introduce how to deploy DCE 5.0 on the NeoKylin Linux Advanced
 
     | CPU Architecture | Version | Download Link |
     | ---------------- | ------- | ------------- |
-    | AMD64            | v0.18.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.18.0-amd64.tar> |
+    | AMD64            | v0.19.0 | <https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.19.0-amd64.tar> |
 
     Once downloaded, extract the offline package:
 
     ```bash
-    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.18.0-amd64.tar
-    tar -xvf offline-v0.18.0-amd64.tar
+    curl -LO https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.19.0-amd64.tar
+    tar -xvf offline-v0.19.0-amd64.tar
     ```
 
 2. Download the NeoKylin Linux Advanced Server V7Update6 image file.
