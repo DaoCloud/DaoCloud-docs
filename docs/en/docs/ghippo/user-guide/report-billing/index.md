@@ -5,26 +5,16 @@ hide:
 
 # Operations Management
 
-IT operations management is an important part of the entire enterprise information construction. DCE 5.0 provides two operational management features, [ __Report Management__ ](./report.md) and [ __Billing and Metering__ ](./billing.md), aimed at helping enterprises better understand their IT infrastructure usage and the value of IT services provided.
+Operations Management provides a visual representation of the total usage and utilization rates of CPU, memory, and storage across various dimensions such as clusters, nodes, namespaces, container groups, and workspaces within a specified time range on the platform. It also automatically calculates platform consumption information based on usage, usage time, and unit price. By default, the module enables all report statistics, but platform administrators can manually enable or disable individual reports. After enabling or disabling, the platform will start or stop collecting report data within a maximum of 20 minutes. Previously collected data will still be displayed normally. Operations Management data can be retained on the platform for up to 365 days; statistical data exceeding this retention period will be automatically deleted. You can also download reports in CSV or Excel format for further statistics and analysis.
+
+Operations Management is available only for the Standard Edition and above; it is not supported in the Community Edition.
+
+You need to [install or upgrade the Operations Management module](./gmagpie-offline-install.md) first, and then you can experience report management and billing metering.
 
 ## Report Management
 
-Report management is one of the core tasks of IT operations management. It collects, integrates, analyzes and visualizes enterprise IT resources to provide decision support for enterprise management, thereby achieving effective control of enterprise IT assets.
+Report Management provides data statistics for clusters, nodes, container groups, workspaces, and namespaces across six dimensions: CPU usage, CPU utilization, memory usage, memory utilization, storage usage, and storage utilization. It also integrates with the audit and alert modules to support the statistical management of audit and alert data, supporting a total of seven types of reports.
 
-First, by centrally displaying various types of reports, enterprises can more accurately understand the utilization and usage of IT resources. For example, in the cluster report, administrators can view information such as the number of nodes and resource utilization rates in different clusters; in the node report, administrators can view information such as IP addresses, types, belonging clusters, and resource utilization rates for each node. With these reports, administrators can better partition and schedule computing resources.
+## Billing Metering
 
-Secondly, through audit reports, enterprises can understand user operations and operations performed on resources, making it easy for enterprises to grasp resource utilization and track user operation traces. Through alert reports, enterprises can generate cluster inspection reports, quickly diagnose problems and handle them.
-
-Finally, the report management module also supports customized time ranges and searches, helping administrators better understand the usage of enterprise IT resources. In addition, it provides the feature of exporting/downloading data, allowing administrators to conduct in-depth analysis of the data.
-
-## Billing and Metering
-
-On the other hand, billing and metering are also important components of IT operations management. Billing and metering mainly measure and bill the value of enterprise IT services through the collection and analysis of enterprise IT resources.
-
-First, the billing and metering module can help enterprises understand the true value of IT services provided and determine reasonable charging standards. For example, in a cloud computing environment, enterprises can charge based on actual usage by calculating the amount of resources that users actually use.
-
-Secondly, the billing and metering module can also help enterprises achieve refined billing and improve their profitability. For example, in a virtual machine scenario, administrators can calculate the usage fees for each user based on metrics such as CPU, memory, and storage, and charge differentially based on actual usage.
-
-Finally, the billing and metering module also supports customized billing rules and cycles and can generate detailed bills, making it easy for enterprises to track and manage IT service costs.
-
-In summary, IT operations management includes two aspects: report management and billing and metering. They can help enterprises better understand their IT infrastructure usage and the value of IT services provided. Through the implementation of report management and billing and metering modules, enterprises can operate IT environments more efficiently, while maintaining profitability and improving IT service quality and user satisfaction.
+Billing Metering provides billing statistics for clusters, nodes, container groups, namespaces, and workspaces on the platform. It calculates the consumption for each resource during the statistical period based on the usage of CPU, memory, and storage, as well as user-configured prices and currency units. Depending on the selected time span, such as monthly, quarterly, or annually, it can quickly calculate the actual consumption for that period.
