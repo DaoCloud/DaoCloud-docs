@@ -9,6 +9,30 @@
 *[Kpanda]: DCE 5.0 容器管理的开发代号
 *[Skoala]: DCE 5.0 微服务引擎的开发代号
 
+## 2024-06-30
+
+### v0.19.0
+
+#### 优化
+
+- **优化** 更新默认 K8s 版本为 v1.29.5
+- **优化** 支持 clusterconfig.yaml 中 `kubeanConfig` 参数下配置 `ubuntu_kernel_unattended_upgrades_disabled: true` 禁用 ubuntu 内核自动更新
+- **优化** 支持 addon 离线包多文件上传
+- **优化** 升级依赖 charts-syncer 版本到 v0.0.23
+- **优化** 隐藏任务调度器不必要的细节日志
+
+#### 修复
+
+- **修复** skopeo 安装目录清理问题
+- **修复** import-artifact 命令多架构镜像导入失败
+- **修复** 镜像检测失败被忽略问题
+- **修复** OpenEuler 22.03 SP3 火种节点 Pod 不断重启问题
+- **修复** 镜像列表中空行报错问题
+
+#### 已知问题
+
+- 基于 ARM 架构 kylinv10 操作系统下的 kind 集群为 v1.29.4 部署社区版时，会出现组件 `mcamel-common-mysql-cluster` 安装失败。
+
 ## 2024-05-30
 
 ### v0.18.0
