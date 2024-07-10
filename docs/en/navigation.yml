@@ -745,8 +745,15 @@ nav:
                   - Management Components: skoala/quickstart/skoala.md
                   - Cluster Init Components: skoala/quickstart/skoala-init.md
                   - Select Workspace: skoala/quickstart/select-workspace.md
+              - Cloud Native Microservices:
+                  - Traffic Control: skoala/cloud-ms/traffic-control.md
+                  - End-to-end Traffic Lane: skoala/cloud-ms/lane.md
               - Cloud Native Gateway:
                   - Gateway Management: skoala/gateway/index.md
+                  - Domain Management:
+                      - Add Domain: skoala/gateway/domain/index.md
+                      - Update/Delete Domain: skoala/gateway/domain/update-domain.md
+                      - Domain Policies: skoala/gateway/domain/domain-policy.md
                   - API Management:
                       - Add API: skoala/gateway/api/index.md
                       - Update/Delete API: skoala/gateway/api/update-api.md
@@ -758,76 +765,73 @@ nav:
                   - Logs:
                       - Request Logs: skoala/gateway/logs/reqlog.md
                       - Instance Logs: skoala/gateway/logs/inslog.md
-                  - Domain Management:
-                      - Add Domain: skoala/gateway/domain/index.md
-                      - Update/Delete Domain: skoala/gateway/domain/update-domain.md
-                      - Domain Policies: skoala/gateway/domain/domain-policy.md
-              - Cloud Native Microservices:
-                  - Traffic Control: skoala/cloud-ms/traffic-control.md
-                  - End-to-end Traffic Lane: skoala/cloud-ms/lane.md
               - Traditional Microservices:
-                  - Hosted Nacos:
-                      - Hosted Naocs: skoala/trad-ms/hosted/index.md
-                      - Microservice Namespace: skoala/trad-ms/hosted/namespace.md
-                      - Microservice List:
-                          - Intro: skoala/trad-ms/hosted/services/index.md
-                          - Check Microservice: skoala/trad-ms/hosted/services/check-details.md
-                          - Traffic Rules:
-                              - Intro: skoala/trad-ms/hosted/services/governance-policy.md
-                              - Flow Control: skoala/trad-ms/hosted/services/flow-control.md
-                              - Circuit Breaker: skoala/trad-ms/hosted/services/circuit-breaker.md
-                              - Authorization: skoala/trad-ms/hosted/services/auth.md
-                              - Hotspot: skoala/trad-ms/hosted/services/hotspot.md
+                  - Registration and Configuration Center:
+                      - Hosted Registration Center: skoala/trad-ms/hosted/index.md
+                      - Service Integration Standards:
+                          - Integrate Sentinel: skoala/standard/sentinel.md
+                          - Integrate Nacos SDK: skoala/standard/nacos.md
+                          - Integrate Sentinel Monitoring Capabilities: skoala/standard/monitor.md
+                          - Integrate Sentinel Cluster Flow Control Capabilities: skoala/standard/flow-control.md
+                      - Microservices Namespace: skoala/trad-ms/hosted/namespace.md
+                      - Microservices List:
+                          - Introduction: skoala/trad-ms/hosted/services/index.md
+                          - Microservices Details: skoala/trad-ms/hosted/services/check-details.md
+                          - Traffic Governance:
+                              - Rules Introduction: skoala/trad-ms/hosted/services/governance-policy.md
+                              - Flow Control Rules: skoala/trad-ms/hosted/services/flow-control.md
+                              - Circuit Breaker Rules: skoala/trad-ms/hosted/services/circuit-breaker.md
+                              - Authorization Rules: skoala/trad-ms/hosted/services/auth.md
+                              - Hotspot Rules: skoala/trad-ms/hosted/services/hotspot.md
                               - System Rules: skoala/trad-ms/hosted/services/system.md
-                              - Cluster Flow: skoala/trad-ms/hosted/services/cluster-flow.md
-                      - Configurations: skoala/trad-ms/hosted/configs.md
+                              - Cluster Flow Control: skoala/trad-ms/hosted/services/cluster-flow.md
+                      - Configuration Management: skoala/trad-ms/hosted/configs.md
                       - Monitoring:
-                          - Monitor Microservices: skoala/trad-ms/hosted/monitor/microservices.md
-                          - Monitor Components: skoala/trad-ms/hosted/monitor/components.md
-                          - Tracing: skoala/trad-ms/hosted/monitor/traces.md
-                      - Resource Info: skoala/trad-ms/hosted/resource-info.md
-                      - Governance Plugin:
-                          - Intro: skoala/trad-ms/hosted/plugins/plugin-center.md
-                          - Enable Sentinel: skoala/trad-ms/hosted/plugins/sentinel.md
-                          - Enable Mesh: skoala/trad-ms/hosted/plugins/mesh.md
-                  - Integrated Registry:
-                      - Integrate Registry: skoala/trad-ms/integrated/index.md
-                      - Microservice Management: skoala/trad-ms/integrated/manage-service.md
-                      - Traces: skoala/trad-ms/integrated/trace.md
-              - Plugins: skoala/plugins/intro.md
-              - Service Spec:
-                  - Enable Sentinel: skoala/standard/sentinel.md
-                  - Enable Nacos: skoala/standard/nacos.md
-                  - Enable Sentinel Monitoring: skoala/standard/monitor.md
-                  - Enable Sentinel Flow Control: skoala/standard/flow-control.md
+                          - Microservices Monitoring: skoala/trad-ms/hosted/monitor/microservices.md
+                          - Component Monitoring: skoala/trad-ms/hosted/monitor/components.md
+                          - Trace Tracking: skoala/trad-ms/hosted/monitor/traces.md
+                      - Resource Information: skoala/trad-ms/hosted/resource-info.md
+                      - Governance Capabilities:
+                          - Introduction: skoala/trad-ms/hosted/plugins/plugin-center.md
+                          - Sentinel Governance: skoala/trad-ms/hosted/plugins/sentinel.md
+                          - Mesh Governance: skoala/trad-ms/hosted/plugins/mesh.md
+                  - Integrated Registration Center:
+                      - Integrated Registration Center Management: skoala/trad-ms/integrated/index.md
+                      - Microservices Management: skoala/trad-ms/integrated/manage-service.md
+                      - Trace Tracking: skoala/trad-ms/integrated/trace.md
+              - Plugin Center:
+                  - Introduction: skoala/plugins/intro.md
+                  - Plugin Practices:
+                      - Using JWT Plugin for Microservices: skoala/best-practice/plugins/jwt.md
+                      - Using JWT Plugin for Gateway: skoala/best-practice/jwt.md
+                      - Gateway Authentication Server:
+                          - skoala/best-practice/auth-server.md
+                          - Integrate AK/SK Authentication: skoala/best-practice/ak-sk-demo.md
+                          - Integrate OIDC Authentication: skoala/best-practice/OIDC-auth.md
+                      - Integrate Global Rate Limit Server for Gateway: skoala/best-practice/global-ratelimit.md
+                  - Custom Plugin Examples:
+                      - Caching: skoala/best-practice/envoy-extproc-caching-demo-go.md
+                      - Anti: skoala/best-practice/envoy-extproc-anti-demo-go.md
+                      - CRC32: skoala/best-practice/envoy-extproc-crc32-check-demo-go.md
+                      - Conv: skoala/best-practice/envoy-extproc-method-conv-demo-go.md
+                      - Payload Limit: skoala/best-practice/envoy-extproc-payloadlimit-demo-go.md
               - Best Practices:
-                  - Sample App in Microservices: skoala/best-practice/use-skoala-01.md
-                  - JWT Plugin in Cloud Native Microservice: skoala/best-practice/plugins/jwt.md
-                  - Microservice Gateway JWT: skoala/best-practice/jwt.md
-                  - Authentication Server for Microservie Gateway:
-                      - skoala/best-practice/auth-server.md
-                      - Integrate AK/SK Authentication: skoala/best-practice/ak-sk-demo.md
-                      - Integrate OIDC Authentication: skoala/best-practice/OIDC-auth.md
-                  - Integrate Microservice Gateway with Rate Limit Server: skoala/best-practice/global-ratelimit.md
-                  - Gateway API Policies: skoala/best-practice/gateway02.md
-                  - Access Microservie via Gateway: skoala/best-practice/gateway01.md
-                  - Gateway to Service Mesh: skoala/best-practice/gateway-mesh.md
-                  - Add Custom Attributes to Gateway Request Logs: skoala/best-practice/add-custom-attributes.md
+                  - Microservices Governance Application Example: skoala/best-practice/use-skoala-01.md
+                  - API Policy Configuration Example: skoala/best-practice/gateway02.md
+                  - Accessing Microservices via Gateway: skoala/best-practice/gateway01.md
+                  - Gateway Integration with Service Mesh: skoala/best-practice/gateway-mesh.md
+                  - Custom Attributes for Gateway Request Logs: skoala/best-practice/add-custom-attributes.md
                   - HTTP to Dubbo Protocol Dynamic Routing: skoala/best-practice/http-to-dubbo.md
-                  - Custom Plugin Demo - caching: skoala/best-practice/envoy-extproc-caching-demo-go.md
-                  - Custom Plugin Demo - anti: skoala/best-practice/envoy-extproc-anti-demo-go.md
-                  - Custom Plugin Demo - crc32: skoala/best-practice/envoy-extproc-crc32-check-demo-go.md
-                  - Custom Plugin Demo - conv: skoala/best-practice/envoy-extproc-method-conv-demo-go.md
-                  - Custom Plugin Demo - payloadlimit: skoala/best-practice/envoy-extproc-payloadlimit-demo-go.md
-              - Troubleshoot:
-                  - skoala-init error about x-kubernets-validations: skoala/troubleshoot/auth-server.md   
-              - Performance Tests:
-                  - Gateway RPS: skoala/tests/gateway-stress-test.md
-                  - Nacos TPS: skoala/tests/nacos-stress-test.md
-              - General Reference:
-                  - Microservice: reference/basic-knowledge/microservice.md
-                  - Registry: reference/basic-knowledge/registry.md
-                  - Cloud Native Gateway: reference/basic-knowledge/gateway.md
+              - Troubleshooting:
+                  - skoala-init x-kubernets-validations Error: skoala/troubleshoot/auth-server.md
+                  - Nacos Version Downgrade: skoala/troubleshoot/nacos.md
+              - Performance Test:
+                  - Cloud Native Gateway Throughput Test: skoala/tests/gateway-stress-test.md
+                  - Nacos Stress Test Report: skoala/tests/nacos-stress-test.md
+              - References:
+                  - Microservices: skoala/reference/microservice.md
+                  - Registration Center: skoala/reference/registry.md
+                  - Cloud Native Gateway: skoala/reference/gateway.md
           - Service Mesh:
               - Intro:
                   - What is Service Mesh: mspider/intro/index.md
