@@ -21,7 +21,7 @@ PostgreSQL 中间件的的反亲和策略由同一集群下的所有实例共用
 
 1. 点击 __编辑 YAML__ ，根据需求修改以下字段
 
-    ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/postgresql/images/antiaff03.png)
+    ![创建](../images/antiaff03.png)
 
     | 字段                                           | 说明                                               |
     | -------------------------------------------- | -------------------------------------------- |
