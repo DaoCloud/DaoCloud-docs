@@ -7,13 +7,13 @@ to meet common and practical business requirements in specific scenarios.
 
     If any problem with the video display, please refresh your page or try to clear your browser cache.
 
-## One-Click Transformation from Single-Cloud Application to Multi-Cloud Application
+## One-Click Conversion to Multicloud
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/single-to-multi.mov" preload="metadata" poster="images/single-to-multi.png"></video>
 </div>
 
-For details, refer to the [Multi-Cloud Orchestration Documentation](../kairship/intro/index.md).
+For details, refer to the [Multicloud Management Documentation](../kairship/intro/index.md).
 
 ## Deploying Hybrid Cloud Applications in DCE 5.0
 
