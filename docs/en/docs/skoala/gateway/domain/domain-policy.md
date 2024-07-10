@@ -1,4 +1,9 @@
-# Configuring Domain name Policies
+---
+MTPE: windsonsea
+Date: 2024-07-10
+---
+
+# Configuring Domain Name Policies
 
 The micro-service gateway provides the domain name level policy configuration capability. After a domain name level policy is configured, you do not need to configure policies for multiple apis under the same domain name. Currently, four domain-level policies are supported: cross-domain、global rate limit、local traffic limiting、black/white List.
 
@@ -13,16 +18,15 @@ The cross-domain and local traffic limiting policies are described as follows:
 
 After you configure local traffic limiting for a domain name, the configuration is automatically applied to all apis that use the domain name.
 
-For details about configuring local traffic limiting, see [Local Rate Limit](../api/api-policy.md#_6).
+For details about configuring local traffic limiting, see [Local Rate Limit](../api/api-policy.md#local-current-limiting).
 
 !!! note
 
     If the traffic limiting policy at the API level conflicts with that at the domain name level, the traffic limiting policy at the API level prevails.
 
-
 ## cross-domain
 
-<! -- To be added: Explain what is cross-domain, cross-domain features, effects, etc. -->
+<!-- To be added: Explain what is cross-domain, cross-domain features, effects, etc. -->
 
 Note the following when filling in the configuration:
 
@@ -33,4 +37,4 @@ Note the following when filling in the configuration:
 - Allowable request headers: Qualifies specific HTTP request header keywords. After the keyword is added, the corresponding keyword must be added to the request header to access the target service.
 - Exposed request header: Controls the exposed request header keyword. Multiple values can be configured.
 
-   ![跨域](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/domain/images/cross-domain.png)
+![cross-domain](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/domain/images/cross-domain.png)

@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+Date: 2024-07-10
+---
+
 # Configuring API policies
 
 DCE 5.0 Microservice gateway supports twelve API policies: load balancing, path rewriting, timeout configuration, retry mechanism, request header rewriting, response header rewriting, WebSocket, local traffic limit, health check, global rate limit, cookie rewriting, and black/white list. You can use a single policy or a combination of policies to achieve best practices.
@@ -8,12 +13,10 @@ There are two ways to configure API policies:
 - To set policies during API creation, see [Add API](index.md).
 - Adjust by [ Update the API policy configuration ](update-api.md) after the API is created.
 
-** Video tutorial: **
+**Video tutorial:**
 
 - [Advanced Configuration of API Policy (1)](../../../videos/skoala.md#api-1)
 - [Advanced Configuration of API Policy (2)](../../../videos/skoala.md#api-2)
-
-** The configuration of each policy is described as follows: **
 
 ## Load balancing
 
@@ -47,20 +50,23 @@ When the target back-end service of an API serves multiple instances, you can us
 
     ![lb.png](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/api/imgs//lb.png)
 
-
 ## Path rewriting
 
 If the exposed API path is inconsistent with the path provided by the back-end service, you can change the API path to be consistent with the path of the back-end service to ensure normal service access. After path rewriting is enabled, the gateway forwards external request traffic to the rewritten path.
 
-Note: ** You need to make sure that the overwritten path is real and that the path is correct, starting with a "/". **
+!!! note
+
+    You need to make sure that the overwritten path is real and that the path is correct, starting with a "/".
 
 ![header-rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/api/imgs/header-rewrite.png)
 
 ## Timeout configuration
 
-This section describes how to set the maximum response duration. If the maximum response duration is exceeded, the request fails. The timeout period can be an integer whose type is >=1, and the unit of time is seconds (s).
+This section describes how to set the maximum response duration. If the maximum response duration is exceeded,
+the request fails. The timeout period can be an integer whose type is >=1, and the unit of time is seconds (s).
 
-The timeout configuration is disabled by default. After it is enabled, you must set a timeout period. Enabling the timeout configuration helps reduce congestion caused by exception handling.
+The timeout configuration is disabled by default. After it is enabled, you must set a timeout period.
+Enabling the timeout configuration helps reduce congestion caused by exception handling.
 
 ![timeout](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/api/imgs/timeout.png)
 
@@ -87,7 +93,7 @@ You can customize retry conditions and retry status codes.
 - Insufficient resources: Automatically retry when the response is insufficient resources.
 - When the service is unavailable: Automatically retry when the response is unavailable at the back end.
 
-    ![retry](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/api/imgs/retry.png)
+![retry](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/api/imgs/retry.png)
 
 ## Request header/response header rewriting
 
@@ -97,7 +103,7 @@ Support for adding, modifying, and deleting request and response headers and the
 - Modify the request header/response header: Use the `Settings` action to fill in the existing keywords and assign a new value.
 - To remove the request header or response header, run the `Remove` action and enter only the keyword to be removed.
 
-    ![header-rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/api/imgs/header-rewrite.png)
+![header-rewrite](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/api/imgs/header-rewrite.png)
 
 ## Websocket
 
@@ -160,7 +166,6 @@ After `Black List` is enabled, only IP requests in the whitelist are allowed to 
 - Remote: If the IP source is Remote, whether the whitelist takes effect depends on the number of proxy layers before the gateway. When the number of proxy layers is n, the IP address of the n+1 endpoints from the gateway takes effect. For example, `**Client-Nginx-Gateway**` If the number of proxy layers before the gateway is 1, this parameter takes effect only for the IP address of the second endpoint before the gateway, that is, the IP address of the client. If you fill in the IP address of Nginx, the whitelist will not take effect.
 
     <!-- ![黑白名单]() 待补充-->
-
 
 - Peer: If the IP source is Peer, the whitelist is valid only for the **direct** peer IP address of the gateway, regardless of the number of proxy layers before the gateway. For example `Client-...-Nginx-Gateway`, no matter how many proxy endpoints there are between the client and Nginx, the whitelist is only valid for the IP of the last Nginx.
 
