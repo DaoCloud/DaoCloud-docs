@@ -7,17 +7,15 @@ hide:
 
 ## 操作步骤
 
-通过访问每个 Redis 的实例详情，页面；可以支持查看 Redis 的日志。
+通过访问每个 Redis 的实例详情页面；可以支持查看 Redis 的日志。
 
 1. 在 Redis 实例列表中，选择想要查看的日志，点击 __实例名称__  进入到实例详情页面。
 
-    ![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/redis/images/log01.png)
+    ![image](../images/log01.png)
 
-2. 在实例的左侧菜单栏，会发现有一个日志查看的菜单栏选项。
+2. 在实例的左侧菜单栏，点击 __日志查看__ 的菜单栏选项，即可进入到日志查看页面（[Insight](../../../insight/intro/index.md) 日志查看）。
 
-    ![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/redis/images/log02.png)
-
-3. 点击 __日志查看__  即可进入到日志查看页面（[Insight](../../../insight/intro/index.md) 日志查看）。
+    ![image](../images/log02.png)
 
 ## 日志查看说明
 
@@ -29,4 +27,4 @@ hide:
 * 支持 查看日志的上下文，点击右侧 __上下文__  图标即可
 * 支持 导出日志
 
-![image](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/redis/images/log03.png)
+![image](../images/log03.png)
