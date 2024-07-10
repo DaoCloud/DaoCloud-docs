@@ -764,11 +764,16 @@ nav:
                   - 微服务引擎管理组件: skoala/quickstart/skoala.md
                   - 微服务引擎集群初始化组件: skoala/quickstart/skoala-init.md
                   - 选择工作空间: skoala/quickstart/select-workspace.md
+              - 云原生微服务:
+                  - 服务治理: skoala/cloud-ms/traffic-control.md
+                  - 全链路流量泳道: skoala/cloud-ms/lane.md
               - 云原生网关:
                   - 网关管理: skoala/gateway/index.md
+                  - 域名管理:
+                      - 域名管理: skoala/gateway/domain/index.md
+                      - 配置域名策略: skoala/gateway/domain/domain-policy.md
                   - API 管理:
-                      - 添加 API: skoala/gateway/api/index.md
-                      - 更新和删除 API: skoala/gateway/api/update-api.md
+                      - API 管理: skoala/gateway/api/index.md
                       - 配置 API 策略: skoala/gateway/api/api-policy.md
                   - 服务列表:
                       - 手工接入: skoala/gateway/service/manual-integrate.md
@@ -777,20 +782,18 @@ nav:
                   - 日志查看:
                       - 请求日志: skoala/gateway/logs/reqlog.md
                       - 实例日志: skoala/gateway/logs/inslog.md
-                  - 域名管理:
-                      - 添加域名: skoala/gateway/domain/index.md
-                      - 更新和删除域名: skoala/gateway/domain/update-domain.md
-                      - 配置域名策略: skoala/gateway/domain/domain-policy.md
-              - 云原生微服务:
-                  - 服务治理: skoala/cloud-ms/traffic-control.md
-                  - 全链路流量泳道: skoala/cloud-ms/lane.md
               - 传统微服务:
                   - 注册配置中心:
                       - 托管注册中心: skoala/trad-ms/hosted/index.md
+                      - 服务对接规范:
+                          - 接入 Sentinel: skoala/standard/sentinel.md
+                          - 接入 Nacos SDK: skoala/standard/nacos.md
+                          - 接入 Sentinel 监控能力: skoala/standard/monitor.md
+                          - 接入 Sentinel 集群流控能力: skoala/standard/flow-control.md
                       - 微服务命名空间: skoala/trad-ms/hosted/namespace.md
-                      - 服务列表:
+                      - 微服务列表:
                           - 介绍: skoala/trad-ms/hosted/services/index.md
-                          - 查看微服务详情: skoala/trad-ms/hosted/services/check-details.md
+                          - 微服务详情: skoala/trad-ms/hosted/services/check-details.md
                           - 流量治理:
                               - 规则介绍: skoala/trad-ms/hosted/services/governance-policy.md
                               - 流控规则: skoala/trad-ms/hosted/services/flow-control.md
@@ -807,37 +810,35 @@ nav:
                       - 资源信息: skoala/trad-ms/hosted/resource-info.md
                       - 治理能力:
                           - 介绍: skoala/trad-ms/hosted/plugins/plugin-center.md
-                          - 启用 Sentinel 治理: skoala/trad-ms/hosted/plugins/sentinel.md
-                          - 启用 Mesh 治理: skoala/trad-ms/hosted/plugins/mesh.md
+                          - Sentinel 治理: skoala/trad-ms/hosted/plugins/sentinel.md
+                          - Mesh 治理: skoala/trad-ms/hosted/plugins/mesh.md
                   - 接入注册中心:
-                      - 接入注册中心: skoala/trad-ms/integrated/index.md
+                      - 接入注册中心管理: skoala/trad-ms/integrated/index.md
                       - 微服务管理: skoala/trad-ms/integrated/manage-service.md
                       - 链路追踪: skoala/trad-ms/integrated/trace.md
-              - 插件中心: skoala/plugins/intro.md
-              - 服务对接规范:
-                  - 接入 Sentinel: skoala/standard/sentinel.md
-                  - 接入 Nacos SDK: skoala/standard/nacos.md
-                  - 接入 Sentinel 监控能力: skoala/standard/monitor.md
-                  - 接入 Sentinel 集群流控能力: skoala/standard/flow-control.md
+              - 插件中心: 
+                  - 介绍: skoala/plugins/intro.md
+                  - 插件应用:
+                      - 云原生微服务使用JWT插件: skoala/best-practice/plugins/jwt.md
+                      - 云原生网关使用JWT插件: skoala/best-practice/jwt.md
+                      - 云原生网关认证服务器: 
+                          - skoala/best-practice/auth-server.md
+                          - 接入 AK/SK 认证 : skoala/best-practice/ak-sk-demo.md
+                          - 接入 OIDC 认证 : skoala/best-practice/OIDC-auth.md
+                      - 云原生网关接入限流服务器: skoala/best-practice/global-ratelimit.md
+                  - 自定义插件示例:
+                      - caching: skoala/best-practice/envoy-extproc-caching-demo-go.md
+                      - anti: skoala/best-practice/envoy-extproc-anti-demo-go.md
+                      - crc32: skoala/best-practice/envoy-extproc-crc32-check-demo-go.md
+                      - conv: skoala/best-practice/envoy-extproc-method-conv-demo-go.md
+                      - payloadlimit: skoala/best-practice/envoy-extproc-payloadlimit-demo-go.md
               - 最佳实践:
-                  - 示例应用体验微服务治理: skoala/best-practice/use-skoala-01.md
-                  - 云原生微服务使用JWT插件: skoala/best-practice/plugins/jwt.md
-                  - 微服务网关JWT功能: skoala/best-practice/jwt.md
-                  - 微服务网关认证服务器: 
-                      - skoala/best-practice/auth-server.md
-                      - 接入 AK/SK 认证 : skoala/best-practice/ak-sk-demo.md
-                      - 接入 OIDC 认证 : skoala/best-practice/OIDC-auth.md
-                  - 微服务网关接入限流服务器: skoala/best-practice/global-ratelimit.md
-                  - 网关 API 策略: skoala/best-practice/gateway02.md
+                  - 微服务治理应用示例: skoala/best-practice/use-skoala-01.md
+                  - API 策略配置示例: skoala/best-practice/gateway02.md
                   - 通过网关访问微服务: skoala/best-practice/gateway01.md
                   - 网关对接服务网格: skoala/best-practice/gateway-mesh.md
                   - 网关请求日志自定义属性: skoala/best-practice/add-custom-attributes.md
                   - HTTP转Dubbo协议动态路由: skoala/best-practice/http-to-dubbo.md
-                  - 自定义插件示例 caching: skoala/best-practice/envoy-extproc-caching-demo-go.md
-                  - 自定义插件示例 anti: skoala/best-practice/envoy-extproc-anti-demo-go.md
-                  - 自定义插件示例 crc32: skoala/best-practice/envoy-extproc-crc32-check-demo-go.md
-                  - 自定义插件示例 conv: skoala/best-practice/envoy-extproc-method-conv-demo-go.md
-                  - 自定义插件示例 payloadlimit: skoala/best-practice/envoy-extproc-payloadlimit-demo-go.md
               - 故障排查:
                   - skoala-init的x-kubernets-validations报错: skoala/troubleshoot/auth-server.md
                   - Nacos 版本降级: skoala/troubleshoot/nacos.md                
