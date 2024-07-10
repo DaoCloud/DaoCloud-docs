@@ -56,7 +56,7 @@
 
 1. 镜像来源：支持三种类型的来源。
 
-    - 镜像仓库类型：镜像存储与容器镜像仓库中，支持是否开启选择系统内置镜像，若开启，则可以使用平台内置镜像，若关闭，则支持从镜像仓库中按需选择镜像；
+    - 镜像仓库类型：镜像存储在容器镜像仓库中，支持从镜像仓库中按需选择镜像；
     - HTTP 类型：镜像存储于 HTTP 协议的文件服务器中，支持 HTTPS://和 HTTP://前缀；
     - 对象存储（S3）：支持通过对象存储协议 (S3) 获取的虚拟机镜像，若是无需认证的对象存储文件，请使用 HTTP 来源。
 
@@ -136,10 +136,10 @@
         
         ![网络配置](../images/createvm-net01.png)
     
-    - 网络模式分为 Masquerade（NAT）、Passt（直通）、Bridge（桥接）三种，后两种模式需要安装了 spiderpool 组件后方可使用。
+    - 网络模式分为 Masquerade（NAT）、Bridge（桥接）三种，Bridge（桥接）模式需要安装了 spiderpool 组件后方可使用。
     
         - 默认选择 Masquerade（NAT）的网络模式，使用 eth0 默认网卡。
-        - 若集群内安装了 spiderpool 组件，则支持选择 Passt（直通）/Bridge（桥接）模式，Bridge（桥接）模式支持多网卡形式。
+        - 若集群内安装了 spiderpool 组件，则支持选择 Bridge（桥接）模式，Bridge（桥接）模式支持多网卡形式。
         
         ![网络模式](../images/createvm-net02.png)
       
