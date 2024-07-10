@@ -11,12 +11,7 @@
 
 在使用虚拟机网络功能之前，需要根据网络模式的不同配置不同的信息：
 
-1. 选择 Passt 网络模式
-
-    - 创建 macvlan 或 ipvlan 类型的 Multus CR，参考[创建 Multus CR](../../network/config/multus-cr.md)
-    - 创建子网及 IP 池，参考[创建子网和 IP 池](../../network/config/ippool/createpool.md)
-
-1. 选择 Bridge 网络模式
+1. 选择 Bridge 网络模式时需要提前配置一些信息：
 
     -  创建 ovs 类型的 Multus CR，可参考[创建 Multus CR](https://spidernet-io.github.io/spiderpool/v0.9/usage/install/underlay/get-started-ovs-zh_CN/)
     -  创建子网及 IP 池，参考[创建子网和 IP 池](../../network/config/ippool/createpool.md)
@@ -30,30 +25,25 @@
     | Masquerade（NAT） | Calico  | ❌                 | 单网卡       | ❌               | ✅            |
     |                   | Cilium  | ❌                 | 单网卡       | ❌               | ✅            |
     |                   | Flannel | ❌                 | 单网卡       | ❌               | ✅            |
-    | Passt（直通）     | macvlan | ✅                 | 单网卡       | ✅               | ✅           |
-    |                   | ipvlan  | ✅                 | 多网卡       | ✅               | ✅           |
     | Bridge（桥接）    | OVS     | ✅                 | 多网卡       | ✅               | ✅           |
     
     ![网络配置](../images/createvm-net01.png)
-
-2. 网络模式：分为 Masquerade（NAT）、Passt（直通）、Bridge（桥接）三种，后两种模式需要安装了 spiderpool 组件后方可使用。
+    
+2. 网络模式：分为 Masquerade（NAT）、Bridge（桥接）两种，Bridge（桥接）模式需要安装了 spiderpool 组件后方可使用。
    
     1. 默认选择 Masquerade（NAT）的网络模式，使用 eth0 默认网卡。
       
-    2. 若集群内安装了 spiderpool 组件，则支持选择 Passt（直通）/Bridge（桥接）模式，Bridge（桥接）模式支持多网卡形式。
+    2. 若集群内安装了 spiderpool 组件，则支持选择 Bridge（桥接）模式，支持多网卡形式。
 
         ![网络模式](../images/createvm-net02.png)
-        
-        -  选择 Passt 模式时，需要有一些前提条件。
-            - 创建 macvlan 或 ipvlan 类型的 Multus CR。可参考[创建 macvlan 或 ipvlan 类型的 Multus CR](../../network/config/multus-cr.md)
-            - 创建子网及 IP 池。可参考[创建子网及 IP 池](../../network/config/ippool/createpool.md)
+
         -  选择 Bridge 模式时，需要有一些前提条件。
             - 创建 ovs 类型的 Multus CR，目前页面上无法创建，可参考[创建 ovs 类型的 Multus CR](https://spidernet-io.github.io/spiderpool/v0.9/usage/install/underlay/get-started-ovs-zh_CN/)
             - 创建子网及 IP 池与 passt 模式步骤一致。
 
 3. 添加网卡
    
-    1. Passt（直通）/Bridge（桥接）模式下支持手动添加网卡。点击 __添加网卡__ ，进行网卡 IP 池的配置。选择和网络模式匹配的 Multus CR，若没有则需要自行创建。
+    1. Bridge（桥接）模式下支持手动添加网卡。点击 __添加网卡__ ，进行网卡 IP 池的配置。选择和网络模式匹配的 Multus CR，若没有则需要自行创建。
     
     2. 若打开 __使用默认 IP 池__ 开关，则使用 multus CR 配置中的默认 IP 池。若关闭开关，则手动选择 IP 池。
        
