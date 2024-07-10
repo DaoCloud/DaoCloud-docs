@@ -1,6 +1,8 @@
-# 添加 API
+# API 管理
 
-微服务网关支持对网关实例的 API 进行全生命周期管理，包括 API 的添加、更新和删除。本页介绍如何添加 API。
+微服务网关支持对网关实例的 API 进行全生命周期管理，包括 API 的添加、更新和删除。
+
+## 添加 API
 
 **前提条件**
 
@@ -63,3 +65,33 @@
     点击 API 名称进入 API 详情，可查看 API 的详细配置信息，例如上下线状态、域名、匹配规则、目标服务、策略配置等。
 
     ![API 上线](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/gateway/api/images/online1.png)
+
+## 更新 API
+
+可以通过两种方式更新 API 的基础配置、策略配置和安全配置。
+
+- 在 __API 管理__ 页面找到需要更新的 API，在该 API 的右侧点击 __ⵗ__ 选择 __修改基础配置__ 、 __修改策略配置__ 或 __修改安全配置__ 。
+
+    ![在列表页更新基础信息](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/update-api-1.png)
+
+- 点击 API 名称进入 API 详情页，在页面右上角 __修改基础配置__ 、 __修改策略配置__ 或 __修改安全配置__ 。
+
+    ![在详情页更新](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/update-api-2.png)
+
+## 删除 API
+
+微服务网关支持对网关实例的 API 进行全生命周期管理，包括 API 的添加、更新和移除。
+
+可以通过两种方式移除 API。
+
+!!! danger
+
+    删除操作是不可逆的。无论 API 是否处于在线状态，删除后均立即失效并且不可恢复。
+
+- 在 __API 管理__ 页面找到需要删除的 API，在该 API 的右侧点击 __ⵗ__ 并选择 __移除__ 。
+
+    ![在列表页删除](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/delete-api-1.png)
+
+- 点击 API 名称进入 API 详情页，在页面右上角点击 __ⵗ__ 操并选择 __移除__ 。
+
+    ![在详情页删除](https://docs.daocloud.io/daocloud-docs-images/docs/skoala/ms-gateway/api/imgs/delete-api-2.png)
