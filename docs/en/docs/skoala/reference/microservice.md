@@ -37,3 +37,7 @@ However, as businesses expand and the complexity of business logic increases, th
     At the same time, leveraging Dubbo's rich service governance capabilities, it is possible to achieve service discovery, load balancing, traffic scheduling, and other service governance requirements.
     Dubbo is highly extensible, allowing users to customize their own implementations at almost any functional point, thereby changing the default behavior of the framework to meet their business needs.
     Dubbo currently supports multiple open-source components such as Consul, Nacos, ZooKeeper, and Redis as service registries.
+
+- Sentinel
+
+    Sentinel is a traffic control component designed for distributed service architectures. It focuses on traffic control, circuit breaking, and system adaptive protection to ensure the stability of microservices. Sentinel has been extensively used in core scenarios such as handling the traffic surge during Alibaba's Double 11 shopping festival over the past decade. It provides comprehensive real-time monitoring, allowing users to view second-level data for individual machines in the application through the console. Sentinel also offers integration modules with other open-source frameworks/libraries, such as Spring Cloud, Dubbo, and gRPC, enabling out-of-the-box usage. Additionally, Sentinel provides a simple and complete SPI extension interface, allowing users to customize the logic by implementing the extension interface rapidly.
