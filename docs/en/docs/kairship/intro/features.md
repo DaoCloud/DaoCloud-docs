@@ -87,10 +87,10 @@ Multicloud Management module has the following features:
     - Manage Multicloud Namespaces: Support viewing the resource list of multicloud namespaces.
     - View Multicloud Namespace List: Provide a list to view namespace information across multiple clusters.
     - Create Multicloud Namespace: Enable the creation of multicloud namespaces through a user-friendly interface.
-    - Delete MultiCloud Namespace: Support the deletion of idle multicloud namespaces.
 
 - **Multicloud Storage**
 
+    - Delete Multicloud Namespace: Support the deletion of idle multicloud namespaces.
     - View Multicloud PVC List: Support viewing the created list of multicloud PVC resources.
     - Create Multicloud PVC: Provide multiple options, including user-friendly interface and YAML, for creating storage declarations.
     - Delete Multicloud PVC: Support the deletion of idle storage declarations.
