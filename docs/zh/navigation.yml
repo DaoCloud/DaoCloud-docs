@@ -1235,6 +1235,7 @@ nav:
                   - 文件夹权限: ghippo/user-guide/workspace/folder-permission.md
                   - 资源配额: ghippo/user-guide/workspace/quota.md
                   - 资源组与共享资源的区别: ghippo/user-guide/workspace/res-gp-and-shared-res.md
+                  - 资源绑定权限说明: ghippo/user-guide/workspace/wsbind-permission.md
               - 审计日志:
                   - 采集 K8s 审计日志: ghippo/user-guide/audit/open-audit.md
                   - 生成 K8s 审计日志: ghippo/user-guide/audit/open-k8s-audit.md
