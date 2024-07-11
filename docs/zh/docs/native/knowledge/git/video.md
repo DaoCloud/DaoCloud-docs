@@ -28,8 +28,8 @@
 
     !!! tip
 
-       QuickTime Player 默认不支持录入系统声音。
-       如需录制系统声音，需要安装插件 [Soundflower](https://soundflower.en.softonic.com/mac)。
+        QuickTime Player 默认不支持录入系统声音。
+        如需录制系统声音，需要安装插件 [Soundflower](https://soundflower.en.softonic.com/mac)。
 
 - Windows: [Bandicam](https://www.bandicam.cn/)
   
