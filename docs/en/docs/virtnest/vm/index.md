@@ -66,9 +66,7 @@ Fill in the image-related information according to the table below, then click _
 
 - Image Source: Supports three types of sources.
 
-    - Repository: Images stored in the container image repository, supporting the option
-      to enable or disable using system-built images. When enabled, you can use the platform's
-      built-in images. When disabled, you can select images from the image repository as needed.
+    - Registry: Images stored in the container registry. You can select images from the registry as needed.
     - HTTP: Images stored in a file server using the HTTP protocol, supporting both
       __HTTPS://__ and __HTTP://__ prefixes.
     - Object Storage (S3): Virtual machine images obtained through the object storage protocol (S3).
@@ -142,10 +140,10 @@ Fill in the image-related information according to the table below, then click _
     
         ![Network Configuration](../images/createvm-net01.png)
   
-    - Network modes are divided into Masquerade (NAT), Passthrough, Bridge, the latter two modes need to be installed after the spiderpool component can be used.
+    - Network modes are divided into Masquerade (NAT), Bridge, the latter mode needs to be installed after the spiderpool component can be used.
   
         - The network mode of Masquerade (NAT) is selected by default, using the default network card eth0.
-        - If the spiderpool component is installed in the cluster, you can choose the Passthrough / Bridge mode, and the Bridge mode supports the multi-network card format.
+        - If the spiderpool component is installed in the cluster, you can choose the Bridge mode, and the Bridge mode supports multiple NICs.
   
         ![Network Mode](../images/createvm-net02.png)
     
