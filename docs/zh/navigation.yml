@@ -318,9 +318,10 @@ nav:
                           - 开启 MIG 功能: kpanda/user-guide/gpu/nvidia/mig/create_mig.md
                           - 使用 NVIDIA MIG: kpanda/user-guide/gpu/nvidia/mig/mig_usage.md
                           - MIG 相关命令: kpanda/user-guide/gpu/nvidia/mig/mig_command.md
-                  - 昇腾 GPU 管理:
+                  - 昇腾 NPU 管理:
                       - 昇腾 NPU 组件安装: kpanda/user-guide/gpu/ascend/ascend_driver_install.md
-                      - 使用昇腾 GPU: kpanda/user-guide/gpu/ascend/ascend_usage.md
+                      - 使用昇腾 NPU: kpanda/user-guide/gpu/ascend/ascend_usage.md
+                      - 开启并使用昇腾 VNPU: kpanda/user-guide/gpu/ascend/vnpu.md
                   - 天数 GPU 管理: kpanda/user-guide/gpu/Iluvatar_usage.md
                   - GPU 配额管理: kpanda/user-guide/gpu/vgpu_quota.md
                   - GPU 资源动态调节: kpanda/user-guide/gpu/dynamic-regulation.md
