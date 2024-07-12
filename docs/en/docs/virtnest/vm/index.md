@@ -7,7 +7,7 @@ Date: 2024-01-23
 
 This article will explain how to create a virtual machine using two methods: image and YAML file.
 
-Virtual machine, based on KubeVirt, manage virtual machines as cloud native applications,
+Virtual machine, based on KubeVirt, manages virtual machines as cloud native applications,
 seamlessly integrating with containers. This allows users to easily deploy virtual machine applications and
 enjoy a smooth experience similar to containerized applications.
 
@@ -15,18 +15,18 @@ enjoy a smooth experience similar to containerized applications.
 
 Before creating a virtual machine, make sure you meet the following prerequisites:
 
-- Install the virtnest-agent within the cluster.
+- Expose hardware-assisted virtualization to the user operating system.
+- [Install virtnest-agent](../install/index.md) on the specified cluster; the operating system kernel version must be 3.15 or higher.
 - Create a [namespace](../../kpanda/user-guide/namespaces/createns.md) and [user](../../ghippo/user-guide/access-control/user.md).
-- The current user should have [Cluster Admin](../../kpanda/user-guide/permissions/permission-brief.md#cluster-admin)
-  or higher permissions. Refer to the documentation on
-  [namespace authorization](../../kpanda/user-guide/namespaces/createns.md) for more details.
-- Prepare the required images in advance.
+- Prepare the image in advance. The platform comes with three built-in images (as shown below). If you need to 
+  create your own image, refer to [creating from an image with KubeVirt](https://github.com/Tedezed/kubevirt-images-generator/tree/master).
+- When configuring the network, if you choose to use the Passt network mode, you need to upgrade to Version 0.4.0 or higher.
 
 ## Create image
 
 Follow the steps below to create a virtual machine using an image.
 
-1. Click __Container Management__ on the left navigation bar, then click __Virtual Machine__ to enter the __VM__ page.
+1. Click __Container Management__ on the left navigation bar, then click __Virtual Machines__ to enter the __VM__ page.
 
     ![VM](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/createvm01.png)
 
@@ -64,7 +64,7 @@ Fill in the image-related information according to the table below, then click _
 
   ![Image Repository](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/createvm05.png)
 
-- Image Source: Supports three types of sources.
+1. Image Source: Supports three types of sources.
 
     - Registry: Images stored in the container registry. You can select images from the registry as needed.
     - HTTP: Images stored in a file server using the HTTP protocol, supporting both
@@ -72,11 +72,12 @@ Fill in the image-related information according to the table below, then click _
     - Object Storage (S3): Virtual machine images obtained through the object storage protocol (S3).
       For non-authenticated object storage files, please use the HTTP source.
 
-- Currently, the following operating systems and versions are supported.
+2. The following are the built-in images provided by the platform, including the operating system, version, 
+   and the image URL. Custom virtual machine images are also supported.
 
     | Operating System | Version | Image Address |
     | :--------------: | :------------------: | ------------- |
-    |      CentOS      |       CentOS 8.3      | release-ci.daocloud.io/virtnest/system-images/centos-7.9-x86_64:v1 |
+    |      CentOS      |       CentOS 7.9      | release-ci.daocloud.io/virtnest/system-images/centos-7.9-x86_64:v1 |
     |      Ubuntu      |     Ubuntu 22.04      | release-ci.daocloud.io/virtnest/system-images/ubuntu-22.04-x86_64:v1 |
     |      Debian      |       Debian 12       | release-ci.daocloud.io/virtnest/system-images/debian-12-x86_64:v1 |
 
@@ -84,8 +85,16 @@ Fill in the image-related information according to the table below, then click _
 
     The built-in image storage in the bootstrap cluster, and the container registry of the bootstrap cluster is not encrypted, so when selecting the built-in image, there is no need to select a secret.
 
-- Resource Config: For CPU, it is recommended to use whole numbers.
-  If a decimal is entered, it will be rounded up.
+!!! note
+
+    The hot-plug configuration for CPU and memory requires virtnest v0.10.0 or higher, and virtnest-agent v0.7.0 or higher.
+
+1. Resource Config: For CPU, it is recommended to use whole numbers. If a decimal is entered, it will be rounded up. The hot-plug configuration for CPU and memory is supported. 
+
+2. GPU Configuration: Enabling GPU functionality requires meeting certain prerequisites. For details, refer 
+   to [Configuring GPU for Virtual Machines (Nvidia)](../gpu/vm-gpu.md).
+   Virtual machines support two types of Nvidia GPUs: Nvidia-GPU and Nvidia-vGPU. After selecting the desired type, 
+   you will need to choose the corresponding GPU model and the number of cards.
 
 ### Storage and Network
 
@@ -134,13 +143,11 @@ Fill in the image-related information according to the table below, then click _
         | Masquerade (NAT) | Calico  | ❌                 | Single       | ❌               | ✅            |
         |                   | Cilium  | ❌                 | Single       | ❌               | ✅            |
         |                   | Flannel | ❌                 | Single       | ❌               | ✅            |
-        | Passt     | macvlan | ✅                 | Single       | ✅               | ✅           |
-        |                   | ipvlan  | ✅                 | Multiple       | ✅               | ✅           |
         | Bridge    | OVS     | ✅                 | Multiple       | ✅               | ✅           |
     
         ![Network Configuration](../images/createvm-net01.png)
   
-    - Network modes are divided into Masquerade (NAT), Bridge, the latter mode needs to be installed after the spiderpool component can be used.
+    - Network modes are divided into Masquerade (NAT) and Bridge, the latter mode need to be installed after the spiderpool component can be used.
   
         - The network mode of Masquerade (NAT) is selected by default, using the default network card eth0.
         - If the spiderpool component is installed in the cluster, you can choose the Bridge mode, and the Bridge mode supports multiple NICs.

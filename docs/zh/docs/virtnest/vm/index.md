@@ -76,7 +76,7 @@
 
     CPU 和内存的热加载配置要求：virtnest 的版本不低于 v0.10.0，并且 virtnest-agent 版本不低于 v0.7.0。
 
-1. 资源配置：CPU 建议使用整数，若填写小数则会向上取整。支持 CPU、内存的热加载，
+1. 资源配置：CPU 建议使用整数，若填写小数则会向上取整。支持 CPU、内存的热加载。
 
 2. GPU 配置：启用 GPU 功能需要需要满足前提条件，具体可参考 [虚拟机配置 GPU（Nvidia)](../gpu/vm-gpu.md)。
    虚拟机支持 Nvidia—GPU 和 Nvidia—vGPU 两种类型，选择所需类型后，需要选择对应的 GPU 型号和卡的数量。
@@ -136,7 +136,7 @@
         
         ![网络配置](../images/createvm-net01.png)
     
-    - 网络模式分为 Masquerade（NAT）、Bridge（桥接）三种，Bridge（桥接）模式需要安装了 spiderpool 组件后方可使用。
+    - 网络模式分为 Masquerade（NAT）和 Bridge（桥接），Bridge（桥接）模式需要安装了 Spiderpool 组件后方可使用。
     
         - 默认选择 Masquerade（NAT）的网络模式，使用 eth0 默认网卡。
         - 若集群内安装了 spiderpool 组件，则支持选择 Bridge（桥接）模式，Bridge（桥接）模式支持多网卡形式。
