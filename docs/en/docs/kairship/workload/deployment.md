@@ -1,78 +1,86 @@
 ---
-hide:
-  - toc
+MTPE: ModetaNiu
+DATE: 2024-07-12
 ---
+
 # Create Multicloud Deployment from Image
 
-After [added a worker cluster](../cluster.md#_2) into a multicloud instance, you can create multicloud workloads or [convert existing workloads into multicloud workloads](promote.md).
+After [added a worker cluster](../cluster.md#add-a-cluster) into a multicloud instance, you can create multicloud workloads or convert existing workloads into multicloud workloads.
 
-This page will introduce how to create a multicloud deployment from an image. For the YAML method, see [Create Multicloud Deployment from YAML](yaml.md)
+- Supports distributing a workload across different regions and availability zones, as well as across different clusters, 
+  including hybrid cloud clusters.
+- Supports creating multi-cloud stateless workloads, multi-cloud tasks, and multi-cloud cron jobs.
+- Supports quick creation via images or YAML files.
 
 ## Prerequisites
 
-- [Create a multicloud instance](../instance/add.md)
-- [Add at least one worker cluster to the multicloud instance](../cluster.md#_2)
-- If you want to deploy workloads to specific clusters based on region, availability zone, or labels, you need to add region, availability zone, and label information to the clusters beforehand.
+- [Create a multicloud instance](../instance/add.md).
+- [Add at least one worker cluster](../cluster.md#add-a-cluster) to the multicloud instance.
+- If you want to deploy workloads to specific clusters based on region, availability zone, or labels, 
+   you need to add region, availability zone, and label information to the clusters beforehand.
 
 ## Steps
 
-Follow the steps below to create a multicloud deployment from an image.
+Follow the steps below to create a multicloud deployment from image.
 
-1. Click the name of the multicloud instance, then navigate to __MultiCloud Workloads__ in the left navigation pane, and click __Create from Image__ in the top right corner.
+1. Click the name of the multicloud instance, then navigate to __Multicloud Workloads__ in the left navigation bar, and click __Create from Image__ in the top right corner.
 
     ![Create from Image](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/deploy-create04.png)
 
-2. Fill in the basic information as per the instructions provided.
+1. Follow the wizard prompts to configure each parameter and then click __OK__.
 
-    - Specify Clusters: Select the specific cluster to deploy the multicloud workload.
-    - Specify Regions: Filter clusters based on the provider/region/availability zone. You can enable all three filters simultaneously.
+    === "Basic Information"
 
-        - __Exclude Clusters__ : Exclude a specific cluster from the filtering result. The workload will not be deployed to the excluded cluster. If you do not specify the target cluster, it will be deployed to all clusters by default.
-        - __Cluster Taint Tolerance__ : After adding a taint to the cluster in the [Cluster](../cluster.md#_6) page, resources with that taint cannot be scheduled to that cluster. Enabling taint tolerance here allows resources with the corresponding taint to be scheduled to the selected cluster.
-        - __Dynamic Regions__ : Dynamically deploy workloads to clusters in different regions to ensure cross-region high availability.
+        Deployment Cluster: If no cluster is specified, the deployment will default to all clusters.
 
-            ![Specify Region](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/deploy-create05.png)
+        | Operation | Description | Default Value |
+        | --- | ---- | ----- |
+        | Specify Clusters | Check specific clusters to directly designate the deployment clusters for the multi-cloud workload | Select appropriate clusters |
+        | Specify Regions  | Filter deployment clusters based on providers/regions/zones. You can check up to three filter conditions simultaneously | Select appropriate providers, regions, zones<br />Providers: Standard Kubernetes Cluster, Red Hat OpenShift |
+        | Specify Labels   | Select clusters to deploy the workload using labels | Operator — __In__: Nodes must include the selected label, and the label's value must **belong** to a specified set of values. Separate multiple values with a __;__ <br />Operator — __Exists__: Nodes only need to include the label, regardless of its specific value |
 
-    - Specify Labels: Deploy the workload to specific clusters based on labels.
+        ![Select a cluster](../images/cluster.png)
 
-        - You can add one or multiple cluster labels.
-        - Operator - __In__ : The node must contain the selected labels, and the label value must belong to the value group you defined. Multiple values are separated by __;__ .
-        - Operator - __Exists__ : The node only needs to have the label and its value doesn't matter.
+        | Parameter | Options/Sub-Parameters | Description |
+        |------|-------------|------|
+        | Scheduling Policy | Duplicated | Deploy the number of replicas specified in the __Instance Count__ field in each selected cluster. __Total Replicas = Instance Count ✖️ Number of Deployment Clusters__ |
+        | | Aggregated | Distribute the number of replicas specified in the __Instance Count__ field across as few clusters as possible. __Total Replicas = Instance Count__ |
+        | | DynamicWeight | Dynamically schedule the workload to different deployment clusters based on the maximum real-time schedulable instances of all target clusters. __Total Replicas = Instance Count__ |
+        | Advanced Propogation Strategy | Auto Propagation | This is a switch. When enabled, it automatically detects resources like ConfigMap and Secret that the multi-cloud workload configuration depends on and distributes these resources to each selected deployment cluster. |
+        | | Clusters Excluded | Exclude a specific cluster from the filter results. The workload will not be deployed to the excluded cluster. If no target cluster is specified, the deployment will default to all clusters. |
+        | | Cluster Taint Tolerance | After [adding taints to the cluster on the Work Cluster Management page](../cluster.md#modify-cluster-taints), resources with these taints cannot be scheduled to the cluster. Enable taint toleration here to allow resources with the corresponding taints to be scheduled to the selected clusters. |
+        | | Spread Constraints | This is a switch. When enabled, it allows control over how many regions/availability zones the workload is distributed across. For example, if both the maximum and minimum values are set to 1, all workloads will be deployed to clusters within the same region/availability zone. Supports configuring both region+cluster or just the cluster values. |
+        | | Deletion Protected | This is a switch. When enabled, it provides a deletion protection mechanism to prevent catastrophic impacts caused by users accidentally deleting resources (such as Namespace or Cluster resources) on the Karmada control plane. |
 
-            ![Specify Labels](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/deploy-create06.png)
+    === "Container Settings"
+    
+        Refer to [Container Configuration](../../kpanda/user-guide/workloads/create-deployment.md#container-settings) 
+        to fill in the container configuration information.
 
-    - Auto Propagation: When enabled, it automatically detects ConfigMaps, Secrets, and other resources that the multicloud workload depends on, and propagates these resources to each selected deployment cluster.
-    - Pods: Set the number of replicas for the multicloud workload.
-    - Deployment Policies
+    === "Advanced Configuration"
+    
+        Refer to [Advanced Configuration](../../kpanda/user-guide/workloads/create-deployment.md#advanced-settings) 
+        to fill in the advanced configuration.
 
-        - __Duplicated__ : Deploy the number of replicas set in the __Pods__ field to each selected cluster. __Total Replicas = Pod number ✖️ Cluster number__ 
-        - __Aggregated__ : Distribute the number of replicas set in the __Pods__ field to as few clusters as possible. __Total Replicas = Pod number__ 
-        - __Dynamic Weight__ : Dynamically distribute workloads subject to the available resources in each cluster. __Total Replicas = Pod number__ 
+    === "Override Policy"
+    
+        Refer to the following instructions to fill in the override polices, and finally, click __OK__.
 
-    !!! note
+        ![Override Policy](../images/default.png)
 
-        - If cannot find your target cluster, you can either reduce filtering conditions or [add new worker clusters](../cluster.md#_2).
-        - After setting the __Pods__ and __Deployment Policies__ , the total number of replicas to be deployed will be displayed below the selected policy.
+        - Default: The general configuration filled in during the previous steps, which cannot be modified here.
+        - To modify the default configuration, click __Previous__ at the bottom of the page to return to the respective configuration environment and re-enter the information.
+        - Click the __➕__ sign below the default configuration and select a cluster to set override polices for the selected cluster.
+        - Clusters without override polices will use the default configuration.
+        - Currently, you can configure different container images, environment variables, labels, and annotations for different clusters.
 
-3. Refer to the [container configuration](../../kpanda/user-guide/workloads/create-deployment.md#_4) to fill in the container settings.
+        !!! note
+    
+            - If no override policy is needed, simply click __OK__ in the bottom right corner to complete the creation of the multi-cloud workload.
+            - If override policy is needed, click __Next__ and continue to refer to the documentation below to fill in the configuration information.
 
-4. Refer to the [advanced configuration](../../kpanda/user-guide/workloads/create-deployment.md#_6) to fill in the advanced settings.
+1. You will be automatically redirected to the list of multicloud deployments. By clicking the **┇** button on the right side, you can edit YAML, update/pause/restart/delete the workload.
 
-    !!! note
+    ![More Opetations](../images/deploy.png)
 
-        - If you don't need differentiated configurations, simply click __OK__ in the lower right corner to complete the creation.
-        - If you need differentiated configurations, click __Next__ and refer to instructions below to add more settings.
-
-5. Refer to the instructions below to fill in the differentiated configurations, and click __OK__ .
-
-    - __Default__ : This refers to the general configuration filled in the previous steps and cannot be modified here.
-    - If you need to modify the default configuration, you need to click __Previous__ at the bottom of the page to return to the corresponding configuration environment and re-enter the information.
-    - Below the default configuration, click the __+__ button and select a cluster to set differentiated configurations for that specific cluster, different from other clusters.
-    - Clusters that do not have differentiated configurations will use the default configuration.
-    - Currently, you can configure different container images, environment variables, labels, and annotations for different clusters.
-
-        ![Differentiated Configurations](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/deploy-create07.png)
-
-You will be automatically redirected to the list of multicloud deployments. By clicking the "More Actions" button on the right side, you can edit the YAML of the workload, update/pause/restart/delete the workload.
-
-![More Actions](../images/deploy-update01.png)
+[Next step：create multicloud services](../resource/service.md){ .md-button .md-button--primary }

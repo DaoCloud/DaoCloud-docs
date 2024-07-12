@@ -176,7 +176,7 @@ metadata:
         vddk-init-image: release-ci.daocloud.io/virtnest/vddk:v1
     ```
 
-## Write kubevirt vm yaml to create vm
+## Write a KubeVirt VM YAML to create VM
 
 !!! tip
 
