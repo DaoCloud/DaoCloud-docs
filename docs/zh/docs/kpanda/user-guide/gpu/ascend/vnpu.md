@@ -47,7 +47,7 @@ npu-smi info -t info-vnpu -i 13 -c 0
 
 ### 重启 ascend-device-plugin-daemonset
 
-切分实例过后 手动重启 device-plugin pod，然后使用 `kubectl describe` 命令查看已注册 node 的资源：
+切分实例后手动重启 device-plugin pod，然后使用 `kubectl describe` 命令查看已注册 node 的资源：
 
 ```bash
 kubectl describe node {{nodename}}
