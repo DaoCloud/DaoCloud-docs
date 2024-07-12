@@ -26,7 +26,12 @@
 
     !!! note  
 
-        若出现与输出信息无关的报错，可无需关注，不影响最终结果。
+        若出现与输出信息无关的报错（如下所示），可无需关注，不影响最终结果。
+
+        ```bash title="示例"
+        $ sh detect-cpu.sh
+        detect-cpu.sh: line 3: fpu: command not found
+        ```       
     
     ```sh
     cat <<EOF > detect-cpu.sh
