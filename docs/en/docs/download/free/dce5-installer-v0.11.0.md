@@ -19,19 +19,19 @@ This page provides downloads for the offline package and checksum files of DCE 5
 | offline-community-v0.11.0-amd64.tar | v0.11.0 | AMD 64 | 6.03 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.11.0-amd64.tar) | 2023-09-08 |
 | offline-community-v0.11.0-arm64.tar | v0.11.0 | <font color="green">ARM 64</font> | 5.65 GB | [:arrow_down: Download](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-v0.11.0-arm64.tar) | 2023-09-08 |
 
-## Validation
+## Verification
 
 Navigate to the download directory of the offline package.
 
 === "AMD 64"
 
-    Run the following command to validate the offline package:
+    Run the following command to verify the offline package:
 
     ```sh
     echo "54326e5b62cd7bb2711904adff5d2128e647dcd0993ae7109645889d3c923a8c590ae6d1623a85e846e9a0acf7f0149936c686a1544f7b933d4444b33916d876  offline-community-v0.11.0-amd64.tar" | sha512sum -c
     ```
 
-    If the validation is successful, it will print:
+    If the verification is successful, it will print:
 
     ```none
     offline-community-v0.11.0-amd64.tar: OK
@@ -39,13 +39,13 @@ Navigate to the download directory of the offline package.
 
 === "<font color="green">ARM 64</font>"
 
-    Run the following command to validate the offline package:
+    Run the following command to verify the offline package:
 
     ```sh
     echo "25b7688637e57eea4488386a28f9357601ff53f497f439808a34a91e02ba2ceb8f7b92a74fd7184602efdb853e81472f8de7b53a04f9a93903f0131a4acac1be  offline-community-v0.11.0-arm64.tar" | sha512sum -c
     ```
 
-    If the validation is successful, it will print:
+    If the verification is successful, it will print:
 
     ```none
     offline-community-v0.11.0-arm64.tar: OK
@@ -53,7 +53,7 @@ Navigate to the download directory of the offline package.
 
 ## Installation
 
-After the offline package has been successfully validated,
+After the offline package has been successfully verifyd,
 
 === "AMD 64"
 
