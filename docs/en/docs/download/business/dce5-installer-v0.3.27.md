@@ -18,16 +18,16 @@ This page allows you to download the offline package and checksum file of DCE 5.
 | -------- | ------- |
 | offline-v0.3.27.tar | [:arrow_down: Download](https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-v0.3.27.tar) |
 
-## Validation
+## Verification
 
 Go to the download directory of the offline package.
-Run the following command to validate the offline package:
+Run the following command to verify the offline package:
 
 ```sh
 echo "f637ec103af6e77d1af85bf0708bef71aee123ce4ac71c4a0adef539492cdbb1661a479d3e999cd51aa7cb47d49e001565908b237ef7999140e3435f6219bb08 offline -v0.3.27.tar" | sha512sum -c
 ```
 
-If the validation is successful, it will print:
+If the verification is successful, it will print:
 
 ```none
 offline-v0.3.27.tar: OK
@@ -35,7 +35,7 @@ offline-v0.3.27.tar: OK
 
 ## Installation
 
-After the offline package has been successfully validated, refer to [DCE 5.0 Enterprise Installation Process](../../install/commercial/start-install.md) to install.
+After the offline package has been successfully verifyd, refer to [DCE 5.0 Enterprise Installation Process](../../install/commercial/start-install.md) to install.
 
 After successful installation, please contact us for authorization: email info@daocloud.io or call 400 002 6898.
 

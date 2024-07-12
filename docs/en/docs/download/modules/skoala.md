@@ -47,9 +47,9 @@ On this page, you can download offline packages for various versions of the micr
 | [v0.28.1](../../skoala/intro/release-notes.md) | AMD 64 | 1.34 GB | [:arrow_down: skoala_v0.28.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/skoala_v0.28.1_amd64.tar) | [:arrow_down: skoala_v0.28.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/skoala_v0.28.1_amd64_checksum.sha512sum) | 2023-11-01 |
 | [v0.28.0](../../skoala/intro/release-notes.md) | AMD 64 | 1.33 GB | [:arrow_down: skoala_v0.28.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/skoala_v0.28.0_amd64.tar) | [:arrow_down: skoala_v0.28.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/skoala_v0.28.0_amd64_checksum.sha512sum) | 2023-10-27 |
 
-## Validation
+## Verification
 
-In the directory where you downloaded the offline package and checksum file, run the following command to validate the integrity:
+In the directory where you downloaded the offline package and checksum file, run the following command to verify the integrity:
 
 ```sh
 echo "$(cat skoala_v0.28.0_amd64_checksum.sha512sum)" | sha512sum -c

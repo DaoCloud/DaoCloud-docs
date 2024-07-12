@@ -27,15 +27,15 @@ This page provides downloadable offline packages for various versions of MySQL.
 | [v0.12.0](../../../middleware/mysql/release-notes.md) | AMD 64 | 1.17 GB | [:arrow_down: mysql_0.12.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-mysql_0.12.0_amd64.tar) | [:arrow_down: mysql_0.12.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-mysql_0.12.0_amd64_checksum.sha512sum) | 2023-11-02 |
 | [v0.11.1](../../../middleware/mysql/release-notes.md) | AMD 64 | 1.17 GB | [:arrow_down: mysql_0.11.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-mysql_0.11.1_amd64.tar) | [:arrow_down: mysql_0.11.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-mysql_0.11.1_amd64_checksum.sha512sum) | 2023-10-20 |
 
-## Validation
+## Verification
 
-To validate the integrity of the downloaded offline package and checksum file, run the following command in the directory:
+To verify the integrity of the downloaded offline package and checksum file, run the following command in the directory:
 
 ```sh
 echo "$(cat mysql_0.11.1_amd64_checksum.sha512sum)" | sha512sum -c
 ```
 
-If the validation is successful, the printed result will be similar to:
+If the verification is successful, the printed result will be similar to:
 
 ```none
 mysql_0.11.1_amd64.tar: OK
