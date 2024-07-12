@@ -318,6 +318,7 @@ nav:
                   - Ascend GPU:
                       - Install NPU Components: kpanda/user-guide/gpu/ascend/ascend_driver_install.md
                       - Use GPU: kpanda/user-guide/gpu/ascend/ascend_usage.md
+                      - Enable Ascend VNPU: kpanda/user-guide/gpu/ascend/vnpu.md
                   - Iluvatar GPU: kpanda/user-guide/gpu/Iluvatar_usage.md
                   - GPU Quotas: kpanda/user-guide/gpu/vgpu_quota.md
                   - GPU DRA: kpanda/user-guide/gpu/dynamic-regulation.md
