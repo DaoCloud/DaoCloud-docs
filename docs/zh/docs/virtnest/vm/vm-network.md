@@ -27,7 +27,7 @@
     |                   | Flannel | ❌                 | 单网卡       | ❌               | ✅            |
     | Bridge（桥接）    | OVS     | ✅                 | 多网卡       | ✅               | ✅           |
     
-    ![网络配置](../images/createvm-net01.png)
+    ![网络配置](../images/createvm-net02.png)
     
 2. 网络模式：分为 Masquerade（NAT）、Bridge（桥接）两种，Bridge（桥接）模式需要安装了 spiderpool 组件后方可使用。
    
@@ -35,7 +35,7 @@
       
     2. 若集群内安装了 spiderpool 组件，则支持选择 Bridge（桥接）模式，支持多网卡形式。
 
-        ![网络模式](../images/createvm-net02.png)
+        ![网络模式](../images/createvm-net01.png)
 
         -  选择 Bridge 模式时，需要有一些前提条件。
             - 创建 ovs 类型的 Multus CR，目前页面上无法创建，可参考[创建 ovs 类型的 Multus CR](https://spidernet-io.github.io/spiderpool/v0.9/usage/install/underlay/get-started-ovs-zh_CN/)

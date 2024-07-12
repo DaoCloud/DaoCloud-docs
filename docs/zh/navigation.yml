@@ -318,9 +318,10 @@ nav:
                           - 开启 MIG 功能: kpanda/user-guide/gpu/nvidia/mig/create_mig.md
                           - 使用 NVIDIA MIG: kpanda/user-guide/gpu/nvidia/mig/mig_usage.md
                           - MIG 相关命令: kpanda/user-guide/gpu/nvidia/mig/mig_command.md
-                  - 昇腾 GPU 管理:
+                  - 昇腾 NPU 管理:
                       - 昇腾 NPU 组件安装: kpanda/user-guide/gpu/ascend/ascend_driver_install.md
-                      - 使用昇腾 GPU: kpanda/user-guide/gpu/ascend/ascend_usage.md
+                      - 使用昇腾 NPU: kpanda/user-guide/gpu/ascend/ascend_usage.md
+                      - 启用昇腾 VNPU: kpanda/user-guide/gpu/ascend/vnpu.md
                   - 天数 GPU 管理: kpanda/user-guide/gpu/Iluvatar_usage.md
                   - GPU 配额管理: kpanda/user-guide/gpu/vgpu_quota.md
                   - GPU 资源动态调节: kpanda/user-guide/gpu/dynamic-regulation.md
@@ -1234,6 +1235,7 @@ nav:
                   - 文件夹权限: ghippo/user-guide/workspace/folder-permission.md
                   - 资源配额: ghippo/user-guide/workspace/quota.md
                   - 资源组与共享资源的区别: ghippo/user-guide/workspace/res-gp-and-shared-res.md
+                  - 资源绑定权限说明: ghippo/user-guide/workspace/wsbind-permission.md
               - 审计日志:
                   - 采集 K8s 审计日志: ghippo/user-guide/audit/open-audit.md
                   - 生成 K8s 审计日志: ghippo/user-guide/audit/open-k8s-audit.md
@@ -1455,6 +1457,7 @@ nav:
               - GitHub 混迹技巧: native/knowledge/git/github.md
               - 同步中英文档: native/knowledge/git/lsync.md
               - 文档站工作说明: native/knowledge/git/works.md
+              - 视频剪辑帮助: native/knowledge/git/video.md
           - 排障方案: native/knowledge/troubleshoot.md
           - 最佳实践: native/knowledge/best-practice.md
           - 工具推荐: native/knowledge/tools.md

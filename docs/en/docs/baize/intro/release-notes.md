@@ -8,6 +8,14 @@ date: 2024-05-21
 This page lists the Release Notes for Intelligent Engine,
 so that you can learn its evolution path and feature changes.
 
+## 2024-07-10
+
+### v0.6.1
+
+#### Fixes
+
+- **Fixed** `Inference` create services using the `Triton` framework, the engine lacked the `vLLM` option.
+
 ## 2024-06-30
 
 ### v0.6.0
