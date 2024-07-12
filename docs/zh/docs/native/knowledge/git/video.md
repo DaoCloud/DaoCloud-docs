@@ -152,9 +152,10 @@
 
 ![添加封面](images/video-cover.png)
 
-- [下载封面](./images/video-cover-template.pptx)：在 PPT 中修改标题，然后导出为图片
-- [下载封底 16:9](./images/end-cover16:9.png)
-- [下载封底 16:10](./images/end-cover16:10.png)
+- [下载封面 ppt](./images/video-cover-template.pptx)：在 PPT 中修改标题，然后导出为图片
+- [下载中文封底 16:9](./images/end-cover16:9.png)
+- [下载中文封底 16:10](./images/end-cover16:10.png)
+- [下载中英双语封底视频](./images/back-cover.mp4)
 
 ## 导出视频
 
