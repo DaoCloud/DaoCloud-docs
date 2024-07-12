@@ -8,6 +8,18 @@ date: 2024-04-09
 This page lists the release notes of Multicloud Management module,
 so that you can understand the evolution path and feature changes of each version.
 
+## 2024-06-31
+
+### v0.20.0
+
+#### Features
+
+- **Added** a feature of selecting from existing deployment policies when creating multi-cloud resources.
+
+### Improvements
+
+- **Improved** multi-cloud resources so that the distribution status across various clusters is displayed.
+
 ## 2024-05-30
 
 ### v0.19.0
@@ -36,7 +48,7 @@ so that you can understand the evolution path and feature changes of each versio
 
 - **Deleted** protection capability for multicloud resources.
 
-#### Upgraded
+#### Improvements
 
 - **Upgraded** Karmada version to v1.8.0.
 
@@ -83,7 +95,7 @@ so that you can understand the evolution path and feature changes of each versio
 - **Fixed** pagination issue when querying service workloads
 - **Fixed** improved validation for replica count in workload topology constraints
 
-#### Upgrades
+#### Improvements
 
 - **Upgraded** karmada version to v1.7.0
 
@@ -172,7 +184,7 @@ so that you can understand the evolution path and feature changes of each versio
 - Add a cluster column to the Ingress list.
 - Reduce the propagation policy when converting single-cluster deployments to multicloud ones.
 
-#### Upgrades
+#### Improvements
 
 - `@dao-style/extend` to v1.2.1.
 - cloudtty API to v0.5.2.
