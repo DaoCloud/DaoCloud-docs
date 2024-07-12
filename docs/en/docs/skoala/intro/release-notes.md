@@ -1,6 +1,6 @@
 ---
 MTPE: windsonsea
-Date: 2024-05-08
+Date: 2024-07-12
 ---
 
 # Microservice Engine Releases Notes
@@ -8,6 +8,47 @@ Date: 2024-05-08
 This page lists the release notes of Microservices to help you learn its feature development and bug fixing progress.
 
 *[skoala]: Internal development codename for DaoCloud Microservice Engine
+
+## 2024-06-25
+
+### v0.38.1
+
+#### New Features
+
+- **Added** gateway access to the registration center service supports auto-fill and multi-instance.
+- **Added** custom data for gateway logs.
+- **Added** API testing capabilities integrated within the gateway `API` documentation.
+
+#### Fixes
+
+- **Fixed** an issue with pulling offline package public images.
+
+## 2024-06-25
+
+### v0.38.0
+
+#### Fixes
+
+- **Fixed** an issue where setting Nacos environment variables had no effect.
+- **Fixed** an issue with the incorrect ratio of gateway memory setting when set as a decimal to maximum heap memory.
+- **Fixed** a permission issue related to domain name queries in gateway logs.
+- **Fixed** an issue with abnormal display of related times in the registration center.
+
+#### Optimizations
+
+- **Optimized** by upgrading Ghippo integration SDK to version v0.28.0-dev1.
+- **Optimized** permission dependency logic to align with the new version of the Ghippo SDK.
+
+## 2024-06-04
+
+### v0.37.1
+
+#### Fixes
+
+- **Fixed** an issue with incorrect version display in Nacos managed details.
+- **Fixed** an issue with incorrect redirect link for microservice JVM monitoring.
+- **Fixed** an issue with abnormal API call for traffic lane diversion rules.
+- **Fixed** an issue with username and password configuration for Nacos integration in distributed transactions not meeting expectations.
 
 ## 2024-05-27
 
