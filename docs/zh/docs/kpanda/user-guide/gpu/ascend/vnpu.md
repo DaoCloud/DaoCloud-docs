@@ -8,6 +8,13 @@
 - Kubernetes 集群环境搭建
 - ascend-docker-runtime 已安装
 - ascend-mindxdl 组件已安装
+- 支持的 NPU 卡型号：
+
+    - Ascend 310P，已验证
+    - Ascend 910（32 核），官方介绍支持，未实际验证
+    - Ascend 910（30 核），官方介绍支持，未实际验证
+    
+    更多细节参阅[官方虚拟化硬件说明](https://www.hiascend.com/document/detail/zh/mindx-dl/50rc1/AVI/cpaug/cpaug_0005.html)。
 
 请参考[昇腾 NPU 组件安装文档](./ascend_driver_install.md)安装基础环境。
 
