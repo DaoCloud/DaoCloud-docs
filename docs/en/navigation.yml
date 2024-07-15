@@ -315,17 +315,19 @@ nav:
                           - Enable MIG Features: kpanda/user-guide/gpu/nvidia/mig/create_mig.md
                           - Use NVIDIA MIG: kpanda/user-guide/gpu/nvidia/mig/mig_usage.md
                           - MIG Commands: kpanda/user-guide/gpu/nvidia/mig/mig_command.md
+                      - GPU Quotas: kpanda/user-guide/gpu/vgpu_quota.md
+                      - GPU DRA: kpanda/user-guide/gpu/dynamic-regulation.md
+                      - GPU Metrics: kpanda/user-guide/gpu/gpu-metrics.md
+                      - Use Volcano:
+                          - Install and Use Volcano: kpanda/user-guide/gpu/volcano/volcano_user_guide.md
+                          - Use Volcano Gang Scheduler: kpanda/user-guide/gpu/volcano/volcano-gang-scheduler.md
+                      - GPU Scheduling: kpanda/user-guide/gpu/gpu_scheduler_config.md
                   - Ascend GPU:
                       - Install NPU Components: kpanda/user-guide/gpu/ascend/ascend_driver_install.md
                       - Use GPU: kpanda/user-guide/gpu/ascend/ascend_usage.md
                       - Enable Ascend VNPU: kpanda/user-guide/gpu/ascend/vnpu.md
                   - Iluvatar GPU: kpanda/user-guide/gpu/Iluvatar_usage.md
-                  - GPU Quotas: kpanda/user-guide/gpu/vgpu_quota.md
-                  - GPU DRA: kpanda/user-guide/gpu/dynamic-regulation.md
-                  - GPU Metrics: kpanda/user-guide/gpu/gpu-metrics.md
-                  - Use Volcano:
-                    - Install and Use Volcano: kpanda/user-guide/gpu/volcano/volcano_user_guide.md
-                    - Use Volcano Gang Scheduler: kpanda/user-guide/gpu/volcano/volcano-gang-scheduler.md
+                  
               - Best Practices:
                   - Back up and Restore etcd: kpanda/best-practice/etcd-backup.md
                   - Cross-cluster Backup and Restore of MySQL Apps: kpanda/best-practice/backup-mysql-on-nfs.md

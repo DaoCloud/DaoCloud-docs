@@ -13,13 +13,19 @@ This section explains how applications can use MIG GPU resources.
 
 1. Confirm if the cluster has recognized the GPU card type.
 
-    Go to __Cluster Details__ -> __Nodes__ and check if it has been correctly recognized.
+    Go to __Cluster Details__ -> __Nodes__ and check if it has been correctly recognized as MIG.
 
     
 
 2. When deploying an application using an image, you can select and use NVIDIA MIG resources.
 
+- Example of MIG Single Mode (used in the same way as a full GPU card):
+
+    !!! note
     
+        The MIG single policy allows users to request and use GPU resources in the same way as a full GPU card (`nvidia.com/gpu`). The difference is that these resources can be a portion of the GPU (MIG device) rather than the entire GPU. Learn more from the [GPU MIG Mode Design](https://docs.google.com/document/d/1bshSIcWNYRZGfywgwRHa07C0qRyOYKxWYxClbeJM-WM/edit#heading=h.jklusl667vn2).
+
+- MIG Mixed Mode
 
 ## Using MIG through YAML Configuration
 

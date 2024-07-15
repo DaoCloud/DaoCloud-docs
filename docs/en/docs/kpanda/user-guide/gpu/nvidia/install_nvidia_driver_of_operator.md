@@ -132,9 +132,9 @@ For detailed configuration, refer to [Enabling MIG Functionality](mig/create_mig
 
 1. __MigManager.enabled__ : Whether to enable MIG capability feature.
 2. **MigManager.Config.name** : Name of the MIG partitioning profile, used to
-   define the (GI, CI) partitioning strategy for MIG. Default is __default-mig-parted-config__ .
+   define the (GI, CI) partitioning policy for MIG. Default is __default-mig-parted-config__ .
    For custom parameters, refer to [Enabling MIG Functionality](mig/create_mig.md).
-3. __Mig.strategy__ : Public strategy for MIG devices on GPU cards on the node. NVIDIA provides
+3. __Mig.strategy__ : Public policy for MIG devices on GPU cards on the node. NVIDIA provides
    two policies for exposing MIG devices: __single__ , __mixed__ policies, details can be found
    in [NVIDIA GPU Card Mode Explanation](index.md).
 

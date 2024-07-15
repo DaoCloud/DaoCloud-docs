@@ -14,6 +14,13 @@ This document describes how to enable and use Ascend static virtualization capab
 - Kubernetes cluster environment is set up.
 - `ascend-docker-runtime` is installed.
 - `ascend-mindxdl` component is installed.
+- Supported NPUs:
+
+    - Ascend 310P, verified
+    - Ascend 910 (32 cores), officially supported but not verified
+    - Ascend 910 (30 cores), officially supported but not verified
+
+    For more details, refer to the [official virtualization hardware documentation](https://www.hiascend.com/document/detail/zh/mindx-dl/50rc1/AVI/cpaug/cpaug_0005.html).
 
 Refer to the [Ascend NPU Component Installation Documentation](./ascend_driver_install.md)
 for the basic environment setup.

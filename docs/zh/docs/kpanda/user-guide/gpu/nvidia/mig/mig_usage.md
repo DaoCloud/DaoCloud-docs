@@ -25,7 +25,7 @@
     
         MIG single 策略允许用户以与 GPU 整卡相同的方式（`nvidia.com/gpu`）请求和使用GPU资源，不同的是这些资源可以是 GPU 的一部分（MIG设备），而不是整个GPU。了解更多![GPU MIG 模式设计](https://docs.google.com/document/d/1bshSIcWNYRZGfywgwRHa07C0qRyOYKxWYxClbeJM-WM/edit#heading=h.jklusl667vn2)
     
-    ![usemig](../../images/usemig.png) 
+    ![usemig](../../images/usemig.png)
 
 - MIG Mixed 模式示例：
 
@@ -33,7 +33,7 @@
 
 ## YAML 配置使用 MIG
 
-** __MIG Single__ 模式：**
+**MIG Single__ 模式：**
 
 ```yaml
 apiVersion: apps/v1
@@ -64,7 +64,7 @@ spec:
 
 1. 申请 MIG GPU 的数量
 
-__MIG  Mixed__ 模式：
+**MIG Mixed 模式：**
 
 ```yaml
 apiVersion: apps/v1

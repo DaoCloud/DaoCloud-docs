@@ -5,7 +5,7 @@ date: 2024-06-12
 
 # Using Volcano's Gang Scheduler
 
-The Gang scheduling strategy is one of the core scheduling algorithms of the volcano-scheduler. 
+The Gang scheduling policy is one of the core scheduling algorithms of the volcano-scheduler. 
 It satisfies the "All or nothing" scheduling requirement during the scheduling process, preventing 
 arbitrary scheduling of Pods that could waste cluster resources. The specific algorithm observes 
 whether the number of scheduled Pods under a Job meets the minimum running quantity. 
@@ -17,14 +17,14 @@ otherwise, no actions are taken.
 The Gang scheduling algorithm, based on the concept of a Pod group, is particularly suitable for scenarios 
 that require multi-process collaboration. AI scenarios often involve complex workflows, such as Data Ingestion, 
 Data Analysis, Data Splitting, Training, Serving, and Logging, which require a group of containers to work together. 
-This makes the Gang scheduling strategy based on container groups very appropriate. 
+This makes the Gang scheduling policy based on container groups very appropriate. 
 
 In multi-threaded parallel computing communication scenarios under the MPI computation framework, 
 Gang scheduling is also very suitable because it requires master and slave processes to work together. 
 High relevance among containers in a container group may lead to resource contention, and overall scheduling allocation 
 can effectively resolve deadlocks.
 
-In scenarios with insufficient cluster resources, the Gang scheduling strategy significantly improves 
+In scenarios with insufficient cluster resources, the Gang scheduling policy significantly improves 
 the utilization of cluster resources. For example, if the cluster can currently accommodate only 2 Pods, 
 but the minimum number of Pods required for scheduling is 3, then all Pods of this Job will remain pending until 
 the cluster can accommodate 3 Pods, at which point the Pods will be scheduled. This effectively prevents the 
