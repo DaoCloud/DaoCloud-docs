@@ -11,24 +11,24 @@
 
 ## 界面使用 MIG GPU
 
-1. 确认集群是否已识别 GPU 卡类型
+### 1. 确认集群是否已识别 GPU 卡类型
 
     进入 __集群详情__ -> __节点管理__ ，查看是否已正确识别为 MIG 模式。
 
     ![gpu](../../images/node-mig.png)
 
-2. 通过镜像部署应用可选择并使用 NVIDIA MIG 资源。
+### 2. 通过镜像部署应用可选择并使用 NVIDIA MIG 资源。
 
-MIG Single 模式示例(与整卡使用方式相同)：
+- MIG Single 模式示例(与整卡使用方式相同)：
+!!! note
 
-    !!! note
+    MIG single 策略允许用户以与 GPU 整卡相同的方式（`nvidia.com/gpu`）请求和使用GPU资源，不同的是这些资源可以是 GPU 的一部分（MIG设备），而不是整个GPU。了解更多![GPU MIG 模式设计](https://docs.google.com/document/d/1bshSIcWNYRZGfywgwRHa07C0qRyOYKxWYxClbeJM-WM/edit#heading=h.jklusl667vn2)
 
-        MIG single 策略允许用户以与 GPU 整卡相同的方式（`nvidia.com/gpu`）请求和使用GPU资源，不同的是这些资源可以是 GPU 的一部分（MIG设备），而不是整个GPU。了解更多![GPU MIG 模式设计](https://docs.google.com/document/d/1bshSIcWNYRZGfywgwRHa07C0qRyOYKxWYxClbeJM-WM/edit#heading=h.jklusl667vn2)
+![usemig](../../images/usemig.png) 
 
-    ![usemig](../../images/usemig1.png) 
+- MIG Mixed 模式示例：
 
-MIG Mixed 模式示例：
-    ![mig02](../../images/pod-mig.png)
+ ![mig02](../../images/pod-mig.png)
 
 ## YAML 配置使用 MIG
 
