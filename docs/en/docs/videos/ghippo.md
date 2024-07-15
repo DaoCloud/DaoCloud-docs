@@ -12,7 +12,7 @@ We sincerely appreciate any feedback you may have. Thank you 🙏
 Refer to the [Create Users and Grant Permissions](../ghippo/user-guide/access-control/user.md) documentation page.
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-user.mp4" preload="metadata" poster="images/ghippo-user.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-user-en.mp4" preload="metadata" poster="images/ghippo-user.png"></video>
 </div>
 
 ### Integration with LDAP Users and User Groups
