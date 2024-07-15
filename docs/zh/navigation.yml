@@ -916,6 +916,7 @@ nav:
               - 网格配置:
                   - 多云网络互联: mspider/user-guide/multicluster/cluster-interconnect.md
                   - 多云网络分流配置: mspider/user-guide/multicluster/traffic-branch.md
+                  - 网络连通性检测: mspider/user-guide/multicluster/Checkingnetworkconnectivity.md
                   - Istio 资源管理: mspider/user-guide/mesh-config/istio-resources.md
                   - TLS 密钥管理: mspider/user-guide/mesh-config/tls-secret.md
                   - 组件资源自定义: mspider/user-guide/mesh-config/custom-res.md
