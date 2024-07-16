@@ -25,11 +25,12 @@
 | BUILD_DISPLAY_NAME        | #{build_id}                                                          | 当前构建记录显示名称                              |
 | CI                        | TRUE                                                         |                                |
 | SONAR_SCANNER_VERSION     | 4.8.0.2856                                                   |                                                |
-| GIT_BRANCH                |                                                              | 当流水线基于代码仓库jenkinsfile 创建时才会存在 |
-| GIT_LOCAL_BRANCH          |                                                              | 当流水线基于代码仓库jenkinsfile 创建时才会存在 |
-| GIT_CHECKOUT_DIR          |                                                              | 当流水线基于代码仓库jenkinsfile 创建时才会存在 |
-| GIT_URL                   |                                                              | 当流水线基于代码仓库jenkinsfile 创建时才会存在 |
-| GIT_COMMITTER_NAME        |                                                              | 当流水线基于代码仓库jenkinsfile 创建时才会存在 |
-| GIT_AUTHOR_NAME           |                                                              | 当流水线基于代码仓库jenkinsfile 创建时才会存在 |
-| GIT_COMMITTER_EMAIL       |                                                              | 当流水线基于代码仓库jenkinsfile 创建时才会存在 |
-| GIT_AUTHOR_EMAIL          |                                                              | 当流水线基于代码仓库jenkinsfile 创建时才会存在 |
+| GIT_BRANCH                |                                                              | 当流水线基于代码仓库jenkinsfile 创建或者基于多分支创建时才会存在 |
+| GIT_URL                   |                                                              | 当流水线基于代码仓库jenkinsfile 创建或者基于多分支创建时才会存在 |
+| GIT_COMMIT        |                                                              | 当流水线基于代码仓库jenkinsfile 创建或者基于多分支创建时才会存在 |
+| BRANCH_NAME                |                                                              | 当流水线基于多分支创建时才会存在 |
+| GIT_PREVIOUS_COMMIT          |                                                              | 当流水线基于多分支创建时才会存在 |
+| TAG_TIMESTAMP        |                                                              | 当流水线基于多分支创建时才会存在 |
+| TAG_UNIXTIME       |                                                              | 当流水线基于多分支创建时才会存在 |
+| TAG_DATE        |                                                              | 当流水线基于多分支创建时才会存在 |
+| TAG_NAME        |                                                              | 当流水线基于多分支创建时才会存在 |
