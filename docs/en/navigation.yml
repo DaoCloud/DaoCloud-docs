@@ -143,7 +143,8 @@ nav:
                       - Custom Toolchain in Jenkins: amamba/quickstart/jenkins-custom.md
                       - Run on a Specific Node: amamba/quickstart/pipeline-on-node.md                    
                       - Build Multi-Arch Image: amamba/user-guide/pipeline/podman.md
-                      - Use Cacher in Pipeline: amamba/quickstart/job-cacher.md  
+                      - Use Cacher in Pipeline: amamba/quickstart/job-cacher.md
+                      - System Env Variables: amamba/user-guide/pipeline/system-env.md
               - GitOps:
                   - Import Repository: amamba/user-guide/gitops/import-repo.md
                   - Create Argo CD App: amamba/user-guide/gitops/create-argo-cd.md
@@ -170,8 +171,9 @@ nav:
                       - Use GitOps in a Hosted Mesh: amamba/quickstart/istio_argocd.md
                       - Progressive Delivery in a Hosted Mesh: amamba/quickstart/istio_argocd_rollout.md
                   - CI Practices:
-                      - Implement Code Scanning with Pipelines: amamba/quickstart/scan-with-pipeline.md
-                      - Integrate Harbor to Scan Image Security: amamba/quickstart/scan-with-harbor.md
+                      - Scan Code with Pipelines: amamba/quickstart/scan-with-pipeline.md
+                      - Integrate Harbor to Scan Image: amamba/quickstart/scan-with-harbor.md
+                      - Jenkins Delivers App to VM: amamba/user-guide/pipeline/cicd_vm.md
                       - Integrate Jenkins on Physical/Virtual Machine: amamba/quickstart/jenkins-integration.md
                   - Progressive Delivery Practices: 
                       - Contour-based Grayscale Release: amamba/quickstart/contour-argorollout.md

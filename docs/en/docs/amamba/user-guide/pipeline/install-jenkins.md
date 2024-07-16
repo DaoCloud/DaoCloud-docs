@@ -1,4 +1,9 @@
-# Installing Jenkins
+---
+MTPE: windsonsea
+Date: 2024-07-16
+---
+
+# Install Jenkins
 
 This page introduces how to install Jenkins before using the pipeline features.
 
@@ -8,7 +13,7 @@ This page introduces how to install Jenkins before using the pipeline features.
 - Please ensure that it is installed in the __amamba-system__ namespace.
 - If installing on a global service cluster, make sure to have an instance of __amamba-jenkins__ in the __Container Management__ -> __Helm Apps__ , under the __amamba-system__ namespace.
 
-## Getting Started with Installation
+## Get Started with Installation
 
 1. Go to the __Container Management__ module and find the cluster where you want to install Jenkins in the __Clusters__ . Click the name of that cluster.
 
@@ -56,7 +61,7 @@ This page introduces how to install Jenkins before using the pipeline features.
 
     ![Deployment Completed](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins15.png)
 
-## Integrating Jenkins
+## Integrate Jenkins
 
 Note: Currently, only integration with Jenkins installed via the DCE 5.0 platform is supported.
 
@@ -87,9 +92,10 @@ If Jenkins was integrated without Cluster and Namespace given, it will cause Wor
 
 To address these issues, you need to go to the Jenkins backend for relevant configurations.
 
-### Configuring Email Notifications in the Jenkins Backend for the Notification Step
+### Configure Email Notifications in the Jenkins Backend for the Notification Step
 
-1. Go to the Jenkins backend, click __Manage Jenkins__ -> __Configure System__ , and then scroll down to the __Email Notification__ section.
+1. Go to the Jenkins backend, click __Manage Jenkins__ -> __Configure System__ ,
+   and then scroll down to the __Email Notification__ section.
 
 2. Fill in the relevant parameters. The parameter descriptions are as follows:
 
@@ -105,7 +111,7 @@ To address these issues, you need to go to the Jenkins backend for relevant conf
 
     ![Jenkins Email Config](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/install-jenkins06.png)
 
-### Configuring SonarQube Server Address in the Jenkins Backend for the SonarQube Configuration Step
+### Configure SonarQube Server in the Jenkins Backend for the SonarQube Configuration Step
 
 1. Go to the Jenkins backend, click __Manage Jenkins__ -> __Configure System__ , and then scroll down to __SonarQube servers__ . Click __Add SonarQube__ .
 
