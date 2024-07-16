@@ -11,6 +11,7 @@
 - 支持的 NPU 卡型号：
 
     - Ascend 310P，已验证
+    - Ascend 910b（20 核），已验证
     - Ascend 910（32 核），官方介绍支持，未实际验证
     - Ascend 910（30 核），官方介绍支持，未实际验证
     
@@ -23,7 +24,7 @@
 开启虚拟化能力需要手动修改 ascend-device-plugin-daemonset 组件的启动参数，参考下述命令：
 
 ```init
-- device-plugin -useAscendDocker=true -volcanoType=true -presetVirtualDevice=false
+- device-plugin -useAscendDocker=true -volcanoType=false -presetVirtualDevice=true
 - logFile=/var/log/mindx-dl/devicePlugin/devicePlugin.log -logLevel=0
 ```
 
