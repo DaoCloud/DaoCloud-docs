@@ -1,3 +1,8 @@
+---
+MTPE: WANG0608GitHub
+date: 2024-07-16
+---
+
 # Known Network Component Issues and Kernel Compatibility
 
 This page summarizes known issues with various network components that may have a significant impact on production environments, along with some recommendations and solutions.
@@ -160,9 +165,9 @@ https://github.com/projectcalico/calico/pull/7111
 
 If you encounter the following problems, please try to update Spiderpool to a higher version to solve them.
 
-### Known issues in version 0.9
+### Known issues in v0.9
 
-#### The spidercoordinator status is not as expected
+#### An error occurred during spidercoordinator synchronization, but its status remains running
 
 If the cluster CIDR information failed to be obtained, we should update its status to NotReady, which will prevent the normal creation of Pods. Otherwise, Pods will run with incorrect CIDRs, which will cause network connectivity problems.
 
@@ -170,7 +175,7 @@ If the cluster CIDR information failed to be obtained, we should update its stat
 
 https://github.com/spidernet-io/spiderpool/pull/2929
 
-#### values.multus.multusCNI.uninstall function does not take effect
+#### values.multus.multusCNI.uninstall function does not take effect, leading to improper deletion of multus resources 
 
 After Values.multus.multusCNI.uninstall is set to true, after uninstalling Spiderpool, it is found that multus related resources still exist and they are not deleted as expected.
 
@@ -180,21 +185,21 @@ https://github.com/spidernet-io/spiderpool/pull/2974
 
 #### When kubeadm-config is missing, serviceCIDR cannot be obtained from kubeControllerManager Pod
 
-In some scenarios, kubeadm is not used to create a cluster, and there may be no kubeadm-config configMap. It will try to obtain it from kubeControllerManager. However, due to a bug, serviceCIDR cannot be obtained from kubeControllerManager Pod, resulting in the failure of Spidercoordinator status update.
+In some scenarios, kubeadm is not used to create a cluster, so there may be no kubeadm-config configMap. It will try to obtain it from kubeControllerManager. However, due to a bug, serviceCIDR cannot be obtained from kubeControllerManager Pod, resulting in the failure of Spidercoordinator status update.
 
 **Reference:**
 
 https://github.com/spidernet-io/spiderpool/pull/3020
 
-#### SpiderCoordinator CRD adds a new property TxQueueLen, which will cause panic when upgrading
+#### Upgrading from v0.7.0 to v0.9.0 will cause a panic due to a new attribute in the SpiderCoordinator CRD
 
-Spiderpool v0.9.0 adds a new property `TxQueueLen` to the SpiderCoordinator CRD, but it does not have a default value during the upgrade operation, which will cause panic. You need to use it and treat it as a default value of 0.
+Spiderpool v0.9.0 adds a new attribute `TxQueueLen` to the SpiderCoordinator CRD, but it does not have a default value during the upgrade operation, which will cause panic. You need to use it and treat it as a default value of 0.
 
 **Reference:**
 
 https://github.com/spidernet-io/spiderpool/pull/3118
 
-#### spidercoordinator returns empty serviceCIDR
+#### Different cluster deployment methods cause SpiderCoordinator to return an empty serviceCIDR, preventing Pod creation
 
 Due to different cluster deployment methods, there are two types of CIDRs recorded in the cluster kube-controller-manager Pod: `Spec.Containers[0].Command` and `Spec.Containers[0].Args`. For example, the RKE2 cluster is `Spec.Containers[0].Args` instead of `Spec.Containers[0].Command`, and `Spec.Containers[0].Command` is hardcoded in the original logic, resulting in abnormal judgment, returning an empty serviceCIDR, and failing to create a Pod.
 
@@ -202,7 +207,7 @@ Due to different cluster deployment methods, there are two types of CIDRs record
 
 https://github.com/spidernet-io/spiderpool/pull/3211
 
-### Known Issues in 0.8
+### Known Issues in v0.8
 
 #### ifacer cannot create bond using vlan 0
 
@@ -244,7 +249,7 @@ If you create a SpiderSubnet resource first, and then create a SpiderIPPool reso
 
 https://github.com/spidernet-io/spiderpool/pull/3011
 
-### Known issues in version 0.7
+### Known issues in v0.7
 
 #### Statefulset Pod cannot be restarted due to IP conflict
 
@@ -254,7 +259,7 @@ Since the StatefulSet Pod is restarted, GC scanAll will release the previous IP 
 
 https://github.com/spidernet-io/spiderpool/pull/2538
 
-#### Third-party controller support issues
+#### Spiderpool cannot recognize third-party controllers like RedisCluster, preventing StatefulSet Pods from having fixed IP addresses
 
 For third-party controllers: RedisCluster -> StatefulSet -> Pod, if Spiderpool sets the SpiderSubnet automatic pool annotation for it, the Pod will not be able to start successfully.
 
@@ -278,7 +283,7 @@ Spidercoordinator auto mode obtains the wrong `podCIDRType` type, and the update
 
 https://github.com/spidernet-io/spiderpool/pull/2434
 
-#### IPAM allocation is blocked, affecting the performance of IP allocation
+#### In one-to-one Pod-to-IP mapping scenarios, IPAM allocation is blocked, preventing some Pods from running and affecting IP allocation performance
 
 An IPPool with 1,000 IP addresses is created, and a Deployment with 1,000 replicas is created. After a certain number of IP addresses are allocated, it is observed that the allocation performance has dropped significantly, and even IP addresses cannot be allocated anymore. A Pod cannot start normally without an IP address. The Pod has been recorded in the actual IPPool resource and its IP has been allocated, but the Pod corresponding to the SpiderEndpoint does not exist.
 
@@ -294,7 +299,7 @@ Disable IP GC function, spiderpool-controller component will not start correctly
 
 https://github.com/spidernet-io/spiderpool/pull/2532
 
-#### IPPool.Spec.MultusName does not resolve the namespace correctly
+#### Incorrect namespace parsing in IPPool.Spec.MultusName causes affinity to fail, making the multusName unfindable
 
 Specified Pod Annotation: `v1.multus-cni.io/default-network: kube-system/ipvlan-eth0`, due to Spiderpool's incorrect parsing of namespace, the wrong namespace is used when querying network-attachment-definitions, resulting in the failure to find the corresponding network-attachment-definitions, and thus the Pod cannot be successfully created.
 
