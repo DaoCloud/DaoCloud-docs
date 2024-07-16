@@ -1,23 +1,36 @@
-# Jenkins 发布应用至虚拟机
+---
+MTPE: windsonsea
+Date: 2024-07-16
+---
 
-本文将重点介绍 Jenkins 如何发布应用至虚拟机，思路是通过流水线拉取代码、测试、编译、生成程序包（如 jar 包等）、通过
-scp 或其他工具将安装包拷贝到对应服务器的指定位置，通过远程执行命令或脚本等方式替换老版本的程序包运行。
+# Jenkins Delivers Application to Virtual Machine
 
-## 操作步骤
+This document focuses on how Jenkins can deliver applications to a virtual machine.
+The process involves pulling code through the pipeline, testing, compiling,
+generating a package (such as a jar file), copying the installation package
+to the specified location on the corresponding server via scp or other tools,
+and replacing the old version of the package by executing commands or scripts remotely.
 
-1. 准备流水线执行的镜像
+## Steps
 
-    由于流水线中需要将程序包拷贝到应用所在的服务器上，需要使用到 `scp`、`ansible`、`sshpass` 命令工具，但是目前平台提供的默认构建惊喜没有安装，需要手动进行构建。
+1. Prepare the image for pipeline execution
+
+    Since the pipeline needs to copy the package to the server where the application is located,
+    tools such as `scp`, `ansible`, and `sshpass` are required. However, these tools are not
+    installed in the default build image provided by the platform, so manual construction is needed.
     
-    参考[在 Jenkins 中使用自定义工具链](../../quickstart/jenkins-custom.md)实现安装。
+    Refer to [Using Custom Toolchain in Jenkins](../../quickstart/jenkins-custom.md)
+    for installation instructions.
 
-1. 前往 **应用工作台** -> **流水线** -> **流水线凭证** ，为虚拟机创建  **访问令牌**  类型的凭证
+1. Go to **Workbench** -> **Pipelines** -> **Credentials**, and create a credential of
+   **Access Token** for the virtual machine
 
     <!-- add images later -->
 
-1. 前往 **应用工作台** -> **流水线** -> **流水线** ，创建流水线
+1. Go to **Workbench** -> **Pipelines** -> **Pipelines**, and create a pipeline
 
-    流水线步骤为：拉取代码 -> 代码构建 -> 部署应用程序，以下为一个省略代码构建步骤的示例：
+    The pipeline steps are: pull code -> code build -> deploy application.
+    Below is an example that omits the code build step:
 
     ```groovy
     pipeline {
@@ -52,7 +65,7 @@ scp 或其他工具将安装包拷贝到对应服务器的指定位置，通过�
           agent none
           steps {
             container('ssh') {
-              sh 'build commend'
+              sh 'build command'
             }
      
           }
@@ -75,4 +88,4 @@ scp 或其他工具将安装包拷贝到对应服务器的指定位置，通过�
       }
     }
 
-1. 创建成功后，运行流水线
+1. After successful creation, run the pipeline.
