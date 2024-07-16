@@ -635,8 +635,10 @@ nav:
                   - 安装 virtnest-agent: virtnest/install/virtnest-agent.md
               - 虚拟机:
                   - 创建虚拟机: virtnest/vm/index.md
+                  - 虚拟机详情: virtnest/vm/detail.md
                   - 创建密钥: virtnest/vm/create-secret.md
                   - 连接虚拟机: virtnest/vm/access.md
+                  - 克隆虚拟机: virtnest/vm/clone.md
                   - 快照管理: virtnest/vm/snapshot.md
                   - 实时迁移: virtnest/vm/live-migration.md
                   - 通过 NodePort 访问虚拟机: virtnest/vm/nodeport.md
