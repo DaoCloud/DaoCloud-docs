@@ -91,6 +91,7 @@ spec:
   visible: true # 设置该菜单是否可见，默认为true
   isCustom: true # 该字段必须为true
   order: 20 # 排序，数字越大，越靠上
+  target: blank # 新开标签页
 ```
 
 ### 二级菜单
