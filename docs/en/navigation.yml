@@ -1206,6 +1206,7 @@ nav:
                   - Folder Permissions: ghippo/user-guide/workspace/folder-permission.md
                   - Resource Quota: ghippo/user-guide/workspace/quota.md
                   - Compare Resource Groups and Shared Resources: ghippo/user-guide/workspace/res-gp-and-shared-res.md
+                  - Resource Binding Permission Instructions: ghippo/user-guide/workspace/wsbind-permission.md
               - Audit Logs:
                   - Enable/Disable Collection of K8s Audit Logs: ghippo/user-guide/audit/open-audit.md
                   - Enable/Disable Output of K8s Audit Logs: ghippo/user-guide/audit/open-k8s-audit.md
