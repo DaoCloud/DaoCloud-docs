@@ -14,14 +14,14 @@ Here is an example of a category YAML:
 apiVersion: ghippo.io/v1alpha1
 kind: NavigatorCategory
 metadata:
-  name: management-custom # (1)
+  name: management-custom # (1)!
 spec:
-  name: Management # (2)
-  isCustom: true # (3)
-  localizedName: # (4)
+  name: Management # (2)!
+  isCustom: true # (3)!
+  localizedName: # (4)!
     zh-CN: 管理
     en-US: Management
-  order: 100 # (5)
+  order: 100 # (5)!
 ```
 
 1. Naming convention: composed of lowercase "spec.name" and "-custom"
@@ -55,23 +55,23 @@ Insert as a product under a navigation bar category
 apiVersion: ghippo.io/v1alpha1
 kind: GProductNavigator
 metadata:
-  name: gmagpie-custom # (1)
+  name: gmagpie-custom # (1)!
 spec:
   name: Operations Management
   iconUrl: ./ui/gmagpie/gmagpie.svg
-  localizedName: # (2)
+  localizedName: # (2)!
     zh-CN: 运营管理
     en-US: Operations Management
   url: ./gmagpie
-  category: management # (3)
-  menus: # (4)
+  category: management # (3)!
+  menus: # (4)!
     - name: Access Control
       iconUrl: ./ui/ghippo/menus/access-control.svg
       localizedName:
         zh-CN: 用户与访问控制
         en-US: Access Control
       url: ./ghippo/users
-      order: 50 # (5)
+      order: 50 # (5)!
     - name: Workspace
       iconUrl: ./ui/ghippo/menus/workspace-folder.svg
       localizedName:
@@ -93,10 +93,11 @@ spec:
         en-US: Settings
       url: ./ghippo/settings
       order: 10
-  gproduct: gmagpie # (6)
-  visible: true # (7)
-  isCustom: true # (8)
-  order: 20 # (9)
+  gproduct: gmagpie # (6)!
+  visible: true # (7)!
+  isCustom: true # (8)!
+  order: 20 # (9)!
+  target: blank # (10)!
 ```
 
 1. Naming convention: composed of lowercase "spec.gproduct" and "-custom"
@@ -108,6 +109,7 @@ spec:
 7. Set whether the menu is visible, default is true
 8. This field must be true
 9. The higher the number, the higher the sorting order
+10. Open a new tab
 
 ### Second-level Menu
 
@@ -117,19 +119,19 @@ Insert as a sub-product under a first-level menu
 apiVersion: ghippo.io/v1alpha1
 kind: GProductNavigator
 metadata:
-  name: gmagpie-custom # (1)
+  name: gmagpie-custom # (1)!
 spec:
   name: Operations Management
   iconUrl: ./ui/gmagpie/gmagpie.svg
-  localizedName: # (2)
+  localizedName: # (2)!
     zh-CN: 运营管理
     en-US: Operations Management
   url: ./gmagpie
-  parentGProduct: ghippo # (3)
-  gproduct: gmagpie # (4)
-  visible: true # (5)
-  isCustom: true # (6)
-  order: 20 # (7)
+  parentGProduct: ghippo # (3)!
+  gproduct: gmagpie # (4)!
+  visible: true # (5)!
+  isCustom: true # (6)!
+  order: 20 # (7)!
 ```
 
 1. Naming convention: composed of lowercase "spec.gproduct" and "-custom"

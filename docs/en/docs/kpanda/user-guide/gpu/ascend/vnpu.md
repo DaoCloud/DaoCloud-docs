@@ -17,6 +17,7 @@ This document describes how to enable and use Ascend static virtualization capab
 - Supported NPUs:
 
     - Ascend 310P, verified
+    - Ascend 910b (20 cores), verified
     - Ascend 910 (32 cores), officially supported but not verified
     - Ascend 910 (30 cores), officially supported but not verified
 
@@ -31,7 +32,7 @@ To enable virtualization capabilities, you need to manually modify the startup p
 of the `ascend-device-plugin-daemonset` component. Refer to the following command:
 
 ```init
-- device-plugin -useAscendDocker=true -volcanoType=true -presetVirtualDevice=false
+- device-plugin -useAscendDocker=true -volcanoType=false -presetVirtualDevice=true
 - logFile=/var/log/mindx-dl/devicePlugin/devicePlugin.log -logLevel=0
 ```
 
