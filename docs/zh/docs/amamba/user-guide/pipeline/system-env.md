@@ -4,33 +4,26 @@
 
 | 变量名称                  | 默认值                                                       | 备注                                           |
 | ------------------------- | ------------------------------------------------------------ | ---------------------------------------------- |
-| BUILD_URL                 | http://amamba-jenkins-jenkins:80/job/{workspace_id}/job/{pipeline_name}/{build_id}/ |                                                |
-| HOSTNAME                  | {pod_name}                                                   | 容器组名称                                     |
+| NODE_NAME                 | base-1rcgq                                                   | 当前执行构建的容器组名称                                             |
 | POD_CONTAINER             | {container_name}                                             | 目前构建使用的容器名称                         |
-| EXCLUDE_DOCKER            | 0                                                            | 这个意义是？？                                 |
-| WORKSPACE                 | /home/jenkins/agent/workspace/{workspace_id}/{pipeline_name} |                                                |
-| JOB_URL                   | http://amamba-jenkins-jenkins:80/job/{workspace_id}/job/{pipeline_name} |                                                |
-| RUN_CHANGES_DISPLAY_URL   | http://amamba-jenkins-jenkins:80/job/{workspace_id}/job/{pipeline_name}/{build_id}/display/redirect?page | 需要展示吗？                                   |
-| RUN_ARTIFACTS_DISPLAY_URL | http://amamba-jenkins-jenkins:80/job/{workspace_id}/job/{pipeline_name}/{build_id}/display/redirect?page | 需要展示吗？                                   |
-| RUN_TESTS_DISPLAY_URL     | http://amamba-jenkins-jenkins:80/job/2/job/loooooong-log/12/display/redirect?page | 是不是重复？                                   |
+| NODE_LABELS               | base base-1rcgq                                              | 为构建节点分配的标签列表                                               |
+| WORKSPACE                 | /home/jenkins/agent/workspace/{workspace_id}/{pipeline_name} | 作为工作空间分配给构建的目录的绝对路径                                               |
+| JENKINS_URL               | http://amamba-jenkins-jenkins:80/                            | Jenkins 的 URL                                               |
+| BUILD_URL                 | http://amamba-jenkins-jenkins:80/job/{workspace_id}/job/{pipeline_name}/{build_id}/ | 该流水线构建记录的 URL                                               |
+| JOB_URL                   | http://amamba-jenkins-jenkins:80/job/{workspace_id}/job/{pipeline_name} | 该流水线的 URL                                               |
+| RUN_CHANGES_DISPLAY_URL   | http://amamba-jenkins-jenkins:80/job/{workspace_id}/job/{pipeline_name}/{build_id}/display/redirect?page |                                    |
+| RUN_ARTIFACTS_DISPLAY_URL | http://amamba-jenkins-jenkins:80/job/{workspace_id}/job/{pipeline_name}/{build_id}/display/redirect?page |                                    |
+| RUN_TESTS_DISPLAY_URL     | http://amamba-jenkins-jenkins:80/job/2/job/loooooong-log/12/display/redirect?page |                                    |
 | JOB_DISPLAY_URL           | http://amamba-jenkins-jenkins:80/job/2/job/loooooong-log/display/redirect |                                                |
-| JENKINS_HOME              | /var/jenkins_home                                            |                                                |
-| HUDSON_HOME               | /var/jenkins_home                                            | 这个跟 JENKINS_HOME 重复是否删除               |
-| RUN_DISPLAY_URL           | http://amamba-jenkins-jenkins:80/job/{workspace_id}/job/{pipeline_name}/{build_id}/display/redirect | 需要展示吗？                                   |
-| _                         | /usr/bin/printenv                                            |                                                |
-| PWD                       | /home/jenkins/agent/workspace/{workspace_id}/{pipeline_name} |                                                |
+| RUN_DISPLAY_URL           | http://amamba-jenkins-jenkins:80/job/{workspace_id}/job/{pipeline_name}/{build_id}/display/redirect |                                    |
 | HUDSON_URL                | http://amamba-jenkins-jenkins:80/                            |                                                |
-| JOB_NAME                  | {workspace_id}/{pipeline_name}                               |                                                |
-| JOB_BASE_NAME             | {pipeline_name}                                              |                                                |
-| GITLAB_OBJECT_KIND        | none                                                         | 这个是啊？                                     |
-| JENKINS_URL               | http://amamba-jenkins-jenkins:80/                            |                                                |
-| BUILD_ID                  | 12                                                           |                                                |
-| BUILD_NUMBER              | 12                                                           | 是不是重复？                                   |
-| BUILD_DISPLAY_NAME        | #12                                                          | 是不是没必要显示                               |
-| CI                        | TRUE                                                         | 有必要展示吗？                                 |
-| WORKSPACE_TMP             | /home/jenkins/agent/workspace/{workspace_id}/{pipeline_name}@tmp |                                                |
-| NODE_LABELS               | base base-1rcgq                                              |                                                |
-| NODE_NAME                 | base-1rcgq                                                   |                                                |
+| JENKINS_HOME              | /var/jenkins_home                                            |  Jenkins 存储数据的目录的绝对路径                                              |
+| JOB_NAME                  | {workspace_id}/{pipeline_name}                               | 流水线名称                                               |
+| JOB_BASE_NAME             | {pipeline_name}                                              | 流水线短名称，省略了工作空间的 ID                                                |
+| BUILD_ID                  | {build_id}                                                           | 当前构建记录 ID                                               |
+| BUILD_NUMBER              | {build_number}                                                           | 当前构建记录 版本                                   |
+| BUILD_DISPLAY_NAME        | #{build_id}                                                          | 当前构建记录显示名称                              |
+| CI                        | TRUE                                                         |                                |
 | SONAR_SCANNER_VERSION     | 4.8.0.2856                                                   |                                                |
 | GIT_BRANCH                |                                                              | 当流水线基于代码仓库jenkinsfile 创建时才会存在 |
 | GIT_LOCAL_BRANCH          |                                                              | 当流水线基于代码仓库jenkinsfile 创建时才会存在 |
