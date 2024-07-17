@@ -15,10 +15,10 @@ CI 中经常使用流水线执行编译、构建等工作，现代语言中，�
 
 ## 准备工作
 
-1. 提供一个 S3 或类 S3 的存储后端，可以参考[创建 MinIO 实例 - DaoCloud Enterprise](https://docs.daocloud.io/middleware/minio/user-guide/create.html)
+1. 提供一个 S3 或类 S3 的存储后端，可以参考[创建 MinIO 实例 - DaoCloud Enterprise](../../middleware/minio/user-guide/create.md)
    在 DCE 5.0 上创建一个 MinIO，并创建一个 bucket，准备好 `access key` 和 `secret`。
 
-    ![准备S3](../images/job-cacher01.png)
+    ![准备 S3](../images/job-cacher01.png)
 
 2. 在 Jenkins 的 **系统管理** -> **插件管理** 界面下，安装插件 job-cacher：
 
@@ -32,18 +32,21 @@ CI 中经常使用流水线执行编译、构建等工作，现代语言中，�
         source:
           version: 218.v1b_e9466ec5da_
       - groupId: org.jenkins-ci.plugins.aws-java-sdk
-        artifactId: aws-java-sdk-minimal  # aws-crendetials依赖
+        artifactId: aws-java-sdk-minimal  # (1)!
         source:
           version: 1.12.633-430.vf9a_e567a_244f
       - groupId: org.jenkins-ci.plugins
-      artifactId: jackson2-api  # 被其他插件依赖
+      artifactId: jackson2-api  # (2)!
         source:
           version: 2.16.1-373.ve709c6871598
     ```
 
+    1. aws-crendetials 依赖
+    2. 被其他插件依赖
+
 !!! note
 
-    Amamba 提供的v0.3.2及之前的Helm Chart 对应的 Jenkins 版本为2.414，经测试这个版本的
+    Amamba 提供的 v0.3.2 及之前的 Helm Chart 对应的 Jenkins 版本为 2.414，经测试这个版本的
     Job Cacher 399.v12d4fa_dd3db_d 不能正确的识别 S3 配置，请注意使用升级后的 Jenkins 及 Job Cacher。
 
 ## 配置
@@ -73,7 +76,7 @@ unclassified:
 
 ## 使用
 
-完成上述配置后，我们就可以在 Jenkinsfile 中使用 Job Cacher 提供的函数 `cache` 了，以如下的流水线为例：
+完成上述配置后，我们就可以在 Jenkinsfile 中使用 Job Cacher 提供的函数 `cache`，以如下的流水线为例：
 
 ```groovy
 pipeline {
