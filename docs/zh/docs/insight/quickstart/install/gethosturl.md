@@ -67,7 +67,7 @@ export otel_col_host="insight-opentelemetry-collector.insight-system.svc.cluster
     - `global.exporters.trace.host` 是链路服务地址
     - `global.exporters.auditLog.host` 是审计日志服务地址（和链路使用的同一个服务不同端口）
 
-2. 管理集群禁用 LoadBalancer
+1. 管理集群禁用 LoadBalancer
 
     调用接口时需要额外传递集群中任意外部可访问的节点 IP，会使用该 IP 拼接出对应服务的完整访问地址。
 
@@ -148,7 +148,7 @@ lb-vminsert-insight-victoria-metrics-k8s-stack                   LoadBalancer   
     通过手动执行命令 `kubectl get service -n insight-system | grep lb` 获得相应服务的 NodePort 端口信息，
     参考[通过 LoadBalancer 连接](#loadbalancer)。
     
-3. 全局服务集群禁用 LB 特性
+1. 全局服务集群禁用 LB 特性
 
     在该情况下，默认不会创建上述的 LoadBalancer 资源，对应服务名为：
 
