@@ -62,12 +62,12 @@ The recommended operation process is shown in the figure below
 
 1. Create/delete east-west gateway.
 
-     The east-west gateway is used for communication between network groups, and one or more gateways can be created on any cluster in the group. Click __⋮__ to the right of a cluster and select __Edit East-West Gateway__ :
+     The east-west gateway is used for communication between network groups, and one or more gateways can be created on any cluster in the group. Click __┇__ to the right of a cluster and select __Edit East-West Gateway__ :
 
 
      Create configuration items as follows:
 
-     - __Load balancing comment__ is an optional setting, and some cloud platforms will provide load balancing IP allocation in the form of comments, please refer to the technical documentation provided by the cloud platform;
+     - __Load balancing comment__ is an optional setting, and some cloud platforms will provide load balancing IP allocation in the form of comments, refer to the technical documentation provided by the cloud platform;
      - __Number of East-West Gateway Replicas__ defaults to 1, if you need to improve the availability of the gateway, you can create multiple copies; click __OK__ ;
 
 

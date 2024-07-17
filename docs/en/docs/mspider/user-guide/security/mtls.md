@@ -1,8 +1,13 @@
+---
+MTPE: windsonsea
+Date: 2024-07-17
+---
+
 # Service Mesh Identity and Authentication
 
 Identity is a fundamental concept of any security infrastructure.
 When communication between workloads begins, both communicating parties must exchange credentials containing identity information for mutual authentication.
-On the client side, check the server's identity against the [security naming](#_5) information to see if it is an authorized runner for the workload.
+On the client side, check the server's identity against the [security naming](#safe-naming) information to see if it is an authorized runner for the workload.
 On the server side, the server can determine what information the client can access based on the authorization policy,
 Audit who accesses what when, bill customers based on the workload they use,
 And deny access to workloads to any customers who fail to pay their bills.
@@ -22,7 +27,7 @@ The following list shows the service identities available on different platforms
 ## Identity and certificate management
 
 Service mesh PKI (Public Key Infrastructure) uses X.509 certificates to provide strong identities for each workload.
- __istio-agent__ runs with every Envoy agent, with __istiod__ 
+__istio-agent__ runs with every Envoy agent, with __istiod__
 Work together to automate key and certificate rotation at scale. The figure below shows the operation flow of this mechanism.
 
 ![workflow](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/id-prov.svg)
@@ -73,20 +78,20 @@ The request is handled as follows:
 
 1. The service mesh reroutes outbound traffic from the client to Envoy, the client's local sidecar.
 1. The client Envoy and the server Envoy start a mutual TLS handshake. During the handshake,
-    Client Envoy also does a [safe naming](#_5) check,
+    Client Envoy also does a [safe naming](#safe-naming) check,
     to verify that the service account shown in the server certificate is authorized to run the target service.
 1. The client Envoy and the server Envoy establish a two-way TLS connection,
     The service mesh forwards traffic from client-side Envoys to server-side Envoys.
 1. Server-side Envoy authorization request. If authorized, it forwards traffic to the backend service over a local TCP connection.
 
-The service mesh configures the client and server with __TLSv1_2__ as the minimum TLS version with the following cipher suites:
+The service mesh configures the client and server with `TLSv1_2` as the minimum TLS version with the following cipher suites:
 
-- __ECDHE-ECDSA-AES256-GCM-SHA384__ 
-- __ECDHE-RSA-AES256-GCM-SHA384__ 
-- __ECDHE-ECDSA-AES128-GCM-SHA256__ 
-- __ECDHE-RSA-AES128-GCM-SHA256__ 
-- __AES256-GCM-SHA384__ 
-- __AES128-GCM-SHA256__ 
+- `ECDHE-ECDSA-AES256-GCM-SHA384` 
+- `ECDHE-RSA-AES256-GCM-SHA384` 
+- `ECDHE-ECDSA-AES128-GCM-SHA256` 
+- `ECDHE-RSA-AES128-GCM-SHA256` 
+- `AES256-GCM-SHA384` 
+- `AES128-GCM-SHA256` 
 
 #### Permissive Mode
 
@@ -154,7 +159,7 @@ The service mesh outputs these two authentication types, as well as other claims
 
 ### Authentication Policy
 
-This section provides more details on service mesh authentication strategies. As stated in [Authentication Schema](#_6),
+This section provides more details on service mesh authentication strategies. As stated in [Authentication Schema](#update-authentication-policy),
 Authentication policies are effective for requests received by the service. To specify a client authentication policy in mutual TLS,
 Need to set __TLSSettings__ in __DetinationRule__ .
 
@@ -179,7 +184,7 @@ spec:
 
 A service mesh stores mesh-wide policies in the root namespace. These strategies use an empty selector
 Applied to all workloads in the mesh. Policies with namespace scope are stored in the corresponding namespace.
-They apply only to workloads within their namespace. If you configure the __selector__ field,
+They apply only to workloads within their namespace. If you configure the `selector` field,
 then the authentication policy applies only to workloads that match the criteria you configure.
 
 Peer and __request-authentication__ strategies are distinguished by the kind field,
@@ -187,8 +192,8 @@ They are __PeerAuthentication__ and __RequestAuthentication__ respectively.
 
 #### Selector field
 
-Peer and __request-authentication__ policies use the __selector__ field to specify the label of the workload to which the policy applies.
-The following example shows the selector field for a policy that applies to a workload with the __app:product-page__ tag:
+Peer and __request-authentication__ policies use the `selector` field to specify the label of the workload to which the policy applies.
+The following example shows the selector field for a policy that applies to a workload with the `app:product-page` label:
 
 ```yaml
 selector:
@@ -196,15 +201,15 @@ selector:
      app: product-page
 ```
 
-If you do not provide a value for the __selector__ field,
+If you do not provide a value for the `selector` field,
 The service mesh then matches the policy to all workloads within the scope of the policy store.
-Therefore, the __selector__ field helps you specify the scope of the policy:
+Therefore, the `selector` field helps you specify the scope of the policy:
 
-- mesh-wide policy: The policy specified for the root namespace, with or without an empty __selector__ field.
-- Namespace-scoped policies: policies specified for non-root namespaces, with no or with an empty __selector__ field.
-- Workload-specific policies: Policies defined in the general namespace with a non-empty __selector__ field.
+- mesh-wide policy: The policy specified for the root namespace, with or without an empty `selector` field.
+- Namespace-scoped policies: policies specified for non-root namespaces, with no or with an empty `selector` field.
+- Workload-specific policies: Policies defined in the general namespace with a non-empty `selector` field.
 
-Peer and __request-authentication__ policies follow the same hierarchy principles for the __selector__ field,
+Peer and __request-authentication__ policies follow the same hierarchy principles for the `selector` field,
 But service meshes combine and apply these strategies in a slightly different way.
 
 There can be only one mesh-wide __Peer Authentication__ policy,
@@ -224,7 +229,7 @@ Just like they come from a single __request-authentication__ policy. therefore,
 You can configure multiple mesh-wide or namespace-wide policies within a mesh or namespace.
 However, it is still good practice to avoid using multiple mesh-scoped or namespace-scoped __request-authentication__ strategies.
 
-#### __Peer Authentication__ 
+#### Peer Authentication
 
 The __Peer Authentication__ policy specifies the mutual TLS mode that the service mesh enforces for the target workload. The following modes are supported:
 
@@ -235,7 +240,7 @@ The __Peer Authentication__ policy specifies the mutual TLS mode that the servic
 - DISABLE: Disable mutual TLS. From a security perspective, don't use this mode unless you provide your own security solution.
 - UNSET: Inherit the schema of the parent scope. The mesh-wide __Peer Authentication__ policy in UNSET mode uses __PERMISSIVE__ mode by default.
 
-The following __peer authentication__ policy requires mutual TLS for all workloads in namespace __foo__ :
+The following __peer authentication__ policy requires mutual TLS for all workloads in namespace `foo` :
 
 ```yaml
 apiVersion: security.istio.io/v1beta1
@@ -250,7 +255,7 @@ spec:
 
 For workload-specific __peer authentication__ policies, different mutual TLS modes can be specified for different ports.
 You can only configure mutual TLS for port ranges on ports declared by the workload.
-The following example disables mutual TLS on port 80 for the __app:example-app__ workload,
+The following example disables mutual TLS on port 80 for the `app:example-app` workload,
 And use the mutual TLS settings of the namespace-wide __Peer Authentication__ policy for all other ports:
 
 ```yaml
@@ -268,8 +273,8 @@ spec:
        mode: DISABLE
 ```
 
-The __Peer Authentication__ strategy above will only work if there is a Service defined like this,
-Bind requests to the __example-service__ service to __example-app__ 
+The __Peer Authentication__ policy above will only work if there is a Service defined like this,
+Bind requests to the `example-service` service to `example-app`
 Port __80__ for workloads
 
 ```yaml
@@ -288,7 +293,7 @@ spec:
      app: example-app
 ```
 
-#### __Request Authentication__ 
+#### Request Authentication
 
 The __Request Authentication__ policy specifies the values required to authenticate a JSON Web Token (JWT). These values include:
 
@@ -308,7 +313,7 @@ However, requests with multiple valid JWTs are not supported because the output 
 #### Principal
 
 When using the __peer-auth__ policy and mutual TLS, the service mesh extracts the identity from __peer-auth__ into __source.principal__ .
-Likewise, when you use the __request authentication__ strategy, the service mesh will assign the identity in the JWT to __request.auth.principal__ .
+Likewise, when you use the __request authentication__ policy, the service mesh will assign the identity in the JWT to __request.auth.principal__ .
 Use these principals to set authorization policies and as output from telemetry.
 
 ### Update authentication policy
@@ -319,7 +324,7 @@ The following suggestions can help avoid disruption when updating authentication
 
 - When changing the mode of the __Peer Authentication__ policy from __DISABLE__ to __STRICT__ ,
    Please use __PERMISSIVE__ mode for transitions and vice versa. When all workloads have successfully switched to the desired mode,
-   You can apply the strategy to the final pattern. You can use service mesh telemetry to verify that the workload switched over successfully.
+   You can apply the policy to the final pattern. You can use service mesh telemetry to verify that the workload switched over successfully.
 - When migrating the __request-authentication__ policy from one JWT to another,
    Add rules for new JWTs to this policy without removing old rules. so,
    The workload will accept both types of JWT, when all traffic is switched to the new JWT,

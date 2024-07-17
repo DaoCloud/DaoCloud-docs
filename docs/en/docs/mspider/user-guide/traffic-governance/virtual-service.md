@@ -40,7 +40,7 @@ The specific steps for creating using the graphical wizard are as follows (refer
 
     ![Routing Configuration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/virtualserv03.png)
 
-4. Return to the Virtual Service list, and there will be a prompt indicating successful creation. On the right side of the Virtual Service list, click the __⋮__ in the "Actions" column to perform more operations from the pop-up menu.
+4. Return to the Virtual Service list, and there will be a prompt indicating successful creation. On the right side of the Virtual Service list, click the __┇__ in the "Actions" column to perform more operations from the pop-up menu.
 
     ![More Actions](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/virtualserv04.png)
 

@@ -14,7 +14,7 @@ Here are several important fields:
 
 - LoadBalancer
 
-    By default, Istio uses round-robin load balancing strategy, where each instance in the pool
+    By default, Istio uses round-robin load balancing policy, where each instance in the pool
     gets requests in turn. Istio also supports the following load balancing models, which can be
     specified in DestinationRule for the traffic flowing to a specific service or service subset:
 
@@ -77,7 +77,7 @@ Here are the specific steps for creating a Destination Rule through the graphica
 
     ![Creation Successful](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/destirule04.png)
 
-5. On the right side of the list, click the __⋮__ in the operation column to access more options from the popup menu.
+5. On the right side of the list, click the __┇__ in the operation column to access more options from the popup menu.
 
     ![More Operations](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/destirule05.png)
 
@@ -127,7 +127,7 @@ status: {}
 
 ### Locality Load Balancing
 
-Locality load balancing is a traffic forwarding optimization strategy supported by Istio based on
+Locality load balancing is a traffic forwarding optimization policy supported by Istio based on
 the geographical labels of workload deployments on Kubernetes cluster worker nodes. Configuration
 includes traffic distribution rules (weight distribution) and traffic shifting rules (fault tolerance):
 
@@ -145,5 +145,5 @@ Make sure to check the label configuration of the nodes:
 
 Furthermore, regions are matched and arranged based on the hierarchical order. Different regions have different zones.
 
-For more details, please refer to the official Istio documentation:
+For more details, refer to the official Istio documentation:
 <https://istio.io/latest/docs/tasks/traffic-management/locality-load-balancing/>

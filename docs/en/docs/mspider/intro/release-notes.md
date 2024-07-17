@@ -125,7 +125,7 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 #### Improvements
 
 - **Improved** the algorithm mechanism for the service list state and diagnostic state to ensure consistency between diagnostic results and status fields.
-- **Improved** the automatic discovery strategy for hosted mesh services to display any service from any cluster with the `mspider.io/managed` label.
+- **Improved** the automatic discovery policy for hosted mesh services to display any service from any cluster with the `mspider.io/managed` label.
 
 #### Fixes
 
@@ -343,7 +343,7 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 - **Added** Reg-Proxy component by default.
 - **Added** a feature of Service selector field output.
 - **Added** a Network label to Namespace to solve cross-cluster access problems when Sidecars are not injected.
-- **Added** custom parameter configuration capability for hosted mesh hosted-apiserver. (This parameter only takes effect during installation and does not support updates for the time being), (for more parameters, please refer to helm parameter configuration):
+- **Added** custom parameter configuration capability for hosted mesh hosted-apiserver. (This parameter only takes effect during installation and does not support updates for the time being), (for more parameters, refer to helm parameter configuration):
 - **Added** mesh control plane component status
 - **Added** the **loadBalancerStatus** field to the mesh query interface to describe the actual assigned LB address.
 - **Added** component progress detail interface `/apis/mspider.io/v3alpha1/meshes/{mesh_id}/components-progress`.

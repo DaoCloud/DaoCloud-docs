@@ -69,6 +69,6 @@ Users can add, delete, modify and query resources in the form of YAML. Here is a
      ​ value: "request.host"
      ```
 
-3. Return to the resource list, click the __⋮__ button in the operation column, and you can select more operations such as edit and delete from the pop-up menu.
+3. Return to the resource list, click the __┇__ button in the operation column, and you can select more operations such as edit and delete from the pop-up menu.
 
      

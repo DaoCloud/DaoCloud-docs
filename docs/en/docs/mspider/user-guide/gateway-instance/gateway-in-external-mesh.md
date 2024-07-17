@@ -160,7 +160,7 @@ Managing the gateway workload independently significantly increases the complexi
 
 ## More Installation Methods
 
-Istio provides a variety of deployment approaches, and the above examples only mention a few popular ones. If you are using a different approach, please refer to the Istio documentation for more detailed information:
+Istio provides a variety of deployment approaches, and the above examples only mention a few popular ones. If you are using a different approach, refer to the Istio documentation for more detailed information:
 
 * Istio Operator Installation: [https://istio.io/docs/setup/install/operator/](https://istio.io/docs/setup/install/operator/)
 * Gateway Resource: [https://istio.io/docs/reference/config/networking/gateway/](https://istio.io/docs/reference/config/networking/gateway/)

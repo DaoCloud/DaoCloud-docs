@@ -25,7 +25,7 @@
 
 ## 查看边车运行状态
 
-如果一个工作负载已注入边车，点击最后一列的 __⋮__ ，在弹出的菜单中选择 __查看边车状态__ 。
+如果一个工作负载已注入边车，点击最后一列的 __┇__ ，在弹出的菜单中选择 __查看边车状态__ 。
 
 ![边车运行状态](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/wl-sidecar02.png)
 

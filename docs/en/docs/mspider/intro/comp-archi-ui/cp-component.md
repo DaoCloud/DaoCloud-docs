@@ -152,7 +152,7 @@ This page lists the various components in the control plane of the service mesh 
     <tr>
         <td>istiod</td>
         <td></td>
-        <td>Used for strategy creation, deployment, and sidecar lifecycle management work</td>
+        <td>Used for policy creation, deployment, and sidecar lifecycle management work</td>
         <td>
             <ul>
                 <li>requests: CPU: 100; Memory: 100</li>

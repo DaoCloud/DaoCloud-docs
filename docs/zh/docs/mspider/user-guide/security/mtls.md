@@ -22,7 +22,7 @@ DCE 5.0 服务网格身份模型使用经典的 __service identity__ （服务�
 ## 身份和证书管理
 
 服务网格 PKI (Public Key Infrastructure, 公钥基础设施) 使用 X.509 证书为每个工作负载都提供强大的身份标识。
- __istio-agent__ 与每个 Envoy 代理一起运行，与 __istiod__ 
+__istio-agent__ 与每个 Envoy 代理一起运行，与 __istiod__
 一起协作来自动化的进行大规模密钥和证书轮换。下图显示了这个机制的运行流程。
 
 ![workflow](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/mspider/images/id-prov.svg)
@@ -43,12 +43,15 @@ DCE 5.0 服务网格身份模型使用经典的 __service identity__ （服务�
 - __对等身份认证__ ：用于服务到服务的认证，以验证建立连接的客户端。
   服务网格提供[双向 TLS](https://en.wikipedia.org/wiki/Mutual_authentication)
   作为传输认证的全栈解决方案，无需更改服务代码就可以启用它。这个解决方案：
+
     - 为每个服务提供强大的身份，表示其角色，以实现跨集群和云的互操作性。
     - 保护服务到服务的通信。
     - 提供密钥管理系统，以自动进行密钥和证书的生成、分发和轮换。
+
 - __请求身份认证__ ：用于终端用户认证，以验证附加到请求的凭据。
   服务网格使用 JSON Web Token（JWT）验证启用请求级认证，
   并使用自定义认证实现或任何 OpenID Connect 的认证实现（例如下面列举的）来简化的开发人员体验。
+
     - [ORY Hydra](https://www.ory.sh/)
     - [Keycloak](https://www.keycloak.org/)
     - [Auth0](https://auth0.com/)
@@ -56,8 +59,7 @@ DCE 5.0 服务网格身份模型使用经典的 __service identity__ （服务�
     - [Google Auth](https://developers.google.com/identity/protocols/OpenIDConnect)
 
 在所有情况下，服务网格都通过自定义 Kubernetes API 将认证策略存储在 __Istio config store__ 。
-Istiod 使每个代理保持最新状态，
-并在适当时提供密钥。此外，服务网格的认证机制支持宽容模式（permissive mode），
+Istiod 使每个代理保持最新状态，并在适当时提供密钥。此外，服务网格的认证机制支持宽容模式（permissive mode），
 以帮助您在强制实施前了解策略更改将如何影响您的安全状况。
 
 ### mTLS 认证
@@ -67,7 +69,7 @@ mTLS 允许通信双方在 SSL/TLS 握手的初始连接期间进行相互认证
 
 DCE 5.0 服务网格通过客户端和服务器端
 [PEP](https://www.jerichosystems.com/technology/glossaryterms/policy_enforcement_point.html)(Policy Enforcement Policy)
-建立服务到服务的通信通道，PEP 被实现为[Envoy 代理](https://www.envoyproxy.io/)。
+建立服务到服务的通信通道，PEP 被实现为 [Envoy 代理](https://www.envoyproxy.io/)。
 当一个工作负载使用 mTLS 认证向另一个工作负载发送请求时，
 该请求的处理方式如下：
 
@@ -81,12 +83,12 @@ DCE 5.0 服务网格通过客户端和服务器端
 
 服务网格将 __TLSv1_2__ 作为最低 TLS 版本为客户端和服务器配置了如下的加密套件：
 
-- __ECDHE-ECDSA-AES256-GCM-SHA384__ 
-- __ECDHE-RSA-AES256-GCM-SHA384__ 
-- __ECDHE-ECDSA-AES128-GCM-SHA256__ 
-- __ECDHE-RSA-AES128-GCM-SHA256__ 
-- __AES256-GCM-SHA384__ 
-- __AES128-GCM-SHA256__ 
+- ECDHE-ECDSA-AES256-GCM-SHA384
+- ECDHE-RSA-AES256-GCM-SHA384
+- ECDHE-ECDSA-AES128-GCM-SHA256
+- ECDHE-RSA-AES128-GCM-SHA256
+- AES256-GCM-SHA384
+- AES128-GCM-SHA256
 
 #### 宽容模式
 
@@ -109,7 +111,7 @@ DCE 5.0 服务网格通过客户端和服务器端
 
 服务器身份（Server identity）被编码在证书里，
 但服务名称（service name）通过服务发现或 DNS 被检索。
-安全命名信息将服务器身份映射到服务名称。身份 __A__ 到服务名称 __B__ 
+安全命名信息将服务器身份映射到服务名称。身份 __A__ 到服务名称 __B__
 的映射表示“授权 __A__ 运行服务 __B__ "。控制平面监视 __apiserver__ ，
 生成安全命名映射，并将其安全地分发到 PEP。
 以下示例说明了为什么安全命名对身份验证至关重要。
@@ -119,7 +121,7 @@ DCE 5.0 服务网格通过客户端和服务器端
 恶意用户打算模拟合法服务以检查从客户端发送的数据。
 恶意用户使用证书和 __test-team__ 身份的密钥部署伪造服务器。
 假设恶意用户成功劫持（通过 DNS 欺骗、BGP/路由劫持、ARP 欺骗等）发送到
- __datastore__ 的流量并将其重定向到伪造的服务器。
+__datastore__ 的流量并将其重定向到伪造的服务器。
 
 当客户端调用 __datastore__ 服务时，它从服务器的证书中提取 __test-team__ 身份，
 并用安全命名信息检查 __test-team__ 是否被允许运行 __datastore__ 。
@@ -179,16 +181,16 @@ spec:
 
 服务网格将网格范围的策略存储在根命名空间。这些策略使用一个空的 selector
 应用到网格中的所有工作负载。具有命名空间范围的策略存储在相应的命名空间中。
-它们仅适用于其命名空间内的工作负载。如果您配置了 __selector__ 字段，
+它们仅适用于其命名空间内的工作负载。如果您配置了 `selector` 字段，
 则认证策略仅适用于与您配置的条件匹配的工作负载。
 
 Peer 和 __请求身份认证__ 策略用 kind 字段区分，
 分别是 __PeerAuthentication__ 和 __RequestAuthentication__ 。
 
-#### Selector 字段
+#### `selector` 字段
 
-Peer 和 __请求身份认证__ 策略使用 __selector__ 字段来指定该策略适用的工作负载的标签。
-以下示例显示适用于带有 __app：product-page__ 标签的工作负载的策略的 selector 字段：
+Peer 和 __请求身份认证__ 策略使用 `selector` 字段来指定该策略适用的工作负载的标签。
+以下示例显示适用于带有 `app：product-page` 标签的工作负载的策略的 `selector` 字段：
 
 ```yaml
 selector:
@@ -196,15 +198,15 @@ selector:
     app: product-page
 ```
 
-如果您没有为 __selector__ 字段提供值，
+如果您没有为 `selector` 字段提供值，
 则 服务网格会将策略与策略存储范围内的所有工作负载进行匹配。
-因此， __selector__ 字段可帮助您指定策略的范围：
+因此， `selector` 字段可帮助您指定策略的范围：
 
-- 网格范围策略：为根命名空间指定的策略，不带或带有空的 __selector__ 字段。
-- 命名空间范围的策略：为非root命名空间指定的策略，不带有或带有空的 __selector__ 字段。
-- 特定于工作负载的策略：在常规命名空间中定义的策略，带有非空 __selector__ 字段。
+- 网格范围策略：为根命名空间指定的策略，不带或带有空的 `selector` 字段。
+- 命名空间范围的策略：为非root命名空间指定的策略，不带有或带有空的 `selector` 字段。
+- 特定于工作负载的策略：在常规命名空间中定义的策略，带有非空 `selector` 字段。
 
-Peer 和 __请求身份认证__ 策略对 __selector__ 字段遵循相同的层次结构原则，
+Peer 和 __请求身份认证__ 策略对 `selector` 字段遵循相同的层次结构原则，
 但是 服务网格以略微不同的方式组合和应用这些策略。
 
 只能有一个网格范围的 __对等身份认证__ 策略，
@@ -224,9 +226,9 @@ Peer 和 __请求身份认证__ 策略对 __selector__ 字段遵循相同的层�
 您可以在网格或命名空间中配置多个网格范围或命名空间范围的策略。
 但是，避免使用多个网格范围或命名空间范围的 __请求身份认证__ 策略仍然是一个好的实践。
 
-#### __对等身份认证__ 
+#### 对等身份认证
 
- __对等身份认证__ 策略指定 服务网格对目标工作负载实施的双向 TLS 模式。支持以下模式：
+__对等身份认证__ 策略指定 服务网格对目标工作负载实施的双向 TLS 模式。支持以下模式：
 
 - PERMISSIVE：工作负载接受双向 TLS 和纯文本流量。
   此模式在迁移因为没有边车 而无法使用双向 TLS 的工作负载的过程中非常有用。
@@ -235,7 +237,7 @@ Peer 和 __请求身份认证__ 策略对 __selector__ 字段遵循相同的层�
 - DISABLE：禁用双向 TLS。从安全角度来看，除非您提供自己的安全解决方案，否则请勿使用此模式。
 - UNSET：继承父作用域的模式。UNSET 模式的网格范围 __对等身份认证__ 策略默认使用 __PERMISSIVE__ 模式。
 
-下面的 __对等身份认证__ 策略要求命名空间 __foo__ 中的所有工作负载都使用双向 TLS：
+下面的 __对等身份认证__ 策略要求命名空间 `foo` 中的所有工作负载都使用双向 TLS：
 
 ```yaml
 apiVersion: security.istio.io/v1beta1
@@ -250,7 +252,7 @@ spec:
 
 对于特定于工作负载的 __对等身份认证__ 策略，可以为不同的端口指定不同的双向 TLS 模式。
 您只能将端口范围的双向 TLS 配置在工作负载声明过的端口上。
-以下示例为 __app:example-app__ 工作负载禁用了端口 80 上的双向 TLS，
+以下示例为 `app:example-app` 工作负载禁用了端口 80 上的双向 TLS，
 并对所有其他端口使用命名空间范围的 __对等身份认证__ 策略的双向 TLS 设置：
 
 ```yaml
@@ -269,7 +271,7 @@ spec:
 ```
 
 上面的 __对等身份认证__ 策略仅在有如下 Service 定义时工作，
-将流向 __example-service__ 服务的请求绑定到 __example-app__ 
+将流向 `example-service` 服务的请求绑定到 `example-app`
 工作负载的 __80__ 端口
 
 ```yaml
@@ -307,8 +309,8 @@ __请求身份认证__ 策略指定验证 JSON Web Token（JWT）所需的值。
 
 #### Principal
 
-使用 __对等身份认证__ 策略和双向 TLS 时，服务网格将身份从 __对等身份认证__ 提取到 __source.principal__ 中。
-同样，当您使用 __请求身份认证__ 策略时，服务网格会将 JWT 中的身份赋值给 __request.auth.principal__ 。
+使用 __对等身份认证__ 策略和双向 TLS 时，服务网格将身份从 __对等身份认证__ 提取到 `source.principal` 中。
+同样，当您使用 __请求身份认证__ 策略时，服务网格会将 JWT 中的身份赋值给 `request.auth.principal` 。
 使用这些 principal 设置授权策略并作为遥测的输出。
 
 ### 更新认证策略

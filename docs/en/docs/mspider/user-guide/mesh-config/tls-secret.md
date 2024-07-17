@@ -76,7 +76,7 @@ WQuRxan+FuKE3RiKHFXkslks=
 
      
 
-1. The screen prompts that the creation is successful. Click the __⋮__ button on the right to perform operations such as editing, YAML editing, and deletion.
+1. The screen prompts that the creation is successful. Click the __┇__ button on the right to perform operations such as editing, YAML editing, and deletion.
 
      
 

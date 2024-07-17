@@ -34,7 +34,7 @@ hide:
 
     ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/create-gateway03.png)
 
-4. 几秒后刷新页面，状态将变为 __运行中__ ，表示网关成功配置。点击列表右侧的 __⋮__ ，可以执行编辑和删除操作。
+4. 几秒后刷新页面，状态将变为 __运行中__ ，表示网关成功配置。点击列表右侧的 __┇__ ，可以执行编辑和删除操作。
 
     ![创建](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/create-gateway04.png)
 
