@@ -431,8 +431,7 @@ nav:
           - 云原生网络:
               - 介绍:
                   - 什么是容器网络: network/intro/index.md
-                  - 背景: network/intro/background.md
-                  - 挑战: network/intro/challenges.md
+                  - 背景和挑战: network/intro/background.md
                   - 网络组件: network/modules/modules.md
                   - 离线升级云原生网络: network/intro/offline.md
                   - Release Notes: network/intro/releasenotes.md
