@@ -1,40 +1,50 @@
-# Functional Features
+---
+MTPE: windsonsea
+date: 2024-07-17
+hide:
+  - toc
+---
 
-Cloud Edge Collaboration extends cloud native capabilities to the edge through an integrated "end-edge-cloud" collaborative architecture, helping enterprises quickly expand secure, flexible, efficient, and reliable edge cloud native capabilities,
-widely applicable to industrial Internet, Internet of Things (IoT), smart factories, smart parks, smart retail, and other fields. The cloud side implements the registration, management, and distribution of applications and configurations of edge nodes, while the edge side is responsible for running edge applications, achieving edge autonomy. Device side supports multi-protocol terminal access and provides standard interfaces to connect with device.
+# Features
 
-The functional architecture of the edge computing platform is shown in the following figure:
+Cloud Edge Collaboration extends cloud-native capabilities to the edge through an integrated "end-edge-cloud" collaborative architecture. This approach helps enterprises rapidly expand secure, flexible, efficient, and reliable edge cloud-native capabilities, making it widely applicable in fields such as industrial Internet, Internet of Things (IoT), smart factories, smart parks, smart retail, and more. The cloud side handles the registration, management, and distribution of applications and configurations for edge nodes, while the edge side focuses on running edge applications, achieving edge autonomy. The device side supports multi-protocol terminal access and provides standard interfaces for device connectivity.
 
-Cloud Edge Collaboration supports the following functional features:
+The functional architecture of the edge computing platform includes the following features:
 
 ## Edge Node Management
 
-Supports accessing a massive number of edge nodes, automatically generating configuration information for edge nodes in the platform, and supporting two efficient and convenient management methods: online and offline node management. Edge nodes can be managed, monitored, and operated uniformly on the cloud side.
+- Supports the integration of a vast number of edge nodes.
+- Automatically generates configuration information for edge nodes within the platform.
+- Offers two efficient and convenient management methods: online and offline node management.
+- Allows for uniform management, monitoring, and operation of edge nodes from the cloud.
 
 ## Edge Application/Model Management
 
-- The edge computing platform supports deploying edge applications or models quickly to edge nodes in the form of containers.
-  Users can package their own edge application programs or models into container images, upload them to the container registry, and then deploy container images to edge nodes for operation through the Cloud Edge Collaboration platform.
-- The Cloud Edge Collaboration platform supports viewing running data, events, and log information of deployed instances.
-- Containers have a more robust ecosystem, helping users' container applications seamlessly transition to other running environments, having better portability,
-  and containers have better resource isolation and support CPU scheduling.
+- Facilitates the rapid deployment of edge applications or models to edge nodes in the form of containers.
+- Users can package their edge applications or models into container images, upload them to a container registry, and deploy these images to edge nodes via the Cloud Edge Collaboration platform.
+- Supports the viewing of running data, events, and log information for deployed instances.
+- Containers offer a robust ecosystem, aiding in the seamless transition of container applications to various running environments, enhancing portability.
+- Containers provide better resource isolation and support CPU scheduling.
 
 ## Edge Device Management
 
-The edge computing platform supports end device connected to edge nodes, and end device support access through Modbus protocol. After the end device is connected, it can be managed uniformly on the cloud side.
+- Supports the connection of end devices to edge nodes, with access through the Modbus protocol.
+- Once connected, end devices can be uniformly managed from the cloud.
 
 ## Data Management
 
-The edge computing platform provides message routing function. Users can configure message routing rules, and the platform forwards edge messages to the corresponding message endpoints according to the configured message routing,
-flexibly controlling data routing and improving data security.
+- Provides a message routing function, allowing users to configure message routing rules.
+- The platform forwards edge messages to corresponding message endpoints based on the configured routing rules, enabling flexible data routing and enhancing data security.
 
 ## Permission Management
 
-The platform provides three-level permission management for platform/folders/workspaces, ensuring resource sharing and isolation among different roles at multiple levels and fully ensuring resource security.
+- Offers three-level permission management for platform/folders/workspaces.
+- Ensures resource sharing and isolation among different roles at multiple levels, fully guaranteeing resource security.
 
 ## Edge Control
 
-- Provides resource scheduling and management operation and maintenance functions for edge nodes.
-- Provides full-life-cycle management of applications and models running on edge nodes.
-- Provides data collection function and supports device protocol conversion, which can collect data from associated device connected to edge nodes.
-- Provides messaging and data transmission channels, supporting EventBus protocol for transmitting edge messages to cloud-side REST protocols and cloud-side REST protocols to edge-side EventBus/ServiceBus protocols, while also supporting bidirectional transmission of unstructured data such as images, videos, files, etc.
+- Provides resource scheduling, management, and maintenance functions for edge nodes.
+- Offers full life-cycle management of applications and models running on edge nodes.
+- Includes data collection functions and supports device protocol conversion, enabling data collection from devices connected to edge nodes.
+- Provides messaging and data transmission channels, supporting the EventBus protocol for transmitting edge messages to cloud-side REST protocols and vice versa.
+- Supports bidirectional transmission of unstructured data such as images, videos, and files.

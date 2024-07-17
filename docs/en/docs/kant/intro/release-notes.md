@@ -25,8 +25,8 @@ of the evolution path and feature changes in each version.
 #### New Features
 
 - **Added** support for user-defined installation of MQTT services
-- **Added** a feature of confguring workload upgrade strategy 
-- **Added** a feature of configuring workload affinity 
+- **Added** a feature of confguring workload upgrade strategy
+- **Added** a feature of configuring workload affinity
 - **Added** a feature of adding aliases for edge nodes
 
 #### Improvements

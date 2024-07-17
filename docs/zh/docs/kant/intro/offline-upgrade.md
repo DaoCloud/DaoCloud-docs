@@ -28,21 +28,31 @@
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: kant # 使用 chart-syncer 之后 .tar.gz 包所在的路径
+          intermediateBundlesPath: kant # (1)!
         target:
-          containerRegistry: 10.16.10.111 # 镜像仓库地址
-          containerRepository: release.daocloud.io/kant # 镜像仓库路径
+          containerRegistry: 10.16.10.111 # (2)!
+          containerRepository: release.daocloud.io/kant # (3)!
           repo:
-            kind: HARBOR # Helm Chart 仓库类别
-            url: http://10.16.10.111/chartrepo/release.daocloud.io # Helm 仓库地址
+            kind: HARBOR # (4)!
+            url: http://10.16.10.111/chartrepo/release.daocloud.io # (5)!
             auth:
-            username: "admin" # 镜像仓库用户名
-            password: "Harbor12345" # 镜像仓库密码
+            username: "admin" # (6)!
+            password: "Harbor12345" # (7)!
           containers:
             auth:
-              username: "admin" # Helm 仓库用户名
-              password: "Harbor12345" # Helm 仓库密码
+              username: "admin" # (8)!
+              password: "Harbor12345" # (9)!
         ```
+
+        1. 使用 chart-syncer 之后 .tar.gz 包所在的路径
+        2. 镜像仓库地址
+        3. 镜像仓库路径
+        4. Helm Chart 仓库类别
+        5. Helm 仓库地址
+        6. 镜像仓库用户名
+        7. 镜像仓库密码
+        8. Helm 仓库用户名
+        9. Helm 仓库密码
 
     === "未添加 Helm repo"
 
@@ -50,18 +60,25 @@
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: kant # 使用 chart-syncer 之后 .tar.gz 包所在的路径
+          intermediateBundlesPath: kant # (1)!
         target:
-          containerRegistry: 10.16.10.111 # 镜像仓库 url
-          containerRepository: release.daocloud.io/kant # 镜像仓库路径
+          containerRegistry: 10.16.10.111 # (2)!
+          containerRepository: release.daocloud.io/kant # (3)!
           repo:
             kind: LOCAL
-            path: ./local-repo # chart 本地路径
+            path: ./local-repo # (4)!
           containers:
             auth:
-              username: "admin" # 镜像仓库用户名
-              password: "Harbor12345" # 镜像仓库密码
+              username: "admin" # (5)!
+              password: "Harbor12345" # (6)!
         ```
+
+        1. 使用 chart-syncer 之后 .tar.gz 包所在的路径
+        2. 镜像仓库 url
+        3. 镜像仓库路径
+        4. chart 本地路径
+        5. 镜像仓库用户名
+        6. 镜像仓库密码
 
 1. 执行同步镜像命令。
 
@@ -165,7 +182,7 @@
 
     1. 执行 `helm upgrade`。
 
-        升级前建议您覆盖 bak.yaml 中的 __global.imageRegistry__ 字段为当前使用的镜像仓库地址。
+        升级前建议您覆盖 bak.yaml 中的 `global.imageRegistry` 字段为当前使用的镜像仓库地址。
 
         ```shell
         export imageRegistry={你的镜像仓库}
@@ -197,7 +214,7 @@
 
     1. 执行 `helm upgrade`。
 
-        升级前建议您覆盖 bak.yaml 中的 __global.imageRegistry__ 为当前使用的镜像仓库地址。
+        升级前建议您覆盖 bak.yaml 中的 `global.imageRegistry` 为当前使用的镜像仓库地址。
 
         ```shell
         export imageRegistry={你的镜像仓库}
