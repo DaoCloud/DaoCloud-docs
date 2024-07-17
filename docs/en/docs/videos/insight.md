@@ -10,7 +10,7 @@ We sincerely appreciate any feedback you may have. Thank you 🙏
 Refer to the [Installing insight-agent](../insight/quickstart/install/install-agent.md) documentation page.
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/insight-agent.mp4" preload="metadata" poster="images/insight-agent.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/install-insight-agent-en.mp4" preload="metadata" poster="images/insight-agent.jpg"></video>
 </div>
 
 ## Dashboard
