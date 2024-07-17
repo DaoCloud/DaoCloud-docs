@@ -1,72 +1,56 @@
 ---
+MTPE: windsonsea
+date: 2024-07-17
 hide:
   - toc
-MTPE: windsonsea
-date: 2024-02-23
 ---
 
 # Concepts
 
 - **Edge Unit**
 
-    Refers to the collection of computing resources required for container operation, including the cloud-based
-    Master and edge-side working Node. The Edge Unit is the same concept as the cluster in K8S, but the
-    networking method is different. The Master node is deployed on the cloud, and one cloud-based Master
-    (with multiple backups) corresponds to an edge cluster.
+    An Edge Unit comprises the computing resources necessary for container operations, including a cloud-based Master and edge-side working Nodes. It functions similarly to a cluster in Kubernetes (K8S) but differs in networking methods. The Master node is deployed in the cloud, with one cloud-based Master (and multiple backups) corresponding to an edge cluster.
 
 - **Edge Node**
 
-    It is the basic element of a container cluster, which can be a cloud host or a physical machine used as
-    a carrier for running containerized applications. The edge application will run on the node in the form of a Pod.
+    An Edge Node is a fundamental component of a container cluster, which can be either a cloud host or a physical machine serving as a carrier for running containerized applications. Edge applications run on the node in the form of Pods.
 
 - **Batch Registered Nodes**
 
-    The same type of edge nodes can be pre-installed with software and automatically added to the platform after
-    the nodes are booted and connected to the network. Batch registered nodes have a one-to-many relationship
-    with edge nodes, improving management efficiency and saving operation and maintenance costs.
+    Batch Registered Nodes are edge nodes of the same type, pre-installed with necessary software. These nodes automatically join the platform upon booting and network connection. This one-to-many relationship with edge nodes enhances management efficiency and reduces operational and maintenance costs.
 
 - **Edge Node Group**
 
-    It abstracts nodes according to specific attributes into a node group concept to uniformly manage and operate
-    nodes in different edge regions by node group dimensions.
+    An Edge Node Group abstracts nodes based on specific attributes, creating a node group concept for uniform management and operation across different edge regions.
 
 - **End Device**
 
-    An end device can be as small as a sensor or controller, or as large as a smart camera or industrial control
-    machine. End devices can be connected to edge nodes, support access through the Modbus protocol, and be
-    managed uniformly.
+    An End Device can range from a small sensor or controller to a large smart camera or industrial control machine. These devices can connect to edge nodes, support access via the Modbus protocol, and be managed uniformly.
 
 - **Workload**
 
-    It is an API object that manages application replicas. Specifically, it is a Pod without local state.
-    These Pods are completely independent and have the same function. They can be updated in a rolling manner,
-    and the number of instances can be flexibly expanded or reduced.
+    A Workload (deployment) is an API object that manages application replicas, specifically Pods without local state. These Pods are independent yet identical in function, allowing for rolling updates and flexible scaling of instances.
 
 - **Batch Deployment**
 
-    Defining and deploying stateless workloads with the same configuration or small differences to a node group
-    is a task or batch deployment action.
+    Batch Deployment involves defining and deploying stateless workloads with identical or slightly varied configurations to a node group.
 
 - **ConfigMap**
 
-    It is non-sensitive configuration information saved in the form of key/value pairs. Pods can use it as
-    configuration files in environment variables, command line parameters, or data volumes.
+    A ConfigMap stores non-sensitive configuration information as key/value pairs. Pods can use this information as configuration files, environment variables, command line parameters, or data volumes.
 
 - **Secret**
 
-    It is an object that contains a small amount of sensitive information such as passwords, tokens, and keys
-    saved in the form of key/value pairs. Decouple sensitive information from container images, and do not
-    include confidential data in application code.
+    A Secret is an object containing sensitive information such as passwords, tokens, and keys, stored as key/value pairs. It decouples sensitive information from container images, ensuring that confidential data is not included in application code.
 
 - **Rule Endpoint**
 
-    This is a regular endpoint for sending or receiving messages. It has three types: rest, eventbus, servicebus.
+    A Rule Endpoint is a standard endpoint for sending or receiving messages, available in three types: REST, EventBus, and ServiceBus.
 
 - **Message Routing**
 
-    Defines how messages are delivered from the source message endpoint to the target message endpoint.
+    Message Routing defines the delivery path of messages from the source message endpoint to the target message endpoint.
 
 - **Edge Mesh**
 
-    Provides a non-intrusive microservice governance solution, achieving complete lifecycle management
-    and traffic governance, supporting various governance capabilities such as load balancing.
+    Edge Mesh provides a non-intrusive microservice governance solution, enabling complete lifecycle management and traffic governance. It supports various capabilities, including load balancing.
