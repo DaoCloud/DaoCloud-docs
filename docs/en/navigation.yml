@@ -902,6 +902,7 @@ nav:
               - Mesh Config:
                   - Multicloud Interconnection: mspider/user-guide/multicluster/cluster-interconnect.md
                   - Multicloud Config: mspider/user-guide/multicluster/traffic-branch.md
+                  - Network Connectivity Check: mspider/user-guide/multicluster/check-net-connect.md
                   - Istio Resource Management: mspider/user-guide/mesh-config/istio-resources.md
                   - TLS Key Management: mspider/user-guide/mesh-config/tls-secret.md
                   - Custom Component Resource: mspider/user-guide/mesh-config/custom-res.md

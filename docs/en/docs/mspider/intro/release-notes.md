@@ -21,7 +21,7 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 
 - **Fixed** an issue where components were not uninstalled when removing a dedicated mesh.
 - **Fixed** an issue with abnormal mesh component detection.
-- **Fixed** an issue where reinstalling after uninstalling a managed mesh might fail.
+- **Fixed** an issue where reinstalling after uninstalling a hosted mesh might fail.
 
 ## 2024-05-30
 
