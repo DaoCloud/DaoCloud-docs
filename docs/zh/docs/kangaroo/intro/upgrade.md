@@ -24,20 +24,20 @@
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: kangaroo-offline # (1)
+          intermediateBundlesPath: kangaroo-offline # (1)!
         target:
-          containerRegistry: 10.16.10.111 # (2)
-          containerRepository: release.daocloud.io/kangaroo # (3)
+          containerRegistry: 10.16.10.111 # (2)!
+          containerRepository: release.daocloud.io/kangaroo # (3)!
           repo:
-            kind: HARBOR # (4)
-            url: http://10.16.10.111/chartrepo/release.daocloud.io # (5)
+            kind: HARBOR # (4)!
+            url: http://10.16.10.111/chartrepo/release.daocloud.io # (5)!
             auth:
-              username: "admin" # (6)
-              password: "Harbor12345" # (7)
+              username: "admin" # (6)!
+              password: "Harbor12345" # (7)!
           containers:
             auth:
-              username: "admin" # (8)
-              password: "Harbor12345" # (9)
+              username: "admin" # (8)!
+              password: "Harbor12345" # (9)!
         ```
 
         1. 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
@@ -56,17 +56,17 @@
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: kangaroo-offline # (1)
+          intermediateBundlesPath: kangaroo-offline # (1)!
         target:
-          containerRegistry: 10.16.10.111 # (2)
-          containerRepository: release.daocloud.io/kangaroo # (3)
+          containerRegistry: 10.16.10.111 # (2)!
+          containerRepository: release.daocloud.io/kangaroo # (3)!
           repo:
             kind: LOCAL
-            path: ./local-repo # (4)
+            path: ./local-repo # (4)!
           containers:
             auth:
-              username: "admin" # (5)
-              password: "Harbor12345" # (6)
+              username: "admin" # (5)!
+              password: "Harbor12345" # (6)!
         ```
 
         1. 到执行 charts-syncer 命令的相对路径，而不是此 YAML 文件和离线包之间的相对路径
@@ -144,7 +144,7 @@
     1. 更新镜像仓库的 helm 仓库。
 
         ```shell
-        helm repo update kangaroo # (1)
+        helm repo update kangaroo # (1)!
         ```
 
         1. helm 版本过低会导致失败，若失败，请尝试执行 helm update repo

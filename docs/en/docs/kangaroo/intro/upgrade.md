@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+date: 2024-07-17
+---
+
 # Offline Upgrade Container Registry Module
 
 This page explains how to install or upgrade the container registry module after [downloading it from the Download Center](../../download/modules/kangaroo.md).
@@ -24,20 +29,20 @@ You can load the images in one of the following two ways. When a container regis
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: kangaroo-offline # (1)
+          intermediateBundlesPath: kangaroo-offline # (1)!
         target:
-          containerRegistry: 10.16.10.111 # (2)
-          containerRepository: release.daocloud.io/kangaroo # (3)
+          containerRegistry: 10.16.10.111 # (2)!
+          containerRepository: release.daocloud.io/kangaroo # (3)!
           repo:
-            kind: HARBOR # (4)
-            url: http://10.16.10.111/chartrepo/release.daocloud.io # (5)
+            kind: HARBOR # (4)!
+            url: http://10.16.10.111/chartrepo/release.daocloud.io # (5)!
             auth:
-              username: "admin" # (6)
-              password: "Harbor12345" # (7)
+              username: "admin" # (6)!
+              password: "Harbor12345" # (7)!
           containers:
             auth:
-              username: "admin" # (8)
-              password: "Harbor12345" # (9)
+              username: "admin" # (8)!
+              password: "Harbor12345" # (9)!
         ```
 
         1. Go to the relative path where the charts-syncer command is running, instead of the relative path between this YAML file and the offline package.
@@ -56,17 +61,17 @@ You can load the images in one of the following two ways. When a container regis
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: kangaroo-offline # (1)
+          intermediateBundlesPath: kangaroo-offline # (1)!
         target:
-          containerRegistry: 10.16.10.111 # (2)
-          containerRepository: release.daocloud.io/kangaroo # (3)
+          containerRegistry: 10.16.10.111 # (2)!
+          containerRepository: release.daocloud.io/kangaroo # (3)!
           repo:
             kind: LOCAL
-            path: ./local-repo # (4)
+            path: ./local-repo # (4)!
           containers:
             auth:
-              username: "admin" # (5)
-              password: "Harbor12345" # (6)
+              username: "admin" # (5)!
+              password: "Harbor12345" # (6)!
         ```
 
         1. Provide the relative path to run the charts-syncer command,
@@ -145,7 +150,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
     1. Update the global helm repository.
 
         ```shell
-        helm repo update kangaroo # (1)
+        helm repo update kangaroo # (1)!
         ```
 
         1. If the helm version is too low, it may fail. If it fails, try to run `helm update repo`.
@@ -215,7 +220,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
         Before upgrading, it is recommended to replace the `global.imageRegistry` field in bak.yaml with the current container registry address.
 
         ```shell
-        export imageRegistry={your_image_repository}
+        export imageRegistry={your_registry}
         ```
 
         ```shell
