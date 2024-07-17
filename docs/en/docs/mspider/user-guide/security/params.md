@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+Date: 2024-07-17
+---
+
 # Security Governance Parameters
 
 This page introduces the parameters related to peer authentication, request authentication, and authorization policies.
@@ -47,7 +52,7 @@ When using the graphical wizard mode, [request authentication](./request.md) is 
 | jwksUri | spec.jwtRules.issuers.jwksUri | Optional. The JSON file path for the JSON Web Key (JWK), exclusive with jwks. For example, <https://www.googleapis.com/oauth2/v1/certs> |
 | jwks | spec.jwtRules.issuers.jwks | Optional. The content of the JSON Web Key Set (JWKS) file, exclusive with jwksUri. |
 
-For more information, please refer to [OpenID Provider Metadata](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata).
+For more information, refer to [OpenID Provider Metadata](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderMetadata).
 
 ## Authorization Policies
 
@@ -67,7 +72,7 @@ When using the graphical wizard mode, the creation of [authorization policies](.
 
 | UI Item | YAML Field | Description |
 | ------- | ---------- | ----------- |
-| Policy Action | spec.action | Optional. Includes: <br />- allow<br />- deny<br />- audit<br />- custom<br />When selecting custom, an additional __provider__ input item will be displayed. |
+| Policy Action | spec.action | Optional. Includes: <br />- allow<br />- deny<br />- audit<br />- custom<br />When selecting custom, an additional `provider` input item will be displayed. |
 | Provider | spec.provider.name | Required. Only displayed when __Policy Action__ is selected as __custom__. |
 | Request Policies | spec.rules | Optional. Includes request source, request operation, and policy condition. Multiple rules can be added and executed in order. |
 | Add Request Source | spec.rules.-from | Optional. Defines the request source based on the namespace, IP range, etc. Multiple sources can be added. See the following section [Source](#source) for parameters. |
@@ -96,16 +101,16 @@ The specific field descriptions are as follows:
 
 | Key Field | Type | Description |
 | --------- | ---- | ----------- |
-| __principals__ | __string[]__ | Optional. Peer identities derived from peer certificates. The format of peer identities is __"<TRUST_DOMAIN>/ns/<NAMESPACE>/sa/<SERVICE_ACCOUNT>"__, for example, __"cluster.local/ns/default/sa/productpage"__. This field requires mTLS to be enabled and is equivalent to the __source.principal__ property. If not set, it allows all principals. |
-| __notPrincipals__ | __string[]__ | Optional. Reverse matching list for peer identities. |
-| __requestPrincipals__ | __string[]__ | Optional. Request identities derived from JWT. The format of request identities is __"<ISS>/<SUB>"__, for example, __"example.com/sub-1"__. This field requires request authentication to be enabled and is equivalent to the __request.auth.principal__ property. If not set, it allows all request principals. |
-| __notRequestPrincipals__ | __string[]__ | Optional. Reverse matching list for request identities. |
-| __namespaces__ | __string[]__ | Optional. Namespaces derived from peer certificates. This field requires mTLS to be enabled and is equivalent to the __source.namespace__ property. If not set, it allows all namespaces. |
-| __notNamespaces__ | __string[]__ | Optional. Reverse matching list for namespaces. |
-| __ipBlocks__ | __string[]__ | Optional. IP ranges filled based on the source address of IP packets. Supports single IPs (e.g., "1.2.3.4") and CIDR (e.g., "1.2.3.0/24"). This is equivalent to the __source.ip__ property. If not set, it allows all IPs. |
-| __notIpBlocks__ | __string[]__ | Optional. Reverse matching list for IP ranges. |
-| __remoteIpBlocks__ | __string[]__ | Optional. IP ranges filled based on the X-Forwarded-For header or proxy protocol. To use this field, you must configure the numTrustedProxies field in meshConfig when installing Istio or when using annotations on the ingress gateway. Supports single IPs (e.g., "1.2.3.4") and CIDR (e.g., "1.2.3.0/24"). This is equivalent to the __remote.ip__ property. If not set, it allows all IPs. |
-| __notRemoteIpBlocks__ | __string[]__ | Optional. Reverse matching list for remote IP ranges. |
+| `principals` | `string[]` | Optional. Peer identities derived from peer certificates. The format of peer identities is `"<TRUST_DOMAIN>/ns/<NAMESPACE>/sa/<SERVICE_ACCOUNT>"`, for example, `"cluster.local/ns/default/sa/productpage"`. This field requires mTLS to be enabled and is equivalent to the `source.principal` property. If not set, it allows all principals. |
+| `notPrincipals` | `string[]` | Optional. Reverse matching list for peer identities. |
+| `requestPrincipals` | `string[]` | Optional. Request identities derived from JWT. The format of request identities is `"<ISS>/<SUB>"`, for example, `"example.com/sub-1"`. This field requires request authentication to be enabled and is equivalent to the `request.auth.principal` property. If not set, it allows all request principals. |
+| `notRequestPrincipals` | `string[]` | Optional. Reverse matching list for request identities. |
+| `namespaces` | `string[]` | Optional. Namespaces derived from peer certificates. This field requires mTLS to be enabled and is equivalent to the `source.namespace` property. If not set, it allows all namespaces. |
+| `notNamespaces` | `string[]` | Optional. Reverse matching list for namespaces. |
+| `ipBlocks` | `string[]` | Optional. IP ranges filled based on the source address of IP packets. Supports single IPs (e.g., "1.2.3.4") and CIDR (e.g., "1.2.3.0/24"). This is equivalent to the `source.ip` property. If not set, it allows all IPs. |
+| `notIpBlocks` | `string[]` | Optional. Reverse matching list for IP ranges. |
+| `remoteIpBlocks` | `string[]` | Optional. IP ranges filled based on the X-Forwarded-For header or proxy protocol. To use this field, you must configure the numTrustedProxies field in meshConfig when installing Istio or when using annotations on the ingress gateway. Supports single IPs (e.g., "1.2.3.4") and CIDR (e.g., "1.2.3.0/24"). This is equivalent to the `remote.ip` property. If not set, it allows all IPs. |
+| `notRemoteIpBlocks` | `string[]` | Optional. Reverse matching list for remote IP ranges. |
 
 #### Operation
 
@@ -125,14 +130,14 @@ notPaths: ["/admin*"]
 
 | Key Field | Type | Description |
 | --------- | ---- | ----------- |
-| __hosts__ | __string[]__ | Optional. The list of hosts specified in the HTTP request. Case-insensitive. If not set, it allows all hosts. Only applicable to HTTP. |
-| __notHosts__ | __string[]__ | Optional. Reverse matching list for hosts specified in the HTTP request. Case-insensitive. |
-| __ports__ | __string[]__ | Optional. The list of ports specified in the connection. If not set, it allows all ports. |
-| __notPorts__ | __string[]__ | Optional. Reverse matching list for ports specified in the connection. |
-| __methods__ | __string[]__ | Optional. The list of methods specified in the HTTP request. For gRPC services, this will always be "POST". If not set, it allows all methods. Only applicable to HTTP. |
-| __notMethods__ | __string[]__ | Optional. Reverse matching list for methods specified in the HTTP request. |
-| __paths__ | __string[]__ | Optional. The list of paths specified in the HTTP request. For gRPC services, this will be in the format of "/package.service/method" fully qualified name. If not set, it allows all paths. Only applicable to HTTP. |
-| __notPaths__ | __string[]__ | Optional. Reverse matching list for paths. |
+| `hosts` | `string[]` | Optional. The list of hosts specified in the HTTP request. Case-insensitive. If not set, it allows all hosts. Only applicable to HTTP. |
+| `notHosts` | `string[]` | Optional. Reverse matching list for hosts specified in the HTTP request. Case-insensitive. |
+| `ports` | `string[]` | Optional. The list of ports specified in the connection. If not set, it allows all ports. |
+| `notPorts` | `string[]` | Optional. Reverse matching list for ports specified in the connection. |
+| `methods` | `string[]` | Optional. The list of methods specified in the HTTP request. For gRPC services, this will always be "POST". If not set, it allows all methods. Only applicable to HTTP. |
+| `notMethods` | `string[]` | Optional. Reverse matching list for methods specified in the HTTP request. |
+| `paths` | `string[]` | Optional. The list of paths specified in the HTTP request. For gRPC services, this will be in the format of "/package.service/method" fully qualified name. If not set, it allows all paths. Only applicable to HTTP. |
+| `notPaths` | `string[]` | Optional. Reverse matching list for paths. |
 
 **In actual operations, it is also important to note the addition of some common keys**
 
@@ -140,7 +145,8 @@ notPaths: ["/admin*"]
 - request.auth.claims[iss]
 - experimental.envoy.filters.network.mysql_proxy[db.table]
 
-For more information about the configuration parameters of __AuthorizationPolicy__, please refer to the documentation at <https://istio.io/latest/docs/reference/config/security/conditions/>.
+For more information about the configuration parameters of __AuthorizationPolicy__, 
+refer to the documentation at [Istio Authorization Policy Conditions](https://istio.io/latest/docs/reference/config/security/conditions/).
 
 #### Condition
 
@@ -148,20 +154,20 @@ You can also add policy conditions (Condition). Condition specifies other requir
 
 | Key Field | Description | Supported Protocols | Value Example |
 | --------- | ----------- | ------------------ | ------------- |
-| __request.headers__ | HTTP request headers, enclosed in __[]__ | HTTP only | __["Mozilla/*"]__ |
-| __source.ip__ | Source IP address, supports single IP or CIDR | HTTP and TCP | __["10.1.2.3"]__ |
-| __remote.ip__ | Original client IP address determined by the X-Forwarded-For request header or proxy protocol, supports single IP or CIDR | HTTP and TCP | __["10.1.2.3", "10.2.0.0/16"]__ |
-| __source.namespace__ | Namespace of the source workload instance, requires bidirectional TLS | HTTP and TCP | __["default"]__  |
-| __source.principal__ | Identity of the source workload, requires bidirectional TLS | HTTP and TCP | __["cluster.local/ns/default/sa/productpage"]__ |
-| __request.auth.principal__ | Request with authenticated __principal__ | HTTP only | __["accounts.my-svc.com/104958560606"]__ |
-| __request.auth.audiences__ | Target subject of this authentication information | HTTP only | __["my-svc.com"]__  |
-| __request.auth.presenter__ | Issuer of the certificate | HTTP only | __["123456789012.my-svc.com"]__ |
-| __request.auth.claims__ | Claims derived from JWT, enclosed in __[]__ | HTTP only | __["*@foo.com"]__ |
-| __destination.ip__ | Destination IP address, supports single IP or CIDR | HTTP and TCP | __["10.1.2.3", "10.2.0.0/16"]__ |
-| __destination.port__ | Port on the destination IP address, must be within the range of __[0, 65535]__ | HTTP and TCP | __["80", "443"]__ |
-| __connection.sni__ | Server Name Indication, requires bidirectional TLS | HTTP and TCP | __["www.example.com"]__ |
-| __experimental.envoy.filters.*__ | Experimental metadata matches for filters, with the value enclosed in __[]__ as a list match | HTTP and TCP | __["[update]"]__ |
+| `request.headers` | HTTP request headers, enclosed in `[]` | HTTP only | `["Mozilla/*"]` |
+| `source.ip` | Source IP address, supports single IP or CIDR | HTTP and TCP | `["10.1.2.3"]` |
+| `remote.ip` | Original client IP address determined by the X-Forwarded-For request header or proxy protocol, supports single IP or CIDR | HTTP and TCP | `["10.1.2.3", "10.2.0.0/16"]` |
+| `source.namespace` | Namespace of the source workload instance, requires bidirectional TLS | HTTP and TCP | `["default"]`  |
+| `source.principal` | Identity of the source workload, requires bidirectional TLS | HTTP and TCP | `["cluster.local/ns/default/sa/productpage"]` |
+| `request.auth.principal` | Request with authenticated `principal` | HTTP only | `["accounts.my-svc.com/104958560606"]` |
+| `request.auth.audiences` | Target subject of this authentication information | HTTP only | `["my-svc.com"]`  |
+| `request.auth.presenter` | Issuer of the certificate | HTTP only | `["123456789012.my-svc.com"]` |
+| `request.auth.claims` | Claims derived from JWT, enclosed in `[]` | HTTP only | `["*@foo.com"]` |
+| `destination.ip` | Destination IP address, supports single IP or CIDR | HTTP and TCP | `["10.1.2.3", "10.2.0.0/16"]` |
+| `destination.port` | Port on the destination IP address, must be within the range of `[0, 65535]` | HTTP and TCP | `["80", "443"]` |
+| `connection.sni` | Server Name Indication, requires bidirectional TLS | HTTP and TCP | `["www.example.com"]` |
+| `experimental.envoy.filters.*` | Experimental metadata matches for filters, with the value enclosed in `[]` as a list match | HTTP and TCP | `["[update]"]` |
 
 !!! note
 
-    The backward compatibility of __experimental.*__ keys cannot be guaranteed and they may be removed at any time, so be cautious.
+    The backward compatibility of `experimental.*` keys cannot be guaranteed and they may be removed at any time, so be cautious.

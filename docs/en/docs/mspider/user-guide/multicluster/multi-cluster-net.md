@@ -105,7 +105,7 @@ In the simplest case, a mesh can be run with a control plane on a single cluster
 ### Multicluster single control plane
 
 Multicluster deployments can also share control plane instances.
-In this case, the shared control plane instance of the core is deployed in the core control cluster, and the communication strategy of the mesh core is controlled by **shared control plane instance**.
+In this case, the shared control plane instance of the core is deployed in the core control cluster, and the communication policy of the mesh core is controlled by **shared control plane instance**.
 In the slave cluster, there is actually a slave control plane instance whose core capability is **controlling the sidecar life cycle management of the cluster**.
 
 
@@ -162,8 +162,8 @@ After authorization, the control plane can perform service discovery for multipl
 
 
 
-Under the multicluster mesh deployment model, the default strategy for multicluster services is: each cluster balances the load.
-But in a complex and huge production environment, in fact, many services only need to communicate with traffic in certain areas. At this time, the local priority load balancing strategy can be adopted (for specific methods, refer to [Locality Load Balancing mentioned by Istio official](https ://istio.io/latest/docs/tasks/traffic-management/locality-load-balancing/)).
+Under the multicluster mesh deployment model, the default policy for multicluster services is: each cluster balances the load.
+But in a complex and huge production environment, in fact, many services only need to communicate with traffic in certain areas. At this time, the local priority load balancing policy can be adopted (for specific methods, refer to [Locality Load Balancing mentioned by Istio official](https ://istio.io/latest/docs/tasks/traffic-management/locality-load-balancing/)).
 
 In some cases, we will find that the cross-cluster traffic load capacity is not frequently operated, and the cross-cluster load all the time is not what we expected.
 For example, we just need blue-green deployment, and its versions are located in different clusters;
@@ -209,13 +209,13 @@ How did we come to this conclusion? In the early stage, we internally chose mult
 
 - Complex strategies and high hidden dangers:
 
-     - Complex configuration: Different control planes require different strategies. Although it is an independent control plane strategy from another perspective, in a multicluster scenario, the cluster is definitely one or two, and the total number of applications will also expand with the expansion of the cluster. It becomes more complicated, and it is very easy for some clusters to forget the configuration, or to change the configuration and need to configure multiple sets of the same strategy repeatedly.
+     - Complex configuration: Different control planes require different strategies. Although it is an independent control plane policy from another perspective, in a multicluster scenario, the cluster is definitely one or two, and the total number of applications will also expand with the expansion of the cluster. It becomes more complicated, and it is very easy for some clusters to forget the configuration, or to change the configuration and need to configure multiple sets of the same policy repeatedly.
      - Policy conflict: There are many sets of control plane policies, and users need to accurately grasp each policy, otherwise it is easy to cause policy conflicts.
 
 - High cost of control plane deployment and upgrade maintenance: When there are multiple sets of control planes, we need to maintain the deployment and upgrade of multiple sets of control planes.
 - Pollution of multiple control plane clusters: Since the mesh needs to aggregate multicluster namespaces and services, it pollutes the control plane cluster. Let me illustrate with an example: when cluster A has namespaces N1 and N2; cluster B has namespace N3; and both clusters A and B are control plane clusters, cluster A needs to add N3, and cluster B needs to add N1 and N2. It is very scary when the multicluster and the business in the cluster reach a certain volume.
 
-However, most of the above problems can be avoided in the multicluster single control plane mode, especially the complex governance strategy. All strategies will be unified in one cluster, so the difficulty of configuration and management will be greatly reduced.
+However, most of the above problems can be avoided in the multicluster single control plane mode, especially the complex governance policy. All strategies will be unified in one cluster, so the difficulty of configuration and management will be greatly reduced.
 
 ### Service Mesh Architecture
 

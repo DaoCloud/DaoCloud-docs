@@ -24,7 +24,7 @@ This section explains how to enable/disable traffic passthrough on the DCE GUI.
 
     
 
-1. Click __⋮__ on the right side of a workload, and select __Traffic passthrough Settings__ in the pop-up menu.
+1. Click __┇__ on the right side of a workload, and select __Traffic passthrough Settings__ in the pop-up menu.
 
     
 

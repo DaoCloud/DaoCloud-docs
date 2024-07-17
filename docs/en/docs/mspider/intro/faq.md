@@ -31,10 +31,10 @@ hide:
 
     - Disable sidecar injection if either one of the two is set to disabled
     - Enable sidecar injection if either one of the two is set to enabled
-    - If neither is set, the mesh global sidecar injection strategy (values.sidecarInjectorWebhook.enableNamespacesByDefault) will be executed.
+    - If neither is set, the mesh global sidecar injection policy (values.sidecarInjectorWebhook.enableNamespacesByDefault) will be executed.
 
-    For further details, please refer to [Install Sidecar](https://istio.io/latest/docs/setup/additional-setup/sidecar-injection/).
+    For further details, refer to [Install Sidecar](https://istio.io/latest/docs/setup/additional-setup/sidecar-injection/).
 
 1. What distinguishes traditional microservices from service mesh?
 
-    To incorporate a traditional microservice into a service mesh, it is simply necessary to inject the corresponding workload into a sidecar so that all of the mesh's capabilities, such as traffic management, security, observability, and more, can be leveraged. Due to the non-invasive nature of the mesh and varying microservice frameworks, the governance strategy of the original framework may require modification, but users need not implement these changes themselves.
+    To incorporate a traditional microservice into a service mesh, it is simply necessary to inject the corresponding workload into a sidecar so that all of the mesh's capabilities, such as traffic management, security, observability, and more, can be leveraged. Due to the non-invasive nature of the mesh and varying microservice frameworks, the governance policy of the original framework may require modification, but users need not implement these changes themselves.

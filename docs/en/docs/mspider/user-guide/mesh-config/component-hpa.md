@@ -1,10 +1,10 @@
 # Component resource elastic scaling
 
-Users can control the [Control Plane Components](../../intro/comp-archi-ui/cp-component.md) realizes the elastic scaling strategy. Currently, it provides three elastic scaling methods: metric shrinking (HPA), timing shrinking (CronHPA), and vertical scaling (VPA). Users can choose the appropriate elastic scaling strategy according to their needs. The following uses index scaling (HPA) as an example to introduce the method of creating an auto scaling policy.
+Users can control the [Control Plane Components](../../intro/comp-archi-ui/cp-component.md) realizes the elastic scaling policy. Currently, it provides three elastic scaling methods: metric shrinking (HPA), timing shrinking (CronHPA), and vertical scaling (VPA). Users can choose the appropriate elastic scaling policy according to their needs. The following uses index scaling (HPA) as an example to introduce the method of creating an auto scaling policy.
 
 ## Prerequisites
 
-Make sure the helm application __Metrics Server__ is installed on the cluster, please refer to [Install metrics-server plugin](../../../kpanda/user-guide/scale/install-metrics-server.md)
+Make sure the helm application __Metrics Server__ is installed on the cluster, refer to [Install metrics-server plugin](../../../kpanda/user-guide/scale/install-metrics-server.md)
 
       
 

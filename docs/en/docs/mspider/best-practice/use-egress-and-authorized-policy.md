@@ -13,7 +13,7 @@ In Istio, we can use __Egress__ to control the outbound traffic from a service a
 
 ## Prerequisites
 
-Firstly, ensure that your mesh is in a healthy state. If you haven't installed Istio yet, please refer to the [Mesh Installation Guide](../install/install.md).
+Firstly, ensure that your mesh is in a healthy state. If you haven't installed Istio yet, refer to the [Mesh Installation Guide](../install/install.md).
 
 ### Enabling Outbound Traffic Only
 
