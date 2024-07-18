@@ -80,6 +80,8 @@ nav:
                       - 部署集群时如何配置扩展参数？: install/best-practices/extend-params.md
                   - 离线包裁剪脚本使用手册: install/best-practices/offline-clipper.md
                   - 修复CVE-2024-21626漏洞: install/best-practices/cve-20240-21626.md
+              - 客户案例:
+                  - 全局服务集群重装后如何纳管原工作集群: install/best-practices/remanage-work-cluster.md
               - 安装器 Release Notes: install/release-notes.md
           - 最佳实践: dce/bphome.md
       - 工作台:
