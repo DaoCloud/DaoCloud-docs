@@ -27,7 +27,7 @@ Follow the steps below to create an override policy using YAML.
 
     ![Create from YAML](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/op002.png)
 
-3. Return to the override policy list, and the newly created one is the first one by default. Click __⋮__ on the right side of the list to edit YAML and perform delete operations.
+3. Return to the override policy list, and the newly created one is the first one by default. Click __┇__ on the right side of the list to edit YAML and perform delete operations.
 
     !!! note
 

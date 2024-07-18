@@ -17,7 +17,7 @@
 
     ![yaml创建](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/op002.png)
 
-3. 返回差异化策略列表，新创建的默认位于第一个。点击列表右侧的 __⋮__ ，可以编辑 YAML 和执行删除操作。
+3. 返回差异化策略列表，新创建的默认位于第一个。点击列表右侧的 __┇__ ，可以编辑 YAML 和执行删除操作。
 
     !!! note
 

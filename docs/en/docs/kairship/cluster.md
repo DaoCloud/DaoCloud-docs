@@ -18,7 +18,7 @@ After creating multicloud instances, you need to connect them to work clusters.
 
 ## Remove a Cluster
 
-1. Click the __⋮__ button on the right side of the cluster, and select __Remove__ from the pop-up menu.
+1. Click the __┇__ button on the right side of the cluster, and select __Remove__ from the pop-up menu.
 
     ![Removal](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/cluster03.png)
 
@@ -32,7 +32,7 @@ After creating multicloud instances, you need to connect them to work clusters.
 
 ## More Operations
 
-The system will automatically return to the work cluster list. Click the __⋮__ button on the right side of the cluster to perform operations such as __Pause/Resume Schedule__ , __Edit Cluster Labels__ , and __Modify Cluster Taints__ .
+The system will automatically return to the work cluster list. Click the __┇__ button on the right side of the cluster to perform operations such as __Pause/Resume Schedule__ , __Edit Cluster Labels__ , and __Modify Cluster Taints__ .
 
 ![More Operations](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/cluster05.png)
 

@@ -19,7 +19,7 @@ Secret 类似于 ConfigMap 但专门用于保存机密数据。
 
     ![填写表单](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/secret02.png)
 
-3. 返回多云密钥列表，新创建的默认位于第一个。点击列表右侧的 __⋮__ ，可以编辑 YAML、更新、导出和删除 Secret。
+3. 返回多云密钥列表，新创建的默认位于第一个。点击列表右侧的 __┇__ ，可以编辑 YAML、更新、导出和删除 Secret。
 
     ![其他操作](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/secret03.png)
 

@@ -27,7 +27,7 @@ Follow the steps below to manage multicloud services.
 
     ![Upgrade](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/service04.png)
 
-5. Click __⋮__ on the right side of the list to update and delete the service.
+5. Click __┇__ on the right side of the list to update and delete the service.
 
     ![Update/Delete](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/service05.png)
 

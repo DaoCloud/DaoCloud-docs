@@ -15,7 +15,7 @@
 
     ![填写表单](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/config02.png)
 
-3. 返回多云配置项列表，新创建的默认位于第一个。点击列表右侧的 __⋮__ ，可以编辑 YAML、更新、导出和删除配置项。
+3. 返回多云配置项列表，新创建的默认位于第一个。点击列表右侧的 __┇__ ，可以编辑 YAML、更新、导出和删除配置项。
 
     ![其他操作](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/config03.png)
 
