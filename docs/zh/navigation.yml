@@ -1447,22 +1447,23 @@ nav:
           - 2024 云原生社区要闻: native/news/news-2024.md
           - 2023 云原生社区要闻: native/news/news-2023.md
           - 2022 云原生社区要闻: native/news/news-2022.md
+      - 编写和贡献指南:
+          - Git 文档流程: native/git/index.md
+          - Git开启两步安全验证: native/git/2auth.md
+          - Git 常见问题: native/git/rebase.md
+          - 常用 Git 命令: native/git/cmd.md
+          - VSCode 编辑技巧: native/git/vscode.md
+          - GitLab i18n 翻译预览: native/git/ui-preview.md
+          - GitHub 混迹技巧: native/git/github.md
+          - Git 同步中英文档: native/git/lsync.md
+          - 文档站工作说明: native/git/works.md
+          - 视频剪辑帮助: native/git/video.md
+          - K8s 相关资源: native/git/k8s.md
       - 行业洞察:
           - 商业产品: native/commerce.md
           - 开源项目: native/open.md
       - 知识分享:
           - 索引: native/knowledge/index.md
-          - Git 文档指南:
-              - Git 文档流程: native/knowledge/git/index.md
-              - 开启两步安全验证: native/knowledge/git/2auth.md
-              - Git 常见问题: native/knowledge/git/rebase.md
-              - VSCode 编辑技巧: native/knowledge/git/vscode.md
-              - 常用 Git 命令: native/knowledge/git/cmd.md
-              - UI 翻译预览: native/knowledge/git/ui-preview.md
-              - GitHub 混迹技巧: native/knowledge/git/github.md
-              - 同步中英文档: native/knowledge/git/lsync.md
-              - 文档站工作说明: native/knowledge/git/works.md
-              - 视频剪辑帮助: native/knowledge/git/video.md
           - 排障方案: native/knowledge/troubleshoot.md
           - 最佳实践: native/knowledge/best-practice.md
           - 工具推荐: native/knowledge/tools.md
