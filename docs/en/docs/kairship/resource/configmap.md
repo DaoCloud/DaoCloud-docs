@@ -1,13 +1,21 @@
+---
+MTPE: ModetaNiu
+DATE: 2024-07-18
+---
+
 # Multicloud ConfigMaps
 
 ConfigMap is an API object used to save non-confidential data into key-value pairs.
 When used, Pods can use it as an environment variable, as a command-line argument, or as a configuration file in a storage volume.
 
-Multicloud ConfigMaps can decouple multicloud environment configuration information from container images, making it easy to modify the configuration of multicloud applications.
+Multicloud ConfigMaps can decouple multicloud environment configuration information from container images, 
+making it easy to modify the configuration of multicloud applications.
 
-Two creation methods are currently provided: wizard creation and YAML creation. This article takes wizard creation as an example, and follows the steps below.
+Two creation methods are currently provided: wizard creation and YAML creation. 
+This article takes wizard creation as an example. You can follow the steps below.
 
-1. After entering a multicloud instance, in the left navigation bar, click __Resource Management__ -> __Multicloud ConfigMaps__ , and click the __Create Multicloud ConfigMaps__ button in the upper right corner.
+1. After entering a multicloud instance, in the left navigation bar, click __Resource Management__ -> __Multicloud ConfigMaps__ , 
+   and click the __Create Multicloud ConfigMaps__ button in the upper right corner.
 
     ![Create ConfigMap](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/config01.png)
 
@@ -15,7 +23,8 @@ Two creation methods are currently provided: wizard creation and YAML creation. 
 
     ![Fill ConfigMap](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/config02.png)
 
-3. Return to the list of multicloud configuration items, and the newly created one will be the first one by default. Click __⋮__ on the right side of the list to edit YAML, update, export and delete configuration items.
+3. Return to the list of multicloud configuration items, and the newly created one will be the first one by default. 
+   Click __⋮__ on the right side of the list to edit YAML, update, export and delete configuration items.
 
     ![Update/Delete](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/config03.png)
 
