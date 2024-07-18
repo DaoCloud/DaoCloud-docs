@@ -64,4 +64,4 @@ DaoCloud 现有 [10 多个开源项目](../../../community/index.md)，
 - [Microsoft Writing Style Guide](https://learn.microsoft.com/en-us/style-guide/welcome/)
 - 多去参加 CNCF 社区活动，跟同行交流才会有进步和成长
 
-![KCD 2024](../../images/kcd.jpeg)
+![KCD 2024](../images/kcd.jpeg)
