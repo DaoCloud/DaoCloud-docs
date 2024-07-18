@@ -80,6 +80,8 @@ nav:
                       - Configure Extended Parameters: install/best-practices/extend-params.md
                   - Offline-Clipper Guidelines: install/best-practices/offline-clipper.md
                   - Fixing CVE-2024-21626 bugs: install/best-practices/cve-20240-21626.md
+              - Use Cases:
+                  - Reintegrate Worker Clusters After Global Service Cluster Redeployed: install/best-practices/remanage-work-cluster.md
               - Installer Release Notes: install/release-notes.md
           - Best Practices: dce/bphome.md
       - Workbench:
