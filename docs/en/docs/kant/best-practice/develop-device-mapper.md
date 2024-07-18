@@ -113,55 +113,53 @@ This page introduces the development and deployment process of the device driver
 
 2. Deploy the mapper application
 
-    **Binary Deployment**
+    == "Binary Deployment"
 
-    1. In the project's main directory, use `go build ./cmd/main.go` to compile the binary file
-       for the proper architecture, such as compiling the binary file in a Linux environment
+        1. In the project's main directory, use `go build ./cmd/main.go` to compile the binary file
+          for the proper architecture, such as compiling the binary file in a Linux environment
 
-        ```shell
-        GOOS=linux GOARCH=amd64 go build ./cmd/main.go -o {output filename} # (1)!
-        ```
+            ```shell
+            GOOS=linux GOARCH=amd64 go build ./cmd/main.go -o {output filename} # (1)!
+            ```
 
-        1. The -o parameter can be omitted
+            1. The -o parameter can be omitted
 
-    2. Upload the binary file to the node bound to the device, making sure to place the config.yaml file in the same directory as the binary file, otherwise it will result in a file not found error
+        2. Upload the binary file to the node bound to the device, making sure to place the config.yaml file in the same directory as the binary file, otherwise it will result in a file not found error
 
-        ```shell
-        # The directory should contain the following two files, where main is the binary file and config.yaml is the configuration file
-        root@nx:~/device-test# ls
-        config.yaml  main
-        # Next, execute ./main in this directory
-        ```
+            ```shell
+            # The directory should contain the following two files, where main is the binary file and config.yaml is the configuration file
+            root@nx:~/device-test# ls
+            config.yaml  main
+            # Next, execute ./main in this directory
+            ```
 
-    **Containerized Deployment**
+    === "Containerized Deployment"
 
-    1. Use the provided Dockerfile for compilation
-    
-    2. After compilation, deploy using the configmap and deployment resources in the resource directory
+        1. Use the provided Dockerfile for compilation
+        
+        2. After compilation, deploy using the ConfigMap and deployment resources in the resource directory
 
-        !!! note
+            !!! note
 
-            Modify the image in the deployment to the actual compiled image name,
-            and also modify the protocol field in the configmap.
-    
-        ```yaml
-        apiVersion: v1
-        kind: ConfigMap
-        metadata:
-          name: cm-mapper
-        data:
-          configData: |
-            grpc_server:
-              socket_path: /etc/kubeedge/arduino.sock
-            common:
-              name: arduino-mapper
-              version: v1.13.0
-              api_version: v1.0.0
-              protocol: arduino # (1)!
-              address: 127.0.0.1
-              edgecore_sock: /etc/kubeedge/dmi.sock
-        ```
-
-        1. add your protocol name
+                Modify the image in the deployment to the actual compiled image name,
+                and also modify the protocol field in the ConfigMap.
+        
+            ```yaml
+            apiVersion: v1
+            kind: ConfigMap
+            metadata:
+              name: cm-mapper
+            data:
+              configData: |
+                grpc_server:
+                  socket_path: /etc/kubeedge/arduino.sock
+                common:
+                  name: arduino-mapper
+                  version: v1.13.0
+                  api_version: v1.0.0
+                  protocol: arduino # add your protocol name
+                  address: 127.0.0.1
+                  edgecore_sock: /etc/kubeedge/dmi.sock
+            ```
 
 The development of the device driver mapper is now complete.
