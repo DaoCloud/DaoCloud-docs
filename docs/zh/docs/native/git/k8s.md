@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Kubernetes 相关资源汇总
 
 本页列出 Kubernetes 相关的一些网站资源，方便后续检索和查询。
