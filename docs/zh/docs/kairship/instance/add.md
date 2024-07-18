@@ -30,7 +30,7 @@ hide:
 
 3. 选择安装多云实例的管理面集群时，选择安装多云实例的管理面集群时，建议使用运行正常并且安装了存储类（SC）的集群并保证对应的存储卷空间充足，否则存在安装失败的风险。若安装失败，可以在对应的管理面集群中查看原因。可根据以下步骤检查问题。
 
-    - 在管理面集群无状态负载中，检查 __etcd__ 的运行状态。
+    - 在管理面集群有状态负载中，检查 __etcd__ 的运行状态。
 
         ![check-etcd](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/check-etcd.png)
 
@@ -42,8 +42,8 @@ hide:
 
         ![更新无状态负载](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/update-deployment.png)
 
-      - 进入更新页面后，修改容器配置-生命周期的启动命令，可根据管理面集群的真实情况更新。
+    - 进入更新页面后，修改容器配置-生命周期的启动命令，可根据管理面集群的真实情况更新。
 
-          ![更新启动命令](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/update-setting.png)
+        ![更新启动命令](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kairship/images/update-setting.png)
 
     - 如果管理面集群中不存在存储卷声明（PVC），而是使用 hostPath，尽管可以成功安装，但无法实现高可用功能。
