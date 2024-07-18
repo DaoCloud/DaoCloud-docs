@@ -27,7 +27,7 @@ DCE 为运行服务的 Pod 提供了 IP 地址，并为一组 Pod 提供相同�
 
     ![升级为多云服务](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/service04.png)
 
-5. 点击列表右侧的 __⋮__ ，可以更新和删除该服务。
+5. 点击列表右侧的 __┇__ ，可以更新和删除该服务。
 
     ![更新/删除服务](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/service05.png)
 

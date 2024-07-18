@@ -21,7 +21,7 @@ hide:
 
     ![一键转换](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/create-ingress03.png)
 
-4. 点击列表右侧的 __⋮__ ，可以更新和删除该路由。
+4. 点击列表右侧的 __┇__ ，可以更新和删除该路由。
 
     ![更新和删除](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/create-ingress04.png)
 

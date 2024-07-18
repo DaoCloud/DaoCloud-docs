@@ -23,8 +23,8 @@ This article takes wizard creation as an example. You can follow the steps below
 
     ![Fill ConfigMap](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/config02.png)
 
-3. Return to the list of multicloud configuration items, and the newly created one will be the first one by default. 
-   Click __⋮__ on the right side of the list to edit YAML, update, export and delete configuration items.
+3. Return to the list of multicloud configmaps, and the newly created one will be the first one by default.
+   Click __┇__ on the right side of the list to edit YAML, update, export and delete configuration items.
 
     ![Update/Delete](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/config03.png)
 

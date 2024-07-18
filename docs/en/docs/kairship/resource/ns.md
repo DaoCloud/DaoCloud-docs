@@ -20,7 +20,7 @@ This article takes wizard creation as an example. You can follow the steps below
 
     ![Fill](../images/namespace-en.png)
 
-3. Return to the list of multicloud namespaces, and the newly created one will be the first one by default. Click __⋮__ on the right side of the list to edit the YAML, view events, update or delete the namespace.
+3. Return to the list of multicloud namespaces, and the newly created one will be the first one by default. Click __┇__ on the right side of the list to edit the YAML, view events, update or delete the namespace.
 
     ![Other operations](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/ns03.png)
 

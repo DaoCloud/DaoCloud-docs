@@ -21,7 +21,7 @@ Currently, two creation methods are provided: form creation and YAML creation. T
 
     ![Convert Now](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/create-ingress03.png)
 
-4. Click __⋮__ on the right side of the list to update and delete the ingress.
+4. Click __┇__ on the right side of the list to update and delete the ingress.
 
     ![Update/Delete](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/create-ingress04.png)
 
