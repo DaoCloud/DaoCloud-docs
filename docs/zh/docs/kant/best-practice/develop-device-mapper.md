@@ -113,53 +113,51 @@ hide:
 
 2. 部署 mapper 应用
 
-    **二进制部署**
+    === "二进制部署"
 
-    1. 在项目的主目录使用 `go build ./cmd/main.go` 编译出对应架构的二进制文件，比如编译 linux 环境下的可执行文件
+        1. 在项目的主目录使用 `go build ./cmd/main.go` 编译出对应架构的二进制文件，比如编译 linux 环境下的可执行文件
 
-        ```shell
-        GOOS=linux GOARCH=amd64 go build ./cmd/main.go -o {输出的文件名称}     # (1)!
-        ```
+            ```shell
+            GOOS=linux GOARCH=amd64 go build ./cmd/main.go -o {输出的文件名称}     # (1)!
+            ```
 
-        1. -o 参数可以不填
+            1. -o 参数可以不填
 
-    2. 将二进制文件上传到设备绑定的节点，注意需要在可执行文件所在目录将 config.yaml 文件放在这里，否则会报文件找不到的错误
+        2. 将二进制文件上传到设备绑定的节点，注意需要在可执行文件所在目录将 config.yaml 文件放在这里，否则会报文件找不到的错误
 
-        ```shell
-        # 目录中应该包含以下两个文件，其中 main 是可执行文件，config.yaml 是配置文件
-        root@nx:~/device-test# ls
-        config.yaml  main
-        # 接下来在该目录执行 ./main 即可
-        ```
+            ```shell
+            # 目录中应该包含以下两个文件，其中 main 是可执行文件，config.yaml 是配置文件
+            root@nx:~/device-test# ls
+            config.yaml  main
+            # 接下来在该目录执行 ./main 即可
+            ```
 
-    **容器化部署**
+    === "容器化部署"
 
-    1. 使用提供的 Dockerfile 文件进行编译
-    
-    2. 编译完成后，使用 resource 目录下的 configmap 和 deployment 资源进行部署
+        1. 使用提供的 Dockerfile 文件进行编译
+        
+        2. 编译完成后，使用 resource 目录下的 ConfigMap 和 Deployment 资源进行部署
 
-        !!! note
+            !!! note
 
-            修改 deployment 的镜像为实际编译出的镜像名称，configmap 也需要修改 protocol 字段。
-    
-        ```yaml
-        apiVersion: v1
-        kind: ConfigMap
-        metadata:
-          name: cm-mapper
-        data:
-          configData: |
-            grpc_server:
-              socket_path: /etc/kubeedge/arduino.sock
-            common:
-              name: arduino-mapper
-              version: v1.13.0
-              api_version: v1.0.0
-              protocol: arduino # (1)!
-              address: 127.0.0.1
-              edgecore_sock: /etc/kubeedge/dmi.sock
-        ```
-
-        1. 改为你的协议名称
+                修改 Deployment 的镜像为实际编译出的镜像名称，ConfigMap 也需要修改 `protocol` 字段。
+        
+            ```yaml
+            apiVersion: v1
+            kind: ConfigMap
+            metadata:
+              name: cm-mapper
+            data:
+              configData: |
+                grpc_server:
+                  socket_path: /etc/kubeedge/arduino.sock
+                common:
+                  name: arduino-mapper
+                  version: v1.13.0
+                  api_version: v1.0.0
+                  protocol: arduino # 改为你的协议名称
+                  address: 127.0.0.1
+                  edgecore_sock: /etc/kubeedge/dmi.sock
+            ```
 
 以上，这就完成了设备驱动应用 mapper 的开发。
