@@ -100,13 +100,13 @@ sh detect-cpu.sh
 
 * 安装 virt-host-validate：
 
-    1. 在 CentOS 上安装：
+    === "在 CentOS 上安装"
     
         ```bash
         yum install -y qemu-kvm libvirt virt-install bridge-utils
         ```
     
-    2. 在 Ubuntu 上安装：
+    === "在 Ubuntu 上安装"
     
         ```bash
         apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
