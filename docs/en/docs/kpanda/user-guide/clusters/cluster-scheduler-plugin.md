@@ -58,7 +58,7 @@ of scheduler-plugins as an example to introduce how to install and use scheduler
     <!-- ![Add scheduler-plugins parameter](../../images/cluster-scheduler-plugin-01.png) -->
 
 2. After successful cluster creation, the system will automatically install the scheduler-plugins and
-   controller component loads. You can check the load status in the proper cluster's deployment.
+   controller component loads. You can check the workload status in the proper cluster's deployment.
 
     <!-- ![Check plugin load status](../../images/cluster-scheduler-plugin-02.png) -->
 

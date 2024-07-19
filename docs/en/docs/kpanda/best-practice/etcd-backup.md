@@ -1,4 +1,9 @@
-# etcd Backup Restore
+---
+MTPE: windsonsea
+Date: 2024-07-19
+---
+
+# etcd Backup and Restore
 
 Using the ETCD backup feature to create a backup policy, you can back up the etcd data of a specified cluster to S3 storage on a scheduled basis. This page focuses on how to restore the data that has been backed up to the current cluster.
 
@@ -6,7 +11,7 @@ Using the ETCD backup feature to create a backup policy, you can back up the etc
 
     - DCE 5.0 ETCD backup restores are limited to backups and restores for the same cluster (with no change in the number of nodes and IP addresses). For example, after the etcd data of Cluster A is backed up, the backup data can only be restored to Cluster A, not to Cluster B.
     - The feature is recommended [app backup and restore](../user-guide/backup/deployment.md) for cross-cluster backups and restores.
-    - First, create a backup strategy to back up the current status. It is recommended to refer to the [ETCD 备份](../user-guide/backup/etcd-backup.md) function.
+    - First, create a backup policy to back up the current status. It is recommended to refer to the [ETCD backup](../user-guide/backup/etcd-backup.md).
 
 The following is a specific case to illustrate the whole process of backup and restore.
 
@@ -25,7 +30,7 @@ Begin with basic information about the target cluster and S3 storage for the res
 
 ### Install the etcdbrctl tool
 
-To implement ETCD data backup and restore, you need to install the etcdbrctl open source tool on any of the above k8s nodes. This tool does not have binary files for the time being and needs to be compiled by itself. Refer to the compilation mode: <https://github.com/gardener/etcd-backup-restore/blob/master/doc/development/local_setup.md#build>.
+To implement ETCD data backup and restore, you need to install the etcdbrctl open source tool on any of the above k8s nodes. This tool does not have binary files for the time being and needs to be compiled by itself. Refer to [the compilation mode](https://github.com/gardener/etcd-backup-restore/blob/master/doc/development/local_setup.md#build).
 
 After installation, use the following command to check whether the tool is available:
 

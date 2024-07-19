@@ -11,7 +11,7 @@ DCE 5.0 provides a GPU Operator offline package with CentOS 7.9 and kernel versi
 - GPU vGPU Mode
 - GPU MIG Mode
 
-Please refer to [NVIDIA GPU Card Usage Modes](index.md) for more details. This article demonstrates the installation using AMD architecture on CentOS 7.9 (3.10.0-1160). If you want to deploy on Red Hat 8.4, refer to [Uploading Red Hat GPU Operator Offline Images to Bootstrap Nodes](./push_image_to_repo.md) and [Building Red Hat 8.4 Offline Yum Repository](./upgrade_yum_source_redhat8_4.md).
+Refer to [NVIDIA GPU Card Usage Modes](index.md) for more details. This article demonstrates the installation using AMD architecture on CentOS 7.9 (3.10.0-1160). If you want to deploy on Red Hat 8.4, refer to [Uploading Red Hat GPU Operator Offline Images to Bootstrap Nodes](./push_image_to_repo.md) and [Building Red Hat 8.4 Offline Yum Repository](./upgrade_yum_source_redhat8_4.md).
 
 ## Prerequisites
 

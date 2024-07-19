@@ -19,7 +19,7 @@ This page lists the main features of container management.
 - Full Application Lifecycle Management: Support for Kubernetes-native workload type deployment and management capabilities, including full lifecycle management such as creation, configuration, monitoring, capacity expansion, upgrade, rollback, and deletion.
 - One-Stop Application Load Creation: Decouple the underlying Kubernetes platform, and create, operate, and maintain business workloads in one stop.
 - Cross-Cluster Application Load Management: Unified management of cross-cluster loads and efficient retrieval capabilities.
-- Scaling and Shrinking of Application Load: Through the interface, manual/automatic scaling of application load can be realized, and the expansion and shrinking strategy can be customized to cope with traffic peaks.
+- Application Autoscaling: Through the interface, manual/automatic scaling of application load can be realized, and the autoscaling policies can be customized to cope with traffic peaks.
 - Container Lifecycle Settings: Support for setting callback features, parameters after startup, and parameters before stopping when creating workloads to meet the needs of specific cases.
 - Container Readiness Check and Survival Check Settings: Support for setting workload readiness check and survival check when deploying applications:
     - Workload readiness check: Used to detect whether the user's business is ready. If it is not ready, the traffic will not be forwarded to the current instance.
@@ -53,7 +53,7 @@ Service (Service) is a Kubernetes-native resource that provides cloud native loa
 - Network Policy: Supports the formulation of network policies at the granularity of namespace or cluster and limits the communication rules between pods and network "entities" on the network plane.
 - Quota Policy: Supports setting quota policies at namespace or cluster granularity tolimit the resource usage of namespaces in the cluster.
 - Resource Limit Policy: Supports setting resource limit policies at namespace or cluster granularity and constrains resource usage limits for applications in corresponding namespaces.
-- Disaster Recovery Strategy: Supports disaster recovery strategy setting at the granularity of namespace or cluster, realizes disaster recovery backup with namespace as the dimension, and ensures the security of the cluster.
+- Disaster Recovery Policy: Supports disaster recovery policy setting at the granularity of namespace or cluster, realizes disaster recovery backup with namespace as the dimension, and ensures the security of the cluster.
 - Security Policy: Supports setting security policies at namespace or cluster granularity and defines different isolation levels for Pods.
 
 ## Extensions

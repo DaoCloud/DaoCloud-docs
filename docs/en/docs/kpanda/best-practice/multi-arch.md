@@ -1,16 +1,16 @@
-# How to Add Heterogeneous Nodes to a Working Cluster
+# How to Add Heterogeneous Nodes to a Worker Cluster
 
-This page explains how to add ARM architecture nodes with Kylin v10 sp2 operating system to an AMD architecture working cluster with CentOS 7.9 operating system.
+This page explains how to add ARM architecture nodes with Kylin v10 sp2 operating system to an AMD architecture worker cluster with CentOS 7.9 operating system.
 
 !!! note
 
-    This page is only applicable to adding heterogeneous nodes to a working cluster created
+    This page is only applicable to adding heterogeneous nodes to a worker cluster created
     using the DCE 5.0 platform in offline mode, excluding connected clusters.
 
 ## Prerequisites
 
 - A DCE 5.0 Full Mode deployment has been successfully completed, and the bootstrap node is still alive. Refer to the documentation [Offline Installation of DCE 5.0 Enterprise](../../install/commercial/start-install.md) for the deployment process.
-- A working cluster with AMD architecture and CentOS 7.9 operating system has been created through the DCE 5.0 platform. Refer to the documentation [Creating a Working Cluster](../user-guide/clusters/create-cluster.md) for the creation process.
+- A worker cluster with AMD architecture and CentOS 7.9 operating system has been created through the DCE 5.0 platform. Refer to the documentation [Creating a Worker Cluster](../user-guide/clusters/create-cluster.md) for the creation process.
 
 ## Procedure
 

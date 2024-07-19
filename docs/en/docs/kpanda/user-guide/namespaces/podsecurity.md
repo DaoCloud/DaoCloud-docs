@@ -17,7 +17,7 @@ This section will introduce how to configure Pod security policies for namespace
 
 - The container management module has [integrated a Kubernetes cluster](../clusters/integrate-cluster.md) or [created a Kubernetes cluster](../clusters/create-cluster.md). The cluster version needs to be v1.22 or above, and you should be able to access the cluster's UI interface.
 
-- A [namespace has been created](../namespaces/createns.md), a [user has been created](../../../ghippo/user-guide/access-control/user.md), and the user has been granted [NS Admin](../permissions/permission-brief.md) or higher permissions. For details, please refer to [Namespace Authorization](../permissions/cluster-ns-auth.md).
+- A [namespace has been created](../namespaces/createns.md), a [user has been created](../../../ghippo/user-guide/access-control/user.md), and the user has been granted [NS Admin](../permissions/permission-brief.md) or higher permissions. For details, refer to [Namespace Authorization](../permissions/cluster-ns-auth.md).
 
 ## Configure Pod Security Policies for Namespace
 
@@ -41,14 +41,14 @@ This section will introduce how to configure Pod security policies for namespace
 
     ![Add Policy](../images/ps02.png)
 
-3. Different security levels correspond to different check items. If you don't know how to configure your namespace, you can __Policy Configuration Item Explanation__ at the top right corner of the page to view detailed information.
+3. Different security levels correspond to different check items. If you don't know how to configure your namespace, you can __Policy ConfigMap Explanation__ at the top right corner of the page to view detailed information.
 
-    ![Configuration Item Explanation01](../images/ps03.png)
+    ![ConfigMap Explanation01](../images/ps03.png)
 
 4. Click Confirm. If the creation is successful, the security policy you configured will appear on the page.
 
     ![Creation Success](../images/ps04.png)
 
-5. Click __⋮__ to edit or delete the security policy you configured.
+5. Click __┇__ to edit or delete the security policy you configured.
 
     ![Operation](../images/ps05.png)

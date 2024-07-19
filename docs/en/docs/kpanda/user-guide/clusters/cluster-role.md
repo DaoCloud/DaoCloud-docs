@@ -1,6 +1,6 @@
 # Cluster Roles
 
-DaoCloud Enterprise 5.0 classifies cluster roles based on cluster functions to help users better manage their IT infrastructure.
+DaoCloud Enterprise 5.0 classifies cluster roles based on cluster features to help users better manage their IT infrastructure.
 
 !!! note
 
@@ -13,7 +13,7 @@ This cluster is used to run DCE 5.0 components, such as Container Management, Gl
 You can **have only** one Global Service Cluster in a DCE 5.0 platform.
 
 | Items | Support or not |
-| ------------------ | ------------------------------ -------------------------------------------------- -------------------------------------------------- ---------------------- |
+| ----- | -------------- |
 | K8s version | 1.22+ |
 | Operating System | RedHat 7.6 x86/ARM, RedHat 7.9 x86, RedHat 8.4 x86/ARM, RedHat 8.6 x86;<br>Ubuntu 18.04 x86, Ubuntu 20.04 x86;<br>CentOS 7.6 x86/AMD, CentOS 7.9 x86/AMD |
 | Cluster Lifecycle Management | Support |
@@ -32,7 +32,7 @@ You can have one or more management clusters in a DCE 5.0 platform.
 - [Simple Mode](../../../install/commercial/deploy-requirements.md): deploy the Global Service Cluster and management cluster as the same **one** cluster.
 
 | Items | Support or not |
-| ------------------ | ------------------------------ -------------------------------------------------- -------------------------------------------------- ---------------------- |
+| ----- | -------------- |
 | K8s version | 1.22+ |
 | Operating System | RedHat 7.6 x86/ARM, RedHat 7.9 x86, RedHat 8.4 x86/ARM, RedHat 8.6 x86;<br>Ubuntu 18.04 x86, Ubuntu 20.04 x86;<br>CentOS 7.6 x86/AMD, CentOS 7.9 x86/AMD |
 | Cluster Lifecycle Management | Support |
@@ -48,7 +48,7 @@ This cluster is created from scratch in [Container Management](../../intro/index
 You should select a management cluster when creating a worker cluster. The selected management cluster will be responsible for the lifecycle management of all worker clusters under its control.
 
 | Items | Support or not |
-| ------------------ | ------------------------------ -------------------------------------------------- -------------------------------------------------- ---------------------- |
+| ----- | -------------- |
 | K8s version | Support K8s 1.22+ |
 | Operating System | RedHat 7.6 x86/ARM, RedHat 7.9 x86, RedHat 8.4 x86/ARM, RedHat 8.6 x86;<br>Ubuntu 18.04 x86, Ubuntu 20.04 x86;<br>CentOS 7.6 x86/AMD, CentOS 7.9 x86/AMD |
 | Cluster Lifecycle Management | Support |
@@ -59,12 +59,12 @@ You should select a management cluster when creating a worker cluster. The selec
 
 ## Integrated Clusters
 
-This cluster is designed to allow you to use your existing clusters in DCE 5.0. To achieve this, you should first integrate the existing cluster into DCE 5.0. You may integrate on-premise clusters, public/private cloud clusters , edge clusters, and other provides.
+This cluster is designed to allow you to use your existing clusters in DCE 5.0. To achieve this, you should first integrate the existing cluster into DCE 5.0. You may integrate on-premise clusters, public/private cloud clusters, edge clusters, and other provides.
 
 It is recommended to run business applications in this kind of clusters.
 
 | Items | Support or not |
-| ------------------ | ------------------------------ -------------------------------------------------- -------------------------------------- |
+| ----- | -------------- |
 | K8s version | 1.18+ |
 | Providers | Vmware Tanzu, Amazon EKS, Redhat Openshift, SUSE Rancher, Ali ACK, Huawei CCE, Tencent TKE, Standard K8s Cluster, DaoCloud DCE |
 | Cluster Lifecycle Management | Not support |

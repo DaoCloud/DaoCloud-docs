@@ -7,7 +7,7 @@ Date: 2024-02-29
 
 This page introduces how to create a CronJob through images and YAML files.
 
-CronJobs are suitable for performing periodic operations, such as backup and report generation. These tasks can be configured to repeat periodically (for example: daily/weekly/monthly), and the time interval at which the task starts to run can be defined.
+CronJobs are suitable for performing periodic operations, such as backup and report generation. These jobs can be configured to repeat periodically (for example: daily/weekly/monthly), and the time interval at which the job starts to run can be defined.
 
 ## Prerequisites
 
@@ -33,7 +33,7 @@ Refer to the following steps to create a CronJob using the image.
 
     ![Create by image](../images/cronjob01.png)
 
-3. Fill in [Basic Information](create-cronjob.md#_3), [Container Configuration](create-cronjob.md#_4), [Timed Task Configuration](create-cronjob.md#_5), [Advanced Configuration] in turn ](create-cronjob.md#_6), click __OK__ in the lower right corner of the page to complete the creation.
+3. Fill in [Basic Information](create-cronjob.md#basic-information), [Container Settings](create-cronjob.md#container-settings), [CronJob Settings](create-cronjob.md#cronjob-settings), [Advanced Configuration](create-cronjob.md#advanced-configuration), click __OK__ in the lower right corner of the page to complete the creation.
 
      The system will automatically return to the __CronJobs__ list. Click __┇__ on the right side of the list to perform operations such as updating, deleting, and restarting the CronJob.
 
@@ -63,7 +63,7 @@ Container setting is divided into six parts: basic information, life cycle, heal
 
      - Container Name: Up to 63 characters, lowercase letters, numbers and separators ("-") are supported. Must start and end with a lowercase letter or number, eg nginx-01.
      - Image: Enter the address or name of the image. When entering the image name, the image will be pulled from the official [DockerHub](https://hub.docker.com/) by default. After accessing the [container registry](../../../kangaroo/intro/index.md) module of DCE 5.0, you can click the right side to select the image ` to select the image.
-     - Image Pull Policy: After checking __Always pull the image__ , the image will be pulled from the registry every time the load restarts/upgrades. If it is not checked, only the local mirror will be pulled, and only when the mirror does not exist locally, it will be re-pulled from the container registry. For more details, refer to [Image Pull Policy](https://kubernetes.io/docs/concepts/containers/images/#image-pull-policy).
+     - Image Pull Policy: After checking __Always pull the image__ , the image will be pulled from the registry every time the workload restarts/upgrades. If it is not checked, only the local mirror will be pulled, and only when the mirror does not exist locally, it will be re-pulled from the container registry. For more details, refer to [Image Pull Policy](https://kubernetes.io/docs/concepts/containers/images/#image-pull-policy).
      - Privileged container: By default, the container cannot access any device on the host. After enabling the privileged container, the container can access all devices on the host and enjoy all the permissions of the running process on the host.
      - CPU/Memory Quota: Requested value (minimum resource to be used) and limit value (maximum resource allowed to be used) of CPU/Memory resource. Please configure resources for containers as needed to avoid resource waste and system failures caused by excessive container resources. The default value is shown in the figure.
      - GPU Exclusive: Configure the GPU usage for the container, only positive integers are supported. The GPU quota setting supports setting exclusive use of the entire GPU card or part of the vGPU for the container. For example, for an 8-core GPU card, enter the number __8__ to let the container exclusively use the entire length of the card, and enter the number __1__ to configure a 1-core vGPU for the container.
@@ -104,19 +104,19 @@ Container setting is divided into six parts: basic information, life cycle, heal
 
 ![CronJob Settings](../images/cronjob04.png)
 
-- Concurrency Policy: Whether to allow multiple Job tasks to run in parallel.
+- Concurrency Policy: Whether to allow multiple Job jobs to run in parallel.
 
-     - __Allow__ : A new CronJob can be created before the previous task is completed, and multiple tasks can be parallelized. Too many tasks may occupy cluster resources.
-     - __Forbid__ : Before the previous task is completed, a new task cannot be created. If the execution time of the new task is up and the previous task has not been completed, CronJob will ignore the execution of the new task.
-     - __Replace__ : If the execution time of the new task is up, but the previous task has not been completed, the new task will replace the previous task.
+     - __Allow__ : A new CronJob can be created before the previous job is completed, and multiple jobs can be parallelized. Too many jobs may occupy cluster resources.
+     - __Forbid__ : Before the previous job is completed, a new job cannot be created. If the execution time of the new job is up and the previous job has not been completed, CronJob will ignore the execution of the new job.
+     - __Replace__ : If the execution time of the new job is up, but the previous job has not been completed, the new job will replace the previous job.
 
-     > The above rules only apply to multiple jobs created by the same CronJob. Multiple tasks created by multiple CronJobs are always allowed to run concurrently.
+     > The above rules only apply to multiple jobs created by the same CronJob. Multiple jobs created by multiple CronJobs are always allowed to run concurrently.
 
-- Policy Settings: Set the time period for task execution based on minutes, hours, days, weeks, and months. Support custom Cron expressions with numbers and `*` , **after inputting the expression, the meaning of the current expression will be prompted**. For detailed expression syntax rules, refer to [Cron Schedule Syntax](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/#cron-schedule-syntax).
-- Job Records: Set how many records of successful or failed tasks to keep. __0__ means do not keep.
-- Timeout: When this time is exceeded, the task will be marked as failed to execute, and all Pods under the task will be deleted. When it is empty, it means that no timeout is set. The default is 360 s.
-- Retries: the number of times the task can be retried, the default value is 6.
-- Restart Policy: Set whether to restart the Pod when the task fails.
+- Policy Settings: Set the time period for job execution based on minutes, hours, days, weeks, and months. Support custom Cron expressions with numbers and `*` , **after inputting the expression, the meaning of the current expression will be prompted**. For detailed expression syntax rules, refer to [Cron Schedule Syntax](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/#cron-schedule-syntax).
+- Job Records: Set how many records of successful or failed jobs to keep. __0__ means do not keep.
+- Timeout: When this time is exceeded, the job will be marked as failed to execute, and all Pods under the job will be deleted. When it is empty, it means that no timeout is set. The default is 360 s.
+- Retries: the number of times the job can be retried, the default value is 6.
+- Restart Policy: Set whether to restart the Pod when the job fails.
 
 ### Service settings
 
@@ -142,7 +142,7 @@ You can click the __Add__ button to add labels and annotations to the workload i
 
 ## Create from YAML
 
-In addition to mirroring, you can also create timed tasks more quickly through YAML files.
+In addition to mirroring, you can also create timed jobs more quickly through YAML files.
 
 1. Click __Clusters__ on the left navigation bar, and then click the name of the target cluster to enter the cluster details page.
 

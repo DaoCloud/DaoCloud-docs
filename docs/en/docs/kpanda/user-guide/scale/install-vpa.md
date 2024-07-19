@@ -5,7 +5,7 @@ Date: 2024-02-29
 
 # Install vpa
 
-The container vertical scaling strategy (Vertical Pod Autoscaler, VPA) can make the resource allocation of the cluster more reasonable and avoid the waste of cluster resources. __vpa__ is the key component to realize the vertical expansion and contraction of the container.
+The Vertical Pod Autoscaler, VPA, can make the resource allocation of the cluster more reasonable and avoid the waste of cluster resources. __vpa__ is the key component to realize the vertical autoscaling of the container.
 
 This section describes how to install the __vpa__ plugin.
 
