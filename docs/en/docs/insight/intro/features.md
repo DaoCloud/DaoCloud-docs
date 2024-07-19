@@ -15,7 +15,7 @@ This page lists the features supported by Insight.
 |  | Clusters | Provides an overview of a single cluster's insight, allowing to view the running status of the cluster, understand the resource usage of the cluster, and the current alerts occurring in the cluster. | ✓ | ✓ |
 |  | Nodes | Supports viewing the running status of nodes, and understanding the changes in CPU, memory, network and other resources of the node. | ✓ | ✓ |
 |  | Namespaces | Supports viewing the number of resources running in the namespace, and the total amount of CPU and memory used by the Pods in the namespace. | ✓ | ✓ |
-|  | Workloads | Supports monitoring resources such as stateless loads, daemonsets, Pods, etc. You can monitor the running status of this workload, view the number of alerts in progress, and the trend chart of changes in CPU, memory and other resource consumption. | ✓ | ✓ |
+|  | Workloads | Supports monitoring resources such as deployments, daemonsets, Pods, etc. You can monitor the running status of this workload, view the number of alerts in progress, and the trend chart of changes in CPU, memory and other resource consumption. | ✓ | ✓ |
 |  | Events | Supports viewing the collection of Kubernetes events generated in the cluster, and supports querying by event type, object, reason, etc. | ✓ | ✓ |
 |  | Probe | Regularly performs connectivity tests on targets through black box monitoring using methods such as HTTP and TCP, quickly discovering ongoing faults. | ✓ | ✓ |
 | Metrics | General Query | Pre-orders basic metrics. After selecting cluster, type, node, metric name, etc., you can query the changing trend of resources. | ✓ | ✓ |
