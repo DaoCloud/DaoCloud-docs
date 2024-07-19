@@ -8,9 +8,9 @@
 
 ## 前提条件
 
-目标集群所有节点的操作系统内核版本需要大于 3.15。您可以通过运行以下命令查看内核版本：
+### 1. 操作系统内核版本需要在 3.15 以上
 
-1. 操作系统内核版本需要在 3.15 以上。
+    目标集群所有节点的操作系统内核版本需要大于 3.15（详见 [kubevirt issue](https://github.com/kubevirt/kubevirt/issues/7006)）。您可以通过运行以下命令查看内核版本：
 
     ```bash
     uname -a
@@ -22,7 +22,9 @@
     Linux master 6.5.3-1.el7.elrepo.x86_64 #1 SMP PREEMPT_DYNAMIC Wed Sep 13 11:46:28 EDT 2023 x86_64 x86_64 x86_64 GNU/Linux
     ```
 
-2. CPU 需支持 x86-64-v2 及以上的指令集。您可以使用以下脚本检查当前节点的 CPU 是否支持：
+### 2. CPU 需支持 x86-64-v2 及以上的指令集
+
+    您可以使用以下脚本检查当前节点的 CPU 是否支持：
 
     !!! note  
 
@@ -51,7 +53,9 @@
     sh detect-cpu.sh
     ```
 
-3. 所有节点必须启用硬件虚拟化（嵌套虚拟化）。您可以通过运行以下命令检查：
+### 3. 所有节点必须启用硬件虚拟化（嵌套虚拟化）
+
+    * 您可以通过运行以下命令检查：
 
     ```sh
     virt-host-validate qemu
@@ -93,20 +97,24 @@
     WARN (Unknown if this platform has IOMMU support)
     ```
 
-4. 安装 virt-host-validate：
+    * 安装 virt-host-validate：
 
-    1. 在 CentOS 上安装：
+        1. 在 CentOS 上安装：
 
         ```bash
         yum install -y qemu-kvm libvirt virt-install bridge-utils
         ```
 
-    2. 在 Ubuntu 上安装：
+        2. 在 Ubuntu 上安装：
 
         ```bash
         apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
         ```
+    
+    * 硬件虚拟化启用方法：
 
-5. 如果集群使用 Docker Engine 作为容器运行时，则 Docker Engine 版本需要大于 20.10.10。
+        不同平台启用硬件虚拟化的方法也不一样，以 vsphere 为例，方法请参照 [vmware 官网文档](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.vm_admin.doc/GUID-2A98801C-68E8-47AF-99ED-00C63E4857F6.html)
 
-6. 为了后续功能做准备，建议开启 IOMMU。
+### 4. 如果集群使用 Docker Engine 作为容器运行时，则 Docker Engine 版本需要大于 20.10.10
+
+### 5. 为了后续功能做准备，建议开启 IOMMU
