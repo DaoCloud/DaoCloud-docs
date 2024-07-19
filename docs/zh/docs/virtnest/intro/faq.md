@@ -6,14 +6,13 @@
 *[virtnest]: DCE 5.0 虚拟机的开发代号
 *[PVC]: PersistentVolumeClaim，持久卷声明
 *[PV]: PersistentVolume，持久卷
-*[VM]: Virtual Machine，虚拟机
 *[KM]: Kernel-based Virtual Machine，基于内核的虚拟机
 *[SC]: Storage Class，存储类或存储池
 *[VNC]: Virtual Network Console，虚拟网络控制台
 
 ## 页面 API 报错
 
-若页面请求 API 报错 500 或 cluster 资源不存在，首先应检查 Global 集群中虚拟机相关服务的日志，寻找是否 kpanda 的关键词。
+若页面请求 API 报错 500 或 cluster 资源不存在，首先应检查[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_2)中虚拟机相关服务的日志，寻找是否 kpanda 的关键词。
 若存在，需确认 kpanda 相关服务是否运行正常。
 
 ## VM 无法正常使用
