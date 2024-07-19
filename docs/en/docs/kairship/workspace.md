@@ -5,7 +5,7 @@ Workspaces are a hierarchical mapping of resources designed for managing global 
 ## Considerations
 
 - The current operating user should have Admin or Workspace Admin permissions. For more information on permissions, refer to the [Permission Management](../ghippo/user-guide/access-control/role.md) and [Workspace Permissions](../ghippo/user-guide/workspace/ws-permission.md) documentation.
-- After binding a multicloud instance/namespace with a workspace, all working clusters under the multicloud instance will automatically synchronize this binding, allowing users of the corresponding workspace to operate corresponding resources in the cluster.
+- After binding a multicloud instance/namespace with a workspace, all worker clusters under the multicloud instance will automatically synchronize this binding, allowing users of the corresponding workspace to operate corresponding resources in the cluster.
 - After binding, you can go to the __Workspace and Folder__ -> __Resource Group__ section in the Global Management module to view this resource. For more details, refer to the [Resource Quota](../ghippo/user-guide/workspace/quota.md#_1) documentation.
 - Currently, one multicloud instance/namespace can only be bound to one workspace, creating a one-to-one mapping relationship.
 

@@ -67,6 +67,6 @@ hide:
 
     Yes, when creating a multicloud instance, you can choose whether to select the instance release feature. If selected, the corresponding Karmada instance will be deleted synchronously. If not deleted, you can continue to use it through the terminal, but you cannot manage the Karmada instance within the multicloud management, so it is recommended to delete it synchronously.
 
-15. How can working clusters in a multicloud instance connect with each other?
+15. How can worker clusters in a multicloud instance connect with each other?
 
     Refer to [Multicloud Network Interconnection](../../mspider/user-guide/multicluster/cluster-interconnect.md)

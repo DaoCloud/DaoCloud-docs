@@ -20,7 +20,7 @@ This article explains how to implement cross-cluster Federated HPA.
 
 ## Creating Multicloud Workload
 
-Refer to [Create Stateless Workload](../workload/deployment.md) to create a multicloud workload.
+Refer to [Create deployment](../workload/deployment.md) to create a multicloud workload.
 
 !!! note
 
@@ -34,7 +34,7 @@ Refer to [Create Stateless Workload](../workload/deployment.md) to create a mult
 
     ![Workload](../images/fhpa02.png)
 
-2. Click __Federated HPA__ and check if the metrics-server plugin is installed in each working cluster. The plugin runs as a __Deployments__ in the __amamba-system__ namespace. It should be installed and running correctly in all member clusters.
+2. Click __Federated HPA__ and check if the metrics-server plugin is installed in each worker cluster. The plugin runs as a __Deployments__ in the __amamba-system__ namespace. It should be installed and running correctly in all member clusters.
 
     ![FederatedHPA List](../images/fhpa03.png)
 

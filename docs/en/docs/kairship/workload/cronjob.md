@@ -5,9 +5,9 @@ hide:
 
 # Create CronJob from Image
 
-Follow the steps below to create a scheduled task (Cronob).
+Follow the steps below to create a CronJob.
 
-1. In the left navigation bar, click __Multicloud workload__ to enter the scheduled task page, and click the __Image creation__ button in the upper right corner.
+1. In the left navigation bar, click __Multicloud workload__ to enter the CronJob page, and click the __Image creation__ button in the upper right corner.
 
 1. On the __Create Task__ page, after configuring the basic information of the load, click __Next__ .
 
@@ -33,11 +33,11 @@ Follow the steps below to create a scheduled task (Cronob).
 
 1. On the __Container Configuration__ page, configure the basic information of the container where the load resides, and optionally configure information such as life cycle and health check, and then click __Next__ .
 
-1. On the __Scheduled Task Configuration__ page, configure concurrency policies, timing rules, task records, other configurations and other information
+1. On the __CronJob Configuration__ page, configure concurrency policies, timing rules, task records, other configurations and other information
 
     - Concurrency strategy: Whether to allow multiple Job tasks to run in parallel.
 
-        - __Allow__ : A new scheduled task can be created before the previous task is completed, and multiple tasks can be parallelized. Too many tasks may occupy cluster resources.
+        - __Allow__ : A new CronJob can be created before the previous task is completed, and multiple tasks can be parallelized. Too many tasks may occupy cluster resources.
         - __Forbid__ : Before the previous task is completed, a new task cannot be created. If the execution time of the new task is up and the previous task has not been completed, CronJob will ignore the execution of the new task.
         - __Replace__ : If the execution time of the new task is up, but the previous task has not been completed, the new task will replace the previous task.
 
@@ -60,11 +60,11 @@ Follow the steps below to create a scheduled task (Cronob).
 
 1. On the __Override Configuration__ page, after selecting the personalized container configuration, labels and annotations, click __OK__ .
 
-    You can add the corresponding override configuration item in the list area on the left. After you add a differentiated configuration item, you need to specify the corresponding cluster.
+    You can add the corresponding override configmap in the list area on the left. After you add a differentiated configmap, you need to specify the corresponding cluster.
     The selectable range of the cluster is only the cluster selected at the beginning, and the selected cluster will use the specified differential configuration; the unspecified cluster will still use the default configuration.
 
 !!! note
 
-    - When creating a multicloud workload through mirroring, if you need to use the advanced capabilities of specifying a location and specifying a label to create, you need to ensure that the corresponding location or label has been set for the working cluster;
-    Adding tags needs to be added within a single cluster, and can be jumped to the corresponding cluster maintenance from the working cluster management list.
+    - When creating a multicloud workload through mirroring, if you need to use the advanced capabilities of specifying a location and specifying a label to create, you need to ensure that the corresponding location or label has been set for the worker cluster;
+    Adding tags needs to be added within a single cluster, and can be jumped to the corresponding cluster maintenance from the worker cluster management list.
     - When configuring the number of replicas, you need to pay attention to the corresponding scheduling strategy. Only when it is repeated, will all the configured replicas be started in multiple clusters.
