@@ -13,9 +13,9 @@ DCE 5.0 integrates numerous excellent technologies from the community, with tens
 
 We have carefully created Step-By-Step scenario videos to meet specific business requirements in various scenarios:
 
-=== "Multi-Cloud and Hybrid Cloud"
+=== "Multicloud and Hybrid Cloud"
 
-    - [How to convert a single-cloud application into a multi-cloud application with one click?](../videos/use-cases.md#one-click-transformation-from-single-cloud-application-to-multi-cloud-application)
+    - [How to convert a single-cloud application into a multicloud application with one click?](../videos/use-cases.md#one-click-transformation-from-single-cloud-application-to-multicloud-application)
     - [How to deploy hybrid cloud applications in DCE 5.0?](../videos/use-cases.md#deploying-hybrid-cloud-applications-in-dce-50)
 
 === "Insight"
@@ -40,7 +40,7 @@ We have carefully created Step-By-Step scenario videos to meet specific business
 === "CICD and GitOps"
 
     - [How to deliver applications quickly using CICD?](../videos/use-cases.md#application-deployment-with-cicd)
-    - [How to continuously deploy cloud-native applications using GitOps?](../videos/use-cases.md#continuous-deployment-of-cloud-native-applications-with-gitops)
+    - [How to continuously deploy Cloud Native applications using GitOps?](../videos/use-cases.md#continuous-deployment-of-Cloud Native-applications-with-gitops)
 
 === "Middleware and AI & Vector Libraries"
 
@@ -60,7 +60,7 @@ Involved modules: [Container Management](../kpanda/intro/index.md), [Container N
 Solution advantages: Provide cluster lifecycle management capabilities from deployment, upgrade, certificate change, configuration change, recycling, etc.
 Reuse the network infrastructure in the current enterprise environment as much as possible, and implement the best solution for the environment: MacVLAN network solution, SR-IOV smart network card acceleration solution, [SpiderPool](../network/modules/spiderpool/index.md) Cloud native IPAM solution, [Clilum](../network/modules/cilium/index.md) eBPF network acceleration solution, Underlay and Overlay collaborative network solution.
 
-Manage all clusters and load information through the independent open source [Clusterpedia](../community/clusterpedia.md) unified control plane, compatible with standard Kubernetes cluster access, break through the performance bottleneck of Kubernetes API, and support thousands of people to use it at the same time.
+Manage all clusters and workloads through the independent open source [Clusterpedia](../community/clusterpedia.md) unified control plane, compatible with integrating standard Kubernetes clusters, break through the performance bottleneck of Kubernetes API, and support thousands of people to use it at the same time.
 
 === "Cloud Edge Collaboration"
 
@@ -91,19 +91,19 @@ CI/CD pipeline capability automates application construction and deployment. Inn
 
 Users have weak ability to observe running applications, and hope to complete observation access with light-weight or no-modification access, and complete all-round application operation observation (logs, metrics, traces).
 
-Modules involved: [Container Management](../kpanda/intro/index.md), [Observability](../insight/intro/index.md), [Container Network](../network/intro/index.md), Cloud Edge Collabration, Dual-architecture Cloud
+Modules involved: [Container Management](../kpanda/intro/index.md), [Insight](../insight/intro/index.md), [Container Network](../network/intro/index.md), Cloud Edge Collabration, Dual-architecture Cloud
 
-Advantages of the solution: unified collection of observation data, one control panel can query all cluster and load observation data, and in-depth support for microservice architecture, [service mesh](../mspider/intro/index.md), network EBPF observation ability.
+Advantages of the solution: unified collection of observation data, one control panel can query all cluster and workload observation data, and in-depth support for microservice architecture, [service mesh](../mspider/intro/index.md), network EBPF observation ability.
 
 === "Converged Microservices"
 
 The user's application architecture decides to adopt the microservice architecture or has already adopted microservices, and hopes to obtain technical support such as a full range of microservice frameworks and comprehensive operation and maintenance capabilities, or hopes to introduce service mesh technology and achieve smooth transition in the process of technology change.
 
-Modules involved: [Container Management](../kpanda/intro/index.md), [Container Network](../network/intro/index.md), [Microservice Engine](../skoala/intro/index.md), [Service Mesh](../mspider/intro/index.md), [Observability](../insight/intro/index.md), [Workbench](../amamba/intro/index.md)
+Modules involved: [Container Management](../kpanda/intro/index.md), [Container Network](../network/intro/index.md), [Microservice Engine](../skoala/intro/index.md), [Service Mesh](../mspider/intro/index.md), [Insight](../insight/intro/index.md), [Workbench](../amamba/intro/index.md)
 
 Solution advantages: seamlessly integrate the first-generation microservices represented by SpringCloud and Dubbo with the new-generation microservice technology represented by Istio service mesh, and complete the microservice management of the whole lifecycle from development, deployment, access, external, observation, operation and maintenance ability.
 
-=== "Data Service"
+=== "Middleware"
 
 The user application architecture relies on mainstream middleware capabilities, and it is hoped that middleware can be operated and maintained in a unified manner, and more professional support capabilities for middleware planning, operation and maintenance can be obtained.
 
