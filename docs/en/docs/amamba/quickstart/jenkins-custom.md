@@ -118,4 +118,4 @@ pipeline {
 - <https://plugins.jenkins.io/kubernetes>
 - <https://argo-cd.readthedocs.io/en/stable/operator-manual/custom_tools/>
 
-[^1]: For a complete list, please refer to: <https://docs.daocloud.io/amamba/user-guide/pipeline/config/agent/#label_1>
+[^1]: For a complete list, refer to: <https://docs.daocloud.io/amamba/user-guide/pipeline/config/agent/#label_1>

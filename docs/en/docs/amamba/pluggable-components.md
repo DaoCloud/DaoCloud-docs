@@ -172,7 +172,7 @@ If you chose not to enable it during the deployment of DCE 5.0, follow the instr
 
     **Enable contour**
 
-    The application console supports traffic control based on contour for gray release strategy in the new version v0.24.0. If you need to use this capability, you need to do the following:
+    Workbench supports traffic control based on contour for gray release policy in the new v0.24.0. If you need to use this capability, you need to do the following:
 
     - Define the parameters under the `initContainers` field in `value.yaml`:
 
@@ -200,7 +200,7 @@ If you chose not to enable it during the deployment of DCE 5.0, follow the instr
                 mountPath: /plugins
         ```
 
-        1. When offline, the offline image repository address needs to be added before the image address.
+        1. When offline, the offline container registry address needs to be added before the image address.
 
     - After the argo-rollouts installation is completed, you also need to execute the following command to modify the clusterRole:
 
@@ -213,7 +213,7 @@ If you chose not to enable it during the deployment of DCE 5.0, follow the instr
 
 4. Click the confirm button in the lower right corner to complete the installation. You can check if the related loads under the __argo-rollouts-system__ namespace are all in the __running__ state.
 
-5. After successful deployment, you can go to the __Application Console__ module to use the gray release capability based on `cloud-native gateway` in the current cluster.
+5. After successful deployment, you can go to the __Workbench__ module to use the gray release capability based on `cloud-native gateway` in the current cluster.
 
     ![contour](images/contour01.png)
 

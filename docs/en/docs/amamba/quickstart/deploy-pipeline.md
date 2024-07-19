@@ -11,15 +11,15 @@ This section will provide a step-by-step guide to create a pipeline through edit
 
 - You need to create a workspace and a user. This user should join the workspace and be assigned the __Workspace Editor__ role.
   Refer to [Creating Workspace](../../ghippo/user-guide/workspace/workspace.md) and [Users](../../ghippo/user-guide/access-control/user.md).
-- Create two credentials that can access the image repository and the cluster, named: __registry__ and __kubeconfig__ respectively.
-  For more information on creating credentials, please refer to [Credential Management](../user-guide/pipeline/credential.md).
+- Create two credentials that can access the container registry and the cluster, named: __registry__ and __kubeconfig__ respectively.
+  For more information on creating credentials, refer to [Credential Management](../user-guide/pipeline/credential.md).
 - Prepare a GitHub repository and a DockerHub repository.
 
 ## Create credentials
 
 1. Create two credentials on the __Credentials__ page:
 
-    - docker-credential: Username and password for accessing the image repository.
+    - docker-credential: Username and password for accessing the container registry.
     - demo-dev-kubeconfig: To access the Kubernetes cluster using this kubeconfig.
 
 2. After creation, you can see the credential information on the credential list page.
@@ -40,8 +40,8 @@ This section will provide a step-by-step guide to create a pipeline through edit
 
 4. Add three string parameters in __Build Parameters__ , these parameters will be used in the image build command.
 
-    - registry: Image repository address. Example value: __release.daocloud.io__ .
-    - project: The project name in the image repository. Example value: __demo__ .
+    - registry: Container Registry address. Example value: __release.daocloud.io__ .
+    - project: The project name in the container registry. Example value: __demo__ .
     - name: The name of the image. Example value: __http-hello__ .
 
     ![Build Parameters](../../amamba/images/pipelin04.png)
@@ -86,7 +86,7 @@ This section will provide a step-by-step guide to create a pipeline through edit
 
     - In the step module, select to enable __Use Credential__, fill in the relevant parameters in the pop-up dialog box, then click __OK__ .
 
-        - Credentials: Select the Docker hub credentials you created for accessing the image repository.
+        - Credentials: Select the Docker hub credentials you created for accessing the container registry.
         - Password Variable: PASS
         - Username Variable: USER
 
@@ -104,13 +104,13 @@ This section will provide a step-by-step guide to create a pipeline through edit
         docker build -f Dockerfile . -t $registry/$project/$name:latest
         ```
 
-    - Click __Add Step__ to log in to the image repository, select __shell__ under step type in the pop-up dialog box, and enter the following command in the command line, then click __OK__ .
+    - Click __Add Step__ to log in to the container registry, select __shell__ under step type in the pop-up dialog box, and enter the following command in the command line, then click __OK__ .
 
         ```docker
         docker login $registry -u $USER -p $PASS
         ```
 
-    - Click __Add Step__ to push the image to the image repository, select __shell__ under step type in the pop-up dialog box, and enter the following command in the command line, then click __OK__ .
+    - Click __Add Step__ to push the image to the container registry, select __shell__ under step type in the pop-up dialog box, and enter the following command in the command line, then click __OK__ .
 
         ```docker
         docker push $registry/$project/$name:latest

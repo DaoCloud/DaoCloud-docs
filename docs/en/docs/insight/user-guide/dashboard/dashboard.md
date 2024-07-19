@@ -16,7 +16,7 @@ For more information on open source Grafana, see
 
 1. Select __Dashboard__ from the left navigation panel.
 
-    - In the __Insight / Overview__ dashboard, you can view the resource usage of multiple clusters and analyze resource usage, network, storage, and more based on dimensions such as namespaces and container groups.
+    - In the __Insight / Overview__ dashboard, you can view the resource usage of multiple clusters and analyze resource usage, network, storage, and more based on dimensions such as namespaces and Pods.
 
     - Click the dropdown menu in the upper-left corner of the dashboard to switch between clusters.
 

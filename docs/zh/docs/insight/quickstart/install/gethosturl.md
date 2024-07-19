@@ -1,24 +1,30 @@
 # 获取全局服务集群的数据存储地址
 
-可观测性是多集群统一观测的产品，为实现对多集群观测数据的统一存储、查询，子集群需要将采集的观测数据上报给全局管理集群进行统一存储。本文提供了在安装采集组件 insight-agent 时必填的存储组件的地址。
+可观测性是多集群统一观测的产品，为实现对多集群观测数据的统一存储、查询，
+子集群需要将采集的观测数据上报给[全局服务集群](../../../kpanda/user-guide/clusters/cluster-role.md#_2)进行统一存储。
+本文提供了在安装采集组件 insight-agent 时必填的存储组件的地址。
 
 ## 在全局服务集群安装 insight-agent
 
-如果在全局服务集群集群安装 insight-agent，推荐通过域名来访问集群：
+如果在全局服务集群安装 insight-agent，推荐通过域名来访问集群：
 
 ```shell
-export vminsert_host="vminsert-insight-victoria-metrics-k8s-stack.insight-system.svc.cluster.local" # 指标
-export es_host="insight-es-master.insight-system.svc.cluster.local" # 日志
-export otel_col_host="insight-opentelemetry-collector.insight-system.svc.cluster.local" # 链路
+export vminsert_host="vminsert-insight-victoria-metrics-k8s-stack.insight-system.svc.cluster.local" # (1)!
+export es_host="insight-es-master.insight-system.svc.cluster.local" # (2)!
+export otel_col_host="insight-opentelemetry-collector.insight-system.svc.cluster.local" # (3)!
 ```
+
+1. 指标
+2. 日志
+3. 链路
 
 ## 在其他集群安装 insight-agent
 
 ### 通过 Insight Server 提供的接口获取地址
 
-1. 管理集群使用默认的 LoadBalancer 方式暴露
+1. [管理集群](../../../kpanda/user-guide/clusters/cluster-role.md#_3)使用默认的 LoadBalancer 方式暴露
 
-    登录全局管理集群的控制台，执行以下命令：
+    登录全局服务集群的控制台，执行以下命令：
 
     !!! note
 
@@ -59,8 +65,6 @@ export otel_col_host="insight-opentelemetry-collector.insight-system.svc.cluster
       }
     }
     ```
-
-    **参数说明：**
 
     - `global.exporters.logging.host` 是日志服务地址，不需要再设置对应服务的端口，都会使用相应默认值
     - `global.exporters.metric.host` 是指标服务地址
@@ -114,27 +118,25 @@ export otel_col_host="insight-opentelemetry-collector.insight-system.svc.cluster
     }
     ```
 
-    其中：
-
     - `global.exporters.logging.host` 是日志服务地址
-    - `global.exporters.logging.port` 是日志服务暴露的 nodePort
+    - `global.exporters.logging.port` 是日志服务暴露的 NodePort
     - `global.exporters.metric.host` 是指标服务地址
-    - `global.exporters.metric.port` 是指标服务暴露的 nodePort
+    - `global.exporters.metric.port` 是指标服务暴露的 NodePort
     - `global.exporters.trace.host` 是链路服务地址
-    - `global.exporters.trace.port` 是链路服务暴露的 nodePort
+    - `global.exporters.trace.port` 是链路服务暴露的 NodePort
     - `global.exporters.auditLog.host` 是审计日志服务地址（和链路使用的同一个服务不同端口）
-    - `global.exporters.auditLog.host` 是审计日志服务暴露的 nodePort
+    - `global.exporters.auditLog.host` 是审计日志服务暴露的 NodePort
 
 ### 通过 LoadBalancer 连接
 
 上述的[通过 Insight Server 提供的接口获取地址](#insight-server)是通过查询集群的 LoadBalancer 以获取连接地址。
-除此之外，你也可以手动执行命令 `kubectl get service -n insight-system | grep lb` 获得相应服务的地址信息。其中：
+除此之外，你也可以手动执行以下命令获取相应服务的地址信息：
 
 ```shell
-[root@localhost ~]# kubectl get service -n insight-system | grep lb
-lb-insight-es-master                                             LoadBalancer   10.233.35.17    <pending>     9200:31529/TCP                                                              24d
-lb-insight-opentelemetry-collector                               LoadBalancer   10.233.23.12    <pending>     4317:31286/TCP,8006:31351/TCP                                               24d
-lb-vminsert-insight-victoria-metrics-k8s-stack                   LoadBalancer   10.233.63.67    <pending>     8480:31629/TCP                                                              24d
+$ kubectl get service -n insight-system | grep lb
+lb-insight-es-master                             LoadBalancer   10.233.35.17    <pending>     9200:31529/TCP                 24d
+lb-insight-opentelemetry-collector               LoadBalancer   10.233.23.12    <pending>     4317:31286/TCP,8006:31351/TCP  24d
+lb-vminsert-insight-victoria-metrics-k8s-stack   LoadBalancer   10.233.63.67    <pending>     8480:31629/TCP                 24d
 ```
 
 - `lb-insight-es-master` 是日志服务的地址
@@ -159,12 +161,21 @@ lb-vminsert-insight-victoria-metrics-k8s-stack                   LoadBalancer   
     上面两种情况获取到对应服务的对应端口信息后，进行如下设置：
 
     ```shell
-    --set global.exporters.logging.host=           # 外部可访问的管理集群 NodeIP
-    --set global.exporters.logging.port=           # 是日志服务 9200 端口对应的 NodePort
-    --set global.exporters.metric.host=            # 外部可访问的管理集群 NodeIP
-    --set global.exporters.metric.port=            # 是指标服务 8480 端口对应的 NodePort
-    --set global.exporters.trace.host=             # 外部可访问的管理集群 NodeIP
-    --set global.exporters.trace.port=             # 是链路服务 4317 端口对应的 NodePort
-    --set global.exporters.auditLog.host=          # 外部可访问的管理集群 NodeIP
-    --set global.exporters.auditLog.port=          # 是链路服务 8006 端口对应的 NodePort
+    --set global.exporters.logging.host=  # (1)!
+    --set global.exporters.logging.port=  # (2)!
+    --set global.exporters.metric.host=   # (3)!
+    --set global.exporters.metric.port=   # (4)!
+    --set global.exporters.trace.host=    # (5)!
+    --set global.exporters.trace.port=    # (6)!
+    --set global.exporters.auditLog.host= # (7)!
+    --set global.exporters.auditLog.port= # (8)!
     ```
+
+    1. 外部可访问的管理集群 NodeIP
+    2. 日志服务 9200 端口对应的 NodePort
+    3. 外部可访问的管理集群 NodeIP
+    4. 指标服务 8480 端口对应的 NodePort
+    5. 外部可访问的管理集群 NodeIP
+    6. 链路服务 4317 端口对应的 NodePort
+    7. 外部可访问的管理集群 NodeIP
+    8. 链路服务 8006 端口对应的 NodePort

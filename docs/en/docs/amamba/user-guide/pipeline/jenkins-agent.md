@@ -53,7 +53,7 @@ If you need to use a Jenkins Agent with a specific environment, such as a specia
     pipeline {
       agent {
         node {
-          label 'maven-jdk11'  # Specify the custom label
+          label 'maven-jdk11'  // Specify the custom label
         }
       }
       stages {

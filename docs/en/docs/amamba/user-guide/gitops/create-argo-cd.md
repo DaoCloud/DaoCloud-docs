@@ -35,7 +35,7 @@ The Workbench implements continuous deployment based on the open-source software
             - Skip Schema Validation: Skip the validation of application manifest files
             - Prune Last: Only delete non-existent resources after all resources have been synced and are in a healthy state
             - Apply Out Of Sync Only: Only apply unsynced resources
-            - Prune Propagation Policy: Choose a specific cleanup strategy:
+            - Prune Propagation Policy: Choose a specific cleanup policy:
                 - Foreground: Delete the owner object only after all dependent objects have been deleted
                 - Background: Delete all dependent objects only after the owner object has been deleted
                 - Orphan: All dependent objects remain after the owner object is deleted
@@ -54,7 +54,7 @@ The Workbench implements continuous deployment based on the open-source software
 
     ![Manual Sync](../../images/argo04.png)
 
-3. For specific parameter explanations during the sync process, please refer to [Manually Sync Application](./sync-manually.md), click __OK__.
+3. For specific parameter explanations during the sync process, refer to [Manually Sync Application](./sync-manually.md), click __OK__.
 
     ![Sync Successfully](../../images/argo05.png)
 

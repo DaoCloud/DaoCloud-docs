@@ -662,7 +662,7 @@ nav:
                       - insight/quickstart/install/index.md
                       - Online Install insight-agent: insight/quickstart/install/install-agent.md
                       - Offline Upgrade insight-agent: insight/quickstart/install/offline-install.md
-                      - Get URL to Upload Data: insight/quickstart/install/gethosturl.md
+                      - Get Data Storage Address of Global Service Cluster: insight/quickstart/install/gethosturl.md
                       - Upgrade Notes: insight/quickstart/install/upgrade-note.md
                       - Known Issues: insight/quickstart/install/knownissues.md
                       - Kafka + ES for Handling Large-Scale Logs: insight/best-practice/insight-kafka.md

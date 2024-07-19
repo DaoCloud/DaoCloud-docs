@@ -64,8 +64,8 @@ Multicloud Management module has the following features:
 
 - **Multicloud Workload Details**
 
-    - Basic Information: Support viewing deployment details of stateless workloads, including pod count and active cluster information. Provide monitoring capabilities for individual pods, allowing users to navigate to Insight Pod logs and view logs for individual pods.
-    - Deployment Information: View deployment details of stateless workloads and perform operations such as restart, pause, resume, and release for multicloud workloads.
+    - Basic Information: Support viewing deployment details of deployments, including pod count and active cluster information. Provide monitoring capabilities for individual pods, allowing users to navigate to Insight Pod logs and view logs for individual pods.
+    - Deployment Information: View deployment details of deployments and perform operations such as restart, pause, resume, and release for multicloud workloads.
     - Instance List: Display pod information of workloads across multiple Kubernetes clusters in a cluster-specific manner. Enable quick navigation to the corresponding cluster's workload details page and view monitoring and log information for the corresponding pods.
     - Service List: Segment workload service information within clusters and provide quick navigation to the corresponding cluster's workload details page. View monitoring and log information for the corresponding services.
 

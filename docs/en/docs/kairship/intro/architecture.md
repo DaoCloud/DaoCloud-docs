@@ -44,7 +44,7 @@ list-watch mechanism and processes corresponding events. The main controllers in
 - Virtual Cluster Sync Controller:
     - Listens for CRUD events of MultiCloud Management instance CRDs. When a MultiCloud Management
       instance is created, it synchronizes the creation of corresponding virtual cluster management resources.
-    - Retrieval of all resources for the MultiCloud Management instance (Multi-Cloud Workloads, PP, OP)
+    - Retrieval of all resources for the MultiCloud Management instance (Multicloud Workloads, PP, OP)
       is accomplished through the acceleration mechanism within the Container Management Module
       (leveraging Clusterpedia), enabling read-write separation and improved performance.
     - When an instance is deleted, the virtual cluster registered in the Container Management Module is synchronously deleted.

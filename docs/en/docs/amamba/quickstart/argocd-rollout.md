@@ -195,7 +195,7 @@ Create the following resources in the [Service Mesh](../../mspider/intro/index.m
 
 ### Creating a Canary delivery job
 
-Create a canary delivery job in Workbench. For more detailed creation instructions, please refer to [Create a Canary Delivery Job](../user-guide/release/canary.md).
+Create a canary delivery job in Workbench. For more detailed creation instructions, refer to [Create a Canary Delivery Job](../user-guide/release/canary.md).
 
 1. Select the application for which you want to enable canary deployment.
 

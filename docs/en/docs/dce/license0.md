@@ -65,7 +65,7 @@ If your license expires for any reason, you can follow the steps below to renew 
 ### Renew License by Modules
 
 This method requires renewing the license for each installed module.
-For example, DCE Community includes three modules: Container Management, Global Management, and Observability, each with its own license.
+For example, DCE Community includes three modules: Container Management, Global Management, and Insight, each with its own license.
 To do this, go to the [license page](https://qingflow.com/f/58604bf8) and select __Renew License__ for each module.
 
 ![renew](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/dce/images/extend.png)

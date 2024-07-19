@@ -9,7 +9,7 @@ Container monitoring is the process of monitoring workloads in cluster managemen
 
 ## Prerequisites
 
-- The cluster has Insight Agent installed, and all container groups are in the __Running__ state.
+- The cluster has Insight Agent installed, and all Pods are in the __Running__ state.
 
 - To install Insight Agent, please refer to: [Installing insight-agent online](../../quickstart/install/install-agent.md) or [Offline upgrade of insight-agent](../../quickstart/install/offline-install.md).
 
@@ -35,11 +35,11 @@ Follow these steps to view service monitoring metrics:
 
 | Metric Name | Description |
 | -- | -- |
-| CPU Usage | The sum of CPU usage for all container groups under the workload.|
-| CPU Requests | The sum of CPU requests for all container groups under the workload.|
-| CPU Limits | The sum of CPU limits for all container groups under the workload.|
-| Memory Usage | The sum of memory usage for all container groups under the workload.|
-| Memory Requests | The sum of memory requests for all container groups under the workload.|
-| Memory Limits | The sum of memory limits for all container groups under the workload.|
+| CPU Usage | The sum of CPU usage for all Pods under the workload.|
+| CPU Requests | The sum of CPU requests for all Pods under the workload.|
+| CPU Limits | The sum of CPU limits for all Pods under the workload.|
+| Memory Usage | The sum of memory usage for all Pods under the workload.|
+| Memory Requests | The sum of memory requests for all Pods under the workload.|
+| Memory Limits | The sum of memory limits for all Pods under the workload.|
 | Disk Read/Write Rate | The total number of continuous disk reads and writes per second within the specified time range, representing a performance measure of the number of read and write operations per second on the disk.|
 | Network Send/Receive Rate | The incoming and outgoing rates of network traffic, aggregated by workload, within the specified time range.|

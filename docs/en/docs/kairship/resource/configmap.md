@@ -24,17 +24,17 @@ This article takes wizard creation as an example. You can follow the steps below
     ![Fill ConfigMap](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/config02.png)
 
 3. Return to the list of multicloud configmaps, and the newly created one will be the first one by default.
-   Click __┇__ on the right side of the list to edit YAML, update, export and delete configuration items.
+   Click __┇__ on the right side of the list to edit YAML, update, export and delete configmaps.
 
     ![Update/Delete](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/config03.png)
 
     !!! note
 
-        If you delete a configuration item, its related information will also be deleted, please operate with caution.
+        If you delete a configmap, its related information will also be deleted, please operate with caution.
 
 ## YAML example
 
-Here is an example YAML for a multicloud configuration item that you can use with a little modification.
+Here is an example YAML for a multicloud configmap that you can use with a little modification.
 
 ```yaml
 kind: ConfigMap

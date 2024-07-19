@@ -1,16 +1,16 @@
 # Manage Worker Clusters
 
-After creating multicloud instances, you need to connect them to work clusters.
+After creating multicloud instances, you need to connect them to worker clusters.
 
 ## Add a Cluster
 
-1. Click __Work Cluster Management__ in the left navigation bar, then click __Connect Cluster__ in the top-right corner.
+1. Click __Worker Cluster Management__ in the left navigation bar, then click __Connect Cluster__ in the top-right corner.
 
-    If you want to establish network connectivity between work clusters, you need to create a mesh instance and manage work clusters on the Service Mesh page. For detailed steps, refer to [MultiCloud Network Interconnect](../mspider/user-guide/multicluster/cluster-interconnect.md).
+    If you want to establish network connectivity between worker clusters, you need to create a mesh instance and manage worker clusters on the Service Mesh page. For detailed steps, refer to [MultiCloud Network Interconnect](../mspider/user-guide/multicluster/cluster-interconnect.md).
 
     ![Connect Cluster](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/cluster01.png)
 
-2. Select the work cluster you want to add and click __OK__ .
+2. Select the worker cluster you want to add and click __OK__ .
 
     If the target cluster you want to add is not listed, you can either integrate or create a cluster in the Container Management module. For more details, refer to [Cluster Integration](../kpanda/user-guide/clusters/integrate-cluster.md) or [Create Cluster](../kpanda/user-guide/clusters/create-cluster.md).
 
@@ -27,12 +27,12 @@ After creating multicloud instances, you need to connect them to work clusters.
     ![Removal](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/cluster04.png)
 
 !!! note
-    - After removing a work cluster, the workloads of the cluster will no longer be managed by this multicloud instance.
-    - All multicloud workloads that have been distributed to this cluster will be automatically migrated to other work clusters managed by this multicloud instance.
+    - After removing a worker cluster, the workloads of the cluster will no longer be managed by this multicloud instance.
+    - All multicloud workloads that have been distributed to this cluster will be automatically migrated to other worker clusters managed by this multicloud instance.
 
 ## More Operations
 
-The system will automatically return to the work cluster list. Click the __┇__ button on the right side of the cluster to perform operations such as __Pause/Resume Schedule__ , __Edit Cluster Labels__ , and __Modify Cluster Taints__ .
+The system will automatically return to the worker cluster list. Click the __┇__ button on the right side of the cluster to perform operations such as __Pause/Resume Schedule__ , __Edit Cluster Labels__ , and __Modify Cluster Taints__ .
 
 ![More Operations](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/cluster05.png)
 

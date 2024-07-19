@@ -17,7 +17,7 @@ Currently, two creation methods are provided: form creation and YAML creation. T
 
     ![Create Ingress](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/create-ingress02.png)
 
-3. It supports one-click conversion of sub-cluster services to multicloud ingress. Click __Convert Now__ on the list page, select the ingress under the specified working cluster and namespace, and click OK to convert successfully.
+3. It supports one-click conversion of sub-cluster services to multicloud ingress. Click __Convert Now__ on the list page, select the ingress under the specified worker cluster and namespace, and click OK to convert successfully.
 
     ![Convert Now](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/create-ingress03.png)
 

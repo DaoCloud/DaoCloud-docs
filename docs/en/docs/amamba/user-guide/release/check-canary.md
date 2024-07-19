@@ -46,7 +46,7 @@ After the delivery object updates the version, it will automatically trigger the
 
 ## Updating delivery jobs
 
-By updating delivery jobs, you can modify the traffic scheduling strategy of the canary delivery process.
+By updating delivery jobs, you can modify the traffic scheduling policy of the canary delivery process.
 
 1. On the __Canary Delivery Job__ details page, click __ⵗ__ in the upper right corner of the page and select __Update Delivery Job__.
 

@@ -29,6 +29,6 @@ This page will introduce how to integrate Harbor in the pipeline and implement i
 
 ## View image security scanning in Harbor
 
-Visit __Project__ -> __Image Repository__ in turn in Harbor to view the vulnerability information of the mirror.
+Visit __Project__ -> __Container Registry__ in turn in Harbor to view the vulnerability information of the mirror.
 
 ![harbor](../images/harbor04.png)
