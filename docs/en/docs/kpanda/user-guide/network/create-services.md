@@ -1,8 +1,8 @@
-# Create a service (Service)
+# Create a Service
 
 In a Kubernetes cluster, each Pod has an internal independent IP address, but Pods in the workload may be created and deleted at any time, and directly using the Pod IP address cannot provide external services.
 
-This requires creating a service through which you get a fixed IP address, decoupling the front-end and back-end of the workload, and allowing external users to access the service. At the same time, the service also provides the Load Balancer function, enabling users to access workloads from the public network.
+This requires creating a service through which you get a fixed IP address, decoupling the front-end and back-end of the workload, and allowing external users to access the service. At the same time, the service also provides the Load Balancer feature, enabling users to access workloads from the public network.
 
 ## Prerequisites
 
@@ -12,7 +12,7 @@ This requires creating a service through which you get a fixed IP address, decou
 
 - When there are multiple containers in a single instance, please make sure that the ports used by the containers do not conflict, otherwise the deployment will fail.
 
-## create service
+## Create service
 
 1. After successfully logging in as the __NS Editor__ user, click __Clusters__ in the upper left corner to enter the __Clusters__ page. In the list of clusters, click a cluster name.
 

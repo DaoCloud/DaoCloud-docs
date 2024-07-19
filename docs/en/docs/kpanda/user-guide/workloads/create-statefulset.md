@@ -35,11 +35,11 @@ Follow the steps below to create a statefulSet using image.
 
     ![StatefulSets](../images/state02.png)
 
-3. Fill in [Basic Information](create-statefulset.md#_3), [Container Settings](create-statefulset.md#_4), [Service Settings](create-statefulset.md#_5), [Advanced Settings] in turn (create-statefulset.md#_6), click __OK__ in the lower right corner of the page to complete the creation.
+3. Fill in [Basic Information](create-statefulset.md#basic-information), [Container Settings](create-statefulset.md#container-settings), [Service Settings](create-statefulset.md#service-settings), [Advanced Settings](create-statefulset.md#advanced-settings), click __OK__ in the lower right corner of the page to complete the creation.
 
-     The system will automatically return to the list of __StatefulSets__ , and wait for the status of the workload to become __running__ . If the workload status is abnormal, refer to [Workload Status](../workloads/pod-config/workload-status.md) for specific exception information.
+    The system will automatically return to the list of __StatefulSets__ , and wait for the status of the workload to become __running__ . If the workload status is abnormal, refer to [Workload Status](../workloads/pod-config/workload-status.md) for specific exception information.
 
-     Click __┇__ on the right side of the New Workload column to perform operations such as update, delete, elastic scaling, restart, and version rollback on the workload.
+    Click __┇__ on the right side of the New Workload column to perform operations such as update, delete, elastic scaling, restart, and version rollback on the workload.
 
     ![Status](../images/state10.png)
 
@@ -50,7 +50,7 @@ Follow the steps below to create a statefulSet using image.
 - Pods: Enter the number of Pod instances for the load, and one Pod instance is created by default.
 - Description: Enter the description information of the payload and customize the content. The number of characters cannot exceed 512.
 
-    ![Basic Information](../images/state01.png)
+![Basic Information](../images/state01.png)
 
 ### Container settings
 
@@ -60,46 +60,46 @@ Container setting is divided into six parts: basic information, life cycle, heal
 
 === "Basic information (required)"
 
-     When configuring container-related parameters, you must correctly fill in the container name and image parameters, otherwise you will not be able to proceed to the next step. After filling in the settings with reference to the following requirements, click __OK__ .
+    When configuring container-related parameters, you must correctly fill in the container name and image parameters, otherwise you will not be able to proceed to the next step. After filling in the settings with reference to the following requirements, click __OK__ .
     
-     - Container Name: Up to 63 characters, lowercase letters, numbers and separators ("-") are supported. Must start and end with a lowercase letter or number, eg nginx-01.
-     - Image: Enter the address or name of the image. When entering the image name, the image will be pulled from the official [DockerHub](https://hub.docker.com/) by default. After accessing the [container registry](../../../kangaroo/intro/index.md) module of DCE 5.0, you can click __Select Image__ on the right to select an image.
-     - Image Pull Policy: After checking __Always pull image__ , the image will be pulled from the registry every time the load restarts/upgrades. If it is not checked, only the local image will be pulled, and only when the image does not exist locally, it will be re-pulled from the container registry. For more details, refer to [Image Pull Policy](https://kubernetes.io/docs/concepts/containers/images/#image-pull-policy).
-     - Privileged container: By default, the container cannot access any device on the host. After enabling the privileged container, the container can access all devices on the host and enjoy all the permissions of the running process on the host.
-     - CPU/Memory Quota: Requested value (minimum resource to be used) and limit value (maximum resource allowed to be used) of CPU/Memory resource. Please configure resources for containers as needed to avoid resource waste and system failures caused by excessive container resources. The default value is shown in the figure.
-     - GPU Exclusive: Configure the GPU usage for the container, only positive integers are supported. The GPU quota setting supports setting exclusive use of the entire GPU card or part of the vGPU for the container. For example, for an 8-core GPU card, enter the number __8__ to let the container exclusively use the entire length of the card, and enter the number __1__ to configure a 1-core vGPU for the container.
+    - Container Name: Up to 63 characters, lowercase letters, numbers and separators ("-") are supported. Must start and end with a lowercase letter or number, eg nginx-01.
+    - Image: Enter the address or name of the image. When entering the image name, the image will be pulled from the official [DockerHub](https://hub.docker.com/) by default. After accessing the [container registry](../../../kangaroo/intro/index.md) module of DCE 5.0, you can click __Select Image__ on the right to select an image.
+    - Image Pull Policy: After checking __Always pull image__ , the image will be pulled from the registry every time the workload restarts/upgrades. If it is not checked, only the local image will be pulled, and only when the image does not exist locally, it will be re-pulled from the container registry. For more details, refer to [Image Pull Policy](https://kubernetes.io/docs/concepts/containers/images/#image-pull-policy).
+    - Privileged container: By default, the container cannot access any device on the host. After enabling the privileged container, the container can access all devices on the host and enjoy all the permissions of the running process on the host.
+    - CPU/Memory Quota: Requested value (minimum resource to be used) and limit value (maximum resource allowed to be used) of CPU/Memory resource. Please configure resources for containers as needed to avoid resource waste and system failures caused by excessive container resources. The default value is shown in the figure.
+    - GPU Exclusive: Configure the GPU usage for the container, only positive integers are supported. The GPU quota setting supports setting exclusive use of the entire GPU card or part of the vGPU for the container. For example, for an 8-core GPU card, enter the number __8__ to let the container exclusively use the entire length of the card, and enter the number __1__ to configure a 1-core vGPU for the container.
     
-         > Before setting exclusive GPU, the administrator needs to install the GPU card and driver plug-in on the cluster nodes in advance, and enable the GPU feature in [Cluster Settings](../clusterops/cluster-settings.md).
+    > Before setting exclusive GPU, the administrator needs to install the GPU card and driver plug-in on the cluster nodes in advance, and enable the GPU feature in [Cluster Settings](../clusterops/cluster-settings.md).
 
-        ![Basic Info](../images/state11.png)
+    ![Basic Info](../images/state11.png)
 
 === "Lifecycle (optional)"
 
-     Set the commands that need to be executed when the container starts, after starting, and before stopping. For details, refer to [Container Lifecycle Configuration](pod-config/lifecycle.md).
+    Set the commands that need to be executed when the container starts, after starting, and before stopping. For details, refer to [Container Lifecycle Configuration](pod-config/lifecycle.md).
 
     ![Lifecycle](../images/state06.png)
 
 === "Health Check (optional)"
 
-     Used to judge the health status of containers and applications. Helps improve app usability. For details, refer to [Container Health Check Configuration](pod-config/health-check.md).
+    Used to judge the health status of containers and applications. Helps improve app usability. For details, refer to [Container Health Check Configuration](pod-config/health-check.md).
     
     ![Health Check](../images/deploy07.png)
 
 === "Environment Variables (optional)"
 
-     Configure container parameters within the Pod, add environment variables or pass settings to the Pod, etc. For details, refer to [Container environment variable settings](pod-config/env-variables.md).
+    Configure container parameters within the Pod, add environment variables or pass settings to the Pod, etc. For details, refer to [Container environment variable settings](pod-config/env-variables.md).
     
     ![Environment Variables](../images/deploy08.png)
 
 === "Data Storage (optional)"
 
-     Configure the settings for container mounting data volumes and data persistence. For details, refer to [Container Data Storage Configuration](pod-config/env-variables.md).
+    Configure the settings for container mounting data volumes and data persistence. For details, refer to [Container Data Storage Configuration](pod-config/env-variables.md).
     
     ![Data Storage](../images/state09.png)
 
 === "Security Settings (optional)"
 
-     Containers are securely isolated through Linux's built-in account authority isolation mechanism. You can limit container permissions by using account UIDs (digital identity tokens) with different permissions. For example, enter __0__ to use the privileges of the root account.
+    Containers are securely isolated through Linux's built-in account authority isolation mechanism. You can limit container permissions by using account UIDs (digital identity tokens) with different permissions. For example, enter __0__ to use the privileges of the root account.
     
     ![Security Settings](../images/deploy10.png)
 
@@ -119,61 +119,62 @@ Configure [Service (Service)](../network/create-services.md) for the statefulset
 
 ### Advanced settings
 
-Advanced setting includes four parts: load network settings, upgrade strategy, scheduling strategy, label and annotation. You can click the tabs below to view the requirements of each part.
+Advanced setting includes four parts: load network settings, upgrade policy, scheduling policy, label and annotation. You can click the tabs below to view the requirements of each part.
 
 === "Network Configuration"
 
-     1. For container NIC settings, refer to [Workload Usage IP Pool](../../../network/config/use-ippool/usage.md)
-     2. DNS settings
-     In some cases, the application will have redundant DNS queries. Kubernetes provides DNS-related settings options for applications, which can effectively reduce redundant DNS queries and increase business concurrency in certain cases.
-    
-     - DNS Policy
-    
-         - Default: Make the container use the domain name resolution file pointed to by the __--resolv-conf__ parameter of kubelet. This setting can only resolve external domain names registered on the Internet, but cannot resolve cluster internal domain names, and there is no invalid DNS query.
-         - ClusterFirstWithHostNet: The domain name file of the application docking host.
-         - ClusterFirst: application docking with Kube-DNS/CoreDNS.
-         - None: New option value introduced in Kubernetes v1.9 (Beta in v1.10). After setting to None, dnsConfig must be set. At this time, the domain name resolution file of the container will be completely generated through the settings of dnsConfig.
-    
-     - Nameservers: fill in the address of the domain name server, such as __10.6.175.20__ .
-     - Search domains: DNS search domain list for domain name query. When specified, the provided search domain list will be merged into the search field of the domain name resolution file generated based on dnsPolicy, and duplicate domain names will be deleted. Kubernetes allows up to 6 search domains.
-     - Options: Configuration options for DNS, where each object can have a name attribute (required) and a value attribute (optional). The content in this field will be merged into the options field of the domain name resolution file generated based on dnsPolicy. If some options of dnsConfig options conflict with the options of the domain name resolution file generated based on dnsPolicy, they will be overwritten by dnsConfig.
-     - Host Alias: the alias set for the host.
+    1. For container NIC settings, refer to [Workload Usage IP Pool](../../../network/config/use-ippool/usage.md)
+    2. DNS settings
 
-        ![DNS](../images/state17.png)
+    In some cases, the application will have redundant DNS queries. Kubernetes provides DNS-related settings options for applications, which can effectively reduce redundant DNS queries and increase business concurrency in certain cases.
+    
+    - DNS Policy
+    
+        - Default: Make the container use the domain name resolution file pointed to by the __--resolv-conf__ parameter of kubelet. This setting can only resolve external domain names registered on the Internet, but cannot resolve cluster internal domain names, and there is no invalid DNS query.
+        - ClusterFirstWithHostNet: The domain name file of the application docking host.
+        - ClusterFirst: application docking with Kube-DNS/CoreDNS.
+        - None: New option value introduced in Kubernetes v1.9 (Beta in v1.10). After setting to None, dnsConfig must be set. At this time, the domain name resolution file of the container will be completely generated through the settings of dnsConfig.
+    
+    - Nameservers: fill in the address of the domain name server, such as __10.6.175.20__ .
+    - Search domains: DNS search domain list for domain name query. When specified, the provided search domain list will be merged into the search field of the domain name resolution file generated based on dnsPolicy, and duplicate domain names will be deleted. Kubernetes allows up to 6 search domains.
+    - Options: Configuration options for DNS, where each object can have a name attribute (required) and a value attribute (optional). The content in this field will be merged into the options field of the domain name resolution file generated based on dnsPolicy. If some options of dnsConfig options conflict with the options of the domain name resolution file generated based on dnsPolicy, they will be overwritten by dnsConfig.
+    - Host Alias: the alias set for the host.
+
+    ![DNS](../images/state17.png)
 
 === "Upgrade Policy"
 
-     - Upgrade Mode: __Rolling upgrade__ refers to gradually replacing instances of the old version with instances of the new version. During the upgrade process, business traffic will be load-balanced to the old and new instances at the same time, so the business will not be interrupted. __Rebuild and upgrade__ refers to deleting the load instance of the old version first, and then installing the specified new version. During the upgrade process, the business will be interrupted.
-     - Revision History Limit: Set the number of old versions retained when the version is rolled back. The default is 10.
-     - Graceful Time Window: The execution time window (0-9,999 seconds) of the command before the load stops, the default is 30 seconds.
+    - Upgrade Mode: __Rolling upgrade__ refers to gradually replacing instances of the old version with instances of the new version. During the upgrade process, business traffic will be load-balanced to the old and new instances at the same time, so the business will not be interrupted. __Rebuild and upgrade__ refers to deleting the workload instance of the old version first, and then installing the specified new version. During the upgrade process, the business will be interrupted.
+    - Revision History Limit: Set the number of old versions retained when the version is rolled back. The default is 10.
+    - Graceful Period: The execution period (0-9,999 seconds) of the command before the workload stops, the default is 30 seconds.
 
-        ![Upgrade Policy](../images/state14.png)
+    ![Upgrade Policy](../images/state14.png)
 
 === "Container Management Policies"
 
-     Kubernetes v1.7 and later versions can set Pod management policies through __.spec.podManagementPolicy__ , which supports the following two methods:
+    Kubernetes v1.7 and later versions can set Pod management policies through __.spec.podManagementPolicy__ , which supports the following two methods:
     
-     - __OrderedReady__ : The default Pod management strategy, which means that Pods are deployed in order. Only after the deployment of the previous Pod is successfully completed, the statefulset will start to deploy the next Pod. Pods are deleted in reverse order, with the last created being deleted first.
+    - __OrderedReady__ : The default Pod management policy, which means that Pods are deployed in order. Only after the deployment of the previous Pod is successfully completed, the statefulset will start to deploy the next Pod. Pods are deleted in reverse order, with the last created being deleted first.
     
-     - __Parallel__ : Create or delete containers in parallel, just like Pods of the Deployment type. The StatefulSet controller starts or terminates all containers in parallel. There is no need to wait for a Pod to enter the Running and ready state or to stop completely before starting or terminating other Pods. This option only affects the behavior of scaling operations, not the order of updates.
+    - __Parallel__ : Create or delete containers in parallel, just like Pods of the Deployment type. The StatefulSet controller starts or terminates all containers in parallel. There is no need to wait for a Pod to enter the Running and ready state or to stop completely before starting or terminating other Pods. This option only affects the behavior of scaling operations, not the order of updates.
 
-        ![Container Management Policies](../images/state05.png)
+    ![Container Management Policies](../images/state05.png)
 
 === "Scheduling Policies"
 
-     - Tolerance time: When the node where the load instance is located is unavailable, the time for rescheduling the load instance to other available nodes, the default is 300 seconds.
-     - Node affinity: According to the label on the node, constrain which nodes the Pod can be scheduled on.
-     - Workload Affinity: Constrains which nodes a Pod can be scheduled to based on the labels of the Pods already running on the node.
-     - Workload anti-affinity: Constrains which nodes a Pod cannot be scheduled to based on the labels of Pods already running on the node.
-     - Topology domain: namely topologyKey, used to specify a group of nodes that can be scheduled. For example, __kubernetes.io/os__ indicates that as long as the node of an operating system meets the conditions of labelSelector, it can be scheduled to the node.
+    - Tolerance time: When the node where the workload instance is located is unavailable, the time for rescheduling the workload instance to other available nodes, the default is 300 seconds.
+    - Node affinity: According to the label on the node, constrain which nodes the Pod can be scheduled on.
+    - Workload Affinity: Constrains which nodes a Pod can be scheduled to based on the labels of the Pods already running on the node.
+    - Workload anti-affinity: Constrains which nodes a Pod cannot be scheduled to based on the labels of Pods already running on the node.
+    - Topology domain: namely topologyKey, used to specify a group of nodes that can be scheduled. For example, __kubernetes.io/os__ indicates that as long as the node of an operating system meets the conditions of labelSelector, it can be scheduled to the node.
     
-     > For details, refer to [Scheduling Policy](pod-config/scheduling-policy.md).
+    > For details, refer to [Scheduling Policy](pod-config/scheduling-policy.md).
 
-        ![Scheduling Policies](../images/state15.png)
+    ![Scheduling Policies](../images/state15.png)
 
 === "Labels and Annotations"
 
-     You can click the __Add__ button to add tags and annotations to workloads and pods.
+    You can click the __Add__ button to add tags and annotations to workloads and pods.
     
     ![Labels and Annotations](../images/state16.png)
 
@@ -195,7 +196,7 @@ In addition to image, you can also create statefulsets more quickly through YAML
 
 ??? note "Click to see an example YAML for creating a statefulSet"
 
-     ```yaml
+    ```yaml
      kind: StatefulSet
      apiVersion: apps/v1
      metadata:

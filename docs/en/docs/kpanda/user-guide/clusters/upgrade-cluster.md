@@ -20,7 +20,7 @@ In DCE, you can upgrade the Kubernetes cluster with one click through the web UI
     - Cluster upgrades across minor versions are not allowed, e.g. a direct upgrade from 1.23 to 1.25 is not possible.
     - **Access clusters do not support version upgrades. If there is no "cluster upgrade" in the left navigation bar, please check whether the cluster is an access cluster. **
     - The global service cluster can only be upgraded through the terminal.
-    - When upgrading a working cluster, the [Management Cluster](cluster-role.md#_3) of the working cluster should have been connected to the container management module and be running normally.
+    - When upgrading a worker cluster, the [Management Cluster](cluster-role.md#management-clusters) of the worker cluster should have been connected to the container management module and be running normally.
 
 1. Click the name of the target cluster in the cluster list.
 
