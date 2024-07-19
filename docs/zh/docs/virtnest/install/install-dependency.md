@@ -10,7 +10,8 @@
 
 ### 操作系统内核版本需要在 3.15 以上
 
-目标集群所有节点的操作系统内核版本需要大于 3.15（详见 [kubevirt issue](https://github.com/kubevirt/kubevirt/issues/7006)）。您可以通过运行以下命令查看内核版本：
+目标集群所有节点的操作系统内核版本需要大于 3.15（详见 [kubevirt issue](https://github.com/kubevirt/kubevirt/issues/7006)）。
+运行以下命令查看内核版本：
 
 ```bash
 uname -a
@@ -24,16 +25,16 @@ Linux master 6.5.3-1.el7.elrepo.x86_64 #1 SMP PREEMPT_DYNAMIC Wed Sep 13 11:46:2
 
 ### CPU 需支持 x86-64-v2 及以上的指令集
 
-您可以使用以下脚本检查当前节点的 CPU 是否支持：
+使用以下脚本检查当前节点的 CPU 是否支持：
 
 !!! note  
 
     若出现与输出信息无关的报错（如下所示），可无需关注，不影响最终结果。
 
-```bash title="示例"
-$ sh detect-cpu.sh
-detect-cpu.sh: line 3: fpu: command not found
-```   
+    ```bash title="示例"
+    $ sh detect-cpu.sh
+    detect-cpu.sh: line 3: fpu: command not found
+    ```   
 
 ```sh
 cat <<EOF > detect-cpu.sh
