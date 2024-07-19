@@ -63,7 +63,7 @@ These changes are for Insight Server.
 
 #### Improvements
 
-- **Improved** Log correlation support for filtering based on TraceID and container groups
+- **Improved** Log correlation support for filtering based on TraceID and Pods
 - **Improved** support for encrypting sensitive information of notification objects
 - **Improved** split `insight-server` into `insight-server` and `insight-manager` components
 - **Improved** high availability support for `opentelemetry-collector` component
@@ -324,7 +324,7 @@ These changes are for Insight Server.
 
 - **Fixed** an issue where service topology was effective when namespace was empty.
 - **Fixed** an issue with invalid documentation link in service topology status description.
-- **Fixed** duplication of namespace and stateless workload in displayed namespace when creating alert policies.
+- **Fixed** duplication of namespace and deployment in displayed namespace when creating alert policies.
 - **Fixed** missing trigger value data in alert list and alert policy in alerts.
 - **Fixed** validation error in required fields for type, keyword, and value when adding silence conditions in alert silencing.
 - **Fixed** time zone not being effective in alert silencing time range.

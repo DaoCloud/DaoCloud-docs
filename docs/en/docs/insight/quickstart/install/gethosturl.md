@@ -28,7 +28,7 @@ export otel_col_host="insight-opentelemetry-collector.insight-system.svc.cluster
 
 ## Install insight-agent on __worker cluster__ 
 
-The __Working Cluster__ needs to upload the data of metrics, logs, and traces to the __Global Service Cluster__ . Please ensure that the Insight in the __global service cluster__ is running and has exposed the address that the working cluster can access.
+The __Worker Cluster__ needs to upload the data of metrics, logs, and traces to the __Global Service Cluster__ . Please ensure that the Insight in the __global service cluster__ is running and has exposed the address that the worker cluster can access.
 
 ### Obtain insight-agent through the interface
 
