@@ -69,6 +69,6 @@ Displays the log of the branches found during the latest scan of the code reposi
 
 ### View Branches
 
-Displays the branch information obtained according to the branch discovery policy. A branch in the __disabled__ state signifies that the latest scan results do not conform to the branch discovery strategy.
+Displays the branch information obtained according to the branch discovery policy. A branch in the __disabled__ state signifies that the latest scan results do not conform to the branch discovery policy.
 
 ![View Branches](../../../images/mutilpipeline08.png)

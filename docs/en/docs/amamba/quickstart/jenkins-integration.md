@@ -9,7 +9,7 @@ date: 2024-06-27
 
 Since Jenkins is deployed on a physical machine or virtual machine, some Kubernetes (K8s) based functionalities may not be available after integration.
 
-- The application workbench places pipelines in a folder named after the WorkspaceID, which may cause existing pipelines to be undiscoverable and not displayed on the workbench interface.
+- The Workbench places pipelines in a folder named after the WorkspaceID, which may cause existing pipelines to be undiscoverable and not displayed on the workbench interface.
 - All configurations based on casc will become invalid, including SonarQube integration and global email settings.
 - If Jenkins is not running using KubernetesCloud, related syntax will become invalid, requiring manual adjustments to the Jenkinsfile.
 
@@ -38,7 +38,7 @@ The following dependency plugins will be automatically installed when installing
 
 ## Configure Nodes
 
-For preparation work related to physical machine nodes, please refer to [Using Jenkins agents](https://www.jenkins.io/doc/book/using/using-agents/).
+For preparation work related to physical machine nodes, refer to [Using Jenkins agents](https://www.jenkins.io/doc/book/using/using-agents/).
 
 ## Configure Jenkins
 

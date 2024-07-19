@@ -37,23 +37,23 @@ This page introduces how to install Jenkins before using the pipeline features.
 
     Here are some important parameters' explanation. Updates them according to your actual business needs.
 
-    | Parameter  | Description     |
-    | ---------- | --------------- |
-    | ContainerRuntime  | Select a runtime like podman or docker   |
-    | AdminUser  | Username for Jenkins   |
-    | AdminPassword     | Password for Jenkins   |
-    | Deploy.JenkinsHost      | Host address to Jenkins web service. If using Node Port, the access address will be: http://{cluster address:port} |
-    | JavaOpts   | Specify JVM startup parameters for running Jenkins      |
+    | Parameter  | Description |
+    | ---------- | ----------- |
+    | ContainerRuntime | Select a runtime like podman or docker |
+    | AdminUser | Username for Jenkins |
+    | AdminPassword | Password for Jenkins |
+    | Deploy.JenkinsHost | Host address to Jenkins web service. If using Node Port, the access address will be: `http://{cluster address:port}` |
+    | JavaOpts | Specify JVM startup parameters for running Jenkins |
     | ServiceType | Default is ClusterIP, supports ClusterIP, NodePort, LoadBalancer |
-    | ServicePort | Service access port    |
-    | NodePort   | Required if ServiceType=NodePort, range: 30000-32767    |
-    | resources.requests      | Resource requests for Jenkins |
-    | resources.limits  | Resource limits for Jenkins   |
-    | image.registry    | Jenkins image registry   |
-    | eventProxy.enabled      | EventProxy is a sidecar to provide a reliable connection to Amamba APIServer, enables it especially when Jenkins was deployed to a cluster which does not in the same zone with global-cluster.  |
-    | eventProxy.image.registry            | Registry for image eventProxy. <br />Required if  enabled=true       |
-    | eventProxy.configMap.eventProxy.host  | Host to webhook address. Uses the portal address if Jenkins was deployed to a Worker cluster. <br />Required if enabled=true |
-    | eventProxy.configMap.eventProxy.proto | Protocol to webhook address, `http` by default. <br />Required if enabled=true      |
+    | ServicePort | Service access port |
+    | NodePort | Required if ServiceType=NodePort, range: 30000-32767 |
+    | resources.requests | Resource requests for Jenkins |
+    | resources.limits | Resource limits for Jenkins |
+    | image.registry | Jenkins image registry |
+    | eventProxy.enabled | EventProxy is a sidecar to provide a reliable connection to Amamba APIServer, enables it especially when Jenkins was deployed to a cluster which does not in the same zone with global-cluster.  |
+    | eventProxy.image.registry | Registry for image eventProxy. <br />Required if  enabled=true |
+    | eventProxy.configMap.eventProxy.host | Host to webhook address. Uses the portal address if Jenkins was deployed to a Worker cluster. <br />Required if enabled=true |
+    | eventProxy.configMap.eventProxy.proto | Protocol to webhook address, `http` by default. <br />Required if enabled=true |
     | eventProxy.configMap.eventProxy.webhookUrl | Path to webhook address, `/apis/internel.amamba.io/devops/pipeline/v1alpha1/webhooks/jenkins` by default.  |
     | eventProxy.configMap.eventProxy.token | Token to access DCE, refer [Global Access Key Document](../../../ghippo/user-guide/personal-center/accesstoken.md) for token acquisition<br />Required if enabled=true |
 
@@ -137,7 +137,7 @@ To address these issues, you need to go to the Jenkins backend for relevant conf
 
     !!! note
 
-        This step is not necessary for versions after Application Workbench v0.25.0!
+        This step is not necessary for versions after Workbench v0.25.0!
 
     ![sonarqube03](../../images/sonarqube03.png)
 

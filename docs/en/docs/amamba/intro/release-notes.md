@@ -211,7 +211,7 @@ the development and feature changes in each version.
 - **Added** integration with GitLab using access token
 - **Added** status field for native applications
 - **Added** API integration with kolm
-- **Added** CRUD APIs for multi-cloud applications
+- **Added** CRUD APIs for multicloud applications
 - **Added** ability to add triggers in pipelines, automatically adding webhooks in GitLab, and triggering pipelines based on related events
 
 #### Improvements
@@ -268,7 +268,7 @@ the development and feature changes in each version.
 
 - **Fixed** an issue where an error occurred on the native application list page when the target cluster did not have the CRD (Custom Resource Definition) for native applications installed.
 - **Fixed** an issue where no values were modified when updating pipeline credentials, resulting in a null return when password information was not returned.
-- **Fixed** the problem where the orphan strategy for multi-branch pipelines showed as -1 when it was empty.
+- **Fixed** the problem where the orphan policy for multi-branch pipelines showed as -1 when it was empty.
 
 #### Improvements
 
@@ -293,7 +293,7 @@ the development and feature changes in each version.
 #### New Features
 
 - **Added** API now supports selecting integrated code repositories using code selectors.
-- **Added** support for nginx-ingress based canary release strategy.
+- **Added** support for nginx-ingress based canary release policy.
 - **Added** API now supports resource topology for applications.
 - **Added** API unified credentials.
 - **Added** version information to pipeline templates.
@@ -303,7 +303,7 @@ the development and feature changes in each version.
 
 - **Fixed** the issue where containers in container images didn't support underscores.
 - **Fixed** the error with replica numbers in blue-green deployments.
-- **Fixed** the problem where the orphan strategy for multi-branch pipelines showed as -1 when it was empty.
+- **Fixed** the problem where the orphan policy for multi-branch pipelines showed as -1 when it was empty.
 
 #### Improvements
 

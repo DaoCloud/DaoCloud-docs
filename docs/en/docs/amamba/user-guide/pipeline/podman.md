@@ -79,7 +79,7 @@ docker manifest push --all $target # (5)!
 1. The final image name
 2. Platforms to be built
 3. Build multi-architecture image
-4. Log in to the image repository
+4. Log in to the container registry
 5. Push the image
 
 The final built image will contain images for both amd64 and arm64 platforms:
@@ -108,7 +108,7 @@ Of course, if you directly use Docker commands in Jenkinsfile, which do not supp
     docker manifest add release.daocloud.io/demo/dao-2048:v1 release.daocloud.io/demo/dao-2048-arm
     ```
 
-4. Use podman manifest push to push the manifest image to the image repository
+4. Use podman manifest push to push the manifest image to the container registry
 
     ```shell
     podman manifest push --all release.daocloud.io/demo/dao-2048:v1

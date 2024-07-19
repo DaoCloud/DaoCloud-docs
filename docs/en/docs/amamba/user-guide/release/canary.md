@@ -28,7 +28,7 @@ You can use the following two installation schemes to install Istio in the clust
 
 - Refer to the [Istio Official Installation Guide](https://istio.io/latest/zh/docs/setup/install/)
 
-- [Create a Dedicated Mesh Through the Platform's Service Mesh Module](https://docs.daocloud.io/mspider/user-guide/service-mesh/#_1)
+- [Create a Dedicated Mesh Through the Platform's Service Mesh Module](../../../mspider/user-guide/service-mesh/README.md#create-hosted-or-dedicated-mesh)
 
 ## Steps
 
@@ -54,7 +54,7 @@ You can use the following two installation schemes to install Istio in the clust
     === "Based on Replica Count"
 
         - Traffic Routing: Only supports canary delivery based on weight.
-        - Traffic Scheduling Strategy:
+        - Traffic Scheduling Policy:
 
             - Current Stage Release Traffic Ratio: The traffic ratio increased for the canary version in each traffic cycle.
             - Wait Time After Reaching Traffic Ratio: The traffic increase cycle for the canary version, i.e., how long to wait before automatically entering the next canary traffic ratio.
@@ -68,7 +68,7 @@ You can use the following two installation schemes to install Istio in the clust
         - Traffic Scheduling Type: Based on Istio, it supports canary delivery based on weight and
           request characteristics, currently only supports canary delivery based on weight.
 
-        - Traffic Scheduling Strategy:
+        - Traffic Scheduling Policy:
 
             - Current Stage Release Traffic Ratio: The traffic ratio increased for the canary version in each traffic cycle.
             - Wait Time After Reaching Traffic Ratio: The traffic increase cycle for the canary version, i.e.,
@@ -87,8 +87,8 @@ You can use the following two installation schemes to install Istio in the clust
 
         - Traffic Routing: Based on Nginx, only supports canary delivery based on weight.
         - Service: Select the Service object associated with the current release object
-        - Ingress: Select the Ingress object associated with the current release object, used to configure the traffic scheduling strategy.
-        - Traffic Scheduling Strategy:
+        - Ingress: Select the Ingress object associated with the current release object, used to configure the traffic scheduling policy.
+        - Traffic Scheduling Policy:
 
             - Traffic for new version in each stage: The traffic ratio increased for the canary version in each traffic cycle.
             - Wait before directing more traffic: The traffic increase cycle for the canary version, i.e.,
