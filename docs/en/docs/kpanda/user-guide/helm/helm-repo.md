@@ -68,7 +68,7 @@ When the address information of the helm repo changes, the address, authenticati
 
     ![Helm Repo](../images/helmrepo01.png)
 
-3. Find the Helm repository that needs to be updated on the repository list page, click the __⋮__ button on the right side of the list, and click __Update__ in the pop-up menu.
+3. Find the Helm repository that needs to be updated on the repository list page, click the __┇__ button on the right side of the list, and click __Update__ in the pop-up menu.
 
     ![Update](../images/helmrepo04.png)
 
@@ -90,7 +90,7 @@ In addition to importing and updating repositorys, you can also delete unnecessa
 
     ![Helm Repo](../images/helmrepo01.png)
 
-3. Find the Helm repository that needs to be updated on the repository list page, click the __⋮__ button on the right side of the list, and click __Delete__ in the pop-up menu.
+3. Find the Helm repository that needs to be updated on the repository list page, click the __┇__ button on the right side of the list, and click __Delete__ in the pop-up menu.
 
     ![Delete](../images/helmrepo07.png)
 

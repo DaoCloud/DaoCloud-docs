@@ -9,7 +9,7 @@ This chapter provides installation guidance for Ascend NPU drivers, Device Plugi
 
 ## Prerequisites
 
-1. Before installation, confirm the supported NPU models. For details, please refer to the [Ascend NPU Matrix](../gpu_matrix.md).
+1. Before installation, confirm the supported NPU models. For details, refer to the [Ascend NPU Matrix](../gpu_matrix.md).
 2. Ensure that the kernel version required for the corresponding NPU model is compatible. For more details, 
    refer to the [Ascend NPU Matrix](../gpu_matrix.md).
 3. Prepare the basic Kubernetes environment.
@@ -126,7 +126,7 @@ chown root:root /var/log/mindx-dl/devicePlugin
 !!! note
 
     Please create the corresponding log directory for each required component. In this example, only the Device Plugin component is needed.
-    For other component requirements, please refer to the [official documentation](https://www.hiascend.com/document/detail/zh/mindx-dl/50rc3/clusterscheduling/clusterschedulingig/dlug_installation_016.html)
+    For other component requirements, refer to the [official documentation](https://www.hiascend.com/document/detail/zh/mindx-dl/50rc3/clusterscheduling/clusterschedulingig/dlug_installation_016.html)
 
 ### Create Node Labels
 
@@ -170,4 +170,4 @@ Once everything is ready, you can select the corresponding NPU device when creat
 
 !!! note
 
-    For detailed information of how to use, please refer to [Using Ascend (Ascend) NPU](https://docs.daocloud.io/kpanda/user-guide/gpu/Ascend_usage/).
+    For detailed information of how to use, refer to [Using Ascend (Ascend) NPU](https://docs.daocloud.io/kpanda/user-guide/gpu/Ascend_usage/).

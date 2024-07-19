@@ -3,9 +3,9 @@ MTPE: Fan-Lin
 Date: 2024-01-23
 ---
 
-# Enabling MIG Function
+# Enabling MIG Features
 
-This section describes how to enable NVIDIA MIG function. NVIDIA currently provides two strategies for exposing MIG devices on Kubernetes nodes:
+This section describes how to enable NVIDIA MIG features. NVIDIA currently provides two strategies for exposing MIG devices on Kubernetes nodes:
 
 - **Single mode** : Nodes expose a single type of MIG device on all their GPUs.
 - **Mixed mode** : Nodes expose a mixture of MIG device types on all their GPUs.

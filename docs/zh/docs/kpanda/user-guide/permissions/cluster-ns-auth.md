@@ -50,6 +50,6 @@
 
     !!! tip
 
-        后续如需删除或编辑权限，可点击列表右侧的 __⋮__ ，选择 __编辑__ 或 __删除__ 。
+        后续如需删除或编辑权限，可点击列表右侧的 __┇__ ，选择 __编辑__ 或 __删除__ 。
 
         ![编辑或删除](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/perm08.png)

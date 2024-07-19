@@ -124,7 +124,7 @@ which will be used when modifying related configurations.
 
     !!! note
 
-        If node1 is offline or malfunctioning, the following configuration items must be added to extraArgs,
+        If node1 is offline or malfunctioning, the following ConfigMaps must be added to extraArgs,
         you need not to add them when node1 is online.
 
         ```toml

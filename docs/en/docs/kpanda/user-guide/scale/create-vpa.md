@@ -7,7 +7,7 @@ Date: 2024-02-23
 
 The container Vertical Pod Autoscaler (VPA) calculates the most suitable CPU and memory request values ​​for the Pod by monitoring the Pod's resource application and usage over a period of time. Using VPA can allocate resources to each Pod in the cluster more reasonably, improve the overall resource utilization of the cluster, and avoid waste of cluster resources.
 
-DCE 5.0 supports VPA through containers. Based on this function, the Pod request value can be dynamically adjusted according to the usage of container resources. DCE 5.0 supports manual and automatic modification of resource request values, and you can configure them according to actual needs.
+DCE 5.0 supports VPA through containers. Based on this feature, the Pod request value can be dynamically adjusted according to the usage of container resources. DCE 5.0 supports manual and automatic modification of resource request values, and you can configure them according to actual needs.
 
 This page describes how to configure VPA for deployment.
 
@@ -49,10 +49,10 @@ Refer to the following steps to configure the built-in index auto scaling policy
 
     - Policy name: Enter the name of the vertical scaling policy. Please note that the name can contain up to 63 characters, and can only contain lowercase letters, numbers, and separators ("-"), and must start and end with lowercase letters or numbers, such as vpa- my-dep.
     - Scaling mode: Run the method of modifying the CPU and memory request values. Currently, vertical scaling supports manual and automatic scaling modes.
-        - Manual scaling: After the vertical scaling strategy calculates the recommended resource configuration value, the user needs to manually modify the resource quota of the application.
-        - Auto-scaling: The vertical scaling strategy automatically calculates and modifies the resource quota of the application.
+        - Manual scaling: After the vertical scaling policy calculates the recommended resource configuration value, the user needs to manually modify the resource quota of the application.
+        - Auto-scaling: The vertical scaling policy automatically calculates and modifies the resource quota of the application.
     - Target container: Select the container to be scaled vertically.
 
-5. After completing the parameter configuration, click the __OK__ button to automatically return to the elastic scaling details page. Click __⋮__ on the right side of the list to perform edit and delete operations.
+5. After completing the parameter configuration, click the __OK__ button to automatically return to the elastic scaling details page. Click __┇__ on the right side of the list to perform edit and delete operations.
 
     ![Successfully Configurate](../images/createVpaScale02.png)

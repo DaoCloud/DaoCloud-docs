@@ -5,7 +5,7 @@ Date: 2024-02-29
 
 # Install kubernetes-cronhpa-controller
 
-The container copy timing horizontal expansion and contraction policy (CronHPA) can provide stable computing resource guarantee for periodic high-concurrency applications, and __kubernetes-cronhpa-controller__ is a key component to implement CronHPA.
+The container copy timing horizontal autoscaling policy (CronHPA) can provide stable computing resource guarantee for periodic high-concurrency applications, and __kubernetes-cronhpa-controller__ is a key component to implement CronHPA.
 
 This section describes how to install the __kubernetes-cronhpa-controller__ plugin.
 

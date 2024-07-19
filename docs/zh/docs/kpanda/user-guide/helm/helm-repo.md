@@ -58,7 +58,7 @@ Helm 仓库是用来存储和发布 Chart 的存储库。Helm 应用模块支持
 
     ![helm仓库](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/helmrepo01.png)
 
-3. 在仓库列表页面找到需要更新的 Helm 仓库，在列表右侧点击 __⋮__ 按钮，在弹出菜单中点击 __更新__ 。
+3. 在仓库列表页面找到需要更新的 Helm 仓库，在列表右侧点击 __┇__ 按钮，在弹出菜单中点击 __更新__ 。
 
     ![点击更新](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/helmrepo04.png)
 
@@ -80,7 +80,7 @@ Helm 仓库是用来存储和发布 Chart 的存储库。Helm 应用模块支持
 
     ![helm仓库](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/helmrepo01.png)
 
-3. 在仓库列表页面找到需要更新的 Helm 仓库，在列表右侧点击 __⋮__ 按钮，在弹出菜单中点击 __删除__ 。
+3. 在仓库列表页面找到需要更新的 Helm 仓库，在列表右侧点击 __┇__ 按钮，在弹出菜单中点击 __删除__ 。
 
     ![点击删除](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/helmrepo07.png)
 

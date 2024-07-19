@@ -2,11 +2,11 @@
 
 !!! note
 
-    This page describes how to upgrade the kubernetes version of the working cluster created using the DCE 5.0 platform in offline mode, and does not include the upgrade of other kubeneters components.
+    This page describes how to upgrade the kubernetes version of the worker cluster created using the DCE 5.0 platform in offline mode, and does not include the upgrade of other kubeneters components.
 
 ## Overview
 
-In the offline scenario, users can upgrade the kubernetes version of the working cluster created using the DCE 5.0 platform by making an incremental offline package. The overall upgrade idea is: build the offline package on the networking node → import the offline package into the bootstrapping node → update the kubernetes version list of the Global cluster → use the platform UI to upgrade the kubernetes version of the working cluster.
+In the offline scenario, users can upgrade the kubernetes version of the worker cluster created using the DCE 5.0 platform by making an incremental offline package. The overall upgrade idea is: build the offline package on the networking node → import the offline package into the bootstrapping node → update the kubernetes version list of the Global cluster → use the platform UI to upgrade the kubernetes version of the worker cluster.
 
 !!! note
     

@@ -82,7 +82,7 @@ understand the evolution path and feature changes from release to release.
 #### Fixed
 
 - **Fixed** an issue where creating a multi-cloud instance namespace caused errors in container management queries.
-- **Fixed** an issue where clicking the restart button in the job list caused errors and deleted job tasks.
+- **Fixed** an issue where clicking the restart button in the job list caused errors and deleted jobs.
 - **Fixed** an issue where kube-system and default namespaces were not synchronized to ghippo when connecting kind clusters.
 - **Fixed** an issue where workspace-bound cluster resources were not filtered for multi-cloud clusters.
 - **Fixed** an issue where workspace admin permissions mapped to cluster admin permissions in Kpanda did not display.
@@ -119,10 +119,10 @@ understand the evolution path and feature changes from release to release.
 #### Fixes
 
 - **Fixed** an issue with not being able to find mounted PVC volumes from the Deployment page
-- **Fixed** an issue with inability to select S3 region in etcd backup strategy
+- **Fixed** an issue with inability to select S3 region in etcd backup policy
 - **Bug Fix** Support token authentication for kpanda openapi proxies
 - **Fixed** unpaginated results in liststorageclasses interface
-- **Fixed** an issue with failed execution of cd_to_prod_site task in version release pipeline, requiring CI/CD script update
+- **Fixed** an issue with failed execution of cd_to_prod_site job in version release pipeline, requiring CI/CD script update
 - **Fixed** an issue with upload failure when uploading files to target containers multiple times
 - **Fixed** instability of cluster after long-running kpanda-binding-syncer in kairship e2e online environment
 - **Fixed** an issue with empty docker_rh_repo form when running with docker as the runtime for access nodes
@@ -135,7 +135,7 @@ understand the evolution path and feature changes from release to release.
 - **Fixed** an issue with ready check showing as disabled when creating metallb with ready check enabled but showing as disabled when editing
 - **Fixed** an issue with incorrect image addresses in synchronized chart packages when relocateContainerImages is set to false in charts-syncer
 - **Fixed** an issue with inability to restore modified PVC data after successful restore of sts+pvc backup
-- **Fixed** backup failure when creating backup strategy without backing up data volumes, but including PVs in backup resources
+- **Fixed** backup failure when creating backup policy without backing up data volumes, but including PVs in backup resources
 - **Fixed** an issue with always returning 0 available resources in VGPU mode
 - **Fixed** an issue with GPU type displayed as MIG Mixed MIG Single in node details page under mig mixed mode
 - **Fixed** an issue with AI processor count always showing total value in ascend monitoring dashboard
@@ -155,7 +155,7 @@ understand the evolution path and feature changes from release to release.
 - **Added** support for deleting cluster inspection templates
 - **Added** deployment of NPU monitoring panel through npu-exportor
 - **Added** display of available GPU resources when creating workloads
-- **Added** capability to set task priority when creating workloads
+- **Added** capability to set job priority when creating workloads
 - **Added** support for oversubscription of vGPU computing power
 - **Added** scenario-based video for vGPU
 - **Added** the capability to set the time zone when creating a cluster
@@ -221,7 +221,7 @@ understand the evolution path and feature changes from release to release.
 #### Fixes
 
 - **Fixed** an issue where crontab configuration with cron expression caused inability
-  to modify scheduled task configuration
+  to modify CronJob configuration
 - **Fixed** Infinite loop issue in installer caused by Redis Sentinel configuration
 - **Fixed** Refresh loop issue in console (cloudshell) reconnection mechanism, affecting command execution
 - **Fixed** Incorrect display of container CIDR after integration with DCE4
@@ -231,7 +231,7 @@ understand the evolution path and feature changes from release to release.
 - **Fixed** Ineffective selection of installing Insight plugin during cluster creation in kpanda
 - **Fixed** Inability to upgrade current global cluster despite the page showing upgrade availability
 - **Fixed** Inability to set multiple lines in calico_node_extra_envs in Advanced Settings during cluster creation
-- **Fixed** Abnormal display of memory usage and other related metrics in cluster inspection report for container groups
+- **Fixed** Abnormal display of memory usage and other related metrics in cluster inspection report for pods
 - **Fixed** Failure to filter deleted pod information in NVIDIA GPU Pod dashboard in Pod filtering
 - **Fixed** Display issue where username and password fields still appeared
   when unified password was disabled during cluster creation
@@ -262,11 +262,11 @@ understand the evolution path and feature changes from release to release.
 #### Fixes
 
 - **Fixed** an issue with permission leakage during addon lifecycle management.
-- **Fixed** an issue where tasks were ineffective when using the same name for scheduled scaling tasks.
+- **Fixed** an issue where jobs were ineffective when using the same name for scheduled scaling jobs.
 - **Fixed** an issue with detection on the page after installing kubernetes-cronhpa-controller in offline environments.
 - **Fixed** an issue with the default sorting order in the ListPodsByNodeOrigin API.
 - **Fixed** a rare occurrence of an empty container list in the ListContainersByPod API response.
-- **Fixed** an error message during the execution of the scheduled_e2e task in the pipeline, causing subsequent tests to not be executed.
+- **Fixed** an error message during the execution of the scheduled_e2e job in the pipeline, causing subsequent tests to not be executed.
 - **Fixed** an issue with unresponsive search in Data Collection when using Chinese characters.
 - **Fixed** an issue where namespace-resource quota was not taking effect and update exceptions.
 - **Fixed** an issue where read and write data was always empty in workload-load monitoring.
@@ -299,7 +299,7 @@ understand the evolution path and feature changes from release to release.
 #### Improvements
 
 - **Improved** display of the namespace to which an event belongs
-- **Improved** status of ETCD backup strategy
+- **Improved** status of ETCD backup policy
 - **Improved** error message when MySQL fails
 - **Improved** workload node affinity/workload affinity/workload anti-affinity
 - **Improved** support for removing abnormal nodes
@@ -344,7 +344,7 @@ understand the evolution path and feature changes from release to release.
 #### Fixed
 
 - **Fixed** an issue where cluster uninstallation was not possible when cluster status was unknown.
-- **Fixed** an issue where CPU usage data was not available for container group in the list.
+- **Fixed** an issue where CPU usage data was not available for pod in the list.
 - **Fixed** an issue where Insight-agent and Metrics-server plugins couldn't be installed on ARM architecture.
 - **Fixed** an issue where node check failed when creating a cluster using a key.
 - **Fixed** an issue where environment variables couldn't be added when creating a workload.
@@ -365,8 +365,8 @@ understand the evolution path and feature changes from release to release.
 
 - **Improved** support for uninstalling related components during cluster integration.
 - **Improved** pod status handling logic, including sub-status for pods.
-- **Improved** ability to configure the number of task records to keep for cluster operations.
-- **Improved** support for configuring the number of control nodes when creating working clusters.
+- **Improved** ability to configure the number of job records to keep for cluster operations.
+- **Improved** support for configuring the number of control nodes when creating worker clusters.
 - **Improved** prompt for installing Insight-agent if it is not already installed.
 
 #### Fixes
@@ -374,8 +374,8 @@ understand the evolution path and feature changes from release to release.
 - **Fixed** an issue of missing configuration parameters when updating helm app instances.
 - **Fixed** display error in associated instances for Networkpolicy.
 - **Fixed** an issue of cluster creation failure due to maximum pod count in cluster configuration.
-- **Fixed** an issue of failed creation of working clusters with __Redhat__ type.
-- **Fixed** an issue of "no permission" error when namespace-level users view scheduled task details.
+- **Fixed** an issue of failed creation of worker clusters with __Redhat__ type.
+- **Fixed** an issue of "no permission" error when namespace-level users view CronJob details.
 - **Fixed** an issue of users unable to bind to workspaces.
 
 ## 2023-8-01
@@ -405,7 +405,7 @@ understand the evolution path and feature changes from release to release.
 
 #### Fixes
 
-- **Fixed** an issue where helm tasks remained in "Installing" or "Uninstalling" state.
+- **Fixed** an issue where helm jobs remained in "Installing" or "Uninstalling" state.
 - **Fixed** kernel version detection error when checking node creation.
 - **Fixed** an issue where customizing namespaces was not possible for plugin cluster creation.
 - **Fixed** default addition of __ca.crt__ data in key updates.
@@ -416,7 +416,7 @@ understand the evolution path and feature changes from release to release.
 
 #### New Features
 
-- **Added** compatibility for deploying working clusters on openAnolis / Oracle Linux operating systems.
+- **Added** compatibility for deploying worker clusters on openAnolis / Oracle Linux operating systems.
 - **Added** support for automatically adding JFrog authentication information when creating clusters in an offline environment.
 - **Added** validation rules for environment variable rules when creating workloads.
 - **Added** edge load balancing and services.
@@ -480,7 +480,7 @@ understand the evolution path and feature changes from release to release.
 - **Added** support for Cilium dual-stack networking while creating a cluster
 - **Added** automatic recognition of the node OS type while creating a cluster
 - **Added** services of type Headless and External
-- **Added** upgrading of kubernetes version of a working cluster in an offline environment
+- **Added** upgrading of kubernetes version of a worker cluster in an offline environment
 - **Added** cluster-level resource backup
 - **Added** creation of workload with a private key
 - **Added** default resource limits configuration for Helm job
@@ -489,7 +489,7 @@ understand the evolution path and feature changes from release to release.
 #### Improvements
 
 - **Improved** Applying Backup Cluster State
-- **Improved** Matching the load state in the load detail and the state of the pod under the load
+- **Improved** Matching the workload state in the workload detail and the state of the pod under the load
 - **Improved** node check interface in offline mode
 - **Improved** presentation of multicloud applications
 
@@ -508,7 +508,7 @@ understand the evolution path and feature changes from release to release.
 
 - **Added** capability to query PVC events using the interface.
 - **Added** configuration of parameters such as backofflimit, completions, parallelism,
-  and activeDeadlineSeconds while creating a task
+  and activeDeadlineSeconds while creating a job
 - **Added** integration of self-developed open source storage component Hwameistor and support for viewing
   local storage resource overview and other information in the __container storage__ module
 - **Added** cluster patrol feature supporting second-level patrol (Alpha) of the cluster
@@ -583,7 +583,7 @@ understand the evolution path and feature changes from release to release.
 - **Added** Exclusive hosting capabilities for namespaces.
 - **Added** StorageClass (StorageClass) support exclusive or shared entitlement to specific namespaces.
 - **Added** Creation of Workloads exposes the remaining resource quota for the current namespace.
-- **Added** Node connectivity check function.
+- **Added** Node connectivity check feature.
 - **Added** Mirror Selector to support the selection of mirrors within the Container registry while creating workloads.
 - **Added** backup and recovery features.
 
@@ -626,7 +626,7 @@ understand the evolution path and feature changes from release to release.
 - **Added** Namespace details page.
 - **Added** Use the WEB terminal to upload files to the container and download files from the Pod to the local.
 - **Added** The workload scales elastically based on the user-defined index, which is closer to the
-  user’s actual business elastic expansion and contraction requirements.
+  user’s actual business autoscaling requirements.
 
 #### Improvements
 
@@ -669,7 +669,7 @@ understand the evolution path and feature changes from release to release.
 - **Added** Stateful workloads support the use of dynamic data volume templates.
 - **Added** Create cluster, create Secret, create Ingress, edit the information verification of namespace quota,
   help guide the user to input the correct configuration parameters, and reduce the user’s failure experience
-  of creating tasks.
+  of creating jobs.
 
 #### Improvements
 

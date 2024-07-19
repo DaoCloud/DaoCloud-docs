@@ -84,15 +84,15 @@ We hope you find the information helpful and enjoy exploring!
 
 <div class="grid cards" markdown>
 
-- :material-cloud-check:{ .lg .middle } __MultiCloud Orchestration__
+- :material-cloud-check:{ .lg .middle } __Multicloud Management__
 
     ---
 
     This is a user-centric, out-of-the-box multicloud application orchestration platform that provides centralized management for multicloud and hybrid cloud environments.
 
-    - [MultiCloud Working Clusters](../kairship/cluster.md)
-    - [MultiCloud Workloads](../kairship/workload/deployment.md)
-    - [MultiCloud Custom Resources](../kairship/crds/crd.md)
+    - [Multicloud worker clusters](../kairship/cluster.md)
+    - [Multicloud Workloads](../kairship/workload/deployment.md)
+    - [Multicloud Custom Resources](../kairship/crds/crd.md)
     - [Resource Management: Service, Routing, Namespace, etc.](../kairship/resource/service.md)
     - [Policy Management](../kairship/policy/propagation.md)
 

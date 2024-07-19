@@ -78,7 +78,7 @@ Every installation, update, and deletion of Helm apps has detailed operation rec
 
      
 
-2. To view the detailed log of each operation: Click __⋮__ on the right side of the list, and select __Log__ from the pop-up menu.
+2. To view the detailed log of each operation: Click __┇__ on the right side of the list, and select __Log__ from the pop-up menu.
 
      
 

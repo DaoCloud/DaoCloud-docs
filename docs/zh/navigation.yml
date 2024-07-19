@@ -679,7 +679,7 @@ nav:
                       - insight/quickstart/install/index.md
                       - 在线安装 insight-agent: insight/quickstart/install/install-agent.md
                       - 离线升级 insight-agent: insight/quickstart/install/offline-install.md
-                      - 获取数据上传地址: insight/quickstart/install/gethosturl.md
+                      - 获取全局服务集群的数据存储地址: insight/quickstart/install/gethosturl.md
                       - 升级注意事项: insight/quickstart/install/upgrade-note.md
                       - 已知问题: insight/quickstart/install/knownissues.md
                       - 大规模日志部署调整: insight/best-practice/insight-kafka.md
