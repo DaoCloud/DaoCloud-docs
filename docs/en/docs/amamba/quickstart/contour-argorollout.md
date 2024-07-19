@@ -16,7 +16,7 @@ based on a cloud-native gateway, divided into the following steps:
 
 ## Creating Application Resources
 
-After logging into DCE 5.0, click on **Application Workbench** -> **Wizard** -> **Based on Container Image** in the left navigation bar,
+After logging into DCE 5.0, click **Workbench** -> **Wizard** -> **Based on Container Image** in the left navigation bar,
 and create an application `rollouts-demo` in the target cluster/namespace.
 
 **Notes:**
@@ -71,17 +71,17 @@ Enter <http://gateway.canary:30000/> in the browser, and you should see the foll
 
 ## Creating a Canary Release Task
 
-[Create a Canary Release Task](../user-guide/release/canary.md) in the Application Workbench.
+[Create a Canary Release Task](../user-guide/release/canary.md) in the Workbench.
 
 1. Choose the target location's rollouts-demo application for the basic information in the first step.
 
 2. The release rules for the second step are as follows:
 
     - Choose Cloud-Native Gateway for traffic management type (this option depends on whether the microservices engine is installed).
-    - Select the service corresponding to the stateless load in the basic information (i.e., the service for canary release).
+    - Select the service corresponding to the deployment in the basic information (i.e., the service for canary release).
     - The gateway instance is determined by whether the target location in the basic information is governed by a particular gateway.
     - Select the API name corresponding to the API in the gateway that is bound to the canary release service.
-    - Refer to the following for traffic scheduling strategy:
+    - Refer to the following for traffic scheduling policy:
 
 ## Updating the Release Task, Observing the Release Situation
 

@@ -31,11 +31,11 @@ Components define the form of delivery and management for artifacts or cloud ser
 An application can include multiple components. The recommended practice is to include one
 main component (core business logic) and additional components (middleware with strong dependencies
 or exclusive use, operational components, etc.) in an application. For more information about component
-types, please refer to the [kubevela Component Definition](http://kubevela.net/docs/v1.2/platform-engineers/oam/x-definition) documentation.
+types, refer to the [kubevela Component Definition](http://kubevela.net/docs/v1.2/platform-engineers/oam/x-definition) documentation.
 
 Currently, the Workbench includes five built-in components based on the open-source
-[kubevela](https://kubevela.io/zh/docs/) components: __Cron-Task, Daemon, K8s-Objects, Task, Webservice__ .
-For specific parameter introductions for each component, please refer to the
+[kubevela](https://kubevela.io/zh/docs/) components: __CronJob, DaemonSet, K8s-Objects, Job, Webservice__ .
+For specific parameter introductions for each component, refer to the
 [Built-in Component List](https://kubevela.io/docs/end-user/components/references) documentation.
 
 ### Traits
@@ -70,7 +70,7 @@ Component Definitions allow platform administrators to package any type of deplo
 Once defined, components of this type can be referenced, instantiated,
 and delivered in deployment plans (Applications) by users.
 
-For specific operations on custom components, please refer to the official documentation:
+For specific operations on custom components, refer to the official documentation:
 [Getting Started with Custom Components](http://kubevela.net/docs/v1.2/platform-engineers/components/custom-component).
 
 #### Custom Traits
@@ -78,7 +78,7 @@ For specific operations on custom components, please refer to the official docum
 Trait Definitions provide a set of operational actions that can be bound to components as needed.
 These operational actions are usually provided by platform administrators as operational capabilities,
 providing a range of operational operations and policies for a component, such as adding a
-load balancing strategy, routing strategy, or performing elastic scaling, canary release strategies, and more.
+load balancing policy, routing policy, or performing autoscaling, canary release policy, and more.
 
-For specific operations on custom traits, please refer to the official documentation:
+For specific operations on custom traits, refer to the official documentation:
 [Customize traits](http://kubevela.net/docs/v1.2/platform-engineers/traits/customize-trait).

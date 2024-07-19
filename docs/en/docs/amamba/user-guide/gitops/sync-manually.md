@@ -23,7 +23,7 @@ This page demonstrates how to manually sync a continuously deployed application.
         - DRY RUN: Simulates the synchronization process
         - APPLY ONLY: After checking, resources will be deployed through kubectl apply
         - FORCE: After checking, if a conflict is encountered when deploying a resource, the resource will be deleted and recreated immediately
-    - Sync Settings: The parameters of the synchronization settings are the same as those at the time of creation. For specific parameter descriptions, please refer to creating an application
+    - Sync Settings: The parameters of the synchronization settings are the same as those at the time of creation. For specific parameter descriptions, refer to creating an application
 
     In the Sync Resources area, select at least one application to be synchronized. For example, some resources have already been synchronized, and only unsynchronized resources need to be synchronized.
 

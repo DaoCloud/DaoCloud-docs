@@ -3,16 +3,16 @@ MTPE: ModetaNiu
 date: 2024-06-27
 ---
 
-# Deploy Istio Resources in a Hosted Mesh Work Cluster Based on GitOps
+# Deploy Istio Resources in a Hosted Mesh Worker Cluster Based on GitOps
 
-Scenario: How can customers deploy Istio-related resources in a Hosted Mesh work cluster using GitOps?
+Scenario: How can customers deploy Istio-related resources in a Hosted Mesh worker cluster using GitOps?
 
 ## Prerequisites
 
 - Prepare the workbench and service mesh, with the service mesh version being v0.26.0 or above.
-- Prepare a work cluster.
+- Prepare a worker cluster.
 
-## Create a Hosted Mesh and Manage the Work Cluster
+## Create a Hosted Mesh and Manage the Worker Cluster
 
 ### Steps
 
@@ -22,14 +22,14 @@ Scenario: How can customers deploy Istio-related resources in a Hosted Mesh work
 
     ![Select LB](../images/istio1.png)
 
-3. After creating the hosted mesh, manage the work cluster into it by referring to [Add a Cluster](../../mspider/user-guide/cluster-management/join-clus.md).
+3. After creating the hosted mesh, manage the worker cluster into it by referring to [Add a Cluster](../../mspider/user-guide/cluster-management/join-clus.md).
 
     ![Add a Cluster](../images/istio2.png)
 
 ### Notes
 
-When deploying Istio-related resources directly to a work cluster under a hosted mesh based on GitOps, 
-the resources in the work cluster need to be deployed to the hosted mesh to take effect. You need to 
+When deploying Istio-related resources directly to a worker cluster under a hosted mesh based on GitOps, 
+the resources in the worker cluster need to be deployed to the hosted mesh to take effect. You need to 
 conduct the following operations:
 
 1. In the Global Management cluster, find the CRD resource `globalmeshes.discovery.mspider.io` in the `mspider-system` namespace, 
@@ -37,8 +37,8 @@ conduct the following operations:
 
     ```yaml
     # 1. Add under controlPlaneParams
-      enabled_resources_synchronizer: true  # Enable resource synchronization for the work cluster
-      sync_resource_worker_cluster: "zcl-98"  # Choose the name of the work cluster to monitor and synchronize
+      enabled_resources_synchronizer: true  # Enable resource synchronization for the worker cluster
+      sync_resource_worker_cluster: "zcl-98"  # Choose the name of the worker cluster to monitor and synchronize
 
     # 2. Add at the same level as controlPlaneParams
     controlPlaneParamsStruct:
@@ -118,15 +118,15 @@ dubbo3-consumer will forward the request to dubbo3-provider.
 ### Steps
 
 1. [Create Application](../user-guide/gitops/create-argo-cd.md) in `GitOps`, with the repository address: `https://github.com/amamba-io/rollout-examples`. 
-   Path should be set to `rollouts/v1`, and select the namespace in the work cluster.
+   Path should be set to `rollouts/v1`, and select the namespace in the worker cluster.
 
 3. After creating application, manually **synchronize** the application resources.
 
-4. Go to the service mesh and check the vs, dr, and gateway resources synchronized in the work cluster under the hosted mesh. 
-   If not found, check if the notes in the **[Create a Hosted Mesh and Manage the Work Cluster](../../mspider/user-guide/service-mesh/README.md)** section are configured correctly.
+4. Go to the service mesh and check the vs, dr, and gateway resources synchronized in the worker cluster under the hosted mesh. 
+   If not found, check if the notes in the **[Create a Hosted Mesh and Manage the Worker Cluster](../../mspider/user-guide/service-mesh/README.md)** section are configured correctly.
 
-5. By default, the load balancer of the work cluster exposes port `80`, so you need to modify the gateway port of the service 
-   to 80 in the work cluster to access the service.
+5. By default, the load balancer of the worker cluster exposes port `80`, so you need to modify the gateway port of the service 
+   to 80 in the worker cluster to access the service.
 
-6. Access `http://<work cluster node IP>/hello?name=test-v1` in the browser. Successful access indicates 
+6. Access `http://<worker cluster node IP>/hello?name=test-v1` in the browser. Successful access indicates 
    that the Istio-related resources are effective.

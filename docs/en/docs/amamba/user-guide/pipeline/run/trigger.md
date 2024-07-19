@@ -105,7 +105,7 @@ To specify multiple values for a field, you can use the following operators in o
 | M-N/X or */X | Triggers every X within a specified range or within the entire valid range |
 | A,B,...,Z    | Represents multiple values                                |
 
-In order for regularly scheduled tasks to create an even load on the system, the symbol H (for "hash") should be used whenever possible.
+In order for regularly cronjobs to create an even load on the system, the symbol H (for "hash") should be used whenever possible.
 For example, using __0 0 * * *__ for a dozen daily jobs will result in a large spike at midnight, possibly straining resources.
 In contrast, using __H H * * *__ will still run each job once a day, but not all at once, which makes better use of limited resources.
 

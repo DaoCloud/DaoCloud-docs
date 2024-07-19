@@ -8,7 +8,7 @@ date: 2024-07-01
 After creating a pipeline, you can view the details of the pipeline as needed or update the configuration. 
 The pipeline details page includes the pipeline's run history and code quality scans.
 
-On the __Workbench__ -> __Pipeline__ page, select a specific pipeline and click on the pipeline's name.
+On the __Workbench__ -> __Pipeline__ page, select a specific pipeline and click the pipeline's name.
 
 ![Pipelines](../../../images/detail-pipeline1.png)
 

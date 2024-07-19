@@ -20,11 +20,11 @@ Support loading images in two ways.
 
 ### Sync Images via charts-syncer
 
-If there is an image repository in the environment, it is recommended to synchronize the images to the image repository through charts-syncer for more efficient and convenient operation.
+If there is an container registry in the environment, it is recommended to synchronize the images to the container registry through charts-syncer for more efficient and convenient operation.
 
 1. Create `load-image.yaml` with the following content as the configuration file for charts-syncer.
 
-    All parameters in the `load-image.yaml` file are required. You need a private image repository and refer to
+    All parameters in the `load-image.yaml` file are required. You need a private container registry and refer to
     the following instructions to modify each configuration. For detailed explanation of the charts-syncer
     configuration file, refer to its [official documentation](https://github.com/bitnami-labs/charts-syncer).
 
@@ -50,13 +50,13 @@ If there is an image repository in the environment, it is recommended to synchro
         ```
 
         1. Relative path to run the charts-syncer command, not the relative path between this YAML file and the offline package
-        2. Change to your image repository url
+        2. Change to your container registry url
         3. Can also be any other supported Helm Chart repository category
         4. Change to the chart repo project url
-        5. Your image repository username
-        6. Your image repository password
-        7. Your image repository username
-        8. Your image repository password
+        5. Your container registry username
+        6. Your container registry password
+        7. Your container registry username
+        8. Your container registry password
 
     === "CHARTMUSEUM chart repo already installed"
 
@@ -80,13 +80,13 @@ If there is an image repository in the environment, it is recommended to synchro
         ```
 
         1. Relative path to run the charts-syncer command, not the relative path between this YAML file and the offline package
-        2. Change to your image repository url
+        2. Change to your container registry url
         3. Can also be any other supported Helm Chart repository category
         4. Change to chart repo url
-        5. Your image repository username, if chartmuseum does not have login authentication enabled, you do not need to fill in auth
-        6. Your image repository password
-        7. Your image repository username
-        8. Your image repository password
+        5. Your container registry username, if chartmuseum does not have login authentication enabled, you do not need to fill in auth
+        6. Your container registry password
+        7. Your container registry username
+        8. Your container registry password
 
     === "Chart repo not installed"
 
@@ -109,11 +109,11 @@ If there is an image repository in the environment, it is recommended to synchro
         ```
 
         1. Relative path to run the charts-syncer command, not the relative path between this YAML file and the offline package
-        2. Change to your image repository url
-        3. Change to your image repository
+        2. Change to your container registry url
+        3. Change to your container registry
         4. Local path of the chart
-        5. Your image repository username
-        6. Your image repository password
+        5. Your container registry username
+        6. Your container registry password
 
 2. Place amamba_x.y.z.bundle.tar in the amamba-offline folder.
 
@@ -214,10 +214,10 @@ If there is an image repository in the environment, it is recommended to synchro
 
     6. Run `helm upgrade`.
 
-        Before upgrading, it is recommended to overwrite the `global.imageRegistry` field in bak.yaml with the current image repository address.
+        Before upgrading, it is recommended to overwrite the `global.imageRegistry` field in bak.yaml with the current container registry address.
 
         ```shell
-        export imageRegistry={your image repository}
+        export imageRegistry={your container registry}
         ```
 
         ```shell
@@ -242,10 +242,10 @@ If there is an image repository in the environment, it is recommended to synchro
 
     3. Run `helm upgrade`.
 
-        Before upgrading, it is recommended to overwrite the `global.imageRegistry` field in bak.yaml with the current image repository address.
+        Before upgrading, it is recommended to overwrite the `global.imageRegistry` field in bak.yaml with the current container registry address.
 
         ```shell
-        export imageRegistry={your image repository}
+        export imageRegistry={your container registry}
         ```
 
         ```shell

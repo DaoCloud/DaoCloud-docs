@@ -18,7 +18,7 @@ and replacing the old version of the package by executing commands or scripts re
     Since the pipeline needs to copy the package to the server where the application is located,
     tools such as `scp`, `ansible`, and `sshpass` are required. However, these tools are not
     installed in the default build image provided by the platform, so manual construction is needed.
-    
+
     Refer to [Using Custom Toolchain in Jenkins](../../quickstart/jenkins-custom.md)
     for installation instructions.
 
