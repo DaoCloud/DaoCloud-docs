@@ -34,23 +34,19 @@ kubectl -n your-namespace describe vm your-vm
 如果详细信息涉及设备，如 KVM、GPU 等，请核实目标集群节点是否完成了[依赖条件](../install/install-dependency.md)检查。
 若所有依赖已安装，应[咨询开发人员](../../install/index.md#_4)。
 
-#### 可能碰到的错误一
+#### 案例 1
 
-##### 在资源充足的情况下还是报错：
+- 现象：在资源充足的情况下还是报错：
 
-![创建虚拟机报错一](../images/createvm-error01.png)
+    ![创建虚拟机报错一](../images/createvm-error01.png)
 
-##### 解决方案
+- 解决办法：[给节点启用硬件虚拟化](../install/install-dependency.md#_3)
 
-[给节点启用硬件虚拟化](../install/install-dependency.md#3-所有节点必须启用硬件虚拟化嵌套虚拟化)
-
-#### 可能碰到的错误二
+#### 案例 2
 
 ![创建虚拟机报错二](../images/createvm-error02.png)
 
-##### 解决方案
-
-[升级节点操作系统内核](../install/install-dependency.md#1-操作系统内核版本需要在-315-以上)
+解决办法：[升级节点操作系统内核](../install/install-dependency.md#315)
 
 ### VM 创建成功但无法使用
 
