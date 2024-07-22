@@ -55,7 +55,7 @@ spec:
   ...
 ```
 
-## Configuring Extended Parameters When Installing a Working Cluster
+## Configuring Extended Parameters When Installing a Worker Cluster
 
 Refer to [creating work clusters](../../kpanda/user-guide/clusters/create-cluster.md), 
 and define the extended parameters in the custom parameters in Step 5.

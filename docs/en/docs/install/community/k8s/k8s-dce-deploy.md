@@ -196,14 +196,14 @@ Perform the following steps on all three nodes:
 
 ### Install the First Master Node using kubeadm
 
-1. Pre-download the images for faster installation using DaoCloud's image repository
+1. Pre-download the images for faster installation using DaoCloud's container registry
 
     ```bash
     # Specify the Kubernetes version and pull the images
     kubeadm config images pull --image-repository k8s-gcr.m.daocloud.io --kubernetes-version=v1.25.8
     ```
 
-2. Initialize the first node using kubeadm (using DaoCloud's image repository)
+2. Initialize the first node using kubeadm (using DaoCloud's container registry)
 
     !!! note
 

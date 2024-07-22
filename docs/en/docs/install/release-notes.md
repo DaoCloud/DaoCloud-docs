@@ -50,7 +50,7 @@ the evolution path and feature changes of each version.
 - **Improved** the default Kubernetes version has been updated to v1.28.9.
 - **Improved** support for Ubuntu 22.04 has been added.
 - **Improved** support for product components to integrate their command-line tools has been added.
-- **Improved** the isolation between the seed cluster and the global management cluster in All-In-One mode has been enhanced.
+- **Improved** the isolation between the bootstrap cluster and the global management cluster in All-In-One mode has been enhanced.
 - **Improved** the format of the Kubean download URL has been optimized.
 - **Improved** the parameter list of the merge_values_xxx function has been extended to support obtaining the original values parameters assembled by the installer.
 - **Improved** minimal version detection for pre-required components has been added.
@@ -60,8 +60,8 @@ the evolution path and feature changes of each version.
 
 #### Bug Fixes
 
-- **Fixed** the vulnerability in the seed cluster apiserver port has been fixed.
-- **Fixed** the issue of errors when re-executing after a multi-architecture merge failure has been fixed.
+- **Fixed** the vulnerability in the bootstrap cluster apiserver port has been fixed.
+- **Fixed** an issue of errors when re-executing after a multi-architecture merge failure has been fixed.
 
 ## 2024-04-30
 
@@ -78,12 +78,12 @@ the evolution path and feature changes of each version.
 
 #### Fixes
 
-- **Fixed** the issue where the Kubean version could not be displayed in the prompt message.
-- **Fixed** the problem of merging multi-architecture images.
-- **Fixed** the issue of outputting scripts through dry-run.
-- **Fixed** the problem of installation process timeout and inability to capture timeout steps.
+- **Fixed** an issue where the Kubean version could not be displayed in the prompt message.
+- **Fixed** an issue of merging multi-architecture images.
+- **Fixed** an issue of outputting scripts through dry-run.
+- **Fixed** an issue of installation process timeout and inability to capture timeout steps.
 - **Fixed** the insight-agent installation issue.
-- **Fixed** the issue where the firewall on the host machine was not disabled before igniting the fire.
+- **Fixed** an issue where the firewall on the host machine was not disabled before igniting the fire.
 
 ## 2024-04-09
 
@@ -109,9 +109,9 @@ the evolution path and feature changes of each version.
 
 #### Bug Fixes
 
-- **Fixed** the issue where OCI_PATH was not effective when importing heterogeneous images.
+- **Fixed** an issue where OCI_PATH was not effective when importing heterogeneous images.
 - **Fixed** the manifest disorder issue with Kubean custom actions.
-- **Fixed** the issue where the timezone of the Firestarter cluster was inconsistent with the host machine.
+- **Fixed** an issue where the timezone of the Firestarter cluster was inconsistent with the host machine.
 
 #### Known Issues
 
@@ -184,8 +184,8 @@ component in the mainfest.yaml file during the upgrade process.
 
 #### New Features
 
-- **Added** Support separate deployment of etcd nodes.
-- **Added** Support external Kafka component.
+- **Added** support separate deployment of etcd nodes.
+- **Added** support external Kafka component.
 
 #### Enhancements
 
@@ -247,9 +247,9 @@ component in the mainfest.yaml file during the upgrade process.
 #### New Features
 
 - **Added** Update the k8s version of Global clusters to v1.26.7 to avoid security vulnerabilities in older versions
-- **Added** Support for setting ansible extension parameters in clusterConfig.yaml
-- **Added** Support for adding certificate renewal configuration in clusterConfig.yaml, including periodic and one-time updates
-- **Added** Support for offline deployment of Red Hat 9.2 systems
+- **Added** support for setting ansible extension parameters in clusterConfig.yaml
+- **Added** support for adding certificate renewal configuration in clusterConfig.yaml, including periodic and one-time updates
+- **Added** support for offline deployment of Red Hat 9.2 systems
 - **Added** Diagnostic script diag.sh for Global cluster in the offline package
 - **Added** `--multi-arch` flag to avoid upgrading issues with overriding multi-architecture images
 
@@ -260,7 +260,7 @@ component in the mainfest.yaml file during the upgrade process.
 #### Bug Fixes
 
 - **Fixed** issue where redis sentinel mode does not support sentinel instance password
-- **Fixed** failure when adding TencentOS 3.1 system nodes to the working cluster
+- **Fixed** failure when adding TencentOS 3.1 system nodes to the worker cluster
 
 ## 2023-7-31
 
@@ -268,8 +268,8 @@ component in the mainfest.yaml file during the upgrade process.
 
 #### Added
 
-- **Added** Support for Oracle Linux R8-U7 operating system
-- **Added** Support for flexibly exposing kind container mappings to the host machine's ports
+- **Added** support for Oracle Linux R8-U7 operating system
+- **Added** support for flexibly exposing kind container mappings to the host machine's ports
 - **Added** import-artifact subcommand supports importing offline resources based on external services defined in clusterConfig.yaml configuration file
 
 #### Improved
@@ -279,7 +279,7 @@ component in the mainfest.yaml file during the upgrade process.
 - **Improved** error messages for pre-requisite dependency installation script
 - **Improved** Allow installation to continue when ES health status is 'yellow' during minimal installation process
 - **Improved** Eliminated redundant image integration steps in import-artifact subcommand
-- **Improved** Expanded default expansion of fullPackagePath property in clusterConfig template for offline resource external or built-in scenarios
+- **Improved** default expansion of fullPackagePath property in clusterConfig template for offline resource external or built-in scenarios
 
 #### Fixed
 
@@ -297,7 +297,7 @@ component in the mainfest.yaml file during the upgrade process.
 #### Known Issues
 
 - Upgrading is not supported through the install-app subcommand, only create-cluster subcommand is supported.
-- After restarting the seed node with Redhat 8.6 operating system, the kubelet service fails to start and reports the following error:
+- After restarting the bootstrap node with Redhat 8.6 operating system, the kubelet service fails to start and reports the following error:
 
     ```message
     failed to initialize top level QOS containers: root container [kubelet kubepods] doesn't exist
@@ -318,10 +318,10 @@ component in the mainfest.yaml file during the upgrade process.
 #### New Features
 
 - **Added** The `istio-ingressgateway` now supports high availability mode. When upgrading from v0.8.x or earlier to v0.9.0, the following command must be executed: `./offline/dce5-installer cluster-create -c clusterConfig.yaml -m manifest.yaml --upgrade infrastructure,gproduct`
-- **Added** Support configuring the exposed bootstrapping kind address and port in the clusterConfig.yaml file.
+- **Added** support configuring the exposed bootstrapping kind address and port in the clusterConfig.yaml file.
 - **Added** The installer now performs a pre-check on each node to verify if lvm2 is installed when using eyebrow storage.
 - **Added** The installer includes an embedded default upgrade of the k8s version to v1.26.5.
-- **Added** Support specifying the local file mount path for the bootstrapping kind in the clusterConfig.yaml file.
+- **Added** support specifying the local file mount path for the bootstrapping kind in the clusterConfig.yaml file.
 - **Added** Integrated ISO image file import script into the installer binary.
 
 #### Improvements
@@ -369,11 +369,11 @@ If the output is different from the above cases, please follow the upgrade instr
 
 #### Improvements
 
-- **Improved** Upgraded ipavo component to v0.9.3
-- **Improved** Upgraded amamba component to v0.17.4
-- **Improved** Upgraded hwameistor-operator component to v0.10.4
-- **Improved** Upgraded kangaroo component to v0.8.2
-- **Improved** Upgraded insight component to v0.17.3
+- **Upgraded** ipavo component to v0.9.3
+- **Upgraded** amamba component to v0.17.4
+- **Upgraded** hwameistor-operator component to v0.10.4
+- **Upgraded** kangaroo component to v0.8.2
+- **Upgraded** insight component to v0.17.3
 
 #### Fixes
 
@@ -400,14 +400,14 @@ If the output is different from the above cases, please follow the upgrade instr
 
 #### Improvements
 
-- **Improved** Fixed issue of missing images when deploying Nacos instances
-- **Improved** Fixed issue of repeated execution of cluster installation task during cluster module upgrade
+- **Fixed** an issue of missing images when deploying Nacos instances
+- **Fixed** an issue of repeated execution of cluster installation task during cluster module upgrade
 
 #### Known Issues
 
 - Addon offline package does not currently support uploading to external JFrog services
-- The container management platform offline mode currently does not support adding nodes to working clusters
-- When using an external OS Repo repository in an offline scenario, i.e. defining `osRepos.type=external` in clusterConfig.yaml, after successfully deploying DCE 5.0, you cannot create working clusters in the container management. A temporary solution is as follows:
+- The container management platform offline mode currently does not support adding nodes to worker clusters
+- When using an external OS Repo repository in an offline scenario, i.e. defining `osRepos.type=external` in clusterConfig.yaml, after successfully deploying DCE 5.0, you cannot create worker clusters in the container management. A temporary solution is as follows:
   After installing the global cluster, immediately update the configmap kubean-localservice in the kubean-system namespace of the global cluster to replace all double quotes with single quotes in the value of `yumRepos.external`. For example, replace all double quotes in the file with single quotes:
 
     ```yaml
@@ -446,8 +446,8 @@ If the output is different from the above cases, please follow the upgrade instr
 
 - **Added** support for Other Linux to deploy DCE 5.0, [Reference Documentation](os-install/otherlinux.md)
 - **Added** support for operating system OpenEuler 22.03
-- **Added** supports external OS Repos, [refer to cluster configuration file description](commercial/cluster-config.md)
-- **Added** supports kernel parameter tuning, [refer to cluster configuration file description](commercial/cluster-config.md)
+- **Added** support for external OS Repos, [refer to cluster configuration file description](commercial/cluster-config.md)
+- **Added** support for kernel parameter tuning, [refer to cluster configuration file description](commercial/cluster-config.md)
 - **Added** support for detecting whether external ChartMuseum and MinIo services are available
 
 #### Improvements
@@ -471,10 +471,10 @@ If the output is different from the above cases, please follow the upgrade instr
       calico_crds_download_url: "https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/calico-crds-v3.25.1.tar.gz"
     ```
 
-    At the same time, creating a working cluster online through container management also has the same problem. You need to add the above configuration in the custom parameters of the advanced configuration on the cluster creation page. The key is `calico_crds_download_url`, and the value is the value of the above calico_crds_download_url
+    At the same time, creating a worker cluster online through container management also has the same problem. You need to add the above configuration in the custom parameters of the advanced configuration on the cluster creation page. The key is `calico_crds_download_url`, and the value is the value of the above calico_crds_download_url
 
 - There is a low probability that Kubean cannot create a spray-job task. Manually delete the corresponding clusteroperations CR resource and run the installation command again
-- After deploying DCE 5.0 using an external OS Repo, the working cluster cannot be created offline through container management, which can be solved by manually modifying the configmap kubean-localservice of the kubean-system namespace of the global cluster.
+- After deploying DCE 5.0 using an external OS Repo, the worker cluster cannot be created offline through container management, which can be solved by manually modifying the configmap kubean-localservice of the kubean-system namespace of the global cluster.
   Add the following configuration under `yumRepos`, you need to fill in the external OS Repo address configured in clusterConfig.yaml in external:
 
     ```yaml
@@ -490,8 +490,8 @@ If the output is different from the above cases, please follow the upgrade instr
 
 #### Improvements
 
-- **Improved** Upgraded Kpanda to v0.16.1
-- **Improved** Upgraded Skoala to v0.19.4
+- **Upgraded** Kpanda to v0.16.1
+- **Upgraded** Skoala to v0.19.4
 
 ## 2022-4-06
 
@@ -501,11 +501,11 @@ If the output is different from the above cases, please follow the upgrade instr
 
 - **Added** support for one-click upgrade of Gproduct components
 - **Added** Adapted operating system: UOS V20 1020a / Ubuntu 20.04
-- **Added** Support OCP (OpenShift Container Platform) to install DCE 5.0
+- **Added** support OCP (OpenShift Container Platform) to install DCE 5.0
 - **Added** CLI supports generating clusterConfig templates
 - **Added** all-in-one mode starts the minimal installation mode by default
 - **Added** Kcollie component in Gproduct component
-- **Added** Support community version to sync image to external repository
+- **Added** support community version to sync image to external repository
 
 #### Improvements
 
@@ -531,13 +531,13 @@ If the output is different from the above cases, please follow the upgrade instr
 
 #### Features
 
-- **Added** Offline package separation osPackage, needs to define `osPackagePath` in the cluster configuration file
-- **Added** Support addon offline, you need to define `addonOfflinePackagePath` in the cluster configuration file
+- **Added** Offline package separation osPackage, needs to define `osPackagePath` in ClusterConfig.yaml
+- **Added** support addon offline, you need to define `addonOfflinePackagePath` in ClusterConfig.yaml
 - **Added** Offline installation supports operating systems REHL 8.4, REHL 7.9
 
 #### Improvements
 
-- **Improved** Upgraded the version of pre-dependent tools
+- **Upgraded** the version of pre-dependent tools
 
 #### Fixes
 
@@ -564,7 +564,7 @@ If the output is different from the above cases, please follow the upgrade instr
 - **Added** bootstrapping nodes need to exist permanently, users install minio, chart museum, registry
 - **Added** installation of contour as default ingress-controller for commercial version
 - **Added** New installation of cert-manager in commercial version
-- **Added** Support cluster deployment in private key mode
+- **Added** support cluster deployment in private key mode
 - **Added** supports external container registry for deployment
 
 #### Optimized
@@ -601,7 +601,7 @@ If the output is different from the above cases, please follow the upgrade instr
 - **Added** support for kylin v10 sp2 offline package.
 - **Added** Infrastructure Support 1.25: Upgrade redis-operator, eck-operator, hwameiStor and other components.
 - **Added** support for cluster deployment in private key mode.
-- **Added** The workload is elastically scaled based on custom metrics, which is closer to the user's actual business elastic expansion and contraction needs.
+- **Added** The workload is elastically scaled based on custom metrics, which is closer to the user's actual business autoscaling needs.
 
 #### Optimized
 
