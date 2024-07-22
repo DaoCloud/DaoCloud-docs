@@ -115,7 +115,7 @@ Click [Online Install DCE Community](../../../videos/install.md) to watch a vide
     !!! note
 
         - Parameter `-p` specifies the offline directory to decompress the offline package.
-        - For `clusterConfig.yaml` file settings, refer to [Online Installation](online.md#_2).
+        - For `clusterConfig.yaml` file settings, refer to [Online Installation](online.md#preparation).
         - `-z` minimal install
         - `-c` specifies the cluster configuration file. You don't need to specify `-c` when using NodePort to expose the console.
         - `-d` enable debug mode

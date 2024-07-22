@@ -11,7 +11,7 @@ DCE 5.0 has two versions: DCE Community and DCE 5.0 Enterprise.
   which can be used for free permanently.
 
 - DCE 5.0 Enterprise can be purchased on demand with advanced modules such as Service Mesh,
-  Microservice Engine, MultiCloud Management, Data Middleware, Container Registry,
+  Microservice Engine, Multicloud Management, Data Middleware, Container Registry,
   Cloud Edge Collaboration, and Containerized VM on the basis of DCE Community.
   It has more comprehensive features and applicable to a variety of production environments.
 
@@ -34,7 +34,7 @@ DCE 5.0 has two versions: DCE Community and DCE 5.0 Enterprise.
         </ul>
       </td>
       <td>
-        <a href="https://docs.daocloud.io/en/dce/license0.html">Permanently free license</a>, the 3 modules will receive continuous updates, and you can <a href="https://docs.daocloud.io/en/download/index.html#_3">download offline packages for sub-modules</a> anytime.
+        <a href="https://docs.daocloud.io/en/dce/license0.html">Permanently free license</a>, the 3 modules will receive continuous updates, and you can <a href="https://docs.daocloud.io/en/download/index.html#download-modules">download offline packages for sub-modules</a> anytime.
       </td>
     </tr>
     <tr>
@@ -42,7 +42,7 @@ DCE 5.0 has two versions: DCE Community and DCE 5.0 Enterprise.
       <td> <p>On top of DCE Community, more modules are added:</p>
         <ul>
           <li><a href="https://docs.daocloud.io/en/amamba/intro/index.html"><span style="white-space: nowrap;">Workbench</span></a></li>
-          <li><a href="https://docs.daocloud.io/en/kairship/intro/index.html">MultiCloud Management</a></li>
+          <li><a href="https://docs.daocloud.io/en/kairship/intro/index.html">Multicloud Management</a></li>
           <li><a href="https://docs.daocloud.io/en/skoala/intro/index.html"><span style="white-space: nowrap;">Microservice Engine</span></a></li>
           <li><a href="https://docs.daocloud.io/en/mspider/intro/index.html">Service Mesh</a></li>
           <li><a href="https://docs.daocloud.io/en/middleware/index.html"><span style="white-space: nowrap;">Middleware</span></a></li>

@@ -68,7 +68,7 @@ The osPackage offline package is a supplement to the Linux operating system offl
 provided by the open-source project [Kubean](https://github.com/kubean-io/kubean). For example,
 openEuler 22.03 lacks the `selinux-policy-35.5-15.oe2203.noarch.rpm`.
 
-Starting from version v0.5.0, the installer requires the osPackage offline package for the
+Starting from v0.5.0, the installer requires the osPackage offline package for the
 operating system and defines `osPackagePath` in [clusterConfig.yaml](./cluster-config.md).
 
 [Kubean](https://github.com/kubean-io/kubean) provides osPackage offline packages for different
@@ -233,7 +233,7 @@ For deploying DCE 5.0 on UOS V20 (1020a) operating system, refer to
 Addon offline packages contain Helm Chart offline packages for commonly used components.
 For the specific list, refer to the [addon](../../download/addon/history.md) documentation.
 
-Starting from installer version v0.5.0, support for importing addon offline packages is available.
+Starting from installer v0.5.0, support for importing addon offline packages is available.
 If you want to offline all the Helm charts in the addon package, you can download the latest version
 from the [Download Center](../../download/index.md).
 

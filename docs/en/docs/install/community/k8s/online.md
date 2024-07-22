@@ -85,7 +85,7 @@ This page will guide you to install DCE Community package online in a standard K
 
     !!! note
 
-        - For `clusterConfig.yaml` file settings, refer to [Online Installation](online.md#_2).
+        - For `clusterConfig.yaml` file settings, refer to [Online Installation](online.md#download-and-install).
         - `-z` minimal install
         - `-c` specifies the cluster configuration file. You don't need to specify `-c`
           when using NodePort to expose the console.
