@@ -4,7 +4,7 @@ Users can control the [Control Plane Components](../../intro/comp-archi-ui/cp-co
 
 ## Prerequisites
 
-Make sure the helm application __Metrics Server__ is installed on the cluster, refer to [Install metrics-server plugin](../../../kpanda/user-guide/scale/install-metrics-server.md)
+Make sure the helm app __Metrics Server__ is installed on the cluster, refer to [Install metrics-server plugin](../../../kpanda/user-guide/scale/install-metrics-server.md)
 
       
 

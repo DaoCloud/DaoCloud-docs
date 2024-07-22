@@ -123,8 +123,8 @@ Assume that the legitimate server running the service __datastore__ uses only th
 A malicious user has the certificate and key of the __test-team__ identity.
 Malicious users intend to impersonate legitimate services to inspect data sent from clients.
 A malicious user deploys a fake server using the certificate and key of the __test-team__ identity.
-Suppose a malicious user successfully hijacks (via DNS spoofing, BGP/route hijacking, ARP spoofing, etc.)
- __datastore__ traffic and redirect it to a fake server.
+Suppose a malicious user successfully hijacks (via DNS spoofing, BGP/route hijacking, and ARP spoofing)
+__datastore__ traffic and redirect it to a fake server.
 
 When a client calls the __datastore__ service, it extracts the __test-team__ identity from the server's certificate,
 And check if __test-team__ is allowed to run __datastore__ with security naming information.
@@ -159,11 +159,11 @@ The service mesh outputs these two authentication types, as well as other claims
 
 ### Authentication Policy
 
-This section provides more details on service mesh authentication strategies. As stated in [Authentication Schema](#update-authentication-policy),
+This section provides more details on service mesh authentication policies. As stated in [Authentication Schema](#update-authentication-policy),
 Authentication policies are effective for requests received by the service. To specify a client authentication policy in mutual TLS,
 Need to set __TLSSettings__ in __DetinationRule__ .
 
-Like other service mesh configurations, authentication policies can be written in __.yaml__ files. Deployment strategies use __kubectl__ .
+Like other service mesh configurations, authentication policies can be written in __.yaml__ files. Deployment policies use __kubectl__ .
 The authentication policy in the following example requires that mutual TLS must be used for transport layer authentication with workloads labeled __app:reviews__ :
 
 ```yaml
@@ -182,12 +182,12 @@ spec:
 
 #### Policy storage
 
-A service mesh stores mesh-wide policies in the root namespace. These strategies use an empty selector
+A service mesh stores mesh-wide policies in the root namespace. These policies use an empty selector
 Applied to all workloads in the mesh. Policies with namespace scope are stored in the corresponding namespace.
 They apply only to workloads within their namespace. If you configure the `selector` field,
 then the authentication policy applies only to workloads that match the criteria you configure.
 
-Peer and __request-authentication__ strategies are distinguished by the kind field,
+Peer and __request-authentication__ policies are distinguished by the kind field,
 They are __PeerAuthentication__ and __RequestAuthentication__ respectively.
 
 #### Selector field
@@ -210,7 +210,7 @@ Therefore, the `selector` field helps you specify the scope of the policy:
 - Workload-specific policies: Policies defined in the general namespace with a non-empty `selector` field.
 
 Peer and __request-authentication__ policies follow the same hierarchy principles for the `selector` field,
-But service meshes combine and apply these strategies in a slightly different way.
+But service meshes combine and apply these policies in a slightly different way.
 
 There can be only one mesh-wide __Peer Authentication__ policy,
 There can also only be one namespace-scoped __peer-authentication__ policy per namespace.
@@ -227,7 +227,7 @@ The service mesh applies the narrowest matching policy to each workload in the f
 The service mesh can combine all matching __request-authentication__ policies,
 Just like they come from a single __request-authentication__ policy. therefore,
 You can configure multiple mesh-wide or namespace-wide policies within a mesh or namespace.
-However, it is still good practice to avoid using multiple mesh-scoped or namespace-scoped __request-authentication__ strategies.
+However, it is still good practice to avoid using multiple mesh-scoped or namespace-scoped __request-authentication__ policies.
 
 #### Peer Authentication
 

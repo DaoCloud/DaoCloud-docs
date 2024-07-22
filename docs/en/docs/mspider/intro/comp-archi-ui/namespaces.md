@@ -14,7 +14,7 @@ The namespaces and their purposes are described below.
 | Istio System Namespace   | istio-system       | Hosts Istio control plane components and resources |
 |                          | istio-operator     | Deploys and manages Istio Operator                 |
 | K8s System Namespace     | kube-system        | Control plane components                           |
-|                          | kube-public        | Cluster configurations, certificates, etc.         |
+|                          | kube-public        | Cluster configurations and certificates            |
 |                          | kube-node-lease    | Monitors and maintains node activity               |
 | DCE 5.0 System Namespace | amamba-system      | Workbench                                          |
 |                          | ghippo-system      | Global management                                  |

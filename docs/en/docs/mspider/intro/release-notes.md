@@ -465,7 +465,7 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 - **Improved** the mcpc controller startup logic to avoid situations where work clusters are not correctly registered.
 - **Improved** the WorkloadShadow cleanup logic to be triggered by events instead of on a schedule; it triggers on controller startup, detection of changes in work clusters, or changes in WorkloadShadow.
 - **Improved** the mcpc controller startup logic to avoid situations where work clusters are not correctly registered.
-- **Upgraded** the Insight API to version v0.14.7.
+- **Upgraded** the Insight API to v0.14.7.
 - **Upgraded** ckube to support complex condition queries for labels.
 - **Removed** the time limit for Helm upgrades.
 
