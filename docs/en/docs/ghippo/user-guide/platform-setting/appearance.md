@@ -15,9 +15,9 @@ In DCE 5.0, you have the option to customize the appearance of the login page, t
 
 2. Select __Appearance__ . On the __Custom your login page__ tab, modify the icon and text of the login page as needed, then click __Save__ .
 
-    ![login](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/appear02.png)
+    ![login](../../images/logindesign.png)
 
-3. On the __Custom top navigation bar__ tab, modify the icon and text of the navigation bar as needed, then click __Save__ .
+3. Log out and refresh the login page to see the configured effect.
 
     ![nav](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/appear03.png)
 
