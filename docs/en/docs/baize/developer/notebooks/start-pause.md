@@ -11,7 +11,7 @@ After a Notebook is successfully created, it typically has several states:
 - Running
 - Stopped
 
-If a Notebook is in the **Stopped** state, click the **⋮** on the right side in the list, then choose **Start** from the dropdown menu.
+If a Notebook is in the **Stopped** state, click the **┇** on the right side in the list, then choose **Start** from the dropdown menu.
 
 <!-- add image later -->
 

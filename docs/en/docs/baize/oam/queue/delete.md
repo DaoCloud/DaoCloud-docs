@@ -9,7 +9,7 @@ hide:
 
 In the Operator mode, if you find a queue to be redundant, expired, or no longer needed for any other reason, you can delete it from the queue list.
 
-1. Click the **⋮** on the right side of the queue in the queue list, then choose **Delete** from the dropdown menu.
+1. Click the **┇** on the right side of the queue in the queue list, then choose **Delete** from the dropdown menu.
 
     ![delete](../../images/q-delete01.png)
 
