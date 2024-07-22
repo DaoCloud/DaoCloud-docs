@@ -38,7 +38,7 @@ The steps to create an API are as follows:
 
     Supports 12 API policies: load balancing, path rewriting, timeout configuration, retry mechanism, request header rewriting, response header rewriting, WebSocket, local traffic limiting, health check, cookie rewriting, access whitelist, and global rate limit. For details about how to configure each policy, see [API Policies](api-policy.md).
 
-    ![allocation strategy](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/api/imgs/policy01.png)
+    ![allocation policy](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/api/imgs/policy01.png)
 
 4. Fill in the security configuration by referring to the following description (Optional).
 

@@ -11,7 +11,7 @@ The DEX_STATIC_CLIENT_REDIRECT_URI environment variable should list the allowed 
 where the path is the redirectPath of the authentication service that will be deployed later.
 Other environment variables are not recommended to be modified. If you wish to experiment, you can refer to the config.docker.yaml file for modifications and rebuild the image.
 After successful deployment, you can start deploying the authentication service. Deploy it in a Kubernetes cluster according to the contents of the auth-oidc-all-in-one.yaml file.
-Some parts of the content in the configMap need to be configured according to your own environment. Here are the meanings of each configuration item:
+Some parts of the content in the configMap need to be configured according to your own environment. Here are the meanings of each configmap:
 
 | Parameter Name | Parameter Type | Parameter Meaning | Parameter Example | Note |
 | ------ | -------- | ------- | ------- | --- |
@@ -23,7 +23,7 @@ Some parts of the content in the configMap need to be configured according to yo
 | redirectURL | string | Redirect callback URL | `https://yangyang.daocloud.io:30443` | Example is `https://+domain+https port` |
 | redirectPath | string | Redirect path | /oauth2/callback | The gateway API configuration should include this path in the authentication path |
 
-The above configuration items in this demo are issuerURL and redirectURL. These two should be modified according to the deployment environment, and other parameters are not recommended to be changed! The following documentation will explain using the example configurations mentioned above.
+The above configmaps in this demo are issuerURL and redirectURL. These two should be modified according to the deployment environment, and other parameters are not recommended to be changed! The following documentation will explain using the example configurations mentioned above.
 
 Once both services are successfully deployed, you can proceed with the configuration through the Microservice Engine web interface. Here are the configuration steps:
 
