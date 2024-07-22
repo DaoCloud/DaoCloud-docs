@@ -78,7 +78,7 @@ The meanings of the parameters in the above YAML file and the guided creation ar
 
 - Hosts
 
-    The service name. It can be used to match the `hosts` field in traffic management policies (virtual services, destination rules, etc.).
+    The service name. It can be used to match the `hosts` field in traffic management policies (virtual services and destination rules).
 
     - In HTTP traffic, the service name will be the HTTP host or Authority header.
     - In HTTP or TLS traffic with SNI names, the service name will be the SNI name.

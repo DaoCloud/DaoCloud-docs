@@ -1,11 +1,14 @@
 ---
+MTPE: windsonsea
+date: 2024-07-22
 hide:
   - toc
 ---
 
 # Traffic Monitor
 
-The traffic monitor dashboard utilizes native Grafana charts from Istio. Currently, there are four main sections available:
+The traffic monitor dashboard utilizes native Grafana charts from Istio.
+Currently, there are four main sections available:
 
 - Global monitor: Provides statistics for various resources across the entire mesh.
 

@@ -1,9 +1,14 @@
+---
+MTPE: windsonsea
+Date: 2024-07-22
+---
+
 # Traffic Topology
 
 DCE 5.0 Service Mesh provides a dynamic flow visualization feature called Traffic Topology.
 
-In the left navigation menu, click __Traffic Monitoring__ -> __Traffic Topology__ .
-Here, you can choose the __View__ , __Namespace__ , __Collection source__ , and __Time__ to view the service topology.
+In the left navigation menu, click __Traffic Monitor__ -> __Traffic Topology__ .
+Here, you can choose the __View__ , __Namespace__ , __Collection Source__ , and __Time__ to view the service topology.
 
 ![Traffic Topology](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/topo01.png)
 
@@ -12,7 +17,7 @@ Here, you can choose the __View__ , __Namespace__ , __Collection source__ , and 
 There are three options available:
 
 - Namespace Boundary: Displays services partitioned by namespaces.
-- Show Idle Nodes
+- Show Idle Nodes: whether to display idle nodes.
 - Enable Animation: Shows the dynamic flow direction of traffic.
 
 ![Display Settings](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/topo02.png)
@@ -38,6 +43,6 @@ Click any service to open a sidebar that displays relevant metrics based on the 
 
 - HTTP Protocol: Error Rate (%), Request Rate (RPM), Average Latency (ms)
 - TCP Protocol: Connection Count, Receive Throughput (B/s), Send Throughput (B/s)
-- Governance Information: View virtual services, destination services, gateways, etc.
+- Governance Information: View virtual services, destination services, and gateways
 
 ![Sidebar](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/topo04.png)

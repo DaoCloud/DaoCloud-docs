@@ -18,7 +18,7 @@ The service mesh can provide non-intrusive traffic management capabilities, and 
 
 - Fuse: Regularly inspect the working conditions of accessed service instances by fusing parameters such as the number of consecutive errors before the instance is evicted, eviction interval, minimum eviction time, and maximum eviction ratio. If continuous access exceptions occur, the service instance will be marked as abnormal and isolated, and no traffic will be assigned to it for a period. After some time, the isolated service instance will be unisolated again and try to process the request. If it is still not normal, it will be quarantined for an extended period. In this way, fault isolation and automatic fault recovery of abnormal service instances are realized.
 
-- Load Balancing: Configure various load balancing strategies, such as random, round-robin, least connections, and consistent hashing, to forward traffic to specific service instances.
+- Load Balancing: Configure various load balancing policies, such as random, round-robin, least connections, and consistent hashing, to forward traffic to specific service instances.
 
 - HTTP Header: Flexibly add, modify, and delete specified HTTP headers, including manipulating headers before forwarding HTTP requests to target services. It is also possible to manipulate the header before replying to the HTTP response to the client to manage the request content in a non-intrusive manner.
 
@@ -44,4 +44,4 @@ Operating a containerized infrastructure presents a new set of challenges, inclu
 
 - Non-Intrusive Surveillance Data Collection: In complex cases, access topology, call chain, and monitoring between services are necessary for positioning and demarcating when service access is abnormal. An important capability of the service mesh technology is to provide the collection of these monitoring data non-intrusively. Users only need to pay attention to their own business development and do not need to pay extra attention to the generation of monitoring data.
 
-- Rich Performance Monitoring Capabilities: Generate service access data based on the mesh, integrate various performance monitoring services, and provide cross-cluster intelligent service operation management. This includes cross-cluster service call chains, service access topology and service running health status, associating access status between services through a cross-cluster global view, etc.
+- Rich Performance Monitoring Capabilities: Generate service access data based on the mesh, integrate various performance monitoring services, and provide cross-cluster intelligent service operation management. This includes cross-cluster service call chains, service access topology and service running health status, associating access status between services through a cross-cluster global view.

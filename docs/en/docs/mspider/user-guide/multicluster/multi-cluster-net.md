@@ -9,7 +9,7 @@ With the birth of the new architecture, new problems have emerged one after anot
 At this time, I have to mention service mesh. Theoretically speaking, this technology has the ability to solve the above problems from its design genes in multicloud and multicluster use cases.
 
 Why is it said that service mesh can support complex multicloud cases?
-The service mesh sinks its own capabilities to the infrastructure level, so in theory, in a multicloud environment, it can naturally perceive various information of its own cloud business, such as service address, link relationship between services, etc. information,
+The service mesh sinks its own capabilities to the infrastructure level, so in theory, in a multicloud environment, it can naturally perceive various information of its own cloud business, such as service address and service traces.
 The mesh aggregates the perceived information into a complete multicloud network topology. In a known and controllable multicloud topology, users can observe and control business communications from a high latitude.
 
 The above is only a theoretical analysis, and no amount of theoretical analysis is as good as a practical demonstration. Therefore, we will conduct an overall analysis of how our service mesh product (Mspider) supports a multicloud environment from the shallower to the deeper.
@@ -26,7 +26,7 @@ In a single-cluster scenario, when there is a problem with business service A, w
 However, if the cluster fails, multiple businesses will fail at the same time. At this time, how to transfer all the businesses of the cluster to another cluster is already very time-consuming and complicated.
 But in the actual production environment, every minute and every second is very expensive.
 However, in a multicloud scenario, failover at the cluster level is a basic capability, and users can quickly transfer all their business traffic.
-Users only need to define failover strategies between clusters, for example, when cluster A fails, transfer business traffic to cluster B.
+Users only need to define failover policies between clusters, for example, when cluster A fails, transfer business traffic to cluster B.
 
 ### Geo-awareness and failover
 
@@ -131,7 +131,7 @@ In this way, the control plane and data plane of the mesh can be physically isol
 For high availability, you can deploy multiple control plane instances across multiple clusters, zones, or regions.
 
 In a multicluster scenario with multiple shared control planes, each control plane belongs to a certain cluster,
-The shared control plane accepts user-defined configuration (such as __Service__ , __ServiceEntry__ , __DestinationRule__ , etc.) from the Kubernetes API Server of its own cluster.
+The shared control plane accepts user-defined configuration (such as __Service__ , __ServiceEntry__ , and __DestinationRule__ ) from the Kubernetes API Server of its own cluster.
 So each master control plane cluster has an independent source of configuration.
 
 So there is a problem here, how to configure multiple control plane clusters synchronously?
@@ -207,15 +207,15 @@ Up to this part, many people will ask why they choose the multicluster single co
 Here I have to mention that there is a very painful point when implementing multicluster and multi-control planes: the cost of multi-control planes from deployment to operation to maintenance is very high.
 How did we come to this conclusion? In the early stage, we internally chose multicluster and multi-control plane verification, but found some disadvantages of multi-control plane in this process:
 
-- Complex strategies and high hidden dangers:
+- Complex policies and potential dangers:
 
-     - Complex configuration: Different control planes require different strategies. Although it is an independent control plane policy from another perspective, in a multicluster scenario, the cluster is definitely one or two, and the total number of applications will also expand with the expansion of the cluster. It becomes more complicated, and it is very easy for some clusters to forget the configuration, or to change the configuration and need to configure multiple sets of the same policy repeatedly.
+     - Complex configuration: Different control planes require different policies. Although it is an independent control plane policy from another perspective, in a multicluster scenario, the cluster is definitely one or two, and the total number of applications will also expand with the expansion of the cluster. It becomes more complicated, and it is very easy for some clusters to forget the configuration, or to change the configuration and need to configure multiple sets of the same policy repeatedly.
      - Policy conflict: There are many sets of control plane policies, and users need to accurately grasp each policy, otherwise it is easy to cause policy conflicts.
 
 - High cost of control plane deployment and upgrade maintenance: When there are multiple sets of control planes, we need to maintain the deployment and upgrade of multiple sets of control planes.
 - Pollution of multiple control plane clusters: Since the mesh needs to aggregate multicluster namespaces and services, it pollutes the control plane cluster. Let me illustrate with an example: when cluster A has namespaces N1 and N2; cluster B has namespace N3; and both clusters A and B are control plane clusters, cluster A needs to add N3, and cluster B needs to add N1 and N2. It is very scary when the multicluster and the business in the cluster reach a certain volume.
 
-However, most of the above problems can be avoided in the multicluster single control plane mode, especially the complex governance policy. All strategies will be unified in one cluster, so the difficulty of configuration and management will be greatly reduced.
+However, most of the above problems can be avoided in the multicluster single control plane mode, especially the complex governance policy. All policies will be unified in one cluster, so the difficulty of configuration and management will be greatly reduced.
 
 ### Service Mesh Architecture
 
@@ -230,7 +230,7 @@ Summarize the advantages of the service mesh technology selection scheme:
 - **Easier Management**: Centralizing the management of the entire service mesh in one control plane can help organizations manage the entire service mesh more conveniently and quickly.
 - **Low-complexity configuration and better performance**: By unifying all the data of the entire service mesh in one control plane, the routing and governance policies of the service can be processed more quickly, thereby improving the overall service network mesh performance.
 - **Stronger Security**: In single control plane multicluster mode, we can better control access to the entire service mesh and use stricter security policies to protect its data.
-- **Support cross-cluster load and disaster recovery capability**: It can flexibly configure cross-cluster traffic load and disaster recovery strategies.
+- **Support cross-cluster load and disaster recovery capability**: It can flexibly configure cross-cluster traffic load and disaster recovery policies.
 - **Unified and efficient policy configuration**: There is no need to configure complicated control plane configuration synchronization and merging issues, especially the more control planes, the larger the volume of its business services, and its synchronization and merging must be a very complicated and There is a risk.
 - **Flexible control plane and data plane isolation**: The service mesh allows users to isolate the mesh control plane from the data plane cluster, and also supports the cluster to have both the control plane and the data plane in the case of limited user resources under the same cluster.
 - **Flexible switching of network modes**: The default scenario of the service mesh is that multiple clusters are located on a single network, but the multi-network mode can also support deployment.

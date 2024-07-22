@@ -17,7 +17,7 @@ For L7 support, gateway rules are implemented in conjunction with virtual servic
 
 - Servers
 
-    Information about services exposed externally, including hosts, listening port, protocol type, etc.
+    Information about services exposed externally, including hosts, listening port, and protocols.
 
 - TLS
 

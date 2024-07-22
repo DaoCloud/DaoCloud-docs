@@ -75,7 +75,7 @@ When using the graphical wizard mode, the creation of [authorization policies](.
 | Policy Action | spec.action | Optional. Includes: <br />- allow<br />- deny<br />- audit<br />- custom<br />When selecting custom, an additional `provider` input item will be displayed. |
 | Provider | spec.provider.name | Required. Only displayed when __Policy Action__ is selected as __custom__. |
 | Request Policies | spec.rules | Optional. Includes request source, request operation, and policy condition. Multiple rules can be added and executed in order. |
-| Add Request Source | spec.rules.-from | Optional. Defines the request source based on the namespace, IP range, etc. Multiple sources can be added. See the following section [Source](#source) for parameters. |
+| Add Request Source | spec.rules.-from | Optional. Defines the request source based on the namespace, and IP range. Multiple sources can be added. See the following section [Source](#source) for parameters. |
 | Add Request Operation | spec.rules.-to | Optional. Defines the operation to be performed on the filtered requests, such as sending them to a specific port or host. Multiple operations can be added. See the following section [Operation](#operation) for parameters. |
 | Add Policy Condition | spec.rules.-when | Required. Policy conditions are optional settings that can add restriction conditions like blacklists (values) or whitelists (notValues). Multiple policy conditions can be added. See the following section [Condition](#condition) for parameters. |
 
