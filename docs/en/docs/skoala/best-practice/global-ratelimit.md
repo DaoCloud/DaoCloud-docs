@@ -186,7 +186,7 @@ kubectl apply -f gateway-rls.yaml -n plugin-ns
     - Rate Limit Response Header: Enable printing rate limit-related information in the response header.
     - Fast Success: Allow continuing to access requests when the rate limit server is unreachable.
     - Access Address: The address of the rate limit server, corresponding to port 8081, with the GRPC protocol.
-    - Load Balancing Strategy: Access strategy for multiple rate limit servers.
+    - Load Balancing Policy: Access policy for multiple rate limit servers.
     - Configuration Retrieval Interface: Address for retrieving rate limit server configuration, corresponding to port 6070, with the HTTP protocol.
     - Timeout: Timeout for the rate limit server response.
 

@@ -12,7 +12,7 @@ The microservice engine gateway supports JWT validation. Here"s how to use this 
 
 1. Access a JWT plugin in the plugin center
 
-    - Plugin name: The unique name of the JWKS used to identify the specific JWT strategy (required)
+    - Plugin name: The unique name of the JWKS used to identify the specific JWT policy (required)
     - Plugin type: Select JWT
     - JWKS cache time: The caching time of the JWKS in memory. No repeated requests to the JWKS server will be made within the cache validity period.
     - Token passthrough: Whether to send the JWT token information to the backend service
@@ -39,7 +39,7 @@ The microservice engine gateway supports JWT validation. Here"s how to use this 
     <!--![]()screenshots-->
 
 4. Access verification with the Token. If the access is successful,
-   it indicates that the JWT strategy configuration is successful.
+   it indicates that the JWT policy configuration is successful.
 
 ## Create the JWKS application
 

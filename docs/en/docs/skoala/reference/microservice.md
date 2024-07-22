@@ -12,7 +12,7 @@ However, as businesses expand and the complexity of business logic increases, th
 - Traditional Microservices
 
     Traditional microservices refer to the mode and technical system of microservice governance that has evolved based on traditional microservice registries.
-    Traditional microservice frameworks include Spring Cloud, Dubbo, etc., and traditional service registries include Eureka, Nacos, ZooKeeper, Consul, etcd, etc.
+    Traditional microservice frameworks include Spring Cloud, and Dubbo, and traditional service registries include Eureka, Nacos, ZooKeeper, Consul, and etcd.
 
 - Cloud-Native Microservices
 

@@ -1,6 +1,6 @@
-# Microservice configuration list
+# Microservice Configuration List
 
-The micro-service engine supports group management of micro-services based on the micro-service namespace, so that you can flexibly manage micro-services and a large number of configurations of Spring according to your needs by grouping environment, application, module, etc. The configuration list mainly provides core management capabilities, such as adding, deleting, modifying, checking, viewing historical versions, rolling back, and subscriber query of micro-service configurations.
+The microservice engine supports group management of microservices based on the microservice namespace, so that you can flexibly manage microservices and a large number of configurations of Spring according to your needs by grouping environment, application, and module. The configuration list mainly provides core management capabilities, such as adding, deleting, modifying, checking, viewing historical versions, rolling back, and subscriber query of microservice configurations.
 
 ## New configuration
 
@@ -16,7 +16,7 @@ The micro-service engine supports group management of micro-services based on th
 
     ![Enter the configuration information](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/config03.png)
 
-    - Namespace: Select the micro-service namespace to which the current configuration belongs. The default is `public`
+    - Namespace: Select the microservice namespace to which the current configuration belongs. The default is `public`
 
         !!! note
 
@@ -26,9 +26,9 @@ The micro-service engine supports group management of micro-services based on th
 
         The full format is `${prefix}-${spring.profiles.active}.${file-extension}`.
 
-        -  `prefix` default to `spring.application.name` value, can also through the configuration items `spring.cloud.nacos.config.prefix` to configure.
+        -  `prefix` default to `spring.application.name` value, can also through the configmaps `spring.cloud.nacos.config.prefix` to configure.
         -  `spring.profiles.active` Indicates the profile of the current environment. For details, see the Spring Boot documentation. Note: When `spring.profiles.active` is empty, the corresponding concatenator `-` also does not exist, and the Data ID concatenation format becomes `${prefix}.${file-extension}`.
-        -  `file-exetension` Indicates the data format of the configuration content. You can configure the configuration item `spring.cloud.nacos.config.file-extension`.
+        -  `file-exetension` Indicates the data format of the configuration content. You can configure the configmap `spring.cloud.nacos.config.file-extension`.
 
     - Group: Select the group to which the current configuration belongs. The default value is `DEFAULT_GROUP`.
 
@@ -38,10 +38,10 @@ The micro-service engine supports group management of micro-services based on th
 
     - Configuration format: Sets the format of the current configuration file.
 
-    - Configuration content: Enter a configuration item in the service source code with an annotation `@Value`.
+    - Configuration content: Enter a configmap in the service source code with an annotation `@Value`.
 
         - Format verification is supported. If the format of the configuration is incorrect, the system automatically displays an error message.
-        - Configuration items in the service source code with annotations `@RefreshScope` support dynamic updates.
+        - ConfigMaps in the service source code with annotations `@RefreshScope` support dynamic updates.
 
     - More Configurations -> Owning Application (Optional) : Select the application to which the current configuration belongs.
 
@@ -68,7 +68,7 @@ The micro-service engine supports group management of micro-services based on th
 
 ## The historical version is rolled back
 
-The micro-service configuration list records the historical version of the configuration file and supports one-click rollback to a specific historical version. This helps users quickly recover incorrect configurations and reduces configuration availability risks in the micro-service system. Comparison between the current version and the target rollback version is supported during the rollback. This helps you verify the changes and reduce risks caused by error correction.
+The microservice configuration list records the historical version of the configuration file and supports one-click rollback to a specific historical version. This helps users quickly recover incorrect configurations and reduces configuration availability risks in the microservice system. Comparison between the current version and the target rollback version is supported during the rollback. This helps you verify the changes and reduce risks caused by error correction.
 
 1. Enter `Microservices` -> __Traditional Microservices__ -> __Hosted Registry__ module, click the name of the target registry.
 
