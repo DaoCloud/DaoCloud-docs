@@ -38,7 +38,7 @@ Here, taking the federation MongoDB as an example, the following architecture di
 
 FedState itself contains the following components:
 
-Multicloud-Middleware-Scheduler: is responsible for collecting the resource usage of the working cluster and giving reasonable scheduling methods based on the resource usage. At the same time, different middleware have their own characteristics, and there will be corresponding special scheduling logic for different middleware to help various middleware choose suitable scheduling results. Different types of middleware scheduling strategies and implementations can be extended according to needs.
+Multicloud-Middleware-Scheduler: is responsible for collecting the resource usage of the worker cluster and giving reasonable scheduling methods based on the resource usage. At the same time, different middleware have their own characteristics, and there will be corresponding special scheduling logic for different middleware to help various middleware choose suitable scheduling results. Different types of middleware scheduling policies and implementations can be extended according to needs.
 
 Federation-Mongo-Manager: can be understood as the operator of MongoDB control plane, which is mainly responsible for on-demand configuration of these middleware services, reasonable scheduling, and distribution through Karmada. Different middleware can be expanded as needed.
 
@@ -50,12 +50,12 @@ Mongo-Manager: can be understood as the operator of MongoDB data plane, which is
 
 1. The external access method of the federation MongoDB instance: Vip0:NodePort0, Vip1:NodePort1...
 2. East-west traffic and service discovery between MongoDB services in each member cluster are used to correspond to the NodePort method corresponding to the VIP+service of the cluster.
-3. In addition to supporting the creation and updating of federation MongoDB replica sets, etc., you can also directly use the data plane operator to create and manage MongoDB clusters in single-cluster mode.
+3. In addition to supporting the creation and updating of federation MongoDB replica sets, you can also directly use the data plane operator to create and manage MongoDB clusters in single-cluster mode.
 4. According to the characteristics of different middleware, nodes with different roles are deployed in different clusters to ensure the high availability requirements of middleware.
 5. Support manual adjustment of cluster scale to complete expansion and contraction capabilities.
-6. Support fault migration based on Karmada and custom migration strategies.
+6. Support fault migration based on Karmada and custom migration policies.
 7. Support monitoring in Prometheus mode to collect metrics data of MongoDB nodes.
-8. Custom configuration files can be set according to needs to set various configuration items supported by MongoDB.
+8. Custom configuration files can be set according to needs to set various configmaps supported by MongoDB.
 9. Support MongoDB cluster authentication to authenticate client connections.
 10. Support CSI storage to persist middleware data.
 11. Support the topology of MongoDB clusters, and clearly observe the running status of each MongoDB node.
@@ -67,7 +67,7 @@ Taking MongoDB as an example, some common capabilities provided in the federatio
 
 ### MongoDB cluster in federation mode
 
-Creating and managing resource objects of stateful services in federation will distribute stateful services to member clusters according to configuration, set the required storage, turn on monitoring, password configuration, etc. After successful creation, the deployment topology and access address of MongoDB in each member cluster will be displayed in the status. This mode is suitable for installing and managing MongoDB clusters across different clusters using control plane and data plane MongoDB Operators in a federation environment.
+Creating and managing resource objects of stateful services in federation will distribute stateful services to member clusters according to configuration, set the required storage, turn on monitoring, and password configuration. After successful creation, the deployment topology and access address of MongoDB in each member cluster will be displayed in the status. This mode is suitable for installing and managing MongoDB clusters across different clusters using control plane and data plane MongoDB Operators in a federation environment.
 
 ??? note "Click to check MultiCloudMongoDB YAML sample"
 
