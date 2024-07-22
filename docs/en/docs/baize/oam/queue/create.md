@@ -13,10 +13,10 @@ In the Operator mode, queues can be used to schedule and optimize batch job work
 
     ![click button](../../images/queue01.png)
 
-2. The system will pre-fill basic setup data, including the cluster to deploy to, workspace, queuing strategy, etc. click **OK** after adjusting these parameters.
+2. The system will pre-fill basic setup data, including the cluster to deploy to, workspace, and queuing policy. Click **OK** after adjusting these parameters.
 
     ![fill in](../../images/queue02.png)
 
-3. A confirmation message will appear upon creation, returning you to the queue management list. Click the **⋮** on the right side of the list to perform additional operations such as update or delete.
+3. A confirmation message will appear upon creation, returning you to the queue management list. Click the **┇** on the right side of the list to perform additional operations such as update or delete.
 
     ![more actions](../../images/queue03.png)

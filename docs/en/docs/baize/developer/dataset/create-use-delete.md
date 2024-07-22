@@ -18,7 +18,7 @@ preloading, dataset management, and other functionalities.
 
     ![Click Create](../../images/dataset01.png)
 
-2. Select the working cluster and namespace to which the dataset belongs, then click **Next**.
+2. Select the worker cluster and namespace to which the dataset belongs, then click **Next**.
 
     ![Fill in Parameters](../../images/dataset02.png)
 
@@ -35,7 +35,7 @@ preloading, dataset management, and other functionalities.
     - NFS: Supports NFS shared storage
 
 4. Upon successful creation, the dataset will be returned to the dataset list.
-   You can perform more actions by clicking **⋮** on the right.
+   You can perform more actions by clicking **┇** on the right.
 
     ![Dataset List](../../images/dataset04.png)
 
@@ -74,7 +74,7 @@ In creating a Notebook, you can directly use the dataset; the usage is as follow
 
 If you find a dataset to be redundant, expired, or no longer needed, you can delete it from the dataset list.
 
-1. Click the **⋮** on the right side of the dataset list, then choose **Delete** from the dropdown menu.
+1. Click the **┇** on the right side of the dataset list, then choose **Delete** from the dropdown menu.
 
     ![Delete](../../images/ds-delete01.png)
 

@@ -7,7 +7,7 @@ By abstracting the dependency on data throughout the entire lifecycle of `MLOps`
 into datasets, users can manage various types of data in datasets so that
 training tasks can directly use the data in the dataset.
 
-When remote data is not within the working cluster, datasets provide the capability
+When remote data is not within the worker cluster, datasets provide the capability
 to automatically preheat data, supporting data preheating from sources such as
 `Git`, `S3`, `HTTP`, `NFS` to the local cluster.
 

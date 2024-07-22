@@ -7,7 +7,7 @@ hide:
 
 Once a job is created, it will be displayed in the job list.
 
-1. In the job list, click the **⋮** on the right side of a job and select **Job Load Details** .
+1. In the job list, click the **┇** on the right side of a job and select **Job Workload Details** .
 
     ![Click Menu Item](../../images/view-wl01.png)
 
@@ -20,7 +20,7 @@ Once a job is created, it will be displayed in the job list.
     ![View Details](../../images/view-wl03.png)
 
 4. You can also view detailed logs of the current Pod for the recent period.
-   By default, 100 lines of logs are displayed. To view more detailed logs or to download logs, click the blue **Observability** text at the top.
+   By default, 100 lines of logs are displayed. To view more detailed logs or to download logs, click the blue **Insight** text at the top.
 
     ![Logs](../../images/view-wl04.png)
 
