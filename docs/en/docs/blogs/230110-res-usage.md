@@ -131,7 +131,7 @@ These Pods are scheduled during times when the cluster's resource usage is low, 
 
 Hybrid deployment of online and offline services refers to running offline and online services simultaneously in a Kubernetes cluster:
 
-- Online business: business that requires real-time processing, such as websites, games, mobile applications, etc. This type of business usually has lower latency requirements, but higher resource requirements.
+- Online business: business that requires real-time processing, such as websites, games, and mobile applications. This type of business usually has lower latency requirements, but higher resource requirements.
 - Offline business: business that does not require real-time processing, such as batch jobs, data analysis, and backup. This type of business usually consumes more resources, but can allow longer delays.
 
 For example, a company may have a website that provides online shopping and shipping services. This service has high requirements on stability,
@@ -152,7 +152,7 @@ It can effectively utilize the resources in the cluster while ensuring the avail
 
 ## Summarize
 
-Kubernetes can improve resource utilization in several ways. By setting resource requests and limits for Pods, using auto-scaling, staggered peak scheduling strategies, and hybrid deployment techniques,
+Kubernetes can improve resource utilization in several ways. By setting resource requests and limits for Pods, using auto-scaling, staggered peak scheduling policies, and hybrid deployment techniques,
 It can effectively optimize the computing resources of the Kubernetes cluster, better meet business needs and save costs.
 Of course, in practical applications, we can also perform more optimizations according to specific business cases.
 In general, to improve the resource utilization of Kubernetes, it is only necessary to conduct a comprehensive analysis of the running mode and resource usage of the application.

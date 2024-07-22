@@ -216,7 +216,7 @@ technology, sorted by date by default.
 
 - [20221209 | K8s 1.26 officially released](221209-k8s-1.26.md)
 
-    Kubernetes has officially released version v1.26, titled "Electrifying". As the last version of 2022, it adds many new features and significantly improves stability. This article introduces the updates in version 1.26
+    Kubernetes has officially released v1.26, titled "Electrifying". As the last version of 2022, it adds many new features and significantly improves stability. This article introduces the updates in version 1.26
 
 - [20221130 | Karmada Resource Interpreter](https://mp.weixin.qq.com/s/DLDmWRmhM_gMVg1qGnj_fA)
 
