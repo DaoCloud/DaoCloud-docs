@@ -684,7 +684,6 @@ nav:
                       - 已知问题: insight/quickstart/install/knownissues.md
                       - 大规模日志部署调整: insight/best-practice/insight-kafka.md
                       - 自定义 Insight 组件调度策略: insight/quickstart/install/component-scheduling.md
-
                   - 其他发行版安装insight-agent:
                       - DCE 4.0: insight/quickstart/other/install-agentindce.md
                       - OpenShift 4.x: insight/quickstart/other/install-agent-on-ocp.md
