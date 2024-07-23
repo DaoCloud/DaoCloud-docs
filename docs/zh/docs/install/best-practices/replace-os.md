@@ -28,7 +28,7 @@
 
 ### 离线资源准备（在线可忽略）
 
-1. 通过安装器命令，导入 Ubuntu 22.04 的 [iso](../commercial/start-install.md/#iso-操作系统镜像文件必需)、
+1. 通过安装器命令，导入 Ubuntu 22.04 的 [iso](../commercial/start-install.md#iso)、
    [ospackage](../commercial/start-install.md#ospackage) 文件：
 
     ```shell
@@ -53,7 +53,7 @@
         - actionType: playbook
         action: ping.yml
         - actionType: playbook
-          action: enable-repo.yml  # 在任务运行前, 先执行 enable-repo 的 playbook, 为每个节点创建指定 url 的源配置
+          action: enable-repo.yml  # (1)!
           extraArgs: |
             --limit=ubuntu-worker1 -e "{repo_list: ['deb [trusted=yes] http://MINIO_ADDR:9000/kubean/ubuntu jammy main', 'deb [trusted=yes] http://MINIO_ADDR:9000/kubean/ubuntu-iso jammy main restricted']}"
 
@@ -61,11 +61,13 @@
           action: disable-firewalld.yml
     ```
 
+    1. 在任务运行前，先执行 enable-repo 的 playbook，为每个节点创建指定 url 的源配置
+
 ### Worker 节点迁移
 
 1. 进入工作集群详情界面，在 **集群设置** -> **高级设置** 中，关闭 **集群删除保护**
 
-1. 在 **节点管理** 列表中，选择一个工作节点，点击 **移除**=
+1. 在 **节点管理** 列表中，选择一个工作节点，点击 **移除**
 
 1. 移除成功后，在终端命令行中，连接[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_2)，
    获取资源类型为 `clusters.kubean.io`，名称为 <工作集群名称> 下的参数 `hosts-conf` 信息，此示例工作集群名称为：centos
@@ -94,10 +96,12 @@ Control Plane 节点迁移需要分成两部分，分别为首个 Control Plane 
       children:
         kube_control_plane:
           hosts:
-            centos-master1: null # 首个节点
+            centos-master1: null # (1)!
             centos-master2: null
             centos-master3: null
 ```
+
+1. 首个节点
 
 #### 非首个 Control Plane 节点迁移
 
@@ -142,11 +146,11 @@ Control Plane 节点迁移需要分成两部分，分别为首个 Control Plane 
     metadata:
       name: cluster-remove-master2
     spec:
-      cluster: centos # 工作集群名称
-      image: ghcr.io/kubean-io/spray-job:v0.12.2 # 指定 kubean 任务运行的镜像，镜像地址要与之前执行部署时的 job 其内镜像保持一致
+      cluster: centos # (1)!
+      image: ghcr.io/kubean-io/spray-job:v0.12.2 # (2)!
       actionType: playbook
       action: remove-node.yml
-      extraArgs: -e node=centos-master2 # 此处需要定义为非首个 Control Plane 的任意一个节点
+      extraArgs: -e node=centos-master2 # (3)!
       postHook:
         - actionType: playbook
           actionSource: configmap
@@ -158,6 +162,10 @@ Control Plane 节点迁移需要分成两部分，分别为首个 Control Plane 
           action: cluster-info.yml
     ```
 
+    1. 工作集群名称
+    2. 指定 Kubean 任务运行的镜像，镜像地址要与之前执行部署时的 Job 其内镜像保持一致
+    3. 此处需要定义为非首个 Control Plane 的任意一个节点
+
 4. 部署上述文件后且等待节点缩容成功后，创建 ClusterOperation 资源，用于 Control Plane 的节点扩容，资源文件如下：
 
     ```yaml
@@ -166,8 +174,8 @@ Control Plane 节点迁移需要分成两部分，分别为首个 Control Plane 
     metadata:
       name: cluster-scale-master2
     spec:
-      cluster: centos # 工作集群名称
-      image: ghcr.io/kubean-io/spray-job:v0.12.2 # 指定 kubean 任务运行的镜像，镜像地址要与之前执行部署时的 job 其内镜像保持一致
+      cluster: centos # (1)!
+      image: ghcr.io/kubean-io/spray-job:v0.12.2 # (2)!
       actionType: playbook
       action: cluster.yml
       extraArgs: --limit=etcd,kube_control_plane -e ignore_assert_errors=yes --skip-tags=multus
@@ -181,6 +189,9 @@ Control Plane 节点迁移需要分成两部分，分别为首个 Control Plane 
         - actionType: playbook
           action: cluster-info.yml
     ```
+
+    1. 工作集群名称
+    2. 指定 Kubean 任务运行的镜像，镜像地址要与之前执行部署时的 Job 其内镜像保持一致
 
 5. 部署上述文件后且等待第 4 步移除节点重新扩容进来后，重复执行第 3、4 步完成第三个节点的迁移
 
@@ -243,11 +254,11 @@ Control Plane 节点迁移需要分成两部分，分别为首个 Control Plane 
     metadata:
       name: cluster-test-remove-master1
     spec:
-      cluster: centos  # 工作集群名称
-      image: ghcr.io/kubean-io/spray-job:v0.12.2 # 指定 kubean 任务运行的镜像，镜像地址要与之前执行部署时的 job 其内镜像保持一致
+      cluster: centos  # (1)!
+      image: ghcr.io/kubean-io/spray-job:v0.12.2 # (2)!
       actionType: playbook
       action: remove-node.yml
-      extraArgs: -e node=centos-master1 # 此处需要定义为首个 Control Plane 的节点
+      extraArgs: -e node=centos-master1 # (3)!
       postHook:
         - actionType: playbook
           actionSource: configmap
@@ -258,6 +269,10 @@ Control Plane 节点迁移需要分成两部分，分别为首个 Control Plane 
         - actionType: playbook
           action: cluster-info.yml
     ```
+
+    1. 工作集群名称
+    2. 指定 Kubean 任务运行的镜像，镜像地址要与之前执行部署时的 Job 其内镜像保持一致
+    3. 此处需要定义为首个 Control Plane 的节点
 
 4. 部署上述文件且缩容成功后，更新 ConfigMap 资源 cluster-info、kubeadm-config
 
@@ -287,8 +302,8 @@ Control Plane 节点迁移需要分成两部分，分别为首个 Control Plane 
     metadata:
       name: cluster-test-scale-master1
     spec:
-      cluster: centos # 工作集群名称
-      image: ghcr.io/kubean-io/spray-job:v0.12.2 # 指定 kubean 任务运行的镜像，镜像地址要与之前执行部署时的 job 其内镜像保持一致
+      cluster: centos # (1)!
+      image: ghcr.io/kubean-io/spray-job:v0.12.2 # (2)!
       actionType: playbook
       action: cluster.yml
       extraArgs: --limit=etcd,kube_control_plane -e ignore_assert_errors=yes --skip-tags=multus
@@ -302,5 +317,8 @@ Control Plane 节点迁移需要分成两部分，分别为首个 Control Plane 
         - actionType: playbook
           action: cluster-info.yml
     ```
+
+    1. 工作集群名称
+    2. 指定 Kubean 任务运行的镜像，镜像地址要与之前执行部署时的 Job 其内镜像保持一致
 
 6. 扩容任务完成后即成功完成首个 Control Plane 节点迁移
