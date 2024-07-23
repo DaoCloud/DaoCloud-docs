@@ -5,16 +5,48 @@ hide:
 
 # Network Planning
 
-Based on the best practice of Overlay CNI + Underlay CNI [network card planning](./ethplan.md), the network planning diagram of the cluster is as follows:
+This page describes best practice in Overlay + Underlay CNI based on [Eth card planning](./ethplan.md), with the main scenarios covered is as follows:
 
+1. Calico with Macvlan CNI
+2. Calico with Macvlan and SR-IOV CNI
 
+In the following scenarios, the best practice is to have 2 NICs, with different NICs carrying the following traffic:
+
+1. **NIC 1 (eth0)**: Mainly responsible for Kubernetes internal management traffic, Calico traffic, and Inter-Node Communication traffic
+2. **NIC 2 (eth1)**: Mainly responsible for Underlay (Macvlan/SR-IOV) network traffic
+
+## Calico with Macvlan CNI
+
+![calico-macvlan](../images/calico-macvlan.jpg)
 
 **Planning Instructions**:
 
-- In this plan, the default CNI is Calico/Cilium, which needs to be installed together with components such as Multus-underlay and Spiderpool.
-- It is recommended that all nodes have multiple physical NICs with the same name.
-- eth0 is the network card where the default route of the host is located, and the gateway points to the Gateway host, which forwards to the external network.
-   The main uses are: communication between nodes, K8s management network card, Calico Pod communication.
-- eth1 is the underlay service network card, no need to set an IP address.
-   Create VLAN subinterfaces (eth1.1, eth1.2) based on eth1, corresponding to network segments such as 172.16.15.0/24 and 172.16.16.0/24.
-   The created business application Pod uses the address of the corresponding network segment, which can meet the multi-VLAN and multi-subnet use cases.
+- In this plan, Calico or Cilium serves as the default CNI,
+requiring co-installation with components including Multus-underlay and Spiderpool.
+- It is advised that each node is equipped with multiple physical NICs with the same name.
+- eth0 is a NIC where the default route of the host is located, and the gateway points to the Gateway host, which forwards to the external network.
+  The main uses are: communication between nodes, K8s management NIC, Calico pod communication.
+- eth1 is the Underlay service NIC and does not need to be set an IP address.
+  Creating VLAN subinterfaces (eth1.1, eth1.2) is based on the eth1, each respectively corresponding to network segments such as 172.16.15.0/24 and 172.16.16.0/24.
+  The created pods for business application can utilize the corresponding network segment addresses to meet the requirements for connecting to multiple VLANs and subnets.
+- The eth1.1, eth1.2 VLAN subinterfaces does not need to be set an IP address.
+
+## Calico with Macvlan and SR-IOV CNI
+
+![macvlan-sriov](..//images/macvlan-sriov.jpg)
+
+**Planning Instructions**:
+
+- In this plan, Calico or Cilium serves as the default CNI,
+requiring co-installation with components including Multus-underlay and Spiderpool.
+- It is advised that each node is equipped with multiple physical NICs with the same name.
+- eth0 is a NIC where the default route of the host is located, and the gateway points to the Gateway host, which forwards to the external network.
+  The main uses are: communication between nodes, K8s management NIC, Calico pod communication.
+- eth1 in `Worker01` and `Worker02` is a NIC for the VLAN service and does not need to be set an IP address.
+  Creating VLAN subinterfaces (eth1.1, eth1.2) is based on the eth1, each respectively corresponding to network segments such as 172.16.15.0/24 and 172.16.16.0/24.
+  The created pods for business application can utilize the corresponding network segment addresses to meet the requirements for connecting to multiple VLANs and subnets.
+- The eth1.1, eth1.2 VLAN subinterfaces does not need to be set an IP address.
+- eth1 in `Worker03` and `Worker04` is the SR-IOV service NIC and does not need to be set an IP address.
+  The network segment for eth1 is 172.16.17.0/24, and eth1.1 and eth1.2 can also correspond to this network segment.
+  You have the option to decide whether to utilize the same IP address range for these interfaces based on your requirements.
+  In this example, these network segments should be different. The created pods for business application uses the network segment, which can be directly invoked by the container after using the extended VF (Virtual Functions) to get the acceleration effect.
