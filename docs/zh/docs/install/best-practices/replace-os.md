@@ -18,7 +18,7 @@
 
 ## 解决方案
 
-- 需要从 Control Plane 、Worker 节点两个角度来处理
+- 需要从 Control Plane、Worker 节点两个角度来处理
 - 迁移操作顺序：[Worker 节点迁移](#worker) -> [非首个 Control Plane 节点迁移](#control-plane_1) -> [首个 Control Plane 节点迁移](#control-plane_2)
 - 在进行节点迁移操作之前，安全起见，建议对集群的相关资源进行备份
 
@@ -26,7 +26,7 @@
 
     本文档默认采用先删后增的操作顺序，实际场景可按需求调整操作顺序。
 
-### 离线资源准备（在线可忽略）
+### 准备离线资源（在线可忽略）
 
 1. 通过安装器命令，导入 Ubuntu 22.04 的 [iso](../commercial/start-install.md#iso)、
    [ospackage](../commercial/start-install.md#ospackage) 文件：
@@ -63,7 +63,7 @@
 
     1. 在任务运行前，先执行 enable-repo 的 playbook，为每个节点创建指定 url 的源配置
 
-### Worker 节点迁移
+### 迁移 Worker 节点
 
 1. 进入工作集群详情界面，在 **集群设置** -> **高级设置** 中，关闭 **集群删除保护**
 
@@ -83,11 +83,11 @@
 
 1. 等待新节点扩容成功后，其他工作节点重复以上步骤直至全部迁移完成
 
-### Control Plane 节点迁移
+### 迁移 Control Plane 节点
 
 Control Plane 节点迁移需要分成两部分，分别为首个 Control Plane 节点迁移、非首个 Control Plane 节点迁移
 
-#### 如何确定首个主节点
+#### 确定首个主节点
 
 请查看集群的资源 `clusters.kubean.io` 配置 host-conf 内容，具体定位 `all.children.kube_control_plane.hosts`，
 在 kube_control_plane 组中，排在首位的节点，即为首个主节点；
@@ -103,7 +103,7 @@ Control Plane 节点迁移需要分成两部分，分别为首个 Control Plane 
 
 1. 首个节点
 
-#### 非首个 Control Plane 节点迁移
+#### 迁移非首个 Control Plane 节点
 
 1. 在终端命令行中，连接全局服务集群，获取资源类型为 `clusters.kubean.io`，名称为 <工作集群名称> 下的参数
    `hosts-conf`、`vars-conf` 信息，此示例工作集群名称为：centos
@@ -195,7 +195,7 @@ Control Plane 节点迁移需要分成两部分，分别为首个 Control Plane 
 
 5. 部署上述文件后且等待第 4 步移除节点重新扩容进来后，重复执行第 3、4 步完成第三个节点的迁移
 
-#### 首个 Control Plane 节点迁移
+#### 迁移首个 Control Plane 节点
 
 可参考文档[迁移工作集群的首个控制节点](../../kpanda/best-practice/replace-first-master-node.md)。
 
