@@ -26,7 +26,7 @@ To enable GPU passthrough, the cluster nodes need to have IOMMU enabled. Please 
 
 Note: This step is only required when using NVIDIA vGPU. If you plan to use GPU passthrough only, skip this section.
 
-Follow these steps to build the vGPU Manager image and push it to the image repository:
+Follow these steps to build the vGPU Manager image and push it to the container registry:
 
 1. Download the vGPU software from the NVIDIA Licensing Portal.
 
@@ -74,7 +74,7 @@ Follow these steps to build the vGPU Manager image and push it to the image repo
       -t ${PRIVATE_REGISTRY}``/vgpu-manager``:${VERSION}-${OS_TAG} .
     ```
 
-7. Push the NVIDIA vGPU Manager image to your image repository.
+7. Push the NVIDIA vGPU Manager image to your container registry.
 
     ```bash
     docker push ${PRIVATE_REGISTRY}/vgpu-manager:${VERSION}-${OS_TAG}
@@ -82,7 +82,7 @@ Follow these steps to build the vGPU Manager image and push it to the image repo
 
 ## Label the Cluster Nodes
 
-Go to __Container Management__, select your working cluster, click __Node Management__, and then click __Modify Labels__ in the action bar to add labels to the nodes. Each node can only have one label.
+Go to __Container Management__, select your worker cluster, click __Node Management__, and then click __Modify Labels__ in the action bar to add labels to the nodes. Each node can only have one label.
 
 You can assign the following values to the labels: container, vm-passthrough, and vm-vgpu.
 
@@ -90,7 +90,7 @@ You can assign the following values to the labels: container, vm-passthrough, an
 
 ## Install Nvidia Operator 
 
-1. Go to __Container Management__, select your working cluster, click __Helm Apps__ -> __Helm Chart__, and choose and install gpu-operator. Modify the relevant fields in the yaml.
+1. Go to __Container Management__, select your worker cluster, click __Helm Apps__ -> __Helm Chart__, and choose and install gpu-operator. Modify the relevant fields in the yaml.
 
     ```yaml
     gpu-operator.sandboxWorkloads.enabled=true
@@ -101,7 +101,7 @@ You can assign the following values to the labels: container, vm-passthrough, an
     gpu-operator.vgpuDeviceManager.enabled=true
     ```
 
-    1. The image repository address from the "Build vGPU Manager Image" step.
+    1. The container registry address from the "Build vGPU Manager Image" step.
     2. The VERSION from the "Build vGPU Manager Image" step.
 
 2. Wait for the installation to succeed, as shown in the following image:

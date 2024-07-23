@@ -62,7 +62,7 @@ In the __Create VMs__ page, enter the information according to the table below a
 
 Fill in the image-related information according to the table below, then click __Next__.
 
-  ![Image Repository](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/createvm05.png)
+  ![container registry](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/virtnest/images/createvm05.png)
 
 1. Image Source: Supports three types of sources.
 
