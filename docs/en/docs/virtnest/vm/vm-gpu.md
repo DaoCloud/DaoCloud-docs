@@ -84,7 +84,7 @@ The following are the steps to build the vGPU Manager image and push it to the c
 
 ## Label Cluster Nodes
 
-Go to **Container Management** , select your worker cluster, click **Nodes** in the action bar, and click **Edit Labels** to add labels to the nodes. Each node can only have one label.
+Go to **Container Management** , select your worker cluster and click **Nodes**. On the right of the list, click __┇__ and select **Edit Labels** to add labels to the nodes. Each node can only have one label.
 
 You can assign the following values to the labels: container, vm-passthrough, and vm-vgpu.
 
