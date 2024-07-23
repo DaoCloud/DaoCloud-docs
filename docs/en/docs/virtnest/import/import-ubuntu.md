@@ -45,12 +45,12 @@ into the virtual machines of DCE 5.0 through the command line.
 
 - UUID of the virtual machine to be imported: Need to be fetched on the web page of vSphere
 
-    - Access the Vsphere page, go to the details page of the virtual machine to be imported, click on __Edit Settings__ , open the browser's developer console at this point,
-      click on __Network__ -> __Headers__ , find the URL as shown in the image below.
+    - Access the Vsphere page, go to the details page of the virtual machine to be imported, click __Edit Settings__ , open the browser's developer console at this point,
+      click __Network__ -> __Headers__ , find the URL as shown in the image below.
     
         <!-- Add image later -->
 
-    - Click on __Response__ , locate __vmConfigContext__ -> __config__ , and finally find the target value __uuid__ .
+    - Click __Response__ , locate __vmConfigContext__ -> __config__ , and finally find the target value __uuid__ .
 
         <!-- Add image later -->
 
@@ -62,7 +62,7 @@ into the virtual machines of DCE 5.0 through the command line.
 
     - Download vddk: Need to register an account on the [VMware website](https://developer.vmware.com/) to download
    
-        Go to SDKs, click on "_Compute Virtualization_" in the section, and select the appropriate version of
+        Go to SDKs, click _Compute Virtualization_ in the section, and select the appropriate version of
         "_VMware Virtual Disk Development Kit (VDDK)_" for downloading.
    
          ![Click Compute Virtualization](../images/import-ubuntu01.png)

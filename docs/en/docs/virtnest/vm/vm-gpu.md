@@ -27,7 +27,7 @@ If your cluster is running on a virtual machine, consult your virtual machine pl
 
 Note: Building a vGPU Manager image is only required when using NVIDIA vGPUs. If you plan to use only GPU direct pass-through, skip this section.
 
-The following are the steps to build the vGPU Manager image and push it to the image repository:
+The following are the steps to build the vGPU Manager image and push it to the container registry:
 
 1. Download the vGPU software from the NVIDIA Licensing Portal.
 
@@ -76,7 +76,7 @@ The following are the steps to build the vGPU Manager image and push it to the i
       -t "${PRIVATE_REGISTRY}/vgpu-manager:${VERSION}-${OS_TAG}" .
     ```
 
-7. Push the NVIDIA vGPU Manager image to your image repository
+7. Push the NVIDIA vGPU Manager image to your container registry
 
     ```bash
     docker push ${PRIVATE_REGISTRY}/vgpu-manager:${VERSION}-${OS_TAG}
@@ -84,7 +84,7 @@ The following are the steps to build the vGPU Manager image and push it to the i
 
 ## Label Cluster Nodes
 
-Go to **Container Management** , select your working cluster, click **Nodes** in the action bar, and click **Edit Labels** to add labels to the nodes. Each node can only have one label.
+Go to **Container Management** , select your worker cluster, click **Nodes** in the action bar, and click **Edit Labels** to add labels to the nodes. Each node can only have one label.
 
 You can assign the following values to the labels: container, vm-passthrough, and vm-vgpu.
 
@@ -92,7 +92,7 @@ You can assign the following values to the labels: container, vm-passthrough, an
 
 ## Install Nvidia Operator
 
-1. Go to **Container Management** , select your working cluster, click **Helm Apps** -> **Helm Charts** ,
+1. Go to **Container Management** , select your worker cluster, click **Helm Apps** -> **Helm Charts** ,
    choose and install gpu-operator. You need to modify some fields in the yaml.
 
     ```yaml
