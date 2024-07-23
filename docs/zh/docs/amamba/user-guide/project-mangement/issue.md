@@ -2,6 +2,24 @@
 
 查看 Jira 实例中项目内的缺陷信息。
 
+## 开启项目管理导航菜单
+
+平台默认部署后，项目管理在导航栏中是被隐藏的，您可以通过修改配置文件来开启该能力。
+
+1. 在 __容器管理__ 中，选择 Global 集群，`配置项`中搜索 `amamba-config` 
+
+    ![git1](../../images/git1.jpg)
+
+2. 点击`编辑 YAML`，修改 `featureGates` 中 `Jira=true`
+
+    ![git9](../../images/git9.jpg)
+
+3. 修改成功后，无状态负载中搜索 amamba-apiserver ，点击 `重启`
+
+    ![git3](../../images/git3.jpg)
+
+4. 重启成功后，前往 __应用工作台__  即可看到项目管理导航菜单
+
 ## 前提条件
 
 - 在当前平台已经成功集成一个 Jira 实例，参考[集成工具链](../tools/integrated-toolchain.md)。
