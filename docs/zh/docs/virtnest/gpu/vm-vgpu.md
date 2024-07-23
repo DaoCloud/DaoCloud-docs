@@ -72,9 +72,9 @@
 
     ```bash
     docker build \
-      --build-arg DRIVER_VERSION="${VERSION}" \
-      --build-arg CUDA_VERSION="${CUDA_VERSION}" \
-      -t "${PRIVATE_REGISTRY}/vgpu-manager:${VERSION}-${OS_TAG}" .
+      --build-arg DRIVER_VERSION=${VERSION} \
+      --build-arg CUDA_VERSION=${CUDA_VERSION} \
+      -t ${PRIVATE_REGISTRY}/vgpu-manager:${VERSION}-${OS_TAG} .
     ```
 
 7. 将 NVIDIA vGPU Manager 映像推送到您的镜像仓库
