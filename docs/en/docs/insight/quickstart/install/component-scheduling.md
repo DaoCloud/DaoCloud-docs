@@ -1,37 +1,41 @@
-# 自定义 Insight 组件调度策略
+# Custom Insight Component Scheduling Policy
 
-当部署可观测平台 Insight 到 Kubernetes 环境时，正确的资源管理和优化至关重要。
-Insight 包含多个核心组件，如 Prometheus、OpenTelemetry、FluentBit、Vector、Elasticsearch 等，
-这些组件在运行过程中可能因为资源占用问题对集群内其他 Pod 的性能产生负面影响。
-为了有效地管理资源并优化集群的运行，节点亲和性成为一项重要的配置选项。
+When deploying Insight to a Kubernetes environment, proper resource management and optimization are crucial.
+Insight includes several core components such as Prometheus, OpenTelemetry, FluentBit, Vector, and Elasticsearch.
+These components, during their operation, may negatively impact the performance of other Pods within the cluster
+due to resource consumption issues. To effectively manage resources and optimize cluster operations,
+node affinity becomes an important option.
 
-本文将重点探讨如何通过[污点](#insight)和[节点亲和性](#label)的配置策略，使得每个组件能够在适当的节点上运行，
-并避免资源竞争或争用，从而确保整个 Kubernetes 集群的稳定性和高效性。
+[taints](#configure-dedicated-nodes-for-insight-using-taints)
+and [node affinity](#use-node-labels-and-node-affinity-to-manage-component-scheduling) to ensure that each component
+runs on the appropriate nodes, avoiding resource competition or contention, thereby ensuring the stability and efficiency
+of the entire Kubernetes cluster.
 
-## 通过污点为 Insight 配置专有节点
+## Configure dedicated nodes for Insight using taints
 
-由于 Insight Agent 包含了 DaemonSet 组件，所以本节所述的配置方式是让除了 Insight DameonSet 之外的其余组件均运行在专有节点上。
+Since the Insight Agent includes DaemonSet components, the configuration method described in this section
+is to have all components except the Insight DaemonSet run on dedicated nodes.
 
-该方式是通过为专有节点添加污点（taint），并配合污点容忍度（tolerations）来实现的。
-更多细节可以参考 [kubernetes 官方文档](https://kubernetes.io/zh-cn/docs/concepts/scheduling-eviction/taint-and-toleration/)。
+This is achieved by adding taints to the dedicated nodes and using tolerations to match them. More details can be
+found in the [Kubernetes official documentation](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/).
 
-可以参考如下命令为节点添加及移除污点：
+You can refer to the following commands to add and remove taints on nodes:
 
 ```bash
-# 添加污点
+# Add taint
 kubectl taint nodes worker1 node.daocloud.io=insight-only:NoSchedule
 
-# 移除污点
+# Remove taint
 kubectl taint nodes worker1 node.daocloud.io:NoSchedule-
 ```
 
-有以下两种途径让 Insight 组件调度至专有节点：
+There are two ways to schedule Insight components to dedicated nodes:
 
-### 1. 为每个组件添加污点容忍度
+### 1. Add tolerations for each component
 
-针对 insight-server 和 insight-agent 两个 Chart 分别进行配置：
+Configure the tolerations for the `insight-server` and `insight-agent` Charts respectively:
 
-=== "insight-server Chart 配置"
+=== "insight-server Chart"
 
     ```yaml
     server:
@@ -161,7 +165,7 @@ kubectl taint nodes worker1 node.daocloud.io:NoSchedule-
           effect: "NoSchedule"
     ```
 
-=== "insight-agent Chart 配置"
+=== "insight-agent Chart"
 
     ```yaml
     kube-prometheus-stack:
@@ -227,13 +231,13 @@ kubectl taint nodes worker1 node.daocloud.io:NoSchedule-
           effect: "NoSchedule" 
     ```
 
-### 2. 通过命名空间级别配置
+### 2. Configure at the namespace level
 
-让 `insight-system` 命名空间的 Pod 都容忍 `inisght-only` 污点。
+Allow Pods in the `insight-system` namespace to tolerate the `insight-only` taint.
 
-1. 调整 `apiserver` 的配置文件 `/etc/kubernetes/manifests/kube-apiserver.yaml`，放开 `PodTolerationRestriction,PodNodeSelector`：
+1. Adjust the `apiserver` configuration file `/etc/kubernetes/manifests/kube-apiserver.yaml` to include `PodTolerationRestriction,PodNodeSelector`:
 
-2. 给 `insight-system` 命名空间增加注解：
+2. Add an annotation to the `insight-system` namespace:
 
     ```yaml
     apiVersion: v1
@@ -244,39 +248,43 @@ kubectl taint nodes worker1 node.daocloud.io:NoSchedule-
         scheduler.alpha.kubernetes.io/defaultTolerations: '[{"operator": "Exists", "effect": "NoSchedule", "key": "node.daocloud.io/insight-only"}]'
     ```
 
-## 为节点添加 Label 和节点亲和性来管理组件调度
+## Use node labels and node affinity to manage component scheduling
 
 !!! info
 
-    节点亲和性概念上类似于 `nodeSelector`，它使你可以根据节点上的 **标签(label)** 来约束 Pod 可以调度到哪些节点上。 
-    节点亲和性有两种：
+    Node affinity is conceptually similar to `nodeSelector`, allowing you to constrain
+    which nodes a Pod can be scheduled on based on **labels** on the nodes.
+    There are two types of node affinity:
     
-    1. requiredDuringSchedulingIgnoredDuringExecution：调度器只有在规则被满足的时候才能执行调度。此功能类似于 nodeSelector， 但其语法表达能力更强。
-    2. preferredDuringSchedulingIgnoredDuringExecution：调度器会尝试寻找满足对应规则的节点。如果找不到匹配的节点，调度器仍然会调度该 Pod。
+    1. requiredDuringSchedulingIgnoredDuringExecution: The scheduler will only schedule the Pod
+       if the rules are met. This feature is similar to nodeSelector but has more expressive syntax.
+    2. preferredDuringSchedulingIgnoredDuringExecution: The scheduler will try to find nodes that
+       meet the rules. If no matching nodes are found, the scheduler will still schedule the Pod.
 
-    更过细节请参考 [kubernetes 官方文档](https://kubernetes.io/zh-cn/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity)。
+    For more details, please refer to the [Kubernetes official documentation](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity).
 
-为了实现不同用户对 Insight 组件调度的灵活需求，Insight 分别提供了较为细粒度的 Label 来实现不同组件的调度策略，以下是标签与组件的关系说明：
+To meet different user needs for scheduling Insight components, Insight provides fine-grained labels for
+different components' scheduling policies. Below is a description of the labels and their associated components:
 
-| 标签 Key | 标签 Value | 说明 |
+| Label Key | Label Value | Description |
 | --- | ------- | ------------ |
-| `node.daocloud.io/insight-any` | 任意值，推荐用 `true` | 代表 Insight 所有组件优先考虑带了该标签的节点 |
-| `node.daocloud.io/insight-prometheus`  | 任意值，推荐用 `true` | 特指 Prometheus 组件 |
-| `node.daocloud.io/insight-vmstorage` | 任意值，推荐用 `true` | 特指 VictoriaMetrics vmstorage 组件 |
-| `node.daocloud.io/insight-vector` | 任意值，推荐用 `true` | 特指 Vector 组件 |
-| `node.daocloud.io/insight-otel-col` | 任意值，推荐用 `true` | 特指 OpenTelemetry 组件 |
+| `node.daocloud.io/insight-any` | Any value, recommended to use `true` | Represents that all Insight components prefer nodes with this label |
+| `node.daocloud.io/insight-prometheus`  | Any value, recommended to use `true` | Specifically for Prometheus components |
+| `node.daocloud.io/insight-vmstorage` | Any value, recommended to use `true` | Specifically for VictoriaMetrics vmstorage components |
+| `node.daocloud.io/insight-vector` | Any value, recommended to use `true` | Specifically for Vector components |
+| `node.daocloud.io/insight-otel-col` | Any value, recommended to use `true` | Specifically for OpenTelemetry components |
 
-可以参考如下命令为节点添加及移除标签：
+You can refer to the following commands to add and remove labels on nodes:
 
 ```bash
-# 为 node8 添加标签，先将 insight-prometheus 调度到 node8 
+# Add label to node8, prioritizing scheduling insight-prometheus to node8 
 kubectl label nodes node8 node.daocloud.io/insight-prometheus=true
 
-# 移除 node8 的 node.daocloud.io/insight-prometheus 标签
+# Remove the node.daocloud.io/insight-prometheus label from node8
 kubectl label nodes node8 node.daocloud.io/insight-prometheus-
 ```
 
-以下是 insight-prometheus 组件在部署时默认的亲和性偏好：
+Below is the default affinity preference for the insight-prometheus component during deployment:
 
 ```yaml
 affinity:
@@ -310,4 +318,4 @@ affinity:
                     - insight-agent-kube-prometh-prometheus
 ```
 
-1. 先将 insight-prometheus 调度到带有 node.daocloud.io/insight-prometheus 标签的节点
+1. Prioritize scheduling insight-prometheus to nodes with the node.daocloud.io/insight-prometheus label
