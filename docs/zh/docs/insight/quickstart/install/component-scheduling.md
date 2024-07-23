@@ -29,9 +29,9 @@ kubectl taint nodes worker1 node.daocloud.io:NoSchedule-
 
 ### 1. 为每个组件添加污点容忍度
 
-以下针对 Insight server 和 Insight Agent 两个 `chart` 分别做配置说明：
+针对 insight-server 和 insight-agent 两个 Chart 分别进行配置：
 
-1. Insight server chart values
+=== "insight-server Chart 配置"
 
     ```yaml
     server:
@@ -162,7 +162,7 @@ kubectl taint nodes worker1 node.daocloud.io:NoSchedule-
           effect: "NoSchedule"
     ```
 
-2. Insight agent chart values
+=== "insight-agent Chart 配置"
 
     ```yaml
     kube-prometheus-stack:
