@@ -71,9 +71,9 @@ The following are the steps to build the vGPU Manager image and push it to the c
 
     ```bash
     docker build \
-      --build-arg DRIVER_VERSION="${VERSION}" \
-      --build-arg CUDA_VERSION="${CUDA_VERSION}" \
-      -t "${PRIVATE_REGISTRY}/vgpu-manager:${VERSION}-${OS_TAG}" .
+      --build-arg DRIVER_VERSION=${VERSION} \
+      --build-arg CUDA_VERSION=${CUDA_VERSION} \
+      -t ${PRIVATE_REGISTRY}/vgpu-manager:${VERSION}-${OS_TAG} .
     ```
 
 7. Push the NVIDIA vGPU Manager image to your container registry
