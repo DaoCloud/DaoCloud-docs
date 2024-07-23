@@ -34,7 +34,7 @@
 
     - 登录 NVIDIA Licensing Portal，转到 **Software Downloads** 页面。
     - NVIDIA vGPU 软件位于 **Software Downloads** 页面的 **Driver downloads** 选项卡中。
-    - 在筛选条件中选择**VGPU + Linux** ，点击 **下载** 以获取 Linux KVM 的软件包。
+    - 在筛选条件中选择 **VGPU + Linux** ，点击 **下载** 以获取 Linux KVM 的软件包。
       请解压下载的文件（`NVIDIA-Linux-x86_64-<version>-vgpu-kvm.run`）。
 
     ![下载vGPU软件](../images/gpu-01.png)
@@ -72,9 +72,9 @@
 
     ```bash
     docker build \
-      --build-arg DRIVER_VERSION=${VERSION} \
-      --build-arg CUDA_VERSION=${CUDA_VERSION} \
-      -t ${PRIVATE_REGISTRY}``/vgpu-manager``:${VERSION}-${OS_TAG} .
+      --build-arg DRIVER_VERSION="${VERSION}" \
+      --build-arg CUDA_VERSION="${CUDA_VERSION}" \
+      -t "${PRIVATE_REGISTRY}/vgpu-manager:${VERSION}-${OS_TAG}" .
     ```
 
 7. 将 NVIDIA vGPU Manager 映像推送到您的镜像仓库
@@ -85,7 +85,7 @@
 
 ## 标记集群节点
 
-进入 __容器管理__ ，选取您的工作集群，点击 __节点管理__ 的操作栏 __修改标签__ ，为节点添加标签，每个节点只能有一种标签。
+进入 __容器管理__ ，选取您的工作集群，然后点击 __节点管理__ , 进入列表页面。点击列表右侧的 __┇__ ，选择 __修改标签__ ，为节点添加标签，每个节点只能有一种标签。
 
 您可以为标签分配以下值：container、vm-passthrough 和 vm-vgpu。
 
