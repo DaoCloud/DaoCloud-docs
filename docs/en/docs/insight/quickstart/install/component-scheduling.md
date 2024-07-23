@@ -6,9 +6,9 @@ These components, during their operation, may negatively impact the performance 
 due to resource consumption issues. To effectively manage resources and optimize cluster operations,
 node affinity becomes an important option.
 
-[taints](#configure-dedicated-nodes-for-insight-using-taints)
+This page is about how to add [taints](#configure-dedicated-nodes-for-insight-using-taints)
 and [node affinity](#use-node-labels-and-node-affinity-to-manage-component-scheduling) to ensure that each component
-runs on the appropriate nodes, avoiding resource competition or contention, thereby ensuring the stability and efficiency
+runs on the appropriate nodes, avoiding resource competition or contention, thereby guranttee the stability and efficiency
 of the entire Kubernetes cluster.
 
 ## Configure dedicated nodes for Insight using taints
