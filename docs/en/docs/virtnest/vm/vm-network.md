@@ -52,7 +52,7 @@ achieving a more flexible and diverse network architecture.
 
 3. Adding NICs
    
-    1. Bridge modes support manually adding NICs. Click on __Add NIC__ to configure the NIC IP pool. Choose a Multus CR 
+    1. Bridge modes support manually adding NICs. Click __Add NIC__ to configure the NIC IP pool. Choose a Multus CR 
        that matches the network mode, if not available, it needs to be created manually.
     
     2. If the __Use Default IP Pool__ switch is turned on, it will use the default IP pool in the multus CR 

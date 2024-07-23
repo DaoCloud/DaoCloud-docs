@@ -28,13 +28,13 @@ If your cluster is running on a virtual machine, please consult your virtual mac
 
 ## Label the Cluster Nodes
 
-Go to __Container Management__, select your working cluster, click __Node Management__, and then click __Modify Labels__ in the action bar to add labels to the nodes. Each node can only have one label.
+Go to __Container Management__, select your worker cluster, click __Node Management__, and then click __Modify Labels__ in the action bar to add labels to the nodes. Each node can only have one label.
 
 You can assign the following values to the labels: container, vm-passthrough, and vm-vgpu.
 
 ## Install Nvidia Operator
 
-1. Go to __Container Management__, select your working cluster, click __Helm Apps__ -> __Helm Chart__ ,
+1. Go to __Container Management__, select your worker cluster, click __Helm Apps__ -> __Helm Chart__ ,
    and choose and install gpu-operator. Modify the relevant fields in the yaml.
 
     ```yaml

@@ -15,9 +15,9 @@ Below are some detailed steps for building virtual machine images:
     - [CentOS Cloud Images](https://cloud.centos.org/centos/7/images/?C=M;O=D): Obtain CentOS images from the official CentOS project or other sources. Make sure to choose a version compatible with your virtualization platform.
     - [Fedora Cloud Images](https://fedoraproject.org/zh-Hans/cloud/download): Get images from the official Fedora project. Choose the appropriate version based on your requirements.
 
-2. Build a Docker Image and Push it to a Container Image Repository
+2. Build a Docker Image and Push it to a Containe Registry
 
-    In this step, we will use Docker to build an image and push it to a container image repository for easy deployment and usage when needed.
+    In this step, we will use Docker to build an image and push it to a container registry for easy deployment and usage when needed.
 
     - Create a Dockerfile
 
@@ -36,9 +36,9 @@ Below are some detailed steps for building virtual machine images:
         
         The above command builds an image named `release-ci.daocloud.io/ghippo/kubevirt-demo/centos7:v1` using the instructions in the Dockerfile. You can modify the image name according to your project requirements.
 
-    - Push the Image to the Container Image Repository
+    - Push the Image to the Container Registry
 
-        Use the following command to push the built image to the `release-ci.daocloud.io` image repository. You can modify the repository name and address as needed.
+        Use the following command to push the built image to the `release-ci.daocloud.io` container registry. You can modify the repository name and address as needed.
 
         ```shell
         docker push release-ci.daocloud.io/ghippo/kubevirt-demo/centos7:v1

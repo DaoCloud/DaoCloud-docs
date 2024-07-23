@@ -142,7 +142,7 @@ allowing you to understand the evolution path and feature changes of each versio
 - **Added** support for accessing virtual machines via terminal
 - **Added** support for editing virtual machines with YAML
 - **Added** support for adding data disks to virtual machines
-- **Added** support for selecting images from image repositories to create virtual machines
+- **Added** support for selecting images from container registries to create virtual machines
 - **Added** support for creating virtual machines from templates
 - **Added** support for converting virtual machine configurations into templates
 - **Added** support for deleting custom templates
