@@ -7,7 +7,7 @@ Multicloud Network Interconnection is a set of solutions provided in the multicl
 If your environment meets the following conditions, you can try to use the Multicloud Network Interconnection function:
 
 1. Multiple clusters on the same mesh
-2. Pod networks in multiple clusters cannot be directly connected (including Pod CIDR conflicts, etc.)
+2. Pod networks in multiple clusters cannot be directly connected (including Pod CIDR conflicts)
 
 !!! note
 

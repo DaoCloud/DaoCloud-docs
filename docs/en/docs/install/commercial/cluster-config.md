@@ -387,7 +387,7 @@ spec:
 
 **Installation in `external` mode in offline mode**
 
-The `external` mode means that the required third-party software (such as ChartMuseum, Minio, Docker registry, etc.)
+The `external` mode means that the required third-party software (such as ChartMuseum, Minio, and Docker registry)
 does not need to be installed by the installer. Instead, the user provides the addresses for these services
 to be used by the DCE 5.0 platform.
 

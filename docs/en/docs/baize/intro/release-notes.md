@@ -24,7 +24,7 @@ so that you can learn its evolution path and feature changes.
 
 - **Added** support for creating `Code` type `Notebook`, providing a native `VS Code` development experience.
 - **Added** support for quickly copying `Notebook`.
-- **Added** when selecting a work cluster, display the cluster's status information,
+- **Added** when selecting a worker cluster, display the cluster's status information,
   making it unselectable if it is disconnected or offline.
 - **Added** support for using `vLLM` as the inference engine, exposing native `vLLM` capabilities
   when creating inference services.
@@ -69,7 +69,7 @@ so that you can learn its evolution path and feature changes.
 - **Added** `Notebook` now supports local SSH access, compatible with various development tools such as `Pycharm`, `VS Code`, etc.
 - **Added** upgrade `Notebook` image to support the built-in `CLI` tool `baizectl`,
   for command-line task submission and management.
-- **Added** `Notebook` adds affinity scheduling strategy configuration.
+- **Added** `Notebook` adds affinity scheduling policy configuration.
 - **Added** distributed training tasks can now configure `SHM size` through the UI.
 - **Added** one-click restart function for training tasks.
 - **Added** model training tasks support custom cluster scheduler specification.

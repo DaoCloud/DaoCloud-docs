@@ -5,7 +5,7 @@ Date: 2024-07-10
 
 # Configuring Domain Name Policies
 
-The micro-service gateway provides the domain name level policy configuration capability. After a domain name level policy is configured, you do not need to configure policies for multiple apis under the same domain name. Currently, four domain-level policies are supported: cross-domain、global rate limit、local traffic limiting、black/white List.
+The microservice gateway provides the domain name level policy configuration capability. After a domain name level policy is configured, you do not need to configure policies for multiple apis under the same domain name. Currently, four domain-level policies are supported: cross-domain、global rate limit、local traffic limiting、black/white List.
 
 You can configure domain name policies in either of the following ways:
 

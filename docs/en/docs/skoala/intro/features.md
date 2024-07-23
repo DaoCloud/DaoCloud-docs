@@ -44,10 +44,10 @@ or apply different configurations to the same project for differentiated managem
 
 ## Microservice Gateway
 
-The microservice gateway plays a vital role in managing and controlling the north-south traffic of microservices. It provides capabilities such as API management, interface rate limiting, various security authentication strategies, blacklisting/whitelisting, routing, MockAPI, etc. It also provides enterprise-level high-performance and highly scalable cloud service capabilities.
+The microservice gateway plays a vital role in managing and controlling the north-south traffic of microservices. It provides capabilities such as API management, interface rate limiting, various security authentication strategies, blacklisting/whitelisting, routing, and MockAPI. It also provides enterprise-level high-performance and highly scalable cloud service capabilities.
 
 - Multi-gateway management: Native support for managing multiple cluster and namespace gateway instances in the [Container Management](../../kpanda/intro/index.md) module, supporting full lifecycle management of gateway instances.
-- API policy management: Graphical interface for API CRUD operations and configuration of API policies, such as load balancing, path rewriting, timeout configuration, retry mechanism, request/response header rewriting, WebSocket, local rate limiting, health checks, etc., while ensuring that the capabilities of native APIs are not affected.
+- API policy management: Graphical interface for API CRUD operations and configuration of API policies, such as load balancing, path rewriting, timeout configuration, retry mechanism, request/response header rewriting, WebSocket, local rate limiting, and health checks while ensuring that the capabilities of native APIs are not affected.
 - Monitoring and alerting: The microservice gateway is automatically configured with monitoring, alerting, and other functions during deployment. Each gateway comes with comprehensive resource monitoring and gateway business monitoring capabilities.
 
 ## Plugin Center
@@ -57,7 +57,7 @@ to enhance your user experience. In addition, we support custom plugins, allowin
 your specific needs. All plugins can be easily enabled or disabled with a simple one-click operation,
 ensuring convenience and efficiency.
 
-- Supports plugins for JWT authentication, security authentication, global rate limiting, etc.,
+- Supports plugins for JWT authentication, security authentication, and global rate limiting,
   allowing you to customize multiple gateway API authentication strategies and quickly integrate
   them into your gateway instances.
 - Supports user-defined creation of Wasm plugins.

@@ -52,7 +52,7 @@ The following content assumes that CentOS 7.9 x86_64 is used as the cluster node
 
     !!! note
 
-        The ISO import script is located in the [offline package](../start-install.md/#_2) at the path `./offline/offline-iso/import_iso.sh`.
+        The ISO import script is located in the [offline package](../start-install.md#offline-image-package-required) at the path `./offline/offline-iso/import_iso.sh`.
 
 3. Determine the path to import:
 

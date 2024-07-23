@@ -7,7 +7,7 @@ hide:
 
 If you find a Notebook to be redundant, expired, or no longer needed for any other reason, you can delete it from the Notebook list.
 
-1. Click the **⋮** on the right side of the Notebook in the Notebook list, then choose **Delete** from the dropdown menu.
+1. Click the **┇** on the right side of the Notebook in the Notebook list, then choose **Delete** from the dropdown menu.
 
     <!-- add image later -->
 

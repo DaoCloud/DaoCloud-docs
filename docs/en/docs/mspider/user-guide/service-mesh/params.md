@@ -98,7 +98,7 @@ For more details, refer to the [Envoy documentation](https://www.envoyproxy.io/d
 
 - __info__
 
-    General information to be logged (service start/stop, configuration assumptions, etc.).
+    General information to be logged (service start/stop and configuration assumptions).
     This is information that you want always available but typically don't care about in normal situations. This is the out-of-the-box configuration level.
 
 - __off__

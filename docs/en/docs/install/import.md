@@ -5,7 +5,7 @@ date: 2024-02-21
 
 # Import Offline Resource
 
-The DCE 5.0 installer (only supports version v0.9.0 and above) introduces the `import-artifact` command
+The DCE 5.0 installer (only supports v0.9.0 and above) introduces the `import-artifact` command
 for importing offline resources. Currently, the following offline resources can be imported:
 
 - `*.iso` operating system ISO image files
@@ -18,10 +18,10 @@ for importing offline resources. Currently, the following offline resources can 
 
 ### Use Case 1
 
-When the operating system of the global service cluster is different from the one used to create the working cluster,
-it is necessary to import the corresponding ISO image files and osPackage offline package for the working cluster.
+When the operating system of the global service cluster is different from the one used to create the worker cluster,
+it is necessary to import the corresponding ISO image files and osPackage offline package for the worker cluster.
 
-Example: [Create a working cluster with Ubuntu operating system on CentOS global service cluster](../kpanda/best-practice/create-ubuntu-on-centos-platform.md)
+Example: [Create a worker cluster with Ubuntu operating system on CentOS global service cluster](../kpanda/best-practice/create-ubuntu-on-centos-platform.md)
 
 ### Use Case 2
 
@@ -29,7 +29,7 @@ In a hybrid architecture offline deployment scenario, it is required to import a
 resources for arm64 based on existing amd64 offline resources (K8s binaries) and
 (K8s images + images files and charts packages for various modules).
 
-Example: [How to Add Heterogeneous Nodes to a Working Cluster](../kpanda/best-practice/multi-arch.md)
+Example: [How to Add Heterogeneous Nodes to a Worker Cluster](../kpanda/best-practice/multi-arch.md)
 
 ## Introduction to Import Commands
 

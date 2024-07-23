@@ -5,13 +5,13 @@ hide:
 
 # Microservice Gateway
 
-The micro-service gateway supports the high-availability architecture of multi-tenant instances and is compatible with the unified gateway access capabilities of micro-services in various modes.
+The microservice gateway supports the high-availability architecture of multi-tenant instances and is compatible with the unified gateway access capabilities of microservices in various modes.
 
 ## Create
 
 To create a microservice gateway, perform the following steps:
 
-1. In the left navigation bar, click __Cloud native Gateway__ , and in the upper right corner of the __Gateway List__ page, click __Create Gateway__ to enter the page for creating the micro-service gateway.
+1. In the left navigation bar, click __Cloud native Gateway__ , and in the upper right corner of the __Gateway List__ page, click __Create Gateway__ to enter the page for creating the microservice gateway.
 
     ![go to the create page](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/gw-create01.png)
 
@@ -83,7 +83,7 @@ To create a microservice gateway, perform the following steps:
 
 !!! note
 
-    Click __OK__ at the lower right corner of the page to return to the micro-service gateway list page. You can perform the operations [Update Gateway](update-gateway.md) or [Delte Gateway](delete-gateway.md) on the right.
+    Click __OK__ at the lower right corner of the page to return to the microservice gateway list page. You can perform the operations [Update Gateway](update-gateway.md) or [Delte Gateway](delete-gateway.md) on the right.
 
     ![confirm the information](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/gw-create10.png)
 
@@ -119,7 +119,7 @@ In addition to viewing the gateway details, you can update the gateway configura
 
 ## Update
 
-The micro-service gateway supports the high-availability architecture of multi-tenant instances and is compatible with the unified gateway access capabilities of micro-services in various modes.
+The microservice gateway supports the high-availability architecture of multi-tenant instances and is compatible with the unified gateway access capabilities of microservices in various modes.
 
 ## Update gateway configuration
 
@@ -135,7 +135,7 @@ There are two ways to update the gateway configuration.
 
 ## Delete
 
-The micro-service gateway supports the high-availability architecture of multi-tenant instances and is compatible with the unified gateway access capabilities of micro-services in various modes.
+The microservice gateway supports the high-availability architecture of multi-tenant instances and is compatible with the unified gateway access capabilities of microservices in various modes.
 
 There are also two ways to delete a gateway. To ensure that services are not affected, release the API of all routes to the gateway before deleting it.
 

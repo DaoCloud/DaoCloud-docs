@@ -36,7 +36,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 #### Optimizations
 
-- **Optimized** by upgrading Ghippo integration SDK to version v0.28.0-dev1.
+- **Optimized** by upgrading Ghippo integration SDK to v0.28.0-dev1.
 - **Optimized** permission dependency logic to align with the new version of the Ghippo SDK.
 
 ## 2024-06-04
@@ -66,7 +66,7 @@ This page lists the release notes of Microservices to help you learn its feature
 #### Fixes
 
 - **Fixed** an issue with abnormal display on the gateway API details page.
-- **Fixed** an issue with local rate-limiting strategy in the gateway not functioning properly.
+- **Fixed** an issue with local rate-limiting policy in the gateway not functioning properly.
 - **Fixed** an issue with domain-level authentication plugin not disabling correctly.
 - **Fixed** an issue with filtering and checking the gateway's root namespace.
 - **Fixed** an issue with Chinese appearing in the English version of the Sentinel monitoring dashboard.
@@ -83,7 +83,7 @@ This page lists the release notes of Microservices to help you learn its feature
 !!! note
 
     Important: Version 0.37.x has updated related Custom Resource Definitions (CRDs). Since custom resources in the Chart crds directory are not automatically updated during installation,
-    please manually apply the relevant CRDs to the working cluster after upgrading. The file is located at:
+    please manually apply the relevant CRDs to the worker cluster after upgrading. The file is located at:
     skoala-init/charts/contour-provisioner/crds/contour.yaml
 
 ## 2024-04-30
@@ -211,7 +211,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 #### New Features
 
-- **Added** namespace information deployed by the gateway in gateway query port based on application workspace requirements
+- **Added** namespace information deployed by the gateway in gateway query port based on workbench requirements
 
 #### Improvements
 
@@ -267,7 +267,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 #### Improvements
 
-- **Improved** Routing weight optimization to meet application workspace requirements
+- **Improved** Routing weight optimization to meet workbench requirements
 - **Improved** Weight validation logic for services in gateway API
 - **Improved** Handling of resource initial operations caused by changes in cluster access addresses
 
@@ -301,7 +301,7 @@ This page lists the release notes of Microservices to help you learn its feature
 - **Added** support for managed Nacos version 2.3.0
 - **Added** support for service and API gateway services as traffic entry points
 - **Added** outlier instance detection
-- **Added** details for traffic swimlane topology (traffic direction, versions, etc.)
+- **Added** details for traffic swimlane topology (traffic direction and versions)
 - **Added** advanced configuration for heap memory in gateway runtime
 
 #### Fixes
@@ -430,7 +430,7 @@ This page lists the release notes of Microservices to help you learn its feature
 - **Improved** Skoala Agent certificate.
 - **Improved** interface descriptions and details in all Swagger documentation.
 - **Improved** audit log format and automatic generation mechanism.
-- **Improved:** When releasing production versions, the Skoala Helm Chart will be published to the official image repository's System project.
+- **Improved:** When releasing production versions, the Skoala Helm Chart will be published to the official container registry's System project.
 
 ## 2023-09-01
 

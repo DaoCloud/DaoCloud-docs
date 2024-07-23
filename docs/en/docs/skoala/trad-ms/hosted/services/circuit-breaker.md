@@ -26,7 +26,7 @@ Follow the steps below to create a circuit breaking rule:
     - Exception Ratio: If the ratio of exception requests within a unit statistical period exceeds the threshold, the resource will be circuit broken for the remaining time.
     - Exception Count: If the number of exception requests received within a unit statistical period exceeds the set threshold, the resource will be circuit broken for the remaining time.
     - Maximum RT: The maximum response time of a request, in milliseconds. Requests with a response time greater than this value are considered slow calls.
-    - Threshold: The ratio of slow calls (for slow call ratio strategy) / exception requests (for exception ratio strategy) to all requests within a statistical period. The threshold range is [0.0, 1.0], representing 0% - 100%.
+    - Threshold: The ratio of slow calls (for slow call ratio policy) / exception requests (for exception ratio policy) to all requests within a statistical period. The threshold range is [0.0, 1.0], representing 0% - 100%.
     - Circuit Duration: The duration of the circuit breaker, in seconds. During this duration, all requests will fail fast.
     - Minimum Request Count: The minimum number of requests required to trigger the circuit breaker within a statistical period. **Even if the circuit-breaking conditions are met, the circuit breaker will not be triggered if the current number of requests within the statistical period is less than this value**.
     - Statistical Period: The length of the statistical time window, in milliseconds. Valid values range from 1 second to 120 minutes.

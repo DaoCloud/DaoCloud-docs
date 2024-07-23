@@ -300,7 +300,7 @@ This document is applicable to offline upgrades performed after installing the M
 ### Synchronize Images
 
 After downloading the images to your local nodes, you need to synchronize the latest version of
-the images to your image repository using [chart-syncer](https://github.com/bitnami-labs/charts-syncer)
+the images to your container registry using [chart-syncer](https://github.com/bitnami-labs/charts-syncer)
 or container runtime. It is recommended to use chart-syncer for image synchronization as it is more
 efficient and convenient.
 
@@ -308,7 +308,7 @@ efficient and convenient.
 
 1. Create a `load-image.yaml` file with the following content as the configuration file for chart-syncer.
 
-    All parameters in the `load-image.yaml` file are required. You need a private image repository and
+    All parameters in the `load-image.yaml` file are required. You need a private container registry and
     modify the configurations according to the instructions below. For detailed explanations of the
     chart-syncer configuration file, refer to its [official documentation](https://github.com/bitnami-labs/charts-syncer).
 
@@ -337,14 +337,14 @@ efficient and convenient.
 
         1. The relative path to the execution of the charts-syncer command,
            not the relative path between this YAML file and the offline package
-        2. Change it to your image repository URL
-        3. Change it to your image repository
+        2. Change it to your container registry URL
+        3. Change it to your container registry
         4. It can also be any other supported Helm Chart repository type
         5. Change it to the chart repo URL
-        6. Your image repository username
-        7. Your image repository password
-        8. Your image repository username
-        9. Your image repository password
+        6. Your container registry username
+        7. Your container registry password
+        8. Your container registry username
+        9. Your container registry password
 
     === "Not installed chart repo"
 
@@ -368,11 +368,11 @@ efficient and convenient.
 
         1. The relative path to the execution of the charts-syncer command,
            not the relative path between this YAML file and the offline package
-        2. Change it to your image repository URL
-        3. Change it to your image repository
+        2. Change it to your container registry URL
+        3. Change it to your container registry
         4. Local path of the chart
-        5. Your image repository username
-        6. Your image repository password
+        5. Your container registry username
+        6. Your container registry password
 
 2. Run the command to synchronize the images.
 
@@ -470,10 +470,10 @@ After completing the image synchronization, you can start upgrading the Microser
 6. Run `helm upgrade`.
 
    Before upgrading, it is recommended to update the `global.imageRegistry` field
-   in the `bak.yaml` file with the address of the image repository you are currently using.
+   in the `bak.yaml` file with the address of the container registry you are currently using.
 
    ```shell
-   export imageRegistry={your image repository}
+   export imageRegistry={your container registry}
    ```
 
    ```shell
@@ -498,10 +498,10 @@ After completing the image synchronization, you can start upgrading the Microser
 2. Run `helm upgrade`.
 
    Before upgrading, it is recommended to update the `global.imageRegistry` field
-   in the `bak.yaml` file with the address of the image repository you are currently using.
+   in the `bak.yaml` file with the address of the container registry you are currently using.
 
    ```shell
-   export imageRegistry={your image repository}
+   export imageRegistry={your container registry}
    ```
 
    ```shell

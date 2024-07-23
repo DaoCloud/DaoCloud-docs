@@ -1,6 +1,6 @@
 # Destination Rule
 
-Destination Rule is also an important component in service governance. It partitions request traffic based on ports, service versions, etc., and customizes Envoy traffic policies for each request stream. The applied policies include not only load balancing but also features like minimum connection count and outlier detection.
+Destination Rule is also an important component in service governance. It partitions request traffic based on ports and service versions, and customizes Envoy traffic policies for each request stream. The applied policies include not only load balancing but also features like minimum connection count and outlier detection.
 
 ## Concepts and Fields
 

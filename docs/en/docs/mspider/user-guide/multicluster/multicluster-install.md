@@ -112,9 +112,9 @@ Observability is a key capability of the mesh, and one of the critical observabi
 
 Clusters created through the container management platform will have the Insight Agent component installed by default.
 
-For other methods, you need to go to the container management interface, find "Helm Applications" in your cluster, and select "insight-agent" to install.
+For other methods, you need to go to the container management interface, find "Helm Apps" in your cluster, and select "insight-agent" to install.
 
-![Helm Applications](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/kpanda-insgiht-agent-check.png)
+![Helm Apps](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/kpanda-insgiht-agent-check.png)
 
 ![Install Insight](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/multicluster/images/kpanda-install-insight-agent.png)
 

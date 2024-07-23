@@ -1,6 +1,6 @@
 # Virtual Service
 
-In the Virtual Service, you can use various matching methods such as port, host, header, etc., to route and distribute requests from different regions and users to specific service versions, divided by weight.
+In the Virtual Service, you can use various matching methods such as port, host, and header to route and distribute requests from different regions and users to specific service versions, divided by weight.
 
 Virtual Service provides routing support for three protocols: HTTP, TCP, and TLS.
 

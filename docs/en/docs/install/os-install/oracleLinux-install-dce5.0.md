@@ -8,7 +8,7 @@ Installer v0.8.0 and higher versions support this deployment method.
 - Read the [Deployment Architecture](../commercial/deploy-arch.md) in advance to
   confirm the deployment mode for this installation.
 - Read the [Deployment Requirements](../commercial/deploy-requirements.md)
-  in advance to ensure that the network, hardware, ports, etc., meet the requirements.
+  in advance to ensure that the network, hardware, and ports meet the requirements.
 - Read the [Preparation](../commercial/prepare.md) in advance to verify
   machine resources and pre-checks.
 

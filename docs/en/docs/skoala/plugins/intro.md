@@ -28,6 +28,6 @@ The microservice engine supports the integration of Auth, JWT, Global Rate Limit
 - ExtProc (External Process) is a plugin used to invoke an external process. The ExtProc plugin can forward
   requests and responses to an external process, which handles the request and returns the result.
   It can perform additional processing on requests, such as modifying request headers, request bodies,
-  response headers, response bodies, etc., or perform additional custom logic based on the request information.
+  response headers, and response bodies, or perform additional custom logic based on the request information.
 
 <!--![](../images/plugin01.png)-->
