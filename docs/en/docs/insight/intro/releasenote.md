@@ -8,6 +8,31 @@ date: 2024-02-19
 This page lists the Release Notes of Insight, so that you can understand
 the evolution path and feature changes of each version.
 
+## 2024-06-30
+
+### Insight Server v0.28.0
+
+#### Improvements
+
+- **Added** support for DingTalk's signature authentication.
+- **Improved** Webhook which now supports configuration of HTTP Headers.
+- **Improved** service topology map to display calls to MySQL and PostgreSQL databases.
+
+#### Fixes
+
+- **Fixed** missing `clusterid` in Elasticsearch indexes when reporting logs to Kafka cache.
+
+### Insight Agent v0.28.0
+
+#### Improvements
+
+- **Improved** support for reporting logs to Elasticsearch v8.0.
+- **Removed** ReplicaSet level metrics.
+
+#### Fixes
+
+- **Fixed** incorrect path exposure for fluent-bit serviceMonitor metrics.
+
 ## 2024-05-31
 
 ### Insight Server v0.27.0
