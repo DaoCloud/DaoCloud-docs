@@ -4,7 +4,7 @@
 
 A customer has deployed a DCE 5.0 worker cluster in a production environment on CentOS 7.9.
 However, since [CentOS 7.9 will no longer be maintained](https://www.redhat.com/en/topics/linux/centos-linux-eol),
-the customer wants to migrate their operating system to Ubuntu 22.04. As this is a production environment,
+the customer wants to migrate the operating system to Ubuntu 22.04. As this is a production environment,
 the customer wants to migrate from CentOS 7.9 to Ubuntu 22.04 without any downtime.
 
 ## Risks
