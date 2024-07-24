@@ -1,9 +1,14 @@
+---
+MTPE: ModetaNiu
+DATE: 2024-07-24
+---
+
 # Get Data Storage Address of Global Service Cluster
 
 Insight is a product for unified observation of multiple clusters. To achieve unified storage and
 querying of observation data from multiple clusters, sub-clusters need to report the collected observation data to the
 [global service cluster](../../../kpanda/user-guide/clusters/cluster-role.md#global-service-cluster)
-for unified storage. This document provides the necessary address of the storage component when
+for unified storage. This document provides the required address of the storage component when
 installing the collection component insight-agent.
 
 ## Install insight-agent in Global Service Cluster
@@ -162,7 +167,7 @@ lb-vminsert-insight-victoria-metrics-k8s-stack   LoadBalancer   10.233.63.67    
     In this case, the above LoadBalancer resources will not be created by default, and the corresponding service names are:
 
     - vminsert-insight-victoria-metrics-k8s-stack (metrics service)
-    - insight-es-master (log service)
+    - common-es (log service)
     - insight-opentelemetry-collector (trace service)
 
     After getting the proper port information of the respective services in the above two cases, set as follows:
@@ -175,7 +180,6 @@ lb-vminsert-insight-victoria-metrics-k8s-stack   LoadBalancer   10.233.63.67    
     --set global.exporters.trace.host=    # (5)!
     --set global.exporters.trace.port=    # (6)!
     --set global.exporters.auditLog.host= # (7)!
-    --set global.exporters.auditLog.port= # (8)!
     ```
 
     1. Externally accessible management cluster NodeIP
@@ -185,4 +189,3 @@ lb-vminsert-insight-victoria-metrics-k8s-stack   LoadBalancer   10.233.63.67    
     5. Externally accessible management cluster NodeIP
     6. NodePort corresponding to trace service port 4317
     7. Externally accessible management cluster NodeIP
-    8. NodePort corresponding to trace service port 8006
