@@ -12,6 +12,14 @@ understand the evolution path and feature changes of each version.
 *[Kpanda]: Internal dev codename for container management
 *[Harbor]: An open-source container registry tool and a CNCF graduated project
 
+## 2023-06-30
+
+### v0.19.0
+
+#### Fixes
+
+- **Fixed** an issue where a workspace could not be deleted due to the indication that it needed to unbind from an image space. There is no actual binding relationship with the image space.
+
 ## 2023-05-31
 
 ### v0.18.1
