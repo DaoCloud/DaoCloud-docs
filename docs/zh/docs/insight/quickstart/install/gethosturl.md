@@ -155,7 +155,7 @@ lb-vminsert-insight-victoria-metrics-k8s-stack   LoadBalancer   10.233.63.67    
     在该情况下，默认不会创建上述的 LoadBalancer 资源，对应服务名为：
 
     - vminsert-insight-victoria-metrics-k8s-stack（指标服务）
-    - insight-es-master（日志服务）
+    - common-es（日志服务）
     - insight-opentelemetry-collector（链路服务）
 
     上面两种情况获取到对应服务的对应端口信息后，进行如下设置：
@@ -168,7 +168,6 @@ lb-vminsert-insight-victoria-metrics-k8s-stack   LoadBalancer   10.233.63.67    
     --set global.exporters.trace.host=    # (5)!
     --set global.exporters.trace.port=    # (6)!
     --set global.exporters.auditLog.host= # (7)!
-    --set global.exporters.auditLog.port= # (8)!
     ```
 
     1. 外部可访问的管理集群 NodeIP
@@ -178,4 +177,3 @@ lb-vminsert-insight-victoria-metrics-k8s-stack   LoadBalancer   10.233.63.67    
     5. 外部可访问的管理集群 NodeIP
     6. 链路服务 4317 端口对应的 NodePort
     7. 外部可访问的管理集群 NodeIP
-    8. 链路服务 8006 端口对应的 NodePort
