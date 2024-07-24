@@ -18,7 +18,7 @@ Nginx proxy 后端服务默认超时时间是 60s，镜像 Pull 或者 Push 都�
 举例：
 
 1. 在创建托管 harbor 的场景中，使用 Helm 模板部署 ingress-nginx。
-   可以在  __容器管理__ -> __集群详情__ -> __配置项__ 中搜索找到 nginx-config。
+   可以在  __容器管理__ -> __集群详情__ -> __配置与密钥__ ->  __配置项__ 中搜索找到 nginx-config。
 
     ![配置项](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/nginx-configlist.png)
 
@@ -53,7 +53,7 @@ Nginx proxy 后端服务默认超时时间是 60s，镜像 Pull 或者 Push 都�
 举例：
 
 1. 在创建托管 harbor 的场景中，使用 Helm 模板部署 ingress-nginx。
-   可以在  __容器管理__ -> __集群详情__ -> __配置项__ 中搜索找到 nginx-config。
+   可以在  __容器管理__ -> __集群详情__ -> __配置与密钥__ ->  __配置项__ 中搜索找到 nginx-config。
 
     ![配置项](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kangaroo/images/nginx-configlist.png)
 
