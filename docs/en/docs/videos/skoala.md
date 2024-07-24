@@ -4,6 +4,25 @@ We have crafted the following video tutorials for Microservice Governance, any k
 
 > If any problem with the video display, please refresh your page or try to clear your browser cache.
 
+<style>
+.responsive-video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+}
+
+.responsive-video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+</style>
+
 ## Cloud-Native Gateway
 
 ### Manage Gateway and APIs

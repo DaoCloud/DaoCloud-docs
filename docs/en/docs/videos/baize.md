@@ -3,6 +3,25 @@
 DaoCloud has created the following video tutorials for intelligent engine.
 We welcome any form of feedback. Thank you 🙏
 
+<style>
+.responsive-video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+}
+
+.responsive-video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+</style>
+
 ## Create and Use Datasets
 
 Refer to the [Create Datasets](../baize/developer/dataset/create.md) document.

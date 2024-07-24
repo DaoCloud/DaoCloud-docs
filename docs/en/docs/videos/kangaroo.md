@@ -4,6 +4,25 @@ We have crafted the following video tutorials for Container Registry, any kind o
 
 > If there is a problem with the video display, please refresh the page, or try to clear the browser cache.
 
+<style>
+.responsive-video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+}
+
+.responsive-video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+</style>
+
 ## Integrate registry (workspace)
 
 See [Related Registry](../kangaroo/integrate/integrate-ws.md) for reference.
