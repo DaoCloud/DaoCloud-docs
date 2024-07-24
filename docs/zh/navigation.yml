@@ -1159,6 +1159,7 @@ nav:
                   - 更新 Notebook 内置镜像: baize/best-practice/change-notebook-image.md
                   - Checkpoint 机制及使用介绍: baize/best-practice/checkpoint.md
                   - 使用 Baize 微调 ChatGLM3: baize/best-practice/finetunel-llm.md
+                  - 提交 DeepSpeed 训练任务: baize/best-practice/train-with-deepspeed.md
               - 故障排查:
                   - 故障排查索引: baize/troubleshoot/index.md
                   - Notebook 不受队列配额控制: baize/troubleshoot/notebook-not-controlled-by-quotas.md
