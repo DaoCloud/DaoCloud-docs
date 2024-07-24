@@ -1248,6 +1248,7 @@ nav:
                   - Workbench Permissions: ghippo/permissions/amamba.md
                   - Service Mesh Permissions: ghippo/permissions/mspider.md
                   - Middleware Permissions: ghippo/permissions/mcamel.md
+                  - Intelligent Engine Permissions: ghippo/permissions/baize.md
               - Best Practices:
                   - Workspace Practices: ghippo/best-practice/ws-best-practice.md
                   - Bind a Workspace to Namespace: ghippo/best-practice/ws-to-ns.md

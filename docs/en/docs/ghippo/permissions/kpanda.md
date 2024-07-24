@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# Container Management Permission Description
+# Container Management Permissions
 
 The container management module uses the following roles:
 

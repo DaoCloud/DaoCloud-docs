@@ -1,4 +1,4 @@
-# Description of Microservice Engine Permissions
+# Microservice Engine Permissions
 
 [Microservice engine](../../skoala/intro/index.md) includes two parts: microservice management center and microservice gateway. The microservice engine supports three user roles:
 
@@ -9,13 +9,13 @@
 Each role has different permissions, which are described below.
 
 <!--
-You have permission to use `&check;`, but you don't have permission to use `&cross;`
+Use `&check;`for permissions granted and `&cross;`for permissions not granted.
 -->
 
-## Description of Microservice Governance Center Permissions
+## Microservice Governance Permissions
 
 | Menu Objects | Actions | Workspace Admin | Workspace Editor | Workspace Viewer |
-| --------------------- | ------------ | -------------- - | ---------------- | ---------------- |
+| ------------ | ------- | --------------- | ---------------- | ---------------- |
 | Hosted Registry List | View List | &check; | &check; | &check; |
 | Hosted Registry | View Basic Information | &check; | &check; | &check; |
 | | Create | &check; | &check; | &cross; |
@@ -83,7 +83,7 @@ You have permission to use `&check;`, but you don't have permission to use `&cro
 | | YAML Editing | &check; | &check; | &cross; |
 | | delete | &check; | &check; | &cross; |
 
-## Description of Microservice Gateway Permissions
+## Microservice Gateway Permissions
 
 | Objects | Actions | Workspace Admin | Workspace Editor | Workspace Viewer |
 | ------------ | ---- | --------------- | --------------- - | ---------------- |
