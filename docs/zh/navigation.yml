@@ -317,6 +317,7 @@ nav:
                       - NVIDIA vGPU模式:
                           - 安装 vGPU Addon: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_addon.md
                           - 使用 NVIDIA vGPU: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_user.md
+                          - vGPU 显存超配镜像构建: kpanda/user-guide/gpu/nvidia/vgpu/hami.md
                       - NVIDIA MIG 模式:
                           - NVIDIA MIG 概述: kpanda/user-guide/gpu/nvidia/mig/index.md
                           - 开启 MIG 功能: kpanda/user-guide/gpu/nvidia/mig/create_mig.md
@@ -334,6 +335,7 @@ nav:
                       - 使用昇腾 NPU: kpanda/user-guide/gpu/ascend/ascend_usage.md
                       - 启用昇腾 VNPU: kpanda/user-guide/gpu/ascend/vnpu.md
                   - 天数 GPU 管理: kpanda/user-guide/gpu/Iluvatar_usage.md
+                  - GPU 相关FAQ: kpanda/user-guide/gpu/FAQ.md
               - 最佳实践:
                   - 对 etcd 进行备份还原: kpanda/best-practice/etcd-backup.md
                   - 跨集群备份恢复MySQL: kpanda/best-practice/backup-mysql-on-nfs.md
