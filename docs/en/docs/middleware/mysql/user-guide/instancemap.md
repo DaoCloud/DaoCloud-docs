@@ -11,6 +11,6 @@ Click to enter the details page of the target instance, then click **Instance To
 
     <!-- ![Instance Topology](../images/mysqlmap.png) -->
 
-- Hover over or click on a node to view the details of the selected node.
+- Hover over or click a node to view the details of the selected node.
 
     <!-- ![Instance Topology](../images/mysqlmap02.png) -->

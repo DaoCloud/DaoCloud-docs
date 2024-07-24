@@ -20,14 +20,14 @@ Diagram: Data synchronization **instance redis-a** >> **instance redis-b**
 
 ### Configuring Service for the Source Instance
 
-If the source instance is in a DCE 5.0 cluster, you can enable the solution in __Data Services__ - __Redis__ - __Cross-Cluster Master-Slave Synchronization__ , and the service configuration will be automatically completed.
+If the source instance is in a DCE 5.0 cluster, you can enable the solution in __Data Services__ -> __Redis__ -> __Cross-Cluster Master-Slave Synchronization__ , and the service configuration will be automatically completed.
 
 
 If the source instance is in a third-party cluster, you need to manually configure the service. The configuration method is described below:
 
 Create a __NodePort__ service for the Redis instance to allow data synchronization access from Redis-Shake. In this example, we need to create one service for **instance redis-a**. Here's the process:
 
-1. Go to __Container Management__ - __Cluster where the source instance is located__ - __Stateful Workloads__ : Select the workload __redis-a__ and create a __NodePort__ service with the container port and service port set to 6379.
+1. Go to __Container Management__ -> __Cluster where the source instance is located__ -> __StatefulSets__ : Select the workload __redis-a__ and create a __NodePort__ service with the container port and service port set to 6379.
 
 
 2. Verify the service and make sure that the workload selector includes the following labels.
@@ -43,7 +43,7 @@ Create a __NodePort__ service for the Redis instance to allow data synchronizati
 
 #### Creating Configuration
 
-In __Container Management__ - __Cluster where the target instance is located__ - __Configuration and Storage__ - __Configurations__ , create a configuration item __redis-sync__ for the Redis-shake instance. Import the file __sync.toml__ (file content can be found in the __Appendix__ ), and make sure to modify the following:
+In __Container Management__ -> __Cluster where the target instance is located__ -> __Configuration and Storage__ -> __Configurations__ , create a configmap __redis-sync__ for the Redis-shake instance. Import the file __sync.toml__ (file content can be found in the __Appendix__ ), and make sure to modify the following:
 
 
 - source.address: The service address of the source instance __redis-a__ created in the previous step:
@@ -65,7 +65,7 @@ In __Container Management__ - __Cluster where the target instance is located__ -
     address = "rfr-redis-b:6379"
     ```
 
-    You can find this service information in __Cluster Management__ - __Cluster where the target instance is located__ - __Workloads__ - __Access Method__ . Similar to the following screenshot:
+    You can find this service information in __Cluster Management__ -> __Cluster where the target instance is located__ -> __Workloads__ -> __Access Method__ . Similar to the following screenshot:
 
 
 - Access password for the target instance. This can be obtained from the Redis instance's Overview page under the Data Services module:
@@ -86,7 +86,7 @@ In __Container Management__ - __Cluster where the target instance is located__ -
 
 #### Creating Redis-shake
 
-1. Open the __App Workbench__ , select __Wizard__ - __Based on Container Image__ and create an application __Redis-shake-sync__ :
+1. Open the __App Workbench__ , select __Wizard__ -> __Based on Container Image__ and create an application __Redis-shake-sync__ :
 
 
 2. Fill in the application configuration as per the instructions below.
@@ -101,19 +101,19 @@ In __Container Management__ - __Cluster where the target instance is located__ -
     - The access type for the default service is set to NodePort, with container port and service port both set to 6379.
 
 
-    - __Advanced Settings__ - __Lifecycle__ - __Startup Command__ - Enter the run parameter:
+    - __Advanced Settings__ -> __Lifecycle__ -> __Startup Command__ - Enter the run parameter:
 
         ```yaml
         /etc/sync/sync.toml
         ```
 
-    - __Advanced Settings__ - __Data Storage__ : Add configuration item __redis-sync__ and set the path to:
+    - __Advanced Settings__ -> __Data Storage__ : Add configmap __redis-sync__ and set the path to:
 
         ```yaml
         /etc/sync
         ```
 
-    - __Advanced Settings__ - __Data Storage__ : Add a temporary path with the container path set to:
+    - __Advanced Settings__ -> __Data Storage__ : Add a temporary path with the container path set to:
 
         ```yaml
         /data
@@ -179,7 +179,7 @@ log_interval = 5 # in seconds
  
 # redis-shake gets key and value from rdb file, and uses RESTORE command to
 # create the key in target redis. Redis RESTORE will return a "Target key name
-# is busy" error when key already exists. You can use this configuration item
+# is busy" error when key already exists. You can use this configmap
 # to change the default behavior of restore:
 # panic:   redis-shake will stop when meet "Target key name is busy" error.
 # rewrite: redis-shake will replace the key with new value.
