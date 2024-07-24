@@ -5,6 +5,25 @@ DCE 5.0 分为社区版和商业版。社区版可免费使用，包括全局管
 
 > 若视频显示有问题，请刷新页面，或尝试清除浏览器缓存。
 
+<style>
+.responsive-video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+}
+
+.responsive-video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+</style>
+
 ## 使用 kind 搭建集群
 
 参阅[使用 kind 集群在线安装 DCE 5.0 社区版](../install/community/kind/online.md)。

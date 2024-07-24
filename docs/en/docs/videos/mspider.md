@@ -17,6 +17,25 @@ We have crafted the following video tutorials for service mesh, any kind of feed
 
 </div>
 
+<style>
+.responsive-video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+}
+
+.responsive-video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+</style>
+
 ## Create mesh
 
 See [Create mesh](../mspider/user-guide/service-mesh/README.md) for reference.

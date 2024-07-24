@@ -4,6 +4,25 @@ DCE 5.0 is divided into DCE Community and Enterprise Package. The DCE Community 
 
 > If any problem with the video display, please refresh your page or try to clear your browser cache.
 
+<style>
+.responsive-video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+}
+
+.responsive-video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+</style>
+
 ## Use kind to build a cluster
 
 See [Online Install DCE Community with kind](../install/community/kind/online.md).

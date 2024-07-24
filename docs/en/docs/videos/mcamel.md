@@ -4,6 +4,25 @@ We have crafted the following video tutorials for middleware, any kind of feedba
 
 > If any problem with the video display, please refresh your page or try to clear your browser cache.
 
+<style>
+.responsive-video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+}
+
+.responsive-video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+</style>
+
 ## Elasticsearch Search Service Instance Management
 
 Refer to the [Elasticsearch Search Service Instance Management](../middleware/elasticsearch/user-guide/create.md) documentation page.

@@ -5,6 +5,25 @@ We sincerely appreciate any feedback you may have. Thank you 🙏
 
 > If any problem with the video display, please refresh your page or try to clear your browser cache.
 
+<style>
+.responsive-video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+}
+
+.responsive-video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+</style>
+
 ## Installing insight-agent
 
 Refer to the [Installing insight-agent](../insight/quickstart/install/install-agent.md) documentation page.
