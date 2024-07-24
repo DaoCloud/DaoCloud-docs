@@ -8,15 +8,15 @@ This page explains how to install or upgrade the middleware - kafka module after
 
 ## Loading Images from the Installation Package
 
-You can load the images using one of the following methods. It is recommended to use chart-syncer to sync the images to your image repository when it is available, as it is more efficient and convenient.
+You can load the images using one of the following methods. It is recommended to use chart-syncer to sync the images to your container registry when it is available, as it is more efficient and convenient.
 
-### Syncing Images to Image Repository using chart-syncer
+### Syncing Images to Container Registry using chart-syncer
 
 1. Create __load-image.yaml__ file.
 
     !!! note  
 
-        All parameters in this YAML file are required. You need to have a private image repository and modify the relevant configuration.
+        All parameters in this YAML file are required. You need to have a private container registry and modify the relevant configuration.
 
     === "Chart Repo Installed"
 
@@ -26,18 +26,18 @@ You can load the images using one of the following methods. It is recommended to
         source:
           intermediateBundlesPath: mcamel-offline # The relative path to execute the charts-syncer command, not the relative path between this YAML file and the offline package
         target:
-          containerRegistry: 10.16.10.111 # Change this to your image repository URL
-          containerRepository: release.daocloud.io/mcamel # Change this to your image repository
+          containerRegistry: 10.16.10.111 # Change this to your container registry URL
+          containerRepository: release.daocloud.io/mcamel # Change this to your container registry
           repo:
             kind: HARBOR # It can also be any other supported Helm Chart repository type
             url: http://10.16.10.111/chartrepo/release.daocloud.io # Change this to the chart repo URL
             auth:
-              username: "admin" # Your image repository username
-              password: "Harbor12345" # Your image repository password
+              username: "admin" # Your container registry username
+              password: "Harbor12345" # Your container registry password
           containers:
             auth:
-              username: "admin" # Your image repository username
-              password: "Harbor12345" # Your image repository password
+              username: "admin" # Your container registry username
+              password: "Harbor12345" # Your container registry password
         ```
 
     === "Chart Repo Not Installed"
@@ -48,15 +48,15 @@ You can load the images using one of the following methods. It is recommended to
         source:
           intermediateBundlesPath: mcamel-offline # The relative path to execute the charts-syncer command, not the relative path between this YAML file and the offline package
         target:
-          containerRegistry: 10.16.10.111 # Change this to your image repository URL
-          containerRepository: release.daocloud.io/mcamel # Change this to your image repository
+          containerRegistry: 10.16.10.111 # Change this to your container registry URL
+          containerRepository: release.daocloud.io/mcamel # Change this to your container registry
           repo:
             kind: LOCAL
             path: ./local-repo # Local path to the chart
           containers:
             auth:
-              username: "admin" # Your image repository username
-              password: "Harbor12345" # Your image repository password
+              username: "admin" # Your container registry username
+              password: "Harbor12345" # Your container registry password
         ```
 
 1. Run the command to sync the images.
@@ -155,7 +155,7 @@ There are two ways to perform the upgrade. You can choose the corresponding upgr
 
     1. Run `helm upgrade` .
 
-        Before upgrading, it is recommended to update the  `global.imageRegistry` field in the __mcamel-kafka.yaml__ file with the current image repository address.
+        Before upgrading, it is recommended to update the  `global.imageRegistry` field in the __mcamel-kafka.yaml__ file with the current container registry address.
 
         ```shell
         export imageRegistry={your_image_repository}
@@ -181,7 +181,7 @@ There are two ways to perform the upgrade. You can choose the corresponding upgr
 
     1. Run `helm upgrade` .
 
-        Before upgrading, it is recommended to update the __bak.yaml__ file by replacing  `global.imageRegistry` with your current image repository address.
+        Before upgrading, it is recommended to update the __bak.yaml__ file by replacing  `global.imageRegistry` with your current container registry address.
 
         ```shell
         export imageRegistry={your_image_repository}

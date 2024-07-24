@@ -21,7 +21,7 @@ Redis cache service is an in-memory database cache service provided by DaoCloud.
 
 - Elastic expansion
 
-    Provides online expansion and contraction services for instance memory specifications, helping you achieve cost control based on actual business volume and achieve the goal of on-demand usage.
+    Provides online autoscaling services for instance memory specifications, helping you achieve cost control based on actual business volume and achieve the goal of on-demand usage.
 
 - Convenient management
 

@@ -11,7 +11,7 @@ The configuration management function provides a common configuration scheme for
 
     ![Configuration Management](images/cfg01.png)
 
-2. Click __Create__ to create a new configuration item in the configuration management page.
+2. Click __Create__ to create a new configmap in the configuration management page.
 
     ![Create Configuration](images/cfg02.png)
 
@@ -19,7 +19,7 @@ The configuration management function provides a common configuration scheme for
 
     ![Basic Info](images/cfg03.png)
 
-    - **Name**: User-defined, used to identify the configuration item;
+    - **Name**: User-defined, used to identify the configmap;
 
     - **Backup Type**: This configuration has two options, default is __Managed MinIO__ , which will display all instances in the MinIO list of middleware; select __S3__ to use external storage, and the user needs to enter the address of the external storage on their own, the address structure is similar to: http://172.30.120.201:30456;
 
