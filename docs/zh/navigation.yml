@@ -160,6 +160,8 @@ nav:
                   - 查看金丝雀发布任务: amamba/user-guide/release/check-canary.md
                   - 创建蓝绿发布任务: amamba/user-guide/release/blue-green.md
                   - 查看蓝绿发布任务: amamba/user-guide/release/check-bluegreen.md
+              - 代码仓库: 
+                  - 代码仓库管理: amamba/user-guide/git/git.md
               - 工具链集成:
                   - 集成工具链: amamba/user-guide/tools/integrated-toolchain.md
                   - 管理工具链实例: amamba/user-guide/tools/toolchain-instances.md
