@@ -11,7 +11,7 @@ The microservice gateway supports the high-availability architecture of multi-te
 
 To create a microservice gateway, perform the following steps:
 
-1. In the left navigation bar, click __Cloud native Gateway__ , and in the upper right corner of the __Gateway List__ page, click __Create Gateway__ to enter the page for creating the microservice gateway.
+1. In the left navigation bar, click __Cloud Native Gateway__ , and in the upper right corner of the __Gateways__ page, click __Create Gateway__ to enter the page for creating the microservice gateway.
 
     ![go to the create page](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/gw-create01.png)
 
@@ -20,11 +20,11 @@ To create a microservice gateway, perform the following steps:
     - Gateway name: contains a maximum of 63 letters, digits, hyphen (-) and must start and end with a letter or number character. The name cannot be changed after the gateway is created.
     - Deploy cluster: Select the cluster to deploy the gateway in.
 
-        > If the target cluster does not appear in the optional list, you can go to the [Integrate](../../kpanda/user-guide/clusters/integrate-cluster.md) or [Create](../../kpanda/user-guide/clusters/create-cluster.md) cluster in the container management module and set the [The cluster or namespace under the cluster is bound to the current workspace ](../../../ghippo/user-guide/workspace/quota/#_4) through the global management module.
+        > If the target cluster does not appear in the optional list, you can go to the [Integrate](../../kpanda/user-guide/clusters/integrate-cluster.md) or [Create](../../kpanda/user-guide/clusters/create-cluster.md) cluster in the container management module and set [the cluster or namespace under the cluster is bound to the current workspace](../../ghippo/user-guide/workspace/quota.md#binding-namespace-to-workspace) through the global management module.
 
-    - Namespace (deployment) : Select the namespace in which to deploy the gateway. Only one gateway can be deployed in a namespace.
-    - Environment check : After the cluster and namespace are selected, the system automatically detects the installation environment. If the check fails, the system displays the cause and operation suggestions. You can perform operations as prompted.
-    - Namespace (jurisdiction) : Sets which namespaces can be governed by the new gateway. Specifies the namespace of the default jurisdiction gateway. Supports managing multiple namespaces at the same time. A namespace cannot be managed by two gateways at the same time.
+    - Namespace (deployment): Select the namespace in which to deploy the gateway. Only one gateway can be deployed in a namespace.
+    - Environment check: After the cluster and namespace are selected, the system automatically detects the installation environment. If the check fails, the system displays the cause and operation suggestions. You can perform operations as prompted.
+    - Namespace (jurisdiction): Sets which namespaces can be governed by the new gateway. Specifies the namespace of the default jurisdiction gateway. Supports managing multiple namespaces at the same time. A namespace cannot be managed by two gateways at the same time.
 
         ![fill in the basic configuration](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/gw-create02.png)
 
@@ -70,10 +70,15 @@ To create a microservice gateway, perform the following steps:
     - Update Mode: 'Recreate' means to delete the original gateway and create a new gateway, 'rolling update' means not to delete the gateway, but to roll to update the gateway related Pod
     - Front-end Proxy: specifies how many proxy endpoints a request must pass through before reaching the gateway from the client. Set this parameter based on actual conditions. For example, 'client-nginx-gateway' has one agent layer because only one Nginx agent endpoint passes through it.
     - Gateway tracing: After this function is enabled, link information can be generated based on requests made through the gateway and sent to the observable module for data collection.
+    - Gateway Tracing: You need to enable `autoinstrumentation` in the insight-agent and also enable the gateway traces
+      in the gateway instance. This allows the generation of trace information for requests passing through the gateway,
+      which is then sent to the Insight module for data collection.
 
+    ![insight-agent](../images/insight-agent.png)
+    
     ![fill in advanced settings](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/gw-create08.png)
 
-5. Please refer to the following information to fill in the plug-in configuration (optional), and finally click 'confirm' in the lower right corner of the page.
+5. Please refer to the following information to fill in the plug-in configuration (optional), and finally click **OK** in the lower right corner of the page.
     
     Select whether to enable the Global Rate Limit plugin.
 
@@ -83,7 +88,7 @@ To create a microservice gateway, perform the following steps:
 
 !!! note
 
-    Click __OK__ at the lower right corner of the page to return to the microservice gateway list page. You can perform the operations [Update Gateway](update-gateway.md) or [Delte Gateway](delete-gateway.md) on the right.
+    Click __OK__ at the lower right corner of the page to return to the microservice gateway page. You can perform the operations [Update Gateway](update-gateway.md) or [Delte Gateway](delete-gateway.md) on the right.
 
     ![confirm the information](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/gw-create10.png)
 
@@ -93,7 +98,7 @@ You can view the gateway details on `Overview`, including the name, deployment l
 
 ### Gateway details
 
-On the __Gateway List__ page, select the name of the target gateway to access the gateway overview page ".
+On the __Gateways__ page, click the name of the target gateway to check the gateway overview.
 
 ![overview](./images/overview.png)
 
@@ -125,7 +130,7 @@ The microservice gateway supports the high-availability architecture of multi-te
 
 There are two ways to update the gateway configuration.
 
-- In the __Gateway List__ page choose the gateway instance needs to be updated, at the instance of right click __...__ and select __Edit__ .
+- On the __Gateways__ page, choose the gateway instance needs to be updated, click __...__ and select __Edit__ .
 
     ![update1](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/update1.png)
 
@@ -143,7 +148,7 @@ There are also two ways to delete a gateway. To ensure that services are not aff
 
     Gateway deletion is irreversible, so please proceed with caution.
 
-- In the __Gateway List__ page choose the need to remove the gateway instance, at the instance of right click __...__ and select __Delete__ .
+- In the __Gateways__ page choose the need to remove the gateway instance, at the instance of right click __...__ and select __Delete__ .
 
     ![delete](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/gateway/images/delete.png)
 
