@@ -7,11 +7,20 @@ date: 2024-01-05
 
 This page lists the Release Notes of the PostgreSQL database, so that you can understand the evolution path and feature changes of each version.
 
-*[Mcamel-PostgreSQL]: "Mcamel" is the dev name for DaoCloud's middlewares, and "PostgreSQL" is a relational database
+*[Mcamel-PostgreSQL]: "Mcamel" is the dev name for DaoCloud's middlewares, and "PostgreSQL" is a relational database.
+
+## 2024-06-30
+
+### v0.13.0
+
+#### New Features
+
+- **Added** support for enabling the PG Vector plugin.
+- **Improved** PostgreSQL which now supports v15.5.
 
 ## 2024-05-31
 
-### v0.11.0
+### v0.12.0
 
 - **Added** option to retain remote backups when deleting tasks
 - **Added** parameter template import and export features
