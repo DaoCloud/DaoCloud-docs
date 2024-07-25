@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # 如何提交 DeepSpeed 训练任务
 
 根据 [DeepSpeed 官方文档](https://www.deepspeed.ai/getting-started/)，我们推荐使用修改代码的方式实现。
