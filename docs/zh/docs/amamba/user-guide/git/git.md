@@ -7,7 +7,7 @@
 
 默认部署应用工作台后，代码仓库在导航栏中是被隐藏的，您可以通过修改配置文件来开启该能力。
 
-1. 在 __容器管理__ 中，选择全局服务集群，在 __配置项__ 中搜索 `amamba-config` 
+1. 在 __容器管理__ 中，选择[全局服务集群](../../../kpanda/user-guide/clusters/cluster-role.md#_2)，在 __配置项__ 中搜索 `amamba-config`
 
     ![git1](../../images/git1.jpg)
 
