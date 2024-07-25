@@ -626,14 +626,16 @@ nav:
                   - Install Dependencies: virtnest/install/install-dependency.md
                   - Offline Upgrade: virtnest/install/offline-install.md
                   - Install virtnest-agent: virtnest/install/virtnest-agent.md
+              - Quick Start:
+                  - Create VM: virtnest/quickstart/index.md
+                  - Update VM: virtnest/quickstart/update.md
+                  - Access VM: virtnest/quickstart/access.md
+                  - Access VM by NodePort: virtnest/quickstart/nodeport.md
               - Manage Virtual Machine:
-                  - Create VM: virtnest/vm/index.md
                   - Create Windows VM: virtnest/vm/vm-windows.md
                   - Create Secret: virtnest/vm/create-secret.md
-                  - Access VM: virtnest/vm/access.md
                   - Snapshots: virtnest/vm/snapshot.md
                   - Live Migration: virtnest/vm/live-migration.md
-                  - Access VM by NodePort: virtnest/vm/nodeport.md
                   - VM Monitor: virtnest/vm/monitor.md
                   - VM GPU: virtnest/vm/vm-gpu.md
                   - VM Network: virtnest/vm/vm-network.md
