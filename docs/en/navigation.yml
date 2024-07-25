@@ -631,6 +631,7 @@ nav:
                   - Update VM: virtnest/quickstart/update.md
                   - Access VM: virtnest/quickstart/access.md
                   - Access VM by NodePort: virtnest/quickstart/nodeport.md
+                  - VM Details: virtnest/quickstart/detail.md
               - Manage Virtual Machine:
                   - Create Windows VM: virtnest/vm/vm-windows.md
                   - Create Secret: virtnest/vm/create-secret.md
