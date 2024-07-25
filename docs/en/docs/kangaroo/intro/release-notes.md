@@ -18,7 +18,7 @@ understand the evolution path and feature changes of each version.
 
 #### Fixes
 
-- **Fixed** an issue where a workspace could not be deleted due to the indication that it needed to unbind from an image space. There is no actual binding relationship with the image space.
+- **Fixed** an issue that prevented the deletion of a workspace, incorrectly prompting users to unbind a registry space that had no actual binding relationship with the workspace.
 
 ## 2023-05-31
 
