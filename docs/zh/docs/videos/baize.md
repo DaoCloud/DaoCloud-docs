@@ -29,6 +29,12 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/dataset.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/dataset.jpg"></video>
 </div>
 
+## 数据标注和数据集 Demo
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/label-dataset.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/label-dataset.jpg"></video>
+</div>
+
 ## 创建分布式训练任务
 
 参阅[创建训练任务](../baize/developer/jobs/create.md)文档。
