@@ -28,7 +28,7 @@ We have crafted the following video tutorials for Cloud Edge Collaboration, any 
 Refer to the [End Device Overview](../kant/intro/index.md) document.
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/ai-gest.mp4" preload="metadata" poster="images/ai-gesture.jpg"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/ai-gest.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/ai-gesture.jpg"></video>
 </div>
 
 ## Create an Edge Unit
@@ -36,5 +36,5 @@ Refer to the [End Device Overview](../kant/intro/index.md) document.
 Please refer to the [Cloud Edge Collaboration](../kant/intro/index.md) documentation page.
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/edge-unit.mp4" preload="metadata" poster="images/edge-unit.jpg"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/edge-unit.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/edge-unit.jpg"></video>
 </div>

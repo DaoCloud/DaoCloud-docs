@@ -28,7 +28,7 @@
 参阅[终端设备概述](../kant/intro/index.md)文档。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/ai-gest.mp4" preload="metadata" poster="images/ai-gesture.jpg"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/ai-gest.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/ai-gesture.jpg"></video>
 </div>
 
 ## 创建边缘单元
@@ -36,7 +36,7 @@
 参阅[云边协同](../kant/intro/index.md)文档。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/edge-unit.mp4" preload="metadata" poster="images/edge-unit.jpg"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/edge-unit.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/edge-unit.jpg"></video>
 </div>
 
 [下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
