@@ -28,7 +28,7 @@ DCE 5.0 is divided into DCE Community and Enterprise Package. The DCE Community 
 See [Online Install DCE Community with kind](../install/community/kind/online.md).
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kind-cluster.mp4" preload="metadata" poster="images/install-kind.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kind-cluster.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/install-kind.png"></video>
 </div>
 
 ## Install the DCE Community online
@@ -36,7 +36,7 @@ See [Online Install DCE Community with kind](../install/community/kind/online.md
 See [Online Install DCE Community](../install/index.md#_2).
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/online-install-community.mp4" preload="metadata" poster="images/install-online.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/online-install-community.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/install-online.png"></video>
 </div>
 
 [Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }

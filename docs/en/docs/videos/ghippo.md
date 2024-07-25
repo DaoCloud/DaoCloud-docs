@@ -31,7 +31,7 @@ We sincerely appreciate any feedback you may have. Thank you 🙏
 Refer to the [Create Users and Grant Permissions](../ghippo/user-guide/access-control/user.md) documentation page.
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-user-en.mp4" preload="metadata" poster="images/ghippo-user.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-user-en.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/ghippo-user.png"></video>
 </div>
 
 ### Integration with LDAP Users and User Groups
@@ -39,7 +39,7 @@ Refer to the [Create Users and Grant Permissions](../ghippo/user-guide/access-co
 Refer to the [LDAP](../ghippo/user-guide/access-control/ldap.md) documentation page.
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/ldap.mp4" preload="metadata" poster="images/ghippo-ldap"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/ldap.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/ghippo-ldap.png"></video>
 </div>
 
 ### Integration with OIDC Users
@@ -47,7 +47,7 @@ Refer to the [LDAP](../ghippo/user-guide/access-control/ldap.md) documentation p
 Refer to the [OIDC](../ghippo/user-guide/access-control/oidc.md) documentation page.
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/oidc.mp4" preload="metadata" poster="images/ghippo-oidc.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/oidc.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/ghippo-oidc.png"></video>
 </div>
 
 ## Workspaces and Hierarchy
@@ -57,7 +57,7 @@ Refer to the [OIDC](../ghippo/user-guide/access-control/oidc.md) documentation p
 Refer to the [Manage Workspaces](../ghippo/user-guide/workspace/workspace.md) documentation page.
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/workspace.mp4" preload="metadata" poster="images/ghippo-workspace.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/workspace.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/ghippo-workspace.png"></video>
 </div>
 
 ### Manage Folders
@@ -65,7 +65,7 @@ Refer to the [Manage Workspaces](../ghippo/user-guide/workspace/workspace.md) do
 Refer to the [Manage Folders](../ghippo/user-guide/workspace/folders.md) documentation page.
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/manage-folder.mp4" preload="metadata" poster="images/ghippo-folder.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/manage-folder.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/ghippo-folder.png"></video>
 </div>
 
 ### Resource Quotas
@@ -73,7 +73,7 @@ Refer to the [Manage Folders](../ghippo/user-guide/workspace/folders.md) documen
 Refer to the [Resource Quotas](../ghippo/user-guide/workspace/quota.md) documentation page.
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/resourcequota.mp4" preload="metadata" poster="images/ghippo-resources.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/resourcequota.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/ghippo-resources.png"></video>
 </div>
 
 ## Audit Logs
@@ -83,7 +83,7 @@ Refer to the [Resource Quotas](../ghippo/user-guide/workspace/quota.md) document
 Refer to the [Enable Audit Logs](../ghippo/user-guide/audit/open-audit.md) documentation page.
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/audit-on.mp4" preload="metadata" poster="images/ghippo-audit.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/audit-on.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/ghippo-audit.png"></video>
 </div>
 
 ### Disable Audit Logs
@@ -91,7 +91,7 @@ Refer to the [Enable Audit Logs](../ghippo/user-guide/audit/open-audit.md) docum
 Refer to the [Disable Audit Logs](../ghippo/user-guide/audit/open-audit.md#_4) documentation page.
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/audit-off.mp4" preload="metadata" poster="images/ghippo-auditoff.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/audit-off.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/ghippo-auditoff.png"></video>
 </div>
 
 ## Platform Customization
@@ -99,7 +99,7 @@ Refer to the [Disable Audit Logs](../ghippo/user-guide/audit/open-audit.md#_4) d
 Refer to the [Appearance Customization](../ghippo/user-guide/platform-setting/appearance.md) documentation page.
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/appearance.mp4" preload="metadata" poster="images/ghippo-appearance.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/appearance.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/ghippo-appearance.png"></video>
 </div>
 
 [Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }

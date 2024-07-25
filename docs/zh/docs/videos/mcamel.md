@@ -28,7 +28,7 @@
 参阅[Elasticsearch 搜索服务实例管理](../middleware/elasticsearch/user-guide/create.md)文档。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/es.mp4" preload="metadata" poster="images/mcamel-es.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/es.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/mcamel-es.png"></video>
 </div>
 
 ## Kafka 消息实例管理
@@ -36,7 +36,7 @@
 参阅[Kafka 消息实例管理](../middleware/kafka/user-guide/create.md)文档。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kafka.mp4" preload="metadata" poster="images/mcamel-kafka.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kafka.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/mcamel-kafka.png"></video>
 </div>
 
 ## MinIO 存储实例管理
@@ -44,7 +44,7 @@
 参阅[MinIO 消息实例管理](../middleware/minio/user-guide/create.md)文档。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/minio.mp4" preload="metadata" poster="images/mcamel-minio.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/minio.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/mcamel-minio.png"></video>
 </div>
 
 ## MySQL 数据库实例管理
@@ -52,7 +52,7 @@
 参阅[MySQL 数据库实例管理](../middleware/mysql/user-guide/create.md)文档。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/mysql.mp4" preload="metadata" poster="images/mcamel-mysql.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/mysql.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/mcamel-mysql.png"></video>
 </div>
 
 ## RabbitMQ 消息队列实例管理
@@ -60,7 +60,7 @@
 参阅[RabbitMQ 消息服务实例管理](../middleware/rabbitmq/user-guide/create.md)文档。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/RabbitMQ-instance-management.mp4" preload="metadata" poster="images/mcamel-rabbit.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/RabbitMQ-instance-management.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/mcamel-rabbit.png"></video>
 </div>
 
 ## Redis 缓存实例管理
@@ -68,7 +68,7 @@
 参阅[Redis 缓存服务](../middleware/redis/intro/index.md)文档。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/redis.mp4" preload="metadata" poster="images/mcamel-redis.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/redis.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/mcamel-redis.png"></video>
 </div>
 
 ## 中间件工作负载反亲和性
@@ -76,7 +76,7 @@
 参阅[中间件工作负载反亲和性](../middleware/common/antiaffinity.md)文档。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/anti-affinity.mp4" preload="metadata" poster="images/mcamel-anti-affinity.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/anti-affinity.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/mcamel-anti-affinity.png"></video>
 </div>
 
 [下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
