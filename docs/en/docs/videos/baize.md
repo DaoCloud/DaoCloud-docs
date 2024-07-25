@@ -22,7 +22,9 @@ We welcome any form of feedback. Thank you 🙏
 }
 </style>
 
-## Create and Use Datasets
+## Data management
+
+### Create and use datasets
 
 Refer to the [Create Datasets](../baize/developer/dataset/create.md) document.
 
@@ -30,7 +32,17 @@ Refer to the [Create Datasets](../baize/developer/dataset/create.md) document.
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/dataset.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/dataset.jpg"></video>
 </div>
 
-## Create a distributed job
+### Data label and dataset
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/label-dataset.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/label-dataset.jpg"></video>
+</div>
+
+---
+
+## Training task
+
+### Create a distributed job
 
 See also the document to [create a job](../baize/developer/jobs/create.md).
 
@@ -38,7 +50,7 @@ See also the document to [create a job](../baize/developer/jobs/create.md).
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-job.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/create-distributed-job.png"></video>
 </div>
 
-## Notebook using vGPU
+### Notebook using vGPU
 
 See also the [Create Notebook](../baize/developer/notebooks/create.md) document.
 
