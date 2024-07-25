@@ -21,6 +21,8 @@
 }
 </style>
 
+## 数据管理
+
 ## 创建和使用数据集
 
 参阅[创建数据集](../baize/developer/dataset/create.md)文档。
@@ -29,11 +31,15 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/dataset.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/dataset.jpg"></video>
 </div>
 
-## 数据标注和数据集 Demo
+## 数据标注和数据集
 
 <div class="responsive-video-container">
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/label-dataset.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/label-dataset.jpg"></video>
 </div>
+
+---
+
+## 任务训练
 
 ## 创建分布式训练任务
 
