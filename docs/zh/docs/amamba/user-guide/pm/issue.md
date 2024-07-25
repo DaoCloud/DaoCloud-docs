@@ -4,9 +4,10 @@
 
 ## 开启项目管理导航菜单
 
-平台默认部署后，项目管理在导航栏中是被隐藏的，您可以通过修改配置文件来开启该能力。
+默认部署 DCE 5.0 应用工作台后，项目管理在导航栏中是被隐藏的，您可以通过修改配置文件来开启该能力。
 
-1. 在 __容器管理__ 中，选择全局服务集群，在 __配置项__ 中搜索 `amamba-config` 
+1. 在 __容器管理__ 中，选择[全局服务集群](../../../kpanda/user-guide/clusters/cluster-role.md#_2)，
+   在 __配置项__ 中搜索 `amamba-config`
 
     ![git1](../../images/git1.jpg)
 
@@ -22,7 +23,7 @@
 
 ## 前提条件
 
-- 在当前平台已经成功集成一个 Jira 实例，参考[集成工具链](../tools/integrated-toolchain.md)。
+- 在当前应用工作台已经成功集成一个 Jira 实例，参考[集成工具链](../tools/integrated-toolchain.md)。
 
 - 将集成的 Jira 实例下的项目分配到当前工作空间内，参考[管理工具链实例](../tools/toolchain-instances.md)
 

@@ -2,10 +2,10 @@
 
 This page introduces the health status and synchronization status description of the Argo CD application.
 
-**health status**
+**Health status**
 
 | Health Status | Description |
-| -------- | ----------------------------------------- -------------------- |
+| -------- | ---------------- |
 | Health | Resource Health |
 | Degraded | Resource has been demoted |
 | In progress | Resource is not yet healthy, but still in progress and may be healthy soon |
@@ -17,7 +17,7 @@ This page introduces the health status and synchronization status description of
 **Sync Status**
 
 | Sync Status | Description |
-| -------- | ----------------------------------------- |
+| -------- | -------------- |
 | Synchronized | The resources deployed in the cluster are consistent with the expected state in the warehouse |
 | not synchronized | resources deployed in the cluster are inconsistent with the expected state in the warehouse |
 | Unknown | Unable to determine the current synchronization status |
