@@ -22,7 +22,7 @@ orchestration capabilities to edge nodes.
 DCE 5.0 Cloud Edge supports two types of edge units:
 
 - **Internal Edge Unit** is to install the KubeEdge cloud suite (CloudCore, ControllerManager) for 
-  a specified working cluster and manage it throughout its lifecycle.
+  a specified worker cluster and manage it throughout its lifecycle.
 
 - **External Edge Unit** refers to integrating the existing KubeEdge installed in the enterprise system 
   into DCE 5.0 Cloud Edge for unified management. See [Creating External Edge Unit](./create-external-unit.md)
@@ -54,15 +54,15 @@ The following steps explain how to create an edge unit:
 
 <!-- 3. Component Repository Settings. Configuration for KubeEdge and Kant cloud component repositories:
 
-    - KubeEdge Image Repository: The image repository for KubeEdge cloud components.
-        - Default: The system-provided default image repository address, storing images of KubeEdge cloud components such as cloudcore.
-        - Custom: If the user stores KubeEdge cloud component images in their own image repository, they can choose a custom repository address.
+    - KubeEdge Container Registry: The container registry for KubeEdge cloud components.
+        - Default: The system-provided default container registry address, storing images of KubeEdge cloud components such as cloudcore.
+        - Custom: If the user stores KubeEdge cloud component images in their own container registry, they can choose a custom repository address.
 
     - KubeEdge Helm Repository: The Helm application repository for KubeEdge. If the desired Helm repository is not available in the dropdown options, you can click the __Create Repository__ button on the right to create a new Helm repository.
 
-    - Kant Image Repository: The image repository for the required cloud components, where "Kant" refers to the cloud-edge collaboration module.
-        - Default: The system-provided default image repository address, storing images of the required cloud components for the cloud-edge collaboration module, such as kant-worker-admission.
-        - Custom: If the user stores the required cloud component images in their own image repository, they can choose a custom repository address.
+    - Kant Container Registry: The container registry for the required cloud components, where "Kant" refers to the cloud-edge collaboration module.
+        - Default: The system-provided default container registry address, storing images of the required cloud components for the cloud-edge collaboration module, such as kant-worker-admission.
+        - Custom: If the user stores the required cloud component images in their own container registry, they can choose a custom repository address.
 
     - Kant Helm Repository: The Helm application repository for the required cloud components, where "Kant" refers to the cloud-edge collaboration module. If the desired Helm repository is not available in the dropdown options, you can click the __Create Repository__ button on the right to create a new Helm repository.
 
@@ -70,7 +70,7 @@ The following steps explain how to create an edge unit:
 
     !!! note
 
-        If you want to modify the default values for KubeEdge and Kant image repositories, you can navigate to the **Global cluster kant-system namespace** and modify the corresponding parameters in the ConfigMap configuration file: kubeedgeImageRepo and kantImageRepo.
+        If you want to modify the default values for KubeEdge and Kant container registries, you can navigate to the **Global cluster kant-system namespace** and modify the corresponding parameters in the ConfigMap configuration file: kubeedgeImageRepo and kantImageRepo.
         
         - ConfigMap configuration file name: dynamic-properties-config
         - Example parameters are as follows:
@@ -80,7 +80,7 @@ The following steps explain how to create an edge unit:
           kantAPIServerProperties: |-
            {
             ...
-            # Default values for KubeEdge and Kant image repositories
+            # Default values for KubeEdge and Kant container registries
             "kubeedgeImageRepo": "docker.m.daocloud.io/kubeedge",
             "kantImageRepo": "release-ci.daocloud.io/kant",
            }

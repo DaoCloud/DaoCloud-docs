@@ -1,7 +1,7 @@
 # Overview of Edge Applications
 
 The platform supports deploying container applications to edge nodes. Container applications can
-directly pull images from the image repository.
+directly pull images from the container registry.
 
 The architecture of the container image must be consistent with the architecture of the edge node.
 

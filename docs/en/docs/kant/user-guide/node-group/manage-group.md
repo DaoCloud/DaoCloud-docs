@@ -26,7 +26,7 @@ Follow these steps:
 
 1. Go to the edge unit details page and select the left menu __Edge Resources__ -> __Node Groups__ .
 
-2. On the right side of the node group list, click the __⋮__ button and select __Delete__ from the popup menu.
+2. On the right side of the node group list, click the __┇__ button and select __Delete__ from the popup menu.
 
 3. Click __OK__ to finish the deletion.
 
