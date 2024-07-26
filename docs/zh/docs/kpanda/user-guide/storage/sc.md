@@ -14,7 +14,7 @@
 
 1. 在集群列表中点击目标集群的名称，然后在左侧导航栏点击 __容器存储__ -> __存储池(SC)__ -> __YAML 创建__ 。
 
-    ![路径](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/sc01.png)
+    ![路径](../images/sc01.png)
 
 2. 在弹框中输入或粘贴事先准备好的 YAML 文件，然后在弹框底部点击 __确定__ 。
 
@@ -26,7 +26,7 @@
 
 1. 在集群列表中点击目标集群的名称，然后在左侧导航栏点击 __容器存储__ -> __存储池(SC)__ -> __创建存储池(SC)__ 。
 
-    ![路径](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/sc03.png)
+    ![路径](../images/sc03.png)
 
 2. 填写基本信息，然后在底部点击 __确定__ 。
 
@@ -54,13 +54,13 @@
 
         目前 Hwameistor xfs、ext4 两种文件系统，其中默认使用的是 xfs 文件系统，如果想要替换为 ext4，可以在自定义参数添加 __csi.storage.k8s.io/fstype: ext4__ 
 
-    ![基本信息](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/sc04.jpg)
+    ![基本信息](../images/sc04.png)
 
 ## 更新存储池(SC)
 
 在存储池列表页面，找到需要更新的存储池，在右侧的操作栏下选择 __编辑__ 即可通过更新存储池。
 
-![更新](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/sc05.png)
+![更新](../images/sc05.png)
 
 !!! info
 
@@ -70,4 +70,4 @@
 
 在存储池列表页面，找到需要删除的存储池，在右侧的操作栏下选择 __删除__ 。
 
-![删除](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/sc06.png)
+![删除](../images/sc06.png)
