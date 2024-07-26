@@ -308,11 +308,12 @@ nav:
                   - NVIDIA GPU Management:
                       - NVIDIA GPU Modes: kpanda/user-guide/gpu/nvidia/index.md
                       - Install GPU Operator:
-                          - Install GPU Operator Offline: kpanda/user-guide/gpu/nvidia/install_nvidia_driver_of_operator.md
+                          - Offline Install GPU Operator: kpanda/user-guide/gpu/nvidia/install_nvidia_driver_of_operator.md
                           - Build Offline yum for CentOS 7.9: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_centos7_9.md
                           - Upload Red Hat GPU Opreator Image: kpanda/user-guide/gpu/nvidia/push_image_to_repo.md
                           - Build Offline yum for Red Hat 8.4: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_redhat8_4.md
                           - Build Offline yum for Red Hat 7.9: kpanda/user-guide/gpu/nvidia/yum_source_redhat7_9.md
+                          - Offline Install gpu-operator Driver on Ubuntu22.04: kpanda/user-guide/gpu/nvidia/ubuntu22.04_offline_install_driver.md
                       - NVIDIA GPU Full Card Mode: kpanda/user-guide/gpu/nvidia/full_gpu_userguide.md
                       - NVIDIA vGPU Mode:
                           - Install vGPU Addon: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_addon.md
