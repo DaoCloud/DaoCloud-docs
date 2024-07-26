@@ -160,11 +160,13 @@ nav:
                   - View a Canary Delivery Job: amamba/user-guide/release/check-canary.md
                   - Create Blue/Green Job: amamba/user-guide/release/blue-green.md
                   - View Blue/Green Job: amamba/user-guide/release/check-bluegreen.md
+              - Repository: 
+                  - Manage Your Repository: amamba/user-guide/git/git.md
               - Toolchain Integration:
                   - Integrate Toolchain: amamba/user-guide/tools/integrated-toolchain.md
                   - Manage Toolchain Instances: amamba/user-guide/tools/toolchain-instances.md
                   - R&D Project Management:
-                      - Check Issues: amamba/user-guide/project-mangement/issue.md
+                      - Check Issues: amamba/user-guide/pm/issue.md
               - FAQs:
                   - Pipeline FAQs: amamba/faq/faq-jenkins.md
                   - GitOps FAQs: amamba/faq/faq-gitops.md
@@ -247,7 +249,7 @@ nav:
                   - Helm Charts: kpanda/user-guide/helm/README.md
                   - Upload Helm Charts: kpanda/user-guide/helm/upload-helm.md
                   - Helm Apps: kpanda/user-guide/helm/helm-app.md
-                  - Helm Registries: kpanda/user-guide/helm/helm-repo.md
+                  - Helm Repository: kpanda/user-guide/helm/helm-repo.md
                   - Multi-arch Helm Apps: kpanda/user-guide/helm/multi-archi-helm.md
                   - Import Custom Helm App into Addon: kpanda/user-guide/helm/Import-addon.md
               - Operator:
@@ -315,6 +317,7 @@ nav:
                       - NVIDIA vGPU Mode:
                           - Install vGPU Addon: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_addon.md
                           - Use NVIDIA vGPU: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_user.md
+                          - Build vGPU Oversubscription Image: kpanda/user-guide/gpu/nvidia/vgpu/hami.md
                       - NVIDIA MIG Mode:
                           - Overview: kpanda/user-guide/gpu/nvidia/mig/index.md
                           - Enable MIG Features: kpanda/user-guide/gpu/nvidia/mig/create_mig.md
@@ -332,7 +335,7 @@ nav:
                       - Use GPU: kpanda/user-guide/gpu/ascend/ascend_usage.md
                       - Enable Ascend VNPU: kpanda/user-guide/gpu/ascend/vnpu.md
                   - Iluvatar GPU: kpanda/user-guide/gpu/Iluvatar_usage.md
-                  
+                  - GPU FAQs: kpanda/user-guide/gpu/FAQ.md
               - Best Practices:
                   - Back up and Restore etcd: kpanda/best-practice/etcd-backup.md
                   - Cross-cluster Backup and Restore of MySQL Apps: kpanda/best-practice/backup-mysql-on-nfs.md
@@ -623,14 +626,17 @@ nav:
                   - Install Dependencies: virtnest/install/install-dependency.md
                   - Offline Upgrade: virtnest/install/offline-install.md
                   - Install virtnest-agent: virtnest/install/virtnest-agent.md
+              - Quick Start:
+                  - Create VM: virtnest/quickstart/index.md
+                  - Update VM: virtnest/quickstart/update.md
+                  - Access VM: virtnest/quickstart/access.md
+                  - Access VM by NodePort: virtnest/quickstart/nodeport.md
+                  - VM Details: virtnest/quickstart/detail.md
               - Manage Virtual Machine:
-                  - Create VM: virtnest/vm/index.md
                   - Create Windows VM: virtnest/vm/vm-windows.md
                   - Create Secret: virtnest/vm/create-secret.md
-                  - Access VM: virtnest/vm/access.md
                   - Snapshots: virtnest/vm/snapshot.md
                   - Live Migration: virtnest/vm/live-migration.md
-                  - Access VM by NodePort: virtnest/vm/nodeport.md
                   - VM Monitor: virtnest/vm/monitor.md
                   - VM GPU: virtnest/vm/vm-gpu.md
                   - VM Network: virtnest/vm/vm-network.md
@@ -1124,6 +1130,8 @@ nav:
                   - Deploy NFS to Preheat Dataset: baize/best-practice/deploy-nfs-in-worker.md
                   - Update Notebook Built-in Images: baize/best-practice/change-notebook-image.md
                   - Checkpoint Mechanism and Usage: baize/best-practice/checkpoint.md
+                  - Fine-Tune ChatGLM3 with Intelligent Engine: baize/best-practice/finetunel-llm.md
+                  - Submit a DeepSpeed Training Task: baize/best-practice/train-with-deepspeed.md
               - Troubleshoot:
                   - index: baize/troubleshoot/index.md
                   - Notebook Not Controlled by Queue Quotas: baize/troubleshoot/notebook-not-controlled-by-quotas.md

@@ -1,15 +1,17 @@
-# Deploy NFS for Dataset Preheating
+# Deploy NFS for Preheating Dataset
 
-## Background
+A **Network File System (NFS)** allows remote hosts to mount file systems over a network and
+interact with those file systems as though they are mounted locally. This enables
+system administrators to consolidate resources onto centralized servers on the network.
 
-Datasets are a core data management function in intelligent computing power.
-By abstracting the dependency on data throughout the entire lifecycle of `MLOps`
+**Dataset** is a core feature provided by DCE 5.0 Intelligent Engine.
+By abstracting the dependency on data throughout the entire lifecycle of MLOps
 into datasets, users can manage various types of data in datasets so that
 training tasks can directly use the data in the dataset.
 
 When remote data is not within the worker cluster, datasets provide the capability
 to automatically preheat data, supporting data preheating from sources such as
-`Git`, `S3`, `HTTP`, `NFS` to the local cluster.
+`Git`, `S3`, and `HTTP` to the local cluster.
 
 A storage service supporting the `ReadWriteMany` mode is needed for preheating
 remote data for the `dataset`, and it is recommended to deploy NFS within the cluster.
@@ -108,9 +110,11 @@ spec:
       volumes:
         - name: nfs-vol
           hostPath:
-            path: /nfsdata  # Modify this to specify another path to store NFS shared data
+            path: /nfsdata  # (1)!
             type: DirectoryOrCreate
 ```
+
+1. Modify this to specify another path to store NFS shared data
 
 Save the above YAML as `nfs-server.yaml`, then run the following commands for deployment:
 

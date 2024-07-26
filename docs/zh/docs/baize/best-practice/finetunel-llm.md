@@ -28,7 +28,7 @@ Demo 程序来自 [ChatGLM3](https://github.com/THUDM/ChatGLM3/blob/main/finetun
 
 ### 代码及模型文件
 
-[ChatGLM3](https://github.com/THUDM/ChatGLM3) 是智谱 AI 和清华大学 KEG 实验室联合发布的对话预训练模型。
+[ChatGLM3](https://github.com/THUDM/ChatGLM3) 是[智谱 AI](https://www.zhipuai.cn/) 和清华大学 KEG 实验室联合发布的对话预训练模型。
 
 先拉取 ChatGLM3 代码仓库，下载预训练模型，用于后续的微调任务。
 
@@ -246,7 +246,7 @@ convert_adgen('data/AdvertiseGen', 'data/AdvertiseGen_fix')
 ### 使用 `baizectl` 提交任务
 
 DCE 5.0 智能算力的 Notebook 支持免认证直接使用 `baizectl` 命令行工具，
-如果您喜欢使用 `CLI`，那么可以直接使用 `baizectl` 提供的命令行工具，提交任务。
+如果您喜欢使用 CLI，那么可以直接使用 `baizectl` 提供的命令行工具，提交任务。
 
 ```bash
 baizectl job submit --name finetunel-chatglm3 -t PYTORCH \

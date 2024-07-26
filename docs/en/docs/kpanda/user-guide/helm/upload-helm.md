@@ -30,12 +30,12 @@ This article explains how to upload Helm charts. See the steps below.
             helm cm-push ${charts-dir} ${HELM_REPO_URL} --username ${username} --password ${password}
             ```
 
-            Parameter descriptions:
+            Argument descriptions:
 
-            - `charts-dir`: The directory of the Helm Chart, you can also directly push a packaged chart (i.e., a .tgz file).
-            - `HELM_REPO_URL`: URL of the Helm repository.
-            - `username`/`password`: Username and password with push permissions for the Helm repository.
-            - If using https access, add the parameter `--insecure`
+            - `charts-dir`: The directory of the Helm Chart, or the packaged Chart (i.e., .tgz file).
+            - `HELM_REPO_URL`: The URL of the Helm repository.
+            - `username`/`password`: The username and password for the Helm repository with push permissions.
+            - If you want to access via HTTPS and skip the certificate verification, you can add the argument `--insecure`.
 
     === "Upload with Web Page"
 

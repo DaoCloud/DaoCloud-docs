@@ -1,303 +1,276 @@
+---
+MTPE: WANG0608GitHub
+date: 2024-07-22
+---
+
 # Known Network Component Issues and Kernel Compatibility
 
 This page summarizes known issues with various network components that may have a significant impact on production environments, along with some recommendations and solutions.
 
 ## kube-proxy
 
-### IPVS Mode - 1s Delay or Request Failure When Accessing Services
+### IPVS mode
 
-**Symptoms:**
+Accessing services may encounter 1s delay or failed requests.
 
-1. 1-second delay when accessing services through a Service.
-2. Some requests fail during rolling updates.
+- Symptoms:
 
-**Impact:**
+    1. Accessing services through Service experiences a 1s delay.
+    2. Some requests fail during a rolling update.
 
-| k8s Version | kube-proxy Behavior | Phenomenon |
-| --- | --- | --- |
-| <=1.17 | net.ipv4.vs.conn_reuse_mode=0 | RealServer cannot be removed, causing some requests to fail during rolling updates.|
-| >=1.19 | net.ipv4.vs.conn_reuse_mode=0 (kernel > 4.1)<br />net.ipv4.vs.conn_reuse_mode=1 (kernel < 4.1) | CentOS 7.6-7.9, default kernel version below 4.1, experiencing a 1s delay when accessing services through a Service.<br />CentOS 8 default kernel 4.16 above 4.1, RealServer cannot be removed, causing some requests to fail during rolling updates.|
-| >=1.22 | Do not modify net.ipv4.vs.conn_reuse_mode (kernel > 5.6)<br />net.ipv4.vs.conn_reuse_mode=0 (kernel > 4.1)<br />net.ipv4.vs.conn_reuse_mode=1 (kernel < 4.1) | CentOS 7.6-7.9, default kernel version below 4.1, experiencing a 1s delay when accessing services through a Service.<br />CentOS 8 default kernel 4.16 above 4.1, RealServer cannot be removed, causing some requests to fail during rolling updates. <br />Ubuntu 22.04 default kernel version 5.15, above 5.9 kernel, does not have this issue.|
+- Impacts：
 
-**Recommendation:** For systems with kernels below 5.9, the use of IPVS mode is not recommended.
+    | kubernetes Versions | kube-proxy Behaviors | Symptoms |
+    | ------ | -------------- | -------- |
+    | <= v1.17 | net.ipv4.vs.conn_reuse_mode=0 | RealServer could not be removed, and some requests fail during a rolling update. |
+    | >= v1.19 | net.ipv4.vs.conn_reuse_mode=0 (kernel > v4.1)<br />net.ipv4.vs.conn_reuse_mode=1 (kernel < v4.1) | The default kernel version of CentOS 7.6-7.9 is earlier than v4.1, and accessing services through Service experiences a 1s delay. <br /> The default kernel version of CentOS 8 is higher than v4.1, and RealServer could not be removed, and some requests fail during a rolling update. |
+    | >= v1.22 | The net.ipv4.vs.conn_reuse_mode value (kernel > v5.6) is not modified<br />net.ipv4.vs.conn_reuse_mode=0 (kernel > v4.1)<br />net.ipv4.vs.conn_reuse_mode = 1 (kernel < v4.1) <br /> | The default kernel version of CentOS 7.6-7.9 is earlier than v4.1, and accessing services through Service experiences a 1s delay. <br /> The default kernel v4.16 of CentOS 8 is higher than v4.1, and RealServer could not be removed, and some requests fail during a rolling update. <br /> The default kernel v5.15 of Ubuntu 22.04 is higher than v5.9 kernel, and does not have the issue. |
 
-**Reference:** [Kubernetes Issue #93297](https://github.com/kubernetes/kubernetes/issues/93297)
+- Recommendation: IPVS mode is not recommended when the kernel version is below v5.9.
 
-### iptables Mode - Source Port NAT Not Random Enough, Causing 1s Delay
+- Reference: [Kubernetes Issue #93297](https://github.com/kubernetes/kubernetes/issues/93297)
 
-**Impact:**
+### iptables mode
 
-| Kernel | iptables Version | Phenomenon |
-| --- | --- | --- |
-| < 3.13 | 1.6.2 | Source port NAT not random enough, causing 1s delay.|
+- Symptom: The source port is not random enough after NAT, resulting in a 1s delay
 
-**Recommendation:** Refer to system distribution version, upgrade kernel.
+- Impact:
 
-### externalIPs Not Working Under externalTrafficPolicy: Local
+    | Kernel | iptables Version | Symptom |
+    | ------ | ------------- | ----- |
+    | < v3.13 | v1.6.2 | The source port is not random enough after NAT, resulting in a 1s delay |
 
-**Impact:**
+- Recommendation: An upgrade of the kernel version is advised by considering released versions.
 
-1.26.0 <= Affected Versions < 1.30.0
+### externalIPs does not work under `externalTrafficPolicy: Local`
 
-**Recommendation:** Upgrade to 1.30.0
+- Impact: v1.26.0 <= affected version < v1.30.0
 
-**Reference:**
+- Recommendation: Update kubernetes to v1.30.0
 
-https://github.com/kubernetes/kubernetes/pull/121919
+- Reference: [Kubernetes PR #121919](https://github.com/kubernetes/kubernetes/pull/121919)
 
-### Delay in Service Endpoint Rule Updates
+### When endpoint in Service is updated, the rules of new endpoint don't take effect until much later
 
-**Impact:**
+- Impact: v1.27.0 <= affected versions < v1.30.0
 
-1.27.0 <= Affected Versions < 1.30.0
+- Recommendation: Update kubernetes to v1.30.0
 
-**Recommendation:** Upgrade to 1.30.0
+- Reference: [Kubernetes PR #122204](https://github.com/kubernetes/kubernetes/pull/122204)
 
-**Reference:**
+### LoadBalancerSourceRanges does not work properly in nftables mode
 
-https://github.com/kubernetes/kubernetes/pull/122204
+- Recommendation: Update kubernetes to v1.30.0
 
-### LoadBalancerSourceRanges Not Working in nftables Mode
+- Reference: [Kubernetes PR #122614](https://github.com/kubernetes/kubernetes/pull/122614)
 
-**Recommendation:** Upgrade to 1.30.0
+### iptables nft and legacy mode selection issue
 
-**Reference:**
+- Impacts:
 
-https://github.com/kubernetes/kubernetes/pull/122614
+    | Versions | Behaviors | Impacts |
+    | ------- | --- | --- |
+    | < v1.18 | Using iptables-legacy | kube-proxy may not work |
+    | >= v1.18 | Prefer to choose nft | None |
 
-### Iptables nft and legacy Mode Selection Issue
-
-**Impact:**
-
-| Version | Behavior | Impact |
-| --- | --- | --- |
-| <v1.18 | Uses iptables-legacy | Kube-proxy might not work. |
-| >=v1.18 | Automatically calculated, prioritizes nft. | |
-
-**Reference:**
-
-https://github.com/kubernetes-sigs/iptables-wrappers/tree/master
+- Reference: [kubernetes-sigs/iptables-wrappers](https://github.com/kubernetes-sigs/iptables-wrappers/tree/master)
 
 ## Calico
 
-### Offload vxlan Causing Access Delay Issue
+### Offload VXLAN causes a delay during access
 
-**Impact:**
+- Impacts:
 
-| Calico Version | Behavior | Impact |
-| --- | --- | --- |
-| <v3.20 | Not handled | Kernel < 5.7, 63s delay between Pod and Service.|
-| >=v3.20 | Can configure through FelixConfiguration, offload vxlan off by default. | Leads to low NIC performance, only capable of 1-2 Gbps/s.|
-| >= 3.28 | Automatically enables vxlan offload on kernel 5.7, resolving previous issues with ClusterIP packet loss, improving performance. | Kernel < 5.7, leads to low NIC performance, only capable of 1-2 Gbps/s.|
+    | Calico Versions | Behaviors | Impacts |
+    | ---------- | ---- | --- |
+    | < v3.20 | No response | When the kernel version is lower than v5.7, a 63s delay experiences between pods and Service.|
+    | >= v3.20 | VXLAN offload is automatically disabled by default via FelixConfiguration.| The performance of NICs is low, only running 1-2 Gbps/s.|
+    | >= v3.28 |VXLAN offload is automatically enabled in kernel v5.7, addressing previous packet loss issues with ClusterIP and improving performance.| When the kernel version is lower than v5.7, the performance of NICs is low, only running 1-2 Gbps/s. |
 
-**Recommendation:** For older versions of Calico with access delay issues, the command `ethtool --offload vxlan.calico rx off tx off` can be used as a workaround.
+- Recommendations:
+    * When lower versions Calico have access latency issue, it can be avoided by `ethtool --offload vxlan.calico rx off tx off`.
+    * Higher versions Calico will automatically disable VXLAN offload by default, so customers with network performance requirements can update the kernel version to v5.7 to solve the problem.
 
-**Reference:**
+- References:
 
-* [Calico Issue #3145](https://github.com/projectcalico/calico/issues/3145)
-* [Felix Pull Request #2811](https://github.com/projectcalico/felix/pull/2811)
+    * [Calico Issue #3145](https://github.com/projectcalico/calico/issues/3145)
+    * [Felix PR #2811](https://github.com/projectcalico/felix/pull/2811)
 
-### vxlan Parent Device Changed, Routes Not Updated
+### The parent device of VXLAN is modified but the route is not updated
 
-**Impact:**
+- Impacts:
 
-| Calico Version | Behavior | Impact |
-| --- | --- | --- |
-| <v3.28.0 | Not handled | Route table not updated to use the new parent device, even after restarting felix, old routes cannot be cleaned. |
-| >=v3.28.0 | VXLAN manager recreates the route table when the parent device changes. | None |
+    | Calico Versions | Behaviors | Impacts |
+    | ----------- | -------------------------------------------------- | ------------------------------------------------------------ |
+    | < v3.28.0 | No response | If routing tables do not to use new parent NIC, old routes can't be cleaned up even after restarting felix. |
+    | >= v3.28.0 | The VXLAN Manager recreates a routing table when the parent device changes. | None |
 
-**Recommendation:** 
+- Recommendation: Update Calico to v3.28.0
 
-Upgrade to version v3.28.0.
+- Reference: [Calico PR #8279](https://github.com/projectcalico/calico/pull/8279)
 
-**Reference:**
+### Caches of Cluster calico-kube-controllers are out of sync, causing memory leaks
 
-https://github.com/projectcalico/calico/pull/8279
+- Recommendation: Update Calico to v3.26.0
 
-### Cluster calico-kube-controllers Cache Out of Sync, Causing Memory Leak
+### Inter-node networking is not functioning properly for pods in the IPIP mode
 
-**Recommendation:** 
+- Impacts:
 
-Upgrade to version v3.26.0.
+    | Calico Versions | Behaviors | Impacts |
+    | ----------- | --- | --- |
+    | < v3.28.0 | No response | The inter-node networking may fail for pods in kernel < v5.7 due to incompatibility between checksum calculation and `iptables --random-fully`. |
+    | >= v3.28.0 | The checksum calculation is disabled by default | None |
 
-### IPIP Mode Pod Cross-Node Network Not Communicating
+- Recommendation: Update Calico to v3.28.0+. For earlier versions, you can manually turn off the feature using the`ethtool -K tunl0 tx off` command.
 
-**Impact:**
+- Reference: [Calico PR #8031](https://github.com/projectcalico/calico/pull/8031)
 
-| Calico Version | Behavior | Impact |
-| --- | --- | --- |
-| <v3.28.0 | Not handled | Due to `iptables --random-fully` and checksum incompatibility, cross-node network may not work on kernel < 5.7. |
-| >=v3.28.0 | Checksum calculation disabled by default. | None |
+### iptables nft and legacy mode selection issue
 
-**Recommendation:** 
+- Impacts:
 
-Upgrade to version v3.28.0+. For lower versions, the command `ethtool -K tunl0 tx off` can be used to manually disable it.
+    | Calico Versions | Behaviors | Impacts |
+    | ----------- | --- | --- |
+    | < v3.26.0 | It needs to be specified manually, and there are some logical problems with automatic calculations. | Service network anomalies may occur due to a incorrect iptables mode selection. |
+    | >= v3.26.0 | Automatic calculation | None |
 
-**Reference:**
+- Recommendations: Update Calico to v3.26.0+. For earlier versions, you need to manually specify the `FELIX_IPTABLESBACKEND` variable with either the NFT or LEGACY option.
 
-https://github.com/projectcalico/calico/pull/8031
-
-### Iptables nft and legacy Mode Selection Issue
-
-**Impact:**
-
-| Calico Version | Behavior | Impact |
-| --- | --- | --- |
-| <v3.26.0 | Only supports manual specification, automatic calculation has logical issues. | Incorrect iptables mode selection may cause Service network anomalies. |
-| >=v3.26.0 | Automatically calculated. | None |
-
-**Recommendation:** 
-
-Upgrade to version v3.26.0+. For lower versions, manually specify the `FELIX_IPTABLESBACKEND` variable, options are NFT or LEGACY.
-
-**Reference:**
-
-https://github.com/projectcalico/calico/pull/7111
+- Reference: [Calico PR #7111](https://github.com/projectcalico/calico/pull/7111)
 
 ## Spiderpool
 
-**Recommendations:**
+- Recommendation: If you encounter the following problem, please try to update Spiderpool to a higher version to solve it.
 
-If you encounter the following problems, please try to update Spiderpool to a higher version to solve them.
+### Known issues in v0.9
 
-### Known issues in version 0.9
+#### SpiderCoordinator has an error synchronizing status, but the status is still running
 
-#### The spidercoordinator status is not as expected
+- Analysis: If getting the CIDR information for the cluster fails, we should update its status to NotReady, which prevents the pod from being created properly. Otherwise, the pod will run with an incorrect CIDR, which makes network connectivity fail.
 
-If the cluster CIDR information failed to be obtained, we should update its status to NotReady, which will prevent the normal creation of Pods. Otherwise, Pods will run with incorrect CIDRs, which will cause network connectivity problems.
+- Reference: [Spiderpool PR #2929](https://github.com/spidernet-io/spiderpool/pull/2929)
 
-**References:**
+#### `Values.multus.multusCNI.uninstall` does not take effect after setting, resulting in multus resources not being deleted correctly
 
-https://github.com/spidernet-io/spiderpool/pull/2929
+- Analysis: After `Values.multus.multusCNI.uninstall` set to true and Spiderpool uninstalled, multus-related resources are still present and not removed as expected.
 
-#### values.multus.multusCNI.uninstall function does not take effect
+- Reference: [Spiderpool PR #2974](https://github.com/spidernet-io/spiderpool/pull/2974)
 
-After Values.multus.multusCNI.uninstall is set to true, after uninstalling Spiderpool, it is found that multus related resources still exist and they are not deleted as expected.
+#### serviceCIDR cannot be gotten from kubeControllerManager pod when kubeadm-config is missing
 
-**Reference:**
+- Analysis: In some scenarios where kubeadm is not used to create a cluster, there may not be a kubeadm-config configMap,
+  so that an attempt will be made to get the serviceCIDR from kubeControllerManager.
+  Due to a bug, the serviceCIDR cannot be gotten from the kubeControllerManager pod, causing the SpiderCoordinator to fail to update status.
 
-https://github.com/spidernet-io/spiderpool/pull/2974
+- Reference: [Spiderpool PR #3020](https://github.com/spidernet-io/spiderpool/pull/3020)
 
-#### When kubeadm-config is missing, serviceCIDR cannot be obtained from kubeControllerManager Pod
+#### Upgrading from v0.7.0 to v0.9.0 will cause a panic due to a new attribute `TxQueueLen` to the SpiderCoordinator CRD
 
-In some scenarios, kubeadm is not used to create a cluster, and there may be no kubeadm-config configMap. It will try to obtain it from kubeControllerManager. However, due to a bug, serviceCIDR cannot be obtained from kubeControllerManager Pod, resulting in the failure of Spidercoordinator status update.
+- Analysis: In Spiderpool v0.9.0, a new attribute `TxQueueLen` is added to SpiderCoordinator CRD.
+  However, during the upgrade operation, there is no default value, which may cause a panic.
+  Therefore, you need to use it and treat it as default value 0.
 
-**Reference:**
+- Reference: [Spiderpool PR #3118](https://github.com/spidernet-io/spiderpool/pull/3118)
 
-https://github.com/spidernet-io/spiderpool/pull/3020
+#### Different cluster deployment methods cause SpiderCoordinator to return an empty serviceCIDR, which prevents pods to be create
 
-#### SpiderCoordinator CRD adds a new property TxQueueLen, which will cause panic when upgrading
+- Analysis: Due to different cluster deployment methods, there are two types of CIDRs recorded in the cluster kube-controller-manager pod:
 
-Spiderpool v0.9.0 adds a new property `TxQueueLen` to the SpiderCoordinator CRD, but it does not have a default value during the upgrade operation, which will cause panic. You need to use it and treat it as a default value of 0.
+    - `Spec.Containers[0].Command`
+    - `Spec.Containers[0].Args`
 
-**Reference:**
+    For example, the RKE2 cluster is `Spec.Containers[0].Args` instead of `Spec.Containers[0].Command`.
+    The `Spec.Containers[0].Command` is hardcoded in the original implementation logic, leading to a judgment error that results in an empty `serviceCIDR` and subsequently causes pods creation to fail.
 
-https://github.com/spidernet-io/spiderpool/pull/3118
+- Reference: [Spiderpool PR #3211](https://github.com/spidernet-io/spiderpool/pull/3211)
 
-#### spidercoordinator returns empty serviceCIDR
-
-Due to different cluster deployment methods, there are two types of CIDRs recorded in the cluster kube-controller-manager Pod: `Spec.Containers[0].Command` and `Spec.Containers[0].Args`. For example, the RKE2 cluster is `Spec.Containers[0].Args` instead of `Spec.Containers[0].Command`, and `Spec.Containers[0].Command` is hardcoded in the original logic, resulting in abnormal judgment, returning an empty serviceCIDR, and failing to create a Pod.
-
-**References:**
-
-https://github.com/spidernet-io/spiderpool/pull/3211
-
-### Known Issues in 0.8
+### Known Issues in v0.8
 
 #### ifacer cannot create bond using vlan 0
 
-When using vlan 0, creating a bond via ifacer will fail.
+- Analysis: Creating a bond via ifacer fails when vlan 0 is used.
 
-**References:**
+- Reference: [Spiderpool PR #2639](https://github.com/spidernet-io/spiderpool/pull/2639)
 
-https://github.com/spidernet-io/spiderpool/pull/2639
+#### The multus feature is disabled but multus CR resource still is created
 
-#### Disable multus feature, still create multus CR resource
+- Symptom: During installation, the multus feature is disabled, but the multus CR resource is still created, which is not as expected.
 
-When installing, multus feature is disabled, still create multus CR resource, which is not as expected.
+- Reference: [Spiderpool PR #2756](https://github.com/spidernet-io/spiderpool/pull/2756)
 
-**Reference:**
+#### spiderCoordinator fails to detect gateway connections in netns of pods
 
-https://github.com/spidernet-io/spiderpool/pull/2756
+- Analysis: Currently, spiderCoordinator uses a plugin to use errgroup to concurrently check for gateway reachability and IP conflicts to improve detection speed.
+  Each OS thread can have different network namespaces and the thread scheduling of Go is highly variable, so the caller is not guaranteed to set any particular namespaces.
+  However, when starting a goroutine in netns.Do, the code is not guaranteed to execute in the specified network namespace when the Go is running.
+  Therefore, the errgroup method of Go needs to be modified to manually switch to the target network namespace when starting goroutine, and then return to the original network namespace after execution to ensure that gateway reachability and IP conflicts can be checked.
 
-#### spidercoordinator cannot detect gateway connections in Pod's netns
+- Reference: [Spiderpool PR #2738](https://github.com/spidernet-io/spiderpool/pull/2738)
 
-Currently spidercoordinator uses plugins to use errgroup to concurrently check gateway reachability and IP conflicts to improve detection speed. Since each operating system thread can have a different network namespace and Go's thread scheduling is highly variable, the caller cannot guarantee to set any specific namespace, but when starting a goroutine in netns.Do, the Go runtime cannot guarantee that the code will be executed in the specified network namespace, so it is necessary to modify Go's errgroup method: manually switch to the target network namespace when starting the goroutine, and return to the original network namespace after execution, so as to ensure that gateway reachability and IP conflicts can be checked.
+#### The spiderpool-agent pod crashes when kubevirt fixed IP feature is turned off
 
-**Reference:**
+- Analysis: When the kubevirt fixed IP feature is turned off, the spiderpool-agent pod crashes and fails to run, affecting the overall IPAM functionality.
 
-https://github.com/spidernet-io/spiderpool/pull/2738
+- Reference: [Spiderpool PR #2971](https://github.com/spidernet-io/spiderpool/pull/2971)
 
-#### When kubevirt fixed IP function is turned off, spiderpool-agent Pod crashes
+#### SpiderIPPool resource does not inherit attributes of SpiderSubnet, such as gateway and route
 
-When kubevirt fixed IP function is turned off, spiderpool-agent Pod will crash and fail to run, affecting the overall IPAM function.
+- Analysis: If you create a SpiderSubnet resource first, and then create a SpiderIPPool resource for the corresponding subnet, the SpiderIPPool will inherit the gateway and routes of the SpiderSubnet.
+  However, if you create an isolated SpiderIPPool first, and then create the corresponding SpiderSubnet resource, the SpiderIPPool resource will not inherit the attributes of SpiderSubnet.
 
-**Reference:**
+- Reference: [Spiderpool PR #3011](https://github.com/spidernet-io/spiderpool/pull/3011)
 
-https://github.com/spidernet-io/spiderpool/pull/2971
+### Known issues in v0.7
 
-#### SpiderIPPool resource does not inherit the gateway and route attributes of SpiderSubnet
+#### IP conflicts will be notified when the StatefulSet type pod receives the IP allocation after restarting
 
-If you create a SpiderSubnet resource first, and then create a SpiderIPPool resource for the corresponding subnet, SpiderIPPool will inherit the gateway and routes of SpiderSubnet. However, if you first create an isolated SpiderIPPool and then create the corresponding SpiderSubnet resource; then the SpiderIPPool resource will not inherit the SpiderSubnet attributes.
+- Analysis: As the StatefulSet pod restarts, GC scanAll will release the previous IP address, because the system considers that the pod UID is different from the IP address recorded by IPPool so that notifies conflicts.
 
-**Reference:**
+- Reference: [Spiderpool PR #2538](https://github.com/spidernet-io/spiderpool/pull/2538)
 
-https://github.com/spidernet-io/spiderpool/pull/3011
+#### Spiderpool cannot recognize third-party controllers, preventing StatefulSet pod from having fixed IP addresses
 
-### Known issues in version 0.7
+- Symptom: Spiderpool cannot recognize third-party controllers like RedisCluster, so that the pod of StatefulSet controlled by them cannot use fixed IPs.
 
-#### Statefulset Pod cannot be restarted due to IP conflict
+- Analysis: For third party controllers: RedisCluster -> StatefulSet -> Pod, if Spiderpool sets SpiderSubnet autopool annotations for them, the pod will not start successfully.
 
-Since the StatefulSet Pod is restarted, GC scanAll will release the previous IP address at this time, because the system believes that the Pod UID is different from the IP address recorded by IPPool, thus prompting a conflict.
+- Reference: [Spiderpool PR #2370](https://github.com/spidernet-io/spiderpool/pull/2370)
 
-**Reference:**
+#### Empty `spidermultusconfig.spec` will cause the spiderpool-controller pod to crash
 
-https://github.com/spidernet-io/spiderpool/pull/2538
+- Symptom: After creating CR with empty `spidermultusconfig.spec`, webhook checksum succeeds, but the related
+  network-attachment-definitions is not generated and spiderpool-controller experiences a panic.
 
-#### Third-party controller support issues
+- Reference: [Spiderpool PR #2444](https://github.com/spidernet-io/spiderpool/pull/2444)
 
-For third-party controllers: RedisCluster -> StatefulSet -> Pod, if Spiderpool sets the SpiderSubnet automatic pool annotation for it, the Pod will not be able to start successfully.
+#### Cilium gets wrong overlayPodCIDR
 
-**Reference:**
+- Symptoms:
+    * In the auto SpiderCoordinator mode, it is failed to get `podCIDRType`, so that the status of SpiderCoordinator is not as expected after updating.
+    * Creating a Pod may cause network issues.
 
-https://github.com/spidernet-io/spiderpool/pull/2370
+- Reference: [Spiderpool PR #2434](https://github.com/spidernet-io/spiderpool/pull/2434)
 
-#### Empty spidermultusconfig.spec will cause spiderpool-controller Pod crash
+#### In a 1:1 Pod-to-IP scenario, IPAM allocation can be blocked, preventing some pods from running and affecting IP allocation performance
 
-Use empty spidermultusconfig.spec to create CR, webhook verification is successful, but no related network-attachment-definitions are generated, and spiderpool-controller panics.
+- Analysis: An IPPool with 1000 IP addresses and a Deployment with 1000 replicas is created.
+  After allocating a certain number of IP addresses, you will observe a significant decrease in allocation performance, even cannot continue to allocate IP addresses, while a pod cannot start normally without an IP address.
+  An actual IPPool resource has already recorded the pod and assigned its IP address, but the pod corresponding to the SpiderEndpoint does not exist.
 
-**Reference:**
+- Reference: [Spiderpool PR #2518](https://github.com/spidernet-io/spiderpool/pull/2518)
 
-https://github.com/spidernet-io/spiderpool/pull/2444
+#### After disabling the IP GC feature, the spiderpool-controller component will not start correctly due to a readiness health check failure
 
-#### Wrong overlayPodCIDR is obtained in cilium mode
+- Analysis: After disabling the IP GC feature, the spiderpool-controller component will not start correctly due to a readiness health check failure
 
-Spidercoordinator auto mode obtains the wrong `podCIDRType` type, and the update of spidercoordinator status does not meet expectations; creating Pods may cause network problems.
+- Reference: [Spiderpool PR #2532](https://github.com/spidernet-io/spiderpool/pull/2532)
 
-**Reference:**
+#### `IPPool.Spec.MultusName` specifies namespace/multusName, but the associated multusName cannot be found due to a namespace parsing error
 
-https://github.com/spidernet-io/spiderpool/pull/2434
+- Symptom: `IPPool.Spec.MultusName` specifies namespace/multusName, but a namespace parsing error makes the multusName unfindable, causinhg affinity to fail.
 
-#### IPAM allocation is blocked, affecting the performance of IP allocation
+- Analysis: The pod annotation `v1.multus-cni.io/default-network: kube-system/ipvlan-eth0` is specified.
+  However, due to Spiderpool's incorrect resolution of namespace, the wrong namespace is used when querying network-attachment-definitions, and the corresponding network-attachment-definitions not being found, so that the pod could not be created successfully.
 
-An IPPool with 1,000 IP addresses is created, and a Deployment with 1,000 replicas is created. After a certain number of IP addresses are allocated, it is observed that the allocation performance has dropped significantly, and even IP addresses cannot be allocated anymore. A Pod cannot start normally without an IP address. The Pod has been recorded in the actual IPPool resource and its IP has been allocated, but the Pod corresponding to the SpiderEndpoint does not exist.
-
-**Reference:**
-
-https://github.com/spidernet-io/spiderpool/pull/2518
-
-#### Disabling IP GC function, spiderpool-controller cannot start correctly
-
-Disable IP GC function, spiderpool-controller component will not start correctly due to readiness health check failure.
-
-**Reference:**
-
-https://github.com/spidernet-io/spiderpool/pull/2532
-
-#### IPPool.Spec.MultusName does not resolve the namespace correctly
-
-Specified Pod Annotation: `v1.multus-cni.io/default-network: kube-system/ipvlan-eth0`, due to Spiderpool's incorrect parsing of namespace, the wrong namespace is used when querying network-attachment-definitions, resulting in the failure to find the corresponding network-attachment-definitions, and thus the Pod cannot be successfully created.
-
-**Reference:**
-
-https://github.com/spidernet-io/spiderpool/pull/2514
+- Reference: [Spiderpool PR #2514](https://github.com/spidernet-io/spiderpool/pull/2514)

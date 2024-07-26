@@ -160,11 +160,13 @@ nav:
                   - 查看金丝雀发布任务: amamba/user-guide/release/check-canary.md
                   - 创建蓝绿发布任务: amamba/user-guide/release/blue-green.md
                   - 查看蓝绿发布任务: amamba/user-guide/release/check-bluegreen.md
+              - 代码仓库: 
+                  - 代码仓库管理: amamba/user-guide/git/git.md
               - 工具链集成:
                   - 集成工具链: amamba/user-guide/tools/integrated-toolchain.md
                   - 管理工具链实例: amamba/user-guide/tools/toolchain-instances.md
                   - 项目研发管理:
-                      - 查看缺陷: amamba/user-guide/project-mangement/issue.md
+                      - 查看缺陷: amamba/user-guide/pm/issue.md
               - 常见问题:
                   - 流水线相关问题: amamba/faq/faq-jenkins.md
                   - GitOps 相关问题: amamba/faq/faq-gitops.md
@@ -1161,6 +1163,7 @@ nav:
                   - 更新 Notebook 内置镜像: baize/best-practice/change-notebook-image.md
                   - Checkpoint 机制及使用介绍: baize/best-practice/checkpoint.md
                   - 使用 Baize 微调 ChatGLM3: baize/best-practice/finetunel-llm.md
+                  - 提交 DeepSpeed 训练任务: baize/best-practice/train-with-deepspeed.md
               - 故障排查:
                   - 故障排查索引: baize/troubleshoot/index.md
                   - Notebook 不受队列配额控制: baize/troubleshoot/notebook-not-controlled-by-quotas.md

@@ -4,6 +4,25 @@
 
 > 若视频显示有问题，请刷新页面，或尝试清除浏览器缓存。
 
+<style>
+.responsive-video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+}
+
+.responsive-video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+</style>
+
 ## 用户与访问控制
 
 ### 创建用户并授权
@@ -11,7 +30,7 @@
 参阅[创建用户并授权](../ghippo/user-guide/access-control/user.md)文档。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-user.mp4" preload="metadata" poster="images/ghippo-user.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/create-user.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/ghippo-user.png"></video>
 </div>
 
 ### 对接 LDAP 用户和用户组
@@ -19,7 +38,7 @@
 参阅 [LDAP](../ghippo/user-guide/access-control/ldap.md) 文档。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/ldap.mp4" preload="metadata" poster="images/ghippo-ldap"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/ldap.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/ghippo-ldap.png"></video>
 </div>
 
 ### 对接 OIDC 用户
@@ -27,7 +46,7 @@
 参阅 [OIDC](../ghippo/user-guide/access-control/oidc.md) 文档。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/oidc.mp4" preload="metadata" poster="images/ghippo-oidc.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/oidc.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/ghippo-oidc.png"></video>
 </div>
 
 ## 工作空间与层级
@@ -37,7 +56,7 @@
 参阅[管理工作空间](../ghippo/user-guide/workspace/workspace.md)文档。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/workspace.mp4" preload="metadata" poster="images/ghippo-workspace.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/workspace.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/ghippo-workspace.png"></video>
 </div>
 
 ### 管理文件夹 (Folder)
@@ -45,7 +64,7 @@
 参阅[管理文件夹](../ghippo/user-guide/workspace/folders.md)文档。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/manage-folder.mp4" preload="metadata" poster="images/ghippo-folder.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/manage-folder.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/ghippo-folder.png"></video>
 </div>
 
 ### 资源限额
@@ -53,7 +72,7 @@
 参阅[资源限额](../ghippo/user-guide/workspace/quota.md)文档。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/resourcequota.mp4" preload="metadata" poster="images/ghippo-resources.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/resourcequota.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/ghippo-resources.png"></video>
 </div>
 
 ## 审计日志
@@ -63,7 +82,7 @@
 参阅[开启审计日志](../ghippo/user-guide/audit/open-audit.md)文档。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/audit-on.mp4" preload="metadata" poster="images/ghippo-audit.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/audit-on.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/ghippo-audit.png"></video>
 </div>
 
 ### 关闭审计日志
@@ -71,7 +90,7 @@
 参阅[关闭审计日志](../ghippo/user-guide/audit/open-audit.md#_4)文档。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/audit-off.mp4" preload="metadata" poster="images/ghippo-auditoff.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/audit-off.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/ghippo-auditoff.png"></video>
 </div>
 
 ## 平台外观定制
@@ -79,7 +98,7 @@
 参阅[外观定制](../ghippo/user-guide/platform-setting/appearance.md)文档。
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/appearance.mp4" preload="metadata" poster="images/ghippo-appearance.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/appearance.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/ghippo-appearance.png"></video>
 </div>
 
 [下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
