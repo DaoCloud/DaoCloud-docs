@@ -14,7 +14,7 @@
   具体安装步骤可参考 [CSI Snapshotter](https://github.com/kubernetes-csi/external-snapshotter?tab=readme-ov-file#usage)。
 - 等待 snapshot-controller 组件准备就绪, 该组件会监控 VolumeSnapshot 和 VolumeSnapshotContent 相关事件，并触发相关操作。
 - 等待 CSI Driver 准备就绪, 确保 csi-snapshotter sidecar 跑在 CSI Driver 里，csi-snapshotter sidecar 会监控 VolumeSnapshotContent 相关事件，并触发相关操作。如 POC 使用的存储是 rook-ceph，可参考 [ceph-csi-snapshot](https://rook.io/docs/rook/latest-release/Storage-Configuration/Ceph-CSI/ceph-csi-snapshot/)
-  - 如存储是 Rook-Ceph，可参考 [ceph-csi-snapshot](https://rook.io/docs/rook/latest-release/Storage-Configuration/Ceph-CSI/ceph-csi-snapshot/)
+    - 如存储是 Rook-Ceph，可参考 [ceph-csi-snapshot](https://rook.io/docs/rook/latest-release/Storage-Configuration/Ceph-CSI/ceph-csi-snapshot/)
     - 如存储是 HwameiStor，可参考 [huameistor-snapshot](https://hwameistor.io/cn/docs/volumes/volume_snapshot)
 
 ## 创建快照
