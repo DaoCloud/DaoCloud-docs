@@ -123,7 +123,7 @@ agent:
 
 After the deployment is complete, you can run the following command to check if the EdgeMesh is successfully deployed.
 
-1. Select __Container Management__ -> __Clusters__ in the left navigation bar, enter the cluster list page, click on the cluster name to enter the cluster details page.
+1. Select __Container Management__ -> __Clusters__ in the left navigation bar, enter the cluster list page, click the cluster name to enter the cluster details page.
 
 1. Select __Helm Apps__ in the left menu, enter the Helm application list page.
 

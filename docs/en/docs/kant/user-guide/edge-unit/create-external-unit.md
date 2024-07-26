@@ -43,17 +43,17 @@ The following explains the steps to create an external edge unit:
 
 <!-- 3. Component repository settings. Settings for KubeEdge and Kant cloud-side component repositories;
 
-    - Kant Image Repository: The image repository required by the system for cloud-side components, where Kant refers to the Cloud Edge module.
-        - Default: The default image repository address provided by the system, storing the images of cloud-side components required by the Cloud Edge module, such as kant-worker-admission;
-        - Custom: If users store the system's cloud-side component images in their own image repository, they can choose a custom repository address.
+    - Kant Container Registry: The container registry required by the system for cloud-side components, where Kant refers to the Cloud Edge module.
+        - Default: The default container registry address provided by the system, storing the images of cloud-side components required by the Cloud Edge module, such as kant-worker-admission;
+        - Custom: If users store the system's cloud-side component images in their own container registry, they can choose a custom repository address.
 
     - Kant Helm Repository: The helm application repository required by the system for cloud-side components, where Kant refers to the Cloud Edge module. If the desired helm repository is not available in the dropdown options, click the __Create Repository__ button on the right to create a new helm repository.
 
-    - KubeEdge Image Repository (optional): KubeEdge cloud-side component image repository.
+    - KubeEdge Container Registry (optional): KubeEdge cloud-side component container registry.
 
     !!! note
 
-        When edge nodes are accessed, the KubeEdge edge-side image repository can use the cloud-side address as a reference, which is recommended. -->
+        When edge nodes are accessed, the KubeEdge edge-side container registry can use the cloud-side address as a reference, which is recommended. -->
 
 1. Fill in Advanced Settings
 

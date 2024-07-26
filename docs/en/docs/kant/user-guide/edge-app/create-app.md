@@ -41,7 +41,7 @@ Follow the steps below to create a stateless deployment using an image.
     below to view the configuration requirements for each section.
 
     > Container configuration is only applicable to a single container. If you need to add
-    > multiple containers in a container group, click the "+" button on the right to add multiple containers.
+    > multiple containers in a pod, click the "+" button on the right to add multiple containers.
 
     === "Basic Information (required)"
 
@@ -53,7 +53,7 @@ Follow the steps below to create a stateless deployment using an image.
           and hyphens ("-"). It must start and end with a lowercase letter or digit, for example, nginx-01.
         - Image: Enter the image address or name. When entering the image name, the
           image will be pulled from the official [DockerHub](https://hub.docker.com/) by default.
-          After accessing the image repository module of DCE 5.0, you can click the image selection
+          After accessing the container registry module of DCE 5.0, you can click the image selection
           on the right to choose an image.
         - Mirror Pull Policy: When the "Always pull the image" option is selected, the deployment will
           always pull the image from the repository each time it is restarted/upgraded. If not selected,
@@ -121,7 +121,7 @@ Follow the steps below to create a stateless deployment using an image.
 
     === "Labels and Annotations"
 
-        Click the __Add__ button to add labels and annotations to the deployment and container group.
+        Click the __Add__ button to add labels and annotations to the deployment and pod.
 
         ![Labels and Annotations](../images/create-app-11.png)
 

@@ -20,7 +20,7 @@ The following steps explain how to perform batch registration of edge nodes.
     - Name Prefix: The nodes accessed through the batch task will have names consisting of the "prefix + random code".
     - CGroup Driver: The control group (CGroup) driver used for managing resources and configurations of pods and containers, such as CPU and memory resource requests and limits.
     - CRI Service Address: The socket file or TCP address for local communication between CRI Client and CRI Server, for example, `unix:///run/containerd/containerd.sock`.
-    - KubeEdge Image Repository: The image repository for KubeEdge cloud components, automatically filled with the KubeEdge image repository address set in the edge unit but can be modified by the user.
+    - KubeEdge Container Registry: The container registry for KubeEdge cloud components, automatically filled with the KubeEdge container registry address set in the edge unit but can be modified by the user.
     - Description: Description of the batch task.
     - Labels: Labels for the batch task.
 

@@ -46,7 +46,7 @@ This page introduces the method of accessing the edge computing platform based o
 
 ## Verify Effect
 
-1. In the device list, click on the device name to enter the device details page
+1. In the device list, click the device name to enter the device details page
    and view the reported status values of the device.
 
     ![device details](../images/device-control-05.png)

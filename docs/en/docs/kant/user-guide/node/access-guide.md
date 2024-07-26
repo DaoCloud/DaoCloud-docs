@@ -75,7 +75,7 @@ When the edge node is first onboarded, the latest version of the EdgeCore edge c
 
     1. Select __Edge Computing__ -> __Cloud-Edge Collaboration__ from the left navigation bar to enter the edge unit list page.
 
-    1. Click on the edge unit name to enter the edge unit details page.
+    1. Click the edge unit name to enter the edge unit details page.
 
     1. Select __Edge Resources__ -> __Edge Nodes__ from the left navigation bar to enter the edge node list page.
 

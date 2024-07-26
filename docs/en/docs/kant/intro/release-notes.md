@@ -25,7 +25,7 @@ of the evolution path and feature changes in each version.
 #### New Features
 
 - **Added** support for user-defined installation of MQTT services
-- **Added** a feature of confguring workload upgrade strategy
+- **Added** a feature of confguring workload upgrade policy
 - **Added** a feature of configuring workload affinity
 - **Added** a feature of adding aliases for edge nodes
 
@@ -81,19 +81,19 @@ of the evolution path and feature changes in each version.
 
 #### New Features
 
-- **Added** support for custom terminal device access, compatible with multiple device protocols
+- **Added** support for custom end device access, compatible with multiple device protocols
 - **Added** service capabilities to support edge-to-edge communication
 - **Added** a feature to view container log information
 
 #### Improvements
 
 - **Improved** interaction for setting component Helm repository when creating edge units
-- **Improved** interaction for setting edge component image repository address when creating batch tasks
+- **Improved** interaction for setting edge component container registry address when creating batch tasks
 - **Improved** a feature of editing and deleting edge units in the "In Progress" state
 
 #### Fixes
 
-- **Fixed** an issue where the default image repository for edge units created in the Cloud Edge Collaboration installed via the installer was set to "release"
+- **Fixed** an issue where the default container registry for edge units created in the Cloud Edge Collaboration installed via the installer was set to "release"
 - **Fixed** an issue with abnormal edge unit status determination due to the addition of edge components
 
 ## 2023-11-06
@@ -105,8 +105,8 @@ of the evolution path and feature changes in each version.
 - **Added** a feature of batch registration and access of x86_64 and arm64 architecture edge computing machines as edge nodes
 - **Added** features of pausing/resuming the scheduling of edge nodes
 - **Added** a feature of removing edge nodes
-- **Added** a feature to show node information, such as Kubelet version, operating system, container runtime, resource usage/allocation status, etc.
-- **Added** a feature to show the list of container groups, labels and annotations, event list, and status on edge nodes
+- **Added** a feature to show node information, such as Kubelet version, operating system, container runtime, and resource usage/allocation status.
+- **Added** a feature to show the list of pods, labels and annotations, event list, and status on edge nodes
 - **Added** a feature of creating edge node groups through specified nodes or tag filtering
 - **Added** a feature of editing and deleting edge node groups
 - **Added** a feature of deploying applications to edge nodes as images
@@ -117,15 +117,15 @@ of the evolution path and feature changes in each version.
 - **Added** a feature of adding workload labels and annotations
 - **Added** support for multiple network access methods for workloads, including port mapping, host network, and no access
 - **Added** a feature of editing workload YAML
-- **Added** a feature of updating workloads, including container specifications, access configurations, deployment configurations, etc.
+- **Added** a feature of updating workloads, including container specifications, access configurations, and deployment configurations.
 - **Added** operations of restarting/stopping workloads
 - **Added** a feature to view workload event information
 - **Added** a feature of deploying applications to edge node groups as images in bulk
 - **Added** a feature of creating message routes to allow messages to be forwarded to corresponding endpoints based on configured routing rules
-- **Added** the access of Modbus protocol terminal device to the platform and realized the visual management
-- **Added** features of binding and unbinding terminal devices with registered edge nodes
+- **Added** the access of Modbus protocol end device to the platform and realized the visual management
+- **Added** features of binding and unbinding end devices with registered edge nodes
 - **Added** twin properties of adding, modifying, and deleting device
 - **Added** support for editing twin properties to change the expected values in the device twin information stored on edge nodes, allowing devices to synchronize and change their status accordingly
 - **Added** a feature of adding tags to devices, allowing for querying devices based on multiple tag key-value pairs
 - **Added** support for configuring device access settings to obtain device data
-- **Added** support for deleting terminal devices
+- **Added** support for deleting end devices

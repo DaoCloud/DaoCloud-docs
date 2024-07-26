@@ -31,7 +31,7 @@ Follow these steps to create an end device:
 
 4. Fill in the device settings, and you can add twins and labels.
 
-    - Twin Properties: Optional. Refers to the dynamic data of the end device, including proprietary real-time data such as the on/off state of a light, temperature, and humidity readings from a sensor, etc.
+    - Twin Properties: Optional. Refers to the dynamic data of the end device, including proprietary real-time data such as the on/off state of a light, temperature, and humidity readings from a sensor.
     - Labels: Optional. Classify and manage different device by assigning labels to them.
 
     ![Basic Info](../images/create-device-03.png)
@@ -87,7 +87,7 @@ The steps are as follows:
 
 1. Go to the edge unit details page and select the left menu __Edge Resources__ -> __End Devices__ .
 
-2. On the right side of the end device list, click the __⋮__ button and select __Bind Node__ from the popup menu.
+2. On the right side of the end device list, click the __┇__ button and select __Bind Node__ from the popup menu.
 
 3. In the dialog box, select the node to bind and click __OK__ to complete the binding of the edge node.
 

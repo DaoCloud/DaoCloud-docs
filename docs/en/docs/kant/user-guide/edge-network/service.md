@@ -51,7 +51,7 @@ Follow the steps below to update a service:
 
 1. Go to the Edge Unit details page and select __App Mesh__ -> __Service__ in the left navigation bar.
 
-2. Click the service name to enter the service details page. Click the __⋮__ button in the top right corner of the page, and select __Update__ from the pop-up menu to modify the service alias, label selector, port configuration, and session affinity settings.
+2. Click the service name to enter the service details page. Click the __┇__ button in the top right corner of the page, and select __Update__ from the pop-up menu to modify the service alias, label selector, port configuration, and session affinity settings.
 
     ![Update Service](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kant/images/service-03.png)
 
@@ -67,6 +67,6 @@ On the service details page, select the __Event__ tab to view service event info
 
 1. Go to the Edge Unit details page and select __App Mesh__ -> __Service__ in the left navigation bar.
 
-2. Click the service name to enter the service details page. Click the __⋮__ button in the top right corner of the page, and select __Delete__ from the pop-up menu to modify the service alias, label selector, port configuration, and session affinity settings.
+2. Click the service name to enter the service details page. Click the __┇__ button in the top right corner of the page, and select __Delete__ from the pop-up menu to modify the service alias, label selector, port configuration, and session affinity settings.
 
     ![Delete Service](../images/service-05.png)
