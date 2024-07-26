@@ -1,70 +1,68 @@
 ---
 MTPE: ModetaNiu
-DATE: 2024-07-25
+DATE: 2024-07-26
 ---
 
 # Virtual Machine Details
 
-The VM Detail page displays Basic Information, Settings, GPU Configuration, Overview, Storage, Network, Snapshot, 
-and Event List.
+After successfully [creating a virtual machine](../quickstart/index.md), you can enter the VM Detail page to view 
+Basic Information, Settings, GPU Settings, Overview, Storage, Network, Snapshot and Event List.
 
 Click __Container Management__ in the left navigation bar, then click __Clusters__ to enter the page of the cluster 
 where the virtual machine is located. Click the VM Name to view the virtual machine details.
 
 ### Basic Information
 
-- Status: The current running state of the virtual machine.
-- Alias: The alias of the virtual machine.
-- Cluster: The cluster where the virtual machine is located.
-- Namespace: The namespace where the virtual machine is located.
-- IP: The IP of the virtual machine. For virtual machines with multiple network interfaces, multiple IP will be assigned.
-- Label & Annotation: Set the labels and annotations for the virtual machine.
-- Node: The node running the virtual machine.
-- Username & Password: The username/password for logging into the virtual machine.
-- Create Time: The time when virtual machine was created.
+The basic information of VM includes Status, Alias, Cluster, Namespace, IP, Label, Annotation, Node, Username, Password, and Create Time.
 
-### Configuration Information
+- Status: The current running state of the virtual machine (Running / Processing / Power Off / Error).
+- IP: The IP of the virtual machine. For virtual machines with multiple network interfaces, multiple IP will be assigned.
+
+### Settings & GPU Settings
+
+Settings includes:
 
 - Operating System: The operating system installed on the virtual machine to execute programs.
 - Image Address: A link to a virtual hard disk file or operating system installation media, which is used to 
   load and install the operating system in the virtual machine software.
-- Network Mode: The network mode configured for the virtual machine.
+- Network Mode: The network mode configured for the virtual machine, including `Bridge` or `Masquerade(NAT)`.
 - CPU & Memory: The resources allocated to the virtual machine.
 
-### GPU Configuration
-
-- GPU Type: The type of GPU configured for the virtual machine.
-- GPU Model: The model of the GPU configured for the virtual machine.
-- Number of Cards: The number of GPU cards configured for the virtual machine.
+GPU Settings includes: GPU Type, GPU Model and GPU Counts
 
 ![VM Detail](../images/detail01.png)
 
-### Overview
+### Other Information
 
-The virtual machine overview page allows you to view the monitoring content of the virtual machine. 
-Please note that monitoring information cannot be obtained if insight-agent isn't installed.
+=== "Overview"
 
-### Storage
+    It allows you to view its insight content. Please note that if insight-agent is not installed, 
+    overview information cannot be obtained.
 
-It displays the storage used by the virtual machine, including information on the system disk and data disks.
+    ![Overview](../images/monitor02.png)
 
-![Storage](../images/detail-sc.png)
+=== "Storage"
 
-### Network
+    It displays the storage used by the virtual machine, including information about the system disk and data disk.
 
-It displays the network configuration of the virtual machine, including Multus CR, network interface names, IP addresses, and other information.
+    ![Storage](../images/detail-sc.png)
 
-![Network](../images/detail-network.png)
+=== "Network"
 
-### Snapshot
+    It displays the network settings of the virtual machine, including Multus CR, NIC Name, IP Address and so on.
 
-It displays the snapshot information of the virtual machine and supports restoring the virtual machine from snapshots.
+    ![Network](../images/detail-network.png)
 
-![Snapshots](../images/detail-snapshot.png)
+=== "Snapshots"
 
-### Event List
+    If you have [created snapshots](../vm/snapshot.md), this part will display relative information. 
+    Restoring the virtual machine from snapshots is supported.
 
-The event list includes various state changes, operation records, and system messages that occur during 
-the lifecycle of the virtual machine.
+    ![Snapshots](../images/detail-snapshot.png)
 
-![Events](../images/detail-event.png)
+=== "Event List"
+
+    The event list includes various state changes, operation records, and system messages during the lifecycle 
+    of the virtual machine.
+
+    ![Event List](../images/detail-event.png)
