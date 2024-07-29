@@ -34,7 +34,7 @@ Prerequisite: You have the platform administrator Admin permission or the access
 
 Prerequisite: The user already exists.
 
-1. The administrator enters __Access Control__ , selects __Users__ , enters the user list, and clicks __⋮__ -> __Authorization__ .
+1. The administrator enters __Access Control__ , selects __Users__ , enters the user list, and clicks __┇__ -> __Authorization__ .
 
     ![Menu](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/user-guide/images/authorize01.png)
 
@@ -50,7 +50,7 @@ Prerequisite: The user already exists.
 
 ## Add user to group
 
-1. The administrator enters __Access Control__ , selects __Users__ , enters the user list, and clicks __⋮__ -> __Add to Group__ .
+1. The administrator enters __Access Control__ , selects __Users__ , enters the user list, and clicks __┇__ -> __Add to Group__ .
 
     ![Add group menu](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/user-guide/images/joingroup01.png)
 
@@ -101,7 +101,7 @@ If the user forgets the password when logging in, please refer to [Reset Passwor
     If you are unsure, it is recommended to disable the user before deleting.
     If you delete a user and then create a new user with the same name, the new user is considered a new, separate identity that does not inherit the deleted user's roles.
 
-1. The administrator enters __Access Control__ , selects __Users__ , enters the user list, and clicks __⋮__ -> __Delete__ .
+1. The administrator enters __Access Control__ , selects __Users__ , enters the user list, and clicks __┇__ -> __Delete__ .
 
     ![Delete user](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/user-guide/images/deleteuser01.png)
 

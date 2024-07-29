@@ -74,7 +74,7 @@ integration depends on the customer system and needs to be handled based on spec
 ## Customizing Appearance
 
 Use __Global Management__ -> __Settings__ -> __Appearance__ to customize
-the platform's background color, logo, name, etc. For detailed instructions,
+the platform's background color, logo, and name. For detailed instructions,
 refer to [Appearance Customization](../user-guide/platform-setting/appearance.md).
 
 ## Permission System Integration (optional)

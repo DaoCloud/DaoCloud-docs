@@ -5,7 +5,7 @@ hide:
 
 # Architecture Management of Large Enterprises
 
-With the continuous expansion of business, the company's scale continues to grow, subsidiaries and branches are established one after another, and some subsidiaries even further establish subsidiaries. The original large departments are gradually subdivided into multiple smaller departments, leading to an increasing number of hierarchical levels in the organizational structure. This organizational structure change also affects the IT governance architecture.
+With the continuous scaling of business, the company's scale continues to grow, subsidiaries and branches are established one after another, and some subsidiaries even further establish subsidiaries. The original large departments are gradually subdivided into multiple smaller departments, leading to an increasing number of hierarchical levels in the organizational structure. This organizational structure change also affects the IT governance architecture.
 
 The specific operational steps are as follows:
 

@@ -8,7 +8,7 @@ DCE 5.0 supports the creation of three scopes of custom roles:
 
 ## Create a platform role
 
-A platform role refers to a role that can manipulate features related to a certain module of DCE 5.0 (such as container management, microservice engine, Multicloud Management, service mesh, Container registry, Workbench, and global management, etc.).
+A platform role refers to a role that can manipulate features related to a certain module of DCE 5.0 (such as container management, microservice engine, Multicloud Management, service mesh, Container registry, Workbench, and global management).
 
 1. From the left navigation bar, click __Global Management__ -> __Access Control__ -> __Roles__ , and click __Create Custom Role__ .
 
@@ -18,7 +18,7 @@ A platform role refers to a role that can manipulate features related to a certa
 
     ![fill](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/custom02.png)
 
-1. Return to the role list, search for the custom role you just created, and click __⋮__ on the right to perform operations such as copying, editing, and deleting.
+1. Return to the role list, search for the custom role you just created, and click __┇__ on the right to perform operations such as copying, editing, and deleting.
 
     ![other](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/custom03.png)
 
@@ -36,7 +36,7 @@ A workspace role refers to a role that can manipulate features related to a modu
 
     ![workspace](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/custom04.png)
 
-1. Return to the role list, search for the custom role you just created, and click __⋮__ on the right to perform operations such as copying, editing, and deleting.
+1. Return to the role list, search for the custom role you just created, and click __┇__ on the right to perform operations such as copying, editing, and deleting.
 
     ![other](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/custom05.png)
 
@@ -44,7 +44,7 @@ A workspace role refers to a role that can manipulate features related to a modu
 
 ## Create Folder Role
 
-The folder role refers to the ability to manipulate the relevant features of a module of DCE 5.0 (such as container management, microservice engine, Multicloud Management, service mesh, container registry, Workbench and global management, etc.) according to folders and subfolders. Role.
+The folder role refers to the ability to manipulate the relevant features of a module of DCE 5.0 (such as container management, microservice engine, Multicloud Management, service mesh, container registry, Workbench and global management) according to folders and subfolders. Role.
 
 1. From the left navigation bar, click __Global Management__ -> __Access Control__ -> __Roles__ , and click __Create Custom Role__ .
 
@@ -54,7 +54,7 @@ The folder role refers to the ability to manipulate the relevant features of a m
 
     ![folder](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/custom06.png)
 
-1. Return to the role list, search for the custom role you just created, and click __⋮__ on the right to perform operations such as copying, editing, and deleting.
+1. Return to the role list, search for the custom role you just created, and click __┇__ on the right to perform operations such as copying, editing, and deleting.
 
     ![other](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/custom07.png)
 

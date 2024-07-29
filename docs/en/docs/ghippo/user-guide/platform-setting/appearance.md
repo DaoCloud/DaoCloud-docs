@@ -31,7 +31,7 @@ In DCE 5.0, you have the option to customize the appearance of the login page, t
 
 ## Advanced Customization
 
-Advanced customization allows you to modify the color, font spacing, font size, etc. of the entire container platform using CSS styles. Please note that familiarity with CSS syntax is required.
+Advanced customization allows you to modify the color, font spacing, and font size of the entire container platform using CSS styles. Please note that familiarity with CSS syntax is required.
 
 To reset any advanced customizations, delete the contents of the black input box or click the __Revert__ button.
 

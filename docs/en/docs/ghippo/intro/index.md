@@ -5,7 +5,7 @@ workspaces and folders, audit logs, platform settings, and other fundamental mod
 
 - [Access Control](../user-guide/access-control/global.md): Enables users to manage resource access by creating, managing, deleting users/groups and configuring their permissions.
 
-- [Workspaces and Folders](../user-guide/workspace/ws-folder.md): provides a hierarchical structure for resource isolation and control over resource access. Users can set up a hierarchical structure depending on the development environment, department structure, etc., and control who has access to which resources.
+- [Workspaces and Folders](../user-guide/workspace/ws-folder.md): provides a hierarchical structure for resource isolation and control over resource access. Users can set up a hierarchical structure depending on the development environment, and department structure, and control who has access to which resources.
 
 - [Audit Logs](../user-guide/audit/audit-log.md): offer detailed operation records for security analysis and tracking resource changes.
 
@@ -36,7 +36,7 @@ policies, and other settings that simplify user operations and ensure a smooth e
 
 - Beginner Friendly
   
-    Most of the configuration has been done for users in advance, including password rules, session timeout policies, etc., simplifying user operations and making it ready to use.
+    Most of the configuration has been done for users in advance, including password rules and session timeout policies, simplifying user operations and making it ready to use.
 
 ## Procedure
 

@@ -27,7 +27,7 @@
 
 在 __用户操作__ 页签中，可以按时间范围，也可以通过模糊搜索、精确搜索来查找用户操作事件。
 
-点击某个事件最右侧的 __⋮__ ，可以查看事件详情。
+点击某个事件最右侧的 __┇__ ，可以查看事件详情。
 
 ![用户审计日志](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/audit02.png)
 
@@ -43,7 +43,7 @@
 
 在 __系统操作__ 页签中，可以按时间范围，也可以通过模糊搜索、精确搜索来查找系统操作事件。
 
-同样点击某个事件最右侧的 __⋮__ ，可以查看事件详情。
+同样点击某个事件最右侧的 __┇__ ，可以查看事件详情。
 
 ![系统事件详情](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/audit05.png)
 

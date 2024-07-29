@@ -364,7 +364,7 @@ so that you can understand the evolution path and feature changes of each versio
 #### Fixes
 
 - **Fixed** an issue where tokens could still be used after the key expired
-- **Fixed** an issue where the image repository was not controlled by the license
+- **Fixed** an issue where the container registry was not controlled by the license
 
 ## 2023-02-27
 
@@ -546,7 +546,7 @@ so that you can understand the evolution path and feature changes of each versio
 - **Added** product navigation -> homepage only displayed for admin users
 - **Added** workspace -> users can only view the tree structure of workspaces and folders they have permissions for
 - **Added** Keycloak high availability
-- **Added** mail server configuration -> support for sending emails from Insight and application workbench
+- **Added** mail server configuration -> support for sending emails from Insight and Workbench
 - **Added** compliance with Helm specifications, supporting installers and offline deployment
 - **Added** Audit Logs -> automatic creation and merging of database partitions
 - **Added** support for ARM64 architecture

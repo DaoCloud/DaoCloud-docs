@@ -1,4 +1,4 @@
-# Difference between Resource Groups and Shared Resources
+# Differences between Resource Groups and Shared Resources
 
 Both resource groups and shared resources support cluster binding, but they have significant differences in usage.
 
@@ -20,7 +20,7 @@ Currently, it is not supported to limit the cluster quota of secondary suppliers
 
 ## Differences in Resource Types
 
-- Resource Groups: Can bind to clusters, cluster-namespaces, multi-clouds, multi-cloud namespaces, grids, and grid-namespaces.
+- Resource Groups: Can bind to clusters, cluster-namespaces, multiclouds, multicloud namespaces, meshs, and mesh-namespaces.
 - Shared Resources: Can only bind to clusters.
 
 ## Similarities between Resource Groups and Shared Resources

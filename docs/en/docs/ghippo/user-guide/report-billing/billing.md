@@ -1,10 +1,11 @@
 ---
 MTPE: windsonsea
+Date: 2024-07-29
 hide:
   - toc
 ---
 
-# Accounting and Billing
+# Accounting & Billing
 
 Accounting and billing further process the usage data of resources based on reports.
 You can manually set the unit price and currency unit for CPU, memory, and storage.
@@ -49,8 +50,8 @@ Currently, the following reports are supported:
 
 ## Operating Steps
 
-1. Log in to DCE 5.0 as a user with the __admin__ role. Click on __Global Management__ -> __Operation Management__ at the bottom of the left navigation bar.
+1. Log in to DCE 5.0 as a user with the __admin__ role. Click __Global Management__ -> __Operations Management__ at the bottom of the left navigation bar.
 
     ![Report Management](../../images/gmagpiereport.png)
 
-2. After entering the **Operational Management** , switch to different menus to view billing reports for clusters, nodes, pods, etc.
+2. After entering the **Operations Management** , switch to different menus to view billing reports for clusters, nodes, and pods.

@@ -51,7 +51,7 @@ click modifyns "https://docs.daocloud.io/en/amamba/user-guide/namespace/namespac
 ## Prepare a Workspace
 
 Workspaces are designed to meet multi-tenant usage scenarios, forming isolated resource environments based on clusters,
-cluster namespaces, meshes, mesh namespaces, multi-cloud, multi-cloud namespaces, and other resources. Workspaces
+cluster namespaces, meshes, mesh namespaces, multicloud, multicloud namespaces, and other resources. Workspaces
 can be mapped to various concepts such as projects, tenants, enterprises, and suppliers.
 
 1. Log in to DCE 5.0 with a user having the admin/folder admin role and click __Global Management__ at the bottom of the left navigation bar.
@@ -68,7 +68,7 @@ can be mapped to various concepts such as projects, tenants, enterprises, and su
 
 ## Prepare a Cluster
 
-Workspaces are designed to meet multi-tenant usage scenarios, forming isolated resource environments based on clusters, cluster namespaces, meshes, mesh namespaces, multi-cloud, multi-cloud namespaces, and other resources. Workspaces can be mapped to various concepts such as projects, tenants, enterprises, and suppliers.
+Workspaces are designed to meet multi-tenant usage scenarios, forming isolated resource environments based on clusters, cluster namespaces, meshes, mesh namespaces, multicloud, multicloud namespaces, and other resources. Workspaces can be mapped to various concepts such as projects, tenants, enterprises, and suppliers.
 
 Follow these steps to prepare a cluster.
 
