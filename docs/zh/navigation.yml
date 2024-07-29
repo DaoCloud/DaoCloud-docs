@@ -1155,6 +1155,7 @@ nav:
                       - 环境管理: baize/developer/dataset/environments.md
                   - 推理服务:
                       - 创建推理服务: baize/developer/inference/create.md
+                      - 使用 vLLm 框架创建推理服务: baize/developer/inference/vllm-inferen.md
               - 运维管理:
                   - 介绍: baize/oam/index.md
                   - GPU 资源管理: baize/oam/resource.md
