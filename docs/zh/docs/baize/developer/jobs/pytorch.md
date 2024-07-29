@@ -79,22 +79,22 @@ Pytorch 是一个开源的深度学习框架，它提供了一个灵活的训练
 
 任务提交成功，我们可以进入任务详情查看到资源的使用情况，**右上角** 去往 `工作负载详情`，可以查看训练过程中的日志输出
 
-    ```bash
-    [HAMI-core Warn(1:140244541377408:utils.c:183)]: get default cuda from (null)
-    [HAMI-core Msg(1:140244541377408:libvgpu.c:855)]: Initialized
-    Epoch [10/100], Loss: 1.1248
-    Epoch [20/100], Loss: 1.0486
-    Epoch [30/100], Loss: 0.9969
-    Epoch [40/100], Loss: 0.9611
-    Epoch [50/100], Loss: 0.9360
-    Epoch [60/100], Loss: 0.9182
-    Epoch [70/100], Loss: 0.9053
-    Epoch [80/100], Loss: 0.8960
-    Epoch [90/100], Loss: 0.8891
-    Epoch [100/100], Loss: 0.8841
-    Training finished.
-    [HAMI-core Msg(1:140244541377408:multiprocess_memory_limit.c:468)]: Calling exit handler 1
-    ```
+```bash
+[HAMI-core Warn(1:140244541377408:utils.c:183)]: get default cuda from (null)
+[HAMI-core Msg(1:140244541377408:libvgpu.c:855)]: Initialized
+Epoch [10/100], Loss: 1.1248
+Epoch [20/100], Loss: 1.0486
+Epoch [30/100], Loss: 0.9969
+Epoch [40/100], Loss: 0.9611
+Epoch [50/100], Loss: 0.9360
+Epoch [60/100], Loss: 0.9182
+Epoch [70/100], Loss: 0.9053
+Epoch [80/100], Loss: 0.8960
+Epoch [90/100], Loss: 0.8891
+Epoch [100/100], Loss: 0.8841
+Training finished.
+[HAMI-core Msg(1:140244541377408:multiprocess_memory_limit.c:468)]: Calling exit handler 1
+```
 
 ### Pytorch 分布式任务
 
