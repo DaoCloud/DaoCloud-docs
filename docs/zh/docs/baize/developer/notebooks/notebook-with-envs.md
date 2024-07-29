@@ -6,7 +6,7 @@
 
 在创建 `Notebook` 时，可以选择一个或多个的环境 `Envs`，如果没有合适的环境，可以去 `环境管理` 中创建一个新的环境。
 
-![Attach Envs](../../images/notebook04.png)
+![Attach-Envs](../../images/notebook04.png)
 
 > 如何创建环境，请参考 [环境管理](../dataset/environments.md)。
 
@@ -31,11 +31,21 @@
 
 这个命令会列出所有的 `Conda` 环境，并在当前激活的环境前面加上一个星号（*）。
 
-## 切换环境
+## JupyterLab 的 Kernel 环境管理
+
+在 `Jupyterlab` 中，我们自动将 `Notebook` 关联的环境绑定到 `Kernel` 列表中，用户可以通过 `Kernel` 快速切换环境。
+
+![Switch-Envs](../../images/notebook05.png)
+
+通过以上办法，可以同时在一个 `Notebook` 中使用不同编写和调试算法。
+
+## Terminal 切换环境
+
+> 智能算力的 `Notebook` 目前也已经支持了 `VsCode`。
+
+如果您更喜欢在 `Terminal` 中管理和切换环境，可以安装如下步骤：
 
 在首次启动并使用 `Notebook` 时，需要先执行 `conda init`，然后再执行 `conda activate <env_name>` 切换到对应的环境。
-
-> 如果你更喜欢使用 `mamba` ，这里需要使用 `mamaba init` 和 `mamba activate <env_name>`。
 
     ```bash
     (base) jovyan@chuanjia-jupyter-0:~/yolov8$ conda init bash    # 初始化 bash 环境, 仅首次使用需要执行
@@ -69,6 +79,8 @@
     base                     /opt/conda
     baize-base               /opt/conda/envs/baize-base
     ```
+
+> 如果您更喜欢使用 `mamba` ，这里需要使用 `mamaba init` 和 `mamba activate <env_name>`。
 
 ## 查看环境中的包
 
@@ -107,4 +119,4 @@
 
 ## 更新环境的包
 
-目前，我们可以通过在智能算力的界面中，通过 `环境管理` 来更新环境中的包。
+目前，可以通过在智能算力的界面中 `环境管理` 来更新环境中的包。
