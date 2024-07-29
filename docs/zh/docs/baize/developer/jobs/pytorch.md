@@ -33,8 +33,7 @@ Pytorch 是一个开源的深度学习框架，它提供了一个灵活的训练
 - 启动命令 使用 `bash`
 - 命令参数使用
 
-```bash
-python -c "
+```python
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -72,7 +71,6 @@ for epoch in range(100):
         print(f'Epoch [{epoch+1}/100], Loss: {loss.item():.4f}')
 
 print('Training finished.')
-"
 ```
 
 #### 运行结果
@@ -108,9 +106,7 @@ Training finished.
 - 启动命令 使用 `bash`
 - 命令参数使用
 
-```bash
-python -u -c "
-
+```python
 import os
 import torch
 import torch.distributed as dist
@@ -213,7 +209,6 @@ def train():
 
 if __name__ == '__main__':
     train()
-"
 ```
 
 #### 任务副本数
