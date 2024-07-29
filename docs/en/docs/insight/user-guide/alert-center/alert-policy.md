@@ -28,7 +28,7 @@ You can see that some alert rules have been set under it. You can add more rules
 
     ![create rule](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/alert-policy05.png)
 
-    - Template rules: Pre-defined basic metrics that can monitor CPU, memory, disk, network, etc.
+    - Template rules: Pre-defined basic metrics that can monitor CPU, memory, disk, and network.
     - PromQL rules: Input a PromQL expression, please [query Prometheus expressions](https://prometheus.io/docs/prometheus/latest/querying/basics/).
     - Duration: After the alert is triggered and the duration reaches the set value, the alert policy will become a triggered state.
     - Alert level: Including emergency, warning, and information levels.
@@ -74,7 +74,7 @@ Creating event rules is supported only when the resource object is selected as a
 
 ## Other Operations
 
-Click __⋮__ at the right side of the list, then choose __Delete__ from the pop-up menu to delete an alert strategy. By clicking on the strategy name, you can enter the strategy details where you can add, edit, or delete the alert rules under it.
+Click __┇__ at the right side of the list, then choose __Delete__ from the pop-up menu to delete an alert policy. By clicking on the policy name, you can enter the policy details where you can add, edit, or delete the alert rules under it.
 
 ![alert rule](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/insight/images/alert-policy07.png)
 

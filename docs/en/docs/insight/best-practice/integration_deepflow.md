@@ -18,7 +18,7 @@ DeepFlow is an observability product based on eBPF. Its community edition has be
 
 Installing DeepFlow components requires two charts:
 
-- `deepflow`: includes components such as `deepflow-app`, `deepflow-server`, `deepflow-clickhouse`, `deepflow-agent`, etc.
+- `deepflow`: includes components such as `deepflow-app`, `deepflow-server`, `deepflow-clickhouse`, and `deepflow-agent`.
   Generally, `deepflow` is deployed in the global service cluster, so it also installs `deepflow-agent` together.
 - `deepflow-agent`: only includes the `deepflow-agent` component, used to collect eBPF data and send it to `deepflow-server`.
 

@@ -2,7 +2,7 @@
 
 By default, Insight collects node logs, container logs, and Kubernetes audit logs.
 In the log query page, you can search for standard output (stdout) logs within the permissions
-of your login account. This includes node logs, product logs, Kubernetes audit logs, etc.
+of your login account. This includes node logs, product logs, and Kubernetes audit logs.
 You can quickly find the desired logs among a large volume of logs. Additionally, you can
 use the source information and contextual raw data of the logs to assist in troubleshooting and issue resolution.
 
@@ -32,7 +32,7 @@ and the application is in __running__ state.
 1. Use logical operators (AND, OR, NOT, "") to query multiple keywords. For example: keyword1 AND (keyword2 OR keyword3) NOT keyword4.
 2. Use a tilde (~) for fuzzy queries. You can optionally specify a parameter after the "~" to control the similarity of the fuzzy query. If not specified, it defaults to 0.5. For example: error~.
 3. Use wildcards (*, ?) as single-character placeholders to match any character.
-4. Use square brackets [ ] or curly braces { } for range queries. Square brackets [ ] represent a closed interval and include the boundary values. Curly braces { } represent an open interval and exclude the boundary values. Range queries are applicable only to fields that can be sorted, such as numeric fields, date fields, etc. For example: timestamp:[2022-01-01 TO 2022-01-31].
+4. Use square brackets [ ] or curly braces { } for range queries. Square brackets [ ] represent a closed interval and include the boundary values. Curly braces { } represent an open interval and exclude the boundary values. Range queries are applicable only to fields that can be sorted, such as numeric fields and date fields. For example `timestamp:[2022-01-01 TO 2022-01-31]`.
 5. For more information, please refer to the [Lucene Syntax Explanation](../../reference/lucene.md).
 
 ## View log context

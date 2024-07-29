@@ -33,13 +33,13 @@ operations personnel, allowing them to focus on more critical issues.
 
 ## Edit Inhibition Rule
 
-Click **⋮** next to the target rule, then click **Edit** to enter the editing page for the inhibition rule.
+Click **┇** next to the target rule, then click **Edit** to enter the editing page for the inhibition rule.
 
     ![Edit Rules](../../user-guide/images/inhibition03.png){ width=1000px}
 
 ## Delete Inhibition Rule
 
-Click **⋮** next to the target rule, then click **Delete**. Enter the name of the inhibition rule in the input box 
+Click **┇** next to the target rule, then click **Delete**. Enter the name of the inhibition rule in the input box 
 to confirm deletion.
 
     ![Delete Rules](../../user-guide/images/inhibition04.png){ width=1000px}
