@@ -21,5 +21,6 @@ which offers one-stop solutions for model training, inference, model management,
 
 ## Common Troubleshooting Cases
 
+- [Cluster Not Found in Drop-Down List](./cluster-not-found.md)
 - [Notebook Not Controlled by Queue Quotas](./notebook-not-controlled-by-quotas.md)
 - [Queue Initialization Failed](./local-queue-initialization-failed.md)

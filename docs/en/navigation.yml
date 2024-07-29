@@ -1135,6 +1135,7 @@ nav:
                   - Submit a DeepSpeed Training Task: baize/best-practice/train-with-deepspeed.md
               - Troubleshoot:
                   - index: baize/troubleshoot/index.md
+                  - Cluster Not Found in Drop-Down List: baize/troubleshoot/cluster-not-found.md
                   - Notebook Not Controlled by Queue Quotas: baize/troubleshoot/notebook-not-controlled-by-quotas.md
                   - Queue Initialization Failed: baize/troubleshoot/local-queue-initialization-failed.md
       - Edge Computing:
