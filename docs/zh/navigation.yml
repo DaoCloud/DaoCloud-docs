@@ -986,6 +986,7 @@ nav:
                           - 更新 MySQL: middleware/mysql/user-guide/update.md
                           - 删除 MySQL: middleware/mysql/user-guide/delete.md
                       - 查看 MySQL 日志: middleware/mysql/user-guide/logs.md
+                      - MySQL 慢日志: middleware/mysql/user-guide/mysql-slow-query.md
                       - 实例拓扑: middleware/mysql/user-guide/instancemap.md
                       - 数据备份:
                           - 备份配置管理: middleware/mysql/user-guide/backup-restore/backup-config.md
@@ -1027,6 +1028,8 @@ nav:
                       - 查看 PostgreSQL 日志: middleware/postgresql/user-guide/logs.md
                       - 手工设置工作负载反亲和: middleware/postgresql/user-guide/antiaffinity.md
                       - 备份管理: middleware/postgresql/user-guide/backup.md
+                  - 参考文档:
+                      - 开启 PGVector 插件: middleware/postgresql/user-guide/pgvector.md
               - Redis 缓存服务:
                   - 介绍:
                       - 什么是 Redis: middleware/redis/intro/index.md
@@ -1057,12 +1060,14 @@ nav:
                       - Release Notes: middleware/elasticsearch/release-notes.md
                   - ES 集群容量规划: middleware/elasticsearch/user-guide/cluster-capacity-plan.md
                   - 快速入门:
-                      - 创建 ES 实例: middleware/elasticsearch/user-guide/create.md
-                      - 更新 ES 实例: middleware/elasticsearch/user-guide/edit.md
-                      - 删除 ES 实例: middleware/elasticsearch/user-guide/delete.md
+                      - 实例生命周期管理:
+                        - 创建 ES 实例: middleware/elasticsearch/user-guide/create.md
+                        - 更新 ES 实例: middleware/elasticsearch/user-guide/edit.md
+                        - 删除 ES 实例: middleware/elasticsearch/user-guide/delete.md
                       - 实例概览: middleware/elasticsearch/user-guide/basic.md
                       - 实例监控: middleware/elasticsearch/user-guide/monitor.md
                       - 查看 ES 日志: middleware/elasticsearch/user-guide/logs.md
+                      - 备份和恢复: middleware/elasticsearch/user-guide/snapshot-recover.md
                   - ES 故障排查: middleware/elasticsearch/faq/common-question-es.md
                   - 最佳实践:
                       - 双机房部署 ES: middleware/elasticsearch/bestpractice/esin2IDC.md 
