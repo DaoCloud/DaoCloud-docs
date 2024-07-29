@@ -38,6 +38,6 @@ Currently, the following reports are supported:
 
     ![Report Management](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/ghippo/images/gmagpiereport.png)
    
-2. After entering Operations Management, switch between different menus to view reports on clusters, nodes, pods, etc.
+2. After entering Operations Management, switch between different menus to view reports on clusters, nodes, and pods.
 
     ![Report](../../images/report01.png)

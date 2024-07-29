@@ -91,7 +91,7 @@ To meet the branch division of various departments in the enterprise, DCE introd
 
 [Resource](../user-guide/workspace/quota.md) generally refers to the resources created by
 each submodule on the DCE platform, which is the specific data to complete the authorization.
-Usually, resources describe one or more operation objects, and each submodule has its resources and corresponding resource definition details, such as clusters, namespaces, gateways, etc.
+Usually, resources describe one or more operation objects, and each submodule has its resources and corresponding resource definition details, such as clusters, namespaces, and gateways.
 
 The owner of the resource is the main account Admin. Admin has the authority to
 create/manage/delete resources in each submodule. Ordinary users will not automatically have

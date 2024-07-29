@@ -100,7 +100,7 @@ Follow the steps below to prepare a namespace that is not yet bound to any works
 
     
 
-1. Click __OK__ to complete the creation of the namespace. On the right side of the namespace list, click __⋮__ , and you can select __Bind Workspace__ from the pop-up menu.
+1. Click __OK__ to complete the creation of the namespace. On the right side of the namespace list, click __┇__ , and you can select __Bind Workspace__ from the pop-up menu.
 
     
 
