@@ -49,11 +49,11 @@
 
     | OS            | 内核版本 | 镜像名称                                                            |
     | ------------- | -------- | ------------------------------------------------------------------- |
-    | ubuntu22.04   | 5.15     | daocloud.io/nvidia/mellanox/mofed:23.10-0.5.5.0-ubuntu22.04-amd64   |
-    | ubuntu20.04   | 5.4      | daocloud.io/nvidia/mellanox/mofed:23.10-0.5.5.0-ubuntu22.04-amd64   |
-    | ubuntu18.04   | 4.15     | daocloud.io/daocloud/mellanox-mofed:23.07-0.5.0.0-ubuntu18.04-amd64 |
-    | RHEL9         | 5.14.0   | daocloud.io/daocloud/mellanox-mofed:23.10-0.5.5.0-rhel9.0-amd64     |
-    | RHEL8/Centos8 | 4.18.0   | daocloud.io/daocloud/mellanox-mofed:23.10-0.5.5.0-rhel8.8-amd64     |
+    | ubuntu22.04   | 5.15     | `daocloud.io/nvidia/mellanox/mofed:23.10-0.5.5.0-ubuntu22.04-amd64`   |
+    | ubuntu20.04   | 5.4      | `daocloud.io/nvidia/mellanox/mofed:23.10-0.5.5.0-ubuntu22.04-amd64`   |
+    | ubuntu18.04   | 4.15     | `daocloud.io/daocloud/mellanox-mofed:23.07-0.5.0.0-ubuntu18.04-amd64` |
+    | RHEL9         | 5.14.0   | `daocloud.io/daocloud/mellanox-mofed:23.10-0.5.5.0-rhel9.0-amd64`     |
+    | RHEL8/Centos8 | 4.18.0   | `daocloud.io/daocloud/mellanox-mofed:23.10-0.5.5.0-rhel8.8-amd64`     |
 
 - 集群不同节点的操作系统或架构可能是不同的，同一个镜像可能无法适用于集群所有节点。这种情况下，
   我们应该确保 Pod 运行在指定的节点。否则因为节点操作系统和架构的不同而导致安装驱动失败。
