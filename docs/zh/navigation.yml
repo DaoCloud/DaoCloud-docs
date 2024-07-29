@@ -1188,6 +1188,7 @@ nav:
                   - 管理边缘节点组: kant/user-guide/node-group/manage-group.md
               - 终端设备:
                   - 介绍: kant/user-guide/device/index.md
+                  - 创建设备模型: kant/user-guide/device/create-device-model.md
                   - 创建终端设备: kant/user-guide/device/create-device.md
                   - 管理终端设备: kant/user-guide/device/manage-device.md
               - 边缘应用:
@@ -1203,6 +1204,7 @@ nav:
                   - 部署 edgemesh 应用: kant/user-guide/edge-network/deploy-edgemesh.md
                   - 服务: kant/user-guide/edge-network/service.md
               - 最佳实践:
+                  - Modbus 设备接入实践: kant/best-practice/modbus-device-demo.md
                   - 智能设备控制: kant/best-practice/device-control.md
                   - 开发设备驱动应用mapper: kant/best-practice/develop-device-mapper.md
       - 管理:
