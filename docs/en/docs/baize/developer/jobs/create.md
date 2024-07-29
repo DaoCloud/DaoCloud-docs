@@ -18,7 +18,7 @@ training jobs.
 
     ![Create a Job](../../images/job01.png)
 
-2. The system will pre-fill basic configuration data, including the cluster, namespace, type, queue, priority, etc. 
+2. The system will pre-fill basic configuration data, including the cluster, namespace, type, queue, and priority. 
    Adjust these parameters and click **Next**.
 
     ![Bacis Info](../../images/job02.png)

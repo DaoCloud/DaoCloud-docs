@@ -66,7 +66,7 @@ so that you can learn its evolution path and feature changes.
 
 #### Features
 
-- **Added** `Notebook` now supports local SSH access, compatible with various development tools such as `Pycharm`, `VS Code`, etc.
+- **Added** `Notebook` now supports local SSH access, compatible with various development tools such as Pycharm, and VS Code.
 - **Added** upgrade `Notebook` image to support the built-in `CLI` tool `baizectl`,
   for command-line task submission and management.
 - **Added** `Notebook` adds affinity scheduling policy configuration.
@@ -77,7 +77,7 @@ so that you can learn its evolution path and feature changes.
   in `Notebook` and training tasks.
 - **Added** when editing queue quotas, hints are provided for the shared resource configuration of
   the current workspace.
-- **Added** upgrade and adapt Kueue version `v0.6.2`.
+- **Added** upgrade and adapt Kueue version to `v0.6.2`.
 
 #### Fixes
 

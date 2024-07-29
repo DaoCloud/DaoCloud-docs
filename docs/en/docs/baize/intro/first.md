@@ -54,8 +54,8 @@ If the cluster you want is not in the cluster list, you need to bind the cluster
 
 DCE 5.0 Intelligent Computing provides two roles. You can switch between the two administrator roles by clicking the menu item at the bottom left:
 
-- Administrator - Developer: With capabilities of Notebooks, training tasks, datasets, etc.
-- Platform Administrator - Operator: With capabilities of managing GPU resources, queues, etc.
+- Administrator - Developer: With capabilities of Notebooks, training tasks, and datasets.
+- Platform Administrator - Operator: With capabilities of managing GPU resources and queues.
 
 Each role has an overview page that displays the current data that can be processed through graphical dashboards.
 
