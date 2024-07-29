@@ -175,10 +175,10 @@ spec:
     获取离线依赖包后，请解压并加载对应的 deb 包
 
     ```shell
-    ~# mkdir ubuntu22.04-ofed-driver-offline-deb && tar -zxvf ubuntu22.04-ofed-driver-offline-deb.tar.gz
-    ~# cd ubuntu22.04-ofed-driver-offline-deb
-    ~# dpkg -i *.deb
-    ~# apt-get install -f
+    mkdir ubuntu22.04-ofed-driver-offline-deb && tar -zxvf ubuntu22.04-ofed-driver-offline-deb.tar.gz
+    cd ubuntu22.04-ofed-driver-offline-deb
+    dpkg -i *.deb
+    apt-get install -f
     ```
 
 - 本文以下载 iso 文件为例，下载文件并上传到主机。挂载到 `/mnt` 路径并执行安装命令。
@@ -186,6 +186,7 @@ spec:
     ```shell
     root@10-20-1-20:~/install# mount MLNX_OFED_LINUX-23.10-1.1.9.0-ubuntu22.04-x86_64.iso /mnt/
     mount: /mnt: WARNING: source write-protected, mounted read-only.
+    
     root@10-20-1-20:/mnt# ./mlnxofedinstall --with-nvmf --with-nfsrdma --all
     Logs dir: /tmp/MLNX_OFED_LINUX.86055.logs
     General log file: /tmp/MLNX_OFED_LINUX.86055.logs/general.log
