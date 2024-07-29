@@ -11,10 +11,13 @@
 
 在使用虚拟机网络功能之前，需要根据网络模式的不同配置不同的信息：
 
-1. 选择 Bridge 网络模式时需要提前配置一些信息：
+- 选择 Bridge 网络模式时需要提前配置一些信息：
 
-    -  创建 ovs 类型的 Multus CR，可参考[创建 Multus CR](https://spidernet-io.github.io/spiderpool/v0.9/usage/install/underlay/get-started-ovs-zh_CN/)
-    -  创建子网及 IP 池，参考[创建子网和 IP 池](../../network/config/ippool/createpool.md)
+    - 在主机节点上安装并运行 Open vSwitch, 可参考[这里](https://spidernet-io.github.io/spiderpool/v0.9/usage/install/underlay/get-started-ovs-zh_CN/#_1)
+    - 在主机节点上配置 Open vSwitch 网桥, 可参考[这里](https://spidernet-io.github.io/spiderpool/v0.9/usage/install/underlay/get-started-ovs-zh_CN/#open-vswitch)
+    - 安装 Spiderpool，可参考[安装 Spiderpool](https://docs.daocloud.io/network/modules/spiderpool/install/install/#_2), Spiderpool 默认会把 Multus CNI 和 Ovs CNI 都装上
+    - 创建 ovs 类型的 Multus CR，可参考[界面创建 Multus CR](https://docs.daocloud.io/network/config/multus-cr/#multus-cr_1) 或 [YAML 创建 Multus CR](https://spidernet-io.github.io/spiderpool/v0.9/usage/install/underlay/get-started-ovs-zh_CN/#spiderpool)
+    - 创建子网及 IP 池，参考[创建子网和 IP 池](../../network/config/ippool/createpool.md)
 
 ## 网络配置
 
@@ -37,9 +40,7 @@
 
         ![网络模式](../images/createvm-net01.png)
 
-        -  选择 Bridge 模式时，需要有一些前提条件。
-            - 创建 ovs 类型的 Multus CR，目前页面上无法创建，可参考[创建 ovs 类型的 Multus CR](https://spidernet-io.github.io/spiderpool/v0.9/usage/install/underlay/get-started-ovs-zh_CN/)
-            - 创建子网及 IP 池与 passt 模式步骤一致。
+        - 选择 Bridge 模式时，需要有一些[前提条件](https://docs.daocloud.io/virtnest/vm/vm-network/#_2)
 
 3. 添加网卡
    
