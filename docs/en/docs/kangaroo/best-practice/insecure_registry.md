@@ -28,7 +28,7 @@ in version `1.4`, and an old method that existed until version `2.0`.
 
 ### New Method
 
-Edit the `/etc/containerd/config.toml` file and locate the __config_path__ configuration option,
+Edit the `/etc/containerd/config.toml` file and locate the `config_path` configuration option,
 which has a default value of `/etc/containerd/certs.d`.
 
 ```yaml
