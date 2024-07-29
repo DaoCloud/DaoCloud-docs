@@ -1142,6 +1142,7 @@ nav:
                       - 查看 Notebook 工作负载: baize/developer/notebooks/view.md
                       - 删除 Notebook: baize/developer/notebooks/delete.md
                       - SSH 访问 Notebook: baize/developer/notebooks/notebook-with-ssh.md
+                      - Notebook 中使用环境: baize/developer/notebooks/notebook-with-envs.md
                       - baizectl 命令行工具: baize/developer/notebooks/baizectl.md
                   - 任务中心:
                       - 创建任务: baize/developer/jobs/create.md
@@ -1150,7 +1151,7 @@ nav:
                       - 任务分析: baize/developer/jobs/tensorboard.md
                   - 数据管理:
                       - 创建/使用/删除数据集: baize/developer/dataset/create-use-delete.md
-                      - 环境管理: baize/developer/dataset/conda.md
+                      - 环境管理: baize/developer/dataset/environments.md
                   - 推理服务:
                       - 创建推理服务: baize/developer/inference/create.md
               - 运维管理:
