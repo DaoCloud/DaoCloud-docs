@@ -166,6 +166,21 @@ spec:
 
         如果想要下载早期版本，请点击 Archive Version 切换。
 
+- 安装 OFED 驱动时，可能会通过 `apt install` 在线安装一些依赖，如果您是离线环境，无法访问外网, 可参考该步骤获取所有需要的依赖。
+
+    | OS Version | Architecture | File Size | Package | Update Date |
+    |----------|--------------|-----------|---------|----------|
+    | Ubuntu 22.04 | AMD 64  | 165.25 MB | [:arrow_down: ubuntu22.04-ofed-driver-offline-deb.tar.gz](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/ubuntu22.04-ofed-driver-offline-deb.tar.gz)  | 2024-07-29 |
+
+    获取离线依赖包后，请解压并加载对应的 deb 包
+
+    ```shell
+    ~# mkdir ubuntu22.04-ofed-driver-offline-deb && tar -zxvf ubuntu22.04-ofed-driver-offline-deb.tar.gz
+    ~# cd ubuntu22.04-ofed-driver-offline-deb
+    ~# dpkg -i *.deb
+    ~# apt-get install -f
+    ```
+
 - 本文以下载 iso 文件为例，下载文件并上传到主机。挂载到 `/mnt` 路径并执行安装命令。
 
     ```shell
