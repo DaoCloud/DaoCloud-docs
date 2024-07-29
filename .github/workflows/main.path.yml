@@ -63,8 +63,12 @@ jobs:
       - run: git clone git@github.com:DaoCloud/mkdocs-material-insiders.git mkdocs-material
       - run: pip install -e mkdocs-material
 
+      # Temporary fix for high version setuptools issue >72
+      - run: export PIP_CONSTRAINT=/home/runner/work/DaoCloud-docs/DaoCloud-docs/constraints.txt
+      - run: echo $PIP_CONSTRAINT
+
       # Runs a single command using the runners shell
-      - run: pip install mkdocs-git-revision-date-plugin \
+      - run: pip install --no-build-isolation mkdocs-git-revision-date-plugin \
               mkdocs-mermaid2-plugin \
               mkdocs-rss-plugin \
               mkdocs-minify-plugin \
