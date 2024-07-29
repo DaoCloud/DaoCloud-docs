@@ -15,5 +15,6 @@ hide:
 
 ## 常见故障案例
 
+- [集群下拉列表中找不到集群](./cluster-not-found.md)
 - [Notebook 不受队列配额控制](./notebook-not-controlled-by-quotas.md)
 - [队列初始化失败](./local-queue-initialization-failed.md)
