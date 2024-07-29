@@ -47,11 +47,11 @@ We can create a DaemonSet in the cluster to help install the driver, but the fol
 
     | OS            | Kernel Version | Image Name                                                                 |
     | ------------- | -------------- | -------------------------------------------------------------------------- |
-    | ubuntu22.04   | 5.15           | daocloud.io/nvidia/mellanox/mofed:23.10-0.5.5.0-ubuntu22.04-amd64         |
-    | ubuntu20.04   | 5.4            | daocloud.io/nvidia/mellanox/mofed:23.10-0.5.5.0-ubuntu22.04-amd64         |
-    | ubuntu18.04   | 4.15           | daocloud.io/daocloud/mellanox-mofed:23.07-0.5.0.0-ubuntu18.04-amd64       |
-    | RHEL9         | 5.14.0         | daocloud.io/daocloud/mellanox-mofed:23.10-0.5.5.0-rhel9.0-amd64           |
-    | RHEL8/Centos8 | 4.18.0         | daocloud.io/daocloud/mellanox-mofed:23.10-0.5.5.0-rhel8.8-amd64           |
+    | ubuntu22.04   | 5.15           | `daocloud.io/nvidia/mellanox/mofed:23.10-0.5.5.0-ubuntu22.04-amd64`         |
+    | ubuntu20.04   | 5.4            | `daocloud.io/nvidia/mellanox/mofed:23.10-0.5.5.0-ubuntu22.04-amd64`        |
+    | ubuntu18.04   | 4.15           | `daocloud.io/daocloud/mellanox-mofed:23.07-0.5.0.0-ubuntu18.04-amd64`       |
+    | RHEL9         | 5.14.0         | `daocloud.io/daocloud/mellanox-mofed:23.10-0.5.5.0-rhel9.0-amd64`           |
+    | RHEL8/Centos8 | 4.18.0         | `daocloud.io/daocloud/mellanox-mofed:23.10-0.5.5.0-rhel8.8-amd64`           |
 
 - The operating systems or architectures of different nodes in the cluster may be different, and the same image may not be applicable to all nodes in the cluster. In this case, we should ensure that the pod runs on the specified node. Otherwise, the installation of the driver will fail due to the difference in the node operating system and architecture.
 
@@ -172,18 +172,18 @@ For scenarios where the driver cannot be installed through Kubernetes, such as u
     After obtaining the offline dependency package, please decompress and load the corresponding deb package
 
     ```shell
-    ~# mkdir ubuntu22.04-ofed-driver-offline-deb && tar -zxvf ubuntu22.04-ofed-driver-offline-deb.tar.gz 
-    ~# cd ubuntu22.04-ofed-driver-offline-deb 
-    ~# dpkg -i *.deb 
-    ~# apt-get install -f 
+    mkdir ubuntu22.04-ofed-driver-offline-deb && tar -zxvf ubuntu22.04-ofed-driver-offline-deb.tar.gz 
+    cd ubuntu22.04-ofed-driver-offline-deb 
+    dpkg -i *.deb 
+    apt-get install -f 
     ```
 
 - Take downloading the ISO file as an example. Download the file and upload it to the host. Mount it to the `/mnt/` path and execute the installation command.
 
     ```shell
-    
     root@10-20-1-20:~/install# mount MLNX_OFED_LINUX-23.10-1.1.9.0-ubuntu22.04-x86_64.iso /mnt/
     mount: /mnt: WARNING: source write-protected, mounted read-only.
+    
     root@10-20-1-20:/mnt# ./mlnxofedinstall --with-nvmf --with-nfsrdma --all
     Logs dir: /tmp/MLNX_OFED_LINUX.86055.logs
     General log file: /tmp/MLNX_OFED_LINUX.86055.logs/general.log
