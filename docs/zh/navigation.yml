@@ -1146,6 +1146,7 @@ nav:
                       - baizectl 命令行工具: baize/developer/notebooks/baizectl.md
                   - 任务中心:
                       - 创建任务: baize/developer/jobs/create.md
+                      - 创建 Pytorch 训练任务: baize/developer/jobs/pytorch.md
                       - 删除任务: baize/developer/jobs/delete.md
                       - 查看任务负载: baize/developer/jobs/view.md
                       - 任务分析: baize/developer/jobs/tensorboard.md
