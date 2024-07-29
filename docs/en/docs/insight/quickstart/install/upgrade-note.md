@@ -121,7 +121,7 @@ insight-agent/dependency-crds after extracting the insight-agent offline package
 
 ### Upgrade from v0.11.x (or earlier) to v0.12.x
 
-v0.12.x upgrades kube-prometheus-stack chart from 39.6.0 to 41.9.1, including prometheus-operator to v0.60.1, prometheus-node-exporter chart to 4.3.0, etc.
+v0.12.x upgrades kube-prometheus-stack chart from 39.6.0 to 41.9.1, including prometheus-operator to v0.60.1, prometheus-node-exporter chart to v4.3.0.
 Prometheus-node-exporter uses [Kubernetes recommended label](https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/) after upgrading, so you need to delete __node-exporter__ daemonset.
 prometheus-operator has updated the CRD, so you need to run the following command before upgrading the insight agent:
 

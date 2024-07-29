@@ -25,7 +25,7 @@ For more information on open source Grafana, see
     ![Dashboard](../images/dashboard00.png)
 
 2. Insight provides several recommended dashboards that allow monitoring from different dimensions
-   such as nodes, namespaces, workloads, etc. Switch between dashboards by clicking the
+   such as nodes, namespaces, and workloads. Switch between dashboards by clicking the
    __insight-system / Insight / Overview__ section.
 
     ![Overview](../images/dashboard01.png)

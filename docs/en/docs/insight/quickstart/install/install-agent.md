@@ -40,5 +40,5 @@ Please confirm that your cluster has successfully connected to the __container m
 
     !!! note
 
-        - Click __⋮__ on the far right, and you can perform more operations such as __Update__ , __View YAML__ and __Delete__ in the pop-up menu.
+        - Click __┇__ on the far right, and you can perform more operations such as __Update__ , __View YAML__ and __Delete__ in the pop-up menu.
         - For a practical installation demo, watch [Video demo of installing insight-agent](../../../videos/insight.md#install-insight-agent)

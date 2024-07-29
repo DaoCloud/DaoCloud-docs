@@ -302,7 +302,7 @@ Each service can add one of two types of annotations:
 
 - Only inject environment variable annotations
 
-    There is only one such annotation, which is used to add otel-related environment variables, such as link reporting address, cluster id where the container is located, namespace, etc. (this annotation is very useful when the application does not support automatic probe language)
+    There is only one such annotation, which is used to add otel-related environment variables, such as link reporting address, cluster id where the container is located, and namespace (this annotation is very useful when the application does not support automatic probe language)
 
     ```console
     instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"
