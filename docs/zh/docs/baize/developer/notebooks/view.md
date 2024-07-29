@@ -7,7 +7,7 @@ hide:
 
 如果想要查看某个 Notebook 的工作负载，可以执行以下操作：
 
-1. 在 Notebook 列表右侧点击 **⋮** ，在弹出菜单中选择 **工作负载详情** 。
+1. 在 Notebook 列表右侧点击 **┇** ，在弹出菜单中选择 **工作负载详情** 。
 
     ![删除](../../images/nb-workload01.png)
 
@@ -23,6 +23,6 @@ hide:
 
     ![确认删除](../../images/nb-workload02.png)
 
-1. 在 StatefulSet 列表，点击右侧的 **⋮**，可以针对 Pod 执行更多操作。
+1. 在 StatefulSet 列表，点击右侧的 **┇**，可以针对 Pod 执行更多操作。
 
     ![已删除](../../images/nb-workload03.png)

@@ -28,7 +28,7 @@ preloading, dataset management, and other functionalities.
 
     Currently supported data sources include:
 
-    - GIT: Supports repositories such as GitHub, GitLab, Gitee, etc.
+    - GIT: Supports repositories such as GitHub, GitLab, and Gitee
     - S3: Supports object storage like Amazon Cloud
     - HTTP: Directly input a valid HTTP URL
     - PVC: Supports pre-created Kubernetes PersistentVolumeClaim

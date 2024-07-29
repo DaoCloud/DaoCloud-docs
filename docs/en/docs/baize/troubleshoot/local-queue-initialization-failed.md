@@ -19,7 +19,7 @@ In the intelligent computing environment, the queue management capability is pro
 [Kueue](https://kueue.sigs.k8s.io/). Kueue provides two types of queue management resources:
 
 - **ClusterQueue**: A cluster-level queue mainly used to manage resource quotas within
-  the queue, including CPU, memory, GPU, etc.
+  the queue, including CPU, memory, and GPU.
 - **LocalQueue**: A namespace-level queue that needs to point to a ClusterQueue
   for resource allocation within the queue.
 
