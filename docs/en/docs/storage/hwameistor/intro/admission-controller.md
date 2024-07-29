@@ -11,12 +11,13 @@ For details, see [Kubernetes Dynamic Admission Control](https://kubernetes.io/do
 - Identify HwameiStor data volume
 
     An admission controller can fetch all PVCs used by a pod and inspect each PVC [storage provisioner](https://kubernetes.io/en-us/docs/concepts/storage/storage-classes/#provisioner).
-    If the name suffix of the producer is `*.hwameistor.io`, it means that the Pod is using the data volume provided by HwameiStor.
+    If the name suffix of the producer is `*.hwameistor.io`, it means that the pod is using the data volume provided by HwameiStor.
 
 - Authenticate resources
 
-    Admission controllers only validate `POD` resources and do so when they are created.
+    Admission controllers only validate pods resources and do so when they are created.
 
     !!! info
 
-        To ensure that the Pods of HwameiStor can start smoothly, the Pods under the namespace where HwameiStor is located will not be verified.
+        To ensure that the pods of HwameiStor can be started smoothly, the pods under the namespace where HwameiStor is located will not be verified.
+        
