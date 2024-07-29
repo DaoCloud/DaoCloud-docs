@@ -17,6 +17,7 @@ env:
   UCLOUD_REGION : ${{ secrets.UCLOUD_REGION }}
   UCLOUD_BUCKET : ${{ secrets.UCLOUD_BUCKET }}
   CI: 1
+  PIP_CONSTRAINT: /home/runner/work/DaoCloud-docs/DaoCloud-docs/constraints.txt
 
 concurrency:
   group: ${{ github.workflow_ref }}
@@ -62,19 +63,9 @@ jobs:
       # Install mkdocs-material-insiders
       - run: git clone git@github.com:DaoCloud/mkdocs-material-insiders.git mkdocs-material
       - run: pip install -e mkdocs-material
-
+      
       # Runs a single command using the runners shell
-      - run: pip install mkdocs-git-revision-date-plugin \
-              mkdocs-mermaid2-plugin \
-              mkdocs-rss-plugin \
-              mkdocs-minify-plugin \
-              mkdocs-macros-plugin \
-              mkdocs-git-revision-date-localized-plugin \
-              mkdocs-awesome-pages-plugin \
-              mkdocs-redirects \
-              mkdocs-print-site-plugin \
-              mkdocs-swagger-ui-tag \
-              pyyaml
+      - run: pip install -r requirements.txt -c $PIP_CONSTRAINT
       
       # add custom plugin with pdf support
       - run: pip install git+https://github.com/SAMZONG/mkdocs-with-pdf-support-material-v8
