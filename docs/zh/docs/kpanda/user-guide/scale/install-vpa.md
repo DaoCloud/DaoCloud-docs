@@ -24,19 +24,16 @@
 
 2. 在工作负载详情页面，点击 __弹性伸缩__ 页签，在 __VPA__ 右侧点击 __安装__ 。
 
-    ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/installvpa.png)
-
+    ![工作负载](images/install-vpa-01.png)
 3. 阅读该插件的相关介绍，选择版本后点击 __安装__ 按钮。推荐安装 __1.5.0__ 或更高版本。
 
-    ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/installvpa1.png)
-
+    ![工作负载](images/install-vpa-02.png)
 4. 查看以下说明配置参数。
 
-    ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/installvpa2.png)
-
+    ![工作负载](images/install-vpa-04.png)
     - 名称：输入插件名称，请注意名称最长 63 个字符，只能包含小写字母、数字及分隔符（“-”），且必须以小写字母或数字开头及结尾，例如 kubernetes-cronhpa-controller。
     - 命名空间：选择将插件安装在哪个命名空间，此处以 __default__ 为例。
-    - 版本：插件的版本，此处以 __1.5.0__ 版本为例。
+    - 版本：插件的版本，此处以 __4.5.0__ 版本为例。
     - 就绪等待：启用后，将等待应用下的所有关联资源都处于就绪状态，才会标记应用安装成功。
     - 失败删除：如果插件安装失败，则删除已经安装的关联资源。开启后，将默认同步开启 __就绪等待__ 。
     - 详情日志：开启后，将记录安装过程的详细日志。
@@ -55,4 +52,4 @@
 
 6. 回到工作负载详情页面下的 __弹性伸缩__ 页签，可以看到界面显示 __插件已安装__ 。现在可以开始[创建 VPA](create-vpa.md) 策略了。
 
-    ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/installvpa3.png)
+    ![工作负载.png](images/install-vpa-03.png)
