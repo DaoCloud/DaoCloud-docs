@@ -366,6 +366,9 @@ nav:
                   - 部署/升级Kubean兼容版本: kpanda/best-practice/kubean-low-version.md
                   - 限制Docker单容器磁盘空间: kpanda/best-practice/limit-disk-usage-docker.md
                   - 边缘集群部署和管理实践: kpanda/best-practice/k3s-lcm.md
+                  - 在离线混部:
+                      - 在离线混部概述: kpanda/best-practice/co-located/index.md
+                      - koordinator 安装: kpanda/best-practice/co-located/install.md
           - 多云编排:
               - 介绍:
                   - 什么是多云编排: kairship/intro/index.md
