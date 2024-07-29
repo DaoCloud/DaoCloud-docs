@@ -111,23 +111,23 @@
 
 `yamlMergeStrategy` 参数支持 merge() 或 override()，用来控制模版中的 YAML 信息是被覆盖还是与继承的 pod 模版合并，默认为 override() 。
 
-    ```groovy
-    pipeline {
-      agent {
-        kubernetes {
-          yamlMergeStrategy merge() # 定义该策略后，将合并 base 模版中定义的 YAML
-          inheritFrom 'base' # 指定继承 pod 的模版标签
-          yaml '''
-          spec:
-            containers:
-            - name: mavenjdk11 # 声明容器名称
-              image: maven:3.8.1-jdk-11 # 定义容器镜像
-    '''
-        …
-        }
+```groovy
+pipeline {
+  agent {
+    kubernetes {
+      yamlMergeStrategy merge() // 定义该策略后，将合并 base 模版中定义的 YAML
+      inheritFrom 'base' // 指定继承 pod 的模版标签
+      yaml '''
+      spec:
+        containers:
+        - name: mavenjdk11 // 声明容器名称
+          image: maven:3.8.1-jdk-11 // 定义容器镜像
+      '''
     }
-    }
-    ```
+  }
+  // 这里可以继续添加 pipeline 的其他部分
+}
+```
 
 ### 使用 inheritFrom 语法时，是否会继承父模版中的 volumeMounts 信息？
 
@@ -143,7 +143,7 @@
 
 1. 前往 __容器管理__ -> __集群列表__ ，选择您安装 Jenkins 的集群和命名空间（默认集群名称为 kpanda-global-cluster，命名空间为 amamba-system）
 2. 选择 __配置与密钥__ -> __配置项__ ，选择 Jenkins 安装的命名空间，搜索配置项 `jenkins-casc-config`
-3. 选择 __编辑 YAML__ , 搜索`jenkins.clouds.kubernetes.templates`，可以在每个容器模版下添加上述两个参数：
+3. 选择 __编辑 YAML__ , 搜索 `jenkins.clouds.kubernetes.templates`，可以在每个容器模版下添加上述两个参数：
 
     ```yaml
     - name: "maven"
@@ -156,4 +156,4 @@
         image: "my-maven-image" 
     ```
 
-5. 保存配置项，等待约一分钟后，Jenkins 会自动重新加载配置，也可以选择重启 Jenkins 实例快速加载。
+4. 保存配置项，等待约一分钟后，Jenkins 会自动重新加载配置，也可以选择重启 Jenkins 实例快速加载。
