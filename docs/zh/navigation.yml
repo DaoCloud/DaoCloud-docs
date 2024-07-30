@@ -1163,7 +1163,7 @@ nav:
                   - 推理服务:
                       - 模型支持: baize/developer/inference/models.md
                       - 创建推理服务: baize/developer/inference/create.md
-                      - 使用 vLLm 框架创建推理服务: baize/developer/inference/vllm-inference.md
+                      - vLLm 框架创建推理服务: baize/developer/inference/vllm-inference.md
               - 运维管理:
                   - 介绍: baize/oam/index.md
                   - GPU 资源管理: baize/oam/resource.md

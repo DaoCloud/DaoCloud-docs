@@ -31,7 +31,7 @@
 
 参考上图中数据集的的模型位置，这里选择如下：
 
-- 数据集为 `nfs-models`模型路径为：`THUDM/chatglm2-6b`
+- 数据集为 `nfs-models` 模型路径为 `THUDM/chatglm2-6b`
 
 ## 模型配置
 
