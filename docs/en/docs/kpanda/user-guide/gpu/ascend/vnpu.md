@@ -10,11 +10,11 @@ This document describes how to enable and use Ascend static virtualization capab
 
 ## Prerequisites
 
-- Ascend-related firmware and drivers are successfully installed.
-- Kubernetes cluster environment is set up.
-- `ascend-docker-runtime` is installed.
-- `ascend-mindxdl` component is installed.
-- Supported NPUs:
+- Setup of Kubernetes cluster environment.
+- The current NPU node has the Ascend driver installed.
+- The current NPU node has the Ascend-Docker-Runtime component installed.
+- The NPU MindX DL suite is installed on the current cluster.
+- Supported NPU models:
 
     - Ascend 310P, verified
     - Ascend 910b (20 cores), verified
