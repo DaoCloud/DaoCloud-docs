@@ -1161,6 +1161,7 @@ nav:
                       - 创建/使用/删除数据集: baize/developer/dataset/create-use-delete.md
                       - 环境管理: baize/developer/dataset/environments.md
                   - 推理服务:
+                      - 模型支持: baize/developer/inference/models.md
                       - 创建推理服务: baize/developer/inference/create.md
                       - 使用 vLLm 框架创建推理服务: baize/developer/inference/vllm-inference.md
               - 运维管理:
