@@ -634,7 +634,6 @@ nav:
                   - Access VM by NodePort: virtnest/quickstart/nodeport.md
                   - VM Details: virtnest/quickstart/detail.md
               - Manage Virtual Machine:
-                  - Create Windows VM: virtnest/vm/vm-windows.md
                   - Create Secret: virtnest/vm/create-secret.md
                   - Snapshots: virtnest/vm/snapshot.md
                   - Live Migration: virtnest/vm/live-migration.md
@@ -650,7 +649,10 @@ nav:
                   - Create VM by Template: virtnest/template/index.md
                   - VM Template: virtnest/template/tep.md
               - VM Image: virtnest/vm-image/index.md
-              - Import VM from Ubuntu: virtnest/import/import-ubuntu.md
+              - Best Practices: 
+                  - Import Linux VM from VMWare: virtnest/best-practice/import-ubuntu.md
+                  - Import Windows VM from VMWare: virtnest/best-practice/import-windows.md
+                  - Create Windows VM: virtnest/best-practice/vm-windows.md
       - Microservice:
           - Insight:
               - Intro:

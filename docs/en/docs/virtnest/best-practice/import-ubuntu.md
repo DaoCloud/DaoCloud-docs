@@ -3,9 +3,9 @@ MTPE: ModetaNiu
 DATE: 2024-07-12
 ---
 
-# Import a Virtual Machine with Ubuntu from an External Platform
+# Import a Linux Virtual Machine with Ubuntu from an External Platform
 
-This page provides a detailed introduction on how to import virtual machines from the external platform VMware 
+This page provides a detailed introduction on how to import Linux virtual machines from the external platform VMware 
 into the virtual machines of DCE 5.0 through the command line.
 
 !!! info
