@@ -4,8 +4,12 @@
 
 ## 前提条件
 
-- 当前集群已[安装昇腾（Ascend） NPU 驱动](ascend_driver_install.md)。
+- 当前 NPU 节点已安装昇腾 （Ascend）驱动。
+- 当前 NPU 节点已安装 Ascend-Docker-Runtime 组件。
+- 当前集群已安装 NPU MindX DL 套件。
 - 当前集群内 NPU 卡未进行任何虚拟化操作或被其它应用占用。
+  
+请参考[昇腾 NPU 组件安装文档](ascend_driver_install.md)安装基础环境。
 
 ## 快速使用
 
@@ -21,7 +25,7 @@
 
 2. 准备基础镜像
 
-    此例使用 Ascent-pytorch 基础镜像，可访问[昇腾镜像仓库](https://ascendhub.huawei.com/#/index)获取。
+    此例使用 Ascent-pytorch 基础镜像，可访问[昇腾镜像仓库](https://www.hiascend.com/developer/ascendhub)获取。
 
 3. 准备 YAML
 
