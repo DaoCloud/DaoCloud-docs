@@ -50,3 +50,15 @@ DCE 5.0 支持通过容器垂直扩缩容策略（Vertical Pod Autoscaler, VPA�
 5. 完成参数配置后，点击 __确定__ 按钮，自动返回弹性伸缩详情页面。点击列表右侧的 __┇__ ，可以执行编辑、删除操作。
 
     ![工作负载](images/create-vpa-05.png)
+
+!!! note
+
+    默认情况下，--min-replicas 的值为 2 。表示当副本数大于1时，VPA 才会生效，可以通过修改 updater 的 --min-replicas 参数值来改变这一默认行为。
+    ```
+spec: 
+ containers: 
+ - name: updater 
+ args: 
+ - "--min-replicas=2"
+```
+
