@@ -191,7 +191,7 @@ spec:
 
 ![下载 VirtIO 2](../images/install02.png)
 
-![开启远程桌面Remote Desktop](../images/turn%20on.png)
+![开启远程桌面Remote Desktop](../images/turn-on.png)
 
 ### 重启后更新 YAML 
 
