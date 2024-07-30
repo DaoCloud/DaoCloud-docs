@@ -664,7 +664,8 @@ nav:
                   - 虚拟机模板: virtnest/template/tep.md
               - 虚拟机镜像: virtnest/vm-image/index.md
               - 最佳实践:
-                  - 从 VMware 导入传统虚拟机: virtnest/best-practice/import-ubuntu.md
+                  - 从 VMware 导入传统 Linux 虚拟机: virtnest/best-practice/import-ubuntu.md
+                  - 从 VMware 导入传统 Windows 虚拟机: virtnest/best-practice/import-windows.md
                   - 创建 Windows 虚拟机: virtnest/best-practice/vm-windows.md
       - 微服务:
           - 可观测性:
