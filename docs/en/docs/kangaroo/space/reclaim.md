@@ -32,6 +32,6 @@ Currently, DCE 5.0 supports up to 15 reclamation rules.
 
     ![Create Rule](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/reclaim02.png)
 
-4. Return to the image reclamation list. Click the `⋮` on the right to disable, edit, or delete the reclamation rule.
+4. Return to the image reclamation list. Click the `┇` on the right to disable, edit, or delete the reclamation rule.
 
     ![Click Button](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/reclaim03.png)

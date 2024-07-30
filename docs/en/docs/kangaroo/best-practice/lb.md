@@ -23,7 +23,7 @@ create an LB-type SVC resource.
 
 After creating the Harbor service, an nginx SVC resource will automatically appear in the
 **Container Network** -> **Services** of the cluster where Harbor is located.
-In the service list, click the **⋮** button on the right side, and select **Update** in
+In the service list, click the **┇** button on the right side, and select **Update** in
 the dropdown menu to view the label information of nginx.
 
 <!-- ![nginx](../images/nginx.png)

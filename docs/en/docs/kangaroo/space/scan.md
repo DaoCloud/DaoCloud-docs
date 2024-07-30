@@ -27,7 +27,7 @@ For integrated repositories, images appear on the list. You can manually scan im
 
     ![Image List](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/scan01.png)
 
-2. In the image details list, click `⋮` on the right side of the list, and select `Scan` from the pop-up menu.
+2. In the image details list, click `┇` on the right side of the list, and select `Scan` from the pop-up menu.
 
     ![Scan](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/scan02.png)
 
