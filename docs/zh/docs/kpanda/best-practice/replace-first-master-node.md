@@ -21,7 +21,7 @@
 
 1. 获取集群名称
 
-    执行如下命令，找到集群对应的 clusters.kubean.io 资源：
+    执行如下命令，找到集群对应的 `clusters.kubean.io` 资源：
 
     ```shell
     # 比如 clusters.kubean.io 的资源名称为 cluster-mini-1
