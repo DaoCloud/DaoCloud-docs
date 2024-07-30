@@ -1123,8 +1123,9 @@ nav:
                       - Create Dataset: baize/developer/dataset/create-use-delete.md
                       - Manage Runtime Env: baize/developer/dataset/conda.md
                   - Inference Service:
+                      - Supported Models: baize/developer/inference/models.md
                       - Create Inference Service: baize/developer/inference/create.md
-                      - Create Inference Service Using vLLM Framework: baize/developer/inference/vllm-inference.md
+                      - Create with vLLM Framework: baize/developer/inference/vllm-inference.md
               - OAM Management:
                   - GPU Resource Management: baize/oam/resource.md
                   - Queue Management:
