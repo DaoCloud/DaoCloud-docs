@@ -27,3 +27,4 @@ MySQL Group Replication（MGR）是一个实现分布式数据库系统不同节
     - 管理工具：开启后可以通过 phpMyAdmin 管理工具管理 MySQL
 
 5. 确认实例的配置无误后，点击确定完成创建后返回告警模板列表。
+
