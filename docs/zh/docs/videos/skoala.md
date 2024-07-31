@@ -49,6 +49,14 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/api-policy2.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/skoala-api2.png"></video>
 </div>
 
+### 通过网关调用内外服务
+
+参阅[通过网关访问服务](../skoala/best-practice/gateway01.md)文档。
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/gateway-service.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/gateway-service.jpg"></video>
+</div>
+
 ## 云原生微服务
 
 参阅[通过网格治理微服务流量](../mspider/user-guide/traffic-governance/README.md)文档。
