@@ -1,8 +1,10 @@
 # 创建 VPA
 
-容器垂直扩缩容策略（Vertical Pod Autoscaler, VPA）通过监控 Pod 在一段时间内的资源申请和用量，计算出对该 Pod 而言最适合的 CPU 和内存请求值。使用 VPA 可以更加合理地为集群下每个 Pod 分配资源，提高集群的整体资源利用率，避免集群资源浪费。
+容器垂直扩缩容策略（Vertical Pod Autoscaler, VPA）通过监控 Pod 在一段时间内的资源申请和用量，
+计算出对该 Pod 而言最适合的 CPU 和内存请求值。使用 VPA 可以更加合理地为集群下每个 Pod 分配资源，提高集群的整体资源利用率，避免集群资源浪费。
 
-DCE 5.0 支持通过容器垂直扩缩容策略（Vertical Pod Autoscaler, VPA），基于此功能可以根据容器资源的使用情况动态调整 Pod 请求值。DCE 5.0 支持通过手动和自动两种方式来修改资源请求值，您可以根据实际需要进行配置。
+DCE 5.0 支持通过容器垂直扩缩容策略（Vertical Pod Autoscaler, VPA），基于此功能可以根据容器资源的使用情况动态调整 Pod 请求值。
+DCE 5.0 支持通过手动和自动两种方式来修改资源请求值，您可以根据实际需要进行配置。
 
 本文将介绍如何为工作负载配置 Pod 垂直伸缩。
 
@@ -53,12 +55,13 @@ DCE 5.0 支持通过容器垂直扩缩容策略（Vertical Pod Autoscaler, VPA�
 
 !!! note
 
-    默认情况下，--min-replicas 的值为 2 。表示当副本数大于1时，VPA 才会生效，可以通过修改 updater 的 --min-replicas 参数值来改变这一默认行为。
+    默认情况下，--min-replicas 的值为 2。表示当副本数大于 1 时，VPA 才会生效，
+    可以通过修改 updater 的 --min-replicas 参数值来改变这一默认行为。
+    
+    ```yaml
+    spec: 
+      containers: 
+      - name: updater 
+      args: 
+      - "--min-replicas=2"
     ```
-spec: 
- containers: 
- - name: updater 
- args: 
- - "--min-replicas=2"
-```
-
