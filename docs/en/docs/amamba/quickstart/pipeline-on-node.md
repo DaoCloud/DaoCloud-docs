@@ -9,7 +9,7 @@ This article describes how to run the pipeline tasks on the specified nodes in W
 
 ## Modify jenkins-casc-config
 
-1. Go to the __Container Management__ module and enter the details page of the target cluster, such as the __kpanda-global-cluster__ cluster.
+1. Go to the __Container Management__ module and enter the details page of the target cluster, such as the __kpanda-global-cluster__ .
 
     ![Cluster Details](../images/pipeline-node01.png)
 
@@ -21,13 +21,13 @@ This article describes how to run the pipeline tasks on the specified nodes in W
 
     ![Edit YAML](../images/pipeline-node03.png)
 
-4. Add __nodeSelector: "ci=base"__ for a specific Agent under __jenkins.cloud.kubernetes.templates__ in the YAML configuration item __jenkins.yaml__ , and click __OK__ to save the changes.
+4. Add __nodeSelector: "ci=base"__ for a specific Agent under __jenkins.cloud.kubernetes.templates__ in __jenkins.yaml__ , and click __OK__ to save the changes.
 
     ![Add Selector](../images/pipeline-node04.png)
 
 ## Add labels to the specified nodes
 
-1. Enter the __Container Management__ module, on the __kpanda-global-cluster__ cluster details page, click __Nodes__ on the left navigation.
+1. Enter the __Container Management__ module, on the __kpanda-global-cluster__ details page, click __Nodes__ on the left navigation.
 
     ![Node Management](../images/pipeline-node05.png)
 
@@ -43,7 +43,7 @@ This article describes how to run the pipeline tasks on the specified nodes in W
 
 First of all, it is necessary to expose the access address of Jenkins Dashbord through NodePort (other exposure methods are exposed according to the actual business situation).
 
-1. Enter __Container Management__ module, on the __kpanda-global-cluster__ cluster page, click __Container Network__ -> __Services__ in the left navigation bar.
+1. Enter __Container Management__ module, on the __kpanda-global-cluster__ page, click __Container Network__ -> __Services__ in the left navigation bar.
 
     ![Services](../images/pipeline-node08.png)
 

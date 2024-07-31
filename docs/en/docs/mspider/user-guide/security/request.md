@@ -43,12 +43,12 @@ Service Mesh provides two creation methods: wizard wizard and YAML. The specific
 
     ![Successfully Created](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/request04.png)
 
-5. On the right side of the list, click __⋮__ in the operation column to perform more operations through the pop-up menu.
+5. On the right side of the list, click __┇__ in the operation column to perform more operations through the pop-up menu.
 
     ![Edit/Delete](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/user-guide/images/request05.png)
 
 !!! note
 
-    - For the configuration of specific parameters, please refer to [Security Governance Parameter Configuration](./params.md).
-    - For a more intuitive operation demonstration, please refer to [Video Tutorial](../../../videos/mspider.md).
+    - For the configuration of specific parameters, refer to [Security Governance Parameter Configuration](./params.md).
+    - For a more intuitive operation demonstration, refer to [Video Tutorial](../../../videos/mspider.md).
     - See [Service Mesh Identity and Authentication](./mtls.md).

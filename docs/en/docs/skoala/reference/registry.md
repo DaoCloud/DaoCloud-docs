@@ -4,7 +4,7 @@ A service registry acts as a "directory" in a microservices architecture, respon
 
 ## Traditional Service Registration and Discovery
 
-Service registration involves microservices sending registration information to the service registry through an integrated service discovery SDK when they start up. The registry stores the basic information of the registered service upon receiving the registration request. Service discovery refers to the process where, after service registration, if a service consumer wants to invoke that service, it can query the registry via a service discovery component to obtain a list of addresses for the target microservice. The consumer can then use a load balancing strategy to make calls to the target microservice based on the obtained address list. Traditional service registration and discovery are mainly supported by traditional service registries such as Nacos, Eureka, and ZooKeeper.
+Service registration involves microservices sending registration information to the service registry through an integrated service discovery SDK when they start up. The registry stores the basic information of the registered service upon receiving the registration request. Service discovery refers to the process where, after service registration, if a service consumer wants to invoke that service, it can query the registry via a service discovery component to obtain a list of addresses for the target microservice. The consumer can then use a load balancing policy to make calls to the target microservice based on the obtained address list. Traditional service registration and discovery are mainly supported by traditional service registries such as Nacos, Eureka, and ZooKeeper.
 
 - Eureka Service Registry
 

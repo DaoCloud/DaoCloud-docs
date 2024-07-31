@@ -10,9 +10,7 @@ The __multus-underlay__ and __spiderpool__ have been deployed in the DCE 5.0 clu
 
 ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/spiderpool09.png)
 
-## Steps
-
-### Environment Setup
+## Environment Setup
 
 1. Verify the deployment of macvlan. Run the following command to check the deployment status and you should see a similar response as shown in the image below:
 
@@ -36,9 +34,9 @@ The __multus-underlay__ and __spiderpool__ have been deployed in the DCE 5.0 clu
 
         Redis can only use existing subnets and IP pools, so be sure to perform the manual creation operation first.
 
-### Redis Instance Configuration
+## Redis Instance Configuration
 
-#### Cluster Mode
+### Cluster Mode
 
 1. Modify the __CR__ (rediscluster) of the Redis instance and add the following content under the metadata field:
 
@@ -58,7 +56,7 @@ The __multus-underlay__ and __spiderpool__ have been deployed in the DCE 5.0 clu
 
     ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/spiderpool05.png)
 
-#### Sentinel Mode
+### Sentinel Mode
 
 1. Update the __CR__ (redisfailover) of the Redis instance and add the following content to the __spec.redis__ and __spec.sentinel__ fields respectively:
 
@@ -70,7 +68,8 @@ The __multus-underlay__ and __spiderpool__ have been deployed in the DCE 5.0 clu
 
     !!! note
 
-        For cilium, you need to add __annotations__ to the __deployment__ of __redis-operator__. The field location is __spec.template.metadata.annotations__.
+        For cilium, you need to add __annotations__ to the __deployment__ of __redis-operator__.
+        The field location is __spec.template.metadata.annotations__.
 
         For calico, there is no need to update __redis-operator__.
 
@@ -83,3 +82,13 @@ The __multus-underlay__ and __spiderpool__ have been deployed in the DCE 5.0 clu
 3. After the configuration is complete, you can access the node from outside the cluster and verify that it is accessible.
 
     ![sync](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/middleware/redis/images/spiderpool08.png)
+
+!!! note "Notice"
+
+    When the workload `updateStrategy` in Redis Sentinel mode is set to `OnDelete`,
+    the old version of the Pod will not be immediately deleted after updating the CR.
+    You need to manually restart the Pod for the changes to take effect.
+
+The following image shows a screenshot of the data that hasn't been updated after modifying the CR:
+
+![cr-pod](../images/ippool-pod-not-restart.png)

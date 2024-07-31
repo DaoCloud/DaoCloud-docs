@@ -19,7 +19,7 @@ Diagram: Data Synchronization  **instance redis-a** >> **instance redis-b**
 
 ### Configuring Services for the Source Instance
 
-If the source instance is part of a DCE 5.0 cluster, you can enable the solution under __Data Services__ - __Redis__ - __Solutions__ - __Cross-cluster Master-Slave Synchronization__ , which will automatically configure the services.
+If the source instance is part of a DCE 5.0 cluster, you can enable the solution under __Data Services__ -> __Redis__ -> __Solutions__ -> __Cross-cluster Master-Slave Synchronization__ , which will automatically configure the services.
 
 If the source instance is in a third-party cluster, manual service configuration is required. The configuration process is described below:
 
@@ -27,7 +27,7 @@ Create a __NodePort__ service for each leader pod of the Redis instance to allow
 
 Taking Pod __redis-a-leader-0__ as an example, create a service for it:
 
-1. Go to __Container Management__ - __Source Redis Cluster__ - __Stateful Workloads__ : Select the workload __redis-a-leader__ and create a service named __redis-a-leader-svc-0__ , with access type set as __NodePort__ , and container port and service port both set to 6379.
+1. Go to __Container Management__ -> __Source Redis Cluster__ -> __StatefulSets__ : Select the workload __redis-a-leader__ and create a service named __redis-a-leader-svc-0__ , with access type set as __NodePort__ , and container port and service port both set to 6379.
 
 2. View the service and make sure that the workload selector includes the following labels:
 
@@ -52,7 +52,7 @@ Taking __redis-a-leader-0__ as an example, create Redis-shake-sync-0:
 
 #### Create Configuration
 
-In __Container Management__ - __Target Redis Cluster__ - __Configuration and Storage__ - __Configuration Options__ , create a configuration option named __redis-sync-0__ for the Redis-shake instance. Import the file __sync.toml__ (file content provided in the appendix), and make sure to modify the following content:
+In __Container Management__ -> __Target Redis Cluster__ -> __Configuration and Storage__ -> __Configuration Options__ , create a configuration option named __redis-sync-0__ for the Redis-shake instance. Import the file __sync.toml__ (file content provided in the appendix), and make sure to modify the following content:
 
 - source.address: The service address of the source __redis-a-leader-0__ 's __redis-a-leader-svc-0__ :
 
@@ -74,7 +74,7 @@ Save the configuration.
 
 #### Create Redis-shake-sync-0
 
-In __Container Management__ - __Target Redis Cluster__ - __Stateful Workloads__ , create a stateful workload named __redis-a-leader-sync__ with a single ReplicaSet version and set the replica number to 1.
+In __Container Management__ -> __Target Redis Cluster__ -> __StatefulSets__ , create a statefulset named __redis-a-leader-sync__ with a single ReplicaSet version and set the replica number to 1.
 
 In the config section, select the previously created configuration option __redis-sync-0__ , and modify the following content:
 
@@ -103,7 +103,7 @@ Repeat the above steps to create Redis-shake-sync-1 and Redis-shake-sync-2 for _
 
 After completing the above steps, Redis-shake will start synchronizing data from the source Redis instance to the target Redis instance. You can verify the synchronization status by checking the logs of each Redis-shake instance:
 
-In __Container Management__ - __Target Redis Cluster__ - __Stateful Workloads__ , select the Redis-shake workloads ( __redis-a-leader-sync-0__ , __redis-a-leader-sync-1__ , and __redis-a-leader-sync-2__ ) one by one, go to __Pods__ , click the pod name, and then click the __Logs__ tab.
+In __Container Management__ -> __Target Redis Cluster__ -> __StatefulSets__ , select the Redis-shake workloads ( __redis-a-leader-sync-0__ , __redis-a-leader-sync-1__ , and __redis-a-leader-sync-2__ ) one by one, go to __Pods__ , click the pod name, and then click the __Logs__ tab.
 
 Check the logs to ensure that the data synchronization is successful and there are no errors.
 
@@ -124,7 +124,7 @@ Taking __redis-b-leader-0__ as an example, create Redis-shake-recovery-0:
 
 #### Create ConfigMap
 
-In __Container Management__ - __Source Redis Cluster__ - __ConfigMap and Storage__ - __ConfigMap__ , create a configuration option named __redis-recovery-0__ for the Redis-shake instance. Import the file __recovery.toml__ (file content provided in the appendix), and make sure to modify the following content:
+In __Container Management__ -> __Source Redis Cluster__ -> __ConfigMap and Storage__ -> __ConfigMap__ , create a configuration option named __redis-recovery-0__ for the Redis-shake instance. Import the file __recovery.toml__ (file content provided in the appendix), and make sure to modify the following content:
 
 - target.address: The service address of __redis-b-leader-0__ 's __redis-b-leader-svc-0__ :
 
@@ -144,7 +144,7 @@ In __Container Management__ - __Source Redis Cluster__ - __ConfigMap and Storage
     address = "10.233.43.13:6379"
     ```
 
-    You can find this configuration in __Container Management__ - __Target Redis Cluster__ - __Workloads__ - __Access Method__ . Refer to the following screenshot:
+    You can find this configuration in __Container Management__ -> __Target Redis Cluster__ -> __Workloads__ -> __Access Method__ . Refer to the following screenshot:
 
 
     Click the service name, go to the service details page, and you will see the ClusterIP address:
@@ -165,7 +165,7 @@ In __Container Management__ - __Source Redis Cluster__ - __ConfigMap and Storage
 
 #### Create Redis-shake
 
-1. In the __Workbench__ , select __Wizard__ - __Based on Container Image__ to create an application named __redis-shake-sync-0__ :
+1. In the __Workbench__ , select __Wizard__ -> __Based on Container Image__ to create an application named __redis-shake-sync-0__ :
 
 2. Fill in the application configuration as described below:
     
@@ -178,19 +178,19 @@ In __Container Management__ - __Source Redis Cluster__ - __ConfigMap and Storage
 
     - The access type of the default service should be NodePort, and set the container port and service port to 6379.
 
-    - In __Advanced Settings__ - __Lifecycle__ - __Start Command__ - __Run Parameters__ , enter:
+    - In __Advanced Settings__ -> __Lifecycle__ -> __Start Command__ -> __Run Parameters__ , enter:
 
         ```yaml
         /etc/sync/sync.toml
         ```
 
-    - In __Advanced Settings__ - __Data Storage__ : Add configuration item __redis-sync-0__ , and set the path to:
+    - In __Advanced Settings__ -> __Data Storage__ : Add configmap __redis-sync-0__ , and set the path to:
 
         ```yaml
         /etc/sync
         ```
 
-    - In __Advanced Settings__ - __Data Storage__ : Add a temporary path, and the container path should be:
+    - In __Advanced Settings__ -> __Data Storage__ : Add a temporary path, and the container path should be:
 
         ```yaml
         /data
@@ -259,7 +259,7 @@ log_interval = 5 # in seconds
  
 # redis-shake gets key and value from rdb file, and uses RESTORE command to
 # create the key in target redis. Redis RESTORE will return a "Target key name
-# is busy" error when key already exists. You can use this configuration item
+# is busy" error when key already exists. You can use this configmap
 # to change the default behavior of restore:
 # panic:   redis-shake will stop when meet "Target key name is busy" error.
 # rewrite: redis-shake will replace the key with new value.

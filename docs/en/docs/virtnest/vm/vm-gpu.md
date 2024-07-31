@@ -27,7 +27,7 @@ If your cluster is running on a virtual machine, consult your virtual machine pl
 
 Note: Building a vGPU Manager image is only required when using NVIDIA vGPUs. If you plan to use only GPU direct pass-through, skip this section.
 
-The following are the steps to build the vGPU Manager image and push it to the image repository:
+The following are the steps to build the vGPU Manager image and push it to the container registry:
 
 1. Download the vGPU software from the NVIDIA Licensing Portal.
 
@@ -73,10 +73,10 @@ The following are the steps to build the vGPU Manager image and push it to the i
     docker build \
       --build-arg DRIVER_VERSION=${VERSION} \
       --build-arg CUDA_VERSION=${CUDA_VERSION} \
-      -t ${PRIVATE_REGISTRY}``/vgpu-manager``:${VERSION}-${OS_TAG} .
+      -t ${PRIVATE_REGISTRY}/vgpu-manager:${VERSION}-${OS_TAG} .
     ```
 
-7. Push the NVIDIA vGPU Manager image to your image repository
+7. Push the NVIDIA vGPU Manager image to your container registry
 
     ```bash
     docker push ${PRIVATE_REGISTRY}/vgpu-manager:${VERSION}-${OS_TAG}
@@ -84,7 +84,7 @@ The following are the steps to build the vGPU Manager image and push it to the i
 
 ## Label Cluster Nodes
 
-Go to **Container Management** , select your working cluster, click **Nodes** in the action bar, and click **Edit Labels** to add labels to the nodes. Each node can only have one label.
+Go to **Container Management** , select your worker cluster and click **Nodes**. On the right of the list, click __┇__ and select **Edit Labels** to add labels to the nodes. Each node can only have one label.
 
 You can assign the following values to the labels: container, vm-passthrough, and vm-vgpu.
 
@@ -92,27 +92,20 @@ You can assign the following values to the labels: container, vm-passthrough, an
 
 ## Install Nvidia Operator
 
-1. Go to **Container Management** , select your working cluster, click **Helm Apps** -> **Helm Charts** ,
+1. Go to **Container Management** , select your worker cluster, click **Helm Apps** -> **Helm Charts** ,
    choose and install gpu-operator. You need to modify some fields in the yaml.
 
-    ??? note "Click to view complete YAML"
+    ```yaml
+    gpu-operator.sandboxWorkloads.enabled=true
+    gpu-operator.vgpuManager.enabled=true
+    gpu-operator.vgpuManager.repository=<your-register-url>      # (1)!
+    gpu-operator.vgpuManager.image=vgpu-manager
+    gpu-operator.vgpuManager.version=<your-vgpu-manager-version> # (2)!
+    gpu-operator.vgpuDeviceManager.enabled=true
+    ```
 
-        ```yaml
-        gpu-operator.sandboxWorkloads.enabled=true
-        
-        // Set the following fields only if you need vGPU
-        gpu-operator.vgpuManager.enabled=true
-        gpu-operator.vgpuManager.repository=<your-register-url>      // Image repository address in the "Build vGPU Manager Image" step
-        gpu-operator.vgpuManager.image=vgpu-manager
-        gpu-operator.vgpuManager.version=<your-vgpu-manager-version> // VERSION from the "Build vGPU Manager Image" step
-        
-        // GPU direct pass-through related
-        gpu-operator.vgpuDeviceManager.enabled=true
-        gpu-operator.vfioManager.enabled=true
-        gpu-operator.sandboxDevicePlugin.enabled=true
-        gpu-operator.sandboxDevicePlugin.version=v1.2.4
-        gpu-operator.toolkit.version=v1.14.3-ubuntu20.04
-        ```
+    1. Fill in the container registry address refered in the step "Build vGPU Manager Image".
+    2. Fill in the VERSION refered in the step "Build vGPU Manager Image".
 
 2. Wait for the installation to be successful, as shown in the image below:
 

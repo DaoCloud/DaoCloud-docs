@@ -8,6 +8,24 @@ Date: 2024-04-24
 This page provides the release notes for VirtNest (Virtual Machine),
 allowing you to understand the evolution path and feature changes of each version.
 
+## 2024-06-30
+
+### v0.10.0
+
+#### Features
+
+- **Added** a feature of real-time updates of virtual machine memory and CPU.
+- **Added** a feature of real-time migration of virtual machines to specified nodes.
+- **Added** a feature of updating GPU information of virtual machines.
+
+#### Improvements
+
+- **Upgraded** KubeVirt component to version 1.2.2.
+
+#### Fixes
+
+- **Fixed** issues with errors when starting virtual machines created through built-in templates.
+
 ## 2024-05-30
 
 ### v0.9.0
@@ -124,7 +142,7 @@ allowing you to understand the evolution path and feature changes of each versio
 - **Added** support for accessing virtual machines via terminal
 - **Added** support for editing virtual machines with YAML
 - **Added** support for adding data disks to virtual machines
-- **Added** support for selecting images from image repositories to create virtual machines
+- **Added** support for selecting images from container registries to create virtual machines
 - **Added** support for creating virtual machines from templates
 - **Added** support for converting virtual machine configurations into templates
 - **Added** support for deleting custom templates

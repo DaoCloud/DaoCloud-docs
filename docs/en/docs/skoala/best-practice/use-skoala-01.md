@@ -5,13 +5,13 @@ The micro service engine is a feature of DCE 5.0 Advanced edition, which include
 The full process of this best practice is as follows:
 
 1. Deploy the sample application in Workbench and enable microservice governance
-2. Enable the traditional micro-service governance plug-in in the micro-service engine
+2. Enable the traditional microservice governance plug-in in the microservice engine
 3. Configure the corresponding governance rules in the microservice engine
 4. Expose apis and access applications in the microservice engine
 
 ## Sample application introduction
 
-The sample application used in this practice is based on the OpenTelemetry standard demo application. The DaoCloud Large and Micro Services team has optimized it based on DCE 5.0 features to better reflect cloud native and observable capabilities, and to show the effects of micro-service governance. The sample application is open source on Github, visit [Github registry address ](https://github.com/openinsight-proj/openinsight-helm-charts) for more details.
+The sample application used in this practice is based on the OpenTelemetry standard demo application. The DaoCloud Large and Micro Services team has optimized it based on DCE 5.0 features to better reflect cloud native and observable capabilities, and to show the effects of microservice governance. The sample application is open source on Github, visit [Github registry address ](https://github.com/openinsight-proj/openinsight-helm-charts) for more details.
 
 The architecture diagram for the sample application is as follows:
 
@@ -103,15 +103,15 @@ When using `java -jar` to start a project, add the corresponding environment var
 
 ### Use container image deployment
 
-If you choose to deploy applications based on container images, you can directly enable micro-service governance in the user interface configuration and select the corresponding registry module for easier operation. For details, see [ Build micro-service application based on Git repository ](../../amamba/user-guide/wizard/create-app-git.md).
+If you choose to deploy applications based on container images, you can directly enable microservice governance in the user interface configuration and select the corresponding registry module for easier operation. For details, see [ Build microservice application based on Git repository ](../../amamba/user-guide/wizard/create-app-git.md).
 
 <!--![]()screenshots-->
 
-## Enable traditional micro-service governance
+## Enable traditional microservice governance
 
-Before using the micro-service governance function, you need to enable the corresponding governance plug-in in the plug-in center under the corresponding registry. The plug-in Center provides two plug-ins, Sentinel governance and Mesh governance, and supports visual configuration through the user interface. After the plug-in is installed, the micro-service governance capability can be expanded to meet service requirements in different cases.
+Before using the microservice governance function, you need to enable the corresponding governance plug-in in the plug-in center under the corresponding registry. The plug-in Center provides two plug-ins, Sentinel governance and Mesh governance, and supports visual configuration through the user interface. After the plug-in is installed, the microservice governance capability can be expanded to meet service requirements in different cases.
 
-In this practice, traditional micro-service governance is adopted, namely, Sentinel governance plug-in is opened. For details, see [ Enable the Sentinel governance plug-in ](../trad-ms/hosted/plugins/sentinel.md).
+In this practice, traditional microservice governance is adopted, namely, Sentinel governance plug-in is opened. For details, see [ Enable the Sentinel governance plug-in ](../trad-ms/hosted/plugins/sentinel.md).
 
 <!--![]()screenshots-->
 
@@ -133,7 +133,7 @@ By accessing the service address, we can see that if the number of requests in o
 
 ## Expose the API and access the application
 
-After the deployment of a micro-service application is complete, the application portal needs to be opened to external access through the API gateway. This step is the complete service usage experience. To expose service apis, you need to create a cloud native gateway, connect services to the gateway, and create API routes.
+After the deployment of a microservice application is complete, the application portal needs to be opened to external access through the API gateway. This step is the complete service usage experience. To expose service apis, you need to create a cloud native gateway, connect services to the gateway, and create API routes.
 
 ### Create a cloud native gateway
 
@@ -177,7 +177,7 @@ After the gateway API is created, you can access the application page by using *
 
 ## Conclusion
 
-This is the experience of the entire microservices engine module. With the support of the entire DCE 5.0 capability, we successfully completed application deployment, enabling micro-service governance, configuring and testing micro-service governance policies, opening apis through cloud native gateway, and actually accessing applications.
+This is the experience of the entire microservices engine module. With the support of the entire DCE 5.0 capability, we successfully completed application deployment, enabling microservice governance, configuring and testing microservice governance policies, opening apis through cloud native gateway, and actually accessing applications.
 
 ### More capabilities
 

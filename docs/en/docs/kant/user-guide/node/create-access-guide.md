@@ -16,7 +16,7 @@ The following explains the steps to create an integration guide and manage integ
     - Node Prefix: The node name consists of "node prefix-random code".
     - Driver Mode: The control group (CGroup) driver used for resource management and configuration of Pods and containers, such as CPU and memory resource requests and limits.
     - CRI Service Address: The socket file or TCP address for communication between the CRI Client and CRI Server locally, for example, `unix:///run/containerd/containerd.sock`.
-    - KubeEdge Edge Image Repository: The repository address for storing KubeEdge components (Mosquitto, installation package, pause) images. If the edge and cloud images are in the same repository, you can click the **Reference Cloud Address** button to quickly fill it in.
+    - KubeEdge Edge Container Registry: The repository address for storing KubeEdge components (Mosquitto, installation package, pause) images. If the edge and cloud images are in the same repository, you can click the **Reference Cloud Address** button to quickly fill it in.
     - Description: Description information for the integration guide.
     - Tags: Tags information for the integration guide.
 

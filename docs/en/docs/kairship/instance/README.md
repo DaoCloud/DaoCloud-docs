@@ -13,7 +13,7 @@ hide:
 
 2. Check instance statistics.
 
-    The Overview page displays basic information, multicloud workload status, multicloud resources, and working clusters. Specifically include:
+    The Overview page displays basic information, multicloud workload status, multicloud resources, and worker clusters. Specifically include:
 
     - Instance name/alias
     - Instance creation time

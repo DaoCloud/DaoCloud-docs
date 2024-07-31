@@ -7,13 +7,13 @@ With the audit log service, you can continuously monitor and retain user behavio
 
 The audit log feature has the following characteristics:
 
-- Out of the box: When installing and using the platform, the audit log feature will be enabled by default, automatically recording various user-related actions, such as creating users, authorization, login/logout, etc. By default, 365 days of user behavior can be viewed within the platform.
+- Out of the box: When installing and using the platform, the audit log feature will be enabled by default, automatically recording various user-related actions, such as creating users, authorization, and login/logout. By default, 365 days of user behavior can be viewed within the platform.
 
 - Security analysis: The audit log will record user operations in detail and provide an export function. Through these events, you can judge whether the account is at risk.
 
 - Real-time recording: Quickly collect operation events, and trace back in the audit log list after user operations, so that suspicious behavior can be found at any time.
 
-- Convenient and reliable: The audit log supports manual cleaning and automatic cleaning, and the cleaning strategy can be configured according to your storage size.
+- Convenient and reliable: The audit log supports manual cleaning and automatic cleaning, and the cleaning policy can be configured according to your storage size.
 
 ## View Audit Logs
 
@@ -29,7 +29,7 @@ The audit log feature has the following characteristics:
 
 On the __User Operations__ tab, you can search for user operation events by time range, or by using fuzzy or exact search.
 
-Click the __⋮__ icon on the right side of an event to view its details.
+Click the __┇__ icon on the right side of an event to view its details.
 
 ![User audit logs](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/audit02.png)
 
@@ -45,7 +45,7 @@ Click the __Export__ button in the upper right corner to export the user operati
 
 On the __System operations__ tab, you can search for system operation events by time range, or by using fuzzy or exact search.
 
-Similarly, click the __⋮__ icon on the right side of an event to view its details.
+Similarly, click the __┇__ icon on the right side of an event to view its details.
 
 ![System event details](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/audit05.png)
 

@@ -1,3 +1,8 @@
+---
+MTPE: ModetaNiu
+DATE: 2024-07-23
+---
+
 # Harbor Nginx Configuration Best Practices
 
 Within Harbor, the portal and core services are exposed to the outside world,
@@ -23,10 +28,10 @@ the Pod. For example, you can increase the timeout to 15 minutes (900 seconds).
 Here's an example:
 
 1. In the scenario where Harbor is managed using Helm templates, deploy ingress-nginx.
-   You can find the `nginx-config` in `Container Management` -> `Cluster Details` -> `ConfigMaps`.
+   You can find the nginx-config in __Container Management__ -> __Clusters__ -> __ConfigMaps & Secrets__ -> __ConfigMaps__ .
 
 
-2. Access the details and click the `Update` button to add the proxy configuration shown below, modifying the timeout to 900s (15 minutes). Save the changes and restart the Pod.
+2. Access the details and click the __Update__ button to add the proxy configuration shown below, modifying the timeout to 900s (15 minutes). Save the changes and restart the Pod.
 
     ![ConfigMap Details](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/nginx-configdetail1.png)
 
@@ -45,7 +50,10 @@ It is necessary to investigate the cause of high load and take appropriate actio
 
 ## Scenario 2: Failed Helm Repo Operations
 
-Cause: The Chartmuseum service has an `index-cache.yaml` file for each repository, which records information about all Helm Charts in that repository. If there are thousands of Helm Charts, the `index-cache.yaml` file can expand to several tens of megabytes. When executing `helm repo add/update`, failure to fetch this file due to its large size can result in the operation failing.
+Cause: The Chartmuseum service has an `index-cache.yaml` file for each repository, which records information about 
+all Helm Charts in that repository. If there are thousands of Helm Charts, the `index-cache.yaml` file can expand 
+to several tens of megabytes. When executing `helm repo add/update`, failure to fetch this file due to its large size 
+can result in the operation failing.
 
 Solution:
 
@@ -56,10 +64,10 @@ Solution:
 Here's an example:
 
 1. In the scenario where Harbor is managed using Helm templates, deploy ingress-nginx.
-   You can find the `nginx-config` in `Container Management` -> `Cluster Details` -> `ConfigMap`.
+   You can find the nginx-config in __Container Management__ -> __Clusters__ -> __ConfigMaps & Secrets__ -> __ConfigMaps__ .
 
 
-2. Access the details of the config and click the `Update` button to add the
+2. Access the details of the config and click the __Update__ button to add the
    proxy configuration shown below. Save the changes and restart the Pod.
 
     ![ConfigMap Details](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kangaroo/images/nginx-configdetail2.png)

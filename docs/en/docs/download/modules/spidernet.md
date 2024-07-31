@@ -20,16 +20,16 @@ This page allows you to download the offline packages of various versions of the
 | [v0.6.0](../../network/intro/releasenotes.md#v060) | AMD64 | 55.47 MB | [:arrow_down: spidernet_v0.6.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/spidernet_v0.6.0_amd64.tar) | [:arrow_down: spidernet_v0.6.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/spidernet_v0.6.0_amd64_checksum.sha512sum) | 2023-04-26 |
 | [v0.5.0](../../network/intro/releasenotes.md#v050) | AMD64 | 51.68 MB | [:arrow_down: spidernet_v0.5.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/spidernet_v0.5.0_amd64.tar) | [:arrow_down: spidernet_v0.5.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/spidernet_v0.5.0_amd64_checksum.sha512sum) | 2023-04-25 |
 
-## Validation
+## Verification
 
 In the directory where the offline packages and checksum files are downloaded,
-take `v0.5.0_amd64` as an example, run the following command to validate the integrity:
+take `v0.5.0_amd64` as an example, run the following command to verify the integrity:
 
 ```sh
 echo "$(cat spidernet_v0.5.0_amd64_checksum.sha512sum)" | sha512sum -c
 ```
 
-After the validation is successful, the output is similar to:
+After the verification is successful, the output is similar to:
 
 ```none
 spidernet_v0.5.0_amd64.tar: ok

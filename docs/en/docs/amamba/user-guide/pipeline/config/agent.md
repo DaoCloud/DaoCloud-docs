@@ -120,7 +120,7 @@ If you need to run the Jenkins Agent in a specific environment, you can customiz
 
     <!--![]()screenshots-->
 
-2. Click __YAML Editor__ and fill in the YAML statement in the dialog box, please refer to the following example:
+2. Click __YAML Editor__ and fill in the YAML statement in the dialog box, refer to the following example:
 
     ```yaml
     apiVersion: v1

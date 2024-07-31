@@ -97,7 +97,7 @@ This page lists some frequently asked questions that may arise in container mana
 
     ![Scheduling Abnormality](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq601.png)
 
-    In this case, it may be due to the incomplete removal of the strategy. Click on edit and delete all strategies.
+    In this case, it may be due to the incomplete removal of the policy. Click to edit and delete all policies.
 
     ![Edit](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq602.png)
 
@@ -105,11 +105,11 @@ This page lists some frequently asked questions that may arise in container mana
 
     ![Normal Scheduling](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq604.png)
 
-1. What is the logic behind Kcoral checking the Velero status of a working cluster?
+1. What is the logic behind Kcoral checking the Velero status of a worker cluster?
 
     ![Detection](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/faq701.png)
 
-    - The working cluster has installed standard Velero components in the velero namespace.
+    - The worker cluster has installed standard Velero components in the velero namespace.
     - The velero control plane, specifically the velero deployment, is in a running state and meets the expected replica count.
     - The velero data plane, specifically the node agent, is in a running state and meets the expected replica count.
     - Velero successfully connects to the target MinIO (BSL status is Available).

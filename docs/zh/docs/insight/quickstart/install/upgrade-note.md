@@ -2,7 +2,21 @@
 
 本页介绍一些升级 Insight Server 和 Agent 的注意事项。
 
+## insight-agent
+
+### 从 0.28.x（或更低版本）升级到 v0.29.x
+由于 0.29.0 升级了 Opentelemetry 社区的 operator chart 版本，values 中的 featureGates 的支持的值有所变化，因此，在 upgrade 之前，需要将 `featureGates` 的值设置为空, 即：
+
+```diff
+-  --set opentelemetry-operator.manager.featureGates="+operator.autoinstrumentation.go,+operator.autoinstrumentation.multi-instrumentation,+operator.autoinstrumentation.nginx" \
++  --set opentelemetry-operator.manager.featureGates=""
+```
+
 ## Insight server
+
+### 从 v0.26.x（或更低版本）升级到 v0.27.x 或更高版本
+
+在 v0.27.x 版本中将 vector 组件的开关单独抽出。故原有环境开启了 vector，那在升级 Insight Server 时，需要指定 `--set vector.enabled=true` 。
 
 ### 从 v0.19.x（或更低版本）升级到 0.20.x
 

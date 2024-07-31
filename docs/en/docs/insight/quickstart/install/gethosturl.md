@@ -1,119 +1,191 @@
-# How to get the address of data upload?
+---
+MTPE: ModetaNiu
+DATE: 2024-07-24
+---
 
-When [installing insight-agent](./install-agent.md), you need to configure the service address to upload the cluster metrics, logs, and trace data to __global service cluster__ .
-This page outlines the steps on how to obtain the address for data uploads.
+# Get Data Storage Address of Global Service Cluster
 
-## Parameter Description
+Insight is a product for unified observation of multiple clusters. To achieve unified storage and
+querying of observation data from multiple clusters, sub-clusters need to report the collected observation data to the
+[global service cluster](../../../kpanda/user-guide/clusters/cluster-role.md#global-service-cluster)
+for unified storage. This document provides the required address of the storage component when
+installing the collection component insight-agent.
 
-| parameter | description |
-| -------------------------- | ----------------------- -------------------------------------------------- ------------- |
-| ${vminsert_host} | metric data upload address, the default is the externally accessible address of the global service cluster vminsert service |
-| ${es_host} | Log data upload address, consistent with the elasticsearch service configuration used by the global service cluster |
-| ${otel_col_auditlog_port} | audit log data upload address, the default is the externally accessible address of the global service cluster opentelemetry-collector service |
-| ${otel_col_host} | trace data upload address, the default is the externally accessible address of the global service cluster opentelemetry-collector service |
+## Install insight-agent in Global Service Cluster
 
-!!! note
+If installing insight-agent in the global service cluster, it is recommended to access the cluster via domain name:
 
-    If you use an external ElasticSearch cluster, please fill in the address, username and password of the corresponding cluster.
-
-## Install insight-agent in __global service cluster__ 
-
-When installing __Global Service Cluster__ , it is recommended to access the cluster through a domain name:
-
-```go
-export vminsert_host="vminsert-insight-victoria-metrics-k8s-stack.insight-system.svc.cluster.local" // metrics
-export es_host="insight-es-master.insight-system.svc.cluster.local" // log
-export otel_col_host="insight-opentelemetry-collector.insight-system.svc.cluster.local" // link
+```shell
+export vminsert_host="vminsert-insight-victoria-metrics-k8s-stack.insight-system.svc.cluster.local" # (1)!
+export es_host="insight-es-master.insight-system.svc.cluster.local" # (2)!
+export otel_col_host="insight-opentelemetry-collector.insight-system.svc.cluster.local" # (3)!
 ```
 
-## Install insight-agent on __worker cluster__ 
+1. Metrics
+2. Logs
+3. Traces
 
-The __Working Cluster__ needs to upload the data of metrics, logs, and traces to the __Global Service Cluster__ . Please ensure that the Insight in the __global service cluster__ is running and has exposed the address that the working cluster can access.
+## Install insight-agent in Other Clusters
 
-### Obtain insight-agent through the interface
+### Get Address via Interface Provided by Insight Server
 
-Refer to the following steps to obtain insight-agent through the interface.
+1. The [management cluster](../../../kpanda/user-guide/clusters/cluster-role.md#management-clusters)
+   uses the default LoadBalancer mode for exposure.
 
-1. Log in to the console of __Global Service Cluster__ and run the following command:
+    Log in to the console of the global service cluster and run the following command:
 
-   ```sh
-   export INSIGHT_SERVER_IP=$(kubectl get service insight-server -n insight-system --output=jsonpath={.spec.clusterIP})
-   curl --location --request POST 'http://'"${INSIGHT_SERVER_IP}"'/apis/insight.io/v1alpha1/agentinstallparam'
-   ```
+    !!! note
 
-1. After executing the above command, the following return value is obtained:
+        Please replace the `${INSIGHT_SERVER_IP}` parameter in the command.
+
+    ```bash
+    export INSIGHT_SERVER_IP=$(kubectl get service insight-server -n insight-system --output=jsonpath={.spec.clusterIP})
+    curl --location --request POST 'http://'"${INSIGHT_SERVER_IP}"'/apis/insight.io/v1alpha1/agentinstallparam'
+    ```
+
+    You will get the following response:
 
     ```json
-    {"values":"{\"global\":{\"exporters\":{\"logging\":{\"scheme\":\"https\",\"host\":\"mcamel- common-es-cluster-es-http.mcamel-system.svc.cluster.local\",\"port\":9200,\"user\":\"elastic\",\"password\":\" XAlJ948ZY0leE320SQ6hfv17\"},\"metric\":{\"host\":\"10.6.229.181\"},\"auditLog\":{\"host\":\"10.6.229.181\"}}} }"}
+    {
+      "values": {
+        "global": {
+          "exporters": {
+            "logging": {
+              "host": "10.6.182.32"
+            },
+            "metric": {
+              "host": "10.6.182.32"
+            },
+            "auditLog": {
+              "host": "10.6.182.32"
+            },
+            "trace": {
+              "host": "10.6.182.32"
+            }
+          }
+        },
+        "opentelemetry-operator": {
+          "enabled": true
+        },
+        "opentelemetry-collector": {
+          "enabled": true
+        }
+      }
+    }
     ```
 
-### Connect insight-agent via LoadBalancer
+    - `global.exporters.logging.host` is the log service address, no need to set the proper service port,
+      the default value will be used.
+    - `global.exporters.metric.host` is the metrics service address.
+    - `global.exporters.trace.host` is the trace service address.
+    - `global.exporters.auditLog.host` is the audit log service address (same service as trace but different port).
 
-Please confirm that your cluster has installed a load balancer, and follow the steps below to connect insight-agent through LoadBalancer:
+1. Management cluster disables LoadBalancer
 
-1. Log in to the console of the global management cluster and run the following command:
+    When calling the interface, you need to additionally pass an externally accessible node IP from the cluster,
+    which will be used to construct the complete access address of the proper service.
 
-    ```sh
-    kubectl get service -n insight-system | grep lb
-    kubectl get service -n mcamel-system
+    ```bash
+    export INSIGHT_SERVER_IP=$(kubectl get service insight-server -n insight-system --output=jsonpath={.spec.clusterIP})
+    curl --location --request POST 'http://'"${INSIGHT_SERVER_IP}"'/apis/insight.io/v1alpha1/agentinstallparam' --data '{"extra": {"EXPORTER_EXTERNAL_IP": "10.5.14.51"}}'
     ```
 
-1. Obtain the address information of the corresponding service after execution:
+    You will get the following response:
 
-    ```sh
-    $ kubectl get service -n insight-system | grep lb
-    lb-insight-opentelemetry-collector LoadBalancer 10.233.0.48 10.6.229.181 4317:32608/TCP,8006:30039/TCP 46d
-    lb-vminsert-insight-victoria-metrics-k8s-stack LoadBalancer 10.233.3.151 10.6.229.181 8480:31718/TCP 46d
-
-    $ kubectl get service -n mcamel-system | grep common-es-cluster
-    mcamel-common-es-cluster-es-http NodePort 10.233.50.159 <none> 9200:31450/TCP 57d
-    mcamel-common-es-cluster-es-internal-http ClusterIP 10.233.42.246 <none> 9200/TCP 57d
-    mcamel-common-es-cluster-es-transport ClusterIP None <none> 9300/TCP 57d
-    mcamel-common-es-cluster-kb-http NodePort 10.233.62.189 <none> 5601:31424/TCP 57d
-    mcamel-common-es-cluster-prometheus-exporter ClusterIP 10.233.20.175 <none> 9114/TCP 57d
+    ```json
+    {
+      "values": {
+        "global": {
+          "exporters": {
+            "logging": {
+              "scheme": "https",
+              "host": "10.5.14.51",
+              "port": 32007,
+              "user": "elastic",
+              "password": "j8V1oVoM1184HvQ1F3C8Pom2"
+            },
+            "metric": {
+              "host": "10.5.14.51",
+              "port": 30683
+            },
+            "auditLog": {
+              "host": "10.5.14.51",
+              "port": 30884
+            },
+            "trace": {
+              "host": "10.5.14.51",
+              "port": 30274
+            }
+          }
+        },
+        "opentelemetry-operator": {
+          "enabled": true
+        },
+        "opentelemetry-collector": {
+          "enabled": true
+        }
+      }
+    }
     ```
 
-	in,
+    - `global.exporters.logging.host` is the log service address.
+    - `global.exporters.logging.port` is the NodePort exposed by the log service.
+    - `global.exporters.metric.host` is the metrics service address.
+    - `global.exporters.metric.port` is the NodePort exposed by the metrics service.
+    - `global.exporters.trace.host` is the trace service address.
+    - `global.exporters.trace.port` is the NodePort exposed by the trace service.
+    - `global.exporters.auditLog.host` is the audit log service address (same service as trace but different port).
+    - `global.exporters.auditLog.port` is the NodePort exposed by the audit log service.
 
-- __lb-vminsert-insight-victoria-metrics-k8s-stack__ : URL for uploading metrics data
-- __lb-insight-opentelemetry-collector__ : trace data upload address
-- __mcamel-es-cluster-masters-es-http__ : log data upload address
+### Connect via LoadBalancer
 
-### Connect insight-agent via NodePort
+The above [getting address via interface provided by Insight Server](#get-address-via-interface-provided-by-insight-server) is done by
+querying the cluster's LoadBalancer to get the connection address.
+Additionally, you can manually run the following command to get the address information of the proper services:
 
-#### Obtain NodePort address through UI page
+```shell
+$ kubectl get service -n insight-system | grep lb
+lb-insight-es-master                             LoadBalancer   10.233.35.17    <pending>     9200:31529/TCP                 24d
+lb-insight-opentelemetry-collector               LoadBalancer   10.233.23.12    <pending>     4317:31286/TCP,8006:31351/TCP  24d
+lb-vminsert-insight-victoria-metrics-k8s-stack   LoadBalancer   10.233.63.67    <pending>     8480:31629/TCP                 24d
+```
 
-1. Click __Container Management__ from the left navigation bar to enter __Clusters__ .
+- `lb-insight-es-master` is the address of the log service.
+- `lb-vminsert-insight-victoria-metrics-k8s-stack` is the address of the metrics service.
+- `lb-insight-opentelemetry-collector` is the address of the trace service.
 
+### Connect via NodePort
+
+1. Global service cluster enables LB feature [enabled by default]
+
+    Manually run the command `kubectl get service -n insight-system | grep lb` to
+    get the NodePort port information of the corresponding services,
+    refer to [Connect via LoadBalancer](#connect-via-loadbalancer).
     
+1. Global service cluster disables LB feature
 
-2. Select the cluster __kpanda-global-cluster__ , select __Container Application__ -> __Service__ in the left navigation bar, select __insight-system__ namespace, and view the ports exposed by the corresponding service.
+    In this case, the above LoadBalancer resources will not be created by default, and the corresponding service names are:
 
-    
+    - vminsert-insight-victoria-metrics-k8s-stack (metrics service)
+    - common-es (log service)
+    - insight-opentelemetry-collector (trace service)
 
-- __vminsert-insight-victoria-metrics-k8s-stack__ : index data upload address, set the NodePort corresponding to port 8480
-- __insight-opentelemetry-collector__ : trace data upload address, set the NodePort corresponding to port 8006
-- __insight-opentelemetry-collector__ : Audit log data upload address, set the NodePort corresponding to port 4317
-- __mcamel-es-cluster-masters-es-http__ : log data upload address, set the NodePort corresponding to port 9200
-
-#### Obtain the service address through the console
-
-Connect insight-agent via NodePort.
-
-1. Log in to the console of the global management cluster and run the following command:
+    After getting the proper port information of the respective services in the above two cases, set as follows:
 
     ```shell
-    kubectl get service -n insight-system
-    kubectl get service -n mcamel-system
+    --set global.exporters.logging.host=  # (1)!
+    --set global.exporters.logging.port=  # (2)!
+    --set global.exporters.metric.host=   # (3)!
+    --set global.exporters.metric.port=   # (4)!
+    --set global.exporters.trace.host=    # (5)!
+    --set global.exporters.trace.port=    # (6)!
+    --set global.exporters.auditLog.host= # (7)!
     ```
 
-2. Obtain the address information of the corresponding service:
-
-    ```shell
-    $ kubectl get service -n insight-system | grep -E "opentelemetry|vminsert"
-    insight-agent-opentelemetry-collector NodePort 10.233.9.24 <none> 6831:32621/UDP,14250:31181/TCP,14268:30523/TCP,8888:32415/TCP,4317:32106/TCP,4318:31221/TCP, 8889:32558/TCP,9411:30911/TCP 42d
-    vminsert-insight-victoria-metrics-k8s-stack NodePort 10.233.33.39 <none> 8480:32638/TCP 8d
-
-    $ kubectl get service -n mcamel-system | grep common-es-cluster
-    mcamel-common-es-cluster-es-http NodePort 10.233.50.159 <none> 9200:31450/TCP 57d
-    ```
+    1. Externally accessible management cluster NodeIP
+    2. NodePort corresponding to log service port 9200
+    3. Externally accessible management cluster NodeIP
+    4. NodePort corresponding to metrics service port 8480
+    5. Externally accessible management cluster NodeIP
+    6. NodePort corresponding to trace service port 4317
+    7. Externally accessible management cluster NodeIP

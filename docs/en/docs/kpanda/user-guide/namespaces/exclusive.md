@@ -15,7 +15,7 @@ Namespace exclusive nodes in a Kubernetes cluster allow a specific namespace to 
 
 Check whether the kube-apiserver of the current cluster has enabled the __PodNodeSelector__ and __PodTolerationRestriction__ admission controllers.
 
-The use of namespace exclusive nodes requires users to enable the __PodNodeSelector__ and __PodTolerationRestriction__ admission controllers on the kube-apiserver. For more information about admission controllers, please refer to [Kubernetes Admission Controllers Reference](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/).
+The use of namespace exclusive nodes requires users to enable the __PodNodeSelector__ and __PodTolerationRestriction__ admission controllers on the kube-apiserver. For more information about admission controllers, refer to [Kubernetes Admission Controllers Reference](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/).
 
 You can go to any Master node in the current cluster to check whether these two features are enabled in the __kube-apiserver.yaml__ file, or you can execute the following command on the Master node for a quick check:
 

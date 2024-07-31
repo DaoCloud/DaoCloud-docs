@@ -34,7 +34,7 @@ Follow these steps to create a stateless workload using an image.
     view the requirements for each part.
 
     > Container configuration applies to individual containers. If you need to add multiple
-    > containers within a container group, click the "+" button to add them.
+    > containers within a pod, click the "+" button to add them.
 
     === "Basic Information (Required)"
 
@@ -51,7 +51,7 @@ Follow these steps to create a stateless workload using an image.
           to choose an image from the repository.
         - Mirror Pull Policy: By selecting __Always pull the image__ , the workload will pull the image from
           the repository every time it restarts/upgrades. If not selected, it will only pull the
-          local image, and only pull from the image repository if the local image does not exist.
+          local image, and only pull from the container registry if the local image does not exist.
           For more details, refer to
           [Image Pull Policy](https://kubernetes.io/docs/concepts/containers/images/#image-pull-policy).
         - Privileged Container: By default, containers cannot access any device on the host.
@@ -107,7 +107,7 @@ Follow these steps to create a stateless workload using an image.
 
     === "Labels & Annotations"
 
-        Click the __Add__ button to add labels and annotations to the workload and container group.
+        Click the __Add__ button to add labels and annotations to the workload and pod.
 
         !["Labels/Annotations](../images/create-batch-app-03.png)
 
@@ -126,7 +126,7 @@ Follow these steps to create a stateless workload using an image.
 
         ![Network Configuration](../images/create-batch-app-04.png)
 
-6. Click the __Confirm__ button to complete the creation of the batch deployment.
+6. Click the __OK__ button to complete the creation of the batch deployment.
 
 ## Create by YAML
 
@@ -138,7 +138,7 @@ In addition to creating batch deployments using images, you can also create them
 
     ![Create by YAML](../images/create-batch-app-05.png)
 
-3. Enter or paste the prepared YAML file and click __Confirm__ to complete the creation.
+3. Enter or paste the prepared YAML file and click __OK__ to complete the creation.
 
 !!! note
 

@@ -1,12 +1,14 @@
 ---
+MTPE: windsonsea
+Date: 2024-07-17
 hide:
    - toc
 ---
 
 # Authorization Policy
 
-The authorization policy is similar to a four-layer to seven-layer "firewall". It will analyze and match the data flow 
-like a traditional firewall, and then perform corresponding actions.
+The authorization policy is similar to a L4 to L7 "firewall".
+It will analyze and match the data flow like a traditional firewall, and then perform corresponding actions.
 The authorization policy applies whether the request is from internal or external.
 
 A reference YAML example for an authorization policy is as follows:
@@ -31,29 +33,35 @@ spec:
          methods: ["GET"]
 ```
 
-Service mesh provides two creation methods: wizard and YAML. The specific steps to create through the wizard are as follows:
+Service mesh provides two creation methods: wizard and YAML.
+The specific steps to create through the wizard are as follows:
 
-1. In the left navigation bar, click __Security__ -> __Authorization Policy__ , and click the __Create__ button in the upper right corner.
+1. In the left navigation bar, click __Security__ -> __Authorization Policy__ ,
+   and click the __Create__ button in the upper right corner.
 
     ![Create](../images/authorize01.png)  
 
-2. In the __Create Request Authentication Policy__ interface, firstly fill in the basic settings and then click __Next__ .
+2. In the __Create Request Authentication Policy__ interface, firstly fill in
+   the basic settings and then click __Next__ .
 
-    ![Basic](../images/authorize02.png)     
+    ![Basic](../images/authorize02.png)
 
-3. After setting the policy according to the screen prompts, click __OK__ . See [Policy Setting Parameter Description](./params.md#_10).
+3. After setting the policy according to the screen prompts, click __OK__ .
+   See [Policy Setting Parameter Description](./params.md#policy-settings).
 
-    ![Policy settings](../images/authorize03.png)    
+    ![Policy settings](../images/authorize03.png)
 
 4. Return to the authorization list, and the screen prompts that the creation is successful.
 
-    ![Successful submission](../images/authorize04.png)   
+    ![Successful submission](../images/authorize04.png)
 
-5. On the right side of the list, click __⋮__ in the operation column to perform more operations through the pop-up menu.
+5. On the right side of the list, click __┇__ in the operation column to
+   perform more operations through the pop-up menu.
 
     ![More operations](../images/authorize05.png)
 
 !!! note
 
-     - For the configuration of specific parameters, please refer to [Authorization Policy Parameter Configuration](./params.md#_8).
-     - For a more intuitive operation demonstration, please refer to [Video Tutorial](../../../videos/mspider.md).
+     - For the configuration of specific parameters, refer to
+       [Authorization Policy Parameter Configuration](./params.md#authorization-policies).
+     - For a more intuitive operation demonstration, refer to [Video Tutorial](../../../videos/mspider.md).

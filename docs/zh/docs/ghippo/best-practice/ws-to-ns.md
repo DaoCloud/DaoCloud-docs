@@ -100,7 +100,7 @@ click createns "https://docs.daocloud.io/ghippo/user-guide/workspace/ws-to-ns/#_
 
     ![填写](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/ns02.png)
 
-1. 点击 __确定__ ，完成命名空间的创建。在命名空间列表右侧，点击 __⋮__ ，可以从弹出菜单中选择 __绑定工作空间__ 。
+1. 点击 __确定__ ，完成命名空间的创建。在命名空间列表右侧，点击 __┇__ ，可以从弹出菜单中选择 __绑定工作空间__ 。
 
     ![确定和绑定](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/ns03.png)
 

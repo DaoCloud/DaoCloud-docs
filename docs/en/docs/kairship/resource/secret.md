@@ -19,7 +19,7 @@ Two creation methods are currently provided: wizard creation and YAML creation. 
 
     ![Fill Info](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/secret02.png)
 
-3. Back to the list of multicloud secrets, the newly created one is the first one by default. Click __⋮__ on the right side of the list to edit YAML, update, export and delete Secret.
+3. Back to the list of multicloud secrets, the newly created one is the first one by default. Click __┇__ on the right side of the list to edit YAML, update, export and delete Secret.
 
     ![Update/Delete](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/secret03.png)
 

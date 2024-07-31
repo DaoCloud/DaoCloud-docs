@@ -1,4 +1,6 @@
 ---
+MTPE: WANG0608GitHub
+Date: 2024-07-11
 hide:
   - toc
 ---
@@ -7,11 +9,11 @@ hide:
 
 1. Can I specify my own Karmada version or get it upgraded? 
 
-    Yes, you can upgrade the version by yourself.
+    Yes, The current default version is v1.8.0, and you can upgrade the version by yourself.
 
 2. How to convert single-cluster applications to multicloud applications?
 
-    See [One-Click Conversion to Multicloud Workloads](../workload/promote.md).
+    Refer to [One-Click Conversion to Multicloud Workloads](../workload/promote.md).
 
 3. Can I collect logs of applications deployed in different cluster?
 
@@ -23,11 +25,11 @@ hide:
 
 5. Can workloads communicate across clusters?
 
-    Yes. See [Multicloud Network Interconnection](../../mspider/user-guide/multicluster/cluster-interconnect.md)
+    Yes. Refer to [Multicloud Network Interconnection](../../mspider/user-guide/multicluster/cluster-interconnect.md)
 
 6. Can Service realize cross-cluster service discovery?
 
-    Yes. See [Multicloud Network Interconnection](../../mspider/user-guide/multicluster/cluster-interconnect.md)
+    Yes. Refer to [Multicloud Network Interconnection](../../mspider/user-guide/multicluster/cluster-interconnect.md)
 
 7. Does Karmada have production level support?
 
@@ -35,7 +37,7 @@ hide:
 
 8. How to achieve failover?
 
-    See [Failover Introduction](../failover/failover.md)
+    Due to Karmada's native support for fault tolerance, Karmada will intelligently reschedule to complete the fault tolerance when a member cluster experiences a failure. Refer to [Failover Introduction](../failover/failover.md)
 
 9. How about the permission system?
 
@@ -47,11 +49,15 @@ hide:
 
 11. How can Container Management module get the information multicloud instances?
 
-    Each Karmada instances has a corresponding virtual Kubernetes cluster in Container Management module, allowing it to collect info as quickly as possible.
+    The Karmada control-plane is essentially a complete Kubernetes control plane without any nodes carrying workloads. Therefore, when creating multicloud management instances, a clever action is taken to add the instance itself as a hidden cluster to the container management (not displayed in the container management). This allows for leveraging the full capabilities of container management (collecting and accelerating the retrieval of resources from various Kubernetes clusters, CRDs, etc.). When querying the resources of a specific multicloud management instance (such as Deployment, PropagationPolicy, OverridePolicy, etc.) in the interface, retrieval can be directly done through container management, achieving read and write separation and speeding up response time.
 
 12. How to customize registry URL of __karmada__ images?
 
+    Kairship uses the open-source __karmada-operator__ for multi-instance LCM management. Operator provides rich customization capabilities. It supports customizing the repository address of the karmada resource image in the startup parameters. 
+    
     Add __--chat-repo-url__ in the startup commands of containers to specify the image source.
+
+    ![image](../../kairship/images/faq01.png)
 
 13. How to connect with karmada clusters?
 
@@ -59,8 +65,8 @@ hide:
 
 14. Can I delete only the multicloud instance without deleting the corresponding karmada instance?
 
-    Yes. You can set this configuration when creating the multicloud instance.
+    Yes, when creating a multicloud instance, you can choose whether to select the instance release feature. If selected, the corresponding Karmada instance will be deleted synchronously. If not deleted, you can continue to use it through the terminal, but you cannot manage the Karmada instance within the multicloud management, so it is recommended to delete it synchronously.
 
-15. How can working clusters in a multicloud instance connect with each other?
+15. How can worker clusters in a multicloud instance connect with each other?
 
-    See [Multicloud Network Interconnection](../../mspider/user-guide/multicluster/cluster-interconnect.md)
+    Refer to [Multicloud Network Interconnection](../../mspider/user-guide/multicluster/cluster-interconnect.md)

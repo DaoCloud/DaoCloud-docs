@@ -70,7 +70,7 @@ In a multicluster scenario, the number of Pods represents the sum of the number 
 ### Example
 
 There are two clusters in the DCE 5.0 platform, of which 500 Pods are running in the global management cluster
-(service mesh is turned on), and 1000 Pods are running in the working cluster (service mesh is not turned on), and the expected metrics are stored for 30 days.
+(service mesh is turned on), and 1000 Pods are running in the worker cluster (service mesh is not turned on), and the expected metrics are stored for 30 days.
 
 - The number of metrics in the global management cluster is 800x500 + 768x500 = 784000
 - Worker cluster metrics are 800x1000 = 800000

@@ -8,15 +8,15 @@ This page explains how to install or upgrade the Mongodb module of the middlewar
 
 ## Load Images from Installation Package
 
-You can load the images using one of the following two methods. It is recommended to use chart-syncer to synchronize images to the image repository when a repository already exists in the environment, as it is more efficient and convenient.
+You can load the images using one of the following two methods. It is recommended to use chart-syncer to synchronize images to the container registry when a repository already exists in the environment, as it is more efficient and convenient.
 
-### Synchronize Images to Image Repository using chart-syncer
+### Synchronize Images to Container Registry using chart-syncer
 
 1. Create __load-image.yaml__ .
 
     !!! note
 
-        All parameters in this YAML file are required. You need a private image repository and modify the relevant configurations.
+        All parameters in this YAML file are required. You need a private container registry and modify the relevant configurations.
 
     === "Installed chart repo"
 
@@ -26,18 +26,18 @@ You can load the images using one of the following two methods. It is recommende
         source:
           intermediateBundlesPath: mcamel-offline # path relative to the location where the charts-syncer command is executed, not relative to this YAML file and the offline package.
         target:
-          containerRegistry: 10.16.10.111 # Replace with your image repository URL
-          containerRepository: release.daocloud.io/mcamel # Replace with your image repository
+          containerRegistry: 10.16.10.111 # Replace with your container registry URL
+          containerRepository: release.daocloud.io/mcamel # Replace with your container registry
           repo:
             kind: HARBOR # Can also be any other supported Helm Chart repository type
             url: http://10.16.10.111/chartrepo/release.daocloud.io # Replace with the chart repo URL
             auth:
-              username: "admin" # Your image repository username
-              password: "Harbor12345" # Your image repository password
+              username: "admin" # Your container registry username
+              password: "Harbor12345" # Your container registry password
           containers:
             auth:
-              username: "admin" # Your image repository username
-              password: "Harbor12345" # Your image repository password
+              username: "admin" # Your container registry username
+              password: "Harbor12345" # Your container registry password
         ```
 
     === "Uninstalled chart repo"
@@ -48,15 +48,15 @@ You can load the images using one of the following two methods. It is recommende
         source:
           intermediateBundlesPath: mcamel-offline # path relative to the location where the charts-syncer command is executed, not relative to this YAML file and the offline package.
         target:
-          containerRegistry: 10.16.10.111 # Replace with your image repository URL
-          containerRepository: release.daocloud.io/mcamel # Replace with your image repository
+          containerRegistry: 10.16.10.111 # Replace with your container registry URL
+          containerRepository: release.daocloud.io/mcamel # Replace with your container registry
           repo:
             kind: LOCAL
             path: ./local-repo # Local path of the chart
           containers:
             auth:
-              username: "admin" # Your image repository username
-              password: "Harbor12345" # Your image repository password
+              username: "admin" # Your container registry username
+              password: "Harbor12345" # Your container registry password
         ```
 
 1. Run the image synchronization command.
@@ -155,10 +155,10 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
 
     1. Run `helm upgrade` .
 
-        Before upgrading, it is recommended to replace the  `global.imageRegistry` field in __mcamel-mongodb.yaml__ with the image repository address you are currently using.
+        Before upgrading, it is recommended to replace the  `global.imageRegistry` field in __mcamel-mongodb.yaml__ with the container registry address you are currently using.
 
         ```shell
-        export imageRegistry={your image repository}
+        export imageRegistry={your-registry}
         ```
 
         ```shell
@@ -181,10 +181,10 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
 
     1. Run `helm upgrade` .
 
-        Before upgrading, it is recommended to replace the  `global.imageRegistry` field in __mcamel-mongodb.yaml__ with the image repository address you are currently using.
+        Before upgrading, it is recommended to replace the  `global.imageRegistry` field in __mcamel-mongodb.yaml__ with the container registry address you are currently using.
 
         ```shell
-        export imageRegistry={your image repository}
+        export imageRegistry={your-registry}
         ```
 
         ```shell

@@ -20,7 +20,7 @@
         ssh-keygen -t rsa -b 4096
         ```
 
-    3. 当系统提示您 “Enter a file in which to save the key”，您可以直接敲击 Enter 键使用默认路径，或者指定一个新的路径。
+    3. 当系统提示您“Enter a file in which to save the key”，您可以直接敲击 Enter 键使用默认路径，或者指定一个新的路径。
     4. 接下来，系统会提示您输入密码（可选），这将增加一个额外的安全层。如果选择输入密码，请记住这个密码，因为每次使用密钥时都会需要它。
 
 === "Windows"
@@ -35,12 +35,16 @@
 
     4. 同 Mac/Linux 步骤
 
-### 添加 SSH 公钥到个人中心（可选）
+### 添加 SSH 公钥到个人中心
+
+!!! note
+
+    具体操作可以参考：[配置 SSH 公钥](../../../ghippo/user-guide/personal-center/ssh-key.md)
 
 1. 打开生成的公钥文件，通常位于 `~/.ssh/id_rsa.pub`（如果您没有更改默认路径）
 2. 复制公钥内容
-3. 登录到系统的个人中心
-4. 寻找 SSH 公钥配置区域，将复制的公钥粘贴到指定位置
+3. 登录到 DCE, 然后右上角帐号点开，选择个人中心
+4. 在 SSH 公钥配置页，添加你本地生成的公钥文件
 5. 保存更改
 
 ## 在 Notebook 中开启 SSH 访问
@@ -57,10 +61,11 @@
 假设您获得的 SSH 访问命令如下：
 
 ```bash
-ssh username@mockhost -p 2222
+    # ssh {DCE5_USERNAME}@{CLUSTER}.{NAMESPACE}.{NOTEBOOK_NAME}@{DCE5_UI_LOGIN_IP} -p {DCE5_UI_LOGIN_IP}
+    ssh baizeuser01@gpu-cluster.demo.demo-notebook@10.20.100.201 -p 80 -i private_key
 ```
 
-请将 `username` 替换为您的用户名，`mockhost` 替换为实际的主机名，`2222` 替换为实际的端口号。
+请将 `DCE5_USERNAME` 替换为您的用户名，`DCE5_UI_LOGIN_IP` 替换为实际的主机名，`DCE5_UI_LOGIN_IP` 替换为实际的端口号。
 
 ### Windows
 
@@ -80,7 +85,8 @@ ssh username@mockhost -p 2222
     2. 输入访问命令：
 
         ```bash
-        ssh username@mockhost -p 2222
+            # ssh {DCE5_USERNAME}@{CLUSTER}.{NAMESPACE}.{NOTEBOOK_NAME}@{DCE5_UI_LOGIN_IP} -p {DCE5_UI_LOGIN_IP}
+            ssh baizeuser01@gpu-cluster.demo.demo-notebook@10.20.100.201 -p 80 -i private_key
         ```
 
     3. 按 Enter 键
@@ -91,7 +97,8 @@ ssh username@mockhost -p 2222
 2. 输入访问命令：
 
     ```bash
-    ssh username@mockhost -p 2222
+        # ssh {DCE5_USERNAME}@{CLUSTER}.{NAMESPACE}.{NOTEBOOK_NAME}@{DCE5_UI_LOGIN_IP} -p {DCE5_UI_LOGIN_IP}
+        ssh baizeuser01@gpu-cluster.demo.demo-notebook@10.20.100.201 -p 80 -i private_key
     ```
 
 3. 如果系统提示您接受主机的身份，请输入`yes`。
@@ -113,7 +120,8 @@ ssh username@mockhost -p 2222
     4. 输入 SSH 连接命令，例如：
 
         ```bash
-        ssh username@mockhost -p 2222
+            # ssh {DCE5_USERNAME}@{CLUSTER}.{NAMESPACE}.{NOTEBOOK_NAME}@{DCE5_UI_LOGIN_IP} -p {DCE5_UI_LOGIN_IP}
+            ssh baizeuser01@gpu-cluster.demo.demo-notebook@10.20.100.201 -p 80 -i private_key
         ```
 
     5. 敲击 Enter 键。请将 username、mockhost 和 2222 替换为实际的用户名、主机名和端口号。

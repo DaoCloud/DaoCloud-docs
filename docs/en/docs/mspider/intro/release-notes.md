@@ -9,6 +9,20 @@ Date: 2024-05-31
 
 This page lists all the Release Notes for each version of Service Mesh, providing convenience for users to learn about the evolution path and feature changes.
 
+## 2024-06-30
+
+### v0.27.0
+
+#### Features
+
+- **Added** `Istio` resource analysis to help identify resource configuration anomalies and improve user experience.
+
+#### Fixes
+
+- **Fixed** an issue where components were not uninstalled when removing a dedicated mesh.
+- **Fixed** an issue with abnormal mesh component detection.
+- **Fixed** an issue where reinstalling after uninstalling a hosted mesh might fail.
+
 ## 2024-05-30
 
 ### v0.26.0
@@ -87,7 +101,7 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 - **Added** larger scale: **S2000P8000** , **S5000P20000** mesh instances.
 - **Added** gateway instance upgrade reminder, supporting one-click upgrade.
 
-#### Optimization
+#### Improvements
 
 - **Upgraded** supported mesh versions are **1.18.6** and **1.19.5** .
 - **Upgraded** the supported mesh version for **1.17** is **1.17.8-fix-20231226** , which fixes the previous memory leak issue.
@@ -108,10 +122,10 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 - **Added** **VM Agent** support for health checks and fault recovery of **Istio** processes.
 - **Added** **TrafficLane API** support for operations via **Annotations** .
 
-#### Optimization
+#### Improvements
 
-- **Optimized** the algorithm mechanism for the service list state and diagnostic state to ensure consistency between diagnostic results and status fields.
-- **Optimized** the automatic discovery strategy for managed mesh services to display any service from any cluster with the `mspider.io/managed` label.
+- **Improved** the algorithm mechanism for the service list state and diagnostic state to ensure consistency between diagnostic results and status fields.
+- **Improved** the automatic discovery policy for hosted mesh services to display any service from any cluster with the `mspider.io/managed` label.
 
 #### Fixes
 
@@ -134,10 +148,10 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 - **Added** customizable namespace scope for edge discovery in the mesh, significantly reducing resource consumption pressure on **Sidecar** .
 - **Added** elastic scaling configuration **auto_scaling** for the mesh gateway.
 
-#### Optimization
+#### Improvements
 
-- **Optimized** traffic topology **Graph** implementation with optional hiding of idle nodes.
-- **Optimized** detection of host **glibc** version during **docker** mode installation of **vmagent** .
+- **Improved** traffic topology **Graph** implementation with optional hiding of idle nodes.
+- **Improved** detection of host **glibc** version during **docker** mode installation of **vmagent** .
 
 #### Fixes
 
@@ -165,8 +179,8 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 - **Added** **Reporter** parameter to the routing panel of **Grafana** .
 - **Added** **Mspider** virtual machine agent controller ( **mspider-vm-agent** ).
 - **Added** **generator** package, implementing **ComponentAnalyzer** . Pass in **MeshCluster** or **GlobalMesh** to retrieve corresponding component statuses.
-- **Optimized** upgrade interface for checking mesh availability by adding permission checks.
-- **Optimized** **reconcileComponentsStatus** in **gsc-controller** under mesh-cluster.
+- **Improved** upgrade interface for checking mesh availability by adding permission checks.
+- **Improved** **reconcileComponentsStatus** in **gsc-controller** under mesh-cluster.
 - **Upgraded** frontend version to **v0.17.0** .
 - **Upgraded** supported mesh versions to **1.16.6** , **1.17.5** , **1.18.2** .
 
@@ -238,12 +252,12 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 - **Fixed** an issue with name validation of **Istio CRD**, allowing the first letter of all operation names to be a number.
 - **Fixed** an issue with incorrect comment about **label_selectors** in the **Graph** interface.
 - **Fixed** a lack of message body description for service diagnosis repair interface.
-- **Optimized** description of the **namespaces** field in the **Istio** resource interface.
-- **Optimized** detection process of mesh control plane, ignoring control plane clusters.
-- **Optimized** consistency of different permissions for different roles with the latest permission design.
-- **Optimized** permission design, separating multi-cloud network interconnection permission from mesh management.
-- **Optimized** meaning of the `global.high_available` parameter.
-- **Optimized** usage of `CHART.replicas` , changing default value to empty.
+- **Improved** description of the **namespaces** field in the **Istio** resource interface.
+- **Improved** detection process of mesh control plane, ignoring control plane clusters.
+- **Improved** consistency of different permissions for different roles with the latest permission design.
+- **Improved** permission design, separating multi-cloud network interconnection permission from mesh management.
+- **Improved** meaning of the `global.high_available` parameter.
+- **Improved** usage of `CHART.replicas` , changing default value to empty.
 
 ## 2023-06-29
 
@@ -270,11 +284,11 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 - **Added** `global.config.enableAutoInitPolicies` configuration for enabling automatic initialization of governance policies for managed services in **MCPC Controller** .
 - **Added** `global.config.enableAutoInjectedSidecar` configuration for enabling automatic injection policies for managed services in **MCPC Controller** .
 - **Added** compatibility testing for various versions of K8s.
-- **Optimized** cache to improve the latency issue of querying **Insight Agent** status in clusters.
-- **Optimized** strengthened detection of conflicting meshes when creating a mesh for managed clusters.
-- **Optimized** ignored updates to name (Name), namespace (Namespace), and labels (Labels) when updating mesh gateways to avoid triggering exceptions.
-- **Optimized** updated synchronization method for Kpanda cluster kubeconfig.
-- **Optimized** created logic for **WorkloadShadow controller watcher** .
+- **Improved** cache to improve the latency issue of querying **Insight Agent** status in clusters.
+- **Improved** strengthened detection of conflicting meshes when creating a mesh for managed clusters.
+- **Improved** ignored updates to name (Name), namespace (Namespace), and labels (Labels) when updating mesh gateways to avoid triggering exceptions.
+- **Improved** updated synchronization method for Kpanda cluster kubeconfig.
+- **Improved** created logic for **WorkloadShadow controller watcher** .
 - **Upgraded** supported querying cluster and cluster component information independently without passing MeshID.
 - **Upgraded** go package istio.io/istio to **v0.0.0-20230131034922-50fb2905d9f5** version.
 - **Upgraded** **CloudTTY** to **v0.5.3** version.
@@ -306,7 +320,7 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 
 #### Removals
 
-- **Removed** 443 port from service **istiod-[meshID]-hosted-lb** in managed mesh mode.
+- **Removed** 443 port from service **istiod-[meshID]-hosted-lb** in hosted mesh mode.
 
 ## 2023-05-31
 
@@ -329,16 +343,16 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 - **Added** Reg-Proxy component by default.
 - **Added** a feature of Service selector field output.
 - **Added** a Network label to Namespace to solve cross-cluster access problems when Sidecars are not injected.
-- **Added** custom parameter configuration capability for hosted mesh hosted-apiserver. (This parameter only takes effect during installation and does not support updates for the time being), (for more parameters, please refer to helm parameter configuration):
+- **Added** custom parameter configuration capability for hosted mesh hosted-apiserver. (This parameter only takes effect during installation and does not support updates for the time being), (for more parameters, refer to helm parameter configuration):
 - **Added** mesh control plane component status
 - **Added** the **loadBalancerStatus** field to the mesh query interface to describe the actual assigned LB address.
 - **Added** component progress detail interface `/apis/mspider.io/v3alpha1/meshes/{mesh_id}/components-progress`.
 - **Added** HPA is added for control plane components.
 - **Added** new API definition to get cluster **StorageClass** .
 - **Added** new API definition to get installed components in the cluster (currently supports Insight Agent).
-- **Optimized** user experience for binding/unbinding workspaces.
-- **Optimized** the **workload_kind** field type in the workload-related interface from enumeration to **string** .
-- **Optimized** version detection of the control plane cluster to be included along with the working cluster when hosting a mesh .
+- **Improved** user experience for binding/unbinding workspaces.
+- **Improved** the **workload_kind** field type in the workload-related interface from enumeration to **string** .
+- **Improved** version detection of the control plane cluster to be included along with the working cluster when hosting a mesh .
 - **Upgrade** CloudTTY to version **0.5.3** .
 - **Upgrade** the creation logic of the WorkloadShadow controller watcher .
 
@@ -384,10 +398,10 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 - **Added** the functionality in MCPC Controller to automatically create governance policies for services when it detects the mspider.io/managed label.
 - **Added** support for multiple workload types in MCPC Controller.
 - **Added** a health check feature that automatically rebuilds an APIServer proxy when it becomes unreachable, preventing PortForward's own logic from being unreliable (possibly related to Istio Sidecar).
-- **Optimized** the controller namespace and service resource handling logic to reduce frequent workloadShadow resource updates.
-- **Optimized** the issue of frequent fetching/updating of workloadShadow resources, now reconciling only for resources that have undergone specific changes.
-- **Optimized** to reduce pod changes constantly updating WorkloadShadow.
-- **Optimized** the Helm image rendering template. The image structure is now split into three parts: registry/repository:tag.
+- **Improved** the controller namespace and service resource handling logic to reduce frequent workloadShadow resource updates.
+- **Improved** the issue of frequent fetching/updating of workloadShadow resources, now reconciling only for resources that have undergone specific changes.
+- **Improved** to reduce pod changes constantly updating WorkloadShadow.
+- **Improved** the Helm image rendering template. The image structure is now split into three parts: registry/repository:tag.
 
 #### Fixes
 
@@ -446,12 +460,12 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 - **Added** automatic adjustment of component resource configurations when selecting different mesh scales.
 - **Added** custom role implementation, supporting the creation, updating, deletion, binding, and unbinding of custom roles.
 
-#### Optimization
+#### Improvements
 
-- **Optimized** the mcpc controller startup logic to avoid situations where work clusters are not correctly registered.
-- **Optimized** the WorkloadShadow cleanup logic to be triggered by events instead of on a schedule; it triggers on controller startup, detection of changes in work clusters, or changes in WorkloadShadow.
-- **Optimized** the mcpc controller startup logic to avoid situations where work clusters are not correctly registered.
-- **Upgraded** the Insight API to version v0.14.7.
+- **Improved** the mcpc controller startup logic to avoid situations where work clusters are not correctly registered.
+- **Improved** the WorkloadShadow cleanup logic to be triggered by events instead of on a schedule; it triggers on controller startup, detection of changes in work clusters, or changes in WorkloadShadow.
+- **Improved** the mcpc controller startup logic to avoid situations where work clusters are not correctly registered.
+- **Upgraded** the Insight API to v0.14.7.
 - **Upgraded** ckube to support complex condition queries for labels.
 - **Removed** the time limit for Helm upgrades.
 
@@ -463,7 +477,7 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 - **Fixed** an issue where binding a Mesh to a workspace service would fail (displaying success in the UI).
 - **Fixed** an issue where detached namespaces existed in the virtual cluster due to anomalies, adding self-check and cleanup behavior on mcpc-controller startup.
 - **Fixed** an issue where updating the mesh via the controller caused the API to fail to deliver mesh configurations.
-- **Fixed** an issue where the TargetPort of ServicePort was not set correctly when creating a managed mesh.
+- **Fixed** an issue where the TargetPort of ServicePort was not set correctly when creating a hosted mesh.
 - **Fixed** an issue with `GlobalMesh.Status.MeshVersion` being incorrectly overwritten.
 - **Fixed** an issue where mcpc-controller could not enable debug mode.
 - **Fixed** an issue where mcpc-controller could not trigger cluster deletion events.
@@ -480,10 +494,10 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 - **Added** enhanced global configuration capabilities for meshes (mesh system configuration, global traffic governance capabilities, global sidecar injection settings).
 - **Added** support for zookeeper proxy.
 
-#### Optimization
+#### Improvements
 
-- **Optimized** the Namespace controller by adding a cache to reduce redundant Get requests when there are too many namespaces in the cluster.
-- **Optimized** to reduce the log output of ckube in normal mode.
+- **Improved** the Namespace controller by adding a cache to reduce redundant Get requests when there are too many namespaces in the cluster.
+- **Improved** to reduce the log output of ckube in normal mode.
 
 #### Fixes
 
@@ -509,12 +523,12 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 - **Added** Istio 1.16.3 support.
 - **Added** support for customizing the Istiod configuration .
 
-#### Optimization
+#### Improvements
 
-- **Optimized** the efficiency of MCPC controller synchronization.
-- **Optimized** the performance of Istiod initialization.
-- **Optimized** the **WorkloadShadow** module to reduce resource consumption.
-- **Optimized** the **Mspider** version to improve stability.
+- **Improved** the efficiency of MCPC controller synchronization.
+- **Improved** the performance of Istiod initialization.
+- **Improved** the **WorkloadShadow** module to reduce resource consumption.
+- **Improved** the **Mspider** version to improve stability.
 
 #### Removals
 
@@ -532,11 +546,11 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 - **Added** Istio 1.16.2 support.
 - **Added** the **MeshExpansion** and **SidecarInjectorWebhook** components now support custom configuration.
 
-#### Optimization
+#### Improvements
 
-- **Optimized** the performance of the MCPC controller.
-- **Optimized** the handling of expired certificates in the mesh components.
-- **Optimized** the **insight-api** version to improve stability.
+- **Improved** the performance of the MCPC controller.
+- **Improved** the handling of expired certificates in the mesh components.
+- **Improved** the **insight-api** version to improve stability.
 
 #### Fixes
 
@@ -556,10 +570,10 @@ This page lists all the Release Notes for each version of Service Mesh, providin
 - **Added** automatic sidecar injection feature.
 - **Added** support for customizing the Istiod configuration.
 
-#### Optimization
+#### Improvements
 
-- **Optimized** the stability and performance of the MCPC controller.
-- **Optimized** the **insight-api** version to improve stability.
+- **Improved** the stability and performance of the MCPC controller.
+- **Improved** the **insight-api** version to improve stability.
 
 #### Fixes
 

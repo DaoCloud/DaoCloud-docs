@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+Date: 2024-07-11
+---
+
 # Offline Upgrade for Container Management Module
 
 This page explains how to install or upgrade after
@@ -11,13 +16,13 @@ This page explains how to install or upgrade after
 
 ### Load Images from the Downloaded Package
 
-You can load images using one of the two methods below. When there is an image repository in the environment, it is recommended to use chart-syncer to synchronize images to the image repository, which is more efficient and convenient.
+You can load images using one of the two methods below. When there is registry in the environment, it is recommended to use chart-syncer to synchronize images to the registry, which is more efficient and convenient.
 
 #### Method 1: Synchronize Images Using chart-syncer
 
-Using chart-syncer, you can upload the charts and their dependent image packages from the downloaded installation package to the image repository and helm repository used during the deployment of the installer DCE.
+Using chart-syncer, you can upload the charts and their dependent image packages from the downloaded installation package to the registry and helm repository used during the deployment of the DCE installer.
 
-First, find a node that can connect to the image repository and helm repository (such as the seed node), create a `load-image.yaml` configuration file on the node, and fill in the configuration information for the image repository and helm repository.
+First, find a node that can connect to the registry and helm repository (such as the seed node), create a `load-image.yaml` configuration file on the node, and fill in the configuration information for the registry and helm repository.
 
 1. Create `load-image.yaml`
 
@@ -48,12 +53,12 @@ First, find a node that can connect to the image repository and helm repository 
         ```
 
         1. Path where the .tar.gz package is located after using chart-syncer
-        2. Image repository address
-        3. Image repository path
+        2. Registry address
+        3. Registry path
         4. Helm Chart repository type
         5. Helm repository address
-        6. Image repository username
-        7. Image repository password
+        6. Registry username
+        7. Registry password
         8. Helm repository username
         9. Helm repository password
 
@@ -77,11 +82,11 @@ First, find a node that can connect to the image repository and helm repository 
         ```
 
         1. Path where the .tar.gz package is located after using chart-syncer
-        2. Image repository URL
-        3. Image repository path
+        2. Registry URL
+        3. Registry path
         4. Local path for the chart
-        5. Image repository username
-        6. Image repository password
+        5. Registry username
+        6. Registry password
 
 1. Run the image synchronization command.
 
@@ -193,10 +198,10 @@ There are two upgrade methods. You can choose the proper upgrade plan based on t
 
     1. Run `helm upgrade`.
 
-        Before upgrading, it is recommended to overwrite the `global.imageRegistry` field in bak.yaml with the current image repository address.
+        Before upgrading, it is recommended to overwrite the `global.imageRegistry` field in bak.yaml with the current registry address.
 
         ```shell
-        export imageRegistry={your image repository}
+        export imageRegistry={your registry}
         ```
 
         ```shell
@@ -225,10 +230,10 @@ There are two upgrade methods. You can choose the proper upgrade plan based on t
 
     1. Run `helm upgrade`.
 
-        Before upgrading, it is recommended to overwrite the `global.imageRegistry` in bak.yaml with the current image repository address.
+        Before upgrading, it is recommended to overwrite the `global.imageRegistry` in bak.yaml with the current registry address.
 
         ```shell
-        export imageRegistry={your image repository}
+        export imageRegistry={your registry}
         ```
 
         ```shell
@@ -259,19 +264,21 @@ Run the following command before installing DCE 5.0 or upgrading the product mod
 
     ![Cluster List](../images/update-kpanda.png)
 
-### Known Issues with Web Interface Upgrade
+### Know Issues to Upgrade
 
-Issue Description: When upgrading kpanda from a lower version to v0.25.1 or higher through the web interface,
-there may be an image address concatenation issue leading to upgrade failure, with the following error prompt:
+### Upgrade to v0.25.1 but < v0.29.0
 
-![Image Address Error](../images/imagequest.png)
+**Issue Description:**
 
-Solution:
+When upgrading kpanda from a lower version to v0.25.1 or higher via the page method, there may be an issue with the image URL concatenation, causing the upgrade to fail. The error message is shown below:
 
-When updating kpanda in Helm apps, modify the yaml file and change the repository address
-to the format `repository: xxx/xxx`.
+![Image URL Error](../images/imagequest.png)
 
-??? note "Click to view detailed YAML example"
+**Solution:**
+
+When updating kpanda in Helm applications, modify the YAML file and change the repository address to the format `repository: xxx/xxx`.
+
+??? note "Click to see a detailed YAML example"
 
     ```yaml
     global:
@@ -593,7 +600,7 @@ to the format `repository: xxx/xxx`.
       tolerations: []
       cloudshellImage:
         registry: release.daocloud.io
-        # Change the repository address like repository: cloudtty/cloudshell
+        # Change the repository address to the format repository: xxx/xxx, such as repository: cloudtty/cloudshell
         repository: cloudtty/cloudshell
         tag: v0.6.3
     hookJob:
@@ -613,3 +620,21 @@ to the format `repository: xxx/xxx`.
         repository: kpanda/etcdbrctl
         tag: v0.22.0
     ```
+
+### Upgrade to v0.29.0 or Higher
+
+**Issue Description:**
+
+When upgrading kpanda from a lower version to v0.29.0 or higher, if the node is in GPU MIG mode, the system will forcibly switch the original GPU MIG mode to GPU full-card mode, which will affect business operations. You can perform the following operations to avoid this issue.
+
+**Disruptive Upgrade (Use Case: GPU MIG mode is enabled but not actually used):**
+
+1. Stop all GPU applications.
+2. Uninstall gpu-operator and nvidia-vgpu.
+3. Reinstall gpu-operator after the upgrade is complete, ensuring the gpu-operator version is greater than v23.9.0+1.
+
+**Non-disruptive Upgrade (Use Case: GPU MIG mode is enabled and actual business is using MIG mode):**
+
+1. Manually modify the node label `gpu.node.kpanda.io/nvidia-gpu-mode: mig`.
+2. Upgrade the kpanda version.
+3. Upgrade gpu-operator to version >= v23.9.0+1.

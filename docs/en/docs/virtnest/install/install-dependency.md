@@ -29,6 +29,15 @@ The kernel version of all nodes in the target cluster needs to be greater than 3
 
 2. The CPU must support the x86-64-v2 instruction set or higher. You can use the following script to check if the current node's CPU supports this:
 
+    !!! note  
+
+        If you encounter a message like the one shown below, you can safely ignore it as it does not impact the final result.
+    
+        ```bash title="example"
+        $ sh detect-cpu.sh
+        detect-cpu.sh: line 3: fpu: command not found
+        ```
+    
     ```sh
     cat <<EOF > detect-cpu.sh
     #!/bin/sh -eu

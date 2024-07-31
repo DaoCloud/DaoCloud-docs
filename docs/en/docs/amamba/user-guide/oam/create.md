@@ -7,12 +7,13 @@ Date: 2024-01-09
 
 The Open Application Model (OAM) application feature, powered by the open-source software KubeVela, offers a top-tier abstraction for application delivery. It brings together Kubernetes resources to facilitate a standard and efficient application delivery process in a hybrid environment.
 
-For an introduction to OAM concepts, please refer to the [Introduction to OAM](concept.md) or the [KubeVela Official Documentation](http://kubevela.net/docs/v1.2/).
+For an introduction to OAM concepts, refer to the [Introduction to OAM](concept.md) or the [KubeVela Official Documentation](http://kubevela.net/docs/v1.2/).
 
 ## Prerequisites
 
 - Make sure to [Create a Workspace](../../../ghippo/user-guide/workspace/workspace.md) and [Create a User](../../../ghippo/user-guide/access-control/user.md/).
 - Add the user to the workspace and assign 'Workspace Editor' or higher permissions.
+- Both the [vela-core](../../pluggable-components.md#deploying-the-vela-core-component) and [argo-cd](../../pluggable-components.md#deploying-the-argo-cd-component) components have been installed.
 
 ## Procedure
 
@@ -23,10 +24,10 @@ For an introduction to OAM concepts, please refer to the [Introduction to OAM](c
 2. Provide the basic information as per the guidelines below and click __Next__:
 
     - Name/Alias: Enter the name or alias of the OAM application.
-    - Main Component Type: Different component types necessitate different configurations. For a detailed understanding of various component types, please refer to the [Built-in Component List](https://kubevela.io/en/docs/end-user/components/references).
-        - cron-task: This defines a task that runs a code or script periodically.
-        - task: This defines a task that executes a code or script only once.
-        - daemon: This defines a service that runs on each node within Kubernetes.
+    - Main Component Type: Different component types necessitate different configurations. For a detailed understanding of various component types, refer to the [Built-in Component List](https://kubevela.io/en/docs/end-user/components/references).
+        - CronJob: This defines a job that runs a code or script periodically.
+        - Job: This defines a task that executes a code or script only once.
+        - DaemonSet: This defines a service that runs on each node within Kubernetes.
         - k8s-object: Each item in the list signifies a complete Kubernetes resource structure.
         - webservice: This defines a long-lasting, scalable, containerized service that exposes an endpoint to accept external traffic from clients.
     - Deployment Position: Select the cluster and namespace where the application will be deployed. This supports multiple cluster environments.

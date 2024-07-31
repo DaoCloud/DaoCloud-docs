@@ -37,7 +37,7 @@ the idea of creating a form of isolation in the Linux kernel. Google engineer Ro
 the concept in an [email in 2006](https://lwn.net/Articles/199643/):
 
 > We use the term container to indicate a structure against which we track and charge utilization of
-> system resources like memory, tasks, etc. for a Workload.
+> system resources like memory, and tasks for a Workload.
 
 Google's Borg system for managing application orchestration at scale had adopted Linux containers as
 they were developed in the mid-2000s. Since then, the company had also started working on a new

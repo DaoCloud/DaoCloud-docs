@@ -46,14 +46,14 @@ Access the cluster console, open the terminal, and run the following command:
 kubectl -n <namespace> exec -it <pod-name>  -c istio-proxy -- curl -X POST localhost:15000/logging?level=<log level>
 ```
 
-- __<namespace>__ : The namespace where the workload is located.
-- __<pod-name>__ : The name of the pod for the workload.
-- __<log level>__ : The sidecar log level. Possible values are __trace__ , __debug__ , __info__ , __warning__ , __error__ , __critical__ , __off__ , etc.
-- __istio-proxy__ : The name of the sidecar container. No need to modify.
-- __localhost:15000__ : The listening address of the sidecar container. No need to modify.
+- `<namespace>` : The namespace where the workload is located.
+- `<pod-name>` : The name of the pod for the workload.
+- `<log level>` : The sidecar log level. Possible values are `trace` , `debug` , `info` , `warning` , `error` , `critical` , and `off` .
+- `istio-proxy` : The name of the sidecar container. No need to modify.
+- `localhost:15000` : The listening address of the sidecar container. No need to modify.
 
-For example, if you want to change the sidecar log level of the workload __productpage-v1-5b4f8f9b9f-8q9q2__
-in the __default__ namespace to __debug__ , you would run the following command:
+For example, if you want to change the sidecar log level of the workload `productpage-v1-5b4f8f9b9f-8q9q2`
+in the `default` namespace to `debug` , you would run the following command:
 
 ```shell
 kubectl -n default exec -it productpage-v1-5b4f8f9b9f-8q9q2  -c istio-proxy -- curl -X POST localhost:15000/logging?level=debug

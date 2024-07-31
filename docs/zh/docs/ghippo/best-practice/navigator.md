@@ -14,15 +14,21 @@ category 的 yaml 示例如下：
 apiVersion: ghippo.io/v1alpha1
 kind: NavigatorCategory
 metadata:
-  name: management-custom # 命名规则：由小写的"spec.name"与"-custom"而成
+  name: management-custom # (1)!
 spec:
-  name: Management # 若是用于修改category
-  isCustom: true # 该字段必须为true
-  localizedName: # 定义分类的中英文名称
+  name: Management # (2)!
+  isCustom: true # (3)!
+  localizedName: # (4)!
     zh-CN: 管理
     en-US: Management
-  order: 100 # 排序，数字越大，越靠上
+  order: 100 # (5)!
 ```
+
+1. 命名规则：由小写的"spec.name"与"-custom"而成
+2. 若是用于修改category
+3. 该字段必须为true
+4. 定义分类的中英文名称
+5. 排序，数字越大，越靠上
 
 编写好 yaml文件后，通过执行如下命令后，刷新页面即可看到新增、修改的导航栏分类。
 
@@ -49,23 +55,23 @@ kubectl apply -f xxx.yaml
 apiVersion: ghippo.io/v1alpha1
 kind: GProductNavigator
 metadata:
-  name: gmagpie-custom # 命名规则：由小写的"spec.gproduct"与"-custom"而成
+  name: gmagpie-custom # (1)!
 spec:
   name: Operations Management
   iconUrl: ./ui/gmagpie/gmagpie.svg
-  localizedName: # 定义菜单的中英文名称
+  localizedName: # (2)!
     zh-CN: 运营管理
     en-US: Operations Management
   url: ./gmagpie
-  category: management # 与parentGProduct二选一，用于区分一级菜单还是二级菜单，与NavigatorCategory的spec.name字段对应来完成匹配
-  menus: # 二级菜单
+  category: management # (3)!
+  menus: # (4)!
     - name: Access Control
       iconUrl: ./ui/ghippo/menus/access-control.svg
       localizedName:
         zh-CN: 用户与访问控制
         en-US: Access Control
       url: ./ghippo/users
-      order: 50 # 排序，数字越小，越靠上
+      order: 50 # (5)!
     - name: Workspace
       iconUrl: ./ui/ghippo/menus/workspace-folder.svg
       localizedName:
@@ -87,11 +93,23 @@ spec:
         en-US: Settings
       url: ./ghippo/settings
       order: 10
-  gproduct: gmagpie # 定义菜单的标志，用于和parentGProduct字段联动，实现父子关系。
-  visible: true # 设置该菜单是否可见，默认为true
-  isCustom: true # 该字段必须为true
-  order: 20 # 排序，数字越大，越靠上
+  gproduct: gmagpie # (6)!
+  visible: true # (7)!
+  isCustom: true # (8)!
+  order: 20 # (9)!
+  target: blank # (10)!
 ```
+
+1. 命名规则：由小写的"spec.gproduct"与"-custom"而成
+2. 定义菜单的中英文名称
+3. 与parentGProduct二选一，用于区分一级菜单还是二级菜单，与NavigatorCategory的spec.name字段对应来完成匹配
+4. 二级菜单
+5. 排序，数字越小，越靠上
+6. 定义菜单的标志，用于和parentGProduct字段联动，实现父子关系。
+7. 设置该菜单是否可见，默认为true
+8. 该字段必须为true
+9. 排序，数字越大，越靠上
+10. 新开标签页
 
 ### 二级菜单
 
@@ -101,17 +119,25 @@ spec:
 apiVersion: ghippo.io/v1alpha1
 kind: GProductNavigator
 metadata:
-  name: gmagpie-custom # 命名规则：由小写的"spec.gproduct"与"-custom"而成
+  name: gmagpie-custom # (1)!
 spec:
   name: Operations Management
   iconUrl: ./ui/gmagpie/gmagpie.svg
-  localizedName: # 定义菜单的中英文名称
+  localizedName: # (2)!
     zh-CN: 运营管理
     en-US: Operations Management
   url: ./gmagpie
-  parentGProduct: ghippo # 与category二选一，用于区分一级菜单还是二级菜单, 若添加该字段，则会忽视掉menus字段，并将该菜单作为二级菜单插入到与gproduct为ghippo的一级菜单中
-  gproduct: gmagpie # 定义菜单的标志，用于和parentGProduct字段联动，实现父子关系。
-  visible: true # 设置该菜单是否可见，默认为true
-  isCustom: true # 该字段必须为true
-  order: 20 # 排序，数字越大，越靠上
+  parentGProduct: ghippo # (3)!
+  gproduct: gmagpie # (4)!
+  visible: true # (5)!
+  isCustom: true # (6)!
+  order: 20 # (7)!
 ```
+
+1. 命名规则：由小写的"spec.gproduct"与"-custom"而成
+2. 定义菜单的中英文名称
+3. 与category二选一，用于区分一级菜单还是二级菜单, 若添加该字段，则会忽视掉menus字段，并将该菜单作为二级菜单插入到与gproduct为ghippo的一级菜单中
+4. 定义菜单的标志，用于和parentGProduct字段联动，实现父子关系
+5. 设置该菜单是否可见，默认为true
+6. 该字段必须为true
+7. 排序，数字越大，越靠上

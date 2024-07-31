@@ -13,12 +13,14 @@ This page describes how to configure multiple NICs for workload Pods in combinat
 - Workloads use IP pools
 - Workloads use fixed IP pools
 - Workloads use auto-created fixed IP pools
+- Workloads use default IP pools
 
 ## Prerequisites
 
 1. [Install SpiderPool](../../modules/spiderpool/install/install.md).
-2. [Install Multus with Macvlan/SR-IOV](../../modules/multus-underlay/install.md).
-3. If you use manual selection of IP pool, [Create IP Subnet and IP Pool](../ippool/createpool.md) in advance. If you use automatic creation of a fixed IP pool, [Create  IP Pool](../ippool/createpool.md) in advance.
+2. If you use manual selection of IP pool, [Create IP Subnet and IP Pool](../ippool/createpool.md) in advance. If you use automatic creation of a fixed IP pool, [Create IP Pool](../ippool/createpool.md) in advance.
+3. If you use a default IP pool, [Create IP Subnet and IP Pool](../ippool/createpool.md) in advance, and configure the network interface card with the default IP pool in the Multus CNI configuration for the container network.
+4. [Multus CR is Created](../multus-cr.md).
 
 ## Steps
 

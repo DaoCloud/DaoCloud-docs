@@ -12,6 +12,7 @@ The Workbench implements continuous deployment based on the open-source software
 - A workspace and a user are required to be created. The user needs to join the workspace and be assigned the __workspace edit__ role.
   Refer to [Creating a Workspace](../../../ghippo/user-guide/workspace/workspace.md), [Users and Roles](../../../ghippo/user-guide/access-control/user.md).
 - Prepare a Git repository. If the code repository where the manifest files of the continuously deployed application are located is not public, you need to import the repository to Workbench in advance. Refer to [Import Repository](import-repo.md).
+- Both the [vela-core](../../pluggable-components.md#deploying-the-vela-core-component) and [argo-cd](../../pluggable-components.md#deploying-the-argo-cd-component) components have been installed.
 
 ## Creating an Argo CD application
 
@@ -34,7 +35,7 @@ The Workbench implements continuous deployment based on the open-source software
             - Skip Schema Validation: Skip the validation of application manifest files
             - Prune Last: Only delete non-existent resources after all resources have been synced and are in a healthy state
             - Apply Out Of Sync Only: Only apply unsynced resources
-            - Prune Propagation Policy: Choose a specific cleanup strategy:
+            - Prune Propagation Policy: Choose a specific cleanup policy:
                 - Foreground: Delete the owner object only after all dependent objects have been deleted
                 - Background: Delete all dependent objects only after the owner object has been deleted
                 - Orphan: All dependent objects remain after the owner object is deleted
@@ -53,7 +54,7 @@ The Workbench implements continuous deployment based on the open-source software
 
     ![Manual Sync](../../images/argo04.png)
 
-3. For specific parameter explanations during the sync process, please refer to [Manually Sync Application](./sync-manually.md), click __OK__.
+3. For specific parameter explanations during the sync process, refer to [Manually Sync Application](./sync-manually.md), click __OK__.
 
     ![Sync Successfully](../../images/argo05.png)
 

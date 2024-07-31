@@ -28,11 +28,11 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of features, and the typic
   of cloud native application, supporting cloud native application, Helm, OEM, etc., and open multicloud application compatibility.
 - One-stop deployment to decouple the underlying Kubernetes platform. One-stop deployment, operation and maintenance of
   service application to realize the lifecycle-management of application.
-- Expansion and reduction of application load. It can manually/automatically expand and reduce the application load, and
-  customize the policies of expansion and reduction to cope with the traffic peak.
+- Workload autoscaling. It can manually/automatically expand and reduce the application workload, and
+  customize the autoscaling policies to cope with the traffic peak.
 - The full lifecycle of application, supporting lifecycle-management of application such as application view, update,
   delete, rollback, time view, and upgrade.
-- Unified load management abbility of cross-cluster.
+- Unified workload management abbility of cross-cluster.
 
 === "[Continuous business delivery](../amamba/intro/index.md)"
 
@@ -54,7 +54,7 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of features, and the typic
 
 === "[Multicloud application dispatch](../kairship/intro/index.md)"
 
-- Unified multicloud orchestration management, unified management of multiple cloud instances, and unified request entry.
+- Unified multicloud management management, unified management of multiple cloud instances, and unified request entry.
 - One-click import of multicloud clusters.
 - Rich multicloud application dispatch strategies, coverage strategies, etc.
 - Multicloud application failover function.
@@ -95,7 +95,7 @@ DaoCloud Enterprise (DCE) 5.0 combines a large number of features, and the typic
 - It supports a variety of mainstream middleware: Redis, MySQL, Elasticsearch, RabbitMQ, Kafka, MinIO, etc.
 - It supports life-cycle management of instances, meets a variety of high-availability cluster modes, and can
   custom the replicas and configuration according to the needs of the scene.
-- It supports online resource and storage expansion.
+- It supports online resource and storage autoscaling.
 - It supports unified monitoring of instance resources and business dimensions.
 - Permission management for multi-tenant requirements can be implemented based on workspaces.
 

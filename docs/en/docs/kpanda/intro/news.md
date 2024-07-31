@@ -45,19 +45,19 @@ This page provides updates on DCE 5.0 container management.
 <td><a href="https://docs.daocloud.io/kpanda/user-guide/storage/sc/">StorageClass</a></td>
 </tr>
 <tr>
-<td>New cluster inspection function</td>
+<td>New cluster inspection feature</td>
 <td>A second-level inspection of the cluster is now available. Note that this is an Alpha feature.</td>
 <td>0.16.0</td>
 <td><a href="https://docs.daocloud.io/kpanda/user-guide/clusterops/latest-operations/">Cluster recent operations</a></td>
 </tr>
 <tr>
-<td>Added application backup function</td>
+<td>Added application backup feature</td>
 <td>Users can now quickly back up and restore applications on the GUI. Note that this is an Alpha feature.</td>
 <td>0.16.0</td>
 <td><a href="https://docs.daocloud.io/kpanda/user-guide/backup/deployment/">Backing up workloads</a></td>
 </tr>
 <tr>
-<td>New platform backup function</td>
+<td>New platform backup feature</td>
 <td>A backup and recovery of etcd data is now available. Note that this is an Alpha feature.</td>
 <td>0.16.0</td>
 <td><a href="https://docs.daocloud.io/kpanda/best-practice/etcd-backup/">ETCD backup restore</a></td>

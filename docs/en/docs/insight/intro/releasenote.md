@@ -8,6 +8,31 @@ date: 2024-02-19
 This page lists the Release Notes of Insight, so that you can understand
 the evolution path and feature changes of each version.
 
+## 2024-06-30
+
+### Insight Server v0.28.0
+
+#### Improvements
+
+- **Added** support for DingTalk's signature authentication.
+- **Improved** Webhook which now supports configuration of HTTP Headers.
+- **Improved** service topology map to display calls to MySQL and PostgreSQL databases.
+
+#### Fixes
+
+- **Fixed** missing `clusterid` in Elasticsearch indexes when reporting logs to Kafka cache.
+
+### Insight Agent v0.28.0
+
+#### Improvements
+
+- **Improved** support for reporting logs to Elasticsearch v8.0.
+- **Removed** ReplicaSet level metrics.
+
+#### Fixes
+
+- **Fixed** incorrect path exposure for fluent-bit serviceMonitor metrics.
+
 ## 2024-05-31
 
 ### Insight Server v0.27.0
@@ -63,7 +88,7 @@ These changes are for Insight Server.
 
 #### Improvements
 
-- **Improved** Log correlation support for filtering based on TraceID and container groups
+- **Improved** Log correlation support for filtering based on TraceID and Pods
 - **Improved** support for encrypting sensitive information of notification objects
 - **Improved** split `insight-server` into `insight-server` and `insight-manager` components
 - **Improved** high availability support for `opentelemetry-collector` component
@@ -72,9 +97,9 @@ These changes are for Insight Server.
 
 #### Bug Fixes
 
-- **Fixed** permission issues with alarm-related APIs
+- **Fixed** permission issues with alert-related APIs
 - **Fixed** an issue with no data in overview query metrics
-- **Fixed** validation issue when importing YAML for alarm policies
+- **Fixed** validation issue when importing YAML for alert policies
 - **Fixed** limitation issue with Grafana access speed
 
 ## 2024.01.31
@@ -83,8 +108,8 @@ These changes are for Insight Server.
 
 #### New Features
 
-- **Added** support for alarm suppression
-- **Added** support for alarm templates and creating alarm policies from templates
+- **Added** support for alert suppression
+- **Added** support for alert templates and creating alert policies from templates
 
 #### Improvements
 
@@ -93,7 +118,7 @@ These changes are for Insight Server.
 
 #### Fixes
 
-- **Fixed** inaccurate preview queries when creating log alarms
+- **Fixed** inaccurate preview queries when creating log alerts
 - **Fixed** an error in listening IPv6 during insight-system deployment
 - **Fixed** an issue with Grafana dashboards not being accessible without authentication
 - **Fixed** Enabling InsecureSkipVerify for all SMTP emails
@@ -273,11 +298,11 @@ These changes are for Insight Server.
 
 - **Updated** the legend for updating service topology.
 - **Added** average value of metrics and sorting support to operation metrics in service details.
-- **Added** sorting by span, latency, occurrence time, etc. to link queries.
+- **Added** sorting by span, latency, and occurrence time to trace queries.
 - **Added** search functionality to the dropdown menu for notification configuration in alert policies.
 - **Added** timezone formatting support to alert templates.
-- **Upgraded** **opentelemetry collector** Chart version from **0.50.1** to **0.59.3** .
-- **Upgraded** **opentelemetry Operator** Chart version from **0.26.1** to **0.30.1** .
+- **Upgraded** **opentelemetry collector** Chart from **v0.50.1** to **v0.59.3** .
+- **Upgraded** **opentelemetry Operator** Chart from **v0.26.1** to **v0.30.1** .
 
 #### Fixes
 
@@ -293,7 +318,7 @@ These changes are for Insight Server.
 
 !!! warning
 
-    In version v0.17.x, the kube-prometheus-stack chart version has been upgraded from 41.9.1 to 45.28.1.
+    In v0.17.x, the kube-prometheus-stack chart version has been upgraded from 41.9.1 to 45.28.1.
     There are also some field upgrades in the used CRDs, such as the __attachMetadata__ field of servicemonitor.
     Before upgrading Insight agent, please refer to:
     [Upgrading from v0.16.x (or lower) to v0.17.x](../quickstart/install/upgrade-note.md#v016x-v017x).
@@ -324,7 +349,7 @@ These changes are for Insight Server.
 
 - **Fixed** an issue where service topology was effective when namespace was empty.
 - **Fixed** an issue with invalid documentation link in service topology status description.
-- **Fixed** duplication of namespace and stateless workload in displayed namespace when creating alert policies.
+- **Fixed** duplication of namespace and deployment in displayed namespace when creating alert policies.
 - **Fixed** missing trigger value data in alert list and alert policy in alerts.
 - **Fixed** validation error in required fields for type, keyword, and value when adding silence conditions in alert silencing.
 - **Fixed** time zone not being effective in alert silencing time range.
@@ -490,7 +515,7 @@ These changes are for Insight Server.
 - **Fixed** case-insensitive fuzzy search in alert rules
 - **Fixed** service metric error delay calculation is not accurate
 - **Fixed** Jaeger query has **too many open files** problem
-- **Fixed** es index rollover alias and cleanup strategy not working
+- **Fixed** elasticsearch index rollover alias and cleanup policy not working
 
 ## 2022.11.28
 
@@ -552,7 +577,7 @@ These changes are for Insight Server.
 #### Features
 
 - Support for container-managed Service names associated with OTel service names to discern if service linking is enabled
-- Updated the default tracking sample strategy in the global OTel column
+- Updated the default tracking sample policy in the global OTel column
 - Change sumo (for audit logs) exporter port 8080 to 80
 - Use go-migrate to manage database migration versions
 - Fix multicluster and multi-namespace filters not working properly in graph API
@@ -734,8 +759,8 @@ These changes are for Insight Server.
 #### Documentation
 
 - Added documentation station glossary
-- Added 4 pages of basic concept tasks and examples, data model, query language, etc. of the document station
-- Added user guides - documents such as scene monitoring, data query, alert center, etc.
+- Added 4 pages of basic concept tasks and examples, data model, and query language of the document station
+- Added user guides - documents such as scene monitoring, data query, and alert center
 - New additions to the document site: [Product Benefits](../intro/benefits.md), [Metric Query](../user-guide/data-query/metric.md), [trace query](../user-guide/trace/trace.md), dashboard, [overview](../user-guide/dashboard/overview.md)
 
 ## 2022-4-22

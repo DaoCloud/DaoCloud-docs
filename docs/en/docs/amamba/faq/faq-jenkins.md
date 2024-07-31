@@ -37,7 +37,7 @@ If the image in the built-in podTemplate does not meet your needs, you can repla
 
     ![screen](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/faq01.png)
 
-4. Under __data__ -> __jenkins.yaml__ -> __jenkins.clouds.kubernetes.templates__ , select the podTemplate whose image you want to change.
+4. Under __data__ -> __jenkins.yaml__ -> `jenkins.clouds.kubernetes.templates` , select the podTemplate whose image you want to change.
 
     ![screen](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/faq02.png)
 
@@ -60,7 +60,7 @@ file to change the dependency source. You can follow these steps:
 
 5. Once you have made the necessary updates, go to __Workloads__ and restart Jenkins.
 
-## Unable to access private image repositories when building images through Jenkins
+## Unable to access private container registries when building images through Jenkins
 
 ### Podman runtime
 
@@ -73,7 +73,7 @@ file to change the dependency source. You can follow these steps:
 4. Configure under the __registries.conf__ file in the __data__ section.
 
     Pay attention to the formatting and indentation when making modifications.
-    Each registry should have a separate __[[registry]]__ section, as shown in the image below:
+    Each registry should have a separate `[registries]` section, as shown in the image below:
 
     ![faq-ci1](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/faq04.png)
 
@@ -99,9 +99,9 @@ file to change the dependency source. You can follow these steps:
 ### Cluster runtime is Docker
 
 1. Open the Docker configuration file. On most Linux distributions, the configuration file
-   is located at __/etc/docker/daemon.json__ . If it doesn't exist, please create this configuration file.
+   is located at `/etc/docker/daemon.json` . If it doesn't exist, please create this configuration file.
 
-2. Add the repository address to the __insecure-registries__ field.
+2. Add the repository address to the `insecure-registries` field.
 
     ```json
     {
@@ -130,7 +130,7 @@ Currently, the number of concurrent running of Jenkins pipelines after DCE 5.0 d
 
 3. Search for __jenkins-casc-config__, and click __Edit YAML__ in the operation column.
 
-4. Modify the value under the __data__ -> __jenkins.yaml__ -> __jenkins.clouds.kubernetes.containerCapStr__ field.
+4. Modify the value under the __data__ -> __jenkins.yaml__ -> `jenkins.clouds.kubernetes.containerCapStr` field.
 
     ![jenkins001](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/amamba/images/jenkinsadd.png)
 
@@ -138,7 +138,7 @@ Currently, the number of concurrent running of Jenkins pipelines after DCE 5.0 d
 
 ## Unable to update pipeline running status in time
 
-In the pod of Jenkins, there will be a sidecar container named `event-proxy`, which sends Jenkins events to the workbench through this container. Currently, Jenkins installed by dce5-installer will enable this container by default. Of course, you can also choose to create Jenkins yourself in the Addon module of the Container Management Platform (this is usually used when Jenkins is deployed in the working cluster). When creating, you can also choose whether to enable this container.
+In the pod of Jenkins, there will be a sidecar container named `event-proxy`, which sends Jenkins events to the workbench through this container. Currently, Jenkins installed by dce5-installer will enable this container by default. Of course, you can also choose to create Jenkins yourself in the Addon module of the Container Management Platform (this is usually used when Jenkins is deployed in the worker cluster). When creating, you can also choose whether to enable this container.
 
 Based on whether this container is enabled or not, please check whether the different configmaps are correct:
 
@@ -152,15 +152,18 @@ Based on whether this container is enabled or not, please check whether the diff
 
 4. Search for `eventDispatcher.receiver` in __data__ -> __jenkins.yaml__, its value should be `http://localhost:9090/event`.
 
-    If Jenkins is deployed in the working cluster (need to penetrate the gateway of DCE 5.0), you also need to check the following configmaps.
+    If Jenkins is deployed in the worker cluster (need to penetrate the gateway of DCE 5.0), you also need to check the following configmaps.
 
 5. Query the configmap named __event-proxy-config__ again, check YAML, and the configmap description:
 
     ```yaml
     eventProxy:
-      host: amamba-devops-server.amamba-system:80   # This is the gateway address of dce5. If it is Jenkins installed by dce5-installer, this does not need to be modified
-      proto: http                                   # This is the gateway protocol of dce5 (http or https)
+      host: amamba-devops-server.amamba-system:80   # (1)!
+      proto: http  # (2)!
     ```
+
+    1. This is the gateway address of dce5. If it is Jenkins installed by dce5-installer, this does not need to be modified
+    2. This is the gateway protocol of dce5 (http or https)
 
 6. In the cluster where Jenkins is located, search for the secret __amamba-jenkins__ in __ConfigMaps & Secrets__ -> __ConfigMaps__.
 

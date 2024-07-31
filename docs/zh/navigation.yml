@@ -10,6 +10,7 @@ nav:
               - 适用场景: dce/scenario.md
               - K8s 认证服务商: dce/kcsp.md
               - DCE 5.0 Release Notes:
+                  - 20240630 版本发布: dce/dce-rn/20240630.md
                   - 20240530 版本发布: dce/dce-rn/20240530.md
                   - 20240430 版本发布: dce/dce-rn/20240430.md
                   - 20240330 版本发布: dce/dce-rn/20240330.md
@@ -30,8 +31,8 @@ nav:
                   - 资源规划: install/community/resources.md
                   - 从零部署 Kind 集群: install/community/kind/online.md
                   - 从零部署 K8s 集群: install/community/k8s/k8s-dce-deploy.md
-                  - 已有K8s集群上在线安装: install/community/k8s/online.md
-                  - 已有K8s集群上离线安装: install/community/k8s/offline.md
+                  - 在线安装到 K8s 集群: install/community/k8s/online.md
+                  - 离线安装到 K8s 集群: install/community/k8s/offline.md
               - 安装商业版:
                   - 安装介绍: 
                       - 部署架构: install/commercial/deploy-arch.md
@@ -68,17 +69,20 @@ nav:
               - 最佳实践:
                   - 集群部署模式使用场景: install/commercial/scenarios.md
                   - Global 集群实践:
-                    - DCE 5.0 etcd 采用 host 模式与控制面分离: install/best-practices/etcd-host-deploy.md
-                    - DCE 5.0 一体机部署: install/best-practices/all-in-one-machine.md
+                      - etcd 采用host模式与控制面分离: install/best-practices/etcd-host-deploy.md
+                      - DCE 5.0 一体机部署: install/best-practices/all-in-one-machine.md
                   - 火种节点实践:
-                    - 火种节点高可用方案: install/best-practices/thinder-ha.md
-                    - 火种节点备份与还原: install/best-practices/thinder-restore.md
+                      - 火种节点高可用方案: install/best-practices/thinder-ha.md
+                      - 火种节点备份与还原: install/best-practices/thinder-restore.md
                   - 可扩展性实践:
-                    - K8s 集群基于 Docker 的磁盘限制: install/best-practices/docker-storage.md
-                    - 大规模集群参数说明: install/best-practices/large-deployments-par.md
-                    - 部署集群时如何配置扩展参数？: install/best-practices/extend-params.md
+                      - K8s 集群基于 Docker 的磁盘限制: install/best-practices/docker-storage.md
+                      - 大规模集群参数说明: install/best-practices/large-deployments-par.md
+                      - 部署集群时如何配置扩展参数？: install/best-practices/extend-params.md
                   - 离线包裁剪脚本使用手册: install/best-practices/offline-clipper.md
                   - 修复CVE-2024-21626漏洞: install/best-practices/cve-20240-21626.md
+              - 客户案例:
+                  - 全局服务集群重装后如何纳管原工作集群: install/best-practices/remanage-work-cluster.md
+                  - 不停机迁移集群操作系统: install/best-practices/replace-os.md
               - 安装器 Release Notes: install/release-notes.md
           - 最佳实践: dce/bphome.md
       - 工作台:
@@ -116,7 +120,7 @@ nav:
                   - 快速创建流水线: amamba/quickstart/deploy-pipeline.md
                   - 创建流水线:
                       - 自定义创建: amamba/user-guide/pipeline/create/custom.md
-                      - 基于 Jenkinsfile 创建: amamba/user-guide/pipeline/create/jenkins.md
+                      - 基于Jenkinsfile创建: amamba/user-guide/pipeline/create/jenkins.md
                       - 基于模板创建: amamba/user-guide/pipeline/create/template.md
                       - 创建多分支流水线: amamba/user-guide/pipeline/create/mutilpipeline.md
                   - 使用流水线:
@@ -133,16 +137,17 @@ nav:
                           - 手动执行: amamba/user-guide/pipeline/run/manual.md
                       - 查看流水线:
                           - 查看流水线详情: amamba/user-guide/pipeline/view/view-pipeline.md
-                          - 查看流水线运行记录详情: amamba/user-guide/pipeline/view/view-run.md
+                          - 查看流水线运行详情: amamba/user-guide/pipeline/view/view-run.md
                       - 流水线模板:
                           - 自定义模板: amamba/user-guide/pipeline/template/custom-template.md
                           - 模板说明: amamba/user-guide/pipeline/template/info.md
                   - 更多技巧:
                       - 自定义Jenkins Agent镜像: amamba/user-guide/pipeline/jenkins-agent.md
-                      - 在Jenkins中使用自定义工具链: amamba/quickstart/jenkins-custom.md
+                      - Jenkins自定义工具链: amamba/quickstart/jenkins-custom.md
                       - 在指定的节点上运行: amamba/quickstart/pipeline-on-node.md                    
                       - 构建多架构镜像: amamba/user-guide/pipeline/podman.md
-                      - 在流水线中使用缓存: amamba/quickstart/job-cacher.md                  
+                      - 在流水线中使用缓存: amamba/quickstart/job-cacher.md
+                      - 系统环境变量: amamba/user-guide/pipeline/system-env.md
               - GitOps:
                   - 导入代码仓库: amamba/user-guide/gitops/import-repo.md
                   - 创建 Argo CD 应用: amamba/user-guide/gitops/create-argo-cd.md
@@ -151,25 +156,33 @@ nav:
                   - 在GitOps中启用凭证加密功能: amamba/user-guide/gitops/gitops-secret.md
                   - 启用ArgoCD原生UI: amamba/user-guide/gitops/integrate-argocd-ui.md
               - 灰度发布:
-                  - 基于Argo Rollout实现灰度发布: amamba/quickstart/argocd-rollout.md
+                  - Argo Rollout灰度发布: amamba/quickstart/argocd-rollout.md
                   - 创建金丝雀发布任务: amamba/user-guide/release/canary.md
                   - 查看金丝雀发布任务: amamba/user-guide/release/check-canary.md
                   - 创建蓝绿发布任务: amamba/user-guide/release/blue-green.md
                   - 查看蓝绿发布任务: amamba/user-guide/release/check-bluegreen.md
+              - 代码仓库: 
+                  - 代码仓库管理: amamba/user-guide/git/git.md
               - 工具链集成:
                   - 集成工具链: amamba/user-guide/tools/integrated-toolchain.md
                   - 管理工具链实例: amamba/user-guide/tools/toolchain-instances.md
                   - 项目研发管理:
-                      - 查看缺陷: amamba/user-guide/project-mangement/issue.md
+                      - 查看缺陷: amamba/user-guide/pm/issue.md
               - 常见问题:
                   - 流水线相关问题: amamba/faq/faq-jenkins.md
                   - GitOps 相关问题: amamba/faq/faq-gitops.md
               - 最佳实践:
-                  - 流水线+ GitOps 实现 CI/CD: amamba/quickstart/argocd-jenkins.md
-                  - 使用流水线实现代码扫描: amamba/quickstart/scan-with-pipeline.md
-                  - 集成 Harbor 实现镜像安全扫描: amamba/quickstart/scan-with-harbor.md
-                  - 基于 Contour 的灰度发布: amamba/quickstart/contour-argorollout.md
-                  - Jenkins 发布应用至虚拟机: amamba/user-guide/pipeline/cicd_vm.md
+                  - GitOps 实践:
+                      - 流水线 + GitOps实现CI/CD: amamba/quickstart/argocd-jenkins.md
+                      - 在托管网格中使用GitOps: amamba/quickstart/istio_argocd.md
+                      - 在托管网格中灰度发布: amamba/quickstart/istio_argocd_rollout.md
+                  - CI 实践:
+                      - 使用流水线实现代码扫描: amamba/quickstart/scan-with-pipeline.md
+                      - 集成 Harbor 镜像安全扫描: amamba/quickstart/scan-with-harbor.md
+                      - Jenkins 发布应用至虚拟机: amamba/user-guide/pipeline/cicd_vm.md
+                      - 物理机/虚拟机集成Jenkins: amamba/quickstart/jenkins-integration.md
+                  - 灰度发布实践:
+                      - 基于 Contour 的灰度发布: amamba/quickstart/contour-argorollout.md
       - 容器:
           - 容器管理:
               - 介绍:
@@ -222,7 +235,7 @@ nav:
                       - 集群调度: kpanda/user-guide/workloads/pod-config/scheduling-policy.md
               - 弹性伸缩:
                   - 安装 metrics-server 插件: kpanda/user-guide/scale/install-metrics-server.md
-                  - 安装 kubernetes-cronhpa-controller 插件: kpanda/user-guide/scale/install-cronhpa.md
+                  - 安装 kubernetes-cronhpa-controller: kpanda/user-guide/scale/install-cronhpa.md
                   - 安装 VPA 插件: kpanda/user-guide/scale/install-vpa.md
                   - 基于内置指标创建 HPA: kpanda/user-guide/scale/create-hpa.md
                   - 基于自定义指标创建 HPA: kpanda/user-guide/scale/custom-hpa.md
@@ -303,25 +316,30 @@ nav:
                           - 上传Red Hat GPU Operator离线镜像: kpanda/user-guide/gpu/nvidia/push_image_to_repo.md
                           - 构建Red Hat 8.4离线yum源: kpanda/user-guide/gpu/nvidia/upgrade_yum_source_redhat8_4.md
                           - 构建Red Hat 7.9离线yum源: kpanda/user-guide/gpu/nvidia/yum_source_redhat7_9.md
+                          - Ubuntu22.04 离线安装GPU驱动: kpanda/user-guide/gpu/nvidia/ubuntu22.04_offline_install_driver.md
                       - NVIDIA GPU整卡模式: kpanda/user-guide/gpu/nvidia/full_gpu_userguide.md
                       - NVIDIA vGPU模式:
                           - 安装 vGPU Addon: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_addon.md
                           - 使用 NVIDIA vGPU: kpanda/user-guide/gpu/nvidia/vgpu/vgpu_user.md
+                          - 构建 vGPU 显存超配镜像: kpanda/user-guide/gpu/nvidia/vgpu/hami.md
                       - NVIDIA MIG 模式:
                           - NVIDIA MIG 概述: kpanda/user-guide/gpu/nvidia/mig/index.md
                           - 开启 MIG 功能: kpanda/user-guide/gpu/nvidia/mig/create_mig.md
                           - 使用 NVIDIA MIG: kpanda/user-guide/gpu/nvidia/mig/mig_usage.md
                           - MIG 相关命令: kpanda/user-guide/gpu/nvidia/mig/mig_command.md
-                  - 昇腾 GPU 管理:
+                      - GPU 配额管理: kpanda/user-guide/gpu/vgpu_quota.md
+                      - GPU 资源动态调节: kpanda/user-guide/gpu/dynamic-regulation.md
+                      - GPU 监控指标: kpanda/user-guide/gpu/gpu-metrics.md
+                      - 使用 Volcano:
+                          - 安装和使用 Volcano: kpanda/user-guide/gpu/volcano/volcano_user_guide.md
+                          - 使用Volcano Gang Scheduler: kpanda/user-guide/gpu/volcano/volcano-gang-scheduler.md 
+                      - GPU 调度配置: kpanda/user-guide/gpu/gpu_scheduler_config.md
+                  - 昇腾 NPU 管理:
                       - 昇腾 NPU 组件安装: kpanda/user-guide/gpu/ascend/ascend_driver_install.md
-                      - 使用昇腾 GPU: kpanda/user-guide/gpu/ascend/ascend_usage.md
+                      - 使用昇腾 NPU: kpanda/user-guide/gpu/ascend/ascend_usage.md
+                      - 启用昇腾 VNPU: kpanda/user-guide/gpu/ascend/vnpu.md
                   - 天数 GPU 管理: kpanda/user-guide/gpu/Iluvatar_usage.md
-                  - GPU 配额管理: kpanda/user-guide/gpu/vgpu_quota.md
-                  - GPU 资源动态调节: kpanda/user-guide/gpu/dynamic-regulation.md
-                  - GPU 监控指标: kpanda/user-guide/gpu/gpu-metrics.md
-                  - 使用 Volcano:
-                    - 安装和使用 Volcano: kpanda/user-guide/gpu/volcano/volcano_user_guide.md
-                    - 使用Volcano Gang Scheduler: kpanda/user-guide/gpu/volcano/volcano-gang-scheduler.md 
+                  - GPU 相关FAQ: kpanda/user-guide/gpu/FAQ.md
               - 最佳实践:
                   - 对 etcd 进行备份还原: kpanda/best-practice/etcd-backup.md
                   - 跨集群备份恢复MySQL: kpanda/best-practice/backup-mysql-on-nfs.md
@@ -422,8 +440,7 @@ nav:
           - 云原生网络:
               - 介绍:
                   - 什么是容器网络: network/intro/index.md
-                  - 背景: network/intro/background.md
-                  - 挑战: network/intro/challenges.md
+                  - 背景和挑战: network/intro/background.md
                   - 网络组件: network/modules/modules.md
                   - 离线升级云原生网络: network/intro/offline.md
                   - Release Notes: network/intro/releasenotes.md
@@ -456,6 +473,7 @@ nav:
                   - CoreDNS 性能测试: network/performance/coredns-performance.md
               - 集成 Spiderpool:
                   - 介绍: network/modules/spiderpool/index.md
+                  - Release Notes: network/modules/spiderpool/releasenotes.md
                   - 安装: 
                       - Spiderpool 安装: network/modules/spiderpool/install/install.md
                       - RDMA 环境准备及安装: network/modules/spiderpool/install/rdmapara.md
@@ -574,7 +592,7 @@ nav:
                       - 磁盘节点扩展: storage/hwameistor/resources/disk-nodes.md
                       - 磁盘扩展: storage/hwameistor/resources/disk-expansion.md
                       - 磁盘预留: storage/hwameistor/resources/reserveddisk.md
-                  - 存储池: storage/hwameistor/resources/storagepool.md
+                  - 存储池: storage/hwameistor/resources/storageclass.md
                   - 数据卷:
                       - 数据卷迁移: storage/hwameistor/resources/migrate.md
                       - 数据卷扩容: storage/hwameistor/resources/expand.md
@@ -624,13 +642,17 @@ nav:
                   - 安装依赖及前提条件: virtnest/install/install-dependency.md
                   - 离线升级: virtnest/install/offline-install.md
                   - 安装 virtnest-agent: virtnest/install/virtnest-agent.md
-              - 虚拟机:
-                  - 创建虚拟机: virtnest/vm/index.md
+              - 快速入门:
+                  - 创建虚拟机: virtnest/quickstart/index.md
+                  - 更新虚拟机: virtnest/quickstart/update.md
+                  - 连接虚拟机: virtnest/quickstart/access.md
+                  - 通过 NodePort 访问虚拟机: virtnest/quickstart/nodeport.md
+                  - 虚拟机详情: virtnest/quickstart/detail.md
+              - 虚拟机管理:
                   - 创建密钥: virtnest/vm/create-secret.md
-                  - 连接虚拟机: virtnest/vm/access.md
+                  - 克隆虚拟机: virtnest/vm/clone.md
                   - 快照管理: virtnest/vm/snapshot.md
                   - 实时迁移: virtnest/vm/live-migration.md
-                  - 通过 NodePort 访问虚拟机: virtnest/vm/nodeport.md
                   - 虚拟机监控: virtnest/vm/monitor.md
                   - 虚拟机网络: virtnest/vm/vm-network.md
                   - 虚拟机存储: virtnest/vm/vm-sc.md
@@ -643,7 +665,8 @@ nav:
                   - 虚拟机模板: virtnest/template/tep.md
               - 虚拟机镜像: virtnest/vm-image/index.md
               - 最佳实践:
-                  - 从 VMware 导入传统虚拟机: virtnest/best-practice/import-ubuntu.md
+                  - 从 VMware 导入传统 Linux 虚拟机: virtnest/best-practice/import-ubuntu.md
+                  - 从 VMware 导入传统 Windows 虚拟机: virtnest/best-practice/import-windows.md
                   - 创建 Windows 虚拟机: virtnest/best-practice/vm-windows.md
       - 微服务:
           - 可观测性:
@@ -664,10 +687,11 @@ nav:
                       - insight/quickstart/install/index.md
                       - 在线安装 insight-agent: insight/quickstart/install/install-agent.md
                       - 离线升级 insight-agent: insight/quickstart/install/offline-install.md
-                      - 获取数据上传地址: insight/quickstart/install/gethosturl.md
+                      - 获取全局服务集群的数据存储地址: insight/quickstart/install/gethosturl.md
                       - 升级注意事项: insight/quickstart/install/upgrade-note.md
                       - 已知问题: insight/quickstart/install/knownissues.md
                       - 大规模日志部署调整: insight/best-practice/insight-kafka.md
+                      - 自定义 Insight 组件调度策略: insight/quickstart/install/component-scheduling.md
                   - 其他发行版安装insight-agent:
                       - DCE 4.0: insight/quickstart/other/install-agentindce.md
                       - OpenShift 4.x: insight/quickstart/other/install-agent-on-ocp.md
@@ -733,6 +757,7 @@ nav:
                   - 通过Sidecar采集容器日志: insight/reference/tailing-sidecar.md
                   - 自定义探测方式: insight/user-guide/collection-manag/probe-module.md
                   - 指标抓取说明: insight/user-guide/collection-manag/metric-collect.md
+                  - 可观性参考指标说明: insight/reference/uesd-metric-in-insight.md
               - 兼容性测试:
                   - Kubernetes 兼容性测试: insight/compati-test/k8s-compatibility.md
                   - Rancher 兼容性测试: insight/compati-test/rancher-compatibility.md
@@ -743,6 +768,7 @@ nav:
                   - 链路采集排障指南: insight/best-practice/debug-trace.md
                   - 使用Insight定位异常: insight/best-practice/find_root_cause.md
                   - ES 数据塞满时如何操作: insight/faq/expand-once-es-full.md
+                  - 容器日志黑名单: insight/faq/ignore-pod-log-collect.md
           - 微服务引擎:
               - 介绍:
                   - 索引: skoala/intro/index.md
@@ -754,11 +780,16 @@ nav:
                   - 微服务引擎管理组件: skoala/quickstart/skoala.md
                   - 微服务引擎集群初始化组件: skoala/quickstart/skoala-init.md
                   - 选择工作空间: skoala/quickstart/select-workspace.md
+              - 云原生微服务:
+                  - 服务治理: skoala/cloud-ms/traffic-control.md
+                  - 全链路流量泳道: skoala/cloud-ms/lane.md
               - 云原生网关:
                   - 网关管理: skoala/gateway/index.md
+                  - 域名管理:
+                      - 域名管理: skoala/gateway/domain/index.md
+                      - 配置域名策略: skoala/gateway/domain/domain-policy.md
                   - API 管理:
-                      - 添加 API: skoala/gateway/api/index.md
-                      - 更新和删除 API: skoala/gateway/api/update-api.md
+                      - API 管理: skoala/gateway/api/index.md
                       - 配置 API 策略: skoala/gateway/api/api-policy.md
                   - 服务列表:
                       - 手工接入: skoala/gateway/service/manual-integrate.md
@@ -767,20 +798,18 @@ nav:
                   - 日志查看:
                       - 请求日志: skoala/gateway/logs/reqlog.md
                       - 实例日志: skoala/gateway/logs/inslog.md
-                  - 域名管理:
-                      - 添加域名: skoala/gateway/domain/index.md
-                      - 更新和删除域名: skoala/gateway/domain/update-domain.md
-                      - 配置域名策略: skoala/gateway/domain/domain-policy.md
-              - 云原生微服务:
-                  - 服务治理: skoala/cloud-ms/traffic-control.md
-                  - 全链路流量泳道: skoala/cloud-ms/lane.md
               - 传统微服务:
                   - 注册配置中心:
                       - 托管注册中心: skoala/trad-ms/hosted/index.md
+                      - 服务对接规范:
+                          - 接入 Sentinel: skoala/standard/sentinel.md
+                          - 接入 Nacos SDK: skoala/standard/nacos.md
+                          - 接入 Sentinel 监控能力: skoala/standard/monitor.md
+                          - 接入 Sentinel 集群流控能力: skoala/standard/flow-control.md
                       - 微服务命名空间: skoala/trad-ms/hosted/namespace.md
-                      - 服务列表:
+                      - 微服务列表:
                           - 介绍: skoala/trad-ms/hosted/services/index.md
-                          - 查看微服务详情: skoala/trad-ms/hosted/services/check-details.md
+                          - 微服务详情: skoala/trad-ms/hosted/services/check-details.md
                           - 流量治理:
                               - 规则介绍: skoala/trad-ms/hosted/services/governance-policy.md
                               - 流控规则: skoala/trad-ms/hosted/services/flow-control.md
@@ -797,36 +826,35 @@ nav:
                       - 资源信息: skoala/trad-ms/hosted/resource-info.md
                       - 治理能力:
                           - 介绍: skoala/trad-ms/hosted/plugins/plugin-center.md
-                          - 启用 Sentinel 治理: skoala/trad-ms/hosted/plugins/sentinel.md
-                          - 启用 Mesh 治理: skoala/trad-ms/hosted/plugins/mesh.md
+                          - Sentinel 治理: skoala/trad-ms/hosted/plugins/sentinel.md
+                          - Mesh 治理: skoala/trad-ms/hosted/plugins/mesh.md
                   - 接入注册中心:
-                      - 接入注册中心: skoala/trad-ms/integrated/index.md
+                      - 接入注册中心管理: skoala/trad-ms/integrated/index.md
                       - 微服务管理: skoala/trad-ms/integrated/manage-service.md
                       - 链路追踪: skoala/trad-ms/integrated/trace.md
-              - 插件中心: skoala/plugins/intro.md
-              - 服务对接规范:
-                  - 接入 Sentinel: skoala/standard/sentinel.md
-                  - 接入 Nacos SDK: skoala/standard/nacos.md
-                  - 接入 Sentinel 监控能力: skoala/standard/monitor.md
-                  - 接入 Sentinel 集群流控能力: skoala/standard/flow-control.md
+              - 插件中心: 
+                  - 介绍: skoala/plugins/intro.md
+                  - 插件应用:
+                      - 云原生微服务使用JWT插件: skoala/best-practice/plugins/jwt.md
+                      - 云原生网关使用JWT插件: skoala/best-practice/jwt.md
+                      - 云原生网关认证服务器: 
+                          - skoala/best-practice/auth-server.md
+                          - 接入 AK/SK 认证 : skoala/best-practice/ak-sk-demo.md
+                          - 接入 OIDC 认证 : skoala/best-practice/OIDC-auth.md
+                      - 云原生网关接入限流服务器: skoala/best-practice/global-ratelimit.md
+                  - 自定义插件示例:
+                      - caching: skoala/best-practice/envoy-extproc-caching-demo-go.md
+                      - anti: skoala/best-practice/envoy-extproc-anti-demo-go.md
+                      - crc32: skoala/best-practice/envoy-extproc-crc32-check-demo-go.md
+                      - conv: skoala/best-practice/envoy-extproc-method-conv-demo-go.md
+                      - payloadlimit: skoala/best-practice/envoy-extproc-payloadlimit-demo-go.md
               - 最佳实践:
-                  - 示例应用体验微服务治理: skoala/best-practice/use-skoala-01.md
-                  - 云原生微服务使用JWT插件: skoala/best-practice/plugins/jwt.md
-                  - 微服务网关JWT功能: skoala/best-practice/jwt.md
-                  - 微服务网关认证服务器: 
-                      - skoala/best-practice/auth-server.md
-                      - 接入 AK/SK 认证 : skoala/best-practice/ak-sk-demo.md
-                      - 接入 OIDC 认证 : skoala/best-practice/OIDC-auth.md
-                  - 微服务网关接入限流服务器: skoala/best-practice/global-ratelimit.md
-                  - 网关 API 策略: skoala/best-practice/gateway02.md
+                  - 微服务治理应用示例: skoala/best-practice/use-skoala-01.md
+                  - API 策略配置示例: skoala/best-practice/gateway02.md
                   - 通过网关访问微服务: skoala/best-practice/gateway01.md
                   - 网关对接服务网格: skoala/best-practice/gateway-mesh.md
                   - 网关请求日志自定义属性: skoala/best-practice/add-custom-attributes.md
                   - HTTP转Dubbo协议动态路由: skoala/best-practice/http-to-dubbo.md
-                  - 自定义插件示例 caching: skoala/best-practice/envoy-extproc-caching-demo-go.md
-                  - 自定义插件示例 anti: skoala/best-practice/envoy-extproc-anti-demo-go.md
-                  - 自定义插件示例 crc32: skoala/best-practice/envoy-extproc-crc32-check-demo-go.md
-                  - 自定义插件示例 conv: skoala/best-practice/envoy-extproc-method-conv-demo-go.md
               - 故障排查:
                   - skoala-init的x-kubernets-validations报错: skoala/troubleshoot/auth-server.md
                   - Nacos 版本降级: skoala/troubleshoot/nacos.md                
@@ -903,6 +931,7 @@ nav:
               - 网格配置:
                   - 多云网络互联: mspider/user-guide/multicluster/cluster-interconnect.md
                   - 多云网络分流配置: mspider/user-guide/multicluster/traffic-branch.md
+                  - 网络连通性检测: mspider/user-guide/multicluster/check-net-connect.md
                   - Istio 资源管理: mspider/user-guide/mesh-config/istio-resources.md
                   - TLS 密钥管理: mspider/user-guide/mesh-config/tls-secret.md
                   - 组件资源自定义: mspider/user-guide/mesh-config/custom-res.md
@@ -953,12 +982,18 @@ nav:
                       - 基本概念: middleware/mysql/intro/concepts.md
                       - Release Notes: middleware/mysql/release-notes.md
                   - 快速入门:
-                      - 创建 MySQL: middleware/mysql/user-guide/create.md
-                      - 创建 MySQL MGR 实例: middleware/mysql/user-guide/create-mgr.md
-                      - 更新 MySQL: middleware/mysql/user-guide/update.md
-                      - 删除 MySQL: middleware/mysql/user-guide/delete.md
+                      - 实例生命周期:
+                          - 创建 MySQL: middleware/mysql/user-guide/create.md
+                          - 创建 MySQL MGR 实例: middleware/mysql/user-guide/create-mgr.md
+                          - 更新 MySQL: middleware/mysql/user-guide/update.md
+                          - 删除 MySQL: middleware/mysql/user-guide/delete.md
                       - 查看 MySQL 日志: middleware/mysql/user-guide/logs.md
+                      - MySQL 慢日志: middleware/mysql/user-guide/mysql-slow-query.md
                       - 实例拓扑: middleware/mysql/user-guide/instancemap.md
+                      - 数据备份:
+                          - 备份配置管理: middleware/mysql/user-guide/backup-restore/backup-config.md
+                          - 自动备份: middleware/mysql/user-guide/backup-restore/auto-backup.md
+                          - 手动备份: middleware/mysql/user-guide/backup-restore/manual-backup.md
                   - 最佳实践:
                       - MySQL 跨集群同步: middleware/mysql/best-practice/crossclusterssync.md
                       - MySQL 归档方案: middleware/mysql/best-practice/mysql-pt-archiver.md
@@ -968,7 +1003,8 @@ nav:
                       - MySQL Operator: middleware/mysql/faq/faq-operator.md
                       - MySQL 主备关系: middleware/mysql/faq/faq-master-slave.md
                       - MySQL 其他故障: middleware/mysql/faq/faq-others.md
-                      - MySQL MGR 排障: middleware/mysql/best-practice/mgr-troubleshooting.md
+                      - MySQL MGR 参数配置: middleware/mysql/faq/faq-mgr-parameter.md
+                      - MySQL MGR 排障: middleware/mysql/faq/mgr-troubleshooting.md
                       - MySQL 主从模式应对网络闪断: middleware/mysql/faq/faq-mtsql-net.md
               - MongoDB 数据库:
                   - 介绍:
@@ -995,6 +1031,8 @@ nav:
                       - 查看 PostgreSQL 日志: middleware/postgresql/user-guide/logs.md
                       - 手工设置工作负载反亲和: middleware/postgresql/user-guide/antiaffinity.md
                       - 备份管理: middleware/postgresql/user-guide/backup.md
+                  - 参考文档:
+                      - 开启 PGVector 插件: middleware/postgresql/user-guide/pgvector.md
               - Redis 缓存服务:
                   - 介绍:
                       - 什么是 Redis: middleware/redis/intro/index.md
@@ -1013,7 +1051,7 @@ nav:
                       - 集群模式 to 集群模式: middleware/redis/best-practice/cluster2cluster.md
                       - 哨兵模式 to 哨兵模式: middleware/redis/best-practice/sentinel2sentinel.md
                       - 集群模式 to 哨兵模式: middleware/redis/best-practice/cluster2sentinel.md
-                      - 基于Spiderpool的外部访问: middleware/redis/best-practice/spiderpoolconfig.md
+                      - 基于 Spiderpool 的外部访问: middleware/redis/best-practice/spiderpoolconfig.md
               - ES 搜索服务:
                   - 介绍:
                       - 什么是 ES: middleware/elasticsearch/intro/index.md
@@ -1025,16 +1063,19 @@ nav:
                       - Release Notes: middleware/elasticsearch/release-notes.md
                   - ES 集群容量规划: middleware/elasticsearch/user-guide/cluster-capacity-plan.md
                   - 快速入门:
-                      - 创建 ES 实例: middleware/elasticsearch/user-guide/create.md
-                      - 更新 ES 实例: middleware/elasticsearch/user-guide/edit.md
-                      - 删除 ES 实例: middleware/elasticsearch/user-guide/delete.md
+                      - 实例生命周期管理:
+                        - 创建 ES 实例: middleware/elasticsearch/user-guide/create.md
+                        - 更新 ES 实例: middleware/elasticsearch/user-guide/edit.md
+                        - 删除 ES 实例: middleware/elasticsearch/user-guide/delete.md
                       - 实例概览: middleware/elasticsearch/user-guide/basic.md
                       - 实例监控: middleware/elasticsearch/user-guide/monitor.md
                       - 查看 ES 日志: middleware/elasticsearch/user-guide/logs.md
+                      - 备份和恢复: middleware/elasticsearch/user-guide/snapshot-recover.md
                   - ES 故障排查: middleware/elasticsearch/faq/common-question-es.md
                   - 最佳实践:
                       - 双机房部署 ES: middleware/elasticsearch/bestpractice/esin2IDC.md 
                       - 跨节点迁移 ES: middleware/elasticsearch/user-guide/migrate-es.md
+                      - 使用reindex迁移ES: middleware/elasticsearch/bestpractice/reindex-to-backup.md
               - Kafka 消息队列:
                   - 介绍:
                       - 什么是 Kafka: middleware/kafka/intro/index.md
@@ -1044,12 +1085,9 @@ nav:
                       - Release Notes: middleware/kafka/release-notes.md
                   - 快速入门:
                       - 创建 Kafka 实例: middleware/kafka/user-guide/create.md
-                      - 更新 Kafka 实例: middleware/kafka/user-guide/update.md
-                      - 删除 Kafka 实例: middleware/kafka/user-guide/delete.md
-                      - 查看实例详情: middleware/kafka/user-guide/view.md
-                      - 实例监控: middleware/kafka/user-guide/insight.md
+                      - 查看/更新/删除 Kafka 实例: middleware/kafka/user-guide/view-update-delete.md
+                      - 实例监控及日志: middleware/kafka/user-guide/insight-log.md
                       - 配置参数: middleware/kafka/user-guide/config.md
-                      - 查看 Kafka 日志: middleware/kafka/user-guide/logs.md
                       - 参数模板: middleware/kafka/user-guide/template.md
                   - 最佳实践:
                       - Kafka双机房部署灾备方案: middleware/kafka/bestpractice/kafkain2IDC.md
@@ -1091,12 +1129,9 @@ nav:
                       - Release Notes: middleware/minio/release-notes.md
                   - 快速入门:
                       - 创建 MinIO 实例: middleware/minio/user-guide/create.md
-                      - 更新 MinIO 实例: middleware/minio/user-guide/update.md
-                      - 删除 MinIO 实例: middleware/minio/user-guide/delete.md
-                      - 查看 MinIO 日志: middleware/minio/user-guide/logs.md
+                      - 更新/删除 MinIO 实例: middleware/minio/user-guide/update-delete.md
+                      - 实例监控/日志查看/配置参数: middleware/minio/user-guide/insight-log-config.md
                       - 查看实例详情: middleware/minio/user-guide/view.md
-                      - 实例监控: middleware/minio/user-guide/insight.md
-                      - 配置参数: middleware/minio/user-guide/config.md
                       - MinIO 的身份管理: middleware/minio/user-guide/user-management.md
                   - MinIO 灾备方案: middleware/minio/best-pratice/minio-replication.md
       - 云原生 AI:
@@ -1115,18 +1150,22 @@ nav:
                       - 查看 Notebook 工作负载: baize/developer/notebooks/view.md
                       - 删除 Notebook: baize/developer/notebooks/delete.md
                       - SSH 访问 Notebook: baize/developer/notebooks/notebook-with-ssh.md
+                      - Notebook 中使用环境: baize/developer/notebooks/notebook-with-envs.md
                       - baizectl 命令行工具: baize/developer/notebooks/baizectl.md
                   - 任务中心:
                       - 创建任务: baize/developer/jobs/create.md
+                      - 创建 Pytorch 任务: baize/developer/jobs/pytorch.md
+                      - 创建 Tensorflow 任务: baize/developer/jobs/tensorflow.md
                       - 删除任务: baize/developer/jobs/delete.md
                       - 查看任务负载: baize/developer/jobs/view.md
                       - 任务分析: baize/developer/jobs/tensorboard.md
                   - 数据管理:
-                      - 创建数据集: baize/developer/dataset/create.md
-                      - 删除数据集: baize/developer/dataset/delete.md
-                      - 环境管理: baize/developer/dataset/conda.md
+                      - 创建/使用/删除数据集: baize/developer/dataset/create-use-delete.md
+                      - 环境管理: baize/developer/dataset/environments.md
                   - 推理服务:
+                      - 模型支持: baize/developer/inference/models.md
                       - 创建推理服务: baize/developer/inference/create.md
+                      - vLLm 框架创建推理服务: baize/developer/inference/vllm-inference.md
               - 运维管理:
                   - 介绍: baize/oam/index.md
                   - GPU 资源管理: baize/oam/resource.md
@@ -1138,8 +1177,11 @@ nav:
                   - 更新 Notebook 内置镜像: baize/best-practice/change-notebook-image.md
                   - Checkpoint 机制及使用介绍: baize/best-practice/checkpoint.md
                   - 使用 Baize 微调 ChatGLM3: baize/best-practice/finetunel-llm.md
+                  - 提交 DeepSpeed 训练任务: baize/best-practice/train-with-deepspeed.md
+                  - 训练任务增加调度器选项: baize/best-practice/add-scheduler.md
               - 故障排查:
-                  - 故障排查速查: baize/troubleshoot/index.md
+                  - 故障排查索引: baize/troubleshoot/index.md
+                  - 集群下拉列表中找不到集群: baize/troubleshoot/cluster-not-found.md
                   - Notebook 不受队列配额控制: baize/troubleshoot/notebook-not-controlled-by-quotas.md
                   - 队列初始化失败: baize/troubleshoot/local-queue-initialization-failed.md
       - 边缘计算:
@@ -1169,6 +1211,7 @@ nav:
                   - 管理边缘节点组: kant/user-guide/node-group/manage-group.md
               - 终端设备:
                   - 介绍: kant/user-guide/device/index.md
+                  - 创建设备模型: kant/user-guide/device/create-device-model.md
                   - 创建终端设备: kant/user-guide/device/create-device.md
                   - 管理终端设备: kant/user-guide/device/manage-device.md
               - 边缘应用:
@@ -1184,6 +1227,7 @@ nav:
                   - 部署 edgemesh 应用: kant/user-guide/edge-network/deploy-edgemesh.md
                   - 服务: kant/user-guide/edge-network/service.md
               - 最佳实践:
+                  - Modbus 设备接入实践: kant/best-practice/modbus-device-demo.md
                   - 智能设备控制: kant/best-practice/device-control.md
                   - 开发设备驱动应用mapper: kant/best-practice/develop-device-mapper.md
       - 管理:
@@ -1223,6 +1267,7 @@ nav:
                   - 文件夹权限: ghippo/user-guide/workspace/folder-permission.md
                   - 资源配额: ghippo/user-guide/workspace/quota.md
                   - 资源组与共享资源的区别: ghippo/user-guide/workspace/res-gp-and-shared-res.md
+                  - 资源绑定权限说明: ghippo/user-guide/workspace/wsbind-permission.md
               - 审计日志:
                   - 采集 K8s 审计日志: ghippo/user-guide/audit/open-audit.md
                   - 生成 K8s 审计日志: ghippo/user-guide/audit/open-k8s-audit.md
@@ -1261,6 +1306,7 @@ nav:
                   - 应用工作台权限说明: ghippo/permissions/amamba.md
                   - 服务网格权限说明: ghippo/permissions/mspider.md
                   - 中间件服务权限说明: ghippo/permissions/mcamel.md
+                  - 智能算力权限说明: ghippo/permissions/baize.md
               - 最佳实践:
                   - 工作空间最佳实践: ghippo/best-practice/ws-best-practice.md
                   - 工作空间绑定命名空间: ghippo/best-practice/ws-to-ns.md
@@ -1429,21 +1475,23 @@ nav:
           - 2024 云原生社区要闻: native/news/news-2024.md
           - 2023 云原生社区要闻: native/news/news-2023.md
           - 2022 云原生社区要闻: native/news/news-2022.md
+      - 编写和贡献指南:
+          - Git 文档流程: native/git/index.md
+          - Git开启两步安全验证: native/git/2auth.md
+          - Git 常见问题: native/git/rebase.md
+          - 常用 Git 命令: native/git/cmd.md
+          - VSCode 编辑技巧: native/git/vscode.md
+          - GitLab i18n 翻译预览: native/git/ui-preview.md
+          - GitHub 混迹技巧: native/git/github.md
+          - Git 同步中英文档: native/git/lsync.md
+          - 文档站工作说明: native/git/works.md
+          - 视频剪辑帮助: native/git/video.md
+          - K8s 相关资源: native/git/k8s.md
       - 行业洞察:
           - 商业产品: native/commerce.md
           - 开源项目: native/open.md
       - 知识分享:
           - 索引: native/knowledge/index.md
-          - Git 文档指南:
-              - Git 文档流程: native/knowledge/git/index.md
-              - 开启两步安全验证: native/knowledge/git/2auth.md
-              - Git 常见问题: native/knowledge/git/rebase.md
-              - VSCode 编辑技巧: native/knowledge/git/vscode.md
-              - 常用 Git 命令: native/knowledge/git/cmd.md
-              - UI 翻译预览: native/knowledge/git/ui-preview.md
-              - GitHub 混迹技巧: native/knowledge/git/github.md
-              - 同步中英文档: native/knowledge/git/lsync.md
-              - 文档站工作说明: native/knowledge/git/works.md
           - 排障方案: native/knowledge/troubleshoot.md
           - 最佳实践: native/knowledge/best-practice.md
           - 工具推荐: native/knowledge/tools.md

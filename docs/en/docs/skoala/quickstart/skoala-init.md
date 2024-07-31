@@ -4,7 +4,7 @@ Deployment structure of the microservice engine cluster init components:
 
 ![image](../images/skoala-init-cn.png)
 
-The chart inside the blue box, namely the `skoala-init` component, needs to be installed in the working cluster. After installing the `skoala-init` component, you can use various features of the microservice engine, such as creating a registry center, gateway instances, etc. Additionally, please note that the `skoala-init` component depends on the `insight-agent` component of the DCE 5.0 observability module to provide metric monitoring and distributed tracing functionalities. If you need to use these features, you need to install the `insight-agent` component beforehand. For specific steps, refer to [Install the insight-agent component](../../insight/quickstart/install/install-agent.md).
+The chart inside the blue box, namely the `skoala-init` component, needs to be installed in the worker cluster. After installing the `skoala-init` component, you can use various features of the microservice engine, such as creating a registry center, and gateway instances. Additionally, please note that the `skoala-init` component depends on the `insight-agent` component of the DCE 5.0 observability module to provide metric monitoring and distributed tracing functionalities. If you need to use these features, you need to install the `insight-agent` component beforehand. For specific steps, refer to [Install the insight-agent component](../../insight/quickstart/install/install-agent.md).
 
 !!! note
 
@@ -15,11 +15,11 @@ The chart inside the blue box, namely the `skoala-init` component, needs to be i
 
 `skoala-init` is the Operator for all components of the microservice engine:
 
-- Only needs to be installed in the working cluster
+- Only needs to be installed in the worker cluster
 - Includes components such as skoala-agent, nacos-operator, sentinel-operator, seata-operator, contour-provisioner, gateway-api-adminssion-server
 - When not installed, creating a registry center and gateway will prompt for missing components
 
-Since Skoala involves multiple components, we package these components into a single Chart, which is the `skoala-init`. Therefore, you should install `skoala-init` in the working cluster where you use the microservice engine. This installation command can also be used to update the component.
+Since Skoala involves multiple components, we package these components into a single Chart, which is the `skoala-init`. Therefore, you should install `skoala-init` in the worker cluster where you use the microservice engine. This installation command can also be used to update the component.
 
 Configure the Skoala repository to view and obtain the application chart for `skoala-init`.
 
@@ -63,7 +63,7 @@ skoala-agent-54d4df7897-7p4pz                         1/1     Running     0     
 
 ## Online Upgrade
 
-Since the `skoala-init` component is installed in the working cluster, you need to perform the following steps in each working cluster. <!--If an upgrade is required, it will be emphasized in the release notes.-->
+Since the `skoala-init` component is installed in the worker cluster, you need to perform the following steps in each worker cluster. <!--If an upgrade is required, it will be emphasized in the release notes.-->
 
 1. Backup the original parameters.
 

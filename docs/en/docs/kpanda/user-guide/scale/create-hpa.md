@@ -65,4 +65,4 @@ Refer to the following steps to configure the built-in index auto scaling policy
      - Target Memory Usage: The memory usage of the Pod under the workload resource. When the actual memory usage is greater/lower than the target value, the system automatically reduces/increases the number of Pod replicas.
      - Replica range: the elastic scaling range of the number of Pod replicas. The default interval is 1 - 10.
 
-6. After completing the parameter configuration, click the __OK__ button to automatically return to the elastic scaling details page. Click __⋮__ on the right side of the list to edit, delete, and view related events.
+6. After completing the parameter configuration, click the __OK__ button to automatically return to the elastic scaling details page. Click __┇__ on the right side of the list to edit, delete, and view related events.

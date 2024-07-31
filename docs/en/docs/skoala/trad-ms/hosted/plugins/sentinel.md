@@ -5,7 +5,7 @@ hide:
 
 # Enable the Sentinel governance plug-in
 
-Sentinel is a traffic governance component oriented to distributed and multi-language heterogeneous service architecture. It mainly takes traffic as the entry point and helps developers to ensure the stability of micro-services from multiple dimensions, such as traffic routing, traffic control, traffic shaping, circuit breaker degradation, system adaptive overload protection and hotspot traffic protection.
+Sentinel is a traffic governance component oriented to distributed and multi-language heterogeneous service architecture. It mainly takes traffic as the entry point and helps developers to ensure the stability of microservices from multiple dimensions, such as traffic routing, traffic control, traffic shaping, circuit breaker degradation, system adaptive overload protection and hotspot traffic protection.
 
 ## Steps
 

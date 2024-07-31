@@ -38,8 +38,8 @@ Pay special attention to the __Diagnostic Configuration__ column in the service 
 
 ![Abnormal Prompt](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/servicelist04.png)
 
-On the right side of the service list, click __⋮__ and select the corresponding menu item to navigate to traffic management and security governance.
+On the right side of the service list, click __┇__ and select the corresponding menu item to navigate to traffic management and security governance.
 
 ![Menu Items](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/servicelist05.png)
 
-For information on how to create and configure services, please refer to [Create Services](../../../kpanda/user-guide/network/create-services.md).
+For information on how to create and configure services, refer to [Create Services](../../../kpanda/user-guide/network/create-services.md).

@@ -548,7 +548,7 @@ Refer to the [Install Velero Plugin](../user-guide/backup/install-velero.md) doc
     kubectl label pvc mydata backup=mysql #为 mysql 的 pvc 添加标签
     ```
 
-2. Refer to the steps described in [Application Backup](../user-guide/backup/deployment.md#_3) and the parameters below to create an application backup.
+2. Refer to the steps described in [Application Backup](../user-guide/backup/deployment.md#application-backup) and the parameters below to create an application backup.
 
    - Name: __backup-mysql__ (can be customized)
    - Source Cluster: __main-cluster__ 

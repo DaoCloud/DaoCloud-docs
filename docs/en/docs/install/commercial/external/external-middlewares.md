@@ -13,7 +13,7 @@ This document describes how to use third-party middleware services, including My
 
 - DCE 5.0 uses MySQL database to store data, so only external MySQL database is supported.
 
-- The example scripts provided below are for demonstration purposes only. In actual applications, you should modify them according to specific requirements, such as database name, username, password, etc., and you can split the statements to be executed on different DBMS.
+- The example scripts provided below are for demonstration purposes only. In actual applications, you should modify them according to specific requirements, such as database name, username, and password, and you can split the statements to be executed on different DBMS.
 
 ### Steps
 

@@ -1,6 +1,6 @@
-# Manage Helm apps
+# Manage Helm Apps
 
-The container management module supports interface-based management of Helm, including creating Helm instances using Helm charts, customizing Helm instance parameters, and managing the full lifecycle of Helm instances.
+The container management module supports interface-based management of Helm, including creating Helm instances using Helm charts, customizing Helm instance arguments, and managing the full lifecycle of Helm instances.
 
 This section will take [cert-manager](https://cert-manager.io/docs/) as an example to introduce how to create and manage Helm apps through the container management interface.
 
@@ -34,7 +34,7 @@ Follow the steps below to install the Helm app.
 
      
 
-4. Configure __Name__ , __Namespace__ and __Version Information__ . You can also customize parameters by modifying YAML in the **Parameter Configuration** area below. Click __OK__ .
+4. Configure __Name__ , __Namespace__ and __Version Information__ . You can also customize arguments by modifying YAML in the **argument Configuration** area below. Click __OK__ .
 
      
 
@@ -62,7 +62,7 @@ Follow the steps below to update the Helm app.
 
      
 
-4. After modifying the corresponding parameters. You can click the __Change__ button under the parameter configuration to compare the files before and after the modification. After confirming that there is no error, click the __OK__ button at the bottom to complete the update of the Helm app.
+4. After modifying the corresponding arguments. You can click the __Change__ button under the argument configuration to compare the files before and after the modification. After confirming that there is no error, click the __OK__ button at the bottom to complete the update of the Helm app.
 
      
 
@@ -78,7 +78,7 @@ Every installation, update, and deletion of Helm apps has detailed operation rec
 
      
 
-2. To view the detailed log of each operation: Click __⋮__ on the right side of the list, and select __Log__ from the pop-up menu.
+2. To view the detailed log of each operation: Click __┇__ on the right side of the list, and select __Log__ from the pop-up menu.
 
      
 

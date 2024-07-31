@@ -18,7 +18,7 @@ DCE 5.0 支持创建三种范围的自定义角色：
 
     ![平台角色](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/user-guide/access-control/images/custom02.png)
 
-1. 返回角色列表，搜索刚创建的自定义角色，点击右侧的 __⋮__ ，可以执行复制、编辑和删除等操作。
+1. 返回角色列表，搜索刚创建的自定义角色，点击右侧的 __┇__ ，可以执行复制、编辑和删除等操作。
 
     ![更多操作](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/user-guide/access-control/images/custom03.png)
 
@@ -36,7 +36,7 @@ DCE 5.0 支持创建三种范围的自定义角色：
 
     ![工作空间角色](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/user-guide/access-control/images/custom04.png)
 
-1. 返回角色列表，搜索刚创建的自定义角色，点击右侧的 __⋮__ ，可以执行复制、编辑和删除等操作。
+1. 返回角色列表，搜索刚创建的自定义角色，点击右侧的 __┇__ ，可以执行复制、编辑和删除等操作。
 
     ![更多操作](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/user-guide/access-control/images/custom05.png)
 
@@ -55,7 +55,7 @@ DCE 5.0 支持创建三种范围的自定义角色：
 
     ![文件夹角色](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/user-guide/access-control/images/custom06.png)
 
-1. 返回角色列表，搜索刚创建的自定义角色，点击右侧的 __⋮__ ，可以执行复制、编辑和删除等操作。
+1. 返回角色列表，搜索刚创建的自定义角色，点击右侧的 __┇__ ，可以执行复制、编辑和删除等操作。
 
     ![更多操作](https://docs.daocloud.io/daocloud-docs-images/docs/ghippo/user-guide/access-control/images/custom07.png)
 

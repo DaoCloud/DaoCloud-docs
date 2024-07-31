@@ -1,10 +1,10 @@
 # View microservice details
 
-Click the micro-service name on the service list page to view the service details and further view the instance list, subscribers, monitoring, interface list, metadata, service governance and other information.
+Click the microservice name on the service list page to view the service details and further view the instance list, subscribers, monitoring, interface list, metadata, service governance and other information.
 
 ## Instance list
 
-Log in to the target registry, click __Microservice List__ in the left navigation bar, click the name of the target micro-service, and perform subsequent operations before going to the page for details of the micro-service.
+Log in to the target registry, click __Microservice List__ in the left navigation bar, click the name of the target microservice, and perform subsequent operations before going to the page for details of the microservice.
 
 ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/detail01.png)
 
@@ -46,7 +46,7 @@ On the subscriber list page, you can view subscriber information, including IP a
 
 ## Service monitoring
 
-Service monitoring Displays the running status of a micro-service in a namespace within a specific time range and determines whether an exception occurs based on micro-service monitoring metrics (number of requests, error rate, response time, and request rate).
+Service monitoring Displays the running status of a microservice in a namespace within a specific time range and determines whether an exception occurs based on microservice monitoring metrics (number of requests, error rate, response time, and request rate).
 
 > You can change the time range of monitoring data in the upper right corner of the monitoring chart.
 
@@ -62,7 +62,7 @@ Click __Edit__ on the right to modify the metadata.
 
 ## Microservice governance
 
-With the micro-service governance plug-in enabled, you can create three kinds of governance rules for services: virtual service, target rules, and gateway rules through YAML files or page forms. For more information on micro-service governance, see [Traffic Governance](../../../../mspider/user-guide/traffic-governance/README.md).
+With the microservice governance plug-in enabled, you can create three kinds of governance rules for services: virtual service, target rules, and gateway rules through YAML files or page forms. For more information on microservice governance, see [Traffic Governance](../../../../mspider/user-guide/traffic-governance/README.md).
 
 ![](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/detail10.png)
 

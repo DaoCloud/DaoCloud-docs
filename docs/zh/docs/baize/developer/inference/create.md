@@ -12,7 +12,8 @@
 
 默认情况下，推荐使用 `NFS` 或者 `S3` 服务来存储模型文件；
 
-当您创建成功后，我们会自动进行模型文件预热到集群本地；**预热过程不会占用 GPU。**
+当您创建成功后，我们会自动进行模型文件预热到集群本地；
+**预热过程不会占用 GPU。**
 
 > 这里以 `nfs` 为例。
 
@@ -30,7 +31,7 @@
 
 参考上图中数据集的的模型位置，这里选择如下：
 
-- 数据集为 `nfs-models`模型路径为：`THUDM/chatglm2-6b`
+- 数据集为 `nfs-models` 模型路径为 `THUDM/chatglm2-6b`
 
 ## 模型配置
 
@@ -48,15 +49,18 @@
 
 模型推理服务默认提供了多种访问方式，以便客户端可以通过不同的协议与推理服务进行交互。您可以通过以下方式访问服务：
 
-1. **HTTP/REST API**:
+1. **HTTP/REST API**
+
    - Triton 提供了一个基于 REST 的 API，允许客户端通过 HTTP POST 请求进行模型推理。
    - 客户端可以发送 JSON 格式的请求体，其中包含输入数据和相关的元数据。
 
-2. **gRPC API**:
+2. **gRPC API**
+
    - Triton 还提供了 gRPC 接口，它是一种高性能、开源、通用的 RPC 框架。
    - gRPC 支持流式处理，可以更有效地处理大量数据。
 
-3. **C++ 和 Python 客户端库**:
+3. **C++ 和 Python 客户端库**
+
    - Triton 为 C++ 和 Python 提供了客户端库，使得在这些语言中编写客户端代码更加方便。
    - 客户端库封装了 HTTP/REST 和 gRPC 的细节，提供了简单的函数调用来执行推理。
 
@@ -66,7 +70,8 @@
 
 #### HTTP 访问
 
-1. **发送 HTTP POST 请求**：使用工具如 `curl` 或 HTTP 客户端库（如 Python 的 `requests` 库）向 Triton Server 发送 POST 请求。
+1. **发送 HTTP POST 请求**：使用工具如 `curl` 或 HTTP 客户端库（如 Python 的 `requests` 库）向
+   Triton Server 发送 POST 请求。
 
 2. **构建请求体**：请求体通常包含要进行推理的输入数据，以及模型特定的元数据。
 
@@ -78,7 +83,7 @@
 
 ```bash
 curl -X POST http://<host>:8000/v2/models/chatglm2-6b/infer \
-    -H 'Content-Type: application/octet-stream' 
+    -H 'Content-Type: application/octet-stream'
     --data-binary @input_data
 ```
 
@@ -88,13 +93,13 @@ curl -X POST http://<host>:8000/v2/models/chatglm2-6b/infer \
 
 #### gRPC 访问
 
-1. **生成客户端代码**：使用 Triton 提供的模型定义文件（通常是 `.pbtxt` 文件），生成 gRPC 客户端代码。
+1. **生成客户端代码** ：使用 Triton 提供的模型定义文件（通常是 `.pbtxt` 文件），生成 gRPC 客户端代码。
 
-2. **创建 gRPC 客户端实例**：使用生成的代码创建 gRPC 客户端。
+2. **创建 gRPC 客户端实例** ：使用生成的代码创建 gRPC 客户端。
 
-3. **发送 gRPC 请求**：构造 gRPC 请求，包含模型输入数据。
+3. **发送 gRPC 请求** ：构造 gRPC 请求，包含模型输入数据。
 
-4. **接收响应**：等待服务器处理并接收响应。
+4. **接收响应** ：等待服务器处理并接收响应。
 
 ##### 示例 gRPC 访问代码
 

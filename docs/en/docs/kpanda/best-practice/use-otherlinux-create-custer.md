@@ -1,8 +1,8 @@
 # Creating a Cluster on Non-Supported Operating Systems
 
-This document outlines how to create a working cluster on an **unsupported OS** in offline mode. For the range of OS supported by DCE 5.0, refer to [DCE 5.0 Supported Operating Systems](../../install/commercial/deploy-requirements.md).
+This document outlines how to create a worker cluster on an **unsupported OS** in offline mode. For the range of OS supported by DCE 5.0, refer to [DCE 5.0 Supported Operating Systems](../../install/commercial/deploy-requirements.md).
 
-The main process for creating a working cluster on an unsupported OS in offline mode is illustrated in the diagram below:
+The main process for creating a worker cluster on an unsupported OS in offline mode is illustrated in the diagram below:
 
 ![Process](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/otherlinux.png)
 
@@ -55,4 +55,4 @@ After executing the above command, wait for the interface to prompt: __All packa
 
 ### Go to the User Interface to Create Cluster
 
-Refer to the documentation on [Creating a Working Cluster](../user-guide/clusters/create-cluster.md) to create an openAnolis cluster.
+Refer to the documentation on [Creating a Worker Cluster](../user-guide/clusters/create-cluster.md) to create an openAnolis cluster.

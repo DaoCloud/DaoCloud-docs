@@ -13,6 +13,8 @@ This page provides downloadable offline packages for various versions of MinIO.
 
 | Version | Architecture | File Size | Package   | Checksum File | Updated Date |
 | ------ | ------------ | --------- | ---------- | ------------ | ------------ |
+| [v0.16.0](../../../middleware/minio/release-notes.md) | <font color=green>ARM 64</font> | 211.37 MB | [:arrow_down: minio_0.16.0_arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-minio_0.16.0_arm64.tar) | [:arrow_down: minio_0.16.0_arm64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-minio_0.16.0_arm64_checksum.sha512sum) | 2024-07-04 |
+| [v0.16.0](../../../middleware/minio/release-notes.md) | AMD 64 | 220.77 MB | [:arrow_down: minio_0.16.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-minio_0.16.0_amd64.tar) | [:arrow_down: minio_0.16.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-minio_0.16.0_amd64_checksum.sha512sum) | 2024-07-04 |
 | [v0.15.0](../../../middleware/minio/release-notes.md) | <font color=green>ARM 64</font> | 211.25 MB | [:arrow_down: minio_0.15.0_arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-minio_0.15.0_arm64.tar) | [:arrow_down: minio_0.15.0_arm64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-minio_0.15.0_arm64_checksum.sha512sum) | 2024-06-05 |
 | [v0.15.0](../../../middleware/minio/release-notes.md) | AMD 64 | 220.66 MB | [:arrow_down: minio_0.15.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-minio_0.15.0_amd64.tar) | [:arrow_down: minio_0.15.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-minio_0.15.0_amd64_checksum.sha512sum) | 2024-06-05 |
 | [v0.14.0](../../../middleware/minio/release-notes.md) | <font color=green>ARM 64</font> | 211.27 MB | [:arrow_down: minio_0.14.0_arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-minio_0.14.0_arm64.tar) | [:arrow_down: minio_0.14.0_arm64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-minio_0.14.0_arm64_checksum.sha512sum) | 2024-05-08 |
@@ -25,15 +27,15 @@ This page provides downloadable offline packages for various versions of MinIO.
 | [v0.9.0](../../../middleware/minio/release-notes.md) | AMD 64 | 253.79 MB | [:arrow_down: minio_0.9.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-minio_0.9.0_amd64.tar) | [:arrow_down: minio_0.9.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-minio_0.9.0_amd64_checksum.sha512sum) | 2023-11-02 |
 | [v0.8.1](../../../middleware/minio/release-notes.md) | AMD 64 | 219.92 MB | [:arrow_down: minio_0.8.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-minio_0.8.1_amd64.tar) | [:arrow_down: minio_0.8.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-minio_0.8.1_amd64_checksum.sha512sum) | 2023-10-20 |
 
-## Validation
+## Verification
 
-To validate the integrity of the downloaded offline package and checksum file, run the following command in the directory where they are located:
+To verify the integrity of the downloaded offline package and checksum file, run the following command in the directory where they are located:
 
 ```sh
 echo "$(cat minio_0.8.1_amd64_checksum.sha512sum)" | sha512sum -c
 ```
 
-If the validation is successful, the printed result will be similar to:
+If the verification is successful, the printed result will be similar to:
 
 ```none
 minio_0.8.1_amd64.tar: OK

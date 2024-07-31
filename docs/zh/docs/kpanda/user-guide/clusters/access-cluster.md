@@ -11,7 +11,7 @@
 
 ## 通过 CloudShell 访问
 
-1. 在 __集群列表__ 页选择需要通过 CloudShell 访问的集群，点击右侧的 __⋮__ 操作图标并在下拉列表中点击 __控制台__ 。
+1. 在 __集群列表__ 页选择需要通过 CloudShell 访问的集群，点击右侧的 __┇__ 操作图标并在下拉列表中点击 __控制台__ 。
 
     ![调用 CloudShell 控制台](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/access-cloudshell.png)
 
@@ -31,7 +31,7 @@
 
 满足上述条件后，按照下方步骤从本地访问云端集群：
 
-1. 在 __集群列表__ 页选择需要下载证书的集群，点击右侧的 __⋮__ ，并在弹出菜单中点击 __证书获取__ 。
+1. 在 __集群列表__ 页选择需要下载证书的集群，点击右侧的 __┇__ ，并在弹出菜单中点击 __证书获取__ 。
 
     ![进入下载证书页面](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/access-get-cert.png)
 

@@ -31,28 +31,28 @@ Before configuring the custom metrics auto-scaling policy for workloads, the fol
 Refer to the following steps to configure the auto-scaling policy based on metrics for workloads.
 
 1. Click __Clusters__ in the left navigation bar to enter the clusters page.
-   Click a cluster name to enter the __Cluster Details__ page.
+   Click a cluster name to enter the __Cluster Overview__ page.
 
-    <!-- add images later -->
+    ![Select a cluster](../images/autoscaling01.png)
 
 2. On the Cluster Details page, click __Workloads__ in the left navigation bar to enter the workload list,
    and click a workload name to enter the __Workload Details__ page.
 
-    <!-- add images later -->
+    ![Select a workload](../images/autoscaling02.png)
 
-3. Click the __Autoscaling__ tab to view the current autoscaling configuration of the cluster.
+3. Click the __Auto Scaling__ tab to view the current autoscaling configuration of the cluster.
 
-    <!-- add images later -->
+    ![Autoscaling](../images/autoscaling03.png)
 
 4. Confirm that the cluster has [installed metrics-server](install-metrics-server.md), Insight,
-   and Prometheus-adapter plugins, and that the plugins are running normally, then click the __New Scaling__ button.
+   and Prometheus-adapter plugins, and that the plugins are running normally, then click the __Create AutoScaler__ button.
 
     !!! note
 
         If the related plugins are not installed or the plugins are in an abnormal state,
         you will not be able to see the entry for creating custom metrics auto-scaling on the page.
 
-    <!-- add images later -->
+    ![Autoscaling](../images/autoscaling04.png)
 
 5. Create custom metrics auto-scaling policy parameters.
 
@@ -157,8 +157,8 @@ spec:
 
 ### Configure Metric Rules in Prometheus-adapter
 
-steps: In **Cluster Details** -> **Helm Applications**, search for “prometheus-adapter",
-enter the update page through the action bar, and configure custom metrics in YAML as follows:
+steps: In **Clusters** -> **Helm Apps**, search for “prometheus-adapter",enter the update page through the action bar, 
+and configure custom metrics in YAML as follows:
 
 ```yaml
 rules:

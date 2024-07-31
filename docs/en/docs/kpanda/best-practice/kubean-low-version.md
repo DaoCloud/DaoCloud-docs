@@ -8,8 +8,8 @@ date: 2024-01-09
 In order to meet the customer's demand for building Kubernetes (K8s) clusters with lower versions,
 Kubean provides the capability to be compatible with lower versions and create K8s clusters with those versions.
 
-Currently, the supported versions for self-built working clusters range from `1.26.0-v1.28`.
-Please refer to the [DCE 5.0 Cluster Version Support System](./cluster-version.md) for more information.
+Currently, the supported versions for self-built worker clusters range from `1.26.0-v1.28`.
+Refer to the [DCE 5.0 Cluster Version Support System](./cluster-version.md) for more information.
 
 This article will demonstrate how to deploy a K8s cluster with a lower version.
 

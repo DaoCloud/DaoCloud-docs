@@ -1,4 +1,4 @@
-# Installing DCE 5.0 Enterprise Package on Alibaba Cloud ECS
+# Install DCE 5.0 Enterprise Package on Alibaba Cloud ECS
 
 This page will guide you through the process of installing DCE 5.0 on Alibaba Cloud ECS.
 
@@ -19,15 +19,15 @@ When deploying DCE 5.0 on Alibaba Cloud ECS, special handling is required for lo
 
 1. Log in to a machine and download the dce5-installer binary file.
 
-    Assuming VERSION is v0.18.0:
+    Assuming VERSION is v0.19.0:
 
     ```shell
-    export VERSION=v0.18.0
+    export VERSION=v0.19.0
     curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer
     ```
 
-2. Configure the cluster configuration file `clusterConfig.yaml`.
+2. Configure `clusterConfig.yaml`.
 
     Use the following configuration, making sure to set `loadBalancer.type = NodePort` and fill in the private IP addresses of the hosts:
 
@@ -73,7 +73,7 @@ When deploying DCE 5.0 on Alibaba Cloud ECS, special handling is required for lo
 6. Create an Alibaba Cloud SLB and direct the public TCP traffic of the SLB to the ECS hosts' port 32060. This needs to be done for all three hosts.
 
 
-7. Modify the ghippo reverse proxy configuration following the documentation at [Custom Reverse Proxy Server Address](../../ghippo/install/reverse-proxy.md#_1). After modification, you can directly access DCE 5.0 using the SLB's public IP address + Port, as shown in the following image:
+7. Modify the ghippo reverse proxy configuration following the documentation at [Custom Reverse Proxy Server Address](../../ghippo/install/reverse-proxy.md#customize-dce-50-reverse-proxy-server-address). After modification, you can directly access DCE 5.0 using the SLB's public IP address + Port, as shown in the following image:
 
     ![ghippo](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/install/images/7.1.png)
 
@@ -81,15 +81,15 @@ When deploying DCE 5.0 on Alibaba Cloud ECS, special handling is required for lo
 
 1. Log in to a machine and download the dce5-installer binary file.
 
-    Assuming VERSION is v0.18.0:
+    Assuming VERSION is v0.19.0:
 
     ```shell
-    export VERSION=v0.18.0
+    export VERSION=v0.19.0
     curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer
     ```
 
-2. Configure the cluster configuration file `clusterConfig.yaml`.
+2. Configure `clusterConfig.yaml`.
 
     Use the following configuration, making sure to set `loadBalancer.type = cloudLB` and fill in the private IP addresses of the hosts:
 
@@ -156,15 +156,15 @@ When deploying DCE 5.0 on Alibaba Cloud ECS, special handling is required for lo
 
 1. Log in to a machine and download the dce5-installer binary file.
 
-    Assuming VERSION is v0.18.0:
+    Assuming VERSION is v0.19.0:
 
     ```shell
-    export VERSION=v0.18.0
+    export VERSION=v0.19.0
     curl -Lo ./dce5-installer https://proxy-qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/dce5-installer-$VERSION
     chmod +x ./dce5-installer
     ```
 
-2. Configure the cluster configuration file `clusterConfig.yaml`.
+2. Configure `clusterConfig.yaml`.
 
     Use the following configuration, making sure to set `loadBalancer.type = NodePort`
     and fill in the private IP addresses of the hosts:
@@ -218,4 +218,4 @@ When deploying DCE 5.0 on Alibaba Cloud ECS, special handling is required for lo
 
 8. Modify the ghippo reverse proxy configuration.
 
-    Refer to the documentation on [Custom Reverse Proxy Server Address](../../ghippo/install/reverse-proxy.md#_1), where the proxy address should be set to the IP address assigned to `istio-ingressgateway` when its type was changed to `LoadBalancer`. After successful modification, you can access it using this IP address.
+    Refer to the documentation on [Custom Reverse Proxy Server Address](../../ghippo/install/reverse-proxy.md#customize-dce-50-reverse-proxy-server-address), where the proxy address should be set to the IP address assigned to `istio-ingressgateway` when its type was changed to `LoadBalancer`. After successful modification, you can access it using this IP address.

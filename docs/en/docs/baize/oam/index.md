@@ -11,7 +11,7 @@ Operator is the daily management of IT resources by IT operations personnel, han
 
 ![Operator Overview](../images/oam-overview.png)
 
-Here, you can visually understand the current usage status of resources such as clusters, nodes, CPUs, GPUs, vGPUs, etc.
+Here, you can visually understand the current usage status of resources such as clusters, nodes, CPUs, GPUs, and vGPUs.
 
 ## Glossary
 

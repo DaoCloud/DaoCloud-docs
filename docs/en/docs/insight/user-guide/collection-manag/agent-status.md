@@ -1,6 +1,6 @@
 # insight-agent Component Status Explanation
 
-In DCE 5.0, the observability Insight acts as a multi-cluster observability product.
+In DCE 5.0, Insight acts as a multi-cluster observability product.
 To achieve unified data collection across multiple clusters, users need to install
 the Helm application __insight-agent__ (installed by default in the __insight-system__ namespace).
 Refer to [How to Install __insight-agent__ ](../../quickstart/install/install-agent.md).
@@ -26,7 +26,7 @@ You can troubleshoot using the following steps:
     ```
 
 2. Run the following command or check the status of the deployed components in
-   __Insight__ -> __Data Collection__ . If there are container groups not in the __Running__ state,
+   __Insight__ -> __Data Collection__ . If there are Pods not in the __Running__ state,
    restart the containers in an abnormal state.
 
     ```bash
@@ -36,12 +36,12 @@ You can troubleshoot using the following steps:
 ## Additional Notes
 
 1. The resource consumption of the Prometheus metric collection component in __insight-agent__ 
-   is directly proportional to the number of container groups running in the cluster.
+   is directly proportional to the number of Pods running in the cluster.
    Please adjust the resources for Prometheus according to the cluster size.
    Refer to [Prometheus Resource Planning](../../quickstart/res-plan/prometheus-res.md).
 
 2. The storage capacity of the vmstorage metric storage component in the global service cluster
-   is directly proportional to the total number of container groups in the clusters.
+   is directly proportional to the total number of Pods in the clusters.
 
     - Please contact the platform administrator to adjust the disk capacity of vmstorage
       based on the cluster size. Refer to [vmstorage Disk Capacity Planning](../../quickstart/res-plan/vms-res-plan.md).

@@ -13,6 +13,8 @@ This page allows you to download offline packages for different versions of Elas
 
 | Version | Architecture | File Size | Package   | Checksum File | Updated Date |
 | ------ | ------------ | --------- | ---------- | ------------ | ------------ |
+| [v0.18.0](../../../middleware/elasticsearch/release-notes.md) | <font color=green>ARM 64</font> | 959.20 MB | [:arrow_down: elasticsearch_0.18.0_arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-elasticsearch_0.18.0_arm64.tar) | [:arrow_down: elasticsearch_0.18.0_arm64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-elasticsearch_0.18.0_arm64_checksum.sha512sum) | 2024-07-04 |
+| [v0.18.0](../../../middleware/elasticsearch/release-notes.md) | AMD 64 | 956.39 MB | [:arrow_down: elasticsearch_0.18.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-elasticsearch_0.18.0_amd64.tar) | [:arrow_down: elasticsearch_0.18.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-elasticsearch_0.18.0_amd64_checksum.sha512sum) | 2024-07-04 |
 | [v0.17.0](../../../middleware/elasticsearch/release-notes.md) | <font color=green>ARM 64</font> | 980.63 MB | [:arrow_down: elasticsearch_0.17.0_arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-elasticsearch_0.17.0_arm64.tar) | [:arrow_down: elasticsearch_0.17.0_arm64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-elasticsearch_0.17.0_arm64_checksum.sha512sum) | 2024-06-05 |
 | [v0.17.0](../../../middleware/elasticsearch/release-notes.md) | AMD 64 | 979.12 MB | [:arrow_down: elasticsearch_0.17.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-elasticsearch_0.17.0_amd64.tar) | [:arrow_down: elasticsearch_0.17.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-elasticsearch_0.17.0_amd64_checksum.sha512sum) | 2024-06-05 |
 | [v0.16.0](../../../middleware/elasticsearch/release-notes.md) | <font color=green>ARM 64</font> | 980.62 MB | [:arrow_down: elasticsearch_0.16.0_arm64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-elasticsearch_0.16.0_arm64.tar) | [:arrow_down: elasticsearch_0.16.0_arm64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-elasticsearch_0.16.0_arm64_checksum.sha512sum) | 2024-05-08 |
@@ -25,15 +27,15 @@ This page allows you to download offline packages for different versions of Elas
 | [v0.11.0](../../../middleware/elasticsearch/release-notes.md) | AMD 64 | 975.36 MB | [:arrow_down: elasticsearch_0.11.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-elasticsearch_0.11.0_amd64.tar) | [:arrow_down: elasticsearch_0.11.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-elasticsearch_0.11.0_amd64_checksum.sha512sum) | 2023-11-02 |
 | [v0.10.1](../../../middleware/elasticsearch/release-notes.md) | AMD 64 | 974.93 MB | [:arrow_down: elasticsearch_0.10.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-elasticsearch_0.10.1_amd64.tar) | [:arrow_down: elasticsearch_0.10.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/mcamel-elasticsearch_0.10.1_amd64_checksum.sha512sum) | 2023-10-20 |
 
-## Validation
+## Verification
 
-To validate the integrity of the downloaded offline package and checksum file, run the following command in the directory where they are located:
+To verify the integrity of the downloaded offline package and checksum file, run the following command in the directory where they are located:
 
 ```sh
 echo "$(cat elasticsearch_0.10.1_amd64_checksum.sha512sum)" | sha512sum -c
 ```
 
-After successful validation, the output will be similar to:
+After successful verification, the output will be similar to:
 
 ```none
 elasticsearch_0.10.1_amd64.tar: OK

@@ -19,7 +19,7 @@ By considering the event status distribution chart and the selected time range, 
 
 ## Event Count and Statistics
 
-Through important event statistics, you can easily understand the number of image pull failures, health check failures, container group (Pod) execution failures, Pod scheduling failures, container OOM (Out-of-Memory) occurrences, volume mounting failures, and the total count of all events. These events are typically categorized as "Warning" and "Normal".
+Through important event statistics, you can easily understand the number of image pull failures, health check failures, Pod execution failures, Pod scheduling failures, container OOM (Out-of-Memory) occurrences, volume mounting failures, and the total count of all events. These events are typically categorized as "Warning" and "Normal".
 
 ## Event List
 

@@ -10,7 +10,7 @@
 
     ![进入创建页面](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-create01.png)
 
-2. 参考以下说明填写基本信息
+1. 参考以下说明填写基本信息
 
     - 网关名称：长度不超过 63 个字符，支持字母、数字、连字符并且必须以字母或数字字符开头及结尾。名称在网关创建完成后不可更改。
     - 部署集群：选择将网关部署在哪个集群。
@@ -23,7 +23,7 @@
 
     ![填写基本配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-create02.png)
 
-3. 参考以下说明填写配置信息
+1. 参考以下说明填写配置信息
 
     === "服务配置"
 
@@ -59,16 +59,18 @@
 
         ![填写高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-create07.png)
 
-4. 参考以下信息填写高级配置
+1. 参考以下信息填写高级配置
 
     - 日志配置：设置工作节点 （envoy）的日志级别和 Pod 的日志级别
     - 更新机制：`重新创建`指删除原来的网关并新建一个网关，`滚动更新`指不删除网关，而是滚动式地更新网关相关的 Pod
     - 网关前置代理层数：请求从客户端到网关中途需要经过几个代理端点。需要根据实际情况填写。例如`客户端-Nginx-网关`的代理层数为 1，因为中间只经过 1 个 Nginx 代理端点。
-    - 网关链路：启用后，可以根据通过网关进行的请求生成链路信息并发送给可观测模块进行数据采集。
+    - 网关链路：需在 insight-agent 中启用 `autoinstrumentation`，同时在网关实例中开启网关链路配置，可以根据通过网关进行的请求生成链路信息并发送给可观测模块进行数据采集。
 
+    ![insight-agent](../images/insight-agent.png)
+   
     ![填写高级配置](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/skoala/images/gw-create08.png)
 
-5. 参考以下信息填写插件配置（选填），最后在页面右下角点击 __确认__ 即可。
+1. 参考以下信息填写插件配置（选填），最后在页面右下角点击 __确定__ 即可。
 
     选择是否启用`全局限流`插件。
 
@@ -88,7 +90,7 @@
 
 ### 进入网关详情页面
 
-在 __网关列表__ 页面，选择目标网关的名称，即可进入网关概览页面`。
+在 __网关列表__ 页面，选择目标网关的名称，即可进入网关概览页面。
 
 ![概览页面](./images/overview.png)
 

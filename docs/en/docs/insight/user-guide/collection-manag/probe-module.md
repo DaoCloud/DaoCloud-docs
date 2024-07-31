@@ -28,7 +28,7 @@ We will use the HTTP probe method as an example to demonstrate how to modify the
 
 ## Friendly Reference
 
-The following YAML file contains various probe methods such as HTTP, TCP, SMTP, ICMP, DNS, etc. You can modify the configuration file of `insight-agent-prometheus-blackbox-exporter` according to your needs.
+The following YAML file contains various probe methods such as HTTP, TCP, SMTP, ICMP, and DNS. You can modify the configuration file of `insight-agent-prometheus-blackbox-exporter` according to your needs.
 
 ??? note "Click to view the complete YAML file"
 

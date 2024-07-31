@@ -13,7 +13,7 @@ The Container Management module offers the following advantages:
   version range in the scope of container management. This enables unified management of on-cloud, off-cloud,
   multicloud, and hybrid cloud container platforms while avoiding vendor lock-in.
 - The web interface allows for one-click upgrade of the Kubernetes cluster.
-- Unified web interface facilitates cluster creation, expansion and contraction of cluster nodes, and
+- Unified web interface facilitates cluster creation, autoscaling of cluster nodes, and
   other management capabilities.
 - Self-built clusters can implement certificate rotation on the web interface with one-click.
 - Supports unified management of ultra-large-scale clusters.

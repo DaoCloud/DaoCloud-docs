@@ -9,7 +9,7 @@ The platform periodically releases new versions, and you can upgrade their edge 
   For example, if the current CloudCore version is 1.13 and the selected node versions are 1.12 and 1.14, the unified upgrade version will be 1.13.
 - Only healthy nodes can be upgraded, including nodes in schedulable or unschedulable states.
 - To ensure the stable and reliable operation of your edge node applications, it is recommended to
-  perform node upgrades during a time window with minimal impact on your business.
+  perform node upgrades in a specific period with minimal impact on your business.
 - During the upgrade process, the application services on the edge nodes will not be interrupted.
   However, there may be temporary impacts if you are using message routing functionality.
 - Avoid making changes to node configurations, such as restarting Docker or modifying network settings,

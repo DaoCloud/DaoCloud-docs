@@ -21,7 +21,7 @@
 
     ![创建成功](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/entry03.png)
 
-1. 在列表右侧，点击操作一列的 __⋮__ ，可通过弹出菜单进行更多操作。
+1. 在列表右侧，点击操作一列的 __┇__ ，可通过弹出菜单进行更多操作。
 
     ![更多操作](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/entry04.png)
 

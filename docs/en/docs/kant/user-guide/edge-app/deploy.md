@@ -18,7 +18,7 @@ Follow these steps:
 
 1. Go to the edge unit details page and select the menu __Edge Application__ -> __Batch Deployments__ .
 
-2. On the right side of the batch deployment list, click the __⋮__ button and select __Deploy__ from the popup menu.
+2. On the right side of the batch deployment list, click the __┇__ button and select __Deploy__ from the popup menu.
 
     ![Batch Deployments](../images/deploy-01.png)
 
@@ -51,7 +51,7 @@ Follow these steps:
 
 1. Go to the edge unit details page and select the menu __Edge Application__ -> __Batch Deployments__ .
 
-2. On the right side of the batch deployment list, click the __⋮__ button and select __View Definition__ from the popup menu.
+2. On the right side of the batch deployment list, click the __┇__ button and select __View Definition__ from the popup menu.
 
 3. On the definition details page, switch between the Container Configuration, Labels and Annotations,
    and Access Configuration tabs. Click the __Edit__ button to enter the corresponding editing interface

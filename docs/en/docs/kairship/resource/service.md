@@ -1,4 +1,6 @@
 ---
+MTPE: ModetaNiu
+Date: 2024-07-18
 hide:
   - toc
 ---
@@ -6,28 +8,32 @@ hide:
 # Multicloud Services
 
 Multicloud services are applications running on a group of Pods, which are exposed as network services one by one.
-Using the DCE multicloud orchestration module, you can use unfamiliar service discovery mechanisms without modifying your applications.
+Using the DCE multicloud management module, you can use unfamiliar service discovery mechanisms without modifying your applications.
 DCE provides the IP address for the Pod running the service and provides the same DNS name for a group of Pods, which can be load balanced among these Pods.
 
 Follow the steps below to manage multicloud services.
 
-1. After entering a multicloud instance, in the left navigation bar, click __Resource Management__ -> __Multicloud Service__ , and click the __Create Service__ button in the upper right corner.
+1. After entering a multicloud instance, in the left navigation bar, click __Resource Management__ -> __Multicloud Services__ , 
+   and click the __Create Service__ button in the upper right corner.
 
     ![Create](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/service01.png)
 
-2. On the __Create Multicloud Service__ page, after configuring the access type, deployment location, port configuration and other information, click __OK__ . The deployment location is divided into four methods: selecting from multicloud workloads/designating clusters/designating regions/designating labels. For the latter three methods, please refer to the detailed introduction in Workloads. Here, select from workloads is added, that is, inherit the selected workloads. Deployment policy (pp) in .
+2. On the __Create Multicloud Service__ page, after configuring the Access Mode, Deploy Position, Ports Configuration 
+   and other information, click __OK__ . The position is divided into several deploying methods: Specify Clusters/Specify Regions/Specify Labels. 
+   Please refer to the detailed introduction in Workloads.
 
-    ![Deploy](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/service02.png)
+    ![Deploy](../images/service.png)
 
-3. It supports one-click conversion of sub-cluster services to multicloud services. Click __Convert Now__ on the list page, select the service under the specified working cluster and namespace, and click OK.
+3. It supports one-click conversion of single-cloud service to multicloud service. Click __Convert Now__ on the list page, 
+   select the service under the specified worker cluster and namespace, and click __OK__.
 
     ![Convert](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/service03.png)
 
-4. Check the multicloud service list at this time, and find that the sub-cluster service has been upgraded successfully.
+4. Check the multicloud service list at this time, and find that the single-cluster service has been upgraded successfully.
 
     ![Upgrade](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/service04.png)
 
-5. Click __⋮__ on the right side of the list to update and delete the service.
+5. Click __┇__ on the right side of the list to update and delete the service.
 
     ![Update/Delete](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/service05.png)
 

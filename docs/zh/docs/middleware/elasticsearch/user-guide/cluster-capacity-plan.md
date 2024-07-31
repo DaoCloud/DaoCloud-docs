@@ -156,7 +156,7 @@
 
 > 中间件 elasticsearch 创建的页面
 
-![创建实例](https://docs.daocloud.io/daocloud-docs-images/docs/middleware/elasticsearch/images/elasticsearch_storage.png)
+![创建实例](../images/elasticsearch_storage.png)
 
 节点介绍：
     - 数据节点： __Data Node__ 是 __Elasticsearch__ 用于存储数据的节点，负责存储数据，用于存储大量数据，所以对存储的压力非常高

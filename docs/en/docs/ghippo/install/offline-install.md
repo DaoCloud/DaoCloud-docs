@@ -1,4 +1,4 @@
-# Offline upgrade global management module
+# Offline Upgrade Global Management Module
 
 This page explains how to install or upgrade the global management module after
 [downloading it from Download Center](../../download/modules/ghippo.md).
@@ -15,7 +15,7 @@ First, synchronize the image to the specified container registry through chart-s
 
     !!! note  
 
-        All parameters in this YAML file are required. You need a private image repository and modify the relevant configurations.
+        All parameters in this YAML file are required. You need a private container registry and modify the relevant configurations.
 
     === "Chart repo installed"
 
@@ -23,55 +23,57 @@ First, synchronize the image to the specified container registry through chart-s
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: ghippo-offline # (1)
+          intermediateBundlesPath: ghippo-offline # (1)!
         target:
-          containerRegistry: 10.16.10.111 # (2)
-          containerRepository: release.daocloud.io/ghippo # (3)
+          containerRegistry: 10.16.10.111 # (2)!
+          containerRepository: release.daocloud.io/ghippo # (3)!
           repo:
-            kind: HARBOR # (4)
-            url: http://10.16.10.111/chartrepo/release.daocloud.io # (5)
+            kind: HARBOR # (4)!
+            url: http://10.16.10.111/chartrepo/release.daocloud.io # (5)!
             auth:
-              username: "admin" # (6)
-              password: "Harbor12345" # (7)
+              username: "admin" # (6)!
+              password: "Harbor12345" # (7)!
           containers:
             auth:
-              username: "admin" # (6)
-              password: "Harbor12345" # (7)
+              username: "admin" # (8)!
+              password: "Harbor12345" # (9)!
         ```
 
         1. Path relative to where the charts-syncer command is executed, not relative to this YAML file and the offline package
-        2. Change to your image repository URL
-        3. Change to your image repository
+        2. Change to your container registry URL
+        3. Change to your container registry
         4. Can also be any other supported Helm Chart repository type
         5. Change to the chart repo URL
-        6. Your image repository username
-        7. Your image repository password
-
+        6. Your container registry username
+        7. Your container registry password
+        8. Your container registry username
+        9. Your container registry password
+   
     === "Chart repo not installed"
 
         If the current environment does not have a chart repo installed, chart-syncer also supports exporting the chart as a tgz file and storing it in a specified path.
 
         ```yaml title="load-image.yaml"
         source:
-          intermediateBundlesPath: ghippo-offline # (1)
+          intermediateBundlesPath: ghippo-offline # (1)!
         target:
-          containerRegistry: 10.16.10.111 # (2)
-          containerRepository: release.daocloud.io/ghippo # (3)
+          containerRegistry: 10.16.10.111 # (2)!
+          containerRepository: release.daocloud.io/ghippo # (3)!
           repo:
             kind: LOCAL
-            path: ./local-repo # (4)
+            path: ./local-repo # (4)!
           containers:
             auth:
-              username: "admin" # (5)
-              password: "Harbor12345" # (6)
+              username: "admin" # (5)!
+              password: "Harbor12345" # (6)!
         ```
 
         1. Path relative to where the charts-syncer command is executed, not relative to this YAML file and the offline package
-        2. Change to your image repository URL
-        3. Change to your image repository
+        2. Change to your container registry URL
+        3. Change to your container registry
         4. Local path of the chart
-        5. Your image repository username
-        6. Your image repository password
+        5. Your container registry username
+        6. Your container registry password
 
 1. Run the synchronous image command.
 

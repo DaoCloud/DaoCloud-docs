@@ -9,7 +9,7 @@ Unless otherwise specified, the policies described herein apply to the maintenan
 
 "Customer" refers to an entity that has ordered product maintenance and support services from DaoCloud.
 
-To obtain the maintenance or support services described under the following [Support Levels](#_1) from DaoCloud, the customer must:
+To obtain the maintenance or support services described under the following [Support Levels](#incident-handling) from DaoCloud, the customer must:
 
 - Have a signed maintenance order specifying the product, the applicable support level, selected optional service enhancements (if any), and the rates;
 - Have a currently licensed and supported version of the software;
@@ -29,13 +29,13 @@ Technical support classifies issues using the following definitions, and provide
 
 **Incident Level Classification:**
 
-| Level | Incident Type        | Description                                                                                                                                                       |
-|-------|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1     | Production Disaster  | Severely impacts customer production, causes system failure or difficulty in normal operations, leads to data loss, and has no workaround or backup method.         |
-| 2     | Severe Impact        | Significantly disrupts customer systems, reducing efficiency, but the system can still function and maintain business operations with a corresponding workaround.  |
-| 3     | General Impact       | The system works normally, affecting only some non-critical functional modules, and can self-adjust or require simple handling.                                     |
-| 4     | Operational Issues   | The system is unaffected and requires no special handling, mainly involving guiding customers on system use or configuration according to relevant processes.       |
-| 5     | Optimization Suggestion | Customer suggestions for product expansion or future modifications that do not affect the quality, functionality, or performance of the software or system.        |
+| Level | Incident Type | Description |
+|-------|---------------|-------------|
+| 1 | Production Disaster | Severely impacts customer production, causes system failure or difficulty in normal operations, leads to data loss, and has no workaround or backup method. |
+| 2 | Severe Impact | Significantly disrupts customer systems, reducing efficiency, but the system can still function and maintain business operations with a proper workaround. |
+| 3 | General Impact | The system works normally, affecting only some non-critical functional modules, and can self-adjust or require simple handling. |
+| 4 | Operational Issues | The system is unaffected and requires no special handling, mainly involving guiding customers on system use or configuration according to relevant processes. |
+| 5 | Optimization Suggestion | Customer suggestions for product autoscaling or future modifications that do not affect the quality, functionality, or performance of the software or system. |
 
 When an incident is classified as Level 1 or Level 2, the customer needs to allow DaoCloud immediate and secure remote access to the affected product, or arrange for a DaoCloud service representative to be dispatched to the customer site. If remote access is delayed or the site is inaccessible, problem resolution will be affected and may be delayed.
 
@@ -47,27 +47,27 @@ DaoCloud provides maintenance and support for its products within the scope of s
 
 DaoCloud offers the following types of support services:
 
-- [Standard Services](#_3)
-- [Premium Services](#_4)
+- [Standard Services](#standard-services)
+- [Premium Services](#premium-services)
 
 ### Standard Services
 
-| **Service Code** | **Service Name**       | **Service Content**                                                                                                           | **Service Personnel**          | **Pricing Method** | **Recommended Users**                                                                                                                                                                                                                             |
-|------------------|------------------------|-------------------------------------------------------------------------------------------------------------------------------|-------------------------------|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| SNS              | Product Support and Subscription | After-sales service<br>- Access to version upgrades                                                                            | After-sales Engineers          | Product scale     | Users whose products are already in production, whose after-sales service is about to expire, and who have not purchased S360, need to purchase SNS to provide basic protection for their production environment.                                   |
-| PDS              | Product Deployment Service       | On-site or remote professional product deployment service<br>- Product delivery planning, deployment implementation<br>- Product training services<br>- Product maintenance and upgrade services | Delivery Engineers (Intermediate and above) | Per day          | Users who lack strong network, storage, and other infrastructure operation and maintenance capabilities; those with complex product deployment scenarios, or those with personalized product deployment needs. |
+| **Service Code** | **Service Name** | **Service Content** | **Service Personnel** | **Pricing Method** | **Recommended Users** |
+|------------------|------------------|------------------|--------------------------|-------------------|---------------------|
+| SNS | Product Support and Subscription | After-sales service<br>- Access to version upgrades | After-sales Engineers | Product scale | Users whose products are already in production, whose after-sales service is about to expire, and who have not purchased S360, need to purchase SNS to provide basic protection for their production environment. |
+| PDS | Product Deployment Service | On-site or remote professional product deployment service<br>- Product delivery planning, deployment implementation<br>- Product training services<br>- Product maintenance and upgrade services | Delivery Engineers (Intermediate and above) | Per day | Users who lack strong network, storage, and other infrastructure operation and maintenance capabilities; those with complex product deployment scenarios, or those with personalized product deployment needs. |
 
-- SNS (Support and Subscription) services are provided by DaoCloud's professional cloud-native implementation team, covering the entire product subscription lifecycle: product launch support, operation and maintenance support, monitoring and alert support, and product upgrade support. Based on customer scenarios, this service offers product operation suggestions, operation and maintenance service suggestions, monitoring metric analysis and guidance, product patch/new feature suggestions, and product installation package downloads.
+- SNS (Support and Subscription) services are provided by DaoCloud's professional Cloud Native implementation team, covering the entire product subscription lifecycle: product launch support, operation and maintenance support, monitoring and alert support, and product upgrade support. Based on customer scenarios, this service offers product operation suggestions, operation and maintenance service suggestions, monitoring metric analysis and guidance, product patch/new feature suggestions, and product installation package downloads.
 
-    - **After-sales Service**: Provides corresponding support services for product operation, including product launch guidance, operation and maintenance support during product operation, alert information support analysis, product fault support and repair; analysis of messages in the product alert system, monitoring system metric analysis, and suggestions.
+    - **After-sales Service**: Provides proper support services for product operation, including product launch guidance, operation and maintenance support during product operation, alert information support analysis, product fault support and repair; analysis of messages in the product alert system, monitoring system metric analysis, and suggestions.
 
-    - **Access to Version Upgrades**: Support for known issues in product versions, support for new features and problem fixes in new versions, and support for downloading corresponding new versions and patches.
+    - **Access to Version Upgrades**: Support for known issues in product versions, support for new features and problem fixes in new versions, and support for downloading proper new versions and patches.
 
-- PDS (Product Deployment Service) is provided by DaoCloud's professional cloud-native implementation team, covering the entire product implementation lifecycle, including delivery planning, deployment implementation, daily operation and maintenance, and product upgrades. Based on customer scenarios, this service offers overall deployment planning and detailed resource planning suggestions, full documentation of the product deployment process, standard product demonstrations and usage training services, operation and maintenance guidance and related standards, fault handling, and version upgrade implementation, helping customers complete product implementation and ensure business continuity.
+- PDS (Product Deployment Service) is provided by DaoCloud's professional Cloud Native implementation team, covering the entire product implementation lifecycle, including delivery planning, deployment implementation, daily operation and maintenance, and product upgrades. Based on customer scenarios, this service offers overall deployment planning and detailed resource planning suggestions, full documentation of the product deployment process, standard product demonstrations and usage training services, operation and maintenance guidance and related standards, fault handling, and version upgrade implementation, helping customers complete product implementation and ensure business continuity.
 
     - **Planning Phase**: Based on the customer's actual environment, design and plan the overall delivery and deployment of the product, set overall goals, and advance in stages. Delivery content includes deployment architecture diagrams, overall environment requirements for deployment, and specific resource planning schemes including IP planning, operating system configuration, external dependency sorting, machine resource planning, network card planning, etc., required for development, testing, and production environments.
 
-    - **Implementation Phase**: Deploy according to the plan, assist the customer in preparing the environment required for the deployment phase, and carry out corresponding deployment work, helping the customer with tenant authorization planning. Delivery content includes corresponding account and password information, product user manuals, and authorization planning operation manuals.
+    - **Implementation Phase**: Deploy according to the plan, assist the customer in preparing the environment required for the deployment phase, and carry out proper deployment work, helping the customer with tenant authorization planning. Delivery content includes proper account and password information, product user manuals, and authorization planning operation manuals.
 
     - **Product Training Services**: Based on customer needs, develop training plans and organize product training to help relevant departments gain a deeper understanding of the product. Delivery content includes expert Q&A, training PPTs, and training videos.
 
@@ -77,29 +77,29 @@ DaoCloud offers the following types of support services:
 
 ### Premium Services
 
-| **Service Code** | **Service Name**             | **Service Content**                                                                                                                                                           | **Service Personnel**                | **Pricing Model** | **Recommended Users**                                                                                                     |
-|------------------|------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|------------------|---------------------------------------------------------------------------------------------------------------------------|
-| S360             | Success360 Critical Business Success | Provides enterprises with more proactive, systematic professional service support based on the product, and offers targeted personalized professional guidance.<br> - Dedicated customer service team<br> - Advanced product solution design<br> - Proactive inspection service<br> - Product upgrade notification service<br> - Operational support for critical events | - Project Manager<br> - Architect (Senior)<br> - Operation and Maintenance Engineer (Senior) | Product scale      | - Customers whose platforms carry important workloads<br> - Large cluster scale<br> - Platforms hosting a large number of applications |
+| **Service Code** | **Service Name** | **Service Content** | **Service Personnel** | **Pricing Model** | **Recommended Users** |
+|------------------|------------------|---------------------|-----------------------|------------------|------------------------|
+| S360 | Success360 Critical Business Success | Provides enterprises with more proactive, systematic professional service support based on the product, and offers targeted personalized professional guidance.<br> - Dedicated customer service team<br> - Advanced product solution design<br> - Proactive inspection service<br> - Product upgrade notification service<br> - Operational support for critical events | - Project Manager<br> - Architect (Senior)<br> - Operation and Maintenance Engineer (Senior) | Product scale | - Customers whose platforms carry important workloads<br> - Large cluster scale<br> - Platforms hosting a large number of applications |
 
-S360 (Success 360, Customer Success 360 Service) is provided by DaoCloud to offer customers a dedicated cloud-native technical team that comprehensively supports customer success. Service personnel are dynamically allocated based on customer industry attributes and service requirements. The service includes customized advanced product solution design, regular health inspections of the product, proactive identification of potential issues, and production practice improvement or optimization suggestions. It also ensures business continuity during critical customer phases, such as peak business periods, key business launches, and application upgrades.
+S360 (Success 360, Customer Success 360 Service) is provided by DaoCloud to offer customers a dedicated Cloud Native technical team that comprehensively supports customer success. Service personnel are dynamically allocated based on customer industry attributes and service requirements. The service includes customized advanced product solution design, regular health inspections of the product, proactive identification of potential issues, and production practice improvement or optimization suggestions. It also ensures business continuity during critical customer phases, such as peak business periods, key business launches, and application upgrades.
 
 - **Dedicated Customer Service Team**: Form a dedicated expert service team based on the customer's industry attributes and service requirements to assist in customer success.
 - **Advanced Product Solution Design**: Provide personalized product solutions according to customer needs, including blue-green deployment, disaster recovery plans, monitoring plans, logging plans, gray release plans, and large cluster solutions.
 - **Proactive Inspection Service**: Conduct regular health inspections of the product and provide inspection reports, including overall information, management nodes, compute nodes, application status, functional requirements and issue handling, and overall evaluation.
 - **Product Upgrade Notification Service**: Proactively provide customers with product update reports and community software vulnerability reports, and offer related product revision and version upgrade services based on specific circumstances.
-- **Operational Support for Critical Events**: Provide business continuity support during critical customer phases (such as peak business periods, key business launches, and application upgrades). Offer change strategy design and plan discussions, assist in fault handling, and generate reports for future reference. Deliverables include service plans and personnel configurations, service process records, and service reports.
+- **Operational Support for Critical Events**: Provide business continuity support during critical customer phases (such as peak business periods, key business launches, and application upgrades). Offer change policy design and plan discussions, assist in fault handling, and generate reports for future reference. Deliverables include service plans and personnel configurations, service process records, and service reports.
 
 ## Requesting Service
 
 If customers encounter issues while using supported products, DaoCloud will provide DaoCloud product support services and activate its automatic incident creation diagnostic tools. Customers can report issues any time, 24/7, and DaoCloud will provide support within the coverage time specified in the order.
 
-| Level | Standard Service Response Time | Standard Service Channel       | Premium Service Response Time | Premium Service Channel          | Professional Service Response Time | Professional Service Channel          |
-|-------|-------------------------------|-------------------------------|-------------------------------|----------------------------------|------------------------------------|--------------------------------------|
-| 1     | Four hours 24/7               | Customer Service/Phone/Remote | Two hours 24/7                | Customer Service/Phone/Remote/On-site | One hour 24/7                       | Customer Service/Phone/Remote/On-site |
-| 2     | Eight hours 5*8 (9:00 - 18:00)| Customer Service/Phone/Remote | Four hours 24/7               | Customer Service/Phone/Remote/On-site | Two hours 24/7                      | Customer Service/Phone/Remote/On-site |
-| 3     | Two business days 5*8 (9:00 - 18:00) | Customer Service/Phone/Remote | One business day 5*8 (9:00 - 18:00) | Customer Service/Phone/Remote     | Four hours 5*8 (9:00 - 18:00)       | Customer Service/Phone/Remote/On-site |
-| 4     | Four business days 5*8 (9:00 - 18:00) | Customer Service/Phone/Remote | Two business days 5*8 (9:00 - 18:00) | Customer Service/Phone/Remote     | One business day 5*8 (9:00 - 18:00) | Customer Service/Phone/Remote/On-site |
-| 5     | None                           | Customer Service/Phone/Remote | Regular Discussions            | Customer Service/Phone/Remote     | Monthly Discussions                 | Customer Service/Phone/Remote/On-site |
+| Level | Standard Service Response Time | Standard Service Channel | Premium Service Response Time | Premium Service Channel | Professional Service Response Time | Professional Service Channel |
+|-------|------------|--------------|---------------------|-------------------------|----------------------|------------------------------|
+| 1 | Four hours 24/7 | Customer Service/Phone/Remote | Two hours 24/7 | Customer Service/Phone/Remote/On-site | One hour 24/7 | Customer Service/Phone/Remote/On-site |
+| 2 | Eight hours 5*8 (9:00 - 18:00)| Customer Service/Phone/Remote | Four hours 24/7 | Customer Service/Phone/Remote/On-site | Two hours 24/7 | Customer Service/Phone/Remote/On-site |
+| 3 | Two business days 5*8 (9:00 - 18:00) | Customer Service/Phone/Remote | One business day 5*8 (9:00 - 18:00) | Customer Service/Phone/Remote | Four hours 5*8 (9:00 - 18:00) | Customer Service/Phone/Remote/On-site |
+| 4 | Four business days 5*8 (9:00 - 18:00) | Customer Service/Phone/Remote | Two business days 5*8 (9:00 - 18:00) | Customer Service/Phone/Remote | One business day 5*8 (9:00 - 18:00) | Customer Service/Phone/Remote/On-site |
+| 5 | None | Customer Service/Phone/Remote | Regular Discussions | Customer Service/Phone/Remote | Monthly Discussions | Customer Service/Phone/Remote/On-site |
 
 The general process of service support is illustrated in the following diagram:
 
@@ -135,27 +135,29 @@ DaoCloud will provide remote software support for non-discontinued and certified
 
 - DCE 5.y Series
 
-    | **Abbreviation** | **Full Name**          | **Description**  |
-    | ------------------------ | ----------------------------- | ---------------- |
-    | GA                       | General Availability          | Product released on June 1, 2023 |
-    | EOSS                     | End of Standard Support       | Patch development and full support will cease on June 1, 2026, after product release |
-    | EOSL                     | End of Support Life           | Service will cease on October 30, 2028, after product release |
+    | **Abbreviation** | **Full Name** | **Description** |
+    | ---------------- | ------------- | --------------- |
+    | GA | General Availability | Product released on June 1, 2023 |
+    | EOSS | End of Standard Support | Patch development and full support will cease on June 1, 2026, after product release |
+    | EOSL | End of Support Life | Service will cease on October 30, 2028, after product release |
 
 - DCE 4.y Series
 
-    | **Abbreviation** | **Full Name**          | **Description**  |
-    | ------------------------ | ----------------------------- | ---------------- |
-    | GA                       | General Availability          | Product released on March 31, 2020 |
-    | EOSS                     | End of Standard Support       | Patch development and full support will cease on March 31, 2023, after product release |
-    | EOSL                     | End of Support Life           | Service will cease on March 31, 2025, after product release |
+    | **Abbreviation** | **Full Name** | **Description** |
+    | ---------------- | ------------- | --------------- |
+    | GA | General Availability | Product released on March 31, 2020 |
+    | EOSS | End of Standard Support | Patch development and full support will cease on March 31, 2023, after product release |
+    | EOSL | End of Support Life | Service will cease on March 31, 2025, after product release |
 
 - DCE 3.y Series
 
-    | **Abbreviation** | **Full Name**          | **Description**  |
-    | ------------------------ | ----------------------------- | ---------------- |
-    | GA                       | General Availability          | Product released on July 15, 2018 |
-    | EOFS                     | End of Standard Support       | Patch development and full support will cease on July 30, 2021, after product release |
-    | EOSL                     | End of Support Life           | Service will cease on July 30, 2023, after product release |
+    | **Abbreviation** | **Full Name** | **Description** |
+    | ---------------- | ------------- | --------------- |
+    | GA | General Availability | Product released on July 15, 2018 |
+    | EOFS | End of Standard Support | Patch development and full support will cease on July 30, 2021, after product release |
+    | EOSL | End of Support Life | Service will cease on July 30, 2023, after product release |
+
+[DCE LifeCycle Released on endoflife.date](https://endoflife.date/dce){ .md-button }
 
 ## Supported Software Versions
 
@@ -211,10 +213,10 @@ Initial Product Deployment:
 - **Software Products**: The service start time is the date when the software is first officially licensed and activated. The service end time is extended according to the purchased service duration.
 - **Integrated Products**: The service start time is the date of delivery of the integrated product. The service end time is extended according to the purchased service duration.
 
-Product Expansion:
+Product Autoscaling:
 
-- **New Cluster Installation**: If product expansion is implemented by installing a new cluster, the service validity period of the expanded product follows the definition of initial deployment.
-- **Expansion within Existing Cluster**: If the product is expanded within the existing cluster, the service validity period of the expanded product is consistent with the service validity period of the original cluster.
+- **New Cluster Installation**: If product autoscaling is implemented by installing a new cluster, the service validity period of the expanded product follows the definition of initial deployment.
+- **Autoscaling within Existing Cluster**: If the product is expanded within the existing cluster, the service validity period of the expanded product is consistent with the service validity period of the original cluster.
 
 ### Extended Software Maintenance (EAM)
 
@@ -229,7 +231,7 @@ After the support expiration of certain software products, DaoCloud can provide 
 
 To qualify for extended software maintenance services, the customer must meet the following criteria:
 
-- The customer must have a stable environment, with no growth in user load, or no plans for large-scale software changes. The customer must maintain the supported configuration according to the supported configuration matrix of their current version.
+- The customer must have a stable environment, with no growth in user workload, or no plans for large-scale software changes. The customer must maintain the supported configuration according to the supported configuration matrix of their current version.
 - The customer must be running the latest maintenance version of the major/minor version and be willing to upgrade to the latest electronic fixes to obtain corrections.
 - EAM contracts do not allow any gaps in support coverage time. As soon as the electronic fix support for the current software version expires, customers are encouraged to migrate to an EAM contract. Any customer requesting support without a signed EAM agreement will need to sign a new EAM agreement and pay the arrears covering the period from the end of electronic fix support to the present.
 
@@ -251,7 +253,7 @@ In most cases, DaoCloud agrees to the installation and use of third-party softwa
 
 DaoCloud provides after-sales support services for products nationwide.
 
-DaoCloud's nationwide technical support centers are strategically located to efficiently connect you with the support center in your region. Each center is staffed with professional technical engineers who offer industry-leading cloud-native expertise and product usage experience. DaoCloud is committed to providing enterprise-grade global support with a mission to help customers achieve continuous success.
+DaoCloud's nationwide technical support centers are strategically located to efficiently connect you with the support center in your region. Each center is staffed with professional technical engineers who offer industry-leading Cloud Native expertise and product usage experience. DaoCloud is committed to providing enterprise-grade global support with a mission to help customers achieve continuous success.
 
 ### Issue Resolution
 

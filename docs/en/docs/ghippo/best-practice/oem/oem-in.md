@@ -143,7 +143,7 @@ Integrate the customer system with the DCE 5.0 platform through protocols like O
 
     
 
-2. After creating, fill in the details such as the client ID, secret, single sign-on URL, etc., in the customer system's __Global Management__ -> __Users and Access Control__ -> __Identity Provider__ -> __OIDC__, to complete user integration.
+2. After creating, fill in the details such as the client ID, secret, and single sign-on URL in the customer system's __Global Management__ -> __Users and Access Control__ -> __Identity Provider__ -> __OIDC__, to complete user integration.
 
     
 
@@ -156,7 +156,7 @@ Integrate the customer system with the DCE 5.0 platform through protocols like O
 Refer to the tar package at the bottom of the document to implement an empty frontend sub-application, and embed the customer system into this empty shell application in the form of an iframe.
 
 1. Download the gproduct-demo-main.tar.gz file and change the value of the src attribute in App-iframe.vue under the src folder to the absolute address of the user entering the customer system, such as:
-   __src="https://10.6.202.177:30443/label-studio" (DCE 5.0 address + Subpath)__ or a relative address, such as: __src="./external-anyproduct/insight"__ 
+   `src="https://10.6.202.177:30443/label-studio" (DCE 5.0 address + Subpath)` or a relative address, such as `src="./external-anyproduct/insight"`
 
     
 
@@ -179,7 +179,7 @@ After integration, the __Customer System__ will appear in the primary navigation
 
     DCE 5.0 supports customizing the appearance by writing CSS. How the customer system implements appearance customization in actual applications needs to be handled according to the actual situation.
 
-Log in to the customer system, and through __Global Management__ -> __Platform Settings__ -> __Appearance Customization__, you can customize platform background colors, logos, names, etc. For specific operations, please refer to [Appearance Customization](../../user-guide/platform-setting/appearance.md).
+Log in to the customer system, and through __Global Management__ -> __Platform Settings__ -> __Appearance Customization__, you can customize platform background colors, logos, and names. For specific operations, please refer to [Appearance Customization](../../user-guide/platform-setting/appearance.md).
 
 ## Integrate Permission System (Optional)
 
@@ -198,4 +198,4 @@ The method is to call the DCE 5.0 [OpenAPI](https://docs.daocloud.io/openapi/ind
 ## References
 
 - Refer to [OEM OUT Document](./oem-out.md)
-- Download the tar package for gProduct-demo-main integration [here](./examples/gproduct-demo-main.tar.gz)
+- Download the [tar package for gProduct-demo-main integration](./examples/gproduct-demo-main.tar.gz)

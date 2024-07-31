@@ -23,9 +23,9 @@ This page explains about the functional features of MySQL.
 
     The required resources can be activated in real time according to business needs, and there is no need to purchase high-cost hardware at the initial stage of business, effectively reducing initial asset investment and avoiding waste of idle resources.
 
-- Elastic scaling
+- Autoscaling
 
-    Database resources can be elastically scaled according to business pressure to meet the needs of database performance and storage space in different business stages.
+    Database resources can be scaled automatically according to your business pressure to meet the needs of database performance and storage space in different business stages.
 
 - Automatic operation and maintenance
 

@@ -22,7 +22,7 @@
 | 资源名 | 说明 | 下载地址 |
 | ----- | --- | ------- |
 | os-pkgs-redhat9-v0.9.3.tar.gz | RedHat9.2 OS-package 包 | https://github.com/kubean-io/kubean/releases/download/v0.9.3/os-pkgs-redhat9-v0.9.3.tar.gz |
-| ISO 离线包 | ISO 包导入火种节点脚本 | 前往 [RedHat 官方下载地址](https://access.cdn.redhat.com/content/origin/files/sha256/a1/a18bf014e2cb5b6b9cee3ea09ccfd7bc2a84e68e09487bb119a98aa0e3563ac2/rhel-9.2-x86_64-dvd.iso?user=cb58db6b16a8cf7e24021ebac6be33e8&_auth_=1698145622_cdb9984fa8440b24f4e126ec2e368c82) |
+| ISO 离线包 | ISO 包导入火种节点脚本 | 前往 [RedHat 官方地址登录下载](https://access.redhat.com/zh_CN/downloads) |
 | import-iso | ISO 导入火种节点脚本 | https://github.com/kubean-io/kubean/releases/download/v0.9.3/import_iso.sh |
 
 ### 导入 os pckage 离线包至火种节点的 minio
