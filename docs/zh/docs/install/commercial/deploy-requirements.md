@@ -13,6 +13,7 @@
 | | Redhat 9.X | Redhat 9.2<br />5.14.0-284.11.1.e9_2.x86_64 | [离线安装 DCE 5.0 商业版](start-install.md) |
 | | Ubuntu 20.04 | 5.10.104 | [离线安装 DCE 5.0 商业版](start-install.md) |
 | | Ubuntu 22.04 | 5.15.0-78-generic | [离线安装 DCE 5.0 商业版](start-install.md) |
+| | Rocky Linux 9.2 | 5.14.0-284.11.1.el9_2.x86_64 | [离线安装 DCE 5.0 商业版](start-install.md) |
 | | 统信 UOS V20 （1020a） | 5.4.0-125-generic | [UOS V20 (1020a) 上部署 DCE 5.0 商业版](../os-install/uos-v20-install-dce5.0.md) |
 | | openEuler 22.03 | 5.10.0-60.18.0.50.oe2203.x86_64 | [离线安装 DCE 5.0 商业版](start-install.md) |
 | | Oracle Linux R9/R8 U1 | 5.15.0-3.60.5.1.el9uek.x86_64 | [Oracle Linux R9 U1 上部署 DCE 5.0 商业版](../os-install/oracleLinux-install-dce5.0.md) |
