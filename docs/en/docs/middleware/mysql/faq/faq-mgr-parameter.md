@@ -41,7 +41,7 @@ relay_log_info_repository=TABLE
 transaction_write_set_extraction=XXHASH64
 ```
 
-!!! Info
+!!! info
 
     Using the `loose_` prefix is a safe practice when configuring MGR parameters, especially when running in 
     different versions or plugin states. It ensures compatibility and flexibility of configuration files 
