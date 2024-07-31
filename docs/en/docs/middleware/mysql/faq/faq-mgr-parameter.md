@@ -11,7 +11,7 @@ In these cases, the `loose_` prefix ensures that these parameters can be ignored
 
 ## Examples
 
-The following is an example of configuring MySQL Group Replication with the `loose_` prefix
+The following is an example of configuring MySQL Group Replication with the `loose_` prefix:
 
 ```ini
 [mysqld]
