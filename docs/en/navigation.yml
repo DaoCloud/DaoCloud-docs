@@ -1172,6 +1172,7 @@ nav:
                   - Manage Edge Node Group: kant/user-guide/node-group/manage-group.md
               - End Device:
                   - Intro: kant/user-guide/device/index.md
+                  - Create Device Model: kant/user-guide/device/create-device-model.md
                   - Create End Device: kant/user-guide/device/create-device.md
                   - Manage End Device: kant/user-guide/device/manage-device.md
               - Edge App:
@@ -1187,6 +1188,7 @@ nav:
                   - Deploy EdgeMesh: kant/user-guide/edge-network/deploy-edgemesh.md
                   - Service: kant/user-guide/edge-network/service.md
               - Best Practices:
+                  - Instructions to Connect a Modbus Device: kant/best-practice/modbus-device-demo.md
                   - Smart Device Control: kant/best-practice/device-control.md
                   - Develop Device Driver - Mapper: kant/best-practice/develop-device-mapper.md
       - Management:
