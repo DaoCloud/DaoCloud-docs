@@ -2,6 +2,26 @@
 
 本页列出 Insight 可观测性的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2024-07-31
+
+### Insight Server v0.29.0
+
+#### 新增
+
+- **新增** 站内信、飞书通知对象
+
+#### 优化
+
+- **优化** 支持通过配置参数控制 `insight-manager` 的 `leaderelection` 是否开启
+- **优化** 在安装器七节点模式下默认 Prometheus、vmstorage 默认调度到工作节点
+  
+### Insight Agent v0.29.0
+
+#### 修复
+
+- **修复** Pod JVM 指标面板无数据
+- **修复** 社区版安装 Insight Agent 时部分参数非必填问题
+
 ## 2024-06-30
 
 ### Insight Server v0.28.0
