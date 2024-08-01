@@ -22,7 +22,7 @@
 | ------- | ---------- | --- |
 | pytorch | TorchScript、PyTorch 2.0 格式的模型 | [triton-inference-server/pytorch_backend](https://github.com/triton-inference-server/pytorch_backend) |
 | tensorflow | TensorFlow 2.x | [triton-inference-server/tensorflow_backend](https://github.com/triton-inference-server/tensorflow_backend) |
-| vLLM(Deprecated) | TensorFlow 2.x | [triton-inference-server/tensorflow_backend](https://github.com/triton-inference-server/tensorflow_backend) |
+| vLLM(Deprecated) | 与 vLLM 一致 | 支持的模型和 vLLM support Model 一致 |
 
 !!! danger
 
