@@ -85,7 +85,7 @@ spec:
       env: NAMESPACE # 存在env这个属性则将env的值作为环境变量的key传递到插件，否则按照name的值传递
       dependProperties: # 属性依赖，如 namespace 字段依赖于 cluster 字段，给前端交互使用
         cluster: cls
-    ```
+```
 
 参数介绍：
 
@@ -210,19 +210,19 @@ UI 参数预定义类型及使用场景如下：
 | string   | Select             | 下拉框,与参数定义中的options配合使用 |                                                          |
 | string   | Radio              | 单选框                               |                                                          |
 | bool     | Switch             | 开关                                 |                                                          |
-| string   | Password           | 密码，\*\*\*\*                       |                                                          |
+| string   | Password           | 密码 `****`                       |                                                          |
 | int      | Number             | 数字输入框                           |                                                          |
 | string   | ImageInput         | 镜像选择器                           |                                                          |
 | string   | ClusterSelector    | 集群选择器                           |                                                          |
-| string   | NamespaceSelector  | 命名空间选择器                       | 依赖于cluster属性                                        |
+| string   | NamespaceSelector  | 命名空间选择器                       | 依赖于 cluster 属性                                        |
 | string   | CredentialSelector | 凭证选择器                           |                                                          |
-| string   | WorkloadSelector   | 工作负载选择器                       | 依赖于cluster，namespace，workloadType属性               |
-| string   | ContainerSelector  | 容器选择器                           | 依赖于cluster，namespace，workloadType，workloadName属性 |
+| string   | WorkloadSelector   | 工作负载选择器                       | 依赖于 cluster，namespace，workloadType 属性               |
+| string   | ContainerSelector  | 容器选择器                           | 依赖于 cluster，namespace，workloadType，workloadName 属性 |
 | array    | Strings            | 字符串数组                           |                                                          |
 | array    | Numbers            | 数字数组                             |                                                          |
-| map      | KV                 | kv键值对结构，如环境变量             |                                                          |
+| map      | KV                 | kv 键值对结构，如环境变量             |                                                          |
 | bool     | Ignore             | 不展示此字段                         |                                                          |
-| string   | CPUNumber          | CPU数量输入框                        |                                                          |
+| string   | CPUNumber          | CPU 数量输入框                        |                                                          |
 | string   | MemoryNumber       | 内存数量输入框                       |                                                          |
 
 在创建插件之后，为了保证插件的兼容性，当您需要更改插件定义时，最佳实践是递增插件的版本号，并在版本描述中说明更改的内容。
