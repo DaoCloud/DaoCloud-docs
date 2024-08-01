@@ -131,14 +131,12 @@ params:
   - name: workloadType
     uiType: Select
   - name: workloadName
-    uiType: WorkloadSelector # (!)!
+    uiType: WorkloadSelector # 级联依赖于 cluster、namespace、workloadType 属性
     dependProperties:
       cluster: cls
       namespace: namespace
       workloadType: workloadType
 ```
-
-1. 级联依赖于 cluster、namespace、workloadType 属性
 
 ContainerSelector:
 
@@ -277,7 +275,7 @@ withCredential([usernamePassword(credentialsId: 'my-credential', usernameVariabl
         version: 'v1.0.0',
         docker: [
             image: 'alpine',
-            shell: '/bin/bash', # 可以在插件的script中读取到USERNAME和PASSWORD变量
+            shell: '/bin/bash', // 可以在插件的 script 中读取到 USERNAME 和 PASSWORD 变量
             script: 'env',
         ],
         args: [],
