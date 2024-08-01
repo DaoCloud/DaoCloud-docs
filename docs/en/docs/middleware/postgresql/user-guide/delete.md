@@ -7,7 +7,7 @@ hide:
 
 If you want to delete a PostgreSQL instance, you can do the following:
 
-1. In the PostgreSQL instance list, click the __⋮__ button on the right, and select __Delete Instance__ from the pop-up menu.
+1. In the PostgreSQL instance list, click the __┇__ button on the right, and select __Delete Instance__ from the pop-up menu.
 
     ![Delete Instance](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/middleware/postgresql/images/delete00.png)
 
