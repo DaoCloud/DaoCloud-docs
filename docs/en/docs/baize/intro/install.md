@@ -3,39 +3,56 @@ MTPE: windsonsea
 date: 2024-05-21
 ---
 
-# Initialize Computing Cluster
+# Initialize Intelligent Engine Cluster
 
-By default, when installing DCE 5.0 Enterprise, the Intelligent Engine Module can be installed synchronously. Please contact the delivery support team to obtain the Enterprise installation package.
+Starting from DCE 5.0 installer v0.17.0, the Enterprise package can simultaneously install the Intelligent Engine module
+**without requiring separate installation** . Please contact the delivery support team to obtain the Enterprise package.
 
-## Install Intelligent Engine
+## Install the Intelligent Engine Module (UI)
 
-Ensure that the Intelligent Engine components have been installed in the global management cluster.
-You can verify this by checking if the Intelligent Engine module is available through the DCE 5.0 UI.
+> This module only needs to be installed in the [global service cluster](../../kpanda/user-guide/clusters/cluster-role.md#global-service-cluster).
+
+Use the link below to open the global service cluster, then find `baize`
+under __Helm Apps__ -> __Helm Charts__ and follow the installation steps.
+
+!!! note "Important Notes"
+
+    * The namespace should be `baize-system`.
+    * After replacing the environment address,
+      open `<YOUR_DCE_HOST>/kpanda/clusters/kpanda-global-cluster/helm/charts/addon/baize`.
+    * Note the `kpanda-global-cluster` global service cluster.
+
+## Installing the Intelligent Engine Module (CLI)
+
+> The management module only needs to be installed in the global servicemanagement cluster.
+
+Ensure that the Intelligent Engine components are already installed in the global service cluster.
+You can confirm this by checking the DCE 5.0 UI for the presence of the Intelligent Engine module.
 
 !!! info
 
-    There is an entry for `Intelligent Engine` in the primary navigation bar.
+    The primary navigation bar has an `Intelligent Engine` entry.
 
-If it is not available, you can install it using the following method.
-Please note that it needs to be installed in the `kpanda-global-cluster` global management cluster:
+    If it does not exist, you can install it using the following method.
+    Note that it needs to be installed in the `kpanda-global-cluster`, that is, global service cluster:
 
-```bash
-# "baize" is the development codename for the Intelligent Engine component
-helm repo add baize https://release.daocloud.io/chartrepo/baize
-helm repo update
-export VERSION=v0.1.1
-helm upgrade --install baize baize/baize \
-    --create-namespace \
-    -n baize-system \
-    --set global.imageRegistry=release.daocloud.io \
-    --version=${VERSION}
-```
-
-If you are installing in an existing `DCE` environment, you can add the `helm` source to the container management and also use a graphical installation method.
+    ```bash
+    # baize is the codename for the Intelligent Engine component
+    helm repo add baize https://release.daocloud.io/chartrepo/baize
+    helm repo update
+    helm search repo baize # Get the latest version number
+    export VERSION=<version> # Make sure to use the latest version
+    helm upgrade --install baize baize/baize \
+        --create-namespace \
+        -n baize-system \
+        --set global.imageRegistry=release.daocloud.io \
+        --version=${VERSION}
+    ```
 
 ## Initialize Worker Cluster
 
-In each worker cluster with computing resources, the corresponding basic computing components need to be deployed. The main components include:
+In each worker cluster with computing resources, the corresponding basic computing components
+need to be deployed. The main components include:
 
 - `gpu-operator`: Initializes the GPU resources in the cluster.
   **The installation method may vary depending on the type of GPU resources.**
@@ -44,7 +61,7 @@ In each worker cluster with computing resources, the corresponding basic computi
   in the cluster, including logs, metrics, and events
 - `baize-agent`: Core component of the Intelligent Engine module, responsible for
   scheduling, monitoring, Pytorch, Tensorflow, and other computing components
-- `nfs`: Storage service used for dataset preheating
+- Optional `nfs`: Storage service used for dataset preheating
 
 !!! danger
 

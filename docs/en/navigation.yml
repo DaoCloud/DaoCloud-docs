@@ -1107,7 +1107,7 @@ nav:
           - Intelligent Engine:
               - Introduction:
                   - What is Intelligent Engine: baize/intro/index.md
-                  - Installation: baize/intro/install.md
+                  - Initialize Intelligent Engine: baize/intro/install.md
                   - First Time Usage: baize/intro/first.md
                   - Intelligent Engine Release Notes: baize/intro/release-notes.md
               - Development Console:
