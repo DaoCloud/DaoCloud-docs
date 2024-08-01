@@ -1,24 +1,27 @@
 ---
-MTPE: Fan-Lin
-Date: 2024-01-24
+MTPE: ModetaNiu
+Date: 2024-08-01
 ---
 
 # Snapshot Management
 
 This guide explains how to create snapshots for virtual machines and restore them.
 
-You can create snapshots for virtual machines to save the current state of the virtual machine. A snapshot can be restored multiple times, and each time the virtual machine will be reverted to the state when the snapshot was created. Snapshots are commonly used for backup, recovery, rollback, etc.
+You can create snapshots for virtual machines to save the current state of the virtual machine. A snapshot can be restored multiple times, and each time the virtual machine will be reverted to the state when the snapshot was created. Snapshots are commonly used for backup, recovery and rollback.
 
 ## Prerequisites
 
 Before using the snapshots, the following prerequisites need to be met:
 
 - Only virtual machines in a non-error state can use the snapshot function.
-- Install CSI Snapshotter, first ensure that the CSI Snapshotter component is deployed.
-  The snapshot-controller will monitor VolumeSnapshot and VolumeSnapshotContent objects and trigger related operations.
-- Install Snapshot CRDs, Snapshot Controller, CSI Driver.
-  Refer to [CSI Snapshotter](https://github.com/kubernetes-csi/external-snapshotter?tab=readme-ov-file#usage) for more information.
-- Wait for the csi-snapshotter and snapshot-controller components to be ready.
+- Install Snapshot CRDs, Snapshot Controller, and CSI Driver.
+  For detailed installation steps, refer to [CSI Snapshotter](https://github.com/kubernetes-csi/external-snapshotter?tab=readme-ov-file#usage).
+- Wait for the snapshot-controller component to be ready. This component monitors events related to VolumeSnapshot 
+  and VolumeSnapshotContent and triggers specific actions.
+- Wait for the CSI Driver to be ready. Ensure that the csi-snapshotter sidecar is running within the CSI Driver. 
+  The csi-snapshotter sidecar monitors events related to VolumeSnapshotContent and triggers specific actions. 
+    - If the storage is rook-ceph, refer to [ceph-csi-snapshot](https://rook.io/docs/rook/latest-release/Storage-Configuration/Ceph-CSI/ceph-csi-snapshot/).
+    - If the storage is HwameiStor, refer to [huameistor-snapshot](https://hwameistor.io/cn/docs/volumes/volume_snapshot).
 
 ## Create a Snapshot
 
