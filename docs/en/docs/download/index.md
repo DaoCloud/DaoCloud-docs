@@ -61,7 +61,7 @@ The numerous modules included in DCE 5.0 can be downloaded separately to upgrade
 | Insight | 2.62 GB | [:arrow_right: Go to Download](./modules/insight.md) | 2024-06-13 |
 | Microservice Engine | 1.66 GB | [:arrow_right: Go to Download](./modules/skoala.md) | 2024-05-27 |
 | Service Mesh | 1.03 GB | [:arrow_right: Go to Download](./modules/mspider.md) | 2024-06-03 |
-| Cloud Edge Collaboration | 100.37 MB | [:arrow_right: Go to Download](./modules/kant.md) | 2024-05-30 |
+| Cloud Edge Collaboration | 107 MB | [:arrow_right: Go to Download](./modules/kant.md) | 2024-07-30 |
 | Global Management | 458.24 MB | [:arrow_right: Go to Download](./modules/ghippo.md) | 2024-06-04 |
 | Operations Management | 91.00 MB | [:arrow_right: Go to Download](./modules/gmagpie.md) | 2024-04-30 |
 | Virtual Machine | 1.43 GB | [:arrow_right: Go to Download](./modules/virtnest.md) | 2024-06-04 |
