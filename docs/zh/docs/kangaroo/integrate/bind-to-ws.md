@@ -20,7 +20,7 @@
 
     ![点击某个名称](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/managed01.png)
 
-1. 在左侧导航栏点击 __镜像空间__ ，在某个镜像空间最右侧，点击 __⋮__ ，选择 __绑定/解绑工作空间__ 。
+1. 在左侧导航栏点击 __镜像空间__ ，在某个镜像空间最右侧，点击 __┇__ ，选择 __绑定/解绑工作空间__ 。
 
     ![绑定/解绑](https://docs.daocloud.io/daocloud-docs-images/docs/kangaroo/images/bind00.png)
 
