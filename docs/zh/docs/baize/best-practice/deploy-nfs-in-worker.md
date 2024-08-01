@@ -173,3 +173,34 @@ kubectl apply -f nfs-sc.yaml
 创建数据集，并将数据集的 **关联存储类** ，`预热方式` 设置为 `NFS`，即可将远端数据预热到集群内。
 
 数据集创建成功后，可以看到数据集的状态为 `预热中`，等待预热完成后即可使用。
+
+## 常见问题
+
+### 缺少必要的NFS客户端软件 `/sbin/mount`
+
+```bash
+bad option; for several filesystems (e.g. nfs, cifs) you might need a /sbin/mount.<type> helper program.
+```
+
+在运行 `Kubernetes` 节点的机器上，确保已安装 NFS 客户端：
+
+对于 `Ubuntu/Debian` 系统：
+
+```bash
+sudo apt-get update
+sudo apt-get install nfs-common
+```
+
+对于 `CentOS/RHEL` 系统：
+
+```bash
+sudo yum install nfs-utils
+```
+
+检查 NFS 服务器配置，确保 NFS 服务器正在运行并正确配置。你可以尝试手动挂载来测试：
+
+```
+sudo mkdir -p /mnt/test
+sudo mount -t nfs <nfs-server>:/nfsdata /mnt/test
+```
+
