@@ -10,18 +10,19 @@ When deploying DCE 5.0, it is necessary to first plan the software, hardware, an
 ## OS Requirements
 
 | **Architecture** | **OS** | **Tested OS and Kernel** | Remarks (Reference) |
-| ------------- | --------- | --------------------------------- | ---------------------------- |
-| AMD 64 | CentOS 7.X | CentOS 7.9<br />3.10.0-1127.el7.x86_64 on an x86_64 | [Offline Installation of DCE 5.0 Enterprise](start-install.md)<br />Note: CentOS 7 support ends on June 30, 2024 |
-| | Redhat 8.X | Redhat 8.4<br />4.18.0-305.el8.x86_64 | [Offline Installation of DCE 5.0 Enterprise](start-install.md) |
-| | Redhat 7.X | Redhat 7.9<br />3.10.0-1160.el7.x86 | [Offline Installation of DCE 5.0 Enterprise](start-install.md) |
-| | Redhat 9.X | Redhat 9.2<br />5.14.0-284.11.1.el9_2.x86_64 | [Offline Installation of DCE 5.0 Enterprise](start-install.md) |
-| | Ubuntu 20.04 | 5.10.104 | [Offline Installation of DCE 5.0 Enterprise](start-install.md) |
-| | Ubuntu 22.04 | 5.15.0-78-generic | [Offline Installation of DCE 5.0 Enterprise](start-install.md) |
+| ------------- | --------- | ------------------------ | ------------------- |
+| AMD 64 | CentOS 7.X | CentOS 7.9<br />3.10.0-1127.el7.x86_64 on an x86_64 | [Offline Install DCE 5.0 Enterprise](start-install.md)<br />Note: CentOS 7 support ends on June 30, 2024 |
+| | Redhat 8.X | Redhat 8.4<br />4.18.0-305.el8.x86_64 | [Offline Install DCE 5.0 Enterprise](start-install.md) |
+| | Redhat 7.X | Redhat 7.9<br />3.10.0-1160.el7.x86 | [Offline Install DCE 5.0 Enterprise](start-install.md) |
+| | Redhat 9.X | Redhat 9.2<br />5.14.0-284.11.1.el9_2.x86_64 | [Offline Install DCE 5.0 Enterprise](start-install.md) |
+| | Ubuntu 20.04 | 5.10.104 | [Offline Install DCE 5.0 Enterprise](start-install.md) |
+| | Ubuntu 22.04 | 5.15.0-78-generic | [Offline Install DCE 5.0 Enterprise](start-install.md) |
+| | Rocky Linux 9.2 | 5.14.0-284.11.1.el9_2.x86_64 | [Offline Install DCE 5.0 Enterprise](start-install.md) |
 | | UnionTech OS V20 (1020a) | 5.4.0-125-generic | [Deploying DCE 5.0 Enterprise on UOS V20 (1020a)](../os-install/uos-v20-install-dce5.0.md) |
-| | openEuler 22.03 | 5.10.0-60.18.0.50.oe2203.x86_64 | [Offline Installation of DCE 5.0 Enterprise](start-install.md) |
+| | openEuler 22.03 | 5.10.0-60.18.0.50.oe2203.x86_64 | [Offline Install DCE 5.0 Enterprise](start-install.md) |
 | | Oracle Linux R9/R8 U1 | 5.15.0-3.60.5.1.el9uek.x86_64 | [Deploying DCE 5.0 Enterprise on Oracle Linux R9 U1](../os-install/oracleLinux-install-dce5.0.md) |
 | | TencentOS Server 3.1 | 5.4.119-19.0009.14 | [Deploying DCE 5.0 Enterprise on TencentOS Server 3.1](../os-install/TencentOS-install-dce5.0.md) |
-| ARM 64 | Kylin OS V10 SP2 | 4.19.90-24.4.v2101.ky10.aarch64 | [Offline Installation of DCE 5.0 Enterprise](start-install.md) |
+| ARM 64 | Kylin OS V10 SP2 | 4.19.90-24.4.v2101.ky10.aarch64 | [Offline Install DCE 5.0 Enterprise](start-install.md) |
 
 !!! note
 

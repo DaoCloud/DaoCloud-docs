@@ -4,13 +4,11 @@
 
 查阅[安装器 Release Notes](../release-notes.md)，避免所安装版本的已知问题，还可以从中查阅新增的功能特性。
 
-## 离线安装步骤
+## 第 1 步：下载离线包
 
-### 第 1 步：下载离线包
+请根据业务环境下载对应版本的离线包。
 
-请根据业务环境下载对应的离线包。
-
-#### 离线镜像包（必需）
+### 离线镜像包（必需）
 
 离线镜像包包含安装 DCE 5.0 各个产品模块所需的配置文件、镜像资源以及 Chart 包。
 可以在[下载中心](../../download/index.md)下载最新版本。
@@ -26,7 +24,7 @@
 tar -xvf offline-v0.19.0-amd64.tar
 ```
 
-#### ISO 操作系统镜像文件（必需）
+### ISO 操作系统镜像文件（必需）
 
 对于 ISO 格式的操作系统镜像文件，在安装过程中请根据不同操作系统来下载对应的 ISO 文件。
 
@@ -49,7 +47,7 @@ ISO 操作系统镜像文件需要在[集群配置文件 clusterConfig.yaml](./c
 
     麒麟操作系统需要提供个人信息才能下载使用，下载时请选择 V10 (Sword) SP2。
 
-#### osPackage 离线包（必需）
+### osPackage 离线包（必需）
 
 osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源项目为 Linux
 操作系统离线软件源做的补充内容，例如 openEuler 22.03 中缺少了selinux-policy-35.5-15.oe2203.noarch.rpm。
@@ -212,7 +210,7 @@ osPackage 离线包是 [Kubean](https://github.com/kubean-io/kubean)这个开源
 
 统信 UOS V20（1020a）osPackage 部署请参考 [UOS V20 (1020a) 操作系统上部署 DCE 5.0](../os-install/uos-v20-install-dce5.0.md)。
 
-#### Addon 离线包 （可选）
+### Addon 离线包（可选）
 
 Addon 离线包包含一些常用组件的 Helm Chart 离线包，具体清单请参考 [Addon](../../download/addon/history.md)。
 
@@ -221,7 +219,7 @@ Addon 离线包包含一些常用组件的 Helm Chart 离线包，具体清单�
 
 首先需要事先下载好离线包，并在[集群配置文件 clusterConfig.yaml](./cluster-config.md)中定义 `addonOfflinePackagePath`。
 
-#### 一键下载所需离线包
+### 一键下载所需离线包
 
 我们提供了脚本来[一键下载安装 DCE 5.0 所需的离线包](../air-tag-download.md)。
 
@@ -235,7 +233,7 @@ Addon 离线包包含一些常用组件的 Helm Chart 离线包，具体清单�
 
     由于不同的 ISO 操作系统下载方式不一致，所以一键下载的离线包并不包含 ISO 文件。
 
-### 第 2 步：配置 clusterConfig.yaml
+## 第 2 步：配置 clusterConfig.yaml
 
 这是集群配置文件，位于离线镜像包 `offline/sample` 目录下，具体的参数介绍请参考 [clusterConfig.yaml](cluster-config.md)。
 
@@ -244,7 +242,7 @@ Addon 离线包包含一些常用组件的 Helm Chart 离线包，具体清单�
     目前离线镜像包中提供了标准的 7 节点模式模板。
     使用 Redhat 9.2 操作系统部署时，需要开启内核调优参数 `node_sysctl_tuning: true`。
 
-### 第 3 步：开始安装
+## 第 3 步：安装
 
 1. 执行以下命令开始安装 DCE 5.0，安装器二进制文件位于 `offline/dce5-installer`。
 
