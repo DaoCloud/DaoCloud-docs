@@ -49,7 +49,7 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/api-policy2.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/skoala-api2.png"></video>
 </div>
 
-### 通过网关调用内外服务
+### 微服务网关代理大模型服务
 
 参阅[通过网关访问服务](../skoala/best-practice/gateway01.md)文档。
 
