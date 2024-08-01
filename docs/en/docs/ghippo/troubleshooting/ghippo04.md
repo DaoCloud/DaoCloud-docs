@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-# Failure to upgrade Global Management separately
+# Failure to Upgrade Global Management Separately
 
 If the upgrade fails and includes the following message, you can refer to the
 [Offline Upgrade](../install/offline-install.md#__tabbed_3_2) section to complete

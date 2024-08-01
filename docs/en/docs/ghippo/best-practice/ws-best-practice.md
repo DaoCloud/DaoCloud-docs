@@ -25,7 +25,7 @@ A workspace consists of three features: authorization, resource groups, and shar
     Best practice: The workspace can grant different role permissions to department members through the "authorization" function, and the workspace can apply the authorization relationship between people and roles to all resources in the workspace at one time. Therefore, the operation and maintenance personnel only need to bind resources to resource groups, and add different roles in the department to different resource groups to ensure that resource permissions are assigned correctly.
 
     | Department | Role | Cluster | Cross-cluster Cluster-Namespace | Mesh | Mesh-Namespace |
-    | ------------ | --------------- | ------------ | ------- ----------------- | ------- | -------------- |
+    | ---------- | ---- | ------- | --------------------- | ------- | -------------- |
     | Department Admin | Workspace Admin | &check; | &check; | &check; | &check; |
     | Department Core Members | Workspace Edit | &check; | &cross; | &check; | &cross; |
     | Other Members | Workspace View | &check; | &cross; | &cross; | &cross; |
@@ -35,15 +35,15 @@ A workspace consists of three features: authorization, resource groups, and shar
     A cluster can be shared by multiple workspaces (referring to the shared resource feature in the workspace); a workspace can also use the resources of multiple clusters at the same time.
     However, resource sharing does not mean that the sharer (workspace) can use the shared resource (cluster) without restriction, so the resource quota that the sharer (workspace) can use is usually limited.
 
-    At the same time, unlike resource groups, workspace members are only users of shared resources and can use resources in the cluster under resource quotas. For example, go to Workbench to create a namespace, deploy applications, etc., but do not have the management authority of the cluster. After the restriction, the total resource quota of the namespace created/bound under this workspace cannot exceed the resources set by the cluster in this workspace Use cap.
+    At the same time, unlike resource groups, workspace members are only users of shared resources and can use resources in the cluster under resource quotas. For example, go to Workbench to create a namespace, and deploy applications, but do not have the management authority of the cluster. After the restriction, the total resource quota of the namespace created/bound under this workspace cannot exceed the resources set by the cluster in this workspace.
 
-    Best practice: The operation and maintenance department has a high-availability cluster 01, and wants to allocate it to department A (workspace A) and department B (workspace B), where department A allocates 50 CPU cores, and department B allocates CPU 100 cores .
+    Best practice: The operation and maintenance department has a high-availability cluster 01, and wants to allocate it to department A (workspace A) and department B (workspace B), where department A allocates 50 CPU cores, and department B allocates CPU 100 cores.
     Then you can borrow the concept of shared resources, share cluster 01 with department A and department B respectively, and limit the CPU usage quota of department A to 50, and the CPU usage quota of department B to 100.
     Then the administrator of department A (workspace A Admin) can create and use a namespace in Workbench, and the sum of the namespace quotas cannot exceed 50 cores, and the administrator of department B (workspace B Admin) can create a namespace in Workbench And use namespaces, where the sum of namespace credits cannot exceed 100 cores.
-    The namespaces created by the administrators of department A and department B will be automatically bound to the department, and other members of the department will have the roles of Namesapce Admin, Namesapce Edit, and Namesapce View corresponding to the namespace (the department here refers to Workspace, workspace can also be mapped to other concepts such as organization, supplier, etc.). The whole process is as follows:
+    The namespaces created by the administrators of department A and department B will be automatically bound to the department, and other members of the department will have the roles of Namesapce Admin, Namesapce Edit, and Namesapce View corresponding to the namespace (the department here refers to Workspace, workspace can also be mapped to other concepts such as organization, and supplier). The whole process is as follows:
 
     | Department | Role | Cluster | Resource Quota |
-    | ------------ | ------------------------------------ ------------------- | ------------ | ---------- |
+    | ---------- | ---- | ------- | ---------- |
     | Department Administrator A | Workspace Admin | CPU 50 cores | CPU 50 cores |
     | Department Administrator B | Workspace Admin | CPU 100 cores | CPU 100 cores |
     | Other Members of the Department | Namesapce Admin<br />Namesapce Edit<br />Namesapce View | Assign as Needed | Assign as Needed |
@@ -64,7 +64,7 @@ A workspace consists of three features: authorization, resource groups, and shar
 
     Due to the particularity of functional modules, resources created in the container management module will not be automatically bound to a certain workspace.
 
-    If you need to perform unified authorization management on people and resources through workspaces, you can manually bind the required resources to a certain workspace, so as to apply the roles of users in this workspace to resources (resources here can be cross- clustered).
+    If you need to perform unified authorization management on people and resources through workspaces, you can manually bind the required resources to a certain workspace, to apply the roles of users in this workspace to resources (resources here can be cross- clustered).
 
     In addition, there is a slight difference between container management and service mesh in terms of resource binding entry. The workspace provides the binding entry of Cluster and Cluster-Namespace resources in container management, but has not opened the Mesh and Mesh-Namespace for service mesh. Bindings for Namespace resources.
 
@@ -72,7 +72,7 @@ A workspace consists of three features: authorization, resource groups, and shar
 
 ## Use Cases of Workspace
 
-- Mapping to concepts such as different departments, projects, organizations, etc. At the same time, the roles of Workspace Admin, Workspace Edit, and Workspace View in the workspace can be mapped to different roles in departments, projects, and organizations
+- Mapping to concepts such as different departments, projects, and organizations. At the same time, the roles of Workspace Admin, Workspace Edit, and Workspace View in the workspace can be mapped to different roles in departments, projects, and organizations
 - Add resources for different purposes to different workspaces for separate management and use
 - Set up completely independent administrators for different workspaces to realize user and authority management within the scope of the workspace
 - Share resources to different workspaces, and limit the upper limit of resources that can be used by workspaces

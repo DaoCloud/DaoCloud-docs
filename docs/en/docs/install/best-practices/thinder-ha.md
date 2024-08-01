@@ -115,7 +115,7 @@ Overall architecture:
 
 ![dce01](../images/dce01.png)
 
-1. Refer to the installation process in [Offline Installation of DCE 5.0 Commercial Edition](../commercial/start-install.md)
+1. Refer to the installation process in [Offline Installation of DCE 5.0 Enterprise](../commercial/start-install.md)
 
 1. Example of a well-defined clusterConfig file:
 

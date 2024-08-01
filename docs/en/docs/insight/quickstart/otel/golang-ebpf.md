@@ -15,7 +15,7 @@ Make sure Insight Agent is ready. If not, see [Install insight-agent to collect 
 
 Install under the Insight-system namespace, skip this step if it has already been installed.
 
-Note: This CR currently only supports the injection of environment variables (including service name, link reporting address, etc.) required to connect to Insight, and will support the injection of Golang probes in the future.
+Note: This CR currently only supports the injection of environment variables (including service name and trace address) required to connect to Insight, and will support the injection of Golang probes in the future.
 
 ```bash
 kubectl apply -f - <<EOF
@@ -56,7 +56,7 @@ EOF
 
 - Add environment variable annotations
 
-    There is only one such annotation, which is used to add OpenTelemetry-related environment variables, such as link reporting address, cluster id where the container is located, namespace, etc.:
+    There is only one such annotation, which is used to add OpenTelemetry-related environment variables, such as link reporting address, cluster id where the container is located, and namespace:
 
     ```console
     instrumentation.opentelemetry.io/inject-sdk: "insight-system/insight-opentelemetry-autoinstrumentation"

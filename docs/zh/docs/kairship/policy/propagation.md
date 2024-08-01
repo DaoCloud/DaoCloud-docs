@@ -18,7 +18,7 @@
 
     ![yaml创建](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/pp02.png)
 
-3. 返回部署策略列表，新创建的默认位于第一个。点击列表右侧的 __⋮__ ，可以编辑 YAML 和执行删除操作。
+3. 返回部署策略列表，新创建的默认位于第一个。点击列表右侧的 __┇__ ，可以编辑 YAML 和执行删除操作。
 
 ## YAML 示例
 

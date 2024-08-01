@@ -30,7 +30,7 @@ The steps to perform this operation are as follows:
 The steps to perform this operation are as follows:
 
 1. On the device details page, select the __Twins Properties__ tab.
-2. Click the __Add Twin__ button at the top right of the property list, or click the __⋮__ button
+2. Click the __Add Twin__ button at the top right of the property list, or click the __┇__ button
    on the right side of the list and select the __Edit/Delete__ option from the pop-up menu.
 3. In the corresponding operation dialog box, click the __OK__ button to complete the operations of adding, editing, or deleting twin properties.
 
@@ -60,6 +60,6 @@ The steps to perform this operation are as follows:
 
 ### Delete end device
 
-On the right side of the end device list, click the __⋮__ button and select __Delete__ from the pop-up menu.
+On the right side of the end device list, click the __┇__ button and select __Delete__ from the pop-up menu.
 
 ![Delete End Device](../images/manage-device-05.png)

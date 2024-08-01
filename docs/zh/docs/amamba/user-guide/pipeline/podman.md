@@ -8,16 +8,33 @@
 
 ## 构建镜像的前提
 
-与 Docker 类似，Docker 支持多平台构建的前提是需要宿主机支持多平台构建，利用 QEMU 来模拟其他平台的环境。目前工作台内置的基础镜像(`base`,`go`,`nodejs`,`python`) 中已经包含了qemu的二进制文件，
+与 Docker 类似，Docker 支持多平台构建的前提是需要宿主机支持多平台构建，利用 QEMU 来模拟其他平台的环境。在构建多架构镜像之前，需要进行一下两项配置：
+
+### 配置 binfmt_misc 模块
+
+配置 `binfmt_misc` 模块(**必须**)，`binfmt_misc`是Linux内核的一个模块，可以在内核中注册一个二进制格式，使得内核能够识别并执行这种格式的二进制文件。
+因为`binfmt_misc`模块权限较高，需要 **root 权限** 才能操作，所以需要 **手动在所有运行 Agent 的宿主机上** 执行以下操作：
+
+```shell
+find /proc/sys/fs/binfmt_misc -type f -name 'qemu-*' -exec sh -c 'echo -1 > {}'
+wget -O qemu-binfmt-conf.sh https://raw.githubusercontent.com/qemu/qemu/master/scripts/qemu-binfmt-conf.sh && chmod +x qemu-binfmt-conf.sh && ./qemu-binfmt-conf.sh --qemu-suffix "-static" --qemu-path "/usr/bin"
+```
+
+### 安装 QEMU 的二进制文件
+
+目前工作台内置的基础镜像（`base`、`go`、`nodejs`、`python`、`maven`）中已经包含了 QEMU 的二进制文件，不需要单独操作。
+
 如果您的 Agent 镜像不是上述的基础镜像，您可以通过以下两种方式添加qemu的二进制文件：
 
-1. 在 Dockerfile 中添加 qemu 的安装命令
+1. 在 Dockerfile 中添加 QEMU 的安装命令
+
     ```dockerfile
-    # 添加下面的命令到 Dockerfile 中，需要根据您的目标平台选择对应的 qemu 二进制文件, 以目标镜像为arm64为例
+    # 添加下面的命令到 Dockerfile 中，需要根据您的目标平台选择对应的 QEMU 二进制文件，以目标镜像为 arm64 为例
     FROM --platform=linux/amd64 multiarch/qemu-user-static:aarch64 as qemu
     COPY --from=qemu /usr/bin/qemu-aarch64-static /usr/bin
     ```
-2. 在基础镜像中通过如下脚本直接添加qemu的二进制文件
+  
+2. 在您的 Agent 镜像中通过如下脚本直接添加 QEMU 的二进制文件
 
     ```shell
     arch="aarch64"
@@ -25,12 +42,10 @@
     wget -O qemu-${arch}-static https://github.com/multiarch/qemu-user-static/releases/download/${version}/qemu-${arch}-static && chmod +x qemu-${arch}-static && mv qemu-${arch}-static /usr/bin 
     ```
 
-配置`binfmt_misc`模块(**必须**)，`binfmt_misc`是Linux内核的一个模块，可以在内核中注册一个二进制格式，使得内核能够识别并执行这种格式的二进制文件。因为`binfmt_misc`模块权限较高，需要**root权限**才能操作，所以需要**手动在所有运行 Agent 的宿主机上执行**以下操作：
+关于 QEMU 和 binfmt_misc 的更多信息，请参考：
 
-   ```shell
-   find /proc/sys/fs/binfmt_misc -type f -name 'qemu-*' -exec sh -c 'echo -1 > {}'
-   wget -O qemu-binfmt-conf.sh https://raw.githubusercontent.com/qemu/qemu/master/scripts/qemu-binfmt-conf.sh && chmod +x qemu-binfmt-conf.sh && ./qemu-binfmt-conf.sh --qemu-suffix "-static" --qemu-path ${qemu_bin_dir}
-   ```
+- [Kernel Support for miscellaneous Binary Formats (binfmt_misc)](https://www.kernel.org/doc/html/latest/admin-guide/binfmt-misc.html)
+- [QEMU User Emulation](https://wiki.debian.org/QemuUserEmulation)
 
 ## 构建多平台镜像
 
@@ -51,15 +66,21 @@ CMD sed -i "s/ContainerID: /ContainerID: "$(hostname)"/g" /usr/share/nginx/html/
 
 ### 在构建镜像时指定 manifest 参数
 
-步骤如下
+依次运行以下命令：
 
 ```shell
-target=release.daocloud.io/demo/dao-2048:v1  # 最终镜像的名称
-platform=linux/amd64,linux/arm64 # 需要构建的平台
-docker build -f Dockerfile --platform=$platform  --manifest release.daocloud.io/demo/dao-2048:v1 . # 构建多架构镜像
-docker login xxx # 登录镜像仓库
-docker manifest push --all $target # 推送
+target=release.daocloud.io/demo/dao-2048:v1  # (1)!
+platform=linux/amd64,linux/arm64 # (2)!
+docker build -f Dockerfile --platform=$platform  --manifest release.daocloud.io/demo/dao-2048:v1 . # (3)!
+docker login xxx # (4)!
+docker manifest push --all $target # (5)!
 ```
+
+1. 最终镜像的名称
+2. 需要构建的平台
+3. 构建多架构镜像
+4. 登录镜像仓库
+5. 推送
 
 最终构建出的镜像如下，包含了 amd64 和 arm64 两个平台的镜像：
 

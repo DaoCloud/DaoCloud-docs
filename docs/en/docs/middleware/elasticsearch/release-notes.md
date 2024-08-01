@@ -231,7 +231,7 @@ This page lists the Release Notes of Elasticsearch indexing service, so that you
 
 - **Added** pagination feature to the list page
 - **Added** the feature of modifying the configuration
-- **Added** the ability to return modifiable configuration items
+- **Added** the ability to return modifiable configmaps
 - **Added** Change the limitation of creating instances to the cluster level instead of the namespace level
 - **Added** splicing feature of monitoring address
 - **Added** the ability to modify the version number

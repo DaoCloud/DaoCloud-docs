@@ -14,9 +14,9 @@ As a member of DCE 5.0 product system, DaoCloud service mesh seamlessly interfac
 
 Traffic management is a very broad topic, for example:
 
-- Dynamically modify the load balancing strategy for inter-service access, such as session persistence based on some request features.
+- Dynamically modify the load balancing policy for inter-service access, such as session persistence based on some request features.
 - If two versions of the same service are online, redirect a portion of the traffic to a specific version.
-- Protect services, for example, limit concurrent connections, requests, isolate faulty service instances, etc.
+- Protect services, for example, limit concurrent connections, requests, and isolate faulty service instances.
 - Dynamically modify the contents of services or simulate service failures.
 
 These service governance features can be implemented in a service mesh without modifying any application code. The service mesh can provide non-intrusive traffic management capabilities for managed services. According to the protocol of the service, provide policy-based and scenario-based network connection management. Select the designated port for the selected service on the application topology and configure various governance rules as needed.
@@ -41,7 +41,7 @@ By configuring the number of consecutive errors before the instance is evicted, 
 
 **Load balancing**
 
-Configure various load balancing strategies, such as random, round-robin, least connection, and also configure consistent hashing to forward traffic to specific service instances.
+Configure various load balancing policies, such as random, round-robin, least connection, and also configure consistent hashing to forward traffic to specific service instances.
 
 **HTTP header fields**
 
@@ -99,7 +99,7 @@ In the service mesh, the following graphical interactive features are implemente
 2. Enable users to access cluster resources or place cluster resources that have already deployed ISTIO governance components under the control of the service mesh platform.
 3. Provide workspace binding of controlled resources under the mesh, sharing authority over mesh resources through workspaces, facilitating interaction between sub-products.
 4. Provide unified viewing and operational features for namespaces and services in an aggregated management manner for users.
-5. Provide traffic governance features for namespaces and services, and provide form and YAML two ways of creating and editing forms. Users can almost use all traffic governance features provided by native ISTIO (routing, splitting, outlier detection, etc.).
+5. Provide traffic governance features for namespaces and services, and provide form and YAML two ways of creating and editing forms. Users can almost use all traffic governance features provided by native ISTIO (routing, splitting, and outlier detection).
 6. Provide security governance features for namespaces and services, and provide form and YAML two ways of creating and editing forms. Users can match traffic governance to achieve zero trust environment and access authorization within the mesh.
 7. Provide flow topology and status chart viewing features for service communication in the mesh. The flow topology provides users with various information such as communication status, protocol usage, and performance parameters between nodes in the mesh. Users can quickly locate problems through search and filtering features. The status chart can provide users with system status information from multiple dimensions such as global, service, and workload.
 

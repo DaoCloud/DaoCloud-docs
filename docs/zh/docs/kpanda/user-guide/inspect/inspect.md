@@ -23,7 +23,7 @@ hide:
 
     1. 在容器管理模块的一级导航栏点击 __集群巡检__ ，然后在页面右侧点击 __巡检__ 。
     
-        ![start](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/inspect04.png)
+        ![start](../images/inspection-start.png)
     
     2. 勾选需要巡检的集群，然后在页面底部点击 __确定__ 即可。
       
@@ -37,4 +37,4 @@ hide:
     1. 进入集群巡检页面。
     2. 在对应巡检配置的右侧点击 __ⵗ__ 更多操作按钮，然后在弹出的菜单中选择 __巡检__ 即可。
     
-        ![basic](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/kpanda/images/inspect06.png)
+        ![basic](../images/inspection-start-alone.png)

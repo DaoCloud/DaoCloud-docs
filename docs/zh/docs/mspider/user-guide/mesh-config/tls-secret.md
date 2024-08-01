@@ -76,7 +76,7 @@ WQuRxan+FuKE3RiKHFXkslks=
 
     ![填写](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/mesh-config/images/secret02.png)
 
-1. 屏幕提示创建成功，点击右侧的 __⋮__ 按钮，可以执行编辑、YAML 编辑以及删除等操作。
+1. 屏幕提示创建成功，点击右侧的 __┇__ 按钮，可以执行编辑、YAML 编辑以及删除等操作。
 
     ![填写](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/user-guide/mesh-config/images/secret03.png)
 

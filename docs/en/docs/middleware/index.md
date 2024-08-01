@@ -114,9 +114,9 @@ Install and enable these middleware components as needed to achieve optimal perf
     Kafka is a distributed streaming platform with features such as stream processing, making it a popular choice for building data pipelines.
 
     - [What is Kafka](./kafka/intro/index.md)
-    - [Create/Update/DeleteKafka Instances](./kafka/user-guide/create.md)
-    - [View Kafka Logs](./kafka/user-guide/logs.md)
-    - [Kafka Instance Monitoring](./kafka/user-guide/insight.md)
+    - [Create Kafka Instances](./kafka/user-guide/create.md)
+    - [View/Update/Delete Kafka](./kafka/user-guide/view-update-delete.md)
+    - [Kafka Logs and Instance Insight](./kafka/user-guide/insight-log.md)
     - [Kafka Configuration Parameters](./kafka/user-guide/config.md)
 
 </div>

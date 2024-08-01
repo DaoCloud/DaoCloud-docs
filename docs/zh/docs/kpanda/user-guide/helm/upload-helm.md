@@ -29,10 +29,10 @@ hide:
 
             字段说明：
 
-            - `charts-dir`：Helm Chart 的目录，这里也可以直接推送打包好的 Chart（即 .tgz 文件）。
+            - `charts-dir`：Helm Chart 的目录，或者是打包好的 Chart（即 .tgz 文件）。
             - `HELM_REPO_URL`：Helm 仓库的 URL。
             - `username`/`password`：有推送权限的 Helm 仓库用户名和密码。
-            - 如果采用 https 访问，需要参加参数 `--insecure`
+            - 如果采用 https 访问且需要跳过证书验证，可添加参数 `--insecure`
 
     === "页面上传"
 

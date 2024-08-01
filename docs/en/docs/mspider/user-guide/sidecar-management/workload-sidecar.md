@@ -27,7 +27,7 @@ When there are many workloads, you can sort them by name and search for them usi
 
 ## View Sidecar Running Status
 
-If one workload has a sidecar injected, click the __⋮__ at the end of the row and
+If one workload has a sidecar injected, click the __┇__ at the end of the row and
 select __Check Sidecar Status__ from the pop-up menu.
 
 ![Sidecar Running Status](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/mspider/images/wl-sidecar02.png)
@@ -136,4 +136,4 @@ Reasons for upgrading the sidecar include:
 However, before upgrading the sidecar, sufficient testing and verification are needed to ensure that
 the upgrade process does not have any negative impact on the service mesh.
 
-For specific operational steps, please refer to [Sidecar Upgrade](../../install/sidecar-update.md).
+For specific operational steps, refer to [Sidecar Upgrade](../../install/sidecar-update.md).

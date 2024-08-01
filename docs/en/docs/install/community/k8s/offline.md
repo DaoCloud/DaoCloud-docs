@@ -30,10 +30,10 @@ Click [Online Install DCE Community](../../../videos/install.md) to watch a vide
 
 1. Download and decompress the offline package of DCE Community on the controller node of your kubernetes cluster, or download and decompress the offline package from [Download Center](../../../download/index.md).
 
-    Take VERSION=v0.18.0 as an example.
+    Take VERSION=v0.19.0 as an example.
 
     ```bash
-    export VERSION=v0.18.0
+    export VERSION=v0.19.0
     wget https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/dce5/offline-community-$VERSION-amd64.tar
     tar -xvf offline-community-$VERSION-amd64.tar
     ```
@@ -115,7 +115,7 @@ Click [Online Install DCE Community](../../../videos/install.md) to watch a vide
     !!! note
 
         - Parameter `-p` specifies the offline directory to decompress the offline package.
-        - For `clusterConfig.yaml` file settings, refer to [Online Installation](online.md#_2).
+        - For `clusterConfig.yaml` file settings, refer to [Online Installation](online.md#preparation).
         - `-z` minimal install
         - `-c` specifies the cluster configuration file. You don't need to specify `-c` when using NodePort to expose the console.
         - `-d` enable debug mode

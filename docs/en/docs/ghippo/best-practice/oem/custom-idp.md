@@ -1,8 +1,8 @@
 # Customizing DCE 5.0 Integration with IdP
 
-Identity Provider (IdP): When DCE 5.0 needs to use a client system as the user source
-and authenticate users through the client system's login interface, that client system
-is referred to as the Identity Provider for DCE 5.
+Identity Provider (IdP): In DCE 5.0, when a client system needs to be used as the user source and user
+authentication is performed through the client system's login interface, the client system is referred to
+as the Identity Provider for DCE 5.0.
 
 ## Use Cases
 
@@ -12,7 +12,7 @@ please refer to this document for implementation.
 
 ## Supported Versions
 
-Ghippo 0.15.0 and above.
+Ghippo v0.15.0 and above.
 
 ## Specific Steps
 
@@ -38,8 +38,8 @@ Ghippo 0.15.0 and above.
 
 ### Deploying Ghippo Keycloak Plugin Steps
 
-1. [Upgrade Ghippo to version 0.15.0 or above](../install/offline-install.md).
-   You can also directly install and deploy Ghippo version 0.15.0, but make sure to
+1. [Upgrade Ghippo to v0.15.0 or above](../install/offline-install.md).
+   You can also directly install and deploy Ghippo v0.15.0, but make sure to
    manually record the following information.
 
     ```sh
@@ -61,9 +61,9 @@ Ghippo 0.15.0 and above.
       reverseProxy: http://192.168.31.10:32628
     ```
 
-1. After a successful upgrade, manually run an installation command with the values
-   for the parameters obtained from the saved content mentioned above, along with
-   additional parameter values:
+1. After a successful upgrade, an installation command should be manually run.
+   The parameter values set in `--set` should be gotten from the above saved
+   content, along with additional parameter values:
 
     - global.idpPlugin.enabled: Whether to enable the custom plugin, default is disabled.
     - global.idpPlugin.image.repository: The image address used by the initContainer to initialize the custom plugin.

@@ -1,17 +1,15 @@
 # System Components
 
-On the system component page, you can quickly view the running status of the system components in the observability module. When a system component fails, some features in the observability module will be unavailable.
+On the system component page, you can quickly view the running status of the system components in Insight. When a system component fails, some features in Insight will be unavailable.
 
 1. Go to __Insight__ product module,
 2. In the left navigation bar, select __System Management -> System Components__ .
-  
-     
 
 ## Component description
 
 |Module| Component Name | Description |
 | ----- | --------------- | --------------------------- -------------------- |
-|Metrics| vminsert-insight-victoria-metrics-k8s-stack | Responsible for writing the metric data collected by Prometheus in each cluster to the storage component. If this component is abnormal, the metric data of the working cluster cannot be written. |
+|Metrics| vminsert-insight-victoria-metrics-k8s-stack | Responsible for writing the metric data collected by Prometheus in each cluster to the storage component. If this component is abnormal, the metric data of the worker cluster cannot be written. |
 |Metrics| vmalert-insight-victoria-metrics-k8s-stack | Responsible for taking effect of the recording and alert rules configured in the VM Rule, and sending the triggered alert rules to alertmanager. |
 |Metrics| vmalertmanager-insight-victoria-metrics-k8s-stack| is responsible for sending messages when alerts are triggered. If this component is abnormal, the alert information cannot be sent. |
 |Metrics| vmselect-insight-victoria-metrics-k8s-stack | Responsible for querying metrics data. If this component is abnormal, the metric cannot be queried. |

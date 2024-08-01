@@ -7,7 +7,16 @@ date: 2024-01-05
 
 This page lists the release notes for the Redis Cache service, providing you with information about the evolution and feature changes in each version.
 
-*[mcamel-redis]: "mcamel" is the dev name for DaoCloud's middlewares, and "redis" is the middleware that provides memory cache services
+*[mcamel-redis]: "mcamel" is the dev name for DaoCloud's middlewares, and "redis" is the middleware that provides memory cache services.
+
+## 2024-06-30
+
+### v0.19.0
+
+#### New Features
+
+- **Added** a feature of configuring a fixed IP when creating a Redis instance.
+- **Added** common parameters such as `maxclients` to the parameter templates.
 
 ## 2024-05-31
 

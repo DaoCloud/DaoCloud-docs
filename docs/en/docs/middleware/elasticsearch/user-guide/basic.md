@@ -17,5 +17,5 @@ This article introduces the basic information of an Elasticsearch instance.
     - Access Settings: Access method, username and password, Kibana console address, etc.
     - Resource Quota: CPU and memory usage rate.
     - Monitoring and Alerting: Current instance's alert information. You can go to [DCE 5.0 Observability Module](../../../insight/intro/index.md) to view alert details or create alert policies.
-    - Container Group List: Information about the current instance's container groups, including container group name, node type, running status, IP, CPU, memory, storage information, creation time, etc.
+    - Pod List: Information about the current instance's Pods, including Pod name, node type, running status, IP, CPU, memory, storage information, creation time, etc.
     - Recent Events: Information about the recent events of the current instance.

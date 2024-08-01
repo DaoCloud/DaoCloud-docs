@@ -8,15 +8,15 @@ This page explains how to install or upgrade the middleware - Postgresql module 
 
 ## Load Images from Installation Package
 
-You can load the images using either of the two methods described below. It is recommended to choose the chart-syncer method if there is an image repository available in your environment, as it is more efficient and convenient.
+You can load the images using either of the two methods described below. It is recommended to choose the chart-syncer method if there is an container registry available in your environment, as it is more efficient and convenient.
 
-### Sync Images to Image Repository using chart-syncer
+### Sync Images to Container Registry using chart-syncer
 
 1. Create __load-image.yaml__ .
 
     !!! note
 
-        All parameters in this YAML file are mandatory. You need to have a private image repository and modify the relevant configuration.
+        All parameters in this YAML file are mandatory. You need to have a private container registry and modify the relevant configuration.
 
     === "Installed chart repo"
 
@@ -26,18 +26,18 @@ You can load the images using either of the two methods described below. It is r
         source:
           intermediateBundlesPath: mcamel-offline # the relative path to where you execute the __charts-syncer__ command, not the relative path between this YAML file and the offline package
         target:
-          containerRegistry: 10.16.10.111 # replace with your image repository url
-          containerRepository: release.daocloud.io/mcamel # replace with your image repository
+          containerRegistry: 10.16.10.111 # replace with your container registry url
+          containerRepository: release.daocloud.io/mcamel # replace with your container registry
           repo:
             kind: HARBOR # or any other supported Helm Chart repository type
             url: http://10.16.10.111/chartrepo/release.daocloud.io # replace with chart repo url
             auth:
-              username: "admin" # your image repository username
-              password: "Harbor12345" # your image repository password
+              username: "admin" # your container registry username
+              password: "Harbor12345" # your container registry password
           containers:
             auth:
-              username: "admin" # your image repository username
-              password: "Harbor12345" # your image repository password
+              username: "admin" # your container registry username
+              password: "Harbor12345" # your container registry password
         ```
 
     === "Uninstalled chart repo"
@@ -48,15 +48,15 @@ You can load the images using either of the two methods described below. It is r
         source:
           intermediateBundlesPath: mcamel-offline # the relative path to where you execute the __charts-syncer__ command, not the relative path between this YAML file and the offline package
         target:
-          containerRegistry: 10.16.10.111 # replace with your image repository url
-          containerRepository: release.daocloud.io/mcamel # replace with your image repository
+          containerRegistry: 10.16.10.111 # replace with your container registry url
+          containerRepository: release.daocloud.io/mcamel # replace with your container registry
           repo:
             kind: LOCAL
             path: ./local-repo # local path to the chart
           containers:
             auth:
-              username: "admin" # your image repository username
-              password: "Harbor12345" # your image repository password
+              username: "admin" # your container registry username
+              password: "Harbor12345" # your container registry password
         ```
 
 2. Run the command to sync the images.
@@ -155,10 +155,10 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
 
     1. Run `helm upgrade` .
 
-        Before upgrading, it is recommended to replace the  `global.imageRegistry` field in __mcamel-postgresql.yaml__ with the address of the image repository you are currently using.
+        Before upgrading, it is recommended to replace the  `global.imageRegistry` field in __mcamel-postgresql.yaml__ with the address of the container registry you are currently using.
 
         ```shell
-        export imageRegistry={your image repository}
+        export imageRegistry={your-registry}
         ```
 
         ```shell
@@ -181,10 +181,10 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
 
     1. Run `helm upgrade` .
 
-        Before upgrading, it is recommended to replace the  `global.imageRegistry` field in __mcamel-postgresql.yaml__ with the address of the image repository you are currently using.
+        Before upgrading, it is recommended to replace the  `global.imageRegistry` field in __mcamel-postgresql.yaml__ with the address of the container registry you are currently using.
 
         ```shell
-        export imageRegistry={your image repository}
+        export imageRegistry={your-registry}
         ```
 
         ```shell

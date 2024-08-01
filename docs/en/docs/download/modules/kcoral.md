@@ -13,6 +13,7 @@ This page provides offline packages for different versions of the Application Ba
 
 | Version   | Architecture | File Size | Package   | Checksum File | Updated Date |
 |-----------| ------------ | --------- | --------- | ------------  | -----------  |
+| [v0.11.0](../../kpanda/intro/release-notes.md) | AMD 64 | 85.06 MB | [:arrow_down: kcoral_v0.11.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.11.0_amd64.tar) | [:arrow_down: kcoral_v0.11.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.11.0_amd64_checksum.sha512sum) | 2024-06-07 |
 | [v0.10.0](../../kpanda/intro/release-notes.md) | AMD 64 | 85.04 MB | [:arrow_down: kcoral_v0.10.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.10.0_amd64.tar) | [:arrow_down: kcoral_v0.10.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.10.0_amd64_checksum.sha512sum) | 2024-04-03 |
 | [v0.9.1](../../kpanda/intro/release-notes.md) | AMD 64 | 84.99 MB | [:arrow_down: kcoral_v0.9.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.9.1_amd64.tar) | [:arrow_down: kcoral_v0.9.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.9.1_amd64_checksum.sha512sum) | 2024-01-31 |
 | [v0.8.0](../../kpanda/intro/release-notes.md) | AMD 64 | 84.96 MB | [:arrow_down: kcoral_v0.8.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.8.0_amd64.tar) | [:arrow_down: kcoral_v0.8.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.8.0_amd64_checksum.sha512sum) | 2024-01-02 |
@@ -22,16 +23,16 @@ This page provides offline packages for different versions of the Application Ba
 | [v0.5.0](../../kpanda/intro/release-notes.md) | AMD 64 | 59.30 MB | [:arrow_down: kcoral_v0.5.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.5.0_amd64.tar) | [:arrow_down: kcoral_v0.5.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.5.0_amd64_checksum.sha512sum) | 2023-09-01 |
 | [v0.4.0](../../kpanda/intro/release-notes.md) | AMD64 | 59.29 MB | [:arrow_down: kcoral_v0.4.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.4.0_amd64.tar) | [:arrow_down: kcoral_v0.4.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kcoral_v0.4.0_amd64_checksum.sha512sum) | 2023-08-08 |
 
-## Validation
+## Verification
 
-To validate the integrity of the downloaded offline package and checksum file,
+To verify the integrity of the downloaded offline package and checksum file,
 take `v0.4.0_amd64` as an example, run the following command in the directory:
 
 ```sh
 echo "$(cat kcoral_v0.4.0_amd64_checksum.sha512sum)" | sha512sum -c
 ```
 
-If the validation is successful, the result will be similar to:
+If the verification is successful, the result will be similar to:
 
 ```none
 kcoral_v0.4.0_amd64.tar: ok

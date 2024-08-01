@@ -2,7 +2,7 @@
 
 Currently, two update methods are provided: editing YAML and form update.
 
-1. After entering a multicloud instance, in the left navigation bar, click __Resource Management__ -> __Multicloud ConfigMaps__ , click __⋮__ to edit YAML or update configmaps.
+1. After entering a multicloud instance, in the left navigation bar, click __Resource Management__ -> __Multicloud ConfigMaps__ , click __┇__ to edit YAML or update configmaps.
 
     ![Update ConfigMap](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/up-configmap01.png)
 

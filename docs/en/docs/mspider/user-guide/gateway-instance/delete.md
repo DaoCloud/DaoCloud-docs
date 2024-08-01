@@ -17,7 +17,7 @@ If you want to delete one or more gateways, you can follow the instructions in t
 The following steps are recommended to prevent accidental deletion.
 
 1. After entering a specific mesh, click __Mesh Gateway__ in the left navigation bar.
-   Click the __⋮__ button on the right side of the list, and select __Delete__ from the pop-up menu.
+   Click the __┇__ button on the right side of the list, and select __Delete__ from the pop-up menu.
 
     ![Delete Gateway](../../images/delete-gate01.png)
 

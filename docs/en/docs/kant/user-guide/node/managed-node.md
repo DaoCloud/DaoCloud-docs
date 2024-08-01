@@ -20,13 +20,13 @@ When a new edge node is connected, the latest version of the EdgeCore software i
 
 ![Installation Guide](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kant/images/node-managed-01.png)
 
-## Connecting Edge Nodes
+## Connect Edge Nodes
 
 1. Log in to the edge node with a user account that has sudo privileges.
 
-1. Depending on the runtime environment of the node, execute the corresponding commands to retrieve the installation files from the image repository.
+1. Depending on the runtime environment of the node, execute the corresponding commands to retrieve the installation files from the container registry.
 
-    - Scenario One: The edge node can directly access the image repository. The operation is as follows.
+    - Case 1: The edge node can directly access the container registry. The operation is as follows.
 
         Copy the image address directly from the installation guide::
 
@@ -40,36 +40,39 @@ When a new edge node is connected, the latest version of the EdgeCore software i
         docker run --rm release.daocloud.io/kant/kantadm-installation:v0.5.0-dev-7c54ddd4 cat /usr/local/bin/kantadm > /usr/local/bin/kantadm && chmod +x /usr/local/bin/kantadm
         ```
 
-    - Scenario Two: The edge node cannot access the image repository. The operation is as follows.
+    - Case 2: The edge node cannot access the container registry. The operation is as follows.
 
         1. On the installation guide interface, click the __Get Installation File__ button in the first step, and the __Get Installation File__ drawer will pop up on the right.
 
         1. Depending on the runtime environment of the node, copy the following image installation package file to the specified folder.
             
-            Kant installation package image
+            For the image of Kant installation package:
             
-            ```
+            ```config
             release.daocloud.io/kant/kantadm-installation:v0.5.1
             ```
-            KubeEdge Mosquitto image 
+
+            For the KubeEdge Mosquitto image:
               
-            ```
+            ```config
             docker.m.daocloud.io/kubeedge/eclipse-mosquitto:1.6.15
             ```
-            KubeEdge container sandbox image 
+
+            For the KubeEdge container sandbox image:
             
-            ```
+            ```config
             kubeedge/pause:3.1
             ```
-            KubeEdge installation package image 
+
+            For the image of KubeEdge installation package:
             
-            ```
+            ```config
             docker.m.daocloud.io/kubeedge/installation-package:v1.12.5
             ```
 
             Here is an example of the operations:
 
-            1. On a machine that can access the image repository, execute the command to get the edge installation resource image.
+            1. On a machine that can access the container registry, run the command to get the edge installation resource image.
 
                 ```shell
                 docker pull release.daocloud.io/kant/kantadm-installation:v0.5.1

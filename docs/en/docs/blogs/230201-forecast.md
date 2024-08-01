@@ -51,16 +51,16 @@ Additionally, just recently, the U.S. government passed a law making it mandator
 Inevitably, this trend will continue and impact open source software, with leading key projects like Kubernetes already producing SBOMs for consumption.
 There may be some bumps in the road to mandating SBOM across all industries, but I personally think it's inevitable either through regulation or when the industry just matures.
 
-There will also be many new open source innovations, startups, and projects in this space working on aggregating large amounts of this security information (see https://deps.dev for a simple example).
+There will also be many new open source innovations, startups, and projects in this space working on aggregating large amounts of this security information (see `https://deps.dev` for a simple example).
 The projects I personally pay attention to are [GUAC](https://github.com/guacsec/guac), [Scorecard](https://github.com/ossf/scorecard),
-[Sigstore](https://www.sigstore.dev/), [Witness](https://github.com/testifysec/witness), etc.
+[Sigstore](https://www.sigstore.dev/), and [Witness](https://github.com/testifysec/witness).
 
 ## GreenOps merged into FinOps
 
 Sustainability is a hot topic, and those in the ESG field know how complex calculating the carbon footprint of cloud-based workloads can be. A recent [research](https://www.pwc.com/us/en/tech-effect/cloud/esg.html) by PwC found that,
 “Sixty percent of business leaders in Fortune 1000 companies are using or planning to use the cloud to enhance ESG reporting, and 59 percent are using or planning to use the cloud to improve their ESG strategy.”
 
-I believe that as we increase the efficiency of the cloud, there will be a case of Jevons' paradox here...Also, interesting research suggests that "the energy required to run the computers of the future global fleet of self-driving cars may generate as much energy as As much greenhouse gas emissions as all data centers in the world today."
+I believe that as we increase the efficiency of the cloud, there will be a case of Jevons' paradox here...Also, interesting research suggests that "the energy required to run the computers of the future global fleet of self-driving cars may generate as much energy as greenhouse gas emissions as all data centers in the world today."
 
 In my opinion, GreenOps is a form of FinOps that focuses on the carbon footprint of cloud workloads. It is my hope that these communities will merge into one and collaborate on open specifications and standards in the field,
 For example [extending OpenCost](https://github.com/opencost/opencost/issues/1011) to include carbon footprint information across clouds. There are many opportunities for open source collaboration across companies and industries.
@@ -70,7 +70,7 @@ For example [extending OpenCost](https://github.com/opencost/opencost/issues/101
 Since Alexis Richardson first coined the term GitOps in 2017, things have changed dramatically in this space when it comes to the maturity of GitOps tools.
 At CNCF, the Argo and Flux projects [recently graduated](https://mp.weixin.qq.com/s?__biz=MzI5ODk5ODI4Nw==&mid=2247529234&idx=1&sn=8baa2faf2de26366ba86ed56de129aef&scene=21#wechat_redirect),
 Shows the project's stability and mature governance as well as rapid adoption levels. In addition, they are also CNCF
-[The project with the highest open source speed] in the ecosystem (https://mp.weixin.qq.com/s?__biz=MzI5ODk5ODI4Nw==&mid=2247529664&idx=1&sn=fbd001427d06e607e50d182bed913071&scene=21#wechat_redirect).
+[The project with the highest open source speed](https://mp.weixin.qq.com/s?__biz=MzI5ODk5ODI4Nw==&mid=2247529664&idx=1&sn=fbd001427d06e607e50d182bed913071&scene=21#wechat_redirect) in the ecosystem.
 
 If you are interested in this field, I recommend you to participate in the above open source projects and join the CNCF [Open GitOps Working Group](https://opengitops.dev/).
 
@@ -160,8 +160,8 @@ Just like what happens in Linux. The engine of open source innovation is ready, 
 I always have some more predictions and trends to share, especially around end-user driven open source, eBPF, service mesh and securing the software supply chain,
 But I'll be posting more in detail later in the year, a few predictions are enough to start the new year! Anyway, thanks for reading,
 I hope to see you all at [CloudNativeSecurityCon](https://events.linuxfoundation.org/cloudnativesecuritycon-north-america/),
-And of course our [Europe KubeCon + CloudNativeCon] in Amsterdam in April 2023 (https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/)
-Large conference, registration is open!
+And of course our [Europe KubeCon + CloudNativeCon](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/)
+Large conference in Amsterdam in April 2023, registration is open!
 
 ---
 
@@ -169,12 +169,12 @@ Large conference, registration is open!
 
 DaoCloud is an innovative leader in the field of cloud native. Founded at the end of 2014, it has core technologies with independent intellectual property rights and is committed to creating an open cloud operating system to empower digital transformation of enterprises.
 Product capabilities cover the entire life cycle of cloud native application development, delivery, and operation and maintenance, and provide multiple delivery methods such as public cloud, private cloud, and hybrid cloud. Since its establishment, the company has been involved in financial technology, advanced manufacturing, smart cars,
-Retail outlets, urban brain and other fields have been deeply cultivated. Benchmark customers include Bank of Communications, Shanghai Pudong Development Bank, SAIC Motor, Dongfeng Motor, Haier Group, Watsons, Golden Arches (McDonald's), etc.
+Retail outlets, urban brain and other fields have been deeply cultivated. Benchmark customers include Bank of Communications, Shanghai Pudong Development Bank, SAIC Motor, Dongfeng Motor, Haier Group, Watsons, and Golden Arches (McDonald's).
 At present, the company has completed the D round of financing exceeding 100 million yuan, and is known as a quasi-unicorn enterprise in the technology field. The company has set up a number of branches and joint ventures in Beijing, Nanjing, Wuhan, Shenzhen and Chengdu.
 The total number of employees exceeds 400. It is a high-tech enterprise in Shanghai, a "little giant of science and technology" in Shanghai, and a "specialized and special new" enterprise in Shanghai, and has been selected into the list of enterprises cultivated by the Science and Technology Innovation Board.
 
-URL: www.daocloud.io
+- URL: www.daocloud.io
 
-Email: info@daocloud.io
+- Email: info@daocloud.io
 
-Tel: 400 002 6898
+- Tel: 400 002 6898

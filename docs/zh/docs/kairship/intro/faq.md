@@ -7,7 +7,7 @@ hide:
 
 1. Karmada 的版本是多少？能否指定版本？是否可以升级？
 
-    当前默认版本 v1.4.0，支持用户自主升级。
+    当前默认版本 v1.8.0，支持用户自主升级。
 
 2. 单集群应用如何无缝迁移到多云编排？
 
@@ -55,7 +55,7 @@ hide:
 
     可以在容器启动命令中增加 __--chat-repo-url__ 参数进行指定
 
-    ![image](https://docs.daocloud.io/daocloud-docs-images/docs/kairship/images/faq01.png)
+    ![image](../../kairship/images/faq01.png)
 
 13. 如何连接 Karmada 集群？
 

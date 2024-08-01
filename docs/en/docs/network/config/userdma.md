@@ -1,6 +1,7 @@
 # Using RDMA in Workloads
 
 This chapter mainly introduces how to configure and use RDMA resources in workloads.
+DCE 5.0 provides three methods for RDMA passthrough. See [RDMA Usage Comparison](rdmatype.md) for details.
 
 !!! note
 

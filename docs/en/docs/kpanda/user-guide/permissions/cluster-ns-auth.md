@@ -50,6 +50,6 @@ Before authorizing users/groups, complete the following preparations:
 
     !!! tip
 
-        If you need to delete or edit permissions later, you can click __⋮__ on the right side of the list and select __Edit__ or __Delete__ .
+        If you need to delete or edit permissions later, you can click __┇__ on the right side of the list and select __Edit__ or __Delete__ .
 
         

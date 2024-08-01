@@ -17,7 +17,7 @@ vmstorge 磁盘规范请参考 [vmstorage 磁盘容量规划](../res-plan/vms-re
 
     ![修改磁盘](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/vmdisk02.png)
 
-1. 选择左侧导航 __容器存储__ -> __存储池(SC)__ ，找到 __local-path__ ，点击目标右侧的 __⋮__ ，在弹出菜单中选择 __编辑__ 。
+1. 选择左侧导航 __容器存储__ -> __存储池(SC)__ ，找到 __local-path__ ，点击目标右侧的 __┇__ ，在弹出菜单中选择 __编辑__ 。
 
     ![编辑存储池](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/vmdisk03.png)
 
@@ -59,7 +59,7 @@ vmstorge 磁盘规范请参考 [vmstorage 磁盘容量规划](../res-plan/vms-re
 
 1. 以全局服务集群管理员权限登录 DCE 5.0 平台，进入 __kpanda-global-cluster__ 集群详情。
 
-1. 选择左侧导航 __工作负载__ -> __有状态负载__ ，找到 __vmstorage__ 的有状态负载，点击目标右侧的 __⋮__ ，在弹出菜单中选择 __状态__ -> __停止__ -> __确定__ 。
+1. 选择左侧导航 __工作负载__ -> __有状态负载__ ，找到 __vmstorage__ 的有状态负载，点击目标右侧的 __┇__ ，在弹出菜单中选择 __状态__ -> __停止__ -> __确定__ 。
 
     ![状态停止](https://docs.daocloud.io/daocloud-docs-images/docs/insight/images/vmdisk11.png)
 

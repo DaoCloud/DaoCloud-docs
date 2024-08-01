@@ -194,8 +194,8 @@ hide:
 <td></td>
 </tr>
 <tr>
-<td><strong>昇腾(Ascend 910P)</strong></td>
-<td>Ascend 910</td>
+<td><strong>昇腾(Ascend 910)</strong></td>
+<td>Ascend 910B</td>
 <td>Ubuntu20.04</td>
 <td>详情参考<a href="https://www.hiascend.com/document/detail/zh/quick-installation/22.0.0/quickinstg/800_9010/quickinstg_800_9010_x86_0005.html">内核版本要求</a></td>
 <td>操作系统：CentOS 7.9；<br />内核版本： <strong>3.10.0-1160</strong> </td>

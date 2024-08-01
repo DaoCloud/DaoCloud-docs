@@ -69,7 +69,7 @@ This section describes the features supported by the service mesh.
 
 - sidecar injection
 
-    Supports the sidecar injection strategy of configuring services through the interface, and supports the multi-dimensional sidecar default injection strategy.
+    Supports the sidecar injection policy of configuring services through the interface, and supports the multi-dimensional sidecar default injection policy.
 
 - Sidecar hot upgrade
 

@@ -13,17 +13,23 @@ This section explains how applications can use MIG GPU resources.
 
 1. Confirm if the cluster has recognized the GPU card type.
 
-    Go to __Cluster Details__ -> __Cluster Settings__ -> __Addon Configuration__ and check if it has been correctly recognized. The automatic recognition frequency is set to __10 minutes__ .
+    Go to __Cluster Details__ -> __Nodes__ and check if it has been correctly recognized as MIG.
 
     
 
 2. When deploying an application using an image, you can select and use NVIDIA MIG resources.
 
+- Example of MIG Single Mode (used in the same way as a full GPU card):
+
+    !!! note
     
+        The MIG single policy allows users to request and use GPU resources in the same way as a full GPU card (`nvidia.com/gpu`). The difference is that these resources can be a portion of the GPU (MIG device) rather than the entire GPU. Learn more from the [GPU MIG Mode Design](https://docs.google.com/document/d/1bshSIcWNYRZGfywgwRHa07C0qRyOYKxWYxClbeJM-WM/edit#heading=h.jklusl667vn2).
+
+- MIG Mixed Mode
 
 ## Using MIG through YAML Configuration
 
-** __MIG Single__ mode:**
+__MIG Single__ mode:
 
 ```yaml
 apiVersion: apps/v1
@@ -47,12 +53,14 @@ spec:
           image: chrstnhntschl/gpu_burn
           resources:
             limits:
-              nvidia.com/gpu: 2 # Number of MIG GPUs to request
+              nvidia.com/gpu: 2 # (1)!
           imagePullPolicy: Always
       restartPolicy: Always
 ```
 
-** __MIG  Mixed__ mode:**
+1. Number of MIG GPUs to request
+
+__MIG  Mixed__ mode:
 
 ```yaml
 apiVersion: apps/v1
@@ -76,11 +84,11 @@ spec:
           image: chrstnhntschl/gpu_burn
           resources:
             limits:
-              nvidia.com/mig-4g.20gb: 1 # Expose MIG device through nvidia.com/mig-g.gb resource type
+              nvidia.com/mig-4g.20gb: 1 # (1)!
           imagePullPolicy: Always
       restartPolicy: Always
 ```
+
+1. Expose MIG device through nvidia.com/mig-g.gb resource type
 
 After entering the container, you can check if only one MIG device is being used:
-
-

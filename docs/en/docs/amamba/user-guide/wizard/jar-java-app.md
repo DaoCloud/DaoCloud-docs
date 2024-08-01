@@ -11,9 +11,9 @@ Workbench supports building applications in four ways: [Git Repo](create-app-git
 
 1. [Create a workspace](../../../ghippo/user-guide/workspace/workspace.md) and a [User](../../../ghippo/user-guide/access-control/user.md). The user needs to join this workspace and have the __Workspace Editor__ role.
 
-2. [Create a credential](../pipeline/credential.md) for accessing the image repository, such as __registry__ .
+2. [Create a credential](../pipeline/credential.md) for accessing the container registry, such as __registry__ .
 
-3. Prepare an image repository, like a Harbor repository.
+3. Prepare an container registry, like a Harbor repository.
 
 4. Download [daocloud-demo.jar](https://github.com/huoyinghao/filedownload/raw/main/daocloud-demo.jar).
 
@@ -48,15 +48,15 @@ Workbench supports building applications in four ways: [Git Repo](create-app-git
     - Access Mode: Support access to the application only within the cluster through clusterIP, or allow access outside the cluster through NodePort, or access through a load balancer.
     - Port Settings: fill in the port number that needs to be exposed according to the actual business scenario.
 
-        > For more detailed instructions on service configuration, please refer to [Create Service](../../../kpanda/user-guide/network/create-services.md).
+        > For more detailed instructions on service configuration, refer to [Create Service](../../../kpanda/user-guide/network/create-services.md).
 
     - Resource Limit: CPU and memory quotas must not exceed the remaining resources in the current workspace of the application's namespace.
 
-    - Lifecycle: Set the commands that need to be executed when the container starts, after it starts, and before it stops. For details, please refer to [Container Lifecycle Configuration](../../../kpanda/user-guide/workloads/pod-config/lifecycle.md).
+    - Lifecycle: Set the commands that need to be executed when the container starts, after it starts, and before it stops. For details, refer to [Container Lifecycle Configuration](../../../kpanda/user-guide/workloads/pod-config/lifecycle.md).
 
-    - Health Check: used to judge the health status of containers and applications, which helps to improve the availability of applications. For details, please refer to [Container Health Check Configuration](../../../kpanda/user-guide/workloads/pod-config/health-check.md).
+    - Health Check: used to judge the health status of containers and applications, which helps to improve the availability of applications. For details, refer to [Container Health Check Configuration](../../../kpanda/user-guide/workloads/pod-config/health-check.md).
 
-    - Environment Variables: Configure container parameters in Pods, add environment variables or pass configurations to Pods, etc. For details, please refer to [Container environment variable configuration](../../../kpanda/user-guide/workloads/pod-config/env-variables.md).
+    - Environment Variables: Configure container parameters in Pods, add environment variables or pass configurations to Pods, etc. For details, refer to [Container environment variable configuration](../../../kpanda/user-guide/workloads/pod-config/env-variables.md).
 
     - Data Storage: Configure the settings for container mounted data volumes and data persistence.
 
@@ -67,9 +67,9 @@ Workbench supports building applications in four ways: [Git Repo](create-app-git
     - Service Mesh: Choose whether to enable the [Service Mesh for DCE 5.0](../../../mspider/intro/index.md) module to govern microservice traffic.
     - Microservice Engine: Whether to connect the newly created application to the [DCE 5.0 Microservice Engine](../../../skoala/intro/index.md) module.
         
-        > For the configuration of the microservice engine, please refer to [Build Microservice Application Based on Git Repository](create-app-git.md).
+        > For the configuration of the microservice engine, refer to [Build Microservice Application Based on Git Repository](create-app-git.md).
     
-    - Observable: Select whether to enable grayscale publishing. For more information about canary release, please refer to [Canary Release](../release/canary.md).
+    - Observable: Select whether to enable grayscale publishing. For more information about canary release, refer to [Canary Release](../release/canary.md).
 
     ![Advanced Settings](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/amamba/images/jar05.png)
 

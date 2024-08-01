@@ -11,18 +11,17 @@
 - 虚拟机必须处于运行状态才能进行实时迁移。
 - 确保您的 PVC 访问模式为 ReadWriteMany，以便使用实时迁移功能。
 - 确保集群内至少有两个节点可供使用。
-- 在使用实时迁移功能时，可以选择 Masquerade 或 Bridge 这两种网络模式。
 
 ## 实时迁移
 
-1. 点击左侧导航栏上的 __容器管理__ ，然后点击 __虚拟机__ ，进入列表页面，点击列表右侧的 __┇__ ，可以对运行状态下的虚拟机进行迁移动作。目前虚拟机所在节点为 __virtnest-rook-ceph-2__ 。
+1. 点击左侧导航栏上的 __容器管理__ ，然后点击 __虚拟机__ ，进入列表页面，点击列表右侧的 __┇__ ，可以对运行状态下的虚拟机进行迁移动作。目前虚拟机所在节点为 __controller-node-3__ 。
 
-    ![实时迁移](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/live01.png)
+    ![实时迁移](../images/live01.png)
 
-2. 弹出弹框，提示在实时迁移期间，正在运行的虚拟机实例会移动到另一个节点，但是无法决定目标节点，同时请确保其他节点资源充足。
+2. 弹出弹框，提示在实时迁移期间，正在运行的虚拟机实例会移动到另一个节点，可以选择指定节点迁移，也可以随机迁移，请确保其他节点资源充足。
 
-    ![迁移提示](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/live02.png)
+    ![迁移提示](../images/live02.png)
 
-3. 迁移成功后可以在虚拟机列表内查看节点信息，此时节点迁移到 __virtnest-rook-ceph-1__ 。
+3. 迁移需要一段时间，请耐心等待，成功后可以在虚拟机列表内查看节点信息，此时节点迁移到 __controller-node-1__ 。
 
-    ![迁移结果](https://docs.daocloud.io/daocloud-docs-images/docs/zh/docs/virtnest/images/live03.png)
+    ![迁移结果](../images/live03.png)

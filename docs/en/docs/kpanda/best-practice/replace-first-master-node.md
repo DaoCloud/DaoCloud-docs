@@ -1,3 +1,8 @@
+---
+MTPE: windsonsea
+Date: 2024-07-30
+---
+
 # Replace the first master node of the worker cluster
 
 This page will take a highly available three-master-node worker cluster as an example.
@@ -24,7 +29,7 @@ which will be used when modifying related configurations.
 
 1. Get the cluster name
 
-    Execute the following command to find the clusters.kubean.io resource corresponding to the cluster:
+    Run the following command to find the `clusters.kubean.io` resource corresponding to the cluster:
 
     ```shell
     # For example, if the resource name of clusters.kubean.io is cluster-mini-1
@@ -63,55 +68,55 @@ which will be used when modifying related configurations.
     apiVersion: v1
     kind: ConfigMap
     metadata:
-    name: mini-1-hosts-conf
-    namespace: kubean-system
+      name: mini-1-hosts-conf
+      namespace: kubean-system
     data:
-    hosts.yml: |
+      hosts.yml: |
         all:
-        hosts:
+          hosts:
             node1:
-            ip: "172.30.41.161"
-            access_ip: "172.30.41.161"
-            ansible_host: "172.30.41.161"
-            ansible_connection: ssh
-            ansible_user: root
-            ansible_password: dangerous
+              ip: "172.30.41.161"
+              access_ip: "172.30.41.161"
+              ansible_host: "172.30.41.161"
+              ansible_connection: ssh
+              ansible_user: root
+              ansible_password: dangerous
             node2:
-            ip: "172.30.41.162"
-            access_ip: "172.30.41.162"
-            ansible_host: "172.30.41.162"
-            ansible_connection: ssh
-            ansible_user: root
-            ansible_password: dangerous
+              ip: "172.30.41.162"
+              access_ip: "172.30.41.162"
+              ansible_host: "172.30.41.162"
+              ansible_connection: ssh
+              ansible_user: root
+              ansible_password: dangerous
             node3:
-            ip: "172.30.41.163"
-            access_ip: "172.30.41.163"
-            ansible_host: "172.30.41.163"
-            ansible_connection: ssh
-            ansible_user: root
-            ansible_password: dangerous
-        children:
+              ip: "172.30.41.163"
+              access_ip: "172.30.41.163"
+              ansible_host: "172.30.41.163"
+              ansible_connection: ssh
+              ansible_user: root
+              ansible_password: dangerous
+          children:
             kube_control_plane:
-            hosts:
+              hosts:
                 node2:
                 node3:
                 node1:
             kube_node:
-            hosts:
+              hosts:
                 node2:
                 node3:
                 node1:
             etcd:
-            hosts:
+              hosts:
                 node2:
                 node3:
                 node1:
             k8s_cluster:
-            children:
+              children:
                 kube_control_plane:
                 kube_node:
             calico_rr:
-            hosts: {}
+              hosts: {}
     EOF
     }
     
@@ -124,7 +129,7 @@ which will be used when modifying related configurations.
 
     !!! note
 
-        If node1 is offline or malfunctioning, the following configuration items must be added to extraArgs,
+        If node1 is offline or malfunctioning, the following ConfigMaps must be added to extraArgs,
         you need not to add them when node1 is online.
 
         ```toml
@@ -216,4 +221,4 @@ which will be used when modifying related configurations.
     EOF
     ```
 
-This completes the replacement of the first Master node.
+Now, you completed the replacement of the first Master node.

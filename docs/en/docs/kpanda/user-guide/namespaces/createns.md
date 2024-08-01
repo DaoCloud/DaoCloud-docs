@@ -33,9 +33,10 @@ Supports easy creation of namespaces through forms, and quick creation of namesp
 
     ![Fill the Form](../images/ns02.png)
 
-4. Click __OK__ to complete the creation of the namespace. On the right side of the namespace list, click __⋮__ to select update, bind/unbind workspace, quota management, delete, and more from the pop-up menu.
+4. Click __OK__ to complete the creation of the namespace. On the right side of the namespace list, click __┇__ to select update, bind/unbind workspace, quota management, delete, and more from the pop-up menu.
 
     ![More Operations](../images/ns03.png)
+
 
 ### Create from YAML
 

@@ -44,7 +44,7 @@ Currently, there are two ways to create data volumes: YAML and form. These two w
         - ReadOnlyMany: The data volume can be mounted read-only by multiple nodes.
         - ReadWriteOncePod: The data volume can be mounted read-write by a single Pod.
 
-    - Recycling strategy:
+    - Recycling policy:
 
         - Retain: The PV is not deleted, but its status is only changed to __released__ , which needs to be manually recycled by the user. For how to manually reclaim, refer to [Persistent Volume](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#retain).
         - Recycle: keep the PV but empty its data, perform a basic wipe ( __rm -rf /thevolume/*__ ).

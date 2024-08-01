@@ -65,7 +65,7 @@ go build . -o extproc
 - update-extproc-header：是否在响应头中添加此插件的名字
 - update-duration-header：在结束流时,响应头中添加总处理时间
 
-**以上参数默认均为 false.**
+**以上参数默认均为 false。**
 
 - poly 0x82f63b78：生成 checksum 时使用的多项式，默认为 IEEE。
 

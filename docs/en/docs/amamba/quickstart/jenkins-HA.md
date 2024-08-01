@@ -14,7 +14,7 @@ The following section will explain how to achieve Jenkins high availability base
 
 ## Prerequisites
 
-- To install HwameiStor, please refer to <https://hwameistor.io/cn/docs/intro>.
+- To install HwameiStor, refer to <https://hwameistor.io/cn/docs/intro>.
   At least two nodes are required for high availability.
 - Ensure that the system has available and clean disks (disks with no existing data or partition information), as HwameiStor cannot utilize disks that are already in use.
   You can use the __kubectl get ld__ command to view disk information in the system.

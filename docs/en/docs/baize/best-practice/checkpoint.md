@@ -24,7 +24,7 @@ In PyTorch, the `state_dict` is typically used to save the model's parameters. H
 import torch
 import torch.nn as nn
 
-# Assume we have a simple neural network
+# Assume you have a simple neural network
 class SimpleModel(nn.Module):
     def __init__(self):
         super(SimpleModel, self).__init__()
@@ -81,7 +81,7 @@ Here is an example of saving a checkpoint in TensorFlow:
 ```python
 import tensorflow as tf
 
-# Assume we have a simple model
+# Assume you have a simple model
 model = tf.keras.Sequential([
     tf.keras.layers.Dense(2, input_shape=(10,))
 ])
@@ -99,7 +99,7 @@ checkpoint.save(file_prefix=checkpoint_prefix)
 
 !!!note
 
-    Users of DCE 5.0 intelligent computing power can directly mount high-performance storage as the checkpoint directory to improve the speed of saving and restoring checkpoints.
+    Users of DCE 5.0 Intelligent Engine can directly mount high-performance storage as the checkpoint directory to improve the speed of saving and restoring checkpoints.
 
 ### Restore Checkpoints in TensorFlow
 

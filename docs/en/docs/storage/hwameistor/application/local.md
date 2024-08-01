@@ -1,53 +1,82 @@
-# Local volume
+---
+MTPE: WANG0608GitHub
+date: 2024-07-26
+---
 
-Using HwameiStor can run stateful applications very easily.
+# Using Local Volumes without High Availability
 
-Here we use a MySQL application as an example.
+With HwameiStor, you can run stateful applications very easily.
+This page takes a MySQL application as an example to use HwameiStor as its local storage.
+
+## Prerequisites
+
+- Hwameistor is installed successfully
+
+- StorageClass is created. If not, refer to [Create StorageClass](../../../kpanda/user-guide/storage/sc.md#create-storageclass-sc)
+
+    After successful installation of HwameiStor, a StorageClass named `hwameistor-storage-lvm-hdd` will be installed by default in the Helm chart, and the StorageClass can be used to create local PVs.
+
+    1. Click __Container Management__ to select a proper cluster to check its details. Click __Container Storage__ to select __StorageClass__ .
+
+        ![sc01](../../images/sc01.jpg)
+
+    2. Click __View YAML__ to see the details.
+
+        ```yaml
+        apiVersion: storage.k8s.io/v1
+        kind: StorageClass
+        metadata:
+          name: hwameistor-storage-lvm-hdd
+        parameters:
+          convertible: "false"
+          csi.storage.k8s.io/fstype: xfs
+          poolClass: HDD
+          poolType: REGULAR
+          replicaNumber: "1"
+          striped: "true"
+          volumeKind: LVM
+        provisioner: lvm.hwameistor.io
+        reclaimPolicy: Delete
+        volumeBindingMode: WaitForFirstConsumer
+        allowVolumeExpansion: true
+        ```
+
+        If the StorageClass fails to be created, you can [Create StorageClass via UI](../../../kpanda/user-guide/storage/sc.md#create-storageclass-sc) or by using YAML. You can run the following command to apply YAML if it is ready:
+
+        ```sh
+        kubectl apply -f examples/sc-local.yaml
+        ```
+
+## Steps
+
+### Create StatefulSet via UI
+
+1. Click __Container Management__ to select a proper cluster and check the cluster details.
+   Click __Container Storage__ to select __StatefulSets__ under __Workloads__ and click __Create By Image__ .
+
+    ![imagecreate](../../images/imagecreate01.jpg)
+
+2. After completing the __Basic Information__ , click __Create PVC Template__ and configure the following parameters:
+
+    ![pvctmp](../../images/pvctmp01.jpg)
+
+    - `Storage Classes`: Local storage classes you have created.
+    - `Capacity`: The size of the local volume.
+    - `Access Mode`: It is recommended to use ReadWriteOnce.
+    - `Container Path`: The path where the data storage is mounted on the container.
+
+3. Click __OK__ , and click __Next__ one by one to finish the creation wizard.
+   After completion of the creation, click __PVC__ to check whether the volume status is normal.
+
+    ![pvctmp02](../../images/pvctmp02.jpg)
+
+### Create StatefulSet via YAML
 
 !!! note
 
-    The MySQL Yaml file below is from [Kubernetes official repo](https://github.com/kubernetes/website/blob/main/content/en/examples/application/mysql/mysql-statefulset.yaml)
+    The following MySQL YAML file is from the [Kubernetes website repository](https://github.com/kubernetes/website/blob/main/content/en/examples/application/mysql/mysql-statefulset.yaml).
 
-## View `StorageClass`
-
-HwameiStor's Helm charts will install a `StorageClass` named `hwameistor-storage-lvm-hdd` by default, which can create local volumes.
-
-Run the following command to open the YAML file.
-
-```sh
-kubectl get sc hwameistor-storage-lvm-hdd -o yaml
-```
-
-Modify the following YAML file.
-
-```yaml
-apiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
-  name: hwameistor-storage-lvm-hdd
-parameters:
-  convertible: "false"
-  csi.storage.k8s.io/fstype:xfs
-  poolClass: HDD
-  poolType: REGULAR
-  replicaNumber: "1"
-  striped: "true"
-  volumeKind: LVM
-provisioner: lvm.hwameistor.io
-reclaimPolicy: Delete
-volumeBindingMode: WaitForFirstConsumer
-allowVolumeExpansion: true
-```
-
-If this `storageClass` was not generated during installation, run the following yaml file to regenerate it:
-
-```sh
-kubectl apply -f examples/sc-local.yaml
-```
-
-## Create `StatefulSet`
-
-After HwameiStor and `StorageClass` are ready, one command can create MySQL container and its data volume:
+Once HwameiStor and StorageClass are ready, you can run the following command to create the MySQL container and its volume:
 
 ```sh
 kubectl apply -f sts-mysql_local.yaml
@@ -80,18 +109,18 @@ spec:
       schedulerName: hwameistor-scheduler
 ```
 
-## View MySQL container and `PVC/PV`
+## View MySQL container and PVC/PV
 
 In this example, the MySQL container is scheduled to node `k8s-worker-3`.
 
 ```console
-$ kubectl get po -l app=sts-mysql-local -o wide
-NAME READY STATUS RESTARTS AGE IP NODE
-sts-mysql-local-0 2/2 Running 0 3m08s 10.1.15.154 k8s-worker-3
+$ kubectl get po -l  app=sts-mysql-local -o wide
+NAME                READY   STATUS    RESTARTS   AGE     IP            NODE        
+sts-mysql-local-0   2/2     Running   0          3m08s   10.1.15.154   k8s-worker-3
 
-$ kubectl get pvc -l app=sts-mysql-local
-NAME STATUS VOLUME CAPACITY ACCESS MODES STORAGE CLASS AGE VOLUME MODES
-data-sts-mysql-local-0 Bound pvc-accf1ddd-6f47-4275-b520-dc317c90f80b 1Gi RWO hwameistor-storage-lvm-hdd 3m Filesystem
+$ kubectl get pvc -l  app=sts-mysql-local
+NAME                     STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS                 AGE   VOLUMEMODE
+data-sts-mysql-local-0   Bound    pvc-accf1ddd-6f47-4275-b520-dc317c90f80b   1Gi        RWO            hwameistor-storage-lvm-hdd    3m   Filesystem
 ```
 
 ## View the `LocalVolume` object
@@ -101,32 +130,32 @@ By viewing `LocalVolume(LV)` with the same name as `PV`, you can see that the lo
 ```console
 $ kubectl get lv pvc-accf1ddd-6f47-4275-b520-dc317c90f80b
 
-NAME POOL REPLICAS CAPACITY ACCESSIBILITY STATE RESOURCE PUBLISHED AGE
-pvc-accf1ddd-6f47-4275-b520-dc317c90f80b LocalStorage_PoolHDD 1 1073741824 Ready-1 k8s-worker-3 3m
+NAME                                       POOL                   REPLICAS   CAPACITY     ACCESSIBILITY   STATE   RESOURCE   PUBLISHED      AGE
+pvc-accf1ddd-6f47-4275-b520-dc317c90f80b   LocalStorage_PoolHDD   1          1073741824                   Ready   -1         k8s-worker-3    3m
 ```
 
 ## [Optional] Scale the MySQL application into a three-node cluster
 
-HwameiStor supports the horizontal expansion of `StatefulSet`. `StatefulSet` container will mount an independent local volume:
+HwameiStor supports the horizontal autoscaling of StatefulSet. The StatefulSet will mount an independent local volume:
 
 ```console
 $ kubectl scale sts/sts-mysql-local --replicas=3
 
-$ kubectl get po -l app=sts-mysql-local -o wide
-NAME READY STATUS RESTARTS AGE IP NODE
-sts-mysql-local-0 2/2 Running 0 4h38m 10.1.15.154 k8s-worker-3
-sts-mysql-local-1 2/2 Running 0 19m 10.1.57.44 k8s-worker-2
-sts-mysql-local-2 0/2 Init:0/2 0 14s 10.1.42.237 k8s-worker-1
+$ kubectl get po -l  app=sts-mysql-local -o wide
+NAME                READY   STATUS     RESTARTS   AGE     IP            NODE        
+sts-mysql-local-0   2/2     Running    0          4h38m   10.1.15.154   k8s-worker-3
+sts-mysql-local-1   2/2     Running    0          19m     10.1.57.44    k8s-worker-2
+sts-mysql-local-2   0/2     Init:0/2   0          14s     10.1.42.237   k8s-worker-1
 
-$ kubectl get pvc -l app=sts-mysql-local -o wide
-NAME STATUS VOLUME CAPACITY ACCESS MODES STORAGE CLASS AGE VOLUME MODES
-data-sts-mysql-local-0 Bound pvc-accf1ddd-6f47-4275-b520-dc317c90f80b 1Gi RWO hwameistor-storage-lvm-hdd 3m07s Filesystem
-data-sts-mysql-local-1 Bound pvc-a4f8b067-9c1d-450f-aff4-5807d61f5d88 1Gi RWO hwameistor-storage-lvm-hdd 2m18s Filesystem
-data-sts-mysql-local-2 Bound pvc-47ee308d-77da-40ec-b06e-4f51499520c1 1Gi RWO hwameistor-storage-lvm-hdd 2m18s Filesystem
+$ kubectl get pvc -l  app=sts-mysql-local -o wide
+NAME                     STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS                 AGE     VOLUMEMODE
+data-sts-mysql-local-0   Bound    pvc-accf1ddd-6f47-4275-b520-dc317c90f80b   1Gi        RWO            hwameistor-storage-lvm-hdd   3m07s   Filesystem
+data-sts-mysql-local-1   Bound    pvc-a4f8b067-9c1d-450f-aff4-5807d61f5d88   1Gi        RWO            hwameistor-storage-lvm-hdd   2m18s   Filesystem
+data-sts-mysql-local-2   Bound    pvc-47ee308d-77da-40ec-b06e-4f51499520c1   1Gi        RWO            hwameistor-storage-lvm-hdd   2m18s   Filesystem
 
 $ kubectl get lv
-NAME POOL REPLICAS CAPACITY ACCESSIBILITY STATE RESOURCE PUBLISHED AGE
-pvc-47ee308d-77da-40ec-b06e-4f51499520c1 LocalStorage_PoolHDD 1 1073741824 Ready-1 k8s-worker-1 2m50s
-pvc-a4f8b067-9c1d-450f-aff4-5807d61f5d88 LocalStorage_PoolHDD 1 1073741824 Ready-1 k8s-worker-2 2m50s
-pvc-accf1ddd-6f47-4275-b520-dc317c90f80b LocalStorage_PoolHDD 1 1073741824 Ready-1 k8s-worker-3 3m40s
+NAME                                       POOL                   REPLICAS   CAPACITY     ACCESSIBILITY   STATE   RESOURCE   PUBLISHED      AGE
+pvc-47ee308d-77da-40ec-b06e-4f51499520c1   LocalStorage_PoolHDD   1          1073741824                   Ready   -1         k8s-worker-1   2m50s
+pvc-a4f8b067-9c1d-450f-aff4-5807d61f5d88   LocalStorage_PoolHDD   1          1073741824                   Ready   -1         k8s-worker-2   2m50s
+pvc-accf1ddd-6f47-4275-b520-dc317c90f80b   LocalStorage_PoolHDD   1          1073741824                   Ready   -1         k8s-worker-3   3m40s
 ```

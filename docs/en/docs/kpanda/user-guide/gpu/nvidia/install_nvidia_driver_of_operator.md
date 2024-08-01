@@ -3,15 +3,21 @@ MTPE: Fan-Lin
 Date: 2024-01-24
 ---
 
-# Install GPU Operator Offline
+# Offline Install GPU Operator
 
-DCE 5.0 provides a GPU Operator offline package with CentOS 7.9 and kernel version 3.10.0-1160 preinstalled. This article explains how to deploy the GPU Operator offline. This section covers parameter configurations for various usage modes of NVIDIA GPUs.
+DCE 5.0 comes with pre-installed `driver` images for the following three operating systems: Ubuntu 22.04, Ubuntu 20.04,
+and CentOS 7.9. The driver version is `535.104.12`. Additionally, it includes the required `Toolkit` images for each
+operating system, so users no longer need to manually provide offline `toolkit` images.
 
-- GPU Full Mode
-- GPU vGPU Mode
-- GPU MIG Mode
+!!! note
 
-Please refer to [NVIDIA GPU Card Usage Modes](index.md) for more details. This article demonstrates the installation using AMD architecture on CentOS 7.9 (3.10.0-1160). If you want to deploy on Red Hat 8.4, refer to [Uploading Red Hat GPU Operator Offline Images to Bootstrap Nodes](./push_image_to_repo.md) and [Building Red Hat 8.4 Offline Yum Repository](./upgrade_yum_source_redhat8_4.md).
+    After installation, switching from MIG mode to full-card mode or vGPU mode is not supported.
+    Only one-click switching between full-card mode and vGPU mode is supported. Please plan your usage mode in advance.
+
+Refer to [NVIDIA GPU Card Usage Modes](index.md) for more details. This article demonstrates the installation
+using AMD architecture on CentOS 7.9 (3.10.0-1160). If you want to deploy on Red Hat 8.4, refer to
+[Uploading Red Hat GPU Operator Offline Images to Bootstrap Nodes](./push_image_to_repo.md) and
+[Building Red Hat 8.4 Offline Yum Repository](./upgrade_yum_source_redhat8_4.md).
 
 ## Prerequisites
 
@@ -32,6 +38,9 @@ To install the GPU Operator plugin for your cluster, follow these steps:
 4. Configure the installation parameters for __gpu-operator__ based on the instructions below to complete the installation.
 
 ## Configure parameters
+
+- __systemOS__ : Select the operating system for the host. The current options are
+  `Ubuntu 22.04`, `Ubuntu 20.04`, `Centos 7.9`, and `other`. Please choose the correct operating system.
 
 ### Basic information
 
@@ -55,7 +64,8 @@ To install the GPU Operator plugin for your cluster, follow these steps:
 1. __Driver.enable__ : Configure whether to deploy the NVIDIA driver on the node, default is enabled. If you have already deployed the NVIDIA driver on the node before using the GPU Operator, please disable this.
 2. __Driver.image__ : Configure the GPU driver image, recommended default image: __nvidia/driver__ .
 3. __Driver.repository__ : Repository where the GPU driver image is located, default is nvidia's __nvcr.io__ repository.
-4. __Driver.version__ : Version of the GPU driver image, use default parameters for offline deployment.
+4. __Driver.usePrecompiled__ : Enable the precompiled mode to install the driver.
+5. __Driver.version__ : Version of the GPU driver image, use default parameters for offline deployment.
    Configuration is only required for online installation. Different versions of the Driver image exist for
    different types of operating systems. For more details, refer to
    [Nvidia GPU Driver Versions](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/driver/tags).
@@ -71,100 +81,48 @@ To install the GPU Operator plugin for your cluster, follow these steps:
         - For Ubuntu systems, for example, `535-5.15.0-1043-nvidia`
         - For CentOS systems, for example, `525.147.05`
 
-5. __Driver.RepoConfig.ConfigMapName__ : Used to record the name of the offline yum source profile for the GPU Operator. When using pre-installed offline packages, the global cluster can directly run the following command. Worker clusters should refer to the yum source configuration of any node in the Global cluster.
+6. __Driver.RepoConfig.ConfigMapName__ : Used to record the name of the offline yum repository configuration file
+   for the GPU Operator. When using the pre-packaged offline bundle, refer to the following documents for
+   different types of operating systems.
 
-    - Configuration for the global cluster
+    - [Building CentOS 7.9 Offline Yum Repository](./upgrade_yum_source_centos7_9.md)
+    - [Building Red Hat 8.4 Offline Yum Repository](./upgrade_yum_source_redhat8_4.md)
 
-        ```sh
-        kubectl create configmap local-repo-config  -n gpu-operator --from-file=CentOS-Base.repo=/etc/yum.repos.d/extension.repo
-        ```
-   
-    - Configuration for the worker cluster
+#### Toolkit parameters
 
-    ??? note "Using the yum source configuration of any node in the Global cluster"
+__Toolkit.enable__ : Enabled by default. This component allows containerd/docker
+to support running containers that require GPUs.
 
-        1. Use SSH or another method to access any node in the Global cluster and retrieve the platform's offline source profile __extension.repo__ :
+#### MIG parameters
 
-            ```bash
-            cat /etc/yum.repos.d/extension.repo # View the contents of extension.repo.
-            ```
+For detailed configuration methods, refer to [Enabling MIG Functionality](mig/create_mig.md).
 
-            The expected output should look like this:
+**MigManager.Config.name** : The name of the MIG split configuration file, used to define the MIG (GI, CI)
+split policy. The default is __default-mig-parted-config__ . For custom parameters, refer to
+[Enabling MIG Functionality](mig/create_mig.md).
 
-            ```bash
-            [extension-0]
-            async = 1
-            baseurl = http://x.x.x.x:9000/kubean/centos/$releasever/os/$basearch
-            gpgcheck = 0
-            name = kubean extension 0
+### Next Steps
 
-            [extension-1]
-            async = 1
-            baseurl = http://x.x.x.x:9000/kubean/centos-iso/$releasever/os/$basearch
-            gpgcheck = 0
-            name = kubean extension 1
-            ```
+After completing the configuration and creation of the above parameters:
 
-        2. Copy the contents of the __extension.repo__ file mentioned above. In the __gpu-operator__ namespace of the cluster where GPU Operator will be deployed, create a new config map named __local-repo-config__ . Refer to [Creating ConfigMaps](../../configmaps-secrets/create-configmap.md) for creating the config map.
+- If using **full-card mode** , [GPU resources can be used when creating applications](full_gpu_userguide.md).
 
-            !!! note
+- If using **vGPU mode** , after completing the above configuration and creation,
+  proceed to [vGPU Addon Installation](vgpu/vgpu_addon.md).
 
-                The configuration __key__ value must be __CentOS-Base.repo__, and the __value__ should be the content of the offline source configuration file __extension.repo__.
+- If using **MIG mode** and you need to use a specific split specification for individual GPU nodes,
+  otherwise, split according to the __default__ value in `MigManager.Config`.
 
-    For other operating systems or kernels, refer to the following links to create the yum source file:
-
-    - [Building CentOS 7.9 Offline Yum Source](./Upgrade_yum_source_of_preset_offline_package.md)
-    - [Building Red Hat 8.4 Offline Yum Source](./upgrade_yum_source_redhat_8.4.md)
-
-#### Toolkit Parameters
-
-1. __Toolkit.enable__ : Default is enabled. This component enables containerd/docker to support running containers that require GPU.
-
-2. __Toolkit.image__ : Configure the Toolkit image, recommended default image: __nvidia/k8s/container-toolkit__ .
-
-3. __Toolkit.repository__ : Repository where the Toolkit image is located, defaults to __nvcr.m.daocloud.io__ repository.
-
-4. __Toolkit.version__ : Version of the Toolkit image, keep the version consistent with the official website. By default, it uses the CentOS image. If using Ubuntu, you need to manually modify the yaml of the addon, changing CentOS to Ubuntu. Refer to [NVIDIA Container Toolkit](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/k8s/containers/container-toolkit/tags) for specific models.
-
-#### MIG Parameters
-
-For detailed configuration, refer to [Enabling MIG Functionality](mig/create_mig.md)
-
-1. __MigManager.enabled__ : Whether to enable MIG capability feature.
-2. **MigManager.Config.name** : Name of the MIG partitioning profile, used to
-   define the (GI, CI) partitioning strategy for MIG. Default is __default-mig-parted-config__ .
-   For custom parameters, refer to [Enabling MIG Functionality](mig/create_mig.md).
-3. __Mig.strategy__ : Public strategy for MIG devices on GPU cards on the node. NVIDIA provides
-   two policies for exposing MIG devices: __single__ , __mixed__ policies, details can be found
-   in [NVIDIA GPU Card Mode Explanation](index.md).
-
-#### Node-Feature-Discovery Parameters
-
-__Node-Feature-Discovery.enableNodeFeatureAPI__ : Enable or disable the Node Feature API.
-
-- When set to __true__ , the Node Feature API is enabled.
-- When set to __false__ or not set, the Node Feature API is disabled.
-
-### Next steps
-
-After completing the parameter configurations and creations mentioned above:
-
-1. If you are using **Full GPU mode** , follow the instructions in [Using GPU Resources in Application Creation](full_gpu_userguide.md).
-
-2. If you are using **vGPU mode** , after completing the parameter configurations and creations mentioned above, proceed to [vGPU Addon Installation](vgpu/vgpu_addon.md).
-
-3. If you are using **MIG mode** and need to allocate specific GPU nodes according to a certain partitioning specification, assign the following label to the corresponding node:
-
-    - For **single** mode, assign the label as follows:
+    - For **single** mode, add label to nodes as follows:
 
         ```sh
         kubectl label nodes {node} nvidia.com/mig.config="all-1g.10gb" --overwrite
         ```
 
-    - For **mixed** mode, assign the label as follows:
+    - For **mixed** mode, add label to nodes as follows:
 
         ```sh
         kubectl label nodes {node} nvidia.com/mig.config="custom-config" --overwrite
         ```
 
-    After partitioning, applications can use [MIG GPU Resources](mig/mig_usage.md).
+    After spliting, applications can [use MIG GPU resources](mig/mig_usage.md).

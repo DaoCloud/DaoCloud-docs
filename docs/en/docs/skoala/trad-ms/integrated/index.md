@@ -43,7 +43,7 @@ Update Nacos/Zookeeper/Eureka registries with this guide.
 
 If you want to update Kubernetes/Service Mesh registries, you can either remove it and reintegrate another one, or you can [update the Kubernetes cluster](../../../kpanda/user-guide/clusters/upgrade-cluster.md)/[update the mesh](../../../mspider/user-guide/service-mesh/README.md).
 
-1. In the `Registry List` find registry you need to update, on the right side click __⋮__ and select __Edit__ .
+1. In the `Registry List` find registry you need to update, on the right side click __┇__ and select __Edit__ .
 
     ![Edit](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/integrate-update01.png)
 
@@ -53,7 +53,7 @@ If you want to update Kubernetes/Service Mesh registries, you can either remove 
 
 ## Remove
 
-1. In the `Registry List` find registry you need to remove, on the right side click __⋮__ and select __Remove__ .
+1. In the `Registry List` find registry you need to remove, on the right side click __┇__ and select __Remove__ .
 
     ![remove](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/skoala/images/integrate-remove01.png)
 

@@ -7,7 +7,7 @@ hide:
 
 If you find a job to be redundant, expired, or no longer needed for any other reason, you can delete it from the job list.
 
-1. Click the **⋮** on the right side of the job in the job list, then choose **Delete** from the dropdown menu.
+1. Click the **┇** on the right side of the job in the job list, then choose **Delete** from the dropdown menu.
 
     <!-- add image later -->
 

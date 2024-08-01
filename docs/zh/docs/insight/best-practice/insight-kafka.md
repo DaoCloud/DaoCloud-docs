@@ -20,7 +20,7 @@
 
 ## 修改 Fluentbit Output 配置
 
-当 Kafka 集群准备就绪之后，我们需要修改 __insihgt-system__ 命名空间下 __ConfigMap__ 的内容，
+当 Kafka 集群准备就绪之后，我们需要修改 __insight-system__ 命名空间下 __ConfigMap__ 的内容，
 新增以下三个 Kafka Output 并注释原来三个 Elasticsearch Output：
 
 假设 Kafka Brokers 地址为： `insight-kafka.insight-system.svc.cluster.local:9092`

@@ -39,7 +39,7 @@
 
     ![路由配置](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/virtualserv03.png)
 
-1. 返回虚拟服务列表，屏幕提示创建成功。在虚拟服务列表右侧，点击操作一列的 __⋮__ ，可通过弹出菜单进行更多操作。
+1. 返回虚拟服务列表，屏幕提示创建成功。在虚拟服务列表右侧，点击操作一列的 __┇__ ，可通过弹出菜单进行更多操作。
 
     ![更多操作](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/virtualserv05.png)
 

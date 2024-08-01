@@ -121,6 +121,10 @@ pipeline {
 }
 ```
 
+!!! note
+
+    也可以参考[自定义 Jenkins Agent](../user-guide/pipeline/jenkins-agent.md)使用构建好的镜像。
+
 ## 参考
 
 - <https://plugins.jenkins.io/kubernetes>

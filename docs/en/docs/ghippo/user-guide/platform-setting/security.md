@@ -1,22 +1,22 @@
-# security strategy
+# Security Policy
 
-DCE 5.0 provides security policies based on passwords and access control on the graphical interface.
+DCE 5.0 offers robust security measures, including password policies and access control for the graphical interface.
 
-**Password Policy**
+## Password Policy
 
-- The new password cannot be the same as the most recent historical password.
-- After the password expires, the system will force you to change the password.
-- the password and username can not not be the same.
-- The password cannot be the same as the user's email address.
-- Customize password rules.
-- Custom password minimum length.
+- New passwords must differ from the most recent historical password.
+- Users are required to change their passwords upon expiration.
+- Passwords must not match the username.
+- Passwords cannot be the same as the user's email address.
+- Customizable password rules.
+- Customizable minimum password length.
 
-**Access Control Policy**
+## Access Control Policy
 
-- Session timeout policy: The user will log out of the current account if there is no operation within x hours.
-- Account lockout policy: If you fail to log in multiple times within the time limit, your account will be locked.
-- Login/logout policy: Log out while closing the browser.
+- **Session Timeout Policy**: Users will be automatically logged out after a period of inactivity lasting x hours.
+- **Account Lockout Policy**: Accounts will be locked after multiple failed login attempts within a specified time frame.
+- **Login/Logout Policy**: Users will be logged out when closing the browser.
 
-After entering the global management, click __Settings__ -> __Security Policy__ in the left navigation bar to set the password policy and access control policy.
+To configure the password and access control policies, navigate to global management, then click **Settings** -> **Security Policy** in the left navigation bar.
 
 ![Security Policy](../../images/security-policy.png)

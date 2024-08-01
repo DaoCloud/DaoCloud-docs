@@ -7,7 +7,7 @@ hide:
 
 If you want to view the workload of a specific Notebook, you can follow these steps:
 
-1. Click the **⋮** on the right side of the Notebook in the Notebook list, then choose **Workload Details** from the dropdown menu.
+1. Click the **┇** on the right side of the Notebook in the Notebook list, then choose **Workload Details** from the dropdown menu.
 
     <!-- add image later -->
 
@@ -18,11 +18,11 @@ If you want to view the workload of a specific Notebook, you can follow these st
     - Access methods: ClusterIP, NodePort
     - Scheduling strategies: node and workload affinity, anti-affinity
     - Labels and annotations: key-value pairs of labels and annotations for the workload and Pods
-    - Elastic scaling: support for HPA, CronHPA, VPA, etc.
+    - Autoscaling: support for HPA, CronHPA, and VPA
     - Event list: warnings, notifications, and other messages
 
     <!-- add image later -->
 
-3. In the StatefulSet list, click the **⋮** on the right side to perform more actions specific to the Pods.
+3. In the StatefulSet list, click the **┇** on the right side to perform more actions specific to the Pods.
 
     <!-- add image later -->

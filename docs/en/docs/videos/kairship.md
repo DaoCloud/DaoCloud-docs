@@ -4,12 +4,31 @@ We have crafted the following video tutorials for multicloud orchestration, any 
 
 > If there is a problem with the video display, please refresh the page, or try to clear the browser cache.
 
+<style>
+.responsive-video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+}
+
+.responsive-video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+</style>
+
 ## Multicloud Module Introduction
 
 See [What's Multicloud Management](../kairship/intro/features.md) for reference.
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/multicloud-intro.mp4" preload="metadata" poster="images/kairship-intro.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/multicloud-intro.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/kairship-intro.png"></video>
 </div>
 
 ## Creating Multicloud Instances
@@ -17,7 +36,7 @@ See [What's Multicloud Management](../kairship/intro/features.md) for reference.
 See [Creating Multicloud Instances](../kairship/instance/add.md) for reference.
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kairship-instance.mp4" preload="metadata" poster="images/kairship-instance.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kairship-instance.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/kairship-instance.png"></video>
 </div>
 
 ## Creating Multicloud Workloads
@@ -25,7 +44,7 @@ See [Creating Multicloud Instances](../kairship/instance/add.md) for reference.
 See [Creating Multicloud Workloads](../kairship/workload/deployment.md) for reference.
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/workloads.mp4" preload="metadata" poster="images/kairship-workload.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/workloads.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/kairship-workload.png"></video>
 </div>
 
 ## Creating Multicloud Jobs and CronJobs
@@ -33,7 +52,7 @@ See [Creating Multicloud Workloads](../kairship/workload/deployment.md) for refe
 See [Creating Multicloud Jobs](../kairship/workload/job.md) and [Creating Multicloud CronJobs](../kairship/workload/cronjob.md) for reference.
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/job-cronjob.mp4" preload="metadata" poster="images/kairship-job.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/job-cronjob.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/kairship-job.png"></video>
 </div>
 
 ## Managing Multicloud Resources
@@ -41,7 +60,7 @@ See [Creating Multicloud Jobs](../kairship/workload/job.md) and [Creating Multic
 See [Multicloud Services](../kairship/resource/service.md), [Multicloud Namespaces](../kairship/resource/ns.md), [Multicloud Configuration Items](../kairship/resource/configmap.md), and [Multicloud Secrets](../kairship/resource/secret.md) for reference.
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/multicloud-resoruces.mp4" preload="metadata" poster="images/kairship-resource.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/multicloud-resoruces.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/kairship-resource.png"></video>
 </div>
 
 ## Migrating Applications from DCE 4.0 to DCE 5.0
@@ -49,7 +68,7 @@ See [Multicloud Services](../kairship/resource/service.md), [Multicloud Namespac
 Refer to the documentation: [How to Migrate Applications from DCE 4.0 to DCE 5.0 with One-Click](../kairship/best-practice/one-click-conversion.md).
 
 <div class="responsive-video-container">
-<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kairship-migrate.mp4" preload="metadata" poster="images/kairship-migrate.png"></video>
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/kairship-migrate.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/en-images/kairship-migrate.png"></video>
 </div>
 
 [Download DCE 5.0](../download/index.md){ .md-button .md-button--primary }

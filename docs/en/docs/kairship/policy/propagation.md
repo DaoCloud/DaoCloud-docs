@@ -30,7 +30,7 @@ Propagation Policy is divided into Namespace Scope and Cluster Scope.
     ![Input YAML](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/pp02.png)
 
 3. Return to the propagation policy list, and the newly created one is the first one by default.
-   Click __⋮__ on the right side of the list to edit YAML and perform delete operations.
+   Click __┇__ on the right side of the list to edit YAML and perform delete operations.
 
 ## YAML example
 

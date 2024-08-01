@@ -21,9 +21,9 @@ With years of leading experience in cloud native field, DaoCloud developed a bra
 
 - Canary Release
 
-    Workbench supports progressive delivery with canary release, blue/green release, and A/B test strategies, ensuring a stable rollout of new features.
+    Workbench supports progressive delivery with canary release, blue/green release, and A/B test policies, ensuring a stable rollout of new features.
 
-    For example, if an application's release strategy is configured as AB Test, where version A should accept 80% traffic and version B 20% traffic. With canary release, both versions of the application are available for processing requests, allowing for easy statistics of the distribution ratio of different application versions.
+    For example, if an application's release policy is configured as AB Test, where version A should accept 80% traffic and version B 20% traffic. With canary release, both versions of the application are available for processing requests, allowing for easy statistics of the distribution ratio of different application versions.
 
 - GitOps
 

@@ -3,6 +3,48 @@
 This page lists the Release Notes for global management of each version,
 so that you can understand the evolution path and feature changes of each version.
 
+## 2024-07-31
+
+### v0.29.0
+
+### Features
+
+- **Added** LDAP server to support LDAPS
+- **Added** installer versions to __Global Management__ -> __Settings__ -> __About__
+
+### Optimizations
+
+- **Optimized** login and password change functions to support username and password encryption
+- **Optimized** prompt text about binding resources on __Global Management__ -> __Workspace and Folder__ -> __Resource Group__
+
+### Fixes
+
+- **Fixed** SMTP server settings
+- **Fixed** an issue where installation fails when OEM is configured `enable`
+- **Fixed** the inconsistency issue of English column names in exported reports in __Operations Management__
+
+## 2024-06-30
+
+### v0.28.0
+
+### Features
+
+- **Added** OAuth2 Identity Provider generic plugin
+- **Added** username and userLdapFilter fields to LDAP configuration
+- **Added** installation insight-angent prompt in __Global Management__ -> __Operations Management__ -> __Billing Config__
+
+### Optimizations
+
+- **Optimized** user creation to automatically remove spaces around the username text (if any) before saving
+- **Optimized** the search mechanism of binding resources
+- **Optimized** a SDK method `ListWorkspaceUsersByPermission()`
+
+### Fixes
+
+- **Fixed** an issue that authorized users with a custom role can see all workspaces
+- **Fixed** an issue that the RBAC Access Denied page will appear on the Insight page after closing the browser and reopening it
+- **Fixed** an issue that the exported report has inconsistent fields with those shown on the page in __Global Management__ -> __Operations Management__
+
 ## 2024-5-31
 
 ### v0.27.0
@@ -364,7 +406,7 @@ so that you can understand the evolution path and feature changes of each versio
 #### Fixes
 
 - **Fixed** an issue where tokens could still be used after the key expired
-- **Fixed** an issue where the image repository was not controlled by the license
+- **Fixed** an issue where the container registry was not controlled by the license
 
 ## 2023-02-27
 
@@ -546,7 +588,7 @@ so that you can understand the evolution path and feature changes of each versio
 - **Added** product navigation -> homepage only displayed for admin users
 - **Added** workspace -> users can only view the tree structure of workspaces and folders they have permissions for
 - **Added** Keycloak high availability
-- **Added** mail server configuration -> support for sending emails from Insight and application workbench
+- **Added** mail server configuration -> support for sending emails from Insight and Workbench
 - **Added** compliance with Helm specifications, supporting installers and offline deployment
 - **Added** Audit Logs -> automatic creation and merging of database partitions
 - **Added** support for ARM64 architecture

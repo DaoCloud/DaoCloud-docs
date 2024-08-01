@@ -24,18 +24,15 @@ hide:
 
 请执行如下步骤为集群安装 __metrics-server__ 插件。
 
-1. 在工作负载详情下的弹性伸缩页面，点击 __安装__ 按钮，进入 __metrics-server__ 插件安装界面。
+1. 在工作负载详情下的弹性伸缩页面，点击 __去安装__ ，进入 __metrics-server__ 插件安装界面。
 
-    ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createScale04.png)
-
+    ![工作负载](images/create-metrics-server-02.png)
 2. 阅读 __metrics-server__ 插件相关介绍，选择版本后点击 __安装__ 按钮。本文将以 __3.8.2__ 版本为例进行安装，推荐您安装 __3.8.2__ 及更高版本。
 
-    ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createScale05.png)
-
+    ![工作负载](images/create-metrics-server-01.png)
 3. 在安装配置界面配置基本参数。
 
-    ![工作负载](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/createScale06.png)
-
+    ![工作负载](images/create-metrics-server-03.png)
     - 名称：输入插件名称，请注意名称最长 63 个字符，只能包含小写字母、数字及分隔符（“-”）,且必须以小写字母或数字开头及结尾，例如 metrics-server-01。
     - 命名空间：选择插件安装的命名空间，此处以 __default__ 为例。
     - 版本：插件的版本，此处以 __3.8.2__ 版本为例。

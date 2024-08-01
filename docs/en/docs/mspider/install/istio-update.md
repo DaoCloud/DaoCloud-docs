@@ -68,7 +68,7 @@ After the upgrade is completed, go back to the mesh list page, and you will see 
 
     - Once the upgrade process starts, it cannot be terminated.
       It is recommended not to perform any configuration operations on the mesh during the upgrade.
-    - For a more intuitive demonstration of the process, please refer to the [video tutorial](../../videos/mspider.md).
+    - For a more intuitive demonstration of the process, refer to the [video tutorial](../../videos/mspider.md).
 
 ## Manual Upgrade: External Mesh
 
@@ -85,4 +85,4 @@ recommended by Istio official. Please follow the actual deployment scenario to p
     One-step upgrades for multiple versions (e.g., from 1.6.x to 1.8.x) have not been officially tested
     and promoted. It is strongly recommended to upgrade in a step-by-step manner.
 
-For more considerations on manual upgrade, please refer to the official [Istio Documentation](https://istio.io/latest/docs/setup/upgrade/)
+For more considerations on manual upgrade, refer to the official [Istio Documentation](https://istio.io/latest/docs/setup/upgrade/)

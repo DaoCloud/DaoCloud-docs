@@ -35,14 +35,14 @@ For S3 compatible services, simply configure the [clusterConfig.yaml](../cluster
 
 ### Using Non-S3 Compatible Service
 
-For non-S3 compatible services, you need to manually import the offline binaries package `offline/kubespray-binary/offline-files.tar.gz` from the downloaded [image offline package](../start-install.md/#_1) directory,
+For non-S3 compatible services, you need to manually import the offline binaries package `offline/kubespray-binary/offline-files.tar.gz` from the downloaded [image offline package](../start-install.md#offline-installation-steps) directory,
 and then configure the relevant parameters in the [clusterConfig.yaml](../cluster-config.md).
 
 The following instructions assume that CentOS 7.9 x86_64 is used as the cluster node and Nginx is used as the HTTP server.
 In theory, other generic HTTP servers can also be supported, but pay attention to the mapping relationship between URL access paths and file paths.
 
 1. Ensure that an available Nginx service exists, and the node where the service resides has login and file writing permissions.
-2. Copy the binaries offline package from the seed node
+2. Copy the binaries offline package from the bootstrap node
    (<path to the decompressed offline package>/offline/kubespray-binary/offline-files.tar.gz, <path to the decompressed offline package>/offline/component-tools.tar.gz)
    to the node where the nginx service is located.
 

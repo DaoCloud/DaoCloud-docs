@@ -49,7 +49,7 @@
 
 2. 在左侧导航栏，点击 __Helm 应用__ ，进入 Helm 应用列表页面。
 
-    在 Helm 应用列表页选择需要更新的 Helm 应用，点击列表右侧的 __⋮__ 操作按钮，在下拉选择中选择 __更新__ 操作。
+    在 Helm 应用列表页选择需要更新的 Helm 应用，点击列表右侧的 __┇__ 操作按钮，在下拉选择中选择 __更新__ 操作。
 
     ![点击更新](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/helm08.png)
 
@@ -73,7 +73,7 @@ Helm 应用的每次安装、更新、删除都有详细的操作记录和日志
 
     ![helm 操作](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/helm05.png)
 
-2. 如需查看每一次操作的详细日志：在列表右侧点击 __⋮__ ，在弹出菜单中选择 __日志__ 。
+2. 如需查看每一次操作的详细日志：在列表右侧点击 __┇__ ，在弹出菜单中选择 __日志__ 。
 
     ![选择日志](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/helm06.png)
 
@@ -91,7 +91,7 @@ Helm 应用的每次安装、更新、删除都有详细的操作记录和日志
 
 2. 在左侧导航栏，点击 __Helm 应用__ ，进入 Helm 应用列表页面。
 
-    在 Helm 应用列表页选择您需要删除的 Helm 应用，点击列表右侧的 __⋮__ 操作按钮，在下拉选择中选择 __删除__ 。
+    在 Helm 应用列表页选择您需要删除的 Helm 应用，点击列表右侧的 __┇__ 操作按钮，在下拉选择中选择 __删除__ 。
 
     ![点击删除](https://docs.daocloud.io/daocloud-docs-images/docs/kpanda/images/helm12.png)
 

@@ -1,10 +1,10 @@
-# Create a RedHat 9.2 Working Cluster on a CentOS Management Platform
+# Create a RedHat 9.2 Worker Cluster on a CentOS Management Platform
 
-This article explains how to create a RedHat 9.2 working cluster on an existing CentOS management platform.
+This article explains how to create a RedHat 9.2 worker cluster on an existing CentOS management platform.
 
 !!! note
 
-    This article only applies to the offline mode, using the DCE 5.0 platform to create a working cluster. The architecture of the management platform and the cluster to be created are both AMD.
+    This article only applies to the offline mode, using the DCE 5.0 platform to create a worker cluster. The architecture of the management platform and the cluster to be created are both AMD.
     When creating a cluster, heterogeneous deployment (mixing AMD and ARM) is not supported. After the cluster is created, you can use the method of connecting heterogeneous nodes to achieve mixed deployment and management of the cluster.
 
 ## Prerequisites
@@ -75,4 +75,4 @@ MINIO_USER=rootuser MINIO_PASS=rootpass123 ./import_iso.sh http://127.0.0.1:9000
 
 ## Create the Cluster in the UI
 
-Refer to the document [Creating a Working Cluster](../user-guide/clusters/create-cluster.md) to create a RedHat 9.2 cluster.
+Refer to the document [Creating a Worker Cluster](../user-guide/clusters/create-cluster.md) to create a RedHat 9.2 cluster.

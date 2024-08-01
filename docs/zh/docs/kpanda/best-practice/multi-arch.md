@@ -82,7 +82,12 @@ tar -xvf offline-v0.18.0-arm64.tar
 
 ### 添加异构工作节点
 
-请确保已经登录到 DCE 5.0 的 Global 集群的管理节点上。
+!!! note
+
+    如果您安装的 DCE 5.0 版本高于（包含）[DCE5.0-20230731](../../dce/dce-rn/20230731.md)，
+    完成以上步骤后，您可以直接在界面中接入节点；反之，您需要继续执行以下步骤来接入异构节点。
+
+请确保已经登录到 DCE 5.0 [全局服务集群](../user-guide/clusters/cluster-role.md#_2)的管理节点上。
 
 #### 修改主机清单文件
 
@@ -94,33 +99,33 @@ tar -xvf offline-v0.18.0-arm64.tar
     apiVersion: v1
     kind: ConfigMap
     metadata:
-        name: ${cluster-name}-hosts-conf
-        namespace: kubean-system
+      name: ${cluster-name}-hosts-conf
+      namespace: kubean-system
     data:
-        hosts.yml: |
-            all:
-            hosts:
+      hosts.yml: |
+        all:
+          children:
+            etcd:
+              hosts:
                 centos-master:
-                ip: 10.5.14.122
-                access_ip: 10.5.14.122
-                ansible_host: 10.5.14.122
-                ansible_connection: ssh
-                ansible_user: root
-                ansible_ssh_pass: ******
-            children:
+            k8s_cluster:
+              children:
                 kube_control_plane:
-                hosts:
-                    centos-master: 
                 kube_node:
-                hosts:
-                    centos-master: 
-                etcd:
-                hosts:
-                    centos-master: 
-                k8s_cluster:
-                children:
-                    kube_control_plane: 
-                    kube_node: 
+            kube_control_plane:
+              hosts:
+                centos-master:
+            kube_node:
+              hosts:
+                centos-master:
+        hosts:
+          centos-master:
+            ip: 10.5.14.122
+            access_ip: 10.5.14.122
+            ansible_host: 10.5.14.122
+            ansible_connection: ssh
+            ansible_user: root
+            ansible_ssh_pass: ******
     ```
 
 === "新增节点后"
@@ -129,42 +134,42 @@ tar -xvf offline-v0.18.0-arm64.tar
     apiVersion: v1
     kind: ConfigMap
     metadata:
-        name: ${cluster-name}-hosts-conf
-        namespace: kubean-system
+      name: ${cluster-name}-hosts-conf
+      namespace: kubean-system
     data:
-        hosts.yml: |
-            all:
-            hosts:
-                centos-master:
-                ip: 10.5.14.122
-                access_ip: 10.5.14.122
-                ansible_host: 10.5.14.122
-                ansible_connection: ssh
-                ansible_user: root
-                ansible_ssh_pass: ******
-                # 添加异构节点信息
-                kylin-worker:
-                ip: 10.5.10.220
-                access_ip: 10.5.10.220
-                ansible_host: 10.5.10.220
-                ansible_connection: ssh
-                ansible_user: root
-                ansible_ssh_pass: dangerous@2022
+      hosts.yml: |
+        all:
+          hosts:
+            centos-master:
+              ip: 10.5.14.122
+              access_ip: 10.5.14.122
+              ansible_host: 10.5.14.122
+              ansible_connection: ssh
+              ansible_user: root
+              ansible_ssh_pass: ******
+              # 添加异构节点信息
+            kylin-worker:
+              ip: 10.5.10.220
+              access_ip: 10.5.10.220
+              ansible_host: 10.5.10.220
+              ansible_connection: ssh
+              ansible_user: root
+              ansible_ssh_pass: dangerous@2022
             children:
-                kube_control_plane:
+              kube_control_plane:
                 hosts:
-                    centos-master: 
-                kube_node:
+                  - centos-master
+              kube_node:
                 hosts:
-                    centos-master: 
-                    kylin-worker: # 添加新增的异构节点名称
-                etcd:
+                  - centos-master
+                  - kylin-worker  # 添加新增的异构节点名称
+              etcd:
                 hosts:
-                    centos-master: 
-                k8s_cluster:
+                  - centos-master
+              k8s_cluster:
                 children:
-                    kube_control_plane: 
-                    kube_node: 
+                  - kube_control_plane
+                  - kube_node
     ```
 
 按照上述的配置注释，添加新增的工作节点信息。

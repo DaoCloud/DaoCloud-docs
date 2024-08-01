@@ -8,15 +8,15 @@ This page explains how to install or upgrade the Middleware - MinIO module after
 
 ## Load Images from Installation Package
 
-You can load images in one of the following two ways. It is recommended to use chart-syncer to synchronize images to an image repository when there is an image repository available in the environment, as it is more efficient and convenient.
+You can load images in one of the following two ways. It is recommended to use chart-syncer to synchronize images to an container registry when there is an container registry available in the environment, as it is more efficient and convenient.
 
-### Synchronize Images to Image Repository using chart-syncer
+### Synchronize Images to Container Registry using chart-syncer
 
 1. Create __load-image.yaml__ .
 
     !!! note
 
-        All parameters in this YAML file are required. You need a private image repository and modify the relevant configuration.
+        All parameters in this YAML file are required. You need a private container registry and modify the relevant configuration.
 
     === "Chart Repo Installed"
 
@@ -26,18 +26,18 @@ You can load images in one of the following two ways. It is recommended to use c
         source:
           intermediateBundlesPath: mcamel-offline # Relative path to the charts-syncer command execution, not relative to this YAML file and the offline package
         target:
-          containerRegistry: 10.16.10.111 # Replace with your image repository URL
-          containerRepository: release.daocloud.io/mcamel # Replace with your image repository
+          containerRegistry: 10.16.10.111 # Replace with your container registry URL
+          containerRepository: release.daocloud.io/mcamel # Replace with your container registry
           repo:
             kind: HARBOR # It can be any other supported Helm Chart repository type
             url: http://10.16.10.111/chartrepo/release.daocloud.io # Replace with chart repo URL
             auth:
-              username: "admin" # Your image repository username
-              password: "Harbor12345" # Your image repository password
+              username: "admin" # Your container registry username
+              password: "Harbor12345" # Your container registry password
           containers:
             auth:
-              username: "admin" # Your image repository username
-              password: "Harbor12345" # Your image repository password
+              username: "admin" # Your container registry username
+              password: "Harbor12345" # Your container registry password
         ```
 
     === "Chart Repo Not Installed"
@@ -48,15 +48,15 @@ You can load images in one of the following two ways. It is recommended to use c
         source:
           intermediateBundlesPath: mcamel-offline # Relative path to the charts-syncer command execution, not relative to this YAML file and the offline package
         target:
-          containerRegistry: 10.16.10.111 # Replace with your image repository URL
-          containerRepository: release.daocloud.io/mcamel # Replace with your image repository
+          containerRegistry: 10.16.10.111 # Replace with your container registry URL
+          containerRepository: release.daocloud.io/mcamel # Replace with your container registry
           repo:
             kind: LOCAL
             path: ./local-repo # Local path to the chart
           containers:
             auth:
-              username: "admin" # Your image repository username
-              password: "Harbor12345" # Your image repository password
+              username: "admin" # Your container registry username
+              password: "Harbor12345" # Your container registry password
         ```
 
 1. Run the command to synchronize images.
@@ -155,10 +155,10 @@ There are two ways to upgrade. Choose the corresponding upgrade method based on 
 
     1. Run `helm upgrade` .
 
-        Before upgrading, it is recommended to update the  `global.imageRegistry` field in mcamel-minio.yaml to the address of the image repository currently in use.
+        Before upgrading, it is recommended to update the  `global.imageRegistry` field in mcamel-minio.yaml to the address of the container registry currently in use.
 
         ```shell
-        export imageRegistry={your image repository}
+        export imageRegistry={your-registry}
         ```
 
         ```shell
@@ -181,10 +181,10 @@ There are two ways to upgrade. Choose the corresponding upgrade method based on 
 
     1. Run `helm upgrade` .
 
-        Before upgrading, it is recommended to update the __bak.yaml__ file's  `global.imageRegistry` field to the address of the image repository currently in use.
+        Before upgrading, it is recommended to update the __bak.yaml__ file's  `global.imageRegistry` field to the address of the container registry currently in use.
 
         ```shell
-        export imageRegistry={your image repository}
+        export imageRegistry={your-registry}
         ```
 
         ```shell

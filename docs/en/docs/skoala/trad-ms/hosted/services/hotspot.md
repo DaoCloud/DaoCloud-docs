@@ -26,7 +26,7 @@ Follow the steps below to create a hotspot rule:
 
 3. Fill in the rule configuration based on the instructions below and click __OK__ in the bottom right corner.
 
-    - Name: Specify the name of the resource that needs traffic control, such as an API interface, function, variable, etc., within the current service.
+    - Name: Specify the name of the resource that needs traffic control, such as an API interface, function, and variable within the current service.
     - Parameter Index: The index position of the hotspot parameter, corresponding to the parameter index position in `WithArgs(args ...interface{})`, starting from 0.
     - Current limiting mode: Choose whether to control the traffic based on the thread count of the called resource or QPS (Queries Per Second).
     - Single Threshold: The threshold that applies to each hotspot parameter. For example, when the QPS reaches a certain value, flow control will be applied to the hotspot parameter.

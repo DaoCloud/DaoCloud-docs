@@ -1,8 +1,8 @@
-# Middleware data service permission description
+# Middleware Permissions
 
-[Middleware Data Service](../../middleware/index.md) includes selected middleware:
+[Middleware](../../middleware/index.md) includes selected middleware:
 MySQL, Redis, MongoDB, PostgreSQL, Elasticsearch, Kafka, RabbitMQ, RocketMQ, MinIO.
-Middleware Data Services supports three user roles:
+Middleware supports three user roles:
 
 - Workspace Admin
 - Workspace Editor
@@ -11,13 +11,13 @@ Middleware Data Services supports three user roles:
 Each role has different permissions, which are described below.
 
 <!--
-You have permission to use `&check;`, but you don't have permission to use `&cross;`
+Use `&check;`for permissions granted and `&cross;`for permissions not granted.
 -->
 
-## Middleware Data Service Permission Description
+## Middleware Permissions
 
 | Middleware Modules | Menu Objects | Actions | Workspace Admin | Workspace Editor | Workspace Viewer |
-| ------------- | ---------------------- | ------------ -------- | --------------- | ---------------- | -------- -------- |
+| ------- | ----------------- | ------- | --------------- | ---------------- | --------------- |
 | MySQL | MySQL Instance List | View List | &check; | &check; | &check; |
 | | | instance name search | &check; | &check; | &check; |
 | | | Create instance | &check; | &check; | &cross; |

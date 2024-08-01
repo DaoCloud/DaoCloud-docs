@@ -1,3 +1,8 @@
+---
+MTPE: ModetaNiu
+DATE: 2024-07-11
+---
+
 # Automatic VM Drifting
 
 This article will explain how to seamlessly migrate running virtual machines to other nodes
@@ -11,9 +16,9 @@ the migration process through the interface, rather than having the system autom
 
 Before implementing automatic drifting, the following prerequisites must be met:
 
-- The virtual machine has not performed disk commit operations, or is using rook-ceph as the storage system.
+- The virtual machine has not performed disk commit operations, or is using Rook-ceph or HwameiStor HA as the storage system.
 - The node has been unreachable for more than five minutes.
-- Ensure there are at least two available nodes in the cluster.
+- Ensure there are at least two available nodes in the cluster, and the virtual machine has not specified a scheduling node.
 - The virtual machine's launcher pod has been deleted.
 
 ## Steps

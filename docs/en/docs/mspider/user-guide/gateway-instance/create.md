@@ -36,4 +36,4 @@ The steps to create a Mesh Gateway are as follows.
 
 !!! info
 
-    For a more intuitive operation demonstration, please refer to [Video Tutorial](../../../videos/mspider.md).
+    For a more intuitive operation demonstration, refer to [Video Tutorial](../../../videos/mspider.md).

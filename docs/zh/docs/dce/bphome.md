@@ -30,7 +30,7 @@ hide:
     - [安装到不同 Linux 发行版](../install/os-install/uos-v20-install-dce5.0.md)
     - [安装到 OpenShift 和阿里云上](../install/k8s-install/ocp-install-dce5.0.md)
 
-- :material-microsoft-azure-devops:{ .lg .middle } __应用工作台__
+- :material-microsoft-azure-devops:{ .lg .middle } [__应用工作台__](../amamba/intro/index.md)
 
     ---
 
@@ -48,7 +48,7 @@ hide:
 
 <div class="grid cards" markdown>
 
-- :octicons-container-16:{ .lg .middle } __容器管理之一__
+- :octicons-container-16:{ .lg .middle } [__容器管理之一__](../kpanda/intro/index.md)
 
     ---
 
@@ -60,7 +60,7 @@ hide:
     - [部署与升级 Kubean 向下兼容版本](../kpanda/best-practice/kubean-low-version.md)
     - [在 DCE 5.0 上使用 NVIDIA GPU](../kpanda/user-guide/gpu/nvidia/index.md)
 
-- :octicons-container-16:{ .lg .middle } __容器管理之二__
+- :octicons-container-16:{ .lg .middle } [__容器管理之二__](../kpanda/intro/index.md)
 
     ---
 
@@ -72,7 +72,7 @@ hide:
     - [替换工作集群的首个控制节点](../kpanda/best-practice/replace-first-master-node.md)
     - [为全局服务集群的工作节点扩容](../kpanda/best-practice/add-worker-node-on-global.md)
 
-- :material-warehouse:{ .lg .middle } __镜像仓库__
+- :material-warehouse:{ .lg .middle } [__镜像仓库__](../kangaroo/intro/index.md)
 
     ---
 
@@ -84,7 +84,7 @@ hide:
     - [镜像仓库容量资源规划](../kangaroo/best-practice/capacity-planning.md)
     - [通过 LB 模式部署 Harbor](../kangaroo/best-practice/lb.md)
 
-- :material-dot-net:{ .lg .middle } __云原生网络__
+- :material-dot-net:{ .lg .middle } [__云原生网络__](../network/intro/index.md)
     
     ---
 
@@ -96,7 +96,7 @@ hide:
     - [集成 Calico](../network/modules/calico/index.md)
     - [集成 Cilium](../network/modules/cilium/index.md)
 
-- :simple-googlecloudstorage:{ .lg .middle } __云原生存储__
+- :simple-googlecloudstorage:{ .lg .middle } [__云原生存储__](../storage/index.md)
     
     ---
 
@@ -108,7 +108,7 @@ hide:
     - [集成部署 TiDB](../storage/hwameistor/application/tidb.md)
     - [通过 Helm 模板部署 Fluid](../storage/solutions/fluid.md)
 
-- :material-cloud-check:{ .lg .middle } __多云编排和虚拟机__
+- :material-cloud-check:{ .lg .middle } [__多云编排__](../kairship/intro/index.md)和[__虚拟机__](../virtnest/intro/index.md) 
 
     ---
 
@@ -125,7 +125,7 @@ hide:
 
 <div class="grid cards" markdown>
 
-- :material-monitor-dashboard:{ .lg .middle } __可观测性__
+- :material-monitor-dashboard:{ .lg .middle } [__可观测性__](../insight/intro/index.md)
 
     ---
 
@@ -137,7 +137,7 @@ hide:
     - [使用 OTel 赋予应用可观测性](../insight/quickstart/otel/otel.md)
     - [使用 OTel SDK 为应用暴露指标](../insight/quickstart/otel/meter.md)
 
-- :material-engine:{ .lg .middle } __微服务引擎__
+- :material-engine:{ .lg .middle } [__微服务引擎__](../skoala/intro/index.md)
 
     ---
 
@@ -149,7 +149,7 @@ hide:
     - [网关 API 策略](../skoala/best-practice/gateway02.md)
     - [通过网关访问微服务](../skoala/best-practice/gateway01.md)
 
-- :material-table-refresh:{ .lg .middle } __服务网格__
+- :material-table-refresh:{ .lg .middle } [__服务网格__](../mspider/intro/index.md)
 
     ---
 
@@ -167,7 +167,7 @@ hide:
 
 <div class="grid cards" markdown>
 
-- :material-middleware:{ .lg .middle } __中间件__
+- :material-middleware:{ .lg .middle } [__中间件__](../middleware/index.md)
 
     ---
 
@@ -179,7 +179,7 @@ hide:
     - [Kafka 双机房部署灾备方案](../middleware/kafka/bestpractice/kafkain2IDC.md)
     - [RabbitMQ 单集群跨机房高可用部署](../middleware/rocketmq/best-pratice/singleclustercrosszone.md)
 
-- :fontawesome-solid-user-group:{ .lg .middle } __全局管理__
+- :fontawesome-solid-user-group:{ .lg .middle } [__全局管理__](../ghippo/intro/index.md)
 
     ---
 
@@ -191,7 +191,7 @@ hide:
     - [GProduct 对接全局管理](../ghippo/best-practice/gproduct/intro.md)
     - [OEM IN 和 OEM OUT](../ghippo/best-practice/oem/oem-in.md)
 
-- :material-slot-machine:{ .lg .middle } __智能算力和云边协同__
+- :material-slot-machine:{ .lg .middle } [__智能算力__](../baize/intro/index.md)和[__云边协同__](../kant/intro/index.md)
 
     ---
 

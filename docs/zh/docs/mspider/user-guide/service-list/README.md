@@ -38,7 +38,7 @@ hide:
 
 ![异常提示](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/servicelist04.png)
 
-在服务列表右侧，点击 __⋮__ 选择相应的菜单项，可以跳转至流量治理和安全治理。
+在服务列表右侧，点击 __┇__ 选择相应的菜单项，可以跳转至流量治理和安全治理。
 
 ![菜单项](https://docs.daocloud.io/daocloud-docs-images/docs/mspider/images/servicelist05.png)
 

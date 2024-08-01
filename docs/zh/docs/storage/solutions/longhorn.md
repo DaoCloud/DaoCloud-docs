@@ -36,7 +36,7 @@ Longhorn 与 DCE 可以结合使用部署高可用性持久化块存储。
 1. 高可用 High Availability
 
     - 支持 Replica 自动平衡设置
-    - 支持 data locality setting：使用存储卷的 pod 运行的节点上至少有一个 replica 副本
+    - 支持 data locality setting：使用存储卷的 Pod 运行的节点上至少有一个 replica 副本
     - 支持显示节点存储空间使用。
     - 支持 Kubernetes Cluster Autoscaler (Experimental)
     - 支持存储卷意外卸载后的的自动恢复
@@ -44,14 +44,14 @@ Longhorn 与 DCE 可以结合使用部署高可用性持久化块存储。
 
 1. 监控 Monitoring
 
-    - 支持 Prometheus and Grafana 监控 Longhorn
-    - Longhorn metrics 可以被整合进 DCE 监控系统
-    - 支持 Kubelete Metrics 监控
+    - 支持 Prometheus 和 Grafana 监控 Longhorn
+    - Longhorn 指标可以被整合进 DCE 监控系统
+    - 支持 kubelet 指标监控
     - 支持 Longhorn 告警策略
 
 1. 高级功能
 
-    - 支持 Backing Image
+    - 支持镜像备份
     - 支持 Orphaned Replica Directories
     - 支持 DCE 集群恢复：集群所有存储卷的恢复
     - 支持多写操作 ReadWriteMany (RWX) workloads （NFSv4）

@@ -26,7 +26,7 @@ Prerequisite: Admin or IAM Owner.
 
 Prerequisite: The group already exists.
 
-1. Enters __Access Control__ , selects __Groups__ , enters the list of groups, and clicks __⋮__ -> __Add permissions__ .
+1. Enters __Access Control__ , selects __Groups__ , enters the list of groups, and clicks __┇__ -> __Add permissions__ .
 
     ![add permissions](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/group02.png)
 
@@ -40,7 +40,7 @@ Prerequisite: The group already exists.
 
 ## Add users to a group
 
-1. Enters __Access Control__ , selects __Groups__ to display the group list, and on the right side of a group, click __⋮__ -> __Add Members__ .
+1. Enters __Access Control__ , selects __Groups__ to display the group list, and on the right side of a group, click __┇__ -> __Add Members__ .
 
     ![members](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/group05.png)
 
@@ -58,7 +58,7 @@ Prerequisite: The group already exists.
 
 Note: Deleting a group will not delete the users in the group, but the users in the group will no longer be able to inherit the permissions of the group
 
-1. The administrator enters __Access Control__ , selects __group__ to enter the group list, and on the right side of a group, click __⋮__ -> __Delete__ .
+1. The administrator enters __Access Control__ , selects __group__ to enter the group list, and on the right side of a group, click __┇__ -> __Delete__ .
 
     ![delete](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/ghippo/images/deletegroup01.png)
 

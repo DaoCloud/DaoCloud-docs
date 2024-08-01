@@ -1,6 +1,6 @@
 # Offline Upgrade
 
-Multi-cloud orchestration supports offline upgrades. You need to load the images from the installation package and then execute the respective commands for upgrading.
+Multicloud orchestration supports offline upgrades. You need to load the images from the installation package and then execute the respective commands for upgrading.
 
 !!! info
 
@@ -8,13 +8,13 @@ Multi-cloud orchestration supports offline upgrades. You need to load the images
 
 ## Load Images from the Downloaded Installation Package
 
-You can load the images in one of the following two ways, but it is recommended to use chart-syncer to synchronize the images to the image repository when an image repository is available in the environment. This method is more efficient and convenient.
+You can load the images in one of the following two ways, but it is recommended to use chart-syncer to synchronize the images to the container registry when an container registry is available in the environment. This method is more efficient and convenient.
 
 #### Method 1: Synchronize Images Using chart-syncer
 
-Using chart-syncer, you can upload the charts and their dependent image packages from the downloaded installation package to the image repository and helm repository used by the installer to deploy DCE.
+Using chart-syncer, you can upload the charts and their dependent image packages from the downloaded installation package to the container registry and helm repository used by the installer to deploy DCE.
 
-First, find a node that can connect to the image repository and helm repository (e.g., the spark node) and create the __load-image.yaml__ configuration file on the node with the appropriate configuration information for the image repository and helm repository.
+First, find a node that can connect to the container registry and helm repository (e.g., the spark node) and create the __load-image.yaml__ configuration file on the node with the appropriate configuration information for the container registry and helm repository.
 
 1. Create __load-image.yaml__ 
 
@@ -30,14 +30,14 @@ First, find a node that can connect to the image repository and helm repository 
         source:
           intermediateBundlesPath: kairship # The path where the .tar.gz package is located after using chart-syncer
         target:
-          containerRegistry: 10.16.10.111 # Image repository address
-          containerRepository: release.daocloud.io/kairship # Image repository path
+          containerRegistry: 10.16.10.111 # Container registry address
+          containerRepository: release.daocloud.io/kairship # Container registry path
           repo:
             kind: HARBOR # Helm Chart repository type
             url: http://10.16.10.111/chartrepo/release.daocloud.io # Helm repository address
             auth:
-              username: "admin" # Image repository username
-              password: "Harbor12345" # Image repository password
+              username: "admin" # Container registry username
+              password: "Harbor12345" # Container registry password
           containers:
             auth:
               username: "admin" # Helm repository username
@@ -52,15 +52,15 @@ First, find a node that can connect to the image repository and helm repository 
         source:
           intermediateBundlesPath: kairship # The path where the .tar.gz package is located after using chart-syncer
         target:
-          containerRegistry: 10.16.10.111 # Image repository URL
-          containerRepository: release.daocloud.io/kairship # Image repository path
+          containerRegistry: 10.16.10.111 # Container registry URL
+          containerRepository: release.daocloud.io/kairship # Container registry path
           repo:
             kind: LOCAL
             path: ./local-repo # Local chart path
           containers:
             auth:
-              username: "admin" # Image repository username
-              password: "Harbor12345" # Image repository password
+              username: "admin" # Container registry username
+              password: "Harbor12345" # Container registry password
         ```
 
 1. Run the command to synchronize the images.
@@ -165,7 +165,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
     
     1. Run `helm upgrade` .
     
-        Before upgrading, it is recommended to update the `global.imageRegistry` field in bak.yaml to the image repository address you are currently using.
+        Before upgrading, it is recommended to update the `global.imageRegistry` field in bak.yaml to the container registry address you are currently using.
     
         ```shell
         export imageRegistry={your_image_repository}
@@ -197,7 +197,7 @@ There are two ways to upgrade. You can choose the corresponding upgrade method b
     
     1. Run `helm upgrade` .
     
-        Before upgrading, it is recommended to update the `global.imageRegistry` field in bak.yaml to the image repository address you are currently using.
+        Before upgrading, it is recommended to update the `global.imageRegistry` field in bak.yaml to the container registry address you are currently using.
     
         ```shell
         export imageRegistry={your_image_repository}

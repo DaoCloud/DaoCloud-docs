@@ -30,7 +30,7 @@ Follow the steps below to create a folder:
 
 !!! note
 
-    To edit or delete a specific folder, select it and Click __⋮__ on the right side.
+    To edit or delete a specific folder, select it and Click __┇__ on the right side.
 
     - If there are resources bound to the resource group or shared resources within the folder, the folder cannot be deleted. All resources need to be unbound before deleting.
 
