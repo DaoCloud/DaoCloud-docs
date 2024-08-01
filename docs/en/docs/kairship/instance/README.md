@@ -24,7 +24,7 @@ DATE: 2024-08-01
     - Status of the instance
     - Overall CPU usage **based on the total resources of all worker clusters added into the instance**
     - Overall memory usage
-    - Number of clusters/nodes running in the current instance **detail page is provided**
-    - Number of propagation policies and override policies **detail page is provided**
+    - Number of clusters/nodes running in the current instance, **detail page is provided**
+    - Number of propagation policies and override policies, **detail page is provided**
 
         ![overview](../images/instance02.png)
