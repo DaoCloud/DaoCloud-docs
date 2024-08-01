@@ -4,6 +4,47 @@
 
 *[kpanda]: DaoCloud 容器管理的内部开发代号
 
+## 2024-07-31
+
+### v0.30.0
+
+#### 新增
+
+- **新增** 支持通过 addon 安装 koordinator 插件，并完成在离线混部
+- **新增** UI 生成 kubeconfig 支持 7 天或者自定义日期选项
+- **新增** helm 模板支持在界面上查看helm内容及生成的编排文件
+- **新增** Gpu-opeartor 离线化默认操作系统支持 centos7、ubuntu22.04、ubuntu20.04
+- **新增** 以文档方式支持华为昇腾 npu 虚拟化
+- **新增** npu 监控面板支持中英文切换
+- **新增** GPU-operator 支持开启 RDMA
+
+#### 优化
+
+- **优化** Ingress 列表增加域名字段
+- **优化** 支持 Global 集群 “集群厂商” 名称（Daocloud Kubean）修改 
+- **优化** Kpanda 性能持续优化 
+- **优化** 优化 kpanda GetClusterAdminKubeConfig 接口生成的证书只有一年有效期，过期无法正常使用场景
+- **优化** 支持集群接入证书的有效期检查和提醒
+- **优化** 优化 helm charts 安装时获取安装配置的接口调用
+- **优化** addon-pack charts 中镜像支持通过 -- platform 参数指定拉取镜像架构
+- **优化** helm controller 解耦 cluster service 和 rbac service 等优化
+- **优化** 优化切换GPU模式体验–添加切换状态
+- **优化** 优化 nvidia-vgpu 和 GPU-operator 安装时，引导用户如何切换 GPU 模式 
+- **优化** 优化 mig single模式被识别成整卡，用户使用时存在误解问题
+
+#### 修复
+
+- **修复** 修复 global 集群默认未安装 metrics-server，导致各个模块创建的 HPA 无效的问题
+- **修复** 修复 Kpanda 数据库连接问题
+- **修复** NSAdmin 角色 PV/PVC 权限问题修复
+- **修复** 修复修改集群的基础配置后，egress 端口被刷新，导致数据流中断，controller-manager 工作异常问题
+- **修复** 修复在工作负载详情的访问方式页面执行重启工作负载操作，service 接口报404 问题
+- **修复** 修复 addon 没有 cro-operator 对应的离线包问题
+- **修复** 修复 Ubuntu 内核自动更新升级，可能导致的系统在不经意间被重启问题
+- **修复** 修复安装使用MIG模式，偶尔在节点上显示整卡模式问题
+- **修复** 修复 GPU 虚拟化后，内存超配功能不可用问题
+- **修复** 修复调整 GPU 调度策略偶发调度策略切换失败问题
+
 ## 2024-06-30
 
 ### v0.29.0
