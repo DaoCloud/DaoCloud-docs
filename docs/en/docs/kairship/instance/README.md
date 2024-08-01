@@ -1,6 +1,8 @@
 ---
 hide:
   - toc
+MTPE: ModetaNiu
+DATE: 2024-08-01
 ---
 
 # View Multicloud Instance
@@ -9,18 +11,20 @@ hide:
 
     You can search instances by name in the search box above. Fuzzy match supported.
     
-    ![instance](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/check-instance02.png)
+    ![instance](../images/instance01.png)
 
 2. Check instance statistics.
 
-    The Overview page displays basic information, multicloud workload status, multicloud resources, and worker clusters. Specifically include:
+    The Overview page displays basic information, multicloud workload status, resource information, 
+    worker information, schedules, policy information and recent events. The page specifically includes:
 
     - Instance name/alias
-    - Instance creation time
-    - Karmada version of the current instance
-    - Instance status
+    - Creation time
+    - Karmada version
+    - Status of the instance
     - Overall CPU usage **based on the total resources of all worker clusters added into the instance**
     - Overall memory usage
-    - Number of healthy clusters/total number of clusters in the current instance
+    - Number of clusters/nodes running in the current instance **detail page is provided**
+    - Number of propagation policies and override policies **detail page is provided**
 
-        ![instance](https://docs.daocloud.io/daocloud-docs-images/docs/en/docs/kairship/images/check-instance01.png)
+        ![overview](../images/instance02.png)
