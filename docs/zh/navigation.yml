@@ -1139,7 +1139,7 @@ nav:
           - 智能算力:
               - 介绍:
                   - 什么是智能算力: baize/intro/index.md
-                  - 安装: baize/intro/install.md
+                  - 算力集群初始化: baize/intro/install.md
                   - 第一次使用: baize/intro/first.md
                   - Release Notes: baize/intro/release-notes.md
               - 开发控制台:
