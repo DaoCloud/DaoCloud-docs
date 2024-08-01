@@ -147,6 +147,7 @@ nav:
                       - 在指定的节点上运行: amamba/quickstart/pipeline-on-node.md                    
                       - 构建多架构镜像: amamba/user-guide/pipeline/podman.md
                       - 在流水线中使用缓存: amamba/quickstart/job-cacher.md
+                      - 使用自定义插件: amamba/user-guide/pipeline/custom-plugin.md
                       - 系统环境变量: amamba/user-guide/pipeline/system-env.md
               - GitOps:
                   - 导入代码仓库: amamba/user-guide/gitops/import-repo.md
