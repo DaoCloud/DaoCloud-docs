@@ -14,7 +14,7 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 | offline-community-v0.19.0-arm64.tar | v0.19.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.19.0.md) | 2024-07-09 |
 | offline-community-v0.19.0-amd64.tar | v0.19.0 | [:arrow_right: 下载页](./free/dce5-installer-v0.19.0.md) | 2024-07-09 |
 
-[更多历史版本](./free/dce5-installer-history.md)
+[社区版：更多历史版本](./free/dce5-installer-history.md){ .md-button } 
 
 ## 下载商业版
 
@@ -25,7 +25,7 @@ DaoCloud Enterprise 5.0 有两个版本：社区版和商业版。
 | offline-v0.19.0-arm64.tar | v0.19.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.19.0.md) | 2024-07-09 |
 | offline-v0.19.0-amd64.tar | v0.19.0 | [:arrow_right: 下载页](./business/dce5-installer-v0.19.0.md) | 2024-07-09 |
 
-[更多历史版本](./business/dce5-installer-history.md)
+[商业版：更多历史版本](./business/dce5-installer-history.md){ .md-button } 
 
 ## 下载 Addon 离线包
 
@@ -37,7 +37,7 @@ DCE 5.0 针对不同的应用场景提供了完善的 Addon，您可以按需下
 | standard-addon-offline-package-v0.19.0-arm64.tar.gz | v0.19.0 | [:arrow_right: 下载页](./addon/v0.19.0.md) | 2024-07-09 |
 | gpu-addon-offline-package-v0.19.0-amd64.tar.gz | v0.19.0 | [:arrow_right: 下载页](./addon/v0.19.0.md) | 2024-07-09 |
 
-[更多历史版本](./addon/history.md)
+[Addon：更多历史版本](./addon/history.md){ .md-button } 
 
 ## 下载子模块
 
@@ -50,16 +50,16 @@ DCE 5.0 包含的众多子模块可以单独下载，按需对每个模块进行
 | 集群巡检 | 174.30 MB | [:arrow_right: 下载页](./modules/kcollie.md)   | 2024-01-02 |
 | 应用备份 | 85.06 MB  | [:arrow_right: 下载页](./modules/kcoral.md)    | 2024-06-07 |
 | 安全管理 | 167.29 MB | [:arrow_right: 下载页](./modules/dowl.md)      | 2023-11-26 |
-| 网络模块 | 64.03 MB  | [:arrow_right: 下载页](./modules/spidernet.md) | 2023-12-26 |
+| 网络模块 | 64.03 MB  | [:arrow_right: 下载页](./modules/spidernet.md) | 2024-05-03 |
 | 存储模块 | 1.62 GB   | [:arrow_right: 下载页](./modules/hwameistor.md)| 2023-11-06 |
 | 多云编排 | 663.57 MB | [:arrow_right: 下载页](./modules/kairship.md)  | 2024-06-28 |
 | 镜像仓库 | 304.16 MB | [:arrow_right: 下载页](./modules/kangaroo.md)  | 2024-05-29 |
 | 可观测性 | 2.21 GB   | [:arrow_right: 下载页](./modules/insight.md)   | 2024-07-04 |
-| 微服务引擎| 1.66 GB  | [:arrow_right: 下载页](./modules/skoala.md)     | 2024-05-27 |
+| 微服务引擎| 1.66 GB  | [:arrow_right: 下载页](./modules/skoala.md)     | 2024-07-05 |
 | 服务网格 | 1.03 GB | [:arrow_right: 下载页](./modules/mspider.md)   | 2024-06-03 |
 | 云边协同 | 107 MB | [:arrow_right: 下载页](./modules/kant.md)      | 2024-07-30 |
 | 全局管理 | 458.30 MB | [:arrow_right: 下载页](./modules/ghippo.md)    | 2024-07-05 |
-| 运营管理 | 91.00 MB  | [:arrow_right: 下载页](./modules/gmagpie.md)   | 2024-04-30 |
+| 运营管理 | 96.41 MB  | [:arrow_right: 下载页](./modules/gmagpie.md)   | 2024-07-01 |
 | 虚拟机   | 1.43 GB  | [:arrow_right: 下载页](./modules/virtnest.md)   | 2024-06-04 |
 
 DCE 5.0 还提供了各种精选中间件：
