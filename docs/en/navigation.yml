@@ -1110,8 +1110,9 @@ nav:
                   - Initialize Intelligent Engine: baize/intro/install.md
                   - First Time Usage: baize/intro/first.md
                   - Intelligent Engine Release Notes: baize/intro/release-notes.md
-              - Development Console:
+              - Developer:
                   - Introduction: baize/developer/index.md
+                  - Quick Start: baize/developer/quick-start.md
                   - Notebooks:
                       - Create Notebook: baize/developer/notebooks/create.md
                       - Start and Pause Notebook: baize/developer/notebooks/start-pause.md
@@ -1119,19 +1120,22 @@ nav:
                       - Delete Notebook: baize/developer/notebooks/delete.md
                       - Notebook SSH Guide: baize/developer/notebooks/notebook-with-ssh.md
                       - baizectl CLI Guide: baize/developer/notebooks/baizectl.md
-                  - Jobs:
+                  - Job Center:
                       - Create Job: baize/developer/jobs/create.md
+                      - Create Pytorch Job: baize/developer/jobs/pytorch.md
+                      - Create Tensorflow Job: baize/developer/jobs/tensorflow.md
                       - Delete Job: baize/developer/jobs/delete.md
                       - View Job Load: baize/developer/jobs/view.md
+                      - Job Analysis: baize/developer/jobs/tensorboard.md
                   - Data Management:
-                      - Create Dataset: baize/developer/dataset/create-use-delete.md
-                      - Manage Runtime Env: baize/developer/dataset/conda.md
-                  - Inference Service:
+                      - Datasets: baize/developer/dataset/create-use-delete.md
+                      - Environments: baize/developer/dataset/conda.md
+                  - Model Service:
                       - Supported Models: baize/developer/inference/models.md
-                      - Create Inference Service: baize/developer/inference/create.md
+                      - Inference Service: baize/developer/inference/create.md
                       - Create with vLLM Framework: baize/developer/inference/vllm-inference.md
-              - OAM Management:
-                  - GPU Resource Management: baize/oam/resource.md
+              - Operator:
+                  - Resource Management: baize/oam/resource.md
                   - Queue Management:
                       - Create Queue: baize/oam/queue/create.md
                       - Delete Queue: baize/oam/queue/delete.md

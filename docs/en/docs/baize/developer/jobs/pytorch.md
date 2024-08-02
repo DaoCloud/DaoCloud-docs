@@ -1,44 +1,43 @@
-# Pytorch 任务
+# Pytorch Jobs
 
-Pytorch 是一个开源的深度学习框架，它提供了一个灵活的训练和部署环境。
-Pytorch 任务是一个使用 Pytorch 框架的任务。
+Pytorch is an open-source deep learning framework that provides a flexible environment for training and deployment.
+A Pytorch job is a job that uses the Pytorch framework.
 
-在智能算力中，我们提供了 Pytorch 任务支持和适配，您可以通过界面化操作，
-快速创建 Pytorch 任务，进行模型训练。
+In the Intelligent Engine platform, we provide support and adaptation for Pytorch jobs. Through a graphical interface, you can quickly create Pytorch jobs and perform model training.
 
-## 任务配置介绍
+## Job Configuration
 
-- 任务类型同时支持 `Pytorch 单机` 和 `Pytorch 分布式` 两种模式。
-- 运行镜像内已经默认支持 Pytorch 框架，无需额外安装。
+- Job types support both `Pytorch Single` and `Pytorch Distributed` modes.
+- The runtime image already supports the Pytorch framework by default, so no additional installation is required.
 
-## 任务运行环境
+## Job Runtime Environment
 
-在这里我们使用 `baize-notebook` 基础镜像 和 `关联环境` 的方式来作为任务基础运行环境。
+Here we use the `baize-notebook` base image and the `associated environment` as the basic runtime environment for the job.
 
-> 了解如何创建环境，请参考 [环境列表](../dataset/environments.md)。
+> To learn how to create an environment, refer to [Environments](../dataset/environments.md).
 
-## 创建任务
+## Create Jobs
 
-### Pytorch 单机任务
+### Pytorch Single Jobs
 
-![Pytorch 单机任务](../../images/job05.png)
+<!-- add screenshot later -->
 
-1. 登录智能算力平台，点击左侧导航栏中的 **任务中心** ，进入 **任务列表** 页面。
-2. 点击右上角的 **创建** 按钮，进入任务创建页面。
-3. 选择任务类型为 `Pytorch 单机`，点击 **下一步** 。
-4. 填写任务名称、描述后点击 **确定** 。
+1. Log in to the Intelligent Engine platform, click **Job Center** in the left navigation bar to enter the **Jobs** page.
+2. Click the **Create** button in the upper right corner to enter the job creation page.
+3. Select the job type as `Pytorch Single` and click **Next** .
+4. Fill in the job name and description, then click **OK** .
 
-#### 运行参数
+#### Parameters
 
-- 启动命令 使用 `bash`
-- 命令参数使用
+- Start command: `bash`
+- Command parameters:
 
 ```python
 import torch
 import torch.nn as nn
 import torch.optim as optim
 
-# 定义一个简单的神经网络
+# Define a simple neural network
 class SimpleNet(nn.Module):
     def __init__(self):
         super(SimpleNet, self).__init__()
@@ -47,22 +46,22 @@ class SimpleNet(nn.Module):
     def forward(self, x):
         return self.fc(x)
 
-# 创建模型、损失函数和优化器
+# Create model, loss function, and optimizer
 model = SimpleNet()
 criterion = nn.MSELoss()
 optimizer = optim.SGD(model.parameters(), lr=0.01)
 
-# 生成一些随机数据
+# Generate some random data
 x = torch.randn(100, 10)
 y = torch.randn(100, 1)
 
-# 训练模型
+# Train the model
 for epoch in range(100):
-    # 前向传播
+    # Forward pass
     outputs = model(x)
     loss = criterion(outputs, y)
     
-    # 反向传播和优化
+    # Backward pass and optimization
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
@@ -73,9 +72,9 @@ for epoch in range(100):
 print('Training finished.')
 ```
 
-#### 运行结果
+#### Results
 
-任务提交成功，我们可以进入任务详情查看到资源的使用情况，从右上角去往 **工作负载详情** ，可以查看训练过程中的日志输出
+Once the job is successfully submitted, we can enter the job details to see the resource usage. From the upper right corner, go to **Workload Details** to view the log output during the training process.
 
 ```bash
 [HAMI-core Warn(1:140244541377408:utils.c:183)]: get default cuda from (null)
@@ -94,17 +93,17 @@ Training finished.
 [HAMI-core Msg(1:140244541377408:multiprocess_memory_limit.c:468)]: Calling exit handler 1
 ```
 
-### Pytorch 分布式任务
+### Pytorch Distributed Jobs
 
-1. 登录智能算力平台，点击左侧导航栏中的 **任务中心** ，进入 **任务列表** 页面。
-2. 点击右上角的 **创建** 按钮，进入任务创建页面。
-3. 选择任务类型为 `Pytorch 分布式`，点击 **下一步** 。
-4. 填写任务名称、描述后点击 **确定** 。
+1. Log in to the Intelligent Engine platform, click **Job Center** in the left navigation bar to enter the **Jobs** page.
+2. Click the **Create** button in the upper right corner to enter the job creation page.
+3. Select the job type as `Pytorch Distributed` and click **Next**.
+4. Fill in the job name and description, then click **OK**.
 
-#### 运行参数
+#### Parameters
 
-- 启动命令 使用 `bash`
-- 命令参数使用
+- Start command: `bash`
+- Command parameters:
 
 ```python
 import os
@@ -123,7 +122,7 @@ class SimpleModel(nn.Module):
         return self.fc(x)
 
 def train():
-    # 打印环境信息
+    # Print environment information
     print(f'PyTorch version: {torch.__version__}')
     print(f'CUDA available: {torch.cuda.is_available()}')
     if torch.cuda.is_available():
@@ -135,7 +134,7 @@ def train():
     
     print(f'Rank: {rank}, World Size: {world_size}')
 
-    # 初始化分布式环境
+    # Initialize distributed environment
     try:
         if world_size > 1:
             dist.init_process_group('nccl')
@@ -146,7 +145,7 @@ def train():
         print(f'Error initializing process group: {e}')
         return
 
-    # 设置设备
+    # Set device
     try:
         if torch.cuda.is_available():
             device = torch.device(f'cuda:{rank % torch.cuda.device_count()}')
@@ -180,7 +179,7 @@ def train():
     loss_fn = nn.MSELoss()
     optimizer = optim.SGD(ddp_model.parameters(), lr=0.001)
 
-    # 生成一些随机数据
+    # Generate some random data
     try:
         data = torch.randn(100, 10, device=device)
         labels = torch.randn(100, 1, device=device)
@@ -211,17 +210,18 @@ if __name__ == '__main__':
     train()
 ```
 
-#### 任务副本数
+#### Number of Job Replicas
 
-注意 `Pytorch 分布式` 训练任务会创建一组 `Master` 和 `Worker` 的训练 Pod，
-`Master` 负责协调训练任务，`Worker` 负责实际的训练工作。
+Note that `Pytorch Distributed` training jobs will create a group of `Master` and `Worker` training Pods,
+where the `Master` is responsible for coordinating the training job, and the `Worker` is responsible for the actual training work.
 
 !!! note
 
-    本次演示中：`Master` 副本数为 1，`Worker` 副本数为 2；
-    所以我们需要在 **任务配置** 中设置副本数为 3，即 `Master` 副本数 + `Worker` 副本数。
-    Pytorch 会自动调谐 `Master` 和 `Worker` 的角色。
+    In this demonstration: `Master` replica count is 1, `Worker` replica count is 2;
+    Therefore, we need to set the replica count to 3 in the **Job Configuration** ,
+    which is the sum of `Master` and `Worker` replica counts.
+    Pytorch will automatically tune the roles of `Master` and `Worker`.
 
-#### 运行结果
+#### Run Results
 
-同样，我们可以进入任务详情，查看资源的使用情况，以及每个 Pod 的日志输出。
+Similarly, we can enter the job details to view the resource usage and the log output of each Pod.
