@@ -177,6 +177,7 @@ nav:
                       - 流水线 + GitOps实现CI/CD: amamba/quickstart/argocd-jenkins.md
                       - 在托管网格中使用GitOps: amamba/quickstart/istio_argocd.md
                       - 在托管网格中灰度发布: amamba/quickstart/istio_argocd_rollout.md
+                      - ArgoCD 与多云编排联动完成多云应用发布: amamba/quickstart/argo-karmada.md
                   - CI 实践:
                       - 使用流水线实现代码扫描: amamba/quickstart/scan-with-pipeline.md
                       - 集成 Harbor 镜像安全扫描: amamba/quickstart/scan-with-harbor.md
