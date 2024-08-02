@@ -9,11 +9,53 @@ This page lists the release notes of Microservices to help you learn its feature
 
 *[skoala]: Internal development codename for DaoCloud Microservice Engine
 
+## 2024-07-31
+
+### v0.39.1
+
+#### Fixes
+
+- **Fixed** an issue with the incorrect version of the Nacos image.
+
+## 2024-07-25
+
+### v0.39.0
+
+#### Features
+
+- **Added** support for integrating LDAP authentication in Nacos.
+- **Added** logic for removing associated resources when Nacos is deleted.
+- **Added** display of policy activation status in gateway domain names, APIs, and service lists.
+- **Added** pre-deletion detection capability for Nacos.
+- **Added** support for displaying detailed gateway exception information.
+- **Added** a rule tag column to the lists of gateway services, APIs, and domain names.
+
+#### Fixes
+
+- **Fixed** issues related to gateway and plugin permissions.
+- **Fixed** startup issues with Nacos under abnormal conditions.
+- **Fixed** an issue where the Nacos deletion operation interface did not return the expected results.
+- **Fixed** an issue where the default tag added after the gateway was enabled was incorrect.
+
+#### Improvements
+
+- **Improved** the Docker base image to version 3.20.1.
+- **Improved** permission logic to automatically generate permission points from API definitions.
+- **Deprecated** ListGatewayPodsByType.
+
+## 2024-07-02
+
+### v0.38.2
+
+#### Fixes
+
+- **Fixed** an issue with the display of the Top 10 APIs in gateway statistics.
+
 ## 2024-06-25
 
 ### v0.38.1
 
-#### New Features
+#### Features
 
 - **Added** gateway access to the registration center service supports auto-fill and multi-instance.
 - **Added** custom data for gateway logs.
@@ -34,10 +76,10 @@ This page lists the release notes of Microservices to help you learn its feature
 - **Fixed** a permission issue related to domain name queries in gateway logs.
 - **Fixed** an issue with abnormal display of related times in the registration center.
 
-#### Optimizations
+#### Improvements
 
-- **Optimized** by upgrading Ghippo integration SDK to v0.28.0-dev1.
-- **Optimized** permission dependency logic to align with the new version of the Ghippo SDK.
+- **Improved** by upgrading Ghippo integration SDK to v0.28.0-dev1.
+- **Improved** permission dependency logic to align with the new version of the Ghippo SDK.
 
 ## 2024-06-04
 
@@ -54,7 +96,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ### v0.37.0
 
-#### New Features
+#### Features
 
 - **Added** support for displaying exception information of distributed transaction components in the overview.
 - **Added** status code filtering support in gateway logs.
@@ -71,14 +113,14 @@ This page lists the release notes of Microservices to help you learn its feature
 - **Fixed** an issue with filtering and checking the gateway's root namespace.
 - **Fixed** an issue with Chinese appearing in the English version of the Sentinel monitoring dashboard.
 
-#### Optimizations
+#### Improvements
 
-- **Optimized** managed Nacos version to 2.3.2, replacing version 2.3.1.
-- **Optimized** API and added workspace isolation capabilities.
-- **Optimized** gateway plugins and custom plugin logic.
-- **Optimized** service mesh integration logic.
-- **Optimized** gateway control plane component versions and related custom resources.
-- **Optimized** gateway API export function to skip traffic lane-related APIs.
+- **Improved** managed Nacos version to 2.3.2, replacing version 2.3.1.
+- **Improved** API and added workspace isolation capabilities.
+- **Improved** gateway plugins and custom plugin logic.
+- **Improved** service mesh integration logic.
+- **Improved** gateway control plane component versions and related custom resources.
+- **Improved** gateway API export function to skip traffic lane-related APIs.
 
 !!! note
 
@@ -99,7 +141,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ### v0.36.0
 
-#### New Features
+#### Features
 
 - **Added** Log query functionality for gateway API testing
 - **Added** Support for multiple instances of external services for the gateway
@@ -161,7 +203,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ### v0.35.0
 
-#### New Features
+#### Features
 
 - **Added** ability for cloud-native gateway API to match routes based on request parameters
 - **Added** ability for distributed transaction Seata to use custom passwords
@@ -209,7 +251,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ### v0.34.0
 
-#### New Features
+#### Features
 
 - **Added** namespace information deployed by the gateway in gateway query port based on workbench requirements
 
@@ -246,7 +288,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ### v0.32.0
 
-#### New Features
+#### Features
 
 - **Added** cloud native microservice monitoring resources
 - **Added** support for connecting to a registry center with authentication mode enabled
@@ -296,7 +338,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ### v0.31.0
 
-#### New Features
+#### Features
 
 - **Added** support for managed Nacos version 2.3.0
 - **Added** support for service and API gateway services as traffic entry points
@@ -362,7 +404,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ### v0.29.0
 
-#### New Features
+#### Features
 
 - **Added** API documentation management and API querying
 - **Added** visualization of traffic swimlane for gray release, displaying the internal gray release swimlane division and data flow through views
@@ -394,7 +436,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ### v0.28.0
 
-#### New Features
+#### Features
 
 - **Added** support for regular expression and exact match for gateway API request headers.
 - **Added** support for bulk import and export of gateway APIs.
@@ -467,7 +509,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ### v0.27.0
 
-#### New Features
+#### Features
 
 - **Added** Permission dependencies for various module functionalities
 - **Added** Exception details API field for managed resources
@@ -539,7 +581,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ### v0.26.0
 
-#### New Features
+#### Features
 
 - **Added** interface for viewing Sentinel flow control rules.
 - **Added** APIs for cloud native microservice governance.
@@ -567,7 +609,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ### v0.25.0
 
-#### New Features
+#### Features
 
 - **Added** tagging of gateway runtime mesh injection.
 - **Added** cascading selection capability for permissions associated with middleware.
@@ -607,7 +649,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ### v0.24.0
 
-#### New Features
+#### Features
 
 - **Added** API for cloud native microservices plugins
 - **Added** cascading selection capability for permissions associated with middleware operations
@@ -625,7 +667,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ### v0.23.0
 
-#### New Features
+#### Features
 
 - **Added** batch online/offline interface for gateway API
 - **Added** enhanced health check configuration for engine components
@@ -687,7 +729,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ### v0.22.0
 
-#### New Features
+#### Features
 
 - Support for Nacos v2.2.x.
 - Gateway tracing.
@@ -760,7 +802,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ### v0.21.0
 
-#### New Features
+#### Features
 
 - Separate display of gateway access internal and external addresses
 - API related to cloud native microservice governance capability
@@ -793,7 +835,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ### v0.20.0
 
-#### New Features
+#### Features
 
 - Sentinel portal version
 - Gateway domain-level whitelist
@@ -861,7 +903,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ### v0.19.0
 
-#### New Features
+#### Features
 
 - Custom permissions and API implementation
 - APIs related to registry overview
@@ -902,7 +944,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ### v0.18.0
 
-#### New Features
+#### Features
 
 - APIs to separate registries and configuration centers
 - APIs related to overview
@@ -917,7 +959,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ### v0.17.1
 
-#### New Features
+#### Features
 
 - Gateway NodePort
 - Gateway LoadBalancer
@@ -994,7 +1036,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ### v0.15.2
 
-#### New Features
+#### Features
 
 - Gateway API support for authentication servers
 - API to integrate services in managed registries
@@ -1018,7 +1060,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ### v0.14.0
 
-#### New Features
+#### Features
 
 - Offline images required by init Chart
 - Token to get managed Nacos
@@ -1039,7 +1081,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ### v0.13.0
 
-#### New Features
+#### Features
 
 - Connectivity with APIs of MySQL and Redis components
 - API to support gateway JWT verification
@@ -1077,7 +1119,7 @@ This page lists the release notes of Microservices to help you learn its feature
 
 ### v0.12.2
 
-#### New Features
+#### Features
 
 - Add Grafana template for Sentinel"s own monitoring
 - Add configuration information of the customized gateway index
