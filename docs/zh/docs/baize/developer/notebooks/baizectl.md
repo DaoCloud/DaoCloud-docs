@@ -1,11 +1,4 @@
----
-hide:
-  - toc
----
-
 # baizectl 命令行工具使用指南
-
----
 
 ## 概述
 
@@ -17,7 +10,9 @@ hide:
 
 目前，`baizectl` 已经集成在 DCE5 平台中，在智能算力中，创建 Notebook 后，即可在 Notebook 中直接使用。
 
-## 基础介绍
+---
+
+## 快速上手
 
 ### 基本信息
 
@@ -82,6 +77,8 @@ baizectl [command] [flags]
 - `--skip-tls-verify`：跳过 TLS 证书验证。
 - `--token string`：DCE5 访问令牌。
 - `-w, --workspace int32`：指定操作的工作区 ID。
+
+---
 
 ## 功能介绍
 
@@ -593,6 +590,8 @@ baizectl job submit --image release.daocloud.io/baize/baize-notebook:v0.5.0 \
     -- sleep 1000
 ```
 
+---
+
 ## 高级用法
 
 baizectl 支持更多高级用法，例如自动补全脚本生成、使用特定集群和命名空间、使用特定工作空间等。
@@ -629,6 +628,8 @@ baizectl job ls --workspace 123
 
 - **问题**：为什么无法列出数据集？
   **解决方法**：检查命名空间和工作区是否正确设置，确保当前用户有权限访问这些资源。
+
+---
 
 ## 结语
 
