@@ -1,19 +1,15 @@
 # GPU Operator 离线安装
 
-DCE 5.0 预置了 Ubuntu22.04、Ubuntu20.04、CentOS 7.9 这三个操作系统的 `driver` 镜像，
-驱动版本是 `535.104.12`；并且内置了各操作系统所需的 `Toolkit` 镜像，用户不再需要手动离线 `toolkit` 镜像。
+DCE 5.0 预置了 Ubuntu22.04、Ubuntu20.04、CentOS 7.9 这三个操作系统的 driver 镜像， 驱动版本是 535.104.12；并且内置了各操作系统所需的 Toolkit 镜像，用户不再需要手动离线 toolkit 镜像。
 
-!!! note
-
-    安装后不支持从 MIG 模式切换为整卡模式或 vGPU 模式，仅支持整卡模式与 vGPU 模式的一键切换，请提前规划好您的使用模式。
-
-详情请参考 [NVIDIA GPU 卡使用模式](index.md)。本文使用 AMD 架构的 Centos 7.9（3.10.0-1160）进行演示。
-如需使用 Red Hat 8.4 部署，请参考[向火种节点仓库上传 Red Hat GPU Opreator 离线镜像](./push_image_to_repo.md)和[构建 Red Hat 8.4 离线 yum 源](./upgrade_yum_source_redhat8_4.md)。
+本文使用 AMD 架构的 Centos 7.9（3.10.0-1160）进行演示。如需使用 Red Hat 8.4 部署，请参考[向火种节点仓库上传 Red Hat GPU Opreator 离线镜像](./push_image_to_repo.md)和[构建 Red Hat 8.4 离线 yum 源](./upgrade_yum_source_redhat8_4.md)。
 
 ## 前提条件
 
-1. 用户已经在平台上安装了 v0.12.0 及以上版本的 addon 离线包。
-2. 待部署 GPU Operator 的集群节点内核版本必须完全一致。节点 发行版和 GPU 卡型号在 [GPU 支持矩阵](../gpu_matrix.md) 范围内。
+1. 待部署 GPU Operator 的集群节点内核版本必须完全一致。节点 发行版和 GPU 卡型号在 [GPU 支持矩阵](../gpu_matrix.md) 范围内。
+2. 用户已经在平台上安装了 v0.20.0 及以上版本的 addon 离线包（ v0.12 及以上版本的 addon 就已支持安装 GPU operator，但 GPU operator 仅内置了 centos 7.9 一个操作系统）。
+3. 安装 gpu operator 时选择 v23.9.0+2 及以上版本
+
 
 ## 操作步骤
 
@@ -35,9 +31,9 @@ DCE 5.0 预置了 Ubuntu22.04、Ubuntu20.04、CentOS 7.9 这三个操作系统�
 
 - __名称__ ：输入插件名称。
 - __命名空间__ ：选择将插件安装的命名空间。
-- __版本__ ：插件的版本，此处以 __23.6.10__ 版本为例。
-- __就绪等待__ ：启用后，所有关联资源都处于就绪状态，才会标记应用安装成功。
+- __版本__ ：插件的版本，此处以 __v23.9.0+2__ 版本为例。
 - __失败删除__ ：安装失败，则删除已经安装的关联资源。开启后，将默认同步开启 __就绪等待__ 。
+- __就绪等待__ ：启用后，所有关联资源都处于就绪状态，才会标记应用安装成功。
 - __详情日志__ ：开启后，将记录安装过程的详细日志。
 
 ### 高级参数配置
@@ -50,8 +46,7 @@ DCE 5.0 预置了 Ubuntu22.04、Ubuntu20.04、CentOS 7.9 这三个操作系统�
 
 #### Driver 参数配置
 
-1. __Driver.enable__ ：配置是否在节点上部署 NVIDIA 驱动，默认开启，
-   如果您在使用 GPU Operator 部署前，已经在节点上部署了 NVIDIA 驱动程序，请关闭。
+1. __Driver.enable__ ：配置是否在节点上部署 NVIDIA 驱动，默认开启，如果您在使用 GPU Operator 部署前，已经在节点上部署了 NVIDIA 驱动程序，请关闭。
 2. __Driver.image__ ：配置 GPU 驱动镜像，推荐默认镜像： __nvidia/driver__ 。
 3. __Driver.repository__ ：GPU 驱动镜像所在的镜像仓库，默认为 nvidia 的 __nvcr.io__ 仓库。
 4. __Driver.usePrecompiled__ ：开启预编译模式安装驱动。
@@ -62,7 +57,7 @@ DCE 5.0 预置了 Ubuntu22.04、Ubuntu20.04、CentOS 7.9 这三个操作系统�
 
     !!! note
 
-        系统默认提供 525.147.05-centos7 的镜像，其他镜像需要参考[向火种节点仓库上传镜像](./push_image_to_repo.md) 。
+        使用内置的操作系统版本无需修改镜像版本，其他操作系统版本请参考[向火种节点仓库上传镜像](./push_image_to_repo.md) 。
         注意版本号后无需填写 ubantu、centos、Red Hat等操作系统名称，若官方镜像含有操作系统后缀，请手动移除
 
         - Red Hat 系统，例如 `525.105.17`
@@ -77,7 +72,7 @@ DCE 5.0 预置了 Ubuntu22.04、Ubuntu20.04、CentOS 7.9 这三个操作系统�
 
 #### Toolkit 配置参数
 
-__Toolkit.enable__ ：默认开启，该组件让 conatainerd/docker 支持运行需要gpu的容器。
+__Toolkit.enable__ ：默认开启，该组件让 conatainerd/docker 支持运行需要 gpu 的容器。
 
 #### MIG 配置参数
 
