@@ -1,15 +1,19 @@
 # ArgoCD 与多云编排联动完成多云应用发布
 
+本页说明如何在 DCE 5.0 应用工作台中将多云编排与 ArgoCD 联动，从而发布多云应用。
+
 ## 前提条件
 
 - 提前 fork [清单文件](https://github.com/amamba-io/amamba-examples/tree/main/gueskbook-kairship)，
-  并对 karmada 的 [PropagationPolicy](https://karmada.io/zh/docs/userguide/scheduling/resource-propagating) 资源有一定了解
+  并对 Karmada 的 [PropagationPolicy](https://karmada.io/zh/docs/userguide/scheduling/resource-propagating)
+  资源有一定了解
 - 能正常访问 ArgoCD UI 界面
 - 可以正常使用多云编排模块
 
 ## 注册多云实例到 ArgoCD
 
-1. 前往 __多云编排__ ，参考[添加实例](../../kairship/instance/add.md) 新增一个多云实例，如下创建了一个名为 `k-amamba` 的多云实例：
+1. 前往 __多云编排__ ，参考[添加实例](../../kairship/instance/add.md)新增一个多云实例，
+   如下创建一个名为 `k-amamba` 的多云实例：
 
     ![k1](../images/k1.jpg)
 
