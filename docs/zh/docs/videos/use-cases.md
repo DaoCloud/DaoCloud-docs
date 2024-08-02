@@ -119,6 +119,14 @@
 <video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/redis-sync.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/redis-sync.png"></video>
 </div>
 
+## AI 模型训练推理场景演示
+
+参阅[模型支持](../baize/developer/inference/models.md)、[推理服务](../baize/developer/inference/create.md)文档。
+
+<div class="responsive-video-container">
+<video controls src="https://harbor-test2.cn-sh2.ufileos.com/docs/videos/ai-model.mp4" preload="metadata" poster="https://harbor-test2.cn-sh2.ufileos.com/docs/images/ai-model.jpg"></video>
+</div>
+
 [下载 DCE 5.0](../download/index.md){ .md-button .md-button--primary }
 [安装 DCE 5.0](../install/index.md){ .md-button .md-button--primary }
 [申请社区免费体验](../dce/license0.md){ .md-button .md-button--primary }
