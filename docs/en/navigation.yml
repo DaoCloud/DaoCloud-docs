@@ -1118,6 +1118,7 @@ nav:
                       - View Notebook Workload: baize/developer/notebooks/view.md
                       - Delete Notebook: baize/developer/notebooks/delete.md
                       - Notebook SSH Guide: baize/developer/notebooks/notebook-with-ssh.md
+                      - baizectl CLI Guide: baize/developer/notebooks/baizectl.md
                   - Jobs:
                       - Create Job: baize/developer/jobs/create.md
                       - Delete Job: baize/developer/jobs/delete.md
@@ -1135,7 +1136,7 @@ nav:
                       - Create Queue: baize/oam/queue/create.md
                       - Delete Queue: baize/oam/queue/delete.md
               - Best Practices:
-                  - Deploy NFS to Preheat Dataset: baize/best-practice/deploy-nfs-in-worker.md
+                  - Deploy NFS to Preload Dataset: baize/best-practice/deploy-nfs-in-worker.md
                   - Update Notebook Built-in Images: baize/best-practice/change-notebook-image.md
                   - Checkpoint Mechanism and Usage: baize/best-practice/checkpoint.md
                   - Fine-Tune ChatGLM3 with Intelligent Engine: baize/best-practice/finetunel-llm.md

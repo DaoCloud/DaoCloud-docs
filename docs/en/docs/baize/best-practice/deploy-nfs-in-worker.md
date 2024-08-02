@@ -1,4 +1,4 @@
-# Deploy NFS for Preheating Dataset
+# Deploy NFS for Preloading Dataset
 
 A **Network File System (NFS)** allows remote hosts to mount file systems over a network and
 interact with those file systems as though they are mounted locally. This enables
@@ -10,10 +10,10 @@ into datasets, users can manage various types of data in datasets so that
 training tasks can directly use the data in the dataset.
 
 When remote data is not within the worker cluster, datasets provide the capability
-to automatically preheat data, supporting data preheating from sources such as
+to automatically preheat data, supporting data preloading from sources such as
 `Git`, `S3`, and `HTTP` to the local cluster.
 
-A storage service supporting the `ReadWriteMany` mode is needed for preheating
+A storage service supporting the `ReadWriteMany` mode is needed for preloading
 remote data for the `dataset`, and it is recommended to deploy NFS within the cluster.
 
 This article mainly introduces how to quickly deploy an NFS service and add it as a
@@ -50,7 +50,7 @@ Here is a simple YAML deployment file that can be used directly.
 
     Be sure to check the `image:` and modify it to a domestic mirror based on the location of the cluster.
 
-```yaml titile="nfs-server.yaml"
+```yaml title="nfs-server.yaml"
 ---
 kind: Service
 apiVersion: v1
@@ -181,7 +181,42 @@ kubectl apply -f nfs-sc.yaml
 ## Test
 
 Create a dataset and set the dataset's **associated storage class** and
-`preheating method` to `NFS` to preheat remote data into the cluster.
+`preloading method` to `NFS` to preheat remote data into the cluster.
 
-After the dataset is successfully created, you can see that the dataset's status is `preheating`,
-and you can start using it after the preheating is completed.
+After the dataset is successfully created, you can see that the dataset's status is `preloading`,
+and you can start using it after the preloading is completed.
+
+## FAQs
+
+### Missing Necessary NFS Client Software `/sbin/mount`
+
+```bash
+bad option; for several filesystems (e.g. nfs, cifs) you might need a /sbin/mount.<type> helper program.
+```
+
+On the nodes running Kubernetes, ensure that the NFS client is installed:
+
+=== "Ubuntu/Debian"
+
+    Run the following commands to install the NFS client:
+
+    ```bash
+    sudo apt-get update
+    sudo apt-get install nfs-common
+    ```
+
+=== "CentOS/RHEL"
+
+    Run the following command to install the NFS client:
+
+    ```bash
+    sudo yum install nfs-utils
+    ```
+
+Check the NFS server configuration to ensure that the NFS server is running
+and configured correctly. You can try mounting manually to test:
+
+```bash
+sudo mkdir -p /mnt/test
+sudo mount -t nfs <nfs-server>:/nfsdata /mnt/test
+```

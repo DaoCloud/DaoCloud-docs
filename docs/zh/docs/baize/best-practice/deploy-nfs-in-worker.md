@@ -176,31 +176,33 @@ kubectl apply -f nfs-sc.yaml
 
 ## 常见问题
 
-### 缺少必要的NFS客户端软件 `/sbin/mount`
+### 缺少必要的 NFS 客户端软件 `/sbin/mount`
 
 ```bash
 bad option; for several filesystems (e.g. nfs, cifs) you might need a /sbin/mount.<type> helper program.
 ```
 
-在运行 `Kubernetes` 节点的机器上，确保已安装 NFS 客户端：
+在运行 Kubernetes 的节点机器上，确保已安装 NFS 客户端：
 
-对于 `Ubuntu/Debian` 系统：
+=== "Ubuntu/Debian"
+
+    运行以下命令安装 NFS 客户端：
+
+    ```bash
+    sudo apt-get update
+    sudo apt-get install nfs-common
+    ```
+=== "CentOS/RHEL"
+
+    运行以下命令安装 NFS 客户端：
+
+    ```bash
+    sudo yum install nfs-utils
+    ```
+
+检查 NFS 服务器配置，确保 NFS 服务器正在运行且配置正确。你可以尝试运行以下命令手动挂载来测试：
 
 ```bash
-sudo apt-get update
-sudo apt-get install nfs-common
-```
-
-对于 `CentOS/RHEL` 系统：
-
-```bash
-sudo yum install nfs-utils
-```
-
-检查 NFS 服务器配置，确保 NFS 服务器正在运行并正确配置。你可以尝试手动挂载来测试：
-
-```
 sudo mkdir -p /mnt/test
 sudo mount -t nfs <nfs-server>:/nfsdata /mnt/test
 ```
-
