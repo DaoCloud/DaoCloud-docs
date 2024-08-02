@@ -1,21 +1,22 @@
-# baizectl 命令行工具使用指南
+# baizectl Command Line Tool Usage Guide
 
-`baizectl` 是在 DCE 5.0 智能算力模块中专门服务于模型开发者与数据科学家们使用的命令行工具。
-它提供了一系列命令来帮助用户管理分布式训练作业、查看任务状态、管理数据集等操作，同时支持连接
-Kubernetes 工作集群和 DCE 5.0 工作空间，帮助用户更高效地使用和管理 Kubernetes 平台资源。
+`baizectl` is a command line tool specifically designed for model developers and data scientists within
+the DCE 5.0 Intelligent Engine module. It provides a series of commands to help users manage
+distributed training jobs, check job statuses, manage datasets, and more. It also supports connecting
+to Kubernetes work clusters and DCE 5.0 workspaces, aiding users in efficiently using and managing
+Kubernetes platform resources.
 
-## 安装
+## Installation
 
-目前，`baizectl` 已经集成在 DCE 5.0 智能算力中。
-你在创建 Notebook 后，即可在 Notebook 中直接使用 `baizectl`。
+Currently, `baizectl` is integrated within DCE 5.0 Intelligent Engine. Once you create a Notebook, you can directly use `baizectl` within it.
 
 ---
 
-## 快速上手
+## Getting Started
 
-### 基本信息
+### Basic Information
 
-`baizectl` 命令的基本格式如下：
+The basic format of the `baizectl` command is as follows:
 
 ```bash
 jovyan@19d0197587cc:/$ baizectl
@@ -45,46 +46,49 @@ Flags:
 Use "baizectl [command] --help" for more information about a command.
 ```
 
-以上是 `baizectl` 的基本信息，用户可以通过 `baizectl --help` 查看帮助信息，
-或者通过 `baizectl [command] --help` 查看具体命令的帮助信息。
+The above provides basic information about `baizectl`. Users can view the help information using
+`baizectl --help`, or view the help information for specific commands using `baizectl [command] --help`.
 
-### 查看版本信息
+### View Version Information
 
-`baizectl` 支持通过 `version` 命令查看版本信息。
+`baizectl` supports viewing version information using the `version` command.
 
 ```bash
 (base) jovyan@den-0:~$ baizectl version 
 baizectl version: v0.5.0, commit sha: ac0837c4
 ```
 
-### 命令格式
+### Command Format
 
-`baizectl` 命令的基本格式如下：
+The basic format of the `baizectl` command is as follows:
 
 ```bash
 baizectl [command] [flags]
 ```
 
-其中，`[command]` 是具体的操作命令，如 `data`、`job` 等，`[flags]` 是可选的参数，用于指定操作的详细信息。
+Here, `[command]` refers to the specific operation command, such as `data`, `job`, etc., and
+`[flags]` are optional parameters used to specify detailed information about the operation.
 
-### 常用选项
+### Common Options
 
-- `--cluster string`：指定要操作的集群名称。
-- `-h, --help`：显示帮助信息。
-- `--mode string`：连接模式，可选值为 `auto`、`api`、`notebook`（默认值为 `auto`）。
-- `-n, --namespace string`：指定操作的命名空间。如果未设置，将使用默认命名空间。
-- `-s, --server string`：DCE5 访问基础 URL。
-- `--skip-tls-verify`：跳过 TLS 证书验证。
-- `--token string`：DCE5 访问令牌。
-- `-w, --workspace int32`：指定操作的工作区 ID。
+- `--cluster string`: Specify the name of the cluster to operate on.
+- `-h, --help`: Display help information.
+- `--mode string`: Connection mode, optional values are `auto`, `api`, `notebook` (default value is `auto`).
+- `-n, --namespace string`: Specify the namespace for the operation. If not set,
+  the default namespace will be used.
+- `-s, --server string`: Base URL for accessing DCE5.
+- `--skip-tls-verify`: Skip TLS certificate verification.
+- `--token string`: Access token for DCE5.
+- `-w, --workspace int32`: Specify the workspace ID for the operation.
 
 ---
 
-## 功能介绍
+## Features
 
-### 任务管理
+### Job Management
 
-baizectl 提供了一系列命令来管理分布式训练任务，包含了查看任务列表，提交任务、查看日志、重启任务、删除任务等。
+`baizectl` provides a series of commands to manage distributed training jobs,
+including viewing job lists, submitting jobs, viewing logs, restarting jobs, deleting jobs, and more.
 
 ```bash
 jovyan@19d0197587cc:/$ baizectl job
@@ -112,9 +116,10 @@ Flags:
 Use "baizectl job [command] --help" for more information about a command.
 ```
 
-#### 提交训练任务
+#### Submit Training Jobs
 
-`baizectl` 支持使用 `submit` 命令提交一个任务，用户可以通过 `baizectl job submit --help` 查看详细信息。
+`baizectl` supports submitting a job using the `submit` command.
+You can view detailed information by using `baizectl job submit --help`.
 
 ```bash
 (base) jovyan@den-0:~$ baizectl job submit --help
@@ -170,26 +175,33 @@ Flags:
 
 !!! note
 
-    提交任务的命令参数说明：
+    Explanation of command parameters for submitting jobs:
 
-    - --name: 任务名称，如果为空，则会自动生成
-    - --image: 镜像名称，必须指定
-    - --priority: 任务优先级，支持 高=`baize-high-priority`、中=`baize-medium-priority`、低=`baize-low-priority`
-    - --resources: 任务资源，格式为 `cpu=1 memory=1Gi,nvidia.com/gpu=1`
-    - --workers: 任务工作节点数，默认为 1，当设置大于 1 时，任务将会分布式运行
-    - --queue: 任务队列，需要提前创建队列资源
-    - --working-dir: 工作目录，如果在 Notebook 模式下，会默认使用当前文件目录
-    - --datasets: 数据集，格式为 `datasetName:mountPath`，例如 `mnist:/data/mnist`
-    - --shm-size: 共享内存大小，在分布式训练任务时，可以启用，表示使用共享内存，单位为 MiB
-    - --labels: 任务标签，格式为 `key=value`
-    - --max-retries: 最大重试次数，任务失败后重试次数，失败后会重启任务，默认不限制
-    - --max-run-duration: 最大运行时间，任务运行时间超过指定时间后，会被系统终止，默认不限制
-    - --restart-policy: 重启策略，支持 `on-failure`、`never`、`always`，默认为 `on-failure`
-    - --from-notebook: 是否从 Notebook 中读取配置，支持 `auto`、`true`、`false`，默认为 `auto`
+    - --name: Job name. If empty, it will be auto-generated.
+    - --image: Image name. This must be specified.
+    - --priority: Job priority, supporting high=`baize-high-priority`, medium=`baize-medium-priority`,
+      low=`baize-low-priority`.
+    - --resources: Job resources, formatted as `cpu=1 memory=1Gi,nvidia.com/gpu=1`.
+    - --workers: Number of job worker nodes. The default is 1. When set to greater than 1,
+      the job will run in a distributed manner.
+    - --queue: Job queue. Queue resources need to be created in advance.
+    - --working-dir: Working directory. In Notebook mode, the current file directory will be used by default.
+    - --datasets: Dataset, formatted as `datasetName:mountPath`, for example `mnist:/data/mnist`.
+    - --shm-size: Shared memory size. This can be enabled for distributed training jobs,
+      indicating the use of shared memory, with units in MiB.
+    - --labels: Job labels, formatted as `key=value`.
+    - --max-retries: Maximum retry count. The number of times to retry the job upon failure.
+      The job will restart upon failure. Default is unlimited.
+    - --max-run-duration: Maximum run duration. The job will be terminated by the system
+      if it exceeds the specified run time. Default is unlimited.
+    - --restart-policy: Restart policy, supporting `on-failure`, `never`, `always`. The default is `on-failure`.
+    - --from-notebook: Whether to read configurations from the Notebook.
+      Supports `auto`, `true`, `false`, with the default being `auto`.
 
-##### PyTorch 单机任务示例
+##### Example of a PyTorch Single-Node Job
 
-提交训练任务示例，用户可以根据实际需求修改参数，以下为创建一个 PyTorch 任务的示例：
+Example of submitting a training job. Users can modify parameters based on their actual needs.
+Below is an example of creating a PyTorch job:
 
 ```bash
 baizectl job submit --name demojob-v2 -t PYTORCH \
@@ -211,12 +223,18 @@ baizectl job submit --name demojob-v2 -t PYTORCH \
 
 提交训练任务示例，用户可以根据实际需求修改参数，以下为创建一个 PyTorch 任务的示例：
 
+##### Example of a Distributed PyTorch Job
+
+Example of submitting a training job.
+You can modify parameters based on their actual needs.
+Below is an example of creating a distributed PyTorch job:
+
 ```bash
 baizectl job submit --name demojob-v2 -t PYTORCH \
     --image release.daocloud.io/baize/baize-notebook:v0.5.0 \
     --priority baize-high-priority \
     --resources cpu=1,memory=1Gi \
-    --workers 2 \   # 多任务副本会自动创建分布式任务
+    --workers 2 \   # Multiple job replicas will automatically create a distributed job.
     --shm-size 1024 \
     --queue default \
     --working-dir /data \
@@ -228,9 +246,9 @@ baizectl job submit --name demojob-v2 -t PYTORCH \
     -- sleep 1000
 ```
 
-##### Tensorflow 任务示例
+##### Example of a TensorFlow Job
 
-使用 `-t` 参数指定任务类型，以下为创建一个 Tensorflow 任务的示例：
+Use the `-t` parameter to specify the job type. Below is an example of creating a TensorFlow job:
 
 ```bash
 baizectl job submit --name demojob-v2 -t TENSORFLOW \
@@ -248,9 +266,9 @@ baizectl job submit --name demojob-v2 -t TENSORFLOW \
     -- sleep 1000
 ```
 
-也可以使用 `--job-type` 或者 `--tensorflow` 参数指定任务类型
+You can also use the `--job-type` or `--tensorflow` parameter to specify the job type.
 
-##### Paddle 任务示例
+##### Example of a Paddle Job
 
 ```bash
 baizectl job submit --name demojob-v2 -t PADDLE \
@@ -266,24 +284,26 @@ baizectl job submit --name demojob-v2 -t PADDLE \
     -- sleep 1000
 ```
 
-#### 查看任务列表
+#### View Job List
 
-`baizectl job` 支持通过 `ls` 命令查看任务列表，默认显示 `pytroch` 任务，用户可以通过 `-t` 指定任务类型。
+`baizectl job` supports viewing the job list using the `ls` command. By default,
+it displays `pytorch` jobs, but users can specify the job type using the `-t` parameter.
 
 ```bash
-(base) jovyan@den-0:~$ baizectl job ls  # 默认查看 pytorch 任务
+(base) jovyan@den-0:~$ baizectl job ls  # View pytorch jobs by default
  NAME        TYPE     PHASE      DURATION  COMMAND    
  demong      PYTORCH  SUCCEEDED  1m2s      sleep 60   
  demo-sleep  PYTORCH  RUNNING    1h25m28s  sleep 7200 
-(base) jovyan@den-0:~$ baizectl job ls demo-sleep  # 查看指定任务
+(base) jovyan@den-0:~$ baizectl job ls demo-sleep  # View a specific job
  NAME        TYPE     PHASE      DURATION  COMMAND     
  demo-sleep  PYTORCH  RUNNING    1h25m28s  sleep 7200 
-(base) jovyan@den-0:~$ baizectl job ls -t TENSORFLOW   # 查看 tensorflow 任务
+(base) jovyan@den-0:~$ baizectl job ls -t TENSORFLOW   # View tensorflow jobs
  NAME       TYPE        PHASE    DURATION  COMMAND    
  demotfjob  TENSORFLOW  CREATED  0s        sleep 1000 
 ```
 
-任务列表默认情况下使用 `table` 作为展示形式，如果希望查看更多信息，可使用 `json` 或 `yaml` 格式展示，可以通过 `-o` 参数指定。
+The job list uses `table` as the default display format. If you want to view more information,
+you can use the `json` or `yaml` format, which can be specified using the `-o` parameter.
 
 ```bash
 (base) jovyan@den-0:~$ baizectl job ls -t TENSORFLOW -o yaml
@@ -387,9 +407,10 @@ baizectl job submit --name demojob-v2 -t PADDLE \
   type: TENSORFLOW
 ```
 
-#### 查看任务日志
+#### View Job Logs
 
-`baizectl job` 支持使用 `logs` 命令查看任务日志，用户可以通过 `baizectl job logs --help` 查看详细信息。
+`baizectl job` supports viewing job logs using the `logs` command.
+You can view detailed information by using `baizectl job logs --help`.
 
 ```bash
 (base) jovyan@den-0:~$ baizectl job logs --help
@@ -414,11 +435,11 @@ Flags:
 
 !!! note
 
-    - `--follow` 参数实时查看日志
-    - `--tail` 参数指定查看日志的行数，默认为 50 行
-    - `--timestamps` 参数显示时间戳
+    - The `--follow` parameter allows for real-time log viewing.
+    - The `--tail` parameter specifies the number of log lines to view, with a default of 50 lines.
+    - The `--timestamps` parameter displays timestamps.
 
-示例查看任务日志：
+Example of viewing job logs:
 
 ```bash
 (base) jovyan@den-0:~$ baizectl job log -t TENSORFLOW tf-sample-job-v2-202406161632-evgrbrhn -f
@@ -445,9 +466,10 @@ Non-trainable params: 0 (0.00 Byte)
 ...
 ```
 
-#### 删除任务
+#### Delete Jobs
 
-`baizectl job` 支持使用 `delete` 命令删除任务，并且同时支持删除多个任务。
+`baizectl job` supports deleting jobs using the `delete` command and also supports
+deleting multiple jobs simultaneously.
 
 ```bash
 (base) jovyan@den-0:~$ baizectl job delete --help
@@ -467,7 +489,7 @@ Flags:
       --tensorflow        Tensorflow Job, has higher priority than --job-type
 ```
 
-示例删除任务：
+Here is an example to delete jobs:
 
 ```bash
 (base) jovyan@den-0:~$ baizectl job ls
@@ -477,16 +499,17 @@ Flags:
  demojob     PYTORCH  FAILED     16m46s    sleep 1000 
  demojob-v2  PYTORCH  RUNNING    3m13s     sleep 1000 
  demojob-v3  PYTORCH  CREATED    0s        sleep 1000 
-(base) jovyan@den-0:~$ baizectl job delete demojob      # 删除单个任务
+(base) jovyan@den-0:~$ baizectl job delete demojob      # delete a job
 Delete job demojob in ns-chuanjia-ndx successfully
-(base) jovyan@den-0:~$ baizectl job delete demojob-v2 demojob-v3     # 删除多个任务
+(base) jovyan@den-0:~$ baizectl job delete demojob-v2 demojob-v3     # delete several jobs
 Delete job demojob-v2 in ns-chuanjia-ndx successfully
 Delete job demojob-v3 in ns-chuanjia-ndx successfully
 ```
 
-#### 重启任务
+#### Restart Jobs
 
-`baizectl job` 支持使用 `restart` 命令重启任务，用户可以通过 `baizectl job restart --help` 查看详细信息。
+`baizectl job` supports restarting jobs using the `restart` command.
+You can view detailed information by using `baizectl job restart --help`.
 
 ```bash
 (base) jovyan@den-0:~$ baizectl job restart --help
@@ -506,9 +529,10 @@ Flags:
       --tensorflow        Tensorflow Job, has higher priority than --job-type
 ```
 
-### 数据集管理
+### Dataset Management
 
-`baizectl` 支持管理数据集，目前支持查看数据集列表，方便在任务训练时，快速绑定数据集。
+`baizectl` supports managing datasets. Currently, it supports viewing the dataset list,
+making it convenient to quickly bind datasets during job training.
 
 ```bash
 (base) jovyan@den-0:~$ baizectl data 
@@ -536,9 +560,10 @@ Flags:
 Use "baizectl data [command] --help" for more information about a command.
 ```
 
-#### 查看数据集列表
+#### View Datasets
 
-`baizectl data` 支持通过 `ls` 命令查看数据集列表，默认显示 `table` 格式，用户可以通过 `-o` 参数指定输出格式。
+`baizectl data` supports viewing the datasets using the `ls` command.
+By default, it displays in `table` format, but users can specify the output format using the `-o` parameter.
 
 ```bash
 (base) jovyan@den-0:~$ baizectl data ls
@@ -548,7 +573,7 @@ Use "baizectl data [command] --help" for more information about a command.
  training-output  PVC   pvc://training-output                                  READY 
 ```
 
-在提交训练任务时，可以使用 `-d` 或者 `--datasets` 参数指定数据集，例如：
+When submitting a training job, you can specify the dataset using the `-d` or `--datasets` parameter, for example:
 
 ```bash
 baizectl job submit --image release.daocloud.io/baize/baize-notebook:v0.5.0 \
@@ -556,7 +581,7 @@ baizectl job submit --image release.daocloud.io/baize/baize-notebook:v0.5.0 \
     -- sleep 1000
 ```
 
-同时挂载多个数据集，可以按照如下格式：
+To mount multiple datasets simultaneously, you can use the following format:
 
 ```bash
 baizectl job submit --image release.daocloud.io/baize/baize-notebook:v0.5.0 \
@@ -564,14 +589,18 @@ baizectl job submit --image release.daocloud.io/baize/baize-notebook:v0.5.0 \
     -- sleep 1000
 ```
 
-#### 查看依赖库（环境）
+#### View Dependencies (Environment)
 
-环境 `runtime-env` 是 DCE 的特色环境管理能力，通过将模型开发、训练任务以及推理中所需的依赖库解耦，
-提供了一种更加灵活的依赖库管理方式，无需重复构建复杂的 Docker 镜像，只需选择合适的环境即可。
+The environment `runtime-env` is a unique environment management capability of DCE.
+By decoupling the dependencies required for model development, training tasks, and inference,
+it offers a more flexible way to manage dependencies without the need to repeatedly
+build complex Docker images. You simply need to select the appropriate environment.
 
-同时 `runtime-env` 支持热更新，动态升级，无需重新构建镜像，即可更新环境依赖库。
+Additionally, `runtime-env` supports hot updates and dynamic upgrades, allowing you
+to update environment dependencies without rebuilding the image.
 
-`baizectl data` 支持通过 `runtime-env` 命令查看环境列表，默认显示 `table` 格式，用户可以通过 `-o` 参数指定输出格式。
+`baizectl data` supports viewing the environment list using the `runtime-env` command.
+By default, it displays in `table` format, but users can specify the output format using the `-o` parameter.
 
 ```bash
 (base) jovyan@den-0:~$ baizectl data ls --runtime-env 
@@ -582,7 +611,7 @@ baizectl job submit --image release.daocloud.io/baize/baize-notebook:v0.5.0 \
  tensorflow-sample  CONDA  conda://python?version=3.12.3                          PROCESSING 
 ```
 
-在提交训练任务时，可以使用 `--runtime-env` 参数指定环境，例如：
+When submitting a training job, you can specify the environment using the `--runtime-env` parameter:
 
 ```bash
 baizectl job submit --image release.daocloud.io/baize/baize-notebook:v0.5.0 \
@@ -592,50 +621,57 @@ baizectl job submit --image release.daocloud.io/baize/baize-notebook:v0.5.0 \
 
 ---
 
-## 高级用法
+## Advanced Usage
 
-baizectl 支持更多高级用法，例如自动补全脚本生成、使用特定集群和命名空间、使用特定工作空间等。
+`baizectl` supports more advanced usage, such as generating auto-completion scripts,
+using specific clusters and namespaces, and using specific workspaces.
 
-### 自动补全脚本生成
+### Generating Auto-Completion Scripts
 
 ```bash
 baizectl completion bash > /etc/bash_completion.d/baizectl
 ```
 
-上述命令生成 `bash` 的自动补全脚本，并将其保存到 `/etc/bash_completion.d/baizectl` 目录中，用户可以通过 `source /etc/bash_completion.d/baizectl` 加载自动补全脚本。
+The above command generates an auto-completion script for `bash` and saves it to the
+`/etc/bash_completion.d/baizectl` directory. You can load the auto-completion script
+by using `source /etc/bash_completion.d/baizectl`.
 
-### 使用特定集群和命名空间
+### Using Specific Clusters and Namespaces
 
 ```bash
 baizectl job ls --cluster my-cluster --namespace my-namespace
 ```
 
-该命令将列出 `my-cluster` 集群中 `my-namespace` 命名空间下的所有作业。
+This command will list all jobs in the `my-namespace` namespace within the `my-cluster` cluster.
 
-### 使用特定工作空间
+### Using Specific Workspaces
 
 ```bash
 baizectl job ls --workspace 123
 ```
 
-## 常见问题
+## Frequently Asked Questions
 
-- **问题**：为什么无法连接到服务器？
+- **Question**: Why can't I connect to the server?
 
-    **解决方法**：检查 `--server` 参数是否正确设置，并确保网络连接正常。
-    如果服务器使用自签名证书，可以使用 `--skip-tls-verify` 跳过 TLS 证书验证。
+    **Solution**: Check if the `--server` parameter is set correctly and ensure that the network connection
+    is stable. If the server uses a self-signed certificate, you can use `--skip-tls-verify` to skip
+    TLS certificate verification.
   
-- **问题**：如何解决权限不足的问题？
+- **Question**: How can I resolve insufficient permissions issues?
 
-    **解决方法**：确保使用正确的 `--token` 参数登录，并检查当前用户是否具有相应的操作权限。
+    **Solution**: Ensure that you are using the correct `--token` parameter to log in and
+    check if the current user has the necessary permissions for the operation.
 
-- **问题**：为什么无法列出数据集？
+- **Question**: Why can't I list the datasets?
 
-    **解决方法**：检查命名空间和工作区是否正确设置，确保当前用户有权限访问这些资源。
+    **Solution**: Check if the namespace and workspace are set correctly and ensure that
+    the current user has permission to access these resources.
 
 ---
 
-## 结语
+## Conclusion
 
-通过以上指南，用户可以快速上手 `baizectl` 命令，并在实际应用中高效地管理 AI 平台资源。
-如果有任何疑问或问题，建议参考 `baizectl [command] --help` 获取更多详细信息。
+With this guide, you can quickly get started with `baizectl` commands and efficiently manage AI platform
+resources in practical applications. If you have any questions or issues, it is recommended to
+refer to `baizectl [command] --help` for more detailed information.
