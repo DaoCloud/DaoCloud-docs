@@ -1195,7 +1195,7 @@ nav:
                   - Service: kant/user-guide/edge-network/service.md
               - Best Practices:
                   - Instructions to Connect a Modbus Device: kant/best-practice/modbus-device-demo.md
-                  - Smart Device Control: kant/best-practice/device-control.md
+                  - Smart Device Control: kant/best-practice/custom-device-control.md
                   - Develop Device Driver - Mapper: kant/best-practice/develop-device-mapper.md
       - Management:
           - Global Management:
