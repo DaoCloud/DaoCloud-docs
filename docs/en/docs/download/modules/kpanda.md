@@ -1,6 +1,6 @@
 ---
 MTPE: windsonsea
-date: 2024-01-18
+date: 2024-08-05
 hide:
   - toc
 ---
@@ -13,6 +13,7 @@ This page provides offline packages for different versions of the Container Mana
 
 | Version  | Architecture | File Size | Package | Checksum File | Update Date |
 |----------|--------------|-----------|---------|----------|-------------|
+| [0.29.1](../../kpanda/intro/release-notes.md) | AMD 64 | 759.13 MB | [:arrow_down: kpanda_0.29.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.29.1_amd64.tar) | [:arrow_down: kpanda_0.29.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.29.1_amd64_checksum.sha512sum) | 2024-08-05 |
 | [0.29.0](../../kpanda/intro/release-notes.md) | AMD 64 | 759.13 MB | [:arrow_down: kpanda_0.29.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.29.0_amd64.tar) | [:arrow_down: kpanda_0.29.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.29.0_amd64_checksum.sha512sum) | 2024-07-03 |
 | [0.28.1](../../kpanda/intro/release-notes.md) | AMD 64 | 675.40MB | [:arrow_down: kpanda_0.28.1_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.28.1_amd64.tar) | [:arrow_down: kpanda_0.28.1_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.28.1_amd64_checksum.sha512sum) | 2024-06-05 |
 | [0.28.0](../../kpanda/intro/release-notes.md) | AMD 64 | 675.40 MB | [:arrow_down: kpanda_0.28.0_amd64.tar](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.28.0_amd64.tar) | [:arrow_down: kpanda_0.28.0_amd64_checksum.sha512sum](https://qiniu-download-public.daocloud.io/DaoCloud_Enterprise/kpanda_0.28.0_amd64_checksum.sha512sum) | 2024-06-04 |
