@@ -2,9 +2,7 @@
 
 !!! note
 
-    - 视频教程：[数据标注和数据集使用说明](../../videos/baize.md#_4)
-
-## 简介
+    参阅视频教程：[数据标注和数据集使用说明](../../videos/baize.md#_4)
 
 Label Studio 是一个开源的数据标注工具，用于各种机器学习和人工智能任务。以下是 Label Studio 的简要介绍：
 
@@ -15,27 +13,27 @@ Label Studio 是一个开源的数据标注工具，用于各种机器学习和�
 
 Label Studio 通过其灵活性和功能丰富性，为数据科学家和机器学习工程师提供了强大的数据标注解决方案。
 
-## 部署到 DCE
+## 部署到 DCE 5.0
 
-Label Studio 部署到 `全局管理集群`，可以通过 Helm 的方式快速部署
+Label Studio 需部署到[全局服务集群](../../kpanda/user-guide/clusters/cluster-role.md#_2)，你可以通过 Helm 的方式快速部署。
 
 !!! note
 
-​   在 [install_k8s](https://labelstud.io/guide/install_k8s) 了解更多详情
+​    在 [Deploy Label Studio on Kubernetes](https://labelstud.io/guide/install_k8s) 了解更多详情。
 
-打开全局管理集群界面，进入到 `Helm 应用 > Helm 仓库` ，选择 `创建仓库` ，参数填写如下：
+1. 打开全局服务集群界面，从左侧导航栏找到 __Helm 应用__ -> __Helm 仓库__ ，选择 __创建仓库__ 按钮，填写如下参数：
 
-![image](./images/lbs01.png)
+    ![创建按钮](./images/lbs01.png)
 
-添加成功，后点击添加记录后的操作按钮，选择 `同步仓库`，稍等片刻，即可同步完成。（后续更新 Label Studio 也使用此同步选项）。
+1. 添加成功后，点击添加记录后的 __┇__ 按钮，选择 __同步仓库__ ，稍等片刻后完成同步。（后续更新 Label Studio 也会用到这个同步选项）。
 
-![image](./images/lbs02.png)
+    ![同步仓库](./images/lbs02.png)
 
-然后跳转到 `Helm 模板` 页面，搜索 `Label Studio`，选择第一个，点击进去安装。
+1. 然后跳转到 __Helm 模板__ 页面，你可以搜索找到 `label-studio`，点击卡片。
 
-![image](./images/lbs03.png)
+    ![点击卡片安装](./images/lbs03.png)
 
-选择最新的版本，安装配置参数如下图，名称为：`label-stuio`，建议创建新的命令空间，配置参数切换到 `YAML` ，根据说明修改其中配置。
+1. 选择最新的版本，如下图配置安装参数，名称为 `label-stuio`，建议创建新的命令空间，配置参数切换到 `YAML` ，根据说明修改其中配置。
 
 ```yaml
 global:
@@ -55,13 +53,13 @@ app:
 
 ![image](./images/lbs04.png)
 
-至此以上，Label studio 安装完成。
+至此，完成了 Label studio 的安装。
 
 !!! warning
 
-    默认会安装 `PostgreSQL` 作为数据服务，如果镜像拉取失败，基本应该是 `docker.io` 无法访问，注意切换到可用代理即可。
+    默认会安装 PostgreSQL 作为数据服务中间件，如果镜像拉取失败，可能是 `docker.io` 无法访问，注意切换到可用代理即可。
 
-> 如果有自己的 `PostgreSQL` 数据服务，可以使用如下 `参数配置`
+> 如果有自己的 PostgreSQL 数据服务中间件，可以使用如下参数配置：
 
 ```yaml
 global:
@@ -87,9 +85,10 @@ externalPostgresql:
   database: "label_studio"  # PostgreSQL 数据库名
 ```
 
-## 添加 `GProduct` 到导航栏
+## 添加 GProduct 到导航栏
 
-添加模块到 `DCE导航栏` 具体可以参考全局管理中 `OEM IN` 的方式，以下案例是增加到智能算力二级导航的添加方式
+如果要添加模块到 DCE 5.0 导航栏，可以参考[全局管理中 OEM IN](../../ghippo/best-practice/oem/oem-in.md) 的方式。
+以下案例是增加到智能算力二级导航的添加方式。
 
 ### 添加代理访问
 
@@ -110,9 +109,9 @@ spec:
         prefix: /label-studio
 ```
 
-### 增加到 智能算力
+### 添加到智能算力
 
-修改 CRD 为 `GProductNavigator` 的 CR `baize` ，然后在现在配置中增加即可，变更如下：
+修改 CRD 为 `GProductNavigator` 的 CR `baize` ，然后在现有配置中进行如下变更：
 
 ```yaml
 apiVersion: ghippo.io/v1alpha1
@@ -167,13 +166,12 @@ spec:
   order: 10
   url: ./baize
   visible: true
-
 ```
 
 ### 添加效果
 
-![image](./images/lbs05.png)
+![oem 效果](./images/lbs05.png)
 
 ## 结语
 
-以上，就是如何添加 `Label Studio` 作为 智能算力的标注组件，通过将标注后的数据添加到智能数据的数据集中，联动算法开发，完善算法开发流程，后续如何使用请关注其他文档参考。
+以上，就是如何添加 Label Studio 作为智能算力的标注组件，通过将标注后的数据添加到智能数据的数据集中，联动算法开发，完善算法开发流程，后续如何使用请关注其他文档参考。
