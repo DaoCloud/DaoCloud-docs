@@ -47,7 +47,7 @@ DCE 5.0 service mesh has built-in one-click diagnosis and repair functions for m
 |                      | ghippo-system      | Global management             |
 |                      | insight-system     | Observability                 |
 |                      | ipavo-system       | Homepage dashboard            |
-|                      | kairship-system    | Multicloud orchestration       |
+|                      | kairship-system    | MultiCloud Management       |
 |                      | kant-system        | Cloud-edge collaboration       |
 |                      | kangaroo-system    | Container registry              |
 |                      | kcoral-system      | Application backup             |
