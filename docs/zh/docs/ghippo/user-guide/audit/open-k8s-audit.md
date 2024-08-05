@@ -4,7 +4,7 @@
 
 !!! note
 
-    公有云环境中可能无法控制 kubernetes 审计日志输出及输出路径。
+    公有云环境中可能无法控制 Kubernetes 审计日志输出及输出路径。
 
 1. 准备审计日志的 Policy 文件
 2. 配置 API 服务器，开启审计日志
@@ -177,9 +177,9 @@
 
 ## 配置 API 服务器
 
-打开 API 服务器的配置文件 kube-apiserver.yaml，一般会在 __/etc/kubernetes/manifests/__ 文件夹下，并添加以下配置信息：
+打开 API 服务器的配置文件 kube-apiserver.yaml ，一般会在 __/etc/kubernetes/manifests/__ 文件夹下，并添加以下配置信息：
 
-这一步操作前请备份 kube-apiserver.yaml，并且备份的文件不能放在 __/etc/kubernetes/manifests/__ 下，建议放在 __/etc/kubernetes/tmp__ 。
+这一步操作前请备份 kube-apiserver.yaml ，并且备份的文件不能放在 __/etc/kubernetes/manifests/__ 下，建议放在 __/etc/kubernetes/tmp__ 。
 
 1. 在 __spec.containers.command__ 下添加命令：
 
@@ -215,7 +215,7 @@
 
 ## 测试并验证
 
-稍等一会，API 服务器会自动重启，执行以下命令查看 __/var/log/kubernetes/audit__ 目录下是否有审计日志生成，若有，则表示 k8s 审计日志成功开启。
+稍等一会，API 服务器会自动重启，执行以下命令查看 __/var/log/kubernetes/audit__ 目录下是否有审计日志生成，若有，则表示 K8s 审计日志成功开启。
 
 ```shell
 ls /var/log/kubernetes/audit
