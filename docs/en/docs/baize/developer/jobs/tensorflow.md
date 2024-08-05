@@ -24,7 +24,7 @@ Here, we use the `baize-notebook` base image and the `associated environment` as
 
 <!-- add screenshot later -->
 
-1. Log in to the Intelligent Engine platform and click on **Job Center** in the left navigation bar
+1. Log in to the Intelligent Engine platform and click **Job Center** in the left navigation bar
    to enter the **Jobs** page.
 2. Click the **Create** button in the upper right corner to enter the job creation page.
 3. Select the job type as `Tensorflow Single` and click **Next** .
@@ -37,7 +37,7 @@ This way, when creating a job, you can directly select the dataset and mount the
 
 Demo code repository address: [https://github.com/d-run/training-sample-code/](https://github.com/d-run/training-sample-code/)
 
-#### Run Parameters
+#### Parameters
 
 - Launch command: Use `bash`
 - Command parameters: Use `python /code/tensorflow/tf-single.py`
@@ -74,13 +74,13 @@ prediction = model.predict(test_x)
 print(f'Prediction for x=0.5: {prediction[0][0]}')
 ```
 
-#### Run Results
+#### Results
 
 After the job is successfully submitted, you can enter the job details to see the resource usage. From the upper right corner, navigate to **Workload Details** to view log outputs during the training process.
 
 ### TFJob Distributed Job
 
-1. Log in to **Intelligent Engine** and click on **Job Center** in the left navigation bar to enter the **Jobs** page.
+1. Log in to **Intelligent Engine** and click **Job Center** in the left navigation bar to enter the **Jobs** page.
 2. Click the **Create** button in the upper right corner to enter the job creation page.
 3. Select the job type as `Tensorflow Distributed` and click **Next**.
 4. Fill in the job name and description, then click **OK**.

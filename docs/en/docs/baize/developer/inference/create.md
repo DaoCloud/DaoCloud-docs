@@ -129,7 +129,7 @@ output_data = results.as_numpy('output_names')
 
 - `localhost:8001` is the default gRPC port for Triton; change it if configured differently.
 - `input_data` is your model input data, which needs to be preprocessed according to the model requirements.
-- `TYPE` is the data type of the model input, such as `FP32`, `INT32`, etc.
+- `TYPE` is the data type of the model input, such as `FP32` and `INT32`.
 
 Please note that the above example code needs to be adjusted according to your specific model and environment. The format and content of the input data must also comply with the model's requirements.
 
