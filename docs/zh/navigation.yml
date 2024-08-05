@@ -1181,6 +1181,7 @@ nav:
                   - 使用 Baize 微调 ChatGLM3: baize/best-practice/finetunel-llm.md
                   - 提交 DeepSpeed 训练任务: baize/best-practice/train-with-deepspeed.md
                   - 训练任务增加调度器选项: baize/best-practice/add-scheduler.md
+                  - 部署 Label Studio: baize/best-practice/label-studio.md
               - 故障排查:
                   - 故障排查索引: baize/troubleshoot/index.md
                   - 集群下拉列表中找不到集群: baize/troubleshoot/cluster-not-found.md
