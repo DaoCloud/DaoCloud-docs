@@ -17,7 +17,7 @@ Label Studio 部署到 `全局管理集群`，可以通过 Helm 的方式快速�
 
 !!! note
 
-​ 在 [install_k8s](https://labelstud.io/guide/install_k8s) 了解更多详情
+​   在 [install_k8s](https://labelstud.io/guide/install_k8s) 了解更多详情
 
 打开全局管理集群界面，进入到 `Helm 应用 > Helm 仓库` ，选择 `创建仓库` ，参数填写如下：
 
@@ -87,7 +87,7 @@ externalPostgresql:
 
 添加模块到 `DCE导航栏` 具体可以参考全局管理中 `OEM IN` 的方式，以下案例是增加到智能算力二级导航的添加方式
 
-### 先添加 `GProductProxy` 开放代理访问
+### 添加代理访问
 
 ```yaml
 apiVersion: ghippo.io/v1alpha1
